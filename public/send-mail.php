@@ -256,23 +256,23 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #f5f5f5; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background: linear-gradient(135deg, #8B7355 0%, #5D4E37 100%); color: white; padding: 30px; text-align: center; border-radius: 12px 12px 0 0; }
-        .header h1 { margin: 0; font-size: 22px; font-weight: 600; }
-        .header p { margin: 8px 0 0 0; opacity: 0.9; font-size: 14px; }
+        .header { background: linear-gradient(135deg, #8B7355 0%, #5D4E37 100%); color: white; padding: 30px; border-radius: 12px 12px 0 0; }
+        .header h1 { margin: 0; font-size: 22px; font-weight: 600; text-align: left; }
+        .header p { margin: 8px 0 0 0; opacity: 0.9; font-size: 14px; text-align: left; }
         .content { background: white; padding: 30px; border: 1px solid #e0e0e0; border-top: none; }
         .section { margin-bottom: 25px; }
-        .section-title { font-size: 12px; font-weight: 600; color: #8B7355; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #8B7355; }
-        .field { margin-bottom: 12px; }
+        .section-title { font-size: 12px; font-weight: 600; color: #8B7355; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #8B7355; text-align: left; }
+        .field { margin-bottom: 12px; text-align: left; }
         .field-label { font-size: 12px; color: #666; margin-bottom: 4px; }
         .field-value { font-size: 15px; color: #333; }
         .field-value a { color: #8B7355; text-decoration: none; }
-        .details-box { background: #f8f7f5; padding: 20px; border-radius: 8px; border-left: 4px solid #8B7355; white-space: pre-wrap; font-size: 14px; line-height: 1.7; }
+        .details-box { background: #f8f7f5; padding: 20px; border-radius: 8px; border-left: 4px solid #8B7355; white-space: pre-wrap; font-size: 14px; line-height: 1.7; text-align: left; }
         .meta-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-        .meta-table td { padding: 10px 0; border-bottom: 1px solid #eee; }
+        .meta-table td { padding: 10px 0; border-bottom: 1px solid #eee; text-align: left; }
         .meta-table td:first-child { color: #666; width: 100px; }
         .meta-table td:last-child { color: #333; font-weight: 500; }
         .inquiry-id { background: #8B7355; color: white; padding: 4px 10px; border-radius: 4px; font-family: monospace; font-size: 12px; }
-        .footer { text-align: center; padding: 20px; color: #888; font-size: 12px; background: #fafafa; border-radius: 0 0 12px 12px; border: 1px solid #e0e0e0; border-top: none; }
+        .footer { padding: 20px; color: #888; font-size: 12px; background: #fafafa; border-radius: 0 0 12px 12px; border: 1px solid #e0e0e0; border-top: none; text-align: left; }
     </style>
 </head>
 <body>
@@ -460,13 +460,9 @@ try {
 
     // Email Content
     $mail->isHTML(true);
-    $mail->Subject = "New Inquiry from KSSMI Website - {$formData['name']} ({$inquiryId})";
+    $mail->Subject = "KSSMI - {$formData['name']} - {$inquiryId}";
     $mail->Body = buildHtmlEmail($formData, $visitorIP, $visitorCountry, $inquiryId);
     $mail->AltBody = buildTextEmail($formData, $visitorIP, $visitorCountry, $inquiryId);
-
-    // Also add Markdown version as an attachment for email clients that support it
-    $markdownContent = buildMarkdownEmail($formData, $visitorIP, $visitorCountry, $inquiryId);
-    $mail->addStringAttachment($markdownContent, 'inquiry-details.md', 'base64', 'text/markdown');
 
     // Set higher timeout for slow connections
     $mail->Timeout = 30;

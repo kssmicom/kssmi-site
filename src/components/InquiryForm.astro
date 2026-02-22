@@ -138,7 +138,7 @@ const currentUrl = Astro.url.pathname;
           <textarea
             id="details"
             name="details"
-            rows="5"
+            rows="7"
             required
             class="w-full px-4 py-3 border border-gray-300 rounded-lg
                    focus:ring-2 focus:ring-[#8B7355] focus:border-[#8B7355]
@@ -209,15 +209,15 @@ const currentUrl = Astro.url.pathname;
     <!-- Alternative Contact Methods -->
     <div class="mt-10 text-center">
       <p class="text-gray-500 text-sm mb-4">Or contact us directly:</p>
-      <div class="flex flex-wrap justify-center gap-6">
+      <div class="flex flex-wrap justify-center gap-x-10 gap-y-4">
         <a
-          href="tel:+86-180-1873-1452"
+          href="tel:+86-135-1053-2553"
           class="flex items-center gap-2 text-gray-600 hover:text-[#8B7355] transition-colors"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
           </svg>
-          <span class="text-sm">+86-180-1873-1452</span>
+          <span class="text-sm">+86-135-1053-2553</span>
         </a>
         <a
           href="mailto:sales@kssmi.com"
@@ -226,10 +226,10 @@ const currentUrl = Astro.url.pathname;
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
-          <span class="text-sm">sales@kssmi.com</span>
+          <span class="text-sm">sales#kssmi.com</span>
         </a>
         <a
-          href="https://wa.me/8618018731452"
+          href="https://wa.me/8613510532553"
           target="_blank"
           rel="noopener noreferrer"
           class="flex items-center gap-2 text-gray-600 hover:text-green-600 transition-colors"
@@ -250,6 +250,45 @@ const currentUrl = Astro.url.pathname;
 )}
 
 <script define:vars={{ isDev, pt }}>
+  // Re-initialize Turnstile after View Transitions navigation
+  function initTurnstile() {
+    if (isDev) return;
+
+    const turnstileContainer = document.getElementById('turnstile-container');
+    if (!turnstileContainer) return;
+
+    // Remove any existing widget
+    const existingWidget = turnstileContainer.querySelector('.cf-turnstile');
+    if (existingWidget) {
+      existingWidget.remove();
+    }
+
+    // Create new widget element
+    const newWidget = document.createElement('div');
+    newWidget.className = 'cf-turnstile';
+    newWidget.setAttribute('data-sitekey', '0x4AAAAAACGlmQDIODBgCmpo');
+    newWidget.setAttribute('data-theme', 'light');
+    newWidget.setAttribute('data-callback', 'onTurnstileSuccess');
+    newWidget.setAttribute('data-expired-callback', 'onTurnstileExpired');
+
+    turnstileContainer.appendChild(newWidget);
+
+    // Tell Turnstile to render the new widget
+    if (window.turnstile) {
+      window.turnstile.render(newWidget);
+    }
+  }
+
+  // Initialize on first load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTurnstile);
+  } else {
+    initTurnstile();
+  }
+
+  // Re-initialize after View Transitions navigation
+  document.addEventListener('astro:page-load', initTurnstile);
+
   // Form elements
   const form = document.getElementById('inquiry-form');
   const submitBtn = document.getElementById('submit-btn');

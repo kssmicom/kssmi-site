@@ -1,0 +1,194 @@
+---
+/**
+ * Quote Request Page - Multi-language
+ * URL: /{lang}/quote/
+ *
+ * Supported languages: it, es, fr, de, pt, ru, ja, tr, ar
+ */
+
+import Layout from '../../layouts/Layout.astro';
+import { translations } from '../../translations';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import InquiryForm from '../../components/InquiryForm.astro';
+
+export function getStaticPaths() {
+  const supportedLangs = ['it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar'];
+  return supportedLangs.map(lang => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params;
+const t = translations[lang] || translations.en;
+const isRTL = lang === 'ar';
+
+// Quote page translations
+const quoteText = {
+  title: {
+    it: 'Richiedi un Preventivo',
+    es: 'Solicitar Cotización',
+    fr: 'Demander un Devis',
+    de: 'Angebot Anfordern',
+    pt: 'Solicitar Orçamento',
+    ru: 'Запросить Цену',
+    ja: '見積もりを依頼する',
+    tr: 'Teklif İste',
+    ar: 'طلب عرض أسعار',
+  },
+  subtitle: {
+    it: 'Raccontaci il tuo progetto di occhiali e ti forniremo un preventivo dettagliato entro 24 ore.',
+    es: 'Cuéntenos sobre su proyecto de gafas y le proporcionaremos un presupuesto detallado en 24 horas.',
+    fr: 'Parlez-nous de votre projet de lunettes et nous vous fournirons un devis détaillé sous 24 heures.',
+    de: 'Erzählen Sie uns von Ihrem Brillenprojekt und wir liefern Ihnen innerhalb von 24 Stunden ein detailliertes Angebot.',
+    pt: 'Conte-nos sobre seu projeto de óculos e forneceremos um orçamento detalhado em 24 horas.',
+    ru: 'Расскажите о вашем проекте очков, и мы предоставим детальный расчет в течение 24 часов.',
+    ja: 'アイウェアプロジェクトについてお聞かせください。24時間以内に詳細な見積もりをご提供します。',
+    tr: 'Gözlük projenizi bize anlatın, 24 saat içinde detaylı bir teklif sunalım.',
+    ar: 'أخبرنا عن مشروع النظارات الخاص بك وسنقدم لك عرض أسعار مفصل خلال 24 ساعة.',
+  },
+  fastResponse: {
+    it: 'Risposta Rapida',
+    es: 'Respuesta Rápida',
+    fr: 'Réponse Rapide',
+    de: 'Schnelle Antwort',
+    pt: 'Resposta Rápida',
+    ru: 'Быстрый Ответ',
+    ja: '迅速な対応',
+    tr: 'Hızlı Yanıt',
+    ar: 'رد سريع',
+  },
+  fastResponseDesc: {
+    it: 'Ricevi un preventivo dettagliato entro 24 ore',
+    es: 'Obtenga un presupuesto detallado en 24 horas',
+    fr: 'Obtenez un devis détaillé sous 24 heures',
+    de: 'Erhalten Sie ein detailliertes Angebot innerhalb von 24 Stunden',
+    pt: 'Receba um orçamento detalhado em 24 horas',
+    ru: 'Получите детальный расчет за 24 часа',
+    ja: '24時間以内に詳細な見積もりを受け取る',
+    tr: '24 saat içinde detaylı teklif alın',
+    ar: 'احصل على عرض أسعار مفصل خلال 24 ساعة',
+  },
+  qualityGuaranteed: {
+    it: 'Qualità Garantita',
+    es: 'Calidad Garantizada',
+    fr: 'Qualité Garantie',
+    de: 'Qualität Garantiert',
+    pt: 'Qualidade Garantida',
+    ru: 'Гарантия Качества',
+    ja: '品質保証',
+    tr: 'Kalite Garantisi',
+    ar: 'جودة مضمونة',
+  },
+  qualityDesc: {
+    it: 'Processi di produzione certificati ISO',
+    es: 'Procesos de fabricación certificados ISO',
+    fr: 'Processus de fabrication certifiés ISO',
+    de: 'ISO-zertifizierte Fertigungsprozesse',
+    pt: 'Processos de fabricação certificados ISO',
+    ru: 'Производство сертифицировано по ISO',
+    ja: 'ISO認証の製造プロセス',
+    tr: 'ISO sertifikalı üretim süreçleri',
+    ar: 'عمليات تصنيع معتمدة من ISO',
+  },
+  globalShipping: {
+    it: 'Spedizione Globale',
+    es: 'Envío Global',
+    fr: 'Livraison Mondiale',
+    de: 'Weltweiter Versand',
+    pt: 'Envio Global',
+    ru: 'Глобальная Доставка',
+    ja: 'グローバル配送',
+    tr: 'Küresel Kargo',
+    ar: 'شحن عالمي',
+  },
+  globalDesc: {
+    it: 'Spediamo in oltre 50 paesi in tutto il mondo',
+    es: 'Enviamos a más de 50 países de todo el mundo',
+    fr: 'Nous expédions dans plus de 50 pays',
+    de: 'Wir versenden in über 50 Länder weltweit',
+    pt: 'Enviamos para mais de 50 países',
+    ru: 'Доставка в более чем 50 стран',
+    ja: '世界中50カ国以上に出荷',
+    tr: "50'den fazla ülkeye kargo",
+    ar: 'نشحن إلى أكثر من 50 دولة حول العالم',
+  },
+};
+
+const currentLang = lang as string;
+const qt = {
+  title: quoteText.title[currentLang] || 'Request a Custom Quote',
+  subtitle: quoteText.subtitle[currentLang] || 'Tell us about your eyewear project and we\'ll provide a detailed quote within 24 hours.',
+  fastResponse: quoteText.fastResponse[currentLang] || 'Fast Response',
+  fastResponseDesc: quoteText.fastResponseDesc[currentLang] || 'Get a detailed quote within 24 hours',
+  qualityGuaranteed: quoteText.qualityGuaranteed[currentLang] || 'Quality Guaranteed',
+  qualityDesc: quoteText.qualityDesc[currentLang] || 'ISO certified manufacturing processes',
+  globalShipping: quoteText.globalShipping[currentLang] || 'Global Shipping',
+  globalDesc: quoteText.globalDesc[currentLang] || 'We ship to 50+ countries worldwide',
+};
+
+const breadcrumbItems = [
+  { label: t.nav.home, href: `/${lang}` },
+  { label: qt.title, href: `/${lang}/quote` },
+];
+---
+
+<Layout title={`${qt.title} - KSSMI`} lang={lang}>
+  <Header lang={lang} />
+
+  <main dir={isRTL ? 'rtl' : 'ltr'}>
+    <!-- Breadcrumb Navigation -->
+    <Breadcrumb items={breadcrumbItems} lang={lang} />
+
+    <!-- Hero Section -->
+    <section class="py-12 lg:py-16 bg-gradient-to-b from-stone-50 to-white">
+      <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1200px] mx-auto px-4">
+        <div class="text-center mb-8">
+          <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            {qt.title}
+          </h1>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            {qt.subtitle}
+          </p>
+        </div>
+
+        <!-- Key Benefits -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-[#8B7355]/30 cursor-default group">
+            <div class="w-12 h-12 bg-[#8B7355]/10 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors duration-300 group-hover:bg-[#8B7355]/20">
+              <svg class="w-6 h-6 text-[#8B7355] transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-2">{qt.fastResponse}</h3>
+            <p class="text-sm text-gray-500">{qt.fastResponseDesc}</p>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-[#8B7355]/30 cursor-default group">
+            <div class="w-12 h-12 bg-[#8B7355]/10 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors duration-300 group-hover:bg-[#8B7355]/20">
+              <svg class="w-6 h-6 text-[#8B7355] transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-2">{qt.qualityGuaranteed}</h3>
+            <p class="text-sm text-gray-500">{qt.qualityDesc}</p>
+          </div>
+          <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-[#8B7355]/30 cursor-default group">
+            <div class="w-12 h-12 bg-[#8B7355]/10 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors duration-300 group-hover:bg-[#8B7355]/20">
+              <svg class="w-6 h-6 text-[#8B7355] transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-2">{qt.globalShipping}</h3>
+            <p class="text-sm text-gray-500">{qt.globalDesc}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inquiry Form -->
+    <InquiryForm lang={lang} productName="General Inquiry" />
+  </main>
+
+  <Footer lang={lang} />
+</Layout>
