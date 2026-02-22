@@ -260,8 +260,9 @@ const currentUrl = Astro.url.pathname;
 )}
 
 <script define:vars={{ isDev, pt }}>
-  // Turnstile token storage
+  // Turnstile token and widget tracking
   let turnstileToken = null;
+  let turnstileWidgetId = null;
 
   // Global callback functions for Turnstile
   window.onTurnstileSuccess = function(token) {
@@ -275,34 +276,65 @@ const currentUrl = Astro.url.pathname;
     turnstileToken = null;
   };
 
-  // Re-initialize Turnstile after View Transitions navigation
-  function resetTurnstile() {
+  // Initialize or re-initialize Turnstile widget
+  function initTurnstile() {
     if (isDev) return;
 
-    turnstileToken = null;
     const container = document.getElementById('turnstile-container');
     if (!container) return;
 
-    // Wait for Turnstile script
+    // Wait for Turnstile script to load
     if (typeof window.turnstile === 'undefined') {
-      setTimeout(resetTurnstile, 100);
+      setTimeout(initTurnstile, 100);
       return;
     }
 
-    // Reset the widget
-    try {
-      // Find existing widget and reset it
-      const existingWidget = container.querySelector('.cf-turnstile');
-      if (existingWidget && window.turnstile) {
-        window.turnstile.reset();
+    // Remove existing widget if we have a widget ID
+    if (turnstileWidgetId !== null) {
+      try {
+        window.turnstile.remove(turnstileWidgetId);
+      } catch (e) {
+        // Widget might not exist, ignore error
       }
+      turnstileWidgetId = null;
+    }
+
+    // Clear the container
+    container.innerHTML = '';
+
+    // Create new widget div
+    const widgetDiv = document.createElement('div');
+    container.appendChild(widgetDiv);
+
+    // Render new Turnstile widget
+    try {
+      turnstileWidgetId = window.turnstile.render(widgetDiv, {
+        sitekey: '0x4AAAAAACGlmQDIODBgCmpo',
+        theme: 'light',
+        callback: window.onTurnstileSuccess,
+        'expired-callback': window.onTurnstileExpired
+      });
     } catch (e) {
-      console.log('Turnstile reset:', e);
+      console.error('Turnstile render error:', e);
     }
   }
 
-  // Re-initialize after View Transitions
-  document.addEventListener('astro:page-load', resetTurnstile);
+  // Initialize on first page load
+  if (!isDev) {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initTurnstile);
+    } else {
+      initTurnstile();
+    }
+  }
+
+  // Re-initialize after View Transitions navigation (language switch)
+  document.addEventListener('astro:page-load', function() {
+    if (!isDev) {
+      turnstileToken = null; // Reset token on navigation
+      initTurnstile();
+    }
+  });
 
   // Form elements
   const form = document.getElementById('inquiry-form');
