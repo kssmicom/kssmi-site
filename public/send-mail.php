@@ -55,7 +55,7 @@ $config = [
     'to_email' => 'sales@kssmi.com',
     'to_name' => 'KSSMI Sales Team',
     'from_email' => 'kssmi@kssmi.com',
-    'from_name' => 'KSSMI Website',
+    'from_name' => 'Kssmi Eyewear',
 
     // Gmail Workspace SMTP Settings
     'smtp' => [
@@ -93,7 +93,7 @@ function logEmail($config, $data, $status, $message = '', $error = '') {
             'to' => $config['to_email'],
             'from' => $config['from_email'],
             'reply_to' => $data['email'] ?? '',
-            'subject' => "New Inquiry from KSSMI Website - " . ($data['name'] ?? 'Unknown'),
+            'subject' => ($data['name'] ?? 'Unknown') . " - Kssmi Eyewear",
         ],
         'form_data' => [
             'name' => $data['name'] ?? '',
@@ -592,7 +592,7 @@ try {
 
     // Email Content
     $mail->isHTML(true);
-    $mail->Subject = "KSSMI - {$formData['name']} - {$inquiryId}";
+    $mail->Subject = "{$formData['name']} - Kssmi Eyewear - {$inquiryId}";
     $mail->Body = buildHtmlEmail($formData, $visitorIP, $visitorCountry, $inquiryId);
     $mail->AltBody = buildTextEmail($formData, $visitorIP, $visitorCountry, $inquiryId);
 
