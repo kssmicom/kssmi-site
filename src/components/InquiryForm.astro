@@ -28,6 +28,22 @@ const pt = t.product || {
   submitRequest: "Submit Request",
 };
 
+// Turnstile error message translations
+const turnstileErrorMessages = {
+  en: "Please click the security verification checkbox above to prove you are human.",
+  it: "Si prega di cliccare la casella di verifica sopra per dimostrare di essere umani.",
+  es: "Por favor, haga clic en la casilla de verificación de seguridad de arriba para demostrar que es humano.",
+  fr: "Veuillez cliquer sur la case de vérification de sécurité ci-dessus pour prouver que vous êtes humain.",
+  de: "Bitte klicken Sie auf das Kontrollkästchen zur Sicherheitsüberprüfung oben, um zu beweisen, dass Sie ein Mensch sind.",
+  pt: "Por favor, clique na caixa de verificação de segurança acima para provar que você é humano.",
+  ru: "Пожалуйста, нажмите на флажок проверки безопасности выше, чтобы подтвердить, что вы человек.",
+  ja: "人間であることを証明するために、上のセキュリティ確認チェックボックスをクリックしてください。",
+  tr: "İnsan olduğunuzu kanıtlamak için lütfen yukarıdaki güvenlik doğrulama onay kutusuna tıklayın.",
+  ar: "يرجى النقر فوق مربع التحقق الأمني أعلاه لإثبات أنك إنسان.",
+};
+
+const turnstileErrorMsg = turnstileErrorMessages[lang] || turnstileErrorMessages.en;
+
 // Cloudflare Turnstile Site Key
 const TURNSTILE_SITE_KEY = "0x4AAAAAACGlmQDIODBgCmpo";
 
@@ -259,7 +275,7 @@ const currentUrl = Astro.url.pathname;
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 )}
 
-<script define:vars={{ isDev, pt }}>
+<script define:vars={{ isDev, pt, turnstileErrorMsg }}>
   // Turnstile token and widget tracking
   let turnstileToken = null;
   let turnstileWidgetId = null;
@@ -406,7 +422,7 @@ const currentUrl = Astro.url.pathname;
 
     // Check Turnstile (skip in dev mode)
     if (!isDev && !turnstileToken) {
-      showTurnstileError('Please click the security verification checkbox above to prove you are human.');
+      showTurnstileError(turnstileErrorMsg);
       return;
     }
 

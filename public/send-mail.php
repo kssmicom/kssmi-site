@@ -248,6 +248,136 @@ MARKDOWN;
 function buildHtmlEmail($data, $ip, $country, $inquiryId) {
     $timestamp = date('Y-m-d H:i:s');
     $source = 'https://kssmi.com' . $data['product_url'];
+    $lang = $data['language'] ?? 'en';
+
+    // Email translations
+    $translations = [
+        'en' => [
+            'contactInfo' => 'Contact Information',
+            'name' => 'Name',
+            'email' => 'Email Address',
+            'product' => 'Product Interest',
+            'projectDetails' => 'Project Details',
+            'metadata' => 'Metadata',
+            'time' => 'Time',
+            'source' => 'Source',
+            'country' => 'Country',
+            'footer' => 'This email was automatically generated from the KSSMI Eyewear contact form.',
+        ],
+        'it' => [
+            'contactInfo' => 'Informazioni di Contatto',
+            'name' => 'Nome',
+            'email' => 'Indirizzo Email',
+            'product' => 'Interesse Prodotto',
+            'projectDetails' => 'Dettagli del Progetto',
+            'metadata' => 'Metadati',
+            'time' => 'Ora',
+            'source' => 'Fonte',
+            'country' => 'Paese',
+            'footer' => 'Questa email è stata generata automaticamente dal modulo di contatto KSSMI Eyewear.',
+        ],
+        'es' => [
+            'contactInfo' => 'Información de Contacto',
+            'name' => 'Nombre',
+            'email' => 'Dirección de Correo',
+            'product' => 'Interés del Producto',
+            'projectDetails' => 'Detalles del Proyecto',
+            'metadata' => 'Metadatos',
+            'time' => 'Hora',
+            'source' => 'Fuente',
+            'country' => 'País',
+            'footer' => 'Este correo fue generado automáticamente desde el formulario de contacto de KSSMI Eyewear.',
+        ],
+        'fr' => [
+            'contactInfo' => 'Informations de Contact',
+            'name' => 'Nom',
+            'email' => 'Adresse Email',
+            'product' => 'Intérêt pour le Produit',
+            'projectDetails' => 'Détails du Projet',
+            'metadata' => 'Métadonnées',
+            'time' => 'Heure',
+            'source' => 'Source',
+            'country' => 'Pays',
+            'footer' => 'Cet email a été généré automatiquement depuis le formulaire de contact KSSMI Eyewear.',
+        ],
+        'de' => [
+            'contactInfo' => 'Kontaktinformationen',
+            'name' => 'Name',
+            'email' => 'E-Mail-Adresse',
+            'product' => 'Produktinteresse',
+            'projectDetails' => 'Projektdetails',
+            'metadata' => 'Metadaten',
+            'time' => 'Zeit',
+            'source' => 'Quelle',
+            'country' => 'Land',
+            'footer' => 'Diese E-Mail wurde automatisch vom KSSMI Eyewear Kontaktformular generiert.',
+        ],
+        'pt' => [
+            'contactInfo' => 'Informações de Contato',
+            'name' => 'Nome',
+            'email' => 'Endereço de Email',
+            'product' => 'Interesse no Produto',
+            'projectDetails' => 'Detalhes do Projeto',
+            'metadata' => 'Metadados',
+            'time' => 'Hora',
+            'source' => 'Fonte',
+            'country' => 'País',
+            'footer' => 'Este email foi gerado automaticamente pelo formulário de contato KSSMI Eyewear.',
+        ],
+        'ru' => [
+            'contactInfo' => 'Контактная информация',
+            'name' => 'Имя',
+            'email' => 'Адрес электронной почты',
+            'product' => 'Интерес к продукту',
+            'projectDetails' => 'Детали проекта',
+            'metadata' => 'Метаданные',
+            'time' => 'Время',
+            'source' => 'Источник',
+            'country' => 'Страна',
+            'footer' => 'Это письмо было автоматически создано формой связи KSSMI Eyewear.',
+        ],
+        'ja' => [
+            'contactInfo' => '連絡先情報',
+            'name' => '名前',
+            'email' => 'メールアドレス',
+            'product' => '製品への関心',
+            'projectDetails' => 'プロジェクト詳細',
+            'metadata' => 'メタデータ',
+            'time' => '時間',
+            'source' => 'ソース',
+            'country' => '国',
+            'footer' => 'このメールはKSSMI Eyewearのお問い合わせフォームから自動的に生成されました。',
+        ],
+        'tr' => [
+            'contactInfo' => 'İletişim Bilgileri',
+            'name' => 'İsim',
+            'email' => 'E-posta Adresi',
+            'product' => 'Ürün İlgi Alanı',
+            'projectDetails' => 'Proje Detayları',
+            'metadata' => 'Meta Veriler',
+            'time' => 'Zaman',
+            'source' => 'Kaynak',
+            'country' => 'Ülke',
+            'footer' => 'Bu e-posta KSSMI Eyewear iletişim formundan otomatik olarak oluşturulmuştur.',
+        ],
+        'ar' => [
+            'contactInfo' => 'معلومات الاتصال',
+            'name' => 'الاسم',
+            'email' => 'البريد الإلكتروني',
+            'product' => 'اهتمام المنتج',
+            'projectDetails' => 'تفاصيل المشروع',
+            'metadata' => 'البيانات الوصفية',
+            'time' => 'الوقت',
+            'source' => 'المصدر',
+            'country' => 'البلد',
+            'footer' => 'تم إنشاء هذا البريد الإلكتروني تلقائيًا من نموذج الاتصال KSSMI Eyewear.',
+        ],
+    ];
+
+    $t = $translations[$lang] ?? $translations['en'];
+
+    // Header title: "Name - Inquiry"
+    $headerTitle = htmlspecialchars($data['name']) . ' - Inquiry';
 
     return "
 <!DOCTYPE html>
@@ -258,7 +388,6 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
         .header { background: linear-gradient(135deg, #8B7355 0%, #5D4E37 100%); color: white; padding: 30px; border-radius: 12px 12px 0 0; }
         .header h1 { margin: 0; font-size: 22px; font-weight: 600; text-align: left; }
-        .header p { margin: 8px 0 0 0; opacity: 0.9; font-size: 14px; text-align: left; }
         .content { background: white; padding: 30px; border: 1px solid #e0e0e0; border-top: none; }
         .section { margin-bottom: 25px; }
         .section-title { font-size: 12px; font-weight: 600; color: #8B7355; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #8B7355; text-align: left; }
@@ -278,42 +407,41 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
 <body>
     <div class='container'>
         <div class='header'>
-            <h1>New Project Inquiry</h1>
-            <p>KSSMI Website Contact Form</p>
+            <h1>{$headerTitle}</h1>
         </div>
         <div class='content'>
             <div class='section'>
-                <div class='section-title'>Contact Information</div>
+                <div class='section-title'>{$t['contactInfo']}</div>
                 <div class='field'>
-                    <div class='field-label'>Name</div>
-                    <div class='field-value'>{$data['name']}</div>
+                    <div class='field-label'>{$t['name']}</div>
+                    <div class='field-value'>" . htmlspecialchars($data['name']) . "</div>
                 </div>
                 <div class='field'>
-                    <div class='field-label'>Email Address</div>
-                    <div class='field-value'><a href='mailto:{$data['email']}'>{$data['email']}</a></div>
+                    <div class='field-label'>{$t['email']}</div>
+                    <div class='field-value'><a href='mailto:" . htmlspecialchars($data['email']) . "'>" . htmlspecialchars($data['email']) . "</a></div>
                 </div>
                 <div class='field'>
-                    <div class='field-label'>Product Interest</div>
-                    <div class='field-value'>{$data['product_name']}</div>
+                    <div class='field-label'>{$t['product']}</div>
+                    <div class='field-value'>" . htmlspecialchars($data['product_name']) . "</div>
                 </div>
             </div>
             <div class='section'>
-                <div class='section-title'>Here is the user details...</div>
+                <div class='section-title'>{$t['projectDetails']}</div>
                 <div class='details-box'>" . htmlspecialchars($data['details']) . "</div>
             </div>
             <div class='section'>
-                <div class='section-title'>Metadata</div>
+                <div class='section-title'>{$t['metadata']}</div>
                 <table class='meta-table'>
-                    <tr><td>Time</td><td>{$timestamp}</td></tr>
-                    <tr><td>Source</td><td><a href='{$source}' style='color: #8B7355;'>{$source}</a></td></tr>
+                    <tr><td>{$t['time']}</td><td>{$timestamp}</td></tr>
+                    <tr><td>{$t['source']}</td><td><a href='{$source}' style='color: #8B7355;'>{$source}</a></td></tr>
                     <tr><td>IP</td><td>{$ip}</td></tr>
-                    <tr><td>Country</td><td>{$country}</td></tr>
+                    <tr><td>{$t['country']}</td><td>{$country}</td></tr>
                     <tr><td>ID</td><td><span class='inquiry-id'>{$inquiryId}</span></td></tr>
                 </table>
             </div>
         </div>
         <div class='footer'>
-            <p>This email was automatically generated from the KSSMI website contact form.</p>
+            <p>{$t['footer']}</p>
         </div>
     </div>
 </body>
@@ -323,17 +451,18 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
 function buildTextEmail($data, $ip, $country, $inquiryId) {
     $timestamp = date('Y-m-d H:i:s');
     $source = 'https://kssmi.com' . $data['product_url'];
+    $name = $data['name'];
 
     return "
-NEW PROJECT INQUIRY - KSSMI WEBSITE
-====================================
+{$name} - Inquiry
+==================
 
 Name: {$data['name']}
 Email Address: {$data['email']}
 Product Interest: {$data['product_name']}
 
-HERE IS THE USER DETAILS:
--------------------------
+PROJECT DETAILS:
+----------------
 {$data['details']}
 
 METADATA:
@@ -343,6 +472,9 @@ Source: {$source}
 IP: {$ip}
 Country: {$country}
 ID: {$inquiryId}
+
+---
+This email was automatically generated from the KSSMI Eyewear contact form.
 ";
 }
 
