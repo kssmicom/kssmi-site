@@ -44,6 +44,62 @@ const turnstileErrorMessages = {
 
 const turnstileErrorMsg = turnstileErrorMessages[lang] || turnstileErrorMessages.en;
 
+// Form placeholder translations
+const placeholders = {
+  en: {
+    name: "Your name or company name",
+    email: "your@company.com",
+    details: "Describe your project requirements, quantities, timeline, etc."
+  },
+  it: {
+    name: "Il tuo nome o nome dell'azienda",
+    email: "tua@azienda.com",
+    details: "Descrivi i requisiti del tuo progetto, quantità, tempistiche, ecc."
+  },
+  es: {
+    name: "Su nombre o nombre de la empresa",
+    email: "su@empresa.com",
+    details: "Describa los requisitos de su proyecto, cantidades, plazos, etc."
+  },
+  fr: {
+    name: "Votre nom ou nom de l'entreprise",
+    email: "votre@entreprise.com",
+    details: "Décrivez vos exigences de projet, quantités, délais, etc."
+  },
+  de: {
+    name: "Ihr Name oder Firmenname",
+    email: "ihre@firma.com",
+    details: "Beschreiben Sie Ihre Projektanforderungen, Mengen, Zeitpläne usw."
+  },
+  pt: {
+    name: "Seu nome ou nome da empresa",
+    email: "seu@empresa.com",
+    details: "Descreva os requisitos do seu projeto, quantidades, prazos, etc."
+  },
+  ru: {
+    name: "Ваше имя или название компании",
+    email: "vash@kompaniya.com",
+    details: "Опишите требования к проекту, количество, сроки и т.д."
+  },
+  ja: {
+    name: "お名前または会社名",
+    email: "your@company.com",
+    details: "プロジェクトの要件、数量、スケジュールなどを入力してください"
+  },
+  tr: {
+    name: "Adınız veya şirket adı",
+    email: "sizin@sirket.com",
+    details: "Proje gereksinimlerinizi, miktarları, zaman çizelgesini vb. açıklayın"
+  },
+  ar: {
+    name: "اسمك أو اسم الشركة",
+    email: "your@company.com",
+    details: "صف متطلبات مشروعك والكميات والجدول الزمني وما إلى ذلك"
+  }
+};
+
+const ph = placeholders[lang] || placeholders.en;
+
 // Cloudflare Turnstile Site Key
 const TURNSTILE_SITE_KEY = "0x4AAAAAACGlmQDIODBgCmpo";
 
@@ -117,7 +173,7 @@ const currentUrl = Astro.url.pathname;
                    focus:ring-2 focus:ring-[#8B7355] focus:border-[#8B7355]
                    transition-colors duration-200
                    placeholder:text-gray-400"
-            placeholder="Your name or company name"
+            placeholder={ph.name}
           />
         </div>
 
@@ -139,7 +195,7 @@ const currentUrl = Astro.url.pathname;
                    focus:ring-2 focus:ring-[#8B7355] focus:border-[#8B7355]
                    transition-colors duration-200
                    placeholder:text-gray-400"
-            placeholder="your@company.com"
+            placeholder={ph.email}
           />
         </div>
 
@@ -160,7 +216,7 @@ const currentUrl = Astro.url.pathname;
                    focus:ring-2 focus:ring-[#8B7355] focus:border-[#8B7355]
                    transition-colors duration-200 resize-y
                    placeholder:text-gray-400"
-            placeholder="Describe your project requirements, quantities, timeline, etc."
+            placeholder={ph.details}
           ></textarea>
         </div>
 
