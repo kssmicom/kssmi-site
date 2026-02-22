@@ -159,6 +159,16 @@ const currentUrl = Astro.url.pathname;
           ></div>
         </div>
 
+        <!-- Turnstile Error Message (hidden by default) - shown right below Turnstile -->
+        <div id="turnstile-error" class="hidden text-center py-3 px-4 bg-red-50 rounded-lg">
+          <div class="flex items-center justify-center gap-2 text-red-600">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <span id="turnstile-error-message" class="text-sm">Please click the security verification checkbox above to prove you are human.</span>
+          </div>
+        </div>
+
         <!-- Development Notice -->
         {isDev && (
           <div class="text-center text-xs text-amber-600 bg-amber-50 py-2 px-4 rounded-lg">
@@ -246,17 +256,19 @@ const currentUrl = Astro.url.pathname;
 
 <!-- Cloudflare Turnstile Script (only load in production) -->
 {!isDev && (
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 )}
 
 <script define:vars={{ isDev, pt }}>
-  // Turnstile widget ID for tracking
-  let turnstileWidgetId = null;
+  // Turnstile token storage
   let turnstileToken = null;
 
-  // Turnstile callbacks (global functions required by Turnstile)
+  // Global callback functions for Turnstile
   window.onTurnstileSuccess = function(token) {
     turnstileToken = token;
+    // Hide error when user completes verification
+    const errorEl = document.getElementById('turnstile-error');
+    if (errorEl) errorEl.classList.add('hidden');
   };
 
   window.onTurnstileExpired = function() {
@@ -264,79 +276,33 @@ const currentUrl = Astro.url.pathname;
   };
 
   // Re-initialize Turnstile after View Transitions navigation
-  function initTurnstile() {
+  function resetTurnstile() {
     if (isDev) return;
 
-    const turnstileContainer = document.getElementById('turnstile-container');
-    if (!turnstileContainer) return;
+    turnstileToken = null;
+    const container = document.getElementById('turnstile-container');
+    if (!container) return;
 
-    // Check if Turnstile script is loaded
-    if (!window.turnstile) {
-      console.warn('Turnstile script not loaded yet');
+    // Wait for Turnstile script
+    if (typeof window.turnstile === 'undefined') {
+      setTimeout(resetTurnstile, 100);
       return;
     }
 
-    // Remove existing widget if any
-    if (turnstileWidgetId !== null) {
-      try {
-        window.turnstile.remove(turnstileWidgetId);
-      } catch (e) {
-        // Ignore errors if widget doesn't exist
-      }
-      turnstileWidgetId = null;
-    }
-
-    // Clear any existing widget in container
-    turnstileContainer.innerHTML = '';
-
-    // Create new widget element
-    const widgetDiv = document.createElement('div');
-    widgetDiv.className = 'cf-turnstile';
-    turnstileContainer.appendChild(widgetDiv);
-
-    // Render the Turnstile widget
+    // Reset the widget
     try {
-      turnstileWidgetId = window.turnstile.render(widgetDiv, {
-        sitekey: '0x4AAAAAACGlmQDIODBgCmpo',
-        theme: 'light',
-        callback: function(token) {
-          turnstileToken = token;
-        },
-        'expired-callback': function() {
-          turnstileToken = null;
-        }
-      });
+      // Find existing widget and reset it
+      const existingWidget = container.querySelector('.cf-turnstile');
+      if (existingWidget && window.turnstile) {
+        window.turnstile.reset();
+      }
     } catch (e) {
-      console.error('Turnstile render error:', e);
+      console.log('Turnstile reset:', e);
     }
   }
 
-  // Initialize on first load (wait for Turnstile script to load)
-  function waitForTurnstileAndInit() {
-    if (window.turnstile) {
-      initTurnstile();
-    } else {
-      setTimeout(waitForTurnstileAndInit, 100);
-    }
-  }
-
-  // Start initialization
-  if (!isDev) {
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', waitForTurnstileAndInit);
-    } else {
-      waitForTurnstileAndInit();
-    }
-  }
-
-  // Re-initialize after View Transitions navigation
-  document.addEventListener('astro:page-load', function() {
-    if (!isDev) {
-      // Reset token on page navigation
-      turnstileToken = null;
-      waitForTurnstileAndInit();
-    }
-  });
+  // Re-initialize after View Transitions
+  document.addEventListener('astro:page-load', resetTurnstile);
 
   // Form elements
   const form = document.getElementById('inquiry-form');
@@ -347,7 +313,8 @@ const currentUrl = Astro.url.pathname;
   const successMessage = document.getElementById('form-success');
   const errorContainer = document.getElementById('form-error');
   const errorMessage = document.getElementById('error-message');
-  const turnstileContainer = document.getElementById('turnstile-container');
+  const turnstileErrorContainer = document.getElementById('turnstile-error');
+  const turnstileErrorMessage = document.getElementById('turnstile-error-message');
 
   // Show loading state
   function setLoading(loading) {
@@ -364,16 +331,33 @@ const currentUrl = Astro.url.pathname;
     }
   }
 
-  // Show error
+  // Show error (general form errors - shown at top)
   function showError(message) {
     errorMessage.textContent = message;
     errorContainer.classList.remove('hidden');
     errorContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
-  // Hide error
+  // Hide error (general form errors)
   function hideError() {
     errorContainer.classList.add('hidden');
+  }
+
+  // Show Turnstile error (shown below Turnstile widget)
+  function showTurnstileError(message) {
+    if (turnstileErrorMessage) {
+      turnstileErrorMessage.textContent = message;
+    }
+    if (turnstileErrorContainer) {
+      turnstileErrorContainer.classList.remove('hidden');
+    }
+  }
+
+  // Hide Turnstile error
+  function hideTurnstileError() {
+    if (turnstileErrorContainer) {
+      turnstileErrorContainer.classList.add('hidden');
+    }
   }
 
   // Redirect to thank-you page
@@ -386,12 +370,11 @@ const currentUrl = Astro.url.pathname;
   form?.addEventListener('submit', async function(e) {
     e.preventDefault();
     hideError();
+    hideTurnstileError();
 
     // Check Turnstile (skip in dev mode)
     if (!isDev && !turnstileToken) {
-      showError('Please click the security verification checkbox above to prove you are human.');
-      // Scroll to Turnstile
-      turnstileContainer?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      showTurnstileError('Please click the security verification checkbox above to prove you are human.');
       return;
     }
 
