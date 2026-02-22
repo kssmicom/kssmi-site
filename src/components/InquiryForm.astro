@@ -165,9 +165,7 @@ const currentUrl = Astro.url.pathname;
         </div>
 
         <!-- Cloudflare Turnstile Widget (only in production) -->
-        <div id="turnstile-container" class={`flex justify-center ${isDev ? 'hidden' : ''}`}>
-          <!-- Widget will be rendered dynamically via JavaScript -->
-        </div>
+        <div id="turnstile-container" class={`flex justify-center ${isDev ? 'hidden' : ''}`}></div>
 
         <!-- Turnstile Error Message (hidden by default) - shown right below Turnstile -->
         <div id="turnstile-error" class="hidden text-center py-3 px-4 bg-red-50 rounded-lg">
@@ -264,157 +262,63 @@ const currentUrl = Astro.url.pathname;
   </div>
 </section>
 
-<script define:vars={{ isDev, pt, turnstileErrorMsg, TURNSTILE_SITE_KEY }}>
-  // Turnstile state tracking (module-level to persist across View Transitions)
-  let turnstileToken = null;
-  let turnstileWidgetId = null;
-  let turnstileScriptLoaded = false;
-  let initAttempts = 0;
-  const MAX_INIT_ATTEMPTS = 50; // 5 seconds max
+<!-- Define Turnstile callback BEFORE loading script (production only) -->
+{!isDev && (
+  <script is:inline>
+    // Turnstile configuration
+    window.TURNSTILE_SITE_KEY = "0x4AAAAAACGlmQDIODBgCmpo";
+    window.turnstileToken = null;
 
-  // Generate unique ID for this form instance to avoid conflicts
-  const formInstanceId = 'turnstile-' + Math.random().toString(36).substring(2, 9);
+    // Called when Turnstile script loads
+    window.onTurnstileLoad = function() {
+      var container = document.getElementById('turnstile-container');
+      if (!container) return;
 
-  // Load Turnstile script dynamically
-  function loadTurnstileScript() {
-    if (isDev) return Promise.resolve();
-    if (window.turnstile) {
-      turnstileScriptLoaded = true;
-      return Promise.resolve();
-    }
-    if (document.querySelector('script[src*="turnstile"]')) {
-      return new Promise((resolve) => {
-        const checkLoaded = () => {
-          if (window.turnstile) {
-            turnstileScriptLoaded = true;
-            resolve();
-          } else {
-            setTimeout(checkLoaded, 50);
+      // Clear existing widget
+      container.innerHTML = '';
+
+      // Create widget div
+      var widgetDiv = document.createElement('div');
+      container.appendChild(widgetDiv);
+
+      // Render Turnstile widget
+      try {
+        window.turnstile.render(widgetDiv, {
+          sitekey: window.TURNSTILE_SITE_KEY,
+          theme: 'light',
+          callback: function(token) {
+            window.turnstileToken = token;
+            var errorEl = document.getElementById('turnstile-error');
+            if (errorEl) errorEl.classList.add('hidden');
+          },
+          'expired-callback': function() {
+            window.turnstileToken = null;
           }
-        };
-        checkLoaded();
-      });
-    }
-
-    return new Promise((resolve, reject) => {
-      const script = document.createElement('script');
-      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
-      script.async = true;
-      script.defer = true;
-      script.onload = () => {
-        turnstileScriptLoaded = true;
-        resolve();
-      };
-      script.onerror = () => {
-        console.error('Failed to load Turnstile script');
-        reject(new Error('Turnstile script load failed'));
-      };
-      document.head.appendChild(script);
-    });
-  }
-
-  // Callbacks for Turnstile (use unique names to avoid conflicts)
-  const successCallbackName = 'onTurnstileSuccess_' + formInstanceId;
-  const expiredCallbackName = 'onTurnstileExpired_' + formInstanceId;
-
-  window[successCallbackName] = function(token) {
-    turnstileToken = token;
-    const errorEl = document.getElementById('turnstile-error');
-    if (errorEl) errorEl.classList.add('hidden');
-  };
-
-  window[expiredCallbackName] = function() {
-    turnstileToken = null;
-  };
-
-  // Initialize or re-initialize Turnstile widget
-  async function initTurnstile() {
-    if (isDev) return;
-
-    const container = document.getElementById('turnstile-container');
-    if (!container) return;
-
-    // Reset attempts for new initialization
-    initAttempts = 0;
-
-    // Load script if not loaded
-    try {
-      await loadTurnstileScript();
-    } catch (e) {
-      console.error('Turnstile script load error:', e);
-      return;
-    }
-
-    // Wait for Turnstile to be ready with retry
-    const waitForTurnstile = () => {
-      return new Promise((resolve) => {
-        const check = () => {
-          initAttempts++;
-          if (window.turnstile && typeof window.turnstile.render === 'function') {
-            resolve(true);
-          } else if (initAttempts >= MAX_INIT_ATTEMPTS) {
-            console.error('Turnstile failed to initialize after maximum attempts');
-            resolve(false);
-          } else {
-            setTimeout(check, 100);
-          }
-        };
-        check();
-      });
+        });
+      } catch (e) {
+        console.error('Turnstile render error:', e);
+      }
     };
 
-    const ready = await waitForTurnstile();
-    if (!ready) return;
+    // Re-render after View Transitions
+    document.addEventListener('astro:page-load', function() {
+      window.turnstileToken = null;
+      setTimeout(function() {
+        if (typeof window.turnstile !== 'undefined') {
+          window.onTurnstileLoad();
+        }
+      }, 100);
+    });
+  </script>
+)}
 
-    // Remove existing widget if we have a widget ID
-    if (turnstileWidgetId !== null) {
-      try {
-        window.turnstile.remove(turnstileWidgetId);
-      } catch (e) {
-        // Widget might not exist, ignore error
-      }
-      turnstileWidgetId = null;
-    }
+<!-- Load Turnstile Script (production only) -->
+{!isDev && (
+  <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileLoad" async defer></script>
+)}
 
-    // Clear the container
-    container.innerHTML = '';
-
-    // Create new widget div
-    const widgetDiv = document.createElement('div');
-    container.appendChild(widgetDiv);
-
-    // Render new Turnstile widget
-    try {
-      turnstileWidgetId = window.turnstile.render(widgetDiv, {
-        sitekey: TURNSTILE_SITE_KEY,
-        theme: 'light',
-        callback: window[successCallbackName],
-        'expired-callback': window[expiredCallbackName]
-      });
-    } catch (e) {
-      console.error('Turnstile render error:', e);
-    }
-  }
-
-  // Initialize on first page load
-  if (!isDev) {
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initTurnstile);
-    } else {
-      initTurnstile();
-    }
-  }
-
-  // Re-initialize after View Transitions navigation
-  document.addEventListener('astro:page-load', function() {
-    if (!isDev) {
-      turnstileToken = null; // Reset token on navigation
-      turnstileWidgetId = null; // Reset widget ID since DOM is replaced
-      initTurnstile();
-    }
-  });
-
-  // Form elements - query fresh each time to handle View Transitions
+<script define:vars={{ isDev, pt, turnstileErrorMsg }}>
+  // Form elements helper
   function getFormElements() {
     return {
       form: document.getElementById('inquiry-form'),
@@ -429,7 +333,7 @@ const currentUrl = Astro.url.pathname;
     };
   }
 
-  // Show loading state
+  // Loading state
   function setLoading(loading) {
     const { submitBtn, btnText, btnArrow, btnSpinner } = getFormElements();
     if (loading) {
@@ -445,7 +349,7 @@ const currentUrl = Astro.url.pathname;
     }
   }
 
-  // Show error (general form errors - shown at top)
+  // Error display
   function showError(message) {
     const { errorContainer, errorMessage } = getFormElements();
     if (errorMessage) errorMessage.textContent = message;
@@ -455,13 +359,11 @@ const currentUrl = Astro.url.pathname;
     }
   }
 
-  // Hide error (general form errors)
   function hideError() {
     const { errorContainer } = getFormElements();
     if (errorContainer) errorContainer.classList.add('hidden');
   }
 
-  // Show Turnstile error (shown below Turnstile widget)
   function showTurnstileError(message) {
     const { turnstileErrorContainer, turnstileErrorMessage } = getFormElements();
     if (turnstileErrorMessage) turnstileErrorMessage.textContent = message;
@@ -471,24 +373,23 @@ const currentUrl = Astro.url.pathname;
     }
   }
 
-  // Hide Turnstile error
   function hideTurnstileError() {
     const { turnstileErrorContainer } = getFormElements();
     if (turnstileErrorContainer) turnstileErrorContainer.classList.add('hidden');
   }
 
-  // Redirect to thank-you page
+  // Redirect helper
   function redirectToThankYou(lang) {
     const thankYouUrl = (lang === 'en') ? '/thank-you/' : `/${lang}/thank-you/`;
     window.location.href = thankYouUrl;
   }
 
-  // Form submission - use fresh element reference
+  // Form submission setup
   function setupFormSubmission() {
     const { form } = getFormElements();
     if (!form) return;
 
-    // Remove existing listener if any
+    // Clone and replace to remove old listeners
     const newForm = form.cloneNode(true);
     form.parentNode.replaceChild(newForm, form);
 
@@ -497,22 +398,22 @@ const currentUrl = Astro.url.pathname;
       hideError();
       hideTurnstileError();
 
-      // Check Turnstile (skip in dev mode)
-      if (!isDev && !turnstileToken) {
+      // Check Turnstile (skip in dev) - use global token
+      const token = window.turnstileToken;
+      if (!isDev && !token) {
         showTurnstileError(turnstileErrorMsg);
         return;
       }
 
       // Gather form data
       const formData = new FormData(newForm);
-      if (!isDev && turnstileToken) {
-        formData.append('cf-turnstile-response', turnstileToken);
+      if (!isDev && token) {
+        formData.append('cf-turnstile-response', token);
       }
 
       setLoading(true);
 
       try {
-        // In dev mode, use PHP server on port 4325
         const apiUrl = isDev ? 'http://localhost:4325/send-mail.php' : '/send-mail.php';
 
         const response = await fetch(apiUrl, {
@@ -520,22 +421,17 @@ const currentUrl = Astro.url.pathname;
           body: formData
         });
 
-        // Check if response is OK
         if (!response.ok) {
           const contentType = response.headers.get('content-type');
-
-          // Check if PHP is not configured (returns HTML instead of JSON)
           if (contentType && contentType.includes('text/html')) {
             throw new Error('PHP_NOT_CONFIGURED');
           }
-
           throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
 
         const result = await response.json();
 
         if (result.success) {
-          // Redirect to thank-you page
           const currentLang = formData.get('language') || 'en';
           redirectToThankYou(currentLang);
         } else {
@@ -543,18 +439,14 @@ const currentUrl = Astro.url.pathname;
             ? result.errors.join('. ')
             : (result.message || 'An error occurred. Please try again.');
           showError(errorMsg);
-
-          // Show debug info if available
           if (result.debug) {
             console.error('Server debug info:', result.debug);
           }
-
           setLoading(false);
         }
       } catch (error) {
         console.error('Form submission error:', error);
 
-        // For development without PHP, offer mailto fallback
         if (isDev && (error.message.includes('Failed to fetch') || error.message.includes('NetworkError') || error.message === 'PHP_NOT_CONFIGURED')) {
           const name = formData.get('name');
           const email = formData.get('email');
@@ -566,17 +458,14 @@ const currentUrl = Astro.url.pathname;
             `Name: ${name}\nEmail: ${email}\nProduct: ${product}\n\nProject Details:\n${details}`
           );
 
-          // Show message with option to use email client
           showError('PHP server not running. Click below to send via your email client:');
 
-          // Add a button to use mailto
           const mailtoLink = document.createElement('a');
           mailtoLink.href = `mailto:sales@kssmi.com?subject=${subject}&body=${body}`;
           mailtoLink.className = 'inline-block mt-3 px-6 py-3 bg-[#8B7355] text-white rounded-lg hover:bg-[#5D4E37]';
           mailtoLink.textContent = 'Open Email Client';
           mailtoLink.id = 'mailto-fallback';
 
-          // Remove existing button if any
           const existingBtn = document.getElementById('mailto-fallback');
           if (existingBtn) existingBtn.remove();
 
@@ -587,15 +476,14 @@ const currentUrl = Astro.url.pathname;
           return;
         }
 
-        // Provide helpful error messages
         if (error.message === 'PHP_NOT_CONFIGURED') {
-          showError('PHP is not configured on this server. Please contact the administrator or use the direct email link below.');
+          showError('PHP is not configured on this server. Please contact the administrator.');
         } else if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
-          showError('Cannot connect to server. If testing locally, PHP server is required. Please use the direct email link below.');
+          showError('Cannot connect to server. Please try again later.');
         } else if (error.message.includes('Unexpected token')) {
-          showError('Server returned an invalid response. PHP may not be installed. Please use the direct email link below.');
+          showError('Server returned an invalid response. Please contact the administrator.');
         } else {
-          showError(`Error: ${error.message}. Please try again or use the direct email link below.`);
+          showError(`Error: ${error.message}. Please try again.`);
         }
 
         setLoading(false);
@@ -603,11 +491,9 @@ const currentUrl = Astro.url.pathname;
     });
   }
 
-  // Setup form on initial load
+  // Initialize form
   setupFormSubmission();
 
-  // Re-setup form after View Transitions
-  document.addEventListener('astro:page-load', function() {
-    setupFormSubmission();
-  });
+  // Re-setup after View Transitions
+  document.addEventListener('astro:page-load', setupFormSubmission);
 </script>
