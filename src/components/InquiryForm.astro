@@ -246,10 +246,23 @@ const currentUrl = Astro.url.pathname;
 
 <!-- Cloudflare Turnstile Script (only load in production) -->
 {!isDev && (
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
 )}
 
 <script define:vars={{ isDev, pt }}>
+  // Turnstile widget ID for tracking
+  let turnstileWidgetId = null;
+  let turnstileToken = null;
+
+  // Turnstile callbacks (global functions required by Turnstile)
+  window.onTurnstileSuccess = function(token) {
+    turnstileToken = token;
+  };
+
+  window.onTurnstileExpired = function() {
+    turnstileToken = null;
+  };
+
   // Re-initialize Turnstile after View Transitions navigation
   function initTurnstile() {
     if (isDev) return;
@@ -257,37 +270,73 @@ const currentUrl = Astro.url.pathname;
     const turnstileContainer = document.getElementById('turnstile-container');
     if (!turnstileContainer) return;
 
-    // Remove any existing widget
-    const existingWidget = turnstileContainer.querySelector('.cf-turnstile');
-    if (existingWidget) {
-      existingWidget.remove();
+    // Check if Turnstile script is loaded
+    if (!window.turnstile) {
+      console.warn('Turnstile script not loaded yet');
+      return;
     }
 
+    // Remove existing widget if any
+    if (turnstileWidgetId !== null) {
+      try {
+        window.turnstile.remove(turnstileWidgetId);
+      } catch (e) {
+        // Ignore errors if widget doesn't exist
+      }
+      turnstileWidgetId = null;
+    }
+
+    // Clear any existing widget in container
+    turnstileContainer.innerHTML = '';
+
     // Create new widget element
-    const newWidget = document.createElement('div');
-    newWidget.className = 'cf-turnstile';
-    newWidget.setAttribute('data-sitekey', '0x4AAAAAACGlmQDIODBgCmpo');
-    newWidget.setAttribute('data-theme', 'light');
-    newWidget.setAttribute('data-callback', 'onTurnstileSuccess');
-    newWidget.setAttribute('data-expired-callback', 'onTurnstileExpired');
+    const widgetDiv = document.createElement('div');
+    widgetDiv.className = 'cf-turnstile';
+    turnstileContainer.appendChild(widgetDiv);
 
-    turnstileContainer.appendChild(newWidget);
-
-    // Tell Turnstile to render the new widget
-    if (window.turnstile) {
-      window.turnstile.render(newWidget);
+    // Render the Turnstile widget
+    try {
+      turnstileWidgetId = window.turnstile.render(widgetDiv, {
+        sitekey: '0x4AAAAAACGlmQDIODBgCmpo',
+        theme: 'light',
+        callback: function(token) {
+          turnstileToken = token;
+        },
+        'expired-callback': function() {
+          turnstileToken = null;
+        }
+      });
+    } catch (e) {
+      console.error('Turnstile render error:', e);
     }
   }
 
-  // Initialize on first load
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTurnstile);
-  } else {
-    initTurnstile();
+  // Initialize on first load (wait for Turnstile script to load)
+  function waitForTurnstileAndInit() {
+    if (window.turnstile) {
+      initTurnstile();
+    } else {
+      setTimeout(waitForTurnstileAndInit, 100);
+    }
+  }
+
+  // Start initialization
+  if (!isDev) {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', waitForTurnstileAndInit);
+    } else {
+      waitForTurnstileAndInit();
+    }
   }
 
   // Re-initialize after View Transitions navigation
-  document.addEventListener('astro:page-load', initTurnstile);
+  document.addEventListener('astro:page-load', function() {
+    if (!isDev) {
+      // Reset token on page navigation
+      turnstileToken = null;
+      waitForTurnstileAndInit();
+    }
+  });
 
   // Form elements
   const form = document.getElementById('inquiry-form');
@@ -298,20 +347,7 @@ const currentUrl = Astro.url.pathname;
   const successMessage = document.getElementById('form-success');
   const errorContainer = document.getElementById('form-error');
   const errorMessage = document.getElementById('error-message');
-
-  // Turnstile token (not used in dev mode)
-  let turnstileToken = null;
-
-  // Turnstile callbacks (only in production)
-  if (!isDev) {
-    window.onTurnstileSuccess = function(token) {
-      turnstileToken = token;
-    };
-
-    window.onTurnstileExpired = function() {
-      turnstileToken = null;
-    };
-  }
+  const turnstileContainer = document.getElementById('turnstile-container');
 
   // Show loading state
   function setLoading(loading) {
@@ -353,7 +389,9 @@ const currentUrl = Astro.url.pathname;
 
     // Check Turnstile (skip in dev mode)
     if (!isDev && !turnstileToken) {
-      showError('Please complete the security verification.');
+      showError('Please click the security verification checkbox above to prove you are human.');
+      // Scroll to Turnstile
+      turnstileContainer?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
 
