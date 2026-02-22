@@ -1,0 +1,92 @@
+---
+/**
+ * Thank You Page - English
+ * URL: /thank-you/
+ *
+ * IMPORTANT: This page has noindex to prevent Google indexing
+ * Redirected after successful form submission
+ */
+
+import Layout from '../layouts/Layout.astro';
+import { translations } from '../translations';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const lang = 'en';
+const t = translations.en;
+const ty = t.thankyou;
+---
+
+<Layout title={`${ty.title} - KSSMI`} lang={lang} noindex={true}>
+  <Header lang={lang} />
+
+  <main class="min-h-[70vh] flex items-center justify-center py-16 lg:py-24 bg-gradient-to-b from-stone-50 to-white">
+    <div class="w-[94%] lg:w-[90%] max-w-[800px] mx-auto">
+      <!-- Success Icon -->
+      <div class="text-center mb-8">
+        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Title & Subtitle -->
+      <div class="text-center mb-8">
+        <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-3">{ty.title}</h1>
+        <p class="text-lg text-[#8B7355] font-medium">{ty.subtitle}</p>
+      </div>
+
+      <!-- Message -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 lg:p-8 mb-8">
+        <p class="text-gray-600 text-center leading-relaxed">{ty.message}</p>
+      </div>
+
+      <!-- Next Steps -->
+      <div class="bg-stone-50 rounded-xl p-6 lg:p-8 mb-8">
+        <h2 class="text-lg font-semibold text-gray-900 mb-6 text-center">{ty.nextSteps}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="text-center">
+            <div class="w-12 h-12 bg-[#8B7355] text-white rounded-full flex items-center justify-center mx-auto mb-3 text-lg font-bold">1</div>
+            <h3 class="font-semibold text-gray-900 mb-1">{ty.step1Title}</h3>
+            <p class="text-sm text-gray-500">{ty.step1Desc}</p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-[#8B7355] text-white rounded-full flex items-center justify-center mx-auto mb-3 text-lg font-bold">2</div>
+            <h3 class="font-semibold text-gray-900 mb-1">{ty.step2Title}</h3>
+            <p class="text-sm text-gray-500">{ty.step2Desc}</p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-[#8B7355] text-white rounded-full flex items-center justify-center mx-auto mb-3 text-lg font-bold">3</div>
+            <h3 class="font-semibold text-gray-900 mb-1">{ty.step3Title}</h3>
+            <p class="text-sm text-gray-500">{ty.step3Desc}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/product/"
+          class="inline-flex items-center justify-center px-8 py-4 bg-[#8B7355] text-white rounded-lg font-semibold hover:bg-[#5D4E37] transition-colors"
+        >
+          {ty.continueShopping}
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+        <a
+          href="/"
+          class="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-200 text-gray-700 rounded-lg font-semibold hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
+        >
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+          {ty.backHome}
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

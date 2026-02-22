@@ -301,11 +301,10 @@ const currentUrl = Astro.url.pathname;
     errorContainer.classList.add('hidden');
   }
 
-  // Show success
-  function showSuccess() {
-    form.classList.add('hidden');
-    successMessage.classList.remove('hidden');
-    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  // Redirect to thank-you page
+  function redirectToThankYou(lang) {
+    const thankYouUrl = (lang === 'en') ? '/thank-you/' : `/${lang}/thank-you/`;
+    window.location.href = thankYouUrl;
   }
 
   // Form submission
@@ -351,7 +350,9 @@ const currentUrl = Astro.url.pathname;
       const result = await response.json();
 
       if (result.success) {
-        showSuccess();
+        // Redirect to thank-you page
+        const currentLang = formData.get('language') || 'en';
+        redirectToThankYou(currentLang);
       } else {
         const errorMsg = result.errors
           ? result.errors.join('. ')

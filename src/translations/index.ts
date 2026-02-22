@@ -1,5 +1,20 @@
 export const translations = {
   en: {
+    thankyou: {
+      title: "Thank You!",
+      subtitle: "Your inquiry has been received",
+      message: "We appreciate your interest in KSSMI. Our team will review your project details and get back to you within 24 hours.",
+      inquiryId: "Your Inquiry ID",
+      nextSteps: "What happens next?",
+      step1Title: "Review",
+      step1Desc: "Our team reviews your requirements",
+      step2Title: "Contact",
+      step2Desc: "We reach out within 24 hours",
+      step3Title: "Collaborate",
+      step3Desc: "We discuss your project in detail",
+      continueShopping: "Continue Browsing Products",
+      backHome: "Back to Home",
+    },
     nav: {
       home: "Home",
       products: "Products",
@@ -142,6 +157,21 @@ export const translations = {
     }
   },
   ar: {
+    thankyou: {
+      title: "شكراً لك!",
+      subtitle: "تم استلام استفسارك",
+      message: "نقدر اهتمامك بـ KSSMI. سيقوم فريقنا بمراجعة تفاصيل مشروعك والتواصل معك خلال 24 ساعة.",
+      inquiryId: "رقم الاستفسار",
+      nextSteps: "ماذا يحدث بعد؟",
+      step1Title: "المراجعة",
+      step1Desc: "يراجع فريقنا متطلباتك",
+      step2Title: "الاتصال",
+      step2Desc: "نتواصل معك خلال 24 ساعة",
+      step3Title: "التعاون",
+      step3Desc: "نناقش مشروعك بالتفصيل",
+      continueShopping: "تصفح المنتجات",
+      backHome: "العودة للرئيسية",
+    },
     nav: {
       home: "الرئيسية",
       products: "المنتجات",
@@ -264,6 +294,21 @@ export const translations = {
     }
   },
   it: {
+    thankyou: {
+      title: "Grazie!",
+      subtitle: "La tua richiesta è stata ricevuta",
+      message: "Apprezziamo il tuo interesse per KSSMI. Il nostro team esaminerà i dettagli del tuo progetto e ti contatterà entro 24 ore.",
+      inquiryId: "ID della tua richiesta",
+      nextSteps: "Cosa succede dopo?",
+      step1Title: "Revisione",
+      step1Desc: "Il nostro team esamina le tue esigenze",
+      step2Title: "Contatto",
+      step2Desc: "Ti contattiamo entro 24 ore",
+      step3Title: "Collaborazione",
+      step3Desc: "Discutiamo il tuo progetto in dettaglio",
+      continueShopping: "Continua a Sfogliare i Prodotti",
+      backHome: "Torna alla Home",
+    },
     nav: {
       home: "Home",
       products: "Prodotti",
@@ -386,6 +431,21 @@ export const translations = {
     }
   },
   es: {
+    thankyou: {
+      title: "¡Gracias!",
+      subtitle: "Tu consulta ha sido recibida",
+      message: "Agradecemos tu interés en KSSMI. Nuestro equipo revisará los detalles de tu proyecto y te contactará dentro de 24 horas.",
+      inquiryId: "ID de tu consulta",
+      nextSteps: "¿Qué pasa después?",
+      step1Title: "Revisión",
+      step1Desc: "Nuestro equipo revisa tus requisitos",
+      step2Title: "Contacto",
+      step2Desc: "Te contactamos en 24 horas",
+      step3Title: "Colaboración",
+      step3Desc: "Discutimos tu proyecto en detalle",
+      continueShopping: "Continuar Navegando Productos",
+      backHome: "Volver al Inicio",
+    },
     nav: {
       home: "Inicio",
       products: "Productos",
@@ -515,6 +575,21 @@ export const translations = {
     }
   },
   fr: {
+    thankyou: {
+      title: "Merci!",
+      subtitle: "Votre demande a été reçue",
+      message: "Nous apprécions votre intérêt pour KSSMI. Notre équipe examinera les détails de votre projet et vous contactera dans les 24 heures.",
+      inquiryId: "ID de votre demande",
+      nextSteps: "Que se passe-t-il ensuite?",
+      step1Title: "Examen",
+      step1Desc: "Notre équipe examine vos besoins",
+      step2Title: "Contact",
+      step2Desc: "Nous vous contactons sous 24h",
+      step3Title: "Collaboration",
+      step3Desc: "Nous discutons de votre projet",
+      continueShopping: "Continuer à Parcourir les Produits",
+      backHome: "Retour à l'Accueil",
+    },
     nav: {
       home: "Accueil",
       products: "Produits",
@@ -644,6 +719,21 @@ export const translations = {
     }
   },
   de: {
+    thankyou: {
+      title: "Danke!",
+      subtitle: "Ihre Anfrage wurde erhalten",
+      message: "Wir schätzen Ihr Interesse an KSSMI. Unser Team wird Ihre Projektdetails prüfen und Sie innerhalb von 24 Stunden kontaktieren.",
+      inquiryId: "Ihre Anfragen-ID",
+      nextSteps: "Was passiert als Nächstes?",
+      step1Title: "Prüfung",
+      step1Desc: "Unser Team prüft Ihre Anforderungen",
+      step2Title: "Kontakt",
+      step2Desc: "Wir kontaktieren Sie in 24h",
+      step3Title: "Zusammenarbeit",
+      step3Desc: "Wir besprechen Ihr Projekt im Detail",
+      continueShopping: "Produkte Weiter Durchsuchen",
+      backHome: "Zurück zur Startseite",
+    },
     nav: {
       home: "Startseite",
       products: "Produkte",
@@ -773,6 +863,21 @@ export const translations = {
     }
   },
   pt: {
+    thankyou: {
+      title: "Obrigado!",
+      subtitle: "Sua solicitação foi recebida",
+      message: "Agradecemos seu interesse na KSSMI. Nossa equipe revisará os detalhes do seu projeto e entrará em contato em até 24 horas.",
+      inquiryId: "ID da sua solicitação",
+      nextSteps: "O que acontece depois?",
+      step1Title: "Revisão",
+      step1Desc: "Nossa equipe revisa seus requisitos",
+      step2Title: "Contato",
+      step2Desc: "Entramos em contato em 24h",
+      step3Title: "Colaboração",
+      step3Desc: "Discutimos seu projeto em detalhes",
+      continueShopping: "Continuar Navegando Produtos",
+      backHome: "Voltar ao Início",
+    },
     nav: {
       home: "Inicio",
       products: "Produtos",
@@ -902,6 +1007,21 @@ export const translations = {
     }
   },
   ru: {
+    thankyou: {
+      title: "Спасибо!",
+      subtitle: "Ваш запрос получен",
+      message: "Мы ценим ваш интерес к KSSMI. Наша команда рассмотрит детали вашего проекта и свяжется с вами в течение 24 часов.",
+      inquiryId: "ID вашего запроса",
+      nextSteps: "Что происходит дальше?",
+      step1Title: "Обзор",
+      step1Desc: "Наша команда рассматривает ваши требования",
+      step2Title: "Контакт",
+      step2Desc: "Мы свяжемся с вами в течение 24ч",
+      step3Title: "Сотрудничество",
+      step3Desc: "Обсуждаем ваш проект подробно",
+      continueShopping: "Продолжить Просмотр Продуктов",
+      backHome: "Вернуться на Главную",
+    },
     nav: {
       home: "Glavnaya",
       products: "Produkty",
@@ -1031,6 +1151,21 @@ export const translations = {
     }
   },
   ja: {
+    thankyou: {
+      title: "ありがとうございます!",
+      subtitle: "お問い合わせを受け付けました",
+      message: "KSSMIにご関心をお寄せいただきありがとうございます。弊社チームがプロジェクトの詳細を確認し、24時間以内にご連絡いたします。",
+      inquiryId: "お問い合わせID",
+      nextSteps: "次のステップは?",
+      step1Title: "確認",
+      step1Desc: "チームがご要件を確認します",
+      step2Title: "連絡",
+      step2Desc: "24時間以内にご連絡します",
+      step3Title: "協力",
+      step3Desc: "プロジェクトを詳しく相談します",
+      continueShopping: "製品閲覧を続ける",
+      backHome: "ホームに戻る",
+    },
     nav: {
       home: "Homu",
       products: "Seihin",
@@ -1160,6 +1295,21 @@ export const translations = {
     }
   },
   tr: {
+    thankyou: {
+      title: "Teşekkürler!",
+      subtitle: "Talebiniz alındı",
+      message: "KSSMI'ye gösterdiğiniz ilgi için teşekkür ederiz. Ekibimiz proje detaylarınızı inceleyecek ve 24 saat içinde sizinle iletişime geçecektir.",
+      inquiryId: "Talep ID'niz",
+      nextSteps: "Sırada ne var?",
+      step1Title: "İnceleme",
+      step1Desc: "Ekibimiz gereksinimlerinizi inceler",
+      step2Title: "İletişim",
+      step2Desc: "24 saat içinde sizinle iletişime geçeriz",
+      step3Title: "İşbirliği",
+      step3Desc: "Projenizi detaylı olarak tartışırız",
+      continueShopping: "Ürünleri Göz atmaya Devam Et",
+      backHome: "Ana Sayfaya Dön",
+    },
     nav: {
       home: "Anasayfa",
       products: "Urunler",

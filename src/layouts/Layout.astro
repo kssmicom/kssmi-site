@@ -10,6 +10,7 @@ interface Props {
   lang?: string;
   canonical?: string;
   type?: 'website' | 'product' | 'article';
+  noindex?: boolean;
 }
 
 const {
@@ -18,7 +19,8 @@ const {
   image = "/media/global/logo.png",
   lang = 'en',
   canonical,
-  type = 'website'
+  type = 'website',
+  noindex = false
 } = Astro.props;
 
 // Detect if language is Right-to-Left (Arabic)
@@ -58,6 +60,9 @@ const organizationSchema = {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
+
+  <!-- Noindex for thank-you pages -->
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
 
   <!-- Open Graph -->
   <meta property="og:title" content={title} />
