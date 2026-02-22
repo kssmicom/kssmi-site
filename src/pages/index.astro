@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { translations } from '../translations';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import AcetateManufacturing from '../components/sections/AcetateManufacturing.astro';
+import acetateImage from '../assets/media/products/tortoise-amber-onyx.webp';
+
+const lang = 'en';
+const t = translations[lang] || translations.en;
+---
+
+<Layout title="KSSMI Eyewear - Premium B2B Manufacturing" lang={lang}>
+  <Header lang={lang} />
+
+  <main>
+    <!-- SECTION 01: Acetate Manufacturing -->
+    <AcetateManufacturing
+      lang={lang}
+      eyebrow="Material Origins"
+      headline="Sculpted from blocks of cured"
+      headlineAccent="bio-acetate"
+      description="We reject injection molding. Every frame begins as a solid slab of plant-based cellulose, cured for 12 weeks before entering our 5-axis CNC machining centers for subtractive sculpting."
+      ctaText="Explore Series"
+      ctaLink="/product?cat=luxury"
+      mainImage={acetateImage}
+    />
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

@@ -1,0 +1,560 @@
+---
+// Language-aware navigation with Enhanced Mega Menu
+interface Props {
+  lang?: string;
+}
+
+const lang = Astro.props.lang || 'en';
+const isRTL = lang === 'ar';
+
+// Get translation file for UI text
+import { translations } from '../translations';
+const t = translations[lang] || translations.en;
+
+// Current path for building URLs (includes language prefix for non-English)
+const currentPath = lang === 'en' ? '' : `${lang}/`;
+
+// Get the page path WITHOUT language prefix for language switcher
+const urlPath = Astro.url.pathname;
+const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar'];
+let pagePath = urlPath;
+// Strip language prefix if present
+for (const l of languages) {
+  if (urlPath.startsWith(`/${l}/`) || urlPath === `/${l}`) {
+    pagePath = urlPath.slice(l.length + 1) || '/';
+    break;
+  }
+}
+
+// "Eyewear" translations for all 10 languages
+const eyewearLabels = {
+  en: 'Eyewear', it: 'Occhiali', es: 'Gafas', fr: 'Lunettes',
+  de: 'Brillen', pt: 'Óculos', ru: 'Очки', ja: '眼鏡',
+  tr: 'Gözlük', ar: 'نظارات'
+};
+
+// "Quote" translations
+const quoteLabels = {
+  en: 'Get Quote', it: 'Preventivo', es: 'Presupuesto', fr: 'Devis',
+  de: 'Angebot', pt: 'Orçamento', ru: 'Расценка', ja: '見積もり',
+  tr: 'Teklif', ar: 'عرض سعر'
+};
+
+const eyewearText = eyewearLabels[lang] || 'Eyewear';
+const quoteText = quoteLabels[lang] || 'Get Quote';
+const currentLangUpper = lang.toUpperCase();
+
+// Enhanced Menu Structure (WordPress-style mega menu)
+// URLs match actual category names from product data
+const menuStructure = [
+  { label: t.nav.home, href: `/${currentPath}` },
+  {
+    label: t.nav.products,
+    href: `/${currentPath}product`,
+    menuKey: 'products',
+    hasDropdown: true,
+    children: [
+      {
+        label: t.nav.luxury,
+        href: `/${currentPath}product/luxury-customized`,
+        items: [
+          { label: t.nav.luxury_sunglasses, href: `/${currentPath}product/luxury-sunglasses` },
+          { label: t.nav.luxury_glasses, href: `/${currentPath}product/luxury-glasses` }
+        ]
+      },
+      {
+        label: t.nav.couture,
+        href: `/${currentPath}product/haute-couture-series`,
+        items: [
+          { label: t.nav.couture_sunglasses, href: `/${currentPath}product/haute-couture-sunglasses` },
+          { label: t.nav.couture_glasses, href: `/${currentPath}product/haute-couture-glasses` }
+        ]
+      },
+      {
+        label: t.nav.classics,
+        href: `/${currentPath}product/classics-series`,
+        items: [
+          { label: t.nav.classics_sunglasses, href: `/${currentPath}product/classics-sunglasses` },
+          { label: t.nav.classics_glasses, href: `/${currentPath}product/classics-glasses` }
+        ]
+      },
+      {
+        label: t.nav.fashion,
+        href: `/${currentPath}product/fashion-series`,
+        items: [
+          { label: t.nav.acetate_sun, href: `/${currentPath}product/acetate-sunglasses` },
+          { label: t.nav.metal_sun, href: `/${currentPath}product/metal-sunglasses` },
+          { label: t.nav.metal_glass, href: `/${currentPath}product/metal-glasses` },
+          { label: t.nav.titanium_sun, href: `/${currentPath}product/titanium-sunglasses` },
+          { label: t.nav.titanium_glass, href: `/${currentPath}product/titanium-glasses` }
+        ]
+      },
+      {
+        label: t.nav.rimless,
+        href: `/${currentPath}product/rimless-series`,
+        items: [
+          { label: t.nav.rimless_sun, href: `/${currentPath}product/rimless-sunglasses` },
+          { label: t.nav.rimless_glass, href: `/${currentPath}product/rimless-glasses` }
+        ]
+      },
+      {
+        label: t.nav.carbon,
+        href: `/${currentPath}product/carbon-series`,
+        items: [
+          { label: t.nav.carbon_sun, href: `/${currentPath}product/carbon-sunglasses` },
+          { label: t.nav.carbon_glasses, href: `/${currentPath}product/carbon-glasses` }
+        ]
+      }
+    ]
+  },
+  {
+    label: t.nav.collection,
+    href: `/${currentPath}collection`,
+    menuKey: 'collection',
+    hasDropdown: true,
+    children: [
+      {
+        label: t.nav.collection_men,
+        href: `/${currentPath}collection/men`,
+        items: [
+          { label: t.nav.luxury_sunglasses, href: `/${currentPath}collection/men/luxury-sun` },
+          { label: t.nav.luxury_glasses, href: `/${currentPath}collection/men/luxury-glass` }
+        ]
+      },
+      {
+        label: t.nav.collection_women,
+        href: `/${currentPath}collection/women`,
+        items: [
+          { label: t.nav.couture_sunglasses, href: `/${currentPath}collection/women/couture-sun` },
+          { label: t.nav.couture_glasses, href: `/${currentPath}collection/women/couture-glass` }
+        ]
+      },
+      {
+        label: t.nav.collection_unisex,
+        href: `/${currentPath}collection/unisex`,
+        items: [
+          { label: t.nav.classics_sunglasses, href: `/${currentPath}collection/unisex/classics-sun` },
+          { label: t.nav.classics_glasses, href: `/${currentPath}collection/unisex/classics-glass` }
+        ]
+      },
+      {
+        label: t.nav.collection_new,
+        href: `/${currentPath}collection/new`,
+        items: [
+          { label: t.nav.carbon_sun, href: `/${currentPath}collection/new/carbon-sun` },
+          { label: t.nav.carbon_glass, href: `/${currentPath}collection/new/carbon-glass` }
+        ]
+      },
+      {
+        label: t.nav.collection_bestsellers,
+        href: `/${currentPath}collection/bestseller`,
+        items: [
+          { label: t.nav.fashion, href: `/${currentPath}collection/bestseller/fashion` }
+        ]
+      },
+      {
+        label: t.nav.collection_sustainable,
+        href: `/${currentPath}collection/sustainable`,
+        items: [
+          { label: 'Eco-Friendly Frames', href: `/${currentPath}collection/sustainable/eco-friendly` }
+        ]
+      }
+    ]
+  },
+  { label: t.nav.about, href: `/${currentPath}about` },
+  { label: t.nav.contact, href: `/${currentPath}contact` },
+];
+
+// Language names for dropdown
+const languageNames = {
+  en: 'English', it: 'Italiano', es: 'Espanol', fr: 'Francais',
+  de: 'Deutsch', pt: 'Portugues', ru: 'Russkiy', ja: 'Nippon',
+  tr: 'Turkce', ar: 'Arabe'
+};
+
+// Get Products menu data
+const productsMenu = menuStructure.find(item => item.menuKey === 'products');
+const collectionMenu = menuStructure.find(item => item.menuKey === 'collection');
+---
+
+<header id="site-header" class="w-full bg-white shadow-sm border-b border-stone-200 sticky top-0 z-50 transition-shadow duration-300">
+  <div class="w-full max-w-[1860px] mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <a href={`/${currentPath}`} class="flex flex-col group min-w-max z-50 relative flex-shrink-0">
+        <span class="text-2xl md:text-3xl font-bold text-[#8B7355] leading-none group-hover:opacity-80 transition-opacity">
+          KSSMI
+        </span>
+        <div class="flex items-center gap-2 mt-1.5">
+          <span class="h-[2px] w-4 bg-[#8B7355]"></span>
+          <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-stone-600 group-hover:text-[#5D4E37] transition-colors">
+            {eyewearText}
+          </span>
+        </div>
+      </a>
+
+      <!-- Navigation - Left aligned after logo -->
+      <nav class="hidden lg:block h-full ms-8 xl:ms-12 z-30">
+        <ul class="flex items-center h-full m-0 p-0 list-none gap-4 xl:gap-6">
+          {menuStructure.map((item) => (
+            <li class="h-full flex items-center">
+              <a href={item.href}
+                 class="nav-link relative inline-block text-gray-700 hover:text-[#8B7355] font-['Manrope'] font-bold text-xs md:text-sm uppercase tracking-wider transition-colors duration-300 px-2 xl:px-3 py-2"
+                 data-mega-trigger={item.hasDropdown ? item.menuKey : undefined}>
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <!-- Spacer to push right actions to the end -->
+      <div class="flex-grow"></div>
+
+      <!-- Right Actions -->
+      <div class="flex items-center gap-3 xl:gap-4 flex-shrink-0">
+        <div class="hidden sm:flex items-center gap-3">
+          <!-- Search with icon buttons -->
+          <form id="header-search" action={lang === 'en' ? '/search' : `/${lang}/search`} method="GET" class="relative">
+            <div class="flex items-center border border-stone-200 bg-stone-50 rounded-sm overflow-hidden transition-colors duration-300 focus-within:border-[#8B7355] focus-within:bg-white">
+              <input type="search" id="header-search-input" name="q" placeholder="Search" class="w-28 xl:w-40 py-2 px-3 bg-transparent border-none outline-none text-sm md:text-base font-bold text-stone-900 placeholder:text-stone-400 focus:ring-0" />
+              <!-- Clear button (hidden by default) -->
+              <button type="button" id="header-search-clear" class="hidden px-2 text-stone-400 hover:text-stone-600 transition-colors" aria-label="Clear search">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+              </button>
+              <!-- Search button -->
+              <button type="submit" id="header-search-btn" class="px-2 text-stone-700 hover:text-[#8B7355] transition-colors" aria-label="Search">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+              </button>
+            </div>
+          </form>
+          <div class="lang-dropdown-container relative group">
+            <button class="lang-btn text-[11px] font-bold uppercase tracking-widest text-stone-900 flex items-center gap-2 hover:text-[#8B7355] transition-colors py-2 z-50 relative">
+              {currentLangUpper}
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="lang-dropdown-menu absolute top-full right-0 -mt-1 w-40 bg-white border-t-4 border-[#8B7355] shadow-[0_10px_30px_rgba(0,0,0,0.15)] p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60] pointer-events-none group-hover:pointer-events-auto flex flex-col rounded-b-lg">
+              {Object.entries(languageNames).map(([langCode, displayName]) => {
+                const isActive = langCode === lang;
+                // Build correct URL: /en/path or /fr/path (not /frit/path)
+                const langUrl = langCode === 'en' ? (pagePath === '/' ? '/' : pagePath) : `/${langCode}${pagePath === '/' ? '' : pagePath}`;
+                return (
+                  <a href={langUrl} class={`block py-3 px-4 text-sm font-medium transition-all duration-200 ${isActive ? 'bg-stone-50 text-[#8B7355]' : 'text-stone-900 hover:bg-stone-50 hover:text-[#8B7355] hover:pl-7 whitespace-nowrap'}`}>
+                    {displayName}
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+        <a href={`/${currentPath}contact`} class="hidden sm:block px-5 xl:px-6 py-2.5 bg-[#5D4E37] text-white text-xs xl:text-sm font-['Manrope'] font-bold uppercase tracking-[0.15em] hover:bg-[#8B7355] active:scale-95 transition-all duration-300 rounded-sm shadow-lg">
+          {quoteText}
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden flex items-center gap-3">
+          <div class="lang-dropdown-container relative group">
+            <button class="lang-btn text-[11px] font-bold uppercase tracking-widest text-stone-900 flex items-center gap-2 hover:text-[#8B7355] transition-colors py-2 z-50 relative">
+              {currentLangUpper}
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="lang-dropdown-menu absolute top-full right-0 -mt-1 w-40 bg-white border-t-4 border-[#8B7355] shadow-[0_10px_30px_rgba(0,0,0,0.15)] p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60] pointer-events-none group-hover:pointer-events-auto flex flex-col rounded-b-lg">
+              {Object.entries(languageNames).map(([langCode, displayName]) => {
+                const isActive = langCode === lang;
+                // Build correct URL: /en/path or /fr/path (not /frit/path)
+                const langUrl = langCode === 'en' ? (pagePath === '/' ? '/' : pagePath) : `/${langCode}${pagePath === '/' ? '' : pagePath}`;
+                return (
+                  <a href={langUrl} class={`block py-3 px-4 text-sm font-medium transition-all duration-200 ${isActive ? 'bg-stone-50 text-[#8B7355]' : 'text-stone-900 hover:bg-stone-50 hover:text-[#8B7355] hover:pl-7 whitespace-nowrap'}`}>
+                    {displayName}
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+          <button id="mobile-menu-button" class="p-2 text-stone-700 hover:text-[#8B7355] focus:outline-none transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M4 8h16M4 16h16" /></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mega Menu Panel (inside header container for proper width constraint) -->
+    <div id="mega-menu-panel" class="absolute top-full left-0 right-0 bg-white border-t-4 border-[#8B7355] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.15)] rounded-b-2xl opacity-0 invisible transition-all duration-300 z-[55] pointer-events-none" data-active-menu="">
+      <!-- Products Menu Content -->
+      <div class="mega-menu-content hidden py-8 px-4" data-menu="products">
+        <div class="grid grid-cols-6 gap-4 xl:gap-6">
+          {productsMenu?.children?.map((group) => (
+            <div class="flex flex-col">
+              <a href={group.href} class="font-['Manrope'] font-bold text-xs uppercase tracking-wider text-[#8B7355] mb-4 whitespace-nowrap hover:text-[#5D4E37] transition-colors">
+                {group.label}
+              </a>
+              <div class="flex flex-col space-y-1">
+                {group.items.map((subItem) => (
+                  <a href={subItem.href} class="font-['Plus_Jakarta_Sans'] text-sm font-medium text-stone-600 py-1.5 transition-all duration-200 hover:text-[#8B7355] hover:pl-1 whitespace-nowrap">
+                    {subItem.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Collection Menu Content -->
+      <div class="mega-menu-content hidden py-8 px-4" data-menu="collection">
+        <div class="grid grid-cols-6 gap-4 xl:gap-6">
+          {collectionMenu?.children?.map((group) => (
+            <div class="flex flex-col">
+              <a href={group.href} class="font-['Manrope'] font-bold text-xs uppercase tracking-wider text-[#8B7355] mb-4 whitespace-nowrap hover:text-[#5D4E37] transition-colors">
+                {group.label}
+              </a>
+              <div class="flex flex-col space-y-1">
+                {group.items.map((subItem) => (
+                  <a href={subItem.href} class="font-['Plus_Jakarta_Sans'] text-sm font-medium text-stone-600 py-1.5 transition-all duration-200 hover:text-[#8B7355] hover:pl-1 whitespace-nowrap">
+                    {subItem.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden fixed inset-0 bg-white z-[10000] p-6 overflow-y-auto">
+  <div class="flex justify-between items-center mb-8 sticky top-0 bg-white z-10 py-4 border-b border-gray-50">
+    <span class="text-2xl font-['Manrope'] font-bold text-[#503629]">Menu</span>
+    <button id="mobile-menu-close" class="p-3 bg-stone-100 rounded-full text-stone-700 hover:text-[#8B7355] hover:bg-stone-200 transition-colors shadow-sm" aria-label="Close menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+    </button>
+  </div>
+  <div class="relative mb-8">
+    <form id="mobile-search" action={lang === 'en' ? '/search' : `/${lang}/search`} method="GET" class="flex items-center bg-stone-50 border border-stone-200 rounded-md focus-within:border-[#8B7355] focus-within:bg-white transition-colors">
+      <input type="search" id="mobile-search-input" name="q" placeholder="Search..." class="flex-grow py-4 px-4 bg-transparent border-none outline-none text-sm font-bold text-stone-900 focus:ring-0" />
+      <button type="button" id="mobile-search-clear" class="hidden px-3 text-stone-400 hover:text-stone-600 transition-colors" aria-label="Clear search">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+      </button>
+      <button type="submit" id="mobile-search-btn" class="px-4 text-stone-700 hover:text-[#8B7355] transition-colors" aria-label="Search">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+      </button>
+    </form>
+  </div>
+  <div id="mobile-menu-container" class="flex flex-col space-y-2 pb-20">
+    {menuStructure.map((item) => (
+      <div class="mobile-menu-item relative border-b border-stone-100 last:border-0">
+        <div class="flex items-center justify-between w-full pr-4">
+          {item.hasDropdown ? (
+            <>
+              <a href={item.href} class="mobile-menu-link block py-3 hover:text-[#5D4E37] transition-colors flex-grow flex items-center font-['Manrope'] font-bold text-lg">
+                {item.label}
+              </a>
+              <button class="mobile-toggle-btn w-10 h-10 flex items-center justify-center text-[#5D4E37] rounded-full active:bg-stone-100 transition-all z-20 cursor-pointer" aria-label="Toggle submenu">
+                <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+              </button>
+            </>
+          ) : (
+            <a href={item.href} class="mobile-menu-link block py-3 hover:text-[#5D4E37] transition-colors flex-grow flex items-center font-['Manrope'] font-bold text-lg">
+              {item.label}
+            </a>
+          )}
+        </div>
+        {item.hasDropdown && item.children && (
+          <div class="mobile-sub-menu bg-[#fafaf9] overflow-hidden max-h-0 transition-all duration-500 ease-out">
+            {item.children.map((group) => (
+              <div class="pt-4 pb-2">
+                <div class="py-3 text-xs md:text-sm font-semibold text-[#8B7355] font-['Manrope'] uppercase tracking-wide">
+                  {group.label}
+                </div>
+                {group.items.map((subItem) => (
+                  <a href={subItem.href} class="flex items-center font-['Plus_Jakarta_Sans'] text-base md:text-lg font-medium text-stone-700 py-3 pl-6 transition-all duration-200 hover:text-[#8B7355] hover:pl-8">
+                    <span class="mr-3 text-[#5D4E37]">→</span>
+                    {subItem.label}
+                  </a>
+                ))}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    ))}
+    <div class="pt-6 mt-6 border-t border-stone-100">
+      <a href={`/${currentPath}contact`} class="block w-full py-4 bg-[#8B7355] text-white text-center text-sm font-bold uppercase tracking-widest rounded-sm shadow-lg">
+        {quoteText}
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Hide native browser search cancel button */
+  input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .mobile-sub-menu.open {
+    max-height: 2000px !important;
+  }
+  .mobile-toggle-btn.rotated svg {
+    transform: rotate(180deg);
+  }
+  #mobile-menu {
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #8B7355;
+    transition: width 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* Mega Menu Active State */
+  #mega-menu-panel.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  #mega-menu-panel .mega-menu-content.active {
+    display: block !important;
+  }
+</style>
+
+<script>
+  // Global timeout reference for mega menu
+  let megaMenuTimeout: ReturnType<typeof setTimeout>;
+
+  function initHeader() {
+    const megaMenuPanel = document.getElementById('mega-menu-panel');
+    const megaMenuContents = document.querySelectorAll('.mega-menu-content');
+
+    function showMegaMenu(menuKey: string) {
+      clearTimeout(megaMenuTimeout);
+
+      megaMenuContents.forEach(content => {
+        content.classList.remove('active');
+      });
+
+      const targetContent = document.querySelector(`.mega-menu-content[data-menu="${menuKey}"]`);
+      if (targetContent) {
+        targetContent.classList.add('active');
+      }
+
+      megaMenuPanel?.classList.add('active');
+      megaMenuPanel?.setAttribute('data-active-menu', menuKey);
+    }
+
+    function hideMegaMenu() {
+      megaMenuTimeout = setTimeout(() => {
+        megaMenuPanel?.classList.remove('active');
+        megaMenuPanel?.setAttribute('data-active-menu', '');
+      }, 150);
+    }
+
+    // Mobile Menu Toggle
+    const menuButton = document.getElementById('mobile-menu-button');
+    const menuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function toggleMobileMenu() {
+      if (!mobileMenu) return;
+      mobileMenu.classList.toggle('hidden');
+      document.body.style.overflow = mobileMenu.classList.contains('hidden') ? '' : 'hidden';
+    }
+
+    menuButton?.addEventListener('click', toggleMobileMenu);
+    menuClose?.addEventListener('click', toggleMobileMenu);
+
+    // Mobile Submenu Toggle - using event delegation
+    document.querySelectorAll('.mobile-toggle-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const parentDiv = btn.closest('.mobile-menu-item');
+        const subMenu = parentDiv?.querySelector('.mobile-sub-menu');
+        if (subMenu) {
+          subMenu.classList.toggle('open');
+          btn.classList.toggle('rotated');
+        }
+      });
+    });
+
+    // Mega Menu - attach listeners directly to elements
+    const megaTriggers = document.querySelectorAll('[data-mega-trigger]');
+
+    megaTriggers.forEach(trigger => {
+      const menuKey = trigger.getAttribute('data-mega-trigger');
+
+      trigger.addEventListener('mouseenter', () => {
+        if (menuKey) showMegaMenu(menuKey);
+      });
+
+      const parentLi = trigger.closest('li');
+      parentLi?.addEventListener('mouseleave', (e) => {
+        const relatedTarget = (e as MouseEvent).relatedTarget as HTMLElement;
+        if (!megaMenuPanel?.contains(relatedTarget)) {
+          hideMegaMenu();
+        }
+      });
+    });
+
+    megaMenuPanel?.addEventListener('mouseenter', () => {
+      clearTimeout(megaMenuTimeout);
+    });
+
+    megaMenuPanel?.addEventListener('mouseleave', () => {
+      hideMegaMenu();
+    });
+
+    // Header Search
+    const headerSearchInput = document.getElementById('header-search-input') as HTMLInputElement;
+    const headerSearchClear = document.getElementById('header-search-clear');
+
+    headerSearchInput?.addEventListener('input', () => {
+      if (headerSearchInput.value.trim()) {
+        headerSearchClear?.classList.remove('hidden');
+      } else {
+        headerSearchClear?.classList.add('hidden');
+      }
+    });
+
+    headerSearchClear?.addEventListener('click', () => {
+      headerSearchInput.value = '';
+      headerSearchClear.classList.add('hidden');
+      headerSearchInput.focus();
+    });
+
+    // Mobile Search
+    const mobileSearchInput = document.getElementById('mobile-search-input') as HTMLInputElement;
+    const mobileSearchClear = document.getElementById('mobile-search-clear');
+
+    mobileSearchInput?.addEventListener('input', () => {
+      if (mobileSearchInput.value.trim()) {
+        mobileSearchClear?.classList.remove('hidden');
+      } else {
+        mobileSearchClear?.classList.add('hidden');
+      }
+    });
+
+    mobileSearchClear?.addEventListener('click', () => {
+      mobileSearchInput.value = '';
+      mobileSearchClear.classList.add('hidden');
+      mobileSearchInput.focus();
+    });
+  }
+
+  // Initialize on first load
+  initHeader();
+
+  // Re-initialize after View Transitions navigation
+  document.addEventListener('astro:page-load', initHeader);
+</script>

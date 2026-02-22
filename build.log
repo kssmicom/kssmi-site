@@ -1,0 +1,17 @@
+[2m14:45:04[22m [34m[content][39m Syncing content
+[33m[1m14:45:04[22m [WARN] [glob-loader][39m No files found matching "**/*.md,!**/_*/**/*.md,!**/_*.md" in directory "src\content\landing"
+[33m[1m14:45:04[22m [WARN] [glob-loader][39m No files found matching "**/*.md,!**/_*/**/*.md,!**/_*.md" in directory "src\content\blog"
+[2m14:45:04[22m [34m[content][39m Synced content
+[2m14:45:04[22m [34m[types][39m Generated [2m321ms[22m
+[2m14:45:04[22m [34m[build][39m output: [34m"static"[39m
+[2m14:45:04[22m [34m[build][39m mode: [34m"static"[39m
+[2m14:45:04[22m [34m[build][39m directory: [34mD:\003 Desk\Desk\Tools\Kssmi\kssmi-site\dist\[39m
+[2m14:45:04[22m [34m[build][39m Collecting build info...
+[2m14:45:04[22m [34m[build][39m [32m✓ Completed in 357ms.[39m
+[2m14:45:04[22m [34m[build][39m Building static entrypoints...
+[31m[1m14:45:05[22m [ERROR] [vite][39m [31m✗[39m Build failed in 398ms
+Could not resolve "./layouts/Layout.astro" from "src/pages/index.astro"
+file: D:/003 Desk/Desk/Tools/Kssmi/kssmi-site/src/pages/index.astro
+  [1mStack trace:[22m
+[2m    at getRollupError (file:///D:/003%20Desk/Desk/Tools/Kssmi/kssmi-site/node_modules/rollup/dist/es/shared/parseAst.js:402:41)
+    at ModuleLoader.handleInvalidResolvedId (file:///D:/003%20Desk/Desk/Tools/Kssmi/kssmi-site/node_modules/rollup/dist/es/shared/node-entry.js:21687:24)[22m

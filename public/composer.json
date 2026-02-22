@@ -1,0 +1,11 @@
+{
+    "name": "kssmi/email-handler",
+    "description": "KSSMI Contact Form Email Handler",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    },
+    "config": {
+        "vendor-dir": "vendor"
+    }
+}

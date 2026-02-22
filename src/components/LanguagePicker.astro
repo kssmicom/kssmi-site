@@ -1,0 +1,42 @@
+---
+// Language Picker Component
+interface Props {
+  lang: string;
+  currentPath?: string;
+}
+
+const { lang, currentPath = '' } = Astro.props;
+
+const languages = [
+  { code: 'en', name: 'English', flag: 'EN' },
+  { code: 'it', name: 'Italiano', flag: 'IT' },
+  { code: 'es', name: 'Español', flag: 'ES' },
+  { code: 'fr', name: 'Français', flag: 'FR' },
+  { code: 'de', name: 'Deutsch', flag: 'DE' },
+  { code: 'pt', name: 'Português', flag: 'PT' },
+  { code: 'ru', name: 'Русский', flag: 'RU' },
+  { code: 'ja', name: '日本語', flag: 'JA' },
+  { code: 'tr', name: 'Türkçe', flag: 'TR' },
+  { code: 'ar', name: 'العربية', flag: 'AR' },
+];
+---
+
+<div class="relative">
+  <select
+    class="appearance-none bg-white border border-gray-300 rounded-lg px-4 py-2 pr-8 text-sm focus:ring-2 focus:ring-[#8B7355] focus:border-transparent cursor-pointer"
+    onchange="window.location.href = this.value"
+  >
+    {languages.map((l) => (
+      <option
+        value={l.code === 'en' ? `/${currentPath}` : `/${l.code}/${currentPath}`}
+        selected={lang === l.code}
+      >
+        {l.flag} - {l.name}
+      </option>
+    ))}
+  </select>
+  <!-- Custom Arrow Icon -->
+  <svg class="absolute end-3 top-1/2 w-4 h-4 text-gray-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7 7" />
+  </svg>
+</div>

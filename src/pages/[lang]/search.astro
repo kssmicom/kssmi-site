@@ -1,0 +1,263 @@
+---
+// Language-aware search page
+import Layout from '../../layouts/Layout.astro';
+import { translations } from '../../translations';
+
+// Generate static paths for all languages
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'it' } },
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'pt' } },
+    { params: { lang: 'ru' } },
+    { params: { lang: 'ja' } },
+    { params: { lang: 'tr' } },
+    { params: { lang: 'ar' } },
+  ];
+}
+
+const lang = Astro.params.lang || 'en';
+const t = translations[lang] || translations.en;
+
+// Search placeholder translations
+const placeholders = {
+  en: "Search products...",
+  it: "Cerca prodotti...",
+  es: "Buscar productos...",
+  fr: "Rechercher...",
+  de: "Produkte suchen...",
+  pt: "Buscar produtos...",
+  ru: "Поиск...",
+  ja: "製品を検索...",
+  tr: "Ürün ara...",
+  ar: "البحث عن المنتجات..."
+};
+
+const noResultsText = {
+  en: "No results found",
+  it: "Nessun risultato trovato",
+  es: "No se encontraron resultados",
+  fr: "Aucun résultat trouvé",
+  de: "Keine Ergebnisse gefunden",
+  pt: "Nenhum resultado encontrado",
+  ru: "Результатов не найдено",
+  ja: "結果が見つかりません",
+  tr: "Sonuç bulunamadı",
+  ar: "لم يتم العثور على نتائج"
+};
+
+const foundText = {
+  en: "Found",
+  it: "Trovato",
+  es: "Encontrado",
+  fr: "Trouvé",
+  de: "Gefunden",
+  pt: "Encontrado",
+  ru: "Найдено",
+  ja: "見つかりました",
+  tr: "Bulundu",
+  ar: "تم العثور على"
+};
+
+const resultsText = {
+  en: "results for",
+  it: "risultati per",
+  es: "resultados para",
+  fr: "résultats pour",
+  de: "Ergebnisse für",
+  pt: "resultados para",
+  ru: "результатов для",
+  ja: "の結果",
+  tr: "sonuç için",
+  ar: "نتائج لـ"
+};
+
+const tryDifferentText = {
+  en: "Try different keywords or check your spelling",
+  it: "Prova parole chiave diverse",
+  es: "Intenta con diferentes palabras clave",
+  fr: "Essayez d'autres mots-clés",
+  de: "Versuchen Sie andere Suchbegriffe",
+  pt: "Tente palavras-chave diferentes",
+  ru: "Попробуйте другие ключевые слова",
+  ja: "別のキーワードを試してください",
+  tr: "Farklı anahtar kelimeler deneyin",
+  ar: "جرب كلمات مفتاحية مختلفة"
+};
+
+const viewPageText = {
+  en: "View page",
+  it: "Vedi pagina",
+  es: "Ver página",
+  fr: "Voir la page",
+  de: "Seite ansehen",
+  pt: "Ver página",
+  ru: "Просмотр",
+  ja: "ページを見る",
+  tr: "Sayfayı görüntüle",
+  ar: "عرض الصفحة"
+};
+
+const searchTitle = {
+  en: "Search",
+  it: "Cerca",
+  es: "Buscar",
+  fr: "Recherche",
+  de: "Suche",
+  pt: "Buscar",
+  ru: "Поиск",
+  ja: "検索",
+  tr: "Ara",
+  ar: "بحث"
+};
+
+const findMoreText = {
+  en: "Find products, articles, and more",
+  it: "Trova prodotti, articoli e altro",
+  es: "Encuentra productos, artículos y más",
+  fr: "Trouvez des produits, articles et plus",
+  de: "Finden Sie Produkte, Artikel und mehr",
+  pt: "Encontre produtos, artigos e mais",
+  ru: "Найдите товары, статьи и многое другое",
+  ja: "製品、記事などを見つける",
+  tr: "Ürünler, makaleler ve daha fazlasını bulun",
+  ar: "اعثر على المنتجات والمقالات والمزيد"
+};
+
+const enterSearchText = {
+  en: "Enter a search term to find products",
+  it: "Inserisci un termine di ricerca",
+  es: "Ingresa un término de búsqueda",
+  fr: "Entrez un terme de recherche",
+  de: "Geben Sie einen Suchbegriff ein",
+  pt: "Digite um termo de busca",
+  ru: "Введите поисковый запрос",
+  ja: "検索語を入力してください",
+  tr: "Aramak için bir terim girin",
+  ar: "أدخل مصطلح البحث للعثور على المنتجات"
+};
+
+// Get search query from URL
+const url = new URL(Astro.request.url);
+const query = url.searchParams.get('q') || '';
+---
+
+<Layout title={`${searchTitle[lang]}${query ? ` - "${query}"` : ''} | KSSMI`} lang={lang}>
+  <main class="min-h-screen bg-white py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-3xl font-bold text-stone-900 mb-2">{searchTitle[lang]}</h1>
+      <p class="text-stone-600 mb-8">{findMoreText[lang]}</p>
+
+      <!-- Search Form -->
+      <form action={`/${lang}/search`} method="GET" class="mb-12">
+        <div class="flex items-center border-2 border-stone-300 rounded-lg overflow-hidden focus-within:border-[#8B7355] transition-colors">
+          <input
+            type="search"
+            name="q"
+            value={query}
+            placeholder={placeholders[lang]}
+            class="flex-grow py-4 px-6 text-lg outline-none"
+          />
+          <button type="submit" class="px-6 py-4 bg-[#8B7355] text-white hover:bg-[#5D4E37] transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </button>
+        </div>
+      </form>
+
+      <!-- Search Results Container -->
+      <div id="search-results-container">
+        {query ? (
+          <div class="text-stone-600">{searchTitle[lang]}: "<span class="font-semibold">{query}</span>"...</div>
+        ) : (
+          <div class="text-center py-16">
+            <svg class="w-16 h-16 mx-auto text-stone-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <p class="text-stone-500">{enterSearchText[lang]}</p>
+          </div>
+        )}
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script define:vars={{ query, lang, noResultsText, foundText, resultsText, tryDifferentText, viewPageText }}>
+  const resultsContainer = document.getElementById('search-results-container');
+  const noResults = noResultsText[lang] || noResultsText.en;
+  const found = foundText[lang] || foundText.en;
+  const results = resultsText[lang] || resultsText.en;
+  const tryDifferent = tryDifferentText[lang] || tryDifferentText.en;
+  const viewPage = viewPageText[lang] || viewPageText.en;
+
+  async function performSearch(searchQuery) {
+    if (!searchQuery) {
+      resultsContainer.innerHTML = `
+        <div class="text-center py-16">
+          <svg class="w-16 h-16 mx-auto text-stone-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <p class="text-stone-500">${viewPage}</p>
+        </div>
+      `;
+      return;
+    }
+
+    try {
+      const pagefindPath = '/pagefind/pagefind.js';
+      const pagefind = await import(/* @vite-ignore */ pagefindPath);
+
+      const searchResults = await pagefind.search(searchQuery);
+
+      if (searchResults.results.length === 0) {
+        resultsContainer.innerHTML = `
+          <div class="text-center py-16">
+            <svg class="w-16 h-16 mx-auto text-stone-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <h2 class="text-xl font-semibold text-stone-700 mb-2">${noResults}</h2>
+            <p class="text-stone-500">"${searchQuery}"</p>
+            <p class="text-stone-400 text-sm mt-2">${tryDifferent}</p>
+          </div>
+        `;
+        return;
+      }
+
+      // Fetch result data
+      const resultsData = await Promise.all(
+        searchResults.results.slice(0, 12).map(result => result.data())
+      );
+
+      resultsContainer.innerHTML = `
+        <div class="mb-4 text-stone-600">
+          ${found} <span class="font-semibold text-stone-900">${searchResults.results.length}</span> ${results} "<span class="font-semibold text-stone-900">${searchQuery}</span>"
+        </div>
+        <div class="grid gap-4">
+          ${resultsData.map(data => `
+            <a href="${data.url}" class="block p-6 bg-stone-50 rounded-lg hover:bg-stone-100 transition-colors border border-stone-200 hover:border-[#8B7355]">
+              <h3 class="text-lg font-semibold text-stone-900 mb-2 hover:text-[#8B7355]">${data.meta.title || 'Untitled'}</h3>
+              <p class="text-stone-600 line-clamp-2">${data.meta.excerpt || ''}</p>
+              <span class="text-[#8B7355] text-sm mt-2 inline-block">${viewPage} →</span>
+            </a>
+          `).join('')}
+        </div>
+      `;
+    } catch (error) {
+      console.error('Search error:', error);
+      resultsContainer.innerHTML = `
+        <div class="text-center py-16">
+          <p class="text-red-600">Search is not available. Please run <code class="bg-stone-100 px-2 py-1 rounded">npm run build</code> first.</p>
+        </div>
+      `;
+    }
+  }
+
+  // Run search on page load if query exists
+  if (query) {
+    performSearch(query);
+  }
+</script>

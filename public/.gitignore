@@ -1,0 +1,9 @@
+# Email logs (sensitive data)
+email-logs.json
+
+# Composer vendor folder (install on server)
+# Uncomment the line below if you don't want to commit vendor to git
+# vendor/
+
+# Keep vendor in git for easy deployment
+# (PHPMailer is needed for the form to work)

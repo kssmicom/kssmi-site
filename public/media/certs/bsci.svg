@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 40">
+  <rect width="80" height="40" rx="4" fill="#2e7d32"/>
+  <text x="40" y="20" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">BSCI</text>
+  <text x="40" y="32" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="6" opacity="0.9">Social Compliance</text>
+</svg>

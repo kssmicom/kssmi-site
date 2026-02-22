@@ -1,0 +1,117 @@
+---
+import '../styles/global.css';
+import { ViewTransitions } from 'astro:transitions';
+
+// Props
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  lang?: string;
+  canonical?: string;
+  type?: 'website' | 'product' | 'article';
+}
+
+const {
+  title,
+  description = "Premium B2B eyewear manufacturing from China. Acetate and Titanium frames for global export.",
+  image = "/media/global/logo.png",
+  lang = 'en',
+  canonical,
+  type = 'website'
+} = Astro.props;
+
+// Detect if language is Right-to-Left (Arabic)
+const isRTL = lang === 'ar';
+const dir = isRTL ? 'rtl' : 'ltr';
+
+// Get current path without language prefix for hreflang
+const currentPath = Astro.url.pathname.replace(`/${lang}/`, '');
+
+// All supported languages
+const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar'];
+
+// Organization Schema (Google Knowledge Graph)
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "KSSMI Eyewear",
+  "url": "https://kssmi.com",
+  "logo": "https://kssmi.com/media/global/logo.png",
+  "sameAs": [
+    "https://linkedin.com/company/kssmi",
+    "https://facebook.com/kssmi"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+86-123-456-7890",
+    "contactType": "sales",
+    "areaServed": ["US", "EU", "IT", "FR", "DE", "JP", "TR", "RU", "CN", "BR", "PT"]
+  }
+};
+---
+
+<!doctype html>
+<html lang={lang} dir={dir}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={image} />
+  <meta property="og:type" content={type} />
+
+  <!-- Canonical URL -->
+  {canonical && <link rel="canonical" href={canonical} />}
+
+  <!-- Hreflang Tags for Multilingual SEO -->
+  {languages.map((l) => (
+    <link
+      rel="alternate"
+      hreflang={l}
+      href={`https://kssmi.com/${l === 'en' ? '' : l + '/'}${currentPath}`}
+    />
+  ))}
+  <link rel="alternate" hreflang="x-default" href={`https://kssmi.com/${currentPath}`} />
+
+  <!-- View Transitions for SPA-like speed -->
+  <ViewTransitions />
+
+  <!-- Google Fonts: Manrope (Headings), Plus Jakarta Sans (Body), Inter (Alt), Noto Sans Arabic (Arabic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  {isRTL && (
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
+  )}
+
+  <!-- Organization Schema for Google Graph -->
+  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+</head>
+<body class="font-sans antialiased">
+  <style define:vars={{
+    '--font-sans': "'Plus Jakarta Sans', sans-serif",
+    '--font-heading': "'Manrope', sans-serif",
+    '--font-arabic': "'Noto Sans Arabic', sans-serif"
+  }}>
+    /* Base styles */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Default Latin Font */
+    body {
+      font-family: var(--font-sans);
+    }
+
+    /* RTL-aware spacing */
+    :dir(rtl) {
+      /* Arabic-specific overrides if needed */
+    }
+  </style>
+  <slot />
+</body>
+</html>

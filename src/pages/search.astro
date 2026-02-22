@@ -1,0 +1,123 @@
+---
+// English search page (default locale)
+import Layout from '../layouts/Layout.astro';
+import { translations } from '../translations';
+
+const t = translations.en;
+
+// Get search query from URL
+const url = new URL(Astro.request.url);
+const query = url.searchParams.get('q') || '';
+---
+
+<Layout title={`Search Results${query ? ` for "${query}"` : ''} | KSSMI`} lang="en">
+  <main class="min-h-screen bg-white py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-3xl font-bold text-stone-900 mb-2">Search</h1>
+      <p class="text-stone-600 mb-8">Find products, articles, and more</p>
+
+      <!-- Search Form -->
+      <form action="/search" method="GET" class="mb-12">
+        <div class="flex items-center border-2 border-stone-300 rounded-lg overflow-hidden focus-within:border-[#8B7355] transition-colors">
+          <input
+            type="search"
+            name="q"
+            value={query}
+            placeholder="Search products..."
+            class="flex-grow py-4 px-6 text-lg outline-none"
+          />
+          <button type="submit" class="px-6 py-4 bg-[#8B7355] text-white hover:bg-[#5D4E37] transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </button>
+        </div>
+      </form>
+
+      <!-- Search Results Container -->
+      <div id="search-results-container">
+        {query ? (
+          <div class="text-stone-600">Searching for "<span class="font-semibold">{query}</span>"...</div>
+        ) : (
+          <div class="text-center py-16">
+            <svg class="w-16 h-16 mx-auto text-stone-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <p class="text-stone-500">Enter a search term to find products</p>
+          </div>
+        )}
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script define:vars={{ query }}>
+  const resultsContainer = document.getElementById('search-results-container');
+
+  async function performSearch(searchQuery) {
+    if (!searchQuery) {
+      resultsContainer.innerHTML = `
+        <div class="text-center py-16">
+          <svg class="w-16 h-16 mx-auto text-stone-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <p class="text-stone-500">Enter a search term to find products</p>
+        </div>
+      `;
+      return;
+    }
+
+    try {
+      const pagefindPath = '/pagefind/pagefind.js';
+      const pagefind = await import(/* @vite-ignore */ pagefindPath);
+
+      const results = await pagefind.search(searchQuery);
+
+      if (results.results.length === 0) {
+        resultsContainer.innerHTML = `
+          <div class="text-center py-16">
+            <svg class="w-16 h-16 mx-auto text-stone-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <h2 class="text-xl font-semibold text-stone-700 mb-2">No results found</h2>
+            <p class="text-stone-500">We couldn't find anything matching "${searchQuery}"</p>
+            <p class="text-stone-400 text-sm mt-2">Try different keywords or check your spelling</p>
+          </div>
+        `;
+        return;
+      }
+
+      // Fetch result data
+      const resultsData = await Promise.all(
+        results.results.slice(0, 12).map(result => result.data())
+      );
+
+      resultsContainer.innerHTML = `
+        <div class="mb-4 text-stone-600">
+          Found <span class="font-semibold text-stone-900">${results.results.length}</span> result${results.results.length !== 1 ? 's' : ''} for "<span class="font-semibold text-stone-900">${searchQuery}</span>"
+        </div>
+        <div class="grid gap-4">
+          ${resultsData.map(data => `
+            <a href="${data.url}" class="block p-6 bg-stone-50 rounded-lg hover:bg-stone-100 transition-colors border border-stone-200 hover:border-[#8B7355]">
+              <h3 class="text-lg font-semibold text-stone-900 mb-2 hover:text-[#8B7355]">${data.meta.title || 'Untitled'}</h3>
+              <p class="text-stone-600 line-clamp-2">${data.meta.excerpt || data.raw_content?.slice(0, 200) || ''}</p>
+              <span class="text-[#8B7355] text-sm mt-2 inline-block">View page →</span>
+            </a>
+          `).join('')}
+        </div>
+      `;
+    } catch (error) {
+      console.error('Search error:', error);
+      resultsContainer.innerHTML = `
+        <div class="text-center py-16">
+          <p class="text-red-600">Search is not available. Please run <code class="bg-stone-100 px-2 py-1 rounded">npm run build</code> first.</p>
+        </div>
+      `;
+    }
+  }
+
+  // Run search on page load if query exists
+  if (query) {
+    performSearch(query);
+  }
+</script>

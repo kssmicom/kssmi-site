@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 40">
+  <rect width="80" height="40" rx="4" fill="#1a5f7a"/>
+  <text x="40" y="17" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">ISO 9001</text>
+  <text x="40" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="7" opacity="0.9">Quality Management</text>
+</svg>

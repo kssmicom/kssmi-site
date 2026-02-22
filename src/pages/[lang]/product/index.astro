@@ -1,0 +1,249 @@
+---
+/**
+ * Products Index Page (Multilingual)
+ * Shows first 12 products for each language with pagination link
+ */
+
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import ProductCard from '../../../components/ProductCard.astro';
+import { translations } from '../../../translations';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const allProducts = await getCollection('products');
+  // English is handled at root level, so exclude from [lang] routes
+  const languages = ['it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar'];
+
+  return languages.map((lang) => {
+    // ID format: "kso-001.en" -> extract "en" by splitting on "."
+    const langProducts = allProducts.filter((product) => {
+      const parts = product.id.split('.');
+      const productLang = parts.length > 1 ? parts.pop() : 'en';
+      return productLang === lang;
+    });
+
+    // Sort by date (newest first) and then by featured
+    const sortedProducts = langProducts.sort((a, b) => {
+      if (a.data.featured && !b.data.featured) return -1;
+      if (!a.data.featured && b.data.featured) return 1;
+      const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
+      const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
+      return dateB - dateA;
+    });
+
+    return {
+      params: { lang },
+      props: { products: sortedProducts, lang }
+    };
+  });
+}
+
+const { products: allProducts, lang } = Astro.props;
+
+// Show first 12 products on index page
+const products = allProducts.slice(0, 12);
+
+const t = translations[lang] || translations.en;
+const currentPath = `${lang}/`;
+const isRTL = lang === 'ar';
+
+const pt = t.product || {
+  viewAllCollections: "View All Collections",
+  allProducts: "All Products",
+};
+
+// Sidebar Categories - Matches Header Mega Menu Structure
+const sidebarCategories = [
+  {
+    label: t.nav.luxury,
+    href: `/${currentPath}product/luxury-customized`,
+    items: [
+      { label: t.nav.luxury_sunglasses, href: `/${currentPath}product/luxury-sunglasses` },
+      { label: t.nav.luxury_glasses, href: `/${currentPath}product/luxury-glasses` }
+    ]
+  },
+  {
+    label: t.nav.couture,
+    href: `/${currentPath}product/haute-couture-series`,
+    items: [
+      { label: t.nav.couture_sunglasses, href: `/${currentPath}product/haute-couture-sunglasses` },
+      { label: t.nav.couture_glasses, href: `/${currentPath}product/haute-couture-glasses` }
+    ]
+  },
+  {
+    label: t.nav.classics,
+    href: `/${currentPath}product/classics-series`,
+    items: [
+      { label: t.nav.classics_sunglasses, href: `/${currentPath}product/classics-sunglasses` },
+      { label: t.nav.classics_glasses, href: `/${currentPath}product/classics-glasses` }
+    ]
+  },
+  {
+    label: t.nav.fashion,
+    href: `/${currentPath}product/fashion-series`,
+    items: [
+      { label: t.nav.acetate_sun, href: `/${currentPath}product/acetate-sunglasses` },
+      { label: t.nav.metal_sun, href: `/${currentPath}product/metal-sunglasses` },
+      { label: t.nav.metal_glass, href: `/${currentPath}product/metal-glasses` },
+      { label: t.nav.titanium_sun, href: `/${currentPath}product/titanium-sunglasses` },
+      { label: t.nav.titanium_glass, href: `/${currentPath}product/titanium-glasses` }
+    ]
+  },
+  {
+    label: t.nav.rimless,
+    href: `/${currentPath}product/rimless-series`,
+    items: [
+      { label: t.nav.rimless_sun, href: `/${currentPath}product/rimless-sunglasses` },
+      { label: t.nav.rimless_glass, href: `/${currentPath}product/rimless-glasses` }
+    ]
+  },
+  {
+    label: t.nav.carbon,
+    href: `/${currentPath}product/carbon-series`,
+    items: [
+      { label: t.nav.carbon_sun, href: `/${currentPath}product/carbon-sunglasses` },
+      { label: t.nav.carbon_glass, href: `/${currentPath}product/carbon-glasses` }
+    ]
+  }
+];
+
+// Check if there are more pages
+const hasMore = allProducts.length > 12;
+---
+
+<Layout title={t.nav.products} lang={lang}>
+  <Header lang={lang} />
+
+  <main class="w-full min-h-screen py-12 lg:py-16 bg-gray-50">
+    <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
+      <!-- Page Header -->
+      <div class="mb-10">
+        <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+          {t.nav.products}
+        </h1>
+        <p class="text-gray-600">
+          {allProducts.length} {allProducts.length === 1 ? 'product' : 'products'} available
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Sidebar: Category Filter (Hidden on mobile/tablet) -->
+        <aside class="hidden lg:block lg:col-span-1">
+          <div class="sticky top-24 space-y-6">
+            <!-- Categories Card -->
+            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+              <!-- All Products Link -->
+              <a
+                href={`/${currentPath}product`}
+                class="flex justify-between items-center py-2 px-3 rounded-lg bg-[#8B7355] text-white mb-3"
+              >
+                <span class="font-medium">{pt.allProducts || 'All Products'}</span>
+                <span class="text-xs bg-white/20 px-2 py-1 rounded-full">
+                  {allProducts.length}
+                </span>
+              </a>
+
+              <!-- Category Groups with Sub-categories -->
+              <div class="space-y-3">
+                {sidebarCategories.map((cat) => (
+                  <div class="border-b border-gray-100 pb-3 last:border-0 last:pb-0">
+                    <!-- Main Category -->
+                    <a
+                      href={cat.href}
+                      class="flex items-center justify-between py-2 px-2 text-sm font-bold text-[#8B7355] hover:bg-stone-50 rounded-lg transition-colors"
+                    >
+                      <span>{cat.label}</span>
+                      <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </a>
+                    <!-- Sub-categories -->
+                    <ul class="ms-3 mt-1 space-y-1">
+                      {cat.items.map((sub) => (
+                        <li>
+                          <a
+                            href={sub.href}
+                            class="block py-1.5 px-2 text-sm text-gray-600 hover:text-[#8B7355] hover:bg-stone-50 rounded transition-colors"
+                          >
+                            {sub.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <!-- CTA Card - Always visible below categories -->
+            <div class="bg-[#8B7355] rounded-xl p-6 text-white">
+              <h4 class="font-bold mb-2">{pt.needCustomEyewear || 'Need Custom Eyewear?'}</h4>
+              <p class="text-sm text-white/80 mb-4">
+                {pt.oemServices || 'We offer full OEM & ODM services for your brand.'}
+              </p>
+              <a
+                href={`/${currentPath}contact`}
+                class="inline-block bg-white text-[#8B7355] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-100 transition-colors"
+              >
+                {t.cta.quote || 'Get Quote'}
+              </a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Product Grid -->
+        <div class="col-span-1 lg:col-span-3">
+          {products.length === 0 ? (
+            <div class="text-center py-16 bg-white rounded-xl shadow-sm">
+              <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+              <p class="text-gray-500 mb-4">{pt.noProducts || 'No products available yet.'}</p>
+              <a
+                href={`/${currentPath}`}
+                class="text-[#8B7355] hover:underline"
+              >
+                {pt.returnHome || 'Return to Homepage'}
+              </a>
+            </div>
+          ) : (
+            <>
+              <!-- Results Info -->
+              <div class="flex justify-between items-center mb-6 text-sm text-gray-500">
+                <span>
+                  Showing 1-{products.length} of {allProducts.length} products
+                </span>
+              </div>
+
+              <!-- Products Grid -->
+              <div class="grid grid-cols-2 xl:grid-cols-3 gap-4 xl:gap-6">
+                {products.map((product) => (
+                  <ProductCard product={product} lang={lang} />
+                ))}
+              </div>
+
+              <!-- Pagination / Load More -->
+              {hasMore && (
+                <div class="mt-12 text-center">
+                  <a
+                    href={`/${currentPath}product/2`}
+                    class="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#8B7355] text-[#8B7355] rounded-lg font-semibold hover:bg-[#8B7355] hover:text-white transition-colors"
+                  >
+                    <span>{pt.loadMore || 'Load More Products'}</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </a>
+                </div>
+              )}
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

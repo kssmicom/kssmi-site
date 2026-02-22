@@ -1,0 +1,241 @@
+---
+// Language-aware Footer with Floating Actions (WordPress-style)
+interface Props {
+  lang?: string;
+}
+
+const lang = Astro.props.lang || 'en';
+const isRTL = lang === 'ar';
+
+// Get translation file for UI text
+import { translations } from '../translations';
+const t = translations[lang] || translations.en;
+
+// Current path for language-aware URLs
+const currentPath = lang === 'en' ? '' : `${lang}/`;
+
+// "Eyewear" translations for all 10 languages
+const eyewearLabels = {
+  en: 'Eyewear', it: 'Occhiali', es: 'Gafas', fr: 'Lunettes',
+  de: 'Brillen', pt: 'Óculos', ru: 'Очки', ja: '眼鏡',
+  tr: 'Gözlük', ar: 'نظارات'
+};
+
+const eyewearText = eyewearLabels[lang] || 'Eyewear';
+
+// Contact info
+const contactEmail = 'sales@kssmi.com';
+const whatsappNum = '8613510532553';
+
+// Quick Links Menu
+const quickLinks = [
+  { label: t.footer.about, href: `/${currentPath}about` },
+  { label: t.footer.manufacturing, href: `/${currentPath}manufacturing` },
+  { label: t.footer.collection, href: `/${currentPath}collection` },
+  { label: t.footer.support, href: `/${currentPath}support` },
+  { label: t.footer.contact, href: `/${currentPath}contact` },
+  { label: t.footer.privacy, href: `/${currentPath}privacy` },
+];
+
+// Products Category Menu - Using clean URLs
+const categoryLinks = [
+  { label: t.footer.luxury, href: `/${currentPath}products/luxury` },
+  { label: t.footer.couture, href: `/${currentPath}products/couture` },
+  { label: t.footer.classics, href: `/${currentPath}products/classics` },
+  { label: t.footer.fashion, href: `/${currentPath}products/fashion` },
+  { label: t.footer.carbon, href: `/${currentPath}products/carbon` },
+];
+
+// Current year for copyright
+const currentYear = new Date().getFullYear();
+---
+
+<!-- LAYER 1: WRAPPER (Full Width Background) -->
+<footer class="w-full bg-[#1c1917] text-stone-400 py-16 md:py-20 border-t border-stone-800 mt-auto relative z-10 print:hidden">
+
+  <!-- LAYER 2: CONSTRAINT (Matches Header Max Width 1860px) -->
+  <div class="w-full max-w-[1860px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+    <!-- LAYER 3: BLOCK (Grid Container) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+      <!-- COLUMN 1: BRAND & INTRO -->
+      <div class="space-y-8">
+        <div class="flex flex-col">
+          <span class="text-2xl md:text-3xl font-bold text-white tracking-tight leading-none font-['Manrope']">
+            KSSMI
+          </span>
+          <div class={`flex items-center gap-2 mt-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
+            <span class="h-[1px] w-6 bg-stone-500"></span>
+            <span class="text-[10px] font-bold uppercase tracking-[0.25em] text-stone-500">
+              {eyewearText}
+            </span>
+          </div>
+        </div>
+        <p class="text-sm leading-relaxed text-stone-500 max-w-xs">
+          {t.footer.brandDesc}
+        </p>
+        <!-- Social Icons -->
+        <div class="flex gap-5">
+          <a href="#" class="text-stone-500 hover:text-[#0A66C2] transition-colors hover:-translate-y-1 duration-300" aria-label="LinkedIn">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="#" class="text-stone-500 hover:text-[#E4405F] transition-colors hover:-translate-y-1 duration-300" aria-label="Instagram">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" class="text-stone-500 hover:text-[#1877F2] transition-colors hover:-translate-y-1 duration-300" aria-label="Facebook">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- COLUMN 2: QUICK LINKS -->
+      <div>
+        <h4 class="text-white font-['Manrope'] font-bold uppercase tracking-[0.2em] text-xs mb-6">
+          {t.footer.quickLinksTitle}
+        </h4>
+        <ul class="space-y-4 text-sm">
+          {quickLinks.map((item) => (
+            <li>
+              <a href={item.href} class="hover:text-[#b45309] transition-colors group flex items-center gap-2 text-stone-400">
+                <span class="w-1 h-1 bg-stone-600 rounded-full group-hover:bg-[#b45309] transition-colors flex-shrink-0"></span>
+                <span>{item.label}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- COLUMN 3: CATEGORY -->
+      <div>
+        <h4 class="text-white font-['Manrope'] font-bold uppercase tracking-[0.2em] text-xs mb-6">
+          {t.footer.productsTitle}
+        </h4>
+        <ul class="space-y-4 text-sm">
+          {categoryLinks.map((item) => (
+            <li>
+              <a href={item.href} class="hover:text-[#b45309] transition-colors group flex items-center gap-2 text-stone-400">
+                <span class="w-1 h-1 bg-stone-600 rounded-full group-hover:bg-[#b45309] transition-colors flex-shrink-0"></span>
+                <span>{item.label}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- COLUMN 4: CONTACT -->
+      <div>
+        <h4 class="text-white font-['Manrope'] font-bold uppercase tracking-[0.2em] text-xs mb-6">
+          {t.footer.factoryTitle}
+        </h4>
+        <p class="text-sm text-stone-500 leading-relaxed mb-4">
+          Kssmi Eyewear Co., Ltd.<br>
+          Bldg. 2, Baiwangda Health Tech Park, Yuanshan St.,<br>
+          Longgang Dist., Shenzhen, Guangdong, China.
+        </p>
+        <p class="text-sm text-stone-500 mb-4">
+          {t.footer.postcode}: 518172
+        </p>
+        <a href="#" class="text-[#b45309] font-bold text-sm hover:text-white transition-colors flex items-center gap-2">
+          {contactEmail}
+        </a>
+      </div>
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-stone-600 gap-4">
+      <p>&copy; {currentYear} Kssmi Eyewear Co., Ltd. {t.footer.rights}</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING ACTION BUTTONS (Sticky Sidebar) -->
+<div class={`fixed ${isRTL ? 'left-4' : 'right-4'} bottom-24 z-[9999] flex flex-col gap-4 print:hidden`}>
+
+  <!-- Quote Button -->
+  <a href={`/${currentPath}quote`}
+     title={t.floating.inquiry}
+     class="w-12 h-12 md:w-14 md:h-14 flex-none bg-[#7c3aed] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:-translate-x-1 transition-all duration-300 group relative">
+    <svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+    </svg>
+    <span class={`absolute ${isRTL ? 'left-full ml-3' : 'right-full mr-3'} bg-stone-900 text-white text-[10px] font-bold uppercase tracking-widest py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none`}>
+      {t.floating.inquiry}
+    </span>
+  </a>
+
+  <!-- Email Button -->
+  <a href={`mailto:${contactEmail}`}
+     title={t.floating.email}
+     class="w-12 h-12 md:w-14 md:h-14 flex-none bg-[#0891b2] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:-translate-x-1 transition-all duration-300 group relative">
+    <svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+    </svg>
+    <span class={`absolute ${isRTL ? 'left-full ml-3' : 'right-full mr-3'} bg-stone-900 text-white text-[10px] font-bold uppercase tracking-widest py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none`}>
+      {t.floating.email}
+    </span>
+  </a>
+
+  <!-- WhatsApp Button -->
+  <a href={`https://wa.me/${whatsappNum}`}
+     target="_blank"
+     title={t.floating.whatsapp}
+     class="w-12 h-12 md:w-14 md:h-14 flex-none bg-[#22C55E] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:-translate-x-1 transition-all duration-300 group relative">
+    <svg class="w-7 h-7 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span class={`absolute ${isRTL ? 'left-full ml-3' : 'right-full mr-3'} bg-stone-900 text-white text-[10px] font-bold uppercase tracking-widest py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none`}>
+      {t.floating.whatsapp}
+    </span>
+  </a>
+
+  <!-- Scroll Top Button -->
+  <button id="scrollTopBtn"
+          class="w-12 h-12 md:w-14 md:h-14 flex-none bg-[#F97316] text-white rounded-full shadow-lg items-center justify-center hover:scale-110 hover:-translate-y-1 transition-all duration-300 hidden group relative">
+    <svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+    </svg>
+    <span class={`absolute ${isRTL ? 'left-full ml-3' : 'right-full mr-3'} bg-stone-900 text-white text-[10px] font-bold uppercase tracking-widest py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none`}>
+      {t.floating.backToTop}
+    </span>
+  </button>
+</div>
+
+<script>
+  // Scroll Top Button Logic - Works with View Transitions
+  function initScrollTopButton() {
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    if (!scrollTopBtn) return;
+
+    // Check scroll position and update button visibility
+    function updateButtonVisibility() {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.remove('hidden');
+        scrollTopBtn.classList.add('flex');
+      } else {
+        scrollTopBtn.classList.add('hidden');
+        scrollTopBtn.classList.remove('flex');
+      }
+    }
+
+    // Remove existing listener if any (prevent duplicates)
+    window.removeEventListener('scroll', updateButtonVisibility);
+
+    // Add scroll listener
+    window.addEventListener('scroll', updateButtonVisibility, { passive: true });
+
+    // Handle click
+    scrollTopBtn.onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    // Initial check
+    updateButtonVisibility();
+  }
+
+  // Initialize on first load
+  initScrollTopButton();
+
+  // Re-initialize after View Transitions navigation
+  document.addEventListener('astro:page-load', initScrollTopButton);
+</script>

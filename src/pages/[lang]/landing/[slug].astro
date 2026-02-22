@@ -1,0 +1,136 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import { translations } from '../../../translations';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const landing = await getCollection('landing');
+  return landing.map(page => {
+    const { slug, lang } = page.data;
+    return {
+      params: { lang, slug },
+      props: { page },
+    };
+  });
+}
+
+const { page } = Astro.props;
+const { lang } = Astro.params;
+const { title, slug, data } = page;
+const { layout, cta, ctaLink, image } = data;
+const t = translations[lang] || translations.en;
+
+const currentPath = lang === 'en' ? '' : `${lang}/`;
+---
+
+<Layout title={title} lang={lang} image={image}>
+  <Header lang={lang} />
+
+  <!-- LAYER 1: WRAPPER -->
+  <main class="w-full min-h-screen">
+    {layout === 'full-width' ? (
+      // Full-width layout
+      <div class="relative">
+        {image && (
+          <div class="absolute inset-0 z-0">
+            <img
+              src={image}
+              alt={title}
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-black/60"></div>
+          </div>
+        )}
+
+        <!-- LAYER 2: CONSTRAINT -->
+        <div class="relative z-10 w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 py-24">
+          <div class="max-w-3xl">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+              {title}
+            </h1>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              {cta && (
+                <a
+                  href={ctaLink || `/${currentPath}contact`}
+                  class="inline-flex items-center px-8 py-4 bg-[#8B7355] text-white font-semibold rounded-lg hover:bg-[#5D4E37] transition-colors duration-200"
+                >
+                  {cta}
+                </a>
+              )}
+              <a
+                href={`/${currentPath}products`}
+                class="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-gray-900 transition-colors duration-200"
+              >
+                {t.nav.products}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    ) : (
+      // With sidebar layout - LAYER 2: CONSTRAINT
+      <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <!-- Main Content -->
+          <div class="lg:col-span-3">
+            {image && (
+              <div class="mb-8 rounded-xl overflow-hidden shadow-lg">
+                <img
+                      src={image}
+                      alt={title}
+                      class="w-full h-auto"
+                    />
+              </div>
+            )}
+
+            <h1 class="text-4xl font-bold text-gray-900 mb-6">
+              {title}
+            </h1>
+
+            <div class="prose prose-lg max-w-none">
+              <slot />
+            </div>
+
+            {cta && (
+              <a
+                    href={ctaLink || `/${currentPath}contact`}
+                    class="inline-flex items-center px-8 py-4 bg-[#8B7355] text-white font-semibold rounded-lg hover:bg-[#5D4E37] transition-colors duration-200"
+                  >
+                    {cta}
+                  </a>
+            )}
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="lg:col-span-1">
+            <div class="bg-stone-50 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-gray-900 mb-4">
+                Quick Links
+              </h3>
+              <ul class="space-y-2">
+                <li><a href={`/${currentPath}products`} class="text-gray-700 hover:text-[#8B7355]">{t.nav.products}</a></li>
+                <li><a href={`/${currentPath}collection`} class="text-gray-700 hover:text-[#8B7355]">{t.nav.collection}</a></li>
+                <li><a href={`/${currentPath}about`} class="text-gray-700 hover:text-[#8B7355]">{t.nav.about}</a></li>
+                <li><a href={`/${currentPath}contact`} class="text-gray-700 hover:text-[#8B7355]">{t.nav.contact}</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    )}
+  </main>
+
+  <Footer lang={lang} />
+</Layout>
+
+<style>
+  .prose {
+    --tw-prose-body: #a8a29f;
+    --tw-prose-headings: #18181b;
+    --tw-prose-links: #8B7355;
+    --tw-prose-bold: 700;
+  }
+</style>

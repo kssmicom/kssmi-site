@@ -1,0 +1,120 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import { translations } from '../../../translations';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => {
+    const { slug, lang } = post.data;
+    return {
+      params: { lang, slug },
+      props: { post, lang },  // Pass lang in props too!
+    };
+  });
+}
+
+const { post } = Astro.props;
+const { lang } = Astro.params;
+const { title, slug, data } = post;
+const { excerpt, image, published, author, tags, render } = data;
+const t = translations[lang] || translations.en;
+
+const currentPath = lang === 'en' ? '' : `${lang}/`;
+
+// Blog Schema
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "image": image,
+  "datePublished": published,
+  "author": {
+    "@type": "Person",
+    "name": author
+  }
+};
+---
+
+<Layout title={title} lang={lang} image={image}>
+  <!-- Schema for SEO -->
+  <script type="application/ld+json" set:html={JSON.stringify(blogSchema)} />
+
+  <Header lang={lang} />
+
+  <!-- LAYER 1: WRAPPER -->
+  <main class="w-full min-h-screen py-12 lg:py-20 border-b border-stone-100 relative z-10">
+    <!-- LAYER 2: CONSTRAINT -->
+    <article class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[800px] mx-auto">
+      <!-- Blog Header -->
+      <header class="mb-12">
+        <div class="flex items-center gap-4 text-sm text-gray-500 mb-4">
+          <a href={`/${currentPath}blog`} class="hover:text-[#8B7355]">
+            ← {t.nav.collection}
+          </a>
+          <span>/</span>
+          <span class="text-[#8B7355] font-medium">{title}</span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          {title}
+        </h1>
+
+        <div class="flex flex-wrap items-center gap-4 text-gray-600">
+          {author && <span>By {author}</span>}
+          {published && <span>• {new Date(published).toLocaleDateString(lang, {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })}</span>}
+        </div>
+
+        {excerpt && (
+          <p class="text-xl text-gray-700 leading-relaxed border-l-4 border-gray-200 pl-4">
+            {excerpt}
+          </p>
+        )}
+      </header>
+
+      <!-- Featured Image -->
+      {image && (
+        <div class="mb-12 rounded-xl overflow-hidden shadow-lg">
+          <img
+            src={image}
+            alt={title}
+            class="w-full h-auto"
+          />
+        </div>
+      )}
+
+      <!-- Tags -->
+      {tags && tags.length > 0 && (
+        <div class="mb-8 flex flex-wrap gap-2">
+          {tags.map(tag => (
+            <span class="px-4 py-2 bg-stone-100 text-stone-700 text-sm rounded-full">
+              #{tag}
+            </span>
+          ))}
+        </div>
+      )}
+
+      <!-- Content -->
+      <div class="prose prose-lg max-w-none">
+        <slot />
+      </div>
+    </article>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>
+
+<style>
+  .prose {
+    --tw-prose-body: #a8a29f;
+    --tw-prose-headings: #18181b;
+    --tw-prose-links: #8B7355;
+    --tw-prose-bold: 700;
+  }
+</style>

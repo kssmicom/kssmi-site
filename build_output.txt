@@ -1,0 +1,45 @@
+
+> kssmi-site@0.0.1 build
+> astro build
+
+[2m15:02:19[22m [34m[content][39m Syncing content
+[33m[1m15:02:19[22m [WARN] [glob-loader][39m No files found matching "**/*.md,!**/_*/**/*.md,!**/_*.md" in directory "src\content\landing"
+[33m[1m15:02:19[22m [WARN] [glob-loader][39m No files found matching "**/*.md,!**/_*/**/*.md,!**/_*.md" in directory "src\content\blog"
+[33m[1m15:02:19[22m [WARN] [glob-loader][39m Duplicate id "yeto-021-montature-acetato" found in D:\003 Desk\Desk\Tools\Kssmi\kssmi-site\src\content\products\yeto-021\it.md. Later items with the same id will overwrite earlier ones.
+[33m[1m15:02:19[22m [WARN] [glob-loader][39m Duplicate id "yeto-021-acetate-frames" found in D:\003 Desk\Desk\Tools\Kssmi\kssmi-site\src\content\products\yeto-021\ar.md. Later items with the same id will overwrite earlier ones.
+[2m15:02:19[22m [34m[content][39m Synced content
+[2m15:02:19[22m [34m[types][39m Generated [2m415ms[22m
+[2m15:02:19[22m [34m[build][39m output: [34m"static"[39m
+[2m15:02:19[22m [34m[build][39m mode: [34m"static"[39m
+[2m15:02:19[22m [34m[build][39m directory: [34mD:\003 Desk\Desk\Tools\Kssmi\kssmi-site\dist\[39m
+[2m15:02:19[22m [34m[build][39m Collecting build info...
+[2m15:02:19[22m [34m[build][39m [32m✓ Completed in 435ms.[39m
+[2m15:02:19[22m [34m[build][39m Building static entrypoints...
+[2m15:02:20[22m [34m[vite][39m [32m✓ built in 792ms[39m
+[2m15:02:20[22m [34m[build][39m [32m✓ Completed in 819ms.[39m
+
+[42m[30m building client (vite) [39m[49m
+[2m15:02:20[22m [34m[vite][39m transforming...
+[2m15:02:20[22m [34m[vite][39m [32m✓[39m 14 modules transformed.
+[2m15:02:20[22m [34m[vite][39m rendering chunks...
+[2m15:02:20[22m [34m[vite][39m computing gzip size...
+[2m15:02:20[22m [34m[vite][39m [2mdist/[22m[36m_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js  [39m[1m[2m15.36 kB[22m[1m[22m[2m │ gzip: 5.28 kB[22m
+[2m15:02:20[22m [34m[vite][39m [32m✓ built in 89ms[39m
+
+[42m[30m generating static routes [39m[49m
+[2m15:02:20[22m [32m▶[39m src/pages/[lang]/blog/page.astro
+The collection "blog" does not exist or is empty. Please check your content config file for errors.
+[31m[1m15:02:20[22m [ERROR] [build][39m Failed to call getStaticPaths for src/pages/[lang]/blog/page.astro
+[31m[PageNumberParamNotFound][39m [paginate()] page number param `page` not found in your filepath.
+  [1mHint:[22m
+[33m    Rename your file to `[page].astro` or `[...page].astro`.[39m
+  [1mError reference:[22m
+    [36m[4mhttps://docs.astro.build/en/reference/errors/page-number-param-not-found/[24m[39m
+  [1mLocation:[22m
+    [4mD:\003 Desk\Desk\Tools\Kssmi\kssmi-site\node_modules\astro\dist\core\render\paginate.js:16:13[24m
+  [1mStack trace:[22m
+[2m    at paginateUtility (file:///D:/003%20Desk/Desk/Tools/Kssmi/kssmi-site/node_modules/astro/dist/core/render/paginate.js:16:13)
+    at Array.flatMap (<anonymous>)
+    at async callGetStaticPaths (file:///D:/003%20Desk/Desk/Tools/Kssmi/kssmi-site/node_modules/astro/dist/core/render/route-cache.js:29:17)
+    at async generatePage (file:///D:/003%20Desk/Desk/Tools/Kssmi/kssmi-site/node_modules/astro/dist/core/build/generate.js:181:19)
+    at async staticBuild (file:///D:/003%20Desk/Desk/Tools/Kssmi/kssmi-site/node_modules/astro/dist/core/build/static-build.js:87:5)[22m

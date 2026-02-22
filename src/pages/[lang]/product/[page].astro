@@ -1,0 +1,282 @@
+---
+/**
+ * Products Listing Page
+ * Displays all products with pagination (12 per page)
+ * Includes category filter sidebar
+ */
+
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import ProductCard from '../../../components/ProductCard.astro';
+import { translations } from '../../../translations';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+
+export async function getStaticPaths({ paginate }) {
+  const PAGE_SIZE = 12;
+  const allProducts = await getCollection('products');
+  // English is handled at root level, so exclude from [lang] routes
+  const languages = ['it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar'];
+
+  // Generate paginated pages for EACH language separately
+  return languages.flatMap((lang) => {
+    // Filter products for this specific language
+    // ID format: "kso-001.en" -> extract "en" by splitting on "."
+    const langProducts = allProducts.filter((product) => {
+      const parts = product.id.split('.');
+      const productLang = parts.length > 1 ? parts.pop() : 'en';
+      return productLang === lang;
+    });
+
+    // Sort by date (newest first) and then by featured
+    const sortedProducts = langProducts.sort((a, b) => {
+      if (a.data.featured && !b.data.featured) return -1;
+      if (!a.data.featured && b.data.featured) return 1;
+      const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
+      const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
+      return dateB - dateA;
+    });
+
+    // Paginate ONLY this language's products
+    return paginate(sortedProducts, {
+      params: { lang },
+      pageSize: PAGE_SIZE
+    });
+  });
+}
+
+const { page, lang } = Astro.props;
+const products = page.data;
+
+const t = translations[lang] || translations.en;
+const currentPath = `${lang}/`;
+const isRTL = lang === 'ar';
+
+// Get unique categories from ALL products (not just current page)
+const allProducts = await getCollection('products');
+const langProducts = allProducts.filter((product) => {
+  const parts = product.id.split('.');
+  const productLang = parts.length > 1 ? parts.pop() : 'en';
+  return productLang === lang;
+});
+
+const allCategories = new Set<string>();
+langProducts.forEach(p => {
+  p.data.categories?.forEach(cat => allCategories.add(cat));
+});
+const categories = Array.from(allCategories).sort();
+
+// Get product translations
+const pt = t.product || {
+  viewAllCollections: "View All Collections",
+  allProducts: "All Products",
+};
+---
+
+<Layout title={t.nav.products} lang={lang}>
+  <Header lang={lang} />
+
+  <main class="w-full min-h-screen py-12 lg:py-16 bg-gray-50">
+    <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
+      <!-- Page Header -->
+      <div class="mb-10">
+        <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+          {t.nav.products}
+        </h1>
+        <p class="text-gray-600">
+          {langProducts.length} {langProducts.length === 1 ? 'product' : 'products'} available
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Sidebar: Category Filter -->
+        <aside class="lg:col-span-1">
+          <div class="sticky top-24 bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+            <h3 class="font-bold text-gray-900 mb-4 text-sm uppercase tracking-wider">
+              Categories
+            </h3>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  href={`/${currentPath}product`}
+                  class="flex justify-between items-center py-2 px-3 rounded-lg text-gray-600 hover:bg-stone-50 hover:text-[#8B7355] transition-colors duration-200"
+                >
+                  <span>{pt.allProducts || 'All Products'}</span>
+                  <span class="text-xs bg-gray-100 px-2 py-1 rounded-full">
+                    {langProducts.length}
+                  </span>
+                </a>
+              </li>
+              {categories.map(cat => {
+                const count = langProducts.filter(p => p.data.categories?.includes(cat)).length;
+                return (
+                  <li>
+                    <a
+                      href={`/${currentPath}product/category/${cat.toLowerCase().replace(/\s+/g, '-')}`}
+                      class="flex justify-between items-center py-2 px-3 rounded-lg text-gray-600 hover:bg-stone-50 hover:text-[#8B7355] transition-colors duration-200"
+                    >
+                      <span>{cat}</span>
+                      <span class="text-xs bg-gray-100 px-2 py-1 rounded-full">
+                        {count}
+                      </span>
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
+          <!-- CTA Card -->
+          <div class="mt-6 bg-[#8B7355] rounded-xl p-6 text-white">
+            <h4 class="font-bold mb-2">Need Custom Eyewear?</h4>
+            <p class="text-sm text-white/80 mb-4">
+              We offer full OEM & ODM services for your brand.
+            </p>
+            <a
+              href={`/${currentPath}contact`}
+              class="inline-block bg-white text-[#8B7355] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-100 transition-colors"
+            >
+              Get Quote
+            </a>
+          </div>
+        </aside>
+
+        <!-- Product Grid -->
+        <div class="lg:col-span-3">
+          {products.length === 0 ? (
+            <div class="text-center py-16 bg-white rounded-xl shadow-sm">
+              <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+              <p class="text-gray-500 mb-4">No products available yet.</p>
+              <a
+                href={`/${currentPath}`}
+                class="text-[#8B7355] hover:underline"
+              >
+                Return to Homepage
+              </a>
+            </div>
+          ) : (
+            <>
+              <!-- Results Info -->
+              <div class="flex justify-between items-center mb-6 text-sm text-gray-500">
+                <span>
+                  Showing {page.start + 1}-{Math.min(page.end, page.total)} of {page.total} products
+                </span>
+              </div>
+
+              <!-- Products Grid -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                {products.map((product) => (
+                  <ProductCard product={product} lang={lang} />
+                ))}
+              </div>
+
+              <!-- Pagination -->
+              {page.lastPage > 1 && (
+                <nav class="mt-12 flex justify-center items-center gap-2" dir={isRTL ? 'rtl' : 'ltr'}>
+                  <!-- Previous Button -->
+                  {page.url.prev ? (
+                    <a
+                      href={page.url.prev}
+                      class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
+                    >
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                      </svg>
+                      <span class="hidden sm:inline">Previous</span>
+                    </a>
+                  ) : (
+                    <span class="flex items-center gap-1 px-4 py-2 border border-gray-100 rounded-lg text-gray-300 cursor-not-allowed">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                      </svg>
+                      <span class="hidden sm:inline">Previous</span>
+                    </span>
+                  )}
+
+                  <!-- Page Numbers -->
+                  <div class="flex items-center gap-1">
+                    {/* First page */}
+                    <a
+                      href={`/${currentPath}product`}
+                      class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
+                        page.currentPage === 1
+                          ? 'bg-[#8B7355] text-white'
+                          : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355]'
+                      }`}
+                    >
+                      1
+                    </a>
+
+                    {/* Ellipsis before current */}
+                    {page.currentPage > 3 && (
+                      <span class="px-2 text-gray-400">...</span>
+                    )}
+
+                    {/* Pages around current */}
+                    {Array.from({ length: page.lastPage }, (_, i) => i + 1)
+                      .filter(p => p > 1 && p < page.lastPage && Math.abs(p - page.currentPage) <= 1)
+                      .map(p => (
+                        <a
+                          href={`/${currentPath}product/page/${p}`}
+                          class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
+                            p === page.currentPage
+                              ? 'bg-[#8B7355] text-white'
+                              : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355]'
+                          }`}
+                        >
+                          {p}
+                        </a>
+                      ))}
+
+                    {/* Ellipsis after current */}
+                    {page.currentPage < page.lastPage - 2 && (
+                      <span class="px-2 text-gray-400">...</span>
+                    )}
+
+                    {/* Last page */}
+                    {page.lastPage > 1 && (
+                      <a
+                        href={`/${currentPath}product/page/${page.lastPage}`}
+                        class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
+                          page.currentPage === page.lastPage
+                            ? 'bg-[#8B7355] text-white'
+                            : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355]'
+                        }`}
+                      >
+                        {page.lastPage}
+                      </a>
+                    )}
+                  </div>
+
+                  <!-- Next Button -->
+                  {page.url.next ? (
+                    <a
+                      href={page.url.next}
+                      class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
+                    >
+                      <span class="hidden sm:inline">Next</span>
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </a>
+                  ) : (
+                    <span class="flex items-center gap-1 px-4 py-2 border border-gray-100 rounded-lg text-gray-300 cursor-not-allowed">
+                      <span class="hidden sm:inline">Next</span>
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  )}
+                </nav>
+              )}
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

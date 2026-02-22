@@ -1,0 +1,43 @@
+---
+/**
+ * Breadcrumb Navigation Component
+ * Displays hierarchical navigation path for product pages
+ * Supports RTL for Arabic language
+ */
+
+interface Props {
+  items: Array<{ label: string; href: string }>;
+  lang?: string;
+}
+
+const { items, lang = 'en' } = Astro.props;
+const isRTL = lang === 'ar';
+---
+
+<nav class="bg-gray-50 py-3 border-b border-gray-100" dir={isRTL ? 'rtl' : 'ltr'}>
+  <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
+    <ol class="flex items-center flex-wrap gap-1 text-sm">
+      {items.map((item, index) => (
+        <li class="flex items-center">
+          {index > 0 && (
+            <span class={`mx-2 text-gray-300 ${isRTL ? 'rotate-180' : ''}`}>
+              /
+            </span>
+          )}
+          {item.href === '#' ? (
+            <span class="text-[#8B7355] font-medium truncate max-w-[200px]">
+              {item.label}
+            </span>
+          ) : (
+            <a
+              href={item.href}
+              class="text-gray-600 hover:text-[#8B7355] transition-colors duration-200 truncate max-w-[150px]"
+            >
+              {item.label}
+            </a>
+          )}
+        </li>
+      ))}
+    </ol>
+  </div>
+</nav>
