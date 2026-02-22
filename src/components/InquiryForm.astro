@@ -166,13 +166,7 @@ const currentUrl = Astro.url.pathname;
 
         <!-- Cloudflare Turnstile Widget (only in production) -->
         <div id="turnstile-container" class={`flex justify-center ${isDev ? 'hidden' : ''}`}>
-          <div
-            class="cf-turnstile"
-            data-sitekey={TURNSTILE_SITE_KEY}
-            data-theme="light"
-            data-callback="onTurnstileSuccess"
-            data-expired-callback="onTurnstileExpired"
-          ></div>
+          <!-- Widget will be rendered dynamically via JavaScript -->
         </div>
 
         <!-- Turnstile Error Message (hidden by default) - shown right below Turnstile -->
@@ -270,40 +264,107 @@ const currentUrl = Astro.url.pathname;
   </div>
 </section>
 
-<!-- Cloudflare Turnstile Script (only load in production) -->
-{!isDev && (
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-)}
-
-<script define:vars={{ isDev, pt, turnstileErrorMsg }}>
-  // Turnstile token and widget tracking
+<script define:vars={{ isDev, pt, turnstileErrorMsg, TURNSTILE_SITE_KEY }}>
+  // Turnstile state tracking (module-level to persist across View Transitions)
   let turnstileToken = null;
   let turnstileWidgetId = null;
+  let turnstileScriptLoaded = false;
+  let initAttempts = 0;
+  const MAX_INIT_ATTEMPTS = 50; // 5 seconds max
 
-  // Global callback functions for Turnstile
-  window.onTurnstileSuccess = function(token) {
+  // Generate unique ID for this form instance to avoid conflicts
+  const formInstanceId = 'turnstile-' + Math.random().toString(36).substring(2, 9);
+
+  // Load Turnstile script dynamically
+  function loadTurnstileScript() {
+    if (isDev) return Promise.resolve();
+    if (window.turnstile) {
+      turnstileScriptLoaded = true;
+      return Promise.resolve();
+    }
+    if (document.querySelector('script[src*="turnstile"]')) {
+      return new Promise((resolve) => {
+        const checkLoaded = () => {
+          if (window.turnstile) {
+            turnstileScriptLoaded = true;
+            resolve();
+          } else {
+            setTimeout(checkLoaded, 50);
+          }
+        };
+        checkLoaded();
+      });
+    }
+
+    return new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+      script.async = true;
+      script.defer = true;
+      script.onload = () => {
+        turnstileScriptLoaded = true;
+        resolve();
+      };
+      script.onerror = () => {
+        console.error('Failed to load Turnstile script');
+        reject(new Error('Turnstile script load failed'));
+      };
+      document.head.appendChild(script);
+    });
+  }
+
+  // Callbacks for Turnstile (use unique names to avoid conflicts)
+  const successCallbackName = 'onTurnstileSuccess_' + formInstanceId;
+  const expiredCallbackName = 'onTurnstileExpired_' + formInstanceId;
+
+  window[successCallbackName] = function(token) {
     turnstileToken = token;
-    // Hide error when user completes verification
     const errorEl = document.getElementById('turnstile-error');
     if (errorEl) errorEl.classList.add('hidden');
   };
 
-  window.onTurnstileExpired = function() {
+  window[expiredCallbackName] = function() {
     turnstileToken = null;
   };
 
   // Initialize or re-initialize Turnstile widget
-  function initTurnstile() {
+  async function initTurnstile() {
     if (isDev) return;
 
     const container = document.getElementById('turnstile-container');
     if (!container) return;
 
-    // Wait for Turnstile script to load
-    if (typeof window.turnstile === 'undefined') {
-      setTimeout(initTurnstile, 100);
+    // Reset attempts for new initialization
+    initAttempts = 0;
+
+    // Load script if not loaded
+    try {
+      await loadTurnstileScript();
+    } catch (e) {
+      console.error('Turnstile script load error:', e);
       return;
     }
+
+    // Wait for Turnstile to be ready with retry
+    const waitForTurnstile = () => {
+      return new Promise((resolve) => {
+        const check = () => {
+          initAttempts++;
+          if (window.turnstile && typeof window.turnstile.render === 'function') {
+            resolve(true);
+          } else if (initAttempts >= MAX_INIT_ATTEMPTS) {
+            console.error('Turnstile failed to initialize after maximum attempts');
+            resolve(false);
+          } else {
+            setTimeout(check, 100);
+          }
+        };
+        check();
+      });
+    };
+
+    const ready = await waitForTurnstile();
+    if (!ready) return;
 
     // Remove existing widget if we have a widget ID
     if (turnstileWidgetId !== null) {
@@ -325,10 +386,10 @@ const currentUrl = Astro.url.pathname;
     // Render new Turnstile widget
     try {
       turnstileWidgetId = window.turnstile.render(widgetDiv, {
-        sitekey: '0x4AAAAAACGlmQDIODBgCmpo',
+        sitekey: TURNSTILE_SITE_KEY,
         theme: 'light',
-        callback: window.onTurnstileSuccess,
-        'expired-callback': window.onTurnstileExpired
+        callback: window[successCallbackName],
+        'expired-callback': window[expiredCallbackName]
       });
     } catch (e) {
       console.error('Turnstile render error:', e);
@@ -344,10 +405,11 @@ const currentUrl = Astro.url.pathname;
     }
   }
 
-  // Re-initialize after View Transitions navigation (language switch)
+  // Re-initialize after View Transitions navigation
   document.addEventListener('astro:page-load', function() {
     if (!isDev) {
       turnstileToken = null; // Reset token on navigation
+      turnstileWidgetId = null; // Reset widget ID since DOM is replaced
       initTurnstile();
     }
   });
