@@ -352,60 +352,67 @@ const currentUrl = Astro.url.pathname;
     }
   });
 
-  // Form elements
-  const form = document.getElementById('inquiry-form');
-  const submitBtn = document.getElementById('submit-btn');
-  const btnText = document.getElementById('btn-text');
-  const btnArrow = document.getElementById('btn-arrow');
-  const btnSpinner = document.getElementById('btn-spinner');
-  const successMessage = document.getElementById('form-success');
-  const errorContainer = document.getElementById('form-error');
-  const errorMessage = document.getElementById('error-message');
-  const turnstileErrorContainer = document.getElementById('turnstile-error');
-  const turnstileErrorMessage = document.getElementById('turnstile-error-message');
+  // Form elements - query fresh each time to handle View Transitions
+  function getFormElements() {
+    return {
+      form: document.getElementById('inquiry-form'),
+      submitBtn: document.getElementById('submit-btn'),
+      btnText: document.getElementById('btn-text'),
+      btnArrow: document.getElementById('btn-arrow'),
+      btnSpinner: document.getElementById('btn-spinner'),
+      errorContainer: document.getElementById('form-error'),
+      errorMessage: document.getElementById('error-message'),
+      turnstileErrorContainer: document.getElementById('turnstile-error'),
+      turnstileErrorMessage: document.getElementById('turnstile-error-message'),
+    };
+  }
 
   // Show loading state
   function setLoading(loading) {
+    const { submitBtn, btnText, btnArrow, btnSpinner } = getFormElements();
     if (loading) {
-      submitBtn.disabled = true;
-      btnText.textContent = 'Submitting...';
-      btnArrow.classList.add('hidden');
-      btnSpinner.classList.remove('hidden');
+      if (submitBtn) submitBtn.disabled = true;
+      if (btnText) btnText.textContent = 'Submitting...';
+      if (btnArrow) btnArrow.classList.add('hidden');
+      if (btnSpinner) btnSpinner.classList.remove('hidden');
     } else {
-      submitBtn.disabled = false;
-      btnText.textContent = pt.submitRequest || 'Submit Request';
-      btnArrow.classList.remove('hidden');
-      btnSpinner.classList.add('hidden');
+      if (submitBtn) submitBtn.disabled = false;
+      if (btnText) btnText.textContent = pt.submitRequest || 'Submit Request';
+      if (btnArrow) btnArrow.classList.remove('hidden');
+      if (btnSpinner) btnSpinner.classList.add('hidden');
     }
   }
 
   // Show error (general form errors - shown at top)
   function showError(message) {
-    errorMessage.textContent = message;
-    errorContainer.classList.remove('hidden');
-    errorContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const { errorContainer, errorMessage } = getFormElements();
+    if (errorMessage) errorMessage.textContent = message;
+    if (errorContainer) {
+      errorContainer.classList.remove('hidden');
+      errorContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   }
 
   // Hide error (general form errors)
   function hideError() {
-    errorContainer.classList.add('hidden');
+    const { errorContainer } = getFormElements();
+    if (errorContainer) errorContainer.classList.add('hidden');
   }
 
   // Show Turnstile error (shown below Turnstile widget)
   function showTurnstileError(message) {
-    if (turnstileErrorMessage) {
-      turnstileErrorMessage.textContent = message;
-    }
+    const { turnstileErrorContainer, turnstileErrorMessage } = getFormElements();
+    if (turnstileErrorMessage) turnstileErrorMessage.textContent = message;
     if (turnstileErrorContainer) {
       turnstileErrorContainer.classList.remove('hidden');
+      turnstileErrorContainer.style.display = 'block';
     }
   }
 
   // Hide Turnstile error
   function hideTurnstileError() {
-    if (turnstileErrorContainer) {
-      turnstileErrorContainer.classList.add('hidden');
-    }
+    const { turnstileErrorContainer } = getFormElements();
+    if (turnstileErrorContainer) turnstileErrorContainer.classList.add('hidden');
   }
 
   // Redirect to thank-you page
@@ -414,113 +421,131 @@ const currentUrl = Astro.url.pathname;
     window.location.href = thankYouUrl;
   }
 
-  // Form submission
-  form?.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    hideError();
-    hideTurnstileError();
+  // Form submission - use fresh element reference
+  function setupFormSubmission() {
+    const { form } = getFormElements();
+    if (!form) return;
 
-    // Check Turnstile (skip in dev mode)
-    if (!isDev && !turnstileToken) {
-      showTurnstileError(turnstileErrorMsg);
-      return;
-    }
+    // Remove existing listener if any
+    const newForm = form.cloneNode(true);
+    form.parentNode.replaceChild(newForm, form);
 
-    // Gather form data
-    const formData = new FormData(form);
-    if (!isDev && turnstileToken) {
-      formData.append('cf-turnstile-response', turnstileToken);
-    }
+    newForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      hideError();
+      hideTurnstileError();
 
-    setLoading(true);
-
-    try {
-      // In dev mode, use PHP server on port 4325
-      const apiUrl = isDev ? 'http://localhost:4325/send-mail.php' : '/send-mail.php';
-
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        body: formData
-      });
-
-      // Check if response is OK
-      if (!response.ok) {
-        const contentType = response.headers.get('content-type');
-
-        // Check if PHP is not configured (returns HTML instead of JSON)
-        if (contentType && contentType.includes('text/html')) {
-          throw new Error('PHP_NOT_CONFIGURED');
-        }
-
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-      }
-
-      const result = await response.json();
-
-      if (result.success) {
-        // Redirect to thank-you page
-        const currentLang = formData.get('language') || 'en';
-        redirectToThankYou(currentLang);
-      } else {
-        const errorMsg = result.errors
-          ? result.errors.join('. ')
-          : (result.message || 'An error occurred. Please try again.');
-        showError(errorMsg);
-
-        // Show debug info if available
-        if (result.debug) {
-          console.error('Server debug info:', result.debug);
-        }
-
-        setLoading(false);
-      }
-    } catch (error) {
-      console.error('Form submission error:', error);
-
-      // For development without PHP, offer mailto fallback
-      if (isDev && (error.message.includes('Failed to fetch') || error.message.includes('NetworkError') || error.message === 'PHP_NOT_CONFIGURED')) {
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const details = formData.get('details');
-        const product = formData.get('product_name') || 'N/A';
-
-        const subject = encodeURIComponent(`Inquiry from KSSMI Website - ${name}`);
-        const body = encodeURIComponent(
-          `Name: ${name}\nEmail: ${email}\nProduct: ${product}\n\nProject Details:\n${details}`
-        );
-
-        // Show message with option to use email client
-        showError('PHP server not running. Click below to send via your email client:');
-
-        // Add a button to use mailto
-        const mailtoLink = document.createElement('a');
-        mailtoLink.href = `mailto:sales@kssmi.com?subject=${subject}&body=${body}`;
-        mailtoLink.className = 'inline-block mt-3 px-6 py-3 bg-[#8B7355] text-white rounded-lg hover:bg-[#5D4E37]';
-        mailtoLink.textContent = 'Open Email Client';
-        mailtoLink.id = 'mailto-fallback';
-
-        // Remove existing button if any
-        const existingBtn = document.getElementById('mailto-fallback');
-        if (existingBtn) existingBtn.remove();
-
-        errorContainer.appendChild(mailtoLink);
-
-        setLoading(false);
+      // Check Turnstile (skip in dev mode)
+      if (!isDev && !turnstileToken) {
+        showTurnstileError(turnstileErrorMsg);
         return;
       }
 
-      // Provide helpful error messages
-      if (error.message === 'PHP_NOT_CONFIGURED') {
-        showError('PHP is not configured on this server. Please contact the administrator or use the direct email link below.');
-      } else if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
-        showError('Cannot connect to server. If testing locally, PHP server is required. Please use the direct email link below.');
-      } else if (error.message.includes('Unexpected token')) {
-        showError('Server returned an invalid response. PHP may not be installed. Please use the direct email link below.');
-      } else {
-        showError(`Error: ${error.message}. Please try again or use the direct email link below.`);
+      // Gather form data
+      const formData = new FormData(newForm);
+      if (!isDev && turnstileToken) {
+        formData.append('cf-turnstile-response', turnstileToken);
       }
 
-      setLoading(false);
-    }
+      setLoading(true);
+
+      try {
+        // In dev mode, use PHP server on port 4325
+        const apiUrl = isDev ? 'http://localhost:4325/send-mail.php' : '/send-mail.php';
+
+        const response = await fetch(apiUrl, {
+          method: 'POST',
+          body: formData
+        });
+
+        // Check if response is OK
+        if (!response.ok) {
+          const contentType = response.headers.get('content-type');
+
+          // Check if PHP is not configured (returns HTML instead of JSON)
+          if (contentType && contentType.includes('text/html')) {
+            throw new Error('PHP_NOT_CONFIGURED');
+          }
+
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+
+        const result = await response.json();
+
+        if (result.success) {
+          // Redirect to thank-you page
+          const currentLang = formData.get('language') || 'en';
+          redirectToThankYou(currentLang);
+        } else {
+          const errorMsg = result.errors
+            ? result.errors.join('. ')
+            : (result.message || 'An error occurred. Please try again.');
+          showError(errorMsg);
+
+          // Show debug info if available
+          if (result.debug) {
+            console.error('Server debug info:', result.debug);
+          }
+
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error('Form submission error:', error);
+
+        // For development without PHP, offer mailto fallback
+        if (isDev && (error.message.includes('Failed to fetch') || error.message.includes('NetworkError') || error.message === 'PHP_NOT_CONFIGURED')) {
+          const name = formData.get('name');
+          const email = formData.get('email');
+          const details = formData.get('details');
+          const product = formData.get('product_name') || 'N/A';
+
+          const subject = encodeURIComponent(`Inquiry from KSSMI Website - ${name}`);
+          const body = encodeURIComponent(
+            `Name: ${name}\nEmail: ${email}\nProduct: ${product}\n\nProject Details:\n${details}`
+          );
+
+          // Show message with option to use email client
+          showError('PHP server not running. Click below to send via your email client:');
+
+          // Add a button to use mailto
+          const mailtoLink = document.createElement('a');
+          mailtoLink.href = `mailto:sales@kssmi.com?subject=${subject}&body=${body}`;
+          mailtoLink.className = 'inline-block mt-3 px-6 py-3 bg-[#8B7355] text-white rounded-lg hover:bg-[#5D4E37]';
+          mailtoLink.textContent = 'Open Email Client';
+          mailtoLink.id = 'mailto-fallback';
+
+          // Remove existing button if any
+          const existingBtn = document.getElementById('mailto-fallback');
+          if (existingBtn) existingBtn.remove();
+
+          const { errorContainer } = getFormElements();
+          if (errorContainer) errorContainer.appendChild(mailtoLink);
+
+          setLoading(false);
+          return;
+        }
+
+        // Provide helpful error messages
+        if (error.message === 'PHP_NOT_CONFIGURED') {
+          showError('PHP is not configured on this server. Please contact the administrator or use the direct email link below.');
+        } else if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
+          showError('Cannot connect to server. If testing locally, PHP server is required. Please use the direct email link below.');
+        } else if (error.message.includes('Unexpected token')) {
+          showError('Server returned an invalid response. PHP may not be installed. Please use the direct email link below.');
+        } else {
+          showError(`Error: ${error.message}. Please try again or use the direct email link below.`);
+        }
+
+        setLoading(false);
+      }
+    });
+  }
+
+  // Setup form on initial load
+  setupFormSubmission();
+
+  // Re-setup form after View Transitions
+  document.addEventListener('astro:page-load', function() {
+    setupFormSubmission();
   });
 </script>

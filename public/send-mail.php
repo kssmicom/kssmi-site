@@ -376,8 +376,8 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
 
     $t = $translations[$lang] ?? $translations['en'];
 
-    // Header title: "Name - Inquiry"
-    $headerTitle = htmlspecialchars($data['name']) . ' - Inquiry';
+    // Header title: "Name - Kssmi"
+    $headerTitle = htmlspecialchars($data['name']) . ' - Kssmi';
 
     return "
 <!DOCTYPE html>
@@ -454,8 +454,8 @@ function buildTextEmail($data, $ip, $country, $inquiryId) {
     $name = $data['name'];
 
     return "
-{$name} - Inquiry
-==================
+{$name} - Kssmi
+================
 
 Name: {$data['name']}
 Email Address: {$data['email']}
