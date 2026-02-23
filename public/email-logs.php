@@ -3,6 +3,7 @@
  * KSSMI Email Log Viewer
  * Features:
  * - Password protected access
+ * - Forgot password with email reset
  * - Email log viewing and management
  * - Resend failed emails
  * - Country lookup from IP
@@ -14,6 +15,8 @@ session_start();
 // Password configuration - use absolute path
 define('PASSWORD_FILE', dirname(__FILE__) . '/.email_logs_password');
 define('LOGS_FILE', dirname(__FILE__) . '/email-logs.json');
+define('RESET_TOKENS_FILE', dirname(__FILE__) . '/.email_reset_tokens.json');
+define('ADMIN_EMAIL', 'kssmi@kssmi.com');
 
 // Country code to name mapping
 $COUNTRY_NAMES = [
@@ -68,18 +71,13 @@ function getCountryName($code) {
 // Get password - with better error handling
 function getPassword() {
     $defaultPassword = 'kssmi2024';
-
-    // Check if file exists
     if (!file_exists(PASSWORD_FILE)) {
         return $defaultPassword;
     }
-
-    // Try to read the file
     $content = @file_get_contents(PASSWORD_FILE);
     if ($content === false) {
         return $defaultPassword;
     }
-
     $password = trim($content);
     return !empty($password) ? $password : $defaultPassword;
 }
@@ -90,19 +88,111 @@ function setPassword($newPassword) {
     if ($result === false) {
         return false;
     }
-    // Ensure file has correct permissions
     @chmod(PASSWORD_FILE, 0600);
     return true;
 }
 
-// Check password file status
-function getPasswordFileStatus() {
-    return [
-        'exists' => file_exists(PASSWORD_FILE),
-        'readable' => is_readable(PASSWORD_FILE),
-        'writable' => is_writable(PASSWORD_FILE) || is_writable(dirname(PASSWORD_FILE)),
-        'dir_writable' => is_writable(dirname(PASSWORD_FILE)),
-    ];
+// Generate secure reset token
+function generateResetToken() {
+    return bin2hex(random_bytes(32));
+}
+
+// Get reset tokens
+function getResetTokens() {
+    if (!file_exists(RESET_TOKENS_FILE)) {
+        return [];
+    }
+    $content = @file_get_contents(RESET_TOKENS_FILE);
+    if ($content === false) {
+        return [];
+    }
+    $tokens = json_decode($content, true);
+    return is_array($tokens) ? $tokens : [];
+}
+
+// Save reset tokens
+function saveResetTokens($tokens) {
+    $result = @file_put_contents(RESET_TOKENS_FILE, json_encode($tokens, JSON_PRETTY_PRINT));
+    if ($result !== false) {
+        @chmod(RESET_TOKENS_FILE, 0600);
+    }
+    return $result !== false;
+}
+
+// Clean expired tokens (older than 1 hour)
+function cleanExpiredTokens() {
+    $tokens = getResetTokens();
+    $now = time();
+    $validTokens = [];
+    foreach ($tokens as $token => $data) {
+        if (isset($data['expires']) && $data['expires'] > $now) {
+            $validTokens[$token] = $data;
+        }
+    }
+    saveResetTokens($validTokens);
+    return $validTokens;
+}
+
+// Send reset email via PHPMailer
+function sendResetEmail($token) {
+    $phpmailerPath = __DIR__ . '/vendor/phpmailer/phpmailer/src/';
+
+    if (!file_exists($phpmailerPath . 'PHPMailer.php')) {
+        return ['success' => false, 'error' => 'PHPMailer not installed'];
+    }
+
+    require_once $phpmailerPath . 'Exception.php';
+    require_once $phpmailerPath . 'PHPMailer.php';
+    require_once $phpmailerPath . 'SMTP.php';
+
+    try {
+        $mail = new PHPMailer\PHPMailer\PHPMailer(true);
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'kssmi@kssmi.com';
+        $mail->Password = 'chnxqxdkktgehtlt';
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 587;
+
+        $mail->setFrom('kssmi@kssmi.com', 'KSSMI Website');
+        $mail->addAddress(ADMIN_EMAIL);
+
+        $resetUrl = 'https://kssmi.com/email-logs.php?reset=' . $token;
+
+        $mail->isHTML(true);
+        $mail->Subject = 'Password Reset Request - KSSMI Email Logs';
+
+        $mail->Body = "
+        <html>
+        <body style='font-family: -apple-system, BlinkMacSystemFont,Segoe UI,Roboto,sans-serif; padding: 20px;'>
+            <div style='max-width: 600px; margin: 0 auto; background: #fff; border-radius: 8px; padding: 30px; border: 1px solid #e0e0e0;'>
+                <h2 style='color: #5D4E37; margin-bottom: 20px;'>Password Reset Request</h2>
+                <p style='color: #333; line-height: 1.6;'>Someone requested to reset the password for the KSSMI Email Logs admin panel.</p>
+                <p style='color: #333; line-height: 1.6;'>Click the button below to set a new password:</p>
+                <p style='margin: 30px 0;'>
+                    <a href='{$resetUrl}' style='background: #8B7355; color: white; padding: 12px 30px; text-decoration: none; border-radius: 4px; display: inline-block;'>Reset Password</a>
+                </p>
+                <p style='color: #666; font-size: 14px;'>Or copy this link to your browser:</p>
+                <p style='background: #f5f5f5; padding: 10px; border-radius: 4px; word-break: break-all; font-size: 12px;'>{$resetUrl}</p>
+                <hr style='margin: 30px 0; border: none; border-top: 1px solid #eee;'>
+                <p style='color: #999; font-size: 12px;'>
+                    This link will expire in <strong>1 hour</strong>.<br>
+                    If you did not request this reset, you can safely ignore this email.
+                </p>
+            </div>
+        </body>
+        </html>";
+
+        $mail->AltBody = "Password Reset Request\n\nClick this link to reset your password:\n{$resetUrl}\n\nThis link expires in 1 hour.";
+
+        $mail->Timeout = 30;
+        $mail->send();
+
+        return ['success' => true];
+    } catch (Exception $e) {
+        return ['success' => false, 'error' => $e->getMessage()];
+    }
 }
 
 $PASSWORD = getPassword();
@@ -110,13 +200,71 @@ $error = '';
 $message = '';
 $passwordMessage = '';
 $passwordError = '';
+$showResetForm = false;
+$resetMode = false;
+
+// Handle password reset request
+if (isset($_POST['request_reset'])) {
+    // Generate token
+    $token = generateResetToken();
+    $tokens = cleanExpiredTokens();
+    $tokens[$token] = [
+        'created' => time(),
+        'expires' => time() + 3600 // 1 hour
+    ];
+
+    if (saveResetTokens($tokens)) {
+        $result = sendResetEmail($token);
+        if ($result['success']) {
+            $message = 'Reset link sent to ' . ADMIN_EMAIL . '. Please check your inbox. The link expires in 1 hour.';
+        } else {
+            $error = 'Failed to send reset email: ' . ($result['error'] ?? 'Unknown error');
+        }
+    } else {
+        $error = 'Failed to generate reset token. Please check file permissions.';
+    }
+}
+
+// Handle password reset with token
+if (isset($_GET['reset'])) {
+    $token = $_GET['reset'];
+    $tokens = cleanExpiredTokens();
+
+    if (isset($tokens[$token])) {
+        $resetMode = true;
+
+        // Handle new password submission
+        if (isset($_POST['reset_password'])) {
+            $newPass = trim($_POST['new_password']);
+            $confirmPass = trim($_POST['confirm_password']);
+
+            if (strlen($newPass) < 6) {
+                $passwordError = 'Password must be at least 6 characters';
+            } elseif ($newPass !== $confirmPass) {
+                $passwordError = 'Passwords do not match';
+            } else {
+                if (setPassword($newPass)) {
+                    // Remove used token
+                    unset($tokens[$token]);
+                    saveResetTokens($tokens);
+
+                    $passwordMessage = 'Password reset successfully! You can now login with your new password.';
+                    $resetMode = false;
+                } else {
+                    $passwordError = 'Failed to save new password. Please try again.';
+                }
+            }
+        }
+    } else {
+        $error = 'Invalid or expired reset link. Please request a new one.';
+    }
+}
 
 // Handle login
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password']) && !isset($_POST['change_password'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password']) && !isset($_POST['change_password']) && !isset($_POST['reset_password'])) {
     $submittedPassword = trim($_POST['password']);
     if ($submittedPassword === $PASSWORD) {
         $_SESSION['email_logs_auth'] = true;
-        // Regenerate session ID to prevent session fixation
         session_regenerate_id(true);
     } else {
         $error = 'Invalid password. Please try again.';
@@ -136,7 +284,7 @@ if (isset($_SESSION['email_logs_auth']) && $_SESSION['email_logs_auth'] === true
     $isAuthenticated = true;
 }
 
-// Handle password change
+// Handle password change (when logged in)
 if ($isAuthenticated && isset($_POST['change_password'])) {
     $newPass = trim($_POST['new_password']);
     if (strlen($newPass) < 6) {
@@ -144,16 +292,9 @@ if ($isAuthenticated && isset($_POST['change_password'])) {
     } else {
         if (setPassword($newPass)) {
             $PASSWORD = $newPass;
-            $_SESSION['password_changed'] = true;
             $passwordMessage = 'Password changed successfully! Please use the new password next time you login.';
         } else {
-            $fileStatus = getPasswordFileStatus();
-            $passwordError = 'Failed to save password. ';
-            if (!$fileStatus['dir_writable']) {
-                $passwordError .= 'Directory is not writable. Please check permissions.';
-            } else {
-                $passwordError .= 'Unknown error occurred.';
-            }
+            $passwordError = 'Failed to save password. Please check file permissions.';
         }
     }
 }
@@ -168,11 +309,10 @@ if ($isAuthenticated && isset($_POST['clear_logs'])) {
 $resendMessage = '';
 if ($isAuthenticated && isset($_POST['resend_id'])) {
     $resendId = $_POST['resend_id'];
-    $logs = array();
+    $logs = [];
     if (file_exists(LOGS_FILE)) {
         $content = file_get_contents(LOGS_FILE);
-        $logs = json_decode($content, true);
-        if (!$logs) $logs = array();
+        $logs = json_decode($content, true) ?: [];
     }
 
     foreach ($logs as $key => $log) {
@@ -180,10 +320,10 @@ if ($isAuthenticated && isset($_POST['resend_id'])) {
             $result = resendEmail($log);
             $logs[$key]['status'] = $result['success'] ? 'success' : 'failed';
             if (!$result['success']) {
-                $logs[$key]['error'] = isset($result['error']) ? $result['error'] : 'Unknown error';
+                $logs[$key]['error'] = $result['error'] ?? 'Unknown error';
             }
             $logs[$key]['resent_at'] = date('Y-m-d H:i:s T');
-            $resendMessage = $result['success'] ? 'Email resent successfully!' : 'Resend failed: ' . (isset($result['error']) ? $result['error'] : 'Unknown error');
+            $resendMessage = $result['success'] ? 'Email resent successfully!' : 'Resend failed: ' . ($result['error'] ?? 'Unknown error');
             break;
         }
     }
@@ -194,28 +334,25 @@ if ($isAuthenticated && isset($_POST['resend_id'])) {
 // Handle delete single log
 if ($isAuthenticated && isset($_POST['delete_id'])) {
     $deleteId = $_POST['delete_id'];
-    $logs = array();
+    $logs = [];
     if (file_exists(LOGS_FILE)) {
         $content = file_get_contents(LOGS_FILE);
-        $logs = json_decode($content, true);
-        if (!$logs) $logs = array();
+        $logs = json_decode($content, true) ?: [];
     }
 
-    $logs = array_filter($logs, function($log) use ($deleteId) {
+    $logs = array_values(array_filter($logs, function($log) use ($deleteId) {
         return !isset($log['id']) || $log['id'] !== $deleteId;
-    });
-    $logs = array_values($logs); // Re-index array
+    }));
 
     file_put_contents(LOGS_FILE, json_encode($logs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
     $message = 'Log entry deleted';
 }
 
 // Load logs
-$logs = array();
+$logs = [];
 if (file_exists(LOGS_FILE)) {
     $content = file_get_contents(LOGS_FILE);
-    $logs = json_decode($content, true);
-    if (!$logs) $logs = array();
+    $logs = json_decode($content, true) ?: [];
 }
 
 // Stats
@@ -236,24 +373,24 @@ foreach ($logs as $l) {
 
 // Resend function
 function resendEmail($log) {
-    $config = array(
+    $config = [
         'to_email' => 'sales@kssmi.com',
         'to_name' => 'KSSMI Sales Team',
         'from_email' => 'kssmi@kssmi.com',
         'from_name' => 'Kssmi Eyewear',
-        'smtp' => array(
+        'smtp' => [
             'host' => 'smtp.gmail.com',
             'port' => 587,
             'user' => 'kssmi@kssmi.com',
             'pass' => 'chnxqxdkktgehtlt',
             'secure' => 'tls',
-        ),
-    );
+        ],
+    ];
 
     $phpmailerPath = __DIR__ . '/vendor/phpmailer/phpmailer/src/';
 
     if (!file_exists($phpmailerPath . 'PHPMailer.php')) {
-        return array('success' => false, 'error' => 'PHPMailer not installed');
+        return ['success' => false, 'error' => 'PHPMailer not installed'];
     }
 
     require_once $phpmailerPath . 'Exception.php';
@@ -273,23 +410,22 @@ function resendEmail($log) {
         $mail->setFrom($config['from_email'], $config['from_name']);
         $mail->addAddress($config['to_email'], $config['to_name']);
 
-        $formData = isset($log['form_data']) ? $log['form_data'] : array();
+        $formData = $log['form_data'] ?? [];
         if (!empty($formData['email'])) {
-            $name = isset($formData['name']) ? $formData['name'] : '';
-            $mail->addReplyTo($formData['email'], $name);
+            $mail->addReplyTo($formData['email'], $formData['name'] ?? '');
         }
 
-        $name = isset($formData['name']) ? $formData['name'] : 'Unknown';
+        $name = $formData['name'] ?? 'Unknown';
         $mail->isHTML(true);
         $mail->Subject = $name . " - Kssmi Eyewear [RESENT]";
 
-        $details = isset($formData['details']) ? $formData['details'] : 'No details';
-        $email = isset($formData['email']) ? $formData['email'] : 'N/A';
-        $product = isset($formData['product_name']) ? $formData['product_name'] : 'N/A';
-        $pageUrl = isset($formData['product_url']) ? $formData['product_url'] : 'N/A';
-        $ip = isset($log['ip_address']) ? $log['ip_address'] : 'Unknown';
-        $country = isset($log['country']) ? getCountryName($log['country']) : 'Unknown';
-        $origTime = isset($log['timestamp']) ? $log['timestamp'] : 'Unknown';
+        $details = $formData['details'] ?? 'No details';
+        $email = $formData['email'] ?? 'N/A';
+        $product = $formData['product_name'] ?? 'N/A';
+        $pageUrl = $formData['product_url'] ?? 'N/A';
+        $ip = $log['ip_address'] ?? 'Unknown';
+        $country = getCountryName($log['country'] ?? '');
+        $origTime = $log['timestamp'] ?? 'Unknown';
         $timestamp = date('Y-m-d H:i:s');
 
         $mail->Body = "<html><body style='font-family:sans-serif;'>
@@ -310,9 +446,9 @@ function resendEmail($log) {
         $mail->Timeout = 30;
         $mail->send();
 
-        return array('success' => true);
+        return ['success' => true];
     } catch (Exception $e) {
-        return array('success' => false, 'error' => $e->getMessage());
+        return ['success' => false, 'error' => $e->getMessage()];
     }
 }
 ?>
@@ -333,9 +469,13 @@ function resendEmail($log) {
         .login-box input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 15px; font-size: 16px; }
         .login-box button { width: 100%; padding: 12px; background: #8B7355; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
         .login-box button:hover { background: #5D4E37; }
+        .login-box button.secondary { background: #666; margin-top: 10px; }
+        .login-box button.secondary:hover { background: #444; }
         .error { color: #e74c3c; margin-bottom: 15px; padding: 10px; background: #fdeaea; border-radius: 4px; }
         .success { color: #27ae60; padding: 10px; background: #d4edda; border-radius: 4px; margin-bottom: 15px; }
-        .warning { color: #856404; padding: 10px; background: #fff3cd; border-radius: 4px; margin-bottom: 15px; }
+        .forgot-link { text-align: center; margin-top: 15px; }
+        .forgot-link a { color: #8B7355; text-decoration: none; font-size: 14px; }
+        .forgot-link a:hover { text-decoration: underline; }
         .stats { display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }
         .stat-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); min-width: 150px; }
         .stat-card h3 { font-size: 12px; text-transform: uppercase; color: #666; margin-bottom: 5px; }
@@ -381,6 +521,7 @@ function resendEmail($log) {
         .url-cell a { color: #8B7355; text-decoration: none; font-size: 12px; }
         .url-cell a:hover { text-decoration: underline; }
         .country-badge { background: #e8e4df; padding: 3px 8px; border-radius: 4px; font-size: 12px; }
+        .reset-info { background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 4px; margin-bottom: 20px; font-size: 14px; }
         @media (max-width: 768px) {
             .header { flex-direction: column; align-items: flex-start; }
             .stats { flex-direction: column; }
@@ -391,19 +532,63 @@ function resendEmail($log) {
 </head>
 <body>
     <div class="container">
-        <?php if (!$isAuthenticated): ?>
+        <?php if ($resetMode): ?>
+            <!-- Password Reset Form -->
+            <div class="login-box">
+                <h2>Reset Password</h2>
+                <?php if ($passwordError): ?>
+                    <p class="error"><?php echo htmlspecialchars($passwordError); ?></p>
+                <?php endif; ?>
+                <?php if ($passwordMessage): ?>
+                    <p class="success"><?php echo htmlspecialchars($passwordMessage); ?></p>
+                    <p style="margin-top:15px;"><a href="email-logs.php" class="btn">Go to Login</a></p>
+                <?php else: ?>
+                    <p style="color:#666;margin-bottom:20px;">Enter your new password below.</p>
+                    <form method="POST">
+                        <input type="password" name="new_password" placeholder="New password (min 6 characters)" required minlength="6">
+                        <input type="password" name="confirm_password" placeholder="Confirm new password" required minlength="6">
+                        <button type="submit" name="reset_password">Set New Password</button>
+                    </form>
+                <?php endif; ?>
+            </div>
+
+        <?php elseif (!$isAuthenticated): ?>
+            <!-- Login Form -->
             <div class="login-box">
                 <h2>Email Logs</h2>
                 <?php if ($error): ?>
                     <p class="error"><?php echo htmlspecialchars($error); ?></p>
                 <?php endif; ?>
-                <form method="POST">
-                    <input type="password" name="password" placeholder="Enter password" required autofocus>
-                    <button type="submit">Login</button>
-                </form>
-                <p style="margin-top:15px;font-size:12px;color:#999;text-align:center;">Default password: kssmi2024</p>
+                <?php if ($message): ?>
+                    <p class="success"><?php echo htmlspecialchars($message); ?></p>
+                <?php endif; ?>
+
+                <?php if (strpos($message ?? '', 'Reset link sent') !== false): ?>
+                    <p style="margin-top:15px;"><a href="email-logs.php" class="btn secondary">Back to Login</a></p>
+                <?php else: ?>
+                    <form method="POST">
+                        <input type="password" name="password" placeholder="Enter password" required autofocus>
+                        <button type="submit">Login</button>
+                    </form>
+                    <div class="forgot-link">
+                        <a href="#" onclick="document.getElementById('forgotForm').style.display='block';return false;">Forgot password?</a>
+                    </div>
+
+                    <!-- Forgot Password Form -->
+                    <div id="forgotForm" style="display:none;margin-top:20px;padding-top:20px;border-top:1px solid #eee;">
+                        <p style="color:#666;font-size:14px;margin-bottom:15px;">
+                            Click the button below to send a password reset link to:<br>
+                            <strong><?php echo htmlspecialchars(ADMIN_EMAIL); ?></strong>
+                        </p>
+                        <form method="POST">
+                            <button type="submit" name="request_reset" class="secondary">Send Reset Link</button>
+                        </form>
+                    </div>
+                <?php endif; ?>
             </div>
+
         <?php else: ?>
+            <!-- Main Dashboard -->
             <div class="header">
                 <div>
                     <h1>Email Logs</h1>
@@ -475,17 +660,17 @@ function resendEmail($log) {
                             <?php
                             $displayLogs = array_slice($logs, 0, 100);
                             foreach ($displayLogs as $i => $log):
-                                $status = isset($log['status']) ? $log['status'] : 'unknown';
-                                $timestamp = isset($log['timestamp']) ? $log['timestamp'] : 'Unknown';
-                                $name = isset($log['form_data']['name']) ? $log['form_data']['name'] : 'N/A';
-                                $email = isset($log['form_data']['email']) ? $log['form_data']['email'] : 'N/A';
-                                $product = isset($log['form_data']['product_name']) ? $log['form_data']['product_name'] : 'N/A';
-                                $pageUrl = isset($log['form_data']['product_url']) ? $log['form_data']['product_url'] : '';
+                                $status = $log['status'] ?? 'unknown';
+                                $timestamp = $log['timestamp'] ?? 'Unknown';
+                                $name = $log['form_data']['name'] ?? 'N/A';
+                                $email = $log['form_data']['email'] ?? 'N/A';
+                                $product = $log['form_data']['product_name'] ?? 'N/A';
+                                $pageUrl = $log['form_data']['product_url'] ?? '';
                                 $fullUrl = $pageUrl ? 'https://kssmi.com' . $pageUrl : 'N/A';
-                                $ip = isset($log['ip_address']) ? $log['ip_address'] : 'N/A';
-                                $countryCode = isset($log['country']) ? $log['country'] : '';
+                                $ip = $log['ip_address'] ?? 'N/A';
+                                $countryCode = $log['country'] ?? '';
                                 $countryName = $countryCode ? getCountryName($countryCode) : 'Unknown';
-                                $error = isset($log['error']) ? $log['error'] : '';
+                                $error = $log['error'] ?? '';
                             ?>
                                 <tr onclick="toggleDetail(<?php echo $i; ?>)" style="cursor:pointer;">
                                     <td>
@@ -530,10 +715,10 @@ function resendEmail($log) {
                 </div>
 
                 <?php foreach ($displayLogs as $i => $log):
-                    $formData = isset($log['form_data']) ? $log['form_data'] : array();
-                    $pageUrl = isset($formData['product_url']) ? $formData['product_url'] : '';
+                    $formData = $log['form_data'] ?? [];
+                    $pageUrl = $formData['product_url'] ?? '';
                     $fullUrl = $pageUrl ? 'https://kssmi.com' . $pageUrl : 'N/A';
-                    $countryCode = isset($log['country']) ? $log['country'] : '';
+                    $countryCode = $log['country'] ?? '';
                     $countryName = $countryCode ? getCountryName($countryCode) : 'Unknown';
                 ?>
                     <div class="detail-box" id="detail-<?php echo $i; ?>">
@@ -541,15 +726,15 @@ function resendEmail($log) {
                         <div class="detail-grid">
                             <div class="detail-item">
                                 <label>Name</label>
-                                <div class="value"><?php echo htmlspecialchars(isset($formData['name']) ? $formData['name'] : 'N/A'); ?></div>
+                                <div class="value"><?php echo htmlspecialchars($formData['name'] ?? 'N/A'); ?></div>
                             </div>
                             <div class="detail-item">
                                 <label>Email</label>
-                                <div class="value"><a href="mailto:<?php echo htmlspecialchars(isset($formData['email']) ? $formData['email'] : ''); ?>"><?php echo htmlspecialchars(isset($formData['email']) ? $formData['email'] : 'N/A'); ?></a></div>
+                                <div class="value"><a href="mailto:<?php echo htmlspecialchars($formData['email'] ?? ''); ?>"><?php echo htmlspecialchars($formData['email'] ?? 'N/A'); ?></a></div>
                             </div>
                             <div class="detail-item">
                                 <label>Product</label>
-                                <div class="value"><?php echo htmlspecialchars(isset($formData['product_name']) ? $formData['product_name'] : 'N/A'); ?></div>
+                                <div class="value"><?php echo htmlspecialchars($formData['product_name'] ?? 'N/A'); ?></div>
                             </div>
                             <div class="detail-item">
                                 <label>Page URL</label>
@@ -557,7 +742,7 @@ function resendEmail($log) {
                             </div>
                             <div class="detail-item">
                                 <label>Language</label>
-                                <div class="value"><?php echo htmlspecialchars(strtoupper(isset($formData['language']) ? $formData['language'] : 'N/A')); ?></div>
+                                <div class="value"><?php echo htmlspecialchars(strtoupper($formData['language'] ?? 'N/A')); ?></div>
                             </div>
                             <div class="detail-item">
                                 <label>Country</label>
@@ -565,11 +750,11 @@ function resendEmail($log) {
                             </div>
                             <div class="detail-item">
                                 <label>IP Address</label>
-                                <div class="value"><?php echo htmlspecialchars(isset($log['ip_address']) ? $log['ip_address'] : 'N/A'); ?></div>
+                                <div class="value"><?php echo htmlspecialchars($log['ip_address'] ?? 'N/A'); ?></div>
                             </div>
                             <div class="detail-item">
                                 <label>Time</label>
-                                <div class="value"><?php echo htmlspecialchars(isset($log['timestamp']) ? $log['timestamp'] : 'N/A'); ?></div>
+                                <div class="value"><?php echo htmlspecialchars($log['timestamp'] ?? 'N/A'); ?></div>
                             </div>
                             <?php if (isset($log['resent_at'])): ?>
                             <div class="detail-item">
@@ -579,23 +764,23 @@ function resendEmail($log) {
                             <?php endif; ?>
                             <div class="detail-item" style="grid-column: 1 / -1;">
                                 <label>User Agent</label>
-                                <div class="value" style="font-size:11px;word-break:break-all;color:#666;"><?php echo htmlspecialchars(isset($log['user_agent']) ? $log['user_agent'] : 'N/A'); ?></div>
+                                <div class="value" style="font-size:11px;word-break:break-all;color:#666;"><?php echo htmlspecialchars($log['user_agent'] ?? 'N/A'); ?></div>
                             </div>
                         </div>
                         <h4 style="margin-top:20px;">Message</h4>
-                        <div class="message-box"><?php echo htmlspecialchars(isset($formData['details']) ? $formData['details'] : 'No details provided'); ?></div>
-                        <?php if (isset($log['error']) && $log['error']): ?>
+                        <div class="message-box"><?php echo htmlspecialchars($formData['details'] ?? 'No details provided'); ?></div>
+                        <?php if (!empty($log['error'])): ?>
                         <h4 style="margin-top:20px;color:#e74c3c;">Error</h4>
                         <div class="message-box" style="border-left-color:#e74c3c;background:#fdeaea;"><?php echo htmlspecialchars($log['error']); ?></div>
                         <?php endif; ?>
                         <div class="actions">
-                            <?php if (isset($log['status']) && $log['status'] === 'failed'): ?>
+                            <?php if (($log['status'] ?? '') === 'failed'): ?>
                                 <form method="POST" style="display:inline;" onsubmit="return confirm('Resend this email?');">
                                     <input type="hidden" name="resend_id" value="<?php echo htmlspecialchars($log['id']); ?>">
                                     <button type="submit" class="btn btn-success">Resend Email</button>
                                 </form>
                             <?php endif; ?>
-                            <a href="mailto:<?php echo htmlspecialchars(isset($formData['email']) ? $formData['email'] : ''); ?>" class="btn btn-primary">Reply to Customer</a>
+                            <a href="mailto:<?php echo htmlspecialchars($formData['email'] ?? ''); ?>" class="btn btn-primary">Reply to Customer</a>
                             <button class="btn btn-secondary" onclick="toggleDetail(<?php echo $i; ?>)">Close</button>
                         </div>
                     </div>
@@ -613,7 +798,7 @@ function resendEmail($log) {
     <div class="modal" id="passwordModal">
         <div class="modal-content">
             <h3>Change Password</h3>
-            <?php if ($passwordError): ?>
+            <?php if ($passwordError && $isAuthenticated): ?>
                 <p class="error"><?php echo htmlspecialchars($passwordError); ?></p>
             <?php endif; ?>
             <form method="POST">

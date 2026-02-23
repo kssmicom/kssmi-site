@@ -50,7 +50,7 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           SOURCE: "dist/"
           TARGET: "/home/kssmi.com/public_html"
-          ARGS: "-avz --delete --exclude=email-logs.json --exclude=.email_logs_password"
+          ARGS: "-avz --delete --exclude=email-logs.json --exclude=.email_logs_password --exclude=.email_reset_tokens.json"
 
       - name: Set file permissions
         uses: appleboy/ssh-action@master
