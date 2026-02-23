@@ -165,18 +165,18 @@ const currentYear = new Date().getFullYear();
   </a>
 
   <!-- Email Button - uses JS to bypass email obfuscation -->
-  <button type="button"
+  <a href="#email"
      data-email-user="sales"
      data-email-domain="kssmi.com"
      title={t.floating.email}
-     class="w-12 h-12 md:w-14 md:h-14 flex-none bg-[#0891b2] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:-translate-x-1 transition-all duration-300 group relative cursor-pointer">
+     class="w-12 h-12 md:w-14 md:h-14 flex-none bg-[#0891b2] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:-translate-x-1 transition-all duration-300 group relative">
     <svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
     </svg>
     <span class={`absolute ${isRTL ? 'left-full ml-3' : 'right-full mr-3'} bg-stone-900 text-white text-[10px] font-bold uppercase tracking-widest py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none`}>
       {t.floating.email}
     </span>
-  </button>
+  </a>
 
   <!-- WhatsApp Button -->
   <a href={`https://wa.me/${whatsappNum}`}
@@ -239,10 +239,24 @@ const currentYear = new Date().getFullYear();
   function initEmailButtons() {
     const emailButtons = document.querySelectorAll('[data-email-user][data-email-domain]');
     emailButtons.forEach(function(btn) {
-      btn.onclick = function() {
-        const user = this.getAttribute('data-email-user');
-        const domain = this.getAttribute('data-email-domain');
-        window.location.href = 'mailto:' + user + '@' + domain;
+      const user = btn.getAttribute('data-email-user');
+      const domain = btn.getAttribute('data-email-domain');
+      const mailtoUrl = 'mailto:' + user + '@' + domain;
+
+      // On hover, set the real href so browser shows it in status bar
+      btn.onmouseenter = function() {
+        this.href = mailtoUrl;
+      };
+
+      // On mouse leave, reset to placeholder (prevents Cloudflare from seeing it in HTML)
+      btn.onmouseleave = function() {
+        this.href = '#email';
+      };
+
+      // On click, ensure href is set and let browser handle it
+      btn.onclick = function(e) {
+        this.href = mailtoUrl;
+        // Let the browser handle the mailto link naturally
       };
     });
   }
