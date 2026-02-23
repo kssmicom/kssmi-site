@@ -81,11 +81,14 @@ $config = [
 // EMAIL LOGGING FUNCTIONS
 // ============================================
 
-function logEmail($config, $data, $status, $message = '', $error = '', $visitorIP = null) {
+function logEmail($config, $data, $status, $message = '', $error = '', $visitorIP = null, $visitorCountry = null) {
     if (!$config['log_enabled']) return;
 
     // Use provided IP or fall back to server detection
     $ipToLog = $visitorIP ?? $data['client_ip'] ?? getRealIP();
+
+    // Store form details for potential resend
+    $formDetails = $data['details'] ?? '';
 
     $logEntry = [
         'id' => uniqid(),
@@ -101,6 +104,7 @@ function logEmail($config, $data, $status, $message = '', $error = '', $visitorI
         'form_data' => [
             'name' => $data['name'] ?? '',
             'email' => $data['email'] ?? '',
+            'details' => $formDetails,
             'product_name' => $data['product_name'] ?? '',
             'source' => $data['source'] ?? '',
             'language' => $data['language'] ?? '',
@@ -109,6 +113,7 @@ function logEmail($config, $data, $status, $message = '', $error = '', $visitorI
         'message' => $message,
         'error' => $error,
         'ip_address' => $ipToLog,
+        'country' => $visitorCountry ?? $data['client_country'] ?? 'Unknown',
         'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? 'Unknown',
     ];
 
@@ -646,7 +651,7 @@ $phpmailerPath = __DIR__ . '/vendor/phpmailer/phpmailer/src/';
 if (!file_exists($phpmailerPath . 'PHPMailer.php')) {
     // PHPMailer not installed - log and return error
     $errorMsg = 'PHPMailer not installed. Run: composer require phpmailer/phpmailer';
-    logEmail($config, $formData, 'failed', 'PHPMailer missing', $errorMsg, $visitorIP);
+    logEmail($config, $formData, 'failed', 'PHPMailer missing', $errorMsg, $visitorIP, $visitorCountry);
     error_log("KSSMI Form Error: " . $errorMsg);
 
     http_response_code(500);
@@ -703,7 +708,7 @@ try {
     $mail->send();
 
     // Log success
-    logEmail($config, $formData, 'success', 'Email sent successfully', '', $visitorIP);
+    logEmail($config, $formData, 'success', 'Email sent successfully', '', $visitorIP, $visitorCountry);
 
     // Determine redirect URL based on language
     $lang = $formData['language'] ?? 'en';
@@ -719,7 +724,7 @@ try {
 } catch (PHPMailerException $e) {
     // Log failure
     $errorMsg = $e->getMessage();
-    logEmail($config, $formData, 'failed', 'PHPMailer error', $errorMsg, $visitorIP);
+    logEmail($config, $formData, 'failed', 'PHPMailer error', $errorMsg, $visitorIP, $visitorCountry);
     error_log("KSSMI Form Error (PHPMailer): " . $errorMsg);
 
     http_response_code(500);
@@ -731,7 +736,7 @@ try {
 } catch (Exception $e) {
     // Log failure
     $errorMsg = $e->getMessage();
-    logEmail($config, $formData, 'failed', 'General error', $errorMsg, $visitorIP);
+    logEmail($config, $formData, 'failed', 'General error', $errorMsg, $visitorIP, $visitorCountry);
     error_log("KSSMI Form Error: " . $errorMsg);
 
     http_response_code(500);
