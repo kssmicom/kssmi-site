@@ -175,13 +175,34 @@ function sanitize($input) {
 }
 
 /**
+ * Debug log for IP detection troubleshooting
+ */
+function debugIPLog($source, $data) {
+    $logFile = __DIR__ . '/ip-debug.log';
+    $entry = date('Y-m-d H:i:s') . " [$source]: " . json_encode($data, JSON_UNESCAPED_UNICODE) . "\n";
+    file_put_contents($logFile, $entry, FILE_APPEND);
+}
+
+/**
  * Get real visitor IP address
  * Handles Cloudflare proxy and other common proxy headers
  */
 function getRealIP() {
+    // Debug: Log all IP-related headers for troubleshooting
+    $debugInfo = [
+        'HTTP_CF_CONNECTING_IP' => $_SERVER['HTTP_CF_CONNECTING_IP'] ?? null,
+        'HTTP_X_FORWARDED_FOR' => $_SERVER['HTTP_X_FORWARDED_FOR'] ?? null,
+        'HTTP_X_REAL_IP' => $_SERVER['HTTP_X_REAL_IP'] ?? null,
+        'REMOTE_ADDR' => $_SERVER['REMOTE_ADDR'] ?? null,
+        'HTTP_CF_IPCOUNTRY' => $_SERVER['HTTP_CF_IPCOUNTRY'] ?? null,
+    ];
+    debugIPLog('getRealIP', $debugInfo);
+
     // Cloudflare provides the real visitor IP in this header
     if (!empty($_SERVER['HTTP_CF_CONNECTING_IP'])) {
-        return $_SERVER['HTTP_CF_CONNECTING_IP'];
+        $ip = $_SERVER['HTTP_CF_CONNECTING_IP'];
+        debugIPLog('getRealIP-result', ['source' => 'HTTP_CF_CONNECTING_IP', 'ip' => $ip]);
+        return $ip;
     }
 
     // Check X-Forwarded-For header (common proxy header)
@@ -190,28 +211,44 @@ function getRealIP() {
         $ips = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
         $ip = trim($ips[0]);
         if (filter_var($ip, FILTER_VALIDATE_IP)) {
+            debugIPLog('getRealIP-result', ['source' => 'HTTP_X_FORWARDED_FOR', 'ip' => $ip]);
             return $ip;
         }
     }
 
     // Check X-Real-IP header (used by some proxies)
     if (!empty($_SERVER['HTTP_X_REAL_IP'])) {
-        return $_SERVER['HTTP_X_REAL_IP'];
+        $ip = $_SERVER['HTTP_X_REAL_IP'];
+        debugIPLog('getRealIP-result', ['source' => 'HTTP_X_REAL_IP', 'ip' => $ip]);
+        return $ip;
     }
 
     // Fall back to REMOTE_ADDR
-    return $_SERVER['REMOTE_ADDR'] ?? 'Unknown';
+    $ip = $_SERVER['REMOTE_ADDR'] ?? 'Unknown';
+    debugIPLog('getRealIP-result', ['source' => 'REMOTE_ADDR', 'ip' => $ip]);
+    return $ip;
 }
 
 /**
- * Get country code from IP address using free IP-API service
+ * Get country code from IP address
+ * First tries Cloudflare's country header, then falls back to IP-API
  */
 function getCountryFromIP($ip) {
+    // First check if Cloudflare provides the country directly (most reliable)
+    if (!empty($_SERVER['HTTP_CF_IPCOUNTRY'])) {
+        $country = $_SERVER['HTTP_CF_IPCOUNTRY'];
+        debugIPLog('getCountryFromIP', ['source' => 'HTTP_CF_IPCOUNTRY', 'country' => $country]);
+        return $country;
+    }
+
     // Skip for localhost/private IPs
-    if (in_array($ip, ['127.0.0.1', '::1', 'unknown']) || filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) === false) {
+    if (in_array(strtolower($ip), ['127.0.0.1', '::1', 'unknown', 'localhost']) ||
+        filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) === false) {
+        debugIPLog('getCountryFromIP', ['source' => 'LOCAL', 'ip' => $ip]);
         return 'LOCAL';
     }
 
+    // Fallback: Use IP-API service
     $ch = curl_init("http://ip-api.com/json/{$ip}?fields=countryCode&lang=en");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_TIMEOUT, 3);
@@ -220,9 +257,12 @@ function getCountryFromIP($ip) {
 
     if ($response) {
         $data = json_decode($response, true);
-        return $data['countryCode'] ?? 'UNKNOWN';
+        $country = $data['countryCode'] ?? 'UNKNOWN';
+        debugIPLog('getCountryFromIP', ['source' => 'IP-API', 'ip' => $ip, 'country' => $country]);
+        return $country;
     }
 
+    debugIPLog('getCountryFromIP', ['source' => 'UNKNOWN', 'ip' => $ip]);
     return 'UNKNOWN';
 }
 
