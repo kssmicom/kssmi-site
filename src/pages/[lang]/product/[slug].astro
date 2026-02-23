@@ -139,9 +139,19 @@ if (videoId) {
     <script type="application/ld+json" set:html={JSON.stringify(videoSchema)} />
   )}
 
+  {/* Pagefind metadata for better search indexing */}
+  <div class="sr-only" data-pagefind-body data-pagefind-meta="title">{title}</div>
+  {itemNo && <div class="sr-only" data-pagefind-meta="itemNo">{itemNo}</div>}
+  {itemNo && <div class="sr-only" data-pagefind-weight="10">{itemNo}</div>}
+  {materials && materials.length > 0 && <div class="sr-only" data-pagefind-meta="materials">{materials.join(', ')}</div>}
+  {colors && colors.length > 0 && <div class="sr-only" data-pagefind-meta="colors">{colors.join(', ')}</div>}
+  {categories && categories.length > 0 && <div class="sr-only" data-pagefind-meta="category">{categories.join(', ')}</div>}
+
   <Header lang={lang} />
 
   <main>
+    {/* Pagefind anchor for better excerpt */}
+    <div id="pagefind-content" data-pagefind-body class="contents">
     <!-- SECTION 1: Breadcrumb Navigation -->
     <Breadcrumb items={breadcrumbItems} lang={lang} />
 
@@ -372,6 +382,7 @@ if (videoId) {
       lang={lang}
       limit={4}
     />
+    </div>{/* End data-pagefind-body */}
   </main>
 
   <Footer lang={lang} />
