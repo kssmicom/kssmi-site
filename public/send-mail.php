@@ -105,7 +105,7 @@ function logEmail($config, $data, $status, $message = '', $error = '') {
         ],
         'message' => $message,
         'error' => $error,
-        'ip_address' => $_SERVER['REMOTE_ADDR'] ?? 'Unknown',
+        'ip_address' => getRealIP(),
         'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? 'Unknown',
     ];
 
@@ -145,7 +145,7 @@ function verifyTurnstile($token, $secret) {
     $data = [
         'secret' => $secret,
         'response' => $token,
-        'remoteip' => $_SERVER['REMOTE_ADDR'] ?? ''
+        'remoteip' => getRealIP()
     ];
 
     $ch = curl_init('https://challenges.cloudflare.com/turnstile/v0/siteverify');
@@ -172,6 +172,35 @@ function verifyTurnstile($token, $secret) {
 
 function sanitize($input) {
     return htmlspecialchars(strip_tags(trim($input)), ENT_QUOTES, 'UTF-8');
+}
+
+/**
+ * Get real visitor IP address
+ * Handles Cloudflare proxy and other common proxy headers
+ */
+function getRealIP() {
+    // Cloudflare provides the real visitor IP in this header
+    if (!empty($_SERVER['HTTP_CF_CONNECTING_IP'])) {
+        return $_SERVER['HTTP_CF_CONNECTING_IP'];
+    }
+
+    // Check X-Forwarded-For header (common proxy header)
+    if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        // X-Forwarded-For can contain multiple IPs, the first one is the client
+        $ips = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+        $ip = trim($ips[0]);
+        if (filter_var($ip, FILTER_VALIDATE_IP)) {
+            return $ip;
+        }
+    }
+
+    // Check X-Real-IP header (used by some proxies)
+    if (!empty($_SERVER['HTTP_X_REAL_IP'])) {
+        return $_SERVER['HTTP_X_REAL_IP'];
+    }
+
+    // Fall back to REMOTE_ADDR
+    return $_SERVER['REMOTE_ADDR'] ?? 'Unknown';
 }
 
 /**
@@ -531,8 +560,8 @@ if (!empty($errors)) {
     exit;
 }
 
-// Get visitor metadata
-$visitorIP = $_SERVER['REMOTE_ADDR'] ?? 'Unknown';
+// Get visitor metadata (using real IP from Cloudflare headers)
+$visitorIP = getRealIP();
 $visitorCountry = getCountryFromIP($visitorIP);
 $inquiryId = generateInquiryId();
 
