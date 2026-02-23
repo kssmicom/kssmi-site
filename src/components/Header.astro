@@ -271,7 +271,7 @@ const collectionMenu = menuStructure.find(item => item.menuKey === 'collection')
               })}
             </div>
           </div>
-          <button id="mobile-menu-button" class="p-2 text-stone-700 hover:text-[#8B7355] focus:outline-none transition-colors">
+          <button id="mobile-menu-button" class="p-2 text-stone-700 hover:text-[#8B7355] focus:outline-none transition-colors relative z-[70] cursor-pointer">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M4 8h16M4 16h16" /></svg>
           </button>
         </div>
@@ -435,35 +435,56 @@ const collectionMenu = menuStructure.find(item => item.menuKey === 'collection')
   // Global timeout reference for mega menu
   let megaMenuTimeout: ReturnType<typeof setTimeout>;
 
-  // Track if already initialized to prevent duplicate listeners
-  let isInitialized = false;
+  // Store handlers globally so we can properly remove them
+  const storedHandlers = new WeakMap<Element, Map<string, EventListener>>();
+
+  function getHandlerMap(element: Element): Map<string, EventListener> {
+    if (!storedHandlers.has(element)) {
+      storedHandlers.set(element, new Map());
+    }
+    return storedHandlers.get(element)!;
+  }
+
+  function setListener(element: Element, event: string, handler: EventListener) {
+    const map = getHandlerMap(element);
+    const oldHandler = map.get(event);
+    if (oldHandler) {
+      element.removeEventListener(event, oldHandler);
+    }
+    element.addEventListener(event, handler);
+    map.set(event, handler);
+  }
+
+  // Global mega menu elements
+  let megaMenuPanel: HTMLElement | null = null;
+  let megaMenuContents: NodeListOf<Element> | null = null;
+
+  function showMegaMenu(menuKey: string) {
+    clearTimeout(megaMenuTimeout);
+
+    megaMenuContents?.forEach(content => {
+      content.classList.remove('active');
+    });
+
+    const targetContent = document.querySelector(`.mega-menu-content[data-menu="${menuKey}"]`);
+    if (targetContent) {
+      targetContent.classList.add('active');
+    }
+
+    megaMenuPanel?.classList.add('active');
+    megaMenuPanel?.setAttribute('data-active-menu', menuKey);
+  }
+
+  function hideMegaMenu() {
+    megaMenuTimeout = setTimeout(() => {
+      megaMenuPanel?.classList.remove('active');
+      megaMenuPanel?.setAttribute('data-active-menu', '');
+    }, 150);
+  }
 
   function initHeader() {
-    const megaMenuPanel = document.getElementById('mega-menu-panel');
-    const megaMenuContents = document.querySelectorAll('.mega-menu-content');
-
-    function showMegaMenu(menuKey: string) {
-      clearTimeout(megaMenuTimeout);
-
-      megaMenuContents.forEach(content => {
-        content.classList.remove('active');
-      });
-
-      const targetContent = document.querySelector(`.mega-menu-content[data-menu="${menuKey}"]`);
-      if (targetContent) {
-        targetContent.classList.add('active');
-      }
-
-      megaMenuPanel?.classList.add('active');
-      megaMenuPanel?.setAttribute('data-active-menu', menuKey);
-    }
-
-    function hideMegaMenu() {
-      megaMenuTimeout = setTimeout(() => {
-        megaMenuPanel?.classList.remove('active');
-        megaMenuPanel?.setAttribute('data-active-menu', '');
-      }, 150);
-    }
+    megaMenuPanel = document.getElementById('mega-menu-panel');
+    megaMenuContents = document.querySelectorAll('.mega-menu-content');
 
     // Mobile Menu Toggle
     const menuButton = document.getElementById('mobile-menu-button');
@@ -471,27 +492,27 @@ const collectionMenu = menuStructure.find(item => item.menuKey === 'collection')
     const mobileMenu = document.getElementById('mobile-menu');
 
     // Debug: Log if elements are found
-    if (!menuButton) {
-      console.warn('Header: mobile-menu-button not found');
-    }
+    console.log('Header init:', {
+      menuButton: !!menuButton,
+      menuClose: !!menuClose,
+      mobileMenu: !!mobileMenu
+    });
 
     function toggleMobileMenu() {
+      console.log('toggleMobileMenu called');
       if (!mobileMenu) return;
       mobileMenu.classList.toggle('hidden');
       document.body.style.overflow = mobileMenu.classList.contains('hidden') ? '' : 'hidden';
     }
 
-    // Remove old listeners before adding new ones (prevents duplicates)
     if (menuButton) {
-      menuButton.removeEventListener('click', toggleMobileMenu);
-      menuButton.addEventListener('click', toggleMobileMenu);
+      setListener(menuButton, 'click', toggleMobileMenu);
     }
     if (menuClose) {
-      menuClose.removeEventListener('click', toggleMobileMenu);
-      menuClose.addEventListener('click', toggleMobileMenu);
+      setListener(menuClose, 'click', toggleMobileMenu);
     }
 
-    // Mobile Submenu Toggle - using event delegation
+    // Mobile Submenu Toggle
     document.querySelectorAll('.mobile-toggle-btn').forEach(btn => {
       const handler = () => {
         const parentDiv = btn.closest('.mobile-menu-item');
@@ -501,11 +522,10 @@ const collectionMenu = menuStructure.find(item => item.menuKey === 'collection')
           btn.classList.toggle('rotated');
         }
       };
-      btn.removeEventListener('click', handler);
-      btn.addEventListener('click', handler);
+      setListener(btn, 'click', handler);
     });
 
-    // Mega Menu - attach listeners directly to elements
+    // Mega Menu triggers
     const megaTriggers = document.querySelectorAll('[data-mega-trigger]');
 
     megaTriggers.forEach(trigger => {
@@ -514,80 +534,68 @@ const collectionMenu = menuStructure.find(item => item.menuKey === 'collection')
       const enterHandler = () => {
         if (menuKey) showMegaMenu(menuKey);
       };
-
-      trigger.removeEventListener('mouseenter', enterHandler);
-      trigger.addEventListener('mouseenter', enterHandler);
+      setListener(trigger, 'mouseenter', enterHandler);
 
       const parentLi = trigger.closest('li');
-      const leaveHandler = (e: MouseEvent) => {
-        const relatedTarget = e.relatedTarget as HTMLElement;
-        if (!megaMenuPanel?.contains(relatedTarget)) {
-          hideMegaMenu();
-        }
-      };
-      parentLi?.removeEventListener('mouseleave', leaveHandler);
-      parentLi?.addEventListener('mouseleave', leaveHandler);
+      if (parentLi) {
+        const leaveHandler = (e: MouseEvent) => {
+          const relatedTarget = e.relatedTarget as HTMLElement;
+          if (!megaMenuPanel?.contains(relatedTarget)) {
+            hideMegaMenu();
+          }
+        };
+        setListener(parentLi, 'mouseleave', leaveHandler);
+      }
     });
 
-    const panelEnterHandler = () => clearTimeout(megaMenuTimeout);
-    const panelLeaveHandler = () => hideMegaMenu();
-
-    megaMenuPanel?.removeEventListener('mouseenter', panelEnterHandler);
-    megaMenuPanel?.addEventListener('mouseenter', panelEnterHandler);
-    megaMenuPanel?.removeEventListener('mouseleave', panelLeaveHandler);
-    megaMenuPanel?.addEventListener('mouseleave', panelLeaveHandler);
+    if (megaMenuPanel) {
+      setListener(megaMenuPanel, 'mouseenter', () => clearTimeout(megaMenuTimeout));
+      setListener(megaMenuPanel, 'mouseleave', () => hideMegaMenu());
+    }
 
     // Header Search
     const headerSearchInput = document.getElementById('header-search-input') as HTMLInputElement;
     const headerSearchClear = document.getElementById('header-search-clear');
 
-    const headerInputHandler = () => {
-      if (headerSearchInput?.value.trim()) {
-        headerSearchClear?.classList.remove('hidden');
-      } else {
-        headerSearchClear?.classList.add('hidden');
-      }
-    };
+    if (headerSearchInput) {
+      setListener(headerSearchInput, 'input', () => {
+        if (headerSearchInput.value.trim()) {
+          headerSearchClear?.classList.remove('hidden');
+        } else {
+          headerSearchClear?.classList.add('hidden');
+        }
+      });
+    }
 
-    const headerClearHandler = () => {
-      if (headerSearchInput) {
+    if (headerSearchClear && headerSearchInput) {
+      setListener(headerSearchClear, 'click', () => {
         headerSearchInput.value = '';
-      }
-      headerSearchClear?.classList.add('hidden');
-      headerSearchInput?.focus();
-    };
-
-    headerSearchInput?.removeEventListener('input', headerInputHandler);
-    headerSearchInput?.addEventListener('input', headerInputHandler);
-    headerSearchClear?.removeEventListener('click', headerClearHandler);
-    headerSearchClear?.addEventListener('click', headerClearHandler);
+        headerSearchClear.classList.add('hidden');
+        headerSearchInput.focus();
+      });
+    }
 
     // Mobile Search
     const mobileSearchInput = document.getElementById('mobile-search-input') as HTMLInputElement;
     const mobileSearchClear = document.getElementById('mobile-search-clear');
 
-    const mobileInputHandler = () => {
-      if (mobileSearchInput?.value.trim()) {
-        mobileSearchClear?.classList.remove('hidden');
-      } else {
-        mobileSearchClear?.classList.add('hidden');
-      }
-    };
+    if (mobileSearchInput) {
+      setListener(mobileSearchInput, 'input', () => {
+        if (mobileSearchInput.value.trim()) {
+          mobileSearchClear?.classList.remove('hidden');
+        } else {
+          mobileSearchClear?.classList.add('hidden');
+        }
+      });
+    }
 
-    const mobileClearHandler = () => {
-      if (mobileSearchInput) {
+    if (mobileSearchClear && mobileSearchInput) {
+      setListener(mobileSearchClear, 'click', () => {
         mobileSearchInput.value = '';
-      }
-      mobileSearchClear?.classList.add('hidden');
-      mobileSearchInput?.focus();
-    };
-
-    mobileSearchInput?.removeEventListener('input', mobileInputHandler);
-    mobileSearchInput?.addEventListener('input', mobileInputHandler);
-    mobileSearchClear?.removeEventListener('click', mobileClearHandler);
-    mobileSearchClear?.addEventListener('click', mobileClearHandler);
-
-    isInitialized = true;
+        mobileSearchClear.classList.add('hidden');
+        mobileSearchInput.focus();
+      });
+    }
   }
 
   // Initialize on DOMContentLoaded (ensures DOM is ready on first load)
