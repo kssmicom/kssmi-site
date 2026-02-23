@@ -109,9 +109,9 @@ if (file_exists(LOGS_FILE)) {
 
 // Stats
 $totalEmails = count($logs);
-$successCount = count(array_filter($logs, fn($l) => $l['status'] === 'success'));
-$failedCount = count(array_filter($logs, fn($l) => $l['status'] === 'failed'));
-$recent24h = count(array_filter($logs, fn($l) => ($l['unix_time'] ?? 0) > time() - 86400));
+$successCount = count(array_filter($logs, function($l) { return ($l['status'] ?? '') === 'success'; }));
+$failedCount = count(array_filter($logs, function($l) { return ($l['status'] ?? '') === 'failed'; }));
+$recent24h = count(array_filter($logs, function($l) { return ($l['unix_time'] ?? 0) > time() - 86400; }));
 
 // ============================================
 // RESEND FUNCTION
