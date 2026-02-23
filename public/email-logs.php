@@ -348,6 +348,23 @@ if ($isAuthenticated && isset($_POST['delete_id'])) {
     $message = 'Log entry deleted';
 }
 
+// Handle bulk delete
+if ($isAuthenticated && isset($_POST['bulk_delete']) && isset($_POST['selected_ids'])) {
+    $selectedIds = $_POST['selected_ids'];
+    $logs = [];
+    if (file_exists(LOGS_FILE)) {
+        $content = file_get_contents(LOGS_FILE);
+        $logs = json_decode($content, true) ?: [];
+    }
+
+    $logs = array_values(array_filter($logs, function($log) use ($selectedIds) {
+        return !isset($log['id']) || !in_array($log['id'], $selectedIds);
+    }));
+
+    file_put_contents(LOGS_FILE, json_encode($logs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+    $message = count($selectedIds) . ' log entries deleted';
+}
+
 // Load logs
 $logs = [];
 if (file_exists(LOGS_FILE)) {
@@ -507,9 +524,10 @@ function resendEmail($log) {
         .modal-content h3 { margin-bottom: 20px; color: #5D4E37; }
         .modal-content input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 15px; font-size: 16px; }
         .modal-actions { display: flex; gap: 10px; justify-content: flex-end; }
-        .detail-box { background: white; border-radius: 8px; padding: 20px; margin-top: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: none; }
-        .detail-box.show { display: block; }
-        .detail-box h4 { color: #5D4E37; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #8B7355; }
+        .detail-row { display: none; }
+        .detail-row.show { display: table-row; }
+        .detail-content { background: #faf9f7; padding: 20px; border-top: 2px solid #8B7355; }
+        .detail-content h4 { color: #5D4E37; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #8B7355; }
         .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 20px; }
         .detail-item { background: #f8f7f5; padding: 12px 15px; border-radius: 6px; }
         .detail-item label { font-size: 11px; color: #666; display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -522,6 +540,12 @@ function resendEmail($log) {
         .url-cell a:hover { text-decoration: underline; }
         .country-badge { background: #e8e4df; padding: 3px 8px; border-radius: 4px; font-size: 12px; }
         .reset-info { background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 4px; margin-bottom: 20px; font-size: 14px; }
+        .bulk-actions { background: #5D4E37; color: white; padding: 12px 20px; border-radius: 8px; margin-bottom: 15px; display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
+        .bulk-actions .btn-danger { background: #c0392b; }
+        .bulk-actions .btn-danger:hover { background: #a93226; }
+        .data-row.selected { background: #fff3cd !important; }
+        .data-row:hover { background: #f5f5f5; }
+        tr.detail-row.show + tr.data-row, tr.data-row:has(+ tr.detail-row.show) { background: #faf9f7; }
         @media (max-width: 768px) {
             .header { flex-direction: column; align-items: flex-start; }
             .stats { flex-direction: column; }
@@ -642,10 +666,22 @@ function resendEmail($log) {
                     <p style="color:#999;font-size:14px;margin-top:10px;">When visitors submit inquiries, they will appear here.</p>
                 </div>
             <?php else: ?>
+                <!-- Bulk Actions Bar -->
+                <div class="bulk-actions" id="bulkActionsBar" style="display:none;">
+                    <span id="selectedCount">0</span> selected
+                    <form method="POST" style="display:inline;" onsubmit="return confirm('Delete selected log entries?');" id="bulkDeleteForm">
+                        <input type="hidden" name="bulk_delete" value="1">
+                        <div id="selectedIdsContainer"></div>
+                        <button type="submit" class="btn btn-danger btn-small">Delete Selected</button>
+                    </form>
+                    <button type="button" class="btn btn-secondary btn-small" onclick="clearSelection()">Clear Selection</button>
+                </div>
+
                 <div class="table-wrapper">
                     <table>
                         <thead>
                             <tr>
+                                <th style="width:30px;"><input type="checkbox" id="selectAll" onchange="toggleSelectAll()"></th>
                                 <th>Status</th>
                                 <th>Time</th>
                                 <th>From</th>
@@ -671,26 +707,31 @@ function resendEmail($log) {
                                 $countryCode = $log['country'] ?? '';
                                 $countryName = $countryCode ? getCountryName($countryCode) : 'Unknown';
                                 $error = $log['error'] ?? '';
+                                $logId = $log['id'] ?? '';
                             ?>
-                                <tr onclick="toggleDetail(<?php echo $i; ?>)" style="cursor:pointer;">
-                                    <td>
+                                <!-- Main Data Row -->
+                                <tr class="data-row" data-index="<?php echo $i; ?>">
+                                    <td onclick="event.stopPropagation();">
+                                        <input type="checkbox" class="log-checkbox" data-id="<?php echo htmlspecialchars($logId); ?>" onchange="updateBulkActions()">
+                                    </td>
+                                    <td onclick="toggleDetail(<?php echo $i; ?>)" style="cursor:pointer;">
                                         <span class="status status-<?php echo $status; ?>"><?php echo ucfirst($status); ?></span>
                                         <?php if ($status === 'failed' && $error): ?>
                                             <br><small style="color:#e74c3c;"><?php echo htmlspecialchars(substr($error, 0, 30)); ?>...</small>
                                         <?php endif; ?>
                                     </td>
-                                    <td class="time"><?php echo htmlspecialchars($timestamp); ?></td>
-                                    <td><?php echo htmlspecialchars($name); ?></td>
-                                    <td><a href="mailto:<?php echo htmlspecialchars($email); ?>" class="email-link" onclick="event.stopPropagation();"><?php echo htmlspecialchars($email); ?></a></td>
-                                    <td><?php echo htmlspecialchars($product); ?></td>
+                                    <td onclick="toggleDetail(<?php echo $i; ?>)" class="time" style="cursor:pointer;"><?php echo htmlspecialchars($timestamp); ?></td>
+                                    <td onclick="toggleDetail(<?php echo $i; ?>)" style="cursor:pointer;"><?php echo htmlspecialchars($name); ?></td>
+                                    <td><a href="mailto:<?php echo htmlspecialchars($email); ?>" class="email-link"><?php echo htmlspecialchars($email); ?></a></td>
+                                    <td onclick="toggleDetail(<?php echo $i; ?>)" style="cursor:pointer;"><?php echo htmlspecialchars($product); ?></td>
                                     <td class="url-cell">
                                         <?php if ($pageUrl): ?>
-                                            <a href="<?php echo htmlspecialchars($fullUrl); ?>" target="_blank" onclick="event.stopPropagation();" title="<?php echo htmlspecialchars($fullUrl); ?>"><?php echo htmlspecialchars($pageUrl); ?></a>
+                                            <a href="<?php echo htmlspecialchars($fullUrl); ?>" target="_blank" title="<?php echo htmlspecialchars($fullUrl); ?>"><?php echo htmlspecialchars($pageUrl); ?></a>
                                         <?php else: ?>
                                             -
                                         <?php endif; ?>
                                     </td>
-                                    <td>
+                                    <td onclick="toggleDetail(<?php echo $i; ?>)" style="cursor:pointer;">
                                         <?php echo htmlspecialchars($ip); ?>
                                         <?php if ($countryCode): ?>
                                             <br><span class="country-badge"><?php echo htmlspecialchars($countryName); ?></span>
@@ -699,92 +740,90 @@ function resendEmail($log) {
                                     <td onclick="event.stopPropagation();">
                                         <?php if ($status === 'failed'): ?>
                                             <form method="POST" style="display:inline;" onsubmit="return confirm('Resend this email?');">
-                                                <input type="hidden" name="resend_id" value="<?php echo htmlspecialchars($log['id']); ?>">
+                                                <input type="hidden" name="resend_id" value="<?php echo htmlspecialchars($logId); ?>">
                                                 <button type="submit" class="btn btn-success btn-small">Resend</button>
                                             </form>
                                         <?php endif; ?>
                                         <form method="POST" style="display:inline;" onsubmit="return confirm('Delete this log entry?');">
-                                            <input type="hidden" name="delete_id" value="<?php echo htmlspecialchars($log['id']); ?>">
+                                            <input type="hidden" name="delete_id" value="<?php echo htmlspecialchars($logId); ?>">
                                             <button type="submit" class="btn btn-danger btn-small">Del</button>
                                         </form>
+                                    </td>
+                                </tr>
+                                <!-- Details Row (collapsible) -->
+                                <tr class="detail-row" id="detail-row-<?php echo $i; ?>">
+                                    <td colspan="9" style="padding:0;">
+                                        <div class="detail-content" id="detail-<?php echo $i; ?>">
+                                            <?php
+                                            $formData = $log['form_data'] ?? [];
+                                            ?>
+                                            <div class="detail-grid">
+                                                <div class="detail-item">
+                                                    <label>Name</label>
+                                                    <div class="value"><?php echo htmlspecialchars($formData['name'] ?? 'N/A'); ?></div>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <label>Email</label>
+                                                    <div class="value"><a href="mailto:<?php echo htmlspecialchars($formData['email'] ?? ''); ?>"><?php echo htmlspecialchars($formData['email'] ?? 'N/A'); ?></a></div>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <label>Product</label>
+                                                    <div class="value"><?php echo htmlspecialchars($formData['product_name'] ?? 'N/A'); ?></div>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <label>Page URL</label>
+                                                    <div class="value"><a href="<?php echo htmlspecialchars($fullUrl); ?>" target="_blank"><?php echo htmlspecialchars($fullUrl); ?></a></div>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <label>Language</label>
+                                                    <div class="value"><?php echo htmlspecialchars(strtoupper($formData['language'] ?? 'N/A')); ?></div>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <label>Country</label>
+                                                    <div class="value"><?php echo htmlspecialchars($countryName); ?></div>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <label>IP Address</label>
+                                                    <div class="value"><?php echo htmlspecialchars($log['ip_address'] ?? 'N/A'); ?></div>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <label>Time</label>
+                                                    <div class="value"><?php echo htmlspecialchars($log['timestamp'] ?? 'N/A'); ?></div>
+                                                </div>
+                                                <?php if (isset($log['resent_at'])): ?>
+                                                <div class="detail-item">
+                                                    <label>Last Resent</label>
+                                                    <div class="value" style="color:#27ae60;"><?php echo htmlspecialchars($log['resent_at']); ?></div>
+                                                </div>
+                                                <?php endif; ?>
+                                                <div class="detail-item" style="grid-column: 1 / -1;">
+                                                    <label>User Agent</label>
+                                                    <div class="value" style="font-size:11px;word-break:break-all;color:#666;"><?php echo htmlspecialchars($log['user_agent'] ?? 'N/A'); ?></div>
+                                                </div>
+                                            </div>
+                                            <h4 style="margin-top:20px;">Message</h4>
+                                            <div class="message-box"><?php echo htmlspecialchars($formData['details'] ?? 'No details provided'); ?></div>
+                                            <?php if (!empty($log['error'])): ?>
+                                            <h4 style="margin-top:20px;color:#e74c3c;">Error</h4>
+                                            <div class="message-box" style="border-left-color:#e74c3c;background:#fdeaea;"><?php echo htmlspecialchars($log['error']); ?></div>
+                                            <?php endif; ?>
+                                            <div class="actions">
+                                                <?php if (($log['status'] ?? '') === 'failed'): ?>
+                                                    <form method="POST" style="display:inline;" onsubmit="return confirm('Resend this email?');">
+                                                        <input type="hidden" name="resend_id" value="<?php echo htmlspecialchars($logId); ?>">
+                                                        <button type="submit" class="btn btn-success">Resend Email</button>
+                                                    </form>
+                                                <?php endif; ?>
+                                                <a href="mailto:<?php echo htmlspecialchars($formData['email'] ?? ''); ?>" class="btn btn-primary">Reply to Customer</a>
+                                                <button class="btn btn-secondary" onclick="toggleDetail(<?php echo $i; ?>)">Collapse</button>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
-
-                <?php foreach ($displayLogs as $i => $log):
-                    $formData = $log['form_data'] ?? [];
-                    $pageUrl = $formData['product_url'] ?? '';
-                    $fullUrl = $pageUrl ? 'https://kssmi.com' . $pageUrl : 'N/A';
-                    $countryCode = $log['country'] ?? '';
-                    $countryName = $countryCode ? getCountryName($countryCode) : 'Unknown';
-                ?>
-                    <div class="detail-box" id="detail-<?php echo $i; ?>">
-                        <h4>Email Details</h4>
-                        <div class="detail-grid">
-                            <div class="detail-item">
-                                <label>Name</label>
-                                <div class="value"><?php echo htmlspecialchars($formData['name'] ?? 'N/A'); ?></div>
-                            </div>
-                            <div class="detail-item">
-                                <label>Email</label>
-                                <div class="value"><a href="mailto:<?php echo htmlspecialchars($formData['email'] ?? ''); ?>"><?php echo htmlspecialchars($formData['email'] ?? 'N/A'); ?></a></div>
-                            </div>
-                            <div class="detail-item">
-                                <label>Product</label>
-                                <div class="value"><?php echo htmlspecialchars($formData['product_name'] ?? 'N/A'); ?></div>
-                            </div>
-                            <div class="detail-item">
-                                <label>Page URL</label>
-                                <div class="value"><a href="<?php echo htmlspecialchars($fullUrl); ?>" target="_blank"><?php echo htmlspecialchars($fullUrl); ?></a></div>
-                            </div>
-                            <div class="detail-item">
-                                <label>Language</label>
-                                <div class="value"><?php echo htmlspecialchars(strtoupper($formData['language'] ?? 'N/A')); ?></div>
-                            </div>
-                            <div class="detail-item">
-                                <label>Country</label>
-                                <div class="value"><?php echo htmlspecialchars($countryName); ?></div>
-                            </div>
-                            <div class="detail-item">
-                                <label>IP Address</label>
-                                <div class="value"><?php echo htmlspecialchars($log['ip_address'] ?? 'N/A'); ?></div>
-                            </div>
-                            <div class="detail-item">
-                                <label>Time</label>
-                                <div class="value"><?php echo htmlspecialchars($log['timestamp'] ?? 'N/A'); ?></div>
-                            </div>
-                            <?php if (isset($log['resent_at'])): ?>
-                            <div class="detail-item">
-                                <label>Last Resent</label>
-                                <div class="value" style="color:#27ae60;"><?php echo htmlspecialchars($log['resent_at']); ?></div>
-                            </div>
-                            <?php endif; ?>
-                            <div class="detail-item" style="grid-column: 1 / -1;">
-                                <label>User Agent</label>
-                                <div class="value" style="font-size:11px;word-break:break-all;color:#666;"><?php echo htmlspecialchars($log['user_agent'] ?? 'N/A'); ?></div>
-                            </div>
-                        </div>
-                        <h4 style="margin-top:20px;">Message</h4>
-                        <div class="message-box"><?php echo htmlspecialchars($formData['details'] ?? 'No details provided'); ?></div>
-                        <?php if (!empty($log['error'])): ?>
-                        <h4 style="margin-top:20px;color:#e74c3c;">Error</h4>
-                        <div class="message-box" style="border-left-color:#e74c3c;background:#fdeaea;"><?php echo htmlspecialchars($log['error']); ?></div>
-                        <?php endif; ?>
-                        <div class="actions">
-                            <?php if (($log['status'] ?? '') === 'failed'): ?>
-                                <form method="POST" style="display:inline;" onsubmit="return confirm('Resend this email?');">
-                                    <input type="hidden" name="resend_id" value="<?php echo htmlspecialchars($log['id']); ?>">
-                                    <button type="submit" class="btn btn-success">Resend Email</button>
-                                </form>
-                            <?php endif; ?>
-                            <a href="mailto:<?php echo htmlspecialchars($formData['email'] ?? ''); ?>" class="btn btn-primary">Reply to Customer</a>
-                            <button class="btn btn-secondary" onclick="toggleDetail(<?php echo $i; ?>)">Close</button>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
 
                 <div style="margin-top:20px;text-align:center;">
                     <form method="POST" onsubmit="return confirm('Clear all logs? This cannot be undone.');" style="display:inline;">
@@ -812,19 +851,117 @@ function resendEmail($log) {
     </div>
 
     <script>
+        var currentOpenIndex = null;
+
         function toggleDetail(index) {
-            var panels = document.querySelectorAll('.detail-box');
-            for (var i = 0; i < panels.length; i++) {
-                panels[i].classList.remove('show');
+            var detailRow = document.getElementById('detail-row-' + index);
+            var wasOpen = detailRow.classList.contains('show');
+
+            // Close all detail rows first
+            var allDetailRows = document.querySelectorAll('.detail-row');
+            for (var i = 0; i < allDetailRows.length; i++) {
+                allDetailRows[i].classList.remove('show');
             }
-            var panel = document.getElementById('detail-' + index);
-            if (panel) {
-                panel.classList.toggle('show');
-                if (panel.classList.contains('show')) {
-                    panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            // If this row wasn't already open, open it
+            if (!wasOpen) {
+                detailRow.classList.add('show');
+                currentOpenIndex = index;
+                // Scroll the data row into view
+                var dataRow = document.querySelector('.data-row[data-index="' + index + '"]');
+                if (dataRow) {
+                    dataRow.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            } else {
+                currentOpenIndex = null;
+            }
+        }
+
+        function toggleSelectAll() {
+            var selectAllCheckbox = document.getElementById('selectAll');
+            var checkboxes = document.querySelectorAll('.log-checkbox');
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = selectAllCheckbox.checked;
+                var row = checkboxes[i].closest('.data-row');
+                if (selectAllCheckbox.checked) {
+                    row.classList.add('selected');
+                } else {
+                    row.classList.remove('selected');
+                }
+            }
+            updateBulkActions();
+        }
+
+        function updateBulkActions() {
+            var checkboxes = document.querySelectorAll('.log-checkbox:checked');
+            var bulkBar = document.getElementById('bulkActionsBar');
+            var selectedCount = document.getElementById('selectedCount');
+            var container = document.getElementById('selectedIdsContainer');
+            var selectAllCheckbox = document.getElementById('selectAll');
+            var allCheckboxes = document.querySelectorAll('.log-checkbox');
+
+            // Update selected count
+            selectedCount.textContent = checkboxes.length;
+
+            // Show/hide bulk actions bar
+            if (checkboxes.length > 0) {
+                bulkBar.style.display = 'flex';
+            } else {
+                bulkBar.style.display = 'none';
+            }
+
+            // Update select all checkbox state
+            if (checkboxes.length === allCheckboxes.length && allCheckboxes.length > 0) {
+                selectAllCheckbox.checked = true;
+                selectAllCheckbox.indeterminate = false;
+            } else if (checkboxes.length > 0) {
+                selectAllCheckbox.checked = false;
+                selectAllCheckbox.indeterminate = true;
+            } else {
+                selectAllCheckbox.checked = false;
+                selectAllCheckbox.indeterminate = false;
+            }
+
+            // Update selected IDs in form
+            container.innerHTML = '';
+            for (var i = 0; i < checkboxes.length; i++) {
+                var input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'selected_ids[]';
+                input.value = checkboxes[i].getAttribute('data-id');
+                container.appendChild(input);
+            }
+
+            // Update row highlighting
+            var allRows = document.querySelectorAll('.data-row');
+            for (var i = 0; i < allRows.length; i++) {
+                var checkbox = allRows[i].querySelector('.log-checkbox');
+                if (checkbox.checked) {
+                    allRows[i].classList.add('selected');
+                } else {
+                    allRows[i].classList.remove('selected');
                 }
             }
         }
+
+        function clearSelection() {
+            var checkboxes = document.querySelectorAll('.log-checkbox');
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = false;
+            }
+            document.getElementById('selectAll').checked = false;
+            updateBulkActions();
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            var checkboxes = document.querySelectorAll('.log-checkbox');
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].addEventListener('change', function() {
+                    updateBulkActions();
+                });
+            }
+        });
     </script>
 </body>
 </html>
