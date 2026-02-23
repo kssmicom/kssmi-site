@@ -435,6 +435,9 @@ const collectionMenu = menuStructure.find(item => item.menuKey === 'collection')
   // Global timeout reference for mega menu
   let megaMenuTimeout: ReturnType<typeof setTimeout>;
 
+  // Track if already initialized to prevent duplicate listeners
+  let isInitialized = false;
+
   function initHeader() {
     const megaMenuPanel = document.getElementById('mega-menu-panel');
     const megaMenuContents = document.querySelectorAll('.mega-menu-content');
@@ -467,25 +470,39 @@ const collectionMenu = menuStructure.find(item => item.menuKey === 'collection')
     const menuClose = document.getElementById('mobile-menu-close');
     const mobileMenu = document.getElementById('mobile-menu');
 
+    // Debug: Log if elements are found
+    if (!menuButton) {
+      console.warn('Header: mobile-menu-button not found');
+    }
+
     function toggleMobileMenu() {
       if (!mobileMenu) return;
       mobileMenu.classList.toggle('hidden');
       document.body.style.overflow = mobileMenu.classList.contains('hidden') ? '' : 'hidden';
     }
 
-    menuButton?.addEventListener('click', toggleMobileMenu);
-    menuClose?.addEventListener('click', toggleMobileMenu);
+    // Remove old listeners before adding new ones (prevents duplicates)
+    if (menuButton) {
+      menuButton.removeEventListener('click', toggleMobileMenu);
+      menuButton.addEventListener('click', toggleMobileMenu);
+    }
+    if (menuClose) {
+      menuClose.removeEventListener('click', toggleMobileMenu);
+      menuClose.addEventListener('click', toggleMobileMenu);
+    }
 
     // Mobile Submenu Toggle - using event delegation
     document.querySelectorAll('.mobile-toggle-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
+      const handler = () => {
         const parentDiv = btn.closest('.mobile-menu-item');
         const subMenu = parentDiv?.querySelector('.mobile-sub-menu');
         if (subMenu) {
           subMenu.classList.toggle('open');
           btn.classList.toggle('rotated');
         }
-      });
+      };
+      btn.removeEventListener('click', handler);
+      btn.addEventListener('click', handler);
     });
 
     // Mega Menu - attach listeners directly to elements
@@ -494,66 +511,92 @@ const collectionMenu = menuStructure.find(item => item.menuKey === 'collection')
     megaTriggers.forEach(trigger => {
       const menuKey = trigger.getAttribute('data-mega-trigger');
 
-      trigger.addEventListener('mouseenter', () => {
+      const enterHandler = () => {
         if (menuKey) showMegaMenu(menuKey);
-      });
+      };
+
+      trigger.removeEventListener('mouseenter', enterHandler);
+      trigger.addEventListener('mouseenter', enterHandler);
 
       const parentLi = trigger.closest('li');
-      parentLi?.addEventListener('mouseleave', (e) => {
-        const relatedTarget = (e as MouseEvent).relatedTarget as HTMLElement;
+      const leaveHandler = (e: MouseEvent) => {
+        const relatedTarget = e.relatedTarget as HTMLElement;
         if (!megaMenuPanel?.contains(relatedTarget)) {
           hideMegaMenu();
         }
-      });
+      };
+      parentLi?.removeEventListener('mouseleave', leaveHandler);
+      parentLi?.addEventListener('mouseleave', leaveHandler);
     });
 
-    megaMenuPanel?.addEventListener('mouseenter', () => {
-      clearTimeout(megaMenuTimeout);
-    });
+    const panelEnterHandler = () => clearTimeout(megaMenuTimeout);
+    const panelLeaveHandler = () => hideMegaMenu();
 
-    megaMenuPanel?.addEventListener('mouseleave', () => {
-      hideMegaMenu();
-    });
+    megaMenuPanel?.removeEventListener('mouseenter', panelEnterHandler);
+    megaMenuPanel?.addEventListener('mouseenter', panelEnterHandler);
+    megaMenuPanel?.removeEventListener('mouseleave', panelLeaveHandler);
+    megaMenuPanel?.addEventListener('mouseleave', panelLeaveHandler);
 
     // Header Search
     const headerSearchInput = document.getElementById('header-search-input') as HTMLInputElement;
     const headerSearchClear = document.getElementById('header-search-clear');
 
-    headerSearchInput?.addEventListener('input', () => {
-      if (headerSearchInput.value.trim()) {
+    const headerInputHandler = () => {
+      if (headerSearchInput?.value.trim()) {
         headerSearchClear?.classList.remove('hidden');
       } else {
         headerSearchClear?.classList.add('hidden');
       }
-    });
+    };
 
-    headerSearchClear?.addEventListener('click', () => {
-      headerSearchInput.value = '';
-      headerSearchClear.classList.add('hidden');
-      headerSearchInput.focus();
-    });
+    const headerClearHandler = () => {
+      if (headerSearchInput) {
+        headerSearchInput.value = '';
+      }
+      headerSearchClear?.classList.add('hidden');
+      headerSearchInput?.focus();
+    };
+
+    headerSearchInput?.removeEventListener('input', headerInputHandler);
+    headerSearchInput?.addEventListener('input', headerInputHandler);
+    headerSearchClear?.removeEventListener('click', headerClearHandler);
+    headerSearchClear?.addEventListener('click', headerClearHandler);
 
     // Mobile Search
     const mobileSearchInput = document.getElementById('mobile-search-input') as HTMLInputElement;
     const mobileSearchClear = document.getElementById('mobile-search-clear');
 
-    mobileSearchInput?.addEventListener('input', () => {
-      if (mobileSearchInput.value.trim()) {
+    const mobileInputHandler = () => {
+      if (mobileSearchInput?.value.trim()) {
         mobileSearchClear?.classList.remove('hidden');
       } else {
         mobileSearchClear?.classList.add('hidden');
       }
-    });
+    };
 
-    mobileSearchClear?.addEventListener('click', () => {
-      mobileSearchInput.value = '';
-      mobileSearchClear.classList.add('hidden');
-      mobileSearchInput.focus();
-    });
+    const mobileClearHandler = () => {
+      if (mobileSearchInput) {
+        mobileSearchInput.value = '';
+      }
+      mobileSearchClear?.classList.add('hidden');
+      mobileSearchInput?.focus();
+    };
+
+    mobileSearchInput?.removeEventListener('input', mobileInputHandler);
+    mobileSearchInput?.addEventListener('input', mobileInputHandler);
+    mobileSearchClear?.removeEventListener('click', mobileClearHandler);
+    mobileSearchClear?.addEventListener('click', mobileClearHandler);
+
+    isInitialized = true;
   }
 
-  // Initialize on first load
-  initHeader();
+  // Initialize on DOMContentLoaded (ensures DOM is ready on first load)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHeader);
+  } else {
+    // DOM already loaded, initialize immediately
+    initHeader();
+  }
 
   // Re-initialize after View Transitions navigation
   document.addEventListener('astro:page-load', initHeader);
