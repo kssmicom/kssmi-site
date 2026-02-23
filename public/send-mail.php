@@ -81,8 +81,11 @@ $config = [
 // EMAIL LOGGING FUNCTIONS
 // ============================================
 
-function logEmail($config, $data, $status, $message = '', $error = '') {
+function logEmail($config, $data, $status, $message = '', $error = '', $visitorIP = null) {
     if (!$config['log_enabled']) return;
+
+    // Use provided IP or fall back to server detection
+    $ipToLog = $visitorIP ?? $data['client_ip'] ?? getRealIP();
 
     $logEntry = [
         'id' => uniqid(),
@@ -105,7 +108,7 @@ function logEmail($config, $data, $status, $message = '', $error = '') {
         ],
         'message' => $message,
         'error' => $error,
-        'ip_address' => getRealIP(),
+        'ip_address' => $ipToLog,
         'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? 'Unknown',
     ];
 
@@ -139,13 +142,19 @@ function getRecentLogs($config, $limit = 50) {
 // TURNSTILE VERIFICATION
 // ============================================
 
-function verifyTurnstile($token, $secret) {
+function verifyTurnstile($token, $secret, $clientIP = null) {
     if (empty($token)) return false;
+
+    // Use client-reported IP if available, otherwise fall back to server detection
+    $ip = $clientIP;
+    if (empty($ip) || !filter_var($ip, FILTER_VALIDATE_IP)) {
+        $ip = getRealIP();
+    }
 
     $data = [
         'secret' => $secret,
         'response' => $token,
-        'remoteip' => getRealIP()
+        'remoteip' => $ip
     ];
 
     $ch = curl_init('https://challenges.cloudflare.com/turnstile/v0/siteverify');
@@ -560,6 +569,8 @@ $formData = [
     'product_url' => sanitize($_POST['product_url'] ?? ''),
     'product_name' => sanitize($_POST['product_name'] ?? 'N/A'),
     'language' => sanitize($_POST['language'] ?? 'en'),
+    'client_ip' => sanitize($_POST['client_ip'] ?? ''),
+    'client_country' => sanitize($_POST['client_country'] ?? ''),
 ];
 
 $turnstileToken = $_POST['cf-turnstile-response'] ?? '';
@@ -584,7 +595,7 @@ if (empty($formData['details'])) {
 
 // Verify Turnstile (skip in debug mode)
 if (!$config['debug_mode']) {
-    if (!verifyTurnstile($turnstileToken, $config['turnstile_secret'])) {
+    if (!verifyTurnstile($turnstileToken, $config['turnstile_secret'], $formData['client_ip'] ?? null)) {
         $errors[] = 'Security verification failed. Please complete the captcha.';
     }
 } else {
@@ -600,9 +611,29 @@ if (!empty($errors)) {
     exit;
 }
 
-// Get visitor metadata (using real IP from Cloudflare headers)
-$visitorIP = getRealIP();
-$visitorCountry = getCountryFromIP($visitorIP);
+// Get visitor metadata - use client-reported IP (more accurate behind Cloudflare)
+// Client-side JavaScript fetches the real IP from ipapi.co
+$clientIP = $formData['client_ip'] ?? '';
+$clientCountry = $formData['client_country'] ?? '';
+
+// Use client-reported IP if available, otherwise fall back to server detection
+if (!empty($clientIP) && filter_var($clientIP, FILTER_VALIDATE_IP)) {
+    $visitorIP = $clientIP;
+    debugIPLog('IP-source', ['source' => 'client-reported', 'ip' => $visitorIP]);
+} else {
+    $visitorIP = getRealIP();
+    debugIPLog('IP-source', ['source' => 'server-detected', 'ip' => $visitorIP]);
+}
+
+// Use client-reported country if available, otherwise detect from IP
+if (!empty($clientCountry) && strlen($clientCountry) === 2) {
+    $visitorCountry = strtoupper($clientCountry);
+    debugIPLog('Country-source', ['source' => 'client-reported', 'country' => $visitorCountry]);
+} else {
+    $visitorCountry = getCountryFromIP($visitorIP);
+    debugIPLog('Country-source', ['source' => 'server-detected', 'country' => $visitorCountry]);
+}
+
 $inquiryId = generateInquiryId();
 
 // ============================================
@@ -615,7 +646,7 @@ $phpmailerPath = __DIR__ . '/vendor/phpmailer/phpmailer/src/';
 if (!file_exists($phpmailerPath . 'PHPMailer.php')) {
     // PHPMailer not installed - log and return error
     $errorMsg = 'PHPMailer not installed. Run: composer require phpmailer/phpmailer';
-    logEmail($config, $formData, 'failed', 'PHPMailer missing', $errorMsg);
+    logEmail($config, $formData, 'failed', 'PHPMailer missing', $errorMsg, $visitorIP);
     error_log("KSSMI Form Error: " . $errorMsg);
 
     http_response_code(500);
@@ -672,7 +703,7 @@ try {
     $mail->send();
 
     // Log success
-    logEmail($config, $formData, 'success', 'Email sent successfully');
+    logEmail($config, $formData, 'success', 'Email sent successfully', '', $visitorIP);
 
     // Determine redirect URL based on language
     $lang = $formData['language'] ?? 'en';
@@ -688,7 +719,7 @@ try {
 } catch (PHPMailerException $e) {
     // Log failure
     $errorMsg = $e->getMessage();
-    logEmail($config, $formData, 'failed', 'PHPMailer error', $errorMsg);
+    logEmail($config, $formData, 'failed', 'PHPMailer error', $errorMsg, $visitorIP);
     error_log("KSSMI Form Error (PHPMailer): " . $errorMsg);
 
     http_response_code(500);
@@ -700,7 +731,7 @@ try {
 } catch (Exception $e) {
     // Log failure
     $errorMsg = $e->getMessage();
-    logEmail($config, $formData, 'failed', 'General error', $errorMsg);
+    logEmail($config, $formData, 'failed', 'General error', $errorMsg, $visitorIP);
     error_log("KSSMI Form Error: " . $errorMsg);
 
     http_response_code(500);
