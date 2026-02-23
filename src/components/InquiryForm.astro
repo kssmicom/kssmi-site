@@ -295,15 +295,17 @@ const currentUrl = Astro.url.pathname;
           </svg>
           <span class="text-sm">+86-135-1053-2553</span>
         </a>
-        <a
-          href="mailto:sales@kssmi.com"
-          class="flex items-center gap-2 text-gray-600 hover:text-[#8B7355] transition-colors"
+        <button
+          type="button"
+          data-email-user="sales"
+          data-email-domain="kssmi.com"
+          class="flex items-center gap-2 text-gray-600 hover:text-[#8B7355] transition-colors cursor-pointer"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
-          <span class="text-sm">sales#kssmi.com</span>
-        </a>
+          <span class="text-sm">sales@kssmi.com</span>
+        </button>
         <a
           href="https://wa.me/8613510532553"
           target="_blank"
@@ -586,6 +588,24 @@ const currentUrl = Astro.url.pathname;
   // Initialize form
   setupFormSubmission();
 
+  // Email Button Logic - Construct mailto dynamically to bypass obfuscation
+  function initEmailButtons() {
+    const emailButtons = document.querySelectorAll('[data-email-user][data-email-domain]');
+    emailButtons.forEach(function(btn) {
+      btn.onclick = function() {
+        const user = this.getAttribute('data-email-user');
+        const domain = this.getAttribute('data-email-domain');
+        window.location.href = 'mailto:' + user + '@' + domain;
+      };
+    });
+  }
+
+  // Initialize email buttons
+  initEmailButtons();
+
   // Re-setup after View Transitions
-  document.addEventListener('astro:page-load', setupFormSubmission);
+  document.addEventListener('astro:page-load', function() {
+    setupFormSubmission();
+    initEmailButtons();
+  });
 </script>

@@ -164,17 +164,19 @@ const currentYear = new Date().getFullYear();
     </span>
   </a>
 
-  <!-- Email Button -->
-  <a href={`mailto:${contactEmail}`}
+  <!-- Email Button - uses JS to bypass email obfuscation -->
+  <button type="button"
+     data-email-user="sales"
+     data-email-domain="kssmi.com"
      title={t.floating.email}
-     class="w-12 h-12 md:w-14 md:h-14 flex-none bg-[#0891b2] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:-translate-x-1 transition-all duration-300 group relative">
+     class="w-12 h-12 md:w-14 md:h-14 flex-none bg-[#0891b2] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:-translate-x-1 transition-all duration-300 group relative cursor-pointer">
     <svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
     </svg>
     <span class={`absolute ${isRTL ? 'left-full ml-3' : 'right-full mr-3'} bg-stone-900 text-white text-[10px] font-bold uppercase tracking-widest py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none`}>
       {t.floating.email}
     </span>
-  </a>
+  </button>
 
   <!-- WhatsApp Button -->
   <a href={`https://wa.me/${whatsappNum}`}
@@ -233,9 +235,25 @@ const currentYear = new Date().getFullYear();
     updateButtonVisibility();
   }
 
+  // Email Button Logic - Construct mailto dynamically to bypass obfuscation
+  function initEmailButtons() {
+    const emailButtons = document.querySelectorAll('[data-email-user][data-email-domain]');
+    emailButtons.forEach(function(btn) {
+      btn.onclick = function() {
+        const user = this.getAttribute('data-email-user');
+        const domain = this.getAttribute('data-email-domain');
+        window.location.href = 'mailto:' + user + '@' + domain;
+      };
+    });
+  }
+
   // Initialize on first load
   initScrollTopButton();
+  initEmailButtons();
 
   // Re-initialize after View Transitions navigation
-  document.addEventListener('astro:page-load', initScrollTopButton);
+  document.addEventListener('astro:page-load', function() {
+    initScrollTopButton();
+    initEmailButtons();
+  });
 </script>
