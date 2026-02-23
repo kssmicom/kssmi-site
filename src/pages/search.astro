@@ -1,9 +1,12 @@
 ---
 // English search page (default locale)
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import { translations } from '../translations';
 
 const t = translations.en;
+const lang = 'en';
 
 // Get search query from URL
 const url = new URL(Astro.request.url);
@@ -11,6 +14,7 @@ const query = url.searchParams.get('q') || '';
 ---
 
 <Layout title={`Search Results${query ? ` for "${query}"` : ''} | KSSMI`} lang="en">
+  <Header lang={lang} />
   <main class="min-h-screen bg-white py-16 px-4">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-3xl font-bold text-stone-900 mb-2">Search</h1>
@@ -49,6 +53,7 @@ const query = url.searchParams.get('q') || '';
       </div>
     </div>
   </main>
+  <Footer lang={lang} />
 </Layout>
 
 <script define:vars={{ query }}>

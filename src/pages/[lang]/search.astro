@@ -1,6 +1,8 @@
 ---
 // Language-aware search page
 import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 import { translations } from '../../translations';
 
 // Generate static paths for all languages
@@ -146,6 +148,7 @@ const query = url.searchParams.get('q') || '';
 ---
 
 <Layout title={`${searchTitle[lang]}${query ? ` - "${query}"` : ''} | KSSMI`} lang={lang}>
+  <Header lang={lang} />
   <main class="min-h-screen bg-white py-16 px-4">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-3xl font-bold text-stone-900 mb-2">{searchTitle[lang]}</h1>
@@ -184,6 +187,7 @@ const query = url.searchParams.get('q') || '';
       </div>
     </div>
   </main>
+  <Footer lang={lang} />
 </Layout>
 
 <script define:vars={{ query, lang, noResultsText, foundText, resultsText, tryDifferentText, viewPageText }}>
