@@ -113,18 +113,19 @@ if (videoId) {
   )}
 
   {/* Pagefind metadata for better search indexing */}
-  <div class="sr-only" data-pagefind-body data-pagefind-meta="title">{title}</div>
+  <div class="sr-only" data-pagefind-meta="title">{title}</div>
   {itemNo && <div class="sr-only" data-pagefind-meta="itemNo">{itemNo}</div>}
   {itemNo && <div class="sr-only" data-pagefind-weight="10">{itemNo}</div>}
   {materials && materials.length > 0 && <div class="sr-only" data-pagefind-meta="materials">{materials.join(', ')}</div>}
   {colors && colors.length > 0 && <div class="sr-only" data-pagefind-meta="colors">{colors.join(', ')}</div>}
   {categories && categories.length > 0 && <div class="sr-only" data-pagefind-meta="category">{categories.join(', ')}</div>}
+  {cover && <img src={cover} alt={title} data-pagefind-meta="image" class="sr-only" />}
 
   <Header lang={lang} />
 
-  <main>
+  <main data-pagefind-body>
     {/* Pagefind anchor for better excerpt */}
-    <div id="pagefind-content" data-pagefind-body class="contents">
+    <div id="pagefind-content" class="contents">
     <!-- SECTION 1: Breadcrumb Navigation -->
     <Breadcrumb items={breadcrumbItems} lang={lang} />
 

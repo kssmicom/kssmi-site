@@ -4,190 +4,316 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { translations } from '../translations';
-import { Image } from 'astro:assets';
 
 const t = translations.en;
 const lang = 'en';
-
-// Get search query from URL
-const url = new URL(Astro.request.url);
-const query = url.searchParams.get('q') || '';
-
-// Translations
-const searchText = {
-  en: "Search",
-  it: "Cerca",
-  es: "Buscar",
-  fr: "Recherche",
-  de: "Suche",
-  pt: "Buscar",
-  ru: "Поиск",
-  ja: "検索",
-  tr: "Ara",
-  ar: "بحث"
-};
-
-const foundMatchesText = {
-  en: "Found matches for",
-  it: "Trovate corrispondenze per",
-  es: "Se encontraron coincidencias para",
-  fr: "Correspondances trouvées pour",
-  de: "Treffer gefunden für",
-  pt: "Correspondências encontradas para",
-  ru: "Найдены совпадения для",
-  ja: "の検索結果",
-  tr: "için eşleşmeler bulundu",
-  ar: "تم العثور على تطابقات لـ"
-};
-
-const resultsFoundText = {
-  en: "Results Found",
-  it: "Risultati trovati",
-  es: "Resultados encontrados",
-  fr: "Résultats trouvés",
-  de: "Ergebnisse gefunden",
-  pt: "Resultados encontrados",
-  ru: "Результатов найдено",
-  ja: "件の結果",
-  tr: "Sonuç bulundu",
-  ar: "نتائج وجدت"
-};
-
-const noResultsText = {
-  en: "No results found for",
-  it: "Nessun risultato per",
-  es: "Sin resultados para",
-  fr: "Aucun résultat pour",
-  de: "Keine Ergebnisse für",
-  pt: "Sem resultados para",
-  ru: "Нет результатов для",
-  ja: "の結果はありません",
-  tr: "için sonuç bulunamadı",
-  ar: "لا توجد نتائج لـ"
-};
-
-const tryDifferentText = {
-  en: "Try different keywords or check your spelling",
-  it: "Prova parole chiave diverse",
-  es: "Intenta con diferentes palabras clave",
-  fr: "Essayez d'autres mots-clés",
-  de: "Versuchen Sie andere Suchbegriffe",
-  pt: "Tente palavras-chave diferentes",
-  ru: "Попробуйте другие ключевые слова",
-  ja: "別のキーワードを試してください",
-  tr: "Farklı anahtar kelimeler deneyin",
-  ar: "جرب كلمات مفتاحية مختلفة"
-};
-
-const viewDetailsText = {
-  en: "View Details",
-  it: "Vedi dettagli",
-  es: "Ver detalles",
-  fr: "Voir détails",
-  de: "Details ansehen",
-  pt: "Ver detalhes",
-  ru: "Подробнее",
-  ja: "詳細を見る",
-  tr: "Detayları görüntüle",
-  ar: "عرض التفاصيل"
-};
-
-const searchPlaceholder = "Search products, pages, articles...";
 ---
 
-<Layout title={`${searchText.en}${query ? ` - "${query}"` : ''} | KSSMI`} lang="en">
+<Layout title="Search Results | KSSMI" lang="en">
   <Header lang={lang} />
 
-  <main class="min-h-screen bg-stone-50">
-    <!-- Search Header -->
-    <div class="bg-white border-b border-stone-200">
-      <div class="max-w-7xl mx-auto px-4 py-8">
-        <!-- Search Form -->
-        <form action="/search" method="GET" class="max-w-2xl mx-auto">
-          <div class="flex items-center border-2 border-stone-300 rounded-lg overflow-hidden focus-within:border-[#8B7355] transition-colors bg-white shadow-sm">
+  <section class="w-full min-h-screen bg-stone-100 pt-32 pb-24">
+    <div class="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12">
+
+      <!-- Search Header Block -->
+      <div class="text-center mb-12 relative max-w-4xl mx-auto">
+        <!-- Logo Mark -->
+        <div class="inline-flex items-center justify-center mb-6 hover:-translate-y-1 transition-transform duration-500">
+          <img src="/media/global/logo.png" alt="KSSMI" class="h-12 w-auto object-contain drop-shadow-sm">
+        </div>
+
+        <h1 class="text-3xl md:text-4xl font-bold text-[#5D4E37] mb-3 tracking-tight">
+          Search Results
+        </h1>
+
+        <!-- Query display (updated by JS) -->
+        <div id="search-info" class="hidden">
+          <div class="inline-block relative">
+            <p class="text-lg text-stone-600 mb-3 font-light">
+              Found matches for <span id="query-display" class="font-bold text-[#8B7355] border-b-2 border-[#8B7355]/20"></span>
+            </p>
+          </div>
+
+          <div class="flex items-center justify-center gap-3">
+            <span class="h-[1px] w-10 bg-[#8B7355]/30"></span>
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#5D4E37]/60">
+              <span id="count-number">0</span> Results Found
+            </p>
+            <span class="h-[1px] w-10 bg-[#8B7355]/30"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search Form Block -->
+      <div class="max-w-3xl mx-auto mb-16 relative z-10">
+        <form action="/search" method="GET" class="relative group">
+          <div class="absolute inset-0 bg-[#5D4E37]/5 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+          <div class="flex items-center border-2 border-stone-200 bg-white rounded-full overflow-hidden focus-within:border-[#8B7355] shadow-sm transition-all duration-300 focus-within:ring-4 focus-within:ring-[#8B7355]/10 relative z-10">
             <input
               type="search"
               name="q"
-              value={query}
-              placeholder={searchPlaceholder}
-              class="flex-grow py-4 px-6 text-lg outline-none"
-              autocomplete="off"
-            />
-            <button type="submit" class="px-6 py-4 bg-[#8B7355] text-white hover:bg-[#5D4E37] transition-colors">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              id="search-input"
+              placeholder="Search products, technical specs, and articles..."
+              class="flex-grow py-4 px-6 bg-transparent border-none outline-none text-base text-stone-900 placeholder-stone-400 font-medium focus:ring-0"
+              style="::-webkit-search-cancel-button{display:none}::-moz-search-clear-button{display:none}"
+            >
+
+            <!-- Clear Button (X icon) - hidden by default -->
+            <button type="button" id="search-clear" class="hidden px-3 text-stone-400 hover:text-stone-600 transition-colors flex-shrink-0" aria-label="Clear search">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
               </svg>
+            </button>
+
+            <!-- Search Button -->
+            <button type="submit" class="px-5 py-2.5 mr-1.5 bg-[#5D4E37] text-white rounded-full hover:bg-[#8B7355] transition-all duration-300 font-bold tracking-wide text-xs uppercase shadow-md flex-shrink-0 flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+              <span>Search</span>
             </button>
           </div>
         </form>
-
-        <!-- Search Info -->
-        {query && (
-          <div id="search-info" class="text-center mt-6">
-            <h1 class="text-2xl font-bold text-stone-900">
-              {foundMatchesText.en} "<span class="text-[#8B7355]">{query}</span>"
-            </h1>
-            <p id="results-count" class="text-stone-600 mt-2">
-              <span id="count-number">0</span> {resultsFoundText.en}
-            </p>
-          </div>
-        )}
       </div>
-    </div>
 
-    <!-- Search Results Container -->
-    <div class="max-w-7xl mx-auto px-4 py-8">
-      {query ? (
-        <div id="search-results" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          <!-- Results will be loaded here by JavaScript -->
-          <div class="col-span-full text-center py-8 text-stone-500">
-            <svg class="w-8 h-8 mx-auto animate-spin text-[#8B7355]" fill="none" viewBox="0 0 24 24">
-              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
-            <p class="mt-4">Searching...</p>
-          </div>
-        </div>
-      ) : (
-        <div class="text-center py-16">
-          <svg class="w-24 h-24 mx-auto text-stone-300 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-          <h2 class="text-2xl font-semibold text-stone-700 mb-2">Search KSSMI</h2>
-          <p class="text-stone-500 max-w-md mx-auto">Find products, articles, and more. Enter a search term above.</p>
-        </div>
-      )}
-
-      <!-- No Results Template (hidden) -->
-      <div id="no-results-template" class="hidden col-span-full text-center py-16">
-        <svg class="w-24 h-24 mx-auto text-stone-300 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      <!-- Loading State -->
+      <div id="loading-state" class="hidden text-center py-16">
+        <svg class="w-12 h-12 mx-auto animate-spin text-[#8B7355]" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
         </svg>
-        <h2 class="text-2xl font-semibold text-stone-700 mb-2">{noResultsText.en} "<span class="query-text"></span>"</h2>
-        <p class="text-stone-500">{tryDifferentText.en}</p>
+        <p class="mt-4 text-stone-500">Searching...</p>
       </div>
-    </div>
 
-    <!-- Pagination -->
-    <div id="pagination" class="hidden max-w-7xl mx-auto px-4 pb-12">
-      <div class="flex justify-center items-center gap-2">
-        <!-- Pagination buttons will be added by JavaScript -->
+      <!-- Empty State -->
+      <div id="empty-state" class="text-center py-24">
+        <div class="inline-flex items-center justify-center w-20 h-20 bg-white border border-stone-200 rounded-full mb-8 shadow-sm">
+          <svg class="w-8 h-8 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold text-[#5D4E37] mb-4">Search KSSMI</h2>
+        <p class="text-base text-stone-600 mb-10 max-w-md mx-auto">
+          Find products, articles, and more. Enter a search term above.
+        </p>
+
+        <!-- Suggestions -->
+        <div class="mt-12 max-w-5xl mx-auto">
+          <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-[#8B7355] mb-8">Recommended Searches</h3>
+          <div class="flex flex-wrap gap-3 justify-center">
+            <a href="/search?q=optical+frames" class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#8B7355] transition-all duration-300 shadow-sm hover:shadow-md">
+              Optical Frames
+            </a>
+            <a href="/search?q=sunglasses" class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#8B7355] transition-all duration-300 shadow-sm hover:shadow-md">
+              Sunglasses
+            </a>
+            <a href="/search?q=acetate" class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#8B7355] transition-all duration-300 shadow-sm hover:shadow-md">
+              Acetate
+            </a>
+            <a href="/search?q=titanium" class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#8B7355] transition-all duration-300 shadow-sm hover:shadow-md">
+              Titanium
+            </a>
+            <a href="/search?q=metal" class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#8B7355] transition-all duration-300 shadow-sm hover:shadow-md">
+              Metal
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Grid -->
+      <div id="results-grid" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      </div>
+
+      <!-- No Results State -->
+      <div id="no-results" class="hidden text-center py-24">
+        <div class="inline-flex items-center justify-center w-20 h-20 bg-white border border-stone-200 rounded-full mb-8 shadow-sm hover:border-[#8B7355] transition-colors duration-500">
+          <svg class="w-8 h-8 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold text-[#5D4E37] mb-4">No Matches Found</h2>
+        <p class="text-base text-stone-600 mb-10 max-w-md mx-auto" id="no-results-text">
+          We couldn't locate any items matching your criteria. Please refine your keywords.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="/" class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#8B7355] transition-colors duration-300 shadow-lg">
+            Back to Home
+          </a>
+          <a href="/product" class="inline-flex items-center px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#5D4E37] hover:text-white transition-all duration-300">
+            View Catalog
+          </a>
+        </div>
+      </div>
+
+      <!-- Error State -->
+      <div id="error-state" class="hidden text-center py-24">
+        <p class="text-red-600">Search is not available. Please try again later.</p>
+      </div>
+
+      <!-- Pagination -->
+      <div id="pagination" class="hidden mt-20 flex justify-center">
+        <div class="inline-flex items-center gap-2" id="pagination-container">
+        </div>
       </div>
     </div>
-  </main>
+  </section>
 
   <Footer lang={lang} />
 </Layout>
 
 <style>
+  /* Hide browser's default search clear button */
+  input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+  }
+  input[type="search"]::-moz-search-clear-button {
+    display: none;
+  }
   .search-result-card {
-    @apply bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
   .search-result-card:hover {
-    @apply -translate-y-1;
+    border-color: #8B7355;
+    box-shadow: 0 15px 30px -10px rgba(139, 115, 85, 0.15);
   }
-  .result-type-badge {
-    @apply absolute top-3 left-3 bg-[#8B7355] text-white text-xs font-semibold px-2 py-1 rounded uppercase tracking-wide;
+  .search-result-card:hover .card-image {
+    transform: scale(1.1);
+  }
+  .search-result-card:hover .card-title {
+    color: #8B7355;
+  }
+  .search-result-card:hover .card-overlay {
+    opacity: 1;
+  }
+  .search-result-card:hover .card-overlay-inner {
+    transform: translateY(0);
+  }
+  .search-result-card:hover .card-excerpt {
+    padding-left: 0.5rem;
+    border-left-color: rgba(139, 115, 85, 0.4);
+  }
+  .card-image-wrapper {
+    position: relative;
+    height: 10rem;
+    overflow: hidden;
+    background-color: #F9F9F9;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease-out;
+  }
+  .card-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(93, 78, 55, 0.1);
+    backdrop-filter: blur(1px);
+    opacity: 0;
+    transition: all 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  .card-overlay-inner {
+    background-color: white;
+    padding: 0.625rem 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(1rem);
+    transition: all 0.5s ease-out;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .card-badge {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 20;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.125rem 0.5rem;
+    border-radius: 2px;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    background-color: white;
+    color: #5D4E37;
+    border: 1px solid #e5e7eb;
+  }
+  .card-content {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: white;
+    position: relative;
+  }
+  .card-title {
+    font-size: 16px;
+    line-height: 1.3;
+    font-weight: 700;
+    color: #5D4E37;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  .card-excerpt {
+    color: #44403C;
+    font-size: 13px;
+    line-height: 20px;
+    margin-bottom: 0.75rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    padding-left: 0;
+    border-left: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+  .card-footer {
+    padding-top: 0.75rem;
+    margin-top: 0.75rem;
+    border-top: 1px solid #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #5D4E37;
+    transition: color 0.3s ease;
+  }
+  .card-link:hover {
+    color: #8B7355;
+  }
+  .card-link:hover svg {
+    transform: translateX(0.25rem);
+  }
+  .card-link svg {
+    width: 0.75rem;
+    height: 0.75rem;
+    transition: transform 0.3s ease;
   }
   .line-clamp-2 {
     display: -webkit-box;
@@ -195,92 +321,183 @@ const searchPlaceholder = "Search products, pages, articles...";
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  .line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  .page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.25rem;
+    height: 2.25rem;
+    padding: 0 0.75rem;
+    margin: 0 0.25rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #5D4E37;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+  }
+  .page-numbers:hover {
+    color: #8B7355;
+    border-color: #8B7355;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(139, 115, 85, 0.1);
+  }
+  .page-numbers.current {
+    background-color: #5D4E37;
+    border-color: #5D4E37;
+    color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(93, 78, 55, 0.3);
   }
 </style>
 
-<script define:vars={{ query, lang, viewDetailsText, resultsFoundText }}>
-  const resultsContainer = document.getElementById('search-results');
+<script>
+  // Get query from URL at RUNTIME
+  const urlParams = new URLSearchParams(window.location.search);
+  const query = urlParams.get('q') || '';
+
+  // DOM elements
+  const searchInput = document.getElementById('search-input') as HTMLInputElement;
+  const searchClear = document.getElementById('search-clear') as HTMLButtonElement;
+  const searchInfo = document.getElementById('search-info');
+  const queryDisplay = document.getElementById('query-display');
   const countNumber = document.getElementById('count-number');
+  const loadingState = document.getElementById('loading-state');
+  const emptyState = document.getElementById('empty-state');
+  const resultsGrid = document.getElementById('results-grid');
+  const noResults = document.getElementById('no-results');
+  const errorState = document.getElementById('error-state');
   const pagination = document.getElementById('pagination');
-  const noResultsTemplate = document.getElementById('no-results-template');
+  const paginationContainer = document.getElementById('pagination-container');
 
   const RESULTS_PER_PAGE = 12;
   let currentPage = 1;
-  let allResults = [];
+  let allResults: any[] = [];
 
-  async function performSearch(searchQuery) {
-    if (!searchQuery) return;
+  // Clear button functionality
+  function updateClearButton() {
+    if (searchInput && searchClear) {
+      if (searchInput.value.trim()) {
+        searchClear.classList.remove('hidden');
+      } else {
+        searchClear.classList.add('hidden');
+      }
+    }
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', updateClearButton);
+  }
+
+  if (searchClear && searchInput) {
+    searchClear.addEventListener('click', () => {
+      searchInput.value = '';
+      searchClear.classList.add('hidden');
+      searchInput.focus();
+    });
+  }
+
+  // Pre-fill search input with query
+  if (searchInput && query) {
+    searchInput.value = query;
+    updateClearButton();
+  }
+
+  function hideAllStates() {
+    loadingState?.classList.add('hidden');
+    emptyState?.classList.add('hidden');
+    resultsGrid?.classList.add('hidden');
+    noResults?.classList.add('hidden');
+    errorState?.classList.add('hidden');
+    pagination?.classList.add('hidden');
+    searchInfo?.classList.add('hidden');
+  }
+
+  function showLoading() {
+    hideAllStates();
+    loadingState?.classList.remove('hidden');
+    searchInfo?.classList.remove('hidden');
+    if (queryDisplay) queryDisplay.textContent = query;
+  }
+
+  function showEmpty() {
+    hideAllStates();
+    emptyState?.classList.remove('hidden');
+  }
+
+  function showNoResults() {
+    hideAllStates();
+    noResults?.classList.remove('hidden');
+    searchInfo?.classList.remove('hidden');
+    if (queryDisplay) queryDisplay.textContent = query;
+    if (countNumber) countNumber.textContent = '0';
+  }
+
+  function showError() {
+    hideAllStates();
+    errorState?.classList.remove('hidden');
+  }
+
+  function showResults() {
+    hideAllStates();
+    resultsGrid?.classList.remove('hidden');
+    searchInfo?.classList.remove('hidden');
+    if (queryDisplay) queryDisplay.textContent = query;
+  }
+
+  async function performSearch(searchQuery: string) {
+    if (!searchQuery) {
+      showEmpty();
+      return;
+    }
+
+    showLoading();
 
     try {
       const pagefindPath = '/pagefind/pagefind.js';
       const pagefind = await import(/* @vite-ignore */ pagefindPath);
 
-      // Initialize Pagefind with English language
+      // Initialize Pagefind
       await pagefind.init({ language: 'en' });
 
-      const searchResults = await pagefind.search(searchQuery);
+      const searchResponse = await pagefind.search(searchQuery);
 
-      if (searchResults.results.length === 0) {
-        showNoResults(searchQuery);
+      if (searchResponse.results.length === 0) {
+        showNoResults();
         return;
       }
 
       // Fetch all result data
       allResults = await Promise.all(
-        searchResults.results.map(result => result.data())
+        searchResponse.results.map((result: any) => result.data())
       );
 
       // Update count
       if (countNumber) {
-        countNumber.textContent = allResults.length;
+        countNumber.textContent = allResults.length.toString();
       }
 
       // Render first page
       renderPage(1);
+      showResults();
 
     } catch (error) {
       console.error('Search error:', error);
-      resultsContainer.innerHTML = `
-        <div class="col-span-full text-center py-16">
-          <p class="text-red-600">Search is not available. Please run <code class="bg-stone-100 px-2 py-1 rounded">npm run build</code> first.</p>
-        </div>
-      `;
+      showError();
     }
   }
 
-  function showNoResults(searchQuery) {
-    resultsContainer.innerHTML = `
-      <div class="col-span-full text-center py-16">
-        <svg class="w-24 h-24 mx-auto text-stone-300 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <h2 class="text-2xl font-semibold text-stone-700 mb-2">No results found for "${searchQuery}"</h2>
-        <p class="text-stone-500">Try different keywords or check your spelling</p>
-      </div>
-    `;
-    if (countNumber) countNumber.textContent = '0';
-  }
-
-  function renderPage(page) {
-    currentPage = page;
-    const startIndex = (page - 1) * RESULTS_PER_PAGE;
-    const endIndex = startIndex + RESULTS_PER_PAGE;
-    const pageResults = allResults.slice(startIndex, endIndex);
-
-    resultsContainer.innerHTML = pageResults.map(data => createResultCard(data)).join('');
-    renderPagination();
-  }
-
-  function createResultCard(data) {
+  function createResultCard(data: any): string {
     const url = data.url || '#';
     const title = data.meta?.title || 'Untitled';
-    const excerpt = data.meta?.excerpt || data.raw_content?.slice(0, 150) || '';
-    const image = data.meta?.image || null;
+    const excerpt = data.meta?.excerpt || (data.raw_content ? data.raw_content.slice(0, 150) : '');
+
+    // Get image - try multiple sources
+    let imageHtml = '';
+    const image = data.meta?.image || data.meta?.cover || null;
 
     // Determine result type from URL
     let resultType = 'Page';
@@ -292,62 +509,96 @@ const searchPlaceholder = "Search products, pages, articles...";
       resultType = 'Collection';
     }
 
-    return `
-      <a href="${url}" class="search-result-card block">
-        <div class="relative aspect-[4/3] overflow-hidden bg-gray-100">
-          ${image ? `
-            <img src="${image}" alt="${title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-          ` : `
-            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-stone-100 to-stone-200">
-              <svg class="w-16 h-16 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-            </div>
-          `}
-          <span class="result-type-badge">${resultType}</span>
+    if (image) {
+      imageHtml = `<img src="${image}" alt="${title}" class="card-image" loading="lazy" />`;
+    } else {
+      // Fallback to logo
+      imageHtml = `
+        <div class="w-full h-full flex items-center justify-center p-10">
+          <img src="/media/global/logo.png" alt="KSSMI" class="w-auto h-full object-contain opacity-40 grayscale">
+        </div>
+      `;
+    }
 
-          <!-- Hover Overlay -->
-          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <span class="bg-white text-[#8B7355] px-4 py-2 rounded-lg font-semibold text-sm flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-              ${viewDetailsText.en || 'View Details'}
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </span>
+    return `
+      <article class="search-result-card">
+        <!-- Image Section -->
+        <div class="card-image-wrapper">
+          <a href="${url}" class="block w-full h-full relative">
+            ${imageHtml}
+
+            <!-- Hover Overlay -->
+            <div class="card-overlay">
+              <div class="card-overlay-inner">
+                <span class="text-[10px] font-bold uppercase tracking-widest text-[#5D4E37]">View Details</span>
+                <svg class="w-3.5 h-3.5 text-[#8B7355]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          <div class="card-badge">
+            ${resultType}
           </div>
         </div>
 
-        <div class="p-4">
-          <h3 class="text-sm font-semibold text-gray-900 line-clamp-2 group-hover:text-[#8B7355] transition-colors mb-2">
-            ${title}
-          </h3>
-          <p class="text-xs text-stone-500 line-clamp-3">
-            ${excerpt}
-          </p>
+        <!-- Content Section -->
+        <div class="card-content">
+          <div class="mb-auto">
+            <h2 class="card-title">
+              <a href="${url}" class="block">${title}</a>
+            </h2>
+
+            <p class="card-excerpt">
+              ${excerpt}
+            </p>
+          </div>
+
+          <div class="card-footer">
+            <a href="${url}" class="card-link">
+              View
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
         </div>
-      </a>
+      </article>
     `;
+  }
+
+  function renderPage(page: number) {
+    currentPage = page;
+    const startIndex = (page - 1) * RESULTS_PER_PAGE;
+    const endIndex = startIndex + RESULTS_PER_PAGE;
+    const pageResults = allResults.slice(startIndex, endIndex);
+
+    if (resultsGrid) {
+      resultsGrid.innerHTML = pageResults.map(data => createResultCard(data)).join('');
+    }
+    renderPagination();
   }
 
   function renderPagination() {
     const totalPages = Math.ceil(allResults.length / RESULTS_PER_PAGE);
 
     if (totalPages <= 1) {
-      pagination.classList.add('hidden');
+      pagination?.classList.add('hidden');
       return;
     }
 
-    pagination.classList.remove('hidden');
-    const paginationContainer = pagination.querySelector('div');
+    pagination?.classList.remove('hidden');
+    if (!paginationContainer) return;
 
     let paginationHTML = '';
 
     // Previous button
     if (currentPage > 1) {
       paginationHTML += `
-        <button class="px-4 py-2 rounded-lg border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 transition-colors" data-page="${currentPage - 1}">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        <button class="page-numbers" data-page="${currentPage - 1}">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
           </svg>
         </button>
       `;
@@ -356,24 +607,20 @@ const searchPlaceholder = "Search products, pages, articles...";
     // Page numbers
     for (let i = 1; i <= totalPages; i++) {
       if (i === currentPage) {
-        paginationHTML += `
-          <button class="px-4 py-2 rounded-lg bg-[#8B7355] text-white font-semibold" data-page="${i}">${i}</button>
-        `;
+        paginationHTML += `<button class="page-numbers current" data-page="${i}">${i}</button>`;
       } else if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
-        paginationHTML += `
-          <button class="px-4 py-2 rounded-lg border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 transition-colors" data-page="${i}">${i}</button>
-        `;
+        paginationHTML += `<button class="page-numbers" data-page="${i}">${i}</button>`;
       } else if (i === currentPage - 2 || i === currentPage + 2) {
-        paginationHTML += `<span class="px-2 text-stone-400">...</span>`;
+        paginationHTML += `<span class="page-numbers" style="border:none;background:none;box-shadow:none;cursor:default;color:#9ca3af;">...</span>`;
       }
     }
 
     // Next button
     if (currentPage < totalPages) {
       paginationHTML += `
-        <button class="px-4 py-2 rounded-lg border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 transition-colors" data-page="${currentPage + 1}">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        <button class="page-numbers" data-page="${currentPage + 1}">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
           </svg>
         </button>
       `;
@@ -384,16 +631,18 @@ const searchPlaceholder = "Search products, pages, articles...";
     // Add click handlers
     paginationContainer.querySelectorAll('button[data-page]').forEach(btn => {
       btn.addEventListener('click', () => {
-        const page = parseInt(btn.dataset.page);
+        const page = parseInt(btn.getAttribute('data-page') || '1');
         renderPage(page);
         // Scroll to top of results
-        resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        resultsGrid?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
   }
 
-  // Run search on page load if query exists
+  // Run search on page load if query exists in URL
   if (query) {
     performSearch(query);
+  } else {
+    showEmpty();
   }
 </script>

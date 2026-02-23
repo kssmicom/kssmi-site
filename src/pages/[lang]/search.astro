@@ -4,7 +4,6 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { translations } from '../../translations';
-import { Image } from 'astro:assets';
 
 // Generate static paths for all languages
 export function getStaticPaths() {
@@ -25,10 +24,6 @@ export function getStaticPaths() {
 const lang = Astro.params.lang || 'en';
 const t = translations[lang] || translations.en;
 
-// Get search query from URL
-const url = new URL(Astro.request.url);
-const query = url.searchParams.get('q') || '';
-
 // Translations for all languages
 const searchText = {
   en: "Search",
@@ -41,19 +36,6 @@ const searchText = {
   ja: "検索",
   tr: "Ara",
   ar: "بحث"
-};
-
-const foundMatchesText = {
-  en: "Found matches for",
-  it: "Trovate corrispondenze per",
-  es: "Se encontraron coincidencias para",
-  fr: "Correspondances trouvées pour",
-  de: "Treffer gefunden für",
-  pt: "Correspondências encontradas para",
-  ru: "Найдены совпадения для",
-  ja: "の検索結果",
-  tr: "için eşleşmeler bulundu",
-  ar: "تم العثور على تطابقات لـ"
 };
 
 const resultsFoundText = {
@@ -129,7 +111,7 @@ const pagefindLangMap: Record<string, string> = {
 const pagefindLang = pagefindLangMap[lang] || 'en';
 ---
 
-<Layout title={`${searchText[lang]}${query ? ` - "${query}"` : ''} | KSSMI`} lang={lang}>
+<Layout title={`${searchText[lang]} | KSSMI`} lang={lang}>
   <Header lang={lang} />
 
   <main class="min-h-screen bg-stone-50">
@@ -142,7 +124,7 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
             <input
               type="search"
               name="q"
-              value={query}
+              id="search-input"
               placeholder={searchPlaceholder[lang]}
               class="flex-grow py-4 px-6 text-lg outline-none"
               autocomplete="off"
@@ -155,48 +137,60 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
           </div>
         </form>
 
-        <!-- Search Info -->
-        {query && (
-          <div id="search-info" class="text-center mt-6">
-            <h1 class="text-2xl font-bold text-stone-900">
-              {foundMatchesText[lang]} "<span class="text-[#8B7355]">{query}</span>"
-            </h1>
-            <p id="results-count" class="text-stone-600 mt-2">
-              <span id="count-number">0</span> {resultsFoundText[lang]}
-            </p>
-          </div>
-        )}
+        <!-- Search Info (shown when searching) -->
+        <div id="search-info" class="text-center mt-6 hidden">
+          <h1 class="text-2xl font-bold text-stone-900">
+            {searchText[lang]} results for "<span id="query-display" class="text-[#8B7355]"></span>"
+          </h1>
+          <p class="text-stone-600 mt-2">
+            <span id="count-number">0</span> {resultsFoundText[lang]}
+          </p>
+        </div>
       </div>
     </div>
 
     <!-- Search Results Container -->
     <div class="max-w-7xl mx-auto px-4 py-8">
-      {query ? (
-        <div id="search-results" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          <!-- Results will be loaded here by JavaScript -->
-          <div class="col-span-full text-center py-8 text-stone-500">
-            <svg class="w-8 h-8 mx-auto animate-spin text-[#8B7355]" fill="none" viewBox="0 0 24 24">
-              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
-            <p class="mt-4">{searchText[lang]}...</p>
-          </div>
-        </div>
-      ) : (
-        <div class="text-center py-16">
-          <svg class="w-24 h-24 mx-auto text-stone-300 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-          <h2 class="text-2xl font-semibold text-stone-700 mb-2">{searchText[lang]} KSSMI</h2>
-          <p class="text-stone-500 max-w-md mx-auto">{searchPlaceholder[lang]}</p>
-        </div>
-      )}
+      <!-- Loading State -->
+      <div id="loading-state" class="hidden text-center py-8 text-stone-500">
+        <svg class="w-8 h-8 mx-auto animate-spin text-[#8B7355]" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <p class="mt-4">{searchText[lang]}...</p>
+      </div>
+
+      <!-- Empty State (no search yet) -->
+      <div id="empty-state" class="text-center py-16">
+        <svg class="w-24 h-24 mx-auto text-stone-300 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <h2 class="text-2xl font-semibold text-stone-700 mb-2">{searchText[lang]} KSSMI</h2>
+        <p class="text-stone-500 max-w-md mx-auto">{searchPlaceholder[lang]}</p>
+      </div>
+
+      <!-- Search Results Grid -->
+      <div id="search-results" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      </div>
+
+      <!-- No Results State -->
+      <div id="no-results" class="hidden col-span-full text-center py-16">
+        <svg class="w-24 h-24 mx-auto text-stone-300 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <h2 class="text-2xl font-semibold text-stone-700 mb-2">{noResultsText[lang]} "<span id="no-results-query"></span>"</h2>
+        <p class="text-stone-500">{tryDifferentText[lang]}</p>
+      </div>
+
+      <!-- Error State -->
+      <div id="error-state" class="hidden col-span-full text-center py-16">
+        <p class="text-red-600">{tryDifferentText[lang]}</p>
+      </div>
     </div>
 
     <!-- Pagination -->
     <div id="pagination" class="hidden max-w-7xl mx-auto px-4 pb-12">
       <div class="flex justify-center items-center gap-2">
-        <!-- Pagination buttons will be added by JavaScript -->
       </div>
     </div>
   </main>
@@ -206,13 +200,64 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
 
 <style>
   .search-result-card {
-    @apply bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: block;
   }
   .search-result-card:hover {
-    @apply -translate-y-1;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    transform: translateY(-0.25rem);
+  }
+  .search-result-card:hover .result-overlay {
+    opacity: 1;
+  }
+  .search-result-card:hover .result-overlay span {
+    transform: translateY(0);
+  }
+  .search-result-card:hover h3 {
+    color: #8B7355;
+  }
+  .search-result-card:hover img {
+    transform: scale(1.05);
   }
   .result-type-badge {
-    @apply absolute top-3 left-3 bg-[#8B7355] text-white text-xs font-semibold px-2 py-1 rounded uppercase tracking-wide;
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    background-color: #8B7355;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .result-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgb(0 0 0 / 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .result-overlay span {
+    background-color: white;
+    color: #8B7355;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transform: translateY(0.5rem);
+    transition: transform 0.3s ease;
   }
   .line-clamp-2 {
     display: -webkit-box;
@@ -228,17 +273,83 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
   }
 </style>
 
-<script define:vars={{ query, lang, pagefindLang, viewDetailsText, resultsFoundText, noResultsText, tryDifferentText, searchText }}>
-  const resultsContainer = document.getElementById('search-results');
+<script define:vars={{ lang, pagefindLang, viewDetailsText }}>
+  // Get query from URL at RUNTIME (not build time)
+  const urlParams = new URLSearchParams(window.location.search);
+  const query = urlParams.get('q') || '';
+
+  // DOM elements
+  const searchInput = document.getElementById('search-input') as HTMLInputElement;
+  const searchInfo = document.getElementById('search-info');
+  const queryDisplay = document.getElementById('query-display');
   const countNumber = document.getElementById('count-number');
+  const loadingState = document.getElementById('loading-state');
+  const emptyState = document.getElementById('empty-state');
+  const searchResults = document.getElementById('search-results');
+  const noResults = document.getElementById('no-results');
+  const noResultsQuery = document.getElementById('no-results-query');
+  const errorState = document.getElementById('error-state');
   const pagination = document.getElementById('pagination');
 
   const RESULTS_PER_PAGE = 12;
   let currentPage = 1;
-  let allResults = [];
+  let allResults: any[] = [];
 
-  async function performSearch(searchQuery) {
-    if (!searchQuery) return;
+  // Pre-fill search input with query
+  if (searchInput && query) {
+    searchInput.value = query;
+  }
+
+  function hideAllStates() {
+    loadingState?.classList.add('hidden');
+    emptyState?.classList.add('hidden');
+    searchResults?.classList.add('hidden');
+    noResults?.classList.add('hidden');
+    errorState?.classList.add('hidden');
+    pagination?.classList.add('hidden');
+    searchInfo?.classList.add('hidden');
+  }
+
+  function showLoading() {
+    hideAllStates();
+    loadingState?.classList.remove('hidden');
+    searchInfo?.classList.remove('hidden');
+    if (queryDisplay) queryDisplay.textContent = query;
+  }
+
+  function showEmpty() {
+    hideAllStates();
+    emptyState?.classList.remove('hidden');
+  }
+
+  function showNoResults() {
+    hideAllStates();
+    noResults?.classList.remove('hidden');
+    searchInfo?.classList.remove('hidden');
+    if (queryDisplay) queryDisplay.textContent = query;
+    if (noResultsQuery) noResultsQuery.textContent = query;
+    if (countNumber) countNumber.textContent = '0';
+  }
+
+  function showError() {
+    hideAllStates();
+    errorState?.classList.remove('hidden');
+  }
+
+  function showResults() {
+    hideAllStates();
+    searchResults?.classList.remove('hidden');
+    searchInfo?.classList.remove('hidden');
+    if (queryDisplay) queryDisplay.textContent = query;
+  }
+
+  async function performSearch(searchQuery: string) {
+    if (!searchQuery) {
+      showEmpty();
+      return;
+    }
+
+    showLoading();
 
     try {
       const pagefindPath = '/pagefind/pagefind.js';
@@ -247,63 +358,34 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
       // Initialize Pagefind with the correct language
       await pagefind.init({ language: pagefindLang });
 
-      const searchResults = await pagefind.search(searchQuery);
+      const searchResponse = await pagefind.search(searchQuery);
 
-      if (searchResults.results.length === 0) {
-        showNoResults(searchQuery);
+      if (searchResponse.results.length === 0) {
+        showNoResults();
         return;
       }
 
       // Fetch all result data
       allResults = await Promise.all(
-        searchResults.results.map(result => result.data())
+        searchResponse.results.map((result: any) => result.data())
       );
 
       // Update count
       if (countNumber) {
-        countNumber.textContent = allResults.length;
+        countNumber.textContent = allResults.length.toString();
       }
 
       // Render first page
       renderPage(1);
+      showResults();
 
     } catch (error) {
       console.error('Search error:', error);
-      resultsContainer.innerHTML = `
-        <div class="col-span-full text-center py-16">
-          <p class="text-red-600">Search is not available. Please run <code class="bg-stone-100 px-2 py-1 rounded">npm run build</code> first.</p>
-        </div>
-      `;
+      showError();
     }
   }
 
-  function showNoResults(searchQuery) {
-    const noResults = noResultsText[lang] || noResultsText.en;
-    const tryDifferent = tryDifferentText[lang] || tryDifferentText.en;
-
-    resultsContainer.innerHTML = `
-      <div class="col-span-full text-center py-16">
-        <svg class="w-24 h-24 mx-auto text-stone-300 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <h2 class="text-2xl font-semibold text-stone-700 mb-2">${noResults} "${searchQuery}"</h2>
-        <p class="text-stone-500">${tryDifferent}</p>
-      </div>
-    `;
-    if (countNumber) countNumber.textContent = '0';
-  }
-
-  function renderPage(page) {
-    currentPage = page;
-    const startIndex = (page - 1) * RESULTS_PER_PAGE;
-    const endIndex = startIndex + RESULTS_PER_PAGE;
-    const pageResults = allResults.slice(startIndex, endIndex);
-
-    resultsContainer.innerHTML = pageResults.map(data => createResultCard(data)).join('');
-    renderPagination();
-  }
-
-  function createResultCard(data) {
+  function createResultCard(data: any): string {
     const url = data.url || '#';
     const title = data.meta?.title || 'Untitled';
     const excerpt = data.meta?.excerpt || data.raw_content?.slice(0, 150) || '';
@@ -321,10 +403,10 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
     }
 
     return `
-      <a href="${url}" class="search-result-card block">
-        <div class="relative aspect-[4/3] overflow-hidden bg-gray-100">
+      <a href="${url}" class="search-result-card">
+        <div class="relative overflow-hidden bg-gray-100" style="aspect-ratio: 4/3;">
           ${image ? `
-            <img src="${image}" alt="${title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            <img src="${image}" alt="${title}" class="w-full h-full object-cover transition-transform duration-500" loading="lazy" />
           ` : `
             <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-stone-100 to-stone-200">
               <svg class="w-16 h-16 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -335,8 +417,8 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
           <span class="result-type-badge">${resultType}</span>
 
           <!-- Hover Overlay -->
-          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <span class="bg-white text-[#8B7355] px-4 py-2 rounded-lg font-semibold text-sm flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+          <div class="result-overlay">
+            <span>
               ${viewDetails}
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -346,7 +428,7 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
         </div>
 
         <div class="p-4">
-          <h3 class="text-sm font-semibold text-gray-900 line-clamp-2 group-hover:text-[#8B7355] transition-colors mb-2">
+          <h3 class="text-sm font-semibold text-gray-900 line-clamp-2 mb-2">
             ${title}
           </h3>
           <p class="text-xs text-stone-500 line-clamp-3">
@@ -357,16 +439,29 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
     `;
   }
 
+  function renderPage(page: number) {
+    currentPage = page;
+    const startIndex = (page - 1) * RESULTS_PER_PAGE;
+    const endIndex = startIndex + RESULTS_PER_PAGE;
+    const pageResults = allResults.slice(startIndex, endIndex);
+
+    if (searchResults) {
+      searchResults.innerHTML = pageResults.map(data => createResultCard(data)).join('');
+    }
+    renderPagination();
+  }
+
   function renderPagination() {
     const totalPages = Math.ceil(allResults.length / RESULTS_PER_PAGE);
 
     if (totalPages <= 1) {
-      pagination.classList.add('hidden');
+      pagination?.classList.add('hidden');
       return;
     }
 
-    pagination.classList.remove('hidden');
-    const paginationContainer = pagination.querySelector('div');
+    pagination?.classList.remove('hidden');
+    const paginationContainer = pagination?.querySelector('div');
+    if (!paginationContainer) return;
 
     let paginationHTML = '';
 
@@ -412,16 +507,18 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
     // Add click handlers
     paginationContainer.querySelectorAll('button[data-page]').forEach(btn => {
       btn.addEventListener('click', () => {
-        const page = parseInt(btn.dataset.page);
+        const page = parseInt(btn.getAttribute('data-page') || '1');
         renderPage(page);
         // Scroll to top of results
-        resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        searchResults?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
   }
 
-  // Run search on page load if query exists
+  // Run search on page load if query exists in URL
   if (query) {
     performSearch(query);
+  } else {
+    showEmpty();
   }
 </script>
