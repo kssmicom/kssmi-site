@@ -29,7 +29,7 @@ if (isset($_GET['logout'])) {
 }
 
 // Check auth
-$ isAuthenticated = isset($_SESSION['email_logs_auth']) && $_SESSION['email_logs_auth'] === true;
+$isAuthenticated = isset($_SESSION['email_logs_auth']) && $_SESSION['email_logs_auth'] === true;
 
 // Handle clear logs
 if ($isAuthenticated && isset($_POST['clear_logs'])) {
