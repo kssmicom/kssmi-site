@@ -388,6 +388,150 @@ foreach ($logs as $l) {
     }
 }
 
+// Build HTML email (same format as send-mail.php)
+function buildResendHtmlEmail($formData, $ip, $country, $inquiryId, $origTime) {
+    $timestamp = date('Y-m-d H:i:s');
+    $source = 'https://kssmi.com' . ($formData['product_url'] ?? '');
+    $lang = $formData['language'] ?? 'en';
+
+    // Email translations
+    $translations = [
+        'en' => [
+            'contactInfo' => 'Contact Information',
+            'name' => 'Name',
+            'email' => 'Email Address',
+            'product' => 'Product Interest',
+            'projectDetails' => 'Project Details',
+            'metadata' => 'Metadata',
+            'time' => 'Time',
+            'source' => 'Source',
+            'country' => 'Country',
+            'footer' => 'This email was RESENT from the KSSMI Email Logs admin panel.',
+        ],
+        'it' => ['contactInfo' => 'Informazioni di Contatto', 'name' => 'Nome', 'email' => 'Indirizzo Email', 'product' => 'Interesse Prodotto', 'projectDetails' => 'Dettagli del Progetto', 'metadata' => 'Metadati', 'time' => 'Ora', 'source' => 'Fonte', 'country' => 'Paese', 'footer' => 'Questa email è stata REINVIATA dal pannello admin KSSMI.'],
+        'es' => ['contactInfo' => 'Información de Contacto', 'name' => 'Nombre', 'email' => 'Dirección de Correo', 'product' => 'Interés del Producto', 'projectDetails' => 'Detalles del Proyecto', 'metadata' => 'Metadatos', 'time' => 'Hora', 'source' => 'Fuente', 'country' => 'País', 'footer' => 'Este correo fue REENVIADO desde el panel admin KSSMI.'],
+        'fr' => ['contactInfo' => 'Informations de Contact', 'name' => 'Nom', 'email' => 'Adresse Email', 'product' => 'Intérêt pour le Produit', 'projectDetails' => 'Détails du Projet', 'metadata' => 'Métadonnées', 'time' => 'Heure', 'source' => 'Source', 'country' => 'Pays', 'footer' => 'Cet email a été RENVOYÉ depuis le panneau admin KSSMI.'],
+        'de' => ['contactInfo' => 'Kontaktinformationen', 'name' => 'Name', 'email' => 'E-Mail-Adresse', 'product' => 'Produktinteresse', 'projectDetails' => 'Projektdetails', 'metadata' => 'Metadaten', 'time' => 'Zeit', 'source' => 'Quelle', 'country' => 'Land', 'footer' => 'Diese E-Mail wurde vom KSSMI Admin-Panel ERNEUT GESENDET.'],
+        'pt' => ['contactInfo' => 'Informações de Contato', 'name' => 'Nome', 'email' => 'Endereço de Email', 'product' => 'Interesse no Produto', 'projectDetails' => 'Detalhes do Projeto', 'metadata' => 'Metadados', 'time' => 'Hora', 'source' => 'Fonte', 'country' => 'País', 'footer' => 'Este email foi REENVIADO do painel admin KSSMI.'],
+        'ru' => ['contactInfo' => 'Контактная информация', 'name' => 'Имя', 'email' => 'Адрес электронной почты', 'product' => 'Интерес к продукту', 'projectDetails' => 'Детали проекта', 'metadata' => 'Метаданные', 'time' => 'Время', 'source' => 'Источник', 'country' => 'Страна', 'footer' => 'Это письмо было ПЕРЕОТПРАВЛЕНО из панели администратора KSSMI.'],
+        'ja' => ['contactInfo' => '連絡先情報', 'name' => '名前', 'email' => 'メールアドレス', 'product' => '製品への関心', 'projectDetails' => 'プロジェクト詳細', 'metadata' => 'メタデータ', 'time' => '時間', 'source' => 'ソース', 'country' => '国', 'footer' => 'このメールはKSSMI管理パネルから再送信されました。'],
+        'tr' => ['contactInfo' => 'İletişim Bilgileri', 'name' => 'İsim', 'email' => 'E-posta Adresi', 'product' => 'Ürün İlgi Alanı', 'projectDetails' => 'Proje Detayları', 'metadata' => 'Meta Veriler', 'time' => 'Zaman', 'source' => 'Kaynak', 'country' => 'Ülke', 'footer' => 'Bu e-posta KSSMI yönetici panelinden YENİDEN GÖNDERİLDİ.'],
+        'ar' => ['contactInfo' => 'معلومات الاتصال', 'name' => 'الاسم', 'email' => 'البريد الإلكتروني', 'product' => 'اهتمام المنتج', 'projectDetails' => 'تفاصيل المشروع', 'metadata' => 'البيانات الوصفية', 'time' => 'الوقت', 'source' => 'المصدر', 'country' => 'البلد', 'footer' => 'تمت إعادة إرسال هذا البريد الإلكتروني من لوحة إدارة KSSMI.'],
+    ];
+
+    $t = $translations[$lang] ?? $translations['en'];
+    $name = htmlspecialchars($formData['name'] ?? 'Unknown');
+    $email = htmlspecialchars($formData['email'] ?? 'N/A');
+    $product = htmlspecialchars($formData['product_name'] ?? 'N/A');
+    $details = htmlspecialchars($formData['details'] ?? 'No details');
+    $countryName = getCountryName($country);
+
+    return "
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #f5f5f5; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #8B7355 0%, #5D4E37 100%); color: white; padding: 30px; border-radius: 12px 12px 0 0; }
+        .header h1 { margin: 0; font-size: 22px; font-weight: 600; text-align: left; }
+        .resent-badge { background: #e74c3c; color: white; padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+        .content { background: white; padding: 30px; border: 1px solid #e0e0e0; border-top: none; }
+        .section { margin-bottom: 25px; }
+        .section-title { font-size: 12px; font-weight: 600; color: #8B7355; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #8B7355; text-align: left; }
+        .field { margin-bottom: 12px; text-align: left; }
+        .field-label { font-size: 12px; color: #666; margin-bottom: 4px; }
+        .field-value { font-size: 15px; color: #333; }
+        .field-value a { color: #8B7355; text-decoration: none; }
+        .details-box { background: #f8f7f5; padding: 20px; border-radius: 8px; border-left: 4px solid #8B7355; white-space: pre-wrap; font-size: 14px; line-height: 1.7; text-align: left; }
+        .meta-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .meta-table td { padding: 10px 0; border-bottom: 1px solid #eee; text-align: left; }
+        .meta-table td:first-child { color: #666; width: 100px; }
+        .meta-table td:last-child { color: #333; font-weight: 500; }
+        .inquiry-id { background: #8B7355; color: white; padding: 4px 10px; border-radius: 4px; font-family: monospace; font-size: 12px; }
+        .footer { padding: 20px; color: #888; font-size: 12px; background: #fafafa; border-radius: 0 0 12px 12px; border: 1px solid #e0e0e0; border-top: none; text-align: left; }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='header'>
+            <h1>{$name} - Kssmi <span class='resent-badge'>Resent</span></h1>
+        </div>
+        <div class='content'>
+            <div class='section'>
+                <div class='section-title'>{$t['contactInfo']}</div>
+                <div class='field'>
+                    <div class='field-label'>{$t['name']}</div>
+                    <div class='field-value'>{$name}</div>
+                </div>
+                <div class='field'>
+                    <div class='field-label'>{$t['email']}</div>
+                    <div class='field-value'><a href='mailto:{$email}'>{$email}</a></div>
+                </div>
+                <div class='field'>
+                    <div class='field-label'>{$t['product']}</div>
+                    <div class='field-value'>{$product}</div>
+                </div>
+            </div>
+            <div class='section'>
+                <div class='section-title'>{$t['projectDetails']}</div>
+                <div class='details-box'>{$details}</div>
+            </div>
+            <div class='section'>
+                <div class='section-title'>{$t['metadata']}</div>
+                <table class='meta-table'>
+                    <tr><td>{$t['time']}</td><td>{$timestamp}</td></tr>
+                    <tr><td>Original</td><td>{$origTime}</td></tr>
+                    <tr><td>{$t['source']}</td><td><a href='{$source}' style='color: #8B7355;'>{$source}</a></td></tr>
+                    <tr><td>IP</td><td>{$ip}</td></tr>
+                    <tr><td>{$t['country']}</td><td>{$countryName}</td></tr>
+                    <tr><td>ID</td><td><span class='inquiry-id'>{$inquiryId}</span></td></tr>
+                </table>
+            </div>
+        </div>
+        <div class='footer'>
+            <p>{$t['footer']}</p>
+        </div>
+    </div>
+</body>
+</html>";
+}
+
+function buildResendTextEmail($formData, $ip, $country, $inquiryId, $origTime) {
+    $timestamp = date('Y-m-d H:i:s');
+    $source = 'https://kssmi.com' . ($formData['product_url'] ?? '');
+    $name = $formData['name'] ?? 'Unknown';
+    $email = $formData['email'] ?? 'N/A';
+    $product = $formData['product_name'] ?? 'N/A';
+    $details = $formData['details'] ?? 'No details';
+    $countryName = getCountryName($country);
+
+    return "
+{$name} - Kssmi [RESENT]
+================
+
+Name: {$name}
+Email Address: {$email}
+Product Interest: {$product}
+
+PROJECT DETAILS:
+----------------
+{$details}
+
+METADATA:
+---------
+Time: {$timestamp}
+Original: {$origTime}
+Source: {$source}
+IP: {$ip}
+Country: {$countryName}
+ID: {$inquiryId}
+
+---
+This email was RESENT from the KSSMI Email Logs admin panel.
+";
+}
+
 // Resend function
 function resendEmail($log) {
     $config = [
@@ -433,32 +577,15 @@ function resendEmail($log) {
         }
 
         $name = $formData['name'] ?? 'Unknown';
-        $mail->isHTML(true);
-        $mail->Subject = $name . " - Kssmi Eyewear [RESENT]";
-
-        $details = $formData['details'] ?? 'No details';
-        $email = $formData['email'] ?? 'N/A';
-        $product = $formData['product_name'] ?? 'N/A';
-        $pageUrl = $formData['product_url'] ?? 'N/A';
+        $inquiryId = '#' . strtoupper(substr($log['id'] ?? uniqid(), -4));
         $ip = $log['ip_address'] ?? 'Unknown';
-        $country = getCountryName($log['country'] ?? '');
+        $country = $log['country'] ?? 'Unknown';
         $origTime = $log['timestamp'] ?? 'Unknown';
-        $timestamp = date('Y-m-d H:i:s');
 
-        $mail->Body = "<html><body style='font-family:sans-serif;'>
-            <h2>RESENT EMAIL</h2>
-            <p><strong>Name:</strong> " . htmlspecialchars($name) . "</p>
-            <p><strong>Email:</strong> " . htmlspecialchars($email) . "</p>
-            <p><strong>Product:</strong> " . htmlspecialchars($product) . "</p>
-            <p><strong>Page URL:</strong> <a href='https://kssmi.com" . htmlspecialchars($pageUrl) . "'>https://kssmi.com" . htmlspecialchars($pageUrl) . "</a></p>
-            <hr>
-            <p><strong>Message:</strong></p>
-            <pre style='background:#f5f5f5;padding:15px;border-radius:5px;'>" . htmlspecialchars($details) . "</pre>
-            <hr>
-            <p><small>Original: $origTime | Resent: $timestamp | IP: $ip | Country: $country</small></p>
-        </body></html>";
-
-        $mail->AltBody = "RESENT EMAIL\n\nName: $name\nEmail: $email\nProduct: $product\nPage URL: https://kssmi.com$pageUrl\n\nMessage:\n$details\n\nOriginal: $origTime | IP: $ip | Country: $country";
+        $mail->isHTML(true);
+        $mail->Subject = "{$name} - Kssmi Eyewear - {$inquiryId} [Resent]";
+        $mail->Body = buildResendHtmlEmail($formData, $ip, $country, $inquiryId, $origTime);
+        $mail->AltBody = buildResendTextEmail($formData, $ip, $country, $inquiryId, $origTime);
 
         $mail->Timeout = 30;
         $mail->send();
