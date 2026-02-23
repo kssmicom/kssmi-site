@@ -808,12 +808,10 @@ function resendEmail($log) {
                                             <div class="message-box" style="border-left-color:#e74c3c;background:#fdeaea;"><?php echo htmlspecialchars($log['error']); ?></div>
                                             <?php endif; ?>
                                             <div class="actions">
-                                                <?php if (($log['status'] ?? '') === 'failed'): ?>
-                                                    <form method="POST" style="display:inline;" onsubmit="return confirm('Resend this email?');">
-                                                        <input type="hidden" name="resend_id" value="<?php echo htmlspecialchars($logId); ?>">
-                                                        <button type="submit" class="btn btn-success">Resend Email</button>
-                                                    </form>
-                                                <?php endif; ?>
+                                                <form method="POST" style="display:inline;" onsubmit="return confirm('Resend this email to sales@kssmi.com?');">
+                                                    <input type="hidden" name="resend_id" value="<?php echo htmlspecialchars($logId); ?>">
+                                                    <button type="submit" class="btn btn-success">Resend</button>
+                                                </form>
                                                 <a href="mailto:<?php echo htmlspecialchars($formData['email'] ?? ''); ?>" class="btn btn-primary">Reply to Customer</a>
                                                 <button class="btn btn-secondary" onclick="toggleDetail(<?php echo $i; ?>)">Collapse</button>
                                             </div>
