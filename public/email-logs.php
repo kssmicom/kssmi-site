@@ -406,17 +406,17 @@ function buildResendHtmlEmail($formData, $ip, $country, $inquiryId, $origTime) {
             'time' => 'Time',
             'source' => 'Source',
             'country' => 'Country',
-            'footer' => 'This email was RESENT from the KSSMI Email Logs admin panel.',
+            'footer' => 'This email was automatically generated from the KSSMI Eyewear contact form.',
         ],
-        'it' => ['contactInfo' => 'Informazioni di Contatto', 'name' => 'Nome', 'email' => 'Indirizzo Email', 'product' => 'Interesse Prodotto', 'projectDetails' => 'Dettagli del Progetto', 'metadata' => 'Metadati', 'time' => 'Ora', 'source' => 'Fonte', 'country' => 'Paese', 'footer' => 'Questa email è stata REINVIATA dal pannello admin KSSMI.'],
-        'es' => ['contactInfo' => 'Información de Contacto', 'name' => 'Nombre', 'email' => 'Dirección de Correo', 'product' => 'Interés del Producto', 'projectDetails' => 'Detalles del Proyecto', 'metadata' => 'Metadatos', 'time' => 'Hora', 'source' => 'Fuente', 'country' => 'País', 'footer' => 'Este correo fue REENVIADO desde el panel admin KSSMI.'],
-        'fr' => ['contactInfo' => 'Informations de Contact', 'name' => 'Nom', 'email' => 'Adresse Email', 'product' => 'Intérêt pour le Produit', 'projectDetails' => 'Détails du Projet', 'metadata' => 'Métadonnées', 'time' => 'Heure', 'source' => 'Source', 'country' => 'Pays', 'footer' => 'Cet email a été RENVOYÉ depuis le panneau admin KSSMI.'],
-        'de' => ['contactInfo' => 'Kontaktinformationen', 'name' => 'Name', 'email' => 'E-Mail-Adresse', 'product' => 'Produktinteresse', 'projectDetails' => 'Projektdetails', 'metadata' => 'Metadaten', 'time' => 'Zeit', 'source' => 'Quelle', 'country' => 'Land', 'footer' => 'Diese E-Mail wurde vom KSSMI Admin-Panel ERNEUT GESENDET.'],
-        'pt' => ['contactInfo' => 'Informações de Contato', 'name' => 'Nome', 'email' => 'Endereço de Email', 'product' => 'Interesse no Produto', 'projectDetails' => 'Detalhes do Projeto', 'metadata' => 'Metadados', 'time' => 'Hora', 'source' => 'Fonte', 'country' => 'País', 'footer' => 'Este email foi REENVIADO do painel admin KSSMI.'],
-        'ru' => ['contactInfo' => 'Контактная информация', 'name' => 'Имя', 'email' => 'Адрес электронной почты', 'product' => 'Интерес к продукту', 'projectDetails' => 'Детали проекта', 'metadata' => 'Метаданные', 'time' => 'Время', 'source' => 'Источник', 'country' => 'Страна', 'footer' => 'Это письмо было ПЕРЕОТПРАВЛЕНО из панели администратора KSSMI.'],
-        'ja' => ['contactInfo' => '連絡先情報', 'name' => '名前', 'email' => 'メールアドレス', 'product' => '製品への関心', 'projectDetails' => 'プロジェクト詳細', 'metadata' => 'メタデータ', 'time' => '時間', 'source' => 'ソース', 'country' => '国', 'footer' => 'このメールはKSSMI管理パネルから再送信されました。'],
-        'tr' => ['contactInfo' => 'İletişim Bilgileri', 'name' => 'İsim', 'email' => 'E-posta Adresi', 'product' => 'Ürün İlgi Alanı', 'projectDetails' => 'Proje Detayları', 'metadata' => 'Meta Veriler', 'time' => 'Zaman', 'source' => 'Kaynak', 'country' => 'Ülke', 'footer' => 'Bu e-posta KSSMI yönetici panelinden YENİDEN GÖNDERİLDİ.'],
-        'ar' => ['contactInfo' => 'معلومات الاتصال', 'name' => 'الاسم', 'email' => 'البريد الإلكتروني', 'product' => 'اهتمام المنتج', 'projectDetails' => 'تفاصيل المشروع', 'metadata' => 'البيانات الوصفية', 'time' => 'الوقت', 'source' => 'المصدر', 'country' => 'البلد', 'footer' => 'تمت إعادة إرسال هذا البريد الإلكتروني من لوحة إدارة KSSMI.'],
+        'it' => ['contactInfo' => 'Informazioni di Contatto', 'name' => 'Nome', 'email' => 'Indirizzo Email', 'product' => 'Interesse Prodotto', 'projectDetails' => 'Dettagli del Progetto', 'metadata' => 'Metadati', 'time' => 'Ora', 'source' => 'Fonte', 'country' => 'Paese', 'footer' => 'Questa email è stata generata automaticamente dal modulo di contatto KSSMI Eyewear.'],
+        'es' => ['contactInfo' => 'Información de Contacto', 'name' => 'Nombre', 'email' => 'Dirección de Correo', 'product' => 'Interés del Producto', 'projectDetails' => 'Detalles del Proyecto', 'metadata' => 'Metadatos', 'time' => 'Hora', 'source' => 'Fuente', 'country' => 'País', 'footer' => 'Este correo fue generado automáticamente desde el formulario de contacto de KSSMI Eyewear.'],
+        'fr' => ['contactInfo' => 'Informations de Contact', 'name' => 'Nom', 'email' => 'Adresse Email', 'product' => 'Intérêt pour le Produit', 'projectDetails' => 'Détails du Projet', 'metadata' => 'Métadonnées', 'time' => 'Heure', 'source' => 'Source', 'country' => 'Pays', 'footer' => 'Cet email a été généré automatiquement depuis le formulaire de contact KSSMI Eyewear.'],
+        'de' => ['contactInfo' => 'Kontaktinformationen', 'name' => 'Name', 'email' => 'E-Mail-Adresse', 'product' => 'Produktinteresse', 'projectDetails' => 'Projektdetails', 'metadata' => 'Metadaten', 'time' => 'Zeit', 'source' => 'Quelle', 'country' => 'Land', 'footer' => 'Diese E-Mail wurde automatisch vom KSSMI Eyewear Kontaktformular generiert.'],
+        'pt' => ['contactInfo' => 'Informações de Contato', 'name' => 'Nome', 'email' => 'Endereço de Email', 'product' => 'Interesse no Produto', 'projectDetails' => 'Detalhes do Projeto', 'metadata' => 'Metadados', 'time' => 'Hora', 'source' => 'Fonte', 'country' => 'País', 'footer' => 'Este email foi gerado automaticamente pelo formulário de contato KSSMI Eyewear.'],
+        'ru' => ['contactInfo' => 'Контактная информация', 'name' => 'Имя', 'email' => 'Адрес электронной почты', 'product' => 'Интерес к продукту', 'projectDetails' => 'Детали проекта', 'metadata' => 'Метаданные', 'time' => 'Время', 'source' => 'Источник', 'country' => 'Страна', 'footer' => 'Это письмо было автоматически создано формой связи KSSMI Eyewear.'],
+        'ja' => ['contactInfo' => '連絡先情報', 'name' => '名前', 'email' => 'メールアドレス', 'product' => '製品への関心', 'projectDetails' => 'プロジェクト詳細', 'metadata' => 'メタデータ', 'time' => '時間', 'source' => 'ソース', 'country' => '国', 'footer' => 'このメールはKSSMI Eyewearのお問い合わせフォームから自動的に生成されました。'],
+        'tr' => ['contactInfo' => 'İletişim Bilgileri', 'name' => 'İsim', 'email' => 'E-posta Adresi', 'product' => 'Ürün İlgi Alanı', 'projectDetails' => 'Proje Detayları', 'metadata' => 'Meta Veriler', 'time' => 'Zaman', 'source' => 'Kaynak', 'country' => 'Ülke', 'footer' => 'Bu e-posta KSSMI Eyewear iletişim formundan otomatik olarak oluşturulmuştur.'],
+        'ar' => ['contactInfo' => 'معلومات الاتصال', 'name' => 'الاسم', 'email' => 'البريد الإلكتروني', 'product' => 'اهتمام المنتج', 'projectDetails' => 'تفاصيل المشروع', 'metadata' => 'البيانات الوصفية', 'time' => 'الوقت', 'source' => 'المصدر', 'country' => 'البلد', 'footer' => 'تم إنشاء هذا البريد الإلكتروني تلقائيًا من نموذج الاتصال KSSMI Eyewear.'],
     ];
 
     $t = $translations[$lang] ?? $translations['en'];
@@ -455,7 +455,7 @@ function buildResendHtmlEmail($formData, $ip, $country, $inquiryId, $origTime) {
 <body>
     <div class='container'>
         <div class='header'>
-            <h1>{$name} - Kssmi <span class='resent-badge'>Resent</span></h1>
+            <h1>{$name} - Kssmi</h1>
         </div>
         <div class='content'>
             <div class='section'>
@@ -507,7 +507,7 @@ function buildResendTextEmail($formData, $ip, $country, $inquiryId, $origTime) {
     $countryName = getCountryName($country);
 
     return "
-{$name} - Kssmi [RESENT]
+{$name} - Kssmi
 ================
 
 Name: {$name}
@@ -528,7 +528,7 @@ Country: {$countryName}
 ID: {$inquiryId}
 
 ---
-This email was RESENT from the KSSMI Email Logs admin panel.
+This email was automatically generated from the KSSMI Eyewear contact form.
 ";
 }
 
@@ -583,7 +583,7 @@ function resendEmail($log) {
         $origTime = $log['timestamp'] ?? 'Unknown';
 
         $mail->isHTML(true);
-        $mail->Subject = "{$name} - Kssmi Eyewear - {$inquiryId} [Resent]";
+        $mail->Subject = "{$name} - Kssmi Eyewear - {$inquiryId}";
         $mail->Body = buildResendHtmlEmail($formData, $ip, $country, $inquiryId, $origTime);
         $mail->AltBody = buildResendTextEmail($formData, $ip, $country, $inquiryId, $origTime);
 
@@ -865,12 +865,6 @@ function resendEmail($log) {
                                         <?php endif; ?>
                                     </td>
                                     <td onclick="event.stopPropagation();">
-                                        <?php if ($status === 'failed'): ?>
-                                            <form method="POST" style="display:inline;" onsubmit="return confirm('Resend this email?');">
-                                                <input type="hidden" name="resend_id" value="<?php echo htmlspecialchars($logId); ?>">
-                                                <button type="submit" class="btn btn-success btn-small">Resend</button>
-                                            </form>
-                                        <?php endif; ?>
                                         <form method="POST" style="display:inline;" onsubmit="return confirm('Delete this log entry?');">
                                             <input type="hidden" name="delete_id" value="<?php echo htmlspecialchars($logId); ?>">
                                             <button type="submit" class="btn btn-danger btn-small">Del</button>
