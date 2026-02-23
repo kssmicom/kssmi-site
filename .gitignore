@@ -25,6 +25,7 @@ pnpm-debug.log*
 
 # Email logs (sensitive data - don't commit)
 public/email-logs.json
+public/.email_logs_password
 
 # Windows files
 Thumbs.db

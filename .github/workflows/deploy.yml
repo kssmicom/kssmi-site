@@ -50,7 +50,7 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           SOURCE: "dist/"
           TARGET: "/home/kssmi.com/public_html"
-          ARGS: "-avz --delete --exclude=email-logs.json"
+          ARGS: "-avz --delete --exclude=email-logs.json --exclude=.email_logs_password"
 
       - name: Set file permissions
         uses: appleboy/ssh-action@master
@@ -64,6 +64,7 @@ jobs:
             find . -type d -exec chmod 755 {} \;
             find . -type f -exec chmod 644 {} \;
             if [ -f email-logs.json ]; then chmod 666 email-logs.json; fi
+            if [ -f .email_logs_password ]; then chmod 600 .email_logs_password; fi
 
       - name: Deployment Complete
         run: |
