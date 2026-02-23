@@ -60,11 +60,31 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/kssmi.com/public_html
+
+            # Set ownership
             chown -R kssmi:kssmi *
+
+            # Set directory permissions
             find . -type d -exec chmod 755 {} \;
+
+            # Set file permissions
             find . -type f -exec chmod 644 {} \;
-            if [ -f email-logs.json ]; then chmod 666 email-logs.json; fi
-            if [ -f .email_logs_password ]; then chmod 600 .email_logs_password; fi
+
+            # Make PHP files executable
+            find . -name "*.php" -exec chmod 755 {} \;
+
+            # Create writable files if they don't exist
+            touch email-logs.json
+            touch .email_logs_password
+            touch .email_reset_tokens.json
+
+            # Set writable permissions for data files (PHP needs to write to these)
+            chmod 666 email-logs.json
+            chmod 666 .email_logs_password
+            chmod 666 .email_reset_tokens.json
+
+            # Set ownership for data files
+            chown kssmi:kssmi email-logs.json .email_logs_password .email_reset_tokens.json
 
       - name: Deployment Complete
         run: |
