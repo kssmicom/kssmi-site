@@ -5,40 +5,40 @@
  */
 
 import { translations } from '../translations';
-import { Image } from 'astro:assets';
+
 
 // Import all certification images
-import iso9001 from '../assets/media/certifications/ISO 9001.webp';
-import bsci from '../assets/media/certifications/BSCI.webp';
-import fda from '../assets/media/certifications/FDA.webp';
-import ce from '../assets/media/certifications/CE.webp';
-import rohs from '../assets/media/certifications/RoHS.webp';
-import prop65 from '../assets/media/certifications/Prop 65.webp';
-import dropBall from '../assets/media/certifications/21 CFR 801.410 (Drop Ball Test).webp';
-import ansiZ80 from '../assets/media/certifications/ANSI Z80.3.webp';
-import ansiZ87 from '../assets/media/certifications/ANSI Z87.1.webp';
-import enIso12312 from '../assets/media/certifications/EN ISO 12312-1.webp';
-import enIso12870 from '../assets/media/certifications/EN ISO 12870.webp';
-import ukca from '../assets/media/certifications/UKCA Mark.webp';
-import asnzs1067 from '../assets/media/certifications/ASNZS 1067.1.webp';
-import iso13485 from '../assets/media/certifications/ISO 13485.webp';
 
-// Certification data with display labels
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Certification data with exact public string URLs pointing to /media/certifications/
 const certifications = [
-  { image: iso9001, label: 'ISO 9001' },
-  { image: bsci, label: 'BSCI' },
-  { image: fda, label: 'FDA' },
-  { image: ce, label: 'CE' },
-  { image: rohs, label: 'RoHS' },
-  { image: prop65, label: 'Prop 65' },
-  { image: dropBall, label: '21 CFR 801.410' },
-  { image: ansiZ80, label: 'ANSI Z80.3' },
-  { image: ansiZ87, label: 'ANSI Z87.1' },
-  { image: enIso12312, label: 'EN ISO 12312-1' },
-  { image: enIso12870, label: 'EN ISO 12870' },
-  { image: ukca, label: 'UKCA Mark' },
-  { image: asnzs1067, label: 'AS/NZS 1067.1' },
-  { image: iso13485, label: 'ISO 13485' },
+  { image: '/media/certifications/ISO 9001.webp', label: 'ISO 9001' },
+  { image: '/media/certifications/BSCI.webp', label: 'BSCI' },
+  { image: '/media/certifications/FDA.webp', label: 'FDA' },
+  { image: '/media/certifications/CE.webp', label: 'CE' },
+  { image: '/media/certifications/RoHS.webp', label: 'RoHS' },
+  { image: '/media/certifications/Prop 65.webp', label: 'Prop 65' },
+  { image: '/media/certifications/21 CFR 801.410 (Drop Ball Test).webp', label: '21 CFR 801.410' },
+  { image: '/media/certifications/ANSI Z80.3.webp', label: 'ANSI Z80.3' },
+  { image: '/media/certifications/ANSI Z87.1.webp', label: 'ANSI Z87.1' },
+  { image: '/media/certifications/EN ISO 12312-1.webp', label: 'EN ISO 12312-1' },
+  { image: '/media/certifications/EN ISO 12870.webp', label: 'EN ISO 12870' },
+  { image: '/media/certifications/UKCA Mark.webp', label: 'UKCA Mark' },
+  { image: '/media/certifications/ASNZS 1067.1.webp', label: 'AS/NZS 1067.1' },
+  { image: '/media/certifications/ISO 13485.webp', label: 'ISO 13485' },
 ];
 
 interface SpecProps {
@@ -232,11 +232,12 @@ const pt = t.product || {
           <div class="flex flex-col items-center group">
             <!-- Image Container with subtle shadow and hover effect -->
             <div class="relative w-20 h-20 lg:w-24 lg:h-24 mb-3 overflow-hidden rounded-xl shadow-sm border border-gray-100 group-hover:shadow-md group-hover:border-[#8B7355]/30 transition-all duration-300">
-              <Image
+              <img
                 src={cert.image}
                 alt={cert.label}
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <!-- Label with better typography -->
@@ -254,3 +255,6 @@ const pt = t.product || {
     </div>
   </div>
 </section>
+
+
+

@@ -4,7 +4,7 @@ import { translations } from '../translations';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import AcetateManufacturing from '../components/sections/AcetateManufacturing.astro';
-import acetateImage from '../assets/media/products/tortoise-amber-onyx.webp';
+
 
 const lang = 'en';
 const t = translations[lang] || translations.en;
@@ -23,9 +23,10 @@ const t = translations[lang] || translations.en;
       description="We reject injection molding. Every frame begins as a solid slab of plant-based cellulose, cured for 12 weeks before entering our 5-axis CNC machining centers for subtractive sculpting."
       ctaText="Explore Series"
       ctaLink="/product?cat=luxury"
-      mainImage={acetateImage}
+      mainImage="/media/products/tortoise-amber-onyx.webp"
     />
   </main>
 
   <Footer lang={lang} />
 </Layout>
+

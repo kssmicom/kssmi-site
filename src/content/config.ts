@@ -45,11 +45,11 @@ const products = defineCollection({
 // Landing Page Collection
 const landing = defineCollection({
   type: 'content',
-  schema: ({ image }) => z.object({
+  schema: z.object({
     lang: z.enum(['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar']),
     title: z.string(),
-    slug: z.string(),
-    image: image().optional(),  // ✅ Use image() helper
+    slug: z.string().optional(),
+    image: z.string().optional(),  // ✅ Use plain string URL
     layout: z.enum(['full-width', 'with-sidebar']).default('full-width'),
     cta: z.string().optional(),
     ctaLink: z.string().optional(),
@@ -59,11 +59,11 @@ const landing = defineCollection({
 // Blog Collection
 const blog = defineCollection({
   type: 'content',
-  schema: ({ image }) => z.object({
+  schema: z.object({
     lang: z.enum(['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar']).default('en'),
     title: z.string(),
-    slug: z.string(),
-    image: image().optional(),  // ✅ Use image() helper
+    slug: z.string().optional(),
+    image: z.string().optional(),  // ✅ Use plain string URL
     excerpt: z.string().optional(),
     author: z.string().default('KSSMI Eyewear'),
     published: z.coerce.date(),

@@ -10,7 +10,7 @@
 - **Astro 5.1+** - Static site generator for performance
 - **Tailwind CSS 4+** - Utility-first styling with Logical Properties for RTL
 - **Content Collections** - Product data using Markdown (.md) ONLY
-- **Central Media Library** - Images in `src/assets/media/` with `@media` alias
+- **Central Media Library** - Images in `public/media/` (Permanent SEO string URLs)
 - **10 Languages** - EN, IT, ES, FR, DE, PT, RU, JA, TR, AR (with RTL support)
 - **Vanilla JavaScript** - Lightweight interactivity
 - **Pagefind** - Static search library
@@ -34,16 +34,6 @@
 ```
 kssmi-site/
 ├── src/
-│   ├── assets/
-│   │   └── media/                    # THE MEDIA LIBRARY (Centralized)
-│   │       ├── products/              # Product images
-│   │       │   ├── kso-001/           # Optical frames
-│   │       │   │   ├── main.webp      # Shared by all 10 languages!
-│   │       │   │   ├── side.webp
-│   │       │   │   └── gallery-*.webp
-│   │       │   └── kss-001/           # Sunglasses frames
-│   │       ├── blog/                  # Blog covers
-│   │       └── global/                # Logos, icons, banners
 │   ├── content/
 │   │   ├── products/                 # Content ONLY (Text files)
 │   │   │   ├── kso-001.en.md        # English (Optical)
@@ -68,10 +58,17 @@ kssmi-site/
 │   └── translations/
 │       └── index.ts                  # Central translation hub
 ├── public/
+│   ├── media/                        # THE MEDIA LIBRARY (Centralized & Public)
+│   │   ├── products/                 # Product images (Permanent SEO URLs)
+│   │   │   ├── kso-001/
+│   │   │   │   ├── OEM-ODM-...-1.webp # Shared by all 10 languages!
+│   │   │   │   └── OEM-ODM-...-2.webp
+│   │   ├── blog/                     # Blog covers
+│   │   ├── pages/                    # Other landing page images
+│   │   └── global/                   # Logos, icons, banners
 │   └── llms.txt                      # AI discovery sitemap
 ├── astro.config.mjs
 ├── tailwind.config.js
-├── tsconfig.json                     # Has @media alias
 └── package.json
 ```
 
@@ -89,17 +86,19 @@ kssmi-site/
 
 ## Image Path Rules (CRITICAL)
 
-### ✅ CORRECT (Triggers Optimization)
+### ✅ CORRECT (Stable Public SEO URLs)
+All images (Products, Blogs, Landing Pages) MUST be stored directly in `public/media/...` with permanent, SEO-friendly names. Never duplicate images. Reference them dynamically via an absolute path:
 ```yaml
-cover: "../../assets/media/products/kso-001/main.webp"
+cover: "/media/products/kso-001/OEM-ODM-Customize-Luxury-Optical-Glasses-KSO-001-1.webp"
 gallery:
-  - "../../assets/media/products/kso-001/side.webp"
+  - "/media/products/kso-001/OEM-ODM-Customize-Luxury-Optical-Glasses-KSO-001-2.webp"
 ```
+Because they live directly in `/public/`, Astro serves them exactly at this path without hashing. This ensures Pagefind Search and all localized pages can use the EXACT same stable URL.
 
-### ❌ WRONG (Bypasses Optimization)
+### ❌ WRONG (Causes missing dev images + broken SEO)
 ```yaml
-cover: "/media/products/kso-001/main.webp"
-cover: "src/assets/media/..."  # Never works in production
+cover: "../../assets/media/products/kso-001/main.webp" # Astro image() helper creates hashes
+cover: "src/assets/media/..."  # Breaks completely in prod
 ```
 
 ---
@@ -108,10 +107,9 @@ cover: "src/assets/media/..."  # Never works in production
 
 ### Adding a NEW Optical Product (KSO-002)
 
-1. **Images:** Drag photos into `src/assets/media/products/kso-002/`
-   - `main.webp` - Primary image
-   - `side.webp` - Side view
-   - `gallery-1.webp`, `gallery-2.webp` - Additional views
+1. **Images:** Drag photos into `public/media/products/kso-002/` and rename them with rich SEO keywords. Example:
+   - `OEM-ODM-Customize-Metal-Optical-Glasses-KSO-002-1.webp` - Primary image
+   - `OEM-ODM-Customize-Metal-Optical-Glasses-KSO-002-2.webp` - Side view
 
 2. **Text:** Go to `src/content/products/` and **COPY** files `kso-001.*.md`
    - Rename copies to `kso-002.en.md`, `kso-002.it.md`, etc.
@@ -122,9 +120,9 @@ cover: "src/assets/media/..."  # Never works in production
    title: "Customize Metal Optical Glasses Frames"
    slug: "kso-002"
    itemNo: "KSO-002"
-   cover: "../../assets/media/products/kso-002/main.webp"
+   cover: "/media/products/kso-002/OEM-ODM-Customize-Metal-Optical-Glasses-KSO-002-1.webp"
    gallery:
-     - "../../assets/media/products/kso-002/side.webp"
+     - "/media/products/kso-002/OEM-ODM-Customize-Metal-Optical-Glasses-KSO-002-2.webp"
    materials: ["Metal", "Titanium"]
    colors: ["Black", "Gold"]
    moq: 300

@@ -8,7 +8,8 @@ import Footer from '../../../components/Footer.astro';
 export async function getStaticPaths() {
   const landing = await getCollection('landing');
   return landing.map(page => {
-    const { slug, lang } = page.data;
+    const lang = page.data.lang;
+    const slug = page.data.slug || page.slug;
     return {
       params: { lang, slug },
       props: { page },

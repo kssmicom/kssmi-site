@@ -6,7 +6,14 @@ import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
 
 export async function getStaticPaths() {
-  const allPosts = await getCollection('blog');
+  let allPosts = [];
+  try {
+    const maybePosts = await getCollection('blog');
+    if (maybePosts) allPosts = maybePosts;
+  } catch (e) {
+    // Collection might be empty or missing during initial setup
+    console.warn(`Blog collection empty or missing: ${e}`);
+  }
   const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar'];
 
   return languages.map((lang) => {

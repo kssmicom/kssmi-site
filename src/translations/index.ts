@@ -508,7 +508,7 @@ export const translations = {
       carbon: "Serie Carbono",
       factoryTitle: "Nuestra Fabrica de Gafas",
       address: "1501, Ed. 2, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China",
-      postcode: "Codigo Postal: 518172",
+      postcode: "Codigo Postal",
       email: "info@kssmi.com",
       emailLabel: "Correo: ",
       copyright: "Kssmi Technology Co., Ltd. Todos los derechos reservados."
@@ -653,7 +653,7 @@ export const translations = {
       carbon: "Serie Carbone",
       factoryTitle: "Notre Usine de Lunettes",
       address: "1501, Bat. 2, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, Chine",
-      postcode: "Code Postal: 518172",
+      postcode: "Code Postal",
       email: "info@kssmi.com",
       emailLabel: "Email: ",
       copyright: "Kssmi Technology Co., Ltd. Tous droits reserves."
@@ -798,7 +798,7 @@ export const translations = {
       carbon: "Kohlenstoff Serie",
       factoryTitle: "Unsere Brillenfabrik",
       address: "1501, Geba. 2, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China",
-      postcode: "Postleitzahl: 518172",
+      postcode: "Postleitzahl",
       email: "info@kssmi.com",
       emailLabel: "E-Mail: ",
       copyright: "Kssmi Technology Co., Ltd. Alle Rechte vorbehalten."
@@ -943,7 +943,7 @@ export const translations = {
       carbon: "Serie Carbono",
       factoryTitle: "Nossa Fabrica de Oculos",
       address: "1501, Ed. 2, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China",
-      postcode: "CEP: 518172",
+      postcode: "CEP",
       email: "info@kssmi.com",
       emailLabel: "E-mail: ",
       copyright: "Kssmi Technology Co., Ltd. Todos os direitos reservados."
@@ -1088,7 +1088,7 @@ export const translations = {
       carbon: "Seriya Uglerod",
       factoryTitle: "Nasha Ochkovaya Fabrika",
       address: "1501, Zd. 2, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, Kitay",
-      postcode: "Pochtovyy indeks: 518172",
+      postcode: "Pochtovyy indeks",
       email: "info@kssmi.com",
       emailLabel: "Email: ",
       copyright: "Kssmi Technology Co., Ltd. Vse prava zashchishcheny."
@@ -1233,7 +1233,7 @@ export const translations = {
       carbon: "Kabon Shirizu",
       factoryTitle: "Watashitachi No Aiwea Kōjō",
       address: "Chugoku Kanton-shen Shenzhen-shi Ryugō-ku Yenshan-gai Baiwangda Kenko Tekku Pāku 2-chi 1501-gō",
-      postcode: "Yubin Bango: 518172",
+      postcode: "Yubin Bango",
       email: "info@kssmi.com",
       emailLabel: "Eメール: ",
       copyright: "Kssmi Technology Co., Ltd. Zesse Chosaken Ukeirasarete Orimasu."
@@ -1378,7 +1378,7 @@ export const translations = {
       carbon: "Karbon Serisi",
       factoryTitle: "Gozluk Fabrikamiz",
       address: "1501, Bina 2, Baiwangda Health Tech Park, Yuanshan Cad., Longgang Bol., Shenzhen, Guangdong, Cin",
-      postcode: "Posta Kodu: 518172",
+      postcode: "Posta Kodu",
       email: "info@kssmi.com",
       emailLabel: "E-posta: ",
       copyright: "Kssmi Technology Co., Ltd. Tum hakki saklidir."

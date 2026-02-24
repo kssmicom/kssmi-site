@@ -8,7 +8,8 @@ import Footer from '../../../components/Footer.astro';
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map(post => {
-    const { slug, lang } = post.data;
+    const lang = post.data.lang;
+    const slug = post.data.slug || post.slug;
     return {
       params: { lang, slug },
       props: { post, lang },  // Pass lang in props too!
