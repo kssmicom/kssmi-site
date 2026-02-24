@@ -130,6 +130,21 @@ if (videoId) {
     "embedUrl": `https://play.gumlet.io/embed/${videoId}`
   };
 }
+
+// Badge label: 'Customizable' in each language
+const customizableLabel: Record<string, string> = {
+  en: 'Customizable',
+  it: 'Personalizzabile',
+  es: 'Personalizable',
+  fr: 'Personnalisable',
+  de: 'Anpassbar',
+  pt: 'Personalizável',
+  ru: 'Настраиваемый',
+  ja: 'カスタマイズ可能',
+  tr: 'Özelleştirilebilir',
+  ar: 'قابل للتخصيص',
+};
+const badgeLabel = customizableLabel[lang] || 'Customizable';
 ---
 
 <Layout title={title} lang={lang} image={cover}>
@@ -185,11 +200,11 @@ if (videoId) {
                 </div>
               )}
 
-              <!-- Badge - Only OEM Ready -->
+              <!-- Badge - Customizable -->
               {customizable && (
                 <div class="absolute top-4 start-4 z-10">
                   <span class="bg-[#8B7355] text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
-                    OEM Ready
+                    {badgeLabel}
                   </span>
                 </div>
               )}
