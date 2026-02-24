@@ -1,0 +1,143 @@
+---
+// Single smart 404 page — detects the visitor's language from the URL path
+// e.g. /it/some-bad-link → shows Italian message, links to /it/
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="404 — Page Not Found | KSSMI" lang="en">
+  <Header lang="en" />
+
+  <section class="w-full min-h-screen bg-stone-100 pt-32 pb-24 flex items-center">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+
+      <!-- KSSMI Text Logo -->
+      <div class="inline-flex flex-col items-center justify-center mb-8 hover:-translate-y-1 transition-transform duration-500">
+        <span class="text-2xl font-bold text-[#8B7355] tracking-tight leading-none">KSSMI</span>
+        <span class="h-[2px] w-6 bg-[#8B7355] mt-1"></span>
+        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-stone-500 mt-1">Eyewear</span>
+      </div>
+
+      <!-- 404 Number -->
+      <div class="relative mb-6">
+        <span class="text-[160px] font-black text-stone-200 leading-none select-none block">404</span>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <svg class="w-16 h-16 text-[#8B7355]/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Heading & message — populated by JS -->
+      <h1 id="err-title" class="text-3xl font-bold text-[#5D4E37] mb-3 tracking-tight">
+        Page Not Found
+      </h1>
+      <p id="err-msg" class="text-base text-stone-600 mb-8 max-w-md mx-auto">
+        The page you're looking for doesn't exist or has been moved.
+      </p>
+
+      <!-- Search Bar -->
+      <form id="search-form" action="/search" method="GET"
+        class="relative group max-w-lg mx-auto mb-10">
+        <div class="flex items-center border-2 border-stone-300 bg-white rounded-full pl-5 pr-2 py-2
+                    focus-within:border-[#8B7355] focus-within:ring-4 focus-within:ring-[#8B7355]/10
+                    transition-all duration-300 shadow-sm hover:shadow-md">
+          <svg class="w-4 h-4 text-stone-400 shrink-0 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0" />
+          </svg>
+          <input
+            id="search-input"
+            type="search"
+            name="q"
+            autocomplete="off"
+            class="flex-1 bg-transparent text-sm text-stone-700 placeholder-stone-400 outline-none min-w-0"
+            placeholder="Search products…"
+          />
+          <button type="submit"
+            class="ml-2 shrink-0 bg-[#5D4E37] hover:bg-[#8B7355] text-white text-xs font-bold uppercase tracking-wider
+                   px-5 py-2 rounded-full transition-colors duration-300">
+            <span id="btn-search-text">Search</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- Decorative divider -->
+      <div class="flex items-center justify-center gap-3 mb-10">
+        <span class="h-[1px] w-10 bg-[#8B7355]/30"></span>
+        <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#5D4E37]/40">KSSMI</span>
+        <span class="h-[1px] w-10 bg-[#8B7355]/30"></span>
+      </div>
+
+      <!-- Action buttons — hrefs set by JS -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a id="btn-home"
+          href="/"
+          class="inline-flex items-center gap-2 px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#8B7355] transition-colors duration-300 shadow-lg">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+          <span id="btn-home-text">Back to Home</span>
+        </a>
+        <a id="btn-products"
+          href="/product"
+          class="inline-flex items-center gap-2 px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#5D4E37] hover:text-white transition-all duration-300">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+          </svg>
+          <span id="btn-products-text">View Catalog</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer lang="en" />
+</Layout>
+
+<script>
+  // Detect language from URL path (e.g. /it/broken → lang = 'it')
+  const pathParts = window.location.pathname.split('/').filter(Boolean);
+  const supportedLangs = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar'];
+  const detectedLang = supportedLangs.includes(pathParts[0]) ? pathParts[0] : 'en';
+  const prefix = detectedLang === 'en' ? '' : `/${detectedLang}`;
+
+  // Localized strings
+  const i18n = {
+    en: { title: 'Page Not Found',        msg: "The page you're looking for doesn't exist or has been moved.", home: 'Back to Home',        catalog: 'View Catalog',          search: 'Search',       placeholder: 'Search products, styles, collections…' },
+    it: { title: 'Pagina Non Trovata',    msg: 'La pagina che cercavi non esiste o è stata spostata.',          home: 'Torna alla Home',     catalog: 'Vedi Catalogo',         search: 'Cerca',        placeholder: 'Cerca prodotti, stili, collezioni…' },
+    es: { title: 'Página No Encontrada',  msg: 'La página que buscas no existe o ha sido movida.',               home: 'Volver al Inicio',    catalog: 'Ver Catálogo',          search: 'Buscar',       placeholder: 'Buscar productos, estilos, colecciones…' },
+    fr: { title: 'Page Introuvable',      msg: "La page que vous cherchez n'existe pas ou a été déplacée.",      home: "Retour à l'Accueil", catalog: 'Voir le Catalogue',     search: 'Rechercher',   placeholder: 'Rechercher des produits, styles, collections…' },
+    de: { title: 'Seite Nicht Gefunden',  msg: 'Die gesuchte Seite existiert nicht oder wurde verschoben.',      home: 'Zur Startseite',      catalog: 'Katalog Ansehen',       search: 'Suchen',       placeholder: 'Produkte, Stile, Kollektionen suchen…' },
+    pt: { title: 'Página Não Encontrada', msg: 'A página que você procura não existe ou foi movida.',            home: 'Voltar ao Início',    catalog: 'Ver Catálogo',          search: 'Pesquisar',    placeholder: 'Pesquisar produtos, estilos, coleções…' },
+    ru: { title: 'Страница Не Найдена',   msg: 'Страница, которую вы ищете, не существует или была перемещена.',home: 'На Главную',          catalog: 'Смотреть Каталог',      search: 'Поиск',        placeholder: 'Поиск продуктов, стилей, коллекций…' },
+    ja: { title: 'ページが見つかりません', msg: 'お探しのページは存在しないか、移動されました。',                  home: 'ホームに戻る',        catalog: 'カタログを見る',        search: '検索',         placeholder: '製品、スタイル、コレクションを検索…' },
+    tr: { title: 'Sayfa Bulunamadı',      msg: 'Aradığınız sayfa mevcut değil veya taşınmış.',                   home: 'Ana Sayfaya Dön',     catalog: 'Kataloğu Görüntüle',    search: 'Ara',          placeholder: 'Ürün, stil, koleksiyon ara…' },
+    ar: { title: 'الصفحة غير موجودة',    msg: 'الصفحة التي تبحث عنها غير موجودة أو تم نقلها.',                 home: 'العودة للرئيسية',     catalog: 'عرض الكتالوج',         search: 'بحث',          placeholder: 'ابحث عن منتجات، أنماط، مجموعات…' },
+  };
+
+  const t = i18n[detectedLang] || i18n.en;
+
+  // Update text content
+  document.getElementById('err-title').textContent = t.title;
+  document.getElementById('err-msg').textContent = t.msg;
+  document.getElementById('btn-home-text').textContent = t.home;
+  document.getElementById('btn-products-text').textContent = t.catalog;
+  document.getElementById('btn-search-text').textContent = t.search;
+  document.getElementById('search-input').placeholder = t.placeholder;
+
+  // Update links
+  document.getElementById('btn-home').href = prefix + '/';
+  document.getElementById('btn-products').href = prefix + '/product';
+
+  // Point the search form at the correct language search page
+  // e.g. /it/search?q=... or /search?q=...
+  const searchForm = document.getElementById('search-form');
+  searchForm.action = prefix + '/search';
+
+  // RTL support for Arabic
+  if (detectedLang === 'ar') {
+    document.documentElement.setAttribute('dir', 'rtl');
+  }
+</script>
