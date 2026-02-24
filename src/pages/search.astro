@@ -17,9 +17,11 @@ const lang = 'en';
 
       <!-- Search Header Block -->
       <div class="text-center mb-12 relative max-w-4xl mx-auto">
-        <!-- Logo Mark -->
-        <div class="inline-flex items-center justify-center mb-6 hover:-translate-y-1 transition-transform duration-500">
-          <img src="/media/global/logo.png" alt="KSSMI" class="h-12 w-auto object-contain drop-shadow-sm">
+        <!-- KSSMI Text Logo -->
+        <div class="inline-flex flex-col items-center justify-center mb-6 hover:-translate-y-1 transition-transform duration-500">
+          <span class="text-3xl font-bold text-[#8B7355] tracking-tight leading-none">KSSMI</span>
+          <span class="h-[2px] w-8 bg-[#8B7355] mt-1"></span>
+          <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-stone-500 mt-1">Eyewear</span>
         </div>
 
         <h1 class="text-3xl md:text-4xl font-bold text-[#5D4E37] mb-3 tracking-tight">
@@ -557,6 +559,24 @@ const lang = 'en';
         // Scroll to top of results
         resultsGrid?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
+    });
+  }
+
+  // Intercept mid-page search form submission (Enter key or Search button)
+  const searchForm = searchInput?.closest('form');
+  if (searchForm) {
+    searchForm.addEventListener('submit', (e: Event) => {
+      e.preventDefault();
+      const newQuery = (searchInput as HTMLInputElement)?.value.trim() || '';
+      if (newQuery) {
+        // Update URL so the query is bookmarkable
+        const newUrl = new URL(window.location.href);
+        newUrl.searchParams.set('q', newQuery);
+        history.pushState({}, '', newUrl.toString());
+        performSearch(newQuery);
+      } else {
+        showEmpty();
+      }
     });
   }
 

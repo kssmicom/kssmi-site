@@ -114,89 +114,133 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
 <Layout title={`${searchText[lang]} | KSSMI`} lang={lang}>
   <Header lang={lang} />
 
-  <main class="min-h-screen bg-stone-50">
-    <!-- Search Header -->
-    <div class="bg-white border-b border-stone-200">
-      <div class="max-w-7xl mx-auto px-4 py-8">
-        <!-- Search Form -->
-        <form action={`/${lang}/search`} method="GET" class="max-w-2xl mx-auto">
-          <div class="flex items-center border-2 border-stone-300 rounded-lg overflow-hidden focus-within:border-[#8B7355] transition-colors bg-white shadow-sm">
+  <section class="w-full min-h-screen bg-stone-100 pt-32 pb-24">
+    <div class="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12">
+
+      <!-- Search Header Block -->
+      <div class="text-center mb-12 relative max-w-4xl mx-auto">
+        <!-- KSSMI Text Logo -->
+        <div class="inline-flex flex-col items-center justify-center mb-6 hover:-translate-y-1 transition-transform duration-500">
+          <span class="text-3xl font-bold text-[#8B7355] tracking-tight leading-none">KSSMI</span>
+          <span class="h-[2px] w-8 bg-[#8B7355] mt-1"></span>
+          <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-stone-500 mt-1">Eyewear</span>
+        </div>
+
+        <h1 class="text-3xl md:text-4xl font-bold text-[#5D4E37] mb-3 tracking-tight">
+          {searchText[lang]} Results
+        </h1>
+
+        <!-- Query display (updated by JS) -->
+        <div id="search-info" class="hidden">
+          <div class="inline-block relative">
+            <p class="text-lg text-stone-600 mb-3 font-light">
+              Found matches for <span id="query-display" class="font-bold text-[#8B7355] border-b-2 border-[#8B7355]/20"></span>
+            </p>
+          </div>
+
+          <div class="flex items-center justify-center gap-3">
+            <span class="h-[1px] w-10 bg-[#8B7355]/30"></span>
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#5D4E37]/60">
+              <span id="count-number">0</span> {resultsFoundText[lang]}
+            </p>
+            <span class="h-[1px] w-10 bg-[#8B7355]/30"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search Form Block -->
+      <div class="max-w-3xl mx-auto mb-16 relative z-10">
+        <form action={`/${lang}/search`} method="GET" class="relative group">
+          <div class="absolute inset-0 bg-[#5D4E37]/5 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+          <div class="flex items-center border-2 border-stone-200 bg-white rounded-full overflow-hidden focus-within:border-[#8B7355] shadow-sm transition-all duration-300 focus-within:ring-4 focus-within:ring-[#8B7355]/10 relative z-10">
             <input
               type="search"
               name="q"
               id="search-input"
               placeholder={searchPlaceholder[lang]}
-              class="flex-grow py-4 px-6 text-lg outline-none"
+              class="flex-grow py-4 px-6 bg-transparent border-none outline-none text-base text-stone-900 placeholder-stone-400 font-medium focus:ring-0"
+              style="::-webkit-search-cancel-button{display:none}::-moz-search-clear-button{display:none}"
               autocomplete="off"
-            />
-            <button type="submit" class="px-6 py-4 bg-[#8B7355] text-white hover:bg-[#5D4E37] transition-colors">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            >
+
+            <!-- Clear Button (X icon) -->
+            <button type="button" id="search-clear" class="hidden px-3 text-stone-400 hover:text-stone-600 transition-colors flex-shrink-0" aria-label="Clear search">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
               </svg>
+            </button>
+
+            <!-- Search Button -->
+            <button type="submit" class="px-5 py-2.5 mr-1.5 bg-[#5D4E37] text-white rounded-full hover:bg-[#8B7355] transition-all duration-300 font-bold tracking-wide text-xs uppercase shadow-md flex-shrink-0 flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+              <span>{searchText[lang]}</span>
             </button>
           </div>
         </form>
-
-        <!-- Search Info (shown when searching) -->
-        <div id="search-info" class="text-center mt-6 hidden">
-          <h1 class="text-2xl font-bold text-stone-900">
-            {searchText[lang]} results for "<span id="query-display" class="text-[#8B7355]"></span>"
-          </h1>
-          <p class="text-stone-600 mt-2">
-            <span id="count-number">0</span> {resultsFoundText[lang]}
-          </p>
-        </div>
       </div>
-    </div>
 
-    <!-- Search Results Container -->
-    <div class="max-w-7xl mx-auto px-4 py-8">
       <!-- Loading State -->
-      <div id="loading-state" class="hidden text-center py-8 text-stone-500">
-        <svg class="w-8 h-8 mx-auto animate-spin text-[#8B7355]" fill="none" viewBox="0 0 24 24">
+      <div id="loading-state" class="hidden text-center py-16">
+        <svg class="w-12 h-12 mx-auto animate-spin text-[#8B7355]" fill="none" viewBox="0 0 24 24">
           <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
           <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
         </svg>
-        <p class="mt-4">{searchText[lang]}...</p>
+        <p class="mt-4 text-stone-500">{searchText[lang]}...</p>
       </div>
 
-      <!-- Empty State (no search yet) -->
-      <div id="empty-state" class="text-center py-16">
-        <svg class="w-24 h-24 mx-auto text-stone-300 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-        <h2 class="text-2xl font-semibold text-stone-700 mb-2">{searchText[lang]} KSSMI</h2>
-        <p class="text-stone-500 max-w-md mx-auto">{searchPlaceholder[lang]}</p>
+      <!-- Empty State -->
+      <div id="empty-state" class="text-center py-24">
+        <div class="inline-flex items-center justify-center w-20 h-20 bg-white border border-stone-200 rounded-full mb-8 shadow-sm">
+          <svg class="w-8 h-8 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold text-[#5D4E37] mb-4">{searchText[lang]} KSSMI</h2>
+        <p class="text-base text-stone-600 mb-10 max-w-md mx-auto">{searchPlaceholder[lang]}</p>
       </div>
 
-      <!-- Search Results Grid -->
-      <div id="search-results" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <!-- Results Grid -->
+      <div id="search-results" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       </div>
 
       <!-- No Results State -->
-      <div id="no-results" class="hidden col-span-full text-center py-16">
-        <svg class="w-24 h-24 mx-auto text-stone-300 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <h2 class="text-2xl font-semibold text-stone-700 mb-2">{noResultsText[lang]} "<span id="no-results-query"></span>"</h2>
-        <p class="text-stone-500">{tryDifferentText[lang]}</p>
+      <div id="no-results" class="hidden text-center py-24">
+        <div class="inline-flex items-center justify-center w-20 h-20 bg-white border border-stone-200 rounded-full mb-8 shadow-sm hover:border-[#8B7355] transition-colors duration-500">
+          <svg class="w-8 h-8 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold text-[#5D4E37] mb-4">{noResultsText[lang]}</h2>
+        <p class="text-base text-stone-600 mb-10 max-w-md mx-auto" id="no-results-text">{tryDifferentText[lang]}</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href={`/${lang === 'en' ? '' : lang + '/'}`} class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#8B7355] transition-colors duration-300 shadow-lg">
+            {t.nav?.home || 'Home'}
+          </a>
+          <a href={`/${lang === 'en' ? '' : lang + '/'}product`} class="inline-flex items-center px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#5D4E37] hover:text-white transition-all duration-300">
+            {t.nav?.products || 'Catalog'}
+          </a>
+        </div>
       </div>
 
       <!-- Error State -->
-      <div id="error-state" class="hidden col-span-full text-center py-16">
+      <div id="error-state" class="hidden text-center py-24">
         <p class="text-red-600">{tryDifferentText[lang]}</p>
       </div>
-    </div>
 
-    <!-- Pagination -->
-    <div id="pagination" class="hidden max-w-7xl mx-auto px-4 pb-12">
-      <div class="flex justify-center items-center gap-2">
+      <!-- Pagination -->
+      <div id="pagination" class="hidden mt-20 flex justify-center">
+        <div class="inline-flex items-center gap-2" id="pagination-container">
+        </div>
       </div>
     </div>
-  </main>
+  </section>
 
   <Footer lang={lang} />
 </Layout>
+
 
 <style is:global>
   /* Search Result Card — mirrors ProductCard.astro */
@@ -302,7 +346,7 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
   const query = urlParams.get('q') || '';
 
   // DOM elements
-  const searchInput = document.getElementById('search-input') as HTMLInputElement;
+  const searchInput = document.getElementById('search-input');
   const searchInfo = document.getElementById('search-info');
   const queryDisplay = document.getElementById('query-display');
   const countNumber = document.getElementById('count-number');
@@ -316,11 +360,28 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
 
   const RESULTS_PER_PAGE = 12;
   let currentPage = 1;
-  let allResults: any[] = [];
+  let allResults = [];
 
   // Pre-fill search input with query
   if (searchInput && query) {
     searchInput.value = query;
+  }
+
+  // Clear button logic
+  const searchClear = document.getElementById('search-clear');
+  if (searchInput && searchClear) {
+    // Show clear button if input already has value (from pre-fill)
+    if (searchInput.value.trim()) searchClear.classList.remove('hidden');
+    searchInput.addEventListener('input', () => {
+      searchInput.value.trim()
+        ? searchClear.classList.remove('hidden')
+        : searchClear.classList.add('hidden');
+    });
+    searchClear.addEventListener('click', () => {
+      searchInput.value = '';
+      searchClear.classList.add('hidden');
+      searchInput.focus();
+    });
   }
 
   function hideAllStates() {
@@ -366,7 +427,7 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
     if (queryDisplay) queryDisplay.textContent = query;
   }
 
-  async function performSearch(searchQuery: string) {
+  async function performSearch(searchQuery) {
     if (!searchQuery) {
       showEmpty();
       return;
@@ -378,8 +439,9 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
       const pagefindPath = '/pagefind/pagefind.js';
       const pagefind = await import(/* @vite-ignore */ pagefindPath);
 
-      // Initialize Pagefind with the correct language
-      await pagefind.init({ language: pagefindLang });
+      // Initialize Pagefind without language filter so product pages are found
+      // (Pagefind partitions by <html lang>, but product specs are shared across locales)
+      await pagefind.init();
 
       const searchResponse = await pagefind.search(searchQuery);
 
@@ -390,7 +452,7 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
 
       // Fetch all result data
       allResults = await Promise.all(
-        searchResponse.results.map((result: any) => result.data())
+        searchResponse.results.map((result) => result.data())
       );
 
       // Update count
@@ -408,7 +470,7 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
     }
   }
 
-  function createResultCard(data: any): string {
+  function createResultCard(data) {
     const url = data.url || '#';
     const title = data.meta?.title || 'Untitled';
     const itemNo = data.meta?.itemNo || '';
@@ -451,7 +513,7 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
     `;
   }
 
-  function renderPage(page: number) {
+  function renderPage(page) {
     currentPage = page;
     const startIndex = (page - 1) * RESULTS_PER_PAGE;
     const endIndex = startIndex + RESULTS_PER_PAGE;
@@ -524,6 +586,24 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
         // Scroll to top of results
         searchResults?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
+    });
+  }
+
+  // Intercept mid-page search form submission (Enter key or Search button click)
+  const searchForm = searchInput?.closest('form');
+  if (searchForm) {
+    searchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const newQuery = searchInput?.value.trim() || '';
+      if (newQuery) {
+        // Update URL so query is bookmarkable
+        const newUrl = new URL(window.location.href);
+        newUrl.searchParams.set('q', newQuery);
+        history.pushState({}, '', newUrl.toString());
+        performSearch(newQuery);
+      } else {
+        showEmpty();
+      }
     });
   }
 
