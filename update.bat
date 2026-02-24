@@ -1,6 +1,6 @@
 @echo off
 chcp 65001 >nul
-cd /d "D:\001 Tools\004 Desk\Desk\Tools\Kssmi\kssmi-site"
+cd /d "%~dp0"
 
 echo ========================================
 echo KSSMI Website Update Tool

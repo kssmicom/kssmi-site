@@ -26,6 +26,11 @@ RewriteRule ^(.*)$ $1/index.html [L]
 # ─── 404 handler ───────────────────────────────────────────────────────────
 ErrorDocument 404 /404.html
 
+# LiteSpeed Fallback for 404s (if ErrorDocument is ignored)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ /404.html [L,R=404]
+
 # ─── HTTPS redirect ────────────────────────────────────────────────────────
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
