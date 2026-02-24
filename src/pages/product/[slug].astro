@@ -119,7 +119,7 @@ if (videoId) {
   {materials && materials.length > 0 && <div class="sr-only" data-pagefind-meta="materials">{materials.join(', ')}</div>}
   {colors && colors.length > 0 && <div class="sr-only" data-pagefind-meta="colors">{colors.join(', ')}</div>}
   {categories && categories.length > 0 && <div class="sr-only" data-pagefind-meta="category">{categories.join(', ')}</div>}
-  {cover && <img src={cover} alt={title} data-pagefind-meta="image" class="sr-only" />}
+  {cover && <img src={cover.src} alt={title} data-pagefind-meta="image" class="sr-only" />}
 
   <Header lang={lang} />
 
