@@ -311,6 +311,7 @@ const lang = 'en';
 </style>
 
 <script>
+document.addEventListener('astro:page-load', () => {
   // Get query from URL at RUNTIME
   const urlParams = new URLSearchParams(window.location.search);
   const query = urlParams.get('q') || '';
@@ -586,4 +587,5 @@ const lang = 'en';
   } else {
     showEmpty();
   }
+});
 </script>

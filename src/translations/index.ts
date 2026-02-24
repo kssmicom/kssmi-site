@@ -79,7 +79,7 @@ export const translations = {
 
       // Column 4: Factory Info
       factoryTitle: "Contact Us",
-      address: "Kssmi Eyewear Co., Ltd.\nBldg. 2, Baiwangda Health Tech Park, Yuanshan St.,\nLonggang Dist., Shenzhen, Guangdong, China.",
+      address: "Kssmi Eyewear Co., Ltd. Bldg. 2, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China.",
       postcode: "Postcode",
       email: "sales@kssmi.com",
 
@@ -223,7 +223,7 @@ export const translations = {
       fashion: "سلسلة الأزياء",
       carbon: "سلسلة الكربون",
       factoryTitle: "اتصل بنا",
-      address: "Kssmi Eyewear Co., Ltd.\nBldg. 2, Baiwangda Health Tech Park, Yuanshan St.,\nLonggang Dist., Shenzhen, Guangdong, China.",
+      address: "Kssmi Eyewear Co., Ltd. Bldg. 2, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China.",
       postcode: "الرمز البريدي",
       email: "sales@kssmi.com",
       rights: "جميع الحقوق محفوظة."
@@ -360,7 +360,7 @@ export const translations = {
       fashion: "Serie Moda",
       carbon: "Serie Carbonio",
       factoryTitle: "Contattaci",
-      address: "Kssmi Eyewear Co., Ltd.\nBldg. 2, Baiwangda Health Tech Park, Yuanshan St.,\nLonggang Dist., Shenzhen, Guangdong, Cina.",
+      address: "Kssmi Eyewear Co., Ltd. Bldg. 2, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, Cina.",
       postcode: "CAP",
       email: "sales@kssmi.com",
       rights: "Tutti i diritti riservati."

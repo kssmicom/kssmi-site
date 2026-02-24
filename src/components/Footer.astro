@@ -128,10 +128,8 @@ const currentYear = new Date().getFullYear();
         <h4 class="text-white font-['Manrope'] font-bold uppercase tracking-[0.2em] text-xs mb-6">
           {t.footer.factoryTitle}
         </h4>
-        <p class="text-sm text-stone-500 leading-relaxed mb-4">
-          Kssmi Eyewear Co., Ltd.<br>
-          Bldg. 2, Baiwangda Health Tech Park, Yuanshan St.,<br>
-          Longgang Dist., Shenzhen, Guangdong, China.
+        <p class="text-sm text-stone-500 leading-relaxed mb-4 whitespace-pre-line">
+          {t.footer.address.replace(/\n/g, ' ')}
         </p>
         <p class="text-sm text-stone-500 mb-4">
           {t.footer.postcode}: 518172

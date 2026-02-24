@@ -340,7 +340,7 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
   }
 </style>
 
-<script define:vars={{ lang, pagefindLang, viewDetailsText }}>
+<script define:vars={{ lang, pagefindLang, viewDetailsText }} data-astro-rerun>
   // Get query from URL at RUNTIME (not build time)
   const urlParams = new URLSearchParams(window.location.search);
   const query = urlParams.get('q') || '';
