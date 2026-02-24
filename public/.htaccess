@@ -1,0 +1,54 @@
+# KSSMI Site — Apache Configuration
+# Ensure AllowOverride All is set on the server for this to work
+
+# Enable rewrite engine
+Options -Indexes
+Options +FollowSymLinks
+RewriteEngine On
+
+# ─── PHP API endpoints (pass through as-is) ────────────────────────────────
+RewriteRule ^send-mail\.php$ - [L]
+RewriteRule ^email-logs\.php$ - [L]
+RewriteRule ^php-status\.php$ - [L]
+
+# ─── Static assets (pass through as-is) ────────────────────────────────────
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# ─── Astro static site: serve index.html for clean URLs ────────────────────
+# e.g. /product → /product/index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}/index.html -f
+RewriteRule ^(.*)$ $1/index.html [L]
+
+# ─── 404 handler ───────────────────────────────────────────────────────────
+ErrorDocument 404 /404.html
+
+# ─── HTTPS redirect ────────────────────────────────────────────────────────
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ─── Security headers ──────────────────────────────────────────────────────
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ─── Gzip compression ──────────────────────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# ─── Cache static assets ───────────────────────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/ico "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
