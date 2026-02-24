@@ -82,6 +82,7 @@ export const translations = {
       address: "Kssmi Eyewear Co., Ltd. Bldg. 2, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China.",
       postcode: "Postcode",
       email: "sales@kssmi.com",
+      emailLabel: "Email: ",
 
       // Bottom Bar
       rights: "All rights reserved."
@@ -226,6 +227,7 @@ export const translations = {
       address: "Kssmi Eyewear Co., Ltd. Bldg. 2, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China.",
       postcode: "الرمز البريدي",
       email: "sales@kssmi.com",
+      emailLabel: "البريد الإلكتروني: ",
       rights: "جميع الحقوق محفوظة."
     },
     cta: {
@@ -363,6 +365,7 @@ export const translations = {
       address: "Kssmi Eyewear Co., Ltd. Bldg. 2, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, Cina.",
       postcode: "CAP",
       email: "sales@kssmi.com",
+      emailLabel: "Email: ",
       rights: "Tutti i diritti riservati."
     },
     cta: {
@@ -507,6 +510,7 @@ export const translations = {
       address: "1501, Ed. 2, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China",
       postcode: "Codigo Postal: 518172",
       email: "info@kssmi.com",
+      emailLabel: "Correo: ",
       copyright: "Kssmi Technology Co., Ltd. Todos los derechos reservados."
     },
     cta: {
@@ -651,6 +655,7 @@ export const translations = {
       address: "1501, Bat. 2, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, Chine",
       postcode: "Code Postal: 518172",
       email: "info@kssmi.com",
+      emailLabel: "Email: ",
       copyright: "Kssmi Technology Co., Ltd. Tous droits reserves."
     },
     cta: {
@@ -795,6 +800,7 @@ export const translations = {
       address: "1501, Geba. 2, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China",
       postcode: "Postleitzahl: 518172",
       email: "info@kssmi.com",
+      emailLabel: "E-Mail: ",
       copyright: "Kssmi Technology Co., Ltd. Alle Rechte vorbehalten."
     },
     cta: {
@@ -939,6 +945,7 @@ export const translations = {
       address: "1501, Ed. 2, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China",
       postcode: "CEP: 518172",
       email: "info@kssmi.com",
+      emailLabel: "E-mail: ",
       copyright: "Kssmi Technology Co., Ltd. Todos os direitos reservados."
     },
     cta: {
@@ -1083,6 +1090,7 @@ export const translations = {
       address: "1501, Zd. 2, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, Kitay",
       postcode: "Pochtovyy indeks: 518172",
       email: "info@kssmi.com",
+      emailLabel: "Email: ",
       copyright: "Kssmi Technology Co., Ltd. Vse prava zashchishcheny."
     },
     cta: {
@@ -1227,6 +1235,7 @@ export const translations = {
       address: "Chugoku Kanton-shen Shenzhen-shi Ryugō-ku Yenshan-gai Baiwangda Kenko Tekku Pāku 2-chi 1501-gō",
       postcode: "Yubin Bango: 518172",
       email: "info@kssmi.com",
+      emailLabel: "Eメール: ",
       copyright: "Kssmi Technology Co., Ltd. Zesse Chosaken Ukeirasarete Orimasu."
     },
     cta: {
@@ -1371,6 +1380,7 @@ export const translations = {
       address: "1501, Bina 2, Baiwangda Health Tech Park, Yuanshan Cad., Longgang Bol., Shenzhen, Guangdong, Cin",
       postcode: "Posta Kodu: 518172",
       email: "info@kssmi.com",
+      emailLabel: "E-posta: ",
       copyright: "Kssmi Technology Co., Ltd. Tum hakki saklidir."
     },
     cta: {

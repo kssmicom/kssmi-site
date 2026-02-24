@@ -134,9 +134,9 @@ const currentYear = new Date().getFullYear();
         <p class="text-sm text-stone-500 mb-4">
           {t.footer.postcode}: 518172
         </p>
-        <button type="button" data-email-user="sales" data-email-domain="kssmi.com" class="text-[#b45309] font-bold text-sm hover:text-white transition-colors flex items-center gap-2 cursor-pointer">
-          sales#kssmi.com
-        </button>
+        <a href="#email" data-email-user="sales" data-email-domain="kssmi.com" class="text-[#b45309] font-bold text-sm hover:text-white transition-colors flex items-center gap-2 cursor-pointer inline-flex">
+          <span class="text-white">{t.footer.emailLabel}</span>sales#kssmi.com
+        </a>
       </div>
     </div>
 
