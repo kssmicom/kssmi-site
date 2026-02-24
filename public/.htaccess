@@ -23,17 +23,17 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}/index.html -f
 RewriteRule ^(.*)$ $1/index.html [L]
 
-# ─── 404 handler ───────────────────────────────────────────────────────────
-ErrorDocument 404 /404.html
-
-# LiteSpeed Fallback for 404s (if ErrorDocument is ignored)
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ /404.html [L,R=404]
-
 # ─── HTTPS redirect ────────────────────────────────────────────────────────
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ─── 404 handler ───────────────────────────────────────────────────────────
+ErrorDocument 404 /404.html
+
+# LiteSpeed/Apache fallback: internally serve 404.html for any missing file
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ /404.html [L]
 
 # ─── Security headers ──────────────────────────────────────────────────────
 <IfModule mod_headers.c>
