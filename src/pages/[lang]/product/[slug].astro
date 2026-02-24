@@ -6,7 +6,6 @@
  */
 
 import { getCollection, render } from 'astro:content';
-import { Image } from 'astro:assets';
 import Layout from '../../../layouts/Layout.astro';
 import { translations } from '../../../translations';
 import Header from '../../../components/Header.astro';
@@ -161,7 +160,7 @@ const badgeLabel = customizableLabel[lang] || 'Customizable';
   {materials && materials.length > 0 && <div class="sr-only" data-pagefind-meta="materials">{materials.join(', ')}</div>}
   {colors && colors.length > 0 && <div class="sr-only" data-pagefind-meta="colors">{colors.join(', ')}</div>}
   {categories && categories.length > 0 && <div class="sr-only" data-pagefind-meta="category">{categories.join(', ')}</div>}
-  {cover && <img src={cover.src} alt={title} data-pagefind-meta="image" class="sr-only" />}
+  {cover && <img src={cover} alt={title} data-pagefind-meta="image" class="sr-only" />}
 
   <Header lang={lang} />
 
@@ -185,11 +184,12 @@ const badgeLabel = customizableLabel[lang] || 'Customizable';
                   id="image-zoom-container"
                   class="w-full h-full cursor-zoom-in"
                 >
-                  <Image
+                  <img
                     id="main-image"
                     src={cover}
                     alt={title}
                     class="w-full h-full object-cover"
+                    decoding="async"
                   />
                 </div>
               ) : (
@@ -217,7 +217,7 @@ const badgeLabel = customizableLabel[lang] || 'Customizable';
                   class="thumb aspect-square w-16 h-16 rounded-lg overflow-hidden border-2 border-[#8B7355] shadow-sm hover:shadow-md transition-shadow"
                   aria-label="View main image"
                 >
-                  <Image src={cover} alt="Main" class="w-full h-full object-cover" />
+                  <img src={cover} alt="Main" class="w-full h-full object-cover" decoding="async" />
                 </button>
               )}
               {gallery?.map((img, index) => (
@@ -225,7 +225,7 @@ const badgeLabel = customizableLabel[lang] || 'Customizable';
                   class="thumb aspect-square w-16 h-16 rounded-lg overflow-hidden border-2 border-transparent hover:border-[#8B7355] shadow-sm hover:shadow-md transition-all"
                   aria-label={`View gallery image ${index + 1}`}
                 >
-                  <Image src={img} alt={`Gallery ${index + 1}`} class="w-full h-full object-cover" />
+                  <img src={img} alt={`Gallery ${index + 1}`} class="w-full h-full object-cover" decoding="async" />
                 </button>
               ))}
             </div>

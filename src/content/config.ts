@@ -11,11 +11,13 @@ const products = defineCollection({
       return entry.replace(/\.md$/, '');
     }
   }),
-  schema: ({ image }) => z.object({
+  // Images are plain public-folder URLs (e.g. /media/products/kso-001/OEM-ODM-...-1.webp)
+  // Never use image() here — that hashes filenames and breaks Pagefind + SEO
+  schema: z.object({
     title: z.string(),
     slug: z.string().optional(),
-    cover: image().optional(),
-    gallery: z.array(image()).optional(),
+    cover: z.string().optional(),     // stable public URL, e.g. /media/products/kso-001/OEM-...-1.webp
+    gallery: z.array(z.string()).optional(), // array of stable public URLs
     videoId: z.string().optional(),
     itemNo: z.string().optional(),
     colors: z.array(z.string()).optional(),

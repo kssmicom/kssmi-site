@@ -40,8 +40,16 @@ const quoteLabels = {
   tr: 'Teklif', ar: 'عرض سعر'
 };
 
+// "Search" single-word placeholder for the compact header input
+const searchLabels = {
+  en: 'Search', it: 'Cerca', es: 'Buscar', fr: 'Rechercher',
+  de: 'Suchen', pt: 'Pesquisar', ru: 'Поиск', ja: '検索',
+  tr: 'Ara', ar: 'بحث'
+};
+
 const eyewearText = eyewearLabels[lang] || 'Eyewear';
 const quoteText = quoteLabels[lang] || 'Get Quote';
+const searchText = searchLabels[lang] || 'Search';
 const currentLangUpper = lang.toUpperCase();
 
 // Enhanced Menu Structure (WordPress-style mega menu)
@@ -217,7 +225,7 @@ const collectionMenu = menuStructure.find(item => item.menuKey === 'collection')
           <!-- Search with icon buttons -->
           <form id="header-search" action={lang === 'en' ? '/search' : `/${lang}/search`} method="GET" class="relative">
             <div class="flex items-center border border-stone-200 bg-stone-50 rounded-sm overflow-hidden transition-colors duration-300 focus-within:border-[#8B7355] focus-within:bg-white">
-              <input type="search" id="header-search-input" name="q" placeholder="Search" class="w-28 xl:w-40 py-2 px-3 bg-transparent border-none outline-none text-sm md:text-base font-bold text-stone-900 placeholder:text-stone-400 focus:ring-0" />
+              <input type="search" id="header-search-input" name="q" placeholder={searchText} class="w-28 xl:w-40 py-2 px-3 bg-transparent border-none outline-none text-sm md:text-base font-bold text-stone-900 placeholder:text-stone-400 focus:ring-0" />
               <!-- Clear button (hidden by default) -->
               <button type="button" id="header-search-clear" class="hidden px-2 text-stone-400 hover:text-stone-600 transition-colors" aria-label="Clear search">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
@@ -333,7 +341,7 @@ const collectionMenu = menuStructure.find(item => item.menuKey === 'collection')
   </div>
   <div class="relative mb-8">
     <form id="mobile-search" action={lang === 'en' ? '/search' : `/${lang}/search`} method="GET" class="flex items-center bg-stone-50 border border-stone-200 rounded-md focus-within:border-[#8B7355] focus-within:bg-white transition-colors">
-      <input type="search" id="mobile-search-input" name="q" placeholder="Search..." class="flex-grow py-4 px-4 bg-transparent border-none outline-none text-sm font-bold text-stone-900 focus:ring-0" />
+      <input type="search" id="mobile-search-input" name="q" placeholder={searchText} class="flex-grow py-4 px-4 bg-transparent border-none outline-none text-sm font-bold text-stone-900 focus:ring-0" />
       <button type="button" id="mobile-search-clear" class="hidden px-3 text-stone-400 hover:text-stone-600 transition-colors" aria-label="Clear search">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
       </button>
