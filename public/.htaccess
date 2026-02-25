@@ -6,10 +6,17 @@ Options -Indexes
 Options +FollowSymLinks
 RewriteEngine On
 
+# ─── Block sensitive files (403 Forbidden) — LiteSpeed compatible ────────────
+RewriteRule ^email-logs\.json$ - [F,L]
+RewriteRule ^\.email_logs_password$ - [F,L]
+RewriteRule ^\.email_reset_tokens\.json$ - [F,L]
+RewriteRule ^ip-debug\.log$ - [F,L]
+RewriteRule ^ip-debug\.php$ - [F,L]
+RewriteRule ^php-status\.php$ - [F,L]
+
 # ─── PHP API endpoints (pass through as-is) ────────────────────────────────
 RewriteRule ^send-mail\.php$ - [L]
 RewriteRule ^email-logs\.php$ - [L]
-RewriteRule ^php-status\.php$ - [L]
 
 # ─── Static assets (pass through as-is) ────────────────────────────────────
 RewriteCond %{REQUEST_FILENAME} -f [OR]

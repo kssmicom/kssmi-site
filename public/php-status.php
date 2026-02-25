@@ -1,8 +1,11 @@
 <?php
 /**
- * PHP Status Check
- * Run this to verify PHP and PHPMailer are working
+ * PHP Status Check — DISABLED ON PRODUCTION
+ * Uncomment the block below and comment out the die() for local testing only.
  */
+http_response_code(403);
+header('Content-Type: text/plain');
+die('403 Forbidden');
 
 header('Content-Type: application/json');
 

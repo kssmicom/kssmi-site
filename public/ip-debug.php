@@ -1,9 +1,11 @@
 <?php
 /**
- * IP Debug Endpoint
- * Visit this page to see all IP-related headers
- * Useful for debugging Cloudflare IP detection
+ * IP Debug Endpoint — DISABLED ON PRODUCTION
+ * Uncomment the block below and comment out the die() for local testing only.
  */
+http_response_code(403);
+header('Content-Type: text/plain');
+die('403 Forbidden');
 
 header('Content-Type: application/json; charset=utf-8');
 

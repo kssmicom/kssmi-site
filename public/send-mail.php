@@ -13,6 +13,15 @@
  * - CORS support for local development
  */
 
+// Load private credentials (file lives outside public_html)
+$_privateConfigPath = dirname(__DIR__) . '/private_config.php';
+if (file_exists($_privateConfigPath)) {
+    $_privateCfg = require $_privateConfigPath;
+} else {
+    error_log('KSSMI: private_config.php not found at ' . $_privateConfigPath);
+    $_privateCfg = ['smtp_pass' => '', 'turnstile_secret' => ''];
+}
+
 // CORS Headers for local development
 $allowedOrigins = [
     'http://localhost:4321',
@@ -62,19 +71,19 @@ $config = [
         'host' => 'smtp.gmail.com',
         'port' => 587,
         'user' => 'kssmi@kssmi.com',
-        'pass' => 'chnxqxdkktgehtlt',  // Gmail App Password
+        'pass' => $_privateCfg['smtp_pass'],
         'secure' => 'tls',
     ],
 
     // Cloudflare Turnstile
-    'turnstile_secret' => '0x4AAAAAACGlmdz4wrPYmoFzuR_9vDknUOQ',
+    'turnstile_secret' => $_privateCfg['turnstile_secret'],
 
     // Debug Mode - Set to true to skip Turnstile (for localhost testing)
-    'debug_mode' => true,  // Change to false in production!
+    'debug_mode' => false,  // Set to true only for local testing
 
     // Email Logging
     'log_enabled' => true,
-    'log_file' => __DIR__ . '/email-logs.json',
+    'log_file' => dirname(__DIR__) . '/email-logs.json',
 ];
 
 // ============================================

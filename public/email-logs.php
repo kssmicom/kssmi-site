@@ -12,9 +12,18 @@
 // Start session first
 session_start();
 
+// Load private credentials (file lives outside public_html)
+$_privateConfigPath = dirname(__DIR__) . '/private_config.php';
+if (file_exists($_privateConfigPath)) {
+    $_privateCfg = require $_privateConfigPath;
+} else {
+    error_log('KSSMI: private_config.php not found at ' . $_privateConfigPath);
+    $_privateCfg = ['smtp_pass' => '', 'turnstile_secret' => ''];
+}
+
 // Password configuration - use absolute path
 define('PASSWORD_FILE', dirname(__FILE__) . '/.email_logs_password');
-define('LOGS_FILE', dirname(__FILE__) . '/email-logs.json');
+define('LOGS_FILE', dirname(dirname(__FILE__)) . '/email-logs.json');
 define('RESET_TOKENS_FILE', dirname(__FILE__) . '/.email_reset_tokens.json');
 define('ADMIN_EMAIL', 'kssmi@kssmi.com');
 
@@ -151,7 +160,7 @@ function sendResetEmail($token) {
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'kssmi@kssmi.com';
-        $mail->Password = 'chnxqxdkktgehtlt';
+        $mail->Password = $_privateCfg['smtp_pass'];
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
@@ -543,7 +552,7 @@ function resendEmail($log) {
             'host' => 'smtp.gmail.com',
             'port' => 587,
             'user' => 'kssmi@kssmi.com',
-            'pass' => 'chnxqxdkktgehtlt',
+            'pass' => $_privateCfg['smtp_pass'],
             'secure' => 'tls',
         ],
     ];
@@ -624,6 +633,7 @@ function resendEmail($log) {
         .stat-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); min-width: 150px; }
         .stat-card h3 { font-size: 12px; text-transform: uppercase; color: #666; margin-bottom: 5px; }
         .stat-card .value { font-size: 28px; font-weight: bold; color: #5D4E37; }
+        .stat-card.success { background: white; padding: 20px; margin-bottom: 0; }
         .stat-card.success .value { color: #27ae60; }
         .stat-card.failed .value { color: #e74c3c; }
         .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px; }
