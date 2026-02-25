@@ -7,17 +7,27 @@ echo KSSMI Website Update Tool
 echo ========================================
 echo.
 
-REM Set git credentials
-git remote set-url origin https://kssmicom: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@github.com/kssmicom/kssmi-site.git
-
-:COMMIT
-echo [1/2] Adding and committing changes...
+REM [1/3] Stage and commit local changes first
+echo [1/3] Adding and committing changes...
 git add .
 git commit -m "Update website" >nul 2>&1
+echo Done.
 
-:PUSH
-echo [2/2] Pushing to GitHub...
-git push 2>&1
+REM [2/3] Pull latest from GitHub (prevents rejection)
+echo.
+echo [2/3] Pulling latest from GitHub...
+git pull origin main --rebase 2>&1
+if %errorlevel% neq 0 (
+    echo.
+    echo [FAILED] Pull failed. Please resolve conflicts manually then run again.
+    pause
+    exit /b 1
+)
+
+REM [3/3] Push to GitHub
+echo.
+echo [3/3] Pushing to GitHub...
+git push origin main 2>&1
 
 if %errorlevel% equ 0 (
     echo.
@@ -26,14 +36,10 @@ if %errorlevel% equ 0 (
     echo ========================================
     echo.
     start https://github.com/kssmicom/kssmi-site/actions
-    goto END
+) else (
+    echo.
+    echo [FAILED] Push failed. Check the error above.
 )
 
-echo.
-echo [FAILED] Push failed. Retrying in 3 seconds...
-timeout /t 3 /nobreak >nul
-goto PUSH
-
-:END
 echo.
 pause
