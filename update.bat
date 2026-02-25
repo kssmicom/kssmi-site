@@ -1,4 +1,5 @@
 @echo off
+setlocal EnableDelayedExpansion
 chcp 65001 >nul
 cd /d "%~dp0"
 
@@ -7,10 +8,21 @@ echo KSSMI Website Update Tool
 echo ========================================
 echo.
 
+REM Generate a commit message automatically based on modified files
+for /f "delims=" %%i in ('git diff --name-only HEAD') do (
+    set FILELIST=!FILELIST! %%i,
+)
+if defined FILELIST (
+    set MSG=Auto-update: !FILELIST:~0,-1!
+) else (
+    set MSG=Update website
+)
+
 REM [1/3] Stage and commit local changes first
 echo [1/3] Adding and committing changes...
 git add .
-git commit -m "Update website" >nul 2>&1
+git commit -m "%MSG%" >nul 2>&1
+echo Commit message: "%MSG%"
 echo Done.
 
 REM [2/3] Pull latest from GitHub (prevents rejection)
