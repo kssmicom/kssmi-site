@@ -1166,10 +1166,10 @@ export const translations = {
       nameOrg: "Imya / Organizaciya",
       officialEmail: "Oficial'nyj Email",
       projectDetails: "Detali Proekta",
-      submitRequest: "Otpravit'
+      submitRequest: "Otpravit' Zapros",
       secure256: "Надежное 256-битное шифрование",
       ndasAvailable: "Доступны NDA",
-      contactDirectly: "Или свяжитесь с нами напрямую:", Zapros",
+      contactDirectly: "Или свяжитесь с нами напрямую:",
       relatedSeries: "Svyazannye Serii",
       viewAllCollections: "Smotret' Vse Kollekcii",
       allProducts: "Vse Produkty",
