@@ -16,7 +16,7 @@ export async function getStaticPaths({ paginate }) {
   const PAGE_SIZE = 12;
   const allProducts = await getCollection('products');
   // English is handled at root level, so exclude from [lang] routes
-  const languages = ['it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar'];
+  const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
 
   // Generate paginated pages for EACH language separately
   return languages.flatMap((lang) => {
@@ -91,7 +91,7 @@ const pt = t.product || {
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
         <!-- Sidebar: Category Filter -->
         <aside class="lg:col-span-1">
-          <div class="sticky top-24 bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+          <div class="sticky top-24 bg-gradient-to-br from-white to-[#faf8f5] rounded-xl shadow-sm p-6 border border-stone-200/50">
             <h3 class="font-bold text-gray-900 mb-4 text-sm uppercase tracking-wider">
               Categories
             </h3>

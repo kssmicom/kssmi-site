@@ -1,0 +1,8 @@
+
+> yeetian-site@0.0.1 dev
+> astro dev
+
+[31m[config][39m Astro found issue(s) with your configuration:
+
+[31m! The [34moutput: "hybrid"[31m option has been removed. Use [34moutput: "static"[31m (the default) instead, which now behaves the same way.[39m
+

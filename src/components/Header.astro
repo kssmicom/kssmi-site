@@ -16,7 +16,7 @@ const currentPath = lang === 'en' ? '' : `${lang}/`;
 
 // Get the page path WITHOUT language prefix for language switcher
 const urlPath = Astro.url.pathname;
-const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar'];
+const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
 let pagePath = urlPath;
 // Strip language prefix if present
 for (const l of languages) {
@@ -26,25 +26,28 @@ for (const l of languages) {
   }
 }
 
-// "Eyewear" translations for all 10 languages
+// "Eyewear" translations for all 17 languages
 const eyewearLabels = {
-  en: 'Eyewear', it: 'Occhiali', es: 'Gafas', fr: 'Lunettes',
-  de: 'Brillen', pt: 'Óculos', ru: 'Очки', ja: '眼鏡',
-  tr: 'Gözlük', ar: 'نظارات'
+  en: 'Eyewear Mfg.', it: 'Manifattura Occhiali', es: 'Fabricante de Gafas', fr: 'Fabricant de Lunettes',
+  de: 'Brillenmanufaktur', pt: 'Fabricante de Óculos', ru: 'Производство очков', ja: '眼鏡製造',
+  tr: 'Gözlük Üreticisi', ar: 'تصنيع النظارات', ko: '안경 제조업체', zh: '眼镜制造商', hi: 'चश्मा निर्माता', vi: 'Nhà Sản Xuất Kính',
+  jv: 'Pabrik Kacamata', ms: 'Pengilang Cermin Mata', tg: 'Истеҳсоли Айнак'
 };
 
 // "Quote" translations
 const quoteLabels = {
   en: 'Get Quote', it: 'Preventivo', es: 'Presupuesto', fr: 'Devis',
   de: 'Angebot', pt: 'Orçamento', ru: 'Расценка', ja: '見積もり',
-  tr: 'Teklif', ar: 'عرض سعر'
+  tr: 'Teklif', ar: 'عرض سعر', ko: '견적 받기', zh: '获取报价', hi: 'उद्धरण प्राप्त करें', vi: 'Nhận báo giá',
+  jv: 'Njaluk Kutipan', ms: 'Dapatkan Sebut Harga', tg: 'Гирифтани Нарх'
 };
 
 // "Search" single-word placeholder for the compact header input
 const searchLabels = {
   en: 'Search', it: 'Cerca', es: 'Buscar', fr: 'Rechercher',
   de: 'Suchen', pt: 'Pesquisar', ru: 'Поиск', ja: '検索',
-  tr: 'Ara', ar: 'بحث'
+  tr: 'Ara', ar: 'بحث', ko: '검색', zh: '搜索', hi: 'खोजें', vi: 'Tìm kiếm',
+  jv: 'Nggoleki', ms: 'Cari', tg: 'Ҷустуҷӯ'
 };
 
 const eyewearText = eyewearLabels[lang] || 'Eyewear';
@@ -72,10 +75,10 @@ const menuStructure = [
       },
       {
         label: t.nav.couture,
-        href: `/${currentPath}product/haute-couture-series`,
+        href: `/${currentPath}product/high-couture-series`,
         items: [
-          { label: t.nav.couture_sunglasses, href: `/${currentPath}product/haute-couture-sunglasses` },
-          { label: t.nav.couture_glasses, href: `/${currentPath}product/haute-couture-glasses` }
+          { label: t.nav.couture_sunglasses, href: `/${currentPath}product/high-couture-sunglasses` },
+          { label: t.nav.couture_glasses, href: `/${currentPath}product/high-couture-glasses` }
         ]
       },
       {
@@ -175,9 +178,10 @@ const menuStructure = [
 
 // Language names for dropdown
 const languageNames = {
-  en: 'English', it: 'Italiano', es: 'Espanol', fr: 'Francais',
-  de: 'Deutsch', pt: 'Portugues', ru: 'Russkiy', ja: 'Nippon',
-  tr: 'Turkce', ar: 'Arabe'
+  en: 'English', it: 'Italiano', es: 'Español', fr: 'Français',
+  de: 'Deutsch', pt: 'Português', ru: 'Русский', ja: '日本語',
+  tr: 'Türkçe', ar: 'العربية', ko: '한국어', zh: '中文', hi: 'हिन्दी', vi: 'Tiếng Việt',
+  jv: 'ꦧꦱꦗꦮ', ms: 'Bahasa Melayu', tg: 'Тоҷикӣ'
 };
 
 // Get Products menu data
@@ -190,12 +194,12 @@ const collectionMenu = menuStructure.find(item => item.menuKey === 'collection')
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
       <a href={`/${currentPath}`} class="flex flex-col group min-w-max z-50 relative flex-shrink-0">
-        <span class="text-2xl md:text-3xl font-bold text-[#8B7355] leading-none group-hover:opacity-80 transition-opacity">
-          KSSMI
+        <span class="text-2xl md:text-3xl font-bold text-[#503629] leading-none group-hover:opacity-80 transition-opacity duration-300">
+          YEETIAN
         </span>
         <div class="flex items-center gap-2 mt-1.5">
-          <span class="h-[2px] w-4 bg-[#8B7355]"></span>
-          <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-stone-600 group-hover:text-[#5D4E37] transition-colors">
+          <span class="h-[2px] w-4 bg-[#503629] group-hover:bg-[#b45309] transition-colors duration-300"></span>
+          <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#503629] group-hover:text-[#b45309] transition-colors duration-300">
             {eyewearText}
           </span>
         </div>
@@ -494,20 +498,43 @@ const collectionMenu = menuStructure.find(item => item.menuKey === 'collection')
     megaMenuPanel = document.getElementById('mega-menu-panel');
     megaMenuContents = document.querySelectorAll('.mega-menu-content');
 
+    // Update language switcher links to preserve search params (e.g. ?q=001)
+    // This runs on page load AND handles clicks dynamically for View Transitions
+    function updateLangLinks() {
+      const currentSearch = window.location.search;
+      if (currentSearch) {
+        document.querySelectorAll('.lang-dropdown-menu a').forEach(link => {
+          const href = link.getAttribute('href');
+          if (href && !href.includes('?')) {
+            link.setAttribute('href', href + currentSearch);
+          }
+        });
+      }
+    }
+    updateLangLinks();
+
+    // Also handle clicks on language links to ensure search params are preserved
+    // This is needed because View Transitions might intercept navigation
+    document.querySelectorAll('.lang-dropdown-menu').forEach(menu => {
+      menu.addEventListener('click', (e) => {
+        const link = (e.target as HTMLElement).closest('a');
+        if (link) {
+          const currentSearch = window.location.search;
+          const href = link.getAttribute('href');
+          if (currentSearch && href && !href.includes('?')) {
+            // Update the href before the click processes
+            link.setAttribute('href', href + currentSearch);
+          }
+        }
+      });
+    });
+
     // Mobile Menu Toggle
     const menuButton = document.getElementById('mobile-menu-button');
     const menuClose = document.getElementById('mobile-menu-close');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    // Debug: Log if elements are found
-    console.log('Header init:', {
-      menuButton: !!menuButton,
-      menuClose: !!menuClose,
-      mobileMenu: !!mobileMenu
-    });
-
     function toggleMobileMenu() {
-      console.log('toggleMobileMenu called');
       if (!mobileMenu) return;
       mobileMenu.classList.toggle('hidden');
       document.body.style.overflow = mobileMenu.classList.contains('hidden') ? '' : 'hidden';
@@ -543,6 +570,23 @@ const collectionMenu = menuStructure.find(item => item.menuKey === 'collection')
         if (menuKey) showMegaMenu(menuKey);
       };
       setListener(trigger, 'mouseenter', enterHandler);
+
+      // Keyboard support for accessibility
+      const keydownHandler = (e: Event) => {
+        const keyEvent = e as KeyboardEvent;
+        if (keyEvent.key === 'Enter' || keyEvent.key === ' ') {
+          keyEvent.preventDefault();
+          if (menuKey) {
+            // Toggle menu on key press
+            if (megaMenuPanel?.getAttribute('data-active-menu') === menuKey) {
+              hideMegaMenu();
+            } else {
+              showMegaMenu(menuKey);
+            }
+          }
+        }
+      };
+      setListener(trigger, 'keydown', keydownHandler);
 
       const parentLi = trigger.closest('li');
       if (parentLi) {

@@ -93,10 +93,10 @@ const sidebarCategories = [
   },
   {
     label: t.nav.couture,
-    href: '/product/haute-couture-series',
+    href: '/product/high-couture-series',
     items: [
-      { label: t.nav.couture_sunglasses, href: '/product/haute-couture-sunglasses' },
-      { label: t.nav.couture_glasses, href: '/product/haute-couture-glasses' }
+      { label: t.nav.couture_sunglasses, href: '/product/high-couture-sunglasses' },
+      { label: t.nav.couture_glasses, href: '/product/high-couture-glasses' }
     ]
   },
   {
@@ -171,10 +171,34 @@ function isActiveCategory(href: string): boolean {
               {t.nav.products}
             </a>
           </li>
-          <li class="text-gray-300 mx-2">/</li>
-          <li class="text-[#8B7355] font-medium">
-            {categoryTitle}
-          </li>
+          {sidebarCategories.map(cat => {
+            const currentSub = cat.items.find(sub => isActiveCategory(sub.href));
+            if (isActiveCategory(cat.href) || currentSub) {
+              return (
+                <>
+                  <li class="text-gray-300 mx-2">/</li>
+                  <li>
+                    {currentSub ? (
+                      <a href={cat.href} class="text-gray-500 hover:text-[#8B7355] transition-colors">
+                        {cat.label}
+                      </a>
+                    ) : (
+                      <span class="text-[#8B7355] font-medium">{cat.label}</span>
+                    )}
+                  </li>
+                  {currentSub && (
+                    <>
+                      <li class="text-gray-300 mx-2">/</li>
+                      <li class="text-[#8B7355] font-medium">
+                        {currentSub.label}
+                      </li>
+                    </>
+                  )}
+                </>
+              );
+            }
+            return null;
+          })}
         </ol>
       </nav>
 
@@ -193,7 +217,7 @@ function isActiveCategory(href: string): boolean {
         <aside class="hidden lg:block lg:col-span-1">
           <div class="sticky top-24 space-y-6">
             <!-- Categories Card -->
-            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+            <div class="bg-gradient-to-br from-white to-[#faf8f5] rounded-xl shadow-sm p-6 border border-stone-200/50">
               <!-- All Products Link -->
               <a
                 href="/product"

@@ -1,10 +1,10 @@
-# KSSMI Astro Project - Claude.ai Instructions
+# Yeetian Astro Project - Claude.ai Instructions
 
 ## Project Overview
 
-**Goal:** Create a high-performance B2B eyewear website (kssmi.com) using Astro framework, replacing WordPress with a static site generator approach.
+**Goal:** Create a high-performance B2B eyewear website (yeetian.com) using Astro framework, replacing WordPress with a static site generator approach.
 
-**Business:** KSSMI Technology Co., Ltd. - Premium B2B eyewear manufacturing since 2003. Target audience: Global optical retailers, boutique eyewear shops, high-end fashion brands.
+**Business:** Yeetian Technology Co., Ltd. - Premium B2B eyewear manufacturing since 2003. Target audience: Global optical retailers, boutique eyewear shops, high-end fashion brands.
 
 **Tech Stack:**
 - **Astro 5.1+** - Static site generator for performance
@@ -13,8 +13,34 @@
 - **Central Media Library** - Images in `public/media/` (Permanent SEO string URLs)
 - **10 Languages** - EN, IT, ES, FR, DE, PT, RU, JA, TR, AR (with RTL support)
 - **Vanilla JavaScript** - Lightweight interactivity
-- **Pagefind** - Static search library
+- **Fuse.js** - Dynamic fuzzy search (auto-updates when products change)
 - **Hetzer + PHP** - Form backend for inquiries
+
+---
+
+## Dynamic Search (Auto-Updating)
+
+The site uses **Fuse.js** for fuzzy search that automatically updates when you add new products:
+
+### How it works:
+1. **No build required** - Product data is fetched fresh on each page request in dev mode
+2. **Fuzzy matching** - Typo-tolerant search (e.g., "opical" matches "optical")
+3. **Instant results** - Searches title, item number, description, categories, and materials
+4. **Auto-refresh** - Just refresh the page after adding a product to see it in search
+
+### Search Fields (Weighted):
+| Field | Weight | Description |
+|-------|--------|-------------|
+| `title` | 40% | Product title |
+| `itemNo` | 30% | Product code (e.g., YETO-LC002) |
+| `excerpt` | 20% | SEO description |
+| `categories` | 5% | Product categories |
+| `materials` | 5% | Frame materials |
+
+### To see new products in search:
+1. Add product markdown file to `src/content/products/`
+2. **Refresh the page** (F5 or Ctrl+R)
+3. New product appears instantly in search results
 
 ---
 
@@ -22,8 +48,8 @@
 
 | Type | Prefix | Example | Description |
 |------|--------|---------|-------------|
-| **Optical Frames** | KSO | KSO-001, KSO-002 | Optical glasses frames |
-| **Sunglasses Frames** | KSS | KSS-001, KSS-002 | Sunglasses frames |
+| **Optical Frames** | YTO | YTO-001, YTO-002 | Optical glasses frames |
+| **Sunglasses Frames** | YTS | YTS-001, YTS-002 | Sunglasses frames |
 
 ---
 
@@ -32,13 +58,13 @@
 ### Directory Structure
 
 ```
-kssmi-site/
+yeetian-site/
 ├── src/
 │   ├── content/
 │   │   ├── products/                 # Content ONLY (Text files)
-│   │   │   ├── kso-001.en.md        # English (Optical)
-│   │   │   ├── kso-001.it.md        # Italian
-│   │   │   └── kso-001.[lang].md    # Other 8 languages
+│   │   │   ├── yto-001.en.md        # English (Optical)
+│   │   │   ├── yto-001.it.md        # Italian
+│   │   │   └── yto-001.[lang].md    # Other 8 languages
 │   │   ├── landing/                 # SEO landing pages
 │   │   └── blog/                    # Blog posts
 │   ├── components/                   # Astro components
@@ -47,20 +73,20 @@ kssmi-site/
 │   ├── pages/
 │   │   ├── index.astro               # Root (English)
 │   │   ├── product/                  # Product pages (singular)
-│   │   │   ├── [slug].astro          # /product/kso-001/
+│   │   │   ├── [slug].astro          # /product/yto-001/
 │   │   │   ├── [category].astro      # /product/optical-frames/
 │   │   │   └── index.astro           # /product/
 │   │   └── [lang]/                   # Dynamic language routes
 │   │       ├── index.astro
 │   │       └── product/
-│   │           ├── [slug].astro      # /it/product/kso-001/
+│   │           ├── [slug].astro      # /it/product/yto-001/
 │   │           └── index.astro
 │   └── translations/
 │       └── index.ts                  # Central translation hub
 ├── public/
 │   ├── media/                        # THE MEDIA LIBRARY (Centralized & Public)
 │   │   ├── products/                 # Product images (Permanent SEO URLs)
-│   │   │   ├── kso-001/
+│   │   │   ├── yto-001/
 │   │   │   │   ├── OEM-ODM-...-1.webp # Shared by all 10 languages!
 │   │   │   │   └── OEM-ODM-...-2.webp
 │   │   ├── blog/                     # Blog covers
@@ -79,7 +105,7 @@ kssmi-site/
 | Page Type | URL Pattern | Example |
 |-----------|-------------|---------|
 | Product Listing | `/product/` or `/{lang}/product/` | `/product/` `/it/product/` |
-| Product Detail | `/product/{slug}` or `/{lang}/product/{slug}` | `/product/kso-001/` `/it/product/kso-001/` |
+| Product Detail | `/product/{slug}` or `/{lang}/product/{slug}` | `/product/yto-001/` `/it/product/yto-001/` |
 | Category Page | `/product/{category}` or `/{lang}/product/{category}` | `/product/optical-frames/` |
 
 ---
@@ -89,15 +115,15 @@ kssmi-site/
 ### ✅ CORRECT (Stable Public SEO URLs)
 All images (Products, Blogs, Landing Pages) MUST be stored directly in `public/media/...` with permanent, SEO-friendly names. Never duplicate images. Reference them dynamically via an absolute path:
 ```yaml
-cover: "/media/products/kso-001/OEM-ODM-Customize-Luxury-Optical-Glasses-KSO-001-1.webp"
+cover: "/media/products/yto-001/OEM-ODM-Customize-Luxury-Optical-Glasses-YTO-001-1.webp"
 gallery:
-  - "/media/products/kso-001/OEM-ODM-Customize-Luxury-Optical-Glasses-KSO-001-2.webp"
+  - "/media/products/yto-001/OEM-ODM-Customize-Luxury-Optical-Glasses-YTO-001-2.webp"
 ```
 Because they live directly in `/public/`, Astro serves them exactly at this path without hashing. This ensures Pagefind Search and all localized pages can use the EXACT same stable URL.
 
 ### ❌ WRONG (Causes missing dev images + broken SEO)
 ```yaml
-cover: "../../assets/media/products/kso-001/main.webp" # Astro image() helper creates hashes
+cover: "../../assets/media/products/yto-001/main.webp" # Astro image() helper creates hashes
 cover: "src/assets/media/..."  # Breaks completely in prod
 ```
 
@@ -105,24 +131,24 @@ cover: "src/assets/media/..."  # Breaks completely in prod
 
 ## Content Workflow (CLONE & EDIT)
 
-### Adding a NEW Optical Product (KSO-002)
+### Adding a NEW Optical Product (YTO-002)
 
-1. **Images:** Drag photos into `public/media/products/kso-002/` and rename them with rich SEO keywords. Example:
-   - `OEM-ODM-Customize-Metal-Optical-Glasses-KSO-002-1.webp` - Primary image
-   - `OEM-ODM-Customize-Metal-Optical-Glasses-KSO-002-2.webp` - Side view
+1. **Images:** Drag photos into `public/media/products/yto-002/` and rename them with rich SEO keywords. Example:
+   - `OEM-ODM-Customize-Metal-Optical-Glasses-YTO-002-1.webp` - Primary image
+   - `OEM-ODM-Customize-Metal-Optical-Glasses-YTO-002-2.webp` - Side view
 
-2. **Text:** Go to `src/content/products/` and **COPY** files `kso-001.*.md`
-   - Rename copies to `kso-002.en.md`, `kso-002.it.md`, etc.
+2. **Text:** Go to `src/content/products/` and **COPY** files `yto-001.*.md`
+   - Rename copies to `yto-002.en.md`, `yto-002.it.md`, etc.
 
 3. **Edit English content:**
    ```yaml
    ---
    title: "Customize Metal Optical Glasses Frames"
-   slug: "kso-002"
-   itemNo: "KSO-002"
-   cover: "/media/products/kso-002/OEM-ODM-Customize-Metal-Optical-Glasses-KSO-002-1.webp"
+   slug: "yto-002"
+   itemNo: "YTO-002"
+   cover: "/media/products/yto-002/OEM-ODM-Customize-Metal-Optical-Glasses-YTO-002-1.webp"
    gallery:
-     - "/media/products/kso-002/OEM-ODM-Customize-Metal-Optical-Glasses-KSO-002-2.webp"
+     - "/media/products/yto-002/OEM-ODM-Customize-Metal-Optical-Glasses-YTO-002-2.webp"
    materials: ["Metal", "Titanium"]
    colors: ["Black", "Gold"]
    moq: 300
@@ -130,11 +156,11 @@ cover: "src/assets/media/..."  # Breaks completely in prod
    ---
    ```
 
-### Adding a NEW Sunglasses Product (KSS-001)
+### Adding a NEW Sunglasses Product (YTS-001)
 
-Same process, but use `kss-001` prefix and categorize as "Sunglasses":
+Same process, but use `yts-001` prefix and categorize as "Sunglasses":
    ```yaml
-   itemNo: "KSS-001"
+   itemNo: "YTS-001"
    categories: ["Sunglasses", "Fashion"]
    ```
 
@@ -144,64 +170,64 @@ Same process, but use `kss-001` prefix and categorize as "Sunglasses":
 
 ### Development Server
 ```bash
-cd kssmi-site
+cd yeetian-site
 npm run dev
 # Opens at http://localhost:4321
 ```
 
 ### Production Build
 ```bash
-cd kssmi-site
+cd yeetian-site
 npm run build
 # Output: dist/ folder
 ```
 
 ---
 
-## Current Status (Updated: 2026-02-22)
+## Current Status (Updated: 2026-02-26)
 
 ### ✅ COMPLETED
 - Core Configuration (tsconfig, astro.config, tailwind)
 - Translation System (all 10 languages)
 - Layout & Components (Header, Footer, ProductCard, etc.)
-- Sample Product Content (KSO-001 in all 10 languages)
+- Sample Product Content (YTO-001 in all 10 languages)
 - Dynamic Routes (product pages)
 - Build System Working (82 pages generated)
-- Product URLs working: /product/kso-001/, /it/product/kso-001/, /ar/product/kso-001/
+- Product URLs working: /product/yto-001/, /it/product/yto-001/, /ar/product/yto-001/
 - **Contact Form** with AJAX submission
-- **SMTP Email** via Gmail Workspace (kssmi@kssmi.com)
+- **SMTP Email** (info@yeetian.com)
 - **Cloudflare Turnstile** anti-spam protection
 - **Email Logging** system (like WordPress SMTP plugins)
-- **GitHub Repository** https://github.com/kssmicom/kssmi-site
+- **GitHub Repository** https://github.com/yeetiancom/yeetian-site
 - **Auto-Deploy** via GitHub Actions to Hetzner server
-- **Live Website** https://kssmi.com
+- **Live Website** https://yeetian.com
 
 ### Deployment Info
 - **Server:** Hetzner VPS (5.78.127.6)
 - **Panel:** CyberPanel
-- **Path:** /home/kssmi.com/public_html
-- **GitHub:** https://github.com/kssmicom/kssmi-site
-- **Auto-Deploy:** Push to main branch → GitHub Actions → kssmi.com
+- **Path:** /home/yeetian.com/public_html
+- **GitHub:** https://github.com/yeetiancom/yeetian-site
+- **Auto-Deploy:** Push to main branch → GitHub Actions → yeetian.com
 
 ### How to Update Website
 ```bash
-cd "D:\001 Tools\004 Desk\Desk\Tools\Kssmi\kssmi-site"
+cd "D:\003 Desk\Desk\Tools\Yeetian\yeetian-site"
 git add .
 git commit -m "Your description"
 git push
-# Wait 2-3 minutes → kssmi.com updates automatically
+# Wait 2-3 minutes → yeetian.com updates automatically
 ```
 Or double-click: `update.bat`
 
 ### Important URLs
 | Purpose | URL |
 |---------|-----|
-| Website | https://kssmi.com |
-| PHP Status | https://kssmi.com/php-status.php |
-| Email Logs | https://kssmi.com/email-logs.php (Password: kssmi2024) |
-| GitHub Actions | https://github.com/kssmicom/kssmi-site/actions |
+| Website | https://yeetian.com |
+| PHP Status | https://yeetian.com/php-status.php |
+| Email Logs | https://yeetian.com/email-logs.php (Password: yeetian2024) |
+| GitHub Actions | https://github.com/yeetiancom/yeetian-site/actions |
 
 ### Next Steps
-- Add more products (KSO-002, KSS-001, etc.)
+- Add more products (YTO-002, YTS-001, etc.)
 - Create Gumlet video component
 - Change email-logs.php password for security

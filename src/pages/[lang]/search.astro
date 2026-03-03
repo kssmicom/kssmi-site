@@ -7,18 +7,10 @@ import { translations } from '../../translations';
 
 // Generate static paths for all languages
 export function getStaticPaths() {
-  return [
-    { params: { lang: 'en' } },
-    { params: { lang: 'it' } },
-    { params: { lang: 'es' } },
-    { params: { lang: 'fr' } },
-    { params: { lang: 'de' } },
-    { params: { lang: 'pt' } },
-    { params: { lang: 'ru' } },
-    { params: { lang: 'ja' } },
-    { params: { lang: 'tr' } },
-    { params: { lang: 'ar' } },
-  ];
+  const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
+  return languages.map(lang => ({
+    params: { lang },
+  }));
 }
 
 const lang = Astro.params.lang || 'en';
@@ -35,7 +27,34 @@ const searchText = {
   ru: "Поиск",
   ja: "検索",
   tr: "Ara",
-  ar: "بحث"
+  ar: "بحث",
+  ko: "검색",
+  zh: "搜索",
+  hi: "खोजें",
+  vi: "Tìm Kiếm",
+  jv: "Golèki",
+  ms: "Cari",
+  tg: "Ҷустуҷӯ"
+};
+
+const searchResultsText = {
+  en: "Search Results",
+  it: "Risultati della Ricerca",
+  es: "Resultados de Búsqueda",
+  fr: "Résultats de Recherche",
+  de: "Suchergebnisse",
+  pt: "Resultados da Pesquisa",
+  ru: "Результаты Поиска",
+  ja: "検索結果",
+  tr: "Arama Sonuçları",
+  ar: "نتائج البحث",
+  ko: "검색 결과",
+  zh: "搜索结果",
+  hi: "खोज परिणाम",
+  vi: "Kết Quả Tìm Kiếm",
+  jv: "Asil Golèkan",
+  ms: "Hasil Carian",
+  tg: "Натиҷаҳои Ҷустуҷӯ"
 };
 
 const resultsFoundText = {
@@ -48,7 +67,14 @@ const resultsFoundText = {
   ru: "Результатов найдено",
   ja: "件の結果",
   tr: "Sonuç bulundu",
-  ar: "نتائج وجدت"
+  ar: "نتائج وجدت",
+  ko: "결과 찾음",
+  zh: "找到结果",
+  hi: "परिणाम मिले",
+  vi: "Đã Tìm Thấy Kết Quả",
+  jv: "Asil Ditemokake",
+  ms: "Hasil Ditemui",
+  tg: "Натиҷаҳо ёфт шуданд"
 };
 
 const noResultsText = {
@@ -61,7 +87,14 @@ const noResultsText = {
   ru: "Нет результатов для",
   ja: "の結果はありません",
   tr: "için sonuç bulunamadı",
-  ar: "لا توجد نتائج لـ"
+  ar: "لا توجد نتائج لـ",
+  ko: "검색 결과 없음:",
+  zh: "未找到结果:",
+  hi: "कोई परिणाम नहीं मिला:",
+  vi: "Không tìm thấy kết quả cho",
+  jv: "Ora ana asil kanggo",
+  ms: "Tiada hasil untuk",
+  tg: "Натиҷа ёфт нашуд барои"
 };
 
 const tryDifferentText = {
@@ -74,7 +107,14 @@ const tryDifferentText = {
   ru: "Попробуйте другие ключевые слова",
   ja: "別のキーワードを試してください",
   tr: "Farklı anahtar kelimeler deneyin",
-  ar: "جرب كلمات مفتاحية مختلفة"
+  ar: "جرب كلمات مفتاحية مختلفة",
+  ko: "다른 키워드를 시도하거나 철자를 확인하세요",
+  zh: "尝试不同的关键词或检查拼写",
+  hi: "अलग कीवर्ड आज़माएं या अपनी वर्तनी जांचें",
+  vi: "Thử từ khóa khác hoặc kiểm tra chính tả",
+  jv: "Coba tembung kunci liya utawa priksa ejaan sampeyan",
+  ms: "Cuba kata kunci lain atau semak ejaan anda",
+  tg: "Калимаҳои калидии дигарро санҷед ё имлои худро санҷед"
 };
 
 const viewDetailsText = {
@@ -87,8 +127,45 @@ const viewDetailsText = {
   ru: "Подробнее",
   ja: "詳細を見る",
   tr: "Detayları görüntüle",
-  ar: "عرض التفاصيل"
+  ar: "عرض التفاصيل",
+  ko: "상세 보기",
+  zh: "查看详情",
+  hi: "विवरण देखें",
+  vi: "Xem Chi Tiết",
+  jv: "Deleng Rincian",
+  ms: "Lihat Butiran",
+  tg: "Дидани Маълумот"
 };
+
+const eyewearLabels = {
+  en: 'Eyewear Mfg.', it: 'Manifattura Occhiali', es: 'Fabricante de Gafas', fr: 'Fabricant de Lunettes',
+  de: 'Brillenmanufaktur', pt: 'Fabricante de Óculos', ru: 'Производство очков', ja: '眼鏡製造',
+  tr: 'Gözlük Üreticisi', ar: 'تصنيع النظارات',
+  ko: '안경 제조업체', zh: '眼镜制造商', hi: 'चश्मा निर्माता', vi: 'Nhà Sản Xuất Kính',
+  jv: 'Pabrik Kacamata', ms: 'Pengilang Cermin Mata', tg: 'Истеҳсоли Айнак'
+};
+
+const foundMatchesFor = {
+  en: "Found matches for",
+  it: "Corrispondenze per",
+  es: "Coincidencias para",
+  fr: "Correspondances pour",
+  de: "Treffer für",
+  pt: "Correspondências para",
+  ru: "Найдены совпадения для",
+  ja: "検索結果:",
+  tr: "Eşleşmeler:",
+  ar: "نتائج لـ",
+  ko: "검색 결과:",
+  zh: "找到匹配:",
+  hi: "मिलान मिले:",
+  vi: "Tìm thấy kết quả cho",
+  jv: "Esmu kecocogan kanggo",
+  ms: "Jumpa padanan untuk",
+  tg: "Мутобиқат ёфт шуд барои"
+};
+
+const eyewearText = eyewearLabels[lang] || 'Eyewear Mfg.';
 
 const searchPlaceholder = {
   en: "Search products, pages, articles...",
@@ -100,18 +177,59 @@ const searchPlaceholder = {
   ru: "Поиск продуктов, страниц, статей...",
   ja: "製品、ページ、記事を検索...",
   tr: "Ürünler, sayfalar, makaleler ara...",
-  ar: "البحث عن المنتجات والصفحات والمقالات..."
+  ar: "البحث عن المنتجات والصفحات والمقالات...",
+  ko: "제품, 페이지, 기사 검색...",
+  zh: "搜索产品、页面、文章...",
+  hi: "उत्पाद, पृष्ठ, लेख खोजें...",
+  vi: "Tìm kiếm sản phẩm, trang, bài viết...",
+  jv: "Golèki produk, kaca, artikel...",
+  ms: "Cari produk, halaman, artikel...",
+  tg: "Ҷустуҷӯи маҳсулот, саҳифаҳо, мақолаҳо..."
 };
 
-// Pagefind language code mapping
-const pagefindLangMap: Record<string, string> = {
-  en: 'en', it: 'it', es: 'es', fr: 'fr', de: 'de',
-  pt: 'pt', ru: 'ru', ja: 'ja', tr: 'tr', ar: 'ar'
+const recommendedText = {
+  en: "Recommended Searches",
+  it: "Ricerche consigliate",
+  es: "Búsquedas recomendadas",
+  fr: "Recherches recommandées",
+  de: "Empfohlene Suchanfragen",
+  pt: "Pesquisas recomendadas",
+  ru: "Рекомендуемые запросы",
+  ja: "おすすめの検索",
+  tr: "Önerilen Aramalar",
+  ar: "عمليات البحث الموصى بها",
+  ko: "추천 검색",
+  zh: "推荐搜索",
+  hi: "अनुशंसित खोजें",
+  vi: "Tìm Kiếm Đề Xuất",
+  jv: "Golèkan Sing Disaranake",
+  ms: "Carian Disyorkan",
+  tg: "Ҷустуҷӯҳои Тавсияшуда"
 };
-const pagefindLang = pagefindLangMap[lang] || 'en';
+
+const searchKeywords = {
+  en: { optical: "Optical Frames", sunglasses: "Sunglasses", acetate: "Acetate", titanium: "Titanium", metal: "Metal" },
+  it: { optical: "Montature da Vista", sunglasses: "Occhiali da Sole", acetate: "Acetato", titanium: "Titanio", metal: "Metallo" },
+  es: { optical: "Monturas Ópticas", sunglasses: "Gafas de Sol", acetate: "Acetato", titanium: "Titanio", metal: "Metal" },
+  fr: { optical: "Montures Optiques", sunglasses: "Lunettes de Soleil", acetate: "Acétate", titanium: "Titane", metal: "Métal" },
+  de: { optical: "Korrektionsfassungen", sunglasses: "Sonnenbrillen", acetate: "Acetat", titanium: "Titan", metal: "Metall" },
+  pt: { optical: "Armações de Grau", sunglasses: "Óculos de Sol", acetate: "Acetato", titanium: "Titânio", metal: "Metal" },
+  ru: { optical: "Оправы", sunglasses: "Солнцезащитные", acetate: "Ацетат", titanium: "Титан", metal: "Металл" },
+  ja: { optical: "光学フレーム", sunglasses: "サングラス", acetate: "アセテート", titanium: "チタン", metal: "メタル" },
+  tr: { optical: "Optik Çerçeveler", sunglasses: "Güneş Gözlüğü", acetate: "Asetat", titanium: "Titanyum", metal: "Metal" },
+  ar: { optical: "إطارات طبية", sunglasses: "نظارات شمسية", acetate: "أسيتات", titanium: "تيتانيوم", metal: "معدن" },
+  ko: { optical: "광학 프레임", sunglasses: "선글라스", acetate: "아세테이트", titanium: "티타늄", metal: "메탈" },
+  zh: { optical: "光学镜架", sunglasses: "太阳镜", acetate: "醋酸纤维", titanium: "钛金属", metal: "金属" },
+  hi: { optical: "ऑप्टिकल फ्रेम", sunglasses: "सनग्लासेस", acetate: "एसीटेट", titanium: "टाइटेनियम", metal: "धातु" },
+  vi: { optical: "Khung Kính Cận", sunglasses: "Kính Râm", acetate: "Acetate", titanium: "Titan", metal: "Kim Loại" },
+  jv: { optical: "Rangka Optik", sunglasses: "Kacamata Srengéngé", acetate: "Asetat", titanium: "Titanium", metal: "Logam" },
+  ms: { optical: "Bingkai Optik", sunglasses: "Cermin Mata Hitam", acetate: "Asetat", titanium: "Titanium", metal: "Logam" },
+  tg: { optical: "Чаҳчаҳои Оптикӣ", sunglasses: "Айнаки Офтобӣ", acetate: "Асетат", titanium: "Титан", metal: "Металл" }
+};
+
 ---
 
-<Layout title={`${searchText[lang]} | KSSMI`} lang={lang}>
+<Layout title={`${searchResultsText[lang]} | Yeetian`} lang={lang}>
   <Header lang={lang} />
 
   <section class="w-full min-h-screen bg-stone-100 pt-32 pb-24">
@@ -119,22 +237,22 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
 
       <!-- Search Header Block -->
       <div class="text-center mb-12 relative max-w-4xl mx-auto">
-        <!-- KSSMI Text Logo -->
+        <!-- Yeetian Text Logo -->
         <div class="inline-flex flex-col items-center justify-center mb-6 hover:-translate-y-1 transition-transform duration-500">
-          <span class="text-3xl font-bold text-[#8B7355] tracking-tight leading-none">KSSMI</span>
-          <span class="h-[2px] w-8 bg-[#8B7355] mt-1"></span>
-          <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-stone-500 mt-1">Eyewear</span>
+          <span class="text-3xl font-bold text-[#503629] tracking-tight leading-none uppercase">YEETIAN</span>
+          <span class="h-[2px] w-8 bg-[#503629] mt-1"></span>
+          <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#503629] mt-1">{eyewearText}</span>
         </div>
 
         <h1 class="text-3xl md:text-4xl font-bold text-[#5D4E37] mb-3 tracking-tight">
-          {searchText[lang]} Results
+          {searchResultsText[lang]}
         </h1>
 
         <!-- Query display (updated by JS) -->
         <div id="search-info" class="hidden">
           <div class="inline-block relative">
             <p class="text-lg text-stone-600 mb-3 font-light">
-              Found matches for <span id="query-display" class="font-bold text-[#8B7355] border-b-2 border-[#8B7355]/20"></span>
+              {foundMatchesFor[lang]} <span id="query-display" class="font-bold text-[#8B7355] border-b-2 border-[#8B7355]/20"></span>
             </p>
           </div>
 
@@ -160,12 +278,11 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
               id="search-input"
               placeholder={searchPlaceholder[lang]}
               class="flex-grow py-4 px-6 bg-transparent border-none outline-none text-base text-stone-900 placeholder-stone-400 font-medium focus:ring-0"
-              style="::-webkit-search-cancel-button{display:none}::-moz-search-clear-button{display:none}"
               autocomplete="off"
             >
 
-            <!-- Clear Button (X icon) -->
-            <button type="button" id="search-clear" class="hidden px-3 text-stone-400 hover:text-stone-600 transition-colors flex-shrink-0" aria-label="Clear search">
+            <!-- Clear Button (X icon) - hidden by default -->
+            <button type="button" id="search-clear" class="hidden px-3 text-stone-400 hover:text-[#5D4E37] transition-colors flex-shrink-0" aria-label="Clear search">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
               </svg>
@@ -198,8 +315,30 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
           </svg>
         </div>
-        <h2 class="text-3xl font-bold text-[#5D4E37] mb-4">{searchText[lang]} KSSMI</h2>
+        <h2 class="text-3xl font-bold text-[#5D4E37] mb-4">{searchText[lang]} Yeetian</h2>
         <p class="text-base text-stone-600 mb-10 max-w-md mx-auto">{searchPlaceholder[lang]}</p>
+
+        <!-- Suggestions -->
+        <div class="mt-12 max-w-5xl mx-auto">
+          <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-[#8B7355] mb-8">{recommendedText[lang] || recommendedText.en}</h3>
+          <div class="flex flex-wrap gap-3 justify-center">
+            <a href={`/${lang === 'en' ? '' : lang + '/' }search?q=${(searchKeywords[lang] || searchKeywords.en).optical}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#8B7355] transition-all duration-300 shadow-sm hover:shadow-md">
+              {(searchKeywords[lang] || searchKeywords.en).optical}
+            </a>
+            <a href={`/${lang === 'en' ? '' : lang + '/' }search?q=${(searchKeywords[lang] || searchKeywords.en).sunglasses}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#8B7355] transition-all duration-300 shadow-sm hover:shadow-md">
+              {(searchKeywords[lang] || searchKeywords.en).sunglasses}
+            </a>
+            <a href={`/${lang === 'en' ? '' : lang + '/' }search?q=${(searchKeywords[lang] || searchKeywords.en).acetate}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#8B7355] transition-all duration-300 shadow-sm hover:shadow-md">
+              {(searchKeywords[lang] || searchKeywords.en).acetate}
+            </a>
+            <a href={`/${lang === 'en' ? '' : lang + '/' }search?q=${(searchKeywords[lang] || searchKeywords.en).titanium}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#8B7355] transition-all duration-300 shadow-sm hover:shadow-md">
+              {(searchKeywords[lang] || searchKeywords.en).titanium}
+            </a>
+            <a href={`/${lang === 'en' ? '' : lang + '/' }search?q=${(searchKeywords[lang] || searchKeywords.en).metal}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#8B7355] transition-all duration-300 shadow-sm hover:shadow-md">
+              {(searchKeywords[lang] || searchKeywords.en).metal}
+            </a>
+          </div>
+        </div>
       </div>
 
       <!-- Results Grid -->
@@ -243,6 +382,16 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
 
 
 <style is:global>
+  /* Hide browser's default search clear button */
+  input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+  }
+  input[type="search"]::-moz-search-clear-button {
+    display: none;
+  }
+
   /* Search Result Card — mirrors ProductCard.astro */
   .src-card {
     display: block;
@@ -300,8 +449,8 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
     opacity: 1;
   }
   .src-overlay-pill {
-    background: white;
-    color: #8B7355;
+    background: black;
+    color: white;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     font-weight: 600;
@@ -314,6 +463,12 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
   }
   .src-card:hover .src-overlay-pill {
     transform: translateY(0);
+  }
+  .src-overlay-pill .src-arrow {
+    transition: transform 0.3s ease;
+  }
+  .src-card:hover .src-overlay-pill .src-arrow {
+    transform: translateX(4px);
   }
   .src-info {
     padding: 1rem 1.25rem;
@@ -338,15 +493,58 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
   .src-card:hover .src-title {
     color: #8B7355;
   }
+  .src-desc {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  /* ── Pagination ── */
+  .page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.25rem;
+    height: 2.25rem;
+    padding: 0 0.75rem;
+    margin: 0 0.25rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #5D4E37;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+  }
+  .page-numbers:hover {
+    color: #8B7355;
+    border-color: #8B7355;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(139, 115, 85, 0.1);
+  }
+  .page-numbers.current {
+    background-color: #5D4E37;
+    border-color: #5D4E37;
+    color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(93, 78, 55, 0.3);
+  }
 </style>
 
-<script define:vars={{ lang, pagefindLang, viewDetailsText }} data-astro-rerun>
+<script define:vars={{ lang, viewDetailsText }} data-astro-rerun>
   // Get query from URL at RUNTIME (not build time)
   const urlParams = new URLSearchParams(window.location.search);
   const query = urlParams.get('q') || '';
 
   // DOM elements
   const searchInput = document.getElementById('search-input');
+  const searchClear = document.getElementById('search-clear');
   const searchInfo = document.getElementById('search-info');
   const queryDisplay = document.getElementById('query-display');
   const countNumber = document.getElementById('count-number');
@@ -357,31 +555,40 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
   const noResultsQuery = document.getElementById('no-results-query');
   const errorState = document.getElementById('error-state');
   const pagination = document.getElementById('pagination');
+  const paginationContainer = document.getElementById('pagination-container');
 
   const RESULTS_PER_PAGE = 12;
   let currentPage = 1;
   let allResults = [];
+  let fuse = null;
 
-  // Pre-fill search input with query
-  if (searchInput && query) {
-    searchInput.value = query;
+  // Clear button functionality
+  function updateClearButton() {
+    if (searchInput && searchClear) {
+      if (searchInput.value.trim()) {
+        searchClear.classList.remove('hidden');
+      } else {
+        searchClear.classList.add('hidden');
+      }
+    }
   }
 
-  // Clear button logic
-  const searchClear = document.getElementById('search-clear');
-  if (searchInput && searchClear) {
-    // Show clear button if input already has value (from pre-fill)
-    if (searchInput.value.trim()) searchClear.classList.remove('hidden');
-    searchInput.addEventListener('input', () => {
-      searchInput.value.trim()
-        ? searchClear.classList.remove('hidden')
-        : searchClear.classList.add('hidden');
-    });
+  if (searchInput) {
+    searchInput.addEventListener('input', updateClearButton);
+  }
+
+  if (searchClear && searchInput) {
     searchClear.addEventListener('click', () => {
       searchInput.value = '';
       searchClear.classList.add('hidden');
       searchInput.focus();
     });
+  }
+
+  // Pre-fill search input with query
+  if (searchInput && query) {
+    searchInput.value = query;
+    updateClearButton();
   }
 
   function hideAllStates() {
@@ -427,6 +634,35 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
     if (queryDisplay) queryDisplay.textContent = query;
   }
 
+  // ── Unified Fuse.js search ──
+  // Fetches the live per-language search index covering products, blog posts,
+  // landing pages and key static pages. New content is picked up instantly in
+  // dev mode via Astro HMR.
+  async function initFuse() {
+    try {
+      const res = await fetch(`/api/search-index/${lang}.json`);
+      if (!res.ok) throw new Error(`Failed to fetch search index: ${res.status}`);
+      const items = await res.json();
+
+      const fuseModule = await import('/node_modules/fuse.js/dist/fuse.mjs');
+      const Fuse = fuseModule.default || fuseModule;
+      fuse = new Fuse(items, {
+        keys: [
+          { name: 'title',       weight: 0.50 },
+          { name: 'itemNo',      weight: 0.35 },
+          { name: 'description', weight: 0.15 },
+        ],
+        threshold: 0.15,
+        includeScore: true,
+        ignoreLocation: true,
+      });
+      return true;
+    } catch (err) {
+      console.error('Failed to initialize search:', err);
+      return false;
+    }
+  }
+
   async function performSearch(searchQuery) {
     if (!searchQuery) {
       showEmpty();
@@ -436,31 +672,27 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
     showLoading();
 
     try {
-      const pagefindPath = '/pagefind/pagefind.js';
-      const pagefind = await import(/* @vite-ignore */ pagefindPath);
+      if (!fuse) {
+        const initSuccess = await initFuse();
+        if (!initSuccess) {
+          showError();
+          return;
+        }
+      }
 
-      // Initialize Pagefind without language filter so product pages are found
-      // (Pagefind partitions by <html lang>, but product specs are shared across locales)
-      await pagefind.init();
+      const results = fuse.search(searchQuery);
 
-      const searchResponse = await pagefind.search(searchQuery);
-
-      if (searchResponse.results.length === 0) {
+      if (results.length === 0) {
         showNoResults();
         return;
       }
 
-      // Fetch all result data
-      allResults = await Promise.all(
-        searchResponse.results.map((result) => result.data())
-      );
+      allResults = results.map((r) => r.item);
 
-      // Update count
       if (countNumber) {
         countNumber.textContent = allResults.length.toString();
       }
 
-      // Render first page
       renderPage(1);
       showResults();
 
@@ -472,24 +704,67 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
 
   function createResultCard(data) {
     const url = data.url || '#';
-    const title = data.meta?.title || 'Untitled';
-    const itemNo = data.meta?.itemNo || '';
-    // Pagefind may return image as an object {src, sizes} or a plain string
-    const rawImage = data.meta?.image || null;
-    const image = rawImage
-      ? (typeof rawImage === 'object' ? rawImage.src : rawImage)
-      : null;
-    const viewDetails = viewDetailsText[lang] || viewDetailsText.en;
+    const title = data.title || 'Untitled';
+    const type = data.type || 'product';
+    const viewDetails = viewDetailsText[lang] || viewDetailsText['en'];
 
+    // ── Product Card (image + itemNo badge) ────────────────────────────────────
+    if (type === 'product') {
+      const itemNo = data.itemNo || '';
+      const image = data.image || null;
+      const imageContent = image
+        ? `<img src="${image}" alt="${title}" class="src-img" loading="lazy" />`
+        : `<div class="src-img-placeholder">
+             <svg style="width:3rem;height:3rem;color:#9ca3af" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                 d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+             </svg>
+           </div>`;
+      return `
+        <a href="${url}" class="src-card">
+          <div class="src-card-inner">
+            <div class="src-img-wrap">
+              ${imageContent}
+              <div class="src-overlay">
+                <span class="src-overlay-pill">
+                  ${viewDetails}
+                  <svg class="src-arrow" style="width:1rem;height:1rem" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div class="src-info">
+              ${itemNo ? `<p class="src-item-no">${itemNo}</p>` : ''}
+              <h3 class="src-title">${title}</h3>
+            </div>
+          </div>
+        </a>`;
+    }
+
+    // ── Blog / Page Card (branded logo placeholder + description snippet) ────────
+    const desc = data.description || '';
+    const image = data.image || null;
+    const isPage = type === 'page';
+    const yeetianLogo = `
+      <div style="
+        display:flex;flex-direction:column;align-items:center;justify-content:center;
+        gap:4px;padding:1rem;
+      ">
+        <span style="
+          font-size:1.6rem;font-weight:800;color:#503629;
+          letter-spacing:0.15em;text-transform:uppercase;line-height:1;
+        ">YEETIAN</span>
+        <span style="height:2px;width:2.5rem;background:#503629;display:block;"></span>
+        <span style="
+          font-size:0.5rem;font-weight:700;color:#503629;
+          letter-spacing:0.25em;text-transform:uppercase;margin-top:2px;
+        ">${isPage ? 'PAGE' : 'ARTICLE'}</span>
+      </div>
+    `;
     const imageContent = image
       ? `<img src="${image}" alt="${title}" class="src-img" loading="lazy" />`
-      : `<div class="src-img-placeholder">
-           <svg style="width:3rem;height:3rem;color:#9ca3af" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-               d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-           </svg>
-         </div>`;
-
+      : `<div class="src-img-placeholder" style="background:#faf8f5;">${yeetianLogo}</div>`;
     return `
       <a href="${url}" class="src-card">
         <div class="src-card-inner">
@@ -498,19 +773,18 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
             <div class="src-overlay">
               <span class="src-overlay-pill">
                 ${viewDetails}
-                <svg style="width:1rem;height:1rem" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="src-arrow" style="width:1rem;height:1rem" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                 </svg>
               </span>
             </div>
           </div>
           <div class="src-info">
-            ${itemNo ? `<p class="src-item-no">${itemNo}</p>` : ''}
-            <h3 class="src-title">${title}</h3>
+            <h3 class="src-title" style="-webkit-line-clamp:1">${title}</h3>
+            ${desc ? `<p style="font-size:0.72rem;color:#6b7280;margin-top:0.2rem;line-height:1.3;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden">${desc}</p>` : ''}
           </div>
         </div>
-      </a>
-    `;
+      </a>`;
   }
 
   function renderPage(page) {
@@ -534,7 +808,6 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
     }
 
     pagination?.classList.remove('hidden');
-    const paginationContainer = pagination?.querySelector('div');
     if (!paginationContainer) return;
 
     let paginationHTML = '';
@@ -542,9 +815,9 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
     // Previous button
     if (currentPage > 1) {
       paginationHTML += `
-        <button class="px-4 py-2 rounded-lg border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 transition-colors" data-page="${currentPage - 1}">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        <button class="page-numbers" data-page="${currentPage - 1}">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
           </svg>
         </button>
       `;
@@ -553,24 +826,20 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
     // Page numbers
     for (let i = 1; i <= totalPages; i++) {
       if (i === currentPage) {
-        paginationHTML += `
-          <button class="px-4 py-2 rounded-lg bg-[#8B7355] text-white font-semibold" data-page="${i}">${i}</button>
-        `;
+        paginationHTML += `<button class="page-numbers current" data-page="${i}">${i}</button>`;
       } else if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
-        paginationHTML += `
-          <button class="px-4 py-2 rounded-lg border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 transition-colors" data-page="${i}">${i}</button>
-        `;
+        paginationHTML += `<button class="page-numbers" data-page="${i}">${i}</button>`;
       } else if (i === currentPage - 2 || i === currentPage + 2) {
-        paginationHTML += `<span class="px-2 text-stone-400">...</span>`;
+        paginationHTML += `<span class="page-numbers" style="border:none;background:none;box-shadow:none;cursor:default;color:#9ca3af;">...</span>`;
       }
     }
 
     // Next button
     if (currentPage < totalPages) {
       paginationHTML += `
-        <button class="px-4 py-2 rounded-lg border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 transition-colors" data-page="${currentPage + 1}">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        <button class="page-numbers" data-page="${currentPage + 1}">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
           </svg>
         </button>
       `;
@@ -589,14 +858,15 @@ const pagefindLang = pagefindLangMap[lang] || 'en';
     });
   }
 
-  // Intercept mid-page search form submission (Enter key or Search button click)
+  // Intercept mid-page search form submission
   const searchForm = searchInput?.closest('form');
   if (searchForm) {
     searchForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const newQuery = searchInput?.value.trim() || '';
       if (newQuery) {
-        // Update URL so query is bookmarkable
+        // Re-init Fuse on each search so the index is always fresh
+        fuse = null;
         const newUrl = new URL(window.location.href);
         newUrl.searchParams.set('q', newQuery);
         history.pushState({}, '', newUrl.toString());

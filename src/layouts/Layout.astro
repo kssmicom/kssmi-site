@@ -1,11 +1,13 @@
 ---
 import '../styles/global.css';
 import { ViewTransitions } from 'astro:transitions';
+import { translations } from '../translations';
 
 // Props
 interface Props {
   title: string;
   description?: string;
+  keywords?: string;
   image?: string;
   lang?: string;
   canonical?: string;
@@ -15,13 +17,19 @@ interface Props {
 
 const {
   title,
-  description = "Premium B2B eyewear manufacturing from China. Acetate and Titanium frames for global export.",
+  description: propDescription,
+  keywords,
   image = "/media/global/logo.png",
   lang = 'en',
   canonical,
   type = 'website',
   noindex = false
 } = Astro.props;
+
+const t = translations[lang] || translations.en;
+const layoutMeta = t.layout || translations.en.layout;
+
+const description = propDescription || layoutMeta.description;
 
 // Detect if language is Right-to-Left (Arabic)
 const isRTL = lang === 'ar';
@@ -31,22 +39,28 @@ const dir = isRTL ? 'rtl' : 'ltr';
 const currentPath = Astro.url.pathname.replace(`/${lang}/`, '');
 
 // All supported languages
-const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar'];
+const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
 
 // Organization Schema (Google Knowledge Graph)
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "KSSMI Eyewear",
-  "url": "https://kssmi.com",
-  "logo": "https://kssmi.com/media/global/logo.png",
+  "@id": "https://yeetian.com/#organization",
+  "name": "Yeetian Eyewear",
+  "url": "https://yeetian.com",
+  "logo": "https://yeetian.com/media/global/logo.png",
+  "description": layoutMeta.schemaDescription,
+  "foundingDate": "2003",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "CN"
+  },
   "sameAs": [
-    "https://linkedin.com/company/kssmi",
-    "https://facebook.com/kssmi"
+    "https://yeetian.com"
   ],
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+86-123-456-7890",
+    "telephone": "+86-157-6839-1869",
     "contactType": "sales",
     "areaServed": ["US", "EU", "IT", "FR", "DE", "JP", "TR", "RU", "CN", "BR", "PT"]
   }
@@ -60,6 +74,7 @@ const organizationSchema = {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  {keywords && <meta name="keywords" content={keywords} />}
 
   <!-- Noindex for thank-you pages -->
   {noindex && <meta name="robots" content="noindex, nofollow" />}
@@ -67,28 +82,33 @@ const organizationSchema = {
   <!-- Open Graph -->
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={image} />
+  <meta property="og:image" content={image.startsWith('http') ? image : `https://yeetian.com${image}`} />
+  <meta property="og:url" content={canonical || `https://yeetian.com/${currentPath}`} />
   <meta property="og:type" content={type} />
 
   <!-- Canonical URL -->
-  {canonical && <link rel="canonical" href={canonical} />}
+  {canonical ? (
+    <link rel="canonical" href={canonical} />
+  ) : (
+    <link rel="canonical" href={`https://yeetian.com/${currentPath}`} />
+  )}
 
   <!-- Hreflang Tags for Multilingual SEO -->
   {languages.map((l) => (
     <link
       rel="alternate"
       hreflang={l}
-      href={`https://kssmi.com/${l === 'en' ? '' : l + '/'}${currentPath}`}
+      href={`https://yeetian.com/${l === 'en' ? '' : l + '/'}${currentPath}`}
     />
   ))}
-  <link rel="alternate" hreflang="x-default" href={`https://kssmi.com/${currentPath}`} />
+  <link rel="alternate" hreflang="x-default" href={`https://yeetian.com/${currentPath}`} />
 
   <!-- View Transitions for SPA-like speed -->
   <ViewTransitions />
 
   <!-- Google Fonts: Manrope (Headings), Plus Jakarta Sans (Body), Inter (Alt), Noto Sans Arabic (Arabic) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   {isRTL && (
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
   )}
@@ -96,7 +116,11 @@ const organizationSchema = {
   <!-- Organization Schema for Google Graph -->
   <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
 </head>
-<body class="font-sans antialiased">
+<body class="font-sans antialiased relative min-h-screen pb-24 lg:pb-0">
+  <!-- Accessibility: Skip to Content Link -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[9999] bg-[#8B7355] text-white px-4 py-2 font-bold rounded-md shadow-lg outline-none focus:ring-4 focus:ring-[#8B7355]/50">
+    Skip to content
+  </a>
   <style define:vars={{
     '--font-sans': "'Plus Jakarta Sans', sans-serif",
     '--font-heading': "'Manrope', sans-serif",

@@ -4,7 +4,7 @@ chcp 65001 >nul
 cd /d "%~dp0"
 
 echo ========================================
-echo KSSMI Website Update Tool
+echo YEETIAN Website Update Tool
 echo ========================================
 echo.
 
@@ -47,7 +47,7 @@ if %errorlevel% equ 0 (
     echo SUCCESS! Website updated.
     echo ========================================
     echo.
-    start https://github.com/kssmicom/kssmi-site/actions
+    start https://github.com/yeetiancom/yeetian-site/actions
 ) else (
     echo.
     echo [FAILED] Push failed. Check the error above.

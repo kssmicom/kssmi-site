@@ -16,16 +16,16 @@ const currentPath = lang === 'en' ? '' : `${lang}/`;
 
 // "Eyewear" translations for all 10 languages
 const eyewearLabels = {
-  en: 'Eyewear', it: 'Occhiali', es: 'Gafas', fr: 'Lunettes',
-  de: 'Brillen', pt: 'Óculos', ru: 'Очки', ja: '眼鏡',
-  tr: 'Gözlük', ar: 'نظارات'
+  en: 'Eyewear Mfg.', it: 'Manifattura Occhiali', es: 'Fabricante de Gafas', fr: 'Fabricant de Lunettes',
+  de: 'Brillenmanufaktur', pt: 'Fabricante de Óculos', ru: 'Производство очков', ja: '眼鏡製造',
+  tr: 'Gözlük Üreticisi', ar: 'تصنيع النظارات'
 };
 
 const eyewearText = eyewearLabels[lang] || 'Eyewear';
 
 // Contact info
-const contactEmail = 'sales@kssmi.com';
-const whatsappNum = '8613510532553';
+const contactEmail = 'info@yeetian.com';
+const whatsappNum = '8615768391869';
 
 // Quick Links Menu
 const quickLinks = [
@@ -40,7 +40,7 @@ const quickLinks = [
 // Products Category Menu - Using clean URLs
 const categoryLinks = [
   { label: t.footer.luxury, href: `/${currentPath}product/luxury-customized` },
-  { label: t.footer.couture, href: `/${currentPath}product/haute-couture-series` },
+  { label: t.footer.couture, href: `/${currentPath}product/high-couture-series` },
   { label: t.footer.classics, href: `/${currentPath}product/classics-series` },
   { label: t.footer.fashion, href: `/${currentPath}product/fashion-series` },
   { label: t.footer.carbon, href: `/${currentPath}product/carbon-series` },
@@ -63,7 +63,7 @@ const currentYear = new Date().getFullYear();
       <div class="space-y-8">
         <div class="flex flex-col">
           <span class="text-2xl md:text-3xl font-bold text-white tracking-tight leading-none font-['Manrope']">
-            KSSMI
+            YEETIAN
           </span>
           <div class={`flex items-center gap-2 mt-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
             <span class="h-[1px] w-6 bg-stone-500"></span>
@@ -72,8 +72,8 @@ const currentYear = new Date().getFullYear();
             </span>
           </div>
         </div>
-        <p class="text-sm leading-relaxed text-stone-500 max-w-xs">
-          {t.footer.brandDesc}
+        <p class="text-sm leading-relaxed text-stone-500 max-w-xs whitespace-pre-line">
+          {t.footer.brandName}<br/>{t.footer.brandDesc}
         </p>
         <!-- Social Icons -->
         <div class="flex gap-5">
@@ -134,15 +134,15 @@ const currentYear = new Date().getFullYear();
         <p class="text-sm text-stone-500 mb-4">
           {t.footer.postcode}: 518172
         </p>
-        <a href="#email" data-email-user="sales" data-email-domain="kssmi.com" class="text-[#b45309] font-bold text-sm hover:text-white transition-colors flex items-center gap-2 cursor-pointer inline-flex">
-          <span class="text-stone-500">{t.footer.emailLabel}</span>sales#kssmi.com
+        <a href="#email" data-email-user="info" data-email-domain="yeetian.com" class="text-[#b45309] font-bold text-sm hover:text-white transition-colors flex items-center gap-2 cursor-pointer inline-flex">
+          <span class="text-stone-500">{t.footer.emailLabel}</span>info#yeetian.com
         </a>
       </div>
     </div>
 
     <!-- COPYRIGHT -->
     <div class="border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-stone-600 gap-4">
-      <p>&copy; {currentYear} Kssmi Eyewear Co., Ltd. {t.footer.rights}</p>
+      <p>&copy; {currentYear} Yeetian Eyewear Co., Ltd. {t.footer.rights}</p>
     </div>
   </div>
 </footer>
@@ -153,7 +153,7 @@ const currentYear = new Date().getFullYear();
   <!-- Quote Button -->
   <a href={`/${currentPath}quote`}
      title={t.floating.inquiry}
-     class="w-12 h-12 md:w-14 md:h-14 flex-none bg-[#7c3aed] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:-translate-x-1 transition-all duration-300 group relative">
+     class="w-12 h-12 md:w-14 md:h-14 flex-none bg-[#B45309] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:-translate-x-1 transition-all duration-300 group relative">
     <svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
     </svg>
@@ -164,10 +164,10 @@ const currentYear = new Date().getFullYear();
 
   <!-- Email Button - uses JS to bypass email obfuscation -->
   <a href="#email"
-     data-email-user="sales"
-     data-email-domain="kssmi.com"
+     data-email-user="info"
+     data-email-domain="yeetian.com"
      title={t.floating.email}
-     class="w-12 h-12 md:w-14 md:h-14 flex-none bg-[#0891b2] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:-translate-x-1 transition-all duration-300 group relative">
+     class="w-12 h-12 md:w-14 md:h-14 flex-none bg-[#3B82F6] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:-translate-x-1 transition-all duration-300 group relative">
     <svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
     </svg>

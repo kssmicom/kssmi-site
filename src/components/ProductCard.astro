@@ -48,9 +48,9 @@ const productSlug = slug || product.id.split('.')[0];
 
       <!-- Hover Overlay with "View Details" -->
       <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-        <span class="bg-white text-[#8B7355] px-4 py-2 rounded-lg font-semibold text-sm flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+        <span class="bg-black text-white px-4 py-2 rounded-lg font-semibold text-sm flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
           {t.product?.viewDetails || 'View Details'}
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
           </svg>
         </span>

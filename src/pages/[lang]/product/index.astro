@@ -14,7 +14,7 @@ import Footer from '../../../components/Footer.astro';
 export async function getStaticPaths() {
   const allProducts = await getCollection('products');
   // English is handled at root level, so exclude from [lang] routes
-  const languages = ['it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar'];
+  const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
 
   return languages.map((lang) => {
     // ID format: "kso-001.en" -> extract "en" by splitting on "."
@@ -66,10 +66,10 @@ const sidebarCategories = [
   },
   {
     label: t.nav.couture,
-    href: `/${currentPath}product/haute-couture-series`,
+    href: `/${currentPath}product/high-couture-series`,
     items: [
-      { label: t.nav.couture_sunglasses, href: `/${currentPath}product/haute-couture-sunglasses` },
-      { label: t.nav.couture_glasses, href: `/${currentPath}product/haute-couture-glasses` }
+      { label: t.nav.couture_sunglasses, href: `/${currentPath}product/high-couture-sunglasses` },
+      { label: t.nav.couture_glasses, href: `/${currentPath}product/high-couture-glasses` }
     ]
   },
   {
@@ -124,7 +124,7 @@ const hasMore = allProducts.length > 12;
           {t.nav.products}
         </h1>
         <p class="text-gray-600">
-          {allProducts.length} {allProducts.length === 1 ? 'product' : 'products'} available
+          {allProducts.length} {allProducts.length === 1 ? (pt.productAvailable || 'product available') : (pt.productsAvailable || 'products available')}
         </p>
       </div>
 
@@ -133,7 +133,7 @@ const hasMore = allProducts.length > 12;
         <aside class="hidden lg:block lg:col-span-1">
           <div class="sticky top-24 space-y-6">
             <!-- Categories Card -->
-            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+            <div class="bg-gradient-to-br from-white to-[#faf8f5] rounded-xl shadow-sm p-6 border border-stone-200/50">
               <!-- All Products Link -->
               <a
                 href={`/${currentPath}product`}
@@ -213,7 +213,10 @@ const hasMore = allProducts.length > 12;
               <!-- Results Info -->
               <div class="flex justify-between items-center mb-6 text-sm text-gray-500">
                 <span>
-                  Showing 1-{products.length} of {allProducts.length} products
+                  {(pt.showingResults || 'Showing {start}-{end} of {total} products')
+                    .replace('{start}', '1')
+                    .replace('{end}', String(products.length))
+                    .replace('{total}', String(allProducts.length))}
                 </span>
               </div>
 

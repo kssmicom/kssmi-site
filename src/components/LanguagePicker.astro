@@ -18,13 +18,20 @@ const languages = [
   { code: 'ja', name: '日本語', flag: 'JA' },
   { code: 'tr', name: 'Türkçe', flag: 'TR' },
   { code: 'ar', name: 'العربية', flag: 'AR' },
+  { code: 'ko', name: '한국어', flag: 'KO' },
+  { code: 'zh', name: '中文', flag: 'ZH' },
+  { code: 'hi', name: 'हिन्दी', flag: 'HI' },
+  { code: 'vi', name: 'Tiếng Việt', flag: 'VI' },
+  { code: 'jv', name: 'ꦧꦱꦗꦮ', flag: 'JV' },
+  { code: 'ms', name: 'Bahasa Melayu', flag: 'MS' },
+  { code: 'tg', name: 'Тоҷикӣ', flag: 'TG' },
 ];
 ---
 
 <div class="relative">
   <select
     class="appearance-none bg-white border border-gray-300 rounded-lg px-4 py-2 pr-8 text-sm focus:ring-2 focus:ring-[#8B7355] focus:border-transparent cursor-pointer"
-    onchange="window.location.href = this.value"
+    onchange="window.location.href = this.value + window.location.search"
   >
     {languages.map((l) => (
       <option

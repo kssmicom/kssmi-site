@@ -6,7 +6,8 @@ import pagefind from 'astro-pagefind';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://kssmi.com',
+  site: 'https://yeetian.com',
+  output: 'static', // Enable API routes to work dynamically
   integrations: [
     sitemap({
       i18n: {
@@ -37,7 +38,7 @@ export default defineConfig({
       'ar' // Arabic (RTL - Right-to-Left)
     ],
     routing: {
-      prefixDefaultLocale: false // kssmi.com (EN), kssmi.com/it/ (IT)
+      prefixDefaultLocale: false // yeetian.com (EN), yeetian.com/it/ (IT)
     }
   },
   build: {

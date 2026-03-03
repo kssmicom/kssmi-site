@@ -2,7 +2,10 @@
 /**
  * Category Page (Multilingual)
  * Displays products filtered by a specific category
- * URL format: /[lang]/product/[category-slug] (e.g., /it/product/ottica)
+ * URL format: /[lang]/product/[category-slug] (e.g., /ko/product/luxury-glasses)
+ *
+ * IMPORTANT: All category URLs use English slugs for consistency across languages.
+ * Products may have translated category names, but they map to English slugs.
  */
 
 import { getCollection } from 'astro:content';
@@ -13,39 +16,123 @@ import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
 
 export async function getStaticPaths() {
-  const allProducts = await getCollection('products');
-  // English is handled at root level, so exclude from [lang] routes
-  const languages = ['it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar'];
+  // Canonical English category slugs - these are the URL slugs used across ALL languages
+  const CANONICAL_CATEGORIES = [
+    'luxury-customized',
+    'luxury-glasses',
+    'luxury-sunglasses',
+    'high-couture-series',
+    'high-couture-sunglasses',
+    'high-couture-glasses',
+    'classics-series',
+    'classics-sunglasses',
+    'classics-glasses',
+    'fashion-series',
+    'acetate-sunglasses',
+    'metal-sunglasses',
+    'metal-glasses',
+    'titanium-sunglasses',
+    'titanium-glasses',
+    'optical-frames',
+    'sunglasses',
+    'metal',
+    'acetate',
+    'titanium',
+    'luxury',
+    'fashion',
+  ];
 
-  // Collect all unique categories across all languages
-  const allCategories = new Set<string>();
-  allProducts.forEach(p => {
-    p.data.categories?.forEach(cat => {
-      // Store normalized category slug
-      allCategories.add(cat.toLowerCase().replace(/\s+/g, '-'));
-    });
-  });
+  // Category translation mapping: maps translated category names to English slugs
+  // These MUST match the exact translations used in the product markdown files
+  const CATEGORY_MAP: Record<string, string> = {
+    // English
+    'luxury customized': 'luxury-customized',
+    'luxury glasses': 'luxury-glasses',
+    // Italian
+    'lusso personalizzato': 'luxury-customized',
+    'occhiali di lusso': 'luxury-glasses',
+    // Spanish
+    'lujo personalizado': 'luxury-customized',
+    'gafas de lujo': 'luxury-glasses',
+    // French
+    'luxe personnalisé': 'luxury-customized',
+    'lunettes de luxe': 'luxury-glasses',
+    // German
+    'luxus maßgeschneidert': 'luxury-customized',
+    'luxusbrillen': 'luxury-glasses',
+    // Portuguese
+    'luxo personalizado': 'luxury-customized',
+    'óculos de luxo': 'luxury-glasses',
+    // Russian
+    'индивидуальная роскошь': 'luxury-customized',
+    'роскошные очки': 'luxury-glasses',
+    // Japanese
+    '高級カスタマイズ': 'luxury-customized',
+    '高級メガネ': 'luxury-glasses',
+    // Turkish
+    'özel lüks': 'luxury-customized',
+    'lüks gözlükler': 'luxury-glasses',
+    // Arabic
+    'فخامة مخصصة': 'luxury-customized',
+    'نظارات فاخرة': 'luxury-glasses',
+    // Korean
+    '럭셔리 맞춤형': 'luxury-customized',
+    '럭셔리 안경': 'luxury-glasses',
+    // Chinese
+    '奢华定制': 'luxury-customized',
+    '奢华光学镜': 'luxury-glasses',
+    // Hindi
+    'लक्ज़री कस्टमाइज़्ड': 'luxury-customized',
+    'लक्ज़री चश्मा': 'luxury-glasses',
+    // Vietnamese
+    'sang trọng tùy chỉnh': 'luxury-customized',
+    'kính quang học sang trọng': 'luxury-glasses',
+    // Javanese
+    'klasik mewah': 'luxury-customized',
+    'kacamata kelas mewah': 'luxury-glasses',
+    // Malay
+    'tersuai mewah': 'luxury-customized',
+    'cermin mata mewah': 'luxury-glasses',
+    // Tajik
+    'боҳашамати фармоишӣ': 'luxury-customized',
+    'айнаки боҳашамат': 'luxury-glasses',
+  };
+
+  // Function to get canonical slug from any category name
+  function getCanonicalSlug(categoryName: string): string {
+    const normalized = categoryName.toLowerCase().trim();
+    return CATEGORY_MAP[normalized] || normalized.replace(/\s+/g, '-');
+  }
+
+  const allProducts = await getCollection('products');
+  const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
 
   const paths = [];
 
+  // For each language, create pages for all canonical categories
   for (const lang of languages) {
-    for (const category of allCategories) {
-      // Find products in this category and language
-      // ID format: "kso-001.en" -> extract "en" by splitting on "."
-      const categoryProducts = allProducts.filter(p => {
-        const parts = p.id.split('.');
-        const pLang = parts.length > 1 ? parts.pop() : 'en';
-        const hasCategory = p.data.categories?.some(
-          c => c.toLowerCase().replace(/\s+/g, '-') === category
-        );
-        return pLang === lang && hasCategory;
+    // Get all products in this language
+    const langProducts = allProducts.filter(p => {
+      const parts = p.id.split('.');
+      const pLang = parts.length > 1 ? parts.pop() : 'en';
+      return pLang === lang;
+    });
+
+    // For each canonical category, find matching products
+    for (const canonicalSlug of CANONICAL_CATEGORIES) {
+      // Find products that map to this canonical category
+      const categoryProducts = langProducts.filter(p => {
+        return p.data.categories?.some(cat => {
+          const slug = getCanonicalSlug(cat);
+          return slug === canonicalSlug;
+        });
       });
 
-      // Only create page if there are products
+      // Create page if there are products
       if (categoryProducts.length > 0) {
         paths.push({
-          params: { lang, category },
-          props: { products: categoryProducts, categorySlug: category, lang }
+          params: { lang, category: canonicalSlug },
+          props: { products: categoryProducts, categorySlug: canonicalSlug, lang }
         });
       }
     }
@@ -92,10 +179,10 @@ const sidebarCategories = [
   },
   {
     label: t.nav.couture,
-    href: `/${currentPath}product/haute-couture-series`,
+    href: `/${currentPath}product/high-couture-series`,
     items: [
-      { label: t.nav.couture_sunglasses, href: `/${currentPath}product/haute-couture-sunglasses` },
-      { label: t.nav.couture_glasses, href: `/${currentPath}product/haute-couture-glasses` }
+      { label: t.nav.couture_sunglasses, href: `/${currentPath}product/high-couture-sunglasses` },
+      { label: t.nav.couture_glasses, href: `/${currentPath}product/high-couture-glasses` }
     ]
   },
   {
@@ -170,10 +257,34 @@ function isActiveCategory(href: string): boolean {
               {t.nav.products}
             </a>
           </li>
-          <li class="text-gray-300 mx-2">/</li>
-          <li class="text-[#8B7355] font-medium">
-            {categoryTitle}
-          </li>
+          {sidebarCategories.map(cat => {
+            const currentSub = cat.items.find(sub => isActiveCategory(sub.href));
+            if (isActiveCategory(cat.href) || currentSub) {
+              return (
+                <>
+                  <li class="text-gray-300 mx-2">/</li>
+                  <li>
+                    {currentSub ? (
+                      <a href={cat.href} class="text-gray-500 hover:text-[#8B7355] transition-colors">
+                        {cat.label}
+                      </a>
+                    ) : (
+                      <span class="text-[#8B7355] font-medium">{cat.label}</span>
+                    )}
+                  </li>
+                  {currentSub && (
+                    <>
+                      <li class="text-gray-300 mx-2">/</li>
+                      <li class="text-[#8B7355] font-medium">
+                        {currentSub.label}
+                      </li>
+                    </>
+                  )}
+                </>
+              );
+            }
+            return null;
+          })}
         </ol>
       </nav>
 
@@ -192,7 +303,7 @@ function isActiveCategory(href: string): boolean {
         <aside class="hidden lg:block lg:col-span-1">
           <div class="sticky top-24 space-y-6">
             <!-- Categories Card -->
-            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+            <div class="bg-gradient-to-br from-white to-[#faf8f5] rounded-xl shadow-sm p-6 border border-stone-200/50">
               <!-- All Products Link -->
               <a
                 href={`/${currentPath}product`}

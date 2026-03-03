@@ -8,11 +8,11 @@ export default {
         'havana-bronze': '#8B7355',
         'havana-tortoise': '#5D4E37',
       },
-      // Custom fonts matching WordPress design
       fontFamily: {
         'Manrope': ['Manrope', 'sans-serif'],
         'Plus_Jakarta_Sans': ['Plus Jakarta Sans', 'sans-serif'],
         'Raleway': ['Raleway', 'sans-serif'],
+        'Playfair': ['"Playfair Display"', 'serif'],
       },
       // Custom breakpoints (sm: 640px for earlier desktop display)
       screens: {

@@ -21,6 +21,7 @@ export async function getStaticPaths() {
     .filter(product => {
       // Extract lang from file ID (e.g., "ks001.en" -> "en")
       const parts = product.id.split('.');
+      const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
       const lang = parts.length > 1 ? parts.pop() : 'en';
       // Skip English - it's handled by root /product/[slug].astro
       return lang !== 'en';
@@ -56,11 +57,14 @@ const {
   serviceMode,
   specs,
   customizable,
-  featured
+  featured,
+  seoTitle,
+  seoDescription,
+  seoKeywords,
 } = product.data;
 
 // Render markdown body using render()
-const { body: bodyHtml } = await render(product);
+const { Content: ProductContent } = await render(product);
 
 // Get translation data
 const t = translations[lang] || translations.en;
@@ -68,39 +72,118 @@ const pt = t.product || {};
 const currentPath = lang === 'en' ? '' : `${lang}/`;
 const isRTL = lang === 'ar';
 
+// Map English category slugs to translated nav labels
+const categoryNavMap: Record<string, string> = {
+  'luxury customized': t.nav.luxury,
+  'luxury-customized': t.nav.luxury,
+  'luxury sunglasses': t.nav.luxury_sunglasses,
+  'luxury-sunglasses': t.nav.luxury_sunglasses,
+  'luxury glasses': t.nav.luxury_glasses,
+  'luxury-glasses': t.nav.luxury_glasses,
+  'high couture series': t.nav.couture,
+  'high-couture-series': t.nav.couture,
+  'high couture sunglasses': t.nav.couture_sunglasses,
+  'high-couture-sunglasses': t.nav.couture_sunglasses,
+  'high couture glasses': t.nav.couture_glasses,
+  'high-couture-glasses': t.nav.couture_glasses,
+  'classics series': t.nav.classics,
+  'classics-series': t.nav.classics,
+  'classics sunglasses': t.nav.classics_sunglasses,
+  'classics-sunglasses': t.nav.classics_sunglasses,
+  'classics glasses': t.nav.classics_glasses,
+  'classics-glasses': t.nav.classics_glasses,
+  'fashion series': t.nav.fashion,
+  'fashion-series': t.nav.fashion,
+  'acetate sunglasses': t.nav.acetate_sun,
+  'acetate-sunglasses': t.nav.acetate_sun,
+  'metal sunglasses': t.nav.metal_sun,
+  'metal-sunglasses': t.nav.metal_sun,
+  'metal glasses': t.nav.metal_glass,
+  'metal-glasses': t.nav.metal_glass,
+  'titanium sunglasses': t.nav.titanium_sun,
+  'titanium-sunglasses': t.nav.titanium_sun,
+  'titanium glasses': t.nav.titanium_glass,
+  'titanium-glasses': t.nav.titanium_glass,
+  'rimless series': t.nav.rimless,
+  'rimless-series': t.nav.rimless,
+  'rimless sunglasses': t.nav.rimless_sun,
+  'rimless-sunglasses': t.nav.rimless_sun,
+  'rimless glasses': t.nav.rimless_glass,
+  'rimless-glasses': t.nav.rimless_glass,
+  'carbon series': t.nav.carbon,
+  'carbon-series': t.nav.carbon,
+  'carbon sunglasses': t.nav.carbon_sun,
+  'carbon-sunglasses': t.nav.carbon_sun,
+  'carbon glasses': t.nav.carbon_glass,
+  'carbon-glasses': t.nav.carbon_glass,
+};
+
+function getCategoryLabel(cat: string): string {
+  return categoryNavMap[cat.toLowerCase()] || categoryNavMap[cat.toLowerCase().replace(/\s+/g, '-')] || cat;
+}
+
 // Build breadcrumb items
 const breadcrumbItems = [
   { label: t.nav.home, href: `/${currentPath}` },
   { label: t.nav.products || 'Product', href: `/${currentPath}product` },
   ...(categories && categories.length > 0
     ? [{
-        label: categories[0],
+        label: getCategoryLabel(categories[0]),
         href: `/${currentPath}product/${categories[0].toLowerCase().replace(/\s+/g, '-')}`
       }]
     : []),
   ...(categories && categories.length > 1
     ? [{
-        label: categories[1],
+        label: getCategoryLabel(categories[1]),
         href: `/${currentPath}product/${categories[1].toLowerCase().replace(/\s+/g, '-')}`
       }]
     : [])
 ];
+
+// Generate AdditionalProperties for Schema using localized labels
+const schemaSpecs = [];
+if (itemNo) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.itemNo || "Item Number", "value": itemNo });
+if (moq) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.moq || "MOQ", "value": `${moq} PCS` });
+if (serviceMode && serviceMode.length > 0) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.service || "Service Mode", "value": serviceMode.join(', ') });
+if (customizable) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.customizable || "Customizable", "value": "Yes" });
+
+if (specs) {
+  if (specs.size) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.size || "Size", "value": String(specs.size) });
+  if (specs.frameMaterial) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.frameMaterial || "Frame Material", "value": String(specs.frameMaterial) });
+  if (specs.lensMaterial) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.lensMaterial || "Lenses Material", "value": String(specs.lensMaterial) });
+  if (specs.designStyle) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.designStyle || "Design Style", "value": String(specs.designStyle) });
+  if (specs.nosePads) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.nosePads || "Nose Pads", "value": String(specs.nosePads) });
+  if (specs.hinge) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.hinge || "Hinge", "value": String(specs.hinge) });
+  if (specs.electroplating) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.electroplating || "Electroplating Method", "value": String(specs.electroplating) });
+  if (specs.logo && specs.logo.length > 0) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.logo || "Logo", "value": specs.logo.join(', ') });
+}
 
 // Generate Product Schema for SEO
 const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": title,
-  "image": cover,
-  "description": bodyHtml?.replace(/<[^>]*>/g, '').slice(0, 200),
+  "image": cover ? (cover.startsWith('http') ? cover : `https://yeetian.com${cover}`) : "",
+  "description": seoDescription || title,
+  "sku": itemNo,
+  "mpn": itemNo,
   "brand": {
     "@type": "Brand",
-    "name": "KSSMI Eyewear"
+    "@id": "https://yeetian.com/#organization",
+    "name": "Yeetian Eyewear"
   },
   "manufacturer": {
-    "@type": "ManufacturingBusiness",
-    "name": "KSSMI Eyewear",
-    "address": { "addressCountry": "CN" }
+    "@type": "Organization",
+    "@id": "https://yeetian.com/#organization",
+    "name": "Yeetian Eyewear"
+  },
+  "material": materials?.join(', '),
+  "color": colors?.join(', '),
+  "category": categories?.[0],
+  "additionalProperty": schemaSpecs,
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Retailers, Brands, Wholesale"
   },
   "offers": {
     "@type": "Offer",
@@ -110,7 +193,8 @@ const productSchema = {
     "priceValidUntil": new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
     "seller": {
       "@type": "Organization",
-      "name": "KSSMI Eyewear"
+      "@id": "https://yeetian.com/#organization",
+      "name": "Yeetian Eyewear"
     }
   }
 };
@@ -122,7 +206,7 @@ if (videoId) {
     "@context": "https://schema.org",
     "@type": "VideoObject",
     "name": title,
-    "description": bodyHtml?.replace(/<[^>]*>/g, '').slice(0, 200),
+    "description": seoDescription || title,
     "thumbnailUrl": [cover],
     "uploadDate": product.data.date || new Date().toISOString(),
     "contentUrl": `https://play.gumlet.io/embed/${videoId}`,
@@ -142,11 +226,25 @@ const customizableLabel: Record<string, string> = {
   ja: 'カスタマイズ可能',
   tr: 'Özelleştirilebilir',
   ar: 'قابل للتخصيص',
+  // Extended languages (7 new)
+  ko: '사용자 지정 가능',
+  zh: '可定制',
+  hi: 'अनुकूलन योग्य',
+  vi: 'Có thể tùy chỉnh',
+  jv: 'Bisa dikustomisasi',
+  ms: 'Boleh disesuaikan',
+  tg: 'Танзимшаванда',
 };
 const badgeLabel = customizableLabel[lang] || 'Customizable';
 ---
 
-<Layout title={title} lang={lang} image={cover}>
+<Layout
+  title={seoTitle || title}
+  description={seoDescription}
+  keywords={seoKeywords}
+  lang={lang}
+  image={cover}
+>
   <!-- Schema for SEO -->
   <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
   {videoSchema && (
@@ -164,7 +262,7 @@ const badgeLabel = customizableLabel[lang] || 'Customizable';
 
   <Header lang={lang} />
 
-  <main data-pagefind-body>
+  <main id="main-content" tabIndex="-1" data-pagefind-body class="focus:outline-none">
     {/* Pagefind anchor for better excerpt */}
     <div id="pagefind-content" class="contents">
     <!-- SECTION 1: Breadcrumb Navigation -->
@@ -225,7 +323,7 @@ const badgeLabel = customizableLabel[lang] || 'Customizable';
                   class="thumb aspect-square w-16 h-16 rounded-lg overflow-hidden border-2 border-transparent hover:border-[#8B7355] shadow-sm hover:shadow-md transition-all"
                   aria-label={`View gallery image ${index + 1}`}
                 >
-                  <img src={img} alt={`Gallery ${index + 1}`} class="w-full h-full object-cover" decoding="async" />
+                  <img src={img} alt={`Gallery ${index + 1}`} loading="lazy" class="w-full h-full object-cover" decoding="async" />
                 </button>
               ))}
             </div>
@@ -249,7 +347,7 @@ const badgeLabel = customizableLabel[lang] || 'Customizable';
             <!-- Collection Label -->
             {categories && categories.length > 0 && (
               <p class="text-sm text-[#8B7355] font-medium uppercase tracking-wider mb-2">
-                - KSSMI Collection
+                - Yeetian Collection
               </p>
             )}
 
@@ -270,7 +368,7 @@ const badgeLabel = customizableLabel[lang] || 'Customizable';
               {colors && colors.length > 0 && (
                 <div class="flex items-center gap-2">
                   <span class="text-sm text-gray-500 min-w-[120px]">{pt.color || 'Color'}:</span>
-                  <span class="text-sm font-medium text-gray-900">{colors.join(' & ')}</span>
+                  <span class="text-sm font-medium text-gray-900">{colors.join(' / ')}</span>
                 </div>
               )}
 
@@ -284,22 +382,21 @@ const badgeLabel = customizableLabel[lang] || 'Customizable';
               <div class="flex items-center gap-2">
                 <span class="text-sm text-gray-500 min-w-[120px]">{pt.serviceMode || 'Service Mode'}:</span>
                 <span class="text-sm font-medium text-gray-900">
-                  {(serviceMode || ['OEM', 'ODM']).join(' & ')}
+                  {(serviceMode || ['OEM', 'ODM']).map(mode => {
+                    if (mode === 'OEM') return pt.oem || 'OEM';
+                    if (mode === 'ODM') return pt.odm || 'ODM';
+                    return mode;
+                  }).join(' / ')}
                 </span>
               </div>
 
               <div class="flex items-center gap-2">
                 <span class="text-sm text-gray-500 min-w-[120px]">{pt.moq || 'MOQ'}:</span>
-                <span class="text-sm font-medium text-gray-900">{moq || 100} PCS/Model</span>
+                <span class="text-sm font-medium text-gray-900">{moq || 100}{pt.pcsPerModel || ' PCS/Model'}</span>
               </div>
             </div>
 
-            <!-- Product Description (from markdown body) -->
-            {bodyHtml && (
-              <div class="prose prose-stone max-w-none text-gray-700 mb-8 prose-headings:text-gray-900">
-                <Fragment set:html={bodyHtml} />
-              </div>
-            )}
+
 
             <!-- CTA Buttons -->
             <div class="flex flex-wrap gap-4 mb-8">
@@ -323,7 +420,7 @@ const badgeLabel = customizableLabel[lang] || 'Customizable';
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
-                {pt.backToCatalog || 'Back to Catalog'}
+                {pt.backToCatalog}
               </a>
             </div>
           </div>
@@ -331,18 +428,20 @@ const badgeLabel = customizableLabel[lang] || 'Customizable';
       </div>
     </section>
 
-    <!-- SECTION 3: Technical Specifications -->
-    <TechnicalSpecs specs={specs} product={product} lang={lang} />
+    <!-- SECTION 3: Technical Specifications with inserted Highlights -->
+    <TechnicalSpecs specs={specs} product={product} lang={lang}>
+      <ProductContent slot="highlights" />
+    </TechnicalSpecs>
 
     <!-- SECTION 4: CTA Banner -->
     <section class="py-16 lg:py-20 bg-gradient-to-r from-[#8B7355] to-[#5D4E37] text-white">
       <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
         <div class="text-center mb-10">
           <h2 class="text-2xl lg:text-3xl font-bold mb-4">
-            {pt.partnerTitle || 'Partner to Build Your Private-Label Luxury Eyewear Brand'}
+            {pt.partnerTitle}
           </h2>
           <p class="text-lg text-white/90 max-w-3xl mx-auto">
-            {pt.partnerDesc || 'Collaborate with a manufacturer trusted by industry leaders for over a century. Fully customize every aspect—materials, shapes, colors, and technical specifications—delivering exceptional craftsmanship and premium quality at scale.'}
+            {pt.partnerDesc}
           </p>
         </div>
 
@@ -352,37 +451,37 @@ const badgeLabel = customizableLabel[lang] || 'Customizable';
             <svg class="w-5 h-5 mt-0.5 text-amber-300 shrink-0 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
-            <span class="text-sm text-white/95">{pt.benefit1 || 'Decades of expertise in luxury eyewear manufacturing.'}</span>
+            <span class="text-sm text-white/95">{pt.benefit1}</span>
           </div>
           <div class="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg hover:shadow-black/20 cursor-default group">
             <svg class="w-5 h-5 mt-0.5 text-amber-300 shrink-0 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
-            <span class="text-sm text-white/95">{pt.benefit2 || 'Precision customization of materials, design, and technical specs.'}</span>
+            <span class="text-sm text-white/95">{pt.benefit2}</span>
           </div>
           <div class="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg hover:shadow-black/20 cursor-default group">
             <svg class="w-5 h-5 mt-0.5 text-amber-300 shrink-0 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
-            <span class="text-sm text-white/95">{pt.benefit3 || 'Exceptional quality control ensuring flawless finishes.'}</span>
+            <span class="text-sm text-white/95">{pt.benefit3}</span>
           </div>
           <div class="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg hover:shadow-black/20 cursor-default group">
             <svg class="w-5 h-5 mt-0.5 text-amber-300 shrink-0 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
-            <span class="text-sm text-white/95">{pt.benefit4 || 'Advanced scalable production with consistent accuracy.'}</span>
+            <span class="text-sm text-white/95">{pt.benefit4}</span>
           </div>
           <div class="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg hover:shadow-black/20 cursor-default group">
             <svg class="w-5 h-5 mt-0.5 text-amber-300 shrink-0 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
-            <span class="text-sm text-white/95">{pt.benefit5 || 'Cutting-edge materials compliant with industry standards.'}</span>
+            <span class="text-sm text-white/95">{pt.benefit5}</span>
           </div>
           <div class="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg hover:shadow-black/20 cursor-default group">
             <svg class="w-5 h-5 mt-0.5 text-amber-300 shrink-0 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
-            <span class="text-sm text-white/95">{pt.benefit6 || 'Reliable delivery aligned with your production timelines.'}</span>
+            <span class="text-sm text-white/95">{pt.benefit6}</span>
           </div>
         </div>
       </div>

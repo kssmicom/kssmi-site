@@ -1,5 +1,6 @@
 ---
 import { translations } from '../translations';
+import { getCollection } from 'astro:content';
 
 interface Props {
   lang: string;
@@ -7,6 +8,27 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = translations[lang] || translations.en;
+
+// Fetch products server-side at request time (dev) or build time (production)
+const allProducts = await getCollection('products');
+const langProducts = allProducts
+  .filter((product) => product.slug && product.slug.endsWith(`.${lang}`))
+  .map((product) => ({
+    slug: product.slug ? product.slug.replace(`.${lang}`, '') : '',
+    title: product.data?.title || '',
+    itemNo: product.data?.itemNo || '',
+    excerpt: product.data?.seoDescription || '',
+    categories: product.data?.categories || [],
+    materials: product.data?.materials || [],
+    colors: product.data?.colors || [],
+    url: lang === 'en'
+      ? `/product/${product.data?.slug || (product.slug ? product.slug.replace(`.${lang}`, '') : '')}/`
+      : `/${lang}/product/${product.data?.slug || (product.slug ? product.slug.replace(`.${lang}`, '') : '')}/`,
+    cover: product.data?.cover || '',
+  }));
+
+// Serialize for client-side use
+const productsJson = JSON.stringify(langProducts);
 
 // Placeholder text translations
 const placeholders = {
@@ -23,41 +45,143 @@ const placeholders = {
 };
 ---
 
-<div id="search" class="relative w-full max-w-md">
+<div id={`search-${lang}`} class="relative w-full max-w-md" data-lang={lang}>
   <!-- Search Input -->
   <div class="relative">
     <input
       type="text"
-      id="search-input"
+      id={`search-input-${lang}`}
       placeholder={placeholders[lang] || placeholders.en}
       class="w-full px-4 py-2 ps-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B7355] focus:border-transparent"
+      autocomplete="off"
     />
-    <!-- Search Icon (Logical: ps = padding-start, works for RTL too) -->
-    <svg class="absolute start-3 top-3 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <!-- Search Icon -->
+    <svg class="absolute start-3 top-3 w-5 h-5 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
     </svg>
   </div>
 
   <!-- Search Results Dropdown -->
-  <div id="search-results" class="absolute z-50 w-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg hidden max-h-96 overflow-y-auto">
-    <!-- Results populated by Pagefind -->
+  <div id={`search-results-${lang}`} class="absolute z-50 w-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg hidden max-h-96 overflow-y-auto">
+    <!-- Results populated dynamically -->
   </div>
 </div>
 
-<script define:vars={{ lang }}>
-  // ✅ Load Pagefind properly from window object
-  async function initPagefind() {
-    // Load script if not present
-    if (!window.pagefind) {
-      await import('/pagefind/pagefind.js');
+<script define:vars={{ productsJson, lang }}>
+  // Parse the embedded product data
+  const products = JSON.parse(productsJson);
+
+  // Dynamically import Fuse.js
+  let Fuse;
+  async function initFuse() {
+    if (!Fuse) {
+      try {
+        const module = await import('/node_modules/fuse.js/dist/fuse.mjs');
+        Fuse = module.default || module;
+      } catch (err) {
+        console.error('Failed to load Fuse.js:', err);
+        throw err;
+      }
     }
+    return Fuse;
   }
 
-  const searchInput = document.getElementById('search-input');
-  const searchResults = document.getElementById('search-results');
+  // Use language-specific IDs to avoid conflicts
+  const searchContainer = document.getElementById(`search-${lang}`);
+  const searchInput = document.getElementById(`search-input-${lang}`);
+  const searchResults = document.getElementById(`search-results-${lang}`);
   let searchTimeout;
+  let fuse = null;
 
-  searchInput?.addEventListener('input', async (e) => {
+  // Initialize Fuse.js search
+  async function initializeSearch() {
+    const FuseClass = await initFuse();
+
+    fuse = new FuseClass(products, {
+      keys: [
+        { name: 'title', weight: 0.4 },
+        { name: 'itemNo', weight: 0.3 },
+        { name: 'excerpt', weight: 0.2 },
+        { name: 'categories', weight: 0.05 },
+        { name: 'materials', weight: 0.05 }
+      ],
+      threshold: 0.4,
+      includeScore: true,
+      includeMatches: true
+    });
+  }
+
+  // Perform search
+  function performSearch(query) {
+    if (!fuse || !query.trim()) {
+      searchResults?.classList.add('hidden');
+      return;
+    }
+
+    const results = fuse.search(query, { limit: 8 });
+    displayResults(results);
+  }
+
+  // Display results
+  function displayResults(results) {
+    if (!searchResults) return;
+
+    searchResults.innerHTML = '';
+
+    if (results.length === 0) {
+      const noResultsText = lang === 'en' ? 'No products found' :
+                           lang === 'it' ? 'Nessun prodotto trovato' :
+                           lang === 'es' ? 'No se encontraron productos' :
+                           lang === 'fr' ? 'Aucun produit trouvé' :
+                           lang === 'de' ? 'Keine Produkte gefunden' :
+                           lang === 'pt' ? 'Nenhum produto encontrado' :
+                           lang === 'ru' ? 'Товары не найдены' :
+                           lang === 'ja' ? '商品が見つかりません' :
+                           lang === 'tr' ? 'Ürün bulunamadı' :
+                           lang === 'ar' ? 'لم يتم العثور على منتجات' : 'No products found';
+
+      searchResults.innerHTML = `<div class="p-4 text-gray-500">${noResultsText}</div>`;
+    } else {
+      results.forEach(({ item }) => {
+        const link = document.createElement('a');
+        link.href = item.url;
+        link.className = 'block p-4 hover:bg-gray-50 border-b border-gray-100 last:border-b-0 transition-colors';
+
+        // RTL support
+        const dir = lang === 'ar' ? 'rtl' : 'ltr';
+        link.dir = dir;
+
+        // Highlight item number
+        const itemNoDisplay = item.itemNo ? `<span class="text-xs text-[#8B7355] font-mono bg-[#F5F5DC] px-2 py-0.5 rounded">${item.itemNo}</span>` : '';
+
+        link.innerHTML = `
+          <div class="flex items-center justify-between gap-2 mb-1">
+            <div class="font-semibold text-gray-900 truncate">${item.title}</div>
+            ${itemNoDisplay}
+          </div>
+          <div class="text-sm text-gray-600 line-clamp-2">${item.excerpt || ''}</div>
+          ${item.categories?.length ? `
+            <div class="flex flex-wrap gap-1 mt-2">
+              ${item.categories.slice(0, 3).map((cat) =>
+                `<span class="text-xs text-gray-500 bg-gray-100 px-2 py-0.5 rounded">${cat}</span>`
+              ).join('')}
+            </div>
+          ` : ''}
+        `;
+        searchResults.appendChild(link);
+      });
+    }
+
+    searchResults.classList.remove('hidden');
+  }
+
+  // Initialize on page load
+  initializeSearch().catch(err => {
+    console.error('Search initialization failed:', err);
+  });
+
+  // Event listeners
+  searchInput?.addEventListener('input', (e) => {
     const query = e.target.value.trim();
     clearTimeout(searchTimeout);
 
@@ -66,41 +190,21 @@ const placeholders = {
       return;
     }
 
-    searchTimeout = setTimeout(async () => {
-      // ✅ Use window.pagefind instead of import
-      await initPagefind();
-      const pagefind = window.pagefind;
-      const results = await pagefind.search(query);
-
-      searchResults.innerHTML = '';
-
-      if (results.results.length === 0) {
-        searchResults.innerHTML = '<div class="p-4 text-gray-500">No products found</div>';
-      } else {
-        results.results.slice(0, 5).forEach(result => {
-          const link = document.createElement('a');
-          link.href = result.url;
-          link.className = 'block p-4 hover:bg-gray-50 border-b border-gray-100 last:border-b-0';
-
-          // RTL support for results
-          const dir = lang === 'ar' ? 'rtl' : 'ltr';
-          link.dir = dir;
-
-          link.innerHTML = `
-            <div class="font-semibold">${result.meta.title}</div>
-            <div class="text-sm text-gray-600">${result.meta.excerpt || ''}</div>
-          `;
-          searchResults?.appendChild(link);
-        });
-      }
-
-      searchResults?.classList.remove('hidden');
-    }, 300);
+    searchTimeout = setTimeout(() => {
+      performSearch(query);
+    }, 150);
   });
 
   // Close search results when clicking outside
   document.addEventListener('click', (e) => {
-    if (!e.target.closest('#search')) {
+    if (!e.target.closest(`#search-${lang}`)) {
+      searchResults?.classList.add('hidden');
+    }
+  });
+
+  // Keyboard navigation
+  searchInput?.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
       searchResults?.classList.add('hidden');
     }
   });

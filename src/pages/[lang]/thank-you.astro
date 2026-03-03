@@ -13,7 +13,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 
 export function getStaticPaths() {
-  const languages = ['it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar'];
+  const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
 
   return languages.map((lang) => ({
     params: { lang },
@@ -27,7 +27,7 @@ const ty = t.thankyou;
 const isRTL = lang === 'ar';
 ---
 
-<Layout title={`${ty.title} - KSSMI`} lang={lang} noindex={true}>
+<Layout title={`${ty.title} - Yeetian`} lang={lang} noindex={true}>
   <Header lang={lang} />
 
   <main class="min-h-[70vh] flex items-center justify-center py-16 lg:py-24 bg-gradient-to-b from-stone-50 to-white" dir={isRTL ? 'rtl' : 'ltr'}>

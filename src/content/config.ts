@@ -39,6 +39,10 @@ const products = defineCollection({
       logo: z.array(z.string()).optional(),
     }).optional(),
     date: z.coerce.date().optional(),
+    // === SEO Fields (like Yoast/RankMath in WordPress) ===
+    seoTitle: z.string().optional(),        // Custom <title> (10–75 chars)
+    seoDescription: z.string().optional(),  // Meta description (10–320 chars)
+    seoKeywords: z.string().optional(),     // Comma-separated keywords
   })
 });
 
@@ -49,10 +53,14 @@ const landing = defineCollection({
     lang: z.enum(['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar']),
     title: z.string(),
     slug: z.string().optional(),
-    image: z.string().optional(),  // ✅ Use plain string URL
+    image: z.string().optional(),
     layout: z.enum(['full-width', 'with-sidebar']).default('full-width'),
     cta: z.string().optional(),
     ctaLink: z.string().optional(),
+    // === SEO Fields ===
+    seoTitle: z.string().optional(),
+    seoDescription: z.string().optional(),
+    seoKeywords: z.string().optional(),
   })
 });
 
@@ -63,11 +71,15 @@ const blog = defineCollection({
     lang: z.enum(['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar']).default('en'),
     title: z.string(),
     slug: z.string().optional(),
-    image: z.string().optional(),  // ✅ Use plain string URL
+    image: z.string().optional(),
     excerpt: z.string().optional(),
-    author: z.string().default('KSSMI Eyewear'),
+    author: z.string().default('Yeetian Eyewear'),
     published: z.coerce.date(),
     tags: z.array(z.string()).optional(),
+    // === SEO Fields ===
+    seoTitle: z.string().optional(),
+    seoDescription: z.string().optional(),
+    seoKeywords: z.string().optional(),
   })
 });
 

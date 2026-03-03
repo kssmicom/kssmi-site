@@ -1,6 +1,6 @@
 <?php
 /**
- * KSSMI Contact Form Handler
+ * Yeetian Contact Form Handler
  * Sends emails via SMTP (Gmail Workspace)
  * Protected by Cloudflare Turnstile
  * Includes email logging functionality
@@ -18,7 +18,7 @@ $_privateConfigPath = dirname(__DIR__) . '/private_config.php';
 if (file_exists($_privateConfigPath)) {
     $_privateCfg = require $_privateConfigPath;
 } else {
-    error_log('KSSMI: private_config.php not found at ' . $_privateConfigPath);
+    error_log('Yeetian: private_config.php not found at ' . $_privateConfigPath);
     $_privateCfg = ['smtp_pass' => '', 'turnstile_secret' => ''];
 }
 
@@ -30,8 +30,8 @@ $allowedOrigins = [
     'http://127.0.0.1:4321',
     'http://127.0.0.1:4324',
     'http://127.0.0.1:4325',
-    'https://kssmi.com',
-    'https://www.kssmi.com',
+    'https://yeetian.com',
+    'https://www.yeetian.com',
 ];
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
@@ -61,16 +61,16 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $config = [
     // Email Settings
-    'to_email' => 'sales@kssmi.com',
-    'to_name' => 'KSSMI Sales Team',
-    'from_email' => 'kssmi@kssmi.com',
-    'from_name' => 'Kssmi Eyewear',
+    'to_email' => 'info@yeetian.com',
+    'to_name' => 'Yeetian Sales Team',
+    'from_email' => 'yeetianeyewear@gmail.com',
+    'from_name' => 'Yeetian Eyewear',
 
     // Gmail Workspace SMTP Settings
     'smtp' => [
         'host' => 'smtp.gmail.com',
         'port' => 587,
-        'user' => 'kssmi@kssmi.com',
+        'user' => 'yeetianeyewear@gmail.com',
         'pass' => $_privateCfg['smtp_pass'],
         'secure' => 'tls',
     ],
@@ -108,7 +108,7 @@ function logEmail($config, $data, $status, $message = '', $error = '', $visitorI
             'to' => $config['to_email'],
             'from' => $config['from_email'],
             'reply_to' => $data['email'] ?? '',
-            'subject' => ($data['name'] ?? 'Unknown') . " - Kssmi Eyewear",
+            'subject' => ($data['name'] ?? 'Unknown') . " - Yeetian Eyewear",
         ],
         'form_data' => [
             'name' => $data['name'] ?? '',
@@ -298,10 +298,10 @@ function generateInquiryId() {
 
 function buildMarkdownEmail($data, $ip, $country, $inquiryId) {
     $timestamp = date('Y-m-d H:i:s');
-    $source = 'https://kssmi.com' . $data['product_url'];
+    $source = 'https://yeetian.com' . $data['product_url'];
 
     return <<<MARKDOWN
-# New Inquiry from KSSMI Website
+# New Inquiry from Yeetian Website
 
 ---
 
@@ -333,13 +333,13 @@ function buildMarkdownEmail($data, $ip, $country, $inquiryId) {
 
 ---
 
-*This email was automatically generated from the KSSMI website contact form.*
+*This email was automatically generated from the Yeetian website contact form.*
 MARKDOWN;
 }
 
 function buildHtmlEmail($data, $ip, $country, $inquiryId) {
     $timestamp = date('Y-m-d H:i:s');
-    $source = 'https://kssmi.com' . $data['product_url'];
+    $source = 'https://yeetian.com' . $data['product_url'];
     $lang = $data['language'] ?? 'en';
 
     // Email translations
@@ -354,7 +354,7 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
             'time' => 'Time',
             'source' => 'Source',
             'country' => 'Country',
-            'footer' => 'This email was automatically generated from the KSSMI Eyewear contact form.',
+            'footer' => 'This email was automatically generated from the Yeetian Eyewear contact form.',
         ],
         'it' => [
             'contactInfo' => 'Informazioni di Contatto',
@@ -366,7 +366,7 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
             'time' => 'Ora',
             'source' => 'Fonte',
             'country' => 'Paese',
-            'footer' => 'Questa email è stata generata automaticamente dal modulo di contatto KSSMI Eyewear.',
+            'footer' => 'Questa email è stata generata automaticamente dal modulo di contatto Yeetian Eyewear.',
         ],
         'es' => [
             'contactInfo' => 'Información de Contacto',
@@ -378,7 +378,7 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
             'time' => 'Hora',
             'source' => 'Fuente',
             'country' => 'País',
-            'footer' => 'Este correo fue generado automáticamente desde el formulario de contacto de KSSMI Eyewear.',
+            'footer' => 'Este correo fue generado automáticamente desde el formulario de contacto de Yeetian Eyewear.',
         ],
         'fr' => [
             'contactInfo' => 'Informations de Contact',
@@ -390,7 +390,7 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
             'time' => 'Heure',
             'source' => 'Source',
             'country' => 'Pays',
-            'footer' => 'Cet email a été généré automatiquement depuis le formulaire de contact KSSMI Eyewear.',
+            'footer' => 'Cet email a été généré automatiquement depuis le formulaire de contact Yeetian Eyewear.',
         ],
         'de' => [
             'contactInfo' => 'Kontaktinformationen',
@@ -402,7 +402,7 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
             'time' => 'Zeit',
             'source' => 'Quelle',
             'country' => 'Land',
-            'footer' => 'Diese E-Mail wurde automatisch vom KSSMI Eyewear Kontaktformular generiert.',
+            'footer' => 'Diese E-Mail wurde automatisch vom Yeetian Eyewear Kontaktformular generiert.',
         ],
         'pt' => [
             'contactInfo' => 'Informações de Contato',
@@ -414,7 +414,7 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
             'time' => 'Hora',
             'source' => 'Fonte',
             'country' => 'País',
-            'footer' => 'Este email foi gerado automaticamente pelo formulário de contato KSSMI Eyewear.',
+            'footer' => 'Este email foi gerado automaticamente pelo formulário de contato Yeetian Eyewear.',
         ],
         'ru' => [
             'contactInfo' => 'Контактная информация',
@@ -426,7 +426,7 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
             'time' => 'Время',
             'source' => 'Источник',
             'country' => 'Страна',
-            'footer' => 'Это письмо было автоматически создано формой связи KSSMI Eyewear.',
+            'footer' => 'Это письмо было автоматически создано формой связи Yeetian Eyewear.',
         ],
         'ja' => [
             'contactInfo' => '連絡先情報',
@@ -438,7 +438,7 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
             'time' => '時間',
             'source' => 'ソース',
             'country' => '国',
-            'footer' => 'このメールはKSSMI Eyewearのお問い合わせフォームから自動的に生成されました。',
+            'footer' => 'このメールはYeetian Eyewearのお問い合わせフォームから自動的に生成されました。',
         ],
         'tr' => [
             'contactInfo' => 'İletişim Bilgileri',
@@ -450,7 +450,7 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
             'time' => 'Zaman',
             'source' => 'Kaynak',
             'country' => 'Ülke',
-            'footer' => 'Bu e-posta KSSMI Eyewear iletişim formundan otomatik olarak oluşturulmuştur.',
+            'footer' => 'Bu e-posta Yeetian Eyewear iletişim formundan otomatik olarak oluşturulmuştur.',
         ],
         'ar' => [
             'contactInfo' => 'معلومات الاتصال',
@@ -462,14 +462,14 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
             'time' => 'الوقت',
             'source' => 'المصدر',
             'country' => 'البلد',
-            'footer' => 'تم إنشاء هذا البريد الإلكتروني تلقائيًا من نموذج الاتصال KSSMI Eyewear.',
+            'footer' => 'تم إنشاء هذا البريد الإلكتروني تلقائيًا من نموذج الاتصال Yeetian Eyewear.',
         ],
     ];
 
     $t = $translations[$lang] ?? $translations['en'];
 
-    // Header title: "Name - Kssmi"
-    $headerTitle = htmlspecialchars($data['name']) . ' - Kssmi';
+    // Header title: "Name - Yeetian"
+    $headerTitle = htmlspecialchars($data['name']) . ' - Yeetian';
 
     return "
 <!DOCTYPE html>
@@ -542,11 +542,11 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
 
 function buildTextEmail($data, $ip, $country, $inquiryId) {
     $timestamp = date('Y-m-d H:i:s');
-    $source = 'https://kssmi.com' . $data['product_url'];
+    $source = 'https://yeetian.com' . $data['product_url'];
     $name = $data['name'];
 
     return "
-{$name} - Kssmi
+{$name} - Yeetian
 ================
 
 Name: {$data['name']}
@@ -566,7 +566,7 @@ Country: {$country}
 ID: {$inquiryId}
 
 ---
-This email was automatically generated from the KSSMI Eyewear contact form.
+This email was automatically generated from the Yeetian Eyewear contact form.
 ";
 }
 
@@ -614,7 +614,7 @@ if (!$config['debug_mode']) {
     }
 } else {
     // Log that we're in debug mode
-    error_log("KSSMI Form: Debug mode enabled - Turnstile verification skipped");
+    error_log("Yeetian Form: Debug mode enabled - Turnstile verification skipped");
 }
 
 // Return errors if any
@@ -661,7 +661,7 @@ if (!file_exists($phpmailerPath . 'PHPMailer.php')) {
     // PHPMailer not installed - log and return error
     $errorMsg = 'PHPMailer not installed. Run: composer require phpmailer/phpmailer';
     logEmail($config, $formData, 'failed', 'PHPMailer missing', $errorMsg, $visitorIP, $visitorCountry);
-    error_log("KSSMI Form Error: " . $errorMsg);
+    error_log("Yeetian Form Error: " . $errorMsg);
 
     http_response_code(500);
     echo json_encode([
@@ -706,7 +706,7 @@ try {
 
     // Email Content
     $mail->isHTML(true);
-    $mail->Subject = "{$formData['name']} - Kssmi Eyewear - {$inquiryId}";
+    $mail->Subject = "{$formData['name']} - Yeetian Eyewear - {$inquiryId}";
     $mail->Body = buildHtmlEmail($formData, $visitorIP, $visitorCountry, $inquiryId);
     $mail->AltBody = buildTextEmail($formData, $visitorIP, $visitorCountry, $inquiryId);
 
@@ -734,24 +734,24 @@ try {
     // Log failure
     $errorMsg = $e->getMessage();
     logEmail($config, $formData, 'failed', 'PHPMailer error', $errorMsg, $visitorIP, $visitorCountry);
-    error_log("KSSMI Form Error (PHPMailer): " . $errorMsg);
+    error_log("Yeetian Form Error (PHPMailer): " . $errorMsg);
 
     http_response_code(500);
     echo json_encode([
         'success' => false,
-        'message' => 'Sorry, there was an error sending your message. Please email us directly at sales@kssmi.com',
+        'message' => 'Sorry, there was an error sending your message. Please email us directly at info@yeetian.com',
         'debug' => $config['debug_mode'] ? $errorMsg : null
     ]);
 } catch (Exception $e) {
     // Log failure
     $errorMsg = $e->getMessage();
     logEmail($config, $formData, 'failed', 'General error', $errorMsg, $visitorIP, $visitorCountry);
-    error_log("KSSMI Form Error: " . $errorMsg);
+    error_log("Yeetian Form Error: " . $errorMsg);
 
     http_response_code(500);
     echo json_encode([
         'success' => false,
-        'message' => 'Sorry, there was an error sending your message. Please email us directly at sales@kssmi.com',
+        'message' => 'Sorry, there was an error sending your message. Please email us directly at info@yeetian.com',
         'debug' => $config['debug_mode'] ? $errorMsg : null
     ]);
 }

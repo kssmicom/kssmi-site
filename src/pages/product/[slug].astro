@@ -51,10 +51,13 @@ const {
   serviceMode,
   specs,
   customizable,
-  featured
+  featured,
+  seoTitle,
+  seoDescription,
+  seoKeywords,
 } = product.data;
 
-const { body: bodyHtml } = await render(product);
+const { Content: ProductContent } = await render(product);
 
 const t = translations.en;
 const pt = t.product || {};
@@ -76,17 +79,49 @@ const breadcrumbItems = [
     : [])
 ];
 
+// Generate AdditionalProperties for Schema
+const schemaSpecs = [];
+if (itemNo) schemaSpecs.push({ "@type": "PropertyValue", "name": "Item Number", "value": itemNo });
+if (moq) schemaSpecs.push({ "@type": "PropertyValue", "name": "MOQ", "value": `${moq} PCS` });
+if (serviceMode && serviceMode.length > 0) schemaSpecs.push({ "@type": "PropertyValue", "name": "Service Mode", "value": serviceMode.join(', ') });
+if (customizable) schemaSpecs.push({ "@type": "PropertyValue", "name": "Customizable", "value": "Yes" });
+
+if (specs) {
+  if (specs.size) schemaSpecs.push({ "@type": "PropertyValue", "name": "Size", "value": String(specs.size) });
+  if (specs.frameMaterial) schemaSpecs.push({ "@type": "PropertyValue", "name": "Frame Material", "value": String(specs.frameMaterial) });
+  if (specs.lensMaterial) schemaSpecs.push({ "@type": "PropertyValue", "name": "Lenses Material", "value": String(specs.lensMaterial) });
+  if (specs.designStyle) schemaSpecs.push({ "@type": "PropertyValue", "name": "Design Style", "value": String(specs.designStyle) });
+  if (specs.nosePads) schemaSpecs.push({ "@type": "PropertyValue", "name": "Nose Pads", "value": String(specs.nosePads) });
+  if (specs.hinge) schemaSpecs.push({ "@type": "PropertyValue", "name": "Hinge", "value": String(specs.hinge) });
+  if (specs.electroplating) schemaSpecs.push({ "@type": "PropertyValue", "name": "Electroplating Method", "value": String(specs.electroplating) });
+  if (specs.logo && specs.logo.length > 0) schemaSpecs.push({ "@type": "PropertyValue", "name": "Logo", "value": specs.logo.join(', ') });
+}
+
 const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": title,
   "image": cover,
-  "description": bodyHtml?.replace(/<[^>]*>/g, '').slice(0, 200),
-  "brand": { "@type": "Brand", "name": "KSSMI Eyewear" },
+  "description": seoDescription || title,
+  "sku": itemNo,
+  "mpn": itemNo,
+  "brand": {
+    "@type": "Brand",
+    "@id": "https://yeetian.com/#organization",
+    "name": "Yeetian Eyewear"
+  },
   "manufacturer": {
-    "@type": "ManufacturingBusiness",
-    "name": "KSSMI Eyewear",
-    "address": { "addressCountry": "CN" }
+    "@type": "Organization",
+    "@id": "https://yeetian.com/#organization",
+    "name": "Yeetian Eyewear"
+  },
+  "material": materials?.join(', '),
+  "color": colors?.join(', '),
+  "category": categories?.[0],
+  "additionalProperty": schemaSpecs,
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Retailers, Brands, Wholesale"
   }
 };
 
@@ -96,7 +131,7 @@ if (videoId) {
     "@context": "https://schema.org",
     "@type": "VideoObject",
     "name": title,
-    "description": bodyHtml?.replace(/<[^>]*>/g, '').slice(0, 200),
+    "description": seoDescription || title,
     "thumbnailUrl": [cover],
     "uploadDate": product.data.date || new Date().toISOString(),
     "contentUrl": `https://play.gumlet.io/embed/${videoId}`,
@@ -105,7 +140,13 @@ if (videoId) {
 }
 ---
 
-<Layout title={title} lang={lang} image={cover}>
+<Layout
+  title={seoTitle || title}
+  description={seoDescription}
+  keywords={seoKeywords}
+  lang={lang}
+  image={cover}
+>
   <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
   {videoSchema && (
     <script type="application/ld+json" set:html={JSON.stringify(videoSchema)} />
@@ -207,7 +248,7 @@ if (videoId) {
             <!-- Collection Label -->
             {categories && categories.length > 0 && (
               <p class="text-sm text-[#8B7355] font-medium uppercase tracking-wider mb-2">
-                - KSSMI Collection
+                - Yeetian Collection
               </p>
             )}
 
@@ -220,44 +261,43 @@ if (videoId) {
             <div class="border-y border-gray-200 py-6 mb-6 space-y-3">
               {itemNo && (
                 <div class="flex items-center gap-2">
-                  <span class="text-sm text-gray-500 min-w-[120px]">{pt.itemNo || 'Item No'}:</span>
+                  <span class="text-sm text-gray-500 min-w-[120px]">{pt.itemNo}:</span>
                   <span class="text-sm font-medium text-gray-900">{itemNo}</span>
                 </div>
               )}
 
               {colors && colors.length > 0 && (
                 <div class="flex items-center gap-2">
-                  <span class="text-sm text-gray-500 min-w-[120px]">{pt.color || 'Color'}:</span>
-                  <span class="text-sm font-medium text-gray-900">{colors.join(' & ')}</span>
+                  <span class="text-sm text-gray-500 min-w-[120px]">{pt.color}:</span>
+                  <span class="text-sm font-medium text-gray-900">{colors.join(' / ')}</span>
                 </div>
               )}
 
               {materials && materials.length > 0 && (
                 <div class="flex items-center gap-2">
-                  <span class="text-sm text-gray-500 min-w-[120px]">{pt.materials || 'Materials'}:</span>
+                  <span class="text-sm text-gray-500 min-w-[120px]">{pt.materials}:</span>
                   <span class="text-sm font-medium text-gray-900">{materials.join(', ')}</span>
                 </div>
               )}
 
               <div class="flex items-center gap-2">
-                <span class="text-sm text-gray-500 min-w-[120px]">{pt.serviceMode || 'Service Mode'}:</span>
+                <span class="text-sm text-gray-500 min-w-[120px]">{pt.serviceMode}:</span>
                 <span class="text-sm font-medium text-gray-900">
-                  {(serviceMode || ['OEM', 'ODM']).join(' & ')}
+                  {(serviceMode || ['OEM', 'ODM']).map(mode => {
+                    if (mode === 'OEM') return pt.oem || 'OEM';
+                    if (mode === 'ODM') return pt.odm || 'ODM';
+                    return mode;
+                  }).join(' / ')}
                 </span>
               </div>
 
               <div class="flex items-center gap-2">
-                <span class="text-sm text-gray-500 min-w-[120px]">{pt.moq || 'MOQ'}:</span>
-                <span class="text-sm font-medium text-gray-900">{moq || 100} PCS/Model</span>
+                <span class="text-sm text-gray-500 min-w-[120px]">{pt.moq}:</span>
+                <span class="text-sm font-medium text-gray-900">{moq || 100}{pt.pcsPerModel || ' PCS/Model'}</span>
               </div>
             </div>
 
-            <!-- Product Description -->
-            {bodyHtml && (
-              <div class="prose prose-stone max-w-none text-gray-700 mb-8 prose-headings:text-gray-900">
-                <Fragment set:html={bodyHtml} />
-              </div>
-            )}
+
 
             <!-- CTA Buttons -->
             <div class="flex flex-wrap gap-4 mb-8">
@@ -281,7 +321,7 @@ if (videoId) {
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
-                {pt.backToCatalog || 'Back to Catalog'}
+                {pt.backToCatalog}
               </a>
             </div>
           </div>
@@ -289,18 +329,20 @@ if (videoId) {
       </div>
     </section>
 
-    <!-- SECTION 3: Technical Specifications -->
-    <TechnicalSpecs specs={specs} product={product} lang={lang} />
+    <!-- SECTION 3: Technical Specifications with inserted Highlights -->
+    <TechnicalSpecs specs={specs} product={product} lang={lang}>
+      <ProductContent slot="highlights" />
+    </TechnicalSpecs>
 
     <!-- SECTION 4: CTA Banner -->
     <section class="py-16 lg:py-20 bg-gradient-to-r from-[#8B7355] to-[#5D4E37] text-white">
       <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
         <div class="text-center mb-10">
           <h2 class="text-2xl lg:text-3xl font-bold mb-4">
-            Partner to Build Your Private-Label Luxury Eyewear Brand
+            {pt.partnerTitle}
           </h2>
           <p class="text-lg text-white/90 max-w-3xl mx-auto">
-            Collaborate with a manufacturer trusted by industry leaders for over a century. Fully customize every aspect—materials, shapes, colors, and technical specifications—delivering exceptional craftsmanship and premium quality at scale.
+            {pt.partnerDesc}
           </p>
         </div>
 
@@ -310,37 +352,37 @@ if (videoId) {
             <svg class="w-5 h-5 mt-0.5 text-amber-300 shrink-0 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
-            <span class="text-sm text-white/95">Decades of expertise in luxury eyewear manufacturing.</span>
+            <span class="text-sm text-white/95">{pt.benefit1}</span>
           </div>
           <div class="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg hover:shadow-black/20 cursor-default group">
             <svg class="w-5 h-5 mt-0.5 text-amber-300 shrink-0 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
-            <span class="text-sm text-white/95">Precision customization of materials, design, and technical specs.</span>
+            <span class="text-sm text-white/95">{pt.benefit2}</span>
           </div>
           <div class="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg hover:shadow-black/20 cursor-default group">
             <svg class="w-5 h-5 mt-0.5 text-amber-300 shrink-0 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
-            <span class="text-sm text-white/95">Exceptional quality control ensuring flawless finishes.</span>
+            <span class="text-sm text-white/95">{pt.benefit3}</span>
           </div>
           <div class="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg hover:shadow-black/20 cursor-default group">
             <svg class="w-5 h-5 mt-0.5 text-amber-300 shrink-0 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
-            <span class="text-sm text-white/95">Advanced scalable production with consistent accuracy.</span>
+            <span class="text-sm text-white/95">{pt.benefit4}</span>
           </div>
           <div class="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg hover:shadow-black/20 cursor-default group">
             <svg class="w-5 h-5 mt-0.5 text-amber-300 shrink-0 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
-            <span class="text-sm text-white/95">Cutting-edge materials compliant with industry standards.</span>
+            <span class="text-sm text-white/95">{pt.benefit5}</span>
           </div>
           <div class="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg hover:shadow-black/20 cursor-default group">
             <svg class="w-5 h-5 mt-0.5 text-amber-300 shrink-0 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
-            <span class="text-sm text-white/95">Reliable delivery aligned with your production timelines.</span>
+            <span class="text-sm text-white/95">{pt.benefit6}</span>
           </div>
         </div>
       </div>

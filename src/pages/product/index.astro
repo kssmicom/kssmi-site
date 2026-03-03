@@ -53,10 +53,10 @@ const sidebarCategories = [
   },
   {
     label: t.nav.couture,
-    href: '/product/haute-couture-series',
+    href: '/product/high-couture-series',
     items: [
-      { label: t.nav.couture_sunglasses, href: '/product/haute-couture-sunglasses' },
-      { label: t.nav.couture_glasses, href: '/product/haute-couture-glasses' }
+      { label: t.nav.couture_sunglasses, href: '/product/high-couture-sunglasses' },
+      { label: t.nav.couture_glasses, href: '/product/high-couture-glasses' }
     ]
   },
   {
@@ -111,7 +111,7 @@ const hasMore = sortedProducts.length > 12;
           {t.nav.products}
         </h1>
         <p class="text-gray-600">
-          {langProducts.length} {langProducts.length === 1 ? 'product' : 'products'} available
+          {langProducts.length} {langProducts.length === 1 ? (pt.productAvailable || 'product available') : (pt.productsAvailable || 'products available')}
         </p>
       </div>
 
@@ -120,7 +120,7 @@ const hasMore = sortedProducts.length > 12;
         <aside class="hidden lg:block lg:col-span-1">
           <div class="sticky top-24 space-y-6">
             <!-- Categories Card -->
-            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+            <div class="bg-gradient-to-br from-white to-[#faf8f5] rounded-xl shadow-sm p-6 border border-stone-200/50">
               <!-- All Products Link -->
               <a
                 href="/product"
@@ -187,12 +187,12 @@ const hasMore = sortedProducts.length > 12;
               <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
               </svg>
-              <p class="text-gray-500 mb-4">No products available yet.</p>
+              <p class="text-gray-500 mb-4">{pt.noProducts || 'No products available yet.'}</p>
               <a
                 href="/"
                 class="text-[#8B7355] hover:underline"
               >
-                Return to Homepage
+                {pt.returnHome || 'Return to Homepage'}
               </a>
             </div>
           ) : (
@@ -200,7 +200,10 @@ const hasMore = sortedProducts.length > 12;
               <!-- Results Info -->
               <div class="flex justify-between items-center mb-6 text-sm text-gray-500">
                 <span>
-                  Showing 1-{products.length} of {langProducts.length} products
+                  {(pt.showingResults || 'Showing {start}-{end} of {total} products')
+                    .replace('{start}', '1')
+                    .replace('{end}', String(products.length))
+                    .replace('{total}', String(langProducts.length))}
                 </span>
               </div>
 
@@ -218,7 +221,7 @@ const hasMore = sortedProducts.length > 12;
                     href="/product/2"
                     class="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#8B7355] text-[#8B7355] rounded-lg font-semibold hover:bg-[#8B7355] hover:text-white transition-colors"
                   >
-                    <span>Load More Products</span>
+                    <span>{pt.loadMore || 'Load More Products'}</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>

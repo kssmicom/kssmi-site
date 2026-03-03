@@ -8,7 +8,7 @@ import ProductCard from '../../components/ProductCard.astro';
 
 export async function getStaticPaths() {
   const allProducts = await getCollection('products');
-  const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar'];
+  const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
 
   return languages.map((lang) => {
     const langProducts = allProducts.filter((product) => {

@@ -7,9 +7,11 @@ import { translations } from '../translations';
 
 const t = translations.en;
 const lang = 'en';
+const pt = t.product || {};
+const viewDetailsText = pt.viewDetails || 'View Details';
 ---
 
-<Layout title="Search Results | KSSMI" lang="en">
+<Layout title="Search Results | Yeetian" lang="en">
   <Header lang={lang} />
 
   <section class="w-full min-h-screen bg-stone-100 pt-32 pb-24">
@@ -17,11 +19,11 @@ const lang = 'en';
 
       <!-- Search Header Block -->
       <div class="text-center mb-12 relative max-w-4xl mx-auto">
-        <!-- KSSMI Text Logo -->
+        <!-- Yeetian Text Logo -->
         <div class="inline-flex flex-col items-center justify-center mb-6 hover:-translate-y-1 transition-transform duration-500">
-          <span class="text-3xl font-bold text-[#8B7355] tracking-tight leading-none">KSSMI</span>
-          <span class="h-[2px] w-8 bg-[#8B7355] mt-1"></span>
-          <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-stone-500 mt-1">Eyewear</span>
+          <span class="text-3xl font-bold text-[#503629] tracking-tight leading-none uppercase">YEETIAN</span>
+          <span class="h-[2px] w-8 bg-[#503629] mt-1"></span>
+          <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#503629] mt-1">Eyewear Mfg.</span>
         </div>
 
         <h1 class="text-3xl md:text-4xl font-bold text-[#5D4E37] mb-3 tracking-tight">
@@ -62,7 +64,7 @@ const lang = 'en';
             >
 
             <!-- Clear Button (X icon) - hidden by default -->
-            <button type="button" id="search-clear" class="hidden px-3 text-stone-400 hover:text-stone-600 transition-colors flex-shrink-0" aria-label="Clear search">
+            <button type="button" id="search-clear" class="hidden px-3 text-stone-400 hover:text-[#5D4E37] transition-colors flex-shrink-0" aria-label="Clear search">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
               </svg>
@@ -95,14 +97,14 @@ const lang = 'en';
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
           </svg>
         </div>
-        <h2 class="text-3xl font-bold text-[#5D4E37] mb-4">Search KSSMI</h2>
+        <h2 class="text-3xl font-bold text-[#5D4E37] mb-4">{pt.searchTitle || 'Search Yeetian'}</h2>
         <p class="text-base text-stone-600 mb-10 max-w-md mx-auto">
-          Find products, articles, and more. Enter a search term above.
+          {pt.searchDesc || 'Find products, articles, and more. Enter a search term above.'}
         </p>
 
         <!-- Suggestions -->
         <div class="mt-12 max-w-5xl mx-auto">
-          <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-[#8B7355] mb-8">Recommended Searches</h3>
+          <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-[#8B7355] mb-8">{pt.recommendedSearches || 'Recommended Searches'}</h3>
           <div class="flex flex-wrap gap-3 justify-center">
             <a href="/search?q=optical+frames" class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#8B7355] transition-all duration-300 shadow-sm hover:shadow-md">
               Optical Frames
@@ -134,14 +136,14 @@ const lang = 'en';
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
         </div>
-        <h2 class="text-3xl font-bold text-[#5D4E37] mb-4">No Matches Found</h2>
+        <h2 class="text-3xl font-bold text-[#5D4E37] mb-4">{pt.noMatches || 'No Matches Found'}</h2>
         <p class="text-base text-stone-600 mb-10 max-w-md mx-auto" id="no-results-text">
-          We couldn't locate any items matching your criteria. Please refine your keywords.
+          {pt.noMatchesDesc || "We couldn't locate any items matching your criteria. Please refine your keywords."}
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a href="/" class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#8B7355] transition-colors duration-300 shadow-lg">
-            Back to Home
+            {pt.backToHome || 'Back to Home'}
           </a>
           <a href="/product" class="inline-flex items-center px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#5D4E37] hover:text-white transition-all duration-300">
             View Catalog
@@ -183,19 +185,18 @@ const lang = 'en';
   }
   .src-card-inner {
     background: white;
-    border-radius: 0.5rem; /* rounded-lg */
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); /* shadow-md */
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
     overflow: hidden;
     transition: box-shadow 0.3s ease;
   }
   .src-card:hover .src-card-inner {
-    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); /* shadow-xl */
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
   }
-  /* 4:3 aspect ratio image container */
   .src-img-wrap {
     position: relative;
     width: 100%;
-    padding-top: 75%; /* 3/4 = 75% → aspect-[4/3] */
+    padding-top: 75%;
     overflow: hidden;
     background-color: #f3f4f6;
   }
@@ -219,7 +220,6 @@ const lang = 'en';
     justify-content: center;
     background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
   }
-  /* Hover overlay */
   .src-overlay {
     position: absolute;
     inset: 0;
@@ -235,8 +235,8 @@ const lang = 'en';
     opacity: 1;
   }
   .src-overlay-pill {
-    background: white;
-    color: #8B7355;
+    background: black;
+    color: white;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     font-weight: 600;
@@ -250,7 +250,12 @@ const lang = 'en';
   .src-card:hover .src-overlay-pill {
     transform: translateY(0);
   }
-  /* Card text footer */
+  .src-overlay-pill .src-arrow {
+    transition: transform 0.3s ease;
+  }
+  .src-card:hover .src-overlay-pill .src-arrow {
+    transform: translateX(4px);
+  }
   .src-info {
     padding: 1rem 1.25rem;
     text-align: center;
@@ -310,15 +315,17 @@ const lang = 'en';
   }
 </style>
 
-<script>
-document.addEventListener('astro:page-load', () => {
-  // Get query from URL at RUNTIME
+<script define:vars={{ viewDetailsText }}>
+  // Translation text
+  const VIEW_DETAILS = viewDetailsText;
+
+  // Get query from URL
   const urlParams = new URLSearchParams(window.location.search);
   const query = urlParams.get('q') || '';
 
   // DOM elements
-  const searchInput = document.getElementById('search-input') as HTMLInputElement;
-  const searchClear = document.getElementById('search-clear') as HTMLButtonElement;
+  const searchInput = document.getElementById('search-input');
+  const searchClear = document.getElementById('search-clear');
   const searchInfo = document.getElementById('search-info');
   const queryDisplay = document.getElementById('query-display');
   const countNumber = document.getElementById('count-number');
@@ -332,7 +339,34 @@ document.addEventListener('astro:page-load', () => {
 
   const RESULTS_PER_PAGE = 12;
   let currentPage = 1;
-  let allResults: any[] = [];
+  let allResults = [];
+  let fuse = null;
+
+  // Initialize Fuse.js with the unified search index
+  async function initFuse() {
+    try {
+      const res = await fetch('/api/search-index/en.json');
+      if (!res.ok) throw new Error(`Failed to fetch search index: ${res.status}`);
+      const items = await res.json();
+
+      const module = await import('/node_modules/fuse.js/dist/fuse.mjs');
+      const Fuse = module.default || module;
+      fuse = new Fuse(items, {
+        keys: [
+          { name: 'title',       weight: 0.50 },
+          { name: 'itemNo',      weight: 0.35 },
+          { name: 'description', weight: 0.15 },
+        ],
+        threshold: 0.15,
+        includeScore: true,
+        ignoreLocation: true,
+      });
+      return true;
+    } catch (err) {
+      console.error('Failed to initialize Fuse:', err);
+      return false;
+    }
+  }
 
   // Clear button functionality
   function updateClearButton() {
@@ -357,7 +391,7 @@ document.addEventListener('astro:page-load', () => {
     });
   }
 
-  // Pre-fill search input with query
+  // Pre-fill search input
   if (searchInput && query) {
     searchInput.value = query;
     updateClearButton();
@@ -405,7 +439,7 @@ document.addEventListener('astro:page-load', () => {
     if (queryDisplay) queryDisplay.textContent = query;
   }
 
-  async function performSearch(searchQuery: string) {
+  async function performSearch(searchQuery) {
     if (!searchQuery) {
       showEmpty();
       return;
@@ -414,30 +448,27 @@ document.addEventListener('astro:page-load', () => {
     showLoading();
 
     try {
-      const pagefindPath = '/pagefind/pagefind.js';
-      const pagefind = await import(/* @vite-ignore */ pagefindPath);
+      if (!fuse) {
+        const initSuccess = await initFuse();
+        if (!initSuccess) {
+          showError();
+          return;
+        }
+      }
 
-      // Initialize Pagefind
-      await pagefind.init({ language: 'en' });
+      const searchResults = fuse.search(searchQuery);
 
-      const searchResponse = await pagefind.search(searchQuery);
-
-      if (searchResponse.results.length === 0) {
+      if (searchResults.length === 0) {
         showNoResults();
         return;
       }
 
-      // Fetch all result data
-      allResults = await Promise.all(
-        searchResponse.results.map((result: any) => result.data())
-      );
+      allResults = searchResults.map(r => r.item);
 
-      // Update count
       if (countNumber) {
         countNumber.textContent = allResults.length.toString();
       }
 
-      // Render first page
       renderPage(1);
       showResults();
 
@@ -447,59 +478,97 @@ document.addEventListener('astro:page-load', () => {
     }
   }
 
-  function createResultCard(data: any): string {
-    const url = data.url || '#';
-    const title = data.meta?.title || 'Untitled';
-    const itemNo = data.meta?.itemNo || '';
-    // Pagefind may return image as an object {src, sizes} or a plain string
-    const rawImage = data.meta?.image || data.meta?.cover || null;
-    const image = rawImage
-      ? (typeof rawImage === 'object' ? rawImage.src : rawImage)
-      : null;
+  function createResultCard(item) {
+    const url = item.url || '#';
+    const title = item.title || 'Untitled';
+    const type = item.type || 'product';
 
+    if (type === 'product') {
+      const itemNo = item.itemNo || '';
+      const image = item.image || null;
+      const imageContent = image
+        ? `<img src="${image}" alt="${title}" class="src-img" loading="lazy" />`
+        : `<div class="src-img-placeholder">
+             <svg style="width:3rem;height:3rem;color:#9ca3af" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                 d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+             </svg>
+           </div>`;
+      return `
+        <a href="${url}" class="src-card">
+          <div class="src-card-inner">
+            <div class="src-img-wrap">
+              ${imageContent}
+              <div class="src-overlay">
+                <span class="src-overlay-pill">
+                  ${VIEW_DETAILS}
+                  <svg class="src-arrow" style="width:1rem;height:1rem" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div class="src-info">
+              ${itemNo ? `<p class="src-item-no">${itemNo}</p>` : ''}
+              <h2 class="src-title">${title}</h2>
+            </div>
+          </div>
+        </a>`;
+    }
+
+    // Blog / Page
+    const desc = item.description || '';
+    const image = item.image || null;
+    const isPage = type === 'page';
+    const yeetianLogo = `
+      <div style="
+        display:flex;flex-direction:column;align-items:center;justify-content:center;
+        gap:4px;padding:1rem;
+      ">
+        <span style="
+          font-size:1.6rem;font-weight:800;color:#503629;
+          letter-spacing:0.15em;text-transform:uppercase;line-height:1;
+        ">YEETIAN</span>
+        <span style="height:2px;width:2.5rem;background:#503629;display:block;"></span>
+        <span style="
+          font-size:0.5rem;font-weight:700;color:#503629;
+          letter-spacing:0.25em;text-transform:uppercase;margin-top:2px;
+        ">${isPage ? 'PAGE' : 'ARTICLE'}</span>
+      </div>
+    `;
     const imageContent = image
       ? `<img src="${image}" alt="${title}" class="src-img" loading="lazy" />`
-      : `<div class="src-img-placeholder">
-           <svg style="width:3rem;height:3rem;color:#9ca3af" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-               d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-           </svg>
-         </div>`;
-
+      : `<div class="src-img-placeholder" style="background:#faf8f5;">${yeetianLogo}</div>`;
     return `
       <a href="${url}" class="src-card">
         <div class="src-card-inner">
-          <!-- Image -->
           <div class="src-img-wrap">
             ${imageContent}
-            <!-- Hover overlay -->
             <div class="src-overlay">
               <span class="src-overlay-pill">
-                View Details
-                <svg style="width:1rem;height:1rem" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                ${VIEW_DETAILS}
+                <svg class="src-arrow" style="width:1rem;height:1rem" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                 </svg>
               </span>
             </div>
           </div>
-          <!-- Info -->
           <div class="src-info">
-            ${itemNo ? `<p class="src-item-no">${itemNo}</p>` : ''}
-            <h2 class="src-title">${title}</h2>
+            <h2 class="src-title" style="-webkit-line-clamp:1">${title}</h2>
+            ${desc ? `<p style="font-size:0.72rem;color:#6b7280;margin-top:0.2rem;line-height:1.3;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden">${desc}</p>` : ''}
           </div>
         </div>
-      </a>
-    `;
+      </a>`;
   }
 
-  function renderPage(page: number) {
+  function renderPage(page) {
     currentPage = page;
     const startIndex = (page - 1) * RESULTS_PER_PAGE;
     const endIndex = startIndex + RESULTS_PER_PAGE;
     const pageResults = allResults.slice(startIndex, endIndex);
 
     if (resultsGrid) {
-      resultsGrid.innerHTML = pageResults.map(data => createResultCard(data)).join('');
+      resultsGrid.innerHTML = pageResults.map(item => createResultCard(item)).join('');
     }
     renderPagination();
   }
@@ -517,7 +586,6 @@ document.addEventListener('astro:page-load', () => {
 
     let paginationHTML = '';
 
-    // Previous button
     if (currentPage > 1) {
       paginationHTML += `
         <button class="page-numbers" data-page="${currentPage - 1}">
@@ -528,7 +596,6 @@ document.addEventListener('astro:page-load', () => {
       `;
     }
 
-    // Page numbers
     for (let i = 1; i <= totalPages; i++) {
       if (i === currentPage) {
         paginationHTML += `<button class="page-numbers current" data-page="${i}">${i}</button>`;
@@ -539,7 +606,6 @@ document.addEventListener('astro:page-load', () => {
       }
     }
 
-    // Next button
     if (currentPage < totalPages) {
       paginationHTML += `
         <button class="page-numbers" data-page="${currentPage + 1}">
@@ -552,25 +618,22 @@ document.addEventListener('astro:page-load', () => {
 
     paginationContainer.innerHTML = paginationHTML;
 
-    // Add click handlers
     paginationContainer.querySelectorAll('button[data-page]').forEach(btn => {
       btn.addEventListener('click', () => {
         const page = parseInt(btn.getAttribute('data-page') || '1');
         renderPage(page);
-        // Scroll to top of results
         resultsGrid?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
   }
 
-  // Intercept mid-page search form submission (Enter key or Search button)
+  // Form submission
   const searchForm = searchInput?.closest('form');
   if (searchForm) {
-    searchForm.addEventListener('submit', (e: Event) => {
+    searchForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const newQuery = (searchInput as HTMLInputElement)?.value.trim() || '';
+      const newQuery = searchInput?.value.trim() || '';
       if (newQuery) {
-        // Update URL so the query is bookmarkable
         const newUrl = new URL(window.location.href);
         newUrl.searchParams.set('q', newQuery);
         history.pushState({}, '', newUrl.toString());
@@ -581,11 +644,10 @@ document.addEventListener('astro:page-load', () => {
     });
   }
 
-  // Run search on page load if query exists in URL
+  // Run search on page load
   if (query) {
     performSearch(query);
   } else {
     showEmpty();
   }
-});
 </script>

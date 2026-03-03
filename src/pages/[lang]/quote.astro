@@ -14,7 +14,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import InquiryForm from '../../components/InquiryForm.astro';
 
 export function getStaticPaths() {
-  const supportedLangs = ['it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar'];
+  const supportedLangs = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
   return supportedLangs.map(lang => ({
     params: { lang },
   }));
@@ -134,7 +134,7 @@ const breadcrumbItems = [
 ];
 ---
 
-<Layout title={`${qt.title} - KSSMI`} lang={lang}>
+<Layout title={`${qt.title} - Yeetian`} lang={lang}>
   <Header lang={lang} />
 
   <main dir={isRTL ? 'rtl' : 'ltr'}>
