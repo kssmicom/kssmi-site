@@ -31,8 +31,9 @@ export const GET: APIRoute = async ({ params }) => {
                 type: 'product',
                 title: product.data.title || '',
                 itemNo: product.data.itemNo || '',
+                slug: baseName,
                 description: product.data.seoDescription || '',
-                keywords: `${(product.data.categories || []).join(' ')} ${(product.data.materials || []).join(' ')} ${(product.data.colors || []).join(' ')} ${product.data.specs?.designStyle || ''}`.trim(),
+                keywords: `${product.data.categories || ''} ${product.data.materials || ''} ${product.data.colors || ''} ${product.data.designStyle || ''}`.trim(),
                 url: `${productBase}${slug}`,
                 image: product.data.cover || '',
                 featured: product.data.featured || false,
@@ -46,7 +47,7 @@ export const GET: APIRoute = async ({ params }) => {
         allPosts
             .filter((post) => (post.data.lang || 'en') === lang)
             .forEach((post) => {
-                const slug = post.data.slug || post.slug || post.id;
+                const slug = post.data.slug || post.id;
                 results.push({
                     type: 'blog',
                     title: post.data.title || '',
@@ -61,24 +62,30 @@ export const GET: APIRoute = async ({ params }) => {
         // Blog collection may be empty; ignore
     }
 
-    // ─── 3. LANDING PAGES ────────────────────────────────────────────────────────
+    // ─── 3. COLLECTION PAGES ─────────────────────────────────────────────────────
     try {
-        const allLanding = await getCollection('landing');
-        allLanding
-            .filter((page) => (page.data.lang || 'en') === lang)
+        const allCollection = await getCollection('collection');
+        allCollection
+            .filter((page) =>
+                (page.data.lang || 'en') === lang &&
+                // Skip meta/top/bottom split files — only index assembled pages
+                !['meta', 'top', 'bottom'].includes(page.data.fileType || '') &&
+                // Must have a slug to produce a valid URL
+                (page.data.slug || page.data.title)
+            )
             .forEach((page) => {
-                const slug = page.data.slug || page.slug || page.id;
+                const slug = page.data.slug || page.id;
                 results.push({
                     type: 'page',
                     title: page.data.title || '',
                     description: page.data.seoDescription || '',
                     keywords: '',
-                    url: `${basePath}/landing/${slug}`,
+                    url: `${basePath}/${slug}`, // Clean flat URLs
                     image: page.data.image || '',
                 });
             });
     } catch (_) {
-        // Landing collection may be empty; ignore
+        // Collection collection may be empty; ignore
     }
 
     // ─── 4. STATIC SITE PAGES ────────────────────────────────────────────────────
@@ -124,6 +131,9 @@ export const GET: APIRoute = async ({ params }) => {
 
     return new Response(JSON.stringify(deduped), {
         status: 200,
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+            'Content-Type': 'application/json',
+            'Cache-Control': 'no-store',
+        },
     });
 };

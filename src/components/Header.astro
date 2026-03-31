@@ -14,6 +14,10 @@ const t = translations[lang] || translations.en;
 // Current path for building URLs (includes language prefix for non-English)
 const currentPath = lang === 'en' ? '' : `${lang}/`;
 
+// About and Contact URLs: Using flat URLs
+const aboutUrl = lang === 'en' ? '/about-us' : `/${lang}/about-us`;
+const contactUrl = lang === 'en' ? '/contact' : `/${lang}/contact`;
+
 // Get the page path WITHOUT language prefix for language switcher
 const urlPath = Astro.url.pathname;
 const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
@@ -50,9 +54,9 @@ const searchLabels = {
   jv: 'Nggoleki', ms: 'Cari', tg: 'Ҷустуҷӯ'
 };
 
-const eyewearText = eyewearLabels[lang] || 'Eyewear';
-const quoteText = quoteLabels[lang] || 'Get Quote';
-const searchText = searchLabels[lang] || 'Search';
+const eyewearText = eyewearLabels[lang as keyof typeof eyewearLabels] || 'Eyewear';
+const quoteText = quoteLabels[lang as keyof typeof quoteLabels] || 'Get Quote';
+const searchText = searchLabels[lang as keyof typeof searchLabels] || 'Search';
 const currentLangUpper = lang.toUpperCase();
 
 // Enhanced Menu Structure (WordPress-style mega menu)
@@ -113,7 +117,7 @@ const menuStructure = [
         href: `/${currentPath}product/carbon-series`,
         items: [
           { label: t.nav.carbon_sun, href: `/${currentPath}product/carbon-sunglasses` },
-          { label: t.nav.carbon_glasses, href: `/${currentPath}product/carbon-glasses` }
+          { label: t.nav.carbon_glass, href: `/${currentPath}product/carbon-glasses` }
         ]
       }
     ]
@@ -125,55 +129,56 @@ const menuStructure = [
     hasDropdown: true,
     children: [
       {
-        label: t.nav.collection_men,
-        href: `/${currentPath}collection/men`,
+        label: 'Acetate Series',
+        href: `/${currentPath}acetate-series`,
         items: [
-          { label: t.nav.luxury_sunglasses, href: `/${currentPath}collection/men/luxury-sun` },
-          { label: t.nav.luxury_glasses, href: `/${currentPath}collection/men/luxury-glass` }
+          { label: 'Acetate Sunglasses', href: `/${currentPath}acetate-sunglasses` },
+          { label: 'Acetate Optical Frames', href: `/${currentPath}acetate-optical-frames` }
         ]
       },
       {
-        label: t.nav.collection_women,
-        href: `/${currentPath}collection/women`,
+        label: 'Titanium Series',
+        href: `/${currentPath}titanium-series`,
         items: [
-          { label: t.nav.couture_sunglasses, href: `/${currentPath}collection/women/couture-sun` },
-          { label: t.nav.couture_glasses, href: `/${currentPath}collection/women/couture-glass` }
+          { label: 'Titanium Sunglasses', href: `/${currentPath}titanium-sunglasses` },
+          { label: 'Titanium Optical Frames', href: `/${currentPath}titanium-optical-frames` }
         ]
       },
       {
-        label: t.nav.collection_unisex,
-        href: `/${currentPath}collection/unisex`,
+        label: 'Carbon Fiber Series',
+        href: `/${currentPath}carbon-fiber-series`,
         items: [
-          { label: t.nav.classics_sunglasses, href: `/${currentPath}collection/unisex/classics-sun` },
-          { label: t.nav.classics_glasses, href: `/${currentPath}collection/unisex/classics-glass` }
+          { label: 'Carbon Fiber Sunglasses', href: `/${currentPath}carbon-fiber-sunglasses` },
+          { label: 'Carbon Fiber Optical Frames', href: `/${currentPath}carbon-fiber-optical-frames` }
         ]
       },
       {
-        label: t.nav.collection_new,
-        href: `/${currentPath}collection/new`,
+        label: 'Manufacturing',
+        href: `/${currentPath}services`,
         items: [
-          { label: t.nav.carbon_sun, href: `/${currentPath}collection/new/carbon-sun` },
-          { label: t.nav.carbon_glass, href: `/${currentPath}collection/new/carbon-glass` }
+          { label: 'OEM & Private Label', href: `/${currentPath}oem-private-label` },
+          { label: 'ODM & Custom Mfg.', href: `/${currentPath}odm-custom-mfg` }
         ]
       },
       {
-        label: t.nav.collection_bestsellers,
-        href: `/${currentPath}collection/bestseller`,
+        label: 'Specialty',
+        href: `/${currentPath}specialty`,
         items: [
-          { label: t.nav.fashion, href: `/${currentPath}collection/bestseller/fashion` }
+          { label: 'Sustainable Series', href: `/${currentPath}sustainable-series` },
+          { label: 'Performance Series', href: `/${currentPath}performance-series` }
         ]
       },
       {
-        label: t.nav.collection_sustainable,
-        href: `/${currentPath}collection/sustainable`,
+        label: 'Business',
+        href: `/${currentPath}wholesale`,
         items: [
-          { label: 'Eco-Friendly Frames', href: `/${currentPath}collection/sustainable/eco-friendly` }
+          { label: 'Wholesale Collections', href: `/${currentPath}wholesale-collections` }
         ]
       }
     ]
   },
-  { label: t.nav.about, href: `/${currentPath}about` },
-  { label: t.nav.contact, href: `/${currentPath}contact` },
+  { label: t.nav.about, href: aboutUrl },
+  { label: t.nav.contact, href: contactUrl },
 ];
 
 // Language names for dropdown
@@ -195,7 +200,7 @@ const collectionMenu = menuStructure.find(item => item.menuKey === 'collection')
       <!-- Logo -->
       <a href={`/${currentPath}`} class="flex flex-col group min-w-max z-50 relative flex-shrink-0">
         <span class="text-2xl md:text-3xl font-bold text-[#503629] leading-none group-hover:opacity-80 transition-opacity duration-300">
-          YEETIAN
+          KSSMI
         </span>
         <div class="flex items-center gap-2 mt-1.5">
           <span class="h-[2px] w-4 bg-[#503629] group-hover:bg-[#b45309] transition-colors duration-300"></span>
@@ -220,8 +225,8 @@ const collectionMenu = menuStructure.find(item => item.menuKey === 'collection')
         </ul>
       </nav>
 
-      <!-- Spacer to push right actions to the end -->
-      <div class="flex-grow"></div>
+      <!-- Spacer -->
+      <div class="flex-grow min-w-0"></div>
 
       <!-- Right Actions -->
       <div class="flex items-center gap-3 xl:gap-4 flex-shrink-0">
@@ -245,13 +250,13 @@ const collectionMenu = menuStructure.find(item => item.menuKey === 'collection')
               {currentLangUpper}
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
             </button>
-            <div class="lang-dropdown-menu absolute top-full right-0 -mt-1 w-40 bg-white border-t-4 border-[#8B7355] shadow-[0_10px_30px_rgba(0,0,0,0.15)] p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60] pointer-events-none group-hover:pointer-events-auto flex flex-col rounded-b-lg">
+            <div class="lang-dropdown-menu absolute top-full right-0 -mt-1 w-40 max-h-[70vh] overflow-y-auto bg-[#2d2926] border-t-4 border-[#8B7355] shadow-[0_10px_30px_rgba(0,0,0,0.25)] p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60] pointer-events-none group-hover:pointer-events-auto flex flex-col rounded-b-lg">
               {Object.entries(languageNames).map(([langCode, displayName]) => {
                 const isActive = langCode === lang;
                 // Build correct URL: /en/path or /fr/path (not /frit/path)
                 const langUrl = langCode === 'en' ? (pagePath === '/' ? '/' : pagePath) : `/${langCode}${pagePath === '/' ? '' : pagePath}`;
                 return (
-                  <a href={langUrl} class={`block py-3 px-4 text-sm font-medium transition-all duration-200 ${isActive ? 'bg-stone-50 text-[#8B7355]' : 'text-stone-900 hover:bg-stone-50 hover:text-[#8B7355] hover:pl-7 whitespace-nowrap'}`}>
+                  <a href={langUrl} class:list={['block py-2.5 px-4 text-sm font-medium transition-all duration-200 rounded', isActive ? 'text-[#c9a66b] font-bold' : 'text-white/90 hover:bg-white/10 hover:text-[#c9a66b] hover:pl-6 whitespace-nowrap']}>
                     {displayName}
                   </a>
                 );
@@ -270,13 +275,13 @@ const collectionMenu = menuStructure.find(item => item.menuKey === 'collection')
               {currentLangUpper}
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
             </button>
-            <div class="lang-dropdown-menu absolute top-full right-0 -mt-1 w-40 bg-white border-t-4 border-[#8B7355] shadow-[0_10px_30px_rgba(0,0,0,0.15)] p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60] pointer-events-none group-hover:pointer-events-auto flex flex-col rounded-b-lg">
+            <div class="lang-dropdown-menu absolute top-full right-0 -mt-1 w-40 max-h-[70vh] overflow-y-auto bg-[#2d2926] border-t-4 border-[#8B7355] shadow-[0_10px_30px_rgba(0,0,0,0.25)] p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60] pointer-events-none group-hover:pointer-events-auto flex flex-col rounded-b-lg">
               {Object.entries(languageNames).map(([langCode, displayName]) => {
                 const isActive = langCode === lang;
                 // Build correct URL: /en/path or /fr/path (not /frit/path)
                 const langUrl = langCode === 'en' ? (pagePath === '/' ? '/' : pagePath) : `/${langCode}${pagePath === '/' ? '' : pagePath}`;
                 return (
-                  <a href={langUrl} class={`block py-3 px-4 text-sm font-medium transition-all duration-200 ${isActive ? 'bg-stone-50 text-[#8B7355]' : 'text-stone-900 hover:bg-stone-50 hover:text-[#8B7355] hover:pl-7 whitespace-nowrap'}`}>
+                  <a href={langUrl} class:list={['block py-2.5 px-4 text-sm font-medium transition-all duration-200 rounded', isActive ? 'text-[#c9a66b] font-bold' : 'text-white/90 hover:bg-white/10 hover:text-[#c9a66b] hover:pl-6 whitespace-nowrap']}>
                     {displayName}
                   </a>
                 );
@@ -417,6 +422,7 @@ const collectionMenu = menuStructure.find(item => item.menuKey === 'collection')
     border-bottom-left-radius: 1.5rem;
     border-bottom-right-radius: 1.5rem;
   }
+
   .nav-link::after {
     content: '';
     position: absolute;
@@ -440,6 +446,21 @@ const collectionMenu = menuStructure.find(item => item.menuKey === 'collection')
 
   #mega-menu-panel .mega-menu-content.active {
     display: block !important;
+  }
+
+  /* Language Dropdown Scrollbar */
+  .lang-dropdown-menu::-webkit-scrollbar {
+    width: 6px;
+  }
+  .lang-dropdown-menu::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .lang-dropdown-menu::-webkit-scrollbar-thumb {
+    background: #8B7355;
+    border-radius: 3px;
+  }
+  .lang-dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background: #5D4E37;
   }
 </style>
 
@@ -596,7 +617,7 @@ const collectionMenu = menuStructure.find(item => item.menuKey === 'collection')
             hideMegaMenu();
           }
         };
-        setListener(parentLi, 'mouseleave', leaveHandler);
+        setListener(parentLi, 'mouseleave', leaveHandler as EventListener);
       }
     });
 
@@ -648,6 +669,48 @@ const collectionMenu = menuStructure.find(item => item.menuKey === 'collection')
         mobileSearchInput.focus();
       });
     }
+
+    // Language Dropdown Click Toggle (for touch devices)
+    document.querySelectorAll('.lang-dropdown-container').forEach(container => {
+      const btn = container.querySelector('.lang-btn');
+      const menu = container.querySelector('.lang-dropdown-menu') as HTMLElement;
+
+      if (btn && menu) {
+        setListener(btn, 'click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+
+          // Close all other language dropdowns first
+          document.querySelectorAll('.lang-dropdown-menu').forEach(m => {
+            if (m !== menu) {
+              m.classList.remove('opacity-100', 'visible', 'pointer-events-auto');
+              m.classList.add('opacity-0', 'invisible', 'pointer-events-none');
+            }
+          });
+
+          // Toggle current dropdown
+          const isVisible = menu.classList.contains('opacity-100');
+          if (isVisible) {
+            menu.classList.remove('opacity-100', 'visible', 'pointer-events-auto');
+            menu.classList.add('opacity-0', 'invisible', 'pointer-events-none');
+          } else {
+            menu.classList.remove('opacity-0', 'invisible', 'pointer-events-none');
+            menu.classList.add('opacity-100', 'visible', 'pointer-events-auto');
+          }
+        });
+      }
+    });
+
+    // Close language dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('.lang-dropdown-container')) {
+        document.querySelectorAll('.lang-dropdown-menu').forEach(menu => {
+          menu.classList.remove('opacity-100', 'visible', 'pointer-events-auto');
+          menu.classList.add('opacity-0', 'invisible', 'pointer-events-none');
+        });
+      }
+    });
   }
 
   // Initialize on DOMContentLoaded (ensures DOM is ready on first load)

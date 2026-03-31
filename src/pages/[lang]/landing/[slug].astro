@@ -9,7 +9,10 @@ export async function getStaticPaths() {
   const landing = await getCollection('landing');
   return landing.map(page => {
     const lang = page.data.lang;
-    const slug = page.data.slug || page.slug;
+    const slug = (page.data.slug || page.slug)
+      .split('-')
+      .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' '); // Assuming the intent was to capitalize and join with space for a display name, or similar transformation.
     return {
       params: { lang, slug },
       props: { page },
@@ -19,9 +22,10 @@ export async function getStaticPaths() {
 
 const { page } = Astro.props;
 const { lang } = Astro.params;
-const { title, slug, data } = page;
+const { data } = page;
+const title = data.title;
 const { layout, cta, ctaLink, image } = data;
-const t = translations[lang] || translations.en;
+const t = (translations as any)[lang] || translations.en;
 
 const currentPath = lang === 'en' ? '' : `${lang}/`;
 ---

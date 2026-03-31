@@ -3,7 +3,7 @@ export const translations = {
     thankyou: {
       title: "Thank You!",
       subtitle: "Your inquiry has been received",
-      message: "We appreciate your interest in Yeetian. Our team will review your project details and get back to you within 24 hours.",
+      message: "We appreciate your interest in Kssmi. Our team will review your project details and get back to you within 24 hours.",
       inquiryId: "Your Inquiry ID",
       nextSteps: "What happens next?",
       step1Title: "Review",
@@ -19,8 +19,8 @@ export const translations = {
       home: "Home",
       products: "Products",
       collection: "Collection",
-      about: "About Us",
-      contact: "Contact Us",
+      about: "About",
+      contact: "Contact",
       // Subcategories - Luxury Series
       luxury: "Luxury Customized",
       luxury_sunglasses: "Luxury Sunglasses",
@@ -58,7 +58,7 @@ export const translations = {
     footer: {
       // Column 1: Brand Info
       tagline: "Eyewear & Sunglasses",
-      brandName: "Yeetian Technology Co., Ltd.",
+      brandName: "Kssmi Technology Co., Ltd.",
       brandDesc: "Redefining eyewear manufacturing with precision, sustainability, and transparency since 2003.",
 
       // Column 2: Quick Links
@@ -67,7 +67,7 @@ export const translations = {
       manufacturing: "Manufacturing",
       collection: "Collection",
       support: "Support",
-      contact: "Contact Us",
+      contact: "Contact",
       privacy: "Privacy Policy",
 
       // Column 3: Products Category
@@ -79,10 +79,10 @@ export const translations = {
       carbon: "Carbon Series",
 
       // Column 4: Factory Info
-      factoryTitle: "Contact Us",
+      factoryTitle: "Contact",
       address: "1501, Bldg. 2, Baiwangda Health\nTech Park, Yuanshan St., Longgang\nDist., Shenzhen, Guangdong, China",
       postcode: "Postcode",
-      email: "info@yeetian.com",
+      email: "info@kssmi.com",
       emailLabel: "Email: ",
 
       // Bottom Bar
@@ -124,6 +124,8 @@ export const translations = {
       hinge: "Hinge",
       electroplating: "Electroplating Method",
       service: "Service",
+      carbonFiberFeature: "Carbon Fiber Features",
+      acetateFeature: "Acetate Feature",
       logo: "Logo",
       logoOptions: "print, laser, laser with oil, hot stamping, metal, crystal, up-sticker",
       andCustomization: " & Customization",
@@ -133,7 +135,7 @@ export const translations = {
       oem: "Contract Manufacturing",
       odm: "Design Manufacturing",
       systemGenerated: "System Generated",
-      securedBy: "Secured by Yeetian Quality Control",
+      securedBy: "Secured by Kssmi Quality Control",
       // CTA Section
       startJourney: "Start Your Journey",
       privateLabelTitle: "Start Your Private-Label Million-Dollar Business",
@@ -176,7 +178,7 @@ export const translations = {
       returnHome: "Return to Homepage",
       loadMore: "Load More Products",
       // Search page
-      searchTitle: "Search Yeetian",
+      searchTitle: "Search Kssmi",
       searchDesc: "Find products, articles, and more. Enter a search term above.",
       recommendedSearches: "Recommended Searches",
       noMatches: "No Matches Found",
@@ -186,17 +188,18 @@ export const translations = {
       foundMatches: "Found matches for",
       // Product card
       viewDetails: "View Details",
+      customizable: "Customizable",
     },
     layout: {
       description: "Premium B2B eyewear manufacturing from China. OEM/ODM custom eyewear frames for global retailers and brands.",
-      schemaDescription: "Yeetian Eyewear is a professional B2B eyewear manufacturer specializing in high-quality OEM/ODM optical frames and sunglasses, factory-direct from China since 2003.",
+      schemaDescription: "Kssmi Eyewear is a professional B2B eyewear manufacturer specializing in high-quality OEM/ODM optical frames and sunglasses, factory-direct from China since 2003.",
     }
   },
   ar: {
     thankyou: {
       title: "شكراً لك!",
       subtitle: "تم استلام استفسارك",
-      message: "نقدر اهتمامك بـ Yeetian. سيقوم فريقنا بمراجعة تفاصيل مشروعك والتواصل معك خلال 24 ساعة.",
+      message: "نقدر اهتمامك بـ Kssmi. سيقوم فريقنا بمراجعة تفاصيل مشروعك والتواصل معك خلال 24 ساعة.",
       inquiryId: "رقم الاستفسار",
       nextSteps: "ماذا يحدث بعد؟",
       step1Title: "المراجعة",
@@ -212,8 +215,8 @@ export const translations = {
       home: "الرئيسية",
       products: "المنتجات",
       collection: "المجموعة",
-      about: "من نحن",
-      contact: "اتصل بنا",
+      about: "عن",
+      contact: "Contact",
       luxury: "فخمة مخصصة",
       luxury_sunglasses: "نظارات شمسية فخمة",
       luxury_glasses: "نظارات فخمة",
@@ -244,14 +247,14 @@ export const translations = {
     },
     footer: {
       tagline: "النظارات والنظارات الشمسية",
-      brandName: "Yeetian Technology Co., Ltd.",
+      brandName: "Kssmi Technology Co., Ltd.",
       brandDesc: "نعيد تعريف صناعة النظارات بالدقة والاستدامة والشفافية منذ عام 2003.",
       quickLinksTitle: "روابط سريعة",
       about: "من نحن",
       manufacturing: "التصنيع",
       collection: "المجموعة",
       support: "الدعم",
-      contact: "اتصل بنا",
+      contact: "Contact",
       privacy: "سياسة الخصوصية",
       productsTitle: "الفئة",
       luxury: "فخمة مخصصة",
@@ -262,7 +265,7 @@ export const translations = {
       factoryTitle: "اتصل بنا",
       address: "1501، مبنى 2، حديقة بايوينغدا هيلث\nتيك، شارع يوانشان، منطقة لونغغانغ\nشنتشن، قوانغدونغ، الصين",
       postcode: "الرمز البريدي",
-      email: "info@yeetian.com",
+      email: "info@kssmi.com",
       emailLabel: "البريد الإلكتروني: ",
       rights: "جميع الحقوق محفوظة."
     },
@@ -300,6 +303,8 @@ export const translations = {
       hinge: "المفصلة",
       electroplating: "طريقة الطلاء",
       service: "الخدمة",
+      carbonFiberFeature: "مميزات ألياف الكربون",
+      acetateFeature: "ميزة الأسيتات",
       logo: "الشعار",
       logoOptions: "طباعة، ليزر، ليزر مع زيت، ختم حراري، معدن، كريستال، ملصق بارز",
       andCustomization: " وتخصيص",
@@ -309,7 +314,7 @@ export const translations = {
       oem: "تصنيع بالتفويض",
       odm: "تصميم وتصنيع",
       systemGenerated: "تم إنشاؤه بواسطة النظام",
-      securedBy: "مؤمن بواسطة مراقبة جودة Yeetian",
+      securedBy: "مؤمن بواسطة مراقبة جودة Kssmi",
       startJourney: "ابدأ رحلتك",
       privateLabelTitle: "ابدأ علامتك التجارية الخاصة",
       privateLabelDesc: "خصص كل تفاصيل نظاراتك بالكامل—المادة والشكل واللون والمواصفات الفنية.",
@@ -359,17 +364,18 @@ export const translations = {
       foundMatches: "تم العثور على تطابقات لـ",
       // Product card
       viewDetails: "عرض التفاصيل",
+      customizable: "قابل للتخصيص",
     },
     layout: {
       description: "تصنيع نظارات بين الشركات (B2B) متميزة من الصين. إطارات نظارات مخصصة OEM/ODM لتجارة التجزئة والعلامات التجارية العالمية.",
-      schemaDescription: "Yeetian Eyewear هي شركة محترفة في تصنيع النظارات بين الشركات (B2B) متخصصة في إطارات النظارات والنظارات الشمسية عالية الجودة OEM/ODM، مباشرة من المصنع في الصين منذ عام 2003.",
+      schemaDescription: "Kssmi Eyewear هي شركة محترفة في تصنيع النظارات بين الشركات (B2B) متخصصة في إطارات النظارات والنظارات الشمسية عالية الجودة OEM/ODM، مباشرة من المصنع في الصين منذ عام 2003.",
     }
   },
   it: {
     thankyou: {
       title: "Grazie!",
       subtitle: "La tua richiesta è stata ricevuta",
-      message: "Apprezziamo il tuo interesse per Yeetian. Il nostro team esaminerà i dettagli del tuo progetto e ti contatterà entro 24 ore.",
+      message: "Apprezziamo il tuo interesse per Kssmi. Il nostro team esaminerà i dettagli del tuo progetto e ti contatterà entro 24 ore.",
       inquiryId: "ID della tua richiesta",
       nextSteps: "Cosa succede dopo?",
       step1Title: "Revisione",
@@ -386,7 +392,7 @@ export const translations = {
       products: "Prodotti",
       collection: "Collezione",
       about: "Chi Siamo",
-      contact: "Contattaci",
+      contact: "Contact",
       luxury: "Lusso Personalizzato",
       luxury_sunglasses: "Occhiali da Sole Lusso",
       luxury_glasses: "Occhiali Lusso",
@@ -417,14 +423,14 @@ export const translations = {
     },
     footer: {
       tagline: "Occhiali e Occhiali da Sole",
-      brandName: "Yeetian Technology Co., Ltd.",
+      brandName: "Kssmi Technology Co., Ltd.",
       brandDesc: "Ridefiniamo la produzione di occhiali con precisione, sostenibilità e trasparenza dal 2003.",
       quickLinksTitle: "Link Veloci",
       about: "Chi Siamo",
       manufacturing: "Produzione",
       collection: "Collezione",
       support: "Supporto",
-      contact: "Contattaci",
+      contact: "Contact",
       privacy: "Privacy Policy",
       productsTitle: "Categoria",
       luxury: "Lusso Personalizzato",
@@ -435,7 +441,7 @@ export const translations = {
       factoryTitle: "Contattaci",
       address: "1501, Edificio 2, Baiwangda Health\nTech Park, Via Yuanshan, Distretto di Longgang\nShenzhen, Guangdong, Cina",
       postcode: "CAP",
-      email: "info@yeetian.com",
+      email: "info@kssmi.com",
       emailLabel: "Email: ",
       rights: "Tutti i diritti riservati."
     },
@@ -473,6 +479,8 @@ export const translations = {
       hinge: "Cerniera",
       electroplating: "Metodo Elettroplaccatura",
       service: "Servizio",
+      carbonFiberFeature: "Caratteristiche della fibra di carbonio",
+      acetateFeature: "Caratteristiche dell'acetato",
       logo: "Logotipo",
       logoOptions: "stampa, laser, laser con olio, stampa a caldo, metallo, cristallo, adesivo in rilievo",
       andCustomization: " e Personalizzazione",
@@ -482,7 +490,7 @@ export const translations = {
       oem: "Produzione per Conto Terzi",
       odm: "Design e Produzione",
       systemGenerated: "Generato dal Sistema",
-      securedBy: "Protetto da Controllo Qualita Yeetian",
+      securedBy: "Protetto da Controllo Qualita Kssmi",
       startJourney: "Inizia il Tuo Viaggio",
       privateLabelTitle: "Inizia la Tua Attivita di Private Label",
       privateLabelDesc: "Personalizza ogni dettaglio dei tuoi occhiali—materiale, forma, colore e specifiche tecniche.",
@@ -522,7 +530,7 @@ export const translations = {
       returnHome: "Torna alla Homepage",
       loadMore: "Carica Altri Prodotti",
       // Search page
-      searchTitle: "Cerca Yeetian",
+      searchTitle: "Cerca Kssmi",
       searchDesc: "Trova prodotti, articoli e altro. Inserisci un termine di ricerca sopra.",
       recommendedSearches: "Ricerche Consigliate",
       noMatches: "Nessun Risultato Trovato",
@@ -532,17 +540,18 @@ export const translations = {
       foundMatches: "Trovate corrispondenze per",
       // Product card
       viewDetails: "Vedi Dettagli",
+      customizable: "Personalizzabile",
     },
     layout: {
       description: "Produzione premium di occhiali B2B (commercio tra imprese) dalla Cina. Montature personalizzate OEM/ODM per rivenditori e marchi globali.",
-      schemaDescription: "Yeetian Eyewear è un produttore professionale di occhiali B2B (commercio tra imprese) specializzato in montature da vista e occhiali da sole OEM/ODM di alta qualità, direttamente dalla fabbrica in Cina dal 2003.",
+      schemaDescription: "Kssmi Eyewear è un produttore professionale di occhiali B2B (commercio tra imprese) specializzato in montature da vista e occhiali da sole OEM/ODM di alta qualità, direttamente dalla fabbrica in Cina dal 2003.",
     }
   },
   es: {
     thankyou: {
       title: "¡Gracias!",
       subtitle: "Tu consulta ha sido recibida",
-      message: "Agradecemos tu interés en Yeetian. Nuestro equipo revisará los detalles de tu proyecto y te contactará dentro de 24 horas.",
+      message: "Agradecemos tu interés en Kssmi. Nuestro equipo revisará los detalles de tu proyecto y te contactará dentro de 24 horas.",
       inquiryId: "ID de tu consulta",
       nextSteps: "¿Qué pasa después?",
       step1Title: "Revisión",
@@ -559,7 +568,7 @@ export const translations = {
       products: "Productos",
       collection: "Colección",
       about: "Nosotros",
-      contact: "Contáctenos",
+      contact: "Contact",
       // Subcategories - Luxury Series
       luxury: "Lujo Personalizado",
       luxury_sunglasses: "Gafas de Sol de Lujo",
@@ -596,7 +605,7 @@ export const translations = {
       collection_sustainable: "Coleccion Sostenible"
     },
     footer: {
-      brandName: "Yeetian Eyewear",
+      brandName: "Kssmi Eyewear",
       brandDesc: "Redefiniendo la fabricacion de gafas con precision, sostenibilidad y transparencia desde 2003.",
       quickLinksTitle: "Enlaces Rapidos",
       about: "Nosotros",
@@ -614,9 +623,9 @@ export const translations = {
       factoryTitle: "Nuestra Fabrica de Gafas",
       address: "1501, Ed. 2, Baiwangda Health\nTech Park, Calle Yuanshan, Distrito de Longgang\nShenzhen, Guangdong, China",
       postcode: "Codigo Postal",
-      email: "info@yeetian.com",
+      email: "info@kssmi.com",
       emailLabel: "Correo: ",
-      copyright: "Yeetian Eyewear Todos los derechos reservados."
+      copyright: "Kssmi Eyewear Todos los derechos reservados."
     },
     cta: {
       quote: "Solicitar Cotizacion",
@@ -652,6 +661,8 @@ export const translations = {
       hinge: "Bisagra",
       electroplating: "Metodo de Galvanoplastia",
       service: "Servicio",
+      carbonFiberFeature: "Características de la fibra de carbono",
+      acetateFeature: "Características del acetato",
       logo: "Logotipo",
       logoOptions: "impresión, láser, láser con aceite, estampado en caliente, metal, cristal, adhesivo en relieve",
       andCustomization: " y Personalización",
@@ -661,7 +672,7 @@ export const translations = {
       oem: "Fabricación por Cuenta de Terceros",
       odm: "Diseño y Fabricación",
       systemGenerated: "Generado por Sistema",
-      securedBy: "Asegurado por Control de Calidad Yeetian",
+      securedBy: "Asegurado por Control de Calidad Kssmi",
       startJourney: "Comienza tu Viaje",
       privateLabelTitle: "Inicia tu Negocio de Marca Privada",
       privateLabelDesc: "Personaliza cada detalle de tus gafas—material, forma, color y especificaciones tecnicas.",
@@ -701,7 +712,7 @@ export const translations = {
       returnHome: "Volver al Inicio",
       loadMore: "Cargar Más Productos",
       // Search page
-      searchTitle: "Buscar Yeetian",
+      searchTitle: "Buscar Kssmi",
       searchDesc: "Encuentra productos, artículos y más. Ingresa un término de búsqueda arriba.",
       recommendedSearches: "Búsquedas Recomendadas",
       noMatches: "Sin Resultados",
@@ -711,17 +722,18 @@ export const translations = {
       foundMatches: "Se encontraron coincidencias para",
       // Product card
       viewDetails: "Ver Detalles",
+      customizable: "Personalizable",
     },
     layout: {
       description: "Fabricación premium de gafas B2B (comercio entre empresas) desde China. Monturas personalizadas OEM/ODM para minoristas y marcas globales.",
-      schemaDescription: "Yeetian Eyewear es un fabricante profesional de gafas B2B (comercio entre empresas) especializado en monturas ópticas y gafas de sol OEM/ODM de alta calidad, directamente de fábrica en China desde 2003.",
+      schemaDescription: "Kssmi Eyewear es un fabricante profesional de gafas B2B (comercio entre empresas) especializado en monturas ópticas y gafas de sol OEM/ODM de alta calidad, directamente de fábrica en China desde 2003.",
     }
   },
   fr: {
     thankyou: {
       title: "Merci!",
       subtitle: "Votre demande a été reçue",
-      message: "Nous apprécions votre intérêt pour Yeetian. Notre équipe examinera les détails de votre projet et vous contactera dans les 24 heures.",
+      message: "Nous apprécions votre intérêt pour Kssmi. Notre équipe examinera les détails de votre projet et vous contactera dans les 24 heures.",
       inquiryId: "ID de votre demande",
       nextSteps: "Que se passe-t-il ensuite?",
       step1Title: "Examen",
@@ -775,7 +787,7 @@ export const translations = {
       collection_sustainable: "Collection Durable"
     },
     footer: {
-      brandName: "Yeetian Eyewear",
+      brandName: "Kssmi Eyewear",
       brandDesc: "Redefinir la fabrication de lunettes avec precision, durabilite et transparence depuis 2003.",
       quickLinksTitle: "Liens Rapides",
       about: "A Propos",
@@ -793,9 +805,9 @@ export const translations = {
       factoryTitle: "Notre Usine de Lunettes",
       address: "1501, Bat. 2, Baiwangda Health\nTech Park, Rue Yuanshan, District de Longgang\nShenzhen, Guangdong, Chine",
       postcode: "Code Postal",
-      email: "info@yeetian.com",
+      email: "info@kssmi.com",
       emailLabel: "Email: ",
-      copyright: "Yeetian Eyewear Tous droits reserves."
+      copyright: "Kssmi Eyewear Tous droits reserves."
     },
     cta: {
       quote: "Demander un Devis",
@@ -831,6 +843,8 @@ export const translations = {
       hinge: "Charniere",
       electroplating: "Methode d'Electroplacage",
       service: "Service",
+      carbonFiberFeature: "Caractéristiques de la fibre de carbone",
+      acetateFeature: "Caractéristiques de l'acétate",
       logo: "Logotype",
       logoOptions: "impression, laser, laser avec huile, marquage à chaud, métal, cristal, autocollant en relief",
       andCustomization: " & Personnalisation",
@@ -840,7 +854,7 @@ export const translations = {
       oem: "Fabrication sous Contrat",
       odm: "Conception et Fabrication",
       systemGenerated: "Genere par Systeme",
-      securedBy: "Securise par Controle Qualite Yeetian",
+      securedBy: "Securise par Controle Qualite Kssmi",
       startJourney: "Commencez votre Voyage",
       privateLabelTitle: "Lancez votre Marque Privee",
       privateLabelDesc: "Personnalisez chaque detail de vos lunettes—materiau, forme, couleur et specifications techniques.",
@@ -880,7 +894,7 @@ export const translations = {
       returnHome: "Retour à l'Accueil",
       loadMore: "Charger Plus de Produits",
       // Search page
-      searchTitle: "Rechercher Yeetian",
+      searchTitle: "Rechercher Kssmi",
       searchDesc: "Trouvez des produits, articles et plus. Entrez un terme de recherche ci-dessus.",
       recommendedSearches: "Recherches Recommandées",
       noMatches: "Aucun Résultat",
@@ -890,17 +904,18 @@ export const translations = {
       foundMatches: "Correspondances trouvées pour",
       // Product card
       viewDetails: "Voir les Détails",
+      customizable: "Personnalisable",
     },
     layout: {
       description: "Fabrication de lunettes B2B (professionnel) haut de gamme en Chine. Montures personnalisées OEM/ODM pour les détaillants et marques mondiales.",
-      schemaDescription: "Yeetian Eyewear est un fabricant professionnel de lunettes B2B (professionnel) spécialisé dans les montures optiques et lunettes de soleil OEM/ODM de haute qualité, en direct de l'usine en Chine depuis 2003.",
+      schemaDescription: "Kssmi Eyewear est un fabricant professionnel de lunettes B2B (professionnel) spécialisé dans les montures optiques et lunettes de soleil OEM/ODM de haute qualité, en direct de l'usine en Chine depuis 2003.",
     }
   },
   de: {
     thankyou: {
       title: "Danke!",
       subtitle: "Ihre Anfrage wurde erhalten",
-      message: "Wir schätzen Ihr Interesse an Yeetian. Unser Team wird Ihre Projektdetails prüfen und Sie innerhalb von 24 Stunden kontaktieren.",
+      message: "Wir schätzen Ihr Interesse an Kssmi. Unser Team wird Ihre Projektdetails prüfen und Sie innerhalb von 24 Stunden kontaktieren.",
       inquiryId: "Ihre Anfragen-ID",
       nextSteps: "Was passiert als Nächstes?",
       step1Title: "Prüfung",
@@ -916,7 +931,7 @@ export const translations = {
       home: "Startseite",
       products: "Produkte",
       collection: "Kollektion",
-      about: "Über Uns",
+      about: "Über",
       contact: "Kontakt",
       // Subcategories - Luxury Series
       luxury: "Luxus Personalisiert",
@@ -954,7 +969,7 @@ export const translations = {
       collection_sustainable: "Nachhaltige Kollektion"
     },
     footer: {
-      brandName: "Yeetian Eyewear",
+      brandName: "Kssmi Eyewear",
       brandDesc: "Neudefinition der Brillenherstellung mit Prazision, Nachhaltigkeit und Transparenz seit 2003.",
       quickLinksTitle: "Schnellinks",
       about: "Uber Uns",
@@ -972,9 +987,9 @@ export const translations = {
       factoryTitle: "Unsere Brillenfabrik",
       address: "1501, Gebaude 2, Baiwangda Health\nTech Park, Yuanshan Str., Bezirk Longgang\nShenzhen, Guangdong, China",
       postcode: "Postleitzahl",
-      email: "info@yeetian.com",
+      email: "info@kssmi.com",
       emailLabel: "E-Mail: ",
-      copyright: "Yeetian Eyewear Alle Rechte vorbehalten."
+      copyright: "Kssmi Eyewear Alle Rechte vorbehalten."
     },
     cta: {
       quote: "Angebot Anfordern",
@@ -1010,6 +1025,8 @@ export const translations = {
       hinge: "Scharnier",
       electroplating: "Galvanisierungsverfahren",
       service: "Service",
+      carbonFiberFeature: "Kohlefaser-Eigenschaften",
+      acetateFeature: "Acetat-Eigenschaften",
       logo: "Markenlogo",
       logoOptions: "Druck, Laser, Laser mit Öl, Heißprägung, Metall, Kristall, erhabener Aufkleber",
       andCustomization: " & Anpassung",
@@ -1019,7 +1036,7 @@ export const translations = {
       oem: "Auftragsfertigung",
       odm: "Design und Fertigung",
       systemGenerated: "Systemgeneriert",
-      securedBy: "Gesichert durch Yeetian Qualitatskontrolle",
+      securedBy: "Gesichert durch Kssmi Qualitatskontrolle",
       startJourney: "Starten Sie Ihre Reise",
       privateLabelTitle: "Starten Sie Ihr Private-Label Geschaft",
       privateLabelDesc: "Passen Sie jedes Detail Ihrer Brillen an—Material, Form, Farbe und technische Spezifikationen.",
@@ -1059,7 +1076,7 @@ export const translations = {
       returnHome: "Zurück zur Startseite",
       loadMore: "Weitere Produkte Laden",
       // Search page
-      searchTitle: "Yeetian Durchsuchen",
+      searchTitle: "Kssmi Durchsuchen",
       searchDesc: "Finden Sie Produkte, Artikel und mehr. Geben Sie oben einen Suchbegriff ein.",
       recommendedSearches: "Empfohlene Suchen",
       noMatches: "Keine Treffer",
@@ -1069,17 +1086,18 @@ export const translations = {
       foundMatches: "Treffer gefunden für",
       // Product card
       viewDetails: "Details Anzeigen",
+      customizable: "Anpassbar",
     },
     layout: {
       description: "Premium-Brillenherstellung B2B (Geschäftskunden) aus China. OEM/ODM-maßgeschneiderte Brillenfassungen für globale Einzelhändler und Marken.",
-      schemaDescription: "Yeetian Eyewear ist ein professioneller B2B-Brillenhersteller (Geschäftskunden), der sich auf hochwertige OEM/ODM-Fassungen und Sonnenbrillen spezialisiert hat, direkt ab Werk in China seit 2003.",
+      schemaDescription: "Kssmi Eyewear ist ein professioneller B2B-Brillenhersteller (Geschäftskunden), der sich auf hochwertige OEM/ODM-Fassungen und Sonnenbrillen spezialisiert hat, direkt ab Werk in China seit 2003.",
     }
   },
   pt: {
     thankyou: {
       title: "Obrigado!",
       subtitle: "Sua solicitação foi recebida",
-      message: "Agradecemos seu interesse na Yeetian. Nossa equipe revisará os detalhes do seu projeto e entrará em contato em até 24 horas.",
+      message: "Agradecemos seu interesse na Kssmi. Nossa equipe revisará os detalhes do seu projeto e entrará em contato em até 24 horas.",
       inquiryId: "ID da sua solicitação",
       nextSteps: "O que acontece depois?",
       step1Title: "Revisão",
@@ -1095,7 +1113,7 @@ export const translations = {
       home: "Início",
       products: "Produtos",
       collection: "Coleção",
-      about: "Sobre Nós",
+      about: "Sobre",
       contact: "Contato",
       // Subcategories - Luxury Series
       luxury: "Luxo Personalizado",
@@ -1133,7 +1151,7 @@ export const translations = {
       collection_sustainable: "Colecao Sustentavel"
     },
     footer: {
-      brandName: "Yeetian Eyewear",
+      brandName: "Kssmi Eyewear",
       brandDesc: "Redefinindo a fabricacao de oculos com precisao, sustentabilidade e transparencia desde 2003.",
       quickLinksTitle: "Links Rapidos",
       about: "Sobre Nos",
@@ -1151,9 +1169,9 @@ export const translations = {
       factoryTitle: "Nossa Fabrica de Oculos",
       address: "1501, Edificio 2, Baiwangda Health\nTech Park, Rua Yuanshan, Distrito de Longgang\nShenzhen, Guangdong, China",
       postcode: "CEP",
-      email: "info@yeetian.com",
+      email: "info@kssmi.com",
       emailLabel: "E-mail: ",
-      copyright: "Yeetian Eyewear Todos os direitos reservados."
+      copyright: "Kssmi Eyewear Todos os direitos reservados."
     },
     cta: {
       quote: "Solicitar Orcamento",
@@ -1189,6 +1207,8 @@ export const translations = {
       hinge: "Dobradica",
       electroplating: "Metodo de Galvanoplastia",
       service: "Servico",
+      carbonFiberFeature: "Características da fibra de carbono",
+      acetateFeature: "Características do acetato",
       logo: "Logotipo",
       logoOptions: "impressão, laser, laser com óleo, estampagem a quente, metal, cristal, adesivo em relevo",
       andCustomization: " e Personalização",
@@ -1198,7 +1218,7 @@ export const translations = {
       oem: "Fabricação por Encomenda",
       odm: "Design e Fabricação",
       systemGenerated: "Gerado pelo Sistema",
-      securedBy: "Protegido por Controle de Qualidade Yeetian",
+      securedBy: "Protegido por Controle de Qualidade Kssmi",
       startJourney: "Inicie sua Jornada",
       privateLabelTitle: "Inicie seu Negocio de Marca Propria",
       privateLabelDesc: "Personalize cada detalhe dos seus oculos—material, forma, cor e especificacoes tecnicas.",
@@ -1238,7 +1258,7 @@ export const translations = {
       returnHome: "Voltar ao Início",
       loadMore: "Carregar Mais Produtos",
       // Search page
-      searchTitle: "Pesquisar Yeetian",
+      searchTitle: "Pesquisar Kssmi",
       searchDesc: "Encontre produtos, artigos e mais. Digite um termo de pesquisa acima.",
       recommendedSearches: "Pesquisas Recomendadas",
       noMatches: "Nenhum Resultado",
@@ -1248,17 +1268,18 @@ export const translations = {
       foundMatches: "Correspondências encontradas para",
       // Product card
       viewDetails: "Ver Detalhes",
+      customizable: "Personalizável",
     },
     layout: {
       description: "Fabricação premium de óculos B2B (comércio entre empresas) da China. Molduras personalizadas OEM/ODM para varejistas e marcas globais.",
-      schemaDescription: "A Yeetian Eyewear é uma fabricante profissional de óculos B2B (comércio entre empresas) especializada em armações ópticas e óculos de sol OEM/ODM de alta qualidade, direto da fábrica na China desde 2003.",
+      schemaDescription: "A Kssmi Eyewear é uma fabricante profissional de óculos B2B (comércio entre empresas) especializada em armações ópticas e óculos de sol OEM/ODM de alta qualidade, direto da fábrica na China desde 2003.",
     }
   },
   ru: {
     thankyou: {
       title: "Спасибо!",
       subtitle: "Ваш запрос получен",
-      message: "Мы ценим ваш интерес к Yeetian. Наша команда рассмотрит детали вашего проекта и свяжется с вами в течение 24 часов.",
+      message: "Мы ценим ваш интерес к Kssmi. Наша команда рассмотрит детали вашего проекта и свяжется с вами в течение 24 часов.",
       inquiryId: "ID вашего запроса",
       nextSteps: "Что происходит дальше?",
       step1Title: "Обзор",
@@ -1312,7 +1333,7 @@ export const translations = {
       collection_sustainable: "Эко-Коллекция"
     },
     footer: {
-      brandName: "Yeetian Eyewear",
+      brandName: "Kssmi Eyewear",
       brandDesc: "Переосмысление производства очков с точностью, устойчивостью и прозрачностью с 2003 года.",
       quickLinksTitle: "Быстрые Ссылки",
       about: "О Нас",
@@ -1330,9 +1351,9 @@ export const translations = {
       factoryTitle: "Наша Фабрика Очков",
       address: "1501, Здание 2, Baiwangda Health\nTech Park, ул. Yuanshan, р-н Longgang\nШэньчжэнь, Гуандун, Китай",
       postcode: "Почтовый Индекс",
-      email: "info@yeetian.com",
+      email: "info@kssmi.com",
       emailLabel: "Email: ",
-      copyright: "Yeetian Eyewear Все права защищены."
+      copyright: "Kssmi Eyewear Все права защищены."
     },
     cta: {
       quote: "Запросить Цену",
@@ -1368,6 +1389,8 @@ export const translations = {
       hinge: "Шарнир",
       electroplating: "Метод Гальванизации",
       service: "Услуга",
+      carbonFiberFeature: "Характеристики углеродного волокна",
+      acetateFeature: "Особенности ацетата",
       logo: "Логотип",
       logoOptions: "печать, лазер, лазер с маслом, горячее тиснение, металл, кристалл, объемная наклейка",
       andCustomization: " и Кастомизация",
@@ -1377,7 +1400,7 @@ export const translations = {
       oem: "Контрактное Производство",
       odm: "Проектирование и Производство",
       systemGenerated: "Сгенерировано Системой",
-      securedBy: "Защищено Контролем Качества Yeetian",
+      securedBy: "Защищено Контролем Качества Kssmi",
       startJourney: "Начать Ваш Проект",
       privateLabelTitle: "Начните Свой Бизнес с Собственной Маркой",
       privateLabelDesc: "Полностью настройте каждую деталь очков — материал, форму, цвет и технические спецификации.",
@@ -1417,7 +1440,7 @@ export const translations = {
       returnHome: "Вернуться на Главную",
       loadMore: "Загрузить Ещё Товары",
       // Search page
-      searchTitle: "Поиск Yeetian",
+      searchTitle: "Поиск Kssmi",
       searchDesc: "Найдите товары, статьи и многое другое. Введите поисковый запрос выше.",
       recommendedSearches: "Рекомендуемые Поиски",
       noMatches: "Результатов Нет",
@@ -1427,17 +1450,18 @@ export const translations = {
       foundMatches: "Найдены совпадения для",
       // Product card
       viewDetails: "Подробнее",
+      customizable: "Настраиваемый",
     },
     layout: {
       description: "Производство очков премиум-класса Бизнес для бизнеса (B2B) из Китая. Индивидуальные оправы OEM/ODM для мировых ритейлеров и брендов.",
-      schemaDescription: "Yeetian Eyewear — профессиональный производитель очков в сфере Бизнес для бизнеса (B2B), специализирующийся на высококачественных оправах и солнцезащитных очках OEM/ODM, прямые поставки с завода в Китае с 2003 года.",
+      schemaDescription: "Kssmi Eyewear — профессиональный производитель очков в сфере Бизнес для бизнеса (B2B), специализирующийся на высококачественных оправах и солнцезащитных очках OEM/ODM, прямые поставки с завода в Китае с 2003 года.",
     }
   },
   ja: {
     thankyou: {
       title: "ありがとうございます！",
       subtitle: "お問い合わせを受け付けました",
-      message: "Yeetianにご関心をお寄せいただき、誠にありがとうございます。担当チームがプロジェクトの詳細を確認し、24時間以内にご連絡いたします。",
+      message: "Kssmiにご関心をお寄せいただき、誠にありがとうございます。担当チームがプロジェクトの詳細を確認し、24時間以内にご連絡いたします。",
       inquiryId: "お問い合わせID",
       nextSteps: "次のステップ",
       step1Title: "確認",
@@ -1453,7 +1477,7 @@ export const translations = {
       home: "ホーム",
       products: "製品",
       collection: "コレクション",
-      about: "会社概要",
+      about: "概要",
       contact: "お問い合わせ",
       // Subcategories - Luxury Series
       luxury: "高級オーダーメイド",
@@ -1491,7 +1515,7 @@ export const translations = {
       collection_sustainable: "サステナブル コレクション"
     },
     footer: {
-      brandName: "Yeetian Eyewear",
+      brandName: "Kssmi Eyewear",
       brandDesc: "2003年の創業以来、精度、持続可能性、透明性をもってアイウェア製造を再定義しています。",
       quickLinksTitle: "クイックリンク",
       about: "会社概要",
@@ -1509,9 +1533,9 @@ export const translations = {
       factoryTitle: "自社工場",
       address: "中国広東省深圳市龍崗区園山街道\n白望達健康テクノロジーパーク 2号棟1501室",
       postcode: "郵便番号",
-      email: "info@yeetian.com",
+      email: "info@kssmi.com",
       emailLabel: "Eメール: ",
-      copyright: "Yeetian Eyewear 無断転載を禁じます。"
+      copyright: "Kssmi Eyewear 無断転載を禁じます。"
     },
     cta: {
       quote: "お見積り",
@@ -1547,6 +1571,8 @@ export const translations = {
       hinge: "ヒンジ",
       electroplating: "メッキ方法",
       service: "サービス",
+      carbonFiberFeature: "炭素繊維の特徴",
+      acetateFeature: "アセテートの特徴",
       logo: "ロゴ",
       logoOptions: "プリント, レーザー, オイル入りレーザー, ホットスタンピング, メタル, クリスタル, 立体ステッカー",
       andCustomization: " & カスタマイズ",
@@ -1556,7 +1582,7 @@ export const translations = {
       oem: "受託製造",
       odm: "設計製造",
       systemGenerated: "システム生成",
-      securedBy: "Yeetian 品質管理による保護",
+      securedBy: "Kssmi 品質管理による保護",
       startJourney: "プロジェクトを開始",
       privateLabelTitle: "プライベートブランド事業を開始する",
       privateLabelDesc: "素材、形状、カラー、技術仕様など、アイウェアのあらゆるディテールを完全にカスタマイズできます。",
@@ -1596,7 +1622,7 @@ export const translations = {
       returnHome: "ホームに戻る",
       loadMore: "もっと見る",
       // Search page
-      searchTitle: "Yeetianを検索",
+      searchTitle: "Kssmiを検索",
       searchDesc: "製品、記事などを見つけましょう。上に検索語を入力してください。",
       recommendedSearches: "おすすめ検索",
       noMatches: "結果が見つかりません",
@@ -1606,17 +1632,18 @@ export const translations = {
       foundMatches: "の検索結果",
       // Product card
       viewDetails: "詳細を見る",
+      customizable: "カスタマイズ可能",
     },
     layout: {
       description: "中国のプレミアム企業間 (B2B) アイウェア製造。グローバルな小売業者やブランド向けのOEM/ODMカスタム眼鏡フレーム。",
-      schemaDescription: "Yeetian Eyewearは、高品質なOEM/ODM光学フレームとサングラスを専門とするプロフェッショナルな企業間 (B2B) アイウェアメーカーであり、2003年以来中国から工場直送で提供しています。",
+      schemaDescription: "Kssmi Eyewearは、高品質なOEM/ODM光学フレームとサングラスを専門とするプロフェッショナルな企業間 (B2B) アイウェアメーカーであり、2003年以来中国から工場直送で提供しています。",
     }
   },
   tr: {
     thankyou: {
       title: "Teşekkürler!",
       subtitle: "Talebiniz alındı",
-      message: "Yeetian'e gösterdiğiniz ilgi için teşekkür ederiz. Ekibimiz proje detaylarınızı inceleyecek ve 24 saat içinde sizinle iletişime geçecektir.",
+      message: "Kssmi'e gösterdiğiniz ilgi için teşekkür ederiz. Ekibimiz proje detaylarınızı inceleyecek ve 24 saat içinde sizinle iletişime geçecektir.",
       inquiryId: "Talep ID'niz",
       nextSteps: "Sırada ne var?",
       step1Title: "İnceleme",
@@ -1670,7 +1697,7 @@ export const translations = {
       collection_sustainable: "Sürdürülebilir Koleksiyon"
     },
     footer: {
-      brandName: "Yeetian Eyewear",
+      brandName: "Kssmi Eyewear",
       brandDesc: "2003 yılından beri hassasiyet, sürdürülebilirlik ve şeffaflık ile gözlük üretimini yeniden tanımlıyoruz.",
       quickLinksTitle: "Hızlı Bağlantılar",
       about: "Hakkımızda",
@@ -1688,9 +1715,9 @@ export const translations = {
       factoryTitle: "Gözlük Fabrikamız",
       address: "1501, Bina 2, Baiwangda Sağlık\nTeknoloji Parkı, Yuanshan Cad., Longgang Bölgesi\nShenzhen, Guangdong, Çin",
       postcode: "Posta Kodu",
-      email: "info@yeetian.com",
+      email: "info@kssmi.com",
       emailLabel: "E-posta: ",
-      copyright: "Yeetian Eyewear Tüm hakları saklıdır."
+      copyright: "Kssmi Eyewear Tüm hakları saklıdır."
     },
     cta: {
       quote: "Fiyat İsteyin",
@@ -1726,6 +1753,8 @@ export const translations = {
       hinge: "Menteşe",
       electroplating: "Elektrokaplama Yöntemi",
       service: "Hizmet",
+      carbonFiberFeature: "Karbon Fiber Özellikleri",
+      acetateFeature: "Asetat Özelliği",
       logo: "Marka Logosu",
       logoOptions: "baskı, lazer, yağlı lazer, sıcak damgalama, metal, kristal, kabartma çıkartma",
       andCustomization: " ve Özelleştirme",
@@ -1735,7 +1764,7 @@ export const translations = {
       oem: "Sözleşmeli Üretim",
       odm: "Tasarım ve Üretim",
       systemGenerated: "Sistem Tarafından Oluşturuldu",
-      securedBy: "Yeetian Kalite Kontrol ile Güvende",
+      securedBy: "Kssmi Kalite Kontrol ile Güvende",
       startJourney: "Seyahatinize Başlayın",
       privateLabelTitle: "Özel Marka İşletmenize Başlayın",
       privateLabelDesc: "Gözlüklerinizin her detayını tamamen özelleştirin—malzeme, şekil, renk ve teknik spesifikasyonlar.",
@@ -1775,7 +1804,7 @@ export const translations = {
       returnHome: "Ana Sayfaya Dön",
       loadMore: "Daha Fazla Ürün Yükle",
       // Search page
-      searchTitle: "Yeetian'da Ara",
+      searchTitle: "Kssmi'da Ara",
       searchDesc: "Ürünler, makaleler ve daha fazlasını bulun. Yukarıya bir arama terimi girin.",
       recommendedSearches: "Önerilen Aramalar",
       noMatches: "Sonuç Bulunamadı",
@@ -1785,17 +1814,18 @@ export const translations = {
       foundMatches: "için eşleşmeler bulundu",
       // Product card
       viewDetails: "Detayları Gör",
+      customizable: "Kişiselleştirilebilir",
     },
     layout: {
       description: "Çin'den birinci sınıf B2B (kurumsal) gözlük üretimi. Küresel perakendeciler ve markalar için OEM/ODM özel gözlük çerçeveleri.",
-      schemaDescription: "Yeetian Eyewear, 2003 yılından bu yana Çin'den fabrika çıkışlı, yüksek kaliteli OEM/ODM optik çerçeveler ve güneş gözlükleri konusunda uzmanlaşmış profesyonel bir B2B (kurumsal) gözlük üreticisidir.",
+      schemaDescription: "Kssmi Eyewear, 2003 yılından bu yana Çin'den fabrika çıkışlı, yüksek kaliteli OEM/ODM optik çerçeveler ve güneş gözlükleri konusunda uzmanlaşmış profesyonel bir B2B (kurumsal) gözlük üreticisidir.",
     }
   },
   ko: {
     thankyou: {
       title: "감사합니다!",
       subtitle: "문의가 접수되었습니다",
-      message: "Yeetian에 관심을 가져주셔서 감사합니다. 양사 팀이 귀하의 프로젝트 세부 정보를 검토하고 24시간 이내에 연락드릴 것입니다.",
+      message: "Kssmi에 관심을 가져주셔서 감사합니다. 양사 팀이 귀하의 프로젝트 세부 정보를 검토하고 24시간 이내에 연락드릴 것입니다.",
       inquiryId: "문의 ID",
       nextSteps: "다음 단계 제안",
       step1Title: "검토",
@@ -1811,7 +1841,7 @@ export const translations = {
       home: "홈",
       products: "제품",
       collection: "컬렉션",
-      about: "회사 소개",
+      about: "소개",
       contact: "문의하기",
       luxury: "럭셔리 맞춤형",
       luxury_sunglasses: "럭셔리 선글라스",
@@ -1843,7 +1873,7 @@ export const translations = {
     },
     footer: {
       tagline: "아이웨어 및 선글라스",
-      brandName: "Yeetian Technology Co., Ltd.",
+      brandName: "Kssmi Technology Co., Ltd.",
       brandDesc: "2003년부터 정밀성, 지속 가능성 및 투명성으로 안경 제조를 재정의하고 있습니다.",
       quickLinksTitle: "빠른 링크",
       about: "회사 소개",
@@ -1861,7 +1891,7 @@ export const translations = {
       factoryTitle: "우리 공장",
       address: "중국 광둥성 선전시 룽강구\n위안산 거리 바이왕다 헬스 테크 파크\n2동 1501호",
       postcode: "우편번호",
-      email: "info@yeetian.com",
+      email: "info@kssmi.com",
       emailLabel: "이메일: ",
       rights: "모든 권리 보유."
     },
@@ -1899,6 +1929,8 @@ export const translations = {
       hinge: "힌지",
       electroplating: "전기도금 방법",
       service: "서비스",
+      carbonFiberFeature: "탄소 섬유의 특징",
+      acetateFeature: "아세테이트 특징",
       logo: "로고",
       logoOptions: "인쇄, 레이저, 오일을 사용한 레이저, 핫스탬핑, 금속, 크리스탈, 입체 스티커",
       andCustomization: " 및 맞춤화",
@@ -1908,7 +1940,7 @@ export const translations = {
       oem: "위탁생산",
       odm: "디자인 제조",
       systemGenerated: "시스템 생성",
-      securedBy: "Yeetian 품질 관리로 보호됨",
+      securedBy: "Kssmi 품질 관리로 보호됨",
       startJourney: "여정을 시작하세요",
       privateLabelTitle: "자체 상표 비즈니스를 시작하세요",
       privateLabelDesc: "소재, 모양, 색상 및 기술 사양 등 안경의 모든 세부 사항을 완전히 맞춤화하세요.",
@@ -1948,7 +1980,7 @@ export const translations = {
       returnHome: "홈으로 돌아가기",
       loadMore: "더 많은 제품 불러오기",
       // Search page
-      searchTitle: "Yeetian 검색",
+      searchTitle: "Kssmi 검색",
       searchDesc: "제품, 기사 등을 찾아보세요. 위에 검색어를 입력하세요.",
       recommendedSearches: "추천 검색",
       noMatches: "결과 없음",
@@ -1958,17 +1990,18 @@ export const translations = {
       foundMatches: "에 대한 검색 결과",
       // Product card
       viewDetails: "상세 보기",
+      customizable: "맞춤 가능",
     },
     layout: {
       description: "중국의 프리미엄 B2B 안경 제조. 글로벌 소매업체 및 브랜드를 위한 OEM/ODM 맞춤형 안경테.",
-      schemaDescription: "Yeetian Eyewear는 2003년부터 중국 공장 직영으로 고품질 OEM/ODM 광학 프레임 및 선글라스를 전문으로 하는 전문 B2B 안경 제조업체입니다.",
+      schemaDescription: "Kssmi Eyewear는 2003년부터 중국 공장 직영으로 고품질 OEM/ODM 광학 프레임 및 선글라스를 전문으로 하는 전문 B2B 안경 제조업체입니다.",
     }
   },
   zh: {
     thankyou: {
       title: "谢谢！",
       subtitle: "您的询价已收到",
-      message: "感谢您对 Yeetian 的关注。我们的团队将评估您的项目细节，并在 24 小时内与您联系。",
+      message: "感谢您对 Kssmi 的关注。我们的团队将评估您的项目细节，并在 24 小时内与您联系。",
       inquiryId: "您的询价编号",
       nextSteps: "下一步是什么？",
       step1Title: "评估",
@@ -1984,7 +2017,7 @@ export const translations = {
       home: "首页",
       products: "产品",
       collection: "系列",
-      about: "关于我们",
+      about: "关于",
       contact: "联系我们",
       luxury: "奢华定制",
       luxury_sunglasses: "奢华太阳镜",
@@ -2034,7 +2067,7 @@ export const translations = {
       factoryTitle: "我们的工厂",
       address: "中国广东省深圳市龙岗区\n园山街道百旺达大健康产业园\n2栋1501室",
       postcode: "邮政编码",
-      email: "info@yeetian.com",
+      email: "info@kssmi.com",
       emailLabel: "邮箱：",
       rights: "版权所有。"
     },
@@ -2072,6 +2105,8 @@ export const translations = {
       hinge: "铰链",
       electroplating: "电镀工艺",
       service: "服务",
+      carbonFiberFeature: "碳纤维特性",
+      acetateFeature: "板材特性",
       logo: "品牌标志",
       logoOptions: "丝印, 激光, 激光加滴胶, 烫金, 金属贴字, 水晶钻, 滴胶立体贴",
       andCustomization: "及定制",
@@ -2081,7 +2116,7 @@ export const translations = {
       oem: "代工生产",
       odm: "设计制造",
       systemGenerated: "系统生成",
-      securedBy: "受 Yeetian 质量控制保障",
+      securedBy: "受 Kssmi 质量控制保障",
       startJourney: "开启您的旅程",
       privateLabelTitle: "开启您的自有品牌百万美金业务",
       privateLabelDesc: "完全定制您眼镜的每一个细节——材质、形状、颜色和技术规格。与真正了解奢华品味的制造商合作。",
@@ -2131,17 +2166,18 @@ export const translations = {
       foundMatches: "找到匹配项",
       // Product card
       viewDetails: "查看详情",
+      customizable: "可定制",
     },
     layout: {
       description: "来自中国的高端B2B眼镜制造。为全球零售商和品牌提供OEM/ODM定制眼镜框。",
-      schemaDescription: "Yeetian Eyewear (叶田眼镜) 是一家专业的B2B眼镜制造商，自2003年起，专注从中国工厂直供高品质的OEM/ODM光学镜架和太阳镜。",
+      schemaDescription: "Kssmi Eyewear (叶田眼镜) 是一家专业的B2B眼镜制造商，自2003年起，专注从中国工厂直供高品质的OEM/ODM光学镜架和太阳镜。",
     }
   },
   hi: {
     thankyou: {
       title: "धन्यवाद!",
       subtitle: "आपकी पूछताछ प्राप्त हो गई है",
-      message: "Yeetian में आपकी रुचि के लिए धन्यवाद। हमारी टीम आपके प्रोजेक्ट विवरण की समीक्षा करेगी और 24 घंटों के भीतर आपसे संपर्क करेगी।",
+      message: "Kssmi में आपकी रुचि के लिए धन्यवाद। हमारी टीम आपके प्रोजेक्ट विवरण की समीक्षा करेगी और 24 घंटों के भीतर आपसे संपर्क करेगी।",
       inquiryId: "आपकी पूछताछ आईडी",
       nextSteps: "आगे क्या होगा?",
       step1Title: "समीक्षा",
@@ -2157,7 +2193,7 @@ export const translations = {
       home: "मुख पृष्ठ",
       products: "उत्पाद",
       collection: "संग्रह",
-      about: "हमारे बारे में",
+      about: "परिचय",
       contact: "हमसे संपर्क करें",
       luxury: "लक्ज़री कस्टमाइज़्ड",
       luxury_sunglasses: "लक्ज़री धूप का चश्मा",
@@ -2207,7 +2243,7 @@ export const translations = {
       factoryTitle: "हमारी फैक्ट्री",
       address: "1501, बिल्डिंग 2, बैवांगडा हेल्थ\nटेक पार्क, युआनशान सेंट, लोंगगांग जिला\nशेन्ज़ेन, ग्वांगडोंग, चीन",
       postcode: "पिन कोड",
-      email: "info@yeetian.com",
+      email: "info@kssmi.com",
       emailLabel: "ईमेल: ",
       rights: "सर्वाधिकार सुरक्षित।"
     },
@@ -2245,6 +2281,8 @@ export const translations = {
       hinge: "हिंज",
       electroplating: "इलेक्ट्रोप्लेटिंग विधि",
       service: "सेवा",
+      carbonFiberFeature: "कार्बन फाइबर विशेषताएं",
+      acetateFeature: "एसीटेट की विशेषता",
       logo: "ब्रांड लोगो",
       logoOptions: "प्रिंट, लेजर, तेल के साथ लेजर, हॉट स्टैम्पिंग, धातु, क्रिस्टल, अप-स्टिकर",
       andCustomization: " और अनुकूलन",
@@ -2254,7 +2292,7 @@ export const translations = {
       oem: "अनुबंध निर्माण",
       odm: "डिजाइन और निर्माण",
       systemGenerated: "सिस्टम जनरेटेड",
-      securedBy: "Yeetian गुणवत्ता नियंत्रण द्वारा सुरक्षित",
+      securedBy: "Kssmi गुणवत्ता नियंत्रण द्वारा सुरक्षित",
       startJourney: "अपनी यात्रा शुरू करें",
       privateLabelTitle: "अपना निजी-लेबल मिलियन-डॉलर व्यवसाय शुरू करें",
       privateLabelDesc: "अपने आईवियर के हर विवरण को पूरी तरह से अनुकूलित करें - सामग्री, आकार, रंग और तकनीकी चश्मा।",
@@ -2294,7 +2332,7 @@ export const translations = {
       returnHome: "होम पेज पर वापस जाएं",
       loadMore: "और उत्पाद लोड करें",
       // Search page
-      searchTitle: "Yeetian खोजें",
+      searchTitle: "Kssmi खोजें",
       searchDesc: "उत्पाद, लेख और बहुत कुछ खोजें। ऊपर एक खोज शब्द दर्ज करें।",
       recommendedSearches: "अनुशंसित खोजें",
       noMatches: "कोई परिणाम नहीं",
@@ -2304,17 +2342,18 @@ export const translations = {
       foundMatches: "के लिए मिली मैच",
       // Product card
       viewDetails: "विवरण देखें",
+      customizable: "कस्टमाइज़ेबल",
     },
     layout: {
       description: "चीन से प्रीमियम बी2बी आईवियर विनिर्माण। वैश्विक खुदरा विक्रेताओं और ब्रांडों के लिए ओईएम/ओडीएम कस्टम आईवियर फ्रेम।",
-      schemaDescription: "Yeetian Eyewear एक पेशेवर B2B आईवियर निर्माता है जो 2003 से चीन से फैक्ट्री-डायरेक्ट उच्च गुणवत्ता वाले OEM/ODM ऑप्टिकल फ्रेम और धूप के चश्मे में विशेषज्ञता रखता है।",
+      schemaDescription: "Kssmi Eyewear एक पेशेवर B2B आईवियर निर्माता है जो 2003 से चीन से फैक्ट्री-डायरेक्ट उच्च गुणवत्ता वाले OEM/ODM ऑप्टिकल फ्रेम और धूप के चश्मे में विशेषज्ञता रखता है।",
     }
   },
   vi: {
     thankyou: {
       title: "Cảm ơn bạn!",
       subtitle: "Yêu cầu của bạn đã được nhận",
-      message: "Chúng tôi đánh giá cao sự quan tâm của bạn đối với Yeetian. Đội ngũ của chúng tôi sẽ xem xét chi tiết dự án của bạn và phản hồi trong vòng 24 giờ.",
+      message: "Chúng tôi đánh giá cao sự quan tâm của bạn đối với Kssmi. Đội ngũ của chúng tôi sẽ xem xét chi tiết dự án của bạn và phản hồi trong vòng 24 giờ.",
       inquiryId: "ID Yêu cầu của bạn",
       nextSteps: "Điều gì xảy ra tiếp theo?",
       step1Title: "Đánh giá",
@@ -2330,7 +2369,7 @@ export const translations = {
       home: "Trang chủ",
       products: "Sản phẩm",
       collection: "Bộ sưu tập",
-      about: "Về chúng tôi",
+      about: "Giới thiệu",
       contact: "Liên hệ",
       luxury: "Sang trọng Tùy chỉnh",
       luxury_sunglasses: "Kính mát Sang trọng",
@@ -2362,7 +2401,7 @@ export const translations = {
     },
     footer: {
       tagline: "Kính Quang Học & Kính Mát",
-      brandName: "Công ty TNHH Công nghệ Yeetian",
+      brandName: "Công ty TNHH Công nghệ Kssmi",
       brandDesc: "Định nghĩa lại sản xuất kính mắt với độ chính xác, tính bền vững và minh bạch kể từ năm 2003.",
       quickLinksTitle: "Liên kết Nhanh",
       about: "Về chúng tôi",
@@ -2380,7 +2419,7 @@ export const translations = {
       factoryTitle: "Nhà máy của chúng tôi",
       address: "1501, Tòa 2, Công viên Công nghệ Y tế Baiwangda, Phố Yuanshan, Quận Longgang, Thâm Quyến, Quảng Đông, Trung Quốc",
       postcode: "Mã bưu chính",
-      email: "info@yeetian.com",
+      email: "info@kssmi.com",
       emailLabel: "Email: ",
       rights: "Đã đăng ký Bản quyền."
     },
@@ -2418,6 +2457,8 @@ export const translations = {
       hinge: "Bản lề",
       electroplating: "Phương pháp Mạ điện",
       service: "Dịch vụ",
+      carbonFiberFeature: "Đặc điểm sợi carbon",
+      acetateFeature: "Đặc tính Acetate",
       logo: "Logo",
       logoOptions: "in, khắc laser, khắc laser đổ dầu, ép kim, dán kim loại, đính đá pha lê, decal nổi",
       andCustomization: " & Tùy chỉnh",
@@ -2427,7 +2468,7 @@ export const translations = {
       oem: "Gia công",
       odm: "Thiết kế & SX",
       systemGenerated: "Hệ thống Tạo",
-      securedBy: "Được bảo mật bởi Kiểm soát Chất lượng Yeetian",
+      securedBy: "Được bảo mật bởi Kiểm soát Chất lượng Kssmi",
       startJourney: "Bắt đầu Hành trình của bạn",
       privateLabelTitle: "Bắt đầu doanh nghiệp thương hiệu tỷ đô của bạn",
       privateLabelDesc: "Tùy chỉnh hoàn toàn mọi chi tiết của kính mắt của bạn - chất liệu, hình dáng, màu sắc và thông số kỹ thuật.",
@@ -2464,7 +2505,7 @@ export const translations = {
       returnHome: "Trở về Trang chủ",
       loadMore: "Tải Thêm Sản phẩm",
       // Search page
-      searchTitle: "Tìm Kiếm Yeetian",
+      searchTitle: "Tìm Kiếm Kssmi",
       searchDesc: "Tìm sản phẩm, bài viết và hơn thế nữa. Nhập từ khóa tìm kiếm ở trên.",
       recommendedSearches: "Tìm Kiếm Đề Xuất",
       noMatches: "Không Có Kết Quả",
@@ -2474,17 +2515,18 @@ export const translations = {
       foundMatches: "Tìm thấy kết quả cho",
       // Product card
       viewDetails: "Xem Chi Tiết",
+      customizable: "Có thể tùy chỉnh",
     },
     layout: {
       description: "Sản xuất kính mắt B2B cao cấp đến từ Trung Quốc. OEM/ODM gọng kính tùy chỉnh cho các nhà bán lẻ và thương hiệu toàn cầu.",
-      schemaDescription: "Yeetian Eyewear là một nhà sản xuất kính B2B chuyên nghiệp chuyên nghiệp về gọng kính và kính râm chất lượng cao của OEM / ODM, được gửi từ các nhà máy Trung Quốc bắt đầu từ năm 2003.",
+      schemaDescription: "Kssmi Eyewear là một nhà sản xuất kính B2B chuyên nghiệp chuyên nghiệp về gọng kính và kính râm chất lượng cao của OEM / ODM, được gửi từ các nhà máy Trung Quốc bắt đầu từ năm 2003.",
     }
   },
   jv: {
     thankyou: {
       title: "Matur Nuwun!",
       subtitle: "Penyelakon Sampeyan Uwis Kita Tampa",
-      message: "Matur nuwun dhumateng pitakon sampeyan ing Yeetian Eyewear. Tim kami bakal mriksa detail proyek sampeyan lan mbaleni wektu 24 jam.",
+      message: "Matur nuwun dhumateng pitakon sampeyan ing Kssmi Eyewear. Tim kami bakal mriksa detail proyek sampeyan lan mbaleni wektu 24 jam.",
       inquiryId: "ID Panjaluk Sampeyan",
       nextSteps: "Langkah-langkah Lanjut?",
       step1Title: "Akan Disemak",
@@ -2500,7 +2542,7 @@ export const translations = {
       home: "Omah",
       products: "Produk",
       collection: "Koleksi",
-      about: "Perusahaan",
+      about: "Tentang",
       contact: "Kontak",
       luxury: "Klasik Mewah",
       luxury_sunglasses: "Kacamata Sun Kelas",
@@ -2532,7 +2574,7 @@ export const translations = {
     },
     footer: {
       tagline: "Kacamata Optik & Sun Eyewear",
-      brandName: "Perusahaan Yeetian Technology Co., Ltd.",
+      brandName: "Perusahaan Kssmi Technology Co., Ltd.",
       brandDesc: "Pabrikan Kacamata kang njamin kualitas, komitmen, lan stabilitas jangka padha wiwit taun 2003.",
       quickLinksTitle: "Tautan",
       about: "Babagan Kita",
@@ -2550,7 +2592,7 @@ export const translations = {
       factoryTitle: "Pabrik Kita",
       address: "1501, Jl Kesehatan Baiwangda \nTaman Teknologi, Jl. Yuanshan, Distrik Longgang\n Shenzen, Guangdong, China",
       postcode: "Kode Pos",
-      email: "info@yeetian.com",
+      email: "info@kssmi.com",
       emailLabel: "Email:",
       rights: "Hak Cipta Dilindhungi."
     },
@@ -2588,6 +2630,8 @@ export const translations = {
       hinge: "Engsel",
       electroplating: "Sisi Lapisan Warna",
       service: "Bantuan Produksi",
+      carbonFiberFeature: "Fitur Serat Karbon",
+      acetateFeature: "Fitur Asetat",
       logo: "Logo",
       logoOptions: "cetak, laser, laser karo minyak, stiker ngecap panas, stiker kristal, potongan metalik",
       andCustomization: " & Desain Kustomisasi",
@@ -2597,7 +2641,7 @@ export const translations = {
       oem: "Produksi Kontrak",
       odm: "Desain lan Produksi",
       systemGenerated: "Sistem Terbit",
-      securedBy: "Wis Aman Dikontrol Kualitas Yeetian",
+      securedBy: "Wis Aman Dikontrol Kualitas Kssmi",
       startJourney: "Daftar Lan Ngeserake Rencanamu",
       privateLabelTitle: "Daftar Lan Ngeserake Pabrikan Mewah Babagan Kacamata",
       privateLabelDesc: "Atur kabeh jinis-materiale, wangun, lan saran teknologi kaca sampeyan dhewe.",
@@ -2634,7 +2678,7 @@ export const translations = {
       returnHome: "Balik menyang Kaca Utama",
       loadMore: "Muat Produk Liyane",
       // Search page
-      searchTitle: "Goleki Yeetian",
+      searchTitle: "Goleki Kssmi",
       searchDesc: "Temokake produk, artikel lan liya-liyane. Lebokake tembung panggolèkan ing dhuwur.",
       recommendedSearches: "Panggolèkan Disaranake",
       noMatches: "Ora Ana Asil",
@@ -2644,17 +2688,18 @@ export const translations = {
       foundMatches: "Temokake cocog kanggo",
       // Product card
       viewDetails: "Deleng Rincian",
+      customizable: "Bisa Dicocokake",
     },
     layout: {
       description: "Produsen Pembuatan Kaca Mata Premium Sangking Cina kanggi Reseller ing Global.",
-      schemaDescription: "Yeetian Kacamata Pabrikan Produsen khusus sing ngirim Frame Pabrikan Optical Manufaktur wiwit saka taun 2003.",
+      schemaDescription: "Kssmi Kacamata Pabrikan Produsen khusus sing ngirim Frame Pabrikan Optical Manufaktur wiwit saka taun 2003.",
     }
   },
   ms: {
     thankyou: {
       title: "Terima Kasih!",
       subtitle: "Pertanyaan anda telah diterima",
-      message: "Kami menghargai minat anda terhadap Yeetian. Pasukan kami akan menyemak butiran projek anda dan menghubungi anda dalam masa 24 jam.",
+      message: "Kami menghargai minat anda terhadap Kssmi. Pasukan kami akan menyemak butiran projek anda dan menghubungi anda dalam masa 24 jam.",
       inquiryId: "ID Pertanyaan Anda",
       nextSteps: "Apa yang berlaku seterusnya?",
       step1Title: "Semakan",
@@ -2670,7 +2715,7 @@ export const translations = {
       home: "Laman Utama",
       products: "Produk",
       collection: "Koleksi",
-      about: "Mengenai Kami",
+      about: "Tentang",
       contact: "Hubungi Kami",
       luxury: "Tersuai Mewah",
       luxury_sunglasses: "Cermin Mata Hitam Mewah",
@@ -2702,7 +2747,7 @@ export const translations = {
     },
     footer: {
       tagline: "Cermin Mata Optik & Cermin Mata Hitam",
-      brandName: "Yeetian Technology Co., Ltd.",
+      brandName: "Kssmi Technology Co., Ltd.",
       brandDesc: "Mendefinisikan semula pembuatan cermin mata dengan ketepatan, kemampanan, dan ketelusan sejak 2003.",
       quickLinksTitle: "Pautan Pantas",
       about: "Mengenai Kami",
@@ -2720,7 +2765,7 @@ export const translations = {
       factoryTitle: "Kilang Kami",
       address: "1501, Bangunan 2, Taman Teknologi\nKesihatan Baiwangda, Jalan Yuanshan, Daerah Longgang\nShenzhen, Guangdong, China",
       postcode: "Poskod",
-      email: "info@yeetian.com",
+      email: "info@kssmi.com",
       emailLabel: "E-mel: ",
       rights: "Hak cipta terpelihara."
     },
@@ -2758,6 +2803,8 @@ export const translations = {
       hinge: "Engsel",
       electroplating: "Kaedah Penyaduran Elektrik",
       service: "Perkhidmatan",
+      carbonFiberFeature: "Ciri-ciri Gentian Karbon",
+      acetateFeature: "Ciri-ciri Asetat",
       logo: "Logo",
       logoOptions: "cetakan, laser, laser dengan minyak, cop panas, logam, kristal, pelekat timbul",
       andCustomization: " & Penyesuaian",
@@ -2767,7 +2814,7 @@ export const translations = {
       oem: "Pengeluaran Kontrak",
       odm: "Reka Bentuk dan Pengeluaran",
       systemGenerated: "Dijanakan Sistem",
-      securedBy: "Dilindungi oleh Kawalan Kualiti Yeetian",
+      securedBy: "Dilindungi oleh Kawalan Kualiti Kssmi",
       startJourney: "Mulakan Perjalanan Anda",
       privateLabelTitle: "Mulakan Perniagaan Label Peribadi Jutaan Dolar Anda",
       privateLabelDesc: "Sesuaikan sepenuhnya setiap perincian cermin mata anda—bahan, bentuk, warna dan spesifikasi teknikal.",
@@ -2807,7 +2854,7 @@ export const translations = {
       returnHome: "Kembali ke Laman Utama",
       loadMore: "Muat Lebih Banyak Produk",
       // Search page
-      searchTitle: "Cari Yeetian",
+      searchTitle: "Cari Kssmi",
       searchDesc: "Cari produk, artikel dan banyak lagi. Masukkan istilah carian di atas.",
       recommendedSearches: "Carian Disyorkan",
       noMatches: "Tiada Hasil",
@@ -2817,17 +2864,18 @@ export const translations = {
       foundMatches: "Padanan dijumpai untuk",
       // Product card
       viewDetails: "Lihat Butiran",
+      customizable: "Boleh Suai",
     },
     layout: {
       description: "Pembuatan cermin mata B2B premium dari China. Bingkai cermin mata tersuai OEM/ODM untuk peruncit dan jenama global.",
-      schemaDescription: "Yeetian Eyewear ialah pengeluar cermin mata B2B profesional yang pakar dalam cermin mata hitam dan bingkai optik OEM/ODM berkualiti tinggi, terus dari kilang dari China sejak 2003.",
+      schemaDescription: "Kssmi Eyewear ialah pengeluar cermin mata B2B profesional yang pakar dalam cermin mata hitam dan bingkai optik OEM/ODM berkualiti tinggi, terus dari kilang dari China sejak 2003.",
     }
   },
   tg: {
     thankyou: {
       title: "Ташаккур!",
       subtitle: "Дархости шумо қабул шуд",
-      message: "Мо ба таваҷҷӯҳи шумо ба Yeetian миннатдорем. Гурӯҳи мо тафсилоти лоиҳаи шуморо дида мебарояд ва дар давоми 24 соат бо шумо тамос хоҳад гирифт.",
+      message: "Мо ба таваҷҷӯҳи шумо ба Kssmi миннатдорем. Гурӯҳи мо тафсилоти лоиҳаи шуморо дида мебарояд ва дар давоми 24 соат бо шумо тамос хоҳад гирифт.",
       inquiryId: "ID-и Дархости Шумо",
       nextSteps: "Баъд чӣ мешавад?",
       step1Title: "Баррасӣ",
@@ -2875,7 +2923,7 @@ export const translations = {
     },
     footer: {
       tagline: "Айнакҳои Оптикӣ ва Офтобӣ",
-      brandName: "Yeetian Technology Co., Ltd.",
+      brandName: "Kssmi Technology Co., Ltd.",
       brandDesc: "Муайянкунии дубораи истеҳсоли айнак бо дақиқӣ, устуворӣ ва шаффофият аз соли 2003.",
       quickLinksTitle: "Истинодҳои Зуд",
       about: "Дар бораи мо",
@@ -2893,7 +2941,7 @@ export const translations = {
       factoryTitle: "Корхонаи Мо",
       address: "1501, Бинои 2, Парки Технологии Тиббии Baiwangda,\nКӯчаи Yuanshan, Ноҳияи Longgang,\nShenzhen, Guangdong, Чин",
       postcode: "Индекси почта",
-      email: "info@yeetian.com",
+      email: "info@kssmi.com",
       emailLabel: "Почтаи электронӣ: ",
       rights: "Ҳамаи ҳуқуқҳо маҳфузанд."
     },
@@ -2931,6 +2979,8 @@ export const translations = {
       hinge: "Ҳалқа",
       electroplating: "Усули Сарпӯши Электрикӣ",
       service: "Хизматрасонӣ",
+      carbonFiberFeature: "Хусусиятҳои нахи карбон",
+      acetateFeature: "Хусусияти атсетат",
       logo: "Логотип",
       logoOptions: "чоп, лазер, лазер бо равған, штампи гарм, металл, кристалл, стикери барҷаста",
       andCustomization: " ва Фармоишӣ",
@@ -2940,7 +2990,7 @@ export const translations = {
       oem: "Истехсолоти Шартномавӣ",
       odm: "Тарроҳӣ ва Истехсолот",
       systemGenerated: "Аз Ҷониби Система Тавлид Шудааст",
-      securedBy: "Бо Назорати Сифати Yeetian Таъмин Карда Шудааст",
+      securedBy: "Бо Назорати Сифати Kssmi Таъмин Карда Шудааст",
       startJourney: "Сафари Худро Оғоз Кунед",
       privateLabelTitle: "Бизнеси Бренди Хусусии Миллион-Долларии Худро Оғоз Кунед",
       privateLabelDesc: "Ҳар як тафсилоти айнакатонро — мавод, шакл, ранг ва мушаххасоти техникиро комилан фармоишӣ кунед.",
@@ -2980,7 +3030,7 @@ export const translations = {
       returnHome: "Ба Саҳифаи Асосӣ Бозгашт",
       loadMore: "Маҳсулоти Бештар Бор Кунед",
       // Search page
-      searchTitle: "Ҷустуҷӯи Yeetian",
+      searchTitle: "Ҷустуҷӯи Kssmi",
       searchDesc: "Маҳсулот, мақолаҳо ва бештарро ёбед. Дар боло истилоҳи ҷустуҷӯро ворид кунед.",
       recommendedSearches: "Ҷустуҷӯҳои Тавсияшуда",
       noMatches: "Натиҷа Ёфт Нашуд",
@@ -2990,10 +3040,11 @@ export const translations = {
       foundMatches: "Мувофиқат барои ёфт шуд",
       // Product card
       viewDetails: "Маълумоти Бештар",
+      customizable: "Фармоишшаванда",
     },
     layout: {
       description: "Истеҳсоли айнакҳои премиум B2B аз Чин. Чаҳорчӯбаҳои айнаки фармоишии OEM/ODM барои фурӯшандагон ва брендҳои ҷаҳонӣ.",
-      schemaDescription: "Yeetian Eyewear як истеҳсолкунандаи касбии айнакҳои B2B мебошад, ки ба чаҳорчӯбаҳои оптикии баландсифати OEM/ODM ва айнакҳои офтобӣ тахассус дорад ва аз соли 2003 мустақиман аз корхона дар Чин фаъолият мекунад.",
+      schemaDescription: "Kssmi Eyewear як истеҳсолкунандаи касбии айнакҳои B2B мебошад, ки ба чаҳорчӯбаҳои оптикии баландсифати OEM/ODM ва айнакҳои офтобӣ тахассус дорад ва аз соли 2003 мустақиман аз корхона дар Чин фаъолият мекунад.",
     }
   }
 } as const;

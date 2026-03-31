@@ -1,32 +1,26 @@
 ---
+import { getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import { translations } from '../translations';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import AcetateManufacturing from '../components/sections/AcetateManufacturing.astro';
-
 
 const lang = 'en';
 const t = translations[lang] || translations.en;
+
+// Get content entry
+const entry = await getEntry('collection', 'home/home.en');
+
+const title = entry?.data?.seoTitle || "Kssmi - Premium Eyewear & Sunglasses Manufacturer";
+const description = entry?.data?.seoDescription || "Since 2003, Kssmi has been a leading ODM & OEM eyewear manufacturer in Shenzhen, China.";
 ---
 
-<Layout title="Yeetian Eyewear - Premium B2B Manufacturing" lang={lang}>
+<Layout title={title} description={description} lang={lang}>
   <Header lang={lang} />
 
   <main>
-    <!-- SECTION 01: Acetate Manufacturing -->
-    <AcetateManufacturing
-      lang={lang}
-      eyebrow="Material Origins"
-      headline="Sculpted from blocks of cured"
-      headlineAccent="bio-acetate"
-      description="We reject injection molding. Every frame begins as a solid slab of plant-based cellulose, cured for 12 weeks before entering our 5-axis CNC machining centers for subtractive sculpting."
-      ctaText="Explore Series"
-      ctaLink="/product?cat=luxury"
-      mainImage="/media/products/tortoise-amber-onyx.webp"
-    />
+    <!-- Homepage content will be added here -->
   </main>
 
   <Footer lang={lang} />
 </Layout>
-

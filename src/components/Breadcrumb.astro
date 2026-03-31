@@ -14,7 +14,7 @@ const { items, lang = 'en' } = Astro.props;
 const isRTL = lang === 'ar';
 ---
 
-<nav class="bg-gray-50 py-3 border-b border-gray-100" dir={isRTL ? 'rtl' : 'ltr'}>
+<nav class="bg-stone-50 py-3 border-b border-gray-100" dir={isRTL ? 'rtl' : 'ltr'}>
   <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
     <ol class="flex items-center flex-wrap gap-1 text-sm">
       {items.map((item, index) => (
@@ -25,13 +25,13 @@ const isRTL = lang === 'ar';
             </span>
           )}
           {item.href === '#' ? (
-            <span class="text-[#8B7355] font-medium truncate max-w-[200px]">
+            <span class="text-[#8B7355] font-medium">
               {item.label}
             </span>
           ) : (
             <a
               href={item.href}
-              class="text-gray-600 hover:text-[#8B7355] transition-colors duration-200 truncate max-w-[150px]"
+              class="text-gray-600 hover:text-[#8B7355] transition-colors duration-200"
             >
               {item.label}
             </a>

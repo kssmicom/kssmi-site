@@ -1,5 +1,6 @@
 # build output
 dist/
+
 # generated types
 .astro/
 
@@ -11,7 +12,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-
+*.log
+build*.log
+check*.log
 
 # environment variables
 .env
@@ -23,8 +26,12 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
+# Private configuration (contains secrets - server has separate copy)
+private_config.php
+
 # Email logs (sensitive data - don't commit)
 public/email-logs.json
+public/email-logs.php
 public/.email_logs_password
 public/.email_reset_tokens.json
 

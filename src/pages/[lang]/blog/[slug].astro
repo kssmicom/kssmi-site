@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import Layout from '../../../layouts/Layout.astro';
 import { translations } from '../../../translations';
 import Header from '../../../components/Header.astro';
@@ -9,19 +9,21 @@ export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map(post => {
     const lang = post.data.lang;
-    const slug = post.data.slug || post.slug;
+    const slug = post.data.slug || (post as any).slug || post.id;
     return {
       params: { lang, slug },
-      props: { post, lang },  // Pass lang in props too!
+      props: { post },
     };
   });
 }
 
 const { post } = Astro.props;
 const { lang } = Astro.params;
-const { title, slug, data } = post;
-const { excerpt, image, published, author, tags, render } = data;
-const t = translations[lang] || translations.en;
+const { data } = post;
+const title = data.title;
+const { excerpt, image, published, author, tags } = data;
+const { Content } = await render(post);
+const t = (translations as any)[lang as string] || translations.en;
 
 const currentPath = lang === 'en' ? '' : `${lang}/`;
 
@@ -39,11 +41,11 @@ const blogSchema = {
 };
 ---
 
-<Layout title={title} lang={lang} image={image}>
+<Layout title={title} lang={lang as string} image={image}>
   <!-- Schema for SEO -->
   <script type="application/ld+json" set:html={JSON.stringify(blogSchema)} />
 
-  <Header lang={lang} />
+  <Header lang={lang as string} />
 
   <!-- LAYER 1: WRAPPER -->
   <main class="w-full min-h-screen py-12 lg:py-20 border-b border-stone-100 relative z-10">
@@ -53,7 +55,7 @@ const blogSchema = {
       <header class="mb-12">
         <div class="flex items-center gap-4 text-sm text-gray-500 mb-4">
           <a href={`/${currentPath}blog`} class="hover:text-[#8B7355]">
-            ← {t.nav.collection}
+            ← {t.nav?.collection || 'Blog'}
           </a>
           <span>/</span>
           <span class="text-[#8B7355] font-medium">{title}</span>
@@ -65,7 +67,7 @@ const blogSchema = {
 
         <div class="flex flex-wrap items-center gap-4 text-gray-600">
           {author && <span>By {author}</span>}
-          {published && <span>• {new Date(published).toLocaleDateString(lang, {
+          {published && <span>• {new Date(published).toLocaleDateString(lang as string, {
             year: 'numeric',
             month: 'long',
             day: 'numeric'
@@ -93,7 +95,7 @@ const blogSchema = {
       <!-- Tags -->
       {tags && tags.length > 0 && (
         <div class="mb-8 flex flex-wrap gap-2">
-          {tags.map(tag => (
+          {tags.map((tag: string) => (
             <span class="px-4 py-2 bg-stone-100 text-stone-700 text-sm rounded-full">
               #{tag}
             </span>
@@ -103,12 +105,12 @@ const blogSchema = {
 
       <!-- Content -->
       <div class="prose prose-lg max-w-none">
-        <slot />
+        <Content />
       </div>
     </article>
   </main>
 
-  <Footer lang={lang} />
+  <Footer lang={lang as string} />
 </Layout>
 
 <style>

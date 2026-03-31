@@ -24,34 +24,32 @@ const certifications = [
 ];
 
 interface SpecProps {
-  specs?: {
-    size?: string;
-    frameMaterial?: string;
-    lensMaterial?: string;
-    designStyle?: string;
-    nosePads?: string;
-    hinge?: string;
-    electroplating?: string;
-    logo?: string[];
-  };
   product: {
     data: {
       slug?: string;
       itemNo?: string;
-      materials?: string[];
-      moq?: number;
-      serviceMode?: string[];
+      materials?: string | string[];
+      moq?: string;
+      serviceMode?: string | string[];
+      size?: string;
+      frameMaterial?: string;
+      lensMaterial?: string;
+      designStyle?: string;
+      nosePads?: string;
+      hinge?: string;
+      electroplating?: string;
+      logo?: string | string[];
+      specService?: string;
     };
   };
   lang?: string;
 }
 
-const { specs, product, lang = 'en' } = Astro.props;
+const { product, lang = 'en' } = Astro.props;
 const t = translations[lang] || translations.en;
 
-const serviceMode = product.data.serviceMode || ['OEM', 'ODM'];
-const moq = product.data.moq || 100;
-const docRef = (product.data.itemNo || product.data.slug || 'YT').toUpperCase();
+const d = product.data;
+const docRef = (d.itemNo || d.slug || 'YT').toUpperCase();
 
 const pt = t.product || {
   technicalData: 'Technical Data',
@@ -67,27 +65,75 @@ const pt = t.product || {
   logo: 'Logo',
 };
 
-// Translate service mode values
-const translatedServiceMode = serviceMode.map(mode => {
-  if (mode === 'OEM') return pt.oem || 'OEM';
-  if (mode === 'ODM') return pt.odm || 'ODM';
-  return mode;
-});
+// Helper to ensure array for display
+const toArray = (val: string | string[] | undefined): string[] => {
+  if (!val) return [];
+  return Array.isArray(val) ? val : val.split(',').map(s => s.trim());
+};
 
-// Build the rows array to keep template clean
+function formatKey(key: string): string {
+  // Normalize key to camelCase for translation matching
+  // e.g. "Frame Material" -> "frameMaterial"
+  const camelKey = key.replace(/(?:^\w|[A-Z]|\b\w)/g, (w, i) => i === 0 ? w.toLowerCase() : w.toUpperCase()).replace(/\s+/g, '');
+  
+  if (pt[camelKey]) return pt[camelKey];
+  if (pt[key]) return pt[key];
+
+  // Try legacy mapping if translations match
+  if (key === 'specService') return pt.service || 'Service';
+  if (key === 'specMoq') return pt.moq || 'MOQ';
+
+  // Fallback: title case camelCase (e.g. acetateFeature -> Acetate Feature)
+  if (/^[a-z]+[A-Z][a-zA-Z]*$/.test(key)) {
+    return key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase()).trim();
+  }
+  return key; // Pass through exact custom strings like "Service" or "Frame Material"
+}
+
+const ignoreKeys = new Set([
+  'title', 'slug', 'cover', 'gallery', 'videoId', 'itemNo', 'colors', 
+  'price', 'customizable', 'materials', 'featured', 'categories', 'date', 
+  'seoTitle', 'seoDescription', 'seoKeywords', 'serviceMode', 'moq'
+]);
+
+// Build the rows array keeping EXACT markdown order
+const rawFiles = import.meta.glob('/src/content/products/**/*.md', { query: '?raw', import: 'default' });
+const matchPath = Object.keys(rawFiles).find(p => p.endsWith(`/${product.id}.md`));
+
+let orderedKeys: string[] = [];
+if (matchPath) {
+  const rawContent = (await rawFiles[matchPath]()) as string;
+  const frontmatterMatch = rawContent.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  if (frontmatterMatch) {
+    const lines = frontmatterMatch[1].split(/\r?\n/);
+    for (const line of lines) {
+      const matchKey = line.match(/^([A-Za-z0-9_.\-\s]+)\s*:/);
+      if (matchKey) {
+        const key = matchKey[1].trim();
+        if (!orderedKeys.includes(key) && !ignoreKeys.has(key)) {
+          orderedKeys.push(key);
+        }
+      }
+    }
+  }
+}
+
+// Fallback if raw parse fails
+if (orderedKeys.length === 0) {
+  orderedKeys = Object.keys(d).filter(k => !ignoreKeys.has(k));
+}
+
 type SpecRow = { label: string; value: string };
 const rows: SpecRow[] = [];
 
-if (specs?.size)           rows.push({ label: pt.size          || 'Size',                 value: `${specs.size}${pt.andCustomization || ' & Customization'}` });
-if (specs?.frameMaterial)  rows.push({ label: pt.frameMaterial  || 'Frame Material',       value: `${specs.frameMaterial}${pt.andCustomization || ' & Customization'}` });
-if (specs?.lensMaterial)   rows.push({ label: pt.lensMaterial   || 'Lenses Material',      value: pt.nylonLensCustomization || 'Nylon Lens & Customization' });
-if (specs?.designStyle)    rows.push({ label: pt.designStyle    || 'Design Style',         value: specs.designStyle });
-if (specs?.nosePads)       rows.push({ label: pt.nosePads       || 'Nose Pads',            value: specs.nosePads });
-if (specs?.hinge)          rows.push({ label: pt.hinge          || 'Hinge',                value: specs.hinge });
-if (specs?.electroplating) rows.push({ label: pt.electroplating || 'Electroplating Method',value: specs.electroplating });
-rows.push({ label: pt.logo || 'Logo',                                                       value: (specs?.logo && specs.logo.length > 0) ? specs.logo.join(', ') : (pt.logoOptions || 'print, laser, laser with oil, hot stamping, metal, crystal, up-sticker') });
-rows.push({ label: pt.service || 'Service',                                                 value: `${translatedServiceMode.join(' / ')}${pt.customizationSuffix || ' customization'}` });
-rows.push({ label: pt.moq    || 'MOQ',                                                      value: `${moq}${pt.pcsPerModel || ' PCS/Model'}` });
+for (const k of orderedKeys) {
+  const v = d[k];
+  if (v === undefined || v === null || v === '') continue;
+
+  const label = formatKey(k);
+  const value = Array.isArray(v) ? v.join(', ') : String(v);
+  rows.push({ label, value });
+}
 ---
 
 <section class="w-full bg-[#F5F5F4] py-16 md:py-24 border-b border-stone-200 relative overflow-hidden">
@@ -97,7 +143,7 @@ rows.push({ label: pt.moq    || 'MOQ',                                          
     <!-- SPECIFICATION CARD -->
     <div
       id="printable-spec-card"
-      class="w-full bg-white rounded-[4px] shadow-xl shadow-stone-200/50 border border-stone-200
+      class="w-full bg-[#FCFAF8] rounded-[4px] shadow-xl shadow-stone-200/50 border border-stone-200
              relative overflow-hidden
              hover:border-[#b45309]/40 hover:shadow-[#b45309]/10 transition-all duration-500
              print:shadow-none print:border-none print:rounded-none"
@@ -109,7 +155,7 @@ rows.push({ label: pt.moq    || 'MOQ',                                          
       <div class="absolute top-4 right-4 z-30 print:hidden">
         <button
           onclick="window.print()"
-          class="w-8 h-8 flex items-center justify-center rounded-full bg-white border border-stone-200
+          class="w-8 h-8 flex items-center justify-center rounded-full bg-[#FCFAF8] border border-stone-200
                  text-stone-400 hover:text-[#b45309] hover:border-[#b45309] transition-all shadow-sm"
           title="Print Spec Sheet"
         >
@@ -173,7 +219,7 @@ rows.push({ label: pt.moq    || 'MOQ',                                          
                 <tr class={`border-b border-stone-100 transition-colors hover:bg-stone-50 ${i === 0 ? 'border-t border-stone-100' : ''}`}>
                   <!-- Label column: narrower, shifted right a bit so it doesn't have a huge left gap -->
                   <td class="py-3.5 pl-5 sm:pl-6 pr-4 w-[38%] sm:w-[32%] md:w-[28%] align-top">
-                    <span class="text-[12px] sm:text-[13px] font-semibold text-stone-500 uppercase tracking-[1.5px]">
+                    <span class="text-[12px] sm:text-[13px] font-semibold text-stone-500">
                       {row.label}
                     </span>
                   </td>
@@ -193,7 +239,7 @@ rows.push({ label: pt.moq    || 'MOQ',                                          
         <div class="mt-8 pt-4 border-t border-stone-100 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 text-[10px] font-mono text-stone-400 uppercase tracking-wide">
           <span>{pt.systemGenerated || 'System Generated'}: {new Date().toISOString().replace('T', ' ').slice(0, 19)}</span>
           <span class="flex items-center gap-1.5">
-            {pt.securedBy || 'Secured by Yeetian Quality Control'}
+            {pt.securedBy || 'Secured by Kssmi Quality Control'}
             <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
             </svg>
@@ -206,13 +252,13 @@ rows.push({ label: pt.moq    || 'MOQ',                                          
   </div>
 </section>
 
-<!-- PRODUCT HIGHLIGHTS SECTION — injected via slot -->
+<!-- PRODUCT HIGHLIGHTS SECTION — rendered from markdown via slot -->
 {Astro.slots.has('highlights') && (
-<section class="w-full bg-[#fafaf9] py-16 md:py-24 border-b border-stone-200">
+<section class="w-full bg-[#fafaf9] py-12 md:py-16 border-b border-stone-200">
   <div class="w-[94%] lg:w-[88%] 2xl:w-[82%] max-w-[1600px] mx-auto px-4 lg:px-0">
 
     <!-- Section Label -->
-    <div class="text-center mb-12">
+    <div class="text-center mb-8">
       <div class="flex items-center justify-center gap-4 mb-3">
         <span class="flex-1 max-w-[60px] h-px bg-stone-200"></span>
         <span class="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-[#b45309]">
@@ -225,8 +271,8 @@ rows.push({ label: pt.moq    || 'MOQ',                                          
       </h2>
     </div>
 
-    <!-- Single render — CSS splits into two column cards -->
-    <div class="product-highlights-content">
+    <!-- Content rendered via slot — CSS splits into 3 cards -->
+    <div class="product-highlights-content" id="highlights-content">
       <slot name="highlights" />
     </div>
 
@@ -290,20 +336,23 @@ rows.push({ label: pt.moq    || 'MOQ',                                          
 </section>
 
 <style is:global>
-  /* ── Product Highlights wrapper ── */
-  /* Hide the H1 title only. We KEEP the intro paragraph (p). */
-  .product-highlights-content h1,
-  .product-highlights-content > h1 { display: none !important; }
+  /* Line clamp utility */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 
-  /* Wrapper grid */
+  /* ── Product Highlights Content — CSS splits markdown into 3 cards ── */
   .product-highlights-content {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    align-items: start;
+    align-items: stretch;
   }
 
-  /* Desktop Layout: 2 Columns for cards, intro below */
+  /* Desktop: 2 columns for Features & Perfect For, Overview spans full width below */
   @media (min-width: 1024px) {
     .product-highlights-content {
       grid-template-columns: 1fr 1fr;
@@ -312,107 +361,129 @@ rows.push({ label: pt.moq    || 'MOQ',                                          
     }
   }
 
-  /* Intro Paragraph (Bottom Row) */
-  .product-highlights-content > p {
-    grid-column: 1 / -1;
-    grid-row: 3;
-    font-size: 1.0625rem;
-    line-height: 1.8;
-    color: #57534e; /* stone-600 */
-    margin: 1.5rem 0 0 0;
-    padding: 1.5rem 2rem;
-    background: #f8f7f6;
-    border-radius: 4px;
-    border: 1px solid #e7e5e4;
-    border-left: 4px solid #b45309;
-    transition: border-color 0.3s ease;
+  /* ── 1. The Overview Heading is the LAST heading now. We can hide it using last-of-type ── */
+  .product-highlights-content > h2:last-of-type {
+    display: none !important;
   }
 
-  /* Subtle hover effect */
-  .product-highlights-content > p:hover {
-    border-left-color: #d97706;
-  }
-
-  /* ── Cards (Top Rows) ── */
-  .product-highlights-content h2 {
-    font-size: 0.6875rem !important;
-    font-family: ui-monospace, monospace !important;
-    font-weight: 700 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.25em !important;
-    color: #78716c !important;
-    margin: 0 !important;
-    padding: 2rem 2rem 1rem 2rem;
-    background: #ffffff;
-    border: 1px solid #e7e5e4;
-    border-bottom: none;
-    border-radius: 4px 4px 0 0;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  /* Features (Left Column) */
-  .product-highlights-content h2:nth-of-type(1) { grid-column: 1; grid-row: 1; }
-  .product-highlights-content ul:nth-of-type(1) { grid-column: 1; grid-row: 2; }
-  
-  /* Perfect For (Right Column) */
-  .product-highlights-content h2:nth-of-type(2) {
-    grid-column: 2;
+  /* ── Card 1: Features (top left) - First Heading ── */
+  /* The Heading */
+  .product-highlights-content > h2:first-of-type {
+    grid-column: 1;
     grid-row: 1;
-    color: #b45309 !important;
-    background: linear-gradient(135deg, rgba(180,83,9,0.05), rgba(180,83,9,0.10));
-    border-color: rgba(180,83,9,0.15);
-  }
-  .product-highlights-content ul:nth-of-type(2) { grid-column: 2; grid-row: 2; }
-
-  /* Mobile/Tablet Fallback (Stack everything) */
-  @media (max-width: 1023px) {
-    .product-highlights-content h2 { grid-column: 1 !important; grid-row: auto !important; }
-    .product-highlights-content ul { grid-column: 1 !important; grid-row: auto !important; margin-bottom: 2rem !important; }
-    .product-highlights-content > p { grid-column: 1 !important; grid-row: auto !important; margin-top: 0 !important; }
-  }
-
-  .product-highlights-content h2::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(to right, #b45309, #d47a20);
-  }
-
-  /* Each ul = card body */
-  .product-highlights-content ul {
+    font-size: 0.6875rem;
+    font-family: ui-monospace, monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: #78716c;
+    padding: 1rem 2rem 0.75rem 2rem;
+    background: #F8F7F5;
+    border: 1px solid #e7e5e4;
+    border-bottom: 1px solid #e7e5e4;
+    border-top: 3px solid #b45309;
+    border-radius: 4px 4px 0 0;
     margin: 0 !important;
-    padding: 1rem 2rem 2rem 2rem !important;
+  }
+
+  /* The List */
+  .product-highlights-content > ul:first-of-type {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0 !important;
+    padding: 0 !important;
     list-style: none !important;
-    background: #ffffff;
+    background: #FCFAF8;
     border: 1px solid #e7e5e4;
     border-top: none;
     border-radius: 0 0 4px 4px;
-    display: flex !important;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-  
-  .product-highlights-content h2:nth-of-type(2) ~ ul,
-  .product-highlights-content h2:nth-of-type(2) + ul {
-    background: linear-gradient(135deg, rgba(180,83,9,0.04), rgba(180,83,9,0.08));
-    border-color: rgba(180,83,9,0.15);
+    overflow: hidden;
+    margin-top: 3rem !important; /* Push down below the heading */
   }
 
-  /* List items with amber check icon */
-  .product-highlights-content li {
-    display: flex !important;
+
+
+  /* Features List Items */
+  .product-highlights-content > ul:first-of-type li {
+    display: flex;
     align-items: flex-start;
     gap: 0.625rem;
-    padding: 0.35rem 0;
+    padding: 0.35rem 2rem;
     font-size: 0.875rem;
     font-weight: 500;
     color: #44403c;
     list-style: none !important;
-    cursor: default;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    margin: 0 0.5rem;
   }
 
+  .product-highlights-content > ul:first-of-type li:hover,
+  .product-highlights-content > ul:last-of-type li:hover {
+    background: rgba(180, 83, 9, 0.03);
+  }
+
+  .product-highlights-content > ul:first-of-type li:first-child { padding-top: 1.5rem; }
+  .product-highlights-content > ul:first-of-type li:last-child  { padding-bottom: 1.5rem; }
+
+  /* ── Card 2: Perfect For (top right) - Second Heading ── */
+  /* The Heading */
+  .product-highlights-content > h2:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 0.6875rem;
+    font-family: ui-monospace, monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: #b45309;
+    padding: 1rem 2rem 0.75rem 2rem;
+    background: linear-gradient(135deg, rgba(180,83,9,0.05), rgba(180,83,9,0.10));
+    border: 1px solid rgba(180,83,9,0.15);
+    border-bottom: 1px solid rgba(180,83,9,0.15);
+    border-top: 3px solid #b45309;
+    border-radius: 4px 4px 0 0;
+    margin: 0 !important;
+  }
+
+  /* The List */
+  .product-highlights-content > ul:last-of-type {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    background: linear-gradient(135deg, rgba(180,83,9,0.04), rgba(180,83,9,0.08));
+    border: 1px solid rgba(180,83,9,0.15);
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    overflow: hidden;
+    margin-top: 3rem !important; /* Push down below the heading */
+  }
+
+
+
+  /* Perfect For List Items */
+  .product-highlights-content > ul:last-of-type li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    padding: 0.35rem 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #44403c;
+    list-style: none !important;
+  }
+
+  .product-highlights-content > ul:last-of-type li:first-child {
+    padding-top: 1.5rem;
+  }
+
+  .product-highlights-content > ul:last-of-type li:last-child {
+    padding-bottom: 1.5rem;
+  }
+
+  /* ── Kinetic Checkmark Icon for all list items ── */
   .product-highlights-content li::before {
     content: '';
     display: inline-block;
@@ -426,9 +497,74 @@ rows.push({ label: pt.moq    || 'MOQ',                                          
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
-  /* Hover effect only on the dot/icon */
+  /* Kinetic animation on hover: zoom and tilt */
   .product-highlights-content li:hover::before {
     transform: scale(1.2) rotate(5deg);
+  }
+
+  /* ── Card 3: Overview Paragraph (bottom, full width) ── */
+  /* The paragraph after first H2 = Overview text */
+  .product-highlights-content > p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    position: relative;
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: #57534e;
+    margin: 1.5rem 0 0 0;
+    padding: 2rem 2.5rem;
+    background: #fdfaf6; /* Not 100% pure white */
+    border-radius: 8px;
+    border: 1px solid #e7e5e4;
+    border-left: 4px solid #b45309;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    /* Soft, slightly delayed transition */
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  /* Elegant quote accent */
+  .product-highlights-content > p::before {
+    content: '"';
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    line-height: 1;
+    color: #f3ece4; /* Soft warm tone, no opacity */
+  }
+
+  .product-highlights-content > p:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(180, 83, 9, 0.10); /* Soft shadow */
+    border-left-color: #92400e; /* Slightly darker than #b45309 */
+    background: #faf6f0; /* Slightly darker warm background on hover */
+  }
+
+  /* Mobile/Tablet: Stack all cards */
+  @media (max-width: 1023px) {
+    .product-highlights-content > h2:first-of-type,
+    .product-highlights-content > ul:first-of-type,
+    .product-highlights-content > h2:nth-of-type(2),
+    .product-highlights-content > ul:last-of-type {
+      grid-column: 1 !important;
+      grid-row: auto !important;
+    }
+    
+    .product-highlights-content > ul:first-of-type, 
+    .product-highlights-content > ul:last-of-type {
+      margin-top: -1.5rem !important; /* Pull up list into heading */
+    }
+
+    .product-highlights-content > h2:nth-of-type(2) {
+      margin-top: 1.5rem !important;
+    }
+
+    .product-highlights-content > p {
+      grid-column: 1 !important;
+      grid-row: auto !important;
+      margin-top: 0 !important;
+    }
   }
 </style>
 

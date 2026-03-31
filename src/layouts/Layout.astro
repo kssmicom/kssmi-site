@@ -45,10 +45,10 @@ const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', '
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://yeetian.com/#organization",
-  "name": "Yeetian Eyewear",
-  "url": "https://yeetian.com",
-  "logo": "https://yeetian.com/media/global/logo.png",
+  "@id": "https://kssmi.com/#organization",
+  "name": "Kssmi Eyewear",
+  "url": "https://kssmi.com",
+  "logo": "https://kssmi.com/media/global/logo.png",
   "description": layoutMeta.schemaDescription,
   "foundingDate": "2003",
   "address": {
@@ -56,11 +56,11 @@ const organizationSchema = {
     "addressCountry": "CN"
   },
   "sameAs": [
-    "https://yeetian.com"
+    "https://kssmi.com"
   ],
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+86-157-6839-1869",
+    "telephone": "+86-180-1873-1452",
     "contactType": "sales",
     "areaServed": ["US", "EU", "IT", "FR", "DE", "JP", "TR", "RU", "CN", "BR", "PT"]
   }
@@ -82,15 +82,15 @@ const organizationSchema = {
   <!-- Open Graph -->
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={image.startsWith('http') ? image : `https://yeetian.com${image}`} />
-  <meta property="og:url" content={canonical || `https://yeetian.com/${currentPath}`} />
+  <meta property="og:image" content={image.startsWith('http') ? image : `https://kssmi.com${image}`} />
+  <meta property="og:url" content={canonical || `https://kssmi.com/${currentPath}`} />
   <meta property="og:type" content={type} />
 
   <!-- Canonical URL -->
   {canonical ? (
     <link rel="canonical" href={canonical} />
   ) : (
-    <link rel="canonical" href={`https://yeetian.com/${currentPath}`} />
+    <link rel="canonical" href={`https://kssmi.com/${currentPath}`} />
   )}
 
   <!-- Hreflang Tags for Multilingual SEO -->
@@ -98,17 +98,17 @@ const organizationSchema = {
     <link
       rel="alternate"
       hreflang={l}
-      href={`https://yeetian.com/${l === 'en' ? '' : l + '/'}${currentPath}`}
+      href={`https://kssmi.com/${l === 'en' ? '' : l + '/'}${currentPath}`}
     />
   ))}
-  <link rel="alternate" hreflang="x-default" href={`https://yeetian.com/${currentPath}`} />
+  <link rel="alternate" hreflang="x-default" href={`https://kssmi.com/${currentPath}`} />
 
   <!-- View Transitions for SPA-like speed -->
   <ViewTransitions />
 
   <!-- Google Fonts: Manrope (Headings), Plus Jakarta Sans (Body), Inter (Alt), Noto Sans Arabic (Arabic) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   {isRTL && (
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
   )}
@@ -117,6 +117,36 @@ const organizationSchema = {
   <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
 </head>
 <body class="font-sans antialiased relative min-h-screen pb-24 lg:pb-0">
+  <!-- Page Transition Loader -->
+  <div id="page-loader" class="fixed top-0 left-0 w-full h-[3px] bg-[#8B7355] z-[99999] origin-left scale-x-0 transition-transform duration-300 pointer-events-none"></div>
+  <script is:inline>
+    document.addEventListener('astro:before-preparation', () => {
+      const loader = document.getElementById('page-loader');
+      if (loader) {
+        loader.style.transitionDuration = '3s';
+        loader.style.transform = 'scaleX(0.6)';
+        document.body.style.cursor = 'wait';
+      }
+    });
+    document.addEventListener('astro:after-preparation', () => {
+      const loader = document.getElementById('page-loader');
+      if (loader) {
+        loader.style.transitionDuration = '0.3s';
+        loader.style.transform = 'scaleX(1)';
+        document.body.style.cursor = 'default';
+      }
+    });
+    document.addEventListener('astro:page-load', () => {
+      const loader = document.getElementById('page-loader');
+      if (loader) {
+        setTimeout(() => {
+          loader.style.transitionDuration = '0s';
+          loader.style.transform = 'scaleX(0)';
+          document.body.style.cursor = 'default';
+        }, 300);
+      }
+    });
+  </script>
   <!-- Accessibility: Skip to Content Link -->
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[9999] bg-[#8B7355] text-white px-4 py-2 font-bold rounded-md shadow-lg outline-none focus:ring-4 focus:ring-[#8B7355]/50">
     Skip to content
@@ -124,6 +154,7 @@ const organizationSchema = {
   <style define:vars={{
     '--font-sans': "'Plus Jakarta Sans', sans-serif",
     '--font-heading': "'Manrope', sans-serif",
+    '--font-raleway': "'Raleway', sans-serif",
     '--font-arabic': "'Noto Sans Arabic', sans-serif"
   }}>
     /* Base styles */

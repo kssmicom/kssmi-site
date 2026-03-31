@@ -11,10 +11,12 @@ import ProductCard from '../../components/ProductCard.astro';
 import { translations } from '../../translations';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import type { Page } from 'astro';
+import { isCategoryMatch, getSlug } from '../../utils/categoryMatching';
 
 const lang = 'en'; // Fixed to English for root level
 
-export async function getStaticPaths({ paginate }) {
+export async function getStaticPaths({ paginate }: { paginate: (data: any[], options: any) => any[] }) {
   const lang = 'en'; // Define inside function for build-time access
   const PAGE_SIZE = 12;
   const allProducts = await getCollection('products');
@@ -27,13 +29,15 @@ export async function getStaticPaths({ paginate }) {
     return productLang === lang;
   });
 
-  // Sort by date (newest first) and then by featured
+  // Sort by featured and then by filename (ID) descending
   const sortedProducts = langProducts.sort((a, b) => {
     if (a.data.featured && !b.data.featured) return -1;
     if (!a.data.featured && b.data.featured) return 1;
-    const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
-    const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
-    return dateB - dateA;
+    const dateA = (a.data as any).date ? new Date((a.data as any).date).getTime() : 0;
+    const dateB = (b.data as any).date ? new Date((b.data as any).date).getTime() : 0;
+    if (dateA !== dateB) return dateB - dateA;
+    // Fallback to alphabetical sorting by ID in descending order (newer products have higher numbers)
+    return b.id.localeCompare(a.id);
   });
 
   // Paginate
@@ -43,7 +47,22 @@ export async function getStaticPaths({ paginate }) {
   });
 }
 
-const { page } = Astro.props;
+interface Props {
+  page: Page<{
+    id: string;
+    data: {
+      title: string;
+      slug?: string;
+      cover?: string;
+      itemNo?: string;
+      categories?: string | string[];
+      featured?: boolean;
+      [key: string]: any;
+    };
+  }>;
+}
+
+const { page } = Astro.props as Props;
 const products = page.data;
 
 const t = translations.en;
@@ -55,7 +74,7 @@ const pt = t.product || {
   allProducts: "All Products",
 };
 
-// Get unique categories
+// Get all products for count
 const allProducts = await getCollection('products');
 const langProducts = allProducts.filter((product) => {
   const parts = product.id.split('.');
@@ -63,17 +82,79 @@ const langProducts = allProducts.filter((product) => {
   return productLang === lang;
 });
 
-const allCategories = new Set<string>();
-langProducts.forEach(p => {
-  p.data.categories?.forEach(cat => allCategories.add(cat));
-});
-const categories = Array.from(allCategories).sort();
+function getCanonicalSlug(categoryName: string): string {
+  return getSlug(categoryName);
+}
+
+// Helper for category counts
+function getCategoryCount(href: string): number {
+  const targetSlug = href.split('/').pop() || '';
+  return langProducts.filter(p => {
+    const cats = p.data.categories || '';
+    return isCategoryMatch(cats, targetSlug);
+  }).length;
+}
+
+// Sidebar Categories - Matches Header Mega Menu Structure
+const sidebarCategories = [
+  {
+    label: t.nav.luxury,
+    href: '/product/luxury-customized',
+    items: [
+      { label: t.nav.luxury_sunglasses, href: '/product/luxury-sunglasses' },
+      { label: t.nav.luxury_glasses, href: '/product/luxury-glasses' }
+    ]
+  },
+  {
+    label: t.nav.couture,
+    href: '/product/high-couture-series',
+    items: [
+      { label: t.nav.couture_sunglasses, href: '/product/high-couture-sunglasses' },
+      { label: t.nav.couture_glasses, href: '/product/high-couture-glasses' }
+    ]
+  },
+  {
+    label: t.nav.classics,
+    href: '/product/classics-series',
+    items: [
+      { label: t.nav.classics_sunglasses, href: '/product/classics-sunglasses' },
+      { label: t.nav.classics_glasses, href: '/product/classics-glasses' }
+    ]
+  },
+  {
+    label: t.nav.fashion,
+    href: '/product/fashion-series',
+    items: [
+      { label: t.nav.acetate_sun, href: '/product/acetate-sunglasses' },
+      { label: t.nav.metal_sun, href: '/product/metal-sunglasses' },
+      { label: t.nav.metal_glass, href: '/product/metal-glasses' },
+      { label: t.nav.titanium_sun, href: '/product/titanium-sunglasses' },
+      { label: t.nav.titanium_glass, href: '/product/titanium-glasses' }
+    ]
+  },
+  {
+    label: t.nav.rimless,
+    href: '/product/rimless-series',
+    items: [
+      { label: t.nav.rimless_sun, href: '/product/rimless-sunglasses' },
+      { label: t.nav.rimless_glass, href: '/product/rimless-glasses' }
+    ]
+  },
+  {
+    label: t.nav.carbon,
+    href: '/product/carbon-series',
+    items: [
+      { label: t.nav.carbon_sun, href: '/product/carbon-sunglasses' },
+      { label: t.nav.carbon_glass, href: '/product/carbon-glasses' }
+    ]
+  }
+];
 ---
 
 <Layout title={t.nav.products} lang={lang}>
   <Header lang={lang} />
 
-  <main class="w-full min-h-screen py-12 lg:py-16 bg-gray-50">
+  <main class="w-full min-h-screen py-12 lg:py-16 bg-stone-50">
     <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
       <!-- Page Header -->
       <div class="mb-10">
@@ -86,42 +167,57 @@ const categories = Array.from(allCategories).sort();
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-        <!-- Sidebar: Category Filter -->
-        <aside class="lg:col-span-1">
-          <div class="sticky top-24 bg-gradient-to-br from-white to-[#faf8f5] rounded-xl shadow-sm p-6 border border-stone-200/50">
-            <h3 class="font-bold text-gray-900 mb-4 text-sm uppercase tracking-wider">
-              Categories
-            </h3>
-            <ul class="space-y-1">
-              <li>
-                <a
-                  href="/product"
-                  class="flex justify-between items-center py-2 px-3 rounded-lg text-gray-600 hover:bg-stone-50 hover:text-[#8B7355] transition-colors duration-200"
-                >
-                  <span>{pt.allProducts || 'All Products'}</span>
-                  <span class="text-xs bg-gray-100 px-2 py-1 rounded-full">
-                    {langProducts.length}
-                  </span>
-                </a>
-              </li>
-              {categories.map(cat => {
-                const count = langProducts.filter(p => p.data.categories?.includes(cat)).length;
-                return (
-                  <li>
+        <!-- Sidebar: Category Filter (Hidden on mobile/tablet) -->
+        <aside class="hidden lg:block lg:col-span-1">
+          <div class="sticky top-24 space-y-6">
+            <!-- Categories Card -->
+            <div class="bg-gradient-to-br from-white to-[#faf8f5] rounded-xl shadow-sm p-6 border border-stone-200/50">
+              <!-- All Products Link -->
+              <a
+                href="/product"
+                class="flex justify-between items-center py-2 px-3 rounded-lg bg-[#8B7355] text-white mb-3"
+              >
+                <span class="font-medium">{pt.allProducts || 'All Products'}</span>
+                <span class="text-xs bg-white/20 px-2 py-1 rounded-full">
+                  {langProducts.length}
+                </span>
+              </a>
+
+              <!-- Category Groups with Sub-categories -->
+              <div class="space-y-3">
+                {sidebarCategories.map((cat) => (
+                  <div class="border-b border-gray-100 pb-3 last:border-0 last:pb-0">
+                    <!-- Main Category -->
                     <a
-                      href={`/product/category/${cat.toLowerCase().replace(/\s+/g, '-')}`}
-                      class="flex justify-between items-center py-2 px-3 rounded-lg text-gray-600 hover:bg-stone-50 hover:text-[#8B7355] transition-colors duration-200"
+                      href={cat.href}
+                      class="flex items-center justify-between py-2 px-2 text-sm font-bold text-[#8B7355] hover:bg-stone-50 rounded-lg transition-colors"
                     >
-                      <span>{cat}</span>
-                      <span class="text-xs bg-gray-100 px-2 py-1 rounded-full">
-                        {count}
+                      <span class="flex items-center gap-2">
+                        {cat.label}
+                        <span class="text-xs font-normal text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">{getCategoryCount(cat.href)}</span>
                       </span>
+                      <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
                     </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+                    <!-- Sub-categories -->
+                    <ul class="ml-3 mt-1 space-y-1">
+                      {cat.items.map((sub) => (
+                        <li>
+                          <a
+                            href={sub.href}
+                            class="flex items-center justify-between py-1.5 px-2 text-sm text-gray-600 hover:text-[#8B7355] hover:bg-stone-50 rounded transition-colors"
+                          >
+                            <span>{sub.label}</span>
+                            <span class="text-xs text-gray-400">{getCategoryCount(sub.href)}</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
 
           <!-- CTA Card -->
           <div class="mt-6 bg-[#8B7355] rounded-xl p-6 text-white">
@@ -181,14 +277,14 @@ const categories = Array.from(allCategories).sort();
                       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                       </svg>
-                      <span class="hidden sm:inline">Previous</span>
+                      <span class="hidden sm:inline">{pt.previousPage || 'Previous'}</span>
                     </a>
                   ) : (
                     <span class="flex items-center gap-1 px-4 py-2 border border-gray-100 rounded-lg text-gray-300 cursor-not-allowed">
                       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                       </svg>
-                      <span class="hidden sm:inline">Previous</span>
+                      <span class="hidden sm:inline">{pt.previousPage || 'Previous'}</span>
                     </span>
                   )}
 
@@ -253,14 +349,14 @@ const categories = Array.from(allCategories).sort();
                       href={page.url.next}
                       class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
                     >
-                      <span class="hidden sm:inline">Next</span>
+                      <span class="hidden sm:inline">{pt.nextPage || 'Next'}</span>
                       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                       </svg>
                     </a>
                   ) : (
                     <span class="flex items-center gap-1 px-4 py-2 border border-gray-100 rounded-lg text-gray-300 cursor-not-allowed">
-                      <span class="hidden sm:inline">Next</span>
+                      <span class="hidden sm:inline">{pt.nextPage || 'Next'}</span>
                       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                       </svg>

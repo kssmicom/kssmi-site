@@ -1,0 +1,133 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { translations } from '../../translations';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const lang = 'en';
+const t = translations[lang] || translations.en;
+
+const allPosts = await getCollection('blog');
+const englishPosts = allPosts.filter(p => p.data.lang === lang).sort((a, b) => b.data.published.getTime() - a.data.published.getTime());
+
+const blogCategories = [
+  'Material Science',
+  'Manufacturing Engineering',
+  'Quality & Compliance',
+  'Supply Chain & Sourcing',
+  'Market & Design Trends'
+];
+---
+
+<Layout title="Knowledge Hub | Kssmi Blog" lang={lang}>
+  <Header lang={lang} />
+
+  <main class="w-full min-h-screen py-16 bg-stone-50">
+    <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
+      <div class="mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          Knowledge Hub
+        </h1>
+        <p class="text-xl text-stone-600 max-w-3xl leading-relaxed">
+          Technical insights into eyewear manufacturing, material science, and global B2B eyewear trends.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+        <!-- Main Content -->
+        <div class="lg:col-span-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {englishPosts.map((post) => (
+              <article class="bg-white rounded-xl shadow-sm overflow-hidden border border-stone-100 hover:shadow-md transition-all duration-300 group">
+                <a href={`/blog/${post.data.slug || post.id}`} class="block">
+                  <div class="aspect-[16/10] overflow-hidden bg-stone-200">
+                    {post.data.image ? (
+                      <img
+                        src={post.data.image}
+                        alt={post.data.title}
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    ) : (
+                      <div class="w-full h-full flex items-center justify-center text-stone-400">
+                         <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l5 5v11a2 2 0 01-2 2z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 2v6h6" />
+                        </svg>
+                      </div>
+                    )}
+                  </div>
+                  <div class="p-8">
+                    <div class="flex items-center gap-4 mb-4">
+                      {post.data.category && (
+                        <span class="px-3 py-1 bg-stone-100 text-[#8B7355] text-[10px] font-bold uppercase tracking-widest rounded-full">
+                          {post.data.category}
+                        </span>
+                      )}
+                      <time class="text-xs text-stone-400">
+                        {post.data.published.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                      </time>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-[#8B7355] transition-colors leading-tight">
+                      {post.data.title}
+                    </h3>
+                    <p class="text-stone-500 line-clamp-3 mb-6">
+                      {post.data.excerpt}
+                    </p>
+                    <div class="flex items-center text-[#8B7355] font-bold text-xs uppercase tracking-widest">
+                      <span>Read More</span>
+                      <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            ))}
+          </div>
+
+          {englishPosts.length === 0 && (
+            <div class="bg-white rounded-xl p-12 text-center border border-dashed border-stone-200">
+              <p class="text-stone-400">Our first technical articles are coming soon.</p>
+            </div>
+          )}
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="lg:col-span-1">
+          <div class="sticky top-24 space-y-8">
+            <div>
+              <h3 class="text-sm font-bold text-gray-900 uppercase tracking-[0.15em] mb-6 pb-2 border-b border-stone-200">
+                Categories
+              </h3>
+              <ul class="space-y-3">
+                {blogCategories.map(cat => (
+                  <li>
+                    <a href={`/blog?cat=${cat.toLowerCase().replace(/ /g, '-')}`} class="flex items-center justify-between text-sm text-stone-500 hover:text-[#8B7355] transition-colors group">
+                      <span>{cat}</span>
+                      <span class="text-[10px] bg-stone-100 px-2 py-0.5 rounded text-stone-400 group-hover:bg-[#8B7355]/10 group-hover:text-[#8B7355] transition-all">
+                        {englishPosts.filter(p => p.data.category === cat).length}
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="bg-[#1c1917] rounded-xl p-8 text-white">
+              <h4 class="font-bold text-lg mb-4 leading-tight">Expert B2B Consultation</h4>
+              <p class="text-stone-400 text-sm mb-6 leading-relaxed">
+                Need deep technical advice for your next eyewear collection? Our team is here to help.
+              </p>
+              <a href="/quote" class="inline-block w-full py-3 bg-[#8B7355] text-white text-center text-xs font-bold uppercase tracking-widest rounded hover:bg-[#5D4E37] transition-colors">
+                Contact Technical Team
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

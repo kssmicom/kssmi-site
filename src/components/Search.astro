@@ -7,25 +7,33 @@ interface Props {
 }
 
 const { lang } = Astro.props;
-const t = translations[lang] || translations.en;
+const t = translations[lang as keyof typeof translations] || translations.en;
 
 // Fetch products server-side at request time (dev) or build time (production)
 const allProducts = await getCollection('products');
 const langProducts = allProducts
-  .filter((product) => product.slug && product.slug.endsWith(`.${lang}`))
-  .map((product) => ({
-    slug: product.slug ? product.slug.replace(`.${lang}`, '') : '',
-    title: product.data?.title || '',
-    itemNo: product.data?.itemNo || '',
-    excerpt: product.data?.seoDescription || '',
-    categories: product.data?.categories || [],
-    materials: product.data?.materials || [],
-    colors: product.data?.colors || [],
-    url: lang === 'en'
-      ? `/product/${product.data?.slug || (product.slug ? product.slug.replace(`.${lang}`, '') : '')}/`
-      : `/${lang}/product/${product.data?.slug || (product.slug ? product.slug.replace(`.${lang}`, '') : '')}/`,
-    cover: product.data?.cover || '',
-  }));
+  .filter((product) => (product as any).slug && (product as any).slug.endsWith(`.${lang}`))
+  .map((product: any) => {
+    // Handle categories - convert string to array if needed
+    const rawCategories = product.data?.categories || '';
+    const categoriesArray = typeof rawCategories === 'string'
+      ? rawCategories.split(',').map((c: string) => c.trim()).filter(Boolean)
+      : rawCategories;
+
+    return {
+      slug: product.slug ? product.slug.replace(`.${lang}`, '') : '',
+      title: product.data?.title || '',
+      itemNo: product.data?.itemNo || '',
+      excerpt: product.data?.seoDescription || '',
+      categories: categoriesArray,
+      materials: product.data?.materials || [],
+      colors: product.data?.colors || [],
+      url: lang === 'en'
+        ? `/product/${product.data?.slug || (product.slug ? (product.slug as string).replace(`.${lang}`, '') : '')}/`
+        : `/${lang}/product/${product.data?.slug || (product.slug ? (product.slug as string).replace(`.${lang}`, '') : '')}/`,
+      cover: product.data?.cover || '',
+    };
+  });
 
 // Serialize for client-side use
 const productsJson = JSON.stringify(langProducts);
@@ -51,7 +59,7 @@ const placeholders = {
     <input
       type="text"
       id={`search-input-${lang}`}
-      placeholder={placeholders[lang] || placeholders.en}
+      placeholder={(placeholders as any)[lang] || placeholders.en}
       class="w-full px-4 py-2 ps-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B7355] focus:border-transparent"
       autocomplete="off"
     />
@@ -67,7 +75,7 @@ const placeholders = {
   </div>
 </div>
 
-<script define:vars={{ productsJson, lang }}>
+<script lang="ts" define:vars={{ productsJson, lang }}>
   // Parse the embedded product data
   const products = JSON.parse(productsJson);
 

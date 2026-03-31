@@ -1,0 +1,522 @@
+---
+/**
+ * Category Page (Multilingual)
+ * Displays products filtered by a specific category
+ * URL format: /[lang]/product/[category-slug] (e.g., /ko/product/luxury-glasses)
+ *
+ * IMPORTANT: All category URLs use English slugs for consistency across languages.
+ * Products may have translated category names, but they map to English slugs.
+ */
+
+import { getCollection } from 'astro:content';
+import Layout from '../../../../layouts/Layout.astro';
+import ProductCard from '../../../../components/ProductCard.astro';
+import { translations } from '../../../../translations';
+import Header from '../../../../components/Header.astro';
+import Footer from '../../../../components/Footer.astro';
+import { isCategoryMatch, getSlug } from '../../../../utils/categoryMatching';
+
+// Category translation mapping: maps translated category names to English slugs
+// Function to get canonical slug from any category name
+function getCanonicalSlug(categoryName: string): string {
+  return getSlug(categoryName);
+}
+
+export async function getStaticPaths({ paginate }: { paginate: any }) {
+  // Canonical English category slugs - these are the URL slugs used across ALL languages
+  const CANONICAL_CATEGORIES = [
+    'luxury-customized',
+    'luxury-glasses',
+    'luxury-sunglasses',
+    'high-couture-series',
+    'high-couture-sunglasses',
+    'high-couture-glasses',
+    'classics-series',
+    'classics-sunglasses',
+    'classics-glasses',
+    'fashion-series',
+    'acetate-sunglasses',
+    'metal-sunglasses',
+    'metal-glasses',
+    'titanium-sunglasses',
+    'titanium-glasses',
+    'rimless-series',
+    'rimless-sunglasses',
+    'rimless-glasses',
+    'optical-frames',
+    'sunglasses',
+    'metal',
+    'acetate',
+    'titanium',
+    'luxury',
+    'fashion',
+    'carbon-series',
+    'carbon-sunglasses',
+    'carbon-glasses',
+  ];
+
+  function getCanonicalSlugLocal(categoryName: string): string {
+    return getSlug(categoryName);
+  }
+
+  const allProducts = await getCollection('products');
+  const languages = Object.keys(translations).filter(lang => lang !== 'en');
+
+  const paths = [];
+
+  // For each language, create pages for all canonical categories
+  for (const lang of languages) {
+    // Get all products in this language
+    const langProducts = allProducts.filter(p => {
+      const parts = p.id.split('.');
+      const pLang = parts.length > 1 ? parts.pop() : 'en';
+      return pLang === lang;
+    });
+
+    // For each canonical category, find matching products
+    for (const canonicalSlug of CANONICAL_CATEGORIES) {
+      // Find products that map to this canonical category
+      const categoryProducts = langProducts.filter(p => {
+        const cats = p.data.categories || '';
+        return isCategoryMatch(cats, canonicalSlug);
+      });
+
+      // Create page if there are products
+      if (categoryProducts.length > 0) {
+        const sorted = categoryProducts.sort((a, b) => {
+          if (a.data.featured && !b.data.featured) return -1;
+          if (!a.data.featured && b.data.featured) return 1;
+          const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
+          const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
+          if (dateA !== dateB) return dateB - dateA;
+          return b.id.localeCompare(a.id);
+        });
+        paths.push(...paginate(sorted, {
+          params: { lang, category: canonicalSlug },
+          pageSize: 12,
+          props: { categorySlug: canonicalSlug, lang }
+        }));
+      }
+    }
+  }
+
+  return paths;
+}
+
+const { page, categorySlug, lang } = Astro.props;
+const products = page.data;
+const t = translations[lang as keyof typeof translations] || translations.en;
+const currentPath = `${lang}/`;
+const isRTL = lang === 'ar';
+
+// Format category name for display (fallback)
+let categoryTitle = categorySlug
+  .split('-')
+  .map((word: any) => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(' ');
+
+// Get product translations
+const pt = t.product || {
+  viewAllCollections: "View All Collections",
+  productsInCategory: "products in this category",
+  allProducts: "All Products",
+};
+
+// Get all products for count
+const allProducts = await getCollection('products');
+const langProducts = allProducts.filter((product) => {
+  const parts = product.id.split('.');
+  const productLang = parts.length > 1 ? parts.pop() : 'en';
+  return productLang === lang;
+});
+
+// Helper for category counts
+function getCategoryCount(href: string): number {
+  const targetSlug = href.split('/').pop() || '';
+  return langProducts.filter(p => {
+    const cats = p.data.categories || '';
+    return isCategoryMatch(cats, targetSlug);
+  }).length;
+}
+
+// Sidebar Categories - Matches Header Mega Menu Structure
+const sidebarCategories = [
+  {
+    label: t.nav.luxury,
+    href: `/${currentPath}product/luxury-customized`,
+    items: [
+      { label: t.nav.luxury_sunglasses, href: `/${currentPath}product/luxury-sunglasses` },
+      { label: t.nav.luxury_glasses, href: `/${currentPath}product/luxury-glasses` }
+    ]
+  },
+  {
+    label: t.nav.couture,
+    href: `/${currentPath}product/high-couture-series`,
+    items: [
+      { label: t.nav.couture_sunglasses, href: `/${currentPath}product/high-couture-sunglasses` },
+      { label: t.nav.couture_glasses, href: `/${currentPath}product/high-couture-glasses` }
+    ]
+  },
+  {
+    label: t.nav.classics,
+    href: `/${currentPath}product/classics-series`,
+    items: [
+      { label: t.nav.classics_sunglasses, href: `/${currentPath}product/classics-sunglasses` },
+      { label: t.nav.classics_glasses, href: `/${currentPath}product/classics-glasses` }
+    ]
+  },
+  {
+    label: t.nav.fashion,
+    href: `/${currentPath}product/fashion-series`,
+    items: [
+      { label: t.nav.acetate_sun, href: `/${currentPath}product/acetate-sunglasses` },
+      { label: t.nav.metal_sun, href: `/${currentPath}product/metal-sunglasses` },
+      { label: t.nav.metal_glass, href: `/${currentPath}product/metal-glasses` },
+      { label: t.nav.titanium_sun, href: `/${currentPath}product/titanium-sunglasses` },
+      { label: t.nav.titanium_glass, href: `/${currentPath}product/titanium-glasses` }
+    ]
+  },
+  {
+    label: t.nav.rimless,
+    href: `/${currentPath}product/rimless-series`,
+    items: [
+      { label: t.nav.rimless_sun, href: `/${currentPath}product/rimless-sunglasses` },
+      { label: t.nav.rimless_glass, href: `/${currentPath}product/rimless-glasses` }
+    ]
+  },
+  {
+    label: t.nav.carbon,
+    href: `/${currentPath}product/carbon-series`,
+    items: [
+      { label: t.nav.carbon_sun, href: `/${currentPath}product/carbon-sunglasses` },
+      { label: t.nav.carbon_glass, href: `/${currentPath}product/carbon-glasses` }
+    ]
+  }
+];
+
+
+
+// Check if current category matches any in sidebar
+function isActiveCategory(href: string): boolean {
+  const hrefSlug = href.replace(`/${currentPath}product/`, '');
+  return hrefSlug === categorySlug;
+}
+
+// Find localized category title from sidebar definitions
+for (const cat of sidebarCategories) {
+  if (isActiveCategory(cat.href)) {
+    categoryTitle = cat.label;
+    break;
+  }
+  const sub = cat.items.find(s => isActiveCategory(s.href));
+  if (sub) {
+    categoryTitle = sub.label;
+    break;
+  }
+}
+---
+
+<Layout title={`${categoryTitle} - ${t.nav.products}`} lang={lang}>
+  <Header lang={lang} />
+
+  <main class="w-full min-h-screen py-12 lg:py-16 bg-stone-50">
+    <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
+      <!-- Breadcrumb -->
+      <nav class="mb-8 text-sm" dir={isRTL ? 'rtl' : 'ltr'}>
+        <ol class="flex items-center flex-wrap gap-1">
+          <li>
+            <a href={`/${currentPath}`} class="text-gray-500 hover:text-[#8B7355] transition-colors">
+              {t.nav.home}
+            </a>
+          </li>
+          <li class="text-gray-300 mx-2">/</li>
+          <li>
+            <a href={`/${currentPath}product`} class="text-gray-500 hover:text-[#8B7355] transition-colors">
+              {t.nav.products}
+            </a>
+          </li>
+          {sidebarCategories.map(cat => {
+            const currentSub = cat.items.find(sub => isActiveCategory(sub.href));
+            if (isActiveCategory(cat.href) || currentSub) {
+              return (
+                <>
+                  <li class="text-gray-300 mx-2">/</li>
+                  <li>
+                    {currentSub ? (
+                      <a href={cat.href} class="text-gray-500 hover:text-[#8B7355] transition-colors">
+                        {cat.label}
+                      </a>
+                    ) : (
+                      <span class="text-[#8B7355] font-medium">{cat.label}</span>
+                    )}
+                  </li>
+                  {currentSub && (
+                    <>
+                      <li class="text-gray-300 mx-2">/</li>
+                      <li class="text-[#8B7355] font-medium">
+                        {currentSub.label}
+                      </li>
+                    </>
+                  )}
+                </>
+              );
+            }
+            return null;
+          })}
+        </ol>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="mb-10">
+        <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+          {categoryTitle}
+        </h1>
+        <p class="text-gray-600">
+          {page.total} {pt.productsInCategory || 'products in this category'}
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Sidebar: Category Filter (Hidden on mobile/tablet) -->
+        <aside class="hidden lg:block lg:col-span-1">
+          <div class="sticky top-24 space-y-6">
+            <!-- Categories Card -->
+            <div class="bg-gradient-to-br from-white to-[#faf8f5] rounded-xl shadow-sm p-6 border border-stone-200/50">
+              <!-- All Products Link -->
+              <a
+                href={`/${currentPath}product`}
+                class={`flex justify-between items-center py-2 px-3 rounded-lg mb-3 transition-colors ${
+                  categorySlug === ''
+                    ? 'bg-[#8B7355] text-white'
+                    : 'text-gray-600 hover:bg-stone-50 hover:text-[#8B7355]'
+                }`}
+              >
+                <span class="font-medium">{pt.allProducts || 'All Products'}</span>
+                <span class={`text-xs px-2 py-1 rounded-full ${
+                  categorySlug === '' ? 'bg-white/20' : 'bg-gray-100'
+                }`}>
+                  {langProducts.length}
+                </span>
+              </a>
+
+              <!-- Category Groups with Sub-categories -->
+              <div class="space-y-3">
+                {sidebarCategories.map((cat) => (
+                  <div class="border-b border-gray-100 pb-3 last:border-0 last:pb-0">
+                    <!-- Main Category -->
+                    <a
+                      href={cat.href}
+                      class={`flex items-center justify-between py-2 px-2 text-sm font-bold rounded-lg transition-colors ${
+                        isActiveCategory(cat.href)
+                          ? 'bg-[#8B7355] text-white'
+                          : 'text-[#8B7355] hover:bg-stone-50'
+                      }`}
+                    >
+                      <span class="flex items-center gap-2">
+                        {cat.label}
+                        <span class={`text-xs font-normal px-2 py-0.5 rounded-full ${
+                          isActiveCategory(cat.href) ? 'bg-white/20 text-white' : 'bg-gray-100 text-gray-500'
+                        }`}>{getCategoryCount(cat.href)}</span>
+                      </span>
+                      <svg class={`w-4 h-4 ${isActiveCategory(cat.href) ? 'text-white/70' : 'text-gray-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </a>
+                    <!-- Sub-categories -->
+                    <ul class="ms-3 mt-1 space-y-1">
+                      {cat.items.map((sub) => (
+                        <li>
+                          <a
+                            href={sub.href}
+                            class={`flex items-center justify-between py-1.5 px-2 text-sm rounded transition-colors ${
+                              isActiveCategory(sub.href)
+                                ? 'bg-[#8B7355] text-white'
+                                : 'text-gray-600 hover:text-[#8B7355] hover:bg-stone-50'
+                            }`}
+                          >
+                            <span>{sub.label}</span>
+                            <span class={`text-xs ${
+                              isActiveCategory(sub.href) ? 'text-white/80' : 'text-gray-400'
+                            }`}>{getCategoryCount(sub.href)}</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <!-- CTA Card - Always visible below categories -->
+            <div class="bg-[#8B7355] rounded-xl p-6 text-white">
+              <h4 class="font-bold mb-2">{pt.needCustomEyewear || 'Need Custom Eyewear?'}</h4>
+              <p class="text-sm text-white/80 mb-4">
+                {pt.oemServices || 'We offer full OEM & ODM services for your brand.'}
+              </p>
+              <a
+                href={`/${currentPath}quote`}
+                class="inline-block bg-white text-[#8B7355] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-100 transition-colors"
+              >
+                {t.cta.quote || 'Get Quote'}
+              </a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Product Grid -->
+        <div class="col-span-1 lg:col-span-3">
+          {page.total === 0 ? (
+            <div class="text-center py-16 bg-white rounded-xl shadow-sm">
+              <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+              <p class="text-gray-500 mb-4">No products in this category.</p>
+              <a
+                href={`/${currentPath}product`}
+                class="text-[#8B7355] hover:underline"
+              >
+                View All Products
+              </a>
+            </div>
+          ) : (
+            <>
+              <!-- Results Info -->
+              <div class={`flex justify-between items-center mb-6 text-sm text-gray-500 ${isRTL ? 'text-right flex-row-reverse' : ''}`} dir={isRTL ? 'rtl' : 'ltr'}>
+                <span>
+                  {(pt.showingResults || 'Showing {start}-{end} of {total} products')
+                    .replace('{start}', '1')
+                    .replace('{end}', String(page.total))
+                    .replace('{total}', String(page.total))}
+                </span>
+              </div>
+
+              <!-- Products Grid -->
+              <div class="grid grid-cols-2 xl:grid-cols-3 gap-4 xl:gap-6">
+                {products.map((product: any) => (
+                  <ProductCard product={product} lang={lang} />
+                ))}
+              </div>
+
+              <!-- Pagination -->
+              {page.lastPage > 1 && (
+                <nav class="mt-12 flex justify-center items-center gap-2" dir={isRTL ? 'rtl' : 'ltr'}>
+                  <!-- Previous Button -->
+                  {page.url.prev ? (
+                    <a
+                      href={page.url.prev}
+                      class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
+                    >
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                      </svg>
+                      <span class="hidden sm:inline">{pt.previousPage || 'Previous'}</span>
+                    </a>
+                  ) : (
+                    <span class="flex items-center gap-1 px-4 py-2 border border-gray-100 rounded-lg text-gray-300 cursor-not-allowed">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                      </svg>
+                      <span class="hidden sm:inline">{pt.previousPage || 'Previous'}</span>
+                    </span>
+                  )}
+
+                  <!-- Page Numbers -->
+                  <div class="flex items-center gap-1">
+                    {/* First page */}
+                    <a
+                      href={`/${currentPath}product/${categorySlug}`}
+                      class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
+                        page.currentPage === 1
+                          ? 'bg-[#8B7355] text-white'
+                          : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355]'
+                      }`}
+                    >
+                      1
+                    </a>
+
+                    {/* Ellipsis before current */}
+                    {page.currentPage > 3 && (
+                      <span class="px-2 text-gray-400">...</span>
+                    )}
+
+                    {/* Pages around current */}
+                    {Array.from({ length: page.lastPage }, (_, i) => i + 1)
+                      .filter(p => p > 1 && p < page.lastPage && Math.abs(p - page.currentPage) <= 1)
+                      .map(p => (
+                        <a
+                          href={`/${currentPath}product/${categorySlug}/${p}`}
+                          class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
+                            p === page.currentPage
+                              ? 'bg-[#8B7355] text-white'
+                              : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355]'
+                          }`}
+                        >
+                          {p}
+                        </a>
+                      ))}
+
+                    {/* Ellipsis after current */}
+                    {page.currentPage < page.lastPage - 2 && (
+                      <span class="px-2 text-gray-400">...</span>
+                    )}
+
+                    {/* Last page */}
+                    {page.lastPage > 1 && (
+                      <a
+                        href={`/${currentPath}product/${categorySlug}/${page.lastPage}`}
+                        class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
+                          page.currentPage === page.lastPage
+                            ? 'bg-[#8B7355] text-white'
+                            : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355]'
+                        }`}
+                      >
+                        {page.lastPage}
+                      </a>
+                    )}
+                  
+
+                  </div>
+
+                  <!-- Next Button -->
+                  {page.url.next ? (
+                    <a
+                      href={page.url.next}
+                      class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
+                    >
+                      <span class="hidden sm:inline">{pt.nextPage || 'Next'}</span>
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </a>
+                  ) : (
+                    <span class="flex items-center gap-1 px-4 py-2 border border-gray-100 rounded-lg text-gray-300 cursor-not-allowed">
+                      <span class="hidden sm:inline">{pt.nextPage || 'Next'}</span>
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  )}
+                </nav>
+              )}
+            </>
+          )}
+        </div>
+      </div>
+
+      <!-- Back to All Products -->
+      <div class="mt-12 text-center">
+        <a
+          href={`/${currentPath}product`}
+          class="inline-flex items-center gap-2 text-[#8B7355] hover:text-[#5D4E37] font-medium transition-colors"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          {pt.viewAllCollections}
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

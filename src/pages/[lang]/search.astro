@@ -14,7 +14,7 @@ export function getStaticPaths() {
 }
 
 const lang = Astro.params.lang || 'en';
-const t = translations[lang] || translations.en;
+const t = (translations as any)[lang] || translations.en;
 
 // Translations for all languages
 const searchText = {
@@ -165,7 +165,7 @@ const foundMatchesFor = {
   tg: "Мутобиқат ёфт шуд барои"
 };
 
-const eyewearText = eyewearLabels[lang] || 'Eyewear Mfg.';
+const eyewearText = (eyewearLabels as any)[lang] || 'Eyewear Mfg.';
 
 const searchPlaceholder = {
   en: "Search products, pages, articles...",
@@ -229,7 +229,7 @@ const searchKeywords = {
 
 ---
 
-<Layout title={`${searchResultsText[lang]} | Yeetian`} lang={lang}>
+<Layout title={`${(searchResultsText as any)[lang]} | Kssmi`} lang={lang}>
   <Header lang={lang} />
 
   <section class="w-full min-h-screen bg-stone-100 pt-32 pb-24">
@@ -237,29 +237,29 @@ const searchKeywords = {
 
       <!-- Search Header Block -->
       <div class="text-center mb-12 relative max-w-4xl mx-auto">
-        <!-- Yeetian Text Logo -->
+        <!-- Kssmi Text Logo -->
         <div class="inline-flex flex-col items-center justify-center mb-6 hover:-translate-y-1 transition-transform duration-500">
-          <span class="text-3xl font-bold text-[#503629] tracking-tight leading-none uppercase">YEETIAN</span>
+          <span class="text-3xl font-bold text-[#503629] tracking-tight leading-none uppercase">KSSMI</span>
           <span class="h-[2px] w-8 bg-[#503629] mt-1"></span>
           <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#503629] mt-1">{eyewearText}</span>
         </div>
 
         <h1 class="text-3xl md:text-4xl font-bold text-[#5D4E37] mb-3 tracking-tight">
-          {searchResultsText[lang]}
+          {(searchResultsText as any)[lang]}
         </h1>
 
         <!-- Query display (updated by JS) -->
         <div id="search-info" class="hidden">
           <div class="inline-block relative">
             <p class="text-lg text-stone-600 mb-3 font-light">
-              {foundMatchesFor[lang]} <span id="query-display" class="font-bold text-[#8B7355] border-b-2 border-[#8B7355]/20"></span>
+              {(foundMatchesFor as any)[lang]} <span id="query-display" class="font-bold text-[#8B7355] border-b-2 border-[#8B7355]/20"></span>
             </p>
           </div>
 
           <div class="flex items-center justify-center gap-3">
             <span class="h-[1px] w-10 bg-[#8B7355]/30"></span>
             <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#5D4E37]/60">
-              <span id="count-number">0</span> {resultsFoundText[lang]}
+              <span id="count-number">0</span> {(resultsFoundText as any)[lang]}
             </p>
             <span class="h-[1px] w-10 bg-[#8B7355]/30"></span>
           </div>
@@ -276,7 +276,7 @@ const searchKeywords = {
               type="search"
               name="q"
               id="search-input"
-              placeholder={searchPlaceholder[lang]}
+              placeholder={(searchPlaceholder as any)[lang]}
               class="flex-grow py-4 px-6 bg-transparent border-none outline-none text-base text-stone-900 placeholder-stone-400 font-medium focus:ring-0"
               autocomplete="off"
             >
@@ -293,7 +293,7 @@ const searchKeywords = {
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
-              <span>{searchText[lang]}</span>
+              <span>{(searchText as any)[lang]}</span>
             </button>
           </div>
         </form>
@@ -305,7 +305,7 @@ const searchKeywords = {
           <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
           <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
         </svg>
-        <p class="mt-4 text-stone-500">{searchText[lang]}...</p>
+        <p class="mt-4 text-stone-500">{(searchText as any)[lang]}...</p>
       </div>
 
       <!-- Empty State -->
@@ -315,27 +315,14 @@ const searchKeywords = {
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
           </svg>
         </div>
-        <h2 class="text-3xl font-bold text-[#5D4E37] mb-4">{searchText[lang]} Yeetian</h2>
-        <p class="text-base text-stone-600 mb-10 max-w-md mx-auto">{searchPlaceholder[lang]}</p>
+        <h2 class="text-3xl font-bold text-[#5D4E37] mb-4">{(searchText as any)[lang]} Kssmi</h2>
+        <p class="text-base text-stone-600 mb-10 max-w-md mx-auto">{(searchPlaceholder as any)[lang]}</p>
 
         <!-- Suggestions -->
         <div class="mt-12 max-w-5xl mx-auto">
-          <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-[#8B7355] mb-8">{recommendedText[lang] || recommendedText.en}</h3>
+          <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-[#8B7355] mb-8">{(recommendedText as any)[lang] || recommendedText.en}</h3>
           <div class="flex flex-wrap gap-3 justify-center">
-            <a href={`/${lang === 'en' ? '' : lang + '/' }search?q=${(searchKeywords[lang] || searchKeywords.en).optical}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#8B7355] transition-all duration-300 shadow-sm hover:shadow-md">
-              {(searchKeywords[lang] || searchKeywords.en).optical}
-            </a>
-            <a href={`/${lang === 'en' ? '' : lang + '/' }search?q=${(searchKeywords[lang] || searchKeywords.en).sunglasses}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#8B7355] transition-all duration-300 shadow-sm hover:shadow-md">
-              {(searchKeywords[lang] || searchKeywords.en).sunglasses}
-            </a>
-            <a href={`/${lang === 'en' ? '' : lang + '/' }search?q=${(searchKeywords[lang] || searchKeywords.en).acetate}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#8B7355] transition-all duration-300 shadow-sm hover:shadow-md">
-              {(searchKeywords[lang] || searchKeywords.en).acetate}
-            </a>
-            <a href={`/${lang === 'en' ? '' : lang + '/' }search?q=${(searchKeywords[lang] || searchKeywords.en).titanium}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#8B7355] transition-all duration-300 shadow-sm hover:shadow-md">
-              {(searchKeywords[lang] || searchKeywords.en).titanium}
-            </a>
-            <a href={`/${lang === 'en' ? '' : lang + '/' }search?q=${(searchKeywords[lang] || searchKeywords.en).metal}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#8B7355] transition-all duration-300 shadow-sm hover:shadow-md">
-              {(searchKeywords[lang] || searchKeywords.en).metal}
+              {((searchKeywords as any)[lang] || searchKeywords.en).metal}
             </a>
           </div>
         </div>
@@ -352,8 +339,8 @@ const searchKeywords = {
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
         </div>
-        <h2 class="text-3xl font-bold text-[#5D4E37] mb-4">{noResultsText[lang]}</h2>
-        <p class="text-base text-stone-600 mb-10 max-w-md mx-auto" id="no-results-text">{tryDifferentText[lang]}</p>
+        <h2 class="text-3xl font-bold text-[#5D4E37] mb-4">{(noResultsText as any)[lang]}</h2>
+        <p class="text-base text-stone-600 mb-10 max-w-md mx-auto" id="no-results-text">{(tryDifferentText as any)[lang]}</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a href={`/${lang === 'en' ? '' : lang + '/'}`} class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#8B7355] transition-colors duration-300 shadow-lg">
             {t.nav?.home || 'Home'}
@@ -366,7 +353,7 @@ const searchKeywords = {
 
       <!-- Error State -->
       <div id="error-state" class="hidden text-center py-24">
-        <p class="text-red-600">{tryDifferentText[lang]}</p>
+        <p class="text-red-600">{(tryDifferentText as any)[lang]}</p>
       </div>
 
       <!-- Pagination -->
@@ -537,10 +524,12 @@ const searchKeywords = {
   }
 </style>
 
-<script define:vars={{ lang, viewDetailsText }} data-astro-rerun>
-  // Get query from URL at RUNTIME (not build time)
-  const urlParams = new URLSearchParams(window.location.search);
-  const query = urlParams.get('q') || '';
+<script define:vars={{ lang, viewDetailsText }}>
+  document.addEventListener('astro:page-load', () => {
+  // Read query fresh from URL each time (avoids stale-closure bugs)
+  function getQuery() {
+    return new URLSearchParams(window.location.search).get('q') || '';
+  }
 
   // DOM elements
   const searchInput = document.getElementById('search-input');
@@ -586,8 +575,8 @@ const searchKeywords = {
   }
 
   // Pre-fill search input with query
-  if (searchInput && query) {
-    searchInput.value = query;
+  if (searchInput && getQuery()) {
+    searchInput.value = getQuery();
     updateClearButton();
   }
 
@@ -605,7 +594,7 @@ const searchKeywords = {
     hideAllStates();
     loadingState?.classList.remove('hidden');
     searchInfo?.classList.remove('hidden');
-    if (queryDisplay) queryDisplay.textContent = query;
+    if (queryDisplay) queryDisplay.textContent = getQuery();
   }
 
   function showEmpty() {
@@ -617,8 +606,8 @@ const searchKeywords = {
     hideAllStates();
     noResults?.classList.remove('hidden');
     searchInfo?.classList.remove('hidden');
-    if (queryDisplay) queryDisplay.textContent = query;
-    if (noResultsQuery) noResultsQuery.textContent = query;
+    if (queryDisplay) queryDisplay.textContent = getQuery();
+    if (noResultsQuery) noResultsQuery.textContent = getQuery();
     if (countNumber) countNumber.textContent = '0';
   }
 
@@ -631,7 +620,7 @@ const searchKeywords = {
     hideAllStates();
     searchResults?.classList.remove('hidden');
     searchInfo?.classList.remove('hidden');
-    if (queryDisplay) queryDisplay.textContent = query;
+    if (queryDisplay) queryDisplay.textContent = getQuery();
   }
 
   // ── Unified Fuse.js search ──
@@ -640,7 +629,7 @@ const searchKeywords = {
   // dev mode via Astro HMR.
   async function initFuse() {
     try {
-      const res = await fetch(`/api/search-index/${lang}.json`);
+      const res = await fetch(`/api/search-index/${lang}.json`, { cache: 'no-store' });
       if (!res.ok) throw new Error(`Failed to fetch search index: ${res.status}`);
       const items = await res.json();
 
@@ -648,19 +637,35 @@ const searchKeywords = {
       const Fuse = fuseModule.default || fuseModule;
       fuse = new Fuse(items, {
         keys: [
-          { name: 'title',       weight: 0.50 },
-          { name: 'itemNo',      weight: 0.35 },
-          { name: 'description', weight: 0.15 },
+          { name: 'itemNo',      weight: 0.40 },
+          { name: 'slug',        weight: 0.30 },
+          { name: 'title',       weight: 0.20 },
+          { name: 'keywords',    weight: 0.05 },
+          { name: 'description', weight: 0.05 },
         ],
-        threshold: 0.15,
+        threshold: 0.4,
         includeScore: true,
         ignoreLocation: true,
+        minMatchCharLength: 2,
       });
+      // Keep raw items for the substring pre-filter
+      fuse._items = items;
       return true;
     } catch (err) {
       console.error('Failed to initialize search:', err);
       return false;
     }
+  }
+
+  // Guarantee product-code substring matches always appear
+  function substringFilter(items, q) {
+    const lower = q.toLowerCase().replace(/\s+/g, '');
+    return items.filter(item => {
+      const itemNo = (item.itemNo || '').toLowerCase().replace(/\s+/g, '');
+      const slug   = (item.slug   || '').toLowerCase().replace(/-/g, '');
+      const title  = (item.title  || '').toLowerCase();
+      return itemNo.includes(lower) || slug.includes(lower) || title.includes(lower);
+    });
   }
 
   async function performSearch(searchQuery) {
@@ -680,14 +685,28 @@ const searchKeywords = {
         }
       }
 
-      const results = fuse.search(searchQuery);
+      // 1. Guaranteed substring matches (always included)
+      const rawItems = fuse._items || [];
+      const subMatches = substringFilter(rawItems, searchQuery);
+      const subMatchUrls = new Set(subMatches.map(i => i.url));
 
-      if (results.length === 0) {
+      // 2. Fuse fuzzy matches
+      const fuseResults = fuse.search(searchQuery).map(r => r.item);
+
+      // 3. Merge: substring matches first, then additional Fuse results
+      const merged = [...subMatches];
+      for (const item of fuseResults) {
+        if (!subMatchUrls.has(item.url)) {
+          merged.push(item);
+        }
+      }
+
+      if (merged.length === 0) {
         showNoResults();
         return;
       }
 
-      allResults = results.map((r) => r.item);
+      allResults = merged;
 
       if (countNumber) {
         countNumber.textContent = allResults.length.toString();
@@ -746,7 +765,7 @@ const searchKeywords = {
     const desc = data.description || '';
     const image = data.image || null;
     const isPage = type === 'page';
-    const yeetianLogo = `
+    const kssmiLogo = `
       <div style="
         display:flex;flex-direction:column;align-items:center;justify-content:center;
         gap:4px;padding:1rem;
@@ -754,7 +773,7 @@ const searchKeywords = {
         <span style="
           font-size:1.6rem;font-weight:800;color:#503629;
           letter-spacing:0.15em;text-transform:uppercase;line-height:1;
-        ">YEETIAN</span>
+        ">KSSMI</span>
         <span style="height:2px;width:2.5rem;background:#503629;display:block;"></span>
         <span style="
           font-size:0.5rem;font-weight:700;color:#503629;
@@ -764,7 +783,7 @@ const searchKeywords = {
     `;
     const imageContent = image
       ? `<img src="${image}" alt="${title}" class="src-img" loading="lazy" />`
-      : `<div class="src-img-placeholder" style="background:#faf8f5;">${yeetianLogo}</div>`;
+      : `<div class="src-img-placeholder" style="background:#faf8f5;">${kssmiLogo}</div>`;
     return `
       <a href="${url}" class="src-card">
         <div class="src-card-inner">
@@ -865,8 +884,6 @@ const searchKeywords = {
       e.preventDefault();
       const newQuery = searchInput?.value.trim() || '';
       if (newQuery) {
-        // Re-init Fuse on each search so the index is always fresh
-        fuse = null;
         const newUrl = new URL(window.location.href);
         newUrl.searchParams.set('q', newQuery);
         history.pushState({}, '', newUrl.toString());
@@ -878,9 +895,11 @@ const searchKeywords = {
   }
 
   // Run search on page load if query exists in URL
-  if (query) {
-    performSearch(query);
+  const initialQuery = getQuery();
+  if (initialQuery) {
+    performSearch(initialQuery);
   } else {
     showEmpty();
   }
+  }); // End astro:page-load
 </script>

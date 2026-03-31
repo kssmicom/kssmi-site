@@ -6,7 +6,7 @@ import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
 
 export async function getStaticPaths() {
-  let allPosts = [];
+  let allPosts: any[] = [];
   try {
     const maybePosts = await getCollection('blog');
     if (maybePosts) allPosts = maybePosts;
@@ -31,7 +31,7 @@ export async function getStaticPaths() {
 
 const { posts, lang } = Astro.props;
 
-const t = translations[lang] || translations.en;
+const t = (translations as any)[lang] || translations.en;
 const currentPath = lang === 'en' ? '' : `${lang}/`;
 ---
 
@@ -86,10 +86,10 @@ const currentPath = lang === 'en' ? '' : `${lang}/`;
                   )}
 
                   {post.data.tags && post.data.tags.length > 0 && (
-                    <div class="flex flex-wrap gap-2">
-                      {post.data.tags.slice(0, 3).map(tag => (
-                        <span class="px-3 py-1 bg-stone-100 text-stone-600 text-xs rounded-full">
-                          {tag}
+                    <div class="mb-8 flex flex-wrap gap-2">
+                      {post.data.tags.map((tag: string) => (
+                        <span class="px-4 py-2 bg-stone-100 text-stone-700 text-sm rounded-full">
+                          #{tag}
                         </span>
                       ))}
                     </div>

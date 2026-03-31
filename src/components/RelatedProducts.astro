@@ -1,125 +1,87 @@
 ---
 /**
  * Related Products Component
- * Displays related products from the same category
- * Fetches products dynamically and filters by language
+ * Displays random products from ALL categories (not filtered by category)
+ * Randomization happens client-side so refresh shows different products each time
  */
 
 import { getCollection } from 'astro:content';
-
 import { translations } from '../translations';
 
 interface Props {
-  category?: string;
+  category?: string;       // kept for API compatibility but no longer used for filtering
   currentProductId: string;
   lang?: string;
   limit?: number;
 }
 
-const { category, currentProductId, lang = 'en', limit = 4 } = Astro.props;
-const t = translations[lang] || translations.en;
-
-// Get product-specific translations (fallback to English)
-const pt = t.product || {};
-
+const { currentProductId, lang = 'en', limit = 4 } = Astro.props;
+const t = translations[lang as keyof typeof translations] || translations.en;
+const pt = (t as any).product || {};
 const currentPath = lang === 'en' ? '' : `${lang}/`;
 
-// Fetch all products and filter
+// Fetch all products in the same language, excluding the current one
 const allProducts = await getCollection('products');
 
-// Filter related products: same language, same category, not current product
-// ID format: "kso-001.en" -> extract "en" by splitting on "."
-const relatedProducts = allProducts
+const candidateProducts = allProducts
   .filter(p => {
     const parts = p.id.split('.');
     const pLang = parts.length > 1 ? parts.pop() : 'en';
-    const isSameLang = pLang === lang;
-    const isNotCurrent = p.id !== currentProductId;
-    const hasCategory = category && p.data.categories?.includes(category);
-    return isSameLang && isNotCurrent && hasCategory;
+    return pLang === lang && p.id !== currentProductId;
   })
-  .slice(0, limit);
+  .map(p => ({
+    id: p.id,
+    slug: p.data.slug || p.id.split('.')[0],
+    title: p.data.title,
+    cover: p.data.cover || null,
+    itemNo: p.data.itemNo || null,
+  }));
 
-// Don't render if no related products
-if (relatedProducts.length === 0) {
+// Don't render if no candidates
+if (candidateProducts.length === 0) {
   return null;
 }
+
+const viewDetails = (pt as any).viewDetails || 'View Details';
+const relatedSeries = (pt as any).relatedSeries || 'Related Series';
+const viewAllCollections = (pt as any).viewAllCollections || 'View All Collections';
 ---
+
 <section class="py-16 lg:py-24 bg-white border-t border-stone-100">
   <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
     <!-- Section Header -->
     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-10">
       <h2 class="font-Playfair text-[26px] lg:text-[32px] font-bold text-stone-900 leading-tight">
-        {pt.relatedSeries}
+        {relatedSeries}
       </h2>
       <a
         href={`/${currentPath}product`}
         class="inline-flex items-center gap-2 text-[#8B7355] hover:text-[#5D4E37] font-medium transition-colors duration-200 group"
       >
-        <span>{pt.viewAllCollections}</span>
+        <span>{viewAllCollections}</span>
         <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
       </a>
     </div>
 
-    <!-- Products Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-      {relatedProducts.map((product) => {
-        const productSlug = product.data.slug || product.id.split('.')[0];
-        return (
-          <a
-            href={`/${currentPath}product/${productSlug}`}
-            class="group block"
-          >
-            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
-              {/* Product Image with Hover Overlay */}
-              <div class="relative aspect-[4/3] overflow-hidden bg-gray-100">
-                {product.data.cover ? (
-                  <img
-                    src={product.data.cover}
-                    alt={product.data.title}
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                ) : (
-                  <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
-                    <svg class="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                )}
-
-                {/* Hover Overlay with "View Details" */}
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span class="bg-black text-white px-4 py-2 rounded-lg font-semibold text-sm flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                    {pt.viewDetails || 'View Details'}
-                    <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </span>
-                </div>
-              </div>
-
-              {/* Product Info */}
-              <div class="p-4 xl:p-5 text-center">
-                {/* Item No (main identifier) */}
-                {product.data.itemNo && (
-                  <p class="text-xs xl:text-sm text-[#8B7355] font-bold mb-1 xl:mb-2">
-                    {product.data.itemNo}
-                  </p>
-                )}
-
-                {/* Product Title */}
-                <h3 class="text-sm xl:text-base font-semibold text-gray-900 line-clamp-2 group-hover:text-[#8B7355] transition-colors">
-                  {product.data.title}
-                </h3>
-              </div>
-            </div>
-          </a>
-        );
-      })}
+    <!-- Products Grid — populated by client-side JS -->
+    <div
+      id="related-products-grid"
+      class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8"
+      data-products={JSON.stringify(candidateProducts)}
+      data-limit={limit}
+      data-base-path={`/${currentPath}product/`}
+      data-view-details={viewDetails}
+    >
+      <!-- Skeleton placeholders shown before JS runs -->
+      {Array.from({ length: limit }).map(() => (
+        <div class="related-skeleton animate-pulse">
+          <div class="bg-gray-200 rounded-lg aspect-[4/3] mb-3"></div>
+          <div class="bg-gray-200 rounded h-3 w-1/2 mx-auto mb-2"></div>
+          <div class="bg-gray-200 rounded h-4 w-3/4 mx-auto"></div>
+        </div>
+      ))}
     </div>
   </div>
 </section>
@@ -132,4 +94,57 @@ if (relatedProducts.length === 0) {
     overflow: hidden;
   }
 </style>
+
+<script>
+  function initRelatedProducts() {
+    const grid = document.getElementById('related-products-grid');
+    if (!grid) return;
+
+    const candidates = JSON.parse(grid.dataset.products || '[]');
+    const limit = parseInt(grid.dataset.limit || '4', 10);
+    const basePath = grid.dataset.basePath || '/product/';
+    const viewDetails = grid.dataset.viewDetails || 'View Details';
+
+    // Fisher-Yates shuffle for true client-side randomness on every page load
+    for (let i = candidates.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [candidates[i], candidates[j]] = [candidates[j], candidates[i]];
+    }
+
+    const selected = candidates.slice(0, limit);
+
+    grid.innerHTML = selected.map((p: any) => `
+      <a href="${basePath}${p.slug}" class="group block">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
+          <div class="relative aspect-[4/3] overflow-hidden bg-gray-100">
+            ${p.cover
+              ? `<img src="${p.cover}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />`
+              : `<div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
+                  <svg class="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </div>`
+            }
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <span class="bg-black text-white px-4 py-2 rounded-lg font-semibold text-sm flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                ${viewDetails}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div class="p-4 xl:p-5 text-center">
+            ${p.itemNo ? `<p class="text-xs xl:text-sm text-[#8B7355] font-bold mb-1 xl:mb-2">${p.itemNo}</p>` : ''}
+            <h3 class="text-sm xl:text-base font-semibold text-gray-900 line-clamp-2 group-hover:text-[#8B7355] transition-colors">${p.title}</h3>
+          </div>
+        </div>
+      </a>
+    `).join('');
+  }
+
+  // Run on initial load and after Astro view transitions
+  initRelatedProducts();
+  document.addEventListener('astro:page-load', initRelatedProducts);
+</script>
 

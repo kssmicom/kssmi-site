@@ -10,6 +10,7 @@ import ProductCard from '../../components/ProductCard.astro';
 import { translations } from '../../translations';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import { isCategoryMatch, getSlug } from '../../utils/categoryMatching';
 
 const lang = 'en';
 
@@ -27,9 +28,10 @@ const langProducts = allProducts.filter((product) => {
 const sortedProducts = langProducts.sort((a, b) => {
   if (a.data.featured && !b.data.featured) return -1;
   if (!a.data.featured && b.data.featured) return 1;
-  const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
-  const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
-  return dateB - dateA;
+  const dateA = (a.data as any).date ? new Date((a.data as any).date).getTime() : 0;
+  const dateB = (b.data as any).date ? new Date((b.data as any).date).getTime() : 0;
+  if (dateA !== dateB) return dateB - dateA;
+  return b.id.localeCompare(a.id);
 });
 
 // Show first 12 products on index page
@@ -96,6 +98,18 @@ const sidebarCategories = [
   }
 ];
 
+function getCanonicalSlug(categoryName: string): string {
+  return getSlug(categoryName);
+}
+
+function getCategoryCount(href: string): number {
+  const targetSlug = href.split('/').pop() || '';
+  return langProducts.filter(p => {
+    const cats = p.data.categories || '';
+    return isCategoryMatch(cats, targetSlug);
+  }).length;
+}
+
 // Check if there are more pages
 const hasMore = sortedProducts.length > 12;
 ---
@@ -103,7 +117,7 @@ const hasMore = sortedProducts.length > 12;
 <Layout title={t.nav.products} lang={lang}>
   <Header lang={lang} />
 
-  <main class="w-full min-h-screen py-12 lg:py-16 bg-gray-50">
+  <main class="w-full min-h-screen py-12 lg:py-16 bg-stone-50">
     <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
       <!-- Page Header -->
       <div class="mb-10">
@@ -141,7 +155,10 @@ const hasMore = sortedProducts.length > 12;
                       href={cat.href}
                       class="flex items-center justify-between py-2 px-2 text-sm font-bold text-[#8B7355] hover:bg-stone-50 rounded-lg transition-colors"
                     >
-                      <span>{cat.label}</span>
+                      <span class="flex items-center gap-2">
+                        {cat.label}
+                        <span class="text-xs font-normal text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">{getCategoryCount(cat.href)}</span>
+                      </span>
                       <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                       </svg>
@@ -152,9 +169,10 @@ const hasMore = sortedProducts.length > 12;
                         <li>
                           <a
                             href={sub.href}
-                            class="block py-1.5 px-2 text-sm text-gray-600 hover:text-[#8B7355] hover:bg-stone-50 rounded transition-colors"
+                            class="flex items-center justify-between py-1.5 px-2 text-sm text-gray-600 hover:text-[#8B7355] hover:bg-stone-50 rounded transition-colors"
                           >
-                            {sub.label}
+                            <span>{sub.label}</span>
+                            <span class="text-xs text-gray-400">{getCategoryCount(sub.href)}</span>
                           </a>
                         </li>
                       ))}
@@ -214,19 +232,63 @@ const hasMore = sortedProducts.length > 12;
                 ))}
               </div>
 
-              <!-- Pagination / Load More -->
+              <!-- Pagination -->
               {hasMore && (
-                <div class="mt-12 text-center">
+                <nav class="mt-12 flex justify-center items-center gap-2" dir="ltr">
+                  <!-- Previous Button -->
+                  <span class="flex items-center gap-1 px-4 py-2 border border-gray-100 rounded-lg text-gray-300 cursor-not-allowed">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                    <span class="hidden sm:inline">{pt.previousPage || 'Previous'}</span>
+                  </span>
+
+                  <!-- Page Numbers -->
+                  <div class="flex items-center gap-1">
+                    {/* First page */}
+                    <span class="w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium bg-[#8B7355] text-white">
+                      1
+                    </span>
+
+                    {/* Pages around current */}
+                    {Array.from({ length: Math.ceil(langProducts.length / 12) }, (_, i) => i + 1)
+                      .filter(p => p > 1 && p < Math.ceil(langProducts.length / 12) && Math.abs(p - 1) <= 1)
+                      .map(p => (
+                        <a
+                          href={`/product/${p}`}
+                          class="w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
+                        >
+                          {p}
+                        </a>
+                      ))}
+
+                    {/* Ellipsis after current */}
+                    {1 < Math.ceil(langProducts.length / 12) - 2 && (
+                      <span class="px-2 text-gray-400">...</span>
+                    )}
+
+                    {/* Last page */}
+                    {Math.ceil(langProducts.length / 12) > 1 && (
+                      <a
+                        href={`/product/${Math.ceil(langProducts.length / 12)}`}
+                        class="w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
+                      >
+                        {Math.ceil(langProducts.length / 12)}
+                      </a>
+                    )}
+                  </div>
+
+                  <!-- Next Button -->
                   <a
                     href="/product/2"
-                    class="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#8B7355] text-[#8B7355] rounded-lg font-semibold hover:bg-[#8B7355] hover:text-white transition-colors"
+                    class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
                   >
-                    <span>{pt.loadMore || 'Load More Products'}</span>
+                    <span class="hidden sm:inline">{pt.nextPage || 'Next'}</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
                   </a>
-                </div>
+                </nav>
               )}
             </>
           )}

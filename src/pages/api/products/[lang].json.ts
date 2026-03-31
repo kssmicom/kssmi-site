@@ -26,15 +26,15 @@ export const GET: APIRoute = async ({ params }) => {
                 title: product.data.title || '',
                 itemNo: product.data.itemNo || '',
                 seoDescription: product.data.seoDescription || '',
-                categories: product.data.categories || [],
-                materials: product.data.materials || [],
-                colors: product.data.colors || [],
-                serviceMode: product.data.serviceMode || [],
-                designStyle: product.data.specs?.designStyle || '',
+                categories: product.data.categories ? product.data.categories.split(',').map(s => s.trim()) : [],
+                materials: product.data.materials ? product.data.materials.split(',').map(s => s.trim()) : [],
+                colors: product.data.colors ? product.data.colors.split(',').map(s => s.trim()) : [],
+                serviceMode: product.data.serviceMode ? product.data.serviceMode.split(',').map(s => s.trim()) : [],
+                designStyle: product.data.designStyle || '',
                 url: `${basePath}${slug}`,
                 cover: product.data.cover || '',
                 featured: product.data.featured || false,
-                date: product.data.date ? String(product.data.date) : '',
+                date: product.data.date || '',
             };
         });
 

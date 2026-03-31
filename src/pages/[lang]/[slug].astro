@@ -1,0 +1,168 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { translations } from '../../translations';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import QuoteBenefits from '../../components/sections/QuoteBenefits.astro';
+import InquiryForm from '../../components/InquiryForm.astro';
+
+export async function getStaticPaths() {
+  const collectionEntries = await getCollection('collection');
+  const validLangs = ['it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
+
+  return collectionEntries
+    .filter(entry => {
+      const lang = entry.data.lang;
+      const slug = entry.data.slug;
+      const fileType = entry.data.fileType;
+
+      // Must have valid language (not 'en', must be in valid list)
+      if (!lang || lang === 'en' || !validLangs.includes(lang)) return false;
+
+      // Must have a slug
+      if (!slug) return false;
+
+      // Skip meta/top/bottom files
+      if (['meta', 'top', 'bottom'].includes(fileType || '')) return false;
+
+      // Skip about-us and contact (they have their own pages)
+      if (slug === 'about-us' || slug === 'contact') return false;
+
+      return true;
+    })
+    .map(entry => {
+      const lang = entry.data.lang as string;
+      const slug = entry.data.slug as string;
+      return {
+        params: { lang, slug },
+        props: { entry },
+      };
+    });
+}
+
+const { entry } = Astro.props;
+const { lang, slug } = Astro.params;
+const { data } = entry;
+const { title, layout, cta, ctaLink, image, showPartnershipHero, showQuoteBenefits, showInquiryForm, partnershipHero } = data;
+const t = (translations as any)[lang] || translations.en;
+const { Content } = await render(entry);
+
+// Check if there is actual markdown body content
+const hasContent = entry.body && entry.body.trim().length > 0;
+const currentPath = `${lang}/`;
+---
+
+<Layout title={title} lang={lang} image={image}>
+  <Header lang={lang} />
+
+  <main class="w-full min-h-screen">
+    {/* 1st SECTION: Partnership Hero (Optional) */}
+    {showPartnershipHero && <PartnershipAdvantage partnershipHero={partnershipHero} />}
+
+    {/* 2nd SECTION: Quote Benefits (Optional) */}
+    {showQuoteBenefits && <QuoteBenefits lang={lang} />}
+
+    {/* 3rd SECTION: Main Content Area (Only if hasContent) */}
+    {hasContent && (
+      layout === 'full-width' ? (
+        <section class={`w-full py-16 lg:py-24 bg-white ${(showPartnershipHero || showQuoteBenefits) ? 'border-t border-stone-100' : ''}`}>
+          {!showPartnershipHero && !showQuoteBenefits && image && (
+            <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto mb-16 rounded-3xl overflow-hidden aspect-[21/9]">
+              <img src={image} alt={title} class="w-full h-full object-cover" />
+            </div>
+          )}
+
+          <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
+            <div class="w-full">
+              {!showPartnershipHero && !showQuoteBenefits && (
+                  <h1 class="text-4xl md:text-6xl font-bold text-stone-900 mb-12 tracking-tight">
+                      {title}
+                  </h1>
+              )}
+
+              <div class="prose prose-lg max-w-none text-stone-900 prose-headings:text-stone-900 prose-p:text-stone-700">
+                 <Content />
+              </div>
+
+              {cta && (
+                <div class="mt-12">
+                  <a
+                    href={ctaLink || `/${currentPath}contact`}
+                    class="inline-flex items-center px-10 py-5 bg-[#8B7355] text-white font-bold rounded-lg hover:bg-[#5D4E37] transition-all duration-300 shadow-lg hover:shadow-xl"
+                  >
+                    {cta}
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      ) : (
+        /* Sidebar Layout */
+        <section class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4 py-24">
+          <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+            <div class="lg:col-span-3">
+              {image && !showPartnershipHero && !showQuoteBenefits && (
+                <div class="mb-12 rounded-2xl overflow-hidden shadow-xl aspect-video lg:aspect-auto">
+                  <img src={image} alt={title} class="w-full h-auto" />
+                </div>
+              )}
+
+              {!showPartnershipHero && !showQuoteBenefits && (
+                  <h1 class="text-4xl font-bold text-stone-900 mb-8 tracking-tight">
+                      {title}
+                  </h1>
+              )}
+
+              <div class="prose prose-lg max-w-none text-stone-700 prose-headings:text-stone-900">
+                <Content />
+              </div>
+
+              {cta && (
+                <div class="mt-12">
+                  <a
+                    href={ctaLink || `/${currentPath}contact`}
+                    class="inline-flex items-center px-10 py-5 bg-[#8B7355] text-white font-bold rounded-lg hover:bg-[#5D4E37] transition-all duration-300"
+                  >
+                    {cta}
+                  </a>
+                </div>
+              )}
+            </div>
+
+            <aside class="lg:col-span-1">
+              <div class="bg-stone-50 rounded-2xl p-8 sticky top-24 border border-stone-100 shadow-sm">
+                <h3 class="text-sm font-bold text-stone-900 uppercase tracking-widest mb-6 border-b border-stone-200 pb-2">
+                  Quick Links
+                </h3>
+                <ul class="space-y-4">
+                  <li><a href={`/${currentPath}product`} class="text-stone-600 hover:text-[#8B7355] font-semibold transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-[#8B7355] opacity-0 group-hover:opacity-100 transition-opacity"></span>{t.nav.products}</a></li>
+                  <li><a href={`/${currentPath}collection`} class="text-stone-600 hover:text-[#8B7355] font-semibold transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-[#8B7355] opacity-0 group-hover:opacity-100 transition-opacity"></span>{t.nav.collection}</a></li>
+                  <li><a href={`/${currentPath}about`} class="text-stone-600 hover:text-[#8B7355] font-semibold transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-[#8B7355] opacity-0 group-hover:opacity-100 transition-opacity"></span>{t.nav.about}</a></li>
+                  <li><a href={`/${currentPath}contact`} class="text-stone-600 hover:text-[#8B7355] font-semibold transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-[#8B7355] opacity-0 group-hover:opacity-100 transition-opacity"></span>{t.nav.contact}</a></li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </section>
+      )
+    )}
+
+    {/* 4th SECTION: Inquiry Form */}
+    {showInquiryForm && (
+      <InquiryForm lang={lang} productName={title} />
+    )}
+  </main>
+
+  <Footer lang={lang} />
+</Layout>
+
+<style>
+  .prose {
+    --tw-prose-body: #374151;
+    --tw-prose-headings: #111827;
+    --tw-prose-links: #8B7355;
+    --tw-prose-bold: 700;
+  }
+</style>

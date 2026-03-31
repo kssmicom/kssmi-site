@@ -1,11 +1,13 @@
 ---
 /**
  * Product Detail Page
- * Enhanced version with all sections matching yeetian.com reference
+ * Enhanced version with all sections matching kssmi.com reference
  * Includes: Breadcrumb, Hero, Technical Specs, CTA, Inquiry Form, Related Products
  */
 
 import { getCollection, render } from 'astro:content';
+import fs from 'node:fs';
+import path from 'node:path';
 import Layout from '../../../layouts/Layout.astro';
 import { translations } from '../../../translations';
 import Header from '../../../components/Header.astro';
@@ -21,7 +23,6 @@ export async function getStaticPaths() {
     .filter(product => {
       // Extract lang from file ID (e.g., "ks001.en" -> "en")
       const parts = product.id.split('.');
-      const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
       const lang = parts.length > 1 ? parts.pop() : 'en';
       // Skip English - it's handled by root /product/[slug].astro
       return lang !== 'en';
@@ -31,7 +32,7 @@ export async function getStaticPaths() {
       const parts = product.id.split('.');
       const lang = parts.pop();
       // Use slug from frontmatter
-      const slug = product.data.slug || 'product';
+      const slug = (product.data.slug || 'product').toLowerCase();
 
       return {
         params: { lang, slug },
@@ -41,13 +42,12 @@ export async function getStaticPaths() {
 }
 
 const { product } = Astro.props;
-const { lang, slug } = Astro.params;
+const { lang: langParam, slug } = Astro.params;
+const lang = langParam || 'en';
 
-// Destructure product data
+let { cover, gallery } = product.data;
 const {
   title,
-  cover,
-  gallery,
   videoId,
   materials,
   moq,
@@ -55,107 +55,125 @@ const {
   itemNo,
   colors,
   serviceMode,
-  specs,
   customizable,
-  featured,
   seoTitle,
   seoDescription,
   seoKeywords,
+  size,
+  frameMaterial,
+  lensMaterial,
+  designStyle,
+  nosePads,
+  hinge,
+  electroplating,
+  logo,
+  carbonFiberFeature,
 } = product.data;
 
+// Dynamically load gallery images from the public directory
+const imageSlug = product.data.slug?.replace(/\/$/, '') || 'product';
+const publicDir = path.join(process.cwd(), 'public', 'media', 'products', imageSlug);
+
+if (fs.existsSync(publicDir)) {
+  const allImages = fs.readdirSync(publicDir)
+    .filter(file => file.endsWith('.webp') || file.endsWith('.jpg') || file.endsWith('.png'))
+    .sort((a, b) => {
+      const numA = parseInt(a.match(/-(\d+)\.\w+$/)?.[1] || '0', 10);
+      const numB = parseInt(b.match(/-(\d+)\.\w+$/)?.[1] || '0', 10);
+      return numA - numB;
+    })
+    .map(file => `/media/products/${imageSlug}/${file}`);
+
+  if (allImages.length > 0) {
+    cover = allImages[0];
+    gallery = allImages.slice(1);
+  }
+}
+
+const cats = categories ? categories.split(',').map(s => s.trim()) : [];
 // Render markdown body using render()
 const { Content: ProductContent } = await render(product);
 
 // Get translation data
-const t = translations[lang] || translations.en;
+const t = translations[lang as keyof typeof translations] || translations.en;
 const pt = t.product || {};
 const currentPath = lang === 'en' ? '' : `${lang}/`;
 const isRTL = lang === 'ar';
 
-// Map English category slugs to translated nav labels
-const categoryNavMap: Record<string, string> = {
-  'luxury customized': t.nav.luxury,
-  'luxury-customized': t.nav.luxury,
-  'luxury sunglasses': t.nav.luxury_sunglasses,
-  'luxury-sunglasses': t.nav.luxury_sunglasses,
-  'luxury glasses': t.nav.luxury_glasses,
-  'luxury-glasses': t.nav.luxury_glasses,
-  'high couture series': t.nav.couture,
-  'high-couture-series': t.nav.couture,
-  'high couture sunglasses': t.nav.couture_sunglasses,
-  'high-couture-sunglasses': t.nav.couture_sunglasses,
-  'high couture glasses': t.nav.couture_glasses,
-  'high-couture-glasses': t.nav.couture_glasses,
-  'classics series': t.nav.classics,
-  'classics-series': t.nav.classics,
-  'classics sunglasses': t.nav.classics_sunglasses,
-  'classics-sunglasses': t.nav.classics_sunglasses,
-  'classics glasses': t.nav.classics_glasses,
-  'classics-glasses': t.nav.classics_glasses,
-  'fashion series': t.nav.fashion,
-  'fashion-series': t.nav.fashion,
-  'acetate sunglasses': t.nav.acetate_sun,
-  'acetate-sunglasses': t.nav.acetate_sun,
-  'metal sunglasses': t.nav.metal_sun,
-  'metal-sunglasses': t.nav.metal_sun,
-  'metal glasses': t.nav.metal_glass,
-  'metal-glasses': t.nav.metal_glass,
-  'titanium sunglasses': t.nav.titanium_sun,
-  'titanium-sunglasses': t.nav.titanium_sun,
-  'titanium glasses': t.nav.titanium_glass,
-  'titanium-glasses': t.nav.titanium_glass,
-  'rimless series': t.nav.rimless,
-  'rimless-series': t.nav.rimless,
-  'rimless sunglasses': t.nav.rimless_sun,
-  'rimless-sunglasses': t.nav.rimless_sun,
-  'rimless glasses': t.nav.rimless_glass,
-  'rimless-glasses': t.nav.rimless_glass,
-  'carbon series': t.nav.carbon,
-  'carbon-series': t.nav.carbon,
-  'carbon sunglasses': t.nav.carbon_sun,
-  'carbon-sunglasses': t.nav.carbon_sun,
-  'carbon glasses': t.nav.carbon_glass,
-  'carbon-glasses': t.nav.carbon_glass,
-};
+// Dynamically find category translations without hardcoding
+function getCategoryKey(cat: string): string | undefined {
+  const normCat = cat.toLowerCase().trim();
+  const enNav = translations.en.nav;
+  return Object.keys(enNav).find(key => 
+    enNav[key].toLowerCase() === normCat || 
+    enNav[key].toLowerCase().replace(/\s+/g, '-') === normCat.replace(/\s+/g, '-')
+  );
+}
 
 function getCategoryLabel(cat: string): string {
-  return categoryNavMap[cat.toLowerCase()] || categoryNavMap[cat.toLowerCase().replace(/\s+/g, '-')] || cat;
+  const enKey = getCategoryKey(cat);
+  if (enKey && (t.nav as any)[enKey]) return (t.nav as any)[enKey];
+  return cat;
+}
+
+function getCategorySlug(cat: string): string {
+  const enKey = getCategoryKey(cat);
+  const enNav = translations.en.nav;
+  if (enKey && (enNav as any)[enKey]) return (enNav as any)[enKey].toLowerCase().replace(/\s+/g, '-');
+  return cat.toLowerCase().trim().replace(/\s+/g, '-');
 }
 
 // Build breadcrumb items
 const breadcrumbItems = [
   { label: t.nav.home, href: `/${currentPath}` },
   { label: t.nav.products || 'Product', href: `/${currentPath}product` },
-  ...(categories && categories.length > 0
+  ...(cats.length > 0
     ? [{
-        label: getCategoryLabel(categories[0]),
-        href: `/${currentPath}product/${categories[0].toLowerCase().replace(/\s+/g, '-')}`
+        label: getCategoryLabel(cats[0]),
+        href: `/${currentPath}product/${getCategorySlug(cats[0])}`
       }]
     : []),
-  ...(categories && categories.length > 1
+  ...(cats.length > 1
     ? [{
-        label: getCategoryLabel(categories[1]),
-        href: `/${currentPath}product/${categories[1].toLowerCase().replace(/\s+/g, '-')}`
+        label: getCategoryLabel(cats[1]),
+        href: `/${currentPath}product/${getCategorySlug(cats[1])}`
       }]
     : [])
 ];
 
 // Generate AdditionalProperties for Schema using localized labels
-const schemaSpecs = [];
+const schemaSpecs: any[] = [];
 if (itemNo) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.itemNo || "Item Number", "value": itemNo });
-if (moq) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.moq || "MOQ", "value": `${moq} PCS` });
-if (serviceMode && serviceMode.length > 0) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.service || "Service Mode", "value": serviceMode.join(', ') });
+if (moq) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.moq || "MOQ", "value": moq });
+if (serviceMode) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.service || "Service Mode", "value": serviceMode });
 if (customizable) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.customizable || "Customizable", "value": "Yes" });
 
-if (specs) {
-  if (specs.size) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.size || "Size", "value": String(specs.size) });
-  if (specs.frameMaterial) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.frameMaterial || "Frame Material", "value": String(specs.frameMaterial) });
-  if (specs.lensMaterial) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.lensMaterial || "Lenses Material", "value": String(specs.lensMaterial) });
-  if (specs.designStyle) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.designStyle || "Design Style", "value": String(specs.designStyle) });
-  if (specs.nosePads) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.nosePads || "Nose Pads", "value": String(specs.nosePads) });
-  if (specs.hinge) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.hinge || "Hinge", "value": String(specs.hinge) });
-  if (specs.electroplating) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.electroplating || "Electroplating Method", "value": String(specs.electroplating) });
-  if (specs.logo && specs.logo.length > 0) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.logo || "Logo", "value": specs.logo.join(', ') });
+const ignoreSchemaKeys = new Set([
+  'title', 'slug', 'cover', 'gallery', 'videoId', 'itemNo', 'colors', 
+  'price', 'customizable', 'materials', 'featured', 'categories', 'date', 
+  'seoTitle', 'seoDescription', 'seoKeywords', 'serviceMode', 'moq'
+]);
+
+function formatSchemaKey(key: string): string {
+  const camelKey = key.replace(/(?:^\w|[A-Z]|\b\w)/g, (w, i) => i === 0 ? w.toLowerCase() : w.toUpperCase()).replace(/\s+/g, '');
+  
+  if ((pt as any)[camelKey]) return (pt as any)[camelKey];
+  if ((pt as any)[key]) return (pt as any)[key];
+
+  // Fallback: title case camelCase (e.g. acetateFeature -> Acetate Feature)
+  if (/^[a-z]+[A-Z][a-zA-Z]*$/.test(key)) {
+    return key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase()).trim();
+  }
+  return key;
+}
+
+for (const [k, v] of Object.entries(product.data)) {
+  if (ignoreSchemaKeys.has(k)) continue;
+  if (v === undefined || v === null || v === '') continue;
+
+  const name = formatSchemaKey(k);
+  const value = Array.isArray(v) ? v.join(', ') : String(v);
+  schemaSpecs.push({ "@type": "PropertyValue", "name": name, "value": value });
 }
 
 // Generate Product Schema for SEO
@@ -163,23 +181,23 @@ const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": title,
-  "image": cover ? (cover.startsWith('http') ? cover : `https://yeetian.com${cover}`) : "",
+  "image": cover ? (cover.startsWith('http') ? cover : `${Astro.site?.href.replace(/\/$/, '') || ''}${cover}`) : "",
   "description": seoDescription || title,
   "sku": itemNo,
   "mpn": itemNo,
   "brand": {
     "@type": "Brand",
-    "@id": "https://yeetian.com/#organization",
-    "name": "Yeetian Eyewear"
+    "@id": `${Astro.site?.href.replace(/\/$/, '') || ''}/#organization`,
+    "name": "Kssmi Eyewear"
   },
   "manufacturer": {
     "@type": "Organization",
-    "@id": "https://yeetian.com/#organization",
-    "name": "Yeetian Eyewear"
+    "@id": `${Astro.site?.href.replace(/\/$/, '') || ''}/#organization`,
+    "name": "Kssmi Eyewear"
   },
-  "material": materials?.join(', '),
-  "color": colors?.join(', '),
-  "category": categories?.[0],
+  "material": materials,
+  "color": colors,
+  "category": cats.length > 0 ? cats[0] : undefined,
   "additionalProperty": schemaSpecs,
   "audience": {
     "@type": "Audience",
@@ -193,8 +211,8 @@ const productSchema = {
     "priceValidUntil": new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
     "seller": {
       "@type": "Organization",
-      "@id": "https://yeetian.com/#organization",
-      "name": "Yeetian Eyewear"
+      "@id": `${Astro.site?.href.replace(/\/$/, '') || ''}/#organization`,
+      "name": "Kssmi Eyewear"
     }
   }
 };
@@ -214,28 +232,17 @@ if (videoId) {
   };
 }
 
-// Badge label: 'Customizable' in each language
-const customizableLabel: Record<string, string> = {
-  en: 'Customizable',
-  it: 'Personalizzabile',
-  es: 'Personalizable',
-  fr: 'Personnalisable',
-  de: 'Anpassbar',
-  pt: 'Personalizável',
-  ru: 'Настраиваемый',
-  ja: 'カスタマイズ可能',
-  tr: 'Özelleştirilebilir',
-  ar: 'قابل للتخصيص',
-  // Extended languages (7 new)
-  ko: '사용자 지정 가능',
-  zh: '可定制',
-  hi: 'अनुकूलन योग्य',
-  vi: 'Có thể tùy chỉnh',
-  jv: 'Bisa dikustomisasi',
-  ms: 'Boleh disesuaikan',
-  tg: 'Танзимшаванда',
-};
-const badgeLabel = customizableLabel[lang] || 'Customizable';
+// Parse 'customizable' dynamically; default to English fallback if translator didn't provide one
+const badgeLabel = pt.customizableBadge || pt.customizable || (typeof customizable === 'string' ? customizable : 'Customizable');
+
+// Helper to generate alt text from image URL
+function getAltText(url: string | undefined, fallback: string): string {
+  if (!url) return fallback;
+  const filename = url.split('/').pop() || '';
+  const withoutExt = filename.replace(/\.[^/.]+$/, '');
+  if (!withoutExt) return fallback;
+  return withoutExt.replace(/-/g, ' ');
+}
 ---
 
 <Layout
@@ -255,21 +262,21 @@ const badgeLabel = customizableLabel[lang] || 'Customizable';
   <div class="sr-only" data-pagefind-meta="title">{title}</div>
   {itemNo && <div class="sr-only" data-pagefind-meta="itemNo">{itemNo}</div>}
   {itemNo && <div class="sr-only" data-pagefind-weight="10">{itemNo}</div>}
-  {materials && materials.length > 0 && <div class="sr-only" data-pagefind-meta="materials">{materials.join(', ')}</div>}
-  {colors && colors.length > 0 && <div class="sr-only" data-pagefind-meta="colors">{colors.join(', ')}</div>}
-  {categories && categories.length > 0 && <div class="sr-only" data-pagefind-meta="category">{categories.join(', ')}</div>}
+  {materials && <div class="sr-only" data-pagefind-meta="materials">{materials}</div>}
+  {colors && <div class="sr-only" data-pagefind-meta="colors">{colors}</div>}
+  {categories && <div class="sr-only" data-pagefind-meta="category">{categories}</div>}
   {cover && <img src={cover} alt={title} data-pagefind-meta="image" class="sr-only" />}
 
   <Header lang={lang} />
 
-  <main id="main-content" tabIndex="-1" data-pagefind-body class="focus:outline-none">
+  <main id="main-content" tabindex="-1" data-pagefind-body="true" class="focus:outline-none">
     {/* Pagefind anchor for better excerpt */}
     <div id="pagefind-content" class="contents">
     <!-- SECTION 1: Breadcrumb Navigation -->
     <Breadcrumb items={breadcrumbItems} lang={lang} />
 
     <!-- SECTION 2: Product Hero -->
-    <section class="py-12 lg:py-16 bg-white">
+    <section class="py-12 lg:py-16 bg-stone-50">
       <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 
@@ -285,7 +292,7 @@ const badgeLabel = customizableLabel[lang] || 'Customizable';
                   <img
                     id="main-image"
                     src={cover}
-                    alt={title}
+                    alt={getAltText(cover, title)}
                     class="w-full h-full object-cover"
                     decoding="async"
                   />
@@ -308,22 +315,24 @@ const badgeLabel = customizableLabel[lang] || 'Customizable';
               )}
             </div>
 
-            <!-- Gallery Thumbnails - Centered -->
-            <div class="flex justify-center gap-2">
+            <!-- Gallery Thumbnails – all devices, every row centered -->
+            <!-- max-w-[640px] = 9 × 64px + 8 × 8px gap = 640px; wider than the 500px main image -->
+            <!-- Rows/device: phone ~4, tablet ~8, laptop ~8, desktop ~9 -->
+            <div class="flex flex-wrap justify-center gap-2 w-full max-w-[640px] mx-auto">
               {cover && (
                 <button
-                  class="thumb aspect-square w-16 h-16 rounded-lg overflow-hidden border-2 border-[#8B7355] shadow-sm hover:shadow-md transition-shadow"
-                  aria-label="View main image"
+                  class="thumb flex-none w-16 h-16 rounded-lg overflow-hidden border-2 border-[#8B7355] shadow-sm hover:shadow-md transition-shadow"
+                  aria-label={getAltText(cover, "View main image")}
                 >
-                  <img src={cover} alt="Main" class="w-full h-full object-cover" decoding="async" />
+                  <img src={cover} alt={getAltText(cover, "Main")} class="w-full h-full object-cover" decoding="async" />
                 </button>
               )}
               {gallery?.map((img, index) => (
                 <button
-                  class="thumb aspect-square w-16 h-16 rounded-lg overflow-hidden border-2 border-transparent hover:border-[#8B7355] shadow-sm hover:shadow-md transition-all"
-                  aria-label={`View gallery image ${index + 1}`}
+                  class="thumb flex-none w-16 h-16 rounded-lg overflow-hidden border-2 border-transparent hover:border-[#8B7355] shadow-sm hover:shadow-md transition-all"
+                  aria-label={getAltText(img, `View gallery image ${index + 1}`)}
                 >
-                  <img src={img} alt={`Gallery ${index + 1}`} loading="lazy" class="w-full h-full object-cover" decoding="async" />
+                  <img src={img} alt={getAltText(img, `Gallery ${index + 1}`)} loading="lazy" class="w-full h-full object-cover" decoding="async" />
                 </button>
               ))}
             </div>
@@ -345,9 +354,9 @@ const badgeLabel = customizableLabel[lang] || 'Customizable';
           <!-- Product Info Column -->
           <div class="lg:py-4" dir={isRTL ? 'rtl' : 'ltr'}>
             <!-- Collection Label -->
-            {categories && categories.length > 0 && (
+            {categories && (
               <p class="text-sm text-[#8B7355] font-medium uppercase tracking-wider mb-2">
-                - Yeetian Collection
+                - Kssmi Collection
               </p>
             )}
 
@@ -359,41 +368,38 @@ const badgeLabel = customizableLabel[lang] || 'Customizable';
             <!-- Quick Specs - Left Aligned -->
             <div class="border-y border-gray-200 py-6 mb-6 space-y-3">
               {itemNo && (
-                <div class="flex items-center gap-2">
-                  <span class="text-sm text-gray-500 min-w-[120px]">{pt.itemNo || 'Item No'}:</span>
+                <div class="flex items-start gap-2">
+                  <span class="text-sm text-gray-500 min-w-[160px]">{pt.itemNo || 'Item No'}:</span>
                   <span class="text-sm font-medium text-gray-900">{itemNo}</span>
                 </div>
               )}
 
-              {colors && colors.length > 0 && (
-                <div class="flex items-center gap-2">
-                  <span class="text-sm text-gray-500 min-w-[120px]">{pt.color || 'Color'}:</span>
-                  <span class="text-sm font-medium text-gray-900">{colors.join(' / ')}</span>
+              {colors && (
+                <div class="flex items-start gap-2">
+                  <span class="text-sm text-gray-500 min-w-[160px]">{pt.color || 'Color'}:</span>
+                  <span class="text-sm font-medium text-gray-900">{colors}</span>
                 </div>
               )}
 
-              {materials && materials.length > 0 && (
-                <div class="flex items-center gap-2">
-                  <span class="text-sm text-gray-500 min-w-[120px]">{pt.materials || 'Materials'}:</span>
-                  <span class="text-sm font-medium text-gray-900">{materials.join(', ')}</span>
+              {materials && (
+                <div class="flex items-start gap-2">
+                  <span class="text-sm text-gray-500 min-w-[160px]">{pt.materials || 'Materials'}:</span>
+                  <span class="text-sm font-medium text-gray-900">{materials}</span>
                 </div>
               )}
 
-              <div class="flex items-center gap-2">
-                <span class="text-sm text-gray-500 min-w-[120px]">{pt.serviceMode || 'Service Mode'}:</span>
+              <div class="flex items-start gap-2">
+                <span class="text-sm text-gray-500 min-w-[160px]">{pt.serviceMode || 'Service Mode'}:</span>
                 <span class="text-sm font-medium text-gray-900">
-                  {(serviceMode || ['OEM', 'ODM']).map(mode => {
-                    if (mode === 'OEM') return pt.oem || 'OEM';
-                    if (mode === 'ODM') return pt.odm || 'ODM';
-                    return mode;
-                  }).join(' / ')}
+                  {serviceMode || 'OEM & ODM'}
                 </span>
               </div>
 
-              <div class="flex items-center gap-2">
-                <span class="text-sm text-gray-500 min-w-[120px]">{pt.moq || 'MOQ'}:</span>
-                <span class="text-sm font-medium text-gray-900">{moq || 100}{pt.pcsPerModel || ' PCS/Model'}</span>
+              <div class="flex items-start gap-2">
+                <span class="text-sm text-gray-500 min-w-[160px]">{pt.moq || 'MOQ'}:</span>
+                <span class="text-sm font-medium text-gray-900">{moq || '100 PCS/Model'}</span>
               </div>
+
             </div>
 
 
@@ -428,8 +434,8 @@ const badgeLabel = customizableLabel[lang] || 'Customizable';
       </div>
     </section>
 
-    <!-- SECTION 3: Technical Specifications with inserted Highlights -->
-    <TechnicalSpecs specs={specs} product={product} lang={lang}>
+    <!-- SECTION 3: Technical Specifications with Highlights -->
+    <TechnicalSpecs product={product} lang={lang}>
       <ProductContent slot="highlights" />
     </TechnicalSpecs>
 
@@ -492,7 +498,6 @@ const badgeLabel = customizableLabel[lang] || 'Customizable';
 
     <!-- SECTION 6: Related Products -->
     <RelatedProducts
-      category={categories?.[0]}
       currentProductId={product.id}
       lang={lang}
       limit={4}

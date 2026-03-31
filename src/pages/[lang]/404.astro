@@ -1,0 +1,177 @@
+---
+// Single smart 404 page for specified language
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const languages = ['it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
+  
+  return languages.map(lang => ({
+    params: { lang },
+    props: { lang }
+  }));
+}
+
+const { lang } = Astro.props;
+
+// Localized strings - 17 languages with native translations
+const i18n = {
+    // Primary 10 languages
+    en: { title: 'Page Not Found',        msg: "The page you're looking for doesn't exist or has been moved.", home: 'Back to Home',        catalog: 'View Catalog',          search: 'Search',       placeholder: 'Search products, styles, collections…', eyewear: 'Eyewear Mfg.' },
+    it: { title: 'Pagina Non Trovata',    msg: 'La pagina che cercavi non esiste o è stata spostata.',          home: 'Torna alla Home',     catalog: 'Vedi Catalogo',         search: 'Cerca',        placeholder: 'Cerca prodotti, stili, collezioni…', eyewear: 'Manifattura Occhiali' },
+    es: { title: 'Página No Encontrada',  msg: 'La página que buscas no existe o ha sido movida.',               home: 'Volver al Inicio',    catalog: 'Ver Catálogo',          search: 'Buscar',       placeholder: 'Buscar productos, estilos, colecciones…', eyewear: 'Fabricante de Gafas' },
+    fr: { title: 'Page Introuvable',      msg: "La page que vous cherchez n'existe pas ou a été déplacée.",      home: "Retour à l'Accueil", catalog: 'Voir le Catalogue',     search: 'Rechercher',   placeholder: 'Rechercher des produits, styles, collections…', eyewear: 'Fabricant de Lunettes' },
+    de: { title: 'Seite Nicht Gefunden',  msg: 'Die gesuchte Seite existiert nicht oder wurde verschoben.',      home: 'Zur Startseite',      catalog: 'Katalog Ansehen',       search: 'Suchen',       placeholder: 'Produkte, Stile, Kollektionen suchen…', eyewear: 'Brillenmanufaktur' },
+    pt: { title: 'Página Não Encontrada', msg: 'A página que você procura não existe ou foi movida.',            home: 'Voltar ao Início',    catalog: 'Ver Catálogo',          search: 'Pesquisar',    placeholder: 'Pesquisar produtos, estilos, coleções…', eyewear: 'Fabricante de Óculos' },
+    ru: { title: 'Страница Не Найдена',   msg: 'Страница, которую вы ищете, не существует или была перемещена.',home: 'На Главную',          catalog: 'Смотреть Каталог',      search: 'Поиск',        placeholder: 'Поиск продуктов, стилей, коллекций…', eyewear: 'Производство очков' },
+    ja: { title: 'ページが見つかりません', msg: 'お探しのページは存在しないか、移動されました。',                  home: 'ホームに戻る',        catalog: 'カタログを見る',        search: '検索',         placeholder: '製品、スタイル、コレクションを検索…', eyewear: '眼鏡製造' },
+    tr: { title: 'Sayfa Bulunamadı',      msg: 'Aradığınız sayfa mevcut değil veya taşınmış.',                   home: 'Ana Sayfaya Dön',     catalog: 'Kataloğu Görüntüle',    search: 'Ara',          placeholder: 'Ürün, stil, koleksiyon ara…', eyewear: 'Gözlük Üreticisi' },
+    ar: { title: 'الصفحة غير موجودة',    msg: 'الصفحة التي تبحث عنها غير موجودة أو تم نقلها.',                 home: 'العودة للرئيسية',     catalog: 'عرض الكتالوج',         search: 'بحث',          placeholder: 'ابحث عن منتجات، أنماط، مجموعات…', eyewear: 'تصنيع النظارات' },
+    // Extended 7 languages
+    ko: { title: '페이지를 찾을 수 없습니다', msg: '찾으시는 페이지가 존재하지 않거나 이동되었습니다.',              home: '홈으로 돌아가기',     catalog: '카탈로그 보기',         search: '검색',         placeholder: '제품, 스타일, 컬렉션 검색…',            eyewear: '안경 제조업체' },
+    zh: { title: '页面未找到',             msg: '您寻找的页面不存在或已被移动。',                                home: '返回首页',           catalog: '查看目录',              search: '搜索',         placeholder: '搜索产品、款式、系列…',                 eyewear: '眼镜制造商' },
+    hi: { title: 'पृष्ठ नहीं मिला',        msg: 'आप जिस पृष्ठ की तलाश कर रहे हैं वह मौजूद नहीं है या स्थानांतरित हो गया है।', home: 'होम पर वापस जाएं', catalog: 'सूची देखें',            search: 'खोजें',        placeholder: 'उत्पाद, शैलियाँ, संग्रह खोजें…',         eyewear: 'चश्मा निर्माता' },
+    vi: { title: 'Không Tìm Thấy Trang',   msg: 'Trang bạn đang tìm kiếm không tồn tại hoặc đã được di chuyển.', home: 'Về Trang Chủ',       catalog: 'Xem Danh Mục',         search: 'Tìm Kiếm',     placeholder: 'Tìm kiếm sản phẩm, phong cách, bộ sưu tập…', eyewear: 'Nhà Sản Xuất Kính' },
+    jv: { title: 'Kaca Ora Ditemokake',   msg: 'Kaca sing sampeyan goleki ora ana utawa wis dipindhah.',        home: 'Bali menyang Beranda',catalog: 'Deleng Katalog',       search: 'Golèki',       placeholder: 'Golèki produk, gaya, kolèksi…',         eyewear: 'Pabrik Kacamata' },
+    ms: { title: 'Halaman Tidak Ditemui', msg: 'Halaman yang anda cari tidak wujud atau telah dipindahkan.',    home: 'Kembali ke Laman Utama', catalog: 'Lihat Katalog',      search: 'Cari',         placeholder: 'Cari produk, gaya, koleksi…',          eyewear: 'Pengilang Cermin Mata' },
+    tg: { title: 'Саҳифа Ёфт Нашуд',      msg: 'Саҳифае, ки ҷустуҷӯ мекунед, вуҷуд надорад ё кӯчонида шудааст.', home: 'Ба Саҳифаи Аслӣ',    catalog: 'Дидани Феҳрист',       search: 'Ҷустуҷӯ',      placeholder: 'Ҷустуҷӯи маҳсулот, услубҳо, коллексияҳо…', eyewear: 'Истеҳсоли Айнак' },
+};
+
+const t = (i18n as any)[lang] || i18n.en;
+const isRTL = lang === 'ar';
+---
+
+<Layout title={`${t.title} | Kssmi`} lang={lang}>
+  <Header lang={lang} />
+
+  <main id="main-content" tabindex="-1" class="w-full min-h-screen bg-stone-100 pt-32 pb-24 flex items-center focus:outline-none" dir={isRTL ? 'rtl' : 'ltr'}>
+    <div class="max-w-2xl mx-auto px-6 text-center">
+
+      <!-- Kssmi Text Logo -->
+      <div class="inline-flex flex-col items-center justify-center mb-8 hover:-translate-y-1 transition-transform duration-500">
+        <span class="text-2xl font-bold text-[#503629] tracking-tight leading-none uppercase">KSSMI</span>
+        <span class="h-[2px] w-6 bg-[#503629] mt-1"></span>
+        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#503629] mt-1">{t.eyewear}</span>
+      </div>
+
+      <!-- 404 Number -->
+      <div class="relative mb-6">
+        <span class="text-[160px] font-black text-stone-200 leading-none select-none block">404</span>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <svg class="w-16 h-16 text-[#8B7355]/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Heading & message -->
+      <h1 class="text-3xl font-bold text-[#5D4E37] mb-3 tracking-tight">
+        {t.title}
+      </h1>
+      <p class="text-base text-stone-600 mb-8 max-w-md mx-auto">
+        {t.msg}
+      </p>
+
+      <!-- Search Bar -->
+      <form id="search-form" action={`/${lang}/search`} method="GET" class="relative group max-w-3xl mx-auto mb-10">
+        <div class="absolute inset-0 bg-[#5D4E37]/5 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+        <div class="flex items-center border-2 border-stone-200 bg-white rounded-full overflow-hidden focus-within:border-[#8B7355] shadow-sm transition-all duration-300 focus-within:ring-4 focus-within:ring-[#8B7355]/10 relative z-10">
+          <input
+            id="search-input"
+            type="search"
+            name="q"
+            autocomplete="off"
+            class="flex-grow py-4 px-6 bg-transparent border-none outline-none text-base text-stone-900 placeholder-stone-400 font-medium focus:ring-0"
+            placeholder={t.placeholder}
+          />
+
+          <!-- Clear Button (X icon) - hidden by default -->
+          <button type="button" id="search-clear" class="hidden px-3 text-stone-400 hover:text-[#5D4E37] transition-colors flex-shrink-0" aria-label="Clear search">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+
+          <!-- Search Button -->
+          <button type="submit" class="px-5 py-2.5 mr-1.5 bg-[#5D4E37] text-white rounded-full hover:bg-[#8B7355] transition-all duration-300 font-bold tracking-wide text-xs uppercase shadow-md flex-shrink-0 flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            <span>{t.search}</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- Decorative divider -->
+      <div class="flex items-center justify-center gap-3 mb-10">
+        <span class="h-[1px] w-10 bg-[#8B7355]/30"></span>
+        <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#5D4E37]/40">Kssmi</span>
+        <span class="h-[1px] w-10 bg-[#8B7355]/30"></span>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href={`/${lang}/`}
+          class="inline-flex items-center gap-2 px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#8B7355] transition-colors duration-300 shadow-lg">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+          <span>{t.home}</span>
+        </a>
+        <a href={`/${lang}/product`}
+          class="inline-flex items-center gap-2 px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#5D4E37] hover:text-white transition-all duration-300">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+          </svg>
+          <span>{t.catalog}</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>
+
+<style is:global>
+  /* Hide browser's default search clear button */
+  input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+  }
+  input[type="search"]::-moz-search-clear-button {
+    display: none;
+  }
+</style>
+
+<script>
+  // Search Clear Logic
+  const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
+  const searchClear = document.getElementById('search-clear') as HTMLButtonElement | null;
+
+  function updateClearButton() {
+    if (searchInput && searchClear) {
+      if (searchInput.value.trim()) {
+        searchClear.classList.remove('hidden');
+      } else {
+        searchClear.classList.add('hidden');
+      }
+    }
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', updateClearButton);
+    updateClearButton();
+  }
+
+  if (searchClear && searchInput) {
+    searchClear.addEventListener('click', () => {
+      searchInput.value = '';
+      searchClear.classList.add('hidden');
+      searchInput.focus();
+    });
+  }
+</script>

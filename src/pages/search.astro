@@ -11,7 +11,7 @@ const pt = t.product || {};
 const viewDetailsText = pt.viewDetails || 'View Details';
 ---
 
-<Layout title="Search Results | Yeetian" lang="en">
+<Layout title="Search Results | Kssmi" lang="en">
   <Header lang={lang} />
 
   <section class="w-full min-h-screen bg-stone-100 pt-32 pb-24">
@@ -19,9 +19,9 @@ const viewDetailsText = pt.viewDetails || 'View Details';
 
       <!-- Search Header Block -->
       <div class="text-center mb-12 relative max-w-4xl mx-auto">
-        <!-- Yeetian Text Logo -->
+        <!-- Kssmi Text Logo -->
         <div class="inline-flex flex-col items-center justify-center mb-6 hover:-translate-y-1 transition-transform duration-500">
-          <span class="text-3xl font-bold text-[#503629] tracking-tight leading-none uppercase">YEETIAN</span>
+          <span class="text-3xl font-bold text-[#503629] tracking-tight leading-none uppercase">KSSMI</span>
           <span class="h-[2px] w-8 bg-[#503629] mt-1"></span>
           <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#503629] mt-1">Eyewear Mfg.</span>
         </div>
@@ -97,7 +97,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
           </svg>
         </div>
-        <h2 class="text-3xl font-bold text-[#5D4E37] mb-4">{pt.searchTitle || 'Search Yeetian'}</h2>
+        <h2 class="text-3xl font-bold text-[#5D4E37] mb-4">{pt.searchTitle || 'Search Kssmi'}</h2>
         <p class="text-base text-stone-600 mb-10 max-w-md mx-auto">
           {pt.searchDesc || 'Find products, articles, and more. Enter a search term above.'}
         </p>
@@ -319,9 +319,11 @@ const viewDetailsText = pt.viewDetails || 'View Details';
   // Translation text
   const VIEW_DETAILS = viewDetailsText;
 
-  // Get query from URL
-  const urlParams = new URLSearchParams(window.location.search);
-  const query = urlParams.get('q') || '';
+  document.addEventListener('astro:page-load', () => {
+  // Read query fresh from URL each time (prevents stale-closure display bugs)
+  function getQuery() {
+    return new URLSearchParams(window.location.search).get('q') || '';
+  }
 
   // DOM elements
   const searchInput = document.getElementById('search-input');
@@ -345,7 +347,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
   // Initialize Fuse.js with the unified search index
   async function initFuse() {
     try {
-      const res = await fetch('/api/search-index/en.json');
+      const res = await fetch('/api/search-index/en.json', { cache: 'no-store' });
       if (!res.ok) throw new Error(`Failed to fetch search index: ${res.status}`);
       const items = await res.json();
 
@@ -353,18 +355,87 @@ const viewDetailsText = pt.viewDetails || 'View Details';
       const Fuse = module.default || module;
       fuse = new Fuse(items, {
         keys: [
-          { name: 'title',       weight: 0.50 },
-          { name: 'itemNo',      weight: 0.35 },
-          { name: 'description', weight: 0.15 },
+          { name: 'itemNo',      weight: 0.40 },
+          { name: 'slug',        weight: 0.30 },
+          { name: 'title',       weight: 0.20 },
+          { name: 'keywords',    weight: 0.05 },
+          { name: 'description', weight: 0.05 },
         ],
-        threshold: 0.15,
+        threshold: 0.4,
         includeScore: true,
         ignoreLocation: true,
+        minMatchCharLength: 2,
       });
+      // Keep the raw items for the substring pre-filter
+      fuse._items = items;
       return true;
     } catch (err) {
       console.error('Failed to initialize Fuse:', err);
       return false;
+    }
+  }
+
+  // Guarantee that product codes containing the query substring always appear
+  function substringFilter(items, q) {
+    const lower = q.toLowerCase().replace(/\s+/g, '');
+    return items.filter(item => {
+      const itemNo  = (item.itemNo  || '').toLowerCase().replace(/\s+/g, '');
+      const slug    = (item.slug    || '').toLowerCase().replace(/-/g, '');
+      const title   = (item.title   || '').toLowerCase();
+      return itemNo.includes(lower) || slug.includes(lower) || title.includes(lower);
+    });
+  }
+
+  async function performSearch(searchQuery) {
+    if (!searchQuery) {
+      showEmpty();
+      return;
+    }
+
+    showLoading();
+
+    try {
+      if (!fuse) {
+        const initSuccess = await initFuse();
+        if (!initSuccess) {
+          showError();
+          return;
+        }
+      }
+
+      // 1. Guaranteed substring matches (always included)
+      const rawItems = fuse._items || [];
+      const subMatches = substringFilter(rawItems, searchQuery);
+      const subMatchUrls = new Set(subMatches.map(i => i.url));
+
+      // 2. Fuse fuzzy matches
+      const fuseResults = fuse.search(searchQuery).map(r => r.item);
+
+      // 3. Merge: substring matches first, then additional Fuse results
+      const merged = [...subMatches];
+      for (const item of fuseResults) {
+        if (!subMatchUrls.has(item.url)) {
+          merged.push(item);
+        }
+      }
+
+      if (merged.length === 0) {
+        showNoResults();
+        return;
+      }
+
+      allResults = merged;
+
+      if (countNumber) {
+        countNumber.textContent = allResults.length.toString();
+      }
+
+      renderPage(1);
+      showResults();
+
+    } catch (error) {
+      console.error('Search error:', error);
+      showError();
     }
   }
 
@@ -392,8 +463,8 @@ const viewDetailsText = pt.viewDetails || 'View Details';
   }
 
   // Pre-fill search input
-  if (searchInput && query) {
-    searchInput.value = query;
+  if (searchInput && getQuery()) {
+    searchInput.value = getQuery();
     updateClearButton();
   }
 
@@ -411,7 +482,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
     hideAllStates();
     loadingState?.classList.remove('hidden');
     searchInfo?.classList.remove('hidden');
-    if (queryDisplay) queryDisplay.textContent = query;
+    if (queryDisplay) queryDisplay.textContent = getQuery();
   }
 
   function showEmpty() {
@@ -423,7 +494,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
     hideAllStates();
     noResults?.classList.remove('hidden');
     searchInfo?.classList.remove('hidden');
-    if (queryDisplay) queryDisplay.textContent = query;
+    if (queryDisplay) queryDisplay.textContent = getQuery();
     if (countNumber) countNumber.textContent = '0';
   }
 
@@ -436,47 +507,9 @@ const viewDetailsText = pt.viewDetails || 'View Details';
     hideAllStates();
     resultsGrid?.classList.remove('hidden');
     searchInfo?.classList.remove('hidden');
-    if (queryDisplay) queryDisplay.textContent = query;
+    if (queryDisplay) queryDisplay.textContent = getQuery();
   }
 
-  async function performSearch(searchQuery) {
-    if (!searchQuery) {
-      showEmpty();
-      return;
-    }
-
-    showLoading();
-
-    try {
-      if (!fuse) {
-        const initSuccess = await initFuse();
-        if (!initSuccess) {
-          showError();
-          return;
-        }
-      }
-
-      const searchResults = fuse.search(searchQuery);
-
-      if (searchResults.length === 0) {
-        showNoResults();
-        return;
-      }
-
-      allResults = searchResults.map(r => r.item);
-
-      if (countNumber) {
-        countNumber.textContent = allResults.length.toString();
-      }
-
-      renderPage(1);
-      showResults();
-
-    } catch (error) {
-      console.error('Search error:', error);
-      showError();
-    }
-  }
 
   function createResultCard(item) {
     const url = item.url || '#';
@@ -520,7 +553,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
     const desc = item.description || '';
     const image = item.image || null;
     const isPage = type === 'page';
-    const yeetianLogo = `
+    const kssmiLogo = `
       <div style="
         display:flex;flex-direction:column;align-items:center;justify-content:center;
         gap:4px;padding:1rem;
@@ -528,7 +561,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
         <span style="
           font-size:1.6rem;font-weight:800;color:#503629;
           letter-spacing:0.15em;text-transform:uppercase;line-height:1;
-        ">YEETIAN</span>
+        ">KSSMI</span>
         <span style="height:2px;width:2.5rem;background:#503629;display:block;"></span>
         <span style="
           font-size:0.5rem;font-weight:700;color:#503629;
@@ -538,7 +571,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
     `;
     const imageContent = image
       ? `<img src="${image}" alt="${title}" class="src-img" loading="lazy" />`
-      : `<div class="src-img-placeholder" style="background:#faf8f5;">${yeetianLogo}</div>`;
+      : `<div class="src-img-placeholder" style="background:#faf8f5;">${kssmiLogo}</div>`;
     return `
       <a href="${url}" class="src-card">
         <div class="src-card-inner">
@@ -645,9 +678,11 @@ const viewDetailsText = pt.viewDetails || 'View Details';
   }
 
   // Run search on page load
-  if (query) {
-    performSearch(query);
+  const initialQuery = getQuery();
+  if (initialQuery) {
+    performSearch(initialQuery);
   } else {
     showEmpty();
   }
+  }); // End astro:page-load
 </script>

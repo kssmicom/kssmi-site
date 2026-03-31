@@ -1,0 +1,174 @@
+---
+/**
+ * QuoteBenefits Section
+ * Standard "Key Benefits" card UI for Quote and Contact pages
+ */
+const { lang = 'en' } = Astro.props;
+
+// Quote page translations (matching the backup)
+const quoteText = {
+  fasterToMarket: {
+    en: 'Faster to Market',
+    it: 'Più Rapido sul Mercato',
+    es: 'Más Rápido al Mercado',
+    fr: 'Plus Rapide sur le Marché',
+    de: 'Schneller am Markt',
+    pt: 'Chegada Mais Rápida ao Mercado',
+    ru: 'Быстрый Выход на Рынок',
+    ja: '市場投入の迅速化',
+    tr: 'Pazara Daha Hızlı Çıkış',
+    ar: 'وصol أسرع للسوق',
+    ko: '빠른 시장 출시',
+    zh: '更快上市',
+    hi: 'बाज़ार में जल्दी पहुंच',
+    vi: 'Ra Mắt Thị Trường Nhanh Hơn',
+    jv: 'Luwih Cepet menyang Pasar',
+    ms: 'Lebih Cepat ke Pasaran',
+    tg: 'Ба Бозор Зудтар',
+  },
+  fasterToMarketDesc: {
+    en: 'Rapid prototyping and on-time delivery to significantly shorten your product launch cycles.',
+    it: 'Sviluppo rapido di prototipi e consegne puntuali per accorciare i cicli di lancio.',
+    es: 'Prototipado rápido y entrega puntual para acortar sus ciclos de lanzamiento al mercado.',
+    fr: 'Prototypage rapide et livraison à temps pour raccourcir vos cycles de lancement.',
+    de: 'Schnelles Prototyping und pünktliche Lieferung, um Ihre Produkteinführungen zu verkürzen.',
+    pt: 'Prototipagem rápida e entrega pontual para encurtar significativamente seus ciclos de lancio.',
+    ru: 'Быстрое прототипирование и доставка вовремя для сокращения циклов запуска продукта.',
+    ja: '迅速なプロトタイピングと期日通りの納品により、製品のローンチサイクルを大幅に短縮します。',
+    tr: 'Hızlı prototipleme ve zamanında teslimat ile ürün lansman döngülerinizi kısaltın.',
+    ar: 'نماذج أولية سريعة وتسليم في الوقت المحدد لتقصير دورات إطلاق منتجك بشكل كبير.',
+    ko: '신속한 프로토타이핑과 정시 배송으로 제품 출시 주기를 크게 단축합니다.',
+    zh: '快速打样和准时交付，大幅缩短您的产品上市周期。',
+    hi: 'आपके उत्पाद लॉन्च चक्रों को छोटा करने के लिए तेज़ प्रोटोटाइपिंग और समय पर डिलीवरी।',
+    vi: 'Tạo mẫu nhanh và giao hàng đúng hạn để rút ngắn đáng kể chu kỳ ra mắt sản phẩm.',
+    jv: 'Prototyping cepet lan pangiriman pas wektu kanggo nyepetake siklus peluncuran.',
+    ms: 'Prototaip pantas dan penghantaran tepat pada masa untuk memendekkan kitaran pelancaran produk anda.',
+    tg: 'Прототипсозии зуд ва интиқоли саривақтӣ барои кӯтоҳ кардани давраҳои барориши маҳсулот.',
+  },
+  lowerRisk: {
+    en: 'Lower Risk',
+    it: 'Minor Rischio',
+    es: 'Menor Riesgo',
+    fr: 'Moins de Risques',
+    de: 'Geringeres Risiko',
+    pt: 'Menor Risco',
+    ru: 'Снижение Рисков',
+    ja: 'リスクの軽減',
+    tr: 'Daha Düşük Risk',
+    ar: 'مخاطر أقل',
+    ko: '리스크 감소',
+    zh: '更低风险',
+    hi: 'कम जोखिम',
+    vi: 'Ít Rủi Ro Hơn',
+    jv: 'Resiko Luwih sithik',
+    ms: 'Risiko Lebih Rendah',
+    tg: 'Хавфи Камтар',
+  },
+  lowerRiskDesc: {
+    en: 'Strict quality control, fully compliant premium materials, and transparent inspection reports.',
+    it: 'Rigoroso controllo qualità, materiali di prima scelta conformi e ispezioni trasparenti.',
+    es: 'Estricto control de calidad, materiales premium certificados y reportes transparentes.',
+    fr: 'Contrôle qualité strict, matériaux supérieurs conformes et rapports d\'inspection transparents.',
+    de: 'Strenge Qualitätskontrolle, vollständig konforme Premium-Materialien und transparente Prüfberichte.',
+    pt: 'Rigoroso controle de qualidade, materiais compatíveis com normas e relatórios transparenti.',
+    ru: 'Строгий контроль качества, соответствие материалов и прозрачные отчеты.',
+    ja: '厳格な品質管理、完全に準拠したプレミアム素材、透明性のある検査レポート。',
+    tr: 'Sıkı kalite kontrolü, tam uyumlu birinci sınıf malzemeler ve şeffaf denetim raporları.',
+    ar: 'رقابة صارمة على الجودة، ومواد ممتازة مطابقة تمامًا، وتقارير فحص شفافة.',
+    ko: '엄격한 품질 관리, 규정을 완벽히 준수하는 프리미엄 소재, 투명한 검사 보고서.',
+    zh: '严格的质量控制，完全符合标准的高端材料，以及透明的质检报告。',
+    hi: 'सख्त गुणवत्ता नियंत्रण, पूरी तरह से संगत प्रीमियम सामग्री, और पारदर्शी निरीक्षण रिपोर्ट।',
+    vi: 'Kiểm soát chất lượng nghiêm ngặt, vật liệu cao cấp hoàn toàn tuân thủ và báo cáo minh bạch.',
+    jv: 'Kontrol kualitas sing ketat, bahan premium sing tundhuk, lan laporan inspeksi transparan.',
+    ms: 'Kawalan kualiti yang ketat, bahan premium patuh penuh, dan laporan pemeriksaan telus.',
+    tg: 'Назорати қатъии сифат, маводи мувофиқ ва ҳисоботҳои шаффофи санҷиш.',
+  },
+  betterMargins: {
+    en: 'Better Margins',
+    it: 'Migliori Margini',
+    es: 'Mejores Márgenes',
+    fr: 'Meilleures Marges',
+    de: 'Bessere Margen',
+    pt: 'Melhores Margens',
+    ru: 'Лучшая Маржа',
+    ja: 'より良い利益率',
+    tr: 'Daha İyi Kar Marjı',
+    ar: 'هوامش أفضل',
+    ko: '마진 향상',
+    zh: '更好利润',
+    hi: 'बेहतर मार्जिन',
+    vi: 'Lợi Nhuận Tốt Hơn',
+    jv: 'Bathi Luwih Apik',
+    ms: 'Margin Lebih Baik',
+    tg: 'Фоидаи Беҳтар',
+  },
+  betterMarginsDesc: {
+    en: 'Optimized cost structures with uncompromising high-end Shenzhen manufacturing quality.',
+    it: 'Strutture di costo ottimizzate con la massima qualità manifatturiera di Shenzhen.',
+    es: 'Estructuras de costos optimizadas con calidad de fabricación de Shenzhen de alta gama.',
+    fr: 'Des structures de coûts optimisées alliées à une qualité de fabrication premium de Shenzhen.',
+    de: 'Optimierte Kostenstrukturen bei kompromisslos hochwertiger Fertigungsqualität aus Shenzhen.',
+    pt: 'Estruturas de custo otimizadas com inegociável alta qualidade de fabricazione de Shenzhen.',
+    ru: 'Оптимизированные структуры затрат с бескомпромиссным качеством производства Шэньчжэня.',
+    ja: '最適化されたコスト構造と妥協のない深センのハイエンド製造品質。',
+    tr: 'Ödün vermeden yüksek Shenzhen üretim kalitesiyle optimize edilmiş maliyet yapıları.',
+    ar: 'هياكل تكلفة محسّنة بجودة تصنيع عالية ومتأصلة في شينزين.',
+    ko: '타협하지 않는 선전의 하이엔드 제조 품질과 최적화된 비용 구조.',
+    zh: '优化成本结构，提供不妥协的深圳高端制造品质。',
+    hi: 'शेन्ज़ेन विनिर्माण गुणवत्ता के साथ समझौता किए बिना अनुकूलित लागत संरचनाएं।',
+    vi: 'Cấu trúc chi phí tối ưu kết hợp cùng chất lượng sản xuất cao cấp tại Thâm Quyến.',
+    jv: 'Struktur biaya dioptimalake kanthi kualitas manufaktur Shenzhen dhuwur.',
+    ms: 'Struktur kos dioptimumkan dengan kualiti pembuatan premium Shenzhen tanpa kompromi.',
+    tg: 'Сохторҳои арзиши оптималӣ бо сифати беназири истеҳсолоти Шенжен.',
+  }
+};
+
+const currentLang = (lang as any) || 'en';
+const qt = {
+  fasterToMarket: (quoteText.fasterToMarket as any)[currentLang] || quoteText.fasterToMarket.en,
+  fasterToMarketDesc: (quoteText.fasterToMarketDesc as any)[currentLang] || quoteText.fasterToMarketDesc.en,
+  lowerRisk: (quoteText.lowerRisk as any)[currentLang] || quoteText.lowerRisk.en,
+  lowerRiskDesc: (quoteText.lowerRiskDesc as any)[currentLang] || quoteText.lowerRiskDesc.en,
+  betterMargins: (quoteText.betterMargins as any)[currentLang] || quoteText.betterMargins.en,
+  betterMarginsDesc: (quoteText.betterMarginsDesc as any)[currentLang] || quoteText.betterMarginsDesc.en,
+};
+---
+
+<section class="pt-12 pb-4 lg:pt-16 lg:pb-8 bg-gradient-to-b from-stone-50 to-white">
+  <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1200px] mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      <!-- Card 1 -->
+      <div class="bg-[#FCFAF8] rounded-xl p-8 shadow-sm border border-[#8B7355]/10 text-center transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-xl hover:bg-white hover:border-[#8B7355]/30 cursor-default group">
+        <div class="w-16 h-16 bg-white shadow-sm border border-[#8B7355]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-500 ease-out group-hover:scale-110 group-hover:shadow-md group-hover:bg-[#8B7355]/5 group-hover:border-[#8B7355]/20">
+          <svg class="w-8 h-8 text-[#8B7355] transition-transform duration-500 ease-out" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-[#5D4E37] mb-3 transition-colors duration-500 group-hover:text-[#8B7355]">{qt.fasterToMarket}</h3>
+        <p class="text-sm text-stone-600 leading-relaxed">{qt.fasterToMarketDesc}</p>
+      </div>
+      
+      <!-- Card 2 -->
+      <div class="bg-[#FCFAF8] rounded-xl p-8 shadow-sm border border-[#8B7355]/10 text-center transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-xl hover:bg-white hover:border-[#8B7355]/30 cursor-default group">
+        <div class="w-16 h-16 bg-white shadow-sm border border-[#8B7355]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-500 ease-out group-hover:scale-110 group-hover:shadow-md group-hover:bg-[#8B7355]/5 group-hover:border-[#8B7355]/20">
+          <svg class="w-8 h-8 text-[#8B7355] transition-transform duration-500 ease-out" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-[#5D4E37] mb-3 transition-colors duration-500 group-hover:text-[#8B7355]">{qt.lowerRisk}</h3>
+        <p class="text-sm text-stone-600 leading-relaxed">{qt.lowerRiskDesc}</p>
+      </div>
+      
+      <!-- Card 3 -->
+      <div class="bg-[#FCFAF8] rounded-xl p-8 shadow-sm border border-[#8B7355]/10 text-center transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-xl hover:bg-white hover:border-[#8B7355]/30 cursor-default group">
+        <div class="w-16 h-16 bg-white shadow-sm border border-[#8B7355]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-500 ease-out group-hover:scale-110 group-hover:shadow-md group-hover:bg-[#8B7355]/5 group-hover:border-[#8B7355]/20">
+          <svg class="w-8 h-8 text-[#8B7355] transition-transform duration-500 ease-out" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-[#5D4E37] mb-3 transition-colors duration-500 group-hover:text-[#8B7355]">{qt.betterMargins}</h3>
+        <p class="text-sm text-stone-600 leading-relaxed">{qt.betterMarginsDesc}</p>
+      </div>
+    </div>
+  </div>
+</section>
