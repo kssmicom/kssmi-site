@@ -1,0 +1,7 @@
+﻿# Kssmi - Kernseiten (Deutsch)
+
+Primäre Navigation und Unternehmensinformationen.
+
+- Startseite | https://kssmi.com/de/
+- Über uns | https://kssmi.com/de/about-us/
+- Kontakt | https://kssmi.com/de/contact/

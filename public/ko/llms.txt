@@ -1,0 +1,18 @@
+﻿# Kssmi 대형 언어 모델 가이드 - 한국어
+Date: 2026-03-27
+
+한국어 콘텐츠를 탐색하려면 아래의 전문 디렉토리를 따르십시오.
+
+## 핵심 페이지 (기본 탐색 및 회사 정보.)
+- https://kssmi.com/ko/llms-core.txt
+
+## 제품 (프리미엄 B2B 선글라스 및 안경테 카탈로그.)
+- https://kssmi.com/ko/llms-products.txt
+
+## 랜딩 페이지 (제품 컬렉션, 소재 가이드 및 마케팅 페이지.)
+- https://kssmi.com/ko/llms-landing.txt
+
+## 블로그 (산업 통찰력, 뉴스 및 편집 기사.)
+- https://kssmi.com/ko/llms-blogs.txt
+
+*Kssmi Eyewear 제작*

@@ -1,0 +1,7 @@
+﻿# Kssmi - Основные страницы (Русский)
+
+Основная навигация и информация о компании.
+
+- Главная страница | https://kssmi.com/ru/
+- О нас | https://kssmi.com/ru/about-us/
+- Связаться с нами | https://kssmi.com/ru/contact/

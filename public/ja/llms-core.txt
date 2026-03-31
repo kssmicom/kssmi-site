@@ -1,0 +1,7 @@
+﻿# Kssmi - コアページ (日本語)
+
+主要なナビゲーションと企業情報。
+
+- ホームページ | https://kssmi.com/ja/
+- 私たちについて | https://kssmi.com/ja/about-us/
+- お問い合わせ | https://kssmi.com/ja/contact/

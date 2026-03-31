@@ -52,7 +52,7 @@ git add . && git commit -m "Update" && git push
 **Goal:** Create a new high-performance B2B eyewear website (kssmi.com) using Astro framework, replacing WordPress with a static site generator approach.
 
 **Why this project?**
-- Current WordPress site (yeetian.com) is functional but not optimal for speed
+- Current WordPress site (kssmi.com) is functional but not optimal for speed
 - Need multi-language support for global B2B customers (10 languages including Arabic RTL)
 - Want SEO-first architecture with Tailwind CSS integration
 - Require product showcase pages with minimal maintenance overhead

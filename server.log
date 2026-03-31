@@ -1,8 +1,282 @@
+[2m13:55:11[22m [34m[types][39m Generated [2m3ms[22m
 
-> yeetian-site@0.0.1 dev
-> astro dev
+[43m[30m update [39m[49m [33m▶ New version of Astro available: 5.18.0[39m
+  Run [36mnpx @astrojs/upgrade[39m to update
 
-[31m[config][39m Astro found issue(s) with your configuration:
+[2m13:55:12[22m [34m[content][39m Syncing content
+[33m[1m13:55:13[22m [WARN] [glob-loader][39m No files found matching "**/*.md,!**/_*/**/*.md,!**/_*.md" in directory "src\content\landing"
+[33m[1m13:55:13[22m [WARN] [glob-loader][39m No files found matching "**/*.md,!**/_*/**/*.md,!**/_*.md" in directory "src\content\blog"
+[2m13:55:17[22m [34m[content][39m Synced content
+[2m13:55:17[22m [34m[vite][39m Port 4321 is in use, trying another one...
+[2m13:55:17[22m [34m[vite][39m Port 4322 is in use, trying another one...
+[2m13:55:17[22m [34m[vite][39m Port 4323 is in use, trying another one...
 
-[31m! The [34moutput: "hybrid"[31m option has been removed. Use [34moutput: "static"[31m (the default) instead, which now behaves the same way.[39m
+[42m[1m astro [22m[49m [32mv5.17.2[39m [2mready in[22m 7814 [2mms[22m
 
+[2m┃[22m Local    [36mhttp://localhost:4324/[39m
+[2m┃[22m Network  [2muse --host to expose[22m
+
+[2m13:55:17[22m [32mwatching for file changes...[39m
+[33m[1m13:59:35[22m [WARN] [glob-loader][39m Duplicate id "yet345-acetate-sunglasses.en" found in D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\src\content\products\yet345-acetate-sunglasses\yet345-acetate-sunglasses.en.md. Later items with the same id will overwrite earlier ones.
+[2m13:59:35[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.en.md[39m
+[31m[1m13:59:36[22m [ERROR][39m [31m[UnknownFilesystemError][39m 
+  [1mHint:[22m
+[33m    It can be caused by many things, eg. missing permissions or a file not existing we attempt to read. Check the error cause for more details.[39m
+  [1mError reference:[22m
+    [36m[4mhttps://docs.astro.build/en/reference/errors/unknown-filesystem-error/[24m[39m
+  [1mStack trace:[22m
+[2m    at D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\node_modules\astro\dist\content\mutable-data-store.js:337:13
+    [...] See full stack trace in the br[33m[1m14:01:25[22m [WARN] [glob-loader][39m Duplicate id "yet345-acetate-sunglasses.en" found in D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\src\content\products\yet345-acetate-sunglasses\yet345-acetate-sunglasses.en.md. Later items with the same id will overwrite earlier ones.
+[2m14:01:25[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.en.md[39m
+[31m[1m14:01:26[22m [ERROR][39m [31m[UnknownFilesystemError][39m 
+  [1mHint:[22m
+[33m    It can be caused by many things, eg. missing permissions or a file not existing we attempt to read. Check the error cause for more details.[39m
+  [1mError reference:[22m
+    [36m[4mhttps://docs.astro.build/en/reference/errors/unknown-filesystem-error/[24m[39m
+  [1mStack trace:[22m
+[2m    at D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\node_modules\astro\dist\content\mutable-data-store.js:337:13
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
+  [1mCaused by:[22m
+[2m  EPERM: operation not permitted, rename 'D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\.astro\data-store.json.tmp' -> 'D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\.astro\data-store.json'
+    at async Object.rename (node:internal/fs/promises:787:10)
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
+[2m14:01:40[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.zh.md[39m
+[2m14:02:03[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.it.md[39m
+[2m14:02:12[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.es.md[39m
+[31m[1m14:02:13[22m [ERROR][39m [31m[UnknownFilesystemError][39m 
+  [1mHint:[22m
+[33m    It can be caused by many things, eg. missing permissions or a file not existing we attempt to read. Check the error cause for more details.[39m
+  [1mError reference:[22m
+    [36m[4mhttps://docs.astro.build/en/reference/errors/unknown-filesystem-error/[24m[39m
+  [1mStack trace:[22m
+[2m    at D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\node_modules\astro\dist\content\mutable-data-store.js:337:13
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
+  [1mCaused by:[22m
+[2m  EPERM: operation not permitted, rename 'D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\.astro\data-store.json.tmp' -> 'D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\.astro\data-store.json'
+    at async Object.rename (node:internal/fs/promises:787:10)
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
+[2m14:02:14[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.fr.md[39m
+[2m14:02:36[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.de.md[39m
+[31m[1m14:02:36[22m [ERROR][39m [31m[UnknownFilesystemError][39m 
+  [1mHint:[22m
+[33m    It can be caused by many things, eg. missing permissions or a file not existing we attempt to read. Check the error cause for more details.[39m
+  [1mError reference:[22m
+    [36m[4mhttps://docs.astro.build/en/reference/errors/unknown-filesystem-error/[24m[39m
+  [1mStack trace:[22m
+[2m    at D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\node_modules\astro\dist\content\mutable-data-store.js:337:13
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
+  [1mCaused by:[22m
+[2m  EPERM: operation not permitted, rename 'D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\.astro\data-store.json.tmp' -> 'D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\.astro\data-store.json'
+    at async Object.rename (node:internal/fs/promises:787:10)
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
+[2m14:02:38[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.pt.md[39m
+[2m14:03:02[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.ru.md[39m
+[2m14:03:11[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.ja.md[39m
+[31m[1m14:03:12[22m [ERROR][39m [31m[UnknownFilesystemError][39m 
+  [1mHint:[22m
+[33m    It can be caused by many things,[2m14:03:13[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.tr.md[39m
+[31m[1m14:03:14[22m [ERROR][39m [31m[UnknownFilesystemError][39m 
+  [1mHint:[22m
+[33m    It can be caused by many things, eg. missing permissions or a file not existing we attempt to read. Check the error cause for more details.[39m
+  [1mError reference:[22m
+    [36m[4mhttps://docs.astro.build/en/reference/errors/unknown-filesystem-error/[24m[39m
+  [1mStack trace:[22m
+[2m    at D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\node_modules\astro\dist\content\mutable-data-store.js:337:13
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
+  [1mCaused by:[22m
+[2m  EPERM: operation not permitted, rename 'D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\.astro\data-store.json.tmp' -> 'D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\.astro\data-store.json'
+    at as[2m14:03:36[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.ar.md[39m
+[31m[1m14:03:37[22m [ERROR][39m [31m[UnknownFilesystemError][39m 
+  [1mHint:[22m
+[33m    It can be caused by many things,[2m14:03:45[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.hi.md[39m
+[2m14:03:48[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.ko.md[39m
+[31m[1m14:03:48[22m [ERROR][39m [31m[UnknownFilesystemError][39m 
+  [1mHint:[22m
+[33m    It can be caused by many things, eg. missing permissions or a file not existing we attempt to read. Check the error cause for more details.[39m
+  [1mError reference:[22m
+    [36m[4mhttps://docs.astro.build/en/reference/errors/unknown-filesystem-error/[24m[39m
+  [1mStack trace:[22m
+[2m    at D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\node_modules\astro\dist\content\mutable-data-store.js:337:13
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
+  [1mCaused by:[22m
+[2m  EPERM: operation not permitted, rename 'D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\.astro\data-store.json.tmp' -> 'D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\.astro\data-store.json'
+    at async Object.rename (node:internal/fs/promises:787:10)
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
+[2m14:04:13[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.ms.md[39m
+[2m14:04:22[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.vi.md[39m
+[2m14:04:34[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.jv.md[39m
+[31m[1m14:04:35[22m [ERROR][39m [31m[UnknownFilesystemError][39m 
+  [1mHint:[22m
+[33m    It can be caused by many things, eg. missing permissions or a file not existing we attempt to read. Check the error cause for more details.[39m
+  [1mError reference:[22m
+    [36m[4mhttps://docs.astro.build/en/reference/errors/unknown-filesystem-error/[24m[39m
+  [1mStack trace:[22m
+[2m    at D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\node_modules\astro\dist\content\mutable-data-store.js:337:13
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
+  [1mCaused by:[22m
+[2m  ENOENT: no such file or directory, rename 'D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\.astro\data-store.json.tmp' -> 'D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\.astro\data-store.json'
+    at async Object.rename (node:internal/fs/promises:787:10)
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
+[2m14:04:36[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.tg.md[39m
+[33m[1m14:08:39[22m [WARN] [glob-loader][39m Duplicate id "yet344-acetate-sunglasses.vi" found in D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\src\content\products\yet344-acetate-sunglasses\yet344-acetate-sunglasses.vi.md. Later items with the same id will overwrite earlier ones.
+[2m14:08:39[22m [34m[glob-loader][39m Reloaded data from [32myet344-acetate-sunglasses/yet344-acetate-sunglasses.vi.md[39m
+s → yet345-acetate-sunglasses.jv[22m data does not match collection schema.
+
+  [1mtitle**: **title[22m: Required
+
+  [1mHint:[22m
+[33m    See [4mhttps://docs.astro.build/en/guides/content-collections/[24m for more information on content schemas.[39m
+  [1mError reference:[22m
+    [36m[4mhttps://docs.astro.build/en/reference/errors/invalid-content-entry-data-error/[24m[39m
+  [1mStack trace:[22m
+[2m    at getEntryDataAndImages (file:///D:/003%20Desk/Desk/Tools/Yeetian/yeetian-site/node_modules/astro/dist/content/utils.js:168:26)
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
+[2m14:04:34[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.jv.md[39m
+[2m14:04:37[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.tg.md[39m
+[33m[1m14:08:39[22m [WARN] [glob-loader][39m Duplicate id "yet344-acetate-sunglasses.vi" found in D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\src\content\products\yet344-acetate-sunglasses\yet344-acetate-sunglasses.vi.md. Later items with the same id will overwrite earlier ones.
+[2m14:08:39[22m [34m[glob-loader][39m Reloaded data from [32myet344-acetate-sunglasses/yet344-acetate-sunglasses.vi.md[39m
+uct [2m676ms[22m
+[2m14:03:04[22m [34m[200][39m /product [2m349ms[22m
+[2m14:03:11[22m [34m[watch][39m src/content/products/yet345-acetate-sunglasses/yet345-acetate-sunglasses.ja.md
+[2m14:03:11[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.ja.md[39m
+[2m14:03:13[22m [34m[200][39m /product [2m526ms[22m
+[2m14:03:13[22m [34m[watch][39m src/content/products/yet345-acetate-sunglasses/yet345-acetate-sunglasses.tr.md
+[2m14:03:13[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.tr.md[39m
+[31m[1m14:03:15[22m [ERROR][39m [31m[UnknownFilesystemError][39m 
+  [1mHint:[22m
+[33m    It can be caused by many things, eg. missing permissions or a file not existing we attempt to read. Check the error cause for more details.[39m
+  [1mError reference:[22m
+    [36m[4mhttps://docs.astro.build/en/reference/errors/unknown-filesystem-error/[24m[39m
+  [1mStack trace:[22m
+[2m    at D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\node_modules\astro\dist\content\mutable-data-store.js:337:13
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
+  [1mCaused by:[22m
+[2m  ENOENT: no such file or directory, rename 'D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\.astro\data-store.json.tmp' -> 'D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\.astro\data-store.json'
+    at async Object.rename (node:internal/fs/promises:787:10)
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
+The collection "products" does not exist or is empty. Please check your content config file for errors.
+The collection "products" does not exist or is empty. Please check your content config file for errors.
+[2m14:03:15[22m [34m[200][39m /product [2m209ms[22m
+[2m14:03:15[22m [34m[200][39m /product [2m50ms[22m
+[2m14:03:36[22m [34m[watch][39m src/content/products/yet345-acetate-sunglasses/yet345-acetate-sunglasses.ar.md
+[2m14:03:36[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.ar.md[39m
+[2m14:03:38[22m [34m[200][39m /product [2m1062ms[22m
+[2m14:03:38[22m [34m[200][39m /product [2m856ms[22m
+[2m14:03:38[22m [34m[200][39m /product [2m708ms[22m
+[2m14:03:38[22m [34m[200][39m /product [2m553ms[22m
+[2m14:03:40[22m [34m[200][39m /product/yet345-acetate-sunglasses [2m131ms[22m
+[2m14:03:40[22m [34m[200][39m /product/yeto-lc006-metal-optical [2m123ms[22m
+[2m14:03:40[22m [34m[200][39m /product/yeto-lc003-metal-optical [2m41ms[22m
+[2m14:03:45[22m [34m[watch][39m src/content/products/yet345-acetate-sunglasses/yet345-acetate-sunglasses.hi.md
+[2m14:03:45[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.hi.md[39m
+[2m14:03:47[22m [34m[200][39m /product [2m514ms[22m
+[2m14:03:48[22m [34m[watch][39m src/content/products/yet345-acetate-sunglasses/yet345-acetate-sunglasses.ko.md
+[2m14:03:48[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.ko.md[39m
+[31m[1m14:03:48[22m [ERROR][39m [31m[UnknownFilesystemError][39m 
+  [1mHint:[22m
+[33m    It can be caused by many things, eg. missing permissions or a file not existing we attempt to read. Check the error cause for more details.[39m
+  [1mError reference:[22m
+    [36m[4mhttps://docs.astro.build/en/reference/errors/unknown-filesystem-error/[24m[39m
+  [1mStack trace:[22m
+[2m    at D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\node_modules\astro\dist\content\mutable-data-store.js:337:13
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
+  [1mCaused by:[22m
+[2m  EPERM: operation not permitted, rename 'D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\.astro\data-store.json.tmp' -> 'D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\.astro\data-store.json'
+    at async Object.rename (node:internal/fs/promises:787:10)
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
+[2m14:03:49[22m [34m[200][39m /product [2m762ms[22m
+[2m14:04:13[22m [34m[watch][39m src/content/products/yet345-acetate-sunglasses/yet345-acetate-sunglasses.ms.md
+[2m14:04:13[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.ms.md[39m
+[31m[1m14:04:14[22m [ERROR][39m [31m[UnknownFilesystemError][39m 
+  [1mHint:[22m
+[33m    It can be caused by many things, eg. missing permissions or a file not existing we attempt to read. Check the error cause for more details.[39m
+  [1mError reference:[22m
+    [36m[4mhttps://docs.astro.build/en/reference/errors/unknown-filesystem-error/[24m[39m
+  [1mStack trace:[22m
+[2m    at D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\node_modules\astro\dist\content\mutable-data-store.js:337:13
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
+  [1mCaused by:[22m
+[2m  ENOENT: no such file or directory, rename 'D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\.astro\data-store.json.tmp' -> 'D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\.astro\data-store.json'
+    at async Object.rename (node:internal/fs/promises:787:10)
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
+The collection "products" does not exist or is empty. Please check your content config file for errors.
+The collection "products" does not exist or is empty. Please check your content config file for errors.
+[2m14:04:14[22m [34m[200][39m /product [2m201ms[22m
+[2m14:04:14[22m [34m[200][39m /product [2m46ms[22m
+[2m14:04:22[22m [34m[watch][39m src/content/products/yet345-acetate-sunglasses/yet345-acetate-sunglasses.vi.md
+[2m14:04:22[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.vi.md[39m
+[2m14:04:24[22m [34m[200][39m /product [2m810ms[22m
+[2m14:04:24[22m [34m[200][39m /product [2m621ms[22m
+[2m14:04:34[22m [34m[watch][39m src/content/products/yet345-acetate-sunglasses/yet345-acetate-sunglasses.jv.md
+[2m14:04:34[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.jv.md[39m
+[2m14:04:36[22m [34m[200][39m /product [2m636ms[22m
+[2m14:04:36[22m [34m[200][39m /product [2m347ms[22m
+[2m14:04:36[22m [34m[watch][39m src/content/products/yet345-acetate-sunglasses/yet345-acetate-sunglasses.tg.md
+[2m14:04:36[22m [34m[glob-loader][39m Reloaded data from [32myet345-acetate-sunglasses/yet345-acetate-sunglasses.tg.md[39m
+[2m14:04:38[22m [34m[200][39m /product [2m508ms[22m
+[2m14:05:16[22m [34m[200][39m /product/yeto-lc004-metal-optical [2m66ms[22m
+[2m14:05:16[22m [34m[200][39m /product/yet345-acetate-sunglasses [2m33ms[22m
+[2m14:05:16[22m [34m[200][39m /product/yet345-acetate-sunglasses [2m38ms[22m
+[2m14:05:17[22m [34m[200][39m [34mHEAD[39m /product/yet345-acetate-sunglasses [2m121ms[22m
+[2m14:05:23[22m [34m[200][39m /zh/product/yet345-acetate-sunglasses [2m30ms[22m
+[2m14:05:23[22m [34m[200][39m /zh/product/yet345-acetate-sunglasses [2m29ms[22m
+[2m14:05:23[22m [34m[200][39m [34mHEAD[39m /zh/product/yet345-acetate-sunglasses [2m96ms[22m
+[2m14:05:23[22m [34m[200][39m /zh/product [2m7ms[22m
+[2m14:05:37[22m [34m[200][39m /zh/product [2m12ms[22m
+[2m14:05:37[22m [34m[200][39m [34mHEAD[39m /zh/product [2m21ms[22m
+[2m14:05:38[22m [34m[200][39m /zh/product/yet344-acetate-sunglasses [2m34ms[22m
+[2m14:05:38[22m [34m[200][39m /zh/product/yet344-acetate-sunglasses [2m32ms[22m
+[2m14:05:39[22m [34m[200][39m [34mHEAD[39m /zh/product/yet344-acetate-sunglasses [2m32ms[22m
+[2m14:05:54[22m [34m[200][39m /product/yet344-acetate-sunglasses [2m33ms[22m
+[2m14:05:54[22m [34m[200][39m /it/product/yet344-acetate-sunglasses [2m35ms[22m
+[2m14:06:03[22m [34m[200][39m /pt/product/yet344-acetate-sunglasses [2m34ms[22m
+[2m14:06:03[22m [34m[200][39m /pt/product/yet344-acetate-sunglasses [2m27ms[22m
+[2m14:06:04[22m [34m[200][39m [34mHEAD[39m /pt/product/yet344-acetate-sunglasses [2m97ms[22m
+[2m14:06:08[22m [34m[200][39m /ar/product/yet344-acetate-sunglasses [2m38ms[22m
+[2m14:06:08[22m [34m[200][39m /tr/product/yet344-acetate-sunglasses [2m34ms[22m
+[2m14:06:08[22m [34m[200][39m /ja/product/yet344-acetate-sunglasses [2m34ms[22m
+[2m14:06:08[22m [34m[200][39m /ja/product/yet344-acetate-sunglasses [2m40ms[22m
+[2m14:06:09[22m [34m[200][39m [34mHEAD[39m /ja/product/yet344-acetate-sunglasses [2m79ms[22m
+[2m14:08:18[22m [34m[200][39m /ja/product/yet344-acetate-sunglasses [2m39ms[22m
+[2m14:08:20[22m [34m[200][39m [34mHEAD[39m /ja/product/yet344-acetate-sunglasses [2m41ms[22m
+[2m14:08:39[22m [34m[watch][39m src/content/products/yet344-acetate-sunglasses/yet344-acetate-sunglasses.vi.md
+[33m[1m14:08:39[22m [WARN] [glob-loader][39m Duplicate id "yet344-acetate-sunglasses.vi" found in D:\003 Desk\Desk\Tools\Yeetian\yeetian-site\src\content\products\yet344-acetate-sunglasses\yet344-acetate-sunglasses.vi.md. Later items with the same id will overwrite earlier ones.
+[2m14:08:39[22m [34m[glob-loader][39m Reloaded data from [32myet344-acetate-sunglasses/yet344-acetate-sunglasses.vi.md[39m
+[2m14:08:40[22m [34m[200][39m /ja/product/yet344-acetate-sunglasses [2m630ms[22m
+[2m14:08:40[22m [34m[200][39m /ja/product/yet344-acetate-sunglasses [2m46ms[22m
+[2m14:08:52[22m [34m[200][39m /ja/product/yet344-acetate-sunglasses [2m37ms[22m
+[2m14:08:53[22m [34m[200][39m [34mHEAD[39m /ja/product/yet344-acetate-sunglasses [2m78ms[22m
+[2m14:09:08[22m [34m[200][39m /ja/product/yet344-acetate-sunglasses [2m49ms[22m
+[2m14:09:09[22m [34m[200][39m [34mHEAD[39m /ja/product/yet344-acetate-sunglasses [2m86ms[22m
+[2m14:09:22[22m [33m[404][39m /ja/collection [2m15ms[22m
+[2m14:09:22[22m [34m[200][39m /ja/product [2m30ms[22m
+[2m14:09:22[22m [34m[200][39m /ja/product [2m9ms[22m
+[2m14:09:22[22m [34m[200][39m [34mHEAD[39m /ja/product [2m42ms[22m
+[2m14:09:24[22m [34m[200][39m /product [2m34ms[22m
+[2m14:09:24[22m [34m[200][39m /product [2m36ms[22m
+[2m14:09:25[22m [34m[200][39m [34mHEAD[39m /product [2m154ms[22m
+[2m14:09:25[22m [34m[200][39m /product/high-couture-sunglasses [2m40ms[22m
+[33m[1m14:09:26[22m [WARN] [router][39m A `getStaticPaths()` route pattern was matched, but no matching static path was found for requested path `/product/classics-glasses`.
+
+Possible dynamic routes being matched: src/pages/product/[page].astro, src/pages/product/[slug].astro, src/pages/product/[category]/[...page].astro.
+[2m14:09:26[22m [33m[404][39m /product/classics-glasses [2m4ms[22m
+[33m[1m14:09:26[22m [WARN] [router][39m A `getStaticPaths()` route pattern was matched, but no matching static path was found for requested path `/product/fashion-series`.
+
+Possible dynamic routes being matched: src/pages/product/[page].astro, src/pages/product/[slug].astro, src/pages/product/[category]/[...page].astro.
+[2m14:09:26[22m [33m[404][39m /product/fashion-series [2m3ms[22m
+[2m14:09:27[22m [34m[200][39m /product/classics-sunglasses [2m24ms[22m
+[2m14:09:27[22m [34m[200][39m /product/classics-sunglasses [2m22ms[22m
+[2m14:09:28[22m [34m[200][39m [34mHEAD[39m /product/classics-sunglasses [2m34ms[22m
+[2m14:09:28[22m [34m[200][39m /product/classics-series [2m26ms[22m
+[2m14:09:28[22m [34m[200][39m /product/yet345-acetate-sunglasses [2m51ms[22m
+[2m14:09:28[22m [34m[200][39m /product/yet344-acetate-sunglasses [2m76ms[22m
+[2m14:09:28[22m [34m[200][39m /product/yet344-acetate-sunglasses [2m45ms[22m
+[2m14:09:29[22m [34m[200][39m [34mHEAD[39m /product/yet344-acetate-sunglasses [2m71ms[22m
+[2m14:09:29[22m [34m[200][39m /quote [2m4ms[22m
+[2m14:09:32[22m [34m[200][39m /ar/product/yet344-acetate-sunglasses [2m36ms[22m
+[2m14:09:32[22m [34m[200][39m /ko/product/yet344-acetate-sunglasses [2m38ms[22m
+[2m14:09:32[22m [34m[200][39m /zh/product/yet344-acetate-sunglasses [2m38ms[22m
+[2m14:09:32[22m [34m[200][39m /zh/product/yet344-acetate-sunglasses [2m40ms[22m
+[2m14:09:33[22m [34m[200][39m [34mHEAD[39m /zh/product/yet344-acetate-sunglasses [2m60ms[22m
+[2m14:09:35[22m [34m[200][39m /zh/product/yet344-acetate-sunglasses [2m30ms[22m
+[2m14:09:36[22m [34m[200][39m [34mHEAD[39m /zh/product/yet344-acetate-sunglasses [2m50ms[22m

@@ -1,0 +1,18 @@
+﻿# Kssmi Guia de Grandes Modelos de Linguagem - Português
+Date: 2026-03-27
+
+Para explorar nosso conteúdo em Português, siga os diretórios especializados abaixo:
+
+## Páginas Principais (Navegação primária e informações da empresa.)
+- https://kssmi.com/pt/llms-core.txt
+
+## Produtos (Catálogo de nossos óculos de sol e armações B2B premium.)
+- https://kssmi.com/pt/llms-products.txt
+
+## Páginas de Destino (Coleções de produtos, guias de materiais e páginas de marketing.)
+- https://kssmi.com/pt/llms-landing.txt
+
+## Blogs (Insights do setor, notícias e artigos editoriais.)
+- https://kssmi.com/pt/llms-blogs.txt
+
+*Gerado por Kssmi Eyewear*

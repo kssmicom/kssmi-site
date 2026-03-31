@@ -1,6 +1,6 @@
 <?php
 /**
- * Yeetian Email Log Viewer
+ * KSSMI Email Log Viewer
  * Features:
  * - Password protected access
  * - Forgot password with email reset
@@ -17,7 +17,7 @@ $_privateConfigPath = dirname(__DIR__) . '/private_config.php';
 if (file_exists($_privateConfigPath)) {
     $_privateCfg = require $_privateConfigPath;
 } else {
-    error_log('Yeetian: private_config.php not found at ' . $_privateConfigPath);
+    error_log('KSSMI: private_config.php not found at ' . $_privateConfigPath);
     $_privateCfg = ['smtp_pass' => '', 'turnstile_secret' => ''];
 }
 
@@ -25,7 +25,7 @@ if (file_exists($_privateConfigPath)) {
 define('PASSWORD_FILE', dirname(__FILE__) . '/.email_logs_password');
 define('LOGS_FILE', dirname(dirname(__FILE__)) . '/email-logs.json');
 define('RESET_TOKENS_FILE', dirname(__FILE__) . '/.email_reset_tokens.json');
-define('ADMIN_EMAIL', 'yeetianeyewear@gmail.com');
+define('ADMIN_EMAIL', 'kssmi@kssmi.com');
 
 // Country code to name mapping
 $COUNTRY_NAMES = [
@@ -79,7 +79,7 @@ function getCountryName($code) {
 
 // Get password - with better error handling
 function getPassword() {
-    $defaultPassword = 'yeetian2024';
+    $defaultPassword = 'kssmi2024';
     if (!file_exists(PASSWORD_FILE)) {
         return $defaultPassword;
     }
@@ -159,25 +159,25 @@ function sendResetEmail($token) {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'yeetianeyewear@gmail.com';
+        $mail->Username = 'kssmi@kssmi.com';
         $mail->Password = $_privateCfg['smtp_pass'];
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
-        $mail->setFrom('yeetianeyewear@gmail.com', 'Yeetian Website');
+        $mail->setFrom('kssmi@kssmi.com', 'KSSMI Website');
         $mail->addAddress(ADMIN_EMAIL);
 
-        $resetUrl = 'https://yeetian.com/email-logs.php?reset=' . $token;
+        $resetUrl = 'https://kssmi.com/email-logs.php?reset=' . $token;
 
         $mail->isHTML(true);
-        $mail->Subject = 'Password Reset Request - Yeetian Email Logs';
+        $mail->Subject = 'Password Reset Request - KSSMI Email Logs';
 
         $mail->Body = "
         <html>
         <body style='font-family: -apple-system, BlinkMacSystemFont,Segoe UI,Roboto,sans-serif; padding: 20px;'>
             <div style='max-width: 600px; margin: 0 auto; background: #fff; border-radius: 8px; padding: 30px; border: 1px solid #e0e0e0;'>
                 <h2 style='color: #5D4E37; margin-bottom: 20px;'>Password Reset Request</h2>
-                <p style='color: #333; line-height: 1.6;'>Someone requested to reset the password for the Yeetian Email Logs admin panel.</p>
+                <p style='color: #333; line-height: 1.6;'>Someone requested to reset the password for the KSSMI Email Logs admin panel.</p>
                 <p style='color: #333; line-height: 1.6;'>Click the button below to set a new password:</p>
                 <p style='margin: 30px 0;'>
                     <a href='{$resetUrl}' style='background: #8B7355; color: white; padding: 12px 30px; text-decoration: none; border-radius: 4px; display: inline-block;'>Reset Password</a>
@@ -400,7 +400,7 @@ foreach ($logs as $l) {
 // Build HTML email (same format as send-mail.php)
 function buildResendHtmlEmail($formData, $ip, $country, $inquiryId, $origTime) {
     $timestamp = date('Y-m-d H:i:s');
-    $source = 'https://yeetian.com' . ($formData['product_url'] ?? '');
+    $source = 'https://kssmi.com' . ($formData['product_url'] ?? '');
     $lang = $formData['language'] ?? 'en';
 
     // Email translations
@@ -415,17 +415,17 @@ function buildResendHtmlEmail($formData, $ip, $country, $inquiryId, $origTime) {
             'time' => 'Time',
             'source' => 'Source',
             'country' => 'Country',
-            'footer' => 'This email was automatically generated from the Yeetian Eyewear contact form.',
+            'footer' => 'This email was automatically generated from the KSSMI Eyewear contact form.',
         ],
-        'it' => ['contactInfo' => 'Informazioni di Contatto', 'name' => 'Nome', 'email' => 'Indirizzo Email', 'product' => 'Interesse Prodotto', 'projectDetails' => 'Dettagli del Progetto', 'metadata' => 'Metadati', 'time' => 'Ora', 'source' => 'Fonte', 'country' => 'Paese', 'footer' => 'Questa email è stata generata automaticamente dal modulo di contatto Yeetian Eyewear.'],
-        'es' => ['contactInfo' => 'Información de Contacto', 'name' => 'Nombre', 'email' => 'Dirección de Correo', 'product' => 'Interés del Producto', 'projectDetails' => 'Detalles del Proyecto', 'metadata' => 'Metadatos', 'time' => 'Hora', 'source' => 'Fuente', 'country' => 'País', 'footer' => 'Este correo fue generado automáticamente desde el formulario de contacto de Yeetian Eyewear.'],
-        'fr' => ['contactInfo' => 'Informations de Contact', 'name' => 'Nom', 'email' => 'Adresse Email', 'product' => 'Intérêt pour le Produit', 'projectDetails' => 'Détails du Projet', 'metadata' => 'Métadonnées', 'time' => 'Heure', 'source' => 'Source', 'country' => 'Pays', 'footer' => 'Cet email a été généré automatiquement depuis le formulaire de contact Yeetian Eyewear.'],
-        'de' => ['contactInfo' => 'Kontaktinformationen', 'name' => 'Name', 'email' => 'E-Mail-Adresse', 'product' => 'Produktinteresse', 'projectDetails' => 'Projektdetails', 'metadata' => 'Metadaten', 'time' => 'Zeit', 'source' => 'Quelle', 'country' => 'Land', 'footer' => 'Diese E-Mail wurde automatisch vom Yeetian Eyewear Kontaktformular generiert.'],
-        'pt' => ['contactInfo' => 'Informações de Contato', 'name' => 'Nome', 'email' => 'Endereço de Email', 'product' => 'Interesse no Produto', 'projectDetails' => 'Detalhes do Projeto', 'metadata' => 'Metadados', 'time' => 'Hora', 'source' => 'Fonte', 'country' => 'País', 'footer' => 'Este email foi gerado automaticamente pelo formulário de contato Yeetian Eyewear.'],
-        'ru' => ['contactInfo' => 'Контактная информация', 'name' => 'Имя', 'email' => 'Адрес электронной почты', 'product' => 'Интерес к продукту', 'projectDetails' => 'Детали проекта', 'metadata' => 'Метаданные', 'time' => 'Время', 'source' => 'Источник', 'country' => 'Страна', 'footer' => 'Это письмо было автоматически создано формой связи Yeetian Eyewear.'],
-        'ja' => ['contactInfo' => '連絡先情報', 'name' => '名前', 'email' => 'メールアドレス', 'product' => '製品への関心', 'projectDetails' => 'プロジェクト詳細', 'metadata' => 'メタデータ', 'time' => '時間', 'source' => 'ソース', 'country' => '国', 'footer' => 'このメールはYeetian Eyewearのお問い合わせフォームから自動的に生成されました。'],
-        'tr' => ['contactInfo' => 'İletişim Bilgileri', 'name' => 'İsim', 'email' => 'E-posta Adresi', 'product' => 'Ürün İlgi Alanı', 'projectDetails' => 'Proje Detayları', 'metadata' => 'Meta Veriler', 'time' => 'Zaman', 'source' => 'Kaynak', 'country' => 'Ülke', 'footer' => 'Bu e-posta Yeetian Eyewear iletişim formundan otomatik olarak oluşturulmuştur.'],
-        'ar' => ['contactInfo' => 'معلومات الاتصال', 'name' => 'الاسم', 'email' => 'البريد الإلكتروني', 'product' => 'اهتمام المنتج', 'projectDetails' => 'تفاصيل المشروع', 'metadata' => 'البيانات الوصفية', 'time' => 'الوقت', 'source' => 'المصدر', 'country' => 'البلد', 'footer' => 'تم إنشاء هذا البريد الإلكتروني تلقائيًا من نموذج الاتصال Yeetian Eyewear.'],
+        'it' => ['contactInfo' => 'Informazioni di Contatto', 'name' => 'Nome', 'email' => 'Indirizzo Email', 'product' => 'Interesse Prodotto', 'projectDetails' => 'Dettagli del Progetto', 'metadata' => 'Metadati', 'time' => 'Ora', 'source' => 'Fonte', 'country' => 'Paese', 'footer' => 'Questa email è stata generata automaticamente dal modulo di contatto KSSMI Eyewear.'],
+        'es' => ['contactInfo' => 'Información de Contacto', 'name' => 'Nombre', 'email' => 'Dirección de Correo', 'product' => 'Interés del Producto', 'projectDetails' => 'Detalles del Proyecto', 'metadata' => 'Metadatos', 'time' => 'Hora', 'source' => 'Fuente', 'country' => 'País', 'footer' => 'Este correo fue generado automáticamente desde el formulario de contacto de KSSMI Eyewear.'],
+        'fr' => ['contactInfo' => 'Informations de Contact', 'name' => 'Nom', 'email' => 'Adresse Email', 'product' => 'Intérêt pour le Produit', 'projectDetails' => 'Détails du Projet', 'metadata' => 'Métadonnées', 'time' => 'Heure', 'source' => 'Source', 'country' => 'Pays', 'footer' => 'Cet email a été généré automatiquement depuis le formulaire de contact KSSMI Eyewear.'],
+        'de' => ['contactInfo' => 'Kontaktinformationen', 'name' => 'Name', 'email' => 'E-Mail-Adresse', 'product' => 'Produktinteresse', 'projectDetails' => 'Projektdetails', 'metadata' => 'Metadaten', 'time' => 'Zeit', 'source' => 'Quelle', 'country' => 'Land', 'footer' => 'Diese E-Mail wurde automatisch vom KSSMI Eyewear Kontaktformular generiert.'],
+        'pt' => ['contactInfo' => 'Informações de Contato', 'name' => 'Nome', 'email' => 'Endereço de Email', 'product' => 'Interesse no Produto', 'projectDetails' => 'Detalhes do Projeto', 'metadata' => 'Metadados', 'time' => 'Hora', 'source' => 'Fonte', 'country' => 'País', 'footer' => 'Este email foi gerado automaticamente pelo formulário de contato KSSMI Eyewear.'],
+        'ru' => ['contactInfo' => 'Контактная информация', 'name' => 'Имя', 'email' => 'Адрес электронной почты', 'product' => 'Интерес к продукту', 'projectDetails' => 'Детали проекта', 'metadata' => 'Метаданные', 'time' => 'Время', 'source' => 'Источник', 'country' => 'Страна', 'footer' => 'Это письмо было автоматически создано формой связи KSSMI Eyewear.'],
+        'ja' => ['contactInfo' => '連絡先情報', 'name' => '名前', 'email' => 'メールアドレス', 'product' => '製品への関心', 'projectDetails' => 'プロジェクト詳細', 'metadata' => 'メタデータ', 'time' => '時間', 'source' => 'ソース', 'country' => '国', 'footer' => 'このメールはKSSMI Eyewearのお問い合わせフォームから自動的に生成されました。'],
+        'tr' => ['contactInfo' => 'İletişim Bilgileri', 'name' => 'İsim', 'email' => 'E-posta Adresi', 'product' => 'Ürün İlgi Alanı', 'projectDetails' => 'Proje Detayları', 'metadata' => 'Meta Veriler', 'time' => 'Zaman', 'source' => 'Kaynak', 'country' => 'Ülke', 'footer' => 'Bu e-posta KSSMI Eyewear iletişim formundan otomatik olarak oluşturulmuştur.'],
+        'ar' => ['contactInfo' => 'معلومات الاتصال', 'name' => 'الاسم', 'email' => 'البريد الإلكتروني', 'product' => 'اهتمام المنتج', 'projectDetails' => 'تفاصيل المشروع', 'metadata' => 'البيانات الوصفية', 'time' => 'الوقت', 'source' => 'المصدر', 'country' => 'البلد', 'footer' => 'تم إنشاء هذا البريد الإلكتروني تلقائيًا من نموذج الاتصال KSSMI Eyewear.'],
     ];
 
     $t = $translations[$lang] ?? $translations['en'];
@@ -464,7 +464,7 @@ function buildResendHtmlEmail($formData, $ip, $country, $inquiryId, $origTime) {
 <body>
     <div class='container'>
         <div class='header'>
-            <h1>{$name} - Yeetian</h1>
+            <h1>{$name} - Kssmi</h1>
         </div>
         <div class='content'>
             <div class='section'>
@@ -508,7 +508,7 @@ function buildResendHtmlEmail($formData, $ip, $country, $inquiryId, $origTime) {
 
 function buildResendTextEmail($formData, $ip, $country, $inquiryId, $origTime) {
     $timestamp = date('Y-m-d H:i:s');
-    $source = 'https://yeetian.com' . ($formData['product_url'] ?? '');
+    $source = 'https://kssmi.com' . ($formData['product_url'] ?? '');
     $name = $formData['name'] ?? 'Unknown';
     $email = $formData['email'] ?? 'N/A';
     $product = $formData['product_name'] ?? 'N/A';
@@ -516,7 +516,7 @@ function buildResendTextEmail($formData, $ip, $country, $inquiryId, $origTime) {
     $countryName = getCountryName($country);
 
     return "
-{$name} - Yeetian
+{$name} - Kssmi
 ================
 
 Name: {$name}
@@ -537,21 +537,21 @@ Country: {$countryName}
 ID: {$inquiryId}
 
 ---
-This email was automatically generated from the Yeetian Eyewear contact form.
+This email was automatically generated from the KSSMI Eyewear contact form.
 ";
 }
 
 // Resend function
 function resendEmail($log) {
     $config = [
-        'to_email' => 'info@yeetian.com',
-        'to_name' => 'Yeetian Sales Team',
-        'from_email' => 'yeetianeyewear@gmail.com',
-        'from_name' => 'Yeetian Eyewear',
+        'to_email' => 'sales@kssmi.com',
+        'to_name' => 'KSSMI Sales Team',
+        'from_email' => 'kssmi@kssmi.com',
+        'from_name' => 'Kssmi Eyewear',
         'smtp' => [
             'host' => 'smtp.gmail.com',
             'port' => 587,
-            'user' => 'yeetianeyewear@gmail.com',
+            'user' => 'kssmi@kssmi.com',
             'pass' => $_privateCfg['smtp_pass'],
             'secure' => 'tls',
         ],
@@ -592,7 +592,7 @@ function resendEmail($log) {
         $origTime = $log['timestamp'] ?? 'Unknown';
 
         $mail->isHTML(true);
-        $mail->Subject = "{$name} - Yeetian Eyewear - {$inquiryId}";
+        $mail->Subject = "{$name} - Kssmi Eyewear - {$inquiryId}";
         $mail->Body = buildResendHtmlEmail($formData, $ip, $country, $inquiryId, $origTime);
         $mail->AltBody = buildResendTextEmail($formData, $ip, $country, $inquiryId, $origTime);
 
@@ -610,7 +610,7 @@ function resendEmail($log) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Logs - Yeetian</title>
+    <title>Email Logs - KSSMI</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; padding: 20px; }
@@ -753,7 +753,7 @@ function resendEmail($log) {
             <div class="header">
                 <div>
                     <h1>Email Logs</h1>
-                    <p class="subtitle">Track and manage all email inquiries from yeetian.com</p>
+                    <p class="subtitle">Track and manage all email inquiries from kssmi.com</p>
                 </div>
                 <div>
                     <button class="btn btn-secondary" onclick="document.getElementById('passwordModal').classList.add('show')">Change Password</button>
@@ -839,7 +839,7 @@ function resendEmail($log) {
                                 $email = $log['form_data']['email'] ?? 'N/A';
                                 $product = $log['form_data']['product_name'] ?? 'N/A';
                                 $pageUrl = $log['form_data']['product_url'] ?? '';
-                                $fullUrl = $pageUrl ? 'https://yeetian.com' . $pageUrl : 'N/A';
+                                $fullUrl = $pageUrl ? 'https://kssmi.com' . $pageUrl : 'N/A';
                                 $ip = $log['ip_address'] ?? 'N/A';
                                 $countryCode = $log['country'] ?? '';
                                 $countryName = $countryCode ? getCountryName($countryCode) : 'Unknown';
@@ -939,7 +939,7 @@ function resendEmail($log) {
                                             <div class="message-box" style="border-left-color:#e74c3c;background:#fdeaea;"><?php echo htmlspecialchars($log['error']); ?></div>
                                             <?php endif; ?>
                                             <div class="actions">
-                                                <form method="POST" style="display:inline;" onsubmit="return confirm('Resend this email to info@yeetian.com?');">
+                                                <form method="POST" style="display:inline;" onsubmit="return confirm('Resend this email to sales@kssmi.com?');">
                                                     <input type="hidden" name="resend_id" value="<?php echo htmlspecialchars($logId); ?>">
                                                     <button type="submit" class="btn btn-success">Resend</button>
                                                 </form>

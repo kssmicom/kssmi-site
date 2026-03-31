@@ -1,0 +1,7 @@
+﻿# Kssmi - Core Pages (English)
+
+Primary navigation and company information.
+
+- Homepage | https://kssmi.com/
+- About Us | https://kssmi.com/about-us/
+- Contact | https://kssmi.com/contact/

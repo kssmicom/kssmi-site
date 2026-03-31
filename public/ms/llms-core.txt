@@ -1,0 +1,7 @@
+﻿# Kssmi - Halaman Utama (Melayu)
+
+Navigasi utama dan maklumat syarikat.
+
+- Laman Utama | https://kssmi.com/ms/
+- Tentang Kami | https://kssmi.com/ms/about-us/
+- Hubungi Kami | https://kssmi.com/ms/contact/

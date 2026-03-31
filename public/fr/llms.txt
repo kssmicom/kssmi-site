@@ -1,0 +1,18 @@
+﻿# Kssmi Guide des grands modèles linguistiques - Français
+Date: 2026-03-27
+
+Pour explorer notre contenu en Français, veuillez suivre les répertoires spécialisés ci-dessous :
+
+## Pages principales (Navigation principale et informations sur l'entreprise.)
+- https://kssmi.com/fr/llms-core.txt
+
+## Produits (Catalogue de nos lunettes de soleil B2B haut de gamme et montures.)
+- https://kssmi.com/fr/llms-products.txt
+
+## Pages de destination (Collections de produits, guides des matériaux et pages marketing.)
+- https://kssmi.com/fr/llms-landing.txt
+
+## Blogs (Aperçus de l'industrie, actualités et articles éditoriaux.)
+- https://kssmi.com/fr/llms-blogs.txt
+
+*Généré par Kssmi Eyewear*

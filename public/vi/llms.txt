@@ -1,0 +1,18 @@
+﻿# Kssmi Hướng dẫn Mô hình Ngôn ngữ Lớn - Tiếng Việt
+Date: 2026-03-27
+
+Để khám phá nội dung Tiếng Việt của chúng tôi, vui lòng theo các thư mục chuyên dụng dưới đây:
+
+## Trang Cốt Lõi (Điều hướng chính và thông tin công ty.)
+- https://kssmi.com/vi/llms-core.txt
+
+## Sản phẩm (Danh mục kính râm B2B cao cấp và gọng kính của chúng tôi.)
+- https://kssmi.com/vi/llms-products.txt
+
+## Trang Đích (Bộ sưu tập sản phẩm, hướng dẫn chất liệu và trang tiếp thị.)
+- https://kssmi.com/vi/llms-landing.txt
+
+## Blog (Sự hiểu biết sâu sắc về ngành, tin tức và bài báo biên tập.)
+- https://kssmi.com/vi/llms-blogs.txt
+
+*Được tạo bởi Kssmi Eyewear*

@@ -1,0 +1,7 @@
+﻿# Kssmi - الصفحات الأساسية (العربية)
+
+التنقل الأساسي ومعلومات الشركة.
+
+- الصفحة الرئيسية | https://kssmi.com/ar/
+- من نحن | https://kssmi.com/ar/about-us/
+- اتصل بنا | https://kssmi.com/ar/contact/

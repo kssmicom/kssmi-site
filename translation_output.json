@@ -1,0 +1,22 @@
+{
+  "blocks[14].s13b_manufacturing_process.badge": "Standard Industriale Kssmi per Occhialeria",
+  "blocks[14].s13b_manufacturing_process.title": "Personalizzazione e Processo di Produzione",
+  "blocks[14].s13b_manufacturing_process.intro": "Trasforma il tuo design in montature pronte per la produzione. Eseguiamo l'intero ciclo — dalla progettazione CAD e prototipazione alla laminazione dell'acetato multistrato e alla finitura di precisione — con MOQ ridotti e tempistiche di consegna strictly gestite.",
+  "blocks[14].s13b_manufacturing_process.ctaText": "Inizia l'Ingegnerizzazione",
+  "blocks[14].s13b_manufacturing_process.phaseA.title": "Fase A",
+  "blocks[14].s13b_manufacturing_process.phaseA.subtitle": "Pre-Produzione",
+  "blocks[14].s13b_manufacturing_process.phaseA.steps[0].title": "Prototipazione e R&S",
+  "blocks[14].s13b_manufacturing_process.phaseA.steps[1].title": "Stampi e Utensileria",
+  "blocks[14].s13b_manufacturing_process.phaseA.steps[2].title": "Lavorazione dell'Acetato",
+  "blocks[14].s13b_manufacturing_process.phaseA.steps[3].title": "Stampaggio a Iniezione",
+  "blocks[14].s13b_manufacturing_process.phaseA.steps[4].title": "Lavorazione Metallica CNC",
+  "blocks[14].s13b_manufacturing_process.phaseA.steps[5].title": "Processi di Assemblaggio",
+  "blocks[14].s13b_manufacturing_process.phaseB.title": "Fase B",
+  "blocks[14].s13b_manufacturing_process.phaseB.subtitle": "Finitura e CQ",
+  "blocks[14].s13b_manufacturing_process.phaseB.steps[0].title": "Taglio delle Lenti",
+  "blocks[14].s13b_manufacturing_process.phaseB.steps[1].title": "Finitura Superficiale",
+  "blocks[14].s13b_manufacturing_process.phaseB.steps[2].title": "Controllo Qualità",
+  "blocks[14].s13b_manufacturing_process.phaseB.steps[3].title": "Linee Flessibili",
+  "blocks[14].s13b_manufacturing_process.phaseB.steps[4].title": "Produzione di Massa",
+  "blocks[14].s13b_manufacturing_process.phaseB.steps[5].title": "Componenti Speciali"
+}

@@ -1,0 +1,7 @@
+﻿# Kssmi - Páginas principales (Español)
+
+Navegación principal e información de la empresa.
+
+- Inicio | https://kssmi.com/es/
+- Sobre nosotros | https://kssmi.com/es/about-us/
+- Contacto | https://kssmi.com/es/contact/

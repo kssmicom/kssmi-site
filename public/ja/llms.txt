@@ -1,0 +1,18 @@
+﻿# Kssmi 大規模言語モデルガイド - 日本語
+Date: 2026-03-27
+
+当社の 日本語 コンテンツを検索するには、以下の専門ディレクトリに従ってください：
+
+## コアページ (主要なナビゲーションと企業情報。)
+- https://kssmi.com/ja/llms-core.txt
+
+## 製品 (当社のプレミアムB2Bサングラスとメガネフレームのカタログ。)
+- https://kssmi.com/ja/llms-products.txt
+
+## ランディングページ (製品コレクション、素材ガイド、マーケティングページ。)
+- https://kssmi.com/ja/llms-landing.txt
+
+## ブログ (業界の洞察、ニュース、編集記事。)
+- https://kssmi.com/ja/llms-blogs.txt
+
+*Kssmi Eyewear によって生成*

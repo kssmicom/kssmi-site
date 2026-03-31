@@ -1,0 +1,7 @@
+﻿# Kssmi - मुख्य पृष्ठ (हिन्दी)
+
+प्राथमिक नेविगेशन और कंपनी की जानकारी।
+
+- होमपेज | https://kssmi.com/hi/
+- हमारे बारे में | https://kssmi.com/hi/about-us/
+- संपर्क करें | https://kssmi.com/hi/contact/

@@ -1,0 +1,7 @@
+﻿# Kssmi - Ana Sayfalar (Türkçe)
+
+Birincil gezinme ve şirket bilgileri.
+
+- Ana Sayfa | https://kssmi.com/tr/
+- Hakkımızda | https://kssmi.com/tr/about-us/
+- İletişim | https://kssmi.com/tr/contact/

@@ -1,0 +1,18 @@
+﻿# Kssmi 大语言模型指南 - 中文
+Date: 2026-03-27
+
+要探索我们的 中文 内容，请按照以下专门的目录进行：
+
+## 核心页面 (主要导航和公司信息。)
+- https://kssmi.com/zh/llms-core.txt
+
+## 产品 (我们的优质 B2B 太阳镜和眼镜架目录。)
+- https://kssmi.com/zh/llms-products.txt
+
+## 着陆页 (产品系列、材料指南和营销页面。)
+- https://kssmi.com/zh/llms-landing.txt
+
+## 博客 (行业洞察、新闻和社论文章。)
+- https://kssmi.com/zh/llms-blogs.txt
+
+*由 Kssmi Eyewear 生成*

@@ -1,0 +1,18 @@
+﻿# Kssmi Pandhuan Model Basa Gedhe - Jawa
+Date: 2026-03-27
+
+Kanggo njelajah konten Jawa kita, tututi direktori khusus ing ngisor iki:
+
+## Kaca Utama (Pandhu arah utama lan informasi perusahaan.)
+- https://kssmi.com/jv/llms-core.txt
+
+## Produk (Katalog kacamata ireng B2B premium lan bingkai kacamata.)
+- https://kssmi.com/jv/llms-products.txt
+
+## Kaca kebangkrutan (Koleksi produk, pandhuan materi, lan kaca pemasaran.)
+- https://kssmi.com/jv/llms-landing.txt
+
+## Blog (Wawasan industri, warta, lan artikel editorial.)
+- https://kssmi.com/jv/llms-blogs.txt
+
+*Digawe dening Kssmi Eyewear*

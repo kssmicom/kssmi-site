@@ -1,0 +1,18 @@
+﻿# Kssmi Guía de modelos de lenguaje grande - Español
+Date: 2026-03-27
+
+Para explorar nuestro contenido en Español, siga los directorios especializados a continuación:
+
+## Páginas principales (Navegación principal e información de la empresa.)
+- https://kssmi.com/es/llms-core.txt
+
+## Productos (Catálogo de nuestras gafas de sol B2B premium y monturas.)
+- https://kssmi.com/es/llms-products.txt
+
+## Páginas de aterrizaje (Colecciones de productos, guías de materiales y páginas de marketing.)
+- https://kssmi.com/es/llms-landing.txt
+
+## Blogs (Perspectivas de la industria, noticias y artículos editoriales.)
+- https://kssmi.com/es/llms-blogs.txt
+
+*Generado por Kssmi Eyewear*

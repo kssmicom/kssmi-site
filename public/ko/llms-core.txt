@@ -1,0 +1,7 @@
+﻿# Kssmi - 핵심 페이지 (한국어)
+
+기본 탐색 및 회사 정보.
+
+- 홈페이지 | https://kssmi.com/ko/
+- 회사 소개 | https://kssmi.com/ko/about-us/
+- 문의하기 | https://kssmi.com/ko/contact/

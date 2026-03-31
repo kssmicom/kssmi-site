@@ -1,0 +1,18 @@
+﻿# Kssmi Leitfaden für große Sprachmodelle - Deutsch
+Date: 2026-03-27
+
+Um unsere Deutsch-Inhalte zu erkunden, folgen Sie bitte den unten stehenden speziellen Verzeichnissen:
+
+## Kernseiten (Primäre Navigation und Unternehmensinformationen.)
+- https://kssmi.com/de/llms-core.txt
+
+## Produkte (Katalog unserer Premium-B2B-Sonnenbrillen und Brillenfassungen.)
+- https://kssmi.com/de/llms-products.txt
+
+## Zielseiten (Produktkollektionen, Materialleitfäden und Marketingseiten.)
+- https://kssmi.com/de/llms-landing.txt
+
+## Blogs (Branchenerkenntnisse, Neuigkeiten und redaktionelle Artikel.)
+- https://kssmi.com/de/llms-blogs.txt
+
+*Erstellt von Kssmi Eyewear*

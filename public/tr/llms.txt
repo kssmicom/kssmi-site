@@ -1,0 +1,18 @@
+﻿# Kssmi Büyük Dil Modeli Kılavuzu - Türkçe
+Date: 2026-03-27
+
+Türkçe İçeriğimizi keşfetmek için lütfen aşağıdaki özel dizinleri takip edin:
+
+## Ana Sayfalar (Birincil gezinme ve şirket bilgileri.)
+- https://kssmi.com/tr/llms-core.txt
+
+## Ürünler (Premium B2B güneş gözlüklerimiz ve gözlük çerçevelerimiz kataloğu.)
+- https://kssmi.com/tr/llms-products.txt
+
+## Açılış Sayfaları (Ürün koleksiyonları, malzeme kılavuzları ve pazarlama sayfaları.)
+- https://kssmi.com/tr/llms-landing.txt
+
+## Bloglar (Sektörel içgörüler, haberler ve editoryal makaleler.)
+- https://kssmi.com/tr/llms-blogs.txt
+
+*Kssmi Eyewear tarafından oluşturuldu*

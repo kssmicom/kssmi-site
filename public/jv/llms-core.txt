@@ -1,0 +1,7 @@
+﻿# Kssmi - Kaca Utama (Jawa)
+
+Pandhu arah utama lan informasi perusahaan.
+
+- Kaca Ngarep | https://kssmi.com/jv/
+- Babagan Kita | https://kssmi.com/jv/about-us/
+- Hubungi Kita | https://kssmi.com/jv/contact/

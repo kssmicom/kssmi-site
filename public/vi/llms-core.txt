@@ -1,0 +1,7 @@
+﻿# Kssmi - Trang Cốt Lõi (Tiếng Việt)
+
+Điều hướng chính và thông tin công ty.
+
+- Trang chủ | https://kssmi.com/vi/
+- Về chúng tôi | https://kssmi.com/vi/about-us/
+- Liên hệ | https://kssmi.com/vi/contact/

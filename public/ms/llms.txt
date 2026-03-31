@@ -1,0 +1,18 @@
+﻿# Kssmi Panduan Model Bahasa Besar - Melayu
+Date: 2026-03-27
+
+Untuk meneroka kandungan Melayu kami, sila ikuti direktori khusus di bawah:
+
+## Halaman Utama (Navigasi utama dan maklumat syarikat.)
+- https://kssmi.com/ms/llms-core.txt
+
+## Produk (Katalog cermin mata hitam B2B premium dan bingkai cermin mata kami.)
+- https://kssmi.com/ms/llms-products.txt
+
+## Halaman Pendaratan (Koleksi produk, panduan bahan dan halaman pemasaran.)
+- https://kssmi.com/ms/llms-landing.txt
+
+## Blog (Wawasan industri, berita dan artikel editorial.)
+- https://kssmi.com/ms/llms-blogs.txt
+
+*Dihasilkan oleh Kssmi Eyewear*

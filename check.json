@@ -1,0 +1,4 @@
+[2m14:23:45[22m [34m[vite][39m Re-optimizing dependencies because vite config has changed
+[2m14:23:45[22m [34m[content][39m Syncing content
+[33m[1m14:23:45[22m [WARN] [glob-loader][39m No files found matching "**/*.md,!**/_*/**/*.md,!**/_*.md" in directory "src\content\landing"
+[33m[1m14:23:45[22m [WARN] [glob-loader][39m No files found matching "**/*.md,!**/_*/**/*.md,!**/_*.md" in directory "src\content\blog"
