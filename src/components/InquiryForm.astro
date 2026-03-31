@@ -337,7 +337,7 @@ const currentUrl = Astro.url.pathname;
         </a>
         <a
           href="#email"
-          data-email-user="info"
+          data-email-user="sales"
           data-email-domain="kssmi.com"
           class="flex items-center gap-2 text-gray-600 hover:text-[#8B7355] transition-colors cursor-pointer"
         >
@@ -594,7 +594,7 @@ const currentUrl = Astro.url.pathname;
           showError('PHP server not running. Click below to send via your email client:');
 
           const mailtoLink = document.createElement('a');
-          mailtoLink.href = `mailto:info@kssmi.com?subject=${subject}&body=${body}`;
+          mailtoLink.href = `mailto:sales@kssmi.com?subject=${subject}&body=${body}`;
           mailtoLink.className = 'inline-block mt-3 px-6 py-3 bg-[#8B7355] text-white rounded-lg hover:bg-[#5D4E37]';
           mailtoLink.textContent = 'Open Email Client';
           mailtoLink.id = 'mailto-fallback';
