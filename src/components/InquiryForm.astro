@@ -143,7 +143,7 @@ const placeholders = {
 const ph = placeholders[lang as keyof typeof placeholders] || placeholders.en;
 
 // Cloudflare Turnstile Site Key
-const TURNSTILE_SITE_KEY = "0x4AAAAAAB6PnVLC8CkBHjld";
+const TURNSTILE_SITE_KEY = "0x4AAAAAACGlmQDIODBgCmpo";
 
 // Check if we're in development (localhost) - Turnstile doesn't work on localhost
 const isDev = import.meta.env.DEV;
@@ -366,7 +366,7 @@ const currentUrl = Astro.url.pathname;
 {!isDev && (
   <script is:inline>
     // Turnstile configuration
-    window.TURNSTILE_SITE_KEY = "0x4AAAAAAB6PnVLC8CkBHjld";
+    window.TURNSTILE_SITE_KEY = "0x4AAAAAACGlmQDIODBgCmpo";
     window.turnstileToken = null;
 
     // Called when Turnstile script loads
