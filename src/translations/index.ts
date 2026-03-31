@@ -82,7 +82,7 @@ export const translations = {
       factoryTitle: "Contact",
       address: "1501, Bldg. 2, Baiwangda Health\nTech Park, Yuanshan St., Longgang\nDist., Shenzhen, Guangdong, China",
       postcode: "Postcode",
-      email: "info@kssmi.com",
+      email: "sales@kssmi.com",
       emailLabel: "Email: ",
 
       // Bottom Bar
@@ -265,7 +265,7 @@ export const translations = {
       factoryTitle: "اتصل بنا",
       address: "1501، مبنى 2، حديقة بايوينغدا هيلث\nتيك، شارع يوانشان، منطقة لونغغانغ\nشنتشن، قوانغدونغ، الصين",
       postcode: "الرمز البريدي",
-      email: "info@kssmi.com",
+      email: "sales@kssmi.com",
       emailLabel: "البريد الإلكتروني: ",
       rights: "جميع الحقوق محفوظة."
     },
@@ -441,7 +441,7 @@ export const translations = {
       factoryTitle: "Contattaci",
       address: "1501, Edificio 2, Baiwangda Health\nTech Park, Via Yuanshan, Distretto di Longgang\nShenzhen, Guangdong, Cina",
       postcode: "CAP",
-      email: "info@kssmi.com",
+      email: "sales@kssmi.com",
       emailLabel: "Email: ",
       rights: "Tutti i diritti riservati."
     },
@@ -623,7 +623,7 @@ export const translations = {
       factoryTitle: "Nuestra Fabrica de Gafas",
       address: "1501, Ed. 2, Baiwangda Health\nTech Park, Calle Yuanshan, Distrito de Longgang\nShenzhen, Guangdong, China",
       postcode: "Codigo Postal",
-      email: "info@kssmi.com",
+      email: "sales@kssmi.com",
       emailLabel: "Correo: ",
       copyright: "Kssmi Eyewear Todos los derechos reservados."
     },
@@ -805,7 +805,7 @@ export const translations = {
       factoryTitle: "Notre Usine de Lunettes",
       address: "1501, Bat. 2, Baiwangda Health\nTech Park, Rue Yuanshan, District de Longgang\nShenzhen, Guangdong, Chine",
       postcode: "Code Postal",
-      email: "info@kssmi.com",
+      email: "sales@kssmi.com",
       emailLabel: "Email: ",
       copyright: "Kssmi Eyewear Tous droits reserves."
     },
@@ -987,7 +987,7 @@ export const translations = {
       factoryTitle: "Unsere Brillenfabrik",
       address: "1501, Gebaude 2, Baiwangda Health\nTech Park, Yuanshan Str., Bezirk Longgang\nShenzhen, Guangdong, China",
       postcode: "Postleitzahl",
-      email: "info@kssmi.com",
+      email: "sales@kssmi.com",
       emailLabel: "E-Mail: ",
       copyright: "Kssmi Eyewear Alle Rechte vorbehalten."
     },
@@ -1169,7 +1169,7 @@ export const translations = {
       factoryTitle: "Nossa Fabrica de Oculos",
       address: "1501, Edificio 2, Baiwangda Health\nTech Park, Rua Yuanshan, Distrito de Longgang\nShenzhen, Guangdong, China",
       postcode: "CEP",
-      email: "info@kssmi.com",
+      email: "sales@kssmi.com",
       emailLabel: "E-mail: ",
       copyright: "Kssmi Eyewear Todos os direitos reservados."
     },
@@ -1351,7 +1351,7 @@ export const translations = {
       factoryTitle: "Наша Фабрика Очков",
       address: "1501, Здание 2, Baiwangda Health\nTech Park, ул. Yuanshan, р-н Longgang\nШэньчжэнь, Гуандун, Китай",
       postcode: "Почтовый Индекс",
-      email: "info@kssmi.com",
+      email: "sales@kssmi.com",
       emailLabel: "Email: ",
       copyright: "Kssmi Eyewear Все права защищены."
     },
@@ -1533,7 +1533,7 @@ export const translations = {
       factoryTitle: "自社工場",
       address: "中国広東省深圳市龍崗区園山街道\n白望達健康テクノロジーパーク 2号棟1501室",
       postcode: "郵便番号",
-      email: "info@kssmi.com",
+      email: "sales@kssmi.com",
       emailLabel: "Eメール: ",
       copyright: "Kssmi Eyewear 無断転載を禁じます。"
     },
@@ -1715,7 +1715,7 @@ export const translations = {
       factoryTitle: "Gözlük Fabrikamız",
       address: "1501, Bina 2, Baiwangda Sağlık\nTeknoloji Parkı, Yuanshan Cad., Longgang Bölgesi\nShenzhen, Guangdong, Çin",
       postcode: "Posta Kodu",
-      email: "info@kssmi.com",
+      email: "sales@kssmi.com",
       emailLabel: "E-posta: ",
       copyright: "Kssmi Eyewear Tüm hakları saklıdır."
     },
@@ -1891,7 +1891,7 @@ export const translations = {
       factoryTitle: "우리 공장",
       address: "중국 광둥성 선전시 룽강구\n위안산 거리 바이왕다 헬스 테크 파크\n2동 1501호",
       postcode: "우편번호",
-      email: "info@kssmi.com",
+      email: "sales@kssmi.com",
       emailLabel: "이메일: ",
       rights: "모든 권리 보유."
     },
@@ -2067,7 +2067,7 @@ export const translations = {
       factoryTitle: "我们的工厂",
       address: "中国广东省深圳市龙岗区\n园山街道百旺达大健康产业园\n2栋1501室",
       postcode: "邮政编码",
-      email: "info@kssmi.com",
+      email: "sales@kssmi.com",
       emailLabel: "邮箱：",
       rights: "版权所有。"
     },
@@ -2243,7 +2243,7 @@ export const translations = {
       factoryTitle: "हमारी फैक्ट्री",
       address: "1501, बिल्डिंग 2, बैवांगडा हेल्थ\nटेक पार्क, युआनशान सेंट, लोंगगांग जिला\nशेन्ज़ेन, ग्वांगडोंग, चीन",
       postcode: "पिन कोड",
-      email: "info@kssmi.com",
+      email: "sales@kssmi.com",
       emailLabel: "ईमेल: ",
       rights: "सर्वाधिकार सुरक्षित।"
     },
@@ -2419,7 +2419,7 @@ export const translations = {
       factoryTitle: "Nhà máy của chúng tôi",
       address: "1501, Tòa 2, Công viên Công nghệ Y tế Baiwangda, Phố Yuanshan, Quận Longgang, Thâm Quyến, Quảng Đông, Trung Quốc",
       postcode: "Mã bưu chính",
-      email: "info@kssmi.com",
+      email: "sales@kssmi.com",
       emailLabel: "Email: ",
       rights: "Đã đăng ký Bản quyền."
     },
@@ -2592,7 +2592,7 @@ export const translations = {
       factoryTitle: "Pabrik Kita",
       address: "1501, Jl Kesehatan Baiwangda \nTaman Teknologi, Jl. Yuanshan, Distrik Longgang\n Shenzen, Guangdong, China",
       postcode: "Kode Pos",
-      email: "info@kssmi.com",
+      email: "sales@kssmi.com",
       emailLabel: "Email:",
       rights: "Hak Cipta Dilindhungi."
     },
@@ -2765,7 +2765,7 @@ export const translations = {
       factoryTitle: "Kilang Kami",
       address: "1501, Bangunan 2, Taman Teknologi\nKesihatan Baiwangda, Jalan Yuanshan, Daerah Longgang\nShenzhen, Guangdong, China",
       postcode: "Poskod",
-      email: "info@kssmi.com",
+      email: "sales@kssmi.com",
       emailLabel: "E-mel: ",
       rights: "Hak cipta terpelihara."
     },
@@ -2941,7 +2941,7 @@ export const translations = {
       factoryTitle: "Корхонаи Мо",
       address: "1501, Бинои 2, Парки Технологии Тиббии Baiwangda,\nКӯчаи Yuanshan, Ноҳияи Longgang,\nShenzhen, Guangdong, Чин",
       postcode: "Индекси почта",
-      email: "info@kssmi.com",
+      email: "sales@kssmi.com",
       emailLabel: "Почтаи электронӣ: ",
       rights: "Ҳамаи ҳуқуқҳо маҳфузанд."
     },
