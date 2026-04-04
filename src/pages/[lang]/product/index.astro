@@ -85,7 +85,7 @@ const primaryCategories = [
 // Tags / Filters (Flat Groups) - matches English product/index.astro
 const sidebarTags = [
   {
-    label: t.sidebar.fashion,
+    label: t.sidebar.fashion_group || t.sidebar.fashion,
     href: `/${currentPath}product/fashion`,
     items: [
       { label: t.sidebar.fashion_acetate_sunglasses, href: `/${currentPath}product/fashion-acetate-sunglasses` },
@@ -95,7 +95,7 @@ const sidebarTags = [
     ]
   },
   {
-    label: t.sidebar.luxury,
+    label: t.sidebar.luxury_group || t.sidebar.luxury,
     href: `/${currentPath}product/luxury`,
     items: [
       { label: t.sidebar.luxury_acetate_sunglasses, href: `/${currentPath}product/luxury-acetate-sunglasses` },
@@ -105,7 +105,7 @@ const sidebarTags = [
     ]
   },
   {
-    label: t.sidebar.carbon_fiber,
+    label: t.sidebar.carbon_fiber_group || t.sidebar.carbon_fiber,
     href: `/${currentPath}product/carbon-fiber`,
     items: [
       { label: t.sidebar.carbon_fiber_sunglasses, href: `/${currentPath}product/carbon-sunglasses` },
@@ -113,7 +113,7 @@ const sidebarTags = [
     ]
   },
   {
-    label: t.sidebar.rimless,
+    label: t.sidebar.rimless_group || t.sidebar.rimless,
     href: `/${currentPath}product/rimless`,
     items: [
       { label: t.sidebar.rimless_sunglasses, href: `/${currentPath}product/rimless-sunglasses` },
