@@ -96,57 +96,68 @@ function getCategoryCount(href: string): number {
   }).length;
 }
 
-// Sidebar Categories - Matches Header Mega Menu Structure
-const sidebarCategories = [
+// Primary Categories (Hierarchical) - matches English product/index.astro
+const primaryCategories = [
   {
-    label: t.nav.luxury,
-    href: `/${currentPath}product/luxury-customized`,
+    label: t.sidebar.sunglasses,
+    href: `/${currentPath}product/sunglasses`,
     items: [
-      { label: t.nav.luxury_sunglasses, href: `/${currentPath}product/luxury-sunglasses` },
-      { label: t.nav.luxury_glasses, href: `/${currentPath}product/luxury-glasses` }
+      { label: t.sidebar.acetate_sunglasses, href: `/${currentPath}product/acetate-sunglasses` },
+      { label: t.sidebar.metal_sunglasses, href: `/${currentPath}product/metal-sunglasses` },
+      { label: t.sidebar.titanium_sunglasses, href: `/${currentPath}product/titanium-sunglasses` },
+      { label: t.sidebar.carbon_fiber_sunglasses, href: `/${currentPath}product/carbon-sunglasses` },
+      { label: t.sidebar.rimless_sunglasses, href: `/${currentPath}product/rimless-sunglasses` }
     ]
   },
   {
-    label: t.nav.couture,
-    href: `/${currentPath}product/high-couture-series`,
+    label: t.sidebar.optical_frames,
+    href: `/${currentPath}product/optical-frames`,
     items: [
-      { label: t.nav.couture_sunglasses, href: `/${currentPath}product/high-couture-sunglasses` },
-      { label: t.nav.couture_glasses, href: `/${currentPath}product/high-couture-glasses` }
+      { label: t.sidebar.acetate_glasses, href: `/${currentPath}product/acetate-glasses` },
+      { label: t.sidebar.metal_glasses, href: `/${currentPath}product/metal-glasses` },
+      { label: t.sidebar.titanium_glasses, href: `/${currentPath}product/titanium-glasses` },
+      { label: t.sidebar.carbon_glasses, href: `/${currentPath}product/carbon-glasses` },
+      { label: t.sidebar.rimless_glasses, href: `/${currentPath}product/rimless-glasses` }
+    ]
+  }
+];
+
+// Tags / Filters (Flat Groups) - matches English product/index.astro
+const sidebarTags = [
+  {
+    label: t.sidebar.fashion,
+    href: `/${currentPath}product/fashion`,
+    items: [
+      { label: t.sidebar.fashion_acetate_sunglasses, href: `/${currentPath}product/fashion-acetate-sunglasses` },
+      { label: t.sidebar.fashion_metal_sunglasses, href: `/${currentPath}product/fashion-metal-sunglasses` },
+      { label: t.sidebar.fashion_acetate_glasses, href: `/${currentPath}product/fashion-acetate-glasses` },
+      { label: t.sidebar.fashion_metal_glasses, href: `/${currentPath}product/fashion-metal-glasses` }
     ]
   },
   {
-    label: t.nav.classics,
-    href: `/${currentPath}product/classics-series`,
+    label: t.sidebar.luxury,
+    href: `/${currentPath}product/luxury`,
     items: [
-      { label: t.nav.classics_sunglasses, href: `/${currentPath}product/classics-sunglasses` },
-      { label: t.nav.classics_glasses, href: `/${currentPath}product/classics-glasses` }
+      { label: t.sidebar.luxury_acetate_sunglasses, href: `/${currentPath}product/luxury-acetate-sunglasses` },
+      { label: t.sidebar.luxury_titanium_sunglasses, href: `/${currentPath}product/luxury-titanium-sunglasses` },
+      { label: t.sidebar.luxury_acetate_glasses, href: `/${currentPath}product/luxury-acetate-glasses` },
+      { label: t.sidebar.luxury_titanium_glasses, href: `/${currentPath}product/luxury-titanium-glasses` }
     ]
   },
   {
-    label: t.nav.fashion,
-    href: `/${currentPath}product/fashion-series`,
+    label: t.sidebar.carbon_fiber,
+    href: `/${currentPath}product/carbon-fiber`,
     items: [
-      { label: t.nav.acetate_sun, href: `/${currentPath}product/acetate-sunglasses` },
-      { label: t.nav.metal_sun, href: `/${currentPath}product/metal-sunglasses` },
-      { label: t.nav.metal_glass, href: `/${currentPath}product/metal-glasses` },
-      { label: t.nav.titanium_sun, href: `/${currentPath}product/titanium-sunglasses` },
-      { label: t.nav.titanium_glass, href: `/${currentPath}product/titanium-glasses` }
+      { label: t.sidebar.carbon_fiber_sunglasses, href: `/${currentPath}product/carbon-sunglasses` },
+      { label: t.sidebar.carbon_glasses, href: `/${currentPath}product/carbon-glasses` }
     ]
   },
   {
-    label: t.nav.rimless,
-    href: `/${currentPath}product/rimless-series`,
+    label: t.sidebar.rimless,
+    href: `/${currentPath}product/rimless`,
     items: [
-      { label: t.nav.rimless_sun, href: `/${currentPath}product/rimless-sunglasses` },
-      { label: t.nav.rimless_glass, href: `/${currentPath}product/rimless-glasses` }
-    ]
-  },
-  {
-    label: t.nav.carbon,
-    href: `/${currentPath}product/carbon-series`,
-    items: [
-      { label: t.nav.carbon_sun, href: `/${currentPath}product/carbon-sunglasses` },
-      { label: t.nav.carbon_glass, href: `/${currentPath}product/carbon-glasses` }
+      { label: t.sidebar.rimless_sunglasses, href: `/${currentPath}product/rimless-sunglasses` },
+      { label: t.sidebar.rimless_glasses, href: `/${currentPath}product/rimless-glasses` }
     ]
   }
 ];
@@ -184,7 +195,7 @@ const pt = t.product || {
                 href={`/${currentPath}product`}
                 class="flex justify-between items-center py-2 px-3 rounded-lg bg-[#8B7355] text-white mb-3"
               >
-                <span class="font-medium">{pt.allProducts || 'All Products'}</span>
+                <span class="font-medium">{t.sidebar.all_products}</span>
                 <span class="text-xs bg-white/20 px-2 py-1 rounded-full">
                   {langProducts.length}
                 </span>
@@ -192,7 +203,7 @@ const pt = t.product || {
 
               <!-- Category Groups with Sub-categories -->
               <div class="space-y-3">
-                {sidebarCategories.map((cat) => (
+                {primaryCategories.map((cat) => (
                   <div class="border-b border-gray-100 pb-3 last:border-0 last:pb-0">
                     <!-- Main Category -->
                     <a
@@ -224,19 +235,43 @@ const pt = t.product || {
                   </div>
                 ))}
               </div>
+
+              <!-- Tags & Filters -->
+              <div class="mt-8 pt-6 border-t border-gray-100">
+                <h4 class="text-xs font-bold text-gray-900 uppercase tracking-wider mb-4">{t.sidebar.tags_filters}</h4>
+                <div class="space-y-6">
+                  {sidebarTags.map((group) => (
+                    <div>
+                      <a href={group.href} class="text-sm font-bold text-gray-900 mb-2.5 flex items-center hover:text-[#8B7355] transition-colors">
+                        <span class="text-[#8B7355] mr-1">#</span> {group.label}
+                      </a>
+                      <div class="flex flex-col gap-1.5">
+                        {group.items.map((tag) => (
+                          <a
+                            href={tag.href}
+                            class="px-3 py-1.5 text-[11px] font-bold rounded-md border bg-white text-stone-600 border-stone-200 hover:border-[#8B7355] hover:text-[#8B7355] hover:bg-stone-50 transition-all duration-200 w-full"
+                          >
+                            {tag.label}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
 
           <!-- CTA Card -->
           <div class="mt-6 bg-[#8B7355] rounded-xl p-6 text-white">
-            <h4 class="font-bold mb-2">Need Custom Eyewear?</h4>
+            <h4 class="font-bold mb-2">{pt.needCustomEyewear || 'Need Custom Eyewear?'}</h4>
             <p class="text-sm text-white/80 mb-4">
-              We offer full OEM & ODM services for your brand.
+              {pt.oemServices || 'We offer full OEM & ODM services for your brand.'}
             </p>
             <a
               href={`/${currentPath}quote`}
               class="inline-block bg-white text-[#8B7355] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-100 transition-colors"
             >
-              Get Quote
+              {t.cta.quote || 'Get Quote'}
             </a>
           </div>
         </aside>

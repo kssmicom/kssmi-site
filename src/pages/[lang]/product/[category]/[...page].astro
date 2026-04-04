@@ -25,6 +25,21 @@ function getCanonicalSlug(categoryName: string): string {
 export async function getStaticPaths({ paginate }: { paginate: any }) {
   // Canonical English category slugs - these are the URL slugs used across ALL languages
   const CANONICAL_CATEGORIES = [
+    // ── Flat material × type (new header architecture) ──────────────────────
+    'acetate-sunglasses',
+    'acetate-glasses',
+    'metal-sunglasses',
+    'metal-glasses',
+    'titanium-sunglasses',
+    'titanium-glasses',
+    'carbon-sunglasses',
+    'carbon-glasses',
+    'rimless-sunglasses',
+    'rimless-glasses',
+    // ── Aggregate type pages ────────────────────────────────────────────────
+    'sunglasses',
+    'optical-frames',
+    // ── Series / collection pages ───────────────────────────────────────────
     'luxury-customized',
     'luxury-glasses',
     'luxury-sunglasses',
@@ -35,24 +50,14 @@ export async function getStaticPaths({ paginate }: { paginate: any }) {
     'classics-sunglasses',
     'classics-glasses',
     'fashion-series',
-    'acetate-sunglasses',
-    'metal-sunglasses',
-    'metal-glasses',
-    'titanium-sunglasses',
-    'titanium-glasses',
     'rimless-series',
-    'rimless-sunglasses',
-    'rimless-glasses',
-    'optical-frames',
-    'sunglasses',
+    'carbon-series',
+    // ── Material-only pages ─────────────────────────────────────────────────
     'metal',
     'acetate',
     'titanium',
     'luxury',
     'fashion',
-    'carbon-series',
-    'carbon-sunglasses',
-    'carbon-glasses',
   ];
 
   function getCanonicalSlugLocal(categoryName: string): string {
@@ -132,7 +137,8 @@ const langProducts = allProducts.filter((product) => {
 
 // Helper for category counts
 function getCategoryCount(href: string): number {
-  const targetSlug = href.split('/').pop() || '';
+  const pathWithoutQuery = href.split('?')[0];
+  const targetSlug = pathWithoutQuery.split('/').pop() || '';
   return langProducts.filter(p => {
     const cats = p.data.categories || '';
     return isCategoryMatch(cats, targetSlug);
@@ -140,56 +146,68 @@ function getCategoryCount(href: string): number {
 }
 
 // Sidebar Categories - Matches Header Mega Menu Structure
-const sidebarCategories = [
+// Primary Categories (Hierarchical)
+const primaryCategories = [
   {
-    label: t.nav.luxury,
-    href: `/${currentPath}product/luxury-customized`,
+    label: t.sidebar.sunglasses,
+    href: `/${currentPath}product/sunglasses`,
     items: [
-      { label: t.nav.luxury_sunglasses, href: `/${currentPath}product/luxury-sunglasses` },
-      { label: t.nav.luxury_glasses, href: `/${currentPath}product/luxury-glasses` }
+      { label: t.sidebar.acetate_sunglasses, href: `/${currentPath}product/acetate-sunglasses` },
+      { label: t.sidebar.metal_sunglasses, href: `/${currentPath}product/metal-sunglasses` },
+      { label: t.sidebar.titanium_sunglasses, href: `/${currentPath}product/titanium-sunglasses` },
+      { label: t.sidebar.carbon_fiber_sunglasses, href: `/${currentPath}product/carbon-sunglasses` },
+      { label: t.sidebar.rimless_sunglasses, href: `/${currentPath}product/rimless-sunglasses` }
     ]
   },
   {
-    label: t.nav.couture,
-    href: `/${currentPath}product/high-couture-series`,
+    label: t.sidebar.optical_frames,
+    href: `/${currentPath}product/optical-frames`,
     items: [
-      { label: t.nav.couture_sunglasses, href: `/${currentPath}product/high-couture-sunglasses` },
-      { label: t.nav.couture_glasses, href: `/${currentPath}product/high-couture-glasses` }
+      { label: t.sidebar.acetate_glasses, href: `/${currentPath}product/acetate-glasses` },
+      { label: t.sidebar.metal_glasses, href: `/${currentPath}product/metal-glasses` },
+      { label: t.sidebar.titanium_glasses, href: `/${currentPath}product/titanium-glasses` },
+      { label: t.sidebar.carbon_glasses, href: `/${currentPath}product/carbon-glasses` },
+      { label: t.sidebar.rimless_glasses, href: `/${currentPath}product/rimless-glasses` }
+    ]
+  }
+];
+
+// Tags / Filters (Flat Groups)
+const sidebarTags = [
+  {
+    label: t.sidebar.fashion,
+    href: `/${currentPath}product/fashion`,
+    items: [
+      { label: t.sidebar.fashion_acetate_sunglasses, href: `/${currentPath}product/fashion-acetate-sunglasses` },
+      { label: t.sidebar.fashion_metal_sunglasses, href: `/${currentPath}product/fashion-metal-sunglasses` },
+      { label: t.sidebar.fashion_acetate_glasses, href: `/${currentPath}product/fashion-acetate-glasses` },
+      { label: t.sidebar.fashion_metal_glasses, href: `/${currentPath}product/fashion-metal-glasses` }
     ]
   },
   {
-    label: t.nav.classics,
-    href: `/${currentPath}product/classics-series`,
+    label: t.sidebar.luxury,
+    href: `/${currentPath}product/luxury`,
     items: [
-      { label: t.nav.classics_sunglasses, href: `/${currentPath}product/classics-sunglasses` },
-      { label: t.nav.classics_glasses, href: `/${currentPath}product/classics-glasses` }
+      { label: t.sidebar.luxury_acetate_sunglasses, href: `/${currentPath}product/luxury-acetate-sunglasses` },
+      { label: t.sidebar.luxury_titanium_sunglasses, href: `/${currentPath}product/luxury-titanium-sunglasses` },
+      { label: t.sidebar.luxury_acetate_glasses, href: `/${currentPath}product/luxury-acetate-glasses` },
+      { label: t.sidebar.luxury_titanium_glasses, href: `/${currentPath}product/luxury-titanium-glasses` }
     ]
   },
   {
-    label: t.nav.fashion,
-    href: `/${currentPath}product/fashion-series`,
+    label: t.sidebar.carbon_fiber,
+    href: `/${currentPath}product/carbon-fiber`,
     items: [
-      { label: t.nav.acetate_sun, href: `/${currentPath}product/acetate-sunglasses` },
-      { label: t.nav.metal_sun, href: `/${currentPath}product/metal-sunglasses` },
-      { label: t.nav.metal_glass, href: `/${currentPath}product/metal-glasses` },
-      { label: t.nav.titanium_sun, href: `/${currentPath}product/titanium-sunglasses` },
-      { label: t.nav.titanium_glass, href: `/${currentPath}product/titanium-glasses` }
+      { label: t.sidebar.carbon_fiber_sunglasses, href: `/${currentPath}product/carbon-sunglasses` },
+      { label: t.sidebar.carbon_glasses, href: `/${currentPath}product/carbon-glasses` }
     ]
   },
   {
-    label: t.nav.rimless,
-    href: `/${currentPath}product/rimless-series`,
+    label: t.sidebar.rimless,
+    href: `/${currentPath}product/rimless`,
     items: [
-      { label: t.nav.rimless_sun, href: `/${currentPath}product/rimless-sunglasses` },
-      { label: t.nav.rimless_glass, href: `/${currentPath}product/rimless-glasses` }
-    ]
-  },
-  {
-    label: t.nav.carbon,
-    href: `/${currentPath}product/carbon-series`,
-    items: [
-      { label: t.nav.carbon_sun, href: `/${currentPath}product/carbon-sunglasses` },
-      { label: t.nav.carbon_glass, href: `/${currentPath}product/carbon-glasses` }
+      { label: t.sidebar.rimless_sunglasses, href: `/${currentPath}product/rimless-sunglasses` },
+      { label: t.sidebar.rimless_glasses, href: `/${currentPath}product/rimless-glasses` }
     ]
   }
 ];
@@ -198,12 +216,14 @@ const sidebarCategories = [
 
 // Check if current category matches any in sidebar
 function isActiveCategory(href: string): boolean {
-  const hrefSlug = href.replace(`/${currentPath}product/`, '');
+  const pathWithoutQuery = href.split('?')[0];
+  const hrefSlug = pathWithoutQuery.replace(`/${currentPath}product/`, '').replace('/product/', '');
   return hrefSlug === categorySlug;
 }
 
 // Find localized category title from sidebar definitions
-for (const cat of sidebarCategories) {
+// First check primary categories
+for (const cat of primaryCategories) {
   if (isActiveCategory(cat.href)) {
     categoryTitle = cat.label;
     break;
@@ -212,6 +232,15 @@ for (const cat of sidebarCategories) {
   if (sub) {
     categoryTitle = sub.label;
     break;
+  }
+}
+// Then check sidebar tags if no match found
+if (categoryTitle === categorySlug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')) {
+  for (const tag of sidebarTags) {
+    if (isActiveCategory(tag.href)) {
+      categoryTitle = tag.label;
+      break;
+    }
   }
 }
 ---
@@ -235,34 +264,43 @@ for (const cat of sidebarCategories) {
               {t.nav.products}
             </a>
           </li>
-          {sidebarCategories.map(cat => {
-            const currentSub = cat.items.find(sub => isActiveCategory(sub.href));
-            if (isActiveCategory(cat.href) || currentSub) {
-              return (
-                <>
-                  <li class="text-gray-300 mx-2">/</li>
-                  <li>
-                    {currentSub ? (
-                      <a href={cat.href} class="text-gray-500 hover:text-[#8B7355] transition-colors">
-                        {cat.label}
-                      </a>
-                    ) : (
-                      <span class="text-[#8B7355] font-medium">{cat.label}</span>
-                    )}
-                  </li>
-                  {currentSub && (
-                    <>
-                      <li class="text-gray-300 mx-2">/</li>
-                      <li class="text-[#8B7355] font-medium">
-                        {currentSub.label}
-                      </li>
-                    </>
-                  )}
-                </>
-              );
+          {(() => {
+            let activeMain = null;
+            let activeSub = null;
+
+            // Only check primary categories to avoid duplicate tag breadcrumbs
+            for (const cat of primaryCategories) {
+              const sub = cat.items.find(s => isActiveCategory(s.href));
+              if (isActiveCategory(cat.href) || sub) {
+                activeMain = cat;
+                activeSub = sub;
+                break;
+              }
             }
-            return null;
-          })}
+
+            if (!activeMain) return null;
+
+            return (
+              <>
+                <li class="text-gray-300 mx-2">/</li>
+                <li>
+                  {activeSub ? (
+                    <a href={activeMain.href} class="text-gray-500 hover:text-[#8B7355] transition-colors">
+                      {activeMain.label}
+                    </a>
+                  ) : (
+                    <span class="text-[#8B7355] font-medium">{activeMain.label}</span>
+                  )}
+                </li>
+                {activeSub && (
+                  <>
+                    <li class="text-gray-300 mx-2">/</li>
+                    <li class="text-[#8B7355] font-medium">{activeSub.label}</li>
+                  </>
+                )}
+              </>
+            );
+          })()}
         </ol>
       </nav>
 
@@ -291,7 +329,7 @@ for (const cat of sidebarCategories) {
                     : 'text-gray-600 hover:bg-stone-50 hover:text-[#8B7355]'
                 }`}
               >
-                <span class="font-medium">{pt.allProducts || 'All Products'}</span>
+                <span class="font-medium">{t.sidebar.all_products}</span>
                 <span class={`text-xs px-2 py-1 rounded-full ${
                   categorySlug === '' ? 'bg-white/20' : 'bg-gray-100'
                 }`}>
@@ -301,7 +339,7 @@ for (const cat of sidebarCategories) {
 
               <!-- Category Groups with Sub-categories -->
               <div class="space-y-3">
-                {sidebarCategories.map((cat) => (
+                {primaryCategories.map((cat) => (
                   <div class="border-b border-gray-100 pb-3 last:border-0 last:pb-0">
                     <!-- Main Category -->
                     <a
@@ -344,6 +382,37 @@ for (const cat of sidebarCategories) {
                     </ul>
                   </div>
                 ))}
+              </div>
+
+              <!-- Tags & Filters -->
+              <div class="mt-8 pt-6 border-t border-gray-100">
+                <h4 class="text-xs font-bold text-gray-900 uppercase tracking-wider mb-4">{t.sidebar.tags_filters}</h4>
+                <div class="space-y-6">
+                  {sidebarTags.map((group) => (
+                    <div>
+                      <a href={group.href} class="text-sm font-bold text-gray-900 mb-2.5 flex items-center hover:text-[#8B7355] transition-colors">
+                        <span class="text-[#8B7355] mr-1">#</span> {group.label}
+                      </a>
+                      <div class="flex flex-col gap-1.5">
+                        {group.items.map((tag) => {
+                          const isActive = isActiveCategory(tag.href);
+                          return (
+                            <a
+                              href={tag.href}
+                              class={`px-3 py-1.5 text-[11px] font-bold rounded-md border transition-all duration-200 w-full ${
+                                isActive
+                                  ? 'bg-[#8B7355] text-white border-[#8B7355] shadow-md'
+                                  : 'bg-white text-stone-600 border-stone-200 hover:border-[#8B7355] hover:text-[#8B7355] hover:bg-stone-50'
+                              }`}
+                            >
+                              {tag.label}
+                            </a>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
