@@ -55,9 +55,8 @@ export function isCategoryMatch(productCategory: string, targetSlug: string): bo
     return cats.some(cat => {
         const catKey = getLookupKey(cat);
 
-        // Match if one contains the other or they are equal
+        // Strict match on the normalized lookup key
         if (catKey === targetKey) return true;
-        if (catKey.includes(targetKey) || targetKey.includes(catKey)) return true;
 
         return false;
     });
