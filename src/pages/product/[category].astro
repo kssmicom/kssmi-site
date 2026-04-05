@@ -179,7 +179,7 @@ export async function getStaticPaths() {
       const pMaterial = p.data.material || '';
       const pProductType = p.data.productType || '';
       if (pMaterial && pProductType) {
-        const matMatch = pMaterial.toLowerCase().includes(material.toLowerCase());
+        const matMatch = pMaterial.toLowerCase().replace(/-/g, ' ').includes(material.toLowerCase().replace(/-/g, ' '));
         const typeMatch = pProductType.toLowerCase() === productType.toLowerCase();
         if (!matMatch || !typeMatch) return false;
       }

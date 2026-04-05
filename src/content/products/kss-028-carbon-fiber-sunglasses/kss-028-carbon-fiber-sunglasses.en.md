@@ -63,4 +63,4 @@ seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses, priva
 ## Overview
 
 Engineered for the intersection of luxury and high-performance, the KSS-028 utilizes premium aerospace-grade carbon fiber to achieve an exceptional strength-to-weight ratio that ensures all-day comfort. The frame's sophisticated aesthetic is complemented by resilient 2+1 barrel hinges and impact-resistant nylon lenses, providing a durable solution for high-end lifestyle and automotive-inspired collections. We offer comprehensive OEM/ODM customization—from unique forged carbon textures to precise logo applications—with a manageable 300-piece minimum order quantity to support private-label brand scaling.
-
+

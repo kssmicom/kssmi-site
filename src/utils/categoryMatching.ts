@@ -27,7 +27,8 @@ export function getLookupKey(input: string): string {
         .replace(/-/g, '')
         .replace(/classis/g, 'classic')
         .replace(/es$/, '')
-        .replace(/s$/, '');
+        .replace(/s$/, '')
+        .replace(/-/g, '');  // Remove any remaining hyphens
 }
 
 /**
