@@ -1,6 +1,6 @@
-﻿---
+---
 # ─────────────────────────────────────────────────────
-title: "Kacamata Hitam Serat Karbon Kustom | Produsen OEM"
+title: "Kacamata Hitam Serat Karbon Kustom"
 slug: "kss-012-carbon-fiber-sunglasses"
 itemNo: "KSS-012"
 date: "2026-04-05"

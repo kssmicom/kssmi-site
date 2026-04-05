@@ -137,6 +137,9 @@ export const translations = {
       odm: "Design Manufacturing",
       systemGenerated: "System Generated",
       securedBy: "Secured by Kssmi Quality Control",
+      // Product Highlights Section
+      highlightsLabel: "Product Highlights",
+      highlightsTitle: "Features & Applications",
       // CTA Section
       startJourney: "Start Your Journey",
       privateLabelTitle: "Start Your Private-Label Million-Dollar Business",
@@ -356,6 +359,9 @@ export const translations = {
       odm: "تصميم وتصنيع",
       systemGenerated: "تم إنشاؤه بواسطة النظام",
       securedBy: "مؤمن بواسطة مراقبة جودة Kssmi",
+      // Product Highlights Section
+      highlightsLabel: "لمحات المنتج",
+      highlightsTitle: "الميزات والتطبيقات",
       startJourney: "ابدأ رحلتك",
       privateLabelTitle: "ابدأ علامتك التجارية الخاصة",
       privateLabelDesc: "خصص كل تفاصيل نظاراتك بالكامل—المادة والشكل واللون والمواصفات الفنية.",
@@ -572,6 +578,9 @@ export const translations = {
       odm: "Design e Produzione",
       systemGenerated: "Generato dal Sistema",
       securedBy: "Protetto da Controllo Qualita Kssmi",
+      // Product Highlights Section
+      highlightsLabel: "In Evidenza",
+      highlightsTitle: "Caratteristiche e Applicazioni",
       startJourney: "Inizia il Tuo Viaggio",
       privateLabelTitle: "Inizia la Tua Attivita di Private Label",
       privateLabelDesc: "Personalizza ogni dettaglio dei tuoi occhiali—materiale, forma, colore e specifiche tecniche.",
@@ -794,6 +803,9 @@ export const translations = {
       odm: "Diseño y Fabricación",
       systemGenerated: "Generado por Sistema",
       securedBy: "Asegurado por Control de Calidad Kssmi",
+      // Product Highlights Section
+      highlightsLabel: "Puntos Destacados",
+      highlightsTitle: "Características y Aplicaciones",
       startJourney: "Comienza tu Viaje",
       privateLabelTitle: "Inicia tu Negocio de Marca Privada",
       privateLabelDesc: "Personaliza cada detalle de tus gafas—material, forma, color y especificaciones tecnicas.",
@@ -1016,6 +1028,9 @@ export const translations = {
       odm: "Conception et Fabrication",
       systemGenerated: "Genere par Systeme",
       securedBy: "Securise par Controle Qualite Kssmi",
+      // Product Highlights Section
+      highlightsLabel: "Points Forts",
+      highlightsTitle: "Caractéristiques et Applications",
       startJourney: "Commencez votre Voyage",
       privateLabelTitle: "Lancez votre Marque Privee",
       privateLabelDesc: "Personnalisez chaque detail de vos lunettes—materiau, forme, couleur et specifications techniques.",
@@ -1238,6 +1253,9 @@ export const translations = {
       odm: "Design und Fertigung",
       systemGenerated: "Systemgeneriert",
       securedBy: "Gesichert durch Kssmi Qualitatskontrolle",
+      // Product Highlights Section
+      highlightsLabel: "Produkt Highlights",
+      highlightsTitle: "Eigenschaften und Anwendungen",
       startJourney: "Starten Sie Ihre Reise",
       privateLabelTitle: "Starten Sie Ihr Private-Label Geschaft",
       privateLabelDesc: "Passen Sie jedes Detail Ihrer Brillen an—Material, Form, Farbe und technische Spezifikationen.",
@@ -1460,6 +1478,9 @@ export const translations = {
       odm: "Design e Fabricação",
       systemGenerated: "Gerado pelo Sistema",
       securedBy: "Protegido por Controle de Qualidade Kssmi",
+      // Product Highlights Section
+      highlightsLabel: "Destaques do Produto",
+      highlightsTitle: "Características e Aplicações",
       startJourney: "Inicie sua Jornada",
       privateLabelTitle: "Inicie seu Negocio de Marca Propria",
       privateLabelDesc: "Personalize cada detalhe dos seus oculos—material, forma, cor e especificacoes tecnicas.",
@@ -1682,6 +1703,9 @@ export const translations = {
       odm: "Проектирование и Производство",
       systemGenerated: "Сгенерировано Системой",
       securedBy: "Защищено Контролем Качества Kssmi",
+      // Product Highlights Section
+      highlightsLabel: "Ключевые Особенности",
+      highlightsTitle: "Характеристики и Применение",
       startJourney: "Начать Ваш Проект",
       privateLabelTitle: "Начните Свой Бизнес с Собственной Маркой",
       privateLabelDesc: "Полностью настройте каждую деталь очков — материал, форму, цвет и технические спецификации.",
@@ -1904,6 +1928,9 @@ export const translations = {
       odm: "設計製造",
       systemGenerated: "システム生成",
       securedBy: "Kssmi 品質管理による保護",
+      // Product Highlights Section
+      highlightsLabel: "製品のハイライト",
+      highlightsTitle: "特徴と応用",
       startJourney: "プロジェクトを開始",
       privateLabelTitle: "プライベートブランド事業を開始する",
       privateLabelDesc: "素材、形状、カラー、技術仕様など、アイウェアのあらゆるディテールを完全にカスタマイズできます。",
@@ -2127,6 +2154,9 @@ export const translations = {
       odm: "Tasarım ve Üretim",
       systemGenerated: "Sistem Tarafından Oluşturuldu",
       securedBy: "Kssmi Kalite Kontrol ile Güvende",
+      // Product Highlights Section
+      highlightsLabel: "Ürün Özellikleri",
+      highlightsTitle: "Özellikler ve Uygulamalar",
       startJourney: "Seyahatinize Başlayın",
       privateLabelTitle: "Özel Marka İşletmenize Başlayın",
       privateLabelDesc: "Gözlüklerinizin her detayını tamamen özelleştirin—malzeme, şekil, renk ve teknik spesifikasyonlar.",
@@ -2343,6 +2373,9 @@ export const translations = {
       odm: "디자인 제조",
       systemGenerated: "시스템 생성",
       securedBy: "Kssmi 품질 관리로 보호됨",
+      // Product Highlights Section
+      highlightsLabel: "제품 하이라이트",
+      highlightsTitle: "특징 및 응용",
       startJourney: "여정을 시작하세요",
       privateLabelTitle: "자체 상표 비즈니스를 시작하세요",
       privateLabelDesc: "소재, 모양, 색상 및 기술 사양 등 안경의 모든 세부 사항을 완전히 맞춤화하세요.",
@@ -2559,6 +2592,9 @@ export const translations = {
       odm: "设计制造",
       systemGenerated: "系统生成",
       securedBy: "受 Kssmi 质量控制保障",
+      // Product Highlights Section
+      highlightsLabel: "产品亮点",
+      highlightsTitle: "特点与应用",
       startJourney: "开启您的旅程",
       privateLabelTitle: "开启您的自有品牌百万美金业务",
       privateLabelDesc: "完全定制您眼镜的每一个细节——材质、形状、颜色和技术规格。与真正了解奢华品味的制造商合作。",
@@ -2775,6 +2811,9 @@ export const translations = {
       odm: "डिजाइन और निर्माण",
       systemGenerated: "सिस्टम जनरेटेड",
       securedBy: "Kssmi गुणवत्ता नियंत्रण द्वारा सुरक्षित",
+      // Product Highlights Section
+      highlightsLabel: "उत्पाद हाइलाइट्स",
+      highlightsTitle: "विशेषताएं और अनुप्रयोग",
       startJourney: "अपनी यात्रा शुरू करें",
       privateLabelTitle: "अपना निजी-लेबल मिलियन-डॉलर व्यवसाय शुरू करें",
       privateLabelDesc: "अपने आईवियर के हर विवरण को पूरी तरह से अनुकूलित करें - सामग्री, आकार, रंग और तकनीकी चश्मा।",
@@ -2991,6 +3030,9 @@ export const translations = {
       odm: "Thiết kế & SX",
       systemGenerated: "Hệ thống Tạo",
       securedBy: "Được bảo mật bởi Kiểm soát Chất lượng Kssmi",
+      // Product Highlights Section
+      highlightsLabel: "Điểm Nổi Bật",
+      highlightsTitle: "Tính Năng và Ứng Dụng",
       startJourney: "Bắt đầu Hành trình của bạn",
       privateLabelTitle: "Bắt đầu doanh nghiệp thương hiệu tỷ đô của bạn",
       privateLabelDesc: "Tùy chỉnh hoàn toàn mọi chi tiết của kính mắt của bạn - chất liệu, hình dáng, màu sắc và thông số kỹ thuật.",
@@ -3204,6 +3246,9 @@ export const translations = {
       odm: "Desain lan Produksi",
       systemGenerated: "Sistem Terbit",
       securedBy: "Wis Aman Dikontrol Kualitas Kssmi",
+      // Product Highlights Section
+      highlightsLabel: "Titikan Unggulan",
+      highlightsTitle: "Fitur lan Aplikasi",
       startJourney: "Daftar Lan Ngeserake Rencanamu",
       privateLabelTitle: "Daftar Lan Ngeserake Pabrikan Mewah Babagan Kacamata",
       privateLabelDesc: "Atur kabeh jinis-materiale, wangun, lan saran teknologi kaca sampeyan dhewe.",
@@ -3418,6 +3463,9 @@ export const translations = {
       odm: "Reka Bentuk dan Pengeluaran",
       systemGenerated: "Dijanakan Sistem",
       securedBy: "Dilindungi oleh Kawalan Kualiti Kssmi",
+      // Product Highlights Section
+      highlightsLabel: "Ciri-ciri Utama",
+      highlightsTitle: "Ciri dan Aplikasi",
       startJourney: "Mulakan Perjalanan Anda",
       privateLabelTitle: "Mulakan Perniagaan Label Peribadi Jutaan Dolar Anda",
       privateLabelDesc: "Sesuaikan sepenuhnya setiap perincian cermin mata anda—bahan, bentuk, warna dan spesifikasi teknikal.",
@@ -3635,6 +3683,9 @@ export const translations = {
       odm: "Тарроҳӣ ва Истехсолот",
       systemGenerated: "Аз Ҷониби Система Тавлид Шудааст",
       securedBy: "Бо Назорати Сифати Kssmi Таъмин Карда Шудааст",
+      // Product Highlights Section
+      highlightsLabel: "Хусусиятҳои Асосӣ",
+      highlightsTitle: "Зухумот ва Коркард",
       startJourney: "Сафари Худро Оғоз Кунед",
       privateLabelTitle: "Бизнеси Бренди Хусусии Миллион-Долларии Худро Оғоз Кунед",
       privateLabelDesc: "Ҳар як тафсилоти айнакатонро — мавод, шакл, ранг ва мушаххасоти техникиро комилан фармоишӣ кунед.",

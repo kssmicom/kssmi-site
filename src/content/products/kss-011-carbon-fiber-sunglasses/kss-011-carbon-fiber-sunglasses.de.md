@@ -1,12 +1,12 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Individuelle Kohlefaser-Sonnenbrillen | OEM-Hersteller"
+title: "Individuelle Kohlefaser-Sonnenbrillen"
 slug: "kss-011-carbon-fiber-sunglasses"
 itemNo: "KSS-011"
 date: "2026-04-01"
-colors: "Original-Kohlefaserfarbe (Mattschwarz, Glänzendes Schwarz, Farbiges Geflecht, Geschmiedetes Carbon)"
+colors: "Original Kohlefaser-Farben (Mattschwarz, Glänzendes Schwarz, Farbiges Gewebe, Geschmiedetes Carbon)"
 materials: "Premium-Kohlefaser"
-serviceMode: "OEM & ODM ( Individualisierung )"
+serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) ( Individualisierung )"
 moq: "300 Stk/Modell"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -16,15 +16,15 @@ series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, l
 categories: "Sunglasses, Carbon Fiber Sunglasses"
 
 # ─────────────────────────────────────────────────────
-frameMaterial: "Premium-Kohlefaser in Luft- und Raumfahrtqualität"
-lensMaterial: "Widerstandsfähige Nylon-Gläser & Individualisierung"
+frameMaterial: "Premium-Kohlefaser in Luftfahrtqualität"
+lensMaterial: "Widerstandsfähige Nylon-Gläser und Individualisierung"
 size: "49-19-145mm & Individualisierung"
 designStyle: "Klassisch, Technisch, Luxus, Unisex"
 nosePads: "Hypoallergene Silikon-Nasenpads"
-hinge: "2+1 Fassstruktur-Scharniere & Individualisierung"
+hinge: "2+1 Fassstruktur-Scharniere und Individualisierung"
 logo: "Tampondruck, Lasergravur, Lasergravur mit Farbauslegung, Heißprägung, Metal-Logo, Logo-Prägung, Kristall-Verzierung, 3D-Aufkleber"
 service: "Auftragsfertigung / Design und Fertigung – Individualisierung"
-carbonFiberFeature: "Ultraleicht, Hohes Kraft-Gewichts-Verhältnis, Präzisions-CNC-gefertigt, Höchst langlebig"
+carbonFiberFeature: "Ultraleicht, Hohes Festigkeits-Gewichts-Verhältnis, Präzisions-CNC-gefräst, Hochgradig Langlebig"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kss-011-carbon-fiber-sunglasses/oem-odm-customized-luxury-carbon-fiber-sunglasses-kss-011-1.webp"
@@ -36,29 +36,29 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KSS-011 Kohlefaser-Sonnenbrillen | B2B-Lieferant"
-seoDescription: "Premium-Sonnenbrillen aus Kohlefaser in Luftfahrtqualität von einem chinesischen Export-Hersteller mit voller OEM/ODM- und Eigenmarken-Anpassung ab 300 MOQ."
-seoKeywords: "kohlefaser sonnenbrillen hersteller, individuelle OEM sonnenbrillen, eigenmarken brillen china, kohlefaser brillen großhandel, CNC brillen fabrik, sport sonnenbrillen OEM, luxus brillen lieferant"
+seoTitle: "KSS-011 Individuelle Kohlefaser-Sonnenbrillen | OEM-Lieferant"
+seoDescription: "Hochwertige Kohlefaser-Sonnenbrillen in Luftfahrtqualität von einem chinesischen Export-Hersteller mit voller OEM/ODM- und Eigenmarken-Anpassung ab 300 MOQ."
+seoKeywords: "Kohlefaser-Brillenhersteller, individuelle OEM-Sonnenbrille, Eigenmarkenbrillen China, Großhandel Kohlefaserrahmen, CNC-Brillenfabrik, Sportsonnenbrillen OEM, Luxussonnenbrillen-Lieferant, Exportqualität Sonnenbrillen"
 ---
 
 ## Eigenschaften
 
-- **Luft- und Raumfahrtmaterial:** Premium-Kohlefaserrahmen mit ultraleichtem Tragegefühl und extremem Kraft-Gewichts-Verhältnis, präzisionsgefertigt durch CNC für gleichbleibende Qualität über alle Produktionsläufe hinweg.
-- **Premium-Optik:** Widerstandsfähige Nylon-Gläser mit umfassenden Anpassungsoptionen für Tönung und Beschichtung, um vielfältige Marktanforderungen zu erfüllen.
-- **Präzisions-Hardware:** Stabile 2+1 Fassstruktur-Scharniere, entwickelt für langfristige Leichtgängigkeit und reproduzierbare Leistung.
-- **Ganztägiger Komfort:** Hypoallergene Silikon-Nasenpads für sicheren und bequemen Sitz auch bei längerer Tragezeit.
-- **Skalierbare Produktion:** Volle OEM- und ODM-Anpassungsmöglichkeiten einschließlich Logo-Applikation (Druck, Laser, Heißprägung, Metall, Prägung) mit einer niedrigen Mindestbestellmenge von nur 300 Stück pro Modell.
-- **Dimensionale Flexibilität:** Erhältlich in der Standardgröße 49-19-145mm mit vollen Anpassungsoptionen zur Unterstützung von Eigenmarken- und markenspezifischen Anforderungen.
+- **Material in Luftfahrtqualität:** Hochwertiger Kohlefaserrahmen, der ein ultraleichtes Tragegefühl mit einem extremen Festigkeits-Gewichts-Verhältnis bietet, präzisions-CNC-gefräst für gleichbleibende Qualität über alle Produktionsläufe hinweg.
+- **Premium-Optik:** Widerstandsfähige Nylon-Gläser mit umfangreichen individuellen Tönungs- und Beschichtungsoptionen für vielfältige Marktanforderungen.
+- **Präzisions-Hardware:** Stabile 2+1 Fassstruktur-Scharniere für langfristige Laufruhe und wiederholbare Leistung.
+- **Ganztägiger Komfort:** Hypoallergene Silikon-Nasenpads für einen sicheren und bequemen Sitz über längere Zeiträume.
+- **Skalierbare Produktion:** Volle OEM- und ODM-Anpassungsmöglichkeiten einschließlich Logo-Applikation (Druck, Laser, Heißprägung, Metall, Prägung), mit einer geringen Mindestbestellmenge von 300 Stück pro Modell.
+- **Dimensionale Flexibilität:** Erhältlich in Standardgröße 49-19-145mm mit vollen Anpassungsoptionen zur Unterstützung von Eigenmarken- und markenspezifischen Anforderungen.
 
 ## Perfekt Für
 
-- Optikeinzelhändler
-- Boutique-Geschäfte
-- Luxusmarken
-- Modemarken
+- Premium Brillenmarken
+- Unabhängige Brillendesigner
 - Eigenmarken-Distributoren
+- Luxusmodehäuser
 - Sport- und Auto-Lifestyle-Marken
+- Kaufhausgruppen
 
-## Übersicht
+## Overview
 
-Entwickelt für Marken, die Kohlefaser in Luftfahrtqualität fordern, ohne den Luxus-Aufpreis zu zahlen, vereint das KSS-011 einen ultraleichten, CNC-gefertigten Rahmen mit der raffinierten Ästhetik, die anspruchsvolle Käufer erwarten. Das 2+1 Fassstruktur-Scharniersystem gewährleistet über Jahre täglicher Nutzung hinweg einen reibungslosen, zuverlässigen Betrieb, während die vollständige OEM/ODM-Anpassung — von Logo-Applikation bis zu Schmiedekarbon-Finishes — Private-Label-Programme mit einer Mindestbestellmenge von 300 Stück unterstützt. Dieses Modell bietet Marken für Luxus-Sport, Mode und Lifestyle eine markenfertige Basis, getragen von einem Hersteller, der jeden Produktionsschritt kontrolliert.
+Entwickelt für Marken, die Kohlefaser in Luftfahrtqualität ohne den Luxusaufschlag verlangen, kombiniert die KSS-011 einen ultraleichten CNC-gefrästen Rahmen mit der raffinierten Ästhetik, die anspruchsvolle Käufer erwarten. Das 2+1 Scharniersystem liefert über Jahre des täglichen Gebrauchs eine dauerhaft geschmeidige Bedienung, während die volle OEM/ODM-Anpassung — von der Logo-Applikation bis zu geschmiedeten Carbon-Finishes — Eigenmarken-Programme bei einer Mindestbestellmenge von 300 Stück unterstützt. Dieses Modell bietet Luxussport-, Mode- und Lifestyle-Labels eine brandingfertige Grundlage, gestützt durch einen Hersteller, der jeden Produktionsschritt kontrolliert.

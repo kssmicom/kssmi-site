@@ -1,6 +1,6 @@
-﻿---
+---
 # ─────────────────────────────────────────────────────
-title: "Cermin Mata Hitam Gentian Karbon Tersuai | Pengilang OEM"
+title: "Cermin Mata Hitam Gentian Karbon Tersuai"
 slug: "kss-012-carbon-fiber-sunglasses"
 itemNo: "KSS-012"
 date: "2026-04-05"
@@ -51,12 +51,12 @@ seoKeywords: "pengilang cermin mata hitam gentian karbon, bingkai karbon tersuai
 - **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum yang rendah iaitu 300 unit untuk eksport global.
 
 ## Perfect For
-- Peruncit Optik
-- Kedai Butik
-- Jenama Mewah
-- Jenama Fesyen
+- Merek Kacamata Premium
+- Pereka Kacamata Berkesan
 - Pengedar Label Peribadi
 - Jenama Gaya Hidup Sukan & Automotif
+- Rumah Fesyen Mewah
+- Kumpulan Stor Departments
 
 ## Overview
 

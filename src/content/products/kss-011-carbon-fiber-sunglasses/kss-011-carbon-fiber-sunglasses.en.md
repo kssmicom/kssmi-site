@@ -1,6 +1,6 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Custom Carbon Fiber Sunglasses | OEM Manufacturer"
+title: "Custom Carbon Fiber Sunglasses"
 slug: "kss-011-carbon-fiber-sunglasses"
 itemNo: "KSS-011"
 date: "2026-04-01"
@@ -52,12 +52,12 @@ seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses, priva
 
 ## Perfect For
 
-- Optical Retailers
-- Boutique Shops
-- Luxury Brands
-- Fashion Brands
+- Premium Eyewear Brands
+- Independent Eyewear Designers
 - Private Label Distributors
+- Luxury Fashion Houses
 - Sports & Automotive Lifestyle Labels
+- Department Store Groups
 
 ## Overview
 

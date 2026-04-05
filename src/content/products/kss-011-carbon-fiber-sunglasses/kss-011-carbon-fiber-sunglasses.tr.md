@@ -1,12 +1,12 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Özel Karbon Fiber Güneş Gözlükleri | OEM Üretici"
+title: "Özel Karbon Fiber Güneş Gözlüğü"
 slug: "kss-011-carbon-fiber-sunglasses"
 itemNo: "KSS-011"
 date: "2026-04-01"
-colors: "Orijinal Karbon Fiber Rengi (Mat Siyah, Parlak Siyah, Renkli Dokuma, Dövme Karbon)"
+colors: "Orijinal Karbon Fiber Rengi (Mat Siyah, Parlak Siyah, Renkli Örgü, Dövme Karbon)"
 materials: "Premium Karbon Fiber"
-serviceMode: "OEM & ODM ( Özelleştirme )"
+serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
 moq: "300 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -16,15 +16,15 @@ series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, l
 categories: "Sunglasses, Carbon Fiber Sunglasses"
 
 # ─────────────────────────────────────────────────────
-frameMaterial: "Birinci Sınıf Havacılık Sınıfı Karbon Fiber"
-lensMaterial: "Dayanıklı Naylon Lens & Özelleştirme"
+frameMaterial: "Premium Havacılık Sınıfı Karbon Fiber"
+lensMaterial: "Dayanıklı Naylon Lens ve Özelleştirme"
 size: "49-19-145mm & Özelleştirme"
 designStyle: "Klasik, Teknik, Lüks, Unisex"
-nosePads: "Hipoalerjenik Silikon Burun Tamponları"
-hinge: "2+1 Varil Yapılı Menteşeler & Özelleştirme"
+nosePads: "Hipojenik Silikon Burun Tamponları"
+hinge: "2+1 Namlu Yapılı Menteşeler ve Özelleştirme"
 logo: "Tampo Baskı, Lazer Markalama, Boya Dolgulu Lazer, Sıcak Baskı, Metal Logo, Kabartma Logo, Kristal Süsleme, 3D Etiket"
 service: "OEM / ODM Üretim – Özelleştirme"
-carbonFiberFeature: "Ultra Hafif, Yüksek Mukavemet-Ağırlık Oranı, Hassas CNC İşleme, Yüksek Dayanıklılık"
+carbonFiberFeature: "Ultra Hafif, Yüksek Güç-Ağırlık Oranı, Hassas CNC İşleme, Yüksek Dayanıklılık"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kss-011-carbon-fiber-sunglasses/oem-odm-customized-luxury-carbon-fiber-sunglasses-kss-011-1.webp"
@@ -36,29 +36,29 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KSS-011 Özel Karbon Fiber Güneş Gözlüğü | B2B Tedarikçi"
-seoDescription: "Çinli ihracat üreticisinden havacılık sınıfı birinci sınıf karbon fiber güneş gözlükleri. 300 MOQ'dan başlayan tam OEM/ODM ve özel markalı özelleştirme seçenekleri."
-seoKeywords: "karbon fiber gözlük üreticisi, özel OEM güneş gözlükleri, özel markalı gözlük Çin, karbon fiber çerçeve toptan, CNC gözlük fabrikası, spor güneş gözlükleri OEM, lüks gözlük tedarikçisi"
+seoTitle: "KSS-011 Özel Karbon Fiber Güneş Gözlüğü | OEM Tedarikçisi"
+seoDescription: "Çinli bir ihracat üreticisinden, 300 MOQ'dan başlayan tam OEM/ODM ve özel marka özelleştirmesi ile premium havacılık sınıfı karbon fiber güneş gözlüğü."
+seoKeywords: "karbon fiber gözlük üreticisi, özel OEM güneş gözlüğü, özel marka gözlük Çin, toptan karbon fiber çerçeveler, CNC gözlük fabrikası, spor güneş gözlüğü OEM, lüks güneş gözlüğü tedarikçisi, ihracat kalitesinde güneş gözlüğü"
 ---
 
-## Teknik Özellikler
+## Özellikler
 
-- **Havacılık Sınıfı Malzeme:** Ultra hafif bir his ve olağanüstü mukavemet-ağırlık oranı sunan premium karbon fiber çerçeve, üretim süreçleri boyunca tutarlı kalite için hassas CNC ile işlenmiştir.
+- **Havacılık Sınıfı Malzeme:** Ultra hafif bir his ve aşırı mukavemet-ağırlık oranı sunan, üretim serileri boyunca tutarlı kalite için hassas CNC'de işlenmiş birinci sınıf karbon fiber çerçeve.
 - **Premium Optik:** Çeşitli pazar taleplerini karşılamak için kapsamlı özel renklendirme ve kaplama seçeneklerine sahip dayanıklı naylon lensler.
-- **Hassas Donanım:** Uzun süreli operasyonel pürüzsüzlük ve tekrarlanabilir performans için tasarlanmış sağlam 2+1 varil yapılı menteşeler.
-- **Tüm Gün Konfor:** Uzun süreli kullanım sırasında güvenli ve rahat bir uyum için tasarlanmış hipoalerjenik silikon burun tamponları.
-- **Ölçeklenebilir Üretim:** Logo uygulaması (baskı, lazer, sıcak baskı, metal, kabartma) dahil olmak üzere tam OEM ve ODM özelleştirme yetenekleri, model başına 300 adetlik düşük minimum sipariş miktarı ile.
-- **Boyutsal Esneklik:** Standart 49-19-145 mm boyutlarında mevcut olup, özel markalı ve markaya özel gereksinimleri desteklemek için tam özelleştirme seçenekleri sunar.
+- **Hassas Donanım:** Uzun süreli operasyonel pürüzsüzlük ve tekrarlanabilir performans için tasarlanmış sağlam 2+1 namlu yapılı menteşeler.
+- **Tüm Gün Konfor:** Uzun süreli kullanım dönemlerinde güvenli ve rahat bir oturuş için tasarlanmış hipoalerjenik silikon burun tamponları.
+- **Ölçeklenebilir Üretim:** Logo uygulaması (baskı, lazer, sıcak baskı, metal, kabartma) dahil olmak üzere, model başına 300 parçalık düşük minimum sipariş miktarı ile tam OEM ve ODM özelleştirme yetenekleri.
+- **Boyutsal Esneklik:** Özel marka ve markaya özgü gereksinimleri desteklemek için tam özelleştirme seçenekleriyle birlikte standart 49-19-145 mm boyutlarında mevcuttur.
 
 ## İçin Mükemmel
 
-- Optik Perakendecileri
-- Butik Mağazalar
-- Lüks Markalar
-- Moda Markaları
+- Premium Gözlük Markaları
+- Bağımsız Gözlük Tasarımcıları
 - Özel Marka Dağıtımcıları
+- Lüks Moda Evleri
 - Spor ve Otomotiv Yaşam Tarzı Markaları
+- Departman Mağazası Grupları
 
-## Genel Bakış
+## Overview
 
-Lüks ek ücreti ödemeden havacılık sınıfı karbon fiber talep eden markalar için tasarlanan KSS-011, CNC ile işlenmiş ultra hafif bir çerçeveyi, seçici alıcıların beklediği rafine estetikle birleştirir. 2+1 varil menteşe sistemi, yıllarca günlük kullanımda tekrarlanabilir ve pürüzsüz bir performans sunarken, logo uygulamasından dövme karbon kaplamalara kadar tam OEM/ODM özelleştirmesi 300 adetlik düşük minimum sipariş miktarıyla özel markalı programları destekler. Bu model, üretimin her aşamasını kontrol eden bir üretici tarafından desteklenen, markalaşmaya hazır bir temel sunarak lüks spor, moda ve yaşam tarzı markalarına hitap eder.
+Lüks fiyat farkı ödemeden havacılık sınıfı karbon fiber talep eden markalar için üretilen KSS-011, ultra hafif CNC işlemeli çerçeveyi seçici alıcıların beklediği rafine estetikle birleştiriyor. 2+1 namlu menteşe sistemi, yıllarca günlük kullanımda tekrarlanabilir, pürüzsüz çalışma sunarken, logo uygulamasından dövme karbon yüzeylere kadar tam OEM/ODM özelleştirmesi, 300 parçalık minimum sipariş miktarında özel marka programlarını destekler. Bu model, lüks spor, moda ve yaşam tarzı markalarına, üretimin her adımını kontrol eden bir üretici tarafından desteklenen, markalamaya hazır bir temel sunar.
