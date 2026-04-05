@@ -1,7 +1,7 @@
 ---
 # ─────────────────────────────────────────────────────
 title: "커스텀 탄소 섬유 선글라스 | OEM 제조업체"
-slug: "Kss-011-Carbon-Fiber-Sunglasses"
+slug: "kss-011-carbon-fiber-sunglasses"
 itemNo: "KSS-011"
 date: "2026-04-01"
 colors: "오리지널 탄소 섬유 색상 (매트 블랙, 글로시 블랙, 컬러드 위브, 포지드 카본)"
@@ -27,11 +27,11 @@ service: "OEM / ODM 제조 맞춤 서비스"
 carbonFiberFeature: "초경량, 높은 비강도, 정밀 CNC 가공, 뛰어난 내구성"
 
 # ─────────────────────────────────────────────────────
-cover: "/media/products/Kss-011-Carbon-Fiber-Sunglasses/Oem-Odm-Customized-Luxury-Carbon-Fiber-Sunglasses-Kss-011-1.webp"
+cover: "/media/products/kss-011-carbon-fiber-sunglasses/oem-odm-customized-luxury-carbon-fiber-sunglasses-kss-011-1.webp"
 gallery:
-  - "/media/products/Kss-011-Carbon-Fiber-Sunglasses/Oem-Odm-Customized-Luxury-Carbon-Fiber-Sunglasses-Kss-011-2.webp"
-  - "/media/products/Kss-011-Carbon-Fiber-Sunglasses/Oem-Odm-Customized-Luxury-Carbon-Fiber-Sunglasses-Kss-011-3.webp"
-  - "/media/products/Kss-011-Carbon-Fiber-Sunglasses/Oem-Odm-Customized-Luxury-Carbon-Fiber-Sunglasses-Kss-011-4.webp"
+  - "/media/products/kss-011-carbon-fiber-sunglasses/oem-odm-customized-luxury-carbon-fiber-sunglasses-kss-011-2.webp"
+  - "/media/products/kss-011-carbon-fiber-sunglasses/oem-odm-customized-luxury-carbon-fiber-sunglasses-kss-011-3.webp"
+  - "/media/products/kss-011-carbon-fiber-sunglasses/oem-odm-customized-luxury-carbon-fiber-sunglasses-kss-011-4.webp"
 customizable: true
 featured: true
 

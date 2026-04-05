@@ -1,7 +1,7 @@
 ---
 # ─────────────────────────────────────────────────────
 title: "Kacamata Hitam Serat Karbon Kustom | Produsen OEM"
-slug: "Kss-011-Carbon-Fiber-Sunglasses"
+slug: "kss-011-carbon-fiber-sunglasses"
 itemNo: "KSS-011"
 date: "2026-04-01"
 colors: "Werna Serat Karbon Asli (Ireng Matte, Ireng Glossy, Tenunan Werna, Karbon Tempa)"
@@ -27,11 +27,11 @@ service: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 carbonFiberFeature: "Ultra-Entheng, Rasio Kekuatan-kanggo-Bobot Dhuwur, Diproses CNC Presisi, Awet Banget"
 
 # ─────────────────────────────────────────────────────
-cover: "/media/products/Kss-011-Carbon-Fiber-Sunglasses/Oem-Odm-Customized-Luxury-Carbon-Fiber-Sunglasses-Kss-011-1.webp"
+cover: "/media/products/kss-011-carbon-fiber-sunglasses/oem-odm-customized-luxury-carbon-fiber-sunglasses-kss-011-1.webp"
 gallery:
-  - "/media/products/Kss-011-Carbon-Fiber-Sunglasses/Oem-Odm-Customized-Luxury-Carbon-Fiber-Sunglasses-Kss-011-2.webp"
-  - "/media/products/Kss-011-Carbon-Fiber-Sunglasses/Oem-Odm-Customized-Luxury-Carbon-Fiber-Sunglasses-Kss-011-3.webp"
-  - "/media/products/Kss-011-Carbon-Fiber-Sunglasses/Oem-Odm-Customized-Luxury-Carbon-Fiber-Sunglasses-Kss-011-4.webp"
+  - "/media/products/kss-011-carbon-fiber-sunglasses/oem-odm-customized-luxury-carbon-fiber-sunglasses-kss-011-2.webp"
+  - "/media/products/kss-011-carbon-fiber-sunglasses/oem-odm-customized-luxury-carbon-fiber-sunglasses-kss-011-3.webp"
+  - "/media/products/kss-011-carbon-fiber-sunglasses/oem-odm-customized-luxury-carbon-fiber-sunglasses-kss-011-4.webp"
 customizable: true
 featured: true
 

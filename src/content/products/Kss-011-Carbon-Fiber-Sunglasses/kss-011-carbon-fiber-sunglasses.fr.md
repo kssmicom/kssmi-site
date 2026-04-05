@@ -1,7 +1,7 @@
 ---
 # ─────────────────────────────────────────────────────
 title: "Lunettes de Soleil en Fibre de Carbone Sur Mesure | Fabricant OEM"
-slug: "Kss-011-Carbon-Fiber-Sunglasses"
+slug: "kss-011-carbon-fiber-sunglasses"
 itemNo: "KSS-011"
 date: "2026-04-01"
 colors: "Couleur Originale Fibre de Carbone (Noir Mat, Noir Brillant, Tissage Coloré, Carbone Forgé)"
@@ -27,11 +27,11 @@ service: "Fabrication OEM / ODM – Personnalisation"
 carbonFiberFeature: "Ultra-Léger, Rapport Résistance/Poids Élevé, Usinage CNC de Précision, Très Durable"
 
 # ─────────────────────────────────────────────────────
-cover: "/media/products/Kss-011-Carbon-Fiber-Sunglasses/Oem-Odm-Customized-Luxury-Carbon-Fiber-Sunglasses-Kss-011-1.webp"
+cover: "/media/products/kss-011-carbon-fiber-sunglasses/oem-odm-customized-luxury-carbon-fiber-sunglasses-kss-011-1.webp"
 gallery:
-  - "/media/products/Kss-011-Carbon-Fiber-Sunglasses/Oem-Odm-Customized-Luxury-Carbon-Fiber-Sunglasses-Kss-011-2.webp"
-  - "/media/products/Kss-011-Carbon-Fiber-Sunglasses/Oem-Odm-Customized-Luxury-Carbon-Fiber-Sunglasses-Kss-011-3.webp"
-  - "/media/products/Kss-011-Carbon-Fiber-Sunglasses/Oem-Odm-Customized-Luxury-Carbon-Fiber-Sunglasses-Kss-011-4.webp"
+  - "/media/products/kss-011-carbon-fiber-sunglasses/oem-odm-customized-luxury-carbon-fiber-sunglasses-kss-011-2.webp"
+  - "/media/products/kss-011-carbon-fiber-sunglasses/oem-odm-customized-luxury-carbon-fiber-sunglasses-kss-011-3.webp"
+  - "/media/products/kss-011-carbon-fiber-sunglasses/oem-odm-customized-luxury-carbon-fiber-sunglasses-kss-011-4.webp"
 customizable: true
 featured: true
 

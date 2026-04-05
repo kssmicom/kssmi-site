@@ -1,7 +1,7 @@
 ---
 # ─────────────────────────────────────────────────────
 title: "定制碳纤维太阳镜 | 代工生产厂家"
-slug: "Kss-011-Carbon-Fiber-Sunglasses"
+slug: "kss-011-carbon-fiber-sunglasses"
 itemNo: "KSS-011"
 date: "2026-04-01"
 colors: "原色碳纤维（哑光黑、亮光黑、彩色编织、锻造碳）"
@@ -27,11 +27,11 @@ service: "代工生产 / 设计制造 定制服务"
 carbonFiberFeature: "超轻量、高强度重量比、精密 CNC 加工、经久耐用"
 
 # ─────────────────────────────────────────────────────
-cover: "/media/products/Kss-011-Carbon-Fiber-Sunglasses/Oem-Odm-Customized-Luxury-Carbon-Fiber-Sunglasses-Kss-011-1.webp"
+cover: "/media/products/kss-011-carbon-fiber-sunglasses/oem-odm-customized-luxury-carbon-fiber-sunglasses-kss-011-1.webp"
 gallery:
-  - "/media/products/Kss-011-Carbon-Fiber-Sunglasses/Oem-Odm-Customized-Luxury-Carbon-Fiber-Sunglasses-Kss-011-2.webp"
-  - "/media/products/Kss-011-Carbon-Fiber-Sunglasses/Oem-Odm-Customized-Luxury-Carbon-Fiber-Sunglasses-Kss-011-3.webp"
-  - "/media/products/Kss-011-Carbon-Fiber-Sunglasses/Oem-Odm-Customized-Luxury-Carbon-Fiber-Sunglasses-Kss-011-4.webp"
+  - "/media/products/kss-011-carbon-fiber-sunglasses/oem-odm-customized-luxury-carbon-fiber-sunglasses-kss-011-2.webp"
+  - "/media/products/kss-011-carbon-fiber-sunglasses/oem-odm-customized-luxury-carbon-fiber-sunglasses-kss-011-3.webp"
+  - "/media/products/kss-011-carbon-fiber-sunglasses/oem-odm-customized-luxury-carbon-fiber-sunglasses-kss-011-4.webp"
 customizable: true
 featured: true
 
