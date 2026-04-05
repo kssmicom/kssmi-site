@@ -244,72 +244,8 @@ function isActiveCategory(href: string): boolean {
 <Layout title={`${categoryTitle} - ${t.nav.products}`}>
   <Header />
 
-  <main class="w-full min-h-screen py-12 lg:py-16 bg-stone-50">
+  <main class="w-full min-h-screen py-6 lg:py-8 bg-stone-50">
     <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
-
-      <!-- Breadcrumb -->
-      <nav class="mb-8 text-sm">
-        <ol class="flex items-center flex-wrap gap-1">
-          <li>
-            <a href="/" class="text-gray-500 hover:text-[#8B7355] transition-colors">
-              {t.nav.home}
-            </a>
-          </li>
-          <li class="text-gray-300 mx-2">/</li>
-          <li>
-            <a href="/product" class="text-gray-500 hover:text-[#8B7355] transition-colors">
-              {t.nav.products}
-            </a>
-          </li>
-          {(() => {
-            let activeMain = null;
-            let activeSub = null;
-
-            // Only check primary categories to avoid duplicate tag breadcrumbs
-            for (const cat of primaryCategories) {
-              const sub = cat.items.find(s => isActiveCategory(s.href));
-              if (isActiveCategory(cat.href) || sub) {
-                activeMain = cat;
-                activeSub = sub;
-                break;
-              }
-            }
-
-            if (!activeMain) return null;
-
-            return (
-              <>
-                <li class="text-gray-300 mx-2">/</li>
-                <li>
-                  {activeSub ? (
-                    <a href={activeMain.href} class="text-gray-500 hover:text-[#8B7355] transition-colors">
-                      {activeMain.label}
-                    </a>
-                  ) : (
-                    <span class="text-[#8B7355] font-medium">{activeMain.label}</span>
-                  )}
-                </li>
-                {activeSub && (
-                  <>
-                    <li class="text-gray-300 mx-2">/</li>
-                    <li class="text-[#8B7355] font-medium">{activeSub.label}</li>
-                  </>
-                )}
-              </>
-            );
-          })()}
-        </ol>
-      </nav>
-
-      <!-- Page Header -->
-      <div class="mb-10">
-        <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
-          {categoryTitle}
-        </h1>
-        <p class="text-gray-600">
-          {products.length} {pt.productsInCategory}
-        </p>
-      </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
         <!-- Sidebar -->
