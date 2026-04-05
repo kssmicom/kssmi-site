@@ -32,22 +32,22 @@ const eyewearText = eyewearLabels[lang as keyof typeof eyewearLabels] || 'Eyewea
 const contactEmail = 'sales@kssmi.com';
 const whatsappNum = '8613510532553';
 
-// Quick Links Menu
+// Quick Links Menu - Sunglasses Categories
 const quickLinks = [
-  { label: t.footer.about, href: aboutUrl },
-  { label: t.footer.manufacturing, href: `/${currentPath}manufacturing` },
-  { label: t.footer.collection, href: `/${currentPath}collection` },
-  { label: t.footer.support, href: `/${currentPath}support` },
-  { label: t.footer.contact, href: contactUrl },
-  { label: t.footer.privacy, href: `/${currentPath}privacy` },
+  { label: t.sidebar.acetate_sunglasses, href: `/${currentPath}product/acetate-sunglasses` },
+  { label: t.sidebar.metal_sunglasses, href: `/${currentPath}product/metal-sunglasses` },
+  { label: t.sidebar.titanium_sunglasses, href: `/${currentPath}product/titanium-sunglasses` },
+  { label: t.sidebar.carbon_fiber_sunglasses, href: `/${currentPath}product/carbon-sunglasses` },
+  { label: t.sidebar.rimless_sunglasses, href: `/${currentPath}product/rimless-sunglasses` },
 ];
 
-// Products Category Menu - Using clean URLs
+// Products Category Menu - Optical Frames Categories
 const categoryLinks = [
-  { label: t.footer.luxury, href: `/${currentPath}product/luxury-customized` },
-  { label: t.footer.classics, href: `/${currentPath}product/classics-series` },
-  { label: t.footer.fashion, href: `/${currentPath}product/fashion-series` },
-  { label: "Blog", href: `/${currentPath}blog` },
+  { label: t.sidebar.acetate_glasses, href: `/${currentPath}product/acetate-glasses` },
+  { label: t.sidebar.metal_glasses, href: `/${currentPath}product/metal-glasses` },
+  { label: t.sidebar.titanium_glasses, href: `/${currentPath}product/titanium-glasses` },
+  { label: t.sidebar.carbon_glasses, href: `/${currentPath}product/carbon-glasses` },
+  { label: t.sidebar.rimless_glasses, href: `/${currentPath}product/rimless-glasses` },
 ];
 
 // Current year for copyright
@@ -96,7 +96,7 @@ const currentYear = new Date().getFullYear();
       <!-- COLUMN 2: QUICK LINKS -->
       <div>
         <h4 class="text-white font-['Manrope'] font-bold uppercase tracking-[0.2em] text-xs mb-6">
-          {t.footer.quickLinksTitle}
+          <a href={`/${currentPath}product/sunglasses`} class="hover:text-[#b45309] transition-colors">{t.sidebar.sunglasses}</a>
         </h4>
         <ul class="space-y-4 text-sm">
           {quickLinks.map((item) => (
@@ -113,7 +113,7 @@ const currentYear = new Date().getFullYear();
       <!-- COLUMN 3: CATEGORY -->
       <div>
         <h4 class="text-white font-['Manrope'] font-bold uppercase tracking-[0.2em] text-xs mb-6">
-          {t.footer.productsTitle}
+          <a href={`/${currentPath}product/optical-frames`} class="hover:text-[#b45309] transition-colors">{t.sidebar.optical_frames}</a>
         </h4>
         <ul class="space-y-4 text-sm">
           {categoryLinks.map((item) => (
