@@ -1,13 +1,13 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Custom Carbon Fiber Optical Frame"
+title: "定制碳纤维光学镜架"
 slug: "kso-012-carbon-fiber-optical-frame"
 itemNo: "KSO-012"
 date: "2026-04-05"
-colors: "Carbon-Fiber & Ceylon-Ebony & White-Oak & Sapele"
-materials: "Premium Carbon Fiber and Titanium"
-serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+colors: "碳纤维 & 斯里兰卡乌木 & 白橡木 & 沙比利"
+materials: "优质碳纤维与钛金属"
+serviceMode: "代工生产 & 设计制造 ( 定制服务 )"
+moq: "300 付/款"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -16,15 +16,15 @@ series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carb
 categories: "Optical Frames, Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
-size: "49-19-145mm & Customization"
-frameMaterial: "Premium Carbon Fiber Frame and Titanium Temple"
-lensMaterial: "Tenacious Nylon Lens & Customization"
-designStyle: "Classic, Fashion, Stylish, Trendy, Luxury, Unisex"
-nosePads: "Silicone Nose Pads"
-hinge: "2+1 Barrel Structure Hinges & Customization"
-logo: "Print, Laser, Laser With Oil, Hot Stamping, Metal, Embossing, Crystal, Up-sticker"
-service: "OEM / ODM customization"
-carbonFiberFeature: "Lightweight & High Strength-to-Weight Ratio & Flexibility & Durability & Hypoallergenic & Unique Texture"
+size: "49-19-145mm & 定制服务"
+frameMaterial: "优质碳纤维镜框与钛金属镜腿"
+lensMaterial: "高韧性尼龙镜片 & 定制服务"
+designStyle: "经典, 时尚, 型格, 潮流, 奢华, 中性"
+nosePads: "硅胶鼻托"
+hinge: "2+1 桶形结构铰链 & 定制服务"
+logo: "印刷, 镭射, 镭射填油, 热烫印, 金属标, 压纹, 水晶, 立体贴标"
+service: "代工生产 / 设计制造 定制服务"
+carbonFiberFeature: "轻盈 & 高强度重量比 & 柔韧 & 耐用 & 防过敏 & 独特纹理"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kso-012-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-012-1.webp"
@@ -48,27 +48,27 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KSO-012 Luxury Carbon Fiber Optical Frame | Wholesale Supplier"
-seoDescription: "Source ultra-lightweight KSO-012 carbon fiber optical frames with titanium temples from a top Chinese export factory. Full OEM/ODM customization with 300 PCS MOQ."
-seoKeywords: "carbon fiber optical frames, custom eyewear manufacturer, titanium carbon fiber glasses, wholesale optical frames China, private label eyewear factory, luxury carbon fiber frames OEM, CNC machined eyewear supplier, optical frame export manufacturer"
+seoTitle: "KSO-012 豪华碳纤维光学镜架 | 批发供应商"
+seoDescription: "从中国顶级出口工厂采购 KSO-012 超轻碳纤维与钛金属镜腿光学镜架。提供完整的 OEM/ODM 定制服务，起订量 300 付。"
+seoKeywords: "碳纤维光学镜架, 定制眼镜制造商, 钛碳纤维眼镜, 中国光学镜架批发, 私有品牌眼镜工厂, 豪华碳纤维镜架 OEM, CNC 加工眼镜供应商, 光学镜架出口制造商"
 ---
 
-## Technical Features
-- **Aerospace-Grade Material:** Premium carbon fiber frame and titanium temples offer an ultra-lightweight feel with an extreme strength-to-weight ratio.
-- **Precision Manufacturing:** CNC-machined carbon fiber components ensuring exact tolerances and a unique, durable texture.
-- **Durable Hardware:** Stable 2+1 barrel structure hinges engineered for long-term operational smoothness and easy maintenance.
-- **Premium Optics:** Tenacious nylon lenses with extensive custom tinting and coating options available for versatile branding.
-- **Ergonomic Comfort:** Hypoallergenic silicone nose pads designed for a secure, all-day comfortable fit.
-- **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 300 pieces for global export.
+## 特点
+- **航空航天级材料：** 优质碳纤维镜框与钛金属镜腿提供超轻的佩戴感，具有极高的强度重量比。
+- **精密制造：** CNC 加工的碳纤维组件确保了极精确的公差和独特、耐用的纹理。
+- **耐用五金：** 稳定的 2+1 桶形结构铰链，专为长期顺畅运行和易于维护而设计。
+- **优质光学：** 高韧性尼龙镜片，提供广泛的定制变色和涂层选项，满足多样化的品牌需求。
+- **人体工程学舒适度：** 防过敏硅胶鼻托，设计稳固，确保全天佩戴舒适。
+- **可扩展生产：** 完整的 OEM 和 ODM 定制能力，起订量低至 300 付，面向全球出口。
 
-## Perfect For
-- Premium Eyewear Brands
-- Independent Eyewear Designers
-- Private Label Distributors
-- High-End Optical Chains
-- Sports & Automotive Lifestyle Labels
-- Department Store Groups
+## 适用对象
+- 高端眼镜品牌
+- 独立眼镜设计师
+- 私有品牌经销商
+- 高端光学连锁
+- 运动与汽车生活方式品牌
+- 百货集团
 
-## Overview
+## 概览
 
-Combining aerospace-grade carbon fiber with precision-engineered titanium temples, the KSO-012 offers an exceptional strength-to-weight ratio for the modern optical market. Each frame is CNC-machined to ensure consistent quality and a unique texture that differentiates it from standard acetate or metal alternatives. With integrated 2+1 barrel hinges and hypoallergenic silicone nose pads, this model prioritizes long-term durability and wearer comfort in high-end retail environments. Kssmi supports global brand expansion through comprehensive OEM/ODM customization services with a low 300-piece minimum order quantity per model.
+KSO-012 将航空级碳纤维与精密设计的钛金属镜腿相结合，为现代光学市场提供了卓越的强度重量比。每款镜架均通过 CNC 加工，确保品质一致且纹理独特，使其在标准的醋酸纤维或金属替代品中脱颖而出。配备集成的 2+1 桶形铰链和防过敏硅胶鼻托，该型号在高端零售环境中优先考虑长期耐用性和佩戴舒适度。Kssmi 通过全面的 OEM/ODM 定制服务支持全球品牌扩张，每款型号的起订量仅为 300 付。

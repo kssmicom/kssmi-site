@@ -1,13 +1,13 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Custom Carbon Fiber Optical Frame"
+title: "Frame Optik Serat Karbon Kustom"
 slug: "kso-012-carbon-fiber-optical-frame"
 itemNo: "KSO-012"
 date: "2026-04-05"
-colors: "Carbon-Fiber & Ceylon-Ebony & White-Oak & Sapele"
-materials: "Premium Carbon Fiber and Titanium"
-serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+colors: "Serat Karbon & Kayu Hitam Ceylon & Kayu Oak Putih & Sapele"
+materials: "Serat Karbon Premium lan Titanium"
+serviceMode: "OEM & ODM ( Kustomisasi )"
+moq: "300 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -16,15 +16,15 @@ series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carb
 categories: "Optical Frames, Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
-size: "49-19-145mm & Customization"
-frameMaterial: "Premium Carbon Fiber Frame and Titanium Temple"
-lensMaterial: "Tenacious Nylon Lens & Customization"
-designStyle: "Classic, Fashion, Stylish, Trendy, Luxury, Unisex"
-nosePads: "Silicone Nose Pads"
-hinge: "2+1 Barrel Structure Hinges & Customization"
-logo: "Print, Laser, Laser With Oil, Hot Stamping, Metal, Embossing, Crystal, Up-sticker"
-service: "OEM / ODM customization"
-carbonFiberFeature: "Lightweight & High Strength-to-Weight Ratio & Flexibility & Durability & Hypoallergenic & Unique Texture"
+size: "49-19-145mm & Kustomisasi"
+frameMaterial: "Frame Serat Karbon Premium lan Gagang Titanium"
+lensMaterial: "Lensa Nylon Kuat & Kustomisasi"
+designStyle: "Klasik, Fashion, Gaya, Trendi, Mewah, Unisex"
+nosePads: "Bantalan Irung Silikon"
+hinge: "Engsel Struktur Tong 2+1 & Kustomisasi"
+logo: "Cetak, Laser, Laser Karang Lengo, Cap Panas, Logo Logam, Timbulan, Kristal, Stiker"
+service: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
+carbonFiberFeature: "Entheng & Rasio Kekuatan-kanggo-Bobot Dhuwur & Fleksibilitas & Awet & Hiposalergenik & Tekstur Unik"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kso-012-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-012-1.webp"
@@ -48,27 +48,27 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KSO-012 Luxury Carbon Fiber Optical Frame | Wholesale Supplier"
-seoDescription: "Source ultra-lightweight KSO-012 carbon fiber optical frames with titanium temples from a top Chinese export factory. Full OEM/ODM customization with 300 PCS MOQ."
-seoKeywords: "carbon fiber optical frames, custom eyewear manufacturer, titanium carbon fiber glasses, wholesale optical frames China, private label eyewear factory, luxury carbon fiber frames OEM, CNC machined eyewear supplier, optical frame export manufacturer"
+seoTitle: "KSO-012 Frame Optik Serat Karbon Mewah | Supplier Grosir"
+seoDescription: "Sumber frame optik serat karbon KSO-012 sing entheng banget kanthi gagang titanium saka pabrik ekspor utama China. Kustomisasi OEM/ODM lengkap kanthi MOQ 300 pcs."
+seoKeywords: "frame optik serat karbon, produsen kacamata kustom, kacamata titanium serat karbon, grosir frame optik China, pabrik kacamata label pribadi, frame serat karbon mewah OEM, supplier kacamata mesin CNC, produsen ekspor frame optik"
 ---
 
-## Technical Features
-- **Aerospace-Grade Material:** Premium carbon fiber frame and titanium temples offer an ultra-lightweight feel with an extreme strength-to-weight ratio.
-- **Precision Manufacturing:** CNC-machined carbon fiber components ensuring exact tolerances and a unique, durable texture.
-- **Durable Hardware:** Stable 2+1 barrel structure hinges engineered for long-term operational smoothness and easy maintenance.
-- **Premium Optics:** Tenacious nylon lenses with extensive custom tinting and coating options available for versatile branding.
-- **Ergonomic Comfort:** Hypoallergenic silicone nose pads designed for a secure, all-day comfortable fit.
-- **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 300 pieces for global export.
+## Fitur
+- **Bahan Kelas Dirgantara:** Frame serat karbon premium lan gagang titanium nawakake rasa entheng banget kanthi rasio kekuatan-kanggo-bobot sing ekstrem.
+- **Produksi Presisi:** Komponen serat karbon mesin CNC sing njamin toleransi sing pas lan tekstur sing unik lan awet.
+- **Hardware Awet:** Engsel struktur tong 2+1 sing stabil dirancang kanggo operasi sing lancar sajrone wektu sing suwe lan gampang dirawat.
+- **Optik Premium:** Lensa nilon kuat kanthi pilihan warna lan lapisan kustom kasedhiya kanggo branding sing serba guna.
+- **Kenyamanan Ergonomis:** Bantalan irung silikon hipoalergenik sing dirancang kanggo kenyamanan sedina muput.
+- **Produksi Skalabel:** Kapasitas kustomisasi OEM & ODM lengkap kanthi jumlah pesenan minimal mung 300 pcs kanggo ekspor global.
 
-## Perfect For
-- Premium Eyewear Brands
-- Independent Eyewear Designers
-- Private Label Distributors
-- High-End Optical Chains
-- Sports & Automotive Lifestyle Labels
-- Department Store Groups
+## Cocok kanggo
+- Merek Kacamata Premium
+- Penzel Kacamata Independen
+- Distributor Label Pribadi
+- Chain Optik High-End
+- Merek Gaya Hidup Olahraga & Otomotif
+- Group Store Departemen
 
 ## Overview
 
-Combining aerospace-grade carbon fiber with precision-engineered titanium temples, the KSO-012 offers an exceptional strength-to-weight ratio for the modern optical market. Each frame is CNC-machined to ensure consistent quality and a unique texture that differentiates it from standard acetate or metal alternatives. With integrated 2+1 barrel hinges and hypoallergenic silicone nose pads, this model prioritizes long-term durability and wearer comfort in high-end retail environments. Kssmi supports global brand expansion through comprehensive OEM/ODM customization services with a low 300-piece minimum order quantity per model.
+Nggabungake serat karbon kelas aeroangkasa karo gagang titanium teknik presisi, model KSO-012 nawakake rasio kekuatan-kanggo-bobot sing luar biasa kanggo pasar optik modern. Saben frame diproses nganggo CNC kanggo njamin kualitas sing konsisten lan tekstur unik sing mbedakake saka alternatif asetat utawa logam standar. Kanthi engsel tong 2+1 terintegrasi lan bantalan irung silikon hipoalergenik, model iki ngutamakake daya tahan jangka panjang lan kenyamanan sing nganggo ing lingkungan ritel dhuwur. Kssmi ndhukung ekspansi merek global liwat layanan kustomisasi OEM/ODM sing komprehensif kanthi jumlah pesenan minimal sing murah 300 unit saben model.
