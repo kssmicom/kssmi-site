@@ -1,30 +1,29 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Custom Carbon Fiber Optical Frame"
+title: "Özel Karbon Elyaf Optik Çerçeve"
 slug: "kso-033-carbon-fiber-optical-frame"
 itemNo: "KSO-033"
 date: "2026-04-05"
-colors: "Wood Golden & Twill Grain Green Carbon Fiber & Plain Grain Carbon Fiber Matt Gun & Wood Plain Grain Carbon Fiber Matt Silver"
-materials: "Premium Carbon Fiber and Titanium"
-serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+colors: "Ahşap Altın & Dimi Desen Yeşil Karbon Elyaf & Düz Desen Mat Füme Karbon Elyaf & Ahşap Düz Desen Mat Gümüş Karbon Elyaf"
+materials: "Premium Karbon Elyaf ve Titanyum"
+serviceMode: "OEM & ODM ( Özelleştirme )"
+moq: "300 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
 material: "Carbon Fiber"
 series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
-categories: "Optical Frames, Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
-size: "49-21-140mm & Customization"
-frameMaterial: "Premium Carbon Fiber Frame and Titanium Temple"
-lensMaterial: "Tenacious Nylon Lens & Customization"
-designStyle: "Classic, Fashion, Stylish, Trendy, Luxury, Unisex"
-nosePads: "Rubber Nose Pads"
-hinge: "2+1 Barrel Structure Hinges & Customization"
-logo: "Print, Laser, Laser With Oil, Hot Stamping, Metal, Embossing, Crystal, Up-sticker"
-service: "OEM / ODM customization"
-carbonFiberFeature: "Lightweight & High Strength-to-Weight Ratio & Flexibility & Durability & Hypoallergenic & Unique Texture"
+size: "49-21-140mm & Özelleştirme"
+frameMaterial: "Premium Karbon Elyaf Çerçeve ve Titanyum Sap"
+lensMaterial: "Dayanıklı Naylon Lens & Özelleştirme"
+designStyle: "Klasik, Moda, Şık, Trend, Lüks, Unisex"
+nosePads: "Kauçuk Burun Tamponları"
+hinge: "2+1 Varil Yapılı Menteşeler & Özelleştirme"
+logo: "Tampo Baskı, Lazer Markalama, Boya Dolgulu Lazer, Sıcak Baskı, Metal Logo, Kabartma Logo, Kristal Süsleme, 3D Etiket"
+service: "OEM / ODM Üretim – Özelleştirme"
+carbonFiberFeature: "Hafiflik & Yüksek Dayanıklılık-Ağırlık Oranı & Esneklik & Dayanıklılık & Hipoalerjenik & Benzersiz Doku"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kso-033-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-033-1.webp"
@@ -52,28 +51,28 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KSO-033 Luxury Carbon Fiber Optical Frames | Wholesale Supplier"
-seoDescription: "KSO-033 luxury carbon fiber optical frames with titanium temples for eyewear brands. High-performance OEM/ODM manufacturing with 300 MOQ and CNC precision."
-seoKeywords: "carbon fiber optical frames manufacturer, custom titanium eyewear China, wholesale luxury optical frames, private label carbon fiber frames, OEM glasses factory, CNC optical frame manufacturer, export-quality eyewear supplier, professional eyewear OEM"
+seoTitle: "KSO-033 Lüks Karbon Elyaf Optik Çerçeveler | Toptan Satış Tedarikçisi"
+seoDescription: "Gözlük markaları için titanyum saplı KSO-033 lüks karbon elyaf optik çerçeveler. 300 MOQ ve CNC hassasiyeti ile yüksek performanslı OEM/ODM üretimi."
+seoKeywords: "karbon elyaf optik çerçeve üreticisi, özel titanyum gözlük Çin, toptan lüks optik çerçeveler, özel markalı karbon elyaf çerçeveler, OEM gözlük fabrikası, CNC optik çerçeve üreticisi, ihracat kalitesinde gözlük tedarikçisi, profesyonel gözlük OEM"
 ---
 
-## Technical Features
+## Özellikler
 
-- **Aerospace-Grade Materials:** High-strength carbon fiber front and premium titanium temples offering an ultra-lightweight feel with an extreme strength-to-weight ratio.
-- **Unique Aesthetics:** CNC-machined carbon fiber components featuring a distinct weave texture and exceptional long-term durability.
-- **Durable Hardware:** Stable 2+1 barrel structure hinges engineered for consistent operational smoothness throughout the product lifecycle.
-- **Premium Optics:** Tenacious nylon lenses with extensive custom tinting and coating options available for high-end optical solutions.
-- **All-Day Comfort:** Hypoallergenic rubber nose pads designed for a secure, comfortable fit and weightless daily wear.
-- **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 300 pieces for global B2B export.
+- **Havacılık Sınıfı Malzemeler:** Yüksek mukavemetli karbon elyaf ön kısım ve birinci sınıf titanyum saplar, ekstrem bir mukavemet-ağırlık oranıyla ultra hafif bir his sunar.
+- **Benzersiz Estetik:** Belirgin bir dokuma dokusuna ve olağanüstü uzun vadeli dayanıklılığa sahip CNC ile işlenmiş karbon elyaf bileşenler.
+- **Dayanıklı Donanım:** Ürün ömrü boyunca tutarlı çalışma pürüzsüzlüğü için tasarlanmış sağlam 2+1 varil yapılı menteşeler.
+- **Premium Optik:** Üst düzey optik çözümler için sunulan kapsamlı özel renklendirme ve kaplama seçeneklerine sahip dayanıklı naylon lensler.
+- **Tüm Gün Konfor:** Güvenli, rahat bir oturuş ve ağırlıksız günlük kullanım için tasarlanmış hipoalerjenik kauçuk burun tamponları.
+- **Ölçeklenebilir Üretim:** Küresel B2B ihracatı için 300 adetlik düşük minimum sipariş miktarı ile tam OEM ve ODM özelleştirme yetenekleri.
 
-## Perfect For
-- Premium Eyewear Brands
-- Independent Eyewear Designers
-- Private Label Distributors
-- Luxury Fashion Houses
-- Sports & Automotive Lifestyle Labels
-- High-End Optical Chains
+## İçin Mükemmel
+- Premium Gözlük Markaları
+- Bağımsız Gözlük Tasarımcıları
+- Özel Marka Dağıtımcıları
+- Lüks Moda Evleri
+- Spor ve Otomotiv Yaşam Tarzı Markaları
+- Yüksek Segment Optik Zincirleri
 
-## Overview
+## Genel Bakış
 
-High-strength carbon fiber and premium titanium converge in the KSO-033 to create an ultra-lightweight frame that balances industrial durability with refined luxury. The CNC-machined construction emphasizes a unique material texture and exceptional strength-to-weight ratio, supported by a precision 2+1 barrel hinge system for smooth, long-term performance. Available for full OEM and ODM customization with a low 300-piece minimum order requirement, this model is specifically engineered for luxury fashion houses and independent designers looking to scale their private-label optical collections.
+Yüksek mukavemetli karbon elyaf ve birinci sınıf titanyum, KSO-033'te endüstriyel dayanıklılığı rafine lüks ile dengeleyen ultra hafif bir çerçeve oluşturmak için bir araya geliyor. CNC ile işlenmiş yapı, benzersiz bir malzeme dokusunu ve olağanüstü mukavemet-ağırlık oranını vurgularken, uzun vadeli sorunsuz performans için hassas bir 2+1 varil menteşe sistemi ile desteklenir. 300 adetlik düşük minimum sipariş gereksinimi ile tam OEM ve ODM özelleştirmesi için sunulan bu model, özellikle özel markalı optik koleksiyonlarını büyütmek isteyen lüks moda evleri ve bağımsız tasarımcılar için tasarlanmıştır.

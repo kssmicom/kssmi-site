@@ -1,30 +1,29 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Custom Carbon Fiber Optical Frame"
+title: "Bingkai Optik Gentian Karbon Tersuai"
 slug: "kso-033-carbon-fiber-optical-frame"
 itemNo: "KSO-033"
 date: "2026-04-05"
-colors: "Wood Golden & Twill Grain Green Carbon Fiber & Plain Grain Carbon Fiber Matt Gun & Wood Plain Grain Carbon Fiber Matt Silver"
-materials: "Premium Carbon Fiber and Titanium"
-serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+colors: "Kayu Keemasan & Gentian Karbon Hijau Twill & Gentian Karbon Gunmetal Mat Kosong & Gentian Karbon Perak Mat Kayu Kosong"
+materials: "Gentian Karbon Premium dan Titanium"
+serviceMode: "OEM & ODM ( Penyesuaian )"
+moq: "300 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
 material: "Carbon Fiber"
 series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
-categories: "Optical Frames, Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
-size: "49-21-140mm & Customization"
-frameMaterial: "Premium Carbon Fiber Frame and Titanium Temple"
-lensMaterial: "Tenacious Nylon Lens & Customization"
-designStyle: "Classic, Fashion, Stylish, Trendy, Luxury, Unisex"
-nosePads: "Rubber Nose Pads"
-hinge: "2+1 Barrel Structure Hinges & Customization"
-logo: "Print, Laser, Laser With Oil, Hot Stamping, Metal, Embossing, Crystal, Up-sticker"
-service: "OEM / ODM customization"
-carbonFiberFeature: "Lightweight & High Strength-to-Weight Ratio & Flexibility & Durability & Hypoallergenic & Unique Texture"
+size: "49-21-140mm & Penyesuaian"
+frameMaterial: "Bingkai gentian karbon premium dan batang titanium"
+lensMaterial: "Lensa nilon tahan lasak & Penyesuaian"
+designStyle: "Klasik, Fesyen, Bergaya, Trendi, Mewah, Unisex"
+nosePads: "Alas hidung getah"
+hinge: "Engsel struktur tong 2+1 & Penyesuaian"
+logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Lencana Logam, Timbulan, Kristal, Pelekat"
+service: "Pembuatan OEM / ODM – Penyesuaian"
+carbonFiberFeature: "Ringan & Nisbah kekuatan-ke-berat yang tinggi & Fleksibiliti & Ketahanan & Hipolergenik & Tekstur unik"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kso-033-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-033-1.webp"
@@ -52,28 +51,28 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KSO-033 Luxury Carbon Fiber Optical Frames | Wholesale Supplier"
-seoDescription: "KSO-033 luxury carbon fiber optical frames with titanium temples for eyewear brands. High-performance OEM/ODM manufacturing with 300 MOQ and CNC precision."
-seoKeywords: "carbon fiber optical frames manufacturer, custom titanium eyewear China, wholesale luxury optical frames, private label carbon fiber frames, OEM glasses factory, CNC optical frame manufacturer, export-quality eyewear supplier, professional eyewear OEM"
+seoTitle: "Bingkai Optik Gentian Karbon Mewah KSO-033 | Pembekal Borong"
+seoDescription: "Bingkai optik gentian karbon mewah KSO-033 dengan batang titanium untuk jenama kacamata. Pengilangan OEM/ODM berprestasi tinggi dengan 300 MOQ dan ketepatan CNC."
+seoKeywords: "pengeluar bingkai optik gentian karbon, kacamata titanium tersuai China, borong bingkai optik mewah, bingkai gentian karbon label peribadi, kilang kacamata OEM, pengeluar bingkai optik CNC, pembekal kacamata kualiti eksport, OEM kacamata profesional"
 ---
 
-## Technical Features
+## Ciri-ciri Utama
 
-- **Aerospace-Grade Materials:** High-strength carbon fiber front and premium titanium temples offering an ultra-lightweight feel with an extreme strength-to-weight ratio.
-- **Unique Aesthetics:** CNC-machined carbon fiber components featuring a distinct weave texture and exceptional long-term durability.
-- **Durable Hardware:** Stable 2+1 barrel structure hinges engineered for consistent operational smoothness throughout the product lifecycle.
-- **Premium Optics:** Tenacious nylon lenses with extensive custom tinting and coating options available for high-end optical solutions.
-- **All-Day Comfort:** Hypoallergenic rubber nose pads designed for a secure, comfortable fit and weightless daily wear.
-- **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 300 pieces for global B2B export.
+- **Bahan Gred Aeroangkasa:** Depan gentian karbon berkekuatan tinggi dan batang titanium premium menawarkan rasa ultra-ringan dengan nisbah kekuatan-ke-berat yang melampau.
+- **Estetika Unik:** Komponen gentian karbon yang dimesin menggunakan CNC menampilkan tekstur tenunan yang tersendiri dan ketahanan jangka panjang yang luar biasa.
+- **Perkakasan Tahan Lama:** Engsel struktur tong 2+1 yang stabil direka untuk kelancaran operasi yang konsisten sepanjang kitaran hayat produk.
+- **Optik Premium:** Lensa nilon tahan lasak dengan pilihan pewarnaan dan salutan tersuai yang luas tersedia untuk penyelesaian optik mewah.
+- **Keselesaan Sepanjang Hari:** Alas hidung getah hipolergenik direka untuk padanan yang selamat, selesa dan pemakaian harian tanpa beban.
+- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum yang rendah iaitu 300 unit untuk eksport B2B global.
 
-## Perfect For
-- Premium Eyewear Brands
-- Independent Eyewear Designers
-- Private Label Distributors
-- Luxury Fashion Houses
-- Sports & Automotive Lifestyle Labels
-- High-End Optical Chains
+## Sesuai Untuk
+- Merek Kacamata Premium
+- Pereka Kacamata Berkesan
+- Pengedar Label Peribadi
+- Rumah Fesyen Mewah
+- Jenama Gaya Hidup Sukan & Automotif
+- Rantai Optik Bergengsi
 
-## Overview
+## Gambaran Keseluruhan
 
-High-strength carbon fiber and premium titanium converge in the KSO-033 to create an ultra-lightweight frame that balances industrial durability with refined luxury. The CNC-machined construction emphasizes a unique material texture and exceptional strength-to-weight ratio, supported by a precision 2+1 barrel hinge system for smooth, long-term performance. Available for full OEM and ODM customization with a low 300-piece minimum order requirement, this model is specifically engineered for luxury fashion houses and independent designers looking to scale their private-label optical collections.
+Gentian karbon berkekuatan tinggi dan titanium premium bergabung dalam KSO-033 untuk mencipta bingkai ultra-ringan yang mengimbangi ketahanan industri dengan kemewahan yang halus. Pembinaan yang dimesin menggunakan CNC menekankan tekstur bahan yang unik dan nisbah kekuatan-ke-berat yang luar biasa, disokong oleh sistem engsel tong 2+1 ketepatan untuk prestasi jangka panjang yang lancar. Tersedia untuk penyesuaian penuh OEM dan ODM dengan keperluan pesanan minimum yang rendah iaitu 300 unit, model ini direka khusus untuk rumah fesyen mewah dan pereka bebas yang ingin mengembangkan koleksi optik label peribadi mereka.

@@ -1,30 +1,29 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Custom Carbon Fiber Optical Frame"
+title: "订制碳纤维光学镜架"
 slug: "kso-033-carbon-fiber-optical-frame"
 itemNo: "KSO-033"
 date: "2026-04-05"
-colors: "Wood Golden & Twill Grain Green Carbon Fiber & Plain Grain Carbon Fiber Matt Gun & Wood Plain Grain Carbon Fiber Matt Silver"
-materials: "Premium Carbon Fiber and Titanium"
-serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+colors: "木金色 & 绿斜纹碳纤维 & 哑枪平纹碳纤维 & 木平纹哑银碳纤维"
+materials: "优质碳纤维与钛金属"
+serviceMode: "代工生产 & 设计制造 ( 定制 )"
+moq: "300 付/款"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
 material: "Carbon Fiber"
 series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
-categories: "Optical Frames, Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
-size: "49-21-140mm & Customization"
-frameMaterial: "Premium Carbon Fiber Frame and Titanium Temple"
-lensMaterial: "Tenacious Nylon Lens & Customization"
-designStyle: "Classic, Fashion, Stylish, Trendy, Luxury, Unisex"
-nosePads: "Rubber Nose Pads"
-hinge: "2+1 Barrel Structure Hinges & Customization"
-logo: "Print, Laser, Laser With Oil, Hot Stamping, Metal, Embossing, Crystal, Up-sticker"
-service: "OEM / ODM customization"
-carbonFiberFeature: "Lightweight & High Strength-to-Weight Ratio & Flexibility & Durability & Hypoallergenic & Unique Texture"
+size: "49-21-140mm & 定制服务"
+frameMaterial: "优质碳纤维镜框与钛金属镜腿"
+lensMaterial: "韧性尼龙镜片 & 定制"
+designStyle: "经典, 时尚, 型格, 潮流, 奢华, 中性"
+nosePads: "橡胶鼻托"
+hinge: "2+1 桶形结构铰链 & 定制服务"
+logo: "印刷, 镭射, 镭射填油, 热烫印, 金属标, 压纹, 水晶, 立体贴标"
+service: "代工生产 / 设计制造 定制服务"
+carbonFiberFeature: "轻盈 & 高强度重量比 & 柔韧 & 耐用 & 防过敏 & 独特纹理"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kso-033-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-033-1.webp"
@@ -52,28 +51,28 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KSO-033 Luxury Carbon Fiber Optical Frames | Wholesale Supplier"
-seoDescription: "KSO-033 luxury carbon fiber optical frames with titanium temples for eyewear brands. High-performance OEM/ODM manufacturing with 300 MOQ and CNC precision."
-seoKeywords: "carbon fiber optical frames manufacturer, custom titanium eyewear China, wholesale luxury optical frames, private label carbon fiber frames, OEM glasses factory, CNC optical frame manufacturer, export-quality eyewear supplier, professional eyewear OEM"
+seoTitle: "KSO-033 奢华碳纤维光学镜架 | 批发供应商"
+seoDescription: "为眼镜品牌打造的 KSO-033 奢华碳纤维钛镜腿光学镜架。高水准 OEM/ODM 生产，300 付起订，CNC 精密工艺。"
+seoKeywords: "碳纤维光学镜架厂家, 中国定制钛眼镜, 批发奢华光学镜架, 私有品牌碳纤维镜框, 眼镜 OEM 工厂, CNC 光学镜架生产商, 出口品质眼镜供应商, 专业眼镜 OEM"
 ---
 
-## Technical Features
+## 特点
 
-- **Aerospace-Grade Materials:** High-strength carbon fiber front and premium titanium temples offering an ultra-lightweight feel with an extreme strength-to-weight ratio.
-- **Unique Aesthetics:** CNC-machined carbon fiber components featuring a distinct weave texture and exceptional long-term durability.
-- **Durable Hardware:** Stable 2+1 barrel structure hinges engineered for consistent operational smoothness throughout the product lifecycle.
-- **Premium Optics:** Tenacious nylon lenses with extensive custom tinting and coating options available for high-end optical solutions.
-- **All-Day Comfort:** Hypoallergenic rubber nose pads designed for a secure, comfortable fit and weightless daily wear.
-- **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 300 pieces for global B2B export.
+- **航空级材质：** 高强度碳纤维前框与优质钛金属镜腿，提供超轻盈的佩戴感与极致的强度重量比。
+- **独特美学：** CNC 加工的碳纤维组件，具有独特的编织纹理和卓越的长期耐用性。
+- **耐用五金：** 稳定的 2+1 桶形结构铰链，专为产品全生命周期内的持续顺滑操作而设计。
+- **高级光学：** 韧性尼龙镜片，提供广泛的定制色调和涂层选项，适用于高端光学解决方案。
+- **全天候舒适：** 低致敏性橡胶鼻托设计，确保稳固、舒适的贴合感和零负担的日常佩戴。
+- **规模化生产：** 全方位的 OEM & ODM 定制能力，针对全球 B2B 出货提供 300 副起订的低门槛。
 
-## Perfect For
-- Premium Eyewear Brands
-- Independent Eyewear Designers
-- Private Label Distributors
-- Luxury Fashion Houses
-- Sports & Automotive Lifestyle Labels
-- High-End Optical Chains
+## 适用对象
+- 高端眼镜品牌
+- 独立眼镜设计师
+- 私有品牌经销商
+- 奢侈时装品牌
+- 运动与汽车生活方式品牌
+- 高端光学连锁
 
-## Overview
+## 概览
 
-High-strength carbon fiber and premium titanium converge in the KSO-033 to create an ultra-lightweight frame that balances industrial durability with refined luxury. The CNC-machined construction emphasizes a unique material texture and exceptional strength-to-weight ratio, supported by a precision 2+1 barrel hinge system for smooth, long-term performance. Available for full OEM and ODM customization with a low 300-piece minimum order requirement, this model is specifically engineered for luxury fashion houses and independent designers looking to scale their private-label optical collections.
+高强度碳纤维与优质钛金属在 KSO-033 中交汇，打造出一款在工业耐用性与精致奢华之间取得平衡的超轻盈镜框。CNC 切削工艺彰显了独特的材质纹理和卓越的强度重量比，并由精密的 2+1 筒形铰链系统支撑，确保持久的性能表现。该表款提供全方位的 OEM 和 ODM 定制服务，起订量仅为 300 件，专为寻求扩展其自有品牌光学系列的奢侈时尚品牌和独立设计师而设计。
