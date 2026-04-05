@@ -33,11 +33,11 @@ const primaryCategories = [
     label: t.sidebar.optical_frames,
     href: '/product/optical-frames',
     items: [
-      { label: t.sidebar.acetate_glasses, href: '/product/acetate-glasses' },
-      { label: t.sidebar.metal_glasses, href: '/product/metal-glasses' },
-      { label: t.sidebar.titanium_glasses, href: '/product/titanium-glasses' },
-      { label: t.sidebar.carbon_glasses, href: '/product/carbon-glasses' },
-      { label: t.sidebar.rimless_glasses, href: '/product/rimless-glasses' }
+      { label: t.sidebar.acetate_glasses, href: '/product/acetate-optical-frames' },
+      { label: t.sidebar.metal_glasses, href: '/product/metal-optical-frames' },
+      { label: t.sidebar.titanium_glasses, href: '/product/titanium-optical-frames' },
+      { label: t.sidebar.carbon_glasses, href: '/product/carbon-optical-frames' },
+      { label: t.sidebar.rimless_glasses, href: '/product/rimless-optical-frames' }
     ]
   }
 ];
@@ -88,15 +88,15 @@ export async function getStaticPaths() {
   // 10 core flat categories: material × product-type
   const CORE_CATEGORIES = [
     'acetate-sunglasses',
-    'acetate-glasses',
+    'acetate-optical-frames',
     'metal-sunglasses',
-    'metal-glasses',
+    'metal-optical-frames',
     'titanium-sunglasses',
-    'titanium-glasses',
+    'titanium-optical-frames',
     'carbon-sunglasses',
-    'carbon-glasses',
+    'carbon-optical-frames',
     'rimless-sunglasses',
-    'rimless-glasses',
+    'rimless-optical-frames',
   ];
 
   // Series/Tag categories (flat URLs for filter pages)
@@ -114,25 +114,25 @@ export async function getStaticPaths() {
   const SIDEBAR = [
     { href: '/product/luxury-customized' },
     { href: '/product/luxury-sunglasses' },
-    { href: '/product/luxury-glasses' },
+    { href: '/product/luxury-optical-frames' },
     { href: '/product/high-couture-series' },
     { href: '/product/high-couture-sunglasses' },
-    { href: '/product/high-couture-glasses' },
+    { href: '/product/high-couture-optical-frames' },
     { href: '/product/classics-series' },
     { href: '/product/classics-sunglasses' },
-    { href: '/product/classics-glasses' },
+    { href: '/product/classics-optical-frames' },
     { href: '/product/fashion-series' },
     { href: '/product/acetate-sunglasses' },
     { href: '/product/metal-sunglasses' },
-    { href: '/product/metal-glasses' },
+    { href: '/product/metal-optical-frames' },
     { href: '/product/titanium-sunglasses' },
-    { href: '/product/titanium-glasses' },
+    { href: '/product/titanium-optical-frames' },
     { href: '/product/rimless-series' },
     { href: '/product/rimless-sunglasses' },
-    { href: '/product/rimless-glasses' },
+    { href: '/product/rimless-optical-frames' },
     { href: '/product/carbon-series' },
     { href: '/product/carbon-sunglasses' },
-    { href: '/product/carbon-glasses' },
+    { href: '/product/carbon-optical-frames' },
     { href: '/product/fashion' },
     { href: '/product/luxury' },
     { href: '/product/rimless' },
