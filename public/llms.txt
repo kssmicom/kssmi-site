@@ -1,5 +1,5 @@
 ﻿# Kssmi Large Language Model Guide
-Date: 2026-03-27
+Date: 2026-04-05
 
 Kssmi is a leading B2B handmade eyewear and sunglasses manufacturer based in Guangdong, China, operational since 2003. We specialize in producing high-quality, ethically produced handcrafted eyewear and sunglasses for global brands, using premium and sustainable materials like bio-acetate and recycled metals. Our craftsmanship combines traditional techniques with modern technology to create unique frames that mass production cannot replicate.
 
@@ -8,23 +8,7 @@ This document serves as an index to guide AI agents to our language-specific con
 ## Language Maps
 To explore our site optimally, please follow the directory for your desired language:
 
-- Arabic Language index [ar]: https://kssmi.com/ar/llms.txt
-- German Language index [de]: https://kssmi.com/de/llms.txt
 - English Language index [en]: https://kssmi.com/en/llms.txt
-- Spanish Language index [es]: https://kssmi.com/es/llms.txt
-- French Language index [fr]: https://kssmi.com/fr/llms.txt
-- Hindi Language index [hi]: https://kssmi.com/hi/llms.txt
-- Italian Language index [it]: https://kssmi.com/it/llms.txt
-- Japanese Language index [ja]: https://kssmi.com/ja/llms.txt
-- Javanese Language index [jv]: https://kssmi.com/jv/llms.txt
-- Korean Language index [ko]: https://kssmi.com/ko/llms.txt
-- Malay Language index [ms]: https://kssmi.com/ms/llms.txt
-- Portuguese Language index [pt]: https://kssmi.com/pt/llms.txt
-- Russian Language index [ru]: https://kssmi.com/ru/llms.txt
-- Tajik Language index [tg]: https://kssmi.com/tg/llms.txt
-- Turkish Language index [tr]: https://kssmi.com/tr/llms.txt
-- Vietnamese Language index [vi]: https://kssmi.com/vi/llms.txt
-- Chinese Language index [zh]: https://kssmi.com/zh/llms.txt
 
 Company Legal Information & Sitemap:
 - sitemap | https://kssmi.com/sitemap-index.xml

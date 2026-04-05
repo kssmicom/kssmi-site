@@ -91,9 +91,11 @@ function formatKey(key: string): string {
 }
 
 const ignoreKeys = new Set([
-  'title', 'slug', 'cover', 'gallery', 'videoId', 'itemNo', 'colors', 
-  'price', 'customizable', 'materials', 'featured', 'categories', 'date', 
-  'seoTitle', 'seoDescription', 'seoKeywords', 'serviceMode', 'moq'
+  'title', 'slug', 'cover', 'gallery', 'videoId', 'itemNo', 'colors',
+  'price', 'customizable', 'materials', 'featured', 'categories', 'date',
+  'seoTitle', 'seoDescription', 'seoKeywords', 'serviceMode', 'moq',
+  // Astro routing & architecture data - not displayed to users
+  'productType', 'material', 'series'
 ]);
 
 // Build the rows array keeping EXACT markdown order
@@ -216,7 +218,7 @@ for (const k of orderedKeys) {
           <table class="w-full border-collapse min-w-[320px]">
             <tbody>
               {rows.map((row, i) => (
-                <tr class={`border-b border-stone-100 transition-colors hover:bg-stone-50 ${i === 0 ? 'border-t border-stone-100' : ''}`}>
+                <tr class={`border-b border-stone-100 transition-colors hover:bg-stone-100 ${i === 0 ? 'border-t border-stone-100' : ''}`}>
                   <!-- Label column: narrower, shifted right a bit so it doesn't have a huge left gap -->
                   <td class="py-3.5 pl-5 sm:pl-6 pr-4 w-[38%] sm:w-[32%] md:w-[28%] align-top">
                     <span class="text-[12px] sm:text-[13px] font-semibold text-stone-500">
@@ -237,7 +239,7 @@ for (const k of orderedKeys) {
 
         <!-- 3. FOOTER -->
         <div class="mt-8 pt-4 border-t border-stone-100 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 text-[10px] font-mono text-stone-400 uppercase tracking-wide">
-          <span>{pt.systemGenerated || 'System Generated'}: {new Date().toISOString().replace('T', ' ').slice(0, 19)}</span>
+          <span>{pt.systemGenerated || 'System Generated'}: {new Date().toLocaleString()}</span>
           <span class="flex items-center gap-1.5">
             {pt.securedBy || 'Secured by Kssmi Quality Control'}
             <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 24 24">
@@ -366,10 +368,10 @@ for (const k of orderedKeys) {
     display: none !important;
   }
 
-  /* ── Card 1: Features (top left) - First Heading ── */
+  /* ── Card 1: Features (full width) - First Heading ── */
   /* The Heading */
   .product-highlights-content > h2:first-of-type {
-    grid-column: 1;
+    grid-column: 1 / -1;
     grid-row: 1;
     font-size: 0.6875rem;
     font-family: ui-monospace, monospace;
@@ -388,7 +390,7 @@ for (const k of orderedKeys) {
 
   /* The List */
   .product-highlights-content > ul:first-of-type {
-    grid-column: 1;
+    grid-column: 1 / -1;
     grid-row: 1;
     margin: 0 !important;
     padding: 0 !important;
@@ -403,11 +405,11 @@ for (const k of orderedKeys) {
 
 
 
-  /* Features List Items */
+  /* Features List Items - flex: label + description on same row */
   .product-highlights-content > ul:first-of-type li {
     display: flex;
-    align-items: flex-start;
-    gap: 0.625rem;
+    align-items: center;
+    gap: 0.5rem;
     padding: 0.35rem 2rem;
     font-size: 0.875rem;
     font-weight: 500;
@@ -415,41 +417,46 @@ for (const k of orderedKeys) {
     list-style: none !important;
     transition: all 0.3s ease;
     border-radius: 4px;
-    margin: 0 0.5rem;
+    margin: 0;
   }
 
   .product-highlights-content > ul:first-of-type li:hover,
-  .product-highlights-content > ul:last-of-type li:hover {
-    background: rgba(180, 83, 9, 0.03);
+  .product-highlights-content > ul:nth-of-type(2) li:hover {
+    background: rgba(180, 83, 9, 0.08);
   }
 
-  .product-highlights-content > ul:first-of-type li:first-child { padding-top: 1.5rem; }
-  .product-highlights-content > ul:first-of-type li:last-child  { padding-bottom: 1.5rem; }
+  /* Prevent label from wrapping, give all labels same min-width for alignment */
+  .product-highlights-content > ul:first-of-type li strong,
+  .product-highlights-content > ul:first-of-type li b {
+    white-space: nowrap;
+    min-width: 200px;
+  }
 
-  /* ── Card 2: Perfect For (top right) - Second Heading ── */
+
+  /* ── Card 2: Perfect For (below Features, full width with 2 columns) ── */
   /* The Heading */
   .product-highlights-content > h2:nth-of-type(2) {
-    grid-column: 2;
-    grid-row: 1;
+    grid-column: 1 / -1;
+    grid-row: 2;
     font-size: 0.6875rem;
     font-family: ui-monospace, monospace;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.25em;
     color: #b45309;
-    padding: 1rem 2rem 0.75rem 2rem;
+    padding: 1rem 2rem 1rem 2rem;
     background: linear-gradient(135deg, rgba(180,83,9,0.05), rgba(180,83,9,0.10));
     border: 1px solid rgba(180,83,9,0.15);
     border-bottom: 1px solid rgba(180,83,9,0.15);
     border-top: 3px solid #b45309;
     border-radius: 4px 4px 0 0;
-    margin: 0 !important;
+    margin: 2rem 0 0 0 !important;
   }
 
-  /* The List */
-  .product-highlights-content > ul:last-of-type {
-    grid-column: 2;
-    grid-row: 1;
+  /* The List - Perfect For: 2 columns inside full width */
+  .product-highlights-content > ul:nth-of-type(2) {
+    grid-column: 1 / -1;
+    grid-row: 3;
     margin: 0 !important;
     padding: 0 !important;
     list-style: none !important;
@@ -458,29 +465,25 @@ for (const k of orderedKeys) {
     border-top: none;
     border-radius: 0 0 4px 4px;
     overflow: hidden;
-    margin-top: 3rem !important; /* Push down below the heading */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
   }
 
 
 
   /* Perfect For List Items */
-  .product-highlights-content > ul:last-of-type li {
+  .product-highlights-content > ul:nth-of-type(2) li {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.625rem;
-    padding: 0.35rem 2rem;
+    padding: 0.5rem 2rem;
     font-size: 0.875rem;
     font-weight: 500;
     color: #44403c;
     list-style: none !important;
-  }
-
-  .product-highlights-content > ul:last-of-type li:first-child {
-    padding-top: 1.5rem;
-  }
-
-  .product-highlights-content > ul:last-of-type li:last-child {
-    padding-bottom: 1.5rem;
+    text-align: left;
+    transition: all 0.3s ease;
   }
 
   /* ── Kinetic Checkmark Icon for all list items ── */
@@ -490,11 +493,13 @@ for (const k of orderedKeys) {
     width: 18px;
     height: 18px;
     min-width: 18px;
+    vertical-align: top;
     margin-top: 2px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23b45309'%3E%3Cpath fill-rule='evenodd' d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z' clip-rule='evenodd'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-size: contain;
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    flex-shrink: 0;
   }
 
   /* Kinetic animation on hover: zoom and tilt */
@@ -506,12 +511,12 @@ for (const k of orderedKeys) {
   /* The paragraph after first H2 = Overview text */
   .product-highlights-content > p {
     grid-column: 1 / -1;
-    grid-row: 2;
+    grid-row: 4;
     position: relative;
     font-size: 1.0625rem;
     line-height: 1.8;
     color: #57534e;
-    margin: 1.5rem 0 0 0;
+    margin: 2rem 0 0 0;
     padding: 2rem 2.5rem;
     background: #fdfaf6; /* Not 100% pure white */
     border-radius: 8px;
@@ -546,24 +551,25 @@ for (const k of orderedKeys) {
     .product-highlights-content > h2:first-of-type,
     .product-highlights-content > ul:first-of-type,
     .product-highlights-content > h2:nth-of-type(2),
-    .product-highlights-content > ul:last-of-type {
+    .product-highlights-content > ul:nth-of-type(2) {
       grid-column: 1 !important;
       grid-row: auto !important;
     }
-    
-    .product-highlights-content > ul:first-of-type, 
-    .product-highlights-content > ul:last-of-type {
+
+    .product-highlights-content > ul:first-of-type,
+    .product-highlights-content > ul:nth-of-type(2) {
       margin-top: -1.5rem !important; /* Pull up list into heading */
+      display: block !important; /* Reset 2 columns to 1 column on mobile */
     }
 
     .product-highlights-content > h2:nth-of-type(2) {
-      margin-top: 1.5rem !important;
+      margin-top: 1rem !important;
     }
 
     .product-highlights-content > p {
       grid-column: 1 !important;
       grid-row: auto !important;
-      margin-top: 0 !important;
+      margin-top: 1.5rem !important;
     }
   }
 </style>

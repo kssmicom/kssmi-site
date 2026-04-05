@@ -1,7 +1,7 @@
 ---
 /**
- * Product Detail Page (English - Root Level)
- * Enhanced version with all sections matching kssmi.com reference
+ * Product Detail Page & Category Page (English - Root Level)
+ * Handles both product detail pages (/product/kss-011-...) and category pages (/product/carbon-fiber-sunglasses)
  */
 
 import { getCollection, render } from 'astro:content';
@@ -15,176 +15,382 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import TechnicalSpecs from '../../components/TechnicalSpecs.astro';
 import InquiryForm from '../../components/InquiryForm.astro';
 import RelatedProducts from '../../components/RelatedProducts.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { isCategoryMatch, getSlug } from '../../utils/categoryMatching';
 
-const lang = 'en'; // Fixed to English for root level
+const lang = 'en';
 
 export async function getStaticPaths() {
-  const lang = 'en';
   const products = await getCollection('products');
+  const lang = 'en';
 
-  return products
+  // Get all product slugs
+  const productSlugs = new Set(
+    products
+      .filter(product => {
+        const parts = product.id.split('.');
+        const productLang = parts.length > 1 ? parts.pop() : 'en';
+        return productLang === lang;
+      })
+      .map((product: any) => (product.data.slug || '').toLowerCase())
+  );
+
+  // Category slugs from tags-reference
+  const categorySlugs = [
+    // Material + Type
+    'acetate-sunglasses', 'acetate-optical-frames',
+    'metal-sunglasses', 'metal-optical-frames',
+    'titanium-sunglasses', 'titanium-optical-frames',
+    'carbon-fiber-sunglasses', 'carbon-fiber-optical-frames',
+    'rimless-sunglasses', 'rimless-optical-frames',
+    // Style + Material + Type
+    'luxury-acetate-sunglasses', 'luxury-titanium-sunglasses',
+    'luxury-acetate-optical-frames', 'luxury-titanium-optical-frames',
+    'fashion-acetate-sunglasses', 'fashion-metal-sunglasses',
+    'fashion-acetate-optical-frames', 'fashion-metal-optical-frames',
+    'classics-acetate-sunglasses', 'classics-metal-sunglasses',
+    'classics-acetate-optical-frames', 'classics-metal-optical-frames',
+    // Base types
+    'sunglasses', 'optical-frames',
+    // Parent categories
+    'carbon-fiber', 'acetate', 'metal', 'titanium', 'rimless',
+    'luxury', 'fashion', 'classics',
+    'carbon-series', 'rimless-series',
+    // Tag headings (eyewear)
+    'fashion-eyewear', 'luxury-eyewear', 'carbon-fiber-eyewear', 'rimless-eyewear',
+  ];
+
+  const paths: any[] = [];
+
+  // Add product detail pages
+  products
     .filter(product => {
       const parts = product.id.split('.');
       const productLang = parts.length > 1 ? parts.pop() : 'en';
       return productLang === lang;
     })
-    .map((product: any) => {
-      const slug = (product.data.slug || 'product').toLowerCase();
-      return {
-        params: { slug },
-        props: { product },
-      };
+    .forEach((product: any) => {
+      const slug = (product.data.slug || '').toLowerCase();
+      if (slug) {
+        paths.push({ params: { slug }, props: { product, type: 'product', categorySlug: null } });
+      }
     });
+
+  // Add category pages (only if not already a product slug)
+  categorySlugs.forEach(catSlug => {
+    if (!productSlugs.has(catSlug)) {
+      paths.push({ params: { slug: catSlug }, props: { product: null, type: 'category', categorySlug: catSlug } });
+    }
+  });
+
+  return paths;
 }
 
-const { product } = Astro.props;
-
-let { cover, gallery } = product.data;
-const {
-  title,
-  videoId,
-  materials,
-  moq,
-  categories,
-  itemNo,
-  colors,
-  serviceMode,
-  customizable,
-  seoTitle,
-  seoDescription,
-  seoKeywords,
-  size,
-  frameMaterial,
-  lensMaterial,
-  designStyle,
-  nosePads,
-  hinge,
-  electroplating,
-  logo,
-  carbonFiberFeature,
-} = product.data;
-
-// Dynamically load gallery images from the public directory
-const imageSlug = product.data.slug?.replace(/\/$/, '') || 'product';
-const publicDir = path.join(process.cwd(), 'public', 'media', 'products', imageSlug);
-
-if (fs.existsSync(publicDir)) {
-  const allImages = fs.readdirSync(publicDir)
-    .filter(file => file.endsWith('.webp') || file.endsWith('.jpg') || file.endsWith('.png'))
-    .sort((a, b) => {
-      const numA = parseInt(a.match(/-(\d+)\.\w+$/)?.[1] || '0', 10);
-      const numB = parseInt(b.match(/-(\d+)\.\w+$/)?.[1] || '0', 10);
-      return numA - numB;
-    })
-    .map(file => `/media/products/${imageSlug}/${file}`);
-
-  if (allImages.length > 0) {
-    cover = allImages[0];
-    gallery = allImages.slice(1);
-  }
-}
-
-const cats = categories ? categories.split(',').map((s: string) => s.trim()) : [];
-const { Content: ProductContent } = await render(product);
-
+const { product, type, categorySlug } = Astro.props;
 const t = translations.en;
 const pt = t.product || {};
 
-const breadcrumbItems = [
-  { label: t.nav.home, href: '/' },
-  { label: t.nav.products || 'Products', href: '/product' },
-  ...(cats.length > 0
-    ? [{
-        label: cats[0],
-        href: `/product/${cats[0].toLowerCase().replace(/\s+/g, '-')}`
-      }]
-    : []),
-  ...(cats.length > 1
-    ? [{
-        label: cats[1],
-        href: `/product/${cats[1].toLowerCase().replace(/\s+/g, '-')}`
-      }]
-    : [])
+// ============ CATEGORY PAGE DATA ============
+let categoryProducts: any[] = [];
+let categoryLabel = '';
+let categoryBreadcrumbItems: any[] = [];
+
+if (type === 'category') {
+  const allProducts = await getCollection('products');
+  const langProducts = allProducts.filter((p: any) => {
+    const parts = p.id.split('.');
+    const l = parts.length > 1 ? parts.pop() : 'en';
+    return l === lang;
+  });
+
+  categoryProducts = langProducts.filter((p: any) => {
+    const series = p.data.series || '';
+    return isCategoryMatch(series, categorySlug!);
+  }).sort((a: any, b: any) => {
+    if (a.data.featured && !b.data.featured) return -1;
+    if (!a.data.featured && b.data.featured) return 1;
+    const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
+    const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
+    if (dateA !== dateB) return dateB - dateA;
+    return b.id.localeCompare(a.id);
+  });
+
+  categoryLabel = (categorySlug || '').replace(/-/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase());
+  categoryBreadcrumbItems = [
+    { label: t.nav.home, href: '/' },
+    { label: t.nav.products, href: '/product' },
+    { label: categoryLabel, href: `/product/${categorySlug}` },
+  ];
+}
+
+// ============ SIDEBAR DATA ============
+const allProductsForCount = await getCollection('products');
+const langProductsForCount = allProductsForCount.filter((p: any) => {
+  const parts = p.id.split('.');
+  const l = parts.length > 1 ? parts.pop() : 'en';
+  return l === lang;
+});
+
+const primaryCategories = [
+  {
+    label: t.sidebar.sunglasses,
+    href: '/product/sunglasses',
+    items: [
+      { label: t.sidebar.acetate_sunglasses, href: '/product/acetate-sunglasses' },
+      { label: t.sidebar.metal_sunglasses, href: '/product/metal-sunglasses' },
+      { label: t.sidebar.titanium_sunglasses, href: '/product/titanium-sunglasses' },
+      { label: t.sidebar.carbon_fiber_sunglasses, href: '/product/carbon-fiber-sunglasses' },
+      { label: t.sidebar.rimless_sunglasses, href: '/product/rimless-sunglasses' }
+    ]
+  },
+  {
+    label: t.sidebar.optical_frames,
+    href: '/product/optical-frames',
+    items: [
+      { label: t.sidebar.acetate_glasses, href: '/product/acetate-optical-frames' },
+      { label: t.sidebar.metal_glasses, href: '/product/metal-optical-frames' },
+      { label: t.sidebar.titanium_glasses, href: '/product/titanium-optical-frames' },
+      { label: t.sidebar.carbon_glasses, href: '/product/carbon-fiber-optical-frames' },
+      { label: t.sidebar.rimless_glasses, href: '/product/rimless-optical-frames' }
+    ]
+  }
 ];
 
-// Generate AdditionalProperties for Schema using localized labels
-const schemaSpecs: any[] = [];
-if (itemNo) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.itemNo || "Item Number", "value": itemNo });
-if (moq) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.moq || "MOQ", "value": moq });
-if (serviceMode) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.service || "Service Mode", "value": serviceMode });
-if (customizable) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.customizable || "Customizable", "value": "Yes" });
-
-const ignoreSchemaKeys = new Set([
-  'title', 'slug', 'cover', 'gallery', 'videoId', 'itemNo', 'colors', 
-  'price', 'customizable', 'materials', 'featured', 'categories', 'date', 
-  'seoTitle', 'seoDescription', 'seoKeywords', 'serviceMode', 'moq'
-]);
-
-function formatSchemaKey(key: string): string {
-  const camelKey = key.replace(/(?:^\w|[A-Z]|\b\w)/g, (w, i) => i === 0 ? w.toLowerCase() : w.toUpperCase()).replace(/\s+/g, '');
-  
-  if ((pt as any)[camelKey]) return (pt as any)[camelKey];
-  if ((pt as any)[key]) return (pt as any)[key];
-
-  // Fallback: title case camelCase (e.g. acetateFeature -> Acetate Feature)
-  if (/^[a-z]+[A-Z][a-zA-Z]*$/.test(key)) {
-    return key.replace(/([A-Z])/g, ' $1').split(' ').map((word: string) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+const sidebarTags = [
+  {
+    label: t.sidebar.fashion,
+    href: '/product/fashion-eyewear',
+    items: [
+      { label: t.sidebar.fashion_acetate_sunglasses, href: '/product/fashion-acetate-sunglasses' },
+      { label: t.sidebar.fashion_metal_sunglasses, href: '/product/fashion-metal-sunglasses' },
+      { label: t.sidebar.fashion_acetate_glasses, href: '/product/fashion-acetate-optical-frames' },
+      { label: t.sidebar.fashion_metal_glasses, href: '/product/fashion-metal-optical-frames' }
+    ]
+  },
+  {
+    label: t.sidebar.luxury,
+    href: '/product/luxury-eyewear',
+    items: [
+      { label: t.sidebar.luxury_acetate_sunglasses, href: '/product/luxury-acetate-sunglasses' },
+      { label: t.sidebar.luxury_titanium_sunglasses, href: '/product/luxury-titanium-sunglasses' },
+      { label: t.sidebar.luxury_acetate_glasses, href: '/product/luxury-acetate-optical-frames' },
+      { label: t.sidebar.luxury_titanium_glasses, href: '/product/luxury-titanium-optical-frames' }
+    ]
+  },
+  {
+    label: t.sidebar.carbon_fiber,
+    href: '/product/carbon-fiber-eyewear',
+    items: [
+      { label: t.sidebar.carbon_fiber_sunglasses, href: '/product/carbon-fiber-sunglasses' },
+      { label: t.sidebar.carbon_glasses, href: '/product/carbon-fiber-optical-frames' }
+    ]
+  },
+  {
+    label: t.sidebar.rimless,
+    href: '/product/rimless-eyewear',
+    items: [
+      { label: t.sidebar.rimless_sunglasses, href: '/product/rimless-sunglasses' },
+      { label: t.sidebar.rimless_glasses, href: '/product/rimless-optical-frames' }
+    ]
   }
-  return key;
+];
+
+function getCategoryCount(href: string): number {
+  const pathWithoutQuery = href.split('?')[0];
+  const targetSlug = pathWithoutQuery.split('/').pop() || '';
+  return langProductsForCount.filter((p: any) => {
+    const cats = p.data.series || '';
+    return isCategoryMatch(cats, targetSlug);
+  }).length;
 }
 
-for (const [k, v] of Object.entries(product.data)) {
-  if (ignoreSchemaKeys.has(k)) continue;
-  if (v === undefined || v === null || v === '') continue;
+// ============ PRODUCT PAGE DATA ============
+let cover = '';
+let gallery: string[] = [];
+let title = '';
+let videoId = '';
+let materials = '';
+let moq = '';
+let categories = '';
+let itemNo = '';
+let colors = '';
+let serviceMode = '';
+let customizable = false;
+let seoTitle = '';
+let seoDescription = '';
+let seoKeywords = '';
+let size = '';
+let frameMaterial = '';
+let lensMaterial = '';
+let designStyle = '';
+let nosePads = '';
+let hinge = '';
+let logo = '';
+let carbonFiberFeature = '';
+let cats: string[] = [];
+let ProductContent: any = null;
+let breadcrumbItems: any[] = [];
+let productSchema: any = null;
+let videoSchema: any = null;
+let imageSlug = '';
 
-  const name = formatSchemaKey(k);
-  const value = Array.isArray(v) ? v.join(', ') : String(v);
-  schemaSpecs.push({ "@type": "PropertyValue", "name": name, "value": value });
-}
+if (type === 'product' && product) {
+  const data = product.data as any;
+  title = data.title || '';
+  videoId = data.videoId || '';
+  materials = data.materials || '';
+  moq = data.moq || '';
+  categories = data.categories || '';
+  itemNo = data.itemNo || '';
+  colors = data.colors || '';
+  serviceMode = data.serviceMode || '';
+  customizable = data.customizable || false;
+  seoTitle = data.seoTitle || '';
+  seoDescription = data.seoDescription || '';
+  seoKeywords = data.seoKeywords || '';
+  size = data.size || '';
+  frameMaterial = data.frameMaterial || '';
+  lensMaterial = data.lensMaterial || '';
+  designStyle = data.designStyle || '';
+  nosePads = data.nosePads || '';
+  hinge = data.hinge || '';
+  logo = data.logo || '';
+  carbonFiberFeature = data.carbonFiberFeature || '';
 
-const productSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": title,
-  "image": cover,
-  "description": seoDescription || title,
-  "sku": itemNo,
-  "mpn": itemNo,
-  "brand": {
-    "@type": "Brand",
-    "@id": `${Astro.site?.href.replace(/\/$/, '') || ''}/#organization`,
-    "name": "Kssmi Eyewear"
-  },
-  "manufacturer": {
-    "@type": "Organization",
-    "@id": `${Astro.site?.href.replace(/\/$/, '') || ''}/#organization`,
-    "name": "Kssmi Eyewear"
-  },
-  "material": materials,
-  "color": colors,
-  "category": cats.length > 0 ? cats[0] : undefined,
-  "additionalProperty": schemaSpecs,
-  "audience": {
-    "@type": "Audience",
-    "audienceType": "Retailers, Brands, Wholesale"
+  imageSlug = (data.slug || '').replace(/\/$/, '') || 'product';
+  const publicDir = path.join(process.cwd(), 'public', 'media', 'products', imageSlug);
+
+  if (fs.existsSync(publicDir)) {
+    const allImages = fs.readdirSync(publicDir)
+      .filter((file: string) => file.endsWith('.webp') || file.endsWith('.jpg') || file.endsWith('.png'))
+      .sort((a: string, b: string) => {
+        const numA = parseInt(a.match(/-(\d+)\.\w+$/)?.[1] || '0', 10);
+        const numB = parseInt(b.match(/-(\d+)\.\w+$/)?.[1] || '0', 10);
+        return numA - numB;
+      })
+      .map((file: string) => `/media/products/${imageSlug}/${file}`);
+
+    if (allImages.length > 0) {
+      cover = allImages[0];
+      gallery = allImages.slice(1);
+    }
+  } else {
+    cover = data.cover || '';
+    gallery = data.gallery || [];
   }
-};
 
-let videoSchema = null;
-if (videoId) {
-  videoSchema = {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": title,
-    "description": seoDescription || title,
-    "thumbnailUrl": [cover],
-    "uploadDate": product.data.date || new Date().toISOString(),
-    "contentUrl": `https://play.gumlet.io/embed/${videoId}`,
-    "embedUrl": `https://play.gumlet.io/embed/${videoId}`
+  cats = categories ? categories.split(',').map((s: string) => s.trim()) : [];
+  const rendered = await render(product);
+  ProductContent = rendered.Content;
+
+  // Valid breadcrumb categories - only show these in breadcrumb
+  const validBreadcrumbCategories = [
+    'Sunglasses', 'Optical Frames',
+    'Acetate Sunglasses', 'Metal Sunglasses', 'Titanium Sunglasses', 'Carbon Fiber Sunglasses', 'Rimless Sunglasses',
+    'Acetate Optical Frames', 'Metal Optical Frames', 'Titanium Optical Frames', 'Carbon Fiber Optical Frames', 'Rimless Optical Frames'
+  ];
+
+  // Category name to translation key mapping
+  const categoryLabelMap: Record<string, string> = {
+    'Sunglasses': 'sunglasses',
+    'Optical Frames': 'optical_frames',
+    'Acetate Sunglasses': 'acetate_sunglasses',
+    'Metal Sunglasses': 'metal_sunglasses',
+    'Titanium Sunglasses': 'titanium_sunglasses',
+    'Carbon Fiber Sunglasses': 'carbon_fiber_sunglasses',
+    'Rimless Sunglasses': 'rimless_sunglasses',
+    'Acetate Optical Frames': 'acetate_glasses',
+    'Metal Optical Frames': 'metal_glasses',
+    'Titanium Optical Frames': 'titanium_glasses',
+    'Carbon Fiber Optical Frames': 'carbon_glasses',
+    'Rimless Optical Frames': 'rimless_glasses'
   };
+
+  // Filter cats to only valid breadcrumb categories
+  const validCats = cats.filter(c => validBreadcrumbCategories.includes(c));
+
+  breadcrumbItems = [
+    { label: t.nav.home, href: '/' },
+    { label: t.nav.products || 'Products', href: '/product' },
+    ...validCats.map((cat, idx) => ({
+      label: (t.sidebar as any)[categoryLabelMap[cat]] || cat,
+      href: `/product/${cat.toLowerCase().replace(/\s+/g, '-')}`
+    }))
+  ];
+
+  // Generate schema specs
+  const schemaSpecs: any[] = [];
+  if (itemNo) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.itemNo || "Item Number", "value": itemNo });
+  if (moq) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.moq || "MOQ", "value": moq });
+  if (serviceMode) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.service || "Service Mode", "value": serviceMode });
+  if (customizable) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.customizable || "Customizable", "value": "Yes" });
+
+  const ignoreSchemaKeys = new Set([
+    'title', 'slug', 'cover', 'gallery', 'videoId', 'itemNo', 'colors',
+    'price', 'customizable', 'materials', 'featured', 'categories', 'date',
+    'seoTitle', 'seoDescription', 'seoKeywords', 'serviceMode', 'moq'
+  ]);
+
+  function formatSchemaKey(key: string): string {
+    const camelKey = key.replace(/(?:^\w|[A-Z]|\b\w)/g, (w: string, i: number) => i === 0 ? w.toLowerCase() : w.toUpperCase()).replace(/\s+/g, '');
+    if ((pt as any)[camelKey]) return (pt as any)[camelKey];
+    if ((pt as any)[key]) return (pt as any)[key];
+    if (/^[a-z]+[A-Z][a-zA-Z]*$/.test(key)) {
+      return key.replace(/([A-Z])/g, ' $1').split(' ').map((word: string) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    }
+    return key;
+  }
+
+  for (const [k, v] of Object.entries(product.data)) {
+    if (ignoreSchemaKeys.has(k)) continue;
+    if (v === undefined || v === null || v === '') continue;
+    const name = formatSchemaKey(k);
+    const value = Array.isArray(v) ? v.join(', ') : String(v);
+    schemaSpecs.push({ "@type": "PropertyValue", "name": name, "value": value });
+  }
+
+  productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": title,
+    "image": cover,
+    "description": seoDescription || title,
+    "sku": itemNo,
+    "mpn": itemNo,
+    "brand": {
+      "@type": "Brand",
+      "@id": `${Astro.site?.href.replace(/\/$/, '') || ''}/#organization`,
+      "name": "Kssmi Eyewear"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "@id": `${Astro.site?.href.replace(/\/$/, '') || ''}/#organization`,
+      "name": "Kssmi Eyewear"
+    },
+    "material": materials,
+    "color": colors,
+    "category": cats.length > 0 ? cats[0] : undefined,
+    "additionalProperty": schemaSpecs,
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Retailers, Brands, Wholesale"
+    }
+  };
+
+  if (videoId) {
+    videoSchema = {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": title,
+      "description": seoDescription || title,
+      "thumbnailUrl": [cover],
+      "uploadDate": product.data.date || new Date().toISOString(),
+      "contentUrl": `https://play.gumlet.io/embed/${videoId}`,
+      "embedUrl": `https://play.gumlet.io/embed/${videoId}`
+    };
+  }
 }
 
-// Helper to generate alt text from image URL
 function getAltText(url: string | undefined, fallback: string): string {
   if (!url) return fallback;
   const filename = url.split('/').pop() || '';
@@ -194,6 +400,104 @@ function getAltText(url: string | undefined, fallback: string): string {
 }
 ---
 
+{type === 'category' ? (
+<Layout title={`${categoryLabel} | KSSMI`} lang={lang}>
+  <Header lang={lang} />
+  <main class="w-full min-h-screen py-6 lg:py-8 bg-stone-50">
+    <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        {/* Sidebar */}
+        <aside class="hidden lg:block lg:col-span-1">
+          <div class="sticky top-24 space-y-6">
+            <div class="bg-gradient-to-br from-white to-[#faf8f5] rounded-xl shadow-sm p-6 border border-stone-200/50">
+              {/* All Products Link - Page Title */}
+              <div class="flex items-center mb-3">
+                <a href="/product" class="flex-1 text-base lg:text-lg font-bold text-[#8B7355] hover:underline">
+                  {t.sidebar.all_products}
+                </a>
+                <span class="text-xs font-normal text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">
+                  {langProductsForCount.length}
+                </span>
+              </div>
+              <div class="space-y-3">
+                {primaryCategories.map((cat) => (
+                  <div class="border-b border-gray-100 pb-3 last:border-0 last:pb-0">
+                    <a href={cat.href} class="flex items-center justify-between py-2 px-2 text-sm font-bold text-[#8B7355] hover:bg-stone-50 rounded-lg transition-colors">
+                      <span class="flex items-center gap-2">
+                        {cat.label}
+                        <span class="text-xs font-normal text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">{getCategoryCount(cat.href)}</span>
+                      </span>
+                      <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </a>
+                    <ul class="ml-3 mt-1 space-y-1">
+                      {cat.items.map((sub) => (
+                        <li>
+                          <a href={sub.href} class="flex items-center justify-between py-1.5 px-2 text-sm text-gray-600 hover:text-[#8B7355] hover:bg-stone-50 rounded transition-colors">
+                            <span>{sub.label}</span>
+                            <span class="text-xs text-gray-400">{getCategoryCount(sub.href)}</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+              <div class="mt-8 pt-6 border-t border-gray-100">
+                <h4 class="text-xs font-bold text-gray-900 uppercase tracking-wider mb-4">{t.sidebar.tags_filters}</h4>
+                <div class="space-y-6">
+                  {sidebarTags.map((group) => (
+                    <div>
+                      <a href={group.href} class="text-sm font-bold text-gray-900 mb-2.5 flex items-center hover:text-[#8B7355] transition-colors">
+                        <span class="text-[#8B7355] mr-1">#</span> {group.label}
+                      </a>
+                      <div class="flex flex-col gap-1.5">
+                        {group.items.map((tag) => (
+                          <a href={tag.href} class="px-3 py-1.5 text-[11px] font-bold rounded-md border bg-stone-50 text-stone-600 border-stone-200 hover:border-[#8B7355] hover:text-[#8B7355] hover:bg-stone-100 transition-all duration-200 w-full">
+                            {tag.label}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div class="bg-[#8B7355] rounded-xl p-6 text-white">
+              <h4 class="font-bold mb-2">{pt.needCustomEyewear || 'Need Custom Eyewear?'}</h4>
+              <p class="text-sm text-white/80 mb-4">{pt.oemServices || 'We offer full OEM & ODM services for your brand.'}</p>
+              <a href="/quote" class="inline-block bg-white text-[#8B7355] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-100 transition-colors">{t.cta.quote}</a>
+            </div>
+          </div>
+        </aside>
+        {/* Main Content */}
+        <div class="col-span-1 lg:col-span-3">
+          <div class="mb-10 mt-6">
+            <h1 class="text-xl lg:text-2xl font-medium text-gray-900 mb-2">
+              {categoryLabel}
+              <span class="text-sm font-normal text-gray-500 ml-2">({categoryProducts.length} {categoryProducts.length === 1 ? 'Product' : 'Products'})</span>
+            </h1>
+          </div>
+          {categoryProducts.length === 0 ? (
+            <div class="text-center py-16 bg-white rounded-xl shadow-sm">
+              <p class="text-gray-500 mb-4">No products found in this category.</p>
+              <a href="/product" class="text-[#8B7355] hover:underline">View All Products</a>
+            </div>
+          ) : (
+            <div class="grid grid-cols-2 xl:grid-cols-3 gap-4 xl:gap-6">
+              {categoryProducts.map((p) => (
+                <ProductCard product={p} lang={lang} />
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer lang={lang} />
+</Layout>
+) : (
 <Layout
   title={seoTitle || title}
   description={seoDescription}
@@ -201,12 +505,9 @@ function getAltText(url: string | undefined, fallback: string): string {
   lang={lang}
   image={cover}
 >
-  <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
-  {videoSchema && (
-    <script type="application/ld+json" set:html={JSON.stringify(videoSchema)} />
-  )}
+  {productSchema && <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />}
+  {videoSchema && <script type="application/ld+json" set:html={JSON.stringify(videoSchema)} />}
 
-  {/* Pagefind metadata for better search indexing */}
   <div class="sr-only" data-pagefind-meta="title">{title}</div>
   {itemNo && <div class="sr-only" data-pagefind-meta="itemNo">{itemNo}</div>}
   {itemNo && <div class="sr-only" data-pagefind-weight="10">{itemNo}</div>}
@@ -218,32 +519,18 @@ function getAltText(url: string | undefined, fallback: string): string {
   <Header lang={lang} />
 
   <main data-pagefind-body="true">
-    {/* Pagefind anchor for better excerpt */}
     <div id="pagefind-content" class="contents">
-    <!-- SECTION 1: Breadcrumb Navigation -->
     <Breadcrumb items={breadcrumbItems} lang={lang} />
 
-    <!-- SECTION 2: Product Hero -->
-    <section class="py-12 lg:py-16 bg-stone-50">
+    <section class="py-6 lg:py-10 bg-stone-50">
       <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 
-          <!-- Image Gallery Column - Centered -->
           <div class="space-y-4 flex flex-col items-center">
-            <!-- Main Image with Magnifier Zoom Effect -->
             <div class="relative aspect-square bg-gray-50 rounded-xl overflow-hidden shadow-lg w-full max-w-[500px]">
               {cover ? (
-                <div
-                  id="image-zoom-container"
-                  class="w-full h-full cursor-zoom-in"
-                >
-                  <img
-                    id="main-image"
-                    src={cover}
-                    alt={getAltText(cover, title)}
-                    class="w-full h-full object-cover"
-                    decoding="async"
-                  />
+                <div id="image-zoom-container" class="w-full h-full cursor-zoom-in">
+                  <img id="main-image" src={cover} alt={getAltText(cover, title)} class="w-full h-full object-cover" decoding="async" />
                 </div>
               ) : (
                 <div class="w-full h-full flex items-center justify-center">
@@ -253,124 +540,78 @@ function getAltText(url: string | undefined, fallback: string): string {
                 </div>
               )}
 
-              <!-- Badge - Customizable -->
               {customizable && (
                 <div class="absolute top-4 start-4 z-10">
                   <span class="bg-[#8B7355] text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
-                    {pt.customizableBadge || pt.customizable || (typeof customizable === 'string' ? customizable : 'Customizable')}
+                    {pt.customizableBadge || pt.customizable || 'Customizable'}
                   </span>
                 </div>
               )}
             </div>
 
-            <!-- Gallery Thumbnails – all devices, every row centered -->
-            <!-- max-w-[640px] = 9 × 64px + 8 × 8px gap = 640px; wider than the 500px main image -->
-            <!-- Rows/device: phone ~4, tablet ~8, laptop ~8, desktop ~9 -->
             <div class="flex flex-wrap justify-center gap-2 w-full max-w-[640px] mx-auto">
               {cover && (
-                <button
-                  class="thumb flex-none w-16 h-16 rounded-lg overflow-hidden border-2 border-[#8B7355] shadow-sm hover:shadow-md transition-shadow"
-                  aria-label={getAltText(cover, "View main image")}
-                >
+                <button class="thumb flex-none w-16 h-16 rounded-lg overflow-hidden border-2 border-[#8B7355] shadow-sm hover:shadow-md transition-shadow" aria-label={getAltText(cover, "View main image")}>
                   <img src={cover} alt={getAltText(cover, "Main")} class="w-full h-full object-cover" decoding="async" />
                 </button>
               )}
-              {gallery?.map((img: any, index: any) => (
-                <button
-                  class="thumb flex-none w-16 h-16 rounded-lg overflow-hidden border-2 border-transparent hover:border-[#8B7355] shadow-sm hover:shadow-md transition-all"
-                  aria-label={getAltText(img, `View gallery image ${index + 1}`)}
-                >
+              {gallery?.map((img: string, index: number) => (
+                <button class="thumb flex-none w-16 h-16 rounded-lg overflow-hidden border-2 border-transparent hover:border-[#8B7355] shadow-sm hover:shadow-md transition-all" aria-label={getAltText(img, `View gallery image ${index + 1}`)}>
                   <img src={img} alt={getAltText(img, `Gallery ${index + 1}`)} class="w-full h-full object-cover" decoding="async" />
                 </button>
               ))}
             </div>
 
-            <!-- Video Embed (if available) -->
             {videoId && (
               <div class="aspect-video bg-gray-900 rounded-xl overflow-hidden shadow-lg w-full max-w-[500px]">
-                <iframe
-                  src={`https://play.gumlet.io/embed/${videoId}`}
-                  title={`${title} - Product Video`}
-                  class="w-full h-full"
-                  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
+                <iframe src={`https://play.gumlet.io/embed/${videoId}`} title={`${title} - Product Video`} class="w-full h-full" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
               </div>
             )}
           </div>
 
-          <!-- Product Info Column -->
           <div class="lg:py-4">
-            <!-- Collection Label -->
             {categories && (
-              <p class="text-sm text-[#8B7355] font-medium uppercase tracking-wider mb-2">
-                - Kssmi Collection
-              </p>
+              <p class="text-sm text-[#8B7355] font-medium mb-2 hover:text-[#5D4E37] transition-colors duration-200">- {pt.kssmiCollection}</p>
             )}
+            <h1 class="text-lg lg:text-xl font-bold mb-6 text-gray-900">{title}</h1>
 
-            <!-- Product Title - Smaller (2/3 size) -->
-            <h1 class="text-2xl lg:text-3xl font-bold mb-6 text-gray-900">
-              {title}
-            </h1>
-
-            <!-- Quick Specs - Left Aligned -->
             <div class="border-y border-gray-200 py-6 mb-6 space-y-3">
               {itemNo && (
-                <div class="flex items-start gap-2">
+                <div class="flex items-start gap-2 hover:bg-stone-100 -mx-3 px-3 py-1 rounded transition-colors cursor-default">
                   <span class="text-sm text-gray-500 min-w-[160px]">{pt.itemNo}:</span>
                   <span class="text-sm font-medium text-gray-900">{itemNo}</span>
                 </div>
               )}
-
               {colors && (
-                <div class="flex items-start gap-2">
+                <div class="flex items-start gap-2 hover:bg-stone-100 -mx-3 px-3 py-1 rounded transition-colors cursor-default">
                   <span class="text-sm text-gray-500 min-w-[160px]">{pt.color}:</span>
                   <span class="text-sm font-medium text-gray-900">{colors}</span>
                 </div>
               )}
-
               {materials && (
-                <div class="flex items-start gap-2">
+                <div class="flex items-start gap-2 hover:bg-stone-100 -mx-3 px-3 py-1 rounded transition-colors cursor-default">
                   <span class="text-sm text-gray-500 min-w-[160px]">{pt.materials}:</span>
                   <span class="text-sm font-medium text-gray-900">{materials}</span>
                 </div>
               )}
-
-              <div class="flex items-start gap-2">
+              <div class="flex items-start gap-2 hover:bg-stone-100 -mx-3 px-3 py-1 rounded transition-colors cursor-default">
                 <span class="text-sm text-gray-500 min-w-[160px]">{pt.serviceMode}:</span>
-                <span class="text-sm font-medium text-gray-900">
-                  {serviceMode || 'OEM / ODM'}
-                </span>
+                <span class="text-sm font-medium text-gray-900">{serviceMode || 'OEM / ODM'}</span>
               </div>
-
-              <div class="flex items-start gap-2">
+              <div class="flex items-start gap-2 hover:bg-stone-100 -mx-3 px-3 py-1 rounded transition-colors cursor-default">
                 <span class="text-sm text-gray-500 min-w-[160px]">{pt.moq}:</span>
                 <span class="text-sm font-medium text-gray-900">{moq || '100 PCS/Model'}</span>
               </div>
-
             </div>
 
-
-
-            <!-- CTA Buttons -->
             <div class="flex flex-wrap gap-4 mb-8">
-              <a
-                href="/quote"
-                class="flex-1 min-w-[200px] bg-[#8B7355] text-white px-6 py-4 rounded-lg font-semibold
-                       hover:bg-[#5D4E37] active:bg-[#4a4030] transition-colors duration-200
-                       text-center flex items-center justify-center gap-2"
-              >
+              <a href="/quote" class="flex-1 min-w-[200px] bg-[#8B7355] text-white px-6 py-4 rounded-lg font-semibold hover:bg-[#5D4E37] active:bg-[#4a4030] transition-colors duration-200 text-center flex items-center justify-center gap-2">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
                 {t.cta.quote}
               </a>
-              <a
-                href="/product"
-                class="flex-1 min-w-[200px] border-2 border-[#8B7355] text-[#8B7355] px-6 py-4 rounded-lg font-semibold
-                       hover:bg-[#8B7355] hover:text-white transition-colors duration-200
-                       text-center flex items-center justify-center gap-2"
-              >
+              <a href="/product" class="flex-1 min-w-[200px] border-2 border-[#8B7355] text-[#8B7355] px-6 py-4 rounded-lg font-semibold hover:bg-[#8B7355] hover:text-white transition-colors duration-200 text-center flex items-center justify-center gap-2">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
@@ -382,94 +623,50 @@ function getAltText(url: string | undefined, fallback: string): string {
       </div>
     </section>
 
-    <!-- SECTION 3: Technical Specifications with Highlights -->
     <TechnicalSpecs product={product} lang={lang}>
-      <ProductContent slot="highlights" />
+      {ProductContent && <ProductContent slot="highlights" />}
     </TechnicalSpecs>
 
-    <!-- SECTION 4: CTA Banner -->
     <section class="py-16 lg:py-20 bg-gradient-to-r from-[#8B7355] to-[#5D4E37] text-white">
       <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
         <div class="text-center mb-10">
-          <h2 class="text-2xl lg:text-3xl font-bold mb-4">
-            {pt.partnerTitle}
-          </h2>
-          <p class="text-lg text-white/90 max-w-3xl mx-auto">
-            {pt.partnerDesc}
-          </p>
+          <h2 class="text-2xl lg:text-3xl font-bold mb-4">{pt.partnerTitle}</h2>
+          <p class="text-lg text-white/90 max-w-3xl mx-auto">{pt.partnerDesc}</p>
         </div>
-
-        <!-- Benefits Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <div class="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg hover:shadow-black/20 cursor-default group">
-            <svg class="w-5 h-5 mt-0.5 text-amber-300 shrink-0 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-sm text-white/95">{pt.benefit1}</span>
-          </div>
-          <div class="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg hover:shadow-black/20 cursor-default group">
-            <svg class="w-5 h-5 mt-0.5 text-amber-300 shrink-0 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-sm text-white/95">{pt.benefit2}</span>
-          </div>
-          <div class="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg hover:shadow-black/20 cursor-default group">
-            <svg class="w-5 h-5 mt-0.5 text-amber-300 shrink-0 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-sm text-white/95">{pt.benefit3}</span>
-          </div>
-          <div class="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg hover:shadow-black/20 cursor-default group">
-            <svg class="w-5 h-5 mt-0.5 text-amber-300 shrink-0 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-sm text-white/95">{pt.benefit4}</span>
-          </div>
-          <div class="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg hover:shadow-black/20 cursor-default group">
-            <svg class="w-5 h-5 mt-0.5 text-amber-300 shrink-0 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-sm text-white/95">{pt.benefit5}</span>
-          </div>
-          <div class="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg hover:shadow-black/20 cursor-default group">
-            <svg class="w-5 h-5 mt-0.5 text-amber-300 shrink-0 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-sm text-white/95">{pt.benefit6}</span>
-          </div>
+          {[pt.benefit1, pt.benefit2, pt.benefit3, pt.benefit4, pt.benefit5, pt.benefit6].map((benefit, i) => benefit && (
+            <div key={i} class="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg hover:shadow-black/20 cursor-default group">
+              <svg class="w-5 h-5 mt-0.5 text-amber-300 shrink-0 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-sm text-white/95">{benefit}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
 
-    <!-- SECTION 5: Inquiry Form -->
     <InquiryForm lang={lang} productName={title} />
 
-    <!-- SECTION 6: Related Products -->
-    <RelatedProducts
-      currentProductId={product.id}
-      lang={lang}
-      limit={4}
-    />
-    </div>{/* End data-pagefind-body */}
+    <RelatedProducts currentProductId={product.id} lang={lang} limit={4} />
+    </div>
   </main>
 
   <Footer lang={lang} />
 </Layout>
+)}
 
 <script>
   function initGallery() {
     const mainImage = document.getElementById('main-image') as HTMLImageElement;
     const zoomContainer = document.getElementById('image-zoom-container');
-
     if (!mainImage) return;
 
-    // Use event delegation for thumbnail clicks - attach to parent container
     const thumbsParent = document.querySelector('.space-y-4.flex.flex-col.items-center');
     if (thumbsParent) {
       thumbsParent.addEventListener('click', (e: Event) => {
         const target = e.target as HTMLElement;
         const thumb = target.closest('.thumb') as HTMLElement;
-
         if (thumb) {
           const thumbImg = thumb.querySelector('img') as HTMLImageElement;
           if (thumbImg && mainImage) {
@@ -477,8 +674,6 @@ function getAltText(url: string | undefined, fallback: string): string {
             mainImage.srcset = thumbImg.srcset || '';
             mainImage.sizes = thumbImg.sizes || '';
             mainImage.style.transform = 'scale(1)';
-
-            // Update active state
             document.querySelectorAll('.thumb').forEach(t => {
               t.classList.remove('border-[#8B7355]');
               t.classList.add('border-transparent');
@@ -490,30 +685,23 @@ function getAltText(url: string | undefined, fallback: string): string {
       });
     }
 
-    // Magnifier zoom effect
     if (zoomContainer) {
       zoomContainer.addEventListener('mouseenter', () => {
         mainImage.style.transform = 'scale(2)';
         mainImage.style.transition = 'transform 0.1s ease-out';
         mainImage.style.transformOrigin = 'center center';
       });
-
       zoomContainer.addEventListener('mousemove', (e: MouseEvent) => {
         const rect = zoomContainer.getBoundingClientRect();
         const x = ((e.clientX - rect.left) / rect.width) * 100;
         const y = ((e.clientY - rect.top) / rect.height) * 100;
         mainImage.style.transformOrigin = `${x}% ${y}%`;
       });
-
       zoomContainer.addEventListener('mouseleave', () => {
         mainImage.style.transform = 'scale(1)';
       });
     }
   }
-
-  // Run on initial load
   initGallery();
-
-  // Run after View Transitions navigation
   document.addEventListener('astro:page-load', initGallery);
 </script>

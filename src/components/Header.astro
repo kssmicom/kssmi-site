@@ -60,7 +60,7 @@ const searchText = searchLabels[lang as keyof typeof searchLabels] || 'Search';
 const currentLangUpper = lang.toUpperCase();
 
 // Enhanced Menu Structure (WordPress-style mega menu)
-// URLs match actual category names from product data
+// Products use flat URL architecture; Collections use dynamic filter shortcuts
 const menuStructure = [
   { label: t.nav.home, href: `/${currentPath}` },
   {
@@ -76,7 +76,7 @@ const menuStructure = [
           { label: t.sidebar.acetate_sunglasses,      href: `/${currentPath}product/acetate-sunglasses` },
           { label: t.sidebar.metal_sunglasses,         href: `/${currentPath}product/metal-sunglasses` },
           { label: t.sidebar.titanium_sunglasses,      href: `/${currentPath}product/titanium-sunglasses` },
-          { label: t.sidebar.carbon_fiber_sunglasses,  href: `/${currentPath}product/carbon-sunglasses` },
+          { label: t.sidebar.carbon_fiber_sunglasses,  href: `/${currentPath}product/carbon-fiber-sunglasses` },
           { label: t.sidebar.rimless_sunglasses,       href: `/${currentPath}product/rimless-sunglasses` }
         ]
       },
@@ -84,47 +84,47 @@ const menuStructure = [
         label: t.sidebar.optical_frames,
         href: `/${currentPath}product/optical-frames`,
         items: [
-          { label: t.sidebar.acetate_glasses,     href: `/${currentPath}product/acetate-glasses` },
-          { label: t.sidebar.metal_glasses,        href: `/${currentPath}product/metal-glasses` },
-          { label: t.sidebar.titanium_glasses,     href: `/${currentPath}product/titanium-glasses` },
-          { label: t.sidebar.carbon_glasses, href: `/${currentPath}product/carbon-glasses` },
-          { label: t.sidebar.rimless_glasses,      href: `/${currentPath}product/rimless-glasses` }
+          { label: t.sidebar.acetate_glasses,     href: `/${currentPath}product/acetate-optical-frames` },
+          { label: t.sidebar.metal_glasses,        href: `/${currentPath}product/metal-optical-frames` },
+          { label: t.sidebar.titanium_glasses,     href: `/${currentPath}product/titanium-optical-frames` },
+          { label: t.sidebar.carbon_glasses, href: `/${currentPath}product/carbon-fiber-optical-frames` },
+          { label: t.sidebar.rimless_glasses,      href: `/${currentPath}product/rimless-optical-frames` }
         ]
       },
       {
-        label: t.sidebar.fashion_group || t.sidebar.fashion,
-        href: `/${currentPath}product/fashion`,
+        label: t.sidebar.fashion,
+        href: `/${currentPath}product/fashion-eyewear`,
         items: [
           { label: t.sidebar.fashion_acetate_sunglasses, href: `/${currentPath}product/fashion-acetate-sunglasses` },
           { label: t.sidebar.fashion_metal_sunglasses,   href: `/${currentPath}product/fashion-metal-sunglasses` },
-          { label: t.sidebar.fashion_acetate_glasses,     href: `/${currentPath}product/fashion-acetate-glasses` },
-          { label: t.sidebar.fashion_metal_glasses,       href: `/${currentPath}product/fashion-metal-glasses` }
+          { label: t.sidebar.fashion_acetate_glasses,     href: `/${currentPath}product/fashion-acetate-optical-frames` },
+          { label: t.sidebar.fashion_metal_glasses,       href: `/${currentPath}product/fashion-metal-optical-frames` }
         ]
       },
       {
-        label: t.sidebar.luxury_group || t.sidebar.luxury,
-        href: `/${currentPath}product/luxury`,
+        label: t.sidebar.luxury,
+        href: `/${currentPath}product/luxury-eyewear`,
         items: [
           { label: t.sidebar.luxury_acetate_sunglasses,  href: `/${currentPath}product/luxury-acetate-sunglasses` },
           { label: t.sidebar.luxury_titanium_sunglasses, href: `/${currentPath}product/luxury-titanium-sunglasses` },
-          { label: t.sidebar.luxury_acetate_glasses,      href: `/${currentPath}product/luxury-acetate-glasses` },
-          { label: t.sidebar.luxury_titanium_glasses,    href: `/${currentPath}product/luxury-titanium-glasses` }
+          { label: t.sidebar.luxury_acetate_glasses,      href: `/${currentPath}product/luxury-acetate-optical-frames` },
+          { label: t.sidebar.luxury_titanium_glasses,    href: `/${currentPath}product/luxury-titanium-optical-frames` }
         ]
       },
       {
-        label: t.sidebar.carbon_fiber_group || t.sidebar.carbon_fiber,
-        href: `/${currentPath}product/carbon-fiber`,
+        label: t.sidebar.carbon_fiber,
+        href: `/${currentPath}product/carbon-fiber-eyewear`,
         items: [
-          { label: t.sidebar.carbon_fiber_sunglasses, href: `/${currentPath}product/carbon-sunglasses` },
-          { label: t.sidebar.carbon_glasses,     href: `/${currentPath}product/carbon-glasses` }
+          { label: t.sidebar.carbon_fiber_sunglasses, href: `/${currentPath}product/carbon-fiber-sunglasses` },
+          { label: t.sidebar.carbon_glasses,     href: `/${currentPath}product/carbon-fiber-optical-frames` }
         ]
       },
       {
-        label: t.sidebar.rimless_group || t.sidebar.rimless,
-        href: `/${currentPath}product/rimless`,
+        label: t.sidebar.rimless,
+        href: `/${currentPath}product/rimless-eyewear`,
         items: [
           { label: t.sidebar.rimless_sunglasses, href: `/${currentPath}product/rimless-sunglasses` },
-          { label: t.sidebar.rimless_glasses,     href: `/${currentPath}product/rimless-glasses` }
+          { label: t.sidebar.rimless_glasses,     href: `/${currentPath}product/rimless-optical-frames` }
         ]
       }
     ]
@@ -136,50 +136,57 @@ const menuStructure = [
     hasDropdown: true,
     children: [
       {
-        label: 'Acetate Series',
-        href: `/${currentPath}acetate-series`,
+        label: 'Market & Design Trends',
+        href: `/${currentPath}trends`,
         items: [
-          { label: 'Acetate Sunglasses', href: `/${currentPath}acetate-sunglasses` },
-          { label: 'Acetate Optical Frames', href: `/${currentPath}acetate-optical-frames` }
+          { label: '2026 Luxury Frameworks',   href: `/${currentPath}luxury-frameworks` },
+          { label: 'Acetate Color Forecast',   href: `/${currentPath}acetate-colors` },
+          { label: 'Classic Silhouettes',      href: `/${currentPath}classic-silhouettes` }
         ]
       },
       {
-        label: 'Titanium Series',
-        href: `/${currentPath}titanium-series`,
+        label: 'Premium Materials',
+        href: `/${currentPath}materials`,
         items: [
-          { label: 'Titanium Sunglasses', href: `/${currentPath}titanium-sunglasses` },
-          { label: 'Titanium Optical Frames', href: `/${currentPath}titanium-optical-frames` }
+          { label: 'Aerospace Carbon Fiber',  href: `/${currentPath}carbon-fiber` },
+          { label: 'Eco-Friendly Acetate',    href: `/${currentPath}eco-acetate` },
+          { label: 'Hypoallergenic Titanium', href: `/${currentPath}titanium` }
         ]
       },
       {
-        label: 'Carbon Fiber Series',
-        href: `/${currentPath}carbon-fiber-series`,
+        label: 'Craftsmanship & Engineering',
+        href: `/${currentPath}engineering`,
         items: [
-          { label: 'Carbon Fiber Sunglasses', href: `/${currentPath}carbon-fiber-sunglasses` },
-          { label: 'Carbon Fiber Optical Frames', href: `/${currentPath}carbon-fiber-optical-frames` }
+          { label: 'Precision CNC Machining',    href: `/${currentPath}cnc-machining` },
+          { label: 'Custom Hinge Architecture', href: `/${currentPath}hinge-architecture` },
+          { label: 'Hand-Polishing Techniques',  href: `/${currentPath}hand-polishing` }
         ]
       },
       {
-        label: 'Manufacturing',
-        href: `/${currentPath}services`,
+        label: 'Optics & Lens Science',
+        href: `/${currentPath}optics`,
         items: [
-          { label: 'OEM & Private Label', href: `/${currentPath}oem-private-label` },
-          { label: 'ODM & Custom Mfg.', href: `/${currentPath}odm-custom-mfg` }
+          { label: 'Tenacious Nylon Lenses',   href: `/${currentPath}nylon-lenses` },
+          { label: 'Premium CR-39 Guide',    href: `/${currentPath}cr39-lenses` },
+          { label: 'Custom Tints & Coatings', href: `/${currentPath}tints-coatings` }
         ]
       },
       {
-        label: 'Specialty',
-        href: `/${currentPath}specialty`,
+        label: 'Quality & Compliance',
+        href: `/${currentPath}compliance`,
         items: [
-          { label: 'Sustainable Series', href: `/${currentPath}sustainable-series` },
-          { label: 'Performance Series', href: `/${currentPath}performance-series` }
+          { label: 'FDA & CE Certification',  href: `/${currentPath}fda-ce-certification` },
+          { label: 'Drop-Ball Testing',       href: `/${currentPath}drop-ball-testing` },
+          { label: 'ISO 9001 Production',    href: `/${currentPath}iso-9001` }
         ]
       },
       {
-        label: 'Business',
-        href: `/${currentPath}wholesale`,
+        label: 'Private Label Strategies',
+        href: `/${currentPath}strategies`,
         items: [
-          { label: 'Wholesale Collections', href: `/${currentPath}wholesale-collections` }
+          { label: 'OEM Customization Process', href: `/${currentPath}oem-process` },
+          { label: 'Scaling with 300 MOQ',     href: `/${currentPath}moq-scaling` },
+          { label: 'Bespoke Packaging Design',  href: `/${currentPath}bespoke-packaging` }
         ]
       }
     ]
@@ -198,7 +205,7 @@ const languageNames = {
 
 // Get Products menu data
 const productsMenu = menuStructure.find(item => item.menuKey === 'products');
-const collectionMenu = menuStructure.find(item => item.menuKey === 'collection');
+const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
 ---
 
 <header id="site-header" class="w-full bg-white shadow-sm border-b border-stone-200 sticky top-0 z-50 transition-shadow duration-300">
@@ -324,10 +331,10 @@ const collectionMenu = menuStructure.find(item => item.menuKey === 'collection')
         </div>
       </div>
 
-      <!-- Collection Menu Content -->
-      <div class="mega-menu-content hidden py-8 px-4" data-menu="collection">
+      <!-- Featured Menu Content -->
+      <div class="mega-menu-content hidden py-8 px-4" data-menu="featured">
         <div class="grid grid-cols-6 gap-4 xl:gap-6">
-          {collectionMenu?.children?.map((group) => (
+          {featuredMenu?.children?.map((group) => (
             <div class="flex flex-col">
               <a href={group.href} class="font-['Manrope'] font-bold text-xs uppercase tracking-wider text-[#8B7355] mb-4 whitespace-nowrap hover:text-[#5D4E37] transition-colors">
                 {group.label}
