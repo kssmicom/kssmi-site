@@ -25,7 +25,7 @@ const primaryCategories = [
       { label: t.sidebar.acetate_sunglasses, href: '/product/acetate-sunglasses' },
       { label: t.sidebar.metal_sunglasses, href: '/product/metal-sunglasses' },
       { label: t.sidebar.titanium_sunglasses, href: '/product/titanium-sunglasses' },
-      { label: t.sidebar.carbon_fiber_sunglasses, href: '/product/carbon-sunglasses' },
+      { label: t.sidebar.carbon_fiber_sunglasses, href: '/product/carbon-fiber-sunglasses' },
       { label: t.sidebar.rimless_sunglasses, href: '/product/rimless-sunglasses' }
     ]
   },
@@ -68,7 +68,7 @@ const sidebarTags = [
     label: t.sidebar.carbon_fiber_group || t.sidebar.carbon_fiber,
     href: '/product/carbon-fiber',
     items: [
-      { label: t.sidebar.carbon_fiber_sunglasses, href: '/product/carbon-sunglasses' },
+      { label: t.sidebar.carbon_fiber_sunglasses, href: '/product/carbon-fiber-sunglasses' },
       { label: t.sidebar.carbon_glasses, href: '/product/carbon-glasses' }
     ]
   },
@@ -93,7 +93,7 @@ export async function getStaticPaths() {
     'metal-optical-frames',
     'titanium-sunglasses',
     'titanium-optical-frames',
-    'carbon-sunglasses',
+    'carbon-fiber-sunglasses',
     'carbon-optical-frames',
     'rimless-sunglasses',
     'rimless-optical-frames',
@@ -131,7 +131,7 @@ export async function getStaticPaths() {
     { href: '/product/rimless-sunglasses' },
     { href: '/product/rimless-optical-frames' },
     { href: '/product/carbon-series' },
-    { href: '/product/carbon-sunglasses' },
+    { href: '/product/carbon-fiber-sunglasses' },
     { href: '/product/carbon-optical-frames' },
     { href: '/product/fashion' },
     { href: '/product/luxury' },
