@@ -67,18 +67,9 @@ const productSlug = slug || product.id.split('.')[0];
       )}
 
       <!-- Product Title -->
-      <h3 class="text-sm xl:text-base font-semibold text-gray-900 line-clamp-2 group-hover:text-[#8B7355] transition-colors">
+      <h3 class="text-xs font-semibold text-gray-900 group-hover:text-[#8B7355] transition-colors leading-tight">
         {title}
       </h3>
     </div>
   </div>
 </a>
-
-<style>
-  .line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-</style>
