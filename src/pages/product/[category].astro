@@ -110,8 +110,20 @@ export async function getStaticPaths() {
 
   const ALL_CATEGORIES = [...CORE_CATEGORIES, ...SERIES_CATEGORIES];
 
-  // Sidebar categories (duplicated here so it's available inside getStaticPaths scope)
+  // Sidebar categories - same as index.astro
   const SIDEBAR = [
+    { href: '/product/sunglasses' },
+    { href: '/product/acetate-sunglasses' },
+    { href: '/product/metal-sunglasses' },
+    { href: '/product/titanium-sunglasses' },
+    { href: '/product/carbon-fiber-sunglasses' },
+    { href: '/product/rimless-sunglasses' },
+    { href: '/product/optical-frames' },
+    { href: '/product/acetate-optical-frames' },
+    { href: '/product/metal-optical-frames' },
+    { href: '/product/titanium-optical-frames' },
+    { href: '/product/carbon-optical-frames' },
+    { href: '/product/rimless-optical-frames' },
     { href: '/product/luxury-customized' },
     { href: '/product/luxury-sunglasses' },
     { href: '/product/luxury-optical-frames' },
@@ -122,69 +134,34 @@ export async function getStaticPaths() {
     { href: '/product/classics-sunglasses' },
     { href: '/product/classics-optical-frames' },
     { href: '/product/fashion-series' },
-    { href: '/product/acetate-sunglasses' },
-    { href: '/product/metal-sunglasses' },
-    { href: '/product/metal-optical-frames' },
-    { href: '/product/titanium-sunglasses' },
-    { href: '/product/titanium-optical-frames' },
-    { href: '/product/rimless-series' },
-    { href: '/product/rimless-sunglasses' },
-    { href: '/product/rimless-optical-frames' },
-    { href: '/product/carbon-series' },
-    { href: '/product/carbon-fiber-sunglasses' },
-    { href: '/product/carbon-optical-frames' },
-    { href: '/product/fashion' },
-    { href: '/product/luxury' },
-    { href: '/product/rimless' },
+    { href: '/product/fashion-acetate-sunglasses' },
+    { href: '/product/fashion-metal-sunglasses' },
+    { href: '/product/fashion-acetate-optical-frames' },
+    { href: '/product/fashion-metal-optical-frames' },
     { href: '/product/carbon-fiber' },
-    { href: '/product/carbon' },
+    { href: '/product/carbon-sunglasses' },
+    { href: '/product/carbon-glasses' },
+    { href: '/product/rimless' },
+    { href: '/product/rimless-sunglasses' },
+    { href: '/product/rimless-glasses' },
+    { href: '/product/luxury' },
+    { href: '/product/luxury-acetate-sunglasses' },
+    { href: '/product/luxury-titanium-sunglasses' },
+    { href: '/product/luxury-acetate-optical-frames' },
+    { href: '/product/luxury-titanium-optical-frames' },
   ];
 
   const allProducts = await getCollection('products');
 
   return ALL_CATEGORIES.map((category) => {
-    // Check if this is a series category
-    const isSeriesCategory = SERIES_CATEGORIES.includes(category);
-
-    // Derive material + productType from slug (for core categories)
-    const parts = category.split('-');
-    const typePart = parts.pop() || '';
-    const productType = typePart.charAt(0).toUpperCase() + typePart.slice(1);
-    const materialRaw = parts.join('-');
-    const material = materialRaw.charAt(0).toUpperCase() + materialRaw.slice(1);
-
-    // Filter English products
+    // Filter English products using series field (same as index.astro)
     const categoryProducts = allProducts.filter((p) => {
       const pParts = p.id.split('.');
       const pLang = pParts.length > 1 ? pParts.pop() : 'en';
       if (pLang !== lang) return false;
 
-      const cats = p.data.categories || '';
-
-      // For series categories, match if category contains the series name
-      if (isSeriesCategory) {
-        const seriesVariants = [
-          category,
-          `${category}-series`,
-          `${category}-sunglasses`,
-          `${category}-glasses`,
-          `${category}-frames`,
-        ];
-        return seriesVariants.some(variant => isCategoryMatch(cats, variant));
-      }
-
-      // For core categories, match material + productType
-      if (!isCategoryMatch(cats, category)) return false;
-
-      const pMaterial = p.data.material || '';
-      const pProductType = p.data.productType || '';
-      if (pMaterial && pProductType) {
-        const matMatch = pMaterial.toLowerCase().replace(/-/g, ' ').includes(material.toLowerCase().replace(/-/g, ' '));
-        const typeMatch = pProductType.toLowerCase() === productType.toLowerCase();
-        if (!matMatch || !typeMatch) return false;
-      }
-
-      return true;
+      const series = p.data.series || '';
+      return isCategoryMatch(series, category);
     });
 
     const sorted = categoryProducts.sort((a, b) => {
@@ -196,13 +173,13 @@ export async function getStaticPaths() {
       return b.id.localeCompare(a.id);
     });
 
-    // Pre-compute all sidebar counts
+    // Pre-compute all sidebar counts using series field (same as index.astro)
     const sidebarCounts: Record<string, number> = {};
     for (const item of SIDEBAR) {
       const slug = item.href.replace('/product/', '');
       sidebarCounts[item.href] = allProducts.filter((p) => {
         const pParts = p.id.split('.');
-        return pParts.pop() === lang && isCategoryMatch(p.data.categories || '', slug);
+        return pParts.pop() === lang && isCategoryMatch(p.data.series || '', slug);
       }).length;
     }
 
@@ -210,8 +187,6 @@ export async function getStaticPaths() {
       params: { category },
       props: {
         categorySlug: category,
-        material,
-        productType,
         products: sorted,
         sidebarCounts,
       },
@@ -219,14 +194,31 @@ export async function getStaticPaths() {
   });
 }
 
-const { categorySlug, material, productType, products, sidebarCounts } = Astro.props;
+const { categorySlug, products, sidebarCounts } = Astro.props;
 const pt = t.product || {
   viewAllCollections: 'View All Collections',
   productsInCategory: 'products in this category',
 };
 
-// Display title from slug parts
-const categoryTitle = `${material} ${productType}`;
+// Display title from sidebar label or slug
+const categoryTitle = (() => {
+  // Try to find in primary categories
+  for (const cat of primaryCategories) {
+    if (cat.href === `/product/${categorySlug}`) return cat.label;
+    for (const sub of cat.items) {
+      if (sub.href === `/product/${categorySlug}`) return sub.label;
+    }
+  }
+  // Try to find in sidebar tags
+  for (const group of sidebarTags) {
+    if (group.href === `/product/${categorySlug}`) return group.label;
+    for (const item of group.items) {
+      if (item.href === `/product/${categorySlug}`) return item.label;
+    }
+  }
+  // Fallback: format slug
+  return categorySlug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+})();
 
 // Total EN product count for "All Products" link
 const TOTAL_EN_COUNT = (await getCollection('products')).filter((p) => {
