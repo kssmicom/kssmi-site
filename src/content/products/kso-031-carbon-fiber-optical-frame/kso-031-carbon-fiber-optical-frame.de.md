@@ -1,13 +1,13 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Custom Carbon Fiber Optical Frame"
+title: "Individuelle Kohlefaser-Brillenfassung"
 slug: "kso-031-carbon-fiber-optical-frame"
 itemNo: "KSO-031"
 date: "2026-04-05"
-colors: "Wood Golden & Twill Grain Green Carbon Fiber & Plain Grain Carbon Fiber Matt Gun & Wood Plain Grain Carbon Fiber Matt Silver"
-materials: "Premium Carbon Fiber and Titanium"
-serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+colors: "Goldenes Holz & Grün gestreifte Kohlefaser & Matte Gunmetal Kohlefaser & Matte Silberne Kohlefaser mit Holzmaserung"
+materials: "Premium-Kohlefaser und Titan"
+serviceMode: "OEM & ODM ( Individualisierung )"
+moq: "300 Stk/Modell"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -16,15 +16,15 @@ series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carb
 categories: "Optical Frames, Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
-size: "48-22-145mm & Customization"
-frameMaterial: "Premium Carbon Fiber Frame and Titanium Temple"
-lensMaterial: "Tenacious Nylon Lens & Customization"
-designStyle: "Classic, Fashion, Stylish, Trendy, Luxury, Unisex"
-nosePads: "Rubber Nose Pads"
-hinge: "2+1 Barrel Structure Hinges & Customization"
-logo: "Print, Laser, Laser With Oil, Hot Stamping, Metal, Embossing, Crystal, Up-sticker"
-service: "OEM / ODM customization"
-carbonFiberFeature: "Lightweight & High Strength-to-Weight Ratio & Flexibility & Durability & Hypoallergenic & Unique Texture"
+size: "48-22-145mm & Individualisierung"
+frameMaterial: "Premium Kohlefaser-Rahmen und Titan-Bügel"
+lensMaterial: "Widerstandsfähige Nylon-Gläser & Individualisierung"
+designStyle: "Klassisch, Modisch, Stilvoll, Trendy, Luxus, Unisex"
+nosePads: "Nasenpads aus Gummi"
+hinge: "2+1 Barrel-Struktur-Scharniere & Individualisierung"
+logo: "Tampondruck, Lasergravur, Lasergravur mit Farbauslegung, Heißprägung, Metal-Logo, Logo-Prägung, Kristall-Verzierung, 3D-Aufkleber"
+service: "Auftragsfertigung / Design und Fertigung – Individualisierung"
+carbonFiberFeature: "Leichtgewicht & Hohes Festigkeits-Gewichts-Verhältnis & Flexibilität & Langlebigkeit & Hypoallergen & Einzigartige Textur"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kso-031-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-031-1.webp"
@@ -48,23 +48,23 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KSO-031 Luxury Carbon Fiber & Titanium Optical Frame Manufacturer"
-seoDescription: "KSO-031: Bespoke luxury carbon fiber & titanium optical frames for B2B. Premium aerospace-grade material with 300 MOQ. Expert OEM/ODM for private label brands."
-seoKeywords: "carbon fiber optical frames, luxury optical frames, eyewear manufacturer China, custom private label eyewear, wholesale carbon fiber frames, eyewear OEM ODM service, carbon fiber glasses supplier, premium Chinese eyewear factory"
+seoTitle: "Hersteller von Luxus-Brillenfassungen aus Kohlefaser und Titan KSO-031"
+seoDescription: "KSO-031: Maßgeschneiderte Luxus-Brillenfassungen aus Kohlefaser und Titan für B2B. Hochwertiges Material aus der Luft- und Raumfahrt mit einem MOQ von 300 Stk. Experten-OEM/ODM für Eigenmarken."
+seoKeywords: "Kohlefaser-Brillenfassungen, Luxus-Brillenfassungen, Brillenhersteller China, kundenspezifische Eigenmarken-Brillen, Großhandel Kohlefaser-Rahmen, Brillen OEM ODM Service, Kohlefaser-Brillen Lieferant, hochwertige chinesische Brillenfabrik"
 ---
 
-## Technical Features
-- **Aerospace-Grade Material:** Premium carbon fiber frame paired with titanium temples, offering an ultra-lightweight feel with an extreme strength-to-weight ratio.
-- **Durable Hardware:** Stable 2+1 barrel structure hinges engineered for long-term operational smoothness and frame stability.
-- **Premium Optics:** Tenacious nylon lenses providing superior impact resistance with extensive customization options for global markets.
-- **All-Day Comfort:** Ergonomic rubber nose pads designed for a secure, hypoallergenic fit for extended daily wear.
-- **Exclusive Textures:** Unique carbon fiber weaves in wood-grain and twill patterns, delivering a high-end, luxury aesthetic for discerning brands.
-- **Manufacturing Flexibility:** Professional OEM & ODM services with a low MOQ of 300 pieces, supporting scalable global distribution.
+## Eigenschaften
+- **Material aus der Luft- und Raumfahrt:** Premium Kohlefaser-Rahmen kombiniert mit Titan-Bügeln, bietet ein ultra-leichtes Tragegefühl mit einem extremen Festigkeits-Gewichts-Verhältnis.
+- **Langlebige Hardware:** Stabile 2+1 Barrel-Struktur-Scharniere, entwickelt für langfristige Leichtgängigkeit und Rahmenstabilität.
+- **Premium-Optik:** Widerstandsfähige Nylon-Gläser mit überlegener Schlagfestigkeit und umfangreichen Anpassungsoptionen für globale Märkte.
+- **Ganztägiger Komfort:** Ergonomische Nasenpads aus Gummi, entwickelt für einen sicheren und hypoallergenen Sitz für langes tägliches Tragen.
+- **Exklusive Texturen:** Einzigartige Kohlefaser-Gewebe in Holzmaserung und Twill-Mustern, die eine hochwertige Luxus-Ästhetik für anspruchsvolle Marken bieten.
+- **Fertigungsflexibilität:** Professioneller OEM- und ODM-Service mit einer niedrigen Mindestbestellmenge von 300 Stück, unterstützt die skalierbare globale Distribution.
 
-## Perfect For
-- Premium Eyewear Brands
-- Independent Eyewear Designers
-- Private Label Distributors
-- Sports & Automotive Lifestyle Labels
-- Luxury Fashion Houses
-- High-End Optical Chains
+## Perfekt Für
+- Premium Brillenmarken
+- Unabhängige Brillendesigner
+- Eigenmarken-Distributoren
+- Sport- und Auto-Lifestyle-Marken
+- Luxusmodehäuser
+- Hochwertige Optikketten

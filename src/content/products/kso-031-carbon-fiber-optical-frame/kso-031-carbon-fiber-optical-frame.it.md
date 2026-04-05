@@ -1,13 +1,13 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Custom Carbon Fiber Optical Frame"
+title: "Montatura Ottica in Fibra di Carbonio Personalizzata"
 slug: "kso-031-carbon-fiber-optical-frame"
 itemNo: "KSO-031"
 date: "2026-04-05"
-colors: "Wood Golden & Twill Grain Green Carbon Fiber & Plain Grain Carbon Fiber Matt Gun & Wood Plain Grain Carbon Fiber Matt Silver"
-materials: "Premium Carbon Fiber and Titanium"
-serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+colors: "Legno Dorato & Fibra di Carbonio Verde a Spina di Pesce & Fibra di Carbonio Grigio Canna Fucile Opaca & Fibra di Carbonio Argento Opaca a Grana Semplice Legno"
+materials: "Fibra di Carbonio Premium e Titanio"
+serviceMode: "OEM & ODM ( Personalizzazione )"
+moq: "300 pz/modello"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -16,15 +16,15 @@ series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carb
 categories: "Optical Frames, Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
-size: "48-22-145mm & Customization"
-frameMaterial: "Premium Carbon Fiber Frame and Titanium Temple"
-lensMaterial: "Tenacious Nylon Lens & Customization"
-designStyle: "Classic, Fashion, Stylish, Trendy, Luxury, Unisex"
-nosePads: "Rubber Nose Pads"
-hinge: "2+1 Barrel Structure Hinges & Customization"
-logo: "Print, Laser, Laser With Oil, Hot Stamping, Metal, Embossing, Crystal, Up-sticker"
-service: "OEM / ODM customization"
-carbonFiberFeature: "Lightweight & High Strength-to-Weight Ratio & Flexibility & Durability & Hypoallergenic & Unique Texture"
+size: "48-22-145mm & Personalizzazione"
+frameMaterial: "Montatura in Fibra di Carbonio Premium e Aste in Titanio"
+lensMaterial: "Lenti in Nylon Tenace & Personalizzazione"
+designStyle: "Classico, Moda, Elegante, Alla Moda, Lusso, Unisex"
+nosePads: "Naselli in Gomma"
+hinge: "Cerniere con Struttura a Barilotto 2+1 & Personalizzazione"
+logo: "Stampa Tampografica, Incisione Laser, Incisione Laser con Smalto, Stampa a Caldo, Logo in Metallo, Logo a Rilievo, Decorazione in Cristallo, Logo 3D Adesivo"
+service: "Produzione OEM / ODM – Personalizzazione"
+carbonFiberFeature: "Leggerezza & Alto Rapporto Forza-Peso & Flessibilità & Durabilità & Ipoallergenico & Trama Unica"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kso-031-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-031-1.webp"
@@ -48,23 +48,23 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KSO-031 Luxury Carbon Fiber & Titanium Optical Frame Manufacturer"
-seoDescription: "KSO-031: Bespoke luxury carbon fiber & titanium optical frames for B2B. Premium aerospace-grade material with 300 MOQ. Expert OEM/ODM for private label brands."
-seoKeywords: "carbon fiber optical frames, luxury optical frames, eyewear manufacturer China, custom private label eyewear, wholesale carbon fiber frames, eyewear OEM ODM service, carbon fiber glasses supplier, premium Chinese eyewear factory"
+seoTitle: "Produttore di Montature Ottiche di Lusso in Fibra di Carbonio e Titanio KSO-031"
+seoDescription: "KSO-031: Montature ottiche di lusso su misura in fibra di carbonio e titanio per il mercato B2B. Materiale aeronautico premium con MOQ di 300 pezzi. Esperto OEM/ODM per marchi private label."
+seoKeywords: "montature ottiche in fibra di carbonio, montature ottiche di lusso, produttore di occhiali Cina, occhiali personalizzati private label, montature in fibra di carbonio all'ingrosso, servizio OEM ODM per occhiali, fornitore di occhiali in fibra di carbonio, fabbrica di occhiali cinese premium"
 ---
 
-## Technical Features
-- **Aerospace-Grade Material:** Premium carbon fiber frame paired with titanium temples, offering an ultra-lightweight feel with an extreme strength-to-weight ratio.
-- **Durable Hardware:** Stable 2+1 barrel structure hinges engineered for long-term operational smoothness and frame stability.
-- **Premium Optics:** Tenacious nylon lenses providing superior impact resistance with extensive customization options for global markets.
-- **All-Day Comfort:** Ergonomic rubber nose pads designed for a secure, hypoallergenic fit for extended daily wear.
-- **Exclusive Textures:** Unique carbon fiber weaves in wood-grain and twill patterns, delivering a high-end, luxury aesthetic for discerning brands.
-- **Manufacturing Flexibility:** Professional OEM & ODM services with a low MOQ of 300 pieces, supporting scalable global distribution.
+## Caratteristiche Tecniche
+- **Materiale di Grado Aeronautico:** Montatura in fibra di carbonio premium abbinata ad aste in titanio, offrendo una sensazione di estrema leggerezza con un eccezionale rapporto forza-peso.
+- **Hardware Durevole:** Cerniere con struttura a barilotto 2+1 stabili, progettate per una fluidità operativa a lungo termine e stabilità della montatura.
+- **Ottica Premium:** Lenti in nylon tenace che offrono una resistenza superiore agli urti con ampie opzioni di personalizzazione per i mercati globali.
+- **Comfort per Tutto il Giorno:** Naselli in gomma ergonomici progettati per una vestibilità sicura e ipoallergenica per un uso quotidiano prolungato.
+- **Trame Esclusive:** Intrecci unici in fibra di carbonio con motivi a venatura del legno e saia, offrendo un'estetica di lusso e di fascia alta per marchi esigenti.
+- **Flessibilità di Produzione:** Servizi professionali OEM e ODM con un MOQ basso di 300 pezzi, supportando la distribuzione globale scalabile.
 
-## Perfect For
-- Premium Eyewear Brands
-- Independent Eyewear Designers
-- Private Label Distributors
-- Sports & Automotive Lifestyle Labels
-- Luxury Fashion Houses
-- High-End Optical Chains
+## Perfetto Per
+- Marche di Occhiali Premium
+- Designer di Occhiali Indipendenti
+- Distributori Private Label
+- Marchi Sportivi e Auto Lifestyle
+- Case di Moda Lusso
+- Catene Ottiche di Alto Livello

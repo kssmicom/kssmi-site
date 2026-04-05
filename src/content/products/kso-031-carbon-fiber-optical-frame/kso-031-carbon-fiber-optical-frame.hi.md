@@ -1,0 +1,70 @@
+---
+# ─────────────────────────────────────────────────────
+title: "कस्टम कार्बन फाइबर ऑप्टिकल फ्रेम"
+slug: "kso-031-carbon-fiber-optical-frame"
+itemNo: "KSO-031"
+date: "2026-04-05"
+colors: "गोल्डन वुड & टवील ग्रेन ग्रीन कार्बन फाइबर & प्लेन ग्रेन कार्बन फाइबर मैट गन & वुड प्लेन ग्रेन कार्बन फाइबर मैट सिल्वर"
+materials: "प्रीमियम कार्बन फाइबर और टाइटेनियम"
+serviceMode: "OEM & ODM ( कस्टमाइज़ेशन )"
+moq: "300 पीस/मॉडल"
+
+# ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
+productType: "Optical Frames"
+material: "Carbon Fiber"
+series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
+categories: "Optical Frames, Carbon Fiber Optical Frames"
+
+# ─────────────────────────────────────────────────────
+size: "48-22-145mm & कस्टमाइज़ेशन"
+frameMaterial: "प्रीमियम कार्बन फाइबर फ्रेम और टाइटेनियम टेंपल"
+lensMaterial: "मजबूत नायलॉन लेंस & कस्टमाइज़ेशन"
+designStyle: "क्लासिक, फैशन, स्टाइलिश, ट्रेंडी, लक्जरी, यूनिसेक्स"
+nosePads: "रबर नोज पैड"
+hinge: "2+1 बैरल स्ट्रक्चर हिंज & कस्टमाइज़ेशन"
+logo: "प्रिंट, लेज़र, लेज़र विथ ऑयल, हॉट स्टैम्पिंग, मेटल लोगो, एम्बॉसिंग, क्रिस्टल, अप-स्टिकर"
+service: "OEM / ODM निर्माण – कस्टमाइज़ेशन सेवा"
+carbonFiberFeature: "हल्का वजन & उच्च शक्ति-से-वजन अनुपात & लचीलापन & स्थायित्व & हाइपोएलर्जेनिक & अद्वितीय बनावट"
+
+# ─────────────────────────────────────────────────────
+cover: "/media/products/kso-031-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-031-1.webp"
+gallery:
+  - "/media/products/kso-031-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-031-2.webp"
+  - "/media/products/kso-031-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-031-3.webp"
+  - "/media/products/kso-031-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-031-4.webp"
+  - "/media/products/kso-031-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-031-5.webp"
+  - "/media/products/kso-031-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-031-6.webp"
+  - "/media/products/kso-031-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-031-7.webp"
+  - "/media/products/kso-031-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-031-8.webp"
+  - "/media/products/kso-031-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-031-9.webp"
+  - "/media/products/kso-031-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-031-10.webp"
+  - "/media/products/kso-031-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-031-11.webp"
+  - "/media/products/kso-031-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-031-12.webp"
+  - "/media/products/kso-031-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-031-13.webp"
+  - "/media/products/kso-031-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-031-14.webp"
+  - "/media/products/kso-031-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-031-15.webp"
+  - "/media/products/kso-031-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-031-16.webp"
+customizable: true
+featured: true
+
+# ── SEO & GEO METADATA ───────────────────────────────
+seoTitle: "KSO-031 लक्ज़री कार्बन फाइबर और टाइटेनियम ऑप्टिकल फ्रेम निर्माता"
+seoDescription: "KSO-031: B2B के लिए बेस्पोक लक्ज़री कार्बन फाइबर और टाइटेनियम ऑप्टिकल फ्रेम। 300 MOQ के साथ प्रीमियम एयरोस्पेस-ग्रेड सामग्री। प्राइवेट लेबल ब्रांडों के लिए विशेषज्ञ OEM/ODM।"
+seoKeywords: "कार्बन फाइबर ऑप्टिकल फ्रेम, लक्ज़री ऑप्टिकल फ्रेम, आईवियर निर्माता चीन, कस्टम प्राइवेट लेबल आईवियर, थोक कार्बन फाइबर फ्रेम, आईवियर OEM ODM सेवा, कार्बन फाइबर चश्मा आपूर्तिकर्ता, प्रीमियम चीनी आईवियर फैक्ट्री"
+---
+
+## विशेषताएं
+- **एयरोस्पेस-ग्रेड सामग्री:** प्रीमियम कार्बन फाइबर फ्रेम और टाइटेनियम टेंपल का संयोजन, जो अत्यधिक शक्ति-से-वजन अनुपात के साथ एक अल्ट्रा-लाइटवेट अनुभव प्रदान करता है।
+- **टिकाऊ हार्डवेयर:** लंबी अवधि के सुचारू संचालन और फ्रेम स्थिरता के लिए इंजीनियर किए गए स्थिर 2+1 बैरल स्ट्रक्चर हिंज।
+- **प्रीमियम ऑप्टिक्स:** मजबूत नायलॉन लेंस जो वैश्विक बाजारों के लिए व्यापक कस्टमाइज़ेशन विकल्पों के साथ बेहतर प्रभाव प्रतिरोध प्रदान करते हैं।
+- **दिन भर का आराम:** एर्गोनोमिक रबर नोज पैड जो लंबे समय तक दैनिक पहनने के लिए सुरक्षित और हाइपोएलर्जेनिक फिट के लिए डिज़ाइन किए गए हैं।
+- **विशिष्ट बनावट:** लकड़ी के अनाज और टवील पैटर्न में अद्वितीय कार्बन फाइबर बुनाई, जो समझदार ब्रांडों के लिए एक हाई-एंड, लक्जरी सौंदर्य प्रदान करती है।
+- **निर्माण लचीलापन:** 300 पीस के कम MOQ के साथ पेशेवर OEM और ODM सेवाएं, जो स्केलेबल वैश्विक वितरण का समर्थन करती हैं।
+
+## इनके लिए आदर्श
+- प्रीमियम आईवियर ब्रांड
+- स्वतंत्र आईवियर डिज़ाइनर
+- प्राइवेट लेबल वितरक
+- खेल एवं ऑटोमोबाइल लाइफस्टाइल लेबल
+- लक्ज़री फैशन हाउस
+- हाई-एंड ऑप्टिकल चेन

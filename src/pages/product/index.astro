@@ -121,8 +121,6 @@ function getCategoryCount(href: string): number {
   }).length;
 }
 
-// Check if there are more pages
-const hasMore = sortedProducts.length > 12;
 ---
 
 <Layout title={t.nav.products} lang={lang}>
@@ -257,63 +255,61 @@ const hasMore = sortedProducts.length > 12;
               </div>
 
               <!-- Pagination -->
-              {hasMore && (
-                <nav class="mt-12 flex justify-center items-center gap-2" dir="ltr">
-                  <!-- Previous Button -->
-                  <span class="flex items-center gap-1 px-4 py-2 border border-gray-100 rounded-lg text-gray-300 cursor-not-allowed">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                    </svg>
-                    <span class="hidden sm:inline">{pt.previousPage || 'Previous'}</span>
+              <nav class="mt-12 flex justify-center items-center gap-2" dir="ltr">
+                <!-- Previous Button -->
+                <span class="flex items-center gap-1 px-4 py-2 border border-gray-100 rounded-lg text-gray-300 cursor-not-allowed">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                  </svg>
+                  <span class="hidden sm:inline">{pt.previousPage || 'Previous'}</span>
+                </span>
+
+                <!-- Page Numbers -->
+                <div class="flex items-center gap-1">
+                  {/* First page */}
+                  <span class="w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium bg-[#8B7355] text-white">
+                    1
                   </span>
 
-                  <!-- Page Numbers -->
-                  <div class="flex items-center gap-1">
-                    {/* First page */}
-                    <span class="w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium bg-[#8B7355] text-white">
-                      1
-                    </span>
-
-                    {/* Pages around current */}
-                    {Array.from({ length: Math.ceil(langProducts.length / 12) }, (_, i) => i + 1)
-                      .filter(p => p > 1 && p < Math.ceil(langProducts.length / 12) && Math.abs(p - 1) <= 1)
-                      .map(p => (
-                        <a
-                          href={`/product/${p}`}
-                          class="w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
-                        >
-                          {p}
-                        </a>
-                      ))}
-
-                    {/* Ellipsis after current */}
-                    {1 < Math.ceil(langProducts.length / 12) - 2 && (
-                      <span class="px-2 text-gray-400">...</span>
-                    )}
-
-                    {/* Last page */}
-                    {Math.ceil(langProducts.length / 12) > 1 && (
+                  {/* Pages around current */}
+                  {Array.from({ length: Math.ceil(langProducts.length / 12) }, (_, i) => i + 1)
+                    .filter(p => p > 1 && p < Math.ceil(langProducts.length / 12) && Math.abs(p - 1) <= 1)
+                    .map(p => (
                       <a
-                        href={`/product/${Math.ceil(langProducts.length / 12)}`}
+                        href={`/product/${p}`}
                         class="w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
                       >
-                        {Math.ceil(langProducts.length / 12)}
+                        {p}
                       </a>
-                    )}
-                  </div>
+                    ))}
 
-                  <!-- Next Button -->
-                  <a
-                    href="/product/2"
-                    class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
-                  >
-                    <span class="hidden sm:inline">{pt.nextPage || 'Next'}</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </nav>
-              )}
+                  {/* Ellipsis after current */}
+                  {1 < Math.ceil(langProducts.length / 12) - 2 && (
+                    <span class="px-2 text-gray-400">...</span>
+                  )}
+
+                  {/* Last page */}
+                  {Math.ceil(langProducts.length / 12) > 1 && (
+                    <a
+                      href={`/product/${Math.ceil(langProducts.length / 12)}`}
+                      class="w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
+                    >
+                      {Math.ceil(langProducts.length / 12)}
+                    </a>
+                  )}
+                </div>
+
+                <!-- Next Button -->
+                <a
+                  href="/product/2"
+                  class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
+                >
+                  <span class="hidden sm:inline">{pt.nextPage || 'Next'}</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </nav>
             </>
           )}
         </div>

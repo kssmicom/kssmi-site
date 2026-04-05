@@ -1,13 +1,13 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Custom Carbon Fiber Optical Frame"
+title: "定制碳纤维光学镜架"
 slug: "kso-031-carbon-fiber-optical-frame"
 itemNo: "KSO-031"
 date: "2026-04-05"
-colors: "Wood Golden & Twill Grain Green Carbon Fiber & Plain Grain Carbon Fiber Matt Gun & Wood Plain Grain Carbon Fiber Matt Silver"
-materials: "Premium Carbon Fiber and Titanium"
-serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+colors: "木质金色 & 斜纹绿色碳纤维 & 平纹哑枪色碳纤维 & 木质平纹哑银色碳纤维"
+materials: "优质碳纤维与钛金属"
+serviceMode: "代工生产 (OEM) & 设计制造 (ODM) ( 定制服务 )"
+moq: "300 付/款"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -16,15 +16,15 @@ series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carb
 categories: "Optical Frames, Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
-size: "48-22-145mm & Customization"
-frameMaterial: "Premium Carbon Fiber Frame and Titanium Temple"
-lensMaterial: "Tenacious Nylon Lens & Customization"
-designStyle: "Classic, Fashion, Stylish, Trendy, Luxury, Unisex"
-nosePads: "Rubber Nose Pads"
-hinge: "2+1 Barrel Structure Hinges & Customization"
-logo: "Print, Laser, Laser With Oil, Hot Stamping, Metal, Embossing, Crystal, Up-sticker"
-service: "OEM / ODM customization"
-carbonFiberFeature: "Lightweight & High Strength-to-Weight Ratio & Flexibility & Durability & Hypoallergenic & Unique Texture"
+size: "48-22-145mm & 定制服务"
+frameMaterial: "优质碳纤维镜框与钛金属镜腿"
+lensMaterial: "韧性尼龙镜片 & 定制服务"
+designStyle: "经典, 时尚, 型格, 潮流, 奢华, 中性"
+nosePads: "橡胶鼻托"
+hinge: "2+1 桶形结构铰链 & 定制服务"
+logo: "印刷, 镭射, 镭射填油, 热烫印, 金属标, 压纹, 水晶, 立体贴标"
+service: "代工生产 / 设计制造 定制服务"
+carbonFiberFeature: "轻盈 & 高强重比 & 柔韧性 & 耐用性 & 低致敏性 & 独特纹理"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kso-031-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-031-1.webp"
@@ -48,23 +48,23 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KSO-031 Luxury Carbon Fiber & Titanium Optical Frame Manufacturer"
-seoDescription: "KSO-031: Bespoke luxury carbon fiber & titanium optical frames for B2B. Premium aerospace-grade material with 300 MOQ. Expert OEM/ODM for private label brands."
-seoKeywords: "carbon fiber optical frames, luxury optical frames, eyewear manufacturer China, custom private label eyewear, wholesale carbon fiber frames, eyewear OEM ODM service, carbon fiber glasses supplier, premium Chinese eyewear factory"
+seoTitle: "KSO-031 奢华碳纤维与钛金属光学镜架制造商"
+seoDescription: "KSO-031：专为 B2B 打造的定制奢华碳纤维与钛金属光学镜架。航天级优质材料，起订量 300 付。专业的私有品牌 OEM/ODM 服务。"
+seoKeywords: "碳纤维光学镜架, 奢华光学镜架, 中国眼镜制造商, 定制私有品牌眼镜, 批发碳纤维镜架, 眼镜 OEM ODM 服务, 碳纤维眼镜供应商, 优质中国眼镜工厂"
 ---
 
-## Technical Features
-- **Aerospace-Grade Material:** Premium carbon fiber frame paired with titanium temples, offering an ultra-lightweight feel with an extreme strength-to-weight ratio.
-- **Durable Hardware:** Stable 2+1 barrel structure hinges engineered for long-term operational smoothness and frame stability.
-- **Premium Optics:** Tenacious nylon lenses providing superior impact resistance with extensive customization options for global markets.
-- **All-Day Comfort:** Ergonomic rubber nose pads designed for a secure, hypoallergenic fit for extended daily wear.
-- **Exclusive Textures:** Unique carbon fiber weaves in wood-grain and twill patterns, delivering a high-end, luxury aesthetic for discerning brands.
-- **Manufacturing Flexibility:** Professional OEM & ODM services with a low MOQ of 300 pieces, supporting scalable global distribution.
+## 技术特点
+- **航天级材料：** 优质碳纤维镜框搭配钛金属镜腿，提供超轻盈的手感与极高的强重比。
+- **耐用五金：** 稳定的 2+1 桶形结构铰链，旨在提供长期的开合顺滑度与框架稳定性。
+- **优质光学：** 韧性尼龙镜片提供卓越的抗冲击性，并为全球市场提供广泛的定制选项。
+- **全天候舒适：** 符合人体工程学的橡胶鼻托，专为长时间佩戴的稳固与低致敏性而设计。
+- **独家质感：** 独特的木纹与斜纹碳纤维编织工艺，为独具慧眼的品牌带来高端、奢华的美学。
+- **制造灵活性：** 专业的 OEM 和 ODM 服务，起订量低至 300 副，支持全球规模化分销。
 
-## Perfect For
-- Premium Eyewear Brands
-- Independent Eyewear Designers
-- Private Label Distributors
-- Sports & Automotive Lifestyle Labels
-- Luxury Fashion Houses
-- High-End Optical Chains
+## 适用对象
+- 高端眼镜品牌
+- 独立眼镜设计师
+- 私有品牌经销商
+- 运动与汽车生活方式品牌
+- 奢侈时装品牌
+- 高端光学连锁
