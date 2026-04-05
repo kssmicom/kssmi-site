@@ -36,7 +36,29 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: ""
-seoDescription: ""
-seoKeywords: ""
+seoTitle: "KSO-224 Luxury Carbon Fiber Optical Frame | OEM Manufacturer"
+seoDescription: "KSO-224: A luxury carbon fiber optical frame with titanium temples and a unique mahogany finish. 300 MOQ. Premium OEM/ODM customization for global eyewear brands."
+seoKeywords: "carbon fiber optical frames, custom titanium eyewear, luxury glasses manufacturer China, wholesale carbon fiber frames, OEM eyewear factory, private label optical frames, carbon fiber eyewear supplier, bespoke luxury frames"
 ---
+
+## Technical Features
+
+- **Aerospace-Grade Material:** Premium carbon fiber frame and titanium temples offering an ultra-lightweight feel with an extreme strength-to-weight ratio.
+- **Natural Aesthetic:** Unique Mahogany (Indian Rosewood — Mountain Grain) finish for a distinguished, high-end texture.
+- **Durable Hardware:** Stable 2+1 barrel structure hinges engineered for long-term operational smoothness.
+- **Premium Optics:** Tenacious nylon lenses with extensive custom tinting and coating options available for global export.
+- **All-Day Comfort:** Soft rubber nose pads designed for a secure, non-slip fit and all-day wearing comfort.
+- **Scalable Production:** Full OEM & ODM customization capabilities including logo branding and custom sizing for international wholesalers.
+
+## Perfect For
+
+- Premium Eyewear Brands
+- Independent Eyewear Designers
+- Private Label Distributors
+- Luxury Fashion Houses
+- Sports & Automotive Lifestyle Labels
+- High-End Optical Chains
+
+## Overview
+
+A unique Indian Rosewood mountain grain finish distinguishes the KSO-224, elevating the standard carbon fiber optical frame into a luxury statement piece. The combination of aerospace-grade carbon fiber and titanium temples ensures a high strength-to-weight ratio, while the rubber nose pads and 2+1 barrel hinges prioritize wearer comfort and hardware longevity. As a direct manufacturer, Kssmi offers full customization via OEM/ODM services, enabling private label distributors and premium brands to white-label this design with custom logos and colorways. This model is available starting at a 300-piece minimum order quantity, providing a strategic advantage for high-end optical chains and automotive lifestyle labels.
