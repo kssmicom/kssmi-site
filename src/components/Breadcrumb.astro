@@ -12,8 +12,21 @@ interface Props {
 
 const { items, lang = 'en' } = Astro.props;
 const isRTL = lang === 'ar';
+
+// Generate BreadcrumbList Schema
+const breadcrumbSchema = items.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.label,
+    "item": item.href === '#' ? undefined : `https://kssmi.com${item.href}`
+  }))
+} : null;
 ---
 
+{breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
 <nav class="bg-stone-50 py-3 border-b border-gray-100" dir={isRTL ? 'rtl' : 'ltr'}>
   <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
     <ol class="flex items-center flex-wrap gap-1 text-sm">

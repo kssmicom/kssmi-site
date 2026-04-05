@@ -21,11 +21,19 @@ const currentDate = new Date().toISOString().split('T')[0];
 let rootSitemapIndexEntries = '';
 
 // Helper to generate a urlset XML from a list of urls
-const generateUrlset = (urls) => {
+const generateUrlset = (items) => {
   let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
   xml += `<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>\n`;
-  xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
-  urls.forEach(url => {
+  xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n`;
+  items.forEach(item => {
+    let url, cover, title;
+    if (typeof item === 'object') {
+      url = item.url;
+      cover = item.cover;
+      title = item.title;
+    } else {
+      url = item;
+    }
     const pathSegments = new URL(url).pathname.split('/').filter(Boolean);
     let priority = '0.8';
     if (pathSegments.length === 0 || (pathSegments.length === 1 && locales.includes(pathSegments[0]))) {
@@ -36,6 +44,12 @@ const generateUrlset = (urls) => {
     xml += `    <lastmod>${currentDate}</lastmod>\n`;
     xml += `    <changefreq>weekly</changefreq>\n`;
     xml += `    <priority>${priority}</priority>\n`;
+    if (cover) {
+      xml += `    <image:image>\n`;
+      xml += `      <image:loc>${cover}</image:loc>\n`;
+      if (title) xml += `      <image:title><![CDATA[${title}]]></image:title>\n`;
+      xml += `    </image:image>\n`;
+    }
     xml += `  </url>\n`;
   });
   xml += `</urlset>`;
@@ -88,7 +102,30 @@ locales.forEach(lang => {
         if (file.endsWith(ext)) {
           // example: yet-lc010-titanium-sunglasses.en.md -> yet-lc010-titanium-sunglasses
           const slug = file.replace(ext, '');
-          urls.push(`${baseUrl}/${routeName}/${slug}/`);
+          const urlStr = `${baseUrl}/${routeName}/${slug}/`;
+
+          let cover = null;
+          let title = null;
+          if (dirName === 'products') {
+            const content = fs.readFileSync(filePath, 'utf-8');
+            const titleMatch = content.match(/title:\s*(.*?)\r?\n/);
+            if (titleMatch) title = titleMatch[1].replace(/['"]/g, '').trim();
+
+            const publicDir = path.join(process.cwd(), 'public', 'media', 'products', slug);
+            if (fs.existsSync(publicDir)) {
+                const allImages = fs.readdirSync(publicDir)
+                    .filter(f => f.endsWith('.webp') || f.endsWith('.jpg') || f.endsWith('.png'))
+                    .sort();
+                if (allImages.length > 0) {
+                    cover = `${SITE_URL}/media/products/${slug}/${allImages[0]}`;
+                }
+            }
+          }
+          if (cover) {
+            urls.push({ url: urlStr, cover, title });
+          } else {
+            urls.push(urlStr);
+          }
         }
       });
     }

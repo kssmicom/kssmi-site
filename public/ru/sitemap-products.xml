@@ -1,4 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://kssmi.com/ru/product/kss-011-carbon-fiber-sunglasses/</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://kssmi.com/media/products/kss-011-carbon-fiber-sunglasses/oem-odm-customized-luxury-carbon-fiber-sunglasses-kss-011-1.webp</image:loc>
+      <image:title><![CDATA[Индивидуальные Солнцезащитные Очки из Углеволокна]]></image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kssmi.com/ru/product/kss-012-carbon-fiber-sunglasses/</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://kssmi.com/media/products/kss-012-carbon-fiber-sunglasses/oem-odm-customized-carbon-fiber-sunglasses-kss-012-1.webp</image:loc>
+      <image:title><![CDATA[Солнцезащитные Очки из Углеволокна под Заказ]]></image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kssmi.com/ru/product/kss-028-carbon-fiber-sunglasses/</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://kssmi.com/media/products/kss-028-carbon-fiber-sunglasses/oem-odm-customized-carbon-fiber-sunglasses-kss-028-1.webp</image:loc>
+      <image:title><![CDATA[Индивидуальные солнцезащитные очки из углеволокна]]></image:title>
+    </image:image>
+  </url>
 </urlset>

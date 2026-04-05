@@ -28,6 +28,12 @@ const parseFrontmatter = (fileContent) => {
         return m ? m[1].split(',').map(s => s.replace(/['"]/g, '').trim()) : null;
     };
 
+    const overviewMatch = fileContent.match(/##[^\n]*Overview\s*\n\n(.*?)\n/is) || 
+                          fileContent.match(/##[^#]*\n\n(.*?)\n/is);
+    const textSnippet = overviewMatch && overviewMatch[1] 
+        ? overviewMatch[1].replace(/\n/g, ' ').replace(/[<>]/g, '').substring(0, 300).trim() + '...' 
+        : null;
+
     return {
         title: getValue('title'),
         description: getValue('description') || getValue('seoDescription'),
@@ -37,7 +43,8 @@ const parseFrontmatter = (fileContent) => {
         materials: getArray('materials'),
         serviceMode: getArray('serviceMode'),
         moq: getValue('moq'),
-        pubDate: getValue('pubDate')
+        pubDate: getValue('pubDate'),
+        snippet: textSnippet
     };
 };
 
@@ -88,6 +95,7 @@ const processCollection = (collectionName, titlePathPattern) => {
             if (data.serviceMode) entry += `  > Service Modes: ${data.serviceMode.join(', ')}\n`;
             if (data.moq) entry += `  > MOQ: ${data.moq}\n`;
             if (data.pubDate) entry += `  > Published: ${data.pubDate}\n`;
+            if (data.snippet) entry += `  > Summary: ${data.snippet}\n`;
             entry += `\n`;
 
             if (langData[lang][collectionName] !== undefined) {

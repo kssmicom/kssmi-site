@@ -254,7 +254,20 @@ let ProductContent: any = null;
 let breadcrumbItems: any[] = [];
 let productSchema: any = null;
 let videoSchema: any = null;
+let categorySchema: any = null;
 let imageSlug = '';
+
+if (type === 'category' && categoryProducts.length > 0) {
+  categorySchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": categoryProducts.map((p, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": `https://kssmi.com/${lang}/product/${p.data.slug?.replace(/\/$/, '') || ''}`
+    }))
+  };
+}
 
 if (type === 'product' && product) {
   const data = product.data as any;
@@ -375,7 +388,7 @@ if (type === 'product' && product) {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": title,
-    "image": cover,
+    "image": [cover, ...gallery].filter(Boolean).map(img => img.startsWith('http') ? img : `https://kssmi.com${img}`),
     "description": seoDescription || title,
     "sku": itemNo,
     "mpn": itemNo,
@@ -396,6 +409,14 @@ if (type === 'product' && product) {
     "audience": {
       "@type": "Audience",
       "audienceType": "Retailers, Brands, Wholesale"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "USD",
+      "offerCount": "1",
+      "price": "0.00",
+      "url": `https://kssmi.com/${lang}/product/${imageSlug}`
     }
   };
 
@@ -424,6 +445,7 @@ function getAltText(url: string | undefined, fallback: string): string {
 
 {type === 'category' ? (
 <Layout title={`${categoryLabel} | KSSMI`} lang={lang}>
+  {categorySchema && <script type="application/ld+json" set:html={JSON.stringify(categorySchema)} />}
   <Header lang={lang} />
   <main class="w-full min-h-screen py-6 lg:py-8 bg-stone-50">
     <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
