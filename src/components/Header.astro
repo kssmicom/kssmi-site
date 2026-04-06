@@ -264,17 +264,24 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
               {currentLangUpper}
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
             </button>
-            <div class="lang-dropdown-menu absolute top-full right-0 -mt-1 w-40 max-h-[70vh] overflow-y-auto bg-[#2d2926] border-t-4 border-[#8B7355] shadow-[0_10px_30px_rgba(0,0,0,0.25)] p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60] pointer-events-none group-hover:pointer-events-auto flex flex-col rounded-b-lg">
-              {Object.entries(languageNames).map(([langCode, displayName]) => {
-                const isActive = langCode === lang;
-                // Build correct URL: /en/path or /fr/path (not /frit/path)
-                const langUrl = langCode === 'en' ? (pagePath === '/' ? '/' : pagePath) : `/${langCode}${pagePath === '/' ? '' : pagePath}`;
-                return (
-                  <a href={langUrl} class:list={['block py-2.5 px-4 text-sm font-medium transition-all duration-200 rounded', isActive ? 'text-[#c9a66b] font-bold' : 'text-white/90 hover:bg-white/10 hover:text-[#c9a66b] hover:pl-6 whitespace-nowrap']}>
-                    {displayName}
-                  </a>
-                );
-              })}
+            <div class="lang-dropdown-wrapper absolute top-full right-0 mt-2 w-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60] shadow-[0_10px_30px_rgba(0,0,0,0.25)] rounded-lg bg-[#2d2926] pointer-events-none group-hover:pointer-events-auto">
+              <!-- Invisible bridge to keep hover active -->
+              <div class="absolute -top-3 left-0 w-full h-3"></div>
+              <div class="lang-dropdown-menu max-h-[calc(100vh-5rem)] overflow-y-auto p-2 pb-6 flex flex-col rounded-lg">
+                {Object.entries(languageNames).map(([langCode, displayName]) => {
+                  const isActive = langCode === lang;
+                  // Build correct URL: /en/path or /fr/path (not /frit/path)
+                  const langUrl = langCode === 'en' ? (pagePath === '/' ? '/' : pagePath) : `/${langCode}${pagePath === '/' ? '' : pagePath}`;
+                  return (
+                    <a href={langUrl} class:list={['block py-2.5 px-4 text-sm font-medium transition-all duration-200 rounded', isActive ? 'text-[#c9a66b] font-bold' : 'text-white/90 hover:bg-white/10 hover:text-[#c9a66b] hover:pl-6 whitespace-nowrap']}>
+                      {displayName}
+                    </a>
+                  );
+                })}
+              </div>
+              <div class="scroll-hint absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-[#2d2926] to-transparent pointer-events-none transition-opacity duration-300 flex items-end justify-center pb-1.5 rounded-b-lg opacity-0">
+                <svg class="w-4 h-4 text-[#c9a66b] animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+              </div>
             </div>
           </div>
         </div>
@@ -289,17 +296,24 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
               {currentLangUpper}
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
             </button>
-            <div class="lang-dropdown-menu absolute top-full right-0 -mt-1 w-40 max-h-[70vh] overflow-y-auto bg-[#2d2926] border-t-4 border-[#8B7355] shadow-[0_10px_30px_rgba(0,0,0,0.25)] p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60] pointer-events-none group-hover:pointer-events-auto flex flex-col rounded-b-lg">
-              {Object.entries(languageNames).map(([langCode, displayName]) => {
-                const isActive = langCode === lang;
-                // Build correct URL: /en/path or /fr/path (not /frit/path)
-                const langUrl = langCode === 'en' ? (pagePath === '/' ? '/' : pagePath) : `/${langCode}${pagePath === '/' ? '' : pagePath}`;
-                return (
-                  <a href={langUrl} class:list={['block py-2.5 px-4 text-sm font-medium transition-all duration-200 rounded', isActive ? 'text-[#c9a66b] font-bold' : 'text-white/90 hover:bg-white/10 hover:text-[#c9a66b] hover:pl-6 whitespace-nowrap']}>
-                    {displayName}
-                  </a>
-                );
-              })}
+            <div class="lang-dropdown-wrapper absolute top-full right-0 mt-2 w-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60] shadow-[0_10px_30px_rgba(0,0,0,0.25)] rounded-lg bg-[#2d2926] pointer-events-none group-hover:pointer-events-auto">
+              <!-- Invisible bridge to keep hover active -->
+              <div class="absolute -top-3 left-0 w-full h-3"></div>
+              <div class="lang-dropdown-menu max-h-[calc(100vh-5rem)] overflow-y-auto p-2 pb-6 flex flex-col rounded-lg">
+                {Object.entries(languageNames).map(([langCode, displayName]) => {
+                  const isActive = langCode === lang;
+                  // Build correct URL: /en/path or /fr/path (not /frit/path)
+                  const langUrl = langCode === 'en' ? (pagePath === '/' ? '/' : pagePath) : `/${langCode}${pagePath === '/' ? '' : pagePath}`;
+                  return (
+                    <a href={langUrl} class:list={['block py-2.5 px-4 text-sm font-medium transition-all duration-200 rounded', isActive ? 'text-[#c9a66b] font-bold' : 'text-white/90 hover:bg-white/10 hover:text-[#c9a66b] hover:pl-6 whitespace-nowrap']}>
+                      {displayName}
+                    </a>
+                  );
+                })}
+              </div>
+              <div class="scroll-hint absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-[#2d2926] to-transparent pointer-events-none transition-opacity duration-300 flex items-end justify-center pb-1.5 rounded-b-lg opacity-0">
+                <svg class="w-4 h-4 text-[#c9a66b] animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+              </div>
             </div>
           </div>
           <button id="mobile-menu-button" class="p-2 text-stone-700 hover:text-[#8B7355] focus:outline-none transition-colors relative z-[70] cursor-pointer">
@@ -464,17 +478,11 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
 
   /* Language Dropdown Scrollbar */
   .lang-dropdown-menu::-webkit-scrollbar {
-    width: 6px;
+    display: none;
   }
-  .lang-dropdown-menu::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  .lang-dropdown-menu::-webkit-scrollbar-thumb {
-    background: #8B7355;
-    border-radius: 3px;
-  }
-  .lang-dropdown-menu::-webkit-scrollbar-thumb:hover {
-    background: #5D4E37;
+  .lang-dropdown-menu {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 </style>
 
@@ -684,32 +692,68 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
       });
     }
 
+    // Language Dropdown Scroll Hints
+    document.querySelectorAll('.lang-dropdown-menu').forEach(menu => {
+      const hint = menu.nextElementSibling as HTMLElement;
+      if (!hint || !hint.classList.contains('scroll-hint')) return;
+
+      const updateHint = () => {
+        // If scrollable and not at bottom
+        if (menu.scrollHeight > menu.clientHeight && Math.ceil(menu.scrollTop + menu.clientHeight) < menu.scrollHeight - 2) {
+          hint.style.opacity = '1';
+        } else {
+          hint.style.opacity = '0';
+        }
+      };
+
+      setListener(menu, 'scroll', updateHint);
+      
+      const container = menu.closest('.lang-dropdown-container');
+      if (container) {
+        setListener(container, 'mouseenter', () => {
+          setTimeout(updateHint, 50); 
+        });
+      }
+      
+      // Try to use ResizeObserver
+      if (typeof ResizeObserver !== 'undefined') {
+        const observer = new ResizeObserver(updateHint);
+        observer.observe(menu);
+      }
+      updateHint();
+    });
+
     // Language Dropdown Click Toggle (for touch devices)
     document.querySelectorAll('.lang-dropdown-container').forEach(container => {
       const btn = container.querySelector('.lang-btn');
-      const menu = container.querySelector('.lang-dropdown-menu') as HTMLElement;
+      const wrapper = container.querySelector('.lang-dropdown-wrapper') as HTMLElement;
 
-      if (btn && menu) {
+      if (btn && wrapper) {
         setListener(btn, 'click', (e) => {
           e.preventDefault();
           e.stopPropagation();
 
           // Close all other language dropdowns first
-          document.querySelectorAll('.lang-dropdown-menu').forEach(m => {
-            if (m !== menu) {
-              m.classList.remove('opacity-100', 'visible', 'pointer-events-auto');
-              m.classList.add('opacity-0', 'invisible', 'pointer-events-none');
+          document.querySelectorAll('.lang-dropdown-wrapper').forEach(w => {
+            if (w !== wrapper) {
+              w.classList.remove('opacity-100', 'visible', 'pointer-events-auto');
+              w.classList.add('opacity-0', 'invisible', 'pointer-events-none');
             }
           });
 
           // Toggle current dropdown
-          const isVisible = menu.classList.contains('opacity-100');
+          const isVisible = wrapper.classList.contains('opacity-100');
           if (isVisible) {
-            menu.classList.remove('opacity-100', 'visible', 'pointer-events-auto');
-            menu.classList.add('opacity-0', 'invisible', 'pointer-events-none');
+            wrapper.classList.remove('opacity-100', 'visible', 'pointer-events-auto');
+            wrapper.classList.add('opacity-0', 'invisible', 'pointer-events-none');
           } else {
-            menu.classList.remove('opacity-0', 'invisible', 'pointer-events-none');
-            menu.classList.add('opacity-100', 'visible', 'pointer-events-auto');
+            wrapper.classList.remove('opacity-0', 'invisible', 'pointer-events-none');
+            wrapper.classList.add('opacity-100', 'visible', 'pointer-events-auto');
+            // update hint when opened via click
+            const menu = wrapper.querySelector('.lang-dropdown-menu');
+            if (menu) {
+              setTimeout(() => menu.dispatchEvent(new Event('scroll')), 50);
+            }
           }
         });
       }
@@ -719,9 +763,9 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
     document.addEventListener('click', (e) => {
       const target = e.target as HTMLElement;
       if (!target.closest('.lang-dropdown-container')) {
-        document.querySelectorAll('.lang-dropdown-menu').forEach(menu => {
-          menu.classList.remove('opacity-100', 'visible', 'pointer-events-auto');
-          menu.classList.add('opacity-0', 'invisible', 'pointer-events-none');
+        document.querySelectorAll('.lang-dropdown-wrapper').forEach(wrapper => {
+          wrapper.classList.remove('opacity-100', 'visible', 'pointer-events-auto');
+          wrapper.classList.add('opacity-0', 'invisible', 'pointer-events-none');
         });
       }
     });
