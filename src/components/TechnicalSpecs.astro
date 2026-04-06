@@ -406,11 +406,12 @@ for (const k of orderedKeys) {
   /* Features List Items - flex: label + description on same row */
   .product-highlights-content > ul:first-of-type li {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.5rem;
     padding: 0.6rem 2rem;
     font-size: 0.875rem;
     font-weight: 500;
+    line-height: 1.5;
     color: #44403c;
     list-style: none !important;
     transition: all 0.3s ease;
@@ -559,6 +560,22 @@ for (const k of orderedKeys) {
     .product-highlights-content > ul:nth-of-type(2) {
       margin-top: -1.5rem !important; /* Pull up list into heading */
       display: block !important; /* Reset 2 columns to 1 column on mobile */
+      overflow-x: auto;
+    }
+
+    /* Better mobile presentation for Technical Features (stacking) */
+    .product-highlights-content > ul:first-of-type li {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0.75rem 1.5rem;
+      gap: 0.25rem;
+    }
+
+    .product-highlights-content > ul:first-of-type li strong,
+    .product-highlights-content > ul:first-of-type li b {
+      white-space: normal;
+      min-width: 0;
+      color: #b45309;
     }
 
     .product-highlights-content > h2:nth-of-type(2) {
