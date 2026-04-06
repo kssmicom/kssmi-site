@@ -520,7 +520,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
       const itemNo = item.itemNo || '';
       const image = item.image || null;
       const imageContent = image
-        ? `<img src="${image}" alt="${title}" class="src-img" loading="lazy" />`
+        ? `<img src="${image}" alt="${title}" class="src-img" />`
         : `<div class="src-img-placeholder">
              <svg style="width:3rem;height:3rem;color:#9ca3af" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -570,7 +570,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
       </div>
     `;
     const imageContent = image
-      ? `<img src="${image}" alt="${title}" class="src-img" loading="lazy" />`
+      ? `<img src="${image}" alt="${title}" class="src-img" />`
       : `<div class="src-img-placeholder" style="background:#faf8f5;">${kssmiLogo}</div>`;
     return `
       <a href="${url}" class="src-card">
