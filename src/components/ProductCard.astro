@@ -35,6 +35,8 @@ const productSlug = slug || product.id.split('.')[0];
           src={cover}
           alt={title}
           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          loading="eager"
+          fetchpriority="high"
         />
       ) : (
         <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">

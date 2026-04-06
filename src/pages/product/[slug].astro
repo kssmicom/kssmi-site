@@ -552,7 +552,7 @@ function getAltText(url: string | undefined, fallback: string): string {
             <div class="relative aspect-square bg-gray-50 rounded-xl overflow-hidden shadow-lg w-full max-w-[500px]">
               {cover ? (
                 <div id="image-zoom-container" class="w-full h-full cursor-zoom-in">
-                  <img id="main-image" src={cover} alt={getAltText(cover, title)} class="w-full h-full object-cover" />
+                  <img id="main-image" src={cover} alt={getAltText(cover, title)} class="w-full h-full object-cover" loading="eager" fetchpriority="high" />
                 </div>
               ) : (
                 <div class="w-full h-full flex items-center justify-center">
@@ -574,12 +574,12 @@ function getAltText(url: string | undefined, fallback: string): string {
             <div class="flex flex-wrap justify-center gap-2 w-full max-w-[640px] mx-auto">
               {cover && (
                 <button class="thumb flex-none w-16 h-16 rounded-lg overflow-hidden border-2 border-[#8B7355] shadow-sm hover:shadow-md transition-shadow" aria-label={getAltText(cover, "View main image")}>
-                  <img src={cover} alt={getAltText(cover, "Main")} class="w-full h-full object-cover" />
+                  <img src={cover} alt={getAltText(cover, "Main")} class="w-full h-full object-cover" loading="eager" fetchpriority="high" />
                 </button>
               )}
               {gallery?.map((img: string, index: number) => (
                 <button class="thumb flex-none w-16 h-16 rounded-lg overflow-hidden border-2 border-transparent hover:border-[#8B7355] shadow-sm hover:shadow-md transition-all" aria-label={getAltText(img, `View gallery image ${index + 1}`)}>
-                  <img src={img} alt={getAltText(img, `Gallery ${index + 1}`)} class="w-full h-full object-cover" />
+                  <img src={img} alt={getAltText(img, `Gallery ${index + 1}`)} class="w-full h-full object-cover" loading="eager" fetchpriority="low" />
                 </button>
               ))}
             </div>
