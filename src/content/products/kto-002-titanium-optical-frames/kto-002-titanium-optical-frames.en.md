@@ -1,4 +1,4 @@
-﻿---
+---
 # ─────────────────────────────────────────────────────
 title: "Custom Titanium Optical Frames"
 slug: "kto-002-titanium-optical-frames"
