@@ -14,7 +14,7 @@ export async function getStaticPaths() {
     // Collection might be empty or missing during initial setup
     console.warn(`Blog collection empty or missing: ${e}`);
   }
-  const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar'];
+  const languages = ['it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
 
   return languages.map((lang) => {
     const langPosts = allPosts.filter((post) => {

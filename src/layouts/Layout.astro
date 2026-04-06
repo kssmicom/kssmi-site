@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 import { translations } from '../translations';
 
 // Props
@@ -104,7 +104,7 @@ const organizationSchema = {
   <link rel="alternate" hreflang="x-default" href={`https://kssmi.com/${currentPath}`} />
 
   <!-- View Transitions for SPA-like speed -->
-  <ViewTransitions />
+  <ClientRouter />
 
   <!-- Google Fonts: Manrope (Headings), Plus Jakarta Sans (Body), Inter (Alt), Noto Sans Arabic (Arabic) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

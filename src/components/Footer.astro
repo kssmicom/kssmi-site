@@ -28,6 +28,23 @@ const eyewearLabels = {
 
 const eyewearText = eyewearLabels[lang as keyof typeof eyewearLabels] || 'Eyewear';
 
+// Blog and Terms Labels for 17 Languages
+const blogLabels = {
+  en: 'Blog', zh: '博客', it: 'Blog', es: 'Blog', fr: 'Blog',
+  de: 'Blog', pt: 'Blog', ru: 'Блог', ja: 'ブログ', tr: 'Blog',
+  ar: 'المدونة', ko: '블로그', hi: 'ब्लॉग', vi: 'Blog', jv: 'Blog',
+  ms: 'Blog', tg: 'Блог'
+};
+const blogText = blogLabels[lang as keyof typeof blogLabels] || 'Blog';
+
+const termsLabels = {
+  en: 'Terms and Privacy', zh: '条款与隐私', it: 'Termini e Privacy', es: 'Términos y Privacidad', fr: 'Conditions et Confidentialité',
+  de: 'Nutzungsbedingungen und Datenschutz', pt: 'Termos e Privacidade', ru: 'Условия и Конфиденциальность', ja: '利用規約とプライバシー', tr: 'Şartlar ve Gizlilik',
+  ar: 'الشروط والخصوصية', ko: '이용 약관 및 개인정보 처리방침', hi: 'नियम और गोपनीयता', vi: 'Điều khoản & Quyền riêng tư', jv: 'Syarat lan Privasi',
+  ms: 'Terma dan Privasi', tg: 'Шартҳо ва Махфият'
+};
+const termsText = termsLabels[lang as keyof typeof termsLabels] || 'Terms and Privacy';
+
 // Contact info
 const contactEmail = 'sales@kssmi.com';
 const whatsappNum = '8613510532553';
@@ -107,6 +124,12 @@ const currentYear = new Date().getFullYear();
               </a>
             </li>
           ))}
+          <li>
+            <a href={`/${currentPath}terms-privacy`} class="hover:text-[#b45309] transition-colors group flex items-center gap-2 text-stone-400">
+              <span class="w-1 h-1 bg-stone-600 rounded-full group-hover:bg-[#b45309] transition-colors flex-shrink-0"></span>
+              <span>{termsText}</span>
+            </a>
+          </li>
         </ul>
       </div>
 
@@ -124,6 +147,12 @@ const currentYear = new Date().getFullYear();
               </a>
             </li>
           ))}
+          <li>
+            <a href={`/${currentPath}blog`} class="hover:text-[#b45309] transition-colors group flex items-center gap-2 text-stone-400">
+              <span class="w-1 h-1 bg-stone-600 rounded-full group-hover:bg-[#b45309] transition-colors flex-shrink-0"></span>
+              <span>{blogText}</span>
+            </a>
+          </li>
         </ul>
       </div>
 

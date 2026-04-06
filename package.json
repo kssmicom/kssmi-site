@@ -11,10 +11,10 @@
     "validate": "node scripts/validate-content.mjs"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.6",
-    "@astrojs/sitemap": "^3.7.0",
+    "@astrojs/check": "^0.9.8",
+    "@astrojs/sitemap": "^3.7.2",
     "@astrojs/tailwind": "^6.0.2",
-    "astro": "^5.17.1",
+    "astro": "^6.1.4",
     "astro-pagefind": "^1.8.5",
     "fuse.js": "^7.1.0",
     "gray-matter": "^4.0.3",

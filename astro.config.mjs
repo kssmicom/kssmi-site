@@ -135,6 +135,11 @@ export default defineConfig({
             }
           });
 
+          // Increase listener limit to prevent MaxListenersExceededWarning
+          if (server.watcher && typeof server.watcher.setMaxListeners === 'function') {
+            server.watcher.setMaxListeners(50);
+          }
+
           // Listen for change events on the watcher
           server.watcher.on('change', (filePath) => {
             const normalizedPath = filePath.replace(/\\/g, '/');
