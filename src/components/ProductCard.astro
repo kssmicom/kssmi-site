@@ -26,10 +26,10 @@ const currentPath = lang === 'en' ? '' : `${lang}/`;
 const productSlug = slug || product.id.split('.')[0];
 ---
 
-<a href={`/${currentPath}product/${productSlug}`} class="group block" data-astro-prefetch="hover">
+<a href={`/${currentPath}product/${productSlug}`} class="group block" data-astro-prefetch="tap">
   <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
     <!-- Product Image with Hover Overlay -->
-    <div class="relative aspect-[4/3] overflow-hidden bg-gray-100">
+    <div class="relative aspect-[4/3] overflow-hidden bg-gray-100" data-product-cover>
       {cover ? (
         <img
           src={cover}
@@ -37,6 +37,9 @@ const productSlug = slug || product.id.split('.')[0];
           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           loading="eager"
           fetchpriority="high"
+          decoding="sync"
+          transition:name={`product-cover-${productSlug}`}
+          onerror="this.onerror=null;this.src='';this.parentElement.classList.add('img-error');"
         />
       ) : (
         <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">

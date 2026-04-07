@@ -1,17 +1,21 @@
 Option Explicit
-Dim WshShell, scriptDir, psCmd
+Dim WshShell, FSO, scriptDir
 
 Set WshShell = CreateObject("WScript.Shell")
-scriptDir = CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName)
+Set FSO = CreateObject("Scripting.FileSystemObject")
+scriptDir = FSO.GetParentFolderName(WScript.ScriptFullName)
 
 ' Kill any existing node processes silently
 WshShell.Run "taskkill /F /IM node.exe", 0, True
 
-' Build PowerShell command to start astro completely hidden
-psCmd = "Start-Process -FilePath 'node' -ArgumentList 'node_modules/astro/astro.js','dev','--port','4321' -WorkingDirectory '" & scriptDir & "' -WindowStyle Hidden"
+' Set working directory FIRST - avoids all path-with-spaces quoting problems
+WshShell.CurrentDirectory = scriptDir
 
-' Run PowerShell hidden
-WshShell.Run "powershell -NoProfile -WindowStyle Hidden -Command """ & psCmd & """", 0, False
+' Now run astro dev - no "cd /d" needed since CurrentDirectory is already set
+' Window style 0 = completely hidden (no cmd window, no taskbar entry at all)
+' False = don't wait for it to finish (fire and forget)
+WshShell.Run "cmd /c npx astro dev --port 4321 --open", 0, False
 
 Set WshShell = Nothing
+Set FSO = Nothing
 WScript.Quit

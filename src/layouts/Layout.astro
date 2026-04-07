@@ -145,6 +145,19 @@ const organizationSchema = {
           document.body.style.cursor = 'default';
         }, 300);
       }
+
+      // ── Image Recovery: fix any product covers that didn't load during VT swap ──
+      // Runs after every page navigation (including View Transitions).
+      // Forces broken <img> elements inside [data-product-cover] to reload.
+      requestAnimationFrame(() => {
+        document.querySelectorAll('[data-product-cover] img').forEach((img) => {
+          if (!img.complete || img.naturalWidth === 0) {
+            const src = img.src;
+            img.src = '';
+            img.src = src;
+          }
+        });
+      });
     });
   </script>
   <!-- Accessibility: Skip to Content Link -->
