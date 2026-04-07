@@ -26,11 +26,11 @@ logo: "印刷, 镭射, 镭射填油, 热烫印, 金属标, 水晶, 立体贴标"
 service: "代工生产 / 设计制造 定制服务"
 
 # ─────────────────────────────────────────────────────
-cover: "/media/products/kto-001-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-002-1.webp"
+cover: "/media/products/kto-001-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-001-1.webp"
 gallery:
-  - "/media/products/kto-001-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-002-2.webp"
-  - "/media/products/kto-001-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-002-3.webp"
-  - "/media/products/kto-001-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-002-4.webp"
+  - "/media/products/kto-001-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-001-2.webp"
+  - "/media/products/kto-001-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-001-3.webp"
+  - "/media/products/kto-001-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-001-4.webp"
 customizable: true
 featured: true
 

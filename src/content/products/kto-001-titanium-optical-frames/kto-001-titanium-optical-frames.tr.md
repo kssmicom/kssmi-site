@@ -26,11 +26,11 @@ logo: "Tampo Baskı, Lazer Markalama, Boya Dolgulu Lazer, Sıcak Baskı, Metal L
 service: "OEM / ODM Üretim – Özelleştirme"
 
 # ─────────────────────────────────────────────────────
-cover: "/media/products/kto-001-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-002-1.webp"
+cover: "/media/products/kto-001-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-001-1.webp"
 gallery:
-  - "/media/products/kto-001-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-002-2.webp"
-  - "/media/products/kto-001-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-002-3.webp"
-  - "/media/products/kto-001-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-002-4.webp"
+  - "/media/products/kto-001-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-001-2.webp"
+  - "/media/products/kto-001-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-001-3.webp"
+  - "/media/products/kto-001-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-001-4.webp"
 customizable: true
 featured: true
 
