@@ -100,7 +100,7 @@ const ignoreKeys = new Set([
 
 // Build the rows array keeping EXACT markdown order
 const rawFiles = import.meta.glob('/src/content/products/**/*.md', { query: '?raw', import: 'default' });
-const matchPath = Object.keys(rawFiles).find(p => p.endsWith(`/${product.id}.md`));
+const matchPath = product?.id ? Object.keys(rawFiles).find(p => p.endsWith(`/${product.id}.md`)) : null;
 
 let orderedKeys: string[] = [];
 if (matchPath) {

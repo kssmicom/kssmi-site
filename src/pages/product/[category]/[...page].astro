@@ -69,7 +69,8 @@ export async function getStaticPaths({ paginate }: { paginate: any }) {
 
   return CANONICAL_CATEGORIES.flatMap((category) => {
     const categoryProducts = allProducts.filter((p) => {
-      const pParts = p.id.split('.');
+      const normalizedId = p.id.replace(/\.md$/, '');
+      const pParts = normalizedId.split('.');
       const pLang = pParts.length > 1 ? pParts.pop() : 'en';
       if (pLang !== lang) return false;
 
@@ -114,8 +115,10 @@ const pt = t.product || {
 
 const allProducts = await getCollection('products');
 const langProducts = allProducts.filter((product) => {
-  const parts = product.id.split('.');
-  return (parts.length > 1 ? parts.pop() : 'en') === lang;
+  const normalizedId = product.id.replace(/\.md$/, '');
+  const parts = normalizedId.split('.');
+  const productLang = parts.length > 1 ? parts.pop() : 'en';
+  return productLang === lang;
 });
 
 function getCategoryCount(href: string): number {
@@ -226,13 +229,15 @@ function isActiveCategory(href: string): boolean {
         <aside class="hidden lg:block lg:col-span-1">
           <div class="sticky top-24 space-y-6">
             <div class="bg-gradient-to-br from-white to-[#faf8f5] rounded-xl shadow-sm p-6 border border-stone-200/50">
-              <a
-                href="/product"
-                class="flex justify-between items-center py-2 px-3 rounded-lg mb-3 transition-colors text-gray-600 hover:bg-stone-50 hover:text-[#8B7355]"
-              >
-                <span class="font-medium">{t.sidebar.all_products}</span>
-                <span class="text-xs px-2 py-1 rounded-full bg-gray-100">{langProducts.length}</span>
-              </a>
+              <!-- All Products Link - Page Title -->
+              <div class="flex items-center mb-3">
+                <a href="/product" class="flex-1 text-base lg:text-lg font-bold text-[#8B7355] hover:underline">
+                  {t.sidebar.all_products}
+                </a>
+                <span class="text-xs font-normal text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">
+                  {langProducts.length}
+                </span>
+              </div>
 
               <div class="space-y-3">
                 {primaryCategories.map((cat) => (
@@ -336,9 +341,13 @@ function isActiveCategory(href: string): boolean {
             </div>
           ) : (
             <>
+              <!-- Results Info -->
               <div class="flex justify-between items-center mb-6 text-sm text-gray-500">
                 <span>
-                  Showing {page.start + 1}-{Math.min(page.end, page.total)} of {page.total} products
+                  {(pt.showingResults || 'Showing {start}-{end} of {total} products')
+                    .replace('{start}', String(page.start + 1))
+                    .replace('{end}', String(Math.min(page.end, page.total)))
+                    .replace('{total}', String(page.total))}
                 </span>
               </div>
 
@@ -373,21 +382,24 @@ function isActiveCategory(href: string): boolean {
 
                   <!-- Page Numbers -->
                   <div class="flex items-center gap-1">
+                    {/* First page */}
                     <a
                       href={`/product/${categorySlug}`}
                       class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
                         page.currentPage === 1
-                          ? 'bg-[#8B7355] text-white'
+                          ? 'bg-[#8B7355] text-white shadow-sm'
                           : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355]'
                       }`}
                     >
                       1
                     </a>
 
+                    {/* Ellipsis before current if needed */}
                     {page.currentPage > 3 && (
                       <span class="px-2 text-gray-400">...</span>
                     )}
 
+                    {/* Pages around current */}
                     {Array.from({ length: page.lastPage }, (_, i) => i + 1)
                       .filter(p => p > 1 && p < page.lastPage && Math.abs(p - page.currentPage) <= 1)
                       .map(p => (
@@ -395,7 +407,7 @@ function isActiveCategory(href: string): boolean {
                           href={`/product/${categorySlug}/${p}`}
                           class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
                             p === page.currentPage
-                              ? 'bg-[#8B7355] text-white'
+                              ? 'bg-[#8B7355] text-white shadow-sm'
                               : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355]'
                           }`}
                         >
@@ -403,16 +415,18 @@ function isActiveCategory(href: string): boolean {
                         </a>
                       ))}
 
+                    {/* Ellipsis after current if needed */}
                     {page.currentPage < page.lastPage - 2 && (
                       <span class="px-2 text-gray-400">...</span>
                     )}
 
+                    {/* Last page */}
                     {page.lastPage > 1 && (
                       <a
                         href={`/product/${categorySlug}/${page.lastPage}`}
                         class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
                           page.currentPage === page.lastPage
-                            ? 'bg-[#8B7355] text-white'
+                            ? 'bg-[#8B7355] text-white shadow-sm'
                             : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355]'
                         }`}
                       >

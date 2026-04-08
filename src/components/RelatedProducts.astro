@@ -25,7 +25,8 @@ const allProducts = await getCollection('products');
 
 const candidateProducts = allProducts
   .filter(p => {
-    const parts = p.id.split('.');
+    const normalizedId = p.id.replace(/\.md$/, '');
+    const parts = normalizedId.split('.');
     const pLang = parts.length > 1 ? parts.pop() : 'en';
     return pLang === lang && p.id !== currentProductId;
   })

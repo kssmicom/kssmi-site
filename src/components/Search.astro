@@ -39,7 +39,7 @@ const langProducts = allProducts
 const productsJson = JSON.stringify(langProducts);
 
 // Placeholder text translations
-const placeholders = {
+const placeholders: Record<string, string> = {
   en: "Search products...",
   it: "Cerca prodotti...",
   es: "Buscar productos...",
@@ -49,17 +49,24 @@ const placeholders = {
   ru: "Поиск...",
   ja: "製品を検索...",
   tr: "Ürün ara...",
-  ar: "البحث عن المنتجات..."
+  ar: "البحث عن المنتجات...",
+  ko: "제품 검색...",
+  zh: "搜索产品...",
+  hi: "उत्पाद खोजें...",
+  vi: "Tìm kiếm sản phẩm...",
+  jv: "Golèki produk...",
+  ms: "Cari produk...",
+  tg: "Ҷустуҷӯи маҳсулот..."
 };
 ---
 
-<div id={`search-${lang}`} class="relative w-full max-w-md" data-lang={lang}>
+<div id={`search-${lang}`} class="search-component relative w-full max-w-md" data-lang={lang} data-products={productsJson}>
   <!-- Search Input -->
   <div class="relative">
     <input
       type="text"
       id={`search-input-${lang}`}
-      placeholder={(placeholders as any)[lang] || placeholders.en}
+      placeholder={placeholders[lang] || placeholders.en}
       class="w-full px-4 py-2 ps-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B7355] focus:border-transparent"
       autocomplete="off"
     />
@@ -75,145 +82,146 @@ const placeholders = {
   </div>
 </div>
 
-<script lang="ts" define:vars={{ productsJson, lang }}>
-  // Parse the embedded product data
-  const products = JSON.parse(productsJson);
+<script>
+  import Fuse from 'fuse.js';
 
-  // Dynamically import Fuse.js
-  let Fuse;
-  async function initFuse() {
-    if (!Fuse) {
-      try {
-        const module = await import('/node_modules/fuse.js/dist/fuse.mjs');
-        Fuse = module.default || module;
-      } catch (err) {
-        console.error('Failed to load Fuse.js:', err);
-        throw err;
-      }
-    }
-    return Fuse;
-  }
+  function initSearchComponent(container: HTMLElement) {
+    const lang = container.getAttribute('data-lang') || 'en';
+    const productsJson = container.getAttribute('data-products') || '[]';
+    const products = JSON.parse(productsJson);
 
-  // Use language-specific IDs to avoid conflicts
-  const searchContainer = document.getElementById(`search-${lang}`);
-  const searchInput = document.getElementById(`search-input-${lang}`);
-  const searchResults = document.getElementById(`search-results-${lang}`);
-  let searchTimeout;
-  let fuse = null;
+    const searchInput = container.querySelector('input') as HTMLInputElement;
+    const searchResults = container.querySelector(`#search-results-${lang}`);
+    let searchTimeout: ReturnType<typeof setTimeout>;
+    let fuse: Fuse<any> | null = null;
 
-  // Initialize Fuse.js search
-  async function initializeSearch() {
-    const FuseClass = await initFuse();
-
-    fuse = new FuseClass(products, {
-      keys: [
-        { name: 'title', weight: 0.4 },
-        { name: 'itemNo', weight: 0.3 },
-        { name: 'excerpt', weight: 0.2 },
-        { name: 'categories', weight: 0.05 },
-        { name: 'materials', weight: 0.05 }
-      ],
-      threshold: 0.4,
-      includeScore: true,
-      includeMatches: true
-    });
-  }
-
-  // Perform search
-  function performSearch(query) {
-    if (!fuse || !query.trim()) {
-      searchResults?.classList.add('hidden');
-      return;
-    }
-
-    const results = fuse.search(query, { limit: 8 });
-    displayResults(results);
-  }
-
-  // Display results
-  function displayResults(results) {
-    if (!searchResults) return;
-
-    searchResults.innerHTML = '';
-
-    if (results.length === 0) {
-      const noResultsText = lang === 'en' ? 'No products found' :
-                           lang === 'it' ? 'Nessun prodotto trovato' :
-                           lang === 'es' ? 'No se encontraron productos' :
-                           lang === 'fr' ? 'Aucun produit trouvé' :
-                           lang === 'de' ? 'Keine Produkte gefunden' :
-                           lang === 'pt' ? 'Nenhum produto encontrado' :
-                           lang === 'ru' ? 'Товары не найдены' :
-                           lang === 'ja' ? '商品が見つかりません' :
-                           lang === 'tr' ? 'Ürün bulunamadı' :
-                           lang === 'ar' ? 'لم يتم العثور على منتجات' : 'No products found';
-
-      searchResults.innerHTML = `<div class="p-4 text-gray-500">${noResultsText}</div>`;
-    } else {
-      results.forEach(({ item }) => {
-        const link = document.createElement('a');
-        link.href = item.url;
-        link.className = 'block p-4 hover:bg-gray-50 border-b border-gray-100 last:border-b-0 transition-colors';
-
-        // RTL support
-        const dir = lang === 'ar' ? 'rtl' : 'ltr';
-        link.dir = dir;
-
-        // Highlight item number
-        const itemNoDisplay = item.itemNo ? `<span class="text-xs text-[#8B7355] font-mono bg-[#F5F5DC] px-2 py-0.5 rounded">${item.itemNo}</span>` : '';
-
-        link.innerHTML = `
-          <div class="flex items-center justify-between gap-2 mb-1">
-            <div class="font-semibold text-gray-900 truncate">${item.title}</div>
-            ${itemNoDisplay}
-          </div>
-          <div class="text-sm text-gray-600 line-clamp-2">${item.excerpt || ''}</div>
-          ${item.categories?.length ? `
-            <div class="flex flex-wrap gap-1 mt-2">
-              ${item.categories.slice(0, 3).map((cat) =>
-                `<span class="text-xs text-gray-500 bg-gray-100 px-2 py-0.5 rounded">${cat}</span>`
-              ).join('')}
-            </div>
-          ` : ''}
-        `;
-        searchResults.appendChild(link);
+    // Initialize Fuse.js search
+    function initializeSearch() {
+      fuse = new Fuse(products, {
+        keys: [
+          { name: 'title', weight: 0.4 },
+          { name: 'itemNo', weight: 0.3 },
+          { name: 'excerpt', weight: 0.2 },
+          { name: 'categories', weight: 0.05 },
+          { name: 'materials', weight: 0.05 }
+        ],
+        threshold: 0.4,
+        includeScore: true,
+        includeMatches: true
       });
     }
 
-    searchResults.classList.remove('hidden');
+    // Perform search
+    function performSearch(query: string) {
+      if (!fuse || !query.trim()) {
+        searchResults?.classList.add('hidden');
+        return;
+      }
+
+      const results = fuse.search(query, { limit: 8 });
+      displayResults(results);
+    }
+
+    // Display results
+    function displayResults(results: Fuse.FuseResult<any>[]) {
+      if (!searchResults) return;
+
+      searchResults.innerHTML = '';
+
+      const noResultsText: Record<string, string> = {
+        en: 'No products found',
+        it: 'Nessun prodotto trovato',
+        es: 'No se encontraron productos',
+        fr: 'Aucun produit trouvé',
+        de: 'Keine Produkte gefunden',
+        pt: 'Nenhum prodotto encontrado',
+        ru: 'Товары не найдены',
+        ja: '商品が見つかりません',
+        tr: 'Ürün bulunamadı',
+        ar: 'لم يتم العثور على منتجات',
+        ko: '검색 결과 없음',
+        zh: '未找到产品',
+        hi: 'कोई उत्पाद नहीं मिला',
+        vi: 'Không tìm thấy sản phẩm',
+        jv: 'Ora ana produk sing ditemokake',
+        ms: 'Tiada produk dijumpai',
+        tg: 'Маҳсулот ёфт нашуд'
+      };
+
+      if (results.length === 0) {
+        searchResults.innerHTML = `<div class="p-4 text-gray-500">${noResultsText[lang] || noResultsText.en}</div>`;
+      } else {
+        results.forEach(({ item }) => {
+          const link = document.createElement('a');
+          link.href = item.url;
+          link.className = 'block p-4 hover:bg-gray-50 border-b border-gray-100 last:border-b-0 transition-colors';
+
+          // RTL support
+          const dir = lang === 'ar' ? 'rtl' : 'ltr';
+          link.dir = dir;
+
+          // Highlight item number
+          const itemNoDisplay = item.itemNo ? `<span class="text-xs text-[#8B7355] font-mono bg-[#F5F5DC] px-2 py-0.5 rounded">${item.itemNo}</span>` : '';
+
+          link.innerHTML = `
+            <div class="flex items-center justify-between gap-2 mb-1">
+              <div class="font-semibold text-gray-900 truncate">${item.title}</div>
+              ${itemNoDisplay}
+            </div>
+            <div class="text-sm text-gray-600 line-clamp-2">${item.excerpt || ''}</div>
+            ${item.categories?.length ? `
+              <div class="flex flex-wrap gap-1 mt-2">
+                ${item.categories.slice(0, 3).map((cat: string) =>
+                  `<span class="text-xs text-gray-500 bg-gray-100 px-2 py-0.5 rounded">${cat}</span>`
+                ).join('')}
+              </div>
+            ` : ''}
+          `;
+          searchResults.appendChild(link);
+        });
+      }
+
+      searchResults.classList.remove('hidden');
+    }
+
+    // Initialize
+    initializeSearch();
+
+    // Event listeners
+    searchInput?.addEventListener('input', (e: Event) => {
+      const target = e.target as HTMLInputElement;
+      const query = target.value.trim();
+      clearTimeout(searchTimeout);
+
+      if (!query) {
+        searchResults?.classList.add('hidden');
+        return;
+      }
+
+      searchTimeout = setTimeout(() => {
+        performSearch(query);
+      }, 150);
+    });
+
+    // Close search results when clicking outside
+    document.addEventListener('click', (e: Event) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest(`.search-component[data-lang="${lang}"]`)) {
+        searchResults?.classList.add('hidden');
+      }
+    });
+
+    // Keyboard navigation
+    searchInput?.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        searchResults?.classList.add('hidden');
+      }
+    });
   }
 
-  // Initialize on page load
-  initializeSearch().catch(err => {
-    console.error('Search initialization failed:', err);
-  });
-
-  // Event listeners
-  searchInput?.addEventListener('input', (e) => {
-    const query = e.target.value.trim();
-    clearTimeout(searchTimeout);
-
-    if (!query) {
-      searchResults?.classList.add('hidden');
-      return;
-    }
-
-    searchTimeout = setTimeout(() => {
-      performSearch(query);
-    }, 150);
-  });
-
-  // Close search results when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest(`#search-${lang}`)) {
-      searchResults?.classList.add('hidden');
-    }
-  });
-
-  // Keyboard navigation
-  searchInput?.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      searchResults?.classList.add('hidden');
-    }
+  // Initialize all search components on both initial load and page transitions
+  document.addEventListener('astro:page-load', () => {
+    const components = document.querySelectorAll('.search-component');
+    components.forEach((c) => initSearchComponent(c as HTMLElement));
   });
 </script>

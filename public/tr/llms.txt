@@ -1,5 +1,5 @@
 ﻿# Kssmi Büyük Dil Modeli Kılavuzu - Türkçe
-Date: 2026-04-07
+Date: 2026-04-08
 
 Türkçe İçeriğimizi keşfetmek için lütfen aşağıdaki özel dizinleri takip edin:
 

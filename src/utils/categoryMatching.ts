@@ -37,14 +37,15 @@ export function getLookupKey(input: string): string {
  * @param productCategory The category string from product frontmatter (e.g. "Classis Sunglasses")
  * @param targetSlug The canonical slug from the URL or sidebar (e.g. "classics-sunglasses")
  */
-export function isCategoryMatch(productCategory: string, targetSlug: string): boolean {
+export function isCategoryMatch(productCategory: string | string[] | undefined, targetSlug: string): boolean {
     if (!productCategory || !targetSlug) return false;
 
     const targetKey = getLookupKey(targetSlug);
-    const cats = productCategory.split(',').map(c => c.trim());
+    const cats = Array.isArray(productCategory) 
+        ? productCategory 
+        : String(productCategory).split(',').map(c => c.trim());
 
     // Special handling for *-series parent slugs:
-    // 'rimless-series' should match any product whose categories contain 'rimless'
     const seriesMatch = targetSlug.match(/^(.+)-series$/);
     if (seriesMatch) {
         const prefix = seriesMatch[1].toLowerCase().replace(/-/g, '');
@@ -53,12 +54,9 @@ export function isCategoryMatch(productCategory: string, targetSlug: string): bo
         }
     }
 
-    return cats.some(cat => {
-        const catKey = getLookupKey(cat);
+    const targetFragments = targetSlug.split('-').map(f => getLookupKey(f));
+    const combinedCats = cats.map(cat => getLookupKey(cat)).join(' ');
 
-        // Strict match on the normalized lookup key
-        if (catKey === targetKey) return true;
-
-        return false;
-    });
+    // Intersection Match: Every fragment of the target URL must exist somewhere in the product tags
+    return targetFragments.every(f => combinedCats.includes(f));
 }

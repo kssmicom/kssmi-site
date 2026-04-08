@@ -232,6 +232,7 @@ const searchKeywords = {
 <Layout title={`${(searchResultsText as any)[lang]} | Kssmi`} lang={lang}>
   <Header lang={lang} />
 
+  <div id="search-page" data-lang={lang} data-view-details={JSON.stringify(viewDetailsText)}>
   <section class="w-full min-h-screen bg-stone-100 pt-32 pb-24">
     <div class="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12">
 
@@ -365,6 +366,7 @@ const searchKeywords = {
   </section>
 
   <Footer lang={lang} />
+  </div>
 </Layout>
 
 
@@ -524,8 +526,14 @@ const searchKeywords = {
   }
 </style>
 
-<script define:vars={{ lang, viewDetailsText }}>
+<script>
+  import Fuse from 'fuse.js';
+
   document.addEventListener('astro:page-load', () => {
+  // Get translation text and lang from data attributes
+  const searchPage = document.getElementById('search-page');
+  const lang = searchPage?.dataset.lang || 'en';
+  const viewDetailsText = JSON.parse(searchPage?.dataset.viewDetails || '{}');
   // Read query fresh from URL each time (avoids stale-closure bugs)
   function getQuery() {
     return new URLSearchParams(window.location.search).get('q') || '';
@@ -633,8 +641,6 @@ const searchKeywords = {
       if (!res.ok) throw new Error(`Failed to fetch search index: ${res.status}`);
       const items = await res.json();
 
-      const fuseModule = await import('/node_modules/fuse.js/dist/fuse.mjs');
-      const Fuse = fuseModule.default || fuseModule;
       fuse = new Fuse(items, {
         keys: [
           { name: 'itemNo',      weight: 0.40 },

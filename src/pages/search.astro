@@ -14,6 +14,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
 <Layout title="Search Results | Kssmi" lang="en">
   <Header lang={lang} />
 
+  <div id="search-page" data-lang="en" data-view-details={viewDetailsText}>
   <section class="w-full min-h-screen bg-stone-100 pt-32 pb-24">
     <div class="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12">
 
@@ -165,6 +166,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
   </section>
 
   <Footer lang={lang} />
+  </div>
 </Layout>
 
 <style is:global>
@@ -315,11 +317,14 @@ const viewDetailsText = pt.viewDetails || 'View Details';
   }
 </style>
 
-<script define:vars={{ viewDetailsText }}>
-  // Translation text
-  const VIEW_DETAILS = viewDetailsText;
+<script>
+  import Fuse from 'fuse.js';
 
   document.addEventListener('astro:page-load', () => {
+  // Get translation text from data attribute
+  const searchPage = document.getElementById('search-page');
+  const VIEW_DETAILS = searchPage?.dataset.viewDetails || 'View Details';
+  const lang = searchPage?.dataset.lang || 'en';
   // Read query fresh from URL each time (prevents stale-closure display bugs)
   function getQuery() {
     return new URLSearchParams(window.location.search).get('q') || '';
@@ -351,8 +356,6 @@ const viewDetailsText = pt.viewDetails || 'View Details';
       if (!res.ok) throw new Error(`Failed to fetch search index: ${res.status}`);
       const items = await res.json();
 
-      const module = await import('/node_modules/fuse.js/dist/fuse.mjs');
-      const Fuse = module.default || module;
       fuse = new Fuse(items, {
         keys: [
           { name: 'itemNo',      weight: 0.40 },

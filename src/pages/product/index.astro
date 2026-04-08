@@ -19,7 +19,8 @@ const allProducts = await getCollection('products');
 // Filter products for English only
 // ID format: "kso-001.en" -> extract "en" by splitting on "."
 const langProducts = allProducts.filter((product) => {
-  const parts = product.id.split('.');
+  const normalizedId = product.id.replace(/\.md$/, '');
+  const parts = normalizedId.split('.');
   const productLang = parts.length > 1 ? parts.pop() : 'en';
   return productLang === lang;
 });
