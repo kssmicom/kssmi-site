@@ -1,13 +1,13 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Kính Mát Kim Loại Tùy Chỉnh"
+title: "Kính mát kim loại tùy chỉnh"
 slug: "kms-135-metal-sunglasses"
 itemNo: "KMS-135"
 date: "2026-04-06"
 colors: "Vàng-Ecru & Bạc-Xám & Vàng-Xanh lá & Bạc-Xanh dương"
 materials: "Kim loại cao cấp"
-serviceMode: "OEM & ODM ( Tùy chỉnh theo yêu cầu )"
-moq: "300 cái/mẫu"
+serviceMode: "Sản xuất OEM & ODM ( Tùy chỉnh theo yêu cầu )"
+moq: "300 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -17,12 +17,12 @@ categories: "Sunglasses, Metal Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "56-18-140mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng và Càng kính bằng Kim loại cao cấp"
+frameMaterial: "Gọng và Càng kính kim loại cao cấp"
 lensMaterial: "Tròng kính Nylon bền bỉ & Tùy chỉnh theo yêu cầu"
-designStyle: "Thời trang, Phong cách, Xu hướng, Sang trọng, Nam giới"
-centerBeam: "Thiết kế Cầu kép"
+designStyle: "Thời trang, Phong cách, Hợp mốt, Xa xỉ, Nam"
+centerBeam: "Thiết kế cầu kép"
 nosePads: "Đệm mũi Silicone"
-hinge: "Bản lề cấu trúc thùng 2+1 & Tùy chỉnh theo yêu cầu"
+hinge: "Bản lề cấu trúc 2+1 thùng & Tùy chỉnh theo yêu cầu"
 logo: "In, Laser, Laser đổ dầu, Ép kim, Huy hiệu kim loại, Dập nổi, Đính đá, Nhãn dán 3D"
 service: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 acetateFeature: "Nhẹ & Bền & Sống động"
@@ -49,29 +49,29 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Kính Mát Kim Loại Sang Trọng Hiện Đại KMS-135 | Nhà cung cấp bán buôn"
-seoDescription: "Hợp tác với nhà sản xuất chuyên nghiệp cho kính mát kim loại KMS-135 có thể tùy chỉnh. Thiết kế cầu kép chính xác cho nhãn hàng mắt kính sang trọng với MOQ 300 chiếc."
-seoKeywords: "nhà sản xuất kính mát kim loại, mắt kính sang trọng bán buôn, sản xuất kính mát tùy chỉnh, nhà máy mắt kính Trung Quốc, nhãn hiệu mắt kính cao cấp, nhà máy mắt kính OEM, nhà cung cấp KMS-135"
+seoTitle: "Kính mát kim loại sang trọng hiện đại KMS-135 | Nhà cung cấp bán sỉ"
+seoDescription: "Hợp tác với nhà sản xuất chuyên nghiệp cho kính mát kim loại KMS-135 có thể tùy chỉnh. Thiết kế cầu kép tinh xảo cho các thương hiệu kính mắt cao cấp với MOQ 300 chiếc."
+seoKeywords: "nhà sản xuất kính mát kim loại, bán sỉ kính mắt sang trọng, sản xuất kính mát tùy chỉnh, nhà máy kính mắt Trung Quốc, thương hiệu kính mắt cao cấp, nhà máy kính mắt OEM, nhà cung cấp kính mắt KMS-135"
 ---
 
 ## Đặc điểm
 
-- **Cấu trúc Cao cấp:** Gọng và càng kính bằng kim loại cao cấp mang lại vẻ thẩm mỹ sang trọng, tinh tế với độ bền kết cấu vượt trội.
-- **Kiểu dáng Hiện đại:** Thiết kế cầu kép phong cách giúp tăng cường độ ổn định của gọng kính đồng thời thu hút đối tượng nam giới sành điệu.
-- **Phần cứng Đáng tin cậy:** Bản lề cấu trúc thùng 2+1 được thiết kế chính xác để đảm bảo tuổi thọ vận hành trơn tru và hiệu suất nhất quán.
-- **Quang học Hiệu năng cao:** Tròng kính Nylon bền bỉ mang đến khả năng chống va đập vượt trội và độ rõ quang học cho môi trường bán lẻ cao cấp.
-- **Thoải mái Công thái học:** Đệm mũi silicone có thể điều chỉnh và kích thước 56-18-140mm chính xác đảm bảo sự thoải mái cả ngày cho nhiều hình dạng khuôn mặt khác nhau.
-- **Tùy chỉnh Linh hoạt:** Khả năng OEM và ODM toàn diện với MOQ 300 chiếc linh hoạt, lý tưởng cho các Thương hiệu Mắt kính Cao cấp và Nhà phân phối Nhãn hàng riêng.
+- **Cấu trúc cao cấp:** Gọng và càng kính kim loại cao cấp mang lại tính thẩm mỹ tinh tế, sang trọng với độ bền cấu trúc vượt trội.
+- **Kiểu dáng hiện đại:** Đặc trưng với thiết kế cầu kép phong cách giúp tăng cường độ ổn định của gọng đồng thời thu hút nhóm khách hàng nam giới chú trọng xu hướng.
+- **Phụ kiện đáng tin cậy:** Bản lề cấu trúc 2+1 thùng được thiết kế chính xác để đảm bảo tuổi thọ vận hành trơn tru và hiệu suất ổn định.
+- **Quang học hiệu suất cao:** Tròng kính nylon bền bỉ cung cấp khả năng chống va đập và độ rõ nét quang học vượt trội cho môi trường bán lẻ cao cấp.
+- **Thoải mái vượt trội:** Đệm mũi silicone có thể điều chỉnh và kích thước 56-18-140mm chính xác đảm bảo sự thoải mái suốt cả ngày cho nhiều hình dạng khuôn mặt khác nhau.
+- **Khả năng tùy chỉnh linh hoạt:** Đầy đủ năng lực OEM & ODM với MOQ 300 chiếc linh hoạt, lý tưởng cho các Thương hiệu kính mắt cao cấp và Nhà phân phối nhãn hiệu riêng.
 
 ## Phù hợp cho
 
-- Thương hiệu kính mắt cao cấp
-- Nhà thiết kế kính mắt độc lập
-- Nhà phân phối thương hiệu riêng
-- Nhà thời trang xa xỉ
-- Chuỗi quang học cao cấp
-- Bán lẻ miễn thuế và du lịch
+Thương hiệu kính mắt cao cấp
+Nhà thiết kế kính mắt độc lập
+Nhà phân phối thương hiệu riêng
+Nhà thời trang xa xỉ
+Chuỗi quang học cao cấp
+Bán lẻ miễn thuế và du lịch
 
 ## Tổng quan
 
-Được thiết kế cho môi trường bán lẻ cao cấp, KMS-135 sử dụng các thành phần kim loại cao cấp và cấu trúc cầu kép tinh tế để mang lại kiểu dáng hiện đại cho đối tượng nam giới dẫn đầu xu hướng. Tròng kính quang học Nylon bền bỉ và bản lề thùng 2+1 chính xác tạo nên độ bền cho gọng kính, trong khi đệm mũi silicone có thể điều chỉnh đảm bảo sự vừa vặn công thái học tinh tế cho nhiều dáng mặt. Với số lượng đặt hàng tối thiểu 300 chiếc linh hoạt, mẫu kính này mang lại khả năng tùy chỉnh OEM/ODM rộng rãi cho các nhà thiết kế độc lập và các nhà thời trang cao cấp muốn mở rộng danh mục mắt kính sang trọng của mình.
+Được thiết kế cho môi trường bán lẻ cao cấp, KMS-135 sử dụng các thành phần kim loại chất lượng cao và cấu trúc cầu kép tinh tế để mang lại kiểu dáng hiện đại cho nhóm nam giới chú trọng xu hướng. Tròng kính nylon bền bỉ và bản lề 2+1 chính xác tạo nên độ bền cho gọng, trong khi đệm mũi silicone có thể điều chỉnh đảm bảo sự vừa vặn tinh tế về mặt công học cho nhiều hình dạng khuôn mặt. Với số lượng đặt hàng tối thiểu 300 chiếc linh hoạt, mẫu này mang lại phạm vi tùy chỉnh OEM/ODM rộng rãi cho các nhà thiết kế độc lập và các nhà thời trang xa xỉ đang muốn mở rộng danh mục kính mắt cao cấp của mình.
