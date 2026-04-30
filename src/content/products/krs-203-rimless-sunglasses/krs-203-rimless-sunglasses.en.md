@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "Custom Rimless Sunglasses"
 slug: "krs-203-rimless-sunglasses"
-itemNo: "KRO-203"
+itemNo: "KRS-203"
 date: "2026-04-06"
 colors: "Gradient-Brown & Gradient-Blue & Gradient-Gray & Tint-Gray"
 materials: "Premium Metal & Customize Material"
@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Sunglasses"
 material: "Rimless Sunglasses"
 series: "sunglasses, rimless-sunglasses, rimless-eyewear"
-categories: "Sunglasses, Rimless Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "54-20-140mm & Customization"
@@ -47,9 +46,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KRO-203 Luxury Rimless Metal Sunglasses | OEM & ODM Manufacturer"
-seoDescription: "Partner with a professional Chinese factory for KRO-203 premium metal rimless sunglasses. Offering 300 MOQ for private label OEM/ODM and custom nylon lenses."
-seoKeywords: "rimless metal sunglasses manufacturer, KRO-203 premium eyewear OEM, private label sunglasses China, wholesale rimless sunglasses, custom nylon lens sunglasses, spring hinge sunglasses supplier, B2B eyewear factory China, luxury export sunglasses factory"
+seoTitle: "KRS-203 Luxury Rimless Metal Sunglasses | OEM & ODM Manufacturer"
+seoDescription: "Partner with a professional Chinese factory for KRS-203 premium metal rimless sunglasses. Offering 300 MOQ for private label OEM/ODM and custom nylon lenses."
+seoKeywords: "rimless metal sunglasses manufacturer, KRS-203 premium eyewear OEM, private label sunglasses China, wholesale rimless sunglasses, custom nylon lens sunglasses, spring hinge sunglasses supplier, B2B eyewear factory China, luxury export sunglasses factory"
 ---
 
 ## Technical Features
@@ -70,4 +69,8 @@ seoKeywords: "rimless metal sunglasses manufacturer, KRO-203 premium eyewear OEM
 
 ## Overview
 
-Combining premium metal construction with a sophisticated rimless design, the KRO-203 offers a high-end minimalist aesthetic that appeals to modern global consumers. The inclusion of precision spring structure hinges and tenacious nylon lenses ensures a flexible, secure fit alongside exceptional optical performance and long-term durability. With comprehensive OEM and ODM manufacturing capabilities—including custom lens tints and multi-layered logo applications—this model is available with a 300-piece minimum order quantity specifically designed for high-end optical chains and private label eyewear brands.
+Rimless aesthetics meet structural integrity in the KRS-203, a model defined by its minimalist profile and premium metal temple construction.
+
+Engineered with precision spring hinges and tenacious nylon lenses, these frames deliver a secure, pressure-free fit that maintains its geometry through extended commercial use.
+
+Supporting full bespoke customization from custom lens tints to multi-process logo applications at a 300-piece MOQ, this series enables boutique fashion labels to deploy a high-end rimless collection with manufacturing precision.

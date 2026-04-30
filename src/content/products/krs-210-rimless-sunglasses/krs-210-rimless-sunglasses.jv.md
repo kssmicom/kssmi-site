@@ -2,24 +2,23 @@
 # ─────────────────────────────────────────────────────
 title: "Kacamata Hitam Rimless Kustom"
 slug: "krs-210-rimless-sunglasses"
-itemNo: "KRO-210"
+itemNo: "KRS-210"
 date: "2026-04-06"
-colors: "Ijo Gradien & Ungu Gradien & Coklat Gradien & Klawu Gradien"
+colors: "Ijo Gradien & Ungu Gradien & Coklat Gradien & Abu-abu Gradien"
 materials: "Logam Premium & Bahan Kustom"
-serviceMode: "OEM & ODM ( Kustomisasi )"
+serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
 moq: "300 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
-material: "Rimless Sunglasses"
-series: "sunglasses, rimless-sunglasses, rimless-eyewear"
-categories: "Sunglasses, Rimless Sunglasses"
+material: "Metal"
+series: "Rimless Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "56-19-140mm & Kustomisasi"
-frameMaterial: "Frame lan Temple Logam Premium"
-lensMaterial: "Lensa Nilon Kuat & Kustomisasi"
-designStyle: "Fesyen, Stylish, Trendy, Mewah, Unisex"
+frameMaterial: "Bingkai lan Gagang Logam Premium"
+lensMaterial: "Lensa Nylon Kuat & Kustomisasi"
+designStyle: "Fesyen, Bergaya, Tren, Mewah, Unisex"
 nosePads: "Bantalan Irung Silikon"
 hinge: "Engsel Struktur Pegas & Kustomisasi"
 logo: "Cetak, Laser, Laser Karang Lengo, Cap Panas, Logo Logam, Timbulan, Kristal, Stiker"
@@ -47,27 +46,31 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KRO-210 Kacamata Hitam Rimless Logam Mewah | Supplier Grosir"
-seoDescription: "Tingkatake portofolio label pribadi sampeyan nganggo kacamata hitam logam rimless KRO-210 sing bisa dikustomisasi. Layanan OEM/ODM lengkap, optik nilon premium, lan MOQ rendah 300 saben model."
-seoKeywords: "produsen kacamata hitam logam rimless, grosir kacamata rimless, produksi kacamata hitam kustom, pabrik kacamata China, kacamata label pribadi mewah, supplier frame logam pesanan, kacamata hitam rimless OEM, produksi kacamata ing China"
+seoTitle: "Kacamata Hitam Logam Rimless Mewah KRS-210 | Supplier Grosir"
+seoDescription: "Ningkatake portofolio label pribadi sampeyan nganggo kacamata hitam logam rimless KRS-210 sing bisa disesuaikan. Layanan OEM/ODM lengkap, optik nilon premium, lan MOQ rendah 300 pcs saben model."
+seoKeywords: "produsen kacamata hitam logam rimless, grosir kacamata rimless, produksi kacamata kustom, pabrik kacamata China, kacamata label pribadi mewah, supplier frame logam pesanan, kacamata hitam rimless OEM, produksi kacamata China"
 ---
 
 ## Fitur
-- **Bahan Premium:** Frame lan temple logam kelas dhuwur sing menehi estetika canggih lan entheng kanti kekuatan struktural sing luar biasa.
-- **Optik Canggih:** Lensa nilon kuat kanti kajelasan dhuwur sing nyediakake resistensi dampak sing unggul lan kinerja optik sing dicocokake kanggo koleksi kacamata premium.
+- **Bahan Premium:** Bingkai lan gagang logam kelas dhuwur sing menehi estetika canggih lan entheng kanti daya tahan struktur sing luar biasa.
+- **Optik Canggih:** Lensa nilon kuat kanti kajelasan dhuwur sing nyedhiyakake resistensi dampak sing unggul lan kinerja optik sing disesuaikan kanggo koleksi kacamata premium.
 - **Teknik Presisi:** Engsel struktur pegas sing fleksibel njamin pas sing nyaman lan adaptif sarta kelancaran operasional jangka panjang.
-- **Kenyamanan Ergonomis:** Bantalan irung silikon hypoallergenic sing dirancang kanggo pas sing aman lan tanpa tekanan nalika digunakake saben dina.
-- **Kustomisasi Merek:** Pilihan aplikasi logo sing fleksibel kalebu laser, logam, lan cap panas kanggo integrasi identitas merek sing lancar.
-- **Produksi Skalabel:** Kapabilitas kustomisasi OEM & ODM lengkap kanti jumlah pesanan minimal rendah 300 unit sing dicocokake kanggo Merek Kacamata Premium lan Desainer Kacamata Independen.
+- **Kenyamanan Ergonomis:** Bantalan irung silikon hipoalergenik sing dirancang kanggo pas sing aman lan bebas tekanan sajrone panggunaan saben dina sing suwe.
+- **Kustomisasi Merek:** Pilihan aplikasi logo sing serba guna kalebu laser, logam, lan cap panas kanggo integrasi identitas merek sing lancar.
+- **Produksi Skala:** Kapasitas kustomisasi OEM & ODM lengkap kanti jumlah pesenan minimal 300 pcs sing disesuaikan kanggo Merek Kacamata Premium lan Desainer Kacamata Independen.
 
 ## Cocok kanggo
 - Merek Kacamata Premium
 - Penzel Kacamata Independen
 - Distributor Label Pribadi
-- Group Store Departemen
+- Rumah Mode Mewah
 - P中小uters Dutypirlalu & Journey
 - Toko Konsep & Multi-Merek
 
-## Overview
+## Ringkesan Produk
 
-Estetika rimless minimalis ketemu karo kekuatan kelas industri ing KRO-210, model sing ditetepake dening arsitektur logam premium lan optik nilon kajelasan dhuwur. Dirancang kanggo keanggunan visual lan linuwih jangka panjang, frame iki nggabungake engsel pegas adaptif lan komponen silikon hypoallergenic kanggo njamin pengalaman pangguna sing unggul. Kssmi ndhukung diferensiasi merek sing komprehensif liwat kapabilitas OEM lan ODM sing fleksibel, nyakup sumber bahan kustom lan integrasi logo presisi ing kabeh produksi. Kanti jumlah pesanan minimal 300 unit, desain iki nyediakake solusi manufaktur sing bisa dikembangake kanggo grup ritel mewah lan omah kacamata independen ing saindenging jagad.
+KRS-210 mujudake estetika rimless sing canggih, nyimbangake daya tarik visual minimalis karo arsitektur logam kelas dhuwur kanggo integritas struktur sing tahan suwe. Profil entheng kasebut dirancang kanggo nyukupi panjaluk portofolio premium ing ngendi keanggunan lan daya tahan diutamakake kanthi padha.
+
+Dilengkapi optik nilon kajelasan dhuwur lan engsel struktur pegas adaptif, model iki njamin pas sing presisi lan nyaman sing adaptasi kanthi lancar kanggo sing nganggo. Komponen silikon hipoalergenik luwih ningkatake pengalaman ergonomis kanggo panggunaan saben dina sing suwe.
+
+Kssmi nyedhiyakake kustomisasi label pribadi sing wiyar—saka sumber bahan pesenan nganti integrasi logo multi-metode—didukung dening jumlah pesenan minimal 300 pcs sing fleksibel. Skala manufaktur iki nguatake desainer independen lan grup ritel mewah kanggo ngirim koleksi kacamata eksklusif sing siyap pasar.

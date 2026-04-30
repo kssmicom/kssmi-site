@@ -1,10 +1,10 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Cermin Mata Hitam Tanpa Bingkai Tersuai"
+title: "Cermin Mata Hitam Tanpa Rim Tersuai"
 slug: "krs-203-rimless-sunglasses"
-itemNo: "KRO-203"
+itemNo: "KRS-203"
 date: "2026-04-06"
-colors: "Coklat Gradien & Biru Gradien & Kelabu Gradien & Kelabu Tint"
+colors: "Coklat Sfumato & Biru Sfumato & Kelabu Sfumato & Kelabu Tinta"
 materials: "Logam Premium & Bahan Penyesuaian"
 serviceMode: "OEM & ODM ( Penyesuaian )"
 moq: "300 unit/model"
@@ -13,16 +13,15 @@ moq: "300 unit/model"
 productType: "Sunglasses"
 material: "Rimless Sunglasses"
 series: "sunglasses, rimless-sunglasses, rimless-eyewear"
-categories: "Sunglasses, Rimless Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "54-20-140mm & Penyesuaian"
-frameMaterial: "Bingkai dan Tangkai Logam Premium"
-lensMaterial: "Lensa Nylon Tenacious & Penyesuaian"
-designStyle: "Fesyen, Bergaya, Trend, Mewah, Unisex"
+frameMaterial: "Bingkai dan Batang Logam Premium"
+lensMaterial: "Kanta Nilon Teguh & Penyesuaian"
+designStyle: "Fesyen, Bergaya, Trendy, Mewah, Unisex"
 nosePads: "Alas Hidung Logam"
-hinge: "Engsel Spring & Penyesuaian"
-logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Lencana Logam, Timbulan, Kristal, Pelekat"
+hinge: "Engsel Struktur Spring & Penyesuaian"
+logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Lencana Logam, Ukiran, Kristal, Pelekat"
 service: "Pembuatan OEM / ODM – Penyesuaian"
 
 # ─────────────────────────────────────────────────────
@@ -47,23 +46,23 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Cermin Mata Hitam Logam Rimless Mewah KRO-203 | Pengilang OEM & ODM"
-seoDescription: "Rakan kongsi dengan kilang profesional China untuk cermin mata hitam rimless logam premium KRO-203. Menawarkan 300 MOQ untuk label peribadi OEM/ODM dan lensa nilon tersuai."
-seoKeywords: "pengilang cermin mata hitam logam tanpa bingkai, OEM kacamata premium KRO-203, cermin mata label peribadi China, borong cermin mata hitam rimless, cermin mata lensa nilon tersuai, pembekal cermin mata engsel spring, kilang kacamata B2B China, kilang eksport cermin mata mewah"
+seoTitle: "Cermin Mata Hitam Logam Tanpa Rim Mewah KRS-203 | Pengilang OEM & ODM"
+seoDescription: "Rakan kongsi dengan kilang Cina profesional untuk cermin mata hitam tanpa rim logam premium KRS-203. Menawarkan 300 MOQ untuk label peribadi OEM/ODM dan kanta nilon tersuai."
+seoKeywords: "pengilang cermin mata hitam logam tanpa rim, pengeluaran kacamata premium KRS-203, label peribadi kacamata China, borong cermin mata hitam tanpa rim, cermin mata hitam kanta nilon tersuai, pembekal kacamata engsel spring, kilang kacamata B2B China, kilang kacamata eksport mewah"
 ---
 
 ## Ciri-ciri Utama
 
-- **Pembinaan Logam Premium:** Bingkai dan tangkai logam berkualiti tinggi yang direka untuk ketahanan jangka panjang dan estetika mewah yang halus.
-- **Reka Bentuk Tanpa Bingkai Minimalis:** Seni bina tanpa bingkai yang canggih menawarkan rasa ultra-ringan dan profil moden yang bergaya.
-- **Engsel Spring Ketepatan:** Engsel struktur spring canggih yang memberikan kelancaran operasi dan kesesuaian yang fleksibel serta selamat untuk pelbagai bentuk wajah.
-- **Optik Berprestasi Tinggi:** Lensa nilon tenacious tersedia dalam pelbagai pilihan gradien dan nada dengan perlindungan UV penuh dan keupayaan penyesuaian.
-- **Alas Hidung Logam Tahan Lama:** Alas hidung logam bersepadu yang direka untuk sokongan stabil dan kesesuaian yang selesa serta konsisten sepanjang hari.
-- **Skalabiliti OEM & ODM Penuh:** Pilihan penyesuaian yang meluas termasuk logo, bahan, dan saiz dengan kuantiti pesanan minimum B2B profesional sebanyak 300 unit.
+- **Binaan Logam Premium:** Bingkai dan batang logam berkualiti tinggi yang direka untuk ketahanan jangka panjang dan estetika mewah yang halus.
+- **Reka Bentuk Minimalis Tanpa Rim:** Seni bina tanpa rim yang canggih menawarkan rasa ultra ringan dan profil moden yang bergaya.
+- **Engsel Spring Ketepatan:** Engsel struktur spring termaju yang memberikan kelancaran operasi dan padanan yang fleksibel serta selamat untuk pelbagai bentuk muka.
+- **Optik Berprestasi Tinggi:** Kanta nilon teguh tersedia dalam pelbagai pilihan warna dan warna dengan perlindungan UV penuh dan keupayaan penyesuaian.
+- **Alas Hidung Logam Tahan Lama:** Alas hidung logam bersepadu yang direka untuk sokongan stabil dan padanan yang selesa serta konsisten sepanjang hari.
+- **Kebolehskalaan OEM & ODM Penuh:** Pilihan penyesuaian yang luas termasuk logo, bahan dan saiz dengan kuantiti pesanan minimum B2B profesional sebanyak 300 unit.
 
 ## Sesuai Untuk
 
-- Jenama Kacamata Premium
+- Merek Kacamata Premium
 - Pereka Kacamata Berkesan
 - Pengedar Label Peribadi
 - Rantai Optik Bergengsi
@@ -72,4 +71,8 @@ seoKeywords: "pengilang cermin mata hitam logam tanpa bingkai, OEM kacamata prem
 
 ## Overview
 
-Menggabungkan pembinaan logam premium dengan reka bentuk tanpa bingkai yang canggih, model KRO-203 menawarkan estetika minimalis mewah yang menarik minat pengguna global moden. Penggunaan engsel struktur spring ketepatan dan lensa nilon tenacious memastikan kesesuaian yang fleksibel dan selamat di samping prestasi optik yang luar biasa serta ketahanan jangka panjang. Dengan keupayaan pembuatan OEM dan ODM yang komprehensif—termasuk nada lensa tersuai dan aplikasi logo berbilang lapisan—model ini tersedia dengan kuantiti pesanan minimum 300 unit yang direka khusus untuk rangkaian optik mewah dan jenama kacamata label peribadi.
+Estetika tanpa rim bertemu dengan integriti struktur dalam KRS-203, model yang ditakrifkan oleh profil minimalis dan binaan batang logam premium.
+
+Direka dengan engsel spring ketepatan dan kanta nilon yang teguh, bingkai ini memberikan padanan yang selamat dan bebas tekanan yang mengekalkan geometrinya melalui penggunaan komersial yang berpanjangan.
+
+Menyokong penyesuaian tempahan penuh daripada warna kanta tersuai kepada aplikasi logo pelbagai proses pada MOQ 300 unit, siri ini membolehkan label fesyen butik melancarkan koleksi tanpa rim mewah dengan ketepatan pembuatan.

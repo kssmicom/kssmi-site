@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "Custom Rimless Sunglasses"
 slug: "krs-210-rimless-sunglasses"
-itemNo: "KRO-210"
+itemNo: "KRS-210"
 date: "2026-04-06"
 colors: "Gradient-Green & Grradient-Purple & Gradient-Brown & Gradient-Gray"
 materials: "Premium Metal & Customize Material"
@@ -11,9 +11,8 @@ moq: "300 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
-material: "Rimless Sunglasses"
-series: "sunglasses, rimless-sunglasses, rimless-eyewear"
-categories: "Sunglasses, Rimless Sunglasses"
+material: "Metal"
+series: "Rimless Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "56-19-140mm & Customization"
@@ -47,8 +46,8 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KRO-210 Luxury Rimless Metal Sunglasses | Wholesale Supplier"
-seoDescription: "Elevate your private label portfolio with customizable KRO-210 rimless metal sunglasses. Full OEM/ODM service, premium nylon optics, and low 300 MOQ per model."
+seoTitle: "KRS-210 Luxury Rimless Metal Sunglasses | Wholesale Supplier"
+seoDescription: "Elevate your private label portfolio with customizable KRS-210 rimless metal sunglasses. Full OEM/ODM service, premium nylon optics, and low 300 MOQ per model."
 seoKeywords: "rimless metal sunglasses manufacturer, wholesale rimless eyewear, custom sunglasses production, Chinese eyewear factory, luxury private label eyewear, bespoke metal frames supplier, OEM rimless sunglasses, China eyewear production"
 ---
 
@@ -70,4 +69,8 @@ seoKeywords: "rimless metal sunglasses manufacturer, wholesale rimless eyewear, 
 
 ## Overview
 
-A minimalist rimless aesthetic meets industrial-grade durability in the KRO-210, a model defined by its premium metal architecture and high-clarity nylon optics. Designed for both visual elegance and long-term reliability, the frame integrates adaptive spring hinges and hypoallergenic silicone components to ensure a superior user experience. Kssmi supports comprehensive brand differentiation through versatile OEM and ODM capabilities, encompassing custom material sourcing and precision logo integration across all production runs. Featuring a low 300-unit minimum order quantity, this design provides a scalable manufacturing solution for luxury retail groups and independent eyewear houses worldwide.
+The KRS-210 embodies a sophisticated rimless aesthetic, balancing minimalist visual appeal with high-grade metal architecture for long-term structural integrity. Its lightweight profile is engineered to meet the demands of premium portfolios where elegance and durability are equally prioritized.
+
+Equipped with high-clarity nylon optics and adaptive spring structure hinges, this model ensures a precise, comfortable fit that adapts seamlessly to the wearer. The hypoallergenic silicone components further enhance the ergonomic experience for extended daily use.
+
+Kssmi provides extensive private label customization—from bespoke material sourcing to multi-method logo integration—backed by a flexible 300-piece minimum order quantity. This manufacturing scale empowers independent designers and luxury retail groups to deliver exclusive, market-ready eyewear collections.

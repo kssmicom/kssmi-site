@@ -1,23 +1,22 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Özel Karbon Elyaf Optik Çerçeve"
+title: "Özel Karbon Fiber Optik Çerçeve"
 slug: "kso-005-carbon-fiber-optical-frame"
 itemNo: "KSO-005"
 date: "2026-04-05"
-colors: "Karbon Elyaf & Ak Meşe & Sapele & Abanoz"
-materials: "Premium Karbon Elyaf"
-serviceMode: "Sözleşmeli Üretim & Tasarım ve Üretim ( Özelleştirme )"
+colors: "Karbon Fiber & Beyaz Meşe & Sapele & Abanoz"
+materials: "Premium Karbon Fiber"
+serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
 moq: "300 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
 material: "Carbon Fiber"
-series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
-categories: "Optical Frames, Carbon Fiber Optical Frames"
+series: "Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "46-23-145mm & Özelleştirme"
-frameMaterial: "Premium Karbon Elyaf Çerçeve ve Metal Sap"
+frameMaterial: "Premium Karbon Fiber Çerçeve ve Metal Saplar"
 lensMaterial: "Dayanıklı Naylon Lens & Özelleştirme"
 designStyle: "Benzersiz, Moda, Şık, Trend, Lüks, Unisex"
 nosePads: "Metal Burun Tamponları"
@@ -48,18 +47,18 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KSO-005 Lüks Karbon Elyaf Optik Çerçeve | OEM Üreticisi"
-seoDescription: "Küresel gözlük markaları için premium KSO-005 karbon elyaf optik çerçeveler. Metal saplı yüksek mukavemetli hibrit yapı. OEM/ODM için 300 MOQ."
-seoKeywords: "karbon elyaf optik çerçeve üreticisi, özel OEM optik çerçeveler, özel etiketli gözlük Çin, toptan karbon elyaf çerçeveler, lüks optik çerçeve fabrikası, yüksek segment gözlük OEM, ihracat kalitesinde optik çerçeveler"
+seoTitle: "KSO-005 Lüks Karbon Fiber Optik Çerçeve | OEM Üreticisi"
+seoDescription: "Küresel gözlük markaları için premium KSO-005 karbon fiber optik çerçeveler. Metal saplı yüksek mukavemetli hibrit yapı. OEM/ODM özelleştirmesi için 300 MOQ."
+seoKeywords: "karbon fiber optik çerçeve üreticisi, özel OEM optik çerçeveler, özel markalı gözlük Çin, toptan karbon fiber çerçeveler, lüks optik çerçeve fabrikası, üst düzey gözlük OEM, ihracat kalitesinde optik çerçeveler, karbon fiber gözlük tedarikçisi"
 ---
 
 ## Özellikler
-- **Havacılık Sınıfı Malzeme:** Üstün dayanıklılık ve hafif konfor için olağanüstü mukavemet-ağırlık oranı sunan premium karbon elyaf çerçeveler.
-- **Hibrit Yapı:** Sofistike ve lüks bir estetik için şık metal saplarla birleştirilmiş yüksek performanslı karbon elyaf ön kısım.
-- **Esnek Donanım:** Hassas mühendislikle tasarlanmış yaylı menteşe yapısı, adaptif konfor ve uzun vadeli operasyonel güvenilirlik sağlar.
-- **Yüksek Segment Optik:** Birinci sınıf optik netlik için geniş özelleştirme seçeneklerine sahip dayanıklı naylon lenslerle donatılmıştır.
-- **Gelişmiş Konfor:** Güvenli, ayarlanabilir bir uyum ve uzun süreli giyilebilirlik için tasarlanmış dayanıklı metal burun tamponları.
-- **Özelleştirilebilir Üretim:** Küresel marka genişlemesini desteklemek için 300 adetlik düşük MOQ ile ölçeklenebilir OEM ve ODM hizmetleri.
+- **Havacılık Sınıfı Malzeme:** Üstün dayanıklılık ve hafif konfor için olağanüstü güç-ağırlık oranı sunan premium karbon fiber çerçeveler.
+- **Hibrit Yapı:** Sofistike ve lüks bir estetik için yüksek performanslı karbon fiber ön kısım ile şık metal sapların birleşimi.
+- **Esnek Donanım:** Adaptif konfor ve uzun vadeli operasyonel güvenilirlik sağlayan hassas mühendislik ürünü yaylı menteşeler.
+- **Üst Düzey Optik:** Üstün optik netlik için kapsamlı özelleştirme seçeneklerine sahip dayanıklı naylon lenslerle donatılmıştır.
+- **Rafine Konfor:** Güvenli, ayarlanabilir bir oturuş ve kalıcı giyilebilirlik için tasarlanmış dayanıklı metal burun pedleri.
+- **Özelleştirilebilir Üretim:** Küresel marka genişlemesini desteklemek için 300 parçalık düşük MOQ ile ölçeklenebilir OEM ve ODM hizmetleri.
 
 ## İçin Mükemmel
 - Premium Gözlük Markaları
@@ -69,6 +68,10 @@ seoKeywords: "karbon elyaf optik çerçeve üreticisi, özel OEM optik çerçeve
 - Lüks Moda Evleri
 - Spor ve Otomotiv Yaşam Tarzı Markaları
 
-## Genel Bakış
+## Ürün Genel Bakış
 
-Yüksek segment optik pazarlarının talepleri için tasarlanan KSO-005, premium karbon elyafı dayanıklı metal saplarla birleştiren sofistike bir hibrit yapı kullanır. Bu malzeme füzyonu, hem modern hem de zamansız bir his veren olağanüstü bir mukavemet-ağırlık oranı ve benzersiz bir doku sunarken, entegre yaylı menteşeler profesyonel kalitede bir uyum için gereken adaptif esnekliği sağlar. Kssmi, bu çok yönlü çerçeveyi kapsamlı OEM/ODM hizmetleri ve 300 adetlik MOQ ile sunarak, lüks yaşam tarzı markalarının ve özel dağıtımcıların ısmarlama koleksiyonlarını hassas mühendislikle üretilmiş gözlüklerle ölçeklendirmelerine olanak tanır.
+Üst düzey gözlükçülükte yeni bir standart belirleyen bu model, rafine ve modern bir estetik için premium karbon fiberi şık metal saplarla birleştiriyor. Havacılık sınıfı malzeme, her çerçevenin hafif olduğu kadar dayanıklı olmasını sağlayan üstün bir mukavemet-ağırlık oranı sunar.
+
+Hassas mühendislik ürünü yaylı menteşeler ve dayanıklı metal burun pedleri adaptif konfor sunarken, dayanıklı naylon lensler en titiz kullanıcılar için optik netlik sağlar.
+
+300 adetlik düşük minimum sipariş miktarı ile tam OEM/ODM kapsamını destekleyen Kssmi, lüks markaların ve bağımsız tasarımcıların dünya çapında hassas üretilmiş özel koleksiyonlar sunmalarını sağlar.

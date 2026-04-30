@@ -4,27 +4,26 @@ title: "Bingkai Optik Gentian Karbon Tersuai"
 slug: "kso-005-carbon-fiber-optical-frame"
 itemNo: "KSO-005"
 date: "2026-04-05"
-colors: "Gentian Karbon & Oak Putih & Sapele & Kayu Arang"
+colors: "Gentian Karbon & Oak Putih & Sapele & Ebony"
 materials: "Gentian Karbon Premium"
-serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
+serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
 material: "Carbon Fiber"
-series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
-categories: "Optical Frames, Carbon Fiber Optical Frames"
+series: "Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "46-23-145mm & Penyesuaian"
-frameMaterial: "Bingkai Gentian Karbon Premium dan Temple Logam"
-lensMaterial: "Lensa Nilon Kental & Penyesuaian"
-designStyle: "Unik, Fesyen, Bergaya, Trendi, Mewah, Unisex"
+frameMaterial: "Bingkai Gentian Karbon Premium dan Kuil Logam"
+lensMaterial: "Lensa Nilon Lasak & Penyesuaian"
+designStyle: "Unik, Fesyen, Bergaya, Trend, Mewah, Unisex"
 nosePads: "Alas Hidung Logam"
 hinge: "Engsel Struktur Spring & Penyesuaian"
 logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Lencana Logam, Timbulan, Kristal, Pelekat"
 service: "Pembuatan OEM / ODM – Penyesuaian"
-carbonFiberFeature: "Ringan & Nisbah Kekuatan-ke-Berat Tinggi & Fleksibiliti & Ketahanan & Hipolergenik & Tekstur Unik"
+carbonFiberFeature: "Ringan & Nisbah Kekuatan-ke-Berat Tinggi & Fleksibiliti & Ketahanan & Hipialergenik & Tekstur Unik"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kso-005-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-005-1.webp"
@@ -48,18 +47,18 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Bingkai Optik Mewah KSO-005 Gentian Karbon | Pengilang OEM"
-seoDescription: "Bingkai optik premium KSO-005 gentian karbon untuk jenama kacamata global. Pembinaan hibrid kekuatan tinggi dengan temple logam. 300 MOQ untuk OEM/ODM."
-seoKeywords: "pengilang bingkai optik gentian karbon, bingkai optik OEM tersuai, kacamata label peribadi China, borong bingkai gentian karbon, kilang bingkai optik mewah"
+seoTitle: "Bingkai Optik Gentian Karbon Mewah KSO-005 | Pengilang OEM"
+seoDescription: "Bingkai optik gentian karbon premium KSO-005 untuk jenama kacamata global. Pembinaan hibrid kekuatan tinggi dengan kuil logam. MOQ 300 untuk penyesuaian OEM/ODM."
+seoKeywords: "pengilang bingkai optik gentian karbon, bingkai optik OEM tersuai, kacamata label peribadi China, borong bingkai gentian karbon, kilang bingkai optik mewah, OEM kacamata mewah, bingkai optik kualiti eksport, pembekal kacamata gentian karbon"
 ---
 
 ## Ciri-ciri Utama
 - **Bahan Gred Aeroangkasa:** Bingkai gentian karbon premium yang menawarkan nisbah kekuatan-ke-berat yang luar biasa untuk ketahanan unggul dan keselesaan ringan.
-- **Pembinaan Hibrid:** Bahagian hadapan gentian karbon prestasi tinggi digabungkan dengan kaki (temple) logam yang kemas untuk estetika mewah yang canggih.
-- **Perkakasan Fleksibel:** Engsel struktur spring kejuruteraan jitu yang menyediakan keselesaan adaptif dan kebolehpercayaan operasi jangka panjang.
-- **Optik Gred Tinggi:** Dilengkapi dengan lensa nilon kental yang mempunyai pilihan penyesuaian yang luas untuk kejelasan optik premium.
-- **Keselesaan Halus:** Alas hidung logam tahan lama yang direka untuk kesesuaian yang selamat, boleh laras dan kebolehpakaian yang berpanjangan.
-- **Pengeluaran Boleh Suai:** Perkhidmatan OEM dan ODM boleh skala dengan MOQ rendah sebanyak 300 unit untuk menyokong pengembangan jenama global.
+- **Pembinaan Hibrid:** Bahagian hadapan gentian karbon berprestasi tinggi digabungkan dengan kuil logam yang anggun untuk estetika mewah yang canggih.
+- **Perkakasan Fleksibel:** Engsel struktur spring yang direka dengan ketepatan memberikan keselesaan adaptif dan kebolehpercayaan operasi jangka panjang.
+- **Optik Gred Tinggi:** Dilengkapi dengan lensa nilon lasak yang menampilkan pilihan penyesuaian yang meluas untuk kejelasan optik premium.
+- **Keselesaan Halus:** Alas hidung logam tahan lama yang direka untuk kesesuaian yang selamat, boleh laras dan kebolehpercayaan jangka panjang.
+- **Pengeluaran Boleh Suai:** Perkhidmatan OEM dan ODM yang boleh diskalakan dengan MOQ rendah sebanyak 300 unit untuk menyokong pengembangan jenama global.
 
 ## Sesuai Untuk
 - Merek Kacamata Premium
@@ -69,6 +68,10 @@ seoKeywords: "pengilang bingkai optik gentian karbon, bingkai optik OEM tersuai,
 - Rumah Fesyen Mewah
 - Jenama Gaya Hidup Sukan & Automotif
 
-## Gambaran Keseluruhan
+## Gambaran Keseluruhan Produk
 
-Direka untuk tuntutan pasaran optik mewah, KSO-005 menggunakan pembinaan hibrid canggih yang menggabungkan gentian karbon premium dengan kaki logam yang berdaya tahan. Gabungan bahan ini memberikan nisbah kekuatan-ke-berat yang luar biasa dan tekstur unik yang terasa moden dan abadi, manakala engsel spring bersepadu memberikan fleksibiliti adaptif yang diperlukan untuk kesesuaian gred profesional. Kssmi menawarkan bingkai serba boleh ini dengan perkhidmatan OEM/ODM komprehensif dan MOQ 300 unit, membolehkan label gaya hidup mewah dan pengedar peribadi meningkatkan skala koleksi tersuai mereka dengan kacamata buatan jitu.
+Mencipta standard baharu dalam kacamata mewah, model ini menyepadukan gentian karbon premium dengan kuil logam yang anggun untuk estetika moden yang halus. Bahan gred aeroangkasa memberikan nisbah kekuatan-ke-berat yang unggul, memastikan setiap bingkai adalah teguh dan ringan.
+
+Engsel spring yang direka dengan ketepatan dan alas hidung logam yang tahan lama memberikan keselesaan adaptif, manakala lensa nilon lasak memastikan kejelasan optik untuk pengguna yang paling menuntut.
+
+Menyokong skop OEM/ODM penuh dengan kuantiti pesanan minimum 300 unit yang rendah, Kssmi memperkasakan jenama mewah dan pereka bebas untuk menyampaikan koleksi tersuai yang dikeluarkan dengan ketepatan di peringkat global.

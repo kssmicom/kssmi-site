@@ -2,9 +2,9 @@
 # ─────────────────────────────────────────────────────
 title: "Custom Rimless Sunglasses"
 slug: "krs-209-rimless-sunglasses"
-itemNo: "KRO-209"
+itemNo: "KRS-209"
 date: "2026-04-06"
-colors: "Gradient-Green & Grradient-Purple & Gradient-Brown & Gradient-Gray"
+colors: "Gradient-Green & Gradient-Purple & Gradient-Brown & Gradient-Gray"
 materials: "Premium Metal & Customize Material"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model"
@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Sunglasses"
 material: "Rimless Sunglasses"
 series: "sunglasses, rimless-sunglasses, rimless-eyewear"
-categories: "Sunglasses, Rimless Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "56-19-140mm & Customization"
@@ -47,8 +46,8 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KRO-209 Luxury Rimless Metal Sunglasses | Wholesale Supplier"
-seoDescription: "Partner with a premier custom manufacturer for premium KRO-209 rimless metal sunglasses. Professional OEM/ODM services for luxury private label brands with 300 MOQ."
+seoTitle: "KRS-209 Luxury Rimless Metal Sunglasses | Wholesale Supplier"
+seoDescription: "Partner with a premier custom manufacturer for premium KRS-209 rimless metal sunglasses. Professional OEM/ODM services for luxury private label brands with 300 MOQ."
 seoKeywords: "rimless sunglasses manufacturer, custom metal sunglasses, luxury private label eyewear, wholesale rimless frames, China sunglasses OEM, 300 MOQ eyewear factory, premium Chinese supplier, boutique eyewear production"
 ---
 
@@ -70,4 +69,8 @@ seoKeywords: "rimless sunglasses manufacturer, custom metal sunglasses, luxury p
 
 ## Overview
 
-For brands seeking a balance of contemporary style and structural integrity, the KRO-209 offers a refined rimless profile built with precision-machined metal components. These sunglasses integrate high-clarity nylon lenses and flexible spring hinges to deliver a premium user experience that aligns with high-fashion standards. Through our dedicated OEM and ODM services, we enable clients to customize every detail from logo placement to material finishes with a manageable 300-piece MOQ. Kssmi's manufacturing expertise ensures that each production run maintains the consistency required by concept stores and multi-brand distributors worldwide.
+Engineered for brands that prioritize refined aesthetics and structural integrity, the KRS-209 features a sleek rimless profile crafted from precision-machined premium metal.
+
+High-clarity nylon lenses and responsive spring hinges ensure long-term comfort and a secure fit for high-fashion wearers.
+
+We support full OEM and ODM customization from bespoke finishes to private labeling at a 300-piece MOQ, enabling luxury distributors to scale their exclusive eyewear collections.

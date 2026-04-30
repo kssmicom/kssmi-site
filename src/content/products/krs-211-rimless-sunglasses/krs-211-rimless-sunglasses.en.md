@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Sunglasses"
 material: "Rimless Sunglasses"
 series: "sunglasses, rimless-sunglasses, rimless-eyewear"
-categories: "Sunglasses, Rimless Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "45-25-145mm & Customization"
@@ -60,4 +59,9 @@ seoKeywords: "rimless titanium sunglasses manufacturer, custom OEM eyewear suppl
 
 ## Overview
 
-Crafted from premium titanium, this rimless design prioritizes a weightless aesthetic without compromising the structural resilience required for high-end retail environments. Tenacious nylon lenses and precision 2+1 barrel hinges provide a foundation of durability, while hypoallergenic silicone nose pads ensure exceptional comfort for all-day wear. Our specialized OEM and ODM services offer extensive customization paths—from bespoke logo techniques to tailored lens tints—specifically optimized for a low 300-piece minimum order quantity. This manufacturing flexibility enables boutique labels and independent eyewear designers to efficiently scale their luxury collections with high-performance, trend-driven silhouettes.
+Aerospace-grade titanium defines the structural identity of the KRS-211, offering a weightless rimless aesthetic that meets the rigorous demands of high-end retail.
+
+The precision 2+1 barrel hinges and impact-resistant nylon lenses ensure exceptional durability and long-term operational consistency.
+
+With full OEM/ODM support and a low 300-piece minimum order quantity, we empower boutique brands to launch bespoke luxury eyewear collections with complete manufacturing transparency.
+

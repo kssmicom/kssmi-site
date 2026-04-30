@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "Custom Rimless Sunglasses"
 slug: "krs-208-rimless-sunglasses"
-itemNo: "KRO-208"
+itemNo: "KRS-208"
 date: "2026-04-06"
 colors: "Gradient-Green & Grradient-Purple & Gradient-Brown & Gradient-Gray"
 materials: "Premium Metal & Customize Material"
@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Sunglasses"
 material: "Rimless Sunglasses"
 series: "sunglasses, rimless-sunglasses, rimless-eyewear"
-categories: "Sunglasses, Rimless Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "56-19-140mm & Customization"
@@ -47,8 +46,8 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KRO-208 Fashion Rimless Metal Sunglasses | Wholesale Supplier"
-seoDescription: "Partner with a leading Chinese manufacturer for KRO-208 rimless metal sunglasses. Offering premium OEM/ODM customization and 300 MOQ for global B2B brands."
+seoTitle: "KRS-208 Fashion Rimless Metal Sunglasses | Wholesale Supplier"
+seoDescription: "Partner with a leading Chinese manufacturer for KRS-208 rimless metal sunglasses. Offering premium OEM/ODM customization and 300 MOQ for global B2B brands."
 seoKeywords: "rimless sunglasses manufacturer, custom metal sunglasses OEM, wholesale rimless eyewear China, luxury sunglasses factory, private label metal frames, ODM sunglasses supplier, export-quality rimless glasses, B2B eyewear manufacturer"
 ---
 
@@ -72,5 +71,9 @@ seoKeywords: "rimless sunglasses manufacturer, custom metal sunglasses OEM, whol
 
 ## Overview
 
-Characterized by a minimalist rimless construction and high-grade metal temples, the KRO-208 offers a sophisticated aesthetic that meets the rigorous standards of global eyewear brands. Every pair integrates precision-engineered spring hinges and impact-resistant nylon lenses, ensuring these frames maintain their structural integrity and optical clarity through intensive professional use. Kssmi provides extensive OEM/ODM customization across lens gradients and frame finishes, allowing independent designers to tailor every detail to their specific brand identity. With a flexible 300-piece minimum order quantity, Kssmi delivers these high-end rimless frames to luxury fashion houses and private-label distributors looking for precision-manufactured eyewear collections.
+Precision meets minimalism in this rimless construction, where high-grade metal temples provide a sophisticated, lightweight profile for luxury eyewear collections.
+
+Integrated spring hinges ensure consistent flexibility and durability, while impact-resistant nylon lenses deliver professional-grade optical clarity across diverse lighting conditions.
+
+Kssmi facilitates full brand integration through versatile lens gradients and bespoke hardware finishes, supporting independent designers with a scalable 300-piece minimum order quantity.
 

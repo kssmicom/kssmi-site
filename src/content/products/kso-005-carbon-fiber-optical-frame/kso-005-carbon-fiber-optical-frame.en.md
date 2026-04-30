@@ -12,8 +12,7 @@ moq: "300 PCS/Model"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
 material: "Carbon Fiber"
-series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
-categories: "Optical Frames, Carbon Fiber Optical Frames"
+series: "Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "46-23-145mm & Customization"
@@ -71,4 +70,8 @@ seoKeywords: "carbon fiber optical frame manufacturer, custom OEM optical frames
 
 ## Overview
 
-Engineered for the demands of high-end optical markets, the KSO-005 utilizes a sophisticated hybrid construction that pairs premium carbon fiber with resilient metal temples. This fusion of materials delivers an exceptional strength-to-weight ratio and a unique texture that feels both modern and timeless, while integrated spring hinges provide the adaptive flexibility required for a professional-grade fit. Kssmi offers this versatile frame with comprehensive OEM/ODM services and a 300-unit MOQ, enabling luxury lifestyle labels and private distributors to scale their bespoke collections with precision-manufactured eyewear.
+Crafting a new standard in high-end eyewear, this model integrates premium carbon fiber with sleek metal temples for a refined, modern aesthetic. The aerospace-grade material provides a superior strength-to-weight ratio, ensuring each frame is as resilient as it is lightweight.
+
+Precision-engineered spring hinges and durable metal nose pads deliver adaptive comfort, while tenacious nylon lenses ensure optical clarity for the most demanding users.
+
+Supporting full OEM/ODM scope with a low 300-piece minimum order quantity, Kssmi empowers luxury brands and independent designers to deliver bespoke, precision-manufactured collections globally.

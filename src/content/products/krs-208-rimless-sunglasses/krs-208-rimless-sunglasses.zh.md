@@ -2,18 +2,17 @@
 # ─────────────────────────────────────────────────────
 title: "定制无框太阳镜"
 slug: "krs-208-rimless-sunglasses"
-itemNo: "KRO-208"
+itemNo: "KRS-208"
 date: "2026-04-06"
 colors: "渐变绿 & 渐变紫 & 渐变棕 & 渐变灰"
 materials: "优质金属 & 定制材质"
 serviceMode: "代工生产 (OEM) & 设计制造 (ODM) ( 定制 )"
-moq: "300 PCS/Model"
+moq: "300 付/款"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Rimless Sunglasses"
 series: "sunglasses, rimless-sunglasses, rimless-eyewear"
-categories: "Sunglasses, Rimless Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "56-19-140mm & 定制服务"
@@ -47,8 +46,8 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KRO-208 时尚无框金属太阳镜 | 批发供应商"
-seoDescription: "与领先的中国制造商合作，生产 KRO-208 无框金属太阳镜。为全球 B2B 品牌提供优质的 OEM/ODM 定制服务和 300 付起订量。"
+seoTitle: "KRS-208 时尚无框金属太阳镜 | 批发供应商"
+seoDescription: "与领先的中国制造商合作，生产 KRS-208 无框金属太阳镜。为全球 B2B 品牌提供优质的 OEM/ODM 定制服务和 300 付起订量。"
 seoKeywords: "无框太阳镜制造商, 定制金属太阳镜代工, 中国批发无框眼镜, 奢华太阳镜工厂, 私有品牌金属镜框, ODM 太阳镜供应商, 出口级无框眼镜, B2B 眼镜制造商"
 ---
 
@@ -72,4 +71,8 @@ seoKeywords: "无框太阳镜制造商, 定制金属太阳镜代工, 中国批�
 
 ## 概览
 
-KRO-208 以简约的无框结构和高等级金属镜腿为特色，展现了符合全球眼镜品牌严苛标准的精致美学。每一副眼镜都集成了精密制造的弹簧铰链和抗冲击尼龙镜片，确保镜架在密集的专业使用中保持结构完整性和光学清晰度。Kssmi 提供涵盖镜片渐变色和镜架饰面的广泛 OEM/ODM 定制服务，允许独立设计师根据特定的品牌标识定制每一个细节。凭借灵活的 300 付最小订单量，Kssmi 为寻求精密制造眼镜系列的奢侈时装品牌和私有品牌经销商提供这些高端无框镜架。
+精准与极简主义在这款无框结构中完美融合，高等级金属镜腿为奢侈眼镜系列提供了精致且轻便的轮廓。
+
+集成的弹簧铰链确保了持久的灵活性和耐用性，而抗冲击尼龙镜片在各种光线条件下都能提供专业级的光学清晰度。
+
+Kssmi 通过多样的镜片渐变和定制硬件饰面，助力品牌深度集成，并以 300 付的灵活起订量支持独立设计师。

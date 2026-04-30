@@ -2,9 +2,9 @@
 # ─────────────────────────────────────────────────────
 title: "Custom Rimless Sunglasses"
 slug: "krs-205-rimless-sunglasses"
-itemNo: "KRO-205"
+itemNo: "KRS-205"
 date: "2026-04-06"
-colors: "Gradient-Blue & Grradient-Purple & Gradient-Brown & Dark-Gray"
+colors: "Gradient-Blue & Gradient-Purple & Gradient-Brown & Dark-Gray"
 materials: "Premium Metal & Customize Material"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model"
@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Sunglasses"
 material: "Rimless Sunglasses"
 series: "sunglasses, rimless-sunglasses, rimless-eyewear"
-categories: "Sunglasses, Rimless Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "56-19-145mm & Customization"
@@ -47,9 +46,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KRO-205 Luxury Rimless Metal Sunglasses Wholesale Supplier | OEM"
-seoDescription: "Partner with a premier Chinese export manufacturer for high-quality KRO-205 luxury rimless metal sunglasses. Specializing in OEM/ODM with 300 MOQ. Inquire now!"
-seoKeywords: "rimless metal sunglasses manufacturer, wholesale luxury eyewear China, custom rimless sunglasses OEM, private label sunglasses factory, KRO-205 sunglasses supplier, export-quality rimless eyewear, ODM fashion sunglasses China"
+seoTitle: "KRS-205 Luxury Rimless Metal Sunglasses Wholesale Supplier | OEM"
+seoDescription: "Partner with a premier Chinese export manufacturer for high-quality KRS-205 luxury rimless metal sunglasses. Specializing in OEM/ODM with 300 MOQ. Inquire now!"
+seoKeywords: "rimless metal sunglasses manufacturer, wholesale luxury eyewear China, custom rimless sunglasses OEM, private label sunglasses factory, KRS-205 sunglasses supplier, export-quality rimless eyewear, ODM fashion sunglasses China"
 ---
 ## Technical Features
 
@@ -71,4 +70,8 @@ seoKeywords: "rimless metal sunglasses manufacturer, wholesale luxury eyewear Ch
 
 ## Overview
 
-B2B buyers seeking a balance of minimalist design and technical durability will find this premium metal rimless model an ideal addition to high-end optical portfolios. The integration of tenacious nylon lenses and precision spring hinges ensures a lightweight yet resilient frame that maintains its structural integrity across high-volume usage. Kssmi facilitates complete brand differentiation through advanced logo application methods and tailored material options, supporting professional OEM and ODM requirements. Backed by a 300-piece minimum order quantity, our manufacturing facility delivers the consistent quality and production scale necessary for luxury fashion houses and global eyewear distributors.
+Engineered for minimalist sophistication, the KRS-205 features a premium metal frame that redefines rimless aesthetics for the luxury market. Its lightweight architecture combines structural resilience with a refined profile, appealing to brands seeking high-end technical clarity.
+
+Integrated spring hinges and tenacious nylon lenses ensure consistent tension and superior impact resistance across long-term use.
+
+Supporting full OEM and ODM customization with a 300-piece minimum order quantity, our facility enables independent designers and global retail chains to launch bespoke, market-ready collections.

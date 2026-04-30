@@ -2,26 +2,25 @@
 # ─────────────────────────────────────────────────────
 title: "Kacamata Hitam Rimless Kustom"
 slug: "krs-205-rimless-sunglasses"
-itemNo: "KRO-205"
+itemNo: "KRS-205"
 date: "2026-04-06"
-colors: "Biru Gradasi & Ungu Gradasi & Coklat Gradasi & Abu-abu Tua"
-materials: "Logam Premium & Bahan Kustom"
-serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
+colors: "Biru Gradien & Ungu Gradien & Coklat Gradien & Abu-abu Peteng"
+materials: "Logam Premium & Bahan Kustomisasi"
+serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi)"
 moq: "300 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Rimless Sunglasses"
 series: "sunglasses, rimless-sunglasses, rimless-eyewear"
-categories: "Sunglasses, Rimless Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "56-19-145mm & Kustomisasi"
-frameMaterial: "Frame lan Gagang Logam Premium"
-lensMaterial: "Lensa Nilon Kuat & Kustomisasi"
-designStyle: "Fesyen, Bergaya, Trendi, Mewah, Unisex"
-nosePads: "Bantalan Irung Silikon"
-hinge: "Engsel Pegas & Kustomisasi"
+frameMaterial: "Frame lan gagang logam premium"
+lensMaterial: "Lensa nilon sing kuwat & Kustomisasi"
+designStyle: "Fashion, Gaya, Trendi, Mewah, Unisex"
+nosePads: "Bantalan irung silikon"
+hinge: "Engsel pegas & Kustomisasi"
 logo: "Cetak, Laser, Laser Karang Lengo, Cap Panas, Logo Logam, Timbulan, Kristal, Stiker"
 service: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 
@@ -47,17 +46,17 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Supplier Grosir Kacamata Hitam Logam KRO-205 | Produsen OEM"
-seoDescription: "Gabung karo produsen ekspor China sing misuwur kanggo kacamata hitam rimless logam KRO-205 sing bermutu tinggi. Spesialis OEM/ODM kanthi 300 MOQ. Inquire saiki!"
-seoKeywords: "produsen kacamata hitam logam tanpa bingkai, grosir kacamata mewah China, kacamata hitam kustom OEM, pabrik kacamata label pribadi, supplier kacamata KRO-205, ekspor kacamata rimless, kacamata fesyen ODM China"
+seoTitle: "Supplier Grosir Kacamata Hitam Logam Rimless Mewah KRS-205 | OEM"
+seoDescription: "Mitra karo produsen ekspor Cina sing unggul kanggo kacamata hitam logam rimless mewah KRS-205 berkualitas tinggi. Spesialis ing OEM/ODM kanthi MOQ 300. Takon saiki!"
+seoKeywords: "produsen kacamata hitam logam rimless, grosir kacamata mewah Cina, kacamata hitam rimless kustom OEM, pabrik kacamata hitam label pribadi, supplier kacamata hitam KRS-205, kacamata rimless kualitas ekspor, kacamata hitam fashion ODM Cina"
 ---
 ## Fitur
 
-- **Konstruksi Logam Enteng:** Frame lan gagang logam premium sing nawakake estetika minimalis sing alus kanti daya tahan sing luar biasa.
-- **Teknologi Lensa Canggih:** Lensa nilon kuat sing nyedhiyakake resistensi pengaruh lan kejelasan sing unggul, kanthi pilihan tinting kustom sing jembar.
-- **Engsel Pegas Presisi:** Struktur engsel pegas terintegrasi sing dirancang kanggo ketegangan sing konsisten lan kelancaran operasional jangka panjang.
-- **Kenyamanan Ergonomis:** Bantalan irung silikon hypoallergenic sing dirancang kanggo pas sing aman lan tanpa tekanan sajrone panggunaan sing suwe.
-- **Branding Kustom:** Cara aplikasi logo sing komprehensif, kalebu ukiran laser lan timbulan logam, kanggo identitas merek sing khas.
+- **Konstruksi Logam Entheng:** Frame lan gagang logam premium sing nawakake estetika minimalis kanthi daya tahan sing luar biasa.
+- **Teknologi Lensa Canggih:** Lensa nilon sing kuwat nyedhiyakake resistensi impact lan kejelasan sing unggul, kanthi pilihan tint kustom sing jembar.
+- **Engsel Pegas Presisi:** Engsel struktur pegas terintegrasi sing dirancang kanggo tegangan sing konsisten lan kelancaran operasional jangka panjang.
+- **Kenyamanan Ergonomis:** Bantalan irung silikon hypoallergenic sing dirancang kanggo pas sing aman lan bebas tekanan sajrone panggunaan sing suwe.
+- **Branding Kustom:** Metode aplikasi logo sing komprehensif, kalebu ukiran laser lan emboss logam, kanggo identitas merek sing khas.
 - **Produksi Skalabel:** Kustomisasi OEM & ODM sing fleksibel kanthi jumlah pesanan minimal B2B profesional 300 pcs kanggo ekspor global.
 
 ## Cocok kanggo
@@ -69,6 +68,10 @@ seoKeywords: "produsen kacamata hitam logam tanpa bingkai, grosir kacamata mewah
 - Chain Optik High-End
 - Toko Konsep & Multi-Merek
 
-## Overview
+## Fitur
 
-Para panuku B2B sing golek keseimbangan antarane desain minimalis lan daya tahan teknis bakal nemokake model rimless logam premium iki minangka tambahan sing cocog kanggo portofolio optik kelas dhuwur. Integrasi lensa nilon kuat lan engsel pegas presisi njamin frame sing enteng nanging kuat sing njaga integritas struktural liwat panggunaan volume dhuwur. Kssmi nggampangake diferensiasi merek sing lengkap liwat cara aplikasi logo canggih lan pilihan bahan sing disesuaikan, ndukung syarat OEM lan ODM profesional. Didukung dening jumlah pesanan minimal 300 unit, fasilitas manufaktur kita nyedhiyakake kualitas sing konsisten lan skala produksi sing dibutuhake kanggo rumah mode mewah lan distributor kacamata global.
+KRS-205 dirancang kanggo kecanggihan minimalis, nampilake frame logam premium sing nemtokake maneh estetika tanpa bingkai kanggo pasar mewah. Arsitektur sing entheng nggabungake daya tahan struktural karo profil sing apik, narik kawigaten merek sing nggoleki kejelasan teknis kelas dhuwur.
+
+Engsel pegas terintegrasi lan lensa nilon sing kuwat njamin tegangan sing konsisten lan resistensi impact sing unggul sajrone panggunaan jangka panjang.
+
+Kanthi ndhukung kustomisasi OEM lan ODM lengkap kanthi jumlah pesanan minimal 300 pcs, fasilitas kita ngidini desainer independen lan rantai ritel global kanggo miwiti koleksi kustom sing siap pasar.

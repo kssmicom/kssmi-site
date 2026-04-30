@@ -1,24 +1,23 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Cermin Mata Hitam Rimless Tersuai"
+title: "Cermin Mata Hitam Tanpa Bingkai Tersuai"
 slug: "krs-210-rimless-sunglasses"
-itemNo: "KRO-210"
+itemNo: "KRS-210"
 date: "2026-04-06"
 colors: "Hijau Gradien & Ungu Gradien & Coklat Gradien & Kelabu Gradien"
-materials: "Logam Premium & Bahan Boleh Suai"
-serviceMode: "OEM & ODM ( Penyesuaian )"
+materials: "Logam Premium & Bahan Tersuai"
+serviceMode: "Pembuatan OEM & Pembuatan ODM ( Penyesuaian )"
 moq: "300 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
-material: "Rimless Sunglasses"
-series: "sunglasses, rimless-sunglasses, rimless-eyewear"
-categories: "Sunglasses, Rimless Sunglasses"
+material: "Metal"
+series: "Rimless Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "56-19-140mm & Penyesuaian"
-frameMaterial: "Bingkai dan Temple Logam Premium"
-lensMaterial: "Lensa Nilon Lasak & Penyesuaian"
+frameMaterial: "Bingkai dan Tangkai Logam Premium"
+lensMaterial: "Kanta Nylon Lasak & Penyesuaian"
 designStyle: "Fesyen, Bergaya, Trend, Mewah, Unisex"
 nosePads: "Alas Hidung Silikon"
 hinge: "Engsel Struktur Spring & Penyesuaian"
@@ -47,27 +46,31 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KRO-210 Cermin Mata Hitam Rimless Logam Mewah | Pembekal Borong"
-seoDescription: "Tingkatkan portfolio label peribadi anda dengan cermin mata hitam logam rimless KRO-210 yang boleh disesuaikan. Perkhidmatan OEM/ODM penuh, optik nilon premium, dan MOQ rendah 300 bagi setiap model."
-seoKeywords: "pengilang cermin mata hitam logam rimless, borong cermin mata rimless, pengeluaran cermin mata hitam tersuai, kilang cermin mata China, cermin mata label peribadi mewah, pembekal bingkai logam tempahan, cermin mata hitam rimless OEM, pengeluaran cermin mata China"
+seoTitle: "Cermin Mata Hitam Logam Tanpa Bingkai Mewah KRS-210 | Pembekal Borong"
+seoDescription: "Tingkatkan portfolio label peribadi anda dengan cermin mata hitam logam tanpa bingkai KRS-210 yang boleh disesuaikan. Perkhidmatan OEM/ODM penuh, optik nilon premium, dan MOQ rendah 300 unit setiap model."
+seoKeywords: "pengilang cermin mata hitam logam tanpa bingkai, cermin mata tanpa bingkai borong, pengeluaran cermin mata tersuai, kilang cermin mata China, cermin mata label peribadi mewah, pembekal bingkai logam tempahan, cermin mata hitam tanpa bingkai OEM, pengeluaran cermin mata China"
 ---
 
 ## Ciri-ciri Utama
-- **Bahan Premium:** Bingkai dan temple logam gred tinggi menawarkan estetik yang canggih dan ringan dengan ketahanan struktur yang luar biasa.
-- **Optik Termaju:** Lensa nilon lasak dengan kejelasan tinggi memberikan rintangan hentaman yang unggul dan prestasi optik yang disesuaikan untuk koleksi cermin mata premium.
+- **Bahan Premium:** Bingkai dan tangkai logam gred tinggi menawarkan estetik yang canggih dan ringan dengan ketahanan struktur yang luar biasa.
+- **Optik Termaju:** Kanta nilon lasak dengan kejelasan tinggi memberikan rintangan hentaman yang unggul dan prestasi optik yang disesuaikan untuk koleksi cermin mata premium.
 - **Kejuruteraan Ketepatan:** Engsel struktur spring yang fleksibel memastikan padanan yang selesa dan adaptif serta kelancaran operasi jangka panjang.
-- **Keselesaan Ergonomik:** Alas hidung silikon hypoallergenic yang direka untuk padanan yang selamat dan bebas tekanan semasa pemakaian harian yang dilanjutkan.
-- **Penyesuaian Jenama:** Pilihan aplikasi logo serba boleh termasuk laser, logam, dan setem panas untuk integrasi identiti jenama yang lancar.
-- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum rendah sebanyak 300 unit yang disesuaikan untuk Jenama Cermin Mata Premium dan Pereka Cermin Mata Bebas.
+- **Keselesaan Ergonomik:** Alas hidung silikon hipoalergenik yang direka untuk padanan yang selamat dan bebas tekanan semasa pemakaian harian yang berpanjangan.
+- **Penyesuaian Jenama:** Pilihan aplikasi logo serba boleh termasuk laser, logam, dan setem panas untuk penyepaduan identiti jenama yang lancar.
+- **Pengeluaran Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum yang rendah iaitu 300 unit yang disesuaikan untuk Jenama Cermin Mata Premium dan Pereka Cermin Mata Bebas.
 
 ## Sesuai Untuk
-- Jenama Cermin Mata Premium
+- Merek Kacamata Premium
 - Pereka Kacamata Berkesan
 - Pengedar Label Peribadi
 - Kumpulan Stor Departments
-- runcit Dutypirlalu & Perjalanan
+- Runcit Dutypirlalu & Perjalanan
 - Kedai Konsep & Berbilang Jenama
 
-## Overview
+## Gambaran Keseluruhan Produk
 
-Estetik rimless minimalis bertemu dengan ketahanan gred industri dalam KRO-210, sebuah model yang ditakrifkan oleh seni bina logam premium dan optik nilon kejelasan tinggi. Direka untuk keanggunan visual dan kebolehpercayaan jangka panjang, bingkai ini menyepadukan engsel spring adaptif dan komponen silikon hypoallergenic untuk memastikan pengalaman pengguna yang unggul. Kssmi menyokong pembezaan jenama yang komprehensif melalui keupayaan OEM dan ODM yang serba boleh, merangkumi penyumberan bahan tersuai dan integrasi logo ketepatan merentas semua larian pengeluaran. Menampilkan kuantiti pesanan minimum serendah 300 unit, reka bentuk ini menyediakan penyelesaian pembuatan yang boleh skala untuk kumpulan runcit mewah dan rumah cermin mata bebas di seluruh dunia.
+KRS-210 melambangkan estetik tanpa bingkai yang canggih, mengimbangi tarikan visual minimalis dengan seni bina logam gred tinggi untuk integriti struktur jangka panjang. Profil ringannya direka untuk memenuhi tuntutan portfolio premium di mana keanggunan dan ketahanan diutamakan secara sama rata.
+
+Dilengkapi dengan optik nilon kejelasan tinggi dan engsel struktur spring adaptif, model ini memastikan padanan yang tepat dan selesa yang menyesuaikan diri dengan lancar kepada pemakai. Komponen silikon hipoalergenik meningkatkan lagi pengalaman ergonomik untuk penggunaan harian yang berpanjangan.
+
+Kssmi menyediakan penyesuaian label peribadi yang meluas—daripada sumber bahan tempahan kepada penyepaduan logo pelbagai kaedah—disokong oleh kuantiti pesanan minimum 300 unit yang fleksibel. Skala pembuatan ini memperkasakan pereka bebas dan kumpulan peruncitan mewah untuk menyampaikan koleksi cermin mata eksklusif yang sedia untuk pasaran.

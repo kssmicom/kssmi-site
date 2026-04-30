@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "Occhiali da Sole Rimless Personalizzati"
 slug: "krs-203-rimless-sunglasses"
-itemNo: "KRO-203"
+itemNo: "KRS-203"
 date: "2026-04-06"
 colors: "Marrone Sfumato & Blu Sfumato & Grigio Sfumato & Grigio Tinta"
 materials: "Metallo Premium & Materiale Personalizzato"
@@ -13,7 +13,6 @@ moq: "300 pz/modello"
 productType: "Sunglasses"
 material: "Rimless Sunglasses"
 series: "sunglasses, rimless-sunglasses, rimless-eyewear"
-categories: "Sunglasses, Rimless Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "54-20-140mm & Personalizzazione"
@@ -47,9 +46,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Occhiali da Sole Rimless in Metallo Lusso KRO-203 | Produttore OEM e ODM"
-seoDescription: "Collabora con una fabbrica cinese professionale per occhiali da sole rimless in metallo premium KRO-203. MOQ di 300 per private label OEM/ODM e lenti in nylon personalizzate."
-seoKeywords: "produttore occhiali da sole in metallo rimless, KRO-203 produzione occhiali premium, private label occhiali Cina, ingrosso occhiali da sole rimless, lenti in nylon personalizzate, fornitore occhiali cerniera a molla, fabbrica occhiali B2B Cina, fabbrica occhiali lusso export"
+seoTitle: "Occhiali da Sole Rimless in Metallo Lusso KRS-203 | Produttore OEM e ODM"
+seoDescription: "Collabora con una fabbrica cinese professionale per occhiali da sole rimless in metallo premium KRS-203. MOQ di 300 per private label OEM/ODM e lenti in nylon personalizzate."
+seoKeywords: "produttore occhiali da sole in metallo rimless, KRS-203 produzione occhiali premium, private label occhiali Cina, ingrosso occhiali da sole rimless, lenti in nylon personalizzate, fornitore occhiali cerniera a molla, fabbrica occhiali B2B Cina, fabbrica occhiali lusso export"
 ---
 
 ## Caratteristiche
@@ -72,4 +71,8 @@ seoKeywords: "produttore occhiali da sole in metallo rimless, KRO-203 produzione
 
 ## Overview
 
-Combinando una costruzione in metallo premium con un design rimless sofisticato, il modello KRO-203 offre un'estetica minimalista di alto livello che attrae i moderni consumatori globali. L'inclusione di cerniere con struttura a molla di precisione e lenti in nylon tenace assicura una calzata flessibile e sicura, insieme a prestazioni ottiche eccezionali e durata a lungo termine. Con capacità produttive OEM e ODM complete — inclusi colori delle lenti personalizzati e applicazioni di loghi multistrato — questo modello è disponibile con un quantitativo minimo d'ordine di 300 pezzi, studiato appositamente per catene ottiche di fascia alta e marchi di occhiali private label.
+L'estetica rimless incontra l'integrità strutturale nel modello KRS-203, definito dal suo profilo minimalista e dalla costruzione delle aste in metallo premium.
+
+Ingegnerizzate con cerniere a molla di precisione e lenti in nylon tenace, queste montature offrono una calzata sicura e priva di pressioni che mantiene la sua geometria anche dopo un uso commerciale prolungato.
+
+Supportando una personalizzazione completa, dalle tinte delle lenti personalizzate alle applicazioni di loghi multi-processo con un MOQ di 300 pezzi, questa serie consente ai marchi di moda boutique di lanciare una collezione rimless di alta gamma con precisione manifatturiera.
