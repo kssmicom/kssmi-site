@@ -1,30 +1,29 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Kacamata Hitam Logam Kustom"
+title: "Kacamata Ireng Logam Kustom"
 slug: "kms-117-metal-sunglasses"
 itemNo: "KMS-117"
 date: "2026-04-06"
 colors: "Ireng & Selaka & Bulus"
 materials: "Logam Premium lan Asetat"
-serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
+serviceMode: "OEM & ODM ( Kustomisasi )"
 moq: "300 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Metal Sunglasses"
 series: "sunglasses, metal-sunglasses,fashion-metal-sunglasses"
-categories: "Sunglasses, Metal Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "48-23-150mm & Kustomisasi"
 frameMaterial: "Frame Asetat Premium lan Gagang Logam"
-lensMaterial: "Lensa AC & Lensa Nylon Kuat & Kustomisasi"
-designStyle: "Fashion Keren, Gaya, Tren, Mewah, Unisex"
+lensMaterial: "Lensa AC & Lensa Nylon Kuwat & Kustomisasi"
+designStyle: "Fesyen Keren, Gaya, Tren, Mewah, Unisex"
 nosePads: "Bantalan Irung Logam Premium"
 hinge: "Engsel Struktur Tong 2+1 & Kustomisasi"
 logo: "Cetak, Laser, Laser Karang Lengo, Cap Panas, Logo Logam, Timbulan, Kristal, Stiker"
 service: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
-acetateFeature: "Entheng & Awet & Semangat"
+acetateFeature: "Entheng & Awet & Vibrant"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kms-117-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-117-1.webp"
@@ -47,17 +46,17 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KMS-117 Kacamata Hitam Mewah Asetat-Logam | Produsen Khusus"
-seoDescription: "Tingkatake portofolio label pribadi sampeyan nganggo kacamata hitam hibrida asetat lan logam mewah sing bisa disesuaikan. Kita nawakake produksi khusus OEM & ODM lengkap kanthi 300 MOQ."
-seoKeywords: "kacamata hitam mewah asetat logam, produsen kacamata OEM kustom, kacamata label pribadi premium, grosir bingkai busana butik, pabrik kacamata khusus Cina, kacamata hibrida sing bisa disesuaikan, produksi kacamata kacamata Cina"
+seoTitle: "KMS-117 Kacamata Ireng Mewah Asetat-Logam | Produsen Bespoke"
+seoDescription: "Tingkatake portofolio label pribadi sampeyan nganggo kacamata ireng hibrida asetat lan logam sing bisa dikustomisasi. Kita nawakake produksi bespoke OEM & ODM lengkap kanthi MOQ 300."
+seoKeywords: "kacamata ireng mewah asetat logam, produsen kacamata OEM kustom, kacamata ireng label pribadi premium, bingkai fesyen butik grosir, pabrik kacamata bespoke China, kacamata ireng hibrida bisa dikustomisasi, produksi kacamata ireng China"
 ---
 
 ## Fitur
-- **Konstruksi Hibrida:** Bingkai ngarep asetat premium sing digabungake karo gagang logam, nawakake estetika halus sing entheng, awet, lan semangat.
+- **Konstruksi Hibrida:** Bingkai ngarep asetat premium digabungake karo gagang logam, nawakake estetika sing apik sing entheng, awet, lan sregep.
 - **Hardware Awet:** Engsel struktur tong 2+1 sing stabil dirancang kanggo kelancaran operasional jangka panjang.
-- **Optik Premium:** Lensa AC kualitas dhuwur lan lensa nylon sing kuat kasedhiya kanthi pilihan kustomisasi sing jembar kanggo kejelasan lan proteksi sing optimal.
-- **Kenyamanan sing Luwih apik:** Bantalan irung logam premium dirancang kanggo pas sing aman lan profil estetika sing dhuwur.
-- **Produksi Scalable:** Kapasitas kustomisasi OEM lan ODM lengkap kanthi jumlah pesenan minimal 300 unit, digawe khusus kanggo Chain Optik High-End lan Label Busuk Fashion.
+- **Optik Premium:** Lensa AC berkualitas tinggi lan lensa nilon sing kuwat kasedhiya kanthi pilihan kustomisasi sing akeh kanggo kejelasan lan perlindungan sing optimal.
+- **Kenyamanan sing Luwih Apik:** Bantalan irung logam premium dirancang kanggo pas sing aman lan profil estetika sing dhuwur.
+- **Produksi sing Bisa Diukur:** Kapasitas kustomisasi OEM lan ODM lengkap kanthi jumlah pesenan minimal 300 pcs, digawe khusus kanggo Chain Optik High-End lan Label Busuk Fashion.
 
 ## Cocok kanggo
 - Merek Kacamata Premium
@@ -67,6 +66,10 @@ seoKeywords: "kacamata hitam mewah asetat logam, produsen kacamata OEM kustom, k
 - Label Busuk Fashion
 - P中小uters Dutypirlalu & Journey
 
-## Ringkasan
+## Ringkesan
 
-Campuran asetat premium sing semangat lan komponen logam sing apik, bingkai iki entuk keseimbangan sing sampurna antarane kenyamanan entheng lan kekuatan struktural sing tahan lama. Teknologi engsel tong 2+1 sing canggih digabungake kanthi lancar karo pilihan lensa kejelasan dhuwur, nyediakake arsitektur sing bisa dipercaya sing tahan kanggo panggunaan saben dina. Dirancang kanggo nambah portofolio maju label busana butik lan merek kacamata premium, siluet iki dadi dhasar sing serba guna kanggo identitas desain eksklusif sampeyan. Didukung dening infrastruktur produksi OEM lan ODM sing lengkap, kanthi rincian logo kustom lan jumlah pesenan minimal 300 unit sing bisa diakses, kita nyediakake dalan sing lancar saka spesifikasi kustom nganti peluncuran pasar.
+Nggabungake asetat premium sing sregep karo aksen logam sing apik, KMS-117 nggambarake identitas hibrida sing canggih kanggo koleksi kacamata modern.
+
+Arsitektur kasebut nduweni engsel tong 2+1 sing dirancang kanthi presisi lan lensa nilon sing bisa dikustomisasi, njamin daya tahan struktural lan kenyamanan sedina muput.
+
+Ndhukung kustomisasi OEM/ODM lengkap kanthi MOQ 300 pcs, model iki ngidini merek butik nggedhekake portofolio mewah liwat infrastruktur manufaktur khusus kita.

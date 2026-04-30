@@ -1,12 +1,12 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Özel Metal Güneş Gözlükleri"
+title: "Özel Metal Güneş Gözlüğü"
 slug: "kms-007-metal-sunglasses"
 itemNo: "KMS-007"
 date: "2026-04-06"
-colors: "Siyah & Gül & Kırmızı Kaplumbağa & Havana & Beyaz"
+colors: "Siyah & Gül & Kırmızı-Kaplumbağa & Havana & Beyaz"
 materials: "Premium Metal ve Asetat"
-serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) (Özelleştirme)"
+serviceMode: "OEM & ODM (Özelleştirme)"
 moq: "300 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -15,12 +15,12 @@ material: "Metal Sunglasses"
 series: "sunglasses, metal-sunglasses,fashion-metal-sunglasses"
 
 # ─────────────────────────────────────────────────────
-size: "46-24-140mm & Özelleştirme"
 frameMaterial: "Premium Asetat Çerçeve ve Metal Saplar"
 lensMaterial: "AC Lens & Dayanıklı Naylon Lens & Özelleştirme"
-designStyle: "Eşsiz, Şık, Trend, Lüks, Unisex"
+size: "46-24-140mm & Özelleştirme"
+designStyle: "Benzersiz, Şık, Trend, Lüks, Unisex"
 nosePads: "Premium Silikon Burun Tamponları"
-hinge: "Yaylı Yapı Menteşeleri & Özelleştirme"
+hinge: "Yaylı Menteşeler & Özelleştirme"
 logo: "Tampo Baskı, Lazer Markalama, Boya Dolgulu Lazer, Sıcak Baskı, Metal Logo, Kabartma Logo, Kristal Süsleme, 3D Etiket"
 service: "OEM / ODM Üretim – Özelleştirme"
 acetateFeature: "Hafif & Dayanıklı & Canlı"
@@ -44,18 +44,18 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KMS-007 Trend Hibrit Metal Güneş Gözlüğü | Özel Üretici"
-seoDescription: "Özelleştirilebilir hibrit metal güneş gözlükleriyle özel marka portföyünüzü yükseltin. Premium markalar için yüksek kaliteli asetat kaplamalar ve 300 MOQ."
-seoKeywords: "hibrit metal güneş gözlüğü üreticisi, çin özel gözlük üretimi, lüks özel etiketli güneş gözlüğü, toptan metal güneş gözlüğü tedarikçisi, özel asetat metal çerçeveler, özelleştirilebilir güneş gözlüğü oem, premium gözlük fabrikası çin, üst düzey metal güneş gözlüğü"
+seoDescription: "Özelleştirilebilir hibrit metal güneş gözlükleri ile özel marka portföyünüzü yükseltin. Premium markalar için yüksek kaliteli asetat kaplamalar, yaylı menteşeler ve 300 MOQ."
+seoKeywords: "hibrit metal güneş gözlüğü üreticisi, özel gözlük üretimi Çin, lüks özel marka güneş gözlüğü, toptan metal güneş gözlüğü tedarikçisi, özel asetat metal çerçeveler, özelleştirilebilir güneş gözlüğü OEM, premium gözlük fabrikası Çin, yüksek segment metal güneş gözlüğü"
 ---
 
-## Teknik Özellikler
+## Özellikler
 
-- **Hibrit Yapı:** Birinci sınıf asetat çerçeve ve dayanıklı metal sapların birleşimi ile rafine, çoklu malzeme estetiği ve uzun vadeli yapısal bütünlük sağlar.
-- **Hassas Donanım:** Yüksek performanslı yaylı yapı menteşeleri, esnek ve uyarlanabilir bir uyum sağlayarak sorunsuz, uzun süreli operasyonel güvenilirlik sunar.
-- **Üstün Optik:** Yüksek netlikte AC ve dayanıklı naylon lens seçenekleri ile çok yönlü zımbalama direnci ve kapsamlı özel kaplama olanakları sunar.
-- **Ergonomik Konfor:** Hipoalerjenik birinci sınıf silikon burun pedleri, uzun süreli günlük kullanımda güvenli, baskısız bir uyum için tasarlanmıştır.
-- **Canlı Estetik:** Küresel moda trendleriyle uyumlu olmak üzere geniş bir ikonik renk paletinde sunulan hafif ve dayanıklı asetat bileşenler.
-- **Ölçeklenebilir Üretim:** Premium Gözlük Markaları ve Özel Marka Dağıtımcıları için mükemmel şekilde uyarlanmış, düşük 300 parçalık bir MOQ ile tam OEM ve ODM özelleştirme yetenekleri.
+- **Hibrit Yapı:** Rafine, çok malzemeli bir estetik ve uzun ömürlü yapısal bütünlük için dayanıklı metal saplarla eşleştirilmiş birinci sınıf asetat çerçeve.
+- **Hassas Donanım:** Esnek ve uyumlu bir uyum sağlarken pürüzsüz, uzun vadeli operasyonel güvenilirlik sunan yüksek performanslı yaylı menteşeler.
+- **Üstün Optik:** Hem yüksek netlikte AC hem de dayanıklı naylon lens desteği, çok yönlü darbe direnci ve kapsamlı özel kaplama seçenekleri sunar.
+- **Ergonomik Konfor:** Uzun süreli günlük kullanım sırasında güvenli ve basınçsız bir uyum için tasarlanmış hipoalerjenik birinci sınıf silikon burun pedleri.
+- **Canlı Estetik:** Küresel moda trendlerine uyum sağlamak için geniş bir imza renk paletinde sunulan hafif ve dayanıklı asetat bileşenler.
+- **Ölçeklenebilir Üretim:** Premium Gözlük Markaları ve Özel Marka Distribütörleri için mükemmel şekilde uyarlanmış, 300 adetlik düşük MOQ ile tam OEM ve ODM özelleştirme yetenekleri.
 
 ## İçin Mükemmel
 - Premium Gözlük Markaları
@@ -67,4 +67,8 @@ seoKeywords: "hibrit metal güneş gözlüğü üreticisi, çin özel gözlük �
 
 ## Genel Bakış
 
-KMS-007'de imza asetat kaplamalar, lüks odaklı tüketicilerde yankı uyandıran hibrit bir siluet oluşturarak çekirdek metal sapların mimari gücü ile buluşuyor. Her bir ünite, uyumlu yay yapı menteşeleri ve darbeye dayanıklı naylon lens seçenekleri aracılığıyla zorlu günlük kullanıma dayanacak şekilde üretilmiş olup her ortamda hem konfor hem de netlik sağlar. Bu çok yönlü tasarım, birinci sınıf markalar için boş bir tuval görevi görerek renklerden oluşan geniş bir palet ve özel logo işlemleri genelinde tam OEM ve ODM özelleştirmesi sunar. Ulaşılabilir 300 parçalık MOQ'lar ve eksiksiz üretim desteği ile Kssmi, butik tasarımcılara ve çok markalı perakendecilere yüksek etkili gözlük koleksiyonlarını piyasaya sürmeleri için gereken ölçeklenebilirliği sağlıyor.
+KMS-007 modeli, metalin mimari gücü ile premium asetatın canlı derinliği arasındaki boşluğu doldurarak lüks odaklı tüketicilerde yankı uyandıran hibrit bir siluet oluşturur.
+
+Adaptif yaylı menteşeler ve hipoalerjenik silikon burun pedleri ile tasarlanan bu çerçeveler, yıllar boyu kullanımda yapısal bütünlüğünü koruyan hassas bir uyum deneyimi sunar.
+
+300 adetlik düşük MOQ ile tam OEM/ODM özelleştirmesini destekleyen bu model, premium markaların ısmarlama kaplamalar ve özel logo işlemleri aracılığıyla koleksiyonlarını ölçeklendirmelerine olanak tanır.

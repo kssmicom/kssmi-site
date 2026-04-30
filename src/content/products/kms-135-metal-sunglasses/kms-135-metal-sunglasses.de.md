@@ -1,28 +1,27 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Individuelle Metall-Sonnenbrillen"
+title: "Maßgeschneiderte Metall-Sonnenbrillen"
 slug: "kms-135-metal-sunglasses"
 itemNo: "KMS-135"
 date: "2026-04-06"
-colors: "Gold-Ecru & Silber-Grau & Gold-Grün & Silber-Blau"
+colors: "Gold-Ecru & Silbergrau & Goldgrün & Silberblau"
 materials: "Premium-Metall"
 serviceMode: "Auftragsfertigung & Design und Fertigung ( Individualisierung )"
-moq: "300 PCS/Model"
+moq: "300 Stk/Modell"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Metal Sunglasses"
 series: "sunglasses, metal-sunglasses,fashion-metal-sunglasses"
-categories: "Sunglasses, Metal Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "56-18-140mm & Individualisierung"
-frameMaterial: "Rahmen und Bügel aus Premium-Metall"
+frameMaterial: "Premium-Metallrahmen und Bügel"
 lensMaterial: "Widerstandsfähige Nylon-Gläser & Individualisierung"
-designStyle: "Modisch, Stilvoll, Trendig, Luxuriös, Herren"
+designStyle: "Mode, Stilvoll, Trendy, Luxus, Herren"
 centerBeam: "Doppelsteg-Design"
-nosePads: "Nasenpads aus Silikon"
-hinge: "2+1-Zylinder-Scharniere & Individualisierung"
+nosePads: "Silikon-Nasenpads"
+hinge: "2+1-Zylinderscharnierstruktur & Individualisierung"
 logo: "Tampondruck, Lasergravur, Lasergravur mit Farbauslegung, Heißprägung, Metal-Logo, Logo-Prägung, Kristall-Verzierung, 3D-Aufkleber"
 service: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 acetateFeature: "Leicht & Langlebig & Lebendig"
@@ -49,19 +48,19 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KMS-135 Moderne Luxus-Metallsonnenbrille | Großhandelslieferant"
-seoDescription: "Partnern Sie mit einem professionellen Hersteller für individualisierbare KMS-135 Metallsonnenbrillen. Präzisions-Doppelsteg-Design für Luxusbrillenmarken mit einem MOQ von 300 Stück."
-seoKeywords: "Metallsonnenbrillenhersteller, Großhandel Luxusbrillen, individualisierbare Sonnenbrillenproduktion, chinesische Brillenfabrik, Premium-Brillenmarken, OEM-Sonnenbrillenfabrik, KMS-135 Sonnenbrillenlieferant"
+seoTitle: "KMS-135 Moderne Luxus-Metall-Sonnenbrillen | Großhandelslieferant"
+seoDescription: "Partner für professionelle Hersteller für anpassbare KMS-135 Metall-Sonnenbrillen. Präzises Doppelsteg-Design für Luxusbrillenmarken mit 300 Stück MOQ."
+seoKeywords: "Metall-Sonnenbrillenhersteller, Großhandel Luxusbrillen, anpassbare Sonnenbrillenproduktion, chinesische Brillenfabrik, Premium-Brillenmarken, OEM-Brillenfabrik, KMS-135 Sonnenbrillenlieferant"
 ---
 
 ## Eigenschaften
 
-- **Premium-Konstruktion:** Hochwertiger Metallrahmen und -bügel, die eine anspruchsvolle, luxuriöse Ästhetik mit außergewöhnlicher struktureller Haltbarkeit bieten.
-- **Moderne Silhouette:** Verfügt über ein stilistisches Doppelsteg-Design, das die Rahmenstabilität erhöht und gleichzeitig trendbewusste Herren anspricht.
-- **Zuverlässige Hardware:** Präzisionsgefertigte 2+1-Zylinder-Scharniere für eine reibungslose Betriebsdauer und konstante Leistung.
-- **Hochleistungsoptik:** Widerstandsfähige Nylon-Gläser, die eine überragende Stoßfestigkeit und optische Klarheit für hochwertige Einzelhandelsumgebungen bieten.
-- **Ergonomischer Komfort:** Verstellbare Nasenpads aus Silikon und eine Präzisionspassform von 56-18-140 mm sorgen für ganztägigen Tragekomfort bei verschiedenen Gesichtsformen.
-- **Skalierbare Individualisierung:** Volle OEM- und ODM-Kapazitäten mit einem flexiblen MOQ von 300 Stück, ideal für Premium-Brillenmarken und Eigenmarken-Distributoren.
+- **Premium-Konstruktion:** Hochwertiger Metallrahmen und Bügel, die eine anspruchsvolle, luxuriöse Ästhetik mit außergewöhnlicher struktureller Haltbarkeit bieten.
+- **Moderne Silhouette:** Verfügt über ein stilistisches Doppelsteg-Design, das die Rahmenstabilität erhöht und gleichzeitig trendbewusste Männer anspricht.
+- **Zuverlässige Hardware:** Präzisionsgefertigte 2+1-Zylinderscharniere, die für eine reibungslose Betriebsdauer und gleichbleibende Leistung ausgelegt sind.
+- **Hochleistungsoptik:** Widerstandsfähige Nylon-Gläser, die eine überlegene Stoßfestigkeit und optische Klarheit für hochwertige Einzelhandelsumgebungen bieten.
+- **Ergonomischer Komfort:** Einstellbare Silikon-Nasenpads und eine Präzisionspassform von 56-18-140 mm sorgen für ganztägigen Komfort bei verschiedenen Gesichtsformen.
+- **Skalierbare Anpassung:** Vollständige OEM- und ODM-Fähigkeiten mit einer flexiblen Mindestbestellmenge von 300 Stück, ideal für Premium-Brillenmarken und Eigenmarken-Distributoren.
 
 ## Perfekt Für
 
@@ -72,6 +71,10 @@ Luxusmodehäuser
 Hochwertige Optikketten
 Duty-Free- und Reisehandel
 
-## Übersicht
+## Überblick
 
-Die für hochwertige Einzelhandelsumgebungen konzipierte KMS-135 nutzt erstklassige Metallkomponenten und eine anspruchsvolle Doppelsteg-Architektur, um trendbewussten Herren eine moderne Silhouette zu bieten. Widerstandsfähige Nylon-Optik und Präzisions-2+1-Zylinder-Scharniere verankern die Langlebigkeit des Rahmens, während verstellbare Silikon-Nasenpads eine raffinierte ergonomische Passform für verschiedene Gesichtsformen gewährleisten. Mit einer flexiblen Mindestbestellmenge von 300 Stück bietet dieses Modell einen umfassenden Spielraum für OEM/ODM-Individualisierungen für unabhängige Designer und Luxusmodehäuser, die ihre Premium-Brillenportfolios erweitern möchten.
+Hochwertige Metallkonstruktion trifft auf eine markante Doppelsteg-Silhouette und positioniert die KMS-135 als anspruchsvolle Wahl für moderne Männer.
+
+Ausgestattet mit widerstandsfähigen Nylon-Gläsern und präzisen 2+1-Zylinderscharnieren gewährleistet der Rahmen langfristige strukturelle Stabilität bei gleichzeitig einstellbarem ergonomischem Komfort.
+
+Dieses Modell ist für die vollständige OEM/ODM-Entwicklung ab einer Mindestbestellmenge von 300 Stück erhältlich und ermöglicht es Luxusmodehäusern und unabhängigen Designern, maßgeschneiderte, marktreife Stile in ihre High-End-Portfolios zu integrieren.

@@ -1,31 +1,30 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Maßgeschneiderte Metall-Sonnenbrillen"
+title: "Individuelle Metall-Sonnenbrillen"
 slug: "kms-120-metal-sunglasses"
 itemNo: "KMS-120"
 date: "2026-04-06"
 colors: "Grau & Blau & Braun & Sonnenaufgang & Sonnenuntergang"
 materials: "Premium-Metall und Acetat"
-serviceMode: "Auftragsfertigung & Design und Fertigung ( Individualisierung )"
+serviceMode: "OEM & ODM ( Individualisierung )"
 moq: "300 Stk/Modell"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Metal Sunglasses"
 series: "sunglasses, metal-sunglasses,fashion-metal-sunglasses"
-categories: "Sunglasses, Metal Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "50-20-140mm & Individualisierung"
 frameMaterial: "Premium-Metallrahmen und -bügel"
 lensMaterial: "AC-Gläser & Robuste Nylon-Gläser & Individualisierung"
-designStyle: "Cool Fashion, Stilvoll, Trendig, Luxus, Herren"
+designStyle: "Cool Fashion, Stilvoll, Trendy, Luxus, Herren"
 centerBeam: "Doppelsteg-Design"
 nosePads: "Premium-Silikon-Nasenpads"
-hinge: "2+1 Fass-Struktur-Scharniere & Individualisierung"
+hinge: "2+1-Fass-Strukturscharniere & Individualisierung"
 logo: "Tampondruck, Lasergravur, Lasergravur mit Farbauslegung, Heißprägung, Metal-Logo, Logo-Prägung, Kristall-Verzierung, 3D-Aufkleber"
 service: "Auftragsfertigung / Design und Fertigung – Individualisierung"
-acetateFeature: "Leicht, Langlebig & Lebendig"
+acetateFeature: "Leicht, Langlebig und Lebendig"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kms-120-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-120-1.webp"
@@ -53,19 +52,19 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KMS-120 Luxus-Doppelsteg-Metallsonnenbrille | Fabrik"
-seoDescription: "Partner für die KMS-120 Luxus-Metallsonnenbrille. Mit Doppelsteg-Design und 300er MOQ. Volle OEM/ODM-Unterstützung."
-seoKeywords: "Metallsonnenbrillen-Hersteller, maßgeschneiderte Sonnenbrillen OEM, Brillenfabrik China, Sonnenbrillen-Lieferant China, Luxusbrillenmarken, Eigenmarken-Metallrahmen"
+seoTitle: "KMS-120 Luxus-Metall-Sonnenbrille mit Doppelsteg | Fabrik"
+seoDescription: "Partner für individuelle KMS-120 Luxus-Metall-Sonnenbrillen. Doppelsteg-Design und 300er MOQ. Volle OEM/ODM-Unterstützung."
+seoKeywords: "Metall-Sonnenbrillen Hersteller, individuelle Sonnenbrillen OEM, Brillenfabrik China, chinesischer Sonnenbrillen-Lieferant, Luxusbrillen-Marken"
 ---
 
 ## Eigenschaften
 
-- **Premium-Metallkonstruktion:** Hochwertiger Metallrahmen und -bügel bieten eine leichte und dennoch außergewöhnlich langlebige Struktur für Luxusbrillenkollektionen.
-- **Struktureller Doppelsteg:** Doppelsteg-Architektur sorgt für verstärkte Rahmenstabilität und ein zeitgemäßes High-Fashion-Profil.
-- **Langlebige Hardware:** Stabile 2+1 Fass-Struktur-Scharniere, entwickelt für gleichbleibende Laufruhe und langfristige Zuverlässigkeit.
-- **Vielseitige Gläser-Technologie:** Hochklare Nylon- oder AC-Glasoptionen mit speziellen Beschichtungen, die den Standards von Premiummarken entsprechen.
-- **Hypoallergener Komfort:** Premium-Silikon-Nasenpads für einen sicheren, druckfreien Sitz bei längerem Tragen über den ganzen Tag.
-- **Skalierbare Produktion:** Volle OEM- und ODM-Anpassungsmöglichkeiten mit einem niedrigen MOQ von 300 Stück, maßgeschneidert für Premium-Brillenmarken und Eigenmarken-Distributoren.
+- **Premium-Metallkonstruktion:** Hochwertiger Metallrahmen und -bügel bieten eine leichte und dennoch außergewöhnlich langlebige Struktur für Luxusbrillen-Kollektionen.
+- **Struktureller Doppelsteg:** Doppelsteg-Architektur für verstärkte Rahmenstabilität und ein zeitgemäßes High-Fashion-Designprofil.
+- **Langlebige Hardware:** Stabile 2+1-Fass-Strukturscharniere, entwickelt für dauerhaft reibungslose Funktion und langfristige Zuverlässigkeit.
+- **Vielseitige Gläser-Technologie:** Hochklare Nylon- oder AC-Gläser mit speziellen Beschichtungen erhältlich, um Premium-Markenstandards zu erfüllen.
+- **Hypoallergener Komfort:** Premium-Silikon-Nasenpads für einen sicheren und druckfreien Sitz bei längerem Tragen über den ganzen Tag.
+- **Skalierbare Produktion:** Volle OEM- und ODM-Anpassungsmöglichkeiten mit einer niedrigen Mindestbestellmenge von 300 Stück, maßgeschneidert für Premium-Brillenmarken und Eigenmarken-Distributoren.
 
 ## Perfekt Für
 
@@ -78,4 +77,8 @@ seoKeywords: "Metallsonnenbrillen-Hersteller, maßgeschneiderte Sonnenbrillen OE
 
 ## Überblick
 
-Der KMS-120 vereint Langlebigkeit mit einer eleganten Doppelsteg-Silhouette und stellt eine anspruchsvolle Verbindung von hochwertigem Metall und raffinierten Acetat-Akzenten dar. Jede Fassung wird mit präzisen 2+1-Fassscharnieren montiert, um ein nahtloses Benutzererlebnis zu garantieren, das den strengen Qualitätsstandards globaler Mode-Distributoren entspricht. Die spezialisierte Produktionsstätte von Kssmi bietet umfassende ODM-Unterstützung, die eine tiefe Anpassung von Glasmaterialien und Veredelungstechniken ermöglicht, um sie an spezifische Markenidentitäten anzupassen. Dieses vielseitige Modell bietet Premium-Labels einen optimierten Weg zur Erweiterung ihres Brillenangebots mit einer fokussierten Mindestbestellmenge von 300 Stück.
+Die KMS-120 kombiniert hochwertiges Metall mit eleganten Acetat-Akzenten und interpretiert Luxusbrillen durch eine markante Doppelsteg-Architektur neu.
+
+Die auf Langlebigkeit ausgelegten 2+1-Fass-Scharniere und die hypoallergenen Silikon-Nasenpads sorgen für einen stabilen und bequemen Sitz für anspruchsvolle Modekunden.
+
+Dieses Modell unterstützt umfassende Private-Label-Anpassungen und eine niedrige Mindestbestellmenge von 300 Stück, was es Boutique-Marken ermöglicht, ihre Premium-Sonnenbrillenkollektionen mit präzisionsgefertigten ODM-Lösungen zu erweitern.

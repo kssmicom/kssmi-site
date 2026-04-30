@@ -13,7 +13,7 @@ moq: "300 PCS/Model"
 productType: "Sunglasses"
 material: "Metal Sunglasses"
 series: "sunglasses, metal-sunglasses,fashion-metal-sunglasses"
-categories: "Sunglasses, Metal Sunglasses"
+
 
 # ─────────────────────────────────────────────────────
 size: "58-13-145mm & Customization"
@@ -71,4 +71,9 @@ seoKeywords: "metal sunglasses manufacturer, custom OEM metal eyewear, luxury pr
 - Department Store Groups
 
 ## Overview
-Precision-crafted from premium metal, this model pairs a structural double bridge design with a refined masculine aesthetic to meet the demands of contemporary luxury markets. High-performance 2+1 barrel hinges and hypoallergenic silicone nose pads ensure long-term mechanical reliability and superior wearer comfort across diverse production runs. Available for full OEM and ODM customization with a competitive 300-piece minimum order quantity, our manufacturing process allows premium brands to integrate bespoke logo treatments and specialized lens coatings into their seasonal collections.
+
+High-grade metal defines the structural elegance of the KMS-134, where a sophisticated double-bridge architecture creates a bold, masculine silhouette. This frame serves as a statement piece for luxury collections, balancing industrial strength with refined fashion sensibilities.
+
+Precision engineering is evident in the 2+1 barrel structure hinges and hypoallergenic silicone nose pads, ensuring lasting mechanical stability and pressure-free comfort.
+
+By offering extensive OEM/ODM customization at a scalable 300-piece MOQ, we empower boutique labels and global eyewear brands to integrate bespoke finishes and high-performance lens coatings into their premium portfolios.

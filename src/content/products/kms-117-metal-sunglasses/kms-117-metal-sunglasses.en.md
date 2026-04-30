@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Sunglasses"
 material: "Metal Sunglasses"
 series: "sunglasses, metal-sunglasses,fashion-metal-sunglasses"
-categories: "Sunglasses, Metal Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "48-23-150mm & Customization"
@@ -69,4 +68,8 @@ seoKeywords: "luxury acetate metal sunglasses, custom OEM eyewear manufacturer, 
 
 ## Overview
 
-A masterful blend of vibrant premium acetate and sleek metal components, this frame strikes an impeccable balance between lightweight comfort and enduring structural strength. Advanced 2+1 barrel hinge technology is seamlessly paired with high-clarity lens options, delivering a dependable architecture that stands up to daily wear. Designed to augment the advanced portfolios of boutique fashion labels and premium eyewear brands, this silhouette acts as a highly versatile foundation for your exclusive design identity. Backed by our comprehensive OEM and ODM production infrastructure, complete with customized logo detailing and an accessible 300-piece minimum order quantity, we provide a streamlined path from custom specification to market launch.
+Fusing vibrant premium acetate with sleek metallic accents, the KMS-117 represents a sophisticated hybrid identity for modern eyewear collections.
+
+The architecture features precision-engineered 2+1 barrel hinges and customizable nylon lenses, ensuring structural durability and all-day comfort.
+
+Supporting full OEM/ODM customization with a 300-piece MOQ, this model enables boutique brands to scale their luxury portfolios through our specialized manufacturing infrastructure.

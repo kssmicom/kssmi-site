@@ -72,4 +72,8 @@ seoKeywords: "metal acetate sunglasses, luxury fashion eyewear, OEM sunglasses m
 
 ## Overview
 
-A seamless integration of high-grade acetate and precision-crafted metal temples defines the KMS-118, delivering a balanced aesthetic that appeals to the premium unisex fashion segment. Technical excellence is prioritized through a 2+1 barrel hinge system for smooth, reliable articulation, complemented by versatile lens options including tenacious nylon for superior optical performance. Engineered as a foundational piece for private labels and luxury boutiques, the model accommodates diverse branding techniques from subtle laser engraving to elevated metal up-stickers. Our manufacturing facility provides comprehensive OEM and ODM support with a 300-piece minimum order quantity, ensuring a streamlined path from design concept to market-ready eyewear collections.
+The KMS-118 strikes a sophisticated balance between premium acetate fronts and precision-engineered metal temples, creating a durable hybrid frame that bridges classic aesthetics with modern trends.
+
+Featuring a robust 2+1 barrel hinge system and hypoallergenic metal nose pads, this model is built for long-term operational stability and exceptional wearer comfort.
+
+Available for full OEM/ODM development with a 300-piece minimum order quantity, our manufacturing facility empowers luxury fashion houses to scale their eyewear portfolios with bespoke branding and technical specifications.

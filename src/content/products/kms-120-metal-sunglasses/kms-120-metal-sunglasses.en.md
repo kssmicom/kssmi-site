@@ -78,4 +78,8 @@ seoKeywords: "metal sunglasses manufacturer, custom sunglasses OEM, eyewear fact
 
 ## Overview
 
-Engineering durability into a sleek, double-bridged silhouette, the KMS-120 represents a sophisticated fusion of high-grade metal and refined acetate accents. Each frame is assembled with precision 2+1 barrel hinges to guarantee a seamless user experience, meeting the rigorous quality standards of global fashion distributors. Kssmi's dedicated manufacturing facility provides full-scale ODM support, allowing for deep customization of lens materials and finishing techniques to align with specific brand identities. This versatile model offers a streamlined path for premium labels to expand their eyewear offerings with a focused 300-piece minimum order quantity.
+Combining high-grade metal with sleek acetate accents, the KMS-120 reinterprets luxury eyewear through a bold double-bridge architecture.
+
+Engineered for durability, the 2+1 barrel hinges and hypoallergenic silicone nose pads ensure a stable, comfortable fit for high-fashion users.
+
+Supporting extensive private-label customization and a low 300-piece minimum order quantity, this model enables boutique brands to scale their premium sunglasses collections with precision-manufactured ODM solutions.

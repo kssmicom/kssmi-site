@@ -1,31 +1,30 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Kính mát kim loại tùy chỉnh"
+title: "Kính Mát Kim Loại Tùy Chỉnh"
 slug: "kms-120-metal-sunglasses"
 itemNo: "KMS-120"
 date: "2026-04-06"
 colors: "Xám & Xanh dương & Nâu & Bình minh & Hoàng hôn"
 materials: "Kim loại cao cấp và Acetate"
-serviceMode: "Sản xuất OEM & ODM ( Tùy chỉnh theo yêu cầu )"
+serviceMode: "OEM & ODM ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Metal Sunglasses"
 series: "sunglasses, metal-sunglasses,fashion-metal-sunglasses"
-categories: "Sunglasses, Metal Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "50-20-140mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng và càng kính kim loại cao cấp"
-lensMaterial: "Tròng kính AC & Tròng kính Nylon bền bỉ & Tùy chỉnh theo yêu cầu"
-designStyle: "Thời trang cực chất, Phong cách, Hợp thời trang, Sang trọng, Nam giới"
-centerBeam: "Thiết kế cầu đôi"
-nosePads: "Đệm mũi silicone cao cấp"
-hinge: "Bản lề cấu trúc 2+1 thùng & Tùy chỉnh theo yêu cầu"
+frameMaterial: "Gọng và Càng kính Kim loại Cao cấp"
+lensMaterial: "Tròng kính AC & Tròng kính Nylon Bền bỉ & Tùy chỉnh theo yêu cầu"
+designStyle: "Thời trang cực chất, Phong cách, Hợp mốt, Xa xỉ, Nam giới"
+centerBeam: "Thiết kế Cầu kép"
+nosePads: "Đệm mũi Silicone Cao cấp"
+hinge: "Bản lề Cấu trúc Thùng 2+1 & Tùy chỉnh theo yêu cầu"
 logo: "In, Laser, Laser đổ dầu, Ép kim, Huy hiệu kim loại, Dập nổi, Đính đá, Nhãn dán 3D"
 service: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
-acetateFeature: "Nhẹ, bền và rực rỡ"
+acetateFeature: "Nhẹ, Bền và Sống động"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kms-120-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-120-1.webp"
@@ -53,19 +52,19 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Kính mát kim loại cầu đôi sang trọng KMS-120 | Nhà máy"
-seoDescription: "Hợp tác với nhà sản xuất tùy chỉnh cho kính mát kim loại sang trọng KMS-120. Thiết kế cầu đôi và MOQ 300 cái. Hỗ trợ OEM/ODM toàn diện."
-seoKeywords: "nhà sản xuất kính mát kim loại, kính mát tùy chỉnh OEM, nhà máy kính mắt Trung Quốc, nhà cung cấp kính mát Trung Quốc, thương hiệu kính mắt sang trọng"
+seoTitle: "KMS-120 Kính Mát Kim Loại Cầu Kép Xa Xỉ | Nhà Máy"
+seoDescription: "Hợp tác với nhà sản xuất tùy chỉnh cho dòng kính mát kim loại xa xỉ KMS-120. Thiết kế cầu kép và MOQ 300 chiếc. Hỗ trợ đầy đủ OEM/ODM."
+seoKeywords: "nhà sản xuất kính mát kim loại, kính mát tùy chỉnh OEM, nhà máy kính mắt Trung Quốc, nhà cung cấp kính mát Trung Quốc, thương hiệu kính mắt xa xỉ"
 ---
 
 ## Đặc điểm
 
-- **Kết cấu kim loại cao cấp:** Gọng và càng kính bằng kim loại cao cấp mang lại cấu trúc nhẹ nhưng đặc biệt bền bỉ cho các bộ sưu tập kính mắt sang trọng.
-- **Thiết kế cầu đôi chịu lực:** Kiến trúc cầu đôi mang lại sự ổn định cho gọng kính và kiểu dáng thiết kế thời trang cao cấp hiện đại.
-- **Phụ kiện bền bỉ:** Bản lề cấu trúc 2+1 thùng ổn định được thiết kế để vận hành êm ái và tin cậy lâu dài.
-- **Công nghệ tròng kính đa dạng:** Các tùy chọn tròng kính nylon hoặc AC độ trong suốt cao có sẵn với các lớp phủ chuyên dụng để đáp ứng các tiêu chuẩn thương hiệu cao cấp.
-- **Sự thoải mái không gây dị ứng:** Đệm mũi silicone cao cấp được thiết kế để mang lại sự vừa vặn an toàn, không gây áp lực khi đeo trong thời gian dài.
-- **Sản xuất linh hoạt:** Khả năng tùy chỉnh OEM & ODM toàn diện với MOQ thấp 300 chiếc phù hợp cho các thương hiệu kính mắt cao cấp và nhà phân phối nhãn hiệu riêng.
+- **Cấu trúc Kim loại Cao cấp:** Gọng và càng kính bằng kim loại chất lượng cao, mang lại cấu trúc nhẹ nhưng cực kỳ bền bỉ cho các bộ sưu tập kính mắt xa xỉ.
+- **Cầu kép Cấu trúc:** Kiến trúc cầu kép giúp tăng cường độ ổn định của gọng và tạo nên phong cách thiết kế thời trang cao cấp hiện đại.
+- **Phụ kiện Bền bỉ:** Bản lề cấu trúc thùng 2+1 ổn định được thiết kế để vận hành trơn tru nhất quán và có độ tin cậy lâu dài.
+- **Công nghệ Tròng kính Đa năng:** Tùy chọn tròng kính nylon hoặc AC có độ trong suốt cao với các lớp phủ chuyên dụng để đáp ứng tiêu chuẩn của các thương hiệu cao cấp.
+- **Sự thoải mái Tuyệt đối:** Đệm mũi silicone cao cấp được thiết kế để mang lại sự chắc chắn và không gây áp lực khi đeo trong thời gian dài suốt cả ngày.
+- **Sản xuất Linh hoạt:** Khả năng tùy chỉnh OEM & ODM toàn diện với mức MOQ thấp chỉ 300 chiếc, được thiết kế riêng cho các thương hiệu kính mắt cao cấp và nhà phân phối nhãn hiệu riêng.
 
 ## Phù hợp cho
 
@@ -78,4 +77,8 @@ seoKeywords: "nhà sản xuất kính mát kim loại, kính mát tùy chỉnh O
 
 ## Tổng quan
 
-Kết hợp độ bền vào một kiểu dáng cầu đôi bóng bẩy, KMS-120 đại diện cho sự kết hợp tinh tế giữa kim loại cao cấp và các điểm nhấn acetate tinh tế. Mỗi gọng kính được lắp ráp với bản lề 2+1 thùng chính xác để đảm bảo trải nghiệm người dùng mượt mà, đáp ứng các tiêu chuẩn chất lượng khắt khe của các nhà phân phối thời trang toàn cầu. Cơ sở sản xuất chuyên dụng của Kssmi cung cấp hỗ trợ ODM toàn diện, cho phép tùy chỉnh sâu các vật liệu tròng kính và kỹ thuật hoàn thiện để phù hợp với bản sắc thương hiệu cụ thể. Mẫu kính đa năng này mang đến một lộ trình hợp lý cho các thương hiệu cao cấp mở rộng danh mục kính mắt của họ với số lượng đặt hàng tối thiểu 300 chiếc.
+Kết hợp giữa kim loại cao cấp và các điểm nhấn acetate thanh lịch, KMS-120 tái hiện dòng kính mắt xa xỉ thông qua cấu trúc cầu kép táo bạo.
+
+Được thiết kế để đạt độ bền tối ưu, bản lề lò xo 2+1 và đệm mũi silicone không gây dị ứng đảm bảo sự chắc chắn và thoải mái cho những người dùng thời trang cao cấp.
+
+Hỗ trợ tùy chỉnh nhãn hiệu riêng rộng rãi và số lượng đặt hàng tối thiểu thấp chỉ 300 chiếc, mẫu kính này cho phép các thương hiệu boutique mở rộng bộ sưu tập kính mát cao cấp với các giải pháp ODM sản xuất chính xác.

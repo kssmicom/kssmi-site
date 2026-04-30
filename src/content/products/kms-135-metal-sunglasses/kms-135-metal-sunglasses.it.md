@@ -7,13 +7,12 @@ date: "2026-04-06"
 colors: "Oro-Ecru & Argento-Grigio & Oro-Verde & Argento-Blu"
 materials: "Metallo Premium"
 serviceMode: "Produzione OEM & ODM ( Personalizzazione )"
-moq: "300 PCS/Model"
+moq: "300 pz/modello"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Metal Sunglasses"
 series: "sunglasses, metal-sunglasses,fashion-metal-sunglasses"
-categories: "Sunglasses, Metal Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "56-18-140mm & Personalizzazione"
@@ -74,4 +73,8 @@ Vendita Duty-Free e Viaggi
 
 ## Panoramica
 
-Progettato per ambienti di vendita di alto livello, il modello KMS-135 utilizza componenti in metallo di prima qualità e una sofisticata architettura a doppio ponte per offrire una silhouette moderna al pubblico maschile attento alle tendenze. L'ottica in nylon tenace e le cerniere di precisione a 2+1 bariletti ancorano la durata della montatura, mentre i naselli in silicone regolabili assicurano una calzata ergonomica raffinata per diverse forme del viso. Con un quantitativo minimo d'ordine flessibile di 300 pezzi, questo modello offre un ampio raggio di personalizzazione OEM/ODM per designer indipendenti e case di moda di lusso che desiderano ampliare il proprio portfolio di occhiali premium.
+La costruzione in metallo di alta qualità incontra una silhouette audace a doppio ponte, posizionando il modello KMS-135 come una scelta sofisticata per il pubblico maschile moderno.
+
+Progettata con lenti in nylon tenace e cerniere di precisione a 2+1 bariletti, la montatura assicura stabilità strutturale a lungo termine insieme a un comfort ergonomico regolabile.
+
+Disponibile per uno sviluppo OEM/ODM completo con un minimo di 300 pezzi, questo modello consente alle case di moda di lusso e ai designer indipendenti di integrare stili personalizzati e pronti per il mercato nei loro portfolio di alta gamma.

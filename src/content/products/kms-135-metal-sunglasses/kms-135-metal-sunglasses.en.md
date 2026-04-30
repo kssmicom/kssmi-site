@@ -74,4 +74,8 @@ Duty-Free & Travel Retail
 
 ## Overview
 
-Engineered for high-end retail environments, the KMS-135 utilizes premium metal components and a sophisticated double bridge architecture to provide a modern silhouette for trend-conscious male demographics. Tenacious nylon optics and precision 2+1 barrel hinges anchor the frame's durability, while adjustable silicone nose pads ensure a refined ergonomic fit across diverse face shapes. With a flexible 300-piece minimum order quantity, this model offers extensive OEM/ODM customization scope for independent designers and luxury fashion houses looking to scale their premium eyewear portfolios.
+High-grade metal construction meets a bold double-bridge silhouette, positioning the KMS-135 as a sophisticated choice for modern male demographics.
+
+Engineered with tenacious nylon lenses and precision 2+1 barrel hinges, the frame ensures long-term structural stability alongside adjustable ergonomic comfort.
+
+Available for full OEM/ODM development with a 300-piece minimum, this model enables luxury fashion houses and independent designers to integrate bespoke, market-ready styles into their high-end portfolios.

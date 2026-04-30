@@ -13,16 +13,15 @@ moq: "300 adet/model"
 productType: "Sunglasses"
 material: "Metal Sunglasses"
 series: "sunglasses, metal-sunglasses,fashion-metal-sunglasses"
-categories: "Sunglasses, Metal Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "50-23-150mm & Özelleştirme"
-frameMaterial: "Premium Asetat Çerçeve ve Metal Sap"
-lensMaterial: "AC Lens & Dayanıklı Naylon Lens & Özelleştirme"
-designStyle: "Havalı Moda, Şık, Trend, Lüks, Unisex"
-nosePads: "Premium Metal Burun Tamponları"
-hinge: "2+1 Varil Yapılı Menteşeler & Özelleştirme"
-logo: "Tampo Baskı, Lazer Markalama, Boya Dolgulu Lazer, Sıcak Baskı, Metal Logo, Kabartma Logo, Kristal Süsleme, 3D Etiket"
+frameMaterial: "Premium asetat ön çerçeve ve metal sap"
+lensMaterial: "AC Lens & Dayanıklı naylon lens & Özelleştirme"
+designStyle: "Cool Fashion, Şık, Trendy, Lüks, Unisex"
+nosePads: "Premium metal burun tamponları"
+hinge: "2+1 varil yapılı menteşeler & Özelleştirme"
+logo: "Tampo baskı, Lazer markalama, Boya dolgulu lazer, Sıcak baskı, Metal logo, Kabartma logo, Kristal süsleme, 3D etiket"
 service: "OEM / ODM Üretim – Özelleştirme"
 acetateFeature: "Hafif & Dayanıklı & Canlı"
 
@@ -47,19 +46,19 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KMS-118 Lüks Metal ve Asetat Moda Güneş Gözlüğü | Özel Fabrika"
-seoDescription: "KMS-118 metal ve asetat güneş gözlükleri için lider bir üreticiyle ortaklık yapın. Dayanıklı 2+1 varil menteşeler ve 300 MOQ ile tam OEM/ODM özelleştirme içerir."
-seoKeywords: "metal asetat güneş gözlüğü, lüks moda gözlükleri, OEM gözlük üreticisi, Çin gözlük fabrikası, premium gözlük markaları, toptan özel güneş gözlüğü, ısmarlama çerçeve üretimi"
+seoTitle: "KMS-118 Lüks Metal & Asetat Moda Güneş Gözlüğü | Özel Fabrika"
+seoDescription: "KMS-118 metal & asetat güneş gözlüğü için lider bir üreticiyle ortak olun. Dayanıklı 2+1 varil menteşeler ve 300 MOQ ile tam OEM/ODM özelleştirme."
+seoKeywords: "metal asetat güneş gözlüğü, lüks moda gözlükleri, OEM güneş gözlüğü üreticisi, Çin gözlük fabrikası, premium gözlük markaları, toptan özel güneş gözlüğü"
 ---
 
 ## Özellikler
 
-- **Premium Hibrit Tasarım:** Yüksek kaliteli asetat ön çerçeve ve hassas metal sapların birleşimi ile sofistike, dayanıklı ve çok malzemeli bir yapı.
-- **Dayanıklı Donanım:** Dengeli, tekrarlanabilir açılış ve uzun vadeli çalışma akıcılığı için tasarlanmış sağlam 2+1 varil yapı menteşeler.
-- **Gelişmiş Optik Netlik:** Renklerin ve kaplamaların tam özelleştirilmesi ile üstün netlik sağlayan yüksek performanslı AC ve dayanıklı naylon lensler.
-- **Rafine Konfor:** Uzun süreli günlük kullanım için güvenli ve hipoalerjenik bir uyum sağlayan ergonomik tasarımlı birinci sınıf metal burun tamponları.
-- **Çok Yöntemli Markalama:** Belirgin marka kimliği sağlamak için hassas lazer gravür ve metal yükseltilmiş etiketler dahil olmak üzere çok yönlü logo entegrasyon seçenekleri.
-- **Ölçeklenebilir Üretim:** **Premium Gözlük Markaları** ve **Lüks Moda Evleri** için optimize edilmiş 300 adet MOQ ile tam OEM ve ODM özelleştirme yetenekleri.
+- **Premium Hibrit Tasarım:** Sofistike, dayanıklı çok malzemeli bir yapı için hassas metal saplarla birleştirilmiş yüksek dereceli asetat ön çerçeve.
+- **Dayanıklı Donanım:** Sabit, tekrarlanabilir açılma ve uzun süreli operasyonel pürüzsüzlük için tasarlanmış sağlam 2+1 varil yapılı menteşeler.
+- **Gelişmiş Optik Netlik:** Renk tonlarının ve kaplamaların tam özelleştirilmesiyle üstün netlik sağlayan yüksek performanslı AC ve dayanıklı naylon lensler.
+- **Rafine Konfor:** Uzun süreli günlük kullanım için güvenli, hipoalerjenik bir uyum sağlayan ergonomik olarak tasarlanmış premium metal burun pedleri.
+- **Çok Yöntemli Markalama:** Belirgin marka kimliği için hassas lazer markalama ve metal 3D etiketler dahil olmak üzere çok yönlü logo entegrasyon seçenekleri.
+- **Ölçeklenebilir Üretim:** Premium Gözlük Markaları ve Lüks Moda Evleri için optimize edilmiş, 300 adet MOQ ile tam OEM ve ODM özelleştirme yetenekleri.
 
 ## İçin Mükemmel
 
@@ -70,6 +69,10 @@ seoKeywords: "metal asetat güneş gözlüğü, lüks moda gözlükleri, OEM gö
 - Yüksek Segment Optik Zincirleri
 - Duty-Free ve Seyahat Perakendecileri
 
-## Genel Bakış
+## Overview
 
-Yüksek kaliteli asetat ve hassas işlenmiş metal sapların kusursuz entegrasyonu, KMS-118'i tanımlayarak premium unisex moda segmentine hitap eden dengeli bir estetik sunar. Teknik mükemmellik, pürüzsüz ve güvenilir artikülasyon için 2+1 varil menteşe sistemi ile önceliklendirilmiştir ve üstün optik performans için dayanıklı naylon dahil olmak üzere çok yönlü lens seçenekleri ile tamamlanmıştır. Özel markalar ve lüks butikler için temel bir parça olarak tasarlanan model, ince lazer gravürden yüksek metal metal logo'lere kadar çeşitli markalama tekniklerine olanak tanır. Üretim tesisimiz, tasarım konseptinden pazara hazır gözlük koleksiyonlarına kadar kolaylaştırılmış bir yol sağlayan 300 parçalık minimum sipariş miktarı ile kapsamlı OEM ve ODM desteği sağlar.
+KMS-118, premium asetat ön kısımlar ile hassas mühendislik ürünü metal saplar arasında sofistike bir denge kurarak, klasik estetiği modern trendlerle birleştiren dayanıklı bir hibrit çerçeve sunar.
+
+Sağlam bir 2+1 varil menteşe sistemi ve hipoalerjenik metal burun pedlerine sahip olan bu model, uzun vadeli operasyonel istikrar ve olağanüstü kullanıcı konforu için üretilmiştir.
+
+300 adetlik minimum sipariş miktarı ile tam OEM/ODM geliştirme imkanı sunan üretim tesisimiz, lüks moda evlerinin gözlük portföylerini özel markalama ve teknik özelliklerle ölçeklendirmelerine olanak tanır.

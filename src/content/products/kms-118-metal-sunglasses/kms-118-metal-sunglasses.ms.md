@@ -13,18 +13,17 @@ moq: "300 unit/model"
 productType: "Sunglasses"
 material: "Metal Sunglasses"
 series: "sunglasses, metal-sunglasses,fashion-metal-sunglasses"
-categories: "Sunglasses, Metal Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "50-23-150mm & Penyesuaian"
-frameMaterial: "Bingkai Asetat Premium dan Tangkai Logam"
-lensMaterial: "Lensa AC & Lensa Nylon Teguh & Penyesuaian"
-designStyle: "Fesyen Hebat, Bergaya, Trendi, Mewah, Unisex"
-nosePads: "Alas Hidung Logam Premium"
-hinge: "Engsel Struktur 2+1 Tong & Penyesuaian"
-logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Lencana Logam, Timbulan, Kristal, Pelekat"
+frameMaterial: "Bingkai hadapan asetat premium dan kaki logam"
+lensMaterial: "Lensa AC & Lensa nilon kental & Penyesuaian"
+designStyle: "Cool Fashion, Bergaya, Trendy, Mewah, Unisex"
+nosePads: "Alas hidung logam premium"
+hinge: "Engsel struktur tong 2+1 & Penyesuaian"
+logo: "Cetak, Laser, Laser dengan minyak, Setem panas, Lencana logam, Timbulan, Kristal, Pelekat"
 service: "Pembuatan OEM / ODM – Penyesuaian"
-acetateFeature: "Ringan & Tahan Lama & Ceria"
+acetateFeature: "Ringan & Tahan Lama & Bersemangat"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kms-118-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-118-1.webp"
@@ -48,28 +47,32 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Cermin Mata Hitam Fesyen Logam & Asetat Mewah KMS-118 | Kilang Tersuai"
-seoDescription: "Bekerjasama dengan pengilang utama untuk cermin mata hitam logam & asetat KMS-118. Menampilkan engsel 2+1 tong yang tahan lama dan penyesuaian OEM/ODM penuh dengan 300 MOQ."
-seoKeywords: "cermin mata hitam asetat logam, penggayaan fesyen mewah, pengilang cermin mata hitam OEM, kilang cermin mata China, jenama cermin mata premium, borong cermin mata hitam tersuai, pengeluaran bingkai tempahan"
+seoDescription: "Bekerjasama dengan pengeluar terkemuka untuk cermin mata hitam logam & asetat KMS-118. Menampilkan engsel tong 2+1 yang tahan lama dan penyesuaian OEM/ODM penuh dengan 300 MOQ."
+seoKeywords: "cermin mata hitam logam asetat, gaya kacamata fesyen mewah, pengeluar cermin mata hitam OEM, kilang kacamata China, jenama kacamata premium, cermin mata hitam tersuai borong"
 ---
 
 ## Ciri-ciri Utama
 
-- **Reka Bentuk Hibrid Premium:** Bingkai depan asetat gred tinggi digabungkan dengan tangkai logam ketepatan untuk pembinaan pelbagai bahan yang canggih dan tahan lama.
-- **Perkakasan Tahan Lama:** Engsel struktur 2+1 tong yang teguh direka untuk pembukaan stabil dan berulang serta kelancaran operasi jangka panjang.
-- **Kejelasan Optik Termaju:** Lensa AC berprestasi tinggi dan lensa nylon teguh memberikan kejelasan unggul dengan penyesuaian penuh warna và salutan.
-- **Keselesaan Halus:** Alas hidung logam premium yang direka secara ergonomik memastikan kesesuaian yang selamat dan hipoalergenik untuk pemakaian harian yang berpanjangan.
-- **Penjenamaan Pelbagai Kaedah:** Pilihan integrasi logo yang serba boleh termasuk ukiran laser ketepatan dan lencana logam untuk identiti jenama yang tersendiri.
-- **Pembuatan Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan 300 unit MOQ yang dioptimumkan untuk **Jenama Kacamata Premium** dan **Rumah Fesyen Mewah**.
+- **Reka Bentuk Hibrid Premium:** Bingkai hadapan asetat gred tinggi digabungkan dengan kaki logam ketepatan untuk pembinaan pelbagai bahan yang canggih dan tahan lama.
+- **Perkakasan Tahan Lama:** Engsel struktur tong 2+1 yang teguh direka untuk pembukaan yang stabil, berulang dan kelancaran operasi jangka panjang.
+- **Kejelasan Optik Termaju:** Lensa AC berprestasi tinggi dan lensa nilon kental yang memberikan kejelasan unggul dengan penyesuaian penuh warna dan salutan.
+- **Keselesaan Halus:** Alas hidung logam premium yang direka secara ergonomik memastikan muat yang selamat dan hipoalergenik untuk pemakaian harian yang panjang.
+- **Penjenamaan Pelbagai Kaedah:** Pilihan integrasi logo serba boleh termasuk ukiran laser ketepatan dan pelekat logam untuk identiti jenama yang tersendiri.
+- **Pembuatan Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan 300 unit MOQ dioptimumkan untuk Jenama Kacamata Premium dan Rumah Fesyen Mewah.
 
 ## Sesuai Untuk
 
-- Merek Kacamata Premium
-- Pereka Kacamata Berkesan
+- Jenama Kacamata Premium
+- Pereka Kacamata Bebas
 - Pengedar Label Peribadi
 - Rumah Fesyen Mewah
 - Rantai Optik Bergengsi
 - runcit Dutypirlalu & Perjalanan
 
-## Gambaran Keseluruhan
+## Overview
 
-Integrasi lancar antara asetat gred tinggi dan tangkai logam yang dihasilkan dengan ketepatan menentukan model KMS-118, memberikan estetik seimbang yang menarik minat segmen fesyen uniseks premium. Kecemerlangan teknikal diutamakan melalui sistem engsel 2+1 tong untuk artikulasi yang lancar dan boleh dipercayai, dilengkapi dengan pilihan lensa serba boleh termasuk nylon teguh untuk prestasi optik yang unggul. Direka sebagai bahagian asas untuk label peribadi dan butik mewah, model ini menampung pelbagai teknik penjenamaan daripada ukiran laser halus hingga lencana logam lencana logam yang tinggi. Kemudahan pengeluaran kami menyediakan sokongan OEM dan ODM yang komprehensif dengan kuantiti pesanan minimum 300 unit, memastikan laluan yang diperkemas daripada konsep reka bentuk ke koleksi kacamata sedia pasaran.
+KMS-118 mencapai keseimbangan yang canggih antara bahagian hadapan asetat premium dan kaki logam kejuruteraan ketepatan, mencipta bingkai hibrid tahan lama yang merapatkan estetika klasik dengan trend moden.
+
+Menampilkan sistem engsel tong 2+1 yang teguh dan alas hidung logam hipoalergenik, model ini dibina untuk kestabilan operasi jangka panjang dan keselesaan pemakai yang luar biasa.
+
+Tersedia untuk pembangunan OEM/ODM penuh dengan kuantiti pesanan minimum 300 unit, kemudahan pembuatan kami memperkasakan rumah fesyen mewah untuk meningkatkan portfolio kacamata mereka dengan penjenamaan tersuai dan spesifikasi teknikal.

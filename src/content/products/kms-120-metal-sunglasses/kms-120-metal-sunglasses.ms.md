@@ -6,26 +6,25 @@ itemNo: "KMS-120"
 date: "2026-04-06"
 colors: "Kelabu & Biru & Coklat & Matahari Terbit & Matahari Terbenam"
 materials: "Logam Premium dan Asetat"
-serviceMode: "Pembuatan OEM & ODM ( Penyesuaian )"
+serviceMode: "OEM & ODM ( Penyesuaian )"
 moq: "300 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Metal Sunglasses"
 series: "sunglasses, metal-sunglasses,fashion-metal-sunglasses"
-categories: "Sunglasses, Metal Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "50-20-140mm & Penyesuaian"
-frameMaterial: "Bingkai dan Temple Logam Premium"
-lensMaterial: "Lensa AC & Lensa Nilon Tenacious & Penyesuaian"
-designStyle: "Fesyen Hebat, Bergaya, Trendi, Mewah, Lelaki"
-centerBeam: "Reka Bentuk Jambatan Berganda"
+frameMaterial: "Bingkai dan Tangkai Logam Premium"
+lensMaterial: "Lensa AC & Lensa Nilon Tahan Lasak & Penyesuaian"
+designStyle: "Fesyen Segar, Bergaya, Trend, Mewah, Lelaki"
+centerBeam: "Reka Bentuk Titi Berkembar"
 nosePads: "Alas Hidung Silikon Premium"
 hinge: "Engsel Struktur Tong 2+1 & Penyesuaian"
 logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Lencana Logam, Timbulan, Kristal, Pelekat"
 service: "Pembuatan OEM / ODM – Penyesuaian"
-acetateFeature: "Ringan, Tahan Lama & Menawan"
+acetateFeature: "Ringan, Tahan Lama dan Menyerlah"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kms-120-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-120-1.webp"
@@ -53,19 +52,19 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KMS-120 Cermin Mata Hitam Logam Jambatan Berganda Mewah | Kilang"
-seoDescription: "Rakan kongsi dengan pengeluar tersuai untuk cermin mata hitam logam mewah KMS-120. Menampilkan reka bentuk jambatan berganda dan 300 MOQ. Sokongan penuh OEM/ODM."
-seoKeywords: "pengilang cermin mata hitam logam, cermin mata hitam tersuai OEM, kilang kacamata China, pembekal cermin mata hitam China, jenama kacamata mewah"
+seoTitle: "KMS-120 Cermin Mata Hitam Logam Mewah Titi Berkembar | Kilang"
+seoDescription: "Bekerjasama dengan pengeluar tersuai untuk cermin mata hitam logam mewah KMS-120. Menampilkan reka bentuk titi berkembar dan 300 MOQ. Sokongan penuh OEM/ODM."
+seoKeywords: "pengeluar cermin mata hitam logam, cermin mata hitam tersuai OEM, kilang cermin mata China, pembekal cermin mata hitam China, jenama kacamata mewah"
 ---
 
 ## Ciri-ciri Utama
 
-- **Binaan Logam Premium:** Bingkai dan temple logam gred tinggi yang menyediakan struktur ringan namun sangat tahan lama untuk koleksi kacamata mewah.
-- **Jambatan Berganda Struktur:** Seni bina jambatan berkembar yang menawarkan kestabilan bingkai yang diperkukuh dan profil reka bentuk fesyen tinggi kontemporari.
+- **Binaan Logam Premium:** Bingkai dan tangkai logam gred tinggi yang menyediakan struktur ringan namun sangat tahan lama untuk koleksi kacamata mewah.
+- **Titi Berkembar Struktur:** Seni bina titi berkembar yang menawarkan kestabilan bingkai yang diperkukuh dan profil reka bentuk fesyen tinggi kontemporari.
 - **Perkakasan Tahan Lama:** Engsel struktur tong 2+1 yang stabil direka untuk kelancaran operasi yang konsisten dan kebolehpercayaan jangka panjang.
-- **Teknologi Lensa Serbaguna:** Pilihan lensa nilon atau AC kejelasan tinggi tersedia dengan salutan khusus untuk memenuhi piawaian jenama premium.
-- **Keselesaan Hipolalergenik:** Alas hidung silikon premium direka untuk memberikan kesesuaian yang selamat dan bebas tekanan untuk pemakaian berpanjangan sepanjang hari.
-- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan MOQ 300 keping yang rendah disesuaikan untuk Jenama Kacamata Premium dan Pengedar Label Peribadi.
+- **Teknologi Lensa Serba Boleh:** Pilihan lensa nilon atau AC berkejelasan tinggi tersedia dengan salutan khusus untuk memenuhi piawaian jenama premium.
+- **Keselesaan Hipoalergenik:** Alas hidung silikon premium yang direka untuk memberikan kesesuaian yang selamat dan bebas tekanan untuk pemakaian berpanjangan sepanjang hari.
+- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan MOQ 300 unit yang rendah disesuaikan untuk Jenama Kacamata Premium dan Pengedar Label Peribadi.
 
 ## Sesuai Untuk
 
@@ -78,4 +77,8 @@ seoKeywords: "pengilang cermin mata hitam logam, cermin mata hitam tersuai OEM, 
 
 ## Gambaran Keseluruhan
 
-Menggabungkan ketahanan ke dalam siluet jambatan berganda yang anggun, KMS-120 mewakili gabungan logam gred tinggi dan aksen asetat yang halus. Setiap bingkai dipasang dengan engsel tong 2+1 yang tepat untuk menjamin pengalaman pengguna yang lancar, memenuhi piawaian kualiti yang ketat pengedar fesyen global. Kemudahan pembuatan khusus Kssmi menyediakan sokongan ODM skala penuh, membolehkan penyesuaian mendalam bahan kanta dan teknik penamat untuk menyelaraskan dengan identiti jenama yang khusus. Model serbaguna ini menawarkan jalan yang diperkemas untuk label premium untuk mengembangkan penawaran kacamata mereka dengan kuantiti pesanan minimum 300 keping yang difokuskan.
+Menggabungkan logam berkualiti tinggi dengan aksen asetat yang anggun, KMS-120 mentafsir semula kacamata mewah melalui seni bina titi berkembar yang berani.
+
+Direka untuk ketahanan, engsel tong 2+1 dan alas hidung silikon hipoalergenik memastikan kesesuaian yang stabil dan selesa untuk pengguna fesyen tinggi.
+
+Menyokong penyesuaian label peribadi yang meluas dan kuantiti pesanan minimum 300 unit yang rendah, model ini membolehkan jenama butik mengembangkan koleksi cermin mata hitam premium mereka dengan penyelesaian ODM pembuatan berketepatan.
