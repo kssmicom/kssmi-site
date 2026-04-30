@@ -602,6 +602,14 @@ for (const k of orderedKeys) {
     .product-highlights-content > p {
       grid-column: 1 !important;
       grid-row: auto !important;
+      padding-left: 1.25rem !important;
+      padding-right: 1.25rem !important;
+    }
+
+    .product-highlights-content > p:first-of-type::before {
+      left: 0.25rem;
+      top: 0.75rem;
+      font-size: 3.5rem;
     }
 
     .product-highlights-content > p:first-of-type {
