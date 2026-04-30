@@ -507,28 +507,44 @@ for (const k of orderedKeys) {
     transform: scale(1.2) rotate(5deg);
   }
 
-  /* ── Card 3: Overview Paragraph (bottom, full width) ── */
-  /* The paragraph after first H2 = Overview text */
+  /* ── Card 3: Overview Paragraphs (bottom, full width) ── */
   .product-highlights-content > p {
     grid-column: 1 / -1;
-    grid-row: 4;
     position: relative;
     font-size: 1.0625rem;
     line-height: 1.8;
     color: #57534e;
-    margin: 2rem 0 0 0;
-    padding: 2rem 2.5rem;
-    background: #fdfaf6; /* Not 100% pure white */
-    border-radius: 8px;
-    border: 1px solid #e7e5e4;
+    margin: 0;
+    padding: 0.75rem 2.5rem;
+    background: #fdfaf6;
     border-left: 4px solid #b45309;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
-    /* Soft, slightly delayed transition */
-    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-right: 1px solid #e7e5e4;
+    transition: all 0.3s ease;
   }
 
-  /* Elegant quote accent */
-  .product-highlights-content > p::before {
+  /* First paragraph of overview */
+  .product-highlights-content > p:first-of-type {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e7e5e4;
+    border-radius: 8px 8px 0 0;
+  }
+
+  /* Last paragraph of overview */
+  .product-highlights-content > p:last-of-type {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e7e5e4;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  }
+
+  /* Single paragraph overview */
+  .product-highlights-content > p:only-of-type {
+    border-radius: 8px;
+  }
+
+  /* Elegant quote accent only on the first paragraph */
+  .product-highlights-content > p:first-of-type::before {
     content: '"';
     position: absolute;
     top: 1rem;
@@ -537,13 +553,12 @@ for (const k of orderedKeys) {
     font-size: 4rem;
     line-height: 1;
     color: #f3ece4; /* Soft warm tone, no opacity */
+    pointer-events: none;
   }
 
   .product-highlights-content > p:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px -5px rgba(180, 83, 9, 0.10); /* Soft shadow */
+    background: #faf6f0;
     border-left-color: #92400e; /* Slightly darker than #b45309 */
-    background: #faf6f0; /* Slightly darker warm background on hover */
   }
 
   /* Mobile/Tablet: Stack all cards */
@@ -565,10 +580,11 @@ for (const k of orderedKeys) {
 
     /* Better mobile presentation for Technical Features (stacking) */
     .product-highlights-content > ul:first-of-type li {
-      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: wrap;
       align-items: flex-start;
       padding: 0.75rem 1.5rem;
-      gap: 0.25rem;
+      gap: 0.25rem 0.5rem;
     }
 
     .product-highlights-content > ul:first-of-type li strong,
@@ -576,6 +592,7 @@ for (const k of orderedKeys) {
       white-space: normal;
       min-width: 0;
       color: #b45309;
+      flex: 1 1 calc(100% - 28px);
     }
 
     .product-highlights-content > h2:nth-of-type(2) {
@@ -585,7 +602,14 @@ for (const k of orderedKeys) {
     .product-highlights-content > p {
       grid-column: 1 !important;
       grid-row: auto !important;
+    }
+
+    .product-highlights-content > p:first-of-type {
       margin-top: 1.5rem !important;
+    }
+
+    .product-highlights-content > p:not(:first-of-type) {
+      margin-top: -1.5rem !important; /* Counteract grid gap so paragraphs connect */
     }
   }
 </style>
