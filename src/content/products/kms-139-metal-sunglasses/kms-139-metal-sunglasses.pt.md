@@ -13,7 +13,6 @@ moq: "300 pçs/modelo"
 productType: "Sunglasses"
 material: "Metal Sunglasses"
 series: "sunglasses, metal-sunglasses,fashion-metal-sunglasses"
-categories: "Sunglasses, Metal Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "52-17-145mm & Personalização"
@@ -24,7 +23,6 @@ nosePads: "Ponteiras Nasicas de Silicone"
 hinge: "Dobradiças de Estrutura de Barril 2+1 & Personalização"
 logo: "Impressão Tampográfica, Gravação a Laser, Gravação a Laser com Esmalte, Estampagem a Quente, Logotipo Metálico, Logotipo em Relevo, Decoração di Cristal, Adesivo 3D"
 service: "Fabricação OEM / ODM – Personalização"
-acetateFeature: "Leve & Durável & Vibrante"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kms-139-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-139-1.webp"
@@ -73,6 +71,10 @@ seoKeywords: "fabricante de óculos de sol de metal, óculos de luxo personaliza
 - Lojas Ópticas Premium
 - Etiquetas de Moda Boutique
 
-## Características
+## Visão geral do produto
 
-Refinando a interseção de durabilidade industrial e estilo contemporâneo, o modelo KMS-139 apresenta uma arquitetura em metal premium projetada para o exigente mercado global de óculos. Sua base técnica é construída sobre materiais de grau aeroespacial e dobradiças de barril 2+1 de engenharia de precisão, garantindo um ajuste de alto desempenho que atende aos padrões de qualidade das butiques de luxo e dos designers independentes. Apoiando o desenvolvimento ágil de marcas com uma baixa quantidade mínima de pedido de 300 peças, nossa fábrica oferece um escopo total de personalização ODM e OEM para transformar essa armação versátil em uma peça de assinatura para qualquer coleção de marca própria.
+A resiliência industrial encontra a elegância contemporânea no modelo KMS-139, apresentando uma arquitetura de metal de grau aeroespacial premium. Esta armação ultra-resistente equilibra a integridade estrutural com um perfil leve, tornando-a uma peça fundamental para os portfólios de óculos de alta gama.
+
+A excelência técnica está integrada em cada detalhe, desde as dobradiças de estrutura de tambor 2+1 de alta frequência até às plaquetas de nariz de silicone hipoalergénicas. Estes componenti, combinados com lentes de nylon resistentes ao impacto, proporcionam um ajuste consistente e um conforto superior para diversos perfis demográficos internacionais.
+
+Ao manter uma quantidade mínima de encomenda baixa de 300 unidades, oferecemos total flexibilidade de personalização ODM e OEM para transformar este design versátil num ativo de marca distintivo. A nossa escala de fabrico apoia marcas premium e designers independentes na entrega de qualidade personalizada a uma escala comercial.

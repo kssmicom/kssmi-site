@@ -70,4 +70,9 @@ seoKeywords: "nhà sản xuất kính mát kim loại xa xỉ, tùy chỉnh kín
 
 ## Tổng quan
 
-Được chế tác cho phân khúc thị trường nữ cao cấp, KMS-136 kết hợp gọng kim loại cao cấp với thiết kế cầu đôi tiên tiến để mang lại kiểu dáng táo bạo nhưng thanh lịch. Mỗi cặp kính đều có bản lề thùng 2+1 được kỹ thuật chính xác và quang học nylon chống va đập, đảm bảo độ tin cậy kỹ thuật tương xứng với thẩm mỹ xa xỉ của gọng kính. Hỗ trợ tùy chỉnh OEM và ODM toàn diện từ việc đặt logo riêng đến kích thước gọng kính được thiết kế riêng, Kssmi cung cấp giải pháp sản xuất linh hoạt với mức tối thiểu 300 chiếc, hoàn toàn phù hợp cho các nhãn hàng boutique và các nhà mốt xa xỉ toàn cầu.
+KMS-136 định nghĩa sự sang trọng hiện đại thông qua cấu trúc kim loại cao cấp và thiết kế cầu đôi dẫn đầu xu hướng. Kiểu dáng tinh tế này cân bằng giữa tính toàn vẹn của cấu trúc với tính thẩm mỹ sang trọng, táo bạo, được thiết kế riêng cho thị trường kính mắt nữ cao cấp.
+
+Được trang bị bản lề cấu trúc thùng 2+1 được kỹ thuật chính xác và đệm mũi silicone không gây dị ứng, gọng kính mang lại độ tin cậy vận hành lâu dài và cảm giác vừa vặn công thái học, không gây áp lực khi đeo cả ngày.
+
+Hỗ trợ tùy chỉnh OEM và ODM sâu rộng với số lượng đặt hàng tối thiểu thấp chỉ 300 cái, Kssmi trao quyền cho các nhãn hiệu thời trang boutique và các nhà thiết kế độc lập ra mắt các bộ sưu tập kính mắt thiết kế riêng với độ chính xác sản xuất tuyệt đối.
+

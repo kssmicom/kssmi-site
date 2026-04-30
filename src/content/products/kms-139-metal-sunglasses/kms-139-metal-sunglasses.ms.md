@@ -13,7 +13,6 @@ moq: "300 unit/model"
 productType: "Sunglasses"
 material: "Metal Sunglasses"
 series: "sunglasses, metal-sunglasses,fashion-metal-sunglasses"
-categories: "Sunglasses, Metal Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "52-17-145mm & Penyesuaian"
@@ -24,7 +23,6 @@ nosePads: "Alas Hidung Silikon"
 hinge: "Engsel Struktur Tong 2+1 & Penyesuaian"
 logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Lencana Logam, Timbulan, Kristal, Pelekat"
 service: "Pembuatan OEM / ODM – Penyesuaian"
-acetateFeature: "Ringan & Tahan Lama & Ceria"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kms-139-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-139-1.webp"
@@ -73,6 +71,10 @@ seoKeywords: "pengilang cermin mata hitam logam, OEM cermin mata mewah tersuai, 
 - Rantai Optik Bergengsi
 - Label Fesyen Boutique
 
-## Ciri-ciri Utama
+## Gambaran Keseluruhan Produk
 
-Menyempurnakan persimpangan antara ketahanan perindustrian dan gaya kontemporari, KMS-139 menampilkan seni bina logam premium yang direka untuk pasaran kacamata global yang arif. Asas teknikalnya dibina di atas bahan gred aeroangkasa dan engsel tong 2+1 yang direka dengan kejuruteraan jitu, memastikan kesesuaian berprestasi tinggi yang memenuhi standard kualiti butik mewah dan pereka berdikari. Menyokong pembangunan jenama yang tangkas dengan kuantiti pesanan minimum 300 unit yang rendah, kilang kami menyediakan skop penyesuaian ODM dan OEM penuh untuk mengubah bingkai serba boleh ini menjadi kepingan tanda tangan untuk mana-mana koleksi label peribadi.
+Ketahanan industri bertemu dengan keanggunan kontemporari dalam model KMS-139, yang menampilkan seni bina logam gred aeroangkasa premium. Bingkai ultra-tahan ini mengimbangi integriti struktur dengan profil ringan, menjadikannya asas untuk portfolio cermin mata mewah.
+
+Kecemerlangan teknikal disepadukan ke dalam setiap perincian, daripada engsel struktur tong 2+1 frekuensi tinggi kepada alas hidung silikon hipoalergenik. Komponen ini, digabungkan dengan kanta nilon tahan impak, memberikan kesesuaian yang konsisten dan keselesaan unggul untuk pelbagai demografi antarabangsa.
+
+Dengan mengekalkan kuantiti pesanan minimum 300 unit yang rendah, kami menyediakan fleksibiliti penyesuaian ODM dan OEM sepenuhnya untuk mengubah reka bentuk serba boleh ini menjadi aset jenama yang tersendiri. Skala pembuatan kami menyokong label premium dan pereka bebas dalam menyampaikan kualiti tersuai pada skala komersial.

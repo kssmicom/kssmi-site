@@ -13,7 +13,6 @@ moq: "300 adet/model"
 productType: "Sunglasses"
 material: "Metal Sunglasses"
 series: "sunglasses, metal-sunglasses,fashion-metal-sunglasses"
-categories: "Sunglasses, Metal Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "52-17-145mm & Özelleştirme"
@@ -24,7 +23,6 @@ nosePads: "Silikon Burun Tamponları"
 hinge: "2+1 Namlu Yapılı Menteşeler & Özelleştirme"
 logo: "Tampo Baskı, Lazer Markalama, Boya Dolgulu Lazer, Sıcak Baskı, Metal Logo, Kabartma Logo, Kristal Süsleme, 3D Etiket"
 service: "OEM / ODM Üretim – Özelleştirme"
-acetateFeature: "Hafif & Dayanıklı & Canlı"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kms-139-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-139-1.webp"
@@ -73,6 +71,10 @@ seoKeywords: "metal güneş gözlüğü üreticisi, özel lüks gözlük OEM, ha
 - Yüksek Segment Optik Zincirleri
 - Butik Moda Markaları
 
-## Özellikler
+## Ürün Genel Bakışı
 
-Endüstriyel dayanıklılık ve çağdaş stilin kesişimini rafine eden KMS-139, seçici küresel gözlük pazarı için tasarlanmış premium bir metal mimariye sahiptir. Teknik temeli, havacılık sınıfı malzemeler ve hassas mühendislik ürünü 2+1 namlu menteşeler üzerine inşa edilmiş olup, lüks butiklerin ve bağımsız tasarımcıların kalite standartlarını karşılayan yüksek performanslı bir uyum sağlar. 300 parçalık düşük minimum sipariş miktarı ile çevik marka gelişimini destekleyen fabrikamız, bu çok yönlü çerçeveyi herhangi bir özel marka koleksiyonu için imza bir parçaya dönüştürmek amacıyla tam ODM ve OEM özelleştirme kapsamı sunar.
+Endüstriyel dayanıklılık, birinci sınıf havacılık sınıfı metal mimariye sahip KMS-139 modelinde çağdaş zarafetle buluşuyor. Bu ultra dirençli çerçeve, yapısal bütünlüğü hafif bir profille dengeleyerek üst düzey gözlük portföyleri için temel bir taş haline geliyor.
+
+Yüksek frekanslı 2+1 namlu yapılı menteşelerden hipoalerjenik silikon burun pedlerine kadar her ayrıntıya teknik mükemmellik entegre edilmiştir. Darbeye dayanıklı naylon lenslerle eşleşen bu bileşenler, çeşitli uluslararası demografik gruplar için tutarlı bir uyum ve üstün konfor sağlar.
+
+300 adetlik düşük minimum sipariş miktarını koruyarak, bu çok yönlü tasarımı markaya özel bir varlığa dönüştürmek için tam ODM ve OEM özelleştirme esnekliği sağlıyoruz. Üretim ölçeğimiz, premium markaların ve bağımsız tasarımcıların ticari ölçekte ısmarlama kalite sunmalarını destekler.

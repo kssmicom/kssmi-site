@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Sunglasses"
 material: "Metal Sunglasses"
 series: "sunglasses, metal-sunglasses,fashion-metal-sunglasses"
-categories: "Sunglasses, Metal Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "52-17-145mm & Customization"
@@ -24,7 +23,6 @@ nosePads: "Silicone Nose Pads"
 hinge: "2+1 Barrel Structure Hinges & Customization"
 logo: "Print, Laser, Laser With Oil, Hot Stamping, Metal, Embossing, Crystal, Up-sticker"
 service: "OEM / ODM customization"
-acetateFeature: "Lightweight & Durable & Vibrant"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kms-139-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-139-1.webp"
@@ -75,4 +73,8 @@ seoKeywords: "metal sunglasses manufacturer, custom luxury eyewear OEM, aerospac
 
 ## Overview
 
-Refining the intersection of industrial durability and contemporary style, the KMS-139 features a premium metal architecture designed for the discerning global eyewear market. Its technical foundation is built on aerospace-grade materials and precision-engineered 2+1 barrel hinges, ensuring a high-performance fit that meets the quality standards of luxury boutiques and independent designers. Supporting agile brand development with a low 300-piece minimum order quantity, our factory provides full ODM and OEM customization scope to transform this versatile frame into a signature piece for any private label collection.
+Industrial resilience meets contemporary elegance in the KMS-139, featuring a premium aerospace-grade metal architecture. This ultra-resilient frame balances structural integrity with a lightweight profile, making it a cornerstone for high-end eyewear portfolios.
+
+Technical excellence is integrated into every detail, from the high-frequency 2+1 barrel structure hinges to the hypoallergenic silicone nose pads. These components, paired with impact-resistant nylon lenses, provide a consistent fit and superior comfort for diverse international demographics.
+
+By maintaining a low 300-piece minimum order quantity, we provide full ODM and OEM customization flexibility to transform this versatile design into a signature brand asset. Our manufacturing scale supports premium labels and independent designers in delivering bespoke quality at a commercial scale.
