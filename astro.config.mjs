@@ -33,95 +33,91 @@ export default defineConfig({
       {
         name: 'content-folder-watcher',
         configureServer(server) {
+          // ── Use plugin instance state (survives server.restart()) ──────────
+          if (!this._knownFolders) {
+            this._knownFolders = new Set();
+            this._restarting = false;
+            this._interval = null;
+          }
+
           const productsDir = path.resolve('./src/content/products');
           const collectionDir = path.resolve('./src/content/collection');
           const blogDir = path.resolve('./src/content/blog');
           const cacheFile = path.resolve('./.astro/data-store.json');
           const cacheDir = path.resolve('./.astro/collections');
 
-          // Track product folders
-          let knownProductFolders = new Set();
           let debounceTimer = null;
 
-          // Initialize known product folders
+          // ── Init folder list on first run ────────────────────────────────
           try {
             const entries = fs.readdirSync(productsDir, { withFileTypes: true });
             for (const entry of entries) {
-              if (entry.isDirectory()) {
-                knownProductFolders.add(entry.name);
-              }
+              if (entry.isDirectory()) this._knownFolders.add(entry.name);
             }
-          } catch (e) {
-            // Ignore
+          } catch { /* ignore */ }
+
+          // ── Clear stale interval from any PREVIOUS server instance ────────
+          if (this._interval) {
+            clearInterval(this._interval);
+            this._interval = null;
           }
 
-          // Check for product folder changes every 2 seconds
-          const productCheckInterval = setInterval(() => {
+          // ── Poll for new/removed product folders ─────────────────────────
+          this._interval = setInterval(() => {
+            if (this._restarting) return;
+
             try {
               const currentFolders = new Set();
               const entries = fs.readdirSync(productsDir, { withFileTypes: true });
-
               for (const entry of entries) {
-                if (entry.isDirectory()) {
-                  currentFolders.add(entry.name);
-
-                  if (!knownProductFolders.has(entry.name)) {
-                    console.log('\x1b[36m[Content]\x1b[0m New product detected: ' + entry.name);
-                    triggerCacheClear();
-                  }
-                }
+                if (entry.isDirectory()) currentFolders.add(entry.name);
               }
 
-              for (const folder of knownProductFolders) {
+              for (const folder of currentFolders) {
+                if (!this._knownFolders.has(folder)) {
+                  console.log('\x1b[36m[Content]\x1b[0m New product detected: ' + folder);
+                  queueRestart();
+                  break;
+                }
+              }
+              for (const folder of this._knownFolders) {
                 if (!currentFolders.has(folder)) {
-                  console.log('\x1b[36m[Content]\x1b0m Product removed: ' + folder);
-                  triggerCacheClear();
+                  console.log('\x1b[36m[Content]\x1b[0m Product removed: ' + folder);
+                  queueRestart();
+                  break;
                 }
               }
 
-              knownProductFolders = currentFolders;
-            } catch (e) {
-              // Ignore errors
-            }
-          }, 2000);
+              this._knownFolders = currentFolders;
+            } catch { /* ignore */ }
+          }, 3000);
 
-          // Watch collection and blog directories for file changes (not just folders)
-          const contentWatchPaths = [collectionDir, blogDir];
-
-          function triggerCacheClear() {
-            if (debounceTimer) clearTimeout(debounceTimer);
-
+          // ── Restart with lock to prevent concurrent restarts ──────────────
+          function queueRestart() {
+            if (debounceTimer) return;
             debounceTimer = setTimeout(async () => {
+              this._restarting = true;
               try {
-                if (fs.existsSync(cacheFile)) {
-                  fs.unlinkSync(cacheFile);
-                }
-                if (fs.existsSync(cacheDir)) {
-                  fs.rmSync(cacheDir, { recursive: true });
-                }
-                console.log('\x1b[36m[Content]\x1b[0m Content changed — restarting server to pick up changes...');
+                if (fs.existsSync(cacheFile)) fs.unlinkSync(cacheFile);
+                if (fs.existsSync(cacheDir)) fs.rmSync(cacheDir, { recursive: true, force: true });
 
-                // Restart the dev server so Astro re-runs the glob content loader
+                console.log('\x1b[36m[Content]\x1b[0m Restarting dev server…');
                 await server.restart();
               } catch (e) {
-                // Ignore errors
+                console.error('\x1b[31m[Content]\x1b[0m Restart failed:', e.message);
               }
-            }, 1000);
+              this._restarting = false;
+              debounceTimer = null;
+            }, 2000);
           }
 
-          // Use Vite's file system watcher for collection/blog changes
-          contentWatchPaths.forEach(watchPath => {
+          // ── Watch collection/blog file changes ────────────────────────────
+          [collectionDir, blogDir].forEach(watchPath => {
             if (!fs.existsSync(watchPath)) return;
-
-            // Watch for any file changes in collection/blog directories
-            server.watcher.add(watchPath);
-
-            // Also watch recursively by adding individual subdirectories
             try {
               const addRecursiveWatch = (dir, depth = 0) => {
-                if (depth > 3) return; // Limit recursion depth
-                const entries = fs.readdirSync(dir, { withFileTypes: true });
-                for (const entry of entries) {
+                if (depth > 3) return;
+                for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
                   const fullPath = path.join(dir, entry.name);
                   if (entry.isDirectory()) {
                     server.watcher.add(fullPath);
@@ -129,35 +125,28 @@ export default defineConfig({
                   }
                 }
               };
+              server.watcher.add(watchPath);
               addRecursiveWatch(watchPath);
-            } catch (e) {
-              // Ignore watch errors
-            }
+            } catch { /* ignore */ }
           });
 
-          // Increase listener limit to prevent MaxListenersExceededWarning
-          if (server.watcher && typeof server.watcher.setMaxListeners === 'function') {
-            server.watcher.setMaxListeners(50);
-          }
+          if (server.watcher?.setMaxListeners) server.watcher.setMaxListeners(50);
 
-          // Listen for change events on the watcher
           server.watcher.on('change', (filePath) => {
-            const normalizedPath = filePath.replace(/\\/g, '/');
-
-            // Check if changed file is in collection or blog
-            if (normalizedPath.includes('/content/collection/') ||
-                normalizedPath.includes('/content/blog/')) {
+            const p = filePath.replace(/\\/g, '/');
+            if (p.includes('/content/collection/') || p.includes('/content/blog/')) {
               console.log('\x1b[36m[Content]\x1b[0m File changed: ' + path.basename(filePath));
-              triggerCacheClear();
+              queueRestart();
             }
           });
 
-          // Cleanup on server close
-          if (server.httpServer) {
-            server.httpServer.on('close', () => {
-              clearInterval(productCheckInterval);
-            });
-          }
+          // ── Cleanup interval when THIS server instance closes ────────────
+          server.httpServer?.on('close', () => {
+            if (this._interval) {
+              clearInterval(this._interval);
+              this._interval = null;
+            }
+          });
         }
       },
     ],
