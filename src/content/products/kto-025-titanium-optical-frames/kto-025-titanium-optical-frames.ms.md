@@ -6,7 +6,7 @@ itemNo: "KTO-025"
 date: "2026-04-06"
 colors: "Keemasan & Keperakan & Kura-kura Perak & Kura-kura Emas"
 materials: "Titanium Premium"
-serviceMode: "OEM & ODM ( Penyesuaian )"
+serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -16,12 +16,12 @@ series: "optical-frames, titanium-optical-frames, luxury-eyewear, luxury-titaniu
 
 # ─────────────────────────────────────────────────────
 size: "54-16-148mm & Penyesuaian"
-frameMaterial: "Bingkai dan Tangkai Titanium Premium"
+frameMaterial: "Bingkai dan Sangga Titanium Premium"
 lensMaterial: "Lensa AC & Lensa Nylon Teguh & Penyesuaian"
 designStyle: "Bergaya, Trendi, Kasual, Mewah, Unisex"
 nosePads: "Alas Hidung Satu Bahagian"
-hinge: "Engsel Struktur 3 Baris & Penyesuaian"
-logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Logam, Timbulan, Kristal, Pelekat"
+hinge: "Engsel Struktur 3 Tong & Penyesuaian"
+logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Lencana Logam, Timbulan, Kristal, Pelekat"
 service: "Pembuatan OEM / ODM – Penyesuaian"
 
 # ─────────────────────────────────────────────────────
@@ -46,18 +46,18 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Bingkai Optik Titanium Mewah & Bergaya KTO-025 | Kilang Tersuai"
-seoDescription: "Tingkatkan koleksi mewah anda dengan bingkai optik titanium premium KTO-025. Ketahanan gred aeroangkasa, engsel 3 baris, dan pengeluaran OEM/ODM MOQ 300."
-seoKeywords: "pengilang bingkai optik titanium, kacamata OEM China, bingkai label peribadi mewah, pembekal kacamata butik borong, pengeluaran kacamata titanium kustom, kilang bingkai optik mewah, pengeluar kacamata titanium boleh suai, rakan pembuatan kacamata China"
+seoTitle: "Bingkai Optik Titanium Mewah KTO-025 | Kilang Tersuai"
+seoDescription: "Tingkatkan koleksi mewah anda dengan bingkai optik titanium premium KTO-025. Ketahanan gred aeroangkasa, engsel 3 tong, dan pengeluaran penuh OEM/ODM dengan MOQ 300."
+seoKeywords: "pengeluar bingkai optik titanium, kacamata OEM China, bingkai label peribadi mewah, pembekal kacamata butik borong, pengeluaran kacamata titanium tempahan"
 ---
 
 ## Ciri-ciri Utama
-- **Bahan Gred Aeroangkasa:** Bingkai dan tangkai titanium premium yang menawarkan rasa ultra ringan dengan nisbah kekuatan-ke-berat yang ekstrem untuk ketahanan jangka panjang.
-- **Perkakasan Tahan Lama:** Engsel struktur 3 baris yang stabil direka untuk kelancaran operasi yang konsisten dan kestabilan bingkai yang dipertingkatkan.
-- **Optik Termaju:** Pilihan lensa AC berprestasi tinggi dan lensa nylon teguh dengan keupayaan pewarnaan dan salutan tersuai yang meluas tersedia.
-- **Keselesaan Ergonomik:** Alas hidung satu bahagian bersepadu yang direka untuk kesesuaian yang selamat, hipoalergenik dan keselesaan pemakaian sepanjang hari.
-- **Kejuruteraan Ketepatan:** Pembinaan toleransi tinggi yang memastikan penjajaran tepat dan kemasan mewah yang memenuhi piawaian peruncit optik mewah.
-- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum yang rendah iaitu 300 unit yang disesuaikan untuk Jenama Kacamata Premium dan Rumah Fesyen Mewah.
+- **Bahan Gred Aeroangkasa:** Bingkai dan sangga titanium premium yang menawarkan rasa ultra ringan dengan nisbah kekuatan-ke-berat yang melampau untuk ketahanan jangka panjang.
+- **Perkakasan Tahan Lama:** Engsel struktur 3 tong yang stabil direka untuk kelancaran operasi yang konsisten dan kestabilan bingkai yang dipertingkatkan.
+- **Optik Termaju:** Pilihan lensa AC dan lensa nylon teguh berprestasi tinggi dengan keupayaan pewarnaan dan salutan tersuai yang luas tersedia.
+- **Keselesaan Ergonomik:** Alas hidung satu bahagian bersepadu yang direka untuk muat yang selamat, hipoalergenik dan keselesaan pemakaian sepanjang hari.
+- **Kejuruteraan Ketepatan:** Pembinaan toleransi tinggi memastikan penjajaran tepat dan kemasan mewah yang memenuhi piawaian peruncit optik mewah.
+- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum rendah 300 unit yang disesuaikan untuk Jenama Kacamata Premium dan Rumah Fesyen Mewah.
 
 ## Sesuai Untuk
 - Merek Kacamata Premium
@@ -65,8 +65,12 @@ seoKeywords: "pengilang bingkai optik titanium, kacamata OEM China, bingkai labe
 - Pengedar Label Peribadi
 - Rumah Fesyen Mewah
 - Jenama Gaya Hidup Sukan & Automotif
-- Runcit Dutypirlalu & Perjalanan
+- runcit Dutypirlalu & Perjalanan
 
 ## Gambaran Keseluruhan
 
-Direka dengan titanium premium, KTO-025 menawarkan siluet unisex yang sofistikasi yang mengimbangi keselesaan ultra ringan dengan kekuatan struktur yang unggul. Perkakasan ketepatan bingkai, yang menampilkan engsel 3 baris yang diperkukuh dan alas hidung satu bahagian yang lancar, memberikan kelancaran operasi konsisten yang diperlukan oleh peruncit optik mewah. Dengan sokongan penuh OEM dan ODM pada kuantiti pesanan minimum 300 unit, Kssmi membolehkan rumah fesyen mewah dan label bebas untuk mengembangkan koleksi peribadi mereka melalui aplikasi logo tersuai dan penyesuaian teknikal.
+Direka untuk ketahanan tanpa kompromi, KTO-025 menggunakan titanium gred aeroangkasa untuk memberikan pengalaman ultra ringan tanpa mengorbankan integriti struktur.
+
+Bingkai ini mempunyai engsel 3 tong yang ditentukur dengan ketepatan dan alas hidung bersepadu, memastikan kelancaran operasi yang berterusan dan muat yang selamat serta hipoalergenik untuk pelbagai bentuk muka.
+
+Dioptimumkan untuk peruncit optik mewah, model mewah ini menyokong penyesuaian tempahan yang luas dan penjenamaan label peribadi dengan kuantiti pesanan minimum 300 unit yang serba boleh.

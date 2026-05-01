@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Sunglasses"
 material: "Titanium Sunglasses"
 series: "sunglasses, titanium-sunglasses, luxury-eyewear, luxury-titanium-sunglasses"
-categories: "Sunglasses, Titanium Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "52-17-145mm & Customization"
@@ -70,4 +69,8 @@ seoKeywords: "titanium sunglasses manufacturer, custom OEM eyewear, luxury priva
 
 ## Overview
 
-Precision-crafted for luxury labels seeking a fusion of ultra-lightweight durability and contemporary design, this premium titanium frame delivers an exceptional strength-to-weight ratio for everyday comfort. The structural integrity is reinforced by stable 2+1 barrel hinges and high-performance nylon lenses, while the one-piece nose pads maintain a sleek, minimalist aesthetic across all sophisticated colorways. Supporting full OEM and ODM customization from bespoke logos to custom sizing at a 300-piece minimum, the KTS-023 enables eyewear brands and private label distributors to bring high-end titanium collections to market with efficiency.
+Designed for high-end markets that demand the ultimate in lightweight durability, the KTS-023 showcases the sleek aesthetic of premium-grade titanium. The hypoallergenic frames offer an exceptional strength-to-weight ratio, ensuring all-day comfort for the most discerning wearers.
+
+Each frame is engineered with a robust 2+1 barrel hinge system and integrated one-piece nose pads to provide a seamless blend of structural stability and minimalist design.
+
+Kssmi provides full-scale OEM and ODM manufacturing for this model, supporting extensive logo customization and bespoke sizing at a low 300-piece minimum for luxury fashion houses and independent designers.

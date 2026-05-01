@@ -6,14 +6,13 @@ itemNo: "KTS-021"
 date: "2026-04-07"
 colors: "Keperakan Hitam & Keemasan Kura-kura & Biru Gradien Kura-kura & Keemasan Hijau Gelap"
 materials: "Titanium Premium"
-serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
+serviceMode: "OEM & ODM ( Penyesuaian )"
 moq: "300 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Titanium Sunglasses"
 series: "sunglasses, titanium-sunglasses, luxury-eyewear, luxury-titanium-sunglasses"
-categories: "Sunglasses, Titanium Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "52-17-145mm & Penyesuaian"
@@ -53,6 +52,7 @@ seoKeywords: "pengeluar cermin mata hitam titanium, cermin mata hitam OEM tersua
 ---
 
 ## Ciri-ciri Utama
+
 - **Bahan Gred Aeroangkasa:** Bingkai dan gagang titanium premium yang menawarkan nisbah kekuatan-ke-berat yang luar biasa untuk ketahanan yang tidak dapat ditandingi dan keselesaan ringan.
 - **Perkakasan Tahan Lama:** Engsel struktur tong 2+1 yang stabil direka untuk kelancaran operasi yang konsisten dan kebolehpercayaan struktur jangka panjang.
 - **Optik Premium:** Lensa nilon tahan lasak yang memberikan rintangan hentaman dan kejelasan yang unggul, dengan pilihan pewarnaan yang boleh disesuaikan untuk memenuhi keperluan jenama tertentu.
@@ -61,6 +61,7 @@ seoKeywords: "pengeluar cermin mata hitam titanium, cermin mata hitam OEM tersua
 - **Pengeluaran Boleh Skala:** Perkhidmatan penyesuaian OEM & ODM yang fleksibel dengan 300 unit MOQ yang direka untuk menyokong Jenama Cermin Mata Premium dan Rantai Optik Bergengsi.
 
 ## Sesuai Untuk
+
 - Merek Kacamata Premium
 - Pereka Kacamata Berkesan
 - Pengedar Label Peribadi
@@ -70,4 +71,8 @@ seoKeywords: "pengeluar cermin mata hitam titanium, cermin mata hitam OEM tersua
 
 ## Gambaran Keseluruhan
 
-Direka untuk jenama yang mengutamakan integriti struktur dan estetika minimalis, model ini menggunakan titanium premium untuk memberikan bingkai yang sangat ringan namun berdaya tahan. Setiap komponen, daripada lensa nilon tahan lasak hingga engsel tong 2+1 yang ditentukur dengan ketepatan, menjalani kawalan kualiti yang ketat untuk memastikan ketahanan jangka panjang dan kejelasan optik. Kemudahan pembuatan kami menyokong penyesuaian OEM dan ODM yang meluas, menyediakan aplikasi logo fleksibel dan variasi bahan dengan kuantiti pesanan minimum 300 unit yang boleh diurus. Pendekatan pengeluaran yang boleh skala ini memperkasakan label fesyen butik dan jenama cermin mata premium untuk mengembangkan portfolio mereka dengan koleksi titanium yang mewah dan diperibadikan.
+Menggabungkan estetika fesyen tinggi dengan ketahanan gred industri, KTS-021 diukir daripada titanium premium untuk kesesuaian uniseks yang ringan.
+
+Bingkai ini mempunyai pelapik hidung satu keping bersepadu dan sistem engsel tong 2+1 kejuruteraan jitu untuk memastikan kestabilan struktur melalui penggunaan harian.
+
+Kami menyediakan penyesuaian OEM dan ODM yang meluas merentas siri ini—termasuk penjenamaan tersuai dan pewarnaan kanta—dengan kuantiti pesanan minimum 300 unit yang boleh diurus untuk label mewah.

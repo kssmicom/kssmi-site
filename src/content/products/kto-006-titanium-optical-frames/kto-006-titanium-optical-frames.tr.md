@@ -1,12 +1,12 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Özel Tasarım Titanyum Optik Gözlük Çerçeveleri"
+title: "Özel Titanyum Optik Çerçeveler"
 slug: "kto-006-titanium-optical-frames"
 itemNo: "KTO-006"
 date: "2026-04-06"
 colors: "Kırmızı & Yeşil & Siyah"
-materials: "Premium Asetat ve Titanyum"
-serviceMode: "OEM / ODM Üretim – Özelleştirme"
+materials: "Premium Asetat & Titanyum"
+serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
 moq: "300 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -16,11 +16,11 @@ series: "optical-frames, titanium-optical-frames, luxury-eyewear, luxury-titaniu
 
 # ─────────────────────────────────────────────────────
 size: "52-18-145mm & Özelleştirme"
-frameMaterial: "Premium Asetat Ön Kısım ve Titanyum Sap"
+frameMaterial: "Premium Asetat Çerçeve ve Titanyum Sap"
 lensMaterial: "AC Lens & Naylon & Özelleştirme"
 designStyle: "Lüks, Retro, Unisex"
-nosePads: "Tek Parça Burun Yastıkları"
-hinge: "3 Kademeli Menteşeler"
+nosePads: "Tek Parça Burun Tamponları"
+hinge: "3 Boğumlu Menteşeler"
 electroplatingMethod: "ION Kaplama"
 logo: "Tampo Baskı, Lazer Markalama, Boya Dolgulu Lazer, Sıcak Baskı, Metal Logo, Kristal Süsleme, 3D Etiket"
 service: "OEM / ODM Üretim – Özelleştirme"
@@ -37,18 +37,18 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KTO-006 Lüks Retro Titanyum Optik Çerçeveler | Özel Tasarım Fabrikası"
-seoDescription: "KTO-006 lüks retro titanyum optik çerçevelerle kendi özel marka portföyünüzü yükseltin. Premium asetat ön kısımlar, 300 MOQ ve tam OEM/ODM özelleştirme seçeneği."
-seoKeywords: "titanyum optik çerçeve üreticisi, özel retro gözlük OEM, lüks asetat titanyum çerçeve toptan, Çin premium gözlük fabrikası, özel marka optik çerçeve tedarikçisi, özelleştirilebilir titanyum gözlük üretimi, butik tasarımcı gözlük üreticisi, Çin titanyum optik çerçeve fabrikası"
+seoTitle: "KTO-006 Lüks Retro Titanyum Optik Çerçeveler | Özel Fabrika"
+seoDescription: "KTO-006 lüks retro titanyum optik çerçevelerle özel marka portföyünüzü yükseltin. Premium asetat ön kısımlar, 300 MOQ ve tam OEM/ODM özelleştirme."
+seoKeywords: "titanyum optik çerçeve üreticisi, özel retro gözlük OEM, lüks asetat titanyum çerçeve toptan, Çin premium gözlük fabrikası, özel marka optik çerçeve tedarikçisi, özelleştirilebilir titanyum gözlük üretimi, ısmarlama tasarım gözlük üreticisi, Çin titanyum optik çerçeve fabrikası"
 ---
 
 ## Özellikler
-- **Havacılık Sınıfı Malzemeler:** Hafif, dayanıklı ve sofistike bir estetik için yüksek kaliteli titanyum saplar, premium asetat ön kısımlarla eşleştirilmiştir.
-- **Premium Yüzey İşlemi:** Gelişmiş vakumlu iyon kaplama, korozyona ve cilt asitlerine karşı olağanüstü dirençle birlikte derin ve canlı bir renk bitişi sağlar.
-- **Güçlendirilmiş Donanım:** Yapısal kararlılık ve uzun süreli kullanım için tutarlı çalışma pürüzsüzlüğü sağlayan hassas mühendislik ürünü 3 kademeli menteşeler.
-- **Ergonomik Tasarım:** Güvenli, baskısız bir uyum ve uzun süreli kullanım sırasında artırılmış konfor için tasarlanmış entegre tek parça burun tamponları.
+- **Havacılık Sınıfı Malzemeler:** Hafif, dayanıklı ve sofistike bir estetik için premium asetat ön kısımlarla eşleştirilmiş yüksek kaliteli titanyum saplar.
+- **Premium Yüzey İşlemi:** Gelişmiş vakumlu iyon kaplama, korozyona ve cilt asitlerine karşı olağanüstü dirençli, derin ve canlı bir renk bitişi sağlar.
+- **Güçlendirilmiş Donanım:** Uzun süreli kullanım için yapısal stabilite ve tutarlı çalışma pürüzsüzlüğü sağlayan hassas mühendislik ürünü 3 boğumlu menteşeler.
+- **Ergonomik Tasarım:** Güvenli, basınçsız bir uyum ve uzun süreli kullanım sırasında gelişmiş konfor için tasarlanmış entegre tek parça burun tamponları.
 - **Optik Çok Yönlülük:** UV koruması ve özel kaplamalar için tam özelleştirme sunan premium naylon veya AC lenslerle uyumludur.
-- **Ölçeklenebilir Üretim:** Premium Gözlük Markaları ve Özel Marka Dağıtımcıları için uyarlanmış esnek 300 parçalık MOQ ile profesyonel OEM ve ODM üretim yetenekleri.
+- **Ölçeklenebilir Üretim:** Premium Gözlük Markaları ve Özel Marka Dağıtımcıları için uyarlanmış esnek 300 adetlik MOQ ile profesyonel OEM ve ODM üretim yetenekleri.
 
 ## İçin Mükemmel
 - Premium Gözlük Markaları
@@ -58,6 +58,10 @@ seoKeywords: "titanyum optik çerçeve üreticisi, özel retro gözlük OEM, lü
 - Butik Moda Markaları
 - Concept ve Çoklu Marka Mağazaları
 
-## Genel Bakış
+## Overview
 
-Zamana meydan okuyan retro bir estetik arayan lüks gözlük markaları, sofistike ve hafif bir profil için yüksek kaliteli titanyum sapları premium asetat ön kısımlarla birleştiren KTO-006'da aradıklarını bulacaklar. Vakumlu iyon kaplama ve hassas mühendislik ürünü 3 kademeli menteşelerin entegrasyonu, yapısal bütünlüğünü ve canlı rengini yıllarca günlük aşınmaya rağmen koruyan dayanıklı, korozyona dayanıklı bir bitiş sağlar. 300 adetlik minimum sipariş miktarı ile tam OEM ve ODM özelleştirmesi için uygun olan bu model, bağımsız tasarımcılara ve butik markalara üst düzey koleksiyonlarına özel logolar ve uzmanlaşmış lens konfigürasyonları dahil etme esnekliği sunar.
+Retro estetiği modern malzemelerle harmanlayan KTO-006, premium asetat ön kısımlar ve havacılık sınıfı titanyum sapların rafine bir kombinasyonuna sahiptir. Bu hibrit yapı, üst düzey optik gözlükler için gerekli olan hafif profili korurken sofistike bir görsel derinlik sunar.
+
+Çerçeveler, üstün renk koruması için gelişmiş vakumlu iyon kaplama ve günlük kullanımda kalıcı yapısal güvenilirlik sağlayan 3 boğumlu bir menteşe sistemi kullanır.
+
+Esnek 300 adetlik minimum sipariş miktarı ve kapsamlı ODM desteği ile bu model, bağımsız gözlük tasarımcılarının ve lüks markaların hassas mühendislik kalitesiyle ısmarlama özel marka koleksiyonlarını hayata geçirmelerini sağlar.

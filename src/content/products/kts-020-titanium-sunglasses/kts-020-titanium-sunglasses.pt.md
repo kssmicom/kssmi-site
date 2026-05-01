@@ -1,27 +1,26 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Óculos de Sol de Titânio Personalizados"
+title: "Óculos de Sol em Titânio Personalizados"
 slug: "kts-020-titanium-sunglasses"
 itemNo: "KTS-020"
 date: "2026-04-07"
-colors: "Preto & Verde & Rosa & Tartaruga & Rosa Claro"
+colors: "Preto & Verde & Rosa & Tartaruga & Rosa Pastel"
 materials: "Titânio Premium"
-serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
+serviceMode: "OEM & ODM ( Personalização )"
 moq: "300 pçs/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
-material: "Titanium Sunglasses"
-series: "sunglasses, titanium-sunglasses, luxury-eyewear, luxury-titanium-sunglasses"
-categories: "Sunglasses, Titanium Sunglasses"
+material: "Titanium"
+series: "Titanium Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "52-17-145mm & Personalização"
-frameMaterial: "Armação e Hastes de Titânio Premium"
+frameMaterial: "Armação e Hastes em Titânio Premium"
 lensMaterial: "Lentes de Nylon Tenaz & Personalização"
 designStyle: "Único, Moda, Elegante, Tendência, Luxo, Unissex"
-nosePads: "Ponteiras Nasicas de Peça Única"
-hinge: "Dobradiças com Estrutura de Barril 2+1 & Personalização"
+nosePads: "Plaquetas de Nariz em Peça Única"
+hinge: "Dobradiças de Estrutura de Barril 2+1 & Personalização"
 logo: "Impressão Tampográfica, Gravação a Laser, Gravação a Laser com Esmalte, Estampagem a Quente, Logotipo Metálico, Logotipo em Relevo, Decoração di Cristal, Adesivo 3D"
 service: "Fabricação OEM / ODM – Personalização"
 
@@ -51,19 +50,19 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KTS-020 Óculos de Sol de Titânio Únicos | Fábrica Custom"
-seoDescription: "Parceria com uma importante fábrica KSSMI para óculos de sol de titânio KTS-020 premium. Suporte total OEM/ODM para marcas de luxo com 300 MOQ."
-seoKeywords: "fabricante óculos de sol titânio, óculos sol OEM personalizados, marca própria óculos luxo, fábrica chinesa óculos titânio, fornecedor óculos sol premium, armações titânio sob medida, produção óculos China, atacado óculos sol luxo"
+seoTitle: "KTS-020 Óculos de Sol em Titânio de Luxo Únicos | Fábrica Custom"
+seoDescription: "Seja parceiro de uma fábrica líder KSSMI para óculos de sol em titânio premium KTS-020. Personalização OEM/ODM completa para marcas de luxo com MOQ de 300."
+seoKeywords: "fabricante de óculos de sol em titânio, óculos de sol OEM personalizados, óculos de marca própria de luxo, fábrica chinesa de óculos de titânio, fornecedor de óculos de sol premium, armações de titânio sob medida, produção de óculos na China, atacado de óculos de sol de luxo"
 ---
 
 ## Características
 
-- **Construção em Titânio:** Armação e hastes de titânio de grau aeroespacial de primeira linha, proporcionando uma sensação ultraleve com uma excepcional relação resistência-peso.
-- **Hardware de Precisão:** Dobradiças estáveis com estrutura de barril 2+1 projetadas para suavidade operacional a longo prazo e durabilidade industrial.
-- **Ótica de Alto Desempenho:** Lentes de nylon tenaz que oferecem clareza superior e resistência ao impacto com amplas opções de tingimento e revestimento personalizados.
-- **Design com Foco no Conforto:** Ponteiras nasicas integradas de peça única para um ajuste seguro e estável, mantendo uma estética elegante e minimalista.
-- **Branding sob Medida:** Múltiplos métodos de aplicação do logotipo, incluindo laser e relevo, para garantir alta visibilidade para marcas de óculos premium.
-- **Produção Escalonável:** Capacidades totais de personalização OEM e ODM com um MOQ de 300 peças, adaptado para designers de óculos independentes e distribuidores de marcas próprias.
+- **Construção em Titânio:** Armação e hastes em titânio de grau aeroespacial premium que oferecem uma sensação de ultra-leveza com uma excepcional relação resistência-peso.
+- **Hardware de Precisão:** Dobradiças de estrutura de barril 2+1 estáveis, projetadas para suavidade operacional a longo prazo e durabilidade industrial.
+- **Óptica de Alto Desempenho:** Lentes de nylon tenaz que oferecem clareza superior e resistência ao impacto com amplas opções de tonalidade e revestimento personalizados.
+- **Design de Conforto Primeiro:** Plaquetas de nariz em peça única integradas que proporcionam um ajuste seguro e estável, mantendo uma estética elegante e minimalista.
+- **Branding sob Medida:** Múltiplos métodos de aplicação de logotipo, incluindo laser e relevo, para garantir visibilidade de marca de alto impacto para marcas de óculos premium.
+- **Produção Escalonável:** Capacidades completas de personalização OEM e ODM com um MOQ de 300 peças adaptado para designers de óculos independentes e distribuidores de marca própria.
 
 ## Perfeito Para
 
@@ -76,4 +75,8 @@ seoKeywords: "fabricante óculos de sol titânio, óculos sol OEM personalizados
 
 ## Visão Geral
 
-Fundindo o titânio aeroespacial de alto desempenho com um design unissex sofisticado, o modelo KTS-020 oferece uma solução de eyewear ultraleve que não compromete a integridade estrutural. Suas dobradiças de barril 2+1 fabricadas com precisão e as lentes de nylon tenaz oferecem a durabilidade industrial e a clareza ótica exigidas por marcas premium de lifestyle e automotivas. Este modelo serve como uma base de alto impacto para designers independentes, suportando uma personalização OEM e ODM exaustiva—desde posicionamentos únicos de logotipo até acabamentos de armação sob medida—com uma quantidade mínima de pedido comercialmente viável de 300 peças. Ao unir a fabricação avançada à estética de luxo, a Kssmi capacita distribuidores de marcas próprias a fornecer óculos de sol de titânio de nível profissional aos mercados globais de varejo duty-free e de alta qualidade.
+Projetado em titânio de grau aeroespacial, o KTS-020 equilibra o conforto ultra-leve com a resiliência estrutural necessária para óculos de sol de alta gama. Sua estética minimalista e identidade de material premium tornam-no uma escolha de destaque para coleções de luxo que priorizam durabilidade e estilo.
+
+O modelo apresenta dobradiças de barril 2+1 projetadas com precisão e lentes de nylon de alta clareza, garantindo suavidade operacional a longo prazo e desempenho visual superior.
+
+Oferecemos suporte total à personalização OEM e ODM — incluindo acabamentos sob medida e posicionamento de logotipo — com uma quantidade mínima de pedido de 300 peças, permitindo que designers independentes e marcas boutique expandam seus portfólios de marca própria com óculos de titânio de nível profissional.

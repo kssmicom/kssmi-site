@@ -13,8 +13,6 @@ moq: "300 PCS/Model"
 productType: "Optical Frames"
 material: "Titanium Optical Frames"
 series: "optical-frames, titanium-optical-frames, luxury-eyewear, luxury-titanium-optical-frames"
-categories: "Optical Frames, Titanium Optical Frames"
-
 # ─────────────────────────────────────────────────────
 size: "52-18-145mm & Customization"
 frameMaterial: "Premium Acetate Frames and Titanium Temple"
@@ -61,4 +59,8 @@ seoKeywords: "titanium optical frames manufacturer, custom retro eyewear OEM, lu
 
 ## Overview
 
-Luxury eyewear brands seeking a timeless retro aesthetic find it in the KTO-006, which pairs high-grade titanium temples with premium acetate fronts for a sophisticated, lightweight profile. The integration of vacuum ion plating and precision-engineered 3-barrel hinges ensures a durable, corrosion-resistant finish that maintains its structural integrity and vibrant color through years of daily wear. Available for full OEM and ODM customization with a 300-piece minimum order quantity, this model offers independent designers and boutique labels the flexibility to incorporate bespoke logos and specialized lens configurations into their high-end collections.
+Blending retro aesthetics with modern materials, the KTO-006 features a refined combination of premium acetate fronts and aerospace-grade titanium temples. This hybrid construction offers a sophisticated visual depth while maintaining a lightweight profile essential for high-end optical wear.
+
+The frames utilize advanced vacuum ion plating for superior color retention and a 3-barrel hinge system that ensures lasting structural reliability across daily use.
+
+With a flexible 300-piece minimum order quantity and comprehensive ODM support, this model empowers independent eyewear designers and luxury brands to execute bespoke private label collections with precision-engineered quality.

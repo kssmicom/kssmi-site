@@ -4,24 +4,23 @@ title: "Kacamata Hitam Titanium Kustom"
 slug: "kts-023-titanium-sunglasses"
 itemNo: "KTS-023"
 date: "2026-04-07"
-colors: "Perak Ireng & Bulus Perak & Ijo Tua Kencana & Bulus Kencana"
-materials: "Titanium Premium"
-serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
+colors: "Selaka Ireng & Bulus Selaka & Kencana Ijo Peteng & Bulus Kencana"
+materials: "Premium Titanium"
+serviceMode: "Produksi Kontrak & Desain lan Produksi"
 moq: "300 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Titanium Sunglasses"
 series: "sunglasses, titanium-sunglasses, luxury-eyewear, luxury-titanium-sunglasses"
-categories: "Sunglasses, Titanium Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "52-17-145mm & Kustomisasi"
-frameMaterial: "Frame lan Gagang Titanium Premium"
+frameMaterial: "Frame lan Temple Premium Titanium"
 lensMaterial: "Lensa Nylon Kuat & Kustomisasi"
-designStyle: "Unik, Fashion, Stylish, Trendy, Mewah, Unisex"
-nosePads: "Bantalan Irung Siji Bagian"
-hinge: "Engsel Struktur Barrel 2+1 & Kustomisasi"
+designStyle: "Unik, Fesyen, Gaya, Tren, Mewah, Unisex"
+nosePads: "Bantalan Irung Siji Potongan"
+hinge: "Engsel Struktur Tong 2+1 & Kustomisasi"
 logo: "Cetak, Laser, Laser Karang Lengo, Cap Panas, Logo Logam, Timbulan, Kristal, Stiker"
 service: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 
@@ -47,18 +46,18 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KTS-023 Kacamata Hitam Titanium Fashion Mewah | Produsen Kustom"
-seoDescription: "Partneran karo produsen kustom terkemuka kanggo kacamata hitam titanium mewah KTS-023. Spesialis ing produksi OEM/ODM kelas dhuwur kanggo merek global kanthi MOQ 300."
-seoKeywords: "produsen kacamata hitam titanium, kacamata OEM kustom, frame label pribadi mewah, kacamata titanium desainer, pabrik kacamata Cina, grosir kacamata hitam titanium, produksi kacamata sing bisa dikustomisasi, supplier kacamata premium"
+seoTitle: "Kacamata Hitam Titanium Fesyen Mewah KTS-023 | Produsen Bespoke"
+seoDescription: "Mitra karo produsen kustom terkemuka kanggo kacamata hitam titanium mewah KTS-023. Spesialisasi ing produksi OEM/ODM high-end kanggo merek global kanthi MOQ 300."
+seoKeywords: "produsen kacamata hitam titanium, kacamata OEM kustom, frame label pribadi mewah, kacamata hitam titanium desainer, pabrik kacamata Cina, grosir kacamata hitam titanium, produksi kacamata sing bisa disesuaikan, pemasok kacamata premium"
 ---
 
 ## Fitur
-- **Struktur Titanium Premium:** Frame lan gagang titanium kualitas dhuwur sing nyedhiyakake rasa entheng banget kanthi rasio kekuatan-kanggo-bobot sing luar biasa lan tahan karat.
-- **Hardware Awet:** Engsel struktur barrel 2+1 sing stabil dirancang kanggo kelancaran operasional jangka panjang lan integritas struktural.
-- **Optik Performa Dhuwur:** Lensa nylon sing kuat nyedhiyakake kajelasan lan daya tahan sing unggul kanthi perlindungan UV lengkap lan pilihan kustomisasi sing fleksibel.
-- **Kenyamanan Ergonomis:** Bantalan irung siji bagian terintegrasi sing dirancang kanggo pas sing aman, nyaman lan estetika minimalis sing resik.
-- **Finishing Artisanal:** Desain sing digawe kanthi teliti kasedhiya ing palet warna sing canggih kalebu Perak Ireng, Bulus Perak, lan Ijo Tua Kencana.
-- **Kustomisasi Scalable:** Layanan OEM & ODM lengkap kanthi aplikasi logo sing jembar lan MOQ rendah 300 pcs sing disesuaikan kanggo Merek Kacamata Premium lan Rumah Mode Mewah.
+- **Struktur Premium Titanium:** Frame lan temple titanium kelas dhuwur sing menehi rasa ultra-entheng kanthi rasio kekuatan-kanggo-bobot sing luar biasa lan tahan karat.
+- **Hardware Awet:** Engsel struktur tong 2+1 sing stabil dirancang kanggo kelancaran operasional jangka panjang lan integritas struktural.
+- **Optik Performa Dhuwur:** Lensa nylon kuat sing nyedhiyakale kajelasan lan daya tahan sing unggul kanthi perlindungan UV lengkap lan pilihan kustomisasi sing serba guna.
+- **Kenyamanan Ergonomis:** Bantalan irung siji potongan terintegrasi sing dirancang kanggo pas sing aman, nyaman lan estetika minimalis sing resik.
+- **Finishing Artisanal:** Desain sing digawe kanthi teliti kasedhiya ing palet warna sing canggih kalebu Selaka Ireng, Bulus Selaka, lan Kencana Ijo Peteng.
+- **Kustomisasi sing Bisa Diskalakake:** Layanan OEM & ODM sing komprehensif kanthi aplikasi logo sing akeh lan MOQ murah 300 pcs sing dirancang kanggo Merek Kacamata Premium lan Rumah Mode Mewah.
 
 ## Cocok kanggo
 - Merek Kacamata Premium
@@ -70,4 +69,8 @@ seoKeywords: "produsen kacamata hitam titanium, kacamata OEM kustom, frame label
 
 ## Overview
 
-Digawe kanthi presisi kanggo label mewah sing nggoleki gabungan daya tahan ultra-entheng lan desain kontemporer, frame titanium premium iki nyedhiyakake rasio kekuatan-kanggo-bobot sing luar biasa kanggo kenyamanan saben dina. Integritas struktural diperkuat dening engsel barrel 2+1 sing stabil lan lensa nylon performa dhuwur, dene bantalan irung siji bagian njaga estetika minimalis sing apik ing kabeh warna sing canggih. Ndhukung kustomisasi OEM lan ODM lengkap saka logo khusus nganti ukuran khusus kanthi minimal 300 pcs, KTS-023 ngidini merek kacamata lan distributor label pribadi nggawa koleksi titanium kelas dhuwur menyang pasar kanthi efisien.
+Dirancang kanggo pasar high-end sing nuntut daya tahan entheng lan desain kontemporer sing paling apik, model KTS-023 nampilake estetika titanium kelas premium sing apik. Frame hipoalergenik nawakake rasio kekuatan-kanggo-bobot sing luar biasa, njamin kenyamanan sedina muput kanggo sing nganggo sing paling teliti.
+
+Saben frame dirancang kanthi sistem engsel tong 2+1 sing kuwat lan bantalan irung siji potongan sing terintegrasi kanggo nyedhiyakake campuran stabilitas struktural lan desain minimalis sing lancar.
+
+Kssmi nyedhiyakake manufaktur OEM lan ODM skala penuh kanggo model iki, ndukung kustomisasi logo sing akeh lan ukuran bespoke ing minimal pesenan 300 pcs kanggo rumah mode mewah lan desainer independen.

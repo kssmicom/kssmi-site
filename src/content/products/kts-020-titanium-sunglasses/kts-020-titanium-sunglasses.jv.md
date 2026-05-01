@@ -4,24 +4,23 @@ title: "Kacamata Hitam Titanium Kustom"
 slug: "kts-020-titanium-sunglasses"
 itemNo: "KTS-020"
 date: "2026-04-07"
-colors: "Ireng & Ijo & Pink & Bulus & Rose Pink"
+colors: "Ireng & Ijo & Jambon & Bulus & Jambon Mawar"
 materials: "Titanium Premium"
-serviceMode: "Produksi Kontrak (OEM) & Desain lan Produksi (ODM) ( Kustomisasi )"
+serviceMode: "OEM & ODM ( Kustomisasi )"
 moq: "300 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
-material: "Titanium Sunglasses"
-series: "sunglasses, titanium-sunglasses, luxury-eyewear, luxury-titanium-sunglasses"
-categories: "Sunglasses, Titanium Sunglasses"
+material: "Titanium"
+series: "Titanium Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "52-17-145mm & Kustomisasi"
-frameMaterial: "Bingkai lan Temple Titanium Premium"
-lensMaterial: "Lensa Nylon Kuat & Kustomisasi"
-designStyle: "Unik, Fashion, Stylish, Trendi, Mewah, Unisex"
+frameMaterial: "Frame lan Gagang Titanium Premium"
+lensMaterial: "Lensa Nylon Tenacious & Kustomisasi"
+designStyle: "Unik, Fashion, Gaya, Trendi, Mewah, Unisex"
 nosePads: "Bantalan Irung Siji Bagian"
-hinge: "Engsel Struktur Tong 2+1 & Kustomisasi"
+hinge: "Engsel Struktur Barrel 2+1 & Kustomisasi"
 logo: "Cetak, Laser, Laser Karang Lengo, Cap Panas, Logo Logam, Timbulan, Kristal, Stiker"
 service: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 
@@ -51,19 +50,19 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KTS-020 Kacamata Hitam Titanium Unik Trens | Pabrik Kustom"
-seoDescription: "Partner karo pabrik KSSMI utama kanggo kacamata hitam titanium KTS-020 premium. Dukungan lengkap OEM/ODM kanggo merek mewah kanthi 300 MOQ."
-seoKeywords: "produsen kacamata hitam titanium, kacamata hitam OEM kustom, kacamata label pribadi mewah, pabrik kacamata titanium China, supplier kacamata hitam premium, bingkai titanium kustom, produksi kacamata China, grosir kacamata hitam mewah"
+seoTitle: "KTS-020 Kacamata Hitam Titanium Mewah Trendi Unik | Pabrik Kustom"
+seoDescription: "Mitra karo pabrik KSSMI utama kanggo kacamata hitam titanium premium KTS-020. Kustomisasi OEM/ODM lengkap didukung kanggo merek mewah ing 300 MOQ."
+seoKeywords: "produsen kacamata hitam titanium, kacamata hitam OEM kustom, kacamata private label mewah, pabrik kacamata titanium China, pemasok kacamata hitam premium, frame titanium pesanan, produksi kacamata China, grosir kacamata hitam mewah"
 ---
 
 ## Fitur
 
-- **Konstruksi Titanium:** Bingkai lan temple titanium kelas aeroangkasa premium menehi rasa entheng banget kanthi rasio kekuatan-kanggo-bobot sing luar biasa.
-- **Hardware Presisi:** Engsel struktur tong 2+1 sing stabil dirancang kanggo kelancaran operasional jangka panjang lan daya tahan industri.
-- **Optik Berkinerja Tinggi:** Lensa nylon kuat sing nawakake kajelasan unggul lan resistensi dampak kanthi pilihan warna lan lapisan kustom sing jembar.
-- **Desain Fokus Kenyamanan:** Bantalan irung siji bagian terintegrasi menehi pas sing aman lan stabil nalika njaga estetika sing lancar lan minimalis.
-- **Branding Kustom:** Sawetara metode aplikasi logo kalebu laser lan timbulan kanggo njamin visibilitas merek sing dhuwur kanggo Merek Kacamata Premium.
-- **Produksi Skalabel:** Kapasitas kustomisasi OEM & ODM lengkap kanthi 300-piece MOQ sing digawe khusus kanggo Desainer Kacamata Independen lan Distributor Label Pribadi.
+- **Konstruksi Titanium:** Frame lan gagang titanium kelas aerospace premium sing nyedhiyakake rasa ultra-entheng kanthi rasio kekuatan-kanggo-bobot sing luar biasa.
+- **Hardware Presisi:** Engsel struktur barrel 2+1 sing stabil dirancang kanggo kelancaran operasional jangka panjang lan daya tahan industri.
+- **Optik Performa Dhuwur:** Lensa nylon tenacious sing nawakake kejelasan unggul lan tahan benturan kanthi pilihan pewarnaan lan lapisan kustom sing jembar.
+- **Desain Utamakake Kenyamanan:** Bantalan irung siji bagian terintegrasi sing nyedhiyakake pas sing aman lan stabil nalika njaga estetika sing apik lan minimalis.
+- **Branding Pesanan:** Sawetara metode aplikasi logo kalebu laser lan timbulan kanggo njamin visibilitas merek sing duwe dampak dhuwur kanggo Merek Kacamata Premium.
+- **Produksi Bisa Diatur Ukurane:** Kapasitas kustomisasi OEM & ODM lengkap kanthi 300 pcs MOQ sing disesuaiake kanggo Desainer Kacamata Independen lan Distributor Label Pribadi.
 
 ## Cocok kanggo
 
@@ -76,4 +75,8 @@ seoKeywords: "produsen kacamata hitam titanium, kacamata hitam OEM kustom, kacam
 
 ## Ringkesan
 
-Nggabungake titanium aeroangkasa berkinerja tinggi karo desain unisex sing canggih, KTS-020 nawakake solusi kacamata sing entheng banget sing ora kompromi ing integritas struktural. Engsel tong 2+1 sing digawe kanthi presisi lan lensa nylon kuat nyedhiyakake daya tahan industri lan kajelasan optik sing dibutuhake dening merek otomotif lan gaya hidup premium. Model iki dadi dhasar berimpact dhuwur kanggo desainer independen, ndukung kustomisasi OEM lan ODM sing lengkap—saka panggonan logo unik nganti finishing bingkai kustom—ing jumlah pesenan minimal 300 unit sing layak kanthi komersial. Kanthi nyambungake manufaktur maju karo estetika mewah, Kssmi mbisakake distributor label pribadi kanggo ngirim kacamata hitam titanium kelas profesional menyang pasar bebas bea global lan ritel kelas dhuwur.
+Dirancang saka titanium kelas aerospace, KTS-020 nyimbangi kenyamanan ultra-entheng karo daya tahan struktural sing dibutuhake kanggo kacamata hitam kelas dhuwur. Estetika minimalis lan identitas bahan premium nggawe pilihan sing apik banget kanggo koleksi mewah sing ngutamakake daya tahan lan gaya.
+
+Model iki nduweni engsel barrel 2+1 teknik presisi lan lensa nylon kejelasan dhuwur, njamin kelancaran operasional jangka panjang lan performa visual sing unggul.
+
+Kita nyengkuyung kustomisasi OEM lan ODM lengkap—kalebu finishing pesanan lan penempatan logo—kanthi jumlah pesanan minimal 300 unit, ngidini desainer independen lan merek butik nggedhekake portofolio label pribadi kanthi kacamata titanium kelas profesional.

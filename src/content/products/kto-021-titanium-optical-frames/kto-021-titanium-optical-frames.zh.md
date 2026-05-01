@@ -13,7 +13,6 @@ moq: "300 付/款"
 productType: "Optical Frames"
 material: "Titanium Optical Frames"
 series: "optical-frames, titanium-optical-frames, luxury-eyewear, luxury-titanium-optical-frames"
-categories: "Optical Frames, Titanium Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "54-16-148mm & 定制服务"
@@ -72,4 +71,8 @@ seoKeywords: "钛金镜架制造商, 定制 OEM 眼镜生产, 奢侈私有品牌
 
 ## 概述
 
-结合了永恒的奢华与现代材料科学，这些优质钛材镜架为高端光学系列提供了极轻的使用感和卓越的耐腐蚀性。设计采用了精密工程设计的 3 重铰链系统和符合人体工程学的一体化鼻托，确保在长时间佩戴中保持结构稳定性和日常舒适度。支持从标志应用到镜片选择的全方位定制，Kssmi 提供可扩展的制造方案，300 付的起订量专为独立设计师和私有品牌经销商量身定制。
+这些镜架采用优质钛材，为高端光学系列提供超轻盈的体验和卓越的耐腐蚀性。
+
+精密设计的 3 重结构铰链和人体工程学一体式鼻托，确保了持久的结构稳定性和日常佩戴的舒适度。
+
+支持 300 副起订量的全方位定制服务，Kssmi 为独立设计师和私有品牌经销商提供可扩展的制造方案。

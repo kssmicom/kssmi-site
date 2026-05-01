@@ -6,21 +6,20 @@ itemNo: "KTO-022"
 date: "2026-04-06"
 colors: "Bulus Selaka & Bulus Bubuk & Ireng & Selaka"
 materials: "Titanium Premium"
-serviceMode: "Produksi Kontrak (OEM) & Desain lan Produksi (ODM) ( Kustomisasi )"
+serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
 moq: "300 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
 material: "Titanium Optical Frames"
 series: "optical-frames, titanium-optical-frames, luxury-eyewear, luxury-titanium-optical-frames"
-categories: "Optical Frames, Titanium Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "54-16-148mm & Kustomisasi"
 frameMaterial: "Frame lan Gagang Titanium Premium"
 lensMaterial: "Lensa AC & Lensa Nylon Kuat & Kustomisasi"
-designStyle: "Gaya, Tren, Kasual, Mewah, Unisex"
-nosePads: "Bantalan Irung Siji Potongan"
+designStyle: "Gayane, Tren, Santai, Mewah, Unisex"
+nosePads: "Bantalan Irung Siji Bagian"
 hinge: "Engsel Struktur 3 Tong & Kustomisasi"
 logo: "Cetak, Laser, Laser Karang Lengo, Cap Panas, Logo Logam, Timbulan, Kristal, Stiker"
 service: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
@@ -47,18 +46,18 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Frame Titanium Mewah KTO-022 | Produsen Kustom"
-seoDescription: "Tingkatkan koleksi kacamata mewah sampeyan nganggo frame optik titanium KTO-022 sing bisa disesuaikan. Produksi spesialis OEM/ODM kanggo merek premium kanthi 300 MOQ."
-seoKeywords: "frame optik titanium, produksi kacamata mewah, pabrik kacamata OEM, pemasok kacamata titanium China, produksi merek kacamata premium, frame optik label pribadi, frame titanium sing bisa disesuaikan, produsen kacamata Cina"
+seoTitle: "Frame Optik Titanium Mewah KTO-022 | Produsen Kustom"
+seoDescription: "Tingkatake koleksi kacamata mewah sampeyan nganggo frame optik titanium KTO-022 sing bisa dikustomisasi. Produksi OEM/ODM spesialis kanggo merek premium kanthi MOQ 300."
+seoKeywords: "frame optik titanium, produksi kacamata mewah, pabrik OEM kacamata, supplier kacamata titanium China, produksi merek kacamata premium, frame optik label pribadi, frame titanium sing bisa dikustomisasi, produsen kacamata Cina"
 ---
 
 ## Fitur
-- **Bahan Kelas Dirgantara:** Frame lan gagang titanium premium sing nawakake rasa entheng banget kanthi ketahanan korosi lan daya tahan sing luar biasa.
-- **Perangkat Keras Awet:** Engsel struktur 3 tong sing stabil dirancang kanggo kinerja sing konsisten lan kelancaran operasional jangka panjang.
-- **Optik Premium:** Lensa nilon kanthi daya tahan dhuwur kanthi pilihan pewarnaan lan lapisan kustom sing jembar kanggo memenuhi macem-macem syarat merek.
-- **Kenyamanan Ergonomis:** Bantalan irung siji potongan terintegrasi yang dirancang kanggo pas sing aman lan tanpa tekanan sarta kenyamanan sedina muput sing luwih apik.
-- **Desain Canggih:** Estetika unisex mewah sing gaya kasedhiya ing pirang-pirang skema warna sing dikurasi kanggo nglengkapi koleksi fashion kelas dhuwur.
-- **Produksi Skalabel:** Kemampuan kustomisasi OEM & ODM lengkap kanthi jumlah pesanan minimal rendah 300 unit sing disesuaiake kanggo Merek Kacamata Premium lan Rumah Mode Mewah.
+- **Bahan Kelas Aerospace:** Frame lan gagang titanium premium sing menehi rasa entheng banget kanthi ketahanan korosi lan daya tahan sing luar biasa.
+- **Hardware Awet:** Engsel struktur 3 tong sing stabil dirancang kanggo kinerja sing konsisten lan kelancaran operasional jangka panjang.
+- **Optik Premium:** Lensa nilon kanthi daya tahan dhuwur kanthi pilihan pewarnaan lan lapisan kustom sing jembar kanggo nyukupi macem-macem syarat merek.
+- **Kenyamanan Ergonomis:** Bantalan irung siji bagian sing terintegrasi dirancang kanggo pas sing aman, tanpa tekanan, lan kenyamanan sedina muput.
+- **Desain Mewah:** Estetika unisex sing apik lan mewah kasedhiya ing pirang-pirang pilihan warna sing dikurasi kanggo nglengkapi koleksi fashion kelas dhuwur.
+- **Produksi Skalabel:** Kapasitas kustomisasi OEM & ODM lengkap kanthi jumlah pesanan minimal sing sithik yaiku 300 pcs sing dicocogake kanggo Merek Kacamata Premium lan Rumah Mode Mewah.
 
 ## Cocok kanggo
 - Merek Kacamata Premium
@@ -68,6 +67,9 @@ seoKeywords: "frame optik titanium, produksi kacamata mewah, pabrik kacamata OEM
 - Rumah Mode Mewah
 - Merek D2C e-dagang
 
-## Ringkesan
+## Overview
+Nggabungake titanium kelas aerospace karo estetika unisex sing canggih, KTO-022 nyediakake dhasar sing entheng nanging kuwat kanggo koleksi kacamata premium.
 
-Keunggulan teknik ketemu estetika mewah ing KTO-022, frame titanium premium sing ngutamakake kenyamanan entheng kaya wulu lan daya tahan jangka panjang. Desain unisex sing canggih didukung dening engsel 3 tong performa dhuwur lan bantalan irung siji potongan ergonomis, nawakake pas sing halus sing nglengkapi portofolio fashion kelas dhuwur. Ndukung kustomisasi OEM lan ODM sing komprehensif ing lensa, warna, lan branding, model iki ngidini rumah mewah nyedhiyakake solusi optik kustom kanthi jumlah pesanan minimal 300 unit sing fleksibel.
+Engsel 3 tong sing dirancang kanthi presisi lan bantalan irung siji bagian sing terintegrasi njamin stabilitas struktur jangka panjang lan kenyamanan sedina muput kanggo pangguna pungkasan.
+
+Kasedhiya kanggo kustomisasi OEM/ODM lengkap kanthi jumlah pesanan minimal sing sithik mung 300 unit, model iki ndukung desainer independen kanggo nyediakake solusi optik kustom kualitas mewah.

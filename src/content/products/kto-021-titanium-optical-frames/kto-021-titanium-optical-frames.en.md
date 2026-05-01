@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Optical Frames"
 material: "Titanium Optical Frames"
 series: "optical-frames, titanium-optical-frames, luxury-eyewear, luxury-titanium-optical-frames"
-categories: "Optical Frames, Titanium Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "54-16-148mm & Customization"
@@ -72,4 +71,8 @@ seoKeywords: "titanium optical frames manufacturer, custom OEM eyewear productio
 
 ## Overview
 
-Combining timeless luxury with modern material science, these premium titanium frames offer an ultra-lightweight feel and exceptional corrosion resistance for high-end optical collections. The design features a precision-engineered 3-barrel hinge system and ergonomic one-piece nose pads to maintain structural stability and daily comfort across extended wear. Supporting full bespoke customization from logo application to lens selection, Kssmi provides a scalable manufacturing solution with a 300-piece MOQ tailored for independent designers and private label distributors.
+These frames utilize premium titanium to deliver an ultra-lightweight experience with superior corrosion resistance for luxury optical collections.
+
+A precision-engineered 3-barrel hinge system and ergonomic one-piece nose pads ensure lasting structural stability and daily comfort.
+
+Supporting full bespoke customization with a 300-piece minimum order quantity, Kssmi provides a scalable manufacturing solution for independent designers and private label distributors.

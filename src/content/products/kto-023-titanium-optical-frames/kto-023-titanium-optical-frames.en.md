@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Optical Frames"
 material: "Titanium Optical Frames"
 series: "optical-frames, titanium-optical-frames, luxury-eyewear, luxury-titanium-optical-frames"
-categories: "Optical Frames, Titanium Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "54-16-148mm & Customization"
@@ -70,4 +69,9 @@ seoKeywords: "titanium optical frames manufacturer, custom OEM optical frames, l
 
 ## Overview
 
-When precision engineering meets luxury materials, the KTO-023 titanium optical frames set a new benchmark for discerning optical retailers. The aerospace-grade titanium construction provides an exceptional strength-to-weight ratio with hypoallergenic properties, while the 3 barrel structure hinges and one-piece nose pads ensure sustained comfort and reliable temple alignment throughout years of daily use. Available in four sophisticated colorways—Gold, Silver, Tortoiseshell Silver, and Tortoiseshell Gold—this model serves the elevated aesthetic requirements of luxury fashion houses, department store groups, and high-end optical chains alike. Full OEM and ODM customization is supported across frame dimensions, lens materials, and logo application methods, with a 300-piece minimum order quantity enabling brands to scale their premium eyewear collections with confidence.
+Crafted from aerospace-grade titanium, the KTO-023 offers a sophisticated balance of lightweight strength and hypoallergenic comfort for the luxury eyewear market.
+
+The precision-engineered 3-barrel hinges and integrated one-piece nose pads ensure lasting durability and a stable, ergonomic fit across diverse facial structures.
+
+With a 300-piece MOQ and extensive OEM/ODM customization options for colors, logos, and dimensions, this model provides a scalable solution for independent designers and global fashion houses.
+

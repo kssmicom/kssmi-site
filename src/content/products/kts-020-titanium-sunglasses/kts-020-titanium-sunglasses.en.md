@@ -11,9 +11,8 @@ moq: "300 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
-material: "Titanium Sunglasses"
-series: "sunglasses, titanium-sunglasses, luxury-eyewear, luxury-titanium-sunglasses"
-categories: "Sunglasses, Titanium Sunglasses"
+material: "Titanium"
+series: "Titanium Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "52-17-145mm & Customization"
@@ -76,4 +75,8 @@ seoKeywords: "titanium sunglasses manufacturer, custom OEM sunglasses, luxury pr
 
 ## Overview
 
-Fusing high-performance aerospace titanium with a sophisticated unisex design, the KTS-020 offers an ultra-lightweight eyewear solution that doesn't compromise on structural integrity. Its precision-crafted 2+1 barrel hinges and tenacious nylon lenses provide the industrial durability and optical clarity required by premium automotive and lifestyle labels. This model serves as a high-impact foundation for independent designers, supporting exhaustive OEM and ODM customization—from unique logo placements to bespoke frame finishes—at a commercially viable 300-piece minimum order quantity. By bridging advanced manufacturing with luxury aesthetics, Kssmi enables private label distributors to deliver professional-grade titanium sunglasses to the global duty-free and high-end retail markets.
+Engineered from aerospace-grade titanium, the KTS-020 balances ultra-lightweight comfort with the structural resilience required for high-end sunglasses. Its minimalist aesthetic and premium material identity make it a standout choice for luxury collections that prioritize both durability and style.
+
+The model features precision-engineered 2+1 barrel hinges and high-clarity nylon lenses, ensuring long-term operational smoothness and superior visual performance.
+
+We support full OEM and ODM customization—including bespoke finishes and logo placements—with a 300-piece minimum order quantity, enabling independent designers and boutique labels to scale their private label portfolios with professional-grade titanium eyewear.

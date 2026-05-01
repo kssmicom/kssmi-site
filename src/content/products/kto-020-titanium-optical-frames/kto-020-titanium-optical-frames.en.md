@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Optical Frames"
 material: "Titanium Optical Frames"
 series: "optical-frames, titanium-optical-frames, luxury-eyewear, luxury-titanium-optical-frames"
-categories: "Optical Frames, Titanium Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "54-16-148mm & Customization"
@@ -72,4 +71,8 @@ seoKeywords: "titanium optical frames manufacturer, custom luxury eyewear factor
 
 ## Overview
 
-Available in a curated palette of Black, Green, Pink, and Tortoise, the KTO-020 combines the structural resilience of premium titanium with a sophisticated, unisex aesthetic. Its integrated one-piece nose pads and precision-engineered 3-barrel hinges provide a seamless, comfortable fit that meets the exacting standards of luxury fashion houses and private label distributors. By offering comprehensive customization across lenses and logos with an accessible 300-piece MOQ, Kssmi provides a scalable manufacturing foundation for brands looking to expand their high-performance optical eyewear portfolios.
+Precision-crafted from premium titanium, the KTO-020 frame represents the intersection of lightweight durability and high-end optical aesthetics. Its hypoallergenic construction ensures long-term comfort while maintaining a refined, professional profile for the luxury market.
+
+The integrated one-piece nose pads and stable 3-barrel hinges are engineered for consistent performance across high-volume retail environments.
+
+Supporting full bespoke customization of lenses and branding with a low 300-piece MOQ, this model provides a scalable production solution for boutique fashion labels and premium optical chains.

@@ -13,8 +13,6 @@ moq: "300 PCS/Model"
 productType: "Sunglasses"
 material: "Titanium Sunglasses"
 series: "sunglasses, titanium-sunglasses, luxury-eyewear, luxury-titanium-sunglasses"
-categories: "Sunglasses, Titanium Sunglasses"
-
 # ─────────────────────────────────────────────────────
 size: "52-17-145mm & Customization"
 frameMaterial: "Premium Titanium Frame and Temple"
@@ -70,4 +68,8 @@ seoKeywords: "titanium sunglasses manufacturer, custom OEM sunglasses, luxury pr
 
 ## Overview
 
-Engineered for brands prioritizing structural integrity and minimalist aesthetics, this model utilizes premium titanium to deliver an exceptionally lightweight yet resilient frame. Every component, from the tenacious nylon lenses to the precision-calibrated 2+1 barrel hinges, undergoes rigorous quality control to ensure long-term durability and optical clarity. Our manufacturing facilities support extensive OEM and ODM customization, providing flexible logo applications and material variations with a manageable 300-piece minimum order quantity. This scalable production approach empowers boutique fashion labels and premium eyewear brands to expand their portfolios with high-end, personalized titanium collections.
+Combining high-fashion aesthetics with industrial-grade resilience, the KTS-021 is sculpted from premium titanium for a lightweight, unisex fit.
+
+The frame features integrated one-piece nose pads and a precision-engineered 2+1 barrel hinge system to ensure structural stability through daily wear.
+
+We provide extensive OEM and ODM customization across this series—including bespoke branding and lens tinting—with a manageable 300-piece minimum order quantity for luxury labels.

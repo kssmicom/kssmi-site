@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Sunglasses"
 material: "Titanium Sunglasses"
 series: "sunglasses, titanium-sunglasses, luxury-eyewear, luxury-titanium-sunglasses"
-categories: "Sunglasses, Titanium Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "48-25-145mm & Customization"
@@ -74,4 +73,8 @@ seoKeywords: "titanium sunglasses manufacturer, luxury private label eyewear, cu
 
 ## Overview
 
-High-end fashion meets structural resilience in the KTS-206, a premium titanium frame designed to reflect the aesthetic demands of modern luxury eyewear. Every component undergoes rigorous CNC machining to ensure absolute precision, while the integrated 2+1 barrel hinges provide the long-term reliability expected by discerning global distributors. Offering comprehensive OEM and ODM support with a low 300-piece minimum order quantity, our manufacturing facility empowers independent designers and premium brands to bring bespoke, high-performance titanium collections to market with full customization freedom.
+Crafted for the premium eyewear market, the KTS-206 showcases the exceptional structural integrity and hypoallergenic properties of aerospace-grade titanium. Its sophisticated frame silhouette balances lightweight performance with a bold, modern aesthetic tailored for luxury retail environments.
+
+The design incorporates high-tolerance CNC-machined components and a reinforced 2+1 barrel hinge system to ensure long-term durability and consistent operational smoothness.
+
+With full OEM and ODM customization support at a low 300-piece minimum order quantity, this model enables independent designers and global fashion houses to scale their high-end titanium collections with ease.

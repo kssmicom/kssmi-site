@@ -1,27 +1,26 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Cermin Mata Hitam Titanium Tersuai"
+title: "Cermin Mata Hitam Titanim Tersuai"
 slug: "kts-020-titanium-sunglasses"
 itemNo: "KTS-020"
 date: "2026-04-07"
-colors: "Hitam & Hijau & Merah Jambu & Kura-kura & Merah Jambu Ros"
-materials: "Titanium Premium"
-serviceMode: "Pembuatan Kontrak (OEM) & Pengilangan Reka Bentuk (ODM) ( Penyesuaian )"
+colors: "Hitam & Hijau & Merah Jambu & Kura-kura & Merah Jambu Mawar"
+materials: "Titanim Premium"
+serviceMode: "OEM & ODM ( Penyesuaian )"
 moq: "300 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
-material: "Titanium Sunglasses"
-series: "sunglasses, titanium-sunglasses, luxury-eyewear, luxury-titanium-sunglasses"
-categories: "Sunglasses, Titanium Sunglasses"
+material: "Titanium"
+series: "Titanium Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "52-17-145mm & Penyesuaian"
-frameMaterial: "Bingkai dan Temple Titanium Premium"
-lensMaterial: "Lensa Nylon Tahan Lasak & Penyesuaian"
+frameMaterial: "Bingkai dan Bingkai Tepi Titanim Premium"
+lensMaterial: "Lensa Nilon Tahan Lasak & Penyesuaian"
 designStyle: "Unik, Fesyen, Bergaya, Trendi, Mewah, Unisex"
 nosePads: "Alas Hidung Satu Bahagian"
-hinge: "Engsel Struktur 2+1 Tong & Penyesuaian"
+hinge: "Engsel Struktur Tong 2+1 & Penyesuaian"
 logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Lencana Logam, Timbulan, Kristal, Pelekat"
 service: "Pembuatan OEM / ODM – Penyesuaian"
 
@@ -51,19 +50,19 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KTS-020 Cermin Mata Hitam Titanium Mewah Trendi Unik | Kilang Tersuai"
-seoDescription: "Rakan kongsi dengan kilang KSSMI utama untuk cermin mata hitam titanium KTS-020 premium. Sokongan penuh penyesuaian OEM/ODM untuk jenama mewah pada 300 MOQ."
-seoKeywords: "pengilang cermin mata hitam titanium, cermin mata hitam OEM tersuai, cermin mata label peribadi mewah, kilang cermin mata titanium China, pembekal cermin mata hitam premium, bingkai titanium bespok, pengeluaran cermin mata China, borong cermin mata hitam mewah"
+seoTitle: "KTS-020 Cermin Mata Hitam Titanim Mewah Trendi Unik | Kilang Tersuai"
+seoDescription: "Rakan kongsi dengan kilang KSSMI terkemuka untuk cermin mata hitam titanim premium KTS-020. Penyesuaian OEM/ODM penuh disokong untuk jenama mewah pada 300 MOQ."
+seoKeywords: "pengilang cermin mata hitam titanim, cermin mata hitam OEM tersuai, kacamata label peribadi mewah, kilang kacamata titanim China, pembekal cermin mata hitam premium, bingkai titanim tempahan, pengeluaran kacamata China, borong cermin mata hitam mewah"
 ---
 
 ## Ciri-ciri Utama
 
-- **Pembinaan Titanium:** Bingkai dan temple titanium gred aeroangkasa premium yang memberikan rasa ultra ringan dengan nisbah kekuatan-ke-berat yang luar biasa.
+- **Pembinaan Titanim:** Bingkai dan bingkai tepi titanim gred aeroangkasa premium yang memberikan rasa ultra-ringan dengan nisbah kekuatan-ke-berat yang luar biasa.
 - **Perkakasan Ketepatan:** Engsel struktur tong 2+1 yang stabil direka untuk kelancaran operasi jangka panjang dan ketahanan industri.
-- **Optik Berprestasi Tinggi:** Lensa nilon tahan lasak menawarkan kejelasan unggul dan rintangan hentaman dengan pilihan warna dan salutan tersuai yang meluas.
-- **Reka Bentuk Mengutamakan Keselesaan:** Alas hidung satu bahagian bersepadu yang memberikan padanan yang selamat dan stabil sambil mengekalkan estetika yang kemas dan minimalis.
-- **Penjenamaan Bespok:** Pelbagai kaedah aplikasi logo termasuk laser dan timbulan untuk memastikan keterlihatan jenama yang berimpak tinggi untuk Jenama Cermin Mata Premium.
-- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan MOQ 300 unit yang disesuaikan untuk Pereka Cermin Mata Bebas dan Pengedar Label Peribadi.
+- **Optik Berprestasi Tinggi:** Lensa nilon tahan lasak yang menawarkan kejelasan unggul dan rintangan hentaman dengan pilihan warna dan salutan tersuai yang luas.
+- **Reka Bentuk Utamakan Keselesaan:** Alas hidung satu bahagian bersepadu yang memberikan padanan yang selamat dan stabil sambil mengekalkan estetika yang anggun dan minimalis.
+- **Penjenamaan Tersuai:** Pelbagai kaedah aplikasi logo termasuk laser dan timbulan untuk memastikan keterlihatan jenama berimpak tinggi untuk Jenama Kacamata Premium.
+- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan 300 unit MOQ yang disesuaikan untuk Pereka Kacamata Bebas dan Pengedar Label Peribadi.
 
 ## Sesuai Untuk
 
@@ -71,9 +70,13 @@ seoKeywords: "pengilang cermin mata hitam titanium, cermin mata hitam OEM tersua
 - Pereka Kacamata Berkesan
 - Pengedar Label Peribadi
 - Rumah Fesyen Mewah
-- runcit Dutypirlalu & Perjalanan
+- Runcit Dutypirlalu & Perjalanan
 - Jenama Gaya Hidup Sukan & Automotif
 
 ## Gambaran Keseluruhan
 
-Menggabungkan titanium aeroangkasa berprestasi tinggi dengan reka bentuk unisex yang canggih, KTS-020 menawarkan penyelesaian cermin mata ultra ringan yang tidak menjejaskan integriti struktur. Engsel tong 2+1 yang dihasilkan dengan ketepatan dan lensa nilon tahan lasak memberikan ketahanan industri dan kejelasan optik yang diperlukan oleh jenama automotif dan gaya hidup premium. Model ini berfungsi sebagai asas berimpak tinggi untuk pereka bebas, menyokong penyesuaian OEM dan ODM yang menyeluruh—daripada peletakan logo unik kepada kemasan bingkai bespok—pada kuantiti pesanan minimum 300 unit yang berdaya maju secara komersial. Dengan merapatkan pembuatan maju dengan estetika mewah, Kssmi membolehkan pengedar label peribadi menyampaikan cermin mata hitam titanium gred profesional ke pasaran bebas cukai global dan pasaran runcit mewah.
+Direka daripada titanim gred aeroangkasa, KTS-020 mengimbangi keselesaan ultra-ringan dengan daya tahan struktur yang diperlukan untuk cermin mata hitam mewah. Estetika minimalis dan identiti bahan premium menjadikannya pilihan utama untuk koleksi mewah yang mengutamakan ketahanan dan gaya.
+
+Model ini mempunyai engsel tong 2+1 kejuruteraan ketepatan dan lensa nilon kejelasan tinggi, memastikan kelancaran operasi jangka panjang dan prestasi visual yang unggul.
+
+Kami menyokong penyesuaian OEM dan ODM penuh—termasuk kemasan tersuai dan peletakan logo—dengan kuantiti pesanan minimum 300 unit, membolehkan pereka bebas dan jenama butik menskalakan portfolio label peribadi mereka dengan kacamata titanim gred profesional.

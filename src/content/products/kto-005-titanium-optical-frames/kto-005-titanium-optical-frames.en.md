@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Optical Frames"
 material: "Titanium Optical Frames"
 series: "optical-frames, titanium-optical-frames, luxury-eyewear, luxury-titanium-optical-frames"
-categories: "Optical Frames, Titanium Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "52-18-145mm & Customization"
@@ -63,4 +62,8 @@ seoKeywords: "titanium optical frames manufacturer, custom acetate titanium eyew
 
 ## Overview
 
-Sophisticated engineering meets luxury design in the KTO-005, a frame that balances a precision-grade titanium front with the tactile warmth of premium acetate temples. Every component is optimized for performance, from the corrosion-resistant ION plating to the seamless spring hinge mechanism that provides a flexible, secure fit for all-day wear. Kssmi facilitates rapid brand integration through full ODM customization support and a competitive 300-piece MOQ, enabling high-end optical chains and independent labels to scale their collections with uncompromising manufacturing quality.
+Blending structural titanium with high-grade acetate, the KTO-005 delivers a balanced, premium aesthetic for the modern luxury market.
+
+The ION-plated finish ensures exceptional surface durability, while integrated spring hinges provide a reliable, adaptive fit for extended wear.
+
+With full OEM/ODM customization and a 300-piece MOQ, Kssmi enables independent designers and high-end retail groups to deploy bespoke optical collections with manufacturing precision.
