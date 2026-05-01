@@ -1,12 +1,12 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Özel Karbon Elyaf Güneş Gözlüğü"
+title: "Özel Karbon Fiber Güneş Gözlükleri"
 slug: "kss-029-carbon-fiber-sunglasses"
 itemNo: "KSS-029"
 date: "2026-04-05"
-colors: "Orijinal Karbon Elyaf Rengi (Mat Siyah, Parlak Siyah, Renkli Örgü, Dövme Karbon)"
-materials: "Premium Karbon Elyaf"
-serviceMode: "OEM & ODM ( Özelleştirme )"
+colors: "Orijinal Karbon Fiber Rengi (Mat Siyah, Parlak Siyah, Renkli Dokuma, Dövme Karbon)"
+materials: "Premium Karbon Fiber"
+serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM)"
 moq: "300 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -16,14 +16,14 @@ series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, l
 
 # ─────────────────────────────────────────────────────
 size: "49-19-145mm & Özelleştirme"
-frameMaterial: "Premium Karbon Elyaf Çerçeve ve Sap"
+frameMaterial: "Premium Karbon Fiber Çerçeve ve Sap"
 lensMaterial: "Dayanıklı Naylon Lens & Özelleştirme"
 designStyle: "Klasik, Moda, Şık, Trend, Lüks, Unisex"
 nosePads: "Silikon Burun Tamponları"
-hinge: "2+1 Namlu Yapılı Menteşeler & Özelleştirme"
+hinge: "2+1 Varil Yapılı Menteşeler & Özelleştirme"
 logo: "Tampo Baskı, Lazer Markalama, Boya Dolgulu Lazer, Sıcak Baskı, Metal Logo, Kabartma Logo, Kristal Süsleme, 3D Etiket"
 service: "OEM / ODM Üretim – Özelleştirme"
-carbonFiberFeature: "Hafiflik & Yüksek Mukavemet-Ağırlık Oranı & Esneklik & Dayanıklılık & Hipoalerjenik & Benzersiz Doku"
+carbonFiberFeature: "Hafiflik & Yüksek Mukavemet-Ağırlık Oranı & Esneklik & Dayanıklılık & Hipolerjenik & Benzersiz Doku"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kss-029-carbon-fiber-sunglasses/oem-odm-customized-carbon-fiber-sunglasses-kss-029-1.webp"
@@ -35,18 +35,18 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KSS-029 Klasik Lüks Karbon Elyaf Güneş Gözlüğü | OEM Üreticisi"
-seoDescription: "Lider bir Çinli OEM üreticisinden premium KSS-029 karbon elyaf güneş gözlüğü temin edin. 2+1 namlu menteşeli ve 300 adet MOQ'lu hafif, dayanıklı çerçeveler."
-seoKeywords: "karbon elyaf güneş gözlüğü üreticisi, lüks gözlük OEM, özel markalı güneş gözlüğü Çin, toptan karbon elyaf çerçeveler, özelleştirilmiş karbon elyaf gözlük, ihracat kalitesinde güneş gözlüğü, OEM ODM güneş gözlüğü tedarikçisi, hafif karbon elyaf güneş gözlüğü"
+seoTitle: "KSS-029 Klasik Lüks Karbon Fiber Güneş Gözlüğü | OEM Üretici"
+seoDescription: "Önde gelen bir Çinli OEM üreticisinden birinci sınıf KSS-029 karbon fiber güneş gözlüğü tedarik edin. 2+1 varil menteşeli ve 300 adet MOQ'lu hafif, dayanıklı çerçeveler."
+seoKeywords: "karbon fiber güneş gözlüğü üreticisi, lüks gözlük OEM, özel marka güneş gözlüğü Çin, toptan karbon fiber çerçeveler, özelleştirilmiş karbon fiber gözlük, ihracat kalitesinde güneş gözlüğü, OEM ODM gözlük tedarikçisi, hafif karbon fiber güneş gözlüğü"
 ---
 
 ## Özellikler
-- **Havacılık ve Uzay Sınıfı Malzeme:** Aşırı mukavemet-ağırlık oranıyla ultra hafif bir his sunan birinci sınıf karbon elyaf çerçeve ve saplar.
-- **Hassas Üretim:** Tam toleranslar ve benzersiz, kusursuz bir karbon elyaf örgü dokusu sağlayan yüksek hassasiyetli bileşenler.
-- **Dayanıklı Donanım:** Uzun süreli çalışma pürüzsüzlüğü için tasarlanmış sağlam 2+1 namlu yapılı menteşeler.
-- **Premium Optikler:** Kapsamlı özel renklendirme ve kaplama seçenekleri sunan dayanıklı naylon lensler.
+- **Havacılık Sınıfı Malzeme:** Ekstrem mukavemet-ağırlık oranıyla ultra hafif bir his sunan birinci sınıf karbon fiber çerçeve ve saplar.
+- **Hassas Üretim:** Tam toleranslar ve benzersiz, kusursuz bir karbon fiber dokuma dokusu sağlayan yüksek hassasiyetli bileşenler.
+- **Dayanıklı Donanım:** Uzun süreli operasyonel pürüzsüzlük için tasarlanmış sağlam 2+1 varil yapılı menteşeler.
+- **Premium Optik:** Kapsamlı özel renklendirme ve kaplama seçenekleri sunan dayanıklı naylon lensler.
 - **Konfor ve Güvenlik:** Gün boyu konfor ve güvenli bir oturuş için tasarlanmış hipoalerjenik silikon burun tamponları.
-- **Ölçeklenebilir Üretim:** Küresel ihracat için 300 parçalık düşük minimum sipariş miktarı ile tam OEM ve ODM özelleştirme yetenekleri.
+- **Ölçeklenebilir Üretim:** Küresel ihracat için düşük 300 adetlik minimum sipariş miktarı ile tam OEM ve ODM özelleştirme yetenekleri.
 
 ## İçin Mükemmel
 - Premium Gözlük Markaları
@@ -57,4 +57,8 @@ seoKeywords: "karbon elyaf güneş gözlüğü üreticisi, lüks gözlük OEM, �
 - Departman Mağazası Grupları
 
 ## Genel Bakış
-Modern gözlük markaları için hipoalerjenik ve hafif bir çözüm sunmak üzere tasarlanan bu premium karbon elyaf güneş gözlüklerinde çok yönlülük, yapısal yenilikle buluşuyor. Çerçevenin yüksek mukavemet-ağırlık oranı, dayanıklı 2+1 namlu menteşeleri ve sağlam naylon lenslerle tamamlanarak hem moda hem de performans ortamlarında üstün bir ürün garanti eder. Standart spesifikasyonların ötesinde, üretim ekibimiz benzersiz marka kimlikleriyle uyum sağlamak için logolar, boyutlar ve lens kaplamaları için kapsamlı özelleştirme sunar. Tam OEM/ODM yetenekleri ve 300 parçalık minimum siparişle doğrudan üreticiden markaya ortaklık sağlayarak KSS-029'u ölçeklenebilir özel marka büyümesi için stratejik bir varlık haline getiriyoruz.
+Havacılık sınıfı karbon fiber, yapısal sertliği olağanüstü hafif bir hisle birleştiren yüksek performanslı bir çerçeve sunan KSS-029'u tanımlar. Belirgin dokuma dokusu, lüks moda evleri ve premium yaşam tarzı markalarıyla yankı uyandıran sofistike bir estetik sağlar.
+
+Dayanıklı 2+1 varil menteşe sistemi ve hipoalerjenik silikon burun tamponları dahil olmak üzere hassas mühendislikle üretilmiş bileşenler, uzun süreli stabilite ve gün boyu kullanım konforu sağlar.
+
+Tam OEM/ODM desteği ve 300 adetlik minimum sipariş miktarı ile markaların benzersiz, özel markalı gözlük koleksiyonları geliştirmeleri için gereken üretim ölçeğini ve ısmarlama özelleştirme seçeneklerini sunuyoruz.

@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Sunglasses"
 material: "Carbon Fiber"
 series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, luxury, sunglasses, sunglasses"
-categories: "Sunglasses, Carbon Fiber Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "49-19-145mm & Customization"
@@ -58,5 +57,9 @@ seoKeywords: "carbon fiber sunglasses manufacturer, luxury eyewear OEM, private 
 - Department Store Groups
 
 ## Overview
-Versatility meets structural innovation in these premium carbon fiber sunglasses, engineered to provide a hypoallergenic and lightweight solution for modern eyewear brands. The high strength-to-weight ratio of the frame is complemented by durable 2+1 barrel hinges and tenacious nylon lenses, ensuring a product that excels in both fashion and performance environments. Beyond the standard specifications, our manufacturing team offers comprehensive customization for logos, sizes, and lens coatings to align with unique brand identities. We provide a direct manufacturer-to-brand partnership with full OEM/ODM capabilities and a 300-piece minimum order, making the KSS-029 a strategic asset for scalable private label growth.
+Aerospace-grade carbon fiber defines the KSS-029, offering a high-performance frame that combines structural rigidity with an exceptionally lightweight feel. The distinctive weave texture provides a sophisticated aesthetic that resonates with luxury fashion houses and premium lifestyle labels.
+
+Precision-engineered components, including a durable 2+1 barrel hinge system and hypoallergenic silicone nose pads, ensure long-term stability and all-day wearer comfort.
+
+With full OEM/ODM support and a 300-piece minimum order quantity, we provide the manufacturing scale and bespoke customization options required for brands to develop unique, private-label eyewear collections.
 

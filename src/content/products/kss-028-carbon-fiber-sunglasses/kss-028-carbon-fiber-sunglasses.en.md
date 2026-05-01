@@ -12,8 +12,7 @@ moq: "300 PCS/Model"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Carbon Fiber"
-series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, luxury, sunglasses, sunglasses"
-categories: "Sunglasses, Carbon Fiber Sunglasses"
+series: "Carbon Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "49-19-145mm & Customization"
@@ -55,12 +54,17 @@ seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses, priva
 ## Perfect For
 - Premium Eyewear Brands
 - Independent Eyewear Designers
-- Private Label Distributors
+- Boutique Fashion Labels
 - Luxury Fashion Houses
 - Sports & Automotive Lifestyle Labels
 - Department Store Groups
 
 ## Overview
 
-Engineered for the intersection of luxury and high-performance, the KSS-028 utilizes premium aerospace-grade carbon fiber to achieve an exceptional strength-to-weight ratio that ensures all-day comfort. The frame's sophisticated aesthetic is complemented by resilient 2+1 barrel hinges and impact-resistant nylon lenses, providing a durable solution for high-end lifestyle and automotive-inspired collections. We offer comprehensive OEM/ODM customization—from unique forged carbon textures to precise logo applications—with a manageable 300-piece minimum order quantity to support private-label brand scaling.
+Crafted from aerospace-grade carbon fiber, the KSS-028 brings a sophisticated, high-strength aesthetic to modern eyewear collections. Its distinctive weave patterns and ultra-lightweight architecture provide a premium tactile experience that resonates with luxury market standards.
+
+Precision 2+1 barrel hinges and impact-resistant nylon lenses ensure structural longevity and optical clarity for high-performance use.
+
+We provide full ODM and OEM support—from bespoke forged textures to diverse logo applications—with a 300-piece minimum to help premium brands scale their exclusive eyewear portfolios.
+
 

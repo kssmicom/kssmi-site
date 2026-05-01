@@ -21,7 +21,7 @@ size: "49-19-145mm & Individualisierung"
 designStyle: "Klassisch, Technisch, Luxus, Unisex"
 nosePads: "Hypoallergene Silikon-Nasenpads"
 hinge: "2+1 Fassstruktur-Scharniere & Individualisierung"
-logo: "Druck, Laser, Lasergravur mit Farbauslegung, Heißprägung, Metall-Logo, Logo-Prägung, Kristall-Verzierung, 3D-Aufkleber"
+logo: "Tampondruck, Laser, Lasergravur mit Farbauslegung, Heißprägung, Metal-Logo, Logo-Prägung, Kristall-Verzierung, 3D-Aufkleber"
 service: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 carbonFiberFeature: "Ultraleicht, Hohes Festigkeits-Gewichts-Verhältnis, Präzisions-CNC-gefräst, Extrem Langlebig"
 
@@ -58,7 +58,7 @@ seoKeywords: "kohlefaser sonnenbrillen hersteller, individuelle carbon brillenge
 - Luxusmodehäuser
 - Kaufhausgruppen
 
-## Overview
+## Produktübersicht
 
 Die KSS-012 wurde aus Kohlefaser in Luft- und Raumfahrtqualität entwickelt und vereint technische Widerstandsfähigkeit mit einer raffinierten Luxusästhetik. Ihr hohes Festigkeits-Gewichts-Verhältnis sorgt für ein ultraleichtes Erlebnis, ohne die strukturelle Integrität zu beeinträchtigen, die für Hochleistungsbrillen erforderlich ist.
 

@@ -66,4 +66,3 @@ Precision CNC machining delivers flawless tolerances across the frame, complemen
 
 We offer comprehensive OEM and ODM support for this model, enabling boutique fashion labels and independent designers to customize everything from lens tints to laser-etched branding. A low 300-piece minimum order quantity provides the manufacturing flexibility needed to scale premium collections efficiently.
 
-

@@ -12,7 +12,7 @@ moq: "300 付/款"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Carbon Fiber"
-series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, luxury, sunglasses, sunglasses"
+series: "Carbon Fiber Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "49-19-145mm & 定制服务"
@@ -58,4 +58,8 @@ seoKeywords: "碳纤维太阳镜制造商, 定制代工太阳镜, 中国私有�
 
 ## 概述
 
-KSS-030 将卓越性能与航空航天级工程完美结合，是一款专为需求苛刻的 B2B 眼镜市场设计的优质碳纤维镜框。独特的编织纹理、低致敏性硅胶垫和稳固的桶形铰链相结合，确保了产品既舒适又耐用，体现了高端制造标准。为了支持全球品牌的扩张，我们提供全面的代工生产 (OEM) 和设计制造 (ODM) 服务，起订量仅为 300 付，允许在商业规模上对颜色、徽标和镜片配置进行深度定制。
+KSS-030 展现了优质碳纤维的原始技术美感，为高端市场提供了卓越的强度重量比。
+
+采用稳固的 2+1 桶形铰链和低致敏性硅胶鼻托设计，这款镜框实现了长期的结构完整性和佩戴舒适度。
+
+灵活的代工生产/设计制造（OEM/ODM）定制服务以及 300 付的低起订量，使该型号成为品牌拓展豪华性能眼镜系列的理想基础。

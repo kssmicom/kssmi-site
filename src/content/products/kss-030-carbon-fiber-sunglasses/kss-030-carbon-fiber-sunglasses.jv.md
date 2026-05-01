@@ -4,7 +4,7 @@ title: "Kacamata Hitam Serat Karbon Kustom"
 slug: "kss-030-carbon-fiber-sunglasses"
 itemNo: "KSS-030"
 date: "2026-04-05"
-colors: "Warna Serat Karbon Asli (Ireng Matte, Ireng Kinclong, Tenunan Berwarna, Karbon Tempa)"
+colors: "Warna Serat Karbon Asli (Irem Matte, Irem Glossy, Anyaman Berwarna, Karbon Tempa)"
 materials: "Serat Karbon Premium"
 serviceMode: "OEM & ODM ( Kustomisasi )"
 moq: "300 pcs/model"
@@ -12,18 +12,18 @@ moq: "300 pcs/model"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Carbon Fiber"
-series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, luxury, sunglasses, sunglasses"
+series: "Carbon Fiber Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "49-19-145mm & Kustomisasi"
-frameMaterial: "Frame lan Temple Serat Karbon Premium"
-lensMaterial: "Lensa Nylon Kuwat & Kustomisasi"
-designStyle: "Klasik, Fesyen, Gaya, Tren, Mewah, Unisex"
+frameMaterial: "Frame lan Gagang Serat Karbon Premium"
+lensMaterial: "Lensa Nilon Kuat & Kustomisasi"
+designStyle: "Klasik, Fashion, Gaya, Tren, Mewah, Unisex"
 nosePads: "Bantalan Irung Silikon"
-hinge: "Engsel Struktur Tong 2+1 & Kustomisasi"
+hinge: "Engsel Struktur Barel 2+1 & Kustomisasi"
 logo: "Cetak, Laser, Laser Karang Lengo, Cap Panas, Logo Logam, Timbulan, Kristal, Stiker"
 service: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
-carbonFiberFeature: "Ènthèng & Rasio Kekuatan-menyang-Bobot Dhuwur & Fleksibilitas & Daya Tahan & Hipolergenik & Tekstur Unik"
+carbonFiberFeature: "Entheng & Rasio Kekuatan-kanggo-Bobot Dhuwur & Fleksibilitas & Kekiatan & Hipialergenik & Tekstur Unik"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kss-030-carbon-fiber-sunglasses/oem-odm-customized-carbon-fiber-sunglasses-kss-030-1.webp"
@@ -36,17 +36,17 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-030 Kacamata Hitam Serat Karbon Mewah | Produsen OEM & ODM"
-seoDescription: "KSS-030 yaiku frame serat karbon premium kanggo merek kacamata mewah. Kustomisasi OEM & ODM lengkap kanthi MOQ 300. Mitra karo pabrik ekspor China sing misuwur."
-seoKeywords: "produsen kacamata hitam serat karbon, kacamata hitam OEM kustom, kacamata label pribadi China, grosir frame serat karbon, supplier kacamata mewah, kacamata kualitas ekspor, pabrik frame serat karbon, produsen kacamata China"
+seoDescription: "KSS-030 yaiku frame serat karbon premium kanggo merek kacamata mewah. Kustomisasi OEM & ODM lengkap kanthi 300 MOQ. Partner karo pabrik ekspor China sing misuwur."
+seoKeywords: "produsen kacamata hitam serat karbon, kacamata hitam OEM kustom, kacamata label pribadi China, grosir frame serat karbon, pemasok kacamata hitam mewah"
 ---
 
 ## Fitur
-- **Bahan Kelas Aerospace:** Konstruksi serat karbon premium sing nyedhiyakake rasa ènthèng banget kanthi rasio kekuatan-menyang-bobot sing ekstrem.
-- **Tekstur Khas:** Pola serat karbon tenunan alami sing nawakake estetika unik lan kelas dhuwur kanthi daya tahan lan fleksibilitas sing luar biasa.
-- **Hardware Awet:** Engsel struktur tong 2+1 sing stabil dirancang kanggo kelancaran operasional jangka panjang lan kinerja sing konsisten.
-- **Optik Premium:** Lensa nylon kuwat sing nyedhiyakake kajelasan unggul kanthi pilihan pewarnaan lan lapisan kustom sing jembar.
-- **Kenyamanan & Keamanan:** Bantalan irung silikon hipolergenik sing dirancang kanggo kenyamanan sedina muput lan pas sing aman.
-- **Produksi Bisa Diukur:** Kapasitas kustomisasi OEM & ODM lengkap kanthi jumlah pesanan minimal 300 pcs kanggo ekspor merek global.
+- **Bahan Kelas Aerospace:** Konstruksi serat karbon premium sing nyedhiyakake rasa entheng banget kanthi rasio kekuatan-kanggo-bobot sing ekstrem.
+- **Tekstur Khas:** Pola serat karbon anyaman alami sing nawakake estetika kelas dhuwur sing unik kanthi kekiatan lan fleksibilitas sing luar biasa.
+- **Hardware Awet:** Engsel struktur barel 2+1 sing stabil sing dirancang kanggo kelancaran operasional jangka panjang lan kinerja sing konsisten.
+- **Optik Premium:** Lensa nilon kuat sing nyedhiyakake kajelasan unggul kanthi pilihan tinting lan lapisan kustom sing jembar.
+- **Comfort & Safety:** Bantalan irung silikon hipoalergenik sing dirancang kanggo kenyamanan sedina muput lan pas sing aman.
+- **Produksi Scalable:** Kapasitas kustomisasi OEM & ODM lengkap kanthi jumlah pesenan minimal 300 pcs kanggo ekspor merek global.
 
 ## Cocok kanggo
 - Merek Kacamata Premium
@@ -58,4 +58,8 @@ seoKeywords: "produsen kacamata hitam serat karbon, kacamata hitam OEM kustom, k
 
 ## Ringkesan
 
-Performa mewah ketemu teknik kelas aerospace ing KSS-030, frame serat karbon premium sing dirancang kanggo segmen kacamata B2B sing paling nuntut. Kombinasi tekstur tenunan sing khas, bantalan silikon hipolergenik, lan engsel tong sing stabil njamin produk sing nyaman nanging awet sing nggambarake standar manufaktur kelas dhuwur. Kanggo ndukung ekspansi merek global, kita nawakake layanan OEM lan ODM sing lengkap kanthi MOQ 300 pcs, ngidini kustomisasi jero babagan warna, logo, lan konfigurasi lensa ing skala komersial.
+KSS-030 nampilake kaendahan teknis mentah saka serat karbon premium, nawakake rasio kekuatan-kanggo-bobot sing luar biasa kanggo pasar kelas dhuwur.
+
+Direkayasa nganggo engsel struktur barel 2+1 sing stabil lan bantalan irung silikon hipoalergenik, pigura iki nyedhiyakake integritas struktural jangka panjang lan kenyamanan pangguna.
+
+Kustomisasi OEM/ODM sing fleksibel lan MOQ rendah 300 pcs nggawe model iki dadi dhasar sing cocog kanggo merek sing pengin berkembang menyang kacamata kinerja mewah.

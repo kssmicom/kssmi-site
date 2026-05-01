@@ -12,9 +12,7 @@ moq: "300 PCS/Model"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Carbon Fiber"
-series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, luxury, sunglasses, sunglasses"
-categories: "Sunglasses, Carbon Fiber Sunglasses"
-
+series: "Carbon Fiber Sunglasses"
 # ─────────────────────────────────────────────────────
 size: "49-19-145mm & Customization"
 frameMaterial: "Premium Carbon Fiber Frame and Temple"
@@ -48,6 +46,7 @@ seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses, priva
 - **Premium Optics:** Tenacious nylon lenses providing superior clarity with extensive custom tinting and coating options.
 - **Comfort & Safety:** Hypoallergenic silicone nose pads designed for all-day comfort and a secure fit.
 - **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 300 pieces for global brand export.
+
 ## Perfect For
 - Premium Eyewear Brands
 - Independent Eyewear Designers
@@ -58,5 +57,9 @@ seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses, priva
 
 ## Overview
 
-Luxury performance meets aerospace-grade engineering in the KSS-030, a premium carbon fiber frame designed for the most demanding B2B eyewear segments. The combination of distinctive woven textures, hypoallergenic silicone pads, and stable barrel hinges ensures a comfortable yet durable product that reflects high-end manufacturing standards. To support global brand expansion, we offer comprehensive OEM and ODM services with a 300-piece MOQ, allowing for deep customization of colors, logos, and lens configurations at a commercial scale.
+The KSS-030 showcases the raw technical beauty of premium carbon fiber, offering an exceptional strength-to-weight ratio for the high-end market.
+
+Engineered with stable 2+1 barrel hinges and hypoallergenic silicone nose pads, this frame delivers long-term structural integrity and user comfort.
+
+Flexible OEM/ODM customization and a low 300-piece MOQ make this model an ideal foundation for brands looking to expand into luxury performance eyewear.
 

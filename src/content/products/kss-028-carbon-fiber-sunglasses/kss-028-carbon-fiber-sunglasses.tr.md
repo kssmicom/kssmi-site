@@ -7,24 +7,23 @@ date: "2026-04-05"
 colors: "Orijinal Karbon Fiber Rengi (Mat Siyah, Parlak Siyah, Renkli Dokuma, Dövme Karbon)"
 materials: "Premium Karbon Fiber"
 serviceMode: "OEM ve ODM ( Özelleştirme )"
-moq: "300 adet/model"
+moq: "300 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Carbon Fiber"
-series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, luxury, sunglasses, sunglasses"
-categories: "Sunglasses, Carbon Fiber Sunglasses"
+series: "Carbon Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "49-19-145mm & Özelleştirme"
 frameMaterial: "Premium Karbon Fiber Çerçeve ve Sap"
-lensMaterial: "Dayanıklı Naylon Lens & Özelleştirme"
+lensMaterial: "Dayanıklı Naylon Lens ve Özelleştirme"
 designStyle: "Klasik, Moda, Şık, Trend, Lüks, Unisex"
 nosePads: "Silikon Burun Tamponları"
-hinge: "2+1 Namlu Yapılı Menteşeler & Özelleştirme"
+hinge: "2+1 Varil Yapılı Menteşeler ve Özelleştirme"
 logo: "Tampo Baskı, Lazer Markalama, Boya Dolgulu Lazer, Sıcak Baskı, Metal Logo, Kabartma Logo, Kristal Süsleme, 3D Etiket"
 service: "OEM / ODM Üretim – Özelleştirme"
-carbonFiberFeature: "Hafiflik & Yüksek Dayanım-Ağırlık Oranı & Esneklik & Dayanıklılık & Hipolerjenik & Benzersiz Doku"
+carbonFiberFeature: "Hafiflik & Yüksek Güç-Ağırlık Oranı & Esneklik & Dayanıklılık & Hipoalerjenik & Benzersiz Doku"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kss-028-carbon-fiber-sunglasses/oem-odm-customized-carbon-fiber-sunglasses-kss-028-1.webp"
@@ -38,28 +37,32 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KSS-028 Lüks Karbon Güneş Gözlüğü | OEM Üretici"
-seoDescription: "KSS-028 havacılık sınıfı karbon fiber güneş gözlüğü için Çin'in önde gelen ihracat üreticisiyle ortaklık kurun. Özel marka ölçeklendirmesi için OEM/ODM uzmanı. 300 MOQ."
-seoKeywords: "karbon fiber güneş gözlüğü üreticisi, özel OEM güneş gözlüğü, özel marka gözlük Çin, toptan karbon çerçeveler, lüks güneş gözlüğü tedarikçisi, ihracat kalitesinde gözlük, OEM ODM gözlük özelleştirme, KSS-028 gözlük fabrikası"
+seoTitle: "KSS-028 Lüks Klasik Karbon Fiber Güneş Gözlüğü | OEM Üreticisi"
+seoDescription: "KSS-028 havacılık sınıfı karbon fiber güneş gözlükleri için önde gelen bir Çinli ihracat üreticisi ile ortaklık kurun. Özel markalı marka ölçeklendirmesi için OEM/ODM konusunda uzmanlaşmıştır. 300 MOQ."
+seoKeywords: "karbon fiber güneş gözlüğü üreticisi, özel OEM güneş gözlüğü, özel markalı gözlük Çin, toptan karbon fiber çerçeveler, lüks güneş gözlüğü tedarikçisi, ihracat kalitesinde güneş gözlüğü, OEM ODM güneş gözlüğü özelleştirme, KSS-028 gözlük fabrikası"
 ---
 
 ## Özellikler
 
-- **Havacılık Sınıfı Malzeme:** Ultra hafif bir his ve olağanüstü dayanım-ağırlık oranı sunan birinci sınıf karbon fiber çerçeve ve saplar.
-- **Dayanıklı Donanım:** Uzun vadeli kullanım pürüzsüzlüğü ve güvenilirlik için tasarlanmış sağlam 2+1 namlu yapılı menteşeler.
-- **Üstün Optik:** Üstün darbe direnci sunan, renk ve kaplama açısından geniş özelleştirme seçeneklerine sahip dayanıklı naylon lensler.
-- **Konfor ve Güvenlik:** Gün boyu kullanım için güvenli ve rahat bir oturuş sağlamak üzere tasarlanmış hipoalerjenik silikon burun tamponları.
-- **Benzersiz Doku:** Üst düzey lüks estetik için mat, parlak veya dövme kaplama seçenekleriyle sunulan karakteristik karbon fiber dokuma desenleri.
-- **Ölçeklenebilir Özelleştirme:** Çoklu logo uygulama teknikleri ve 300 adetlik düşük MOQ sunan kapsamlı OEM ve ODM hizmetleri.
+- **Havacılık Sınıfı Malzeme:** Ultra hafif bir his ve olağanüstü güç-ağırlık oranı sunan birinci sınıf karbon fiber çerçeve ve saplar.
+- **Dayanıklı Donanım:** Uzun süreli operasyonel pürüzsüzlük ve güvenilirlik için tasarlanmış sağlam 2+1 varil yapılı menteşeler.
+- **Birinci Sınıf Optik:** Üstün darbe direnci ile tonlar ve kaplamalar için kapsamlı özelleştirme sunan dayanıklı naylon lensler.
+- **Konfor ve Güvenlik:** Gün boyu güvenli ve rahat bir uyum sağlamak üzere tasarlanmış hipoalerjenik silikon burun tamponları.
+- **Benzersiz Doku:** Üst düzey bir lüks estetiği için mat, parlak veya dövme yüzeylerde sunulan ayırt edici karbon fiber dokuma desenleri.
+- **Ölçeklenebilir Özelleştirme:** Çoklu logo uygulama teknikleri ve 300 adetlik düşük MOQ dahil kapsamlı OEM ve ODM hizmetleri.
 
 ## İçin Mükemmel
 - Premium Gözlük Markaları
 - Bağımsız Gözlük Tasarımcıları
-- Özel Marka Dağıtımcıları
+- Butik Moda Markaları
 - Lüks Moda Evleri
 - Spor ve Otomotiv Yaşam Tarzı Markaları
 - Departman Mağazası Grupları
 
-## Genel Bakış
+## Overview
 
-Lüks ve yüksek performansın kesişme noktası için tasarlanan KSS-028, gün boyu konfor sağlayan olağanüstü bir dayanım-ağırlık oranı elde etmek için birinci sınıf havacılık sınıfı karbon fiber kullanır. Çerçevenin sofistike estetiği, dayanıklı 2+1 namlu menteşeler ve darbelere dayanıklı naylon lenslerle tamamlanarak üst düzey yaşam tarzı ve otomotivden ilham alan koleksiyonlar için dayanıklı bir çözüm sunar. Benzersiz dövme karbon dokularından hassas logo uygulamalarına kadar kapsamlı OEM/ODM özelleştirmesi ve özel marka büyümesini desteklemek için 300 adetlik yönetilebilir minimum sipariş miktarı sunuyoruz.
+Havacılık ve uzay kalitesinde karbon fiberden üretilen KSS-028, modern gözlük koleksiyonlarına sofistike ve yüksek mukavemetli bir estetik katıyor. Kendine özgü dokuma desenleri ve ultra hafif mimarisi, lüks pazar standartlarıyla yankı bulan birinci sınıf bir dokunsal deneyim sunuyor.
+
+Hassas 2+1 varil menteşeler ve darbeye dayanıklı naylon lensler, yüksek performanslı kullanım için yapısal uzun ömür ve optik netlik sağlıyor.
+
+Premium markaların özel gözlük portföylerini ölçeklendirmelerine yardımcı olmak için, ısmarlama dövme dokulardan çeşitli logo uygulamalarına kadar tam ODM ve OEM desteği sunuyoruz (300 adet minimum sipariş miktarı ile).

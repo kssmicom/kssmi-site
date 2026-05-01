@@ -58,7 +58,7 @@ seoKeywords: "pengilang cermin mata hitam gentian karbon, bingkai karbon tersuai
 - Rumah Fesyen Mewah
 - Kumpulan Stor Departments
 
-## Overview
+## Gambaran Keseluruhan Produk
 
 Direka daripada gentian karbon gred aeroangkasa, KSS-012 menggabungkan daya tahan teknikal dengan estetika mewah yang halus. Nisbah kekuatan-ke-beratnya yang tinggi memastikan pengalaman ultra ringan tanpa menjejaskan integriti struktur yang diperlukan untuk kacamata berprestasi tinggi.
 

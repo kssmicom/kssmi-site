@@ -1,6 +1,6 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Özel Tasarım Karbon Elyaf Güneş Gözlüğü"
+title: "Özel Karbon Elyaf Güneş Gözlüğü"
 slug: "kss-030-carbon-fiber-sunglasses"
 itemNo: "KSS-030"
 date: "2026-04-05"
@@ -12,18 +12,18 @@ moq: "300 adet/model"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Carbon Fiber"
-series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, luxury, sunglasses, sunglasses"
+series: "Carbon Fiber Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "49-19-145mm & Özelleştirme"
 frameMaterial: "Premium Karbon Elyaf Çerçeve ve Sap"
 lensMaterial: "Dayanıklı Naylon Lens & Özelleştirme"
 designStyle: "Klasik, Moda, Şık, Trend, Lüks, Unisex"
-nosePads: "Silikon Burun Tamponları"
-hinge: "2+1 Namlu Yapılı Menteşeler & Özelleştirme"
-logo: "Tampo Baskı, Lazer Markalama, Boya Dolgulu Lazer, Sıcak Baskı, Metal Logo, Kabartma Logo, Kristal Süsleme, 3D Etiket"
+nosePads: "Silikon Burun Pedleri"
+hinge: "2+1 Varil Yapılı Menteşeler & Özelleştirme"
+logo: "Baskı, Lazer, Boya Dolgulu Lazer, Sıcak Baskı, Metal Logo, Kabartma, Kristal, 3D Etiket"
 service: "OEM / ODM Üretim – Özelleştirme"
-carbonFiberFeature: "Hafiflik & Yüksek Mukavemet-Ağırlık Oranı & Esneklik & Dayanıklılık & Hipolerjenik & Benzersiz Doku"
+carbonFiberFeature: "Hafiflik & Yüksek Güç-Ağırlık Oranı & Esneklik & Dayanıklılık & Hipoalerjenik & Benzersiz Doku"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kss-030-carbon-fiber-sunglasses/oem-odm-customized-carbon-fiber-sunglasses-kss-030-1.webp"
@@ -36,16 +36,16 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-030 Lüks Karbon Elyaf Güneş Gözlüğü | OEM & ODM Üreticisi"
-seoDescription: "KSS-030, lüks gözlük markaları için birinci sınıf bir karbon elyaf çerçevedir. 300 MOQ ile tam OEM ve ODM özelleştirmesi. Lider bir Çinli ihracat fabrikasıyla ortak olun."
-seoKeywords: "karbon elyaf güneş gözlüğü üreticisi, özel OEM güneş gözlüğü, özel marka gözlük Çin, toptan karbon elyaf çerçeveler, lüks güneş gözlüğü tedarikçisi, ihracat kalitesinde güneş gözlüğü, karbon elyaf çerçeve fabrikası, Çinli gözlük üreticisi"
+seoDescription: "KSS-030, lüks gözlük markaları için birinci sınıf bir karbon elyaf çerçevedir. 300 MOQ ile tam OEM & ODM özelleştirme. Önde gelen bir Çinli ihracat fabrikasıyla ortaklık kurun."
+seoKeywords: "karbon elyaf güneş gözlüğü üreticisi, özel OEM güneş gözlüğü, özel marka gözlük Çin, toptan karbon elyaf çerçeveler, lüks güneş gözlüğü tedarikçisi"
 ---
 
 ## Özellikler
-- **Havacılık Sınıfı Malzeme:** Olağanüstü mukavemet-ağırlık oranıyla ultra hafif bir his sunan birinci sınıf karbon elyaf yapı.
-- **Belirgin Doku:** Eşsiz, üst düzey bir estetiği olağanüstü dayanıklılık ve esneklikle sunan doğal dokumalı karbon elyaf desenler.
-- **Dayanıklı Donanım:** Uzun süreli operasyonel pürüzsüzlük ve tutarlı performans için tasarlanmış sağlam 2+1 namlu yapılı menteşeler.
+- **Havacılık Sınıfı Malzeme:** Ekstrem bir güç-ağırlık oranıyla ultra hafif bir his sağlayan birinci sınıf karbon elyaf yapı.
+- **Belirgin Doku:** Olağanüstü dayanıklılık ve esneklik ile benzersiz, üst düzey bir estetik sunan doğal dokuma karbon elyaf desenleri.
+- **Dayanıklı Donanım:** Uzun vadeli operasyonel pürüzsüzlük ve tutarlı performans için tasarlanmış sabit 2+1 varil yapılı menteşeler.
 - **Premium Optik:** Kapsamlı özel renklendirme ve kaplama seçenekleriyle üstün netlik sağlayan dayanıklı naylon lensler.
-- **Konfor ve Güvenlik:** Gün boyu konfor ve güvenli bir oturuş için tasarlanmış hipoalerjenik silikon burun tamponları.
+- **Konfor ve Güvenlik:** Gün boyu konfor ve güvenli bir oturuş için tasarlanmış hipoalerjenik silikon burun pedleri.
 - **Ölçeklenebilir Üretim:** Küresel marka ihracatı için 300 adetlik düşük minimum sipariş miktarı ile tam OEM ve ODM özelleştirme yetenekleri.
 
 ## İçin Mükemmel
@@ -58,4 +58,8 @@ seoKeywords: "karbon elyaf güneş gözlüğü üreticisi, özel OEM güneş gö
 
 ## Genel Bakış
 
-Lüks performans, en talepkar B2B gözlük segmentleri için tasarlanmış birinci sınıf bir karbon elyaf çerçeve olan KSS-030'da havacılık sınıfı mühendislikle buluşuyor. Belirgin dokuma dokuların, hipoalerjenik silikon pedlerin ve sağlam namlu menteşelerin kombinasyonu, üst düzey üretim standartlarını yansıtan konforlu ve dayanıklı bir ürün sağlar. Küresel marka büyümesini desteklemek için, ticari ölçekte renklerin, logoların ve lens konfigürasyonlarının derinlemesine özelleştirilmesine olanak tanıyan 300 parçalık bir MOQ ile kapsamlı OEM ve ODM hizmetleri sunuyoruz.
+KSS-030, birinci sınıf karbon elyafın ham teknik güzelliğini sergileyerek üst düzey pazar için olağanüstü bir güç-ağırlık oranı sunar.
+
+Sabit 2+1 varil yapılı menteşeler ve hipoalerjenik silikon burun pedleri ile tasarlanan bu çerçeve, uzun vadeli yapısal bütünlük ve kullanıcı konforu sağlar.
+
+Esnek OEM/ODM özelleştirmesi ve 300 adetlik düşük MOQ, bu modeli lüks performans gözlüğü alanında genişlemek isteyen markalar için ideal bir temel haline getirir.

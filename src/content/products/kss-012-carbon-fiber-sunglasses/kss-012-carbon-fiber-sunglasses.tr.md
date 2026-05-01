@@ -58,7 +58,7 @@ seoKeywords: "karbon elyaf güneş gözlüğü üreticisi, özel karbon çerçev
 - Lüks Moda Evleri
 - Departman Mağazası Grupları
 
-## Overview
+## Ürün Genel Bakışı
 
 Havacılık sınıfı karbon elyaftan tasarlanan KSS-012, teknik dayanıklılığı rafine bir lüks estetikle birleştiriyor. Yüksek mukavemet-ağırlık oranı, yüksek performanslı gözlükler için gereken yapısal bütünlükten ödün vermeden ultra hafif bir deneyim sağlar.
 
