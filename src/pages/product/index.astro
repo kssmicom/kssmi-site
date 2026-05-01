@@ -251,8 +251,8 @@ function getCategoryCount(href: string): number {
 
               <!-- Products Grid -->
               <div class="grid grid-cols-2 xl:grid-cols-3 gap-4 xl:gap-6">
-                {products.map((product) => (
-                  <ProductCard product={product} lang={lang} />
+                {products.map((product, index) => (
+                  <ProductCard product={product} lang={lang} index={index} />
                 ))}
               </div>
 

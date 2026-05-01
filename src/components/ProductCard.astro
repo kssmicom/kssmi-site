@@ -5,9 +5,15 @@ import { translations } from '../translations';
 interface Props {
   product: any;
   lang: string;
+  index?: number;
 }
 
-const { product, lang } = Astro.props;
+const { product, lang, index = -1 } = Astro.props;
+
+// Determine loading strategy: first 4 items load eager with high priority for fast LCP
+const isLCP = index >= 0 && index < 4;
+const loadingStrategy = isLCP ? "eager" : "lazy";
+const fetchPriority = isLCP ? "high" : "auto";
 
 // Access data correctly - slug and other fields are inside data
 const { data } = product;
@@ -36,6 +42,8 @@ const productSlug = slug || product.id.split('.')[0];
           alt={title}
           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           decoding="async"
+          loading={loadingStrategy}
+          fetchpriority={fetchPriority}
           onerror="if(!this.dataset.retried){this.dataset.retried=true;setTimeout(()=>this.src=this.src, 50);}"
         />
       ) : (
