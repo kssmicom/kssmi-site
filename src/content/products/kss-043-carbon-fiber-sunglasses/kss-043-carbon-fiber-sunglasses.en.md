@@ -13,8 +13,6 @@ moq: "300 PCS/Model"
 productType: "Sunglasses"
 material: "Carbon Fiber"
 series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, luxury, sunglasses, sunglasses"
-categories: "Sunglasses, Carbon Fiber Sunglasses"
-
 # ─────────────────────────────────────────────────────
 size: "49-19-145mm & Customization"
 frameMaterial: "Premium Carbon Fiber Frame and Temple"
@@ -65,5 +63,9 @@ seoKeywords: "carbon fiber sunglasses manufacturer, KSS-043 wholesale sunglasses
 
 ## Overview
 
-For luxury eyewear labels seeking a balance of avant-garde aesthetics and elite performance, this premium carbon fiber model offers a distinctive, high-strength frame available in Matte, Glossy, or Forged Carbon finishes. The engineering features a stable 2+1 barrel structure hinge system paired with tenacious nylon lenses, ensuring high-performance durability and optical clarity for high-end fashion and sports lifestyle brands. We support professional scaling through comprehensive OEM and ODM services, providing a competitive 300-piece minimum order quantity that allows boutique designers and private-label distributors to bring customized, aerospace-grade eyewear to global markets.
+Combining aerospace-grade durability with an ultra-lightweight profile, the KSS-043 is engineered from premium carbon fiber for brands that prioritize high-performance aesthetics.
+
+The frame features a precision-calibrated 2+1 barrel hinge system and tenacious nylon lenses, ensuring structural stability and optical clarity in a sleek, hypoallergenic design.
+
+With support for Matte, Glossy, or Forged Carbon finishes and a low 300-piece MOQ, our full OEM/ODM scope enables designers to integrate bespoke, manufacturer-direct carbon fiber eyewear into luxury portfolios.
 

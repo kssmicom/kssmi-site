@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Sunglasses"
 material: "Carbon Fiber"
 series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, luxury, sunglasses, sunglasses"
-categories: "Sunglasses, Carbon Fiber Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "49-19-145mm & Customization"
@@ -59,5 +58,10 @@ seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses, priva
 - Duty-Free & Travel Retail
 
 ## Overview
-High-performance carbon fiber meets sophisticated design in the KSS-032, a model built specifically for the demands of the global B2B eyewear market. The aerospace-grade frame material provides an exceptional strength-to-weight ratio and hypoallergenic comfort, while the robust barrel hinges ensure reliability across high-volume retail environments. Available for full OEM and ODM customization starting at 300 pieces, this model enables luxury fashion houses and private label designers to rapidly deploy premium carbon fiber collections with bespoke branding and technical specifications.
+
+Engineered for brands that prioritize technical superiority, the KSS-032 utilizes premium aerospace-grade carbon fiber to create a frame that is as resilient as it is refined. The distinct woven texture of the material serves as a hallmark of luxury, offering a sophisticated aesthetic that distinguishes it from conventional eyewear.
+
+Each component is meticulously CNC-machined to ensure precise tolerances, while the 2+1 barrel hinges and hypoallergenic silicone nose pads provide a seamless blend of mechanical durability and personalized comfort.
+
+Kssmi provides comprehensive OEM and ODM support with a flexible 300-piece minimum order quantity, enabling global retailers to launch bespoke carbon fiber collections featuring custom lens tints and specialized branding.
 

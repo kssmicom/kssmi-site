@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Optical Frames"
 material: "Titanium Optical Frames"
 series: "optical-frames, titanium-optical-frames, luxury-eyewear, luxury-titanium-optical-frames"
-categories: "Optical Frames, Titanium Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "52-18-145mm & Customization"
@@ -59,5 +58,9 @@ seoKeywords: "titanium optical frames manufacturer, custom titanium eyewear OEM,
 
 ## Overview
 
-Engineered for luxury portfolios that prioritize both durability and a lightweight profile, the KTO-003 is meticulously crafted from premium aerospace-grade titanium. Its high-precision ion plating achieves a sophisticated metallic texture that resists wear, complemented by adjustable metal nose pads and robust three-barrel hinges for a tailor-made fit. With a low 300-piece minimum order quantity and extensive customization scope spanning logo applications to bespoke lens coatings, Kssmi enables premium eyewear brands to rapidly scale high-end optical collections with manufacturing precision.
+Combining structural longevity with an exceptionally lightweight profile, the KTO-003 is precision-crafted from premium aerospace-grade titanium.
+
+The frame features high-definition ion plating and robust three-barrel hinges, paired with adjustable metal nose pads for a hypoallergenic, custom fit.
+
+Supporting full ODM/OEM scope with a flexible 300-piece minimum order quantity, Kssmi provides high-end optical chains and premium brands with scalable, luxury manufacturing solutions.
 

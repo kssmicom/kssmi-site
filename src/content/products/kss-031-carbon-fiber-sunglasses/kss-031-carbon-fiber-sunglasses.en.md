@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Sunglasses"
 material: "Carbon Fiber"
 series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, luxury, sunglasses, sunglasses"
-categories: "Sunglasses, Carbon Fiber Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "49-19-145mm & Customization"
@@ -50,6 +49,7 @@ seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses China,
 - **Premium Optics:** Tenacious nylon lenses with extensive custom tinting and coating options available.
 - **Comfort & Fit:** Hypoallergenic silicone nose pads providing a secure and comfortable fit for extended use.
 - **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 300 pieces for global export.
+
 ## Perfect For
 
 - Premium Eyewear Brands
@@ -61,4 +61,8 @@ seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses China,
 
 ## Overview
 
-Engineered from aerospace-grade carbon fiber, the KSS-031 merges exceptional structural integrity with an ultra-lightweight profile suited for premium unisex lines. Each frame undergoes meticulous CNC machining to achieve a flawless weave texture, complemented by durable 2+1 barrel hinges and adaptable nylon lenses. Designed for independent labels and boutique distributors, we manufacture this versatile model with full OEM and ODM customization options, supporting brand scaling from a reliable 300-piece minimum order quantity.
+Fusing lightweight performance with a sophisticated unisex aesthetic, the KSS-031 is meticulously crafted from aerospace-grade carbon fiber for maximum structural integrity.
+
+Each frame features CNC-machined precision and 2+1 barrel hinges to ensure a flawless finish and lasting operational reliability.
+
+Offering full OEM and ODM customization from a 300-piece minimum, this model empowers premium brands and independent designers to expand their luxury eyewear portfolios.

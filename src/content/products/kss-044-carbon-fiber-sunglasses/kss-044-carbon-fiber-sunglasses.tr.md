@@ -1,27 +1,26 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Özel Karbon Elyaf Güneş Gözlüğü"
+title: "Özel Karbon Fiber Güneş Gözlüğü"
 slug: "kss-044-carbon-fiber-sunglasses"
 itemNo: "KSS-044"
 date: "2026-04-05"
-colors: "Orijinal Karbon Elyaf Rengi (Mat Siyah, Parlak Siyah, Renkli Örgü, Dövme Karbon)"
-materials: "Premium Karbon Elyaf"
-serviceMode: "OEM & ODM ( Özelleştirme )"
+colors: "Orijinal Karbon Fiber Rengi (Mat Siyah, Parlak Siyah, Renkli Dokuma, Dövme Karbon)"
+materials: "Premium Karbon Fiber"
+serviceMode: "Sözleşmeli Üretim & Tasarım ve Üretim"
 moq: "300 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Carbon Fiber"
 series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, luxury, sunglasses, sunglasses"
-categories: "Sunglasses, Carbon Fiber Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "49-19-145mm & Özelleştirme"
-frameMaterial: "Premium Karbon Elyaf Çerçeve ve Saplar"
+frameMaterial: "Premium Karbon Fiber Çerçeve ve Sap"
 lensMaterial: "Dayanıklı Naylon Lens & Özelleştirme"
-designStyle: "Klasik, Moda, Stil Sahibi, Trend, Lüks, Unisex"
+designStyle: "Klasik, Moda, Şık, Trend, Lüks, Unisex"
 nosePads: "Silikon Burun Tamponları"
-hinge: "2+1 Namlu Yapılı Menteşeler & Özelleştirme"
+hinge: "2+1 Varil Yapılı Menteşeler & Özelleştirme"
 logo: "Tampo Baskı, Lazer Markalama, Boya Dolgulu Lazer, Sıcak Baskı, Metal Logo, Kabartma Logo, Kristal Süsleme, 3D Etiket"
 service: "OEM / ODM Üretim – Özelleştirme"
 carbonFiberFeature: "Hafiflik & Yüksek Mukavemet-Ağırlık Oranı & Esneklik & Dayanıklılık & Hipoalerjenik & Benzersiz Doku"
@@ -36,18 +35,18 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KSS-044 Lüks Karbon Elyaf Güneş Gözlüğü | Özel OEM Üreticisi"
-seoDescription: "Lider bir Çinli OEM üreticisinden birinci sınıf KSS-044 karbon elyaf güneş gözlüğü tedarik edin. Lüks markalar için 300 adet MOQ ile tam ODM özelleştirme sunuyoruz."
-seoKeywords: "karbon elyaf güneş gözlüğü üreticisi, özel OEM güneş gözlüğü, özel marka gözlük Çin, toptan karbon elyaf çerçeveler, lüks güneş gözlüğü tedarikçisi, özelleştirilmiş karbon elyaf gözlük, B2B güneş gözlüğü üreticisi, ihracat kalitesinde gözlük Çin"
+seoTitle: "KSS-044 Lüks Karbon Fiber Güneş Gözlüğü | Özel OEM Üreticisi"
+seoDescription: "Lider bir Çinli OEM üreticisinden premium KSS-044 karbon fiber güneş gözlüğü temin edin. Lüks markalar için 300 adet MOQ ile tam ODM özelleştirme sunuyoruz."
+seoKeywords: "karbon fiber güneş gözlüğü üreticisi, özel OEM güneş gözlüğü, özel marka gözlük Çin, toptan karbon fiber çerçeveler, lüks güneş gözlüğü tedarikçisi, özelleştirilmiş karbon fiber gözlük, B2B güneş gözlüğü üreticisi, ihracat kalitesinde gözlük Çin"
 ---
 
 ## Özellikler
 
-- **Havacılık Sınıfı Malzeme:** Ultra hafiflik hissi ve ekstrem mukavemet-ağırlık oranı sağlayan birinci sınıf karbon elyaf çerçeve ve saplar.
-- **Premium Optik:** Çeşitli pazar ihtiyaçlarını karşılamak için kapsamlı özel renklendirme ve kaplama seçenekleri sunan dayanıklı naylon lensler.
-- **Dayanıklı Donanım:** Uzun vadeli çalışma pürüzsüzlüğü ve yapısal bütünlük için mühendislik harikası, stabil 2+1 namlu yapılı menteşeler.
-- **Gelişmiş Konfor:** Uzun süreli kullanım sırasında güvenli ve rahat bir uyum sağlamak için tasarlanmış hipoalerjenik silikon burun tamponları.
-- **Hassas Mühendislik:** Üstün malzeme dayanıklılığı ile yüksek teknolojili, lüks bir estetik sunan benzersiz karbon elyaf örgü dokusu.
+- **Havacılık Sınıfı Malzeme:** Ekstrem mukavemet-ağırlık oranıyla ultra hafif bir his sunan premium karbon fiber çerçeve ve saplar.
+- **Premium Optik:** Çeşitli pazar ihtiyaçlarını karşılamak için geniş kapsamlı özel renklendirme ve kaplama seçeneklerine sahip dayanıklı naylon lensler.
+- **Dayanıklı Donanım:** Uzun süreli operasyonel pürüzsüzlük ve yapısal bütünlük için tasarlanmış stabil 2+1 varil yapılı menteşeler.
+- **Gelişmiş Konfor:** Uzun süreli kullanım sırasında güvenli ve rahat bir oturuş sağlamak için tasarlanmış hipoalerjenik silikon burun tamponları.
+- **Hassas Mühendislik:** Üstün malzeme dayanıklılığı ile yüksek teknoloji ürünü lüks bir estetik sunan benzersiz karbon fiber dokuma dokusu.
 - **Ölçeklenebilir Üretim:** Küresel B2B ihracatı için 300 parçalık düşük minimum sipariş miktarı ile tam OEM ve ODM özelleştirme yetenekleri.
 
 ## İçin Mükemmel
@@ -60,4 +59,8 @@ seoKeywords: "karbon elyaf güneş gözlüğü üreticisi, özel OEM güneş gö
 
 ## Genel Bakış
 
-Birinci sınıf karbon elyaf ile tasarlanan KSS-044, ultra hafif bir profili modern lüks gözlükleri tanımlayan ayırt edici yüksek teknoloji dokusuyla birleştiriyor. Yapısal bütünlüğü, hassas bir şekilde takılmış 2+1 namlu menteşe sistemi ve dayanıklı naylon lensler ile daha da geliştirilerek üst düzey moda ve yaşam tarzı etiketleri için dayanıklı bir çözüm sunar. Çerçeveler, lensler ve markalama genelinde 300 parçalık minimum sipariş miktarı ile tam OEM ve ODM özelleştirme sunarak bağımsız tasarımcıların ve lüks evlerin ölçekli teknik mükemmellik sunmasını sağlıyoruz.
+KSS-044 için malzeme inovasyonu zamansız estetikle buluşuyor. Havacılık sınıfı karbon fiber yapı, olağanüstü yüksek bir mukavemet-ağırlık oranı sunarak her bir çerçevenin hafif olduğu kadar dirençli olmasını sağlar.
+
+Hassas mühendislikle üretilen donanım ve hipoalerjenik silikon burun tamponları, gün boyu konfor ve uzun vadeli mekanik güvenilirlik garanti eder.
+
+Ismarlama logolardan özel lens renklerine kadar tam ODM desteği sağlayarak, lüks yaşam tarzı markalarının ve bağımsız tasarımcıların portföylerini 300 parçalık düşük bir minimum sipariş miktarıyla genişletmelerini sağlıyoruz.

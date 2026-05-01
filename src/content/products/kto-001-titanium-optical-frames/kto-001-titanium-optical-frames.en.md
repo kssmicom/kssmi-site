@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Optical Frames"
 material: "Titanium Optical Frames"
 series: "optical-frames, titanium-optical-frames, luxury-eyewear, luxury-titanium-optical-frames"
-categories: "Optical Frames, Titanium Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "52-18-145mm & Customization"
@@ -59,5 +58,10 @@ seoKeywords: "titanium optical frames manufacturer, custom OEM eyewear China, lu
 
 ## Overview
 
-Engineered from aerospace-grade titanium for an ultra-lightweight and hypoallergenic profile, the KTO-001 serves as a cornerstone for premium optical collections. The integration of precision spring hinges and a durable ion plating finish ensures long-term operational smoothness and a high-end aesthetic across every production unit. This model supports full OEM and ODM customization—from bespoke logo treatments to tailored lens coatings—with a low 300-piece minimum order quantity designed for independent eyewear designers and luxury boutique chains looking to expand their private label offerings.
+Defining the peak of material excellence, the KTO-001 utilizes aerospace-grade titanium to deliver an ultra-lightweight, hypoallergenic experience. Its sleek construction provides the perfect canvas for brands targeting the high-end optical market.
+
+Each frame features precision-engineered spring hinges and a premium ion-plated finish, ensuring a durable, adaptive fit that maintains its luster over years of daily wear.
+
+With a flexible 300-piece minimum order quantity and full ODM support, this model empowers boutique labels and luxury optical chains to launch bespoke collections with world-class manufacturing precision.
+
 

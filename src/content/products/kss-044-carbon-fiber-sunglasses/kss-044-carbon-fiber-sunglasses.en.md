@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Sunglasses"
 material: "Carbon Fiber"
 series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, luxury, sunglasses, sunglasses"
-categories: "Sunglasses, Carbon Fiber Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "49-19-145mm & Customization"
@@ -60,5 +59,8 @@ seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses, priva
 
 ## Overview
 
-Engineered with premium carbon fiber, the KSS-044 combines an ultra-lightweight profile with the distinctive high-tech texture that defines modern luxury eyewear. Its structural integrity is further enhanced by a precision-fitted 2+1 barrel hinge system and tenacious nylon lenses, providing a durable solution for high-end fashion and lifestyle labels. We offer full OEM and ODM customization across frames, lenses, and branding with a 300-piece minimum order quantity, enabling independent designers and luxury houses to deliver technical excellence at scale.
-
+For the KSS-044, material innovation meets timeless aesthetics. The aerospace-grade carbon fiber construction delivers an exceptionally high strength-to-weight ratio, ensuring each frame is as resilient as it is lightweight.
+
+Precision-engineered hardware and hypoallergenic silicone nose pads guarantee all-day comfort and long-term mechanical reliability.
+
+Providing full ODM support from bespoke logos to custom lens tints, we empower luxury lifestyle labels and independent designers to expand their portfolios with a low 300-piece minimum order quantity.
