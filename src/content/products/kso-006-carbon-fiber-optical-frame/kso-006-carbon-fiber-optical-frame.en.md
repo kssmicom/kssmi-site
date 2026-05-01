@@ -12,8 +12,7 @@ moq: "300 PCS/Model"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
 material: "Carbon Fiber"
-series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
-categories: "Optical Frames, Carbon Fiber Optical Frames"
+series: "Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "46-22-145mm & Customization"
@@ -71,4 +70,8 @@ seoKeywords: "carbon fiber optical frames manufacturer, custom OEM eyewear China
 
 ## Overview
 
-Built for brands that demand a fusion of modern materials and classic optical design, the KSO-006 utilizes a premium carbon fiber front structure supported by high-quality metal temples. The inclusion of high-performance spring hinges and adjustable metal nose pads ensures each frame delivers the lightweight durability and precise fit expected in the luxury eyewear sector. Our facility offers complete OEM and ODM customization services starting at 300 pieces per model, providing a streamlined manufacturing path for distributors and designers to launch advanced eyewear collections.
+Engineered for professional environments, this frame combines an aerospace-grade carbon fiber front with high-quality metal temples to achieve a sophisticated, tech-forward aesthetic.
+
+High-performance spring hinges and adjustable metal nose pads work in tandem to provide a lightweight, self-adjusting fit that maintains comfort throughout extended daily wear.
+
+Available for full ODM development with a accessible 300-piece minimum order quantity, this model empowers independent designers and premium boutiques to scale their custom luxury eyewear portfolios.

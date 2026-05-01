@@ -1,6 +1,6 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Özel Karbon Fiber Optik Çerçeve"
+title: "Özel Karbon Elyaf Optik Çerçeve"
 slug: "kso-006-carbon-fiber-optical-frame"
 itemNo: "KSO-006"
 date: "2026-04-05"
@@ -12,19 +12,18 @@ moq: "300 adet/model"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
 material: "Carbon Fiber"
-series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
-categories: "Optical Frames, Carbon Fiber Optical Frames"
+series: "Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "46-22-145mm & Özelleştirme"
 frameMaterial: "Premium Karbon Elyaf Çerçeve ve Metal Sap"
 lensMaterial: "Dayanıklı Naylon Lens & Özelleştirme"
-designStyle: "Benzersiz, Moda, Şık, Trend, Lüks, Uniseks"
+designStyle: "Benzersiz, Moda, Şık, Trend, Lüks, Unisex"
 nosePads: "Metal Burun Tamponları"
-hinge: "Yaylı Menteşeler & Özelleştirme"
+hinge: "Yaylı Yapı Menteşeleri & Özelleştirme"
 logo: "Tampo Baskı, Lazer Markalama, Boya Dolgulu Lazer, Sıcak Baskı, Metal Logo, Kabartma Logo, Kristal Süsleme, 3D Etiket"
 service: "OEM / ODM Üretim – Özelleştirme"
-carbonFiberFeature: "Hafiflik & Yüksek Dayanıklılık-Ağırlık Oranı & Esneklik & Dayanıklılık & Hipolerjenik & Benzersiz Doku"
+carbonFiberFeature: "Hafiflik & Yüksek Mukavemet-Ağırlık Oranı & Esneklik & Dayanıklılık & Hipoalerjenik & Benzersiz Doku"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kso-006-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-006-1.webp"
@@ -49,16 +48,16 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-006 Lüks Karbon Elyaf Optik Çerçeve | OEM & ODM Üreticisi"
-seoDescription: "KSO-006 Birinci sınıf metal saplara sahip lüks karbon elyaf optik çerçeve. Küresel ihracat için Çinli lider gözlük OEM/ODM üreticisi, MOQ 300."
-seoKeywords: "karbon elyaf optik çerçeve üreticisi, özel OEM gözlük Çin, özel marka karbon elyaf çerçeveler, lüks optik çerçeve fabrikası, toptan karbon elyaf gözlükler, ihracat kalitesinde optik çerçeveler, Çin gözlük OEM ODM servisi, B2B optik çerçeve tedarikçisi"
+seoDescription: "Premium metal saplara sahip KSO-006 lüks karbon elyaf optik çerçeve. Küresel ihracata hazır 300 MOQ siparişler için lider Çinli OEM/ODM gözlük üreticisi."
+seoKeywords: "karbon elyaf optik çerçeve üreticisi, özel OEM gözlük Çin, özel marka karbon elyaf çerçeveler, lüks optik çerçeve fabrikası, toptan karbon elyaf gözlük, ihracat kalitesinde optik çerçeveler, Çin gözlük OEM ODM servisi, B2B optik çerçeve tedarikçisi"
 ---
 
-## Teknik Özellikler
+## Özellikler
 - **Havacılık Sınıfı Malzeme:** Üstün mukavemet-ağırlık oranıyla ultra hafif bir his sunan birinci sınıf karbon elyaf ön yapı.
-- **Hibrit Tasarım:** İnce ve modern bir estetik için karbon elyaf ve yüksek kaliteli metal sapların şık kombinasyonu.
-- **Esnek Mühendislik:** Çeşitli yüz şekilleri ve boyutları için kendi kendini ayarlayan, rahat bir oturuş sağlayan yüksek performanslı yaylı menteşeler.
-- **Birinci Sınıf Optikler:** Marka özelliklerini karşılamak için geniş kapsamlı özel renklendirme ve kaplama seçenekleri sunan dayanıklı naylon lensler.
-- **Rafine Konfor:** Uzun süreli kullanım sırasında dayanıklılık ve istikrarlı, kişiselleştirilmiş bir oturuş için tasarlanmış entegre metal burun tamponları.
+- **Hibrit Tasarım:** Rafine ve modern bir estetik için karbon elyaf ve yüksek kaliteli metal sapların şık kombinasyonu.
+- **Esnek Mühendislik:** Çeşitli yüz şekilleri ve boyutları için kendi kendini ayarlayan, rahat bir uyum sağlayan yüksek performanslı yaylı menteşeler.
+- **Premium Optik:** Marka spesifikasyonlarını karşılamak için kapsamlı özel renklendirme ve kaplama seçeneklerine sahip dayanıklı naylon lensler.
+- **Gelişmiş Konfor:** Dayanıklılık ve uzun süreli kullanım sırasında dengeli, kişiselleştirilmiş bir uyum için tasarlanmış entegre metal burun tamponları.
 - **Ölçeklenebilir Üretim:** Küresel toptancılar için 300 adetlik düşük minimum sipariş miktarı ile kapsamlı OEM ve ODM özelleştirme yetenekleri.
 
 ## İçin Mükemmel
@@ -69,6 +68,10 @@ seoKeywords: "karbon elyaf optik çerçeve üreticisi, özel OEM gözlük Çin, 
 - Lüks Moda Evleri
 - Spor ve Otomotiv Yaşam Tarzı Markaları
 
-## Ürüne Genel Bakış
+## Ürün Özeti
 
-Modern malzemelerin ve klasik optik tasarımın birleşimini talep eden markalar için tasarlanan KSO-006, yüksek kaliteli metal saplarla desteklenen birinci sınıf bir karbon elyaf ön yapı kullanır. Yüksek performanslı yaylı menteşelerin ve ayarlanabilir metal burun tamponlarının dahil edilmesi, her çerçevenin lüks gözlük sektöründe beklenen hafif dayanıklılığı ve hassas oturuşu sunmasını sağlar. Tesisimiz, model başına 300 adetten başlayan kapsamlı OEM ve ODM özelleştirme hizmetleri sunarak distribütörlerin ve tasarımcıların gelişmiş gözlük koleksiyonlarını piyasaya sürmeleri için akıcı bir üretim yolu sağlar.
+Profesyonel ortamlar için tasarlanan bu çerçeve, sofistike ve teknoloji odaklı bir estetik elde etmek için havacılık sınıfı karbon elyaf ön kısmı yüksek kaliteli metal saplarla birleştirir.
+
+Yüksek performanslı yaylı menteşeler ve ayarlanabilir metal burun tamponları, uzun süreli günlük kullanım boyunca konforu koruyan hafif, kendi kendini ayarlayan bir uyum sağlamak için birlikte çalışır.
+
+300 adetlik erişilebilir minimum sipariş miktarı ile tam ODM geliştirmeye hazır olan bu model, bağımsız tasarımcıların ve premium butiklerin özel lüks gözlük portföylerini genişletmelerine olanak tanır.

@@ -13,8 +13,6 @@ moq: "300 pz/modello"
 productType: "Optical Frames"
 material: "Carbon Fiber"
 series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
-categories: "Optical Frames, Carbon Fiber Optical Frames"
-
 # ─────────────────────────────────────────────────────
 size: "49-19-145mm & Personalizzazione"
 frameMaterial: "Montatura in Fibra di Carbonio Premium e Aste in Titanio"
@@ -71,4 +69,8 @@ seoKeywords: "montature ottiche in fibra di carbonio, produttore di occhiali per
 
 ## Overview
 
-Combinando fibra di carbonio di grado aerospaziale con aste in titanio di precisione, il modello KSO-012 offre un eccezionale rapporto resistenza-peso per il mercato ottico moderno. Ogni montatura è lavorata a CNC per garantire una qualità costante e una trama unica che la differenzia dalle alternative standard in acetato o metallo. Con cerniere integrate a barile 2+1 e naselli in silicone ipoallergenico, questo modello privilegia la durabilità a lungo termine e il comfort di chi lo indossa in ambienti retail di alto livello. Kssmi supporta l'espansione globale del marchio attraverso servizi completi di personalizzazione OEM/ODM con un ordine minimo di soli 300 pezzi per modello.
+Progettato per marchi d'élite, il modello KSO-012 fonde fibra di carbonio di grado aerospaziale con aste in titanio di precisione per offrire una montura ultraleggera e strutturalmente superiore. Ogni componente è lavorato a CNC per raggiungere tolleranze esatte, mettendo in mostra una trama tecnica unica che definisce l'occhialeria moderna di fascia alta.
+
+L'integrazione di cerniere a barile 2+1 e naselli in silicone ipoallergenico garantisce una raffinata scorrevolezza operativa e una vestibilità sicura e confortevole per tutto il giorno.
+
+Offrendo un'ampia personalizzazione OEM e ODM con un ordine minimo di 300 pezzi, Kssmi consente a designer indipendenti e marchi di lusso di ampliare le proprie collezioni con occhiali tecnici prodotti con precisione.

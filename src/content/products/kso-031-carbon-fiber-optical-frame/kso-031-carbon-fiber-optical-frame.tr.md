@@ -1,27 +1,26 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Özel Karbon Fiber Optik Çerçeve"
+title: "Özel Karbon Elyaf Optik Çerçeve"
 slug: "kso-031-carbon-fiber-optical-frame"
 itemNo: "KSO-031"
 date: "2026-04-05"
-colors: "Ahşap Altın & Dimi Desen Yeşil Karbon Fiber & Düz Desen Karbon Fiber Mat Tabanca & Ahşap Düz Desen Karbon Fiber Mat Gümüş"
-materials: "Premium Karbon Fiber ve Titanyum"
-serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM)"
+colors: "Altın Ahşap & Dimi Desenli Yeşil Karbon Elyaf & Düz Desenli Karbon Elyaf Mat Füme & Ahşap Düz Desenli Karbon Elyaf Mat Gümüş"
+materials: "Premium Karbon Elyaf ve Titanyum"
+serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
 moq: "300 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
 material: "Carbon Fiber"
 series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
-categories: "Optical Frames, Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "48-22-145mm & Özelleştirme"
-frameMaterial: "Premium Karbon Fiber Çerçeve ve Titanyum Sap"
+frameMaterial: "Premium Karbon Elyaf Çerçeve ve Titanyum Sap"
 lensMaterial: "Dayanıklı Naylon Lens & Özelleştirme"
 designStyle: "Klasik, Moda, Şık, Trend, Lüks, Unisex"
 nosePads: "Kauçuk Burun Tamponları"
-hinge: "2+1 Namlu Yapılı Menteşeler & Özelleştirme"
+hinge: "2+1 Varil Yapılı Menteşeler & Özelleştirme"
 logo: "Tampo Baskı, Lazer Markalama, Boya Dolgulu Lazer, Sıcak Baskı, Metal Logo, Kabartma Logo, Kristal Süsleme, 3D Etiket"
 service: "OEM / ODM Üretim – Özelleştirme"
 carbonFiberFeature: "Hafiflik & Yüksek Mukavemet-Ağırlık Oranı & Esneklik & Dayanıklılık & Hipoalerjenik & Benzersiz Doku"
@@ -48,18 +47,18 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KSO-031 Lüks Karbon Fiber ve Titanyum Optik Çerçeve Üreticisi"
-seoDescription: "KSO-031: B2B için ısmarlama lüks karbon fiber ve titanyum optik çerçeveler. 300 MOQ ile birinci sınıf havacılık sınıfı malzeme. Özel markalar için uzman OEM/ODM."
-seoKeywords: "karbon fiber optik çerçeveler, lüks optik çerçeveler, gözlük üreticisi Çin, özel marka gözlükler, toptan karbon fiber çerçeveler, gözlük OEM ODM servisi, karbon fiber gözlük tedarikçisi, premium Çin gözlük fabrikası"
+seoTitle: "KSO-031 Lüks Karbon Elyaf ve Titanyum Optik Çerçeve Üreticisi"
+seoDescription: "KSO-031: B2B için özel tasarım lüks karbon elyaf ve titanyum optik çerçeveler. 300 MOQ ile premium havacılık sınıfı malzeme. Özel markalar için uzman OEM/ODM hizmeti."
+seoKeywords: "karbon elyaf optik çerçeveler, lüks optik çerçeveler, gözlük üreticisi Çin, özel marka gözlük, toptan karbon elyaf çerçeveler, gözlük OEM ODM hizmeti, karbon elyaf gözlük tedarikçisi, premium Çin gözlük fabrikası"
 ---
 
 ## Özellikler
-- **Havacılık Sınıfı Malzeme:** Birinci sınıf karbon fiber çerçeve, titanyum saplarla eşleştirilerek aşırı mukavemet-ağırlık oranıyla ultra hafif bir his sunar.
-- **Dayanıklı Donanım:** Uzun süreli operasyonel pürüzsüzlük ve çerçeve stabilitesi için tasarlanmış sağlam 2+1 namlu yapılı menteşeler.
-- **Premium Optik:** Küresel pazarlar için kapsamlı özelleştirme seçenekleriyle üstün darbe direnci sağlayan dayanıklı naylon lensler.
-- **Tüm Gün Konfor:** Uzun süreli günlük kullanım için güvenli, hipoalerjenik bir uyum sağlamak üzere tasarlanmış ergonomik kauçuk burun tamponları.
-- **Özel Dokular:** Ahşap desenli ve dimi desenli benzersiz karbon fiber dokumalar, seçici markalar için üst düzey, lüks bir estetik sunar.
-- **Üretim Esnekliği:** Ölçeklenebilir küresel dağıtımı destekleyen, 300 parçalık düşük bir MOQ ile profesyonel OEM ve ODM hizmetleri.
+- **Havacılık Sınıfı Malzeme:** Titanyum saplarla eşleştirilmiş premium karbon elyaf çerçeve, aşırı mukavemet-ağırlık oranı ile ultra hafif bir his sunar.
+- **Dayanıklı Donanım:** Uzun süreli çalışma pürüzsüzlüğü ve çerçeve stabilitesi için tasarlanmış sağlam 2+1 varil yapılı menteşeler.
+- **Premium Optik:** Küresel pazarlar için kapsamlı özelleştirme seçenekleri ile üstün darbe direnci sağlayan dayanıklı naylon lensler.
+- **Tüm Gün Konfor:** Uzun süreli günlük kullanım için güvenli ve hipoalerjenik bir uyum sağlamak üzere tasarlanmış ergonomik kauçuk burun tamponları.
+- **Özel Dokular:** Titiz markalar için üst düzey, lüks bir estetik sunan ahşap desenli ve dimi desenli benzersiz karbon elyaf dokumalar.
+- **Üretim Esnekliği:** Ölçeklenebilir küresel dağıtımı destekleyen, 300 adetlik düşük MOQ ile profesyonel OEM ve ODM hizmetleri.
 
 ## İçin Mükemmel
 - Premium Gözlük Markaları
@@ -69,6 +68,10 @@ seoKeywords: "karbon fiber optik çerçeveler, lüks optik çerçeveler, gözlü
 - Lüks Moda Evleri
 - Yüksek Segment Optik Zincirleri
 
-## Genel Bakış
+## Ürüne Genel Bakış
 
-Havacılık sınıfı karbon fiberin yapısal bütünlüğünü titanyum sapların rafine esnekliği ile birleştiren bu model, üst düzey optik koleksiyonlar için sofistike bir çözüm sunar. Ahşap ve dimi dokuların titiz entegrasyonu belirgin bir görsel kimlik sağlarken, 2+1 namlu menteşe mimarisi günlük kullanım boyunca kalıcı stabilite sağlar. 300 parçalık minimumdan başlayan kapsamlı OEM ve ODM özelleştirmesi sunan Kssmi, özel marka dağıtımcılarının ve lüks moda evlerinin hassas mühendislik bileşenleri ve benzersiz malzeme kaplamaları ile ısmarlama gözlük hatları geliştirmesine olanak tanır.
+KSO-031, havacılık sınıfı karbon elyafı ile rafine titanyumun sofistike bir birleşimini temsil ederek, belirgin bir lüks estetiğe sahip ultra hafif bir optik çözüm sunar. Benzersiz ahşap desenli ve dimi dokular, üst düzey butikler ve yaşam tarzı markalarıyla yankı bulan premium bir görsel kimlik sağlar.
+
+Uzun süreli kullanımda pürüzsüz çalışma için tasarlanan 2+1 varil menteşeler ve hipoalerjenik kauçuk burun tamponları, kullanıcı için olağanüstü denge ve tüm gün konfor sağlar.
+
+300 parçalık minimum sipariş miktarından başlayan kapsamlı OEM ve ODM özelleştirmesini destekleyen Kssmi, bağımsız tasarımcıların ve özel marka dağıtımcılarının hassas mühendislik bileşenleriyle ısmarlama gözlük portföyleri oluşturmasına olanak tanır.

@@ -13,8 +13,6 @@ moq: "300 개/모델"
 productType: "Optical Frames"
 material: "Carbon Fiber"
 series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
-categories: "Optical Frames, Carbon Fiber Optical Frames"
-
 # ─────────────────────────────────────────────────────
 size: "49-19-145mm & 맞춤 서비스"
 frameMaterial: "프리미엄 탄소 섬유 프레임 및 티타늄 템플"
@@ -41,7 +39,7 @@ gallery:
   - "/media/products/kso-012-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-012-11.webp"
   - "/media/products/kso-012-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-012-12.webp"
   - "/media/products/kso-012-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-012-13.webp"
-  - "/media/products/kso-012-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-012-14.webp"
+  -   "/media/products/kso-012-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-012-14.webp"
   - "/media/products/kso-012-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-012-15.webp"
   - "/media/products/kso-012-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-012-16.webp"
 customizable: true
@@ -69,6 +67,10 @@ seoKeywords: "탄소 섬유 안경테, 맞춤형 안경 제조업체, 티타늄 
 - 스포츠 및 자동차 라이프스타일 브랜드
 - 백화점 그룹
 
-## Overview
+## 개요
 
-항공우주 등급의 탄소 섬유와 정밀하게 설계된 티타늄 템플을 결합한 KSO-012는 현대 안경 시장에 탁월한 강도 대 중량비를 제공합니다. 각 프레임은 일관된 품질과 표준 아세테이트 또는 금속 대안과 차별화되는 독특한 질감을 보장하기 위해 CNC 가공되었습니다. 통합된 2+1 배럴 경첩과 저자극성 실리콘 코패드를 갖춘 이 모델은 하이엔드 소매 환경에서 장기적인 내구성과 착용자의 편안함을 최우선으로 합니다. Kssmi는 모델당 300개의 낮은 최소 주문 수량으로 포괄적인 OEM/ODM 맞춤화 서비스를 통해 글로벌 브랜드 확장을 지원합니다.
+엘리트 브랜드를 위해 설계된 KSO-012는 항공우주 등급의 탄소 섬유와 정밀한 티타늄 템플을 결합하여 초경량이면서도 구조적으로 뛰어난 프레임을 선사합니다. 각 구성 요소는 CNC 가공을 통해 정확한 공차를 달성하며, 하이엔드 현대 아이웨어를 정의하는 독특한 기술적 질감을 보여줍니다.
+
+2+1 배럴 경첩 시스템과 저자극성 실리콘 코받침의 통합은 세련된 작동 부드러움과 하루 종일 안전하고 편안한 착용감을 보장합니다.
+
+300매의 낮은 최소 주문 수량으로 광범위한 OEM 및 ODM 맞춤 서비스를 제공함으로써, Kssmi는 독립 디자이너와 럭셔리 브랜드가 정밀하게 제조된 기술적 아이웨어로 컬렉션을 확장할 수 있도록 지원합니다.

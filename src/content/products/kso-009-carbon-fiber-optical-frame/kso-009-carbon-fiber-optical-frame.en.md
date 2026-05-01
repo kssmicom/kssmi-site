@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Optical Frames"
 material: "Carbon Fiber"
 series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
-categories: "Optical Frames, Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "52-17-150mm & Customization"
@@ -68,3 +67,11 @@ seoKeywords: "carbon fiber optical frames manufacturer, custom titanium eyewear 
 - Luxury Fashion Houses
 - Sports & Automotive Lifestyle Labels
 - High-End Optical Chains
+
+## Overview
+
+Merging high-performance carbon fiber with sleek titanium temples, the KSO-009 represents a masterclass in resilient, refined eyewear engineering. Its distinctive weave texture and premium finish cater specifically to the demands of the luxury optical market.
+
+The integration of a precision-engineered 2+1 barrel hinge system and hypoallergenic metal nose pads ensures consistent operational smoothness and a stable, comfortable fit.
+
+With a flexible 300-piece minimum order quantity, we provide full ODM and OEM support to help independent designers and premium retailers scale their bespoke eyewear collections with ease.

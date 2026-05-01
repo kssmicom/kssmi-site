@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Optical Frames"
 material: "Carbon Fiber"
 series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
-categories: "Optical Frames, Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "48-22-145mm & Customization"
@@ -71,4 +70,8 @@ seoKeywords: "carbon fiber optical frames, luxury optical frames, eyewear manufa
 
 ## Overview
 
-Combining the structural integrity of aerospace-grade carbon fiber with the refined flexibility of titanium temples, this model offers a sophisticated solution for high-end optical collections. The meticulous integration of wood and twill grain textures provides a distinct visual identity, while the 2+1 barrel hinge architecture ensures lasting stability throughout daily wear. Offering comprehensive OEM and ODM customization starting at a 300-piece minimum, Kssmi enables private label distributors and luxury fashion houses to develop bespoke eyewear lines with precision-engineered components and unique material finishes.
+The KSO-031 represents a sophisticated fusion of aerospace-grade carbon fiber and refined titanium, delivering an ultra-lightweight optical solution with a distinct luxury aesthetic. Unique wood and twill grain textures provide a premium visual identity that resonates with high-end boutiques and lifestyle labels.
+
+Engineered for long-term operational smoothness, the 2+1 barrel structure hinges and hypoallergenic rubber nose pads ensure exceptional stability and all-day comfort for the wearer.
+
+Supporting comprehensive OEM and ODM customization starting at a 300-piece minimum, Kssmi empowers independent designers and private label distributors to build bespoke eyewear portfolios with precision-engineered components.

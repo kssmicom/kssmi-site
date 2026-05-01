@@ -13,7 +13,6 @@ moq: "300 adet/model"
 productType: "Optical Frames"
 material: "Carbon Fiber"
 series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
-categories: "Optik Çerçeveler, Karbon Elyaf Optik Çerçeveler"
 
 # ─────────────────────────────────────────────────────
 size: "49-21-150mm & Özelleştirme"
@@ -71,4 +70,8 @@ seoKeywords: "karbon elyaf optik çerçeve üreticisi, özel titanyum karbon ely
 
 ## Overview
 
-Havacılık sınıfı karbon elyafını Seylan Abanozu ve Beyaz Meşe detaylarının organik sıcaklığıyla birleştiren bu optik çerçeve, lüks gözlük segmenti için sofistike bir malzeme hibriti sunar. Hafif titanyum saplar ve 2+1 varil menteşe mimarisi, farklı yüz şekillerinde kalıcı ergonomik konfor ve mekanik güvenilirlik için tasarlanmıştır. Profesyonel OEM ve ODM iş akışları aracılığıyla Kssmi, premium markaların koleksiyonlarını 300 parçalık yönetilebilir bir minimum sipariş miktarı ve kapsamlı logo özelleştirme seçenekleriyle genişletmelerine olanak tanır. Bu tasarım, özel markalı optik hatlarına yüksek teknolojili dayanıklılığı entegre etmek isteyen bağımsız tasarımcılar ve moda evleri için temel bir değer teşkil eder.
+Üst düzey lüks segment için tasarlanan KSO-010, havacılık sınıfı karbon fiberi Seylan Abanozu ve Beyaz Meşe gibi el yapımı ahşap detaylarla birleştirir. Şık titanyum saplarla eşleşen bu sofistike hibrit yapı, hem ultra hafif hem de yapısal olarak üstün bir çerçeve oluşturur.
+
+Hassas mühendislikle üretilen 2+1 namlu yapılı menteşeler, uzun süreli mekanik stabilite ve rafine, güvenli bir oturuş sağlar.
+
+300 adetlik düşük minimum sipariş miktarı ile kapsamlı OEM ve ODM geliştirmeyi destekleyen bu model, bağımsız tasarımcıların ve premium markaların yüksek teknoloji materyal inovasyonunu ısmarlama koleksiyonlarına entegre etmelerine olanak tanır.

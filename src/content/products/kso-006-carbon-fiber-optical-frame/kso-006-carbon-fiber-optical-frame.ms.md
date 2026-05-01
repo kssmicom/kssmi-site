@@ -12,19 +12,18 @@ moq: "300 unit/model"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
 material: "Carbon Fiber"
-series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
-categories: "Optical Frames, Carbon Fiber Optical Frames"
+series: "Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "46-22-145mm & Penyesuaian"
-frameMaterial: "Bingkai Gentian Karbon Premium dan Tangkai Logam"
-lensMaterial: "Lensa Nilon Lasak & Penyesuaian"
-designStyle: "Unik, Fesyen, Bergaya, Trend, Mewah, Unisex"
+frameMaterial: "Bingkai Gentian Karbon Premium dan Kuil Logam"
+lensMaterial: "Lensa Nylon Tenacious & Penyesuaian"
+designStyle: "Unik, Fesyen, Bergaya, Trendi, Mewah, Unisex"
 nosePads: "Alas Hidung Logam"
-hinge: "Engsel Spring & Penyesuaian"
+hinge: "Engsel Struktur Spring & Penyesuaian"
 logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Lencana Logam, Timbulan, Kristal, Pelekat"
 service: "Pembuatan OEM / ODM – Penyesuaian"
-carbonFiberFeature: "Ringan & Nisbah Kekuatan-ke-Berat Tinggi & Fleksibiliti & Ketahanan & Hipolergenik & Tekstur Unik"
+carbonFiberFeature: "Ringan & Nisbah Kekuatan-ke-Berat Tinggi & Fleksibiliti & Ketahanan & Hipoalergenik & Tekstur Unik"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kso-006-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-006-1.webp"
@@ -48,18 +47,18 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KSO-006 Bingkai Optik Gentian Karbon Mewah | Pengeluar OEM & ODM"
-seoDescription: "Bingkai optik Gentian Karbon Mewah KSO-006 dengan tangkai logam premium. Pengeluar kacamata OEM/ODM terkemuka China untuk eksport global, MOQ 300."
-seoKeywords: "pengeluar bingkai optik gentian karbon, kacamata OEM tersuai China, bingkai gentian karbon label peribadi, kilang bingkai optik mewah, borong kacamata gentian karbon, bingkai optik kualiti eksport, perkhidmatan OEM ODM kacamata China, pembekal bingkai optik B2B"
+seoTitle: "Bingkai Optik Gentian Karbon Mewah KSO-006 | Pengilang OEM & ODM"
+seoDescription: "Bingkai optik gentian karbon mewah KSO-006 menampilkan kuil logam premium. Pengilang kacamata OEM/ODM China terkemuka untuk pesanan 300 MOQ sedia eksport global."
+seoKeywords: "pengilang bingkai optik gentian karbon, kacamata tersuai OEM China, bingkai gentian karbon label peribadi, kilang bingkai optik mewah, borong kacamata gentian karbon, bingkai optik kualiti eksport, perkhidmatan kacamata OEM ODM China, pembekal bingkai optik B2B"
 ---
 
-## Ciri-ciri Teknikal
-- **Bahan Gred Aeroangkasa:** Struktur hadapan gentian karbon premium yang menawarkan rasa ultra ringan dengan nisbah kekuatan-ke-berat yang unggul.
-- **Reka Bentuk Hibrid:** Gabungan kemas gentian karbon dan tangkai logam berkualiti tinggi untuk estetika moden yang halus.
-- **Kejuruteraan Fleksibel:** Engsel spring berprestasi tinggi yang menyediakan padanan yang selesa dan boleh laras sendiri untuk pelbagai bentuk ean saiz wajah.
-- **Optik Premium:** Lensa nilon lasak dengan pilihan warna dan salutan tersuai yang meluas tersedia untuk memenuhi spesifikasi jenama.
-- **Keselesaan Canggih:** Alas hidung logam bersepadu yang direka untuk ketahanan dan padanan yang stabil serta diperibadikan semasa pemakaian berpanjangan.
-- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM yang komprehensif dengan kuantiti pesanan minimum yang rendah iaitu 300 unit untuk pemborong global.
+## Ciri-ciri Utama
+- **Bahan Gred Aeroangkasa:** Struktur hadapan gentian karbon premium menawarkan rasa ultra ringan dengan nisbah kekuatan-ke-berat yang unggul.
+- **Reka Bentuk Hibrid:** Kombinasi elegan gentian karbon dan kuil logam berkualiti tinggi untuk estetika yang halus dan moden.
+- **Kejuruteraan Fleksibel:** Engsel spring berprestasi tinggi memberikan kesesuaian yang selesa dan boleh laras sendiri untuk pelbagai bentuk dan saiz wajah.
+- **Optik Premium:** Lensa nilon yang kuat dengan pilihan pewarnaan dan salutan tersuai yang luas tersedia untuk memenuhi spesifikasi jenama.
+- **Keselesaan Canggih:** Alas hidung logam bersepadu yang direka untuk ketahanan dan kesesuaian peribadi yang stabil semasa pemakaian berpanjangan.
+- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM yang komprehensif dengan kuantiti pesanan minimum rendah 300 unit untuk pemborong global.
 
 ## Sesuai Untuk
 - Jenama Kacamata Premium
@@ -69,6 +68,10 @@ seoKeywords: "pengeluar bingkai optik gentian karbon, kacamata OEM tersuai China
 - Rumah Fesyen Mewah
 - Jenama Gaya Hidup Sukan & Automotif
 
-## Gambaran Keseluruhan Produk
+## Ringkasan Produk
 
-Dibina untuk jenama yang menuntut gabungan bahan moden dan reka bentuk optik klasik, KSO-006 menggunakan struktur hadapan gentian karbon premium yang disokong oleh tangkai logam berkualiti tinggi. Penggunaan engsel spring berprestasi tinggi dan alas hidung logam boleh laras memastikan setiap bingkai memberikan ketahanan ringan dan padanan tepat yang diharapkan dalam sektor kacamata mewah. Kemudahan kami menawarkan perkhidmatan penyesuaian OEM dan ODM yang lengkap bermula dari 300 unit bagi setiap model, menyediakan laluan pembuatan yang diperkemas untuk pengedar dan pereka melancarkan koleksi kacamata yang canggih.
+Dibina untuk persekitaran profesional, bingkai ini menggabungkan bahagian hadapan gentian karbon gred aeroangkasa dengan kuil logam berkualiti tinggi untuk mencapai estetika yang canggih dan berorientasikan teknologi.
+
+Engsel spring berprestasi tinggi dan alas hidung logam boleh laras bekerjasama untuk memberikan kesesuaian ringan dan boleh laras sendiri yang mengekalkan keselesaan sepanjang penggunaan harian yang berpanjangan.
+
+Tersedia untuk pembangunan ODM sepenuhnya dengan kuantiti pesanan minimum 300 unit yang mudah diakses, model ini memperkasakan pereka bebas dan butik premium untuk mengembangkan portfolio kacamata mewah tersuai mereka.

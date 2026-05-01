@@ -6,25 +6,24 @@ itemNo: "KSO-011"
 date: "2026-04-05"
 colors: "Gentian Karbon & Ceylon Ebony & White Oak & Sapele"
 materials: "Gentian Karbon Premium dan Titanium"
-serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & Pembuatan ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
-moq: "300 unit/model"
+serviceMode: "OEM & ODM ( Penyesuaian )"
+moq: "300 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
 material: "Carbon Fiber"
 series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
-categories: "Optical Frames, Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "50-21-150mm & Penyesuaian"
 frameMaterial: "Bingkai Gentian Karbon Premium dan Tangkai Titanium"
-lensMaterial: "Kanta Nilon Tahan Lasak & Penyesuaian"
-designStyle: "Klasik, Fesyen, Bergaya, Trendi, Mewah, Unisex"
+lensMaterial: "Kanta Nilon Teguh & Penyesuaian"
+designStyle: "Klasik, Fesyen, Bergaya, Trend, Mewah, Unisex"
 nosePads: "Alas Hidung Titanium"
-hinge: "Engsel Struktur Tong 2+1 & Penyesuaian"
+hinge: "Engsel Struktur 2+1 Tong & Penyesuaian"
 logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Lencana Logam, Timbulan, Kristal, Pelekat"
 service: "Pembuatan OEM / ODM – Penyesuaian"
-carbonFiberFeature: "Ringan & Nisbah Kekuatan-ke-Berat Tinggi & Fleksibiliti & Ketahanan & Hipolergenik & Tekstur Unik"
+carbonFiberFeature: "Ringan & Nisbah kekuatan-kepada-berat tinggi & Fleksibiliti & Ketahanan & Hipoalergenik & Tekstur Unik"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kso-011-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-011-1.webp"
@@ -49,17 +48,17 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Bingkai Optik Gentian Karbon Mewah KSO-011 | Pembekal Borong"
-seoDescription: "Bekerjasama dengan pengeluar terkemuka China untuk bingkai optik gentian karbon mewah KSO-011 dengan tangkai titanium. OEM/ODM untuk label peribadi dengan 300 MOQ."
-seoKeywords: "pengeluar bingkai optik gentian karbon, kacamata titanium tersuai China, bingkai gentian karbon label peribadi, borong kacamata optik mewah, kilang kacamata karbon OEM, pembekal bingkai optik B2B, kacamata gentian karbon mewah OEM, bingkai optik kualiti eksport"
+seoDescription: "Rakan kongsi dengan pengeluar terkemuka China untuk bingkai optik gentian karbon mewah KSO-011 dengan tangkai titanium. OEM/ODM untuk label peribadi dengan 300 MOQ."
+seoKeywords: "pengeluar bingkai optik gentian karbon, cermin mata titanium tersuai China, bingkai gentian karbon label peribadi, borong cermin mata optik mewah, kilang cermin mata gentian karbon OEM, pembekal bingkai optik B2B, OEM cermin mata gentian karbon mewah, bingkai optik kualiti eksport"
 ---
 
 ## Ciri-ciri Utama
-- **Bahan Gred Aeroangkasa:** Bingkai gentian karbon berprestasi tinggi digabungkan dengan tangkai titanium untuk rasa ultra ringan dan ketahanan ekstrem.
-- **Perkakasan Tahan Lama:** Engsel struktur tong 2+1 yang direka dengan ketepatan memberikan prestasi operasi yang stabil dan lancar.
-- **Keselesaan Termaju:** Alas hidung titanium bersepadu menawarkan kesesuaian hipoalergenik dan tahan kakisan untuk keselesaan pemakai jangka panjang.
-- **Optik Premium:** Kanta nilon pelbagai fungsi yang direka untuk rintangan hentaman tinggi dengan kemungkinan pewarnaan dan salutan tersuai yang meluas.
-- **Kemasan Indah:** Tekstur gentian karbon yang unik dan reka bentuk unisex mewah yang memenuhi permintaan estetik peruncit kacamata premium.
-- **Penyesuaian Penuh:** Perkhidmatan OEM & ODM profesional termasuk aplikasi logo tersuai dan pengubahsuaian perkakasan bermula pada 300 unit MOQ.
+- **Bahan Gred Aeroangkasa:** Bingkai gentian karbon berprestasi tinggi digabungkan dengan tangkai titanium untuk rasa ultra-ringan dan ketahanan melampau.
+- **Perkakasan Tahan Lama:** Engsel struktur 2+1 tong yang direka dengan ketepatan memberikan prestasi operasi yang stabil dan lancar.
+- **Keselesaan Termaju:** Alas hidung titanium bersepadu yang menawarkan padanan hipoalergenik dan tahan kakisan untuk keselesaan pemakai jangka panjang.
+- **Optik Premium:** Kanta nilon pelbagai fungsi yang direka untuk rintangan impak tinggi dengan kemungkinan pewarnaan dan salutan tersuai yang meluas.
+- **Kemasan Halus:** Tekstur gentian karbon yang unik dan reka bentuk unisex mewah yang memenuhi permintaan estetik peruncit cermin mata premium.
+- **Penyesuaian Penuh:** Perkhidmatan OEM & ODM profesional termasuk aplikasi logo tersuai dan pengubahsuaian perkakasan bermula pada MOQ 300 unit.
 
 ## Sesuai Untuk
 - Merek Kacamata Premium
@@ -69,6 +68,10 @@ seoKeywords: "pengeluar bingkai optik gentian karbon, kacamata titanium tersuai 
 - Jenama Gaya Hidup Sukan & Automotif
 - Rantai Optik Bergengsi
 
-## Gambaran Keseluruhan
+## Gambaran Keseluruhan Produk
 
-Dengan mengintegrasikan gentian karbon berprestasi tinggi dengan tangkai titanium hipoalergenik, KSO-011 menyediakan penyelesaian canggih untuk segmen kacamata mewah. Pembinaannya menggunakan sistem engsel tong 2+1 yang teguh dan alas hidung titanium premium untuk memastikan kesesuaian yang ringan dan tahan lama yang memenuhi piawaian tertinggi rangkaian optik antarabangsa. Kami menyediakan sokongan OEM dan ODM yang meluas, membolehkan pelaksanaan logo yang tepat dan penyesuaian kemasan untuk sejajar dengan identiti jenama tertentu. Bermula pada 300 unit MOQ, model ini membolehkan pengedar label peribadi dan rumah fesyen untuk menyampaikan bingkai gentian karbon yang canggih kepada pelanggan global mereka.
+Direka untuk pasaran mewah yang arif, KSO-011 menggabungkan gentian karbon berprestasi tinggi dengan tangkai titanium hipoalergenik. Pembinaan hibrid ini memastikan profil yang seringan bulu namun berdaya tahan yang memenuhi piawaian ketat butik optik premium.
+
+Engsel 2+1 tong dan alas hidung titanium yang dihasilkan dengan ketepatan memberikan pelarasan yang mudah dan integriti struktur jangka panjang.
+
+Tersedia untuk penyesuaian OEM dan ODM yang meluas bermula pada MOQ 300 unit, model ini memperkasakan label peribadi untuk menyepadukan teknologi komposit termaju ke dalam koleksi tandatangan mereka.
