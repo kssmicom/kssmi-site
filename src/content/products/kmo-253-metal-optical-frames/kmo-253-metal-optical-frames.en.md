@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Optical Frames"
 material: "Metal Optical Frames"
 series: "optical-frames, metal-optical-frames,fashion-metal-optical-frames"
-categories: "Optical Frames, Metal Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "46-22-145mm & Customization"
@@ -22,6 +21,7 @@ lensMaterial: "Tenacious Nylon Lens & Customization"
 designStyle: "Unique, Fashion, Stylish, Trendy, Luxury, Unisex"
 nosePads: "Metal Nose Pads"
 hinge: "Spring Structure Hinges & Customization"
+electroplating: "Ion Plating"
 logo: "Print, Laser, Laser With Oil, Hot Stamping, Metal, Embossing, Crystal, Up-sticker"
 service: "OEM / ODM customization"
 

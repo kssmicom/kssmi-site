@@ -21,6 +21,7 @@ lensMaterial: "Kanta Nilon Teguh & Penyesuaian"
 designStyle: "Fesyen, Bergaya, Trendy, Mewah, Unisex"
 nosePads: "Alas Hidung Logam"
 hinge: "Engsel Struktur Spring & Penyesuaian"
+electroplating: "Penyaduran Ion"
 logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Lencana Logam, Ukiran, Kristal, Pelekat"
 service: "Pembuatan OEM / ODM – Penyesuaian"
 

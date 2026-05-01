@@ -21,6 +21,7 @@ lensMaterial: "AC 렌즈 및 고강도 나일론 렌즈 & 맞춤 서비스"
 designStyle: "럭셔리, 클래식, 트렌디, 공용"
 nosePads: "실리콘 코받침"
 hinge: "스프링 경첩 & 맞춤 서비스"
+electroplating: "이온 플레이팅"
 logo: "프린트, 레이저, 레이저 도색, 핫 스탬핑, 메탈 로고, 엠보싱, 크리스탈, 입체 스티커"
 service: "OEM / ODM 제조 맞춤 서비스"
 

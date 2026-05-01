@@ -21,6 +21,7 @@ lensMaterial: "Tenacious Nylon Lens & Customization"
 designStyle: "Fashion, Stylish, Trendy, Luxury, Unisex"
 nosePads: "Silicone Nose Pads"
 hinge: "2+1 Barrel Structure Hinges & Customization"
+electroplating: "Ion Plating"
 logo: "Print, Laser, Laser With Oil, Hot Stamping, Metal, Embossing, Crystal, Up-sticker"
 service: "OEM / ODM customization"
 

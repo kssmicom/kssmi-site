@@ -21,6 +21,7 @@ lensMaterial: "Tròng kính AC & Tròng kính Nylon Bền bỉ & Tùy chỉnh th
 designStyle: "Sang trọng, Cổ điển, Thời thượng, Unisex"
 nosePads: "Đệm mũi Silicone"
 hinge: "Bản lề lò xo & Tùy chỉnh theo yêu cầu"
+electroplating: "Mạ Ion"
 logo: "In, Laser, Laser đổ dầu, Ép kim, Huy hiệu kim loại, Dập nổi, Đính đá, Nhãn dán 3D"
 service: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 

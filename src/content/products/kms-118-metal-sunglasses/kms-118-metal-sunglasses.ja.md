@@ -21,6 +21,7 @@ lensMaterial: "ACレンズ & 強靭なナイロンレンズ & カスタマイズ
 designStyle: "Cool Fashion, スタイリッシュ, Trendy, ラグジュアリー, ユニセックス"
 nosePads: "プレミアムメタルノーズパッド"
 hinge: "2+1 バレル構造ヒンジ & カスタマイズ対応"
+electroplating: "イオンプレーティング"
 logo: "印刷, レーザー刻印, レーザー色入れ, 箔押し, メタル装飾, エンボス加工, クリスタル装飾, 立体ステッカー"
 service: "OEM製造 / ODM設計製造 カスタマイズ対応"
 acetateFeature: "軽量 & 耐久性 & 鮮やか"

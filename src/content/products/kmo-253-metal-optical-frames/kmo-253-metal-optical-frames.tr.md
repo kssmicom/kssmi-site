@@ -21,6 +21,7 @@ lensMaterial: "Dayanıklı Naylon Lens & Özelleştirme"
 designStyle: "Benzersiz, Moda, Şık, Trend, Lüks, Unisex"
 nosePads: "Metal Burun Tamponları"
 hinge: "Yaylı Menteşe & Özelleştirme"
+electroplating: "İyon Kaplama"
 logo: "Tampo Baskı, Lazer, Boya Dolgulu Lazer, Sıcak Baskı, Metal Logo, Kabartma, Kristal, 3D Etiket"
 service: "OEM / ODM Üretim – Özelleştirme"
 

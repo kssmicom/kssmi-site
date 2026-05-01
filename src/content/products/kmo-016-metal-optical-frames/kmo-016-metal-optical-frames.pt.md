@@ -21,6 +21,7 @@ lensMaterial: "Lente de Nylon Tenaz & Personalização"
 designStyle: "Único, Clássico, Trendy, Moda, Elegante, Moderno, Luxo, Unisex"
 nosePads: "Ponteiras Nasicas"
 hinge: "Dobradiças 4+3 & Personalização"
+electroplating: "Chapeamento Iônico"
 logo: "Impressão Tampográfica, Gravação a Laser, Gravação a Laser com Esmalte, Estampagem a Quente, Logotipo Metálico, Logotipo em Relevo, Decoração di Cristal, Adesivo 3D"
 service: "Fabricação OEM / ODM – Personalização"
 

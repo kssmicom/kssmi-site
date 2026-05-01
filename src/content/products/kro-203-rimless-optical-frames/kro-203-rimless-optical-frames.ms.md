@@ -21,6 +21,7 @@ lensMaterial: "Kanta AC & Kanta Nylon Tahan Lasak & Penyesuaian"
 designStyle: "Mewah, Klasik, Trendi, Unisex"
 nosePads: "Alas Hidung Silikon"
 hinge: "Engsel Spring & Penyesuaian"
+electroplating: "Penyaduran Ion"
 logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Lencana Logam, Timbulan, Kristal, Pelekat"
 service: "Pembuatan OEM / ODM – Penyesuaian"
 

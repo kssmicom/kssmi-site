@@ -21,6 +21,7 @@ lensMaterial: "मजबूत नायलॉन लेंस & कस्टम
 designStyle: "Fashion, Stylish, Trendy, Luxury, Unisex"
 nosePads: "मेटल नोज पैड"
 hinge: "कॉम्बिनेशन स्ट्रक्चर हिंज & कस्टमाइज़ेशन"
+electroplating: "आयन प्लेटिंग"
 logo: "प्रिंट, लेज़र, लेज़र विथ ऑयल, हॉट स्टैम्पिंग, मेटल लोगो, एम्बॉसिंग, क्रिस्टल, अप-स्टिकर"
 service: "OEM / ODM निर्माण – कस्टमाइज़ेशन सेवा"
 

@@ -172,7 +172,7 @@ if (type === 'product' && product) {
   videoId = data.videoId || '';
   materials = data.materials || '';
   moq = data.moq || '';
-  categories = data.categories || '';
+  categories = data.categories || data.series || '';
   itemNo = data.itemNo || '';
   colors = data.colors || '';
   serviceMode = data.serviceMode || '';
@@ -211,44 +211,70 @@ if (type === 'product' && product) {
     gallery = data.gallery || [];
   }
 
-  cats = categories ? categories.split(',').map((s: string) => s.trim()) : [];
   const rendered = await render(product);
   ProductContent = rendered.Content;
 
-  // Valid breadcrumb categories - only show these in breadcrumb
-  const validBreadcrumbCategories = [
-    'Sunglasses', 'Optical Frames',
-    'Acetate Sunglasses', 'Metal Sunglasses', 'Titanium Sunglasses', 'Carbon Fiber Sunglasses', 'Rimless Sunglasses',
-    'Acetate Optical Frames', 'Metal Optical Frames', 'Titanium Optical Frames', 'Carbon Fiber Optical Frames', 'Rimless Optical Frames'
-  ];
-
-  // Category name to translation key mapping
-  const categoryLabelMap: Record<string, string> = {
-    'Sunglasses': 'sunglasses',
-    'Optical Frames': 'optical_frames',
-    'Acetate Sunglasses': 'acetate_sunglasses',
-    'Metal Sunglasses': 'metal_sunglasses',
-    'Titanium Sunglasses': 'titanium_sunglasses',
-    'Carbon Fiber Sunglasses': 'carbon_fiber_sunglasses',
-    'Rimless Sunglasses': 'rimless_sunglasses',
-    'Acetate Optical Frames': 'acetate_glasses',
-    'Metal Optical Frames': 'metal_glasses',
-    'Titanium Optical Frames': 'titanium_glasses',
-    'Carbon Fiber Optical Frames': 'carbon_glasses',
-    'Rimless Optical Frames': 'rimless_glasses'
+  // Map from URL slug -> { translationKey, parentSlug }
+  const slugBreadcrumbMap: Record<string, { key: string; parentSlug?: string }> = {
+    'sunglasses':                    { key: 'sunglasses' },
+    'optical-frames':                { key: 'optical_frames' },
+    'acetate-sunglasses':            { key: 'acetate_sunglasses',      parentSlug: 'sunglasses' },
+    'metal-sunglasses':              { key: 'metal_sunglasses',        parentSlug: 'sunglasses' },
+    'titanium-sunglasses':           { key: 'titanium_sunglasses',     parentSlug: 'sunglasses' },
+    'carbon-fiber-sunglasses':       { key: 'carbon_fiber_sunglasses', parentSlug: 'sunglasses' },
+    'rimless-sunglasses':            { key: 'rimless_sunglasses',      parentSlug: 'sunglasses' },
+    'acetate-optical-frames':        { key: 'acetate_glasses',         parentSlug: 'optical-frames' },
+    'acetate-glasses':               { key: 'acetate_glasses',         parentSlug: 'optical-frames' },
+    'metal-optical-frames':          { key: 'metal_glasses',           parentSlug: 'optical-frames' },
+    'metal-glasses':                 { key: 'metal_glasses',           parentSlug: 'optical-frames' },
+    'titanium-optical-frames':       { key: 'titanium_glasses',        parentSlug: 'optical-frames' },
+    'titanium-glasses':              { key: 'titanium_glasses',        parentSlug: 'optical-frames' },
+    'carbon-fiber-optical-frames':   { key: 'carbon_glasses',          parentSlug: 'optical-frames' },
+    'carbon-optical-frames':         { key: 'carbon_glasses',          parentSlug: 'optical-frames' },
+    'rimless-optical-frames':        { key: 'rimless_glasses',         parentSlug: 'optical-frames' },
+    'rimless-glasses':               { key: 'rimless_glasses',         parentSlug: 'optical-frames' },
   };
 
-  // Filter cats to only valid breadcrumb categories
-  const validCats = cats.filter(c => validBreadcrumbCategories.includes(c));
+  const seriesValue = data.series || data.categories || '';
+  const seriesSlugs = seriesValue.split(',').map((s: string) => s.trim().toLowerCase()).filter(Boolean);
+
+  let parentEntry: { slug: string; key: string } | null = null;
+  let subEntry: { slug: string; key: string } | null = null;
+
+  for (const slug of seriesSlugs) {
+    const entry = slugBreadcrumbMap[slug];
+    if (!entry) continue;
+    if (entry.parentSlug && !subEntry) {
+      subEntry = { slug, key: entry.key };
+      if (!parentEntry) {
+        const parentMapEntry = slugBreadcrumbMap[entry.parentSlug];
+        if (parentMapEntry) {
+          parentEntry = { slug: entry.parentSlug, key: parentMapEntry.key };
+        }
+      }
+    } else if (!entry.parentSlug && !parentEntry) {
+      parentEntry = { slug, key: entry.key };
+    }
+  }
 
   breadcrumbItems = [
     { label: t.nav.home, href: `/${lang}` },
     { label: t.nav.products || 'Products', href: `/${lang}/product` },
-    ...validCats.map((cat) => ({
-      label: (t.sidebar as any)[categoryLabelMap[cat]] || cat,
-      href: `/${lang}/product/${cat.toLowerCase().replace(/\s+/g, '-')}`
-    }))
   ];
+  if (parentEntry) {
+    breadcrumbItems.push({
+      label: (t.sidebar as any)[parentEntry.key] || parentEntry.slug,
+      href: `/${lang}/product/${parentEntry.slug}`
+    });
+  }
+  if (subEntry) {
+    breadcrumbItems.push({
+      label: (t.sidebar as any)[subEntry.key] || subEntry.slug,
+      href: `/${lang}/product/${subEntry.slug}`
+    });
+  }
+
+  cats = seriesSlugs;
 
   // Generate schema specs
   const schemaSpecs: any[] = [];

@@ -21,6 +21,7 @@ lensMaterial: "Verres en Nylon Tenace & Personnalisation"
 designStyle: "Mode, Élégant, Tendance, Luxe, Unisexe"
 nosePads: "Plaquettes de Nez en Silicone"
 hinge: "Charnières à Structure à Ressort & Personnalisation"
+electroplating: "Placage Ionique"
 logo: "Impression Tampon, Gravure Laser, Gravure Laser Émaillée, Marquage à Chaud, Logo Métallique, Logo en Relief, Décoration en Cristal, Autocollant 3D"
 service: "Fabrication OEM / ODM – Personnalisation"
 

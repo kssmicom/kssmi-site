@@ -21,6 +21,7 @@ lensMaterial: "Tròng kính AC & Tròng kính nylon dẻo dai & Tùy chỉnh the
 designStyle: "Cool Fashion, Phong cách, Trendy, Xa xỉ, Unisex"
 nosePads: "Đệm mũi kim loại cao cấp"
 hinge: "Bản lề cấu trúc 2+1 & Tùy chỉnh theo yêu cầu"
+electroplating: "Mạ Ion"
 logo: "In, Laser, Laser đổ dầu, Ép kim, Huy hiệu kim loại, Dập nổi, Đính đá, Nhãn dán 3D"
 service: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 acetateFeature: "Nhẹ & Bền & Sống động"

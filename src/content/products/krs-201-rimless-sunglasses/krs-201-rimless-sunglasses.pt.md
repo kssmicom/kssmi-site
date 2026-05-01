@@ -21,6 +21,7 @@ lensMaterial: "Lente de nylon tenaz & Personalização"
 designStyle: "Fashion, Stylish, Trendy, Luxury, Unisex"
 nosePads: "Plaquetas de metal"
 hinge: "Dobradiças de estrutura combinada & Personalização"
+electroplating: "Chapeamento Iônico"
 logo: "Impressão Tampográfica, Gravação a Laser, Gravação a Laser com Esmalte, Estampagem a Quente, Logotipo Metálico, Logotipo em Relevo, Decoração di Cristal, Adesivo 3D"
 service: "Fabricação OEM / ODM – Personalização"
 

@@ -21,6 +21,7 @@ lensMaterial: "Lentes de nailon tenaz & Personalización"
 designStyle: "Fashion, Stylish, Trendy, Luxury, Unisex"
 nosePads: "Plaquetas nasales de metal"
 hinge: "Bisagras de estructura combinada & Personalización"
+electroplating: "Chapado Iónico"
 logo: "Impresión Tampográfica, Grabado Láser, Grabado Láser con Esmalte, Estampado en Caliente, Logotipo Metálico, Logo en Relieve, Decoración de Cristal, Adhesivo 3D"
 service: "Fabricación OEM / ODM – Personalización"
 

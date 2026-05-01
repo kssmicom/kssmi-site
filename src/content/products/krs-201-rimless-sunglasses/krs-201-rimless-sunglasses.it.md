@@ -21,6 +21,7 @@ lensMaterial: "Lenti in nylon tenace & Personalizzazione"
 designStyle: "Fashion, Stylish, Trendy, Luxury, Unisex"
 nosePads: "Naselli in metallo"
 hinge: "Cerniere a struttura combinata & Personalizzazione"
+electroplating: "Placcatura Ionica"
 logo: "Stampa Tampografica, Incisione Laser, Incisione Laser con Smalto, Stampa a Caldo, Logo in Metallo, Logo a Rilievo, Decorazione in Cristallo, Logo 3D Adesivo"
 service: "Produzione OEM / ODM – Personalizzazione"
 

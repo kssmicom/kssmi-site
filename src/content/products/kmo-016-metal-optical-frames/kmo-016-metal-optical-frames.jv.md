@@ -21,6 +21,7 @@ lensMaterial: "Lensa Nylon Kuat & Kustomisasi"
 designStyle: "Unik, Klasik, Trendy, Fashion, Stylish, Modern, Mewah, Unisex"
 nosePads: "Bantalan Irung"
 hinge: "Engsel 4+3 & Kustomisasi"
+electroplating: "Pelapisan Ion"
 logo: "Cetak, Laser, Laser Karang Lengo, Cap Panas, Logo Logam, Timbulan, Kristal, Stiker"
 service: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 

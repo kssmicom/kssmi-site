@@ -21,6 +21,7 @@ lensMaterial: "Lentes AC e Lentes de Nylon Tenaz & Personalização"
 designStyle: "Luxo, Clássico, Moderno, Unisex"
 nosePads: "Plaquetas de Silicone"
 hinge: "Dobradiças de Mola & Personalização"
+electroplating: "Chapeamento Iônico"
 logo: "Impressão, Laser, Gravação a Laser com Esmalte, Estampagem a Quente, Metal, Relevo, Cristal, Adesivo 3D"
 service: "Fabricação OEM / ODM – Personalização"
 

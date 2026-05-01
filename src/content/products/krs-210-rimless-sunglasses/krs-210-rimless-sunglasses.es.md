@@ -21,6 +21,7 @@ lensMaterial: "Lente de Nylon Tenaz & Personalización"
 designStyle: "Moda, Elegante, Tendencia, Lujo, Unisex"
 nosePads: "Almohadillas Nasales de Silicona"
 hinge: "Bisagras con Estructura de Resorte & Personalización"
+electroplating: "Chapado Iónico"
 logo: "Impresión, Láser, Láser con Esmalte, Estampado en Caliente, Metal, Relieve, Cristal, Adhesivo 3D"
 service: "Fabricación OEM / ODM – Personalización"
 

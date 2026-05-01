@@ -10,6 +10,7 @@ import ProductCard from '../../../components/ProductCard.astro';
 import { translations } from '../../../translations';
 import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
 import { isCategoryMatch } from '../../../utils/categoryMatching';
 import type { Page } from 'astro';
 import Pagination from '../../../components/Pagination.astro';
@@ -212,6 +213,47 @@ const categoryTitle = (() => {
   return categorySlug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 })();
 
+// Build breadcrumb for category listing page
+const categoryBreadcrumbItems = (() => {
+  const items: Array<{ label: string; href: string }> = [
+    { label: t.nav.home, href: '/' },
+    { label: t.nav.products || 'Products', href: '/product' },
+  ];
+  // Check if this slug is a subcategory under a primary category
+  for (const cat of primaryCategories) {
+    if (cat.href === `/product/${categorySlug}`) {
+      // It's a top-level category — just add it
+      items.push({ label: cat.label, href: `#` });
+      return items;
+    }
+    for (const sub of cat.items) {
+      if (sub.href === `/product/${categorySlug}`) {
+        // It's a subcategory — add parent then sub
+        items.push({ label: cat.label, href: cat.href });
+        items.push({ label: sub.label, href: '#' });
+        return items;
+      }
+    }
+  }
+  // Check tag groups
+  for (const group of sidebarTags) {
+    if (group.href === `/product/${categorySlug}`) {
+      items.push({ label: group.label, href: '#' });
+      return items;
+    }
+    for (const item of group.items) {
+      if (item.href === `/product/${categorySlug}`) {
+        items.push({ label: group.label, href: group.href });
+        items.push({ label: item.label, href: '#' });
+        return items;
+      }
+    }
+  }
+  // Fallback: just add the title
+  items.push({ label: categoryTitle, href: '#' });
+  return items;
+})();
+
 function isActiveCategory(href: string): boolean {
   const pathWithoutQuery = href.split('?')[0];
   const hrefSlug = pathWithoutQuery.replace('/product/', '');
@@ -221,6 +263,7 @@ function isActiveCategory(href: string): boolean {
 
 <Layout title={`${categoryTitle} - ${t.nav.products}`} lang={lang}>
   <Header lang={lang} />
+  <Breadcrumb items={categoryBreadcrumbItems} lang={lang} />
 
   <main class="w-full min-h-screen py-6 lg:py-8 bg-stone-50">
     <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">

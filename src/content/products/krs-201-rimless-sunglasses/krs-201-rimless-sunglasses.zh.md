@@ -21,6 +21,7 @@ lensMaterial: "韧性尼龙镜片 & 定制服务"
 designStyle: "Fashion, Stylish, Trendy, Luxury, Unisex"
 nosePads: "金属鼻托"
 hinge: "组合结构铰链 & 定制服务"
+electroplating: "离子电镀"
 logo: "印刷, 镭射, 镭射填油, 热烫印, 金属标, 压纹, 水晶, 立体贴标"
 service: "代工生产 / 设计制造 定制服务"
 

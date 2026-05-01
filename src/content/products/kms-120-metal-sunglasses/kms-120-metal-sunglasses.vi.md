@@ -22,6 +22,7 @@ designStyle: "Thời trang cực chất, Phong cách, Hợp mốt, Xa xỉ, Nam 
 centerBeam: "Thiết kế Cầu kép"
 nosePads: "Đệm mũi Silicone Cao cấp"
 hinge: "Bản lề Cấu trúc Thùng 2+1 & Tùy chỉnh theo yêu cầu"
+electroplating: "Mạ Ion"
 logo: "In, Laser, Laser đổ dầu, Ép kim, Huy hiệu kim loại, Dập nổi, Đính đá, Nhãn dán 3D"
 service: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 acetateFeature: "Nhẹ, Bền và Sống động"

@@ -21,6 +21,7 @@ lensMaterial: "Tenacious Nylon Lens & Customization"
 designStyle: "Unique, Classic, Trendy, Fashion, Stylish, Trendy, Luxury, Unisex"
 nosePads: "Integrated Nose Pads"
 hinge: "4+3 Brarrel Hinges & Customization"
+electroplating: "Ion Plating"
 logo: "Print, Laser, Laser With Oil, Hot Stamping, Metal, Embossing, Crystal, Up-sticker"
 service: "OEM / ODM customization"
 

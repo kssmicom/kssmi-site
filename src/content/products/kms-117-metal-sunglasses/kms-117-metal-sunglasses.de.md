@@ -21,6 +21,7 @@ lensMaterial: "AC-Gläser & Widerstandsfähige Nylongläser & Individualisierung
 designStyle: "Cool Fashion, Stilvoll, Trendy, Luxus, Unisex"
 nosePads: "Premium-Metall-Nasenpads"
 hinge: "2+1 Fassstruktur-Scharniere & Individualisierung"
+electroplating: "Ionenplattierung"
 logo: "Tampondruck, Lasergravur, Lasergravur mit Farbauslegung, Heißprägung, Metal-Logo, Logo-Prägung, Kristall-Verzierung, 3D-Aufkleber"
 service: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 acetateFeature: "Leicht & Langlebig & Lebendig"

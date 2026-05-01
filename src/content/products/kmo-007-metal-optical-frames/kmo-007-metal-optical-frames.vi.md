@@ -21,6 +21,7 @@ lensMaterial: "Tròng kính Nylon Bền bỉ & Tùy chỉnh theo yêu cầu"
 designStyle: "Độc đáo, Thời trang, Phong cách, Hợp thời, Xa xỉ, Unisex"
 nosePads: "Đệm mũi Kim loại"
 hinge: "Bản lề Lò xo & Tùy chỉnh theo yêu cầu"
+electroplating: "Mạ Ion"
 logo: "In, Laser, Laser đổ dầu, Ép kim, Huy hiệu kim loại, Dập nổi, Đính đá, Nhãn dán 3D"
 service: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 

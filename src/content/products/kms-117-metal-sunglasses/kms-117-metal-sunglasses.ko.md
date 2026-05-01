@@ -21,6 +21,7 @@ lensMaterial: "AC 렌즈 & 내구성이 뛰어난 나일론 렌즈 & 맞춤 서�
 designStyle: "쿨 패션, 스타일리시, 트렌디, 럭셔리, 공용"
 nosePads: "프리미엄 메탈 코받침"
 hinge: "2+1 배럴 구조 경첩 & 맞춤 서비스"
+electroplating: "이온 플레이팅"
 logo: "프린트, 레이저, 레이저 도색, 핫 스탬핑, 메탈 로고, 엠보싱, 크리스탈, 입체 스티커"
 service: "OEM / ODM 제조 맞춤 서비스"
 acetateFeature: "가볍고 & 내구성이 뛰어나며 & 생생함"

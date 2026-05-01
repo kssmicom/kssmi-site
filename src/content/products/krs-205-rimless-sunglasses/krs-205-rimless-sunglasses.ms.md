@@ -21,6 +21,7 @@ lensMaterial: "Lensa nilon tahan lasak & Penyesuaian"
 designStyle: "Fesyen, Bergaya, Trendi, Mewah, Unisex"
 nosePads: "Alas hidung silikon"
 hinge: "Engsel spring & Penyesuaian"
+electroplating: "Penyaduran Ion"
 logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Lencana Logam, Timbulan, Kristal, Pelekat"
 service: "Pembuatan OEM / ODM – Penyesuaian"
 

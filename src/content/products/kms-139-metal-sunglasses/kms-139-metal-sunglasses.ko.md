@@ -21,6 +21,7 @@ lensMaterial: "고인성 나일론 렌즈 & 맞춤 서비스"
 designStyle: "패션, 스타일리시, 트렌디, 럭셔리, 공용"
 nosePads: "실리콘 코받침"
 hinge: "2+1 배럴 구조 경첩 & 맞춤 서비스"
+electroplating: "이온 플레이팅"
 logo: "프린트, 레이저, 레이저 도색, 핫 스탬핑, 메탈 로고, 엠보싱, 크리스탈, 입체 스티커"
 service: "OEM / ODM 제조 맞춤 서비스"
 

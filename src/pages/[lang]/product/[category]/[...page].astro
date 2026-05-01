@@ -14,6 +14,7 @@ import ProductCard from '../../../../components/ProductCard.astro';
 import { translations } from '../../../../translations';
 import Header from '../../../../components/Header.astro';
 import Footer from '../../../../components/Footer.astro';
+import Breadcrumb from '../../../../components/Breadcrumb.astro';
 import { isCategoryMatch, getSlug } from '../../../../utils/categoryMatching';
 import Pagination from '../../../../components/Pagination.astro';
 
@@ -246,66 +247,50 @@ if (categoryTitle === categorySlug.split('-').map((w: string) => w.charAt(0).toU
     }
   }
 }
+
+// Build breadcrumb items
+const categoryBreadcrumbItems = (() => {
+  const items: Array<{ label: string; href: string }> = [
+    { label: t.nav.home, href: `/${lang}` },
+    { label: t.nav.products || 'Products', href: `/${lang}/product` },
+  ];
+  for (const cat of primaryCategories) {
+    if (isActiveCategory(cat.href)) {
+      items.push({ label: cat.label, href: '#' });
+      return items;
+    }
+    for (const sub of cat.items) {
+      if (isActiveCategory(sub.href)) {
+        items.push({ label: cat.label, href: cat.href });
+        items.push({ label: sub.label, href: '#' });
+        return items;
+      }
+    }
+  }
+  for (const group of sidebarTags) {
+    if (isActiveCategory(group.href)) {
+      items.push({ label: group.label, href: '#' });
+      return items;
+    }
+    for (const item of group.items) {
+      if (isActiveCategory(item.href)) {
+        items.push({ label: group.label, href: group.href });
+        items.push({ label: item.label, href: '#' });
+        return items;
+      }
+    }
+  }
+  items.push({ label: categoryTitle, href: '#' });
+  return items;
+})();
 ---
 
 <Layout title={`${categoryTitle} - ${t.nav.products}`} lang={lang}>
   <Header lang={lang} />
+  <Breadcrumb items={categoryBreadcrumbItems} lang={lang} />
 
   <main class="w-full min-h-screen py-12 lg:py-16 bg-stone-50">
     <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
-      <!-- Breadcrumb -->
-      <nav class="mb-8 text-sm" dir={isRTL ? 'rtl' : 'ltr'}>
-        <ol class="flex items-center flex-wrap gap-1">
-          <li>
-            <a href={`/${currentPath}`} class="text-gray-500 hover:text-[#8B7355] transition-colors">
-              {t.nav.home}
-            </a>
-          </li>
-          <li class="text-gray-300 mx-2">/</li>
-          <li>
-            <a href={`/${currentPath}product`} class="text-gray-500 hover:text-[#8B7355] transition-colors">
-              {t.nav.products}
-            </a>
-          </li>
-          {(() => {
-            let activeMain = null;
-            let activeSub = null;
-
-            // Only check primary categories to avoid duplicate tag breadcrumbs
-            for (const cat of primaryCategories) {
-              const sub = cat.items.find(s => isActiveCategory(s.href));
-              if (isActiveCategory(cat.href) || sub) {
-                activeMain = cat;
-                activeSub = sub;
-                break;
-              }
-            }
-
-            if (!activeMain) return null;
-
-            return (
-              <>
-                <li class="text-gray-300 mx-2">/</li>
-                <li>
-                  {activeSub ? (
-                    <a href={activeMain.href} class="text-gray-500 hover:text-[#8B7355] transition-colors">
-                      {activeMain.label}
-                    </a>
-                  ) : (
-                    <span class="text-[#8B7355] font-medium">{activeMain.label}</span>
-                  )}
-                </li>
-                {activeSub && (
-                  <>
-                    <li class="text-gray-300 mx-2">/</li>
-                    <li class="text-[#8B7355] font-medium">{activeSub.label}</li>
-                  </>
-                )}
-              </>
-            );
-          })()}
-        </ol>
-      </nav>
 
       <!-- Page Header -->
       <div class="mb-10">
