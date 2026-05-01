@@ -1,10 +1,10 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Óculos de Sol de Fibra de Carbono Personalizados"
+title: "Óculos de Sol em Fibra de Carbono Personalizados"
 slug: "kss-012-carbon-fiber-sunglasses"
 itemNo: "KSS-012"
 date: "2026-04-05"
-colors: "Cor Original de Fibra de Carbono (Preto Fosco, Preto Brilhante, Trama Colorida, Carbono Forjado)"
+colors: "Cor Original da Fibra de Carbono (Preto Fosco, Preto Brilhante, Trama Colorida, Carbono Forjado)"
 materials: "Fibra de Carbono Premium"
 serviceMode: "OEM & ODM ( Personalização )"
 moq: "300 pçs/modelo"
@@ -13,18 +13,17 @@ moq: "300 pçs/modelo"
 productType: "Sunglasses"
 material: "Carbon Fiber"
 series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, luxury, sunglasses, sunglasses"
-categories: "Sunglasses, Carbon Fiber Sunglasses"
 
 # ─────────────────────────────────────────────────────
 frameMaterial: "Fibra de Carbono de Grau Aeroespacial Premium"
-lensMaterial: "Lente de Nylon Tenaz & Personalização"
+lensMaterial: "Lentes de Nylon Tenazes & Personalização"
 size: "49-19-145mm & Personalização"
-designStyle: "Clássico, Técnico, Luxo, Unisex"
-nosePads: "Ponteiras Nasicas de Silicone Hipoalergênico"
-hinge: "Dobradiças de Estrutura de Barril 2+1 & Personalização"
-logo: "Impressão Tampográfica, Gravação a Laser, Gravação a Laser com Esmalte, Estampagem a Quente, Logotipo Metálico, Logotipo em Relevo, Decoração di Cristal, Adesivo 3D"
+designStyle: "Clássico, Técnico, Luxo, Unissex"
+nosePads: "Plaquetas de Nariz em Silicone Hipoalergénico"
+hinge: "Dobradiças de Estrutura em Barril 2+1 & Personalização"
+logo: "Impressão, Laser, Gravação a Laser com Esmalte, Estampagem a Quente, Logotipo Metálico, Logotipo em Relevo, Decoração di Cristal, Adesivo 3D"
 service: "Fabricação OEM / ODM – Personalização"
-carbonFiberFeature: "Ultra-leve, Alta Relação Resistência-Peso, Usinado em CNC de Precisão, Altamente Durável"
+carbonFiberFeature: "Ultra-leve, Elevada Relação Resistência-Peso, Usinagem CNC de Precisão, Altamente Durável"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kss-012-carbon-fiber-sunglasses/oem-odm-customized-carbon-fiber-sunglasses-kss-012-1.webp"
@@ -36,21 +35,22 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KSS-012 Óculos de Sol de Fibra de Carbono de Luxo Clássicos | Fabricante OEM"
-seoDescription: "Parceria com um fabricante chinês líder para os óculos de sol de luxo em fibra de carbono KSS-012. Óculos personalizados de grau aeroespacial CNC com serviços OEM/ODM e MOQ de 300."
-seoKeywords: "fabricante de óculos de sol de fibra de carbono, armações de carbono personalizadas, OEM de óculos de luxo China, atacado de óculos de sol de carbono, óculos em carbono usinados CNC, óculos de sol de luxo marca própria, armações de alta relação resistência-peso, óculos em carbono aeroespacial premium"
+seoTitle: "Óculos de Sol de Luxo em Fibra de Carbono KSS-012 | Fabricante OEM"
+seoDescription: "Seja parceiro de um fabricante chinês líder para os óculos de sol de luxo em fibra de carbono KSS-012. Óculos em carbono de grau aeroespacial CNC com serviços OEM/ODM e MOQ de 300."
+seoKeywords: "fabricante de óculos de sol de fibra de carbono, armações de carbono personalizadas, OEM de óculos de luxo China, óculos de sol de fibra de carbono no atacado, óculos de carbono usinados em CNC, óculos de sol de luxo de marca própria, armações de alta relação resistência-peso, óculos de carbono aeroespacial premium"
 ---
 
-## Technical Features
+## Características Técnicas
 
-- **Material de Grau Aeroespacial:** Armação e hastes em fibra de carbono premium de grau aeroespacial que oferecem uma sensação ultra-leve com uma relação resistência-peso extrema.
+- **Material de Grau Aeroespacial:** Armação e hastes em fibra de carbono aeroespacial de qualidade premium que oferecem uma sensação ultra-leve com uma relação resistência-peso extrema.
 - **Fabricação de Precisão:** Componentes usinados em CNC de alta precisão que garantem tolerâncias exatas e uma textura de trama de fibra de carbono única e impecável.
-- **Hardware Durável:** Dobradiças estáveis com estrutura de barril 2+1 projetadas para fluidez operacional e confiabilidade a longo prazo.
-- **Óptica Premium:** Lentes de nylon tenaz que proporcionam uma clareza superior com amplas opções de cores e revestimentos personalizadas disponíveis.
-- **Conforto e Segurança:** Ponteiras nasicas de silicone hipoalergênico projetadas para o conforto durante todo o dia e um ajuste seguro.
-- **Produção Escalonável:** Capacidades completas de personalização OEM e ODM com uma quantidade mínima de pedido de 300 peças para exportação global.
+- **Hardware Durável:** Dobradiças estáveis com estrutura em barril 2+1 projetadas para suavidade operacional e confiabilidade a longo prazo.
+- **Óptica Premium:** Lentes de nylon tenazes que proporcionam clareza superior com amplas opções de tonalidade e revestimento personalizados disponíveis.
+- **Conforto e Segurança:** Plaquetas de nariz em silicone hipoalergénico concebidas para o conforto durante todo o dia e um ajuste seguro.
+- **Produção Escalável:** Capacidades completas de personalização OEM e ODM com uma quantidade mínima de pedido baixa de 300 peças para exportação global.
 
-## Perfect For
+## Perfeito Para
+
 - Marcas de Óculos Premium
 - Designers de Óculos Independentes
 - Distribuidores de Marca Própria
@@ -60,5 +60,8 @@ seoKeywords: "fabricante de óculos de sol de fibra de carbono, armações de ca
 
 ## Overview
 
-Combinando uma silhueta unisex clássica com o desempenho extremo da fibra de carbono de grau aeroespacial, o KSS-012 é uma obra-prima técnica projetada para o varejo de luxo. Cada componente é refinado através de usinagem CNC de precisão para garantir a consistência estrutural, enquanto a dobradiça de barril 2+1 e os pads de silicone hipoalergênico proporcionam o conforto confiável esperado de óculos de alta gama. Oferecemos amplas opções de personalização OEM e ODM — incluindo logotipos gravados a laser e tons de lentes de nylon personalizados — para ajudar as marcas a diferenciar suas coleções de marca própria. Com uma quantidade mínima de pedido de 300 peças, a Kssmi permite que marcas de moda e estilo de vida utilizem óculos técnicos de fibra de carbono em uma escala que equilibra a qualidade premium com a eficiência de fabricação.
+Concebido a partir de fibra de carbono de grau aeroespacial, o KSS-012 funde a resiliência técnica com uma estética de luxo refinada. A sua elevada relação resistência-peso garante uma experiência ultra-leve sem comprometer a integridade estrutural necessária para óculos de alto desempenho.
 
+A usinagem CNC de precisão proporciona tolerâncias impecáveis em toda a armação, complementada por um sistema de dobradiças em barril 2+1 que mantém uma fiabilidade operacional suave. As plaquetas de nariz em silicone hipoalergénico proporcionam um ajuste seguro e confortável, concebido para uma utilização diária.
+
+Oferecemos suporte OEM e ODM abrangente para este modelo, permitindo que marcas de moda boutique e designers independentes personalizem tudo, desde as tonalidades das lentes ao branding gravado a laser. Uma quantidade mínima de pedido baixa de 300 peças proporciona a flexibilidade de fabricação necessária para expandir coleções premium de forma eficiente.

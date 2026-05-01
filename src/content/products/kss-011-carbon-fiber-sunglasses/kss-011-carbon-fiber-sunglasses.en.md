@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Sunglasses"
 material: "Carbon Fiber"
 series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, luxury, luxury-sunglasses, sunglasses"
-categories: "Sunglasses, Carbon Fiber Sunglasses"
 
 # ─────────────────────────────────────────────────────
 frameMaterial: "Premium Aerospace-Grade Carbon Fiber"
@@ -61,4 +60,8 @@ seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses, priva
 
 ## Overview
 
-Built for brands that demand aerospace-grade carbon fiber without the luxury markup, the KSS-011 pairs an ultra-lightweight CNC-machined frame with the refined aesthetics discerning buyers expect. The 2+1 barrel hinge system delivers repeatable, smooth operation over years of daily use, while full OEM/ODM customization — from logo application to forged carbon finishes — supports private-label programs at a 300-piece minimum order quantity. This model gives luxury sports, fashion, and lifestyle labels a ready-to-brand foundation backed by a manufacturer that controls every step of production.
+Engineered for durability without the bulk, the KSS-011 utilizes aerospace-grade carbon fiber precision CNC-machined for a flawless finish. The ultra-lightweight frame balances high-performance strength with the sophisticated aesthetics required by premium brands.
+
+The stable 2+1 barrel hinge architecture and hypoallergenic silicone nose pads ensure long-term comfort and reliable operation across years of daily use.
+
+Providing full OEM and ODM customization starting at a 300-piece minimum order quantity, this model offers a scalable foundation for luxury fashion houses and sports lifestyle labels seeking a distinct market edge.

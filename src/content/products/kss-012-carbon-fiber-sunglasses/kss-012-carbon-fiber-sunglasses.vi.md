@@ -1,30 +1,29 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Kính mát Sợi Carbon Tùy Chỉnh"
+title: "Kính mát sợi carbon tùy chỉnh"
 slug: "kss-012-carbon-fiber-sunglasses"
 itemNo: "KSS-012"
 date: "2026-04-05"
-colors: "Màu Sợi Carbon Nguyên Bản (Đen Nhám, Đen Bóng, Dệt Màu, Carbon Đúc)"
-materials: "Sợi Carbon Cao Cấp"
-serviceMode: "OEM & ODM ( Tùy chỉnh theo yêu cầu )"
+colors: "Màu sợi carbon nguyên bản (Đen mờ, Đen bóng, Vân màu, Carbon đúc)"
+materials: "Sợi Carbon cao cấp"
+serviceMode: "Sản xuất OEM & ODM ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Carbon Fiber"
 series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, luxury, sunglasses, sunglasses"
-categories: "Sunglasses, Carbon Fiber Sunglasses"
 
 # ─────────────────────────────────────────────────────
-frameMaterial: "Sợi Carbon Cao Cấp Cấp Độ Hàng Không Vũ Trụ"
-lensMaterial: "Tròng Kính Nylon Bền Bỉ & Tùy chỉnh theo yêu cầu"
+frameMaterial: "Sợi Carbon cấp hàng không vũ trụ cao cấp"
+lensMaterial: "Tròng kính Nylon bền bỉ & Tùy chỉnh theo yêu cầu"
 size: "49-19-145mm & Tùy chỉnh theo yêu cầu"
-designStyle: "Cổ Điển, Kỹ Thuật, Xa Xỉ, Unisex"
-nosePads: "Đệm Mũi Silicone Không Gây Dị Ứng"
-hinge: "Bản Lề Cấu Trúc Thùng 2+1 & Tùy chỉnh theo yêu cầu"
+designStyle: "Cổ điển, Kỹ thuật, Xa xỉ, Unisex"
+nosePads: "Đệm mũi Silicone không gây dị ứng"
+hinge: "Bản lề cấu trúc thùng 2+1 & Tùy chỉnh theo yêu cầu"
 logo: "In, Laser, Laser đổ dầu, Ép kim, Huy hiệu kim loại, Dập nổi, Đính đá, Nhãn dán 3D"
 service: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
-carbonFiberFeature: "Siêu Nhẹ, Tỷ Lệ Độ Bền Trên Trọng Lượng Cao, Gia Công CNC Chính Xác, Độ Bền Cao"
+carbonFiberFeature: "Siêu nhẹ, Tỷ lệ độ bền trên trọng lượng cao, Gia công CNC chính xác, Độ bền cao"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kss-012-carbon-fiber-sunglasses/oem-odm-customized-carbon-fiber-sunglasses-kss-012-1.webp"
@@ -36,21 +35,22 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KSS-012 Kính mát Sợi Carbon Xa Xỉ Cổ Điển | Nhà sản xuất OEM"
-seoDescription: "Hợp tác với nhà sản xuất Trung Quốc hàng đầu cho kính mát sợi carbon xa xỉ KSS-012. Kính cấp độ hàng không vũ trụ CNC tùy chỉnh với dịch vụ OEM/ODM và MOQ 300."
-seoKeywords: "nhà sản xuất kính mát sợi carbon, gọng carbon tùy chỉnh, OEM kính mắt xa xỉ Trung Quốc, bán buôn kính mát carbon, kính carbon gia công CNC, kính mát xa xỉ nhãn hiệu riêng, gọng tỷ lệ độ bền trên trọng lượng cao, kính carbon hàng không vũ trụ cao cấp"
+seoTitle: "Kính mát sợi carbon xa xỉ cổ điển KSS-012 | Nhà sản xuất OEM"
+seoDescription: "Hợp tác với nhà sản xuất hàng đầu Trung Quốc cho kính mát sợi carbon xa xỉ KSS-012. Kính mắt sợi carbon cấp hàng không CNC với dịch vụ OEM/ODM và MOQ 300."
+seoKeywords: "nhà sản xuất kính mát sợi carbon, gọng carbon tùy chỉnh, OEM kính mắt xa xỉ Trung Quốc, bán sỉ kính mát sợi carbon, kính mắt carbon gia công CNC, kính mát xa xỉ nhãn hiệu riêng, gọng kính tỷ lệ độ bền trên trọng lượng cao, kính mắt carbon hàng không cao cấp"
 ---
 
-## Technical Features
+## Đặc điểm
 
-- **Vật liệu Cấp độ Hàng không Vũ trụ:** Gọng và càng kính bằng sợi carbon cao cấp cấp độ hàng không vũ trụ mang lại cảm giác siêu nhẹ với tỷ lệ độ bền trên trọng lượng cực cao.
-- **Sản xuất Chính xác:** Các thành phần gia công CNC độ chính xác cao đảm bảo dung sai chính xác và kết cấu dệt sợi carbon độc đáo, hoàn mỹ.
-- **Phần cứng Bền bỉ:** Bản lề cấu trúc thùng 2+1 ổn định được thiết kế để vận hành trơn tru lâu dài và đáng tin cậy.
-- **Quang học Cao cấp:** Tròng kính nylon bền bỉ cung cấp độ rõ nét vượt trội với các tùy chọn nhuộm màu và phủ lớp bảo vệ tùy chỉnh phong phú.
-- **Thoải mái & An toàn:** Đệm mũi silicone không gây dị ứng được thiết kế để thoải mái cả ngày và vừa vặn an toàn.
-- **Sản xuất Có thể Mở rộng:** Khả năng tùy chỉnh OEM & ODM đầy đủ với số lượng đặt hàng tối thiểu thấp chỉ 300 chiếc cho xuất khẩu toàn cầu.
+- **Vật liệu cấp hàng không vũ trụ:** Gọng và càng kính bằng sợi carbon cấp hàng không vũ trụ cao cấp mang lại cảm giác siêu nhẹ với tỷ lệ độ bền trên trọng lượng cực cao.
+- **Sản xuất chính xác:** Các thành phần được gia công CNC độ chính xác cao đảm bảo dung sai chính xác và kết cấu vân sợi carbon độc đáo, hoàn hảo.
+- **Phụ kiện bền bỉ:** Bản lề cấu trúc thùng 2+1 ổn định được thiết kế để vận hành trơn tru và tin cậy trong thời gian dài.
+- **Quang học cao cấp:** Tròng kính nylon bền bỉ mang lại độ trong suốt vượt trội với các tùy chọn màu và lớp phủ tùy chỉnh phong phú.
+- **Thoải mái & An toàn:** Đệm mũi silicone không gây dị ứng được thiết kế để mang lại sự thoải mái cả ngày và vừa vặn an toàn.
+- **Sản xuất linh hoạt:** Khả năng tùy chỉnh OEM & ODM toàn diện với số lượng đặt hàng tối thiểu thấp 300 chiếc cho xuất khẩu toàn cầu.
 
-## Perfect For
+## Phù hợp cho
+
 - Thương hiệu kính mắt cao cấp
 - Nhà thiết kế kính mắt độc lập
 - Nhà phân phối thương hiệu riêng
@@ -60,5 +60,8 @@ seoKeywords: "nhà sản xuất kính mát sợi carbon, gọng carbon tùy ch�
 
 ## Overview
 
-Kết hợp kiểu dáng unisex cổ điển với hiệu suất cực cao của sợi carbon cấp độ hàng không vũ trụ, KSS-012 là một kiệt tác kỹ thuật được thiết kế cho thị trường bán lẻ xa xỉ. Mỗi thành phần được tinh chỉnh thông qua gia công CNC chính xác để đảm bảo tính nhất quán về cấu trúc, trong khi bản lề thùng 2+1 và đệm silicone không gây dị ứng mang lại sự thoải mái đáng tin cậy như mong đợi của kính mắt cao cấp. Chúng tôi cung cấp các tùy chọn tùy chỉnh OEM và ODM phong phú — bao gồm logo khắc laser và màu tròng kính nylon tùy chỉnh — để giúp các thương hiệu tạo sự khác biệt cho các bộ sưu tập nhãn hiệu riêng của họ. Với số lượng đặt hàng tối thiểu 300 chiếc, Kssmi cho phép các thương hiệu thời trang và phong cách sống triển khai kính mắt sợi carbon kỹ thuật ở quy mô cân bằng giữa chất lượng cao cấp và hiệu quả sản xuất.
+Được thiết kế từ sợi carbon cấp hàng không vũ trụ, KSS-012 hợp nhất khả năng phục hồi kỹ thuật với thẩm mỹ sang trọng tinh tế. Tỷ lệ độ bền trên trọng lượng cao của nó đảm bảo trải nghiệm siêu nhẹ mà không ảnh hưởng đến tính toàn vẹn cấu trúc cần thiết cho kính mắt hiệu suất cao.
 
+Gia công CNC chính xác mang lại dung sai hoàn hảo trên toàn bộ gọng kính, được bổ sung bởi hệ thống bản lề thùng 2+1 duy trì độ tin cậy vận hành trơn tru. Đệm mũi silicone không gây dị ứng mang lại sự vừa vặn an toàn, thoải mái, được thiết kế riêng để đeo cả ngày.
+
+Chúng tôi cung cấp hỗ trợ OEM và ODM toàn diện cho mẫu kính này, cho phép các nhãn hiệu thời trang boutique và các nhà thiết kế độc lập tùy chỉnh mọi thứ từ màu tròng kính đến thương hiệu khắc laser. Số lượng đặt hàng tối thiểu thấp 300 chiếc cung cấp sự linh hoạt trong sản xuất cần thiết để mở rộng các bộ sưu tập cao cấp một cách hiệu quả.

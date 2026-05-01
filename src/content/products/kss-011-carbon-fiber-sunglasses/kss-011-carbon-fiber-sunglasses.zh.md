@@ -13,7 +13,6 @@ moq: "300 付/款"
 productType: "Sunglasses"
 material: "Carbon Fiber"
 series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, luxury, luxury-sunglasses, sunglasses"
-categories: "Sunglasses, Carbon Fiber Sunglasses"
 
 # ─────────────────────────────────────────────────────
 frameMaterial: "优质航空级碳纤维"
@@ -59,6 +58,10 @@ seoKeywords: "碳纤维太阳镜制造商, 定制 OEM 太阳镜, 中国自有品
 - 运动与汽车生活方式品牌
 - 百货集团
 
-## Overview
+## 产品概览
 
-KSS-011 专为追求航空级碳纤维且无需负担奢侈品溢价的品牌打造，将超轻型 CNC 加工镜框与敏锐买家所期待的精致美学相结合。2+1 桶形铰链系统在数年的日常使用中提供始终如一的顺滑操作，而全方位的 OEM/ODM 定制（从 Logo 应用到锻造碳饰面）以 300 副的起订量支持自有品牌计划。该型号为奢华运动、时尚和生活方式品牌提供了一个现成的品牌基础，并由控制生产每个环节的制造商提供支持。
+KSS-011 专为追求耐用且轻盈的品牌而设计，采用航空级碳纤维，经精密 CNC 加工而成，表面细腻完美。超轻量镜框在高性能强度与高端品牌所需的精致美学之间取得了完美平衡。
+
+稳定的 2+1 桶形结构铰链和低致敏硅胶鼻托，确保了在数年日常使用中的长期舒适感和可靠操作。
+
+该型号提供起订量低至 300 副的全方位 OEM 和 ODM 定制服务，为寻求独特市场优势的奢侈时装品牌和运动生活方式品牌提供了可扩展的基础。

@@ -1,10 +1,10 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Maßgeschneiderte Kohlefaser-Sonnenbrillen"
+title: "Individuelle Kohlefaser-Sonnenbrillen"
 slug: "kss-012-carbon-fiber-sunglasses"
 itemNo: "KSS-012"
 date: "2026-04-05"
-colors: "Original-Kohlefaserfarbe (Mattschwarz, Glanzschwarz, Farbiges Gewebe, Geschmiedetes Carbon)"
+colors: "Original Kohlefaserfarbe (Mattschwarz, Glänzend Schwarz, Farbiges Gewebe, Geschmiedetes Carbon)"
 materials: "Premium-Kohlefaser"
 serviceMode: "OEM & ODM ( Individualisierung )"
 moq: "300 Stk/Modell"
@@ -13,18 +13,17 @@ moq: "300 Stk/Modell"
 productType: "Sunglasses"
 material: "Carbon Fiber"
 series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, luxury, sunglasses, sunglasses"
-categories: "Sunglasses, Carbon Fiber Sunglasses"
 
 # ─────────────────────────────────────────────────────
-frameMaterial: "Premium-Kohlefaser in Luft- und Raumfahrtqualität"
-lensMaterial: "Widerstandsfähiges Nylon-Glas & Individualisierung"
+frameMaterial: "Premium Kohlefaser in Luft- und Raumfahrtqualität"
+lensMaterial: "Widerstandsfähige Nylon-Gläser & Individualisierung"
 size: "49-19-145mm & Individualisierung"
 designStyle: "Klassisch, Technisch, Luxus, Unisex"
 nosePads: "Hypoallergene Silikon-Nasenpads"
 hinge: "2+1 Fassstruktur-Scharniere & Individualisierung"
-logo: "Tampondruck, Lasergravur, Lasergravur mit Farbauslegung, Heißprägung, Metal-Logo, Logo-Prägung, Kristall-Verzierung, 3D-Aufkleber"
+logo: "Druck, Laser, Lasergravur mit Farbauslegung, Heißprägung, Metall-Logo, Logo-Prägung, Kristall-Verzierung, 3D-Aufkleber"
 service: "Auftragsfertigung / Design und Fertigung – Individualisierung"
-carbonFiberFeature: "Ultraleicht, Hohes Festigkeits-Gewichts-Verhältnis, Präzisions-CNC-gefräst, Extrem langlebig"
+carbonFiberFeature: "Ultraleicht, Hohes Festigkeits-Gewichts-Verhältnis, Präzisions-CNC-gefräst, Extrem Langlebig"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kss-012-carbon-fiber-sunglasses/oem-odm-customized-carbon-fiber-sunglasses-kss-012-1.webp"
@@ -37,20 +36,21 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-012 Klassische Luxus-Kohlefaser-Sonnenbrillen | OEM-Hersteller"
-seoDescription: "Partner eines führenden chinesischen Herstellers für KSS-012 Luxus-Kohlefaser-Sonnenbrillen. Maßgeschneiderte CNC-gefräste Brillen in Luftfahrtqualität mit OEM/ODM-Services und 300 Mindestbestellmenge."
-seoKeywords: "kohlefaser sonnenbrille hersteller, maßgeschneiderte kohlefaserbrillen, Luxusbrillen OEM China, großhandel kohlefaser sonnenbrillen, CNC-gefräste kohlefaserbrillen, Eigenmarken Luxus Sonnenbrille, Brillenfassungen mit hohem Festigkeits-Gewichts-Verhältnis, Premium-Kohlefaser Optik"
+seoDescription: "Partner mit einem führenden chinesischen Hersteller für KSS-012 Luxus-Kohlefaser-Sonnenbrillen. CNC-gefräste Brillen aus Luftfahrt-Carbon mit OEM/ODM-Service und 300 MOQ."
+seoKeywords: "kohlefaser sonnenbrillen hersteller, individuelle carbon brillengestelle, luxus brillen OEM china, großhandel kohlefaser sonnenbrillen, CNC gefräste carbon brillen, private label luxus sonnenbrillen, hochfeste brillengestelle, premium luftfahrt carbon brillen"
 ---
 
-## Technical Features
+## Eigenschaften
 
-- **Luftfahrt-Material:** Premium-Kohlefaser-Rahmen und -Bügel in Luft- und Raumfahrtqualität bieten ein ultraleichtes Tragegefühl mit einem extremen Festigkeits-Gewichts-Verhältnis.
-- **Präzisionsfertigung:** Hochpräzise CNC-gefräste Komponenten sorgen für exakte Toleranzen und eine einzigartige, makellose Textur des Kohlefasergewebes.
-- **Langlebige Hardware:** Stabile 2+1-Fassstruktur-Scharniere, entwickelt für langfristige Laufruhe und Zuverlässigkeit.
-- **Premium-Optik:** Widerstandsfähige Nylongläser bieten überlegene Klarheit mit umfangreichen Optionen für individuelle Tönungen und Beschichtungen.
-- **Komfort & Sicherheit:** Hypoallergene Silikon-Nasenpads, entwickelt für ganztägigen Komfort und einen sicheren Sitz.
-- **Skalierbare Produktion:** Volle OEM- und ODM-Anpassungsmöglichkeiten mit einer geringen Mindestbestellmenge von 300 Stück für den weltweiten Export.
+- **Material in Luft- und Raumfahrtqualität:** Rahmen und Bügel aus Premium-Kohlefaser in Luftfahrtqualität bieten ein ultraleichtes Tragegefühl bei extremem Festigkeits-Gewichts-Verhältnis.
+- **Präzisionsfertigung:** Hochpräzise CNC-gefräste Komponenten gewährleisten exakte Toleranzen und eine einzigartige, makellose Kohlefaser-Webstruktur.
+- **Langlebige Hardware:** Stabile 2+1 Fassstruktur-Scharniere, entwickelt für langfristige Leichtgängigkeit und Zuverlässigkeit.
+- **Premium-Optik:** Widerstandsfähige Nylon-Gläser bieten überlegene Klarheit mit umfangreichen Optionen für individuelle Tönungen und Beschichtungen.
+- **Komfort & Sicherheit:** Hypoallergene Silikon-Nasenpads, entwickelt für ganztägigen Komfort und sicheren Sitz.
+- **Skalierbare Produktion:** Volle OEM- und ODM-Individualisierungsmöglichkeiten mit einer niedrigen Mindestbestellmenge von 300 Stück für den weltweiten Export.
 
-## Perfect For
+## Perfekt Für
+
 - Premium Brillenmarken
 - Unabhängige Brillendesigner
 - Eigenmarken-Distributoren
@@ -60,5 +60,8 @@ seoKeywords: "kohlefaser sonnenbrille hersteller, maßgeschneiderte kohlefaserbr
 
 ## Overview
 
-Die KSS-012 kombiniert eine klassische Unisex-Silhouette mit der extremen Leistungsfähigkeit von Kohlefaser in Luft- und Raumfahrtqualität und ist ein technisches Meisterwerk, das für den Luxusmarkt-Einzelhandel entwickelt wurde. Jede Komponente wird durch Präzisions-CNC-Bearbeitung veredelt, um strukturelle Konsistenz zu garantieren, während das 2+1-Fassscharnier und die hypoallergenen Silikonpads den zuverlässigen Komfort bieten, der von High-End-Brillen erwartet wird. Wir bieten umfangreiche OEM- und ODM-Anpassungsoptionen — einschließlich lasergravierter Logos und individueller Nylonglas-Tönungen —, um Marken dabei zu helfen, ihre Eigenmarken-Kollektionen zu differenzieren. Mit einer Mindestbestellmenge von 300 Stück ermöglicht Kssmi es Mode- und Lifestyle-Marken, technische Kohlefaser-Brillen in einem Maßstab einzusetzen, der erstklassige Qualität mit Fertigungseffizienz in Einklang bringt.
+Die KSS-012 wurde aus Kohlefaser in Luft- und Raumfahrtqualität entwickelt und vereint technische Widerstandsfähigkeit mit einer raffinierten Luxusästhetik. Ihr hohes Festigkeits-Gewichts-Verhältnis sorgt für ein ultraleichtes Erlebnis, ohne die strukturelle Integrität zu beeinträchtigen, die für Hochleistungsbrillen erforderlich ist.
 
+Präzisions-CNC-Fräsung liefert makellose Toleranzen über das gesamte Gestell, ergänzt durch ein 2+1 Fassscharniersystem, das eine reibungslose betriebliche Zuverlässigkeit gewährleistet. Hypoallergene Silikon-Nasenpads bieten einen sicheren, bequemen Sitz, der für das ganztägige Tragen maßgeschneidert ist.
+
+Wir bieten umfassende OEM- und ODM-Unterstützung für dieses Modell an, die es Boutique-Modemarken und unabhängigen Designern ermöglicht, von den Glastönungen bis hin zum lasergeätzten Branding alles individuell zu gestalten. Eine niedrige Mindestbestellmenge von 300 Stück bietet die fertigungstechnische Flexibilität, die für den effizienten Ausbau von Premium-Kollektionen erforderlich ist.

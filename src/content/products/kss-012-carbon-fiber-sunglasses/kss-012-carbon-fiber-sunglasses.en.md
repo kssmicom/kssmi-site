@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Sunglasses"
 material: "Carbon Fiber"
 series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, luxury, sunglasses, sunglasses"
-categories: "Sunglasses, Carbon Fiber Sunglasses"
 
 # ─────────────────────────────────────────────────────
 frameMaterial: "Premium Aerospace-Grade Carbon Fiber"
@@ -61,6 +60,10 @@ seoKeywords: "carbon fiber sunglasses manufacturer, custom carbon fiber frames, 
 
 ## Overview
 
-Combining a classic unisex silhouette with the extreme performance of aerospace-grade carbon fiber, the KSS-012 is a technical masterpiece designed for luxury market retail. Each component is refined through precision CNC machining to guarantee structural consistency, while the 2+1 barrel hinge and hypoallergenic silicone pads deliver the reliable comfort expected of high-end eyewear. We provide extensive OEM and ODM customization options — including laser-engraved logos and custom nylon lens tints — to help brands differentiate their private label collections. With a minimum order quantity of 300 pieces, Kssmi enables fashion and lifestyle brands to deploy technical carbon fiber eyewear at a scale that balances premium quality with manufacturing efficiency.
+Engineered from aerospace-grade carbon fiber, the KSS-012 merges technical resilience with a refined luxury aesthetic. Its high strength-to-weight ratio ensures an ultra-lightweight experience without compromising the structural integrity required for high-performance eyewear.
+
+Precision CNC machining delivers flawless tolerances across the frame, complemented by a 2+1 barrel hinge system that maintains smooth operational reliability. Hypoallergenic silicone nose pads provide a secure, comfortable fit tailored for all-day wear.
+
+We offer comprehensive OEM and ODM support for this model, enabling boutique fashion labels and independent designers to customize everything from lens tints to laser-etched branding. A low 300-piece minimum order quantity provides the manufacturing flexibility needed to scale premium collections efficiently.
 
 

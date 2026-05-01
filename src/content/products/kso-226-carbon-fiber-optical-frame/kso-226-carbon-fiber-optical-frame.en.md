@@ -12,8 +12,7 @@ moq: "300 PCS/Model"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
 material: "Carbon Fiber"
-series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
-categories: "Optical Frames, Carbon Fiber Optical Frames"
+series: "Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "54-17-140mm & Customization"
@@ -61,4 +60,8 @@ seoKeywords: "carbon fiber optical frames manufacturer, KSO-226 custom carbon fi
 
 ## Overview
 
-Combining the industrial strength of aerospace-grade carbon fiber with the natural elegance of hand-finished Indian Rosewood grain, the KSO-226 stands as a high-end solution for the luxury optical market. This hybrid frame integrates a lightweight carbon fiber front with resilient titanium temples and a precision-engineered 2+1 barrel hinge system to ensure lasting structural integrity and all-day comfort. To meet diverse brand requirements, we provide full OEM and ODM customization—including tenacious nylon lens coating and logo applications—with a focused 300-piece minimum order quantity. Our integrated manufacturing process allows independent designers and premium eyewear brands to scale their collections with the technical precision demanded by global luxury markets.
+The KSO-226 blends the industrial strength of aerospace-grade carbon fiber with a distinctive Mahogany Indian Rosewood grain finish. This hybrid design offers a sophisticated, ultra-lightweight profile that caters to the high-end luxury optical market.
+
+Precision-engineered with resilient titanium temples and stable 2+1 barrel hinges, the frame ensures long-term durability and hypoallergenic comfort.
+
+Supporting full OEM/ODM scope with a low 300-piece MOQ, we empower premium brands to scale bespoke eyewear collections with a focus on technical excellence and market differentiation.
