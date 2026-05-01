@@ -40,6 +40,8 @@ const productSlug = slug || product.id.split('.')[0];
         <img
           src={cover}
           alt={title}
+          width="400"
+          height="300"
           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           decoding="async"
           loading={loadingStrategy}

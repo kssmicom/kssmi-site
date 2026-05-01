@@ -51,16 +51,57 @@ RewriteRule ^ /404.html [L]
 
 # ─── Gzip compression ──────────────────────────────────────────────────────
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/xml
+  AddOutputFilterByType DEFLATE image/svg+xml font/woff2 font/woff
+</IfModule>
+
+# ─── Brotli compression (if available on host) ─────────────────────────────
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/xml
+  AddOutputFilterByType BROTLI_COMPRESS application/javascript application/x-javascript
+  AddOutputFilterByType BROTLI_COMPRESS application/json image/svg+xml
 </IfModule>
 
 # ─── Cache static assets ───────────────────────────────────────────────────
 <IfModule mod_expires.c>
   ExpiresActive On
+
+  # Images — 1 year
   ExpiresByType image/webp "access plus 1 year"
-  ExpiresByType image/png "access plus 1 year"
-  ExpiresByType image/jpg "access plus 1 year"
-  ExpiresByType image/ico "access plus 1 year"
-  ExpiresByType text/css "access plus 1 month"
-  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType image/png  "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif  "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
+
+  # Fonts — 1 year
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff  "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+
+  # Astro hashed JS/CSS bundles — 1 year immutable
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+</IfModule>
+
+# ─── Cache-Control headers (immutable for hashed Astro assets) ────────────
+<IfModule mod_headers.c>
+  # Astro outputs content-hashed filenames under /_astro/ — safe to cache forever
+  <FilesMatch "^\/_astro\/.*\.(js|css|woff2|woff)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Images in /media/ — cache 1 year
+  <FilesMatch "^\/media\/.*\.(webp|png|jpg|jpeg|gif|svg|ico)$">
+    Header set Cache-Control "public, max-age=31536000"
+  </FilesMatch>
+
+  # HTML pages — must revalidate (so updates deploy correctly)
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
 </IfModule>

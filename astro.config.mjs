@@ -9,7 +9,10 @@ import path from 'node:path';
 export default defineConfig({
   site: 'https://kssmi.com',
   output: 'static',
-  prefetch: true,
+  prefetch: {
+    prefetchAll: false,       // Don't auto-prefetch every link on the page
+    defaultStrategy: 'hover', // Only prefetch when user hovers (shows intent)
+  },
   integrations: [
     tailwind({
       applyBaseStyles: false,
