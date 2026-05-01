@@ -1,0 +1,198 @@
+---
+/**
+ * Pagination.astro - Shared pagination component with go-to-page input
+ *
+ * Props:
+ *   currentPage  - Current active page number (1-based)
+ *   lastPage     - Total number of pages
+ *   basePath     - Base URL path without trailing slash (e.g., "/product", "/it/product")
+ *   categorySlug - Optional category slug for category pages (e.g., "sunglasses")
+ *   prevUrl      - Optional override URL for the Previous button
+ *   nextUrl      - Optional override URL for the Next button
+ *   prevLabel    - Label for Previous button (translated)
+ *   nextLabel    - Label for Next button (translated)
+ *   goToLabel    - Accessible label for the go-to-page input
+ *   dir          - Text direction ("ltr" or "rtl")
+ */
+
+export interface Props {
+  currentPage: number;
+  lastPage: number;
+  basePath: string;
+  categorySlug?: string;
+  prevUrl?: string | undefined;
+  nextUrl?: string | undefined;
+  prevLabel?: string;
+  nextLabel?: string;
+  goToLabel?: string;
+  goToButton?: string;
+  dir?: string;
+}
+
+const {
+  currentPage,
+  lastPage,
+  basePath,
+  categorySlug,
+  prevUrl,
+  nextUrl,
+  prevLabel = 'Previous',
+  nextLabel = 'Next',
+  goToLabel = 'Go to page',
+  goToButton = 'Go',
+  dir = 'ltr',
+} = Astro.props;
+---
+
+{
+  lastPage > 1 && (
+    <nav class="mt-12 flex justify-center items-center gap-2" dir={dir}>
+      <!-- Previous Button -->
+      {currentPage > 1 ? (
+        <a
+          href={prevUrl ?? (categorySlug
+            ? `${basePath}/${categorySlug}/${currentPage - 1}`
+            : currentPage === 2
+              ? basePath
+              : `${basePath}/${currentPage - 1}`
+          )}
+          class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          <span class="hidden sm:inline">{prevLabel}</span>
+        </a>
+      ) : (
+        <span class="flex items-center gap-1 px-4 py-2 border border-gray-100 rounded-lg text-gray-300 cursor-not-allowed">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          <span class="hidden sm:inline">{prevLabel}</span>
+        </span>
+      )}
+
+      <!-- Page Numbers -->
+      <div class="flex items-center gap-1">
+        <!-- First page -->
+        <a
+          href={categorySlug ? `${basePath}/${categorySlug}` : basePath}
+          class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
+            currentPage === 1
+              ? 'bg-[#8B7355] text-white shadow-sm'
+              : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355]'
+          }`}
+        >
+          1
+        </a>
+
+        <!-- Ellipsis before current if needed -->
+        {currentPage > 3 && (
+          <span class="px-2 text-gray-400">...</span>
+        )}
+
+        <!-- Pages around current -->
+        {Array.from({ length: lastPage }, (_, i) => i + 1)
+          .filter(p => p > 1 && p < lastPage && Math.abs(p - currentPage) <= 1)
+          .map(p => (
+            <a
+              href={categorySlug ? `${basePath}/${categorySlug}/${p}` : `${basePath}/${p}`}
+              class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
+                p === currentPage
+                  ? 'bg-[#8B7355] text-white shadow-sm'
+                  : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355]'
+              }`}
+            >
+              {p}
+            </a>
+          ))}
+
+        {/* Ellipsis after current if needed */}
+        {currentPage < lastPage - 2 && (
+          <span class="px-2 text-gray-400">...</span>
+        )}
+
+        {/* Last page */}
+        {lastPage > 1 && (
+          <a
+            href={categorySlug ? `${basePath}/${categorySlug}/${lastPage}` : `${basePath}/${lastPage}`}
+            class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
+              currentPage === lastPage
+                ? 'bg-[#8B7355] text-white shadow-sm'
+                : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355]'
+            }`}
+          >
+            {lastPage}
+          </a>
+        )}
+      </div>
+
+      <!-- Go to Page Input -->
+      <form
+        class="pagination-goto-form flex items-center gap-1"
+        data-base-path={basePath}
+        data-category-slug={categorySlug || ''}
+        data-last-page={lastPage}
+      >
+        <span class="text-gray-300 text-sm">|</span>
+        <input
+          type="number"
+          min="1"
+          max={lastPage}
+          placeholder="#"
+          class="w-14 h-10 text-center border border-gray-200 rounded-lg text-sm text-gray-600 focus:outline-none focus:border-[#8B7355] focus:ring-1 focus:ring-[#8B7355] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+          aria-label={goToLabel}
+        />
+        <button
+          type="submit"
+          class="px-3 h-10 border border-gray-200 rounded-lg text-sm text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
+        >
+          {goToButton}
+        </button>
+      </form>
+
+      <!-- Next Button -->
+      {currentPage < lastPage ? (
+        <a
+          href={nextUrl ?? (categorySlug ? `${basePath}/${categorySlug}/${currentPage + 1}` : `${basePath}/${currentPage + 1}`)}
+          class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
+        >
+          <span class="hidden sm:inline">{nextLabel}</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      ) : (
+        <span class="flex items-center gap-1 px-4 py-2 border border-gray-100 rounded-lg text-gray-300 cursor-not-allowed">
+          <span class="hidden sm:inline">{nextLabel}</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </span>
+      )}
+    </nav>
+  )
+}
+
+<script is:inline>
+  document.addEventListener('submit', function(e) {
+    var form = e.target.closest('.pagination-goto-form');
+    if (!form) return;
+    e.preventDefault();
+    var input = form.querySelector('input[type="number"]');
+    if (!input) return;
+    var page = parseInt(input.value, 10);
+    var basePath = form.getAttribute('data-base-path') || '';
+    var categorySlug = form.getAttribute('data-category-slug') || '';
+    var lastPage = parseInt(form.getAttribute('data-last-page') || '1', 10);
+    if (page >= 1 && page <= lastPage) {
+      var url;
+      if (page === 1) {
+        url = categorySlug ? basePath + '/' + categorySlug : basePath;
+      } else {
+        url = categorySlug ? basePath + '/' + categorySlug + '/' + page : basePath + '/' + page;
+      }
+      window.location.href = url;
+    }
+  });
+</script>

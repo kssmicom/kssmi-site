@@ -13,6 +13,7 @@ import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
 import type { Page } from 'astro';
 import { isCategoryMatch, getSlug } from '../../../utils/categoryMatching';
+import Pagination from '../../../components/Pagination.astro';
 
 // Category translation mapping: maps translated category names to English slugs
 // Function to get canonical slug from any category name
@@ -307,105 +308,16 @@ const pt = t.product || {
                 ))}
               </div>
 
-              <!-- Pagination -->
-              {page.lastPage > 1 && (
-                <nav class="mt-12 flex justify-center items-center gap-2" dir={isRTL ? 'rtl' : 'ltr'}>
-                  <!-- Previous Button -->
-                  {page.url.prev ? (
-                    <a
-                      href={page.url.prev}
-                      class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
-                    >
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                      </svg>
-                      <span class="hidden sm:inline">{pt.previousPage || 'Previous'}</span>
-                    </a>
-                  ) : (
-                    <span class="flex items-center gap-1 px-4 py-2 border border-gray-100 rounded-lg text-gray-300 cursor-not-allowed">
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                      </svg>
-                      <span class="hidden sm:inline">{pt.previousPage || 'Previous'}</span>
-                    </span>
-                  )}
-
-                  <!-- Page Numbers -->
-                  <div class="flex items-center gap-1">
-                    {/* First page */}
-                    <a
-                      href={`/${currentPath}product`}
-                      class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
-                        page.currentPage === 1
-                          ? 'bg-[#8B7355] text-white'
-                          : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355]'
-                      }`}
-                    >
-                      1
-                    </a>
-
-                    {/* Ellipsis before current */}
-                    {page.currentPage > 3 && (
-                      <span class="px-2 text-gray-400">...</span>
-                    )}
-
-                    {/* Pages around current */}
-                    {Array.from({ length: page.lastPage }, (_, i) => i + 1)
-                      .filter(p => p > 1 && p < page.lastPage && Math.abs(p - page.currentPage) <= 1)
-                      .map(p => (
-                        <a
-                          href={`/${currentPath}product/${p}`}
-                          class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
-                            p === page.currentPage
-                              ? 'bg-[#8B7355] text-white'
-                              : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355]'
-                          }`}
-                        >
-                          {p}
-                        </a>
-                      ))}
-
-                    {/* Ellipsis after current */}
-                    {page.currentPage < page.lastPage - 2 && (
-                      <span class="px-2 text-gray-400">...</span>
-                    )}
-
-                    {/* Last page */}
-                    {page.lastPage > 1 && (
-                      <a
-                        href={`/${currentPath}product/${page.lastPage}`}
-                        class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
-                          page.currentPage === page.lastPage
-                            ? 'bg-[#8B7355] text-white'
-                            : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355]'
-                        }`}
-                      >
-                        {page.lastPage}
-                      </a>
-                    )}
-                  </div>
-
-                  <!-- Next Button -->
-                  {page.url.next ? (
-                    <a
-                      href={page.url.next}
-                      class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
-                    >
-                      <span class="hidden sm:inline">{pt.nextPage || 'Next'}</span>
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                      </svg>
-                    </a>
-                  ) : (
-                    <span class="flex items-center gap-1 px-4 py-2 border border-gray-100 rounded-lg text-gray-300 cursor-not-allowed">
-                      <span class="hidden sm:inline">{pt.nextPage || 'Next'}</span>
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                      </svg>
-                    </span>
-                  )}
-                </nav>
-              )}
+              <Pagination
+                currentPage={page.currentPage}
+                lastPage={page.lastPage}
+                basePath={`/${currentPath}product`}
+                prevUrl={page.url.prev}
+                nextUrl={page.url.next}
+                prevLabel={pt.previousPage || 'Previous'}
+                nextLabel={pt.nextPage || 'Next'}
+                dir={isRTL ? 'rtl' : 'ltr'}
+              />
             </>
           )}
         </div>

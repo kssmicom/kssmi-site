@@ -11,6 +11,7 @@ import { translations } from '../../translations';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { isCategoryMatch } from '../../utils/categoryMatching';
+import Pagination from '../../components/Pagination.astro';
 
 const lang = 'en';
 const PAGE_SIZE = 12;
@@ -262,103 +263,13 @@ function getCategoryCount(href: string): number {
                 ))}
               </div>
 
-              <!-- Pagination -->
-              <nav class="mt-12 flex justify-center items-center gap-2" dir="ltr">
-                <!-- Previous Button -->
-                {pageNum > 2 ? (
-                  <a
-                    href={`/product/${pageNum - 1}`}
-                    class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
-                  >
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                    </svg>
-                    <span class="hidden sm:inline">{pt.previousPage || 'Previous'}</span>
-                  </a>
-                ) : pageNum === 2 ? (
-                  <a
-                    href="/product"
-                    class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
-                  >
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                    </svg>
-                    <span class="hidden sm:inline">{pt.previousPage || 'Previous'}</span>
-                  </a>
-                ) : (
-                  <span class="flex items-center gap-1 px-4 py-2 border border-gray-100 rounded-lg text-gray-300 cursor-not-allowed">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                    </svg>
-                    <span class="hidden sm:inline">{pt.previousPage || 'Previous'}</span>
-                  </span>
-                )}
-
-                <!-- Page Numbers -->
-                <div class="flex items-center gap-1">
-                  <a
-                    href="/product"
-                    class="w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
-                  >
-                    1
-                  </a>
-
-                  {pageNum > 3 && <span class="px-2 text-gray-400">...</span>}
-
-                  {pageNum > 2 && (
-                    <a
-                      href={`/product/${pageNum - 1}`}
-                      class="w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
-                    >
-                      {pageNum - 1}
-                    </a>
-                  )}
-
-                  <span class="w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium bg-[#8B7355] text-white">
-                    {pageNum}
-                  </span>
-
-                  {pageNum < totalPages && pageNum + 1 < totalPages && (
-                    <a
-                      href={`/product/${pageNum + 1}`}
-                      class="w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
-                    >
-                      {pageNum + 1}
-                    </a>
-                  )}
-
-                  {pageNum < totalPages - 2 && <span class="px-2 text-gray-400">...</span>}
-
-                  {pageNum < totalPages && (
-                    <a
-                      href={`/product/${totalPages}`}
-                      class="w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
-                    >
-                      {totalPages}
-                    </a>
-                  )}
-                </div>
-
-                <!-- Next Button -->
-                {pageNum < totalPages ? (
-                  <a
-                    href={`/product/${pageNum + 1}`}
-                    class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
-                  >
-                    <span class="hidden sm:inline">{pt.nextPage || 'Next'}</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                ) : (
-                  <span class="flex items-center gap-1 px-4 py-2 border border-gray-100 rounded-lg text-gray-300 cursor-not-allowed">
-                    <span class="hidden sm:inline">{pt.nextPage || 'Next'}</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </span>
-                )}
-              </nav>
+              <Pagination
+                currentPage={pageNum}
+                lastPage={totalPages}
+                basePath="/product"
+                prevLabel={pt.previousPage || 'Previous'}
+                nextLabel={pt.nextPage || 'Next'}
+              />
             </>
           )}
         </div>
