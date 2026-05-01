@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Sunglasses"
 material: "Titanium Sunglasses"
 series: "sunglasses, titanium-sunglasses, luxury-eyewear, luxury-titanium-sunglasses"
-categories: "Sunglasses, Titanium Sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "45-25-145mm & Customization"
@@ -62,4 +61,8 @@ seoKeywords: "titanium sunglasses manufacturer, custom OEM eyewear supplier, lux
 
 ## Overview
 
-Elite eyewear collections demand materials that transcend the ordinary, a requirement met by the KTS-212's premium titanium construction and unique unisex design. Beyond its refined aesthetics, the inclusion of precision 2+1 barrel hinges and tenacious nylon lenses provides the mechanical excellence required by luxury fashion houses and independent designers alike. Kssmi facilitates rapid market entry for premium brands through full ODM and OEM customization pathways, backed by a scalable 300-piece minimum order quantity. From bespoke logo applications to custom material sourcing, this model offers the versatility needed to elevate high-end private label portfolios.
+The KTS-212 leverages premium titanium to offer a superior strength-to-weight ratio for elite eyewear collections. This ultra-lightweight frame features a unique unisex design that appeals to high-end fashion and luxury retail markets.
+
+Precision-engineered 2+1 barrel hinges ensure structural longevity, while tenacious nylon lenses provide exceptional optical clarity for daily performance.
+
+Supporting full OEM and ODM customization with a manageable 300-piece minimum order quantity, Kssmi enables independent designers and boutique labels to bring bespoke luxury sunglasses to market with ease.
