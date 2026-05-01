@@ -4,27 +4,26 @@ title: "Bingkai Optik Gentian Karbon Tersuai"
 slug: "kso-224-carbon-fiber-optical-frame"
 itemNo: "KSO-224"
 date: "2026-04-05"
-colors: "Mahogani (Kayu Mawar India — Ira Gunung)"
-materials: "Gentian Karbon Premium dan Titanium"
-serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
+colors: "Mahogani (Rosewood India — Urat Gunung)"
+materials: "Gentian Karbon Premium dan Titanim"
+serviceMode: "OEM & ODM ( Penyesuaian )"
 moq: "300 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
 material: "Carbon Fiber"
 series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
-categories: "Optical Frames, Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "54-17-140mm & Penyesuaian"
-frameMaterial: "Bingkai Gentian Karbon Premium dan Tangkai Titanium"
-lensMaterial: "Lensa Nilon Kental & Penyesuaian"
+frameMaterial: "Bingkai Gentian Karbon Premium dan Gagang Titanim"
+lensMaterial: "Lensa Nilon Teguh & Penyesuaian"
 designStyle: "Klasik, Fesyen, Bergaya, Trendi, Mewah, Unisex"
 nosePads: "Alas Hidung Getah"
-hinge: "Engsel Struktur Tong 2+1 & Penyesuaian"
+hinge: "Engsel Struktur 2+1 Baril & Penyesuaian"
 logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Lencana Logam, Timbulan, Kristal, Pelekat"
 service: "Pembuatan OEM / ODM – Penyesuaian"
-carbonFiberFeature: "Ringan & Nisbah Kekuatan-ke-Berat Tinggi & Fleksibiliti & Ketahanan & Hipolergenik & Tekstur Unik"
+carbonFiberFeature: "Ringan & Nisbah Kekuatan-ke-Berat Tinggi & Fleksibiliti & Ketahanan & Hipoalergenik & Tekstur Unik"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kso-224-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-224-1.webp"
@@ -36,19 +35,19 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KSO-224 Bingkai Optik Gentian Karbon Mewah | Pengilang OEM"
-seoDescription: "KSO-224: Bingkai optik gentian karbon mewah dengan tangkai titanium dan kemasan mahogani yang unik. 300 MOQ. Penyesuaian OEM/ODM premium."
-seoKeywords: "bingkai optik gentian karbon, kacamata titanium tersuai, pengilang kacamata mewah China, bingkai karbon borong, kilang kacamata OEM"
+seoTitle: "Bingkai Optik Gentian Karbon Mewah KSO-224 | Pengilang OEM"
+seoDescription: "KSO-224: Bingkai optik gentian karbon mewah dengan gagang titanim dan kemasan mahogani unik. MOQ 300. Penyesuaian OEM/ODM premium untuk jenama kacamata global."
+seoKeywords: "bingkai optik gentian karbon, kacamata titanim tersuai, pengilang kacamata mewah China, borong bingkai karbon, kilang kacamata OEM"
 ---
 
 ## Ciri-ciri Utama
 
-- **Bahan Gred Aeroangkasa:** Bingkai gentian karbon premium dan tangkai titanium menawarkan rasa ultra ringan dengan nisbah kekuatan-ke-berat yang ekstrem.
-- **Estetika Semulajadi:** Kemasan Mahogani (Kayu Mawar India — Ira Gunung) yang unik untuk tekstur mewah yang tersendiri.
-- **Perkakasan Tahan Lama:** Engsel struktur tong 2+1 yang stabil direka untuk kelancaran operasi jangka panjang.
-- **Optik Premium:** Lensa nilon kental dengan pilihan pewarnaan dan salutan tersuai yang luas tersedia untuk eksport global.
-- **Keselesaan Sepanjang Hari:** Alas hidung getah lembut yang direka untuk muat yang selamat, tidak licin dan keselesaan pemakaian sepanjang hari.
-- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh termasuk penjenamaan logo dan saiz tersuai untuk pemborong antarabangsa.
+- **Bahan Gred Aeroangkasa:** Bingkai gentian karbon premium dan gagang titanim menawarkan rasa ultra ringan dengan nisbah kekuatan-ke-berat yang melampau.
+- **Estetika Semulajadi:** Kemasan Mahogani (Rosewood India — Urat Gunung) yang unik untuk tekstur mewah yang menonjol.
+- **Perkakasan Tahan Lama:** Engsel struktur 2+1 baril yang stabil direka untuk kelancaran operasi jangka panjang.
+- **Optik Premium:** Lensa nilon teguh dengan pilihan pewarnaan dan salutan tersuai yang meluas tersedia untuk eksport global.
+- **Keselesaan Sepanjang Hari:** Alas hidung getah lembut direka untuk padanan selamat, tidak licin dan keselesaan pemakaian sepanjang hari.
+- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM yang lengkap termasuk penjenamaan logo dan saiz tersuai untuk pemborong antarabangsa.
 
 ## Sesuai Untuk
 
@@ -59,6 +58,10 @@ seoKeywords: "bingkai optik gentian karbon, kacamata titanium tersuai, pengilang
 - Jenama Gaya Hidup Sukan & Automotif
 - Rantai Optik Bergengsi
 
-## Gambaran Keseluruhan
+## Overview
 
-Kemasan ira gunung Kayu Mawar India yang unik membezakan KSO-224, meningkatkan bingkai optik gentian karbon standard kepada sekeping kenyataan mewah. Gabungan gentian karbon gred aeroangkasa dan tangkai titanium memastikan nisbah kekuatan-ke-berat yang tinggi, manakala alas hidung getah dan engsel tong 2+1 mengutamakan keselesaan pemakai dan jangka hayat perkakasan. Sebagai pengilang langsung, Kssmi menawarkan penyesuaian penuh melalui perkhidmatan OEM/ODM, membolehkan pengedar label peribadi dan jenama premium melabel reka bentuk ini dengan logo dan warna tersuai. Model ini tersedia bermula pada kuantiti pesanan minimum 300 unit, memberikan kelebihan strategik untuk rangkaian optik mewah dan jenama gaya hidup automotif.
+Menggabungkan gentian karbon gred aeroangkasa dengan kemasan urat gunung mahogani, KSO-224 menawarkan persilangan yang jarang berlaku antara prestasi teknikal dan kehangatan semula jadi.
+
+Gagang titanim ringan dan engsel 2+1 baril memberikan integriti struktur jangka panjang sambil mengekalkan profil halus yang diharapkan daripada kacamata mewah.
+
+Menyokong penyesuaian tempahan penuh pada pesanan minimum 300 unit, bingkai ini melengkapkan rumah fesyen premium dan label butik untuk mengembangkan portfolio mewah mereka.

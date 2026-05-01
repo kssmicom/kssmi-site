@@ -3,7 +3,7 @@
 title: "맞춤형 림리스 선글라스"
 slug: "krs-203-rimless-sunglasses"
 itemNo: "KRS-203"
-date: "2026-04-06" Korean
+date: "2026-04-06"
 colors: "그라데이션 브라운 & 그라데이션 블루 & 그라데이션 그레이 & 틴트 그레이"
 materials: "프리미엄 메탈 & 맞춤형 소재"
 serviceMode: "OEM & ODM 제조 ( 맞춤 서비스 )"

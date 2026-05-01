@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Optical Frames"
 material: "Carbon Fiber"
 series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
-categories: "Optical Frames, Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "48-21-145mm & Customization"
@@ -64,11 +63,15 @@ seoKeywords: "carbon fiber optical frame manufacturer, custom OEM eyewear China,
 ## Perfect For
 - Premium Eyewear Brands
 - Independent Eyewear Designers
+- Boutique Fashion Labels
+- High-End Optical Chains
 - Private Label Distributors
 - Luxury Fashion Houses
-- Sports & Automotive Lifestyle Labels
-- High-End Optical Chains
 
 ## Overview
 
-Fusing aerospace-grade carbon fiber with precision-engineered titanium components, these optical frames represent the pinnacle of material innovation for the luxury eyewear sector. The lightweight structure is complemented by a 2+1 barrel hinge system and ergonomic rubber nose pads, ensuring that high-end aesthetics are always paired with exceptional long-term comfort and durability. We provide full-scale OEM and ODM customization for global private labels, offering specialized finishes such as green twill and wood-grain patterns to align with specific brand identities. All manufacturing is handled in-house with a 300-piece minimum order quantity to support the rapid scaling of professional eyewear collections.
+Engineered with a high-performance fusion of premium carbon fiber and lightweight titanium, the KSO-032 offers a sophisticated structural profile with an exceptional strength-to-weight ratio. The frame's unique wood-grain and twill patterns provide a distinct visual edge for brands targeting the luxury eyewear sector.
+
+A precision-built 2+1 barrel hinge system ensures consistent mechanical stability, while the ergonomic rubber nose pads deliver all-day hypoallergenic comfort.
+
+Offering full ODM and OEM customization scope with a low 300-piece minimum order quantity, this model enables independent designers and high-end retailers to scale bespoke luxury collections with manufacturing precision.

@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npm run:*)",
       "Bash(node -e \":*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(gh run *)"
     ]
   }
 }

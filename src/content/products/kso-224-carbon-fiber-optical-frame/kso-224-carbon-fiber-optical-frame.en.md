@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Optical Frames"
 material: "Carbon Fiber"
 series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
-categories: "Optical Frames, Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "54-17-140mm & Customization"
@@ -61,4 +60,8 @@ seoKeywords: "carbon fiber optical frames, custom titanium eyewear, luxury glass
 
 ## Overview
 
-A unique Indian Rosewood mountain grain finish distinguishes the KSO-224, elevating the standard carbon fiber optical frame into a luxury statement piece. The combination of aerospace-grade carbon fiber and titanium temples ensures a high strength-to-weight ratio, while the rubber nose pads and 2+1 barrel hinges prioritize wearer comfort and hardware longevity. As a direct manufacturer, Kssmi offers full customization via OEM/ODM services, enabling private label distributors and premium brands to white-label this design with custom logos and colorways. This model is available starting at a 300-piece minimum order quantity, providing a strategic advantage for high-end optical chains and automotive lifestyle labels.
+Combining aerospace-grade carbon fiber with a mahogany mountain grain finish, the KSO-224 offers a rare intersection of technical performance and natural warmth.
+
+Lightweight titanium temples and 2+1 barrel hinges provide long-term structural integrity while maintaining the refined profile expected of luxury eyewear.
+
+Supporting full bespoke customization at a 300-piece minimum, this frame equips premium fashion houses and boutique labels to expand their high-end portfolios.

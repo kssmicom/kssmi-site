@@ -13,7 +13,6 @@ moq: "300 PCS/Model"
 productType: "Optical Frames"
 material: "Carbon Fiber"
 series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
-categories: "Optical Frames, Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "54-17-140mm & Customization"
@@ -61,4 +60,8 @@ seoKeywords: "carbon fiber optical frames manufacturer, custom mahogany grain ey
 
 ## Overview
 
-Luxury performance meets natural elegance in the KSO-225, where a premium carbon fiber frame is finished in a striking mahogany wood-grain texture. Supported by lightweight titanium temples and a stable 2+1 barrel hinge structure, this model provides the structural integrity required for high-end optical collections while maintaining a sophisticated, unisex appeal. This model is an ideal anchor piece for independent designers and premium retail groups seeking to differentiate their portfolio with high-tech materials and classic craftsmanship. Kssmi facilitates these brand requirements through comprehensive OEM/ODM customization—including custom logo laser-etching and unique colorways—delivered at an accessible 300-piece minimum order quantity per model.
+High-tech carbon fiber meets the warmth of mahogany wood-grain in the KSO-225, creating a unique material hybrid for premium eyewear collections. Its titanium temples enhance the ultra-lightweight architecture without compromising structural durability.
+
+The integration of stable 2+1 barrel hinges and hypoallergenic rubber nose pads provides a refined tactile experience and superior all-day comfort for extended wear.
+
+Designed for independent designers and high-end retail groups, this model is available for extensive OEM/ODM customization. We empower brands to scale their vision with a low 300-piece minimum order quantity and full support for bespoke branding details.

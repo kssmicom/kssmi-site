@@ -4,21 +4,20 @@ title: "Bingkai Optik Gentian Karbon Tersuai"
 slug: "kso-032-carbon-fiber-optical-frame"
 itemNo: "KSO-032"
 date: "2026-04-05"
-colors: "Kayu Keemasan & Gentian Karbon Hijau Corak Twill & Gentian Karbon Corak Plain Gunmat & Gentian Karbon Corak Plain Perak Kayu Mat"
-materials: "Gentian Karbon Premium dan Titanium"
-serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
+colors: "Kayu Keemasan & Gentian Karbon Hijau Corak Twill & Gentian Karbon Corak Kosong Gun Matt & Kayu Gentian Karbon Corak Kosong Perak Matt"
+materials: "Gentian Karbon Premium dan Titanim"
+serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & Pembuatan ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
 material: "Carbon Fiber"
 series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames, carbon-fiber, luxury, luxury-optical-frames"
-categories: "Optical Frames, Carbon Fiber Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "48-21-145mm & Penyesuaian"
-frameMaterial: "Bingkai Gentian Karbon Premium dan Temple Titanium"
-lensMaterial: "Lensa Nylon Teguh & Penyesuaian"
+frameMaterial: "Bingkai Gentian Karbon Premium dan Gagang Titanim"
+lensMaterial: "Kanta Nilon Teguh & Penyesuaian"
 designStyle: "Klasik, Fesyen, Bergaya, Trendi, Mewah, Unisex"
 nosePads: "Alas Hidung Getah"
 hinge: "Engsel Struktur Tong 2+1 & Penyesuaian"
@@ -49,26 +48,31 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Bingkai Optik Gentian Karbon Mewah KSO-032 | Pengilang OEM"
-seoDescription: "Be kerjsama dengan pengilang terkemuka China untuk bingkai optik gentian karbon & titanium mewah KSO-032. Perkhidmatan OEM/ODM penuh dengan MOQ 300 untuk label peribadi."
-seoKeywords: "pengilang bingkai optik gentian karbon, kacamata OEM tersuai China, bingkai gentian karbon label peribadi, borong kacamata optik mewah, kilang kacamata titanium gentian karbon, pembekal borong kacamata ODM, bingkai optik kualiti eksport, kacamata gentian karbon B2B China"
+seoDescription: "Bekerjasama dengan pengilang terkemuka China untuk bingkai optik gentian karbon & titanim mewah KSO-032. Perkhidmatan OEM/ODM penuh dengan 300 MOQ untuk label peribadi."
+seoKeywords: "pengilang bingkai optik gentian karbon, kacamata tersuai OEM China, bingkai gentian karbon label peribadi, borong kacamata optik mewah, kilang kacamata titanim gentian karbon, pembekal borong kacamata ODM, bingkai optik kualiti eksport, kacamata gentian karbon B2B China"
 ---
 
-## Ciri-ciri Teknikal
-- **Bahan Gred Aeroangkasa:** Bingkai gentian karbon premium dipadankan dengan temple titanium, menawarkan rasa ultra ringan dengan nisbah kekuatan-ke-berat yang ekstrem.
+## Ciri-ciri Utama
+- **Bahan Gred Aeroangkasa:** Bingkai gentian karbon premium dan gagang titanim menawarkan rasa ultra-ringan dengan nisbah kekuatan-ke-berat yang melampau.
 - **Perkakasan Tahan Lama:** Engsel struktur tong 2+1 yang stabil direka untuk kelancaran operasi jangka panjang dan kestabilan bingkai.
-- **Optik Premium:** Lensa nilon yang teguh memberikan rintangan impak yang unggul dengan pilihan penyesuaian yang luas untuk pelanggan B2B global.
-- **Keselesaan Sepanjang Hari:** Alas hidung getah ergonomik direka untuk kesesuaian yang selamat dan hipoalergenik semasa pemakaian harian yang berpanjangan.
-- **Tekstur Eksklusif:** Kemasan gentian karbon yang unik termasuk corak urat kayu dan twill, memberikan estetik mewah yang berkualiti tinggi.
-- **Pembuatan Skalabel:** Keupayaan penyesuaian OEM & ODM profesional dengan MOQ rendah sebanyak 300 unit untuk pengedaran di seluruh dunia.
+- **Optik Premium:** Kanta nilon teguh memberikan rintangan hentaman yang unggul dengan pilihan penyesuaian yang meluas untuk pelanggan B2B global.
+- **Keselesaan Sepanjang Hari:** Alas hidung getah ergonomik direka untuk muat yang selamat dan hipoalergenik semasa pemakaian harian yang berpanjangan.
+- **Tekstur Eksklusif:** Kemasan gentian karbon unik termasuk corak urat kayu dan twill, memberikan estetika mewah yang tinggi.
+- **Pembuatan Boleh Skala:** Keupayaan penyesuaian OEM & ODM profesional dengan MOQ rendah 300 unit untuk pengedaran seluruh dunia.
 
 ## Sesuai Untuk
 - Merek Kacamata Premium
-- Pereka Kacamata Berkesan
+- Pereka Kacamata Bebas
+- Label Fesyen Boutique
+- Rantai Optik Bergengsi
 - Pengedar Label Peribadi
 - Rumah Fesyen Mewah
-- Jenama Gaya Hidup Sukan & Automotif
-- Rantai Optik Bergengsi
 
-## Gambaran Keseluruhan Produk
+## Gambaran Keseluruhan
 
-Menggabungkan gentian karbon gred aeroangkasa dengan komponen titanium kejuruteraan ketepatan, bingkai optik ini mewakili kemuncak inovasi bahan untuk sektor kacamata mewah. Struktur ringannya dilengkapi dengan sistem engsel tong 2+1 dan alas hidung getah ergonomik, memastikan estetik mewah sentiasa dipadankan dengan keselesaan dan ketahanan jangka panjang yang luar biasa. Kami menyediakan penyesuaian OEM dan ODM skala penuh untuk label peribadi global, menawarkan kemasan khusus seperti corak twill hijau dan urat kayu untuk menyelaraskan dengan identiti jenama tertentu. Semua pembuatan dikendalikan secara dalaman dengan jumlah pesanan minimum 300 unit untuk menyokong penskalaan pantas koleksi kacamata profesional.
+Direka dengan gabungan berprestasi tinggi gentian karbon premium dan titanium ringan, KSO-032 menawarkan profil struktur yang sofistikated dengan nisbah kekuatan-ke-berat yang luar biasa. Corak urat kayu dan twill yang unik pada bingkai ini memberikan kelebihan visual yang ketara bagi jenama yang menyasarkan sektor kacamata mewah.
+
+Sistem engsel tong 2+1 yang dibina dengan ketepatan memastikan kestabilan mekanikal yang konsisten, manakala alas hidung getah ergonomik memberikan keselesaan hipoalergenik sepanjang hari.
+
+Menawarkan skop penyesuaian ODM dan OEM yang lengkap dengan kuantiti pesanan minimum 300 unit yang rendah, model ini membolehkan pereka bebas dan peruncit mewah untuk meningkatkan koleksi mewah tersuai dengan ketepatan pembuatan.
+
