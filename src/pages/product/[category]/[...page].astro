@@ -115,6 +115,9 @@ const pt = t.product || {
   productsInCategory: 'products in this category',
 };
 
+// First product cover for LCP preload
+const lcpImage = products[0]?.data?.cover || undefined;
+
 const allProducts = await getCollection('products');
 const langProducts = allProducts.filter((product) => {
   const normalizedId = product.id.replace(/\.md$/, '');
@@ -261,7 +264,7 @@ function isActiveCategory(href: string): boolean {
 }
 ---
 
-<Layout title={`${categoryTitle} - ${t.nav.products}`} lang={lang}>
+<Layout title={`${categoryTitle} - ${t.nav.products}`} lang={lang} lcpImage={lcpImage}>
   <Header lang={lang} />
   <Breadcrumb items={categoryBreadcrumbItems} lang={lang} />
 

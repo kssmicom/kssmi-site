@@ -133,9 +133,12 @@ function getCategoryCount(href: string): number {
 
 // Check if there are more pages
 const hasMore = allProducts.length > 12;
+
+// First product cover for LCP preload
+const lcpImage = products[0]?.data?.cover || undefined;
 ---
 
-<Layout title={t.nav.products} lang={lang}>
+<Layout title={t.nav.products} lang={lang} lcpImage={lcpImage}>
   <Header lang={lang} />
 
   <main class="w-full min-h-screen py-6 lg:py-8 bg-stone-50">

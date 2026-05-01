@@ -39,6 +39,9 @@ const sortedProducts = langProducts.sort((a, b) => {
 // Show first 12 products on index page
 const products = sortedProducts.slice(0, 12);
 
+// Extract first product cover for LCP preload
+const lcpImage = products[0]?.data?.cover || undefined;
+
 const t = translations.en;
 const pt = t.product || {
   viewAllCollections: "View All Collections",
@@ -125,7 +128,7 @@ function getCategoryCount(href: string): number {
 
 ---
 
-<Layout title={t.nav.products} lang={lang}>
+<Layout title={t.nav.products} lang={lang} lcpImage={lcpImage}>
   <Header lang={lang} />
 
   <main class="w-full min-h-screen py-6 lg:py-8 bg-stone-50">

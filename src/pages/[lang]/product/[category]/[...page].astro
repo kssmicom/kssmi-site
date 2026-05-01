@@ -117,6 +117,9 @@ const t = translations[lang as keyof typeof translations] || translations.en;
 const currentPath = `${lang}/`;
 const isRTL = lang === 'ar';
 
+// First product cover for LCP preload
+const lcpImage = (products[0] as any)?.data?.cover || undefined;
+
 // Format category name for display (fallback)
 let categoryTitle = categorySlug
   .split('-')
@@ -285,7 +288,7 @@ const categoryBreadcrumbItems = (() => {
 })();
 ---
 
-<Layout title={`${categoryTitle} - ${t.nav.products}`} lang={lang}>
+<Layout title={`${categoryTitle} - ${t.nav.products}`} lang={lang} lcpImage={lcpImage}>
   <Header lang={lang} />
   <Breadcrumb items={categoryBreadcrumbItems} lang={lang} />
 

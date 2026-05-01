@@ -9,6 +9,7 @@ interface Props {
   description?: string;
   keywords?: string;
   image?: string;
+  lcpImage?: string;  // URL of the LCP image to preload (product cover on listing pages)
   lang?: string;
   canonical?: string;
   type?: 'website' | 'product' | 'article';
@@ -20,6 +21,7 @@ const {
   description: propDescription,
   keywords,
   image = "/media/global/logo.png",
+  lcpImage,
   lang = 'en',
   canonical,
   type = 'website',
@@ -102,6 +104,12 @@ const organizationSchema = {
     />
   ))}
   <link rel="alternate" hreflang="x-default" href={`https://kssmi.com/${currentPath}`} />
+
+  <!-- Preload LCP image: tells browser to fetch it immediately, before HTML is fully parsed -->
+  <!-- This is the single most impactful fix for Largest Contentful Paint on image-heavy pages -->
+  {lcpImage && (
+    <link rel="preload" as="image" href={lcpImage} fetchpriority="high" />
+  )}
 
   <!-- View Transitions for SPA-like speed -->
   <ClientRouter />
