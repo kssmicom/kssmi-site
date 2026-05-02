@@ -23,7 +23,14 @@
   }
 
   function nowIso() {
-    return new Date().toISOString().slice(0, 19).replace('T', ' ');
+    var d = new Date();
+    var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+    return d.getFullYear() + '-' +
+      pad(d.getMonth() + 1) + '-' +
+      pad(d.getDate()) + ' ' +
+      pad(d.getHours()) + ':' +
+      pad(d.getMinutes()) + ':' +
+      pad(d.getSeconds());
   }
 
   function secondsBetween(start, end) {
