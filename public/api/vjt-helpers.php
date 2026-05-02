@@ -119,16 +119,24 @@ function vjt_db_setup($db) {
 function vjt_db() {
     static $db = null;
     if ($db === null) {
-        if (!is_dir(VJT_DB_DIR)) {
-            mkdir(VJT_DB_DIR, 0755, true);
+        try {
+            if (!is_dir(VJT_DB_DIR)) {
+                if (!@mkdir(VJT_DB_DIR, 0755, true)) {
+                    error_log('VJT: Cannot create directory: ' . VJT_DB_DIR . ' (permission denied)');
+                    return null;
+                }
+            }
+            $needsSetup = !file_exists(VJT_DB_PATH);
+            $db = new PDO('sqlite:' . VJT_DB_PATH);
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            if ($needsSetup) {
+                vjt_db_setup($db);
+            }
+            $db->exec('PRAGMA journal_mode=WAL');
+        } catch (Exception $e) {
+            error_log('VJT DB error: ' . $e->getMessage());
+            $db = null;
         }
-        $needsSetup = !file_exists(VJT_DB_PATH);
-        $db = new PDO('sqlite:' . VJT_DB_PATH);
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        if ($needsSetup) {
-            vjt_db_setup($db);
-        }
-        $db->exec('PRAGMA journal_mode=WAL');
     }
     return $db;
 }
