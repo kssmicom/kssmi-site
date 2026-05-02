@@ -4,7 +4,8 @@
  * JSON flat-file storage (no database required).
  */
 
-define('VJT_DATA_DIR', dirname(__DIR__, 2) . '/vjt');
+// __DIR__ = /server/public_html/api  →  dirname() = /server/public_html  →  vjt/ sits inside the web root
+define('VJT_DATA_DIR', dirname(__DIR__) . '/vjt');
 
 function vjt_data_init() {
     if (!is_dir(VJT_DATA_DIR)) {

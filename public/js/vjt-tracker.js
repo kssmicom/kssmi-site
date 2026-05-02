@@ -1,9 +1,5 @@
 (function () {
-  if (!window.VJTTracker || !window.VJTTracker.enabled) {
-    return;
-  }
-
-  var cfg = window.VJTTracker;
+  var cfg = window.VJTTracker || { page: {}, routes: {} };
   var VISITOR_KEY = 'vjt_visitor_id';
   var SESSION_KEY = 'vjt_session_meta';
   var PAGE_KEY    = 'vjt_current_pageview';
@@ -507,32 +503,59 @@
 
   // ── Bootstrap ──────────────────────────────────────────────────────────────
 
-  var deviceInfo = getDeviceInfo();
-  var visitorId  = getVisitorId();
-  var session    = getSession(deviceInfo);
-  var pageview   = currentPageview(visitorId, session);
+  function initVJT() {
+    cfg = window.VJTTracker || cfg;
+    if (!cfg || !cfg.enabled) return;
 
-  patchForms(visitorId, session);
-  bindSubmissionAttempts(visitorId);
-  bindOutboundLinks(visitorId);
+    var deviceInfo = getDeviceInfo();
+    var visitorId  = getVisitorId();
+    var session    = getSession(deviceInfo);
 
-  session = getSession(deviceInfo);
-  startTracking(pageview, session);
-
-  new MutationObserver(function () {
-    patchForms(visitorId, getSession());
-  }).observe(document.documentElement, { childList: true, subtree: true });
-
-  window.addEventListener('pagehide', function () { flushPageview('pagehide'); });
-
-  document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState === 'hidden') {
-      flushPageview('visibilitychange');
-    } else {
-      flushed = false;
+    // If tracker is already bound (this is an Astro SPA navigation), flush previous view
+    if (window.__vjtBound) {
+      flushPageview('spa-navigate');
     }
-  });
 
-  window.addEventListener('beforeunload', function () { flushPageview('beforeunload'); });
+    var pageview   = currentPageview(visitorId, session);
+
+    patchForms(visitorId, session);
+
+    if (!window.__vjtBound) {
+      bindSubmissionAttempts(visitorId);
+      bindOutboundLinks(visitorId);
+
+      new MutationObserver(function () {
+        patchForms(visitorId, getSession());
+      }).observe(document.documentElement, { childList: true, subtree: true });
+
+      window.addEventListener('pagehide', function () { flushPageview('pagehide'); });
+
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') {
+          flushPageview('visibilitychange');
+        } else {
+          flushed = false;
+        }
+      });
+
+      window.addEventListener('beforeunload', function () { flushPageview('beforeunload'); });
+      window.__vjtBound = true;
+    }
+
+    session = getSession(deviceInfo);
+    startTracking(pageview, session);
+  }
+
+  // Hook into Astro's View Transitions
+  document.addEventListener('astro:page-load', initVJT);
+  
+  // Fallback for first load / non-Astro pages
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    if (!window.__vjtBound) setTimeout(initVJT, 0);
+  } else {
+    document.addEventListener('DOMContentLoaded', function() {
+      if (!window.__vjtBound) initVJT();
+    });
+  }
 
 })();

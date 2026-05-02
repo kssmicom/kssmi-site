@@ -14,6 +14,9 @@ RewriteRule ^ip-debug\.log$ - [F,L]
 RewriteRule ^ip-debug\.php$ - [F,L]
 RewriteRule ^php-status\.php$ - [F,L]
 
+# ─── Block VJT data directory (contains raw visitor JSON files) ──────────────
+RewriteRule ^vjt(/.*)?$ - [F,L]
+
 # ─── PHP API endpoints (pass through as-is) ────────────────────────────────
 RewriteRule ^send-mail\.php$ - [L]
 RewriteRule ^email-logs\.php$ - [L]
@@ -92,8 +95,14 @@ RewriteRule ^ /404.html [L]
 # NOTE: FilesMatch in Apache/LiteSpeed matches the FILENAME only, not the path.
 <IfModule mod_headers.c>
   # Astro hashed JS bundles — immutable (filename contains content hash)
-  <FilesMatch "\.(js)$">
+  # Exception: vjt-tracker.js has no hash, must NOT be immutable
+  <FilesMatch "^(?!vjt-tracker).*\.(js)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # VJT tracker — short cache so fixes deploy quickly
+  <FilesMatch "^vjt-tracker\.js$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
   </FilesMatch>
 
   # CSS bundles — immutable
