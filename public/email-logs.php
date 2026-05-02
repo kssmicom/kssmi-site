@@ -12,6 +12,8 @@
 // Start session first
 session_start();
 
+header('X-Robots-Tag: noindex, nofollow');
+
 // Load private credentials (file lives outside public_html)
 $_privateConfigPath = dirname(__DIR__) . '/private_config.php';
 if (file_exists($_privateConfigPath)) {

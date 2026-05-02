@@ -1,5 +1,12 @@
 User-agent: *
 Allow: /
 
+# Private admin pages — no indexing
+Disallow: /visitor-journey.php
+Disallow: /email-logs.php
+Disallow: /php-status.php
+Disallow: /send-mail.php
+Disallow: /api/
+
 # Sitemaps
 Sitemap: https://kssmi.com/sitemap.xml

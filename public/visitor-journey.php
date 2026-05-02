@@ -6,6 +6,8 @@
 
 session_start();
 
+header('X-Robots-Tag: noindex, nofollow');
+
 require_once __DIR__ . '/api/vjt-helpers.php';
 
 // Password config (shared with email-logs.php)

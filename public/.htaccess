@@ -14,8 +14,8 @@ RewriteRule ^ip-debug\.log$ - [F,L]
 RewriteRule ^ip-debug\.php$ - [F,L]
 RewriteRule ^php-status\.php$ - [F,L]
 
-# ─── Block VJT data directory (contains raw visitor JSON files) ──────────────
-RewriteRule ^vjt(/.*)?$ - [F,L]
+# ─── Block VJT data directory (contains raw visitor JSON files with IPs, emails) ──
+RewriteRule ^api/vjt_data(/.*)?$ - [F,L]
 
 # ─── PHP API endpoints (pass through as-is) ────────────────────────────────
 RewriteRule ^send-mail\.php$ - [L]
