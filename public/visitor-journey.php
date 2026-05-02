@@ -52,116 +52,51 @@ if (!in_array($tab, $validTabs)) $tab = 'overview';
 
 // ── Data helpers ────────────────────────────────────────────────────────────
 
-function getDB() {
-    return vjt_db();
-}
+vjt_data_init();
 
 function getSettings() {
-    $db = getDB();
-    if (!$db) return ['session_timeout' => '30', 'retention_days' => '90', 'enable_geo' => '1'];
-    $stmt = $db->query("SELECT key, value FROM settings");
-    $settings = [];
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        $settings[$row['key']] = $row['value'];
-    }
-    return $settings;
+    return vjt_get_settings();
 }
 
 // ── Handle settings save ─────────────────────────────────────────────────────
 
 if ($isAuthenticated && isset($_POST['save_settings'])) {
-    $db = getDB();
-    if ($db) {
-        $stmt = $db->prepare("INSERT OR REPLACE INTO settings (key, value) VALUES (?, ?)");
-        $stmt->execute(['session_timeout', max(5, (int)($_POST['session_timeout'] ?? 30))]);
-        $stmt->execute(['retention_days', max(1, (int)($_POST['retention_days'] ?? 90))]);
-        $stmt->execute(['enable_geo', isset($_POST['enable_geo']) ? '1' : '0']);
-        $message = 'Settings saved.';
-    }
+    vjt_save_settings($_POST);
+    $message = 'Settings saved.';
 }
 
 // Handle data cleanup
 if ($isAuthenticated && isset($_POST['cleanup_data'])) {
-    $db = getDB();
-    if ($db) {
-        $settings = getSettings();
-        $days = max(1, (int)($settings['retention_days'] ?? 90));
-        $threshold = date('Y-m-d H:i:s', time() - ($days * 86400));
-        $db->exec("DELETE FROM pageviews WHERE visited_at < '{$threshold}'");
-        $db->exec("DELETE FROM submissions WHERE submitted_at < '{$threshold}'");
-        $db->exec("DELETE FROM sessions WHERE last_seen_at < '{$threshold}'");
-        $db->exec("DELETE FROM visitors WHERE last_seen_at < '{$threshold}'");
-        $message = 'Old data cleaned up (retention: ' . $days . ' days).';
-    }
+    $settings = getSettings();
+    $days = max(1, (int)($settings['retention_days'] ?? 90));
+    vjt_cleanup_old_data($days);
+    $message = 'Old data cleaned up (retention: ' . $days . ' days).';
 }
 
 // Handle CSV export
 if ($isAuthenticated && isset($_GET['export_csv'])) {
-    $db = getDB();
-    if ($db) {
-        header('Content-Type: text/csv; charset=utf-8');
-        header('Content-Disposition: attachment; filename=vjt-submissions-' . date('Y-m-d') . '.csv');
-        $output = fopen('php://output', 'w');
-        fputcsv($output, ['ID', 'Time', 'Visitor ID', 'Form', 'Page', 'Status', 'IP', 'Country', 'City']);
-        $stmt = $db->query("SELECT * FROM submissions ORDER BY submitted_at DESC");
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            fputcsv($output, [
-                $row['id'], $row['submitted_at'], $row['visitor_id'],
-                $row['form_plugin'] . ': ' . $row['form_name'], $row['submit_page'],
-                $row['status'], $row['ip'], $row['country'], $row['city']
-            ]);
-        }
-        fclose($output);
-        exit;
-    }
+    vjt_export_submissions_csv_start([
+        'status' => $_GET['status'] ?? '',
+        'plugin' => $_GET['plugin'] ?? '',
+        'date_from' => $_GET['date_from'] ?? '',
+        'date_to' => $_GET['date_to'] ?? '',
+        'page' => 1,
+        'per_page' => 10000,
+    ]);
+    exit;
 }
 
 // ── Fetch data for tabs ──────────────────────────────────────────────────────
 
-$db = getDB();
 $overview = null;
 $submissions = [];
 $visitors = [];
 $journeyData = null;
-$settings = $db ? getSettings() : ['session_timeout' => '30', 'retention_days' => '90', 'enable_geo' => '1'];
+$settings = getSettings();
 
-if ($db && $tab === 'overview') {
+if ($tab === 'overview') {
     $since = date('Y-m-d H:i:s', time() - (30 * 86400));
-
-    $totalVisitors = (int)$db->query("SELECT COUNT(*) FROM visitors WHERE last_seen_at >= '{$since}'")->fetchColumn();
-    $totalSessions = (int)$db->query("SELECT COUNT(*) FROM sessions WHERE started_at >= '{$since}'")->fetchColumn();
-    $totalSubmissions = (int)$db->query("SELECT COUNT(*) FROM submissions WHERE submitted_at >= '{$since}'")->fetchColumn();
-    $successSubmissions = (int)$db->query("SELECT COUNT(*) FROM submissions WHERE submitted_at >= '{$since}' AND status = 'success'")->fetchColumn();
-    $avgDuration = (float)$db->query("SELECT AVG(duration_seconds) FROM pageviews WHERE visited_at >= '{$since}' AND duration_seconds > 0")->fetchColumn();
-
-    // Submission trend (14 days)
-    $trend = $db->query("
-        SELECT DATE(submitted_at) AS day, COUNT(*) AS cnt
-        FROM submissions WHERE submitted_at >= datetime('now', '-14 days')
-        GROUP BY DATE(submitted_at) ORDER BY day ASC
-    ")->fetchAll(PDO::FETCH_ASSOC);
-
-    // Top referrers
-    $referrers = $db->query("
-        SELECT referrer, COUNT(*) AS cnt FROM sessions
-        WHERE started_at >= '{$since}' AND referrer != '' AND referrer != 'direct'
-        GROUP BY referrer ORDER BY cnt DESC LIMIT 8
-    ")->fetchAll(PDO::FETCH_ASSOC);
-
-    // Device breakdown
-    $devices = $db->query("
-        SELECT device_type, COUNT(*) AS cnt FROM visitors
-        WHERE last_seen_at >= '{$since}' GROUP BY device_type ORDER BY cnt DESC
-    ")->fetchAll(PDO::FETCH_ASSOC);
-
-    // Source breakdown
-    $dbSessions = $db->query("SELECT referrer, utm_medium, utm_source FROM sessions WHERE started_at >= '{$since}'")->fetchAll(PDO::FETCH_ASSOC);
-    $sourceCounts = ['search' => 0, 'social' => 0, 'direct' => 0, 'ads' => 0, 'other' => 0];
-    foreach ($dbSessions as $s) {
-        $sourceCounts[vjt_classify_source($s)]++;
-    }
-
-    $overview = compact('totalVisitors', 'totalSessions', 'totalSubmissions', 'successSubmissions', 'avgDuration', 'trend', 'referrers', 'devices', 'sourceCounts');
+    $overview = vjt_get_overview($since);
 }
 
 // ── Submissions list ─────────────────────────────────────────────────────────
@@ -174,25 +109,18 @@ $subDateFrom = $_GET['date_from'] ?? '';
 $subDateTo   = $_GET['date_to'] ?? '';
 $subTotal    = 0;
 
-if ($db && $tab === 'submissions') {
-    $where = [];
-    $params = [];
-    if ($subStatus) { $where[] = "status = ?"; $params[] = $subStatus; }
-    if ($subPlugin) { $where[] = "form_plugin = ?"; $params[] = $subPlugin; }
-    if ($subDateFrom) { $where[] = "submitted_at >= ?"; $params[] = $subDateFrom . ' 00:00:00'; }
-    if ($subDateTo) { $where[] = "submitted_at <= ?"; $params[] = $subDateTo . ' 23:59:59'; }
-    $whereClause = empty($where) ? '' : 'WHERE ' . implode(' AND ', $where);
+if ($tab === 'submissions') {
+    $result = vjt_get_submissions_list([
+        'status' => $subStatus,
+        'plugin' => $subPlugin,
+        'date_from' => $subDateFrom,
+        'date_to' => $subDateTo,
+        'page' => $subPage,
+        'per_page' => $subPerPage,
+    ]);
+    $submissions = $result['items'];
+    $subTotal = $result['total'];
 
-    $stmt = $db->prepare("SELECT COUNT(*) FROM submissions {$whereClause}");
-    $stmt->execute($params);
-    $subTotal = (int)$stmt->fetchColumn();
-
-    $offset = ($subPage - 1) * $subPerPage;
-    $stmt = $db->prepare("SELECT * FROM submissions {$whereClause} ORDER BY submitted_at DESC LIMIT ? OFFSET ?");
-    $stmt->execute(array_merge($params, [$subPerPage, $offset]));
-    $submissions = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    // Mark "attempt" submissions that are older than 30 min as "abandoned" for display
     foreach ($submissions as &$sub) {
         if ($sub['status'] === 'attempt' && strtotime($sub['submitted_at']) < time() - 1800) {
             $sub['display_status'] = 'abandoned';
@@ -212,79 +140,19 @@ $visDevice  = $_GET['device'] ?? '';
 $visSource  = $_GET['source'] ?? '';
 $visTotal   = 0;
 
-if ($db && $tab === 'visitors') {
-    $where = [];
-    $params = [];
-    $joins = '';
+if ($tab === 'visitors') {
+    $result = vjt_get_visitors_list([
+        'search' => $visSearch,
+        'device' => $visDevice,
+        'source' => $visSource,
+        'date_from' => $_GET['date_from'] ?? '',
+        'date_to' => $_GET['date_to'] ?? '',
+        'page' => $visPage,
+        'per_page' => $visPerPage,
+    ]);
+    $visitors = $result['items'];
+    $visTotal = $result['total'];
 
-    if ($visSearch) {
-        $where[] = "(v.visitor_id LIKE ? OR v.first_ip LIKE ? OR v.country LIKE ? OR v.browser LIKE ?)";
-        $s = '%' . $visSearch . '%';
-        $params = array_merge($params, [$s, $s, $s, $s]);
-    }
-    if ($visDevice) { $where[] = "v.device_type = ?"; $params[] = $visDevice; }
-
-    // Source filter needs session join
-    if ($visSource) {
-        $adsMediums = "('cpc','paid','ppc','ads')";
-        $searchEngines = ['google.', 'bing.', 'yahoo.', 'baidu.', 'duckduckgo.', 'yandex.', 'ask.', 'aol.', 'chatgpt.com', 'perplexity.ai', 'claude.ai'];
-        $socialPlatforms = ['facebook.', 'instagram.', 'twitter.', 'x.com', 'linkedin.', 'youtube.', 'tiktok.', 'pinterest.', 'reddit.', 'weibo.', 't.co', 'fb.me', 'fb.com'];
-
-        $joins = "LEFT JOIN (SELECT s1.visitor_id, s1.referrer, s1.utm_medium, s1.utm_source, MAX(s1.started_at) as max_started FROM sessions s1 GROUP BY s1.visitor_id) latest ON v.visitor_id = latest.visitor_id";
-
-        switch ($visSource) {
-            case 'ads':
-                $where[] = "latest.utm_medium IN " . $adsMediums;
-                break;
-            case 'search':
-                $searchLike = array_map(function($se) { return "latest.referrer LIKE '%{$se}%'"; }, $searchEngines);
-                $where[] = "(" . implode(' OR ', $searchLike) . ") AND (latest.utm_medium NOT IN " . $adsMediums . " OR latest.utm_medium IS NULL)";
-                break;
-            case 'social':
-                $socialLike = array_map(function($sp) { return "latest.referrer LIKE '%{$sp}%'"; }, $socialPlatforms);
-                $where[] = "(" . implode(' OR ', $socialLike) . ") AND (latest.utm_medium NOT IN " . $adsMediums . " OR latest.utm_medium IS NULL)";
-                break;
-            case 'direct':
-                $where[] = "(latest.referrer IS NULL OR latest.referrer = '' OR latest.referrer = 'direct') AND (latest.utm_medium NOT IN " . $adsMediums . " OR latest.utm_medium IS NULL)";
-                break;
-        }
-    }
-
-    $whereClause = empty($where) ? '' : 'WHERE ' . implode(' AND ', $where);
-
-    $countSql = "SELECT COUNT(*) FROM visitors v {$joins} {$whereClause}";
-    $stmt = $db->prepare($countSql);
-    $stmt->execute($params);
-    $visTotal = (int)$stmt->fetchColumn();
-
-    $offset = ($visPage - 1) * $visPerPage;
-    $sql = "SELECT v.*,
-        (SELECT COUNT(*) FROM sessions s WHERE s.visitor_id = v.visitor_id) AS session_count,
-        (SELECT COUNT(*) FROM submissions su WHERE su.visitor_id = v.visitor_id) AS submission_count
-        FROM visitors v {$joins} {$whereClause}
-        ORDER BY v.last_seen_at DESC LIMIT ? OFFSET ?";
-    $stmt = $db->prepare($sql);
-    $stmt->execute(array_merge($params, [$visPerPage, $offset]));
-    $visitors = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    // Enrich with latest session source
-    foreach ($visitors as &$v) {
-        $stmt = $db->prepare("SELECT referrer, utm_medium, utm_source, utm_campaign FROM sessions WHERE visitor_id = ? ORDER BY started_at DESC LIMIT 1");
-        $stmt->execute([$v['visitor_id']]);
-        $lastSession = $stmt->fetch(PDO::FETCH_ASSOC);
-        if ($lastSession) {
-            $v['source'] = vjt_classify_source($lastSession);
-            $v['last_referrer'] = $lastSession['referrer'];
-            $v['utm_campaign'] = $lastSession['utm_campaign'];
-        } else {
-            $v['source'] = 'direct';
-            $v['last_referrer'] = '';
-            $v['utm_campaign'] = '';
-        }
-    }
-    unset($v);
-
-    // Visitor ID display: strip vjtv_ prefix
     foreach ($visitors as &$v) {
         $v['short_id'] = str_replace('vjtv_', '', $v['visitor_id']);
     }
@@ -293,37 +161,8 @@ if ($db && $tab === 'visitors') {
 
 // ── Journey detail ───────────────────────────────────────────────────────────
 
-if ($db && $tab === 'journey' && !empty($_GET['visitor_id'])) {
-    $journeyVisitorId = $_GET['visitor_id'];
-
-    // Get visitor info
-    $stmt = $db->prepare("SELECT * FROM visitors WHERE visitor_id = ?");
-    $stmt->execute([$journeyVisitorId]);
-    $journeyVisitor = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if ($journeyVisitor) {
-        // Get all sessions
-        $stmt = $db->prepare("SELECT * FROM sessions WHERE visitor_id = ? ORDER BY started_at DESC");
-        $stmt->execute([$journeyVisitorId]);
-        $journeySessions = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        // Get all pageviews across all sessions
-        $stmt = $db->prepare("SELECT * FROM pageviews WHERE visitor_id = ? ORDER BY visited_at ASC");
-        $stmt->execute([$journeyVisitorId]);
-        $journeyPageviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        // Get all submissions
-        $stmt = $db->prepare("SELECT * FROM submissions WHERE visitor_id = ? ORDER BY submitted_at DESC");
-        $stmt->execute([$journeyVisitorId]);
-        $journeySubmissions = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        $journeyData = [
-            'visitor' => $journeyVisitor,
-            'sessions' => $journeySessions,
-            'pageviews' => $journeyPageviews,
-            'submissions' => $journeySubmissions
-        ];
-    }
+if ($tab === 'journey' && !empty($_GET['visitor_id'])) {
+    $journeyData = vjt_get_journey($_GET['visitor_id']);
 }
 
 // ── Country helpers ──────────────────────────────────────────────────────────
@@ -533,18 +372,6 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                 <p class="success"><?php echo htmlspecialchars($message); ?></p>
             <?php endif; ?>
 
-            <?php if (!$db): ?>
-                <div class="panel">
-                    <div class="panel-body">
-                        <div class="empty">
-                            <div class="empty-icon">🔧</div>
-                            <p style="font-size:16px;color:#5D4E37;">Database not initialized</p>
-                            <p style="margin-top:8px;">Run the setup script on the server:</p>
-                            <code style="background:#f5f5f5;padding:4px 8px;border-radius:4px;font-size:14px;">php public/vjt-db-setup.php</code>
-                        </div>
-                    </div>
-                </div>
-            <?php else: ?>
                 <!-- Tabs -->
                 <div class="tabs">
                     <a href="?tab=overview" class="tab <?php echo $tab === 'overview' ? 'active' : ''; ?>">Overview</a>
@@ -589,14 +416,14 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                         <div class="panel-body">
                             <div class="bar-chart">
                                 <?php
-                                $maxCnt = max(array_column($overview['trend'], 'cnt')) ?: 1;
-                                foreach ($overview['trend'] as $day):
-                                    $h = $maxCnt > 0 ? round(($day['cnt'] / $maxCnt) * 100) : 0;
-                                    $label = substr($day['day'] ?? '', 5); // MM-DD
+                                $maxCnt = max($overview['trend']) ?: 1;
+                                foreach ($overview['trend'] as $day => $cnt):
+                                    $h = $maxCnt > 0 ? round(($cnt / $maxCnt) * 100) : 0;
+                                    $label = substr($day, 5); // MM-DD
                                 ?>
                                     <div class="bar-col">
-                                        <div class="bar-value"><?php echo $day['cnt']; ?></div>
-                                        <div class="bar" style="height:<?php echo max(2, $h); ?>px;" title="<?php echo $day['day']; ?>: <?php echo $day['cnt']; ?>"></div>
+                                        <div class="bar-value"><?php echo $cnt; ?></div>
+                                        <div class="bar" style="height:<?php echo max(2, $h); ?>px;" title="<?php echo $day; ?>: <?php echo $cnt; ?>"></div>
                                         <div class="bar-label"><?php echo htmlspecialchars($label); ?></div>
                                     </div>
                                 <?php endforeach; ?>
@@ -610,21 +437,20 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                         <div class="panel">
                             <div class="panel-header">Top Referrers (30d)</div>
                             <div class="panel-body" style="padding:0;">
-                                <?php if (empty($overview['referrers'])): ?>
+                                <?php if (empty($overview['topReferrers'])): ?>
                                     <div class="empty" style="padding:30px;"><p>No referrer data yet</p></div>
                                 <?php else: ?>
                                     <table>
                                         <thead><tr><th>Source</th><th style="text-align:right;">Sessions</th></tr></thead>
                                         <tbody>
-                                            <?php foreach ($overview['referrers'] as $ref):
-                                                $label = $ref['referrer'];
+                                            <?php foreach ($overview['topReferrers'] as $label => $cnt):
                                                 $host = parse_url($label, PHP_URL_HOST);
                                                 $display = $host ?: ($label ?: 'Direct');
                                                 $display = preg_replace('/^www\./', '', $display);
                                             ?>
                                                 <tr>
                                                     <td style="max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><?php echo htmlspecialchars($display); ?></td>
-                                                    <td style="text-align:right;"><?php echo number_format($ref['cnt']); ?></td>
+                                                    <td style="text-align:right;"><?php echo number_format($cnt); ?></td>
                                                 </tr>
                                             <?php endforeach; ?>
                                         </tbody>
@@ -657,16 +483,16 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                             <div class="panel">
                                 <div class="panel-header">Device Breakdown (30d)</div>
                                 <div class="panel-body" style="padding:0;">
-                                    <?php if (empty($overview['devices'])): ?>
+                                    <?php if (empty($overview['deviceCounts'])): ?>
                                         <div class="empty" style="padding:30px;"><p>No device data yet</p></div>
                                     <?php else: ?>
                                         <table>
                                             <thead><tr><th>Device</th><th style="text-align:right;">Visitors</th></tr></thead>
                                             <tbody>
-                                                <?php foreach ($overview['devices'] as $dev): ?>
+                                                <?php foreach ($overview['deviceCounts'] as $deviceType => $cnt): ?>
                                                     <tr>
-                                                        <td><?php echo htmlspecialchars(ucfirst($dev['device_type'])); ?></td>
-                                                        <td style="text-align:right;"><?php echo number_format($dev['cnt']); ?></td>
+                                                        <td><?php echo htmlspecialchars(ucfirst($deviceType)); ?></td>
+                                                        <td style="text-align:right;"><?php echo number_format($cnt); ?></td>
                                                     </tr>
                                                 <?php endforeach; ?>
                                             </tbody>
@@ -824,8 +650,8 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                                                     <td><?php echo $v['country'] ? htmlspecialchars(getCountryName($v['country'])) : '-'; ?></td>
                                                     <td><?php echo htmlspecialchars(ucfirst($v['device_type'] ?: '-')); ?></td>
                                                     <td><?php echo htmlspecialchars($v['browser'] ?: '-'); ?></td>
-                                                    <td style="text-align:center;"><?php echo $v['session_count']; ?></td>
-                                                    <td style="text-align:center;"><?php echo $v['submission_count']; ?></td>
+                                                    <td style="text-align:center;"><?php echo $v['sessions']; ?></td>
+                                                    <td style="text-align:center;"><?php echo $v['submissions']; ?></td>
                                                     <td><?php echo sourceBadge($v['source']); ?></td>
                                                     <td><a href="?tab=journey&visitor_id=<?php echo urlencode($v['visitor_id']); ?>" class="btn btn-primary btn-small">Journey</a></td>
                                                 </tr>
@@ -991,7 +817,6 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                         </div>
                     </div>
                 <?php endif; ?>
-            <?php endif; ?>
         <?php endif; ?>
     </div>
 </body>

@@ -147,50 +147,45 @@ require_once __DIR__ . '/api/vjt-helpers.php';
 
 function recordVJTSubmission($config, $data, $status, $visitorIP, $visitorCountry) {
     try {
-        $db = vjt_db();
-        if (!$db) return;
-
         $visitorId = trim($data['vjt_visitor_id'] ?? '');
         $sessionId = trim($data['vjt_session_id'] ?? '');
+        if (empty($visitorId) || empty($sessionId)) return;
 
-        if (empty($visitorId) || empty($sessionId)) return; // No tracking data available
-
-        $now = date('Y-m-d H:i:s');
-        $submitPage = 'https://kssmi.com' . ($data['product_url'] ?? '');
         $ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
+        $submitPage = 'https://kssmi.com' . ($data['product_url'] ?? '');
 
-        // Upsert visitor
-        $stmt = $db->prepare("SELECT id FROM visitors WHERE visitor_id = ?");
-        $stmt->execute([$visitorId]);
-        if ($stmt->fetch()) {
-            $stmt = $db->prepare("UPDATE visitors SET last_seen_at = ?, updated_at = datetime('now') WHERE visitor_id = ?");
-            $stmt->execute([$now, $visitorId]);
-        } else {
-            $stmt = $db->prepare("INSERT INTO visitors (visitor_id, first_ip, country, city, user_agent, browser, device_type, screen_resolution, timezone, language, first_seen_at, last_seen_at)
-                VALUES (?, ?, ?, '', ?, 'Unknown', 'Unknown', '', '', '', ?, ?)");
-            $stmt->execute([$visitorId, $visitorIP, $visitorCountry, $ua, $now, $now]);
-        }
+        vjt_data_init();
 
-        // Upsert session (minimal)
-        $stmt = $db->prepare("SELECT id FROM sessions WHERE session_id = ?");
-        $stmt->execute([$sessionId]);
-        if ($stmt->fetch()) {
-            $stmt = $db->prepare("UPDATE sessions SET last_seen_at = ?, updated_at = datetime('now') WHERE session_id = ?");
-            $stmt->execute([$now, $sessionId]);
-        } else {
-            $stmt = $db->prepare("INSERT INTO sessions (session_id, visitor_id, ip, country, city, referrer, landing_url, landing_title, started_at, last_seen_at)
-                VALUES (?, ?, ?, ?, '', ?, ?, '', ?, ?)");
-            $stmt->execute([$sessionId, $visitorId, $visitorIP, $visitorCountry, $data['vjt_referrer'] ?? '', $submitPage, $now, $now]);
-        }
+        vjt_upsert_visitor([
+            'visitor_id'  => $visitorId,
+            'first_ip'    => $visitorIP,
+            'country'     => $visitorCountry,
+            'user_agent'  => $ua,
+            'browser'     => vjt_detect_browser($ua),
+            'device_type' => vjt_detect_device($ua),
+        ]);
 
-        // Store submission
-        $formPlugin = 'kssmi-inquiry';
-        $formName = $data['product_name'] ?? 'Inquiry';
+        vjt_upsert_session([
+            'session_id'   => $sessionId,
+            'visitor_id'   => $visitorId,
+            'ip'           => $visitorIP,
+            'country'      => $visitorCountry,
+            'referrer'     => $data['vjt_referrer'] ?? '',
+            'landing_url'  => $submitPage,
+            'landing_title' => 'KSSMI Inquiry',
+        ]);
 
-        $stmt = $db->prepare("INSERT INTO submissions (visitor_id, session_id, form_plugin, form_id, form_name, submit_page, submit_title, submitted_at, status, ip, country, city, region, calling_code)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '', '', '')");
-        $stmt->execute([$visitorId, $sessionId, $formPlugin, '', $formName, $submitPage, 'KSSMI Inquiry', $now, $status, $visitorIP, $visitorCountry]);
-
+        vjt_add_submission([
+            'visitor_id'   => $visitorId,
+            'session_id'   => $sessionId,
+            'form_plugin'  => 'kssmi-inquiry',
+            'form_name'    => $data['product_name'] ?? 'Inquiry',
+            'submit_page'  => $submitPage,
+            'submit_title' => 'KSSMI Inquiry',
+            'status'       => $status,
+            'ip'           => $visitorIP,
+            'country'      => $visitorCountry,
+        ]);
     } catch (Exception $e) {
         error_log('VJT submission record error: ' . $e->getMessage());
     }
