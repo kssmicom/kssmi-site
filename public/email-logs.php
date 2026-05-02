@@ -274,6 +274,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password']) && !isset
     $submittedPassword = trim($_POST['password']);
     if ($submittedPassword === $PASSWORD) {
         $_SESSION['email_logs_auth'] = true;
+        setcookie('vjt_admin', '1', time() + 86400 * 7, '/', '', false, true);
         session_regenerate_id(true);
     } else {
         $error = 'Invalid password. Please try again.';
@@ -283,6 +284,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password']) && !isset
 // Handle logout
 if (isset($_GET['logout'])) {
     session_destroy();
+    setcookie('vjt_admin', '', time() - 3600, '/');
     header('Location: email-logs.php');
     exit;
 }
@@ -291,6 +293,7 @@ if (isset($_GET['logout'])) {
 $isAuthenticated = false;
 if (isset($_SESSION['email_logs_auth']) && $_SESSION['email_logs_auth'] === true) {
     $isAuthenticated = true;
+    setcookie('vjt_admin', '1', time() + 86400 * 7, '/', '', false, true);
 }
 
 // Handle password change (when logged in)

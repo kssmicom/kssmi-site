@@ -692,6 +692,14 @@ function vjt_cleanup_old_data($days) {
     }
 }
 
+function vjt_wipe_all_data() {
+    vjt_write_json('visitors.json', []);
+    vjt_write_json('sessions.json', []);
+    vjt_write_json('pageviews.json', []);
+    vjt_write_json('submissions.json', []);
+    vjt_write_json('geo_cache.json', []);
+}
+
 // ── Dashboard: Countries ────────────────────────────────────────────────────
 
 function vjt_get_countries() {

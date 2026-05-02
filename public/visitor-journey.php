@@ -30,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
     $submitted = trim($_POST['password']);
     if ($submitted === $PASSWORD) {
         $_SESSION['email_logs_auth'] = true;
+        setcookie('vjt_admin', '1', time() + 86400 * 7, '/', '', false, true);
         session_regenerate_id(true);
     } else {
         $error = 'Invalid password.';
@@ -39,11 +40,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
 // Handle logout
 if (isset($_GET['logout'])) {
     session_destroy();
+    setcookie('vjt_admin', '', time() - 3600, '/');
     header('Location: visitor-journey.php');
     exit;
 }
 
 $isAuthenticated = isset($_SESSION['email_logs_auth']) && $_SESSION['email_logs_auth'] === true;
+
+// Keep admin cookie alive so the tracker skips admin visits
+if ($isAuthenticated) {
+    setcookie('vjt_admin', '1', time() + 86400 * 7, '/', '', false, true);
+}
 
 // Determine active tab
 $tab = $_GET['tab'] ?? 'overview';
@@ -68,9 +75,14 @@ if ($isAuthenticated && isset($_POST['save_settings'])) {
 
 // Handle data cleanup
 if ($isAuthenticated && isset($_POST['cleanup_data'])) {
-    $days = max(1, (int)($_POST['cleanup_days'] ?? 90));
-    vjt_cleanup_old_data($days);
-    $message = 'Old data cleaned up (older than ' . $days . ' days).';
+    $days = max(0, (int)($_POST['cleanup_days'] ?? 90));
+    if ($days === 0) {
+        vjt_wipe_all_data();
+        $message = 'All tracking data has been deleted.';
+    } else {
+        vjt_cleanup_old_data($days);
+        $message = 'Old data cleaned up (older than ' . $days . ' days).';
+    }
 }
 
 // Handle CSV export
@@ -977,8 +989,8 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                                 Delete tracking data older than the specified number of days.
                             </p>
                             <form method="POST" onsubmit="return confirm('Delete old data? This cannot be undone.');" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-                                <input type="number" name="cleanup_days" value="<?php echo htmlspecialchars($settings['retention_days'] ?? '90'); ?>" min="1" max="3650" style="width:80px;padding:6px 10px;border:1px solid #ddd;border-radius:4px;font-size:13px;" required>
-                                <span style="color:#888;font-size:12px;">days</span>
+                                <input type="number" name="cleanup_days" value="<?php echo htmlspecialchars($settings['retention_days'] ?? '90'); ?>" min="0" max="3650" style="width:80px;padding:6px 10px;border:1px solid #ddd;border-radius:4px;font-size:13px;" required>
+                                <span style="color:#888;font-size:12px;">days (0 = delete all)</span>
                                 <button type="submit" name="cleanup_data" class="btn btn-danger">Clean Up Old Data</button>
                             </form>
                         </div>
