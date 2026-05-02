@@ -66,9 +66,10 @@ echo ========================================
 echo Starting servers...
 echo ========================================
 echo.
-echo Astro:     http://localhost:4324
-echo PHP API:   http://localhost:4325/send-mail.php
-echo Logs:      http://localhost:4325/email-logs.php
+echo Astro:       http://localhost:4324
+echo PHP API:     http://localhost:4325/send-mail.php
+echo Email Logs:  http://localhost:4325/email-logs.php
+echo VJT Dashboard: http://localhost:4325/visitor-journey.php
 echo.
 echo Press Ctrl+C to stop all servers
 echo ========================================

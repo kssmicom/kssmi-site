@@ -756,6 +756,7 @@ function resendEmail($log) {
                     <p class="subtitle">Track and manage all email inquiries from kssmi.com</p>
                 </div>
                 <div>
+                    <a href="/visitor-journey.php" class="btn btn-secondary">Visitor Journey</a>
                     <button class="btn btn-secondary" onclick="document.getElementById('passwordModal').classList.add('show')">Change Password</button>
                     <a href="?logout" class="btn btn-secondary">Logout</a>
                 </div>

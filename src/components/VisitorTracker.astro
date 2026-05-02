@@ -1,0 +1,48 @@
+---
+// VisitorTracker.astro - Injects the VJT tracking script on all pages
+// Include this in Layout.astro before </body>
+
+const isDev = import.meta.env.DEV;
+const phpBase = isDev ? 'http://localhost:4325' : '';
+const trackerScriptUrl = isDev
+  ? 'http://localhost:4325/js/vjt-tracker.js'
+  : '/js/vjt-tracker.js';
+---
+
+{isDev && (
+  <script is:inline>
+    window.VJTTracker = {
+      enabled: true,
+      page: {
+        url: document.querySelector('meta[property="og:url"]')?.content || window.location.href,
+        title: document.title || ''
+      },
+      routes: {
+        pageview: 'http://localhost:4325/api/track-pageview.php',
+        submission: 'http://localhost:4325/api/track-submission.php'
+      },
+      sessionTimeout: 30,
+      cookieExpires: 31536000
+    };
+  </script>
+)}
+
+{!isDev && (
+  <script is:inline>
+    window.VJTTracker = {
+      enabled: true,
+      page: {
+        url: document.querySelector('meta[property="og:url"]')?.content || window.location.href,
+        title: document.title || ''
+      },
+      routes: {
+        pageview: '/api/track-pageview.php',
+        submission: '/api/track-submission.php'
+      },
+      sessionTimeout: 30,
+      cookieExpires: 31536000
+    };
+  </script>
+)}
+
+<script src={trackerScriptUrl}></script>

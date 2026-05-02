@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 import { translations } from '../translations';
+import VisitorTracker from '../components/VisitorTracker.astro';
 
 // Props
 interface Props {
@@ -200,5 +201,6 @@ const organizationSchema = {
     }
   </style>
   <slot />
+  <VisitorTracker />
 </body>
 </html>

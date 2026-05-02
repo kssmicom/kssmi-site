@@ -40,6 +40,9 @@ jobs:
           cp public/send-mail.php dist/
           cp public/email-logs.php dist/
           cp public/php-status.php dist/
+          cp public/visitor-journey.php dist/
+          cp public/vjt-db-setup.php dist/
+          cp -r public/api dist/
           cp -r public/vendor dist/
 
       - name: Deploy to Hetzner Server
@@ -72,6 +75,14 @@ jobs:
 
             # Make PHP files executable
             find . -name "*.php" -exec chmod 755 {} \; 2>/dev/null || true
+
+            # Run VJT database setup (idempotent - skips if already exists)
+            php vjt-db-setup.php 2>/dev/null || true
+
+            # Ensure VJT database is writable by PHP
+            chmod 755 /home/kssmi.com/vjt 2>/dev/null || true
+            chmod 666 /home/kssmi.com/vjt/tracker.sqlite 2>/dev/null || true
+            chown -R kssmi:kssmi /home/kssmi.com/vjt 2>/dev/null || true
 
             # Create writable files if they don't exist
             touch email-logs.json 2>/dev/null || true

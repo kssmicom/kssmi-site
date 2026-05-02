@@ -84,6 +84,9 @@ $config = [
     // Email Logging
     'log_enabled' => true,
     'log_file' => dirname(__DIR__) . '/email-logs.json',
+
+    // VJT Database
+    'vjt_db' => dirname(__DIR__) . '/vjt/tracker.sqlite',
 ];
 
 // ============================================
@@ -139,6 +142,60 @@ function logEmail($config, $data, $status, $message = '', $error = '', $visitorI
 
     // Save logs
     file_put_contents($config['log_file'], json_encode($logs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+}
+
+function recordVJTSubmission($config, $data, $status, $visitorIP, $visitorCountry) {
+    $dbPath = $config['vjt_db'];
+    if (!file_exists($dbPath)) return;
+
+    try {
+        $db = new PDO('sqlite:' . $dbPath);
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $visitorId = trim($data['vjt_visitor_id'] ?? '');
+        $sessionId = trim($data['vjt_session_id'] ?? '');
+
+        if (empty($visitorId) || empty($sessionId)) return; // No tracking data available
+
+        $now = date('Y-m-d H:i:s');
+        $submitPage = 'https://kssmi.com' . ($data['product_url'] ?? '');
+        $ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
+
+        // Upsert visitor
+        $stmt = $db->prepare("SELECT id FROM visitors WHERE visitor_id = ?");
+        $stmt->execute([$visitorId]);
+        if ($stmt->fetch()) {
+            $stmt = $db->prepare("UPDATE visitors SET last_seen_at = ?, updated_at = datetime('now') WHERE visitor_id = ?");
+            $stmt->execute([$now, $visitorId]);
+        } else {
+            $stmt = $db->prepare("INSERT INTO visitors (visitor_id, first_ip, country, city, user_agent, browser, device_type, screen_resolution, timezone, language, first_seen_at, last_seen_at)
+                VALUES (?, ?, ?, '', ?, 'Unknown', 'Unknown', '', '', '', ?, ?)");
+            $stmt->execute([$visitorId, $visitorIP, $visitorCountry, $ua, $now, $now]);
+        }
+
+        // Upsert session (minimal)
+        $stmt = $db->prepare("SELECT id FROM sessions WHERE session_id = ?");
+        $stmt->execute([$sessionId]);
+        if ($stmt->fetch()) {
+            $stmt = $db->prepare("UPDATE sessions SET last_seen_at = ?, updated_at = datetime('now') WHERE session_id = ?");
+            $stmt->execute([$now, $sessionId]);
+        } else {
+            $stmt = $db->prepare("INSERT INTO sessions (session_id, visitor_id, ip, country, city, referrer, landing_url, landing_title, started_at, last_seen_at)
+                VALUES (?, ?, ?, ?, '', ?, ?, '', ?, ?)");
+            $stmt->execute([$sessionId, $visitorId, $visitorIP, $visitorCountry, $data['vjt_referrer'] ?? '', $submitPage, $now, $now]);
+        }
+
+        // Store submission
+        $formPlugin = 'kssmi-inquiry';
+        $formName = $data['product_name'] ?? 'Inquiry';
+
+        $stmt = $db->prepare("INSERT INTO submissions (visitor_id, session_id, form_plugin, form_id, form_name, submit_page, submit_title, submitted_at, status, ip, country, city, region, calling_code)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '', '', '')");
+        $stmt->execute([$visitorId, $sessionId, $formPlugin, '', $formName, $submitPage, 'KSSMI Inquiry', $now, $status, $visitorIP, $visitorCountry]);
+
+    } catch (Exception $e) {
+        error_log('VJT submission record error: ' . $e->getMessage());
+    }
 }
 
 function getRecentLogs($config, $limit = 50) {
@@ -719,6 +776,9 @@ try {
     // Log success
     logEmail($config, $formData, 'success', 'Email sent successfully', '', $visitorIP, $visitorCountry);
 
+    // Record to VJT database
+    recordVJTSubmission($config, $_POST, 'success', $visitorIP, $visitorCountry);
+
     // Determine redirect URL based on language
     $lang = $formData['language'] ?? 'en';
     $thankYouUrl = ($lang === 'en') ? '/thank-you/' : "/{$lang}/thank-you/";
@@ -734,6 +794,7 @@ try {
     // Log failure
     $errorMsg = $e->getMessage();
     logEmail($config, $formData, 'failed', 'PHPMailer error', $errorMsg, $visitorIP, $visitorCountry);
+    recordVJTSubmission($config, $_POST, 'error', $visitorIP, $visitorCountry);
     error_log("KSSMI Form Error (PHPMailer): " . $errorMsg);
 
     http_response_code(500);
@@ -746,6 +807,7 @@ try {
     // Log failure
     $errorMsg = $e->getMessage();
     logEmail($config, $formData, 'failed', 'General error', $errorMsg, $visitorIP, $visitorCountry);
+    recordVJTSubmission($config, $_POST, 'error', $visitorIP, $visitorCountry);
     error_log("KSSMI Form Error: " . $errorMsg);
 
     http_response_code(500);
