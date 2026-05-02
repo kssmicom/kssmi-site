@@ -10,8 +10,8 @@ export default defineConfig({
   site: 'https://kssmi.com',
   output: 'static',
   prefetch: {
-    prefetchAll: false,       // Don't auto-prefetch every link on the page
-    defaultStrategy: 'hover', // Only prefetch when user hovers (shows intent)
+    prefetchAll: false,        // Don't auto-prefetch every link on the page
+    defaultStrategy: 'viewport', // Prefetch as soon as the link is visible on screen
   },
   integrations: [
     tailwind({
