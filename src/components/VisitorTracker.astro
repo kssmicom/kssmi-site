@@ -14,7 +14,7 @@ const trackerScriptUrl = isDev
     window.VJTTracker = {
       enabled: true,
       page: {
-        url: document.querySelector('meta[property="og:url"]')?.content || window.location.href,
+        url: window.location.href,
         title: document.title || ''
       },
       routes: {
@@ -32,7 +32,7 @@ const trackerScriptUrl = isDev
     window.VJTTracker = {
       enabled: true,
       page: {
-        url: document.querySelector('meta[property="og:url"]')?.content || window.location.href,
+        url: window.location.href,
         title: document.title || ''
       },
       routes: {

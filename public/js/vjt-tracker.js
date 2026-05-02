@@ -507,6 +507,10 @@
     cfg = window.VJTTracker || cfg;
     if (!cfg || !cfg.enabled) return;
 
+    // Always use live URL/title for SPA navigations (Astro View Transitions)
+    cfg.page.url = window.location.href;
+    cfg.page.title = document.title || '';
+
     var deviceInfo = getDeviceInfo();
     var visitorId  = getVisitorId();
     var session    = getSession(deviceInfo);
