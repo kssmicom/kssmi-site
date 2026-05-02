@@ -129,6 +129,16 @@ function vjt_upsert_session($data) {
         if (!empty($data['city'])) $sessions[$sid]['city'] = $data['city'];
         if (!empty($data['region'])) $sessions[$sid]['region'] = $data['region'];
         if (!empty($data['calling_code'])) $sessions[$sid]['calling_code'] = $data['calling_code'];
+        // Late referrer capture: if session has no referrer but new data does, update it
+        if (empty($sessions[$sid]['referrer']) && !empty($data['referrer'])) {
+            $sessions[$sid]['referrer'] = $data['referrer'];
+        }
+        if (!empty($data['landing_url']) && empty($sessions[$sid]['landing_url'])) {
+            $sessions[$sid]['landing_url'] = $data['landing_url'];
+        }
+        if (!empty($data['landing_title']) && empty($sessions[$sid]['landing_title'])) {
+            $sessions[$sid]['landing_title'] = $data['landing_title'];
+        }
     } else {
         $sessions[$sid] = [
             'session_id'    => $sid,
@@ -439,16 +449,24 @@ function vjt_get_overview($since) {
         if (isset($trendYearly[$y])) $trendYearly[$y]++;
     }
 
-    // Top referrers
+    // Top referrers (include direct + external referrers)
+    $directCount = 0;
     $referrerCounts = [];
     foreach ($sessions as $s) {
-        if (($s['started_at'] ?? '') >= $since && !empty($s['referrer']) && $s['referrer'] !== 'direct') {
-            $r = $s['referrer'];
+        if (($s['started_at'] ?? '') < $since) continue;
+        $r = $s['referrer'] ?? '';
+        if (empty($r) || $r === 'direct') {
+            $directCount++;
+        } else {
             $referrerCounts[$r] = ($referrerCounts[$r] ?? 0) + 1;
         }
     }
     arsort($referrerCounts);
-    $topReferrers = array_slice($referrerCounts, 0, 8);
+    $topReferrers = array_slice($referrerCounts, 0, 7);
+    // Put Direct first if there are any
+    if ($directCount > 0) {
+        $topReferrers = array_merge(['Direct' => $directCount], $topReferrers);
+    }
 
     // Device breakdown
     $deviceCounts = ['desktop' => 0, 'mobile' => 0, 'tablet' => 0, 'Unknown' => 0];

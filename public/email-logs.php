@@ -618,10 +618,12 @@ function resendEmail($log) {
     <title>Email Logs - KSSMI</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; padding: 20px; }
-        .container { max-width: 1400px; margin: 0 auto; }
-        h1 { color: #5D4E37; margin-bottom: 10px; }
-        .subtitle { color: #666; margin-bottom: 20px; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; padding: 14px 20px; color: #333; }
+        .container { max-width: 1500px; margin: 0 auto; }
+        h1 { color: #5D4E37; }
+        .subtitle { color: #888; }
+
+        /* Login */
         .login-box { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); max-width: 400px; margin: 100px auto; }
         .login-box h2 { margin-bottom: 20px; color: #5D4E37; }
         .login-box input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 15px; font-size: 16px; }
@@ -629,43 +631,73 @@ function resendEmail($log) {
         .login-box button:hover { background: #5D4E37; }
         .login-box button.secondary { background: #666; margin-top: 10px; }
         .login-box button.secondary:hover { background: #444; }
-        .error { color: #e74c3c; margin-bottom: 15px; padding: 10px; background: #fdeaea; border-radius: 4px; }
-        .success { color: #27ae60; padding: 10px; background: #d4edda; border-radius: 4px; margin-bottom: 15px; }
         .forgot-link { text-align: center; margin-top: 15px; }
         .forgot-link a { color: #8B7355; text-decoration: none; font-size: 14px; }
         .forgot-link a:hover { text-decoration: underline; }
-        .stats { display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }
-        .stat-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); min-width: 150px; }
-        .stat-card h3 { font-size: 12px; text-transform: uppercase; color: #666; margin-bottom: 5px; }
-        .stat-card .value { font-size: 28px; font-weight: bold; color: #5D4E37; }
-        .stat-card.success { background: white; padding: 20px; margin-bottom: 0; }
+
+        /* Header */
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 8px; background: white; padding: 12px 16px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); border-left: 3px solid #8B7355; }
+        .header-left { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+        .header-left h1 { font-size: 16px; font-weight: 700; color: #5D4E37; white-space: nowrap; }
+        .header-left .subtitle { font-size: 13px; color: #888; }
+        .header-right { display: flex; gap: 6px; align-items: center; }
+
+        /* Buttons */
+        .btn { padding: 6px 14px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; font-size: 12px; display: inline-block; font-weight: 500; }
+        .btn-primary { background: #8B7355; color: white; }
+        .btn-primary:hover { background: #5D4E37; }
+        .btn-danger { background: #e74c3c; color: white; }
+        .btn-danger:hover { background: #c0392b; }
+        .btn-secondary { background: #666; color: white; }
+        .btn-secondary:hover { background: #444; }
+        .btn-success { background: #27ae60; color: white; }
+        .btn-success:hover { background: #219a52; }
+        .btn-small { padding: 4px 10px; font-size: 11px; }
+        .btn:hover { opacity: 0.9; }
+
+        /* Messages */
+        .error { color: #e74c3c; margin-bottom: 15px; padding: 10px; background: #fdeaea; border-radius: 4px; }
+        .success { color: #27ae60; padding: 10px; background: #d4edda; border-radius: 4px; margin-bottom: 15px; }
+
+        /* Stats */
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 14px; }
+        .stat-card { background: white; padding: 16px 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-top: 3px solid #8B7355; }
+        .stat-card h3 { font-size: 10px; text-transform: uppercase; color: #888; margin-bottom: 4px; letter-spacing: 0.8px; }
+        .stat-card .value { font-size: 26px; font-weight: bold; color: #5D4E37; }
+        .stat-card .sub { font-size: 12px; color: #888; margin-top: 4px; }
         .stat-card.success .value { color: #27ae60; }
         .stat-card.failed .value { color: #e74c3c; }
-        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px; }
-        .btn { padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; font-size: 14px; display: inline-block; }
-        .btn-primary { background: #8B7355; color: white; }
-        .btn-danger { background: #e74c3c; color: white; }
-        .btn-secondary { background: #666; color: white; }
-        .btn-success { background: #27ae60; color: white; }
-        .btn:hover { opacity: 0.9; }
-        .btn-small { padding: 5px 10px; font-size: 12px; }
+
+        /* Panels */
+        .panel { background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 14px; }
+        .panel-header { padding: 12px 16px; border-bottom: 1px solid #eee; font-weight: 600; color: #5D4E37; font-size: 13px; display: flex; justify-content: space-between; align-items: center; }
+        .panel-body { padding: 16px; }
+
+        /* Tables */
         .table-wrapper { overflow-x: auto; }
-        table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #eee; }
-        th { background: #f8f8f8; font-weight: 600; color: #5D4E37; font-size: 12px; text-transform: uppercase; white-space: nowrap; }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background: #f8f8f8; font-weight: 600; color: #5D4E37; font-size: 10px; text-transform: uppercase; white-space: nowrap; }
         tr:hover { background: #fafafa; }
-        .status { padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 500; }
+        .mono { font-family: monospace; font-size: 11px; }
+
+        /* Status badges */
+        .status { padding: 3px 8px; border-radius: 3px; font-size: 11px; font-weight: 500; }
         .status-success { background: #d4edda; color: #155724; }
         .status-failed { background: #f8d7da; color: #721c24; }
         .email-link { color: #8B7355; text-decoration: none; }
         .email-link:hover { text-decoration: underline; }
-        .time { color: #666; font-size: 13px; white-space: nowrap; }
+        .time { color: #666; font-size: 12px; white-space: nowrap; }
+
+        /* Modals */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; }
         .modal.show { display: flex; }
         .modal-content { background: white; padding: 30px; border-radius: 8px; max-width: 400px; width: 90%; }
         .modal-content h3 { margin-bottom: 20px; color: #5D4E37; }
         .modal-content input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 15px; font-size: 16px; }
         .modal-actions { display: flex; gap: 10px; justify-content: flex-end; }
+
+        /* Detail rows */
         .detail-row { display: none; }
         .detail-row.show { display: table-row; }
         .detail-content { background: #faf9f7; padding: 20px; border-top: 2px solid #8B7355; }
@@ -676,22 +708,28 @@ function resendEmail($log) {
         .detail-item .value { font-size: 14px; color: #333; word-break: break-word; }
         .detail-item .value a { color: #8B7355; }
         .message-box { background: #f8f7f5; padding: 20px; border-radius: 8px; white-space: pre-wrap; font-size: 14px; line-height: 1.7; border-left: 4px solid #8B7355; max-height: 300px; overflow-y: auto; }
+
+        /* Actions */
         .actions { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
-        .url-cell { max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .url-cell { max-width: 240px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
         .url-cell a { color: #8B7355; text-decoration: none; font-size: 12px; }
         .url-cell a:hover { text-decoration: underline; }
-        .country-badge { background: #e8e4df; padding: 3px 8px; border-radius: 4px; font-size: 12px; }
-        .reset-info { background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 4px; margin-bottom: 20px; font-size: 14px; }
-        .bulk-actions { background: #5D4E37; color: white; padding: 12px 20px; border-radius: 8px; margin-bottom: 15px; display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
+        .country-badge { background: #e8e4df; padding: 2px 8px; border-radius: 3px; font-size: 11px; }
+
+        /* Bulk actions */
+        .bulk-actions { background: #5D4E37; color: white; padding: 10px 16px; border-radius: 8px; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 13px; }
         .bulk-actions .btn-danger { background: #c0392b; }
         .bulk-actions .btn-danger:hover { background: #a93226; }
         .data-row.selected { background: #fff3cd !important; }
         .data-row:hover { background: #f5f5f5; }
         tr.detail-row.show + tr.data-row, tr.data-row:has(+ tr.detail-row.show) { background: #faf9f7; }
+        .reset-info { background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 4px; margin-bottom: 20px; font-size: 14px; }
+        .link { color: #8B7355; text-decoration: none; }
+        .link:hover { text-decoration: underline; }
+
         @media (max-width: 768px) {
             .header { flex-direction: column; align-items: flex-start; }
-            .stats { flex-direction: column; }
-            .stat-card { width: 100%; }
+            .stats { grid-template-columns: repeat(2, 1fr); }
             th, td { padding: 8px 10px; font-size: 12px; }
         }
     </style>
@@ -756,11 +794,11 @@ function resendEmail($log) {
         <?php else: ?>
             <!-- Main Dashboard -->
             <div class="header">
-                <div>
+                <div class="header-left">
                     <h1>Email Logs</h1>
                     <p class="subtitle">Track and manage all email inquiries from kssmi.com</p>
                 </div>
-                <div>
+                <div class="header-right">
                     <a href="/visitor-journey.php" class="btn btn-secondary">Visitor Journey</a>
                     <button class="btn btn-secondary" onclick="document.getElementById('passwordModal').classList.add('show')">Change Password</button>
                     <a href="?logout" class="btn btn-secondary">Logout</a>
