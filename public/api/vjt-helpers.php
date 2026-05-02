@@ -174,7 +174,7 @@ function vjt_update_pageview_leave($sessionId, $url, $leaveAt, $duration, $scrol
     $pageviews = vjt_read_json('pageviews.json');
     if ($pageviews === null) return;
     for ($i = count($pageviews) - 1; $i >= 0; $i--) {
-        if ($pageviews[$i]['session_id'] === $sessionId && $pageviews[$i]['url'] === $url && $pageviews[$i]['leave_at'] === null) {
+        if ($pageviews[$i]['session_id'] === $sessionId && $pageviews[$i]['url'] === $url && empty($pageviews[$i]['leave_at'])) {
             $pageviews[$i]['leave_at'] = $leaveAt;
             $pageviews[$i]['duration_seconds'] = max(0, (int)$duration);
             $pageviews[$i]['scroll_depth'] = max($pageviews[$i]['scroll_depth'], (int)$scrollDepth);

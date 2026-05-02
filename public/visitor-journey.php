@@ -494,7 +494,14 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                     <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                         <!-- Top Referrers -->
                         <div class="panel">
-                            <div class="panel-header">Top Referrers (<?php echo $periodLabel; ?>)</div>
+                            <div class="panel-header">
+                                <span>Top Referrers (<?php echo $periodLabel; ?>)</span>
+                                <div style="display:flex;gap:4px;">
+                                    <a href="?tab=overview&trend=days" class="trend-tab <?php echo $trendPeriod === 'days' ? 'trend-tab-active' : ''; ?>">30 Days</a>
+                                    <a href="?tab=overview&trend=months" class="trend-tab <?php echo $trendPeriod === 'months' ? 'trend-tab-active' : ''; ?>">12 Months</a>
+                                    <a href="?tab=overview&trend=years" class="trend-tab <?php echo $trendPeriod === 'years' ? 'trend-tab-active' : ''; ?>">Years</a>
+                                </div>
+                            </div>
                             <div class="panel-body" style="padding:0;">
                                 <?php if (empty($overview['topReferrers'])): ?>
                                     <div class="empty" style="padding:30px;"><p>No referrer data yet</p></div>
@@ -521,7 +528,14 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                         <!-- Source & Device -->
                         <div style="display:flex;flex-direction:column;gap:20px;">
                             <div class="panel">
-                                <div class="panel-header">Traffic Sources (<?php echo $periodLabel; ?>)</div>
+                                <div class="panel-header">
+                                    <span>Traffic Sources (<?php echo $periodLabel; ?>)</span>
+                                    <div style="display:flex;gap:4px;">
+                                        <a href="?tab=overview&trend=days" class="trend-tab <?php echo $trendPeriod === 'days' ? 'trend-tab-active' : ''; ?>">30 Days</a>
+                                        <a href="?tab=overview&trend=months" class="trend-tab <?php echo $trendPeriod === 'months' ? 'trend-tab-active' : ''; ?>">12 Months</a>
+                                        <a href="?tab=overview&trend=years" class="trend-tab <?php echo $trendPeriod === 'years' ? 'trend-tab-active' : ''; ?>">Years</a>
+                                    </div>
+                                </div>
                                 <div class="panel-body" style="padding:0;">
                                     <table>
                                         <thead><tr><th>Source</th><th style="text-align:right;">Sessions</th></tr></thead>
@@ -540,7 +554,14 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                             </div>
 
                             <div class="panel">
-                                <div class="panel-header">Device Breakdown (<?php echo $periodLabel; ?>)</div>
+                                <div class="panel-header">
+                                    <span>Device Breakdown (<?php echo $periodLabel; ?>)</span>
+                                    <div style="display:flex;gap:4px;">
+                                        <a href="?tab=overview&trend=days" class="trend-tab <?php echo $trendPeriod === 'days' ? 'trend-tab-active' : ''; ?>">30 Days</a>
+                                        <a href="?tab=overview&trend=months" class="trend-tab <?php echo $trendPeriod === 'months' ? 'trend-tab-active' : ''; ?>">12 Months</a>
+                                        <a href="?tab=overview&trend=years" class="trend-tab <?php echo $trendPeriod === 'years' ? 'trend-tab-active' : ''; ?>">Years</a>
+                                    </div>
+                                </div>
                                 <div class="panel-body" style="padding:0;">
                                     <?php if (empty($overview['deviceCounts'])): ?>
                                         <div class="empty" style="padding:30px;"><p>No device data yet</p></div>
