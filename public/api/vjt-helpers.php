@@ -4,16 +4,130 @@
  * Shared SQLite connection and utility functions.
  */
 
-define('VJT_DB_PATH', dirname(__DIR__, 2) . '/vjt/tracker.sqlite');
+define('VJT_DB_DIR', dirname(__DIR__, 2) . '/vjt');
+define('VJT_DB_PATH', VJT_DB_DIR . '/tracker.sqlite');
+
+function vjt_db_setup($db) {
+    $db->exec('PRAGMA journal_mode=WAL');
+    $db->exec('PRAGMA foreign_keys=ON');
+
+    $db->exec("CREATE TABLE IF NOT EXISTS visitors (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        visitor_id TEXT NOT NULL UNIQUE,
+        first_ip TEXT NOT NULL DEFAULT '',
+        country TEXT NOT NULL DEFAULT '',
+        city TEXT NOT NULL DEFAULT '',
+        user_agent TEXT,
+        browser TEXT NOT NULL DEFAULT '',
+        device_type TEXT NOT NULL DEFAULT '',
+        screen_resolution TEXT NOT NULL DEFAULT '',
+        timezone TEXT NOT NULL DEFAULT '',
+        language TEXT NOT NULL DEFAULT '',
+        first_seen_at TEXT NOT NULL,
+        last_seen_at TEXT NOT NULL,
+        created_at TEXT NOT NULL DEFAULT (datetime('now')),
+        updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+    )");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_visitors_last_seen ON visitors(last_seen_at)");
+
+    $db->exec("CREATE TABLE IF NOT EXISTS sessions (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        session_id TEXT NOT NULL UNIQUE,
+        visitor_id TEXT NOT NULL,
+        ip TEXT NOT NULL DEFAULT '',
+        country TEXT NOT NULL DEFAULT '',
+        city TEXT NOT NULL DEFAULT '',
+        region TEXT NOT NULL DEFAULT '',
+        calling_code TEXT NOT NULL DEFAULT '',
+        referrer TEXT,
+        landing_url TEXT,
+        landing_title TEXT NOT NULL DEFAULT '',
+        utm_source TEXT NOT NULL DEFAULT '',
+        utm_medium TEXT NOT NULL DEFAULT '',
+        utm_campaign TEXT NOT NULL DEFAULT '',
+        utm_content TEXT NOT NULL DEFAULT '',
+        utm_term TEXT NOT NULL DEFAULT '',
+        started_at TEXT NOT NULL,
+        last_seen_at TEXT NOT NULL,
+        created_at TEXT NOT NULL DEFAULT (datetime('now')),
+        updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+    )");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_sessions_visitor ON sessions(visitor_id)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_sessions_last_seen ON sessions(last_seen_at)");
+
+    $db->exec("CREATE TABLE IF NOT EXISTS pageviews (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        session_id TEXT NOT NULL,
+        visitor_id TEXT NOT NULL,
+        url TEXT,
+        title TEXT NOT NULL DEFAULT '',
+        visited_at TEXT NOT NULL,
+        leave_at TEXT,
+        duration_seconds INTEGER UNSIGNED NOT NULL DEFAULT 0,
+        scroll_depth INTEGER UNSIGNED NOT NULL DEFAULT 0,
+        step_order INTEGER UNSIGNED NOT NULL DEFAULT 1,
+        created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    )");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_pageviews_session ON pageviews(session_id)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_pageviews_visitor ON pageviews(visitor_id)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_pageviews_visited ON pageviews(visited_at)");
+
+    $db->exec("CREATE TABLE IF NOT EXISTS submissions (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        visitor_id TEXT NOT NULL,
+        session_id TEXT NOT NULL,
+        form_plugin TEXT NOT NULL DEFAULT '',
+        form_id TEXT NOT NULL DEFAULT '',
+        form_name TEXT NOT NULL DEFAULT '',
+        submit_page TEXT,
+        submit_title TEXT NOT NULL DEFAULT '',
+        submitted_at TEXT NOT NULL,
+        status TEXT NOT NULL DEFAULT 'attempt',
+        contact_url TEXT,
+        ip TEXT NOT NULL DEFAULT '',
+        country TEXT NOT NULL DEFAULT '',
+        city TEXT NOT NULL DEFAULT '',
+        region TEXT NOT NULL DEFAULT '',
+        calling_code TEXT NOT NULL DEFAULT '',
+        created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    )");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_submissions_visitor ON submissions(visitor_id)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_submissions_session ON submissions(session_id)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_submissions_submitted ON submissions(submitted_at)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_submissions_status ON submissions(status)");
+
+    $db->exec("CREATE TABLE IF NOT EXISTS geo_cache (
+        ip TEXT PRIMARY KEY,
+        country TEXT NOT NULL DEFAULT '',
+        city TEXT NOT NULL DEFAULT '',
+        region TEXT NOT NULL DEFAULT '',
+        calling_code TEXT NOT NULL DEFAULT '',
+        cached_at TEXT NOT NULL DEFAULT (datetime('now'))
+    )");
+
+    $db->exec("CREATE TABLE IF NOT EXISTS settings (
+        key TEXT PRIMARY KEY,
+        value TEXT NOT NULL DEFAULT ''
+    )");
+
+    $stmt = $db->prepare("INSERT OR IGNORE INTO settings (key, value) VALUES (?, ?)");
+    $stmt->execute(['session_timeout', '30']);
+    $stmt->execute(['retention_days', '90']);
+    $stmt->execute(['enable_geo', '1']);
+}
 
 function vjt_db() {
     static $db = null;
     if ($db === null) {
-        if (!file_exists(VJT_DB_PATH)) {
-            return null;
+        if (!is_dir(VJT_DB_DIR)) {
+            mkdir(VJT_DB_DIR, 0755, true);
         }
+        $needsSetup = !file_exists(VJT_DB_PATH);
         $db = new PDO('sqlite:' . VJT_DB_PATH);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        if ($needsSetup) {
+            vjt_db_setup($db);
+        }
         $db->exec('PRAGMA journal_mode=WAL');
     }
     return $db;

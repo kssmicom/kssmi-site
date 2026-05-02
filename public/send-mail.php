@@ -85,8 +85,6 @@ $config = [
     'log_enabled' => true,
     'log_file' => dirname(__DIR__) . '/email-logs.json',
 
-    // VJT Database
-    'vjt_db' => dirname(__DIR__) . '/vjt/tracker.sqlite',
 ];
 
 // ============================================
@@ -144,13 +142,13 @@ function logEmail($config, $data, $status, $message = '', $error = '', $visitorI
     file_put_contents($config['log_file'], json_encode($logs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 
-function recordVJTSubmission($config, $data, $status, $visitorIP, $visitorCountry) {
-    $dbPath = $config['vjt_db'];
-    if (!file_exists($dbPath)) return;
+// VJT Tracking
+require_once __DIR__ . '/api/vjt-helpers.php';
 
+function recordVJTSubmission($config, $data, $status, $visitorIP, $visitorCountry) {
     try {
-        $db = new PDO('sqlite:' . $dbPath);
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $db = vjt_db();
+        if (!$db) return;
 
         $visitorId = trim($data['vjt_visitor_id'] ?? '');
         $sessionId = trim($data['vjt_session_id'] ?? '');
