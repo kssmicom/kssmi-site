@@ -662,6 +662,98 @@ function vjt_cleanup_old_data($days) {
     }
 }
 
+// ── Dashboard: Countries ────────────────────────────────────────────────────
+
+function vjt_get_countries() {
+    $visitors = vjt_read_json('visitors.json');
+    $sessions = vjt_read_json('sessions.json');
+    $submissions = vjt_read_json('submissions.json');
+
+    $visitors = $visitors ?: [];
+    $sessions = $sessions ?: [];
+    $submissions = $submissions ?: [];
+
+    $countries = [];
+
+    foreach ($visitors as $v) {
+        $cc = !empty($v['country']) ? strtoupper($v['country']) : 'UNKNOWN';
+        if (!isset($countries[$cc])) {
+            $countries[$cc] = ['code' => $cc, 'visitors' => 0, 'sessions' => 0, 'submissions' => 0];
+        }
+        $countries[$cc]['visitors']++;
+    }
+
+    // Count sessions per country
+    $visitorCountry = [];
+    foreach ($visitors as $vid => $v) {
+        $visitorCountry[$vid] = !empty($v['country']) ? strtoupper($v['country']) : 'UNKNOWN';
+    }
+    foreach ($sessions as $s) {
+        $cc = $visitorCountry[$s['visitor_id']] ?? 'UNKNOWN';
+        if (isset($countries[$cc])) {
+            $countries[$cc]['sessions']++;
+        }
+    }
+    foreach ($submissions as $sub) {
+        $cc = $visitorCountry[$sub['visitor_id']] ?? 'UNKNOWN';
+        if (isset($countries[$cc])) {
+            $countries[$cc]['submissions']++;
+        }
+    }
+
+    // Sort by visitors descending
+    uasort($countries, function ($a, $b) {
+        return $b['visitors'] - $a['visitors'];
+    });
+
+    return array_values($countries);
+}
+
+// ── Dashboard: Products ─────────────────────────────────────────────────────
+
+function vjt_get_products($dateFrom = '', $dateTo = '') {
+    $pageviews = vjt_read_json('pageviews.json');
+    if (!$pageviews) return [];
+
+    $products = [];
+
+    foreach ($pageviews as $pv) {
+        $url = $pv['url'] ?? '';
+        // Extract product SKU from URL patterns:
+        // /product/yto-001/  or  /en/product/yto-001/  etc.
+        if (preg_match('#/product/([a-zA-Z]+-\d+)/?#', $url, $m)) {
+            $sku = strtoupper($m[1]);
+        } else {
+            continue;
+        }
+
+        $visited = $pv['visited_at'] ?? '';
+        if ($dateFrom && $visited < $dateFrom) continue;
+        if ($dateTo && $visited > $dateTo . ' 23:59:59') continue;
+
+        if (!isset($products[$sku])) {
+            $products[$sku] = ['sku' => $sku, 'views' => 0, 'visitors' => 0, 'visitor_set' => []];
+        }
+        $products[$sku]['views']++;
+        $vid = $pv['visitor_id'] ?? '';
+        if ($vid && !isset($products[$sku]['visitor_set'][$vid])) {
+            $products[$sku]['visitor_set'][$vid] = true;
+            $products[$sku]['visitors']++;
+        }
+    }
+
+    // Sort by views descending
+    uasort($products, function ($a, $b) {
+        return $b['views'] - $a['views'];
+    });
+
+    // Remove visitor_set before returning
+    return array_map(function ($p) {
+        unset($p['visitor_set']);
+        return $p;
+    }, array_values($products));
+}
+
 // ── Dashboard: CSV Export ────────────────────────────────────────────────────
 
 function vjt_export_submissions_csv_start($filters) {

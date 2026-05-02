@@ -47,7 +47,7 @@ $isAuthenticated = isset($_SESSION['email_logs_auth']) && $_SESSION['email_logs_
 
 // Determine active tab
 $tab = $_GET['tab'] ?? 'overview';
-$validTabs = ['overview', 'submissions', 'visitors', 'journey', 'settings'];
+$validTabs = ['overview', 'submissions', 'visitors', 'journey', 'countries', 'products', 'settings'];
 if (!in_array($tab, $validTabs)) $tab = 'overview';
 
 // ── Data helpers ────────────────────────────────────────────────────────────
@@ -163,6 +163,20 @@ if ($tab === 'visitors') {
 
 if ($tab === 'journey' && !empty($_GET['visitor_id'])) {
     $journeyData = vjt_get_journey($_GET['visitor_id']);
+}
+
+// ── Countries & Products ──────────────────────────────────────────────────────
+
+$countries = [];
+if ($tab === 'countries') {
+    $countries = vjt_get_countries();
+}
+
+$products = [];
+$prodDateFrom = $_GET['prod_date_from'] ?? '';
+$prodDateTo   = $_GET['prod_date_to'] ?? '';
+if ($tab === 'products') {
+    $products = vjt_get_products($prodDateFrom, $prodDateTo);
 }
 
 // ── Country helpers ──────────────────────────────────────────────────────────
@@ -377,6 +391,8 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                     <a href="?tab=overview" class="tab <?php echo $tab === 'overview' ? 'active' : ''; ?>">Overview</a>
                     <a href="?tab=submissions" class="tab <?php echo $tab === 'submissions' ? 'active' : ''; ?>">Submissions</a>
                     <a href="?tab=visitors" class="tab <?php echo $tab === 'visitors' ? 'active' : ''; ?>">Visitors</a>
+                    <a href="?tab=countries" class="tab <?php echo $tab === 'countries' ? 'active' : ''; ?>">Countries</a>
+                    <a href="?tab=products" class="tab <?php echo $tab === 'products' ? 'active' : ''; ?>">Products</a>
                     <?php if ($tab === 'journey'): ?>
                         <a href="?tab=journey&visitor_id=<?php echo urlencode($_GET['visitor_id'] ?? ''); ?>" class="tab active">Journey Detail</a>
                     <?php endif; ?>
@@ -776,6 +792,90 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                                 <?php endif; ?>
                             </div>
                             <?php endforeach; ?>
+                        </div>
+                    </div>
+
+                <?php elseif ($tab === 'countries'): ?>
+                    <!-- Countries -->
+                    <div class="panel">
+                        <div class="panel-header">Countries (<?php echo number_format(count($countries)); ?>)</div>
+                        <div class="panel-body">
+                            <?php if (empty($countries)): ?>
+                                <div class="empty"><div class="empty-icon">🌍</div><p>No country data yet</p></div>
+                            <?php else: ?>
+                                <div class="table-wrapper">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Country</th>
+                                                <th style="text-align:center;">Visitors</th>
+                                                <th style="text-align:center;">Sessions</th>
+                                                <th style="text-align:center;">Submissions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php $rank = 1; foreach ($countries as $c): ?>
+                                                <tr>
+                                                    <td style="color:#999;font-size:12px;"><?php echo $rank++; ?></td>
+                                                    <td>
+                                                        <span class="country-badge" style="font-size:13px;"><?php echo htmlspecialchars(getCountryName($c['code'])); ?></span>
+                                                    </td>
+                                                    <td style="text-align:center;font-weight:600;"><?php echo number_format($c['visitors']); ?></td>
+                                                    <td style="text-align:center;"><?php echo number_format($c['sessions']); ?></td>
+                                                    <td style="text-align:center;"><?php echo number_format($c['submissions']); ?></td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+
+                <?php elseif ($tab === 'products'): ?>
+                    <!-- Products -->
+                    <div class="panel">
+                        <div class="panel-header">Products (<?php echo number_format(count($products)); ?>)</div>
+                        <div class="panel-body">
+                            <form class="filters" method="GET">
+                                <input type="hidden" name="tab" value="products">
+                                <input type="date" name="prod_date_from" value="<?php echo htmlspecialchars($prodDateFrom); ?>" placeholder="From">
+                                <input type="date" name="prod_date_to" value="<?php echo htmlspecialchars($prodDateTo); ?>" placeholder="To">
+                                <button type="submit" class="btn btn-primary btn-small">Filter</button>
+                                <?php if ($prodDateFrom || $prodDateTo): ?>
+                                    <a href="?tab=products" class="btn btn-secondary btn-small">Clear</a>
+                                <?php endif; ?>
+                            </form>
+
+                            <?php if (empty($products)): ?>
+                                <div class="empty"><div class="empty-icon">📦</div><p>No product pageviews yet</p></div>
+                            <?php else: ?>
+                                <div class="table-wrapper">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>SKU</th>
+                                                <th style="text-align:center;">Views</th>
+                                                <th style="text-align:center;">Unique Visitors</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php $rank = 1; foreach ($products as $p): ?>
+                                                <tr>
+                                                    <td style="color:#999;font-size:12px;"><?php echo $rank++; ?></td>
+                                                    <td class="mono" style="font-weight:600;"><?php echo htmlspecialchars($p['sku']); ?></td>
+                                                    <td style="text-align:center;font-weight:600;"><?php echo number_format($p['views']); ?></td>
+                                                    <td style="text-align:center;"><?php echo number_format($p['visitors']); ?></td>
+                                                    <td><a href="/product/<?php echo urlencode(strtolower($p['sku'])); ?>/" target="_blank" class="btn btn-primary btn-small">View</a></td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
 
