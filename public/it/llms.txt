@@ -1,5 +1,5 @@
 ﻿# Kssmi Guida ai modelli linguistici di grandi dimensioni - Italiano
-Date: 2026-05-01
+Date: 2026-05-02
 
 Per esplorare i nostri contenuti in Italiano, segui le directory specializzate di seguito:
 
