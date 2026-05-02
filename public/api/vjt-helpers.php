@@ -719,9 +719,9 @@ function vjt_get_products($dateFrom = '', $dateTo = '') {
 
     foreach ($pageviews as $pv) {
         $url = $pv['url'] ?? '';
-        // Extract Kssmi product SKU from URL: /product/kmo-001/ /product/kms-007/ etc.
-        // Exclude old Yeetian brand prefixes (YTO, YTS).
-        if (preg_match('#/product/((?:kmo|kms|kss)-[\w-]+)/?#i', $url, $m)) {
+        // Extract Kssmi product SKU from URL. Kssmi models start with K,
+        // old Yeetian models start with Y — exclude those.
+        if (preg_match('#/product/(k[\w-]+)/?#i', $url, $m)) {
             $sku = strtoupper($m[1]);
         } else {
             continue;
