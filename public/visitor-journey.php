@@ -95,7 +95,16 @@ $journeyData = null;
 $settings = getSettings();
 
 if ($tab === 'overview') {
-    $since = date('Y-m-d H:i:s', time() - (30 * 86400));
+    if ($trendPeriod === 'months') {
+        $since = date('Y-m-d H:i:s', time() - (365 * 86400));
+        $periodLabel = '12m';
+    } elseif ($trendPeriod === 'years') {
+        $since = date('Y-m-d H:i:s', time() - (5 * 365 * 86400));
+        $periodLabel = '5y';
+    } else {
+        $since = date('Y-m-d H:i:s', time() - (30 * 86400));
+        $periodLabel = '30d';
+    }
     $overview = vjt_get_overview($since);
 }
 
@@ -307,12 +316,12 @@ $visTotalPages = ceil($visTotal / $visPerPage);
         .pagination .current { background: #8B7355; color: white; border-color: #8B7355; }
 
         /* Bar chart */
-        .bar-chart { display: flex; align-items: flex-end; gap: 3px; height: 120px; padding: 0 10px; }
+        .bar-chart { display: flex; align-items: flex-end; gap: 6px; height: 140px; padding: 0 10px; }
         .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; min-width: 0; }
         .bar { background: #8B7355; width: 100%; max-width: 40px; border-radius: 3px 3px 0 0; min-height: 2px; transition: all 0.2s ease; cursor: pointer; }
         .bar:hover { background: #5D4E37; opacity: 0.85; transform: scaleY(1.05); transform-origin: bottom; }
         .bar-label { font-size: 9px; color: #888; margin-top: 4px; transform: rotate(-45deg); transform-origin: top left; white-space: nowrap; }
-        .bar-value { font-size: 10px; color: #5D4E37; font-weight: 600; margin-bottom: 2px; }
+        .bar-value { font-size: 10px; color: #5D4E37; font-weight: 600; margin-bottom: 4px; }
 
         /* Trend sub-tabs */
         .trend-tab { padding: 3px 10px; border-radius: 4px; text-decoration: none; font-size: 11px; font-weight: 500; color: #888; background: #f0f0f0; transition: all 0.15s; }
@@ -485,7 +494,7 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                     <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                         <!-- Top Referrers -->
                         <div class="panel">
-                            <div class="panel-header">Top Referrers (30d)</div>
+                            <div class="panel-header">Top Referrers (<?php echo $periodLabel; ?>)</div>
                             <div class="panel-body" style="padding:0;">
                                 <?php if (empty($overview['topReferrers'])): ?>
                                     <div class="empty" style="padding:30px;"><p>No referrer data yet</p></div>
@@ -512,7 +521,7 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                         <!-- Source & Device -->
                         <div style="display:flex;flex-direction:column;gap:20px;">
                             <div class="panel">
-                                <div class="panel-header">Traffic Sources (30d)</div>
+                                <div class="panel-header">Traffic Sources (<?php echo $periodLabel; ?>)</div>
                                 <div class="panel-body" style="padding:0;">
                                     <table>
                                         <thead><tr><th>Source</th><th style="text-align:right;">Sessions</th></tr></thead>
@@ -531,7 +540,7 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                             </div>
 
                             <div class="panel">
-                                <div class="panel-header">Device Breakdown (30d)</div>
+                                <div class="panel-header">Device Breakdown (<?php echo $periodLabel; ?>)</div>
                                 <div class="panel-body" style="padding:0;">
                                     <?php if (empty($overview['deviceCounts'])): ?>
                                         <div class="empty" style="padding:30px;"><p>No device data yet</p></div>

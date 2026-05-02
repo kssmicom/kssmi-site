@@ -116,7 +116,16 @@
 
   function getVisitorId() {
     var id = readStorage(VISITOR_KEY);
-    if (!id) id = uuid('vjtv');
+    if (!id) {
+      var now = new Date();
+      var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+      var dateStr = now.getFullYear() + '-' + pad(now.getMonth() + 1) + '-' + pad(now.getDate());
+      var counterKey = 'vjt_visitor_counter_' + dateStr;
+      var counter = (parseInt(readStorage(counterKey), 10) || 0) + 1;
+      writeStorage(counterKey, String(counter));
+      var seq = (counter < 10 ? '00' : counter < 100 ? '0' : '') + counter;
+      id = 'vjtv_' + dateStr + '-' + seq;
+    }
     writeStorage(VISITOR_KEY, id);
     setCookie('vjt_visitor_id', id, cfg.cookieExpires || 31536000);
     return id;
