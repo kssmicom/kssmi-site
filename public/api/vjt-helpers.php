@@ -700,6 +700,143 @@ function vjt_wipe_all_data() {
     vjt_write_json('geo_cache.json', []);
 }
 
+// ── Dashboard: Traffic Performance ──────────────────────────────────────────
+
+function vjt_get_traffic_data($since) {
+    $pageviews = vjt_read_json('pageviews.json');
+    if ($pageviews === null) $pageviews = [];
+    $submissions = vjt_read_json('submissions.json');
+    if ($submissions === null) $submissions = [];
+
+    $filteredPvs = [];
+    foreach ($pageviews as $pv) {
+        if (($pv['visited_at'] ?? '') >= $since) {
+            $filteredPvs[] = $pv;
+        }
+    }
+
+    $totalPageviews = count($filteredPvs);
+
+    // Daily pageview trend (30 days)
+    $dailyTrend = [];
+    for ($i = 29; $i >= 0; $i--) {
+        $day = date('Y-m-d', strtotime("-{$i} days"));
+        $dailyTrend[$day] = 0;
+    }
+    foreach ($filteredPvs as $pv) {
+        $day = substr($pv['visited_at'] ?? '', 0, 10);
+        if (isset($dailyTrend[$day])) $dailyTrend[$day]++;
+    }
+
+    // Monthly trend (12 months)
+    $monthlyTrend = [];
+    for ($i = 11; $i >= 0; $i--) {
+        $month = date('Y-m', strtotime("-{$i} months"));
+        $monthlyTrend[$month] = 0;
+    }
+    foreach ($filteredPvs as $pv) {
+        $month = substr($pv['visited_at'] ?? '', 0, 7);
+        if (isset($monthlyTrend[$month])) $monthlyTrend[$month]++;
+    }
+
+    // Yearly trend
+    $yearlyTrend = [];
+    $minYear = (int)date('Y');
+    foreach ($filteredPvs as $pv) {
+        $y = (int)substr($pv['visited_at'] ?? '', 0, 4);
+        if ($y > 0 && $y < $minYear) $minYear = $y;
+    }
+    for ($y = $minYear; $y <= (int)date('Y'); $y++) {
+        $yearlyTrend[(string)$y] = 0;
+    }
+    foreach ($filteredPvs as $pv) {
+        $y = substr($pv['visited_at'] ?? '', 0, 4);
+        if (isset($yearlyTrend[$y])) $yearlyTrend[$y]++;
+    }
+
+    // Top pages
+    $pageCounts = [];
+    $pageDurations = [];
+    $pageScrolls = [];
+    foreach ($filteredPvs as $pv) {
+        $url = $pv['url'] ?? '';
+        if (empty($url)) continue;
+        $pageCounts[$url] = ($pageCounts[$url] ?? 0) + 1;
+        if (($pv['duration_seconds'] ?? 0) > 0) {
+            $pageDurations[$url] = ($pageDurations[$url] ?? 0) + $pv['duration_seconds'];
+        }
+        $pageScrolls[$url] = max($pageScrolls[$url] ?? 0, (int)($pv['scroll_depth'] ?? 0));
+    }
+    arsort($pageCounts);
+    $topPages = [];
+    $rank = 0;
+    foreach ($pageCounts as $url => $count) {
+        if ($rank >= 20) break;
+        $avgDuration = isset($pageDurations[$url]) ? round($pageDurations[$url] / $count) : 0;
+        $topPages[] = [
+            'url'          => $url,
+            'views'        => $count,
+            'avg_duration' => $avgDuration,
+            'avg_scroll'   => $pageScrolls[$url] ?? 0,
+        ];
+        $rank++;
+    }
+
+    // Submissions per page
+    $pageSubmissions = [];
+    foreach ($submissions as $sub) {
+        if (($sub['submitted_at'] ?? '') >= $since) {
+            $page = $sub['submit_page'] ?? '';
+            if (!empty($page)) {
+                $pageSubmissions[$page] = ($pageSubmissions[$page] ?? 0) + 1;
+            }
+        }
+    }
+    foreach ($topPages as &$tp) {
+        $tp['submissions'] = $pageSubmissions[$tp['url']] ?? 0;
+    }
+    unset($tp);
+
+    // Unique URLs
+    $uniqueUrls = count($pageCounts);
+
+    // Bounce rate (single-pageview sessions)
+    $sessionPageviews = [];
+    foreach ($filteredPvs as $pv) {
+        $sid = $pv['session_id'] ?? '';
+        $sessionPageviews[$sid] = ($sessionPageviews[$sid] ?? 0) + 1;
+    }
+    $bounceSessions = 0;
+    $totalSessions = count($sessionPageviews);
+    foreach ($sessionPageviews as $cnt) {
+        if ($cnt <= 1) $bounceSessions++;
+    }
+    $bounceRate = $totalSessions > 0 ? round(($bounceSessions / $totalSessions) * 100) : 0;
+
+    // Average dwell across all pageviews
+    $totalDwell = 0;
+    $dwellCount = 0;
+    foreach ($filteredPvs as $pv) {
+        if (($pv['duration_seconds'] ?? 0) > 0) {
+            $totalDwell += $pv['duration_seconds'];
+            $dwellCount++;
+        }
+    }
+    $avgDwellAll = $dwellCount > 0 ? round($totalDwell / $dwellCount) : 0;
+
+    return [
+        'totalPageviews' => $totalPageviews,
+        'dailyTrend'     => $dailyTrend,
+        'monthlyTrend'   => $monthlyTrend,
+        'yearlyTrend'    => $yearlyTrend,
+        'topPages'       => $topPages,
+        'uniqueUrls'     => $uniqueUrls,
+        'bounceRate'     => $bounceRate,
+        'totalSessions'  => $totalSessions,
+        'avgDwellAll'    => $avgDwellAll,
+    ];
+}
+
 // ── Dashboard: Countries ────────────────────────────────────────────────────
 
 function vjt_get_countries() {

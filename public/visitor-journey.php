@@ -57,7 +57,7 @@ if ($isAuthenticated) {
 // Determine active tab
 $tab = $_GET['tab'] ?? 'overview';
 $trendPeriod = $_GET['trend'] ?? 'days';
-$validTabs = ['overview', 'submissions', 'visitors', 'journey', 'countries', 'products', 'settings'];
+$validTabs = ['overview', 'submissions', 'traffic', 'visitors', 'journey', 'countries', 'products', 'settings'];
 if (!in_array($tab, $validTabs)) $tab = 'overview';
 
 // ── Data helpers ────────────────────────────────────────────────────────────
@@ -152,6 +152,21 @@ if ($tab === 'submissions') {
         }
     }
     unset($sub);
+}
+
+// ── Traffic Performance ──────────────────────────────────────────────────────
+
+$trafficData = null;
+$trafficPeriod = $_GET['tp'] ?? 'days';
+if ($tab === 'traffic') {
+    if ($trafficPeriod === 'months') {
+        $trafficSince = date('Y-m-d H:i:s', time() - (365 * 86400));
+    } elseif ($trafficPeriod === 'years') {
+        $trafficSince = date('Y-m-d H:i:s', time() - (5 * 365 * 86400));
+    } else {
+        $trafficSince = date('Y-m-d H:i:s', time() - (30 * 86400));
+    }
+    $trafficData = vjt_get_traffic_data($trafficSince);
 }
 
 // ── Visitors list ────────────────────────────────────────────────────────────
@@ -423,6 +438,7 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                 <div class="tabs">
                     <a href="?tab=overview" class="tab <?php echo $tab === 'overview' ? 'active' : ''; ?>">Overview</a>
                     <a href="?tab=submissions" class="tab <?php echo $tab === 'submissions' ? 'active' : ''; ?>">Submissions</a>
+                    <a href="?tab=traffic" class="tab <?php echo $tab === 'traffic' ? 'active' : ''; ?>">Traffic</a>
                     <a href="?tab=visitors" class="tab <?php echo $tab === 'visitors' ? 'active' : ''; ?>">Visitors</a>
                     <a href="?tab=countries" class="tab <?php echo $tab === 'countries' ? 'active' : ''; ?>">Countries</a>
                     <a href="?tab=products" class="tab <?php echo $tab === 'products' ? 'active' : ''; ?>">Products</a>
@@ -687,6 +703,113 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                             <?php endif; ?>
                         </div>
                     </div>
+
+                <?php elseif ($tab === 'traffic' && $trafficData): ?>
+                    <!-- Traffic Performance -->
+                    <?php
+                    $tpLabel = $trafficPeriod === 'months' ? '12m' : ($trafficPeriod === 'years' ? '5y' : '30d');
+                    ?>
+                    <div class="stats">
+                        <div class="stat-card">
+                            <h3>Total Pageviews (<?php echo $tpLabel; ?>)</h3>
+                            <div class="value"><?php echo number_format($trafficData['totalPageviews']); ?></div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Unique Pages</h3>
+                            <div class="value"><?php echo number_format($trafficData['uniqueUrls']); ?></div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Avg Dwell Time</h3>
+                            <div class="value"><?php echo fmtDuration($trafficData['avgDwellAll']); ?></div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Bounce Rate</h3>
+                            <div class="value"><?php echo $trafficData['bounceRate']; ?>%</div>
+                            <div class="sub">Single-page sessions</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Sessions</h3>
+                            <div class="value"><?php echo number_format($trafficData['totalSessions']); ?></div>
+                        </div>
+                    </div>
+
+                    <!-- Pageviews Trend -->
+                    <?php
+                    $trendChartData = $trafficData['dailyTrend'] ?? [];
+                    if ($trafficPeriod === 'months') $trendChartData = $trafficData['monthlyTrend'] ?? [];
+                    elseif ($trafficPeriod === 'years') $trendChartData = $trafficData['yearlyTrend'] ?? [];
+                    ?>
+                    <?php if (!empty($trendChartData)): ?>
+                    <div class="panel">
+                        <div class="panel-header">
+                            <span>Pageviews Trend</span>
+                            <div style="display:flex;gap:4px;">
+                                <a href="?tab=traffic&tp=days" class="trend-tab <?php echo $trafficPeriod === 'days' ? 'trend-tab-active' : ''; ?>">30 Days</a>
+                                <a href="?tab=traffic&tp=months" class="trend-tab <?php echo $trafficPeriod === 'months' ? 'trend-tab-active' : ''; ?>">12 Months</a>
+                                <a href="?tab=traffic&tp=years" class="trend-tab <?php echo $trafficPeriod === 'years' ? 'trend-tab-active' : ''; ?>">Years</a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="bar-chart">
+                                <?php
+                                $maxCnt = max($trendChartData) ?: 1;
+                                foreach ($trendChartData as $key => $cnt):
+                                    $h = $maxCnt > 0 ? round(($cnt / $maxCnt) * 100) : 0;
+                                    if ($trafficPeriod === 'months') {
+                                        $label = date('M', strtotime($key . '-01'));
+                                    } elseif ($trafficPeriod === 'years') {
+                                        $label = $key;
+                                    } else {
+                                        $label = substr($key, 5);
+                                    }
+                                ?>
+                                    <div class="bar-col">
+                                        <div class="bar-value"><?php echo $cnt; ?></div>
+                                        <div class="bar" style="height:<?php echo max(2, $h); ?>px;" title="<?php echo $key; ?>: <?php echo $cnt; ?> pageviews"></div>
+                                        <div class="bar-label"><?php echo htmlspecialchars($label); ?></div>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+
+                    <!-- Top Pages -->
+                    <?php if (!empty($trafficData['topPages'])): ?>
+                    <div class="panel">
+                        <div class="panel-header">Top Pages</div>
+                        <div class="panel-body" style="padding:0;">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th style="width:40px;">#</th>
+                                        <th>Page URL</th>
+                                        <th style="text-align:center;width:70px;">Views</th>
+                                        <th style="text-align:center;width:80px;">Avg Dwell</th>
+                                        <th style="text-align:center;width:80px;">Scroll</th>
+                                        <th style="text-align:center;width:80px;">Submissions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php $rank = 1; foreach ($trafficData['topPages'] as $page): ?>
+                                        <tr>
+                                            <td style="color:#999;"><?php echo $rank++; ?></td>
+                                            <td class="url-cell">
+                                                <a href="<?php echo htmlspecialchars($page['url']); ?>" target="_blank" rel="noopener">
+                                                    <?php echo htmlspecialchars(strlen($page['url']) > 80 ? substr($page['url'], 0, 80) . '...' : $page['url']); ?>
+                                                </a>
+                                            </td>
+                                            <td style="text-align:center;font-weight:600;"><?php echo number_format($page['views']); ?></td>
+                                            <td style="text-align:center;"><?php echo $page['avg_duration'] > 0 ? fmtDuration($page['avg_duration']) : '-'; ?></td>
+                                            <td style="text-align:center;"><?php echo $page['avg_scroll'] > 0 ? $page['avg_scroll'] . '%' : '-'; ?></td>
+                                            <td style="text-align:center;"><?php echo $page['submissions'] > 0 ? number_format($page['submissions']) : '-'; ?></td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <?php endif; ?>
 
                 <?php elseif ($tab === 'visitors'): ?>
                     <!-- Visitors List -->
