@@ -88,19 +88,30 @@ RewriteRule ^ /404.html [L]
   ExpiresByType application/javascript "access plus 1 year"
 </IfModule>
 
-# ─── Cache-Control headers (immutable for hashed Astro assets) ────────────
+# ─── Cache-Control headers ─────────────────────────────────────────────────
+# NOTE: FilesMatch in Apache/LiteSpeed matches the FILENAME only, not the path.
 <IfModule mod_headers.c>
-  # Astro outputs content-hashed filenames under /_astro/ — safe to cache forever
-  <FilesMatch "^\/_astro\/.*\.(js|css|woff2|woff)$">
+  # Astro hashed JS bundles — immutable (filename contains content hash)
+  <FilesMatch "\.(js)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 
-  # Images in /media/ — cache 1 year
-  <FilesMatch "^\/media\/.*\.(webp|png|jpg|jpeg|gif|svg|ico)$">
+  # CSS bundles — immutable
+  <FilesMatch "\.(css)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # All image types — 1 year
+  <FilesMatch "\.(webp|png|jpg|jpeg|gif|svg|ico|avif)$">
     Header set Cache-Control "public, max-age=31536000"
   </FilesMatch>
 
-  # HTML pages — must revalidate (so updates deploy correctly)
+  # Fonts — 1 year
+  <FilesMatch "\.(woff2|woff|ttf|eot)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # HTML — short cache so updates deploy quickly
   <FilesMatch "\.html$">
     Header set Cache-Control "public, max-age=3600, must-revalidate"
   </FilesMatch>
