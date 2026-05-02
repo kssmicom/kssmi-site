@@ -229,10 +229,10 @@ $visTotalPages = ceil($visTotal / $visPerPage);
     <title>Visitor Journey Tracker - KSSMI</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; padding: 20px; color: #333; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; padding: 14px 20px; color: #333; }
         .container { max-width: 1500px; margin: 0 auto; }
         h1 { color: #5D4E37; }
-        .subtitle { color: #666; margin-bottom: 20px; }
+        .subtitle { color: #888; }
 
         /* Login */
         .login-box { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); max-width: 400px; margin: 100px auto; }
@@ -242,18 +242,20 @@ $visTotalPages = ceil($visTotal / $visPerPage);
         .login-box button:hover { background: #5D4E37; }
 
         /* Header */
-        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px; }
-        .header-left h1 { margin-bottom: 4px; }
-        .header-right { display: flex; gap: 8px; align-items: center; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 8px; background: white; padding: 12px 16px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); border-left: 3px solid #8B7355; }
+        .header-left { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+        .header-left h1 { font-size: 16px; font-weight: 700; color: #5D4E37; white-space: nowrap; }
+        .header-left .subtitle { font-size: 13px; color: #888; }
+        .header-right { display: flex; gap: 6px; align-items: center; }
 
         /* Tabs */
-        .tabs { display: flex; gap: 0; margin-bottom: 20px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-        .tab { padding: 12px 24px; text-decoration: none; color: #666; font-weight: 500; font-size: 14px; transition: all 0.15s; border-bottom: 3px solid transparent; }
+        .tabs { display: flex; gap: 0; margin-bottom: 14px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .tab { padding: 10px 20px; text-decoration: none; color: #666; font-weight: 500; font-size: 13px; transition: all 0.15s; border-bottom: 3px solid transparent; }
         .tab:hover { color: #5D4E37; background: #faf9f7; }
         .tab.active { color: #5D4E37; border-bottom-color: #8B7355; background: #faf9f7; }
 
         /* Buttons */
-        .btn { padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; font-size: 13px; display: inline-block; }
+        .btn { padding: 6px 14px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; font-size: 12px; display: inline-block; font-weight: 500; }
         .btn-primary { background: #8B7355; color: white; }
         .btn-primary:hover { background: #5D4E37; }
         .btn-danger { background: #e74c3c; color: white; }
@@ -266,22 +268,23 @@ $visTotalPages = ceil($visTotal / $visPerPage);
         .btn:hover { opacity: 0.9; }
 
         /* Stats */
-        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 20px; }
-        .stat-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-        .stat-card h3 { font-size: 11px; text-transform: uppercase; color: #888; margin-bottom: 6px; letter-spacing: 0.5px; }
-        .stat-card .value { font-size: 28px; font-weight: bold; color: #5D4E37; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 14px; }
+        .stat-card { background: white; padding: 16px 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-top: 3px solid #8B7355; transition: box-shadow 0.15s; }
+        .stat-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.08); }
+        .stat-card h3 { font-size: 10px; text-transform: uppercase; color: #888; margin-bottom: 4px; letter-spacing: 0.8px; }
+        .stat-card .value { font-size: 26px; font-weight: bold; color: #5D4E37; }
         .stat-card .sub { font-size: 12px; color: #888; margin-top: 4px; }
 
         /* Panels */
-        .panel { background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 20px; }
-        .panel-header { padding: 15px 20px; border-bottom: 1px solid #eee; font-weight: 600; color: #5D4E37; font-size: 14px; display: flex; justify-content: space-between; align-items: center; }
-        .panel-body { padding: 20px; }
+        .panel { background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 14px; }
+        .panel-header { padding: 12px 16px; border-bottom: 1px solid #eee; font-weight: 600; color: #5D4E37; font-size: 13px; display: flex; justify-content: space-between; align-items: center; }
+        .panel-body { padding: 16px; }
 
         /* Tables */
         .table-wrapper { overflow-x: auto; }
         table { width: 100%; border-collapse: collapse; font-size: 13px; }
-        th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid #eee; }
-        th { background: #f8f8f8; font-weight: 600; color: #5D4E37; font-size: 11px; text-transform: uppercase; white-space: nowrap; }
+        th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background: #f8f8f8; font-weight: 600; color: #5D4E37; font-size: 10px; text-transform: uppercase; white-space: nowrap; }
         tr:hover { background: #fafafa; }
         .mono { font-family: monospace; font-size: 11px; }
 
@@ -293,8 +296,8 @@ $visTotalPages = ceil($visTotal / $visPerPage);
         .status-abandoned { background: #eaeded; color: #7f8c8d; }
 
         /* Filters */
-        .filters { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 15px; }
-        .filters select, .filters input { padding: 6px 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 13px; }
+        .filters { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+        .filters select, .filters input { padding: 5px 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 12px; }
         .filters input[type="date"] { width: 140px; }
 
         /* Pagination */
