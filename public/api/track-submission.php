@@ -59,13 +59,14 @@ $geo     = vjt_resolve_geo($ip);
 try {
     // Upsert visitor
     vjt_upsert_visitor([
-        'visitor_id'  => $visitorId,
-        'first_ip'    => $ip,
-        'country'     => $geo['country'],
-        'city'        => $geo['city'],
-        'user_agent'  => $ua,
-        'browser'     => $browser,
-        'device_type' => $device,
+        'visitor_id'    => $visitorId,
+        'first_ip'      => $ip,
+        'country'       => $geo['country'],
+        'city'          => $geo['city'],
+        'user_agent'    => $ua,
+        'browser'       => $browser,
+        'device_type'   => $device,
+        'site_language' => $data['site_language'] ?? 'EN',
     ]);
 
     // Upsert session

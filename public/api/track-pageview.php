@@ -73,6 +73,7 @@ try {
         'screen_resolution' => $data['screen_resolution'] ?? '',
         'timezone'          => $data['timezone'] ?? '',
         'language'          => $data['language'] ?? '',
+        'site_language'     => $data['site_language'] ?? 'EN',
     ]);
 
     // Upsert session

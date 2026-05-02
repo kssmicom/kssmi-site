@@ -93,6 +93,7 @@ function vjt_upsert_visitor($data) {
         if (!empty($data['screen_resolution'])) $visitors[$vid]['screen_resolution'] = $data['screen_resolution'];
         if (!empty($data['timezone'])) $visitors[$vid]['timezone'] = $data['timezone'];
         if (!empty($data['language'])) $visitors[$vid]['language'] = $data['language'];
+        if (!empty($data['site_language'])) $visitors[$vid]['site_language'] = $data['site_language'];
         if (!empty($data['user_agent'])) $visitors[$vid]['user_agent'] = $data['user_agent'];
     } else {
         $visitors[$vid] = [
@@ -106,6 +107,7 @@ function vjt_upsert_visitor($data) {
             'screen_resolution' => $data['screen_resolution'] ?? '',
             'timezone'          => $data['timezone'] ?? '',
             'language'          => $data['language'] ?? '',
+            'site_language'     => $data['site_language'] ?? 'EN',
             'first_seen_at'     => $now,
             'last_seen_at'      => $now,
         ];

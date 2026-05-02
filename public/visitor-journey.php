@@ -776,11 +776,12 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                                     <div class="journey-item"><label>First IP</label><div class="val"><?php echo htmlspecialchars($v['first_ip']); ?></div></div>
                                     <div class="journey-item"><label>Country</label><div class="val"><?php echo htmlspecialchars(getCountryName($v['country'])); ?></div></div>
                                     <div class="journey-item"><label>City</label><div class="val"><?php echo htmlspecialchars($v['city'] ?: '-'); ?></div></div>
+                                    <div class="journey-item"><label>Site <span style="font-weight:400;color:#888;">(Language)</span></label><div class="val"><?php echo htmlspecialchars($v['site_language'] ?? 'EN'); ?></div></div>
+                                    <div class="journey-item"><label>Language <span style="font-weight:400;color:#888;">(Browser)</span></label><div class="val"><?php echo htmlspecialchars($v['language'] ?: '-'); ?></div></div>
+                                    <div class="journey-item"><label>Timezone</label><div class="val"><?php echo htmlspecialchars($v['timezone'] ?: '-'); ?></div></div>
                                     <div class="journey-item"><label>Browser</label><div class="val"><?php echo htmlspecialchars($v['browser'] ?: '-'); ?></div></div>
                                     <div class="journey-item"><label>Device</label><div class="val"><?php echo htmlspecialchars(ucfirst($v['device_type'] ?: '-')); ?></div></div>
                                     <div class="journey-item"><label>Screen</label><div class="val"><?php echo htmlspecialchars($v['screen_resolution'] ?: '-'); ?></div></div>
-                                    <div class="journey-item"><label>Timezone</label><div class="val"><?php echo htmlspecialchars($v['timezone'] ?: '-'); ?></div></div>
-                                    <div class="journey-item"><label>Language</label><div class="val"><?php echo htmlspecialchars($v['language'] ?: '-'); ?></div></div>
                                     <div class="journey-item"><label>First Seen</label><div class="val"><?php echo htmlspecialchars($v['first_seen_at']); ?></div></div>
                                     <div class="journey-item"><label>Last Seen</label><div class="val"><?php echo htmlspecialchars($v['last_seen_at']); ?></div></div>
                                     <div class="journey-item" style="grid-column: 1 / -1;"><label>User Agent</label><div class="val" style="font-size:11px;word-break:break-all;"><?php echo htmlspecialchars($v['user_agent'] ?? 'N/A'); ?></div></div>

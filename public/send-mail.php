@@ -152,17 +152,27 @@ function recordVJTSubmission($config, $data, $status, $visitorIP, $visitorCountr
         if (empty($visitorId) || empty($sessionId)) return;
 
         $ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
-        $submitPage = 'https://kssmi.com' . ($data['product_url'] ?? '');
+        $submitPage = $data['vjt_submit_page'] ?? '';
+        if (empty($submitPage)) {
+            $submitPage = 'https://kssmi.com' . ($data['product_url'] ?? '');
+        }
+        // Extract site language from URL
+        $siteLanguage = 'EN';
+        if (preg_match('#^https?://[^/]+/([a-z]{2})/#', $submitPage, $m)) {
+            $knownLangs = ['it','es','fr','de','pt','ru','ja','tr','ar','ko','zh','hi','vi','jv','ms','tg'];
+            if (in_array($m[1], $knownLangs)) $siteLanguage = strtoupper($m[1]);
+        }
 
         vjt_data_init();
 
         vjt_upsert_visitor([
-            'visitor_id'  => $visitorId,
-            'first_ip'    => $visitorIP,
-            'country'     => $visitorCountry,
-            'user_agent'  => $ua,
-            'browser'     => vjt_detect_browser($ua),
-            'device_type' => vjt_detect_device($ua),
+            'visitor_id'    => $visitorId,
+            'first_ip'      => $visitorIP,
+            'country'       => $visitorCountry,
+            'user_agent'    => $ua,
+            'browser'       => vjt_detect_browser($ua),
+            'device_type'   => vjt_detect_device($ua),
+            'site_language' => $siteLanguage,
         ]);
 
         vjt_upsert_session([

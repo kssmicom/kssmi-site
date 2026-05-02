@@ -62,6 +62,16 @@
       '; path=/; SameSite=Lax';
   }
 
+  function getSiteLanguage() {
+    try {
+      var path = window.location.pathname;
+      var seg = (path.split('/')[1] || '').toLowerCase();
+      var known = ['it','es','fr','de','pt','ru','ja','tr','ar','ko','zh','hi','vi','jv','ms','tg'];
+      if (known.indexOf(seg) !== -1) return seg.toUpperCase();
+      return 'EN';
+    } catch (e) { return 'EN'; }
+  }
+
   function extractUtm() {
     try {
       var search = window.location.search;
@@ -163,7 +173,8 @@
         utmTerm          : utm['utm_term']      || '',
         screenResolution : di.screen_resolution || '',
         timezone         : di.timezone          || '',
-        language         : di.language          || ''
+        language         : di.language          || '',
+        siteLanguage     : getSiteLanguage()    || 'EN'
       };
       writePath([]);
     }
@@ -294,7 +305,8 @@
       utm_term          : session.utmTerm           || '',
       screen_resolution : session.screenResolution || '',
       timezone          : session.timezone          || '',
-      language          : session.language          || ''
+      language          : session.language          || '',
+      site_language     : session.siteLanguage || getSiteLanguage()
     }, false);
   }
 
@@ -391,7 +403,8 @@
         referrer     : attrReferrer,
         landing_url  : session.landingUrl   || '',
         landing_title: session.landingTitle || '',
-        path_snapshot: snapshot
+        path_snapshot: snapshot,
+        site_language: session.siteLanguage || getSiteLanguage()
       };
 
       try {
@@ -475,7 +488,8 @@
         referrer     : attrReferrer,
         landing_url  : session.landingUrl   || '',
         landing_title: session.landingTitle || '',
-        path_snapshot: snapshot
+        path_snapshot: snapshot,
+        site_language: session.siteLanguage || getSiteLanguage()
       };
 
       var proceed = function() {
