@@ -411,6 +411,32 @@ function vjt_get_overview($since) {
         if (isset($trend[$day])) $trend[$day]++;
     }
 
+    // Submission trend (12 months)
+    $trendMonthly = [];
+    for ($i = 11; $i >= 0; $i--) {
+        $month = date('Y-m', strtotime("-{$i} months"));
+        $trendMonthly[$month] = 0;
+    }
+    foreach ($submissions as $sub) {
+        $month = substr($sub['submitted_at'] ?? '', 0, 7);
+        if (isset($trendMonthly[$month])) $trendMonthly[$month]++;
+    }
+
+    // Submission trend (years)
+    $trendYearly = [];
+    $minYear = (int)date('Y');
+    foreach ($submissions as $sub) {
+        $y = (int)substr($sub['submitted_at'] ?? '', 0, 4);
+        if ($y > 0 && $y < $minYear) $minYear = $y;
+    }
+    for ($y = $minYear; $y <= (int)date('Y'); $y++) {
+        $trendYearly[(string)$y] = 0;
+    }
+    foreach ($submissions as $sub) {
+        $y = substr($sub['submitted_at'] ?? '', 0, 4);
+        if (isset($trendYearly[$y])) $trendYearly[$y]++;
+    }
+
     // Top referrers
     $referrerCounts = [];
     foreach ($sessions as $s) {
@@ -448,6 +474,8 @@ function vjt_get_overview($since) {
         'avgDuration'         => $avgDuration,
         'conversionRate'      => $conversionRate,
         'trend'               => $trend,
+        'trendMonthly'        => $trendMonthly,
+        'trendYearly'         => $trendYearly,
         'topReferrers'        => $topReferrers,
         'deviceCounts'        => $deviceCounts,
         'sourceCounts'        => $sourceCounts,

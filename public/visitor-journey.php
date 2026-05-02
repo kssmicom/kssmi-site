@@ -47,6 +47,7 @@ $isAuthenticated = isset($_SESSION['email_logs_auth']) && $_SESSION['email_logs_
 
 // Determine active tab
 $tab = $_GET['tab'] ?? 'overview';
+$trendPeriod = $_GET['trend'] ?? 'days';
 $validTabs = ['overview', 'submissions', 'visitors', 'journey', 'countries', 'products', 'settings'];
 if (!in_array($tab, $validTabs)) $tab = 'overview';
 
@@ -67,10 +68,9 @@ if ($isAuthenticated && isset($_POST['save_settings'])) {
 
 // Handle data cleanup
 if ($isAuthenticated && isset($_POST['cleanup_data'])) {
-    $settings = getSettings();
-    $days = max(1, (int)($settings['retention_days'] ?? 90));
+    $days = max(1, (int)($_POST['cleanup_days'] ?? 90));
     vjt_cleanup_old_data($days);
-    $message = 'Old data cleaned up (retention: ' . $days . ' days).';
+    $message = 'Old data cleaned up (older than ' . $days . ' days).';
 }
 
 // Handle CSV export
@@ -309,9 +309,16 @@ $visTotalPages = ceil($visTotal / $visPerPage);
         /* Bar chart */
         .bar-chart { display: flex; align-items: flex-end; gap: 3px; height: 120px; padding: 0 10px; }
         .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; min-width: 0; }
-        .bar { background: #8B7355; width: 100%; max-width: 40px; border-radius: 3px 3px 0 0; min-height: 2px; transition: height 0.3s; }
+        .bar { background: #8B7355; width: 100%; max-width: 40px; border-radius: 3px 3px 0 0; min-height: 2px; transition: all 0.2s ease; cursor: pointer; }
+        .bar:hover { background: #5D4E37; opacity: 0.85; transform: scaleY(1.05); transform-origin: bottom; }
         .bar-label { font-size: 9px; color: #888; margin-top: 4px; transform: rotate(-45deg); transform-origin: top left; white-space: nowrap; }
         .bar-value { font-size: 10px; color: #5D4E37; font-weight: 600; margin-bottom: 2px; }
+
+        /* Trend sub-tabs */
+        .trend-tab { padding: 3px 10px; border-radius: 4px; text-decoration: none; font-size: 11px; font-weight: 500; color: #888; background: #f0f0f0; transition: all 0.15s; }
+        .trend-tab:hover { color: #5D4E37; background: #e0d8cc; }
+        .trend-tab-active { background: #8B7355; color: white; }
+        .trend-tab-active:hover { background: #5D4E37; color: white; }
 
         /* Journey detail */
         .journey-section { margin-bottom: 25px; }
@@ -429,20 +436,44 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                     </div>
 
                     <!-- Submission Trend -->
-                    <?php if (!empty($overview['trend'])): ?>
+                    <?php
+                    $trendData = $overview['trend'] ?? [];
+                    $trendTitle = 'Submission Trend (30 Days)';
+                    if ($trendPeriod === 'months') {
+                        $trendData = $overview['trendMonthly'] ?? [];
+                        $trendTitle = 'Submission Trend (12 Months)';
+                    } elseif ($trendPeriod === 'years') {
+                        $trendData = $overview['trendYearly'] ?? [];
+                        $trendTitle = 'Submission Trend (Years)';
+                    }
+                    ?>
+                    <?php if (!empty($trendData)): ?>
                     <div class="panel">
-                        <div class="panel-header">Submission Trend (30 Days)</div>
+                        <div class="panel-header">
+                            <span><?php echo $trendTitle; ?></span>
+                            <div style="display:flex;gap:4px;">
+                                <a href="?tab=overview&trend=days" class="trend-tab <?php echo $trendPeriod === 'days' ? 'trend-tab-active' : ''; ?>">30 Days</a>
+                                <a href="?tab=overview&trend=months" class="trend-tab <?php echo $trendPeriod === 'months' ? 'trend-tab-active' : ''; ?>">12 Months</a>
+                                <a href="?tab=overview&trend=years" class="trend-tab <?php echo $trendPeriod === 'years' ? 'trend-tab-active' : ''; ?>">Years</a>
+                            </div>
+                        </div>
                         <div class="panel-body">
                             <div class="bar-chart">
                                 <?php
-                                $maxCnt = max($overview['trend']) ?: 1;
-                                foreach ($overview['trend'] as $day => $cnt):
+                                $maxCnt = max($trendData) ?: 1;
+                                foreach ($trendData as $key => $cnt):
                                     $h = $maxCnt > 0 ? round(($cnt / $maxCnt) * 100) : 0;
-                                    $label = substr($day, 5); // MM-DD
+                                    if ($trendPeriod === 'months') {
+                                        $label = date('M', strtotime($key . '-01'));
+                                    } elseif ($trendPeriod === 'years') {
+                                        $label = $key;
+                                    } else {
+                                        $label = substr($key, 5); // MM-DD
+                                    }
                                 ?>
                                     <div class="bar-col">
                                         <div class="bar-value"><?php echo $cnt; ?></div>
-                                        <div class="bar" style="height:<?php echo max(2, $h); ?>px;" title="<?php echo $day; ?>: <?php echo $cnt; ?>"></div>
+                                        <div class="bar" style="height:<?php echo max(2, $h); ?>px;" title="<?php echo $key; ?>: <?php echo $cnt; ?>"></div>
                                         <div class="bar-label"><?php echo htmlspecialchars($label); ?></div>
                                     </div>
                                 <?php endforeach; ?>
@@ -890,13 +921,13 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                             <form method="POST">
                                 <div class="setting-row">
                                     <label>Session Timeout (minutes)</label>
-                                    <input type="number" name="session_timeout" value="<?php echo htmlspecialchars($settings['session_timeout'] ?? '30'); ?>" min="5" max="120">
-                                    <span style="color:#888;font-size:12px;">How long before a visitor session expires</span>
+                                    <input type="number" name="session_timeout" value="<?php echo htmlspecialchars($settings['session_timeout'] ?? '30'); ?>" min="1" max="525600">
+                                    <span style="color:#888;font-size:12px;">Inactivity before a new session starts (max 525600 = 1 year)</span>
                                 </div>
                                 <div class="setting-row">
                                     <label>Data Retention (days)</label>
-                                    <input type="number" name="retention_days" value="<?php echo htmlspecialchars($settings['retention_days'] ?? '90'); ?>" min="1" max="730">
-                                    <span style="color:#888;font-size:12px;">Auto-delete data older than this</span>
+                                    <input type="number" name="retention_days" value="<?php echo htmlspecialchars($settings['retention_days'] ?? '90'); ?>" min="1" max="3650">
+                                    <span style="color:#888;font-size:12px;">Auto-delete data older than this (max 3650 = 10 years)</span>
                                 </div>
                                 <div class="setting-row">
                                     <label>Enable Geo Lookup</label>
@@ -912,9 +943,11 @@ $visTotalPages = ceil($visTotal / $visPerPage);
 
                             <h3 style="color:#e74c3c;margin-bottom:10px;">Danger Zone</h3>
                             <p style="color:#666;font-size:13px;margin-bottom:10px;">
-                                Delete tracking data older than the retention period (<?php echo htmlspecialchars($settings['retention_days'] ?? '90'); ?> days).
+                                Delete tracking data older than the specified number of days.
                             </p>
-                            <form method="POST" onsubmit="return confirm('Delete old data? This cannot be undone.');">
+                            <form method="POST" onsubmit="return confirm('Delete old data? This cannot be undone.');" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+                                <input type="number" name="cleanup_days" value="<?php echo htmlspecialchars($settings['retention_days'] ?? '90'); ?>" min="1" max="3650" style="width:80px;padding:6px 10px;border:1px solid #ddd;border-radius:4px;font-size:13px;" required>
+                                <span style="color:#888;font-size:12px;">days</span>
                                 <button type="submit" name="cleanup_data" class="btn btn-danger">Clean Up Old Data</button>
                             </form>
                         </div>
