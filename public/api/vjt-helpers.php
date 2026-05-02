@@ -719,9 +719,9 @@ function vjt_get_products($dateFrom = '', $dateTo = '') {
 
     foreach ($pageviews as $pv) {
         $url = $pv['url'] ?? '';
-        // Extract product SKU from URL patterns:
-        // /product/yto-001/  or  /en/product/yto-001/  etc.
-        if (preg_match('#/product/([a-zA-Z]+-\d+)/?#', $url, $m)) {
+        // Extract Kssmi product SKU from URL: /product/kmo-001/ /product/kms-007/ etc.
+        // Exclude old Yeetian brand prefixes (YTO, YTS).
+        if (preg_match('#/product/((?:kmo|kms|kss)-[\w-]+)/?#i', $url, $m)) {
             $sku = strtoupper($m[1]);
         } else {
             continue;
