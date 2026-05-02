@@ -18,8 +18,13 @@
   var maxScrollDepth  = 0;
   var scrollTimer     = null;
 
-  function uuid(prefix) {
-    return [prefix, Date.now().toString(36), Math.random().toString(16).slice(2)].join('_');
+  function newTrackingId(prefix) {
+    var now = new Date();
+    var p = function (n) { return (n < 10 ? '0' : '') + n; };
+    var dateStr = now.getFullYear() + '-' + p(now.getMonth() + 1) + '-' + p(now.getDate());
+    var timeStr = p(now.getHours()) + p(now.getMinutes()) + p(now.getSeconds());
+    var rand = Math.random().toString(16).slice(2, 6);
+    return prefix + dateStr + '-' + timeStr + '-' + rand;
   }
 
   function nowBeijing() {
@@ -165,7 +170,7 @@
       var utm = extractUtm();
       var di  = deviceInfo || {};
       session = {
-        id               : uuid('vjts'),
+        id               : newTrackingId('vjts_'),
         startedAt        : nowBeijing(),
         landingUrl       : cfg.page.url,
         landingTitle     : cfg.page.title,

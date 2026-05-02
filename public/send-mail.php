@@ -261,7 +261,7 @@ function sanitize($input) {
  * Debug log for IP detection troubleshooting
  */
 function debugIPLog($source, $data) {
-    $logFile = __DIR__ . '/ip-debug.log';
+    $logFile = dirname(__DIR__) . '/ip-debug.log';
     $entry = date('Y-m-d H:i:s') . " [$source]: " . json_encode($data, JSON_UNESCAPED_UNICODE) . "\n";
     file_put_contents($logFile, $entry, FILE_APPEND);
 }
@@ -650,6 +650,7 @@ $formData = [
 $turnstileToken = $_POST['cf-turnstile-response'] ?? '';
 
 // Set JSON response header
+header('X-Robots-Tag: noindex, nofollow');
 header('Content-Type: application/json');
 
 // Validate required fields

@@ -4,6 +4,7 @@
  * Receives pageview data from client-side tracker. Stores in JSON flat files.
  */
 
+header('X-Robots-Tag: noindex, nofollow');
 header('Content-Type: application/json');
 
 // CORS

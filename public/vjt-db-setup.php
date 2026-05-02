@@ -5,6 +5,13 @@
  * Run once: php vjt-db-setup.php
  */
 
+// Block web access — CLI only
+if (PHP_SAPI !== 'cli') {
+    http_response_code(403);
+    header('X-Robots-Tag: noindex, nofollow');
+    die('CLI only.');
+}
+
 require_once __DIR__ . '/api/vjt-helpers.php';
 
 if (!is_dir(VJT_DATA_DIR)) {

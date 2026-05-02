@@ -6,6 +6,7 @@ Disallow: /visitor-journey.php
 Disallow: /email-logs.php
 Disallow: /php-status.php
 Disallow: /send-mail.php
+Disallow: /vjt-db-setup.php
 Disallow: /api/
 
 # Sitemaps

@@ -661,14 +661,14 @@ function resendEmail($log) {
 
         /* Stats */
         .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 14px; align-items: stretch; }
-        .stat-card { background: white; padding: 16px 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-top: 3px solid #8B7355; transition: box-shadow 0.15s; display: flex; flex-direction: column; }
+        .stat-card { background: white; padding: 16px 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-top: 3px solid #8B7355; transition: box-shadow 0.15s; display: flex; flex-direction: column; min-height: 88px; }
         .stat-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.08); }
         .stat-card h3 { font-size: 10px; text-transform: uppercase; color: #888; margin-bottom: 4px; letter-spacing: 0.8px; }
         .stat-card .value { font-size: 26px; font-weight: bold; color: #5D4E37; flex: 1; display: flex; align-items: center; }
         .stat-card .sub { font-size: 12px; color: #888; margin-top: 4px; }
-        .stat-card.success { border-top-color: #27ae60; }
+        .stat-card.success { border-top: 3px solid #27ae60; }
         .stat-card.success .value { color: #27ae60; }
-        .stat-card.failed { border-top-color: #e74c3c; }
+        .stat-card.failed { border-top: 3px solid #e74c3c; }
         .stat-card.failed .value { color: #e74c3c; }
 
         /* Panels */

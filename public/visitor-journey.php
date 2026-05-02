@@ -902,7 +902,7 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                     <?php $v = $journeyData['visitor']; ?>
                     <div class="panel">
                         <div class="panel-header">
-                            Journey: <?php echo htmlspecialchars(str_replace('vjtv_', '', $v['visitor_id'])); ?>
+                            Journey: <?php echo htmlspecialchars($v['visitor_id']); ?>
                             <a href="?tab=visitors" class="btn btn-secondary btn-small">Back to Visitors</a>
                         </div>
                         <div class="panel-body">

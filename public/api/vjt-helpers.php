@@ -26,10 +26,12 @@ function vjt_data_init() {
     if (!is_dir(VJT_DATA_DIR)) {
         if (!@mkdir(VJT_DATA_DIR, 0755, true)) {
             error_log("VJT ERROR: Failed to create data directory at " . VJT_DATA_DIR);
-        } else {
-            // Secure the directory
-            @file_put_contents(VJT_DATA_DIR . '/.htaccess', "Deny from all\n");
         }
+    }
+    // Always verify .htaccess exists (may be deleted during deployment)
+    $htaccess = VJT_DATA_DIR . '/.htaccess';
+    if (!file_exists($htaccess)) {
+        @file_put_contents($htaccess, "Deny from all\n");
     }
     $defaults = [
         'visitors.json'    => new stdClass(),
