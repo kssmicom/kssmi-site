@@ -306,11 +306,11 @@ $visTotalPages = ceil($visTotal / $visPerPage);
         .btn:hover { opacity: 0.9; }
 
         /* Stats */
-        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 14px; }
-        .stat-card { background: white; padding: 16px 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-top: 3px solid #8B7355; transition: box-shadow 0.15s; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 14px; align-items: stretch; }
+        .stat-card { background: white; padding: 16px 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-top: 3px solid #8B7355; transition: box-shadow 0.15s; display: flex; flex-direction: column; }
         .stat-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.08); }
         .stat-card h3 { font-size: 10px; text-transform: uppercase; color: #888; margin-bottom: 4px; letter-spacing: 0.8px; }
-        .stat-card .value { font-size: 26px; font-weight: bold; color: #5D4E37; }
+        .stat-card .value { font-size: 26px; font-weight: bold; color: #5D4E37; flex: 1; display: flex; align-items: center; }
         .stat-card .sub { font-size: 12px; color: #888; margin-top: 4px; }
 
         /* Panels */
@@ -365,6 +365,8 @@ $visTotalPages = ceil($visTotal / $visPerPage);
         .journey-item { background: #f8f7f5; padding: 10px 14px; border-radius: 6px; }
         .journey-item label { font-size: 10px; color: #888; display: block; text-transform: uppercase; letter-spacing: 0.5px; }
         .journey-item .val { font-size: 13px; color: #333; word-break: break-word; }
+        .city-link { color: #8B7355; text-decoration: none; border-bottom: 1px dashed #c4b896; }
+        .city-link:hover { color: #5D4E37; border-bottom-color: #5D4E37; }
         .timeline { position: relative; padding-left: 20px; }
         .timeline::before { content: ''; position: absolute; left: 7px; top: 0; bottom: 0; width: 2px; background: #e0d8cc; }
         .timeline-item { position: relative; padding: 8px 0 8px 16px; margin-bottom: 4px; }
@@ -462,7 +464,6 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                         <div class="stat-card">
                             <h3>Submissions (30d)</h3>
                             <div class="value"><?php echo number_format($overview['totalSubmissions']); ?></div>
-                            <div class="sub"><?php echo number_format($overview['successSubmissions']); ?> successful</div>
                         </div>
                         <div class="stat-card">
                             <h3>Conversion Rate</h3>
@@ -725,7 +726,6 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                         <div class="stat-card">
                             <h3>Bounce Rate</h3>
                             <div class="value"><?php echo $trafficData['bounceRate']; ?>%</div>
-                            <div class="sub">Single-page sessions</div>
                         </div>
                         <div class="stat-card">
                             <h3>Sessions</h3>
@@ -912,7 +912,7 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                                     <div class="journey-item"><label>Visitor ID</label><div class="val mono"><?php echo htmlspecialchars($v['visitor_id']); ?></div></div>
                                     <div class="journey-item"><label>First IP</label><div class="val"><?php echo htmlspecialchars($v['first_ip']); ?></div></div>
                                     <div class="journey-item"><label>Country</label><div class="val"><?php echo htmlspecialchars(getCountryName($v['country'])); ?></div></div>
-                                    <div class="journey-item"><label>City</label><div class="val"><?php echo htmlspecialchars($v['city'] ?: '-'); ?></div></div>
+                                    <div class="journey-item"><label>City</label><div class="val"><?php if ($v['city']): ?><a href="https://www.google.com/maps/search/<?php echo urlencode($v['city'] . ($v['country'] ? ', ' . getCountryName($v['country']) : '')); ?>" target="_blank" rel="noopener" class="city-link" title="Open in Google Maps"><?php echo htmlspecialchars($v['city']); ?></a><?php else: ?>-<?php endif; ?></div></div>
                                     <div class="journey-item"><label>Site <span style="font-weight:400;color:#888;">(Language)</span></label><div class="val"><?php echo htmlspecialchars($v['site_language'] ?? 'EN'); ?></div></div>
                                     <div class="journey-item"><label>Language <span style="font-weight:400;color:#888;">(Browser)</span></label><div class="val"><?php echo htmlspecialchars($v['language'] ?: '-'); ?></div></div>
                                     <div class="journey-item"><label>Timezone</label><div class="val"><?php echo htmlspecialchars($v['timezone'] ?: '-'); ?></div></div>

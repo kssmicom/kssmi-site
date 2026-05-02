@@ -6,6 +6,19 @@
 
 date_default_timezone_set('Asia/Shanghai');
 
+// Convert a UTC ISO 8601 string (from JS) to Beijing time Y-m-d H:i:s.
+// If the value is already a date string without "T" or "Z", return as-is.
+function vjt_to_beijing($timeStr) {
+    if (empty($timeStr)) return date('Y-m-d H:i:s');
+    // Already in "Y-m-d H:i:s" format (no T, no Z) — assume already local
+    if (strpos($timeStr, 'T') === false && strpos($timeStr, 'Z') === false) {
+        return $timeStr;
+    }
+    $ts = strtotime($timeStr);
+    if ($ts === false || $ts <= 0) return date('Y-m-d H:i:s');
+    return date('Y-m-d H:i:s', $ts);
+}
+
 // Store data directly inside the API folder to avoid web-root permission issues on shared hosting
 define('VJT_DATA_DIR', __DIR__ . '/vjt_data');
 
@@ -173,8 +186,8 @@ function vjt_add_pageview($data) {
         'visitor_id'       => $data['visitor_id'],
         'url'              => $data['url'] ?? '',
         'title'            => $data['title'] ?? '',
-        'visited_at'       => $data['visited_at'] ?? date('Y-m-d H:i:s'),
-        'leave_at'         => $data['leave_at'] ?? null,
+        'visited_at'       => vjt_to_beijing($data['visited_at'] ?? ''),
+        'leave_at'         => $data['leave_at'] ? vjt_to_beijing($data['leave_at']) : null,
         'duration_seconds' => (int)($data['duration_seconds'] ?? 0),
         'scroll_depth'     => (int)($data['scroll_depth'] ?? 0),
         'step_order'       => (int)($data['step_order'] ?? 1),
@@ -187,7 +200,7 @@ function vjt_update_pageview_leave($sessionId, $url, $leaveAt, $duration, $scrol
     if ($pageviews === null) return;
     for ($i = count($pageviews) - 1; $i >= 0; $i--) {
         if ($pageviews[$i]['session_id'] === $sessionId && $pageviews[$i]['url'] === $url && empty($pageviews[$i]['leave_at'])) {
-            $pageviews[$i]['leave_at'] = $leaveAt;
+            $pageviews[$i]['leave_at'] = vjt_to_beijing($leaveAt);
             $pageviews[$i]['duration_seconds'] = max(0, (int)$duration);
             $pageviews[$i]['scroll_depth'] = max($pageviews[$i]['scroll_depth'], (int)$scrollDepth);
             vjt_write_json('pageviews.json', $pageviews);
@@ -215,7 +228,7 @@ function vjt_sync_pageview_snapshot($sessionId, $pages) {
             'visitor_id'       => $page['visitor_id'] ?? '',
             'url'              => $url,
             'title'            => $page['title'] ?? '',
-            'visited_at'       => $page['visited_at'] ?? date('Y-m-d H:i:s'),
+            'visited_at'       => vjt_to_beijing($page['visited_at'] ?? ''),
             'leave_at'         => null,
             'duration_seconds' => 0,
             'scroll_depth'     => 0,

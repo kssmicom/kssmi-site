@@ -22,15 +22,17 @@
     return [prefix, Date.now().toString(36), Math.random().toString(16).slice(2)].join('_');
   }
 
-  function nowIso() {
+  function nowBeijing() {
+    // Always Beijing time (Asia/Shanghai), no matter where the visitor is
     var d = new Date();
-    var pad = function (n) { return (n < 10 ? '0' : '') + n; };
-    return d.getFullYear() + '-' +
-      pad(d.getMonth() + 1) + '-' +
-      pad(d.getDate()) + ' ' +
-      pad(d.getHours()) + ':' +
-      pad(d.getMinutes()) + ':' +
-      pad(d.getSeconds());
+    var bj = new Date(d.getTime() + d.getTimezoneOffset() * 60000 + 480 * 60000);
+    var p = function (n) { return (n < 10 ? '0' : '') + n; };
+    return bj.getUTCFullYear() + '-' +
+      p(bj.getUTCMonth() + 1) + '-' +
+      p(bj.getUTCDate()) + ' ' +
+      p(bj.getUTCHours()) + ':' +
+      p(bj.getUTCMinutes()) + ':' +
+      p(bj.getUTCSeconds());
   }
 
   function secondsBetween(start, end) {
@@ -164,7 +166,7 @@
       var di  = deviceInfo || {};
       session = {
         id               : uuid('vjts'),
-        startedAt        : nowIso(),
+        startedAt        : nowBeijing(),
         landingUrl       : cfg.page.url,
         landingTitle     : cfg.page.title,
         referrer         : document.referrer || '',
@@ -273,7 +275,7 @@
       landing_url       : session.landingUrl,
       landing_title     : session.landingTitle,
       session_started_at: session.startedAt,
-      visited_at        : nowIso(),
+      visited_at        : nowBeijing(),
       leave_at          : '',
       duration_seconds  : 0,
       scroll_depth      : 0,
@@ -320,7 +322,7 @@
     if (!pageview) return;
 
     var leaveMs = Date.now();
-    pageview.leave_at         = nowIso();
+    pageview.leave_at         = nowBeijing();
     pageview.duration_seconds = secondsBetween(pageview.created_at_ms || leaveMs, leaveMs);
     pageview.flush_reason     = reason || 'unknown';
     maxScrollDepth             = Math.max(maxScrollDepth, calcScrollDepth());
@@ -403,7 +405,7 @@
         form_name    : meta.name,
         submit_page  : cfg.page.url,
         submit_title : cfg.page.title,
-        submitted_at : nowIso(),
+        submitted_at : nowBeijing(),
         status       : 'success',
         referrer     : attrReferrer,
         landing_url  : session.landingUrl   || '',
@@ -487,7 +489,7 @@
         form_name    : kind === 'whatsapp' ? 'WhatsApp Click' : 'Mailto Click',
         submit_page  : cfg.page.url,
         submit_title : cfg.page.title,
-        submitted_at : nowIso(),
+        submitted_at : nowBeijing(),
         status       : 'success',
         contact_url  : href,
         referrer     : attrReferrer,
