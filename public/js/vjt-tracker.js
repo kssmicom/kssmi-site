@@ -86,13 +86,16 @@
 
   function calcScrollDepth() {
     try {
+      var scrollY = window.scrollY || window.pageYOffset || 0;
       var docH = Math.max(
-        document.body.scrollHeight, document.body.offsetHeight,
-        document.documentElement.scrollHeight, document.documentElement.offsetHeight
+        document.body.scrollHeight || 0,
+        document.body.offsetHeight || 0,
+        document.documentElement.scrollHeight || 0,
+        document.documentElement.offsetHeight || 0
       );
-      var winH = window.innerHeight;
-      if (docH <= winH) return 100;
-      return Math.min(100, Math.round((window.pageYOffset + winH) / docH * 100));
+      var winH = window.innerHeight || 0;
+      if (docH <= winH || docH <= 0) return 100;
+      return Math.min(100, Math.max(0, Math.round((scrollY + winH) / docH * 100)));
     } catch (e) { return 0; }
   }
 
@@ -289,6 +292,7 @@
     pageview.leave_at         = nowIso();
     pageview.duration_seconds = secondsBetween(pageview.created_at_ms || leaveMs, leaveMs);
     pageview.flush_reason     = reason || 'unknown';
+    maxScrollDepth             = Math.max(maxScrollDepth, calcScrollDepth());
     pageview.scroll_depth     = maxScrollDepth;
 
     writeJson(PAGE_KEY, pageview);

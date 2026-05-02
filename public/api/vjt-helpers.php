@@ -4,6 +4,8 @@
  * JSON flat-file storage (no database required).
  */
 
+date_default_timezone_set('Asia/Shanghai');
+
 // Store data directly inside the API folder to avoid web-root permission issues on shared hosting
 define('VJT_DATA_DIR', __DIR__ . '/vjt_data');
 
@@ -398,9 +400,9 @@ function vjt_get_overview($since) {
     $avgDuration = $durationCount > 0 ? round($totalDuration / $durationCount) : 0;
     $conversionRate = $totalSessions > 0 ? round(($successSubmissions / $totalSessions) * 100, 1) : 0;
 
-    // Submission trend (14 days)
+    // Submission trend (30 days)
     $trend = [];
-    for ($i = 13; $i >= 0; $i--) {
+    for ($i = 29; $i >= 0; $i--) {
         $day = date('Y-m-d', strtotime("-{$i} days"));
         $trend[$day] = 0;
     }

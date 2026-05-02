@@ -412,7 +412,7 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                     <!-- Submission Trend -->
                     <?php if (!empty($overview['trend'])): ?>
                     <div class="panel">
-                        <div class="panel-header">Submission Trend (14 Days)</div>
+                        <div class="panel-header">Submission Trend (30 Days)</div>
                         <div class="panel-body">
                             <div class="bar-chart">
                                 <?php
