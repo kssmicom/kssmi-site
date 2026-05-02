@@ -76,13 +76,8 @@ jobs:
             # Make PHP files executable
             find . -name "*.php" -exec chmod 755 {} \; 2>/dev/null || true
 
-            # Run VJT database setup (idempotent - skips if already exists)
+            # Run VJT setup (idempotent — creates data files if first run)
             php vjt-db-setup.php 2>/dev/null || true
-
-            # Ensure VJT database is writable by PHP
-            chmod 755 /home/kssmi.com/vjt 2>/dev/null || true
-            chmod 666 /home/kssmi.com/vjt/tracker.sqlite 2>/dev/null || true
-            chown -R kssmi:kssmi /home/kssmi.com/vjt 2>/dev/null || true
 
             # Create writable files if they don't exist
             touch email-logs.json 2>/dev/null || true
@@ -92,8 +87,15 @@ jobs:
             # Set writable permissions for data files (PHP needs to write to these)
             chmod 666 email-logs.json .email_logs_password .email_reset_tokens.json 2>/dev/null || true
 
+            # VJT JSON data files — must be writable by PHP (644 from find above breaks writes)
+            mkdir -p api/vjt_data 2>/dev/null || true
+            chmod 755 api/vjt_data 2>/dev/null || true
+            touch api/vjt_data/visitors.json api/vjt_data/sessions.json api/vjt_data/pageviews.json api/vjt_data/submissions.json api/vjt_data/geo_cache.json api/vjt_data/settings.json 2>/dev/null || true
+            chmod 666 api/vjt_data/*.json 2>/dev/null || true
+
             # Set ownership for data files
             chown kssmi:kssmi email-logs.json .email_logs_password .email_reset_tokens.json 2>/dev/null || sudo chown kssmi:kssmi email-logs.json .email_logs_password .email_reset_tokens.json 2>/dev/null || true
+            chown -R kssmi:kssmi api/vjt_data 2>/dev/null || sudo chown -R kssmi:kssmi api/vjt_data 2>/dev/null || true
 
       - name: Deployment Complete
         run: |

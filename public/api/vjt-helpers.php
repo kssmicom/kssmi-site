@@ -29,6 +29,8 @@ function vjt_data_init() {
         if (!file_exists($path)) {
             vjt_write_json($file, $default);
         }
+        // Ensure writable (deploy scripts may lock permissions to 644)
+        @chmod($path, 0666);
     }
 }
 
