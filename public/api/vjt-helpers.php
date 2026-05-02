@@ -732,7 +732,7 @@ function vjt_get_products($dateFrom = '', $dateTo = '') {
         if ($dateTo && $visited > $dateTo . ' 23:59:59') continue;
 
         if (!isset($products[$sku])) {
-            $products[$sku] = ['sku' => $sku, 'views' => 0, 'visitors' => 0, 'visitor_set' => []];
+            $products[$sku] = ['sku' => $sku, 'views' => 0, 'visitors' => 0, 'visitor_set' => [], 'url_counts' => []];
         }
         $products[$sku]['views']++;
         $vid = $pv['visitor_id'] ?? '';
@@ -740,6 +740,9 @@ function vjt_get_products($dateFrom = '', $dateTo = '') {
             $products[$sku]['visitor_set'][$vid] = true;
             $products[$sku]['visitors']++;
         }
+        // Track most common URL for this SKU
+        $cleanUrl = preg_replace('/\?.*$/', '', $url);
+        $products[$sku]['url_counts'][$cleanUrl] = ($products[$sku]['url_counts'][$cleanUrl] ?? 0) + 1;
     }
 
     // Sort by views descending
@@ -747,9 +750,11 @@ function vjt_get_products($dateFrom = '', $dateTo = '') {
         return $b['views'] - $a['views'];
     });
 
-    // Remove visitor_set before returning
+    // Pick most common URL per SKU, remove working data
     return array_map(function ($p) {
-        unset($p['visitor_set']);
+        arsort($p['url_counts']);
+        $p['url'] = count($p['url_counts']) > 0 ? array_key_first($p['url_counts']) : ('/product/' . strtolower($p['sku']) . '/');
+        unset($p['visitor_set'], $p['url_counts']);
         return $p;
     }, array_values($products));
 }

@@ -857,9 +857,9 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                                             <tr>
                                                 <th>#</th>
                                                 <th>SKU</th>
+                                                <th>URL</th>
                                                 <th style="text-align:center;">Views</th>
-                                                <th style="text-align:center;">Unique Visitors</th>
-                                                <th></th>
+                                                <th style="text-align:center;">Visitors</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -867,9 +867,9 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                                                 <tr>
                                                     <td style="color:#999;font-size:12px;"><?php echo $rank++; ?></td>
                                                     <td class="mono" style="font-weight:600;"><?php echo htmlspecialchars($p['sku']); ?></td>
+                                                    <td class="url-cell"><a href="<?php echo htmlspecialchars($p['url']); ?>" target="_blank" style="font-size:12px;"><?php echo htmlspecialchars($p['url']); ?></a></td>
                                                     <td style="text-align:center;font-weight:600;"><?php echo number_format($p['views']); ?></td>
                                                     <td style="text-align:center;"><?php echo number_format($p['visitors']); ?></td>
-                                                    <td><a href="/product/<?php echo urlencode(strtolower($p['sku'])); ?>/" target="_blank" class="btn btn-primary btn-small">View</a></td>
                                                 </tr>
                                             <?php endforeach; ?>
                                         </tbody>
