@@ -4,12 +4,17 @@
  * JSON flat-file storage (no database required).
  */
 
-// __DIR__ = /server/public_html/api  →  dirname() = /server/public_html  →  vjt/ sits inside the web root
-define('VJT_DATA_DIR', dirname(__DIR__) . '/vjt');
+// Store data directly inside the API folder to avoid web-root permission issues on shared hosting
+define('VJT_DATA_DIR', __DIR__ . '/vjt_data');
 
 function vjt_data_init() {
     if (!is_dir(VJT_DATA_DIR)) {
-        @mkdir(VJT_DATA_DIR, 0755, true);
+        if (!@mkdir(VJT_DATA_DIR, 0755, true)) {
+            error_log("VJT ERROR: Failed to create data directory at " . VJT_DATA_DIR);
+        } else {
+            // Secure the directory
+            @file_put_contents(VJT_DATA_DIR . '/.htaccess', "Deny from all\n");
+        }
     }
     $defaults = [
         'visitors.json'    => new stdClass(),
@@ -44,7 +49,10 @@ function vjt_read_json($filename) {
 function vjt_write_json($filename, $data) {
     $path = VJT_DATA_DIR . '/' . $filename;
     $fp = @fopen($path, 'c+');
-    if (!$fp) return false;
+    if (!$fp) {
+        error_log("VJT ERROR: Failed to open file for writing: " . $path);
+        return false;
+    }
     if (!flock($fp, LOCK_EX)) { fclose($fp); return false; }
     ftruncate($fp, 0);
     rewind($fp);
