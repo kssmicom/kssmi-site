@@ -77,33 +77,33 @@ function vjt_uuid() {
 
 function vjt_upsert_visitor($data) {
     $visitors = vjt_read_json('visitors.json');
-    if ($visitors === null) $visitors = new stdClass();
+    if ($visitors === null) $visitors = [];
     $vid = $data['visitor_id'];
     $now = date('Y-m-d H:i:s');
-    if (isset($visitors->$vid)) {
-        $visitors->$vid->last_seen_at = $now;
-        if (!empty($data['country'])) $visitors->$vid->country = $data['country'];
-        if (!empty($data['city'])) $visitors->$vid->city = $data['city'];
-        if (!empty($data['browser']) && $data['browser'] !== 'Unknown') $visitors->$vid->browser = $data['browser'];
-        if (!empty($data['device_type']) && $data['device_type'] !== 'Unknown') $visitors->$vid->device_type = $data['device_type'];
-        if (!empty($data['screen_resolution'])) $visitors->$vid->screen_resolution = $data['screen_resolution'];
-        if (!empty($data['timezone'])) $visitors->$vid->timezone = $data['timezone'];
-        if (!empty($data['language'])) $visitors->$vid->language = $data['language'];
-        if (!empty($data['user_agent'])) $visitors->$vid->user_agent = $data['user_agent'];
+    if (isset($visitors[$vid])) {
+        $visitors[$vid]['last_seen_at'] = $now;
+        if (!empty($data['country'])) $visitors[$vid]['country'] = $data['country'];
+        if (!empty($data['city'])) $visitors[$vid]['city'] = $data['city'];
+        if (!empty($data['browser']) && $data['browser'] !== 'Unknown') $visitors[$vid]['browser'] = $data['browser'];
+        if (!empty($data['device_type']) && $data['device_type'] !== 'Unknown') $visitors[$vid]['device_type'] = $data['device_type'];
+        if (!empty($data['screen_resolution'])) $visitors[$vid]['screen_resolution'] = $data['screen_resolution'];
+        if (!empty($data['timezone'])) $visitors[$vid]['timezone'] = $data['timezone'];
+        if (!empty($data['language'])) $visitors[$vid]['language'] = $data['language'];
+        if (!empty($data['user_agent'])) $visitors[$vid]['user_agent'] = $data['user_agent'];
     } else {
-        $visitors->$vid = [
-            'visitor_id'       => $vid,
-            'first_ip'         => $data['first_ip'] ?? '',
-            'country'          => $data['country'] ?? '',
-            'city'             => $data['city'] ?? '',
-            'user_agent'       => $data['user_agent'] ?? '',
-            'browser'          => $data['browser'] ?? 'Unknown',
-            'device_type'      => $data['device_type'] ?? 'Unknown',
+        $visitors[$vid] = [
+            'visitor_id'        => $vid,
+            'first_ip'          => $data['first_ip'] ?? '',
+            'country'           => $data['country'] ?? '',
+            'city'              => $data['city'] ?? '',
+            'user_agent'        => $data['user_agent'] ?? '',
+            'browser'           => $data['browser'] ?? 'Unknown',
+            'device_type'       => $data['device_type'] ?? 'Unknown',
             'screen_resolution' => $data['screen_resolution'] ?? '',
-            'timezone'         => $data['timezone'] ?? '',
-            'language'         => $data['language'] ?? '',
-            'first_seen_at'    => $now,
-            'last_seen_at'     => $now,
+            'timezone'          => $data['timezone'] ?? '',
+            'language'          => $data['language'] ?? '',
+            'first_seen_at'     => $now,
+            'last_seen_at'      => $now,
         ];
     }
     vjt_write_json('visitors.json', $visitors);
@@ -113,36 +113,35 @@ function vjt_upsert_visitor($data) {
 
 function vjt_upsert_session($data) {
     $sessions = vjt_read_json('sessions.json');
-    if ($sessions === null) $sessions = new stdClass();
+    if ($sessions === null) $sessions = [];
     $sid = $data['session_id'];
     $now = date('Y-m-d H:i:s');
-    if (isset($sessions->$sid)) {
-        $sessions->$sid->last_seen_at = $now;
-        // Only update fields if incoming data is non-empty
-        if (!empty($data['ip'])) $sessions->$sid->ip = $data['ip'];
-        if (!empty($data['country'])) $sessions->$sid->country = $data['country'];
-        if (!empty($data['city'])) $sessions->$sid->city = $data['city'];
-        if (!empty($data['region'])) $sessions->$sid->region = $data['region'];
-        if (!empty($data['calling_code'])) $sessions->$sid->calling_code = $data['calling_code'];
+    if (isset($sessions[$sid])) {
+        $sessions[$sid]['last_seen_at'] = $now;
+        if (!empty($data['ip'])) $sessions[$sid]['ip'] = $data['ip'];
+        if (!empty($data['country'])) $sessions[$sid]['country'] = $data['country'];
+        if (!empty($data['city'])) $sessions[$sid]['city'] = $data['city'];
+        if (!empty($data['region'])) $sessions[$sid]['region'] = $data['region'];
+        if (!empty($data['calling_code'])) $sessions[$sid]['calling_code'] = $data['calling_code'];
     } else {
-        $sessions->$sid = [
-            'session_id'   => $sid,
-            'visitor_id'   => $data['visitor_id'],
-            'ip'           => $data['ip'] ?? '',
-            'country'      => $data['country'] ?? '',
-            'city'         => $data['city'] ?? '',
-            'region'       => $data['region'] ?? '',
-            'calling_code' => $data['calling_code'] ?? '',
-            'referrer'     => $data['referrer'] ?? '',
-            'landing_url'  => $data['landing_url'] ?? '',
+        $sessions[$sid] = [
+            'session_id'    => $sid,
+            'visitor_id'    => $data['visitor_id'],
+            'ip'            => $data['ip'] ?? '',
+            'country'       => $data['country'] ?? '',
+            'city'          => $data['city'] ?? '',
+            'region'        => $data['region'] ?? '',
+            'calling_code'  => $data['calling_code'] ?? '',
+            'referrer'      => $data['referrer'] ?? '',
+            'landing_url'   => $data['landing_url'] ?? '',
             'landing_title' => $data['landing_title'] ?? '',
-            'utm_source'   => $data['utm_source'] ?? '',
-            'utm_medium'   => $data['utm_medium'] ?? '',
-            'utm_campaign' => $data['utm_campaign'] ?? '',
-            'utm_content'  => $data['utm_content'] ?? '',
-            'utm_term'     => $data['utm_term'] ?? '',
-            'started_at'   => $now,
-            'last_seen_at' => $now,
+            'utm_source'    => $data['utm_source'] ?? '',
+            'utm_medium'    => $data['utm_medium'] ?? '',
+            'utm_campaign'  => $data['utm_campaign'] ?? '',
+            'utm_content'   => $data['utm_content'] ?? '',
+            'utm_term'      => $data['utm_term'] ?? '',
+            'started_at'    => $now,
+            'last_seen_at'  => $now,
         ];
     }
     vjt_write_json('sessions.json', $sessions);
@@ -256,13 +255,13 @@ function vjt_resolve_geo($ip) {
     }
 
     $cache = vjt_read_json('geo_cache.json');
-    if ($cache === null) $cache = new stdClass();
-    if (isset($cache->$ip) && isset($cache->$ip->cached_at) && $cache->$ip->cached_at > date('Y-m-d H:i:s', strtotime('-1 day'))) {
+    if ($cache === null) $cache = [];
+    if (isset($cache[$ip]) && isset($cache[$ip]['cached_at']) && $cache[$ip]['cached_at'] > date('Y-m-d H:i:s', strtotime('-1 day'))) {
         return [
-            'country'      => $cache->$ip->country ?? '',
-            'city'         => $cache->$ip->city ?? '',
-            'region'       => $cache->$ip->region ?? '',
-            'calling_code' => $cache->$ip->calling_code ?? '',
+            'country'      => $cache[$ip]['country'] ?? '',
+            'city'         => $cache[$ip]['city'] ?? '',
+            'region'       => $cache[$ip]['region'] ?? '',
+            'calling_code' => $cache[$ip]['calling_code'] ?? '',
         ];
     }
 
@@ -279,7 +278,7 @@ function vjt_resolve_geo($ip) {
                     'region'       => $geo['regionName'] ?? '',
                     'calling_code' => isset($geo['callingCode']) ? (string)$geo['callingCode'] : '',
                 ];
-                $cache->$ip = $result + ['cached_at' => date('Y-m-d H:i:s')];
+                $cache[$ip] = $result + ['cached_at' => date('Y-m-d H:i:s')];
                 vjt_write_json('geo_cache.json', $cache);
             }
         }
@@ -572,8 +571,8 @@ function vjt_get_journey($visitorId) {
     $submissions = vjt_read_json('submissions.json');
 
     $visitor = null;
-    if ($visitors && isset($visitors->$visitorId)) {
-        $visitor = $visitors->$visitorId;
+    if ($visitors && isset($visitors[$visitorId])) {
+        $visitor = $visitors[$visitorId];
     }
     if (!$visitor) return null;
 
@@ -614,7 +613,7 @@ function vjt_cleanup_old_data($days) {
     if ($visitors) {
         foreach ($visitors as $vid => $v) {
             if (($v['last_seen_at'] ?? '') < $cutoff) {
-                unset($visitors->$vid);
+                unset($visitors[$vid]);
             }
         }
         vjt_write_json('visitors.json', $visitors);
@@ -624,7 +623,7 @@ function vjt_cleanup_old_data($days) {
     if ($sessions) {
         foreach ($sessions as $sid => $s) {
             if (($s['last_seen_at'] ?? '') < $cutoff) {
-                unset($sessions->$sid);
+                unset($sessions[$sid]);
             }
         }
         vjt_write_json('sessions.json', $sessions);
@@ -650,9 +649,9 @@ function vjt_cleanup_old_data($days) {
     $geoCuttoff = date('Y-m-d H:i:s', time() - (7 * 86400));
     $geoCache = vjt_read_json('geo_cache.json');
     if ($geoCache) {
-        foreach ($geoCache as $ip => $entry) {
+        foreach ($geoCache as $cip => $entry) {
             if (($entry['cached_at'] ?? '') < $geoCuttoff) {
-                unset($geoCache->$ip);
+                unset($geoCache[$cip]);
             }
         }
         vjt_write_json('geo_cache.json', $geoCache);
