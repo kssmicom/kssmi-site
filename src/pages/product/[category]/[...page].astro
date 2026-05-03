@@ -11,65 +11,36 @@ import { translations } from '../../../translations';
 import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
-import { isCategoryMatch } from '../../../utils/categoryMatching';
+import { isCategoryMatch, getSlug } from '../../../utils/categoryMatching';
 import type { Page } from 'astro';
 import Pagination from '../../../components/Pagination.astro';
 
 export async function getStaticPaths({ paginate }: { paginate: any }) {
   const lang = 'en';
 
-  const CANONICAL_CATEGORIES = [
-    'acetate-sunglasses',
-    'acetate-glasses',
-    'acetate-optical-frames', // For backward compatibility
-    'metal-sunglasses',
-    'metal-glasses',
-    'metal-optical-frames',
-    'titanium-sunglasses',
-    'titanium-glasses',
-    'titanium-optical-frames',
-    'carbon-sunglasses',
-    'carbon-fiber-sunglasses',
-    'carbon-glasses',
-    'carbon-optical-frames',
-    'carbon-fiber-optical-frames',
-    'rimless-sunglasses',
-    'rimless-glasses',
-    'rimless-optical-frames',
-    'sunglasses',
-    'optical-frames',
-    'luxury-customized',
-    'luxury-glasses',
-    'luxury-sunglasses',
-    'luxury-acetate-sunglasses',
-    'luxury-titanium-sunglasses',
-    'luxury-acetate-optical-frames',
-    'luxury-titanium-optical-frames',
-    'high-couture-series',
-    'high-couture-sunglasses',
-    'high-couture-glasses',
-    'classics-series',
-    'classics-sunglasses',
-    'classics-glasses',
-    'fashion-series',
-    'fashion-acetate-sunglasses',
-    'fashion-metal-sunglasses',
-    'fashion-acetate-optical-frames',
-    'fashion-metal-optical-frames',
-    'rimless-series',
-    'carbon-series',
-    'metal',
-    'acetate',
-    'titanium',
-    'luxury',
-    'fashion',
-    'carbon-fiber',
-    'rimless'
-  ];
-
   const allProducts = await getCollection('products');
 
-  return CANONICAL_CATEGORIES.flatMap((category) => {
+  // Dynamically derive categories from product series fields
+  const allCategorySlugs = new Set<string>();
+  for (const p of allProducts) {
+    const series = p.data.series || p.data.categories || '';
+    for (const cat of String(series).split(',')) {
+      const slug = getSlug(cat.trim());
+      if (slug) allCategorySlugs.add(slug);
+    }
+  }
+
+  // Ensure all sidebar-navigable category slugs exist, even if no products match exactly
+  const SIDEBAR_SLUGS = [
+    'sunglasses', 'acetate-sunglasses', 'metal-sunglasses', 'titanium-sunglasses', 'carbon-fiber-sunglasses', 'rimless-sunglasses',
+    'optical-frames', 'acetate-optical-frames', 'metal-optical-frames', 'titanium-optical-frames', 'carbon-fiber-optical-frames', 'rimless-optical-frames',
+    'fashion-acetate-sunglasses', 'fashion-metal-sunglasses', 'fashion-acetate-optical-frames', 'fashion-metal-optical-frames',
+    'luxury-acetate-sunglasses', 'luxury-titanium-sunglasses', 'luxury-acetate-optical-frames', 'luxury-titanium-optical-frames',
+    'carbon-fiber-eyewear', 'rimless-eyewear',
+  ];
+  for (const s of SIDEBAR_SLUGS) allCategorySlugs.add(s);
+
+  return [...allCategorySlugs].flatMap((category) => {
     const categoryProducts = allProducts.filter((p) => {
       const normalizedId = p.id.replace(/\.md$/, '');
       const pParts = normalizedId.split('.');
@@ -77,7 +48,6 @@ export async function getStaticPaths({ paginate }: { paginate: any }) {
       if (pLang !== lang) return false;
 
       const series = p.data.series || p.data.categories || '';
-      // Support matching slug like carbon-fiber or carbon-fiber-sunglasses
       return isCategoryMatch(series, category);
     });
 
@@ -154,7 +124,7 @@ const primaryCategories = [
       { label: t.sidebar.acetate_glasses, href: '/product/acetate-optical-frames' },
       { label: t.sidebar.metal_glasses, href: '/product/metal-optical-frames' },
       { label: t.sidebar.titanium_glasses, href: '/product/titanium-optical-frames' },
-      { label: t.sidebar.carbon_glasses, href: '/product/carbon-optical-frames' },
+      { label: t.sidebar.carbon_glasses, href: '/product/carbon-fiber-optical-frames' },
       { label: t.sidebar.rimless_glasses, href: '/product/rimless-optical-frames' }
     ]
   }

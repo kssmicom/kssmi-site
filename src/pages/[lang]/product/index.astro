@@ -57,7 +57,7 @@ const pt = t.product || {
   allProducts: "All Products",
 };
 
-// Primary Categories (Hierarchical) - matches English product/index.astro
+// Primary Categories (Hierarchical)
 const primaryCategories = [
   {
     label: t.sidebar.sunglasses,
@@ -130,9 +130,6 @@ function getCategoryCount(href: string): number {
     return isCategoryMatch(cats, targetSlug);
   }).length;
 }
-
-// Check if there are more pages
-const hasMore = allProducts.length > 12;
 
 // First product cover for LCP preload
 const lcpImage = products[0]?.data?.cover || undefined;
@@ -270,16 +267,13 @@ const lcpImage = products[0]?.data?.cover || undefined;
               </div>
 
               <!-- Pagination -->
-              {hasMore && (
-                <Pagination
-                  currentPage={1}
-                  lastPage={Math.ceil(allProducts.length / 12)}
-                  basePath={`/${currentPath}product`}
-                  prevLabel={pt.previousPage || 'Previous'}
-                  nextLabel={pt.nextPage || 'Next'}
-                  dir={isRTL ? 'rtl' : 'ltr'}
-                />
-              )}
+              <Pagination
+                currentPage={1}
+                lastPage={Math.ceil(allProducts.length / 12)}
+                basePath={`/${currentPath}product`}
+                prevLabel={pt.previousPage || 'Previous'}
+                nextLabel={pt.nextPage || 'Next'}
+              />
             </>
           )}
         </div>
