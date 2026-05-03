@@ -411,8 +411,7 @@ const isDev = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.
         var result = await response.json();
 
         if (result.success) {
-          newForm.classList.add('hidden');
-          els2.successEl.classList.remove('hidden');
+          window.location.href = '/thank-you/';
         } else {
           els2.errorMessage.textContent = result.message || 'Something went wrong. Please try again.';
           els2.errorContainer.classList.remove('hidden');

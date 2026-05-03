@@ -876,7 +876,7 @@ const t = i18n[lang] || i18n.en;
   <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileLoad" async defer></script>
 )}
 
-<script define:vars={{ isDev, sending: t.sending, submitBtn: t.submitBtn, errorFallback: t.errorFallback, generalError: t.generalError, detailsPlaceholder: t.detailsPlaceholder }}>
+<script define:vars={{ isDev, lang, sending: t.sending, submitBtn: t.submitBtn, errorFallback: t.errorFallback, generalError: t.generalError, detailsPlaceholder: t.detailsPlaceholder }}>
   // --- Set 2-line textarea placeholder (JS handles \n correctly for multiline placeholders) ---
   var detailsTextarea = document.getElementById('details-textarea');
   if (detailsTextarea) detailsTextarea.placeholder = detailsPlaceholder;
@@ -968,8 +968,7 @@ const t = i18n[lang] || i18n.en;
         var result = await response.json();
 
         if (result.success) {
-          newForm.classList.add('hidden');
-          els2.successEl.classList.remove('hidden');
+          window.location.href = '/' + lang + '/thank-you/';
         } else {
           els2.errorMessage.textContent = result.message || generalError;
           els2.errorContainer.classList.remove('hidden');
