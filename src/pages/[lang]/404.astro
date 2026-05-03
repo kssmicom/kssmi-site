@@ -1,12 +1,16 @@
 ---
-// Single smart 404 page for specified language
+/**
+ * Multilingual 404 Rescue Page
+ * Generates all 16 non-English language versions via getStaticPaths.
+ * Same conversion-focused design as the English 404:
+ * friendly message, 3 targeted links, mini contact form with Turnstile, search bar.
+ */
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 
 export async function getStaticPaths() {
   const languages = ['it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
-  
   return languages.map(lang => ({
     params: { lang },
     props: { lang }
@@ -14,129 +18,818 @@ export async function getStaticPaths() {
 }
 
 const { lang } = Astro.props;
+const isDev = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.0.0.1';
+const isRTL = lang === 'ar';
+const currentPath = `${lang}/`;
 
-// Localized strings - 17 languages with native translations
-const i18n = {
-    // Primary 10 languages
-    en: { title: 'Page Not Found',        msg: "The page you're looking for doesn't exist or has been moved.", home: 'Back to Home',        catalog: 'View Catalog',          search: 'Search',       placeholder: 'Search products, styles, collections…', eyewear: 'Eyewear Mfg.' },
-    it: { title: 'Pagina Non Trovata',    msg: 'La pagina che cercavi non esiste o è stata spostata.',          home: 'Torna alla Home',     catalog: 'Vedi Catalogo',         search: 'Cerca',        placeholder: 'Cerca prodotti, stili, collezioni…', eyewear: 'Manifattura Occhiali' },
-    es: { title: 'Página No Encontrada',  msg: 'La página que buscas no existe o ha sido movida.',               home: 'Volver al Inicio',    catalog: 'Ver Catálogo',          search: 'Buscar',       placeholder: 'Buscar productos, estilos, colecciones…', eyewear: 'Fabricante de Gafas' },
-    fr: { title: 'Page Introuvable',      msg: "La page que vous cherchez n'existe pas ou a été déplacée.",      home: "Retour à l'Accueil", catalog: 'Voir le Catalogue',     search: 'Rechercher',   placeholder: 'Rechercher des produits, styles, collections…', eyewear: 'Fabricant de Lunettes' },
-    de: { title: 'Seite Nicht Gefunden',  msg: 'Die gesuchte Seite existiert nicht oder wurde verschoben.',      home: 'Zur Startseite',      catalog: 'Katalog Ansehen',       search: 'Suchen',       placeholder: 'Produkte, Stile, Kollektionen suchen…', eyewear: 'Brillenmanufaktur' },
-    pt: { title: 'Página Não Encontrada', msg: 'A página que você procura não existe ou foi movida.',            home: 'Voltar ao Início',    catalog: 'Ver Catálogo',          search: 'Pesquisar',    placeholder: 'Pesquisar produtos, estilos, coleções…', eyewear: 'Fabricante de Óculos' },
-    ru: { title: 'Страница Не Найдена',   msg: 'Страница, которую вы ищете, не существует или была перемещена.',home: 'На Главную',          catalog: 'Смотреть Каталог',      search: 'Поиск',        placeholder: 'Поиск продуктов, стилей, коллекций…', eyewear: 'Производство очков' },
-    ja: { title: 'ページが見つかりません', msg: 'お探しのページは存在しないか、移動されました。',                  home: 'ホームに戻る',        catalog: 'カタログを見る',        search: '検索',         placeholder: '製品、スタイル、コレクションを検索…', eyewear: '眼鏡製造' },
-    tr: { title: 'Sayfa Bulunamadı',      msg: 'Aradığınız sayfa mevcut değil veya taşınmış.',                   home: 'Ana Sayfaya Dön',     catalog: 'Kataloğu Görüntüle',    search: 'Ara',          placeholder: 'Ürün, stil, koleksiyon ara…', eyewear: 'Gözlük Üreticisi' },
-    ar: { title: 'الصفحة غير موجودة',    msg: 'الصفحة التي تبحث عنها غير موجودة أو تم نقلها.',                 home: 'العودة للرئيسية',     catalog: 'عرض الكتالوج',         search: 'بحث',          placeholder: 'ابحث عن منتجات، أنماط، مجموعات…', eyewear: 'تصنيع النظارات' },
-    // Extended 7 languages
-    ko: { title: '페이지를 찾을 수 없습니다', msg: '찾으시는 페이지가 존재하지 않거나 이동되었습니다.',              home: '홈으로 돌아가기',     catalog: '카탈로그 보기',         search: '검색',         placeholder: '제품, 스타일, 컬렉션 검색…',            eyewear: '안경 제조업체' },
-    zh: { title: '页面未找到',             msg: '您寻找的页面不存在或已被移动。',                                home: '返回首页',           catalog: '查看目录',              search: '搜索',         placeholder: '搜索产品、款式、系列…',                 eyewear: '眼镜制造商' },
-    hi: { title: 'पृष्ठ नहीं मिला',        msg: 'आप जिस पृष्ठ की तलाश कर रहे हैं वह मौजूद नहीं है या स्थानांतरित हो गया है।', home: 'होम पर वापस जाएं', catalog: 'सूची देखें',            search: 'खोजें',        placeholder: 'उत्पाद, शैलियाँ, संग्रह खोजें…',         eyewear: 'चश्मा निर्माता' },
-    vi: { title: 'Không Tìm Thấy Trang',   msg: 'Trang bạn đang tìm kiếm không tồn tại hoặc đã được di chuyển.', home: 'Về Trang Chủ',       catalog: 'Xem Danh Mục',         search: 'Tìm Kiếm',     placeholder: 'Tìm kiếm sản phẩm, phong cách, bộ sưu tập…', eyewear: 'Nhà Sản Xuất Kính' },
-    jv: { title: 'Kaca Ora Ditemokake',   msg: 'Kaca sing sampeyan goleki ora ana utawa wis dipindhah.',        home: 'Bali menyang Beranda',catalog: 'Deleng Katalog',       search: 'Golèki',       placeholder: 'Golèki produk, gaya, kolèksi…',         eyewear: 'Pabrik Kacamata' },
-    ms: { title: 'Halaman Tidak Ditemui', msg: 'Halaman yang anda cari tidak wujud atau telah dipindahkan.',    home: 'Kembali ke Laman Utama', catalog: 'Lihat Katalog',      search: 'Cari',         placeholder: 'Cari produk, gaya, koleksi…',          eyewear: 'Pengilang Cermin Mata' },
-    tg: { title: 'Саҳифа Ёфт Нашуд',      msg: 'Саҳифае, ки ҷустуҷӯ мекунед, вуҷуд надорад ё кӯчонида шудааст.', home: 'Ба Саҳифаи Аслӣ',    catalog: 'Дидани Феҳрист',       search: 'Ҷустуҷӯ',      placeholder: 'Ҷустуҷӯи маҳсулот, услубҳо, коллексияҳо…', eyewear: 'Истеҳсоли Айнак' },
+const i18n: Record<string, any> = {
+  en: {
+    title: 'Page Not Found | Kssmi Eyewear',
+    heading1: 'This page has stepped out —',
+    heading2: "but we're still here, crafting eyewear.",
+    description: 'The link you followed may be outdated, or the page may have moved. No worries — everything we make is still right here.',
+    lookingFor: 'You might be looking for...',
+    oemTitle: 'Custom OEM',
+    oemSub: 'Get a quote',
+    catalogTitle: 'Catalog',
+    catalogSub: 'Browse products',
+    factoryTitle: 'Factory',
+    factorySub: 'Our capabilities',
+    humor: 'We craft every frame to precise specs. This URL? Not so much.',
+    formHeading: "Didn't find what you needed?",
+    formSub: "Tell us what you're looking for — a real person will get back to you.",
+    emailPlaceholder: 'Your email address',
+    detailsPlaceholder: "What were you looking for?\nDescribe what you need — the more details, the better we can help.",
+    submitBtn: "Send & We'll Help",
+    sending: 'Sending...',
+    successTitle: 'Message sent!',
+    successSub: "We'll get back to you shortly.",
+    errorFallback: 'Unable to send. Please email us at sales@kssmi.com.',
+    turnstileError: 'Please complete the security check above.',
+    generalError: 'Something went wrong. Please try again.',
+    searchHeading: 'Or search for what you need',
+    searchPlaceholder: 'Search products, materials, styles...',
+    searchBtn: 'Search',
+    backHome: 'Back to Homepage',
+    companyName: 'Kssmi Eyewear Mfg.',
+    since: 'Crafting precision frames since 2003',
+    eyewear: 'Eyewear Mfg.',
+    imageAlt: 'Kssmi Eyewear Manufacturing Team',
+  },
+  it: {
+    title: 'Pagina Non Trovata | Kssmi Eyewear',
+    heading1: 'Questa pagina è uscita un attimo —',
+    heading2: 'ma noi siamo ancora qui a produrre occhiali.',
+    description: 'Il link che hai seguito potrebbe non essere aggiornato, o la pagina potrebbe essere stata spostata. Nessun problema — tutto ciò che produciamo è ancora qui.',
+    lookingFor: 'Forse stavi cercando...',
+    oemTitle: 'OEM Personalizzato',
+    oemSub: 'Richiedi un preventivo',
+    catalogTitle: 'Catalogo',
+    catalogSub: 'Sfoglia i prodotti',
+    factoryTitle: 'Fabbrica',
+    factorySub: 'Le nostre capacità',
+    humor: 'Produciamo ogni montatura con specifiche precise. Questo URL? Non proprio.',
+    formHeading: 'Non hai trovato quello che cercavi?',
+    formSub: 'Dicci cosa stai cercando — una persona reale ti risponderà.',
+    emailPlaceholder: 'Il tuo indirizzo email',
+    detailsPlaceholder: 'Cosa stavi cercando?\nDescrivi ciò di cui hai bisogno — più dettagli ci dai, meglio possiamo aiutarti.',
+    submitBtn: 'Invia e Ti Aiuteremo',
+    sending: 'Invio in corso...',
+    successTitle: 'Messaggio inviato!',
+    successSub: 'Ti risponderemo a breve.',
+    errorFallback: 'Impossibile inviare. Scrivi a sales@kssmi.com.',
+    turnstileError: 'Completa il controllo di sicurezza qui sopra.',
+    generalError: 'Qualcosa è andato storto. Riprova.',
+    searchHeading: 'Oppure cerca ciò che ti serve',
+    searchPlaceholder: 'Cerca prodotti, materiali, stili...',
+    searchBtn: 'Cerca',
+    backHome: 'Torna alla Home',
+    companyName: 'Kssmi Manifattura Occhiali',
+    since: 'Produciamo montature di precisione dal 2003',
+    eyewear: 'Manifattura Occhiali',
+    imageAlt: 'Team di Produzione Kssmi',
+  },
+  es: {
+    title: 'Página No Encontrada | Kssmi Eyewear',
+    heading1: 'Esta página ha salido un momento —',
+    heading2: 'pero seguimos aquí, fabricando gafas.',
+    description: 'El enlace que seguiste puede estar desactualizado, o la página puede haberse movido. No te preocupes — todo lo que fabricamos sigue estando aquí.',
+    lookingFor: 'Quizás estabas buscando...',
+    oemTitle: 'OEM Personalizado',
+    oemSub: 'Solicitar presupuesto',
+    catalogTitle: 'Catálogo',
+    catalogSub: 'Explorar productos',
+    factoryTitle: 'Fábrica',
+    factorySub: 'Nuestras capacidades',
+    humor: 'Fabricamos cada montura con especificaciones precisas. ¿Esta URL? No tanto.',
+    formHeading: '¿No encontraste lo que buscabas?',
+    formSub: 'Dinos qué buscas — una persona real te responderá.',
+    emailPlaceholder: 'Tu dirección de correo',
+    detailsPlaceholder: '¿Qué estabas buscando?\nDescribe lo que necesitas — cuantos más detalles, mejor podremos ayudarte.',
+    submitBtn: 'Enviar y Te Ayudamos',
+    sending: 'Enviando...',
+    successTitle: '¡Mensaje enviado!',
+    successSub: 'Te responderemos pronto.',
+    errorFallback: 'No se pudo enviar. Escríbenos a sales@kssmi.com.',
+    turnstileError: 'Por favor completa la verificación de seguridad.',
+    generalError: 'Algo salió mal. Inténtalo de nuevo.',
+    searchHeading: 'O busca lo que necesitas',
+    searchPlaceholder: 'Buscar productos, materiales, estilos...',
+    searchBtn: 'Buscar',
+    backHome: 'Volver al Inicio',
+    companyName: 'Kssmi Fabricante de Gafas',
+    since: 'Fabricando monturas de precisión desde 2003',
+    eyewear: 'Fabricante de Gafas',
+    imageAlt: 'Equipo de Fabricación Kssmi',
+  },
+  fr: {
+    title: 'Page Introuvable | Kssmi Eyewear',
+    heading1: 'Cette page s\'est absentée —',
+    heading2: 'mais nous sommes toujours là, à fabriquer des lunettes.',
+    description: 'Le lien que vous avez suivi est peut-être obsolète, ou la page a été déplacée. Pas de souci — tout ce que nous fabriquons est toujours là.',
+    lookingFor: 'Vous cherchiez peut-être...',
+    oemTitle: 'OEM Sur Mesure',
+    oemSub: 'Demander un devis',
+    catalogTitle: 'Catalogue',
+    catalogSub: 'Parcourir les produits',
+    factoryTitle: 'Usine',
+    factorySub: 'Nos capacités',
+    humor: 'Nous fabriquons chaque monture avec des spécifications précises. Cette URL ? Pas vraiment.',
+    formHeading: 'Vous n\'avez pas trouvé ce que vous cherchiez ?',
+    formSub: 'Dites-nous ce que vous cherchez — une vraie personne vous répondra.',
+    emailPlaceholder: 'Votre adresse email',
+    detailsPlaceholder: 'Que cherchiez-vous ?\nDécrivez ce dont vous avez besoin — plus vous donnez de détails, mieux nous pourrons vous aider.',
+    submitBtn: 'Envoyer et On Vous Aide',
+    sending: 'Envoi en cours...',
+    successTitle: 'Message envoyé !',
+    successSub: 'Nous vous répondrons rapidement.',
+    errorFallback: 'Impossible d\'envoyer. Écrivez-nous à sales@kssmi.com.',
+    turnstileError: 'Veuillez compléter la vérification de sécurité ci-dessus.',
+    generalError: 'Une erreur est survenue. Veuillez réessayer.',
+    searchHeading: 'Ou recherchez ce dont vous avez besoin',
+    searchPlaceholder: 'Rechercher produits, matériaux, styles...',
+    searchBtn: 'Rechercher',
+    backHome: 'Retour à l\'Accueil',
+    companyName: 'Kssmi Fabricant de Lunettes',
+    since: 'Fabrication de montures de précision depuis 2003',
+    eyewear: 'Fabricant de Lunettes',
+    imageAlt: 'Équipe de Fabrication Kssmi',
+  },
+  de: {
+    title: 'Seite Nicht Gefunden | Kssmi Eyewear',
+    heading1: 'Diese Seite ist kurz weg —',
+    heading2: 'aber wir sind noch hier und fertigen Brillen.',
+    description: 'Der Link, dem Sie gefolgt sind, ist möglicherweise veraltet oder die Seite wurde verschoben. Keine Sorge — alles, was wir herstellen, ist noch da.',
+    lookingFor: 'Vielleicht suchten Sie...',
+    oemTitle: 'Kundenspezifische OEM',
+    oemSub: 'Angebot anfordern',
+    catalogTitle: 'Katalog',
+    catalogSub: 'Produkte durchsuchen',
+    factoryTitle: 'Fabrik',
+    factorySub: 'Unsere Fähigkeiten',
+    humor: 'Wir fertigen jede Fassung nach präzisen Vorgaben. Diese URL? Nicht ganz.',
+    formHeading: 'Nicht gefunden, was Sie brauchen?',
+    formSub: 'Sagen Sie uns, was Sie suchen — eine echte Person wird sich bei Ihnen melden.',
+    emailPlaceholder: 'Ihre E-Mail-Adresse',
+    detailsPlaceholder: 'Was haben Sie gesucht?\nBeschreiben Sie, was Sie brauchen — je mehr Details, desto besser können wir helfen.',
+    submitBtn: 'Senden & Wir Helfen',
+    sending: 'Wird gesendet...',
+    successTitle: 'Nachricht gesendet!',
+    successSub: 'Wir melden uns in Kürze.',
+    errorFallback: 'Senden nicht möglich. Schreiben Sie an sales@kssmi.com.',
+    turnstileError: 'Bitte schließen Sie die Sicherheitsprüfung oben ab.',
+    generalError: 'Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.',
+    searchHeading: 'Oder suchen Sie, was Sie brauchen',
+    searchPlaceholder: 'Produkte, Materialien, Stile suchen...',
+    searchBtn: 'Suchen',
+    backHome: 'Zur Startseite',
+    companyName: 'Kssmi Brillenmanufaktur',
+    since: 'Präzisionsfassungen seit 2003',
+    eyewear: 'Brillenmanufaktur',
+    imageAlt: 'Kssmi Fertigungsteam',
+  },
+  pt: {
+    title: 'Página Não Encontrada | Kssmi Eyewear',
+    heading1: 'Esta página saiu um pouco —',
+    heading2: 'mas ainda estamos aqui, fabricando óculos.',
+    description: 'O link que seguiu pode estar desatualizado ou a página foi movida. Não se preocupe — tudo o que fabricamos continua aqui.',
+    lookingFor: 'Talvez estivesse à procura de...',
+    oemTitle: 'OEM Personalizado',
+    oemSub: 'Pedir orçamento',
+    catalogTitle: 'Catálogo',
+    catalogSub: 'Explorar produtos',
+    factoryTitle: 'Fábrica',
+    factorySub: 'Nossas capacidades',
+    humor: 'Fabricamos cada armação com especificações precisas. Esta URL? Nem tanto.',
+    formHeading: 'Não encontrou o que precisava?',
+    formSub: 'Diga-nos o que procura — uma pessoa real responderá.',
+    emailPlaceholder: 'Seu endereço de email',
+    detailsPlaceholder: 'O que estava a procurar?\nDescreva o que precisa — quanto mais detalhes, melhor podemos ajudar.',
+    submitBtn: 'Enviar e Ajudaremos',
+    sending: 'A enviar...',
+    successTitle: 'Mensagem enviada!',
+    successSub: 'Responderemos em breve.',
+    errorFallback: 'Não foi possível enviar. Escreva para sales@kssmi.com.',
+    turnstileError: 'Por favor complete a verificação de segurança acima.',
+    generalError: 'Algo correu mal. Tente novamente.',
+    searchHeading: 'Ou procure o que precisa',
+    searchPlaceholder: 'Pesquisar produtos, materiais, estilos...',
+    searchBtn: 'Pesquisar',
+    backHome: 'Voltar ao Início',
+    companyName: 'Kssmi Fabricante de Óculos',
+    since: 'Fabricando armações de precisão desde 2003',
+    eyewear: 'Fabricante de Óculos',
+    imageAlt: 'Equipa de Fabrico Kssmi',
+  },
+  ru: {
+    title: 'Страница Не Найдена | Kssmi Eyewear',
+    heading1: 'Эта страница ненадолго отошла —',
+    heading2: 'но мы всё ещё здесь, создаём очки.',
+    description: 'Ссылка, по которой вы перешли, возможно, устарела, или страница была перемещена. Не беспокойтесь — всё, что мы производим, по-прежнему здесь.',
+    lookingFor: 'Возможно, вы искали...',
+    oemTitle: 'Индивидуальный OEM',
+    oemSub: 'Получить расценку',
+    catalogTitle: 'Каталог',
+    catalogSub: 'Просмотр продукции',
+    factoryTitle: 'Производство',
+    factorySub: 'Наши возможности',
+    humor: 'Мы создаём каждую оправу по точным спецификациям. Этот URL? Не совсем.',
+    formHeading: 'Не нашли, что искали?',
+    formSub: 'Расскажите, что вы ищете — реальный человек вам ответит.',
+    emailPlaceholder: 'Ваш адрес эл. почты',
+    detailsPlaceholder: 'Что вы искали?\nОпишите, что вам нужно — чем больше деталей, тем лучше мы сможем помочь.',
+    submitBtn: 'Отправить и Мы Поможем',
+    sending: 'Отправка...',
+    successTitle: 'Сообщение отправлено!',
+    successSub: 'Мы свяжемся с вами в ближайшее время.',
+    errorFallback: 'Не удалось отправить. Напишите нам на sales@kssmi.com.',
+    turnstileError: 'Пожалуйста, пройдите проверку безопасности выше.',
+    generalError: 'Что-то пошло не так. Попробуйте ещё раз.',
+    searchHeading: 'Или найдите, что вам нужно',
+    searchPlaceholder: 'Поиск продуктов, материалов, стилей...',
+    searchBtn: 'Поиск',
+    backHome: 'На Главную',
+    companyName: 'Kssmi Производство Очков',
+    since: 'Производство точных оправ с 2003 года',
+    eyewear: 'Производство очков',
+    imageAlt: 'Производственная Команда Kssmi',
+  },
+  ja: {
+    title: 'ページが見つかりません | Kssmi Eyewear',
+    heading1: 'このページは一時的に離席しています —',
+    heading2: 'しかし、私たちはまだここで眼鏡を作り続けています。',
+    description: 'リンクが古いか、ページが移動した可能性があります。ご心配なく — 私たちが作るものはすべて、まだここにあります。',
+    lookingFor: 'お探しのものはこちらでしょうか...',
+    oemTitle: 'カスタムOEM',
+    oemSub: '見積もりを依頼',
+    catalogTitle: 'カタログ',
+    catalogSub: '製品を見る',
+    factoryTitle: '工場',
+    factorySub: '当社の能力',
+    humor: '私たちはすべてのフレームを精密な仕様で作っています。このURL？そうでもないようです。',
+    formHeading: 'お探しのものが見つかりませんでしたか？',
+    formSub: 'お探しのものを教えてください — 担当者からご連絡いたします。',
+    emailPlaceholder: 'メールアドレス',
+    detailsPlaceholder: '何をお探しでしたか？\n必要なものを詳しく教えてください — 詳細が多いほど、より良いサポートが可能です。',
+    submitBtn: '送信してサポートを受ける',
+    sending: '送信中...',
+    successTitle: '送信完了！',
+    successSub: '担当者より折り返しご連絡いたします。',
+    errorFallback: '送信できませんでした。sales@kssmi.com までメールでご連絡ください。',
+    turnstileError: '上記のセキュリティチェックを完了してください。',
+    generalError: 'エラーが発生しました。もう一度お試しください。',
+    searchHeading: 'または、必要なものを検索',
+    searchPlaceholder: '製品、素材、スタイルを検索...',
+    searchBtn: '検索',
+    backHome: 'ホームに戻る',
+    companyName: 'Kssmi 眼鏡製造',
+    since: '2003年から精密フレームを製造',
+    eyewear: '眼鏡製造',
+    imageAlt: 'Kssmi 製造チーム',
+  },
+  tr: {
+    title: 'Sayfa Bulunamadı | Kssmi Eyewear',
+    heading1: 'Bu sayfa kısa bir ara verdi —',
+    heading2: 'ama biz hâlâ burada, gözlük üretiyoruz.',
+    description: 'Takip ettiğiniz bağlantı güncel olmayabilir veya sayfa taşınmış olabilir. Endişelenmeyin — ürettiğimiz her şey hâlâ burada.',
+    lookingFor: 'Belki de aradığınız şey...',
+    oemTitle: 'Özel OEM',
+    oemSub: 'Teklif alın',
+    catalogTitle: 'Katalog',
+    catalogSub: 'Ürünlere göz atın',
+    factoryTitle: 'Fabrika',
+    factorySub: 'Yeteneklerimiz',
+    humor: 'Her çerçeveyi hassas spesifikasyonlarla üretiyoruz. Bu URL? O kadar da değil.',
+    formHeading: 'Aradığınızı bulamadınız mı?',
+    formSub: 'Ne aradığınızı bize söyleyin — gerçek bir kişi size geri dönecek.',
+    emailPlaceholder: 'E-posta adresiniz',
+    detailsPlaceholder: 'Ne arıyordunuz?\nİhtiyacınız olanı açıklayın — ne kadar çok detay verirseniz, size o kadar iyi yardımcı olabiliriz.',
+    submitBtn: 'Gönder ve Yardım Edelim',
+    sending: 'Gönderiliyor...',
+    successTitle: 'Mesaj gönderildi!',
+    successSub: 'Kısa süre içinde size döneceğiz.',
+    errorFallback: 'Gönderilemedi. Lütfen sales@kssmi.com adresine e-posta gönderin.',
+    turnstileError: 'Lütfen yukarıdaki güvenlik kontrolünü tamamlayın.',
+    generalError: 'Bir şeyler ters gitti. Lütfen tekrar deneyin.',
+    searchHeading: 'Veya ihtiyacınız olanı arayın',
+    searchPlaceholder: 'Ürün, malzeme, stil ara...',
+    searchBtn: 'Ara',
+    backHome: 'Ana Sayfaya Dön',
+    companyName: 'Kssmi Gözlük Üreticisi',
+    since: '2003\'ten beri hassas çerçeveler üretiyoruz',
+    eyewear: 'Gözlük Üreticisi',
+    imageAlt: 'Kssmi Üretim Ekibi',
+  },
+  ar: {
+    title: 'الصفحة غير موجودة | Kssmi للنظارات',
+    heading1: 'هذه الصفحة خرجت للحظة —',
+    heading2: 'لكننا ما زلنا هنا، نصنع النظارات.',
+    description: 'قد يكون الرابط الذي اتبعته قديماً، أو ربما تم نقل الصفحة. لا تقلق — كل ما نصنعه لا يزال هنا.',
+    lookingFor: 'ربما كنت تبحث عن...',
+    oemTitle: 'تصنيع حسب الطلب',
+    oemSub: 'احصل على عرض سعر',
+    catalogTitle: 'الكتالوج',
+    catalogSub: 'تصفح المنتجات',
+    factoryTitle: 'المصنع',
+    factorySub: 'قدراتنا',
+    humor: 'نحن نصنع كل إطار بمواصفات دقيقة. عنوان الرابط هذا؟ ليس تماماً.',
+    formHeading: 'لم تجد ما كنت تبحث عنه؟',
+    formSub: 'أخبرنا عما تبحث عنه — شخص حقيقي سيرد عليك.',
+    emailPlaceholder: 'عنوان بريدك الإلكتروني',
+    detailsPlaceholder: 'عم كنت تبحث؟\nصف ما تحتاجه — كلما زادت التفاصيل، استطعنا مساعدتك بشكل أفضل.',
+    submitBtn: 'أرسل وسنساعدك',
+    sending: 'جارٍ الإرسال...',
+    successTitle: 'تم إرسال الرسالة!',
+    successSub: 'سنرد عليك قريباً.',
+    errorFallback: 'تعذر الإرسال. يرجى مراسلتنا على sales@kssmi.com.',
+    turnstileError: 'يرجى إكمال التحقق الأمني أعلاه.',
+    generalError: 'حدث خطأ ما. يرجى المحاولة مرة أخرى.',
+    searchHeading: 'أو ابحث عما تحتاجه',
+    searchPlaceholder: 'ابحث عن منتجات، مواد، أنماط...',
+    searchBtn: 'بحث',
+    backHome: 'العودة للرئيسية',
+    companyName: 'Kssmi لتصنيع النظارات',
+    since: 'نصنع إطارات دقيقة منذ عام 2003',
+    eyewear: 'تصنيع النظارات',
+    imageAlt: 'فريق تصنيع Kssmi',
+  },
+  ko: {
+    title: '페이지를 찾을 수 없습니다 | Kssmi Eyewear',
+    heading1: '이 페이지는 잠시 자리를 비웠습니다 —',
+    heading2: '하지만 우리는 여전히 여기서 안경을 만들고 있습니다.',
+    description: '클릭하신 링크가 오래되었거나 페이지가 이동되었을 수 있습니다. 걱정 마세요 — 우리가 만드는 모든 것은 여전히 여기에 있습니다.',
+    lookingFor: '아마도 찾고 계신 것은...',
+    oemTitle: '맞춤 OEM',
+    oemSub: '견적 받기',
+    catalogTitle: '카탈로그',
+    catalogSub: '제품 둘러보기',
+    factoryTitle: '공장',
+    factorySub: '당사의 역량',
+    humor: '우리는 모든 프레임을 정밀한 사양으로 제작합니다. 이 URL은? 그렇지 않네요.',
+    formHeading: '원하는 것을 찾지 못하셨나요?',
+    formSub: '찾고 계신 것을 알려주세요 — 실제 담당자가 답변드립니다.',
+    emailPlaceholder: '이메일 주소',
+    detailsPlaceholder: '무엇을 찾고 계셨나요?\n필요한 것을 자세히 설명해 주세요 — 더 많은 세부 정보를 주실수록 더 나은 도움을 드릴 수 있습니다.',
+    submitBtn: '보내기 및 도움받기',
+    sending: '보내는 중...',
+    successTitle: '메시지가 전송되었습니다!',
+    successSub: '곧 연락드리겠습니다.',
+    errorFallback: '전송할 수 없습니다. sales@kssmi.com 으로 이메일 주세요.',
+    turnstileError: '위의 보안 확인을 완료해 주세요.',
+    generalError: '문제가 발생했습니다. 다시 시도해 주세요.',
+    searchHeading: '또는 필요한 것을 검색하세요',
+    searchPlaceholder: '제품, 소재, 스타일 검색...',
+    searchBtn: '검색',
+    backHome: '홈으로 돌아가기',
+    companyName: 'Kssmi 안경 제조업체',
+    since: '2003년부터 정밀 프레임 제작',
+    eyewear: '안경 제조업체',
+    imageAlt: 'Kssmi 제조 팀',
+  },
+  zh: {
+    title: '页面未找到 | Kssmi Eyewear',
+    heading1: '这个页面暂时离开了 —',
+    heading2: '但我们还在这里，继续制造眼镜。',
+    description: '您点击的链接可能已过期，或该页面已移动。别担心——我们制造的一切都还在这里。',
+    lookingFor: '您可能在找……',
+    oemTitle: '定制OEM',
+    oemSub: '获取报价',
+    catalogTitle: '产品目录',
+    catalogSub: '浏览产品',
+    factoryTitle: '工厂',
+    factorySub: '我们的能力',
+    humor: '我们以精确规格制造每一副镜架。这个网址？似乎没那么精确。',
+    formHeading: '没找到您想要的？',
+    formSub: '告诉我们您在找什么——真人回复您。',
+    emailPlaceholder: '您的邮箱地址',
+    detailsPlaceholder: '您在找什么？\n描述您的需求——细节越多，我们越能帮到您。',
+    submitBtn: '发送，我们来帮您',
+    sending: '发送中...',
+    successTitle: '消息已发送！',
+    successSub: '我们会尽快回复您。',
+    errorFallback: '发送失败。请发邮件至 sales@kssmi.com。',
+    turnstileError: '请完成上方的安全检查。',
+    generalError: '出了点问题。请重试。',
+    searchHeading: '或者搜索您需要的内容',
+    searchPlaceholder: '搜索产品、材质、款式……',
+    searchBtn: '搜索',
+    backHome: '返回首页',
+    companyName: 'Kssmi 眼镜制造商',
+    since: '自2003年起制造精密镜架',
+    eyewear: '眼镜制造商',
+    imageAlt: 'Kssmi 制造团队',
+  },
+  hi: {
+    title: 'पृष्ठ नहीं मिला | Kssmi Eyewear',
+    heading1: 'यह पृष्ठ कुछ देर के लिए बाहर गया है —',
+    heading2: 'लेकिन हम अभी भी यहाँ हैं, चश्मे बना रहे हैं।',
+    description: 'आपके द्वारा अपनाया गया लिंक पुराना हो सकता है, या पृष्ठ स्थानांतरित हो गया है। चिंता न करें — हम जो कुछ भी बनाते हैं वह अभी भी यहाँ है।',
+    lookingFor: 'शायद आप ढूंढ रहे थे...',
+    oemTitle: 'कस्टम OEM',
+    oemSub: 'उद्धरण प्राप्त करें',
+    catalogTitle: 'सूची',
+    catalogSub: 'उत्पाद देखें',
+    factoryTitle: 'कारखाना',
+    factorySub: 'हमारी क्षमताएँ',
+    humor: 'हम हर फ्रेम को सटीक विनिर्देशों के साथ बनाते हैं। यह URL? उतना नहीं।',
+    formHeading: 'जो चाहिए था वह नहीं मिला?',
+    formSub: 'हमें बताएं कि आप क्या ढूंढ रहे हैं — एक वास्तविक व्यक्ति आपको जवाब देगा।',
+    emailPlaceholder: 'आपका ईमेल पता',
+    detailsPlaceholder: 'आप क्या ढूंढ रहे थे?\nआपको क्या चाहिए इसका वर्णन करें — जितने अधिक विवरण देंगे, हम उतनी ही बेहतर मदद कर पाएंगे।',
+    submitBtn: 'भेजें और हम मदद करेंगे',
+    sending: 'भेजा जा रहा है...',
+    successTitle: 'संदेश भेज दिया गया!',
+    successSub: 'हम जल्द ही आपसे संपर्क करेंगे।',
+    errorFallback: 'भेजने में असमर्थ। कृपया sales@kssmi.com पर ईमेल करें।',
+    turnstileError: 'कृपया ऊपर दी गई सुरक्षा जाँच पूरी करें।',
+    generalError: 'कुछ गलत हो गया। कृपया पुनः प्रयास करें।',
+    searchHeading: 'या जो चाहिए उसे खोजें',
+    searchPlaceholder: 'उत्पाद, सामग्री, शैलियाँ खोजें...',
+    searchBtn: 'खोजें',
+    backHome: 'होम पर वापस जाएं',
+    companyName: 'Kssmi चश्मा निर्माता',
+    since: '2003 से सटीक फ्रेम बना रहे हैं',
+    eyewear: 'चश्मा निर्माता',
+    imageAlt: 'Kssmi निर्माण टीम',
+  },
+  vi: {
+    title: 'Không Tìm Thấy Trang | Kssmi Eyewear',
+    heading1: 'Trang này vừa bước ra ngoài —',
+    heading2: 'nhưng chúng tôi vẫn ở đây, sản xuất kính mắt.',
+    description: 'Liên kết bạn theo dõi có thể đã cũ, hoặc trang đã được di chuyển. Đừng lo — mọi thứ chúng tôi sản xuất vẫn ở đây.',
+    lookingFor: 'Có lẽ bạn đang tìm...',
+    oemTitle: 'OEM Tùy Chỉnh',
+    oemSub: 'Nhận báo giá',
+    catalogTitle: 'Danh Mục',
+    catalogSub: 'Duyệt sản phẩm',
+    factoryTitle: 'Nhà Máy',
+    factorySub: 'Năng lực của chúng tôi',
+    humor: 'Chúng tôi chế tạo từng gọng kính theo thông số chính xác. Còn URL này? Chưa được chính xác lắm.',
+    formHeading: 'Bạn chưa tìm thấy thứ cần tìm?',
+    formSub: 'Hãy cho chúng tôi biết bạn đang tìm gì — người thật sẽ phản hồi bạn.',
+    emailPlaceholder: 'Địa chỉ email của bạn',
+    detailsPlaceholder: 'Bạn đang tìm kiếm gì?\nMô tả nhu cầu của bạn — càng chi tiết, chúng tôi càng có thể giúp tốt hơn.',
+    submitBtn: 'Gửi và Chúng Tôi Sẽ Giúp',
+    sending: 'Đang gửi...',
+    successTitle: 'Đã gửi tin nhắn!',
+    successSub: 'Chúng tôi sẽ phản hồi bạn sớm.',
+    errorFallback: 'Không thể gửi. Vui lòng gửi email cho chúng tôi tại sales@kssmi.com.',
+    turnstileError: 'Vui lòng hoàn thành kiểm tra bảo mật ở trên.',
+    generalError: 'Đã xảy ra lỗi. Vui lòng thử lại.',
+    searchHeading: 'Hoặc tìm kiếm thứ bạn cần',
+    searchPlaceholder: 'Tìm kiếm sản phẩm, chất liệu, kiểu dáng...',
+    searchBtn: 'Tìm Kiếm',
+    backHome: 'Về Trang Chủ',
+    companyName: 'Kssmi Nhà Sản Xuất Kính',
+    since: 'Sản xuất gọng kính chính xác từ năm 2003',
+    eyewear: 'Nhà Sản Xuất Kính',
+    imageAlt: 'Đội Ngũ Sản Xuất Kssmi',
+  },
+  jv: {
+    title: 'Kaca Ora Ditemokake | Kssmi Eyewear',
+    heading1: 'Kaca iki lagi metu sedhela —',
+    heading2: 'nanging awake dhewe isih neng kene, nggawe kacamata.',
+    description: 'Tautan sing sampeyan tindakake bisa uga wis lawas, utawa kaca wis dipindhah. Aja kuwatir — kabeh sing digawe isih ana ing kene.',
+    lookingFor: 'Mbok menawa sampeyan nggoleki...',
+    oemTitle: 'OEM Kustom',
+    oemSub: 'Njaluk kutipan',
+    catalogTitle: 'Katalog',
+    catalogSub: 'Deleng produk',
+    factoryTitle: 'Pabrik',
+    factorySub: 'Kapabilitas kita',
+    humor: 'Kita nggawe saben bingkai kanthi spesifikasi sing tepat. URL iki? Ora kaya ngono.',
+    formHeading: 'Ora nemokake sing sampeyan goleki?',
+    formSub: 'Kandhakna apa sing sampeyan goleki — wong asli bakal mbales sampeyan.',
+    emailPlaceholder: 'Alamat email sampeyan',
+    detailsPlaceholder: 'Apa sing sampeyan goleki?\nJelasna apa sing sampeyan butuhake — luwih rinci, luwih apik kita bisa mbantu.',
+    submitBtn: 'Kirim & Kita Bakal Mbantu',
+    sending: 'Ngirim...',
+    successTitle: 'Pesen wis dikirim!',
+    successSub: 'Kita bakal mbales sampeyan sakcepete.',
+    errorFallback: 'Ora bisa ngirim. Mangga email sales@kssmi.com.',
+    turnstileError: 'Mangga ngrampungake pemeriksaan keamanan ing ndhuwur.',
+    generalError: 'Ana sing salah. Mangga coba maneh.',
+    searchHeading: 'Utawa goleki sing sampeyan butuhake',
+    searchPlaceholder: 'Goleki produk, bahan, gaya...',
+    searchBtn: 'Golèki',
+    backHome: 'Bali menyang Beranda',
+    companyName: 'Kssmi Pabrik Kacamata',
+    since: 'Nggawe bingkai presisi wiwit 2003',
+    eyewear: 'Pabrik Kacamata',
+    imageAlt: 'Tim Produksi Kssmi',
+  },
+  ms: {
+    title: 'Halaman Tidak Ditemui | Kssmi Eyewear',
+    heading1: 'Halaman ini telah keluar seketika —',
+    heading2: 'tetapi kami masih di sini, membuat cermin mata.',
+    description: 'Pautan yang anda ikuti mungkin sudah lapuk, atau halaman telah dialihkan. Jangan risau — semua yang kami buat masih ada di sini.',
+    lookingFor: 'Mungkin anda sedang mencari...',
+    oemTitle: 'OEM Tersuai',
+    oemSub: 'Dapatkan sebut harga',
+    catalogTitle: 'Katalog',
+    catalogSub: 'Lihat produk',
+    factoryTitle: 'Kilang',
+    factorySub: 'Keupayaan kami',
+    humor: 'Kami membuat setiap bingkai mengikut spesifikasi tepat. URL ini? Tidak begitu.',
+    formHeading: 'Tidak jumpa apa yang anda cari?',
+    formSub: 'Beritahu kami apa yang anda cari — orang sebenar akan membalas anda.',
+    emailPlaceholder: 'Alamat emel anda',
+    detailsPlaceholder: 'Apa yang anda cari?\nTerangkan apa yang anda perlukan — lebih terperinci, lebih baik kami boleh bantu.',
+    submitBtn: 'Hantar & Kami Akan Bantu',
+    sending: 'Menghantar...',
+    successTitle: 'Mesej dihantar!',
+    successSub: 'Kami akan membalas anda sebentar lagi.',
+    errorFallback: 'Tidak dapat menghantar. Sila emel sales@kssmi.com.',
+    turnstileError: 'Sila lengkapkan pemeriksaan keselamatan di atas.',
+    generalError: 'Ada sesuatu yang tidak kena. Sila cuba lagi.',
+    searchHeading: 'Atau cari apa yang anda perlukan',
+    searchPlaceholder: 'Cari produk, bahan, gaya...',
+    searchBtn: 'Cari',
+    backHome: 'Kembali ke Laman Utama',
+    companyName: 'Kssmi Pengilang Cermin Mata',
+    since: 'Membuat bingkai tepat sejak 2003',
+    eyewear: 'Pengilang Cermin Mata',
+    imageAlt: 'Pasukan Pembuatan Kssmi',
+  },
+  tg: {
+    title: 'Саҳифа Ёфт Нашуд | Kssmi Eyewear',
+    heading1: 'Ин саҳифа лаҳзае берун рафт —',
+    heading2: 'аммо мо ҳанӯз дар ин ҷо ҳастем ва айнак месозем.',
+    description: 'Пайванде, ки шумо пайгирӣ кардед, шояд кӯҳна бошад ё саҳифа кӯчонида шудааст. Хавотир нашавед — ҳама чизи мо сохтаем, ҳанӯз дар ин ҷост.',
+    lookingFor: 'Шояд шумо дар ҷустуҷӯи...',
+    oemTitle: 'OEM Фармоишӣ',
+    oemSub: 'Гирифтани нарх',
+    catalogTitle: 'Феҳрист',
+    catalogSub: 'Дидани маҳсулот',
+    factoryTitle: 'Корхона',
+    factorySub: 'Иқтидорҳои мо',
+    humor: 'Мо ҳар чаҳорчӯбаро бо хусусиятҳои дақиқ месозем. Ин URL? Он қадар дақиқ нест.',
+    formHeading: 'Он чизеро, ки мехостед, наёфтед?',
+    formSub: 'Ба мо бигӯед, ки чӣ меҷӯед — шахси воқеӣ ба шумо ҷавоб медиҳад.',
+    emailPlaceholder: 'Суроғаи почтаи электронии шумо',
+    detailsPlaceholder: 'Шумо чиро ҷустуҷӯ мекардед?\nЭҳтиёҷоти худро тавсиф кунед — ҳар қадар тафсилоти бештар диҳед, ҳамон қадар беҳтар кӯмак карда метавонем.',
+    submitBtn: 'Фиристодан ва Мо Кӯмак Мекунем',
+    sending: 'Дар ҳоли фиристодан...',
+    successTitle: 'Паём фиристода шуд!',
+    successSub: 'Мо ба зудӣ ба шумо ҷавоб медиҳем.',
+    errorFallback: 'Фиристодан ғайриимкон аст. Лутфан ба sales@kssmi.com почтаи электронӣ фиристед.',
+    turnstileError: 'Лутфан санҷиши амниятии болоро анҷом диҳед.',
+    generalError: 'Хатогӣ рух дод. Лутфан дубора кӯшиш кунед.',
+    searchHeading: 'Ё чизи лозимаро ҷустуҷӯ кунед',
+    searchPlaceholder: 'Ҷустуҷӯи маҳсулот, мавод, услубҳо...',
+    searchBtn: 'Ҷустуҷӯ',
+    backHome: 'Ба Саҳифаи Аслӣ',
+    companyName: 'Kssmi Истеҳсоли Айнак',
+    since: 'Сохтани чаҳорчӯбаҳои дақиқ аз соли 2003',
+    eyewear: 'Истеҳсоли Айнак',
+    imageAlt: 'Дастаи Истеҳсолии Kssmi',
+  },
 };
 
-const t = (i18n as any)[lang] || i18n.en;
-const isRTL = lang === 'ar';
+const t = i18n[lang] || i18n.en;
 ---
 
-<Layout title={`${t.title} | Kssmi`} lang={lang}>
+<Layout title={t.title} lang={lang}>
   <Header lang={lang} />
 
-  <main id="main-content" tabindex="-1" class="w-full min-h-screen bg-stone-100 pt-32 pb-24 flex items-center focus:outline-none" dir={isRTL ? 'rtl' : 'ltr'}>
-    <div class="max-w-2xl mx-auto px-6 text-center">
+  <main id="main-content" tabindex="-1" class="w-full min-h-screen bg-stone-50 pt-12 pb-16 flex items-center focus:outline-none" dir={isRTL ? 'rtl' : 'ltr'}>
+    <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1200px] mx-auto px-4">
 
-      <!-- Kssmi Text Logo -->
-      <div class="inline-flex flex-col items-center justify-center mb-8 hover:-translate-y-1 transition-transform duration-500">
-        <span class="text-2xl font-bold text-[#503629] tracking-tight leading-none uppercase">KSSMI</span>
-        <span class="h-[2px] w-6 bg-[#503629] mt-1"></span>
-        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#503629] mt-1">{t.eyewear}</span>
-      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-      <!-- 404 Number -->
-      <div class="relative mb-6">
-        <span class="text-[160px] font-black text-stone-200 leading-none select-none block">404</span>
-        <div class="absolute inset-0 flex items-center justify-center">
-          <svg class="w-16 h-16 text-[#8B7355]/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-              d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
+        <!-- LEFT: Image -->
+        <div class="hidden lg:block">
+          <div class="relative group">
+            <img
+              src="/media/global/404-team.webp"
+              alt={t.imageAlt}
+              class="w-full h-auto rounded-2xl shadow-lg object-cover aspect-[4/3] transition-transform duration-500 group-hover:scale-[1.02]"
+              loading="eager"
+              decoding="async"
+            />
+            <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-3 shadow-sm transition-all duration-300 group-hover:bg-white group-hover:shadow-md group-hover:-translate-y-1">
+              <p class="text-sm font-semibold text-[#5D4E37]">{t.companyName}</p>
+              <p class="text-xs text-stone-500">{t.since}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Content -->
+        <div class={`text-center ${isRTL ? 'lg:text-right' : 'lg:text-left'}`}>
+          <!-- Kssmi Logo (mobile only) -->
+          <div class="inline-flex flex-col items-center justify-center mb-6 lg:hidden">
+            <span class="text-xl font-bold text-[#503629] tracking-tight leading-none uppercase">KSSMI</span>
+            <span class="h-[2px] w-5 bg-[#503629] mt-1"></span>
+            <span class="text-[8px] font-bold uppercase tracking-[0.2em] text-[#503629] mt-1">{t.eyewear}</span>
+          </div>
+
+          <!-- 404 Badge -->
+          <span class="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#8B7355] bg-[#8B7355]/10 px-3 py-1 rounded-full mb-4">
+            404
+          </span>
+
+          <!-- Warm heading -->
+          <h1 class="text-2xl lg:text-3xl font-bold text-[#5D4E37] mb-3 tracking-tight">
+            {t.heading1}
+          </h1>
+          <p class="text-lg text-[#8B7355] font-medium mb-2">
+            {t.heading2}
+          </p>
+          <p class="text-base text-stone-500 mb-8 max-w-lg mx-auto lg:mx-0">
+            {t.description}
+          </p>
+
+          <!-- 3 Targeted Links -->
+          <div class="mb-10">
+            <p class="text-sm font-bold text-stone-400 uppercase tracking-wider mb-4">
+              {t.lookingFor}
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-xl mx-auto lg:mx-0">
+              <a href={`/${currentPath}quote`}
+                class="group flex items-center gap-3 bg-white rounded-xl p-4 border border-stone-200 hover:border-[#8B7355] hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                <span class="flex-shrink-0 w-10 h-10 bg-[#8B7355]/10 rounded-lg flex items-center justify-center group-hover:bg-[#8B7355]/20 transition-colors">
+                  <svg class="w-5 h-5 text-[#8B7355]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </span>
+                <div class="text-left">
+                  <span class="block text-sm font-semibold text-[#5D4E37] group-hover:text-[#8B7355] transition-colors">{t.oemTitle}</span>
+                  <span class="block text-xs text-stone-400">{t.oemSub}</span>
+                </div>
+              </a>
+
+              <a href={`/${currentPath}product`}
+                class="group flex items-center gap-3 bg-white rounded-xl p-4 border border-stone-200 hover:border-[#8B7355] hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                <span class="flex-shrink-0 w-10 h-10 bg-[#8B7355]/10 rounded-lg flex items-center justify-center group-hover:bg-[#8B7355]/20 transition-colors">
+                  <svg class="w-5 h-5 text-[#8B7355]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                  </svg>
+                </span>
+                <div class="text-left">
+                  <span class="block text-sm font-semibold text-[#5D4E37] group-hover:text-[#8B7355] transition-colors">{t.catalogTitle}</span>
+                  <span class="block text-xs text-stone-400">{t.catalogSub}</span>
+                </div>
+              </a>
+
+              <a href={`/${currentPath}about-us`}
+                class="group flex items-center gap-3 bg-white rounded-xl p-4 border border-stone-200 hover:border-[#8B7355] hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                <span class="flex-shrink-0 w-10 h-10 bg-[#8B7355]/10 rounded-lg flex items-center justify-center group-hover:bg-[#8B7355]/20 transition-colors">
+                  <svg class="w-5 h-5 text-[#8B7355]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </span>
+                <div class="text-left">
+                  <span class="block text-sm font-semibold text-[#5D4E37] group-hover:text-[#8B7355] transition-colors">{t.factoryTitle}</span>
+                  <span class="block text-xs text-stone-400">{t.factorySub}</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Divider with humor -->
+          <div class={`flex items-center gap-3 mb-8 ${isRTL ? 'justify-center lg:justify-end' : 'justify-center lg:justify-start'}`}>
+            <span class="h-[1px] w-10 bg-[#8B7355]/20"></span>
+            <p class="text-xs text-stone-400 italic">
+              {t.humor}
+            </p>
+            <span class="h-[1px] w-10 bg-[#8B7355]/20"></span>
+          </div>
+
+          <!-- Mini Rescue Form (with Turnstile) -->
+          <div class="bg-white rounded-xl p-6 border border-stone-200 shadow-sm max-w-xl mx-auto lg:mx-0 mb-8">
+            <p class="text-sm font-bold text-[#5D4E37] mb-1">{t.formHeading}</p>
+            <p class="text-xs text-stone-400 mb-4">{t.formSub}</p>
+
+            <div id="form-error" class="hidden text-center py-2 mb-3 bg-red-50 rounded-lg">
+              <span id="error-message" class="text-xs text-red-600"></span>
+            </div>
+
+            <form id="rescue-form" class="space-y-3">
+              <input
+                type="email"
+                name="email"
+                placeholder={t.emailPlaceholder}
+                required
+                class="w-full px-4 py-2.5 text-sm border border-stone-200 rounded-lg focus:border-[#8B7355] focus:ring-2 focus:ring-[#8B7355]/10 outline-none transition-all bg-stone-50"
+              />
+              <textarea
+                name="details"
+                rows="3"
+                id="details-textarea"
+                placeholder=""
+                required
+                class="w-full px-4 py-2.5 text-sm border border-stone-200 rounded-lg focus:border-[#8B7355] focus:ring-2 focus:ring-[#8B7355]/10 outline-none transition-all bg-stone-50 resize-y min-h-[80px]"
+              ></textarea>
+
+              <input type="hidden" name="name" value="404 Rescue" />
+              <input type="hidden" name="product_name" id="field-page" value="" />
+              <input type="hidden" name="source" value="404 Page" />
+              <input type="hidden" name="language" value={lang} />
+              <input type="hidden" name="client_ip" id="client-ip" value="" />
+              <input type="hidden" name="client_country" id="client-country" value="" />
+
+              <div id="turnstile-container" class={`flex justify-center ${isDev ? 'hidden' : ''}`}></div>
+              <div id="turnstile-error" class="hidden text-center py-2 px-3 bg-red-50 rounded-lg">
+                <span id="turnstile-error-message" class="text-xs text-red-600">{t.turnstileError}</span>
+              </div>
+
+              <button
+                type="submit"
+                id="submit-btn"
+                class="w-full bg-[#5D4E37] text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-[#8B7355] transition-colors duration-300 flex items-center justify-center gap-2 disabled:opacity-50">
+                <svg id="btn-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span id="btn-text">{t.submitBtn}</span>
+                <svg id="btn-spinner" class="hidden w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                </svg>
+              </button>
+            </form>
+
+            <div id="form-success" class="hidden text-center py-4">
+              <svg class="w-10 h-10 text-green-500 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <p class="text-sm font-semibold text-[#5D4E37]">{t.successTitle}</p>
+              <p class="text-xs text-stone-400">{t.successSub}</p>
+            </div>
+          </div>
+
+          <!-- Back to Home -->
+          <a href={`/${lang}`}
+            class="inline-flex items-center gap-2 text-sm font-medium text-[#8B7355] hover:text-[#5D4E37] transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            {t.backHome}
+          </a>
         </div>
       </div>
-
-      <!-- Heading & message -->
-      <h1 class="text-3xl font-bold text-[#5D4E37] mb-3 tracking-tight">
-        {t.title}
-      </h1>
-      <p class="text-base text-stone-600 mb-8 max-w-md mx-auto">
-        {t.msg}
-      </p>
 
       <!-- Search Bar -->
-      <form id="search-form" action={`/${lang}/search`} method="GET" class="relative group max-w-3xl mx-auto mb-10">
-        <div class="absolute inset-0 bg-[#5D4E37]/5 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-        <div class="flex items-center border-2 border-stone-200 bg-white rounded-full overflow-hidden focus-within:border-[#8B7355] shadow-sm transition-all duration-300 focus-within:ring-4 focus-within:ring-[#8B7355]/10 relative z-10">
-          <input
-            id="search-input"
-            type="search"
-            name="q"
-            autocomplete="off"
-            class="flex-grow py-4 px-6 bg-transparent border-none outline-none text-base text-stone-900 placeholder-stone-400 font-medium focus:ring-0"
-            placeholder={t.placeholder}
-          />
-
-          <!-- Clear Button (X icon) - hidden by default -->
-          <button type="button" id="search-clear" class="hidden px-3 text-stone-400 hover:text-[#5D4E37] transition-colors flex-shrink-0" aria-label="Clear search">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
-
-          <!-- Search Button -->
-          <button type="submit" class="px-5 py-2.5 mr-1.5 bg-[#5D4E37] text-white rounded-full hover:bg-[#8B7355] transition-all duration-300 font-bold tracking-wide text-xs uppercase shadow-md flex-shrink-0 flex items-center gap-2">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-            </svg>
-            <span>{t.search}</span>
-          </button>
-        </div>
-      </form>
-
-      <!-- Decorative divider -->
-      <div class="flex items-center justify-center gap-3 mb-10">
-        <span class="h-[1px] w-10 bg-[#8B7355]/30"></span>
-        <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#5D4E37]/40">Kssmi</span>
-        <span class="h-[1px] w-10 bg-[#8B7355]/30"></span>
+      <div class="mt-16 max-w-2xl mx-auto">
+        <p class="text-center text-xs font-bold text-stone-400 uppercase tracking-wider mb-4">
+          {t.searchHeading}
+        </p>
+        <form id="search-form" action={`/${currentPath}search`} method="GET" class="relative group">
+          <div class="flex items-center border-2 border-stone-200 bg-white rounded-full overflow-hidden focus-within:border-[#8B7355] shadow-sm transition-all duration-300 focus-within:ring-4 focus-within:ring-[#8B7355]/10">
+            <input
+              id="search-input"
+              type="search"
+              name="q"
+              autocomplete="off"
+              class="flex-grow py-3.5 px-5 bg-transparent border-none outline-none text-sm text-stone-900 placeholder-stone-400 font-medium focus:ring-0"
+              placeholder={t.searchPlaceholder}
+            />
+            <button type="button" id="search-clear" class="hidden px-3 text-stone-400 hover:text-[#5D4E37] transition-colors flex-shrink-0" aria-label="Clear search">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+            <button type="submit" class="px-5 py-2 mr-1.5 bg-[#5D4E37] text-white rounded-full hover:bg-[#8B7355] transition-all duration-300 font-bold tracking-wide text-xs uppercase shadow-md flex-shrink-0 flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+              <span>{t.searchBtn}</span>
+            </button>
+          </div>
+        </form>
       </div>
 
-      <!-- Action buttons -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href={`/${lang}/`}
-          class="inline-flex items-center gap-2 px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#8B7355] transition-colors duration-300 shadow-lg">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-          </svg>
-          <span>{t.home}</span>
-        </a>
-        <a href={`/${lang}/product`}
-          class="inline-flex items-center gap-2 px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#5D4E37] hover:text-white transition-all duration-300">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
-          </svg>
-          <span>{t.catalog}</span>
-        </a>
-      </div>
     </div>
+
+    <!-- Search clear button logic (inline, no Vite processing) -->
+    <script is:inline>
+      (function() {
+        var searchInput = document.getElementById('search-input');
+        var searchClear = document.getElementById('search-clear');
+        if (!searchInput || !searchClear) return;
+
+        function updateClearButton() {
+          if (searchInput.value.trim()) {
+            searchClear.classList.remove('hidden');
+          } else {
+            searchClear.classList.add('hidden');
+          }
+        }
+
+        searchInput.addEventListener('input', updateClearButton);
+        searchClear.addEventListener('click', function() {
+          searchInput.value = '';
+          searchClear.classList.add('hidden');
+          searchInput.focus();
+        });
+        updateClearButton();
+      })();
+    </script>
   </main>
 
   <Footer lang={lang} />
 </Layout>
 
 <style is:global>
-  /* Hide browser's default search clear button */
   input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;
     appearance: none;
@@ -147,31 +840,148 @@ const isRTL = lang === 'ar';
   }
 </style>
 
-<script>
-  // Search Clear Logic
-  const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
-  const searchClear = document.getElementById('search-clear') as HTMLButtonElement | null;
+<!-- Turnstile: define callback BEFORE loading script (production only) -->
+{!isDev && (
+  <script is:inline>
+    window.TURNSTILE_SITE_KEY = "0x4AAAAAACGlmQDIODBgCmpo";
+    window.turnstileToken = null;
 
-  function updateClearButton() {
-    if (searchInput && searchClear) {
-      if (searchInput.value.trim()) {
-        searchClear.classList.remove('hidden');
-      } else {
-        searchClear.classList.add('hidden');
+    window.onTurnstileLoad = function() {
+      var container = document.getElementById('turnstile-container');
+      if (!container) return;
+      container.innerHTML = '';
+      var widgetDiv = document.createElement('div');
+      container.appendChild(widgetDiv);
+      try {
+        window.turnstile.render(widgetDiv, {
+          sitekey: window.TURNSTILE_SITE_KEY,
+          theme: 'light',
+          callback: function(token) {
+            window.turnstileToken = token;
+            var errorEl = document.getElementById('turnstile-error');
+            if (errorEl) errorEl.classList.add('hidden');
+          },
+          'expired-callback': function() {
+            window.turnstileToken = null;
+          }
+        });
+      } catch (e) {
+        console.error('Turnstile render error:', e);
       }
-    }
+    };
+  </script>
+)}
+
+{!isDev && (
+  <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileLoad" async defer></script>
+)}
+
+<script define:vars={{ isDev, sending: t.sending, submitBtn: t.submitBtn, errorFallback: t.errorFallback, generalError: t.generalError, detailsPlaceholder: t.detailsPlaceholder }}>
+  // --- Set multiline placeholder (newlines work in JS, not HTML attributes) ---
+  const ta = document.getElementById('details-textarea') as HTMLTextAreaElement | null;
+  if (ta) ta.placeholder = detailsPlaceholder;
+
+  // --- Set page URL in hidden field ---
+  const pageField = document.getElementById('field-page') as HTMLInputElement | null;
+  if (pageField) pageField.value = window.location.pathname;
+
+  // --- Fetch client IP ---
+  async function fetchClientIP() {
+    try {
+      const response = await fetch('https://ipapi.co/json/', {
+        method: 'GET',
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        const data = await response.json();
+        const ipInput = document.getElementById('client-ip') as HTMLInputElement | null;
+        const countryInput = document.getElementById('client-country') as HTMLInputElement | null;
+        if (ipInput && data.ip) ipInput.value = data.ip;
+        if (countryInput && data.country_code) countryInput.value = data.country_code;
+      }
+    } catch (e) { /* silent */ }
+  }
+  fetchClientIP();
+
+  // --- Form elements ---
+  function getEls() {
+    return {
+      form: document.getElementById('rescue-form') as HTMLFormElement | null,
+      submitBtn: document.getElementById('submit-btn') as HTMLButtonElement | null,
+      btnText: document.getElementById('btn-text')!,
+      btnIcon: document.getElementById('btn-icon')!,
+      btnSpinner: document.getElementById('btn-spinner')!,
+      errorContainer: document.getElementById('form-error')!,
+      errorMessage: document.getElementById('error-message')!,
+      turnstileError: document.getElementById('turnstile-error')!,
+      successEl: document.getElementById('form-success')!,
+    };
   }
 
-  if (searchInput) {
-    searchInput.addEventListener('input', updateClearButton);
-    updateClearButton();
+  function setLoading(loading: boolean) {
+    const { submitBtn, btnText, btnIcon, btnSpinner } = getEls();
+    if (submitBtn) submitBtn.disabled = loading;
+    btnText.textContent = loading ? sending : submitBtn;
+    if (loading) { btnIcon.classList.add('hidden'); btnSpinner.classList.remove('hidden'); }
+    else { btnIcon.classList.remove('hidden'); btnSpinner.classList.add('hidden'); }
   }
 
-  if (searchClear && searchInput) {
-    searchClear.addEventListener('click', () => {
-      searchInput.value = '';
-      searchClear.classList.add('hidden');
-      searchInput.focus();
+  // --- Form submission ---
+  function setupForm() {
+    const { form } = getEls();
+    if (!form) return;
+
+    const newForm = form.cloneNode(true) as HTMLFormElement;
+    form.parentNode!.replaceChild(newForm, form);
+
+    newForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const { errorContainer, errorMessage, turnstileError, successEl } = getEls();
+      errorContainer.classList.add('hidden');
+      turnstileError.classList.add('hidden');
+
+      const token = (window as any).turnstileToken;
+      if (!isDev && !token) {
+        turnstileError.classList.remove('hidden');
+        return;
+      }
+
+      const formData = new FormData(newForm);
+      if (!isDev && token) {
+        formData.append('cf-turnstile-response', token);
+      }
+
+      setLoading(true);
+
+      try {
+        const apiUrl = isDev ? 'http://localhost:4325/send-mail.php' : '/send-mail.php';
+        const response = await fetch(apiUrl, { method: 'POST', body: formData });
+
+        if (!response.ok) {
+          const ct = response.headers.get('content-type');
+          if (ct && ct.includes('text/html')) throw new Error('PHP_NOT_CONFIGURED');
+          throw new Error(`HTTP ${response.status}`);
+        }
+
+        const result = await response.json();
+
+        if (result.success) {
+          newForm.classList.add('hidden');
+          successEl.classList.remove('hidden');
+        } else {
+          errorMessage.textContent = result.message || generalError;
+          errorContainer.classList.remove('hidden');
+          setLoading(false);
+        }
+      } catch (err: any) {
+        console.error('404 form error:', err);
+        errorMessage.textContent = errorFallback;
+        errorContainer.classList.remove('hidden');
+        setLoading(false);
+      }
     });
   }
+
+  setupForm();
 </script>

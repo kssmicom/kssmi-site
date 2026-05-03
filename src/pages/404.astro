@@ -244,35 +244,35 @@ const isDev = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.
       </div>
 
     </div>
+
+    <!-- Search clear button logic (inline, no Vite processing) -->
+    <script is:inline>
+      (function() {
+        var searchInput = document.getElementById('search-input');
+        var searchClear = document.getElementById('search-clear');
+        if (!searchInput || !searchClear) return;
+
+        function updateClearButton() {
+          if (searchInput.value.trim()) {
+            searchClear.classList.remove('hidden');
+          } else {
+            searchClear.classList.add('hidden');
+          }
+        }
+
+        searchInput.addEventListener('input', updateClearButton);
+        searchClear.addEventListener('click', function() {
+          searchInput.value = '';
+          searchClear.classList.add('hidden');
+          searchInput.focus();
+        });
+        updateClearButton();
+      })();
+    </script>
   </main>
 
   <Footer lang={lang} />
 </Layout>
-
-<!-- Search clear button logic (inline, no Vite processing) -->
-<script is:inline>
-  (function() {
-    var searchInput = document.getElementById('search-input');
-    var searchClear = document.getElementById('search-clear');
-    if (!searchInput || !searchClear) return;
-
-    function updateClearButton() {
-      if (searchInput.value.trim()) {
-        searchClear.classList.remove('hidden');
-      } else {
-        searchClear.classList.add('hidden');
-      }
-    }
-
-    searchInput.addEventListener('input', updateClearButton);
-    searchClear.addEventListener('click', function() {
-      searchInput.value = '';
-      searchClear.classList.add('hidden');
-      searchInput.focus();
-    });
-    updateClearButton();
-  })();
-</script>
 
 <style is:global>
   input[type="search"]::-webkit-search-cancel-button {
