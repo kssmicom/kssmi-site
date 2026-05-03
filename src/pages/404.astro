@@ -249,6 +249,31 @@ const isDev = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.
   <Footer lang={lang} />
 </Layout>
 
+<!-- Search clear button logic (inline, no Vite processing) -->
+<script is:inline>
+  (function() {
+    var searchInput = document.getElementById('search-input');
+    var searchClear = document.getElementById('search-clear');
+    if (!searchInput || !searchClear) return;
+
+    function updateClearButton() {
+      if (searchInput.value.trim()) {
+        searchClear.classList.remove('hidden');
+      } else {
+        searchClear.classList.add('hidden');
+      }
+    }
+
+    searchInput.addEventListener('input', updateClearButton);
+    searchClear.addEventListener('click', function() {
+      searchInput.value = '';
+      searchClear.classList.add('hidden');
+      searchInput.focus();
+    });
+    updateClearButton();
+  })();
+</script>
+
 <style is:global>
   input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;
@@ -297,35 +322,6 @@ const isDev = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.
 )}
 
 <script define:vars={{ isDev }}>
-  // --- Search clear logic (matches /search page) ---
-  const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
-  const searchClear = document.getElementById('search-clear') as HTMLButtonElement | null;
-
-  function updateClearButton() {
-    if (searchInput && searchClear) {
-      if (searchInput.value.trim()) {
-        searchClear.classList.remove('hidden');
-      } else {
-        searchClear.classList.add('hidden');
-      }
-    }
-  }
-
-  if (searchInput) {
-    searchInput.addEventListener('input', updateClearButton);
-  }
-
-  if (searchClear && searchInput) {
-    searchClear.addEventListener('click', () => {
-      searchInput.value = '';
-      searchClear.classList.add('hidden');
-      searchInput.focus();
-    });
-  }
-
-  // Initial state (handles browser autofill)
-  updateClearButton();
-
   // --- Set page URL in hidden field ---
   const pageField = document.getElementById('field-page') as HTMLInputElement | null;
   if (pageField) pageField.value = window.location.pathname;
