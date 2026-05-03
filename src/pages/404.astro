@@ -13,21 +13,22 @@ const lang = 'en';
 const isDev = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.0.0.1';
 ---
 
-<Layout title="Page Not Found | Kssmi Eyewear" lang={lang}>
-  <!-- Redirect non-English 404s to localized version -->
-  <script is:inline>
-    (function() {
-      const pathParts = window.location.pathname.split('/').filter(Boolean);
-      const supportedLangs = ['it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
-      if (pathParts.length > 0 && supportedLangs.includes(pathParts[0])) {
-        const lang = pathParts[0];
-        if (window.location.pathname !== `/${lang}/404` && window.location.pathname !== `/${lang}/404/`) {
-          document.documentElement.style.opacity = '0';
-          window.location.replace(`/${lang}/404`);
-        }
+<!-- Redirect non-English 404s to localized version.
+     MUST be before <Layout> so it runs in <head>, blocking any render of English content. -->
+<script is:inline>
+  (function() {
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    const supportedLangs = ['it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
+    if (pathParts.length > 0 && supportedLangs.includes(pathParts[0])) {
+      const lang = pathParts[0];
+      if (window.location.pathname !== '/' + lang + '/404' && window.location.pathname !== '/' + lang + '/404/') {
+        window.location.replace('/' + lang + '/404');
       }
-    })();
-  </script>
+    }
+  })();
+</script>
+
+<Layout title="Page Not Found | Kssmi Eyewear" lang={lang}>
 
   <Header lang={lang} />
 
@@ -323,20 +324,20 @@ const isDev = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.
 
 <script define:vars={{ isDev }}>
   // --- Set page URL in hidden field ---
-  const pageField = document.getElementById('field-page') as HTMLInputElement | null;
+  var pageField = document.getElementById('field-page');
   if (pageField) pageField.value = window.location.pathname;
 
   // --- Fetch client IP (reused from InquiryForm pattern) ---
   async function fetchClientIP() {
     try {
-      const response = await fetch('https://ipapi.co/json/', {
+      var response = await fetch('https://ipapi.co/json/', {
         method: 'GET',
         headers: { 'Accept': 'application/json' }
       });
       if (response.ok) {
-        const data = await response.json();
-        const ipInput = document.getElementById('client-ip') as HTMLInputElement | null;
-        const countryInput = document.getElementById('client-country') as HTMLInputElement | null;
+        var data = await response.json();
+        var ipInput = document.getElementById('client-ip');
+        var countryInput = document.getElementById('client-country');
         if (ipInput && data.ip) ipInput.value = data.ip;
         if (countryInput && data.country_code) countryInput.value = data.country_code;
       }
@@ -347,49 +348,50 @@ const isDev = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.
   // --- Form elements ---
   function getEls() {
     return {
-      form: document.getElementById('rescue-form') as HTMLFormElement | null,
-      submitBtn: document.getElementById('submit-btn') as HTMLButtonElement | null,
-      btnText: document.getElementById('btn-text')!,
-      btnIcon: document.getElementById('btn-icon')!,
-      btnSpinner: document.getElementById('btn-spinner')!,
-      errorContainer: document.getElementById('form-error')!,
-      errorMessage: document.getElementById('error-message')!,
-      turnstileError: document.getElementById('turnstile-error')!,
-      successEl: document.getElementById('form-success')!,
+      form: document.getElementById('rescue-form'),
+      submitBtn: document.getElementById('submit-btn'),
+      btnText: document.getElementById('btn-text'),
+      btnIcon: document.getElementById('btn-icon'),
+      btnSpinner: document.getElementById('btn-spinner'),
+      errorContainer: document.getElementById('form-error'),
+      errorMessage: document.getElementById('error-message'),
+      turnstileError: document.getElementById('turnstile-error'),
+      successEl: document.getElementById('form-success'),
     };
   }
 
-  function setLoading(loading: boolean) {
-    const { submitBtn, btnText, btnIcon, btnSpinner } = getEls();
-    if (submitBtn) submitBtn.disabled = loading;
-    btnText.textContent = loading ? 'Sending...' : "Send & We'll Help";
-    if (loading) { btnIcon.classList.add('hidden'); btnSpinner.classList.remove('hidden'); }
-    else { btnIcon.classList.remove('hidden'); btnSpinner.classList.add('hidden'); }
+  function setLoading(loading) {
+    var els = getEls();
+    if (els.submitBtn) els.submitBtn.disabled = loading;
+    els.btnText.textContent = loading ? 'Sending...' : "Send & We'll Help";
+    if (loading) { els.btnIcon.classList.add('hidden'); els.btnSpinner.classList.remove('hidden'); }
+    else { els.btnIcon.classList.remove('hidden'); els.btnSpinner.classList.add('hidden'); }
   }
 
   // --- Form submission (clone pattern from InquiryForm) ---
   function setupForm() {
-    const { form } = getEls();
+    var els = getEls();
+    var form = els.form;
     if (!form) return;
 
-    const newForm = form.cloneNode(true) as HTMLFormElement;
-    form.parentNode!.replaceChild(newForm, form);
+    var newForm = form.cloneNode(true);
+    form.parentNode.replaceChild(newForm, form);
 
-    newForm.addEventListener('submit', async (e) => {
+    newForm.addEventListener('submit', async function(e) {
       e.preventDefault();
 
-      const { errorContainer, errorMessage, turnstileError, successEl } = getEls();
-      errorContainer.classList.add('hidden');
-      turnstileError.classList.add('hidden');
+      var els2 = getEls();
+      els2.errorContainer.classList.add('hidden');
+      els2.turnstileError.classList.add('hidden');
 
       // Check Turnstile (skip in dev)
-      const token = (window as any).turnstileToken;
+      var token = window.turnstileToken;
       if (!isDev && !token) {
-        turnstileError.classList.remove('hidden');
+        els2.turnstileError.classList.remove('hidden');
         return;
       }
 
-      const formData = new FormData(newForm);
+      var formData = new FormData(newForm);
       if (!isDev && token) {
         formData.append('cf-turnstile-response', token);
       }
@@ -397,29 +399,29 @@ const isDev = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.
       setLoading(true);
 
       try {
-        const apiUrl = isDev ? 'http://localhost:4325/send-mail.php' : '/send-mail.php';
-        const response = await fetch(apiUrl, { method: 'POST', body: formData });
+        var apiUrl = isDev ? 'http://localhost:4325/send-mail.php' : '/send-mail.php';
+        var response = await fetch(apiUrl, { method: 'POST', body: formData });
 
         if (!response.ok) {
-          const ct = response.headers.get('content-type');
+          var ct = response.headers.get('content-type');
           if (ct && ct.includes('text/html')) throw new Error('PHP_NOT_CONFIGURED');
-          throw new Error(`HTTP ${response.status}`);
+          throw new Error('HTTP ' + response.status);
         }
 
-        const result = await response.json();
+        var result = await response.json();
 
         if (result.success) {
           newForm.classList.add('hidden');
-          successEl.classList.remove('hidden');
+          els2.successEl.classList.remove('hidden');
         } else {
-          errorMessage.textContent = result.message || 'Something went wrong. Please try again.';
-          errorContainer.classList.remove('hidden');
+          els2.errorMessage.textContent = result.message || 'Something went wrong. Please try again.';
+          els2.errorContainer.classList.remove('hidden');
           setLoading(false);
         }
-      } catch (err: any) {
+      } catch (err) {
         console.error('404 form error:', err);
-        errorMessage.textContent = 'Unable to send. Please email us at sales@kssmi.com.';
-        errorContainer.classList.remove('hidden');
+        els2.errorMessage.textContent = 'Unable to send. Please email us at sales@kssmi.com.';
+        els2.errorContainer.classList.remove('hidden');
         setLoading(false);
       }
     });
