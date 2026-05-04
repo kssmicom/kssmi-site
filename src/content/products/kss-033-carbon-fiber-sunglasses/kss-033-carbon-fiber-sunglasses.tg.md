@@ -12,7 +12,7 @@ moq: "300 ад/модел"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Carbon Fiber"
-series: "Carbon Sunglasses"
+series: "sunglasses, carbon-fiber-eyewear, carbon-fiber-sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "49-19-145мм & Фармоишсозӣ"

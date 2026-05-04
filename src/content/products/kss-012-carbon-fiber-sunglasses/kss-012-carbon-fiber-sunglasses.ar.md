@@ -12,7 +12,7 @@ moq: "300 قطعة/نموذج"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Carbon Fiber"
-series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, luxury, sunglasses, sunglasses"
+series: "sunglasses, carbon-fiber-eyewear, carbon-fiber-sunglasses"
 
 # ─────────────────────────────────────────────────────
 frameMaterial: "ألياف كربون من الدرجة المستخدمة في صناعة الطائرات فاخرة"

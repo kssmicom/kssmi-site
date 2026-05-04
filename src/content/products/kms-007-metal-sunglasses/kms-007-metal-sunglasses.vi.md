@@ -12,7 +12,7 @@ moq: "300 cái/mẫu"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Metal Sunglasses"
-series: "sunglasses, metal-sunglasses,fashion-metal-sunglasses"
+series: "sunglasses, fashion-eyewear, metal-sunglasses,fashion-metal-sunglasses"
 
 # ─────────────────────────────────────────────────────
 frameMaterial: "Gọng Acetate cao cấp và Càng kính kim loại"

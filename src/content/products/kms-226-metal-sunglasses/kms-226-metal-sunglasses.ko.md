@@ -12,7 +12,7 @@ moq: "300 개/모델 (100 개/색상)"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Metal Sunglasses"
-series: "sunglasses, metal-sunglasses,fashion-metal-sunglasses"
+series: "sunglasses, fashion-eyewear, metal-sunglasses,fashion-metal-sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "54-20-140mm & 맞춤 서비스"

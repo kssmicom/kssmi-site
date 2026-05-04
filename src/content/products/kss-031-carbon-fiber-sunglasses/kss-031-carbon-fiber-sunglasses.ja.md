@@ -12,7 +12,7 @@ moq: "300 個/モデル"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Carbon Fiber"
-series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, luxury, sunglasses, sunglasses"
+series: "sunglasses, carbon-fiber-eyewear, carbon-fiber-sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "49-19-145mm & カスタマイズ対応"

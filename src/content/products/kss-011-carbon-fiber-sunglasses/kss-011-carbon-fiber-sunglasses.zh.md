@@ -12,7 +12,7 @@ moq: "300 付/款"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Carbon Fiber"
-series: "carbon-fiber, carbon-fiber-sunglasses, classics, classics-sunglasses, luxury, luxury-sunglasses, sunglasses"
+series: "sunglasses, carbon-fiber-eyewear, carbon-fiber-sunglasses"
 
 # ─────────────────────────────────────────────────────
 frameMaterial: "优质航空级碳纤维"

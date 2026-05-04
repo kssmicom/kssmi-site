@@ -12,7 +12,7 @@ moq: "300 cái/mẫu"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
 material: "Metal Optical Frames"
-series: "optical-frames, metal-optical-frames,fashion-metal-optical-frames"
+series: "optical-frames, fashion-eyewear, metal-optical-frames, fashion-metal-optical-frames"
 categories: "Optical Frames, Metal Optical Frames"
 
 # ─────────────────────────────────────────────────────

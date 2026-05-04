@@ -12,7 +12,7 @@ moq: "300 PCS/Model"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Titanium"
-series: "Titanium Sunglasses"
+series: "sunglasses, titanium-sunglasses, luxury-eyewear, luxury-titanium-sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "52-17-145mm & Customization"

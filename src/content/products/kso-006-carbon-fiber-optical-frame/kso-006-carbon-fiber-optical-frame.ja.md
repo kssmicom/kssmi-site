@@ -12,7 +12,7 @@ moq: "300 個/モデル"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
 material: "Carbon Fiber"
-series: "Carbon Fiber Optical Frames"
+series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames"
 
 # ─────────────────────────────────────────────────────
 size: "46-22-145mm & カスタマイズ対応"

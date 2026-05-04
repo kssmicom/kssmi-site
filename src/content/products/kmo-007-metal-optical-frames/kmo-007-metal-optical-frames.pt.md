@@ -12,7 +12,7 @@ moq: "300 pçs/modelo"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
 material: "Metal Optical Frames"
-series: "optical-frames, metal-optical-frames,fashion-metal-optical-frames"
+series: "optical-frames, fashion-eyewear, metal-optical-frames, fashion-metal-optical-frames"
 
 # ─────────────────────────────────────────────────────
 size: "46-22-145mm & Personalização"

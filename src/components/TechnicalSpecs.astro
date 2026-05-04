@@ -49,7 +49,7 @@ const { product, lang = 'en' } = Astro.props;
 const t = translations[lang] || translations.en;
 
 const d = product.data;
-const docRef = (d.itemNo || d.slug || 'YT').toUpperCase();
+const docRef = (d.itemNo || d.slug || 'SKU').toUpperCase();
 
 const pt = t.product || {
   technicalData: 'Technical Data',

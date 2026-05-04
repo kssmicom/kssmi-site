@@ -84,17 +84,22 @@ public/media/
 
 **Frontmatter format:**
 ```yaml
-cover: "/media/products/yto-001/OEM-ODM-Customize-Luxury-Optical-Glasses-YTO-001-1.webp"
+cover: "/media/products/kso-005/OEM-ODM-Customize-Luxury-Optical-Glasses-KSO-005-1.webp"
 gallery:
-  - "/media/products/yto-001/OEM-ODM-Customize-Luxury-Optical-Glasses-YTO-001-2.webp"
+  - "/media/products/kso-005/OEM-ODM-Customize-Luxury-Optical-Glasses-KSO-005-2.webp"
 ```
 
 ### Product Naming Convention
 
 | Type | Prefix | Example |
 |------|--------|---------|
-| Optical Frames | YTO | YTO-001, YTO-002 |
-| Sunglasses Frames | YTS | YTS-001, YTS-002 |
+| Optical Frames | KSO | KSO-005, KSO-006 |
+| Sunglasses | KSS | KSS-011, KSS-012 |
+| Metal Sunglasses | KMS | KMS-007, KMS-117 |
+| Titanium Optical | KTO | KTO-001, KTO-002 |
+| Titanium Sunglasses | KTS | KTS-020, KTS-206 |
+| Rimless Optical | KRO | KRO-203 |
+| Rimless Sunglasses | KRS | KRS-201, KRS-202 |
 
 ### URL Structure
 
