@@ -1,12 +1,12 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Kính Mát Acetate Tùy Chỉnh"
+title: "Kính mát Acetate tùy chỉnh"
 slug: "kas-109-acetate-sunglasses"
 itemNo: "KAS-109"
 date: "2026-05-07"
-colors: "Đen & Trong suốt & Đồi mồi & Ô liu"
-materials: "Mazzucchelli cao cấp & Acetate JINYU & Tùy chỉnh theo yêu cầu"
-serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
+colors: "Đen & Trong suốt & Đồi mồi & Xanh ô liu"
+materials: "Acetate Mazzucchelli cao cấp & JINYU & Tùy chỉnh theo yêu cầu"
+serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -16,14 +16,14 @@ series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sungla
 
 # ─────────────────────────────────────────────────────
 size: "49-23-150mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng và Càng kính Acetate cao cấp"
+frameMaterial: "Gọng và càng kính Acetate cao cấp"
 lensMaterial: "Tròng kính Nylon bền bỉ & Tùy chỉnh theo yêu cầu"
-designStyle: "Táo bạo, Cổ điển, Thời trang, Phong cách, Hợp thời trang, Unisex"
+designStyle: "Táo bạo, Cổ điển, Thời trang, Phong cách, Hợp mốt, Unisex"
 nosePads: "Đệm mũi liền khối"
-hinge: "Bản lề cấu trúc thùng 3+2 & Tùy chỉnh theo yêu cầu"
+hinge: "Bản lề cấu trúc 3+2 Barrel & Tùy chỉnh theo yêu cầu"
 logo: "In, Laser, Laser đổ dầu, Ép kim, Huy hiệu kim loại, Dập nổi, Đính đá, Nhãn dán 3D"
 service: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
-acetateFeature: "Nhẹ & Bền & Màu sắc sống động"
+acetateFeature: "Nhẹ & Bền & Sống động"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-1.webp"
@@ -43,37 +43,41 @@ gallery:
   - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-14.webp"
   - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-15.webp"
   - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-16.webp"
+  - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-17.webp"
+  - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-18.webp"
+  - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-19.webp"
+  - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-20.webp"
 customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Kính mát Acetate thời trang cổ điển táo bạo KAS-109 | Nhà sản xuất"
-seoDescription: "Nâng tầm danh mục thương hiệu riêng của bạn với kính mát acetate cổ điển táo bạo KAS-109. Chất liệu Mazzucchelli cao cấp, MOQ 300 và tùy chỉnh OEM/ODM toàn diện."
-seoKeywords: "nhà sản xuất kính mát acetate, kính mát OEM tùy chỉnh, kính mắt thương hiệu riêng cao cấp, gọng kính acetate bán sỉ, nhà máy kính mắt Trung Quốc, kính mát cổ điển OEM, nhà cung cấp kính mắt cao cấp, sản xuất kính mắt Trung Quốc"
+seoTitle: "KAS-109 Kính mát Acetate cổ điển táo bạo | Đối tác sản xuất"
+seoDescription: "Mở rộng bộ sưu tập xa xỉ của bạn với kính mát acetate cổ điển táo bạo KAS-109. Gọng kính Mazzucchelli cao cấp với bản lề 3+2, MOQ 300 và dịch vụ OEM/ODM đầy đủ."
+seoKeywords: "nhà sản xuất kính mát acetate cao cấp, xưởng kính mắt OEM tùy chỉnh, nhà cung cấp kính mắt acetate Trung Quốc, kính mát nhãn hiệu riêng xa xỉ, bán buôn kính mát cổ điển táo bạo, sản xuất kính mắt thời trang tùy chỉnh, kính mắt acetate Mazzucchelli Trung Quốc, kính mát đặt làm riêng cho các thương hiệu xa xỉ"
 ---
 
 ## Đặc điểm
 
-- **Thành phần chất liệu cao cấp:** Sử dụng acetate Mazzucchelli và JINYU chính hãng để mang lại tính toàn vẹn về cấu trúc vượt trội và thẩm mỹ cao cấp, bóng bẩy.
-- **Phụ kiện bền bỉ:** Bản lề thùng 3+2 được gia cố, được thiết kế chính xác để duy trì độ căng ổn định và vận hành mượt mà.
-- **Công nghệ tròng kính tiên tiến:** Tròng kính nylon có độ bền cao, mang lại khả năng chống va đập đặc biệt và độ rõ nét quang học cho các tiêu chuẩn bán lẻ cao cấp.
-- **Công thái học tích hợp:** Đệm mũi tích hợp được thiết kế theo giải phẫu học, mang lại sự vừa vặn ổn định, không gây áp lực, phù hợp để đeo hàng ngày trong thời gian dài.
-- **Kích thước linh hoạt:** Kích thước tiêu chuẩn 49-23-150mm với khả năng tùy chỉnh toàn diện để đáp ứng các yêu cầu cụ thể của thương hiệu và tiêu chuẩn vừa vặn toàn cầu.
-- **Sản xuất có thể mở rộng:** Quy trình sản xuất OEM và ODM mạnh mẽ với MOQ thấp chỉ 300 chiếc, được thiết kế cho các Nhà thời trang xa xỉ và Thương hiệu kính mắt cao cấp.
+- **Chất liệu cao cấp:** Được chế tác từ acetate Mazzucchelli và JINYU đẳng cấp thế giới, mang lại độ bền vượt trội và chiều sâu màu sắc sống động, sâu sắc.
+- **Phần cứng chắc chắn:** Được trang bị bản lề 3+2 barrel được thiết kế chính xác để vận hành êm ái lâu dài và ổn định về cấu trúc.
+- **Quang học chống va đập:** Có tròng kính nylon bền bỉ cung cấp độ rõ nét vượt trội và khả năng chống va đập, với nhiều tùy chọn lớp phủ tùy chỉnh có sẵn.
+- **Sự thoải mái liền mạch:** Được thiết kế với đệm mũi liền khối mang lại thẩm mỹ tối giản, bóng bẩy trong khi vẫn đảm bảo sự vừa vặn ổn định và thoải mái.
+- **Sự phù hợp đa năng:** Tỷ lệ 49-23-150mm được cân bằng chuyên nghiệp và phong cách thiết kế unisex táo bạo phù hợp cho các thị trường toàn cầu đa dạng.
+- **Sản xuất có thể mở rộng:** Dịch vụ OEM và ODM toàn diện với MOQ thấp 300 chiếc được điều chỉnh cho các Nhà thời trang xa xỉ và Nhà thiết kế kính mắt độc lập.
 
 ## Phù hợp cho
 
 - Thương hiệu kính mắt cao cấp
 - Nhà thiết kế kính mắt độc lập
 - Nhà phân phối thương hiệu riêng
-- Nhãn thời trang boutique
 - Nhà thời trang xa xỉ
+- Nhãn thời trang boutique
 - Cửa hàng khái niệm & đa nhãn
 
 ## Tổng quan
 
-Được chế tác từ acetate Mazzucchelli và JINYU cao cấp, KAS-109 mang đậm tính thẩm mỹ cổ điển táo bạo nhưng vẫn nhẹ nhàng và bền bỉ về mặt cấu trúc. Lựa chọn chất liệu này đảm bảo lớp hoàn thiện rực rỡ, độ bóng cao, đáp ứng các tiêu chuẩn chất lượng khắt khe của thị trường xa xỉ toàn cầu.
+Được chế tác từ acetate Mazzucchelli và JINYU đẳng cấp thế giới, KAS-109 hiện thực hóa thẩm mỹ táo bạo, mang cảm hứng cổ điển, phù hợp với xu hướng thời trang đương đại. Chiều sâu màu sắc sống động và các lớp hoàn thiện có độ trong suốt cao của chất liệu cung cấp nền tảng tinh tế cho các bộ sưu tập kính mắt cao cấp.
 
-Bản lề thùng 3+2 được thiết kế chính xác và công thái học tích hợp mang lại trải nghiệm đeo tinh tế, đặc trưng bởi sự vận hành mượt mà ổn định và sự vừa vặn an toàn.
+Đệm mũi liền khối và bản lề 3+2 barrel được thiết kế chính xác đảm bảo sự vừa vặn liền mạch và ổn định cấu trúc lâu dài, cân bằng giữa hiệu suất mạnh mẽ với kiểu dáng unisex nhẹ nhàng.
 
-Thông qua hỗ trợ OEM và ODM toàn diện và MOQ linh hoạt 300 chiếc, Kssmi giúp các nhãn hiệu thời trang boutique và nhà phân phối nhãn hiệu riêng hiện thực hóa những tầm nhìn về kính mắt cao cấp, tùy chỉnh.
+Có sẵn thông qua các dịch vụ OEM và ODM đầy đủ với MOQ 300 chiếc linh hoạt, mẫu kính này cung cấp phạm vi rộng lớn cho việc xây dựng thương hiệu riêng và các lớp phủ tròng kính tùy chỉnh, trao quyền cho các nhà thời trang xa xỉ và các nhãn hiệu boutique mở rộng các sản phẩm nhãn hiệu riêng của họ.

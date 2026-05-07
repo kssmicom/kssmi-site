@@ -7,7 +7,7 @@ date: "2026-05-07"
 colors: "Siyah & Şeffaf & Kaplumbağa & Zeytin"
 materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
-moq: "300 adet/model (100 adet/renk)"
+moq: "300 adet/model (100adet/renk)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -20,7 +20,7 @@ frameMaterial: "Premium Asetat Çerçeve ve Sap"
 lensMaterial: "Dayanıklı Naylon Lens & Özelleştirme"
 designStyle: "Cesur, Vintage, Moda, Şık, Trend, Unisex"
 nosePads: "Entegre Burun Tamponları"
-hinge: "3+2 Barrel Yapılı Menteşeler & Özelleştirme"
+hinge: "3+2 Varil Yapılı Menteşeler & Özelleştirme"
 logo: "Tampo Baskı, Lazer Markalama, Boya Dolgulu Lazer, Sıcak Baskı, Metal Logo, Kabartma Logo, Kristal Süsleme, 3D Etiket"
 service: "OEM / ODM Üretim – Özelleştirme"
 acetateFeature: "Hafif & Dayanıklı & Canlı"
@@ -43,37 +43,41 @@ gallery:
   - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-14.webp"
   - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-15.webp"
   - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-16.webp"
+  - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-17.webp"
+  - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-18.webp"
+  - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-19.webp"
+  - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-20.webp"
 customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAS-109 Cesur Vintage Moda Asetat Güneş Gözlüğü | Üretici"
-seoDescription: "KAS-109 cesur vintage asetat güneş gözlükleri ile özel marka portföyünüzü yükseltin. Premium Mazzucchelli malzeme, 300 MOQ ve tam OEM/ODM özelleştirme."
-seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğü, lüks özel marka gözlük, toptan asetat çerçeveler, Çin gözlük fabrikası, vintage güneş gözlüğü OEM, premium gözlük tedarikçisi, Çin gözlük üretimi"
+seoTitle: "KAS-109 Cesur Vintage Asetat Güneş Gözlüğü | Üretim Ortağı"
+seoDescription: "KAS-109 cesur vintage asetat güneş gözlüğü ile lüks koleksiyonunuzu ölçeklendirin. 3+2 menteşeli premium Mazzucchelli çerçeveler, 300 MOQ ve tam OEM/ODM hizmetleri."
+seoKeywords: "premium asetat güneş gözlüğü üreticisi, özel OEM gözlük fabrikası, Çinli asetat gözlük tedarikçisi, lüks özel marka güneş gözlüğü, cesur vintage güneş gözlüğü toptan, özelleştirilebilir moda gözlük üretimi, Mazzucchelli asetat gözlük Çin, lüks markalar için ısmarlama güneş gözlüğü"
 ---
 
 ## Özellikler
 
-- **Premium Malzeme Bileşimi:** Üstün yapısal bütünlük ve yüksek parlaklıkta premium estetik için orijinal Mazzucchelli ve JINYU asetat kullanılmıştır.
-- **Dayanıklı Donanım:** Tutarlı gerginlik ve operasyonel pürüzsüzlük sağlamak için hassas bir şekilde tasarlanmış güçlendirilmiş 3+2 barrel menteşeler.
-- **Gelişmiş Lens Teknolojisi:** Üst düzey perakende standartları için olağanüstü darbe direnci ve optik netlik sunan yüksek dayanıklılıklı naylon lensler.
-- **Entegre Ergonomi:** Uzun süreli günlük kullanıma uygun, dengeli ve basınçsız bir uyum sağlayan anatomik olarak tasarlanmış entegre burun tamponları.
-- **Çok Yönlü Boyutlandırma:** Belirli marka gereksinimlerini ve küresel uyum standartlarını karşılamak için tam özelleştirme yeteneklerine sahip standart 49-23-150mm boyutlar.
-- **Ölçeklenebilir Üretim:** Lüks Moda Evleri ve Premium Gözlük Markaları için tasarlanmış, 300 adetlik düşük MOQ ile sağlam OEM ve ODM üretim iş akışı.
+- **Premium Malzeme:** Dünyaca ünlü Mazzucchelli ve JINYU asetattan üretilmiştir, olağanüstü dayanıklılık ve derin, canlı renk derinliği sunar.
+- **Sağlam Donanım:** Uzun süreli operasyonel pürüzsüzlük ve yapısal kararlılık için hassas bir şekilde tasarlanmış 3+2 varil menteşelerle donatılmıştır.
+- **Yüksek Etkili Optikler:** Üstün netlik ve darbe direnci sağlayan dayanıklı naylon lenslere sahiptir ve kapsamlı özel kaplama seçenekleri mevcuttur.
+- **Kusursuz Konfor:** Şık ve minimalist bir estetik sunarken sağlam ve rahat bir oturuş sağlayan entegre burun tamponları ile tasarlanmıştır.
+- **Çok Yönlü Uyum:** Uzmanlıkla dengelenmiş 49-23-150 mm oranları ve çeşitli küresel pazarlara uygun cesur unisex tasarım stili.
+- **Ölçeklenebilir Üretim:** Lüks Moda Evleri ve Bağımsız Gözlük Tasarımcıları için özel olarak tasarlanmış, 300 adetlik düşük MOQ ile kapsamlı OEM ve ODM hizmetleri.
 
 ## İçin Mükemmel
 
 - Premium Gözlük Markaları
 - Bağımsız Gözlük Tasarımcıları
 - Özel Marka Dağıtımcıları
-- Butik Moda Markaları
 - Lüks Moda Evleri
+- Butik Moda Markaları
 - Concept ve Çoklu Marka Mağazaları
 
 ## Genel Bakış
 
-Premium Mazzucchelli ve JINYU asetattan üretilen KAS-109, hem hafif hem de yapısal olarak dirençli kalan cesur bir vintage estetiği yakalıyor. Bu malzeme seçimi, küresel lüks pazarının zorlu kalite standartlarını karşılayan canlı, yüksek parlaklıkta bir görünüm sağlar.
+Dünyaca ünlü Mazzucchelli ve JINYU asetattan üretilen KAS-109, çağdaş moda trendleriyle yankılanan cesur, vintage esintili bir estetiği bünyesinde barındırır. Malzemenin derin, canlı renk derinliği ve yüksek şeffaflıktaki bitişleri, premium gözlük koleksiyonları için sofistike bir temel sağlar.
 
-Hassas mühendislikle üretilmiş 3+2 barrel menteşeler ve entegre ergonomi, tutarlı operasyonel pürüzsüzlük ve güvenli bir uyumla karakterize edilen rafine bir kullanım deneyimi sunar.
+Entegre burun tamponları ve hassas bir şekilde tasarlanmış 3+2 varil menteşeler, sağlam performansı hafif bir unisex silüetle dengeleyerek kusursuz bir uyum ve kalıcı yapısal kararlılık sağlar.
 
-Kapsamlı OEM ve ODM desteği ve esnek 300 adetlik MOQ aracılığıyla Kssmi, butik moda markalarının ve özel marka dağıtıcılarının özelleştirilmiş, üst düzey gözlük vizyonlarını hayata geçirmelerini sağlar.
+Esnek 300 adetlik MOQ ile tam OEM ve ODM hizmetleri aracılığıyla sunulan bu model, ısmarlama markalama ve özel lens kaplamaları için geniş bir kapsam sunarak lüks moda evlerini ve butik markaları özel marka tekliflerini ölçeklendirmeleri için güçlendirir.

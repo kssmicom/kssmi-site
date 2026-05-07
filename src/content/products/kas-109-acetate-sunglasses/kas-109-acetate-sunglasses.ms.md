@@ -5,9 +5,9 @@ slug: "kas-109-acetate-sunglasses"
 itemNo: "KAS-109"
 date: "2026-05-07"
 colors: "Hitam & Lut Sinar & Kura-kura & Zaitun"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Asetat Mazzucchelli Premium & JINYU & Penyesuaian"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
-moq: "300 unit/model (100 unit/warna)"
+moq: "300 unit/model (100unit/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -16,11 +16,11 @@ series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sungla
 
 # ─────────────────────────────────────────────────────
 size: "49-23-150mm & Penyesuaian"
-frameMaterial: "Bingkai dan Gagang Asetat Premium"
-lensMaterial: "Lensa Nylon Tahan Lasak & Penyesuaian"
-designStyle: "Berani, Vintage, Fesyen, Bergaya, Trendi, Unisex"
+frameMaterial: "Bingkai dan Bingkai Tepi Asetat Premium"
+lensMaterial: "Kanta Nilon Teguh & Penyesuaian"
+designStyle: "Berani, Vintaj, Fesyen, Bergaya, Trendi, Unisex"
 nosePads: "Alas Hidung Bersepadu"
-hinge: "Engsel Struktur Barrel 3+2 & Penyesuaian"
+hinge: "Engsel Struktur 3+2 Baril & Penyesuaian"
 logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Lencana Logam, Timbulan, Kristal, Pelekat"
 service: "Pembuatan OEM / ODM – Penyesuaian"
 acetateFeature: "Ringan & Tahan Lama & Ceria"
@@ -43,37 +43,41 @@ gallery:
   - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-14.webp"
   - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-15.webp"
   - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-16.webp"
+  - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-17.webp"
+  - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-18.webp"
+  - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-19.webp"
+  - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-20.webp"
 customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Cermin Mata Hitam Asetat Fesyen Vintage Berani KAS-109 | Pengilang"
-seoDescription: "Tingkatkan portfolio label peribadi anda dengan cermin mata hitam asetat vintage berani KAS-109. Bahan Mazzucchelli premium, MOQ 300, dan penyesuaian OEM/ODM penuh."
-seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai, cermin mata label peribadi mewah, bingkai asetat borong, kilang cermin mata China, cermin mata hitam vintage OEM, pembekal cermin mata premium, pengeluaran cermin mata China"
+seoTitle: "KAS-109 Cermin Mata Hitam Asetat Vintaj Berani | Rakan Pengeluaran"
+seoDescription: "Tingkatkan koleksi mewah anda dengan cermin mata hitam asetat vintaj berani KAS-109. Bingkai Mazzucchelli premium dengan engsel 3+2, MOQ 300, dan perkhidmatan OEM/ODM penuh."
+seoKeywords: "pengeluar cermin mata hitam asetat premium, kilang eyewear OEM tersuai, pembekal cermin mata asetat China, cermin mata hitam label peribadi mewah, borong cermin mata hitam vintaj berani, pengeluaran eyewear fesyen boleh suai, eyewear asetat Mazzucchelli China, cermin mata hitam tempahan khas untuk jenama mewah"
 ---
 
 ## Ciri-ciri Utama
 
-- **Komposisi Bahan Premium:** Menggunakan asetat Mazzucchelli dan JINYU asli untuk integriti struktur yang unggul dan estetika premium yang sangat berkilat.
-- **Perkakasan Tahan Lama:** Engsel barrel 3+2 yang diperkukuh, direka secara tepat untuk mengekalkan ketegangan yang konsisten dan kelancaran operasi.
-- **Teknologi Lensa Canggih:** Lensa nilon berkekuatan tinggi yang menawarkan rintangan hentaman yang luar biasa dan kejelasan optik untuk piawaian runcit mewah.
-- **Ergonomik Bersepadu:** Alas hidung bersepadu yang direka secara anatomi memberikan padanan yang stabil dan tanpa tekanan, sesuai untuk kegunaan harian yang lama.
-- **Saiz Serba Boleh:** Dimensi standard 49-23-150mm dengan keupayaan penyesuaian penuh untuk memenuhi keperluan jenama khusus dan piawaian padanan global.
-- **Pembuatan Boleh Skala:** Aliran kerja pengeluaran OEM dan ODM yang teguh dengan MOQ rendah 300 unit yang direka untuk Rumah Fesyen Mewah dan Jenama Cermin Mata Premium.
+- **Bahan Premium:** Dibina daripada asetat Mazzucchelli dan JINYU bertaraf dunia, memberikan ketahanan luar biasa dan kedalaman warna yang mendalam serta ceria.
+- **Perkakasan Teguh:** Dilengkapi dengan engsel 3+2 baril yang direka secara mekanikal untuk kelancaran operasi jangka panjang dan kestabilan struktur.
+- **Optik Berimpak Tinggi:** Menampilkan kanta nilon teguh yang memberikan kejelasan unggul dan rintangan impak, dengan pilihan salutan tersuai yang meluas tersedia.
+- **Keselesaan Lancar:** Direka dengan alas hidung bersepadu yang menawarkan estetika minimalis yang kemas sambil memastikan kesesuaian yang stabil dan selesa.
+- **Kesesuaian Serba Boleh:** Perkadaran 49-23-150mm yang seimbang secara pakar dan gaya reka bentuk unisex yang berani sesuai untuk pelbagai pasaran global.
+- **Pengeluaran Boleh Skala:** Perkhidmatan OEM dan ODM yang komprehensif dengan MOQ rendah 300 unit yang disesuaikan untuk Rumah Fesyen Mewah dan Pereka Kacamata Bebas.
 
 ## Sesuai Untuk
 
 - Merek Kacamata Premium
 - Pereka Kacamata Bebas
 - Pengedar Label Peribadi
-- Label Fesyen Boutique
 - Rumah Fesyen Mewah
+- Label Fesyen Boutique
 - Kedai Konsep & Berbilang Jenama
 
 ## Gambaran Keseluruhan
 
-Dihasilkan daripada asetat Mazzucchelli dan JINYU premium, KAS-109 menampilkan estetika vintage yang berani yang kekal ringan dan tahan lasak secara struktur. Pilihan bahan ini memastikan kemasan yang ceria dan sangat berkilat yang memenuhi piawaian kualiti ketat pasaran mewah global.
+Dihasilkan daripada asetat Mazzucchelli dan JINYU bertaraf dunia, KAS-109 merangkumi estetika berinspirasikan vintaj yang berani yang bergema dengan trend fesyen kontemporari. Kedalaman warna bahan yang mendalam dan ceria serta kemasan ketelusan tinggi menyediakan asas yang canggih untuk koleksi kacamata premium.
 
-Engsel barrel 3+2 yang direka secara tepat dan ergonomik bersepadu memberikan pengalaman pemakaian yang halus, dicirikan oleh kelancaran operasi yang konsisten dan padanan yang selamat.
+Alas hidung bersepadu dan engsel 3+2 baril yang direka secara mekanikal memastikan kesesuaian yang lancar dan kestabilan struktur yang berkekalan, mengimbangi prestasi teguh dengan siluet unisex yang ringan.
 
-Melalui sokongan OEM dan ODM yang komprehensif serta MOQ yang fleksibel sebanyak 300 unit, Kssmi membolehkan label fesyen butik dan pengedar label peribadi untuk merealisasikan visi cermin mata mewah yang tersuai.
+Tersedia melalui perkhidmatan OEM dan ODM penuh dengan MOQ 300 unit yang fleksibel, model ini menawarkan skop yang luas untuk penjenamaan tempahan khas dan salutan kanta tersuai, memperkasakan rumah fesyen mewah dan label butik untuk meningkatkan tawaran label peribadi mereka.

@@ -576,7 +576,6 @@ function vjt_get_visitors_list($filters) {
     $search         = trim($filters['search'] ?? '');
     $device         = $filters['device'] ?? '';
     $source         = $filters['source'] ?? '';
-    $country        = trim($filters['country'] ?? '');
     $sessionsMin    = $filters['sessions_min'] ?? '';
     $sessionsMax    = $filters['sessions_max'] ?? '';
     $submissionsMin = $filters['submissions_min'] ?? '';
@@ -607,16 +606,12 @@ function vjt_get_visitors_list($filters) {
             $matchIp = stripos($v['first_ip'] ?? '', $search) !== false;
             $matchBrowser = stripos($v['browser'] ?? '', $search) !== false;
             $matchVid = stripos($vid, $search) !== false;
-            if (!$matchIp && !$matchBrowser && !$matchVid) continue;
+            $matchCountry = stripos(vjt_country_name($v['country'] ?? ''), $search) !== false || stripos($v['country'] ?? '', $search) !== false;
+            if (!$matchIp && !$matchBrowser && !$matchVid && !$matchCountry) continue;
         }
         if ($device && ($v['device_type'] ?? '') !== $device) continue;
         $vSource = $visitorSource[$vid] ?? 'direct';
         if ($source && $vSource !== $source) continue;
-        if ($country) {
-            $countryCode = $v['country'] ?? '';
-            $countryName = vjt_country_name($countryCode);
-            if (stripos($countryCode, $country) === false && stripos($countryName, $country) === false) continue;
-        }
         $vSessions = $visitorSessions[$vid] ?? 0;
         if ($sessionsMin !== '' && $vSessions < (int)$sessionsMin) continue;
         if ($sessionsMax !== '' && $vSessions > (int)$sessionsMax) continue;
@@ -645,12 +640,17 @@ function vjt_get_visitors_list($filters) {
     }
 
     // Sort
-    $sortBy    = $filters['sort_by'] ?? 'last_seen_at';
-    $sortOrder = $filters['sort_order'] ?? 'desc';
+    $allowedSorts = ['visitor_id', 'first_seen_at', 'last_seen_at', 'country', 'device_type', 'browser', 'sessions', 'submissions', 'source'];
+    $sortBy    = in_array($filters['sort_by'] ?? '', $allowedSorts) ? $filters['sort_by'] : 'last_seen_at';
+    $sortOrder = strtolower($filters['sort_order'] ?? 'desc') === 'asc' ? 'asc' : 'desc';
     $numericCols = ['sessions', 'submissions'];
     usort($filtered, function($a, $b) use ($sortBy, $sortOrder, $numericCols) {
         $va = $a[$sortBy] ?? '';
         $vb = $b[$sortBy] ?? '';
+        if ($sortBy === 'country') {
+            $va = vjt_country_name($va);
+            $vb = vjt_country_name($vb);
+        }
         if (in_array($sortBy, $numericCols)) {
             $cmp = (int)$va <=> (int)$vb;
         } else {

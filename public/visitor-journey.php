@@ -176,7 +176,6 @@ $visPerPage = 50;
 $visSearch       = $_GET['search'] ?? '';
 $visDevice       = $_GET['device'] ?? '';
 $visSource       = $_GET['source'] ?? '';
-$visCountry      = $_GET['country'] ?? '';
 $visSessionsMin  = $_GET['sessions_min'] ?? '';
 $visSessionsMax  = $_GET['sessions_max'] ?? '';
 $visSubmissionsMin = $_GET['submissions_min'] ?? '';
@@ -190,7 +189,6 @@ if ($tab === 'visitors') {
         'search' => $visSearch,
         'device' => $visDevice,
         'source' => $visSource,
-        'country' => $visCountry,
         'sessions_min' => $visSessionsMin,
         'sessions_max' => $visSessionsMax,
         'submissions_min' => $visSubmissionsMin,
@@ -847,7 +845,7 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                         <div class="panel-body">
                             <form class="filters" method="GET">
                                 <input type="hidden" name="tab" value="visitors">
-                                <input type="text" name="search" value="<?php echo htmlspecialchars($visSearch); ?>" placeholder="Search ID, IP, browser..." style="width:250px;">
+                                <input type="text" name="search" value="<?php echo htmlspecialchars($visSearch); ?>" placeholder="Search ID, IP, country, browser..." style="width:250px;">
                                 <select name="device">
                                     <option value="">All Devices</option>
                                     <option value="desktop" <?php echo $visDevice === 'desktop' ? 'selected' : ''; ?>>Desktop</option>
@@ -862,12 +860,6 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                     <option value="direct" <?php echo $visSource === 'direct' ? 'selected' : ''; ?>>Direct</option>
                                     <option value="other" <?php echo $visSource === 'other' ? 'selected' : ''; ?>>Other</option>
                                 </select>
-                                <button type="submit" class="btn btn-primary btn-small">Filter</button>
-                                <?php if ($visSearch || $visDevice || $visSource || $visCountry || $visSessionsMin !== '' || $visSessionsMax !== '' || $visSubmissionsMin !== '' || $visSubmissionsMax !== ''): ?>
-                                    <a href="?tab=visitors" class="btn btn-secondary btn-small">Clear</a>
-                                <?php endif; ?>
-                                <br>
-                                <input type="text" name="country" value="<?php echo htmlspecialchars($visCountry); ?>" placeholder="Country (e.g. US, IT, Japan)..." style="width:200px;">
                                 <select name="sessions_min">
                                     <option value="">Sessions (min)</option>
                                     <option value="1" <?php echo $visSessionsMin === '1' ? 'selected' : ''; ?>>1+</option>
@@ -883,6 +875,10 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                     <option value="3" <?php echo $visSubmissionsMin === '3' ? 'selected' : ''; ?>>3+</option>
                                     <option value="5" <?php echo $visSubmissionsMin === '5' ? 'selected' : ''; ?>>5+</option>
                                 </select>
+                                <button type="submit" class="btn btn-primary btn-small">Filter</button>
+                                <?php if ($visSearch || $visDevice || $visSource || $visSessionsMin !== '' || $visSessionsMax !== '' || $visSubmissionsMin !== '' || $visSubmissionsMax !== ''): ?>
+                                    <a href="?tab=visitors" class="btn btn-secondary btn-small">Clear</a>
+                                <?php endif; ?>
                             </form>
 
                             <?php if (empty($visitors)): ?>
@@ -930,7 +926,6 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                             if ($visSearch) $pageUrl .= '&search=' . urlencode($visSearch);
                                             if ($visDevice) $pageUrl .= '&device=' . urlencode($visDevice);
                                             if ($visSource) $pageUrl .= '&source=' . urlencode($visSource);
-                                            if ($visCountry) $pageUrl .= '&country=' . urlencode($visCountry);
                                             if ($visSessionsMin !== '') $pageUrl .= '&sessions_min=' . urlencode($visSessionsMin);
                                             if ($visSessionsMax !== '') $pageUrl .= '&sessions_max=' . urlencode($visSessionsMax);
                                             if ($visSubmissionsMin !== '') $pageUrl .= '&submissions_min=' . urlencode($visSubmissionsMin);

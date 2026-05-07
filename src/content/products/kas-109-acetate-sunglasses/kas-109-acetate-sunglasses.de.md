@@ -1,13 +1,13 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Maßgeschneiderte Acetat-Sonnenbrillen"
+title: "Individuelle Acetat-Sonnenbrille"
 slug: "kas-109-acetate-sunglasses"
 itemNo: "KAS-109"
 date: "2026-05-07"
-colors: "Schwarz & Transparent & Havanna & Oliv"
+colors: "Schwarz & Transparent & Schildpatt & Olive"
 materials: "Premium-Mazzucchelli & JINYU-Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) ( Individualisierung )"
-moq: "300 Stk/Modell (100 Stk/Farbe)"
+moq: "300 Stk/Modell (100Stk/Farbe)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -18,9 +18,9 @@ series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sungla
 size: "49-23-150mm & Individualisierung"
 frameMaterial: "Premium-Acetat-Rahmen und -Bügel"
 lensMaterial: "Widerstandsfähige Nylon-Gläser & Individualisierung"
-designStyle: "Kühn, Vintage, Modisch, Stilvoll, Trendy, Unisex"
+designStyle: "Kühn, Vintage, Mode, Stilvoll, Trendy, Unisex"
 nosePads: "Integrierte Nasenpads"
-hinge: "3+2 Barrel-Scharniere & Individualisierung"
+hinge: "3+2 Barrel-Struktur-Scharniere & Individualisierung"
 logo: "Tampondruck, Lasergravur, Lasergravur mit Farbauslegung, Heißprägung, Metal-Logo, Logo-Prägung, Kristall-Verzierung, 3D-Aufkleber"
 service: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 acetateFeature: "Leicht & Langlebig & Lebendig"
@@ -43,37 +43,41 @@ gallery:
   - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-14.webp"
   - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-15.webp"
   - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-16.webp"
+  - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-17.webp"
+  - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-18.webp"
+  - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-19.webp"
+  - "/media/products/kas-109-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-109-20.webp"
 customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAS-109 Kühne Vintage-Acetat-Sonnenbrillen | Hersteller"
-seoDescription: "Erweitern Sie Ihr Eigenmarken-Portfolio mit den kühnen Vintage-Acetat-Sonnenbrillen KAS-109. Premium-Mazzucchelli-Material, 300er MOQ und vollständige OEM/ODM-Individualisierung."
-seoKeywords: "Acetat-Sonnenbrillen Hersteller, maßgeschneiderte OEM Sonnenbrillen, Luxus-Eigenmarken-Brillen, Acetat-Rahmen Großhandel, chinesische Brillenfabrik, Vintage-Sonnenbrillen OEM, Premium-Brillenlieferant, Brillenproduktion China"
+seoTitle: "KAS-109 Kühne Vintage-Acetat-Sonnenbrille | Produktionspartner"
+seoDescription: "Erweitern Sie Ihre Luxuskollektion mit der kühnen Vintage-Acetat-Sonnenbrille KAS-109. Premium-Mazzucchelli-Rahmen mit 3+2-Scharnieren, 300 MOQ und vollem OEM/ODM-Service."
+seoKeywords: "Premium Acetat Sonnenbrillen Hersteller, individuelle OEM Brillenfabrik, chinesischer Acetat Brillenlieferant, Luxus Private Label Sonnenbrillen, kühne Vintage Sonnenbrillen Großhandel, anpassbare Modebrillenproduktion, Mazzucchelli Acetat Brillen China, maßgeschneiderte Sonnenbrillen für Luxusmarken"
 ---
 
 ## Eigenschaften
 
-- **Premium-Materialzusammensetzung:** Verwendung von echtem Mazzucchelli- und JINYU-Acetat für überlegene strukturelle Integrität und eine hochglänzende Premium-Ästhetik.
-- **Langlebige Hardware:** Verstärkte 3+2 Barrel-Scharniere, präzisionsgefertigt für gleichbleibende Spannung und reibungslose Bedienung.
-- **Fortschrittliche Glastechnologie:** Hochbelastbare Nylon-Gläser mit außergewöhnlicher Stoßfestigkeit und optischer Klarheit für gehobene Einzelhandelsstandards.
-- **Integrierte Ergonomie:** Anatomisch geformte, integrierte Nasenpads für einen stabilen, druckfreien Sitz, der für langes tägliches Tragen geeignet ist.
-- **Vielseitige Größe:** Standardmaße 49-23-150 mm mit vollen Individualisierungsmöglichkeiten, um spezifische Markenanforderungen und globale Passformstandards zu erfüllen.
-- **Skalierbare Fertigung:** Robuster OEM- und ODM-Produktionsworkflow mit einer niedrigen Mindestbestellmenge von 300 Stück, entwickelt für Luxusmodehäuser und Premium-Brillenmarken.
+- **Premium-Material:** Hergestellt aus weltklasse Mazzucchelli- und JINYU-Acetat, das außergewöhnliche Haltbarkeit und eine tiefe, lebendige Farbtiefe bietet.
+- **Robuste Hardware:** Ausgestattet mit 3+2 Barrel-Scharnieren, die für langfristige Laufruhe und strukturelle Stabilität präzisionsgefertigt sind.
+- **Hochschlagfeste Optik:** Verfügt über widerstandsfähige Nylon-Gläser, die überlegene Klarheit und Schlagfestigkeit bieten, mit umfangreichen Optionen für kundenspezifische Beschichtungen.
+- **Nahtloser Komfort:** Entworfen mit integrierten Nasenpads, die eine schlanke, minimalistische Ästhetik bieten und gleichzeitig einen stabilen und bequemen Sitz gewährleisten.
+- **Vielseitige Passform:** Fachmännisch ausbalancierte Proportionen von 49-23-150 mm und ein kühner Unisex-Designstil, der für verschiedene globale Märkte geeignet ist.
+- **Skalierbare Produktion:** Umfassende OEM- und ODM-Dienstleistungen mit einem niedrigen MOQ von 300 Stück, zugeschnitten auf Luxusmodehäuser und unabhängige Brillendesigner.
 
 ## Perfekt Für
 
 - Premium Brillenmarken
 - Unabhängige Brillendesigner
 - Eigenmarken-Distributoren
-- Boutique-Modemmarken
 - Luxusmodehäuser
+- Boutique-Modemmarken
 - Konzept- und Multi-Brand-Stores
 
-## Übersicht
+## Überblick
 
-Gefertigt aus hochwertigem Mazzucchelli- und JINYU-Acetat, verkörpert das Modell KAS-109 eine kühne Vintage-Ästhetik, die gleichzeitig leicht und strukturell belastbar bleibt. Diese Materialwahl gewährleistet ein lebendiges Hochglanz-Finish, das die strengen Qualitätsstandards des globalen Luxusmarktes erfüllt.
+Die aus weltklasse Mazzucchelli- und JINYU-Acetat gefertigte KAS-109 verkörpert eine kühne, Vintage-inspirierte Ästhetik, die mit zeitgenössischen Modetrends harmoniert. Die tiefe, lebendige Farbtiefe des Materials und die hochtransparenten Oberflächen bieten eine anspruchsvolle Grundlage für Premium-Brillenkollektionen.
 
-Präzisionsgefertigte 3+2 Barrel-Scharniere und integrierte Ergonomie bieten ein raffiniertes Trageerlebnis, das sich durch gleichbleibende Leichtgängigkeit und einen sicheren Sitz auszeichnet.
+Integrierte Nasenpads und präzisionsgefertigte 3+2 Barrel-Scharniere sorgen für eine nahtlose Passform und dauerhafte strukturelle Stabilität, wobei eine robuste Leistung mit einer leichten Unisex-Silhouette in Einklang gebracht wird.
 
-Durch umfassende OEM- und ODM-Unterstützung sowie eine flexible Mindestbestellmenge von 300 Stück ermöglicht Kssmi Boutique-Modemarken und Eigenmarken-Distributoren, maßgeschneiderte High-End-Brillen-Visionen zu verwirklichen.
+Dieses Modell ist über umfassende OEM- und ODM-Dienstleistungen mit einem flexiblen MOQ von 300 Stück erhältlich und bietet umfangreichen Raum für maßgeschneidertes Branding und kundenspezifische Glasbeschichtungen, was es Luxusmodehäusern und Boutique-Labels ermöglicht, ihre Eigenmarkenangebote zu skalieren.
