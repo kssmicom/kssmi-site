@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import { translations } from '../../translations';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Materials from '../../components/collection/home/Materials.astro';
 
 // Generate all language routes
 export async function getStaticPaths() {
@@ -28,7 +29,7 @@ const description = entry?.data?.seoDescription || "Premium eyewear manufacturer
   <Header lang={lang} />
 
   <main>
-    <!-- Homepage content will be added here -->
+    <Materials lang={lang} />
   </main>
 
   <Footer lang={lang} />
