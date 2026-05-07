@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import { translations } from '../translations';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Materials from '../components/collection/home/Materials.astro';
 
 const lang = 'en';
 const t = translations[lang] || translations.en;
@@ -19,7 +20,7 @@ const description = entry?.data?.seoDescription || "Since 2003, Kssmi has been a
   <Header lang={lang} />
 
   <main>
-    <!-- Homepage content will be added here -->
+    <Materials />
   </main>
 
   <Footer lang={lang} />
