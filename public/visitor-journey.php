@@ -173,18 +173,32 @@ if ($tab === 'traffic') {
 
 $visPage    = max(1, (int)($_GET['vp'] ?? 1));
 $visPerPage = 50;
-$visSearch  = $_GET['search'] ?? '';
-$visDevice  = $_GET['device'] ?? '';
-$visSource  = $_GET['source'] ?? '';
-$visTotal   = 0;
+$visSearch       = $_GET['search'] ?? '';
+$visDevice       = $_GET['device'] ?? '';
+$visSource       = $_GET['source'] ?? '';
+$visCountry      = $_GET['country'] ?? '';
+$visSessionsMin  = $_GET['sessions_min'] ?? '';
+$visSessionsMax  = $_GET['sessions_max'] ?? '';
+$visSubmissionsMin = $_GET['submissions_min'] ?? '';
+$visSubmissionsMax = $_GET['submissions_max'] ?? '';
+$visSortBy    = $_GET['sort'] ?? 'last_seen_at';
+$visSortOrder = $_GET['order'] ?? 'desc';
+$visTotal     = 0;
 
 if ($tab === 'visitors') {
     $result = vjt_get_visitors_list([
         'search' => $visSearch,
         'device' => $visDevice,
         'source' => $visSource,
+        'country' => $visCountry,
+        'sessions_min' => $visSessionsMin,
+        'sessions_max' => $visSessionsMax,
+        'submissions_min' => $visSubmissionsMin,
+        'submissions_max' => $visSubmissionsMax,
         'date_from' => $_GET['date_from'] ?? '',
         'date_to' => $_GET['date_to'] ?? '',
+        'sort_by' => $visSortBy,
+        'sort_order' => $visSortOrder,
         'page' => $visPage,
         'per_page' => $visPerPage,
     ]);
@@ -258,6 +272,21 @@ function sourceBadge($source) {
 
 $subTotalPages = ceil($subTotal / $subPerPage);
 $visTotalPages = ceil($visTotal / $visPerPage);
+
+// Sortable header link helper
+function sortLink($column, $label, $currentSort, $currentOrder) {
+    $newOrder = ($currentSort === $column && $currentOrder === 'asc') ? 'desc' : 'asc';
+    $arrow = '';
+    if ($currentSort === $column) {
+        $arrow = $currentOrder === 'asc' ? ' ▲' : ' ▼';
+    }
+    $params = $_GET;
+    $params['sort'] = $column;
+    $params['order'] = $newOrder;
+    $params['vp'] = 1; // reset to page 1 on re-sort
+    $url = '?' . http_build_query($params);
+    return '<a href="' . htmlspecialchars($url) . '" style="color:#5D4E37;text-decoration:none;">' . htmlspecialchars($label) . $arrow . '</a>';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -818,7 +847,7 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                         <div class="panel-body">
                             <form class="filters" method="GET">
                                 <input type="hidden" name="tab" value="visitors">
-                                <input type="text" name="search" value="<?php echo htmlspecialchars($visSearch); ?>" placeholder="Search ID, IP, country, browser..." style="width:250px;">
+                                <input type="text" name="search" value="<?php echo htmlspecialchars($visSearch); ?>" placeholder="Search ID, IP, browser..." style="width:250px;">
                                 <select name="device">
                                     <option value="">All Devices</option>
                                     <option value="desktop" <?php echo $visDevice === 'desktop' ? 'selected' : ''; ?>>Desktop</option>
@@ -834,9 +863,26 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                                     <option value="other" <?php echo $visSource === 'other' ? 'selected' : ''; ?>>Other</option>
                                 </select>
                                 <button type="submit" class="btn btn-primary btn-small">Filter</button>
-                                <?php if ($visSearch || $visDevice || $visSource): ?>
+                                <?php if ($visSearch || $visDevice || $visSource || $visCountry || $visSessionsMin !== '' || $visSessionsMax !== '' || $visSubmissionsMin !== '' || $visSubmissionsMax !== ''): ?>
                                     <a href="?tab=visitors" class="btn btn-secondary btn-small">Clear</a>
                                 <?php endif; ?>
+                                <br>
+                                <input type="text" name="country" value="<?php echo htmlspecialchars($visCountry); ?>" placeholder="Country (e.g. US, IT, Japan)..." style="width:200px;">
+                                <select name="sessions_min">
+                                    <option value="">Sessions (min)</option>
+                                    <option value="1" <?php echo $visSessionsMin === '1' ? 'selected' : ''; ?>>1+</option>
+                                    <option value="2" <?php echo $visSessionsMin === '2' ? 'selected' : ''; ?>>2+</option>
+                                    <option value="3" <?php echo $visSessionsMin === '3' ? 'selected' : ''; ?>>3+</option>
+                                    <option value="5" <?php echo $visSessionsMin === '5' ? 'selected' : ''; ?>>5+</option>
+                                    <option value="10" <?php echo $visSessionsMin === '10' ? 'selected' : ''; ?>>10+</option>
+                                </select>
+                                <select name="submissions_min">
+                                    <option value="">Submissions (min)</option>
+                                    <option value="1" <?php echo $visSubmissionsMin === '1' ? 'selected' : ''; ?>>1+</option>
+                                    <option value="2" <?php echo $visSubmissionsMin === '2' ? 'selected' : ''; ?>>2+</option>
+                                    <option value="3" <?php echo $visSubmissionsMin === '3' ? 'selected' : ''; ?>>3+</option>
+                                    <option value="5" <?php echo $visSubmissionsMin === '5' ? 'selected' : ''; ?>>5+</option>
+                                </select>
                             </form>
 
                             <?php if (empty($visitors)): ?>
@@ -846,15 +892,15 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                                     <table>
                                         <thead>
                                             <tr>
-                                                <th>Visitor ID</th>
-                                                <th>First Seen</th>
-                                                <th>Last Seen</th>
-                                                <th>Country</th>
-                                                <th>Device</th>
-                                                <th>Browser</th>
-                                                <th style="text-align:center;">Sessions</th>
-                                                <th style="text-align:center;">Submissions</th>
-                                                <th>Source</th>
+                                                <th><?php echo sortLink('visitor_id', 'Visitor ID', $visSortBy, $visSortOrder); ?></th>
+                                                <th><?php echo sortLink('first_seen_at', 'First Seen', $visSortBy, $visSortOrder); ?></th>
+                                                <th><?php echo sortLink('last_seen_at', 'Last Seen', $visSortBy, $visSortOrder); ?></th>
+                                                <th><?php echo sortLink('country', 'Country', $visSortBy, $visSortOrder); ?></th>
+                                                <th><?php echo sortLink('device_type', 'Device', $visSortBy, $visSortOrder); ?></th>
+                                                <th><?php echo sortLink('browser', 'Browser', $visSortBy, $visSortOrder); ?></th>
+                                                <th style="text-align:center;"><?php echo sortLink('sessions', 'Sessions', $visSortBy, $visSortOrder); ?></th>
+                                                <th style="text-align:center;"><?php echo sortLink('submissions', 'Submissions', $visSortBy, $visSortOrder); ?></th>
+                                                <th><?php echo sortLink('source', 'Source', $visSortBy, $visSortOrder); ?></th>
                                                 <th></th>
                                             </tr>
                                         </thead>
@@ -884,6 +930,12 @@ $visTotalPages = ceil($visTotal / $visPerPage);
                                             if ($visSearch) $pageUrl .= '&search=' . urlencode($visSearch);
                                             if ($visDevice) $pageUrl .= '&device=' . urlencode($visDevice);
                                             if ($visSource) $pageUrl .= '&source=' . urlencode($visSource);
+                                            if ($visCountry) $pageUrl .= '&country=' . urlencode($visCountry);
+                                            if ($visSessionsMin !== '') $pageUrl .= '&sessions_min=' . urlencode($visSessionsMin);
+                                            if ($visSessionsMax !== '') $pageUrl .= '&sessions_max=' . urlencode($visSessionsMax);
+                                            if ($visSubmissionsMin !== '') $pageUrl .= '&submissions_min=' . urlencode($visSubmissionsMin);
+                                            if ($visSubmissionsMax !== '') $pageUrl .= '&submissions_max=' . urlencode($visSubmissionsMax);
+                                            $pageUrl .= '&sort=' . urlencode($visSortBy) . '&order=' . urlencode($visSortOrder);
                                         ?>
                                             <?php if ($i === $visPage): ?>
                                                 <span class="current"><?php echo $i; ?></span>

@@ -22,6 +22,22 @@ function vjt_to_beijing($timeStr) {
 // Store data directly inside the API folder to avoid web-root permission issues on shared hosting
 define('VJT_DATA_DIR', __DIR__ . '/vjt_data');
 
+// Country code → name mapping
+function vjt_country_name($code) {
+    static $map = [
+        'AF' => 'Afghanistan', 'AL' => 'Albania', 'DZ' => 'Algeria', 'AR' => 'Argentina', 'AU' => 'Australia',
+        'AT' => 'Austria', 'BD' => 'Bangladesh', 'BE' => 'Belgium', 'BR' => 'Brazil', 'CA' => 'Canada',
+        'CN' => 'China', 'CO' => 'Colombia', 'DE' => 'Germany', 'EG' => 'Egypt', 'ES' => 'Spain',
+        'FR' => 'France', 'GB' => 'United Kingdom', 'IN' => 'India', 'IT' => 'Italy', 'JP' => 'Japan',
+        'KR' => 'South Korea', 'MX' => 'Mexico', 'NL' => 'Netherlands', 'NG' => 'Nigeria', 'PH' => 'Philippines',
+        'PK' => 'Pakistan', 'PL' => 'Poland', 'PT' => 'Portugal', 'RU' => 'Russia', 'SA' => 'Saudi Arabia',
+        'SE' => 'Sweden', 'TH' => 'Thailand', 'TR' => 'Turkey', 'UA' => 'Ukraine', 'US' => 'United States',
+        'VN' => 'Vietnam', 'ZA' => 'South Africa', 'LOCAL' => 'Local/Testing', 'UNKNOWN' => 'Unknown',
+    ];
+    $code = strtoupper($code);
+    return $map[$code] ?? $code;
+}
+
 function vjt_data_init() {
     if (!is_dir(VJT_DATA_DIR)) {
         if (!@mkdir(VJT_DATA_DIR, 0755, true)) {
@@ -557,11 +573,16 @@ function vjt_get_visitors_list($filters) {
 
     if (!$visitors) return ['items' => [], 'total' => 0];
 
-    $search    = trim($filters['search'] ?? '');
-    $device    = $filters['device'] ?? '';
-    $source    = $filters['source'] ?? '';
-    $dateFrom  = $filters['date_from'] ?? '';
-    $dateTo    = $filters['date_to'] ?? '';
+    $search         = trim($filters['search'] ?? '');
+    $device         = $filters['device'] ?? '';
+    $source         = $filters['source'] ?? '';
+    $country        = trim($filters['country'] ?? '');
+    $sessionsMin    = $filters['sessions_min'] ?? '';
+    $sessionsMax    = $filters['sessions_max'] ?? '';
+    $submissionsMin = $filters['submissions_min'] ?? '';
+    $submissionsMax = $filters['submissions_max'] ?? '';
+    $dateFrom       = $filters['date_from'] ?? '';
+    $dateTo         = $filters['date_to'] ?? '';
 
     // Pre-compute session/submission counts and source per visitor
     $visitorSessions = [];
@@ -584,14 +605,24 @@ function vjt_get_visitors_list($filters) {
         $vid = $v['visitor_id'];
         if ($search) {
             $matchIp = stripos($v['first_ip'] ?? '', $search) !== false;
-            $matchCountry = stripos($v['country'] ?? '', $search) !== false;
             $matchBrowser = stripos($v['browser'] ?? '', $search) !== false;
             $matchVid = stripos($vid, $search) !== false;
-            if (!$matchIp && !$matchCountry && !$matchBrowser && !$matchVid) continue;
+            if (!$matchIp && !$matchBrowser && !$matchVid) continue;
         }
         if ($device && ($v['device_type'] ?? '') !== $device) continue;
         $vSource = $visitorSource[$vid] ?? 'direct';
         if ($source && $vSource !== $source) continue;
+        if ($country) {
+            $countryCode = $v['country'] ?? '';
+            $countryName = vjt_country_name($countryCode);
+            if (stripos($countryCode, $country) === false && stripos($countryName, $country) === false) continue;
+        }
+        $vSessions = $visitorSessions[$vid] ?? 0;
+        if ($sessionsMin !== '' && $vSessions < (int)$sessionsMin) continue;
+        if ($sessionsMax !== '' && $vSessions > (int)$sessionsMax) continue;
+        $vSubmissions = $visitorSubmissions[$vid] ?? 0;
+        if ($submissionsMin !== '' && $vSubmissions < (int)$submissionsMin) continue;
+        if ($submissionsMax !== '' && $vSubmissions > (int)$submissionsMax) continue;
         if ($dateFrom && ($v['first_seen_at'] ?? '') < $dateFrom) continue;
         if ($dateTo && ($v['first_seen_at'] ?? '') > $dateTo . ' 23:59:59') continue;
         $filtered[] = [
@@ -613,9 +644,19 @@ function vjt_get_visitors_list($filters) {
         ];
     }
 
-    // Sort by last_seen_at descending
-    usort($filtered, function($a, $b) {
-        return strcmp($b['last_seen_at'] ?? '', $a['last_seen_at'] ?? '');
+    // Sort
+    $sortBy    = $filters['sort_by'] ?? 'last_seen_at';
+    $sortOrder = $filters['sort_order'] ?? 'desc';
+    $numericCols = ['sessions', 'submissions'];
+    usort($filtered, function($a, $b) use ($sortBy, $sortOrder, $numericCols) {
+        $va = $a[$sortBy] ?? '';
+        $vb = $b[$sortBy] ?? '';
+        if (in_array($sortBy, $numericCols)) {
+            $cmp = (int)$va <=> (int)$vb;
+        } else {
+            $cmp = strcasecmp((string)$va, (string)$vb);
+        }
+        return $sortOrder === 'asc' ? $cmp : -$cmp;
     });
 
     $total = count($filtered);
