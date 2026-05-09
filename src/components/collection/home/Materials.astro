@@ -10,24 +10,25 @@ const materials = entry?.data?.materials || [];
 ---
 
 <section class="relative py-12 md:py-16 bg-gradient-to-b from-stone-50 via-white to-stone-50 overflow-hidden">
-  <!-- Section header -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-14">
-    <div class="text-center max-w-3xl mx-auto">
-      <span class="inline-block text-stone-500 text-xs md:text-sm font-semibold tracking-[0.2em] uppercase mb-4 motion-safe:animate-[matFadeInUp_0.6s_ease-out]">
-        Frame Materials
-      </span>
-      <h2 class="text-3xl md:text-5xl font-bold text-stone-800 mb-5 leading-tight tracking-tight motion-safe:animate-[matFadeInUp_0.6s_0.1s_ease-out_both]">
-        {heading}
-      </h2>
-      <p class="text-base md:text-lg text-stone-500 leading-relaxed motion-safe:animate-[matFadeInUp_0.6s_0.2s_ease-out_both]">
-        {subheading}
-      </p>
-    </div>
-  </div>
+  <div class="max-w-[1920px] mx-auto relative">
+    <div class="w-full max-w-[99%] lg:max-w-[90%] xl:max-w-[85%] mx-auto px-4 lg:px-0">
+      <!-- Section header -->
+      <div class="mb-14">
+        <div class="text-center max-w-3xl mx-auto">
+          <span class="inline-block text-stone-500 text-xs md:text-sm font-semibold tracking-[0.2em] uppercase mb-4 motion-safe:animate-[matFadeInUp_0.6s_ease-out]">
+            Frame Materials
+          </span>
+          <h2 class="text-3xl md:text-5xl font-bold text-stone-800 mb-5 leading-tight tracking-tight motion-safe:animate-[matFadeInUp_0.6s_0.1s_ease-out_both]">
+            {heading}
+          </h2>
+          <p class="text-base md:text-lg text-stone-500 leading-relaxed motion-safe:animate-[matFadeInUp_0.6s_0.2s_ease-out_both]">
+            {subheading}
+          </p>
+        </div>
+      </div>
 
-  <!-- Materials grid -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-6">
+      <!-- Materials grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-6">
       {materials.map((m: any, i: number) => (
         <div
           class="mat-card group flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm ring-1 ring-stone-100 hover:shadow-2xl hover:shadow-stone-200/60 hover:ring-stone-200 transition-all duration-500 hover:-translate-y-2 motion-safe:animate-[matFadeInUp_0.5s_ease-out_both]"
@@ -71,6 +72,7 @@ const materials = entry?.data?.materials || [];
           </div>
         </div>
       ))}
+    </div>
     </div>
   </div>
 </section>
