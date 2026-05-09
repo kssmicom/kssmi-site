@@ -249,14 +249,24 @@
     return path.slice(-20);
   }
 
+  function cleanUrl(url) {
+    // Strip VJT tracking parameters from URLs
+    if (!url) return url;
+    return url.replace(/[?&]vjt_(visitor_id|session_id|submit_page|submit_title|referrer|landing_url|landing_title|path_snapshot)=[^&]*/gi, '')
+              .replace(/\?$/, '')
+              .replace(/&$/, '');
+  }
+
   function patchForms(visitorId, session) {
     var pageview = readJson(PAGE_KEY);
     var snapshot = JSON.stringify(buildPathSnapshot(pageview));
     var attrReferrer = session.originalReferrer || session.referrer || '';
     document.querySelectorAll('form').forEach(function (form) {
+      // Skip GET forms — hidden fields would pollute the URL
+      if ((form.method || '').toUpperCase() === 'GET') return;
       ensureHidden(form, hiddenNames[0], visitorId);
       ensureHidden(form, hiddenNames[1], session.id);
-      ensureHidden(form, hiddenNames[2], cfg.page.url);
+      ensureHidden(form, hiddenNames[2], cleanUrl(cfg.page.url));
       ensureHidden(form, hiddenNames[3], cfg.page.title);
       ensureHidden(form, hiddenNames[4], attrReferrer);
       ensureHidden(form, hiddenNames[5], session.landingUrl   || '');
@@ -555,7 +565,7 @@
     if (getCookie('vjt_admin')) return;
 
     // Always use live URL/title for SPA navigations (Astro View Transitions)
-    cfg.page.url = window.location.href;
+    cfg.page.url = cleanUrl(window.location.href);
     cfg.page.title = document.title || '';
 
     var deviceInfo = getDeviceInfo();

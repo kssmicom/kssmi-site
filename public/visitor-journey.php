@@ -255,6 +255,18 @@ function fmtDuration($secs) {
     return floor($secs / 3600) . 'h ' . floor(($secs % 3600) / 60) . 'm';
 }
 
+// Truncate URL for display (strip VJT params, limit length)
+function fmtUrl($url) {
+    // Strip VJT tracking params from display
+    $clean = preg_replace('/[?&]vjt_[^&]+/', '', $url);
+    $clean = preg_replace('/\?$/', '', $clean);
+    $clean = preg_replace('/&$/', '', $clean);
+    if (strlen($clean) > 80) {
+        return substr($clean, 0, 77) . '...';
+    }
+    return $clean;
+}
+
 // Source badge color
 function sourceBadge($source) {
     $map = [
@@ -696,7 +708,7 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                                     <td style="white-space:nowrap;font-size:12px;"><?php echo htmlspecialchars($sub['submitted_at']); ?></td>
                                                     <td class="mono"><a href="?tab=journey&visitor_id=<?php echo urlencode($sub['visitor_id']); ?>" class="link"><?php echo htmlspecialchars(str_replace('vjtv_', '', $sub['visitor_id'])); ?></a></td>
                                                     <td><?php echo htmlspecialchars($sub['form_plugin'] . ': ' . ($sub['form_name'] ?: $sub['form_id'])); ?></td>
-                                                    <td class="url-cell"><a href="<?php echo htmlspecialchars($sub['submit_page'] ?? '#'); ?>" target="_blank"><?php echo htmlspecialchars($sub['submit_page'] ?? '-'); ?></a></td>
+                                                    <td class="url-cell"><a href="<?php echo htmlspecialchars($sub['submit_page'] ?? '#'); ?>" target="_blank"><?php echo htmlspecialchars(fmtUrl($sub['submit_page'] ?? '-')); ?></a></td>
                                                     <td>
                                                         <?php echo htmlspecialchars($sub['ip']); ?>
                                                         <?php if ($sub['country']): ?>
@@ -983,7 +995,7 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                                 <tr>
                                                     <td style="font-size:12px;"><?php echo htmlspecialchars($sub['submitted_at']); ?></td>
                                                     <td><?php echo htmlspecialchars($sub['form_plugin'] . ': ' . $sub['form_name']); ?></td>
-                                                    <td class="url-cell"><a href="<?php echo htmlspecialchars($sub['submit_page'] ?? '#'); ?>" target="_blank"><?php echo htmlspecialchars($sub['submit_page'] ?? '-'); ?></a></td>
+                                                    <td class="url-cell"><a href="<?php echo htmlspecialchars($sub['submit_page'] ?? '#'); ?>" target="_blank"><?php echo htmlspecialchars(fmtUrl($sub['submit_page'] ?? '-')); ?></a></td>
                                                     <td><span class="status status-<?php echo $sub['status']; ?>"><?php echo ucfirst($sub['status']); ?></span></td>
                                                 </tr>
                                             <?php endforeach; ?>
@@ -1032,7 +1044,7 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                                 Dwell: <?php echo fmtDuration($pv['duration_seconds']); ?> |
                                                 Scroll: <?php echo $pv['scroll_depth']; ?>%
                                                 <?php if ($pv['url']): ?>
-                                                    <br><a href="<?php echo htmlspecialchars($pv['url']); ?>" target="_blank" style="color:#8B7355;font-size:11px;"><?php echo htmlspecialchars($pv['url']); ?></a>
+                                                    <br><a href="<?php echo htmlspecialchars($pv['url']); ?>" target="_blank" style="color:#8B7355;font-size:11px;"><?php echo htmlspecialchars(fmtUrl($pv['url'])); ?></a>
                                                 <?php endif; ?>
                                             </div>
                                         </div>

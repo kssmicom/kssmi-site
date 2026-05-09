@@ -59,7 +59,7 @@ export const translations = {
       // Column 1: Brand Info
       tagline: "Eyewear & Sunglasses",
       brandName: "Kssmi Eyewear",
-      brandDesc: "Redefining eyewear manufacturing with precision, sustainability, and transparency since 2003.",
+      brandDesc: "Premium Eyewear Manufacturing — OEM & ODM Since 2003",
 
       // Column 2: Quick Links
       quickLinksTitle: "Quick Links",
@@ -291,7 +291,7 @@ export const translations = {
     footer: {
       tagline: "النظارات والنظارات الشمسية",
       brandName: "Kssmi Eyewear",
-      brandDesc: "نعيد تعريف صناعة النظارات بالدقة والاستدامة والشفافية منذ عام 2003.",
+      brandDesc: "تصنيع النظارات الفاخرة — OEM و ODM منذ عام 2003",
       quickLinksTitle: "روابط سريعة",
       about: "من نحن",
       manufacturing: "التصنيع",
@@ -510,7 +510,7 @@ export const translations = {
     footer: {
       tagline: "Occhiali e Occhiali da Sole",
       brandName: "Kssmi Eyewear",
-      brandDesc: "Ridefiniamo la produzione di occhiali con precisione, sostenibilità e trasparenza dal 2003.",
+      brandDesc: "Produzione di Occhiali Premium — OEM e ODM dal 2003",
       quickLinksTitle: "Link Veloci",
       about: "Chi Siamo",
       manufacturing: "Produzione",
@@ -735,7 +735,7 @@ export const translations = {
     },
     footer: {
       brandName: "Kssmi Eyewear",
-      brandDesc: "Redefiniendo la fabricacion de gafas con precision, sostenibilidad y transparencia desde 2003.",
+      brandDesc: "Fabricación de Gafas Premium — OEM y ODM desde 2003",
       quickLinksTitle: "Enlaces Rapidos",
       about: "Nosotros",
       manufacturing: "Fabricacion",
@@ -960,7 +960,7 @@ export const translations = {
     },
     footer: {
       brandName: "Kssmi Eyewear",
-      brandDesc: "Redefinir la fabrication de lunettes avec precision, durabilite et transparence depuis 2003.",
+      brandDesc: "Fabrication de Lunettes Premium — OEM et ODM depuis 2003",
       quickLinksTitle: "Liens Rapides",
       about: "A Propos",
       manufacturing: "Fabrication",
@@ -1185,7 +1185,7 @@ export const translations = {
     },
     footer: {
       brandName: "Kssmi Eyewear",
-      brandDesc: "Neudefinition der Brillenherstellung mit Prazision, Nachhaltigkeit und Transparenz seit 2003.",
+      brandDesc: "Premium-Brillenherstellung — OEM & ODM seit 2003",
       quickLinksTitle: "Schnellinks",
       about: "Uber Uns",
       manufacturing: "Fertigung",
@@ -1410,7 +1410,7 @@ export const translations = {
     },
     footer: {
       brandName: "Kssmi Eyewear",
-      brandDesc: "Redefinindo a fabricacao de oculos com precisao, sustentabilidade e transparencia desde 2003.",
+      brandDesc: "Fabricação de Óculos Premium — OEM e ODM desde 2003",
       quickLinksTitle: "Links Rapidos",
       about: "Sobre Nos",
       manufacturing: "Fabricacao",
@@ -1635,7 +1635,7 @@ export const translations = {
     },
     footer: {
       brandName: "Kssmi Eyewear",
-      brandDesc: "Переосмысление производства очков с точностью, устойчивостью и прозрачностью с 2003 года.",
+      brandDesc: "Премиум производство очков — OEM и ODM с 2003 года",
       quickLinksTitle: "Быстрые Ссылки",
       about: "О Нас",
       manufacturing: "Производство",
@@ -1860,7 +1860,7 @@ export const translations = {
     },
     footer: {
       brandName: "Kssmi Eyewear",
-      brandDesc: "2003年の創業以来、精度、持続可能性、透明性をもってアイウェア製造を再定義しています。",
+      brandDesc: "プレミアムアイウェア製造 — OEM & ODM 2003年創業",
       quickLinksTitle: "クイックリンク",
       about: "会社概要",
       manufacturing: "製造",
@@ -2086,7 +2086,7 @@ export const translations = {
     },
     footer: {
       brandName: "Kssmi Eyewear",
-      brandDesc: "2003 yılından beri hassasiyet, sürdürülebilirlik ve şeffaflık ile gözlük üretimini yeniden tanımlıyoruz.",
+      brandDesc: "Premium Gözlük Üretimi — OEM & ODM 2003'ten Beri",
       quickLinksTitle: "Hızlı Bağlantılar",
       about: "Hakkımızda",
       manufacturing: "Üretim",
@@ -2305,7 +2305,7 @@ export const translations = {
     footer: {
       tagline: "아이웨어 및 선글라스",
       brandName: "Kssmi Eyewear",
-      brandDesc: "2003년부터 정밀성, 지속 가능성 및 투명성으로 안경 제조를 재정의하고 있습니다.",
+      brandDesc: "프리미엄 안경 제조 — OEM & ODM 2003년부터",
       quickLinksTitle: "빠른 링크",
       about: "회사 소개",
       manufacturing: "제조",
@@ -2524,7 +2524,7 @@ export const translations = {
     footer: {
       tagline: "光学眼镜及太阳镜",
       brandName: "Kssmi Eyewear",
-      brandDesc: "自 2003 年以来，以精准、可持续和透明的方式重新定义眼镜制造。",
+      brandDesc: "高端眼镜制造 — OEM 与 ODM 始于 2003 年",
       quickLinksTitle: "快速链接",
       about: "关于我们",
       manufacturing: "制造工艺",
@@ -2743,7 +2743,7 @@ export const translations = {
     footer: {
       tagline: "आईवियर और धूप का चश्मा",
       brandName: "Kssmi Eyewear",
-      brandDesc: "2003 से सटीकता, स्थिरता और पारदर्शिता के साथ चश्मा निर्माण को फिर से परिभाषित करना।",
+      brandDesc: "प्रीमियम चश्मा निर्माण — OEM और ODM 2003 से",
       quickLinksTitle: "त्वरित लिंक",
       about: "हमारे बारे में",
       manufacturing: "उत्पादन",
@@ -2962,7 +2962,7 @@ export const translations = {
     footer: {
       tagline: "Kính Quang Học & Kính Mát",
       brandName: "Kssmi Eyewear",
-      brandDesc: "Định nghĩa lại sản xuất kính mắt với độ chính xác, tính bền vững và minh bạch kể từ năm 2003.",
+      brandDesc: "Sản Xuất Kính Mắt Cao Cấp — OEM & ODM Từ Năm 2003",
       quickLinksTitle: "Liên kết Nhanh",
       about: "Về chúng tôi",
       manufacturing: "Sản xuất",
@@ -3178,7 +3178,7 @@ export const translations = {
     footer: {
       tagline: "Kacamata Optik & Sun Eyewear",
       brandName: "Kssmi Eyewear",
-      brandDesc: "Pabrikan Kacamata kang njamin kualitas, komitmen, lan stabilitas jangka padha wiwit taun 2003.",
+      brandDesc: "Manufaktur Kacamata Premium — OEM & ODM Wiwit 2003",
       quickLinksTitle: "Tautan",
       about: "Babagan Kita",
       manufacturing: "Pabrik",
@@ -3395,7 +3395,7 @@ export const translations = {
     footer: {
       tagline: "Cermin Mata Optik & Cermin Mata Hitam",
       brandName: "Kssmi Eyewear",
-      brandDesc: "Mendefinisikan semula pembuatan cermin mata dengan ketepatan, kemampanan, dan ketelusan sejak 2003.",
+      brandDesc: "Pembuatan Cermin Mata Premium — OEM & ODM Sejak 2003",
       quickLinksTitle: "Pautan Pantas",
       about: "Mengenai Kami",
       manufacturing: "Pembuatan",
@@ -3615,7 +3615,7 @@ export const translations = {
     footer: {
       tagline: "Айнакҳои Оптикӣ ва Офтобӣ",
       brandName: "Kssmi Eyewear",
-      brandDesc: "Муайянкунии дубораи истеҳсоли айнак бо дақиқӣ, устуворӣ ва шаффофият аз соли 2003.",
+      brandDesc: "Истеҳсоли айнаки олӣ — OEM ва ODM аз соли 2003",
       quickLinksTitle: "Истинодҳои Зуд",
       about: "Дар бораи мо",
       manufacturing: "Истеҳсолот",
