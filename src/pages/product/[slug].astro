@@ -397,6 +397,7 @@ function getAltText(url: string | undefined, fallback: string): string {
   keywords={seoKeywords}
   lang={lang}
   image={cover}
+  lcpImage={cover}
 >
   {productSchema && <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />}
   {videoSchema && <script type="application/ld+json" set:html={JSON.stringify(videoSchema)} />}
@@ -578,18 +579,21 @@ function getAltText(url: string | undefined, fallback: string): string {
     }
 
     if (zoomContainer) {
+      let cachedRect: DOMRect | null = null;
       zoomContainer.addEventListener('mouseenter', () => {
+        cachedRect = zoomContainer.getBoundingClientRect();
         mainImage.style.transform = 'scale(2)';
         mainImage.style.transition = 'transform 0.1s ease-out';
         mainImage.style.transformOrigin = 'center center';
       });
       zoomContainer.addEventListener('mousemove', (e: MouseEvent) => {
-        const rect = zoomContainer.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
-        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        if (!cachedRect) return;
+        const x = ((e.clientX - cachedRect.left) / cachedRect.width) * 100;
+        const y = ((e.clientY - cachedRect.top) / cachedRect.height) * 100;
         mainImage.style.transformOrigin = `${x}% ${y}%`;
       });
       zoomContainer.addEventListener('mouseleave', () => {
+        cachedRect = null;
         mainImage.style.transform = 'scale(1)';
       });
     }

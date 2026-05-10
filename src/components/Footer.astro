@@ -300,8 +300,8 @@ const currentYear = new Date().getFullYear();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    // Initial check
-    updateButtonVisibility();
+    // Initial check — defer to avoid forced reflow during page load
+    requestAnimationFrame(() => updateButtonVisibility());
   }
 
   // Email Button Logic - Construct mailto dynamically to bypass obfuscation
