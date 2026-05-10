@@ -1,6 +1,8 @@
 ---
 
 import { translations } from '../translations';
+import { existsSync } from 'node:fs';
+import { resolve } from 'node:path';
 
 interface Props {
   product: any;
@@ -30,6 +32,11 @@ const currentPath = lang === 'en' ? '' : `${lang}/`;
 
 // Use slug from data, fallback to extracting from ID
 const productSlug = slug || product.id.split('.')[0];
+
+// Small cover variant for responsive images (saves ~60% bandwidth on mobile)
+const smallCover = cover ? cover.replace(/-1\.(webp|jpg|jpeg|png)$/i, '-1-sm.webp') : null;
+const smallCoverPath = smallCover ? resolve(import.meta.dirname, '../../public' + smallCover) : null;
+const hasSmallCover = smallCoverPath ? existsSync(smallCoverPath) : false;
 ---
 
 <a href={`/${currentPath}product/${productSlug}`} class="group block" data-astro-prefetch="viewport">
@@ -39,6 +46,7 @@ const productSlug = slug || product.id.split('.')[0];
       {cover ? (
         <img
           src={cover}
+          srcset={hasSmallCover && smallCover ? `${smallCover} 400w, ${cover} 800w` : undefined}
           alt={title}
           width="400"
           height="300"
