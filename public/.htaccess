@@ -39,24 +39,43 @@ RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # ─── 404 handler ───────────────────────────────────────────────────────────
-ErrorDocument 404 /404.html
-
-# LiteSpeed/Apache fallback: internally serve 404.html for any missing file
+# Use internal rewrite (not ErrorDocument) to avoid subrequest loops on LiteSpeed
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/404\.html$
 RewriteRule ^ /404.html [L]
 
 # ─── Security headers ──────────────────────────────────────────────────────
 <IfModule mod_headers.c>
+  # Prevent MIME-type sniffing
   Header always set X-Content-Type-Options "nosniff"
+
+  # Prevent clickjacking
   Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Control referrer information sent with requests
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # HTTP Strict Transport Security (1 year, include subdomains)
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+  # Cross-Origin-Opener-Policy — isolates browsing context
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+
+  # Cross-Origin-Resource-Policy — blocks cross-origin resource reads
+  Header always set Cross-Origin-Resource-Policy "same-origin"
+
+  # Permissions Policy — restrict browser features
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+
+  # Content Security Policy
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://ipapi.co https://cloudflareinsights.com; frame-src 'self' https://play.gumlet.io https://challenges.cloudflare.com; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests;"
 </IfModule>
 
 # ─── Gzip compression ──────────────────────────────────────────────────────
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
-  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript text/javascript
   AddOutputFilterByType DEFLATE application/json application/xml
   AddOutputFilterByType DEFLATE image/svg+xml font/woff2 font/woff
 </IfModule>
@@ -64,7 +83,7 @@ RewriteRule ^ /404.html [L]
 # ─── Brotli compression (if available on host) ─────────────────────────────
 <IfModule mod_brotli.c>
   AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/xml
-  AddOutputFilterByType BROTLI_COMPRESS application/javascript application/x-javascript
+  AddOutputFilterByType BROTLI_COMPRESS application/javascript application/x-javascript text/javascript
   AddOutputFilterByType BROTLI_COMPRESS application/json image/svg+xml
 </IfModule>
 
@@ -87,28 +106,31 @@ RewriteRule ^ /404.html [L]
   ExpiresByType font/woff  "access plus 1 year"
   ExpiresByType application/font-woff2 "access plus 1 year"
 
-  # Astro hashed JS/CSS bundles — 1 year immutable
+  # CSS — 1 year
   ExpiresByType text/css "access plus 1 year"
+
+  # JS — 1 year (all common MIME types)
   ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/x-javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
 </IfModule>
 
 # ─── Cache-Control headers ─────────────────────────────────────────────────
-# NOTE: FilesMatch in Apache/LiteSpeed matches the FILENAME only, not the path.
 <IfModule mod_headers.c>
-  # Astro hashed JS bundles — immutable (filename contains content hash)
-  # Exception: vjt-tracker.js has no hash, must NOT be immutable
-  <FilesMatch "^(?!vjt-tracker).*\.(js)$">
+  # CSS bundles — immutable (Astro hashes filenames)
+  <FilesMatch "\.css$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 
-  # VJT tracker — short cache so fixes deploy quickly
+  # JS bundles — immutable (Astro hashes filenames)
+  # Matches: ClientRouter.*.js, Header.*.js, page.*.js, index.*.js, etc.
+  <FilesMatch "\.js$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Exception: vjt-tracker.js has NO content hash, so it must NOT be immutable
   <FilesMatch "^vjt-tracker\.js$">
     Header set Cache-Control "public, max-age=3600, must-revalidate"
-  </FilesMatch>
-
-  # CSS bundles — immutable
-  <FilesMatch "\.(css)$">
-    Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 
   # All image types — 1 year
