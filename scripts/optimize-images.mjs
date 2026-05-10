@@ -54,12 +54,9 @@ const MANIFEST_FILE   = './scripts/.optimize-manifest.json';
 // Product images
 const COVER_MAX_W     = 800;
 const COVER_MAX_H     = 600;
-const COVER_SM_W      = 400;
-const COVER_SM_H      = 300;
 const GALLERY_MAX_W   = 1200;
 const GALLERY_MAX_H   = 900;
 const COVER_QUALITY   = 92;
-const COVER_SM_QUALITY = 82;
 const GALLERY_QUALITY = 90;
 
 // Collection / about / hero images (displayed full-width on pages)
@@ -156,22 +153,6 @@ async function optimizeImage(filePath) {
   }
 }
 
-// ── Generate small cover variant for product cards (400x300, displayed ~170px) ──
-async function generateSmallVariant(coverPath) {
-  const outPath = coverPath.replace(/-1\.(webp|jpg|jpeg|png)$/i, '-1-sm.webp');
-  try {
-    const inputBuffer = await readFile(coverPath);
-    const outputBuffer = await sharp(inputBuffer)
-      .resize(COVER_SM_W, COVER_SM_H, { fit: 'inside', withoutEnlargement: true })
-      .webp({ quality: COVER_SM_QUALITY, effort: 5 })
-      .toBuffer();
-    await writeFile(outPath, outputBuffer);
-    return { status: 'optimised', size: outputBuffer.length, path: outPath };
-  } catch (err) {
-    return { status: 'error', error: err.message, path: outPath };
-  }
-}
-
 // ── Main ──────────────────────────────────────────────────────────────────────
 async function main() {
   console.log('\n🔍  Scanning all images in /public/media/…');
@@ -201,10 +182,6 @@ async function main() {
     // ── SKIP if already in manifest ──────────────────────────────────────────
     if (manifest[key]) {
       skippedCount++;
-      // Only print skipped files if there are very few total (avoid spamming)
-      if (images.length <= 20) {
-        console.log(`  ⏭   ${key}  [already optimised]`);
-      }
       continue;
     }
 
@@ -222,18 +199,6 @@ async function main() {
       );
       // Record in manifest so future runs skip this file
       manifest[key] = { size: result.newSize, date: new Date().toISOString() };
-
-      // Also generate a small variant for product cards (400x300)
-      const isCover = /-1\.(webp|jpg|jpeg|png)$/i.test(filePath);
-      if (isCover && filePath.includes('/media/products/')) {
-        const smResult = await generateSmallVariant(filePath);
-        if (smResult.status === 'optimised') {
-          const smKey = smResult.path.replace(/\\/g, '/').split('public/')[1];
-          const smSize = (await stat(smResult.path)).size;
-          manifest[smKey] = { size: smSize, date: new Date().toISOString() };
-          console.log(`  📱  ${smKey}  (${formatKB(smSize)} card variant)`);
-        }
-      }
     } else {
       errorCount++;
       console.error(`  ❌  ${key}  ERROR: ${result.error}`);
