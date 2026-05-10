@@ -270,7 +270,7 @@ function isActiveCategory(href: string): boolean {
                       <span class="flex items-center gap-2">
                         {cat.label}
                         <span class={`text-xs font-normal px-2 py-0.5 rounded-full ${
-                          isActiveCategory(cat.href) ? 'bg-white/20 text-white' : 'bg-gray-100 text-gray-500'
+                          isActiveCategory(cat.href) ? 'bg-white/20 text-white' : 'bg-gray-100 text-gray-600'
                         }`}>{getCategoryCount(cat.href)}</span>
                       </span>
                       <svg class={`w-4 h-4 ${isActiveCategory(cat.href) ? 'text-white/70' : 'text-gray-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -290,7 +290,7 @@ function isActiveCategory(href: string): boolean {
                           >
                             <span>{sub.label}</span>
                             <span class={`text-xs ${
-                              isActiveCategory(sub.href) ? 'text-white/80' : 'text-gray-400'
+                              isActiveCategory(sub.href) ? 'text-white/90' : 'text-gray-400'
                             }`}>{getCategoryCount(sub.href)}</span>
                           </a>
                         </li>
@@ -333,7 +333,7 @@ function isActiveCategory(href: string): boolean {
 
             <div class="bg-[#8B7355] rounded-xl p-6 text-white">
               <h4 class="font-bold mb-2">{pt.needCustomEyewear || 'Need Custom Eyewear?'}</h4>
-              <p class="text-sm text-white/80 mb-4">
+              <p class="text-sm text-white/90 mb-4">
                 {pt.oemServices || 'We offer full OEM & ODM services for your brand.'}
               </p>
               <a
