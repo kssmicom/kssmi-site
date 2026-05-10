@@ -194,7 +194,7 @@ if (type === 'product' && product) {
 
   if (fs.existsSync(publicDir)) {
     const allImages = fs.readdirSync(publicDir)
-      .filter((file: string) => file.endsWith('.webp') || file.endsWith('.jpg') || file.endsWith('.png'))
+      .filter((file: string) => (file.endsWith('.webp') || file.endsWith('.jpg') || file.endsWith('.png')) && !file.includes('-400'))
       .sort((a: string, b: string) => {
         const numA = parseInt(a.match(/-(\d+)\.\w+$/)?.[1] || '0', 10);
         const numB = parseInt(b.match(/-(\d+)\.\w+$/)?.[1] || '0', 10);

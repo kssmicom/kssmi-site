@@ -141,6 +141,9 @@ const organizationSchema = {
 
   <!-- Organization Schema for Google Graph -->
   <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+
+  <!-- Cloudflare Web Analytics (defer = non-blocking) -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "70e1c20d83a34e0ebfa6b3fb9053e96a"}'></script>
 </head>
 <body class="font-sans antialiased relative min-h-screen">
   <!-- Page Transition Loader -->

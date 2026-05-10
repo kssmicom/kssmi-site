@@ -59,6 +59,11 @@ const GALLERY_MAX_H   = 900;
 const COVER_QUALITY   = 92;
 const GALLERY_QUALITY = 90;
 
+// Card variant (product listing grids — displayed at ~274px on desktop)
+const CARD_W          = 400;
+const CARD_H          = 300;
+const CARD_QUALITY    = 85;
+
 // Collection / about / hero images (displayed full-width on pages)
 const HERO_MAX_W      = 1600;
 const HERO_MAX_H      = 1200;
@@ -153,6 +158,22 @@ async function optimizeImage(filePath) {
   }
 }
 
+// ── Generate card-size variant (400px wide, for product listing grids) ────────
+async function generateCardVariant(filePath) {
+  const outPath = filePath.replace(/\.(jpg|jpeg|png)$/i, '.webp').replace(/\.webp$/, '-400.webp');
+  try {
+    const inputBuffer = await readFile(filePath);
+    const outputBuffer = await sharp(inputBuffer)
+      .resize(CARD_W, CARD_H, { fit: 'inside', withoutEnlargement: true })
+      .webp({ quality: CARD_QUALITY, effort: 5 })
+      .toBuffer();
+    await writeFile(outPath, outputBuffer);
+    return { status: 'card_created', size: outputBuffer.length };
+  } catch (err) {
+    return { status: 'card_error', error: err.message };
+  }
+}
+
 // ── Main ──────────────────────────────────────────────────────────────────────
 async function main() {
   console.log('\n🔍  Scanning all images in /public/media/…');
@@ -173,11 +194,30 @@ async function main() {
   let optimisedCount     = 0;
   let skippedCount       = 0;
   let errorCount         = 0;
+  let cardGenCount       = 0;
 
   for (const filePath of images) {
     // Use a relative key so the manifest works across machines
     const key = filePath.replace(/\\/g, '/').split('public/')[1];
     totalOriginalBytes += (await stat(filePath)).size;
+
+    const isCover = key.startsWith('media/products/') && /-1\.(webp|jpg|jpeg|png)$/i.test(key);
+
+    // ── Card variant: check regardless of manifest (separate from main optimise) ──
+    if (isCover) {
+      const cardPath = filePath.replace(/\.(jpg|jpeg|png)$/i, '.webp').replace(/\.webp$/, '-400.webp');
+      const cardKey = key.replace(/\.(jpg|jpeg|png)$/i, '.webp').replace(/\.webp$/, '-400.webp');
+      if (!manifest[cardKey] && !existsSync(cardPath)) {
+        const cardResult = await generateCardVariant(filePath);
+        if (cardResult.status === 'card_created') {
+          cardGenCount++;
+          manifest[cardKey] = { size: cardResult.size, date: new Date().toISOString() };
+          console.log(`  🃏  ${cardKey}  → ${formatKB(cardResult.size)} (card variant)`);
+        } else {
+          console.error(`  ❌  ${cardKey}  CARD ERROR: ${cardResult.error}`);
+        }
+      }
+    }
 
     // ── SKIP if already in manifest ──────────────────────────────────────────
     if (manifest[key]) {
@@ -214,15 +254,16 @@ async function main() {
   console.log('\n────────────────────────────────────────');
   console.log(`  Total images scanned : ${images.length}`);
   console.log(`  Newly optimised      : ${optimisedCount}`);
+  console.log(`  Card variants created: ${cardGenCount}`);
   console.log(`  Already done, skipped: ${skippedCount}`);
   console.log(`  Errors               : ${errorCount}`);
   console.log(`  Total saved this run : ${totalSavedMB} MB`);
   console.log('────────────────────────────────────────\n');
 
-  if (optimisedCount > 0) {
+  if (optimisedCount > 0 || cardGenCount > 0) {
     console.log('🚀  Done! Now rebuild and deploy your site.');
     console.log('    npm run build\n');
-  } else if (skippedCount === images.length) {
+  } else if (skippedCount === images.length && cardGenCount === 0) {
     console.log('✅  All images are already optimised. Nothing to do.\n');
   }
 }
