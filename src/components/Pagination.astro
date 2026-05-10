@@ -57,6 +57,7 @@ const {
               : `${basePath}/${currentPage - 1}`
           )}
           class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
+          aria-label={prevLabel}
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -82,6 +83,7 @@ const {
               ? 'bg-[#8B7355] text-white shadow-sm'
               : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355]'
           }`}
+          aria-label="Page 1"
         >
           1
         </a>
@@ -156,6 +158,7 @@ const {
         <a
           href={nextUrl ?? (categorySlug ? `${basePath}/${categorySlug}/${currentPage + 1}` : `${basePath}/${currentPage + 1}`)}
           class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
+          aria-label={nextLabel}
         >
           <span class="hidden sm:inline">{nextLabel}</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
