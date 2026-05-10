@@ -1,12 +1,13 @@
-# KSSMI Site — Apache Configuration
-# Ensure AllowOverride All is set on the server for this to work
+# KSSMI Site — OpenLiteSpeed Configuration
+# IMPORTANT: OLS does NOT recognize <IfModule mod_headers.c> etc.
+# All directives must be bare (no IfModule wrappers) or OLS silently skips them.
 
 # Enable rewrite engine
 Options -Indexes
 Options +FollowSymLinks
 RewriteEngine On
 
-# ─── Block sensitive files (403 Forbidden) — LiteSpeed compatible ────────────
+# ─── Block sensitive files (403 Forbidden) ───────────────────────────────────
 RewriteRule ^email-logs\.json$ - [F,L]
 RewriteRule ^\.email_logs_password$ - [F,L]
 RewriteRule ^\.email_reset_tokens\.json$ - [F,L]
@@ -28,7 +29,6 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
 # ─── Astro static site: serve index.html for clean URLs ────────────────────
-# e.g. /product → /product/index.html
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}/index.html -f
@@ -39,112 +39,85 @@ RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # ─── 404 handler ───────────────────────────────────────────────────────────
-# Use internal rewrite (not ErrorDocument) to avoid subrequest loops on LiteSpeed
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !^/404\.html$
 RewriteRule ^ /404.html [L]
 
-# ─── Security headers ──────────────────────────────────────────────────────
-<IfModule mod_headers.c>
-  # Prevent MIME-type sniffing
-  Header always set X-Content-Type-Options "nosniff"
-
-  # Prevent clickjacking
-  Header always set X-Frame-Options "SAMEORIGIN"
-
-  # Control referrer information sent with requests
-  Header always set Referrer-Policy "strict-origin-when-cross-origin"
-
-  # HTTP Strict Transport Security (1 year, include subdomains)
-  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
-
-  # Cross-Origin-Opener-Policy — isolates browsing context
-  Header always set Cross-Origin-Opener-Policy "same-origin"
-
-  # Cross-Origin-Resource-Policy — blocks cross-origin resource reads
-  Header always set Cross-Origin-Resource-Policy "same-origin"
-
-  # Permissions Policy — restrict browser features
-  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
-
-  # Content Security Policy
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://ipapi.co https://cloudflareinsights.com; frame-src 'self' https://play.gumlet.io https://challenges.cloudflare.com; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests;"
-</IfModule>
+# ─── Security headers (bare — no IfModule wrappers for OLS compatibility) ───
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+Header always set Cross-Origin-Opener-Policy "same-origin"
+Header always set Cross-Origin-Resource-Policy "same-origin"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://ipapi.co https://cloudflareinsights.com; frame-src 'self' https://play.gumlet.io https://challenges.cloudflare.com; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests;"
 
 # ─── Gzip compression ──────────────────────────────────────────────────────
-<IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
-  AddOutputFilterByType DEFLATE application/javascript application/x-javascript text/javascript
-  AddOutputFilterByType DEFLATE application/json application/xml
-  AddOutputFilterByType DEFLATE image/svg+xml font/woff2 font/woff
-</IfModule>
+AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+AddOutputFilterByType DEFLATE application/javascript application/x-javascript text/javascript
+AddOutputFilterByType DEFLATE application/json application/xml
+AddOutputFilterByType DEFLATE image/svg+xml font/woff2 font/woff
 
 # ─── Brotli compression (if available on host) ─────────────────────────────
-<IfModule mod_brotli.c>
-  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/xml
-  AddOutputFilterByType BROTLI_COMPRESS application/javascript application/x-javascript text/javascript
-  AddOutputFilterByType BROTLI_COMPRESS application/json image/svg+xml
-</IfModule>
+AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/xml
+AddOutputFilterByType BROTLI_COMPRESS application/javascript application/x-javascript text/javascript
+AddOutputFilterByType BROTLI_COMPRESS application/json image/svg+xml
 
-# ─── Cache static assets ───────────────────────────────────────────────────
-<IfModule mod_expires.c>
-  ExpiresActive On
+# ─── Cache static assets via Expires ───────────────────────────────────────
+ExpiresActive On
 
-  # Images — 1 year
-  ExpiresByType image/webp "access plus 1 year"
-  ExpiresByType image/avif "access plus 1 year"
-  ExpiresByType image/png  "access plus 1 year"
-  ExpiresByType image/jpeg "access plus 1 year"
-  ExpiresByType image/gif  "access plus 1 year"
-  ExpiresByType image/svg+xml "access plus 1 year"
-  ExpiresByType image/x-icon "access plus 1 year"
-  ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
+# Images — 1 year
+ExpiresByType image/webp "access plus 1 year"
+ExpiresByType image/avif "access plus 1 year"
+ExpiresByType image/png  "access plus 1 year"
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/gif  "access plus 1 year"
+ExpiresByType image/svg+xml "access plus 1 year"
+ExpiresByType image/x-icon "access plus 1 year"
+ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
 
-  # Fonts — 1 year
-  ExpiresByType font/woff2 "access plus 1 year"
-  ExpiresByType font/woff  "access plus 1 year"
-  ExpiresByType application/font-woff2 "access plus 1 year"
+# Fonts — 1 year
+ExpiresByType font/woff2 "access plus 1 year"
+ExpiresByType font/woff  "access plus 1 year"
+ExpiresByType application/font-woff2 "access plus 1 year"
 
-  # CSS — 1 year
-  ExpiresByType text/css "access plus 1 year"
+# CSS — 1 year
+ExpiresByType text/css "access plus 1 year"
 
-  # JS — 1 year (all common MIME types)
-  ExpiresByType application/javascript "access plus 1 year"
-  ExpiresByType application/x-javascript "access plus 1 year"
-  ExpiresByType text/javascript "access plus 1 year"
-</IfModule>
+# JS — 1 year (all common MIME types)
+ExpiresByType application/javascript "access plus 1 year"
+ExpiresByType application/x-javascript "access plus 1 year"
+ExpiresByType text/javascript "access plus 1 year"
 
 # ─── Cache-Control headers ─────────────────────────────────────────────────
-<IfModule mod_headers.c>
-  # CSS bundles — immutable (Astro hashes filenames)
-  <FilesMatch "\.css$">
-    Header set Cache-Control "public, max-age=31536000, immutable"
-  </FilesMatch>
+# CSS bundles — immutable (Astro hashes filenames)
+<FilesMatch "\.css$">
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
 
-  # JS bundles — immutable (Astro hashes filenames)
-  # Matches: ClientRouter.*.js, Header.*.js, page.*.js, index.*.js, etc.
-  <FilesMatch "\.js$">
-    Header set Cache-Control "public, max-age=31536000, immutable"
-  </FilesMatch>
+# JS bundles — immutable (Astro hashes filenames)
+<FilesMatch "\.js$">
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
 
-  # Exception: vjt-tracker.js has NO content hash, so it must NOT be immutable
-  <FilesMatch "^vjt-tracker\.js$">
-    Header set Cache-Control "public, max-age=3600, must-revalidate"
-  </FilesMatch>
+# Exception: vjt-tracker.js has NO content hash, so it must NOT be immutable
+<FilesMatch "^vjt-tracker\.js$">
+  Header set Cache-Control "public, max-age=3600, must-revalidate"
+</FilesMatch>
 
-  # All image types — 1 year
-  <FilesMatch "\.(webp|png|jpg|jpeg|gif|svg|ico|avif)$">
-    Header set Cache-Control "public, max-age=31536000"
-  </FilesMatch>
+# All image types — 1 year
+<FilesMatch "\.(webp|png|jpg|jpeg|gif|svg|ico|avif)$">
+  Header set Cache-Control "public, max-age=31536000"
+</FilesMatch>
 
-  # Fonts — 1 year
-  <FilesMatch "\.(woff2|woff|ttf|eot)$">
-    Header set Cache-Control "public, max-age=31536000, immutable"
-  </FilesMatch>
+# Fonts — 1 year
+<FilesMatch "\.(woff2|woff|ttf|eot)$">
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
 
-  # HTML — short cache so updates deploy quickly
-  <FilesMatch "\.html$">
-    Header set Cache-Control "public, max-age=3600, must-revalidate"
-  </FilesMatch>
-</IfModule>
+# HTML — short cache so updates deploy quickly
+<FilesMatch "\.html$">
+  Header set Cache-Control "public, max-age=3600, must-revalidate"
+</FilesMatch>
