@@ -47,7 +47,33 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: ""
-seoDescription: ""
-seoKeywords: ""
+seoTitle: "KAS-501 Classic Stylish Acetate Sunglasses | Wholesale Supplier"
+seoDescription: "Elevate your private label collection with KAS-501 classic acetate sunglasses. Premium Mazzucchelli material, 300 MOQ, and full OEM/ODM customization support."
+seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury private label eyewear, Chinese acetate eyewear factory, wholesale designer sunglasses, premium eyewear supplier China, bespoke acetate frame production, customizable fashion eyewear"
 ---
+
+## Technical Features
+
+- **Premium Material:** Premium Mazzucchelli and JINYU acetate construction offering a lightweight feel, vibrant depth of color, and long-term durability.
+- **Precision Hardware:** Robust 4+3 barrel structure hinges engineered for superior operational stability and lifelong reliability.
+- **High-Performance Optics:** Tenacious nylon lenses providing exceptional clarity and impact resistance with extensive customization for tints and coatings.
+- **Ergonomic Design:** Integrated nose pads designed for a seamless aesthetic and a comfortable, secure fit for diverse facial profiles.
+- **Extensive Customization:** Comprehensive logo application methods—including laser, metal, and embossing—allowing for precise brand alignment.
+- **Scalable Production:** Full OEM and ODM customization capabilities with a low MOQ of 300 pieces tailored for Premium Eyewear Brands and Independent Eyewear Designers.
+
+## Perfect For
+
+- Premium Eyewear Brands
+- Independent Eyewear Designers
+- Private Label Distributors
+- Luxury Fashion Houses
+- Boutique Fashion Labels
+- Department Store Groups
+
+## Overview
+
+Blending premium Mazzucchelli and JINYU acetate, the KAS-501 offers a vibrant depth of color and lightweight durability that meets the exacting standards of high-end fashion labels.
+
+The precision 4+3 barrel hinge structure ensures long-term operational stability, while tenacious nylon lenses and integrated nose pads provide a seamless balance of optical clarity and all-day comfort.
+
+Available for full OEM and ODM customization with a flexible 300-piece MOQ, this model empowers independent designers and luxury houses to integrate bespoke logo applications and custom finishes into their seasonal eyewear collections.

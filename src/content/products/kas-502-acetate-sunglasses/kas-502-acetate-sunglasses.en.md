@@ -51,7 +51,32 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: ""
-seoDescription: ""
-seoKeywords: ""
+seoTitle: "KAS-502 Stylish & Trendy Acetate Sunglasses | Custom Factory"
+seoDescription: "Elevate your private label portfolio with customizable KAS-502 stylish acetate sunglasses. Premium Mazzucchelli frames, 300 MOQ, and full OEM/ODM support."
+seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury private label eyewear, wholesale acetate frames, Chinese eyewear factory, stylish unisex sunglasses, premium eyewear production, customizable acetate eyewear"
 ---
+
+## Technical Features
+
+- **Premium Acetate Construction:** Hand-crafted using high-grade Mazzucchelli and JINYU acetate for exceptional durability and a vibrant, long-lasting finish.
+- **Reinforced Hardware:** Robust 4+3 barrel structure hinges providing superior stability and smooth operational performance for daily wear.
+- **Optical Excellence:** Tenacious nylon lenses offering high impact resistance and clear visual acuity with versatile customization options.
+- **Ergonomic Design:** Integrated nose pads and a lightweight acetate frame designed for all-day comfort and a secure fit.
+- **Tailored Fit:** Balanced 48-20-142mm dimensions ensuring a versatile fit for various face shapes with full size-customization support.
+- **Scalable Production:** Full OEM and ODM manufacturing capabilities with a 300-piece MOQ designed for Luxury Fashion Houses and Independent Eyewear Designers.
+
+## Perfect For
+- Premium Eyewear Brands
+- Independent Eyewear Designers
+- Private Label Distributors
+- Boutique Fashion Labels
+- Luxury Fashion Houses
+- Concept & Multi-Brand Stores
+
+## Overview
+
+Crafted from premium Mazzucchelli and JINYU acetate, the KAS-502 offers a vibrant, hand-polished finish that resonates with high-end fashion sensibilities. The material’s inherent durability and lightweight profile provide a sophisticated foundation for premium eyewear portfolios.
+
+The frame features a reinforced 4+3 barrel hinge structure for superior stability, complemented by impact-resistant nylon lenses that maintain optical clarity across diverse environments.
+
+With comprehensive OEM and ODM support and a 300-piece minimum order quantity, Kssmi provides the manufacturing precision needed for boutique labels and luxury houses to realize bespoke design visions.

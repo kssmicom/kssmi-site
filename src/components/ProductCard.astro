@@ -2,7 +2,8 @@
 
 import { translations } from '../translations';
 import { existsSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 interface Props {
   product: any;
@@ -35,7 +36,9 @@ const productSlug = slug || product.id.split('.')[0];
 
 // Small cover variant for responsive images (saves ~60% bandwidth on mobile)
 const smallCover = cover ? cover.replace(/-1\.(webp|jpg|jpeg|png)$/i, '-1-sm.webp') : null;
-const smallCoverPath = smallCover ? resolve(import.meta.dirname, '../../public' + smallCover) : null;
+const __dirname = fileURLToPath(new URL('.', import.meta.url));
+const publicDir = join(__dirname, '../../public');
+const smallCoverPath = smallCover ? join(publicDir, smallCover) : null;
 const hasSmallCover = smallCoverPath ? existsSync(smallCoverPath) : false;
 ---
 
