@@ -64,4 +64,3 @@ Merging vibrant aesthetics with structural integrity, the KAO-157 showcases hand
 Engineered with a 2+1 barrel rivet hinge system, the lightweight construction and integrated nose pads deliver a secure, hypoallergenic fit designed for longevity.
 
 Supporting full OEM and ODM customization from bespoke logo application to specialized lens tinting, this model enables independent designers to scale high-end optical collections with a flexible 300-piece MOQ.
-

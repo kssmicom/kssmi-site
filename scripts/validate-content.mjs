@@ -8,6 +8,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import yaml from 'js-yaml';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CONTENT_DIR = path.resolve(__dirname, '../src/content/products');
@@ -105,6 +106,14 @@ function validateFrontmatter(content, filePath) {
   // Check for required fields
   if (!seenKeys.has('title')) {
     errors.push('Missing required field: title');
+  }
+
+  // === YAML parse validation ===
+  // Catch syntax errors that the structural checks miss (e.g., stray | pipes, bad indentation)
+  try {
+    yaml.load(frontmatter);
+  } catch (e) {
+    errors.push(`YAML syntax error: ${e.message}`);
   }
 
   return {

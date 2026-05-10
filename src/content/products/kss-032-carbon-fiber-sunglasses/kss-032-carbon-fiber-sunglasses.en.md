@@ -64,4 +64,3 @@ Engineered for brands that prioritize technical superiority, the KSS-032 utilize
 Each component is meticulously CNC-machined to ensure precise tolerances, while the 2+1 barrel hinges and hypoallergenic silicone nose pads provide a seamless blend of mechanical durability and personalized comfort.
 
 Kssmi provides comprehensive OEM and ODM support with a flexible 300-piece minimum order quantity, enabling global retailers to launch bespoke carbon fiber collections featuring custom lens tints and specialized branding.
-

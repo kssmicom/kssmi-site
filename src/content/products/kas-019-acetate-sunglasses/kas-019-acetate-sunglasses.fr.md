@@ -21,7 +21,7 @@ lensMaterial: "Verres en Nylon Tenace & Personnalisation"
 designStyle: "Unique, Élégant, Tendance, Luxe, Unisexe"
 nosePads: "Plaquettes de Nez Intégrées"
 hinge: "Charnières à Structure 3+2 Barillets & Personnalisation (5 Barillets & Charnières à Ressort)"
-| logo: "Impression Tampon, Gravure Laser, Gravure Laser Émaillée, Marquage à Chaud, Logo Métallique, Logo en Relief, Décoration en Cristal, Autocollant 3D"
+logo: "Impression Tampon, Gravure Laser, Gravure Laser Émaillée, Marquage à Chaud, Logo Métallique, Logo en Relief, Décoration en Cristal, Autocollant 3D"
 service: "Fabrication OEM / ODM – Personnalisation"
 acetateFeature: "Léger, Durable et Éclatant"
 

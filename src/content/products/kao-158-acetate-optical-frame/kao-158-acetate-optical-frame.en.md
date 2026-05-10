@@ -72,4 +72,3 @@ This bold, unisex frame utilizes hand-polished Mazzucchelli and JINYU acetate to
 Engineered with a precision-fitted 3+2 barrel rivet hinge structure, the KAO-158 ensures long-term mechanical reliability and structural stability for daily wear.
 
 Kssmi provides full OEM and ODM customization across this model—including bespoke branding and colorways—with a professional 300-piece minimum order quantity to support boutique labels and global distributors.
-

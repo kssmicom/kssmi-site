@@ -68,4 +68,3 @@ Combining aerospace-grade durability with an ultra-lightweight profile, the KSS-
 The frame features a precision-calibrated 2+1 barrel hinge system and tenacious nylon lenses, ensuring structural stability and optical clarity in a sleek, hypoallergenic design.
 
 With support for Matte, Glossy, or Forged Carbon finishes and a low 300-piece MOQ, our full OEM/ODM scope enables designers to integrate bespoke, manufacturer-direct carbon fiber eyewear into luxury portfolios.
-

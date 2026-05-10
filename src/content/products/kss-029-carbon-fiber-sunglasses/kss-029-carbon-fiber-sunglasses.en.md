@@ -62,4 +62,3 @@ Aerospace-grade carbon fiber defines the KSS-029, offering a high-performance fr
 Precision-engineered components, including a durable 2+1 barrel hinge system and hypoallergenic silicone nose pads, ensure long-term stability and all-day wearer comfort.
 
 With full OEM/ODM support and a 300-piece minimum order quantity, we provide the manufacturing scale and bespoke customization options required for brands to develop unique, private-label eyewear collections.
-

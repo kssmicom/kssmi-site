@@ -64,4 +64,3 @@ Floral Blue with Magenta tones meet the superior depth of hand-polished Mazzucch
 Precision 2+1 barrel rivet hinges anchor the lightweight frame, ensuring a consistent and smooth tactile experience that complements the ergonomic integrated nose pads.
 
 With comprehensive OEM and ODM support and a 300-piece minimum order quantity, we empower boutique labels and global distributors to deliver bespoke, high-tenacity nylon lens eyewear under their own private labels.
-
