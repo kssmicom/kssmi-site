@@ -12,10 +12,10 @@
  *   - So you can safely run this script any time you add new products or pages.
  *
  * Quality settings (WebP):
- *   - Product cover ("-1." file): max 800×600,   quality 92
- *   - Product gallery ("-2."+):   max 1200×900,  quality 90
- *   - Collection/about (hero):    max 1600×1200, quality 88
- *   - Certifications:             max 600×600,   quality 85
+ *   - Product cover ("-1." file): max 800x600,   quality 92
+ *   - Product gallery ("-2."+):   max 1200x900,  quality 90
+ *   - Collection/about (hero):    max 1600x1200, quality 88
+ *   - Certifications:             max 600x600,   quality 85
  *
  * Usage:
  *   node scripts/optimize-images.mjs
@@ -54,9 +54,6 @@ const MANIFEST_FILE   = './scripts/.optimize-manifest.json';
 // Product images
 const COVER_MAX_W     = 800;
 const COVER_MAX_H     = 600;
-const THUMB_MAX_W     = 300;   // thumbnail for product listing cards (displayed at ~297px)
-const THUMB_MAX_H     = 225;
-const THUMB_QUALITY   = 82;
 const GALLERY_MAX_W   = 1200;
 const GALLERY_MAX_H   = 900;
 const COVER_QUALITY   = 92;
@@ -126,31 +123,6 @@ async function saveManifest(manifest) {
   await writeFile(MANIFEST_FILE, JSON.stringify(manifest, null, 2), 'utf8');
 }
 
-// ── Check if file is a product cover image ───────────────────────────────────
-function isProductCover(filePath) {
-  const normalized = filePath.replace(/\\/g, '/');
-  return normalized.includes('/media/products/') && /-1\.(webp|jpg|jpeg|png)$/i.test(filePath);
-}
-
-// ── Generate thumbnail for product listing cards ──────────────────────────────
-async function generateThumb(filePath) {
-  try {
-    const inputBuffer = await readFile(filePath);
-    const outPath = filePath.replace(/(-1)\.(webp|jpg|jpeg|png)$/i, '$1-thumb.webp');
-    const outputBuffer = await sharp(inputBuffer)
-      .resize(THUMB_MAX_W, THUMB_MAX_H, {
-        fit: 'inside',
-        withoutEnlargement: true,
-      })
-      .webp({ quality: THUMB_QUALITY, effort: 5 })
-      .toBuffer();
-    await writeFile(outPath, outputBuffer);
-    return { status: 'thumb_ok', size: outputBuffer.length, path: outPath };
-  } catch (err) {
-    return { status: 'thumb_error', error: err.message };
-  }
-}
-
 // ── Compress one image ────────────────────────────────────────────────────────
 async function optimizeImage(filePath) {
   const { size: originalSize } = await stat(filePath);
@@ -207,18 +179,12 @@ async function main() {
     const key = filePath.replace(/\\/g, '/').split('public/')[1];
     totalOriginalBytes += (await stat(filePath)).size;
 
-    // ── SKIP if already in manifest (but still generate missing thumbnails) ──
+    // ── SKIP if already in manifest ──────────────────────────────────────────
     if (manifest[key]) {
       skippedCount++;
-      // Generate missing thumbnails for already-optimised product covers
-      if (isProductCover(filePath)) {
-        const thumbPath = filePath.replace(/(-1)\.(webp|jpg|jpeg|png)$/i, '$1-thumb.webp');
-        if (!existsSync(thumbPath)) {
-          const thumbResult = await generateThumb(filePath);
-          if (thumbResult.status === 'thumb_ok') {
-            console.log(`  🖼️   ${key}  thumbnail: ${formatKB(thumbResult.size)}`);
-          }
-        }
+      // Only print skipped files if there are very few total (avoid spamming)
+      if (images.length <= 20) {
+        console.log(`  ⏭   ${key}  [already optimised]`);
       }
       continue;
     }
@@ -237,14 +203,6 @@ async function main() {
       );
       // Record in manifest so future runs skip this file
       manifest[key] = { size: result.newSize, date: new Date().toISOString() };
-
-      // Generate thumbnail for product cover images
-      if (isProductCover(filePath)) {
-        const thumbResult = await generateThumb(filePath);
-        if (thumbResult.status === 'thumb_ok') {
-          console.log(`       🖼️  thumbnail: ${formatKB(thumbResult.size)}`);
-        }
-      }
     } else {
       errorCount++;
       console.error(`  ❌  ${key}  ERROR: ${result.error}`);
