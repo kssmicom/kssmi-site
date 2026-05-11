@@ -151,7 +151,7 @@ const isDev = import.meta.env.DEV;
 // Current page URL for form context
 const currentUrl = Astro.url.pathname;
 ---
-<section class="pt-8 pb-16 lg:pt-12 lg:pb-24 bg-[#F5F5F4] contain-below-fold--lg" dir={isRTL ? 'rtl' : 'ltr'}>
+<section id="inquiry-form-section" class="pt-8 pb-16 lg:pt-12 lg:pb-24 bg-[#F5F5F4] contain-below-fold--lg" dir={isRTL ? 'rtl' : 'ltr'}>
   <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
     <div class="text-center mb-10">
       <h2 class="font-Playfair text-[32px] lg:text-[42px] font-bold mb-4 text-[#5D4E37] leading-tight">
@@ -412,9 +412,31 @@ const currentUrl = Astro.url.pathname;
   </script>
 )}
 
-<!-- Load Turnstile Script (production only) -->
+<!-- Lazy-load Turnstile Script only when form approaches viewport (production only) -->
 {!isDev && (
-  <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileLoad" async defer></script>
+  <script is:inline>
+    (function() {
+      var turnstileStarted = false;
+      var observer = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting && !turnstileStarted) {
+          turnstileStarted = true;
+          observer.disconnect();
+          // Already loaded from a previous View Transition? Render immediately
+          if (typeof window.turnstile !== 'undefined' && window.turnstile.render) {
+            window.onTurnstileLoad();
+          } else {
+            var script = document.createElement('script');
+            script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileLoad';
+            script.async = true;
+            script.defer = true;
+            document.head.appendChild(script);
+          }
+        }
+      }, { rootMargin: '300px' });
+      var formSection = document.getElementById('inquiry-form-section');
+      if (formSection) observer.observe(formSection);
+    })();
+  </script>
 )}
 
 <script define:vars={{ isDev, pt, turnstileErrorMsg }}>
