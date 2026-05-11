@@ -2,6 +2,10 @@
 
 当社のプレミアムB2Bサングラスとメガネフレームのカタログ。
 
+- カスタムアセテート光学フレーム (KAO-001) | https://kssmi.com/ja/product/kao-001-acetate-optical-frame
+  > MOQ: 300 個/モデル（100個/カラー）
+  > Summary: ## 最適...
+
 - カスタムアセテート光学フレーム (KAO-155) | https://kssmi.com/ja/product/kao-155-acetate-optical-frame
   > MOQ: 300 個/モデル (100個/カラー)
   > Summary: ## 最適...
@@ -286,6 +290,14 @@
   > MOQ: 300 個/モデル（1カラーあたり100個）
   > Summary: ## 最適...
 
+- カスタムアセテートサングラス (KAS-324) | https://kssmi.com/ja/product/kas-324-acetate-sunglasses
+  > MOQ: 300 個/モデル (100個/カラー)
+  > Summary: ## 最適...
+
+- カスタムアセテートサングラス (KAS-330) | https://kssmi.com/ja/product/kas-330-acetate-sunglasses
+  > MOQ: 300 個/モデル (100個/カラー)
+  > Summary: ## 最適...
+
 - カスタムアセテートサングラス (KAS-344) | https://kssmi.com/ja/product/kas-344-acetate-sunglasses
   > MOQ: 300 個/モデル（各色100個）
   > Summary: ## 最適...
@@ -321,6 +333,14 @@
 - カスタム金属光学フレーム (KMO-228) | https://kssmi.com/ja/product/kmo-228-metal-optical-frames
   > MOQ: 300 個/モデル
   > Summary: ## 最適な対象...
+
+- カスタムメタル光学フレーム (KMO-231) | https://kssmi.com/ja/product/kmo-231-metal-optical-frames
+  > MOQ: 300 個/モデル (100個/カラー)
+  > Summary: ## 最適...
+
+- カスタムメタル光学フレーム (KMO-234) | https://kssmi.com/ja/product/kmo-234-metal-optical-frames
+  > MOQ: 300 個/モデル（各色100個）
+  > Summary: ## 最適...
 
 - カスタムメタル光学フレーム (KMO-251) | https://kssmi.com/ja/product/kmo-251-metal-optical-frames
   > MOQ: 300 個/モデル
@@ -390,7 +410,15 @@
   > MOQ: 300 個/モデル（各色100個）
   > Summary: ## 最適...
 
+- カスタムメタルサングラス (KMS-227) | https://kssmi.com/ja/product/kms-227-metal-sunglasses
+  > MOQ: 300 個/モデル (100個/カラー)
+  > Summary: ## 最適...
+
 - カスタムメタルサングラス (KMS-228) | https://kssmi.com/ja/product/kms-228-metal-sunglasses
+  > MOQ: 300 個/モデル (100個/カラー)
+  > Summary: ## 最適...
+
+- カスタムメタルサングラス (KMS-229) | https://kssmi.com/ja/product/kms-229-metal-sunglasses
   > MOQ: 300 個/モデル (100個/カラー)
   > Summary: ## 最適...
 

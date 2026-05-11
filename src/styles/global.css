@@ -43,3 +43,22 @@
   mask-repeat: no-repeat;
   mask-size: contain;
 }
+
+/* ─── content-visibility: auto ────────────────────────────────────────
+   Defers layout & paint for below-fold sections until they approach the
+   viewport. Reduces initial layout work (directly cuts forced-reflow time)
+   and improves FCP/LCP on content-heavy pages. Each utility includes a
+   contain-intrinsic-size fallback so scrollbars don't jump.
+   ─────────────────────────────────────────────────────────────────────── */
+.contain-below-fold {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+.contain-below-fold--sm {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 300px;
+}
+.contain-below-fold--lg {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
+}

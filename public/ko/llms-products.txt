@@ -2,6 +2,10 @@
 
 프리미엄 B2B 선글라스 및 안경테 카탈로그.
 
+- 맞춤형 아세테이트 안경테 (KAO-001) | https://kssmi.com/ko/product/kao-001-acetate-optical-frame
+  > MOQ: 300 개/모델 (100개/컬러)
+  > Summary: ## 추천 대상...
+
 - 맞춤형 아세테이트 안경테 (KAO-155) | https://kssmi.com/ko/product/kao-155-acetate-optical-frame
   > MOQ: 300 개/모델 (100개/컬러)
   > Summary: ## 추천 대상...
@@ -286,6 +290,14 @@
   > MOQ: 300 개/모델 (컬러당 100개)
   > Summary: ## 추천 대상...
 
+- 맞춤형 아세테이트 선글라스 (KAS-324) | https://kssmi.com/ko/product/kas-324-acetate-sunglasses
+  > MOQ: 300 개/모델 (컬러당 100개)
+  > Summary: ## 추천 대상...
+
+- 맞춤형 아세테이트 선글라스 (KAS-330) | https://kssmi.com/ko/product/kas-330-acetate-sunglasses
+  > MOQ: 300 개/모델 (100개/컬러)
+  > Summary: ## 추천 대상...
+
 - 맞춤형 아세테이트 선글라스 (KAS-344) | https://kssmi.com/ko/product/kas-344-acetate-sunglasses
   > MOQ: 300 개/모델 (색상당 100개)
   > Summary: ## 추천 대상...
@@ -320,6 +332,14 @@
 
 - 맞춤 메탈 안경테 (KMO-228) | https://kssmi.com/ko/product/kmo-228-metal-optical-frames
   > MOQ: 300 개/모델
+  > Summary: ## 추천 대상...
+
+- 맞춤형 메탈 안경테 (KMO-231) | https://kssmi.com/ko/product/kmo-231-metal-optical-frames
+  > MOQ: 300 개/모델 (100개/컬러)
+  > Summary: ## 추천 대상...
+
+- 맞춤형 메탈 안경테 (KMO-234) | https://kssmi.com/ko/product/kmo-234-metal-optical-frames
+  > MOQ: 300 개/모델 (컬러당 100개)
   > Summary: ## 추천 대상...
 
 - 맞춤형 메탈 안경테 (KMO-251) | https://kssmi.com/ko/product/kmo-251-metal-optical-frames
@@ -390,8 +410,16 @@
   > MOQ: 300 개/모델 (100 개/색상)
   > Summary: ## 추천 대상...
 
+- 맞춤형 메탈 선글라스 (KMS-227) | https://kssmi.com/ko/product/kms-227-metal-sunglasses
+  > MOQ: 300 개/모델 (100개/컬러)
+  > Summary: ## 추천 대상...
+
 - 맞춤형 메탈 선글라스 (KMS-228) | https://kssmi.com/ko/product/kms-228-metal-sunglasses
   > MOQ: 300 개/모델 (컬러당 100개)
+  > Summary: ## 추천 대상...
+
+- 커스텀 메탈 선글라스 (KMS-229) | https://kssmi.com/ko/product/kms-229-metal-sunglasses
+  > MOQ: 300 개/모델 (색상당 100개)
   > Summary: ## 추천 대상...
 
 - 맞춤형 무테 안경테 (KRO-203) | https://kssmi.com/ko/product/kro-203-rimless-optical-frames

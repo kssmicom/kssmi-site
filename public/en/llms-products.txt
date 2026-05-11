@@ -2,6 +2,10 @@
 
 Catalog of our premium B2B sunglasses and eyewear frames.
 
+- Custom Acetate Optical Frame (KAO-001) | https://kssmi.com/product/kao-001-acetate-optical-frame
+  > MOQ: 300 PCS/Model (100PCS/Color)
+  > Summary: Crafting frames from premium Mazzucchelli and JINYU acetate provides a depth of color and durability that defines high-end eyewear. This model balances bold architectural lines with a lightweight profile, making it a staple for luxury fashion houses....
+
 - Custom Acetate Optical Frame (KAO-155) | https://kssmi.com/product/kao-155-acetate-optical-frame
   > MOQ: 300 PCS/Model (100PCS/Color)
   > Summary: Mazzucchelli and JINYU acetate merge in this frame to provide the vibrant color depth and structural longevity that luxury brands demand. The bold, unisex silhouette bridges classic design with modern trend-focused aesthetics....
@@ -286,6 +290,14 @@ Catalog of our premium B2B sunglasses and eyewear frames.
   > MOQ: 300 PCS/Model (100PCS/Color)
   > Summary: Precision-crafted from premium Mazzucchelli and JINYU acetate, the KAS-323 offers a vibrant and durable aesthetic that meets the rigorous demands of the global luxury market....
 
+- Custom Acetate Sunglasses (KAS-324) | https://kssmi.com/product/kas-324-acetate-sunglasses
+  > MOQ: 300 PCS/Model (100PCS/Color)
+  > Summary: For eyewear labels prioritizing material excellence, the KAS-324 utilizes premium Mazzucchelli and JINYU acetate to achieve a distinctive, high-vibrancy finish. This selection provides the lightweight durability required for luxury-tier fashion portfolios....
+
+- Custom Acetate Sunglasses (KAS-330) | https://kssmi.com/product/kas-330-acetate-sunglasses
+  > MOQ: 300 PCS/Model (100PCS/Color)
+  > Summary: Bold geometry meets the refined texture of Mazzucchelli and JINYU acetate in a design built for high-impact unisex fashion. These frames emphasize structural integrity and vibrant color depth, providing a premium foundation for any eyewear collection....
+
 - Custom Acetate Sunglasses (KAS-344) | https://kssmi.com/product/kas-344-acetate-sunglasses
   > MOQ: 300 PCS/Model (100PCS/Color)
   > Summary: Crafted from hand-polished Mazzucchelli and JINYU acetate, this design offers a vibrant depth of color and a premium finish suited for luxury fashion houses. Its lightweight frame architecture balances modern styling with the structural integrity expected of high-end eyewear....
@@ -321,6 +333,14 @@ Catalog of our premium B2B sunglasses and eyewear frames.
 - Custom Metal Optical Frame (KMO-228) | https://kssmi.com/product/kmo-228-metal-optical-frames
   > MOQ: 300 PCS/Model
   > Summary: Acetate warmth and metal precision rarely coexist in a single frame — the KMO-228 makes that combination its core identity. A premium acetate front carries the visual character and color depth, while refined metal temples deliver the structural discipline that high-volume production demands....
+
+- Custom Metal Optical Frame (KMO-231) | https://kssmi.com/product/kmo-231-metal-optical-frames
+  > MOQ: 300 PCS/Model (100PCS/Color)
+  > Summary: Forged from premium metal and enhanced with resilient ion plating, the KMO-231 delivers a sophisticated unisex aesthetic with uncompromising structural strength....
+
+- Custom Metal Optical Frame (KMO-234) | https://kssmi.com/product/kmo-234-metal-optical-frames
+  > MOQ: 300 PCS/Model (100PCS/Color)
+  > Summary: The KMO-234 integrates premium metal architecture with a refined semi-matte ion-plated finish, offering a sophisticated silhouette for high-end optical portfolios....
 
 - Custom Metal Optical Frame (KMO-251) | https://kssmi.com/product/kmo-251-metal-optical-frames
   > MOQ: 300 PCS/Model
@@ -390,9 +410,17 @@ Catalog of our premium B2B sunglasses and eyewear frames.
   > MOQ: 300 PCS/Model (100PCS/Color)
   > Summary: Combining aerospace-grade metal with high-tenacity nylon lenses, this design achieves a sophisticated balance between structural resilience and contemporary fashion. The ion-plated surfaces provide a scratch-resistant finish that preserves the premium aesthetic through intensive daily wear....
 
+- Custom Metal Sunglasses (KMS-227) | https://kssmi.com/product/kms-227-metal-sunglasses
+  > MOQ: 300 PCS/Model (100PCS/Color)
+  > Summary: Engineered with high-grade metal and a refined ion-plated finish, the KMS-227 stands as a pinnacle of durability and luxury aesthetics for modern eyewear collections....
+
 - Custom Metal Sunglasses (KMS-228) | https://kssmi.com/product/kms-228-metal-sunglasses
   > MOQ: 300 PCS/Model (100PCS/Color)
   > Summary: High-grade metal construction meets advanced surface engineering in a frame designed for long-term durability and a sophisticated, premium aesthetic. The ion-plated finish provides a corrosion-resistant luster that withstands the rigors of daily wear....
+
+- Custom Metal Sunglasses (KMS-229) | https://kssmi.com/product/kms-229-metal-sunglasses
+  > MOQ: 300 PCS/Model (100PCS/Color)
+  > Summary: Constructed with structural longevity in mind, this premium metal frame utilizes an advanced ion-plating process for superior surface resilience. Its unisex silhouette bridges the gap between modern fashion trends and sophisticated luxury styling....
 
 - Custom Rimless Optical Frame (KRO-203) | https://kssmi.com/product/kro-203-rimless-optical-frames
   > MOQ: 300 PCS/Model

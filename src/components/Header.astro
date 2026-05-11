@@ -581,8 +581,10 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
 
     function toggleMobileMenu() {
       if (!mobileMenu) return;
+      // Determine new state before DOM write to avoid forced reflow
+      const willBeHidden = !mobileMenu.classList.contains('hidden');
       mobileMenu.classList.toggle('hidden');
-      document.body.style.overflow = mobileMenu.classList.contains('hidden') ? '' : 'hidden';
+      document.body.style.overflow = willBeHidden ? '' : 'hidden';
     }
 
     if (menuButton) {
@@ -699,30 +701,43 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
       const hint = menu.nextElementSibling as HTMLElement;
       if (!hint || !hint.classList.contains('scroll-hint')) return;
 
+      let hintRafPending = false;
       const updateHint = () => {
-        // If scrollable and not at bottom
-        if (menu.scrollHeight > menu.clientHeight && Math.ceil(menu.scrollTop + menu.clientHeight) < menu.scrollHeight - 2) {
-          hint.style.opacity = '1';
-        } else {
-          hint.style.opacity = '0';
+        // Read phase: gather layout measurements
+        const isScrollable = menu.scrollHeight > menu.clientHeight;
+        const isNotAtBottom = Math.ceil(menu.scrollTop + menu.clientHeight) < menu.scrollHeight - 2;
+        const showHint = isScrollable && isNotAtBottom;
+
+        // Write phase: defer style writes to avoid forced reflow
+        if (!hintRafPending) {
+          hintRafPending = true;
+          requestAnimationFrame(() => {
+            hint.style.opacity = showHint ? '1' : '0';
+            hintRafPending = false;
+          });
         }
       };
 
       setListener(menu, 'scroll', updateHint);
-      
+
       const container = menu.closest('.lang-dropdown-container');
       if (container) {
         setListener(container, 'mouseenter', () => {
-          setTimeout(updateHint, 50); 
+          setTimeout(updateHint, 50);
         });
       }
-      
+
       // Try to use ResizeObserver
       if (typeof ResizeObserver !== 'undefined') {
         const observer = new ResizeObserver(updateHint);
         observer.observe(menu);
       }
-      updateHint();
+      // Initial check: read immediately, write in rAF
+      (() => {
+        const isScrollable = menu.scrollHeight > menu.clientHeight;
+        const isNotAtBottom = Math.ceil(menu.scrollTop + menu.clientHeight) < menu.scrollHeight - 2;
+        hint.style.opacity = (isScrollable && isNotAtBottom) ? '1' : '0';
+      })();
     });
 
     // Language Dropdown Click Toggle (for touch devices)

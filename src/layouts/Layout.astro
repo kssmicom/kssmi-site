@@ -115,20 +115,28 @@ const organizationSchema = {
   <!-- View Transitions for SPA-like speed -->
   <ClientRouter />
 
-  <!-- Google Fonts: non-blocking load to eliminate render-blocking latency -->
+  <!-- Google Fonts: split-load strategy to minimize font-swap reflow -->
   <!-- Step 1: Preconnect to font origins so DNS/TLS is ready early -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- Step 2: Load font CSS asynchronously (media=print trick, then swap to all) -->
+  <!-- Step 2a: Critical body + heading fonts → display=swap (renders text immediately, swaps when ready) -->
   <link
     rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&family=Playfair+Display:wght@400;600;700&family=Raleway:wght@600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+    media="print"
+    onload="this.media='all'"
+  />
+  <!-- Step 2b: Decorative accent fonts → display=optional (uses fallback on first visit, instant on cached visits — zero reflow) -->
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@600;700&display=optional"
     media="print"
     onload="this.media='all'"
   />
   <!-- Step 3: Fallback for users with JS disabled -->
   <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&family=Playfair+Display:wght@400;600;700&family=Raleway:wght@600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@600;700&display=optional" />
   </noscript>
   {isRTL && (
     <link
@@ -147,7 +155,7 @@ const organizationSchema = {
 </head>
 <body class="font-sans antialiased relative min-h-screen">
   <!-- Page Transition Loader -->
-  <div id="page-loader" class="fixed top-0 left-0 w-full h-[3px] bg-[#8B7355] z-[99999] origin-left scale-x-0 transition-transform duration-300 pointer-events-none"></div>
+  <div id="page-loader" class="fixed top-0 left-0 w-full h-[3px] bg-[#8B7355] z-[99999] origin-left scale-x-0 transition-transform duration-300 pointer-events-none will-change-transform"></div>
   <script is:inline>
     document.addEventListener('astro:before-preparation', () => {
       const loader = document.getElementById('page-loader');

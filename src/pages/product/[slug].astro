@@ -521,7 +521,7 @@ function getAltText(url: string | undefined, fallback: string): string {
       {ProductContent && <ProductContent slot="highlights" />}
     </TechnicalSpecs>
 
-    <section class="py-16 lg:py-20 bg-gradient-to-r from-[#8B7355] to-[#5D4E37] text-white">
+    <section class="py-16 lg:py-20 bg-gradient-to-r from-[#8B7355] to-[#5D4E37] text-white contain-below-fold">
       <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
         <div class="text-center mb-10">
           <h2 class="text-2xl lg:text-3xl font-bold mb-4">{pt.partnerTitle}</h2>
@@ -582,9 +582,11 @@ function getAltText(url: string | undefined, fallback: string): string {
       let cachedRect: DOMRect | null = null;
       zoomContainer.addEventListener('mouseenter', () => {
         cachedRect = zoomContainer.getBoundingClientRect();
-        mainImage.style.transform = 'scale(2)';
-        mainImage.style.transition = 'transform 0.1s ease-out';
-        mainImage.style.transformOrigin = 'center center';
+        requestAnimationFrame(() => {
+          mainImage.style.transform = 'scale(2)';
+          mainImage.style.transition = 'transform 0.1s ease-out';
+          mainImage.style.transformOrigin = 'center center';
+        });
       });
       zoomContainer.addEventListener('mousemove', (e: MouseEvent) => {
         if (!cachedRect) return;
