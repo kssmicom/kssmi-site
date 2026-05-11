@@ -209,18 +209,19 @@ if (type === 'product' && product) {
   const publicDir = path.join(process.cwd(), 'public', 'media', 'products', imageSlug);
 
   if (fs.existsSync(publicDir)) {
-    const allImages = fs.readdirSync(publicDir)
-      .filter((file: string) => (file.endsWith('.webp') || file.endsWith('.jpg') || file.endsWith('.png')) && !file.includes('-400'))
+    const allFiles = fs.readdirSync(publicDir)
+      .filter((file: string) => (file.endsWith('.webp') || file.endsWith('.jpg') || file.endsWith('.png')) && !file.includes('-400') && !file.includes('-120w'))
       .sort((a: string, b: string) => {
         const numA = parseInt(a.match(/-(\d+)\.\w+$/)?.[1] || '0', 10);
         const numB = parseInt(b.match(/-(\d+)\.\w+$/)?.[1] || '0', 10);
         return numA - numB;
-      })
-      .map((file: string) => `/media/products/${imageSlug}/${file}`);
+      });
 
-    if (allImages.length > 0) {
-      cover = allImages[0];
-      gallery = allImages.slice(1);
+    const allImagePaths = allFiles.map((file: string) => `/media/products/${imageSlug}/${file}`);
+
+    if (allImagePaths.length > 0) {
+      cover = allImagePaths[0];
+      gallery = allImagePaths.slice(1);
     }
   } else {
     cover = data.cover || '';
@@ -388,6 +389,13 @@ function getAltText(url: string | undefined, fallback: string): string {
   if (!withoutExt) return fallback;
   return withoutExt.replace(/-/g, ' ');
 }
+
+function thumbSrc(originalPath: string): string {
+  const lastDot = originalPath.lastIndexOf('.');
+  return lastDot > -1
+    ? originalPath.slice(0, lastDot) + '-120w' + originalPath.slice(lastDot)
+    : originalPath;
+}
 ---
 
 
@@ -445,13 +453,13 @@ function getAltText(url: string | undefined, fallback: string): string {
 
             <div class="flex flex-wrap justify-center gap-2 w-full max-w-[640px] mx-auto">
               {cover && (
-                <button class="thumb flex-none w-16 h-16 rounded-lg overflow-hidden border-2 border-[#8B7355] shadow-sm hover:shadow-md transition-shadow" aria-label={getAltText(cover, "View main image")}>
-                  <img src={cover} alt={getAltText(cover, "Main")} class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="if(!this.dataset.retried){this.dataset.retried=true;setTimeout(()=>this.src=this.src, 50);}" />
+                <button class="thumb flex-none w-16 h-16 rounded-lg overflow-hidden border-2 border-[#8B7355] shadow-sm hover:shadow-md transition-shadow" data-full={cover} aria-label={getAltText(cover, "View main image")}>
+                  <img src={thumbSrc(cover)} alt={getAltText(cover, "Main")} class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="const btn=this.closest('.thumb');if(btn&&!this.dataset.retried){this.dataset.retried=true;this.src=btn.getAttribute('data-full')||this.src}" />
                 </button>
               )}
               {gallery?.map((img: string, index: number) => (
-                <button class="thumb flex-none w-16 h-16 rounded-lg overflow-hidden border-2 border-transparent hover:border-[#8B7355] shadow-sm hover:shadow-md transition-all" aria-label={getAltText(img, `View gallery image ${index + 1}`)}>
-                  <img src={img} alt={getAltText(img, `Gallery ${index + 1}`)} class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="if(!this.dataset.retried){this.dataset.retried=true;setTimeout(()=>this.src=this.src, 50);}" />
+                <button class="thumb flex-none w-16 h-16 rounded-lg overflow-hidden border-2 border-transparent hover:border-[#8B7355] shadow-sm hover:shadow-md transition-all" data-full={img} aria-label={getAltText(img, `View gallery image ${index + 1}`)}>
+                  <img src={thumbSrc(img)} alt={getAltText(img, `Gallery ${index + 1}`)} class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="const btn=this.closest('.thumb');if(btn&&!this.dataset.retried){this.dataset.retried=true;this.src=btn.getAttribute('data-full')||this.src}" />
                 </button>
               ))}
             </div>
@@ -561,11 +569,11 @@ function getAltText(url: string | undefined, fallback: string): string {
         const target = e.target as HTMLElement;
         const thumb = target.closest('.thumb') as HTMLElement;
         if (thumb) {
-          const thumbImg = thumb.querySelector('img') as HTMLImageElement;
-          if (thumbImg && mainImage) {
-            mainImage.src = thumbImg.src;
-            mainImage.srcset = thumbImg.srcset || '';
-            mainImage.sizes = thumbImg.sizes || '';
+          const fullSrc = thumb.getAttribute('data-full');
+          if (fullSrc && mainImage) {
+            mainImage.src = fullSrc;
+            mainImage.removeAttribute('srcset');
+            mainImage.removeAttribute('sizes');
             mainImage.style.transform = 'scale(1)';
             document.querySelectorAll('.thumb').forEach(t => {
               t.classList.remove('border-[#8B7355]');

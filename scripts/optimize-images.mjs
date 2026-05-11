@@ -64,6 +64,11 @@ const CARD_W          = 400;
 const CARD_H          = 300;
 const CARD_QUALITY    = 85;
 
+// Thumbnail variant (gallery strip on product detail — displayed at 60×60, 120px for retina)
+const THUMB_W         = 120;
+const THUMB_H         = 120;
+const THUMB_QUALITY   = 80;
+
 // Collection / about / hero images (displayed full-width on pages)
 const HERO_MAX_W      = 1600;
 const HERO_MAX_H      = 1200;
@@ -174,6 +179,22 @@ async function generateCardVariant(filePath) {
   }
 }
 
+// ── Generate thumbnail variant (120px, for gallery strip on product detail) ─────
+async function generateThumbVariant(filePath) {
+  const outPath = filePath.replace(/\.(jpg|jpeg|png)$/i, '.webp').replace(/\.webp$/, '-120w.webp');
+  try {
+    const inputBuffer = await readFile(filePath);
+    const outputBuffer = await sharp(inputBuffer)
+      .resize(THUMB_W, THUMB_H, { fit: 'inside', withoutEnlargement: true })
+      .webp({ quality: THUMB_QUALITY, effort: 5 })
+      .toBuffer();
+    await writeFile(outPath, outputBuffer);
+    return { status: 'thumb_created', size: outputBuffer.length };
+  } catch (err) {
+    return { status: 'thumb_error', error: err.message };
+  }
+}
+
 // ── Main ──────────────────────────────────────────────────────────────────────
 async function main() {
   console.log('\n🔍  Scanning all images in /public/media/…');
@@ -195,6 +216,7 @@ async function main() {
   let skippedCount       = 0;
   let errorCount         = 0;
   let cardGenCount       = 0;
+  let thumbGenCount      = 0;
 
   for (const filePath of images) {
     // Use a relative key so the manifest works across machines
@@ -215,6 +237,22 @@ async function main() {
           console.log(`  🃏  ${cardKey}  → ${formatKB(cardResult.size)} (card variant)`);
         } else {
           console.error(`  ❌  ${cardKey}  CARD ERROR: ${cardResult.error}`);
+        }
+      }
+    }
+
+    // ── Thumb variant: generate for ALL product images (cover + gallery) ─────
+    if (isCover || key.startsWith('media/products/')) {
+      const thumbPath = filePath.replace(/\.(jpg|jpeg|png)$/i, '.webp').replace(/\.webp$/, '-120w.webp');
+      const thumbKey = key.replace(/\.(jpg|jpeg|png)$/i, '.webp').replace(/\.webp$/, '-120w.webp');
+      if (!manifest[thumbKey] && !existsSync(thumbPath)) {
+        const thumbResult = await generateThumbVariant(filePath);
+        if (thumbResult.status === 'thumb_created') {
+          thumbGenCount++;
+          manifest[thumbKey] = { size: thumbResult.size, date: new Date().toISOString() };
+          console.log(`  🖼️   ${thumbKey}  → ${formatKB(thumbResult.size)} (thumb variant)`);
+        } else {
+          console.error(`  ❌  ${thumbKey}  THUMB ERROR: ${thumbResult.error}`);
         }
       }
     }
@@ -255,12 +293,13 @@ async function main() {
   console.log(`  Total images scanned : ${images.length}`);
   console.log(`  Newly optimised      : ${optimisedCount}`);
   console.log(`  Card variants created: ${cardGenCount}`);
+  console.log(`  Thumb variants created: ${thumbGenCount}`);
   console.log(`  Already done, skipped: ${skippedCount}`);
   console.log(`  Errors               : ${errorCount}`);
   console.log(`  Total saved this run : ${totalSavedMB} MB`);
   console.log('────────────────────────────────────────\n');
 
-  if (optimisedCount > 0 || cardGenCount > 0) {
+  if (optimisedCount > 0 || cardGenCount > 0 || thumbGenCount > 0) {
     console.log('🚀  Done! Now rebuild and deploy your site.');
     console.log('    npm run build\n');
   } else if (skippedCount === images.length && cardGenCount === 0) {

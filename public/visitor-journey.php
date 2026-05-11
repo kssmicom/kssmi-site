@@ -14,24 +14,24 @@ require_once __DIR__ . '/api/vjt-helpers.php';
 define('PASSWORD_FILE', __DIR__ . '/.email_logs_password');
 define('ADMIN_EMAIL', 'kssmi@kssmi.com');
 
-function getPassword() {
-    $default = 'kssmi2024';
-    if (!file_exists(PASSWORD_FILE)) return $default;
+function getPasswordHash() {
+    if (!file_exists(PASSWORD_FILE)) return null;
     $content = @file_get_contents(PASSWORD_FILE);
-    if ($content === false) return $default;
-    $password = trim($content);
-    return !empty($password) ? $password : $default;
+    if ($content === false) return null;
+    $hash = trim($content);
+    return !empty($hash) ? $hash : null;
 }
 
-$PASSWORD = getPassword();
+$PASSWORD_HASH = getPasswordHash();
 $error = '';
 $message = '';
 
 // Handle login
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
     $submitted = trim($_POST['password']);
-    if ($submitted === $PASSWORD) {
+    if ($PASSWORD_HASH && password_verify($submitted, $PASSWORD_HASH)) {
         $_SESSION['email_logs_auth'] = true;
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
         setcookie('vjt_admin', '1', time() + 86400 * 7, '/', '', false, true);
         session_regenerate_id(true);
     } else {
@@ -71,19 +71,29 @@ function getSettings() {
 // ── Handle settings save ─────────────────────────────────────────────────────
 
 if ($isAuthenticated && isset($_POST['save_settings'])) {
-    vjt_save_settings($_POST);
-    $message = 'Settings saved.';
+    if (!isset($_POST['csrf_token']) || !isset($_SESSION['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+        $message = 'Security check failed. Please try again.';
+    } else {
+        $allowed = ['session_timeout', 'retention_days', 'enable_geo'];
+        $settings = array_intersect_key($_POST, array_flip($allowed));
+        vjt_save_settings($settings);
+        $message = 'Settings saved.';
+    }
 }
 
 // Handle data cleanup
 if ($isAuthenticated && isset($_POST['cleanup_data'])) {
-    $days = max(0, (int)($_POST['cleanup_days'] ?? 90));
-    if ($days === 0) {
-        vjt_wipe_all_data();
-        $message = 'All tracking data has been deleted.';
+    if (!isset($_POST['csrf_token']) || !isset($_SESSION['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+        $message = 'Security check failed. Please try again.';
     } else {
-        vjt_cleanup_old_data($days);
-        $message = 'Old data cleaned up (older than ' . $days . ' days).';
+        $days = max(0, (int)($_POST['cleanup_days'] ?? 90));
+        if ($days === 0) {
+            vjt_wipe_all_data();
+            $message = 'All tracking data has been deleted.';
+        } else {
+            vjt_cleanup_old_data($days);
+            $message = 'Old data cleaned up (older than ' . $days . ' days).';
+        }
     }
 }
 
@@ -1146,6 +1156,7 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                         <div class="panel-header">Settings</div>
                         <div class="panel-body">
                             <form method="POST">
+                                <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
                                 <div class="setting-row">
                                     <label>Session Timeout (minutes)</label>
                                     <input type="number" name="session_timeout" value="<?php echo htmlspecialchars($settings['session_timeout'] ?? '30'); ?>" min="1" max="525600">
@@ -1173,6 +1184,7 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                 Delete tracking data older than the specified number of days.
                             </p>
                             <form method="POST" onsubmit="return confirm('Delete old data? This cannot be undone.');" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+                                <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
                                 <input type="number" name="cleanup_days" value="<?php echo htmlspecialchars($settings['retention_days'] ?? '90'); ?>" min="0" max="3650" style="width:80px;padding:6px 10px;border:1px solid #ddd;border-radius:4px;font-size:13px;" required>
                                 <span style="color:#888;font-size:12px;">days (0 = delete all)</span>
                                 <button type="submit" name="cleanup_data" class="btn btn-danger">Clean Up Old Data</button>

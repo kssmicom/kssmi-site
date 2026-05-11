@@ -79,23 +79,23 @@ function getCountryName($code) {
     return isset($COUNTRY_NAMES[$code]) ? $COUNTRY_NAMES[$code] . ' (' . $code . ')' : $code;
 }
 
-// Get password - with better error handling
-function getPassword() {
-    $defaultPassword = 'kssmi2024';
+// Get password hash
+function getPasswordHash() {
     if (!file_exists(PASSWORD_FILE)) {
-        return $defaultPassword;
+        return null;
     }
     $content = @file_get_contents(PASSWORD_FILE);
     if ($content === false) {
-        return $defaultPassword;
+        return null;
     }
-    $password = trim($content);
-    return !empty($password) ? $password : $defaultPassword;
+    $hash = trim($content);
+    return !empty($hash) ? $hash : null;
 }
 
-// Set password - with better error handling
+// Set password (stores bcrypt hash)
 function setPassword($newPassword) {
-    $result = @file_put_contents(PASSWORD_FILE, $newPassword);
+    $hash = password_hash($newPassword, PASSWORD_BCRYPT);
+    $result = @file_put_contents(PASSWORD_FILE, $hash);
     if ($result === false) {
         return false;
     }
@@ -128,6 +128,14 @@ function saveResetTokens($tokens) {
         @chmod(RESET_TOKENS_FILE, 0600);
     }
     return $result !== false;
+}
+
+// CSRF protection
+function validateCSRF() {
+    if (!isset($_POST['csrf_token']) || !isset($_SESSION['csrf_token'])) {
+        return false;
+    }
+    return hash_equals($_SESSION['csrf_token'], $_POST['csrf_token']);
 }
 
 // Clean expired tokens (older than 1 hour)
@@ -206,7 +214,7 @@ function sendResetEmail($token) {
     }
 }
 
-$PASSWORD = getPassword();
+$PASSWORD_HASH = getPasswordHash();
 $error = '';
 $message = '';
 $passwordMessage = '';
@@ -274,8 +282,9 @@ if (isset($_GET['reset'])) {
 // Handle login
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password']) && !isset($_POST['change_password']) && !isset($_POST['reset_password'])) {
     $submittedPassword = trim($_POST['password']);
-    if ($submittedPassword === $PASSWORD) {
+    if ($PASSWORD_HASH && password_verify($submittedPassword, $PASSWORD_HASH)) {
         $_SESSION['email_logs_auth'] = true;
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
         setcookie('vjt_admin', '1', time() + 86400 * 7, '/', '', false, true);
         session_regenerate_id(true);
     } else {
@@ -300,28 +309,39 @@ if (isset($_SESSION['email_logs_auth']) && $_SESSION['email_logs_auth'] === true
 
 // Handle password change (when logged in)
 if ($isAuthenticated && isset($_POST['change_password'])) {
-    $newPass = trim($_POST['new_password']);
-    if (strlen($newPass) < 6) {
-        $passwordError = 'Password must be at least 6 characters';
+    if (!validateCSRF()) {
+        $passwordError = 'Security check failed. Please try again.';
     } else {
-        if (setPassword($newPass)) {
-            $PASSWORD = $newPass;
-            $passwordMessage = 'Password changed successfully! Please use the new password next time you login.';
+        $newPass = trim($_POST['new_password']);
+        if (strlen($newPass) < 6) {
+            $passwordError = 'Password must be at least 6 characters';
         } else {
-            $passwordError = 'Failed to save password. Please check file permissions.';
+            if (setPassword($newPass)) {
+                $PASSWORD_HASH = getPasswordHash();
+                $passwordMessage = 'Password changed successfully! Please use the new password next time you login.';
+            } else {
+                $passwordError = 'Failed to save password. Please check file permissions.';
+            }
         }
     }
 }
 
 // Handle clear logs
 if ($isAuthenticated && isset($_POST['clear_logs'])) {
-    file_put_contents(LOGS_FILE, '[]');
-    $message = 'All logs cleared';
+    if (!validateCSRF()) {
+        $error = 'Security check failed. Please try again.';
+    } else {
+        file_put_contents(LOGS_FILE, '[]');
+        $message = 'All logs cleared';
+    }
 }
 
 // Handle resend
 $resendMessage = '';
 if ($isAuthenticated && isset($_POST['resend_id'])) {
+    if (!validateCSRF()) {
+        $resendMessage = 'Security check failed. Please try again.';
+    } else {
     $resendId = $_POST['resend_id'];
     $logs = [];
     if (file_exists(LOGS_FILE)) {
@@ -343,10 +363,14 @@ if ($isAuthenticated && isset($_POST['resend_id'])) {
     }
 
     file_put_contents(LOGS_FILE, json_encode($logs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+    } // end CSRF check
 }
 
 // Handle delete single log
 if ($isAuthenticated && isset($_POST['delete_id'])) {
+    if (!validateCSRF()) {
+        $message = 'Security check failed. Please try again.';
+    } else {
     $deleteId = $_POST['delete_id'];
     $logs = [];
     if (file_exists(LOGS_FILE)) {
@@ -360,10 +384,14 @@ if ($isAuthenticated && isset($_POST['delete_id'])) {
 
     file_put_contents(LOGS_FILE, json_encode($logs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
     $message = 'Log entry deleted';
+    } // end CSRF check
 }
 
 // Handle bulk delete
 if ($isAuthenticated && isset($_POST['bulk_delete']) && isset($_POST['selected_ids'])) {
+    if (!validateCSRF()) {
+        $message = 'Security check failed. Please try again.';
+    } else {
     $selectedIds = $_POST['selected_ids'];
     $logs = [];
     if (file_exists(LOGS_FILE)) {
@@ -377,6 +405,7 @@ if ($isAuthenticated && isset($_POST['bulk_delete']) && isset($_POST['selected_i
 
     file_put_contents(LOGS_FILE, json_encode($logs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
     $message = count($selectedIds) . ' log entries deleted';
+    } // end CSRF check
 }
 
 // Load logs
@@ -854,6 +883,7 @@ function resendEmail($log) {
                 <div class="bulk-actions" id="bulkActionsBar" style="display:none;">
                     <span id="selectedCount">0</span> selected
                     <form method="POST" style="display:inline;" onsubmit="return confirm('Delete selected log entries?');" id="bulkDeleteForm">
+                        <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
                         <input type="hidden" name="bulk_delete" value="1">
                         <div id="selectedIdsContainer"></div>
                         <button type="submit" class="btn btn-danger btn-small">Delete Selected</button>
@@ -923,6 +953,7 @@ function resendEmail($log) {
                                     </td>
                                     <td onclick="event.stopPropagation();">
                                         <form method="POST" style="display:inline;" onsubmit="return confirm('Delete this log entry?');">
+                                            <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
                                             <input type="hidden" name="delete_id" value="<?php echo htmlspecialchars($logId); ?>">
                                             <button type="submit" class="btn btn-danger btn-small">Del</button>
                                         </form>
@@ -987,6 +1018,7 @@ function resendEmail($log) {
                                             <?php endif; ?>
                                             <div class="actions">
                                                 <form method="POST" style="display:inline;" onsubmit="return confirm('Resend this email to sales@kssmi.com?');">
+                                                    <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
                                                     <input type="hidden" name="resend_id" value="<?php echo htmlspecialchars($logId); ?>">
                                                     <button type="submit" class="btn btn-success">Resend</button>
                                                 </form>
@@ -1003,6 +1035,7 @@ function resendEmail($log) {
 
                 <div style="margin-top:20px;text-align:center;">
                     <form method="POST" onsubmit="return confirm('Clear all logs? This cannot be undone.');" style="display:inline;">
+                        <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
                         <button type="submit" name="clear_logs" class="btn btn-danger">Clear All Logs</button>
                     </form>
                 </div>
@@ -1017,6 +1050,7 @@ function resendEmail($log) {
                 <p class="error"><?php echo htmlspecialchars($passwordError); ?></p>
             <?php endif; ?>
             <form method="POST">
+                <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
                 <input type="password" name="new_password" placeholder="New password (min 6 characters)" required minlength="6">
                 <div class="modal-actions">
                     <button type="button" class="btn btn-secondary" onclick="document.getElementById('passwordModal').classList.remove('show')">Cancel</button>
