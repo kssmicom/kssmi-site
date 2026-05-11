@@ -3,7 +3,6 @@
 // Include this in Layout.astro before </body>
 
 const isDev = import.meta.env.DEV;
-const phpBase = isDev ? 'http://localhost:4325' : '';
 const trackerScriptUrl = isDev
   ? 'http://localhost:4325/js/vjt-tracker.js?v=9'
   : '/js/vjt-tracker.js?v=9';
@@ -45,4 +44,24 @@ const trackerScriptUrl = isDev
   </script>
 )}
 
-<script defer src={trackerScriptUrl}></script>
+<!-- Defer tracker script injection until after critical rendering (3s delay) -->
+<script is:inline>
+  (function() {
+    var loaded = false;
+    function injectTracker() {
+      if (loaded) return;
+      loaded = true;
+      var s = document.createElement('script');
+      s.src = '{trackerScriptUrl}';
+      s.defer = true;
+      document.head.appendChild(s);
+    }
+    // Load after 3s idle to avoid competing with critical rendering
+    setTimeout(injectTracker, 3000);
+    // Re-inject after View Transitions (config is already set by inline script above)
+    document.addEventListener('astro:page-load', function() {
+      loaded = false;
+      setTimeout(injectTracker, 1000);
+    });
+  })();
+</script>

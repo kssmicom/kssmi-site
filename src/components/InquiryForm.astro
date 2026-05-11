@@ -470,8 +470,16 @@ const currentUrl = Astro.url.pathname;
     return { ip: null, country: null };
   }
 
-  // Fetch IP on page load
-  fetchClientIP();
+  // Defer IP fetch until user first interacts with the form (avoids blocking page load)
+  let ipFetched = false;
+  document.addEventListener('focusin', function handler(e) {
+    const form = document.getElementById('inquiry-form');
+    if (form && form.contains(e.target) && !ipFetched) {
+      ipFetched = true;
+      fetchClientIP();
+      document.removeEventListener('focusin', handler);
+    }
+  });
 
   // Form elements helper
   function getFormElements() {
