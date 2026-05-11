@@ -36,12 +36,12 @@ export default defineConfig({
       {
         name: 'content-folder-watcher',
         configureServer(server) {
-          // ── Use plugin instance state (survives server.restart()) ──────────
-          if (!this._knownFolders) {
-            this._knownFolders = new Set();
-            this._restarting = false;
-            this._interval = null;
-          }
+          // ── Use closure state (survives server.restart()) ──────────────────
+          const state = {
+            knownFolders: new Set(),
+            restarting: false,
+            interval: null,
+          };
 
           const productsDir = path.resolve('./src/content/products');
           const collectionDir = path.resolve('./src/content/collection');
@@ -55,19 +55,13 @@ export default defineConfig({
           try {
             const entries = fs.readdirSync(productsDir, { withFileTypes: true });
             for (const entry of entries) {
-              if (entry.isDirectory()) this._knownFolders.add(entry.name);
+              if (entry.isDirectory()) state.knownFolders.add(entry.name);
             }
           } catch { /* ignore */ }
 
-          // ── Clear stale interval from any PREVIOUS server instance ────────
-          if (this._interval) {
-            clearInterval(this._interval);
-            this._interval = null;
-          }
-
           // ── Poll for new/removed product folders ─────────────────────────
-          this._interval = setInterval(() => {
-            if (this._restarting) return;
+          state.interval = setInterval(() => {
+            if (state.restarting) return;
 
             try {
               const currentFolders = new Set();
@@ -77,13 +71,13 @@ export default defineConfig({
               }
 
               for (const folder of currentFolders) {
-                if (!this._knownFolders.has(folder)) {
+                if (!state.knownFolders.has(folder)) {
                   console.log('\x1b[36m[Content]\x1b[0m New product detected: ' + folder);
                   queueRestart();
                   break;
                 }
               }
-              for (const folder of this._knownFolders) {
+              for (const folder of state.knownFolders) {
                 if (!currentFolders.has(folder)) {
                   console.log('\x1b[36m[Content]\x1b[0m Product removed: ' + folder);
                   queueRestart();
@@ -91,7 +85,7 @@ export default defineConfig({
                 }
               }
 
-              this._knownFolders = currentFolders;
+              state.knownFolders = currentFolders;
             } catch { /* ignore */ }
           }, 3000);
 
@@ -99,7 +93,7 @@ export default defineConfig({
           function queueRestart() {
             if (debounceTimer) return;
             debounceTimer = setTimeout(async () => {
-              this._restarting = true;
+              state.restarting = true;
               try {
                 if (fs.existsSync(cacheFile)) fs.unlinkSync(cacheFile);
                 if (fs.existsSync(cacheDir)) fs.rmSync(cacheDir, { recursive: true, force: true });
@@ -109,7 +103,7 @@ export default defineConfig({
               } catch (e) {
                 console.error('\x1b[31m[Content]\x1b[0m Restart failed:', e.message);
               }
-              this._restarting = false;
+              state.restarting = false;
               debounceTimer = null;
             }, 2000);
           }
@@ -145,9 +139,9 @@ export default defineConfig({
 
           // ── Cleanup interval when THIS server instance closes ────────────
           server.httpServer?.on('close', () => {
-            if (this._interval) {
-              clearInterval(this._interval);
-              this._interval = null;
+            if (state.interval) {
+              clearInterval(state.interval);
+              state.interval = null;
             }
           });
         }

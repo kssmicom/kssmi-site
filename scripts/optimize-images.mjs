@@ -242,7 +242,7 @@ async function main() {
     }
 
     // ── Thumb variant: generate for ALL product images (cover + gallery) ─────
-    if (isCover || key.startsWith('media/products/')) {
+    if ((isCover || key.startsWith('media/products/')) && !key.includes('-400') && !key.includes('-120w')) {
       const thumbPath = filePath.replace(/\.(jpg|jpeg|png)$/i, '.webp').replace(/\.webp$/, '-120w.webp');
       const thumbKey = key.replace(/\.(jpg|jpeg|png)$/i, '.webp').replace(/\.webp$/, '-120w.webp');
       if (!manifest[thumbKey] && !existsSync(thumbPath)) {
