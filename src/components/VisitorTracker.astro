@@ -45,14 +45,14 @@ const trackerScriptUrl = isDev
 )}
 
 <!-- Defer tracker script injection until after critical rendering (3s delay) -->
-<script is:inline>
+<script is:inline define:vars={{ trackerScriptUrl }}>
   (function() {
     var loaded = false;
     function injectTracker() {
       if (loaded) return;
       loaded = true;
       var s = document.createElement('script');
-      s.src = '{trackerScriptUrl}';
+      s.src = trackerScriptUrl;
       s.defer = true;
       document.head.appendChild(s);
     }
