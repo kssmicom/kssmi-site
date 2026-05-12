@@ -23,11 +23,26 @@ if (file_exists($_privateConfigPath)) {
     $_privateCfg = ['smtp_pass' => '', 'turnstile_secret' => ''];
 }
 
-// Password configuration - use absolute path
-define('PASSWORD_FILE', dirname(__FILE__) . '/.email_logs_password');
+// File paths — sensitive files stored ABOVE public_html (NOT accessible via browser)
+// Old paths (inside public_html) kept for migration; new paths are one level up
+define('PASSWORD_FILE_OLD', dirname(__FILE__) . '/.email_logs_password');
+define('PASSWORD_FILE', dirname(__DIR__) . '/.email_logs_password');
 define('LOGS_FILE', dirname(dirname(__FILE__)) . '/email-logs.json');
-define('RESET_TOKENS_FILE', dirname(__FILE__) . '/.email_reset_tokens.json');
+define('RESET_TOKENS_FILE_OLD', dirname(__FILE__) . '/.email_reset_tokens.json');
+define('RESET_TOKENS_FILE', dirname(__DIR__) . '/.email_reset_tokens.json');
 define('ADMIN_EMAIL', 'kssmi@kssmi.com');
+
+// Migrate sensitive files from public_html to the safe directory above it
+foreach ([
+    [PASSWORD_FILE_OLD, PASSWORD_FILE, '.email_logs_password (bcrypt hash)'],
+    [RESET_TOKENS_FILE_OLD, RESET_TOKENS_FILE, '.email_reset_tokens.json (reset tokens)'],
+] as [$oldPath, $newPath, $label]) {
+    if (file_exists($oldPath) && !file_exists($newPath)) {
+        @rename($oldPath, $newPath);
+        @chmod($newPath, 0600);
+        error_log('KSSMI: Migrated ' . $label . ' outside public_html');
+    }
+}
 
 // Country code to name mapping
 $COUNTRY_NAMES = [
@@ -79,17 +94,24 @@ function getCountryName($code) {
     return isset($COUNTRY_NAMES[$code]) ? $COUNTRY_NAMES[$code] . ' (' . $code . ')' : $code;
 }
 
-// Get password hash
+// Get password hash (try new safe path first, fall back to old path)
 function getPasswordHash() {
-    if (!file_exists(PASSWORD_FILE)) {
-        return null;
+    if (file_exists(PASSWORD_FILE)) {
+        $content = @file_get_contents(PASSWORD_FILE);
+        if ($content !== false) {
+            $hash = trim($content);
+            if (!empty($hash)) return $hash;
+        }
     }
-    $content = @file_get_contents(PASSWORD_FILE);
-    if ($content === false) {
-        return null;
+    // Fallback: file may not have been migrated yet (rename failed or hasn't run)
+    if (file_exists(PASSWORD_FILE_OLD)) {
+        $content = @file_get_contents(PASSWORD_FILE_OLD);
+        if ($content !== false) {
+            $hash = trim($content);
+            if (!empty($hash)) return $hash;
+        }
     }
-    $hash = trim($content);
-    return !empty($hash) ? $hash : null;
+    return null;
 }
 
 // Set password (stores bcrypt hash)
@@ -108,17 +130,24 @@ function generateResetToken() {
     return bin2hex(random_bytes(32));
 }
 
-// Get reset tokens
+// Get reset tokens (try new safe path first, fall back to old path)
 function getResetTokens() {
-    if (!file_exists(RESET_TOKENS_FILE)) {
-        return [];
+    if (file_exists(RESET_TOKENS_FILE)) {
+        $content = @file_get_contents(RESET_TOKENS_FILE);
+        if ($content !== false) {
+            $tokens = json_decode($content, true);
+            if (is_array($tokens)) return $tokens;
+        }
     }
-    $content = @file_get_contents(RESET_TOKENS_FILE);
-    if ($content === false) {
-        return [];
+    // Fallback: file may not have been migrated yet
+    if (file_exists(RESET_TOKENS_FILE_OLD)) {
+        $content = @file_get_contents(RESET_TOKENS_FILE_OLD);
+        if ($content !== false) {
+            $tokens = json_decode($content, true);
+            if (is_array($tokens)) return $tokens;
+        }
     }
-    $tokens = json_decode($content, true);
-    return is_array($tokens) ? $tokens : [];
+    return [];
 }
 
 // Save reset tokens
@@ -152,66 +181,93 @@ function cleanExpiredTokens() {
     return $validTokens;
 }
 
-// Send reset email via PHPMailer
+// Send reset email via PHPMailer with PHP mail() fallback
 function sendResetEmail($token) {
+    global $_privateCfg;
+
+    $resetUrl = 'https://kssmi.com/email-logs.php?reset=' . $token;
+
+    $htmlBody = "
+    <html>
+    <body style='font-family: -apple-system, BlinkMacSystemFont,Segoe UI,Roboto,sans-serif; padding: 20px;'>
+        <div style='max-width: 600px; margin: 0 auto; background: #fff; border-radius: 8px; padding: 30px; border: 1px solid #e0e0e0;'>
+            <h2 style='color: #5D4E37; margin-bottom: 20px;'>Password Reset Request</h2>
+            <p style='color: #333; line-height: 1.6;'>Someone requested to reset the password for the KSSMI Email Logs admin panel.</p>
+            <p style='color: #333; line-height: 1.6;'>Click the button below to set a new password:</p>
+            <p style='margin: 30px 0;'>
+                <a href='{$resetUrl}' style='background: #8B7355; color: white; padding: 12px 30px; text-decoration: none; border-radius: 4px; display: inline-block;'>Reset Password</a>
+            </p>
+            <p style='color: #666; font-size: 14px;'>Or copy this link to your browser:</p>
+            <p style='background: #f5f5f5; padding: 10px; border-radius: 4px; word-break: break-all; font-size: 12px;'>{$resetUrl}</p>
+            <hr style='margin: 30px 0; border: none; border-top: 1px solid #eee;'>
+            <p style='color: #999; font-size: 12px;'>
+                This link will expire in <strong>1 hour</strong>.<br>
+                If you did not request this reset, you can safely ignore this email.
+            </p>
+        </div>
+    </body>
+    </html>";
+
+    $textBody = "Password Reset Request\n\nClick this link to reset your password:\n{$resetUrl}\n\nThis link expires in 1 hour.";
+
+    $headers = [
+        'From: KSSMI Website <kssmi@kssmi.com>',
+        'Reply-To: kssmi@kssmi.com',
+        'X-Mailer: PHP/' . phpversion(),
+        'MIME-Version: 1.0',
+        'Content-Type: text/html; charset=UTF-8',
+    ];
+
+    // Try PHPMailer SMTP first
     $phpmailerPath = __DIR__ . '/vendor/phpmailer/phpmailer/src/';
+    $smtpTried = false;
 
-    if (!file_exists($phpmailerPath . 'PHPMailer.php')) {
-        return ['success' => false, 'error' => 'PHPMailer not installed'];
+    if (file_exists($phpmailerPath . 'PHPMailer.php') && !empty($_privateCfg['smtp_pass'])) {
+        require_once $phpmailerPath . 'Exception.php';
+        require_once $phpmailerPath . 'PHPMailer.php';
+        require_once $phpmailerPath . 'SMTP.php';
+
+        try {
+            $mail = new PHPMailer\PHPMailer\PHPMailer(true);
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'kssmi@kssmi.com';
+            $mail->Password = $_privateCfg['smtp_pass'];
+            $mail->SMTPSecure = 'tls';
+            $mail->Port = 587;
+
+            $mail->setFrom('kssmi@kssmi.com', 'KSSMI Website');
+            $mail->addAddress(ADMIN_EMAIL);
+
+            $mail->isHTML(true);
+            $mail->Subject = 'Password Reset Request - KSSMI Email Logs';
+            $mail->Body = $htmlBody;
+            $mail->AltBody = $textBody;
+
+            $mail->Timeout = 30;
+            $mail->send();
+
+            return ['success' => true];
+        } catch (Exception $e) {
+            $smtpTried = true;
+            $smtpError = $e->getMessage();
+            // Fall through to mail() fallback
+        }
     }
 
-    require_once $phpmailerPath . 'Exception.php';
-    require_once $phpmailerPath . 'PHPMailer.php';
-    require_once $phpmailerPath . 'SMTP.php';
+    // Fallback: use PHP's built-in mail() (works with server's local MTA)
+    $sent = @mail(ADMIN_EMAIL, 'Password Reset Request - KSSMI Email Logs', $htmlBody, implode("\r\n", $headers));
 
-    try {
-        $mail = new PHPMailer\PHPMailer\PHPMailer(true);
-        $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
-        $mail->SMTPAuth = true;
-        $mail->Username = 'kssmi@kssmi.com';
-        $mail->Password = $_privateCfg['smtp_pass'];
-        $mail->SMTPSecure = 'tls';
-        $mail->Port = 587;
-
-        $mail->setFrom('kssmi@kssmi.com', 'KSSMI Website');
-        $mail->addAddress(ADMIN_EMAIL);
-
-        $resetUrl = 'https://kssmi.com/email-logs.php?reset=' . $token;
-
-        $mail->isHTML(true);
-        $mail->Subject = 'Password Reset Request - KSSMI Email Logs';
-
-        $mail->Body = "
-        <html>
-        <body style='font-family: -apple-system, BlinkMacSystemFont,Segoe UI,Roboto,sans-serif; padding: 20px;'>
-            <div style='max-width: 600px; margin: 0 auto; background: #fff; border-radius: 8px; padding: 30px; border: 1px solid #e0e0e0;'>
-                <h2 style='color: #5D4E37; margin-bottom: 20px;'>Password Reset Request</h2>
-                <p style='color: #333; line-height: 1.6;'>Someone requested to reset the password for the KSSMI Email Logs admin panel.</p>
-                <p style='color: #333; line-height: 1.6;'>Click the button below to set a new password:</p>
-                <p style='margin: 30px 0;'>
-                    <a href='{$resetUrl}' style='background: #8B7355; color: white; padding: 12px 30px; text-decoration: none; border-radius: 4px; display: inline-block;'>Reset Password</a>
-                </p>
-                <p style='color: #666; font-size: 14px;'>Or copy this link to your browser:</p>
-                <p style='background: #f5f5f5; padding: 10px; border-radius: 4px; word-break: break-all; font-size: 12px;'>{$resetUrl}</p>
-                <hr style='margin: 30px 0; border: none; border-top: 1px solid #eee;'>
-                <p style='color: #999; font-size: 12px;'>
-                    This link will expire in <strong>1 hour</strong>.<br>
-                    If you did not request this reset, you can safely ignore this email.
-                </p>
-            </div>
-        </body>
-        </html>";
-
-        $mail->AltBody = "Password Reset Request\n\nClick this link to reset your password:\n{$resetUrl}\n\nThis link expires in 1 hour.";
-
-        $mail->Timeout = 30;
-        $mail->send();
-
-        return ['success' => true];
-    } catch (Exception $e) {
-        return ['success' => false, 'error' => $e->getMessage()];
+    if ($sent) {
+        return ['success' => true, 'fallback' => true];
     }
+
+    $errorDetail = $smtpTried
+        ? 'SMTP Error: ' . $smtpError . '; mail() fallback also failed.'
+        : 'PHPMailer not installed and mail() failed.';
+
+    return ['success' => false, 'error' => $errorDetail];
 }
 
 $PASSWORD_HASH = getPasswordHash();
@@ -575,68 +631,82 @@ This email was automatically generated from the KSSMI Eyewear contact form.
 ";
 }
 
-// Resend function
+// Resend function (with PHP mail() fallback)
 function resendEmail($log) {
-    $config = [
-        'to_email' => 'sales@kssmi.com',
-        'to_name' => 'KSSMI Sales Team',
-        'from_email' => 'kssmi@kssmi.com',
-        'from_name' => 'Kssmi Eyewear',
-        'smtp' => [
-            'host' => 'smtp.gmail.com',
-            'port' => 587,
-            'user' => 'kssmi@kssmi.com',
-            'pass' => $_privateCfg['smtp_pass'],
-            'secure' => 'tls',
-        ],
+    global $_privateCfg;
+
+    $formData = $log['form_data'] ?? [];
+    $name = $formData['name'] ?? 'Unknown';
+    $inquiryId = '#' . strtoupper(substr($log['id'] ?? uniqid(), -4));
+    $ip = $log['ip_address'] ?? 'Unknown';
+    $country = $log['country'] ?? 'Unknown';
+    $origTime = $log['timestamp'] ?? 'Unknown';
+
+    $htmlBody = buildResendHtmlEmail($formData, $ip, $country, $inquiryId, $origTime);
+    $textBody = buildResendTextEmail($formData, $ip, $country, $inquiryId, $origTime);
+
+    $headers = [
+        'From: Kssmi Eyewear <kssmi@kssmi.com>',
+        'Reply-To: kssmi@kssmi.com',
+        'X-Mailer: PHP/' . phpversion(),
+        'MIME-Version: 1.0',
+        'Content-Type: text/html; charset=UTF-8',
     ];
 
+    // Try PHPMailer SMTP first
     $phpmailerPath = __DIR__ . '/vendor/phpmailer/phpmailer/src/';
+    $smtpTried = false;
 
-    if (!file_exists($phpmailerPath . 'PHPMailer.php')) {
-        return ['success' => false, 'error' => 'PHPMailer not installed'];
-    }
+    if (file_exists($phpmailerPath . 'PHPMailer.php') && !empty($_privateCfg['smtp_pass'])) {
+        require_once $phpmailerPath . 'Exception.php';
+        require_once $phpmailerPath . 'PHPMailer.php';
+        require_once $phpmailerPath . 'SMTP.php';
 
-    require_once $phpmailerPath . 'Exception.php';
-    require_once $phpmailerPath . 'PHPMailer.php';
-    require_once $phpmailerPath . 'SMTP.php';
+        try {
+            $mail = new PHPMailer\PHPMailer\PHPMailer(true);
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'kssmi@kssmi.com';
+            $mail->Password = $_privateCfg['smtp_pass'];
+            $mail->SMTPSecure = 'tls';
+            $mail->Port = 587;
 
-    try {
-        $mail = new PHPMailer\PHPMailer\PHPMailer(true);
-        $mail->isSMTP();
-        $mail->Host = $config['smtp']['host'];
-        $mail->SMTPAuth = true;
-        $mail->Username = $config['smtp']['user'];
-        $mail->Password = $config['smtp']['pass'];
-        $mail->SMTPSecure = $config['smtp']['secure'];
-        $mail->Port = $config['smtp']['port'];
+            $mail->setFrom('kssmi@kssmi.com', 'Kssmi Eyewear');
+            $mail->addAddress('sales@kssmi.com', 'KSSMI Sales Team');
 
-        $mail->setFrom($config['from_email'], $config['from_name']);
-        $mail->addAddress($config['to_email'], $config['to_name']);
+            if (!empty($formData['email'])) {
+                $mail->addReplyTo($formData['email'], $formData['name'] ?? '');
+            }
 
-        $formData = $log['form_data'] ?? [];
-        if (!empty($formData['email'])) {
-            $mail->addReplyTo($formData['email'], $formData['name'] ?? '');
+            $mail->isHTML(true);
+            $mail->Subject = "{$name} - Kssmi Eyewear - {$inquiryId}";
+            $mail->Body = $htmlBody;
+            $mail->AltBody = $textBody;
+
+            $mail->Timeout = 30;
+            $mail->send();
+
+            return ['success' => true];
+        } catch (Exception $e) {
+            $smtpTried = true;
+            $smtpError = $e->getMessage();
+            // Fall through to mail() fallback
         }
-
-        $name = $formData['name'] ?? 'Unknown';
-        $inquiryId = '#' . strtoupper(substr($log['id'] ?? uniqid(), -4));
-        $ip = $log['ip_address'] ?? 'Unknown';
-        $country = $log['country'] ?? 'Unknown';
-        $origTime = $log['timestamp'] ?? 'Unknown';
-
-        $mail->isHTML(true);
-        $mail->Subject = "{$name} - Kssmi Eyewear - {$inquiryId}";
-        $mail->Body = buildResendHtmlEmail($formData, $ip, $country, $inquiryId, $origTime);
-        $mail->AltBody = buildResendTextEmail($formData, $ip, $country, $inquiryId, $origTime);
-
-        $mail->Timeout = 30;
-        $mail->send();
-
-        return ['success' => true];
-    } catch (Exception $e) {
-        return ['success' => false, 'error' => $e->getMessage()];
     }
+
+    // Fallback: use PHP's built-in mail()
+    $sent = @mail('sales@kssmi.com', "{$name} - Kssmi Eyewear - {$inquiryId}", $htmlBody, implode("\r\n", $headers));
+
+    if ($sent) {
+        return ['success' => true, 'fallback' => true];
+    }
+
+    $errorDetail = $smtpTried
+        ? 'SMTP Error: ' . $smtpError . '; mail() fallback also failed.'
+        : 'PHPMailer not installed and mail() failed.';
+
+    return ['success' => false, 'error' => $errorDetail];
 }
 ?>
 <!DOCTYPE html>
