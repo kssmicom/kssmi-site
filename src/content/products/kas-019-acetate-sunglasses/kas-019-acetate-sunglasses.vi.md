@@ -1,11 +1,11 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Kính mát Acetate cao cấp tùy chỉnh"
+title: "Kính mát Axit cao cấp tùy chỉnh"
 slug: "kas-019-acetate-sunglasses"
 itemNo: "KAS-019"
 date: "2026-05-10"
 colors: "Đen, Xanh sữa, Nâu trong suốt"
-materials: "Acetate Mazzucchelli & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
+materials: "Axit Mazzucchelli & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100cái/màu)"
 
@@ -16,7 +16,7 @@ series: "sunglasses, acetate-sunglasses, luxury-eyewear, luxury-acetate-sunglass
 
 # ─────────────────────────────────────────────────────
 size: "50-21-140mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng và càng kính Acetate cao cấp"
+frameMaterial: "Gọng và càng kính Axit cao cấp"
 lensMaterial: "Tròng kính Nylon bền bỉ & Tùy chỉnh theo yêu cầu"
 designStyle: "Độc đáo, Phong cách, Thời thượng, Sang trọng, Unisex"
 nosePads: "Đệm mũi liền khối"
@@ -34,14 +34,14 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Kính mát Acetate sang trọng phong cách KAS-019 | Nhà cung cấp bán sỉ"
-seoDescription: "Nâng tầm danh mục nhãn hiệu riêng của bạn với kính mát acetate sang trọng KAS-019. Sử dụng acetate Mazzucchelli cao cấp và MOQ 300 chiếc với tùy chỉnh OEM/ODM toàn diện."
-seoKeywords: "nhà sản xuất kính mát acetate, kính mát OEM tùy chỉnh, kính mắt nhãn hiệu riêng sang trọng, nhà máy kính mắt acetate Trung Quốc, gọng kính acetate thiết kế riêng, nhà cung cấp kính mát cao cấp, kính mát unisex có thể tùy chỉnh, sản xuất kính mắt Trung Quốc"
+seoTitle: "Kính mát Axit sang trọng phong cách KAS-019 | Nhà cung cấp bán sỉ"
+seoDescription: "Nâng tầm danh mục nhãn hiệu riêng của bạn với kính mát axit sang trọng KAS-019. Sử dụng axit Mazzucchelli cao cấp và MOQ 300 chiếc với tùy chỉnh OEM/ODM toàn diện."
+seoKeywords: "nhà sản xuất kính mát axit, kính mát OEM tùy chỉnh, kính mắt nhãn hiệu riêng sang trọng, nhà máy kính mắt axit Trung Quốc, gọng kính axit thiết kế riêng, nhà cung cấp kính mát cao cấp, kính mát unisex có thể tùy chỉnh, sản xuất kính mắt Trung Quốc"
 ---
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Cấu tạo từ acetate Mazzucchelli và JINYU cấp cao mang lại gọng kính nhẹ nhưng bền bỉ với độ sâu màu sắc rực rỡ.
+- **Chất liệu cao cấp:** Cấu tạo từ axit Mazzucchelli và JINYU cấp cao mang lại gọng kính nhẹ nhưng bền bỉ với độ sâu màu sắc rực rỡ.
 - **Kỹ thuật chính xác:** Bản lề 3+2 chấu tùy chỉnh (có thể nâng cấp lên 5 chấu hoặc bản lề lò xo) được thiết kế để vận hành êm ái lâu dài.
 - **Quang học hiệu suất cao:** Tròng kính nylon bền bỉ mang lại khả năng chống va đập vượt trội và độ rõ nét đặc biệt cho các tiêu chuẩn kính mắt cao cấp.
 - **Thoải mái công thái học:** Đệm mũi liền khối được thiết kế để mang lại sự cân bằng, không gây dị ứng khi sử dụng hàng ngày trong thời gian dài.
@@ -59,7 +59,7 @@ seoKeywords: "nhà sản xuất kính mát acetate, kính mát OEM tùy chỉnh,
 
 ## Tổng quan
 
-Các tiêu chuẩn kính mắt sang trọng được đáp ứng thông qua việc sử dụng acetate Mazzucchelli và JINYU cao cấp, mang lại cho gọng kính này sự sống động về màu sắc sâu sắc và lớp hoàn thiện nhẹ nhàng.
+Các tiêu chuẩn kính mắt sang trọng được đáp ứng thông qua việc sử dụng axit Mazzucchelli và JINYU cao cấp, mang lại cho gọng kính này sự sống động về màu sắc sâu sắc và lớp hoàn thiện nhẹ nhàng.
 
 Bản lề 3+2 chấu chính xác hoạt động cùng với đệm mũi liền khối để mang lại trải nghiệm ổn định, thoải mái cao, phù hợp để đeo hàng ngày trong thời gian dài.
 

@@ -1,11 +1,11 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Kính mát Acetate Tùy chỉnh"
+title: "Kính mát Axit Tùy chỉnh"
 slug: "kas-317-acetate-sunglasses"
 itemNo: "KAS-317"
 date: "2026-05-12"
 colors: "Trong suốt & Màu mật ong & Sâm panh & Đồi mồi & Đen"
-materials: "Acetate Mazzucchelli & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
+materials: "Axit Mazzucchelli & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -16,7 +16,7 @@ series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sungla
 
 # ─────────────────────────────────────────────────────
 size: "48-22-145mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng và càng kính Acetate cao cấp"
+frameMaterial: "Gọng và càng kính Axit cao cấp"
 lensMaterial: "Tròng kính Nylon bền bỉ & Tùy chỉnh theo yêu cầu"
 designStyle: "Độc đáo, Sang trọng, Thời trang, Hợp thời, Cổ điển, Unisex"
 nosePads: "Đệm mũi liền khối"
@@ -51,14 +51,14 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAS-317 Kính mát Acetate cổ điển độc đáo | Nhà sản xuất theo yêu cầu"
-seoDescription: "Nâng tầm danh mục kính mắt xa xỉ của bạn với kính mát acetate KAS-317 có thể tùy chỉnh. Gọng Mazzucchelli đánh bóng thủ công với bản lề 4+3 barrel bền bỉ. MOQ 300 OEM."
-seoKeywords: "kính mát acetate Mazzucchelli, nhà sản xuất kính mắt tùy chỉnh, sản xuất thương hiệu thời trang xa xỉ, kính mát acetate thời trang, nhà máy kính mắt Trung Quốc, nhà cung cấp kính mát bán sỉ, sản xuất kính mắt có thể tùy chỉnh, gọng acetate thiết kế riêng"
+seoTitle: "KAS-317 Kính mát Axit cổ điển độc đáo | Nhà sản xuất theo yêu cầu"
+seoDescription: "Nâng tầm danh mục kính mắt xa xỉ của bạn với kính mát axit KAS-317 có thể tùy chỉnh. Gọng Mazzucchelli đánh bóng thủ công với bản lề 4+3 barrel bền bỉ. MOQ 300 OEM."
+seoKeywords: "kính mát axit Mazzucchelli, nhà sản xuất kính mắt tùy chỉnh, sản xuất thương hiệu thời trang xa xỉ, kính mát axit thời trang, nhà máy kính mắt Trung Quốc, nhà cung cấp kính mát bán sỉ, sản xuất kính mắt có thể tùy chỉnh, gọng axit thiết kế riêng"
 ---
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Cấu tạo từ Acetate Mazzucchelli và JINYU cao cấp, mang lại vẻ ngoài sống động, nhẹ nhàng và bền bỉ cho thời gian sử dụng lâu dài.
+- **Chất liệu cao cấp:** Cấu tạo từ Axit Mazzucchelli và JINYU cao cấp, mang lại vẻ ngoài sống động, nhẹ nhàng và bền bỉ cho thời gian sử dụng lâu dài.
 - **Phụ kiện chắc chắn:** Bản lề cấu trúc 4+3 barrel được thiết kế chính xác để vận hành trơn tru và có độ bền cao, có sẵn tùy chọn nâng cấp lên 5 barrel và bản lề lò xo.
 - **Thấu kính hiệu suất cao:** Tròng kính Nylon bền bỉ cung cấp độ rõ nét vượt trội và khả năng chống va đập với các tùy chọn tùy chỉnh đa dạng cho màu sắc và lớp phủ tròng kính.
 - **Sự thoải mái tối ưu:** Đệm mũi liền khối được thiết kế để vừa vặn hoàn hảo và mang lại sự thoải mái tối đa suốt cả ngày cho nhiều kiểu khuôn mặt khác nhau.
@@ -76,8 +76,8 @@ seoKeywords: "kính mát acetate Mazzucchelli, nhà sản xuất kính mắt tù
 
 ## Tổng quan
 
-Sự tinh tế kết hợp với độ bền trong cấu trúc cao cấp này, nơi Acetate Mazzucchelli và JINYU được đánh bóng thủ công mang lại vẻ đẹp phong phú, đa tầng và chống phai màu. Trọng lượng nhẹ của gọng kính đảm bảo thiết kế táo bạo, thời thượng vẫn luôn thoải mái khi sử dụng hàng ngày trong thời gian dài.
+Sự tinh tế kết hợp với độ bền trong cấu trúc cao cấp này, nơi Axit Mazzucchelli và JINYU được đánh bóng thủ công mang lại vẻ đẹp phong phú, đa tầng và chống phai màu. Trọng lượng nhẹ của gọng kính đảm bảo thiết kế táo bạo, thời thượng vẫn luôn thoải mái khi sử dụng hàng ngày trong thời gian dài.
 
 Bản lề 4+3 barrel cấp công nghiệp cung cấp cơ chế đóng mở chắc chắn và đáng tin cậy, trong khi thông số kỹ thuật 48-22-145mm được tính toán kỹ lưỡng mang lại sự vừa vặn unisex linh hoạt, phù hợp với nhiều sở thích khác nhau của thị trường toàn cầu.
 
-Hỗ trợ phát triển sản phẩm hoàn toàn theo yêu cầu thông qua dịch vụ OEM và ODM của chúng tôi, KAS-317 được tối ưu hóa cho các thương hiệu xa xỉ đang tìm kiếm mức MOQ 300 chiếc để ra mắt các bộ sưu tập acetate hiệu suất cao và độc quyền.
+Hỗ trợ phát triển sản phẩm hoàn toàn theo yêu cầu thông qua dịch vụ OEM và ODM của chúng tôi, KAS-317 được tối ưu hóa cho các thương hiệu xa xỉ đang tìm kiếm mức MOQ 300 chiếc để ra mắt các bộ sưu tập axit hiệu suất cao và độc quyền.

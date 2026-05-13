@@ -1,11 +1,11 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Gọng Kính Cận Acetate Tùy Chỉnh"
+title: "Gọng Kính Cận Axit Tùy Chỉnh"
 slug: "kao-158-acetate-optical-frame"
 itemNo: "KAO-158"
 date: "2026-05-10"
 colors: "Đen, Đỏ, Xanh lá"
-materials: "Acetate Mazzucchelli & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
+materials: "Axit Mazzucchelli & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -16,7 +16,7 @@ series: "optical-frames, fashion-eyewear, acetate-optical-frames, fashion-acetat
 
 # ─────────────────────────────────────────────────────
 size: "55-17-145mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng và Càng kính Acetate cao cấp"
+frameMaterial: "Gọng và Càng kính Axit cao cấp"
 lensMaterial: "Tròng kính Nylon bền bỉ & Tùy chỉnh theo yêu cầu"
 designStyle: "Táo bạo, Độc đáo, Cổ điển, Phong cách, Xu hướng, Xa xỉ, Unisex"
 nosePads: "Đệm mũi liền khối"
@@ -43,14 +43,14 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Gọng Kính Cận Acetate Unisex Táo Bạo KAO-158 | Nhà Bán Sỉ"
-seoDescription: "Hợp tác với nhà sản xuất hàng đầu cho gọng kính cận acetate unisex KAO-158 táo bạo. Acetate Mazzucchelli chất lượng cao, MOQ 300 và hỗ trợ OEM/ODM toàn diện."
-seoKeywords: "nhà sản xuất gọng kính cận acetate, xưởng kính mắt unisex tùy chỉnh, gọng acetate Mazzucchelli cao cấp, bán sỉ kính mắt Trung Quốc, nhà cung cấp kính mắt nhãn hiệu riêng, kính acetate có thể tùy chỉnh, sản xuất gọng kính theo đơn đặt hàng, nhà sản xuất kính mắt xa xỉ Trung Quốc"
+seoTitle: "Gọng Kính Cận Axit Unisex Táo Bạo KAO-158 | Nhà Bán Sỉ"
+seoDescription: "Hợp tác với nhà sản xuất hàng đầu cho gọng kính cận axit unisex KAO-158 táo bạo. Axit Mazzucchelli chất lượng cao, MOQ 300 và hỗ trợ OEM/ODM toàn diện."
+seoKeywords: "nhà sản xuất gọng kính cận axit, xưởng kính mắt unisex tùy chỉnh, gọng axit Mazzucchelli cao cấp, bán sỉ kính mắt Trung Quốc, nhà cung cấp kính mắt nhãn hiệu riêng, kính axit có thể tùy chỉnh, sản xuất gọng kính theo đơn đặt hàng, nhà sản xuất kính mắt xa xỉ Trung Quốc"
 ---
 
 ## Đặc điểm
 
-- **Cấu trúc Acetate cao cấp:** Acetate Mazzucchelli và JINYU cấp cao mang lại lớp hoàn thiện nhẹ, rực rỡ và được đánh bóng thủ công cho tính thẩm mỹ xa xỉ.
+- **Cấu trúc Axit cao cấp:** Axit Mazzucchelli và JINYU cấp cao mang lại lớp hoàn thiện nhẹ, rực rỡ và được đánh bóng thủ công cho tính thẩm mỹ xa xỉ.
 - **Phụ kiện kỹ thuật:** Bản lề cấu trúc đinh tán 3+2 chính xác được thiết kế để vận hành trơn tru nhất quán và tăng cường tuổi thọ của gọng kính.
 - **Quang học vượt trội:** Tròng kính nylon bền bỉ mang lại độ rõ nét và độ bền đặc biệt, với khả năng nhuộm màu và phủ lớp bảo vệ tùy chỉnh rộng rãi.
 - **Công thái học liền mạch:** Đệm mũi liền khối được thiết kế để mang lại sự ổn định, thoải mái, bổ sung cho thiết kế unisex táo bạo.
@@ -67,7 +67,7 @@ seoKeywords: "nhà sản xuất gọng kính cận acetate, xưởng kính mắt
 
 ## Tổng quan
 
-Mẫu gọng unisex táo bạo này sử dụng acetate Mazzucchelli và JINYU được đánh bóng thủ công để đạt được lớp hoàn thiện sâu, rực rỡ, đáp ứng các tiêu chuẩn khắt khe của các nhà thời trang xa xỉ.
+Mẫu gọng unisex táo bạo này sử dụng axit Mazzucchelli và JINYU được đánh bóng thủ công để đạt được lớp hoàn thiện sâu, rực rỡ, đáp ứng các tiêu chuẩn khắt khe của các nhà thời trang xa xỉ.
 
 Được thiết kế với cấu trúc bản lề đinh tán 3+2 được lắp vừa vặn chính xác, KAO-158 đảm bảo độ tin cậy cơ học lâu dài và độ ổn định cấu trúc cho việc đeo hàng ngày.
 

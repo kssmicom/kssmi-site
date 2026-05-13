@@ -1,11 +1,11 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Gọng Kính Cận Acetate Tùy Chỉnh"
+title: "Gọng Kính Cận Axit Tùy Chỉnh"
 slug: "kao-312-acetate-optical-frame"
 itemNo: "KAO-312"
 date: "2026-05-10"
 colors: "Đen & Xanh Néon & Spark & Havana & Đồi mồi đỏ"
-materials: "Acetate Mazzucchelli Cao Cấp & Acetate JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Axit Mazzucchelli Cao Cấp & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -16,7 +16,7 @@ series: "optical-frames, fashion-eyewear, acetate-optical-frames, fashion-acetat
 
 # ─────────────────────────────────────────────────────
 size: "53-19-145mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng và Càng kính Acetate Cao Cấp"
+frameMaterial: "Gọng và Càng kính Axit Cao Cấp"
 lensMaterial: "Tròng kính Nylon Bền Bỉ & Tùy chỉnh theo yêu cầu"
 designStyle: "Độc đáo, Cổ điển, Retro, Phong cách, Hợp thời trang, Thời trang, Xa xỉ, Unisex"
 nosePads: "Đệm mũi liền khối"
@@ -50,14 +50,14 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-312 Gọng Kính Cận Acetate Retro Xa Xỉ | Đối Tác Sản Xuất"
-seoDescription: "Nâng tầm danh mục nhãn hiệu riêng của bạn với Gọng Kính Cận Acetate Xa Xỉ KAO-312. Acetate Mazzucchelli tùy chỉnh, MOQ 300 và hỗ trợ xây dựng thương hiệu OEM/ODM toàn diện."
-seoKeywords: "acetate Mazzucchelli, gọng kính cận acetate, nhà sản xuất kính mắt, nhà máy kính mắt Trung Quốc, nhà thời trang xa xỉ, kính mắt nhãn hiệu riêng, gọng kính tùy chỉnh, kính acetate retro"
+seoTitle: "KAO-312 Gọng Kính Cận Axit Retro Xa Xỉ | Đối Tác Sản Xuất"
+seoDescription: "Nâng tầm danh mục nhãn hiệu riêng của bạn với Gọng Kính Cận Axit Xa Xỉ KAO-312. Axit Mazzucchelli tùy chỉnh, MOQ 300 và hỗ trợ xây dựng thương hiệu OEM/ODM toàn diện."
+seoKeywords: "axit Mazzucchelli, gọng kính cận axit, nhà sản xuất kính mắt, nhà máy kính mắt Trung Quốc, nhà thời trang xa xỉ, kính mắt nhãn hiệu riêng, gọng kính tùy chỉnh, kính axit retro"
 ---
 
 ## Đặc điểm
 
-- **Vật liệu cấp hàng không vũ trụ:** Acetate Mazzucchelli và JINYU cao cấp cho mặt trước và càng kính mang lại cảm giác nhẹ nhàng với độ bền vượt trội và chiều sâu màu sắc sống động.
+- **Vật liệu cấp hàng không vũ trụ:** Axit Mazzucchelli và JINYU cao cấp cho mặt trước và càng kính mang lại cảm giác nhẹ nhàng với độ bền vượt trội và chiều sâu màu sắc sống động.
 - **Phần cứng chắc chắn:** Bản lề cấu trúc đinh tán 4+3 được chế tạo chính xác đảm bảo sự vận hành trơn tru lâu dài và ổn định cấu trúc.
 - **Thiết kế tiện dụng:** Đệm mũi tích hợp liền mạch được chế tạo để tạo sự thoải mái cả ngày và vừa vặn an toàn, không trơn trượt trên các đường nét khuôn mặt khác nhau.
 - **Quang học hiệu suất cao:** Tròng kính nylon bền bỉ với các tùy chọn tùy chỉnh rộng rãi cho màu sắc và lớp phủ để phù hợp với thẩm mỹ thương hiệu cụ thể.
@@ -75,7 +75,7 @@ seoKeywords: "acetate Mazzucchelli, gọng kính cận acetate, nhà sản xuấ
 
 ## Tổng quan
 
-Acetate Mazzucchelli và JINYU sống động tạo nên nét đặc trưng riêng biệt cho KAO-312, mang lại kiểu dáng nhẹ nhàng mà vẫn duy trì độ bền đặc biệt.
+Axit Mazzucchelli và JINYU sống động tạo nên nét đặc trưng riêng biệt cho KAO-312, mang lại kiểu dáng nhẹ nhàng mà vẫn duy trì độ bền đặc biệt.
 
 Bản lề đinh tán 4+3 được chế tạo chính xác và đệm mũi tích hợp mang lại sự toàn vẹn về cấu trúc và sự thoải mái tiện dụng kỳ vọng ở các bộ sưu tập quang học cao cấp.
 

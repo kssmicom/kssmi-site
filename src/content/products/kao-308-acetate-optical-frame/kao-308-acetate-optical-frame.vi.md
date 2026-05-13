@@ -1,11 +1,11 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Gọng kính cận Acetate tùy chỉnh"
+title: "Gọng kính cận Axit tùy chỉnh"
 slug: "kao-308-acetate-optical-frame"
 itemNo: "KAO-308"
 date: "2026-05-10"
 colors: "Đen & Xanh hoàng gia & Nâu & Xanh ô liu"
-materials: "Mazzucchelli cao cấp & Acetate JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli cao cấp & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -16,7 +16,7 @@ series: "optical-frames, fashion-eyewear, acetate-optical-frames, fashion-acetat
 
 # ─────────────────────────────────────────────────────
 size: "50-22-145mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng và càng kính Acetate cao cấp"
+frameMaterial: "Gọng và càng kính Axit cao cấp"
 lensMaterial: "Tròng kính Nylon bền bỉ & Tùy chỉnh theo yêu cầu"
 designStyle: "Retro, Cổ điển, Độc đáo, Hợp thời trang, Phong cách, Thời trang, Xa xỉ, Unisex"
 nosePads: "Đệm mũi liền khối"
@@ -47,14 +47,14 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Gọng kính cận Acetate cổ điển Retro KAO-308 | Xưởng sản xuất theo yêu cầu"
-seoDescription: "Hợp tác với đối tác sản xuất hàng đầu cho gọng kính cận acetate retro KAO-308. Hoàn thiện đánh bóng thủ công, MOQ 300 và hỗ trợ tùy chỉnh OEM/ODM toàn diện."
-seoKeywords: "nhà sản xuất gọng kính cận acetate, kính mắt OEM tùy chỉnh Trung Quốc, gọng kính nhãn hiệu riêng xa xỉ, xưởng kính acetate retro, sản xuất gọng kính theo yêu cầu, bán buôn kính đánh bóng thủ công, nhà cung cấp kính mắt thiết kế cao cấp, xưởng gọng kính acetate Trung Quốc"
+seoTitle: "Gọng kính cận Axit cổ điển Retro KAO-308 | Xưởng sản xuất theo yêu cầu"
+seoDescription: "Hợp tác với đối tác sản xuất hàng đầu cho gọng kính cận axit retro KAO-308. Hoàn thiện đánh bóng thủ công, MOQ 300 và hỗ trợ tùy chỉnh OEM/ODM toàn diện."
+seoKeywords: "nhà sản xuất gọng kính cận axit, kính mắt OEM tùy chỉnh Trung Quốc, gọng kính nhãn hiệu riêng xa xỉ, xưởng kính axit retro, sản xuất gọng kính theo yêu cầu, bán buôn kính đánh bóng thủ công, nhà cung cấp kính mắt thiết kế cao cấp, xưởng gọng kính axit Trung Quốc"
 ---
 
 ## Đặc điểm
 
-- **Cấu trúc Acetate cao cấp:** Sử dụng Acetate Mazzucchelli và JINYU chất lượng cao, mang lại chiều sâu màu sắc rực rỡ và độ bền nhẹ cho các bộ sưu tập kính mắt cao cấp.
+- **Cấu trúc Axit cao cấp:** Sử dụng Axit Mazzucchelli và JINYU chất lượng cao, mang lại chiều sâu màu sắc rực rỡ và độ bền nhẹ cho các bộ sưu tập kính mắt cao cấp.
 - **Phụ kiện gia cố:** Bản lề cấu trúc đinh tán 4+3 bền bỉ mang lại tính toàn vẹn cấu trúc đặc biệt và chuyển động càng kính trơn tru, ổn định.
 - **Công nghệ tròng kính vượt trội:** Tròng kính nylon chống va đập với quang học độ chính xác cao và các tùy chọn tùy chỉnh linh hoạt cho các lớp phủ chuyên dụng.
 - **Công thái học tích hợp:** Đệm mũi liền khối được điêu khắc chính xác đảm bảo sự cân bằng, không gây áp lực khi đeo cho nhiều khuôn mặt khác nhau.
@@ -72,7 +72,7 @@ seoKeywords: "nhà sản xuất gọng kính cận acetate, kính mắt OEM tùy
 
 ## Tổng quan
 
-Được chế tác từ acetate Mazzucchelli và JINYU cao cấp, mẫu kính này thể hiện tính thẩm mỹ retro tinh tế thông qua các dải màu sâu và bề mặt được đánh bóng thủ công tỉ mỉ.
+Được chế tác từ axit Mazzucchelli và JINYU cao cấp, mẫu kính này thể hiện tính thẩm mỹ retro tinh tế thông qua các dải màu sâu và bề mặt được đánh bóng thủ công tỉ mỉ.
 
 Kiến trúc bản lề đinh tán 4+3 được gia cố mang lại độ chính xác cơ học và khả năng phục hồi cấu trúc theo tiêu chuẩn của kính mắt cao cấp.
 

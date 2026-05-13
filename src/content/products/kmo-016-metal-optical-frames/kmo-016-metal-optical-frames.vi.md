@@ -5,7 +5,7 @@ slug: "kmo-016-metal-optical-frames"
 itemNo: "KMO-016"
 date: "2026-05-01"
 colors: "Phối màu (Color Blocking)"
-materials: "Kim loại cao cấp và Acetate"
+materials: "Kim loại cao cấp và Axit"
 serviceMode: "OEM & ODM ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu"
 
@@ -16,7 +16,7 @@ series: "optical-frames, fashion-eyewear, metal-optical-frames, fashion-metal-op
 
 # ─────────────────────────────────────────────────────
 size: "55-19-140mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng kim loại cao cấp và càng kính Acetate"
+frameMaterial: "Gọng kim loại cao cấp và càng kính Axit"
 lensMaterial: "Tròng kính Nylon bền bỉ & Tùy chỉnh theo yêu cầu"
 designStyle: "Độc đáo, Cổ điển, Thời thượng, Thời trang, Phong cách, Hiện đại, Xa xỉ, Unisex"
 nosePads: "Đệm mũi"
@@ -39,13 +39,13 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Gọng kính cận kim loại & Acetate cao cấp KMO-016 | Xưởng tùy chỉnh"
-seoDescription: "Nâng tầm bộ sưu tập kính mắt của bạn với gọng kính hybrid kim loại & acetate KMO-016. Bản lề 4+3 và thiết kế phối màu. OEM/ODM tùy chỉnh với 300 MOQ."
-seoKeywords: "gọng kính cận kim loại acetate, gọng kính cận tùy chỉnh, nhà sản xuất kính mắt OEM, xưởng gọng kính Trung Quốc, thương hiệu kính mắt nhãn hiệu riêng, gọng kính cận bán sỉ, sản xuất kính mắt tùy chỉnh, gọng kim loại hybrid bán sỉ"
+seoTitle: "Gọng kính cận kim loại & Axit cao cấp KMO-016 | Xưởng tùy chỉnh"
+seoDescription: "Nâng tầm bộ sưu tập kính mắt của bạn với gọng kính hybrid kim loại & axit KMO-016. Bản lề 4+3 và thiết kế phối màu. OEM/ODM tùy chỉnh với 300 MOQ."
+seoKeywords: "gọng kính cận kim loại axit, gọng kính cận tùy chỉnh, nhà sản xuất kính mắt OEM, xưởng gọng kính Trung Quốc, thương hiệu kính mắt nhãn hiệu riêng, gọng kính cận bán sỉ, sản xuất kính mắt tùy chỉnh, gọng kim loại hybrid bán sỉ"
 ---
 ## Đặc điểm
 
-- **Kết cấu Hybrid :** Gọng kim loại cao cấp kết hợp với càng kính acetate cho vẻ đẹp tinh tế và độ bền vượt trội.
+- **Kết cấu Hybrid :** Gọng kim loại cao cấp kết hợp với càng kính axit cho vẻ đẹp tinh tế và độ bền vượt trội.
 - **Phụ kiện gia cố :** Bản lề 4+3 được chế tác chính xác mang lại sự ổn định đặc biệt cho gọng kính và độ vận hành êm ái lâu dài.
 - **Độ chính xác quang học :** Tròng kính nylon bền bỉ mang lại độ trong suốt vượt trội với nhiều tùy chọn lớp phủ và màu sắc tùy chỉnh.
 - **Thiết kế công thái học :** Đệm mũi liền khối được thiết kế để mang lại sự vừa vặn hoàn hảo và sự thoải mái nhất quán khi đeo trong thời gian dài.
@@ -62,7 +62,7 @@ seoKeywords: "gọng kính cận kim loại acetate, gọng kính cận tùy ch�
 
 ## Tổng quan
 
-Phối màu hiện đại kết hợp với kết cấu hybrid tinh tế trong mẫu gọng kim loại và acetate cao cấp này. Thiết kế unisex linh hoạt xóa nhòa khoảng cách giữa những kiểu dáng cổ điển và thẩm mỹ thời trang hiện đại.
+Phối màu hiện đại kết hợp với kết cấu hybrid tinh tế trong mẫu gọng kim loại và axit cao cấp này. Thiết kế unisex linh hoạt xóa nhòa khoảng cách giữa những kiểu dáng cổ điển và thẩm mỹ thời trang hiện đại.
 
 Bản lề 4+3 được chế tác chính xác và đệm mũi liền khối đảm bảo sự ổn định cấu trúc đặc biệt và sự thoải mái khi đeo lâu dài trên nhiều hình dáng khuôn mặt khác nhau.
 

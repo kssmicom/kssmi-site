@@ -1,11 +1,11 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Kính mát Acetate tùy chỉnh"
+title: "Kính mát Axit tùy chỉnh"
 slug: "kas-113-acetate-sunglasses"
 itemNo: "KAS-113"
 date: "2026-05-09"
 colors: "Đen & Đồi mồi & Kem & Xanh dương"
-materials: "Mazzucchelli cao cấp & Acetate JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli cao cấp & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100cái/màu)"
 
@@ -16,7 +16,7 @@ series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sungla
 
 # ─────────────────────────────────────────────────────
 size: "51-23-145mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng và càng kính Acetate cao cấp"
+frameMaterial: "Gọng và càng kính Axit cao cấp"
 lensMaterial: "Tròng kính Nylon bền bỉ & Tùy chỉnh theo yêu cầu"
 designStyle: "Táo bạo, Cổ điển, Độc đáo, Thời trang, Phong cách, Unisex"
 nosePads: "Đệm mũi tích hợp"
@@ -47,14 +47,14 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAS-113 Kính mát Acetate cao cấp Unisex táo bạo | Nhà máy"
-seoDescription: "Nâng tầm thương hiệu của bạn với kính mát acetate unisex KAS-113 táo bạo. Cấu trúc Mazzucchelli cao cấp với tùy chỉnh OEM/ODM toàn diện."
-seoKeywords: "nhà sản xuất kính mát acetate, kính mát OEM tùy chỉnh, kính mắt thương hiệu riêng xa xỉ, nhà máy sản xuất kính acetate Trung Quốc"
+seoTitle: "KAS-113 Kính mát Axit cao cấp Unisex táo bạo | Nhà máy"
+seoDescription: "Nâng tầm thương hiệu của bạn với kính mát axit unisex KAS-113 táo bạo. Cấu trúc Mazzucchelli cao cấp với tùy chỉnh OEM/ODM toàn diện."
+seoKeywords: "nhà sản xuất kính mát axit, kính mát OEM tùy chỉnh, kính mắt thương hiệu riêng xa xỉ, nhà máy sản xuất kính axit Trung Quốc"
 ---
 
 ## Đặc điểm kỹ thuật
 
-- **Thành phần vật liệu cao cấp:** Làm thủ công từ acetate Mazzucchelli và JINYU chất lượng cao, mang lại lớp hoàn thiện nhẹ, bền và sống động cho cảm giác sang trọng.
+- **Thành phần vật liệu cao cấp:** Làm thủ công từ axit Mazzucchelli và JINYU chất lượng cao, mang lại lớp hoàn thiện nhẹ, bền và sống động cho cảm giác sang trọng.
 - **Kỹ thuật chính xác:** Được trang bị bản lề cấu trúc 3+2 thùng mạnh mẽ được thiết kế để vận hành êm ái lâu dài và ổn định gọng kính.
 - **Quang học độ nét cao:** Có tròng kính nylon bền bỉ cung cấp độ rõ nét vượt trội và khả năng chống va đập, với nhiều tùy chọn tùy chỉnh cho màu sắc và lớp phủ.
 - **Thiết kế công thái học:** Đệm mũi tích hợp và cấu hình 51-23-145mm cân bằng đảm bảo sự vừa vặn an toàn, không gây dị ứng cho nhiều hình dáng khuôn mặt.
@@ -72,7 +72,7 @@ seoKeywords: "nhà sản xuất kính mát acetate, kính mát OEM tùy chỉnh,
 
 ## Tổng quan
 
-Pha trộn acetate Mazzucchelli và JINYU sống động, mô hình này mang đến tính thẩm mỹ táo bạo, unisex cân bằng chủ nghĩa cổ điển vượt thời gian với sự nhạy bén của thời trang hiện đại. Lớp hoàn thiện thủ công độc đáo đảm bảo cảm giác cao cấp cộng hưởng với các nhà thời trang xa xỉ và nhãn hiệu boutique.
+Pha trộn axit Mazzucchelli và JINYU sống động, mô hình này mang đến tính thẩm mỹ táo bạo, unisex cân bằng chủ nghĩa cổ điển vượt thời gian với sự nhạy bén của thời trang hiện đại. Lớp hoàn thiện thủ công độc đáo đảm bảo cảm giác cao cấp cộng hưởng với các nhà thời trang xa xỉ và nhãn hiệu boutique.
 
 Bản lề 3+2 thùng được thiết kế chính xác và cấu hình công thái học 51-23-145mm đảm bảo độ ổn định của gọng kính bền bỉ và sự thoải mái cả ngày cho nhiều hình dáng khuôn mặt.
 

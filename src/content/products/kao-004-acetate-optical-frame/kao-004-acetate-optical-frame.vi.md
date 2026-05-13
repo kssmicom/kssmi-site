@@ -1,11 +1,11 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Gọng Kính Cận Acetate Tùy Chỉnh"
+title: "Gọng Kính Cận Axit Tùy Chỉnh"
 slug: "kao-004-acetate-optical-frame"
 itemNo: "KAO-004"
 date: "2026-05-10"
 colors: "Đen & Đồi mồi & Cam & Ngựa vằn & Vàng"
-materials: "Acetate Mazzucchelli cao cấp & JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Axit Mazzucchelli cao cấp & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) (Tùy chỉnh theo yêu cầu)"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -16,7 +16,7 @@ series: "optical-frames, fashion-eyewear, acetate-optical-frames, fashion-acetat
 
 # ─────────────────────────────────────────────────────
 size: "55-19-140mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng và Càng kính Acetate cao cấp"
+frameMaterial: "Gọng và Càng kính Axit cao cấp"
 lensMaterial: "Tròng kính Nylon bền bỉ & Tùy chỉnh theo yêu cầu"
 designStyle: "Xu hướng, Độc đáo, Phong cách, Unisex"
 nosePads: "Đệm mũi liền khối"
@@ -36,14 +36,14 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Gọng kính cận Acetate thời trang KAO-004 | Nhà sản xuất theo yêu cầu"
-seoDescription: "Hợp tác với nhà sản xuất theo yêu cầu hàng đầu cho gọng kính cận acetate KAO-004. Cấu trúc Mazzucchelli cao cấp với MOQ 300 cho tùy chỉnh OEM/ODM."
-seoKeywords: "nhà sản xuất gọng kính acetate, gọng kính cận OEM tùy chỉnh, kính mắt nhãn hiệu riêng cao cấp, bán buôn gọng kính acetate, nhà máy kính mắt Trung Quốc, sản xuất quang học theo yêu cầu, nhà cung cấp kính mắt cao cấp, sản xuất kính mắt Trung Quốc"
+seoTitle: "Gọng kính cận Axit thời trang KAO-004 | Nhà sản xuất theo yêu cầu"
+seoDescription: "Hợp tác với nhà sản xuất theo yêu cầu hàng đầu cho gọng kính cận axit KAO-004. Cấu trúc Mazzucchelli cao cấp với MOQ 300 cho tùy chỉnh OEM/ODM."
+seoKeywords: "nhà sản xuất gọng kính axit, gọng kính cận OEM tùy chỉnh, kính mắt nhãn hiệu riêng cao cấp, bán buôn gọng kính axit, nhà máy kính mắt Trung Quốc, sản xuất quang học theo yêu cầu, nhà cung cấp kính mắt cao cấp, sản xuất kính mắt Trung Quốc"
 ---
 
 ## Đặc điểm
 
-- **Kiến trúc vật liệu cao cấp:** Được chế tác từ acetate Mazzucchelli và JINYU cao cấp, mang lại bộ khung nhẹ và bền với các cấu hình màu sắc rực rỡ, lâu phai.
+- **Kiến trúc vật liệu cao cấp:** Được chế tác từ axit Mazzucchelli và JINYU cao cấp, mang lại bộ khung nhẹ và bền với các cấu hình màu sắc rực rỡ, lâu phai.
 - **Phần cứng độ ổn định cao:** Bản lề cấu trúc đinh tán 4+3 chấu được kỹ thuật chính xác, thiết kế để mang lại sự vận hành mượt mà vượt trội và căn chỉnh khung lâu dài.
 - **Quang học tiên tiến:** Được trang bị tròng kính nylon bền bỉ mang lại độ trong suốt đặc biệt và khả năng chống va đập, với đầy đủ các tùy chọn tùy chỉnh về màu sắc và lớp phủ.
 - **Thiết kế công thái học:** Hệ thống đệm mũi liền khối được điêu khắc để mang lại sự vừa vặn an toàn, không gây dị ứng, đảm bảo sự thoải mái liên tục trong suốt thời gian đeo dài.
@@ -61,7 +61,7 @@ seoKeywords: "nhà sản xuất gọng kính acetate, gọng kính cận OEM tù
 
 ## Tổng quan
 
-Acetate Mazzucchelli và JINYU cao cấp mang lại cho KAO-004 nét đặc trưng riêng biệt, pha trộn các cấu hình màu sắc rực rỡ với lớp hoàn thiện không gây dị ứng, mang lại cảm giác tự nhiên cho làn da. Thành phần vật liệu của gọng kính được lựa chọn đặc biệt để mang lại độ bền mà không làm mất đi kiểu dáng thanh lịch, nhẹ nhàng được các nhà thời trang hiện đại ưa chuộng.
+Axit Mazzucchelli và JINYU cao cấp mang lại cho KAO-004 nét đặc trưng riêng biệt, pha trộn các cấu hình màu sắc rực rỡ với lớp hoàn thiện không gây dị ứng, mang lại cảm giác tự nhiên cho làn da. Thành phần vật liệu của gọng kính được lựa chọn đặc biệt để mang lại độ bền mà không làm mất đi kiểu dáng thanh lịch, nhẹ nhàng được các nhà thời trang hiện đại ưa chuộng.
 
 Đệm mũi liền khối và cấu trúc đinh tán 4+3 chấu được gia cố định nghĩa sự xuất sắc về cơ khí của gọng kính, mang lại sự vừa vặn an toàn và hiệu suất phần cứng nhất quán.
 

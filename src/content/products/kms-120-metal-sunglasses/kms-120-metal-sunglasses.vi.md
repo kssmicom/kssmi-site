@@ -5,7 +5,7 @@ slug: "kms-120-metal-sunglasses"
 itemNo: "KMS-120"
 date: "2026-04-06"
 colors: "Xám & Xanh dương & Nâu & Bình minh & Hoàng hôn"
-materials: "Kim loại cao cấp và Acetate"
+materials: "Kim loại cao cấp và Axit"
 serviceMode: "OEM & ODM ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu"
 
@@ -78,7 +78,7 @@ seoKeywords: "nhà sản xuất kính mát kim loại, kính mát tùy chỉnh O
 
 ## Tổng quan
 
-Kết hợp giữa kim loại cao cấp và các điểm nhấn acetate thanh lịch, KMS-120 tái hiện dòng kính mắt xa xỉ thông qua cấu trúc cầu kép táo bạo.
+Kết hợp giữa kim loại cao cấp và các điểm nhấn axit thanh lịch, KMS-120 tái hiện dòng kính mắt xa xỉ thông qua cấu trúc cầu kép táo bạo.
 
 Được thiết kế để đạt độ bền tối ưu, bản lề lò xo 2+1 và đệm mũi silicone không gây dị ứng đảm bảo sự chắc chắn và thoải mái cho những người dùng thời trang cao cấp.
 

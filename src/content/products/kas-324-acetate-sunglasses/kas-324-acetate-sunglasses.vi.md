@@ -1,11 +1,11 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Kính mát Acetate Tùy chỉnh"
+title: "Kính mát Axit Tùy chỉnh"
 slug: "kas-324-acetate-sunglasses"
 itemNo: "KAS-324"
 date: "2026-05-13"
 colors: "Đen, Havana, Sâm panh"
-materials: "Acetate Mazzucchelli & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
+materials: "Axit Mazzucchelli & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -16,7 +16,7 @@ series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sungla
 
 # ─────────────────────────────────────────────────────
 size: "48-22-145mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng và Càng kính Acetate cao cấp"
+frameMaterial: "Gọng và Càng kính Axit cao cấp"
 lensMaterial: "Tròng kính Nylon bền bỉ & Tùy chỉnh theo yêu cầu"
 designStyle: "Cổ điển, Sang trọng, Hợp thời trang, Thời trang, Độc đáo, Unisex"
 nosePads: "Đệm mũi đúc liền"
@@ -43,13 +43,13 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Kính mát Acetate Unisex Cổ điển KAS-324 | Nhà sản xuất theo yêu cầu"
-seoDescription: "Hợp tác với nhà sản xuất tùy chỉnh hàng đầu cho kính mát acetate KAS-324. Gọng kính Mazzucchelli màu sắc rực rỡ với MOQ 300 dành cho các boutique thiết kế độc lập."
-seoKeywords: "kính mát acetate cao cấp, kính mắt acetate thời trang, nhà sản xuất kính mắt OEM, xưởng sản xuất kính mắt Trung Quốc, thương hiệu kính mắt xa xỉ, gọng kính acetate bán sỉ, sản xuất kính mát tùy chỉnh, nhà sản xuất kính mắt theo yêu cầu"
+seoTitle: "Kính mát Axit Unisex Cổ điển KAS-324 | Nhà sản xuất theo yêu cầu"
+seoDescription: "Hợp tác với nhà sản xuất tùy chỉnh hàng đầu cho kính mát axit KAS-324. Gọng kính Mazzucchelli màu sắc rực rỡ với MOQ 300 dành cho các boutique thiết kế độc lập."
+seoKeywords: "kính mát axit cao cấp, kính mắt axit thời trang, nhà sản xuất kính mắt OEM, xưởng sản xuất kính mắt Trung Quốc, thương hiệu kính mắt xa xỉ, gọng kính axit bán sỉ, sản xuất kính mát tùy chỉnh, nhà sản xuất kính mắt theo yêu cầu"
 ---
 
 ## Đặc điểm
-- **Chất liệu Acetate cao cấp:** Cấu tạo từ acetate Mazzucchelli và JINYU chất lượng cao, mang lại bề mặt hoàn thiện rực rỡ cùng độ bền vượt trội và sự thoải mái nhẹ nhàng.
+- **Chất liệu Axit cao cấp:** Cấu tạo từ axit Mazzucchelli và JINYU chất lượng cao, mang lại bề mặt hoàn thiện rực rỡ cùng độ bền vượt trội và sự thoải mái nhẹ nhàng.
 - **Phụ kiện phần cứng chính xác:** Bản lề cấu trúc 3+2 chấu ổn định được chế tạo để đảm bảo vận hành mượt mà và tin cậy lâu dài.
 - **Quang học tiên tiến:** Tròng kính nylon chống va đập với các tùy chọn tùy chỉnh toàn diện cho khả năng chống tia UV cao cấp và độ rõ nét.
 - **Sự thoải mái tối ưu:** Đệm mũi đúc liền chính xác được thiết kế theo nhân trắc học, phù hợp và không gây dị ứng cho nhiều khuôn mặt khác nhau.
@@ -66,7 +66,7 @@ seoKeywords: "kính mát acetate cao cấp, kính mắt acetate thời trang, nh
 
 ## Tổng quan
 
-Đối với các nhãn hiệu kính mắt ưu tiên sự xuất sắc về chất liệu, KAS-324 sử dụng acetate Mazzucchelli và JINYU cao cấp để đạt được bề mặt hoàn thiện rực rỡ và độc đáo. Sự lựa chọn này mang lại độ bền nhẹ cần thiết cho các bộ sưu tập thời trang cao cấp.
+Đối với các nhãn hiệu kính mắt ưu tiên sự xuất sắc về chất liệu, KAS-324 sử dụng axit Mazzucchelli và JINYU cao cấp để đạt được bề mặt hoàn thiện rực rỡ và độc đáo. Sự lựa chọn này mang lại độ bền nhẹ cần thiết cho các bộ sưu tập thời trang cao cấp.
 
 Cấu trúc bản lề 3+2 chấu của gọng kính và đệm mũi đúc liền được gia công chính xác để đảm bảo sự tin cậy trong vận hành và sự thoải mái suốt cả ngày.
 
