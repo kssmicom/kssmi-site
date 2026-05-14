@@ -74,7 +74,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, lunettes de soleil OEM pers
 - Marques de Mode Boutique
 - Vente Duty-Free et Voyage
 
-## Overview
+## Aperçu
 
 Les maisons de mode de luxe à la recherche d'un avantage visuel distinct le trouvent dans le modèle KAS-129, qui associe l'acétate Mazzucchelli et JINYU sélectionné à la main à une silhouette audacieuse et unisexe.
 

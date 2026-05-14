@@ -61,7 +61,7 @@ seoKeywords: "fabricante de gafas de sol de titanio, proveedor de gafas OEM pers
 - Etiquetas Deportivas y de Estilo de Vida Automotriz
 - Venta Duty-Free y Viajes
 
-## Overview
+## Resumen
 
 El KTS-212 aprovecha el titanio de primera calidad para ofrecer una relación resistencia-peso superior para las colecciones de gafas de élite. Esta montura ultraligera presenta un diseño unisex único que atrae a los mercados de la moda de alta gama y el comercio minorista de lujo.
 

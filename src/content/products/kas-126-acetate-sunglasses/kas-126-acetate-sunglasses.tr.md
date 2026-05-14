@@ -70,7 +70,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 - Butik Moda Markaları
 - Departman Mağazası Grupları
 
-## Overview
+## Genel Bakış
 
 Cesur profili ve İtalyan Mazzucchelli asetatının elle parlatılmış parlaklığı ile tanımlanan bu model, yüksek moda estetiğini olağanüstü malzeme derinliği ile birleştiriyor.
 

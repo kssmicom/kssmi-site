@@ -69,7 +69,7 @@ seoKeywords: "fabricante de monturas ópticas de titanio, fábrica de gafas de l
 - Etiquetas Deportivas y de Estilo de Vida Automotriz
 - Cadenas Ópticas de Alta Gamma
 
-## Overview
+## Resumen
 
 Fabricada con precisión en titanio premium, la montura KTO-020 representa la intersección entre la durabilidad ligera y la estética óptica de alta gama. Su construcción hipoalergénica garantiza un confort a largo plazo manteniendo un perfil refinado y profesional para el mercado del lujo.
 

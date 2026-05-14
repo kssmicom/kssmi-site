@@ -58,7 +58,7 @@ seoKeywords: "armações ópticas de fibra de carbono, óculos de titânio sob m
 - Marcas Esportivas e Lifestyle Automotivo
 - Lojas Ópticas Premium
 
-## Overview
+## Visão Geral
 
 Combinando fibra de carbono de grau aeroespacial com um acabamento em mogno de grão de montanha, o KSO-224 oferece uma rara interseção de desempenho técnico e calor natural.
 

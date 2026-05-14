@@ -61,7 +61,7 @@ seoKeywords: "armações de acetato e metal, armações ópticas de metal, fabri
 - Etiquetas de Moda Boutique
 - Lojas Ópticas Premium
 
-## Overview
+## Visão Geral
 
 Projetado para portfólios de moda de alto padrão, o KMO-258 combina o calor dos frontais de acetato premium com a rigidez arquitetônica das hastes metálicas. A integração de cores vibrantes como Azul Lago e Ouro Claro cria uma assinatura visual distinta que ressoa com os consumidores focados no luxo.
 

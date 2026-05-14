@@ -56,7 +56,7 @@ seoKeywords: "Acetat-Sonnenbrille, Unisex-Sonnenbrille, Brillenhersteller, Brill
 - Konzept- und Multi-Brand-Stores
 - Luxusmodehäuser
 
-## Overview
+## Übersicht
 Die KAS-302 wurde aus hochwertigem Mazzucchelli- und JINYU-Acetat gefertigt und verbindet eine kühne Unisex-Ästhetik mit einer lebendigen Farbtiefe, die moderne Luxusbrillen definiert.
 
 Die präzisionsgefertigten 4+3-Fass-Scharniere gewährleisten langfristige Haltbarkeit und reibungslosen Betrieb, während die integrierten Nasenpads für einen sicheren, ergonomischen Sitz sorgen.

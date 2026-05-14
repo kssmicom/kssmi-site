@@ -70,7 +70,7 @@ seoKeywords: "produsen kacamata hitam logam, kacamata logam kustom OEM, kacamata
 - Label Busuk Fashion
 - Group Store Departemen
 
-## Overview
+## Ringkesan
 
 Logam kualitas dhuwur nemtokake keanggunan struktural KMS-134, ing ngendi arsitektur jembatan ganda sing canggih nggawe siluet maskulin sing kandel. Frame iki dadi potongan pernyataan kanggo koleksi mewah, ngimbangi kekuatan industri karo sensitivitas fashion sing alus.
 

@@ -61,7 +61,7 @@ seoKeywords: "fabricant lunettes de soleil titane, fournisseur lunettes OEM pers
 - Marques Sportives et Lifestyle Automobile
 - Vente Duty-Free et Voyage
 
-## Overview
+## Aperçu
 
 Le KTS-212 utilise du titane de qualité supérieure pour offrir un rapport résistance-poids exceptionnel aux collections de lunettes d'élite. Cette monture ultra-légère présente un design unisexe unique qui séduit les marchés de la mode haut de gamme et de la vente au détail de luxe.
 

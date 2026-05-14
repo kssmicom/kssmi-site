@@ -69,7 +69,7 @@ seoKeywords: "Titan-Sonnenbrillen Hersteller, maßgeschneiderte OEM-Sonnenbrille
 - Sport- und Auto-Lifestyle-Marken
 - Boutique-Modemarken
 
-## Overview
+## Übersicht
 
 Titan in Luft- und Raumfahrtqualität definiert die KTS-022 und bietet eine ultraleichte Architektur, die eine hohe Korrosionsbeständigkeit mit einer anspruchsvollen Luxusästhetik verbindet.
 

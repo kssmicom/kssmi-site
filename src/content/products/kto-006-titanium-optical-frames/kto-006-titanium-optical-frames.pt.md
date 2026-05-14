@@ -58,7 +58,7 @@ seoKeywords: "fabricante de armações ópticas de titânio, óculos retrô pers
 - Etiquetas de Moda Boutique
 - Lojas de Conceito e Multi-Marcas
 
-## Overview
+## Visão Geral
 
 Unindo a estética retrô com materiais modernos, o modelo KTO-006 apresenta uma combinação refinada de frontais de acetato premium e hastes de titânio de grau aeroespacial. Esta construção híbrida oferece uma profundidade visual sofisticada, mantendo um perfil leve essencial para o setor óptico de luxo.
 

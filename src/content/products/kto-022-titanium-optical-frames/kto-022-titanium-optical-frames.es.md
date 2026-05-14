@@ -67,7 +67,7 @@ seoKeywords: "monturas ópticas de titanio, fabricación de gafas de lujo, fábr
 - Casas de Moda de Lujo
 - Marcas D2C de Comercio Electrónico
 
-## Overview
+## Resumen
 Combinando titanio de grado aeroespacial con una estética unisex sofisticada, el KTO-022 proporciona una base ligera pero resistente para colecciones de gafas premium.
 
 Las bisagras de 3 barriles diseñadas con precisión y las almohadillas nasales integradas en una sola pieza aseguran la estabilidad estructural a largo plazo y la comodidad durante todo el día para el usuario final.

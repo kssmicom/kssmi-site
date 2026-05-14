@@ -1,11 +1,11 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Kính mát Axit tùy chỉnh"
+title: "Kính mát Axetat tùy chỉnh"
 slug: "kas-306-acetate-sunglasses"
 itemNo: "KAS-306"
 date: "2026-05-12"
 colors: "Đen & Đồi mồi & Xám & Nâu & Ô liu"
-materials: "Mazzucchelli cao cấp & JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM)"
 moq: "300 cái/mẫu (100cái/màu)"
 
@@ -16,7 +16,7 @@ series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sungla
 
 # ─────────────────────────────────────────────────────
 size: "46-23-145mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng và càng kính Axit cao cấp"
+frameMaterial: "Gọng và càng kính Axetat cao cấp"
 lensMaterial: "Tròng kính Nylon bền bỉ & Tùy chỉnh theo yêu cầu"
 designStyle: "Độc đáo, Cổ điển, Retro, Thời trang, Phong cách, Unisex"
 nosePads: "Đệm mũi liền khối"
@@ -51,14 +51,14 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Kính mát Axit hình học cổ điển KAS-306 | Xưởng sản xuất tùy chỉnh"
-seoDescription: "Nâng tầm bộ sưu tập kính mắt của bạn với kính mát axit Mazzucchelli cao cấp KAS-306. Sản xuất OEM/ODM chuyên nghiệp với MOQ 300 cái và hỗ trợ thiết kế tùy chỉnh toàn diện."
-seoKeywords: "nhà sản xuất kính mát axit cao cấp, xưởng kính mát OEM tùy chỉnh, bán sỉ kính mắt axit Mazzucchelli, nhà sản xuất kính mắt cao cấp Trung Quốc, kính mát nhãn hiệu riêng sang trọng, sản xuất gọng axit có thể tùy chỉnh, sản xuất kính mắt theo yêu cầu Trung Quốc, nhà cung cấp kính mát nhà thiết kế độc lập"
+seoTitle: "Kính mát Axetat hình học cổ điển KAS-306 | Xưởng sản xuất tùy chỉnh"
+seoDescription: "Nâng tầm bộ sưu tập kính mắt của bạn với kính mát axetat Mazzucchelli cao cấp KAS-306. Sản xuất OEM/ODM chuyên nghiệp với MOQ 300 cái và hỗ trợ thiết kế tùy chỉnh toàn diện."
+seoKeywords: "nhà sản xuất kính mát axetat cao cấp, xưởng kính mát OEM tùy chỉnh, bán sỉ kính mắt axetat Mazzucchelli, nhà sản xuất kính mắt cao cấp Trung Quốc, kính mát nhãn hiệu riêng sang trọng, sản xuất gọng axetat có thể tùy chỉnh, sản xuất kính mắt theo yêu cầu Trung Quốc, nhà cung cấp kính mát nhà thiết kế độc lập"
 ---
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Cấu tạo từ axit Mazzucchelli và JINYU chất lượng cao, mang lại lớp hoàn thiện nhẹ, bền và rực rỡ cho tính thẩm mỹ sang trọng.
+- **Chất liệu cao cấp:** Cấu tạo từ axetat Mazzucchelli và JINYU chất lượng cao, mang lại lớp hoàn thiện nhẹ, bền và rực rỡ cho tính thẩm mỹ sang trọng.
 - **Phụ kiện bền bỉ:** Bản lề cấu trúc 4+3 chấu chắc chắn được thiết kế để vận hành trơn tru liên tục, với các tùy chọn nâng cấp lên 5 chấu và bản lề lò xo.
 - **Quang học vượt trội:** Tròng kính nylon chống va đập mang lại độ rõ nét đặc biệt, với khả năng tùy chỉnh rộng rãi cho các màu sắc cụ thể và lớp phủ kỹ thuật.
 - **Thoải mái tích hợp:** Đệm mũi liền khối được đúc chính xác được thiết kế để đảm bảo sự vừa vặn an toàn, cân bằng và vẻ ngoài cao cấp không tì vết.
@@ -76,7 +76,7 @@ seoKeywords: "nhà sản xuất kính mát axit cao cấp, xưởng kính mát O
 
 ## Tổng quan
 
-Axit Mazzucchelli và JINYU tạo nên đẳng cấp cho KAS-306, kết hợp màu sắc đa tầng phong phú với gọng kính hình học vượt thời gian được thiết kế cho cả độ bền và tính linh hoạt thẩm mỹ. Lựa chọn chất liệu này đảm bảo lớp hoàn thiện rực rỡ và luôn giữ được độ bóng qua nhiều năm sử dụng.
+Axetat Mazzucchelli và JINYU tạo nên đẳng cấp cho KAS-306, kết hợp màu sắc đa tầng phong phú với gọng kính hình học vượt thời gian được thiết kế cho cả độ bền và tính linh hoạt thẩm mỹ. Lựa chọn chất liệu này đảm bảo lớp hoàn thiện rực rỡ và luôn giữ được độ bóng qua nhiều năm sử dụng.
 
 Bản lề 4+3 chấu được chế tạo chính xác và đệm mũi liền khối mang lại sự chắc chắn về cấu trúc và sự thoải mái cân bằng theo yêu cầu của thị trường kính mắt cao cấp.
 

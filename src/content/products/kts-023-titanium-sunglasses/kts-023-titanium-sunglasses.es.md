@@ -67,7 +67,7 @@ seoKeywords: "fabricante gafas titanio, gafas OEM a medida, monturas lujo marca 
 - Etiquetas Deportivas y de Estilo de Vida Automotriz
 - Venta Duty-Free y Viajes
 
-## Overview
+## Resumen
 
 Diseñado para mercados de alta gama que exigen lo último en durabilidad y ligereza, el modelo KTS-023 exhibe la estética refinada del titanio de calidad premium. Las monturas hipoalergénicas ofrecen una excepcional relación resistencia-peso, garantizando comodidad durante todo el día para los usuarios más exigentes.
 

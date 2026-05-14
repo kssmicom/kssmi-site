@@ -69,7 +69,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, kundenspezifische OEM-Sonnenbrill
 - Luxusmodehäuser
 - Konzept- und Multi-Brand-Stores
 
-## Overview
+## Übersicht
 
 Die aus handverlesenem Mazzucchelli- und JINYU-Acetat gefertigte KAS-318 bietet außergewöhnliche Farbbrillanz und strukturelle Langlebigkeit für den Premium-Modemarkt. Ihre leichte Zusammensetzung sorgt für langfristigen Tragekomfort, ohne die ästhetische Wirkung zu beeinträchtigen.
 

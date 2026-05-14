@@ -56,7 +56,7 @@ seoKeywords: "produttore montature ottiche titanio, occhiali in titanio personal
 - Catene Ottiche di Alto Livello
 - Gruppi di Grandi Magazzini
 
-## Overview
+## Panoramica
 
 Combinando la longevità strutturale con un profilo eccezionalmente leggero, il modello KTO-003 è realizzato con precisione in titanio premium di grado aerospaziale.
 

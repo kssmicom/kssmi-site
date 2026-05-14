@@ -58,7 +58,7 @@ seoKeywords: "pengilang bingkai optik titanium, kacamata retro tersuai OEM, boro
 - Label Fesyen Boutique
 - Kedai Konsep & Berbilang Jenama
 
-## Overview
+## Gambaran Keseluruhan
 
 Menggabungkan estetika retro dengan bahan moden, KTO-006 menampilkan gabungan halus bahagian hadapan asetat premium dan tangkai titanium gred aeroangkasa. Pembinaan hibrid ini menawarkan kedalaman visual yang canggih sambil mengekalkan profil ringan yang penting untuk pemakaian optik mewah.
 

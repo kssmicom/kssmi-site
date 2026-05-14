@@ -70,7 +70,7 @@ seoKeywords: "lunettes de soleil métal acétate, lunettes mode luxe, fabricant 
 - Chaînes Optiques Haut de Gamme
 - Vente Duty-Free et Voyage
 
-## Overview
+## Aperçu
 
 Le KMS-118 trouve un équilibre sophistiqué entre les faces en acétate premium et les branches en métal de précision, créant une montature hybride durable qui fait le pont entre l'esthétique classique et les tendances modernes.
 

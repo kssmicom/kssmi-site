@@ -61,7 +61,7 @@ seoKeywords: "pengilang kacamata hitam titanium, pembekal kacamata OEM tersuai, 
 - Jenama Gaya Hidup Sukan & Automotif
 - runcit Dutypirlalu & Perjalanan
 
-## Overview
+## Gambaran Keseluruhan
 
 KTS-212 menggunakan titanium premium untuk menawarkan nisbah kekuatan-ke-berat yang unggul bagi koleksi kacamata elit. Bingkai ultra-ringan ini menampilkan reka bentuk uniseks yang unik yang menarik minat pasaran fesyen mewah dan peruncitan premium.
 

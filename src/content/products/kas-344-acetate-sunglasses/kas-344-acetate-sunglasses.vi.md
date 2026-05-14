@@ -1,11 +1,11 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Kính mát Axit tùy chỉnh"
+title: "Kính mát Axetat tùy chỉnh"
 slug: "kas-344-acetate-sunglasses"
 itemNo: "KAS-344"
 date: "2026-05-12"
 colors: "Đen tuyền & Đồi mồi hổ phách & Đồi mồi đậm & Cam đỏ"
-materials: "Mazzucchelli cao cấp & JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái mỗi màu)"
 
@@ -16,7 +16,7 @@ series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sungla
 
 # ─────────────────────────────────────────────────────
 size: "50-23-145mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng và càng kính Axit cao cấp"
+frameMaterial: "Gọng và càng kính Axetat cao cấp"
 lensMaterial: "Tròng kính Nylon bền bỉ & Tùy chỉnh theo yêu cầu"
 designStyle: "Thời trang, Phong cách, Cổ điển, Xu hướng, Độc đáo, Unisex"
 nosePads: "Đệm mũi Titanium linh hoạt có thể điều chỉnh"
@@ -47,17 +47,17 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Kính mát Axit thời trang xu hướng KAS-344 | Nhà sản xuất tùy chỉnh"
-seoDescription: "Nâng tầm danh mục thương hiệu riêng của bạn với kính mát axit Mazzucchelli cao cấp KAS-344 có đệm mũi titanium. Tùy chỉnh OEM/ODM đầy đủ với MOQ 300."
-seoKeywords: "nhà sản xuất kính mát axit, kính mát OEM tùy chỉnh, kính mắt thương hiệu riêng xa xỉ, gọng kính axit Mazzucchelli, nhà máy kính mắt Trung Quốc, bán buôn gọng axit, sản xuất kính mắt tùy chỉnh, nhà sản xuất kính mắt Trung Quốc"
+seoTitle: "Kính mát Axetat thời trang xu hướng KAS-344 | Nhà sản xuất tùy chỉnh"
+seoDescription: "Nâng tầm danh mục thương hiệu riêng của bạn với kính mát axetat Mazzucchelli cao cấp KAS-344 có đệm mũi titanium. Tùy chỉnh OEM/ODM đầy đủ với MOQ 300."
+seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, kính mắt thương hiệu riêng xa xỉ, gọng kính axetat Mazzucchelli, nhà máy kính mắt Trung Quốc, bán buôn gọng axetat, sản xuất kính mắt tùy chỉnh, nhà sản xuất kính mắt Trung Quốc"
 ---
 
 ## Đặc điểm
-- **Chất liệu cao cấp:** Axit Mazzucchelli và JINYU được đánh bóng bằng tay mang lại lớp hoàn thiện phong phú, sống động với độ bền và độ sâu màu sắc đặc biệt.
+- **Chất liệu cao cấp:** Axetat Mazzucchelli và JINYU được đánh bóng bằng tay mang lại lớp hoàn thiện phong phú, sống động với độ bền và độ sâu màu sắc đặc biệt.
 - **Kỹ thuật chính xác:** Bản lề cấu trúc 2+1 chấu chất lượng cao được thiết kế để duy trì lực căng ổn định và sự vận hành trơn tru lâu dài.
 - **Sự thoải mái tối ưu:** Đệm mũi titanium linh hoạt có thể điều chỉnh mang lại sự vừa vặn nhẹ nhàng, có thể tùy chỉnh để thoải mái suốt cả ngày trên nhiều khuôn mặt khác nhau.
 - **Quang học tiên tiến:** Tròng kính nylon bền bỉ mang lại độ rõ nét và khả năng chống va đập vượt trội, hỗ trợ đầy đủ cho các màu sắc tùy chỉnh và lớp phủ chuyên dụng.
-- **Cấu trúc tinh tế:** Thiết kế gọng và càng kính axit tích hợp cân bằng giữa tính toàn vẹn của cấu trúc với tính thẩm mỹ thời trang, nhẹ nhàng.
+- **Cấu trúc tinh tế:** Thiết kế gọng và càng kính axetat tích hợp cân bằng giữa tính toàn vẹn của cấu trúc với tính thẩm mỹ thời trang, nhẹ nhàng.
 - **Sản xuất linh hoạt:** Các tùy chọn tùy chỉnh OEM và ODM toàn diện với số lượng đặt hàng tối thiểu thấp chỉ 300 cái, được thiết kế đặc biệt cho các Thương hiệu Kính mắt Cao cấp và Nhà Thiết kế Kính mắt Độc lập.
 
 ## Phù hợp cho
@@ -70,8 +70,8 @@ seoKeywords: "nhà sản xuất kính mát axit, kính mát OEM tùy chỉnh, k�
 
 ## Tổng quan
 
-Được chế tác từ axit Mazzucchelli và JINYU đánh bóng bằng tay, thiết kế này mang lại độ sâu màu sắc sống động và lớp hoàn thiện cao cấp phù hợp cho các nhà thời trang xa xỉ. Cấu trúc gọng nhẹ cân bằng giữa phong cách hiện đại với tính toàn vẹn cấu trúc kỳ vọng ở dòng kính mắt cao cấp.
+Được chế tác từ axetat Mazzucchelli và JINYU đánh bóng bằng tay, thiết kế này mang lại độ sâu màu sắc sống động và lớp hoàn thiện cao cấp phù hợp cho các nhà thời trang xa xỉ. Cấu trúc gọng nhẹ cân bằng giữa phong cách hiện đại với tính toàn vẹn cấu trúc kỳ vọng ở dòng kính mắt cao cấp.
 
 Bản lề 2+1 chấu chất lượng cao và đệm mũi titanium có thể điều chỉnh đảm bảo sự vừa vặn an toàn, có thể tùy chỉnh và vận hành trơn tru để thoải mái lâu dài.
 
-Các thương hiệu có thể tận dụng toàn bộ khả năng OEM và ODM của Kssmi với số lượng đặt hàng tối thiểu thấp 300 cái để tạo ra các bộ sưu tập riêng biệt có logo tùy chỉnh và lớp hoàn thiện axit chuyên dụng.
+Các thương hiệu có thể tận dụng toàn bộ khả năng OEM và ODM của Kssmi với số lượng đặt hàng tối thiểu thấp 300 cái để tạo ra các bộ sưu tập riêng biệt có logo tùy chỉnh và lớp hoàn thiện axetat chuyên dụng.

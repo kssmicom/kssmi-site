@@ -69,7 +69,7 @@ seoKeywords: "fabricant lunettes de soleil titane, lunettes de soleil OEM person
 - Marques Sportives et Lifestyle Automobile
 - Marques de Mode Boutique
 
-## Overview
+## Aperçu
 
 Le titane de qualité aérospatiale définit le modèle KTS-022, offrant une architecture ultra-légère qui concilie une haute résistance à la corrosion et une esthétique de luxe sophistiquée.
 

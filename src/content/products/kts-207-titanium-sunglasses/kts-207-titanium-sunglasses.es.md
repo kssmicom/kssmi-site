@@ -63,7 +63,7 @@ seoKeywords: "fabricante de gafas de sol de titanio, fábrica de gafas de sol OE
 - Etiquetas Deportivas y de Estilo de Vida Automotriz
 - Venta Duty-Free y Viajes
 
-## Overview
+## Resumen
 
 La construcción de titanio premium le otorga al KTS-207 su perfil ultra ligero y una durabilidad excepcional, lo que lo convierte en una opción ideal para portafolios de moda de alta gama. Su estética unisex única cierra la brecha entre el estilo de lujo y las tendencias contemporáneas.
 

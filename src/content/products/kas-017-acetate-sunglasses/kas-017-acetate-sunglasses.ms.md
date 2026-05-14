@@ -59,7 +59,7 @@ seoKeywords: "cermin mata hitam asetat mewah, pengilang kacamata tersuai, bingka
 - Label Fesyen Boutique
 - Runcit Bebas Cukai & Perjalanan
 
-## Overview
+## Gambaran Keseluruhan
 
 Asetat Mazzucchelli dan JINYU yang dipilih dengan tangan memberikan KAS-017 kemasan berketumpatan tinggi dan kedalaman warna yang unggul, memenuhi piawaian ketat pasaran kacamata mewah.
 

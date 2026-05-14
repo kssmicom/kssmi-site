@@ -67,7 +67,7 @@ seoKeywords: "titanyum güneş gözlüğü üreticisi, özel OEM gözlük, lüks
 - Spor ve Otomotiv Yaşam Tarzı Markaları
 - Duty-Free ve Seyahat Perakendecileri
 
-## Overview
+## Genel Bakış
 
 Üstün hafiflik, dayanıklılık ve çağdaş tasarım arayan üst segment pazarlar için tasarlanan KTS-023, premium kalite titanyumun şık estetiğini sergiliyor. Hipolerjenik çerçeveler, olağanüstü mukavemet-ağırlık oranı sunarak en seçici kullanıcılar için gün boyu konfor sağlar.
 

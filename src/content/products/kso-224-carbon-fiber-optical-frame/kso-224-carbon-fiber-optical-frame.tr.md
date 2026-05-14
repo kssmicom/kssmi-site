@@ -58,7 +58,7 @@ seoKeywords: "karbon elyaf optik çerçeveler, özel titanyum gözlükler, lüks
 - Spor ve Otomotiv Yaşam Tarzı Markaları
 - Yüksek Segment Optik Zincirleri
 
-## Overview
+## Genel Bakış
 
 Havacılık sınıfı karbon elyafı maun dağ deseni kaplamasıyla birleştiren KSO-224, teknik performans ile doğal sıcaklığın nadir bir kesişimini sunuyor.
 

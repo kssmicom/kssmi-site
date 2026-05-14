@@ -69,7 +69,7 @@ seoKeywords: "nhà sản xuất gọng kính titan, nhà máy kính mắt xa x�
 - Thương hiệu thể thao và ô tô
 - Chuỗi quang học cao cấp
 
-## Overview
+## Tổng quan
 
 Được chế tác chính xác từ titan cao cấp, gọng kính KTO-020 là sự giao thoa giữa độ bền nhẹ và thẩm mỹ quang học cao cấp. Cấu trúc không gây dị ứng đảm bảo sự thoải mái lâu dài trong khi vẫn duy trì vẻ ngoài tinh tế, chuyên nghiệp cho thị trường xa xỉ.
 

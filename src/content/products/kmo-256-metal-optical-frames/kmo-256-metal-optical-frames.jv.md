@@ -16,7 +16,7 @@ series: "optical-frames, fashion-eyewear, metal-optical-frames, fashion-metal-op
 
 # ─────────────────────────────────────────────────────
 size: "47-20-140mm & Kustomisasi"
-frameMaterial: "Frame Acetate Premium lan Gagang Logam"
+frameMaterial: "Frame Asetat Premium lan Gagang Logam"
 lensMaterial: "Lensa AC, TAC, PC, Lensa Nylon Kuat & Kustomisasi"
 designStyle: "Unik, Fesyen, Gaya, Klasik, Trendy, Mewah, Unisex"
 nosePads: "Bantalan Irung Terintegrasi Silikon Bening"
@@ -46,7 +46,7 @@ seoKeywords: "frame hibrida logam asetat, produsen frame optik kustom, kacamata 
 
 ## Fitur
 
-- **Konstruksi Premium:** Desain hibrida sing nampilake bagean ngarep frame acetate premium sing dipasangake karo gagang logam sing awet kanggo estetika sing canggih lan kontras dhuwur.
+- **Konstruksi Premium:** Desain hibrida sing nampilake bagean ngarep frame asetat premium sing dipasangake karo gagang logam sing awet kanggo estetika sing canggih lan kontras dhuwur.
 - **Finishing Canggih:** Plating ion (IP) berkualitas tinggi sing nyedhiyakake finishing sing tahan banting lan hypoallergenic kanthi retensi warna sing unggul kanggo panggunaan jangka panjang.
 - **Hardware Awet:** Engsel struktur komposit 2+1 barrel sing stabil sing dirancang kanggo kelancaran operasional sing konsisten lan integritas struktural sing tahan suwe.
 - **Optik Versatile:** Kompatibel karo lensa AC, TAC, PC, lan lensa nilon sing kuat, nawakake macem-macem pilihan kinerja kanggo macem-macem kabutuhan pasar.
@@ -63,7 +63,7 @@ seoKeywords: "frame hibrida logam asetat, produsen frame optik kustom, kacamata 
 
 ## Ringkesan
 
-Nalika desainer nggoleki kontras antarane anget acetate lan presisi logam, KMO-256 menehi frame hibrida premium lan finishing ion-plated sing tahan banting. Kombinasi iki njamin estetika mewah sing tetep stabil warnane lan apik liwat panggunaan sing akeh.
+Nalika desainer nggoleki kontras antarane anget asetat lan presisi logam, KMO-256 menehi frame hibrida premium lan finishing ion-plated sing tahan banting. Kombinasi iki njamin estetika mewah sing tetep stabil warnane lan apik liwat panggunaan sing akeh.
 
 Engsel komposit 2+1 barrel nyedhiyakake operasi sing lancar lan dipercaya, dene bantalan irung silikon terintegrasi nawakake pas sing aman lan tanpa tekanan.
 

@@ -70,7 +70,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, kundenspezifische OEM-Sonnenbrill
 - Boutique-Modemmarken
 - Kaufhausgruppen
 
-## Overview
+## Übersicht
 
 Definiert durch sein mutiges Profil und die handpolierte Brillanz des italienischen Mazzucchelli-Acetats, verschmilzt dieses Modell High-Fashion-Ästhetik mit außergewöhnlicher Materialtiefe.
 

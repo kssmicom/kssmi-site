@@ -66,7 +66,7 @@ seoKeywords: "fabricante de óculos de sol de acetato KAS-011, óculos de luxo p
 - Etiquetas de Moda Boutique
 - Venda Duty-Free e Viagens
 
-## Overview
+## Visão Geral
 
 O acetato Mazzucchelli e JINYU de alta qualidade formam o núcleo do KAS-011, criando uma armação vibrante e leve que ressoa com os requisitos sofisticados das marcas de óculos de luxo.
 

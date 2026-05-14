@@ -61,7 +61,7 @@ seoKeywords: "fabricante de óculos de sol de titânio, fornecedor de óculos OE
 - Marcas Esportivas e Lifestyle Automotivo
 - Venda Duty-Free e Viagens
 
-## Overview
+## Visão Geral
 
 O KTS-212 utiliza titânio de qualidade premium para oferecer uma relação resistência-peso superior para coleções de óculos de elite. Esta armação ultraleve apresenta um design unissexo único que atrai os mercados de moda de alta gama e retalho de luxo.
 

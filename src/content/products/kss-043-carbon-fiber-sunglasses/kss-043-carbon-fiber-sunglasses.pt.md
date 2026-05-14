@@ -62,7 +62,7 @@ seoKeywords: "fabricante de óculos de sol de fibra de carbono, atacado de ócul
 - Marcas Esportivas e Lifestyle Automotivo
 - Etiquetas de Moda Boutique
 
-## Overview
+## Visão Geral
 
 Combinando durabilidade de grau aeroespacial com um perfil ultra-leve, o KSS-043 é fabricado em fibra de carbono de primeira qualidade para marcas que priorizam a estética de alto desempenho.
 

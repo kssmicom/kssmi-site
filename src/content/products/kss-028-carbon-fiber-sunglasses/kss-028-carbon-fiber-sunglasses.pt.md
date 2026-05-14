@@ -59,7 +59,7 @@ seoKeywords: "fabricante de óculos de sol em fibra de carbono, óculos de sol O
 - Marcas Esportivas e Lifestyle Automotivo
 - Grupos de Grandes Armazéns
 
-## Overview
+## Visão Geral
 
 Fabricado em fibra de carbono de grau aeroespacial, o KSS-028 traz uma estética sofisticada e de alta resistência às coleções de óculos modernos. Seus padrões de trama distintos e sua arquitetura ultra-leve proporcionam uma experiência táctil premium que ressoa com os padrões do mercado de luxo.
 

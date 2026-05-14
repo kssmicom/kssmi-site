@@ -68,7 +68,7 @@ seoKeywords: "fabricante armações ópticas fibra de carbono, óculos personali
 - Lojas Ópticas Premium
 - Marcas Esportivas e Lifestyle Automotivo
 
-## Overview
+## Visão Geral
 
 Projetada para o segmento de luxo de alto padrão, a KSO-010 funde fibra de carbono de grau aeroespacial com detalhes em madeira artesanais, como o ébano do Ceilão e o carvalho branco. Esta sofisticada construção híbrida, combinada com elegantes hastes de titânio, cria uma armação que é simultaneamente ultraleve e estruturalmente superior.
 

@@ -59,7 +59,7 @@ seoKeywords: "nhà sản xuất kính mát sợi carbon, kính mát OEM tùy ch�
 - Bán lẻ miễn thuế và du lịch
 - Nhãn thời trang boutique
 
-## Overview
+## Tổng quan
 
 Kết hợp hiệu suất siêu nhẹ với tính thẩm mỹ unisex tinh tế, KSS-031 được chế tác tỉ mỉ từ sợi carbon cấp hàng không vũ trụ để mang lại tính toàn vẹn về cấu trúc tối đa.
 

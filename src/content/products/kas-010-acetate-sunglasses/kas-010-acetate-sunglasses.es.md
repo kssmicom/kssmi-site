@@ -69,7 +69,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 - Etiquetas de Moda Boutique
 - Tiendas de Concepto y Multi-Marca
 
-## Overview
+## Resumen
 
 El vibrante acetato Mazzucchelli y JINYU le otorga a esta montura unisex su distintivo carácter de lujo, ofreciendo un perfil ligero pero duradero que mantiene su acabado con el tiempo.
 

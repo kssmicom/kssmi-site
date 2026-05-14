@@ -63,7 +63,7 @@ seoKeywords: "fabricant de lunettes de soleil en titane, usine de lunettes de so
 - Marques Sportives et Lifestyle Automobile
 - Vente Duty-Free et Voyage
 
-## Overview
+## Aperçu
 
 La construction en titane de qualité supérieure confère au KTS-207 son profil ultra-léger et sa durabilité exceptionnelle, ce qui en fait un choix idéal pour les gammes de mode haut de gamme. Son esthétique unisexe unique comble le fossé entre le style de luxe et les tendances contemporaines.
 

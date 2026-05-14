@@ -58,7 +58,7 @@ seoKeywords: "bingkai optik gentian karbon, kacamata titanim tersuai, pengilang 
 - Jenama Gaya Hidup Sukan & Automotif
 - Rantai Optik Bergengsi
 
-## Overview
+## Gambaran Keseluruhan
 
 Menggabungkan gentian karbon gred aeroangkasa dengan kemasan urat gunung mahogani, KSO-224 menawarkan persilangan yang jarang berlaku antara prestasi teknikal dan kehangatan semula jadi.
 

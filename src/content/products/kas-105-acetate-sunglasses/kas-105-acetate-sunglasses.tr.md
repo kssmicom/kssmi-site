@@ -69,7 +69,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 - Concept ve Çoklu Marka Mağazaları
 - Lüks Moda Evleri
 
-## Overview
+## Genel Bakış
 
 Birinci sınıf Mazzucchelli ve JINYU asetattan üretilen KAS-105, cesur bir unisex tasarımı canlı renk derinliğiyle dengeler. Bu el cilalı çerçeve, yüksek yoğunluklu malzemelere ve çağdaş moda estetiğine öncelik veren markalar için çok yönlü bir temel oluşturur.
 

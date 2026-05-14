@@ -7,8 +7,8 @@ lang: ms
 slug: about-us
 title: "Tentang Kami"
 seoTitle: "Tentang Kami | Kssmi Eyewear - Pakar Pembuatan Berprehatan"
-seoDescription: "Ketahui tentang sejarah 20 tahun Kssmi Eyewear, barisan pengeluaran titanium dan acetate khusus kami, dan komitmen kami terhadap penjaminan kualiti tanpa kecacatan."
-seoKeywords: "eyewear manufacturer, acetate sunglasses factory, precision frame manufacturing, OEM ODM eyewear China"
+seoDescription: "Ketahui tentang sejarah 20 tahun Kssmi Eyewear, barisan pengeluaran titanium dan asetat khusus kami, dan komitmen kami terhadap penjaminan kualiti tanpa kecacatan."
+seoKeywords: "eyewear manufacturer, asetat sunglasses factory, precision frame manufacturing, OEM ODM eyewear China"
 ogImage: "/media/collection/about/Your-Professional-Eyewear-and-Sunglasses-Manufacturer-Expert-from-China.webp"
 
 s01_hero:
@@ -41,20 +41,20 @@ s02_foundation:
 
 s03_expertise:
   images:
-    - url: "https://kssmi.com/wp-content/uploads/2025/10/Sourcing-Acetate-Materials-from-Mazzucchelli.webp"
-      alt: "Sampel Acetate Mazzucchelli"
-    - url: "https://kssmi.com/wp-content/uploads/2025/10/High-quality-Acetate-Materials-Producing.webp"
-      alt: "Pengeluaran Acetate"
+    - url: "https://kssmi.com/wp-content/uploads/2025/10/Sourcing-Asetat-Materials-from-Mazzucchelli.webp"
+      alt: "Sampel Asetat Mazzucchelli"
+    - url: "https://kssmi.com/wp-content/uploads/2025/10/High-quality-Asetat-Materials-Producing.webp"
+      alt: "Pengeluaran Asetat"
     - url: "https://kssmi.com/wp-content/uploads/2025/10/High-grade-Stainless-Steel-Frame-Producing.webp"
       alt: "Sampel Bahan Logam"
     - url: "https://kssmi.com/wp-content/uploads/2025/10/High-grade-Titanium-Frame-Temple-Producing.webp"
       alt: "Mesin Pengilangan Presisi"
   titleLine1: "Produk & Kepakaran Bahan:"
   titleLine2: "Kerajinan Kami"
-  subtitle: "Acetate premium, logam lanjutan, dan inovasi lestari—dibuat khas untuk meninggikan jenama anda dengan kualiti, keselesaan, dan prestasi yang tidak kompromi."
+  subtitle: "Asetat premium, logam lanjutan, dan inovasi lestari—dibuat khas untuk meninggikan jenama anda dengan kualiti, keselesaan, dan prestasi yang tidak kompromi."
   blocks:
-    - title: "Kami adalah langkah esterior acetate premium, diperolehi dari pembekal terbaik dunia."
-      description: "Kacamata terbaik dunia bermula dengan bahan terbaik dunia. Kepakaran kami dalam acetate tidak ada tandingan, dan kami berkerjasama dengan pembekal bertaraf tinggi seperti Mazzucchelli untuk mendapatkan bahan berkualiti tinggi yang eksklusif. Ini membolehkan kami menawarkan pelbagai kemungkinan kreatif yang tiada tanding melalui pelbagai jenis acetate kami:"
+    - title: "Kami adalah langkah esterior asetat premium, diperolehi dari pembekal terbaik dunia."
+      description: "Kacamata terbaik dunia bermula dengan bahan terbaik dunia. Kepakaran kami dalam asetat tidak ada tandingan, dan kami berkerjasama dengan pembekal bertaraf tinggi seperti Mazzucchelli untuk mendapatkan bahan berkualiti tinggi yang eksklusif. Ini membolehkan kami menawarkan pelbagai kemungkinan kreatif yang tiada tanding melalui pelbagai jenis asetat kami:"
       list:
         - "– Mono (Pejal dan Susu)"
         - "– Horn & Block Patterns"
@@ -203,7 +203,7 @@ s08_faq:
   items:
     - number: "1"
       question: "Apakah jenis bahan yang anda specialisasikan?"
-      answer: "Kami adalah langkah esterior pelbagai bahan premium. Specialisasi kami termasuk acetate kelas tinggi dari pembekal bertaraf dunia seperti Mazzucchelli, logam lanjutan seperti Titanium ringan dan Keluli Tahan Karat yang tahan lama, dan portfolio yang semakin berkembang bagi bahan inovatif, lestari dan boleh diperbaharui."
+      answer: "Kami adalah langkah esterior pelbagai bahan premium. Specialisasi kami termasuk asetat kelas tinggi dari pembekal bertaraf dunia seperti Mazzucchelli, logam lanjutan seperti Titanium ringan dan Keluli Tahan Karat yang tahan lama, dan portfolio yang semakin berkembang bagi bahan inovatif, lestari dan boleh diperbaharui."
     - number: "2"
       question: "Apakah Kuantiti Pesanan Minimum (MOQ) anda?"
       answer: "Model factory-direct kami direka untuk fleksibiliti. Dengan MOQ rendah 300 keping setiap model dan 3 warna pilihan, kami menstruktur program private-branding kami tanpa kuantiti pesanan minimum (MOQ) yang tinggi seperti yang sering terdapat dalam pembuatan traditional. Ini membolehkan kami berkerjasama dengan kedua-dua jenama global yang mantap dan pereka émérgents."
@@ -264,7 +264,7 @@ s09_contact:
   formEmailLabel: "Emel Rasmi"
   formEmailPlaceholder: "name@company.com"
   formDetailsLabel: "Butiran Projek"
-  formDetailsPlaceholder: "Untuk membantu pasukan kami memberikan anda maklumat paling tepat, sila jelaskan projek anda dengan seberapa terperinci mungkin.\n\nButiran utama untuk disertakan:\n1. Peringkat Projek: (cth, cuma idea, sketch, tech pack, fail 3D CAD)\n2. Bahan yang Diingini: (cth, acetate Mazzucchelli, titanium Jepun, gabungan)\n3. Anggaran Kuantiti: (cth, 600 unit keseluruhan, 200 setiap warna)\n4. Tarikh Lancar Sasaran: (cth, S1 atau S3)\n5. Visi Jenama: (cth, mewah, prestasi, fesyen lestari).\n\nSila jangan segarkan untuk melampirkan sebarang fail yang tersedia (sketch, mood boards, tech packs)."
+  formDetailsPlaceholder: "Untuk membantu pasukan kami memberikan anda maklumat paling tepat, sila jelaskan projek anda dengan seberapa terperinci mungkin.\n\nButiran utama untuk disertakan:\n1. Peringkat Projek: (cth, cuma idea, sketch, tech pack, fail 3D CAD)\n2. Bahan yang Diingini: (cth, asetat Mazzucchelli, titanium Jepun, gabungan)\n3. Anggaran Kuantiti: (cth, 600 unit keseluruhan, 200 setiap warna)\n4. Tarikh Lancar Sasaran: (cth, S1 atau S3)\n5. Visi Jenama: (cth, mewah, prestasi, fesyen lestari).\n\nSila jangan segarkan untuk melampirkan sebarang fail yang tersedia (sketch, mood boards, tech packs)."
   formSecurityError: "Sila lengkapkan semakan keselamatan di atas."
   formSubmitText: "Hantar Permintaan"
   formSendingText: "MENGHANTAR..."

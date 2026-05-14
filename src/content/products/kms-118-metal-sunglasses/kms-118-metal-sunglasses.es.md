@@ -70,7 +70,7 @@ seoKeywords: "gafas de sol metal acetato, gafas moda lujo, fabricante gafas OEM,
 - Cadenas Ópticas de Alta Gama
 - Venta Duty-Free y Viajes
 
-## Overview
+## Resumen
 
 El KMS-118 logra un equilibrio sofisticado entre los frentes de acetato premium y las varillas de metal diseñadas con precisión, creando una montatura híbrida duradera que une la estética clásica con las tendencias modernas.
 

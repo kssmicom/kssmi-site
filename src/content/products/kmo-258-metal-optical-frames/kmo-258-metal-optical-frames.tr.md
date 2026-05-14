@@ -61,7 +61,7 @@ seoKeywords: "asetat metal çerçeveler, metal optik çerçeveler, gözlük üre
 - Butik Moda Markaları
 - Yüksek Segment Optik Zincirleri
 
-## Overview
+## Genel Bakış
 
 Üst düzey moda portföyleri için tasarlanan KMO-258, premium asetat ön kısımların sıcaklığını metalik sapların mimari sertliğiyle harmanlıyor. Göl Mavisi ve Açık Altın gibi canlı renk seçeneklerinin entegrasyonu, lüks odaklı tüketicilerde yankı uyandıran farklı bir görsel imza oluşturuyor.
 

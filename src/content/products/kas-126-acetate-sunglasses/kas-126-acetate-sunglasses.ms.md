@@ -70,7 +70,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 - Label Fesyen Boutique
 - Kumpulan Stor Departments
 
-## Overview
+## Gambaran Keseluruhan
 
 Ditakrifkan oleh profilnya yang berani dan kecemerlangan gilapan tangan asetat Mazzucchelli Itali, model ini menggabungkan estetika fesyen tinggi dengan kedalaman bahan yang luar biasa.
 

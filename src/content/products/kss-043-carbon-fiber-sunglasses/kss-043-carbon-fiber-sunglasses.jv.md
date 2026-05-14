@@ -62,7 +62,7 @@ seoKeywords: "produsen kacamata hitam serat karbon, grosir kacamata hitam KSS-04
 - Merek Gaya Hidup Olahraga & Otomotif
 - Label Busuk Fashion
 
-## Overview
+## Ringkesan
 
 Nggabungake daya tahan kelas aeroangkasa kanthi profil ultra-entheng, KSS-043 dirancang saka serat karbon premium kanggo merek sing ngutamakake estetika kinerja dhuwur.
 

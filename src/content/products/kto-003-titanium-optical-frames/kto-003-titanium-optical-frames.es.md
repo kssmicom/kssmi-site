@@ -56,7 +56,7 @@ seoKeywords: "fabricante monturas ópticas titanio, gafas de titanio personaliza
 - Cadenas Ópticas de Alta Gama
 - Grupos de Grandes Almacenes
 
-## Overview
+## Resumen
 
 Combinando la longevidad estructural con un perfil excepcionalmente ligero, el KTO-003 está fabricado con precisión en titanio premium de grado aeroespacial.
 

@@ -58,7 +58,7 @@ seoKeywords: "montures optiques fibre de carbone, lunettes titane sur mesure, fa
 - Marques Sportives et Lifestyle Automobile
 - Chaînes Optiques Haut de Gamme
 
-## Overview
+## Aperçu
 
 Alliant la fibre de carbone de qualité aérospatiale à une finition en acajou au veinage montagne, le modèle KSO-224 offre une intersection rare entre performance technique et chaleur naturelle.
 

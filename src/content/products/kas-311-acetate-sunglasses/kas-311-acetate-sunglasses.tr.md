@@ -70,7 +70,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel unisex gözlük, Mazz
 - Butik Moda Markaları
 - Duty-Free ve Seyahat Perakendecileri
 
-## Overview
+## Genel Bakış
 
 Mazzucchelli ve JINYU asetatın sofistike bir karışımından üretilen KAS-311, üstün renk canlılığına sahip hafif ama dayanıklı bir çerçeve sunar.
 

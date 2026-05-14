@@ -70,7 +70,7 @@ seoKeywords: "fabricante de óculos de sol em metal sem aro, produção de ócul
 - Marcas D2C de E-commerce
 - Grupos de Grandes Armazéns
 
-## Overview
+## Visão Geral
 
 A estética sem aro encontra a integridade estrutural no KRS-203, um modelo definido pelo seu perfil minimalista e construção das hastes em metal premium.
 

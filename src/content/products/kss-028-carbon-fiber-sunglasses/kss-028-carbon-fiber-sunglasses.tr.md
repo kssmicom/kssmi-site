@@ -59,7 +59,7 @@ seoKeywords: "karbon fiber güneş gözlüğü üreticisi, özel OEM güneş gö
 - Spor ve Otomotiv Yaşam Tarzı Markaları
 - Departman Mağazası Grupları
 
-## Overview
+## Genel Bakış
 
 Havacılık ve uzay kalitesinde karbon fiberden üretilen KSS-028, modern gözlük koleksiyonlarına sofistike ve yüksek mukavemetli bir estetik katıyor. Kendine özgü dokuma desenleri ve ultra hafif mimarisi, lüks pazar standartlarıyla yankı bulan birinci sınıf bir dokunsal deneyim sunuyor.
 

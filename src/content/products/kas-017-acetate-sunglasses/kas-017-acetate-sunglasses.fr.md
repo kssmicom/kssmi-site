@@ -59,7 +59,7 @@ seoKeywords: "lunettes de soleil en acétate de luxe, fabricant de lunettes pers
 - Marques de Mode Boutique
 - Vente Duty-Free et Voyage
 
-## Overview
+## Aperçu
 
 L'acétate Mazzucchelli et JINYU sélectionné à la main confère au KAS-017 sa finition haute densité et sa profondeur de couleur supérieure, répondant aux normes rigoureuses du marché des lunettes de luxe.
 

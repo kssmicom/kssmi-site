@@ -63,7 +63,7 @@ seoKeywords: "fabricante de óculos de sol em titânio, fábrica de óculos de s
 - Marcas Esportivas e Lifestyle Automotivo
 - Venda Duty-Free e Viagens
 
-## Overview
+## Visão Geral
 
 A construção em titânio premium confere ao KTS-207 seu perfil ultra-leve e durabilidade excepcional, tornando-o a escolha ideal para portfólios de moda de alto padrão. Sua estética unissex única une o estilo de luxo às tendências contemporâneas.
 

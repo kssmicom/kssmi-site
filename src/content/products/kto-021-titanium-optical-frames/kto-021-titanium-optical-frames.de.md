@@ -69,7 +69,7 @@ seoKeywords: "Hersteller Titan-Brillenfassungen, kundenspezifische OEM-Brillenpr
 - Hochwertige Optikketten
 - Boutique-Modemarken
 
-## Overview
+## Übersicht
 
 Diese Fassungen bestehen aus hochwertigem Titan und bieten ein ultraleichtes Tragegefühl mit hervorragender Korrosionsbeständigkeit für luxuriöse Optik-Kollektionen.
 

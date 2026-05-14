@@ -68,7 +68,7 @@ seoKeywords: "pengilang bingkai optik gentian karbon, kacamata tersuai titanium 
 - Rantai Optik Bergengsi
 - Jenama Gaya Hidup Sukan & Automotif
 
-## Overview
+## Gambaran Keseluruhan
 
 Direka untuk segmen mewah mewah, KSO-010 menggabungkan gentian karbon gred aeroangkasa dengan hiasan kayu buatan tangan seperti Ceylon Ebony dan White Oak. Pembinaan hibrid yang canggih ini, dipadankan dengan kuil titanium yang anggun, menghasilkan bingkai yang ultra-ringan dan unggul dari segi struktur.
 

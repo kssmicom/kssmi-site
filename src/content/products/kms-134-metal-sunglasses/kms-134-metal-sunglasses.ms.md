@@ -70,7 +70,7 @@ seoKeywords: "pengeluar kacamata hitam logam, kacamata logam tersuai OEM, kacama
 - Label Fesyen Boutique
 - Kumpulan Stor Departments
 
-## Overview
+## Gambaran Keseluruhan
 
 Logam bermutu tinggi menentukan keanggunan struktur KMS-134, di mana seni bina jambatan berkembar yang sofistikat menghasilkan siluet maskulin yang berani. Bingkai ini berfungsi sebagai item pernyataan untuk koleksi mewah, mengimbangi kekuatan industri dengan sensitiviti fesyen yang halus.
 

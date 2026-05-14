@@ -70,7 +70,7 @@ seoKeywords: "produsen kacamata hitam logam tanpa rim, produksi kacamata premium
 - Merek D2C e-dagang
 - Group Store Departemen
 
-## Overview
+## Ringkesan
 
 Estetika rimless ketemu karo integritas struktural ing KRS-203, model sing ditetepake kanthi profil minimalis lan konstruksi gagang logam premium.
 

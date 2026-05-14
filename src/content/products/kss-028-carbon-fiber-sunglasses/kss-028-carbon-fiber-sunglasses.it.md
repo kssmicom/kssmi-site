@@ -59,7 +59,7 @@ seoKeywords: "produttore occhiali da sole fibra di carbonio, occhiali da sole OE
 - Marchi Sportivi e Auto Lifestyle
 - Gruppi di Grandi Magazzini
 
-## Overview
+## Panoramica
 
 Realizzato in fibra di carbonio di grado aerospaziale, il modello KSS-028 apporta un'estetica sofisticata e ad alta resistenza alle moderne collezioni di occhiali. Le sue distintive trame di intreccio e l'architettura ultra-leggera offrono un'esperienza tattile premium in linea con gli standard del mercato del lusso.
 

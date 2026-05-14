@@ -67,7 +67,7 @@ seoKeywords: "produsen kacamata hitam titanium, kacamata OEM kustom, frame label
 - Merek Gaya Hidup Olahraga & Otomotif
 - P中小uters Dutypirlalu & Journey
 
-## Overview
+## Ringkesan
 
 Dirancang kanggo pasar high-end sing nuntut daya tahan entheng lan desain kontemporer sing paling apik, model KTS-023 nampilake estetika titanium kelas premium sing apik. Frame hipoalergenik nawakake rasio kekuatan-kanggo-bobot sing luar biasa, njamin kenyamanan sedina muput kanggo sing nganggo sing paling teliti.
 

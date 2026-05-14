@@ -67,7 +67,7 @@ seoKeywords: "produttore occhiali titanio, occhiali OEM su misura, montature lus
 - Marchi Sportivi e Auto Lifestyle
 - Vendita Duty-Free e Viaggi
 
-## Overview
+## Panoramica
 
 Progettato per mercati di fascia alta che esigono il massimo in termini di durata e leggerezza, il modello KTS-023 mette in mostra l'estetica raffinata del titanio di qualità premium. Le montature ipoallergeniche offrono un eccezionale rapporto forza-peso, garantendo un comfort duraturo per i clienti più esigenti.
 

@@ -70,7 +70,7 @@ seoKeywords: "occhiali da sole metallo acetato, occhiali moda lusso, produttore 
 - Catene Ottiche di Alto Livello
 - Vendita Duty-Free e Viaggi
 
-## Overview
+## Panoramica
 
 Il modello KMS-118 raggiunge un equilibrio sofisticato tra i frontali in acetato premium e le aste in metallo progettate con precisione, creando una montatura ibrida durevole che unisce l'estetica classica alle tendenze moderne.
 

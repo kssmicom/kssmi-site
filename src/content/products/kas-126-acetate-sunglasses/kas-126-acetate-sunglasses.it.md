@@ -70,7 +70,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali da sole OEM personal
 - Marche di Moda Boutique
 - Gruppi di Grandi Magazzini
 
-## Overview
+## Panoramica
 
 Definito dal suo profilo audace e dalla brillantezza lucidata a mano dell'acetato italiano Mazzucchelli, questo modello fonde l'estetica dell'alta moda con un'eccezionale profondità materica.
 

@@ -1,11 +1,11 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Kính Mát Axit Tùy Chỉnh"
+title: "Kính Mát Axetat Tùy Chỉnh"
 slug: "kas-115-acetate-sunglasses"
 itemNo: "KAS-115"
 date: "2026-05-09"
 colors: "Đen & Tím & Trắng & Đồi mồi & Cam"
-materials: "Axit Mazzucchelli và JINYU Cao cấp & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Mazzucchelli và JINYU Cao cấp & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) (Tùy chỉnh theo yêu cầu)"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -16,7 +16,7 @@ series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sungla
 
 # ─────────────────────────────────────────────────────
 size: "55-20-145mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng và Càng kính Axit Cao cấp"
+frameMaterial: "Gọng và Càng kính Axetat Cao cấp"
 lensMaterial: "Tròng kính Nylon Bền bỉ & Tùy chỉnh theo yêu cầu"
 designStyle: "Táo bạo, Cổ điển, Xa xỉ, Xu hướng, Thời trang, Phong cách, Unisex"
 nosePads: "Đệm mũi Tích hợp"
@@ -51,14 +51,14 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAS-115 Kính Mát Axit Xa Xỉ | Nhà Sản Xuất Tùy Chỉnh"
-seoDescription: "Hợp tác với nhà sản xuất tùy chỉnh hàng đầu cho kính mát axit Mazzucchelli rực rỡ. Cung cấp tùy chỉnh OEM/ODM toàn diện với 300 MOQ cho các thương hiệu xa xỉ."
-seoKeywords: "nhà sản xuất kính mát axit, kính mát oem tùy chỉnh, kính mắt xa xỉ nhãn hiệu riêng, gọng axit bán buôn, nhà máy kính mắt tùy chỉnh trung quốc, nhà cung cấp kính mát cao cấp, sản xuất kính mắt tùy chỉnh, oem kính mắt trung quốc"
+seoTitle: "KAS-115 Kính Mát Axetat Xa Xỉ | Nhà Sản Xuất Tùy Chỉnh"
+seoDescription: "Hợp tác với nhà sản xuất tùy chỉnh hàng đầu cho kính mát axetat Mazzucchelli rực rỡ. Cung cấp tùy chỉnh OEM/ODM toàn diện với 300 MOQ cho các thương hiệu xa xỉ."
+seoKeywords: "nhà sản xuất kính mát axetat, kính mát oem tùy chỉnh, kính mắt xa xỉ nhãn hiệu riêng, gọng axetat bán buôn, nhà máy kính mắt tùy chỉnh trung quốc, nhà cung cấp kính mát cao cấp, sản xuất kính mắt tùy chỉnh, oem kính mắt trung quốc"
 ---
 
 ## Đặc Điểm Kỹ Thuật
 
-- **Chất Liệu Cao Cấp:** Được chế tác từ axit Mazzucchelli và JINYU chất lượng cao, mang lại gọng kính nhẹ, bền bỉ với các lớp hoàn thiện rực rỡ.
+- **Chất Liệu Cao Cấp:** Được chế tác từ axetat Mazzucchelli và JINYU chất lượng cao, mang lại gọng kính nhẹ, bền bỉ với các lớp hoàn thiện rực rỡ.
 - **Phụ Kiện Bền Bỉ:** Nổi bật với bản lề cấu trúc 3+2 chắc chắn được thiết kế để vận hành êm ái, ổn định lâu dài.
 - **Quang Học Cao Cấp:** Trang bị tròng kính nylon bền bỉ mang lại độ rõ nét tuyệt vời, với khả năng tùy chỉnh phong phú cho các cấu hình màu sắc độc đáo.
 - **Thoải Mái Suốt Cả Ngày:** Thiết kế với đệm mũi tích hợp để đảm bảo sự vừa vặn liền mạch, chắc chắn và thoải mái khi đeo trong thời gian dài.
@@ -76,7 +76,7 @@ seoKeywords: "nhà sản xuất kính mát axit, kính mát oem tùy chỉnh, k�
 
 ## Tổng Quan
 
-Được chế tác từ axit Mazzucchelli và JINYU cao cấp, KAS-115 mang đậm nét thẩm mỹ cổ điển, táo bạo đồng thời mang lại độ bền vượt trội và cấu hình màu sắc rực rỡ. Thiết kế unisex này nổi bật như một món đồ đa năng cho các bộ sưu tập kính mắt hiện đại, cao cấp.
+Được chế tác từ axetat Mazzucchelli và JINYU cao cấp, KAS-115 mang đậm nét thẩm mỹ cổ điển, táo bạo đồng thời mang lại độ bền vượt trội và cấu hình màu sắc rực rỡ. Thiết kế unisex này nổi bật như một món đồ đa năng cho các bộ sưu tập kính mắt hiện đại, cao cấp.
 
 Bản lề cấu trúc 3+2 chắc chắn và đệm mũi tích hợp được thiết kế để đảm bảo sự ổn định lâu dài và sự thoải mái suốt cả ngày.
 

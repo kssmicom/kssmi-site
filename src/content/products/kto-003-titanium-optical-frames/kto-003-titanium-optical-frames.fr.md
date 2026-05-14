@@ -56,7 +56,7 @@ seoKeywords: "fabricant montures optiques titane, lunettes en titane personnalis
 - Chaînes Optiques Haut de Gamme
 - Groupes de Grands Magasins
 
-## Overview
+## Aperçu
 
 Alliant longévité structurelle et profil exceptionnellement léger, le modèle KTO-003 est conçu avec précision en titane premium de qualité aérospatiale.
 

@@ -69,7 +69,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 - Rumah Fesyen Mewah
 - Kedai Konsep & Berbilang Jenama
 
-## Overview
+## Gambaran Keseluruhan
 
 Dihasilkan daripada asetat Mazzucchelli dan JINYU yang dipilih khas, KAS-318 memberikan kecerahan warna dan ketahanan struktur yang luar biasa untuk pasaran fesyen premium. Komposisinya yang ringan memastikan keselesaan pemakai jangka panjang tanpa menjejaskan impak estetik.
 

@@ -69,7 +69,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 - Concept ve Çoklu Marka Mağazaları
 - Duty-Free ve Seyahat Perakendecileri
 
-## Overview
+## Genel Bakış
 
 Canlı renk derinliği ve premium yapısal bütünlük, cesur, vintage esintili bir estetiği yakalamak için yüksek dereceli Mazzucchelli ve JINYU asetattan üretilen bir model olan KAS-111'de buluşuyor.
 

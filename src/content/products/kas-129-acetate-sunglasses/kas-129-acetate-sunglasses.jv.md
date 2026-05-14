@@ -74,7 +74,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 - Label Busuk Fashion
 - Ritel Bebas Bea & Perjalanan
 
-## Overview
+## Ringkesan
 
 Rumah mode mewah sing nggoleki keunggulan visual sing khas nemokake ing KAS-129, sing nggabungake asetat Mazzucchelli lan JINYU sing dipilih tangan kanthi siluet unisex sing kendel.
 

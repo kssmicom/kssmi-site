@@ -69,7 +69,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 - Label Busuk Fashion
 - Toko Konsep & Multi-Merek
 
-## Overview
+## Ringkesan
 
 Asetat Mazzucchelli lan JINYU sing padhang menehi frame unisex iki karakter mewah sing khas, nawakake profil sing entheng nanging awet sing njaga finishinge saka wektu menyang wektu.
 

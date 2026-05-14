@@ -69,7 +69,7 @@ seoKeywords: "fabricante de óculos de sol em titânio, óculos de sol OEM perso
 - Marcas Esportivas e Lifestyle Automotivo
 - Etiquetas de Moda Boutique
 
-## Overview
+## Visão Geral
 
 O titânio de grau aeroespacial define o KTS-022, oferecendo uma arquitetura ultra leve que equilibra alta resistência à corrosão com uma estética de luxo sofisticada.
 

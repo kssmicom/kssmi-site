@@ -70,7 +70,7 @@ seoKeywords: "produttore occhiali da sole in metallo rimless, KRS-203 produzione
 - Marche D2C E-commerce
 - Gruppi di Grandi Magazzini
 
-## Overview
+## Panoramica
 
 L'estetica rimless incontra l'integrità strutturale nel modello KRS-203, definito dal suo profilo minimalista e dalla costruzione delle aste in metallo premium.
 

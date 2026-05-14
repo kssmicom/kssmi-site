@@ -67,7 +67,7 @@ seoKeywords: "nhà sản xuất kính mát titanium, kính mắt OEM tùy chỉn
 - Thương hiệu thể thao và ô tô
 - Bán lẻ miễn thuế và du lịch
 
-## Overview
+## Tổng quan
 
 Được thiết kế cho các thị trường cao cấp đòi hỏi sự bền bỉ siêu nhẹ và thiết kế đương đại đỉnh cao, mẫu KTS-023 thể hiện thẩm mỹ bóng bẩy của chất liệu titanium cao cấp. Gọng kính không gây dị ứng mang lại tỷ lệ sức bền trên trọng lượng vượt trội, đảm bảo sự thoải mái cả ngày cho những người đeo khó tính nhất.
 

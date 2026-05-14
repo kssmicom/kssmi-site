@@ -62,7 +62,7 @@ seoKeywords: "pengilang cermin mata hitam gentian karbon, borong cermin mata hit
 - Jenama Gaya Hidup Sukan & Automotif
 - Label Fesyen Boutique
 
-## Overview
+## Gambaran Keseluruhan
 
 Menggabungkan ketahanan gred aeroangkasa dengan profil ultra-ringan, KSS-043 direka daripada gentian karbon premium untuk jenama yang mengutamakan estetika berprestasi tinggi.
 

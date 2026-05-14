@@ -68,7 +68,7 @@ seoKeywords: "Kohlefaser-Optikbrillen Hersteller, kundenspezifische Titan-Kohlef
 - Hochwertige Optikketten
 - Sport- und Auto-Lifestyle-Marken
 
-## Overview
+## Übersicht
 
 Die KSO-010 wurde für das High-End-Luxussegment entwickelt und kombiniert Kohlefaser in Luft- und Raumfahrtqualität mit handgefertigten Holzakzenten wie Ceylon-Ebenholz und Weißeiche. Diese anspruchsvolle Hybridkonstruktion, gepaart mit eleganten Titanbügeln, schafft einen Rahmen, der sowohl ultraleicht als auch strukturell überlegen ist.
 

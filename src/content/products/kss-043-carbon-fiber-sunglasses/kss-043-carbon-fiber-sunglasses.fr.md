@@ -62,7 +62,7 @@ seoKeywords: "fabricant de lunettes de soleil en fibre de carbone, vente en gros
 - Marques Sportives et Lifestyle Automobile
 - Marques de Mode Boutique
 
-## Overview
+## Aperçu
 
 Alliant durabilité de qualité aérospatiale et profil ultra-léger, le modèle KSS-043 est conçu en fibre de carbone de qualité supérieure pour les marques qui privilégient l'esthétique haute performance.
 

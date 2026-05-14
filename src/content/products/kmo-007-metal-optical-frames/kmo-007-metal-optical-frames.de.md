@@ -64,7 +64,7 @@ seoKeywords: "Metall-Brillenfassungen, Hersteller von Brillenfassungen, Fabrik f
 - Hochwertige Optikketten
 - Boutique-Modemmarken
 
-## Overview
+## Übersicht
 
 Ausgewogene strukturelle Belastbarkeit und anspruchsvolle Ästhetik definieren das Modell KMO-007, das sorgfältig aus Premium-Metall für anspruchsvolle globale Marken gefertigt wurde.
 

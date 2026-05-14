@@ -58,7 +58,7 @@ seoKeywords: "Carbonfaser-Brillenfassungen, maßgeschneiderte Titanbrillen, Luxu
 - Sport- und Auto-Lifestyle-Marken
 - Hochwertige Optikketten
 
-## Overview
+## Übersicht
 
 Durch die Kombination von Kohlefaser in Luft- und Raumfahrtqualität mit einem Mahagoni-Finish in Bergmaserung bietet die KSO-224 eine seltene Schnittstelle zwischen technischer Leistung und natürlicher Wärme.
 

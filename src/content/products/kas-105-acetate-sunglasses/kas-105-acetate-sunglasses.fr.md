@@ -69,7 +69,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil OE
 - Magasins de Concept et Multi-Marques
 - Maisons de Mode de Luxe
 
-## Overview
+## Aperçu
 
 Fabriquées à partir d'acétate premium Mazzucchelli et JINYU, les KAS-105 équilibrent un design unisexe audacieux avec une profondeur de couleur vibrante. Cette monture polie à la main sert de base polyvalente pour les marques privilégiant les matériaux à haute densité et l'esthétique de la mode contemporaine.
 

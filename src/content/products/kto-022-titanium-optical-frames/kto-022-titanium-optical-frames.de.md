@@ -67,7 +67,7 @@ seoKeywords: "Titan-Brillengestelle, Luxus-Brillenherstellung, Brillen-OEM-Fabri
 - Luxusmodehäuser
 - D2C-E-Commerce-Marken
 
-## Overview
+## Übersicht
 Durch die Kombination von Titan in Luftfahrtqualität mit einer anspruchsvollen Unisex-Ästhetik bietet das Modell KTO-022 eine leichte und dennoch widerstandsfähige Basis für Premium-Brillenkollektionen.
 
 Die präzisionsgefertigten 3-Zylinder-Scharniere und die integrierten, einteiligen Nasenpads gewährleisten eine langfristige strukturelle Stabilität und ganztägigen Komfort für den Endbenutzer.

@@ -59,7 +59,7 @@ seoKeywords: "nhà sản xuất kính mát sợi carbon, kính mát OEM tùy ch�
 - Thương hiệu thể thao và ô tô
 - Tập đoàn cửa hàng bách hóa
 
-## Overview
+## Tổng quan
 
 Được chế tác từ sợi carbon cấp hàng không vũ trụ, KSS-028 mang đến tính thẩm mỹ tinh tế và độ bền cao cho các bộ sưu tập kính mắt hiện đại. Các mẫu dệt đặc biệt và cấu trúc siêu nhẹ mang lại trải nghiệm xúc giác cao cấp, phù hợp với các tiêu chuẩn của thị trường xa xỉ.
 

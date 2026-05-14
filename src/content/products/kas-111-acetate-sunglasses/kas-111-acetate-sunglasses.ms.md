@@ -69,7 +69,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 - Kedai Konsep & Berbilang Jenama
 - Runcit Bebas Cukai & Perjalanan
 
-## Overview
+## Gambaran Keseluruhan
 
 Kedalaman warna yang bertenaga dan integriti struktur premium bertemu dalam KAS-111, model yang dihasilkan daripada asetat Mazzucchelli dan JINYU gred tinggi untuk menangkap estetik berinspirasikan vintaj yang berani.
 

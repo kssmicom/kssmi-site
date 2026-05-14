@@ -69,7 +69,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 - Toko Konsep & Multi-Merek
 - Rumah Mode Mewah
 
-## Overview
+## Ringkesan
 
 Digawe saka asetat Mazzucchelli lan JINYU premium, KAS-105 nyedhiyakake keseimbangan antarane desain unisex sing kendel karo kedalaman warna sing padhang. Frame sing dipoles nganggo tangan iki dadi dhasar sing serbaguna kanggo merek sing ngutamakake bahan kapadhetan dhuwur lan estetika fashion kontemporer.
 

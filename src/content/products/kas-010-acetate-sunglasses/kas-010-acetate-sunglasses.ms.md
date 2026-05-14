@@ -69,7 +69,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 - Label Fesyen Boutique
 - Kedai Konsep & Berbilang Jenama
 
-## Overview
+## Gambaran Keseluruhan
 
 Asetat Mazzucchelli dan JINYU yang bersemangat memberikan bingkai unisex ini karakter mewah yang tersendiri, menawarkan profil ringan namun tahan lama yang mengekalkan kemasannya dari semasa ke semasa.
 

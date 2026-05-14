@@ -74,7 +74,7 @@ seoKeywords: "fabricante óculos de sol acetato, óculos de sol OEM personalizad
 - Etiquetas de Moda Boutique
 - Venda Duty-Free e Viagens
 
-## Overview
+## Visão Geral
 
 As casas de moda de luxo que buscam uma vantagem visual distinta encontram-na no KAS-129, que combina acetato Mazzucchelli e JINYU selecionado à mão com uma silhueta ousada e unissex.
 

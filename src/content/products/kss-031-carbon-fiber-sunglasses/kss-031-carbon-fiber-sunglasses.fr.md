@@ -59,7 +59,7 @@ seoKeywords: "fabricant lunettes de soleil fibre de carbone, lunettes de soleil 
 - Vente Duty-Free et Voyage
 - Marques de Mode Boutique
 
-## Overview
+## Aperçu
 
 Alliant performance de légèreté et esthétique unisexe sophistiquée, le modèle KSS-031 est méticuleusement fabriqué à partir de fibre de carbone de qualité aérospatiale pour une intégrité structurelle maximale.
 

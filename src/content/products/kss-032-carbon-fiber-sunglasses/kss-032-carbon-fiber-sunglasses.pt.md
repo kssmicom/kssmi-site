@@ -57,7 +57,7 @@ seoKeywords: "fabricante de óculos de sol de fibra de carbono, óculos de sol O
 - Casas de Moda de Luxo
 - Venda Duty-Free e Viagens
 
-## Overview
+## Visão Geral
 
 Projetado para marcas que priorizam a superioridade técnica, o KSS-032 utiliza fibra de carbono de grau aeroespacial premium para criar uma armação que é tão resiliente quanto refinada. A distinta textura tramada do material serve como um selo de luxo, oferecendo uma estética sofisticada que o diferencia dos óculos convencionais.
 

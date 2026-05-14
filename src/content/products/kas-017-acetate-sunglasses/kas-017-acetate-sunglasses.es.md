@@ -59,7 +59,7 @@ seoKeywords: "gafas de sol de lujo de acetato, fabricante de gafas personalizada
 - Etiquetas de Moda Boutique
 - Venta Duty-Free y Viajes
 
-## Overview
+## Resumen
 
 El acetato Mazzucchelli y JINYU seleccionado a mano otorga al KAS-017 su acabado de alta densidad y su profundidad de color superior, cumpliendo con los rigurosos estándares del mercado de gafas de lujo.
 

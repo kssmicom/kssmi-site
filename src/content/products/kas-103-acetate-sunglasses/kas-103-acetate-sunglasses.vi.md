@@ -1,11 +1,11 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Kính Mát Axit Tùy Chỉnh"
+title: "Kính Mát Axetat Tùy Chỉnh"
 slug: "kas-103-acetate-sunglasses"
 itemNo: "KAS-103"
 date: "2026-05-06"
 colors: "Đen & Caro Vàng & Cẩm Thạch Ngọc Trai & Caro Đỏ & Caro Xanh & Caro Đen"
-materials: "Mazzucchelli Cao Cấp & JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli Cao Cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -16,7 +16,7 @@ series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sungla
 
 # ─────────────────────────────────────────────────────
 size: "52-19-143mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng và Càng kính Axit Cao Cấp"
+frameMaterial: "Gọng và Càng kính Axetat Cao Cấp"
 lensMaterial: "Tròng kính Nylon Bền Bỉ & Tùy chỉnh theo yêu cầu"
 designStyle: "Táo bạo, Thời trang, Phong cách, Phổ biến, Xu hướng, Unisex"
 nosePads: "Đệm mũi tích hợp"
@@ -55,18 +55,18 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Kính Mát Axit Thời Trang Táo Bạo KAS-103 | Xưởng Tùy Chỉnh Trung Quốc"
-seoDescription: "Hợp tác với xưởng tùy chỉnh của chúng tôi cho mẫu kính mát axit táo bạo KAS-103. Với họa tiết Mazzucchelli cao cấp và bản lề 3+2. OEM/ODM chuyên nghiệp với MOQ 300."
-seoKeywords: "nhà sản xuất kính mát axit, kính mát OEM tùy chỉnh, kính mắt nhãn hiệu riêng cao cấp, gọng axit bán sỉ, xưởng kính mắt Trung Quốc, kính mát thời trang táo bạo OEM, nhà cung cấp kính mắt cao cấp, sản xuất axit theo yêu cầu"
+seoTitle: "Kính Mát Axetat Thời Trang Táo Bạo KAS-103 | Xưởng Tùy Chỉnh Trung Quốc"
+seoDescription: "Hợp tác với xưởng tùy chỉnh của chúng tôi cho mẫu kính mát axetat táo bạo KAS-103. Với họa tiết Mazzucchelli cao cấp và bản lề 3+2. OEM/ODM chuyên nghiệp với MOQ 300."
+seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, kính mắt nhãn hiệu riêng cao cấp, gọng axetat bán sỉ, xưởng kính mắt Trung Quốc, kính mát thời trang táo bạo OEM, nhà cung cấp kính mắt cao cấp, sản xuất axetat theo yêu cầu"
 ---
 
 ## Đặc điểm
 
-- **Chất liệu gọng cao cấp:** Gọng và càng kính bằng axit Mazzucchelli và JINYU chất lượng cao mang lại màu sắc sống động, độ bóng sâu cùng độ bền cấu trúc vượt trội.
+- **Chất liệu gọng cao cấp:** Gọng và càng kính bằng axetat Mazzucchelli và JINYU chất lượng cao mang lại màu sắc sống động, độ bóng sâu cùng độ bền cấu trúc vượt trội.
 - **Phụ kiện bền bỉ:** Bản lề cấu trúc 3+2 thùng được thiết kế chính xác để đảm bảo vận hành êm ái nhất quán và độ ổn định lâu dài cho gọng kính.
 - **Quang học ưu việt:** Tròng kính nylon bền bỉ mang lại khả năng chống va đập cao và độ trong suốt quang học, cùng khả năng tùy chỉnh linh hoạt cho khả năng bảo vệ UV và các lớp phủ chuyên dụng.
-- **Vừa vặn công thái học:** Đệm mũi tích hợp được chạm khắc liền mạch vào cấu trúc axit để đảm bảo sự vừa vặn an toàn và không gây áp lực, giúp tăng cường sự thoải mái suốt cả ngày.
-- **Cấu trúc siêu nhẹ:** Thành phần axit được tối ưu hóa mang lại cảm giác cực kỳ nhẹ nhàng trong khi vẫn duy trì được độ chắc chắn cần thiết cho dòng kính thời trang cao cấp.
+- **Vừa vặn công thái học:** Đệm mũi tích hợp được chạm khắc liền mạch vào cấu trúc axetat để đảm bảo sự vừa vặn an toàn và không gây áp lực, giúp tăng cường sự thoải mái suốt cả ngày.
+- **Cấu trúc siêu nhẹ:** Thành phần axetat được tối ưu hóa mang lại cảm giác cực kỳ nhẹ nhàng trong khi vẫn duy trì được độ chắc chắn cần thiết cho dòng kính thời trang cao cấp.
 - **Tùy chỉnh linh hoạt:** Khả năng sản xuất OEM và ODM đầy đủ với mức MOQ chuyên nghiệp 300 chiếc, được thiết kế riêng cho các Nhà thiết kế kính mắt độc lập và các Nhãn hàng thời trang boutique.
 
 ## Phù hợp cho
@@ -78,9 +78,9 @@ seoKeywords: "nhà sản xuất kính mát axit, kính mát OEM tùy chỉnh, k�
 - Cửa hàng khái niệm & đa nhãn
 - Bán lẻ miễn thuế và du lịch
 
-## Overview
+## Tổng quan
 
-Mẫu KAS-103 sử dụng axit Mazzucchelli và JINYU cao cấp để đạt được độ bóng sâu, nổi bật với các họa tiết caro và cẩm thạch tinh xảo, phù hợp với các xu hướng thời trang cao cấp.
+Mẫu KAS-103 sử dụng axetat Mazzucchelli và JINYU cao cấp để đạt được độ bóng sâu, nổi bật với các họa tiết caro và cẩm thạch tinh xảo, phù hợp với các xu hướng thời trang cao cấp.
 
 Bản lề 3+2 thùng chính xác và đệm mũi tích hợp mang lại độ ổn định cấu trúc và sự thoải mái công thái học mà khách hàng dòng cao cấp kỳ vọng.
 

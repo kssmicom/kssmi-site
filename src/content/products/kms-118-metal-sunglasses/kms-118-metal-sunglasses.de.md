@@ -70,7 +70,7 @@ seoKeywords: "Metall Acetat Sonnenbrillen, Luxusmode Brillen, OEM Brillenherstel
 - Hochwertige Optikketten
 - Duty-Free- und Reisehandel
 
-## Overview
+## Übersicht
 
 Die KMS-118 schafft eine anspruchsvolle Balance zwischen hochwertigen Acetat-Fronten und präzisionsgefertigten Metallbügeln und bietet einen langlebigen Hybridrahmen, der klassische Ästhetik mit modernen Trends verbindet.
 

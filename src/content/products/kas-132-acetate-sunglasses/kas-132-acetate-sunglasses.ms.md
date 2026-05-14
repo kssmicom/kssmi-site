@@ -70,7 +70,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, kacamata flat-top tersuai, cer
 - Kedai Konsep & Berbilang Jenama
 - Kumpulan Stor Departments
 
-## Overview
+## Gambaran Keseluruhan
 
 Perkadaran yang berani, oversized dan siluet flat-top yang tersendiri mentakrifkan KAS-132, dihasilkan daripada campuran premium asetat Mazzucchelli dan JINYU untuk kedalaman dan ketahanan yang tiada tandingan.
 

@@ -69,7 +69,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 - Butik Moda Markaları
 - Concept ve Çoklu Marka Mağazaları
 
-## Overview
+## Genel Bakış
 
 Canlı Mazzucchelli ve JINYU asetat, bu üniseks çerçeveye belirgin lüks karakterini verirken, zamanla görünümünü koruyan hafif ancak dayanıklı bir profil sunar.
 

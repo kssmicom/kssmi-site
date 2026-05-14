@@ -63,7 +63,7 @@ seoKeywords: "produsen kacamata hitam titanium, pabrik kacamata hitam OEM kustom
 - Merek Gaya Hidup Olahraga & Otomotif
 - P中小uters Dutypirlalu & Journey
 
-## Overview
+## Ringkesan
 
 Konstruksi titanium premium menehi KTS-207 profil ultra-entheng lan daya tahan sing luar biasa, dadi pilihan sing cocog kanggo portofolio fashion kelas dhuwur. Estetika unisex sing unik nggabungake gaya mewah karo tren kontemporer.
 

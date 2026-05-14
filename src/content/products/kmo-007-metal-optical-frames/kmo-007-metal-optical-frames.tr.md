@@ -64,7 +64,7 @@ seoKeywords: "metal optik çerçeveler, optik çerçeve üreticisi, özel gözl�
 - Yüksek Segment Optik Zincirleri
 - Butik Moda Markaları
 
-## Overview
+## Genel Bakış
 
 Dengeli yapısal dayanıklılık ve sofistike estetik, seçici küresel markalar için premium metalden titizlikle üretilen KMO-007 modelini tanımlar.
 

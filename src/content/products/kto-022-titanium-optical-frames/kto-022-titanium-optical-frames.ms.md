@@ -67,7 +67,7 @@ seoKeywords: "bingkai optik titanium, pembuatan kacamata mewah, kilang OEM kacam
 - Rumah Fesyen Mewah
 - Jenama D2Ccommerce
 
-## Overview
+## Gambaran Keseluruhan
 Menggabungkan titanium gred aeroangkasa dengan estetik uniseks yang canggih, KTO-022 menyediakan asas yang ringan namun berdaya tahan untuk koleksi kacamata premium.
 
 Engsel 3 tong yang direka dengan ketepatan dan alas hidung satu bahagian bersepadu memastikan kestabilan struktur jangka panjang dan keselesaan sepanjang hari untuk pengguna akhir.

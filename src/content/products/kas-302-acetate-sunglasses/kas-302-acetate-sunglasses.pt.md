@@ -56,7 +56,7 @@ seoKeywords: "óculos de sol em acetato, óculos de sol unissex, fabricante de �
 - Lojas de Conceito e Multi-Marcas
 - Casas de Moda de Luxo
 
-## Overview
+## Visão Geral
 Esculpido em acetato premium Mazzucchelli e JINYU, o KAS-302 equilibra uma estética ousada e unissex com uma profundidade de cor vibrante que define os modernos óculos de luxo.
 
 As dobradiças de 4+3 barris projetadas com precisão garantem durabilidade a longo prazo e operação suave, enquanto as plaquetas integradas proporcionam um ajuste seguro e ergonômico.

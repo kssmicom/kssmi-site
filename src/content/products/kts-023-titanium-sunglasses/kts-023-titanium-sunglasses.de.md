@@ -67,7 +67,7 @@ seoKeywords: "Titan-Sonnenbrillen Hersteller, Custom OEM Brillen, Luxus-Eigenmar
 - Sport- und Auto-Lifestyle-Marken
 - Duty-Free- und Reisehandel
 
-## Overview
+## Übersicht
 
 Das Modell KTS-023 wurde für anspruchsvolle Märkte entwickelt, die höchste Langlebigkeit und Leichtigkeit fordern, und präsentiert die elegante Ästhetik von hochwertigem Titan. Die hypoallergenen Rahmen bieten ein außergewöhnliches Verhältnis von Festigkeit zu Gewicht und garantieren so ganztägigen Tragekomfort für anspruchsvollste Nutzer.
 

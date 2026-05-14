@@ -70,7 +70,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, óculos OEM personal
 - Etiquetas de Moda Boutique
 - Lojas Ópticas Premium
 
-## Overview
+## Visão Geral
 
 As coleções de óculos de luxo beneficiam-se da fusão de acetato Mazzucchelli e JINYU do modelo KAO-311, uma combinação que equilibra estética vibrante polida à mão com excepcional longevidade estrutural.
 

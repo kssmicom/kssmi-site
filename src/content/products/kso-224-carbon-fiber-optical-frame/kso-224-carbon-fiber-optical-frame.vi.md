@@ -58,7 +58,7 @@ seoKeywords: "gọng kính sợi carbon, kính titan tùy chỉnh, nhà sản xu
 - Thương hiệu thể thao và ô tô
 - Chuỗi quang học cao cấp
 
-## Overview
+## Tổng quan
 
 Kết hợp sợi carbon cấp hàng không vũ trụ với lớp hoàn thiện vân núi gỗ gụ, KSO-224 mang đến một sự giao thoa hiếm có giữa hiệu suất kỹ thuật và sự ấm áp tự nhiên.
 

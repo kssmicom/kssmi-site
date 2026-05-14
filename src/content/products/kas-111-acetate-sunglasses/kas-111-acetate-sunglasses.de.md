@@ -69,7 +69,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, individuelle OEM-Sonnenbrillen, k
 - Konzept- und Multi-Brand-Stores
 - Duty-Free- und Reisehandel
 
-## Overview
+## Übersicht
 
 Lebendige Farbtiefe und erstklassige strukturelle Integrität treffen beim KAS-111 aufeinander, einem Modell aus hochwertigem Mazzucchelli- und JINYU-Acetat, das eine kühne, Vintage-inspirierte Ästhetik verkörpert.
 

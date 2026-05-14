@@ -59,7 +59,7 @@ seoKeywords: "pengilang cermin mata hitam gentian karbon, cermin mata hitam OEM 
 - runcit Dutypirlalu & Perjalanan
 - Label Fesyen Boutique
 
-## Overview
+## Gambaran Keseluruhan
 
 Menggabungkan prestasi ringan dengan estetika unisex yang sofistikated, KSS-031 dihasilkan dengan teliti daripada gentian karbon gred aeroangkasa untuk integriti struktur maksimum.
 

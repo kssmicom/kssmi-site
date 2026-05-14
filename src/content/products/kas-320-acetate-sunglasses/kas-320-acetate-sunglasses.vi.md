@@ -1,11 +1,11 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Kính Mát Axit Tùy Chỉnh"
+title: "Kính Mát Axetat Tùy Chỉnh"
 slug: "kas-320-acetate-sunglasses"
 itemNo: "KAS-320"
 date: "2026-05-12"
 colors: "Xanh Neon & Sọc Nâu & Xám Trong Suốt & Đỏ & Havana & Đen"
-materials: "Mazzucchelli Cao Cấp & JINYU & Tùy Chỉnh Theo Yêu Cầu"
+materials: "Mazzucchelli Cao Cấp & Axetat JINYU & Tùy Chỉnh Theo Yêu Cầu"
 serviceMode: "Sản xuất gia công & Thiết kế và sản xuất ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -16,7 +16,7 @@ series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sungla
 
 # ─────────────────────────────────────────────────────
 size: "53-19-145mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng và Càng kính Axit Cao Cấp"
+frameMaterial: "Gọng và Càng kính Axetat Cao Cấp"
 lensMaterial: "Tròng kính Nylon Bền Bỉ & Tùy Chỉnh Theo Yêu Cầu"
 designStyle: "Thời Trang, Xu Hướng, Độc Đáo, Phong Cách, Cổ Điển, Unisex"
 nosePads: "Đệm Mũi Đúc Liền"
@@ -55,14 +55,14 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Kính Mát Axit Unisex Thời Thượng KAS-320 | Nhà Sản Xuất Theo Yêu Cầu"
-seoDescription: "Hợp tác với nhà máy hàng đầu cho dòng kính mát axit KAS-320. Sử dụng axit Mazzucchelli cao cấp và bản lề 4+3 chấu. Dịch vụ OEM/ODM trọn gói với MOQ 300. Tùy chỉnh ngay hôm nay!"
-seoKeywords: "nhà sản xuất kính mát axit, kính mát OEM tùy chỉnh, gọng kính axit Mazzucchelli, nhà máy kính mắt Trung Quốc, kính mắt thương hiệu riêng xa xỉ, nhà cung cấp kính mát thời trang unisex, sản xuất kính mắt theo yêu cầu, nhà sản xuất kính mắt cao cấp Trung Quốc"
+seoTitle: "Kính Mát Axetat Unisex Thời Thượng KAS-320 | Nhà Sản Xuất Theo Yêu Cầu"
+seoDescription: "Hợp tác với nhà máy hàng đầu cho dòng kính mát axetat KAS-320. Sử dụng axetat Mazzucchelli cao cấp và bản lề 4+3 chấu. Dịch vụ OEM/ODM trọn gói với MOQ 300. Tùy chỉnh ngay hôm nay!"
+seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, gọng kính axetat Mazzucchelli, nhà máy kính mắt Trung Quốc, kính mắt thương hiệu riêng xa xỉ, nhà cung cấp kính mát thời trang unisex, sản xuất kính mắt theo yêu cầu, nhà sản xuất kính mắt cao cấp Trung Quốc"
 ---
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Gọng và càng kính làm từ axit Mazzucchelli và JINYU chất lượng cao, mang lại vẻ ngoài rực rỡ, nhẹ và bền bỉ.
+- **Chất liệu cao cấp:** Gọng và càng kính làm từ axetat Mazzucchelli và JINYU chất lượng cao, mang lại vẻ ngoài rực rỡ, nhẹ và bền bỉ.
 - **Phụ kiện chắc chắn:** Bản lề cấu trúc 4+3 chấu chuyên nghiệp được thiết kế để mang lại sự ổn định vượt trội và vận hành trơn tru lâu dài.
 - **Quang học tiên tiến:** Tròng kính nylon bền bỉ hiệu suất cao cung cấp độ rõ nét đặc biệt và khả năng chống va đập với nhiều tùy chọn tùy chỉnh.
 - **Thiết kế công thái học:** Đệm mũi đúc liền được thiết kế để mang lại cảm giác vừa vặn, an toàn và thoải mái, làm nổi bật phong cách unisex.
@@ -80,7 +80,7 @@ seoKeywords: "nhà sản xuất kính mát axit, kính mát OEM tùy chỉnh, g�
 
 ## Tổng quan
 
-Sự hòa quyện giữa kết cấu rực rỡ và tính toàn vẹn về cấu trúc đã tạo nên KAS-320, một mẫu kính được định nghĩa bởi cấu trúc axit Mazzucchelli và JINYU cao cấp. Những bộ gọng này mang lại vẻ thẩm mỹ nhẹ nhàng nhưng bền bỉ, nắm bắt các xu hướng thời trang hiện đại trong khi vẫn giữ được sức hút vượt thời gian cho các bộ sưu tập thương hiệu đa dạng.
+Sự hòa quyện giữa kết cấu rực rỡ và tính toàn vẹn về cấu trúc đã tạo nên KAS-320, một mẫu kính được định nghĩa bởi cấu trúc axetat Mazzucchelli và JINYU cao cấp. Những bộ gọng này mang lại vẻ thẩm mỹ nhẹ nhàng nhưng bền bỉ, nắm bắt các xu hướng thời trang hiện đại trong khi vẫn giữ được sức hút vượt thời gian cho các bộ sưu tập thương hiệu đa dạng.
 
 Kiến trúc bản lề 4+3 chấu đảm bảo sự ổn định lâu dài và hiệu suất vận hành mượt mà, được bổ sung bởi đệm mũi đúc liền cho sự thoải mái tối đa.
 

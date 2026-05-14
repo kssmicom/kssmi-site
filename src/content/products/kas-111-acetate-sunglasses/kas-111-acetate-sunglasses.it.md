@@ -69,7 +69,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali da sole OEM personal
 - Store di Concetto e Multi-Marchio
 - Vendita Duty-Free e Viaggi
 
-## Overview
+## Panoramica
 
 La vibrante profondità del colore e la qualità dell'integrità strutturale si incontrano nel modello KAS-111, realizzato in acetato Mazzucchelli e JINYU di alta qualità per catturare un'estetica audace e d'ispirazione vintage.
 

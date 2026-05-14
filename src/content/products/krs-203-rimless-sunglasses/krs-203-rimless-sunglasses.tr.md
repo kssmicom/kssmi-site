@@ -70,7 +70,7 @@ seoKeywords: "çerçevesiz metal güneş gözlüğü üreticisi, KRS-203 premium
 - E-ticaret D2C Markaları
 - Departman Mağazası Grupları
 
-## Overview
+## Genel Bakış
 
 Çerçevesiz estetik, minimalist profili ve premium metal sap yapısıyla tanımlanan KRS-203 modelinde yapısal bütünlükle buluşuyor.
 

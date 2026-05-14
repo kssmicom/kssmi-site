@@ -69,7 +69,7 @@ seoKeywords: "fabricante monturas ópticas titanio, producción gafas OEM a medi
 - Cadenas Ópticas de Alta Gama
 - Etiquetas de Moda Boutique
 
-## Overview
+## Resumen
 
 Estas monturas utilizan titanio de primera calidad para ofrecer una experiencia ultraligera con una resistencia superior a la corrosión para colecciones ópticas de lujo.
 

@@ -70,7 +70,7 @@ seoKeywords: "metal güneş gözlüğü üreticisi, özel OEM metal gözlük, l�
 - Butik Moda Markaları
 - Departman Mağazası Grupları
 
-## Overview
+## Genel Bakış
 
 Yüksek kaliteli metal, sofistike bir çift köprü mimarisinin cesur ve erkeksi bir siluet oluşturduğu KMS-134'ün yapısal zarafetini tanımlar. Bu çerçeve, endüstriyel gücü rafine moda duyarlılığıyla dengeleyerek lüks koleksiyonlar için bir ifade parçası olarak hizmet eder.
 

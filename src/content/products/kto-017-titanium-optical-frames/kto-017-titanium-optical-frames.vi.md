@@ -67,7 +67,7 @@ seoKeywords: "nhà sản xuất gọng kính titanium, gọng kính cận OEM t�
 - Nhà thời trang xa xỉ
 - Thương hiệu thể thao và ô tô
 
-## Overview
+## Tổng quan
 
 Được chế tác tỉ mỉ từ titan cao cấp, gọng kính unisex này mang lại tỷ lệ độ bền trên trọng lượng vượt trội, định nghĩa dòng kính cận xa xỉ hiệu suất cao. Thành phần chuẩn hàng không của sản phẩm đảm bảo tính toàn vẹn về cấu trúc lâu dài trong khi vẫn duy trì cảm giác nhẹ như lông vũ cho người đeo.
 

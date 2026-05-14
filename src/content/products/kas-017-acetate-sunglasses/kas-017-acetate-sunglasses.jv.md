@@ -59,7 +59,7 @@ seoKeywords: "kacamata hitam asetat mewah, produsen kacamata kustom, frame aseta
 - Label Busuk Fashion
 - Ritel Bebas Bea & Perjalanan
 
-## Overview
+## Ringkesan
 
 Asetat Mazzucchelli lan JINYU sing dipilih kanthi tangan menehi KAS-017 finishing kapadhetan dhuwur lan jero warna sing unggul, nyukupi standar sing ketat ing pasar kacamata mewah.
 

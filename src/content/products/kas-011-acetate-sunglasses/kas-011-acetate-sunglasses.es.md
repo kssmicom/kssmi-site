@@ -66,7 +66,7 @@ seoKeywords: "fabricante de gafas de sol de acetato KAS-011, gafas de lujo perso
 - Etiquetas de Moda Boutique
 - Venta Duty-Free y Viajes
 
-## Overview
+## Resumen
 
 El acetato de alta calidad de Mazzucchelli y JINYU forma el núcleo del KAS-011, creando una montura vibrante y ligera que resuena con los sofisticados requisitos de las marcas de gafas de lujo.
 

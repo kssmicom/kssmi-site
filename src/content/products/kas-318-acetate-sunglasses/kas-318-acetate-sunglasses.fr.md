@@ -69,7 +69,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil OE
 - Maisons de Mode de Luxe
 - Magasins de Concept et Multi-Marques
 
-## Overview
+## Aperçu
 
 Fabriqué à partir d'acétate Mazzucchelli et JINYU sélectionné à la main, le KAS-318 offre un éclat de couleur et une durabilité structurelle exceptionnels pour le marché de la mode haut de gamme. Sa composition légère assure un confort de port à long terme sans compromettre l'impact esthétique.
 

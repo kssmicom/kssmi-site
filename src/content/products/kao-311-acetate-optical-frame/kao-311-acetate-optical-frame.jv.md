@@ -70,7 +70,7 @@ seoKeywords: "produsen frame optik asetat, kacamata OEM kustom, frame label prib
 - Label Busuk Fashion
 - Chain Optik High-End
 
-## Overview
+## Ringkesan
 
 Koleksi kacamata mewah entuk manfaat saka gabungan asetat Mazzucchelli lan JINYU ing KAO-311, kombinasi sing nyeimbangake estetika polesan tangan sing padhang karo umur dawa struktur sing luar biasa.
 

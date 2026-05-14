@@ -5,7 +5,7 @@ slug: "kms-117-metal-sunglasses"
 itemNo: "KMS-117"
 date: "2026-04-06"
 colors: "Đen & Bạc & Đồi mồi"
-materials: "Kim loại cao cấp và Axit"
+materials: "Kim loại cao cấp và Axetat"
 serviceMode: "Sản xuất gia công & Thiết kế và sản xuất ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu"
 
@@ -16,7 +16,7 @@ series: "sunglasses, fashion-eyewear, metal-sunglasses,fashion-metal-sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "48-23-150mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng Axit cao cấp và Càng kính kim loại"
+frameMaterial: "Gọng Axetat cao cấp và Càng kính kim loại"
 lensMaterial: "Tròng kính AC & Tròng kính Nylon bền bỉ & Tùy chỉnh theo yêu cầu"
 designStyle: "Thời trang cực ngầu, Phong cách, Hợp thời trang, Xa xỉ, Unisex"
 nosePads: "Đệm mũi kim loại cao cấp"
@@ -47,13 +47,13 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KMS-117 Kính mát Axit-Kim loại cao cấp | Nhà sản xuất theo yêu cầu"
-seoDescription: "Nâng tầm danh mục nhãn hiệu riêng của bạn với kính mát kết hợp axit và kim loại sang trọng có thể tùy chỉnh. Chúng tôi cung cấp sản xuất theo yêu cầu OEM & ODM đầy đủ với MOQ 300."
-seoKeywords: "kính mát axit kim loại cao cấp, nhà sản xuất kính mắt OEM tùy chỉnh, kính mát nhãn hiệu riêng cao cấp, gọng kính thời trang boutique bán sỉ, nhà máy kính mắt theo yêu cầu Trung Quốc, kính mát hybrid có thể tùy chỉnh, sản xuất kính mát Trung Quốc"
+seoTitle: "KMS-117 Kính mát Axetat-Kim loại cao cấp | Nhà sản xuất theo yêu cầu"
+seoDescription: "Nâng tầm danh mục nhãn hiệu riêng của bạn với kính mát kết hợp axetat và kim loại sang trọng có thể tùy chỉnh. Chúng tôi cung cấp sản xuất theo yêu cầu OEM & ODM đầy đủ với MOQ 300."
+seoKeywords: "kính mát axetat kim loại cao cấp, nhà sản xuất kính mắt OEM tùy chỉnh, kính mát nhãn hiệu riêng cao cấp, gọng kính thời trang boutique bán sỉ, nhà máy kính mắt theo yêu cầu Trung Quốc, kính mát hybrid có thể tùy chỉnh, sản xuất kính mát Trung Quốc"
 ---
 
 ## Đặc điểm
-- **Cấu trúc Hybrid:** Khung trước bằng axit cao cấp kết hợp với càng kính kim loại, mang lại tính thẩm mỹ tinh tế, nhẹ, bền và rực rỡ.
+- **Cấu trúc Hybrid:** Khung trước bằng axetat cao cấp kết hợp với càng kính kim loại, mang lại tính thẩm mỹ tinh tế, nhẹ, bền và rực rỡ.
 - **Phụ kiện bền bỉ:** Bản lề cấu trúc thùng 2+1 ổn định được thiết kế để vận hành trơn tru lâu dài.
 - **Quang học cao cấp:** Tròng kính AC chất lượng cao và tròng kính nylon bền bỉ có sẵn với các tùy chọn tùy chỉnh rộng rãi để có độ rõ nét và bảo vệ tối ưu.
 - **Sự thoải mái được cải thiện:** Đệm mũi kim loại cao cấp được thiết kế để vừa vặn an toàn và nâng cao tính thẩm mỹ.
@@ -69,7 +69,7 @@ seoKeywords: "kính mát axit kim loại cao cấp, nhà sản xuất kính mắ
 
 ## Tổng quan
 
-Kết hợp chất liệu axit cao cấp rực rỡ với các điểm nhấn kim loại bóng bẩy, KMS-117 đại diện cho một bản sắc hybrid tinh tế cho các bộ sưu tập kính mắt hiện đại.
+Kết hợp chất liệu axetat cao cấp rực rỡ với các điểm nhấn kim loại bóng bẩy, KMS-117 đại diện cho một bản sắc hybrid tinh tế cho các bộ sưu tập kính mắt hiện đại.
 
 Kiến trúc có bản lề thùng 2+1 được thiết kế chính xác và tròng kính nylon có thể tùy chỉnh, đảm bảo độ bền cấu trúc và sự thoải mái suốt cả ngày.
 

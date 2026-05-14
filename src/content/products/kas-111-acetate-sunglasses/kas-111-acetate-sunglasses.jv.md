@@ -69,7 +69,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, grosir 
 - Toko Konsep & Multi-Merek
 - Ritel Bebas Bea & Perjalanan
 
-## Overview
+## Ringkesan
 
 Warna sing padhang lan integritas struktur premium ketemu ing KAS-111, model sing digawe saka asetat Mazzucchelli lan JINYU kualitas dhuwur kanggo njupuk estetika sing kendel lan inspirasi vintage.
 

@@ -56,7 +56,7 @@ seoKeywords: "produsen frame optik titanium, kacamata titanium kustom OEM, frame
 - Chain Optik High-End
 - Group Store Departemen
 
-## Overview
+## Ringkesan
 
 Nggabungake umur dawa struktural karo profil sing entheng banget, KTO-003 digawe kanthi presisi saka titanium kelas aeroangkasa premium.
 

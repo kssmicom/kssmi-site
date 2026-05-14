@@ -57,7 +57,7 @@ seoKeywords: "produsen kacamata hitam serat karbon, kacamata hitam OEM kustom, k
 - Rumah Mode Mewah
 - P中小uters Dutypirlalu & Journey
 
-## Overview
+## Ringkesan
 
 Dirancang kanggo merek sing ngutamakake keunggulan teknis, KSS-032 nggunakake serat karbon kelas aerospace premium kanggo nggawe frame sing tahan banting lan halus. Tekstur anyaman sing khas saka bahan kasebut dadi tandha kemewahan, nawakake estetika canggih sing mbedakake saka kacamata konvensional.
 

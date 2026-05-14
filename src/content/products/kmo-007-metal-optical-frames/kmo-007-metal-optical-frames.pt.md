@@ -64,7 +64,7 @@ seoKeywords: "armações ópticas de metal, fabricante de armações ópticas, f
 - Lojas Ópticas Premium
 - Etiquetas de Moda Boutique
 
-## Overview
+## Visão Geral
 
 Resiliência estrutural equilibrada e estética sofisticada definem o KMO-007, um modelo meticulosamente fabricado em metal premium para marcas globais exigentes.
 

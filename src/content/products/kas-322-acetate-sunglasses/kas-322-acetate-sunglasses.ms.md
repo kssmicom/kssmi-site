@@ -69,7 +69,7 @@ seoKeywords: "cermin mata hitam asetat Mazzucchelli, pengeluar cermin mata hitam
 - Kedai Konsep & Berbilang Jenama
 - Rumah Fesyen Mewah
 
-## Overview
+## Gambaran Keseluruhan
 
 Dihasilkan daripada campuran asetat Mazzucchelli dan JINYU, bingkai ini mencapai keseimbangan kecanggihan antara kedalaman warna yang bertenaga dan integriti struktur yang berkekalan. Seni bina ringan dan alas hidung bersepadu memberikan muatan yang lancar dan hipoalergenik untuk dipakai sepanjang hari.
 

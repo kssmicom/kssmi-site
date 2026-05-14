@@ -69,7 +69,7 @@ seoKeywords: "óculos de sol de acetato Mazzucchelli, fabricante de óculos de s
 - Lojas de Conceito e Multi-Marcas
 - Casas de Moda de Luxo
 
-## Overview
+## Visão Geral
 
 Fabricada a partir de uma mistura de acetato Mazzucchelli e JINYU, esta armação alcança um equilíbrio sofisticado de profundidade de cor vibrante e integridade estrutural duradoura. A arquitetura leve e as ponteiras nasicas integradas proporcionam um ajuste contínuo e hipoalergênico para uso durante todo o dia.
 

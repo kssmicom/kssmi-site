@@ -70,7 +70,7 @@ seoKeywords: "fabricante gafas de sol acetato, gafas unisex personalizadas, mont
 - Etiquetas de Moda Boutique
 - Venta Duty-Free y Viajes
 
-## Overview
+## Resumen
 
 Fabricado con una sofisticada mezcla de acetato Mazzucchelli y JINYU, el modelo KAS-311 ofrece una montura ligera pero duradera con una vibración de color superior.
 

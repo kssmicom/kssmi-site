@@ -61,7 +61,7 @@ seoKeywords: "Titan-Sonnenbrillen Hersteller, kundenspezifischer OEM Brillenlief
 - Sport- und Auto-Lifestyle-Marken
 - Duty-Free- und Reisehandel
 
-## Overview
+## Übersicht
 
 Die KTS-212 nutzt hochwertiges Titan, um ein überlegenes Festigkeits-Gewichts-Verhältnis für Elite-Brillenkollektionen zu bieten. Dieser ultraleichte Rahmen verfügt über ein einzigartiges Unisex-Design, das den High-End-Modeanwendungen und Luxuseinzelhandelsmarkt anspricht.
 

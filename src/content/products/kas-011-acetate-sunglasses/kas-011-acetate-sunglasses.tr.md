@@ -66,7 +66,7 @@ seoKeywords: "KAS-011 asetat güneş gözlüğü üreticisi, özel lüks gözlü
 - Butik Moda Markaları
 - Duty-Free ve Seyahat Perakendecileri
 
-## Overview
+## Genel Bakış
 
 Yüksek kaliteli Mazzucchelli ve JINYU asetat, KAS-011'in çekirdeğini oluşturarak lüks gözlük markalarının sofistike gereksinimleriyle uyumlu, canlı ve hafif bir çerçeve yaratır.
 

@@ -70,7 +70,7 @@ seoKeywords: "nhà sản xuất kính mát kim loại không gọng, sản xuấ
 - Thương hiệu D2C thương mại điện tử
 - Tập đoàn cửa hàng bách hóa
 
-## Overview
+## Tổng quan
 
 Thẩm mỹ không gọng kết hợp với tính toàn vẹn của cấu trúc trong KRS-203, một mẫu kính được xác định bởi thiết kế tối giản và cấu trúc càng kính bằng kim loại cao cấp.
 

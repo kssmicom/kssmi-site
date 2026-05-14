@@ -59,7 +59,7 @@ seoKeywords: "karbon fiber güneş gözlüğü üreticisi, özel OEM güneş gö
 - Duty-Free ve Seyahat Perakendecileri
 - Butik Moda Markaları
 
-## Overview
+## Genel Bakış
 
 Hafif performansı sofistike bir unisex estetikle harmanlayan KSS-031, maksimum yapısal bütünlük için havacılık sınıfı karbon fiberden titizlikle üretilmiştir.
 

@@ -69,7 +69,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 - Etiquetas de Moda Boutique
 - Lojas de Conceito e Multi-Marcas
 
-## Overview
+## Visão Geral
 
 O vibrante acetato Mazzucchelli e JINYU conferem a esta armação unissex seu distinto caráter de luxo, oferecendo um perfil leve, porém durável, que mantém seu acabamento ao longo do tempo.
 

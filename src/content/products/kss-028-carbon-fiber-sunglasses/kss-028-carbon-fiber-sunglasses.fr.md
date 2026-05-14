@@ -59,7 +59,7 @@ seoKeywords: "fabricant de lunettes de soleil en fibre de carbone, lunettes de s
 - Marques Sportives et Lifestyle Automobile
 - Groupes de Grands Magasins
 
-## Overview
+## Aperçu
 
 Fabriquées à partir de fibre de carbone de qualité aérospatiale, les KSS-028 apportent une esthétique sophistiquée et de haute résistance aux collections de lunettes modernes. Leurs motifs de tissage distinctifs et leur architecture ultra-légère offrent une expérience tactile haut de gamme qui répond aux standards du marché du luxe.
 

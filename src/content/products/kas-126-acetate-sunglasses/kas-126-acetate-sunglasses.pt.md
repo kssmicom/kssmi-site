@@ -70,7 +70,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 - Etiquetas de Moda Boutique
 - Grupos de Grandes Armazéns
 
-## Overview
+## Visão Geral
 
 Definido pelo seu perfil ousado e pelo brilho polido à mão do acetato italiano Mazzucchelli, este modelo funde a estética da alta moda com uma profundidade de material excepcional.
 

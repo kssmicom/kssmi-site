@@ -66,7 +66,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate KAS-011, lunettes de l
 - Marques de Mode Boutique
 - Vente Duty-Free et Voyage
 
-## Overview
+## Aperçu
 
 L'acétate de haute qualité Mazzucchelli et JINYU forme le cœur de la KAS-011, créant une monture éclatante et légère qui résonne avec les exigences sophistiquées des marques de lunettes de luxe.
 

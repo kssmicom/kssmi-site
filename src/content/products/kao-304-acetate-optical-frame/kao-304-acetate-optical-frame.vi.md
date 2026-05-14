@@ -1,11 +1,11 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Gọng kính cận Axit tùy chỉnh"
+title: "Gọng kính cận Axetat tùy chỉnh"
 slug: "kao-304-acetate-optical-frame"
 itemNo: "KAO-304"
 date: "2026-05-10"
 colors: "Đen & Kẻ sọc & Đồi mồi & Nâu"
-materials: "Axit Premium Mazzucchelli & JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Premium Mazzucchelli & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) (Tùy chỉnh theo yêu cầu)"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -16,7 +16,7 @@ series: "optical-frames, fashion-eyewear, acetate-optical-frames, fashion-acetat
 
 # ─────────────────────────────────────────────────────
 size: "48-22-145mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng và càng kính Axit cao cấp"
+frameMaterial: "Gọng và càng kính Axetat cao cấp"
 lensMaterial: "Tròng kính Nylon bền bỉ & Tùy chỉnh theo yêu cầu"
 designStyle: "Cổ điển, Phong cách, Thời trang, Hợp mốt, Xa xỉ, Unisex"
 nosePads: "Đệm mũi liền khối"
@@ -47,14 +47,14 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Gọng kính cận Axit xa xỉ cổ điển KAO-304 | Nhà máy tùy chỉnh"
-seoDescription: "Nâng tầm thương hiệu của bạn với gọng kính cận axit cao cấp KAO-304. Sản xuất OEM/ODM chuyên nghiệp sử dụng axit Mazzucchelli, bản lề 4+3 chấu và MOQ 300 chiếc linh hoạt."
-seoKeywords: "nhà sản xuất gọng kính axit, kính mắt tùy chỉnh OEM, gọng kính nhãn hiệu riêng xa xỉ, bán buôn kính mắt axit, nhà máy gọng kính Trung Quốc, gọng kính có thể tùy chỉnh, sản xuất kính mắt cao cấp, gọng kính axit thiết kế riêng"
+seoTitle: "Gọng kính cận Axetat xa xỉ cổ điển KAO-304 | Nhà máy tùy chỉnh"
+seoDescription: "Nâng tầm thương hiệu của bạn với gọng kính cận axetat cao cấp KAO-304. Sản xuất OEM/ODM chuyên nghiệp sử dụng axetat Mazzucchelli, bản lề 4+3 chấu và MOQ 300 chiếc linh hoạt."
+seoKeywords: "nhà sản xuất gọng kính axetat, kính mắt tùy chỉnh OEM, gọng kính nhãn hiệu riêng xa xỉ, bán buôn kính mắt axetat, nhà máy gọng kính Trung Quốc, gọng kính có thể tùy chỉnh, sản xuất kính mắt cao cấp, gọng kính axetat thiết kế riêng"
 ---
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Cấu tạo từ Axit Mazzucchelli và JINYU chất lượng cao mang lại chiều sâu màu sắc đặc biệt, độ bền và cảm giác nhẹ nhàng.
+- **Chất liệu cao cấp:** Cấu tạo từ Axetat Mazzucchelli và JINYU chất lượng cao mang lại chiều sâu màu sắc đặc biệt, độ bền và cảm giác nhẹ nhàng.
 - **Phần cứng gia cố:** Bản lề đinh tán cấu trúc 4+3 chấu được chế tác chính xác mang lại tính toàn vẹn cấu trúc tối đa và sự vận hành êm ái nhất quán.
 - **Quang học hiệu suất cao:** Tròng kính nylon bền bỉ với khả năng chống va đập vượt trội, tương thích với nhiều loại màu nhuộm và lớp phủ tùy chỉnh.
 - **Thoải mái công thái học:** Đệm mũi liền khối được thiết kế để tối ưu hóa sự phân bổ áp lực và mang lại sự thoải mái khi đeo trong thời gian dài.
@@ -72,7 +72,7 @@ seoKeywords: "nhà sản xuất gọng kính axit, kính mắt tùy chỉnh OEM,
 
 ## Tổng quan
 
-Axit Mazzucchelli và JINYU chất lượng cao cung cấp cho KAO-304 một nền tảng chất liệu cao cấp, đặc trưng bởi chiều sâu màu sắc đặc biệt và lớp hoàn thiện nhẹ, bền.
+Axetat Mazzucchelli và JINYU chất lượng cao cung cấp cho KAO-304 một nền tảng chất liệu cao cấp, đặc trưng bởi chiều sâu màu sắc đặc biệt và lớp hoàn thiện nhẹ, bền.
 
 Bản lề đinh tán cấu trúc 4+3 chấu được chế tác chính xác và đệm mũi liền khối mang lại sự vừa vặn hiệu suất cao, cân bằng giữa sức mạnh cấu trúc với sự thoải mái tinh tế suốt cả ngày.
 

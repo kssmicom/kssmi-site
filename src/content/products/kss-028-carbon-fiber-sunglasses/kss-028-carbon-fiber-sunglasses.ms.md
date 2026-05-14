@@ -59,7 +59,7 @@ seoKeywords: "pengilang cermin mata hitam gentian karbon, cermin mata hitam OEM 
 - Jenama Gaya Hidup Sukan & Automotif
 - Kumpulan Stor Departments
 
-## Overview
+## Gambaran Keseluruhan
 
 Dihasilkan daripada gentian karbon gred aeroangkasa, KSS-028 membawakan estetika yang canggih dan berkekuatan tinggi kepada koleksi cermin mata moden. Corak tenunan yang tersendiri dan seni bina ultra-ringan memberikan pengalaman sentuhan premium yang selaras dengan piawaian pasaran mewah.
 

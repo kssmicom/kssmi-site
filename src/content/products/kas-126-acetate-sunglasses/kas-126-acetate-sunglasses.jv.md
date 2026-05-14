@@ -70,7 +70,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 - Label Busuk Fashion
 - Group Store Departemen
 
-## Overview
+## Ringkesan
 
 Ditentukake dening profil sing kendel lan polesan tangan sing mengkilap saka asetat Mazzucchelli Italia, model iki nggabungake estetika fashion dhuwur kanti jero bahan sing luar biasa.
 

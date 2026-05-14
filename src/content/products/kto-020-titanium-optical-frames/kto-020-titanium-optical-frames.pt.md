@@ -69,7 +69,7 @@ seoKeywords: "fabricante de armações ópticas de titânio, fábrica de óculos
 - Marcas Esportivas e Lifestyle Automotivo
 - Lojas Ópticas Premium
 
-## Overview
+## Visão Geral
 
 Fabricada com precisão em titânio premium, a armação KTO-020 representa a intersecção de durabilidade leve e estética óptica de alta qualidade. Sua construção hipoalergênica garante conforto a longo prazo, mantendo um perfil refinado e profissional para o mercado de luxo.
 

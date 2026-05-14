@@ -68,7 +68,7 @@ seoKeywords: "fournisseur montures optiques fibre de carbone, lunettes personnal
 - Chaînes Optiques Haut de Gamme
 - Marques Sportives et Lifestyle Automobile
 
-## Overview
+## Aperçu
 
 Conçue pour le segment du luxe haut de gamme, la KSO-010 fusionne la fibre de carbone de qualité aérospatiale avec des accents en bois artisanaux tels que l'ébène de Ceylan et le chêne blanc. Cette construction hybride sophistiquée, associée à des branches en titane élégantes, crée une monture à la fois ultra-légère et structurellement supérieure.
 

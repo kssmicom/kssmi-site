@@ -1,11 +1,11 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Kính mát Axit tùy chỉnh"
+title: "Kính mát Axetat tùy chỉnh"
 slug: "kas-132-acetate-sunglasses"
 itemNo: "KAS-132"
 date: "2026-05-09"
 colors: "Đen & Trắng & Xanh lá & Đồi mồi"
-materials: "Axit Mazzucchelli cao cấp & JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) (Tùy chỉnh theo yêu cầu)"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -16,7 +16,7 @@ series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sungla
 
 # ─────────────────────────────────────────────────────
 size: "61-11-140mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng và càng kính Axit cao cấp"
+frameMaterial: "Gọng và càng kính Axetat cao cấp"
 lensMaterial: "Tròng kính Nylon bền bỉ & Tùy chỉnh theo yêu cầu"
 designStyle: "Flat-top, Oversized, Táo bạo, Xa xỉ, Unisex"
 nosePads: "Đệm mũi liền khối"
@@ -47,14 +47,14 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Kính mát Axit Flat-top Oversized KAS-132 | Nhà cung cấp tùy chỉnh"
-seoDescription: "Mở rộng dòng kính mắt xa xỉ của bạn với kính mát axit flat-top oversized KAS-132. Gọng Mazzucchelli cao cấp, MOQ 300. Tùy chỉnh OEM/ODM toàn diện."
-seoKeywords: "nhà sản xuất kính mát axit, kính mắt flat-top tùy chỉnh, kính mát oversized OEM, gọng axit Mazzucchelli, nhà máy kính mắt Trung Quốc, kính mát nhãn hiệu riêng xa xỉ, sản xuất kính mắt theo yêu cầu, bán buôn kính mát axit"
+seoTitle: "Kính mát Axetat Flat-top Oversized KAS-132 | Nhà cung cấp tùy chỉnh"
+seoDescription: "Mở rộng dòng kính mắt xa xỉ của bạn với kính mát axetat flat-top oversized KAS-132. Gọng Mazzucchelli cao cấp, MOQ 300. Tùy chỉnh OEM/ODM toàn diện."
+seoKeywords: "nhà sản xuất kính mát axetat, kính mắt flat-top tùy chỉnh, kính mát oversized OEM, gọng axetat Mazzucchelli, nhà máy kính mắt Trung Quốc, kính mát nhãn hiệu riêng xa xỉ, sản xuất kính mắt theo yêu cầu, bán buôn kính mát axetat"
 ---
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Cấu trúc Axit Mazzucchelli và JINYU cao cấp mang lại tính thẩm mỹ tinh tế với độ sâu màu sắc rực rỡ, lâu dài.
+- **Chất liệu cao cấp:** Cấu trúc Axetat Mazzucchelli và JINYU cao cấp mang lại tính thẩm mỹ tinh tế với độ sâu màu sắc rực rỡ, lâu dài.
 - **Kỹ thuật chính xác:** Bản lề cấu trúc 3+2 thùng ổn định được thiết kế cho độ bền cấp độ chuyên nghiệp và hiệu suất vận hành trơn tru.
 - **Quang học vượt trội:** Tròng kính nylon bền bỉ cung cấp khả năng chống va đập và độ rõ nét hình ảnh đặc biệt, với các tùy chọn tùy chỉnh rộng rãi.
 - **Sự thoải mái tối ưu:** Đệm mũi liền khối và cấu trúc gọng nhẹ đảm bảo sự vừa vặn an toàn, cân bằng để đeo thoải mái suốt cả ngày.
@@ -70,9 +70,9 @@ seoKeywords: "nhà sản xuất kính mát axit, kính mắt flat-top tùy chỉ
 - Cửa hàng khái niệm & đa nhãn
 - Tập đoàn cửa hàng bách hóa
 
-## Overview
+## Tổng quan
 
-Tỷ lệ oversized táo bạo và kiểu dáng flat-top đặc trưng định hình KAS-132, được chế tác từ sự pha trộn cao cấp giữa axit Mazzucchelli và JINYU cho độ sâu và độ bền vô song.
+Tỷ lệ oversized táo bạo và kiểu dáng flat-top đặc trưng định hình KAS-132, được chế tác từ sự pha trộn cao cấp giữa axetat Mazzucchelli và JINYU cho độ sâu và độ bền vô song.
 
 Bản lề 3+2 thùng được chế tạo chính xác và tròng kính nylon bền bỉ đảm bảo các gọng kính này duy trì tính toàn vẹn của cấu trúc và độ rõ nét của hình ảnh qua quá trình sử dụng cường độ cao.
 

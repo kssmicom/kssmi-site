@@ -58,7 +58,7 @@ seoKeywords: "fabricante de óculos de sol de fibra de carbono, óculos de sol O
 - Marcas Esportivas e Lifestyle Automotivo
 - Lojas de Conceito e Multi-Marcas
 
-## Overview
+## Visão Geral
 
 Criado para marcas exigentes, o modelo KSS-033 combina a superioridade técnica da fibra de carbono de grau aeroespacial com uma estética unissex atemporal. Sua armação ultra-leve proporciona uma resistência excepcional e uma textura distinta que sinaliza qualidade premium para o mercado de varejo de alto padrão.
 

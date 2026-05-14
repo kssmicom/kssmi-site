@@ -67,7 +67,7 @@ seoKeywords: "pengilang bingkai optik titanim, bingkai optik OEM tersuai, cermin
 - Rumah Fesyen Mewah
 - Jenama Gaya Hidup Sukan & Automotif
 
-## Overview
+## Gambaran Keseluruhan
 
 Dihasilkan dengan ketepatan daripada titanim premium, bingkai unisex ini memberikan nisbah kekuatan-ke-berat yang luar biasa yang mentakrifkan pemakaian optik mewah berprestasi tinggi. Komposisi gred aeroangkasanya memastikan integriti struktur yang berkekalan sambil mengekalkan rasa ringan seperti bulu untuk pemakainya.
 

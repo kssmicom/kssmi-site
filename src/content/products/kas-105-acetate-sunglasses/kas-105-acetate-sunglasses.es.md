@@ -69,7 +69,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 - Tiendas de Concepto y Multi-Marca
 - Casas de Moda de Lujo
 
-## Overview
+## Resumen
 
 Fabricadas con acetato de primera calidad Mazzucchelli y JINYU, las KAS-105 equilibran un audaz diseño unisex con una vibrante profundidad de color. Esta montura pulida a mano sirve como una base versátil para las marcas que priorizan los materiales de alta densidad y la estética de la moda contemporánea.
 

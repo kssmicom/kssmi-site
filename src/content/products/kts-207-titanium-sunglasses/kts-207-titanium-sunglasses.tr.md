@@ -63,7 +63,7 @@ seoKeywords: "titanyum güneş gözlüğü üreticisi, özel OEM güneş gözlü
 - Spor ve Otomotiv Yaşam Tarzı Markaları
 - Duty-Free ve Seyahat Perakendecileri
 
-## Overview
+## Genel Bakış
 
 Premium titanyum yapı, KTS-207'ye ultra hafif profilini ve olağanüstü dayanıklılığını kazandırarak onu üst düzey moda portföyleri için ideal bir seçim haline getirir. Benzersiz unisex estetiği, lüks stil ile çağdaş trendler arasındaki boşluğu doldurur.
 

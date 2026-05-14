@@ -70,7 +70,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, kacamata unisex tersuai, bingk
 - Label Fesyen Boutique
 - Runcit Bebas Cukai & Perjalanan
 
-## Overview
+## Gambaran Keseluruhan
 
 Dihasilkan daripada campuran canggih asetat Mazzucchelli dan JINYU, KAS-311 menawarkan bingkai yang ringan namun tahan lama dengan vibrasi warna yang unggul.
 

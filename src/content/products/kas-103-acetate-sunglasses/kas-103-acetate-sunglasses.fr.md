@@ -78,7 +78,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, lunettes soleil OEM personn
 - Magasins de Concept et Multi-Marques
 - Vente Duty-Free et Voyage
 
-## Overview
+## Aperçu
 
 Le modèle KAS-103 utilise de l'acétate Mazzucchelli et JINYU de première qualité pour obtenir une finition brillante, avec des motifs sophistiqués de quadrillage et de marbre qui résonnent avec les tendances de la haute mode.
 

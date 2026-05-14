@@ -69,7 +69,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil OE
 - Marques de Mode Boutique
 - Magasins de Concept et Multi-Marques
 
-## Overview
+## Aperçu
 
 L'acétate vibrant Mazzucchelli et JINYU donne à cette monture unisexe son caractère de luxe distinct, offrant un profil léger mais durable qui conserve son éclat au fil du temps.
 

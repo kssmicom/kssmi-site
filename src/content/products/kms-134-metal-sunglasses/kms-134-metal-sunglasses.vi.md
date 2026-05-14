@@ -70,7 +70,7 @@ seoKeywords: "nhà sản xuất kính mát kim loại, kính mắt kim loại t�
 - Nhãn thời trang boutique
 - Tập đoàn cửa hàng bách hóa
 
-## Overview
+## Tổng quan
 
 Kim loại cao cấp xác định sự sang trọng trong cấu trúc của KMS-134, nơi kiến trúc cầu kép tinh xảo tạo nên một kiểu dáng nam tính và táo bạo. Gọng kính này đóng vai trò là một điểm nhấn cho các bộ sưu tập xa xỉ, cân bằng giữa độ bền công nghiệp với sự tinh tế trong thời trang.
 

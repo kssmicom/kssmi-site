@@ -69,7 +69,7 @@ seoKeywords: "titanyum optik çerçeve üreticisi, özel OEM gözlük üretimi, 
 - Yüksek Segment Optik Zincirleri
 - Butik Moda Markaları
 
-## Overview
+## Genel Bakış
 
 Bu çerçeveler, lüks optik koleksiyonlar için üstün korozyon direnci ve ultra hafif bir deneyim sunmak üzere birinci sınıf titanyum kullanılarak üretilmiştir.
 

@@ -62,7 +62,7 @@ seoKeywords: "produttore occhiali da sole in fibra di carbonio, vendita all'ingr
 - Marchi Sportivi e Auto Lifestyle
 - Marche di Moda Boutique
 
-## Overview
+## Panoramica
 
 KSS-043 è realizzato in fibra di carbonio premium, combinando una durata di grado aerospaziale con un profilo ultra leggero, ideale per i marchi che danno priorità all'estetica ad alte prestazioni.
 

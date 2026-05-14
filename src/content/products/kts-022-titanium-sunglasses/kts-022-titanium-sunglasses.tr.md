@@ -69,7 +69,7 @@ seoKeywords: "titanyum güneş gözlüğü üreticisi, özel OEM güneş gözlü
 - Spor ve Otomotiv Yaşam Tarzı Markaları
 - Butik Moda Markaları
 
-## Overview
+## Genel Bakış
 
 Havacılık sınıfı titanyum, KTS-022'yi tanımlayarak yüksek korozyon direncini sofistike ve lüks bir estetikle dengeleyen ultra hafif bir mimari sunar.
 

@@ -78,7 +78,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali sole OEM personalizz
 - Store di Concetto e Multi-Marchio
 - Vendita Duty-Free e Viaggi
 
-## Overview
+## Panoramica
 
 Il modello KAS-103 utilizza acetato Mazzucchelli e JINYU premium per ottenere una finitura brillante, con sofisticati motivi a scacchi e marmo che risuonano con le tendenze dell'alta moda.
 

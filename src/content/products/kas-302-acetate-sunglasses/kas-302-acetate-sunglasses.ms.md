@@ -56,7 +56,7 @@ seoKeywords: "cermin mata hitam asetat, cermin mata hitam unisex, pengilang cerm
 - Kedai Konsep & Berbilang Jenama
 - Rumah Fesyen Mewah
 
-## Overview
+## Gambaran Keseluruhan
 Dihasilkan daripada asetat premium Mazzucchelli dan JINYU, KAS-302 mengimbangi estetika unisex yang berani dengan kedalaman warna bertenaga yang mentakrifkan kacamata mewah moden.
 
 Engsel 4+3 tong yang direka dengan ketepatan memastikan ketahanan jangka panjang dan operasi yang lancar, manakala alas hidung bersepadu menyediakan muat yang selamat dan ergonomik.

@@ -58,7 +58,7 @@ seoKeywords: "monturas ópticas fibra carbono, gafas titanio a medida, fabricant
 - Etiquetas Deportivas y de Estilo de Vida Automotriz
 - Cadenas Ópticas de Alta Gamma
 
-## Overview
+## Resumen
 
 Combinando fibra de carbono de grado aeroespacial con un acabado en caoba de veta de montaña, el KSO-224 ofrece una rara intersección de rendimiento técnico y calidez natural.
 

@@ -67,7 +67,7 @@ seoKeywords: "Hersteller von Titan-Brillenfassungen, kundenspezifische OEM-Brill
 - Luxusmodehäuser
 - Sport- und Auto-Lifestyle-Marken
 
-## Overview
+## Übersicht
 
 Dieser aus hochwertigem Titan präzisionsgefertigte Unisex-Rahmen bietet ein außergewöhnliches Festigkeits-Gewichts-Verhältnis, das leistungsstarke Luxusbrillen definiert. Seine Zusammensetzung in Luft- und Raumfahrtqualität gewährleistet eine dauerhafte strukturelle Integrität bei gleichzeitig federleichtem Tragegefühl für den Träger.
 

@@ -70,7 +70,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil OE
 - Marques de Mode Boutique
 - Groupes de Grands Magasins
 
-## Overview
+## Aperçu
 
 Défini par son profil audacieux et la brillance polie à la main de l'acétate italien Mazzucchelli, ce modèle fusionne l'esthétique de la haute couture avec une profondeur de matériau exceptionnelle.
 

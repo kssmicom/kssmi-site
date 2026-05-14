@@ -1,11 +1,11 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Kính mát Axit tùy chỉnh"
+title: "Kính mát Axetat tùy chỉnh"
 slug: "kas-143-acetate-sunglasses"
 itemNo: "KAS-143"
 date: "2026-05-09"
 colors: "Đen & Sâm panh & Đồi mồi & Ô liu"
-materials: "Mazzucchelli cao cấp & JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM)"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -16,7 +16,7 @@ series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sungla
 
 # ─────────────────────────────────────────────────────
 size: "56-18-145mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng và Càng kính Axit cao cấp"
+frameMaterial: "Gọng và Càng kính Axetat cao cấp"
 lensMaterial: "Tròng kính Nylon bền bỉ & Tùy chỉnh theo yêu cầu"
 designStyle: "Cổ điển, Sang trọng, Thời trang, Xu hướng, Xa xỉ, Unisex"
 nosePads: "Đệm mũi đúc liền"
@@ -47,14 +47,14 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Kính mát Axit cổ điển xa xỉ KAS-143 | Đối tác sản xuất"
-seoDescription: "Hợp tác với nhà máy hàng đầu cho kính mát axit cổ điển xa xỉ KAS-143. Chúng tôi cung cấp dịch vụ tùy chỉnh OEM/ODM đầy đủ và MOQ 300 cho các thương hiệu thời trang cao cấp."
-seoKeywords: "nhà sản xuất kính mát axit, kính mắt OEM tùy chỉnh, nhà thời trang xa xỉ, nhà máy kính mát Trung Quốc, sản xuất kính mắt theo yêu cầu, gọng kính axit bán sỉ, axit Mazzucchelli cao cấp, nhà cung cấp kính mắt thời trang"
+seoTitle: "Kính mát Axetat cổ điển xa xỉ KAS-143 | Đối tác sản xuất"
+seoDescription: "Hợp tác với nhà máy hàng đầu cho kính mát axetat cổ điển xa xỉ KAS-143. Chúng tôi cung cấp dịch vụ tùy chỉnh OEM/ODM đầy đủ và MOQ 300 cho các thương hiệu thời trang cao cấp."
+seoKeywords: "nhà sản xuất kính mát axetat, kính mắt OEM tùy chỉnh, nhà thời trang xa xỉ, nhà máy kính mát Trung Quốc, sản xuất kính mắt theo yêu cầu, gọng kính axetat bán sỉ, axetat Mazzucchelli cao cấp, nhà cung cấp kính mắt thời trang"
 ---
 
 ## Thông số kỹ thuật
 
-- **Chất liệu cao cấp:** Cấu trúc axit Mazzucchelli và JINYU cao cấp mang lại tính thẩm mỹ sống động với độ bền nhẹ, lâu dài cho các tủ trưng bày bán lẻ cao cấp.
+- **Chất liệu cao cấp:** Cấu trúc axetat Mazzucchelli và JINYU cao cấp mang lại tính thẩm mỹ sống động với độ bền nhẹ, lâu dài cho các tủ trưng bày bán lẻ cao cấp.
 - **Phụ kiện phần cứng chính xác:** Bản lề cấu trúc 4+3 chấu chắc chắn được thiết kế để vận hành trơn tru nhất quán và tuổi thọ gọng kính đặc biệt.
 - **Quang học nâng cao:** Tròng kính nylon bền bỉ mang lại khả năng chống va đập và độ rõ nét vượt trội với các tùy chọn lớp phủ tùy chỉnh rộng rãi để đáp ứng các tiêu chuẩn thương hiệu cụ thể.
 - **Sự thoải mái tối ưu:** Đệm mũi đúc liền không mối nối được thiết kế để mang lại sự vừa vặn an toàn, không gây dị ứng, đảm bảo sự hài lòng lâu dài cho người đeo.
@@ -71,7 +71,7 @@ seoKeywords: "nhà sản xuất kính mát axit, kính mắt OEM tùy chỉnh, n
 
 ## Tổng quan
 
-Được chế tác từ axit Mazzucchelli và JINYU cao cấp, KAS-143 thể hiện sự cân bằng tinh tế giữa thẩm mỹ cổ điển và độ bền hiện đại. Bảng màu sống động và kiểu dáng unisex tinh tế mang đến nền tảng vượt thời gian cho các bộ sưu tập thời trang cao cấp.
+Được chế tác từ axetat Mazzucchelli và JINYU cao cấp, KAS-143 thể hiện sự cân bằng tinh tế giữa thẩm mỹ cổ điển và độ bền hiện đại. Bảng màu sống động và kiểu dáng unisex tinh tế mang đến nền tảng vượt thời gian cho các bộ sưu tập thời trang cao cấp.
 
 Bản lề 4+3 chấu được chế tạo chính xác và đệm mũi đúc liền đảm bảo tính toàn vẹn về cấu trúc bền vững và mang lại cảm giác vừa vặn, thoải mái cho người đeo.
 

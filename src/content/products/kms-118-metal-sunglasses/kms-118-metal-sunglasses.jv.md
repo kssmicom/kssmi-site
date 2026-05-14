@@ -70,7 +70,7 @@ seoKeywords: "kacamata hitam logam asetat, gaya kacamata fashion mewah, produsen
 - Chain Optik High-End
 - P中小uters Dutypirlalu & Journey
 
-## Overview
+## Ringkesan
 
 KMS-118 nggayuh keseimbangan sing canggih antarane bagean ngarep asetat premium lan gagang logam teknik presisi, nggawe bingkai hibrida awet sing nyambungake estetika klasik karo tren modern.
 

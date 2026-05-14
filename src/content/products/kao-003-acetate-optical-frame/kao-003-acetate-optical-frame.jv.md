@@ -58,7 +58,7 @@ seoKeywords: "produsen frame optik asetat, pabrik kacamata OEM kustom, frame ase
 - Label Busuk Fashion
 - Toko Konsep & Multi-Merek
 
-## Overview
+## Ringkesan
 
 Nggawe kacamata sing duwe dampak dhuwur diwiwiti kanthi tekstur asetat Mazzucchelli lan JINYU sing sugih lan dipoles nganggo tangan. Model iki ngimbangi dimensi struktur sing kendel karo palet warna sing vibrant lan macem-macem kanggo nyukupi panjaluk estetika fashion mewah.
 

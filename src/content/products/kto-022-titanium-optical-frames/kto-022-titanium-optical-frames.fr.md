@@ -67,7 +67,7 @@ seoKeywords: "montures optiques en titane, fabrication de lunettes de luxe, usin
 - Maisons de Mode de Luxe
 - Marques D2C E-commerce
 
-## Overview
+## Aperçu
 Alliant titane de qualité aérospatiale et esthétique unisexe sophistiquée, le KTO-022 constitue une base légère mais résiliente pour les collections de lunettes haut de gamme.
 
 Les charnières à 3 barillets conçues avec précision et les plaquettes de nez monobloc intégrées assurent une stabilité structurelle à long terme et un confort quotidien optimal pour l'utilisateur final.

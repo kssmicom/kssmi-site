@@ -78,7 +78,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, eyewear
 - Toko Konsep & Multi-Merek
 - Ritel Bebas Bea & Perjalanan
 
-## Overview
+## Ringkesan
 
 KAS-103 nggunakake asetat Mazzucchelli lan JINYU premium kanggo nggayuh asil pungkasan kilap jero, nampilake pola kisi-kisi lan marmer canggih sing cocog karo tren fesyen dhuwur.
 

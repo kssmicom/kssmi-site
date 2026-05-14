@@ -69,7 +69,7 @@ seoKeywords: "fabricant montures optiques titane, production lunettes OEM sur me
 - Chaînes Optiques Haut de Gamme
 - Marques de Mode Boutique
 
-## Overview
+## Aperçu
 
 Ces montures utilisent du titane de qualité supérieure pour offrir une expérience ultra-légère avec une résistance exceptionnelle à la corrosion pour les collections optiques de luxe.
 

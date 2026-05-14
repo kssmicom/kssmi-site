@@ -67,7 +67,7 @@ seoKeywords: "fabricante de armações ópticas de titânio, armações ópticas
 - Casas de Moda de Luxo
 - Marcas Esportivas e Lifestyle Automotivo
 
-## Overview
+## Visão Geral
 
 Fabricada com precisão em titânio premium, esta armação unissex oferece uma relação resistência-peso excepcional que define a óptica de luxo de alto desempenho. Sua composição de grau aeroespacial garante integridade estrutural duradoura, mantendo uma sensação de leveza para o usuário.
 

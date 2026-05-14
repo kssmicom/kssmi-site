@@ -68,7 +68,7 @@ seoKeywords: "karbon elyaf optik çerçeve üreticisi, özel titanyum karbon ely
 - Yüksek Segment Optik Zincirleri
 - Spor ve Otomotiv Yaşam Tarzı Markaları
 
-## Overview
+## Genel Bakış
 
 Üst düzey lüks segment için tasarlanan KSO-010, havacılık sınıfı karbon fiberi Seylan Abanozu ve Beyaz Meşe gibi el yapımı ahşap detaylarla birleştirir. Şık titanyum saplarla eşleşen bu sofistike hibrit yapı, hem ultra hafif hem de yapısal olarak üstün bir çerçeve oluşturur.
 

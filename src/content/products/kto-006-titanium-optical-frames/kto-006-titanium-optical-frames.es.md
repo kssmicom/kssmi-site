@@ -58,7 +58,7 @@ seoKeywords: "fabricante monturas ópticas titanio, gafas retro personalizadas O
 - Etiquetas de Moda Boutique
 - Tiendas de Concepto y Multi-Marca
 
-## Overview
+## Resumen
 
 Fusionando la estética retro con materiales modernos, el KTO-006 presenta una refinada combinación de frontales de acetato premium y varillas de titanio de grado aeroespacial. Esta construcción híbrida ofrece una sofisticada profundidad visual manteniendo un perfil ligero esencial para la óptica de alta gama.
 

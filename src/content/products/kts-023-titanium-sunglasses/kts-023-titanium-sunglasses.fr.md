@@ -67,7 +67,7 @@ seoKeywords: "fabricant lunettes titane, lunettes OEM sur mesure, montures luxe 
 - Marques Sportives et Lifestyle Automobile
 - Vente Duty-Free et Voyage
 
-## Overview
+## Aperçu
 
 Conçu pour les marchés haut de gamme exigeant le summum de la durabilité et de la légèreté, le modèle KTS-023 met en valeur l'esthétique épurée du titane de qualité premium. Les montures hypoallergéniques offrent un rapport résistance/poids exceptionnel, garantissant un confort tout au long de la journée pour les porteurs les plus exigeants.
 

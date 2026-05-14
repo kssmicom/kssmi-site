@@ -55,7 +55,7 @@ seoKeywords: "bingkai optik titanium, pengeluar kacamata tersuai, kacamata label
 - Rumah Fesyen Mewah
 - Jenama D2Ccommerce
 
-## Overview
+## Gambaran Keseluruhan
 
 Titanium gred aeroangkasa membentuk asas bingkai unisex ini, menawarkan keseimbangan luar biasa antara keselesaan ringan dan ketahanan jangka panjang. Profil premiumnya menyediakan kanvas canggih untuk jenama yang menyasarkan pasaran optik mewah.
 

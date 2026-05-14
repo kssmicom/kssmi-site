@@ -69,7 +69,7 @@ seoKeywords: "kacamata hitam asetat Mazzucchelli, produsen kacamata hitam asetat
 - Toko Konsep & Multi-Merek
 - Rumah Mode Mewah
 
-## Overview
+## Ringkesan
 
 Digawe saka campuran asetat Mazzucchelli lan JINYU, frame iki nggayuh keseimbangan sing canggih antarane kedalaman warna sing semangat lan integritas struktural sing awet. Arsitektur sing entheng lan bantalan irung integrasi nyedhiyakake pas sing mulus lan hypoallergenic kanggo panggunaan sedina muput.
 

@@ -1,11 +1,11 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Kính mát Axit tùy chỉnh"
+title: "Kính mát Axetat tùy chỉnh"
 slug: "kas-110-acetate-sunglasses"
 itemNo: "KAS-110"
 date: "2026-05-07"
 colors: "Đỏ Candy & Đồi mồi hồng & Trắng kem & Đen"
-materials: "Axit Premium Mazzucchelli & JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Premium Mazzucchelli & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) (Tùy chỉnh theo yêu cầu)"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -16,7 +16,7 @@ series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sungla
 
 # ─────────────────────────────────────────────────────
 size: "53-19-140mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng và càng kính Axit cao cấp"
+frameMaterial: "Gọng và càng kính Axetat cao cấp"
 lensMaterial: "Tròng kính Nylon bền bỉ & Tùy chỉnh theo yêu cầu"
 designStyle: "Phổ biến, Hợp thời trang, Thời trang, Phong cách, Unisex"
 nosePads: "Đệm mũi tích hợp"
@@ -47,14 +47,14 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Kính mát Axit cao cấp Unisex KAS-110 | Nhà máy tùy chỉnh"
-seoDescription: "Hợp tác với nhà máy hàng đầu Trung Quốc cho kính mát axit KAS-110. Sản xuất OEM/ODM cao cấp cho các thương hiệu thời trang với MOQ 300. Hỗ trợ logo tùy chỉnh đầy đủ."
-seoKeywords: "nhà sản xuất kính axit, kính mát OEM tùy chỉnh, kính mắt nhãn hiệu riêng xa xỉ, gọng axit bán buôn, nhà máy kính mắt Trung Quốc, kính mát thời trang ODM, nhà cung cấp kính mắt cao cấp, sản xuất kính axit theo yêu cầu"
+seoTitle: "Kính mát Axetat cao cấp Unisex KAS-110 | Nhà máy tùy chỉnh"
+seoDescription: "Hợp tác với nhà máy hàng đầu Trung Quốc cho kính mát axetat KAS-110. Sản xuất OEM/ODM cao cấp cho các thương hiệu thời trang với MOQ 300. Hỗ trợ logo tùy chỉnh đầy đủ."
+seoKeywords: "nhà sản xuất kính axetat, kính mát OEM tùy chỉnh, kính mắt nhãn hiệu riêng xa xỉ, gọng axetat bán buôn, nhà máy kính mắt Trung Quốc, kính mát thời trang ODM, nhà cung cấp kính mắt cao cấp, sản xuất kính axetat theo yêu cầu"
 ---
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Cấu trúc axit Mazzucchelli và JINYU được đánh bóng bằng tay mang lại vẻ đẹp thẩm mỹ sống động với lớp hoàn thiện nhẹ và bền.
+- **Chất liệu cao cấp:** Cấu trúc axetat Mazzucchelli và JINYU được đánh bóng bằng tay mang lại vẻ đẹp thẩm mỹ sống động với lớp hoàn thiện nhẹ và bền.
 - **Kỹ thuật chính xác:** Kích thước unisex chuyên nghiệp 53-19-140mm được chế tác để mang lại sự vừa vặn phong cách, phổ biến cho nhiều nhóm đối tượng khách hàng.
 - **Quang học tiên tiến:** Tròng kính nylon bền bỉ với độ rõ nét cao, cung cấp khả năng chống va đập vượt trội cùng nhiều tùy chọn tùy chỉnh cho các lớp phủ đặc biệt.
 - **Phụ kiện chắc chắn:** Bản lề cấu trúc thùng 3+2 được gia cố đảm bảo sự vận hành mượt mà lâu dài và sự ổn định của gọng kính.
@@ -72,7 +72,7 @@ seoKeywords: "nhà sản xuất kính axit, kính mát OEM tùy chỉnh, kính m
 
 ## Tổng quan
 
-Axit Mazzucchelli và JINYU được đánh bóng bằng tay hòa quyện trong mẫu KAS-110 để tạo nên một gọng kính sống động, nhẹ nhàng, ưu tiên cả chiều sâu thẩm mỹ lẫn độ bền cấu trúc.
+Axetat Mazzucchelli và JINYU được đánh bóng bằng tay hòa quyện trong mẫu KAS-110 để tạo nên một gọng kính sống động, nhẹ nhàng, ưu tiên cả chiều sâu thẩm mỹ lẫn độ bền cấu trúc.
 
 Mỗi đơn vị sản phẩm đều có hệ thống bản lề thùng 3+2 được kỹ thuật chính xác và đệm mũi tích hợp, mang lại sự thoải mái nhất quán và vận hành mượt mà như mong đợi từ các thương hiệu kính mắt cao cấp.
 

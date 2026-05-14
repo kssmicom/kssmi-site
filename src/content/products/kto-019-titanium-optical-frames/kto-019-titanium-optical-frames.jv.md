@@ -55,7 +55,7 @@ seoKeywords: "frame optik titanium, produsen kacamata kustom, kacamata label pri
 - Rumah Mode Mewah
 - Merek D2C e-dagang
 
-## Overview
+## Ringkesan
 
 Titanium kelas aeroangkasa dadi dhasar saka frame unisex iki, nawakake keseimbangan luar biasa antarane kenyamanan entheng lan kekiatan jangka panjang. Profil premium kasebut nyedhiyakake kanvas sing canggih kanggo merek sing nargetake pasar optik kelas dhuwur.
 

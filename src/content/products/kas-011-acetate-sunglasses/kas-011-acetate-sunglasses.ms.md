@@ -66,7 +66,7 @@ seoKeywords: "pengilang cermin mata hitam asetat KAS-011, OEM kacamata mewah ter
 - Label Fesyen Boutique
 - Runcit Bebas Cukai & Perjalanan
 
-## Overview
+## Gambaran Keseluruhan
 
 Asetat Mazzucchelli dan JINYU gred tinggi membentuk teras KAS-011, mencipta bingkai yang menyerlah dan ringan yang bergema dengan keperluan sofistikated jenama kacamata mewah.
 

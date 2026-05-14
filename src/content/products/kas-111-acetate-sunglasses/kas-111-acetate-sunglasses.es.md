@@ -69,7 +69,7 @@ seoKeywords: "fabricante gafas de sol acetato, gafas de sol OEM personalizadas, 
 - Tiendas de Concepto y Multi-Marca
 - Venta Duty-Free y Viajes
 
-## Overview
+## Resumen
 
 La vibrante profundidad del color y la integridad estructural premium se unen en el KAS-111, un modelo fabricado con acetato Mazzucchelli y JINYU de alta calidad para capturar una estética audaz e inspirada en lo vintage.
 

@@ -58,7 +58,7 @@ seoKeywords: "karbon fiber güneş gözlüğü üreticisi, özel OEM güneş gö
 - Spor ve Otomotiv Yaşam Tarzı Markaları
 - Concept ve Çoklu Marka Mağazaları
 
-## Overview
+## Genel Bakış
 
 Seçici markalar için hazırlanan KSS-033, havacılık sınıfı karbon fiberin teknik üstünlüğünü zamansız, unisex bir estetikle birleştiriyor. Ultra hafif çerçevesi, üst düzey perakende pazarına premium kalite sinyali veren olağanüstü dayanıklılık ve farklı bir doku sunar.
 

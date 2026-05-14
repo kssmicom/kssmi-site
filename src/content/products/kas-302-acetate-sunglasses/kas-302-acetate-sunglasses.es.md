@@ -56,7 +56,7 @@ seoKeywords: "gafas de sol de acetato, gafas de sol unisex, fabricante de gafas,
 - Tiendas de Concepto y Multi-Marca
 - Casas de Moda de Lujo
 
-## Overview
+## Resumen
 Esculpido en acetato Mazzucchelli y JINYU de primera calidad, el modelo KAS-302 equilibra una estética atrevida y unisex con una vibrante profundidad de color que define las gafas de lujo modernas.
 
 Las bisagras de 4+3 barriles diseñadas con precisión garantizan la durabilidad a largo plazo y un funcionamiento suave, mientras que las almohadillas nasales integradas proporcionan un ajuste seguro y ergonómico.

@@ -56,7 +56,7 @@ seoKeywords: "nhà sản xuất gọng kính titanium, kính mắt titanium tùy
 - Chuỗi quang học cao cấp
 - Tập đoàn cửa hàng bách hóa
 
-## Overview
+## Tổng quan
 
 Kết hợp độ bền cấu trúc với trọng lượng đặc biệt nhẹ, KTO-003 được chế tác chính xác từ titan cấp hàng không cao cấp.
 

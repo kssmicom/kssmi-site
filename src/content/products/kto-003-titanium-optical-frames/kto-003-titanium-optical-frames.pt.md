@@ -56,7 +56,7 @@ seoKeywords: "fabricante armações ópticas titânio, óculos de titânio perso
 - Lojas Ópticas Premium
 - Grupos de Grandes Armazéns
 
-## Overview
+## Visão Geral
 
 Combinando longevidade estrutural com um perfil excepcionalmente leve, o KTO-003 é fabricado com precisão em titânio premium de grau aeroespacial.
 

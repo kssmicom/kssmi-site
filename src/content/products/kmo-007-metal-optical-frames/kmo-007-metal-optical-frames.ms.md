@@ -64,7 +64,7 @@ seoKeywords: "bingkai optik logam, pengeluar bingkai optik, kilang cermin mata t
 - Rantai Optik Bergengsi
 - Label Fesyen Boutique
 
-## Overview
+## Gambaran Keseluruhan
 
 Ketahanan struktur yang seimbang dan estetika yang canggih mentakrifkan KMO-007, sebuah model yang direka dengan teliti daripada logam premium untuk jenama global yang mementingkan kualiti.
 

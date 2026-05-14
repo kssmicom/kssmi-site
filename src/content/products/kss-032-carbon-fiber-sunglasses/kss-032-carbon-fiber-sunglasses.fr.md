@@ -57,7 +57,7 @@ seoKeywords: "fabricant lunettes de soleil fibre de carbone, lunettes de soleil 
 - Maisons de Mode de Luxe
 - Vente Duty-Free et Voyage
 
-## Overview
+## Aperçu
 
 Conçue pour les marques qui privilégient la supériorité technique, la KSS-032 utilise une fibre de carbone de qualité aérospatiale supérieure pour créer une monture aussi résiliente qu'élégante. La texture tissée distincte du matériau constitue une marque de luxe, offrant une esthétique sophistiquée qui la distingue des lunettes conventionnelles.
 

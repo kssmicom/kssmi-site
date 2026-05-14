@@ -59,7 +59,7 @@ seoKeywords: "Luxus-Acetat-Sonnenbrillen, Hersteller von individuellen Brillen, 
 - Boutique-Modemmarken
 - Duty-Free- und Reisehandel
 
-## Overview
+## Übersicht
 
 Handverlesenes Mazzucchelli- und JINYU-Acetat verleiht dem Modell KAS-017 sein hochdichtes Finish und seine überlegene Farbtiefe und erfüllt die strengen Standards des Luxusbrillenmarktes.
 

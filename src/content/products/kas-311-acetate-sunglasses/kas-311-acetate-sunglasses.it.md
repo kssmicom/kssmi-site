@@ -70,7 +70,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali unisex personalizzat
 - Marche di Moda Boutique
 - Vendita Duty-Free e Viaggi
 
-## Overview
+## Panoramica
 
 Realizzato con una sofisticata miscela di acetato Mazzucchelli e JINYU, il modello KAS-311 offre una montatura leggera ma resistente con una vivacità cromatica superiore.
 

@@ -69,7 +69,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, Custom OEM Sonnenbrillen, Premium
 - Konzept- und Multi-Brand-Stores
 - Luxusmodehäuser
 
-## Overview
+## Übersicht
 
 Die KAS-105 ist aus hochwertigem Mazzucchelli- und JINYU-Acetat gefertigt und verbindet ein kühnes Unisex-Design mit lebendiger Farbtiefe. Dieser handpolierte Rahmen dient als vielseitige Basis für Marken, die Wert auf hochdichte Materialien und zeitgenössische Modeästhetik legen.
 

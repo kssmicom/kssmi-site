@@ -70,7 +70,7 @@ seoKeywords: "pengilang cermin mata hitam logam tanpa rim, pengeluaran kacamata 
 - Jenama D2Ccommerce
 - Kumpulan Stor Departments
 
-## Overview
+## Gambaran Keseluruhan
 
 Estetika tanpa rim bertemu dengan integriti struktur dalam KRS-203, model yang ditakrifkan oleh profil minimalis dan binaan batang logam premium.
 

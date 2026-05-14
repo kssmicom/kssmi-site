@@ -58,7 +58,7 @@ seoKeywords: "nhà sản xuất kính mát sợi carbon, kính mát OEM tùy ch�
 - Thương hiệu thể thao và ô tô
 - Cửa hàng khái niệm & đa nhãn
 
-## Overview
+## Tổng quan
 
 Được chế tác cho các thương hiệu tinh tế, KSS-033 kết hợp ưu thế kỹ thuật của sợi carbon cấp hàng không với thẩm mỹ unisex vượt thời gian. Gọng kính siêu nhẹ của nó mang lại độ bền đặc biệt và vân độc đáo, báo hiệu chất lượng cao cấp cho thị trường bán lẻ cao cấp.
 

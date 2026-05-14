@@ -74,7 +74,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali da sole OEM personal
 - Marche di Moda Boutique
 - Vendita Duty-Free e Viaggi
 
-## Overview
+## Panoramica
 
 Le case di moda di lusso che cercano un vantaggio visivo distinto lo trovano nel modello KAS-129, che abbina l'acetato Mazzucchelli e JINYU selezionato a mano con una silhouette audace e unisex.
 

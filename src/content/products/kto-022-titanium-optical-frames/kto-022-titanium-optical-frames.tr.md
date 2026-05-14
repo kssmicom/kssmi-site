@@ -67,7 +67,7 @@ seoKeywords: "titanyum optik çerçeveler, lüks gözlük üretimi, gözlük OEM
 - Lüks Moda Evleri
 - E-ticaret D2C Markaları
 
-## Overview
+## Genel Bakış
 Havacılık sınıfı titanyumu sofistike bir unisex estetikle birleştiren KTO-022, premium gözlük koleksiyonları için hafif ama dayanıklı bir temel sağlar.
 
 Hassas mühendislikle üretilen 3 varilli menteşeler ve entegre tek parça burun tamponları, son kullanıcı için uzun vadeli yapısal stabilite ve gün boyu konfor sağlar.

@@ -57,7 +57,7 @@ seoKeywords: "pengeluar cermin mata hitam gentian karbon, cermin mata hitam OEM 
 - Rumah Fesyen Mewah
 - runcit Dutypirlalu & Perjalanan
 
-## Overview
+## Gambaran Keseluruhan
 
 Direka untuk jenama yang mengutamakan keunggulan teknikal, KSS-032 menggunakan gentian karbon gred aeroangkasa premium untuk mencipta bingkai yang berdaya tahan dan halus. Tekstur tenunan bahan yang tersendiri berfungsi sebagai tanda kemewahan, menawarkan estetika canggih yang membezakannya daripada cermin mata konvensional.
 

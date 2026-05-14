@@ -70,7 +70,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata unisex kustom, frame aset
 - Label Busuk Fashion
 - Ritel Bebas Bea & Perjalanan
 
-## Overview
+## Ringkesan
 
 Digawe saka campuran canggih asetat Mazzucchelli lan JINYU, KAS-311 nawakake frame sing entheng nanging awet kanthi vibrasi warna sing unggul.
 

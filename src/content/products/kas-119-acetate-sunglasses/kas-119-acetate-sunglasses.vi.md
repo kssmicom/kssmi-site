@@ -1,22 +1,22 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Kính mát Axit tùy chỉnh"
+title: "Kính mát Axetat tùy chỉnh"
 slug: "kas-119-acetate-sunglasses"
 itemNo: "KAS-119"
 date: "2026-05-09"
 colors: "Đen & Hoa & Xanh lam thô & Vàng & Đồi mồi Bắc cực & Đồi mồi Lục lam & Đồi mồi Đỏ"
-materials: "Axit Mazzucchelli & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Mazzucchelli & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
 serviceMode: "OEM & ODM ( Tùy chỉnh theo yêu cầu )"
 moq: "300 PCS/Model (100PCS/Color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Kính mát"
-material: "Kính mát Axit"
+material: "Kính mát Acetate"
 series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "49-21-145mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng và càng kính Axit cao cấp"
+frameMaterial: "Gọng và càng kính Axetat cao cấp"
 lensMaterial: "Tròng kính Nylon bền bỉ & Tùy chỉnh theo yêu cầu"
 designStyle: "Táo bạo, Xa xỉ, Độc đáo, Hợp xu hướng, Thời trang, Unisex"
 nosePads: "Đệm mũi tích hợp"
@@ -59,14 +59,14 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Kính mát Axit Unisex Táo bạo và Xa xỉ KAS-119 | Nhà cung cấp tùy chỉnh"
-seoDescription: "Nâng tầm danh mục nhãn hiệu riêng của bạn với kính mát axit Mazzucchelli unisex đặt làm riêng. Chúng tôi cung cấp tùy chỉnh OEM/ODM hoàn chỉnh và MOQ 300 dễ tiếp cận."
-seoKeywords: "nhà sản xuất kính mát axit, kính mát OEM tùy chỉnh, kính mắt nhãn hiệu riêng sang trọng, gọng axit bán buôn, nhà máy kính mắt Trung Quốc, kính mát unisex đặt làm riêng OEM, nhà cung cấp kính mắt cao cấp, sản xuất kính mắt Trung Quốc"
+seoTitle: "Kính mát Axetat Unisex Táo bạo và Xa xỉ KAS-119 | Nhà cung cấp tùy chỉnh"
+seoDescription: "Nâng tầm danh mục nhãn hiệu riêng của bạn với kính mát axetat Mazzucchelli unisex đặt làm riêng. Chúng tôi cung cấp tùy chỉnh OEM/ODM hoàn chỉnh và MOQ 300 dễ tiếp cận."
+seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, kính mắt nhãn hiệu riêng sang trọng, gọng axetat bán buôn, nhà máy kính mắt Trung Quốc, kính mát unisex đặt làm riêng OEM, nhà cung cấp kính mắt cao cấp, sản xuất kính mắt Trung Quốc"
 ---
 
 ## Thông số kỹ thuật
 
-- **Cấu trúc Axit cao cấp:** Được chế tác từ axit Mazzucchelli và JINYU đẳng cấp thế giới, mang đến cấu trúc gọng và càng kính nhẹ, đặc biệt bền bỉ và sống động.
+- **Cấu trúc Axetat cao cấp:** Được chế tác từ axetat Mazzucchelli và JINYU đẳng cấp thế giới, mang đến cấu trúc gọng và càng kính nhẹ, đặc biệt bền bỉ và sống động.
 - **Phần cứng chính xác:** Được thiết kế với bản lề cấu trúc 4+3 tùy chỉnh để cung cấp độ ổn định vượt trội và độ êm ái khi vận hành lâu dài.
 - **Quang học hiệu suất cao:** Được trang bị tròng kính nylon bền bỉ mang lại độ rõ nét quang học tuyệt vời cùng với nhiều tùy chọn tùy chỉnh.
 - **Thoải mái cả ngày:** Được thiết kế với đệm mũi tích hợp tinh tế để đảm bảo tính thẩm mỹ liền mạch và vừa vặn an toàn, thoải mái khi sử dụng trong thời gian dài.
@@ -83,7 +83,7 @@ seoKeywords: "nhà sản xuất kính mát axit, kính mát OEM tùy chỉnh, k�
 
 ## Tổng quan
 
-Sự xa xỉ táo bạo gặp gỡ sự khéo léo đặc biệt trong KAS-119, nổi bật với thiết kế unisex nổi bật được điêu khắc từ axit Mazzucchelli và JINYU nổi tiếng thế giới. Cấu trúc gọng sống động này không chỉ đảm bảo độ bền nhẹ mà còn thiết lập sự hiện diện trực quan ấn tượng cho các danh mục thời trang cao cấp.
+Sự xa xỉ táo bạo gặp gỡ sự khéo léo đặc biệt trong KAS-119, nổi bật với thiết kế unisex nổi bật được điêu khắc từ axetat Mazzucchelli và JINYU nổi tiếng thế giới. Cấu trúc gọng sống động này không chỉ đảm bảo độ bền nhẹ mà còn thiết lập sự hiện diện trực quan ấn tượng cho các danh mục thời trang cao cấp.
 
 Được chế tạo để đeo trong thời gian dài, sự kết hợp giữa bản lề 4+3 tùy chỉnh và đệm mũi liền mạch đảm bảo sự thoải mái ổn định cả ngày cùng với quang học nylon cao cấp.
 

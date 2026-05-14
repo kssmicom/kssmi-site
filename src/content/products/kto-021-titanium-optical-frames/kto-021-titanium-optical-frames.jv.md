@@ -69,7 +69,7 @@ seoKeywords: "produsen frame optik titanium, produksi kacamata OEM kustom, frame
 - Chain Optik High-End
 - Label Busuk Fashion
 
-## Overview
+## Ringkesan
 
 Bingkai iki nggunakake titanium premium kanggo menehi pengalaman ultra-enteng kanthi resistensi karat sing unggul kanggo koleksi optik mewah.
 

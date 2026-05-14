@@ -68,7 +68,7 @@ seoKeywords: "produsen frame optik serat karbon, kacamata kustom titanium serat 
 - Chain Optik High-End
 - Merek Gaya Hidup Olahraga & Otomotif
 
-## Overview
+## Ringkesan
 
 Dirancang kanggo segmen kemewahan dhuwur, KSO-010 nggabungake serat karbon kelas aeroangkasa kanthi aksen kayu buatan tangan kaya Ceylon Ebony lan White Oak. Konstruksi hibrida sing canggih iki, dipasangake karo candhi titanium sing apik banget, nggawe pigura sing ultra-entheng lan unggul sacara struktural.
 

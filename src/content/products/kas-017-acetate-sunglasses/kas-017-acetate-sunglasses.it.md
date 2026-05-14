@@ -59,7 +59,7 @@ seoKeywords: "occhiali da sole in acetato di lusso, produttore di occhiali perso
 - Marche di Moda Boutique
 - Vendita Duty-Free e Viaggi
 
-## Overview
+## Panoramica
 
 L'acetato Mazzucchelli e JINYU selezionato a mano conferisce al KAS-017 la sua finitura ad alta densità e la sua profondità di colore superiore, soddisfacendo i rigorosi standard del mercato degli occhiali di lusso.
 

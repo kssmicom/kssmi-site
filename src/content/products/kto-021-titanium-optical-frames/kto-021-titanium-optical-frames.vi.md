@@ -69,7 +69,7 @@ seoKeywords: "nhà sản xuất gọng kính titanium, sản xuất kính mắt 
 - Chuỗi quang học cao cấp
 - Nhãn thời trang boutique
 
-## Overview
+## Tổng quan
 
 Những chiếc gọng kính này sử dụng titanium cao cấp để mang lại trải nghiệm siêu nhẹ với khả năng chống ăn mòn vượt trội cho các bộ sưu tập quang học sang trọng.
 

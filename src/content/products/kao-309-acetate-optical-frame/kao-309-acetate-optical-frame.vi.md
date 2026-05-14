@@ -1,11 +1,11 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Gọng Kính Cận Axit Tùy Chỉnh"
+title: "Gọng Kính Cận Axetat Tùy Chỉnh"
 slug: "kao-309-acetate-optical-frame"
 itemNo: "KAO-309"
 date: "2026-05-10"
 colors: "Đen & Xanh hoàng gia & Đồi mồi & Ô liu"
-materials: "Axit Cao cấp Mazzucchelli & JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Cao cấp Mazzucchelli & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) (Tùy chỉnh theo yêu cầu)"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -16,7 +16,7 @@ series: "optical-frames, fashion-eyewear, acetate-optical-frames, fashion-acetat
 
 # ─────────────────────────────────────────────────────
 size: "52-19-145mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Gọng và Càng kính Axit Cao cấp"
+frameMaterial: "Gọng và Càng kính Axetat Cao cấp"
 lensMaterial: "Tròng kính Nylon Bền bỉ & Tùy chỉnh theo yêu cầu"
 designStyle: "Độc đáo, Cổ điển, Retro, Phong cách, Thời thượng, Thời trang, Xa xỉ, Unisex"
 nosePads: "Đệm mũi tích hợp"
@@ -47,17 +47,17 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-309 Gọng Kính Cận Axit Cổ Điển Retro | Xưởng Tùy Chỉnh"
-seoDescription: "Hợp tác với nhà sản xuất tùy chỉnh hàng đầu cho gọng kính cận axit retro KAO-309. Bản lề 4+3 barrel và axit Mazzucchelli với MOQ 300 cái."
-seoKeywords: "nhà sản xuất gọng kính axit, kính mắt tùy chỉnh OEM, kính mắt nhãn hiệu riêng xa xỉ, xưởng kính mắt Trung Quốc, gọng kính axit thiết kế riêng, bán buôn gọng kính cận, nhà cung cấp gọng kính cao cấp, sản xuất kính axit retro"
+seoTitle: "KAO-309 Gọng Kính Cận Axetat Cổ Điển Retro | Xưởng Tùy Chỉnh"
+seoDescription: "Hợp tác với nhà sản xuất tùy chỉnh hàng đầu cho gọng kính cận axetat retro KAO-309. Bản lề 4+3 barrel và axetat Mazzucchelli với MOQ 300 cái."
+seoKeywords: "nhà sản xuất gọng kính axetat, kính mắt tùy chỉnh OEM, kính mắt nhãn hiệu riêng xa xỉ, xưởng kính mắt Trung Quốc, gọng kính axetat thiết kế riêng, bán buôn gọng kính cận, nhà cung cấp gọng kính cao cấp, sản xuất kính axetat retro"
 ---
 
 ## Đặc điểm
-- **Chất liệu Cao cấp:** Gọng và càng kính bằng axit Mazzucchelli và JINYU cao cấp mang lại vẻ thẩm mỹ rực rỡ, nhẹ và bền.
+- **Chất liệu Cao cấp:** Gọng và càng kính bằng axetat Mazzucchelli và JINYU cao cấp mang lại vẻ thẩm mỹ rực rỡ, nhẹ và bền.
 - **Phụ kiện Bền bỉ:** Bản lề cấu trúc đinh tán 4+3 barrel được thiết kế chính xác đảm bảo độ trơn tru khi vận hành và tuổi thọ cấu trúc đặc biệt.
 - **Quang học Cao cấp:** Tròng kính nylon bền bỉ mang lại khả năng chống va đập vượt trội và các tùy chọn tùy chỉnh linh hoạt cho các tông màu và lớp phủ chuyên dụng.
 - **Sự Thoải mái Công thái học:** Đệm mũi được tích hợp liền mạch được thiết kế để mang lại sự vừa vặn an toàn, không gây dị ứng và thoải mái khi sử dụng lâu dài.
-- **Thẩm mỹ Tinh tế:** Cấu trúc axit nhẹ nhưng chắc chắn, giúp duy trì cường độ màu sắc rực rỡ và tính toàn vẹn của cấu trúc.
+- **Thẩm mỹ Tinh tế:** Cấu trúc axetat nhẹ nhưng chắc chắn, giúp duy trì cường độ màu sắc rực rỡ và tính toàn vẹn của cấu trúc.
 - **Sản xuất Linh hoạt:** Khả năng tùy chỉnh OEM & ODM đầy đủ với số lượng đặt hàng tối thiểu thấp 300 cái, được thiết kế riêng cho các Nhà thời trang xa xỉ và Nhà thiết kế kính mắt độc lập.
 
 ## Phù hợp cho
@@ -70,7 +70,7 @@ seoKeywords: "nhà sản xuất gọng kính axit, kính mắt tùy chỉnh OEM,
 
 ## Tổng quan
 
-Kết hợp giữa axit Mazzucchelli và JINYU cao cấp, KAO-309 có thiết kế cổ điển lấy cảm hứng từ phong cách retro dành cho thị trường quang học cao cấp. Gọng kính nhẹ giúp duy trì độ sâu màu sắc đậm nét đồng thời mang lại khả năng phục hồi cần thiết cho việc đeo hàng ngày.
+Kết hợp giữa axetat Mazzucchelli và JINYU cao cấp, KAO-309 có thiết kế cổ điển lấy cảm hứng từ phong cách retro dành cho thị trường quang học cao cấp. Gọng kính nhẹ giúp duy trì độ sâu màu sắc đậm nét đồng thời mang lại khả năng phục hồi cần thiết cho việc đeo hàng ngày.
 
 Bản lề đinh tán 4+3 barrel được thiết kế chính xác và đệm mũi tích hợp mang lại sự cân bằng tinh tế giữa tuổi thọ cấu trúc và sự thoải mái về công thái học.
 

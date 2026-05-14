@@ -70,7 +70,7 @@ seoKeywords: "fabricante de óculos de sol em acetato, óculos flat-top personal
 - Lojas de Conceito e Multi-Marcas
 - Grupos de Grandes Armazéns
 
-## Overview
+## Visão Geral
 
 Proporções ousadas e oversize e uma silhueta flat-top distinta definem o modelo KAS-132, fabricado a partir de uma mistura premium de acetato Mazzucchelli e JINYU para profundidade e durabilidade incomparáveis.
 

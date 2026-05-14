@@ -56,7 +56,7 @@ seoKeywords: "Titan Brillengestelle Hersteller, maßgeschneiderte Titanbrillen O
 - Hochwertige Optikketten
 - Kaufhausgruppen
 
-## Overview
+## Übersicht
 
 Durch die Kombination von struktureller Langlebigkeit mit einem außergewöhnlich leichten Profil ist die KTO-003 präzisionsgefertigt aus hochwertigem Titan in Luftfahrtqualität.
 

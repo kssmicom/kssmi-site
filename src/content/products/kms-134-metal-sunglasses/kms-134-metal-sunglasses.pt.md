@@ -70,7 +70,7 @@ seoKeywords: "fabricante óculos de sol metal, óculos metal personalizados OEM,
 - Etiquetas de Moda Boutique
 - Grupos de Grandes Armazéns
 
-## Overview
+## Visão Geral
 
 O metal de alta qualidade define a elegância estrutural do KMS-134, onde uma arquitetura sofisticada de ponte dupla cria uma silhueta ousada e masculina. Esta armação serve como uma peça de destaque para coleções de luxo, equilibrando a força industrial com uma sensibilidade de moda refinada.
 

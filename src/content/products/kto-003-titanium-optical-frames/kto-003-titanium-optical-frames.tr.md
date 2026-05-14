@@ -56,7 +56,7 @@ seoKeywords: "titanyum optik çerçeve üreticisi, özel titanyum gözlük OEM, 
 - Yüksek Segment Optik Zincirleri
 - Departman Mağazası Grupları
 
-## Overview
+## Genel Bakış
 
 Yapısal uzun ömürlülüğü olağanüstü hafif bir profille birleştiren KTO-003, birinci sınıf havacılık sınıfı titanyumdan hassasiyetle üretilmiştir.
 

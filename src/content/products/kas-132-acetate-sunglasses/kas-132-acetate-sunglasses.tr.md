@@ -70,7 +70,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel flat-top gözlük, ov
 - Concept ve Çoklu Marka Mağazaları
 - Departman Mağazası Grupları
 
-## Overview
+## Genel Bakış
 
 Cesur, oversize oranlar ve belirgin bir flat-top siluet, benzersiz derinlik ve dayanıklılık için Mazzucchelli ve JINYU asetatın premium karışımından hazırlanan KAS-132'yi tanımlar.
 

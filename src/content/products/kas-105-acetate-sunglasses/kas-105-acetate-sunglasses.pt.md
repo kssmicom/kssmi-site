@@ -69,7 +69,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 - Lojas de Conceito e Multi-Marcas
 - Casas de Moda de Luxo
 
-## Overview
+## Visão Geral
 
 Fabricado em acetato premium Mazzucchelli e JINYU, o KAS-105 equilibra um design unissex ousado com uma profundidade de cor vibrante. Esta armação polida à mão serve como uma base versátil para marcas que priorizam materiais de alta densidade e estética de moda contemporânea.
 

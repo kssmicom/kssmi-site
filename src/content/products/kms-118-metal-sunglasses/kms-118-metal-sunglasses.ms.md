@@ -70,7 +70,7 @@ seoKeywords: "cermin mata hitam logam asetat, gaya kacamata fesyen mewah, pengel
 - Rantai Optik Bergengsi
 - runcit Dutypirlalu & Perjalanan
 
-## Overview
+## Gambaran Keseluruhan
 
 KMS-118 mencapai keseimbangan yang canggih antara bahagian hadapan asetat premium dan kaki logam kejuruteraan ketepatan, mencipta bingkai hibrid tahan lama yang merapatkan estetika klasik dengan trend moden.
 

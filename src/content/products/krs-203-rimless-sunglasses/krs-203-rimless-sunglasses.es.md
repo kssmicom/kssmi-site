@@ -70,7 +70,7 @@ seoKeywords: "fabricante de gafas de sol de metal sin montura, producción de ga
 - Marcas D2C de Comercio Electrónico
 - Grupos de Grandes Almacenes
 
-## Overview
+## Resumen
 
 La estética sin montura se une a la integridad estructural en el KRS-203, un modelo definido por su perfil minimalista y la construcción de sus varillas en metal de primera calidad.
 

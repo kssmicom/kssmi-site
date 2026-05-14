@@ -70,7 +70,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, lunettes flat-top personnal
 - Magasins de Concept et Multi-Marques
 - Groupes de Grands Magasins
 
-## Overview
+## Aperçu
 
 Des proportions audacieuses et oversize et une silhouette flat-top distinctive définissent le modèle KAS-132, fabriqué à partir d'un mélange premium d'acétate Mazzucchelli et JINYU pour une profondeur et une durabilité inégalées.
 

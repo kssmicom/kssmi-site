@@ -78,7 +78,7 @@ seoKeywords: "fabricante de óculos de sol em acetato, óculos de sol OEM person
 - Lojas de Conceito e Multi-Marcas
 - Venda Duty-Free e Viagens
 
-## Overview
+## Visão Geral
 
 O modelo KAS-103 utiliza acetato Mazzucchelli e JINYU premium para obter um acabamento de brilho profundo, apresentando padrões sofisticados de xadrez e mármore que ressoam com as tendências da alta moda.
 

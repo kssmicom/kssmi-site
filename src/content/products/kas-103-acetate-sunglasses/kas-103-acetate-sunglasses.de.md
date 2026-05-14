@@ -78,7 +78,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, Custom OEM Sonnenbrillen, Luxus P
 - Konzept- und Multi-Brand-Stores
 - Duty-Free- und Reisehandel
 
-## Overview
+## Übersicht
 
 Die KAS-103 verwendet hochwertiges Mazzucchelli- und JINYU-Acetat, um ein tiefglänzendes Finish zu erzielen, mit anspruchsvollen Gitter- und Marmormustern, die mit aktuellen High-Fashion-Trends harmonieren.
 

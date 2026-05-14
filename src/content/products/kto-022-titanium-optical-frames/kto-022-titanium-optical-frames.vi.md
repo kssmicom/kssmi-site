@@ -67,7 +67,7 @@ seoKeywords: "gọng kính cận titanium, sản xuất kính mắt xa xỉ, nh�
 - Nhà thời trang xa xỉ
 - Thương hiệu D2C thương mại điện tử
 
-## Overview
+## Tổng quan
 Kết hợp giữa titanium cấp hàng không với thẩm mỹ unisex tinh tế, KTO-022 cung cấp một nền tảng nhẹ nhàng nhưng bền bỉ cho các bộ sưu tập kính mắt cao cấp.
 
 Bản lề 3 chấu được chế tác chính xác và đệm mũi đúc nguyên khối đảm bảo sự ổn định cấu trúc lâu dài và sự thoải mái suốt cả ngày cho người sử dụng cuối cùng.

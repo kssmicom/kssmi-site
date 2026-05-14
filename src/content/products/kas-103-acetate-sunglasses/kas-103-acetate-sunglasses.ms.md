@@ -78,7 +78,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 - Kedai Konsep & Berbilang Jenama
 - Runcit Bebas Cukai & Perjalanan
 
-## Overview
+## Gambaran Keseluruhan
 
 KAS-103 menggunakan asetat Mazzucchelli dan JINYU premium untuk mencapai kemasan kilauan mendalam, menampilkan corak kisi-kisi dan marmar canggih yang bergema dengan trend fesyen tinggi.
 

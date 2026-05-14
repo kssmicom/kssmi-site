@@ -70,7 +70,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, lunettes unisexe personnali
 - Marques de Mode Boutique
 - Vente Duty-Free et Voyage
 
-## Overview
+## Aperçu
 
 Fabriqué à partir d'un mélange sophistiqué d'acétate Mazzucchelli et JINYU, le modèle KAS-311 offre une monture légère mais durable avec une vibrance de couleur supérieure.
 

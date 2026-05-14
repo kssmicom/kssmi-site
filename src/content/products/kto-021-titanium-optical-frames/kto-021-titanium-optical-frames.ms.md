@@ -69,7 +69,7 @@ seoKeywords: "pengilang bingkai optik titanium, pengeluaran kacamata OEM tersuai
 - Rantai Optik Bergengsi
 - Label Fesyen Boutique
 
-## Overview
+## Gambaran Keseluruhan
 
 Bingkai ini menggunakan titanium premium untuk memberikan pengalaman ultra-ringan dengan rintangan kakisan yang unggul untuk koleksi optik mewah.
 

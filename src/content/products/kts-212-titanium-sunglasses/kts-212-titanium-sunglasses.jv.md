@@ -61,7 +61,7 @@ seoKeywords: "produsen kacamata hitam titanium, pemasok kacamata OEM kustom, gro
 - Merek Gaya Hidup Olahraga & Otomotif
 - P中小uters Dutypirlalu & Journey
 
-## Overview
+## Ringkesan
 
 KTS-212 nggunakake titanium premium kanggo nawakake rasio kekuatan-kanggo-bobot sing unggul kanggo koleksi kacamata elit. Bingkai ultra-ringan iki nduweni desain unisex unik sing narik kawigaten pasar fashion dhuwur lan ritel mewah.
 

@@ -69,7 +69,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 - Rumah Mode Mewah
 - Toko Konsep & Multi-Merek
 
-## Overview
+## Ringkesan
 
 Digawe saka asetat Mazzucchelli lan JINYU sing dipilih kanthi tangan, KAS-318 nyedhiyakake werna sing padhang lan daya tahan struktural sing luar biasa kanggo pasar fashion premium. Komposisi sing entheng njamin kenyamanan sing nganggo jangka panjang tanpa ngrusak pengaruh estetika.
 

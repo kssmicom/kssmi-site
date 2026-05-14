@@ -7,8 +7,8 @@ lang: jv
 slug: about-us
 title: "Tentang Kami"
 seoTitle: "Tentang Kami | Kssmi Eyewear - Pakar Manufaktur Presisi"
-seoDescription: "Mbekami babagan sejarah 20 taun Kssmi Eyewear, lini produksi titanium lan acetate khusus, lan komitmene kanggo quality assurance零-defect."
-seoKeywords: "eyewear manufacturer, acetate sunglasses factory, precision frame manufacturing, OEM ODM eyewear China"
+seoDescription: "Mbekami babagan sejarah 20 taun Kssmi Eyewear, lini produksi titanium lan asetat khusus, lan komitmene kanggo quality assurance零-defect."
+seoKeywords: "eyewear manufacturer, asetat sunglasses factory, precision frame manufacturing, OEM ODM eyewear China"
 ogImage: "/media/collection/about/Your-Professional-Eyewear-and-Sunglasses-Manufacturer-Expert-from-China.webp"
 
 s01_hero:
@@ -41,20 +41,20 @@ s02_foundation:
 
 s03_expertise:
   images:
-    - url: "https://kssmi.com/wp-content/uploads/2025/10/Sourcing-Acetate-Materials-from-Mazzucchelli.webp"
-      alt: "Sampel Acetate Mazzucchelli"
-    - url: "https://kssmi.com/wp-content/uploads/2025/10/High-quality-Acetate-Materials-Producing.webp"
-      alt: "Produksi Acetate"
+    - url: "https://kssmi.com/wp-content/uploads/2025/10/Sourcing-Asetat-Materials-from-Mazzucchelli.webp"
+      alt: "Sampel Asetat Mazzucchelli"
+    - url: "https://kssmi.com/wp-content/uploads/2025/10/High-quality-Asetat-Materials-Producing.webp"
+      alt: "Produksi Asetat"
     - url: "https://kssmi.com/wp-content/uploads/2025/10/High-grade-Stainless-Steel-Frame-Producing.webp"
       alt: "Sampel Bahan Metal"
     - url: "https://kssmi.com/wp-content/uploads/2025/10/High-grade-Titanium-Frame-Temple-Producing.webp"
       alt: "Mesin Presisi"
   titleLine1: "Produk & Keahlihan Bahan:"
   titleLine2: "Keterampilan Kita"
-  subtitle: "Acetate premium, logam advanced, lan inovasi berkelanjutan—disesuaikaken kanggo ningkatake brand sampeyan kanthi kualitas, cocog, lan performa sing oraCompromise."
+  subtitle: "Asetat premium, logam advanced, lan inovasi berkelanjutan—disesuaikaken kanggo ningkatake brand sampeyan kanthi kualitas, cocog, lan performa sing oraCompromise."
   blocks:
-    - title: "Kita expert banget ing acetate premium, saka supplier terbaik donya."
-      description: "Kacamata terbaik donya diwiwiti saka bahan terbaik donya. Keahlihan kita ing acetate punika nomer setunggal, lan kita合作 dening supplier top-tier kaya Mazzucchelli kanggo procure bahan berkualitas tinggi eksklusif. Punika ngidinien kita kanggo nawakake разнообразный лента saka kemungkinan kreatif liwat acetate varieties kita sing macem-macem:"
+    - title: "Kita expert banget ing asetat premium, saka supplier terbaik donya."
+      description: "Kacamata terbaik donya diwiwiti saka bahan terbaik donya. Keahlihan kita ing asetat punika nomer setunggal, lan kita合作 dening supplier top-tier kaya Mazzucchelli kanggo procure bahan berkualitas tinggi eksklusif. Punika ngidinien kita kanggo nawakake разнообразный лента saka kemungkinan kreatif liwat asetat varieties kita sing macem-macem:"
       list:
         - "– Mono (Solid lan Milky)"
         - "– Horn & Block Patterns"
@@ -203,7 +203,7 @@ s08_faq:
   items:
     - number: "1"
       question: "Apa jenis bahan sing dspecialisasiake?"
-      answer: "Kita expert banget ing macem-macem bahan premium. Spécialisasi kita kalebu acetate grade tinggi saka supplier donya kelas kaya Mazzucchelli, logam advanced kaya Titanium sing gering lan Stainless Steel sing tahan lama, lan portofolio sing bertumbuh saka bahan inovatif, berkelanjutan lan terbarukan."
+      answer: "Kita expert banget ing macem-macem bahan premium. Spécialisasi kita kalebu asetat grade tinggi saka supplier donya kelas kaya Mazzucchelli, logam advanced kaya Titanium sing gering lan Stainless Steel sing tahan lama, lan portofolio sing bertumbuh saka bahan inovatif, berkelanjutan lan terbarukan."
     - number: "2"
       question: "Apa Minimum Order Quantities (MOQ) sampeyan?"
       answer: "Model factory-direct kita dirancang kanggo flexibility. Kanthi MOQ sing rendah, 300 poto per model lan 3 warna opsional, kita nstruktur program private-branding kita tanpamerk minimum order quantities (MOQ) sing gedhe sing asring ditemukan ing manufaktur traditional. Punika ngidinien kita kanggo cooperate kaliyan brand global sing mapan lan desainer independent sing muncul."
@@ -264,7 +264,7 @@ s09_contact:
   formEmailLabel: "Email Resmi"
   formEmailPlaceholder: "name@company.com"
   formDetailsLabel: "Detail Proyek"
-  formDetailsPlaceholder: "Kanggo mbiyantu tim kita nawakake informasi sing paling akurat, mugi deskripsikeun proyek sampeyan kanthi detail sabisa.\n\nDetail utama kanggo kalebu:\n1. Stage Proyek: (cont, namung idea, sketch, tech pack, file 3D CAD)\n2. Bahan sing Dikarepake: (cont, acetate Mazzucchelli, titanium Jepang, kombinasi)\n3. Estimasi Kuantitas: (cont, 600 unit total, 200 per warna)\n4. Target Tanggal Launch: (cont, Q1 utawi Q3)\n5. Brand Vision: (cont, luxury, performance, fashion berkelanjutan).\n\nMugi boten sungkan nglampirakeun file sing kasedhiya (sketch, mood boards, tech packs)."
+  formDetailsPlaceholder: "Kanggo mbiyantu tim kita nawakake informasi sing paling akurat, mugi deskripsikeun proyek sampeyan kanthi detail sabisa.\n\nDetail utama kanggo kalebu:\n1. Stage Proyek: (cont, namung idea, sketch, tech pack, file 3D CAD)\n2. Bahan sing Dikarepake: (cont, asetat Mazzucchelli, titanium Jepang, kombinasi)\n3. Estimasi Kuantitas: (cont, 600 unit total, 200 per warna)\n4. Target Tanggal Launch: (cont, Q1 utawi Q3)\n5. Brand Vision: (cont, luxury, performance, fashion berkelanjutan).\n\nMugi boten sungkan nglampirakeun file sing kasedhiya (sketch, mood boards, tech packs)."
   formSecurityError: "Mugi lengkapake security check ing nginggil."
   formSubmitText: "Submit Request"
   formSendingText: "KIRIM..."

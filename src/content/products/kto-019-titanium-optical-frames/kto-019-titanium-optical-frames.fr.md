@@ -55,7 +55,7 @@ seoKeywords: "montures optiques en titane, fabricant de lunettes personnalisées
 - Maisons de Mode de Luxe
 - Marques D2C E-commerce
 
-## Overview
+## Aperçu
 
 Le titane de qualité aérospatiale constitue la base de cette monture unisexe, offrant un équilibre exceptionnel entre confort de légèreté et durabilité à long terme. Son profil haut de gamme offre une toile sophistiquée pour les marques ciblant le marché de l'optique de luxe.
 

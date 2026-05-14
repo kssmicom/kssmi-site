@@ -70,7 +70,7 @@ seoKeywords: "Acetat-Sonnenbrillen-Hersteller, individuelle Flat-top Brillen, Ov
 - Konzept- und Multi-Brand-Stores
 - Kaufhausgruppen
 
-## Overview
+## Übersicht
 
 Markante, überdimensionale Proportionen und eine markante Flat-top-Silhouette definieren das Modell KAS-132, das aus einer Premium-Mischung aus Mazzucchelli- und JINYU-Acetat für unvergleichliche Tiefe und Haltbarkeit gefertigt wurde.
 

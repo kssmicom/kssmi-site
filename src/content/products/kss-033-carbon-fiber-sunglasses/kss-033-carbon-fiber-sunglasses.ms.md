@@ -58,7 +58,7 @@ seoKeywords: "pengilang cermin mata hitam gentian karbon, cermin mata hitam OEM 
 - Jenama Gaya Hidup Sukan & Automotif
 - Kedai Konsep & Berbilang Jenama
 
-## Overview
+## Gambaran Keseluruhan
 
 Dihasilkan untuk jenama yang mementingkan kualiti, KSS-033 menggabungkan keunggulan teknikal gentian karbon gred aeroangkasa dengan estetik unisex yang malar hijau. Bingkainya yang ultra ringan memberikan kekuatan luar biasa dan tekstur tersendiri yang menandakan kualiti premium kepada pasaran runcit mewah.
 

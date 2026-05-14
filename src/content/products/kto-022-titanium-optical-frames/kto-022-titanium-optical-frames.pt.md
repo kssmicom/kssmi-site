@@ -67,7 +67,7 @@ seoKeywords: "armações ópticas de titânio, fabricação de óculos de luxo, 
 - Casas de Moda de Luxo
 - Marcas D2C de E-commerce
 
-## Overview
+## Visão Geral
 Combinando titânio de grau aeroespacial com uma estética unissex sofisticada, o KTO-022 fornece uma base leve e resiliente para coleções de óculos premium.
 
 As dobradiças de 3 barris projetadas com precisão e as ponteiras nasicas integradas de peça única garantem estabilidade estrutural a longo prazo e conforto durante todo o dia para o usuário final.

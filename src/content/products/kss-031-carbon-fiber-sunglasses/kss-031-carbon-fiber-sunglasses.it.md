@@ -59,7 +59,7 @@ seoKeywords: "produttore occhiali da sole fibra di carbonio, occhiali da sole pe
 - Vendita Duty-Free e Viaggi
 - Marche di Moda Boutique
 
-## Overview
+## Panoramica
 
 Fondendo prestazioni leggere con un'estetica unisex sofisticata, il modello KSS-031 è meticolosamente realizzato in fibra di carbonio di grado aerospaziale per la massima integrità strutturale.
 

@@ -59,7 +59,7 @@ seoKeywords: "óculos de sol de luxo em acetato, fabricante de óculos personali
 - Etiquetas de Moda Boutique
 - Venda Duty-Free e Viagens
 
-## Overview
+## Visão Geral
 
 O acetato Mazzucchelli e JINYU selecionado à mão confere ao KAS-017 seu acabamento de alta densidade e profundidade de cor superior, atendendo aos rigorosos padrões do mercado de óculos de luxo.
 

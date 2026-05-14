@@ -59,7 +59,7 @@ seoKeywords: "fabricante de gafas de sol de fibra de carbono, gafas de sol OEM p
 - Venta Duty-Free y Viajes
 - Etiquetas de Moda Boutique
 
-## Overview
+## Resumen
 
 Combinando un rendimiento ligero con una sofisticada estética unisex, las KSS-031 están meticulosamente fabricadas con fibra de carbono de grado aeroespacial para una máxima integridad estructural.
 

@@ -64,7 +64,7 @@ seoKeywords: "monturas ópticas de metal, fabricante de monturas ópticas, fábr
 - Cadenas Ópticas de Alta Gama
 - Etiquetas de Moda Boutique
 
-## Overview
+## Resumen
 
 La resiliencia estructural equilibrada y la estética sofisticada definen al KMO-007, un modelo meticulosamente fabricado en metal premium para marcas globales exigentes.
 

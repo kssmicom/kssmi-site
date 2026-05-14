@@ -70,7 +70,7 @@ seoKeywords: "Randlose Metall-Sonnenbrillen Hersteller, KRS-203 Premium-Brillenp
 - D2C-E-Commerce-Marken
 - Kaufhausgruppen
 
-## Overview
+## Übersicht
 
 Randlose Ästhetik trifft beim KRS-203 auf strukturelle Integrität – ein Modell, das sich durch sein minimalistisches Profil und die Konstruktion der Bügel aus hochwertigem Metall auszeichnet.
 

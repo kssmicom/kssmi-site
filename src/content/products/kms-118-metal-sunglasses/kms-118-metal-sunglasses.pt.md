@@ -70,7 +70,7 @@ seoKeywords: "óculos de sol metal acetato, óculos moda luxo, fabricante óculo
 - Lojas Ópticas Premium
 - Venda Duty-Free e Viagens
 
-## Overview
+## Visão Geral
 
 O KMS-118 alcança um equilíbrio sofisticado entre as frentes de acetato premium e as hastes de metal projetadas com precisão, criando uma armação híbrida durável que une a estética clássica às tendendas modernas.
 

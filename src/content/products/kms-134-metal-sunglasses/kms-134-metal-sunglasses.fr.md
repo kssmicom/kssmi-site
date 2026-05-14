@@ -70,7 +70,7 @@ seoKeywords: "fabricant lunettes de soleil métal, lunettes métal personnalisé
 - Marques de Mode Boutique
 - Groupes de Grands Magasins
 
-## Overview
+## Aperçu
 
 Le métal de haute qualité définit l'élégance structurelle du KMS-134, où une architecture sophistiquée à double pont crée une silhouette audacieuse et masculine. Cette montature s'impose comme une pièce maîtresse pour les collections de luxe, équilibrant force industrielle et sensibilité mode raffinée.
 

@@ -69,7 +69,7 @@ seoKeywords: "fabricante de armações ópticas de titânio, produção de ócul
 - Lojas Ópticas Premium
 - Etiquetas de Moda Boutique
 
-## Overview
+## Visão Geral
 
 Estas armações utilizam titânio premium para proporcionar uma experiência ultra-leve com resistência superior à corrosão para coleções ópticas de luxo.
 

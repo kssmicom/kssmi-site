@@ -67,7 +67,7 @@ seoKeywords: "montature ottiche in fibra di carbonio, produttore di occhiali per
 - Marchi Sportivi e Auto Lifestyle
 - Gruppi di Grandi Magazzini
 
-## Overview
+## Panoramica
 
 Progettato per marchi d'élite, il modello KSO-012 fonde fibra di carbonio di grado aerospaziale con aste in titanio di precisione per offrire una montura ultraleggera e strutturalmente superiore. Ogni componente è lavorato a CNC per raggiungere tolleranze esatte, mettendo in mostra una trama tecnica unica che definisce l'occhialeria moderna di fascia alta.
 

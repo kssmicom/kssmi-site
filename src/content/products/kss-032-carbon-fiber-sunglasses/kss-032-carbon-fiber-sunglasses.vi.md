@@ -57,7 +57,7 @@ seoKeywords: "nhà sản xuất kính mát sợi carbon, kính mát OEM tùy ch�
 - Nhà thời trang xa xỉ
 - Bán lẻ miễn thuế và du lịch
 
-## Overview
+## Tổng quan
 
 Được thiết kế cho các thương hiệu ưu tiên sự vượt trội về kỹ thuật, KSS-032 sử dụng sợi carbon cấp hàng không vũ trụ cao cấp để tạo ra một bộ khung vừa bền bỉ vừa tinh tế. Kết cấu dệt đặc biệt của vật liệu đóng vai trò là dấu ấn của sự sang trọng, mang lại thẩm mỹ tinh vi giúp phân biệt với các loại kính mắt thông thường.
 

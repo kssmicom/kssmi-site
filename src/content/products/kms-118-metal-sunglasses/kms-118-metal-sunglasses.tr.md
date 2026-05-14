@@ -70,7 +70,7 @@ seoKeywords: "metal asetat güneş gözlüğü, lüks moda gözlükleri, OEM gü
 - Yüksek Segment Optik Zincirleri
 - Duty-Free ve Seyahat Perakendecileri
 
-## Overview
+## Genel Bakış
 
 KMS-118, premium asetat ön kısımlar ile hassas mühendislik ürünü metal saplar arasında sofistike bir denge kurarak, klasik estetiği modern trendlerle birleştiren dayanıklı bir hibrit çerçeve sunar.
 

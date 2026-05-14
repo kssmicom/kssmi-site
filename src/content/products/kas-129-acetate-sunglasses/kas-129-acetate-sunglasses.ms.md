@@ -74,7 +74,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 - Label Fesyen Boutique
 - Runcit Bebas Cukai & Perjalanan
 
-## Overview
+## Gambaran Keseluruhan
 
 Rumah fesyen mewah yang mencari keunikan visual menemuinya pada KAS-129, yang menggabungkan asetat Mazzucchelli dan JINYU terpilih dengan siluet unisex yang berani.
 

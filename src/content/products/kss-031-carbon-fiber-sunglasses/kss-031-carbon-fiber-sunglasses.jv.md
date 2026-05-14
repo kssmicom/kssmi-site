@@ -59,7 +59,7 @@ seoKeywords: "produsen kacamata hitam serat karbon, kacamata hitam OEM kustom Ch
 - P中小uters Dutypirlalu & Journey
 - Label Busuk Fashion
 
-## Overview
+## Ringkesan
 
 Nggabungake performa entheng karo estetika unisex sing canggih, KSS-031 digawe kanthi teliti saka serat karbon kelas aerospace kanggo integritas struktural sing maksimal.
 

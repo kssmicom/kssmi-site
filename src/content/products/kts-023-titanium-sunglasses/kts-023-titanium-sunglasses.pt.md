@@ -67,7 +67,7 @@ seoKeywords: "fabricante de óculos de titânio, óculos OEM sob medida, armaç�
 - Marcas Esportivas e Lifestyle Automotivo
 - Venda Duty-Free e Viagens
 
-## Overview
+## Visão Geral
 
 Projetado para mercados de alto padrão que exigem o máximo em durabilidade e leveza, o modelo KTS-023 exibe a estética refinada do titânio de qualidade premium. As armações hipoalergênicas oferecem uma excepcional relação resistência-peso, garantindo conforto durante todo o dia para os usuários mais exigentes.
 

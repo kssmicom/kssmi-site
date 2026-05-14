@@ -74,7 +74,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, Custom OEM Sonnenbrillen, Luxus E
 - Boutique-Modemmarken
 - Duty-Free- und Reisehandel
 
-## Overview
+## Übersicht
 
 Luxusmodehäuser, die eine unverwechselbare visuelle Note suchen, finden sie im Modell KAS-129, das handverlesenes Mazzucchelli- und JINYU-Acetat mit einer kühnen Unisex-Silhouette kombiniert.
 

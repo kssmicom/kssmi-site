@@ -70,7 +70,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas flat-top personalizad
 - Tiendas de Concepto y Multi-Marca
 - Grupos de Grandes Almacenes
 
-## Overview
+## Resumen
 
 Proporciones audaces y oversize y una distintiva silueta flat-top definen el modelo KAS-132, fabricado con una mezcla premium de acetato Mazzucchelli y JINYU para una profundidad y durabilidad sin precedentes.
 

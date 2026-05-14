@@ -69,7 +69,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, lunettes de soleil OEM pers
 - Magasins de Concept et Multi-Marques
 - Vente Duty-Free et Voyage
 
-## Overview
+## Aperçu
 
 La profondeur vibrante des couleurs et l'intégrité structurelle de qualité supérieure se rencontrent dans le KAS-111, un modèle fabriqué à partir d'acétate Mazzucchelli et JINYU de haute qualité pour capturer une esthétique audacieuse et d'inspiration vintage.
 

@@ -56,7 +56,7 @@ seoKeywords: "lunettes de soleil en acétate, lunettes de soleil unisexe, fabric
 - Magasins de Concept et Multi-Marques
 - Maisons de Mode de Luxe
 
-## Overview
+## Aperçu
 Sculpté dans de l'acétate Mazzucchelli et JINYU de première qualité, le modèle KAS-302 équilibre une esthétique audacieuse et unisexe avec une profondeur de couleur vibrante qui définit les lunettes de luxe modernes.
 
 Les charnières à 4+3 barillets conçues avec précision assurent une durabilité à long terme et un fonctionnement fluide, tandis que les plaquettes de nez intégrées offrent un ajustement sûr et ergonomique.

@@ -61,7 +61,7 @@ seoKeywords: "titanyum güneş gözlüğü üreticisi, özel OEM gözlük tedari
 - Spor ve Otomotiv Yaşam Tarzı Markaları
 - Duty-Free ve Seyahat Perakendecileri
 
-## Overview
+## Genel Bakış
 
 KTS-212, seçkin gözlük koleksiyonları için üstün bir güç-ağırlık oranı sunmak üzere birinci sınıf titanyum kullanır. Bu ultra hafif çerçeve, üst düzey moda ve lüks perakende pazarlarına hitap eden benzersiz bir üniseks tasarıma sahiptir.
 

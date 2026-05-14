@@ -62,7 +62,7 @@ seoKeywords: "Carbon-Sonnenbrillen Hersteller, KSS-043 Großhandel Sonnenbrillen
 - Sport- und Auto-Lifestyle-Marken
 - Boutique-Modemmarken
 
-## Overview
+## Übersicht
 
 Die KSS-043 kombiniert Langlebigkeit in Luft- und Raumfahrtqualität mit einem ultraleichten Profil und wurde aus hochwertiger Kohlefaser für Marken entwickelt, die Wert auf eine leistungsstarke Ästhetik legen.
 

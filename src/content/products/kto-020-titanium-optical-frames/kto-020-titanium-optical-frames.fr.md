@@ -69,7 +69,7 @@ seoKeywords: "fabricant de montures optiques en titane, usine de lunettes de lux
 - Marques Sportives et Lifestyle Automobile
 - Chaînes Optiques Haut de Gamme
 
-## Overview
+## Aperçu
 
 Fabriquée avec précision en titane premium, la monture KTO-020 représente l'intersection de la durabilité légère et de l'esthétique optique haut de gamme. Sa construction hypoallergénique assure un confort à long terme tout en maintenant un profil raffiné et professionnel pour le marché du luxe.
 

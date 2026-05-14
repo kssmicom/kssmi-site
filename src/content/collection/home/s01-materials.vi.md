@@ -3,7 +3,7 @@ section: 's01-materials'
 heading: 'Chất liệu gọng kính'
 subheading: 'Lựa chọn từ 16 chất liệu cao cấp — mỗi loại mang đặc tính riêng biệt cho bộ sưu tập kính mắt của bạn'
 materials:
-  - name: 'Gọng kính Acetate'
+  - name: 'Gọng kính Axetat'
     subtitle: 'Chiều sâu màu sắc phong phú với lớp hoàn thiện bóng sang trọng'
     points:
       - 'Độ bão hòa màu sắc sâu và rực rỡ'
@@ -14,12 +14,12 @@ materials:
     slug: 'acetate-eyewear'
     image: '/media/products/kas-101-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-101-1.webp'
 
-  - name: 'Gọng kính Bio-Acetate'
+  - name: 'Gọng kính Bio-Axetat'
     subtitle: 'Giải pháp bền vững làm từ nguyên liệu gốc thực vật tái tạo'
     points:
       - 'Thành phần phân hủy sinh học 100%'
       - 'Được sản xuất từ bột gỗ và cotton'
-      - 'Giữ được vẻ ngoài phong phú như acetate'
+      - 'Giữ được vẻ ngoài phong phú như axetat'
       - 'Giảm lượng khí thải carbon'
       - 'An toàn cho da, không độc hại'
     slug: 'bio-acetate-eyewear'

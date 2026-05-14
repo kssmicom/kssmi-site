@@ -64,7 +64,7 @@ seoKeywords: "frame optik logam, produsen frame optik, pabrik kacamata kustom, s
 - Chain Optik High-End
 - Label Busuk Fashion
 
-## Overview
+## Ringkesan
 
 Ketahanan struktural sing seimbang lan estetika sing canggih nemtokake KMO-007, model sing digawe kanthi teliti saka logam premium kanggo merek global sing milih.
 

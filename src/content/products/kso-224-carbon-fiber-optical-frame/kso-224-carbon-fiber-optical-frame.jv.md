@@ -58,7 +58,7 @@ seoKeywords: "frame optik serat karbon, kacamata titanium kustom, produsen kacam
 - Merek Gaya Hidup Olahraga & Otomotif
 - Chain Optik High-End
 
-## Overview
+## Ringkesan
 
 Nggabungake serat karbon kelas aerospace kanthi finishing serat gunung mahogani, KSO-224 nawakake patemon langka antarane kinerja teknis lan kehangatan alami.
 

@@ -67,7 +67,7 @@ seoKeywords: "titanyum optik çerçeve üreticisi, özel OEM optik çerçeveler,
 - Lüks Moda Evleri
 - Spor ve Otomotiv Yaşam Tarzı Markaları
 
-## Overview
+## Genel Bakış
 
 Birinci sınıf titanyumdan hassasiyetle üretilen bu unisex çerçeve, yüksek performanslı lüks optik gözlükleri tanımlayan olağanüstü bir mukavemet-ağırlık oranı sağlar. Havacılık sınıfı bileşimi, kullanıcı için tüy kadar hafif bir his sağlarken kalıcı yapısal bütünlük sağlar.
 

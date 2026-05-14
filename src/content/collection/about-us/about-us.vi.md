@@ -7,8 +7,8 @@ lang: vi
 slug: about-us
 title: "Về Chúng Tôi"
 seoTitle: "Về Chúng Tôi | Kssmi Eyewear - Chuyên Gia Sản Xuất Chính Xác"
-seoDescription: "Tìm hiểu về 20 năm lịch sử của Kssmi Eyewear, các dây chuyền sản xuất titanium và acetate chuyên biệt, và cam kết đảm bảo chất lượng không khuyết tật của chúng tôi."
-seoKeywords: "nhà sản xuất eyewear, xưởng kính râm acetate, sản xuất khung chính xác, OEM ODM eyewear Trung Quốc"
+seoDescription: "Tìm hiểu về 20 năm lịch sử của Kssmi Eyewear, các dây chuyền sản xuất titanium và axetat chuyên biệt, và cam kết đảm bảo chất lượng không khuyết tật của chúng tôi."
+seoKeywords: "nhà sản xuất eyewear, xưởng kính râm axetat, sản xuất khung chính xác, OEM ODM eyewear Trung Quốc"
 ogImage: "/media/collection/about/Your-Professional-Eyewear-and-Sunglasses-Manufacturer-Expert-from-China.webp"
 
 s01_hero:
@@ -41,20 +41,20 @@ s02_foundation:
 
 s03_expertise:
   images:
-    - url: "https://kssmi.com/wp-content/uploads/2025/10/Sourcing-Acetate-Materials-from-Mazzucchelli.webp"
-      alt: "Mẫu Acetate Mazzucchelli"
-    - url: "https://kssmi.com/wp-content/uploads/2025/10/High-quality-Acetate-Materials-Producing.webp"
-      alt: "Sản xuất Acetate"
+    - url: "https://kssmi.com/wp-content/uploads/2025/10/Sourcing-Axetat-Materials-from-Mazzucchelli.webp"
+      alt: "Mẫu Axetat Mazzucchelli"
+    - url: "https://kssmi.com/wp-content/uploads/2025/10/High-quality-Axetat-Materials-Producing.webp"
+      alt: "Sản xuất Axetat"
     - url: "https://kssmi.com/wp-content/uploads/2025/10/High-grade-Stainless-Steel-Frame-Producing.webp"
       alt: "Mẫu vật liệu kim loại"
     - url: "https://kssmi.com/wp-content/uploads/2025/10/High-grade-Titanium-Frame-Temple-Producing.webp"
       alt: "Gia công chính xác"
   titleLine1: "Chuyên Môn Sản Phẩm và Vật Liệu:"
   titleLine2: "Tay Nghề Của Chúng Tôi"
-  subtitle: "Acetate cao cấp, kim loại tiên tiến và đổi mới bền vững - được thiết kế để nâng tầm thương hiệu của bạn với chất lượng, sự phù hợp và hiệu suất không thỏa hiệp."
+  subtitle: "Axetat cao cấp, kim loại tiên tiến và đổi mới bền vững - được thiết kế để nâng tầm thương hiệu của bạn với chất lượng, sự phù hợp và hiệu suất không thỏa hiệp."
   blocks:
-    - title: "Chúng tôi là bậc thầy của acetate cao cấp, được lấy từ những nhà cung cấp tốt nhất thế giới."
-      description: "Eyewear tốt nhất thế giới bắt đầu từ những vật liệu tốt nhất thế giới. Chuyên môn của chúng tôi về acetate là không có đối thủ, và chúng tôi hợp tác với các nhà cung cấp nổi tiếng hàng đầu như Mazzucchelli để có nguồn vật liệu độc quyền, chất lượng cao. Điều này cho phép chúng tôi cung cấp một danh mục không có đối thủ về khả năng sáng tạo thông qua các loại acetate đa dạng của chúng tôi:"
+    - title: "Chúng tôi là bậc thầy của axetat cao cấp, được lấy từ những nhà cung cấp tốt nhất thế giới."
+      description: "Eyewear tốt nhất thế giới bắt đầu từ những vật liệu tốt nhất thế giới. Chuyên môn của chúng tôi về axetat là không có đối thủ, và chúng tôi hợp tác với các nhà cung cấp nổi tiếng hàng đầu như Mazzucchelli để có nguồn vật liệu độc quyền, chất lượng cao. Điều này cho phép chúng tôi cung cấp một danh mục không có đối thủ về khả năng sáng tạo thông qua các loại axetat đa dạng của chúng tôi:"
       list:
         - "– Mono (Đặc và Sữa)"
         - "– Horn & Block Patterns"
@@ -203,7 +203,7 @@ s08_faq:
   items:
     - number: "1"
       question: "Bạn chuyên về những loại vật liệu nào?"
-      answer: "Chúng tôi là bậc thầy của một loạt các vật liệu cao cấp. Chuyên môn của chúng tôi bao gồm acetate cao cấp từ các nhà cung cấp hàng đầu thế giới như Mazzucchelli, các kim loại tiên tiến như Titanium nhẹ và Thép Không Gỉ bền, và một danh mục ngày càng tăng các vật liệu sáng tạo, bền vững và có thể tái tạo."
+      answer: "Chúng tôi là bậc thầy của một loạt các vật liệu cao cấp. Chuyên môn của chúng tôi bao gồm axetat cao cấp từ các nhà cung cấp hàng đầu thế giới như Mazzucchelli, các kim loại tiên tiến như Titanium nhẹ và Thép Không Gỉ bền, và một danh mục ngày càng tăng các vật liệu sáng tạo, bền vững và có thể tái tạo."
     - number: "2"
       question: "Số Lượng Đặt Hàng Tối Thiểu (MOQ) của bạn là gì?"
       answer: "Mô hình trực tiếp từ nhà máy của chúng tôi được thiết kế cho sự linh hoạt. Với MOQ thấp là 300 sản phẩm mỗi model và 3 màu tùy chọn, chúng tôi cấu trúc chương trình thương hiệu riêng của mình mà không có số lượng đặt hàng tối thiểu cao thường thấy trong sản xuất truyền thống. Điều này cho phép chúng tôi hợp tác với cả các thương hiệu toàn cầu đã được thiết lập và các nhà thiết kế độc lập mới nổi."
@@ -264,7 +264,7 @@ s09_contact:
   formEmailLabel: "Email Chính Thức"
   formEmailPlaceholder: "name@company.com"
   formDetailsLabel: "Chi Tiết Dự Án"
-  formDetailsPlaceholder: "Để giúp đội ngũ của chúng tôi cung cấp cho bạn thông tin chính xác nhất, vui lòng mô tả dự án của bạn chi tiết nhất có thể.\n\nChi tiết chính cần bao gồm:\n1. Giai Đoạn Dự Án: (ví dụ: chỉ là một ý tưởng, bản phác thảo, bộ tài liệu kỹ thuật, tệp 3D CAD)\n2. Vật Liệu Mong Muốn: (ví dụ: acetate Mazzucchelli, titanium Nhật Bản, kết hợp)\n3. Số Lượng Ước Tính: (ví dụ: 600 đơn vị tổng cộng, 200 mỗi màu)\n4. Ngày Ra Mắt Mục Tiêu: (ví dụ: Q1 hoặc Q3)\n5. Tầm Nhìn Thương Hiệu: (ví dụ: sang trọng, hiệu suất, thời trang bền vững).\n\nVui lòng thoải mái đính kèm bất kỳ tệp nào có sẵn (bản phác thảo, bảng tham chiếu, bộ tài liệu kỹ thuật)."
+  formDetailsPlaceholder: "Để giúp đội ngũ của chúng tôi cung cấp cho bạn thông tin chính xác nhất, vui lòng mô tả dự án của bạn chi tiết nhất có thể.\n\nChi tiết chính cần bao gồm:\n1. Giai Đoạn Dự Án: (ví dụ: chỉ là một ý tưởng, bản phác thảo, bộ tài liệu kỹ thuật, tệp 3D CAD)\n2. Vật Liệu Mong Muốn: (ví dụ: axetat Mazzucchelli, titanium Nhật Bản, kết hợp)\n3. Số Lượng Ước Tính: (ví dụ: 600 đơn vị tổng cộng, 200 mỗi màu)\n4. Ngày Ra Mắt Mục Tiêu: (ví dụ: Q1 hoặc Q3)\n5. Tầm Nhìn Thương Hiệu: (ví dụ: sang trọng, hiệu suất, thời trang bền vững).\n\nVui lòng thoải mái đính kèm bất kỳ tệp nào có sẵn (bản phác thảo, bảng tham chiếu, bộ tài liệu kỹ thuật)."
   formSecurityError: "Vui lòng hoàn thành kiểm tra bảo mật ở trên."
   formSubmitText: "Gửi Yêu Cầu"
   formSendingText: "ĐANG GỬI..."

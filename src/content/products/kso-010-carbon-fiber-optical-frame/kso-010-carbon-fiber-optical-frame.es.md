@@ -68,7 +68,7 @@ seoKeywords: "fabricante monturas ópticas fibra de carbono, gafas personalizada
 - Cadenas Ópticas de Alta Gama
 - Etiquetas Deportivas y de Estilo de Vida Automotriz
 
-## Overview
+## Resumen
 
 Diseñada para el segmento de lujo de alta gama, la KSO-010 combina fibra de carbono de grado aeroespacial con detalles en madera hechos a mano como el ébano de Ceilán y el roble blanco. Esta sofisticada construcción híbrida, combinada con elegantes varillas de titanio, crea una montura que es a la vez ultraligera y estructuralmente superior.
 

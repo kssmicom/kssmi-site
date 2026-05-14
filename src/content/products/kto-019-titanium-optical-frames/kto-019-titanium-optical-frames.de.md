@@ -55,7 +55,7 @@ seoKeywords: "Titan-Brillenfassungen, kundenspezifischer Brillenhersteller, Luxu
 - Luxusmodehäuser
 - D2C-E-Commerce-Marken
 
-## Overview
+## Übersicht
 
 Titan in Luftfahrtqualität bildet die Grundlage dieser Unisex-Fassung und bietet eine außergewöhnliche Balance zwischen leichtem Komfort und langfristiger Haltbarkeit. Sein Premium-Profil bietet eine anspruchsvolle Basis für Marken, die auf den High-End-Optikmarkt abzielen.
 

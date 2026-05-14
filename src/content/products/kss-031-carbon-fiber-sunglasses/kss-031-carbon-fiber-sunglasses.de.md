@@ -59,7 +59,7 @@ seoKeywords: "Kohlefaser Sonnenbrille Hersteller, kundenspezifische OEM Sonnenbr
 - Duty-Free- und Reisehandel
 - Boutique-Modemmarken
 
-## Overview
+## Übersicht
 
 Die KSS-031 vereint Leichtbau-Performance mit einer anspruchsvollen Unisex-Ästhetik und wird für maximale strukturelle Integrität sorgfältig aus Kohlefaser in Luftfahrtqualität gefertigt.
 

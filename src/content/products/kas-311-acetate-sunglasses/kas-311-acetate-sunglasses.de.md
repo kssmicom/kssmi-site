@@ -70,7 +70,7 @@ seoKeywords: "Acetat-Sonnenbrillen-Hersteller, individuelle Unisex-Brillen, Mazz
 - Boutique-Modemmarken
 - Duty-Free- und Reisehandel
 
-## Overview
+## Übersicht
 
 Gefertigt aus einer raffinierten Mischung aus Mazzucchelli- und JINYU-Acetat, bietet das Modell KAS-311 einen leichten und dennoch robusten Rahmen mit überlegener Farbbrillanz.
 

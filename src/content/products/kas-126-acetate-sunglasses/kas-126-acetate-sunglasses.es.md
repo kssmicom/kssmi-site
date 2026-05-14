@@ -70,7 +70,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 - Etiquetas de Moda Boutique
 - Grupos de Grandes Almacenes
 
-## Overview
+## Resumen
 
 Definido por su perfil audaz y el brillo pulido a mano del acetato italiano Mazzucchelli, este modelo fusiona la estética de la alta moda con una profundidad de material excepcional.
 

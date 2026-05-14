@@ -56,7 +56,7 @@ seoKeywords: "kacamata hitam asetat, kacamata hitam unisex, produsen kacamata, p
 - Toko Konsep & Multi-Merek
 - Rumah Mode Mewah
 
-## Overview
+## Ringkesan
 Digawe saka asetat premium Mazzucchelli lan JINYU, KAS-302 ngimbangi estetika unisex sing kendel kanthi jero warna sing padhang sing nemtokake kacamata mewah modern.
 
 Engsel 4+3 barrel sing dirancang kanthi presisi njamin daya tahan jangka panjang lan operasi sing lancar, dene bantalan irung integrasi nyedhiyakake pas sing aman lan ergonomis.

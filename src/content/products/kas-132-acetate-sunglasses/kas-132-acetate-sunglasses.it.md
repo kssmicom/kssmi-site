@@ -70,7 +70,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali flat-top personalizz
 - Store di Concetto e Multi-Marchio
 - Gruppi di Grandi Magazzini
 
-## Overview
+## Panoramica
 
 Proporzioni audaci e oversize e una distintiva silhouette flat-top definiscono il modello KAS-132, realizzato con una miscela premium di acetato Mazzucchelli e JINYU per una profondità e una durata senza pari.
 

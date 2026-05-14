@@ -67,7 +67,7 @@ seoKeywords: "frame optik titanium, produksi kacamata mewah, pabrik OEM kacamata
 - Rumah Mode Mewah
 - Merek D2C e-dagang
 
-## Overview
+## Ringkesan
 Nggabungake titanium kelas aerospace karo estetika unisex sing canggih, KTO-022 nyediakake dhasar sing entheng nanging kuwat kanggo koleksi kacamata premium.
 
 Engsel 3 tong sing dirancang kanthi presisi lan bantalan irung siji bagian sing terintegrasi njamin stabilitas struktur jangka panjang lan kenyamanan sedina muput kanggo pangguna pungkasan.

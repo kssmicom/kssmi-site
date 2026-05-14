@@ -69,7 +69,7 @@ seoKeywords: "titanyum optik çerçeve üreticisi, özel lüks gözlük fabrikas
 - Spor ve Otomotiv Yaşam Tarzı Markaları
 - Yüksek Segment Optik Zincirleri
 
-## Overview
+## Genel Bakış
 
 Premium titanyumdan hassasiyetle üretilen KTO-020 çerçeve, hafif dayanıklılık ile üst düzey optik estetiğin kesişimini temsil eder. Hipoalerjenik yapısı, lüks pazarı için rafine ve profesyonel bir profil sunarken uzun süreli konfor sağlar.
 

@@ -70,7 +70,7 @@ seoKeywords: "fabricante óculos de sol acetato, óculos unisex personalizados, 
 - Etiquetas de Moda Boutique
 - Venda Duty-Free e Viagens
 
-## Overview
+## Visão Geral
 
 Fabricado a partir de uma mistura sofisticada de acetato Mazzucchelli e JINYU, o modelo KAS-311 oferece uma armação leve, porém durável, com vivacidade de cor superior.
 

@@ -67,7 +67,7 @@ seoKeywords: "fabricante monturas ópticas titanio, monturas ópticas OEM person
 - Casas de Moda de Lujo
 - Etiquetas Deportivas y de Estilo de Vida Automotriz
 
-## Overview
+## Resumen
 
 Fabricada con precisión en titanio premium, esta montura unisex ofrece una relación resistencia-peso excepcional que define la óptica de lujo de alto rendimiento. Su composición de grado aeroespacial garantiza una integridad estructural duradera, manteniendo al mismo tiempo una sensación de ligereza para el usuario.
 

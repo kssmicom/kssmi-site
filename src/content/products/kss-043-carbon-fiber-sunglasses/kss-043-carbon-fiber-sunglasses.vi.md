@@ -62,7 +62,7 @@ seoKeywords: "nhà sản xuất kính mát sợi carbon, bán sỉ kính mát KS
 - Thương hiệu thể thao và ô tô
 - Nhãn thời trang boutique
 
-## Overview
+## Tổng quan
 
 Kết hợp độ bền cấp hàng không vũ trụ với kiểu dáng siêu nhẹ, KSS-043 được chế tác từ sợi carbon cao cấp dành cho các thương hiệu ưu tiên tính thẩm mỹ hiệu suất cao.
 

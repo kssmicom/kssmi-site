@@ -69,7 +69,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 - Casas de Moda de Luxo
 - Lojas de Conceito e Multi-Marcas
 
-## Overview
+## Visão Geral
 
 Fabricado em acetato Mazzucchelli e JINYU selecionado à mão, o KAS-318 oferece brilho de cor e durabilidade estrutural excepcionais para o mercado de moda premium. Sua composição leve garante o conforto do usuário a longo prazo, sem comprometer o impacto estético.
 

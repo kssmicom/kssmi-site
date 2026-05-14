@@ -58,7 +58,7 @@ seoKeywords: "fabricant de lunettes de soleil en fibre de carbone, lunettes de s
 - Marques Sportives et Lifestyle Automobile
 - Magasins de Concept et Multi-Marques
 
-## Overview
+## Aperçu
 
 Conçu pour les marques exigeantes, le modèle KSS-033 combine la supériorité technique de la fibre de carbone de qualité aérospatiale avec une esthétique unisexe intemporelle. Sa monture ultra-légère offre une résistance exceptionnelle et une texture distinctive qui signale une qualité premium au marché de la vente au détail haut de gamme.
 

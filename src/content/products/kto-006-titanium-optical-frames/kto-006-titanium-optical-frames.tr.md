@@ -58,7 +58,7 @@ seoKeywords: "titanyum optik çerçeve üreticisi, özel retro gözlük OEM, lü
 - Butik Moda Markaları
 - Concept ve Çoklu Marka Mağazaları
 
-## Overview
+## Genel Bakış
 
 Retro estetiği modern malzemelerle harmanlayan KTO-006, premium asetat ön kısımlar ve havacılık sınıfı titanyum sapların rafine bir kombinasyonuna sahiptir. Bu hibrit yapı, üst düzey optik gözlükler için gerekli olan hafif profili korurken sofistike bir görsel derinlik sunar.
 

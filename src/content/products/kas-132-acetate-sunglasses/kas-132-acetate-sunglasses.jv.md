@@ -70,7 +70,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata flat-top custom, kacamata
 - Toko Konsep & Multi-Merek
 - Group Store Departemen
 
-## Overview
+## Ringkesan
 
 Proporsi oversized sing kendel lan siluet flat-top sing khas nemtokake KAS-132, digawe saka campuran premium asetat Mazzucchelli lan JINYU kanggo jero lan daya tahan sing ora ana tandhingane.
 

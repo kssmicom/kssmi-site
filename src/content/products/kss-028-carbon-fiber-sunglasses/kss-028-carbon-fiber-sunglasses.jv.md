@@ -59,7 +59,7 @@ seoKeywords: "produsen kacamata hitam serat karbon, kacamata hitam OEM kustom, k
 - Merek Gaya Hidup Olahraga & Otomotif
 - Group Store Departemen
 
-## Overview
+## Ringkesan
 
 Digawe saka serat karbon kelas aeroangkasa, KSS-028 nggawa estetika sing canggih lan kekuatan dhuwur kanggo koleksi kacamata modern. Pola anyaman sing khas lan arsitektur ultra-entheng nyedhiyakake pengalaman tutul premium sing cocog karo standar pasar mewah.
 

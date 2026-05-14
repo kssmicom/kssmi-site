@@ -62,7 +62,7 @@ seoKeywords: "karbon fiber güneş gözlüğü üreticisi, KSS-043 toptan güne�
 - Spor ve Otomotiv Yaşam Tarzı Markaları
 - Butik Moda Markaları
 
-## Overview
+## Genel Bakış
 
 Havacılık sınıfı dayanıklılığı ultra hafif bir profille birleştiren KSS-043, yüksek performanslı estetiğe öncelik veren markalar için birinci sınıf karbon fiberden tasarlanmıştır.
 

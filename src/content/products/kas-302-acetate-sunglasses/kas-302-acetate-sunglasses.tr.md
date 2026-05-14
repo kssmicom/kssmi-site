@@ -56,7 +56,7 @@ seoKeywords: "asetat güneş gözlüğü, unisex güneş gözlüğü, gözlük �
 - Concept ve Çoklu Marka Mağazaları
 - Lüks Moda Evleri
 
-## Overview
+## Genel Bakış
 Birinci sınıf Mazzucchelli ve JINYU asetattan yontulmuş KAS-302, modern lüks gözlükleri tanımlayan cesur, unisex bir estetiği canlı renk derinliğiyle dengeler.
 
 Hassas mühendislikle üretilen 4+3 menteşeler uzun vadeli dayanıklılık ve sorunsuz çalışma sağlarken, entegre burun tamponları güvenli ve ergonomik bir oturuş sunar.

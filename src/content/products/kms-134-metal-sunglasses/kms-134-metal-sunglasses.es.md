@@ -70,7 +70,7 @@ seoKeywords: "fabricante gafas de sol metal, gafas metal personalizadas OEM, gaf
 - Etiquetas de Moda Boutique
 - Grupos de Grandes Almacenes
 
-## Overview
+## Resumen
 
 El metal de alta calidad define la elegancia estructural del KMS-134, donde una sofisticada arquitectura de doble puente crea una silueta audaz y masculina. Esta montatura sirve como una pieza clave para las colecciones de lujo, equilibrando la fuerza industrial con una refinada sensibilidad por la moda.
 

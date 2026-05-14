@@ -70,7 +70,7 @@ seoKeywords: "produttore occhiali da sole in metallo, occhiali in metallo person
 - Marche di Moda Boutique
 - Gruppi di Grandi Magazzini
 
-## Overview
+## Panoramica
 
 Il metallo di alta qualità definisce l'eleganza strutturale del KMS-134, dove una sofisticata architettura a doppio ponte crea una silhouette audace e maschile. Questa montatura funge da pezzo forte per le collezioni di lusso, bilanciando la forza industriale con una raffinata sensibilità per la moda.
 

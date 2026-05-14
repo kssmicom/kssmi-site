@@ -69,7 +69,7 @@ seoKeywords: "fabricante óculos de sol acetato, óculos de sol OEM personalizad
 - Lojas de Conceito e Multi-Marcas
 - Venda Duty-Free e Viagens
 
-## Overview
+## Visão Geral
 
 Profundidade de cor vibrante e integridade estrutural premium encontram-se no KAS-111, um modelo fabricado a partir de acetato Mazzucchelli e JINYU de alta qualidade para capturar uma estética ousada e inspirada no vintage.
 

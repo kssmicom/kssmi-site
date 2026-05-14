@@ -68,7 +68,7 @@ seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính mắt titan s�
 - Chuỗi quang học cao cấp
 - Thương hiệu thể thao và ô tô
 
-## Overview
+## Tổng quan
 
 Được thiết kế cho phân khúc sang trọng cao cấp, KSO-010 kết hợp sợi carbon cấp hàng không với các điểm nhấn bằng gỗ được chế tác thủ công như Gỗ mun Ceylon và Gỗ sồi trắng. Cấu trúc hybrid tinh xảo này, kết hợp với càng kính titan thanh lịch, tạo nên một chiếc gọng kính vừa siêu nhẹ vừa có cấu trúc vượt trội.
 

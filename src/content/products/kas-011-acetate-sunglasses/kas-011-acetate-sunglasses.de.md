@@ -66,7 +66,7 @@ seoKeywords: "KAS-011 Acetat-Sonnenbrille Hersteller, maßgeschneiderte Luxusbri
 - Boutique-Modemmarken
 - Duty-Free- und Reisehandel
 
-## Overview
+## Übersicht
 
 Hochwertiges Mazzucchelli- und JINYU-Acetat bilden den Kern der KAS-011 und schaffen einen lebendigen, leichten Rahmen, der den anspruchsvollen Anforderungen von Luxusbrillenmarken entspricht.
 

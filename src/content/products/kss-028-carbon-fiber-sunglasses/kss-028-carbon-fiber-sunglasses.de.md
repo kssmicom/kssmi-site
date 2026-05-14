@@ -59,7 +59,7 @@ seoKeywords: "Kohlefaser-Sonnenbrillen Hersteller, individuelle OEM-Sonnenbrille
 - Sport- und Auto-Lifestyle-Marken
 - Kaufhausgruppen
 
-## Overview
+## Übersicht
 
 Gefertigt aus Kohlefaser in Luft- und Raumfahrtqualität verleiht die KSS-028 modernen Brillenkollektionen eine anspruchsvolle, hochfeste Ästhetik. Ihre markanten Webmuster und die ultraleichte Architektur sorgen für ein erstklassiges haptisches Erlebnis, das den Standards des Luxusmarktes entspricht.
 

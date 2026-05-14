@@ -67,7 +67,7 @@ seoKeywords: "pengeluar cermin mata hitam titanium, cermin mata OEM tersuai, bin
 - Jenama Gaya Hidup Sukan & Automotif
 - runcit Dutypirlalu & Perjalanan
 
-## Overview
+## Gambaran Keseluruhan
 
 Direka untuk pasaran mewah yang menuntut ketahanan ringan dan reka bentuk kontemporari yang terbaik, model KTS-023 mempamerkan estetika titanium gred premium yang anggun. Bingkai hipoalergenik menawarkan nisbah kekuatan-ke-berat yang luar biasa, memastikan keselesaan sepanjang hari untuk pemakai yang paling mementingkan kualiti.
 

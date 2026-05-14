@@ -61,7 +61,7 @@ seoKeywords: "frame logam asetat, frame optik logam, produsen kacamata, pabrik k
 - Label Busuk Fashion
 - Chain Optik High-End
 
-## Overview
+## Ringkesan
 
 Digawe kanggo portofolio fesyen kelas dhuwur, KMO-258 nggabungake kehangatan ngarep asetat premium karo kekakuan arsitektur gagang logam. Integrasi warna sing sregep kaya Biru Tasik lan Kencana Nom nggawe tandha visual khas sing cocog karo konsumen sing fokus ing kemewahan.
 

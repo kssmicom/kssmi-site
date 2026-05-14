@@ -61,7 +61,7 @@ seoKeywords: "produttore occhiali da sole in titanio, fornitore occhiali OEM per
 - Marchi Sportivi e Auto Lifestyle
 - Vendita Duty-Free e Viaggi
 
-## Overview
+## Panoramica
 
 Il modello KTS-212 sfrutta il titanio premium per offrire un rapporto resistenza-peso superiore per le collezioni di occhiali d'élite. Questa montatura ultra leggera presenta un design unisex unico che si rivolge ai mercati della moda di fascia alta e del retail di lusso.
 

@@ -55,7 +55,7 @@ seoKeywords: "armações ópticas de titânio, fabricante de óculos personaliza
 - Casas de Moda de Luxo
 - Marcas D2C de E-commerce
 
-## Overview
+## Visão Geral
 
 O titânio de grau aeroespacial constitui a base desta armação unissex, oferecendo um equilíbrio excepcional entre o conforto leve e a durabilidade a longo prazo. Seu perfil premium fornece uma tela sofisticada para marcas que visam o mercado óptico de alto padrão.
 

@@ -58,7 +58,7 @@ seoKeywords: "Hersteller Titan-Brillenfassungen, maßgeschneiderte Retro-Brillen
 - Boutique-Modemmarken
 - Konzept- und Multi-Brand-Stores
 
-## Overview
+## Übersicht
 
 Durch die Verschmelzung von Retro-Ästhetik mit modernen Materialien besticht die KTO-006 durch eine raffinierte Kombination aus Premium-Acetat-Fronten und Titanbügeln in Luft- und Raumfahrtqualität. Diese Hybridkonstruktion bietet eine anspruchsvolle visuelle Tiefe bei gleichzeitig geringem Gewicht, was für hochwertige optische Brillen unerlässlich ist.
 

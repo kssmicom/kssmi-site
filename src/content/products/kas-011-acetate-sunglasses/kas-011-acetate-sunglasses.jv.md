@@ -66,7 +66,7 @@ seoKeywords: "produsen kacamata hitam asetat KAS-011, OEM kacamata mewah kustom,
 - Label Busuk Fashion
 - Ritel Bebas Bea & Perjalanan
 
-## Overview
+## Ringkesan
 
 Asetat Mazzucchelli lan JINYU kelas dhuwur dadi inti saka KAS-011, nggawe frame sing padhang lan entheng sing cocog karo syarat canggih saka merek kacamata mewah.
 

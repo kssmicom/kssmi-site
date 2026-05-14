@@ -58,7 +58,7 @@ seoKeywords: "produsen frame optik titanium, kacamata retro kustom OEM, grosir f
 - Label Busuk Fashion
 - Toko Konsep & Multi-Merek
 
-## Overview
+## Ringkesan
 
 Nggabungake estetika retro karo bahan modern, KTO-006 nduweni kombinasi apik saka ngarep asetat premium lan gagang titanium kelas aerospace. Konstruksi hibrida iki nawakake kedalaman visual sing canggih nanging tetep entheng, sing penting banget kanggo kacamata optik kelas dhuwur.
 

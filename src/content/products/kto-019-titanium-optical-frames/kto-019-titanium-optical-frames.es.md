@@ -55,7 +55,7 @@ seoKeywords: "monturas ópticas de titanio, fabricante de gafas personalizadas, 
 - Casas de Moda de Lujo
 - Marcas D2C de Comercio Electrónico
 
-## Overview
+## Resumen
 
 El titanio de grado aeroespacial constituye la base de esta montura unisex, ofreciendo un equilibrio excepcional entre la comodidad ligera y la durabilidad a largo plazo. Su perfil premium proporciona un lienzo sofisticado para las marcas que apuntan al mercado óptico de gama alta.
 

@@ -70,7 +70,7 @@ seoKeywords: "pengilang bingkai optik asetat, eyewear OEM tersuai, bingkai label
 - Label Fesyen Boutique
 - Rantai Optik Bergengsi
 
-## Overview
+## Gambaran Keseluruhan
 
 Koleksi eyewear mewah mendapat manfaat daripada gabungan asetat Mazzucchelli dan JINYU pada KAO-311, kombinasi yang mengimbangi estetika digilap tangan yang menyerlah dengan umur panjang struktur yang luar biasa.
 

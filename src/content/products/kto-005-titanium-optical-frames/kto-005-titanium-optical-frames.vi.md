@@ -16,7 +16,7 @@ series: "optical-frames, titanium-optical-frames, luxury-eyewear, luxury-titaniu
 
 # ─────────────────────────────────────────────────────
 size: "52-18-145mm & Tùy chỉnh theo yêu cầu"
-frameMaterial: "Titan cao cấp và Axit & Tùy chỉnh theo yêu cầu"
+frameMaterial: "Titan cao cấp và Axetat & Tùy chỉnh theo yêu cầu"
 lensMaterial: "Tròng AC & Tùy chỉnh theo yêu cầu"
 designStyle: "Xa xỉ, Thời trang, Unisex"
 nosePads: "Đệm mũi đúc liền"
@@ -38,13 +38,13 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Gọng kính cận Titan cao cấp KTO-005 | Nhà sản xuất theo yêu cầu"
-seoDescription: "Nâng tầm danh mục thương hiệu riêng của bạn với gọng kính titan và axit sang trọng có thể tùy chỉnh. Hỗ trợ OEM/ODM đầy đủ với MOQ 300 cho các thương hiệu toàn cầu."
-seoKeywords: "nhà sản xuất gọng kính titan, kính mắt axit titan tùy chỉnh, gọng kính thương hiệu riêng xa xỉ, bán sỉ kính mắt cao cấp Trung Quốc, sản xuất gọng kính theo yêu cầu, nhà máy kính mắt OEM Trung Quốc, nhà cung cấp gọng kính cao cấp, gọng titan tùy chỉnh"
+seoDescription: "Nâng tầm danh mục thương hiệu riêng của bạn với gọng kính titan và axetat sang trọng có thể tùy chỉnh. Hỗ trợ OEM/ODM đầy đủ với MOQ 300 cho các thương hiệu toàn cầu."
+seoKeywords: "nhà sản xuất gọng kính titan, kính mắt axetat titan tùy chỉnh, gọng kính thương hiệu riêng xa xỉ, bán sỉ kính mắt cao cấp Trung Quốc, sản xuất gọng kính theo yêu cầu, nhà máy kính mắt OEM Trung Quốc, nhà cung cấp gọng kính cao cấp, gọng titan tùy chỉnh"
 ---
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Mặt trước bằng titan cực nhẹ kết hợp với càng kính axit chất lượng cao mang lại tính thẩm mỹ sang trọng cân bằng và độ bền vượt trội.
+- **Chất liệu cao cấp:** Mặt trước bằng titan cực nhẹ kết hợp với càng kính axetat chất lượng cao mang lại tính thẩm mỹ sang trọng cân bằng và độ bền vượt trội.
 - **Xử lý bề mặt tiên tiến:** Lớp mạ ION thông số kỹ thuật cao cung cấp khả năng chống ăn mòn vượt trội và giữ màu lâu dài.
 - **Phần cứng chính xác:** Bản lề lò xo tích hợp được thiết kế để mang lại sự vừa vặn linh hoạt và vận hành êm ái nhất quán cho mọi kích cỡ đầu.
 - **Thiết kế công thái học:** Đệm mũi đúc liền tích hợp được thiết kế để vừa vặn ổn định, thoải mái và có kiểu dáng hình ảnh liền mạch.
@@ -62,7 +62,7 @@ seoKeywords: "nhà sản xuất gọng kính titan, kính mắt axit titan tùy 
 
 ## Tổng quan
 
-Kết hợp giữa titan cấu trúc với axit cao cấp, KTO-005 mang đến tính thẩm mỹ sang trọng, cân bằng cho thị trường cao cấp hiện đại.
+Kết hợp giữa titan cấu trúc với axetat cao cấp, KTO-005 mang đến tính thẩm mỹ sang trọng, cân bằng cho thị trường cao cấp hiện đại.
 
 Lớp mạ ION đảm bảo độ bền bề mặt đặc biệt, trong khi bản lề lò xo tích hợp mang lại sự vừa vặn đáng tin cậy, thích ứng cho thời gian đeo kéo dài.
 

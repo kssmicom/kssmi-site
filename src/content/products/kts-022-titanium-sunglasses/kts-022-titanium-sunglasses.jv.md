@@ -69,7 +69,7 @@ seoKeywords: "produsen kacamata hitam titanium, kacamata hitam OEM kustom, eyewe
 - Merek Gaya Hidup Olahraga & Otomotif
 - Label Busuk Fashion
 
-## Overview
+## Ringkesan
 
 Titanium kelas aerospace nemtokake KTS-022, nawakake arsitektur entheng banget sing ngimbangi resistensi korosi sing dhuwur kanthi estetika mewah sing canggih.
 

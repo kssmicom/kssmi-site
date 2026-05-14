@@ -58,7 +58,7 @@ seoKeywords: "montature ottiche fibra carbonio, occhiali titanio su misura, prod
 - Marchi Sportivi e Auto Lifestyle
 - Catene Ottiche di Alto Livello
 
-## Overview
+## Panoramica
 
 Combinando la fibra di carbonio di grado aerospaziale con una finitura in mogano a venatura di montagna, il modello KSO-224 offre un raro incontro tra prestazioni tecniche e calore naturale.
 

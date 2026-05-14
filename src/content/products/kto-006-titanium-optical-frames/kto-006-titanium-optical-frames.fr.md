@@ -58,7 +58,7 @@ seoKeywords: "fabricant montures optiques titane, lunettes rétro personnalisée
 - Marques de Mode Boutique
 - Magasins de Concept et Multi-Marques
 
-## Overview
+## Aperçu
 
 Alliant esthétique rétro et matériaux modernes, le modèle KTO-006 présente une combinaison raffinée de faces en acétate premium et de branches en titane de qualité aérospatiale. Cette construction hybride offre une profondeur visuelle sophistiquée tout en conservant un profil léger essentiel pour l'optique haut de gamme.
 

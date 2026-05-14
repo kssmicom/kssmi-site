@@ -78,7 +78,7 @@ seoKeywords: "fabricante gafas de sol acetato, gafas sol OEM personalizadas, eye
 - Tiendas de Concepto y Multi-Marca
 - Venta Duty-Free y Viajes
 
-## Overview
+## Resumen
 
 El modelo KAS-103 utiliza acetato Mazzucchelli y JINYU de primera calidad para lograr un acabado de brillo profundo, con sofisticados patrones de cuadros y mármol que resuenan con las tendencias de la alta moda.
 

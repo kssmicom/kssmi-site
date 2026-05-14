@@ -59,7 +59,7 @@ seoKeywords: "fabricante de óculos de sol de fibra de carbono, óculos de sol O
 - Venda Duty-Free e Viagens
 - Etiquetas de Moda Boutique
 
-## Overview
+## Visão Geral
 
 Combinando desempenho leve com uma estética unissex sofisticada, o modelo KSS-031 é meticulosamente fabricado em fibra de carbono de grau aeroespacial para máxima integridade estrutural.
 

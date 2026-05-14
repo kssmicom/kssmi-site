@@ -61,7 +61,7 @@ seoKeywords: "nhà sản xuất kính mát titan, nhà cung cấp kính mắt OE
 - Thương hiệu thể thao và ô tô
 - Bán lẻ miễn thuế và du lịch
 
-## Overview
+## Tổng quan
 
 KTS-212 sử dụng chất liệu titan cao cấp để mang lại tỷ lệ độ bền trên trọng lượng vượt trội cho các bộ sưu tập kính mắt tinh hoa. Gọng kính siêu nhẹ này có thiết kế unisex độc đáo, thu hút các thị trường thời trang cao cấp và bán lẻ xa xỉ.
 

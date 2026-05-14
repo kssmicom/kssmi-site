@@ -69,7 +69,7 @@ seoKeywords: "produttore occhiali da sole in acetato, occhiali da sole OEM perso
 - Store di Concetto e Multi-Marchio
 - Case di Moda Lusso
 
-## Overview
+## Panoramica
 
 Realizzato in pregiato acetato Mazzucchelli e JINYU, il modello KAS-105 bilancia un audace design unisex con una vibrante profondità di colore. Questa montatura lucidata a mano funge da base versatile per i marchi che privilegiano materiali ad alta densità e l'estetica della moda contemporanea.
 

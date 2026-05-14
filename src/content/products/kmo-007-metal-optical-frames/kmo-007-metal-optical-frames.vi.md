@@ -64,7 +64,7 @@ seoKeywords: "gọng kính cận kim loại, nhà sản xuất gọng kính, xư
 - Chuỗi quang học cao cấp
 - Nhãn thời trang boutique
 
-## Overview
+## Tổng quan
 
 Sự bền bỉ cấu trúc cân bằng và tính thẩm mỹ tinh tế định nghĩa KMO-007, một mẫu kính được chế tác tỉ mỉ từ kim loại cao cấp dành cho các thương hiệu toàn cầu khắt khe.
 
