@@ -488,7 +488,7 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
   }
 </style>
 
-<script>
+<script is:inline>
   // Global timeout reference for mega menu
   let megaMenuTimeout: ReturnType<typeof setTimeout>;
 
@@ -703,19 +703,15 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
 
       let hintRafPending = false;
       const updateHint = () => {
-        // Read phase: gather layout measurements
-        const isScrollable = menu.scrollHeight > menu.clientHeight;
-        const isNotAtBottom = Math.ceil(menu.scrollTop + menu.clientHeight) < menu.scrollHeight - 2;
-        const showHint = isScrollable && isNotAtBottom;
-
-        // Write phase: defer style writes to avoid forced reflow
-        if (!hintRafPending) {
-          hintRafPending = true;
-          requestAnimationFrame(() => {
-            hint.style.opacity = showHint ? '1' : '0';
-            hintRafPending = false;
-          });
-        }
+        if (hintRafPending) return;
+        hintRafPending = true;
+        // Batch read + write in same rAF to avoid forced reflow
+        requestAnimationFrame(() => {
+          const isScrollable = menu.scrollHeight > menu.clientHeight;
+          const isNotAtBottom = Math.ceil(menu.scrollTop + menu.clientHeight) < menu.scrollHeight - 2;
+          hint.style.opacity = (isScrollable && isNotAtBottom) ? '1' : '0';
+          hintRafPending = false;
+        });
       };
 
       setListener(menu, 'scroll', updateHint);
@@ -732,12 +728,12 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
         const observer = new ResizeObserver(updateHint);
         observer.observe(menu);
       }
-      // Initial check: read immediately, write in rAF
-      (() => {
+      // Initial check: batch read + write in rAF to avoid forced reflow
+      requestAnimationFrame(() => {
         const isScrollable = menu.scrollHeight > menu.clientHeight;
         const isNotAtBottom = Math.ceil(menu.scrollTop + menu.clientHeight) < menu.scrollHeight - 2;
         hint.style.opacity = (isScrollable && isNotAtBottom) ? '1' : '0';
-      })();
+      });
     });
 
     // Language Dropdown Click Toggle (for touch devices)

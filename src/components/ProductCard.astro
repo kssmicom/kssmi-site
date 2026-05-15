@@ -16,6 +16,10 @@ const { product, lang, index = -1 } = Astro.props;
 const isLCP = index >= 0 && index < 4;
 const loadingStrategy = isLCP ? "eager" : "lazy";
 const fetchPriority = isLCP ? "high" : "auto";
+const decoding = isLCP ? "sync" : "async";
+
+// Skip rendering for cards below first 2 rows to reduce initial layout work
+const belowFold = index >= 6;
 
 // Access data correctly - slug and other fields are inside data
 const { data } = product;
@@ -41,7 +45,7 @@ const cardSrc = cover && existsSync(join(process.cwd(), 'public', cover.replace(
 ---
 
 <a href={`/${currentPath}product/${productSlug}`} class="group block">
-  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300" style={belowFold ? "content-visibility:auto;contain-intrinsic-size:auto 360px" : ""}>
     <!-- Product Image with Hover Overlay -->
     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100" data-product-cover>
       {cover ? (
@@ -52,10 +56,9 @@ const cardSrc = cover && existsSync(join(process.cwd(), 'public', cover.replace(
           height="300"
           sizes="(min-width: 1280px) 33vw, (min-width: 1024px) 25vw, (min-width: 640px) 50vw, 50vw"
           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          decoding="async"
+          decoding={decoding}
           loading={loadingStrategy}
           fetchpriority={fetchPriority}
-          onerror="if(!this.dataset.retried){this.dataset.retried=true;setTimeout(()=>this.src=this.src, 50);}"
         />
       ) : (
         <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
