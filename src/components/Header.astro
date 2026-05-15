@@ -490,19 +490,19 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
 
 <script is:inline>
   // Global timeout reference for mega menu
-  let megaMenuTimeout: ReturnType<typeof setTimeout>;
+  let megaMenuTimeout;
 
   // Store handlers globally so we can properly remove them
-  const storedHandlers = new WeakMap<Element, Map<string, EventListener>>();
+  const storedHandlers = new WeakMap();
 
-  function getHandlerMap(element: Element): Map<string, EventListener> {
+  function getHandlerMap(element) {
     if (!storedHandlers.has(element)) {
       storedHandlers.set(element, new Map());
     }
-    return storedHandlers.get(element)!;
+    return storedHandlers.get(element);
   }
 
-  function setListener(element: Element, event: string, handler: EventListener) {
+  function setListener(element, event, handler) {
     const map = getHandlerMap(element);
     const oldHandler = map.get(event);
     if (oldHandler) {
@@ -513,10 +513,10 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
   }
 
   // Global mega menu elements
-  let megaMenuPanel: HTMLElement | null = null;
-  let megaMenuContents: NodeListOf<Element> | null = null;
+  let megaMenuPanel = null;
+  let megaMenuContents = null;
 
-  function showMegaMenu(menuKey: string) {
+  function showMegaMenu(menuKey) {
     clearTimeout(megaMenuTimeout);
 
     megaMenuContents?.forEach(content => {
@@ -562,7 +562,7 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
     // This is needed because View Transitions might intercept navigation
     document.querySelectorAll('.lang-dropdown-menu').forEach(menu => {
       menu.addEventListener('click', (e) => {
-        const link = (e.target as HTMLElement).closest('a');
+        const link = e.target.closest('a');
         if (link) {
           const currentSearch = window.location.search;
           const href = link.getAttribute('href');
@@ -619,8 +619,8 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
       setListener(trigger, 'mouseenter', enterHandler);
 
       // Keyboard support for accessibility
-      const keydownHandler = (e: Event) => {
-        const keyEvent = e as KeyboardEvent;
+      const keydownHandler = (e) => {
+        const keyEvent = e;
         if (keyEvent.key === 'Enter' || keyEvent.key === ' ') {
           keyEvent.preventDefault();
           if (menuKey) {
@@ -637,13 +637,13 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
 
       const parentLi = trigger.closest('li');
       if (parentLi) {
-        const leaveHandler = (e: MouseEvent) => {
-          const relatedTarget = e.relatedTarget as HTMLElement;
+        const leaveHandler = (e) => {
+          const relatedTarget = e.relatedTarget;
           if (!megaMenuPanel?.contains(relatedTarget)) {
             hideMegaMenu();
           }
         };
-        setListener(parentLi, 'mouseleave', leaveHandler as EventListener);
+        setListener(parentLi, 'mouseleave', leaveHandler);
       }
     });
 
@@ -653,7 +653,7 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
     }
 
     // Header Search
-    const headerSearchInput = document.getElementById('header-search-input') as HTMLInputElement;
+    const headerSearchInput = document.getElementById('header-search-input');
     const headerSearchClear = document.getElementById('header-search-clear');
 
     if (headerSearchInput) {
@@ -675,7 +675,7 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
     }
 
     // Mobile Search
-    const mobileSearchInput = document.getElementById('mobile-search-input') as HTMLInputElement;
+    const mobileSearchInput = document.getElementById('mobile-search-input');
     const mobileSearchClear = document.getElementById('mobile-search-clear');
 
     if (mobileSearchInput) {
@@ -698,7 +698,7 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
 
     // Language Dropdown Scroll Hints
     document.querySelectorAll('.lang-dropdown-menu').forEach(menu => {
-      const hint = menu.nextElementSibling as HTMLElement;
+      const hint = menu.nextElementSibling;
       if (!hint || !hint.classList.contains('scroll-hint')) return;
 
       let hintRafPending = false;
@@ -739,7 +739,7 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
     // Language Dropdown Click Toggle (for touch devices)
     document.querySelectorAll('.lang-dropdown-container').forEach(container => {
       const btn = container.querySelector('.lang-btn');
-      const wrapper = container.querySelector('.lang-dropdown-wrapper') as HTMLElement;
+      const wrapper = container.querySelector('.lang-dropdown-wrapper');
 
       if (btn && wrapper) {
         setListener(btn, 'click', (e) => {
@@ -774,7 +774,7 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
 
     // Close language dropdowns when clicking outside
     document.addEventListener('click', (e) => {
-      const target = e.target as HTMLElement;
+      const target = e.target;
       if (!target.closest('.lang-dropdown-container')) {
         document.querySelectorAll('.lang-dropdown-wrapper').forEach(wrapper => {
           wrapper.classList.remove('opacity-100', 'visible', 'pointer-events-auto');
