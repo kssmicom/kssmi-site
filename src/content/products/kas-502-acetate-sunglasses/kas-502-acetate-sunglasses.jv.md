@@ -73,7 +73,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata OEM kustom, kacamata labe
 - Rumah Mode Mewah
 - Toko Konsep & Multi-Merek
 
-## Ringkasan
+## Ringkesan
 
 Digawe saka asetat premium Mazzucchelli lan JINYU, KAS-502 nawakake hasil pungkasan sing padhang lan dipoles nganggo tangan sing cocog karo sensibilitas fashion kelas dhuwur. Kekiatan material lan profil sing entheng nyedhiyakake dhasar sing canggih kanggo portofolio kacamata premium.
 

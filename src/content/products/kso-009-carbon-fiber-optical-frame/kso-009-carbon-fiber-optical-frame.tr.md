@@ -68,7 +68,7 @@ seoKeywords: "karbon elyaf optik çerçeve üreticisi, özel titanyum gözlük �
 - Spor ve Otomotiv Yaşam Tarzı Markaları
 - Yüksek Segment Optik Zincirleri
 
-## Ürün Özeti
+## Genel Bakış
 
 Yüksek performanslı karbon elyafı şık titanyum saplarla birleştiren KSO-009, dayanıklı ve rafine gözlük mühendisliğinde bir ustalık eserini temsil eder. Kendine has dokuma dokusu ve premium kaplaması, lüks optik pazarının taleplerine özel olarak hitap eder.
 

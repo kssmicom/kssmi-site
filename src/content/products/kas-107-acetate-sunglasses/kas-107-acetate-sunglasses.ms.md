@@ -6,7 +6,7 @@ itemNo: "KAS-107"
 date: "2026-05-06"
 colors: "Hitam & Jelas & Havana & Zaitun"
 materials: "Asetat Premium Mazzucchelli & JINYU & Penyesuaian"
-serviceMode: "OEM & ODM ( Penyesuaian )"
+serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

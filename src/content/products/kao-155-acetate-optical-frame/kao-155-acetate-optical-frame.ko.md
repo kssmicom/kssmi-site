@@ -6,7 +6,7 @@ itemNo: "KAO-155"
 date: "2026-05-10"
 colors: "퍼플 포인트 플로럴 옐로우, 핑크 포인트 플로럴 틸"
 materials: "프리미엄 Mazzucchelli & JINYU 아세테이트 & 맞춤 서비스"
-serviceMode: "OEM & ODM ( 맞춤 서비스 )"
+serviceMode: "OEM / ODM 제조 맞춤 서비스"
 moq: "300 개/모델 (100개/컬러)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

@@ -69,7 +69,7 @@ seoKeywords: "produsen kacamata hitam logam rimless, grosir kacamata mewah Cina,
 - Chain Optik High-End
 - Toko Konsep & Multi-Merek
 
-## Fitur
+## Ringkesan
 
 KRS-205 dirancang kanggo kecanggihan minimalis, nampilake frame logam premium sing nemtokake maneh estetika tanpa bingkai kanggo pasar mewah. Arsitektur sing entheng nggabungake daya tahan struktural karo profil sing apik, narik kawigaten merek sing nggoleki kejelasan teknis kelas dhuwur.
 

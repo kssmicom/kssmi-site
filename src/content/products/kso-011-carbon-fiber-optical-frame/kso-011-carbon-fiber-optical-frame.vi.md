@@ -68,7 +68,7 @@ seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính titan tùy ch�
 - Thương hiệu thể thao và ô tô
 - Chuỗi quang học cao cấp
 
-## Tổng quan về sản phẩm
+## Tổng quan
 
 Được thiết kế cho thị trường xa xỉ khắt khe, KSO-011 kết hợp sợi carbon hiệu suất cao với càng kính titan không gây dị ứng. Cấu trúc hybrid này đảm bảo một cấu hình nhẹ như lông vũ nhưng bền bỉ, đáp ứng các tiêu chuẩn nghiêm ngặt của các cửa hàng quang học cao cấp.
 

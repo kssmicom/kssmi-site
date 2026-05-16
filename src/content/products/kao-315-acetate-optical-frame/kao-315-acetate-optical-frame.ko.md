@@ -6,7 +6,7 @@ itemNo: "KAO-315"
 date: "2026-05-10"
 colors: "블랙 & 반투명 그레이 & 하바나 & 샴페인 & 투명 & 올리버"
 materials: "프리미엄 Mazzucchelli & JINYU 아세테이트 & 맞춤 서비스"
-serviceMode: "OEM & ODM ( 맞춤 서비스 )"
+serviceMode: "OEM / ODM 제조 맞춤 서비스"
 moq: "300 개/모델 (100개/컬러)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

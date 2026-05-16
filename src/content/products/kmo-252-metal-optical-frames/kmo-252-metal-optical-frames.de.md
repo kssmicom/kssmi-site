@@ -58,7 +58,7 @@ seoKeywords: "Hersteller Metallbrillen, individuelle OEM-Brillen, Luxus-Eigenmar
 - Hochwertige Optikketten
 - Boutique-Modemmarken
 
-## Überblick
+## Übersicht
 
 Die KMO-252-Serie wurde mit Fokus auf moderne Ästhetik und strukturelle Langlebigkeit entwickelt. Sie verwendet hochwertige Metallkomponenten, um eine leichte und dennoch widerstandsfähige Fassung zu liefern, die ideal für hochwertige Optik-Kollektionen ist.
 

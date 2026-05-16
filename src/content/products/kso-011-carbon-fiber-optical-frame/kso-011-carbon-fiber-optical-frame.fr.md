@@ -68,7 +68,7 @@ seoKeywords: "fabricant montures optiques fibre de carbone, lunettes titane pers
 - Marques Sportives et Lifestyle Automobile
 - Chaînes Optiques Haut de Gamme
 
-## Présentation du produit
+## Aperçu
 
 Conçu pour le marché exigeant du luxe, le modèle KSO-011 fusionne la fibre de carbone haute performance avec des branches en titane hypoallergénique. Cette construction hybride assure un profil léger comme une plume mais résistant qui répond aux normes rigoureuses des boutiques optiques premium.
 

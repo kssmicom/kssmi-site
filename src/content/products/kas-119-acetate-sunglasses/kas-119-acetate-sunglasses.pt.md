@@ -6,7 +6,7 @@ itemNo: "KAS-119"
 date: "2026-05-09"
 colors: "Preto & Floral & Azul Bruto & Amarelo & Tartaruga Polar & Tartaruga Ciano & Tartaruga Vermelha"
 materials: "Acetato Mazzucchelli & JINYU Premium & Personalização"
-serviceMode: "OEM & ODM ( Personalização )"
+serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 PCS/Model (100PCS/Color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

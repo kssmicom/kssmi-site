@@ -6,7 +6,7 @@ itemNo: "KAS-108"
 date: "2026-05-07"
 colors: "Siyah & Şeffaf & Havana & Zeytin Yeşili"
 materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
-serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
+serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (renk başına 100 adet)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

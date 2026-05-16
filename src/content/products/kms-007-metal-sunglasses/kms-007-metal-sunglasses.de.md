@@ -66,7 +66,7 @@ seoKeywords: "Hybrid-Metall-Sonnenbrillen Hersteller, kundenspezifische Brillenp
 - Konzept- und Multi-Brand-Stores
 - Kaufhausgruppen
 
-## Überblick
+## Übersicht
 
 Das Modell KMS-007 schließt die Lücke zwischen der architektonischen Stärke von Metall und der lebendigen Tiefe von Premium-Acetat und schafft eine Hybrid-Silhouette, die bei luxusorientierten Konsumenten Anklang findet.
 

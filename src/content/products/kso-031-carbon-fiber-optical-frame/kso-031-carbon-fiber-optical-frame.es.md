@@ -68,7 +68,7 @@ seoKeywords: "monturas ópticas de fibra de carbono, monturas ópticas de lujo, 
 - Casas de Moda de Lujo
 - Cadenas Ópticas de Alta Gama
 
-## Descripción general
+## Resumen
 
 El modelo KSO-031 representa una sofisticada fusión de fibra de carbono de grado aeroespacial y titanio refinado, ofreciendo una solución óptica ultra ligera con una estética de lujo distintiva. Las exclusivas texturas de veta de madera y sarga proporcionan una identidad visual de primera calidad que resuena con las boutiques de alta gama y las marcas de estilo de vida.
 

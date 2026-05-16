@@ -6,7 +6,7 @@ itemNo: "KAS-019"
 date: "2026-05-10"
 colors: "Đen, Xanh sữa, Nâu trong suốt"
 materials: "Axetat Mazzucchelli & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
-serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
+serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100cái/màu)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

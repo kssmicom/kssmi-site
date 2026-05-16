@@ -68,7 +68,7 @@ seoKeywords: "nhà sản xuất gọng kính cận sợi carbon, gọng kính c�
 - Nhà thời trang xa xỉ
 - Thương hiệu thể thao và ô tô
 
-## Tổng quan về sản phẩm
+## Tổng quan
 
 Thiết lập một tiêu chuẩn mới trong kính mắt cao cấp, mẫu kính này tích hợp sợi carbon cao cấp với càng kính kim loại bóng bẩy cho thẩm mỹ tinh tế, hiện đại. Vật liệu cấp hàng không vũ trụ cung cấp tỷ lệ sức mạnh trên trọng lượng vượt trội, đảm bảo mỗi gọng kính đều bền bỉ và nhẹ nhàng.
 

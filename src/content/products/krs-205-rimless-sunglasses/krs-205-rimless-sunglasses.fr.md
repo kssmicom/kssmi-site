@@ -69,7 +69,7 @@ seoKeywords: "fabricant de lunettes de soleil en métal rimless, vente en gros d
 - Chaînes Optiques Haut de Gamme
 - Magasins de Concept et Multi-Marques
 
-## Aperçu du produit
+## Présentation
 
 Conçu pour une sophistication minimaliste, le modèle KRS-205 arbore une monture en métal premium qui redéfinit l'esthétique rimless pour le marché du luxe. Son architecture légère allie résilience structurelle et profil raffiné, séduisant les marques en quête d'une clarté technique de haut niveau.
 

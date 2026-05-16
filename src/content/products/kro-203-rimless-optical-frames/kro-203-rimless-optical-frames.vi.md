@@ -58,7 +58,7 @@ seoKeywords: "nhà sản xuất gọng kính không viền, gọng kính kim lo�
 - Nhà thời trang xa xỉ
 - Nhà bán sỉ kính mắt
 
-## Tổng quan về sản phẩm
+## Tổng quan
 
 Kỹ thuật tối giản kết hợp với tính thẩm mỹ chuyên nghiệp trong gọng kính cận không viền này, được chế tác từ hợp kim kim loại cao cấp mang lại tính toàn vẹn về cấu trúc mà không có trọng lượng thị giác của các đường viền truyền thống.
 

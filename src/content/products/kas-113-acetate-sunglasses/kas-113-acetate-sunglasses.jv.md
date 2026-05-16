@@ -6,7 +6,7 @@ itemNo: "KAS-113"
 date: "2026-05-09"
 colors: "Ireng & Bulus & Krim & Biru"
 materials: "Mazzucchelli Premium & Asetat JINYU & Kustomisasi"
-serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
+serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

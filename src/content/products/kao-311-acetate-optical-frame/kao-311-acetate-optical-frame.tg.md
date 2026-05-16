@@ -6,7 +6,7 @@ itemNo: "KAO-311"
 date: "2026-05-10"
 colors: "Сиёҳ & Бунафши дуддор & Тӯшак & Қаҳваранг"
 materials: "Mazzucchelli-и олӣ & Атсетати JINYU & Фармоишсозӣ"
-serviceMode: "OEM & ODM (Фармоишсозӣ)"
+serviceMode: "Истеҳсоли фармоишӣ / Тарроҳӣ ва Истеҳсол – Фармоишсозӣ"
 moq: "300 ад/модел (100 ад/ранг)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

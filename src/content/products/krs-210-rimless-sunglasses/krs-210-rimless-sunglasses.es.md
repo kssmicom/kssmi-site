@@ -68,7 +68,7 @@ seoKeywords: "fabricante gafas sol metal rimless, gafas rimless al por mayor, pr
 - Venta Duty-Free y Viajes
 - Tiendas de Concepto y Multi-Marca
 
-## Vista general del producto
+## Resumen
 
 El modelo KRS-210 encarna una estética rimless sofisticada, equilibrando un atractivo visual minimalista con una arquitectura de metal de alta calidad para una integridad estructural duradera. Su perfil ligero está diseñado para satisfacer las demandas de las carteras premium donde la elegancia y la durabilidad se priorizan por igual.
 

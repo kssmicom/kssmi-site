@@ -67,7 +67,7 @@ seoKeywords: "Hersteller von Titan-Brillenfassungen, Lieferant für individuelle
 - Augenoptik-Großhändler
 - Boutique-Modemmarken
 
-## Eigenschaften
+## Übersicht
 
 Entwickelt für den anspruchsvollen Träger, nutzt das Modell KTO-024 Premium-Titan, um ein perfektes Gleichgewicht zwischen hochfester Haltbarkeit und einem ultraleichten Tragegefühl zu erreichen. Diese Materialwahl sorgt für ein raffiniertes Finish, das den Anforderungen des täglichen Gebrauchs standhält und dabei mühelos komfortabel bleibt.
 

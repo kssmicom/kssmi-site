@@ -6,7 +6,7 @@ itemNo: "KAO-306"
 date: "2026-05-10"
 colors: "Черный & Серый & Коричневый & Оливковый"
 materials: "Премиум Mazzucchelli & Ацетат JINYU & Индивидуальный заказ"
-serviceMode: "OEM & ODM ( Индивидуальный заказ )"
+serviceMode: "Контрактное производство / Производство по ODM – Индивидуальный заказ"
 moq: "300 шт/модель (100 шт/цвет)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

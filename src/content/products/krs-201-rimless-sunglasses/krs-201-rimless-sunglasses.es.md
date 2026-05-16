@@ -68,7 +68,7 @@ seoKeywords: "fabricante de gafas de sol rimless, venta al por mayor de gafas de
 - Venta Duty-Free y Viajes
 - Tiendas de Concepto y Multi-Marca
 
-## Resumen del producto
+## Resumen
 
 Cuando las marcas buscan la intersección entre el diseño minimalista y la durabilidad del metal de alta calidad, el KRS-201 se presenta como la elección definitiva. Su arquitectura rimless ofrece un perfil ligero y de alta moda que resuena con los requisitos sofisticados de los portafolios de gafas de lujo.
 

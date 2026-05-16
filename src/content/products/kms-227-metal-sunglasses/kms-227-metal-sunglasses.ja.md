@@ -6,7 +6,7 @@ itemNo: "KMS-227"
 date: "2026-05-02"
 colors: "グロッシーシルバー, グロッシーゴールド, グロッシーゴールド"
 materials: "プレミアムメタル"
-serviceMode: "受託製造 (OEM) & 設計製造 (ODM) ( カスタマイズ対応 )"
+serviceMode: "OEM受託製造 & ODM設計製造 ( カスタマイズ対応 )"
 moq: "300 個/モデル (100個/カラー)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -23,7 +23,7 @@ nosePads: "クリアシリコンノーズパッド"
 hinge: "2+1バレル構造ヒンジ & カスタマイズ対応 (5バレル & スプリングヒンジ)"
 electroplating: "イオンプレーティング"
 logo: "印刷, レーザー刻印, レーザー色入れ, 箔押し, メタル装飾, エンボス加工, クリスタル装飾, 立体ステッカー"
-service: "OEM製造 / ODM設計製造 カスタマイズ対応"
+service: "OEM受託製造 / ODM設計製造 ( カスタマイズ対応 )"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kms-227-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-227-1.webp"

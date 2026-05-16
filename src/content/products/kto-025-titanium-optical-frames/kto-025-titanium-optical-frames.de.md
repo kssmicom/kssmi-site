@@ -67,7 +67,7 @@ seoKeywords: "Titan-Brillenfassungen Hersteller, individuelle OEM-Brillen China,
 - Sport- und Auto-Lifestyle-Marken
 - Duty-Free- und Reisehandel
 
-## Überblick
+## Übersicht
 
 Die KTO-025 wurde für kompromisslose Haltbarkeit entwickelt und verwendet Titan in Luftfahrtqualität, um ein ultra-leichtes Erlebnis zu bieten, ohne die strukturelle Integrität zu beeinträchtigen.
 

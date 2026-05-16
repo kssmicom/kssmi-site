@@ -67,7 +67,7 @@ seoKeywords: "nhà sản xuất gọng kính titan, nhà cung cấp kính titan 
 - Nhà bán sỉ kính mắt
 - Nhãn thời trang boutique
 
-## Đặc điểm
+## Tổng quan
 
 Được chế tác dành cho những người đeo tinh tế, KTO-024 sử dụng titan cao cấp để đạt được sự cân bằng hoàn hảo giữa độ bền cao và cảm giác siêu nhẹ. Lựa chọn chất liệu này đảm bảo vẻ ngoài tinh tế, có thể chịu được sự khắc nghiệt của việc sử dụng hàng ngày trong khi vẫn giữ được sự thoải mái tối đa.
 

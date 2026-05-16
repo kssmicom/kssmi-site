@@ -68,7 +68,7 @@ seoKeywords: "Hersteller randlose Metall-Sonnenbrille, Großhandel randlose Bril
 - Duty-Free- und Reisehandel
 - Konzept- und Multi-Brand-Stores
 
-## Produktübersicht
+## Überblick
 
 Die KRS-210 verkörpert eine anspruchsvolle randlose Ästhetik und verbindet minimalistisches Design mit hochwertiger Metallarchitektur für dauerhafte strukturelle Integrität. Ihr leichtes Profil wurde entwickelt, um den Anforderungen von Premium-Portfolios gerecht zu werden, in denen Eleganz und Langlebigkeit gleichermaßen im Vordergrund stehen.
 

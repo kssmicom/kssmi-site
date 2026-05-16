@@ -6,7 +6,7 @@ itemNo: "KAO-156"
 date: "2026-05-10"
 colors: "Кабуди гулдор бо Магента"
 materials: "Атсетати Premium Mazzucchelli & JINYU ва Фармоишсозӣ"
-serviceMode: "Истеҳсоли шартномавӣ (OEM) & Тарроҳӣ ва истеҳсол (ODM) ( Фармоишсозӣ )"
+serviceMode: "Истеҳсоли фармоишӣ / Тарроҳӣ ва Истеҳсол – Фармоишсозӣ"
 moq: "300 ад/модел (100ад/ранг)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

@@ -72,7 +72,7 @@ seoKeywords: "fabricante óculos de sol sem aro metal, óculos de luxo atacado, 
 - Venda Duty-Free e Viagens
 - Etiquetas de Moda Boutique
 
-## Panoramica del prodotto
+## Visão Geral
 
 Fundindo o minimalismo de alta gama com a integridade estrutural, este design sem aro utiliza uma estrutura de metal premium para alcançar uma estética sofisticada e luxuosa.
 

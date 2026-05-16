@@ -77,7 +77,7 @@ seoKeywords: "Premium Acetat Brillen Hersteller, KAS-128 Custom OEM Eyewear, Lux
 - Boutique-Modemmarken
 - Kaufhausgruppen
 
-## Überblick
+## Übersicht
 
 Mazzucchelli- und JINYU-Acetat vereinen sich in einer kühnen Hochglanz-Silhouette, die modernen Luxus durch ihre einzigartige Unisex-Ästhetik definiert.
 

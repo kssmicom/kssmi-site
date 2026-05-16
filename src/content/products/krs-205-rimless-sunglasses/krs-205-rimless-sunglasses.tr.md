@@ -69,7 +69,7 @@ seoKeywords: "çerçevesiz metal güneş gözlüğü üreticisi, toptan lüks g�
 - Yüksek Segment Optik Zincirleri
 - Concept ve Çoklu Marka Mağazaları
 
-## Ürün Özeti
+## Genel Bakış
 
 Minimalist sofistike bir tasarım anlayışıyla üretilen KRS-205, lüks pazarı için çerçevesiz estetiği yeniden tanımlayan premium metal çerçeveye sahiptir. Hafif yapısı, yapısal direnci rafine bir profille birleştirerek, yüksek segment teknik netlik arayan markalara hitap eder.
 

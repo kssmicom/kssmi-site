@@ -69,7 +69,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate premium, usine de lune
 - Marques de Mode Boutique
 - Vente Duty-Free et Voyage
 
-## Présentation
+## Aperçu
 
 Fabriqué avec précision à partir d'acétate premium Mazzucchelli et JINYU, le modèle KAS-323 offre une esthétique éclatante et durable qui répond aux exigences rigoureuses du marché mondial du luxe.
 

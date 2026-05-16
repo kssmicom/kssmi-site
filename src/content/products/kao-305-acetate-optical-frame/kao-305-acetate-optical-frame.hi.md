@@ -6,7 +6,7 @@ itemNo: "KAO-305"
 date: "2026-05-10"
 colors: "जैतून & काला & धारीदार & हवाना"
 materials: "प्रीमियम Mazzucchelli और JINYU एसीटेट & कस्टमाइज़ेशन"
-serviceMode: "OEM (अनुबंध निर्माण) & ODM (डिजाइन निर्माण) ( कस्टमाइज़ेशन )"
+serviceMode: "OEM / ODM निर्माण – कस्टमाइज़ेशन सेवा"
 moq: "300 पीस/मॉडल (100 पीस/रंग)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

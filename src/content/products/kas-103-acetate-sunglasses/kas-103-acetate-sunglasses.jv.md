@@ -6,7 +6,7 @@ itemNo: "KAS-103"
 date: "2026-05-06"
 colors: "Ireng & Kisi-kisi Kuning & Marmer Mutiara & Kisi-kisi Abrit & Kisi-kisi Biru & Kisi-kisi Ireng"
 materials: "Premium Mazzucchelli & Asetat JINYU & Kustomisasi"
-serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
+serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

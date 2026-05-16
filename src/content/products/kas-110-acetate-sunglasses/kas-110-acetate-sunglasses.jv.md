@@ -6,7 +6,7 @@ itemNo: "KAS-110"
 date: "2026-05-07"
 colors: "Candy-Red & Pink-Tortoise & Cream-White & Ireng"
 materials: "Asetat Premium Mazzucchelli & JINYU & Kustomisasi"
-serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) (Kustomisasi)"
+serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

@@ -6,7 +6,7 @@ itemNo: "KAS-011"
 date: "2026-05-10"
 colors: "Havana & Ireng & Putih"
 materials: "Premium Mazzucchelli & Asetat JINYU & Kustomisasi"
-serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) (Kustomisasi)"
+serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

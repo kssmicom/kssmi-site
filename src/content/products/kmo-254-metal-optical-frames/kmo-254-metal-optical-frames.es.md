@@ -57,7 +57,7 @@ seoKeywords: "fabricante de armazones ópticos de metal, producción de gafas pe
 - Cadenas Ópticas de Alta Gama
 - Etiquetas de Moda Boutique
 
-## Descripción General
+## Resumen
 
 Diseñado para aquellos que priorizan la estética refinada y la integridad estructural, el KMO-254 presenta una construcción de metal de alta calidad definida por un sofisticado bloqueo de color y una silueta unisex a la vanguardia de la tendencia.
 

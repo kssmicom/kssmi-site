@@ -68,7 +68,7 @@ seoKeywords: "kohlefaser brillenrahmen hersteller, individuelle OEM brille China
 - Eigenmarken-Distributoren
 - Luxusmodehäuser
 
-## Produktübersicht
+## Übersicht
 
 Entwickelt mit einer Hochleistungsfusion aus Premium-Kohlefaser und leichtem Titan, bietet der KSO-032-Rahmen ein anspruchsvolles strukturelles Profil mit einem außergewöhnlichen Festigkeits-Gewichts-Verhältnis. Die einzigartigen Holzmaserungs- und Twill-Muster des Rahmens bieten einen deutlichen visuellen Vorteil für Marken, die auf den Luxusbrillensektor abzielen.
 

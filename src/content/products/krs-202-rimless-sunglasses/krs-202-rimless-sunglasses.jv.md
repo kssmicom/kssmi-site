@@ -72,7 +72,7 @@ seoKeywords: "produsen kacamata hitam metal tanpa frame, grosir kacamata fashion
 - P中小uters Dutypirlalu & Journey
 - Label Busuk Fashion
 
-## Panoramica del prodotto
+## Ringkasan
 
 Nggabungake minimalisme dhuwur kanthi integritas struktur, desain tanpa frame iki nggunakake kerangka logam premium kanggo nggayuh estetika sing canggih lan mewah.
 

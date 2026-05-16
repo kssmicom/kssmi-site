@@ -56,7 +56,7 @@ seoKeywords: "fabricante monturas ópticas titanio, gafas OEM China, monturas ma
 - Cadenas Ópticas de Alta Gamma
 - Grupos de Grandes Almacenes
 
-## Descripción General
+## Resumen
 
 Definiendo la cumbre de la excelencia en materiales, el KTO-001 utiliza titanio de grado aeroespacial para ofrecer una experiencia ultraligera e hipoalergénica. Su construcción elegante proporciona el lienzo perfecto para las marcas que apuntan al mercado óptico de gama alta.
 

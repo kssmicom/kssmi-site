@@ -6,7 +6,7 @@ itemNo: "KAS-106"
 date: "2026-05-06"
 colors: "Gris & Habana Brillante & Habana Mate & Transparente & Negro & Marrón & Verde"
 materials: "Acetato Mazzucchelli Premium & Acetato JINYU & Personalización"
-serviceMode: "OEM & ODM ( Personalización )"
+serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

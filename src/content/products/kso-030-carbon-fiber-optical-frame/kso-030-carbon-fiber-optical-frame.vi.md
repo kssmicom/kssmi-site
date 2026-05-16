@@ -69,7 +69,7 @@ seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính mắt sợi car
 - Nhà thời trang xa xỉ
 - Thương hiệu thể thao và ô tô
 
-## Tổng quan về sản phẩm
+## Tổng quan
 
 Sự xuất sắc về kỹ thuật là cốt lõi của KSO-030, kết hợp sợi carbon cấp hàng không vũ trụ với titan để tạo ra một chiếc gọng kính vừa nhẹ như lông hồng vừa có độ bền vượt trội.
 

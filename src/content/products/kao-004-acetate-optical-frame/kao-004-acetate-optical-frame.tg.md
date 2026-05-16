@@ -6,7 +6,7 @@ itemNo: "KAO-004"
 date: "2026-05-10"
 colors: "Сиёҳ & Тӯшак & Норанҷӣ & Зебра & Тиллоӣ"
 materials: "Атсетати Premium Mazzucchelli & JINYU & Фармоишсозӣ"
-serviceMode: "Истеҳсоли шартномавӣ (OEM) & Тарроҳӣ ва истеҳсол (ODM) (Фармоишсозӣ)"
+serviceMode: "Истеҳсоли фармоишӣ / Тарроҳӣ ва Истеҳсол – Фармоишсозӣ"
 moq: "300 ад/модел (100 ад/ранг)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

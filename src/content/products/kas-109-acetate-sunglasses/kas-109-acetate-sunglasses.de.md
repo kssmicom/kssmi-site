@@ -6,7 +6,7 @@ itemNo: "KAS-109"
 date: "2026-05-07"
 colors: "Schwarz & Transparent & Schildpatt & Olive"
 materials: "Premium-Mazzucchelli & JINYU-Acetat & Individualisierung"
-serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) ( Individualisierung )"
+serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100Stk/Farbe)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

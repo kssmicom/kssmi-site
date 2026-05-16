@@ -69,7 +69,7 @@ seoKeywords: "produttore montature ottiche in fibra di carbonio, occhiali in fib
 - Case di Moda Lusso
 - Marchi Sportivi e Auto Lifestyle
 
-## Panoramica del prodotto
+## Panoramica
 
 L'eccellenza ingegneristica è al cuore del modello KSO-030, che combina la fibra di carbonio di grado aerospaziale con il titanio per creare una montatura che è al contempo leggerissima ed eccezionalmente resistente.
 

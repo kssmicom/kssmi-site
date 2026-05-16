@@ -68,7 +68,7 @@ seoKeywords: "fabricant lunettes de soleil rimless, vente en gros lunettes de so
 - Vente Duty-Free et Voyage
 - Magasins de Concept et Multi-Marques
 
-## Présentation du produit
+## Présentation
 
 Lorsque les marques recherchent l'intersection du design minimaliste et de la durabilité du métal de haute qualité, le KRS-201 s'impose comme le choix définitif. Son architecture rimless offre un profil léger et haut de gamme qui résonne avec les exigences sophistiquées des portefeuilles de lunettes de luxe.
 

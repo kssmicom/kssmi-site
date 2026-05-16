@@ -67,7 +67,7 @@ seoKeywords: "fabricant montures optiques titane, lunettes OEM Chine, montures m
 - Marques Sportives et Lifestyle Automobile
 - Vente Duty-Free et Voyage
 
-## Présentation
+## Aperçu
 
 Conçu pour une durabilité sans compromis, le modèle KTO-025 utilise du titane de qualité aérospatiale pour offrir une expérience ultra-légère sans sacrifier l'intégrité structurelle.
 

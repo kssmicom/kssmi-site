@@ -76,7 +76,7 @@ seoKeywords: "fabricante de gafas de sol de metal, gafas de sol personalizadas O
 - Cadenas Ópticas de Alta Gama
 - Venta Duty-Free y Viajes
 
-## Información General
+## Resumen
 
 Combinando metal de alta calidad con elegantes detalles en acetato, el modelo KMS-120 reinterpreta las gafas de lujo a través de una audaz arquitectura de doble puente.
 

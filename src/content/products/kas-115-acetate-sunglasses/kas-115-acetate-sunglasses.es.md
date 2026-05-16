@@ -6,7 +6,7 @@ itemNo: "KAS-115"
 date: "2026-05-09"
 colors: "Negro & Púrpura & Blanco & Tortuga & Naranja"
 materials: "Acetato Premium Mazzucchelli y JINYU & Personalización"
-serviceMode: "Fabricación OEM & ODM (Personalización)"
+serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

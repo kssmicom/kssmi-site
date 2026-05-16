@@ -6,7 +6,7 @@ itemNo: "KAO-004"
 date: "2026-05-10"
 colors: "블랙 & 거북이 등껍질 & 오렌지 & 제브라 & 골드"
 materials: "프리미엄 Mazzucchelli & JINYU 아세테이트 & 맞춤 서비스"
-serviceMode: "OEM & ODM (맞춤 서비스)"
+serviceMode: "OEM / ODM 제조 맞춤 서비스"
 moq: "300 개/모델 (색상당 100개)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

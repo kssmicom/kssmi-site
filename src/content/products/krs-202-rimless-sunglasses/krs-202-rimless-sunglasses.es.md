@@ -72,7 +72,7 @@ seoKeywords: "fabricante gafas de sol al aire metal, gafas de lujo al por mayor,
 - Venta Duty-Free y Viajes
 - Etiquetas de Moda Boutique
 
-## Panoramica del producto
+## Resumen
 
 Fusionando el minimalismo de alta gama con la integridad estructural, este diseño al aire utiliza un armazón de metal premium para lograr una estética sofisticada y lujosa.
 

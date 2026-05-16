@@ -6,7 +6,7 @@ itemNo: "KAO-315"
 date: "2026-05-10"
 colors: "Siyah & Şeffaf Gri & Havana & Şampanya & Şeffaf & Oliver"
 materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
-serviceMode: "OEM & ODM ( Özelleştirme )"
+serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100 adet/renk)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

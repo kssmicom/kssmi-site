@@ -6,7 +6,7 @@ itemNo: "KAO-312"
 date: "2026-05-10"
 colors: "Сиёҳ & Сабзи Неон & Spark & Ҳавана & Тӯшаки Сурх"
 materials: "Атсетати Mazzucchelli Premium ва Атсетати JINYU ва Фармоишсозӣ"
-serviceMode: "Истеҳсоли шартномавӣ (OEM) ва Тарроҳӣ ва истеҳсол (ODM) ( Фармоишсозӣ )"
+serviceMode: "Истеҳсоли фармоишӣ / Тарроҳӣ ва Истеҳсол – Фармоишсозӣ"
 moq: "300 ад/модел (100 ад/ранг)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

@@ -6,7 +6,7 @@ itemNo: "KAS-119"
 date: "2026-05-09"
 colors: "Ireng & Kembang & Biru Mentah & Kuning & Bulus Kutub & Bulus Sian & Bulus Abrit"
 materials: "Asetat Mazzucchelli & JINYU Premium & Kustomisasi"
-serviceMode: "OEM & ODM ( Kustomisasi )"
+serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 PCS/Model (100PCS/Color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

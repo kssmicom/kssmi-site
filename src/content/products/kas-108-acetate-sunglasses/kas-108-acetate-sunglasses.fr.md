@@ -6,7 +6,7 @@ itemNo: "KAS-108"
 date: "2026-05-07"
 colors: "Noir & Transparent & Havane & Olive"
 materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
-serviceMode: "Fabrication sous Contrat (OEM) & Conception et Fabrication (ODM) ( Personnalisation )"
+serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

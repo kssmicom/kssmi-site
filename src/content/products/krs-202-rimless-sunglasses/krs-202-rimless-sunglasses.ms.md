@@ -72,7 +72,7 @@ seoKeywords: "pengeluar cermin mata hitam logam tanpa bingkai, borong cermin mat
 - runcit Dutypirlalu & Perjalanan
 - Label Fesyen Boutique
 
-## Panoramica del prodotto
+## Gambaran Keseluruhan
 
 Menggabungkan minimalisme mewah dengan integriti struktur, reka bentuk tanpa bingkai ini menggunakan kerangka logam premium untuk mencapai estetik yang canggih dan mewah.
 

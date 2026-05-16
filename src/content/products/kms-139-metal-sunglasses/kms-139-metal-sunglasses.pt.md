@@ -72,7 +72,7 @@ seoKeywords: "fabricante de óculos de sol de metal, óculos de luxo personaliza
 - Lojas Ópticas Premium
 - Etiquetas de Moda Boutique
 
-## Visão geral do produto
+## Visão Geral
 
 A resiliência industrial encontra a elegância contemporânea no modelo KMS-139, apresentando uma arquitetura de metal de grau aeroespacial premium. Esta armação ultra-resistente equilibra a integridade estrutural com um perfil leve, tornando-a uma peça fundamental para os portfólios de óculos de alta gama.
 

@@ -58,7 +58,7 @@ seoKeywords: "produsen frame optik tanpa rim, kacamata logam kustom OEM, grosir 
 - Rumah Mode Mewah
 - wholesaler kacamata
 
-## Ringkesan Produk
+## Ringkesan
 
 Teknik minimalis ketemu estetika profesional ing bingkai optik tanpa rim iki, digawe saka paduan logam premium sing nawarake integritas struktural tanpa beban visual saka bingkai tradisional.
 

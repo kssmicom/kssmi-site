@@ -6,7 +6,7 @@ itemNo: "KAO-002"
 date: "2026-05-10"
 colors: "Jingga & Kura-kura & Ungu & Hijau"
 materials: "Asetat Premium Mazzucchelli & JINYU & Penyesuaian"
-serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & Pengilangan Reka Bentuk (ODM) (Penyesuaian)"
+serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

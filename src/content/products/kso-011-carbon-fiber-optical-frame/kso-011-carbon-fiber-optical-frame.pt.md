@@ -68,7 +68,7 @@ seoKeywords: "fabricante de armações ópticas de fibra de carbono, óculos de 
 - Marcas Esportivas e Lifestyle Automotivo
 - Lojas Ópticas Premium
 
-## Visão geral do produto
+## Visão Geral
 
 Projetado para o exigente mercado de luxo, o KSO-011 funde fibra de carbono de alto desempenho com hastes de titânio hipoalergênicas. Esta construção híbrida garante um perfil leve como uma pluma, mas resiliente, que atende aos rigorosos padrões das boutiques ópticas premium.
 

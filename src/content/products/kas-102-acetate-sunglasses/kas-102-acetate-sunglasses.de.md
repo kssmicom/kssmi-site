@@ -6,7 +6,7 @@ itemNo: "KAS-102"
 date: "2026-05-05"
 colors: "Transparent & Schwarz & Tiefschwarz & Uniblau & Unigrau & Univiolett & Cyan-Punkt Blau-Punkt & Honig & Grün & Rot-Verlauf & Dunkelblau & Hellblau & Mattgrau & Schildpatt & Transparent-Grau & Panda"
 materials: "Premium Mazzucchelli & JINYU-Acetat & Individualisierung"
-serviceMode: "OEM & ODM ( Individualisierung )"
+serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100Stk/Farbe)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

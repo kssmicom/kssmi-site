@@ -6,7 +6,7 @@ itemNo: "KAO-156"
 date: "2026-05-10"
 colors: "Biru Flora kaliyan Magenta"
 materials: "Asetat Mazzucchelli & JINYU Premium & Kustomisasi"
-serviceMode: "Produksi Kontrak (OEM) & Desain lan Produksi (ODM) ( Kustomisasi )"
+serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

@@ -73,7 +73,7 @@ seoKeywords: "produsen frame optik serat karbon, kacamata titanium kustom China,
 - Merek Gaya Hidup Olahraga & Otomotif
 - Chain Optik High-End
 
-## Ringkasan
+## Ringkesan
 
 Nggabungake serat karbon kelas aeroangkasa karo titanium premium, KSO-033 nawakake keseimbangan sing canggih antarane kekuwatan performa dhuwur lan estetika yang halus. Model iki dadi puncak teknik bahan, dirancang kanggo merek kacamata sing ngutamakake keunggulan teknis lan kemewahan sing entheng.
 

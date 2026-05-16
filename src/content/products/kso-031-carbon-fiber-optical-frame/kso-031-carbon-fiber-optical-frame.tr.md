@@ -68,7 +68,7 @@ seoKeywords: "karbon elyaf optik çerçeveler, lüks optik çerçeveler, gözlü
 - Lüks Moda Evleri
 - Yüksek Segment Optik Zincirleri
 
-## Ürüne Genel Bakış
+## Genel Bakış
 
 KSO-031, havacılık sınıfı karbon elyafı ile rafine titanyumun sofistike bir birleşimini temsil ederek, belirgin bir lüks estetiğe sahip ultra hafif bir optik çözüm sunar. Benzersiz ahşap desenli ve dimi dokular, üst düzey butikler ve yaşam tarzı markalarıyla yankı bulan premium bir görsel kimlik sağlar.
 

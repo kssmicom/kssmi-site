@@ -68,7 +68,7 @@ seoKeywords: "gọng kính sợi carbon, gọng kính xa xỉ, nhà sản xuất
 - Nhà thời trang xa xỉ
 - Chuỗi quang học cao cấp
 
-## Tổng quan sản phẩm
+## Tổng quan
 
 Mẫu KSO-031 đại diện cho sự kết hợp tinh tế giữa sợi carbon cấp hàng không và titan tinh chế, mang đến một giải pháp quang học siêu nhẹ với thẩm mỹ sang trọng khác biệt. Các kết cấu vân gỗ và vân chéo độc đáo cung cấp một bản sắc hình ảnh cao cấp, thu hút các cửa hàng thời trang cao cấp và các thương hiệu phong cách sống.
 

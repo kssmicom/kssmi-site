@@ -6,7 +6,7 @@ itemNo: "KAS-111"
 date: "2026-05-09"
 colors: "Bonbonrot & Rosa Schildpatt & Cremeweiß & Schwarz"
 materials: "Premium Mazzucchelli & JINYU-Acetat & Individualisierung"
-serviceMode: "OEM & ODM ( Individualisierung )"
+serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100Stk/Farbe)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

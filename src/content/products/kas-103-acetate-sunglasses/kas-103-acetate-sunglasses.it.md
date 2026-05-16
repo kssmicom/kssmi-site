@@ -6,7 +6,7 @@ itemNo: "KAS-103"
 date: "2026-05-06"
 colors: "Nero & Giallo a Scacchi & Marmo Perlato & Rosso a Scacchi & Blu a Scacchi & Nero a Scacchi"
 materials: "Mazzucchelli Premium & Acetato JINYU & Personalizzazione"
-serviceMode: "Produzione per Conto Terzi (OEM) & Design e Produzione (ODM) ( Personalizzazione )"
+serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100 pz/colore)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

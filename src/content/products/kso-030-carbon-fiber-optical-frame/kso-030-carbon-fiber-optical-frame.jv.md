@@ -69,7 +69,7 @@ seoKeywords: "produsen frame optik serat karbon, kacamata serat karbon kustom Ch
 - Rumah Mode Mewah
 - Merek Gaya Hidup Olahraga & Otomotif
 
-## Ringkasan Produk
+## Ringkesan
 
 Keunggulan rekayasa dadi inti saka KSO-030, sing nggabungake serat karbon kelas aerospace karo titanium kanggo nggawe frame sing entheng kaya wulu lan awet banget.
 

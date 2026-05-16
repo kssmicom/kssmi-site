@@ -57,7 +57,7 @@ seoKeywords: "Kohlefaser-Sonnenbrillen Hersteller, kundenspezifische OEM-Sonnenb
 - Sport- und Auto-Lifestyle-Marken
 - Duty-Free- und Reisehandel
 
-## Überblick
+## Übersicht
 
 Beim KSS-044 trifft Materialinnovation auf zeitlose Ästhetik. Die Kohlefaserkonstruktion in Luft- und Raumfahrtqualität bietet ein außergewöhnlich hohes Festigkeits-Gewichts-Verhältnis und stellt sicher, dass jeder Rahmen ebenso widerstandsfähig wie leicht ist.
 

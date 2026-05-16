@@ -68,7 +68,7 @@ seoKeywords: "fabricante de gafas de sol rimless, gafas de sol de metal personal
 - Grupos de Grandes Almacenes
 - Tiendas de Concepto y Multi-Marca
 
-## Descripción General
+## Resumen
 
 Diseñado para marcas que priorizan una estética refinada y la integridad estructural, el KRS-209 presenta un perfil rimless elegante fabricado con metal premium mecanizado con precisión.
 

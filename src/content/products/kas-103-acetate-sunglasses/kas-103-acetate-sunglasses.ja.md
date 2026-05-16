@@ -5,8 +5,8 @@ slug: "kas-103-acetate-sunglasses"
 itemNo: "KAS-103"
 date: "2026-05-06"
 colors: "ブラック & イエロー格子 & パールマーブル & レッド格子 & ブルー格子 & ブラック格子"
-materials: "プレミアムMazzucchelli & JINYUアセテート & カスタマイズ対応"
-serviceMode: "受託製造 (OEM) & 設計製造 (ODM) ( カスタマイズ対応 )"
+materials: "プレミアム Mazzucchelli ＆ JINYU アセテート ＆ カスタマイズ対応"
+serviceMode: "OEM製造 / ODM設計製造 カスタマイズ対応"
 moq: "300 個/モデル (100 個/カラー)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

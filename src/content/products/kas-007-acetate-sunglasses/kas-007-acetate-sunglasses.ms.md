@@ -22,7 +22,6 @@ designStyle: "Berani, Mewah, Bergaya, Unik, Trendi, Unisex"
 nosePads: "Alas Hidung Bersepadu"
 hinge: "Engsel Struktur 3+2 Tong & Penyesuaian (5 Tong & Engsel Spring)"
 logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Lencana Logam, Timbulan, Kristal, Pelekat"
-service: "Pembuatan OEM / ODM – Penyesuaian"
 acetateFeature: "Ringan & Tahan Lama & Menyerlah"
 
 # ─────────────────────────────────────────────────────

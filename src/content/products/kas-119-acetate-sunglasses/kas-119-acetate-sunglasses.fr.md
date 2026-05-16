@@ -6,7 +6,7 @@ itemNo: "KAS-119"
 date: "2026-05-09"
 colors: "Noir & Floral & Bleu Brut & Jaune & Écaille Polaire & Écaille Cyan & Écaille Rouge"
 materials: "Acétate Mazzucchelli & JINYU Premium & Personnalisation"
-serviceMode: "OEM & ODM ( Personnalisation )"
+serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 PCS/Model (100PCS/Color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

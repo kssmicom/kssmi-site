@@ -6,7 +6,7 @@ itemNo: "KAS-122"
 date: "2026-05-09"
 colors: "أسود وهفانا"
 materials: "أسيتات Mazzucchelli و JINYU فاخرة وخدمة مخصصة"
-serviceMode: "تصنيع بالتفويض (OEM) وتصميم وتصنيع (ODM) (خدمة مخصصة)"
+serviceMode: "تصنيع بالتفويض / تصميم وتصنيع – خدمة مخصصة"
 moq: "300 قطعة/نموذج (100 قطعة/لون)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

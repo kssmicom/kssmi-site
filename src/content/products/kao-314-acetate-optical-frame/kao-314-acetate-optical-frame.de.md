@@ -6,7 +6,7 @@ itemNo: "KAO-314"
 date: "2026-05-10"
 colors: "Schwarz & Neongrün & Havanna & Champagner & Smoke"
 materials: "Premium-Mazzucchelli & JINYU-Acetat & Individualisierung"
-serviceMode: "Auftragsfertigung & Design und Fertigung (Individualisierung)"
+serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100Stk/Farbe)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

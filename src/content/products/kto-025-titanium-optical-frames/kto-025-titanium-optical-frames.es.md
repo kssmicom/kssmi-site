@@ -67,7 +67,7 @@ seoKeywords: "fabricante monturas ópticas titanio, gafas OEM China, monturas ma
 - Etiquetas Deportivas y de Estilo de Vida Automotriz
 - Venta Duty-Free y Viajes
 
-## Descripción General
+## Resumen
 
 Diseñado para una durabilidad sin concesiones, el KTO-025 utiliza titanio de grado aeroespacial para proporcionar una experiencia ultra ligera sin sacrificar la integridad estructural.
 

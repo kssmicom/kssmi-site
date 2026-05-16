@@ -6,7 +6,7 @@ itemNo: "KAO-305"
 date: "2026-05-10"
 colors: "Zaitun & Hitam & Berjalur & Havana"
 materials: "Asetat Mazzucchelli & JINYU Premium & Penyesuaian"
-serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
+serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

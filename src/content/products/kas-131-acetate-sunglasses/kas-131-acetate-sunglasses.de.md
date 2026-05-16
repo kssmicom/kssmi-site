@@ -69,7 +69,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, maßgeschneiderte Brillen Herstel
 - Boutique-Modemmarken
 - Sport- und Auto-Lifestyle-Marken
 
-## Überblick
+## Übersicht
 
 Mazzucchelli- und JINYU-Acetat bilden den Kern dieser Sonnenbrille und sorgen für eine lebendige Farbtiefe und leichte Langlebigkeit, die High-End-Modemärkte anspricht.
 

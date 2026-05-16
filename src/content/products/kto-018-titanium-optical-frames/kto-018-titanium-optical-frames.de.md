@@ -56,7 +56,7 @@ seoKeywords: "Titan Brillenfassungen Hersteller, maßgeschneiderte Titanbrillen 
 - Hochwertige Optikketten
 - Sport- und Auto-Lifestyle-Marken
 
-## Überblick
+## Übersicht
 
 Hochwertiges Luftfahrt-Titan definiert die strukturelle Integrität dieser Fassungen und bietet eine ultraleichte und hypoallergene Lösung für anspruchsvolle Optikmärkte.
 

@@ -6,7 +6,7 @@ itemNo: "KAO-014"
 date: "2026-05-10"
 colors: "Vermelho & Laranja & Transparente & Amarelo"
 materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
-serviceMode: "OEM & ODM ( Personalização )"
+serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/colore)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

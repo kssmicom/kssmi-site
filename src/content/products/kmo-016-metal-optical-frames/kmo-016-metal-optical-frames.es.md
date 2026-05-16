@@ -60,7 +60,7 @@ seoKeywords: "monturas ópticas de metal y acetato, monturas ópticas personaliz
 - Cadenas Ópticas de Alta Gama
 - Casas de Moda de Lujo
 
-## Visión General
+## Resumen
 
 El bloqueo de color moderno se une a una sofisticada construcción híbrida en esta montura de metal premium y acetato. El versátil diseño unisex cierra la brecha entre las siluetas clásicas y la estética contemporánea de vanguardia.
 

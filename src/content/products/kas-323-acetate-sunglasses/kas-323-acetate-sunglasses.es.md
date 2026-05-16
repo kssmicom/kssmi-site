@@ -69,7 +69,7 @@ seoKeywords: "fabricante de gafas de sol de acetato premium, fábrica de gafas O
 - Etiquetas de Moda Boutique
 - Venta Duty-Free y Viajes
 
-## Descripción general
+## Resumen
 
 Fabricado con precisión a partir de acetato premium Mazzucchelli y JINYU, el modelo KAS-323 ofrece una estética vibrante y duradera que cumple con las rigurosas exigencias del mercado global del lujo.
 

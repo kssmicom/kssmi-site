@@ -6,7 +6,7 @@ itemNo: "KAS-122"
 date: "2026-05-09"
 colors: "Negro & Habana"
 materials: "Acetato Premium Mazzucchelli & JINYU & Personalización"
-serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM) (Personalización)"
+serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

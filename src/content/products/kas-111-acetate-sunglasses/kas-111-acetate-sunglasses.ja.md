@@ -5,8 +5,8 @@ slug: "kas-111-acetate-sunglasses"
 itemNo: "KAS-111"
 date: "2026-05-09"
 colors: "キャンディレッド & ピンクトータス & クリームホワイト & ブラック"
-materials: "プレミアム Mazzucchelli & JINYUアセテート & カスタマイズ対応"
-serviceMode: "OEM製造 & ODM設計製造 ( カスタマイズ対応 )"
+materials: "プレミアム Mazzucchelli ＆ JINYU アセテート ＆ カスタマイズ対応"
+serviceMode: "OEM製造 / ODM設計製造 カスタマイズ対応"
 moq: "300 個/モデル (100個/カラー)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -71,7 +71,7 @@ seoKeywords: "アセテートサングラス メーカー, カスタム OEM サ�
 
 ## 概要
 
-鮮やかな色の深みとプレミアムな構造的完全性が、高品質な MazzucchelliおよびJINYU アセテートから作られた KAS-111 で融合し、大胆でヴィンテージにインスパイアされた美学を捉えています。
+鮮やかな色の深みとプレミアムな構造的完全性が、高品質な Mazzucchelli および JINYU アセテートから作られた KAS-111 で融合し、大胆でヴィンテージにインスパイアされた美学を捉えています。
 
 堅牢な 3+2 バレルヒンジによって構造的安定性が維持され、一体型ノーズパッドはさまざまな顔の形に合わせてシームレスで人間工学に基づいたフィット感を提供します。
 

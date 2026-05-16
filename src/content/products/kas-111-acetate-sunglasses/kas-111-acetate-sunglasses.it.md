@@ -6,7 +6,7 @@ itemNo: "KAS-111"
 date: "2026-05-09"
 colors: "Rosso Caramella & Tartaruga Rosa & Bianco Crema & Nero"
 materials: "Mazzucchelli Premium & Acetato JINYU & Personalizzazione"
-serviceMode: "OEM & ODM ( Personalizzazione )"
+serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100pz/colore)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

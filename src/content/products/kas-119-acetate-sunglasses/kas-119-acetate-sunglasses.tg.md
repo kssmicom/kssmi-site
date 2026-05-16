@@ -6,7 +6,7 @@ itemNo: "KAS-119"
 date: "2026-05-09"
 colors: "Сиёҳ & Гулдор & Кабуди Хом & Зард & Тӯшаки Қутбӣ & Тӯшаки Кабуд & Тӯшаки Сурх"
 materials: "Атсетати премиум Mazzucchelli ва JINYU & Фармоишсозӣ"
-serviceMode: "OEM & ODM ( Фармоишсозӣ )"
+serviceMode: "Истеҳсоли фармоишӣ / Тарроҳӣ ва Істеҳсол – Фармоишсозӣ"
 moq: "300 PCS/Model (100PCS/Color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

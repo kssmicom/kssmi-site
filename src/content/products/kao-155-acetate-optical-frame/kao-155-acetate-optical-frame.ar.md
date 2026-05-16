@@ -6,7 +6,7 @@ itemNo: "KAO-155"
 date: "2026-05-10"
 colors: "أصفر وردي مع بنفسجي، أزرق مخضر وردي مع وردي"
 materials: "أسيتات Mazzucchelli فاخر و JINYU وخدمة مخصصة"
-serviceMode: "تصنيع بالتفويض (OEM) وتصميم وتصنيع (ODM) ( خدمة مخصصة )"
+serviceMode: "تصنيع بالتفويض / تصميم وتصنيع – خدمة مخصصة"
 moq: "300 قطعة/نموذج (100 قطعة/لون)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

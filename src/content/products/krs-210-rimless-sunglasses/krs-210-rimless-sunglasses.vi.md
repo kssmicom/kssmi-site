@@ -68,7 +68,7 @@ seoKeywords: "nhà sản xuất kính mát kim loại không gọng, bán sỉ k
 - Bán lẻ miễn thuế và du lịch
 - Cửa hàng khái niệm & đa nhãn
 
-## Tổng quan về sản phẩm
+## Tổng quan
 
 KRS-210 hiện thực hóa vẻ đẹp tinh tế của thiết kế không gọng, cân bằng giữa sức hút thị giác tối giản với cấu trúc kim loại cao cấp để đảm bảo tính toàn vẹn cấu trúc bền bỉ. Kiểu dáng nhẹ nhàng của nó được thiết kế để đáp ứng các yêu cầu của danh mục sản phẩm cao cấp, nơi sự sang trọng và độ bền được ưu tiên như nhau.
 

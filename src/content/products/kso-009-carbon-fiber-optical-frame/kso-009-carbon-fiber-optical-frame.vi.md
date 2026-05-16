@@ -68,7 +68,7 @@ seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính titan tùy ch�
 - Thương hiệu thể thao và ô tô
 - Chuỗi quang học cao cấp
 
-## Tổng quan về sản phẩm
+## Tổng quan
 
 Kết hợp sợi carbon hiệu suất cao với càng kính titan thanh lịch, KSO-009 đại diện cho một chuẩn mực trong kỹ thuật chế tác kính mắt bền bỉ và tinh tế. Kết cấu vân dệt đặc biệt và lớp hoàn thiện cao cấp của nó đáp ứng chính xác các yêu cầu của thị trường kính mắt xa xỉ.
 

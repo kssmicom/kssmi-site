@@ -68,7 +68,7 @@ seoKeywords: "fabricant montures optiques fibre de carbone, lunettes personnalis
 - Maisons de Mode de Luxe
 - Marques Sportives et Lifestyle Automobile
 
-## Aperçu du produit
+## Aperçu
 
 Conçue pour les environnements professionnels, cette monture combine une face en fibre de carbone de qualité aérospatiale avec des branches en métal de haute qualité pour obtenir une esthétique sophistiquée et technologique.
 

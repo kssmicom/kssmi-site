@@ -72,7 +72,7 @@ seoKeywords: "metal güneş gözlüğü üreticisi, özel lüks gözlük OEM, ha
 - Yüksek Segment Optik Zincirleri
 - Butik Moda Markaları
 
-## Ürün Genel Bakışı
+## Genel Bakış
 
 Endüstriyel dayanıklılık, birinci sınıf havacılık sınıfı metal mimariye sahip KMS-139 modelinde çağdaş zarafetle buluşuyor. Bu ultra dirençli çerçeve, yapısal bütünlüğü hafif bir profille dengeleyerek üst düzey gözlük portföyleri için temel bir taş haline geliyor.
 

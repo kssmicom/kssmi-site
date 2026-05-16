@@ -69,7 +69,7 @@ seoKeywords: "pengilang bingkai optik gentian karbon, kacamata gentian karbon te
 - Rumah Fesyen Mewah
 - Jenama Gaya Hidup Sukan & Automotif
 
-## Gambaran Keseluruhan Produk
+## Gambaran Keseluruhan
 
 Kecemerlangan kejuruteraan adalah teras kepada KSO-030, yang menggabungkan gentian karbon gred aeroangkasa dengan titanium untuk menghasilkan bingkai yang ringan seperti bulu dan sangat tahan lama.
 

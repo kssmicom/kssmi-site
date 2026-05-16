@@ -68,7 +68,7 @@ seoKeywords: "fabricante de óculos de sol rimless de metal, óculos de sol pers
 - Etiquetas de Moda Boutique
 - Lojas Ópticas Premium
 
-## Visão Geral do Produto
+## Visão Geral
 
 Ao combinar um perfil rimless minimalista com componentes de metal premium, o KRS-204 oferece uma estética sofisticada para portfólios de óculos de luxo.
 

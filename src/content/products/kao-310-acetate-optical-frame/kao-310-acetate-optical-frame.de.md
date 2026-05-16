@@ -6,7 +6,7 @@ itemNo: "KAO-310"
 date: "2026-05-10"
 colors: "Schwarz-Grau & Matt-Klar & Glänzend-Grau & Schwarz-Grün"
 materials: "Premium Mazzucchelli & JINYU-Acetat & Individualisierung"
-serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) ( Individualisierung )"
+serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

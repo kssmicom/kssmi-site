@@ -68,7 +68,7 @@ seoKeywords: "Hersteller Carbonfaser Brillenfassungen, maßgeschneiderte Titanbr
 - Sport- und Auto-Lifestyle-Marken
 - Hochwertige Optikketten
 
-## Produktübersicht
+## Übersicht
 
 Durch die Kombination von Hochleistungs-Kohlefaser mit eleganten Titanbügeln ist das Modell KSO-009 ein Meisterwerk an widerstandsfähiger und raffinierter Brillenkonstruktion. Seine markante Webstruktur und das hochwertige Finish sind speziell auf die Anforderungen des Luxus-Optikmarktes zugeschnitten.
 

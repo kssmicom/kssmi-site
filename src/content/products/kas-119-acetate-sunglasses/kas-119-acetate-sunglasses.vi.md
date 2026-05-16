@@ -6,7 +6,7 @@ itemNo: "KAS-119"
 date: "2026-05-09"
 colors: "Đen & Hoa & Xanh lam thô & Vàng & Đồi mồi Bắc cực & Đồi mồi Lục lam & Đồi mồi Đỏ"
 materials: "Axetat Mazzucchelli & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
-serviceMode: "OEM & ODM ( Tùy chỉnh theo yêu cầu )"
+serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 PCS/Model (100PCS/Color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

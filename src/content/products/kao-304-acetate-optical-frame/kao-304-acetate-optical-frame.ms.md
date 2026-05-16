@@ -6,7 +6,7 @@ itemNo: "KAO-304"
 date: "2026-05-10"
 colors: "Hitam & Berjalur & Kura-kura & Coklat"
 materials: "Asetat Premium Mazzucchelli & JINYU & Penyesuaian"
-serviceMode: "Pembuatan OEM (OEM) & Pembuatan Reka Bentuk (ODM) (Penyesuaian)"
+serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

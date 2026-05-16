@@ -6,7 +6,7 @@ itemNo: "KAS-014"
 date: "2026-05-10"
 colors: "Xám đậm & Xanh da trời & Cam hoàng hôn & Tím mộng mơ"
 materials: "Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
-serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
+serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

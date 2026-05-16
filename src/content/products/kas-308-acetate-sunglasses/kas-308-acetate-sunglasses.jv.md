@@ -70,7 +70,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 - Group Store Departemen
 - Ritel Bebas Bea & Perjalanan
 
-## Ringkasan
+## Ringkesan
 
 Diproses kanthi presisi saka asetat Mazzucchelli lan JINYU premium, KAS-308 nyedhiyakake sasis sing entheng nanging kuwat kanggo kacamata fesyen kelas dhuwur.
 

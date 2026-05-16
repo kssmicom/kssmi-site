@@ -6,7 +6,7 @@ itemNo: "KAO-157"
 date: "2026-05-10"
 colors: "Кабуди градиентӣ бо бунафши шаффоф"
 materials: "Атсетати Premium Mazzucchelli ва JINYU ва Фармоишсозӣ"
-serviceMode: "Истеҳсоли шартномавӣ (OEM) ва Тарроҳӣ ва истеҳсол (ODM) ( Фармоишсозӣ )"
+serviceMode: "Истеҳсоли фармоишӣ / Тарроҳӣ ва Истеҳсол – Фармоишсозӣ"
 moq: "300 ад/модел (100 ад/ранг)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

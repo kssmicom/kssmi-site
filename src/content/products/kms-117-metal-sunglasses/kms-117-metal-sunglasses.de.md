@@ -67,7 +67,7 @@ seoKeywords: "Luxus Acetat Metall Sonnenbrille, individueller OEM Brillenherstel
 - Boutique-Modemmarken
 - Duty-Free- und Reisehandel
 
-## Überblick
+## Übersicht
 
 Durch die Verschmelzung von lebendigem Premium-Acetat mit eleganten Metallakzenten repräsentiert die KMS-117 eine anspruchsvolle Hybrid-Identität für moderne Brillenkollektionen.
 

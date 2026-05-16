@@ -6,7 +6,7 @@ itemNo: "KAS-103"
 date: "2026-05-06"
 colors: "블랙 & 옐로우-래티스 & 펄-마블 & 레드-래티스 & 블루-래티스 & 블랙-래티스"
 materials: "프리미엄 Mazzucchelli & JINYU 아세테이트 & 맞춤 서비스"
-serviceMode: "OEM (위탁 생산) & ODM (디자인 생산) ( 맞춤 서비스 )"
+serviceMode: "OEM / ODM 제조 맞춤 서비스"
 moq: "300 개/모델 (100 개/색상)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

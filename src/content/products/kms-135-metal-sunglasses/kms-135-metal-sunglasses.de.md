@@ -72,7 +72,7 @@ Luxusmodehäuser
 Hochwertige Optikketten
 Duty-Free- und Reisehandel
 
-## Überblick
+## Übersicht
 
 Hochwertige Metallkonstruktion trifft auf eine markante Doppelsteg-Silhouette und positioniert die KMS-135 als anspruchsvolle Wahl für moderne Männer.
 

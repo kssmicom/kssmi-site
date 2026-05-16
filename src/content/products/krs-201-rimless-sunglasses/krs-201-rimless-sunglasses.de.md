@@ -68,7 +68,7 @@ seoKeywords: "Rimless-Sonnenbrille Hersteller, Großhandel Metall-Sonnenbrillen,
 - Duty-Free- und Reisehandel
 - Konzept- und Multi-Brand-Stores
 
-## Produktübersicht
+## Überblick
 
 Wenn Marken das Zusammenspiel von minimalistischem Design und hochwertiger Metall-Langlebigkeit suchen, ist die KRS-201 die definitive Wahl. Ihre Rimless-Architektur bietet ein gewichtsloses High-Fashion-Profil, das den anspruchsvollen Anforderungen von Luxusbrillen-Portfolios entspricht.
 

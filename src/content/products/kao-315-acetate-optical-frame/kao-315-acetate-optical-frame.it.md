@@ -6,7 +6,7 @@ itemNo: "KAO-315"
 date: "2026-05-10"
 colors: "Nero & Grigio Traslucido & Havana & Champagne & Trasparente & Oliver"
 materials: "Acetato Premium Mazzucchelli & JINYU & Personalizzazione"
-serviceMode: "OEM & ODM ( Personalizzazione )"
+serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100 pz/colore)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

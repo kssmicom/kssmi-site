@@ -6,7 +6,7 @@ itemNo: "KAS-104"
 date: "2026-05-06"
 colors: "Écaille & Marron & Noir & Floral & Purple-Stripe"
 materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
-serviceMode: "Fabrication sous Contrat (OEM) & Conception et Fabrication (ODM) ( Personnalisation )"
+serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

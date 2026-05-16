@@ -6,7 +6,7 @@ itemNo: "KAS-121"
 date: "2026-05-09"
 colors: "Schwarz & Havanna & Ahorn"
 materials: "Premium-Mazzucchelli & JINYU-Acetat & Individualisierung"
-serviceMode: "OEM & ODM ( Individualisierung )"
+serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

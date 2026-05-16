@@ -62,7 +62,7 @@ seoKeywords: "pengeluar cermin mata hitam tanpa bingkai, cermin mata hitam logam
 
 ## Sesuai Untuk
 - Merek Kacamata Premium
-- Pereka Kacamata Berkesan
+- Pereka Kacamata Bebas
 - Pengedar Label Peribadi
 - Rumah Fesyen Mewah
 - Kumpulan Stor Departments

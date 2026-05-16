@@ -58,7 +58,7 @@ seoKeywords: "fabricante de gafas de sol de titanio sin montura, proveedor de ga
 - Etiquetas de Moda Boutique
 - Venta Duty-Free y Viajes
 
-## Panoramica del producto
+## Resumen
 
 El titanio de grado aeroespacial define la identidad estructural del KRS-211, ofreciendo una estética rimless sin peso que cumple con las rigurosas exigencias del comercio minorista de alta gama.
 

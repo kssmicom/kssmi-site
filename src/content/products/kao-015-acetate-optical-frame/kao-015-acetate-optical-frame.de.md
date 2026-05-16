@@ -5,8 +5,8 @@ slug: "kao-015-acetate-optical-frame"
 itemNo: "KAO-015"
 date: "2026-05-10"
 colors: "Klar & Gelb & Blau & Orange"
-materials: "Premium-Mazzucchelli & JINYU-Acetat & Individualisierung"
-serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) (Individualisierung)"
+materials: "Premium Mazzucchelli & JINYU Acetat & Individualisierung"
+serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100Stk/Farbe)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KAO-015 Kühne Luxus-Acetat-Brillenfassungen | Maßgeschneiderter Hersteller"
-seoDescription: "Erweitern Sie Ihre Brillenkollektion mit den anpassbaren KAO-015 Acetat-Brillenfassungen. Premium-Mazzucchelli-Material, 3+2 Scharniere und 300 MOQ für OEM/ODM."
+seoDescription: "Erweitern Sie Ihre Brillenkollektion mit den anpassbaren KAO-015 Acetat-Brillenfassungen. Premium Mazzucchelli-Material, 3+2 Scharniere und 300 MOQ für OEM/ODM."
 seoKeywords: "Hersteller von Acetat-Brillenfassungen, kundenspezifische OEM-Brillen China, Luxus-Eigenmarkenfassungen, maßgeschneiderte Acetat-Brillenproduktion, Großhandel für Designer-Brillenfassungen, chinesische Brillenfabrik, anpassbare Brillenfassungen, Lieferant von Premium-Acetat-Brillen"
 ---
 

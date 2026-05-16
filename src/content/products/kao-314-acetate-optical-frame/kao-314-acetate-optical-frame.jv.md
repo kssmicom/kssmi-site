@@ -6,7 +6,7 @@ itemNo: "KAO-314"
 date: "2026-05-10"
 colors: "Ireng & Ijo Neon & Bulus & Shampanye & Kukus"
 materials: "Mazzucchelli Premium & Asetat JINYU & Kustomisasi"
-serviceMode: "Produksi Kontrak & Desain lan Produksi ( Kustomisasi )"
+serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

@@ -6,7 +6,7 @@ itemNo: "KAO-308"
 date: "2026-05-10"
 colors: "أسود & أزرق ملكي & بني & زيتوني"
 materials: "Mazzucchelli فاخر & أسيتات JINYU & خدمة مخصصة"
-serviceMode: "تصنيع بالتفويض (OEM) & تصميم وتصنيع (ODM) ( خدمة مخصصة )"
+serviceMode: "تصنيع بالتفويض / تصميم وتصنيع – خدمة مخصصة"
 moq: "300 قطعة/نموذج (100 قطعة/لون)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

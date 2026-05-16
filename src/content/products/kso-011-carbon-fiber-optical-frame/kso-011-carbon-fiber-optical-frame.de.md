@@ -68,7 +68,7 @@ seoKeywords: "Carbonfaser Brillengestell Hersteller, maßgeschneiderte Titanbril
 - Sport- und Auto-Lifestyle-Marken
 - Hochwertige Optikketten
 
-## Produktübersicht
+## Übersicht
 
 Das für den anspruchsvollen Luxusmarkt entwickelte Modell KSO-011 vereint Hochleistungs-Carbonfaser mit hypoallergenen Titanbügeln. Diese Hybridkonstruktion gewährleistet ein federleichtes und dennoch widerstandsfähiges Profil, das den strengen Standards von Premium-Optik-Boutiquen entspricht.
 

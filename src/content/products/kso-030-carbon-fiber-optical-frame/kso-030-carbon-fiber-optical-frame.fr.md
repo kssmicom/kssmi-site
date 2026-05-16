@@ -69,7 +69,7 @@ seoKeywords: "fabricant de montures optiques en fibre de carbone, lunettes perso
 - Maisons de Mode de Luxe
 - Marques Sportives et Lifestyle Automobile
 
-## Présentation du produit
+## Aperçu
 
 L'excellence de l'ingénierie est au cœur du KSO-030, qui associe la fibre de carbone de qualité aérospatiale au titane pour créer une monture à la fois légère et exceptionnellement durable.
 

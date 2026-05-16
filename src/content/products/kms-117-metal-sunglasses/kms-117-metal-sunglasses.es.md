@@ -67,7 +67,7 @@ seoKeywords: "gafas de sol lujo acetato metal, fabricante gafas OEM personalizad
 - Etiquetas de Moda Boutique
 - Venta Duty-Free y Viajes
 
-## Descripción General
+## Resumen
 
 Fusionando un vibrante acetato premium con elegantes acentos metálicos, el KMS-117 representa una sofisticada identidad híbrida para las colecciones de gafas modernas.
 

@@ -72,7 +72,7 @@ seoKeywords: "produttore occhiali da sole a giorno in metallo, occhiali di lusso
 - Vendita Duty-Free e Viaggi
 - Marche di Moda Boutique
 
-## Panoramica del prodotto
+## Panoramica
 
 Fondendo il minimalismo di fascia alta con l'integrità strutturale, questo design a giorno utilizza una struttura in metallo premium per ottenere un'estetica sofisticata e lussuosa.
 

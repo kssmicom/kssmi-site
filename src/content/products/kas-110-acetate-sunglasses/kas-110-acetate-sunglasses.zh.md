@@ -6,7 +6,7 @@ itemNo: "KAS-110"
 date: "2026-05-07"
 colors: "糖果红 & 粉色玳瑁 & 奶油白 & 黑色"
 materials: "优质马祖凯利 & 金余板材 & 定制服务"
-serviceMode: "代工生产 (OEM) & 设计制造 (ODM)（定制服务）"
+serviceMode: "代工生产 / 设计制造 定制服务"
 moq: "300 付/款（每色100件）"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

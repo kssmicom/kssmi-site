@@ -6,7 +6,7 @@ itemNo: "KAS-016"
 date: "2026-05-10"
 colors: "Tortuga con Verde, Negro con Amarillo, Tortuga Negra con Gris Degradado"
 materials: "Acetato Premium Mazzucchelli & JINYU & Personalización"
-serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM) ( Personalización )"
+serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

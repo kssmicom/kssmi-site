@@ -6,7 +6,7 @@ itemNo: "KAS-104"
 date: "2026-05-06"
 colors: "Havana & Coklat & Hitam & Floral & Purple-Stripe"
 materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
-serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
+serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

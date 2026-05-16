@@ -6,7 +6,7 @@ itemNo: "KAS-104"
 date: "2026-05-06"
 colors: "Тӯшак & Қаҳваранг & Сиёҳ & Гулдор & Purple-Stripe"
 materials: "Mazzucchelli-и олӣ & Атсетати JINYU & Фармоишсозӣ"
-serviceMode: "Истеҳсоли шартномавӣ (OEM) & Тарроҳӣ ва истеҳсол (ODM) ( Фармоишсозӣ )"
+serviceMode: "Истеҳсоли фармоишӣ / Тарроҳӣ ва Истеҳсол – Фармоишсозӣ"
 moq: "300 ад/модел (100 ад/ранг)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

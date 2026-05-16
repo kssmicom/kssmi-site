@@ -68,7 +68,7 @@ seoKeywords: "fabricante monturas ópticas fibra carbono, gafas personalizadas O
 - Casas de Moda de Lujo
 - Etiquetas Deportivas y de Estilo de Vida Automotriz
 
-## Resumen del producto
+## Resumen
 
 Diseñada para entornos profesionales, esta montura combina un frente de fibra de carbono de grado aeroespacial con varillas de metal de alta calidad para lograr una estética sofisticada y vanguardista.
 

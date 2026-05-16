@@ -58,7 +58,7 @@ seoKeywords: "Hersteller von Metall-Optikfassungen, individuelle OEM-Optikfassun
 - Hochwertige Optikketten
 - Boutique-Modemmarken
 
-## Überblick
+## Übersicht
 
 Geschmiedet aus Premium-Metall und veredelt mit widerstandsfähiger Ionenplattierung, bietet die KMO-231 eine anspruchsvolle Unisex-Ästhetik mit kompromissloser struktureller Stärke.
 

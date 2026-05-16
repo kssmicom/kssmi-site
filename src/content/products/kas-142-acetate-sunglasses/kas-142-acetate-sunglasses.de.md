@@ -69,7 +69,7 @@ seoKeywords: "Acetat-Sonnenbrille, Modebrillenhersteller, Brillenfabrik China, L
 - Boutique-Modemmarken
 - Duty-Free- und Reisehandel
 
-## Überblick
+## Übersicht
 
 Gefertigt aus hochwertigem Mazzucchelli- und JINYU-Acetat, kombiniert dieses Modell eine lebendige Farbpalette mit hochklaren Nylongläsern für eine anspruchsvolle Luxus-Ästhetik.
 

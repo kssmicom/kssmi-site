@@ -6,7 +6,7 @@ itemNo: "KAS-105"
 date: "2026-05-06"
 colors: "그레이 & 글로시 하바나 & 매트 하바나 & 클리어 & 블랙"
 materials: "프리미엄 Mazzucchelli & JINYU 아세테이트 & 맞춤 서비스"
-serviceMode: "OEM (위탁 생산) & ODM (디자인 생산) ( 맞춤 서비스 )"
+serviceMode: "OEM / ODM 제조 맞춤 서비스"
 moq: "300 개/모델 (100 개/컬러)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

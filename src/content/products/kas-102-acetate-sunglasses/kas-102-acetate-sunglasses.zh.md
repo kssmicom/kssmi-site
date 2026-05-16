@@ -6,7 +6,7 @@ itemNo: "KAS-102"
 date: "2026-05-05"
 colors: "透明 & 黑色 & 纯黑色 & 纯蓝色 & 纯灰色 & 纯紫色 & 青色点 蓝色点 & 蜂蜜色 & 绿色 & 渐变红 & 深蓝色 & 浅蓝色 & 哑光灰 & 哈瓦那 & 透明灰 & 熊猫色"
 materials: "优质马祖凯利板材 & 金余板材 & 定制服务"
-serviceMode: "代工生产 (OEM) & 设计制造 (ODM) ( 定制服务 )"
+serviceMode: "代工生产 / 设计制造 定制服务"
 moq: "300 付/款（每色100件）"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

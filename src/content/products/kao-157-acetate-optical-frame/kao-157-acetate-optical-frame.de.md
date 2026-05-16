@@ -6,7 +6,7 @@ itemNo: "KAO-157"
 date: "2026-05-10"
 colors: "Blau mit Farbverlauf und hellem Violett"
 materials: "Premium-Mazzucchelli- und JINYU-Acetat & Individualisierung"
-serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) ( Individualisierung )"
+serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

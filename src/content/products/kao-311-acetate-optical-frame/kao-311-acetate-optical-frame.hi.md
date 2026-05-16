@@ -6,7 +6,7 @@ itemNo: "KAO-311"
 date: "2026-05-10"
 colors: "काला & स्मोकी-पर्पल & कछुआ & भूरा"
 materials: "प्रीमियम Mazzucchelli & JINYU एसीटेट & कस्टमाइज़ेशन"
-serviceMode: "OEM & ODM (कस्टमाइज़ेशन)"
+serviceMode: "OEM / ODM निर्माण – कस्टमाइज़ेशन सेवा"
 moq: "300 पीस/मॉडल (प्रति रंग 100 पीस)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

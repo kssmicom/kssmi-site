@@ -6,7 +6,7 @@ itemNo: "KAO-158"
 date: "2026-05-10"
 colors: "黑色, 红色, 绿色"
 materials: "优质金余与 马祖凯利 板材 & 定制服务"
-serviceMode: "代工生产 (OEM) & 设计制造 (ODM) ( 定制 )"
+serviceMode: "代工生产 / 设计制造 定制服务"
 moq: "300 付/款（每色100件）"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

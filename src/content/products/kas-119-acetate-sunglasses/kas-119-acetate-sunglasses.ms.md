@@ -6,7 +6,7 @@ itemNo: "KAS-119"
 date: "2026-05-09"
 colors: "Hitam & Bunga & Biru Mentah & Kuning & Kura-kura Kutub & Kura-kura Sian & Kura-kura Merah"
 materials: "Asetat Mazzucchelli & JINYU Premium & Penyesuaian"
-serviceMode: "OEM & ODM ( Penyesuaian )"
+serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 PCS/Model (100PCS/Color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

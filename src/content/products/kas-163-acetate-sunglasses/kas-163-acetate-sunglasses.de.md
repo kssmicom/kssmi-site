@@ -56,7 +56,7 @@ seoKeywords: "Hersteller von Acetat-Sonnenbrillen, KAS-163 individuelle Brillen,
 - Boutique-Modemmarken
 - Duty-Free- und Reisehandel
 
-## Überblick
+## Übersicht
 
 High-End-Mode trifft auf Materialexzellenz beim Modell KAS-163, das erstklassiges Mazzucchelli- und JINYU-Acetat für eine anspruchsvolle, langlebige und leichte Unisex-Ästhetik integriert.
 

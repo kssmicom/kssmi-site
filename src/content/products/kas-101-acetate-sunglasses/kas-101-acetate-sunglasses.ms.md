@@ -6,7 +6,7 @@ itemNo: "KAS-101"
 date: "2026-05-05"
 colors: "Putih & Panda & Leopard & Havana & Jelas & Hitam"
 materials: "Premium Mazzucchelli & Asetat JINYU & Penyesuaian"
-serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & Pembuatan ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
+serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

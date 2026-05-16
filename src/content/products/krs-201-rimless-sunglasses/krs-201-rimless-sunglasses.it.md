@@ -68,7 +68,7 @@ seoKeywords: "produttore occhiali da sole rimless, vendita all'ingrosso occhiali
 - Vendita Duty-Free e Viaggi
 - Store di Concetto e Multi-Marchio
 
-## Panoramica del prodotto
+## Panoramica
 
 Quando i marchi cercano l'incontro tra design minimalista e durata del metallo di alta qualità, il KRS-201 rappresenta la scelta definitiva. La sua architettura rimless offre un profilo leggero e d'alta moda che risuona con i requisiti sofisticati dei portfolio di occhiali di lusso.
 

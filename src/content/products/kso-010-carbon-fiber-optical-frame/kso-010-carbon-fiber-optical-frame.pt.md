@@ -52,7 +52,7 @@ seoDescription: "Adquira armações ópticas luxo KSO-010 em fibra de carbono co
 seoKeywords: "fabricante armações ópticas fibra de carbono, óculos personalizados titânio fibra de carbono, armações ópticas luxo OEM China, atacadista óculos detalhes madeira, armações fibra de carbono marca própria, fábrica óculos Shenzhen"
 ---
 
-## Características Técnicas
+## Características
 - **Material de Grau Aeroespacial:** Construção premium em fibra de carbono e titânio que oferece sensação ultraleve com extrema relação resistência-peso.
 - **Detalhes em Madeira Natural:** Acabamento artesanal com texturas de fibra de carbono de alta qualidade complementadas por detalhes primorosos em Ébano do Ceilão e Carvalho Branco.
 - **Hardware Durável:** Dobradiças estáveis com estrutura de barril 2+1 projetadas para fluidez operacional a longo prazo e integridade estrutural.

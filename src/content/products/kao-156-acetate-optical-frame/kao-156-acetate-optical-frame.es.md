@@ -6,7 +6,7 @@ itemNo: "KAO-156"
 date: "2026-05-10"
 colors: "Azul Floral con Magenta"
 materials: "Acetato Premium Mazzucchelli y JINYU y Personalización"
-serviceMode: "Fabricación por Cuenta de Terceros (OEM) y Diseño y Fabricación (ODM) ( Personalización )"
+serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100uds/color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

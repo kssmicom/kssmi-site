@@ -6,7 +6,7 @@ itemNo: "KAS-114"
 date: "2026-05-09"
 colors: "Preto & Champanhe & Amarelo"
 materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
-serviceMode: "OEM & ODM ( Personalização )"
+serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

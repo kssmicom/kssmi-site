@@ -6,7 +6,7 @@ itemNo: "KAS-015"
 date: "2026-05-10"
 colors: "हरे रंग के साथ कछुआ, काले-पीले के साथ काला, हरे रंग के साथ काला कछुआ, काला"
 materials: "प्रीमियम Mazzucchelli और JINYU एसीटेट और कस्टमाइज़ेशन"
-serviceMode: "OEM और ODM ( कस्टमाइज़ेशन )"
+serviceMode: "OEM / ODM निर्माण – कस्टमाइज़ेशन सेवा"
 moq: "300 पीस/मॉडल (100 पीस/रंग)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

@@ -6,7 +6,7 @@ itemNo: "KAS-104"
 date: "2026-05-06"
 colors: "هافانا و بني و أسود و مشجر و Purple-Stripe"
 materials: "Mazzucchelli فاخر و أسيتات JINYU و خدمة مخصصة"
-serviceMode: "تصنيع بالتفويض (OEM) و تصميم وتصنيع (ODM) ( خدمة مخصصة )"
+serviceMode: "تصنيع بالتفويض / تصميم وتصنيع – خدمة مخصصة"
 moq: "300 قطعة/نموذج (100 قطعة/لون)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

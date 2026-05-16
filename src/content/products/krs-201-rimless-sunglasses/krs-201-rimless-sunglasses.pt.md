@@ -68,7 +68,7 @@ seoKeywords: "fabricante de óculos de sol rimless, atacado de óculos de sol de
 - Venda Duty-Free e Viagens
 - Lojas de Conceito e Multi-Marcas
 
-## Visão geral do produto
+## Visão Geral
 
 Quando as marcas buscam a interseção entre o design minimalista e a durabilidade do metal de alta qualidade, o KRS-201 serve como a escolha definitiva. Sua arquitetura rimless oferece um perfil leve e de alta moda que ressoa com os requisitos sofisticados dos portfólios de óculos de luxo.
 

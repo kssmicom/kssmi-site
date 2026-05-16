@@ -6,7 +6,7 @@ itemNo: "KAS-102"
 date: "2026-05-05"
 colors: "Lut Sinar & Hitam & Hitam Padu & Biru Padu & Kelabu Padu & Ungu Padu & Cyan-Dot Blue-Dot & Madu & Hijau & Merah Gradien & Biru Gelap & Biru Muda & Kelabu Matte & Kura-kura & Kelabu Lut Sinar & Panda"
 materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
-serviceMode: "OEM & ODM ( Penyesuaian )"
+serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

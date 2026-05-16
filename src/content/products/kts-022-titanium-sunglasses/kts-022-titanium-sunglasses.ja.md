@@ -4,7 +4,7 @@ title: "カスタムチタンサングラス"
 slug: "kts-022-titanium-sunglasses"
 itemNo: "KTS-022"
 date: "2026-04-07"
-colors: "Elegant Black & Rose gold & Gradient Blue & Dark green silver"
+colors: "エレガントブラック & ロゼゴールド & グラデーションブルー & ダークグリーンシルバー"
 materials: "プレミアムチタン"
 serviceMode: "受託製造 (OEM) & 設計製造 (ODM) ( カスタマイズ対応 )"
 moq: "300 個/モデル"
@@ -63,7 +63,7 @@ seoKeywords: "チタンサングラス製造, カスタムOEMサングラス, �
 ## 最適
 
 - プレミアムアイウェアブランド
-- 独立アイウェアデザイナー
+- 独立眼鏡デザイナー
 - プライベートブランド卸売業者
 - ラグジュアリーファッションブランド
 - スポーツ＆カーライフスタイルブランド

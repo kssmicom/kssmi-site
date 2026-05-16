@@ -6,7 +6,7 @@ itemNo: "KAO-002"
 date: "2026-05-10"
 colors: "오렌지 & 거북이 등껍질 & 퍼플 & 그린"
 materials: "프리미엄 Mazzucchelli & JINYU 아세테이트 & 맞춤 서비스"
-serviceMode: "OEM (위탁 생산) & ODM (디자인 생산) (맞춤 서비스)"
+serviceMode: "OEM / ODM 제조 맞춤 서비스"
 moq: "300 개/모델 (100개/컬러)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

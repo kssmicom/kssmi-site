@@ -6,7 +6,7 @@ itemNo: "KAS-110"
 date: "2026-05-07"
 colors: "Đỏ Candy & Đồi mồi hồng & Trắng kem & Đen"
 materials: "Axetat Premium Mazzucchelli & JINYU & Tùy chỉnh theo yêu cầu"
-serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) (Tùy chỉnh theo yêu cầu)"
+serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

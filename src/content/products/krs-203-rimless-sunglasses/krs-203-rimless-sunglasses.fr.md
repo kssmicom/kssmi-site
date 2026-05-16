@@ -70,7 +70,7 @@ seoKeywords: "fabricant de lunettes de soleil en métal sans monture, production
 - Marques D2C E-commerce
 - Groupes de Grands Magasins
 
-## Aperçu
+## Présentation
 
 L'esthétique sans monture rencontre l'intégrité structurelle dans le KRS-203, un modèle défini par son profil minimaliste et sa construction de branches en métal haut de gamme.
 

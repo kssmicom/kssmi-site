@@ -6,7 +6,7 @@ itemNo: "KAO-309"
 date: "2026-05-10"
 colors: "Ireng & Biru & Bulus & Zaitun"
 materials: "Asetat Premium Mazzucchelli & JINYU & Kustomisasi"
-serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) (Kustomisasi)"
+serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

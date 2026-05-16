@@ -73,7 +73,7 @@ seoKeywords: "Metallsonnenbrillen Hersteller, kundenspezifische Luxus-Brillen OE
 - Hochwertige Optikketten
 - Boutique-Modemmarken
 
-## Produktübersicht
+## Übersicht
 
 Industrielle Widerstandsfähigkeit trifft beim KMS-139 auf zeitgenössische Eleganz, mit einer hochwertigen Metallarchitektur in Luft- und Raumfahrtqualität. Dieser extrem belastbare Rahmen balanciert strukturelle Integrität mit einem leichtgewichtigen Profil und ist damit ein Eckpfeiler für High-End-Brillenportfolios.
 

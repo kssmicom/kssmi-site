@@ -6,7 +6,7 @@ itemNo: "KAO-155"
 date: "2026-05-10"
 colors: "Amarillo Floral con Púrpura, Verde Azulado Floral con Rosa"
 materials: "Acetato Mazzucchelli Premium y JINYU y Personalización"
-serviceMode: "OEM y ODM ( Personalización )"
+serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

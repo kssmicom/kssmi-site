@@ -6,7 +6,7 @@ itemNo: "KAS-010"
 date: "2026-05-10"
 colors: "Noir & Meteor-Crystal & Tanzanite & Bombardie"
 materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
-serviceMode: "OEM & ODM ( Personnalisation )"
+serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100pcs/couleur)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

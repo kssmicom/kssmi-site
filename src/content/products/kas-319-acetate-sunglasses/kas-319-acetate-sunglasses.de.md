@@ -69,7 +69,7 @@ seoKeywords: "Premium-Acetat-Sonnenbrillenhersteller, kundenspezifische OEM-Bril
 - Luxusmodehäuser
 - Konzept- und Multi-Brand-Stores
 
-## Überblick
+## Übersicht
 
 Gefertigt aus einer raffinierten Mischung aus Premium-Mazzucchelli- und JINYU-Acetat, legen diese Sonnenbrillen Wert auf sowohl strukturelle Tiefe als auch ein hochglänzendes Finish. Das leichte, lebendige Rahmenmaterial sorgt für eine erstklassige Haptik, die den Standards der Luxusmode entspricht.
 

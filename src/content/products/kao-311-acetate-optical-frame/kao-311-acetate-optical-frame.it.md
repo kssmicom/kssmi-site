@@ -6,7 +6,7 @@ itemNo: "KAO-311"
 date: "2026-05-10"
 colors: "Nero & Viola Fumè & Tartaruga & Marrone"
 materials: "Mazzucchelli Premium & Acetato JINYU & Personalizzazione"
-serviceMode: "OEM & ODM (Personalizzazione)"
+serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100 pz/colore)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

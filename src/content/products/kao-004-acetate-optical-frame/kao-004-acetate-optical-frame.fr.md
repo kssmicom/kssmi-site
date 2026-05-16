@@ -6,7 +6,7 @@ itemNo: "KAO-004"
 date: "2026-05-10"
 colors: "Noir & Écaille & Orange & Zèbre & Doré"
 materials: "Acétate Premium Mazzucchelli & JINYU & Personnalisation"
-serviceMode: "OEM & ODM (Personnalisation)"
+serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

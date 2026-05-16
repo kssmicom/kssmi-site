@@ -6,7 +6,7 @@ itemNo: "KAS-102"
 date: "2026-05-05"
 colors: "Şeffaf & Siyah & Mat Siyah & Düz Mavi & Düz Gri & Düz Mor & Cyan-Dot Blue-Dot & Bal & Yeşil & Gradyan Kırmızı & Koyu Mavi & Açık Mavi & Mat Gri & Kaplumbağa & Şeffaf Gri & Panda"
 materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
-serviceMode: "OEM & ODM ( Özelleştirme )"
+serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (her renk için 100 adet)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

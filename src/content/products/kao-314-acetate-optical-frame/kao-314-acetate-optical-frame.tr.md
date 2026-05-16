@@ -6,7 +6,7 @@ itemNo: "KAO-314"
 date: "2026-05-10"
 colors: "Siyah & Neon Yeşil & Kaplumbağa Kabuğu & Şampanya & Füme"
 materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
-serviceMode: "OEM & ODM ( Özelleştirme )"
+serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100adet/renk)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

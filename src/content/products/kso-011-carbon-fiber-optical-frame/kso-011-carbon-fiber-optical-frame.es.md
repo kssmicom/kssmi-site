@@ -68,7 +68,7 @@ seoKeywords: "fabricante monturas ópticas fibra de carbono, gafas titanio perso
 - Etiquetas Deportivas y de Estilo de Vida Automotriz
 - Cadenas Ópticas de Alta Gama
 
-## Resumen del producto
+## Resumen
 
 Diseñado para el exigente mercado del lujo, el KSO-011 fusiona fibra de carbono de alto rendimiento con varillas de titanio hipoalergénicas. Esta construcción híbrida asegura un perfil ligero como una pluma pero resistente que cumple con los rigurosos estándares de las boutiques ópticas premium.
 

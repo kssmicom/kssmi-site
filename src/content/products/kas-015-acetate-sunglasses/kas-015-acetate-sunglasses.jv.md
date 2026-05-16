@@ -6,7 +6,7 @@ itemNo: "KAS-015"
 date: "2026-05-10"
 colors: "Bulus karo Ijo, Ireng karo Ireng-Kuning, Bulus Ireng karo Ijo, Ireng"
 materials: "Asetat Premium Mazzucchelli & JINYU & Kustomisasi"
-serviceMode: "OEM & ODM ( Kustomisasi )"
+serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

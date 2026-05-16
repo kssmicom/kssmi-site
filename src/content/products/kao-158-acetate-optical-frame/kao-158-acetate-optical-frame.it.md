@@ -6,7 +6,7 @@ itemNo: "KAO-158"
 date: "2026-05-10"
 colors: "Nero, Rosso, Verde"
 materials: "Acetato Premium Mazzucchelli & JINYU & Personalizzazione"
-serviceMode: "Produzione per Conto Terzi (OEM) & Design e Produzione (ODM) ( Personalizzazione )"
+serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100pz/colore)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

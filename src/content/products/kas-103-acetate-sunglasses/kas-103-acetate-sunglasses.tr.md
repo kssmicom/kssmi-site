@@ -6,7 +6,7 @@ itemNo: "KAS-103"
 date: "2026-05-06"
 colors: "Siyah & Sarı Kareli & İnci Mermer & Kırmızı Kareli & Mavi Kareli & Siyah Kareli"
 materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
-serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
+serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100 adet/renk)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

@@ -73,7 +73,7 @@ seoKeywords: "Acetat-Sonnenbrillen-Hersteller, Custom OEM Sonnenbrillen, Luxus P
 - Luxusmodehäuser
 - Konzept- und Multi-Brand-Stores
 
-## Überblick
+## Übersicht
 
 Die KAS-502 aus hochwertigem Mazzucchelli- und JINYU-Acetat besticht durch ein lebendiges, handpoliertes Finish, das dem Zeitgeist der High-End-Mode entspricht. Die dem Material innewohnende Langlebigkeit und das leichte Profil bilden eine anspruchsvolle Basis für Premium-Brillenportfolios.
 

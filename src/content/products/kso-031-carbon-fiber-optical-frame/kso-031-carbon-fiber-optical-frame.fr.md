@@ -68,7 +68,7 @@ seoKeywords: "montures optiques en fibre de carbone, montures optiques de luxe, 
 - Maisons de Mode de Luxe
 - Chaînes Optiques Haut de Gamme
 
-## Présentation du produit
+## Aperçu
 
 Le modèle KSO-031 représente une fusion sophistiquée de fibre de carbone de qualité aérospatiale et de titane raffiné, offrant une solution optique ultra-légère avec une esthétique de luxe distinctive. Les textures uniques de grain de bois et de sergé offrent une identité visuelle haut de gamme qui résonne auprès des boutiques de luxe et des marques lifestyle.
 

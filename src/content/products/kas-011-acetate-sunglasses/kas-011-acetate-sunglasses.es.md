@@ -6,7 +6,7 @@ itemNo: "KAS-011"
 date: "2026-05-10"
 colors: "Habana & Negro & Blanco"
 materials: "Mazzucchelli Premium & Acetato JINYU & Personalización"
-serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM) (Personalización)"
+serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100uds/color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

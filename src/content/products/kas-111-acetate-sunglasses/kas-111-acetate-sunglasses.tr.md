@@ -6,7 +6,7 @@ itemNo: "KAS-111"
 date: "2026-05-09"
 colors: "Şeker Kırmızısı & Pembe Kaplumbağa & Krem Beyaz & Siyah"
 materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
-serviceMode: "OEM & ODM ( Özelleştirme )"
+serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100adet/renk)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

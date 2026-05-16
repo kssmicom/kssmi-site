@@ -70,7 +70,7 @@ seoKeywords: "Rimless Sonnenbrille Hersteller, maßgeschneiderte Metall-Sonnenbr
 - Kaufhausgruppen
 - Duty-Free- und Reisehandel
 
-## Übersicht
+## Überblick
 
 Präzision trifft auf Minimalismus in dieser randlosen Konstruktion, bei der hochwertige Metallbügel ein anspruchsvolles, leichtes Profil für Luxusbrillenkollektionen bieten.
 

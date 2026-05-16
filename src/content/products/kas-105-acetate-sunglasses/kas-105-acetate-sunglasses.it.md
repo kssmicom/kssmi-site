@@ -6,7 +6,7 @@ itemNo: "KAS-105"
 date: "2026-05-06"
 colors: "Grigio & Avana Lucido & Avana Opaco & Trasparente & Nero"
 materials: "Mazzucchelli Premium & Acetato JINYU & Personalizzazione"
-serviceMode: "Produzione per Conto Terzi & Design e Produzione ( Personalizzazione )"
+serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100 pz/colore)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

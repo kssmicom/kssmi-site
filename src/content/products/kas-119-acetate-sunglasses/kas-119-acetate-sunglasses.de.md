@@ -6,7 +6,7 @@ itemNo: "KAS-119"
 date: "2026-05-09"
 colors: "Schwarz & Floral & Rohblau & Gelb & Polar-Schildpatt & Cyan-Schildpatt & Rot-Schildpatt"
 materials: "Premium Mazzucchelli & JINYU-Acetat & Individualisierung"
-serviceMode: "OEM & ODM ( Individualisierung )"
+serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 PCS/Model (100PCS/Color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

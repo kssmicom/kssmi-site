@@ -69,7 +69,7 @@ seoKeywords: "hersteller von luxus-metallsonnenbrillen, individuelle damenbrille
 - Luxusmodehäuser
 - Boutique-Modemmarken
 
-## Überblick
+## Übersicht
 
 Das Modell KMS-136 definiert moderne Eleganz durch seine hochwertige Metallarchitektur und das trendweisende Doppelsteg-Design. Diese anspruchsvolle Silhouette vereint strukturelle Integrität mit einer kühnen Luxusästhetik, die auf den Premium-Markt für Damenbrillen zugeschnitten ist.
 

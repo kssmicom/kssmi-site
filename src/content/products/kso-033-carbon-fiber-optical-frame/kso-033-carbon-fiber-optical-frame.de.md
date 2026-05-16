@@ -73,7 +73,7 @@ seoKeywords: "Kohlefaser Brillengestelle Hersteller, maßgeschneiderte Titanbril
 - Sport- und Auto-Lifestyle-Marken
 - Hochwertige Optikketten
 
-## Überblick
+## Übersicht
 
 Durch die Kombination von Kohlefaser in Luft- und Raumfahrtqualität mit hochwertigem Titan bietet die KSO-033 eine anspruchsvolle Balance zwischen Hochleistungsfestigkeit und raffinierter Ästhetik. Dieses Modell stellt die Spitze der Materialtechnik dar und wurde für Brillenmarken entwickelt, die Wert auf technische Überlegenheit und leichten Luxus legen.
 

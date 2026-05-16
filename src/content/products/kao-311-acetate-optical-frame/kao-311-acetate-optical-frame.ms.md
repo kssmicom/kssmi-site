@@ -6,7 +6,7 @@ itemNo: "KAO-311"
 date: "2026-05-10"
 colors: "Hitam & Ungu Berasap & Kura-kura & Coklat"
 materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
-serviceMode: "OEM & ODM (Penyesuaian)"
+serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

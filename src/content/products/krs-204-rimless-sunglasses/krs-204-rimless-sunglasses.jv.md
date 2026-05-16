@@ -68,7 +68,7 @@ seoKeywords: "produsen kacamata hitam logam rimless, kacamata hitam OEM kustom C
 - Label Busuk Fashion
 - Chain Optik High-End
 
-## Ringkesan Produk
+## Ringkesan
 
 Kanti nggabungake profil rimless minimalis karo komponen logam premium, KRS-204 nawakake estetika sing canggih kanggo portofolio kacamata mewah.
 

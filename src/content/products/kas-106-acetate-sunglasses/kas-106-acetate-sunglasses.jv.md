@@ -6,7 +6,7 @@ itemNo: "KAS-106"
 date: "2026-05-06"
 colors: "Kencana & Havana Kilap & Havana Matte & Bening & Ireng & Coklat & Ijo"
 materials: "Asetat Mazzucchelli Premium & Asetat JINYU & Kustomisasi"
-serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
+serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

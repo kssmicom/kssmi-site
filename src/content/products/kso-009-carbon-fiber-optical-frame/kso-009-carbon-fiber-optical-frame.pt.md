@@ -68,7 +68,7 @@ seoKeywords: "fabricante armações ópticas fibra de carbono, óculos de titân
 - Marcas Esportivas e Lifestyle Automotivo
 - Lojas Ópticas Premium
 
-## Visão geral do produto
+## Visão Geral
 
 Combinando fibra de carbono de alto desempenho com hastes de titânio elegantes, o KSO-009 representa uma aula magistral em engenharia de óculos resiliente e refinada. Sua textura de trama distinta e acabamento premium atendem especificamente às demandas do mercado óptico de luxo.
 

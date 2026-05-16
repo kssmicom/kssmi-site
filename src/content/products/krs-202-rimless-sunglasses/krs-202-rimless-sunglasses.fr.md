@@ -72,7 +72,7 @@ seoKeywords: "fabricant lunettes de soleil percées métal, lunettes de luxe en 
 - Vente Duty-Free et Voyage
 - Marques de Mode Boutique
 
-## Panoramica del prodotto
+## Présentation
 
 Alliant minimalisme haut de gamme et intégrité structurelle, ce design percé utilise une monture en métal premium pour obtenir une esthétique sophistiquée et luxueuse.
 

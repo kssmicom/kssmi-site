@@ -6,7 +6,7 @@ itemNo: "KAO-312"
 date: "2026-05-10"
 colors: "Ireng & Ijo Neon & Spark & Havana & Bulus Abrit"
 materials: "Asetat Mazzucchelli Premium & Asetat JINYU & Kustomisasi"
-serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
+serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

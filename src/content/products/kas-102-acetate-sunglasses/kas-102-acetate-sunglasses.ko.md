@@ -6,7 +6,7 @@ itemNo: "KAS-102"
 date: "2026-05-05"
 colors: "투명 & 블랙 & 솔리드 블랙 & 솔리드 블루 & 솔리드 그레이 & 솔리드 퍼플 & 시안 도트 블루 도트 & 허니 & 그린 & 그라데이션 레드 & 다크 블루 & 라이트 블루 & 매트 그레이 & 하바나 & 투명 그레이 & 판다"
 materials: "프리미엄 Mazzucchelli & JINYU 아세테이트 & 맞춤 서비스"
-serviceMode: "OEM & ODM ( 맞춤 서비스 )"
+serviceMode: "OEM / ODM 제조 맞춤 서비스"
 moq: "300 개/모델 (색상당 100개)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

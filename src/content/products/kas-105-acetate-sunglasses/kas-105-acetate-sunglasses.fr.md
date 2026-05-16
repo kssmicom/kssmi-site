@@ -6,7 +6,7 @@ itemNo: "KAS-105"
 date: "2026-05-06"
 colors: "Gris & Écaille Brillante & Écaille Mate & Transparent & Noir"
 materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
-serviceMode: "Fabrication sous Contrat & Conception et Fabrication ( Personnalisation )"
+serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

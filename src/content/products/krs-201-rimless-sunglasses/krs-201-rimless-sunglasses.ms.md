@@ -68,7 +68,7 @@ seoKeywords: "pengilang cermin mata hitam rimless, borong cermin mata hitam loga
 - runcit Dutypirlalu & Perjalanan
 - Kedai Konsep & Berbilang Jenama
 
-## Gambaran Keseluruhan Produk
+## Gambaran Keseluruhan
 
 Apabila jenama menuntut persilangan reka bentuk minimalis dan ketahanan logam gred tinggi, KRS-201 berfungsi sebagai pilihan yang pasti. Seni bina rimlessnya menawarkan profil fesyen tinggi tanpa berat yang bergema dengan keperluan sofistikated portfolio kacamata mewah.
 

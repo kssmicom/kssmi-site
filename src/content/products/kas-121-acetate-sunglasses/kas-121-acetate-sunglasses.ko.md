@@ -6,7 +6,7 @@ itemNo: "KAS-121"
 date: "2026-05-09"
 colors: "블랙 & 하바나 & 메이플"
 materials: "프리미엄 Mazzucchelli & JINYU 아세테이트 & 맞춤 서비스"
-serviceMode: "OEM & ODM ( 맞춤 서비스 )"
+serviceMode: "OEM / ODM 제조 맞춤 서비스"
 moq: "300 개/모델 (컬러당 100개)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

@@ -6,7 +6,7 @@ itemNo: "KAS-019"
 date: "2026-05-10"
 colors: "Preto, Verde Leitoso, Castanho Transparente"
 materials: "Acetato Premium Mazzucchelli e JINYU e Personalização"
-serviceMode: "Fabricação por Encomenda (OEM) e Design e Fabricação (ODM) ( Personalização )"
+serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100pçs/cor)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

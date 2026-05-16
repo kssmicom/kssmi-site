@@ -68,7 +68,7 @@ seoKeywords: "çerçevesiz güneş gözlüğü üreticisi, toptan metal güneş 
 - Duty-Free ve Seyahat Perakendecileri
 - Concept ve Çoklu Marka Mağazaları
 
-## Ürüne Genel Bakış
+## Genel Bakış
 
 Markalar minimalist tasarım ile yüksek dereceli metal dayanıklılığının kesişimini talep ettiğinde, KRS-201 kesin çözüm olarak hizmet eder. Çerçevesiz mimarisi, lüks gözlük portföylerinin sofistike gereksinimleriyle yankılanan ağırlıksız, yüksek moda bir profil sunar.
 

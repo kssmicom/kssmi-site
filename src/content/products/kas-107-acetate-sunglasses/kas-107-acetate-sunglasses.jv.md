@@ -6,7 +6,7 @@ itemNo: "KAS-107"
 date: "2026-05-06"
 colors: "Ireng & Bening & Havana & Zaitun"
 materials: "Asetat Premium Mazzucchelli & JINYU & Kustomisasi"
-serviceMode: "OEM & ODM ( Kustomisasi )"
+serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

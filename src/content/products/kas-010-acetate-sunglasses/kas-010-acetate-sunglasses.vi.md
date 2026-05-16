@@ -6,7 +6,7 @@ itemNo: "KAS-010"
 date: "2026-05-10"
 colors: "Đen & Meteor-Crystal & Tanzanite & Bombardie"
 materials: "Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
-serviceMode: "Sản xuất gia công & Thiết kế và sản xuất ( Tùy chỉnh theo yêu cầu )"
+serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100cái/màu)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

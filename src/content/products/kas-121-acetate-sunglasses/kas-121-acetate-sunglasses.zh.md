@@ -6,7 +6,7 @@ itemNo: "KAS-121"
 date: "2026-05-09"
 colors: "黑色 & 哈瓦那色 & 枫木色"
 materials: "优质马祖凯利 & 金余板材 & 定制服务"
-serviceMode: "代工生产 (OEM) & 设计制造 (ODM)（定制服务）"
+serviceMode: "代工生产 / 设计制造 定制服务"
 moq: "300 付/款（每色100件）"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

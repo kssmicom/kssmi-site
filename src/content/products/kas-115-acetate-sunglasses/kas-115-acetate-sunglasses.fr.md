@@ -6,7 +6,7 @@ itemNo: "KAS-115"
 date: "2026-05-09"
 colors: "Noir & Violet & Blanc & Écaille & Orange"
 materials: "Acétate Premium Mazzucchelli et JINYU & Personnalisation"
-serviceMode: "Fabrication OEM & ODM (Personnalisation)"
+serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

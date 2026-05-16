@@ -6,7 +6,7 @@ itemNo: "KAS-109"
 date: "2026-05-07"
 colors: "Ireng & Putih & Bulus & Ijo Zaitun"
 materials: "Asetat Mazzucchelli Premium & JINYU & Kustomisasi"
-serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
+serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

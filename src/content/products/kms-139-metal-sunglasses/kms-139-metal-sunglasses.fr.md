@@ -73,7 +73,7 @@ seoKeywords: "fabricant de lunettes de soleil en métal, lunettes de luxe person
 - Chaînes Optiques Haut de Gamme
 - Marques de Mode Boutique
 
-## Présentation du produit
+## Aperçu
 
 La résilience industrielle rencontre l'élégance contemporaine dans le modèle KMS-139, doté d'une architecture métallique de qualité aérospatiale haut de gamme. Cette monture ultra-résistante équilibre l'intégrité structurelle avec un profil léger, ce qui en fait une pierre angulaire pour les portefeuilles de lunettes haut de gamme.
 

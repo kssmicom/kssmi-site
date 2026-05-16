@@ -68,7 +68,7 @@ seoKeywords: "nhà sản xuất kính mát kim loại không gọng, kính mát 
 - Nhãn thời trang boutique
 - Chuỗi quang học cao cấp
 
-## Tổng quan sản phẩm
+## Tổng quan
 
 Bằng cách kết hợp kiểu dáng không gọng tối giản với các thành phần kim loại cao cấp, KRS-204 mang đến vẻ đẹp tinh tế cho các bộ sưu tập kính mắt sang trọng.
 

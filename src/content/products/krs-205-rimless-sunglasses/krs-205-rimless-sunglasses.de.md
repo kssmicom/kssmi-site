@@ -69,7 +69,7 @@ seoKeywords: "randlose Metall-Sonnenbrille Hersteller, Großhandel Luxus-Brillen
 - Hochwertige Optikketten
 - Konzept- und Multi-Brand-Stores
 
-## Produktübersicht
+## Überblick
 
 Das für minimalistische Raffinesse konzipierte Modell KRS-205 besticht durch einen Rahmen aus Premium-Metall, der die randlose Ästhetik für den Luxusmarkt neu definiert. Seine leichte Architektur kombiniert strukturelle Belastbarkeit mit einem raffinierten Profil und spricht Marken an, die hochwertige technische Klarheit suchen.
 

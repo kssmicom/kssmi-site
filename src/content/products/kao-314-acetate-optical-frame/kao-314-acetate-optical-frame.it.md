@@ -6,7 +6,7 @@ itemNo: "KAO-314"
 date: "2026-05-10"
 colors: "Nero & Verde Neon & Avana & Champagne & Fumo"
 materials: "Mazzucchelli Premium & Acetato JINYU & Personalizzazione"
-serviceMode: "OEM & ODM ( Personalizzazione )"
+serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100pz/colore)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

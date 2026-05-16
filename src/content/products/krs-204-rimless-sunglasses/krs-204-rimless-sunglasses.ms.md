@@ -68,7 +68,7 @@ seoKeywords: "pengilang cermin mata hitam logam rimless, cermin mata hitam OEM t
 - Label Fesyen Boutique
 - Rantai Optik Bergengsi
 
-## Gambaran Keseluruhan Produk
+## Gambaran Keseluruhan
 
 Dengan menggabungkan profil rimless minimalis dengan komponen logam premium, KRS-204 menawarkan estetika canggih untuk portfolio kacamata mewah.
 

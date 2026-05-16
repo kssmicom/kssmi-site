@@ -78,7 +78,7 @@ seoKeywords: "Acetat-Sonnenbrillen-Hersteller, individuelle OEM-Sonnenbrillen, M
 - Boutique-Modemmarken
 - Konzept- und Multi-Brand-Stores
 
-## Überblick
+## Übersicht
 
 Lebendige Texturen treffen auf strukturelle Integrität beim KAS-320, einem Modell, das durch seine Konstruktion aus hochwertigem Mazzucchelli- und JINYU-Acetat besticht. Diese Rahmen bieten eine leichte und dennoch langlebige Ästhetik, die moderne Modetrends einfängt und gleichzeitig eine zeitlose Anziehungskraft für vielfältige Markenkollektionen behält.
 

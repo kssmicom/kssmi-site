@@ -6,7 +6,7 @@ itemNo: "KAS-104"
 date: "2026-05-06"
 colors: "Havana & Kahverengi & Siyah & Çiçekli & Purple-Stripe"
 materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
-serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
+serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (Renk başına 100 adet)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

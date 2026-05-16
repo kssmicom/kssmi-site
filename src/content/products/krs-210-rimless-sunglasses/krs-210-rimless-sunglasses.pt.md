@@ -68,7 +68,7 @@ seoKeywords: "fabricante de óculos de sol de metal rimless, óculos rimless no 
 - Venda Duty-Free e Viagens
 - Lojas de Conceito e Multi-Marcas
 
-## Visão Geral do Produto
+## Visão Geral
 
 O modelo KRS-210 encarna uma estética rimless sofisticada, equilibrando um apelo visual minimalista com uma arquitetura de metal de alta qualidade para integridade estrutural duradoura. Seu perfil leve foi projetado para atender às demandas de portfólios premium, onde elegância e durabilidade são priorizadas igualmente.
 

@@ -6,7 +6,7 @@ itemNo: "KAS-019"
 date: "2026-05-10"
 colors: "أسود، أخضر حليبي، بني شفاف"
 materials: "أسيتات Mazzucchelli و JINYU فاخرة و خدمة مخصصة"
-serviceMode: "تصنيع بالتفويض (OEM) و تصميم وتصنيع (ODM) ( خدمة مخصصة )"
+serviceMode: "تصنيع بالتفويض / تصميم وتصنيع – خدمة مخصصة"
 moq: "300 قطعة/نموذج (100قطعة/لون)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

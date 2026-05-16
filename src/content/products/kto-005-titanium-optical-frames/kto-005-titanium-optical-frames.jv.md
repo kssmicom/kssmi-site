@@ -60,7 +60,7 @@ seoKeywords: "produsen frame optik titanium, kacamata asetat titanium kustom, fr
 - Chain Optik High-End
 - Group Store Departemen
 
-## Ringkasan
+## Ringkesan
 
 Nyampur titanium struktural karo asetat kelas dhuwur, KTO-005 menehi estetika premium sing seimbang kanggo pasar mewah modern.
 

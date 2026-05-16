@@ -58,7 +58,7 @@ seoKeywords: "monturas ópticas de metal, monturas híbridas acetato metal, fabr
 - Casas de Moda de Lujo
 - Etiquetas de Moda Boutique
 
-## Descripción General
+## Resumen
 
 Utilizando galvanoplastia iónica de alta precisión para lograr su acabado en bronce brillante, el modelo KMO-257 combina un frente de acetato premium con varillas metálicas arquitectónicas.
 

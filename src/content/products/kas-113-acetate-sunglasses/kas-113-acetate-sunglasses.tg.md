@@ -6,7 +6,7 @@ itemNo: "KAS-113"
 date: "2026-05-09"
 colors: "Сиёҳ & Тӯшак & Кремӣ & Кабуд"
 materials: "Mazzucchelli олӣ & Атсетати JINYU & Фармоишсозӣ"
-serviceMode: "Истеҳсоли шартномавӣ (OEM) & Тарроҳӣ ва истеҳсол (ODM) ( Фармоишсозӣ )"
+serviceMode: "Истеҳсоли фармоишӣ / Тарроҳӣ ва Истеҳсол – Фармоишсозӣ"
 moq: "300 ад/модел (100ад/ранг)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

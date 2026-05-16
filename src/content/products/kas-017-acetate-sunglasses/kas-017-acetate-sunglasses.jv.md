@@ -6,7 +6,7 @@ itemNo: "KAS-017"
 date: "2026-05-10"
 colors: "Ireng, Abrit Tembus Pandang, Biru Tembus Pandang"
 materials: "Asetat Premium Mazzucchelli & JINYU & Kustomisasi"
-serviceMode: "Produksi Kontrak & Desain lan Produksi ( Kustomisasi )"
+serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

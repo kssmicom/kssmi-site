@@ -69,7 +69,7 @@ seoKeywords: "fabricante de armações ópticas em fibra de carbono, óculos em 
 - Casas de Moda de Luxo
 - Marcas Esportivas e Lifestyle Automotivo
 
-## Visão geral do produto
+## Visão Geral
 
 A excelência em engenharia está no cerne do KSO-030, que combina fibra de carbono de grau aeroespacial com titânio para criar uma armação que é simultaneamente leve como uma pluma e excecionalmente durável.
 

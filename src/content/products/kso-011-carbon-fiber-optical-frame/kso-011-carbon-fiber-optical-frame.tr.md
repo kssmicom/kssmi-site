@@ -68,7 +68,7 @@ seoKeywords: "karbon fiber optik çerçeve üreticisi, özel titanyum gözlük �
 - Spor ve Otomotiv Yaşam Tarzı Markaları
 - Yüksek Segment Optik Zincirleri
 
-## Ürüne Genel Bakış
+## Genel Bakış
 
 Zorlu lüks pazarı için tasarlanan KSO-011, yüksek performanslı karbon fiberi hipoalerjenik titanyum saplarla birleştirir. This hibrit yapı, premium optik butiklerin katı standartlarını karşılayan tüy kadar hafif ancak dirençli bir profil sağlar.
 

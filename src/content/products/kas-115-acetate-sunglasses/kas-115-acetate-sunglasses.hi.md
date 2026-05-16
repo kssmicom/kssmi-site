@@ -6,7 +6,7 @@ itemNo: "KAS-115"
 date: "2026-05-09"
 colors: "काला & बैंगनी & सफेद & कछुआ & नारंगी"
 materials: "प्रीमियम माज़ुकेली और जिन्जू एसीटेट & कस्टमाइज़ेशन"
-serviceMode: "OEM & ODM (कस्टमाइज़ेशन)"
+serviceMode: "OEM / ODM निर्माण – कस्टमाइज़ेशन सेवा"
 moq: "300 पीस/मॉडल (100 पीस/रंग)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

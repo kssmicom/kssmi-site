@@ -6,7 +6,7 @@ itemNo: "KAS-109"
 date: "2026-05-07"
 colors: "黑色 & 透明 & 玳瑁色 & 橄榄绿"
 materials: "优质马祖凯利 & 金余板材 & 定制服务"
-serviceMode: "代工生产 (OEM) & 设计制造 (ODM) ( 定制 )"
+serviceMode: "代工生产 / 设计制造 定制服务"
 moq: "300 付/款 (每色100件)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

@@ -71,7 +71,7 @@ seoKeywords: "produsen kacamata hitam titanium, kacamata mewah merek pribadi, pa
 - Merek Gaya Hidup Olahraga & Otomotif
 - P中小uters Dutypirlalu & Journey
 
-## Ringkasan
+## Ringkesan
 
 Dirancang kanggo pasar kacamata premium, model KTS-206 nampilake integritas struktural sing luar biasa lan sifat hypoallergenic saka titanium mutu aeroangkasa. Siluet frame sing canggih nimbang performa sing enteng karo estetika modern sing kandel, sing dicocokake kanggo lingkungan ritel mewah.
 

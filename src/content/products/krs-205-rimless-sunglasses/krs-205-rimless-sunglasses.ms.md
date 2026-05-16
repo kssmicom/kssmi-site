@@ -69,7 +69,7 @@ seoKeywords: "pengeluar cermin mata hitam logam tanpa bingkai, borong kacamata m
 - Rantai Optik Bergengsi
 - Kedai Konsep & Berbilang Jenama
 
-## Gambaran Keseluruhan Produk
+## Gambaran Keseluruhan
 
 Direka untuk kecanggihan minimalis, model KRS-205 menampilkan bingkai logam premium yang mentakrifkan semula estetika tanpa bingkai untuk pasaran mewah. Seni bina ringannya menggabungkan daya tahan struktur dengan profil yang halus, menarik minat jenama yang mencari kejelasan teknikal mewah.
 

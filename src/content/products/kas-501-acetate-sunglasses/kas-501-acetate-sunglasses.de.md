@@ -70,7 +70,7 @@ seoKeywords: "Acetat Sonnenbrillen Hersteller, individuelle OEM Sonnenbrillen, L
 - Boutique-Modemmarken
 - Kaufhausgruppen
 
-## Überblick
+## Übersicht
 
 Die KAS-501 verbindet hochwertiges Mazzucchelli- und JINYU-Acetat und bietet eine lebendige Farbtiefe und leichte Haltbarkeit, die den anspruchsvollen Standards hochwertiger Modelabel entspricht.
 

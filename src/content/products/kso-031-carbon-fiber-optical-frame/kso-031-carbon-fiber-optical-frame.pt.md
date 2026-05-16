@@ -68,7 +68,7 @@ seoKeywords: "armações ópticas de fibra de carbono, armações ópticas de lu
 - Casas de Moda de Luxo
 - Lojas Ópticas Premium
 
-## Visão geral do produto
+## Visão Geral
 
 O modelo KSO-031 representa uma fusão sofisticada de fibra de carbono de grau aeroespacial e titânio refinado, oferecendo uma solução óptica ultra-leve com uma estética de luxo distinta. As texturas exclusivas de grão de madeira e sarja proporcionam uma identidade visual premium que ressoa com boutiques de alta qualidade e marcas de estilo de vida.
 

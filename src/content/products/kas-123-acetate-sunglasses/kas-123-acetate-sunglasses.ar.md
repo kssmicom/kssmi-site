@@ -6,7 +6,7 @@ itemNo: "KAS-123"
 date: "2026-05-09"
 colors: "أسود & خردلي & قيقبي"
 materials: "أسيتات Mazzucchelli و JINYU فاخر & خدمة مخصصة"
-serviceMode: "تصنيع بالتفويض (OEM) & تصميم وتصنيع (ODM) ( خدمة مخصصة )"
+serviceMode: "تصنيع بالتفويض / تصميم وتصنيع – خدمة مخصصة"
 moq: "300 قطعة/نموذج (100 قطعة لكل لون)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

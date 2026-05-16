@@ -68,7 +68,7 @@ seoKeywords: "produttore occhiali da sole rimless in metallo, occhiali da sole p
 - Marche di Moda Boutique
 - Catene Ottiche di Alto Livello
 
-## Panoramica del prodotto
+## Panoramica
 
 Combinando un profilo rimless minimalista con componenti in metallo premium, il KRS-204 offre un'estetica sofisticata per i portfolio di occhiali di lusso.
 

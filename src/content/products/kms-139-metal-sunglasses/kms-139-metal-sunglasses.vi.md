@@ -72,7 +72,7 @@ seoKeywords: "nhà sản xuất kính mát kim loại, OEM kính mắt xa xỉ t
 - Chuỗi quang học cao cấp
 - Nhãn thời trang boutique
 
-## Tổng quan về sản phẩm
+## Tổng quan
 
 Sự kiên cố công nghiệp kết hợp với vẻ sang trọng đương đại trong mẫu KMS-139, nổi bật với cấu trúc kim loại cao cấp đạt tiêu chuẩn hàng không. Gọng kính siêu bền này cân bằng giữa tính toàn vẹn cấu trúc và trọng lượng nhẹ, trở thành nền tảng cho các bộ sưu tập kính mắt cao cấp.
 

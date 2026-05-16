@@ -6,7 +6,7 @@ itemNo: "KAS-121"
 date: "2026-05-09"
 colors: "Noir & Havana & Maple"
 materials: "Acétate Premium Mazzucchelli & JINYU & Personnalisation"
-serviceMode: "OEM & ODM ( Personnalisation )"
+serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100pcs/color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

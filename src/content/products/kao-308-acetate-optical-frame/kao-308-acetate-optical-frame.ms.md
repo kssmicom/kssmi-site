@@ -6,7 +6,7 @@ itemNo: "KAO-308"
 date: "2026-05-10"
 colors: "Hitam & Biru Diraja & Coklat & Zaitun"
 materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
-serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
+serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100unit/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

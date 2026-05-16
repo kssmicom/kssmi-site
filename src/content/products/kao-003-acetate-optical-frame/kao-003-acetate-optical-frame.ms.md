@@ -6,7 +6,7 @@ itemNo: "KAO-003"
 date: "2026-05-10"
 colors: "Hitam & Kura-kura & Jingga & Zebra & Keemasan"
 materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
-serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
+serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100unit/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -17,7 +17,7 @@ series: "optical-frames, fashion-eyewear, acetate-optical-frames, fashion-acetat
 # ─────────────────────────────────────────────────────
 size: "55-19-140mm & Penyesuaian"
 frameMaterial: "Bingkai dan Temple Asetat Premium"
-lenseMaterial: "Lensa Nylon Teguh & Penyesuaian"
+lensMaterial: "Lensa Nylon Teguh & Penyesuaian"
 designStyle: "Bergaya, Trendi, Unik, Berani, Klasik, Mewah, Unisex"
 nosePads: "Alas Hidung Bersepadu"
 hinge: "Engsel Struktur Rivet 4+3 Barrel & Penyesuaian (5 Barrel & Engsel Spring)"

@@ -58,7 +58,7 @@ seoKeywords: "randlose Brillenfassungen Hersteller, maßgeschneiderte Metallbril
 - Luxusmodehäuser
 - Augenoptik-Großhändler
 
-## Produktübersicht
+## Überblick
 
 Minimalistische Ingenieurskunst trifft in dieser randlosen Fassung auf professionelle Ästhetik. Gefertigt aus einer hochwertigen Metalllegierung, bietet sie strukturelle Integrität ohne das optische Gewicht herkömmlicher Rahmen.
 

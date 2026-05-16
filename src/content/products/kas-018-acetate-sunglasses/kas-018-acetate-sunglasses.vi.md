@@ -6,7 +6,7 @@ itemNo: "KAS-018"
 date: "2026-05-10"
 colors: "Đen, Đỏ trong suốt, Xanh dương trong suốt"
 materials: "Axetat Mazzucchelli & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
-serviceMode: "OEM & ODM (Tùy chỉnh theo yêu cầu)"
+serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

@@ -69,7 +69,7 @@ seoKeywords: "fabricant lunettes soleil titane, lunettes soleil titane gros, lun
 - Maisons de Mode de Luxe
 - Vente Duty-Free et Voyage
 
-## Présentation
+## Aperçu
 
 Le KTS-024 utilise du titane de première qualité pour obtenir une monture légère mais exceptionnellement durable qui s'adresse au marché des boutiques haut de gamme.
 

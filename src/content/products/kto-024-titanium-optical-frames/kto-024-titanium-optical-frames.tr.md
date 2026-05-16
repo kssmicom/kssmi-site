@@ -67,7 +67,7 @@ seoKeywords: "titanyum optik çerçeve üreticisi, özel titanyum gözlük tedar
 - Gözlük Toptancıları
 - Butik Moda Markaları
 
-## Özellikler
+## Genel Bakış
 
 Seçici kullanıcılar için tasarlanan KTO-024, yüksek mukavemetli dayanıklılık ile ultra hafiflik hissi arasında mükemmel bir denge kurmak için birinci sınıf titanyum kullanır. Bu malzeme seçimi, zahmetsizce konforlu kalırken günlük kullanımın zorluklarına dayanan sofistike bir görünüm sağlar.
 

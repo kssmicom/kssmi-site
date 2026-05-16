@@ -67,7 +67,7 @@ seoKeywords: "Kohlefaser-Brillenfassungen, Brillenhersteller nach Maß, Titan-Ko
 - Sport- und Auto-Lifestyle-Marken
 - Kaufhausgruppen
 
-## Überblick
+## Übersicht
 
 Das Modell KSO-012 wurde für Elite-Marken entwickelt und kombiniert Kohlefaser in Luft- und Raumfahrtqualität mit Präzisions-Titanbügeln, um ein ultraleichtes und strukturell überlegenes Gestell zu liefern. Jede Komponente ist CNC-gefräst, um exakte Toleranzen zu erreichen, und weist eine einzigartige technische Textur auf, die moderne High-End-Brillen definiert.
 

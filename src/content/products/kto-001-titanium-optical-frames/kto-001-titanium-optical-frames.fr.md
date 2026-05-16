@@ -56,7 +56,7 @@ seoKeywords: "fabricant montures optiques titane, lunettes OEM Chine, montures m
 - Chaînes Optiques Haut de Gamme
 - Groupes de Grands Magasins
 
-## Présentation
+## Aperçu
 
 Définissant le summum de l'excellence des matériaux, le KTO-001 utilise du titane de qualité aérospatiale pour offrir une expérience ultra-légère et hypoallergénique. Sa construction élégante constitue la toile parfaite pour les marques ciblant le marché de l'optique haut de gamme.
 

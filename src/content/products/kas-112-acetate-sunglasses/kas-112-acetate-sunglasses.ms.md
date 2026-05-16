@@ -6,7 +6,7 @@ itemNo: "KAS-112"
 date: "2026-05-09"
 colors: "Hitam & Hitam Padu & Havana & Merah Gula-gula & Kura-kura Merah Jambu & Putih Krim"
 materials: "Premium Mazzucchelli & Asetat JINYU & Penyesuaian"
-serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & Pengilangan Reka Bentuk (ODM) ( Penyesuaian )"
+serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

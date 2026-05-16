@@ -6,7 +6,7 @@ itemNo: "KAO-307"
 date: "2026-05-10"
 colors: "Schwarz & Transparent & Schildpatt & Gestreift"
 materials: "Premium-Mazzucchelli & JINYU-Acetat & Individualisierung"
-serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) ( Individualisierung )"
+serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100Stk/Farbe)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

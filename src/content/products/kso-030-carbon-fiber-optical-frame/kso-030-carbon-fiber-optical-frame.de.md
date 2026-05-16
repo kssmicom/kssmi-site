@@ -69,7 +69,7 @@ seoKeywords: "Hersteller von Kohlefaser-Brillenrahmen, individuelle Kohlefaser-B
 - Luxusmodehäuser
 - Sport- und Auto-Lifestyle-Marken
 
-## Produktübersicht
+## Übersicht
 
 Herausragende Ingenieurskunst bildet das Herzstück des KSO-030, bei dem Kohlefaser in Luft- und Raumfahrtqualität mit Titan kombiniert wird, um einen Rahmen zu schaffen, der sowohl federleicht als auch außergewöhnlich langlebig ist.
 

@@ -6,7 +6,7 @@ itemNo: "KAO-158"
 date: "2026-05-10"
 colors: "Noir, Rouge, Vert"
 materials: "Acétate Premium Mazzucchelli & JINYU & Personnalisation"
-serviceMode: "Fabrication sous Contrat (OEM) & Conception et Fabrication (ODM) ( Personnalisation )"
+serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100pcs/couleur)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

@@ -58,7 +58,7 @@ seoKeywords: "fabricant de montures optiques percées, lunettes en métal person
 - Maisons de Mode de Luxe
 - Grossistes de Lunettes
 
-## Aperçu du produit
+## Aperçu
 
 L'ingénierie minimaliste rencontre l'esthétique professionnelle dans cette montature optique percée, fabriquée à partir d'un alliage métallique de qualité supérieure offrant une intégrité structurelle sans le poids viseur des bordures traditionnelles.
 

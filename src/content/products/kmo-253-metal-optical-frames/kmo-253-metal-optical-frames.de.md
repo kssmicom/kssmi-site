@@ -55,7 +55,7 @@ seoKeywords: "Metallbrillenfassungen Fabrik, individuelle OEM-Brillen, maßgesch
 - Boutique-Modemmarken
 - Hochwertige Optikketten
 
-## Überblick
+## Übersicht
 
 Luxuslabels, die präzisionsgefertigte Metallsilhouetten benötigen, finden im KMO-253 ihre Lösung. Dieses Modell verfügt über einen hochwertigen Metallrahmen und Bügel, die durch zeitgemäßes Color-Blocking akzentuiert werden und eine anspruchsvolle Ästhetik bieten, die strukturelle Haltbarkeit mit einem trendweisenden Unisex-Profil verbindet.
 

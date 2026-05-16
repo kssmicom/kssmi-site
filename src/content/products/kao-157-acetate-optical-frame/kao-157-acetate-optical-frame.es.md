@@ -6,7 +6,7 @@ itemNo: "KAO-157"
 date: "2026-05-10"
 colors: "Azul Degradado con Violeta Claro"
 materials: "Acetato Premium Mazzucchelli y JINYU & Personalización"
-serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM) ( Personalización )"
+serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

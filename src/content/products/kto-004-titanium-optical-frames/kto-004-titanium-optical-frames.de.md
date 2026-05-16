@@ -57,7 +57,7 @@ seoKeywords: "Titan Brillenfassungen, Brillenfassungs-Hersteller, chinesischer B
 - Hochwertige Optikketten
 - Sport- und Auto-Lifestyle-Marken
 
-## Überblick
+## Übersicht
 
 Anspruchsvolle Brillenkollektionen finden im KTO-004 ihre Basis, wo Titan in Luftfahrtqualität auf handgefertigtes Acetat in einer nahtlosen Mischung aus Haltbarkeit und Stil trifft.
 

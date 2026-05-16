@@ -60,7 +60,7 @@ seoKeywords: "Titan-Optikbrillen Hersteller, individuelle Acetat Titan Brillen, 
 - Hochwertige Optikketten
 - Kaufhausgruppen
 
-## Überblick
+## Übersicht
 
 Die KTO-005 kombiniert strukturelles Titan mit hochwertigem Acetat und bietet eine ausgewogene, erstklassige Ästhetik für den modernen Luxusmarkt.
 

@@ -6,7 +6,7 @@ itemNo: "KAO-158"
 date: "2026-05-10"
 colors: "Сиёҳ, Сурх, Сабз"
 materials: "Атсетати Premium Mazzucchelli ва JINYU ва Фармоишсозӣ"
-serviceMode: "Истеҳсоли шартномавӣ (OEM) ва Тарроҳӣ ва истеҳсол (ODM) ( Фармоишсозӣ )"
+serviceMode: "Истеҳсоли фармоишӣ / Тарроҳӣ ва Истеҳсол – Фармоишсозӣ"
 moq: "300 ад/модел (100ад/ранг)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

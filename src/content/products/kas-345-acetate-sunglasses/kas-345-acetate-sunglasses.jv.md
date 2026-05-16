@@ -69,7 +69,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, eyewear
 - Chain Optik High-End
 - Distributor Label Pribadi
 
-## Ringkasan
+## Ringkesan
 
 Asetat Mazzucchelli lan JINYU dadi dhasar kanggo model iki, menehi hasil pungkasan sing sregep lan jero warna sing luar biasa. Arsitektur frame sing dipoles tangan iki nggabungake daya tarik estetika klasik kanthi rasa entheng kanggo posisi pasar kelas dhuwur.
 

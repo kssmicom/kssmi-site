@@ -6,7 +6,7 @@ itemNo: "KAS-124"
 date: "2026-05-09"
 colors: "Preto & Chifre de Búfalo & Tartaruga"
 materials: "Premium Mazzucchelli & Acetato JINYU & Personalização"
-serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) (Personalização)"
+serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100pçs/cor)"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"

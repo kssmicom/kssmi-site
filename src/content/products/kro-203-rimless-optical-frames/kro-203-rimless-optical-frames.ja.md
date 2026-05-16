@@ -6,7 +6,7 @@ itemNo: "KRO-203"
 date: "2026-04-06"
 colors: "クリア"
 materials: "プレミアムメタル"
-serviceMode: "OEM製造 / ODM設計製造 カスタマイズ対応"
+serviceMode: "OEM受託製造 & ODM設計製造 ( カスタマイズ対応 )"
 moq: "300 個/モデル"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -23,7 +23,7 @@ nosePads: "シリコンノーズパッド"
 hinge: "スプリングヒンジ ＆ カスタマイズ対応"
 electroplating: "イオンプレーティング"
 logo: "印刷, レーザー, レーザー色入れ, 箔押し, メタル装飾, エンボス加工, クリスタル装飾, 立体ステッカー"
-service: "OEM製造 / ODM設計製造 カスタマイズ対応"
+service: "OEM受託製造 / ODM設計製造 ( カスタマイズ対応 )"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kro-203-rimless-optical-frames/oem-odm-customized-rimless-optical-frames-kro-203-1.webp"
@@ -58,7 +58,7 @@ seoKeywords: "リムレス光学フレームメーカー, カスタム金属ア�
 - ラグジュアリーファッションブランド
 - 眼鏡卸売業者
 
-## 製品概要
+## 概要
 
 ミニマルなエンジニアリングとプロフェッショナルな美学が融合したこのリムレス光学フレームは、伝統的なフレームのような視覚的な重さを感じさせない、プレミアムな金属合金製で、優れた構造的完全性を備えています。
 

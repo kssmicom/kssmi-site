@@ -67,7 +67,7 @@ seoKeywords: "Hersteller von Titan-Brillenfassungen, kundenspezifische OEM-Brill
 - Kaufhausgruppen
 - Hochwertige Optikketten
 
-## Überblick
+## Übersicht
 
 Gefertigt aus Titan in Luft- und Raumfahrtqualität, bietet das Modell KTO-023 eine anspruchsvolle Balance zwischen leichter Festigkeit und hypoallergenem Komfort für den Luxusbrillenmarkt.
 

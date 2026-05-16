@@ -6,7 +6,7 @@ itemNo: "KAO-306"
 date: "2026-05-10"
 colors: "Siyah & Gri & Kahverengi & Zeytin"
 materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
-serviceMode: "OEM & ODM ( Özelleştirme )"
+serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100 adet/renk)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

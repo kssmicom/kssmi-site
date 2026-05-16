@@ -6,7 +6,7 @@ itemNo: "KAO-156"
 date: "2026-05-10"
 colors: "Macenta ile Çiçek Mavisi"
 materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
-serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
+serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (her renk için 100 adet)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

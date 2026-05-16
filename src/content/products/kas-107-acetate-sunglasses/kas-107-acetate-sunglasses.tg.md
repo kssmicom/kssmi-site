@@ -6,7 +6,7 @@ itemNo: "KAS-107"
 date: "2026-05-06"
 colors: "Сиёҳ & Шаффоф & Ҳавана & Зайтунӣ"
 materials: "Атсетати олӣ Mazzucchelli ва JINYU & Фармоишсозӣ"
-serviceMode: "OEM ва ODM ( Фармоишсозӣ )"
+serviceMode: "Истеҳсоли фармоишӣ / Тарроҳӣ ва Истеҳсол – Фармоишсозӣ"
 moq: "300 ад/модел (100ад/ранг)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

@@ -6,7 +6,7 @@ itemNo: "KAO-157"
 date: "2026-05-10"
 colors: "Şeffaf Menekşe ile Gradyan Mavi"
 materials: "Premium Mazzucchelli ve JINYU Asetat & Özelleştirme"
-serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
+serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100 adet/renk)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

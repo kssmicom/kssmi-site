@@ -60,7 +60,7 @@ seoKeywords: "fabricante de armações ópticas de titânio, óculos personaliza
 - Lojas Ópticas Premium
 - Grupos de Grandes Armazéns
 
-## Resumo
+## Visão Geral
 
 Combinando titânio estrutural com acetato de alta qualidade, o KTO-005 oferece uma estética premium e equilibrada para o moderno mercado de luxo.
 

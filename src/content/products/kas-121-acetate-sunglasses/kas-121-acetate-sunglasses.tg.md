@@ -6,7 +6,7 @@ itemNo: "KAS-121"
 date: "2026-05-09"
 colors: "Сиёҳ & Ҳавана & Клен"
 materials: "Атсетати олӣ Mazzucchelli & JINYU & Фармоишсозӣ"
-serviceMode: "Истеҳсоли шартномавӣ (OEM) & Тарроҳӣ ва истеҳсол (ODM) (Фармоишсозӣ)"
+serviceMode: "Истеҳсоли фармоишӣ / Тарроҳӣ ва Істеҳсол – Фармоишсозӣ"
 moq: "300 ад/модел (100 ад/ранг)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

@@ -58,7 +58,7 @@ seoKeywords: "produttore occhiali da sole in titanio senza montatura, fornitore 
 - Marche di Moda Boutique
 - Vendita Duty-Free e Viaggi
 
-## Panoramica del prodotto
+## Panoramica
 
 Il titanio di grado aerospaziale definisce l'identità strutturale del modello KRS-211, offrendo un'estetica rimless ultraleggera che soddisfa le rigorose esigenze del retail di alto livello.
 

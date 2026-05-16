@@ -6,7 +6,7 @@ itemNo: "KAO-157"
 date: "2026-05-10"
 colors: "클리어 바이올렛과 그라데이션 블루"
 materials: "프리미엄 Mazzucchelli & JINYU 아세테이트 및 맞춤 서비스"
-serviceMode: "OEM (위탁 생산) & ODM (디자인 생산) ( 맞춤 서비스 )"
+serviceMode: "OEM / ODM 제조 맞춤 서비스"
 moq: "300 개/모델 (100개/색상)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

@@ -6,7 +6,7 @@ itemNo: "KAS-124"
 date: "2026-05-09"
 colors: "Черный & Буйволиный Рог & Черепаховый"
 materials: "Премиум Mazzucchelli & Ацетат JINYU & Индивидуальный заказ"
-serviceMode: "Контрактное Производство (OEM) & Проектирование и Производство (ODM) (Индивидуальный заказ)"
+serviceMode: "Контрактное производство / Производство по ODM – Индивидуальный заказ"
 moq: "300 шт/модель (100шт/цвет)"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"

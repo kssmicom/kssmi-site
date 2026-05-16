@@ -6,7 +6,7 @@ itemNo: "KAO-315"
 date: "2026-05-10"
 colors: "Đen & Xám Trong Suốt & Havana & Sâm panh & Trong suốt & Oliver"
 materials: "Axetat Mazzucchelli & JINYU Cao Cấp & Tùy chỉnh theo yêu cầu"
-serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
+serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

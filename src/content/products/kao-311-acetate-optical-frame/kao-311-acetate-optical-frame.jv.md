@@ -6,7 +6,7 @@ itemNo: "KAO-311"
 date: "2026-05-10"
 colors: "Ireng & Ungu Keluk & Bulus & Coklat"
 materials: "Mazzucchelli Premium & Asetat JINYU & Kustomisasi"
-serviceMode: "OEM & ODM (Kustomisasi)"
+serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

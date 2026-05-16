@@ -68,7 +68,7 @@ seoKeywords: "çerçevesiz metal güneş gözlüğü üreticisi, toptan çerçev
 - Duty-Free ve Seyahat Perakendecileri
 - Concept ve Çoklu Marka Mağazaları
 
-## Ürün Özeti
+## Genel Bakış
 
 KRS-210, sofistike bir çerçevesiz estetiği bünyesinde barındırırken, minimalist görsel çekiciliği uzun ömürlü yapısal bütünlük için yüksek kaliteli metal mimariyle dengeliyor. Hafif profili, zarafet ve dayanıklılığın eşit derecede önceliklendirildiği premium portföylerin taleplerini karşılamak üzere tasarlanmıştır.
 

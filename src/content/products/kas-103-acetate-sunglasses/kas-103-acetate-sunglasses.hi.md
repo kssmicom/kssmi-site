@@ -6,7 +6,7 @@ itemNo: "KAS-103"
 date: "2026-05-06"
 colors: "काला & पीला-जाली & पर्ल-मार्बल & लाल-जाली & नीला-जाली & काला-जाली"
 materials: "प्रीमियम Mazzucchelli & JINYU एसीटेट & कस्टमाइज़ेशन"
-serviceMode: "OEM (अनुबंध निर्माण) & ODM (डिजाइन निर्माण) ( कस्टमाइज़ेशन )"
+serviceMode: "OEM / ODM निर्माण – कस्टमाइज़ेशन सेवा"
 moq: "300 पीस/मॉडल (100 पीस/रंग)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

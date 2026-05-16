@@ -6,7 +6,7 @@ itemNo: "KAS-112"
 date: "2026-05-09"
 colors: "Noir & Noir Solide & Havane & Rouge Bonbon & Écaille Rose & Blanc Crème"
 materials: "Premium Mazzucchelli & Acétate JINYU & Personnalisation"
-serviceMode: "Fabrication sous Contrat (OEM) & Conception et Fabrication (ODM) ( Personnalisation )"
+serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

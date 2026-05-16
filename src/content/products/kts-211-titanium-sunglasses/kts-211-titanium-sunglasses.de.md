@@ -58,7 +58,7 @@ seoKeywords: "Titan-Sonnenbrillen-Hersteller, individuelle OEM-Brillen, Luxus-Ei
 - Boutique-Modemmarken
 - Duty-Free- und Reisehandel
 
-## Überblick
+## Übersicht
 
 Das Modell KTS-211 setzt durch seine Konstruktion aus Premium-Titan auf strukturelle Integrität und bietet die ultraleichte Leistung, die von High-End-Brillenmarken erwartet wird.
 

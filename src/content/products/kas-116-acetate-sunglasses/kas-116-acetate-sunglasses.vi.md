@@ -22,7 +22,6 @@ designStyle: "Táo bạo, Xa xỉ, Hiện đại, Thời trang, Sành điệu, U
 nosePads: "Đệm mũi tích hợp"
 hinge: "Bản lề cấu trúc 3+2 & Tùy chỉnh theo yêu cầu"
 logo: "In, Laser, Laser đổ dầu, Ép kim, Huy hiệu kim loại, Dập nổi, Đính đá, Nhãn dán 3D"
-service: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 acetateFeature: "Nhẹ & Bền & Sống động"
 
 # ─────────────────────────────────────────────────────

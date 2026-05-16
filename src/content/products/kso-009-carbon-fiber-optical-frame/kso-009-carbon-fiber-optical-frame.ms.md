@@ -68,7 +68,7 @@ seoKeywords: "pengeluar bingkai optik gentian karbon, kacamata titanium tersuai 
 - Jenama Gaya Hidup Sukan & Automotif
 - Rantai Optik Bergengsi
 
-## Gambaran Keseluruhan Produk
+## Gambaran Keseluruhan
 
 Menggabungkan gentian karbon berprestasi tinggi dengan tangkai titanium yang kemas, KSO-009 mewakili kelas induk dalam kejuruteraan kacamata yang tahan lasak dan halus. Tekstur tenunan yang tersendiri dan kemasan premiumnya memenuhi keperluan pasaran optik mewah secara khusus.
 

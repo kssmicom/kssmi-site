@@ -6,7 +6,7 @@ itemNo: "KAO-014"
 date: "2026-05-10"
 colors: "Kırmızı & Turuncu & Şeffaf & Sarı"
 materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
-serviceMode: "OEM & ODM ( Özelleştirme )"
+serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100 adet/renk)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

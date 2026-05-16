@@ -6,7 +6,7 @@ itemNo: "KAS-105"
 date: "2026-05-06"
 colors: "رمادي & هافانا لامع & هافانا مطفي & شفاف & أسود"
 materials: "Mazzucchelli فاخر & أسيتات JINYU & خدمة مخصصة"
-serviceMode: "تصنيع بالتفويض & تصميم وتصنيع ( خدمة مخصصة )"
+serviceMode: "تصنيع بالتفويض / تصميم وتصنيع – خدمة مخصصة"
 moq: "300 قطعة/نموذج (100 قطعة/لون)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

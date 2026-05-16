@@ -56,7 +56,7 @@ seoKeywords: "Hersteller Titanbrillen, individuelle OEM-Brillen China, Luxus-Pri
 - Hochwertige Optikketten
 - Kaufhausgruppen
 
-## Überblick
+## Übersicht
 
 Das Modell KTO-001 setzt neue Maßstäbe in der Materialexzellenz und verwendet Titan in Luft- und Raumfahrtqualität für ein ultraleichtes, hypoallergenes Trageerlebnis. Seine elegante Konstruktion bietet die perfekte Basis für Marken, die den High-End-Optikmarkt ansprechen möchten.
 

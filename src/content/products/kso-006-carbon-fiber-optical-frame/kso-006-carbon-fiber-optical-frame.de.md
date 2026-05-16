@@ -68,7 +68,7 @@ seoKeywords: "kohlefaser brillenfassungen hersteller, individuelle brillen OEM c
 - Luxusmodehäuser
 - Sport- und Auto-Lifestyle-Marken
 
-## Produktübersicht
+## Übersicht
 
 Diese Fassung wurde für professionelle Umgebungen entwickelt und kombiniert eine Kohlefaserfront in Luftfahrtqualität mit hochwertigen Metallbügeln, um eine anspruchsvolle, technikorientierte Ästhetik zu erreichen.
 

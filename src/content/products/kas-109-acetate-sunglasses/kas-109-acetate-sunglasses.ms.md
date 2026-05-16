@@ -6,7 +6,7 @@ itemNo: "KAS-109"
 date: "2026-05-07"
 colors: "Hitam & Lut Sinar & Kura-kura & Zaitun"
 materials: "Asetat Mazzucchelli Premium & JINYU & Penyesuaian"
-serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
+serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100unit/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

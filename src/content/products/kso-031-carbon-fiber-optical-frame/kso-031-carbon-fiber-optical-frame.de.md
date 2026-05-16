@@ -68,7 +68,7 @@ seoKeywords: "Kohlefaser-Brillenfassungen, Luxus-Brillenfassungen, Brillenherste
 - Luxusmodehäuser
 - Hochwertige Optikketten
 
-## Produktübersicht
+## Übersicht
 
 Die KSO-031 stellt eine anspruchsvolle Verschmelzung von Kohlefaser aus der Luft- und Raumfahrt und veredeltem Titan dar und bietet eine ultraleichte optische Lösung mit einer ausgeprägten Luxusästhetik. Einzigartige Texturen in Holzmaserung und Köperbindung sorgen für eine erstklassige visuelle Identität, die bei High-End-Boutiquen und Lifestyle-Marken Anklang findet.
 

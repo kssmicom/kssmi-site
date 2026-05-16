@@ -68,7 +68,7 @@ seoKeywords: "produsen frame optik serat karbon, kacamata titanium kustom China,
 - Merek Gaya Hidup Olahraga & Otomotif
 - Chain Optik High-End
 
-## Ringkesan Produk
+## Ringkesan
 
 Nggabungake serat karbon performa dhuwur karo gagang titanium sing apik, KSO-009 minangka masterclass ing teknik kacamata sing awet lan halus. Tekstur tenunan sing unik lan finishing premium pancen cocog kanggo kabutuhan pasar optik mewah.
 

@@ -6,7 +6,7 @@ itemNo: "KAO-155"
 date: "2026-05-10"
 colors: "Floralgelb mit Violett, Floral-Blaugrün mit Rosa"
 materials: "Premium Mazzucchelli & JINYU Acetat & Individualisierung"
-serviceMode: "OEM & ODM ( Individualisierung )"
+serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

@@ -6,7 +6,7 @@ itemNo: "KAS-102"
 date: "2026-05-05"
 colors: "Bening & Ireng & Ireng Padhet & Biru Padhet & Abu-abu Padhet & Ungu Padhet & Cyan-Dot Blue-Dot & Madu & Ijo & Abrit Gradien & Biru Tuwa & Biru Enom & Abu-abu Matte & Bulus & Abu-abu Bening & Panda"
 materials: "Premium Mazzucchelli & Asetat JINYU & Kustomisasi"
-serviceMode: "OEM & ODM ( Kustomisasi )"
+serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

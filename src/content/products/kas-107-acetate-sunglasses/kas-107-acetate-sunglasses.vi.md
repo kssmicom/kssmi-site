@@ -6,7 +6,7 @@ itemNo: "KAS-107"
 date: "2026-05-06"
 colors: "Đen & Trong suốt & Havana & Oliu"
 materials: "Axetat cao cấp Mazzucchelli & JINYU & Tùy chỉnh theo yêu cầu"
-serviceMode: "OEM & ODM ( Tùy chỉnh theo yêu cầu )"
+serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

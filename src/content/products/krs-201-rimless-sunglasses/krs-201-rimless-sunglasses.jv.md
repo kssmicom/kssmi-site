@@ -68,7 +68,7 @@ seoKeywords: "produsen kacamata hitam rimless, grosir kacamata hitam logam, kaca
 - P中小uters Dutypirlalu & Journey
 - Toko Konsep & Multi-Merek
 
-## Ringkasan Produk
+## Ringkasan
 
 Nalika merek nuntut kombinasi desain minimalis lan daya tahan logam kelas dhuwur, KRS-201 dadi pilihan sing pas. Arsitektur rimless-e nawakake profil gaya dhuwur sing entheng banget sing cocog karo syarat canggih portofolio kacamata mewah.
 

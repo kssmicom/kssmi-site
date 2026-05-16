@@ -67,7 +67,7 @@ seoKeywords: "fabricante de monturas ópticas de titanio, monturas ópticas OEM 
 - Grupos de Grandes Almacenes
 - Cadenas Ópticas de Alta Gamma
 
-## Descripción General
+## Resumen
 
 Fabricado con titanio de grado aeroespacial, el KTO-023 ofrece un equilibrio sofisticado entre resistencia ligera y comodidad hipoalergénica para el mercado de gafas de lujo.
 

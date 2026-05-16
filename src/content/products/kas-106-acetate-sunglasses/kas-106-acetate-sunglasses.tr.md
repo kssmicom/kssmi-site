@@ -6,7 +6,7 @@ itemNo: "KAS-106"
 date: "2026-05-06"
 colors: "Gri & Parlak-Havana & Mat-Havana & Şeffaf & Siyah & Kahverengi & Yeşil"
 materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
-serviceMode: "OEM & ODM ( Özelleştirme )"
+serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100 adet/renk)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

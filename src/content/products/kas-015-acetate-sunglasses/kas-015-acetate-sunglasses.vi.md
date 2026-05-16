@@ -6,7 +6,7 @@ itemNo: "KAS-015"
 date: "2026-05-10"
 colors: "Đồi mồi với Xanh lá, Đen với Đen-Vàng, Đồi mồi đen với Xanh lá, Đen"
 materials: "Axetat Premium Mazzucchelli & JINYU & Tùy chỉnh theo yêu cầu"
-serviceMode: "OEM & ODM ( Tùy chỉnh theo yêu cầu )"
+serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100cái/màu)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

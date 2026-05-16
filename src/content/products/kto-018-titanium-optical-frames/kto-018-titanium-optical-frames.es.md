@@ -56,7 +56,7 @@ seoKeywords: "fabricante de monturas ópticas de titanio, gafas de titanio perso
 - Cadenas Ópticas de Alta Gamma
 - Etiquetas Deportivas y de Estilo de Vida Automotriz
 
-## Descripción General
+## Resumen
 
 El titanio premium de grado aeroespacial define la integridad estructural de estas monturas, ofreciendo una solución ultraligera e hipoalergénica para los exigentes mercados ópticos.
 

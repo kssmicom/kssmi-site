@@ -6,7 +6,7 @@ itemNo: "KAO-015"
 date: "2026-05-10"
 colors: "क्लियर & पीला & नीला & नारंगी"
 materials: "प्रीमियम Mazzucchelli & JINYU एसीटेट & कस्टमाइज़ेशन"
-serviceMode: "OEM (अनुबंध निर्माण) & ODM (डिजाइन निर्माण) (कस्टमाइज़ेशन सेवा)"
+serviceMode: "OEM / ODM निर्माण – कस्टमाइज़ेशन सेवा"
 moq: "300 पीस/मॉडल (100पीस/रंग)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

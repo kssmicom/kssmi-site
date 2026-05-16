@@ -6,7 +6,7 @@ itemNo: "KAS-111"
 date: "2026-05-09"
 colors: "Abrit Gula & Bulus Jambon & Putih Krim & Ireng"
 materials: "Mazzucchelli Premium & Asetat JINYU & Kustomisasi"
-serviceMode: "Produksi Kontrak & Desain lan Produksi ( Kustomisasi )"
+serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

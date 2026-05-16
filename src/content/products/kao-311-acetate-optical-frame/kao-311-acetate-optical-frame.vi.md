@@ -6,7 +6,7 @@ itemNo: "KAO-311"
 date: "2026-05-10"
 colors: "Đen & Tím Khói & Đồi Mồi & Nâu"
 materials: "Mazzucchelli Cao Cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
-serviceMode: "OEM & ODM (Tùy chỉnh theo yêu cầu)"
+serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

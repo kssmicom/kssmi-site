@@ -69,7 +69,7 @@ seoKeywords: "KAS-304 Acetat-Brillenhersteller, individuelle OEM-Acetat-Brillen,
 - Boutique-Modemarken
 - Konzept- und Multi-Brand-Stores
 
-## Überblick
+## Übersicht
 
 Gefertigt aus hochwertigem Mazzucchelli- und JINYU-Acetat, verbindet die KAS-304 eine retro Unisex-Ästhetik mit außergewöhnlicher Farbtiefe und Langlebigkeit.
 

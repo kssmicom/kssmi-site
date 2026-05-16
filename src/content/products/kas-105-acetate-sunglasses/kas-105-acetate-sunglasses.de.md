@@ -6,7 +6,7 @@ itemNo: "KAS-105"
 date: "2026-05-06"
 colors: "Grau & Glänzendes Havanna & Mattes Havanna & Klar & Schwarz"
 materials: "Premium-Mazzucchelli & JINYU-Acetat & Individualisierung"
-serviceMode: "Auftragsfertigung & Design und Fertigung ( Individualisierung )"
+serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

@@ -5,8 +5,8 @@ slug: "kao-003-acetate-optical-frame"
 itemNo: "KAO-003"
 date: "2026-05-10"
 colors: "ブラック & トータスシェル & オレンジ & ゼブラ & ゴールド"
-materials: "プレミアムMazzucchelli & JINYUアセテート & カスタマイズ対応"
-serviceMode: "受託製造 (OEM) & 設計製造 (ODM) ( カスタマイズ対応 )"
+materials: "プレミアム Mazzucchelli & JINYU アセテート & カスタマイズ対応"
+serviceMode: "OEM製造 / ODM設計製造 カスタマイズ対応"
 moq: "300 個/モデル (100個/カラー)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -38,7 +38,7 @@ featured: true
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KAO-003 高級アセテート光学フレーム | カスタム卸売サプライヤー"
 seoDescription: "KAO-003高級アセテート光学フレームの主要メーカーと提携。4+3バレルヒンジとMazzucchelliアセテートを採用。最小注文数300、OEM対応。"
-seoKeywords: "アセテート光学フレームメーカー, カスタムOEM眼鏡工場, 高級Mazzucchelliアセテートフレーム, 中国光学フレーム卸売, オーダーメイド眼鏡製造, プレミアムアイウェアブランドサプライヤー, プライベートブランドアセテート眼鏡, 中国光学フレーム工場"
+seoKeywords: "アセテート光学フレームメーカー, カスタムOEM眼鏡工場, 高級 Mazzucchelli アセテートフレーム, 中国光学フレーム卸売, オーダーメイド眼鏡製造, プレミアムアイウェアブランドサプライヤー, プライベートブランドアセテート眼鏡, 中国光学フレーム工場"
 ---
 
 ## 特徴

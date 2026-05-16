@@ -6,7 +6,7 @@ itemNo: "KAO-305"
 date: "2026-05-10"
 colors: "Oliva & Preto & Listrado & Havana"
 materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
-serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
+serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

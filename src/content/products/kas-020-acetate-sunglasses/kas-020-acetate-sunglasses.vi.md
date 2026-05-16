@@ -6,7 +6,7 @@ itemNo: "KAS-020"
 date: "2026-05-10"
 colors: "Đen, Sâm panh, Đồi mồi, Xanh ô liu trong suốt"
 materials: "Axetat Cao Cấp Mazzucchelli & JINYU & Tùy Chỉnh Theo Yêu Cầu"
-serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) (Tùy chỉnh theo yêu cầu)"
+serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

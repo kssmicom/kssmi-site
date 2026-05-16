@@ -6,7 +6,7 @@ itemNo: "KAS-115"
 date: "2026-05-09"
 colors: "Hitam & Ungu & Putih & Kura-kura & Jingga"
 materials: "Asetat Mazzucchelli dan JINYU Premium & Penyesuaian"
-serviceMode: "Pembuatan OEM & ODM (Penyesuaian)"
+serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

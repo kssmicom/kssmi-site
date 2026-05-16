@@ -6,7 +6,7 @@ itemNo: "KAS-015"
 date: "2026-05-10"
 colors: "Tartaruga com Verde, Preto com Preto-Amarelo, Preto Tartaruga com Verde, Preto"
 materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
-serviceMode: "OEM & ODM ( Personalização )"
+serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100pçs/cor)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

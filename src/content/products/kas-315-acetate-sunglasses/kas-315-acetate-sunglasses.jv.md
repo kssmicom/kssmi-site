@@ -78,7 +78,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom China, k
 - Rumah Mode Mewah
 - Ritel Bebas Bea & Perjalanan
 
-## Ringkasan
+## Ringkesan
 
 Digawe saka asetat premium Mazzucchelli lan JINYU, model iki nawakake polesan tangan sing padhang sing nangkep inti saka kacamata mewah kontemporer.
 

@@ -6,7 +6,7 @@ itemNo: "KRS-203"
 date: "2026-04-06"
 colors: "グラデーションブラウン & グラデーションブルー & グラデーショングレー & ティントグレー"
 materials: "プレミアムメタル & カスタマイズ素材"
-serviceMode: "OEM製造 & ODM設計製造 ( カスタマイズ対応 )"
+serviceMode: "OEM受託製造 & ODM設計製造 ( カスタマイズ対応 )"
 moq: "300 個/モデル"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -23,7 +23,7 @@ nosePads: "メタルノーズパッド"
 hinge: "スプリング構造ヒンジ & カスタマイズ対応"
 electroplating: "イオンプレーティング"
 logo: "印刷, レーザー刻印, レーザー色入れ, 箔押し, メタル装飾, 彫刻, クリスタル装飾, 立体ステッカー"
-service: "OEM製造 / ODM設計製造 カスタマイズ対応"
+service: "OEM受託製造 / ODM設計製造 ( カスタマイズ対応 )"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/krs-203-rimless-sunglasses/oem-odm-customized-rimless-sunglasses-krs-203-1.webp"
@@ -64,10 +64,10 @@ seoKeywords: "リムレス メタル サングラス メーカー, KRS-203 プ�
 ## 最適
 
 - プレミアムアイウェアブランド
-- 独立アイウェアデザイナー
-- プライベートブランド卸売業者
+- 独立系眼鏡デザイナー
+- プライベートブランド・ディストリビューター
 - 高級眼鏡チェーン
-- ：D2Cブランド
+- Eコマース D2Cブランド
 - 百貨店グループ
 
 ## 概要

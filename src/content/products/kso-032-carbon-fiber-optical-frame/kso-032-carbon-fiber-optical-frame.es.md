@@ -68,7 +68,7 @@ seoKeywords: "fabricante monturas ópticas fibra de carbono, gafas personalizada
 - Distribuidores de Marca Propia
 - Casas de Moda de Lujo
 
-## Resumen del producto
+## Resumen
 
 Diseñada con una fusión de alto rendimiento de fibra de carbono premium y titanio ligero, la montura KSO-032 ofrece un perfil estructural sofisticado con una excepcional relación resistencia-peso. Los exclusivos patrones de grano de madera y sarga de la montatura proporcionan una ventaja visual distintiva para las marcas que apuntan al sector de las gafas de lujo.
 

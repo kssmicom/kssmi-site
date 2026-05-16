@@ -6,7 +6,7 @@ itemNo: "KAO-158"
 date: "2026-05-10"
 colors: "블랙, 레드, 그린"
 materials: "프리미엄 Mazzucchelli & JINYU 아세테이트 및 맞춤 서비스"
-serviceMode: "OEM (위탁 생산) 및 ODM (디자인 생산) ( 맞춤 서비스 )"
+serviceMode: "OEM / ODM 제조 맞춤 서비스"
 moq: "300 개/모델 (색상당 100개)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

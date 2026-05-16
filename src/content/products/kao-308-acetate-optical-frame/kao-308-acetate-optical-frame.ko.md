@@ -6,7 +6,7 @@ itemNo: "KAO-308"
 date: "2026-05-10"
 colors: "블랙 & 로열 블루 & 브라운 & 올리브"
 materials: "프리미엄 Mazzucchelli & JINYU 아세테이트 & 맞춤 서비스"
-serviceMode: "OEM (위탁 생산) & ODM (디자인 생산) ( 맞춤 서비스 )"
+serviceMode: "OEM / ODM 제조 맞춤 서비스"
 moq: "300 개/모델 (컬러당 100개)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

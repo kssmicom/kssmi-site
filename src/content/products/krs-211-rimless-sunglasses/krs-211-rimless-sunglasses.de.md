@@ -58,7 +58,7 @@ seoKeywords: "randlose Titan-Sonnenbrillen Hersteller, kundenspezifischer OEM Br
 - Boutique-Modemmarken
 - Duty-Free- und Reisehandel
 
-## Produktübersicht
+## Überblick
 
 Titan in Luftfahrtqualität definiert die strukturelle Identität der KRS-211 und bietet eine schwerelose, randlose Ästhetik, die den hohen Anforderungen des gehobenen Einzelhandels gerecht wird.
 

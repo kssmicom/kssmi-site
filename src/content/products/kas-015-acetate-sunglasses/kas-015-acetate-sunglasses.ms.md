@@ -6,7 +6,7 @@ itemNo: "KAS-015"
 date: "2026-05-10"
 colors: "Kura-kura dengan Hijau, Hitam dengan Hitam-Kuning, Kura-kura Hitam dengan Hijau, Hitam"
 materials: "Asetat Premium Mazzucchelli & JINYU & Penyesuaian"
-serviceMode: "OEM & ODM ( Penyesuaian )"
+serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100unit/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

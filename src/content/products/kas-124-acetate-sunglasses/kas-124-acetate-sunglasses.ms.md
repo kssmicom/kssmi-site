@@ -6,7 +6,7 @@ itemNo: "KAS-124"
 date: "2026-05-09"
 colors: "Hitam & Tanduk Kerbau & Kura-kura"
 materials: "Premium Mazzucchelli & Asetat JINYU & Penyesuaian"
-serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & Pembuatan ODM (Pengilangan Reka Bentuk) (Penyesuaian)"
+serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100unit/warna)"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"

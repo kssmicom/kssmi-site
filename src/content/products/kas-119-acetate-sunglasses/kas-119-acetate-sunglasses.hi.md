@@ -6,7 +6,7 @@ itemNo: "KAS-119"
 date: "2026-05-09"
 colors: "काला & फ्लोरल & रॉ ब्लू & पीला & पोलर टॉर्टोइज़ & स्यान टॉर्टोइज़ & लाल टॉर्टोइज़"
 materials: "प्रीमियम Mazzucchelli और JINYU एसीटेट & कस्टमाइज़ेशन"
-serviceMode: "OEM & ODM ( कस्टमाइज़ेशन )"
+serviceMode: "OEM / ODM निर्माण – कस्टमाइज़ेशन सेवा"
 moq: "300 PCS/Model (100PCS/Color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

@@ -6,7 +6,7 @@ itemNo: "KAO-311"
 date: "2026-05-10"
 colors: "أسود & أرجواني دخاني & سلحفاة & بني"
 materials: "Mazzucchelli فاخر & أسيتات JINYU & خدمة مخصصة"
-serviceMode: "تصنيع بالتفويض & تصميم وتصنيع (خدمة مخصصة)"
+serviceMode: "تصنيع بالتفويض / تصميم وتصنيع – خدمة مخصصة"
 moq: "300 قطعة/نموذج (100 قطعة/لون)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

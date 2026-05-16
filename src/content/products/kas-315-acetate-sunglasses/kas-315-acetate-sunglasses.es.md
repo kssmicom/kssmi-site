@@ -78,7 +78,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 - Casas de Moda de Lujo
 - Venta Duty-Free y Viajes
 
-## Descripción General
+## Resumen
 
 Fabricado con acetato premium Mazzucchelli y JINYU, este modelo ofrece un acabado vibrante y pulido a mano que captura la esencia de las gafas de lujo contemporáneas.
 

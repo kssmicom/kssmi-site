@@ -69,7 +69,7 @@ seoKeywords: "nhà sản xuất kính mát kim loại không gọng, bán sỉ k
 - Chuỗi quang học cao cấp
 - Cửa hàng khái niệm & đa nhãn
 
-## Tổng quan sản phẩm
+## Tổng quan
 
 Được thiết kế cho sự tinh tế tối giản, mẫu KRS-205 sở hữu gọng kim loại cao cấp giúp định nghĩa lại thẩm mỹ không gọng cho thị trường xa xỉ. Kiến trúc nhẹ nhàng của nó kết hợp khả năng phục hồi cấu trúc với kiểu dáng tinh tế, thu hút các thương hiệu tìm kiếm sự rõ nét kỹ thuật cao cấp.
 

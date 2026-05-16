@@ -6,7 +6,7 @@ itemNo: "KAS-116"
 date: "2026-05-09"
 colors: "Schwarz & Grün-Marmor & Weiß & Marmor"
 materials: "Premium Mazzucchelli & JINYU-Acetat & Individualisierung"
-serviceMode: "Auftragsfertigung & Design und Fertigung ( Individualisierung )"
+serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

@@ -6,7 +6,7 @@ itemNo: "KAO-155"
 date: "2026-05-10"
 colors: "Amarelo Floral com Roxo, Teal Floral com Rosa"
 materials: "Acetato Mazzucchelli Premium & JINYU & Personalização"
-serviceMode: "OEM & ODM ( Personalização )"
+serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

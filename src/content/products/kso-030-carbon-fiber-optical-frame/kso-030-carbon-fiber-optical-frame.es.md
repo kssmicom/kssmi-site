@@ -69,7 +69,7 @@ seoKeywords: "fabricante de monturas ópticas de fibra de carbono, gafas de fibr
 - Casas de Moda de Lujo
 - Etiquetas Deportivas y de Estilo de Vida Automotriz
 
-## Descripción general
+## Resumen
 
 La excelencia en ingeniería es el núcleo del KSO-030, que combina fibra de carbono de grado aeroespacial con titanio para crear una montatura que es a la vez ligera como una pluma y excepcionalmente duradera.
 

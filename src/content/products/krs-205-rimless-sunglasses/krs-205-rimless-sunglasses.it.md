@@ -69,7 +69,7 @@ seoKeywords: "produttore occhiali da sole rimless in metallo, occhiali di lusso 
 - Catene Ottiche di Alto Livello
 - Store di Concetto e Multi-Marchio
 
-## Panoramica del prodotto
+## Panoramica
 
 Progettato per una sofisticatezza minimalista, il modello KRS-205 presenta una montatura in metallo premium che ridefinisce l'estetica rimless per il mercato del lusso. La sua architettura leggera combina la resilienza strutturale con un profilo raffinato, attirando i marchi che cercano una chiarezza tecnica di alto livello.
 

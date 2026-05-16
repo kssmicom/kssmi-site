@@ -6,7 +6,7 @@ itemNo: "KAS-115"
 date: "2026-05-09"
 colors: "Siyah & Mor & Beyaz & Kaplumbağa & Turuncu"
 materials: "Premium Mazzucchelli ve JINYU Asetat & Özelleştirme"
-serviceMode: "OEM ve ODM Üretim (Özelleştirme)"
+serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100 adet/renk)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

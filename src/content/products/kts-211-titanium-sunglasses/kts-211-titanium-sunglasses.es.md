@@ -58,7 +58,7 @@ seoKeywords: "fabricante de gafas de sol de titanio, gafas OEM personalizadas, g
 - Etiquetas de Moda Boutique
 - Venta Duty-Free y Viajes
 
-## Descripción General
+## Resumen
 
 El KTS-211 prioriza la integridad estructural a través de su construcción de titanio premium, ofreciendo el rendimiento ultra ligero esperado por las marcas de gafas de alta gama.
 

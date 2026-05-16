@@ -58,7 +58,7 @@ seoKeywords: "fabricante monturas ópticas al aire, gafas de metal personalizada
 - Casas de Moda de Lujo
 - Mayoristas de Gafas
 
-## Vista general del producto
+## Resumen
 
 La ingeniería minimalista se une a la estética profesional en esta montatura óptica al aire, fabricada con una aleación de metal premium que ofrece integridad estructural sin el peso visual de los bordes tradicionales.
 

@@ -68,7 +68,7 @@ seoKeywords: "Hersteller Carbon-Optikfassung, kundenspezifische OEM-Optikfassung
 - Luxusmodehäuser
 - Sport- und Auto-Lifestyle-Marken
 
-## Produktübersicht
+## Überblick
 
 Dieses Modell setzt einen neuen Standard für High-End-Brillen und kombiniert Premium-Kohlefaser mit schlanken Metallbügeln für eine raffinierte, moderne Ästhetik. Das Material in Luft- und Raumfahrtqualität bietet ein überlegenes Festigkeits-Gewichts-Verhältnis und stellt sicher, dass jedes Gestell ebenso widerstandsfähig wie leicht ist.
 

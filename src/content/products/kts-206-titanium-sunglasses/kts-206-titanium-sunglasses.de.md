@@ -71,7 +71,7 @@ seoKeywords: "Titan-Brillen Hersteller, Luxus-Eigenmarken-Optik, maßgeschneider
 - Sport- und Auto-Lifestyle-Marken
 - Duty-Free- und Reisehandel
 
-## Überblick
+## Übersicht
 
 Entwickelt für den Premium-Brillenmarkt, unterstreicht das Modell KTS-206 die außergewöhnliche strukturelle Integrität und die hypoallergenen Eigenschaften von Titan in Luft- und Raumfahrtqualität. Die anspruchsvolle Silhouette vereint Leichtigkeit mit einer kühnen, modernen Ästhetik, die perfekt auf den Luxuseinzelhandel zugeschnitten ist.
 

@@ -6,7 +6,7 @@ itemNo: "KAS-007"
 date: "2026-05-10"
 colors: "Preto-Ouro & Preto-Prata & Cristal & Vermelho"
 materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
-serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
+serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100pçs/cor)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

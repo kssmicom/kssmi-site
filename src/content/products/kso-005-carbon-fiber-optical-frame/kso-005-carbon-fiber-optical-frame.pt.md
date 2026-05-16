@@ -68,7 +68,7 @@ seoKeywords: "fabricante armação óptica fibra de carbono, armações ópticas
 - Casas de Moda de Luxo
 - Marcas Esportivas e Lifestyle Automotivo
 
-## Visão geral do produto
+## Visão Geral
 
 Estabelecendo um novo padrão em óculos de alta gama, este modelo integra fibra de carbono premium com hastes de metal elegantes para uma estética refinada e moderna. O material de grau aeroespacial proporciona uma relação resistência-peso superior, garantindo que cada armação seja tão resistente quanto leve.
 

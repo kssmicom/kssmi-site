@@ -6,7 +6,7 @@ itemNo: "KAS-119"
 date: "2026-05-09"
 colors: "黑色 & 花色 & 原蓝色 & 黄色 & 极地玳瑁 & 青色玳瑁 & 红色玳瑁"
 materials: "优质马祖凯利 & 金余板材 & 定制"
-serviceMode: "OEM & ODM ( 定制 )"
+serviceMode: "代工生产 / 设计制造 定制服务"
 moq: "300件/款 (100件/色)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

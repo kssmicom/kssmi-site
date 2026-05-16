@@ -69,7 +69,7 @@ seoKeywords: "Premium-Acetat-Sonnenbrillenhersteller, kundenspezifische OEM-Sonn
 - Boutique-Modemarken
 - Duty-Free- und Reisehandel
 
-## Überblick
+## Übersicht
 
 Die KAS-323 wird mit Präzision aus hochwertigem Mazzucchelli- und JINYU-Acetat gefertigt und bietet eine lebendige und langlebige Ästhetik, die den strengen Anforderungen des globalen Luxusmarktes entspricht.
 

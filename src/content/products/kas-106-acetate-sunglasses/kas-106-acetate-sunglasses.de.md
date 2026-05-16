@@ -6,7 +6,7 @@ itemNo: "KAS-106"
 date: "2026-05-06"
 colors: "Grau & Glänzend-Havana & Matt-Havana & Klar & Schwarz & Braun & Grün"
 materials: "Premium-Mazzucchelli-Acetat & JINYU-Acetat & Individualisierung"
-serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) ( Individualisierung )"
+serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

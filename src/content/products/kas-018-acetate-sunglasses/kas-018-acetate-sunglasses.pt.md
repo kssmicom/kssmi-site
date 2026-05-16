@@ -6,7 +6,7 @@ itemNo: "KAS-018"
 date: "2026-05-10"
 colors: "Preto, Vermelho Transparente, Azul Transparente"
 materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
-serviceMode: "OEM & ODM (Personalização)"
+serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

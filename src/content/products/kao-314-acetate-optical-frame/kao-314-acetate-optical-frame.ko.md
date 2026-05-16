@@ -6,7 +6,7 @@ itemNo: "KAO-314"
 date: "2026-05-10"
 colors: "블랙 & 네온 그린 & 하바나 & 샴페인 & 스모크"
 materials: "프리미엄 Mazzucchelli & JINYU 아세테이트 & 맞춤 서비스"
-serviceMode: "OEM 및 ODM (맞춤 서비스)"
+serviceMode: "OEM / ODM 제조 맞춤 서비스"
 moq: "300 개/모델 (컬러당 100개)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

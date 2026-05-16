@@ -76,7 +76,7 @@ seoKeywords: "Metall-Sonnenbrillen Hersteller, individuelle Sonnenbrillen OEM, B
 - Hochwertige Optikketten
 - Duty-Free- und Reisehandel
 
-## Überblick
+## Übersicht
 
 Die KMS-120 kombiniert hochwertiges Metall mit eleganten Acetat-Akzenten und interpretiert Luxusbrillen durch eine markante Doppelsteg-Architektur neu.
 

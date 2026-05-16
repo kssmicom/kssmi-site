@@ -6,7 +6,7 @@ itemNo: "KAS-019"
 date: "2026-05-10"
 colors: "블랙, 밀키 그린, 투명 브라운"
 materials: "프리미엄 Mazzucchelli & JINYU 아세테이트 및 맞춤 서비스"
-serviceMode: "OEM (위탁 생산) 및 ODM (디자인 생산) ( 맞춤 서비스 )"
+serviceMode: "OEM / ODM 제조 맞춤 서비스"
 moq: "300 개/모델 (100개/컬러)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

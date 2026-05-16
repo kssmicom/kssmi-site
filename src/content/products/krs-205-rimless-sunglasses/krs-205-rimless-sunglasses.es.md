@@ -69,7 +69,7 @@ seoKeywords: "fabricante de gafas de sol de metal rimless, venta al por mayor de
 - Cadenas Ópticas de Alta Gamma
 - Tiendas de Concepto y Multi-Marca
 
-## Descripción del producto
+## Resumen
 
 Diseñado para una sofisticación minimalista, el modelo KRS-205 cuenta con una montura de metal premium que redefine la estética rimless para el mercado de lujo. Su arquitectura ligera combina la resistencia estructural con un perfil refinado, atrayendo a las marcas que buscan una claridad técnica de alta gama.
 

@@ -52,7 +52,7 @@ seoDescription: "Commandez des montures optiques de luxe KSO-010 en fibre de car
 seoKeywords: "fournisseur montures optiques fibre de carbone, lunettes personnalisées titane fibre de carbone, montures optiques luxe OEM Chine, grossiste lunettes accents bois, montures fibre de carbone marque propre, usine lunettes Shenzhen"
 ---
 
-## Caractéristiques Techniques
+## Caractéristiques
 - **Matériau de Qualité Aérospatiale :** Construction premium en fibre de carbone et titane offrant une sensation ultra-légère avec un rapport résistance/poids extrême.
 - **Accents en Bois Naturel :** Finition artisanale avec des textures de fibre de carbone de haute qualité complétées par des détails exquis en Ébène de Ceylan et Chêne Blanc.
 - **Quincaillerie Durable :** Charnières stables à structure en barillet 2+1 conçues pour une fluidité opérationnelle à long terme et une intégrité structurelle.

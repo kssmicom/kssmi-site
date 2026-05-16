@@ -6,7 +6,7 @@ itemNo: "KAS-116"
 date: "2026-05-09"
 colors: "Noir & Vert-Marbre & Blanc & Marbre"
 materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
-serviceMode: "Fabrication sous Contrat & Conception et Fabrication ( Personnalisation )"
+serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

@@ -72,7 +72,7 @@ seoKeywords: "nhà sản xuất kính mát kim loại không gọng, bán sỉ k
 - Bán lẻ miễn thuế và du lịch
 - Nhãn thời trang boutique
 
-## Panoramica del prodotto
+## Tổng quan
 
 Kết hợp chủ nghĩa tối giản cao cấp với tính toàn vẹn của cấu trúc, thiết kế không gọng này sử dụng khung kim loại cao cấp để đạt được tính thẩm mỹ tinh tế và sang trọng.
 

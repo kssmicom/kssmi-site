@@ -6,7 +6,7 @@ itemNo: "KAO-157"
 date: "2026-05-10"
 colors: "क्लियर वॉयलेट के साथ ग्रेडिएंट ब्लू"
 materials: "प्रीमियम Mazzucchelli और JINYU एसीटेट और कस्टमाइज़ेशन"
-serviceMode: "OEM (अनुबंध निर्माण) और ODM (डिजाइन निर्माण) ( कस्टमाइज़ेशन )"
+serviceMode: "OEM / ODM निर्माण – कस्टमाइज़ेशन सेवा"
 moq: "300 पीस/मॉडल (100 पीस/रंग)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

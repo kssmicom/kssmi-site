@@ -60,7 +60,7 @@ seoKeywords: "Metall Acetat Brillenfassungen, maßgeschneiderte Brillenfassungen
 - Hochwertige Optikketten
 - Luxusmodehäuser
 
-## Überblick
+## Übersicht
 
 Modernes Color-Blocking trifft bei dieser hochwertigen Fassung aus Metall und Acetat auf eine anspruchsvolle Hybrid-Konstruktion. Das vielseitige Unisex-Design schlägt die Brücke zwischen klassischen Silhouetten und zeitgenössischer, modischer Ästhetik.
 

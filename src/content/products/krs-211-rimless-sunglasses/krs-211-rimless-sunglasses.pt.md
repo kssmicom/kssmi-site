@@ -58,7 +58,7 @@ seoKeywords: "fabricante de óculos de sol de titânio sem aro, fornecedor de ó
 - Etiquetas de Moda Boutique
 - Venda Duty-Free e Viagens
 
-## Visão geral do produto
+## Visão Geral
 
 O titânio de grau aeroespacial define a identidade estrutural do KRS-211, oferecendo uma estética rimless leve que cumpre as exigências rigorosas do retalho de alto padrão.
 

@@ -6,7 +6,7 @@ itemNo: "KAO-312"
 date: "2026-05-10"
 colors: "Preto & Verde Neon & Spark & Havana & Tartaruga Vermelha"
 materials: "Acetato Mazzucchelli Premium & Acetato JINYU & Personalização"
-serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
+serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

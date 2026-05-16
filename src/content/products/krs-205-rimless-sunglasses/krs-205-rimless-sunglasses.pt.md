@@ -69,7 +69,7 @@ seoKeywords: "fabricante de óculos de sol em metal rimless, atacado de óculos 
 - Lojas Ópticas Premium
 - Lojas de Conceito e Multi-Marcas
 
-## Visão geral do produto
+## Visão Geral
 
 Concebido para uma sofisticação minimalista, o modelo KRS-205 apresenta uma armação em metal premium que redefine a estética rimless para o mercado de luxo. A sua arquitetura leve combina a resiliência estrutural com um perfil refinado, apelando a marcas que procuram uma clareza técnica de alto nível.
 

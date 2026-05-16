@@ -68,7 +68,7 @@ seoKeywords: "fabricant de lunettes de soleil percées en métal, lunettes de so
 - Marques de Mode Boutique
 - Chaînes Optiques Haut de Gamme
 
-## Présentation du produit
+## Présentation
 
 En combinant un profil percé minimaliste avec des composants en métal de qualité supérieure, le KRS-204 offre une esthétique sophistiquée pour les portefeuilles de lunettes de luxe.
 

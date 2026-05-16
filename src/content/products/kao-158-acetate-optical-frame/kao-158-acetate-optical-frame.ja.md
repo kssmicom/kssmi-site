@@ -5,8 +5,8 @@ slug: "kao-158-acetate-optical-frame"
 itemNo: "KAO-158"
 date: "2026-05-10"
 colors: "ブラック, レッド, グリーン"
-materials: "プレミアムMazzucchelli & JINYUアセテート & カスタマイズ対応"
-serviceMode: "受託製造 (OEM) & 設計製造 (ODM) ( カスタマイズ対応 )"
+materials: "プレミアム Mazzucchelli & JINYU アセテート & カスタマイズ対応"
+serviceMode: "OEM製造 / ODM設計製造 カスタマイズ対応"
 moq: "300 個/モデル（各色100個）"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

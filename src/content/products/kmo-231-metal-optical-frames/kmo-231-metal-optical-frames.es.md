@@ -58,7 +58,7 @@ seoKeywords: "fabricante de monturas ópticas de metal, monturas ópticas OEM pe
 - Cadenas Ópticas de Alta Gama
 - Etiquetas de Moda Boutique
 
-## Descripción General
+## Resumen
 
 Forjada en metal premium y mejorada con una resistente galvanoplastia iónica, la KMO-231 ofrece una estética unisex sofisticada con una resistencia estructural sin concesiones.
 

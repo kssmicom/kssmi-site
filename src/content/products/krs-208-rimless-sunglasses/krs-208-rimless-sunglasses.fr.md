@@ -70,7 +70,7 @@ seoKeywords: "fabricant lunettes de soleil rimless, lunettes de soleil métal su
 - Groupes de Grands Magasins
 - Vente Duty-Free et Voyage
 
-## Aperçu
+## Présentation
 
 La précision rencontre le minimalisme dans cette construction sans monture, où les branches en métal de haute qualité offrent un profil sophistiqué et léger pour les collections de lunettes de luxe.
 

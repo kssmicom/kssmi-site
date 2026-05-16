@@ -69,7 +69,7 @@ seoKeywords: "karbon elyaf optik çerçeve üreticisi, özel karbon elyaf gözl�
 - Lüks Moda Evleri
 - Spor ve Otomotiv Yaşam Tarzı Markaları
 
-## Ürün Genel Bakışı
+## Genel Bakış
 
 Mühendislik mükemmelliği, havacılık sınıfı karbon elyafı titanyumla birleştirerek hem tüy kadar hafif hem de olağanüstü dayanıklı bir çerçeve oluşturan KSO-030'un merkezinde yer alır.
 

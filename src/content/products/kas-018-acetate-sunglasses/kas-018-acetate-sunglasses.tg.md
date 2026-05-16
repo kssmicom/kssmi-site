@@ -6,7 +6,7 @@ itemNo: "KAS-018"
 date: "2026-05-10"
 colors: "Сиёҳ, Сурхи шаффоф, Кабуди шаффоф"
 materials: "Атсетати олӣ Mazzucchelli ва JINYU ва Фармоишсозӣ"
-serviceMode: "OEM ва ODM (Фармоишсозӣ)"
+serviceMode: "Истеҳсоли фармоишӣ / Тарроҳӣ ва Истеҳсол – Фармоишсозӣ"
 moq: "300 ад/модел (100 ад/ранг)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

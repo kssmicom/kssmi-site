@@ -58,7 +58,7 @@ seoKeywords: "hersteller metall brillenfassungen, individuelle oem brillen, luxu
 - Konzept- und Multi-Brand-Stores
 - Luxusmodehäuser
 
-## Überblick
+## Übersicht
 
 Durch die Kombination von architektonischer Metallverarbeitung mit zeitgemäßen Color-Blocking-Details bietet das Modell KMO-251 eine anspruchsvolle Ästhetik für Marken, die Wert auf modernes, trendsetzendes Design legen. Seine Premium-Metallkonstruktion gewährleistet strukturelle Integrität bei gleichzeitig leichtem Profil.
 

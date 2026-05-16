@@ -68,7 +68,7 @@ seoKeywords: "karbon fiber optik çerçeve üreticisi, özel OEM optik çerçeve
 - Lüks Moda Evleri
 - Spor ve Otomotiv Yaşam Tarzı Markaları
 
-## Ürün Genel Bakış
+## Genel Bakış
 
 Üst düzey gözlükçülükte yeni bir standart belirleyen bu model, rafine ve modern bir estetik için premium karbon fiberi şık metal saplarla birleştiriyor. Havacılık sınıfı malzeme, her çerçevenin hafif olduğu kadar dayanıklı olmasını sağlayan üstün bir mukavemet-ağırlık oranı sunar.
 

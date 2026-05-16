@@ -6,7 +6,7 @@ itemNo: "KAO-004"
 date: "2026-05-10"
 colors: "Hitam & Kura-kura & Jingga & Zebra & Keemasan"
 materials: "Premium Mazzucchelli & Asetat JINYU & Penyesuaian"
-serviceMode: "OEM & ODM (Penyesuaian)"
+serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

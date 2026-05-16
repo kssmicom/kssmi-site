@@ -6,7 +6,7 @@ itemNo: "KAS-101"
 date: "2026-05-05"
 colors: "Blanco y Panda y Leopardo y Havana y Transparente y Negro"
 materials: "Mazzucchelli Premium y Acetato JINYU y Personalización"
-serviceMode: "Fabricación por Cuenta de Terceros (OEM) y Diseño y Fabricación (ODM) ( Personalización )"
+serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

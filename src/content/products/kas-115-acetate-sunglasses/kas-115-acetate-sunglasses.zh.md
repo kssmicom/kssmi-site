@@ -6,7 +6,7 @@ itemNo: "KAS-115"
 date: "2026-05-09"
 colors: "黑色 & 紫色 & 白色 & 玳瑁色 & 橙色"
 materials: "优质马祖凯利和金余板材 & 定制"
-serviceMode: "代工生产 & 设计制造（定制）"
+serviceMode: "代工生产 / 设计制造 定制服务"
 moq: "300 付/款（每色100件）"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

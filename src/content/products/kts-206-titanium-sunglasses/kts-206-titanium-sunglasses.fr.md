@@ -71,7 +71,7 @@ seoKeywords: "fabricant lunettes de soleil titane, lunettes luxe marque de distr
 - Marques Sportives et Lifestyle Automobile
 - Vente Duty-Free et Voyage
 
-## Présentation
+## Aperçu
 
 Conçu pour le marché de la lunetterie premium, le modèle KTS-206 met en avant l'exceptionnelle intégrité structurelle et les propriétés hypoallergéniques du titane de qualité aérospatiale. Sa silhouette sophistiquée équilibre performance légère et esthétique moderne et audace, adaptée aux environnements de vente au détail de luxe.
 

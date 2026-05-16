@@ -68,7 +68,7 @@ seoKeywords: "produttore occhiali da sole metallo rimless, occhiali rimless ingr
 - Vendita Duty-Free e Viaggi
 - Store di Concetto e Multi-Marchio
 
-## Panoramica del prodotto
+## Panoramica
 
 Il modello KRS-210 incarna un'estetica rimless sofisticata, bilanciando un design minimalista con un'architettura in metallo di alto livello per un'integrità strutturale duratura. Il suo profilo leggero è progettato per soddisfare le esigenze dei portfolio premium dove eleganza e robustezza hanno la stessa importanza.
 

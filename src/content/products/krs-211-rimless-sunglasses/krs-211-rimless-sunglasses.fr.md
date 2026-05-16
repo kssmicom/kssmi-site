@@ -58,7 +58,7 @@ seoKeywords: "fabricant de lunettes de soleil en titane sans monture, fournisseu
 - Marques de Mode Boutique
 - Vente Duty-Free et Voyage
 
-## Panoramica del prodotto
+## Présentation
 
 Le titane de qualité aérospatiale définit l'identité structurelle du modèle KRS-211, offrant une esthétique rimless légère qui répond aux exigences rigoureuses de la vente au détail haut de gamme.
 

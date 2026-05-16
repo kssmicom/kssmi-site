@@ -66,7 +66,7 @@ seoKeywords: "fabricante gafas de sol metal híbrido, producción gafas personal
 - Tiendas de Concepto y Multi-Marca
 - Grupos de Grandes Almacenes
 
-## Descripción General
+## Resumen
 
 El modelo KMS-007 cierra la brecha entre la fuerza arquitectónica del metal y la vibrante profundidad del acetato premium, creando una silueta híbrida que resuena con los consumidores enfocados en el lujo.
 

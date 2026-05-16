@@ -68,7 +68,7 @@ seoKeywords: "Hersteller von randlosen Metallsonnenbrillen, kundenspezifische OE
 - Boutique-Modemmarken
 - Hochwertige Optikketten
 
-## Produktübersicht
+## Überblick
 
 Durch die Kombination eines minimalistischen randlosen Profils mit hochwertigen Metallkomponenten bietet die KRS-204 eine anspruchsvolle Ästhetik für Luxusbrillen-Portfolios.
 

@@ -6,7 +6,7 @@ itemNo: "KAS-119"
 date: "2026-05-09"
 colors: "أسود & زهري & أزرق خام & أصفر & سلحفاة قطبية & سلحفاة سماوية & سلحفاة حمراء"
 materials: "أسيتات Mazzucchelli و JINYU فاخر & خدمة مخصصة"
-serviceMode: "OEM & ODM ( خدمة مخصصة )"
+serviceMode: "تصنيع بالتفويض / تصميم وتصنيع – خدمة مخصصة"
 moq: "300 PCS/Model (100PCS/Color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

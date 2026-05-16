@@ -6,7 +6,7 @@ itemNo: "KAO-002"
 date: "2026-05-10"
 colors: "Orange & Écaille & Violet & Vert"
 materials: "Acétate Premium Mazzucchelli & JINYU & Personnalisation"
-serviceMode: "Fabrication sous Contrat (OEM) & Conception et Fabrication (ODM) (Personnalisation)"
+serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

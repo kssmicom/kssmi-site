@@ -67,7 +67,7 @@ seoKeywords: "montures optiques en fibre de carbone, fabricant de lunettes perso
 - Marques Sportives et Lifestyle Automobile
 - Groupes de Grands Magasin
 
-## Présentation
+## Aperçu
 
 Conçu pour les marques d'élite, le modèle KSO-012 fusionne la fibre de carbone de qualité aérospatiale avec des branches en titane de précision pour offrir une monture ultralégère et structurellement supérieure. Chaque composant est usiné par CNC pour atteindre des tolérances exactas, mettant en valeur une texture technique unique qui définit la lunetterie moderne haut de gamme.
 

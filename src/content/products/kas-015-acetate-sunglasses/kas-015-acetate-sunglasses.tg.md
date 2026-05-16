@@ -6,7 +6,7 @@ itemNo: "KAS-015"
 date: "2026-05-10"
 colors: "Тӯшак бо сабз, Сиёҳ бо сиёҳ-зард, Тӯшаки сиёҳ бо сабз, Сиёҳ"
 materials: "Атсетати Premium Mazzucchelli ва JINYU ва Фармоишсозӣ"
-serviceMode: "OEM ва ODM ( Фармоишсозӣ )"
+serviceMode: "Истеҳсоли фармоишӣ / Тарроҳӣ ва Истеҳсол – Фармоишсозӣ"
 moq: "300 ад/модел (100ад/ранг)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

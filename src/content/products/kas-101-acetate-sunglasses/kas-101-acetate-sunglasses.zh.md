@@ -6,7 +6,7 @@ itemNo: "KAS-101"
 date: "2026-05-05"
 colors: "白色 & 熊猫色 & 豹纹 & 哈瓦那色 & 透明 & 黑色"
 materials: "优质马祖凯利 & 金余板材 & 定制服务"
-serviceMode: "代工生产 (OEM) & 设计制造 (ODM) ( 定制服务 )"
+serviceMode: "代工生产 / 设计制造 定制服务"
 moq: "300 付/款 (每色100件)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

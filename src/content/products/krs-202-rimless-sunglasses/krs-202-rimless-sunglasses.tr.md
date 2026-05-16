@@ -72,7 +72,7 @@ seoKeywords: "çerçevesiz metal güneş gözlüğü üreticisi, lüks moda göz
 - Duty-Free ve Seyahat Perakendecileri
 - Butik Moda Markaları
 
-## Panoramica del prodotto
+## Genel Bakış
 
 Üst düzey minimalizmi yapısal bütünlükle harmanlayan bu çerçevesiz tasarım, sofistike ve lüks bir estetik elde etmek için birinci sınıf bir metal iskelet kullanır.
 

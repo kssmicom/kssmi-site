@@ -6,7 +6,7 @@ itemNo: "KAO-155"
 date: "2026-05-10"
 colors: "Kuning Floral karo Ungu, Teal Floral karo Jambon"
 materials: "Asetat Mazzucchelli Premium & JINYU & Kustomisasi"
-serviceMode: "OEM & ODM ( Kustomisasi )"
+serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

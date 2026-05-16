@@ -6,7 +6,7 @@ itemNo: "KAS-124"
 date: "2026-05-09"
 colors: "Siyah & Manda Boynuzu & Kaplumbağa"
 materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
-serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) (Özelleştirme)"
+serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100adet/renk)"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"

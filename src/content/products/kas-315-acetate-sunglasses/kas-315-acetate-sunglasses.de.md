@@ -78,7 +78,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, individuelle OEM Sonnenbrillen Ch
 - Luxusmodehäuser
 - Duty-Free- und Reisehandel
 
-## Überblick
+## Übersicht
 
 Dieses aus hochwertigem Mazzucchelli- und JINYU-Acetat gefertigte Modell bietet ein lebendiges, handpoliertes Finish, das die Essenz moderner Luxusbrillen einfängt.
 

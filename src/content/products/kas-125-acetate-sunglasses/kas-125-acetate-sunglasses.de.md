@@ -72,7 +72,7 @@ seoKeywords: "Acetat-Sonnenbrillen-Hersteller, individuelle OEM-Brillen, Luxus-P
 - Boutique-Modemmarken
 - Duty-Free- und Reisehandel
 
-## Überblick
+## Übersicht
 
 Die hochwertige Mazzucchelli- und JINYU-Acetat-Konstruktion verleiht der KAS-125 eine unverwechselbare Haptik und lang anhaltende Lebendigkeit, die den Standards globaler Luxus-Portfolios entspricht.
 

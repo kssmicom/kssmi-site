@@ -6,7 +6,7 @@ itemNo: "KAS-102"
 date: "2026-05-05"
 colors: "Transparente & Preto & Preto Sólido & Azul Sólido & Cinza Sólido & Roxo Sólido & Cyan-Dot Blue-Dot & Mel & Verde & Vermelho Degradê & Azul Escuro & Azul Claro & Cinza Fosco & Tartaruga & Cinza Transparente & Panda"
 materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
-serviceMode: "OEM & ODM ( Personalização )"
+serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100pçs/cor)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

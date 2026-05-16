@@ -6,7 +6,7 @@ itemNo: "KAS-103"
 date: "2026-05-06"
 colors: "Hitam & Kisi-kisi Kuning & Marmar Mutiara & Kisi-kisi Merah & Kisi-kisi Biru & Kisi-kisi Hitam"
 materials: "Premium Mazzucchelli & Asetat JINYU & Penyesuaian"
-serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & Pembuatan ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
+serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -16,8 +16,8 @@ series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sungla
 
 # ─────────────────────────────────────────────────────
 size: "52-19-143mm & Penyesuaian"
-frameMaterial: "Bingkai dan Sangga Asetat Premium"
-lensMaterial: "Lensa Nilun Teguh & Penyesuaian"
+frameMaterial: "Bingkai dan Temple Asetat Premium"
+lensMaterial: "Kanta Nylon Tenacious & Penyesuaian"
 designStyle: "Berani, Fesyen, Bergaya, Popular, Trendi, Unisex"
 nosePads: "Alas Hidung Bersepadu"
 hinge: "Engsel Struktur 3+2 Barel & Penyesuaian"

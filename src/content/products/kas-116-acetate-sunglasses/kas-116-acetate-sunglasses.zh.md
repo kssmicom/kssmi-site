@@ -6,7 +6,7 @@ itemNo: "KAS-116"
 date: "2026-05-09"
 colors: "黑色 & 绿色大理石纹 & 白色 & 大理石纹"
 materials: "优质马祖凯利 & 金余板材 & 定制服务"
-serviceMode: "代工生产 & 设计制造 ( 定制服务 )"
+serviceMode: "代工生产 / 设计制造 定制服务"
 moq: "300 付/款（每色100付）"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

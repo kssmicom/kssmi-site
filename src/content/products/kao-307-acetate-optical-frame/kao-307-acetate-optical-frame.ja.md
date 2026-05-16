@@ -5,8 +5,8 @@ slug: "kao-307-acetate-optical-frame"
 itemNo: "KAO-307"
 date: "2026-05-10"
 colors: "ブラック & クリア & トータスシェル & ストライプ"
-materials: "プレミアムMazzucchelli & JINYUアセテート & カスタマイズ対応"
-serviceMode: "受託製造 (OEM) & 設計製造 (ODM) ( カスタマイズ対応 )"
+materials: "プレミアム Mazzucchelli & JINYU アセテート & カスタマイズ対応"
+serviceMode: "OEM製造 / ODM設計製造 カスタマイズ対応"
 moq: "300 個/モデル (100個/カラー)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -71,7 +71,7 @@ seoKeywords: "アセテート光学フレームメーカー, カスタムOEMア�
 
 ## 概要
 
-MazzucchelliおよびJINYU社のアセテートは、KAO-307に世界的なファッションの厳しい基準を満たす色彩の深みと耐久性を提供します。
+Mazzucchelli および JINYU 社のアセテートは、KAO-307に世界的なファッションの厳しい基準を満たす色彩の深みと耐久性を提供します。
 
 各フレームは高精度な4+3バレルリベットヒンジシステムによって固定されており、伝統的な職人技とプレミアムな日常使用に求められる信頼性の高いパフォーマンスを両立させています。
 

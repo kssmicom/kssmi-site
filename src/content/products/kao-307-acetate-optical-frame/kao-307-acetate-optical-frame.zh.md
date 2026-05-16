@@ -6,7 +6,7 @@ itemNo: "KAO-307"
 date: "2026-05-10"
 colors: "黑色 & 透明 & 玳瑁 & 条纹"
 materials: "优质马祖凯利 & 金余板材 & 定制"
-serviceMode: "代工生产 (OEM) & 设计制造 (ODM) ( 定制 )"
+serviceMode: "代工生产 / 设计制造 定制服务"
 moq: "300 付/款 (每色100件)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

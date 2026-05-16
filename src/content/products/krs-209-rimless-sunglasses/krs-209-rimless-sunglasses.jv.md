@@ -62,7 +62,7 @@ seoKeywords: "produsen kacamata hitam tanpa bingkai, kacamata hitam logam kustom
 
 ## Cocok kanggo
 - Merek Kacamata Premium
-- Penzel Kacamata Independen
+- Desainer Kacamata Independen
 - Distributor Label Pribadi
 - Rumah Mode Mewah
 - Group Store Departemen

@@ -5,8 +5,8 @@ slug: "kao-002-acetate-optical-frame"
 itemNo: "KAO-002"
 date: "2026-05-10"
 colors: "Orange & Schildpatt & Lila & Grün"
-materials: "Premium-Mazzucchelli- & JINYU-Acetat & Individualisierung"
-serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) (Individualisierung)"
+materials: "Premium Mazzucchelli & JINYU Acetat & Individualisierung"
+serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KAO-002 Luxus-Acetat-Optikfassung | Kundenspezifische Brillenfabrik"
-seoDescription: "Werten Sie Ihre Marke mit den KAO-002 Premium-Mazzucchelli-Acetat-Optikfassungen auf. Mit 4+3-Fass-Scharnieren und vollständiger OEM/ODM-Individualisierung. 300 Einheiten MOQ-Support."
+seoDescription: "Werten Sie Ihre Marke mit den KAO-002 Premium Mazzucchelli Acetat-Optikfassungen auf. Mit 4+3-Fass-Scharnieren und vollständiger OEM/ODM-Individualisierung. 300 Einheiten MOQ-Support."
 seoKeywords: "Acetat-Optikfassungen, individuelle optische Brillen, OEM-Brillenhersteller, chinesische Brillenfabrik, Premium-Brillenmarken, Großhandel mit Acetat-Fassungen, maßgeschneiderte Brillenproduktion, individuelle Acetat-Fassungen"
 ---
 
@@ -71,7 +71,7 @@ seoKeywords: "Acetat-Optikfassungen, individuelle optische Brillen, OEM-Brillenh
 
 ## Überblick
 
-Durch die Verwendung von Premium-Mazzucchelli- und JINYU-Acetat erreichen diese optischen Fassungen ein anspruchsvolles Gleichgewicht zwischen leichtem Tragekomfort und einer satten, lebendigen Farbtiefe. Die hochwertige Materialzusammensetzung sorgt für eine widerstandsfähige, polierte Oberfläche, die den anspruchsvollen Standards der Luxusbrillenentwicklung entspricht.
+Durch die Verwendung von Premium Mazzucchelli und JINYU Acetat erreichen diese optischen Fassungen ein anspruchsvolles Gleichgewicht zwischen leichtem Tragekomfort und einer satten, lebendigen Farbtiefe. Die hochwertige Materialzusammensetzung sorgt für eine widerstandsfähige, polierte Oberfläche, die den anspruchsvollen Standards der Luxusbrillenentwicklung entspricht.
 
 Integrierte 4+3-Fass-Nietscharniere bieten außergewöhnliche strukturelle Integrität und reibungslose mechanische Bedienung, entwickelt für langfristige Zuverlässigkeit in anspruchsvollen Einzelhandelsumgebungen.
 

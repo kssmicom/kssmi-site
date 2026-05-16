@@ -68,7 +68,7 @@ seoKeywords: "nhà sản xuất kính mát không gọng, bán buôn kính mát 
 - Bán lẻ miễn thuế và du lịch
 - Cửa hàng khái niệm & đa nhãn
 
-## Tổng quan sản phẩm
+## Tổng quan
 
 Khi các thương hiệu yêu cầu sự giao thoa giữa thiết kế tối giản và độ bền của kim loại cao cấp, KRS-201 đóng vai trò là lựa chọn dứt khoát. Kiến trúc không gọng của nó mang lại một diện mạo thời trang cao cấp, nhẹ tênh, cộng hưởng với các yêu cầu tinh tế của các danh mục kính mắt xa xỉ.
 

@@ -5,8 +5,8 @@ slug: "kas-010-acetate-sunglasses"
 itemNo: "KAS-010"
 date: "2026-05-10"
 colors: "黑色 & 陨石水晶 & 坦桑石 & 邦巴迪"
-materials: "优质马祖凯利 & 金余板材 & 定制服务"
-serviceMode: "代工生产 & 设计制造 ( 定制服务 )"
+materials: "优质 马祖凯利 & 金余板材 & 定制服务"
+serviceMode: "代工生产 / 设计制造 定制服务"
 moq: "300 付/款 (每色100件)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

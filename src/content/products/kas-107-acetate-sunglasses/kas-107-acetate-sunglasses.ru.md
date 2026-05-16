@@ -6,7 +6,7 @@ itemNo: "KAS-107"
 date: "2026-05-06"
 colors: "Черный & Прозрачный & Гавана & Оливковый"
 materials: "Премиум ацетат Mazzucchelli и JINYU & Индивидуальный заказ"
-serviceMode: "OEM и ODM ( Индивидуальный заказ )"
+serviceMode: "Контрактное производство / Производство по ODM – Индивидуальный заказ"
 moq: "300 шт/модель (100шт/цвет)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

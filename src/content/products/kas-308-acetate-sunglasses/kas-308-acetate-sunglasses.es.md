@@ -70,7 +70,7 @@ seoKeywords: "fabricante gafas acetato, gafas OEM personalizadas, gafas marca pr
 - Grupos de Grandes Almacenes
 - Venta Duty-Free y Viajes
 
-## Descripción General
+## Resumen
 
 Fresado con precisión a partir de acetato Mazzucchelli y JINYU premium, el KAS-308 proporciona un chasis ligero pero robusto para gafas de moda de alta gama.
 

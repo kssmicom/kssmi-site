@@ -69,7 +69,7 @@ seoKeywords: "fabricante óculos de sol titânio, atacado óculos de sol titâni
 - Casas de Moda de Luxo
 - Venda Duty-Free e Viagens
 
-## Visão geral
+## Visão Geral
 
 O KTS-024 utiliza titânio premium para obter uma armação leve mas excecionalmente durável que atende ao mercado de boutiques de alto padrão.
 

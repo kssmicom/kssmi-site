@@ -6,7 +6,7 @@ itemNo: "KAS-111"
 date: "2026-05-09"
 colors: "कैंडी-रेड & गुलाबी कछुआ & क्रीम-सफेद & काला"
 materials: "प्रीमियम Mazzucchelli & JINYU एसीटेट & कस्टमाइज़ेशन"
-serviceMode: "OEM & ODM ( कस्टमाइज़ेशन )"
+serviceMode: "OEM / ODM निर्माण – कस्टमाइज़ेशन सेवा"
 moq: "300 पीस/मॉडल (100पीस/रंग)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

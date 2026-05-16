@@ -6,7 +6,7 @@ itemNo: "KAS-007"
 date: "2026-05-10"
 colors: "黑金 & 黑银 & 透明 & 红色"
 materials: "优质 马祖凯利 & 金余板材 & 定制服务"
-serviceMode: "代工生产 (OEM) & 设计制造 (ODM) ( 定制服务 )"
+serviceMode: "代工生产 / 设计制造 定制服务"
 moq: "300 付/款 (100付/颜色)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

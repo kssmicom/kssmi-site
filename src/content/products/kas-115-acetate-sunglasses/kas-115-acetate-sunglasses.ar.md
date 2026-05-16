@@ -6,7 +6,7 @@ itemNo: "KAS-115"
 date: "2026-05-09"
 colors: "أسود & أرجواني & أبيض & سلحفاة & برتقالي"
 materials: "أسيتات Mazzucchelli و JINYU الفاخرة & خدمة مخصصة"
-serviceMode: "تصنيع بالتفويض & تصميم وتصنيع (خدمة مخصصة)"
+serviceMode: "تصنيع بالتفويض / تصميم وتصنيع – خدمة مخصصة"
 moq: "300 قطعة/نموذج (100 قطعة/لون)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

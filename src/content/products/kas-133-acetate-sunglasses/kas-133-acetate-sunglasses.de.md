@@ -69,7 +69,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, maßgeschneiderte OEM-Sonnenbrill
 - Konzept- und Multi-Brand-Stores
 - Kaufhausgruppen
 
-## Überblick
+## Übersicht
 
 Mazzucchelli- und JINYU-Acetat bilden die Grundlage für die Exzellenz der KAS-133 und bieten einen leichten und dennoch langlebigen Rahmen mit außergewöhnlicher Farbbrillanz. Das Unisex-Design dient als vielseitige Leinwand für Marken, die eine Balance zwischen Luxus und zukunftsorientierter Ästhetik suchen.
 

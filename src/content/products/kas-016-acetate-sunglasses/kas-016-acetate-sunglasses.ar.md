@@ -6,7 +6,7 @@ itemNo: "KAS-016"
 date: "2026-05-10"
 colors: "سلحفاة مع أخضر، أسود مع أصفر، سلحفاة سوداء مع رمادي متدرج"
 materials: "أسيتات Mazzucchelli و JINYU فاخر وخدمة مخصصة"
-serviceMode: "تصنيع بالتفويض (OEM) وتصميم وتصنيع (ODM) ( خدمة مخصصة )"
+serviceMode: "تصنيع بالتفويض / تصميم وتصنيع – خدمة مخصصة"
 moq: "300 قطعة/نموذج (100 قطعة/لون)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

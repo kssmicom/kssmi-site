@@ -58,7 +58,7 @@ seoKeywords: "Metall-Optikfassungen, Hybrid-Acetat-Metall-Fassungen, Brillenhers
 - Luxusmodehäuser
 - Boutique-Modemmarken
 
-## Überblick
+## Übersicht
 
 Durch hochpräzise Ionenplattierung erhält das Modell KMO-257 sein glänzendes Bronze-Finish und kombiniert eine Front aus Premium-Acetat mit architektonischen Metallbügeln.
 

@@ -6,7 +6,7 @@ itemNo: "KAS-116"
 date: "2026-05-09"
 colors: "Negro & Verde-Mármol & Blanco & Mármol"
 materials: "Mazzucchelli Premium & Acetato JINYU & Personalización"
-serviceMode: "Fabricación por Cuenta de Terceros & Diseño y Fabricación ( Personalización )"
+serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────

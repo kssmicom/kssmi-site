@@ -69,7 +69,7 @@ seoKeywords: "acetat sonnenbrillen hersteller, custom OEM sonnenbrillen, luxus p
 - Luxusmodehäuser
 - Kaufhausgruppen
 
-## Überblick
+## Übersicht
 
 Gefertigt aus hochwertigem Mazzucchelli- und JINYU-Acetat, bietet die KAS-346 eine ausgewogene Kombination aus lebendiger visueller Tiefe und einer leichten, hypoallergenen Struktur. Das Premium-Material bildet die Grundlage für dauerhafte Haltbarkeit und ein anspruchsvolles Finish, das ideal für High-End-Kollektionen ist.
 

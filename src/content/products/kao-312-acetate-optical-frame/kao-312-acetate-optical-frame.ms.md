@@ -22,7 +22,6 @@ designStyle: "Unik, Klasik, Retro, Bergaya, Trend, Fesyen, Mewah, Unisex"
 nosePads: "Alas Hidung Bersepadu"
 hinge: "Engsel Struktur Rivet Barrel 4+3 & Penyesuaian (5 Barrel & Engsel Spring)"
 logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Lencana Logam, Timbulan, Kristal, Pelekat"
-service: "Pembuatan OEM / ODM – Penyesuaian"
 acetateFeature: "Ringan & Tahan Lama & Ceria"
 
 # ─────────────────────────────────────────────────────

@@ -68,7 +68,7 @@ seoKeywords: "fabricant lunettes soleil métal rimless, lunettes rimless en gros
 - Vente Duty-Free et Voyage
 - Magasins de Concept et Multi-Marques
 
-## Aperçu du produit
+## Présentation
 
 Le modèle KRS-210 incarne une esthétique rimless sophistiquée, équilibrant un attrait visuel minimaliste avec une architecture en métal de haute qualité pour une intégrité structurelle durable. Son profil léger est conçu pour répondre aux exigences des portefeuilles premium où l'élégance et la durabilité sont prioritaires à parts égales.
 

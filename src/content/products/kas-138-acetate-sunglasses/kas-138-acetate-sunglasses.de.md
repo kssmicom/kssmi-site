@@ -68,7 +68,7 @@ seoKeywords: "Hersteller von Acetat-Sonnenbrillen, kundenspezifische OEM-Sonnenb
 - Luxusmodehäuser
 - Konzept- und Multi-Brand-Stores
 
-## Überblick
+## Übersicht
 Die aus echtem Mazzucchelli- und JINYU-Acetat präzisionsgefertigte KAS-138-Serie betont lebendige Farbtiefe und hochwertige Haltbarkeit für den Luxusmarkt.
 
 Die Integration von 3+2-Fassscharnieren und ergonomischen Nasenpads sorgt für ein nahtloses Gleichgewicht zwischen mechanischer Zuverlässigkeit und täglichem Tragekomfort.

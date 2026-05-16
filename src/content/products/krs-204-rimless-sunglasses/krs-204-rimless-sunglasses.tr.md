@@ -68,7 +68,7 @@ seoKeywords: "çerçevesiz metal güneş gözlüğü üreticisi, özel OEM güne
 - Butik Moda Markaları
 - Yüksek Segment Optik Zincirleri
 
-## Ürün Genel Bakışı
+## Genel Bakış
 
 Minimalist çerçevesiz bir silüeti birinci sınıf metal bileşenlerle birleştiren KRS-204, lüks gözlük portföyleri için sofistike bir estetik sunar.
 

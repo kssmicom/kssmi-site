@@ -68,7 +68,7 @@ seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính mắt tùy ch�
 - Nhà thời trang xa xỉ
 - Thương hiệu thể thao và ô tô
 
-## Tổng quan về sản phẩm
+## Tổng quan
 
 Được chế tác cho môi trường chuyên nghiệp, mẫu gọng kính này kết hợp mặt trước bằng sợi carbon cấp hàng không với càng kính kim loại chất lượng cao để đạt được tính thẩm mỹ tinh tế và hiện đại.
 
