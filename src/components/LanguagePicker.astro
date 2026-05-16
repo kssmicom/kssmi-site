@@ -64,21 +64,21 @@ const currentLanguage = languages.find(l => l.code === lang) || languages[0];
             href={url}
             class={`group flex items-center justify-between px-4 py-2.5 text-sm transition-colors ${
               isSelected 
-                ? 'bg-[#8B7355]/5 text-[#8B7355] font-semibold' 
+                ? 'bg-[#8B7355]/5 text-[#5D4E37] font-semibold' 
                 : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
             }`}
             role="menuitem"
           >
             <div class="flex items-center gap-3">
               <span class={`flex h-6 w-6 items-center justify-center rounded-full text-[10px] font-bold transition-colors border ${
-                isSelected ? 'bg-[#8B7355] text-white border-[#8B7355]' : 'bg-gray-50 text-gray-600 border-gray-200 group-hover:bg-white'
+                isSelected ? 'bg-[#5D4E37] text-white border-[#8B7355]' : 'bg-gray-50 text-gray-600 border-gray-200 group-hover:bg-white'
               }`}>
                 {l.flag}
               </span>
               <span>{l.name}</span>
             </div>
             {isSelected && (
-              <svg class="h-4 w-4 text-[#8B7355]" viewBox="0 0 20 20" fill="currentColor">
+              <svg class="h-4 w-4 text-[#5D4E37]" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
               </svg>
             )}

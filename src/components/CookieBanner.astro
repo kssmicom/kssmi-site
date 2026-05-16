@@ -68,7 +68,7 @@ const t = {
         </button>
         <button
           id="cookie-btn-accept"
-          class="rounded-lg bg-[#8B7355] px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-[#5D4E37]"
+          class="rounded-lg bg-[#5D4E37] px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-[#4A3D2E]"
         >
           {t.accept}
         </button>
@@ -126,7 +126,7 @@ const t = {
         </button>
         <button
           id="cookie-modal-save"
-          class="rounded-lg bg-[#8B7355] px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-[#5D4E37]"
+          class="rounded-lg bg-[#5D4E37] px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-[#4A3D2E]"
         >
           {t.save}
         </button>
@@ -163,6 +163,12 @@ const t = {
       });
     }
 
+    function vjtConsentUpdate(analytics) {
+      if (window.VJTTracker) {
+        window.VJTTracker.enabled = !!analytics;
+      }
+    }
+
     // --- DOM refs ---
     var banner = document.getElementById('cookie-banner');
     var main = document.getElementById('cookie-banner-main');
@@ -177,6 +183,7 @@ const t = {
         existing.analytics || false,
         existing.ads || false
       );
+      vjtConsentUpdate(existing.analytics || false);
       return; // banner stays hidden
     }
 
@@ -187,6 +194,7 @@ const t = {
     document.getElementById('cookie-btn-accept').addEventListener('click', function () {
       setCookie({ analytics: true, ads: true });
       gtagConsentUpdate(true, true);
+      vjtConsentUpdate(true);
       banner.classList.add('hidden');
     });
 
@@ -194,6 +202,7 @@ const t = {
     document.getElementById('cookie-btn-reject').addEventListener('click', function () {
       setCookie({ analytics: false, ads: false });
       gtagConsentUpdate(false, false);
+      vjtConsentUpdate(false);
       banner.classList.add('hidden');
     });
 
@@ -219,6 +228,7 @@ const t = {
       var ads = checkAds.checked;
       setCookie({ analytics: analytics, ads: ads });
       gtagConsentUpdate(analytics, ads);
+      vjtConsentUpdate(analytics);
       banner.classList.add('hidden');
       closeModal();
     });

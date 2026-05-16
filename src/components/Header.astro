@@ -232,7 +232,7 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
           {menuStructure.map((item) => (
             <li class="h-full flex items-center">
               <a href={item.href}
-                 class="nav-link relative inline-block text-gray-700 hover:text-[#8B7355] font-['Manrope'] font-bold text-xs md:text-sm uppercase tracking-wider transition-colors duration-300 px-2 xl:px-3 py-2"
+                 class="nav-link relative inline-block text-gray-700 hover:text-[#5D4E37] font-['Manrope'] font-bold text-xs md:text-sm uppercase tracking-wider transition-colors duration-300 px-2 xl:px-3 py-2"
                  data-mega-trigger={item.hasDropdown ? item.menuKey : undefined}>
                 {item.label}
               </a>
@@ -256,13 +256,13 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
               </button>
               <!-- Search button -->
-              <button type="submit" id="header-search-btn" class="px-2 text-stone-700 hover:text-[#8B7355] transition-colors" aria-label="Search">
+              <button type="submit" id="header-search-btn" class="px-2 text-stone-700 hover:text-[#5D4E37] transition-colors" aria-label="Search">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
               </button>
             </div>
           </form>
           <div class="lang-dropdown-container relative group">
-            <button class="lang-btn text-[11px] font-bold uppercase tracking-widest text-stone-900 flex items-center gap-2 hover:text-[#8B7355] transition-colors py-2 z-50 relative">
+            <button class="lang-btn text-[11px] font-bold uppercase tracking-widest text-stone-900 flex items-center gap-2 hover:text-[#5D4E37] transition-colors py-2 z-50 relative">
               {currentLangUpper}
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
             </button>
@@ -287,14 +287,14 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
             </div>
           </div>
         </div>
-        <a href={`/${currentPath}quote`} class="hidden sm:block px-5 xl:px-6 py-2.5 bg-[#5D4E37] text-white text-xs xl:text-sm font-['Manrope'] font-bold uppercase tracking-[0.15em] hover:bg-[#8B7355] active:scale-95 transition-all duration-300 rounded-sm shadow-lg">
+        <a href={`/${currentPath}quote`} class="hidden sm:block px-5 xl:px-6 py-2.5 bg-[#5D4E37] text-white text-xs xl:text-sm font-['Manrope'] font-bold uppercase tracking-[0.15em] hover:bg-[#4A3D2E] active:scale-95 transition-all duration-300 rounded-sm shadow-lg">
           {quoteText}
         </a>
 
         <!-- Mobile Menu Button -->
         <div class="lg:hidden flex items-center gap-3">
           <div class="lang-dropdown-container sm:hidden relative group">
-            <button class="lang-btn text-[11px] font-bold uppercase tracking-widest text-stone-900 flex items-center gap-2 hover:text-[#8B7355] transition-colors py-2 z-50 relative">
+            <button class="lang-btn text-[11px] font-bold uppercase tracking-widest text-stone-900 flex items-center gap-2 hover:text-[#5D4E37] transition-colors py-2 z-50 relative">
               {currentLangUpper}
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
             </button>
@@ -318,7 +318,7 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
               </div>
             </div>
           </div>
-          <button id="mobile-menu-button" class="p-2 text-stone-700 hover:text-[#8B7355] focus:outline-none transition-colors relative z-[70] cursor-pointer" aria-label="Open menu">
+          <button id="mobile-menu-button" class="p-2 text-stone-700 hover:text-[#5D4E37] focus:outline-none transition-colors relative z-[70] cursor-pointer" aria-label="Open menu">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M4 8h16M4 16h16" /></svg>
           </button>
         </div>
@@ -332,12 +332,12 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
         <div class="grid grid-cols-6 gap-4 xl:gap-6">
           {productsMenu?.children?.map((group) => (
             <div class="flex flex-col">
-              <a href={group.href} class="font-['Manrope'] font-bold text-xs uppercase tracking-wider text-[#8B7355] mb-4 whitespace-nowrap hover:text-[#5D4E37] transition-colors">
+              <a href={group.href} class="font-['Manrope'] font-bold text-xs uppercase tracking-wider text-[#5D4E37] mb-4 whitespace-nowrap hover:text-[#5D4E37] transition-colors">
                 {group.label}
               </a>
               <div class="flex flex-col space-y-1">
                 {group.items.map((subItem) => (
-                  <a href={subItem.href} class="font-['Plus_Jakarta_Sans'] text-sm font-medium text-stone-600 py-1.5 transition-all duration-200 hover:text-[#8B7355] hover:pl-1 whitespace-nowrap">
+                  <a href={subItem.href} class="font-['Plus_Jakarta_Sans'] text-sm font-medium text-stone-600 py-1.5 transition-all duration-200 hover:text-[#5D4E37] hover:pl-1 whitespace-nowrap">
                     {subItem.label}
                   </a>
                 ))}
@@ -352,12 +352,12 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
         <div class="grid grid-cols-6 gap-4 xl:gap-6">
           {featuredMenu?.children?.map((group) => (
             <div class="flex flex-col">
-              <a href={group.href} class="font-['Manrope'] font-bold text-xs uppercase tracking-wider text-[#8B7355] mb-4 whitespace-nowrap hover:text-[#5D4E37] transition-colors">
+              <a href={group.href} class="font-['Manrope'] font-bold text-xs uppercase tracking-wider text-[#5D4E37] mb-4 whitespace-nowrap hover:text-[#5D4E37] transition-colors">
                 {group.label}
               </a>
               <div class="flex flex-col space-y-1">
                 {group.items.map((subItem) => (
-                  <a href={subItem.href} class="font-['Plus_Jakarta_Sans'] text-sm font-medium text-stone-600 py-1.5 transition-all duration-200 hover:text-[#8B7355] hover:pl-1 whitespace-nowrap">
+                  <a href={subItem.href} class="font-['Plus_Jakarta_Sans'] text-sm font-medium text-stone-600 py-1.5 transition-all duration-200 hover:text-[#5D4E37] hover:pl-1 whitespace-nowrap">
                     {subItem.label}
                   </a>
                 ))}
@@ -374,7 +374,7 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
 <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-[10000] p-6 overflow-y-auto">
   <div class="flex justify-between items-center mb-8 sticky top-0 bg-white z-10 py-4 border-b border-gray-50">
     <span class="text-2xl font-['Manrope'] font-bold text-[#503629]">Menu</span>
-    <button id="mobile-menu-close" class="p-3 bg-stone-100 rounded-full text-stone-700 hover:text-[#8B7355] hover:bg-stone-200 transition-colors shadow-sm" aria-label="Close menu">
+    <button id="mobile-menu-close" class="p-3 bg-stone-100 rounded-full text-stone-700 hover:text-[#5D4E37] hover:bg-stone-200 transition-colors shadow-sm" aria-label="Close menu">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
     </button>
   </div>
@@ -384,7 +384,7 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
       <button type="button" id="mobile-search-clear" class="hidden px-3 text-stone-400 hover:text-stone-600 transition-colors" aria-label="Clear search">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
       </button>
-      <button type="submit" id="mobile-search-btn" class="px-4 text-stone-700 hover:text-[#8B7355] transition-colors" aria-label="Search">
+      <button type="submit" id="mobile-search-btn" class="px-4 text-stone-700 hover:text-[#5D4E37] transition-colors" aria-label="Search">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
       </button>
     </form>
@@ -412,11 +412,11 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
           <div class="mobile-sub-menu bg-[#fafaf9] overflow-hidden max-h-0 transition-all duration-500 ease-out">
             {item.children.map((group) => (
               <div class="pt-4 pb-2">
-                <div class="py-3 text-xs md:text-sm font-semibold text-[#8B7355] font-['Manrope'] uppercase tracking-wide">
+                <div class="py-3 text-xs md:text-sm font-semibold text-[#5D4E37] font-['Manrope'] uppercase tracking-wide">
                   {group.label}
                 </div>
                 {group.items.map((subItem) => (
-                  <a href={subItem.href} class="flex items-center font-['Plus_Jakarta_Sans'] text-base md:text-lg font-medium text-stone-700 py-3 pl-6 transition-all duration-200 hover:text-[#8B7355] hover:pl-8">
+                  <a href={subItem.href} class="flex items-center font-['Plus_Jakarta_Sans'] text-base md:text-lg font-medium text-stone-700 py-3 pl-6 transition-all duration-200 hover:text-[#5D4E37] hover:pl-8">
                     <span class="mr-3 text-[#5D4E37]">→</span>
                     {subItem.label}
                   </a>
@@ -428,7 +428,7 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
       </div>
     ))}
     <div class="pt-6 mt-6 border-t border-stone-100">
-      <a href={`/${currentPath}quote`} class="block w-full py-4 bg-[#8B7355] text-white text-center text-sm font-bold uppercase tracking-widest rounded-sm shadow-lg">
+      <a href={`/${currentPath}quote`} class="block w-full py-4 bg-[#5D4E37] text-white text-center text-sm font-bold uppercase tracking-widest rounded-sm shadow-lg">
         {quoteText}
       </a>
     </div>

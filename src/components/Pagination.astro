@@ -56,7 +56,7 @@ const {
               ? basePath
               : `${basePath}/${currentPage - 1}`
           )}
-          class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
+          class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
           aria-label={prevLabel}
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -80,8 +80,8 @@ const {
           href={categorySlug ? `${basePath}/${categorySlug}` : basePath}
           class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
             currentPage === 1
-              ? 'bg-[#8B7355] text-white shadow-sm'
-              : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355]'
+              ? 'bg-[#5D4E37] text-white shadow-sm'
+              : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37]'
           }`}
           aria-label="Page 1"
         >
@@ -101,8 +101,8 @@ const {
               href={categorySlug ? `${basePath}/${categorySlug}/${p}` : `${basePath}/${p}`}
               class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
                 p === currentPage
-                  ? 'bg-[#8B7355] text-white shadow-sm'
-                  : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355]'
+                  ? 'bg-[#5D4E37] text-white shadow-sm'
+                  : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37]'
               }`}
             >
               {p}
@@ -120,8 +120,8 @@ const {
             href={categorySlug ? `${basePath}/${categorySlug}/${lastPage}` : `${basePath}/${lastPage}`}
             class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
               currentPage === lastPage
-                ? 'bg-[#8B7355] text-white shadow-sm'
-                : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355]'
+                ? 'bg-[#5D4E37] text-white shadow-sm'
+                : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37]'
             }`}
           >
             {lastPage}
@@ -147,7 +147,7 @@ const {
         />
         <button
           type="submit"
-          class="px-3 h-10 border border-gray-200 rounded-lg text-sm text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
+          class="px-3 h-10 border border-gray-200 rounded-lg text-sm text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
         >
           {goToButton}
         </button>
@@ -157,7 +157,7 @@ const {
       {currentPage < lastPage ? (
         <a
           href={nextUrl ?? (categorySlug ? `${basePath}/${categorySlug}/${currentPage + 1}` : `${basePath}/${currentPage + 1}`)}
-          class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#8B7355] transition-colors"
+          class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
           aria-label={nextLabel}
         >
           <span class="hidden sm:inline">{nextLabel}</span>

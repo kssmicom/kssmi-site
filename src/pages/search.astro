@@ -16,7 +16,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
 
   <div id="search-page" data-lang="en" data-view-details={viewDetailsText}>
   <section class="w-full min-h-screen bg-stone-100 pt-32 pb-24">
-    <div class="max-w-[1860px] mx-auto px-4 sm:px-6 lg:px-12">
+    <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
 
       <!-- Search Header Block -->
       <div class="text-center mb-12 relative max-w-4xl mx-auto">
@@ -35,7 +35,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
         <div id="search-info" class="hidden">
           <div class="inline-block relative">
             <p class="text-lg text-stone-600 mb-3 font-light">
-              Found matches for <span id="query-display" class="font-bold text-[#8B7355] border-b-2 border-[#8B7355]/20"></span>
+              Found matches for <span id="query-display" class="font-bold text-[#5D4E37] border-b-2 border-[#8B7355]/20"></span>
             </p>
           </div>
 
@@ -72,7 +72,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
             </button>
 
             <!-- Search Button -->
-            <button type="submit" class="px-5 py-2.5 mr-1.5 bg-[#5D4E37] text-white rounded-full hover:bg-[#8B7355] transition-all duration-300 font-bold tracking-wide text-xs uppercase shadow-md flex-shrink-0 flex items-center gap-2">
+            <button type="submit" class="px-5 py-2.5 mr-1.5 bg-[#5D4E37] text-white rounded-full hover:bg-[#4A3D2E] transition-all duration-300 font-bold tracking-wide text-xs uppercase shadow-md flex-shrink-0 flex items-center gap-2">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
@@ -84,7 +84,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
 
       <!-- Loading State -->
       <div id="loading-state" class="hidden text-center py-16">
-        <svg class="w-12 h-12 mx-auto animate-spin text-[#8B7355]" fill="none" viewBox="0 0 24 24">
+        <svg class="w-12 h-12 mx-auto animate-spin text-[#5D4E37]" fill="none" viewBox="0 0 24 24">
           <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
           <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
         </svg>
@@ -105,21 +105,21 @@ const viewDetailsText = pt.viewDetails || 'View Details';
 
         <!-- Suggestions -->
         <div class="mt-12 max-w-5xl mx-auto">
-          <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-[#8B7355] mb-8">{pt.recommendedSearches || 'Recommended Searches'}</h3>
+          <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-[#5D4E37] mb-8">{pt.recommendedSearches || 'Recommended Searches'}</h3>
           <div class="flex flex-wrap gap-3 justify-center">
-            <a href="/search?q=optical+frames" class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#8B7355] transition-all duration-300 shadow-sm hover:shadow-md">
+            <a href="/search?q=optical+frames" class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#5D4E37] transition-all duration-300 shadow-sm hover:shadow-md">
               Optical Frames
             </a>
-            <a href="/search?q=sunglasses" class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#8B7355] transition-all duration-300 shadow-sm hover:shadow-md">
+            <a href="/search?q=sunglasses" class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#5D4E37] transition-all duration-300 shadow-sm hover:shadow-md">
               Sunglasses
             </a>
-            <a href="/search?q=acetate" class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#8B7355] transition-all duration-300 shadow-sm hover:shadow-md">
+            <a href="/search?q=acetate" class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#5D4E37] transition-all duration-300 shadow-sm hover:shadow-md">
               Acetate
             </a>
-            <a href="/search?q=titanium" class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#8B7355] transition-all duration-300 shadow-sm hover:shadow-md">
+            <a href="/search?q=titanium" class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#5D4E37] transition-all duration-300 shadow-sm hover:shadow-md">
               Titanium
             </a>
-            <a href="/search?q=metal" class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#8B7355] transition-all duration-300 shadow-sm hover:shadow-md">
+            <a href="/search?q=metal" class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#5D4E37] transition-all duration-300 shadow-sm hover:shadow-md">
               Metal
             </a>
           </div>
@@ -143,10 +143,10 @@ const viewDetailsText = pt.viewDetails || 'View Details';
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a href="/" class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#8B7355] transition-colors duration-300 shadow-lg">
+          <a href="/" class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#4A3D2E] transition-colors duration-300 shadow-lg">
             {pt.backToHome || 'Back to Home'}
           </a>
-          <a href="/product" class="inline-flex items-center px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#5D4E37] hover:text-white transition-all duration-300">
+          <a href="/product" class="inline-flex items-center px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#4A3D2E] hover:text-white transition-all duration-300">
             View Catalog
           </a>
         </div>

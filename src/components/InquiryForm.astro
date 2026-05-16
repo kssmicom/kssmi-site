@@ -287,8 +287,8 @@ const currentUrl = Astro.url.pathname;
           <button
             type="submit"
             id="submit-btn"
-            class="w-full bg-[#8B7355] text-white py-4 px-6 rounded-lg font-semibold
-                   hover:bg-[#5D4E37] active:bg-[#4a4030]
+            class="w-full bg-[#5D4E37] text-white py-4 px-6 rounded-lg font-semibold
+                   hover:bg-[#4A3D2E] active:bg-[#4a4030]
                    transition-colors duration-200
                    focus:outline-none focus:ring-2 focus:ring-[#8B7355] focus:ring-offset-2
                    flex items-center justify-center gap-2
@@ -328,7 +328,7 @@ const currentUrl = Astro.url.pathname;
       <div class="flex flex-wrap justify-center gap-x-10 gap-y-4">
         <a
           href="tel:+86-135-1053-2553"
-          class="flex items-center gap-2 text-gray-600 hover:text-[#8B7355] transition-colors"
+          class="flex items-center gap-2 text-gray-600 hover:text-[#5D4E37] transition-colors"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -339,7 +339,7 @@ const currentUrl = Astro.url.pathname;
           href="#email"
           data-email-user="sales"
           data-email-domain="kssmi.com"
-          class="flex items-center gap-2 text-gray-600 hover:text-[#8B7355] transition-colors cursor-pointer"
+          class="flex items-center gap-2 text-gray-600 hover:text-[#5D4E37] transition-colors cursor-pointer"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -625,7 +625,7 @@ const currentUrl = Astro.url.pathname;
 
           const mailtoLink = document.createElement('a');
           mailtoLink.href = `mailto:sales@kssmi.com?subject=${subject}&body=${body}`;
-          mailtoLink.className = 'inline-block mt-3 px-6 py-3 bg-[#8B7355] text-white rounded-lg hover:bg-[#5D4E37]';
+          mailtoLink.className = 'inline-block mt-3 px-6 py-3 bg-[#5D4E37] text-white rounded-lg hover:bg-[#4A3D2E]';
           mailtoLink.textContent = 'Open Email Client';
           mailtoLink.id = 'mailto-fallback';
 

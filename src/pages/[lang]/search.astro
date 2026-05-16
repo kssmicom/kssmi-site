@@ -234,7 +234,7 @@ const searchKeywords = {
 
   <div id="search-page" data-lang={lang} data-view-details={JSON.stringify(viewDetailsText)}>
   <section class="w-full min-h-screen bg-stone-100 pt-32 pb-24">
-    <div class="max-w-[1860px] mx-auto px-4 sm:px-6 lg:px-12">
+    <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
 
       <!-- Search Header Block -->
       <div class="text-center mb-12 relative max-w-4xl mx-auto">
@@ -253,7 +253,7 @@ const searchKeywords = {
         <div id="search-info" class="hidden">
           <div class="inline-block relative">
             <p class="text-lg text-stone-600 mb-3 font-light">
-              {(foundMatchesFor as any)[lang]} <span id="query-display" class="font-bold text-[#8B7355] border-b-2 border-[#8B7355]/20"></span>
+              {(foundMatchesFor as any)[lang]} <span id="query-display" class="font-bold text-[#5D4E37] border-b-2 border-[#8B7355]/20"></span>
             </p>
           </div>
 
@@ -290,7 +290,7 @@ const searchKeywords = {
             </button>
 
             <!-- Search Button -->
-            <button type="submit" class="px-5 py-2.5 mr-1.5 bg-[#5D4E37] text-white rounded-full hover:bg-[#8B7355] transition-all duration-300 font-bold tracking-wide text-xs uppercase shadow-md flex-shrink-0 flex items-center gap-2">
+            <button type="submit" class="px-5 py-2.5 mr-1.5 bg-[#5D4E37] text-white rounded-full hover:bg-[#4A3D2E] transition-all duration-300 font-bold tracking-wide text-xs uppercase shadow-md flex-shrink-0 flex items-center gap-2">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
@@ -302,7 +302,7 @@ const searchKeywords = {
 
       <!-- Loading State -->
       <div id="loading-state" class="hidden text-center py-16">
-        <svg class="w-12 h-12 mx-auto animate-spin text-[#8B7355]" fill="none" viewBox="0 0 24 24">
+        <svg class="w-12 h-12 mx-auto animate-spin text-[#5D4E37]" fill="none" viewBox="0 0 24 24">
           <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
           <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
         </svg>
@@ -321,7 +321,7 @@ const searchKeywords = {
 
         <!-- Suggestions -->
         <div class="mt-12 max-w-5xl mx-auto">
-          <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-[#8B7355] mb-8">{(recommendedText as any)[lang] || recommendedText.en}</h3>
+          <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-[#5D4E37] mb-8">{(recommendedText as any)[lang] || recommendedText.en}</h3>
           <div class="flex flex-wrap gap-3 justify-center">
               {((searchKeywords as any)[lang] || searchKeywords.en).metal}
             </a>
@@ -343,10 +343,10 @@ const searchKeywords = {
         <h2 class="text-3xl font-bold text-[#5D4E37] mb-4">{(noResultsText as any)[lang]}</h2>
         <p class="text-base text-stone-600 mb-10 max-w-md mx-auto" id="no-results-text">{(tryDifferentText as any)[lang]}</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a href={`/${lang === 'en' ? '' : lang + '/'}`} class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#8B7355] transition-colors duration-300 shadow-lg">
+          <a href={`/${lang === 'en' ? '' : lang + '/'}`} class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#4A3D2E] transition-colors duration-300 shadow-lg">
             {t.nav?.home || 'Home'}
           </a>
-          <a href={`/${lang === 'en' ? '' : lang + '/'}product`} class="inline-flex items-center px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#5D4E37] hover:text-white transition-all duration-300">
+          <a href={`/${lang === 'en' ? '' : lang + '/'}product`} class="inline-flex items-center px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#4A3D2E] hover:text-white transition-all duration-300">
             {t.nav?.products || 'Catalog'}
           </a>
         </div>

@@ -38,8 +38,10 @@ const description = propDescription || layoutMeta.description;
 const isRTL = lang === 'ar';
 const dir = isRTL ? 'rtl' : 'ltr';
 
-// Get current path without language prefix for hreflang
-const currentPath = Astro.url.pathname.replace(`/${lang}/`, '');
+	// Root path without language prefix (for hreflang alternates)
+	const currentPath = Astro.url.pathname.replace(`/${lang}/`, '').replace(/^\//, '');
+	// Self-referencing URL with language prefix (for canonical + OG)
+	const selfUrl = lang === 'en' ? currentPath : `/${lang}/${currentPath}`;
 
 // All supported languages
 const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
@@ -75,6 +77,7 @@ const organizationSchema = {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://challenges.cloudflare.com https://static.cloudflareinsights.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://ipapi.co https://challenges.cloudflare.com; frame-ancestors 'none'; form-action 'self'; base-uri 'self';" />
   <title>{title}</title>
   <meta name="description" content={description} />
   {keywords && <meta name="keywords" content={keywords} />}
@@ -86,14 +89,14 @@ const organizationSchema = {
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={image.startsWith('http') ? image : `https://kssmi.com${image}`} />
-  <meta property="og:url" content={canonical || `https://kssmi.com/${currentPath}`} />
+  <meta property="og:url" content={canonical || `https://kssmi.com/${selfUrl}`} />
   <meta property="og:type" content={type} />
 
   <!-- Canonical URL -->
   {canonical ? (
     <link rel="canonical" href={canonical} />
   ) : (
-    <link rel="canonical" href={`https://kssmi.com/${currentPath}`} />
+    <link rel="canonical" href={`https://kssmi.com/${selfUrl}`} />
   )}
 
   <!-- Hreflang Tags for Multilingual SEO -->
@@ -187,7 +190,7 @@ const organizationSchema = {
     });
   </script>
   <!-- Accessibility: Skip to Content Link -->
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[9999] bg-[#8B7355] text-white px-4 py-2 font-bold rounded-md shadow-lg outline-none focus:ring-4 focus:ring-[#8B7355]/50">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[9999] bg-[#5D4E37] text-white px-4 py-2 font-bold rounded-md shadow-lg outline-none focus:ring-4 focus:ring-[#8B7355]/50">
     Skip to content
   </a>
   <style define:vars={{
