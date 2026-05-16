@@ -68,12 +68,12 @@ const currentPath = `${lang}/`;
       layout === 'full-width' ? (
         <section class={`w-full py-16 lg:py-24 bg-white ${(showPartnershipHero || showQuoteBenefits) ? 'border-t border-stone-100' : ''}`}>
           {!showPartnershipHero && !showQuoteBenefits && image && (
-            <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto mb-16 rounded-3xl overflow-hidden aspect-[21/9]">
+            <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto mb-16 rounded-3xl overflow-hidden aspect-[21/9]">
               <img src={image} alt={title} class="w-full h-full object-cover" />
             </div>
           )}
 
-          <div class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4">
+          <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
             <div class="w-full">
               {!showPartnershipHero && !showQuoteBenefits && (
                   <h1 class="text-4xl md:text-6xl font-bold text-stone-900 mb-12 tracking-tight">
@@ -100,7 +100,7 @@ const currentPath = `${lang}/`;
         </section>
       ) : (
         /* Sidebar Layout */
-        <section class="w-[94%] lg:w-[90%] 2xl:w-[85%] max-w-[1800px] mx-auto px-4 py-24">
+        <section class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4 py-24">
           <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
             <div class="lg:col-span-3">
               {image && !showPartnershipHero && !showQuoteBenefits && (

@@ -176,6 +176,35 @@ The Vite plugin in `astro.config.mjs` watches `src/content/products/` for new fo
 - **Auto-deploy:** Push to `main` → GitHub Actions → Live site
 - **Status URL:** https://kssmi.com/php-status.php
 
+## Layout Width Standards (CRITICAL — DO NOT DEVIATE)
+
+All pages and components use a unified responsive width system:
+
+| Context | Pattern |
+|---------|---------|
+| **Main content** (product, blog, landing, listing) | `w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4` |
+| **Header / Footer** | `w-full max-w-[1860px] mx-auto px-4 sm:px-6 lg:px-8` |
+| **Technical specs** | `w-[95%] lg:w-[90%] 2xl:w-[84%] max-w-[1660px] mx-auto px-4 lg:px-0` |
+| **Narrow forms** (quote, 404) | `w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1240px] mx-auto px-4` |
+| **Very narrow** (thank-you, blog detail) | `w-[95%] lg:w-[90%] max-w-[820px] mx-auto` |
+| **Full-width sections** | `w-full` on `<section>`, inner uses main pattern |
+
+### Forbidden values
+- **Never** `max-w-[1920px]` → use `1860px`
+- **Never** `max-w-[1800px]` → use `1860px`
+- **Never** `w-[94%]` → use `95%`
+- **Never** `100vw` or `w-screen` or width ≥ 99%
+- `<html>` has `overflow-x: hidden` — do not override
+
+### Section wrapper template
+```html
+<section class="w-full py-12 lg:py-20 bg-white">
+  <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto">
+    <!-- content -->
+  </div>
+</section>
+```
+
 ## Critical Rules
 
 1. **Images MUST use** `/media/...` paths (not relative paths)
@@ -183,3 +212,4 @@ The Vite plugin in `astro.config.mjs` watches `src/content/products/` for new fo
 3. **Product-specific content** belongs in markdown files only
 4. **All products need** 17 language versions for full coverage
 5. **Run validate** before committing to catch YAML errors
+6. **Layout widths** MUST follow the unified standards above — never use old patterns
