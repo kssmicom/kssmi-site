@@ -12,7 +12,7 @@ moq: "300 pcs/model (100 pcs/warna)"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
 material: "Acetate Optical Frames"
-series: "optical-frames, fashion-eyewear, acetate-optical-frames, fashion-acetate-optical-frames"
+series: "optical-frames, luxury-eyewear, acetate-optical-frames, luxury-acetate-optical-frames"
 
 # ─────────────────────────────────────────────────────
 size: "50-21-145mm & Kustomisasi"
