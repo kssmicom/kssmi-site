@@ -1,5 +1,5 @@
 ﻿# Kssmi Guide des grands modèles linguistiques - Français
-Date: 2026-05-16
+Date: 2026-05-17
 
 Pour explorer notre contenu en Français, veuillez suivre les répertoires spécialisés ci-dessous :
 

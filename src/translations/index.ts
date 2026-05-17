@@ -193,6 +193,9 @@ export const translations = {
       // Product card
       viewDetails: "View Details",
       customizable: "Customizable",
+      customizableBadge: "Customizable",
+      previousPage: "Previous",
+      nextPage: "Next",
     },
     layout: {
       description: "Premium B2B eyewear manufacturing from China. OEM/ODM custom eyewear frames for global retailers and brands.",
@@ -236,6 +239,10 @@ export const translations = {
       all_products: "All Products",
       view_all_collections: "View All Collections",
       products_in_category: "products in this category",
+      fashion_group: "Fashion Eyewear",
+      luxury_group: "Luxury Eyewear",
+      carbon_fiber_group: "Carbon Fiber Eyewear",
+      rimless_group: "Rimless Eyewear",
     }
   },
   ar: {
@@ -412,6 +419,9 @@ export const translations = {
       // Product card
       viewDetails: "عرض التفاصيل",
       customizable: "قابل للتخصيص",
+      customizableBadge: "قابل للتخصيص",
+      previousPage: "السابق",
+      nextPage: "التالي",
     },
     layout: {
       description: "تصنيع نظارات بين الشركات (B2B) متميزة من الصين. إطارات نظارات مخصصة OEM/ODM لتجارة التجزئة والعلامات التجارية العالمية.",
@@ -455,6 +465,10 @@ export const translations = {
       all_products: "جميع المنتجات",
       view_all_collections: "عرض جميع المجموعات",
       products_in_category: "منتج في هذه الفئة",
+      fashion_group: "موضة النظارات",
+      luxury_group: "فاخر النظارات",
+      carbon_fiber_group: "ألياف الكربون النظارات",
+      rimless_group: "بدون إطار النظارات",
     }
   },
   it: {
@@ -631,6 +645,9 @@ export const translations = {
       // Product card
       viewDetails: "Vedi Dettagli",
       customizable: "Personalizzabile",
+      customizableBadge: "Personalizzabile",
+      previousPage: "Precedente",
+      nextPage: "Successivo",
     },
     layout: {
       description: "Produzione premium di occhiali B2B (commercio tra imprese) dalla Cina. Montature personalizzate OEM/ODM per rivenditori e marchi globali.",
@@ -674,6 +691,10 @@ export const translations = {
       all_products: "Tutti i Prodotti",
       view_all_collections: "Vedi Tutte le Collezioni",
       products_in_category: "prodotti in questa categoria",
+      fashion_group: "Occhiali Moda",
+      luxury_group: "Occhiali Lusso",
+      carbon_fiber_group: "Occhiali Fibra di Carbonio",
+      rimless_group: "Occhiali Senza Montatura",
     }
   },
   es: {
@@ -856,6 +877,9 @@ export const translations = {
       // Product card
       viewDetails: "Ver Detalles",
       customizable: "Personalizable",
+      customizableBadge: "Personalizable",
+      previousPage: "Anterior",
+      nextPage: "Siguiente",
     },
     layout: {
       description: "Fabricación premium de gafas B2B (comercio entre empresas) desde China. Monturas personalizadas OEM/ODM para minoristas y marcas globales.",
@@ -899,6 +923,10 @@ export const translations = {
       all_products: "Todos los Productos",
       view_all_collections: "Ver Todas las Colecciones",
       products_in_category: "productos en esta categoría",
+      fashion_group: "Gafas Moda",
+      luxury_group: "Gafas de Lujo",
+      carbon_fiber_group: "Gafas Fibra de Carbono",
+      rimless_group: "Gafas Sin Montura",
     }
   },
   fr: {
@@ -1081,6 +1109,9 @@ export const translations = {
       // Product card
       viewDetails: "Voir les Détails",
       customizable: "Personnalisable",
+      customizableBadge: "Personnalisable",
+      previousPage: "Précédent",
+      nextPage: "Suivant",
     },
     layout: {
       description: "Fabrication de lunettes B2B (professionnel) haut de gamme en Chine. Montures personnalisées OEM/ODM pour les détaillants et marques mondiales.",
@@ -1124,6 +1155,10 @@ export const translations = {
       all_products: "Tous les Produits",
       view_all_collections: "Voir Toutes les Collections",
       products_in_category: "produits dans cette catégorie",
+      fashion_group: "Lunettes Mode",
+      luxury_group: "Lunettes de Luxe",
+      carbon_fiber_group: "Lunettes Fibre de Carbone",
+      rimless_group: "Lunettes Sans Monture",
     }
   },
   de: {
@@ -1306,6 +1341,9 @@ export const translations = {
       // Product card
       viewDetails: "Details Anzeigen",
       customizable: "Anpassbar",
+      customizableBadge: "Anpassbar",
+      previousPage: "Zurück",
+      nextPage: "Weiter",
     },
     layout: {
       description: "Premium-Brillenherstellung B2B (Geschäftskunden) aus China. OEM/ODM-maßgeschneiderte Brillenfassungen für globale Einzelhändler und Marken.",
@@ -1349,6 +1387,10 @@ export const translations = {
       all_products: "Alle Produkte",
       view_all_collections: "Alle Kollektionen Anzeigen",
       products_in_category: "Produkte in dieser Kategorie",
+      fashion_group: "Brillen Mode",
+      luxury_group: "Brillen Luxus",
+      carbon_fiber_group: "Brillen Kohlefaser",
+      rimless_group: "Brillen Randlos",
     }
   },
   pt: {
@@ -1531,6 +1573,9 @@ export const translations = {
       // Product card
       viewDetails: "Ver Detalhes",
       customizable: "Personalizável",
+      customizableBadge: "Personalizável",
+      previousPage: "Anterior",
+      nextPage: "Próximo",
     },
     layout: {
       description: "Fabricação premium de óculos B2B (comércio entre empresas) da China. Molduras personalizadas OEM/ODM para varejistas e marcas globais.",
@@ -1574,6 +1619,10 @@ export const translations = {
       all_products: "Todos os Produtos",
       view_all_collections: "Ver Todas as Coleções",
       products_in_category: "produtos nesta categoria",
+      fashion_group: "Óculos Moda",
+      luxury_group: "Óculos de Luxo",
+      carbon_fiber_group: "Óculos Fibra de Carbono",
+      rimless_group: "Óculos Sem Aro",
     }
   },
   ru: {
@@ -1756,6 +1805,9 @@ export const translations = {
       // Product card
       viewDetails: "Подробнее",
       customizable: "Настраиваемый",
+      customizableBadge: "Настраиваемый",
+      previousPage: "Назад",
+      nextPage: "Вперёд",
     },
     layout: {
       description: "Производство очков премиум-класса Бизнес для бизнеса (B2B) из Китая. Индивидуальные оправы OEM/ODM для мировых ритейлеров и брендов.",
@@ -1799,6 +1851,10 @@ export const translations = {
       all_products: "Все Продукты",
       view_all_collections: "Посмотреть Все Коллекции",
       products_in_category: "продуктов в этой категории",
+      fashion_group: "Очки Мода",
+      luxury_group: "Очки Роскошь",
+      carbon_fiber_group: "Очки Углеволокно",
+      rimless_group: "Очки Без ободка",
     }
   },
   ja: {
@@ -1981,6 +2037,9 @@ export const translations = {
       // Product card
       viewDetails: "詳細を見る",
       customizable: "カスタマイズ可能",
+      customizableBadge: "カスタマイズ可能",
+      previousPage: "前へ",
+      nextPage: "次へ",
     },
     layout: {
       description: "中国のプレミアム企業間 (B2B) アイウェア製造。グローバルな小売業者やブランド向けのOEM/ODMカスタム眼鏡フレーム。",
@@ -2024,6 +2083,10 @@ export const translations = {
       all_products: "すべての製品",
       view_all_collections: "すべてのコレクションを見る",
       products_in_category: "このカテゴリーの製品",
+      fashion_group: "ファッション眼鏡",
+      luxury_group: "ラグジュアリー眼鏡",
+      carbon_fiber_group: "炭素繊維眼鏡",
+      rimless_group: "縁なし眼鏡",
     }
   },
 
@@ -2207,6 +2270,9 @@ export const translations = {
       // Product card
       viewDetails: "Detayları Gör",
       customizable: "Kişiselleştirilebilir",
+      customizableBadge: "Kişiselleştirilebilir",
+      previousPage: "Önceki",
+      nextPage: "Sonraki",
     },
     layout: {
       description: "Çin'den birinci sınıf B2B (kurumsal) gözlük üretimi. Küresel perakendeciler ve markalar için OEM/ODM özel gözlük çerçeveleri.",
@@ -2250,6 +2316,10 @@ export const translations = {
       all_products: "Tüm Ürünler",
       view_all_collections: "Tüm Koleksiyonları Gör",
       products_in_category: "bu kategoride ürün",
+      fashion_group: "Moda Gözlükleri",
+      luxury_group: "Lüks Gözlükleri",
+      carbon_fiber_group: "Karbon Elyaf Gözlükleri",
+      rimless_group: "Çerçevesiz Gözlükleri",
     }
   },
   ko: {
@@ -2426,6 +2496,9 @@ export const translations = {
       // Product card
       viewDetails: "상세 보기",
       customizable: "맞춤 가능",
+      customizableBadge: "맞춤 가능",
+      previousPage: "이전",
+      nextPage: "다음",
     },
     layout: {
       description: "중국의 프리미엄 B2B 안경 제조. 글로벌 소매업체 및 브랜드를 위한 OEM/ODM 맞춤형 안경테.",
@@ -2469,6 +2542,10 @@ export const translations = {
       all_products: "모든 제품",
       view_all_collections: "모든 컬렉션 보기",
       products_in_category: "이 카테고리의 제품",
+      fashion_group: "패션 안경",
+      luxury_group: "럭셔리 안경",
+      carbon_fiber_group: "탄소섬유 안경",
+      rimless_group: "림레스 안경",
     }
   },
   zh: {
@@ -2645,6 +2722,9 @@ export const translations = {
       // Product card
       viewDetails: "查看详情",
       customizable: "可定制",
+      customizableBadge: "可定制",
+      previousPage: "上一页",
+      nextPage: "下一页",
     },
     layout: {
       description: "来自中国的高端B2B眼镜制造。为全球零售商和品牌提供OEM/ODM定制眼镜框。",
@@ -2688,6 +2768,10 @@ export const translations = {
       all_products: "所有产品",
       view_all_collections: "查看所有系列",
       products_in_category: "此类别中的产品",
+      fashion_group: "时尚眼镜",
+      luxury_group: "豪华眼镜",
+      carbon_fiber_group: "碳纤维眼镜",
+      rimless_group: "无框眼镜",
     }
   },
   hi: {
@@ -2864,6 +2948,9 @@ export const translations = {
       // Product card
       viewDetails: "विवरण देखें",
       customizable: "कस्टमाइज़ेबल",
+      customizableBadge: "कस्टमाइज़ेबल",
+      previousPage: "पिछला",
+      nextPage: "अगला",
     },
     layout: {
       description: "चीन से प्रीमियम बी2बी आईवियर विनिर्माण। वैश्विक खुदरा विक्रेताओं और ब्रांडों के लिए ओईएम/ओडीएम कस्टम आईवियर फ्रेम।",
@@ -2907,6 +2994,10 @@ export const translations = {
       all_products: "सभी उत्पाद",
       view_all_collections: "सभी कलेक्शन देखें",
       products_in_category: "इस श्रेणी में उत्पाद",
+      fashion_group: "फैशन चश्मा",
+      luxury_group: "लक्ज़री चश्मा",
+      carbon_fiber_group: "कार्बन फाइबर चश्मा",
+      rimless_group: "रिमलेस चश्मा",
     }
   },
   vi: {
@@ -3080,6 +3171,9 @@ export const translations = {
       // Product card
       viewDetails: "Xem Chi Tiết",
       customizable: "Có thể tùy chỉnh",
+      customizableBadge: "Có thể tùy chỉnh",
+      previousPage: "Trước",
+      nextPage: "Tiếp theo",
     },
     layout: {
       description: "Sản xuất kính mắt B2B cao cấp đến từ Trung Quốc. OEM/ODM gọng kính tùy chỉnh cho các nhà bán lẻ và thương hiệu toàn cầu.",
@@ -3123,6 +3217,10 @@ export const translations = {
       all_products: "Tất cả Sản phẩm",
       view_all_collections: "Xem Tất cả Bộ sưu tập",
       products_in_category: "sản phẩm trong danh mục này",
+      fashion_group: "Kính Thời trang",
+      luxury_group: "Kính Xa xỉ",
+      carbon_fiber_group: "Kính Sợi carbon",
+      rimless_group: "Kính Không vành",
     }
   },
   jv: {
@@ -3296,6 +3394,9 @@ export const translations = {
       // Product card
       viewDetails: "Deleng Rincian",
       customizable: "Bisa Dicocokake",
+      customizableBadge: "Bisa Dicocokake",
+      previousPage: "Sadurunge",
+      nextPage: "Sabanjuré",
     },
     layout: {
       description: "Produsen Pembuatan Kaca Mata Premium Sangking Cina kanggi Reseller ing Global.",
@@ -3339,6 +3440,10 @@ export const translations = {
       all_products: "Kabeh Produk",
       view_all_collections: "Deleng Kabeh Koleksi",
       products_in_category: "Produk Ing Kategori Iki",
+      fashion_group: "Kacamata Fesyen",
+      luxury_group: "Kacamata Mewah",
+      carbon_fiber_group: "Kacamata Serat Karbon",
+      rimless_group: "Kacamata Tanpa Rangka",
     }
   },
 
@@ -3516,6 +3621,9 @@ export const translations = {
       // Product card
       viewDetails: "Lihat Butiran",
       customizable: "Boleh Suai",
+      customizableBadge: "Boleh Suai",
+      previousPage: "Sebelumnya",
+      nextPage: "Seterusnya",
     },
     layout: {
       description: "Pembuatan cermin mata B2B premium dari China. Bingkai cermin mata tersuai OEM/ODM untuk peruncit dan jenama global.",
@@ -3559,6 +3667,10 @@ export const translations = {
       all_products: "Semua Produk",
       view_all_collections: "Lihat Semua Koleksi",
       products_in_category: "produk dalam kategori ini",
+      fashion_group: "Cermin Mata Fesyen",
+      luxury_group: "Cermin Mata Mewah",
+      carbon_fiber_group: "Cermin Mata Karbon",
+      rimless_group: "Cermin Mata Tanpa Rangka",
     }
   },
 
@@ -3736,6 +3848,9 @@ export const translations = {
       // Product card
       viewDetails: "Маълумоти Бештар",
       customizable: "Фармоишшаванда",
+      customizableBadge: "Фармоишшаванда",
+      previousPage: "Қаблӣ",
+      nextPage: "Баъдӣ",
     },
     layout: {
       description: "Истеҳсоли айнакҳои премиум B2B аз Чин. Чаҳорчӯбаҳои айнаки фармоишии OEM/ODM барои фурӯшандагон ва брендҳои ҷаҳонӣ.",
@@ -3779,6 +3894,10 @@ export const translations = {
       all_products: "สินค้าทั้งหมด",
       view_all_collections: "ดูคอลเลกชันทั้งหมด",
       products_in_category: "สินค้าในหมวดนี้",
+      fashion_group: "แฟชัน แว่นตา",
+      luxury_group: "หรูหรา แว่นตา",
+      carbon_fiber_group: "เส้นใยคาร์บอน แว่นตา",
+      rimless_group: "ไร้กรอบ แว่นตา",
     }
   }
 } as const;

@@ -27,8 +27,7 @@ service: "代工生产 / 设计制造 定制服务"
 
 # ─────────────────────────────────────────────────────
 cover: "/media/products/kms-506-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-506-1.webp"
-gallery:
-
+gallery: []
 customizable: true
 featured: true
 

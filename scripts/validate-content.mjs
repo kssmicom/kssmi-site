@@ -110,10 +110,37 @@ function validateFrontmatter(content, filePath) {
 
   // === YAML parse validation ===
   // Catch syntax errors that the structural checks miss (e.g., stray | pipes, bad indentation)
+  let parsed;
   try {
-    yaml.load(frontmatter);
+    parsed = yaml.load(frontmatter);
   } catch (e) {
     errors.push(`YAML syntax error: ${e.message}`);
+    return {
+      file: relativePath,
+      valid: false,
+      errors,
+      warnings
+    };
+  }
+
+  // Check gallery schema and cover duplication
+  if (parsed && typeof parsed === 'object') {
+    const cover = parsed.cover;
+    const gallery = parsed.gallery;
+
+    if ('gallery' in parsed && gallery === null) {
+      errors.push('gallery is null — use "gallery: []" for empty galleries');
+    }
+
+    if (Array.isArray(gallery) && cover && typeof cover === 'string') {
+      // Normalize paths for comparison (strip leading slash if present)
+      const coverNormalized = cover.replace(/^\/+/, '').toLowerCase();
+      for (const [idx, img] of gallery.entries()) {
+        if (typeof img === 'string' && img.replace(/^\/+/, '').toLowerCase() === coverNormalized) {
+          warnings.push(`gallery[${idx}] "${img}" is the same as cover image — remove extra thumbnail`);
+        }
+      }
+    }
   }
 
   return {
