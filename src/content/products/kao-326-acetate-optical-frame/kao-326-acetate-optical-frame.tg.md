@@ -1,0 +1,78 @@
+---
+# ─────────────────────────────────────────────────────
+title: "Чорчӯбаи Оптикии Атсетати Фармоишӣ"
+slug: "kao-326-acetate-optical-frame"
+itemNo: "KAO-326"
+date: "2026-05-10"
+colors: "Сиёҳ, Сангпуштӣ, Кабуди торик бо Гавана"
+materials: "Атсетати Премиуми Mazzucchelli & JINYU ва Фармоишӣ"
+serviceMode: "Истеҳсоли Шартномавӣ & Тарҳрезӣ ва Истеҳсол (Хизматрасонии Фармоишӣ)"
+moq: "300 дона/намуна (100дона/Ранг)"
+
+# ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
+productType: "Optical Frames"
+material: "Acetate Optical Frames"
+series: "optical-frames, fashion-eyewear, acetate-optical-frames, fashion-acetate-optical-frames"
+
+# ─────────────────────────────────────────────────────
+size: "47-20-148mm & Хизматрасонии Фармоишӣ"
+frameMaterial: "Чорчӯба ва Дастаҳои Атсетати Премиум"
+lensMaterial: "Линзаҳои Нилонии Мустаҳкам & Фармоишӣ"
+designStyle: "Ретро, Шакли махсус, Нодир, Классикӣ, Трендӣ, Мода, Люкс, Юнисекс"
+nosePads: "Ҷойгоҳҳои Бинии Интегралӣ"
+hinge: "Халқаҳо бо Сохтори Парчами 3+2 Баррел ва Фармоишӣ (5 Баррел ва Халқаҳои Спрутӣ)"
+logo: "Чоп, Лазерӣ, Лазерӣ бо Ранги Равғанӣ, Тамғагузории Гарм, Нишони Металлӣ, Нақшбандӣ, Ороиши Кристаллӣ, Стикери 3D"
+service: "Истеҳсоли OEM / ODM – Хизматрасонии Фармоишӣ"
+acetateFeature: "Сабук, Мустаҳкам & Ҷолиб"
+
+# ─────────────────────────────────────────────────────
+cover: "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-1.webp"
+gallery:
+  - "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-2.webp"
+  - "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-3.webp"
+  - "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-4.webp"
+  - "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-5.webp"
+  - "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-6.webp"
+  - "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-7.webp"
+  - "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-8.webp"
+  - "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-9.webp"
+  - "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-10.webp"
+  - "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-11.webp"
+  - "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-12.webp"
+  - "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-13.webp"
+  - "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-14.webp"
+  - "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-15.webp"
+  - "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-16.webp"
+customizable: true
+featured: true
+
+# ── SEO & GEO METADATA ───────────────────────────────
+seoTitle: "Чорчӯбаи Оптикии Атсетати Классикии Ретро KAO-326 | Шарики Истеҳсолӣ"
+seoDescription: "Бренди хусусии люкси худро бо чорчӯбаҳои оптикии атсетати ретро фармоишӣ васеъ кунед. Дастгирии пурраи OEM/ODM, халқаҳои мустаҳками парчами 3+2, брендинги фармоишӣ ва MOQ 300 дона."
+seoKeywords: "чорчӯбаҳои оптикии атсетати ретро, истеҳсолкунандаи айнакҳои атсетати фармоишӣ, яклухт чорчӯбаҳои оптикии премиум, айнакҳои атсетати бренди хусусӣ, корхонаи чинии айнакҳои OEM, чорчӯбаҳои оптикии танзимшаванда яклухт, истеҳсоли айнак барои тарроҳони мустақил, таъминкунандаи чорчӯбаи атсетати фармоишӣ"
+---
+
+## Хусусиятҳои Асосӣ
+
+- **Маводи Премиум:** Аз атсетати баландсифати Mazzucchelli ва JINYU сохта шудааст, ки сохтори сабук ва дар айни замон хеле мустаҳкамро бо ранги амиқи ҷолиб ва дарозмуддат пешниҳод мекунад.
+- **Қисмҳои Муҳандисии Коркардшуда:** Халқаҳои парчами 3+2 баррел бо эътимоднокии баланд, ки ҳаракати устувор ва осони дастаҳоро бо интихоби халқаҳои спрутии фармоишӣ таъмин мекунад.
+- **Оптикаи Мустаҳкам:** Линзаҳои нилонии дорои устувории баланд, ки равшании аъло ва муқовимати хубро ба зарбаҳо бо имкониятҳои пурраи пӯшишҳои фармоишӣ пешниҳод мекунанд.
+- **Бароҳатии Интегралӣ:** Ҷойгоҳҳои бинии интегралии бедарз бо геометрияи махсуси 47-20-148мм якҷоя шуда, мувофиқати мутавозин ва бидуни лағзишро таъмин мекунанд.
+- **Брендинги Фармоишӣ:** Имкониятҳои васеи фармоишӣ барои бренди хусусӣ, аз ҷумла лазеркунии дақиқ, тамғагузории гарм ва гузоштани логотипи металлӣ.
+- **Истеҳсоли Миқёспазир:** Дастгирии чандири истеҳсолии OEM ва ODM бо ҳадди ақали фармоиши танҳо 300 дона барои ҳар як намуна, ки махсус барои Брендҳои Айнакҳои Премиум ва Тарроҳони Мустақили Айнакҳо пешбинӣ шудааст.
+
+## Беҳтарин Барои
+- Брендҳои Айнакҳои Премиум
+- Тарроҳони Мустақили Айнакҳо
+- Дистрибюторҳои Бренди Хусусӣ
+- Хонаҳои Мода Люкс
+- Гурӯҳҳои Дӯконҳои Бузург
+- Мағозаҳои Консептӣ ва Бисёрбрендӣ
+
+## Баррасӣ
+
+Барои брендҳои айнак, ки ба равшании амиқи рангҳо ва устувории сохторӣ аҳамияти аввалиндараҷа медиҳанд, ин чорчӯбаи оптикии ретро аз атсетати премиуми Mazzucchelli ва JINYU сохта шудааст.
+
+Барои истифодаи боэътимоди дарозмуддат тарҳрезӣ шудааст, он сохтори мустаҳками халқаҳои 3+2 баррел ва ҷойгоҳҳои бинии бедарзро муттаҳид мекунад, то мувофиқати мутавозин ва бидуни лағзишро кафолат диҳад.
+
+Бо ҳадди ақали фармоиши танҳо 300 дона, Kssmi фармоиши васеи бренди хусусиро пешниҳод мекунад — аз тамғагузории гарми дастаҳо то рангҳои махсус — ба тарроҳони мустақил ва хонаҳои модаи люкс имкон медиҳад, ки коллексияҳои истисноии премиумро эҷод кунанд.
