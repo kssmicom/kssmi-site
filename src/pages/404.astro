@@ -147,15 +147,19 @@ const isDev = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.
             </div>
 
             <form id="rescue-form" class="space-y-3">
+              <label for="rescue-email" class="sr-only">Your email address</label>
               <input
                 type="email"
                 name="email"
+                id="rescue-email"
                 placeholder="Your email address"
                 required
                 class="w-full px-4 py-2.5 text-sm border border-stone-200 rounded-lg focus:border-[#8B7355] focus:ring-2 focus:ring-[#8B7355]/10 outline-none transition-all bg-stone-50"
               />
+              <label for="rescue-message" class="sr-only">Describe your issue</label>
               <textarea
                 name="details"
+                id="rescue-message"
                 rows="3"
                 placeholder="What were you looking for?&#10;Describe what you need — the more details, the better we can help."
                 required

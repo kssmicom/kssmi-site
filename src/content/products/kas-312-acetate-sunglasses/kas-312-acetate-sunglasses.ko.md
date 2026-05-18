@@ -42,7 +42,7 @@ gallery:
   - "/media/products/kas-312-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-312-13.webp"
   - "/media/products/kas-312-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-312-14.webp"
   - "/media/products/kas-312-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-312-15.webp"
-  - "/media/products/kas-312-acetate-sunglasses/oem-word-customized-acetate-sunglasses-kas-312-16.webp"
+  - "/media/products/kas-312-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-312-16.webp"
   - "/media/products/kas-312-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-312-17.webp"
   - "/media/products/kas-312-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-312-18.webp"
   - "/media/products/kas-312-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-312-19.webp"

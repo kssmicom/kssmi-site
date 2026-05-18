@@ -39,7 +39,7 @@ gallery:
   - "/media/products/kto-017-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-017-11.webp"
   - "/media/products/kto-017-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-017-12.webp"
   - "/media/products/kto-017-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-017-13.webp"
-  - "/media/products/kto-017-titanium-optical-frames/oem- سادہ-customized-titanium-optical-frames-kto-017-14.webp"
+  - "/media/products/kto-017-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-017-14.webp"
   - "/media/products/kto-017-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-017-15.webp"
   - "/media/products/kto-017-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-017-16.webp"
 customizable: true

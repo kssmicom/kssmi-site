@@ -40,7 +40,7 @@ gallery:
   - "/media/products/kts-020-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kts-020-12.webp"
   - "/media/products/kts-020-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kts-020-13.webp"
   - "/media/products/kts-020-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kts-020-14.webp"
-  - "/media/products/kts-020-titanium-sunglasses/oem-form-customized-titanium-sunglasses-kts-020-15.webp"
+  - "/media/products/kts-020-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kts-020-15.webp"
   - "/media/products/kts-020-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kts-020-16.webp"
   - "/media/products/kts-020-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kts-020-17.webp"
   - "/media/products/kts-020-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kts-020-18.webp"

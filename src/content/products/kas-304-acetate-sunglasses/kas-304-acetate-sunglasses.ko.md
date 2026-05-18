@@ -42,7 +42,7 @@ gallery:
   - "/media/products/kas-304-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-304-13.webp"
   - "/media/products/kas-304-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-304-14.webp"
   - "/media/products/kas-304-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-304-15.webp"
-  - "/media/products/kas-304-acetate-sunglasses/oem- Taylor-customized-acetate-sunglasses-kas-304-16.webp"
+  - "/media/products/kas-304-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-304-16.webp"
 customizable: true
 featured: true
 

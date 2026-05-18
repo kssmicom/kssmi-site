@@ -46,7 +46,7 @@ const {
 
 {
   lastPage > 1 && (
-    <nav class="mt-12 flex justify-center items-center gap-2" dir={dir}>
+    <nav class="mt-12 flex justify-center items-center gap-2" dir={dir} aria-label="Pagination">
       <!-- Previous Button -->
       {currentPage > 1 ? (
         <a
@@ -56,7 +56,7 @@ const {
               ? basePath
               : `${basePath}/${currentPage - 1}`
           )}
-          class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+          class="flex items-center gap-1 px-2 py-1.5 sm:px-4 sm:py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
           aria-label={prevLabel}
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -65,7 +65,7 @@ const {
           <span class="hidden sm:inline">{prevLabel}</span>
         </a>
       ) : (
-        <span class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-400 cursor-not-allowed">
+        <span class="flex items-center gap-1 px-2 py-1.5 sm:px-4 sm:py-2 border border-gray-200 rounded-lg text-gray-400 cursor-not-allowed">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
           </svg>
@@ -73,8 +73,8 @@ const {
         </span>
       )}
 
-      <!-- Page Numbers -->
-      <div class="flex items-center gap-1">
+      <!-- Page Numbers - Desktop -->
+      <div class="hidden sm:flex items-center gap-1">
         <!-- First page -->
         <a
           href={categorySlug ? `${basePath}/${categorySlug}` : basePath}
@@ -83,6 +83,7 @@ const {
               ? 'bg-[#5D4E37] text-white shadow-sm'
               : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37]'
           }`}
+          aria-current={currentPage === 1 ? 'page' : undefined}
           aria-label="Page 1"
         >
           1
@@ -123,9 +124,45 @@ const {
                 ? 'bg-[#5D4E37] text-white shadow-sm'
                 : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37]'
             }`}
+            aria-current={currentPage === lastPage ? 'page' : undefined}
           >
             {lastPage}
           </a>
+        )}
+      </div>
+
+      <!-- Mobile Page Numbers (max 2 buttons) -->
+      <div class="flex sm:hidden items-center gap-1 flex-nowrap">
+        {currentPage !== lastPage ? (
+          <>
+            <span class="w-7 h-7 flex items-center justify-center rounded text-xs font-medium bg-[#5D4E37] text-white shadow-sm" aria-current="page">
+              {currentPage}
+            </span>
+            {currentPage + 1 < lastPage && (
+              <span class="text-gray-400 text-xs px-0.5">...</span>
+            )}
+            <a
+              href={categorySlug ? `${basePath}/${categorySlug}/${lastPage}` : `${basePath}/${lastPage}`}
+              class="w-7 h-7 flex items-center justify-center rounded text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+            >
+              {lastPage}
+            </a>
+          </>
+        ) : (
+          <>
+            <a
+              href={categorySlug ? `${basePath}/${categorySlug}` : basePath}
+              class="w-7 h-7 flex items-center justify-center rounded text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+            >
+              1
+            </a>
+            {lastPage > 2 && (
+              <span class="text-gray-400 text-xs px-0.5">...</span>
+            )}
+            <span class="w-7 h-7 flex items-center justify-center rounded text-xs font-medium bg-[#5D4E37] text-white shadow-sm" aria-current="page">
+              {lastPage}
+            </span>
+          </>
         )}
       </div>
 
@@ -136,20 +173,23 @@ const {
         data-category-slug={categorySlug || ''}
         data-last-page={lastPage}
       >
-        <span class="text-gray-300 text-sm">|</span>
+        <span class="hidden sm:inline text-gray-300 text-sm">|</span>
         <input
           type="number"
           min="1"
           max={lastPage}
           placeholder="#"
-          class="w-14 h-10 text-center border border-gray-200 rounded-lg text-sm text-gray-600 focus:outline-none focus:border-[#8B7355] focus:ring-1 focus:ring-[#8B7355] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+          class="w-10 sm:w-14 h-10 text-center border border-gray-200 rounded-lg text-sm text-gray-600 focus:outline-none focus:border-[#8B7355] focus:ring-1 focus:ring-[#8B7355] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
           aria-label={goToLabel}
         />
         <button
           type="submit"
-          class="px-3 h-10 border border-gray-200 rounded-lg text-sm text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+          class="group px-2 h-10 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+          aria-label={goToButton}
         >
-          {goToButton}
+          <svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
         </button>
       </form>
 
@@ -157,7 +197,7 @@ const {
       {currentPage < lastPage ? (
         <a
           href={nextUrl ?? (categorySlug ? `${basePath}/${categorySlug}/${currentPage + 1}` : `${basePath}/${currentPage + 1}`)}
-          class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+          class="flex items-center gap-1 px-2 py-1.5 sm:px-4 sm:py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
           aria-label={nextLabel}
         >
           <span class="hidden sm:inline">{nextLabel}</span>
@@ -166,7 +206,7 @@ const {
           </svg>
         </a>
       ) : (
-        <span class="flex items-center gap-1 px-4 py-2 border border-gray-200 rounded-lg text-gray-400 cursor-not-allowed">
+        <span class="flex items-center gap-1 px-2 py-1.5 sm:px-4 sm:py-2 border border-gray-200 rounded-lg text-gray-400 cursor-not-allowed">
           <span class="hidden sm:inline">{nextLabel}</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />

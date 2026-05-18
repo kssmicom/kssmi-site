@@ -705,15 +705,18 @@ const t = i18n[lang] || i18n.en;
             </div>
 
             <form id="rescue-form" class="space-y-3">
+              <label for="rescue-email" class="sr-only">{t.emailPlaceholder}</label>
               <input
                 type="email"
                 name="email"
+                id="rescue-email"
                 placeholder={t.emailPlaceholder}
                 required
                 class="w-full px-4 py-2.5 text-sm border border-stone-200 rounded-lg focus:border-[#8B7355] focus:ring-2 focus:ring-[#8B7355]/10 outline-none transition-all bg-stone-50"
               />
+              <label for="rescue-message" class="sr-only">{t.formSub}</label>
               <textarea
-                id="details-textarea"
+                id="rescue-message"
                 name="details"
                 rows="3"
                 placeholder=""
@@ -878,7 +881,7 @@ const t = i18n[lang] || i18n.en;
 
 <script define:vars={{ isDev, lang, sending: t.sending, submitBtn: t.submitBtn, errorFallback: t.errorFallback, generalError: t.generalError, detailsPlaceholder: t.detailsPlaceholder }}>
   // --- Set 2-line textarea placeholder (JS handles \n correctly for multiline placeholders) ---
-  var detailsTextarea = document.getElementById('details-textarea');
+  var detailsTextarea = document.getElementById('rescue-message');
   if (detailsTextarea) detailsTextarea.placeholder = detailsPlaceholder;
 
   // --- Set page URL in hidden field ---

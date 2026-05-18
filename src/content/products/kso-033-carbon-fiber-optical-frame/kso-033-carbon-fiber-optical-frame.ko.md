@@ -37,7 +37,7 @@ gallery:
   - "/media/products/kso-033-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-033-8.webp"
   - "/media/products/kso-033-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-033-9.webp"
   - "/media/products/kso-033-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-033-10.webp"
-  - "/media/products/kso-033-carbon-fiber-optical-frame/oem- मिळालेले-customized-carbon-fiber-optical-frame-kso-033-11.webp"
+  - "/media/products/kso-033-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-033-11.webp"
   - "/media/products/kso-033-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-033-12.webp"
   - "/media/products/kso-033-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-033-13.webp"
   - "/media/products/kso-033-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-033-14.webp"

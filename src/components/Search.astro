@@ -63,6 +63,7 @@ const placeholders: Record<string, string> = {
 <div id={`search-${lang}`} class="search-component relative w-full max-w-md" data-lang={lang} data-products={productsJson}>
   <!-- Search Input -->
   <div class="relative">
+    <label for={`search-input-${lang}`} class="sr-only">Search products</label>
     <input
       type="text"
       id={`search-input-${lang}`}
