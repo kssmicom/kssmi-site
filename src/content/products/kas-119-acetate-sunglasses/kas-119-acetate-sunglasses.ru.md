@@ -10,8 +10,8 @@ serviceMode: "Контрактное производство / Производ
 moq: "300 PCS/Model (100PCS/Color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
-productType: "Солнечные Очки"
-material: "Ацетатные Солнечные Очки"
+productType: "Sunglasses"
+material: "Acetate Sunglasses"
 series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sunglasses"
 
 # ─────────────────────────────────────────────────────

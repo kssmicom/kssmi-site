@@ -10,8 +10,8 @@ serviceMode: "OEM / ODM निर्माण – कस्टमाइज़े
 moq: "300 PCS/Model (100PCS/Color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
-productType: "सनग्लासेस"
-material: "एसीटेट सनग्लासेस"
+productType: "Sunglasses"
+material: "Acetate Sunglasses"
 series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sunglasses"
 
 # ─────────────────────────────────────────────────────

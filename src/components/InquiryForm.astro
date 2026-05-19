@@ -395,9 +395,7 @@ const currentUrl = Astro.url.pathname;
             window.turnstileToken = null;
           }
         });
-      } catch (e) {
-        console.error('Turnstile render error:', e);
-      }
+      } catch (e) { /* silent */ }
     };
 
     // Re-render after View Transitions
@@ -464,9 +462,7 @@ const currentUrl = Astro.url.pathname;
 
         return { ip: data.ip, country: data.country_code };
       }
-    } catch (error) {
-      console.warn('Could not fetch client IP:', error);
-    }
+    } catch (error) { /* silent */ }
     return { ip: null, country: null };
   }
 
@@ -602,13 +598,9 @@ const currentUrl = Astro.url.pathname;
             ? result.errors.join('. ')
             : (result.message || 'An error occurred. Please try again.');
           showError(errorMsg);
-          if (result.debug) {
-            console.error('Server debug info:', result.debug);
-          }
           setLoading(false);
         }
       } catch (error) {
-        console.error('Form submission error:', error);
 
         if (isDev && (error.message.includes('Failed to fetch') || error.message.includes('NetworkError') || error.message === 'PHP_NOT_CONFIGURED')) {
           const name = formData.get('name');

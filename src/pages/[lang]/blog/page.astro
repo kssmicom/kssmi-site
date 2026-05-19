@@ -60,7 +60,7 @@ const currentPath = lang === 'en' ? '' : `${lang}/`;
                     <img
                       src={post.data.image}
                       alt={post.title}
-                      class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      class="w-full h-full object-cover motion-safe:hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 )}

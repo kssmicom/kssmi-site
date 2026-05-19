@@ -10,8 +10,8 @@ serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 PCS/Model (100PCS/Color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
-productType: "Cermin Mata Hitam"
-material: "Cermin Mata Hitam Asetat"
+productType: "Sunglasses"
+material: "Acetate Sunglasses"
 series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sunglasses"
 
 # ─────────────────────────────────────────────────────

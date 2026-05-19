@@ -10,8 +10,8 @@ serviceMode: "代工生产 / 设计制造 定制服务"
 moq: "300件/款 (100件/色)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
-productType: "太阳镜"
-material: "板材太阳镜"
+productType: "Sunglasses"
+material: "Acetate Sunglasses"
 series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sunglasses"
 
 # ─────────────────────────────────────────────────────

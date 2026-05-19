@@ -641,7 +641,7 @@ const t = i18n[lang] || i18n.en;
 
           <!-- 3 Targeted Links -->
           <div class="mb-10">
-            <p class="text-sm font-bold text-stone-400 uppercase tracking-wider mb-4">
+            <p class="text-sm font-bold text-stone-500 uppercase tracking-wider mb-4">
               {t.lookingFor}
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-xl mx-auto lg:mx-0">
@@ -654,7 +654,7 @@ const t = i18n[lang] || i18n.en;
                 </span>
                 <div class="text-left">
                   <span class="block text-sm font-semibold text-[#5D4E37] group-hover:text-[#5D4E37] transition-colors">{t.oemTitle}</span>
-                  <span class="block text-xs text-stone-400">{t.oemSub}</span>
+                  <span class="block text-xs text-stone-500">{t.oemSub}</span>
                 </div>
               </a>
 
@@ -667,7 +667,7 @@ const t = i18n[lang] || i18n.en;
                 </span>
                 <div class="text-left">
                   <span class="block text-sm font-semibold text-[#5D4E37] group-hover:text-[#5D4E37] transition-colors">{t.catalogTitle}</span>
-                  <span class="block text-xs text-stone-400">{t.catalogSub}</span>
+                  <span class="block text-xs text-stone-500">{t.catalogSub}</span>
                 </div>
               </a>
 
@@ -680,7 +680,7 @@ const t = i18n[lang] || i18n.en;
                 </span>
                 <div class="text-left">
                   <span class="block text-sm font-semibold text-[#5D4E37] group-hover:text-[#5D4E37] transition-colors">{t.factoryTitle}</span>
-                  <span class="block text-xs text-stone-400">{t.factorySub}</span>
+                  <span class="block text-xs text-stone-500">{t.factorySub}</span>
                 </div>
               </a>
             </div>
@@ -689,7 +689,7 @@ const t = i18n[lang] || i18n.en;
           <!-- Divider with humor -->
           <div class={`flex items-center gap-3 mb-8 ${isRTL ? 'justify-center lg:justify-end' : 'justify-center lg:justify-start'}`}>
             <span class="h-[1px] w-10 bg-[#8B7355]/20"></span>
-            <p class="text-xs text-stone-400 italic">
+            <p class="text-xs text-stone-500 italic">
               {t.humor}
             </p>
             <span class="h-[1px] w-10 bg-[#8B7355]/20"></span>
@@ -698,7 +698,7 @@ const t = i18n[lang] || i18n.en;
           <!-- Mini Rescue Form (with Turnstile) -->
           <div class="bg-white rounded-xl p-6 border border-stone-200 shadow-sm max-w-xl mx-auto lg:mx-0 mb-8">
             <p class="text-sm font-bold text-[#5D4E37] mb-1">{t.formHeading}</p>
-            <p class="text-xs text-stone-400 mb-4">{t.formSub}</p>
+            <p class="text-xs text-stone-500 mb-4">{t.formSub}</p>
 
             <div id="form-error" class="hidden text-center py-2 mb-3 bg-red-50 rounded-lg">
               <span id="error-message" class="text-xs text-red-600"></span>
@@ -756,7 +756,7 @@ const t = i18n[lang] || i18n.en;
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <p class="text-sm font-semibold text-[#5D4E37]">{t.successTitle}</p>
-              <p class="text-xs text-stone-400">{t.successSub}</p>
+              <p class="text-xs text-stone-500">{t.successSub}</p>
             </div>
           </div>
 
@@ -773,7 +773,7 @@ const t = i18n[lang] || i18n.en;
 
       <!-- Search Bar -->
       <div class="mt-16 max-w-2xl mx-auto">
-        <p class="text-center text-xs font-bold text-stone-400 uppercase tracking-wider mb-4">
+        <p class="text-center text-xs font-bold text-stone-500 uppercase tracking-wider mb-4">
           {t.searchHeading}
         </p>
         <form id="search-form" action={`/${currentPath}search`} method="GET" class="relative group">
@@ -786,7 +786,7 @@ const t = i18n[lang] || i18n.en;
               class="flex-grow py-3.5 px-5 bg-transparent border-none outline-none text-sm text-stone-900 placeholder-stone-400 font-medium focus:ring-0"
               placeholder={t.searchPlaceholder}
             />
-            <button type="button" id="search-clear" class="hidden px-3 text-stone-400 hover:text-[#5D4E37] transition-colors flex-shrink-0" aria-label="Clear search">
+            <button type="button" id="search-clear" class="hidden px-3 text-stone-500 hover:text-[#5D4E37] transition-colors flex-shrink-0" aria-label="Clear search">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
               </svg>
@@ -869,7 +869,7 @@ const t = i18n[lang] || i18n.en;
           }
         });
       } catch (e) {
-        console.error('Turnstile render error:', e);
+        /* silent */
       }
     };
   </script>
@@ -978,7 +978,7 @@ const t = i18n[lang] || i18n.en;
           setLoading(false);
         }
       } catch (err) {
-        console.error('404 form error:', err);
+
         els2.errorMessage.textContent = errorFallback;
         els2.errorContainer.classList.remove('hidden');
         setLoading(false);

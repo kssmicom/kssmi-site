@@ -41,7 +41,7 @@ const materials = entry?.data?.materials || [];
               alt={m.name}
               loading={i >= 4 ? 'lazy' : 'eager'}
               decoding="async"
-              class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+              class="w-full h-full object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-110"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-stone-900/0 to-transparent group-hover:from-stone-900/8 transition-all duration-500"></div>
           </a>

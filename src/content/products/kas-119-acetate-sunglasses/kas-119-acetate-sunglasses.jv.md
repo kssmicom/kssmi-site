@@ -10,8 +10,8 @@ serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 PCS/Model (100PCS/Color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
-productType: "Kacamata Hitam"
-material: "Kacamata Hitam Asetat"
+productType: "Sunglasses"
+material: "Acetate Sunglasses"
 series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sunglasses"
 
 # ─────────────────────────────────────────────────────

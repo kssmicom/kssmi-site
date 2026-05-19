@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "Custom Acetate Sunglasses"
 slug: "kas-326-acetate-sunglasses"
-itemNo: "KAS-324"
+itemNo: "KAS-326"
 date: "2026-05-13"
 colors: "Black with Gradient Grey, Tortoise with Blue-Brown, Teal Havana with Gradient Brown"
 materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
@@ -37,7 +37,32 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: ""
-seoDescription: ""
-seoKeywords: ""
+seoTitle: "KAS-326 Classic Rivet Acetate Sunglasses | Wholesale Supplier"
+seoDescription: "Source bespoke classic rivet acetate sunglasses from a premier OEM/ODM factory. High-quality Mazzucchelli frames with 300 MOQ & full customization support."
+seoKeywords: "custom acetate sunglasses, wholesale acetate eyewear, private label sunglasses manufacturer, Chinese custom eyewear factory, premium sunglasses OEM, customizable rivet sunglasses, bespoke designer eyewear production"
 ---
+
+## Technical Features
+
+- **Premium Frame Material:** Crafted from premium Mazzucchelli & JINYU acetate, offering a lightweight, durable, and structurally stable design with vibrant color-depth.
+- **Premium Optics:** Tenacious nylon lenses with extensive custom tinting and coating options to meet diverse market demands.
+- **Precision Hardware:** Stable 3+2 barrel structure hinges, customizable with 5-barrel or spring configurations, engineered for long-term operational smoothness.
+- **All-Day Comfort:** Integrated acetate nose pads designed to distribute pressure evenly and ensure a secure, comfortable fit.
+- **Dimensional Flexibility:** Standard 47-20-148mm sizing with full dimensional customization to fit diverse customer demographics.
+- **Scalable Production:** Full OEM & ODM customization capabilities including versatile logo options, with a low minimum order quantity of 300 pieces per model tailored for Premium Eyewear Brands and Boutique Fashion Labels.
+
+## Perfect For
+- Premium Eyewear Brands
+- Independent Eyewear Designers
+- Private Label Distributors
+- Boutique Fashion Labels
+- Duty-Free & Travel Retail
+- Department Store Groups
+
+## Overview
+
+Designed to capture the aesthetic demands of premium boutique retail, the KAS-326 sunglasses blend classic rivet detailing with the vibrant, multi-layered depth of custom-sourced JINYU and Mazzucchelli acetate.
+
+Underpinning their high-end appeal is a durable 3+2 barrel hinge setup and integrated nose pads, engineered to maintain precise frame alignment and exceptional wearer comfort.
+
+We facilitate private-label integration for independent designers by offering full ODM customization, extending from bespoke sizing to specialty nylon lens configurations. A flexible 300-piece production minimum allows brands to launch high-quality collections with minimal initial inventory.

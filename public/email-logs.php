@@ -759,15 +759,15 @@ function resendEmail($log) {
         .success { color: #27ae60; padding: 10px; background: #d4edda; border-radius: 4px; margin-bottom: 15px; }
 
         /* Stats */
-        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 14px; align-items: stretch; }
-        .stat-card { background: white; padding: 16px 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-top: 3px solid #8B7355; transition: box-shadow 0.15s; display: flex; flex-direction: column; min-height: 88px; }
-        .stat-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.08); }
-        .stat-card h3 { font-size: 10px; text-transform: uppercase; color: #888; margin-bottom: 4px; letter-spacing: 0.8px; }
-        .stat-card .value { font-size: 26px; font-weight: bold; color: #5D4E37; flex: 1; display: flex; align-items: center; }
-        .stat-card .sub { font-size: 12px; color: #888; margin-top: 4px; }
-        .stat-card.success { border-top: 3px solid #27ae60; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 14px; }
+        .stat-card { background: white; padding: 18px 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border-top: 3px solid #8B7355; transition: box-shadow 0.2s, transform 0.2s; display: flex; flex-direction: column; justify-content: center; height: 100%; box-sizing: border-box; }
+        .stat-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); transform: translateY(-1px); }
+        .stat-card h3 { font-size: 10px; text-transform: uppercase; color: #888; margin: 0 0 6px 0; letter-spacing: 0.8px; line-height: 1.3; }
+        .stat-card .value { font-size: 28px; font-weight: 700; color: #5D4E37; line-height: 1.2; }
+        .stat-card .sub { font-size: 12px; color: #888; margin-top: 6px; }
+        .stat-card.success { border-top-color: #27ae60; }
         .stat-card.success .value { color: #27ae60; }
-        .stat-card.failed { border-top: 3px solid #e74c3c; }
+        .stat-card.failed { border-top-color: #e74c3c; }
         .stat-card.failed .value { color: #e74c3c; }
 
         /* Panels */
@@ -944,7 +944,9 @@ function resendEmail($log) {
 
             <?php if (empty($logs)): ?>
                 <div style="text-align:center;padding:60px;background:white;border-radius:8px;">
-                    <p style="font-size:48px;margin-bottom:15px;">📭</p>
+                    <svg style="width:48px;height:48px;color:#c0b9a8;margin-bottom:15px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
                     <p>No email logs yet</p>
                     <p style="color:#999;font-size:14px;margin-top:10px;">When visitors submit inquiries, they will appear here.</p>
                 </div>

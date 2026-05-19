@@ -659,7 +659,6 @@ const searchKeywords = {
       fuse._items = items;
       return true;
     } catch (err) {
-      console.error('Failed to initialize search:', err);
       return false;
     }
   }
@@ -723,7 +722,6 @@ const searchKeywords = {
       showResults();
 
     } catch (error) {
-      console.error('Search error:', error);
       showError();
     }
   }
@@ -741,7 +739,7 @@ const searchKeywords = {
       const imageContent = image
         ? `<img src="${image}" alt="${title}" class="src-img" />`
         : `<div class="src-img-placeholder">
-             <svg style="width:3rem;height:3rem;color:#9ca3af" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+             <svg style="width:3rem;height:3rem;color:#6b7280" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
              </svg>
@@ -856,7 +854,7 @@ const searchKeywords = {
       } else if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
         paginationHTML += `<button class="page-numbers" data-page="${i}">${i}</button>`;
       } else if (i === currentPage - 2 || i === currentPage + 2) {
-        paginationHTML += `<span class="page-numbers" style="border:none;background:none;box-shadow:none;cursor:default;color:#9ca3af;">...</span>`;
+        paginationHTML += `<span class="page-numbers" style="border:none;background:none;box-shadow:none;cursor:default;color:#6b7280;">...</span>`;
       }
     }
 

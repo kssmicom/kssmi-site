@@ -65,7 +65,7 @@ const {
           <span class="hidden sm:inline">{prevLabel}</span>
         </a>
       ) : (
-        <span class="flex items-center gap-1 px-2 py-1.5 sm:px-4 sm:py-2 border border-gray-200 rounded-lg text-gray-400 cursor-not-allowed">
+        <span class="flex items-center gap-1 px-2 py-1.5 sm:px-4 sm:py-2 border border-gray-200 rounded-lg text-gray-500 cursor-not-allowed">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
           </svg>
@@ -91,7 +91,7 @@ const {
 
         <!-- Ellipsis before current if needed -->
         {currentPage > 3 && (
-          <span class="px-2 text-gray-400">...</span>
+          <span class="px-2 text-gray-500">...</span>
         )}
 
         <!-- Pages around current -->
@@ -112,7 +112,7 @@ const {
 
         {/* Ellipsis after current if needed */}
         {currentPage < lastPage - 2 && (
-          <span class="px-2 text-gray-400">...</span>
+          <span class="px-2 text-gray-500">...</span>
         )}
 
         {/* Last page */}
@@ -131,22 +131,50 @@ const {
         )}
       </div>
 
-      <!-- Mobile Page Numbers (max 2 buttons) -->
+      <!-- Mobile Page Numbers (max 3 buttons) -->
       <div class="flex sm:hidden items-center gap-1 flex-nowrap">
         {currentPage !== lastPage ? (
           <>
             <span class="w-7 h-7 flex items-center justify-center rounded text-xs font-medium bg-[#5D4E37] text-white shadow-sm" aria-current="page">
               {currentPage}
             </span>
-            {currentPage + 1 < lastPage && (
-              <span class="text-gray-400 text-xs px-0.5">...</span>
+            {currentPage + 1 < lastPage ? (
+              <>
+                <a
+                  href={categorySlug ? `${basePath}/${categorySlug}/${currentPage + 1}` : `${basePath}/${currentPage + 1}`}
+                  class="w-7 h-7 flex items-center justify-center rounded text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+                >
+                  {currentPage + 1}
+                </a>
+                {currentPage + 1 < lastPage - 1 ? (
+                  <span class="text-gray-500 text-xs px-0.5">...</span>
+                ) : currentPage + 2 === lastPage && (
+                  <a
+                    href={categorySlug ? `${basePath}/${categorySlug}/${currentPage + 2}` : `${basePath}/${currentPage + 2}`}
+                    class="w-7 h-7 flex items-center justify-center rounded text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+                  >
+                    {currentPage + 2}
+                  </a>
+                )}
+              </>
+            ) : (
+              currentPage + 1 === lastPage && (
+                <a
+                  href={categorySlug ? `${basePath}/${categorySlug}/${lastPage}` : `${basePath}/${lastPage}`}
+                  class="w-7 h-7 flex items-center justify-center rounded text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+                >
+                  {lastPage}
+                </a>
+              )
             )}
-            <a
-              href={categorySlug ? `${basePath}/${categorySlug}/${lastPage}` : `${basePath}/${lastPage}`}
-              class="w-7 h-7 flex items-center justify-center rounded text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
-            >
-              {lastPage}
-            </a>
+            {currentPage + 1 < lastPage - 1 && (
+              <a
+                href={categorySlug ? `${basePath}/${categorySlug}/${lastPage}` : `${basePath}/${lastPage}`}
+                class="w-7 h-7 flex items-center justify-center rounded text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+              >
+                {lastPage}
+              </a>
+            )}
           </>
         ) : (
           <>
@@ -156,8 +184,16 @@ const {
             >
               1
             </a>
+            {lastPage > 3 && (
+              <span class="text-gray-500 text-xs px-0.5">...</span>
+            )}
             {lastPage > 2 && (
-              <span class="text-gray-400 text-xs px-0.5">...</span>
+              <a
+                href={categorySlug ? `${basePath}/${categorySlug}/${lastPage - 1}` : `${basePath}/${lastPage - 1}`}
+                class="w-7 h-7 flex items-center justify-center rounded text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+              >
+                {lastPage - 1}
+              </a>
             )}
             <span class="w-7 h-7 flex items-center justify-center rounded text-xs font-medium bg-[#5D4E37] text-white shadow-sm" aria-current="page">
               {lastPage}
@@ -167,31 +203,30 @@ const {
       </div>
 
       <!-- Go to Page Input -->
-      <form
-        class="pagination-goto-form flex items-center gap-1"
-        data-base-path={basePath}
-        data-category-slug={categorySlug || ''}
-        data-last-page={lastPage}
-      >
+      <div class="pagination-goto-form flex items-center gap-1">
         <span class="hidden sm:inline text-gray-300 text-sm">|</span>
         <input
-          type="number"
-          min="1"
-          max={lastPage}
+          type="text"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          maxlength={String(lastPage).length}
           placeholder="#"
-          class="w-10 sm:w-14 h-10 text-center border border-gray-200 rounded-lg text-sm text-gray-600 focus:outline-none focus:border-[#8B7355] focus:ring-1 focus:ring-[#8B7355] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+          class="pagination-goto-input w-10 sm:w-14 h-10 text-center border border-gray-200 rounded-lg text-sm text-gray-600 focus:outline-none focus:border-[#8B7355] focus:ring-1 focus:ring-[#8B7355]"
           aria-label={goToLabel}
+          data-base-path={basePath}
+          data-category-slug={categorySlug || ''}
+          data-last-page={lastPage}
         />
         <button
-          type="submit"
-          class="group px-2 h-10 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+          type="button"
+          class="pagination-goto-btn group px-2 h-10 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors cursor-pointer"
           aria-label={goToButton}
         >
-          <svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
+          <svg class="w-4 h-4 transition-transform duration-200 motion-safe:group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
         </button>
-      </form>
+      </div>
 
       <!-- Next Button -->
       {currentPage < lastPage ? (
@@ -206,7 +241,7 @@ const {
           </svg>
         </a>
       ) : (
-        <span class="flex items-center gap-1 px-2 py-1.5 sm:px-4 sm:py-2 border border-gray-200 rounded-lg text-gray-400 cursor-not-allowed">
+        <span class="flex items-center gap-1 px-2 py-1.5 sm:px-4 sm:py-2 border border-gray-200 rounded-lg text-gray-500 cursor-not-allowed">
           <span class="hidden sm:inline">{nextLabel}</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -218,24 +253,39 @@ const {
 }
 
 <script is:inline>
-  document.addEventListener('submit', function(e) {
-    var form = e.target.closest('.pagination-goto-form');
-    if (!form) return;
-    e.preventDefault();
-    var input = form.querySelector('input[type="number"]');
-    if (!input) return;
-    var page = parseInt(input.value, 10);
-    var basePath = form.getAttribute('data-base-path') || '';
-    var categorySlug = form.getAttribute('data-category-slug') || '';
-    var lastPage = parseInt(form.getAttribute('data-last-page') || '1', 10);
-    if (page >= 1 && page <= lastPage) {
-      var url;
-      if (page === 1) {
-        url = categorySlug ? basePath + '/' + categorySlug : basePath;
-      } else {
-        url = categorySlug ? basePath + '/' + categorySlug + '/' + page : basePath + '/' + page;
-      }
-      window.location.href = url;
+  function goToPage(input) {
+    var raw = input.value.trim();
+    if (!raw) return;
+    var page = parseInt(raw, 10);
+    if (isNaN(page)) return;
+    var basePath = input.getAttribute('data-base-path') || '';
+    var categorySlug = input.getAttribute('data-category-slug') || '';
+    var lastPage = parseInt(input.getAttribute('data-last-page') || '1', 10);
+    if (page < 1 || page > lastPage) return;
+    var url;
+    if (page === 1) {
+      url = categorySlug ? basePath + '/' + categorySlug : basePath;
+    } else {
+      url = categorySlug ? basePath + '/' + categorySlug + '/' + page : basePath + '/' + page;
     }
+    window.location.href = url;
+  }
+
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.pagination-goto-btn');
+    if (!btn) return;
+    var container = btn.closest('.pagination-goto-form');
+    if (!container) return;
+    var input = container.querySelector('.pagination-goto-input');
+    if (!input) return;
+    goToPage(input);
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key !== 'Enter') return;
+    var input = e.target.closest('.pagination-goto-input');
+    if (!input) return;
+    e.preventDefault();
+    goToPage(input);
   });
 </script>

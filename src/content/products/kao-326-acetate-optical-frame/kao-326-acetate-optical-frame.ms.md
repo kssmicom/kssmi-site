@@ -39,10 +39,6 @@ gallery:
   - "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-10.webp"
   - "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-11.webp"
   - "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-12.webp"
-  - "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-13.webp"
-  - "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-14.webp"
-  - "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-15.webp"
-  - "/media/products/kao-326-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-326-16.webp"
 customizable: true
 featured: true
 

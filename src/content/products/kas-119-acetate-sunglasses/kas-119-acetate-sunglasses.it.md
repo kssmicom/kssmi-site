@@ -10,8 +10,8 @@ serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 PCS/Model (100PCS/Color)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
-productType: "Occhiali da Sole"
-material: "Occhiali da Sole in Acetato"
+productType: "Sunglasses"
+material: "Acetate Sunglasses"
 series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sunglasses"
 
 # ─────────────────────────────────────────────────────

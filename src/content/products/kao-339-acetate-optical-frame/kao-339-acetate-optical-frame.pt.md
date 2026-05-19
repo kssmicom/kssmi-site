@@ -35,7 +35,6 @@ gallery:
   - "/media/products/kao-339-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-339-6.webp"
   - "/media/products/kao-339-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-339-7.webp"
   - "/media/products/kao-339-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-339-8.webp"
-  - "/media/products/kao-339-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-339-9.webp"
 customizable: true
 featured: true
 
