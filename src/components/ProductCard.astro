@@ -12,11 +12,13 @@ interface Props {
 
 const { product, lang, index = -1 } = Astro.props;
 
-// Determine loading strategy: first 4 items load eager with high priority for fast LCP
-const isLCP = index >= 0 && index < 4;
-const loadingStrategy = isLCP ? "eager" : "lazy";
-const fetchPriority = isLCP ? "high" : "auto";
-const decoding = isLCP ? "sync" : "async";
+// First 8 products load eager (covers visible viewport on most screens)
+// Only index 0 gets sync decode + high fetchpriority (the true LCP candidate)
+// Others use async decode to avoid blocking the main thread (reduces TBT)
+const isEager = index >= 0 && index < 8;
+const loadingStrategy = isEager ? "eager" : "lazy";
+const fetchPriority = index === 0 ? "high" : "auto";
+const decoding = index === 0 ? "sync" : "async";
 
 // Skip rendering for cards below first 2 rows to reduce initial layout work
 const belowFold = index >= 6;

@@ -29,8 +29,7 @@ export default defineConfig({
     }
   },
   build: {
-    format: 'directory',
-    inlineStylesheets: 'always',
+    format: 'directory'
   },
   vite: {
     plugins: [
