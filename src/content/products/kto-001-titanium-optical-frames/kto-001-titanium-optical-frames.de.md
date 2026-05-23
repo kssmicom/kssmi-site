@@ -21,7 +21,7 @@ lensMaterial: "Nylon-Gläser & Individualisierung"
 designStyle: "Luxus, Klassisch, Unisex"
 nosePads: "Einstellbare Metall-Nasenpads"
 hinge: "Federscharnier"
-electroplatingMethod: "Ionenplattieren"
+electroplating: "Ionenplattieren"
 logo: "Tampondruck, Lasergravur, Lasergravur mit Farbauslegung, Heißprägung, Metal-Logo, Kristall-Verzierung, 3D-Aufkleber"
 service: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 

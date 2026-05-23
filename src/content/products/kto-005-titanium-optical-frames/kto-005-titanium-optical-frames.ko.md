@@ -21,7 +21,7 @@ lensMaterial: "AC 렌즈 & 맞춤 서비스"
 designStyle: "럭셔리, 스타일리시, 공용"
 nosePads: "일체형 코받침"
 hinge: "스프링 경첩"
-electroplatingMethod: "이온 도금"
+electroplating: "이온 도금"
 logo: "프린트, 레이저, 레이저 도색, 핫 스탬핑, 메탈 로고, 크리스탈, 입체 스티커"
 service: "OEM / ODM 제조 맞춤 서비스"
 

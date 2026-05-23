@@ -5,7 +5,7 @@ slug: "kts-024-titanium-sunglasses"
 itemNo: "KTS-024"
 date: "2026-04-07"
 colors: "Biru laut dalam & Emas hijau gelap & Perak tempurung kura-kura & Hitam perak"
-materials: "Titanim Premium"
+materials: "Titanium Premium"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model"
 
@@ -16,7 +16,7 @@ series: "sunglasses, titanium-sunglasses, luxury-eyewear, luxury-titanium-sungla
 
 # ─────────────────────────────────────────────────────
 size: "52-17-145mm & Penyesuaian"
-frameMaterial: "Bingkai dan Temple Titanim Premium"
+frameMaterial: "Bingkai dan Temple Titanium Premium"
 lensMaterial: "Lensa Nilon Lasak & Penyesuaian"
 designStyle: "Unik, Fesyen, Bergaya, Trend, Mewah, Unisex"
 nosePads: "Alas Hidung Satu Bahagian"

@@ -21,7 +21,7 @@ lensMaterial: "TACレンズ & カスタマイズ対応"
 designStyle: "ラグジュアリー, クラシック, ユニセックス"
 nosePads: "調整可能なメタルノーズパッド"
 hinge: "3 ヒンジ"
-electroplatingMethod: "イオンプレーティング"
+electroplating: "イオンプレーティング"
 logo: "印刷, レーザー刻印, レーザー色入れ, 箔押し, メタル装飾, クリスタル装飾, 立体ステッカー"
 service: "OEM製造 / ODM設計製造 カスタマイズ対応"
 

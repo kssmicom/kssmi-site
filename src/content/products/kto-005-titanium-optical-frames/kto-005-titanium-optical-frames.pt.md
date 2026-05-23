@@ -21,7 +21,7 @@ lensMaterial: "Lente AC & Personalização"
 designStyle: "Luxo, Elegante, Unissex"
 nosePads: "Ponteiras Nasicas de Peça Única"
 hinge: "Dobradiça de Mola"
-electroplatingMethod: "Revestimento ION"
+electroplating: "Revestimento ION"
 logo: "Impressão Tampográfica, Gravação a Laser, Gravação a Laser com Esmalte, Estampagem a Quente, Logotipo Metálico, Decoração di Cristal, Adesivo 3D"
 service: "Fabricação OEM / ODM – Personalização"
 

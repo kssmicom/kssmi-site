@@ -34,8 +34,8 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: ""
-seoDescription: ""
+seoTitle: "KAS-510 패션 트렌디 아세테이트 선글라스 | 맞춤형 공급업체"
+seoDescription: "완전한 OEM/ODM 맞춤화를 위한 프리미엄 Mazzucchelli 및 JINYU 아세테이트 선글라스. 맞춤형 프레임 크기, 색상 및 로고 옵션. 모델당 300 MOQ."
 seoKeywords: ""
 ---
 

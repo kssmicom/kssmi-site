@@ -15,6 +15,8 @@
  *   dir          - Text direction ("ltr" or "rtl")
  */
 
+import { translations } from '../translations';
+
 export interface Props {
   currentPage: number;
   lastPage: number;
@@ -27,6 +29,7 @@ export interface Props {
   goToLabel?: string;
   goToButton?: string;
   dir?: string;
+  lang?: string;
 }
 
 const {
@@ -36,12 +39,16 @@ const {
   categorySlug,
   prevUrl,
   nextUrl,
-  prevLabel = 'Previous',
-  nextLabel = 'Next',
-  goToLabel = 'Go to page',
-  goToButton = 'Go',
+  lang,
   dir = 'ltr',
 } = Astro.props;
+
+const t = lang ? (translations[lang as keyof typeof translations] || translations.en) : null;
+
+const prevLabel = Astro.props.prevLabel ?? (t?.product?.previousPage ?? 'Previous');
+const nextLabel = Astro.props.nextLabel ?? (t?.product?.nextPage ?? 'Next');
+const goToLabel = Astro.props.goToLabel ?? (t?.product?.goToPage ?? 'Go to page');
+const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
 ---
 
 {
@@ -253,6 +260,13 @@ const {
 }
 
 <script is:inline>
+  // AbortController for cleanup on View Transition re-navigation
+  if (window.__paginationAbort) {
+    window.__paginationAbort.abort();
+  }
+  window.__paginationAbort = new AbortController();
+  var paginationSignal = window.__paginationAbort.signal;
+
   function goToPage(input) {
     var raw = input.value.trim();
     if (!raw) return;
@@ -279,7 +293,7 @@ const {
     var input = container.querySelector('.pagination-goto-input');
     if (!input) return;
     goToPage(input);
-  });
+  }, { signal: paginationSignal });
 
   document.addEventListener('keydown', function(e) {
     if (e.key !== 'Enter') return;
@@ -287,5 +301,5 @@ const {
     if (!input) return;
     e.preventDefault();
     goToPage(input);
-  });
+  }, { signal: paginationSignal });
 </script>

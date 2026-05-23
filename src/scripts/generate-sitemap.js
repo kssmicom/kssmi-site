@@ -137,7 +137,7 @@ locales.forEach(lang => {
   fs.writeFileSync(path.join(langDir, 'sitemap-products.xml'), generateUrlset(productUrls), 'utf-8');
 
   // 3. Landing
-  const landingUrls = getCollectionUrls('landing', 'landing');
+  const landingUrls = getCollectionUrls('collection', 'collection');
   fs.writeFileSync(path.join(langDir, 'sitemap-landing.xml'), generateUrlset(landingUrls), 'utf-8');
 
   // 4. Blogs

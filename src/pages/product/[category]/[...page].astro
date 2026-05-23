@@ -14,6 +14,8 @@ import Breadcrumb from '../../../components/Breadcrumb.astro';
 import { isCategoryMatch, getSlug } from '../../../utils/categoryMatching';
 import type { Page } from 'astro';
 import Pagination from '../../../components/Pagination.astro';
+import { getProductLang } from '../../../utils/language';
+import { buildPrimaryCategories, buildSidebarTags } from '../../../utils/sidebar';
 
 export async function getStaticPaths({ paginate }: { paginate: any }) {
   const lang = 'en';
@@ -36,16 +38,13 @@ export async function getStaticPaths({ paginate }: { paginate: any }) {
     'optical-frames', 'acetate-optical-frames', 'metal-optical-frames', 'titanium-optical-frames', 'carbon-fiber-optical-frames', 'rimless-optical-frames',
     'fashion-acetate-sunglasses', 'fashion-metal-sunglasses', 'fashion-acetate-optical-frames', 'fashion-metal-optical-frames',
     'luxury-acetate-sunglasses', 'luxury-titanium-sunglasses', 'luxury-acetate-optical-frames', 'luxury-titanium-optical-frames',
-    'carbon-fiber-eyewear', 'rimless-eyewear',
+    'fashion-eyewear', 'luxury-eyewear', 'carbon-fiber-eyewear', 'rimless-eyewear',
   ];
   for (const s of SIDEBAR_SLUGS) allCategorySlugs.add(s);
 
   return [...allCategorySlugs].flatMap((category) => {
     const categoryProducts = allProducts.filter((p) => {
-      const normalizedId = p.id.replace(/\.md$/, '');
-      const pParts = normalizedId.split('.');
-      const pLang = pParts.length > 1 ? pParts.pop() : 'en';
-      if (pLang !== lang) return false;
+      if (getProductLang(p) !== lang) return false;
 
       const series = p.data.series || p.data.categories || '';
       return isCategoryMatch(series, category);
@@ -90,9 +89,7 @@ const lcpImage = products[0]?.data?.cover || undefined;
 
 const allProducts = await getCollection('products');
 const langProducts = allProducts.filter((product) => {
-  const normalizedId = product.id.replace(/\.md$/, '');
-  const parts = normalizedId.split('.');
-  const productLang = parts.length > 1 ? parts.pop() : 'en';
+  const productLang = getProductLang(product);
   return productLang === lang;
 });
 
@@ -104,71 +101,9 @@ function getCategoryCount(href: string): number {
   }).length;
 }
 
-// Primary Categories (Hierarchical)
-const primaryCategories = [
-  {
-    label: t.sidebar.sunglasses,
-    href: '/product/sunglasses',
-    items: [
-      { label: t.sidebar.acetate_sunglasses, href: '/product/acetate-sunglasses' },
-      { label: t.sidebar.metal_sunglasses, href: '/product/metal-sunglasses' },
-      { label: t.sidebar.titanium_sunglasses, href: '/product/titanium-sunglasses' },
-      { label: t.sidebar.carbon_fiber_sunglasses, href: '/product/carbon-fiber-sunglasses' },
-      { label: t.sidebar.rimless_sunglasses, href: '/product/rimless-sunglasses' }
-    ]
-  },
-  {
-    label: t.sidebar.optical_frames,
-    href: '/product/optical-frames',
-    items: [
-      { label: t.sidebar.acetate_glasses, href: '/product/acetate-optical-frames' },
-      { label: t.sidebar.metal_glasses, href: '/product/metal-optical-frames' },
-      { label: t.sidebar.titanium_glasses, href: '/product/titanium-optical-frames' },
-      { label: t.sidebar.carbon_glasses, href: '/product/carbon-fiber-optical-frames' },
-      { label: t.sidebar.rimless_glasses, href: '/product/rimless-optical-frames' }
-    ]
-  }
-];
+const primaryCategories = buildPrimaryCategories(t, '');
 
-// Tags / Filters (Flat Groups)
-const sidebarTags = [
-  {
-    label: t.sidebar.fashion_group || t.sidebar.fashion,
-    href: '/product/fashion-eyewear',
-    items: [
-      { label: t.sidebar.fashion_acetate_sunglasses, href: '/product/fashion-acetate-sunglasses' },
-      { label: t.sidebar.fashion_metal_sunglasses, href: '/product/fashion-metal-sunglasses' },
-      { label: t.sidebar.fashion_acetate_optical_frames, href: '/product/fashion-acetate-optical-frames' },
-      { label: t.sidebar.fashion_metal_optical_frames, href: '/product/fashion-metal-optical-frames' }
-    ]
-  },
-  {
-    label: t.sidebar.luxury_group || t.sidebar.luxury,
-    href: '/product/luxury-eyewear',
-    items: [
-      { label: t.sidebar.luxury_acetate_sunglasses, href: '/product/luxury-acetate-sunglasses' },
-      { label: t.sidebar.luxury_titanium_sunglasses, href: '/product/luxury-titanium-sunglasses' },
-      { label: t.sidebar.luxury_acetate_optical_frames, href: '/product/luxury-acetate-optical-frames' },
-      { label: t.sidebar.luxury_titanium_optical_frames, href: '/product/luxury-titanium-optical-frames' }
-    ]
-  },
-  {
-    label: t.sidebar.carbon_fiber_group || t.sidebar.carbon_fiber,
-    href: '/product/carbon-fiber-eyewear',
-    items: [
-      { label: t.sidebar.carbon_fiber_sunglasses, href: '/product/carbon-fiber-sunglasses' },
-      { label: t.sidebar.carbon_glasses, href: '/product/carbon-fiber-optical-frames' }
-    ]
-  },
-  {
-    label: t.sidebar.rimless_group || t.sidebar.rimless,
-    href: '/product/rimless-eyewear',
-    items: [
-      { label: t.sidebar.rimless_sunglasses, href: '/product/rimless-sunglasses' },
-      { label: t.sidebar.rimless_glasses, href: '/product/rimless-optical-frames' }
-    ]
-  }
-];
+const sidebarTags = buildSidebarTags(t, '');
 
 const categoryTitle = (() => {
   for (const cat of primaryCategories) {
@@ -353,7 +288,7 @@ function isActiveCategory(href: string): boolean {
               <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
               </svg>
-              <p class="text-gray-500 mb-4">No products in this category.</p>
+              <p class="text-gray-500 mb-4">{pt.noProducts || 'No products in this category.'}</p>
               <a href="/product" class="text-[#5D4E37] hover:underline">View All Products</a>
             </div>
           ) : (

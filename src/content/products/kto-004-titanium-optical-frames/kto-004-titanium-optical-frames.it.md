@@ -21,7 +21,7 @@ lensMaterial: "Lente TAC & Personalizzazione"
 designStyle: "Lusso, Classico, Unisex"
 nosePads: "Naselli in Metallo Regolabili"
 hinge: "3 Cerniere"
-electroplatingMethod: "Placcatura ION"
+electroplating: "Placcatura ION"
 logo: "Stampa Tampografica, Incisione Laser, Incisione Laser con Smalto, Stampa a Caldo, Logo in Metallo, Decorazione in Cristallo, Logo 3D Adesivo"
 service: "Produzione OEM / ODM – Personalizzazione"
 

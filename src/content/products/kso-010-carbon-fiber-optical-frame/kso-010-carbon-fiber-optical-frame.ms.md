@@ -5,7 +5,7 @@ slug: "kso-010-carbon-fiber-optical-frame"
 itemNo: "KSO-010"
 date: "2026-04-05"
 colors: "Gentian Karbon & Ceylon Ebony & White Oak & Sapele"
-materials: "Gentian Karbon Premium dan Titanim"
+materials: "Gentian Karbon Premium dan Titanium"
 serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & Pengilangan Reka Bentuk (ODM) ( Penyesuaian )"
 moq: "300 unit/model"
 
@@ -16,7 +16,7 @@ series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames"
 
 # ─────────────────────────────────────────────────────
 size: "49-21-150mm & Penyesuaian"
-frameMaterial: "Bingkai Gentian Karbon Premium dan Temple Titanim"
+frameMaterial: "Bingkai Gentian Karbon Premium dan Temple Titanium"
 lensMaterial: "Lensa Nilon Tenacious & Penyesuaian"
 designStyle: "Unik, Fesyen, Bergaya, Trendi, Mewah, Unisex"
 nosePads: "Alas Hidung Logam"

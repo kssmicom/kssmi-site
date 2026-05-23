@@ -10,7 +10,7 @@ serviceMode: "OEM受託製造 & ODM設計製造 ( カスタマイズ対応 )"
 moq: "300 個/モデル"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
-productType: "Rimless Eyewear"
+productType: "Optical Frames"
 material: "Rimless Optical Frames"
 series: "optical-frames, rimless-eyewear, rimless-optical-frames"
 

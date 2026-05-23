@@ -7,6 +7,7 @@ layout: "full-width"
 
 # ─────────────────────────────────────────────────────
 showPartnershipHero: true
+showQuoteBenefits: true
 showInquiryForm: true
 
 # ─────────────────────────────────────────────────────

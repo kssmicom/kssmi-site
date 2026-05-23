@@ -12,7 +12,7 @@ moq: "300 pçs/modelo"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Metal Sunglasses"
-series: "sunglasses, fashion-eyewear, metal-sunglasses,fashion-metal-sunglasses"
+series: "sunglasses, fashion-eyewear, metal-sunglasses, fashion-metal-sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "48-23-150mm & Personalização"

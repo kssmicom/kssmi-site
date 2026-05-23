@@ -21,7 +21,7 @@ lensMaterial: "Lentes de Nylon & Personalización"
 designStyle: "Lujo, Clásico, Unisex"
 nosePads: "Almohadillas Nasales de Metal Ajustables"
 hinge: "3 Bisagras"
-electroplatingMethod: "Galvanoplastia Iónica"
+electroplating: "Galvanoplastia Iónica"
 logo: "Impresión, Láser, Grabado Láser con Esmalte, Estampado en Caliente, Logotipo Metálico, Decoración de Cristal, Adhesivo 3D"
 service: "Fabricación OEM / ODM – Personalización"
 

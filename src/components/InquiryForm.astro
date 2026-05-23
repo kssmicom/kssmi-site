@@ -28,6 +28,7 @@ const pt = t.product || {
   submitRequest: "Submit Request",
 };
 
+// TODO: Move to src/translations/index.ts under form.turnstileError keys
 // Turnstile error message translations
 const turnstileErrorMessages = {
   en: "Please click the security verification checkbox above to prove you are human.",
@@ -142,8 +143,218 @@ const placeholders = {
 
 const ph = placeholders[lang as keyof typeof placeholders] || placeholders.en;
 
+// Form message translations (success, error, loading states)
+const formMessages: Record<string, Record<string, string>> = {
+  en: {
+    successTitle: 'Thank You!',
+    successMessage: 'Your inquiry has been sent successfully. We will contact you within 24 hours.',
+    errorDefault: 'An error occurred. Please try again.',
+    submitting: 'Submitting...',
+    phpNotRunning: 'PHP server not running. Click below to send via your email client:',
+    openEmailClient: 'Open Email Client',
+    phpNotConfigured: 'PHP is not configured on this server. Please contact the administrator.',
+    cannotConnect: 'Cannot connect to server. Please try again later.',
+    invalidResponse: 'Server returned an invalid response. Please contact the administrator.',
+    errorPrefix: 'Error: {0}. Please try again.',
+  },
+  it: {
+    successTitle: 'Grazie!',
+    successMessage: 'La tua richiesta è stata inviata con successo. Ti contatteremo entro 24 ore.',
+    errorDefault: 'Si è verificato un errore. Riprova.',
+    submitting: 'Invio in corso...',
+    phpNotRunning: 'Server PHP non in esecuzione. Clicca qui sotto per inviare tramite il tuo client email:',
+    openEmailClient: 'Apri Client Email',
+    phpNotConfigured: 'PHP non è configurato su questo server. Contatta l\'amministratore.',
+    cannotConnect: 'Impossibile connettersi al server. Riprova più tardi.',
+    invalidResponse: 'Il server ha restituito una risposta non valida. Contatta l\'amministratore.',
+    errorPrefix: 'Errore: {0}. Riprova.',
+  },
+  es: {
+    successTitle: '¡Gracias!',
+    successMessage: 'Su consulta ha sido enviada con éxito. Lo contactaremos dentro de las 24 horas.',
+    errorDefault: 'Ocurrió un error. Por favor, inténtelo de nuevo.',
+    submitting: 'Enviando...',
+    phpNotRunning: 'Servidor PHP no está en ejecución. Haga clic abajo para enviar a través de su cliente de correo:',
+    openEmailClient: 'Abrir Cliente de Correo',
+    phpNotConfigured: 'PHP no está configurado en este servidor. Póngase en contacto con el administrador.',
+    cannotConnect: 'No se puede conectar al servidor. Inténtelo de nuevo más tarde.',
+    invalidResponse: 'El servidor devolvió una respuesta no válida. Póngase en contacto con el administrador.',
+    errorPrefix: 'Error: {0}. Inténtelo de nuevo.',
+  },
+  fr: {
+    successTitle: 'Merci !',
+    successMessage: 'Votre demande a été envoyée avec succès. Nous vous contacterons dans les 24 heures.',
+    errorDefault: 'Une erreur s\'est produite. Veuillez réessayer.',
+    submitting: 'Envoi en cours...',
+    phpNotRunning: 'Serveur PHP non démarré. Cliquez ci-dessous pour envoyer via votre client de messagerie :',
+    openEmailClient: 'Ouvrir le Client Email',
+    phpNotConfigured: 'PHP n\'est pas configuré sur ce serveur. Veuillez contacter l\'administrateur.',
+    cannotConnect: 'Impossible de se connecter au serveur. Veuillez réessayer plus tard.',
+    invalidResponse: 'Le serveur a renvoyé une réponse invalide. Veuillez contacter l\'administrateur.',
+    errorPrefix: 'Erreur : {0}. Veuillez réessayer.',
+  },
+  de: {
+    successTitle: 'Vielen Dank!',
+    successMessage: 'Ihre Anfrage wurde erfolgreich gesendet. Wir werden Sie innerhalb von 24 Stunden kontaktieren.',
+    errorDefault: 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.',
+    submitting: 'Wird gesendet...',
+    phpNotRunning: 'PHP-Server läuft nicht. Klicken Sie unten, um über Ihren E-Mail-Client zu senden:',
+    openEmailClient: 'E-Mail-Client öffnen',
+    phpNotConfigured: 'PHP ist auf diesem Server nicht konfiguriert. Bitte kontaktieren Sie den Administrator.',
+    cannotConnect: 'Keine Verbindung zum Server möglich. Bitte versuchen Sie es später erneut.',
+    invalidResponse: 'Der Server hat eine ungültige Antwort zurückgegeben. Bitte kontaktieren Sie den Administrator.',
+    errorPrefix: 'Fehler: {0}. Bitte versuchen Sie es erneut.',
+  },
+  pt: {
+    successTitle: 'Obrigado!',
+    successMessage: 'Sua consulta foi enviada com sucesso. Entraremos em contato dentro de 24 horas.',
+    errorDefault: 'Ocorreu um erro. Tente novamente.',
+    submitting: 'Enviando...',
+    phpNotRunning: 'Servidor PHP não está em execução. Clique abaixo para enviar através do seu cliente de email:',
+    openEmailClient: 'Abrir Cliente de Email',
+    phpNotConfigured: 'PHP não está configurado neste servidor. Entre em contato com o administrador.',
+    cannotConnect: 'Não foi possível conectar ao servidor. Tente novamente mais tarde.',
+    invalidResponse: 'O servidor retornou uma resposta inválida. Entre em contato com o administrador.',
+    errorPrefix: 'Erro: {0}. Tente novamente.',
+  },
+  ru: {
+    successTitle: 'Спасибо!',
+    successMessage: 'Ваш запрос успешно отправлен. Мы свяжемся с вами в течение 24 часов.',
+    errorDefault: 'Произошла ошибка. Пожалуйста, попробуйте еще раз.',
+    submitting: 'Отправка...',
+    phpNotRunning: 'PHP-сервер не запущен. Нажмите ниже, чтобы отправить через ваш почтовый клиент:',
+    openEmailClient: 'Открыть Почтовый Клиент',
+    phpNotConfigured: 'PHP не настроен на этом сервере. Пожалуйста, свяжитесь с администратором.',
+    cannotConnect: 'Не удается подключиться к серверу. Пожалуйста, попробуйте позже.',
+    invalidResponse: 'Сервер вернул неверный ответ. Пожалуйста, свяжитесь с администратором.',
+    errorPrefix: 'Ошибка: {0}. Попробуйте еще раз.',
+  },
+  ja: {
+    successTitle: 'ありがとうございます！',
+    successMessage: 'お問い合わせは正常に送信されました。24時間以内にご連絡いたします。',
+    errorDefault: 'エラーが発生しました。もう一度お試しください。',
+    submitting: '送信中...',
+    phpNotRunning: 'PHPサーバーが実行されていません。メールクライアントで送信するには、下をクリックしてください：',
+    openEmailClient: 'メールクライアントを開く',
+    phpNotConfigured: 'このサーバーにはPHPが設定されていません。管理者にお問い合わせください。',
+    cannotConnect: 'サーバーに接続できません。後でもう一度お試しください。',
+    invalidResponse: 'サーバーから無効な応答が返されました。管理者にお問い合わせください。',
+    errorPrefix: 'エラー: {0}。もう一度お試しください。',
+  },
+  tr: {
+    successTitle: 'Teşekkürler!',
+    successMessage: 'Talebiniz başarıyla gönderildi. 24 saat içinde sizinle iletişime geçeceğiz.',
+    errorDefault: 'Bir hata oluştu. Lütfen tekrar deneyin.',
+    submitting: 'Gönderiliyor...',
+    phpNotRunning: 'PHP sunucusu çalışmıyor. E-posta istemcinizle göndermek için aşağıya tıklayın:',
+    openEmailClient: 'E-posta İstemcisini Aç',
+    phpNotConfigured: 'PHP bu sunucuda yapılandırılmamış. Lütfen yöneticiyle iletişime geçin.',
+    cannotConnect: 'Sunucuya bağlanılamıyor. Lütfen daha sonra tekrar deneyin.',
+    invalidResponse: 'Sunucu geçersiz bir yanıt döndürdü. Lütfen yöneticiyle iletişime geçin.',
+    errorPrefix: 'Hata: {0}. Lütfen tekrar deneyin.',
+  },
+  ar: {
+    successTitle: 'شكراً لك!',
+    successMessage: 'تم إرسال استفسارك بنجاح. سنتواصل معك في غضون 24 ساعة.',
+    errorDefault: 'حدث خطأ. يرجى المحاولة مرة أخرى.',
+    submitting: 'جارٍ الإرسال...',
+    phpNotRunning: 'خادم PHP لا يعمل. انقر أدناه للإرسال عبر عميل البريد الإلكتروني الخاص بك:',
+    openEmailClient: 'فتح عميل البريد الإلكتروني',
+    phpNotConfigured: 'لم يتم تكوين PHP على هذا الخادم. يرجى الاتصال بالمسؤول.',
+    cannotConnect: 'لا يمكن الاتصال بالخادم. يرجى المحاولة مرة أخرى لاحقاً.',
+    invalidResponse: 'أعاد الخادم استجابة غير صالحة. يرجى الاتصال بالمسؤول.',
+    errorPrefix: 'خطأ: {0}. يرجى المحاولة مرة أخرى.',
+  },
+  ko: {
+    successTitle: '감사합니다!',
+    successMessage: '문의가 성공적으로 전송되었습니다. 24시간 이내에 연락드리겠습니다.',
+    errorDefault: '오류가 발생했습니다. 다시 시도해 주세요.',
+    submitting: '제출 중...',
+    phpNotRunning: 'PHP 서버가 실행되고 있지 않습니다. 이메일 클라이언트로 보내려면 아래를 클릭하세요:',
+    openEmailClient: '이메일 클라이언트 열기',
+    phpNotConfigured: '이 서버에 PHP가 구성되어 있지 않습니다. 관리자에게 문의하세요.',
+    cannotConnect: '서버에 연결할 수 없습니다. 나중에 다시 시도해 주세요.',
+    invalidResponse: '서버가 잘못된 응답을 반환했습니다. 관리자에게 문의하세요.',
+    errorPrefix: '오류: {0}. 다시 시도해 주세요.',
+  },
+  zh: {
+    successTitle: '谢谢！',
+    successMessage: '您的咨询已成功发送。我们将在24小时内与您联系。',
+    errorDefault: '发生错误。请重试。',
+    submitting: '提交中...',
+    phpNotRunning: 'PHP 服务器未运行。请点击下方通过您的邮件客户端发送：',
+    openEmailClient: '打开邮件客户端',
+    phpNotConfigured: '此服务器上未配置 PHP。请联系管理员。',
+    cannotConnect: '无法连接到服务器。请稍后重试。',
+    invalidResponse: '服务器返回了无效响应。请联系管理员。',
+    errorPrefix: '错误：{0}。请重试。',
+  },
+  hi: {
+    successTitle: 'धन्यवाद!',
+    successMessage: 'आपकी पूछताछ सफलतापूर्वक भेज दी गई है। हम 24 घंटे के भीतर आपसे संपर्क करेंगे।',
+    errorDefault: 'एक त्रुटि हुई। कृपया पुनः प्रयास करें।',
+    submitting: 'सबमिट हो रहा है...',
+    phpNotRunning: 'PHP सर्वर नहीं चल रहा है। अपने ईमेल क्लाइंट के माध्यम से भेजने के लिए नीचे क्लिक करें:',
+    openEmailClient: 'ईमेल क्लाइंट खोलें',
+    phpNotConfigured: 'इस सर्वर पर PHP कॉन्फ़िगर नहीं है। कृपया व्यवस्थापक से संपर्क करें।',
+    cannotConnect: 'सर्वर से कनेक्ट नहीं हो सका। कृपया बाद में पुनः प्रयास करें।',
+    invalidResponse: 'सर्वर ने अमान्य प्रतिक्रिया दी। कृपया व्यवस्थापक से संपर्क करें।',
+    errorPrefix: 'त्रुटि: {0}। कृपया पुनः प्रयास करें।',
+  },
+  vi: {
+    successTitle: 'Cảm Ơn!',
+    successMessage: 'Yêu cầu của bạn đã được gửi thành công. Chúng tôi sẽ liên hệ với bạn trong vòng 24 giờ.',
+    errorDefault: 'Đã xảy ra lỗi. Vui lòng thử lại.',
+    submitting: 'Đang gửi...',
+    phpNotRunning: 'Máy chủ PHP không chạy. Nhấp vào bên dưới để gửi qua ứng dụng email của bạn:',
+    openEmailClient: 'Mở Ứng Dụng Email',
+    phpNotConfigured: 'PHP chưa được cấu hình trên máy chủ này. Vui lòng liên hệ quản trị viên.',
+    cannotConnect: 'Không thể kết nối đến máy chủ. Vui lòng thử lại sau.',
+    invalidResponse: 'Máy chủ trả về phản hồi không hợp lệ. Vui lòng liên hệ quản trị viên.',
+    errorPrefix: 'Lỗi: {0}. Vui lòng thử lại.',
+  },
+  jv: {
+    successTitle: 'Matur Nuwun!',
+    successMessage: 'Pitakon sampeyan wis dikirim kanthi sukses. Kita bakal ngubungi sampeyan ing 24 jam.',
+    errorDefault: 'Ana kesalahan. Mangga coba maneh.',
+    submitting: 'Ngirim...',
+    phpNotRunning: 'Server PHP ora mlaku. Klik ing ngisor iki kanggo ngirim liwat klien email sampeyan:',
+    openEmailClient: 'Bukak Klien Email',
+    phpNotConfigured: 'PHP ora dikonfigurasi ing server iki. Mangga hubungi administrator.',
+    cannotConnect: 'Ora bisa nyambung menyang server. Mangga coba maneh mengko.',
+    invalidResponse: 'Server mbalekake respon sing ora sah. Mangga hubungi administrator.',
+    errorPrefix: 'Kesalahan: {0}. Mangga coba maneh.',
+  },
+  ms: {
+    successTitle: 'Terima Kasih!',
+    successMessage: 'Pertanyaan anda telah berjaya dihantar. Kami akan menghubungi anda dalam masa 24 jam.',
+    errorDefault: 'Ralat telah berlaku. Sila cuba lagi.',
+    submitting: 'Menghantar...',
+    phpNotRunning: 'Pelayan PHP tidak berjalan. Klik di bawah untuk menghantar melalui klien e-mel anda:',
+    openEmailClient: 'Buka Klien E-mel',
+    phpNotConfigured: 'PHP tidak dikonfigurasikan pada pelayan ini. Sila hubungi pentadbir.',
+    cannotConnect: 'Tidak dapat menyambung ke pelayan. Sila cuba lagi kemudian.',
+    invalidResponse: 'Pelayan mengembalikan respons yang tidak sah. Sila hubungi pentadbir.',
+    errorPrefix: 'Ralat: {0}. Sila cuba lagi.',
+  },
+  tg: {
+    successTitle: 'Ташаккур!',
+    successMessage: 'Дархости шумо бо муваффақият фиристода шуд. Мо дар давоми 24 соат бо шумо тамос мегирем.',
+    errorDefault: 'Хатогӣ рух дод. Лутфан дубора кӯшиш кунед.',
+    submitting: 'Ирсол...',
+    phpNotRunning: 'Сервери PHP кор намекунад. Барои фиристодан тавассути клиенти почтаи худ, дар зер клик кунед:',
+    openEmailClient: 'Кушодани Клиенти Почта',
+    phpNotConfigured: 'PHP дар ин сервер танзим нашудааст. Лутфан бо администратор тамос гиред.',
+    cannotConnect: 'Ба сервер пайваст нашуд. Лутфан баъдтар дубора кӯшиш кунед.',
+    invalidResponse: 'Сервер ҷавоби нодуруст баргардонд. Лутфан бо администратор тамос гиред.',
+    errorPrefix: 'Хатогӣ: {0}. Лутфан дубора кӯшиш кунед.',
+  },
+};
+
+const fm = formMessages[lang] || formMessages.en;
+
 // Cloudflare Turnstile Site Key
-const TURNSTILE_SITE_KEY = "0x4AAAAAACGlmQDIODBgCmpo";
+const TURNSTILE_SITE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 
 // Check if we're in development (localhost) - Turnstile doesn't work on localhost
 const isDev = import.meta.env.DEV;
@@ -171,8 +382,8 @@ const currentUrl = Astro.url.pathname;
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Thank You!</h3>
-        <p class="text-gray-600">Your inquiry has been sent successfully. We will contact you within 24 hours.</p>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">{fm.successTitle}</h3>
+        <p class="text-gray-600">{fm.successMessage}</p>
       </div>
 
       <!-- Error Message (hidden by default) -->
@@ -335,6 +546,7 @@ const currentUrl = Astro.url.pathname;
           </svg>
           <span class="text-sm">+86-135-1053-2553</span>
         </a>
+        <!-- Email (Keep in sync with Footer.astro email obfuscation) -->
         <a
           href="#email"
           data-email-user="sales"
@@ -366,7 +578,7 @@ const currentUrl = Astro.url.pathname;
 {!isDev && (
   <script is:inline>
     // Turnstile configuration
-    window.TURNSTILE_SITE_KEY = "0x4AAAAAACGlmQDIODBgCmpo";
+    window.TURNSTILE_SITE_KEY = {JSON.stringify(TURNSTILE_SITE_KEY)};
     window.turnstileToken = null;
 
     // Called when Turnstile script loads
@@ -437,7 +649,7 @@ const currentUrl = Astro.url.pathname;
   </script>
 )}
 
-<script define:vars={{ isDev, pt, turnstileErrorMsg }}>
+<script define:vars={{ isDev, pt, turnstileErrorMsg, fm }}>
   // Fetch real visitor IP and country from client side
   async function fetchClientIP() {
     try {
@@ -445,22 +657,23 @@ const currentUrl = Astro.url.pathname;
       const response = await fetch('https://ipapi.co/json/', {
         method: 'GET',
         headers: { 'Accept': 'application/json' }
-      });
+      }).catch(() => null);
 
-      if (response.ok) {
-        const data = await response.json();
+      if (response && response.ok) {
+        const data = await response.json().catch(() => null);
+        if (data) {
+          const clientIpInput = document.getElementById('client-ip');
+          const clientCountryInput = document.getElementById('client-country');
 
-        const clientIpInput = document.getElementById('client-ip');
-        const clientCountryInput = document.getElementById('client-country');
+          if (clientIpInput && data.ip) {
+            clientIpInput.value = data.ip;
+          }
+          if (clientCountryInput && data.country_code) {
+            clientCountryInput.value = data.country_code;
+          }
 
-        if (clientIpInput && data.ip) {
-          clientIpInput.value = data.ip;
+          return { ip: data.ip, country: data.country_code };
         }
-        if (clientCountryInput && data.country_code) {
-          clientCountryInput.value = data.country_code;
-        }
-
-        return { ip: data.ip, country: data.country_code };
       }
     } catch (error) { /* silent */ }
     return { ip: null, country: null };
@@ -497,7 +710,7 @@ const currentUrl = Astro.url.pathname;
     const { submitBtn, btnText, btnArrow, btnSpinner } = getFormElements();
     if (loading) {
       if (submitBtn) submitBtn.disabled = true;
-      if (btnText) btnText.textContent = 'Submitting...';
+      if (btnText) btnText.textContent = fm.submitting;
       if (btnArrow) btnArrow.classList.add('hidden');
       if (btnSpinner) btnSpinner.classList.remove('hidden');
     } else {
@@ -596,7 +809,7 @@ const currentUrl = Astro.url.pathname;
         } else {
           const errorMsg = result.errors
             ? result.errors.join('. ')
-            : (result.message || 'An error occurred. Please try again.');
+            : (result.message || fm.errorDefault);
           showError(errorMsg);
           setLoading(false);
         }
@@ -613,12 +826,12 @@ const currentUrl = Astro.url.pathname;
             `Name: ${name}\nEmail: ${email}\nProduct: ${product}\n\nProject Details:\n${details}`
           );
 
-          showError('PHP server not running. Click below to send via your email client:');
+          showError(fm.phpNotRunning);
 
           const mailtoLink = document.createElement('a');
           mailtoLink.href = `mailto:sales@kssmi.com?subject=${subject}&body=${body}`;
           mailtoLink.className = 'inline-block mt-3 px-6 py-3 bg-[#5D4E37] text-white rounded-lg hover:bg-[#4A3D2E]';
-          mailtoLink.textContent = 'Open Email Client';
+          mailtoLink.textContent = fm.openEmailClient;
           mailtoLink.id = 'mailto-fallback';
 
           const existingBtn = document.getElementById('mailto-fallback');
@@ -632,13 +845,13 @@ const currentUrl = Astro.url.pathname;
         }
 
         if (error.message === 'PHP_NOT_CONFIGURED') {
-          showError('PHP is not configured on this server. Please contact the administrator.');
+          showError(fm.phpNotConfigured);
         } else if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
-          showError('Cannot connect to server. Please try again later.');
+          showError(fm.cannotConnect);
         } else if (error.message.includes('Unexpected token')) {
-          showError('Server returned an invalid response. Please contact the administrator.');
+          showError(fm.invalidResponse);
         } else {
-          showError(`Error: ${error.message}. Please try again.`);
+          showError(fm.errorPrefix.replace('{0}', error.message));
         }
 
         setLoading(false);
@@ -650,6 +863,7 @@ const currentUrl = Astro.url.pathname;
   setupFormSubmission();
 
   // Email Button Logic - Construct mailto dynamically to bypass obfuscation
+  // Keep in sync with Footer.astro email obfuscation JS
   function initEmailButtons() {
     const emailButtons = document.querySelectorAll('[data-email-user][data-email-domain]');
     emailButtons.forEach(function(btn) {

@@ -5,7 +5,7 @@ slug: "kao-328-acetate-optical-frame"
 itemNo: "KAO-328"
 date: "2026-05-10"
 colors: "أسود، أزرق"
-materials: "أسيتат Mazzucchelli & JINYU فاخر & خدمة مخصصة"
+materials: "أسيتات Mazzucchelli & JINYU فاخر & خدمة مخصصة"
 serviceMode: "تصنيع بالتفويض / تصميم وتصنيع – خدمة مخصصة"
 moq: "300 قطعة/نموذج (100 قطعة لكل لون)"
 

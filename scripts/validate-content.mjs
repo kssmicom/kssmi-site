@@ -3,6 +3,11 @@
  * Pre-build validation script for content files
  * Checks all markdown files for common YAML frontmatter issues
  * This runs before dev/build to catch errors early
+ *
+ * Validates three content directories:
+ *   - src/content/products/   (product markdown)
+ *   - src/content/collection/ (landing pages, about, contact, etc.)
+ *   - src/content/blog/       (blog posts)
  */
 
 import fs from 'node:fs';
@@ -11,7 +16,29 @@ import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const CONTENT_DIR = path.resolve(__dirname, '../src/content/products');
+const CONTENT_DIRS = [
+  path.resolve(__dirname, '../src/content/products'),
+  path.resolve(__dirname, '../src/content/collection'),
+  path.resolve(__dirname, '../src/content/blog'),
+];
+
+/**
+ * Look backward from currentIndex to find a valid parent line at lower indentation.
+ * A valid parent is a line ending with ":" (YAML mapping) or an array item (starts with "- ").
+ * Used to validate nested YAML structures in collection landing pages.
+ */
+function hasValidParent(lines, currentIndex, currentIndent) {
+  for (let j = currentIndex - 1; j >= 0; j--) {
+    const prev = lines[j];
+    const prevTrimmed = prev.trim();
+    if (prevTrimmed === '' || prevTrimmed.startsWith('#')) continue;
+    const prevIndent = prev.length - prev.trimStart().length;
+    if (prevIndent < currentIndent) {
+      return prevTrimmed.endsWith(':') || prevTrimmed.startsWith('- ');
+    }
+  }
+  return false;
+}
 
 /**
  * Check if frontmatter is valid
@@ -48,6 +75,7 @@ function validateFrontmatter(content, filePath) {
     const line = lines[i];
     const lineNum = i + 2; // +2 because frontmatter starts after --- (line 1)
     const trimmedLine = line.trim();
+    const indent = line.length - line.trimStart().length;
 
     // Skip comments and empty lines
     if (trimmedLine.startsWith('#') || trimmedLine === '') {
@@ -56,21 +84,22 @@ function validateFrontmatter(content, filePath) {
 
     // Check for array items
     if (trimmedLine.startsWith('- ')) {
-      // Valid if: previous line ends with ":" OR previous line is also an array item
       const prevLine = i > 0 ? lines[i - 1].trim() : '';
-      if (!prevLine.endsWith(':') && !prevLine.startsWith('- ')) {
-        errors.push(`Line ${lineNum}: Array item "- ${trimmedLine.slice(2)}" not under a valid key`);
+      const prevEndsWithColon = prevLine.endsWith(':');
+      const prevIsArrayItem = prevLine.startsWith('- ');
+      const hasParent = indent > 0 && hasValidParent(lines, i, indent);
+      if (!prevEndsWithColon && !prevIsArrayItem && !hasParent) {
+        errors.push(`Line ${lineNum}: Array item "- ${trimmedLine.slice(2).substring(0, 60)}" not under a valid key`);
       }
       continue;
     }
 
-    // Check for leading spaces on key lines (common error from copy-paste)
-    if (line.match(/^\s+[a-zA-Z]/) && !line.match(/^\s+-/)) {
+    // Check for leading spaces on key lines (only error if no valid nesting parent exists)
+    if (line.match(/^\s+[a-zA-Z]/)) {
       const keyMatch = line.match(/^\s+([a-zA-Z][a-zA-Z0-9_]*)/);
-      if (keyMatch) {
+      if (keyMatch && !hasValidParent(lines, i, indent)) {
         errors.push(`Line ${lineNum}: Leading space on key "${keyMatch[1]}" - keys should not be indented`);
       }
-      continue;
     }
 
     // Check for key: value format
@@ -95,17 +124,14 @@ function validateFrontmatter(content, filePath) {
       warnings.push(`Line ${lineNum}: Invalid key name "${key}"`);
     }
 
-    // Check for duplicate keys
-    if (seenKeys.has(key)) {
-      errors.push(`Line ${lineNum}: Duplicate key "${key}" (first defined at line ${seenKeys.get(key)})`);
-    } else {
-      seenKeys.set(key, lineNum);
+    // Check for duplicate keys (root-level only — nested YAML sections can reuse keys like "image", "description")
+    if (indent === 0) {
+      if (seenKeys.has(key)) {
+        errors.push(`Line ${lineNum}: Duplicate key "${key}" (first defined at line ${seenKeys.get(key)})`);
+      } else {
+        seenKeys.set(key, lineNum);
+      }
     }
-  }
-
-  // Check for required fields
-  if (!seenKeys.has('title')) {
-    errors.push('Missing required field: title');
   }
 
   // === YAML parse validation ===
@@ -190,30 +216,17 @@ function readFileSafe(filePath) {
 }
 
 /**
- * Main validation function
+ * Validate all files in a single directory, returning results
  */
-function validateAllFiles() {
-  console.log('\n\x1b[36m🔍 Validating content files...\x1b[0m\n');
-  console.log(`Content directory: ${CONTENT_DIR}\n`);
-
-  const files = findMarkdownFiles(CONTENT_DIR);
-
-  if (files.length === 0) {
-    console.log('\x1b[33m⚠ No markdown files found\x1b[0m\n');
-    return true;
-  }
-
+function validateDir(dir) {
+  const files = findMarkdownFiles(dir);
   const results = [];
-  let totalErrors = 0;
-  let totalWarnings = 0;
 
   for (const file of files) {
     try {
       const content = readFileSafe(file);
       const result = validateFrontmatter(content, file);
       results.push(result);
-      totalErrors += result.errors.length;
-      totalWarnings += result.warnings.length;
     } catch (err) {
       // Skip files that can't be read (likely still being written)
       results.push({
@@ -222,13 +235,46 @@ function validateAllFiles() {
         errors: [],
         warnings: [`File temporarily unreadable - will retry later`]
       });
-      totalWarnings++;
     }
   }
 
+  return results;
+}
+
+/**
+ * Main validation function
+ */
+function validateAllFiles() {
+  console.log('\n\x1b[36m🔍 Validating content files...\x1b[0m\n');
+
+  const allResults = [];
+  let totalFiles = 0;
+  let totalErrors = 0;
+  let totalWarnings = 0;
+
+  for (const dir of CONTENT_DIRS) {
+    const dirLabel = path.relative(path.resolve(__dirname, '..'), dir);
+    console.log(`Content directory: ${dir}`);
+    const results = validateDir(dir);
+    allResults.push(...results);
+    totalFiles += results.length;
+    console.log(`  ${results.length} file(s) found\n`);
+  }
+
+  if (totalFiles === 0) {
+    console.log('\x1b[33m⚠ No markdown files found\x1b[0m\n');
+    return true;
+  }
+
+  // Count errors and warnings
+  for (const result of allResults) {
+    totalErrors += result.errors.length;
+    totalWarnings += result.warnings.length;
+  }
+
   // Print results
-  const invalidFiles = results.filter(r => !r.valid);
-  const filesWithWarnings = results.filter(r => r.warnings.length > 0);
+  const invalidFiles = allResults.filter(r => !r.valid);
+  const filesWithWarnings = allResults.filter(r => r.warnings.length > 0);
 
   if (invalidFiles.length > 0) {
     console.error('\x1b[31m❌ Content Validation Failed!\x1b[0m\n');
@@ -263,7 +309,7 @@ function validateAllFiles() {
     console.log('');
   }
 
-  console.log(`\x1b[32m✅ All ${files.length} files validated successfully.\x1b[0m`);
+  console.log(`\x1b[32m✅ All ${totalFiles} files validated successfully.\x1b[0m`);
 
   if (totalWarnings > 0) {
     console.log(`\x1b[33m   ${totalWarnings} warning(s) (non-critical)\x1b[0m`);

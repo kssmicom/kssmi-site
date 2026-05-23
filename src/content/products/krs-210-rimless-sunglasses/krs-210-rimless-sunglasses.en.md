@@ -4,15 +4,15 @@ title: "Custom Rimless Sunglasses"
 slug: "krs-210-rimless-sunglasses"
 itemNo: "KRS-210"
 date: "2026-04-06"
-colors: "Gradient-Green & Grradient-Purple & Gradient-Brown & Gradient-Gray"
+colors: "Gradient-Green & Gradient-Purple & Gradient-Brown & Gradient-Gray"
 materials: "Premium Metal & Customize Material"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
-material: "Metal"
-series: "Rimless Sunglasses"
+material: "Rimless Sunglasses"
+series: "sunglasses, rimless-sunglasses, rimless-eyewear"
 
 # ─────────────────────────────────────────────────────
 size: "56-19-140mm & Customization"

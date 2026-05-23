@@ -34,8 +34,8 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: ""
-seoDescription: ""
+seoTitle: "KAS-510 Occhiali da Sole in Acetato alla Moda | Fornitore Personalizzato"
+seoDescription: "Occhiali da sole in acetato premium Mazzucchelli e JINYU disponibili per la completa personalizzazione OEM/ODM. Dimensioni della montatura, colori e opzioni logo su misura. MOQ di 300 per modello."
 seoKeywords: ""
 ---
 

@@ -34,8 +34,8 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: ""
-seoDescription: ""
+seoTitle: "KAS-510 फैशन ट्रेंडी एसीटेट सनग्लासेस | कस्टम आपूर्तिकर्ता"
+seoDescription: "पूर्ण OEM/ODM अनुकूलन के लिए प्रीमियम Mazzucchelli और JINYU एसीटेट सनग्लासेस उपलब्ध हैं। बेस्पोक फ्रेम आकार, कलरवे और लोगो विकल्प। 300 MOQ प्रति मॉडल।"
 seoKeywords: ""
 ---
 

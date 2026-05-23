@@ -21,7 +21,7 @@ lensMaterial: "Verres AC & Nylon & Personnalisation"
 designStyle: "Luxe, Rétro, Unisexe"
 nosePads: "Plaquettes de Nez Monobloc"
 hinge: "Charnières à 3 Barillets"
-electroplatingMethod: "Placage ION"
+electroplating: "Placage ION"
 logo: "Impression Tampon, Gravure Laser, Gravure Laser Émaillée, Marquage à Chaud, Logo Métallique, Décoration en Cristal, Autocollant 3D"
 service: "Fabrication OEM / ODM – Personnalisation"
 

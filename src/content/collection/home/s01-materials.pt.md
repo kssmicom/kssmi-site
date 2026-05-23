@@ -133,7 +133,7 @@ materials:
       - 'Artesanato manual'
       - 'Individualidade que se destaca'
     slug: 'wood-eyewear'
-    image: '/media/products/kso-006-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-006-1.webp'
+    image: '/media/products/kso-225-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-225-1.webp'
 
   - name: 'Armações de Chifre de Búfalo'
     subtitle: 'Luxo natural raro com padrões orgânicos marmoreados'

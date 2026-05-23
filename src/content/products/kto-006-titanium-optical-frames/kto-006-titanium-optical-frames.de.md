@@ -21,7 +21,7 @@ lensMaterial: "AC-Gläser & Nylon & Individualisierung"
 designStyle: "Luxus, Retro, Unisex"
 nosePads: "Einteilige Nasenpads"
 hinge: "3-Zylinder-Scharniere"
-electroplatingMethod: "ION-Beschichtung"
+electroplating: "ION-Beschichtung"
 logo: "Tampondruck, Lasergravur, Lasergravur mit Farbauslegung, Heißprägung, Metal-Logo, Kristall-Verzierung, 3D-Aufkleber"
 service: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 

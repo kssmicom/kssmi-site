@@ -1,6 +1,6 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Cermin Mata Hitam Titanim Pesanan Khas"
+title: "Cermin Mata Hitam Titanium Pesanan Khas"
 slug: "kts-206-titanium-sunglasses"
 itemNo: "KTS-206"
 date: "2026-04-07"
@@ -50,8 +50,8 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Cermin Mata Hitam Titanim KTS-206 Fesyen Unik | Pengilang Pesanan Khas"
-seoDescription: "Tingkatkan portfolio label peribadi anda dengan cermin mata hitam titanim KTS-206 yang dimesin CNC. Bingkai gred aeroangkasa premium dengan sokongan OEM/ODM penuh pada 300 MOQ."
+seoTitle: "Cermin Mata Hitam Titanium KTS-206 Fesyen Unik | Pengilang Pesanan Khas"
+seoDescription: "Tingkatkan portfolio label peribadi anda dengan cermin mata hitam titanium KTS-206 yang dimesin CNC. Bingkai gred aeroangkasa premium dengan sokongan OEM/ODM penuh pada 300 MOQ."
 seoKeywords: "pengilang cermin mata hitam titanium, kacamata mewah label peribadi, kilang cermin mata hitam OEM tersuai, pengeluaran kacamata China, bingkai titanium pesanan khas, pembekal kacamata premium, borong kacamata titanium, kacamata mewah boleh suai"
 ---
 ## Ciri-ciri Utama

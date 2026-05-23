@@ -4,7 +4,7 @@ title: "Роскошные солнцезащитные очки из ацета
 slug: "kas-010-acetate-sunglasses"
 itemNo: "KAS-010"
 date: "2026-05-10"
-colors: "Черный & Meteor-Crystal & Tanzanite & Bombardie"
+colors: "Черный & Meteor-Crystal & Tanzanite & Bordeaux"
 materials: "Премиум Mazzucchelli & Ацетат JINYU & Индивидуальный заказ"
 serviceMode: "Контрактное производство / Производство по ODM – Индивидуальный заказ"
 moq: "300 шт/модель (100шт/цвет)"

@@ -21,7 +21,7 @@ lensMaterial: "AC Lens & Customization"
 designStyle: "Luxury, Stylish, Unisex"
 nosePads: "One-piece Nose Pads"
 hinge: "Spring Hinge"
-electroplatingMethod: "ION Plating"
+electroplating: "ION Plating"
 logo: "Print, Laser, Laser With Oil, Hot Stamping, Metal, Crystal, Up-sticker"
 service: "OEM / ODM customization"
 

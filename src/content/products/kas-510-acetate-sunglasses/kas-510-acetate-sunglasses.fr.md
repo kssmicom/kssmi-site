@@ -34,8 +34,8 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: ""
-seoDescription: ""
+seoTitle: "KAS-510 Lunettes de Soleil en Acétate Tendance | Fournisseur Personnalisé"
+seoDescription: "Lunettes de soleil en acétate premium Mazzucchelli et JINYU disponibles pour une personnalisation OEM/ODM complète. Tailles de montures, coloris et options de logo sur mesure. MOQ de 300 par modèle."
 seoKeywords: ""
 ---
 

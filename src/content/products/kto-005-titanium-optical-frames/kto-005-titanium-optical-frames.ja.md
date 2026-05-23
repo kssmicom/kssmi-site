@@ -21,7 +21,7 @@ lensMaterial: "ACレンズ & カスタマイズ対応"
 designStyle: "ラグジュアリー, スタイリッシュ, ユニセックス"
 nosePads: "一体型ノーズパッド"
 hinge: "スプリングヒンジ"
-electroplatingMethod: "イオンプレーティング"
+electroplating: "イオンプレーティング"
 logo: "印刷, レーザー刻印, レーザー色入れ, 箔押し, メタル装飾, クリスタル装飾, 立体ステッカー"
 service: "OEM製造 / ODM設計製造 カスタマイズ対応"
 

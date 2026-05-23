@@ -21,7 +21,7 @@ lensMaterial: "Lente AC & Personalización"
 designStyle: "Lujo, Elegante, Unisex"
 nosePads: "Almohadillas Nasales de una Sola Pieza"
 hinge: "Bisagra de Resorte"
-electroplatingMethod: "Chapado ION"
+electroplating: "Chapado ION"
 logo: "Impresión Tampográfica, Grabado Láser, Grabado Láser con Esmalte, Estampado en Caliente, Logotipo Metálico, Decoración de Cristal, Adhesivo 3D"
 service: "Fabricación OEM / ODM – Personalización"
 

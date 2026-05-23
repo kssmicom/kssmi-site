@@ -34,8 +34,8 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: ""
-seoDescription: ""
+seoTitle: "KAS-510 Óculos de Sol de Acetato Modernos | Fornecedor Personalizado"
+seoDescription: "Óculos de sol de acetato premium Mazzucchelli e JINYU disponíveis para personalização total OEM/ODM. Tamanhos de armação, cores e opções de logotipo sob medida. MOQ de 300 por modelo."
 seoKeywords: ""
 ---
 

@@ -1,11 +1,11 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Bingkai Optik Titanim Tersuai"
+title: "Bingkai Optik Titanium Tersuai"
 slug: "kto-020-titanium-optical-frames"
 itemNo: "KTO-020"
 date: "2026-04-06"
 colors: "Hitam & Hijau & Pink & Kura-kura"
-materials: "Titanim Premium"
+materials: "Titanium Premium"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model"
 
@@ -16,7 +16,7 @@ series: "optical-frames, titanium-optical-frames, luxury-eyewear, luxury-titaniu
 
 # ─────────────────────────────────────────────────────
 size: "54-16-148mm & Penyesuaian"
-frameMaterial: "Bingkai dan Temple Titanim Premium"
+frameMaterial: "Bingkai dan Temple Titanium Premium"
 lensMaterial: "Lensa AC & Lensa Nylon Tenacious & Penyesuaian"
 designStyle: "Bergaya, Trendi, Kasual, Mewah, Unisex"
 nosePads: "Alas Hidung Satu Bahagian"
@@ -46,14 +46,14 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Bingkai Optik Titanim Mewah Bergaya KTO-020 | Kilang Tersuai"
-seoDescription: "Bekerjasama dengan Kssmi untuk bingkai optik titanim mewah KTO-020. Mempunyai engsel 3 tong & alas hidung satu bahagian. Sedia OEM/ODM dengan 300 MOQ. Kilang tersuai penuh."
-seoKeywords: "pengeluar bingkai optik titanim, kilang kacamata mewah tersuai, bingkai titanim tempahan China, OEM bingkai optik label peribadi, rakan pengeluaran kacamata Cina, kacamata titanim boleh suai, borong bingkai optik premium, pembekal pereka kacamata mewah"
+seoTitle: "Bingkai Optik Titanium Mewah Bergaya KTO-020 | Kilang Tersuai"
+seoDescription: "Bekerjasama dengan Kssmi untuk bingkai optik titanium mewah KTO-020. Mempunyai engsel 3 tong & alas hidung satu bahagian. Sedia OEM/ODM dengan 300 MOQ. Kilang tersuai penuh."
+seoKeywords: "pengeluar bingkai optik titanium, kilang kacamata mewah tersuai, bingkai titanium tempahan China, OEM bingkai optik label peribadi, rakan pengeluaran kacamata Cina, kacamata titanium boleh suai, borong bingkai optik premium, pembekal pereka kacamata mewah"
 ---
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Bingkai dan temple titanim premium yang ringan dan hipoalergenik, direka untuk ketahanan melampau dan rintangan kakisan jangka panjang.
+- **Bahan Premium:** Bingkai dan temple titanium premium yang ringan dan hipoalergenik, direka untuk ketahanan melampau dan rintangan kakisan jangka panjang.
 - **Perkakasan Tahan Lama:** Engsel struktur 3 tong yang direka dengan ketepatan memberikan kelancaran operasi yang stabil dan konsisten untuk jangka hayat produk yang lebih lama.
 - **Keselesaan Optimum:** Alas hidung satu bahagian bersepadu yang direka untuk muat yang selamat, selesa dan estetika minimalis.
 - **Optik Profesional:** Lensa AC berkualiti tinggi dan lensa nilon tenacious menawarkan kejelasan unggul dengan pilihan salutan tersuai yang meluas tersedia.
@@ -71,7 +71,7 @@ seoKeywords: "pengeluar bingkai optik titanim, kilang kacamata mewah tersuai, bi
 
 ## Gambaran Keseluruhan
 
-Dihasilkan dengan ketepatan daripada titanim premium, bingkai KTO-020 mewakili titik pertemuan antara ketahanan ringan dan estetika optik mewah. Pembinaan hipoalergeniknya memastikan keselesaan jangka panjang sambil mengekalkan profil profesional yang halus untuk pasaran mewah.
+Dihasilkan dengan ketepatan daripada titanium premium, bingkai KTO-020 mewakili titik pertemuan antara ketahanan ringan dan estetika optik mewah. Pembinaan hipoalergeniknya memastikan keselesaan jangka panjang sambil mengekalkan profil profesional yang halus untuk pasaran mewah.
 
 Alas hidung satu bahagian yang bersepadu dan engsel 3 tong yang stabil direka untuk prestasi yang konsisten merentasi persekitaran runcit volum tinggi.
 

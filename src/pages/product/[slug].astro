@@ -15,8 +15,9 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import TechnicalSpecs from '../../components/TechnicalSpecs.astro';
 import InquiryForm from '../../components/InquiryForm.astro';
 import RelatedProducts from '../../components/RelatedProducts.astro';
-import ProductCard from '../../components/ProductCard.astro';
-import { isCategoryMatch, getSlug } from '../../utils/categoryMatching';
+import { isCategoryMatch } from '../../utils/categoryMatching';
+import { getProductLang } from '../../utils/language';
+import { buildPrimaryCategories, buildSidebarTags } from '../../utils/sidebar';
 
 export async function getStaticPaths() {
   const products = await getCollection('products');
@@ -25,11 +26,7 @@ export async function getStaticPaths() {
   // Get all product slugs
   const productSlugs = new Set(
     products
-      .filter(product => {
-        const parts = product.id.split('.');
-        const productLang = parts.length > 1 ? parts.pop() : 'en';
-        return productLang === lang;
-      })
+      .filter(product => getProductLang(product) === lang)
       .map((product: any) => (product.data.slug || '').toLowerCase())
   );
 
@@ -37,11 +34,7 @@ export async function getStaticPaths() {
 
   // Add product detail pages
   products
-    .filter(product => {
-      const parts = product.id.split('.');
-      const productLang = parts.length > 1 ? parts.pop() : 'en';
-      return productLang === lang;
-    })
+    .filter(product => getProductLang(product) === lang)
     .forEach((product: any) => {
       const slug = (product.data.slug || '').toLowerCase();
       if (slug) {
@@ -70,75 +63,11 @@ if (!product) {
 
 // ============ SIDEBAR DATA ============
 const allProductsForCount = await getCollection('products');
-const langProductsForCount = allProductsForCount.filter((p: any) => {
-  const parts = p.id.split('.');
-  const l = parts.length > 1 ? parts.pop() : 'en';
-  return l === lang;
-});
+const langProductsForCount = allProductsForCount.filter((p: any) => getProductLang(p) === lang);
 
-const primaryCategories = [
-  {
-    label: t.sidebar.sunglasses,
-    href: '/product/sunglasses',
-    items: [
-      { label: t.sidebar.acetate_sunglasses, href: '/product/acetate-sunglasses' },
-      { label: t.sidebar.metal_sunglasses, href: '/product/metal-sunglasses' },
-      { label: t.sidebar.titanium_sunglasses, href: '/product/titanium-sunglasses' },
-      { label: t.sidebar.carbon_fiber_sunglasses, href: '/product/carbon-fiber-sunglasses' },
-      { label: t.sidebar.rimless_sunglasses, href: '/product/rimless-sunglasses' }
-    ]
-  },
-  {
-    label: t.sidebar.optical_frames,
-    href: '/product/optical-frames',
-    items: [
-      { label: t.sidebar.acetate_glasses, href: '/product/acetate-optical-frames' },
-      { label: t.sidebar.metal_glasses, href: '/product/metal-optical-frames' },
-      { label: t.sidebar.titanium_glasses, href: '/product/titanium-optical-frames' },
-      { label: t.sidebar.carbon_glasses, href: '/product/carbon-fiber-optical-frames' },
-      { label: t.sidebar.rimless_glasses, href: '/product/rimless-optical-frames' }
-    ]
-  }
-];
+const primaryCategories = buildPrimaryCategories(t, '');
 
-const sidebarTags = [
-  {
-    label: t.sidebar.fashion,
-    href: '/product/fashion-eyewear',
-    items: [
-      { label: t.sidebar.fashion_acetate_sunglasses, href: '/product/fashion-acetate-sunglasses' },
-      { label: t.sidebar.fashion_metal_sunglasses, href: '/product/fashion-metal-sunglasses' },
-      { label: t.sidebar.fashion_acetate_optical_frames, href: '/product/fashion-acetate-optical-frames' },
-      { label: t.sidebar.fashion_metal_optical_frames, href: '/product/fashion-metal-optical-frames' }
-    ]
-  },
-  {
-    label: t.sidebar.luxury,
-    href: '/product/luxury-eyewear',
-    items: [
-      { label: t.sidebar.luxury_acetate_sunglasses, href: '/product/luxury-acetate-sunglasses' },
-      { label: t.sidebar.luxury_titanium_sunglasses, href: '/product/luxury-titanium-sunglasses' },
-      { label: t.sidebar.luxury_acetate_optical_frames, href: '/product/luxury-acetate-optical-frames' },
-      { label: t.sidebar.luxury_titanium_optical_frames, href: '/product/luxury-titanium-optical-frames' }
-    ]
-  },
-  {
-    label: t.sidebar.carbon_fiber,
-    href: '/product/carbon-fiber-eyewear',
-    items: [
-      { label: t.sidebar.carbon_fiber_sunglasses, href: '/product/carbon-fiber-sunglasses' },
-      { label: t.sidebar.carbon_glasses, href: '/product/carbon-fiber-optical-frames' }
-    ]
-  },
-  {
-    label: t.sidebar.rimless,
-    href: '/product/rimless-eyewear',
-    items: [
-      { label: t.sidebar.rimless_sunglasses, href: '/product/rimless-sunglasses' },
-      { label: t.sidebar.rimless_glasses, href: '/product/rimless-optical-frames' }
-    ]
-  }
-];
+const sidebarTags = buildSidebarTags(t, '');
 
 function getCategoryCount(href: string): number {
   const pathWithoutQuery = href.split('?')[0];
@@ -432,7 +361,7 @@ function thumbSrc(originalPath: string): string {
             <div class="relative aspect-square bg-gray-50 rounded-xl overflow-hidden shadow-lg w-full max-w-[500px]">
               {cover ? (
                 <div id="image-zoom-container" class="w-full h-full cursor-zoom-in">
-                  <img id="main-image" src={cover} alt={getAltText(cover, title)} class="w-full h-full object-cover" loading="eager" fetchpriority="high" decoding="async" onerror="if(!this.dataset.retried){this.dataset.retried=true;setTimeout(()=>this.src=this.src, 50);}" />
+                  <img id="main-image" src={cover} alt={getAltText(cover, title)} class="w-full h-full object-cover" loading="eager" fetchpriority="high" decoding="async" onerror="if(!this.dataset.retried){this.dataset.retried=true;setTimeout(()=>{this.src=this.src.split('?')[0]+'?retry=1'}, 50);}" />
                 </div>
               ) : (
                 <div class="w-full h-full flex items-center justify-center">

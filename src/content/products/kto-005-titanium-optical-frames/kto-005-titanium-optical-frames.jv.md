@@ -21,7 +21,7 @@ lensMaterial: "Lensa AC & Kustomisasi"
 designStyle: "Mewah, Gaya, Unisex"
 nosePads: "Bantalan Irung Siji Bagian"
 hinge: "Engsel Pegas"
-electroplatingMethod: "Elektroplating ION"
+electroplating: "Elektroplating ION"
 logo: "Cetak, Laser, Laser Karang Lengo, Cap Panas, Logo Logam, Kristal, Stiker"
 service: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 

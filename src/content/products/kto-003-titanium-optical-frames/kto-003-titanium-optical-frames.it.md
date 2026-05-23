@@ -21,7 +21,7 @@ lensMaterial: "Lenti in Nylon & Personalizzazione"
 designStyle: "Lusso, Classico, Unisex"
 nosePads: "Naselli in Metallo Regolabili"
 hinge: "3 Cerniere"
-electroplatingMethod: "Placcatura Ionica"
+electroplating: "Placcatura Ionica"
 logo: "Stampa, Laser, Incisione Laser con Smalto, Stampa a Caldo, Logo in Metallo, Decorazione in Cristallo, Logo 3D Adesivo"
 service: "Produzione OEM / ODM – Personalizzazione"
 

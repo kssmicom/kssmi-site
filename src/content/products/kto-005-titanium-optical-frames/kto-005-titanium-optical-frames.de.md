@@ -21,7 +21,7 @@ lensMaterial: "AC-Glas & Individualisierung"
 designStyle: "Luxus, Stilvoll, Unisex"
 nosePads: "Einteilige Nasenpads"
 hinge: "Federscharnier"
-electroplatingMethod: "ION-Beschichtung"
+electroplating: "ION-Beschichtung"
 logo: "Tampondruck, Lasergravur, Lasergravur mit Farbauslegung, Heißprägung, Metal-Logo, Kristall-Verzierung, 3D-Aufkleber"
 service: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 

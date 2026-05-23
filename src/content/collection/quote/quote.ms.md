@@ -37,8 +37,6 @@ partnershipHero:
 seoTitle: "Dapatkan Sebut Harga | Rakan Kongsi Pembuatan Eyewear Berkualiti"
 seoDescription: "Dapatkan sebut harga daripada Kssmi Eyewear untuk peluang kerjasama, pertanyaan OEM/ODM, dan penyelesaian perniagaan eyewear juta dolar."
 ---
-mpetitif untuk bingkai premium."
----
 
 # Visi Anda, Kepakaran Kami
 

@@ -10,7 +10,7 @@ serviceMode: "Истеҳсоли фармоишӣ / Тарроҳӣ ва Исте
 moq: "300 ад/модел"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
-productType: "Rimless Eyewear"
+productType: "Optical Frames"
 material: "Rimless Optical Frames"
 series: "optical-frames, rimless-eyewear, rimless-optical-frames"
 

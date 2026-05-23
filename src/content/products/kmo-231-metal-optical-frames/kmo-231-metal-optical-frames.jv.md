@@ -18,7 +18,7 @@ series: "optical-frames, fashion-eyewear, metal-optical-frames, fashion-metal-op
 size: "54-19-145mm & Kustomisasi"
 frameMaterial: "Frame lan Gagang Logam Premium"
 lensMaterial: "Lensa Nylon Kuat & Kustomisasi"
-designStyle: "Klasik, Trendy, Fesyen, Gaya, Trendy, Mewah, Unisex"
+designStyle: "Klasik, Trendy, Fesyen, Gaya, Mewah, Unisex"
 nosePads: "Bantalan Irung Integrasi Silikon Bening"
 hinge: "Engsel Struktur Komposit 2+1 & Kustomisasi"
 electroplating: "Elektroplating Ion"

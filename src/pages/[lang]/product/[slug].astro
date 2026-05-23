@@ -15,16 +15,16 @@ import Breadcrumb from '../../../components/Breadcrumb.astro';
 import TechnicalSpecs from '../../../components/TechnicalSpecs.astro';
 import InquiryForm from '../../../components/InquiryForm.astro';
 import RelatedProducts from '../../../components/RelatedProducts.astro';
-import ProductCard from '../../../components/ProductCard.astro';
 import { isCategoryMatch } from '../../../utils/categoryMatching';
+import { getProductLang } from '../../../utils/language';
+import { buildPrimaryCategories, buildSidebarTags } from '../../../utils/sidebar';
 export async function getStaticPaths() {
   const products = await getCollection('products');
   const languages = Object.keys(translations).filter(lang => lang !== 'en');
 
   return languages.flatMap((lang) => {
     const langProducts = products.filter(product => {
-      const parts = product.id.split('.');
-      const productLang = parts.length > 1 ? parts.pop() : 'en';
+      const productLang = getProductLang(product);
       return productLang === lang;
     });
 
@@ -45,6 +45,10 @@ const { product, type, categorySlug } = Astro.props;
 const { lang: langParam, slug } = Astro.params;
 const lang = langParam || 'en';
 
+if (type === 'product' && !product) {
+  return Astro.redirect('/404');
+}
+
 const t = translations[lang as keyof typeof translations] || translations.en;
 const pt = t.product || {};
 const currentPath = `${lang}/`;
@@ -55,74 +59,13 @@ const isRTL = lang === 'ar';
 // ============ SIDEBAR DATA ============
 const allProductsForSidebar = await getCollection('products');
 const langProductsForSidebar = allProductsForSidebar.filter((p: any) => {
-  const parts = p.id.split('.');
-  const l = parts.length > 1 ? parts.pop() : 'en';
+  const l = getProductLang(p);
   return l === lang;
 });
 
-const primaryCategories = [
-  {
-    label: t.sidebar.sunglasses,
-    href: `/${currentPath}product/sunglasses`,
-    items: [
-      { label: t.sidebar.acetate_sunglasses, href: `/${currentPath}product/acetate-sunglasses` },
-      { label: t.sidebar.metal_sunglasses, href: `/${currentPath}product/metal-sunglasses` },
-      { label: t.sidebar.titanium_sunglasses, href: `/${currentPath}product/titanium-sunglasses` },
-      { label: t.sidebar.carbon_fiber_sunglasses, href: `/${currentPath}product/carbon-fiber-sunglasses` },
-      { label: t.sidebar.rimless_sunglasses, href: `/${currentPath}product/rimless-sunglasses` }
-    ]
-  },
-  {
-    label: t.sidebar.optical_frames,
-    href: `/${currentPath}product/optical-frames`,
-    items: [
-      { label: t.sidebar.acetate_glasses, href: `/${currentPath}product/acetate-optical-frames` },
-      { label: t.sidebar.metal_glasses, href: `/${currentPath}product/metal-optical-frames` },
-      { label: t.sidebar.titanium_glasses, href: `/${currentPath}product/titanium-optical-frames` },
-      { label: t.sidebar.carbon_glasses, href: `/${currentPath}product/carbon-fiber-optical-frames` },
-      { label: t.sidebar.rimless_glasses, href: `/${currentPath}product/rimless-optical-frames` }
-    ]
-  }
-];
+const primaryCategories = buildPrimaryCategories(t, currentPath);
 
-const sidebarTags = [
-  {
-    label: t.sidebar.fashion,
-    href: `/${currentPath}product/fashion-eyewear`,
-    items: [
-      { label: t.sidebar.fashion_acetate_sunglasses, href: `/${currentPath}product/fashion-acetate-sunglasses` },
-      { label: t.sidebar.fashion_metal_sunglasses, href: `/${currentPath}product/fashion-metal-sunglasses` },
-      { label: t.sidebar.fashion_acetate_optical_frames, href: `/${currentPath}product/fashion-acetate-optical-frames` },
-      { label: t.sidebar.fashion_metal_optical_frames, href: `/${currentPath}product/fashion-metal-optical-frames` }
-    ]
-  },
-  {
-    label: t.sidebar.luxury,
-    href: `/${currentPath}product/luxury-eyewear`,
-    items: [
-      { label: t.sidebar.luxury_acetate_sunglasses, href: `/${currentPath}product/luxury-acetate-sunglasses` },
-      { label: t.sidebar.luxury_titanium_sunglasses, href: `/${currentPath}product/luxury-titanium-sunglasses` },
-      { label: t.sidebar.luxury_acetate_optical_frames, href: `/${currentPath}product/luxury-acetate-optical-frames` },
-      { label: t.sidebar.luxury_titanium_optical_frames, href: `/${currentPath}product/luxury-titanium-optical-frames` }
-    ]
-  },
-  {
-    label: t.sidebar.carbon_fiber,
-    href: `/${currentPath}product/carbon-fiber-eyewear`,
-    items: [
-      { label: t.sidebar.carbon_fiber_sunglasses, href: `/${currentPath}product/carbon-fiber-sunglasses` },
-      { label: t.sidebar.carbon_glasses, href: `/${currentPath}product/carbon-fiber-optical-frames` }
-    ]
-  },
-  {
-    label: t.sidebar.rimless,
-    href: `/${currentPath}product/rimless-eyewear`,
-    items: [
-      { label: t.sidebar.rimless_sunglasses, href: `/${currentPath}product/rimless-sunglasses` },
-      { label: t.sidebar.rimless_glasses, href: `/${currentPath}product/rimless-optical-frames` }
-    ]
-  }
-];
+const sidebarTags = buildSidebarTags(t, currentPath);
 
 function getCategoryCount(href: string): number {
   const pathWithoutQuery = href.split('?')[0];
@@ -396,7 +339,7 @@ function thumbSrc(originalPath: string): string {
 
   <Header lang={lang} />
 
-  <main data-pagefind-body="true">
+  <main data-pagefind-body="true" dir={isRTL ? 'rtl' : 'ltr'}>
     <div id="pagefind-content" class="contents">
     <Breadcrumb items={breadcrumbItems} lang={lang} />
 
@@ -408,7 +351,7 @@ function thumbSrc(originalPath: string): string {
             <div class="relative aspect-square bg-gray-50 rounded-xl overflow-hidden shadow-lg w-full max-w-[500px]">
               {cover ? (
                 <div id="image-zoom-container" class="w-full h-full cursor-zoom-in">
-                  <img id="main-image" src={cover} alt={getAltText(cover, title)} class="w-full h-full object-cover" loading="eager" fetchpriority="high" decoding="async" onerror="if(!this.dataset.retried){this.dataset.retried=true;setTimeout(()=>this.src=this.src, 50);}" />
+                  <img id="main-image" src={cover} alt={getAltText(cover, title)} class="w-full h-full object-cover" loading="eager" fetchpriority="high" decoding="async" onerror="if(!this.dataset.retried){this.dataset.retried=true;setTimeout(()=>{this.src=this.src.split('?')[0]+'?retry=1'}, 50);}" />
                 </div>
               ) : (
                 <div class="w-full h-full flex items-center justify-center">

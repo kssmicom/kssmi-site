@@ -5,7 +5,7 @@ slug: "kto-024-titanium-optical-frames"
 itemNo: "KTO-024"
 date: "2026-04-06"
 colors: "Keemasan & Keperakan & Kura-kura Keperakan & Kura-kura Keemasan"
-materials: "Titanim Premium"
+materials: "Titanium Premium"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model"
 

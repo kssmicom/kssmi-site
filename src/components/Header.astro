@@ -30,20 +30,16 @@ for (const l of languages) {
   }
 }
 
+// TODO: Move to src/translations/index.ts under header keys.
+//   - eyewearLabels: no matching t.* key exists; add t.header.eyewearSubtitle.
+//   - quote button: now uses t.cta.quote directly (was inline "Get Quote").
+//   - searchLabels: use t.search.placeholder for full placeholder or add t.header.searchCompact.
 // "Eyewear" translations for all 17 languages
 const eyewearLabels = {
   en: 'Eyewear Mfg.', it: 'Manifattura Occhiali', es: 'Fabricante de Gafas', fr: 'Fabricant de Lunettes',
   de: 'Brillenmanufaktur', pt: 'Fabricante de Óculos', ru: 'Производство очков', ja: '眼鏡製造',
   tr: 'Gözlük Üreticisi', ar: 'تصنيع النظارات', ko: '안경 제조업체', zh: '眼镜制造商', hi: 'चश्मा निर्माता', vi: 'Nhà Sản Xuất Kính',
   jv: 'Pabrik Kacamata', ms: 'Pengilang Cermin Mata', tg: 'Истеҳсоли Айнак'
-};
-
-// "Quote" translations
-const quoteLabels = {
-  en: 'Get Quote', it: 'Preventivo', es: 'Presupuesto', fr: 'Devis',
-  de: 'Angebot', pt: 'Orçamento', ru: 'Расценка', ja: '見積もり',
-  tr: 'Teklif', ar: 'عرض سعر', ko: '견적 받기', zh: '获取报价', hi: 'उद्धरण प्राप्त करें', vi: 'Nhận báo giá',
-  jv: 'Njaluk Kutipan', ms: 'Dapatkan Sebut Harga', tg: 'Гирифтани Нарх'
 };
 
 // "Search" single-word placeholder for the compact header input
@@ -55,7 +51,6 @@ const searchLabels = {
 };
 
 const eyewearText = eyewearLabels[lang as keyof typeof eyewearLabels] || 'Eyewear';
-const quoteText = quoteLabels[lang as keyof typeof quoteLabels] || 'Get Quote';
 const searchText = searchLabels[lang as keyof typeof searchLabels] || 'Search';
 const currentLangUpper = lang.toUpperCase();
 
@@ -129,68 +124,6 @@ const menuStructure = [
       }
     ]
   },
-  {
-    label: 'Featured',
-    href: `/${currentPath}featured`,
-    menuKey: 'featured',
-    hasDropdown: true,
-    children: [
-      {
-        label: 'Market & Design Trends',
-        href: `/${currentPath}trends`,
-        items: [
-          { label: '2026 Luxury Frameworks',   href: `/${currentPath}luxury-frameworks` },
-          { label: 'Acetate Color Forecast',   href: `/${currentPath}acetate-colors` },
-          { label: 'Classic Silhouettes',      href: `/${currentPath}classic-silhouettes` }
-        ]
-      },
-      {
-        label: 'Premium Materials',
-        href: `/${currentPath}materials`,
-        items: [
-          { label: 'Aerospace Carbon Fiber',  href: `/${currentPath}carbon-fiber` },
-          { label: 'Eco-Friendly Acetate',    href: `/${currentPath}eco-acetate` },
-          { label: 'Hypoallergenic Titanium', href: `/${currentPath}titanium` }
-        ]
-      },
-      {
-        label: 'Craftsmanship & Engineering',
-        href: `/${currentPath}engineering`,
-        items: [
-          { label: 'Precision CNC Machining',    href: `/${currentPath}cnc-machining` },
-          { label: 'Custom Hinge Architecture', href: `/${currentPath}hinge-architecture` },
-          { label: 'Hand-Polishing Techniques',  href: `/${currentPath}hand-polishing` }
-        ]
-      },
-      {
-        label: 'Optics & Lens Science',
-        href: `/${currentPath}optics`,
-        items: [
-          { label: 'Tenacious Nylon Lenses',   href: `/${currentPath}nylon-lenses` },
-          { label: 'Premium CR-39 Guide',    href: `/${currentPath}cr39-lenses` },
-          { label: 'Custom Tints & Coatings', href: `/${currentPath}tints-coatings` }
-        ]
-      },
-      {
-        label: 'Quality & Compliance',
-        href: `/${currentPath}compliance`,
-        items: [
-          { label: 'FDA & CE Certification',  href: `/${currentPath}fda-ce-certification` },
-          { label: 'Drop-Ball Testing',       href: `/${currentPath}drop-ball-testing` },
-          { label: 'ISO 9001 Production',    href: `/${currentPath}iso-9001` }
-        ]
-      },
-      {
-        label: 'Private Label Strategies',
-        href: `/${currentPath}strategies`,
-        items: [
-          { label: 'OEM Customization Process', href: `/${currentPath}oem-process` },
-          { label: 'Scaling with 300 MOQ',     href: `/${currentPath}moq-scaling` },
-          { label: 'Bespoke Packaging Design',  href: `/${currentPath}bespoke-packaging` }
-        ]
-      }
-    ]
-  },
   { label: t.nav.about, href: aboutUrl },
   { label: t.nav.contact, href: contactUrl },
 ];
@@ -205,10 +138,9 @@ const languageNames = {
 
 // Get Products menu data
 const productsMenu = menuStructure.find(item => item.menuKey === 'products');
-const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
 ---
 
-<header id="site-header" class="w-full bg-white shadow-sm border-b border-stone-200 sticky top-0 z-50 transition-shadow duration-300">
+<header id="site-header" class="w-full bg-white shadow-sm border-b border-stone-200 sticky top-0 z-50 transition-shadow duration-300" dir={isRTL ? 'rtl' : 'ltr'}>
   <div class="w-full max-w-[1860px] mx-auto px-4 sm:px-6 lg:px-8 relative">
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
@@ -227,7 +159,7 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
       </a>
 
       <!-- Navigation - Left aligned after logo -->
-      <nav class="hidden lg:block h-full ms-8 xl:ms-12 z-30">
+      <nav class="hidden lg:block h-full ms-8 xl:ms-12 z-30" aria-label="Main navigation">
         <ul class="flex items-center h-full m-0 p-0 list-none gap-4 xl:gap-6">
           {menuStructure.map((item) => (
             <li class="h-full flex items-center">
@@ -250,14 +182,13 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
           <!-- Search with icon buttons -->
           <form id="header-search" action={lang === 'en' ? '/search' : `/${lang}/search`} method="GET" class="relative">
             <div class="flex items-center border border-stone-200 bg-stone-50 rounded-sm overflow-hidden transition-colors duration-300 focus-within:border-[#8B7355] focus-within:bg-white">
-              <label for="header-search-input" class="sr-only">Search products</label>
-              <input type="search" id="header-search-input" name="q" placeholder={searchText} class="w-28 xl:w-40 py-2 px-3 bg-transparent border-none outline-none text-sm md:text-base font-bold text-stone-900 placeholder:text-stone-400 focus:ring-0" />
+              <input type="search" id="header-search-input" name="q" placeholder={searchText} aria-label={searchText} class="w-28 xl:w-40 py-2 px-3 bg-transparent border-none outline-none text-sm md:text-base font-bold text-stone-900 placeholder:text-stone-400 focus:ring-0" />
               <!-- Clear button (hidden by default) -->
-              <button type="button" id="header-search-clear" class="hidden px-2 text-stone-400 hover:text-stone-600 transition-colors" aria-label="Clear search">
+              <button type="button" id="header-search-clear" class="hidden px-2 text-stone-400 hover:text-stone-600 transition-colors" aria-label={t.nav?.ariaClearSearch || 'Clear search'}>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
               </button>
               <!-- Search button -->
-              <button type="submit" id="header-search-btn" class="px-2 text-stone-700 hover:text-[#5D4E37] transition-colors" aria-label="Search">
+              <button type="submit" id="header-search-btn" class="px-2 text-stone-700 hover:text-[#5D4E37] transition-colors" aria-label={t.nav?.ariaSearch || 'Search'}>
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
               </button>
             </div>
@@ -289,7 +220,7 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
           </div>
         </div>
         <a href={`/${currentPath}quote`} class="hidden sm:block px-5 xl:px-6 py-2.5 bg-[#5D4E37] text-white text-xs xl:text-sm font-['Manrope'] font-bold uppercase tracking-[0.15em] hover:bg-[#4A3D2E] active:scale-95 transition-all duration-300 rounded-sm shadow-lg">
-          {quoteText}
+          {t.cta.quote}
         </a>
 
         <!-- Mobile Menu Button -->
@@ -319,7 +250,7 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
               </div>
             </div>
           </div>
-          <button id="mobile-menu-button" class="p-2 text-stone-700 hover:text-[#5D4E37] focus:outline-none transition-colors relative z-[70] cursor-pointer" aria-label="Open menu">
+          <button id="mobile-menu-button" class="p-2 text-stone-700 hover:text-[#5D4E37] focus:outline-none transition-colors relative z-[70] cursor-pointer" aria-label={t.nav?.ariaOpenMenu || 'Open menu'}>
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M4 8h16M4 16h16" /></svg>
           </button>
         </div>
@@ -348,45 +279,25 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
         </div>
       </div>
 
-      <!-- Featured Menu Content -->
-      <div class="mega-menu-content hidden py-8 px-4" data-menu="featured">
-        <div class="grid grid-cols-6 gap-4 xl:gap-6">
-          {featuredMenu?.children?.map((group) => (
-            <div class="flex flex-col">
-              <a href={group.href} class="font-['Manrope'] font-bold text-xs uppercase tracking-wider text-[#5D4E37] mb-4 whitespace-nowrap hover:text-[#5D4E37] transition-colors">
-                {group.label}
-              </a>
-              <div class="flex flex-col space-y-1">
-                {group.items.map((subItem) => (
-                  <a href={subItem.href} class="font-['Plus_Jakarta_Sans'] text-sm font-medium text-stone-600 py-1.5 transition-all duration-200 hover:text-[#5D4E37] hover:pl-1 whitespace-nowrap">
-                    {subItem.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
     </div>
   </div>
 </header>
 
 <!-- Mobile Menu -->
-<div id="mobile-menu" class="hidden fixed inset-0 bg-white z-[10000] p-6 overflow-y-auto">
+<div id="mobile-menu" class="hidden fixed inset-0 bg-white z-[10000] p-6 overflow-y-auto" role="dialog" aria-modal="true" aria-label={t.nav?.menu || 'Menu'}>
   <div class="flex justify-between items-center mb-8 sticky top-0 bg-white z-10 py-4 border-b border-gray-50">
-    <span class="text-2xl font-['Manrope'] font-bold text-[#503629]">Menu</span>
-    <button id="mobile-menu-close" class="p-3 bg-stone-100 rounded-full text-stone-700 hover:text-[#5D4E37] hover:bg-stone-200 transition-colors shadow-sm" aria-label="Close menu">
+    <span class="text-2xl font-['Manrope'] font-bold text-[#503629]">{t.nav?.menu || 'Menu'}</span>
+    <button id="mobile-menu-close" class="p-3 bg-stone-100 rounded-full text-stone-700 hover:text-[#5D4E37] hover:bg-stone-200 transition-colors shadow-sm" aria-label={t.nav?.ariaCloseMenu || 'Close menu'}>
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
     </button>
   </div>
   <div class="relative mb-8">
     <form id="mobile-search" action={lang === 'en' ? '/search' : `/${lang}/search`} method="GET" class="flex items-center bg-stone-50 border border-stone-200 rounded-md focus-within:border-[#8B7355] focus-within:bg-white transition-colors">
-      <label for="mobile-search-input" class="sr-only">Search products</label>
-      <input type="search" id="mobile-search-input" name="q" placeholder={searchText} class="flex-grow py-4 px-4 bg-transparent border-none outline-none text-sm font-bold text-stone-900 focus:ring-0" />
-      <button type="button" id="mobile-search-clear" class="hidden px-3 text-stone-400 hover:text-stone-600 transition-colors" aria-label="Clear search">
+      <input type="search" id="mobile-search-input" name="q" placeholder={searchText} aria-label={searchText} class="flex-grow py-4 px-4 bg-transparent border-none outline-none text-sm font-bold text-stone-900 focus:ring-0" />
+      <button type="button" id="mobile-search-clear" class="hidden px-3 text-stone-400 hover:text-stone-600 transition-colors" aria-label={t.nav?.ariaClearSearch || 'Clear search'}>
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
       </button>
-      <button type="submit" id="mobile-search-btn" class="px-4 text-stone-700 hover:text-[#5D4E37] transition-colors" aria-label="Search">
+      <button type="submit" id="mobile-search-btn" class="px-4 text-stone-700 hover:text-[#5D4E37] transition-colors" aria-label={t.nav?.ariaSearch || 'Search'}>
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
       </button>
     </form>
@@ -400,7 +311,7 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
               <a href={item.href} class="mobile-menu-link block py-3 hover:text-[#5D4E37] transition-colors flex-grow flex items-center font-['Manrope'] font-bold text-lg">
                 {item.label}
               </a>
-              <button class="mobile-toggle-btn w-10 h-10 flex items-center justify-center text-[#5D4E37] rounded-full active:bg-stone-100 transition-all z-20 cursor-pointer" aria-label="Toggle submenu">
+              <button class="mobile-toggle-btn w-10 h-10 flex items-center justify-center text-[#5D4E37] rounded-full active:bg-stone-100 transition-all z-20 cursor-pointer" aria-label={t.nav?.ariaToggleSubmenu || 'Toggle submenu'}>
                 <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
               </button>
             </>
@@ -431,21 +342,15 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
     ))}
     <div class="pt-6 mt-6 border-t border-stone-100">
       <a href={`/${currentPath}quote`} class="block w-full py-4 bg-[#5D4E37] text-white text-center text-sm font-bold uppercase tracking-widest rounded-sm shadow-lg">
-        {quoteText}
+        {t.cta.quote}
       </a>
     </div>
   </div>
 </div>
 
 <style>
-  /* Hide native browser search cancel button */
-  input[type="search"]::-webkit-search-cancel-button {
-    -webkit-appearance: none;
-    appearance: none;
-  }
-
   .mobile-sub-menu.open {
-    max-height: 2000px !important;
+    max-height: 2000px;
   }
   .mobile-toggle-btn.rotated svg {
     transform: rotate(180deg);
@@ -477,7 +382,7 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
   }
 
   #mega-menu-panel .mega-menu-content.active {
-    display: block !important;
+    display: block;
   }
 
   /* Language Dropdown Scrollbar */
@@ -587,6 +492,8 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
       const willBeHidden = !mobileMenu.classList.contains('hidden');
       mobileMenu.classList.toggle('hidden');
       document.body.style.overflow = willBeHidden ? '' : 'hidden';
+      document.body.style.position = willBeHidden ? '' : 'fixed';
+      document.body.style.width = willBeHidden ? '' : '100%';
     }
 
     if (menuButton) {
@@ -761,9 +668,11 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
           if (isVisible) {
             wrapper.classList.remove('opacity-100', 'visible', 'pointer-events-auto');
             wrapper.classList.add('opacity-0', 'invisible', 'pointer-events-none');
+            btn.setAttribute('aria-expanded', 'false');
           } else {
             wrapper.classList.remove('opacity-0', 'invisible', 'pointer-events-none');
             wrapper.classList.add('opacity-100', 'visible', 'pointer-events-auto');
+            btn.setAttribute('aria-expanded', 'true');
             // update hint when opened via click
             const menu = wrapper.querySelector('.lang-dropdown-menu');
             if (menu) {
@@ -778,9 +687,14 @@ const featuredMenu = menuStructure.find(item => item.menuKey === 'featured');
     document.addEventListener('click', (e) => {
       const target = e.target;
       if (!target.closest('.lang-dropdown-container')) {
-        document.querySelectorAll('.lang-dropdown-wrapper').forEach(wrapper => {
-          wrapper.classList.remove('opacity-100', 'visible', 'pointer-events-auto');
-          wrapper.classList.add('opacity-0', 'invisible', 'pointer-events-none');
+        document.querySelectorAll('.lang-dropdown-container').forEach(container => {
+          const wrapper = container.querySelector('.lang-dropdown-wrapper');
+          const btn = container.querySelector('.lang-btn');
+          if (wrapper) {
+            wrapper.classList.remove('opacity-100', 'visible', 'pointer-events-auto');
+            wrapper.classList.add('opacity-0', 'invisible', 'pointer-events-none');
+          }
+          if (btn) btn.setAttribute('aria-expanded', 'false');
         });
       }
     });

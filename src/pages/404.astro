@@ -11,6 +11,7 @@ import Footer from '../components/Footer.astro';
 
 const lang = 'en';
 const isDev = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.0.0.1';
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
 <!-- Redirect non-English 404s to localized version.
@@ -279,21 +280,11 @@ const isDev = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.
   <Footer lang={lang} />
 </Layout>
 
-<style is:global>
-  input[type="search"]::-webkit-search-cancel-button {
-    -webkit-appearance: none;
-    appearance: none;
-    display: none;
-  }
-  input[type="search"]::-moz-search-clear-button {
-    display: none;
-  }
-</style>
 
 <!-- Turnstile: define callback BEFORE loading script (production only) -->
 {!isDev && (
   <script is:inline>
-    window.TURNSTILE_SITE_KEY = "0x4AAAAAACGlmQDIODBgCmpo";
+    window.TURNSTILE_SITE_KEY = {JSON.stringify(turnstileSiteKey)};
     window.turnstileToken = null;
 
     window.onTurnstileLoad = function() {

@@ -4,7 +4,7 @@ title: "कस्टम लग्जरी एसीटेट सनग्ला
 slug: "kas-010-acetate-sunglasses"
 itemNo: "KAS-010"
 date: "2026-05-10"
-colors: "काला & Meteor-Crystal & Tanzanite & Bombardie"
+colors: "काला & Meteor-Crystal & Tanzanite & Bordeaux"
 materials: "प्रीमियम Mazzucchelli & JINYU एसीटेट & कस्टमाइज़ेशन"
 serviceMode: "OEM / ODM निर्माण – कस्टमाइज़ेशन सेवा"
 moq: "300 पीस/मॉडल (100पीस/रंग)"

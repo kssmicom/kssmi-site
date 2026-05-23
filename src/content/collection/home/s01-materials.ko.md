@@ -133,7 +133,7 @@ materials:
       - '수공예 장인정신'
       - '차별화된 개성'
     slug: 'wood-eyewear'
-    image: '/media/products/kso-006-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-006-1.webp'
+    image: '/media/products/kso-225-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-225-1.webp'
 
   - name: '버팔로 혼 안경'
     subtitle: '유기적 대리석 무늬를 지닌 희귀 천연 럭셔리 소재'

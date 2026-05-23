@@ -264,16 +264,7 @@ s09_contact:
   formEmailLabel: "Correo Electronico Oficial"
   formEmailPlaceholder: "nombre@empresa.com"
   formDetailsLabel: "Detalles del Proyecto"
-  formDetailsPlaceholder: "Para ayudar a nuestro equipo a proporcionarle la informacion mas precisa posible, describa su proyecto con el mayor detalle posible.
-
-Detalles clave a incluir:
-1. Etapa del Proyecto: (ej. solo una idea, boceto, tech pack, archivo CAD 3D)
-2. Materiales Deseados: (ej. acetato Mazzucchelli, titanio japones, combinacion)
-3. Cantidad Estimada: (ej. 600 unidades totales, 200 por color)
-4. Fecha de Lanzamiento Objetivo: (ej. Q1 o Q3)
-5. Vision de Marca: (ej. lujo, rendimiento, moda sostenible).
-
-Sientase libre de adjuntar cualquier archivo disponible (bocetos, mood boards, tech packs)."
+  formDetailsPlaceholder: "Para ayudar a nuestro equipo a proporcionarle la informacion mas precisa posible, describa su proyecto con el mayor detalle posible.\n\nDetalles clave a incluir:\n1. Etapa del Proyecto: (ej. solo una idea, boceto, tech pack, archivo CAD 3D)\n2. Materiales Deseados: (ej. acetato Mazzucchelli, titanio japones, combinacion)\n3. Cantidad Estimada: (ej. 600 unidades totales, 200 por color)\n4. Fecha de Lanzamiento Objetivo: (ej. Q1 o Q3)\n5. Vision de Marca: (ej. lujo, rendimiento, moda sostenible).\n\nSientase libre de adjuntar cualquier archivo disponible (bocetos, mood boards, tech packs)."
   formSecurityError: "Por favor complete la verificacion de seguridad arriba."
   formSubmitText: "Enviar Solicitud"
   formSendingText: "ENVIANDO..."

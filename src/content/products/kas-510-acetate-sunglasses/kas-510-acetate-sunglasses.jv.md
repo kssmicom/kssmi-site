@@ -34,8 +34,8 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: ""
-seoDescription: ""
+seoTitle: "KAS-510 Kacamata Ireng Asetat Trendi | Supplier Kustom"
+seoDescription: "Kacamata ireng asetat premium Mazzucchelli lan JINYU kasedhiya kanggo kustomisasi OEM/ODM lengkap. Ukuran frame, warna, lan opsi logo khusus. 300 MOQ saben model."
 seoKeywords: ""
 ---
 

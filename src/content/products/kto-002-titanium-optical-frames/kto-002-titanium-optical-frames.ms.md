@@ -1,11 +1,11 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Bingkai Optik Titanim Tersuai"
+title: "Bingkai Optik Titanium Tersuai"
 slug: "kto-002-titanium-optical-frames"
 itemNo: "KTO-002"
 date: "2026-04-06"
 colors: "Tembaga, Biru"
-materials: "Titanim Premium"
+materials: "Titanium Premium"
 serviceMode: "OEM & ODM ( Penyesuaian )"
 moq: "300 unit/model"
 
@@ -16,7 +16,7 @@ series: "optical-frames, titanium-optical-frames, luxury-eyewear, luxury-titaniu
 
 # ─────────────────────────────────────────────────────
 size: "52-18-145mm & Penyesuaian"
-frameMaterial: "Titanim Premium & Penyesuaian"
+frameMaterial: "Titanium Premium & Penyesuaian"
 lensMaterial: "Lensa Nilon & Penyesuaian"
 designStyle: "Mewah, Klasik, Unisex"
 nosePads: "Alas Hidung Logam Boleh Laras"
@@ -35,7 +35,7 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Bingkai Optik Titanim Mewah KTO-002 | Pengilang Bespoke"
+seoTitle: "Bingkai Optik Titanium Mewah KTO-002 | Pengilang Bespoke"
 seoDescription: "Rakan kongsi dengan kilang kacamata titanium terkemuka untuk bingkai KTO-002. Kualiti gred aeroangkasa dengan penyesuaian OEM/ODM penuh dan 300 MOQ untuk jenama global."
 seoKeywords: "pengilang bingkai optik titanium, kilang kacamata titanium tersuai, bingkai optik mewah OEM China, borong kacamata titanium aeroangkasa, pengeluaran kacamata label peribadi, pembekal bingkai titanium bespoke, koleksi pereka kacamata premium, kilang kacamata titanium Cina"
 ---

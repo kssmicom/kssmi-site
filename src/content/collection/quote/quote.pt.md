@@ -15,7 +15,7 @@ partnershipHero:
   badge: "Vantagens da Parceria"
   headerPrimary: "Inicie seu Projeto de Óculos e Óculos de Sol com Marca Própria"
   headerSecondary: "Um Negócio de um Milhão de Dólares Agora!"
-  description: "Personalize totalmente cada detalhe dos seus óculos: material, formato, cor, padrão, estilo e qualquer otra característica que desejar. (Você pode personalizar tudo e qualquer coisa. Você imagina, nós construímos.)"
+  description: "Personalize totalmente cada detalhe dos seus óculos: material, formato, cor, padrão, estilo e qualquer outra característica que desejar. (Você pode personalizar tudo e qualquer coisa. Você imagina, nós construímos.)"
   team:
     - name: "Tian"
       image: "/media/collection/contact/Tian.webp"

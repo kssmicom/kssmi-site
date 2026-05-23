@@ -36,6 +36,9 @@ const langProducts = allProducts
   });
 
 // Serialize for client-side use
+// Note: For catalogs exceeding 200+ products, consider lazy-loading via
+// fetch('/api/search-index/${lang}.json') instead of inline embedding to
+// reduce HTML payload size.
 const productsJson = JSON.stringify(langProducts);
 
 // Placeholder text translations
@@ -95,6 +98,14 @@ const placeholders: Record<string, string> = {
     const searchResults = container.querySelector(`#search-results-${lang}`);
     let searchTimeout: ReturnType<typeof setTimeout>;
     let fuse: Fuse<any> | null = null;
+
+    // AbortController for cleanup on re-initialization
+    const ac = new AbortController();
+    const signal = ac.signal;
+    if ('_searchAbort' in container) {
+      (container as any)._searchAbort.abort();
+    }
+    (container as any)._searchAbort = ac;
 
     // Initialize Fuse.js search
     function initializeSearch() {
@@ -210,7 +221,7 @@ const placeholders: Record<string, string> = {
       if (!target.closest(`.search-component[data-lang="${lang}"]`)) {
         searchResults?.classList.add('hidden');
       }
-    });
+    }, { signal });
 
     // Keyboard navigation
     searchInput?.addEventListener('keydown', (e: KeyboardEvent) => {
@@ -221,7 +232,14 @@ const placeholders: Record<string, string> = {
   }
 
   // Initialize all search components on both initial load and page transitions
+  // Use AbortController to clean up old listeners on re-navigation
+  let pageLoadAbort: AbortController | null = null;
   document.addEventListener('astro:page-load', () => {
+    // Abort previous page-load init cycle
+    if (pageLoadAbort) {
+      pageLoadAbort.abort();
+    }
+    pageLoadAbort = new AbortController();
     const components = document.querySelectorAll('.search-component');
     components.forEach((c) => initSearchComponent(c as HTMLElement));
   });

@@ -12,12 +12,12 @@ moq: "300 pz/modello"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Metal Sunglasses"
-series: "sunglasses, fashion-eyewear, metal-sunglasses,fashion-metal-sunglasses"
+series: "sunglasses, fashion-eyewear, metal-sunglasses, fashion-metal-sunglasses"
 
 # ─────────────────────────────────────────────────────
+size: "46-24-140mm & Personalizzazione"
 frameMaterial: "Montatura in Acetato Premium e Aste in Metallo"
 lensMaterial: "Lenti AC e Lenti in Nylon Tenace & Personalizzazione"
-size: "46-24-140mm & Personalizzazione"
 designStyle: "Unico, Elegante, Alla Moda, Lusso, Unisex"
 nosePads: "Naselli in Silicone Premium"
 hinge: "Cerniere a Molla & Personalizzazione"

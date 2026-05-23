@@ -21,7 +21,7 @@ lensMaterial: "Lensa Nylon & Penyesuaian"
 designStyle: "Mewah, Klasik, Unisex"
 nosePads: "Alas Hidung Logam Boleh Laras"
 hinge: "Engsel Spring"
-electroplatingMethod: "Penyaduran Ion"
+electroplating: "Penyaduran Ion"
 logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Lencana Logam, Kristal, Pelekat"
 service: "Pembuatan OEM / ODM – Penyesuaian"
 

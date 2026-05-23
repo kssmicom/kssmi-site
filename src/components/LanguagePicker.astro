@@ -137,7 +137,12 @@ const currentLanguage = languages.find(l => l.code === lang) || languages[0];
           e.preventDefault();
           const targetUrl = link.getAttribute('href');
           if (targetUrl) {
-            window.location.href = targetUrl + window.location.search;
+            const fullUrl = targetUrl + window.location.search;
+            if (typeof window.navigate === 'function') {
+              window.navigate(fullUrl);
+            } else {
+              window.location.href = fullUrl;
+            }
           }
         });
       });

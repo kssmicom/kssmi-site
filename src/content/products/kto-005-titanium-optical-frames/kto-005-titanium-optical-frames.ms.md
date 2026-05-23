@@ -21,7 +21,7 @@ lensMaterial: "Lensa AC & Penyesuaian"
 designStyle: "Mewah, Bergaya, Unisex"
 nosePads: "Alas Hidung Satu Bahagian"
 hinge: "Engsel Spring"
-electroplatingMethod: "Penyaduran ION"
+electroplating: "Penyaduran ION"
 logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Lencana Logam, Kristal, Pelekat"
 service: "Pembuatan OEM / ODM – Penyesuaian"
 

@@ -21,7 +21,7 @@ lensMaterial: "Nylon Lens & Customization"
 designStyle: "Luxury, Classic, Unisex"
 nosePads: "Adjustable Metal Nose Pads"
 hinge: "Spring Hinge"
-electroplatingMethod: "Ion Plating"
+electroplating: "Ion Plating"
 logo: "Print, Laser, Laser With Oil, Hot Stamping, Metal, Crystal, Up-sticker"
 service: "OEM / ODM customization"
 

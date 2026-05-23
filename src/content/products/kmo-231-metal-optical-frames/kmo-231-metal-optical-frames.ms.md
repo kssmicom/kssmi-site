@@ -18,7 +18,7 @@ series: "optical-frames, fashion-eyewear, metal-optical-frames, fashion-metal-op
 size: "54-19-145mm & Penyesuaian"
 frameMaterial: "Bingkai dan Tangkai Logam Premium"
 lensMaterial: "Lensa Nilon Tegar & Penyesuaian"
-designStyle: "Klasik, Trendy, Fesyen, Bergaya, Trendy, Mewah, Unisex"
+designStyle: "Klasik, Trendy, Fesyen, Bergaya, Mewah, Unisex"
 nosePads: "Alas Hidung Bersepadu Silikon Jelas"
 hinge: "Engsel Struktur Komposit 2+1 & Penyesuaian"
 electroplating: "Penyaduran Ion"

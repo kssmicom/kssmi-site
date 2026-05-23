@@ -53,7 +53,15 @@ export const translations = {
       collection_unisex: "Unisex Eyewear",
       collection_new: "New Arrivals",
       collection_bestsellers: "Bestsellers",
-      collection_sustainable: "Sustainable Collection"
+      collection_sustainable: "Sustainable Collection",
+      menu: "Menu",
+      skipToContent: "Skip to content",
+
+      ariaSearch: "Search",
+      ariaClearSearch: "Clear search",
+      ariaOpenMenu: "Open menu",
+      ariaCloseMenu: "Close menu",
+      ariaToggleSubmenu: "Toggle submenu",
     },
     footer: {
       // Column 1: Brand Info
@@ -247,7 +255,10 @@ export const translations = {
       luxury_group: "Luxury Eyewear",
       carbon_fiber_group: "Carbon Fiber Eyewear",
       rimless_group: "Rimless Eyewear",
-    }
+    },
+    blog: {
+      emptyState: "No blog posts yet. Check back soon!",
+    },
   },
   ar: {
     thankyou: {
@@ -270,7 +281,7 @@ export const translations = {
       products: "المنتجات",
       collection: "المجموعة",
       about: "عن",
-      contact: "Contact",
+      contact: "اتصل بنا",
       luxury: "فخمة مخصصة",
       luxury_sunglasses: "نظارات شمسية فخمة",
       luxury_glasses: "نظارات فخمة",
@@ -297,7 +308,15 @@ export const translations = {
       collection_unisex: "جنسين",
       collection_new: "وصل حديثاً",
       collection_bestsellers: "الأكثر مبيعاً",
-      collection_sustainable: "مجموعة مستدامة"
+      collection_sustainable: "مجموعة مستدامة",
+      menu: "القائمة",
+      skipToContent: "تخطي إلى المحتوى",
+
+      ariaSearch: "بحث",
+      ariaClearSearch: "مسح البحث",
+      ariaOpenMenu: "فتح القائمة",
+      ariaCloseMenu: "إغلاق القائمة",
+      ariaToggleSubmenu: "تبديل القائمة الفرعية",
     },
     footer: {
       tagline: "النظارات والنظارات الشمسية",
@@ -308,7 +327,7 @@ export const translations = {
       manufacturing: "التصنيع",
       collection: "المجموعة",
       support: "الدعم",
-      contact: "Contact",
+      contact: "اتصل بنا",
       privacy: "سياسة الخصوصية",
       productsTitle: "الفئة",
       luxury: "فخمة مخصصة",
@@ -412,7 +431,7 @@ export const translations = {
       returnHome: "العودة للرئيسية",
       loadMore: "تحميل المزيد من المنتجات",
       // Search page
-      searchTitle: "بحث ييتيان",
+      searchTitle: "بحث Kssmi",
       searchDesc: "ابحث عن المنتجات والمقالات والمزيد. أدخل كلمة بحث أعلاه.",
       recommendedSearches: "عمليات بحث موصى بها",
       noMatches: "لم يتم العثور على نتائج",
@@ -477,7 +496,10 @@ export const translations = {
       luxury_group: "فاخر النظارات",
       carbon_fiber_group: "ألياف الكربون النظارات",
       rimless_group: "بدون إطار النظارات",
-    }
+    },
+    blog: {
+      emptyState: "لا توجد مقالات بعد. تحقق قريبا!",
+    },
   },
   it: {
     thankyou: {
@@ -500,7 +522,7 @@ export const translations = {
       products: "Prodotti",
       collection: "Collezione",
       about: "Chi Siamo",
-      contact: "Contact",
+      contact: "Contattaci",
       luxury: "Lusso Personalizzato",
       luxury_sunglasses: "Occhiali da Sole Lusso",
       luxury_glasses: "Occhiali Lusso",
@@ -527,7 +549,15 @@ export const translations = {
       collection_unisex: "Occhiali Unisex",
       collection_new: "Nuovi Arrivi",
       collection_bestsellers: "Bestseller",
-      collection_sustainable: "Collezione Sostenibile"
+      collection_sustainable: "Collezione Sostenibile",
+      menu: "Menu",
+      skipToContent: "Vai al contenuto",
+
+      ariaSearch: "Cerca",
+      ariaClearSearch: "Cancella ricerca",
+      ariaOpenMenu: "Apri menu",
+      ariaCloseMenu: "Chiudi menu",
+      ariaToggleSubmenu: "Attiva/disattiva sottomenu",
     },
     footer: {
       tagline: "Occhiali e Occhiali da Sole",
@@ -538,7 +568,7 @@ export const translations = {
       manufacturing: "Produzione",
       collection: "Collezione",
       support: "Supporto",
-      contact: "Contact",
+      contact: "Contattaci",
       privacy: "Privacy Policy",
       productsTitle: "Categoria",
       luxury: "Lusso Personalizzato",
@@ -570,10 +600,10 @@ export const translations = {
     product: {
       itemNo: "Codice Articolo",
       color: "Colore",
-      serviceMode: "Servizio ODP/OEM",
+      serviceMode: "Servizio ODM/OEM",
       moq: "Ordine Minimo",
       backToCatalog: "Torna al Catalogo",
-      kssmiCollection: "Kssmi Occhiali Personalizzazione Manufacturer Collection",
+      kssmiCollection: "Kssmi Collezione Personalizzazione Occhiali Produttore",
       technicalData: "Dati Tecnici",
       specificationProfile: "Specifiche Tecniche",
       status: "Stato",
@@ -599,18 +629,18 @@ export const translations = {
       oem: "Produzione per Conto Terzi",
       odm: "Design e Produzione",
       systemGenerated: "Generato dal Sistema",
-      securedBy: "Protetto da Controllo Qualita Kssmi",
+      securedBy: "Protetto da Controllo Qualità Kssmi",
       // Product Highlights Section
       highlightsLabel: "In Evidenza",
       highlightsTitle: "Caratteristiche e Applicazioni",
       startJourney: "Inizia il Tuo Viaggio",
-      privateLabelTitle: "Inizia la Tua Attivita di Private Label",
+      privateLabelTitle: "Inizia la Tua Attività di Private Label",
       privateLabelDesc: "Personalizza ogni dettaglio dei tuoi occhiali—materiale, forma, colore e specifiche tecniche.",
       partnerTitle: "Collabora per Creare il Tuo Brand di Occhiali di Lusso a Marchio Privato",
-      partnerDesc: "Collabora con un produttore fidato dai leader del settore da oltre un secolo. Personalizza completamente ogni aspetto—materiali, forme, colori e specifiche tecniche—offrendo un'artigianalita eccezionale e una qualita premium su larga scala.",
+      partnerDesc: "Collabora con un produttore fidato dai leader del settore da oltre un secolo. Personalizza completamente ogni aspetto—materiali, forme, colori e specifiche tecniche—offrendo un'artigianalità eccezionale e una qualità premium su larga scala.",
       benefit1: "Decenni di esperienza nella produzione di occhiali di lusso.",
       benefit2: "Personalizzazione di precisione di materiali, design e specifiche tecniche.",
-      benefit3: "Controllo qualita eccezionale per finiture impeccabili.",
+      benefit3: "Controllo qualità eccezionale per finiture impeccabili.",
       benefit4: "Produzione scalabile avanzata con precisione costante.",
       benefit5: "Materiali all'avanguardia conformi agli standard di settore.",
       benefit6: "Consegna affidabile allineata alle vostre tempistiche di produzione.",
@@ -707,7 +737,10 @@ export const translations = {
       luxury_group: "Occhiali Lusso",
       carbon_fiber_group: "Occhiali Fibra di Carbonio",
       rimless_group: "Occhiali Senza Montatura",
-    }
+    },
+    blog: {
+      emptyState: "Nessun articolo ancora. Torna a trovarci presto!",
+    },
   },
   es: {
     thankyou: {
@@ -730,7 +763,7 @@ export const translations = {
       products: "Productos",
       collection: "Colección",
       about: "Nosotros",
-      contact: "Contact",
+      contact: "Contacto",
       // Subcategories - Luxury Series
       luxury: "Lujo Personalizado",
       luxury_sunglasses: "Gafas de Sol de Lujo",
@@ -763,35 +796,44 @@ export const translations = {
       collection_women: "Eyewear Femenino",
       collection_unisex: "Eyewear Unisex",
       collection_new: "Novedades",
-      collection_bestsellers: "Mas Vendidos",
-      collection_sustainable: "Coleccion Sostenible"
+      collection_bestsellers: "Más Vendidos",
+      collection_sustainable: "Colección Sostenible",
+      menu: "Menú",
+      skipToContent: "Saltar al contenido",
+
+      ariaSearch: "Buscar",
+      ariaClearSearch: "Borrar búsqueda",
+      ariaOpenMenu: "Abrir menú",
+      ariaCloseMenu: "Cerrar menú",
+      ariaToggleSubmenu: "Alternar submenú",
     },
     footer: {
+      tagline: "Gafas y Gafas de Sol",
       brandName: "Kssmi Eyewear",
       brandDesc: "Fabricación de Gafas Premium — OEM y ODM desde 2003",
-      quickLinksTitle: "Enlaces Rapidos",
+      quickLinksTitle: "Enlaces Rápidos",
       about: "Nosotros",
-      manufacturing: "Fabricacion",
-      collection: "Coleccion",
+      manufacturing: "Fabricación",
+      collection: "Colección",
       support: "Soporte",
-      contact: "Contactenos",
-      privacy: "Politica de Privacidad",
-      productsTitle: "Categoria de Productos",
+      contact: "Contáctenos",
+      privacy: "Política de Privacidad",
+      productsTitle: "Categoría de Productos",
       luxury: "Lujo Personalizado",
       couture: "Serie Alta Costura",
-      classics: "Serie Clasicos",
+      classics: "Serie Clásicos",
       fashion: "Serie Moda",
       carbon: "Serie Carbono",
-      factoryTitle: "Nuestra Fabrica de Gafas",
+      factoryTitle: "Nuestra Fábrica de Gafas",
       address: "905, Ed. 1, Baiwangda Health\nTech Park, Calle Yuanshan, Distrito de Longgang\nShenzhen, Guangdong, China",
-      postcode: "Codigo Postal",
+      postcode: "Código Postal",
       email: "sales@kssmi.com",
       emailLabel: "Correo: ",
-      copyright: "Kssmi Eyewear Todos los derechos reservados."
+      rights: "Todos los derechos reservados."
     },
     cta: {
-      quote: "Solicitar Cotizacion",
-      catalog: "Ver Catalogo"
+      quote: "Solicitar Cotización",
+      catalog: "Ver Catálogo"
     },
     search: {
       placeholder: "Buscar productos...",
@@ -804,22 +846,22 @@ export const translations = {
       backToTop: "Volver Arriba"
     },
     product: {
-      itemNo: "Numero de Articulo",
+      itemNo: "Número de Artículo",
       color: "Color",
       serviceMode: "Modo de Producción",
       moq: "Pedido mínimo",
-      backToCatalog: "Volver al Catalogo",
+      backToCatalog: "Volver al Catálogo",
       kssmiCollection: "Kssmi Gafas Personalización Fabricante Colección",
-      technicalData: "Datos Tecnicos",
+      technicalData: "Datos Técnicos",
       specificationProfile: "Especificaciones Técnicas",
       status: "Estado",
       validated: "Validado",
       docRef: "Ref. Doc",
-      size: "Tamano",
+      size: "Tamaño",
       materials: "Materiales",
       frameMaterial: "Material del Marco",
       lensMaterial: "Material de Lentes",
-      designStyle: "Estilo de Diseno",
+      designStyle: "Estilo de Diseño",
       nosePads: "Puente Nasal",
       hinge: "Bisagra",
       electroplating: "Galvanoplastia",
@@ -841,7 +883,7 @@ export const translations = {
       highlightsTitle: "Características y Aplicaciones",
       startJourney: "Comienza tu Viaje",
       privateLabelTitle: "Inicia tu Negocio de Marca Privada",
-      privateLabelDesc: "Personaliza cada detalle de tus gafas—material, forma, color y especificaciones tecnicas.",
+      privateLabelDesc: "Personaliza cada detalle de tus gafas—material, forma, color y especificaciones técnicas.",
       partnerTitle: "Asociate para Construir tu Marca de Gafas de Lujo de Etiqueta Privada",
       partnerDesc: "Colabora con un fabricante en el que confían los líderes de la industria desde hace más de un siglo. Personaliza completamente cada aspecto—materiales, formas, colores y especificaciones técnicas—ofreciendo una artesanía excepcional y una calidad premium a gran escala.",
       benefit1: "Décadas de experiencia en fabricación de gafas de lujo.",
@@ -852,7 +894,7 @@ export const translations = {
       benefit6: "Entrega fiable alineada con sus plazos de producción.",
       projectFormTitle: "Inicia Tu Proyecto",
       projectFormDesc: "Envía la información de tu proyecto y nuestro equipo técnico entregará una revisión preliminar detallada en 24 horas.",
-      nameOrg: "Nombre / Organizacion",
+      nameOrg: "Nombre / Organización",
       officialEmail: "Email Oficial",
       projectDetails: "Detalles del Proyecto",
       submitRequest: "Enviar Solicitud",
@@ -862,9 +904,9 @@ export const translations = {
       relatedSeries: "Series Relacionadas",
       viewAllCollections: "Ver Todas las Colecciones",
       allProducts: "Todos los Productos",
-      productsInCategory: "productos en esta categoria",
+      productsInCategory: "productos en esta categoría",
       // Sidebar CTA
-      needCustomEyewear: "Necesitas gafas personalizadas?",
+      needCustomEyewear: "¿Necesitas gafas personalizadas?",
       oemServices: "Ofrecemos servicios completos de Fabricación por Cuenta de Terceros y Diseño y Fabricación para tu marca.",
       // Certifications
       certificationsTitle: "Certificaciones y Cumplimiento",
@@ -943,7 +985,10 @@ export const translations = {
       luxury_group: "Gafas de Lujo",
       carbon_fiber_group: "Gafas Fibra de Carbono",
       rimless_group: "Gafas Sin Montura",
-    }
+    },
+    blog: {
+      emptyState: "No hay articulos todavia. Vuelve pronto!",
+    },
   },
   fr: {
     thankyou: {
@@ -998,11 +1043,20 @@ export const translations = {
       collection_men: "Eyewear Homme",
       collection_women: "Eyewear Femme",
       collection_unisex: "Eyewear Unisexe",
-      collection_new: "Nouveautes",
+      collection_new: "Nouveautés",
       collection_bestsellers: "Best-sellers",
-      collection_sustainable: "Collection Durable"
+      collection_sustainable: "Collection Durable",
+      menu: "Menu",
+      skipToContent: "Aller au contenu",
+
+      ariaSearch: "Rechercher",
+      ariaClearSearch: "Effacer la recherche",
+      ariaOpenMenu: "Ouvrir le menu",
+      ariaCloseMenu: "Fermer le menu",
+      ariaToggleSubmenu: "Basculer le sous-menu",
     },
     footer: {
+      tagline: "Lunettes et Lunettes de Soleil",
       brandName: "Kssmi Eyewear",
       brandDesc: "Fabrication de Lunettes Premium — OEM et ODM depuis 2003",
       quickLinksTitle: "Liens Rapides",
@@ -1015,15 +1069,15 @@ export const translations = {
       productsTitle: "Categorie de Produits",
       luxury: "Luxe Personnalise",
       couture: "Série Haute Couture",
-      classics: "Serie Classiques",
-      fashion: "Serie Mode",
+      classics: "Série Classiques",
+      fashion: "Série Mode",
       carbon: "Serie Carbone",
       factoryTitle: "Notre Usine de Lunettes",
       address: "905, Bat. 1, Baiwangda Health\nTech Park, Rue Yuanshan, District de Longgang\nShenzhen, Guangdong, Chine",
       postcode: "Code Postal",
       email: "sales@kssmi.com",
       emailLabel: "Email: ",
-      copyright: "Kssmi Eyewear Tous droits reserves."
+      rights: "Tous droits réservés."
     },
     cta: {
       quote: "Demander un Devis",
@@ -1031,7 +1085,7 @@ export const translations = {
     },
     search: {
       placeholder: "Rechercher des produits...",
-      noResults: "Aucun produit trouve"
+      noResults: "Aucun produit trouvé"
     },
     floating: {
       inquiry: "Laisser une Demande",
@@ -1070,27 +1124,27 @@ export const translations = {
       pcsPerModel: " pcs/modèle",
       oem: "Fabrication sous Contrat",
       odm: "Conception et Fabrication",
-      systemGenerated: "Genere par Systeme",
-      securedBy: "Securise par Controle Qualite Kssmi",
+      systemGenerated: "Généré par le Système",
+      securedBy: "Sécurisé par le Contrôle Qualité Kssmi",
       // Product Highlights Section
       highlightsLabel: "Points Forts",
       highlightsTitle: "Caractéristiques et Applications",
       startJourney: "Commencez votre Voyage",
-      privateLabelTitle: "Lancez votre Marque Privee",
-      privateLabelDesc: "Personnalisez chaque detail de vos lunettes—materiau, forme, couleur et specifications techniques.",
-      partnerTitle: "Partenaires pour Construire votre Marque de Lunettes de Luxe en Marque Privee",
-      partnerDesc: "Collaborez avec un fabricant de confiance des leaders de l'industrie depuis plus d'un siecle. Personnalisez entierement chaque aspect—materiaux, formes, couleurs et specifications techniques—offrant un artisanat exceptionnel et une qualite premium a grande echelle.",
-      benefit1: "Des decennies d'expertise dans la fabrication de lunettes de luxe.",
-      benefit2: "Personnalisation de precision des materiaux, design et specifications techniques.",
-      benefit3: "Controle qualite exceptionnel garantissant des finitions impeccables.",
-      benefit4: "Production evolutive avancee avec une precision constante.",
-      benefit5: "Materiaux de pointe conformes aux normes de l'industrie.",
-      benefit6: "Livraison fiable alignee sur vos delais de production.",
+      privateLabelTitle: "Lancez votre Marque Privée",
+      privateLabelDesc: "Personnalisez chaque détail de vos lunettes—matériau, forme, couleur et spécifications techniques.",
+      partnerTitle: "Partenaires pour Construire votre Marque de Lunettes de Luxe en Marque Privée",
+      partnerDesc: "Collaborez avec un fabricant de confiance des leaders de l'industrie depuis plus d'un siècle. Personnalisez entièrement chaque aspect—matériaux, formes, couleurs et spécifications techniques—offrant un artisanat exceptionnel et une qualité premium à grande échelle.",
+      benefit1: "Des décennies d'expertise dans la fabrication de lunettes de luxe.",
+      benefit2: "Personnalisation de précision des matériaux, design et spécifications techniques.",
+      benefit3: "Contrôle qualité exceptionnel garantissant des finitions impeccables.",
+      benefit4: "Production évolutive avancée avec une précision constante.",
+      benefit5: "Matériaux de pointe conformes aux normes de l'industrie.",
+      benefit6: "Livraison fiable alignée sur vos délais de production.",
       projectFormTitle: "Démarrer Votre Projet",
       projectFormDesc: "Soumettez les informations de votre projet et notre équipe technique vous fournira une revue préliminaire détaillée sous 24 heures.",
       nameOrg: "Nom / Organisation",
       officialEmail: "Email Officiel",
-      projectDetails: "Details du Projet",
+      projectDetails: "Détails du Projet",
       submitRequest: "Soumettre la Demande",
       secure256: "Sécurité Cryptée 256 bits",
       ndasAvailable: "NDA disponibles",
@@ -1179,7 +1233,10 @@ export const translations = {
       luxury_group: "Lunettes de Luxe",
       carbon_fiber_group: "Lunettes Fibre de Carbone",
       rimless_group: "Lunettes Sans Monture",
-    }
+    },
+    blog: {
+      emptyState: "Aucun article pour le moment. Revenez bientot!",
+    },
   },
   de: {
     thankyou: {
@@ -1236,13 +1293,22 @@ export const translations = {
       collection_unisex: "Unisex Eyewear",
       collection_new: "Neuheiten",
       collection_bestsellers: "Bestseller",
-      collection_sustainable: "Nachhaltige Kollektion"
+      collection_sustainable: "Nachhaltige Kollektion",
+      menu: "Menü",
+      skipToContent: "Zum Inhalt springen",
+
+      ariaSearch: "Suchen",
+      ariaClearSearch: "Suche löschen",
+      ariaOpenMenu: "Menü öffnen",
+      ariaCloseMenu: "Menü schließen",
+      ariaToggleSubmenu: "Untermenü umschalten",
     },
     footer: {
+      tagline: "Brillen und Sonnenbrillen",
       brandName: "Kssmi Eyewear",
       brandDesc: "Premium-Brillenherstellung — OEM & ODM seit 2003",
-      quickLinksTitle: "Schnellinks",
-      about: "Uber Uns",
+      quickLinksTitle: "Schnelllinks",
+      about: "Über Uns",
       manufacturing: "Fertigung",
       collection: "Kollektion",
       support: "Support",
@@ -1259,7 +1325,7 @@ export const translations = {
       postcode: "Postleitzahl",
       email: "sales@kssmi.com",
       emailLabel: "E-Mail: ",
-      copyright: "Kssmi Eyewear Alle Rechte vorbehalten."
+      rights: "Alle Rechte vorbehalten."
     },
     cta: {
       quote: "Angebot Anfordern",
@@ -1280,7 +1346,7 @@ export const translations = {
       color: "Farbe",
       serviceMode: "Fertigungsart",
       moq: "Mindestbestellmenge",
-      backToCatalog: "Zuruck zum Katalog",
+      backToCatalog: "Zurück zum Katalog",
       kssmiCollection: "Kssmi Brillen Individualisierung Hersteller Kollektion",
       technicalData: "Technische Daten",
       specificationProfile: "Technische Spezifikationen",
@@ -1290,7 +1356,7 @@ export const translations = {
       size: "Grosse",
       materials: "Materialien",
       frameMaterial: "Rahmenmaterial",
-      lensMaterial: "Glasermaterial",
+      lensMaterial: "Gläsermaterial",
       designStyle: "Designstil",
       nosePads: "Nasenpolster",
       hinge: "Scharnier",
@@ -1307,21 +1373,21 @@ export const translations = {
       oem: "Auftragsfertigung",
       odm: "Design und Fertigung",
       systemGenerated: "Systemgeneriert",
-      securedBy: "Gesichert durch Kssmi Qualitatskontrolle",
+      securedBy: "Gesichert durch Kssmi Qualitätskontrolle",
       // Product Highlights Section
       highlightsLabel: "Produkt Highlights",
       highlightsTitle: "Eigenschaften und Anwendungen",
       startJourney: "Starten Sie Ihre Reise",
-      privateLabelTitle: "Starten Sie Ihr Private-Label Geschaft",
+      privateLabelTitle: "Starten Sie Ihr Private-Label Geschäft",
       privateLabelDesc: "Passen Sie jedes Detail Ihrer Brillen an—Material, Form, Farbe und technische Spezifikationen.",
       partnerTitle: "Partner fur den Aufbau Ihrer Private-Label Luxus-Brillenmarke",
-      partnerDesc: "Kooperieren Sie mit einem Hersteller, dem Branchenfuhrer seit uber einem Jahrhundert vertrauen. Passen Sie jeden Aspekt vollstandig an—Materialien, Formen, Farben und technische Spezifikationen—und liefern Sie außergewohnliche Handwerkskunst und Premium-Qualitat im großen Maßstab.",
+      partnerDesc: "Kooperieren Sie mit einem Hersteller, dem Branchenfuhrer seit über einem Jahrhundert vertrauen. Passen Sie jeden Aspekt vollstandig an—Materialien, Formen, Farben und technische Spezifikationen—und liefern Sie außergewohnliche Handwerkskunst und Premium-Qualitat im großen Maßstab.",
       benefit1: "Jahrzehnte an Expertise in der Luxus-Brillenherstellung.",
-      benefit2: "Prazise Anpassung von Materialien, Design und technischen Spezifikationen.",
-      benefit3: "Aussergewohnliche Qualitatskontrolle fur makellose Oberflachen.",
+      benefit2: "Präzise Anpassung von Materialien, Design und technischen Spezifikationen.",
+      benefit3: "Außergewöhnliche Qualitätskontrolle für makellose Oberflächen.",
       benefit4: "Fortschrittliche skalierbare Produktion mit konstanter Genauigkeit.",
       benefit5: "Innovative Materialien konform mit Industriestandards.",
-      benefit6: "Zuverlassige Lieferung abgestimmt auf Ihre Produktionszeiträume.",
+      benefit6: "Zuverlässige Lieferung abgestimmt auf Ihre Produktionszeiträume.",
       projectFormTitle: "Starten Sie Ihr Projekt",
       projectFormDesc: "Senden Sie Ihre Projektinformationen und unser Technik-Team liefert eine detaillierte vorläufige Bewertung innerhalb von 24 Stunden.",
       nameOrg: "Name / Organisation",
@@ -1415,7 +1481,10 @@ export const translations = {
       luxury_group: "Brillen Luxus",
       carbon_fiber_group: "Brillen Kohlefaser",
       rimless_group: "Brillen Randlos",
-    }
+    },
+    blog: {
+      emptyState: "Noch keine Blogbeitrage. Schauen Sie bald wieder vorbei!",
+    },
   },
   pt: {
     thankyou: {
@@ -1472,14 +1541,23 @@ export const translations = {
       collection_unisex: "Eyewear Unissex",
       collection_new: "Novidades",
       collection_bestsellers: "Mais Vendidos",
-      collection_sustainable: "Colecao Sustentavel"
+      collection_sustainable: "Coleção Sustentável",
+      menu: "Menu",
+      skipToContent: "Pular para o conteúdo",
+
+      ariaSearch: "Pesquisar",
+      ariaClearSearch: "Limpar pesquisa",
+      ariaOpenMenu: "Abrir menu",
+      ariaCloseMenu: "Fechar menu",
+      ariaToggleSubmenu: "Alternar submenu",
     },
     footer: {
+      tagline: "Óculos e Óculos de Sol",
       brandName: "Kssmi Eyewear",
       brandDesc: "Fabricação de Óculos Premium — OEM e ODM desde 2003",
-      quickLinksTitle: "Links Rapidos",
-      about: "Sobre Nos",
-      manufacturing: "Fabricacao",
+      quickLinksTitle: "Links Rápidos",
+      about: "Sobre Nós",
+      manufacturing: "Fabricação",
       collection: "Colecao",
       support: "Suporte",
       contact: "Contato",
@@ -1490,29 +1568,29 @@ export const translations = {
       classics: "Serie Classicos",
       fashion: "Serie Moda",
       carbon: "Serie Carbono",
-      factoryTitle: "Nossa Fabrica de Oculos",
+      factoryTitle: "Nossa Fábrica de Óculos",
       address: "905, Edificio 1, Baiwangda Health\nTech Park, Rua Yuanshan, Distrito de Longgang\nShenzhen, Guangdong, China",
       postcode: "CEP",
       email: "sales@kssmi.com",
       emailLabel: "E-mail: ",
-      copyright: "Kssmi Eyewear Todos os direitos reservados."
+      rights: "Todos os direitos reservados."
     },
     cta: {
-      quote: "Solicitar Orcamento",
-      catalog: "Ver Catalogo"
+      quote: "Solicitar Orçamento",
+      catalog: "Ver Catálogo"
     },
     search: {
       placeholder: "Buscar produtos...",
       noResults: "Nenhum produto encontrado"
     },
     floating: {
-      inquiry: "Deixar Inquiry",
+      inquiry: "Deixar Consulta",
       email: "Enviar Email",
       whatsapp: "WhatsApp",
       backToTop: "Voltar ao Topo"
     },
     product: {
-      itemNo: "Numero do Item",
+      itemNo: "Número do Item",
       color: "Cor",
       serviceMode: "Modo de Produção",
       moq: "Quantidade Mínima",
@@ -1525,13 +1603,13 @@ export const translations = {
       docRef: "Ref. Doc",
       size: "Tamanho",
       materials: "Materiais",
-      frameMaterial: "Material da Armacao",
+      frameMaterial: "Material da Armação",
       lensMaterial: "Material das Lentes",
       designStyle: "Estilo de Design",
       nosePads: "Nasais",
-      hinge: "Dobradica",
+      hinge: "Dobradiça",
       electroplating: "Galvanoplastia",
-      service: "Servico",
+      service: "Serviço",
       carbonFiberFeature: "Características da fibra de carbono",
       acetateFeature: "Características do acetato",
       logo: "Logotipo",
@@ -1548,16 +1626,16 @@ export const translations = {
       highlightsLabel: "Destaques do Produto",
       highlightsTitle: "Características e Aplicações",
       startJourney: "Inicie sua Jornada",
-      privateLabelTitle: "Inicie seu Negocio de Marca Propria",
-      privateLabelDesc: "Personalize cada detalhe dos seus oculos—material, forma, cor e especificacoes tecnicas.",
+      privateLabelTitle: "Inicie seu Negócio de Marca Própria",
+      privateLabelDesc: "Personalize cada detalhe dos seus oculos—material, forma, cor e especificações técnicas.",
       partnerTitle: "Parceria para Construir sua Marca de Oculos de Luxo de Marca Propria",
-      partnerDesc: "Colabore com um fabricante confiavel dos lideres da industria ha mais de um seculo. Personalize completamente cada aspecto—materiais, formas, cores e especificacoes tecnicas—oferecendo artesanato excepcional e qualidade premium em escala.",
+      partnerDesc: "Colabore com um fabricante confiável dos lideres da industria ha mais de um seculo. Personalize completamente cada aspecto—materiais, formas, cores e especificações técnicas—oferecendo artesanato excepcional e qualidade premium em escala.",
       benefit1: "Decadas de experiencia na fabricacao de oculos de luxo.",
-      benefit2: "Personalizacao precisa de materiais, design e especificacoes tecnicas.",
+      benefit2: "Personalizacao precisa de materiais, design e especificações técnicas.",
       benefit3: "Controle de qualidade excepcional garantindo acabamentos impecaveis.",
       benefit4: "Producao escalavel avancada com precisao consistente.",
       benefit5: "Materiais de ponta compativeis com os padroes da industria.",
-      benefit6: "Entrega confiavel alinhada com seus prazos de producao.",
+      benefit6: "Entrega confiável alinhada com seus prazos de producao.",
       projectFormTitle: "Inicie Seu Projeto",
       projectFormDesc: "Envie as informações do seu projeto e nossa equipe técnica fornecerá uma revisão preliminar detalhada em 24 horas.",
       nameOrg: "Nome / Organizacao",
@@ -1651,7 +1729,10 @@ export const translations = {
       luxury_group: "Óculos de Luxo",
       carbon_fiber_group: "Óculos Fibra de Carbono",
       rimless_group: "Óculos Sem Aro",
-    }
+    },
+    blog: {
+      emptyState: "Nenhum artigo ainda. Volte em breve!",
+    },
   },
   ru: {
     thankyou: {
@@ -1708,9 +1789,18 @@ export const translations = {
       collection_unisex: "Очки Унисекс",
       collection_new: "Новинки",
       collection_bestsellers: "Лидеры Продаж",
-      collection_sustainable: "Эко-Коллекция"
+      collection_sustainable: "Эко-Коллекция",
+      menu: "Меню",
+      skipToContent: "Перейти к содержимому",
+
+      ariaSearch: "Поиск",
+      ariaClearSearch: "Очистить поиск",
+      ariaOpenMenu: "Открыть меню",
+      ariaCloseMenu: "Закрыть меню",
+      ariaToggleSubmenu: "Переключить подменю",
     },
     footer: {
+      tagline: "Очки и Солнцезащитные Очки",
       brandName: "Kssmi Eyewear",
       brandDesc: "Премиум производство очков — OEM и ODM с 2003 года",
       quickLinksTitle: "Быстрые Ссылки",
@@ -1731,7 +1821,7 @@ export const translations = {
       postcode: "Почтовый Индекс",
       email: "sales@kssmi.com",
       emailLabel: "Email: ",
-      copyright: "Kssmi Eyewear Все права защищены."
+      rights: "Все права защищены."
     },
     cta: {
       quote: "Запросить Цену",
@@ -1783,7 +1873,7 @@ export const translations = {
       // Product Highlights Section
       highlightsLabel: "Ключевые Особенности",
       highlightsTitle: "Характеристики и Применение",
-      startJourney: "Начать Ваш Проект",
+      startJourney: "Начните свое путешествие",
       privateLabelTitle: "Начните Свой Бизнес с Собственной Маркой",
       privateLabelDesc: "Полностью настройте каждую деталь очков — материал, форму, цвет и технические спецификации.",
       partnerTitle: "Партнерство для Создания Вашего Бренда Роскошных Очков",
@@ -1887,7 +1977,10 @@ export const translations = {
       luxury_group: "Очки Роскошь",
       carbon_fiber_group: "Очки Углеволокно",
       rimless_group: "Очки Без ободка",
-    }
+    },
+    blog: {
+      emptyState: "Пока нет записей. Загляните позже!",
+    },
   },
   ja: {
     thankyou: {
@@ -1944,9 +2037,18 @@ export const translations = {
       collection_unisex: "ユニセックス アイウェア",
       collection_new: "新着商品",
       collection_bestsellers: "ベストセラー",
-      collection_sustainable: "サステナブル コレクション"
+      collection_sustainable: "サステナブル コレクション",
+      menu: "メニュー",
+      skipToContent: "コンテンツにスキップ",
+
+      ariaSearch: "検索",
+      ariaClearSearch: "検索をクリア",
+      ariaOpenMenu: "メニューを開く",
+      ariaCloseMenu: "メニューを閉じる",
+      ariaToggleSubmenu: "サブメニューを切り替え",
     },
     footer: {
+      tagline: "アイウェア＆サングラス",
       brandName: "Kssmi Eyewear",
       brandDesc: "プレミアムアイウェア製造 — OEM & ODM 2003年創業",
       quickLinksTitle: "クイックリンク",
@@ -1963,11 +2065,11 @@ export const translations = {
       fashion: "ファッション シリーズ",
       carbon: "カーボン シリーズ",
       factoryTitle: "自社工場",
-      address: "中国広東省深圳市龍崗区園山街道\n白望達健康テクノロジーパーク 1号棟905室",
+      address: "中国広東省深圳市龍崗区園山街道\n百旺達健康テクノロジーパーク 1号棟905室",
       postcode: "郵便番号",
       email: "sales@kssmi.com",
       emailLabel: "Eメール: ",
-      copyright: "Kssmi Eyewear 無断転載を禁じます。"
+      rights: "無断転載を禁じます。"
     },
     cta: {
       quote: "お見積り",
@@ -2075,7 +2177,7 @@ export const translations = {
     },
     layout: {
       description: "中国のプレミアム企業間 (B2B) アイウェア製造。グローバルな小売業者やブランド向けのOEM/ODMカスタム眼鏡フレーム。",
-      schemaDescription: "Kssmi Eyewearは、高品質なOEM/ODM光学フレームとサングラスを専門とするプロフェッショナルな企業間 (B2B) アイウェアメーカーであり、2003年以来中国から工場直送でを提供しています。",
+      schemaDescription: "Kssmi Eyewearは、高品質なOEM/ODM光学フレームとサングラスを専門とするプロフェッショナルな企業間 (B2B) アイウェアメーカーであり、2003年以来中国から工場直送で提供しています。",
     },
     sidebar: {
       // Primary Categories
@@ -2123,7 +2225,10 @@ export const translations = {
       luxury_group: "ラグジュアリー眼鏡",
       carbon_fiber_group: "炭素繊維眼鏡",
       rimless_group: "縁なし眼鏡",
-    }
+    },
+    blog: {
+      emptyState: "まだ記事がありません。近日中にご確認ください！",
+    },
   },
 
   tr: {
@@ -2181,9 +2286,18 @@ export const translations = {
       collection_unisex: "Unisex Gözlük",
       collection_new: "Yeni Gelenler",
       collection_bestsellers: "Çok Satanlar",
-      collection_sustainable: "Sürdürülebilir Koleksiyon"
+      collection_sustainable: "Sürdürülebilir Koleksiyon",
+      menu: "Menü",
+      skipToContent: "İçeriğe atla",
+
+      ariaSearch: "Ara",
+      ariaClearSearch: "Aramayı temizle",
+      ariaOpenMenu: "Menüyü aç",
+      ariaCloseMenu: "Menüyü kapat",
+      ariaToggleSubmenu: "Alt menüyü değiştir",
     },
     footer: {
+      tagline: "Gözlük ve Güneş Gözlüğü",
       brandName: "Kssmi Eyewear",
       brandDesc: "Premium Gözlük Üretimi — OEM & ODM 2003'ten Beri",
       quickLinksTitle: "Hızlı Bağlantılar",
@@ -2204,7 +2318,7 @@ export const translations = {
       postcode: "Posta Kodu",
       email: "sales@kssmi.com",
       emailLabel: "E-posta: ",
-      copyright: "Kssmi Eyewear Tüm hakları saklıdır."
+      rights: "Tüm hakları saklıdır."
     },
     cta: {
       quote: "Fiyat İsteyin",
@@ -2360,7 +2474,10 @@ export const translations = {
       luxury_group: "Lüks Gözlükleri",
       carbon_fiber_group: "Karbon Elyaf Gözlükleri",
       rimless_group: "Çerçevesiz Gözlükleri",
-    }
+    },
+    blog: {
+      emptyState: "Henuz blog yazisi yok. Yakinda tekrar kontrol edin!",
+    },
   },
   ko: {
     thankyou: {
@@ -2410,7 +2527,15 @@ export const translations = {
       collection_unisex: "공용 아이웨어",
       collection_new: "신상품",
       collection_bestsellers: "베스트셀러",
-      collection_sustainable: "친환경 컬렉션"
+      collection_sustainable: "친환경 컬렉션",
+      menu: "메뉴",
+      skipToContent: "콘텐츠로 건너뛰기",
+
+      ariaSearch: "검색",
+      ariaClearSearch: "검색 지우기",
+      ariaOpenMenu: "메뉴 열기",
+      ariaCloseMenu: "메뉴 닫기",
+      ariaToggleSubmenu: "하위 메뉴 전환",
     },
     footer: {
       tagline: "아이웨어 및 선글라스",
@@ -2590,7 +2715,10 @@ export const translations = {
       luxury_group: "럭셔리 안경",
       carbon_fiber_group: "탄소섬유 안경",
       rimless_group: "림레스 안경",
-    }
+    },
+    blog: {
+      emptyState: "아직 게시글이 없습니다. 곧 확인해 주세요!",
+    },
   },
   zh: {
     thankyou: {
@@ -2640,7 +2768,15 @@ export const translations = {
       collection_unisex: "中性眼镜",
       collection_new: "新品上市",
       collection_bestsellers: "畅销款",
-      collection_sustainable: "可持续系列"
+      collection_sustainable: "可持续系列",
+      menu: "菜单",
+      skipToContent: "跳转到内容",
+
+      ariaSearch: "搜索",
+      ariaClearSearch: "清除搜索",
+      ariaOpenMenu: "打开菜单",
+      ariaCloseMenu: "关闭菜单",
+      ariaToggleSubmenu: "切换子菜单",
     },
     footer: {
       tagline: "光学眼镜及太阳镜",
@@ -2755,7 +2891,7 @@ export const translations = {
       returnHome: "返回首页",
       loadMore: "加载更多产品",
       // Search page
-      searchTitle: "搜索叶田",
+      searchTitle: "搜索 Kssmi",
       searchDesc: "查找产品、文章等。在上方输入搜索词。",
       recommendedSearches: "推荐搜索",
       noMatches: "未找到结果",
@@ -2820,7 +2956,10 @@ export const translations = {
       luxury_group: "豪华眼镜",
       carbon_fiber_group: "碳纤维眼镜",
       rimless_group: "无框眼镜",
-    }
+    },
+    blog: {
+      emptyState: "暂无文章。请稍后再来查看！",
+    },
   },
   hi: {
     thankyou: {
@@ -2870,7 +3009,15 @@ export const translations = {
       collection_unisex: "यूनिसेक्स आईवियर",
       collection_new: "नए आगमन",
       collection_bestsellers: "बेस्टसेलर",
-      collection_sustainable: "टिकाऊ संग्रह"
+      collection_sustainable: "टिकाऊ संग्रह",
+      menu: "मेनू",
+      skipToContent: "सामग्री पर जाएं",
+
+      ariaSearch: "खोजें",
+      ariaClearSearch: "खोज साफ़ करें",
+      ariaOpenMenu: "मेनू खोलें",
+      ariaCloseMenu: "मेनू बंद करें",
+      ariaToggleSubmenu: "सबमेनू टॉगल करें",
     },
     footer: {
       tagline: "आईवियर और धूप का चश्मा",
@@ -2948,7 +3095,7 @@ export const translations = {
       highlightsTitle: "विशेषताएं और अनुप्रयोग",
       startJourney: "अपनी यात्रा शुरू करें",
       privateLabelTitle: "अपना निजी-लेबल मिलियन-डॉलर व्यवसाय शुरू करें",
-      privateLabelDesc: "अपने आईवियर के हर विवरण को पूरी तरह से अनुकूलित करें - सामग्री, आकार, रंग और तकनीकी चश्मा।",
+      privateLabelDesc: "अपने आईवियर के हर विवरण को पूरी तरह से अनुकूलित करें - सामग्री, आकार, रंग और तकनीकी विशिष्टताएँ।",
       partnerTitle: "अपना निजी-लेबल लक्ज़री आईवियर ब्रांड बनाने के लिए भागीदार",
       partnerDesc: "एक सदी से अधिक समय से उद्योग के नेताओं द्वारा विश्वसनीय निर्माता के साथ सहयोग करें। हर पहलू को पूरी तरह से अनुकूलित करें - सामग्री, आकार, रंग और तकनीकी विनिर्देश - बड़े पैमाने पर असाधारण शिल्प कौशल और प्रीमियम गुणवत्ता प्रदान करना।",
       benefit1: "लक्ज़री आईवियर निर्माण में दशकों की विशेषज्ञता।",
@@ -3050,7 +3197,10 @@ export const translations = {
       luxury_group: "लक्ज़री चश्मा",
       carbon_fiber_group: "कार्बन फाइबर चश्मा",
       rimless_group: "रिमलेस चश्मा",
-    }
+    },
+    blog: {
+      emptyState: "अभी तक कोई ब्लॉग पोस्ट नहीं। जल्द ही वापस आएं!",
+    },
   },
   vi: {
     thankyou: {
@@ -3100,7 +3250,15 @@ export const translations = {
       collection_unisex: "Kính Unisex",
       collection_new: "Hàng Mới Về",
       collection_bestsellers: "Bán Chạy Nhất",
-      collection_sustainable: "Bộ sưu tập Bền vững"
+      collection_sustainable: "Bộ sưu tập Bền vững",
+      menu: "Menu",
+      skipToContent: "Chuyển đến nội dung",
+
+      ariaSearch: "Tìm kiếm",
+      ariaClearSearch: "Xóa tìm kiếm",
+      ariaOpenMenu: "Mở menu",
+      ariaCloseMenu: "Đóng menu",
+      ariaToggleSubmenu: "Chuyển đổi menu con",
     },
     footer: {
       tagline: "Kính Quang Học & Kính Mát",
@@ -3183,10 +3341,10 @@ export const translations = {
       partnerDesc: "Hợp tác với nhà sản xuất được các nhà lãnh đạo ngành công nghiệp tin tưởng trong hơn một thế kỷ qua. Tùy chỉnh hoàn toàn mọi khía cạnh - chất liệu, hình dáng, màu sắc và thông số kỹ thuật - mang đến tay nghề tinh xảo và chất lượng cao cấp với quy mô lớn.",
       benefit1: "Hàng thập kỷ chuyên môn trong sản xuất kính mắt sang trọng.",
       benefit2: "Tùy chỉnh chính xác về vật liệu, thiết kế và thông số kỹ thuật.",
-      benefit3: "Kiểm soát chất lượng xuất sắc",
+      benefit3: "Kiểm soát chất lượng xuất sắc đảm bảo hoàn thiện hoàn hảo.",
       benefit4: "Sản xuất mở rộng tiên tiến với độ chính xác và nhất quán cao.",
       benefit5: "Vật liệu tiên tiến tuân thủ các tiêu chuẩn ngành công nghiệp.",
-      benefit6: "Giao hàng đáng tin cậy phù hợp với các đường ray sản xuất của bạn.",
+      benefit6: "Giao hàng đáng tin cậy phù hợp với tiến độ sản xuất của bạn.",
       projectFormTitle: "Bắt đầu dự án của bạn",
       projectFormDesc: "Gửi thông tin dự án của bạn và nhóm kỹ thuật của chúng tôi sẽ cung cấp bản đánh giá xem xét sơ bộ chi tiết trong vòng 24 giờ.",
       nameOrg: "Tên / Tổ chức",
@@ -3229,7 +3387,7 @@ export const translations = {
     },
     layout: {
       description: "Sản xuất kính mắt B2B cao cấp đến từ Trung Quốc. OEM/ODM gọng kính tùy chỉnh cho các nhà bán lẻ và thương hiệu toàn cầu.",
-      schemaDescription: "Kssmi Eyewear là một nhà sản xuất kính B2B chuyên nghiệp chuyên nghiệp về gọng kính và kính râm chất lượng cao của OEM / ODM, được gửi từ các nhà máy Trung Quốc bắt đầu từ năm 2003.",
+      schemaDescription: "Kssmi Eyewear là một nhà sản xuất kính B2B chuyên nghiệp về gọng kính và kính râm chất lượng cao của OEM / ODM, được gửi từ các nhà máy Trung Quốc bắt đầu từ năm 2003.",
     },
     sidebar: {
       // Primary Categories
@@ -3277,7 +3435,10 @@ export const translations = {
       luxury_group: "Kính Xa xỉ",
       carbon_fiber_group: "Kính Sợi carbon",
       rimless_group: "Kính Không vành",
-    }
+    },
+    blog: {
+      emptyState: "Chưa có bài viết nào. Hãy quay lại sớm!",
+    },
   },
   jv: {
     thankyou: {
@@ -3310,7 +3471,7 @@ export const translations = {
       classics: "Koleksi Klasik",
       classics_sunglasses: "Kacamata Matahari Klasik",
       classics_glasses: "Kacamata Klasik",
-      fashion: "Seri Pantek Fashion",
+      fashion: "Seri Fashion",
       acetate_sun: "Kaca Mata Acetate",
       metal_sun: "Kaca Mata Logam",
       metal_glass: "Kaca Mata Logam",
@@ -3321,13 +3482,21 @@ export const translations = {
       rimless_glass: "Kacamata Tanpa Rimless",
       carbon: "Koleksi Carbon",
       carbon_sun: "Kacamata Sun Carbon",
-      carbon_glass: "Kacamata Kabar",
+      carbon_glass: "Kacamata Karbon",
       collection_men: "Pria",
       collection_women: "Wanita",
       collection_unisex: "Seri Unisex",
       collection_new: "Baru Datang",
       collection_bestsellers: "Kacamata Favorit",
-      collection_sustainable: "Sere Sustanabel"
+      collection_sustainable: "Sere Sustanabel",
+      menu: "Menu",
+      skipToContent: "Langsung menyang isi",
+
+      ariaSearch: "Nggoleki",
+      ariaClearSearch: "Mbusak nggoleki",
+      ariaOpenMenu: "Bukak menu",
+      ariaCloseMenu: "Nutup menu",
+      ariaToggleSubmenu: "Ganti submenu",
     },
     footer: {
       tagline: "Kacamata Optik & Sun Eyewear",
@@ -3358,13 +3527,13 @@ export const translations = {
       catalog: "Tingali Katalog"
     },
     search: {
-      placeholder: "Luru produk ngisor...",
+      placeholder: "Luru produk...",
       noResults: "Ora Nesuwi Apa"
     },
     floating: {
       inquiry: "Nduwe Kutipan",
-      email: "Hub Kami WhatsApp",
-      whatsapp: "Hub Kami Email",
+      email: "Hub Kami Email",
+      whatsapp: "Hub Kami WhatsApp",
       backToTop: "Kembali Katon Ndhuwur"
     },
     product: {
@@ -3504,7 +3673,10 @@ export const translations = {
       luxury_group: "Kacamata Mewah",
       carbon_fiber_group: "Kacamata Serat Karbon",
       rimless_group: "Kacamata Tanpa Rangka",
-    }
+    },
+    blog: {
+      emptyState: "Durung ana artikel. Enggal dipriksa maneh!",
+    },
   },
 
   ms: {
@@ -3555,7 +3727,15 @@ export const translations = {
       collection_unisex: "Cermin Mata Unisex",
       collection_new: "Ketibaan Baru",
       collection_bestsellers: "Produk Terlaris",
-      collection_sustainable: "Koleksi Mampan"
+      collection_sustainable: "Koleksi Mampan",
+      menu: "Menu",
+      skipToContent: "Langkau ke kandungan",
+
+      ariaSearch: "Cari",
+      ariaClearSearch: "Kosongkan carian",
+      ariaOpenMenu: "Buka menu",
+      ariaCloseMenu: "Tutup menu",
+      ariaToggleSubmenu: "Togol submenu",
     },
     footer: {
       tagline: "Cermin Mata Optik & Cermin Mata Hitam",
@@ -3710,20 +3890,20 @@ export const translations = {
       carbon_fiber: "Cermin Mata Karbon",
       rimless: "Cermin Mata Tanpa Rangka",
       // Combined Tags
-      fashion_acetate_sunglasses: "Cermin Moda Asetat",
-      fashion_metal_sunglasses: "Cermin Moda Logam",
-      fashion_acetate_glasses: "Asetat Moda Optik",
-      fashion_metal_glasses: "Logam Moda Optik",
+      fashion_acetate_sunglasses: "Cermin Mata Fesyen Asetat",
+      fashion_metal_sunglasses: "Cermin Mata Fesyen Logam",
+      fashion_acetate_glasses: "Asetat Fesyen Optik",
+      fashion_metal_glasses: "Logam Fesyen Optik",
       fashion_acetate_optical_frames: "Bingkai Optik Moda Asetat",
       fashion_metal_optical_frames: "Bingkai Optik Moda Logam",
-      luxury_acetate_sunglasses: "Cermin Mewah Asetat",
-      luxury_titanium_sunglasses: "Cermin Mewah Titan",
+      luxury_acetate_sunglasses: "Cermin Mata Mewah Asetat",
+      luxury_titanium_sunglasses: "Cermin Mata Mewah Titan",
       luxury_acetate_glasses: "Asetat Mewah Optik",
       luxury_titanium_glasses: "Titan Mewah Optik",
       luxury_acetate_optical_frames: "Bingkai Optik Mewah Asetat",
       luxury_titanium_optical_frames: "Bingkai Optik Mewah Titan",
-      classics_acetate_sunglasses: "Cermin Klasik Asetat",
-      classics_metal_sunglasses: "Cermin Klasik Logam",
+      classics_acetate_sunglasses: "Cermin Mata Klasik Asetat",
+      classics_metal_sunglasses: "Cermin Mata Klasik Logam",
       classics_acetate_glasses: "Bingkai Klasik Asetat",
       classics_metal_glasses: "Bingkai Klasik Logam",
       // UI Labels
@@ -3735,7 +3915,10 @@ export const translations = {
       luxury_group: "Cermin Mata Mewah",
       carbon_fiber_group: "Cermin Mata Karbon",
       rimless_group: "Cermin Mata Tanpa Rangka",
-    }
+    },
+    blog: {
+      emptyState: "Belum ada artikel. Sila kembali nanti!",
+    },
   },
 
   tg: {
@@ -3786,7 +3969,15 @@ export const translations = {
       collection_unisex: "Айнаки Унисекс",
       collection_new: "Омадагони нав",
       collection_bestsellers: "Серхаридортарин",
-      collection_sustainable: "Маҷмӯаи устувор"
+      collection_sustainable: "Маҷмӯаи устувор",
+      menu: "Меню",
+      skipToContent: "Гузаштан ба мундариҷа",
+
+      ariaSearch: "Ҷустуҷӯ",
+      ariaClearSearch: "Тоза кардани ҷустуҷӯ",
+      ariaOpenMenu: "Кушодани меню",
+      ariaCloseMenu: "Пӯшидани меню",
+      ariaToggleSubmenu: "Иваз кардани зерменю",
     },
     footer: {
       tagline: "Айнакҳои Оптикӣ ва Офтобӣ",
@@ -3922,51 +4113,54 @@ export const translations = {
     },
     sidebar: {
       // Primary Categories
-      sunglasses: "แว่นกันแดด",
-      optical_frames: "กรอบแว่น",
-      acetate_sunglasses: "แว่นกันแดดอะซิเตต",
-      metal_sunglasses: "แว่นกันแดดโลหะ",
-      titanium_sunglasses: "แว่นกันแดดไทเทเนียม",
-      carbon_fiber_sunglasses: "แว่นกันแดดเส้นใยคาร์บอน",
-      rimless_sunglasses: "แว่นกันแดดไร้กรอบ",
-      acetate_glasses: "กรอบแว่นอะซิเตต",
-      metal_glasses: "กรอบแว่นโลหะ",
-      titanium_glasses: "กรอบแว่นไทเทเนียม",
-      carbon_glasses: "กรอบแว่นเส้นใยคาร์บอน",
-      rimless_glasses: "กรอบแว่นไร้กรอบ",
+      sunglasses: "Офтобӣ",
+      optical_frames: "Чаҳорчӯбаи Оптикӣ",
+      acetate_sunglasses: "Офтобии Атсетатӣ",
+      metal_sunglasses: "Офтобии Металлӣ",
+      titanium_sunglasses: "Офтобии Титаний",
+      carbon_fiber_sunglasses: "Офтобии Нахи Карбон",
+      rimless_sunglasses: "Офтобии Бечорчӯба",
+      acetate_glasses: "Чаҳорчӯбаи Атсетатӣ",
+      metal_glasses: "Чаҳорчӯбаи Металлӣ",
+      titanium_glasses: "Чаҳорчӯбаи Титаний",
+      carbon_glasses: "Чаҳорчӯбаи Нахи Карбон",
+      rimless_glasses: "Чаҳорчӯбаи Бечорчӯба",
       // Series Tags
-      fashion: "แฟชัน แว่นตา",
-      luxury: "หรูหรา แว่นตา",
-      classics: "คลาสสิก",
-      carbon_fiber: "เส้นใยคาร์บอน แว่นตา",
-      rimless: "ไร้กรอบ แว่นตา",
+      fashion: "Айнаки Муд",
+      luxury: "Айнаки Лукс",
+      classics: "Классикӣ",
+      carbon_fiber: "Айнаки Нахи Карбон",
+      rimless: "Айнаки Бечорчӯба",
       // Combined Tags
-      fashion_acetate_sunglasses: "แว่นกันแดดอะซิเตตแฟชัน",
-      fashion_metal_sunglasses: "แว่นกันแดดโลหะแฟชัน",
-      fashion_acetate_glasses: "อะซิเตตแฟชันออปติคอล",
-      fashion_metal_glasses: "โลหะแฟชันออปติคอล",
-      fashion_acetate_optical_frames: "กรอบแว่นอะซิเตตแฟชันออปติคอล",
-      fashion_metal_optical_frames: "กรอบแว่นโลหะแฟชันออปติคอล",
-      luxury_acetate_sunglasses: "แว่นกันแดดอะซิเตตหรูหรา",
-      luxury_titanium_sunglasses: "แว่นกันแดดไทเทเนียมหรูหรา",
-      luxury_acetate_glasses: "อะซิเตตหรูหราออปติคอล",
-      luxury_titanium_glasses: "ไทเทเนียมหรูหราออปติคอล",
-      luxury_acetate_optical_frames: "กรอบแว่นอะซิเตตหรูหราออปติคอล",
-      luxury_titanium_optical_frames: "กรอบแว่นไทเทเนียมหรูหราออปติคอล",
-      classics_acetate_sunglasses: "คลาสสิก แว่นกันแดดอะซิเตต",
-      classics_metal_sunglasses: "คลาสสิก แว่นกันแดดโลหะ",
-      classics_acetate_glasses: "คลาสสิก กรอบแว่นอะซิเตต",
-      classics_metal_glasses: "คลาสสิก กรอบแว่นโลหะ",
+      fashion_acetate_sunglasses: "Офтобии Муд Атсетатӣ",
+      fashion_metal_sunglasses: "Офтобии Муд Металлӣ",
+      fashion_acetate_glasses: "Оптикии Муд Атсетатӣ",
+      fashion_metal_glasses: "Оптикии Муд Металлӣ",
+      fashion_acetate_optical_frames: "Чаҳорчӯбаи Оптикии Муд Атсетатӣ",
+      fashion_metal_optical_frames: "Чаҳорчӯбаи Оптикии Муд Металлӣ",
+      luxury_acetate_sunglasses: "Офтобии Лукс Атсетатӣ",
+      luxury_titanium_sunglasses: "Офтобии Лукс Титаний",
+      luxury_acetate_glasses: "Оптикии Лукс Атсетатӣ",
+      luxury_titanium_glasses: "Оптикии Лукс Титаний",
+      luxury_acetate_optical_frames: "Чаҳорчӯбаи Оптикии Лукс Атсетатӣ",
+      luxury_titanium_optical_frames: "Чаҳорчӯбаи Оптикии Лукс Титаний",
+      classics_acetate_sunglasses: "Офтобии Классикӣ Атсетатӣ",
+      classics_metal_sunglasses: "Офтобии Классикӣ Металлӣ",
+      classics_acetate_glasses: "Чаҳорчӯбаи Классикӣ Атсетатӣ",
+      classics_metal_glasses: "Чаҳорчӯбаи Классикӣ Металлӣ",
       // UI Labels
-      tags_filters: "แท็กและตัวกรอง",
-      all_products: "สินค้าทั้งหมด",
-      view_all_collections: "ดูคอลเลกชันทั้งหมด",
-      products_in_category: "สินค้าในหมวดนี้",
-      fashion_group: "แฟชัน แว่นตา",
-      luxury_group: "หรูหรา แว่นตา",
-      carbon_fiber_group: "เส้นใยคาร์บอน แว่นตา",
-      rimless_group: "ไร้กรอบ แว่นตา",
-    }
+      tags_filters: "Тегҳо ва Филтрҳо",
+      all_products: "Ҳамаи Маҳсулот",
+      view_all_collections: "Дидани Ҳамаи Маҷмӯаҳо",
+      products_in_category: "маҳсулот дар ин категория",
+      fashion_group: "Айнаки Муд",
+      luxury_group: "Айнаки Лукс",
+      carbon_fiber_group: "Айнаки Нахи Карбон",
+      rimless_group: "Айнаки Бечорчӯба",
+    },
+    blog: {
+      emptyState: "Ҳоло ягон мақола нашр нашудааст. Ба наздикӣ тафтиш кунед!",
+    },
   }
 } as const;
 

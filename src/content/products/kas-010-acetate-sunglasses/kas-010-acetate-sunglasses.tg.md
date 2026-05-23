@@ -4,7 +4,7 @@ title: "Айнаки офтобии ацетатии боҳашамати фар
 slug: "kas-010-acetate-sunglasses"
 itemNo: "KAS-010"
 date: "2026-05-10"
-colors: "Сиёҳ & Meteor-Crystal & Tanzanite & Bombardie"
+colors: "Сиёҳ & Meteor-Crystal & Tanzanite & Bordeaux"
 materials: "Mazzucchelli-и олӣ & Атсетати JINYU & Фармоишсозӣ"
 serviceMode: "Истеҳсоли фармоишӣ / Тарроҳӣ ва Истеҳсол – Фармоишсозӣ"
 moq: "300 ад/модел (100ад/ранг)"

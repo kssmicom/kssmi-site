@@ -133,7 +133,7 @@ materials:
       - Artisanat fait main
       - Individualité remarquable
     slug: 'wood-eyewear'
-    image: '/media/products/kso-006-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-006-1.webp'
+    image: '/media/products/kso-225-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-225-1.webp'
 
   - name: 'Montures en Corne de Buffle'
     subtitle: 'Luxe naturel rare avec des motifs marbrés organiques'

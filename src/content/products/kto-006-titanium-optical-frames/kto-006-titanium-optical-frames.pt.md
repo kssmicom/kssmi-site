@@ -21,7 +21,7 @@ lensMaterial: "Lentes AC & Nylon & Personalização"
 designStyle: "Luxo, Retrô, Unisex"
 nosePads: "Plaquetas de Nariz Inteiriças"
 hinge: "Dobradiças de 3 Cilindros"
-electroplatingMethod: "Plaqueamento ION"
+electroplating: "Plaqueamento ION"
 logo: "Impressão Tampográfica, Gravação a Laser, Gravação a Laser com Esmalte, Estampagem a Quente, Logotipo Metálico, Decoração di Cristal, Adesivo 3D"
 service: "Fabricação OEM / ODM – Personalização"
 

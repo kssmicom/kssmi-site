@@ -21,7 +21,7 @@ lensMaterial: "Lentille AC & Personnalisation"
 designStyle: "Luxe, Élégant, Unisexe"
 nosePads: "Plaquettes de Nez Monobloc"
 hinge: "Charnière à Ressort"
-electroplatingMethod: "Placage ION"
+electroplating: "Placage ION"
 logo: "Impression Tampon, Gravure Laser, Gravure Laser Émaillée, Marquage à Chaud, Logo Métallique, Décoration en Cristal, Autocollant 3D"
 service: "Fabrication OEM / ODM – Personnalisation"
 

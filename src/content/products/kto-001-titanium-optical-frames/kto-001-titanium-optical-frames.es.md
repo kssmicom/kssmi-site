@@ -21,7 +21,7 @@ lensMaterial: "Lentes de Nylon & Personalización"
 designStyle: "Lujo, Clásico, Unisex"
 nosePads: "Almohadillas Nasales de Metal Ajustables"
 hinge: "Bisagra de Resorte"
-electroplatingMethod: "Recubrimientos Iónicos"
+electroplating: "Recubrimientos Iónicos"
 logo: "Impresión Tampográfica, Grabado Láser, Grabado Láser con Esmalte, Estampado en Caliente, Logotipo Metálico, Decoración de Cristal, Adhesivo 3D"
 service: "Fabricación OEM / ODM – Personalización"
 

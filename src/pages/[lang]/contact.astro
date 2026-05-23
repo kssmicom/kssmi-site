@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import { translations } from '../../translations';
 
 export async function getStaticPaths() {
   const languages = ['it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
@@ -12,9 +13,11 @@ export async function getStaticPaths() {
 }
 
 const { lang } = Astro.props;
+const t = (translations as any)[lang] || translations.en;
+const pageTitle = `${t.nav?.contact || 'Contact'} | Kssmi Eyewear`;
 ---
 
-<Layout title="Contact | Kssmi Eyewear" lang={lang}>
+<Layout title={pageTitle} lang={lang}>
   <Header lang={lang} />
 
   <main>

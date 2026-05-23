@@ -21,7 +21,7 @@ lensMaterial: "AC Lens & Özelleştirme"
 designStyle: "Lüks, Şık, Unisex"
 nosePads: "Tek Parça Burun Tamponları"
 hinge: "Yaylı Menteşe"
-electroplatingMethod: "ION Kaplama"
+electroplating: "ION Kaplama"
 logo: "Tampo Baskı, Lazer Markalama, Boya Dolgulu Lazer, Sıcak Baskı, Metal Logo, Kristal Süsleme, 3D Etiket"
 service: "OEM / ODM Üretim – Özelleştirme"
 

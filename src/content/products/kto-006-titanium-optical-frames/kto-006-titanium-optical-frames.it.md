@@ -21,7 +21,7 @@ lensMaterial: "Lenti AC & Nylon & Personalizzazione"
 designStyle: "Lusso, Retrò, Unisex"
 nosePads: "Naselli a Pezzo Unico"
 hinge: "Cerniere a 3 Barili"
-electroplatingMethod: "Placcatura ION"
+electroplating: "Placcatura ION"
 logo: "Stampa Tampografica, Incisione Laser, Incisione Laser con Smalto, Stampa a Caldo, Logo in Metallo, Decorazione in Cristallo, Logo 3D Adesivo"
 service: "Produzione OEM / ODM – Personalizzazione"
 

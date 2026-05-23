@@ -34,8 +34,8 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: ""
-seoDescription: ""
+seoTitle: "KAS-510 Kính râm Axetat Thời trang | Nhà cung cấp Tùy chỉnh"
+seoDescription: "Kính râm axetat cao cấp Mazzucchelli và JINYU có sẵn cho tùy chỉnh OEM/ODM toàn diện. Kích thước gọng, màu sắc và tùy chọn logo theo yêu cầu. MOQ 300 cho mỗi mẫu."
 seoKeywords: ""
 ---
 

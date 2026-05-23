@@ -5,7 +5,7 @@ slug: "kso-032-carbon-fiber-optical-frame"
 itemNo: "KSO-032"
 date: "2026-04-05"
 colors: "Kayu Keemasan & Gentian Karbon Hijau Corak Twill & Gentian Karbon Corak Kosong Gun Matt & Kayu Gentian Karbon Corak Kosong Perak Matt"
-materials: "Gentian Karbon Premium dan Titanim"
+materials: "Gentian Karbon Premium dan Titanium"
 serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & Pembuatan ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model"
 
@@ -16,7 +16,7 @@ series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames"
 
 # ─────────────────────────────────────────────────────
 size: "48-21-145mm & Penyesuaian"
-frameMaterial: "Bingkai Gentian Karbon Premium dan Gagang Titanim"
+frameMaterial: "Bingkai Gentian Karbon Premium dan Gagang Titanium"
 lensMaterial: "Kanta Nilon Teguh & Penyesuaian"
 designStyle: "Klasik, Fesyen, Bergaya, Trendi, Mewah, Unisex"
 nosePads: "Alas Hidung Getah"
@@ -48,12 +48,12 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Bingkai Optik Gentian Karbon Mewah KSO-032 | Pengilang OEM"
-seoDescription: "Bekerjasama dengan pengilang terkemuka China untuk bingkai optik gentian karbon & titanim mewah KSO-032. Perkhidmatan OEM/ODM penuh dengan 300 MOQ untuk label peribadi."
-seoKeywords: "pengilang bingkai optik gentian karbon, kacamata tersuai OEM China, bingkai gentian karbon label peribadi, borong kacamata optik mewah, kilang kacamata titanim gentian karbon, pembekal borong kacamata ODM, bingkai optik kualiti eksport, kacamata gentian karbon B2B China"
+seoDescription: "Bekerjasama dengan pengilang terkemuka China untuk bingkai optik gentian karbon & titanium mewah KSO-032. Perkhidmatan OEM/ODM penuh dengan 300 MOQ untuk label peribadi."
+seoKeywords: "pengilang bingkai optik gentian karbon, kacamata tersuai OEM China, bingkai gentian karbon label peribadi, borong kacamata optik mewah, kilang kacamata titanium gentian karbon, pembekal borong kacamata ODM, bingkai optik kualiti eksport, kacamata gentian karbon B2B China"
 ---
 
 ## Ciri-ciri Utama
-- **Bahan Gred Aeroangkasa:** Bingkai gentian karbon premium dan gagang titanim menawarkan rasa ultra-ringan dengan nisbah kekuatan-ke-berat yang melampau.
+- **Bahan Gred Aeroangkasa:** Bingkai gentian karbon premium dan gagang titanium menawarkan rasa ultra-ringan dengan nisbah kekuatan-ke-berat yang melampau.
 - **Perkakasan Tahan Lama:** Engsel struktur tong 2+1 yang stabil direka untuk kelancaran operasi jangka panjang dan kestabilan bingkai.
 - **Optik Premium:** Kanta nilon teguh memberikan rintangan hentaman yang unggul dengan pilihan penyesuaian yang meluas untuk pelanggan B2B global.
 - **Keselesaan Sepanjang Hari:** Alas hidung getah ergonomik direka untuk muat yang selamat dan hipoalergenik semasa pemakaian harian yang berpanjangan.

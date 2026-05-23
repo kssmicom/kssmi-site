@@ -21,7 +21,7 @@ lensMaterial: "Tròng kính TAC & Tùy chỉnh theo yêu cầu"
 designStyle: "Xa xỉ, Cổ điển, Unisex"
 nosePads: "Đệm mũi kim loại có thể điều chỉnh"
 hinge: "3 Bản lề"
-electroplatingMethod: "Mạ ION"
+electroplating: "Mạ ION"
 logo: "In, Laser, Laser đổ dầu, Ép kim, Huy hiệu kim loại, Đính đá, Nhãn dán 3D"
 service: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 

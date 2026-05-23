@@ -18,7 +18,7 @@ series: "optical-frames, fashion-eyewear, metal-optical-frames, fashion-metal-op
 size: "54-19-140mm & Personalizzazione"
 frameMaterial: "Montatura in Acetato Premium e Aste in Metallo"
 lensMaterial: "Lenti AC, TAC, Nylon Tenace & Personalizzazione"
-designStyle: "Unico, Classico, Trendy, Moda, Elegante, Trendy, Lusso, Unisex"
+designStyle: "Unico, Classico, Trendy, Moda, Elegante, Lusso, Unisex"
 nosePads: "Naselli Integrati in Silicone Trasparente"
 hinge: "Cerniere a Struttura Composita 2+1 Barile & Personalizzazione"
 electroplating: "Placcatura Ionica"

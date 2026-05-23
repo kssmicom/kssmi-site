@@ -133,7 +133,7 @@ materials:
       - Artesanía hecha a mano
       - Individualidad destacada
     slug: 'wood-eyewear'
-    image: '/media/products/kso-006-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-006-1.webp'
+    image: '/media/products/kso-225-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-225-1.webp'
 
   - name: 'Monturas de Cuerno de Búfalo'
     subtitle: 'Lujo natural excepcional con patrones orgánicos veteados'

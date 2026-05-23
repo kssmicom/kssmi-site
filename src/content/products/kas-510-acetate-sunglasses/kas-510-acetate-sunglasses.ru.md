@@ -34,8 +34,8 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: ""
-seoDescription: ""
+seoTitle: "KAS-510 Модные ацетатные солнцезащитные очки | Поставщик на заказ"
+seoDescription: "Премиальные ацетатные солнцезащитные очки Mazzucchelli и JINYU для полной кастомизации OEM/ODM. Индивидуальные размеры оправ, расцветки и варианты логотипов. MOQ 300 на модель."
 seoKeywords: ""
 ---
 

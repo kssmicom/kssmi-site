@@ -11,6 +11,8 @@ import { translations } from '../../../translations';
 import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
 import { isCategoryMatch, getSlug } from '../../../utils/categoryMatching';
+import { getProductLang } from '../../../utils/language';
+import { buildPrimaryCategories, buildSidebarTags } from '../../../utils/sidebar';
 import Pagination from '../../../components/Pagination.astro';
 
 export async function getStaticPaths() {
@@ -21,8 +23,7 @@ export async function getStaticPaths() {
   return languages.map((lang) => {
     // ID format: "kso-001.en" -> extract "en" by splitting on "."
     const langProducts = allProducts.filter((product) => {
-      const parts = product.id.split('.');
-      const productLang = parts.length > 1 ? parts.pop() : 'en';
+      const productLang = getProductLang(product);
       return productLang === lang;
     });
 
@@ -57,71 +58,9 @@ const pt = t.product || {
   allProducts: "All Products",
 };
 
-// Primary Categories (Hierarchical)
-const primaryCategories = [
-  {
-    label: t.sidebar.sunglasses,
-    href: `/${currentPath}product/sunglasses`,
-    items: [
-      { label: t.sidebar.acetate_sunglasses, href: `/${currentPath}product/acetate-sunglasses` },
-      { label: t.sidebar.metal_sunglasses, href: `/${currentPath}product/metal-sunglasses` },
-      { label: t.sidebar.titanium_sunglasses, href: `/${currentPath}product/titanium-sunglasses` },
-      { label: t.sidebar.carbon_fiber_sunglasses, href: `/${currentPath}product/carbon-fiber-sunglasses` },
-      { label: t.sidebar.rimless_sunglasses, href: `/${currentPath}product/rimless-sunglasses` }
-    ]
-  },
-  {
-    label: t.sidebar.optical_frames,
-    href: `/${currentPath}product/optical-frames`,
-    items: [
-      { label: t.sidebar.acetate_glasses, href: `/${currentPath}product/acetate-optical-frames` },
-      { label: t.sidebar.metal_glasses, href: `/${currentPath}product/metal-optical-frames` },
-      { label: t.sidebar.titanium_glasses, href: `/${currentPath}product/titanium-optical-frames` },
-      { label: t.sidebar.carbon_glasses, href: `/${currentPath}product/carbon-fiber-optical-frames` },
-      { label: t.sidebar.rimless_glasses, href: `/${currentPath}product/rimless-optical-frames` }
-    ]
-  }
-];
+const primaryCategories = buildPrimaryCategories(t, currentPath);
 
-// Tags / Filters (Flat Groups) - matches English product/index.astro
-const sidebarTags = [
-  {
-    label: t.sidebar.fashion,
-    href: `/${currentPath}product/fashion-eyewear`,
-    items: [
-      { label: t.sidebar.fashion_acetate_sunglasses, href: `/${currentPath}product/fashion-acetate-sunglasses` },
-      { label: t.sidebar.fashion_metal_sunglasses, href: `/${currentPath}product/fashion-metal-sunglasses` },
-      { label: t.sidebar.fashion_acetate_optical_frames, href: `/${currentPath}product/fashion-acetate-optical-frames` },
-      { label: t.sidebar.fashion_metal_optical_frames, href: `/${currentPath}product/fashion-metal-optical-frames` }
-    ]
-  },
-  {
-    label: t.sidebar.luxury,
-    href: `/${currentPath}product/luxury-eyewear`,
-    items: [
-      { label: t.sidebar.luxury_acetate_sunglasses, href: `/${currentPath}product/luxury-acetate-sunglasses` },
-      { label: t.sidebar.luxury_titanium_sunglasses, href: `/${currentPath}product/luxury-titanium-sunglasses` },
-      { label: t.sidebar.luxury_acetate_optical_frames, href: `/${currentPath}product/luxury-acetate-optical-frames` },
-      { label: t.sidebar.luxury_titanium_optical_frames, href: `/${currentPath}product/luxury-titanium-optical-frames` }
-    ]
-  },
-  {
-    label: t.sidebar.carbon_fiber,
-    href: `/${currentPath}product/carbon-fiber-eyewear`,
-    items: [
-      { label: t.sidebar.carbon_fiber_sunglasses, href: `/${currentPath}product/carbon-fiber-sunglasses` },
-      { label: t.sidebar.carbon_glasses, href: `/${currentPath}product/carbon-fiber-optical-frames` }
-    ]
-  },
-  {
-    label: t.sidebar.rimless,
-    href: `/${currentPath}product/rimless-eyewear`,
-    items: [
-      { label: t.sidebar.rimless_sunglasses, href: `/${currentPath}product/rimless-sunglasses` },
-      { label: t.sidebar.rimless_glasses, href: `/${currentPath}product/rimless-optical-frames` }
-    ]
-  }
-];
+const sidebarTags = buildSidebarTags(t, currentPath);
 
 function getCategoryCount(href: string): number {
   const targetSlug = href.split('/').pop() || '';
@@ -138,7 +77,7 @@ const lcpImage = products[0]?.data?.cover || undefined;
 <Layout title={t.nav.products} lang={lang} lcpImage={lcpImage}>
   <Header lang={lang} />
 
-  <main class="w-full min-h-screen py-6 lg:py-8 bg-stone-50">
+  <main class="w-full min-h-screen py-6 lg:py-8 bg-stone-50" dir={isRTL ? 'rtl' : 'ltr'}>
     <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
         <!-- Sidebar: Category Filter (Hidden on mobile/tablet) -->

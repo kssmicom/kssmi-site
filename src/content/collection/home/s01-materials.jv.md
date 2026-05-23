@@ -133,7 +133,7 @@ materials:
       - Seni buatan tangan
       - Individualitas ingkang katon
     slug: 'wood-eyewear'
-    image: '/media/products/kso-006-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-006-1.webp'
+    image: '/media/products/kso-225-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-225-1.webp'
 
   - name: 'Kacamata Sungu Kebo'
     subtitle: 'Kemewahan alami langka kanthi pola marmer organik'

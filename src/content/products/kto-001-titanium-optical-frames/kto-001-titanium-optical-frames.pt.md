@@ -21,7 +21,7 @@ lensMaterial: "Lentes de Nylon & Personalização"
 designStyle: "Luxo, Clássico, Unisex"
 nosePads: "Ponteiras Nasicas de Metal Ajustáveis"
 hinge: "Dobradiça de Mola"
-electroplatingMethod: "Placagem Iônica"
+electroplating: "Placagem Iônica"
 logo: "Impressão Tampográfica, Gravação a Laser, Gravação a Laser com Esmalte, Estampagem a Quente, Logotipo Metálico, Decoração di Cristal, Adesivo 3D"
 service: "Fabricação OEM / ODM – Personalização"
 

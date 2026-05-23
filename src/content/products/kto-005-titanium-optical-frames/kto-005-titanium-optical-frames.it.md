@@ -21,7 +21,7 @@ lensMaterial: "Lente AC & Personalizzazione"
 designStyle: "Lusso, Elegante, Unisex"
 nosePads: "Naselli a Pezzo Unico"
 hinge: "Cerniera a Molla"
-electroplatingMethod: "Placcatura ION"
+electroplating: "Placcatura ION"
 logo: "Stampa Tampografica, Incisione Laser, Incisione Laser con Smalto, Stampa a Caldo, Logo in Metallo, Decorazione in Cristallo, Logo 3D Adesivo"
 service: "Produzione OEM / ODM – Personalizzazione"
 

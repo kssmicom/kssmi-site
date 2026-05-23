@@ -5,7 +5,7 @@ slug: "kto-004-titanium-optical-frames"
 itemNo: "KTO-004"
 date: "2026-04-06"
 colors: "Kura-kura, Biru"
-materials: "Titanim Premium"
+materials: "Titanium Premium"
 serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model"
 
@@ -16,12 +16,12 @@ series: "optical-frames, titanium-optical-frames, luxury-eyewear, luxury-titaniu
 
 # ─────────────────────────────────────────────────────
 size: "52-18-145mm & Penyesuaian"
-frameMaterial: "Titanim Premium dan Asetat & Penyesuaian"
+frameMaterial: "Titanium Premium dan Asetat & Penyesuaian"
 lensMaterial: "Lensa TAC & Penyesuaian"
 designStyle: "Mewah, Klasik, Unisex"
 nosePads: "Alas Hidung Logam Boleh Laras"
 hinge: "3 Engsel"
-electroplatingMethod: "Penyaduran ION"
+electroplating: "Penyaduran ION"
 logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Lencana Logam, Kristal, Pelekat"
 service: "Pembuatan OEM / ODM – Penyesuaian"
 

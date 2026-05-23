@@ -34,8 +34,8 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: ""
-seoDescription: ""
+seoTitle: "KAS-510 Moda Trendi Asetat Güneş Gözlüğü | Özel Tedarikçi"
+seoDescription: "Tam OEM/ODM özelleştirmesi için mevcut birinci sınıf Mazzucchelli ve JINYU asetat güneş gözlükleri. Özel çerçeve boyutları, renk yolları ve logo seçenekleri. Model başına 300 MOQ."
 seoKeywords: ""
 ---
 

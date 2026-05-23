@@ -21,7 +21,7 @@ lensMaterial: "Verre TAC & Personnalisation"
 designStyle: "Luxe, Classique, Unisexe"
 nosePads: "Plaquettes de Nez en Métal Ajustables"
 hinge: "3 Charnières"
-electroplatingMethod: "Électroplacage ION"
+electroplating: "Électroplacage ION"
 logo: "Impression Tampon, Gravure Laser, Gravure Laser Émaillée, Marquage à Chaud, Logo Métallique, Décoration en Cristal, Autocollant 3D"
 service: "Fabrication OEM / ODM – Personnalisation"
 

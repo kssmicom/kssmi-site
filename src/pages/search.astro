@@ -128,7 +128,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
       </div>
 
       <!-- Results Grid -->
-      <div id="results-grid" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div id="search-results" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       </div>
 
       <!-- No Results State -->
@@ -171,16 +171,6 @@ const viewDetailsText = pt.viewDetails || 'View Details';
 </Layout>
 
 <style is:global>
-  /* Hide browser's default search clear button */
-  input[type="search"]::-webkit-search-cancel-button {
-    -webkit-appearance: none;
-    appearance: none;
-    display: none;
-  }
-  input[type="search"]::-moz-search-clear-button {
-    display: none;
-  }
-
   /* ── Search Result Card (mirrors ProductCard.astro) ── */
   .src-card {
     display: block;
@@ -339,7 +329,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
   const countNumber = document.getElementById('count-number');
   const loadingState = document.getElementById('loading-state');
   const emptyState = document.getElementById('empty-state');
-  const resultsGrid = document.getElementById('results-grid');
+  const searchResults = document.getElementById('search-results');
   const noResults = document.getElementById('no-results');
   const errorState = document.getElementById('error-state');
   const pagination = document.getElementById('pagination');
@@ -473,7 +463,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
   function hideAllStates() {
     loadingState?.classList.add('hidden');
     emptyState?.classList.add('hidden');
-    resultsGrid?.classList.add('hidden');
+    searchResults?.classList.add('hidden');
     noResults?.classList.add('hidden');
     errorState?.classList.add('hidden');
     pagination?.classList.add('hidden');
@@ -507,7 +497,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
 
   function showResults() {
     hideAllStates();
-    resultsGrid?.classList.remove('hidden');
+    searchResults?.classList.remove('hidden');
     searchInfo?.classList.remove('hidden');
     if (queryDisplay) queryDisplay.textContent = getQuery();
   }
@@ -602,8 +592,8 @@ const viewDetailsText = pt.viewDetails || 'View Details';
     const endIndex = startIndex + RESULTS_PER_PAGE;
     const pageResults = allResults.slice(startIndex, endIndex);
 
-    if (resultsGrid) {
-      resultsGrid.innerHTML = pageResults.map(item => createResultCard(item)).join('');
+    if (searchResults) {
+      searchResults.innerHTML = pageResults.map(item => createResultCard(item)).join('');
     }
     renderPagination();
   }
@@ -657,7 +647,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
       btn.addEventListener('click', () => {
         const page = parseInt(btn.getAttribute('data-page') || '1');
         renderPage(page);
-        resultsGrid?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        searchResults?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
   }

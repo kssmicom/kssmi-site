@@ -20,7 +20,7 @@ lensMaterial: "AC Lens & Nylon & Customization"
 designStyle: "Luxury, Retro, Unisex"
 nosePads: "One-piece Nose Pads"
 hinge: "3 Barrel Hinges"
-electroplatingMethod: "ION Plating"
+electroplating: "ION Plating"
 logo: "Print, Laser, Laser With Oil, Hot Stamping, Metal, Crystal, Up-sticker"
 service: "OEM / ODM customization"
 

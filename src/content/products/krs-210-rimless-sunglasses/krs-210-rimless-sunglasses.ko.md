@@ -11,8 +11,8 @@ moq: "300 개/모델"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
-material: "Metal"
-series: "Rimless Sunglasses"
+material: "Rimless Sunglasses"
+series: "sunglasses, rimless-sunglasses, rimless-eyewear"
 
 # ─────────────────────────────────────────────────────
 size: "56-19-140mm & 맞춤 서비스"

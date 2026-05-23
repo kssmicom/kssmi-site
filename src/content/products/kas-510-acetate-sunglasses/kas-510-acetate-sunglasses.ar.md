@@ -34,8 +34,8 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: ""
-seoDescription: ""
+seoTitle: "KAS-510 نظارات شمسية أسيتات عصرية | مورد مخصص"
+seoDescription: "نظارات شمسية من أسيتات Mazzucchelli و JINYU الفاخرة متوفرة للتخصيص الكامل OEM/ODM. أحجام إطارات وألوان وخيارات شعار مخصصة. حد أدنى للطلب 300 لكل طراز."
 seoKeywords: ""
 ---
 

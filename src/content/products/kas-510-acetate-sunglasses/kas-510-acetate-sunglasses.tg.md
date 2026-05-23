@@ -34,8 +34,8 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: ""
-seoDescription: ""
+seoTitle: "KAS-510 Айнаки офтобии атсетатии мӯд | Таъминкунандаи фармоишӣ"
+seoDescription: "Айнаки офтобии атсетатии Premium Mazzucchelli ва JINYU барои мутобиқсозии пурраи OEM/ODM дастрас аст. Андозаҳои чаҳорчӯбаи фармоишӣ, рангҳо ва имконоти логотип. 300 MOQ барои як модел."
 seoKeywords: ""
 ---
 

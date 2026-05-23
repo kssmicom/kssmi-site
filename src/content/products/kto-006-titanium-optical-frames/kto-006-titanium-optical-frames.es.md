@@ -21,7 +21,7 @@ lensMaterial: "Lentes AC & Nylon & Personalización"
 designStyle: "Lujo, Retro, Unisex"
 nosePads: "Almohadillas Nasales de Una Sola Pieza"
 hinge: "Bisagras de 3 Barriles"
-electroplatingMethod: "Galvanoplastia ION"
+electroplating: "Galvanoplastia ION"
 logo: "Impresión Tampográfica, Grabado Láser, Grabado Láser con Esmalte, Estampado en Caliente, Logotipo Metálico, Decoración de Cristal, Adhesivo 3D"
 service: "Fabricación OEM / ODM – Personalización"
 

@@ -40,4 +40,3 @@ seoDescription: "Ortaklık fırsatları, OEM/ODM soruları ve milyon dolarlık g
 
 # Vizyonunuz, Uzmanlığımız
 
-```

@@ -133,7 +133,7 @@ materials:
       - Artigianalità fatta a mano
       - Individualità distintiva
     slug: 'wood-eyewear'
-    image: '/media/products/kso-006-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-006-1.webp'
+    image: '/media/products/kso-225-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-225-1.webp'
 
   - name: 'Montature in Corno di Bufalo'
     subtitle: 'Lusso naturale raro con pattern marmorizzati organici'

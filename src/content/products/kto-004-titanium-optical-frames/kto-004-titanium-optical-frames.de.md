@@ -21,7 +21,7 @@ lensMaterial: "TAC-Glas & Individualisierung"
 designStyle: "Luxus, Klassisch, Unisex"
 nosePads: "Verstellbare Metall-Nasenpads"
 hinge: "3 Scharniere"
-electroplatingMethod: "ION-Beschichtung"
+electroplating: "ION-Beschichtung"
 logo: "Tampondruck, Lasergravur, Lasergravur mit Farbauslegung, Heißprägung, Metal-Logo, Kristall-Verzierung, 3D-Aufkleber"
 service: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 

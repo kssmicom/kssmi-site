@@ -21,7 +21,7 @@ lensMaterial: "Lenti in Nylon & Personalizzazione"
 designStyle: "Lusso, Classico, Unisex"
 nosePads: "Naselli in Metallo Regolabili"
 hinge: "Cerniera a Molla"
-electroplatingMethod: "Ion Plating"
+electroplating: "Ion Plating"
 logo: "Stampa Tampografica, Incisione Laser, Incisione Laser con Smalto, Stampa a Caldo, Logo in Metallo, Decorazione in Cristallo, Logo 3D Adesivo"
 service: "Produzione OEM / ODM – Personalizzazione"
 

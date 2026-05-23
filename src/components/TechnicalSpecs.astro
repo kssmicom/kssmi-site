@@ -48,6 +48,16 @@ interface SpecProps {
 const { product, lang = 'en' } = Astro.props;
 const t = translations[lang] || translations.en;
 
+const printLabels: Record<string, string> = {
+  en: 'Print Spec Sheet', it: 'Stampa Scheda Tecnica', es: 'Imprimir Ficha Técnica',
+  fr: 'Imprimer la Fiche Technique', de: 'Datenblatt Drucken', pt: 'Imprimir Ficha Técnica',
+  ru: 'Печать Спецификации', ja: '仕様書を印刷', tr: 'Teknik Özellikleri Yazdır',
+  ar: 'طباعة ورقة المواصفات', ko: '사양서 인쇄', zh: '打印规格表',
+  hi: 'विनिर्देश शीट प्रिंट करें', vi: 'In Bảng Thông Số', jv: 'Cetak Lembar Spesifikasi',
+  ms: 'Cetak Lembaran Spesifikasi', tg: 'Чопи Варақаи Хусусиятҳо',
+};
+const printLabel = printLabels[lang] || printLabels.en;
+
 const d = product.data;
 const docRef = (d.itemNo || d.slug || 'SKU').toUpperCase();
 
@@ -135,7 +145,8 @@ for (const k of orderedKeys) {
           onclick="window.print()"
           class="w-8 h-8 flex items-center justify-center rounded-full bg-[#FCFAF8] border border-stone-200
                  text-stone-500 hover:text-[#b45309] hover:border-[#b45309] transition-all shadow-sm"
-          title="Print Spec Sheet"
+          title={printLabel}
+          aria-label={printLabel}
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -191,7 +202,7 @@ for (const k of orderedKeys) {
 
         <!-- 2. DATA TABLE -->
         <div class="overflow-x-auto -mx-5 sm:mx-0">
-          <table class="w-full border-collapse min-w-[320px]">
+          <table class="w-full border-collapse min-w-[320px]" aria-label="Technical specifications">
             <tbody>
               {rows.map((row, i) => (
                 <tr class={`border-b border-stone-100 transition-colors hover:bg-stone-100 ${i === 0 ? 'border-t border-stone-100' : ''}`}>
@@ -215,7 +226,7 @@ for (const k of orderedKeys) {
 
         <!-- 3. FOOTER -->
         <div class="mt-8 pt-4 border-t border-stone-100 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 text-[10px] font-mono text-stone-500 uppercase tracking-wide">
-          <span>{pt.systemGenerated || 'System Generated'}: {new Date().toLocaleString()}</span>
+          <span>{pt.systemGenerated || 'System Generated'}: {new Date().toLocaleString(lang)}</span>
           <span class="flex items-center gap-1.5">
             {pt.securedBy || 'Secured by Kssmi Quality Control'}
             <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 24 24">
@@ -316,14 +327,6 @@ for (const k of orderedKeys) {
 </section>
 
 <style is:global>
-  /* Line clamp utility */
-  .line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
   /* ── Product Highlights Content — CSS splits markdown into 3 cards ── */
   .product-highlights-content {
     display: grid;
@@ -343,7 +346,7 @@ for (const k of orderedKeys) {
 
   /* ── 1. The Overview Heading is the LAST heading now. We can hide it using last-of-type ── */
   .product-highlights-content > h2:last-of-type {
-    display: none !important;
+    display: none;
   }
 
   /* ── Card 1: Features (full width) - First Heading ── */
@@ -363,22 +366,22 @@ for (const k of orderedKeys) {
     border-bottom: 1px solid #e7e5e4;
     border-top: 3px solid #b45309;
     border-radius: 4px 4px 0 0;
-    margin: 0 !important;
+    margin: 0;
   }
 
   /* The List */
   .product-highlights-content > ul:first-of-type {
     grid-column: 1 / -1;
     grid-row: 1;
-    margin: 0 !important;
-    padding: 0.75rem 0 1.25rem 0 !important;
-    list-style: none !important;
+    margin: 0;
+    padding: 0.75rem 0 1.25rem 0;
+    list-style: none;
     background: #FCFAF8;
     border: 1px solid #e7e5e4;
     border-top: none;
     border-radius: 0 0 4px 4px;
     overflow: hidden;
-    margin-top: 3rem !important; /* Push down below the heading */
+    margin-top: 3rem; /* Push down below the heading */
   }
 
 
@@ -393,7 +396,7 @@ for (const k of orderedKeys) {
     font-weight: 500;
     line-height: 1.5;
     color: #44403c;
-    list-style: none !important;
+    list-style: none;
     transition: all 0.3s ease;
     border-radius: 4px;
     margin: 0;
@@ -429,16 +432,16 @@ for (const k of orderedKeys) {
     border-bottom: 1px solid rgba(180,83,9,0.15);
     border-top: 3px solid #b45309;
     border-radius: 4px 4px 0 0;
-    margin: 2rem 0 0 0 !important;
+    margin: 2rem 0 0 0;
   }
 
   /* The List - Perfect For: 2 columns inside full width */
   .product-highlights-content > ul:nth-of-type(2) {
     grid-column: 1 / -1;
     grid-row: 3;
-    margin: 0 !important;
-    padding: 0.75rem 0 1.5rem 0 !important;
-    list-style: none !important;
+    margin: 0;
+    padding: 0.75rem 0 1.5rem 0;
+    list-style: none;
     background: linear-gradient(135deg, rgba(180,83,9,0.04), rgba(180,83,9,0.08));
     border: 1px solid rgba(180,83,9,0.15);
     border-top: none;
@@ -461,7 +464,7 @@ for (const k of orderedKeys) {
     font-size: 0.875rem;
     font-weight: 500;
     color: #44403c;
-    list-style: none !important;
+    list-style: none;
     text-align: left;
     transition: all 0.3s ease;
   }
@@ -547,14 +550,14 @@ for (const k of orderedKeys) {
     .product-highlights-content > ul:first-of-type,
     .product-highlights-content > h2:nth-of-type(2),
     .product-highlights-content > ul:nth-of-type(2) {
-      grid-column: 1 !important;
-      grid-row: auto !important;
+      grid-column: 1;
+      grid-row: auto;
     }
 
     .product-highlights-content > ul:first-of-type,
     .product-highlights-content > ul:nth-of-type(2) {
-      margin-top: -1.5rem !important; /* Pull up list into heading */
-      display: block !important; /* Reset 2 columns to 1 column on mobile */
+      margin-top: -1.5rem; /* Pull up list into heading */
+      display: block; /* Reset 2 columns to 1 column on mobile */
       overflow-x: auto;
     }
 
@@ -576,14 +579,14 @@ for (const k of orderedKeys) {
     }
 
     .product-highlights-content > h2:nth-of-type(2) {
-      margin-top: 1rem !important;
+      margin-top: 1rem;
     }
 
     .product-highlights-content > p {
-      grid-column: 1 !important;
-      grid-row: auto !important;
-      padding-left: 1.25rem !important;
-      padding-right: 1.25rem !important;
+      grid-column: 1;
+      grid-row: auto;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
     }
 
     .product-highlights-content > p:first-of-type::before {
@@ -593,11 +596,11 @@ for (const k of orderedKeys) {
     }
 
     .product-highlights-content > p:first-of-type {
-      margin-top: 1.5rem !important;
+      margin-top: 1.5rem;
     }
 
     .product-highlights-content > p:not(:first-of-type) {
-      margin-top: -1.5rem !important; /* Counteract grid gap so paragraphs connect */
+      margin-top: -1.5rem; /* Counteract grid gap so paragraphs connect */
     }
   }
 </style>

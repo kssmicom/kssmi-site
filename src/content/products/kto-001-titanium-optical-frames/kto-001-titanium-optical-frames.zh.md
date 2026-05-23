@@ -21,7 +21,7 @@ lensMaterial: "尼龙镜片 & 定制服务"
 designStyle: "奢华, 经典, 中性"
 nosePads: "可调节金属鼻托"
 hinge: "弹簧铰链"
-electroplatingMethod: "离子电镀"
+electroplating: "离子电镀"
 logo: "印刷, 镭射, 镭射填油, 热烫印, 金属标, 水晶, 立体贴标"
 service: "代工生产 / 设计制造 定制服务"
 

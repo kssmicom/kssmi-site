@@ -300,6 +300,7 @@ function fmtUrl($url) {
 function sourceBadge($source) {
     $map = [
         'ads' => ['#e74c3c', '#fdeaea', 'Ads'],
+        'ai' => ['#8e44ad', '#f3e5f5', 'AI'],
         'search' => ['#27ae60', '#d4edda', 'Search'],
         'social' => ['#3498db', '#d6eaf8', 'Social'],
         'direct' => ['#95a5a6', '#eaeded', 'Direct'],
@@ -639,7 +640,7 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                     <table>
                                         <thead><tr><th>Source</th><th style="text-align:right;">Sessions</th></tr></thead>
                                         <tbody>
-                                            <?php foreach (['search', 'social', 'direct', 'ads', 'other'] as $src):
+                                            <?php foreach (['search', 'social', 'ai', 'direct', 'ads', 'other'] as $src):
                                                 $cnt = $overview['sourceCounts'][$src] ?? 0;
                                             ?>
                                                 <tr>
@@ -896,6 +897,7 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                 <select name="source">
                                     <option value="">All Sources</option>
                                     <option value="ads" <?php echo $visSource === 'ads' ? 'selected' : ''; ?>>Ads</option>
+                                    <option value="ai" <?php echo $visSource === 'ai' ? 'selected' : ''; ?>>AI</option>
                                     <option value="search" <?php echo $visSource === 'search' ? 'selected' : ''; ?>>Search</option>
                                     <option value="social" <?php echo $visSource === 'social' ? 'selected' : ''; ?>>Social</option>
                                     <option value="direct" <?php echo $visSource === 'direct' ? 'selected' : ''; ?>>Direct</option>

@@ -16,6 +16,8 @@ import Header from '../../../../components/Header.astro';
 import Footer from '../../../../components/Footer.astro';
 import Breadcrumb from '../../../../components/Breadcrumb.astro';
 import { isCategoryMatch, getSlug } from '../../../../utils/categoryMatching';
+import { getProductLang } from '../../../../utils/language';
+import { buildPrimaryCategories, buildSidebarTags } from '../../../../utils/sidebar';
 import Pagination from '../../../../components/Pagination.astro';
 
 // Category translation mapping: maps translated category names to English slugs
@@ -43,7 +45,7 @@ export async function getStaticPaths({ paginate }: { paginate: any }) {
     'optical-frames', 'acetate-optical-frames', 'metal-optical-frames', 'titanium-optical-frames', 'carbon-fiber-optical-frames', 'rimless-optical-frames',
     'fashion-acetate-sunglasses', 'fashion-metal-sunglasses', 'fashion-acetate-optical-frames', 'fashion-metal-optical-frames',
     'luxury-acetate-sunglasses', 'luxury-titanium-sunglasses', 'luxury-acetate-optical-frames', 'luxury-titanium-optical-frames',
-    'carbon-fiber-eyewear', 'rimless-eyewear',
+    'fashion-eyewear', 'luxury-eyewear', 'carbon-fiber-eyewear', 'rimless-eyewear',
   ];
   for (const s of SIDEBAR_SLUGS) allCategorySlugs.add(s);
 
@@ -55,9 +57,7 @@ export async function getStaticPaths({ paginate }: { paginate: any }) {
   for (const lang of languages) {
     // Get all products in this language
     const langProducts = allProducts.filter(p => {
-      const normalizedId = p.id.replace(/\.md$/, '');
-      const parts = normalizedId.split('.');
-      const pLang = parts.length > 1 ? parts.pop() : 'en';
+      const pLang = getProductLang(p);
       return pLang === lang;
     });
 
@@ -118,9 +118,7 @@ const pt = t.product || {
 // Get all products for count
 const allProducts = await getCollection('products');
 const langProducts = allProducts.filter((product) => {
-  const normalizedId = product.id.replace(/\.md$/, '');
-  const parts = normalizedId.split('.');
-  const productLang = parts.length > 1 ? parts.pop() : 'en';
+  const productLang = getProductLang(product);
   return productLang === lang;
 });
 
@@ -134,72 +132,9 @@ function getCategoryCount(href: string): number {
   }).length;
 }
 
-// Sidebar Categories - Matches Header Mega Menu Structure
-// Primary Categories (Hierarchical)
-const primaryCategories = [
-  {
-    label: sidebar.sunglasses,
-    href: `/${currentPath}product/sunglasses`,
-    items: [
-      { label: sidebar.acetate_sunglasses, href: `/${currentPath}product/acetate-sunglasses` },
-      { label: sidebar.metal_sunglasses, href: `/${currentPath}product/metal-sunglasses` },
-      { label: sidebar.titanium_sunglasses, href: `/${currentPath}product/titanium-sunglasses` },
-      { label: sidebar.carbon_fiber_sunglasses, href: `/${currentPath}product/carbon-fiber-sunglasses` },
-      { label: sidebar.rimless_sunglasses, href: `/${currentPath}product/rimless-sunglasses` }
-    ]
-  },
-  {
-    label: sidebar.optical_frames,
-    href: `/${currentPath}product/optical-frames`,
-    items: [
-      { label: sidebar.acetate_glasses, href: `/${currentPath}product/acetate-optical-frames` },
-      { label: sidebar.metal_glasses, href: `/${currentPath}product/metal-optical-frames` },
-      { label: sidebar.titanium_glasses, href: `/${currentPath}product/titanium-optical-frames` },
-      { label: sidebar.carbon_glasses, href: `/${currentPath}product/carbon-fiber-optical-frames` },
-      { label: sidebar.rimless_glasses, href: `/${currentPath}product/rimless-optical-frames` }
-    ]
-  }
-];
+const primaryCategories = buildPrimaryCategories(t, currentPath);
 
-// Tags / Filters (Flat Groups)
-const sidebarTags = [
-  {
-    label: sidebar.fashion_group || sidebar.fashion,
-    href: `/${currentPath}product/fashion-eyewear`,
-    items: [
-      { label: sidebar.fashion_acetate_sunglasses, href: `/${currentPath}product/fashion-acetate-sunglasses` },
-      { label: sidebar.fashion_metal_sunglasses, href: `/${currentPath}product/fashion-metal-sunglasses` },
-      { label: sidebar.fashion_acetate_optical_frames, href: `/${currentPath}product/fashion-acetate-optical-frames` },
-      { label: sidebar.fashion_metal_optical_frames, href: `/${currentPath}product/fashion-metal-optical-frames` }
-    ]
-  },
-  {
-    label: sidebar.luxury_group || sidebar.luxury,
-    href: `/${currentPath}product/luxury-eyewear`,
-    items: [
-      { label: sidebar.luxury_acetate_sunglasses, href: `/${currentPath}product/luxury-acetate-sunglasses` },
-      { label: sidebar.luxury_titanium_sunglasses, href: `/${currentPath}product/luxury-titanium-sunglasses` },
-      { label: sidebar.luxury_acetate_optical_frames, href: `/${currentPath}product/luxury-acetate-optical-frames` },
-      { label: sidebar.luxury_titanium_optical_frames, href: `/${currentPath}product/luxury-titanium-optical-frames` }
-    ]
-  },
-  {
-    label: sidebar.carbon_fiber_group || sidebar.carbon_fiber,
-    href: `/${currentPath}product/carbon-fiber-eyewear`,
-    items: [
-      { label: sidebar.carbon_fiber_sunglasses, href: `/${currentPath}product/carbon-fiber-sunglasses` },
-      { label: sidebar.carbon_glasses, href: `/${currentPath}product/carbon-fiber-optical-frames` }
-    ]
-  },
-  {
-    label: sidebar.rimless_group || sidebar.rimless,
-    href: `/${currentPath}product/rimless-eyewear`,
-    items: [
-      { label: sidebar.rimless_sunglasses, href: `/${currentPath}product/rimless-sunglasses` },
-      { label: sidebar.rimless_glasses, href: `/${currentPath}product/rimless-optical-frames` }
-    ]
-  }
-];
+const sidebarTags = buildSidebarTags(t, currentPath);
 
 
 
@@ -274,7 +209,7 @@ const categoryBreadcrumbItems = (() => {
   <Header lang={lang} />
   <Breadcrumb items={categoryBreadcrumbItems} lang={lang} />
 
-  <main class="w-full min-h-screen py-6 lg:py-8 bg-stone-50">
+  <main class="w-full min-h-screen py-6 lg:py-8 bg-stone-50" dir={isRTL ? 'rtl' : 'ltr'}>
     <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
 
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -389,7 +324,7 @@ const categoryBreadcrumbItems = (() => {
               <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
               </svg>
-              <p class="text-gray-500 mb-4">No products in this category.</p>
+              <p class="text-gray-500 mb-4">{pt.noProducts || 'No products in this category.'}</p>
               <a href={`/${currentPath}product`} class="text-[#5D4E37] hover:underline">View All Products</a>
             </div>
           ) : (

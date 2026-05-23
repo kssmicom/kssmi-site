@@ -10,7 +10,7 @@ serviceMode: "代工生产 / 设计制造 定制服务"
 moq: "300 付/款"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
-productType: "Rimless Eyewear"
+productType: "Optical Frames"
 material: "Rimless Optical Frames"
 series: "optical-frames, rimless-eyewear, rimless-optical-frames"
 

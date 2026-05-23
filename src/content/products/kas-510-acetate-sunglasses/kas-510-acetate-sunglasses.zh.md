@@ -34,8 +34,8 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: ""
-seoDescription: ""
+seoTitle: "KAS-510 时尚潮流板材太阳镜 | 定制供应商"
+seoDescription: "优质 马祖凯利 和 金余板材 太阳镜可用于全面 OEM/ODM 定制。定制镜架尺寸、颜色和徽标选项。每个型号 300 起订量。"
 seoKeywords: ""
 ---
 

@@ -49,6 +49,7 @@ export default defineConfig({
           const cacheFile = path.resolve('./.astro/data-store.json');
           const cacheDir = path.resolve('./.astro/collections');
 
+          /** @type {ReturnType<typeof setTimeout> | null} */
           let debounceTimer = null;
 
           // ── Init folder list on first run ────────────────────────────────
@@ -100,8 +101,8 @@ export default defineConfig({
 
                 console.log('\x1b[36m[Content]\x1b[0m Restarting dev server…');
                 await server.restart();
-              } catch (e) {
-                console.error('\x1b[31m[Content]\x1b[0m Restart failed:', e.message);
+              } catch (/** @type {any} */ e) {
+                console.error('\x1b[31m[Content]\x1b[0m Restart failed:', e?.message || e);
               }
               state.restarting = false;
               debounceTimer = null;
@@ -112,7 +113,7 @@ export default defineConfig({
           [collectionDir, blogDir].forEach(watchPath => {
             if (!fs.existsSync(watchPath)) return;
             try {
-              const addRecursiveWatch = (dir, depth = 0) => {
+              const addRecursiveWatch = (/** @type {string} */ dir, /** @type {number} */ depth = 0) => {
                 if (depth > 3) return;
                 for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
                   const fullPath = path.join(dir, entry.name);

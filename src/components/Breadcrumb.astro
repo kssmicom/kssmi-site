@@ -27,7 +27,7 @@ const breadcrumbSchema = items.length > 0 ? {
 ---
 
 {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
-<nav class="bg-stone-50 py-3 border-b border-gray-100" dir={isRTL ? 'rtl' : 'ltr'}>
+<nav class="bg-stone-50 py-3 border-b border-gray-100" dir={isRTL ? 'rtl' : 'ltr'} aria-label="Breadcrumb">
   <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
     <ol class="flex items-center flex-wrap gap-1 text-sm">
       {items.map((item, index) => (

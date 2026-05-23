@@ -25,6 +25,8 @@ const { excerpt, image, published, author, tags } = data;
 const { Content } = await render(post);
 const t = (translations as any)[lang as string] || translations.en;
 
+const isRTL = lang === 'ar';
+
 const currentPath = lang === 'en' ? '' : `${lang}/`;
 
 // Blog Schema
@@ -48,7 +50,7 @@ const blogSchema = {
   <Header lang={lang as string} />
 
   <!-- LAYER 1: WRAPPER -->
-  <main class="w-full min-h-screen py-12 lg:py-20 border-b border-stone-100 relative z-10">
+  <main class="w-full min-h-screen py-12 lg:py-20 border-b border-stone-100 relative z-10" dir={isRTL ? 'rtl' : 'ltr'}>
     <!-- LAYER 2: CONSTRAINT -->
     <article class="w-[95%] lg:w-[90%] max-w-[820px] mx-auto">
       <!-- Blog Header -->

@@ -34,8 +34,8 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: ""
-seoDescription: ""
+seoTitle: "KAS-510 Gafas de Sol de Acetato de Moda | Proveedor Personalizado"
+seoDescription: "Gafas de sol de acetato premium Mazzucchelli y JINYU disponibles para personalización completa OEM/ODM. Tamaños de montura, colores y opciones de logotipo a medida. MOQ de 300 por modelo."
 seoKeywords: ""
 ---
 

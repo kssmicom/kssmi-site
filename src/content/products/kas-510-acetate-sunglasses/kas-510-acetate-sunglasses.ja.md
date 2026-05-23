@@ -34,8 +34,8 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: ""
-seoDescription: ""
+seoTitle: "KAS-510 ファッション トレンド アセテート サングラス | カスタム サプライヤー"
+seoDescription: "完全なOEM/ODMカスタマイズが可能なプレミアムMazzucchelliおよびJINYUアセテートサングラス。特注のフレームサイズ、カラー、ロゴオプション。各モデル300個のMOQ。"
 seoKeywords: ""
 ---
 

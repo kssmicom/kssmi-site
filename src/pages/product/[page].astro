@@ -12,6 +12,8 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { isCategoryMatch } from '../../utils/categoryMatching';
 import Pagination from '../../components/Pagination.astro';
+import { getProductLang } from '../../utils/language';
+import { buildPrimaryCategories, buildSidebarTags } from '../../utils/sidebar';
 
 const lang = 'en';
 const PAGE_SIZE = 12;
@@ -19,8 +21,7 @@ const PAGE_SIZE = 12;
 const allProducts = await getCollection('products');
 
 const langProducts = allProducts.filter((product) => {
-  const parts = product.id.split('.');
-  const productLang = parts.length > 1 ? parts.pop() : 'en';
+  const productLang = getProductLang(product);
   return productLang === lang;
 });
 
@@ -39,10 +40,7 @@ export async function getStaticPaths() {
   const PAGE_SIZE = 12;
   const lang = 'en';
   const all = await getCollection('products');
-  const en = all.filter((p) => {
-    const parts = p.id.split('.');
-    return parts.pop() === 'en';
-  });
+  const en = all.filter((p) => getProductLang(p) === 'en');
   const sorted = en.sort((a, b) => {
     if (a.data.featured && !b.data.featured) return -1;
     if (!a.data.featured && b.data.featured) return 1;
@@ -69,77 +67,14 @@ const end = start + PAGE_SIZE;
 const products = sortedProducts.slice(start, end);
 
 const t = translations.en;
-const pt = t.product || {
-  viewAllCollections: "View All Collections",
-};
+const pt = t.product || {};
 
 // First product cover for LCP preload
 const lcpImage = products[0]?.data?.cover || undefined;
 
-// Primary Categories (Hierarchical)
-const primaryCategories = [
-  {
-    label: t.sidebar.sunglasses,
-    href: '/product/sunglasses',
-    items: [
-      { label: t.sidebar.acetate_sunglasses, href: '/product/acetate-sunglasses' },
-      { label: t.sidebar.metal_sunglasses, href: '/product/metal-sunglasses' },
-      { label: t.sidebar.titanium_sunglasses, href: '/product/titanium-sunglasses' },
-      { label: t.sidebar.carbon_fiber_sunglasses, href: '/product/carbon-fiber-sunglasses' },
-      { label: t.sidebar.rimless_sunglasses, href: '/product/rimless-sunglasses' }
-    ]
-  },
-  {
-    label: t.sidebar.optical_frames,
-    href: '/product/optical-frames',
-    items: [
-      { label: t.sidebar.acetate_glasses, href: '/product/acetate-optical-frames' },
-      { label: t.sidebar.metal_glasses, href: '/product/metal-optical-frames' },
-      { label: t.sidebar.titanium_glasses, href: '/product/titanium-optical-frames' },
-      { label: t.sidebar.carbon_glasses, href: '/product/carbon-fiber-optical-frames' },
-      { label: t.sidebar.rimless_glasses, href: '/product/rimless-optical-frames' }
-    ]
-  }
-];
+const primaryCategories = buildPrimaryCategories(t, '');
 
-const sidebarTags = [
-  {
-    label: t.sidebar.fashion,
-    href: '/product/fashion-eyewear',
-    items: [
-      { label: t.sidebar.fashion_acetate_sunglasses, href: '/product/fashion-acetate-sunglasses' },
-      { label: t.sidebar.fashion_metal_sunglasses, href: '/product/fashion-metal-sunglasses' },
-      { label: t.sidebar.fashion_acetate_optical_frames, href: '/product/fashion-acetate-optical-frames' },
-      { label: t.sidebar.fashion_metal_optical_frames, href: '/product/fashion-metal-optical-frames' }
-    ]
-  },
-  {
-    label: t.sidebar.luxury,
-    href: '/product/luxury-eyewear',
-    items: [
-      { label: t.sidebar.luxury_acetate_sunglasses, href: '/product/luxury-acetate-sunglasses' },
-      { label: t.sidebar.luxury_titanium_sunglasses, href: '/product/luxury-titanium-sunglasses' },
-      { label: t.sidebar.luxury_acetate_optical_frames, href: '/product/luxury-acetate-optical-frames' },
-      { label: t.sidebar.luxury_titanium_optical_frames, href: '/product/luxury-titanium-optical-frames' }
-    ]
-  },
-  {
-    label: t.sidebar.carbon_fiber,
-    href: '/product/carbon-fiber-eyewear',
-    items: [
-      { label: t.sidebar.carbon_fiber_sunglasses, href: '/product/carbon-fiber-sunglasses' },
-      { label: t.sidebar.carbon_glasses, href: '/product/carbon-fiber-optical-frames' }
-    ]
-  },
-  {
-    label: t.sidebar.rimless,
-    href: '/product/rimless-eyewear',
-    items: [
-      { label: t.sidebar.rimless_sunglasses, href: '/product/rimless-sunglasses' },
-      { label: t.sidebar.rimless_glasses, href: '/product/rimless-optical-frames' }
-    ]
-  }
-];
+const sidebarTags = buildSidebarTags(t, '');
 
 function getCategoryCount(href: string): number {
   const targetSlug = href.split('/').pop() || '';
@@ -256,7 +191,7 @@ function getCategoryCount(href: string): number {
             <>
               <div class="flex justify-between items-center mb-6 text-sm text-gray-500">
                 <span>
-                  Showing {start + 1}-{Math.min(end, langProducts.length)} of {langProducts.length} products
+                  {(pt.showingResults || 'Showing {start}-{end} of {total} products').replace('{start}', String(start + 1)).replace('{end}', String(Math.min(end, langProducts.length))).replace('{total}', String(langProducts.length))}
                 </span>
               </div>
 

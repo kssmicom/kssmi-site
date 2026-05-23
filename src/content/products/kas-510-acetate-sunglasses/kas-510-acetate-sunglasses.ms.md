@@ -34,8 +34,8 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: ""
-seoDescription: ""
+seoTitle: "KAS-510 Cermin Mata Hitam Asetat Trendi Fesyen | Pembekal Tersuai"
+seoDescription: "Cermin mata hitam asetat premium Mazzucchelli dan JINYU tersedia untuk penyesuaian OEM/ODM penuh. Saiz bingkai, warna, dan pilihan logo yang ditempah khas. 300 MOQ setiap model."
 seoKeywords: ""
 ---
 

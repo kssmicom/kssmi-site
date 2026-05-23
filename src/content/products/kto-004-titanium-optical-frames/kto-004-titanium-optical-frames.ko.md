@@ -21,7 +21,7 @@ lensMaterial: "TAC 렌즈 & 맞춤 서비스"
 designStyle: "럭셔리, 클래식, 공용"
 nosePads: "조절 가능한 메탈 코받침"
 hinge: "3 경첩"
-electroplatingMethod: "이온 도금"
+electroplating: "이온 도금"
 logo: "프린트, 레이저, 레이저 도색, 핫 스탬핑, 메탈 로고, 크리스탈, 입체 스티커"
 service: "OEM / ODM 제조 맞춤 서비스"
 

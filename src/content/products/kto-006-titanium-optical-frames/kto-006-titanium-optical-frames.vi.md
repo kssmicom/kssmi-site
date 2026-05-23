@@ -21,7 +21,7 @@ lensMaterial: "Tròng kính AC & Nylon & Tùy chỉnh theo yêu cầu"
 designStyle: "Xa xỉ, Cổ điển, Unisex"
 nosePads: "Đệm Mũi Đúc Liền"
 hinge: "Bản Lề 3 Chấu"
-electroplatingMethod: "Mạ ION"
+electroplating: "Mạ ION"
 logo: "In, Laser, Laser đổ dầu, Ép kim, Huy hiệu kim loại, Đính đá, Nhãn dán 3D"
 service: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 

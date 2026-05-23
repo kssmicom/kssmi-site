@@ -17,6 +17,7 @@ export async function getStaticPaths() {
 
 const { lang } = Astro.props;
 const t = translations[lang] || translations.en;
+const isRTL = lang === 'ar';
 
 // Read the merged single file
 const entry = await getEntry('collection', `home/home.${lang}`);
@@ -28,7 +29,7 @@ const description = entry?.data?.seoDescription || "Premium eyewear manufacturer
 <Layout title={title} description={description} lang={lang}>
   <Header lang={lang} />
 
-  <main>
+  <main dir={isRTL ? 'rtl' : 'ltr'}>
     <Materials lang={lang} />
   </main>
 

@@ -21,7 +21,7 @@ lensMaterial: "TAC Lens & Customization"
 designStyle: "Luxury, Classic, Unisex"
 nosePads: "Adjustable Metal Nose Pads"
 hinge: "3 Barrels"
-electroplatingMethod: "ION Plating"
+electroplating: "ION Plating"
 logo: "Print, Laser, Laser With Oil, Hot Stamping, Metal, Crystal, Up-sticker"
 service: "OEM / ODM customization"
 

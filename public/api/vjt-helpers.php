@@ -371,7 +371,12 @@ function vjt_classify_source($session) {
     $adsMediums = ['cpc', 'paid', 'ppc', 'ads'];
     if (in_array(strtolower($utm_medium), $adsMediums, true)) return 'ads';
 
-    $searchEngines = ['google.', 'bing.', 'yahoo.', 'baidu.', 'duckduckgo.', 'yandex.', 'ask.', 'aol.', 'chatgpt.com', 'perplexity.ai', 'claude.ai'];
+    $aiPlatforms = ['chatgpt.com', 'perplexity.ai', 'claude.ai', 'gemini.google.com', 'x.ai', 'grok.com', 'copilot.microsoft.com', 'deepseek.com', 'doubao.com'];
+    foreach ($aiPlatforms as $ai) {
+        if (stripos($referrer, $ai) !== false) return 'ai';
+    }
+
+    $searchEngines = ['google.', 'bing.', 'yahoo.', 'baidu.', 'duckduckgo.', 'yandex.', 'ask.', 'aol.'];
     foreach ($searchEngines as $se) {
         if (stripos($referrer, $se) !== false) return 'search';
     }
@@ -509,7 +514,7 @@ function vjt_get_overview($since) {
     }
 
     // Source breakdown
-    $sourceCounts = ['direct' => 0, 'search' => 0, 'social' => 0, 'ads' => 0, 'other' => 0];
+    $sourceCounts = ['direct' => 0, 'search' => 0, 'social' => 0, 'ads' => 0, 'ai' => 0, 'other' => 0];
     foreach ($sessions as $s) {
         if (($s['started_at'] ?? '') >= $since) {
             $src = vjt_classify_source($s);

@@ -19,7 +19,7 @@ partnershipHero:
   team:
     - name: "Tian"
       image: "/media/collection/contact/Tian.webp"
-      description: '"有名ブランドとの数十年にわたるコラボレーション実績。テーラーメイド의 컬렉션을開発します。 "'
+      description: '"有名ブランドとの数十年にわたるコラボレーション実績。テーラーメイドのコレクションを開発します。 "'
     - name: "Sunny"
       image: "/media/collection/contact/Sunny.webp"
       description: '"誠実にお話を伺い、お客様のビジネスを加速させる迅速でプロフェッショナルな解決策を提案します。"'

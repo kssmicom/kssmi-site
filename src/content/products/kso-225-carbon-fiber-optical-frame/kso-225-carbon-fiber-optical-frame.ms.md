@@ -5,7 +5,7 @@ slug: "kso-225-carbon-fiber-optical-frame"
 itemNo: "KSO-225"
 date: "2026-04-05"
 colors: "Mahogani (Indian Rosewood — Mountain Grain)"
-materials: "Gentian Karbon Premium dan Titanim"
+materials: "Gentian Karbon Premium dan Titanium"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model"
 
@@ -16,7 +16,7 @@ series: "optical-frames, carbon-fiber-eyewear, carbon-fiber-optical-frames"
 
 # ─────────────────────────────────────────────────────
 size: "54-17-140mm & Penyesuaian"
-frameMaterial: "Bingkai Gentian Karbon Premium dan Temple Titanim"
+frameMaterial: "Bingkai Gentian Karbon Premium dan Temple Titanium"
 lensMaterial: "Lensa Nylon Tenacious & Penyesuaian"
 designStyle: "Klasik, Fesyen, Bergaya, Trendi, Mewah, Unisex"
 nosePads: "Alas Hidung Getah"
@@ -42,7 +42,7 @@ seoKeywords: "pengeluar bingkai optik gentian karbon, kacamata bijian mahogani t
 
 ## Ciri-ciri Utama
 
-- **Bahan Gred Aeroangkasa:** Bingkai gentian karbon premium dan temple titanim menawarkan rasa ultra-ringan dengan nisbah kekuatan-ke-berat yang melampau.
+- **Bahan Gred Aeroangkasa:** Bingkai gentian karbon premium dan temple titanium menawarkan rasa ultra-ringan dengan nisbah kekuatan-ke-berat yang melampau.
 - **Perkakasan Tahan Lama:** Engsel struktur tong 2+1 yang stabil direka untuk kelancaran operasi jangka panjang.
 - **Optik Premium:** Lensa nylon tenacious dengan pilihan pewarnaan dan salutan tersuai yang meluas tersedia.
 - **Keselesaan Sepanjang Hari:** Alas hidung getah lembut yang direka untuk kesesuaian yang selamat, hipoalergenik dan pemakaian berpanjangan.
@@ -60,7 +60,7 @@ seoKeywords: "pengeluar bingkai optik gentian karbon, kacamata bijian mahogani t
 
 ## Gambaran Keseluruhan
 
-Gentian karbon berteknologi tinggi bertemu dengan kehangatan bijian kayu mahogani dalam KSO-225, mewujudkan hibrid bahan yang unik untuk koleksi kacamata premium. Temple titanimmnya meningkatkan seni bina ultra-ringan tanpa menjejaskan ketahanan struktur.
+Gentian karbon berteknologi tinggi bertemu dengan kehangatan bijian kayu mahogani dalam KSO-225, mewujudkan hibrid bahan yang unik untuk koleksi kacamata premium. Temple titaniummnya meningkatkan seni bina ultra-ringan tanpa menjejaskan ketahanan struktur.
 
 Penyepaduan engsel tong 2+1 yang stabil dan alas hidung getah hipoalergenik memberikan pengalaman sentuhan yang halus dan keselesaan sepanjang hari yang unggul untuk pemakaian berpanjangan.
 

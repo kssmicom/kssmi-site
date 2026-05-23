@@ -1,11 +1,11 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Cermin Mata Hitam Titanim Tersuai"
+title: "Cermin Mata Hitam Titanium Tersuai"
 slug: "kts-022-titanium-sunglasses"
 itemNo: "KTS-022"
 date: "2026-04-07"
 colors: "Elegant Black & Rose gold & Gradient Blue & Dark green silver"
-materials: "Titanim Premium"
+materials: "Titanium Premium"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model"
 
@@ -16,7 +16,7 @@ series: "sunglasses, titanium-sunglasses, luxury-eyewear, luxury-titanium-sungla
 
 # ─────────────────────────────────────────────────────
 size: "52-17-145mm & Penyesuaian"
-frameMaterial: "Bingkai dan Tangkai Titanim Premium"
+frameMaterial: "Bingkai dan Tangkai Titanium Premium"
 lensMaterial: "Lensa Nylon Berdaya Tahan & Penyesuaian"
 designStyle: "Unik, Fesyen, Bergaya, Trendi, Mewah, Unisex"
 nosePads: "Alas Hidung Satu Bahagian"
@@ -46,14 +46,14 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KTS-022 Cermin Mata Hitam Titanim Mewah & Fesyen | Pengeluar Tersuai"
-seoDescription: "Tingkatkan jenama anda dengan cermin mata hitam titanim KTS-022 yang boleh disesuaikan. Menampilkan engsel tong 2+1 dan lensa nilon dengan MOQ 300 untuk rakan kongsi label peribadi."
-seoKeywords: "pengeluar cermin mata hitam titanim, cermin mata hitam OEM tersuai, eyewear mewah label peribadi, kilang eyewear titanim China, cermin mata hitam lensa nilon tersuai, rakan kongsi pengeluaran eyewear premium, bingkai titanim borong China, cermin mata hitam pereka tersuai OEM"
+seoTitle: "KTS-022 Cermin Mata Hitam Titanium Mewah & Fesyen | Pengeluar Tersuai"
+seoDescription: "Tingkatkan jenama anda dengan cermin mata hitam titanium KTS-022 yang boleh disesuaikan. Menampilkan engsel tong 2+1 dan lensa nilon dengan MOQ 300 untuk rakan kongsi label peribadi."
+seoKeywords: "pengeluar cermin mata hitam titanium, cermin mata hitam OEM tersuai, eyewear mewah label peribadi, kilang eyewear titanium China, cermin mata hitam lensa nilon tersuai, rakan kongsi pengeluaran eyewear premium, bingkai titanium borong China, cermin mata hitam pereka tersuai OEM"
 ---
 
 ## Ciri-ciri Utama
 
-- **Bahan Gred Aeroangkasa:** Bingkai dan tangkai titanim premium yang menawarkan rasa ultra ringan dengan rintangan kakisan yang tinggi dan ketahanan yang luar biasa.
+- **Bahan Gred Aeroangkasa:** Bingkai dan tangkai titanium premium yang menawarkan rasa ultra ringan dengan rintangan kakisan yang tinggi dan ketahanan yang luar biasa.
 - **Perkakasan Tahan Lama:** Engsel struktur tong 2+1 yang stabil direka untuk kelancaran operasi jangka panjang dan pembukaan/penutupan yang boleh dipercayai.
 - **Optik Premium:** Lensa nilon berdaya tahan yang memberikan rintangan hentaman dan kejelasan yang unggul, dengan penyesuaian meluas untuk warna dan salutan.
 - **Keselesaan Ergonomik:** Alas hidung satu bahagian bersepadu yang direka untuk pemakaian yang selamat dan selesa tanpa memerlukan pelarasan berkala.
@@ -71,8 +71,8 @@ seoKeywords: "pengeluar cermin mata hitam titanim, cermin mata hitam OEM tersuai
 
 ## Gambaran Keseluruhan
 
-Titanim gred aeroangkasa mentakrifkan KTS-022, menawarkan seni bina ultra ringan yang mengimbangi rintangan kakisan yang tinggi dengan estetika mewah yang canggih.
+Titanium gred aeroangkasa mentakrifkan KTS-022, menawarkan seni bina ultra ringan yang mengimbangi rintangan kakisan yang tinggi dengan estetika mewah yang canggih.
 
 Lensa nilon berdaya tahan dan sistem engsel tong 2+1 menyediakan asas teknikal untuk kejelasan optik yang unggul dan ketahanan mekanikal jangka panjang.
 
-Dengan penyesuaian OEM/ODM yang komprehensif dan MOQ rendah 300 unit, Kssmi melengkapkan label mewah dan pereka bebas untuk melancarkan eyewear titanim tersuai dengan ketepatan pembuatan.
+Dengan penyesuaian OEM/ODM yang komprehensif dan MOQ rendah 300 unit, Kssmi melengkapkan label mewah dan pereka bebas untuk melancarkan eyewear titanium tersuai dengan ketepatan pembuatan.

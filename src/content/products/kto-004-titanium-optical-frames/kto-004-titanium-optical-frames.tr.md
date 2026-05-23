@@ -21,7 +21,7 @@ lensMaterial: "TAC Lens & Özelleştirme"
 designStyle: "Lüks, Klasik, Unisex"
 nosePads: "Ayarlanabilir Metal Burun Tamponları"
 hinge: "3 Menteşe"
-electroplatingMethod: "İYON Kaplama"
+electroplating: "İYON Kaplama"
 logo: "Tampo Baskı, Lazer Markalama, Boya Dolgulu Lazer, Sıcak Baskı, Metal Logo, Kristal Süsleme, 3D Etiket"
 service: "OEM / ODM Üretim – Özelleştirme"
 

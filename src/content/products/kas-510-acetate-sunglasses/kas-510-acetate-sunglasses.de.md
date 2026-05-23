@@ -34,8 +34,8 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: ""
-seoDescription: ""
+seoTitle: "KAS-510 Modische Acetat-Sonnenbrillen | Maßgeschneiderter Lieferant"
+seoDescription: "Premium Mazzucchelli & JINYU Acetat-Sonnenbrillen für vollständige OEM/ODM-Anpassung. Maßgeschneiderte Rahmengrößen, Farben und Logo-Optionen. 300 MOQ pro Modell."
 seoKeywords: ""
 ---
 

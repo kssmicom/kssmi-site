@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 import { translations } from '../translations';
 import VisitorTracker from '../components/VisitorTracker.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 
 // Props
 interface Props {
@@ -21,7 +22,7 @@ const {
   title,
   description: propDescription,
   keywords,
-  image = "/media/global/logo.png",
+  image = "/media/global/404-team.webp",
   lcpImage,
   lang = 'en',
   canonical,
@@ -53,7 +54,7 @@ const organizationSchema = {
   "@id": "https://kssmi.com/#organization",
   "name": "Kssmi Eyewear",
   "url": "https://kssmi.com",
-  "logo": "https://kssmi.com/media/global/logo.png",
+  "logo": "https://kssmi.com/media/global/404-team.webp",
   "description": layoutMeta.schemaDescription,
   "foundingDate": "2003",
   "address": {
@@ -77,6 +78,8 @@ const organizationSchema = {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#FCFAF8" />
+  <meta name="color-scheme" content="light" />
   <title>{title}</title>
   <meta name="description" content={description} />
   {keywords && <meta name="keywords" content={keywords} />}
@@ -155,9 +158,9 @@ const organizationSchema = {
   <!-- Cloudflare Web Analytics (defer = non-blocking) -->
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "70e1c20d83a34e0ebfa6b3fb9053e96a"}'></script>
 </head>
-<body class="font-sans antialiased relative min-h-screen">
+<body class={`${isRTL ? 'font-arabic' : 'font-sans'} antialiased relative min-h-screen`}>
   <!-- Page Transition Loader -->
-  <div id="page-loader" class="fixed top-0 left-0 w-full h-[3px] bg-[#8B7355] z-[99999] origin-left scale-x-0 transition-transform duration-300 pointer-events-none will-change-transform"></div>
+  <div id="page-loader" class="fixed top-0 left-0 w-full h-[3px] bg-[#8B7355] z-[99999] origin-left scale-x-0 transition-transform duration-300 pointer-events-none" style="transform:translateZ(0)"></div>
   <script is:inline>
     document.addEventListener('astro:before-preparation', () => {
       const loader = document.getElementById('page-loader');
@@ -190,12 +193,10 @@ const organizationSchema = {
   </script>
   <!-- Accessibility: Skip to Content Link -->
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[9999] bg-[#5D4E37] text-white px-4 py-2 font-bold rounded-md shadow-lg outline-none focus:ring-4 focus:ring-[#8B7355]/50">
-    Skip to content
+    {t.nav?.skipToContent || 'Skip to content'}
   </a>
   <style define:vars={{
     '--font-sans': "'Plus Jakarta Sans', sans-serif",
-    '--font-heading': "'Manrope', sans-serif",
-    '--font-raleway': "'Raleway', sans-serif",
     '--font-arabic': "'Noto Sans Arabic', sans-serif"
   }}>
     /* Base styles */
@@ -206,17 +207,22 @@ const organizationSchema = {
 
     /* Default Latin Font */
     body {
-      font-family: var(--font-sans);
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     /* RTL-aware spacing */
     :dir(rtl) {
-      /* Arabic-specific overrides if needed */
+      direction: rtl;
+      text-align: right;
+    }
+    :dir(rtl) .prose {
+      text-align: right;
     }
   </style>
   <main id="main-content">
     <slot />
   </main>
   <VisitorTracker />
+  <CookieBanner lang={lang} />
 </body>
 </html>

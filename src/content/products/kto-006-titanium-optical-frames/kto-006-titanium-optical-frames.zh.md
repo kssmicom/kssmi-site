@@ -21,7 +21,7 @@ lensMaterial: "AC 镜片 & 尼龙 & 定制"
 designStyle: "奢华, 复古, 中性"
 nosePads: "一体式鼻托"
 hinge: "3 连节铰链"
-electroplatingMethod: "离子电镀"
+electroplating: "离子电镀"
 logo: "印刷, 镭射, 镭射填油, 热烫印, 金属标, 水晶, 立体贴标"
 service: "代工生产 / 设计制造 定制服务"
 

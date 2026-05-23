@@ -21,7 +21,7 @@ lensMaterial: "Lente TAC & Personalização"
 designStyle: "Luxo, Clássico, Unisex"
 nosePads: "Ponteiras Nasicas de Metal Ajustáveis"
 hinge: "3 Dobradiças"
-electroplatingMethod: "Eletrodeposição ION"
+electroplating: "Eletrodeposição ION"
 logo: "Impressão Tampográfica, Gravação a Laser, Gravação a Laser com Esmalte, Estampagem a Quente, Logotipo Metálico, Decoração di Cristal, Adesivo 3D"
 service: "Fabricação OEM / ODM – Personalização"
 
