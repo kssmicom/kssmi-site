@@ -79,6 +79,14 @@ const organizationSchema = {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#FCFAF8" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TSW9LBMG');</script>
+  <!-- End Google Tag Manager -->
   <meta name="color-scheme" content="light" />
   <title>{title}</title>
   <meta name="description" content={description} />
@@ -159,6 +167,10 @@ const organizationSchema = {
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "70e1c20d83a34e0ebfa6b3fb9053e96a"}'></script>
 </head>
 <body class={`${isRTL ? 'font-arabic' : 'font-sans'} antialiased relative min-h-screen`}>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TSW9LBMG"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <!-- Page Transition Loader -->
   <div id="page-loader" class="fixed top-0 left-0 w-full h-[3px] bg-[#8B7355] z-[99999] origin-left scale-x-0 transition-transform duration-300 pointer-events-none" style="transform:translateZ(0)"></div>
   <script is:inline>
