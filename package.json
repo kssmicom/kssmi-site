@@ -11,6 +11,8 @@
     "validate": "node scripts/validate-content.mjs"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@astrojs/sitemap": "^3.7.2",
     "@astrojs/tailwind": "^6.0.2",
     "astro": "^5.18.1",
     "astro-pagefind": "^1.8.5",
@@ -21,8 +23,7 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.9",
-    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.4.24",
     "pagefind": "^1.4.0"
   }
 }
