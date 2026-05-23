@@ -17,11 +17,12 @@ interface PartnershipHero {
   team?: TeamMember[];
 }
 
-const { partnershipHero = {} } = Astro.props as { partnershipHero?: PartnershipHero };
+const { partnershipHero = {}, lang = 'en' } = Astro.props as { partnershipHero?: PartnershipHero; lang?: string };
+const isRTL = lang === 'ar';
 const { badge, headerPrimary, headerSecondary, description, team = [] } = partnershipHero;
 ---
 
-<section class="w-full bg-gradient-to-b from-[#FCFAF8] to-white py-16 lg:py-24">
+<section class="w-full bg-gradient-to-b from-[#FCFAF8] to-white py-16 lg:py-24" dir={isRTL ? 'rtl' : 'ltr'}>
   <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
     {badge && (
       <span class="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-[#8B7355] bg-[#8B7355]/5 px-4 py-2 rounded-full mb-6">

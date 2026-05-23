@@ -31,6 +31,7 @@ const {
   categories
 } = data;
 
+const isRTL = lang === 'ar';
 const t = translations[lang] || translations.en;
 const currentPath = lang === 'en' ? '' : `${lang}/`;
 
@@ -44,7 +45,7 @@ const cardSrc = cover && existsSync(join(process.cwd(), 'public', cover.replace(
 
 ---
 
-<a href={`/${currentPath}product/${productSlug}`} class="group block">
+<a href={`/${currentPath}product/${productSlug}`} class="group block" dir={isRTL ? 'rtl' : 'ltr'}>
   <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300" style={belowFold ? "content-visibility:auto;contain-intrinsic-size:auto 360px" : ""}>
     <!-- Product Image with Hover Overlay -->
     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100" data-product-cover>

@@ -153,6 +153,7 @@ interface Props {
 }
 
 const { lang = 'en' } = Astro.props as Props;
+const isRTL = lang === 'ar';
 const t = cookieI18n[lang] || cookieI18n.en;
 ---
 
@@ -174,7 +175,7 @@ const t = cookieI18n[lang] || cookieI18n.en;
   gtag('set', 'url_passthrough', true);
 </script>
 
-<div id="cookie-banner" class="hidden">
+<div id="cookie-banner" class="hidden" dir={isRTL ? 'rtl' : 'ltr'}>
   <!-- Main Banner -->
   <div
     id="cookie-banner-main"

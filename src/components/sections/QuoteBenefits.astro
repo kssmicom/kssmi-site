@@ -4,6 +4,7 @@
  * Standard "Key Benefits" card UI for Quote and Contact pages
  */
 const { lang = 'en' } = Astro.props;
+const isRTL = lang === 'ar';
 
 // Quote page translations (matching the backup)
 const quoteText = {
@@ -134,7 +135,7 @@ const qt = {
 };
 ---
 
-<section class="pt-12 pb-4 lg:pt-16 lg:pb-8 bg-gradient-to-b from-stone-50 to-white">
+<section class="pt-12 pb-4 lg:pt-16 lg:pb-8 bg-gradient-to-b from-stone-50 to-white" dir={isRTL ? 'rtl' : 'ltr'}>
   <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1240px] mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
       <!-- Card 1 -->

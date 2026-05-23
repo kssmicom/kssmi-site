@@ -7,6 +7,7 @@ interface Props {
 }
 
 const { lang } = Astro.props;
+const isRTL = lang === 'ar';
 const t = translations[lang as keyof typeof translations] || translations.en;
 
 // Fetch products server-side at request time (dev) or build time (production)
@@ -63,7 +64,7 @@ const placeholders: Record<string, string> = {
 };
 ---
 
-<div id={`search-${lang}`} class="search-component relative w-full max-w-md" data-lang={lang} data-products={productsJson}>
+<div id={`search-${lang}`} class="search-component relative w-full max-w-md" data-lang={lang} data-products={productsJson} dir={isRTL ? 'rtl' : 'ltr'}>
   <!-- Search Input -->
   <div class="relative">
     <label for={`search-input-${lang}`} class="sr-only">Search products</label>
