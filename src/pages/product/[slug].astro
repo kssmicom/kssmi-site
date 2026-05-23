@@ -361,7 +361,7 @@ function thumbSrc(originalPath: string): string {
             <div class="relative aspect-square bg-gray-50 rounded-xl overflow-hidden shadow-lg w-full max-w-[500px]">
               {cover ? (
                 <div id="image-zoom-container" class="w-full h-full cursor-zoom-in">
-                  <img id="main-image" src={cover} alt={getAltText(cover, title)} class="w-full h-full object-cover" loading="eager" fetchpriority="high" decoding="async" onerror="if(!this.dataset.retried){this.dataset.retried=true;setTimeout(()=>{this.src=this.src.split('?')[0]+'?retry=1'}, 50);}" />
+                  <img id="main-image" src={cover} alt={getAltText(cover, title)} class="w-full h-full object-cover" width="800" height="800" loading="eager" fetchpriority="high" decoding="async" onerror="if(!this.dataset.retried){this.dataset.retried=true;setTimeout(()=>{this.src=this.src.split('?')[0]+'?retry=1'}, 50);}" />
                 </div>
               ) : (
                 <div class="w-full h-full flex items-center justify-center">

@@ -54,7 +54,7 @@ const { badge, headerPrimary, headerSecondary, description, team = [] } = partne
           <div class="bg-white rounded-xl p-6 shadow-sm border border-[#8B7355]/10 transition-all duration-300 motion-safe:hover:-translate-y-1 hover:shadow-md">
             {member.image && (
               <div class="w-20 h-20 rounded-full overflow-hidden mb-4 bg-stone-100">
-                <img src={member.image} alt={member.name} class="w-full h-full object-cover" />
+                <img src={member.image} alt={member.name} width="80" height="80" loading="lazy" decoding="async" class="w-full h-full object-cover" />
               </div>
             )}
             <h3 class="text-lg font-bold text-stone-900 mb-2">{member.name}</h3>
