@@ -14,28 +14,28 @@ export interface SidebarTagGroup {
  * Build the primary sidebar category hierarchy (Sunglasses, Optical Frames).
  * Centralized to avoid ~70 lines of duplication across 8 listing pages.
  */
-export function buildPrimaryCategories(t: any, prefix: string): SidebarCategory[] {
+export function buildPrimaryCategories(t: any, prefix: string, baseSegment: string = 'product'): SidebarCategory[] {
   return [
     {
       label: t.sidebar.sunglasses,
-      href: `/${prefix}product/sunglasses`,
+      href: `/${prefix}${baseSegment}/sunglasses`,
       items: [
-        { label: t.sidebar.acetate_sunglasses, href: `/${prefix}product/acetate-sunglasses` },
-        { label: t.sidebar.metal_sunglasses, href: `/${prefix}product/metal-sunglasses` },
-        { label: t.sidebar.titanium_sunglasses, href: `/${prefix}product/titanium-sunglasses` },
-        { label: t.sidebar.carbon_fiber_sunglasses, href: `/${prefix}product/carbon-fiber-sunglasses` },
-        { label: t.sidebar.rimless_sunglasses, href: `/${prefix}product/rimless-sunglasses` },
+        { label: t.sidebar.acetate_sunglasses, href: `/${prefix}${baseSegment}/acetate-sunglasses` },
+        { label: t.sidebar.metal_sunglasses, href: `/${prefix}${baseSegment}/metal-sunglasses` },
+        { label: t.sidebar.titanium_sunglasses, href: `/${prefix}${baseSegment}/titanium-sunglasses` },
+        { label: t.sidebar.carbon_fiber_sunglasses, href: `/${prefix}${baseSegment}/carbon-fiber-sunglasses` },
+        { label: t.sidebar.rimless_sunglasses, href: `/${prefix}${baseSegment}/rimless-sunglasses` },
       ],
     },
     {
       label: t.sidebar.optical_frames,
-      href: `/${prefix}product/optical-frames`,
+      href: `/${prefix}${baseSegment}/optical-frames`,
       items: [
-        { label: t.sidebar.acetate_glasses, href: `/${prefix}product/acetate-optical-frames` },
-        { label: t.sidebar.metal_glasses, href: `/${prefix}product/metal-optical-frames` },
-        { label: t.sidebar.titanium_glasses, href: `/${prefix}product/titanium-optical-frames` },
-        { label: t.sidebar.carbon_glasses, href: `/${prefix}product/carbon-fiber-optical-frames` },
-        { label: t.sidebar.rimless_glasses, href: `/${prefix}product/rimless-optical-frames` },
+        { label: t.sidebar.acetate_glasses, href: `/${prefix}${baseSegment}/acetate-optical-frames` },
+        { label: t.sidebar.metal_glasses, href: `/${prefix}${baseSegment}/metal-optical-frames` },
+        { label: t.sidebar.titanium_glasses, href: `/${prefix}${baseSegment}/titanium-optical-frames` },
+        { label: t.sidebar.carbon_glasses, href: `/${prefix}${baseSegment}/carbon-fiber-optical-frames` },
+        { label: t.sidebar.rimless_glasses, href: `/${prefix}${baseSegment}/rimless-optical-frames` },
       ],
     },
   ];
@@ -45,42 +45,42 @@ export function buildPrimaryCategories(t: any, prefix: string): SidebarCategory[
  * Build the sidebar tag groups (Fashion, Luxury, Carbon Fiber, Rimless).
  * Centralized to avoid ~40 lines of duplication across 8 listing pages.
  */
-export function buildSidebarTags(t: any, prefix: string): SidebarTagGroup[] {
+export function buildSidebarTags(t: any, prefix: string, baseSegment: string = 'product'): SidebarTagGroup[] {
   return [
     {
       label: t.sidebar.fashion,
-      href: `/${prefix}product/fashion-eyewear`,
+      href: `/${prefix}${baseSegment}/fashion-eyewear`,
       items: [
-        { label: t.sidebar.fashion_acetate_sunglasses, href: `/${prefix}product/fashion-acetate-sunglasses` },
-        { label: t.sidebar.fashion_metal_sunglasses, href: `/${prefix}product/fashion-metal-sunglasses` },
-        { label: t.sidebar.fashion_acetate_optical_frames, href: `/${prefix}product/fashion-acetate-optical-frames` },
-        { label: t.sidebar.fashion_metal_optical_frames, href: `/${prefix}product/fashion-metal-optical-frames` },
+        { label: t.sidebar.fashion_acetate_sunglasses, href: `/${prefix}${baseSegment}/fashion-acetate-sunglasses` },
+        { label: t.sidebar.fashion_metal_sunglasses, href: `/${prefix}${baseSegment}/fashion-metal-sunglasses` },
+        { label: t.sidebar.fashion_acetate_optical_frames, href: `/${prefix}${baseSegment}/fashion-acetate-optical-frames` },
+        { label: t.sidebar.fashion_metal_optical_frames, href: `/${prefix}${baseSegment}/fashion-metal-optical-frames` },
       ],
     },
     {
       label: t.sidebar.luxury,
-      href: `/${prefix}product/luxury-eyewear`,
+      href: `/${prefix}${baseSegment}/luxury-eyewear`,
       items: [
-        { label: t.sidebar.luxury_acetate_sunglasses, href: `/${prefix}product/luxury-acetate-sunglasses` },
-        { label: t.sidebar.luxury_titanium_sunglasses, href: `/${prefix}product/luxury-titanium-sunglasses` },
-        { label: t.sidebar.luxury_acetate_optical_frames, href: `/${prefix}product/luxury-acetate-optical-frames` },
-        { label: t.sidebar.luxury_titanium_optical_frames, href: `/${prefix}product/luxury-titanium-optical-frames` },
+        { label: t.sidebar.luxury_acetate_sunglasses, href: `/${prefix}${baseSegment}/luxury-acetate-sunglasses` },
+        { label: t.sidebar.luxury_titanium_sunglasses, href: `/${prefix}${baseSegment}/luxury-titanium-sunglasses` },
+        { label: t.sidebar.luxury_acetate_optical_frames, href: `/${prefix}${baseSegment}/luxury-acetate-optical-frames` },
+        { label: t.sidebar.luxury_titanium_optical_frames, href: `/${prefix}${baseSegment}/luxury-titanium-optical-frames` },
       ],
     },
     {
       label: t.sidebar.carbon_fiber,
-      href: `/${prefix}product/carbon-fiber-eyewear`,
+      href: `/${prefix}${baseSegment}/carbon-fiber-eyewear`,
       items: [
-        { label: t.sidebar.carbon_fiber_sunglasses, href: `/${prefix}product/carbon-fiber-sunglasses` },
-        { label: t.sidebar.carbon_glasses, href: `/${prefix}product/carbon-fiber-optical-frames` },
+        { label: t.sidebar.carbon_fiber_sunglasses, href: `/${prefix}${baseSegment}/carbon-fiber-sunglasses` },
+        { label: t.sidebar.carbon_glasses, href: `/${prefix}${baseSegment}/carbon-fiber-optical-frames` },
       ],
     },
     {
       label: t.sidebar.rimless,
-      href: `/${prefix}product/rimless-eyewear`,
+      href: `/${prefix}${baseSegment}/rimless-eyewear`,
       items: [
-        { label: t.sidebar.rimless_sunglasses, href: `/${prefix}product/rimless-sunglasses` },
-        { label: t.sidebar.rimless_glasses, href: `/${prefix}product/rimless-optical-frames` },
+        { label: t.sidebar.rimless_sunglasses, href: `/${prefix}${baseSegment}/rimless-sunglasses` },
+        { label: t.sidebar.rimless_glasses, href: `/${prefix}${baseSegment}/rimless-optical-frames` },
       ],
     },
   ];

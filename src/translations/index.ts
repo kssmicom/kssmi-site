@@ -19,8 +19,10 @@ export const translations = {
       home: "Home",
       products: "Products",
       collection: "Collection",
+      feature: "Feature",
       about: "About",
       contact: "Contact",
+      blog: "Blog",
       // Subcategories - Luxury Series
       luxury: "Luxury Customized",
       luxury_sunglasses: "Luxury Sunglasses",
@@ -97,7 +99,7 @@ export const translations = {
       rights: "All rights reserved."
     },
     cta: {
-      quote: "Request Quote",
+      quote: "Quote",
       catalog: "View Catalog"
     },
     search: {
@@ -111,6 +113,8 @@ export const translations = {
       backToTop: "Top"
     },
     product: {
+        goToPage: 'Go to page',
+        goToButton: 'Go',
       // Product Detail Page
       itemNo: "Item No",
       color: "Color",
@@ -249,6 +253,8 @@ export const translations = {
       // UI Labels
       tags_filters: "Tags & Filters",
       all_products: "All Products",
+      all_posts: "All Posts",
+      all_features: "All Features",
       view_all_collections: "View All Collections",
       products_in_category: "products in this category",
       fashion_group: "Fashion Eyewear",
@@ -280,8 +286,10 @@ export const translations = {
       home: "الرئيسية",
       products: "المنتجات",
       collection: "المجموعة",
-      about: "عن",
-      contact: "اتصل بنا",
+      feature: "مي",
+      about: "نحن",
+      contact: "ات",
+      blog: "مدونة",
       luxury: "فخمة مخصصة",
       luxury_sunglasses: "نظارات شمسية فخمة",
       luxury_glasses: "نظارات فخمة",
@@ -343,7 +351,7 @@ export const translations = {
       rights: "جميع الحقوق محفوظة."
     },
     cta: {
-      quote: "طلب عرض سعر",
+      quote: "اس",
       catalog: "عرض الكتالوج"
     },
     search: {
@@ -357,6 +365,8 @@ export const translations = {
       backToTop: "إلى الأعلى"
     },
     product: {
+        goToPage: 'انتقل للصفحة',
+        goToButton: 'انتقال',
       itemNo: "رقم الصنف",
       color: "اللون",
       serviceMode: "نوع الخدمة",
@@ -490,6 +500,8 @@ export const translations = {
       // UI Labels
       tags_filters: "الوسوم والمرشحات",
       all_products: "جميع المنتجات",
+      all_posts: "جميع المقالات",
+      all_features: "جميع الميزات",
       view_all_collections: "عرض جميع المجموعات",
       products_in_category: "منتج في هذه الفئة",
       fashion_group: "موضة النظارات",
@@ -521,8 +533,10 @@ export const translations = {
       home: "Home",
       products: "Prodotti",
       collection: "Collezione",
-      about: "Chi Siamo",
-      contact: "Contattaci",
+      feature: "Car",
+      about: "No",
+      contact: "Cont",
+      blog: "Blog",
       luxury: "Lusso Personalizzato",
       luxury_sunglasses: "Occhiali da Sole Lusso",
       luxury_glasses: "Occhiali Lusso",
@@ -584,7 +598,7 @@ export const translations = {
       rights: "Tutti i diritti riservati."
     },
     cta: {
-      quote: "Richiedi Preventivo",
+      quote: "Qst",
       catalog: "Vedi Catalogo"
     },
     search: {
@@ -598,6 +612,8 @@ export const translations = {
       backToTop: "Torna su"
     },
     product: {
+        goToPage: 'Vai alla pagina',
+        goToButton: 'Vai',
       itemNo: "Codice Articolo",
       color: "Colore",
       serviceMode: "Servizio ODM/OEM",
@@ -731,6 +747,8 @@ export const translations = {
       // UI Labels
       tags_filters: "Tag e Filtri",
       all_products: "Tutti i Prodotti",
+      all_posts: "Tutti gli Articoli",
+      all_features: "Tutte le Caratteristiche",
       view_all_collections: "Vedi Tutte le Collezioni",
       products_in_category: "prodotti in questa categoria",
       fashion_group: "Occhiali Moda",
@@ -762,8 +780,10 @@ export const translations = {
       home: "Inicio",
       products: "Productos",
       collection: "Colección",
-      about: "Nosotros",
-      contact: "Contacto",
+      feature: "Rasgo",
+      about: "Yo",
+      contact: "Cont",
+      blog: "Blog",
       // Subcategories - Luxury Series
       luxury: "Lujo Personalizado",
       luxury_sunglasses: "Gafas de Sol de Lujo",
@@ -832,7 +852,7 @@ export const translations = {
       rights: "Todos los derechos reservados."
     },
     cta: {
-      quote: "Solicitar Cotización",
+      quote: "Cns",
       catalog: "Ver Catálogo"
     },
     search: {
@@ -846,6 +866,8 @@ export const translations = {
       backToTop: "Volver Arriba"
     },
     product: {
+        goToPage: 'Ir a la página',
+        goToButton: 'Ir',
       itemNo: "Número de Artículo",
       color: "Color",
       serviceMode: "Modo de Producción",
@@ -979,6 +1001,8 @@ export const translations = {
       // UI Labels
       tags_filters: "Etiquetas y Filtros",
       all_products: "Todos los Productos",
+      all_posts: "Todas las Entradas",
+      all_features: "Todas las Características",
       view_all_collections: "Ver Todas las Colecciones",
       products_in_category: "productos en esta categoría",
       fashion_group: "Gafas Moda",
@@ -1010,8 +1034,10 @@ export const translations = {
       home: "Accueil",
       products: "Produits",
       collection: "Collection",
-      about: "À Propos",
-      contact: "Contact",
+      feature: "Atout",
+      about: "On",
+      contact: "Con",
+      blog: "Blog",
       // Subcategories - Luxury Series
       luxury: "Luxe Personnalisé",
       luxury_sunglasses: "Lunettes de Soleil de Luxe",
@@ -1080,7 +1106,7 @@ export const translations = {
       rights: "Tous droits réservés."
     },
     cta: {
-      quote: "Demander un Devis",
+      quote: "Dem",
       catalog: "Voir le Catalogue"
     },
     search: {
@@ -1094,6 +1120,8 @@ export const translations = {
       backToTop: "Retour en Haut"
     },
     product: {
+        goToPage: 'Aller à la page',
+        goToButton: 'Aller',
       itemNo: "Numéro d'Article",
       color: "Couleur",
       serviceMode: "Mode de Fabrication",
@@ -1227,6 +1255,8 @@ export const translations = {
       // UI Labels
       tags_filters: "Tags et Filtres",
       all_products: "Tous les Produits",
+      all_posts: "Tous les Articles",
+      all_features: "Toutes les Caractéristiques",
       view_all_collections: "Voir Toutes les Collections",
       products_in_category: "produits dans cette catégorie",
       fashion_group: "Lunettes Mode",
@@ -1258,8 +1288,10 @@ export const translations = {
       home: "Startseite",
       products: "Produkte",
       collection: "Kollektion",
-      about: "Über",
-      contact: "Kontakt",
+      feature: "Zug",
+      about: "Wir",
+      contact: "Kon",
+      blog: "Blog",
       // Subcategories - Luxury Series
       luxury: "Luxus Personalisiert",
       luxury_sunglasses: "Luxus Sonnenbrillen",
@@ -1328,7 +1360,7 @@ export const translations = {
       rights: "Alle Rechte vorbehalten."
     },
     cta: {
-      quote: "Angebot Anfordern",
+      quote: "Anf",
       catalog: "Katalog Ansehen"
     },
     search: {
@@ -1342,6 +1374,8 @@ export const translations = {
       backToTop: "Nach Oben"
     },
     product: {
+        goToPage: 'Zur Seite',
+        goToButton: 'Los',
       itemNo: "Artikelnummer",
       color: "Farbe",
       serviceMode: "Fertigungsart",
@@ -1475,6 +1509,8 @@ export const translations = {
       // UI Labels
       tags_filters: "Tags und Filter",
       all_products: "Alle Produkte",
+      all_posts: "Alle Beiträge",
+      all_features: "Alle Features",
       view_all_collections: "Alle Kollektionen Anzeigen",
       products_in_category: "Produkte in dieser Kategorie",
       fashion_group: "Brillen Mode",
@@ -1506,8 +1542,10 @@ export const translations = {
       home: "Início",
       products: "Produtos",
       collection: "Coleção",
-      about: "Sobre",
-      contact: "Contato",
+      feature: "Traço",
+      about: "Nós",
+      contact: "Cont",
+      blog: "Blog",
       // Subcategories - Luxury Series
       luxury: "Luxo Personalizado",
       luxury_sunglasses: "Óculos de Sol de Luxo",
@@ -1576,7 +1614,7 @@ export const translations = {
       rights: "Todos os direitos reservados."
     },
     cta: {
-      quote: "Solicitar Orçamento",
+      quote: "Cns",
       catalog: "Ver Catálogo"
     },
     search: {
@@ -1590,6 +1628,8 @@ export const translations = {
       backToTop: "Voltar ao Topo"
     },
     product: {
+        goToPage: 'Ir para página',
+        goToButton: 'Ir',
       itemNo: "Número do Item",
       color: "Cor",
       serviceMode: "Modo de Produção",
@@ -1723,6 +1763,8 @@ export const translations = {
       // UI Labels
       tags_filters: "Tags e Filtros",
       all_products: "Todos os Produtos",
+      all_posts: "Todos os Posts",
+      all_features: "Todos os Recursos",
       view_all_collections: "Ver Todas as Coleções",
       products_in_category: "produtos nesta categoria",
       fashion_group: "Óculos Moda",
@@ -1754,8 +1796,10 @@ export const translations = {
       home: "Главная",
       products: "Продукты",
       collection: "Коллекция",
-      about: "О Нас",
-      contact: "Контакты",
+      feature: "Фича",
+      about: "Мы",
+      contact: "Конт",
+      blog: "Блог",
       // Subcategories - Luxury Series
       luxury: "Роскошный Индивидуальный",
       luxury_sunglasses: "Роскошные Солнцезащитные Очки",
@@ -1824,7 +1868,7 @@ export const translations = {
       rights: "Все права защищены."
     },
     cta: {
-      quote: "Запросить Цену",
+      quote: "Зап",
       catalog: "Смотреть Каталог"
     },
     search: {
@@ -1838,6 +1882,8 @@ export const translations = {
       backToTop: "Наверх"
     },
     product: {
+        goToPage: 'На страницу',
+        goToButton: 'Перейти',
       itemNo: "Артикул",
       color: "Цвет",
       serviceMode: "Тип производства",
@@ -1971,6 +2017,8 @@ export const translations = {
       // UI Labels
       tags_filters: "Теги и Фильтры",
       all_products: "Все Продукты",
+      all_posts: "Все Посты",
+      all_features: "Все Особенности",
       view_all_collections: "Посмотреть Все Коллекции",
       products_in_category: "продуктов в этой категории",
       fashion_group: "Очки Мода",
@@ -2002,8 +2050,10 @@ export const translations = {
       home: "ホーム",
       products: "製品",
       collection: "コレクション",
-      about: "概要",
-      contact: "お問い合わせ",
+      feature: "特徴",
+      about: "私",
+      contact: "連絡",
+      blog: "ブログ",
       // Subcategories - Luxury Series
       luxury: "高級オーダーメイド",
       luxury_sunglasses: "高級サングラス",
@@ -2072,7 +2122,7 @@ export const translations = {
       rights: "無断転載を禁じます。"
     },
     cta: {
-      quote: "お見積り",
+      quote: "問",
       catalog: "カタログを見る"
     },
     search: {
@@ -2086,6 +2136,8 @@ export const translations = {
       backToTop: "トップへ戻る"
     },
     product: {
+        goToPage: 'ページへ移動',
+        goToButton: '移動',
       itemNo: "品番",
       color: "カラー",
       serviceMode: "サービスモード",
@@ -2219,6 +2271,8 @@ export const translations = {
       // UI Labels
       tags_filters: "タグとフィルター",
       all_products: "すべての製品",
+      all_posts: "すべての記事",
+      all_features: "すべての特集",
       view_all_collections: "すべてのコレクションを見る",
       products_in_category: "このカテゴリーの製品",
       fashion_group: "ファッション眼鏡",
@@ -2251,8 +2305,10 @@ export const translations = {
       home: "Anasayfa",
       products: "Ürünler",
       collection: "Koleksiyon",
-      about: "Hakkımızda",
-      contact: "İletişim",
+      feature: "Öz",
+      about: "Biz",
+      contact: "İlt",
+      blog: "Blog",
       // Subcategories - Luxury Series
       luxury: "Lüks Özelleştirilmiş",
       luxury_sunglasses: "Lüks Güneş Gözlüğü",
@@ -2321,7 +2377,7 @@ export const translations = {
       rights: "Tüm hakları saklıdır."
     },
     cta: {
-      quote: "Fiyat İsteyin",
+      quote: "Sor",
       catalog: "Kataloğu Gör"
     },
     search: {
@@ -2335,6 +2391,8 @@ export const translations = {
       backToTop: "Yukarı Dön"
     },
     product: {
+        goToPage: 'Sayfaya git',
+        goToButton: 'Git',
       itemNo: "Ürün No",
       color: "Renk",
       serviceMode: "Üretim Türü",
@@ -2468,6 +2526,8 @@ export const translations = {
       // UI Labels
       tags_filters: "Etiketler ve Filtreler",
       all_products: "Tüm Ürünler",
+      all_posts: "Tüm Yazılar",
+      all_features: "Tüm Özellikler",
       view_all_collections: "Tüm Koleksiyonları Gör",
       products_in_category: "bu kategoride ürün",
       fashion_group: "Moda Gözlükleri",
@@ -2499,8 +2559,10 @@ export const translations = {
       home: "홈",
       products: "제품",
       collection: "컬렉션",
-      about: "소개",
-      contact: "문의하기",
+      feature: "점",
+      about: "우리",
+      contact: "연",
+      blog: "블로그",
       luxury: "럭셔리 맞춤형",
       luxury_sunglasses: "럭셔리 선글라스",
       luxury_glasses: "럭셔리 안경",
@@ -2562,7 +2624,7 @@ export const translations = {
       rights: "모든 권리 보유."
     },
     cta: {
-      quote: "견적 요청",
+      quote: "문",
       catalog: "카탈로그 보기"
     },
     search: {
@@ -2576,6 +2638,8 @@ export const translations = {
       backToTop: "맨 위로"
     },
     product: {
+        goToPage: '페이지로 이동',
+        goToButton: '이동',
       itemNo: "품목 번호",
       color: "색상",
       serviceMode: "서비스 모드",
@@ -2709,6 +2773,8 @@ export const translations = {
       // UI Labels
       tags_filters: "태그와 필터",
       all_products: "모든 제품",
+      all_posts: "모든 게시글",
+      all_features: "모든 기능",
       view_all_collections: "모든 컬렉션 보기",
       products_in_category: "이 카테고리의 제품",
       fashion_group: "패션 안경",
@@ -2740,8 +2806,10 @@ export const translations = {
       home: "首页",
       products: "产品",
       collection: "系列",
+      feature: "优势",
       about: "关于",
-      contact: "联系我们",
+      contact: "联系",
+      blog: "博客",
       luxury: "奢华定制",
       luxury_sunglasses: "奢华太阳镜",
       luxury_glasses: "奢华光学镜",
@@ -2803,7 +2871,7 @@ export const translations = {
       rights: "版权所有。"
     },
     cta: {
-      quote: "获取报价",
+      quote: "垂询",
       catalog: "查看目录"
     },
     search: {
@@ -2817,6 +2885,8 @@ export const translations = {
       backToTop: "回到顶部"
     },
     product: {
+        goToPage: '跳转到页面',
+        goToButton: '跳转',
       itemNo: "产品编号",
       color: "颜色",
       serviceMode: "服务模式",
@@ -2950,6 +3020,8 @@ export const translations = {
       // UI Labels
       tags_filters: "标签和筛选",
       all_products: "所有产品",
+      all_posts: "所有文章",
+      all_features: "所有特色",
       view_all_collections: "查看所有系列",
       products_in_category: "此类别中的产品",
       fashion_group: "时尚眼镜",
@@ -2981,8 +3053,10 @@ export const translations = {
       home: "मुख पृष्ठ",
       products: "उत्पाद",
       collection: "संग्रह",
-      about: "परिचय",
-      contact: "हमसे संपर्क करें",
+      feature: "वि",
+      about: "हम",
+      contact: "सं",
+      blog: "ब्लॉग",
       luxury: "लक्ज़री कस्टमाइज़्ड",
       luxury_sunglasses: "लक्ज़री धूप का चश्मा",
       luxury_glasses: "लक्ज़री चश्मा",
@@ -3044,7 +3118,7 @@ export const translations = {
       rights: "सर्वाधिकार सुरक्षित।"
     },
     cta: {
-      quote: "उद्धरण प्राप्त करें",
+      quote: "पू",
       catalog: "कैटलॉग देखें"
     },
     search: {
@@ -3058,6 +3132,8 @@ export const translations = {
       backToTop: "शीर्ष पर वापस"
     },
     product: {
+        goToPage: 'पृष्ठ पर जाएं',
+        goToButton: 'जाएं',
       itemNo: "आइटम नं",
       color: "रंग",
       serviceMode: "सेवा मोड",
@@ -3191,6 +3267,8 @@ export const translations = {
       // UI Labels
       tags_filters: "टैग और फिल्टर",
       all_products: "सभी उत्पाद",
+      all_posts: "सभी पोस्ट",
+      all_features: "सभी सुविधाएँ",
       view_all_collections: "सभी कलेक्शन देखें",
       products_in_category: "इस श्रेणी में उत्पाद",
       fashion_group: "फैशन चश्मा",
@@ -3222,8 +3300,10 @@ export const translations = {
       home: "Trang chủ",
       products: "Sản phẩm",
       collection: "Bộ sưu tập",
-      about: "Giới thiệu",
-      contact: "Liên hệ",
+      feature: "Tính",
+      about: "Ta",
+      contact: "LH",
+      blog: "Blog",
       luxury: "Sang trọng Tùy chỉnh",
       luxury_sunglasses: "Kính mát Sang trọng",
       luxury_glasses: "Kính quang học Sang trọng",
@@ -3285,7 +3365,7 @@ export const translations = {
       rights: "Đã đăng ký Bản quyền."
     },
     cta: {
-      quote: "Nhận Báo Giá",
+      quote: "Hỏi",
       catalog: "Xem Danh mục"
     },
     search: {
@@ -3299,6 +3379,8 @@ export const translations = {
       backToTop: "Lên đầu trang"
     },
     product: {
+        goToPage: 'Đến trang',
+        goToButton: 'Đi',
       itemNo: "Mã sản phẩm",
       color: "Màu sắc",
       serviceMode: "Mô hình Dịch vụ",
@@ -3429,6 +3511,8 @@ export const translations = {
       // UI Labels
       tags_filters: "Thẻ và Bộ lọc",
       all_products: "Tất cả Sản phẩm",
+      all_posts: "Tất cả Bài viết",
+      all_features: "Tất cả Tính năng",
       view_all_collections: "Xem Tất cả Bộ sưu tập",
       products_in_category: "sản phẩm trong danh mục này",
       fashion_group: "Kính Thời trang",
@@ -3460,8 +3544,10 @@ export const translations = {
       home: "Omah",
       products: "Produk",
       collection: "Koleksi",
-      about: "Tentang",
-      contact: "Kontak",
+      feature: "Fit",
+      about: "Kita",
+      contact: "Hub",
+      blog: "Blog",
       luxury: "Klasik Mewah",
       luxury_sunglasses: "Kacamata Sun Kelas",
       luxury_glasses: "Kacamata Kelas Mewah",
@@ -3523,7 +3609,7 @@ export const translations = {
       rights: "Hak Cipta Dilindhungi."
     },
     cta: {
-      quote: "Pengen Njaluk Penawaran Harga",
+      quote: "Tak",
       catalog: "Tingali Katalog"
     },
     search: {
@@ -3537,6 +3623,8 @@ export const translations = {
       backToTop: "Kembali Katon Ndhuwur"
     },
     product: {
+        goToPage: 'Menyang kaca',
+        goToButton: 'Menyang',
       itemNo: "No Barang",
       color: "Warna",
       serviceMode: "Service Mode",
@@ -3667,6 +3755,8 @@ export const translations = {
       // UI Labels
       tags_filters: "Tag lan Filter",
       all_products: "Kabeh Produk",
+      all_posts: "Kabeh Tulisan",
+      all_features: "Kabeh Fitur",
       view_all_collections: "Deleng Kabeh Koleksi",
       products_in_category: "Produk Ing Kategori Iki",
       fashion_group: "Kacamata Fesyen",
@@ -3699,8 +3789,10 @@ export const translations = {
       home: "Laman Utama",
       products: "Produk",
       collection: "Koleksi",
-      about: "Tentang",
-      contact: "Hubungi Kami",
+      feature: "Cir",
+      about: "Kita",
+      contact: "Hub",
+      blog: "Blog",
       luxury: "Tersuai Mewah",
       luxury_sunglasses: "Cermin Mata Hitam Mewah",
       luxury_glasses: "Cermin Mata Mewah",
@@ -3762,7 +3854,7 @@ export const translations = {
       rights: "Hak cipta terpelihara."
     },
     cta: {
-      quote: "Dapatkan Sebut Harga",
+      quote: "Tny",
       catalog: "Lihat Katalog"
     },
     search: {
@@ -3776,6 +3868,8 @@ export const translations = {
       backToTop: "Kembali ke Atas"
     },
     product: {
+        goToPage: 'Ke halaman',
+        goToButton: 'Pergi',
       itemNo: "No Item",
       color: "Warna",
       serviceMode: "Mod Perkhidmatan",
@@ -3909,6 +4003,8 @@ export const translations = {
       // UI Labels
       tags_filters: "Tag dan Penapis",
       all_products: "Semua Produk",
+      all_posts: "Semua Kiriman",
+      all_features: "Semua Ciri",
       view_all_collections: "Lihat Semua Koleksi",
       products_in_category: "produk dalam kategori ini",
       fashion_group: "Cermin Mata Fesyen",
@@ -3941,8 +4037,10 @@ export const translations = {
       home: "Асосӣ",
       products: "Маҳсулот",
       collection: "Коллексия",
-      about: "Дар бораи мо",
-      contact: "Тамос бо мо",
+      feature: "Ху",
+      about: "Мо",
+      contact: "Тамос",
+      blog: "Блог",
       luxury: "Боҳашамати Фармоишӣ",
       luxury_sunglasses: "Айнаки офтобии Боҳашамат",
       luxury_glasses: "Айнаки Боҳашамат",
@@ -4004,7 +4102,7 @@ export const translations = {
       rights: "Ҳамаи ҳуқуқҳо маҳфузанд."
     },
     cta: {
-      quote: "Гирифтани Нарх",
+      quote: "Пур",
       catalog: "Дидани Каталог"
     },
     search: {
@@ -4018,6 +4116,8 @@ export const translations = {
       backToTop: "Бозгашт ба Боло"
     },
     product: {
+        goToPage: 'Ба саҳифа',
+        goToButton: 'Рафтан',
       itemNo: "Рақами Мол",
       color: "Ранг",
       serviceMode: "Ҳолати Хизматрасонӣ",
@@ -4151,6 +4251,8 @@ export const translations = {
       // UI Labels
       tags_filters: "Тегҳо ва Филтрҳо",
       all_products: "Ҳамаи Маҳсулот",
+      all_posts: "Ҳамаи Навиштаҳо",
+      all_features: "Ҳамаи Хусусиятҳо",
       view_all_collections: "Дидани Ҳамаи Маҷмӯаҳо",
       products_in_category: "маҳсулот дар ин категория",
       fashion_group: "Айнаки Муд",

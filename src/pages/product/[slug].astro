@@ -291,13 +291,7 @@ if (type === 'product' && product) {
       "@type": "AggregateOffer",
       "availability": "https://schema.org/InStock",
       "offerCount": "1",
-      "priceSpecification": {
-        "@type": "UnitPriceSpecification",
-        "price": "15.00",
-        "minPrice": "15.00",
-        "maxPrice": "20.00",
-        "priceCurrency": "USD"
-      },
+      "priceCurrency": "USD",
       "url": `https://kssmi.com/product/${imageSlug}`
     }
   };
@@ -442,13 +436,13 @@ function thumbSrc(originalPath: string): string {
             </div>
 
             <div class="flex flex-wrap gap-4 mb-8">
-              <a href="/quote" class="flex-1 min-w-[200px] bg-[#5D4E37] text-white px-6 py-4 rounded-lg font-semibold hover:bg-[#4A3D2E] active:bg-[#4a4030] transition-colors duration-200 text-center flex items-center justify-center gap-2">
+              <a href={`/${currentPath}quote`} class="flex-1 min-w-[200px] bg-[#5D4E37] text-white px-6 py-4 rounded-lg font-semibold hover:bg-[#4A3D2E] active:bg-[#4a4030] transition-colors duration-200 text-center flex items-center justify-center gap-2">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
                 {t.cta.quote}
               </a>
-              <a href="/product" class="flex-1 min-w-[200px] border-2 border-[#8B7355] text-[#5D4E37] px-6 py-4 rounded-lg font-semibold hover:bg-[#4A3D2E] hover:text-white transition-colors duration-200 text-center flex items-center justify-center gap-2">
+              <a href={`/${currentPath}product`} class="flex-1 min-w-[200px] border-2 border-[#8B7355] text-[#5D4E37] px-6 py-4 rounded-lg font-semibold hover:bg-[#4A3D2E] hover:text-white transition-colors duration-200 text-center flex items-center justify-center gap-2">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>

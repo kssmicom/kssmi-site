@@ -124,8 +124,140 @@ const menuStructure = [
       }
     ]
   },
+  {
+    label: t.nav.feature,
+    href: `/${currentPath}eyewear`,
+    menuKey: 'eyewear',
+    hasDropdown: true,
+    children: [
+      {
+        label: t.sidebar.sunglasses,
+        href: `/${currentPath}eyewear/sunglasses`,
+        items: [
+          { label: t.sidebar.acetate_sunglasses,       href: `/${currentPath}eyewear/acetate-sunglasses` },
+          { label: t.sidebar.metal_sunglasses,         href: `/${currentPath}eyewear/metal-sunglasses` },
+          { label: t.sidebar.titanium_sunglasses,      href: `/${currentPath}eyewear/titanium-sunglasses` },
+          { label: t.sidebar.carbon_fiber_sunglasses,  href: `/${currentPath}eyewear/carbon-fiber-sunglasses` },
+          { label: t.sidebar.rimless_sunglasses,       href: `/${currentPath}eyewear/rimless-sunglasses` }
+        ]
+      },
+      {
+        label: t.sidebar.optical_frames,
+        href: `/${currentPath}eyewear/optical-frames`,
+        items: [
+          { label: t.sidebar.acetate_glasses,       href: `/${currentPath}eyewear/acetate-optical-frames` },
+          { label: t.sidebar.metal_glasses,         href: `/${currentPath}eyewear/metal-optical-frames` },
+          { label: t.sidebar.titanium_glasses,      href: `/${currentPath}eyewear/titanium-optical-frames` },
+          { label: t.sidebar.carbon_glasses,        href: `/${currentPath}eyewear/carbon-fiber-optical-frames` },
+          { label: t.sidebar.rimless_glasses,       href: `/${currentPath}eyewear/rimless-optical-frames` }
+        ]
+      },
+      {
+        label: t.sidebar.fashion,
+        href: `/${currentPath}eyewear/fashion-eyewear`,
+        items: [
+          { label: t.sidebar.fashion_acetate_sunglasses, href: `/${currentPath}eyewear/fashion-acetate-sunglasses` },
+          { label: t.sidebar.fashion_metal_sunglasses,   href: `/${currentPath}eyewear/fashion-metal-sunglasses` },
+          { label: t.sidebar.fashion_acetate_glasses,     href: `/${currentPath}eyewear/fashion-acetate-optical-frames` },
+          { label: t.sidebar.fashion_metal_glasses,       href: `/${currentPath}eyewear/fashion-metal-optical-frames` }
+        ]
+      },
+      {
+        label: t.sidebar.luxury,
+        href: `/${currentPath}eyewear/luxury-eyewear`,
+        items: [
+          { label: t.sidebar.luxury_acetate_sunglasses,  href: `/${currentPath}eyewear/luxury-acetate-sunglasses` },
+          { label: t.sidebar.luxury_titanium_sunglasses, href: `/${currentPath}eyewear/luxury-titanium-sunglasses` },
+          { label: t.sidebar.luxury_acetate_glasses,      href: `/${currentPath}eyewear/luxury-acetate-optical-frames` },
+          { label: t.sidebar.luxury_titanium_glasses,    href: `/${currentPath}eyewear/luxury-titanium-optical-frames` }
+        ]
+      },
+      {
+        label: t.sidebar.carbon_fiber,
+        href: `/${currentPath}eyewear/carbon-fiber-eyewear`,
+        items: [
+          { label: t.sidebar.carbon_fiber_sunglasses, href: `/${currentPath}eyewear/carbon-fiber-sunglasses` },
+          { label: t.sidebar.carbon_glasses,     href: `/${currentPath}eyewear/carbon-fiber-optical-frames` }
+        ]
+      },
+      {
+        label: t.sidebar.rimless,
+        href: `/${currentPath}eyewear/rimless-eyewear`,
+        items: [
+          { label: t.sidebar.rimless_sunglasses, href: `/${currentPath}eyewear/rimless-sunglasses` },
+          { label: t.sidebar.rimless_glasses,     href: `/${currentPath}eyewear/rimless-optical-frames` }
+        ]
+      }
+    ]
+  },
   { label: t.nav.about, href: aboutUrl },
   { label: t.nav.contact, href: contactUrl },
+  {
+    label: t.nav.blog,
+    href: `/${currentPath}blog`,
+    menuKey: 'blog',
+    hasDropdown: true,
+    children: [
+      {
+        label: t.sidebar.sunglasses,
+        href: `/${currentPath}blog/sunglasses`,
+        items: [
+          { label: t.sidebar.acetate_sunglasses,       href: `/${currentPath}blog/acetate-sunglasses` },
+          { label: t.sidebar.metal_sunglasses,         href: `/${currentPath}blog/metal-sunglasses` },
+          { label: t.sidebar.titanium_sunglasses,      href: `/${currentPath}blog/titanium-sunglasses` },
+          { label: t.sidebar.carbon_fiber_sunglasses,  href: `/${currentPath}blog/carbon-fiber-sunglasses` },
+          { label: t.sidebar.rimless_sunglasses,       href: `/${currentPath}blog/rimless-sunglasses` }
+        ]
+      },
+      {
+        label: t.sidebar.optical_frames,
+        href: `/${currentPath}blog/optical-frames`,
+        items: [
+          { label: t.sidebar.acetate_glasses,       href: `/${currentPath}blog/acetate-optical-frames` },
+          { label: t.sidebar.metal_glasses,         href: `/${currentPath}blog/metal-optical-frames` },
+          { label: t.sidebar.titanium_glasses,      href: `/${currentPath}blog/titanium-optical-frames` },
+          { label: t.sidebar.carbon_glasses,        href: `/${currentPath}blog/carbon-fiber-optical-frames` },
+          { label: t.sidebar.rimless_glasses,       href: `/${currentPath}blog/rimless-optical-frames` }
+        ]
+      },
+      {
+        label: t.sidebar.fashion,
+        href: `/${currentPath}blog/fashion-eyewear`,
+        items: [
+          { label: t.sidebar.fashion_acetate_sunglasses, href: `/${currentPath}blog/fashion-acetate-sunglasses` },
+          { label: t.sidebar.fashion_metal_sunglasses,   href: `/${currentPath}blog/fashion-metal-sunglasses` },
+          { label: t.sidebar.fashion_acetate_glasses,     href: `/${currentPath}blog/fashion-acetate-optical-frames` },
+          { label: t.sidebar.fashion_metal_glasses,       href: `/${currentPath}blog/fashion-metal-optical-frames` }
+        ]
+      },
+      {
+        label: t.sidebar.luxury,
+        href: `/${currentPath}blog/luxury-eyewear`,
+        items: [
+          { label: t.sidebar.luxury_acetate_sunglasses,  href: `/${currentPath}blog/luxury-acetate-sunglasses` },
+          { label: t.sidebar.luxury_titanium_sunglasses, href: `/${currentPath}blog/luxury-titanium-sunglasses` },
+          { label: t.sidebar.luxury_acetate_glasses,      href: `/${currentPath}blog/luxury-acetate-optical-frames` },
+          { label: t.sidebar.luxury_titanium_glasses,    href: `/${currentPath}blog/luxury-titanium-optical-frames` }
+        ]
+      },
+      {
+        label: t.sidebar.carbon_fiber,
+        href: `/${currentPath}blog/carbon-fiber-eyewear`,
+        items: [
+          { label: t.sidebar.carbon_fiber_sunglasses, href: `/${currentPath}blog/carbon-fiber-sunglasses` },
+          { label: t.sidebar.carbon_glasses,     href: `/${currentPath}blog/carbon-fiber-optical-frames` }
+        ]
+      },
+      {
+        label: t.sidebar.rimless,
+        href: `/${currentPath}blog/rimless-eyewear`,
+        items: [
+          { label: t.sidebar.rimless_sunglasses, href: `/${currentPath}blog/rimless-sunglasses` },
+          { label: t.sidebar.rimless_glasses,     href: `/${currentPath}blog/rimless-optical-frames` }
+        ]
+      }
+    ]
+  },
 ];
 
 // Language names for dropdown
@@ -136,8 +268,10 @@ const languageNames = {
   jv: 'ꦧꦱꦗꦮ', ms: 'Bahasa Melayu', tg: 'Тоҷикӣ'
 };
 
-// Get Products menu data
+// Get Products, Eyewear, and Blog menu data
 const productsMenu = menuStructure.find(item => item.menuKey === 'products');
+const eyewearMenu = menuStructure.find(item => item.menuKey === 'eyewear');
+const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
 ---
 
 <header id="site-header" class="w-full bg-white shadow-sm border-b border-stone-200 sticky top-0 z-50 transition-shadow duration-300" dir={isRTL ? 'rtl' : 'ltr'}>
@@ -182,7 +316,7 @@ const productsMenu = menuStructure.find(item => item.menuKey === 'products');
           <!-- Search with icon buttons -->
           <form id="header-search" action={lang === 'en' ? '/search' : `/${lang}/search`} method="GET" class="relative">
             <div class="flex items-center border border-stone-200 bg-stone-50 rounded-sm overflow-hidden transition-colors duration-300 focus-within:border-[#8B7355] focus-within:bg-white">
-              <input type="search" id="header-search-input" name="q" placeholder={searchText} aria-label={searchText} class="w-28 xl:w-40 py-2 px-3 bg-transparent border-none outline-none text-sm md:text-base font-bold text-stone-900 placeholder:text-stone-400 focus:ring-0" />
+              <input type="search" id="header-search-input" name="q" placeholder={searchText} aria-label={searchText} class="w-28 xl:w-40 py-2 px-3 bg-transparent border-none outline-none text-sm md:text-base font-bold text-stone-900 placeholder:text-stone-400 focus:ring-2 focus:ring-[#8B7355]" />
               <!-- Clear button (hidden by default) -->
               <button type="button" id="header-search-clear" class="hidden px-2 text-stone-400 hover:text-stone-600 transition-colors" aria-label={t.nav?.ariaClearSearch || 'Clear search'}>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
@@ -279,6 +413,46 @@ const productsMenu = menuStructure.find(item => item.menuKey === 'products');
         </div>
       </div>
 
+      <!-- Eyewear Menu Content -->
+      <div class="mega-menu-content hidden py-8 px-4" data-menu="eyewear">
+        <div class="grid grid-cols-6 gap-4 xl:gap-6">
+          {eyewearMenu?.children?.map((group) => (
+            <div class="flex flex-col">
+              <a href={group.href} class="font-['Manrope'] font-bold text-xs uppercase tracking-wider text-[#5D4E37] mb-4 whitespace-nowrap hover:text-[#5D4E37] transition-colors">
+                {group.label}
+              </a>
+              <div class="flex flex-col space-y-1">
+                {group.items.map((subItem) => (
+                  <a href={subItem.href} class="font-['Plus_Jakarta_Sans'] text-sm font-medium text-stone-600 py-1.5 transition-all duration-200 hover:text-[#5D4E37] hover:pl-1 whitespace-nowrap">
+                    {subItem.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Blog Menu Content -->
+      <div class="mega-menu-content hidden py-8 px-4" data-menu="blog">
+        <div class="grid grid-cols-6 gap-4 xl:gap-6">
+          {blogMenu?.children?.map((group) => (
+            <div class="flex flex-col">
+              <a href={group.href} class="font-['Manrope'] font-bold text-xs uppercase tracking-wider text-[#5D4E37] mb-4 whitespace-nowrap hover:text-[#5D4E37] transition-colors">
+                {group.label}
+              </a>
+              <div class="flex flex-col space-y-1">
+                {group.items.map((subItem) => (
+                  <a href={subItem.href} class="font-['Plus_Jakarta_Sans'] text-sm font-medium text-stone-600 py-1.5 transition-all duration-200 hover:text-[#5D4E37] hover:pl-1 whitespace-nowrap">
+                    {subItem.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
     </div>
   </div>
 </header>
@@ -311,7 +485,7 @@ const productsMenu = menuStructure.find(item => item.menuKey === 'products');
               <a href={item.href} class="mobile-menu-link block py-3 hover:text-[#5D4E37] transition-colors flex-grow flex items-center font-['Manrope'] font-bold text-lg">
                 {item.label}
               </a>
-              <button class="mobile-toggle-btn w-10 h-10 flex items-center justify-center text-[#5D4E37] rounded-full active:bg-stone-100 transition-all z-20 cursor-pointer" aria-label={t.nav?.ariaToggleSubmenu || 'Toggle submenu'}>
+              <button class="mobile-toggle-btn w-11 h-11 flex items-center justify-center text-[#5D4E37] rounded-full active:bg-stone-100 transition-all z-20 cursor-pointer" aria-label={t.nav?.ariaToggleSubmenu || 'Toggle submenu'}>
                 <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
               </button>
             </>

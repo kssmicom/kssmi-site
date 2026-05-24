@@ -21,7 +21,7 @@ const breadcrumbSchema = items.length > 0 ? {
     "@type": "ListItem",
     "position": index + 1,
     "name": item.label,
-    "item": item.href === '#' ? undefined : `https://kssmi.com${item.href}`
+    "item": item.href === '#' ? Astro.url.href : `https://kssmi.com${item.href}`
   }))
 } : null;
 ---

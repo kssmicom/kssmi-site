@@ -1,59 +1,77 @@
 ---
 /**
- * Blog Index Page (English - Root Level)
- * Redirects to the first page of blog posts with sidebar and pagination
+ * Blog Index Page (Multilingual)
+ * Shows first 12 posts for each language with pagination link
  */
 
 import { getCollection } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
-import { translations } from '../../translations';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { isCategoryMatch, getSlug } from '../../utils/categoryMatching';
-import Pagination from '../../components/Pagination.astro';
-import { buildPrimaryCategories, buildSidebarTags } from '../../utils/sidebar';
+import Layout from '../../../layouts/Layout.astro';
+import { translations } from '../../../translations';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import { isCategoryMatch } from '../../../utils/categoryMatching';
+import { buildPrimaryCategories, buildSidebarTags } from '../../../utils/sidebar';
+import Pagination from '../../../components/Pagination.astro';
 
-const lang = 'en';
 const baseSegment = 'blog';
 
-const allItems = await getCollection('blog');
+export async function getStaticPaths() {
+  const allItems = await getCollection('blog');
+  // English is handled at root level, so exclude from [lang] routes
+  const languages = Object.keys(translations).filter(lang => lang !== 'en');
 
-const langItems = allItems.filter((item) => item.data.lang === lang);
+  return languages.map((lang) => {
+    const langItems = allItems.filter((item) => item.data.lang === lang);
 
-// Sort by published date (newest first)
-const sortedItems = langItems.sort((a, b) => {
-  const dateA = a.data.published ? new Date(a.data.published).getTime() : 0;
-  const dateB = b.data.published ? new Date(b.data.published).getTime() : 0;
-  if (dateA !== dateB) return dateB - dateA;
-  return b.id.localeCompare(a.id);
-});
+    // Sort by published date (newest first)
+    const sortedItems = langItems.sort((a, b) => {
+      const dateA = a.data.published ? new Date(a.data.published).getTime() : 0;
+      const dateB = b.data.published ? new Date(b.data.published).getTime() : 0;
+      if (dateA !== dateB) return dateB - dateA;
+      return b.id.localeCompare(a.id);
+    });
+
+    return {
+      params: { lang },
+      props: { items: sortedItems, lang }
+    };
+  });
+}
+
+const { items: allItems, lang } = Astro.props;
 
 // Show first 12 posts on index page
-const items = sortedItems.slice(0, 12);
+const items = allItems.slice(0, 12);
 
-// Extract first post image for LCP preload
-const lcpImage = items[0]?.data?.image || undefined;
+const t = translations[lang] || translations.en;
+const currentPath = `${lang}/`;
+const isRTL = lang === 'ar';
 
-const t = translations.en;
-const pt = t.product || {};
+const pt = t.product || {
+  viewAllCollections: "View All Collections",
+  allPosts: "All Posts",
+};
 
-const primaryCategories = buildPrimaryCategories(t, '', baseSegment);
+const primaryCategories = buildPrimaryCategories(t, currentPath, baseSegment);
 
-const sidebarTags = buildSidebarTags(t, '', baseSegment);
+const sidebarTags = buildSidebarTags(t, currentPath, baseSegment);
 
 function getCategoryCount(href: string): number {
   const targetSlug = href.split('/').pop() || '';
-  return langItems.filter((item) => {
+  return allItems.filter((item) => {
     const cat = item.data.category || '';
     return isCategoryMatch(cat, targetSlug);
   }).length;
 }
+
+// First item image for LCP preload
+const lcpImage = items[0]?.data?.image || undefined;
 ---
 
 <Layout title={t.nav.blog} lang={lang} lcpImage={lcpImage}>
   <Header lang={lang} />
 
-  <main class="w-full min-h-screen py-6 lg:py-8 bg-stone-50">
+  <main class="w-full min-h-screen py-6 lg:py-8 bg-stone-50" dir={isRTL ? 'rtl' : 'ltr'}>
     <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
         <!-- Sidebar: Category Filter (Hidden on mobile/tablet) -->
@@ -63,11 +81,11 @@ function getCategoryCount(href: string): number {
             <div class="bg-gradient-to-br from-white to-[#faf8f5] rounded-xl shadow-sm p-6 border border-stone-200/50">
               <!-- All Posts Link - Page Title -->
               <div class="flex items-center mb-3">
-                <a href="/blog" class="flex-1 text-base lg:text-lg font-bold text-[#5D4E37] hover:underline">
+                <a href={`/${currentPath}blog`} class="flex-1 text-base lg:text-lg font-bold text-[#5D4E37] hover:underline">
                   {t.sidebar.all_posts}
                 </a>
                 <span class="text-xs font-normal text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full">
-                  {langItems.length}
+                  {allItems.length}
                 </span>
               </div>
 
@@ -89,7 +107,7 @@ function getCategoryCount(href: string): number {
                       </svg>
                     </a>
                     <!-- Sub-categories -->
-                    <ul class="ml-3 mt-1 space-y-1">
+                    <ul class="ms-3 mt-1 space-y-1">
                       {cat.items.map((sub) => (
                         <li>
                           <a
@@ -134,11 +152,11 @@ function getCategoryCount(href: string): number {
             <!-- CTA Card - Always visible below categories -->
             <div class="bg-[#5D4E37] rounded-xl p-6 text-white">
               <h4 class="font-bold mb-2">{pt.needCustomEyewear || 'Need Custom Eyewear?'}</h4>
-              <p class="text-sm text-white/90 mb-4">
+              <p class="text-sm text-white mb-4">
                 {pt.oemServices || 'We offer full OEM & ODM services for your brand.'}
               </p>
               <a
-                href="/quote"
+                href={`/${currentPath}quote`}
                 class="inline-block bg-white text-[#5D4E37] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-100 transition-colors"
               >
                 {t.cta.quote || 'Get Quote'}
@@ -157,7 +175,7 @@ function getCategoryCount(href: string): number {
               </svg>
               <p class="text-gray-500 mb-4">{t.blog?.emptyState || 'No blog posts yet. Check back soon!'}</p>
               <a
-                href="/"
+                href={`/${currentPath}`}
                 class="text-[#5D4E37] hover:underline"
               >
                 {pt.returnHome || 'Return to Homepage'}
@@ -171,16 +189,16 @@ function getCategoryCount(href: string): number {
                   {(pt.showingResults || 'Showing {start}-{end} of {total} posts')
                     .replace('{start}', '1')
                     .replace('{end}', String(items.length))
-                    .replace('{total}', String(langItems.length))}
+                    .replace('{total}', String(allItems.length))}
                 </span>
               </div>
 
               <!-- Posts Grid -->
               <div class="grid grid-cols-2 xl:grid-cols-3 gap-4 xl:gap-6">
-                {items.map((item) => {
+                {items.map((item: any) => {
                   const img = item.data.image || '/media/global/placeholder.webp';
                   const itemSlug = item.data.slug || item.id.split('/').pop()?.replace(/\.[a-z]{2}$/, '') || '';
-                  const href = `/blog/${itemSlug}/`;
+                  const href = `/${currentPath}blog/${itemSlug}/`;
                   return (
                     <a href={href} class="group bg-white rounded-xl shadow-sm border border-stone-200/50 overflow-hidden hover:shadow-md transition-all duration-300">
                       <div class="aspect-[4/3] overflow-hidden bg-stone-100">
@@ -200,10 +218,11 @@ function getCategoryCount(href: string): number {
                 })}
               </div>
 
+              <!-- Pagination -->
               <Pagination
                 currentPage={1}
-                lastPage={Math.ceil(langItems.length / 12)}
-                basePath="/blog"
+                lastPage={Math.ceil(allItems.length / 12)}
+                basePath={`/${currentPath}blog`}
                 prevLabel={pt.previousPage || 'Previous'}
                 nextLabel={pt.nextPage || 'Next'}
               />

@@ -1,7 +1,8 @@
 ---
 /**
- * Blog Index Page (English - Root Level)
- * Redirects to the first page of blog posts with sidebar and pagination
+ * Feature (Eyewear) Listing Page (English - Root Level)
+ * Lists all collection landing pages with sidebar
+ * URL: /eyewear/
  */
 
 import { getCollection } from 'astro:content';
@@ -14,31 +15,26 @@ import Pagination from '../../components/Pagination.astro';
 import { buildPrimaryCategories, buildSidebarTags } from '../../utils/sidebar';
 
 const lang = 'en';
-const baseSegment = 'blog';
+const PAGE_SIZE = 12;
+const baseSegment = 'eyewear';
 
-const allItems = await getCollection('blog');
+const allItems = await getCollection('feature');
 
 const langItems = allItems.filter((item) => item.data.lang === lang);
 
-// Sort by published date (newest first)
 const sortedItems = langItems.sort((a, b) => {
-  const dateA = a.data.published ? new Date(a.data.published).getTime() : 0;
-  const dateB = b.data.published ? new Date(b.data.published).getTime() : 0;
-  if (dateA !== dateB) return dateB - dateA;
-  return b.id.localeCompare(a.id);
+  const dateA = (a.data as any).date ? new Date((a.data as any).date).getTime() : 0;
+  const dateB = (b.data as any).date ? new Date((b.data as any).date).getTime() : 0;
+  return dateB - dateA;
 });
 
-// Show first 12 posts on index page
-const items = sortedItems.slice(0, 12);
-
-// Extract first post image for LCP preload
+const items = sortedItems.slice(0, PAGE_SIZE);
 const lcpImage = items[0]?.data?.image || undefined;
 
 const t = translations.en;
 const pt = t.product || {};
 
 const primaryCategories = buildPrimaryCategories(t, '', baseSegment);
-
 const sidebarTags = buildSidebarTags(t, '', baseSegment);
 
 function getCategoryCount(href: string): number {
@@ -50,32 +46,28 @@ function getCategoryCount(href: string): number {
 }
 ---
 
-<Layout title={t.nav.blog} lang={lang} lcpImage={lcpImage}>
+<Layout title={`${t.nav.feature} - Kssmi`} lang={lang} lcpImage={lcpImage}>
   <Header lang={lang} />
 
   <main class="w-full min-h-screen py-6 lg:py-8 bg-stone-50">
     <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-        <!-- Sidebar: Category Filter (Hidden on mobile/tablet) -->
+        <!-- Sidebar -->
         <aside class="hidden lg:block lg:col-span-1">
           <div class="sticky top-24 space-y-6">
-            <!-- Categories Card -->
             <div class="bg-gradient-to-br from-white to-[#faf8f5] rounded-xl shadow-sm p-6 border border-stone-200/50">
-              <!-- All Posts Link - Page Title -->
               <div class="flex items-center mb-3">
-                <a href="/blog" class="flex-1 text-base lg:text-lg font-bold text-[#5D4E37] hover:underline">
-                  {t.sidebar.all_posts}
+                <a href="/eyewear" class="flex-1 text-base lg:text-lg font-bold text-[#5D4E37] hover:underline">
+                  {t.sidebar.all_features}
                 </a>
                 <span class="text-xs font-normal text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full">
                   {langItems.length}
                 </span>
               </div>
 
-              <!-- Category Groups with Sub-categories -->
               <div class="space-y-3">
                 {primaryCategories.map((cat) => (
                   <div class="border-b border-gray-100 pb-3 last:border-0 last:pb-0">
-                    <!-- Main Category -->
                     <a
                       href={cat.href}
                       class="flex items-center justify-between py-2 px-2 text-sm font-bold text-[#5D4E37] hover:bg-stone-50 rounded-lg transition-colors"
@@ -88,7 +80,6 @@ function getCategoryCount(href: string): number {
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                       </svg>
                     </a>
-                    <!-- Sub-categories -->
                     <ul class="ml-3 mt-1 space-y-1">
                       {cat.items.map((sub) => (
                         <li>
@@ -106,7 +97,6 @@ function getCategoryCount(href: string): number {
                 ))}
               </div>
 
-              <!-- Tags & Filters -->
               <div class="mt-8 pt-6 border-t border-gray-100">
                 <h4 class="text-xs font-bold text-gray-900 uppercase tracking-wider mb-4">{t.sidebar.tags_filters}</h4>
                 <div class="space-y-6">
@@ -131,7 +121,6 @@ function getCategoryCount(href: string): number {
               </div>
             </div>
 
-            <!-- CTA Card - Always visible below categories -->
             <div class="bg-[#5D4E37] rounded-xl p-6 text-white">
               <h4 class="font-bold mb-2">{pt.needCustomEyewear || 'Need Custom Eyewear?'}</h4>
               <p class="text-sm text-white/90 mb-4">
@@ -147,40 +136,35 @@ function getCategoryCount(href: string): number {
           </div>
         </aside>
 
-        <!-- Blog Grid -->
+        <!-- Feature Grid -->
         <div class="col-span-1 lg:col-span-3">
-          <h1 class="text-2xl lg:text-3xl font-bold text-stone-900 mb-6">{t.nav.blog}</h1>
+          <h1 class="text-2xl lg:text-3xl font-bold text-stone-900 mb-6">{t.nav.feature}</h1>
           {items.length === 0 ? (
             <div class="text-center py-16 bg-white rounded-xl shadow-sm">
               <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
               </svg>
-              <p class="text-gray-500 mb-4">{t.blog?.emptyState || 'No blog posts yet. Check back soon!'}</p>
-              <a
-                href="/"
-                class="text-[#5D4E37] hover:underline"
-              >
+              <p class="text-gray-500 mb-4">{pt.noProducts || 'No features available yet.'}</p>
+              <a href="/" class="text-[#5D4E37] hover:underline">
                 {pt.returnHome || 'Return to Homepage'}
               </a>
             </div>
           ) : (
             <>
-              <!-- Results Info -->
               <div class="flex justify-between items-center mb-6 text-sm text-gray-500">
                 <span>
-                  {(pt.showingResults || 'Showing {start}-{end} of {total} posts')
+                  {(pt.showingResults || 'Showing {start}-{end} of {total} features')
                     .replace('{start}', '1')
                     .replace('{end}', String(items.length))
                     .replace('{total}', String(langItems.length))}
                 </span>
               </div>
 
-              <!-- Posts Grid -->
               <div class="grid grid-cols-2 xl:grid-cols-3 gap-4 xl:gap-6">
                 {items.map((item) => {
                   const img = item.data.image || '/media/global/placeholder.webp';
-                  const itemSlug = item.data.slug || item.id.split('/').pop()?.replace(/\.[a-z]{2}$/, '') || '';
-                  const href = `/blog/${itemSlug}/`;
+                  const slug = item.data.slug || item.id.split('/').pop()?.replace(/\.[a-z]{2}$/, '') || '';
+                  const href = `/${slug}/`;
                   return (
                     <a href={href} class="group bg-white rounded-xl shadow-sm border border-stone-200/50 overflow-hidden hover:shadow-md transition-all duration-300">
                       <div class="aspect-[4/3] overflow-hidden bg-stone-100">
@@ -191,9 +175,6 @@ function getCategoryCount(href: string): number {
                           <span class="text-[10px] font-bold text-[#8B7355] uppercase tracking-wider">{item.data.category}</span>
                         )}
                         <h3 class="text-sm font-bold text-stone-900 mt-1 line-clamp-2 group-hover:text-[#5D4E37] transition-colors">{item.data.title}</h3>
-                        {item.data.excerpt && (
-                          <p class="text-xs text-stone-500 mt-2 line-clamp-2">{item.data.excerpt}</p>
-                        )}
                       </div>
                     </a>
                   );
@@ -202,8 +183,8 @@ function getCategoryCount(href: string): number {
 
               <Pagination
                 currentPage={1}
-                lastPage={Math.ceil(langItems.length / 12)}
-                basePath="/blog"
+                lastPage={Math.ceil(langItems.length / PAGE_SIZE)}
+                basePath="/eyewear"
                 prevLabel={pt.previousPage || 'Previous'}
                 nextLabel={pt.nextPage || 'Next'}
               />

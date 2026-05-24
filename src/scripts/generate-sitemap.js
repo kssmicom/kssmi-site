@@ -136,11 +136,7 @@ locales.forEach(lang => {
   const productUrls = getCollectionUrls('products', 'product');
   fs.writeFileSync(path.join(langDir, 'sitemap-products.xml'), generateUrlset(productUrls), 'utf-8');
 
-  // 3. Landing
-  const landingUrls = getCollectionUrls('collection', 'collection');
-  fs.writeFileSync(path.join(langDir, 'sitemap-landing.xml'), generateUrlset(landingUrls), 'utf-8');
-
-  // 4. Blogs
+  // 3. Blogs
   const blogUrls = getCollectionUrls('blog', 'blog');
   fs.writeFileSync(path.join(langDir, 'sitemap-blogs.xml'), generateUrlset(blogUrls), 'utf-8');
 
@@ -148,7 +144,7 @@ locales.forEach(lang => {
   let langSitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>\n`;
   langSitemapIndex += `<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>\n`;
   langSitemapIndex += `<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
-  ['core', 'products', 'landing', 'blogs'].forEach(cat => {
+  ['core', 'products', 'blogs'].forEach(cat => {
     langSitemapIndex += `  <sitemap>\n`;
     langSitemapIndex += `    <loc>${sitemapBaseUrl}/sitemap-${cat}.xml</loc>\n`;
     langSitemapIndex += `    <lastmod>${currentDate}</lastmod>\n`;

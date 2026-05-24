@@ -88,8 +88,6 @@ const placeholders: Record<string, string> = {
 </div>
 
 <script>
-  import Fuse from 'fuse.js';
-
   function initSearchComponent(container: HTMLElement) {
     const lang = container.getAttribute('data-lang') || 'en';
     const productsJson = container.getAttribute('data-products') || '[]';
@@ -98,7 +96,8 @@ const placeholders: Record<string, string> = {
     const searchInput = container.querySelector('input') as HTMLInputElement;
     const searchResults = container.querySelector(`#search-results-${lang}`);
     let searchTimeout: ReturnType<typeof setTimeout>;
-    let fuse: Fuse<any> | null = null;
+    let fuse: any = null;
+    let fuseInitialized = false;
 
     // AbortController for cleanup on re-initialization
     const ac = new AbortController();
@@ -108,8 +107,11 @@ const placeholders: Record<string, string> = {
     }
     (container as any)._searchAbort = ac;
 
-    // Initialize Fuse.js search
-    function initializeSearch() {
+    // Initialize Fuse.js search (lazy-loaded on first use)
+    async function initializeSearch() {
+      if (fuseInitialized) return;
+      const FuseModule = await import('fuse.js');
+      const Fuse = FuseModule.default;
       fuse = new Fuse(products, {
         keys: [
           { name: 'title', weight: 0.4 },
@@ -136,7 +138,7 @@ const placeholders: Record<string, string> = {
     }
 
     // Display results
-    function displayResults(results: Fuse.FuseResult<any>[]) {
+    function displayResults(results: any[]) {
       if (!searchResults) return;
 
       searchResults.innerHTML = '';
@@ -197,8 +199,8 @@ const placeholders: Record<string, string> = {
       searchResults.classList.remove('hidden');
     }
 
-    // Initialize
-    initializeSearch();
+    // Initialize lazily on first focus/input
+    searchInput?.addEventListener("focus", () => initializeSearch(), { once: true });
 
     // Event listeners
     searchInput?.addEventListener('input', (e: Event) => {

@@ -179,6 +179,40 @@ const collection = defineCollection({
   }).catchall(z.any()),
 });
 
+// ── Feature (Eyewear Landing Pages) ────────────────────────────────────────────
+const feature = defineCollection({
+  loader: glob({
+    pattern: '**/*.md',
+    base: './src/content/feature',
+    generateId: generateFullPathId,
+  }),
+  schema: z.object({
+    lang: LangEnum.default('en'),
+    title: z.string().optional(),
+    slug: z.string().optional(),
+    image: z.string().optional(),
+    category: z.enum([
+      'Acetate Series',
+      'Titanium Series',
+      'Metal Alloy Series',
+      'Carbon Fiber Series',
+      'TR90 & Injection Series',
+      'Sustainable Series',
+      'OEM & Private Label Services',
+      'ODM & Custom Manufacturing',
+      'Performance Series',
+      'Protective & Specialty Series',
+      'Wholesale Collections',
+    ]).optional(),
+    excerpt: z.string().optional(),
+    date: z.string().optional(),
+    seoTitle: z.string().optional(),
+    seoDescription: z.string().optional(),
+    seoKeywords: z.string().optional(),
+    fileType: z.enum(['meta', 'top', 'bottom', 'page']).optional(),
+  }).catchall(z.any()),
+});
+
 // ── Blog ──────────────────────────────────────────────────────────────────────
 const blog = defineCollection({
   loader: glob({
@@ -211,4 +245,4 @@ const blog = defineCollection({
   }).catchall(z.any()),
 });
 
-export const collections = { products, collection, blog };
+export const collections = { products, collection, feature, blog };

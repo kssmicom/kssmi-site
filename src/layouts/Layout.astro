@@ -16,6 +16,7 @@ interface Props {
   canonical?: string;
   type?: 'website' | 'product' | 'article';
   noindex?: boolean;
+  noHreflang?: boolean;
 }
 
 const {
@@ -27,7 +28,8 @@ const {
   lang = 'en',
   canonical,
   type = 'website',
-  noindex = false
+  noindex = false,
+  noHreflang = false
 } = Astro.props;
 
 const t = translations[lang] || translations.en;
@@ -46,6 +48,27 @@ const dir = isRTL ? 'rtl' : 'ltr';
 
 // All supported languages
 const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
+
+// Locale code mapping for og:locale
+const localeMap: Record<string, string> = {
+  "en": "en_US",
+  "it": "it_IT",
+  "es": "es_ES",
+  "fr": "fr_FR",
+  "de": "de_DE",
+  "pt": "pt_PT",
+  "ru": "ru_RU",
+  "ja": "ja_JP",
+  "tr": "tr_TR",
+  "ar": "ar_SA",
+  "ko": "ko_KR",
+  "zh": "zh_CN",
+  "hi": "hi_IN",
+  "vi": "vi_VN",
+  "jv": "jv_ID",
+  "ms": "ms_MY",
+  "tg": "tg_TJ",
+};
 
 // Organization Schema (Google Knowledge Graph)
 const organizationSchema = {
@@ -71,6 +94,22 @@ const organizationSchema = {
     "areaServed": ["US", "EU", "IT", "FR", "DE", "JP", "TR", "RU", "CN", "BR", "PT"]
   }
 };
+// WebSite Schema (Google Sitelinks Search Box)
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://kssmi.com/#website",
+  "name": "Kssmi Eyewear",
+  "url": "https://kssmi.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://kssmi.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+};
 ---
 
 <!doctype html>
@@ -86,6 +125,7 @@ const organizationSchema = {
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-TSW9LBMG');</script>
+  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   <!-- End Google Tag Manager -->
   <meta name="color-scheme" content="light" />
   <title>{title}</title>
@@ -93,7 +133,7 @@ const organizationSchema = {
   {keywords && <meta name="keywords" content={keywords} />}
 
   <!-- Noindex for thank-you pages -->
-  {noindex && <meta name="robots" content="noindex, nofollow" />}
+	{noindex && <meta name="robots" content="noindex, nofollow" />}
 
   <!-- Open Graph -->
   <meta property="og:title" content={title} />
@@ -101,6 +141,7 @@ const organizationSchema = {
   <meta property="og:image" content={image.startsWith('http') ? image : `https://kssmi.com${image}`} />
   <meta property="og:url" content={canonical || `https://kssmi.com/${selfUrl}`} />
   <meta property="og:type" content={type} />
+	<meta property="og:locale" content={localeMap[lang] || "en_US"} />
 
   <!-- Canonical URL -->
   {canonical ? (
@@ -110,16 +151,14 @@ const organizationSchema = {
   )}
 
   <!-- Hreflang Tags for Multilingual SEO -->
-  {languages.map((l) => (
+  {!noHreflang && languages.map((l) => (
     <link
       rel="alternate"
       hreflang={l}
       href={`https://kssmi.com/${l === 'en' ? '' : l + '/'}${currentPath}`}
     />
   ))}
-  <link rel="alternate" hreflang="x-default" href={`https://kssmi.com/${currentPath}`} />
-
-  <!-- Preload LCP image: tells browser to fetch it immediately, before HTML is fully parsed -->
+  {!noHreflang && <link rel="alternate" hreflang="x-default" href={`https://kssmi.com/${currentPath}`} />}<!-- Preload LCP image: tells browser to fetch it immediately, before HTML is fully parsed -->
   <!-- This is the single most impactful fix for Largest Contentful Paint on image-heavy pages -->
   {lcpImage && (
     <link rel="preload" as="image" href={lcpImage} fetchpriority="high" />

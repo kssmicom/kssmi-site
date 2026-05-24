@@ -1,0 +1,381 @@
+---
+/**
+ * Blog Category Page (Multilingual)
+ * Displays posts filtered by a specific category
+ * URL format: /[lang]/blog/[category-slug] (e.g., /ko/blog/manufacturing-engineering)
+ *
+ * IMPORTANT: All category URLs use English slugs for consistency across languages.
+ */
+
+import { getCollection } from 'astro:content';
+import Layout from '../../../../layouts/Layout.astro';
+import { translations } from '../../../../translations';
+import Header from '../../../../components/Header.astro';
+import Footer from '../../../../components/Footer.astro';
+import Breadcrumb from '../../../../components/Breadcrumb.astro';
+import { isCategoryMatch, getSlug } from '../../../../utils/categoryMatching';
+import { buildPrimaryCategories, buildSidebarTags } from '../../../../utils/sidebar';
+import Pagination from '../../../../components/Pagination.astro';
+
+const baseSegment = 'blog';
+
+export async function getStaticPaths({ paginate }: { paginate: any }) {
+  const allItems = await getCollection('blog');
+
+  // Dynamically derive categories from blog item category fields
+  const allCategorySlugs = new Set<string>();
+  for (const item of allItems) {
+    const cat = item.data.category || '';
+    for (const c of String(cat).split(',')) {
+      const slug = getSlug(c.trim());
+      if (slug) allCategorySlugs.add(slug);
+    }
+  }
+
+  // Ensure all sidebar-navigable category slugs exist, even if no items match exactly
+  const SIDEBAR_SLUGS = [
+    'sunglasses', 'acetate-sunglasses', 'metal-sunglasses', 'titanium-sunglasses', 'carbon-fiber-sunglasses', 'rimless-sunglasses',
+    'optical-frames', 'acetate-optical-frames', 'metal-optical-frames', 'titanium-optical-frames', 'carbon-fiber-optical-frames', 'rimless-optical-frames',
+    'fashion-acetate-sunglasses', 'fashion-metal-sunglasses', 'fashion-acetate-optical-frames', 'fashion-metal-optical-frames',
+    'luxury-acetate-sunglasses', 'luxury-titanium-sunglasses', 'luxury-acetate-optical-frames', 'luxury-titanium-optical-frames',
+    'fashion-eyewear', 'luxury-eyewear', 'carbon-fiber-eyewear', 'rimless-eyewear',
+  ];
+  for (const s of SIDEBAR_SLUGS) allCategorySlugs.add(s);
+
+  const languages = Object.keys(translations).filter(lang => lang !== 'en');
+
+  const paths = [];
+
+  // For each language, create pages for all dynamic categories
+  for (const lang of languages) {
+    // Get all posts in this language
+    const langItems = allItems.filter((item) => item.data.lang === lang);
+
+    // For each dynamic category, find matching posts
+    for (const canonicalSlug of allCategorySlugs) {
+      // Find posts that map to this category
+      const categoryItems = langItems.filter((item) => {
+        const cat = item.data.category || '';
+        return isCategoryMatch(cat, canonicalSlug);
+      });
+
+      // Create page if there are posts OR if it's a sidebar-navigable slug
+      if (categoryItems.length > 0 || SIDEBAR_SLUGS.includes(canonicalSlug)) {
+        const sorted = categoryItems.sort((a, b) => {
+          const dateA = a.data.published ? new Date(a.data.published).getTime() : 0;
+          const dateB = b.data.published ? new Date(b.data.published).getTime() : 0;
+          if (dateA !== dateB) return dateB - dateA;
+          return b.id.localeCompare(a.id);
+        });
+        paths.push(...paginate(sorted, {
+          params: { lang, category: canonicalSlug },
+          pageSize: 12,
+          props: { categorySlug: canonicalSlug, lang }
+        }));
+      }
+    }
+  }
+
+  return paths;
+}
+
+const { page, categorySlug, lang } = Astro.props;
+const items = page.data;
+const t = translations[lang as keyof typeof translations] || translations.en;
+type TranslationType = typeof translations.en;
+const sidebar = (t as TranslationType).sidebar;
+const currentPath = `${lang}/`;
+const isRTL = lang === 'ar';
+
+// First item image for LCP preload
+const lcpImage = (items[0] as any)?.data?.image || undefined;
+
+// Format category name for display (fallback)
+let categoryTitle = categorySlug
+  .split('-')
+  .map((word: any) => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(' ');
+
+// Get translations
+const pt = t.product || {
+  viewAllCollections: "View All Collections",
+  postsInCategory: "posts in this category",
+  allPosts: "All Posts",
+};
+
+// Get all posts for count
+const allItems = await getCollection('blog');
+const langItems = allItems.filter((item) => item.data.lang === lang);
+
+// Helper for category counts
+function getCategoryCount(href: string): number {
+  const pathWithoutQuery = href.split('?')[0];
+  const targetSlug = pathWithoutQuery.split('/').pop() || '';
+  return langItems.filter((item) => {
+    const cat = item.data.category || '';
+    return isCategoryMatch(cat, targetSlug);
+  }).length;
+}
+
+const primaryCategories = buildPrimaryCategories(t, currentPath, baseSegment);
+
+const sidebarTags = buildSidebarTags(t, currentPath, baseSegment);
+
+// Check if current category matches any in sidebar
+function isActiveCategory(href: string): boolean {
+  const pathWithoutQuery = href.split('?')[0];
+  const hrefSlug = pathWithoutQuery.replace(`/${currentPath}blog/`, '').replace('/blog/', '');
+  return hrefSlug === categorySlug;
+}
+
+// Find localized category title from sidebar definitions
+// First check primary categories
+for (const cat of primaryCategories) {
+  if (isActiveCategory(cat.href)) {
+    categoryTitle = cat.label;
+    break;
+  }
+  const sub = cat.items.find((s) => isActiveCategory(s.href));
+  if (sub) {
+    categoryTitle = sub.label;
+    break;
+  }
+}
+// Then check sidebar tags if no match found
+if (categoryTitle === categorySlug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')) {
+  for (const tag of sidebarTags) {
+    if (isActiveCategory(tag.href)) {
+      categoryTitle = tag.label;
+      break;
+    }
+  }
+}
+
+// Build breadcrumb items
+const categoryBreadcrumbItems = (() => {
+  const items: Array<{ label: string; href: string }> = [
+    { label: t.nav.home, href: `/${lang}` },
+    { label: t.nav.blog || 'Blog', href: `/${lang}/blog` },
+  ];
+  for (const cat of primaryCategories) {
+    if (isActiveCategory(cat.href)) {
+      items.push({ label: cat.label, href: '#' });
+      return items;
+    }
+    for (const sub of cat.items) {
+      if (isActiveCategory(sub.href)) {
+        items.push({ label: cat.label, href: cat.href });
+        items.push({ label: sub.label, href: '#' });
+        return items;
+      }
+    }
+  }
+  for (const group of sidebarTags) {
+    if (isActiveCategory(group.href)) {
+      items.push({ label: group.label, href: '#' });
+      return items;
+    }
+    for (const item of group.items) {
+      if (isActiveCategory(item.href)) {
+        items.push({ label: group.label, href: group.href });
+        items.push({ label: item.label, href: '#' });
+        return items;
+      }
+    }
+  }
+  items.push({ label: categoryTitle, href: '#' });
+  return items;
+})();
+---
+
+<Layout title={`${categoryTitle} - ${t.nav.blog}`} lang={lang} lcpImage={lcpImage}>
+  <Header lang={lang} />
+  <Breadcrumb items={categoryBreadcrumbItems} lang={lang} />
+
+  <main class="w-full min-h-screen py-6 lg:py-8 bg-stone-50" dir={isRTL ? 'rtl' : 'ltr'}>
+    <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
+
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Sidebar -->
+        <aside class="hidden lg:block lg:col-span-1">
+          <div class="sticky top-24 space-y-6">
+            <div class="bg-gradient-to-br from-white to-[#faf8f5] rounded-xl shadow-sm p-6 border border-stone-200/50">
+              <!-- All Posts Link - Page Title -->
+              <div class="flex items-center mb-3">
+                <a href={`/${currentPath}blog`} class="flex-1 text-base lg:text-lg font-bold text-[#5D4E37] hover:underline">
+                  {sidebar.all_posts}
+                </a>
+                <span class="text-xs font-normal text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">
+                  {langItems.length}
+                </span>
+              </div>
+
+              <div class="space-y-3">
+                {primaryCategories.map((cat) => (
+                  <div class="border-b border-gray-100 pb-3 last:border-0 last:pb-0">
+                    <a
+                      href={cat.href}
+                      class={`flex items-center justify-between py-2 px-2 text-sm font-bold rounded-lg transition-colors ${
+                        isActiveCategory(cat.href)
+                          ? 'bg-[#5D4E37] text-white'
+                          : 'text-[#5D4E37] hover:bg-stone-50'
+                      }`}
+                    >
+                      <span class="flex items-center gap-2">
+                        {cat.label}
+                        <span class={`text-xs font-normal px-2 py-0.5 rounded-full ${
+                          isActiveCategory(cat.href) ? 'bg-white/20 text-white' : 'bg-gray-100 text-gray-600'
+                        }`}>{getCategoryCount(cat.href)}</span>
+                      </span>
+                      <svg class={`w-4 h-4 ${isActiveCategory(cat.href) ? 'text-white/70' : 'text-gray-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </a>
+                    <ul class="ms-3 mt-1 space-y-1">
+                      {cat.items.map((sub) => (
+                        <li>
+                          <a
+                            href={sub.href}
+                            class={`flex items-center justify-between py-1.5 px-2 text-sm rounded transition-colors ${
+                              isActiveCategory(sub.href)
+                                ? 'bg-[#5D4E37] text-white'
+                                : 'text-gray-600 hover:text-[#5D4E37] hover:bg-stone-50'
+                            }`}
+                          >
+                            <span>{sub.label}</span>
+                            <span class={`text-xs ${
+                              isActiveCategory(sub.href) ? 'text-white/90' : 'text-gray-400'
+                            }`}>{getCategoryCount(sub.href)}</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+
+              <div class="mt-8 pt-6 border-t border-gray-100">
+                <h4 class="text-xs font-bold text-gray-900 uppercase tracking-wider mb-4">{sidebar.tags_filters}</h4>
+                <div class="space-y-6">
+                  {sidebarTags.map((group) => (
+                    <div>
+                      <a href={group.href} class="text-sm font-bold text-gray-900 mb-2.5 flex items-center hover:text-[#5D4E37] transition-colors">
+                        <span class="text-[#5D4E37] mr-1">#</span> {group.label}
+                      </a>
+                      <div class="flex flex-col gap-1.5">
+                        {group.items.map((tag) => {
+                          const isActive = isActiveCategory(tag.href);
+                          return (
+                            <a
+                              href={tag.href}
+                              class={`px-3 py-1.5 text-[11px] font-bold rounded-md border transition-all duration-200 w-full ${
+                                isActive
+                                  ? 'bg-[#5D4E37] text-white border-[#8B7355] shadow-md'
+                                  : 'bg-white text-stone-600 border-stone-200 hover:border-[#8B7355] hover:text-[#5D4E37] hover:bg-stone-50'
+                              }`}
+                            >
+                              {tag.label}
+                            </a>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-[#5D4E37] rounded-xl p-6 text-white">
+              <h4 class="font-bold mb-2">{pt.needCustomEyewear || 'Need Custom Eyewear?'}</h4>
+              <p class="text-sm text-white mb-4">
+                {pt.oemServices || 'We offer full OEM & ODM services for your brand.'}
+              </p>
+              <a
+                href={`/${currentPath}quote`}
+                class="inline-block bg-white text-[#5D4E37] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-100 transition-colors"
+              >
+                {t.cta.quote || 'Get Quote'}
+              </a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Blog Grid -->
+        <div class="col-span-1 lg:col-span-3">
+          <h1 class="text-2xl lg:text-3xl font-bold text-stone-900 mb-6">{categoryTitle}</h1>
+          {page.total === 0 ? (
+            <div class="text-center py-16 bg-white rounded-xl shadow-sm">
+              <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+              <p class="text-gray-500 mb-4">{t.blog?.emptyState || 'No posts in this category.'}</p>
+              <a href={`/${currentPath}blog`} class="text-[#5D4E37] hover:underline">View All Posts</a>
+            </div>
+          ) : (
+            <>
+              <!-- Results Info -->
+              <div class="flex justify-between items-center mb-6 text-sm text-gray-500">
+                <span>
+                  {(pt.showingResults || 'Showing {start}-{end} of {total} posts')
+                    .replace('{start}', String(page.start + 1))
+                    .replace('{end}', String(Math.min(page.end, page.total)))
+                    .replace('{total}', String(page.total))}
+                </span>
+              </div>
+
+              <div class="grid grid-cols-2 xl:grid-cols-3 gap-4 xl:gap-6">
+                {items.map((item: any) => {
+                  const img = item.data.image || '/media/global/placeholder.webp';
+                  const itemSlug = item.data.slug || item.id.split('/').pop()?.replace(/\.[a-z]{2}$/, '') || '';
+                  const href = `/${currentPath}blog/${itemSlug}/`;
+                  return (
+                    <a href={href} class="group bg-white rounded-xl shadow-sm border border-stone-200/50 overflow-hidden hover:shadow-md transition-all duration-300">
+                      <div class="aspect-[4/3] overflow-hidden bg-stone-100">
+                        <img src={img} alt={item.data.title || ''} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" loading="lazy" decoding="async" />
+                      </div>
+                      <div class="p-4">
+                        {item.data.category && (
+                          <span class="text-[10px] font-bold text-[#8B7355] uppercase tracking-wider">{item.data.category}</span>
+                        )}
+                        <h3 class="text-sm font-bold text-stone-900 mt-1 line-clamp-2 group-hover:text-[#5D4E37] transition-colors">{item.data.title}</h3>
+                        {item.data.excerpt && (
+                          <p class="text-xs text-stone-500 mt-2 line-clamp-2">{item.data.excerpt}</p>
+                        )}
+                      </div>
+                    </a>
+                  );
+                })}
+              </div>
+
+              <Pagination
+                currentPage={page.currentPage}
+                lastPage={page.lastPage}
+                basePath={`/${currentPath}blog`}
+                categorySlug={categorySlug}
+                prevUrl={page.url.prev}
+                nextUrl={page.url.next}
+                prevLabel={pt.previousPage || 'Previous'}
+                nextLabel={pt.nextPage || 'Next'}
+              />
+            </>
+          )}
+        </div>
+      </div>
+
+      <!-- Back to All -->
+      <div class="mt-12 text-center">
+        <a
+          href={`/${currentPath}blog`}
+          class="inline-flex items-center gap-2 text-[#5D4E37] hover:text-[#5D4E37] font-medium transition-colors"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          {pt.viewAllCollections}
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>
