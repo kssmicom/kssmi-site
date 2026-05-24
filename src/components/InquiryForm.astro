@@ -474,7 +474,7 @@ const currentUrl = Astro.url.pathname;
         </div>
 
         <!-- Cloudflare Turnstile Widget (only in production) -->
-        <div id="turnstile-container" class={`flex justify-center ${isDev ? 'hidden' : ''}`}></div>
+        <div id="turnstile-container" class={`flex justify-center ${isDev ? 'hidden' : ''}`} data-sitekey={TURNSTILE_SITE_KEY || ''}></div>
 
         <!-- Turnstile Error Message (hidden by default) - shown right below Turnstile -->
         <div id="turnstile-error" class="hidden text-center py-3 px-4 bg-red-50 rounded-lg">
@@ -578,7 +578,8 @@ const currentUrl = Astro.url.pathname;
 {!isDev && (
   <script is:inline>
     // Turnstile configuration
-    window.TURNSTILE_SITE_KEY = {JSON.stringify(TURNSTILE_SITE_KEY)};
+    var tc = document.getElementById('turnstile-container');
+    window.TURNSTILE_SITE_KEY = tc ? tc.getAttribute('data-sitekey') : '';
     window.turnstileToken = null;
 
     // Called when Turnstile script loads
