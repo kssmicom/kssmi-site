@@ -1,43 +1,72 @@
-# Astro Starter Kit: Minimal
+# Kssmi Eyewear — B2B Manufacturing Website
 
-```sh
-npm create astro@latest -- --template minimal
+High-performance static website for a B2B eyewear manufacturer serving global optical retailers, boutique shops, and fashion brands. Built with Astro 5.x, 17 languages, 7000+ pages.
+
+**Live:** [kssmi.com](https://kssmi.com)
+
+## Tech Stack
+
+- **Astro 5.x** — Static site generation with content collections
+- **Tailwind CSS 3.4** — Utility-first styling
+- **TypeScript** — Full type safety
+- **Fuse.js + Pagefind** — Client-side + static search
+- **17 Languages** — EN, IT, ES, FR, DE, PT, RU, JA, TR, AR, KO, ZH, HI, VI, JV, MS, TG
+- **Cloudflare Turnstile** — Anti-spam for forms
+
+## Quick Start
+
+```bash
+npm install
+npm run dev        # http://localhost:4321
+npm run build      # Production build → dist/
+npm run preview    # Preview production build
+npm run validate   # Check markdown frontmatter
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Project Structure
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```
+src/
+├── content/
+│   ├── products/         # Product markdown (17 languages per SKU)
+│   ├── collection/       # Landing pages (about, contact, home)
+│   └── blog/             # Blog posts
+├── components/           # Astro components
+├── pages/                # Route definitions
+│   ├── product/          # English product routes
+│   ├── blog/             # English blog routes
+│   ├── eyewear/          # English feature/eyewear routes
+│   └── [lang]/           # Multilingual routes
+├── layouts/              # Page layouts
+├── translations/         # 17-language translation hub
+├── utils/                # Shared utilities
+└── styles/               # Global CSS
+public/
+├── media/
+│   ├── products/         # Product images by SKU
+│   ├── certifications/   # ISO, FDA, CE badges
+│   └── global/           # Logos, icons
+└── .htaccess             # CSP, cache, security headers
+scripts/                  # Build, validation, image optimization
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## URL Structure
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+| Page | Pattern |
+|------|---------|
+| Home | `/` or `/{lang}/` |
+| Product Listing | `/product/` or `/{lang}/product/` |
+| Product Detail | `/product/{slug}` |
+| Category | `/product/{category}` |
+| Blog | `/blog/` |
+| Feature/Eyewear | `/eyewear/` |
+| Landing Pages | `/about-us/`, `/contact/`, `/quote/` |
+| Search | `/search` |
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Deployment
 
-## 🧞 Commands
+Push to `main` → GitHub Actions → Hetzner VPS (OpenLiteSpeed / CyberPanel)
 
-All commands are run from the root of the project, from a terminal:
+## License
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Private — all rights reserved.
