@@ -280,9 +280,14 @@ if (type === 'product' && product) {
     "offers": {
       "@type": "AggregateOffer",
       "availability": "https://schema.org/InStock",
-      "priceCurrency": "USD",
       "offerCount": "1",
-      "price": "0.00",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "15.00",
+        "minPrice": "15.00",
+        "maxPrice": "20.00",
+        "priceCurrency": "USD"
+      },
       "url": `https://kssmi.com/${lang}/product/${imageSlug}`
     }
   };
@@ -325,6 +330,7 @@ function thumbSrc(originalPath: string): string {
   lang={lang}
   image={cover}
   lcpImage={cover}
+  type="product"
 >
   {productSchema && <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />}
   {videoSchema && <script type="application/ld+json" set:html={JSON.stringify(videoSchema)} />}
@@ -335,7 +341,7 @@ function thumbSrc(originalPath: string): string {
   {materials && <div class="sr-only" data-pagefind-meta="materials">{materials}</div>}
   {colors && <div class="sr-only" data-pagefind-meta="colors">{colors}</div>}
   {categories && <div class="sr-only" data-pagefind-meta="category">{categories}</div>}
-  {cover && <img src={cover} alt={title} data-pagefind-meta="image" class="sr-only" />}
+  {cover && <img src={cover} alt={title} data-pagefind-meta="image" class="sr-only" width="800" height="800" loading="lazy" decoding="async" />}
 
   <Header lang={lang} />
 
@@ -373,12 +379,12 @@ function thumbSrc(originalPath: string): string {
             <div class="flex flex-wrap justify-center gap-2 w-full max-w-[640px] mx-auto">
               {cover && (
                 <button class="thumb flex-none w-16 h-16 rounded-lg overflow-hidden border-2 border-[#8B7355] shadow-sm hover:shadow-md transition-shadow" data-full={cover} aria-label={getAltText(cover, "View main image")}>
-                  <img src={thumbSrc(cover)} alt={getAltText(cover, "Main")} class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="const btn=this.closest('.thumb');if(btn&&!this.dataset.retried){this.dataset.retried=true;this.src=btn.getAttribute('data-full')||this.src}" />
+                  <img src={thumbSrc(cover)} alt={getAltText(cover, "Main")} class="w-full h-full object-cover" width="64" height="64" loading="lazy" decoding="async" onerror="const btn=this.closest('.thumb');if(btn&&!this.dataset.retried){this.dataset.retried=true;this.src=btn.getAttribute('data-full')||this.src}" />
                 </button>
               )}
               {gallery?.map((img: string, index: number) => (
                 <button class="thumb flex-none w-16 h-16 rounded-lg overflow-hidden border-2 border-transparent hover:border-[#8B7355] shadow-sm hover:shadow-md transition-all" data-full={img} aria-label={getAltText(img, `View gallery image ${index + 1}`)}>
-                  <img src={thumbSrc(img)} alt={getAltText(img, `Gallery ${index + 1}`)} class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="const btn=this.closest('.thumb');if(btn&&!this.dataset.retried){this.dataset.retried=true;this.src=btn.getAttribute('data-full')||this.src}" />
+                  <img src={thumbSrc(img)} alt={getAltText(img, `Gallery ${index + 1}`)} class="w-full h-full object-cover" width="64" height="64" loading="lazy" decoding="async" onerror="const btn=this.closest('.thumb');if(btn&&!this.dataset.retried){this.dataset.retried=true;this.src=btn.getAttribute('data-full')||this.src}" />
                 </button>
               ))}
             </div>

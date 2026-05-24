@@ -29,7 +29,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
   })();
 </script>
 
-<Layout title="Page Not Found | Kssmi Eyewear" lang={lang}>
+<Layout title="Page Not Found | Kssmi Eyewear" lang={lang} noindex={true}>
 
   <Header lang={lang} />
 
@@ -320,6 +320,9 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 )}
 
 <script define:vars={{ isDev }}>
+  const emailUser = 'sales';
+  const emailDomain = 'kssmi.com';
+
   // --- Set page URL in hidden field ---
   var pageField = document.getElementById('field-page');
   if (pageField) pageField.value = window.location.pathname;
@@ -416,7 +419,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         }
       } catch (err) {
 
-        els2.errorMessage.textContent = 'Unable to send. Please email us at sales@kssmi.com.';
+        els2.errorMessage.textContent = 'Unable to send. Please email us at ' + emailUser + '@' + emailDomain + '.';
         els2.errorContainer.classList.remove('hidden');
         setLoading(false);
       }

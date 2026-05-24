@@ -43,7 +43,7 @@ const blogSchema = {
 };
 ---
 
-<Layout title={title} lang={lang as string} image={image}>
+<Layout title={title} lang={lang as string} image={image} lcpImage={image} type="article">
   <!-- Schema for SEO -->
   <script type="application/ld+json" set:html={JSON.stringify(blogSchema)} />
 

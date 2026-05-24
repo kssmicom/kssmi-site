@@ -6,11 +6,15 @@ import Footer from '../components/Footer.astro';
 const lang = 'en';
 ---
 
-<Layout title="Contact | Kssmi Eyewear" lang={lang}>
+<Layout title="Page Not Found | Kssmi Eyewear" lang={lang} noindex={true}>
   <Header lang={lang} />
 
-  <main>
-    <!-- Contact page content will be added here -->
+  <main class="min-h-[60vh] flex items-center justify-center bg-gradient-to-b from-stone-50 to-white">
+    <meta http-equiv="refresh" content="0;url=/404/" />
+    <div class="text-center">
+      <div class="text-6xl font-bold text-stone-300 mb-4">404</div>
+      <p class="text-stone-500">Redirecting...</p>
+    </div>
   </main>
 
   <Footer lang={lang} />

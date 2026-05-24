@@ -230,7 +230,7 @@ const searchKeywords = {
 
 ---
 
-<Layout title={`${(searchResultsText as any)[lang]} | Kssmi`} lang={lang}>
+<Layout title={`${(searchResultsText as any)[lang]} | Kssmi`} lang={lang} noindex={true}>
   <Header lang={lang} />
 
   <div id="search-page" data-lang={lang} data-view-details={JSON.stringify(viewDetailsText)} dir={isRTL ? 'rtl' : 'ltr'}>

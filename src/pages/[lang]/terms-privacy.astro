@@ -13,15 +13,19 @@ export async function getStaticPaths() {
 }
 
 const { lang } = Astro.props;
-const t = (translations as any)[lang] || translations.en;
-const pageTitle = `${t.footer?.privacy || 'Terms & Privacy Policy'} | Kssmi Eyewear`;
+
+const langPrefix = lang === 'en' ? '' : `/${lang}`;
 ---
 
-<Layout title={pageTitle} lang={lang}>
+<Layout title="Page Not Found | Kssmi Eyewear" lang={lang} noindex={true}>
   <Header lang={lang} />
 
-  <main>
-    <!-- Terms and Privacy page content will be added here -->
+  <main class="min-h-[60vh] flex items-center justify-center bg-gradient-to-b from-stone-50 to-white">
+    <meta http-equiv="refresh" content={`0;url=${langPrefix}/404/`} />
+    <div class="text-center">
+      <div class="text-6xl font-bold text-stone-300 mb-4">404</div>
+      <p class="text-stone-500">Redirecting...</p>
+    </div>
   </main>
 
   <Footer lang={lang} />
