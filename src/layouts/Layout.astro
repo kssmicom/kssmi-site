@@ -176,10 +176,10 @@ const websiteSchema = {
   <!-- Step 1: Preconnect to font origins so DNS/TLS is ready early -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- Step 2a: Critical body + heading fonts → display=swap (renders text immediately, swaps when ready) -->
+  <!-- Step 2a: Critical body + heading fonts → display=optional (zero CLS: fallback on first visit, cached font on return) -->
   <link
     rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=optional"
     media="print"
     onload="this.media='all'"
   />
@@ -192,7 +192,7 @@ const websiteSchema = {
   />
   <!-- Step 3: Fallback for users with JS disabled -->
   <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=optional" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@600;700&display=optional" />
   </noscript>
   {isRTL && (
