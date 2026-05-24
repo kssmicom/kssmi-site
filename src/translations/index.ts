@@ -286,9 +286,9 @@ export const translations = {
       home: "الرئيسية",
       products: "المنتجات",
       collection: "المجموعة",
-      feature: "مي",
-      about: "نحن",
-      contact: "ات",
+      feature: "مميزات",
+      about: "حول",
+      contact: "اتصل",
       blog: "مدونة",
       luxury: "فخمة مخصصة",
       luxury_sunglasses: "نظارات شمسية فخمة",
@@ -351,7 +351,7 @@ export const translations = {
       rights: "جميع الحقوق محفوظة."
     },
     cta: {
-      quote: "اس",
+      quote: "عرض سعر",
       catalog: "عرض الكتالوج"
     },
     search: {
@@ -533,9 +533,9 @@ export const translations = {
       home: "Home",
       products: "Prodotti",
       collection: "Collezione",
-      feature: "Car",
-      about: "No",
-      contact: "Cont",
+      feature: "Servizi",
+      about: "Chi siamo",
+      contact: "Contatti",
       blog: "Blog",
       luxury: "Lusso Personalizzato",
       luxury_sunglasses: "Occhiali da Sole Lusso",
@@ -598,7 +598,7 @@ export const translations = {
       rights: "Tutti i diritti riservati."
     },
     cta: {
-      quote: "Qst",
+      quote: "Preventivo",
       catalog: "Vedi Catalogo"
     },
     search: {
@@ -780,9 +780,9 @@ export const translations = {
       home: "Inicio",
       products: "Productos",
       collection: "Colección",
-      feature: "Rasgo",
-      about: "Yo",
-      contact: "Cont",
+      feature: "Destacados",
+      about: "Sobre",
+      contact: "Contacto",
       blog: "Blog",
       // Subcategories - Luxury Series
       luxury: "Lujo Personalizado",
@@ -852,7 +852,7 @@ export const translations = {
       rights: "Todos los derechos reservados."
     },
     cta: {
-      quote: "Cns",
+      quote: "Cotizar",
       catalog: "Ver Catálogo"
     },
     search: {
@@ -1034,9 +1034,9 @@ export const translations = {
       home: "Accueil",
       products: "Produits",
       collection: "Collection",
-      feature: "Atout",
-      about: "On",
-      contact: "Con",
+      feature: "Atouts",
+      about: "À propos",
+      contact: "Contact",
       blog: "Blog",
       // Subcategories - Luxury Series
       luxury: "Luxe Personnalisé",
@@ -1106,7 +1106,7 @@ export const translations = {
       rights: "Tous droits réservés."
     },
     cta: {
-      quote: "Dem",
+      quote: "Devis",
       catalog: "Voir le Catalogue"
     },
     search: {
@@ -1288,9 +1288,9 @@ export const translations = {
       home: "Startseite",
       products: "Produkte",
       collection: "Kollektion",
-      feature: "Zug",
-      about: "Wir",
-      contact: "Kon",
+      feature: "Feature",
+      about: "Über uns",
+      contact: "Kontakt",
       blog: "Blog",
       // Subcategories - Luxury Series
       luxury: "Luxus Personalisiert",
@@ -1360,7 +1360,7 @@ export const translations = {
       rights: "Alle Rechte vorbehalten."
     },
     cta: {
-      quote: "Anf",
+      quote: "Anfrage",
       catalog: "Katalog Ansehen"
     },
     search: {
@@ -1542,9 +1542,9 @@ export const translations = {
       home: "Início",
       products: "Produtos",
       collection: "Coleção",
-      feature: "Traço",
-      about: "Nós",
-      contact: "Cont",
+      feature: "Destaques",
+      about: "Sobre",
+      contact: "Contato",
       blog: "Blog",
       // Subcategories - Luxury Series
       luxury: "Luxo Personalizado",
@@ -1614,7 +1614,7 @@ export const translations = {
       rights: "Todos os direitos reservados."
     },
     cta: {
-      quote: "Cns",
+      quote: "Cotação",
       catalog: "Ver Catálogo"
     },
     search: {
@@ -1796,9 +1796,9 @@ export const translations = {
       home: "Главная",
       products: "Продукты",
       collection: "Коллекция",
-      feature: "Фича",
-      about: "Мы",
-      contact: "Конт",
+      feature: "Услуги",
+      about: "О нас",
+      contact: "Контакты",
       blog: "Блог",
       // Subcategories - Luxury Series
       luxury: "Роскошный Индивидуальный",
@@ -1868,7 +1868,7 @@ export const translations = {
       rights: "Все права защищены."
     },
     cta: {
-      quote: "Зап",
+      quote: "Запрос",
       catalog: "Смотреть Каталог"
     },
     search: {
@@ -2050,8 +2050,8 @@ export const translations = {
       home: "ホーム",
       products: "製品",
       collection: "コレクション",
-      feature: "特徴",
-      about: "私",
+      feature: "特集",
+      about: "概要",
       contact: "連絡",
       blog: "ブログ",
       // Subcategories - Luxury Series
@@ -2122,7 +2122,7 @@ export const translations = {
       rights: "無断転載を禁じます。"
     },
     cta: {
-      quote: "問",
+      quote: "見積",
       catalog: "カタログを見る"
     },
     search: {
@@ -2305,9 +2305,9 @@ export const translations = {
       home: "Anasayfa",
       products: "Ürünler",
       collection: "Koleksiyon",
-      feature: "Öz",
-      about: "Biz",
-      contact: "İlt",
+      feature: "Hizmetler",
+      about: "Hakkımızda",
+      contact: "İletişim",
       blog: "Blog",
       // Subcategories - Luxury Series
       luxury: "Lüks Özelleştirilmiş",
@@ -2377,7 +2377,7 @@ export const translations = {
       rights: "Tüm hakları saklıdır."
     },
     cta: {
-      quote: "Sor",
+      quote: "Teklif",
       catalog: "Kataloğu Gör"
     },
     search: {
@@ -2559,9 +2559,9 @@ export const translations = {
       home: "홈",
       products: "제품",
       collection: "컬렉션",
-      feature: "점",
-      about: "우리",
-      contact: "연",
+      feature: "특징",
+      about: "소개",
+      contact: "문의",
       blog: "블로그",
       luxury: "럭셔리 맞춤형",
       luxury_sunglasses: "럭셔리 선글라스",
@@ -2624,7 +2624,7 @@ export const translations = {
       rights: "모든 권리 보유."
     },
     cta: {
-      quote: "문",
+      quote: "견적",
       catalog: "카탈로그 보기"
     },
     search: {
@@ -2806,7 +2806,7 @@ export const translations = {
       home: "首页",
       products: "产品",
       collection: "系列",
-      feature: "优势",
+      feature: "特色",
       about: "关于",
       contact: "联系",
       blog: "博客",
@@ -2871,7 +2871,7 @@ export const translations = {
       rights: "版权所有。"
     },
     cta: {
-      quote: "垂询",
+      quote: "询价",
       catalog: "查看目录"
     },
     search: {
@@ -3053,9 +3053,9 @@ export const translations = {
       home: "मुख पृष्ठ",
       products: "उत्पाद",
       collection: "संग्रह",
-      feature: "वि",
-      about: "हम",
-      contact: "सं",
+      feature: "सुविधाएं",
+      about: "परिचय",
+      contact: "संपर्क",
       blog: "ब्लॉग",
       luxury: "लक्ज़री कस्टमाइज़्ड",
       luxury_sunglasses: "लक्ज़री धूप का चश्मा",
@@ -3118,7 +3118,7 @@ export const translations = {
       rights: "सर्वाधिकार सुरक्षित।"
     },
     cta: {
-      quote: "पू",
+      quote: "कोटेशन",
       catalog: "कैटलॉग देखें"
     },
     search: {
@@ -3300,9 +3300,9 @@ export const translations = {
       home: "Trang chủ",
       products: "Sản phẩm",
       collection: "Bộ sưu tập",
-      feature: "Tính",
-      about: "Ta",
-      contact: "LH",
+      feature: "Nổi bật",
+      about: "Giới thiệu",
+      contact: "Liên hệ",
       blog: "Blog",
       luxury: "Sang trọng Tùy chỉnh",
       luxury_sunglasses: "Kính mát Sang trọng",
@@ -3365,7 +3365,7 @@ export const translations = {
       rights: "Đã đăng ký Bản quyền."
     },
     cta: {
-      quote: "Hỏi",
+      quote: "Báo giá",
       catalog: "Xem Danh mục"
     },
     search: {
@@ -3544,9 +3544,9 @@ export const translations = {
       home: "Omah",
       products: "Produk",
       collection: "Koleksi",
-      feature: "Fit",
-      about: "Kita",
-      contact: "Hub",
+      feature: "Fitur",
+      about: "Babagan",
+      contact: "Hubungi",
       blog: "Blog",
       luxury: "Klasik Mewah",
       luxury_sunglasses: "Kacamata Sun Kelas",
@@ -3609,7 +3609,7 @@ export const translations = {
       rights: "Hak Cipta Dilindhungi."
     },
     cta: {
-      quote: "Tak",
+      quote: "Nyuwun",
       catalog: "Tingali Katalog"
     },
     search: {
@@ -3789,9 +3789,9 @@ export const translations = {
       home: "Laman Utama",
       products: "Produk",
       collection: "Koleksi",
-      feature: "Cir",
-      about: "Kita",
-      contact: "Hub",
+      feature: "Fitur",
+      about: "Perihal",
+      contact: "Hubungi",
       blog: "Blog",
       luxury: "Tersuai Mewah",
       luxury_sunglasses: "Cermin Mata Hitam Mewah",
@@ -3854,7 +3854,7 @@ export const translations = {
       rights: "Hak cipta terpelihara."
     },
     cta: {
-      quote: "Tny",
+      quote: "Sebut Harga",
       catalog: "Lihat Katalog"
     },
     search: {
@@ -4037,8 +4037,8 @@ export const translations = {
       home: "Асосӣ",
       products: "Маҳсулот",
       collection: "Коллексия",
-      feature: "Ху",
-      about: "Мо",
+      feature: "Хусусият",
+      about: "Дар бора",
       contact: "Тамос",
       blog: "Блог",
       luxury: "Боҳашамати Фармоишӣ",
@@ -4102,7 +4102,7 @@ export const translations = {
       rights: "Ҳамаи ҳуқуқҳо маҳфузанд."
     },
     cta: {
-      quote: "Пур",
+      quote: "Дархост",
       catalog: "Дидани Каталог"
     },
     search: {
