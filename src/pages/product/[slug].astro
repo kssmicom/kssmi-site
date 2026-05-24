@@ -488,18 +488,17 @@ function thumbSrc(originalPath: string): string {
 
 <script>
   function initGallery() {
-    const mainImage = document.getElementById('main-image') as HTMLImageElement;
+    const mainImage = document.getElementById('main-image');
     const zoomContainer = document.getElementById('image-zoom-container');
     if (!mainImage) return;
 
     const thumbsParent = document.querySelector('.space-y-4.flex.flex-col.items-center');
     if (thumbsParent) {
-      thumbsParent.addEventListener('click', (e: Event) => {
-        const target = e.target as HTMLElement;
-        const thumb = target.closest('.thumb') as HTMLElement;
+      thumbsParent.addEventListener('click', (e) => {
+        const thumb = e.target.closest('.thumb');
         if (thumb) {
           const fullSrc = thumb.getAttribute('data-full');
-          if (fullSrc && mainImage) {
+          if (fullSrc) {
             mainImage.src = fullSrc;
             mainImage.removeAttribute('srcset');
             mainImage.removeAttribute('sizes');
@@ -516,24 +515,27 @@ function thumbSrc(originalPath: string): string {
     }
 
     if (zoomContainer) {
-      let cachedRect: DOMRect | null = null;
+      let cachedRect = null;
+      mainImage.style.willChange = 'transform';
       zoomContainer.addEventListener('mouseenter', () => {
         cachedRect = zoomContainer.getBoundingClientRect();
         requestAnimationFrame(() => {
-          mainImage.style.transform = 'scale(2)';
           mainImage.style.transition = 'transform 0.1s ease-out';
           mainImage.style.transformOrigin = 'center center';
+          mainImage.style.transform = 'scale(2)';
         });
       });
-      zoomContainer.addEventListener('mousemove', (e: MouseEvent) => {
+      zoomContainer.addEventListener('mousemove', (e) => {
         if (!cachedRect) return;
         const x = ((e.clientX - cachedRect.left) / cachedRect.width) * 100;
         const y = ((e.clientY - cachedRect.top) / cachedRect.height) * 100;
-        mainImage.style.transformOrigin = `${x}% ${y}%`;
+        mainImage.style.transformOrigin = x + '% ' + y + '%';
       });
       zoomContainer.addEventListener('mouseleave', () => {
         cachedRect = null;
-        mainImage.style.transform = 'scale(1)';
+        requestAnimationFrame(() => {
+          mainImage.style.transform = 'scale(1)';
+        });
       });
     }
   }
