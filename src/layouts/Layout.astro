@@ -119,25 +119,27 @@ const websiteSchema = {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#FCFAF8" />
 
-  <!-- Google Tag Manager (deferred — loads after page is interactive) -->
+  <!-- Google Tag Manager (loads on user interaction — never blocks critical path) -->
   <script>
-    // Init dataLayer early so pushes before GTM loads don't error
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-    // Defer GTM script injection to after critical rendering
+    var _gtmLoaded = false;
     function loadGTM() {
-      var w=window,d=document,s='script',l='dataLayer',i='GTM-TSW9LBMG';
-      var f=d.getElementsByTagName(s)[0];
-      var j=d.createElement(s);j.async=true;
-      j.src='https://www.googletagmanager.com/gtm.js?id='+i+'&l='+l;
+      if (_gtmLoaded) return; _gtmLoaded = true;
+      var d=document,s='script',l='dataLayer',i='GTM-TSW9LBMG';
+      var f=d.getElementsByTagName(s)[0],j=d.createElement(s);
+      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+'&l='+l;
       f.parentNode.insertBefore(j,f);
     }
-    // requestIdleCallback with 3s timeout fallback
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(loadGTM, { timeout: 3000 });
-    } else {
-      setTimeout(loadGTM, 3000);
+    // Load on first user interaction (scroll, click, touch, keypress)
+    var _events = ['scroll','click','touchstart','keydown'];
+    function _onInteraction(e) {
+      loadGTM();
+      for (var i=0;i<_events.length;i++) document.removeEventListener(_events[i],_onInteraction,{once:true,passive:true});
     }
+    for (var i=0;i<_events.length;i++) document.addEventListener(_events[i],_onInteraction,{once:true,passive:true});
+    // Fallback: load after 8s even with no interaction
+    setTimeout(loadGTM, 8000);
   </script>
   <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   <!-- End Google Tag Manager -->
@@ -221,8 +223,14 @@ const websiteSchema = {
   <!-- Organization Schema for Google Graph -->
   <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
 
-  <!-- Cloudflare Web Analytics (defer = non-blocking) -->
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "70e1c20d83a34e0ebfa6b3fb9053e96a"}'></script>
+  <!-- Cloudflare Web Analytics (loads after GTM, never blocks critical path) -->
+  <script>
+    (function(){var s=document.createElement('script');s.defer=true;
+    s.src='https://static.cloudflareinsights.com/beacon.min.js';
+    s.setAttribute('data-cf-beacon','{"token":"70e1c20d83a34e0ebfa6b3fb9053e96a"}');
+    setTimeout(function(){document.head.appendChild(s)},6000);
+    })();
+  </script>
 
   <!-- Clean tracking query parameters from URL (GA4 _gl, UTM, GCLID, FBCLID, etc.) -->
   <script is:inline>
