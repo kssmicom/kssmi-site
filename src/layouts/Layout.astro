@@ -209,6 +209,42 @@ const websiteSchema = {
 
   <!-- Cloudflare Web Analytics (defer = non-blocking) -->
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "70e1c20d83a34e0ebfa6b3fb9053e96a"}'></script>
+
+  <!-- Clean tracking query parameters from URL (GA4 _gl, UTM, GCLID, FBCLID, etc.) -->
+  <script is:inline>
+    (function() {
+      var dirty = false;
+      var params = new URLSearchParams(location.search);
+      // GA4 cross-domain linker parameter — the main culprit
+      if (params.has('_gl')) { params.delete('_gl'); dirty = true; }
+      // Google Ads
+      if (params.has('gclid')) { params.delete('gclid'); dirty = true; }
+      if (params.has('gclsrc')) { params.delete('gclsrc'); dirty = true; }
+      if (params.has('gbraid')) { params.delete('gbraid'); dirty = true; }
+      if (params.has('wbraid')) { params.delete('wbraid'); dirty = true; }
+      // Facebook
+      if (params.has('fbclid')) { params.delete('fbclid'); dirty = true; }
+      // Bing / Microsoft
+      if (params.has('msclkid')) { params.delete('msclkid'); dirty = true; }
+      // Other common marketing trackers
+      if (params.has('dclid')) { params.delete('dclid'); dirty = true; }
+      if (params.has('mc_cid')) { params.delete('mc_cid'); dirty = true; }
+      if (params.has('mc_eid')) { params.delete('mc_eid'); dirty = true; }
+      if (params.has('wickedid')) { params.delete('wickedid'); dirty = true; }
+      // Any utm_* parameter
+      var utmKeys = [];
+      params.forEach(function(_, k) { if (k.indexOf('utm_') === 0) utmKeys.push(k); });
+      utmKeys.forEach(function(k) { params.delete(k); dirty = true; });
+
+      if (dirty) {
+        var cleaned = location.pathname;
+        var qs = params.toString();
+        if (qs) cleaned += '?' + qs;
+        cleaned += location.hash;
+        history.replaceState(history.state, '', cleaned);
+      }
+    })();
+  </script>
 </head>
 <body class={`${isRTL ? 'font-arabic' : 'font-sans'} antialiased relative min-h-screen`}>
   <!-- Google Tag Manager (noscript) -->
@@ -244,7 +280,19 @@ const websiteSchema = {
         }, 300);
       }
 
-
+      // Re-run URL cleanup after View Transitions
+      var p2 = new URLSearchParams(location.search);
+      if (p2.has('_gl') || p2.has('gclid') || p2.has('fbclid') || p2.has('msclkid')) {
+        ['_gl','gclid','gclsrc','fbclid','msclkid','dclid','gbraid','wbraid','mc_cid','mc_eid','wickedid'].forEach(function(k){p2.delete(k)});
+        var utmK = [];
+        p2.forEach(function(_,k){if(k.indexOf('utm_')===0)utmK.push(k)});
+        utmK.forEach(function(k){p2.delete(k)});
+        var c = location.pathname;
+        var q = p2.toString();
+        if (q) c += '?' + q;
+        c += location.hash;
+        history.replaceState(history.state, '', c);
+      }
     });
   </script>
   <!-- Accessibility: Skip to Content Link -->
