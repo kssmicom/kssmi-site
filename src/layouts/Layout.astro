@@ -119,12 +119,26 @@ const websiteSchema = {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#FCFAF8" />
 
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-TSW9LBMG');</script>
+  <!-- Google Tag Manager (deferred — loads after page is interactive) -->
+  <script>
+    // Init dataLayer early so pushes before GTM loads don't error
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+    // Defer GTM script injection to after critical rendering
+    function loadGTM() {
+      var w=window,d=document,s='script',l='dataLayer',i='GTM-TSW9LBMG';
+      var f=d.getElementsByTagName(s)[0];
+      var j=d.createElement(s);j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+'&l='+l;
+      f.parentNode.insertBefore(j,f);
+    }
+    // requestIdleCallback with 3s timeout fallback
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadGTM, { timeout: 3000 });
+    } else {
+      setTimeout(loadGTM, 3000);
+    }
+  </script>
   <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   <!-- End Google Tag Manager -->
   <meta name="color-scheme" content="light" />
