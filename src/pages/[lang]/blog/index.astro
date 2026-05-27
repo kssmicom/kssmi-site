@@ -11,6 +11,7 @@ import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
 import { isCategoryMatch } from '../../../utils/categoryMatching';
 import { buildPrimaryCategories, buildSidebarTags } from '../../../utils/sidebar';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
 import Pagination from '../../../components/Pagination.astro';
 
 const baseSegment = 'blog';
@@ -56,6 +57,11 @@ const primaryCategories = buildPrimaryCategories(t, currentPath, baseSegment);
 
 const sidebarTags = buildSidebarTags(t, currentPath, baseSegment);
 
+const breadcrumbItems = [
+  { label: t.nav.home, href: `/${lang}` },
+  { label: t.nav.blog || 'Blog', href: '#' },
+];
+
 function getCategoryCount(href: string): number {
   const targetSlug = href.split('/').pop() || '';
   return allItems.filter((item) => {
@@ -70,6 +76,7 @@ const lcpImage = items[0]?.data?.image || undefined;
 
 <Layout title={t.nav.blog} lang={lang} lcpImage={lcpImage}>
   <Header lang={lang} />
+  <Breadcrumb items={breadcrumbItems} lang={lang} />
 
   <main class="w-full min-h-screen py-6 lg:py-8 bg-stone-50" dir={isRTL ? 'rtl' : 'ltr'}>
     <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
@@ -79,15 +86,11 @@ const lcpImage = items[0]?.data?.image || undefined;
           <div class="sticky top-24 space-y-6">
             <!-- Categories Card -->
             <div class="bg-gradient-to-br from-white to-[#faf8f5] rounded-xl shadow-sm p-6 border border-stone-200/50">
-              <!-- All Posts Link - Page Title -->
-              <div class="flex items-center mb-3">
-                <a href={`/${currentPath}blog`} class="flex-1 text-base lg:text-lg font-bold text-[#5D4E37] hover:underline">
-                  {t.sidebar.all_posts}
-                </a>
-                <span class="text-xs font-normal text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full">
-                  {allItems.length}
-                </span>
-              </div>
+              <!-- All Posts Link - Page Title (Active) -->
+              <a href={`/${currentPath}blog`} class="flex items-center justify-between py-1.5 px-2 text-sm lg:text-base font-bold bg-[#5D4E37] text-white rounded-lg mb-3">
+                <span>{t.sidebar.all_posts}</span>
+                <span class="text-xs font-normal text-white/70">{allItems.length}</span>
+              </a>
 
               <!-- Category Groups with Sub-categories -->
               <div class="space-y-3">
@@ -98,13 +101,8 @@ const lcpImage = items[0]?.data?.image || undefined;
                       href={cat.href}
                       class="flex items-center justify-between py-2 px-2 text-sm font-bold text-[#5D4E37] hover:bg-stone-50 rounded-lg transition-colors"
                     >
-                      <span class="flex items-center gap-2">
-                        {cat.label}
-                        <span class="text-xs font-normal text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full">{getCategoryCount(cat.href)}</span>
-                      </span>
-                      <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                      </svg>
+                      <span>{cat.label}</span>
+                      <span class="text-xs text-gray-500">{getCategoryCount(cat.href)}</span>
                     </a>
                     <!-- Sub-categories -->
                     <ul class="ms-3 mt-1 space-y-1">
@@ -167,7 +165,7 @@ const lcpImage = items[0]?.data?.image || undefined;
 
         <!-- Blog Grid -->
         <div class="col-span-1 lg:col-span-3">
-          <h1 class="text-2xl lg:text-3xl font-bold text-stone-900 mb-6">{t.nav.blog}</h1>
+          <h1 class="text-base lg:text-lg font-bold text-stone-900 mb-6">{t.nav.blog}</h1>
           {items.length === 0 ? (
             <div class="text-center py-16 bg-white rounded-xl shadow-sm">
               <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

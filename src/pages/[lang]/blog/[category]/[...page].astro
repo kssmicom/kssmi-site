@@ -200,15 +200,11 @@ const categoryBreadcrumbItems = (() => {
         <aside class="hidden lg:block lg:col-span-1">
           <div class="sticky top-24 space-y-6">
             <div class="bg-gradient-to-br from-white to-[#faf8f5] rounded-xl shadow-sm p-6 border border-stone-200/50">
-              <!-- All Posts Link - Page Title -->
-              <div class="flex items-center mb-3">
-                <a href={`/${currentPath}blog`} class="flex-1 text-base lg:text-lg font-bold text-[#5D4E37] hover:underline">
-                  {sidebar.all_posts}
-                </a>
-                <span class="text-xs font-normal text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">
-                  {langItems.length}
-                </span>
-              </div>
+              <!-- All Posts Link -->
+              <a href={`/${currentPath}blog`} class="flex items-center justify-between py-1.5 px-2 text-sm lg:text-base font-bold text-[#5D4E37] hover:bg-stone-50 rounded-lg transition-colors mb-3">
+                <span>{sidebar.all_posts}</span>
+                <span class="text-xs text-gray-500">{langItems.length}</span>
+              </a>
 
               <div class="space-y-3">
                 {primaryCategories.map((cat) => (
@@ -221,15 +217,10 @@ const categoryBreadcrumbItems = (() => {
                           : 'text-[#5D4E37] hover:bg-stone-50'
                       }`}
                     >
-                      <span class="flex items-center gap-2">
-                        {cat.label}
-                        <span class={`text-xs font-normal px-2 py-0.5 rounded-full ${
-                          isActiveCategory(cat.href) ? 'bg-white/20 text-white' : 'bg-gray-100 text-gray-600'
-                        }`}>{getCategoryCount(cat.href)}</span>
-                      </span>
-                      <svg class={`w-4 h-4 ${isActiveCategory(cat.href) ? 'text-white/70' : 'text-gray-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                      </svg>
+                      <span>{cat.label}</span>
+                      <span class={`text-xs ${
+                        isActiveCategory(cat.href) ? 'text-white/70' : 'text-gray-500'
+                      }`}>{getCategoryCount(cat.href)}</span>
                     </a>
                     <ul class="ms-3 mt-1 space-y-1">
                       {cat.items.map((sub) => (
@@ -302,7 +293,7 @@ const categoryBreadcrumbItems = (() => {
 
         <!-- Blog Grid -->
         <div class="col-span-1 lg:col-span-3">
-          <h1 class="text-2xl lg:text-3xl font-bold text-stone-900 mb-6">{categoryTitle}</h1>
+          <h1 class="text-base lg:text-lg font-bold text-stone-900 mb-6">{categoryTitle}</h1>
           {page.total === 0 ? (
             <div class="text-center py-16 bg-white rounded-xl shadow-sm">
               <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

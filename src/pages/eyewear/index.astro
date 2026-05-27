@@ -13,6 +13,7 @@ import Footer from '../../components/Footer.astro';
 import { isCategoryMatch, getSlug } from '../../utils/categoryMatching';
 import Pagination from '../../components/Pagination.astro';
 import { buildPrimaryCategories, buildSidebarTags } from '../../utils/sidebar';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 
 const lang = 'en';
 const PAGE_SIZE = 12;
@@ -37,6 +38,11 @@ const pt = t.product || {};
 const primaryCategories = buildPrimaryCategories(t, '', baseSegment);
 const sidebarTags = buildSidebarTags(t, '', baseSegment);
 
+const breadcrumbItems = [
+  { label: t.nav.home, href: '/' },
+  { label: t.nav.feature || 'Features', href: '#' },
+];
+
 function getCategoryCount(href: string): number {
   const targetSlug = href.split('/').pop() || '';
   return langItems.filter((item) => {
@@ -48,6 +54,7 @@ function getCategoryCount(href: string): number {
 
 <Layout title={`${t.nav.feature} - Kssmi`} lang={lang} lcpImage={lcpImage}>
   <Header lang={lang} />
+  <Breadcrumb items={breadcrumbItems} lang={lang} />
 
   <main class="w-full min-h-screen py-6 lg:py-8 bg-stone-50">
     <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
@@ -56,14 +63,11 @@ function getCategoryCount(href: string): number {
         <aside class="hidden lg:block lg:col-span-1">
           <div class="sticky top-24 space-y-6">
             <div class="bg-gradient-to-br from-white to-[#faf8f5] rounded-xl shadow-sm p-6 border border-stone-200/50">
-              <div class="flex items-center mb-3">
-                <a href="/eyewear" class="flex-1 text-base lg:text-lg font-bold text-[#5D4E37] hover:underline">
-                  {t.sidebar.all_features}
-                </a>
-                <span class="text-xs font-normal text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full">
-                  {langItems.length}
-                </span>
-              </div>
+              <!-- All Features Link - Page Title (Active) -->
+              <a href="/eyewear" class="flex items-center justify-between py-1.5 px-2 text-sm lg:text-base font-bold bg-[#5D4E37] text-white rounded-lg mb-3">
+                <span>{t.sidebar.all_features}</span>
+                <span class="text-xs font-normal text-white/70">{langItems.length}</span>
+              </a>
 
               <div class="space-y-3">
                 {primaryCategories.map((cat) => (
@@ -72,13 +76,8 @@ function getCategoryCount(href: string): number {
                       href={cat.href}
                       class="flex items-center justify-between py-2 px-2 text-sm font-bold text-[#5D4E37] hover:bg-stone-50 rounded-lg transition-colors"
                     >
-                      <span class="flex items-center gap-2">
-                        {cat.label}
-                        <span class="text-xs font-normal text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full">{getCategoryCount(cat.href)}</span>
-                      </span>
-                      <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                      </svg>
+                      <span>{cat.label}</span>
+                      <span class="text-xs text-gray-500">{getCategoryCount(cat.href)}</span>
                     </a>
                     <ul class="ml-3 mt-1 space-y-1">
                       {cat.items.map((sub) => (
@@ -138,7 +137,7 @@ function getCategoryCount(href: string): number {
 
         <!-- Feature Grid -->
         <div class="col-span-1 lg:col-span-3">
-          <h1 class="text-2xl lg:text-3xl font-bold text-stone-900 mb-6">{t.nav.feature}</h1>
+          <h1 class="text-base lg:text-lg font-bold text-stone-900 mb-6">{t.nav.feature}</h1>
           {items.length === 0 ? (
             <div class="text-center py-16 bg-white rounded-xl shadow-sm">
               <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
