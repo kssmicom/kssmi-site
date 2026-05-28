@@ -638,7 +638,7 @@ const t = i18n[lang] || i18n.en;
           <p class="text-lg text-[#5D4E37] font-medium mb-2">
             {t.heading2}
           </p>
-          <p class="text-base text-stone-500 mb-8 max-w-lg mx-auto lg:mx-0">
+          <p class="text-base text-stone-600 mb-8 max-w-lg mx-auto lg:mx-0">
             {t.description}
           </p>
 
@@ -701,7 +701,7 @@ const t = i18n[lang] || i18n.en;
           <!-- Mini Rescue Form (with Turnstile) -->
           <div class="bg-white rounded-xl p-6 border border-stone-200 shadow-sm max-w-xl mx-auto lg:mx-0 mb-8">
             <p class="text-sm font-bold text-[#5D4E37] mb-1">{t.formHeading}</p>
-            <p class="text-xs text-stone-500 mb-4">{t.formSub}</p>
+            <p class="text-xs text-stone-600 mb-4">{t.formSub}</p>
 
             <div id="form-error" class="hidden text-center py-2 mb-3 bg-red-50 rounded-lg">
               <span id="error-message" class="text-xs text-red-600"></span>
@@ -759,7 +759,7 @@ const t = i18n[lang] || i18n.en;
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <p class="text-sm font-semibold text-[#5D4E37]">{t.successTitle}</p>
-              <p class="text-xs text-stone-500">{t.successSub}</p>
+              <p class="text-xs text-stone-600">{t.successSub}</p>
             </div>
           </div>
 
@@ -838,8 +838,8 @@ const t = i18n[lang] || i18n.en;
 
 <!-- Turnstile: define callback BEFORE loading script (production only) -->
 {!isDev && (
-  <script is:inline>
-    window.TURNSTILE_SITE_KEY = {JSON.stringify(turnstileSiteKey)};
+  <script define:vars={{ turnstileSiteKey }}>
+    window.TURNSTILE_SITE_KEY = turnstileSiteKey;
     window.turnstileToken = null;
 
     window.onTurnstileLoad = function() {

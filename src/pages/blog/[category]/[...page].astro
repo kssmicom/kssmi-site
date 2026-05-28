@@ -211,7 +211,7 @@ function isActiveCategory(href: string): boolean {
                           >
                             <span>{sub.label}</span>
                             <span class={`text-xs ${
-                              isActiveCategory(sub.href) ? 'text-white/90' : 'text-gray-400'
+                              isActiveCategory(sub.href) ? 'text-white/90' : 'text-gray-500'
                             }`}>{getCategoryCount(sub.href)}</span>
                           </a>
                         </li>
@@ -259,7 +259,7 @@ function isActiveCategory(href: string): boolean {
               </p>
               <a
                 href="/quote"
-                class="inline-block bg-white text-[#5D4E37] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-100 transition-colors"
+                class="inline-block bg-white text-[#5D4E37] px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
               >
                 {t.cta.quote || 'Get Quote'}
               </a>
@@ -306,7 +306,7 @@ function isActiveCategory(href: string): boolean {
                         )}
                         <h3 class="text-sm font-bold text-stone-900 mt-1 line-clamp-2 group-hover:text-[#5D4E37] transition-colors">{item.data.title}</h3>
                         {item.data.excerpt && (
-                          <p class="text-xs text-stone-500 mt-2 line-clamp-2">{item.data.excerpt}</p>
+                          <p class="text-xs text-stone-600 mt-2 line-clamp-2">{item.data.excerpt}</p>
                         )}
                       </div>
                     </a>

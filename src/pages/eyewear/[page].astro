@@ -118,7 +118,7 @@ function getCategoryCount(href: string): number {
                             class="flex items-center justify-between py-1.5 px-2 text-sm text-gray-600 hover:text-[#5D4E37] hover:bg-stone-50 rounded transition-colors"
                           >
                             <span>{sub.label}</span>
-                            <span class="text-xs text-gray-400">{getCategoryCount(sub.href)}</span>
+                            <span class="text-xs text-gray-500">{getCategoryCount(sub.href)}</span>
                           </a>
                         </li>
                       ))}
@@ -158,7 +158,7 @@ function getCategoryCount(href: string): number {
               </p>
               <a
                 href="/quote"
-                class="inline-block bg-white text-[#5D4E37] px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-100 transition-colors"
+                class="inline-block bg-white text-[#5D4E37] px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
               >
                 {t.cta.quote || 'Get Quote'}
               </a>

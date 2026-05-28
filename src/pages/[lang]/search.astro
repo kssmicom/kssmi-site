@@ -234,16 +234,16 @@ const searchKeywords = {
   <Header lang={lang} />
 
   <div id="search-page" data-lang={lang} data-view-details={JSON.stringify(viewDetailsText)} dir={isRTL ? 'rtl' : 'ltr'}>
-  <section class="w-full min-h-screen bg-stone-100 pt-32 pb-24">
+  <section class="w-full min-h-screen bg-stone-100 pt-8 pb-24">
     <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
 
       <!-- Search Header Block -->
-      <div class="text-center mb-12 relative max-w-4xl mx-auto">
+      <div class="text-center mb-6 relative max-w-4xl mx-auto">
         <!-- Kssmi Text Logo -->
         <div class="inline-flex flex-col items-center justify-center mb-6 hover:-translate-y-1 transition-transform duration-500">
           <span class="text-3xl font-bold text-[#503629] tracking-tight leading-none uppercase">KSSMI</span>
-          <span class="h-[2px] w-8 bg-[#503629] mt-1"></span>
-          <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#503629] mt-1">{eyewearText}</span>
+          <span class="h-[2px] w-8 bg-[#503629] mt-1.5"></span>
+          <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#503629] mt-1.5">{eyewearText}</span>
         </div>
 
         <h1 class="text-3xl md:text-4xl font-bold text-[#5D4E37] mb-3 tracking-tight">
@@ -253,7 +253,7 @@ const searchKeywords = {
         <!-- Query display (updated by JS) -->
         <div id="search-info" class="hidden">
           <div class="inline-block relative">
-            <p class="text-lg text-stone-600 mb-3 font-light">
+            <p class="text-lg text-stone-600 mb-2 font-light">
               {(foundMatchesFor as any)[lang]} <span id="query-display" class="font-bold text-[#5D4E37] border-b-2 border-[#8B7355]/20"></span>
             </p>
           </div>
@@ -269,7 +269,7 @@ const searchKeywords = {
       </div>
 
       <!-- Search Form Block -->
-      <div class="max-w-3xl mx-auto mb-16 relative z-10">
+      <div class="max-w-3xl mx-auto mb-8 relative z-10">
         <form action={`/${lang}/search`} method="GET" class="relative group">
           <div class="absolute inset-0 bg-[#5D4E37]/5 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
@@ -284,11 +284,9 @@ const searchKeywords = {
               autocomplete="off"
             >
 
-            <!-- Clear Button (X icon) - hidden by default -->
-            <button type="button" id="search-clear" class="hidden px-3 text-stone-400 hover:text-[#5D4E37] transition-colors flex-shrink-0" aria-label="Clear search">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
+            <!-- Clear Button (X icon) -->
+            <button type="button" id="search-clear" class="hidden px-2 text-stone-400 hover:text-stone-600 transition-colors" aria-label="Clear search">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
             </button>
 
             <!-- Search Button -->
@@ -303,16 +301,16 @@ const searchKeywords = {
       </div>
 
       <!-- Loading State -->
-      <div id="loading-state" class="hidden text-center py-16">
+      <div id="loading-state" class="hidden text-center py-4">
         <svg class="w-12 h-12 mx-auto animate-spin text-[#5D4E37]" fill="none" viewBox="0 0 24 24">
           <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
           <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
         </svg>
-        <p class="mt-4 text-stone-500">{(searchText as any)[lang]}...</p>
+        <p class="mt-4 text-stone-600">{(searchText as any)[lang]}...</p>
       </div>
 
       <!-- Empty State -->
-      <div id="empty-state" class="text-center py-24">
+      <div id="empty-state" class="text-center py-6">
         <div class="inline-flex items-center justify-center w-20 h-20 bg-white border border-stone-200 rounded-full mb-8 shadow-sm">
           <svg class="w-8 h-8 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
@@ -325,21 +323,15 @@ const searchKeywords = {
         <div class="mt-12 max-w-5xl mx-auto">
           <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-[#5D4E37] mb-8">{(recommendedText as any)[lang] || recommendedText.en}</h3>
           <div class="flex flex-wrap gap-3 justify-center">
-            <a href={`/${lang}/search?q=optical+frames`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#5D4E37] transition-all duration-300 shadow-sm hover:shadow-md">
-              {((searchKeywords as any)[lang] || searchKeywords.en).optical}
-            </a>
-            <a href={`/${lang}/search?q=sunglasses`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#5D4E37] transition-all duration-300 shadow-sm hover:shadow-md">
-              {((searchKeywords as any)[lang] || searchKeywords.en).sunglasses}
-            </a>
-            <a href={`/${lang}/search?q=acetate`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#5D4E37] transition-all duration-300 shadow-sm hover:shadow-md">
-              {((searchKeywords as any)[lang] || searchKeywords.en).acetate}
-            </a>
-            <a href={`/${lang}/search?q=titanium`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#5D4E37] transition-all duration-300 shadow-sm hover:shadow-md">
-              {((searchKeywords as any)[lang] || searchKeywords.en).titanium}
-            </a>
-            <a href={`/${lang}/search?q=metal`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#5D4E37] transition-all duration-300 shadow-sm hover:shadow-md">
-              {((searchKeywords as any)[lang] || searchKeywords.en).metal}
-            </a>
+            {(() => {
+              const kw = (searchKeywords as any)[lang] || searchKeywords.en;
+              const keys = ['optical', 'sunglasses', 'acetate', 'titanium', 'metal'] as const;
+              return keys.map((k) => (
+                <a href={`/${lang}/search?q=${kw[k]}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#5D4E37] transition-all duration-300 shadow-sm hover:shadow-md">
+                  {kw[k]}
+                </a>
+              ));
+            })()}
           </div>
         </div>
       </div>
@@ -349,7 +341,7 @@ const searchKeywords = {
       </div>
 
       <!-- No Results State -->
-      <div id="no-results" class="hidden text-center py-24">
+      <div id="no-results" class="hidden text-center py-6">
         <div class="inline-flex items-center justify-center w-20 h-20 bg-white border border-stone-200 rounded-full mb-8 shadow-sm hover:border-[#8B7355] transition-colors duration-500">
           <svg class="w-8 h-8 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -365,17 +357,32 @@ const searchKeywords = {
             {t.nav?.products || 'Catalog'}
           </a>
         </div>
+
+        <!-- Suggestions -->
+        <div class="mt-12 max-w-5xl mx-auto">
+          <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-[#5D4E37] mb-8">{(recommendedText as any)[lang] || recommendedText.en}</h3>
+          <div class="flex flex-wrap gap-3 justify-center">
+            {(() => {
+              const kw = (searchKeywords as any)[lang] || searchKeywords.en;
+              const keys = ['optical', 'sunglasses', 'acetate', 'titanium', 'metal'] as const;
+              return keys.map((k) => (
+                <a href={`/${lang}/search?q=${kw[k]}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#5D4E37] transition-all duration-300 shadow-sm hover:shadow-md">
+                  {kw[k]}
+                </a>
+              ));
+            })()}
+          </div>
+        </div>
       </div>
 
       <!-- Error State -->
-      <div id="error-state" class="hidden text-center py-24">
+      <div id="error-state" class="hidden text-center py-6">
         <p class="text-red-600">{(tryDifferentText as any)[lang]}</p>
       </div>
 
       <!-- Pagination -->
-      <div id="pagination" class="hidden mt-20 flex justify-center">
-        <div class="inline-flex items-center gap-2" id="pagination-container">
-        </div>
+      <div id="pagination" class="hidden mt-12 flex justify-center">
+        <div id="pagination-container"></div>
       </div>
     </div>
   </section>
@@ -386,6 +393,12 @@ const searchKeywords = {
 
 
 <style is:global>
+  /* Hide browser-native clear button on search inputs */
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-decoration {
+    display: none;
+  }
+
   /* Search Result Card — mirrors ProductCard.astro */
   .src-card {
     display: block;
@@ -497,37 +510,94 @@ const searchKeywords = {
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  /* ── Pagination ── */
-  .page-numbers {
+  /* ── Pagination (matches Pagination.astro) ── */
+  .search-pagination-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 2.25rem;
-    height: 2.25rem;
-    padding: 0 0.75rem;
-    margin: 0 0.25rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #5D4E37;
-    background-color: white;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
     border: 1px solid #e5e7eb;
-    border-radius: 0.25rem;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    color: #4b5563;
+    background: transparent;
+    transition: color 0.15s, background-color 0.15s, border-color 0.15s;
     cursor: pointer;
   }
-  .page-numbers:hover {
-    color: #8B7355;
+  .search-pagination-btn:hover {
+    background-color: #f9fafb;
     border-color: #8B7355;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 6px -1px rgba(139, 115, 85, 0.1);
+    color: #5D4E37;
   }
-  .page-numbers.current {
+  .search-pagination-btn.active {
     background-color: #5D4E37;
-    border-color: #5D4E37;
     color: #ffffff;
-    box-shadow: 0 4px 6px -1px rgba(93, 78, 55, 0.3);
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+  }
+  .search-pagination-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.375rem 0.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    color: #4b5563;
+    background: transparent;
+    transition: color 0.15s, background-color 0.15s, border-color 0.15s;
+    cursor: pointer;
+  }
+  @media (min-width: 640px) {
+    .search-pagination-nav-btn {
+      padding: 0.375rem 1rem;
+    }
+  }
+  .search-pagination-nav-btn:hover {
+    background-color: #f9fafb;
+    border-color: #8B7355;
+    color: #5D4E37;
+  }
+  .search-pagination-nav-btn:disabled {
+    color: #6b7280;
+    cursor: not-allowed;
+  }
+  .search-goto-input {
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    color: #4b5563;
+    background: transparent;
+    outline: none;
+  }
+  @media (min-width: 640px) {
+    .search-goto-input {
+      width: 3.5rem;
+    }
+  }
+  .search-goto-input:focus {
+    border-color: #8B7355;
+    box-shadow: 0 0 0 1px #8B7355;
+  }
+  .search-goto-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    height: 2.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    color: #4b5563;
+    background: transparent;
+    transition: color 0.15s, background-color 0.15s, border-color 0.15s;
+    cursor: pointer;
+  }
+  .search-goto-btn:hover {
+    background-color: #f9fafb;
+    border-color: #8B7355;
+    color: #5D4E37;
   }
 </style>
 
@@ -564,18 +634,14 @@ const searchKeywords = {
   let fuse = null;
 
   // Clear button functionality
-  function updateClearButton() {
-    if (searchInput && searchClear) {
-      if (searchInput.value.trim()) {
-        searchClear.classList.remove('hidden');
-      } else {
-        searchClear.classList.add('hidden');
-      }
-    }
-  }
-
   if (searchInput) {
-    searchInput.addEventListener('input', updateClearButton);
+    searchInput.addEventListener('input', () => {
+      if (searchInput.value.trim()) {
+        searchClear?.classList.remove('hidden');
+      } else {
+        searchClear?.classList.add('hidden');
+      }
+    });
   }
 
   if (searchClear && searchInput) {
@@ -589,7 +655,9 @@ const searchKeywords = {
   // Pre-fill search input with query
   if (searchInput && getQuery()) {
     searchInput.value = getQuery();
-    updateClearButton();
+    if (searchInput.value.trim()) {
+      searchClear?.classList.remove('hidden');
+    }
   }
 
   function hideAllStates() {
@@ -720,8 +788,8 @@ const searchKeywords = {
         countNumber.textContent = allResults.length.toString();
       }
 
-      renderPage(1);
       showResults();
+      renderPage(1);
 
     } catch (error) {
       showError();
@@ -836,52 +904,109 @@ const searchKeywords = {
     pagination?.classList.remove('hidden');
     if (!paginationContainer) return;
 
-    let paginationHTML = '';
+    const btnClass = 'search-pagination-btn';
+    const btnActiveClass = 'search-pagination-btn active';
+    const navBtnClass = 'search-pagination-nav-btn';
 
-    // Previous button
+    let html = '<nav class="flex justify-center items-center gap-2" aria-label="Pagination">';
+
+    // Previous Button
     if (currentPage > 1) {
-      paginationHTML += `
-        <button class="page-numbers" data-page="${currentPage - 1}">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-          </svg>
-        </button>
-      `;
+      html += `<button data-page="${currentPage - 1}" class="${navBtnClass}" aria-label="Previous">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        <span class="hidden sm:inline">Previous</span>
+      </button>`;
+    } else {
+      html += `<span class="${navBtnClass}" style="cursor:not-allowed;opacity:0.5">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        <span class="hidden sm:inline">Previous</span>
+      </span>`;
     }
 
-    // Page numbers
-    for (let i = 1; i <= totalPages; i++) {
-      if (i === currentPage) {
-        paginationHTML += `<button class="page-numbers current" data-page="${i}">${i}</button>`;
-      } else if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
-        paginationHTML += `<button class="page-numbers" data-page="${i}">${i}</button>`;
-      } else if (i === currentPage - 2 || i === currentPage + 2) {
-        paginationHTML += `<span class="page-numbers" style="border:none;background:none;box-shadow:none;cursor:default;color:#6b7280;">...</span>`;
+    // Desktop Page Numbers
+    html += '<div class="hidden sm:flex items-center gap-1">';
+    html += `<button data-page="1" class="${currentPage === 1 ? btnActiveClass : btnClass}" aria-current="${currentPage === 1 ? 'page' : undefined}">1</button>`;
+    if (currentPage > 3) html += '<span class="px-2 text-gray-500">...</span>';
+    for (let i = 2; i < totalPages; i++) {
+      if (Math.abs(i - currentPage) <= 1) {
+        html += `<button data-page="${i}" class="${i === currentPage ? btnActiveClass : btnClass}">${i}</button>`;
       }
     }
+    if (currentPage < totalPages - 2) html += '<span class="px-2 text-gray-500">...</span>';
+    if (totalPages > 1) {
+      html += `<button data-page="${totalPages}" class="${currentPage === totalPages ? btnActiveClass : btnClass}" aria-current="${currentPage === totalPages ? 'page' : undefined}">${totalPages}</button>`;
+    }
+    html += '</div>';
 
-    // Next button
+    // Mobile Page Numbers
+    html += '<div class="flex sm:hidden items-center gap-1 flex-nowrap">';
+    if (currentPage > 1) {
+      html += `<button data-page="1" class="${btnClass}">1</button>`;
+      if (currentPage > 3) html += '<span class="text-gray-500 text-xs px-0.5">...</span>';
+    }
+    html += `<span class="${btnActiveClass}" aria-current="page">${currentPage}</span>`;
     if (currentPage < totalPages) {
-      paginationHTML += `
-        <button class="page-numbers" data-page="${currentPage + 1}">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
+      if (currentPage < totalPages - 2) html += '<span class="text-gray-500 text-xs px-0.5">...</span>';
+      html += `<button data-page="${totalPages}" class="${btnClass}">${totalPages}</button>`;
+    }
+    html += '</div>';
+
+    // Go to Page Input
+    html += `
+      <div class="flex items-center gap-1">
+        <span class="hidden sm:inline text-gray-400 text-sm">|</span>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="${String(totalPages).length}"
+          placeholder="#" class="search-goto-input" aria-label="Go to page"
+          data-last-page="${totalPages}">
+        <button type="button" class="search-goto-btn" aria-label="Go">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
         </button>
-      `;
+      </div>`;
+
+    // Next Button
+    if (currentPage < totalPages) {
+      html += `<button data-page="${currentPage + 1}" class="${navBtnClass}" aria-label="Next">
+        <span class="hidden sm:inline">Next</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </button>`;
+    } else {
+      html += `<span class="${navBtnClass}" style="cursor:not-allowed;opacity:0.5">
+        <span class="hidden sm:inline">Next</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </span>`;
     }
 
-    paginationContainer.innerHTML = paginationHTML;
+    html += '</nav>';
+    paginationContainer.innerHTML = html;
 
-    // Add click handlers
+    // Click handler for page buttons
     paginationContainer.querySelectorAll('button[data-page]').forEach(btn => {
       btn.addEventListener('click', () => {
         const page = parseInt(btn.getAttribute('data-page') || '1');
         renderPage(page);
-        // Scroll to top of results
         searchResults?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
+
+    // Go-to-page handlers
+    const gotoInput = paginationContainer.querySelector('.search-goto-input');
+    const gotoBtn = paginationContainer.querySelector('.search-goto-btn');
+    if (gotoInput && gotoBtn) {
+      const doGoTo = () => {
+        const raw = gotoInput.value.trim();
+        if (!raw) return;
+        const p = parseInt(raw, 10);
+        if (isNaN(p)) return;
+        const lp = parseInt(gotoInput.getAttribute('data-last-page') || '1', 10);
+        if (p < 1 || p > lp) return;
+        renderPage(p);
+        searchResults?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      };
+      gotoBtn.addEventListener('click', doGoTo);
+      gotoInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') { e.preventDefault(); doGoTo(); }
+      });
+    }
   }
 
   // Intercept mid-page search form submission

@@ -6,14 +6,38 @@ import Footer from '../components/Footer.astro';
 const lang = 'en';
 ---
 
-<Layout title="Page Not Found | Kssmi Eyewear" lang={lang} noindex={true}>
+<Layout title="Contact Us | Kssmi Eyewear" lang={lang} noindex={true}>
   <Header lang={lang} />
 
-  <main class="min-h-[60vh] flex items-center justify-center bg-gradient-to-b from-stone-50 to-white">
-    <meta http-equiv="refresh" content="0;url=/404/" />
-    <div class="text-center">
-      <div class="text-6xl font-bold text-stone-300 mb-4">404</div>
-      <p class="text-stone-500">Redirecting...</p>
+  <main class="w-full min-h-[70vh] bg-stone-50 pt-12 pb-24 flex items-center">
+    <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[820px] mx-auto px-4 text-center">
+      <div class="inline-flex flex-col items-center justify-center mb-8">
+        <span class="text-3xl font-bold text-[#503629] tracking-tight leading-none uppercase">KSSMI</span>
+        <span class="h-[2px] w-8 bg-[#503629] mt-1.5"></span>
+        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#503629] mt-1.5">Eyewear Mfg.</span>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-bold text-[#5D4E37] mb-4 tracking-tight">Contact Us</h1>
+
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-white border border-stone-200 rounded-full mb-8 shadow-sm">
+        <svg class="w-6 h-6 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      </div>
+
+      <p class="text-lg text-stone-600 mb-3 font-medium">This page is under construction.</p>
+      <p class="text-base text-stone-600 mb-10 max-w-md mx-auto">
+        We're building a better way to connect. In the meantime, you can reach us at <a href="mailto:sales@kssmi.com" class="text-[#5D4E37] font-semibold hover:underline">sales@kssmi.com</a>.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/quote" class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#4A3D2E] transition-colors duration-300 shadow-lg">
+          Request a Quote
+        </a>
+        <a href="/product" class="inline-flex items-center px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#5D4E37] hover:text-white transition-all duration-300">
+          Browse Products
+        </a>
+      </div>
     </div>
   </main>
 

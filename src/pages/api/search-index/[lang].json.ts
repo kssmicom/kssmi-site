@@ -75,6 +75,8 @@ export const GET: APIRoute = async ({ params }) => {
             )
             .forEach((page) => {
                 const slug = page.data.slug || page.id;
+                // Skip pages already covered by staticPages with correct URLs
+                if (slug === 'home') return;
                 results.push({
                     type: 'page',
                     title: page.data.title || '',
