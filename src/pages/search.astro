@@ -41,7 +41,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
 
           <div class="flex items-center justify-center gap-3">
             <span class="h-[1px] w-10 bg-[#8B7355]/30"></span>
-            <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#5D4E37]/60">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#5D4E37]">
               <span id="count-number">0</span> Results Found
             </p>
             <span class="h-[1px] w-10 bg-[#8B7355]/30"></span>
@@ -269,7 +269,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
   }
   .src-item-no {
     font-size: 0.75rem;
-    color: #8B7355;
+    color: #6B5340;
     font-weight: 700;
     margin-bottom: 0.25rem;
   }
@@ -572,16 +572,19 @@ const viewDetailsText = pt.viewDetails || 'View Details';
   }
 
 
-  function createResultCard(item) {
+  function createResultCard(item, index = -1) {
     const url = item.url || '#';
     const title = item.title || 'Untitled';
     const type = item.type || 'product';
 
     if (type === 'product') {
       const itemNo = item.itemNo || '';
-      const image = item.image || null;
+      const image = item.image400 || item.image || null;
+      const imgAttrs = index === 0
+        ? `loading="eager" fetchpriority="high" decoding="sync"`
+        : `loading="lazy" decoding="async"`;
       const imageContent = image
-        ? `<img src="${image}" alt="${title}" width="400" height="300" loading="lazy" decoding="async" class="src-img" />`
+        ? `<img src="${image}" alt="${title}" width="400" height="300" ${imgAttrs} class="src-img" />`
         : `<div class="src-img-placeholder">
              <svg style="width:3rem;height:3rem;color:#6b7280" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -612,8 +615,11 @@ const viewDetailsText = pt.viewDetails || 'View Details';
 
     // Blog / Page
     const desc = item.description || '';
-    const image = item.image || null;
+    const image = item.image400 || item.image || null;
     const isPage = type === 'page';
+    const imgAttrs = index === 0
+      ? `loading="eager" fetchpriority="high" decoding="sync"`
+      : `loading="lazy" decoding="async"`;
     const kssmiLogo = `
       <div style="
         display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -631,7 +637,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
       </div>
     `;
     const imageContent = image
-      ? `<img src="${image}" alt="${title}" width="400" height="300" loading="lazy" decoding="async" class="src-img" />`
+      ? `<img src="${image}" alt="${title}" width="400" height="300" ${imgAttrs} class="src-img" />`
       : `<div class="src-img-placeholder" style="background:#faf8f5;">${kssmiLogo}</div>`;
     return `
       <a href="${url}" class="src-card">
@@ -662,7 +668,7 @@ const viewDetailsText = pt.viewDetails || 'View Details';
     const pageResults = allResults.slice(startIndex, endIndex);
 
     if (searchResults) {
-      searchResults.innerHTML = pageResults.map(item => createResultCard(item)).join('');
+      searchResults.innerHTML = pageResults.map((item, i) => createResultCard(item, i)).join('');
     }
     renderPagination();
   }

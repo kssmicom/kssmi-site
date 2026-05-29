@@ -36,6 +36,7 @@ export const GET: APIRoute = async ({ params }) => {
                 keywords: `${product.data.categories || ''} ${product.data.materials || ''} ${product.data.colors || ''} ${product.data.designStyle || ''}`.trim(),
                 url: `${productBase}${slug}`,
                 image: product.data.cover || '',
+                image400: product.data.cover ? product.data.cover.replace(/\.webp$/, '-400.webp') : '',
                 featured: product.data.featured || false,
             });
         });
