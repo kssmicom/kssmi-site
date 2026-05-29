@@ -198,7 +198,7 @@ const lcpImage = products[0]?.data?.cover || undefined;
               </div>
 
               <!-- Products Grid -->
-              <div class="grid grid-cols-2 xl:grid-cols-3 gap-4 xl:gap-6">
+              <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-6 xl:gap-x-6 xl:gap-y-10">
                 {products.map((product: any, index: number) => (
                   <ProductCard product={product} lang={lang} index={index} />
                 ))}
