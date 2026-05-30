@@ -107,7 +107,7 @@ export const translations = {
       noResults: "No products found"
     },
     floating: {
-      inquiry: "Get Quote",
+      inquiry: "Quote",
       email: "Email",
       whatsapp: "WhatsApp",
       backToTop: "Top"
@@ -359,7 +359,7 @@ export const translations = {
       noResults: "لا توجد منتجات"
     },
     floating: {
-      inquiry: "احصل على عرض سعر",
+      inquiry: "عرض سعر",
       email: "بريد إلكتروني",
       whatsapp: "واتساب",
       backToTop: "إلى الأعلى"
@@ -598,7 +598,7 @@ export const translations = {
       rights: "Tutti i diritti riservati."
     },
     cta: {
-      quote: "Preventivo",
+      quote: "Richiedi",
       catalog: "Vedi Catalogo"
     },
     search: {
@@ -606,7 +606,7 @@ export const translations = {
       noResults: "Nessun prodotto trovato"
     },
     floating: {
-      inquiry: "Preventivo",
+      inquiry: "Richiedi",
       email: "Email",
       whatsapp: "WhatsApp",
       backToTop: "Torna su"
@@ -860,7 +860,7 @@ export const translations = {
       noResults: "No se encontraron productos"
     },
     floating: {
-      inquiry: "Dejar Consulta",
+      inquiry: "Cotizar",
       email: "Enviar Correo",
       whatsapp: "WhatsApp",
       backToTop: "Volver Arriba"
@@ -1114,7 +1114,7 @@ export const translations = {
       noResults: "Aucun produit trouvé"
     },
     floating: {
-      inquiry: "Laisser une Demande",
+      inquiry: "Devis",
       email: "Envoyer Email",
       whatsapp: "WhatsApp",
       backToTop: "Retour en Haut"
@@ -1368,7 +1368,7 @@ export const translations = {
       noResults: "Keine Produkte gefunden"
     },
     floating: {
-      inquiry: "Anfrage Senden",
+      inquiry: "Anfrage",
       email: "Email Senden",
       whatsapp: "WhatsApp",
       backToTop: "Nach Oben"
@@ -1622,7 +1622,7 @@ export const translations = {
       noResults: "Nenhum produto encontrado"
     },
     floating: {
-      inquiry: "Deixar Consulta",
+      inquiry: "Cotação",
       email: "Enviar Email",
       whatsapp: "WhatsApp",
       backToTop: "Voltar ao Topo"
@@ -1876,7 +1876,7 @@ export const translations = {
       noResults: "Продукты не найдены"
     },
     floating: {
-      inquiry: "Оставить Запрос",
+      inquiry: "Запрос",
       email: "Отправить Email",
       whatsapp: "WhatsApp",
       backToTop: "Наверх"
@@ -2130,7 +2130,7 @@ export const translations = {
       noResults: "製品が見つかりません"
     },
     floating: {
-      inquiry: "お問い合わせ",
+      inquiry: "見積",
       email: "メールを送信",
       whatsapp: "WhatsApp",
       backToTop: "トップへ戻る"
@@ -2385,7 +2385,7 @@ export const translations = {
       noResults: "Ürün bulunamadı"
     },
     floating: {
-      inquiry: "Sorgu Bırak",
+      inquiry: "Teklif",
       email: "E-posta Gönder",
       whatsapp: "WhatsApp",
       backToTop: "Yukarı Dön"
@@ -2632,7 +2632,7 @@ export const translations = {
       noResults: "제품을 찾을 수 없습니다"
     },
     floating: {
-      inquiry: "문의 남기기",
+      inquiry: "견적",
       email: "이메일 보내기",
       whatsapp: "WhatsApp",
       backToTop: "맨 위로"
@@ -2879,7 +2879,7 @@ export const translations = {
       noResults: "未找到相关产品"
     },
     floating: {
-      inquiry: "在线留言",
+      inquiry: "询价",
       email: "发送邮件",
       whatsapp: "WhatsApp",
       backToTop: "回到顶部"
@@ -3126,7 +3126,7 @@ export const translations = {
       noResults: "कोई उत्पाद नहीं मिला"
     },
     floating: {
-      inquiry: "पूछताछ छोड़ें",
+      inquiry: "कोटेशन",
       email: "ईमेल भेजें",
       whatsapp: "WhatsApp",
       backToTop: "शीर्ष पर वापस"
@@ -3373,7 +3373,7 @@ export const translations = {
       noResults: "Không tìm thấy sản phẩm"
     },
     floating: {
-      inquiry: "Nhận Báo Giá",
+      inquiry: "Báo giá",
       email: "Gửi Email",
       whatsapp: "WhatsApp",
       backToTop: "Lên đầu trang"
@@ -3617,7 +3617,7 @@ export const translations = {
       noResults: "Ora Nesuwi Apa"
     },
     floating: {
-      inquiry: "Nduwe Kutipan",
+      inquiry: "Nyuwun",
       email: "Hub Kami Email",
       whatsapp: "Hub Kami WhatsApp",
       backToTop: "Kembali Katon Ndhuwur"
@@ -3854,7 +3854,7 @@ export const translations = {
       rights: "Hak cipta terpelihara."
     },
     cta: {
-      quote: "Sebut Harga",
+      quote: "Tawaran",
       catalog: "Lihat Katalog"
     },
     search: {
@@ -3862,7 +3862,7 @@ export const translations = {
       noResults: "Tiada produk dijumpai"
     },
     floating: {
-      inquiry: "Tinggalkan Pertanyaan",
+      inquiry: "Tawaran",
       email: "Hantar E-mel",
       whatsapp: "WhatsApp",
       backToTop: "Kembali ke Atas"
@@ -4110,7 +4110,7 @@ export const translations = {
       noResults: "Ягон маҳсулот ёфт нашуд"
     },
     floating: {
-      inquiry: "Дархост Гузоред",
+      inquiry: "Дархост",
       email: "Фиристодани Имейл",
       whatsapp: "WhatsApp",
       backToTop: "Бозгашт ба Боло"
