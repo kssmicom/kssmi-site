@@ -870,6 +870,7 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                     <div class="panel">
                         <div class="panel-header">Top Pages</div>
                         <div class="panel-body" style="padding:0;">
+                            <div class="table-wrapper">
                             <table>
                                 <thead>
                                     <tr>
@@ -898,6 +899,7 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>
+                            </div>
                         </div>
                     </div>
                     <?php endif; ?>
