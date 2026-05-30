@@ -115,9 +115,9 @@ const currentYear = new Date().getFullYear();
 
       <!-- COLUMN 2: QUICK LINKS -->
       <div>
-        <h4 class="text-white font-['Manrope'] font-bold uppercase tracking-[0.2em] text-xs mb-6">
+        <span class="text-white font-['Manrope'] font-bold uppercase tracking-[0.2em] text-xs mb-6 block">
           <a href={`/${currentPath}product/sunglasses`} class="hover:text-[#b45309] transition-colors">{t.sidebar.sunglasses}</a>
-        </h4>
+        </span>
         <ul class="space-y-4 text-sm">
           {quickLinks.map((item) => (
             <li>
@@ -138,9 +138,9 @@ const currentYear = new Date().getFullYear();
 
       <!-- COLUMN 3: CATEGORY -->
       <div>
-        <h4 class="text-white font-['Manrope'] font-bold uppercase tracking-[0.2em] text-xs mb-6">
+        <span class="text-white font-['Manrope'] font-bold uppercase tracking-[0.2em] text-xs mb-6 block">
           <a href={`/${currentPath}product/optical-frames`} class="hover:text-[#b45309] transition-colors">{t.sidebar.optical_frames}</a>
-        </h4>
+        </span>
         <ul class="space-y-4 text-sm">
           {categoryLinks.map((item) => (
             <li>
@@ -161,9 +161,9 @@ const currentYear = new Date().getFullYear();
 
       <!-- COLUMN 4: CONTACT -->
       <div>
-        <h4 class="text-white font-['Manrope'] font-bold uppercase tracking-[0.2em] text-xs mb-6">
+        <span class="text-white font-['Manrope'] font-bold uppercase tracking-[0.2em] text-xs mb-6 block">
           {t.footer.factoryTitle}
-        </h4>
+        </span>
         <ul class="space-y-4 text-sm text-stone-400">
           <!-- Add -->
           <li class="flex items-start gap-3 group">

@@ -764,34 +764,56 @@ const viewDetailsText = pt.viewDetails || 'View Details';
     html += '</nav>';
     paginationContainer.innerHTML = html;
 
-    // Click handler for page buttons
-    paginationContainer.querySelectorAll('button[data-page]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const page = parseInt(btn.getAttribute('data-page') || '1');
-        renderPage(page);
-        searchResults?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
+    // Use event delegation + rAF to avoid forced reflow from querySelectorAll
+    // after innerHTML (browser hasn't laid out new DOM yet — reading it forces sync layout)
+    requestAnimationFrame(() => {
+      // Click handler for page buttons via event delegation (one listener, not N)
+      if (!paginationContainer._hasPageListener) {
+        paginationContainer._hasPageListener = true;
+        paginationContainer.addEventListener('click', (e) => {
+          const btn = (e.target as Element).closest('button[data-page]');
+          if (btn) {
+            const page = parseInt(btn.getAttribute('data-page') || '1');
+            renderPage(page);
+            searchResults?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      }
 
-    // Go-to-page handlers
-    const gotoInput = paginationContainer.querySelector('.search-goto-input');
-    const gotoBtn = paginationContainer.querySelector('.search-goto-btn');
-    if (gotoInput && gotoBtn) {
-      const doGoTo = () => {
-        const raw = gotoInput.value.trim();
-        if (!raw) return;
-        const p = parseInt(raw, 10);
-        if (isNaN(p)) return;
-        const lp = parseInt(gotoInput.getAttribute('data-last-page') || '1', 10);
-        if (p < 1 || p > lp) return;
-        renderPage(p);
-        searchResults?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      };
-      gotoBtn.addEventListener('click', doGoTo);
-      gotoInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') { e.preventDefault(); doGoTo(); }
-      });
-    }
+      // Go-to-page handlers via event delegation
+      if (!paginationContainer._hasGotoListener) {
+        paginationContainer._hasGotoListener = true;
+        paginationContainer.addEventListener('click', (e) => {
+          const gotoBtn = (e.target as Element).closest('.search-goto-btn');
+          if (gotoBtn) {
+            const input = paginationContainer.querySelector('.search-goto-input') as HTMLInputElement;
+            if (!input) return;
+            const raw = input.value.trim();
+            if (!raw) return;
+            const p = parseInt(raw, 10);
+            if (isNaN(p)) return;
+            const lp = parseInt(input.getAttribute('data-last-page') || '1', 10);
+            if (p < 1 || p > lp) return;
+            renderPage(p);
+            searchResults?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+        paginationContainer.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' && (e.target as Element).closest('.search-goto-input')) {
+            e.preventDefault();
+            const input = e.target as HTMLInputElement;
+            const raw = input.value.trim();
+            if (!raw) return;
+            const p = parseInt(raw, 10);
+            if (isNaN(p)) return;
+            const lp = parseInt(input.getAttribute('data-last-page') || '1', 10);
+            if (p < 1 || p > lp) return;
+            renderPage(p);
+            searchResults?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      }
+    });
   }
 
   // Form submission
