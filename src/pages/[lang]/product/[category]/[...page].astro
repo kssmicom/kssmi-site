@@ -17,6 +17,7 @@ import Footer from '../../../../components/Footer.astro';
 import Breadcrumb from '../../../../components/Breadcrumb.astro';
 import { isCategoryMatch, getSlug } from '../../../../utils/categoryMatching';
 import { getProductLang } from '../../../../utils/language';
+import { cardSrc } from '../../../../utils/image';
 import { buildPrimaryCategories, buildSidebarTags } from '../../../../utils/sidebar';
 import Pagination from '../../../../components/Pagination.astro';
 
@@ -100,7 +101,7 @@ const currentPath = `${lang}/`;
 const isRTL = lang === 'ar';
 
 // First product cover for LCP preload
-const lcpImage = (products[0] as any)?.data?.cover || undefined;
+const lcpImage = (products[0] as any)?.data?.cover ? cardSrc((products[0] as any).data.cover) : undefined;
 
 // Format category name for display (fallback)
 let categoryTitle = categorySlug

@@ -14,6 +14,7 @@ import { isCategoryMatch, getSlug } from '../../../utils/categoryMatching';
 import type { Page } from 'astro';
 import Pagination from '../../../components/Pagination.astro';
 import { buildPrimaryCategories, buildSidebarTags } from '../../../utils/sidebar';
+import { cardSrc } from '../../../utils/image';
 
 const baseSegment = 'blog';
 
@@ -83,7 +84,7 @@ const pt = t.product || {
 };
 
 // First item image for LCP preload
-const lcpImage = items[0]?.data?.image || undefined;
+const lcpImage = items[0]?.data?.image ? cardSrc(items[0].data.image) : undefined;
 
 const allItems = await getCollection('blog');
 const langItems = allItems.filter((item) => item.data.lang === lang);

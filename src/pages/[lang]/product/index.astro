@@ -12,6 +12,7 @@ import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
 import { isCategoryMatch, getSlug } from '../../../utils/categoryMatching';
 import { getProductLang } from '../../../utils/language';
+import { cardSrc } from '../../../utils/image';
 import { buildPrimaryCategories, buildSidebarTags } from '../../../utils/sidebar';
 import Pagination from '../../../components/Pagination.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
@@ -77,7 +78,7 @@ function getCategoryCount(href: string): number {
 }
 
 // First product cover for LCP preload
-const lcpImage = products[0]?.data?.cover || undefined;
+const lcpImage = products[0]?.data?.cover ? cardSrc(products[0].data.cover) : undefined;
 ---
 
 <Layout title={t.nav.products} lang={lang} lcpImage={lcpImage}>

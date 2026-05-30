@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
+import { cardSrc } from '../../utils/image';
 import Layout from '../../layouts/Layout.astro';
 import { translations } from '../../translations';
 import Header from '../../components/Header.astro';
@@ -55,7 +56,7 @@ const currentPath = `${lang}/`;
 const isRTL = lang === 'ar';
 ---
 
-<Layout title={title} lang={lang} image={image} lcpImage={image}>
+<Layout title={title} lang={lang} image={image} lcpImage={image ? cardSrc(image) : undefined}>
   <Header lang={lang} />
 
   <main class="w-full min-h-screen" dir={isRTL ? 'rtl' : 'ltr'}>

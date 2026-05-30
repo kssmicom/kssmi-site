@@ -12,6 +12,7 @@ import Footer from '../../components/Footer.astro';
 import { isCategoryMatch } from '../../utils/categoryMatching';
 import Pagination from '../../components/Pagination.astro';
 import { buildPrimaryCategories, buildSidebarTags } from '../../utils/sidebar';
+import { cardSrc } from '../../utils/image';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 
 const lang = 'en';
@@ -63,7 +64,7 @@ const t = translations.en;
 const pt = t.product || {};
 
 // First item image for LCP preload
-const lcpImage = items[0]?.data?.image || undefined;
+const lcpImage = items[0]?.data?.image ? cardSrc(items[0].data.image) : undefined;
 
 const primaryCategories = buildPrimaryCategories(t, '', baseSegment);
 

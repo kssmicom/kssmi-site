@@ -11,6 +11,7 @@ import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
 import { isCategoryMatch } from '../../../utils/categoryMatching';
 import { buildPrimaryCategories, buildSidebarTags } from '../../../utils/sidebar';
+import { cardSrc } from '../../../utils/image';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 import Pagination from '../../../components/Pagination.astro';
 
@@ -70,7 +71,7 @@ const pt = t.product || {
 const currentPath = `${lang}/`;
 const isRTL = lang === 'ar';
 
-const lcpImage = items[0]?.data?.image || undefined;
+const lcpImage = items[0]?.data?.image ? cardSrc(items[0].data.image) : undefined;
 
 const primaryCategories = buildPrimaryCategories(t, currentPath, baseSegment);
 

@@ -1,6 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
 import { translations } from '../../../translations';
+import { cardSrc } from '../../../utils/image';
 
 const { lang = 'en' } = Astro.props as { lang?: string };
 const isRTL = lang === 'ar';
@@ -36,7 +37,7 @@ const badgeText = t.product?.materials || 'Frame Materials';
         >
           <a href={`${prefix}/product/?material=${m.slug}`} class="relative aspect-[4/3] overflow-hidden bg-stone-100 block">
             <img
-              src={m.image}
+              src={cardSrc(m.image)}
               alt={m.name}
               width="400"
               height="300"

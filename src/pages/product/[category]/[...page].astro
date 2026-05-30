@@ -15,6 +15,7 @@ import { isCategoryMatch, getSlug } from '../../../utils/categoryMatching';
 import type { Page } from 'astro';
 import Pagination from '../../../components/Pagination.astro';
 import { getProductLang } from '../../../utils/language';
+import { cardSrc } from '../../../utils/image';
 import { buildPrimaryCategories, buildSidebarTags } from '../../../utils/sidebar';
 
 export async function getStaticPaths({ paginate }: { paginate: any }) {
@@ -85,7 +86,7 @@ const pt = t.product || {
 };
 
 // First product cover for LCP preload
-const lcpImage = products[0]?.data?.cover || undefined;
+const lcpImage = products[0]?.data?.cover ? cardSrc(products[0].data.cover) : undefined;
 
 const allProducts = await getCollection('products');
 const langProducts = allProducts.filter((product) => {

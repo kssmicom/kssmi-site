@@ -17,6 +17,7 @@ import InquiryForm from '../../components/InquiryForm.astro';
 import RelatedProducts from '../../components/RelatedProducts.astro';
 import { isCategoryMatch } from '../../utils/categoryMatching';
 import { getProductLang } from '../../utils/language';
+import { cardSrc } from '../../utils/image';
 import { buildPrimaryCategories, buildSidebarTags } from '../../utils/sidebar';
 
 export async function getStaticPaths() {
@@ -333,7 +334,7 @@ function thumbSrc(originalPath: string): string {
   keywords={seoKeywords}
   lang={lang}
   image={cover}
-  lcpImage={cover}
+  lcpImage={cover ? cardSrc(cover) : undefined}
   type="product"
 >
   {productSchema && <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />}

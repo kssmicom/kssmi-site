@@ -1,8 +1,7 @@
 ---
 
 import { translations } from '../translations';
-import { existsSync } from 'node:fs';
-import { join } from 'node:path';
+import { cardSrc } from '../utils/image';
 
 interface Props {
   product: any;
@@ -41,9 +40,7 @@ const currentPath = lang === 'en' ? '' : `${lang}/`;
 const productSlug = slug || product.id.split('.')[0];
 
 // Use 400px card variant when available (smaller file, faster load on listing grids)
-const cardSrc = cover && existsSync(join(process.cwd(), 'public', cover.replace(/\.webp$/, '-400.webp')))
-  ? cover.replace(/\.webp$/, '-400.webp')
-  : cover;
+const coverSrc = cardSrc(cover);
 
 ---
 
@@ -53,7 +50,7 @@ const cardSrc = cover && existsSync(join(process.cwd(), 'public', cover.replace(
     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100" data-product-cover>
       {cover ? (
         <img
-          src={cardSrc}
+          src={coverSrc}
           alt={title}
           width="400"
           height="300"

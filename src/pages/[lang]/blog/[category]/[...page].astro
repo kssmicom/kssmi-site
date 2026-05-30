@@ -15,6 +15,7 @@ import Footer from '../../../../components/Footer.astro';
 import Breadcrumb from '../../../../components/Breadcrumb.astro';
 import { isCategoryMatch, getSlug } from '../../../../utils/categoryMatching';
 import { buildPrimaryCategories, buildSidebarTags } from '../../../../utils/sidebar';
+import { cardSrc } from '../../../../utils/image';
 import Pagination from '../../../../components/Pagination.astro';
 
 const baseSegment = 'blog';
@@ -88,7 +89,7 @@ const currentPath = `${lang}/`;
 const isRTL = lang === 'ar';
 
 // First item image for LCP preload
-const lcpImage = (items[0] as any)?.data?.image || undefined;
+const lcpImage = (items[0] as any)?.data?.image ? cardSrc((items[0] as any).data.image) : undefined;
 
 // Format category name for display (fallback)
 let categoryTitle = categorySlug
