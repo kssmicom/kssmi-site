@@ -829,10 +829,31 @@ function resendEmail($log) {
         .link { color: #8B7355; text-decoration: none; }
         .link:hover { text-decoration: underline; }
 
+        /* Mobile responsive */
         @media (max-width: 768px) {
             .header { flex-direction: column; align-items: flex-start; }
+            .header-right { width: 100%; justify-content: flex-end; }
             .stats { grid-template-columns: repeat(2, 1fr); }
-            th, td { padding: 8px 10px; font-size: 12px; }
+            th, td { padding: 6px 8px; font-size: 12px; }
+            .detail-grid { grid-template-columns: 1fr; gap: 10px; }
+            .bulk-actions { font-size: 12px; gap: 8px; padding: 8px 12px; }
+            .actions { gap: 6px; }
+        }
+        @media (max-width: 480px) {
+            .stats { grid-template-columns: 1fr; }
+            .stat-card { padding: 12px 14px; }
+            .stat-card .value { font-size: 22px; }
+            th, td { padding: 5px 6px; font-size: 11px; }
+            .panel-header { font-size: 12px; padding: 10px 12px; }
+            .container { padding: 0 4px; }
+            body { padding: 8px 4px; }
+            .url-cell { max-width: 140px; }
+            .mono { font-size: 10px; }
+            .bulk-actions { padding: 6px 10px; gap: 6px; font-size: 11px; }
+            .modal-content { padding: 20px; }
+            .detail-item { padding: 10px 12px; }
+            .message-box { font-size: 12px; padding: 12px; }
+            .login-box { margin: 40px auto; padding: 24px; }
         }
     </style>
 </head>

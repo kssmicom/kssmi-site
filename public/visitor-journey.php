@@ -154,7 +154,7 @@ if ($tab === 'overview') {
 // ── Submissions list ─────────────────────────────────────────────────────────
 
 $subPage     = max(1, (int)($_GET['sp'] ?? 1));
-$subPerPage  = 50;
+$subPerPage  = 100;
 $subStatus   = $_GET['status'] ?? '';
 $subPlugin   = $_GET['plugin'] ?? '';
 $subDateFrom = $_GET['date_from'] ?? '';
@@ -201,7 +201,7 @@ if ($tab === 'traffic') {
 // ── Visitors list ────────────────────────────────────────────────────────────
 
 $visPage    = max(1, (int)($_GET['vp'] ?? 1));
-$visPerPage = 50;
+$visPerPage = 100;
 $visSearch       = $_GET['search'] ?? '';
 $visDevice       = $_GET['device'] ?? '';
 $visSource       = $_GET['source'] ?? '';
@@ -465,10 +465,32 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
         .url-cell { max-width: 240px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
         .url-cell a { color: #8B7355; text-decoration: none; font-size: 12px; }
 
+        /* Mobile responsive */
         @media (max-width: 768px) {
             .stats { grid-template-columns: repeat(2, 1fr); }
-            .tabs { flex-wrap: wrap; }
+            .tabs { flex-wrap: wrap; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .tab { padding: 10px 12px; font-size: 12px; white-space: nowrap; }
             .filters { flex-direction: column; align-items: flex-start; }
+            .header { flex-direction: column; align-items: flex-start; }
+            .header-right { width: 100%; justify-content: flex-end; }
+            /* Overview grid: stack referrers + source/device vertically */
+            .overview-grid { grid-template-columns: 1fr !important; }
+            .journey-grid { grid-template-columns: 1fr; }
+            /* Tables: tighter padding on mobile */
+            th, td { padding: 6px 8px; font-size: 12px; }
+        }
+        @media (max-width: 480px) {
+            .stats { grid-template-columns: 1fr; }
+            .stat-card { padding: 12px 14px; }
+            .stat-card .value { font-size: 22px; }
+            th, td { padding: 5px 6px; font-size: 11px; }
+            .panel-header { font-size: 12px; padding: 10px 12px; }
+            .container { padding: 0 4px; }
+            body { padding: 8px 4px; }
+            .filters input, .filters select { font-size: 11px; padding: 4px 6px; }
+            .url-cell { max-width: 140px; }
+            .mono { font-size: 10px; }
+            .login-box { margin: 40px auto; padding: 24px; }
         }
     </style>
 </head>
@@ -591,7 +613,7 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                     </div>
                     <?php endif; ?>
 
-                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="overview-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                         <!-- Top Referrers -->
                         <div class="panel">
                             <div class="panel-header">
