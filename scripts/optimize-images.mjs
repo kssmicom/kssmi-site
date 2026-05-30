@@ -6,7 +6,8 @@
  * IMAGE STRATEGY:
  *   - products/:  original + -400 (card) + -120w (thumbnail)
  *   - collection/, blogs/, feature/: original + -400 (card)
- *   - certifications/: original only
+ *   - certifications/: original only (high quality, may need for printing)
+ *   - icon/: original only (small UI icons, displayed at ~60-100px)
  *
  * HOW IT WORKS:
  *   - The first time you run this, ALL images are compressed + variants created.
@@ -18,7 +19,8 @@
  *   - Product cover ("-1."):    max 800x600,   quality 92
  *   - Product gallery ("-2."+): max 1200x900,  quality 90
  *   - Collection/blogs/feature: max 1600x1200, quality 88
- *   - Certifications:           max 600x600,   quality 85
+ *   - Certifications:           max 600x600,   quality 85 (high quality for future use)
+ *   - Icons:                   max 100x100,   quality 75 (small UI icons)
  *
  * Variants:
  *   - Card (-400): 400x300, quality 85 — for cards/featured sections
@@ -72,6 +74,11 @@ const CERT_MAX_W      = 600;
 const CERT_MAX_H      = 600;
 const CERT_QUALITY    = 85;
 
+// Icons (small UI elements displayed at ~60-100px)
+const ICON_MAX_W      = 100;
+const ICON_MAX_H      = 100;
+const ICON_QUALITY    = 85;
+
 // Variant settings
 const CARD_W          = 400;
 const CARD_H          = 300;
@@ -93,6 +100,9 @@ function getImageSettings(filePath) {
   }
   if (normalized.includes('/media/certifications/')) {
     return { maxW: CERT_MAX_W, maxH: CERT_MAX_H, quality: CERT_QUALITY };
+  }
+  if (normalized.includes('/media/icon/')) {
+    return { maxW: ICON_MAX_W, maxH: ICON_MAX_H, quality: ICON_QUALITY };
   }
   // Collection, blogs, feature
   return { maxW: HERO_MAX_W, maxH: HERO_MAX_H, quality: HERO_QUALITY };
