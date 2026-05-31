@@ -1,181 +1,149 @@
 ---
 section: 's01-materials'
-heading: 'Маводҳои Чорчӯбаи Айнак'
-subheading: 'Аз 16 маводи олӣ интихоб кунед — ҳар кадом дорои хусусиятҳои хос барои коллексияи айнаки шумо'
+heading: 'Қарорҳои асосии маводи чорчӯбаи айнак'
+subheading: 'Аз атсетати боҳашамати дастӣ (Mazzucchelli) то титани баландсифат — 16 маводи олии мо бодиққат тарҳрезӣ шудаанд, то биниши беназири шуморо ба истеҳсоли бенуқсон табдил диҳанд ва ба стандартҳои бренди шумо комилан мувофиқат кунанд'
 materials:
-  - name: 'Айнаки Атсетатӣ'
-    subtitle: 'Ғании амиқи ранг бо пардози сайқалдодаи боҳашамат'
+  - name: 'Айнаки атсетатӣ'
+    subtitle: 'Полимери олии дастӣ'
     points:
-      - Сершавии амиқ ва дурахшони ранг
-      - Гипоаллергенӣ ва барои пӯст мувофиқ
-      - Сабук барои роҳати тамоми рӯз
-      - Танзимшаванда барои ҷойгиршавии фармоишӣ
-      - Намуди классикии олӣ
+      - 'Рангҳои дурахшон, ғафс ва қабат-қабат'
+      - 'Гипоаллергенӣ ва ба осонӣ танзимшаванда'
+      - 'Асоси брендҳои мӯди боҳашамат'
     slug: 'acetate-eyewear'
-    image: '/media/products/kas-101-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-101-1.webp'
+    image: '/media/products/kas-007-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-007-1.webp'
 
-  - name: 'Айнаки Био-Атсетатӣ'
-    subtitle: 'Алтернативаи устувор аз маводи растании барқароршаванда'
+  - name: 'Айнаки титанӣ'
+    subtitle: 'Металли олии хеле сабук'
     points:
-      - Таркиби 100% биологӣ вайроншаванда
-      - Аз селлюлозаи чӯб ва пахта сохта шудааст
-      - Ҳамон намуди ғанӣ ба мисли атсетат
-      - Изофаи карбонии камтар
-      - Барои пӯст бехатар ва ғайризаҳрнок
-    slug: 'bio-acetate-eyewear'
-    image: '/media/products/kas-102-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-102-1.webp'
+      - 'Сабуктар ва мустаҳкамтар аз пӯлод'
+      - '100% тобовар ба арақ ва аллергия'
+      - 'Стандарти тиҷоратии дараҷаи олӣ'
+    slug: 'titanium-eyewear'
+    image: '/media/products/kts-212-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kts-212-1.webp'
 
-  - name: 'Айнаки Пластикӣ'
-    subtitle: 'Чорчӯбаҳои дастрас ва гуногунҷабҳа бо имконоти беохири ранг'
+  - name: 'Айнаки бета-титанӣ'
+    subtitle: 'Металли ултра-чандир'
     points:
-      - Истеҳсоли аз ҷиҳати хароҷот самаранок
-      - Доираи васеи ранг ва нақшҳо
-      - Ба зарба ва шикастан тобовар
-      - Сохтори сабук
-      - Ба осонӣ шакл дода мешавад
-    slug: 'plastic-eyewear'
-    image: '/media/products/kas-103-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-103-1.webp'
+      - 'Барқароршавии олии каҷшавӣ'
+      - 'Тарҳҳои ултра-тунук ва сабук'
+      - 'Халқаи бевинт ва идеали минималистӣ'
+    slug: 'beta-titanium-eyewear'
+    image: '/media/products/kjs-005-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kjs-005-1.webp'
 
-  - name: 'Айнаки Нейлонӣ'
-    subtitle: 'Маводи дорои иҷрои баланд барои тарзи ҳаёти фаъол'
+  - name: 'Айнаки монел / нуқраи никелӣ'
+    subtitle: 'Хӯлаи классикии бисёрҷониба'
     points:
-      - Қобилияти истисноии хамшавӣ ва печиш
-      - Ба гармӣ ва моддаҳои химиявӣ тобовар
-      - Барои чорчӯбаҳои варзишӣ идеалӣ
-      - Шакли худро зери фишор нигоҳ медорад
-      - Ҳисси пӯшидани бениҳоят сабук
+      - 'Штампкунӣ ва шаклдиҳии осон'
+      - 'Барои васлкунӣ хеле хуб танзимшаванда'
+      - 'Тарҳҳои классикии винтажӣ'
+    slug: 'monel-nickel-silver-eyewear'
+    image: '/media/products/kjs-024-metal-sunglasses/oem-odm-customized-metal-sunglasses-kjs-024-1.webp'
+
+  - name: 'Айнаки нахи карбон'
+    subtitle: 'Маводи пойгаи технологияи баланд'
+    points:
+      - 'Таносуби баланди мустаҳкамӣ ба вазн'
+      - 'Эстетикаи бофташудаи технологияи баланд'
+      - 'Таваҷҷӯҳи олӣ ба дӯстдорони технология ва мотоспорт'
+    slug: 'carbon-fiber-eyewear'
+    image: '/media/products/kss-033-carbon-fiber-sunglasses/oem-odm-customized-carbon-fiber-sunglasses-kss-033-1.webp'
+
+  - name: 'Айнаки нейлонӣ'
+    subtitle: 'Фаъолияти баланди зиддизарбавӣ'
+    points:
+      - 'Муқовимати олӣ ба зарба ва обу ҳаво'
+      - 'Сохторҳои тобовар ба тарқишҳои фишорӣ'
+      - 'Комилан мувофиқ барои тарҳҳои фарогир (wraparound)'
     slug: 'nylon-eyewear'
-    image: '/media/products/kas-104-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-104-1.webp'
+    image: '/media/products/kas-311-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-311-1.webp'
 
   - name: 'Айнаки TR90'
-    subtitle: 'Маводи термопластикии дорои хотира бо чандирии беназир'
+    subtitle: 'Чорчӯбаи хотиравии ултра-сабук'
     points:
-      - Бе шикастан хам мешавад
-      - Нигоҳдории пурраи хотираи шакл
-      - Полимери бениҳоят сабук
-      - Муқовимати баланд ба зарба
-      - Ба гармӣ ва ултрабунафш устувор
+      - 'Барқароршавии фавқулоддаи хотираи шакл'
+      - 'Бароҳатии сабук ба мисли пар дар давоми тамоми рӯз'
+      - 'Афзалият дар либоси варзишӣ ва фаъол'
     slug: 'tr90-eyewear'
-    image: '/media/products/kas-105-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-105-1.webp'
+    image: '/media/products/kas-164-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-164-1.webp'
 
-  - name: 'Айнаки Металлӣ'
-    subtitle: 'Зебоии ҷовидона бо профилҳои тунуки дақиқ сохташуда'
+  - name: 'Айнаки поликарбонатӣ (PC)'
+    subtitle: 'Муқовимати ниҳоӣ ба зарба'
     points:
-      - Намуди классикии мураккаб
-      - Болинчаҳои бинии пурра танзимшаванда
-      - Пардози ба зангзанӣ тобовар
-      - Силуэти тунук ва минималӣ
-      - Устувории аъло
-    slug: 'metal-eyewear'
-    image: '/media/products/kmo-007-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-007-1.webp'
+      - 'Муҳофизати шадиди ношикастан'
+      - 'Барои ҳаҷми калон хеле сарфакор'
+      - 'Асоси молҳои истеъмолии рӯзмарра ва бехатарӣ'
+    slug: 'polycarbonate-pc-eyewear'
+    image: '/media/products/kas-142-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-142-1.webp'
 
-  - name: 'Айнаки Титанӣ'
-    subtitle: 'Металли дараҷаи тиббӣ барои таҷрибаи ниҳоии сабукӣ'
+  - name: 'Айнаки пӯлоди зангногир'
+    subtitle: 'Устувор ва сарфакор'
     points:
-      - 40% сабуктар аз пӯлод
-      - Ба зангзанӣ комилан тобовар
-      - 100% гипоаллергенӣ
-      - Қувваи истисноии кашиш
-      - Металли чандири дорои хотира
-    slug: 'titanium-eyewear'
-    image: '/media/products/kto-001-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-001-1.webp'
-
-  - name: 'Айнаки Пӯлоди Зангногир'
-    subtitle: 'Устувории зангногир бо эстетикаи муосири шаҳрванд'
-    points:
-      - Ҳаргиз занг намезанад ё тира намешавад
-      - Мустаҳкам, вале сабук
-      - Намуди муосири шаҳрванд
-      - Металли аз ҷиҳати буҷа мувофиқ
-      - Нигоҳубинаш осон
+      - 'Профилҳои тунуки дорои қобилияти баланди кашиш'
+      - 'Бехатар аз аллергия, бе никел'
+      - 'Асоси металлии мӯди зуд (fast-fashion)'
     slug: 'stainless-steel-eyewear'
-    image: '/media/products/kmo-016-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-016-1.webp'
+    image: '/media/products/kms-227-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-227-1.webp'
 
-  - name: 'Айнаки Нуқраи Никелӣ'
-    subtitle: 'Ҷозибаи винтажӣ бо қобилияти аълои шаклпазирӣ барои тарҳҳои мураккаб'
+  - name: 'Айнаки металли хотиравӣ'
+    subtitle: 'Хӯлаи дорои хотираи шакл'
     points:
-      - Эстетикаи классикии ретро
-      - Хӯлаи хеле шаклпазир
-      - Дурахши зебои сайқалдода
-      - Маводи аз ҷиҳати хароҷот самаранок
-      - Барои кори муфассал идеалӣ
-    slug: 'nickel-silver-eyewear'
-    image: '/media/products/kmo-227-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-227-1.webp'
-
-  - name: 'Айнаки Алюминӣ'
-    subtitle: 'Металли муосири сабук бо қобилияти аз нав коркардшавии экологӣ'
-    points:
-      - Ҳисси бениҳоят сабук
-      - Табиатан ба зангзанӣ тобовар
-      - Маводи 100% аз нав коркардшаванда
-      - Пардозҳои муосири маттӣ
-      - Таносуби баланди қувват ба вазн
-    slug: 'aluminum-eyewear'
-    image: '/media/products/kmo-228-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-228-1.webp'
-
-  - name: 'Айнаки Нахи Карбон'
-    subtitle: 'Композити пешрафта бо сохтори бофтаи хос'
-    points:
-      - Аз пӯлод 5 маротиба мустаҳкамтар
-      - Бофти бениҳоят сабук
-      - Сохтори муосири хос
-      - Ба ҳарорат тобовар
-      - Намуди олии технологияи баланд
-    slug: 'carbon-fiber-eyewear'
-    image: '/media/products/kso-005-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-005-1.webp'
-
-  - name: 'Айнаки Чӯбӣ'
-    subtitle: 'Нақшҳои нахи табиӣ ҳар як чорчӯбаро ягона мегардонанд'
-    points:
-      - Нахи табиии ягона
-      - Маводи аз ҷиҳати экологӣ огоҳона
-      - Сабук ва ҳисси гарм
-      - Ҳунари дастӣ
-      - Фардияти намоён
-    slug: 'wood-eyewear'
-    image: '/media/products/kso-225-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-225-1.webp'
-
-  - name: 'Айнаки Шохи Буйвол'
-    subtitle: 'Боҳашамати нодири табиӣ бо нақшҳои мармарии органикӣ'
-    points:
-      - Нақшҳои ягонаву беназир
-      - Табиатан гипоаллергенӣ
-      - Пардози суфтаи боҳашамат
-      - Мероси дастсохт
-      - Оҳанги гарми органикӣ
-    slug: 'buffalo-horn-eyewear'
-    image: '/media/products/kas-106-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-106-1.webp'
-
-  - name: 'Айнаки Резинӣ / Эластомерӣ'
-    subtitle: 'Чандирии нарм барои роҳатӣ ва часпиш тарҳрезӣ шудааст'
-    points:
-      - Чандирии истисноӣ
-      - Чанголи бароҳати лағжишнашаванда
-      - Ҷабби баланди зарба
-      - Барои истифодаи фаъол идеалӣ
-      - Маводи устувори дарозмуддат
-    slug: 'rubber-elastomer-eyewear'
-    image: '/media/products/kas-107-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-107-1.webp'
-
-  - name: 'Айнаки Композитӣ'
-    subtitle: 'Муҳандисии бисёрмаводӣ барои беҳтарин аз ҳама ҷиҳатҳо'
-    points:
-      - Қувватҳои маводҳоро муттаҳид мекунад
-      - Сахтии сохтории такмилёфта
-      - Тарҳи гибридии сабук
-      - Эстетикаи муосири қабатӣ
-      - Хусусиятҳои танзимшаванда
-    slug: 'composite-eyewear'
-    image: '/media/products/kso-009-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-009-1.webp'
-
-  - name: 'Айнаки Металли Дорои Хотира'
-    subtitle: 'Хам кунед, печонед — он ҳамеша ба шакли аслии худ бармегардад'
-    points:
-      - Технологияи хӯлаи дорои хотираи шакл
-      - Хам шуда, ба шакли худ бармегардад
-      - Умри ултра-устувори чорчӯба
-      - Асоси сабуки титанӣ
-      - Барои пӯшидани ҳаррӯза комил
+      - 'Барқароршавии фавқулоддаи шакл'
+      - 'Давомоти ҳамарӯзаи шикастнопазир'
+      - 'Арзиши баланди маркетингӣ'
     slug: 'memory-metal-eyewear'
-    image: '/media/products/kto-002-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-002-1.webp'
+    image: '/media/products/kms-136-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-136-1.webp'
+
+  - name: 'Айнаки алюминий'
+    subtitle: 'Ҷасур ва сабук'
+    points:
+      - 'Матни ғафс, вазни ҳадди аққал'
+      - 'Ороиши анодшудаи ҳайратангез'
+      - 'Услубҳои мустаҳкам барои берун ва велосипедронӣ'
+    slug: 'aluminum-eyewear'
+    image: '/media/products/kms-229-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-229-1.webp'
+
+  - name: 'Айнаки био-атсетатӣ'
+    subtitle: 'Интихоби устувор ва аз ҷиҳати экологӣ тоза'
+    points:
+      - '100% биологӣ вайроншаванда, дар асоси наботот'
+      - 'Матни олии атсетати анъанавӣ'
+      - 'Стандарти аврупоии мувофиқ ба ESG'
+    slug: 'bio-acetate-eyewear'
+    image: '/media/products/kas-020-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-020-4.webp'
+
+  - name: 'Айнаки чӯбӣ / бамбукӣ'
+    subtitle: 'Эстетикаи табиии органикӣ'
+    points:
+      - 'Нақшҳои нодири табиӣ ва такрорнашаванда'
+      - 'Коркарди махсуси зидди намӣ'
+      - 'Бозори махсуси экологӣ'
+    slug: 'wood-bamboo-eyewear'
+    image: '/media/collection/home/wood-bamboo-eyewear.webp'
+
+  - name: 'Айнаки шохи буйвол'
+    subtitle: 'Маводи боҳашамати фармоишӣ'
+    points:
+      - '100% табиӣ ва дастсоз'
+      - 'Матни гарм ва боҳашамат'
+      - 'Мизоҷони фармоишии сарватманд'
+    slug: 'buffalo-horn-eyewear'
+    image: '/media/products/kas-304-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-304-5.webp'
+
+  - name: 'Айнаки тазриқии CP'
+    subtitle: 'Мӯди сарфакор'
+    points:
+      - 'Тазриқи самараноки истеҳсоли оммавӣ'
+      - 'Эстетикаи ҷилодори ба атсетат монанд'
+      - 'Идеалӣ барои мӯди зуди миёна'
+    slug: 'injection-cp-eyewear'
+    image: '/media/products/kas-301-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-301-5.webp'
+
+  - name: 'Айнаки Ultem (PEI)'
+    subtitle: 'Қатрони дараҷаи кайҳонӣ'
+    points:
+      - 'Муқовимати шадид ба гармӣ ва моддаҳои кимиёвӣ'
+      - 'Устувории беназири шакл'
+      - 'Интихоби олии оптикии функсионалӣ'
+    slug: 'ultem-pei-eyewear'
+    image: '/media/collection/home/ultem-pei-eyewear.webp'
 ---

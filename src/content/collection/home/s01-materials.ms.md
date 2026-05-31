@@ -1,181 +1,149 @@
 ---
 section: 's01-materials'
-heading: 'Bahan Bingkai Cermin Mata'
-subheading: 'Pilih daripada 16 bahan premium — setiap satu dengan ciri tersendiri untuk koleksi cermin mata anda'
+heading: 'Penyelesaian Bahan Bingkai Cermin Mata Teras'
+subheading: 'Daripada asetat buatan tangan mewah (Mazzucchelli) kepada titanium berprestasi tinggi — 16 bahan premium kami direka bentuk dengan teliti untuk merealisasikan visi unik anda menjadi pengeluaran yang sempurna dan tepat menepati standard jenama anda'
 materials:
   - name: 'Cermin Mata Asetat'
-    subtitle: 'Kedalaman warna yang kaya dengan kemasan berkilat mewah'
+    subtitle: 'Polimer Buatan Tangan Premium'
     points:
-      - Ketepuan warna yang mendalam dan bersemangat
-      - Hypoallergenic dan mesra kulit
-      - Ringan untuk keselesaan sepanjang hari
-      - Boleh dilaras untuk kesesuaian tersuai
-      - Penampilan klasik premium
+      - 'Warna berkilat yang kaya dan berlapis'
+      - 'Hipoalergenik dan sangat boleh dilaras'
+      - 'Teras jenama fesyen mewah'
     slug: 'acetate-eyewear'
-    image: '/media/products/kas-101-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-101-1.webp'
+    image: '/media/products/kas-007-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-007-1.webp'
 
-  - name: 'Cermin Mata Bio-Asetat'
-    subtitle: 'Alternatif lestari yang diperbuat daripada bahan tumbuhan boleh diperbaharui'
+  - name: 'Cermin Mata Titanium'
+    subtitle: 'Logam Ringan Seperti Bulu Premium'
     points:
-      - Komposisi 100% terbiodegradasi
-      - Diperbuat daripada pulpa kayu & kapas
-      - Penampilan kaya sama seperti asetat
-      - Jejak karbon yang lebih rendah
-      - Selamat untuk kulit dan tidak toksik
-    slug: 'bio-acetate-eyewear'
-    image: '/media/products/kas-102-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-102-1.webp'
-
-  - name: 'Cermin Mata Plastik'
-    subtitle: 'Bingkai mampu milik dan serba guna dengan pilihan warna tanpa had'
-    points:
-      - Pembuatan yang kos efektif
-      - Julat warna & corak yang luas
-      - Tahan hentaman dan pecah
-      - Pembinaan ringan
-      - Mudah dibentuk dan diacu
-    slug: 'plastic-eyewear'
-    image: '/media/products/kas-103-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-103-1.webp'
-
-  - name: 'Cermin Mata Nilon'
-    subtitle: 'Bahan berprestasi tinggi yang dibina untuk gaya hidup aktif'
-    points:
-      - Lenturan dan lengkungan yang luar biasa
-      - Tahan haba dan bahan kimia
-      - Ideal untuk bingkai sukan
-      - Mengekalkan bentuk di bawah tekanan
-      - Rasa pemakaian yang seringan bulu
-    slug: 'nylon-eyewear'
-    image: '/media/products/kas-104-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-104-1.webp'
-
-  - name: 'Cermin Mata TR90'
-    subtitle: 'Bahan memori termoplastik dengan kelenturan yang tiada tandingan'
-    points:
-      - Boleh dilentur tanpa patah
-      - Pengekalan memori bentuk sepenuhnya
-      - Polimer ultra-ringan
-      - Rintangan hentaman tinggi
-      - Stabil terhadap haba dan UV
-    slug: 'tr90-eyewear'
-    image: '/media/products/kas-105-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-105-1.webp'
-
-  - name: 'Cermin Mata Logam'
-    subtitle: 'Elegansi abadi dengan profil nipis yang dihasilkan secara ketepatan'
-    points:
-      - Penampilan klasik yang sofistikated
-      - Pelapik hidung boleh laras sepenuhnya
-      - Kemasan tahan kakisan
-      - Siluet ramping dan minimal
-      - Ketahanan yang sangat baik
-    slug: 'metal-eyewear'
-    image: '/media/products/kmo-007-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-007-1.webp'
-
-  - name: 'Cermin Mata Titanim'
-    subtitle: 'Logam gred perubatan untuk pengalaman ultra-ringan yang terbaik'
-    points:
-      - 40% lebih ringan daripada keluli
-      - Kalis kakisan sepenuhnya
-      - 100% hypoallergenic
-      - Kekuatan tegangan yang luar biasa
-      - Logam memori yang fleksibel
+      - 'Lebih ringan dan lebih kuat daripada keluli'
+      - '100% kalis peluh dan alahan'
+      - 'Standard perniagaan mewah'
     slug: 'titanium-eyewear'
-    image: '/media/products/kto-001-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-001-1.webp'
+    image: '/media/products/kts-212-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kts-212-1.webp'
 
-  - name: 'Cermin Mata Keluli Tahan Karat'
-    subtitle: 'Ketahanan kalis karat dengan estetika moden yang anggun'
+  - name: 'Cermin Mata Beta-Titanium'
+    subtitle: 'Logam Ultra Fleksibel'
     points:
-      - Tidak pernah berkarat atau kusam
-      - Kuat namun ringan
-      - Penampilan kontemporari yang anggun
-      - Logam yang mesra bajet
-      - Mudah diselenggara
-    slug: 'stainless-steel-eyewear'
-    image: '/media/products/kmo-016-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-016-1.webp'
+      - 'Pemulihan lenturan yang unggul'
+      - 'Reka bentuk ultra nipis yang ringan'
+      - 'Engsel tanpa skru dan ideal minimalis'
+    slug: 'beta-titanium-eyewear'
+    image: '/media/products/kjs-005-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kjs-005-1.webp'
 
-  - name: 'Cermin Mata Perak Nikel'
-    subtitle: 'Pesona vintaj dengan kebolehtempaan yang sangat baik untuk rekaan rumit'
+  - name: 'Cermin Mata Monel / Perak Nikel'
+    subtitle: 'Aloi Serbaguna Klasik'
     points:
-      - Estetika retro klasik
-      - Aloi yang sangat mudah ditempa
-      - Kilauan berkilat yang indah
-      - Bahan yang kos efektif
-      - Ideal untuk kerja terperinci
-    slug: 'nickel-silver-eyewear'
-    image: '/media/products/kmo-227-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-227-1.webp'
-
-  - name: 'Cermin Mata Aluminium'
-    subtitle: 'Logam moden ringan dengan kebolehkitar semula mesra alam'
-    points:
-      - Rasa yang sangat ringan
-      - Tahan kakisan secara semula jadi
-      - Bahan 100% boleh dikitar semula
-      - Kemasan matte moden
-      - Nisbah kekuatan-kepada-berat yang tinggi
-    slug: 'aluminum-eyewear'
-    image: '/media/products/kmo-228-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-228-1.webp'
+      - 'Mudah dicap dan dibentuk'
+      - 'Sangat boleh dilaras untuk pemasangan'
+      - 'Reka bentuk vintaj klasik'
+    slug: 'monel-nickel-silver-eyewear'
+    image: '/media/products/kjs-024-metal-sunglasses/oem-odm-customized-metal-sunglasses-kjs-024-1.webp'
 
   - name: 'Cermin Mata Gentian Karbon'
-    subtitle: 'Komposit termaju dengan tekstur anyaman yang tersendiri'
+    subtitle: 'Bahan Perlumbaan Berteknologi Tinggi'
     points:
-      - 5x lebih kuat daripada keluli
-      - Anyaman ultra-ringan
-      - Tekstur moden yang tersendiri
-      - Tahan suhu
-      - Penampilan premium berteknologi tinggi
+      - 'Nisbah kekuatan kepada berat yang tinggi'
+      - 'Estetika anyaman berteknologi tinggi'
+      - 'Fokus premium untuk geek dan sukan permotoran'
     slug: 'carbon-fiber-eyewear'
-    image: '/media/products/kso-005-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-005-1.webp'
+    image: '/media/products/kss-033-carbon-fiber-sunglasses/oem-odm-customized-carbon-fiber-sunglasses-kss-033-1.webp'
 
-  - name: 'Cermin Mata Kayu'
-    subtitle: 'Corak ira semula jadi menjadikan setiap bingkai unik'
+  - name: 'Cermin Mata Nilon'
+    subtitle: 'Prestasi Berimpak Tinggi'
     points:
-      - Ira semula jadi yang unik
-      - Bahan yang mementingkan alam sekitar
-      - Ringan dan terasa hangat
-      - Seni buatan tangan
-      - Keperibadian yang terserlah
-    slug: 'wood-eyewear'
-    image: '/media/products/kso-225-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-225-1.webp'
+      - 'Rintangan hentaman dan cuaca yang unggul'
+      - 'Struktur tahan retak tegasan'
+      - 'Sesuai untuk reka bentuk yang melengkung'
+    slug: 'nylon-eyewear'
+    image: '/media/products/kas-311-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-311-1.webp'
 
-  - name: 'Cermin Mata Tanduk Kerbau'
-    subtitle: 'Kemewahan semula jadi yang jarang ditemui dengan corak marmar organik'
+  - name: 'Cermin Mata TR90'
+    subtitle: 'Bingkai Memori Ultra Ringan'
     points:
-      - Corak yang unik satu-satu
-      - Hypoallergenic secara semula jadi
-      - Kemasan licin mewah
-      - Warisan buatan tangan
-      - Tona organik yang hangat
-    slug: 'buffalo-horn-eyewear'
-    image: '/media/products/kas-106-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-106-1.webp'
+      - 'Pemulihan memori bentuk yang melampau'
+      - 'Keselesaan ringan sepanjang hari'
+      - 'Mendominasi sukan dan pakaian aktif'
+    slug: 'tr90-eyewear'
+    image: '/media/products/kas-164-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-164-1.webp'
 
-  - name: 'Cermin Mata Getah / Elastomer'
-    subtitle: 'Kelenturan sentuhan lembut yang direka untuk keselesaan dan cengkaman'
+  - name: 'Cermin Mata Polikarbonat (PC)'
+    subtitle: 'Ketahanan Hentaman Tertinggi'
     points:
-      - Kelenturan yang luar biasa
-      - Cengkaman selesa tidak licin
-      - Penyerapan hentaman tinggi
-      - Ideal untuk pemakaian aktif
-      - Bahan tahan lama yang lasak
-    slug: 'rubber-elastomer-eyewear'
-    image: '/media/products/kas-107-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-107-1.webp'
+      - 'Perlindungan ekstrem tahan pecah'
+      - 'Sangat kos efektif untuk pukal'
+      - 'Tunjang utama FMCG dan keselamatan'
+    slug: 'polycarbonate-pc-eyewear'
+    image: '/media/products/kas-142-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-142-1.webp'
 
-  - name: 'Cermin Mata Komposit'
-    subtitle: 'Kejuruteraan pelbagai bahan untuk yang terbaik dari semua aspek'
+  - name: 'Cermin Mata Keluli Tahan Karat'
+    subtitle: 'Tahan Lama dan Kos Efektif'
     points:
-      - Menggabungkan kekuatan bahan
-      - Ketegaran struktur yang dipertingkatkan
-      - Reka bentuk hibrid ringan
-      - Estetika berlapis moden
-      - Sifat yang boleh disesuaikan
-    slug: 'composite-eyewear'
-    image: '/media/products/kso-009-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-009-1.webp'
+      - 'Profil nipis tegangan tinggi'
+      - 'Selamat alahan tanpa nikel'
+      - 'Pilihan utama logam fesyen pantas'
+    slug: 'stainless-steel-eyewear'
+    image: '/media/products/kms-227-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-227-1.webp'
 
   - name: 'Cermin Mata Logam Memori'
-    subtitle: 'Lenturkan, putarkan — ia sentiasa kembali ke bentuk asalnya'
+    subtitle: 'Aloi Memori Bentuk'
     points:
-      - Teknologi aloi memori bentuk
-      - Boleh dilentur dan kembali ke bentuk asal
-      - Jangka hayat bingkai ultra-tahan
-      - Asas titanium ringan
-      - Sempurna untuk pemakaian harian
+      - 'Pemulihan bentuk yang melampau'
+      - 'Ketahanan harian yang tidak boleh pecah'
+      - 'Nilai pemasaran yang tinggi'
     slug: 'memory-metal-eyewear'
-    image: '/media/products/kto-002-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-002-1.webp'
+    image: '/media/products/kms-136-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-136-1.webp'
+
+  - name: 'Cermin Mata Aluminium'
+    subtitle: 'Berani dan Ringan'
+    points:
+      - 'Tekstur tebal, berat minimum'
+      - 'Kemasan beranod yang menakjubkan'
+      - 'Gaya luar dan berbasikal yang lasak'
+    slug: 'aluminum-eyewear'
+    image: '/media/products/kms-229-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-229-1.webp'
+
+  - name: 'Cermin Mata Bio-Asetat'
+    subtitle: 'Pilihan Mampan Mesra Alam'
+    points:
+      - '100% berasaskan tumbuhan yang boleh terbiodegradasi'
+      - 'Tekstur asetat tradisional premium'
+      - 'Standard Eropah yang mematuhi ESG'
+    slug: 'bio-acetate-eyewear'
+    image: '/media/products/kas-020-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-020-4.webp'
+
+  - name: 'Cermin Mata Kayu / Buluh'
+    subtitle: 'Estetika Organik Semula Jadi'
+    points:
+      - 'Bijirin semulajadi yang unik dan tidak boleh diulang'
+      - 'Rawatan kelembapan khusus'
+      - 'Pasaran khusus yang mementingkan alam sekitar'
+    slug: 'wood-bamboo-eyewear'
+    image: '/media/collection/home/wood-bamboo-eyewear.webp'
+
+  - name: 'Cermin Mata Tanduk Kerbau'
+    subtitle: 'Bahan Mewah Ditempah Khas'
+    points:
+      - '100% semula jadi dan buatan tangan'
+      - 'Tekstur mewah yang hangat'
+      - 'Pelanggan tersuai bernilai bersih tinggi'
+    slug: 'buffalo-horn-eyewear'
+    image: '/media/products/kas-304-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-304-5.webp'
+
+  - name: 'Cermin Mata Suntikan CP'
+    subtitle: 'Fesyen Kos Efektif'
+    points:
+      - 'Suntikan pengeluaran besar-besaran yang cekap'
+      - 'Estetika berkilat seperti asetat'
+      - 'Sesuai untuk fesyen pantas peringkat pertengahan'
+    slug: 'injection-cp-eyewear'
+    image: '/media/products/kas-301-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-301-5.webp'
+
+  - name: 'Cermin Mata Ultem (PEI)'
+    subtitle: 'Resin Gred Aeroangkasa'
+    points:
+      - 'Rintangan haba dan kimia yang melampau'
+      - 'Kestabilan bentuk yang tiada tandingan'
+      - 'Pilihan premium optik fungsi'
+    slug: 'ultem-pei-eyewear'
+    image: '/media/collection/home/ultem-pei-eyewear.webp'
 ---

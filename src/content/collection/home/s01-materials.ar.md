@@ -1,181 +1,149 @@
 ---
 section: 's01-materials'
-heading: 'مواد إطارات النظارات'
-subheading: 'اختر من بين 16 مادة فاخرة — لكل منها خصائصها المميزة لمجموعة النظارات الخاصة بك'
+heading: "حلول مواد إطارات النظارات الأساسية"
+subheading: "من الأسيتات الفاخرة المصنوعة يدويًا (Mazzucchelli) إلى التيتانيوم عالي الأداء - موادنا الـ 16 الممتازة مصممة بدقة لتحويل رؤيتك الفريدة إلى إنتاج لا تشوبه شائبة ولتتوافق تمامًا مع معايير علامتك التجارية"
 materials:
-  - name: 'نظارات الأسيتات'
-    subtitle: 'عمق لوني غني مع لمسة نهائية مصقولة فاخرة'
+  - name: "نظارات الأسيتات"
+    subtitle: "بوليمر ممتاز مصنوع يدويًا"
     points:
-      - تشبع لوني عميق وحيوي
-      - مضاد للحساسية ومناسب للبشرة
-      - خفيف الوزن لراحة تدوم طوال اليوم
-      - قابل للتعديل لملاءمة مخصصة
-      - مظهر كلاسيكي فاخر
+      - "ألوان لامعة غنية ومتعددة الطبقات"
+      - "مضاد للحساسية وقابل للتعديل بشكل كبير"
+      - "أساس العلامات التجارية الفاخرة للأزياء"
     slug: 'acetate-eyewear'
-    image: '/media/products/kas-101-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-101-1.webp'
+    image: '/media/products/kas-007-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-007-1.webp'
 
-  - name: 'نظارات الأسيتات الحيوي'
-    subtitle: 'بديل مستدام مصنوع من مواد نباتية متجددة'
+  - name: "نظارات التيتانيوم"
+    subtitle: "معدن ممتاز خفيف الوزن"
     points:
-      - تركيبة قابلة للتحلل الحيوي بنسبة 100%
-      - مصنوع من لب الخشب والقطن
-      - نفس المظهر الغني للأسيتات
-      - بصمة كربونية أقل
-      - آمن على البشرة وغير سام
-    slug: 'bio-acetate-eyewear'
-    image: '/media/products/kas-102-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-102-1.webp'
-
-  - name: 'نظارات البلاستيك'
-    subtitle: 'إطارات ميسورة التكلفة ومتعددة الاستخدامات مع خيارات ألوان لا نهائية'
-    points:
-      - تصنيع فعال من حيث التكلفة
-      - مجموعة واسعة من الألوان والأنماط
-      - مقاوم للصدمات والكسر
-      - هيكل خفيف الوزن
-      - سهل التشكيل والقوالب
-    slug: 'plastic-eyewear'
-    image: '/media/products/kas-103-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-103-1.webp'
-
-  - name: 'نظارات النايلون'
-    subtitle: 'مادة عالية الأداء مصممة لأنماط الحياة النشطة'
-    points:
-      - مرونة وانحناء استثنائيان
-      - مقاوم للحرارة والمواد الكيميائية
-      - مثالي للإطارات الرياضية
-      - يحافظ على شكله تحت الضغط
-      - إحساس خفيف كالريشة عند الارتداء
-    slug: 'nylon-eyewear'
-    image: '/media/products/kas-104-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-104-1.webp'
-
-  - name: 'نظارات TR90'
-    subtitle: 'مادة لدائن حرارية ذات ذاكرة مع مرونة لا تضاهى'
-    points:
-      - ينحني دون أن ينكسر
-      - احتفاظ كامل بذاكرة الشكل
-      - بوليمر فائق الخفة
-      - مقاومة عالية للصدمات
-      - ثبات حراري ومقاومة للأشعة فوق البنفسجية
-    slug: 'tr90-eyewear'
-    image: '/media/products/kas-105-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-105-1.webp'
-
-  - name: 'نظارات معدنية'
-    subtitle: 'أناقة خالدة مع مقاطع رفيعة مصنوعة بدقة'
-    points:
-      - مظهر كلاسيكي راقٍ
-      - وسادات أنف قابلة للتعديل بالكامل
-      - طلاء مقاوم للتآكل
-      - تصميم نحيف وبسيط
-      - متانة ممتازة
-    slug: 'metal-eyewear'
-    image: '/media/products/kmo-007-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-007-1.webp'
-
-  - name: 'نظارات التيتانيوم'
-    subtitle: 'معدن بدرجة طبية لأقصى تجربة خفة وزن'
-    points:
-      - أخف بنسبة 40% من الفولاذ
-      - مقاوم تمامًا للتآكل
-      - مضاد للحساسية بنسبة 100%
-      - قوة شد استثنائية
-      - معدن مرن ذو ذاكرة
+      - "أخف وأقوى من الصلب"
+      - "مقاوم للعرق والحساسية بنسبة 100%"
+      - "معيار أعمال عالي الجودة"
     slug: 'titanium-eyewear'
-    image: '/media/products/kto-001-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-001-1.webp'
+    image: '/media/products/kts-212-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kts-212-1.webp'
 
-  - name: 'نظارات الفولاذ المقاوم للصدأ'
-    subtitle: 'متانة مقاومة للصدأ مع جماليات عصرية أنيقة'
+  - name: "نظارات بيتا تيتانيوم"
+    subtitle: "معدن فائق المرونة"
     points:
-      - لا يصدأ أو يفقد بريقه أبدًا
-      - قوي وخفيف الوزن في آنٍ واحد
-      - مظهر عصري أنيق
-      - معدن اقتصادي التكلفة
-      - سهل الصيانة
-    slug: 'stainless-steel-eyewear'
-    image: '/media/products/kmo-016-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-016-1.webp'
+      - "قدرة فائقة على استعادة الانحناء"
+      - "تصميمات خفيفة الوزن وفائقة النحافة"
+      - "مفصلات بدون براغي ومثالية للتصميم البسيط"
+    slug: 'beta-titanium-eyewear'
+    image: '/media/products/kjs-005-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kjs-005-1.webp'
 
-  - name: 'نظارات النيكل الفضي'
-    subtitle: 'سحر كلاسيكي مع قابلية ممتازة للتشكيل لتصاميم معقدة'
+  - name: "نظارات المونيل / الفضة النيكل"
+    subtitle: "سبيكة كلاسيكية متعددة الاستخدامات"
     points:
-      - جمالية كلاسيكية عتيقة
-      - سبيكة عالية القابلية للتشكيل
-      - لمعان مصقول جميل
-      - مادة فعالة من حيث التكلفة
-      - مثالية للأعمال التفصيلية
-    slug: 'nickel-silver-eyewear'
-    image: '/media/products/kmo-227-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-227-1.webp'
+      - "سهولة في التشكيل والختم"
+      - "قابلة للتعديل بشكل كبير للتجميع"
+      - "تصميمات كلاسيكية عتيقة"
+    slug: 'monel-nickel-silver-eyewear'
+    image: '/media/products/kjs-024-metal-sunglasses/oem-odm-customized-metal-sunglasses-kjs-024-1.webp'
 
-  - name: 'نظارات الألومنيوم'
-    subtitle: 'معدن عصري خفيف الوزن مع قابلية صديقة للبيئة لإعادة التدوير'
+  - name: "نظارات ألياف الكربون"
+    subtitle: "مادة سباق عالية التقنية"
     points:
-      - إحساس خفيف الوزن بشكل لا يصدق
-      - مقاوم للتآكل بشكل طبيعي
-      - مادة قابلة لإعادة التدوير بنسبة 100%
-      - طلاءات نهائية غير لامعة عصرية
-      - نسبة قوة إلى وزن عالية
-    slug: 'aluminum-eyewear'
-    image: '/media/products/kmo-228-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-228-1.webp'
-
-  - name: 'نظارات ألياف الكربون'
-    subtitle: 'مركب متطور مع نسيج منسوج مميز'
-    points:
-      - أقوى بخمس مرات من الفولاذ
-      - نسيج منسوج فائق الخفة
-      - ملمس عصري مميز
-      - مقاوم لدرجات الحرارة
-      - مظهر فاخر عالي التقنية
+      - "نسبة عالية من القوة إلى الوزن"
+      - "جماليات منسوجة عالية التقنية"
+      - "تركيز ممتاز على التقنية ورياضة السيارات"
     slug: 'carbon-fiber-eyewear'
-    image: '/media/products/kso-005-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-005-1.webp'
+    image: '/media/products/kss-033-carbon-fiber-sunglasses/oem-odm-customized-carbon-fiber-sunglasses-kss-033-1.webp'
 
-  - name: 'نظارات الخشب'
-    subtitle: 'أنماط الحبوب الطبيعية تجعل كل إطار فريدًا من نوعه'
+  - name: "نظارات النايلون"
+    subtitle: "أداء عالي التأثير"
     points:
-      - حبوب طبيعية فريدة
-      - مادة صديقة للبيئة
-      - خفيف الوزن وملمس دافئ
-      - حرفية يدوية
-      - تفرد لافت للنظر
-    slug: 'wood-eyewear'
-    image: '/media/products/kso-225-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-225-1.webp'
+      - "مقاومة فائقة للصدمات والعوامل الجوية"
+      - "هياكل مقاومة لتشققات الإجهاد"
+      - "مثالية للتصميمات الملتفة"
+    slug: 'nylon-eyewear'
+    image: '/media/products/kas-311-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-311-1.webp'
 
-  - name: 'نظارات قرن الجاموس'
-    subtitle: 'فخامة طبيعية نادرة مع أنماط رخامية عضوية'
+  - name: "نظارات TR90"
+    subtitle: "إطار ذكي فائق الخفة"
     points:
-      - أنماط فريدة من نوعها
-      - مضاد للحساسية بشكل طبيعي
-      - لمسة نهائية ناعمة فاخرة
-      - إرث حرفي يدوي
-      - لون عضوي دافئ
-    slug: 'buffalo-horn-eyewear'
-    image: '/media/products/kas-106-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-106-1.webp'
+      - "استعادة استثنائية لشكل الذاكرة"
+      - "راحة خفيفة كالريشة طوال اليوم"
+      - "مسيطرة في الملابس الرياضية والنشطة"
+    slug: 'tr90-eyewear'
+    image: '/media/products/kas-164-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-164-1.webp'
 
-  - name: 'نظارات المطاط / الإيلاستومر'
-    subtitle: 'مرونة ناعمة الملمس مصممة للراحة والثبات'
+  - name: "نظارات البولي كربونات (PC)"
+    subtitle: "مقاومة قصوى للصدمات"
     points:
-      - مرونة استثنائية
-      - قبضة مريحة غير قابلة للانزلاق
-      - امتصاص عالٍ للصدمات
-      - مثالي للاستخدام النشط
-      - مادة متينة تدوم طويلاً
-    slug: 'rubber-elastomer-eyewear'
-    image: '/media/products/kas-107-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-107-1.webp'
+      - "حماية قصوى ضد التحطم"
+      - "فعالة من حيث التكلفة للكميات الكبيرة"
+      - "دعامة أساسية للسلع الاستهلاكية والسلامة"
+    slug: 'polycarbonate-pc-eyewear'
+    image: '/media/products/kas-142-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-142-1.webp'
 
-  - name: 'نظارات المواد المركبة'
-    subtitle: 'هندسة متعددة المواد للحصول على أفضل ما في جميع العوالم'
+  - name: "نظارات الفولاذ المقاوم للصدأ"
+    subtitle: "متينة وفعالة من حيث التكلفة"
     points:
-      - دمج نقاط قوة المواد المختلفة
-      - صلابة هيكلية محسنة
-      - تصميم هجين خفيف الوزن
-      - جماليات طبقية عصرية
-      - خصائص قابلة للتخصيص
-    slug: 'composite-eyewear'
-    image: '/media/products/kso-009-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-009-1.webp'
+      - "مقاطع رفيعة ذات قوة شد عالية"
+      - "خالية من النيكل وآمنة ضد الحساسية"
+      - "قوة عاملة في الموضة السريعة"
+    slug: 'stainless-steel-eyewear'
+    image: '/media/products/kms-227-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-227-1.webp'
 
-  - name: 'نظارات المعدن ذو الذاكرة'
-    subtitle: 'قم بثنيه ولفه — يعود دائمًا إلى شكله الأصلي'
+  - name: "نظارات المعادن الذكية"
+    subtitle: "سبيكة ذات شكل ذكي"
     points:
-      - تقنية سبيكة ذاكرة الشكل
-      - ينحني ويعود إلى شكله
-      - عمر إطار فائق المتانة
-      - قاعدة تيتانيوم خفيفة الوزن
-      - مثالي للارتداء اليومي
+      - "استعادة فائقة للشكل"
+      - "متانة يومية غير قابلة للكسر"
+      - "قيمة تسويقية عالية"
     slug: 'memory-metal-eyewear'
-    image: '/media/products/kto-002-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-002-1.webp'
+    image: '/media/products/kms-136-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-136-1.webp'
+
+  - name: "نظارات الألومنيوم"
+    subtitle: "جريئة وخفيفة الوزن"
+    points:
+      - "نسيج سميك مع وزن خفيف"
+      - "تشطيبات بأكسيد الألومنيوم مذهلة"
+      - "أنماط متينة للخارج وركوب الدراجات"
+    slug: 'aluminum-eyewear'
+    image: '/media/products/kms-229-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-229-1.webp'
+
+  - name: "نظارات الأسيتات الحيوي"
+    subtitle: "خيار مستدام وصديق للبيئة"
+    points:
+      - "نباتي قابل للتحلل بنسبة 100%"
+      - "نسيج أسيتات تقليدي ممتاز"
+      - "متوافق مع معايير ESG الأوروبية"
+    slug: 'bio-acetate-eyewear'
+    image: '/media/products/kas-020-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-020-4.webp'
+
+  - name: "نظارات الخشب / الخيزران"
+    subtitle: "جماليات عضوية طبيعية"
+    points:
+      - "حبيبات طبيعية فريدة لا تتكرر"
+      - "معالجة متخصصة للرطوبة"
+      - "سوق متخصص واعي بالبيئة"
+    slug: 'wood-bamboo-eyewear'
+    image: '/media/collection/home/wood-bamboo-eyewear.webp'
+
+  - name: "نظارات قرن الجاموس"
+    subtitle: "مادة فاخرة مخصصة"
+    points:
+      - "طبيعية ومصنوعة يدويًا بنسبة 100%"
+      - "نسيج دافئ وفاخر"
+      - "عملاء مخصصون ذوي ثروات عالية"
+    slug: 'buffalo-horn-eyewear'
+    image: '/media/products/kas-304-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-304-5.webp'
+
+  - name: "نظارات الحقن CP"
+    subtitle: "أزياء فعالة من حيث التكلفة"
+    points:
+      - "عملية حقن فعالة للإنتاج الضخم"
+      - "جمالية لامعة تشبه الأسيتات"
+      - "مثالية للموضة السريعة من المستوى المتوسط"
+    slug: 'injection-cp-eyewear'
+    image: '/media/products/kas-301-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-301-5.webp'
+
+  - name: "نظارات ألتم (PEI)"
+    subtitle: "راتنج من فئة الطيران والفضاء"
+    points:
+      - "مقاومة شديدة للحرارة والمواد الكيميائية"
+      - "استقرار غير مسبوق في الشكل"
+      - "خيار بصري وظيفي ممتاز"
+    slug: 'ultem-pei-eyewear'
+    image: '/media/collection/home/ultem-pei-eyewear.webp'
 ---

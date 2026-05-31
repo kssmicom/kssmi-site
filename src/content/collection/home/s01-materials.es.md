@@ -1,181 +1,149 @@
 ---
 section: 's01-materials'
-heading: 'Materiales para Monturas de Gafas'
-subheading: 'Elija entre 16 materiales premium — cada uno con características distintivas para su colección de gafas'
+heading: 'Soluciones de Materiales de Marcos para Gafas'
+subheading: 'Desde lujoso acetato artesanal (Mazzucchelli) hasta titanio de alto rendimiento: nuestros 16 materiales premium están diseñados meticulosamente para escalar su visión única en una producción impecable y coincidir precisamente con los estándares de su marca'
 materials:
-  - name: 'Monturas de Acetato'
-    subtitle: 'Profundidad de color intensa con un lujoso acabado pulido'
+  - name: 'Gafas de Acetato'
+    subtitle: 'Polímero Artesanal Premium'
     points:
-      - Saturación de color profunda y vibrante
-      - Hipoalergénico y respetuoso con la piel
-      - Ligero para comodidad durante todo el día
-      - Ajustable para un calce personalizado
-      - Look premium clásico
+      - 'Colores ricos, brillantes y en capas'
+      - 'Hipoalergénico y altamente ajustable'
+      - 'Núcleo de las marcas de moda de lujo'
     slug: 'acetate-eyewear'
-    image: '/media/products/kas-101-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-101-1.webp'
+    image: '/media/products/kas-007-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-007-1.webp'
 
-  - name: 'Monturas de Bio-Acetato'
-    subtitle: 'Alternativa sostenible elaborada con materiales vegetales renovables'
+  - name: 'Gafas de Titanio'
+    subtitle: 'Metal Ligero Premium'
     points:
-      - Composición 100% biodegradable
-      - Fabricado con pulpa de madera y algodón
-      - Mismo aspecto rico que el acetato
-      - Menor huella de carbono
-      - Seguro para la piel y no tóxico
-    slug: 'bio-acetate-eyewear'
-    image: '/media/products/kas-102-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-102-1.webp'
-
-  - name: 'Monturas de Plástico'
-    subtitle: 'Monturas asequibles y versátiles con infinitas opciones de color'
-    points:
-      - Fabricación rentable
-      - Amplia gama de colores y patrones
-      - Resistente a impactos y astilladuras
-      - Construcción ligera
-      - Fácil de moldear y dar forma
-    slug: 'plastic-eyewear'
-    image: '/media/products/kas-103-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-103-1.webp'
-
-  - name: 'Monturas de Nylon'
-    subtitle: 'Material de alto rendimiento diseñado para estilos de vida activos'
-    points:
-      - Flexibilidad y doblez excepcionales
-      - Resistente al calor y a productos químicos
-      - Ideal para monturas deportivas
-      - Conserva la forma bajo tensión
-      - Sensación de uso ultraligera
-    slug: 'nylon-eyewear'
-    image: '/media/products/kas-104-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-104-1.webp'
-
-  - name: 'Monturas de TR90'
-    subtitle: 'Material termoplástico con memoria y flexibilidad inigualable'
-    points:
-      - Se dobla sin romperse
-      - Retención total de la memoria de forma
-      - Polímero ultraligero
-      - Alta resistencia al impacto
-      - Estable al calor y a los rayos UV
-    slug: 'tr90-eyewear'
-    image: '/media/products/kas-105-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-105-1.webp'
-
-  - name: 'Monturas de Metal'
-    subtitle: 'Elegancia atemporal con perfiles finos de precisión artesanal'
-    points:
-      - Look clásico y sofisticado
-      - Plaquetas nasales totalmente ajustables
-      - Acabado resistente a la corrosión
-      - Silueta fina y minimalista
-      - Excelente durabilidad
-    slug: 'metal-eyewear'
-    image: '/media/products/kmo-007-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-007-1.webp'
-
-  - name: 'Monturas de Titanio'
-    subtitle: 'Metal de grado médico para la máxima experiencia de ligereza'
-    points:
-      - 40% más ligero que el acero
-      - Completamente a prueba de corrosión
-      - 100% hipoalergénico
-      - Resistencia excepcional a la tracción
-      - Metal con memoria flexible
+      - 'Más ligero y resistente que el acero'
+      - '100% a prueba de sudor y alergias'
+      - 'Estándar empresarial de alta gama'
     slug: 'titanium-eyewear'
-    image: '/media/products/kto-001-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-001-1.webp'
+    image: '/media/products/kts-212-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kts-212-1.webp'
 
-  - name: 'Monturas de Acero Inoxidable'
-    subtitle: 'Durabilidad antioxidante con estética moderna y elegante'
+  - name: 'Gafas de Beta-Titanio'
+    subtitle: 'Metal Ultra Flexible'
     points:
-      - Nunca se oxida ni se mancha
-      - Resistente pero ligero
-      - Look contemporáneo y elegante
-      - Metal de precio accesible
-      - Fácil de mantener
-    slug: 'stainless-steel-eyewear'
-    image: '/media/products/kmo-016-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-016-1.webp'
+      - 'Recuperación de flexión superior'
+      - 'Diseños ultradelgados y ligeros'
+      - 'Bisagra sin tornillos e ideal minimalista'
+    slug: 'beta-titanium-eyewear'
+    image: '/media/products/kjs-005-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kjs-005-1.webp'
 
-  - name: 'Monturas de Alpaca'
-    subtitle: 'Encanto vintage con excelente maleabilidad para diseños intrincados'
+  - name: 'Gafas de Monel / Alpaca'
+    subtitle: 'Aleación Clásica Versátil'
     points:
-      - Estética retro clásica
-      - Aleación altamente maleable
-      - Hermoso brillo pulido
-      - Material rentable
-      - Ideal para trabajos detallados
-    slug: 'nickel-silver-eyewear'
-    image: '/media/products/kmo-227-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-227-1.webp'
+      - 'Estampado y conformado fáciles'
+      - 'Altamente ajustable para el ensamblaje'
+      - 'Diseños clásicos vintage'
+    slug: 'monel-nickel-silver-eyewear'
+    image: '/media/products/kjs-024-metal-sunglasses/oem-odm-customized-metal-sunglasses-kjs-024-1.webp'
 
-  - name: 'Monturas de Aluminio'
-    subtitle: 'Metal ligero moderno con reciclabilidad ecológica'
+  - name: 'Gafas de Fibra de Carbono'
+    subtitle: 'Material Racing de Alta Tecnología'
     points:
-      - Sensación increíblemente ligera
-      - Naturalmente resistente a la corrosión
-      - Material 100% reciclable
-      - Acabados mate modernos
-      - Alta relación resistencia-peso
-    slug: 'aluminum-eyewear'
-    image: '/media/products/kmo-228-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-228-1.webp'
-
-  - name: 'Monturas de Fibra de Carbono'
-    subtitle: 'Compuesto avanzado con distintiva textura tejida'
-    points:
-      - 5 veces más resistente que el acero
-      - Tejido ultraligero
-      - Textura moderna y distintiva
-      - Resistente a la temperatura
-      - Look premium de alta tecnología
+      - 'Alta relación resistencia-peso'
+      - 'Estética tejida de alta tecnología'
+      - 'Enfoque premium en geeks y deportes de motor'
     slug: 'carbon-fiber-eyewear'
-    image: '/media/products/kso-005-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-005-1.webp'
+    image: '/media/products/kss-033-carbon-fiber-sunglasses/oem-odm-customized-carbon-fiber-sunglasses-kss-033-1.webp'
 
-  - name: 'Monturas de Madera'
-    subtitle: 'Las vetas naturales hacen de cada montura una pieza única'
+  - name: 'Gafas de Nylon'
+    subtitle: 'Rendimiento de Alto Impacto'
     points:
-      - Veta natural única
-      - Material ecológico
-      - Sensación ligera y cálida
-      - Artesanía hecha a mano
-      - Individualidad destacada
-    slug: 'wood-eyewear'
-    image: '/media/products/kso-225-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-225-1.webp'
+      - 'Superior resistencia a los impactos y la intemperie'
+      - 'Estructuras resistentes al agrietamiento por tensión'
+      - 'Perfecto para diseños envolventes'
+    slug: 'nylon-eyewear'
+    image: '/media/products/kas-311-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-311-1.webp'
 
-  - name: 'Monturas de Cuerno de Búfalo'
-    subtitle: 'Lujo natural excepcional con patrones orgánicos veteados'
+  - name: 'Gafas TR90'
+    subtitle: 'Marco de Memoria Ultra Ligero'
     points:
-      - Patrones únicos e irrepetibles
-      - Naturalmente hipoalergénico
-      - Acabado lujosamente suave
-      - Tradición artesanal
-      - Tono orgánico cálido
-    slug: 'buffalo-horn-eyewear'
-    image: '/media/products/kas-106-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-106-1.webp'
+      - 'Extrema recuperación de memoria de forma'
+      - 'Comodidad ligera durante todo el día'
+      - 'Dominante en deportes y ropa activa'
+    slug: 'tr90-eyewear'
+    image: '/media/products/kas-164-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-164-1.webp'
 
-  - name: 'Monturas de Caucho / Elastómero'
-    subtitle: 'Flexibilidad de tacto suave diseñada para comodidad y agarre'
+  - name: 'Gafas de Policarbonato (PC)'
+    subtitle: 'Máxima Resistencia al Impacto'
     points:
-      - Flexibilidad excepcional
-      - Agarre cómodo y antideslizante
-      - Alta absorción de impactos
-      - Ideal para uso deportivo
-      - Material duradero y resistente
-    slug: 'rubber-elastomer-eyewear'
-    image: '/media/products/kas-107-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-107-1.webp'
+      - 'Protección extrema irrompible'
+      - 'Altamente rentable para grandes volúmenes'
+      - 'Pilar para FMCG y seguridad'
+    slug: 'polycarbonate-pc-eyewear'
+    image: '/media/products/kas-142-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-142-1.webp'
 
-  - name: 'Monturas de Material Compuesto'
-    subtitle: 'Ingeniería multi-material que reúne lo mejor de cada mundo'
+  - name: 'Gafas de Acero Inoxidable'
+    subtitle: 'Duradero y Rentable'
     points:
-      - Combina las ventajas de cada material
-      - Mayor rigidez estructural
-      - Diseño híbrido ligero
-      - Estética moderna en capas
-      - Propiedades personalizables
-    slug: 'composite-eyewear'
-    image: '/media/products/kso-009-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-009-1.webp'
+      - 'Perfiles delgados de alta tensión'
+      - 'Seguro sin níquel contra alergias'
+      - 'Caballo de batalla de metal de moda rápida'
+    slug: 'stainless-steel-eyewear'
+    image: '/media/products/kms-227-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-227-1.webp'
 
-  - name: 'Monturas de Metal con Memoria de Forma'
-    subtitle: 'Dóblelo, retuérzalo — siempre vuelve a su forma original'
+  - name: 'Gafas de Metal de Memoria'
+    subtitle: 'Aleación con Memoria de Forma'
     points:
-      - Tecnología de aleación con memoria de forma
-      - Se dobla y recupera su forma
-      - Vida útil extralarga de la montura
-      - Base ligera de titanio
-      - Perfecto para uso diario
+      - 'Extrema recuperación de la forma'
+      - 'Durabilidad diaria irrompible'
+      - 'Alto valor de marketing'
     slug: 'memory-metal-eyewear'
-    image: '/media/products/kto-002-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-002-1.webp'
+    image: '/media/products/kms-136-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-136-1.webp'
+
+  - name: 'Gafas de Aluminio'
+    subtitle: 'Atrevido y Ligero'
+    points:
+      - 'Textura gruesa, peso mínimo'
+      - 'Impresionantes acabados anodizados'
+      - 'Estilos resistentes para exteriores y ciclismo'
+    slug: 'aluminum-eyewear'
+    image: '/media/products/kms-229-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-229-1.webp'
+
+  - name: 'Gafas de Bio-Acetato'
+    subtitle: 'Opción Sostenible y Ecológica'
+    points:
+      - '100% biodegradable a base de plantas'
+      - 'Textura de acetato tradicional premium'
+      - 'Estándar europeo compatible con ESG'
+    slug: 'bio-acetate-eyewear'
+    image: '/media/products/kas-020-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-020-4.webp'
+
+  - name: 'Gafas de Madera / Bambú'
+    subtitle: 'Estética Orgánica Natural'
+    points:
+      - 'Grano natural único e irrepetible'
+      - 'Tratamiento de humedad especializado'
+      - 'Mercado nicho con conciencia ecológica'
+    slug: 'wood-bamboo-eyewear'
+    image: '/media/collection/home/wood-bamboo-eyewear.webp'
+
+  - name: 'Gafas de Cuerno de Búfalo'
+    subtitle: 'Material de Lujo a Medida'
+    points:
+      - '100% natural y hecho a mano'
+      - 'Textura cálida y lujosa'
+      - 'Clientes personalizados de alto patrimonio neto'
+    slug: 'buffalo-horn-eyewear'
+    image: '/media/products/kas-304-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-304-5.webp'
+
+  - name: 'Gafas de Inyección CP'
+    subtitle: 'Moda Rentable'
+    points:
+      - 'Inyección para producción en masa eficiente'
+      - 'Estética brillante similar al acetato'
+      - 'Ideal para moda rápida de nivel medio'
+    slug: 'injection-cp-eyewear'
+    image: '/media/products/kas-301-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-301-5.webp'
+
+  - name: 'Gafas de Ultem (PEI)'
+    subtitle: 'Resina de Grado Aeroespacial'
+    points:
+      - 'Extrema resistencia al calor y productos químicos'
+      - 'Estabilidad de forma inigualable'
+      - 'Elección premium óptica y funcional'
+    slug: 'ultem-pei-eyewear'
+    image: '/media/collection/home/ultem-pei-eyewear.webp'
 ---

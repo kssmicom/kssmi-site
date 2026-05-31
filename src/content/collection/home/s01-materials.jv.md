@@ -1,181 +1,149 @@
 ---
 section: 's01-materials'
-heading: 'Bahan Frame Kacamata'
-subheading: 'Pilih saking 16 bahan premium — saben bahan gadhah karakteristik ingkang béda kanggé koleksi kacamata Panjenengan'
+heading: 'Solusi Bahan Bingkai Kacamata Inti'
+subheading: 'Saka asetat buatan tangan sing mewah (Mazzucchelli) nganti titanium kinerja dhuwur — 16 bahan premium kita dirancang kanthi tliti kanggo mujudake visi unik sampeyan dadi produksi tanpa cacat lan cocog banget karo standar merek sampeyan'
 materials:
   - name: 'Kacamata Asetat'
-    subtitle: 'Kedalaman warna ingkang sugih kanthi finishing polesan mewah'
+    subtitle: 'Polimer Buatan Tangan Premium'
     points:
-      - Saturasi warna ingkang jero lan sregep
-      - Hypoallergenic lan ramah kulit
-      - Entheng kanggé kenyamanan sadinten
-      - Saged dipunatur kanggé pas ingkang trep
-      - Tampilan klasik premium
+      - 'Werna nggilap sing sugih lan dilapisi'
+      - 'Hipoalergenik lan bisa disetel banget'
+      - 'Inti merek busana mewah'
     slug: 'acetate-eyewear'
-    image: '/media/products/kas-101-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-101-1.webp'
-
-  - name: 'Kacamata Bio-Asetat'
-    subtitle: 'Alternatif sustainable saking bahan tanduran ingkang saged dianyari'
-    points:
-      - Komposisi 100% biodegradable
-      - Dipundamel saking pulp kayu & kapas
-      - Tampilan sugih sami kaliyan asetat
-      - Tapak karbon langkung andhap
-      - Aman kulit lan non-beracun
-    slug: 'bio-acetate-eyewear'
-    image: '/media/products/kas-102-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-102-1.webp'
-
-  - name: 'Kacamata Plastik'
-    subtitle: 'Frame terjangkau lan serbaguna kanthi pilihan warna tanpa wates'
-    points:
-      - Produksi ingkang hemat biaya
-      - Rentang warna & pola ingkang wiyar
-      - Tahan benturan lan pecah
-      - Konstruksi entheng
-      - Gampil dipuncetak lan dipunbentuk
-    slug: 'plastic-eyewear'
-    image: '/media/products/kas-103-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-103-1.webp'
-
-  - name: 'Kacamata Nilon'
-    subtitle: 'Bahan performa inggil ingkang dipundamel kanggé gaya hidup aktif'
-    points:
-      - Kelenturan lan lengkungan luar biasa
-      - Tahan panas lan bahan kimia
-      - Ideal kanggé frame olahraga
-      - Tetep wujudipun wonten ing tekanan
-      - Raos pangagem entheng sanget
-    slug: 'nylon-eyewear'
-    image: '/media/products/kas-104-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-104-1.webp'
-
-  - name: 'Kacamata TR90'
-    subtitle: 'Bahan memori termoplastik kanthi kelenturan tanpa tandhing'
-    points:
-      - Saged mlengkung tanpa pecah
-      - Retensi memori wujud ingkang kebak
-      - Polimer ultra-entheng
-      - Tahan benturan inggil
-      - Stabil panas lan UV
-    slug: 'tr90-eyewear'
-    image: '/media/products/kas-105-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-105-1.webp'
-
-  - name: 'Kacamata Logam'
-    subtitle: 'Elegansi abadi kanthi profil tipis ingkang dipundamel presisi'
-    points:
-      - Tampilan klasik canggih
-      - Bantalan irung saged dipunatur kanthi penuh
-      - Finishing tahan korosi
-      - Siluet tipis lan minimalis
-      - Daya tahan sanget saé
-    slug: 'metal-eyewear'
-    image: '/media/products/kmo-007-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-007-1.webp'
+    image: '/media/products/kas-007-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-007-1.webp'
 
   - name: 'Kacamata Titanium'
-    subtitle: 'Logam kelas medis kanggé pengalaman ultra-entheng ingkang maksimal'
+    subtitle: 'Logam Entheng Kelas Premium'
     points:
-      - 40% langkung entheng tinimbang baja
-      - Tahan korosi kanthi lengkap
-      - 100% hypoallergenic
-      - Kekuatan tarik luar biasa
-      - Logam memori ingkang fleksibel
+      - 'Luwih entheng lan luwih kuwat tinimbang baja'
+      - '100% tahan kringet lan alergi'
+      - 'Standar bisnis kelas dhuwur'
     slug: 'titanium-eyewear'
-    image: '/media/products/kto-001-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-001-1.webp'
+    image: '/media/products/kts-212-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kts-212-1.webp'
 
-  - name: 'Kacamata Baja Tahan Karat'
-    subtitle: 'Ketahanan anti-teyeng kanthi estetika modern ingkang ramping'
+  - name: 'Kacamata Beta-Titanium'
+    subtitle: 'Logam Ultra Fleksibel'
     points:
-      - Mboten nate teyeng utawi kusam
-      - Kuat nanging entheng
-      - Tampilan kontemporer ingkang ramping
-      - Logam ingkang irit anggaran
-      - Gampil dipunrawat
-    slug: 'stainless-steel-eyewear'
-    image: '/media/products/kmo-016-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-016-1.webp'
+      - 'Pemulihan lengkungan sing unggul'
+      - 'Desain entheng sing tipis banget'
+      - 'Engsel tanpa sekrup lan ideal minimalis'
+    slug: 'beta-titanium-eyewear'
+    image: '/media/products/kjs-005-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kjs-005-1.webp'
 
-  - name: 'Kacamata Perak Nikel'
-    subtitle: 'Pesona vintage kanthi kelenturan saé kanggé desain rumit'
+  - name: 'Kacamata Monel / Perak Nikel'
+    subtitle: 'Paduan Serbaguna Klasik'
     points:
-      - Estetika retro klasik
-      - Paduan ingkang sanget malleable
-      - Kilau polesan ingkang éndah
-      - Bahan ingkang hemat biaya
-      - Ideal kanggé karya detail
-    slug: 'nickel-silver-eyewear'
-    image: '/media/products/kmo-227-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-227-1.webp'
-
-  - name: 'Kacamata Aluminium'
-    subtitle: 'Logam modern entheng ingkang saged didaur ulang ramah lingkungan'
-    points:
-      - Raos entheng sanget
-      - Tahan korosi kanthi alami
-      - Bahan 100% saged didaur ulang
-      - Finishing matte modern
-      - Rasio kekuatan-kaliyan-bobot inggil
-    slug: 'aluminum-eyewear'
-    image: '/media/products/kmo-228-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-228-1.webp'
+      - 'Gampang dicap lan dibentuk'
+      - 'Bisa disetel kanthi apik kanggo perakitan'
+      - 'Desain vintage klasik'
+    slug: 'monel-nickel-silver-eyewear'
+    image: '/media/products/kjs-024-metal-sunglasses/oem-odm-customized-metal-sunglasses-kjs-024-1.webp'
 
   - name: 'Kacamata Serat Karbon'
-    subtitle: 'Komposit canggih kanthi tekstur anyaman ingkang khas'
+    subtitle: 'Bahan Balap Teknologi Dhuwur'
     points:
-      - 5x langkung kuat tinimbang baja
-      - Anyaman ultra-entheng
-      - Tekstur modern ingkang khas
-      - Tahan suhu
-      - Tampilan premium berteknologi inggil
+      - 'Rasio kekuatan-kanggo-bobot sing dhuwur'
+      - 'Estetika tenunan teknologi dhuwur'
+      - 'Fokus premium ing geek lan olahraga otomotif'
     slug: 'carbon-fiber-eyewear'
-    image: '/media/products/kso-005-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-005-1.webp'
+    image: '/media/products/kss-033-carbon-fiber-sunglasses/oem-odm-customized-carbon-fiber-sunglasses-kss-033-1.webp'
 
-  - name: 'Kacamata Kayu'
-    subtitle: 'Pola serat alami ndadosaken saben frame unik'
+  - name: 'Kacamata Nilon'
+    subtitle: 'Kinerja Tahan Benturan Dhuwur'
     points:
-      - Serat alami ingkang unik
-      - Bahan sadar lingkungan
-      - Entheng lan raos anget
-      - Seni buatan tangan
-      - Individualitas ingkang katon
-    slug: 'wood-eyewear'
-    image: '/media/products/kso-225-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-225-1.webp'
+      - 'Ketahanan benturan lan cuaca sing unggul'
+      - 'Struktur tahan retakan kaku'
+      - 'Cocog kanggo desain bungkus (wraparound)'
+    slug: 'nylon-eyewear'
+    image: '/media/products/kas-311-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-311-1.webp'
 
-  - name: 'Kacamata Sungu Kebo'
-    subtitle: 'Kemewahan alami langka kanthi pola marmer organik'
+  - name: 'Kacamata TR90'
+    subtitle: 'Bingkai Memori Super Entheng'
     points:
-      - Pola satunggal-satunggalipun unik
-      - Hypoallergenic kanthi alami
-      - Finishing alus mewah
-      - Warisan buatan tangan
-      - Nada organik ingkang anget
-    slug: 'buffalo-horn-eyewear'
-    image: '/media/products/kas-106-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-106-1.webp'
+      - 'Pemulihan memori bentuk sing luar biasa'
+      - 'Nyaman sing entheng banget sedina muput'
+      - 'Dominasi busana olahraga lan aktif'
+    slug: 'tr90-eyewear'
+    image: '/media/products/kas-164-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-164-1.webp'
 
-  - name: 'Kacamata Karet / Elastomer'
-    subtitle: 'Kelenturan sentuhan lembut ingkang dipunrancang kanggé kenyamanan lan cengkeraman'
+  - name: 'Kacamata Polikarbonat (PC)'
+    subtitle: 'Ketahanan Benturan Paling Dhuwur'
     points:
-      - Kelenturan luar biasa
-      - Cengkeraman nyaman mboten licin
-      - Penyerapan benturan inggil
-      - Ideal kanggé pangangge aktif
-      - Bahan awet tahan lama
-    slug: 'rubber-elastomer-eyewear'
-    image: '/media/products/kas-107-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-107-1.webp'
+      - 'Pangayoman ekstrem anti pecah'
+      - 'Irit banget kanggo jumlah akeh'
+      - 'Andalan kanggo FMCG lan safety'
+    slug: 'polycarbonate-pc-eyewear'
+    image: '/media/products/kas-142-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-142-1.webp'
 
-  - name: 'Kacamata Komposit'
-    subtitle: 'Rekayasa multi-bahan kanggé kombinasi ingkang paling saé'
+  - name: 'Kacamata Baja Tahan Karat'
+    subtitle: 'Awet lan Hemat Biaya'
     points:
-      - Nggabungaken kekiyatan bahan
-      - Kaku struktural ingkang dipuntingkataken
-      - Desain hibrida entheng
-      - Estetika berlapis modern
-      - Sifat saged dipunkustomisasi
-    slug: 'composite-eyewear'
-    image: '/media/products/kso-009-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-009-1.webp'
+      - 'Profil tipis regangan dhuwur'
+      - 'Bebas nikel lan aman alergi'
+      - 'Andalan logam fast-fashion'
+    slug: 'stainless-steel-eyewear'
+    image: '/media/products/kms-227-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-227-1.webp'
 
   - name: 'Kacamata Logam Memori'
-    subtitle: 'Lengkungaken, puter — temtu wangsul dhateng wujud aslinipun'
+    subtitle: 'Paduan Memori Bentuk'
     points:
-      - Teknologi paduan memori wujud
-      - Saged mlengkung lan wangsul malih
-      - Umur frame ultra-awet
-      - Basis titanium entheng
-      - Sampurna kanggé pangangge padintenan
+      - 'Pemulihan bentuk sing ekstrem'
+      - 'Daya tahan saben dinane sing ora bisa pecah'
+      - 'Nilai pemasaran sing dhuwur'
     slug: 'memory-metal-eyewear'
-    image: '/media/products/kto-002-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-002-1.webp'
+    image: '/media/products/kms-136-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-136-1.webp'
+
+  - name: 'Kacamata Aluminium'
+    subtitle: 'Kandel lan Entheng'
+    points:
+      - 'Tekstur kandel, bobot minimal'
+      - 'Penyelesaian anodized sing apik banget'
+      - 'Gaya njobo lan sepedaan sing kuwat'
+    slug: 'aluminum-eyewear'
+    image: '/media/products/kms-229-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-229-1.webp'
+
+  - name: 'Kacamata Bio-Asetat'
+    subtitle: 'Pilihan Sustainable sing Ramah Lingkungan'
+    points:
+      - '100% adhedhasar tanduran sing bisa terurai kanthi biologis'
+      - 'Tekstur asetat tradisional premium'
+      - 'Standar Eropa sing cocog karo ESG'
+    slug: 'bio-acetate-eyewear'
+    image: '/media/products/kas-020-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-020-4.webp'
+
+  - name: 'Kacamata Kayu / Pring'
+    subtitle: 'Estetika Organik Alami'
+    points:
+      - 'Gandum alami sing unik lan ora bisa diulang'
+      - 'Perawatan kelembapan khusus'
+      - 'Pasar khusus sing sadar lingkungan'
+    slug: 'wood-bamboo-eyewear'
+    image: '/media/collection/home/wood-bamboo-eyewear.webp'
+
+  - name: 'Kacamata Sungu Kebo'
+    subtitle: 'Bahan Mewah Khusus'
+    points:
+      - '100% alami lan gaweyan tangan'
+      - 'Tekstur mewah sing anget'
+      - 'Pelanggan khusus sing sugih banget'
+    slug: 'buffalo-horn-eyewear'
+    image: '/media/products/kas-304-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-304-5.webp'
+
+  - name: 'Kacamata Injeksi CP'
+    subtitle: 'Mode Hemat Biaya'
+    points:
+      - 'Injeksi produksi massal sing efisien'
+      - 'Estetika nggilap sing padha karo asetat'
+      - 'Becik kanggo fashion cepet tingkat menengah'
+    slug: 'injection-cp-eyewear'
+    image: '/media/products/kas-301-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-301-5.webp'
+
+  - name: 'Kacamata Ultem (PEI)'
+    subtitle: 'Resin Kelas Aerospace'
+    points:
+      - 'Ketahanan panas lan bahan kimia sing ekstrem'
+      - 'Kestabilan bentuk sing ora ana tandhingane'
+      - 'Pilihan premium optik fungsional'
+    slug: 'ultem-pei-eyewear'
+    image: '/media/collection/home/ultem-pei-eyewear.webp'
 ---

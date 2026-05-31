@@ -1,181 +1,149 @@
 ---
 section: 's01-materials'
-heading: 'Materialien für Brillenfassungen'
-subheading: 'Wählen Sie aus 16 Premium-Materialien — jedes mit eigenen Eigenschaften für Ihre Brillenkollektion'
+heading: 'Lösungen für Brillenrahmenmaterialien'
+subheading: 'Vom luxuriösen handgefertigten Acetat (Mazzucchelli) bis hin zu hochleistungsfähigem Titan — unsere 16 Premium-Materialien sind sorgfältig darauf ausgelegt, Ihre einzigartige Vision in eine makellose Produktion umzusetzen und genau Ihren Markenstandards zu entsprechen'
 materials:
-  - name: 'Acetat-Fassungen'
-    subtitle: 'Reiche Farbtiefe mit einem luxuriös polierten Finish'
+  - name: 'Acetat-Brillen'
+    subtitle: 'Handgefertigtes Premium-Polymer'
     points:
-      - Tiefe, lebendige Farbsättigung
-      - Hypoallergen und hautfreundlich
-      - Leicht für ganztägigen Komfort
-      - Anpassbar für individuelle Passform
-      - Klassischer Premium-Look
+      - 'Reiche, geschichtete Glanzfarben'
+      - 'Hypoallergen und hochgradig anpassbar'
+      - 'Kernbestandteil luxuriöser Modemarken'
     slug: 'acetate-eyewear'
-    image: '/media/products/kas-101-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-101-1.webp'
+    image: '/media/products/kas-007-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-007-1.webp'
 
-  - name: 'Bio-Acetat-Fassungen'
-    subtitle: 'Nachhaltige Alternative aus erneuerbaren pflanzlichen Materialien'
+  - name: 'Titan-Brillen'
+    subtitle: 'Federleichtes Premium-Metall'
     points:
-      - 100% biologisch abbaubare Zusammensetzung
-      - Aus Holzzellstoff und Baumwolle
-      - Gleicher hochwertiger Look wie Acetat
-      - Geringerer CO₂-Fußabdruck
-      - Hautverträglich und ungiftig
-    slug: 'bio-acetate-eyewear'
-    image: '/media/products/kas-102-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-102-1.webp'
-
-  - name: 'Kunststoff-Fassungen'
-    subtitle: 'Erschwingliche und vielseitige Fassungen mit unzähligen Farboptionen'
-    points:
-      - Kostengünstige Herstellung
-      - Große Auswahl an Farben und Mustern
-      - Schlag- und splitterfest
-      - Leichte Konstruktion
-      - Einfach zu formen und zu gestalten
-    slug: 'plastic-eyewear'
-    image: '/media/products/kas-103-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-103-1.webp'
-
-  - name: 'Nylon-Fassungen'
-    subtitle: 'Hochleistungsmaterial für einen aktiven Lebensstil'
-    points:
-      - Außergewöhnliche Biegsamkeit und Flexibilität
-      - Hitze- und chemikalienbeständig
-      - Ideal für Sportfassungen
-      - Behält Form unter Belastung
-      - Federleichtes Tragegefühl
-    slug: 'nylon-eyewear'
-    image: '/media/products/kas-104-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-104-1.webp'
-
-  - name: 'TR90-Fassungen'
-    subtitle: 'Thermoplastisches Memory-Material mit unübertroffener Flexibilität'
-    points:
-      - Biegt sich ohne zu brechen
-      - Vollständige Formgedächtnis-Erhaltung
-      - Ultraleichtes Polymer
-      - Hohe Schlagfestigkeit
-      - Hitze- und UV-stabil
-    slug: 'tr90-eyewear'
-    image: '/media/products/kas-105-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-105-1.webp'
-
-  - name: 'Metall-Fassungen'
-    subtitle: 'Zeitlose Eleganz mit präzisionsgefertigten dünnen Profilen'
-    points:
-      - Klassisch eleganter Look
-      - Vollständig verstellbare Nasenpads
-      - Korrosionsbeständige Oberfläche
-      - Schlanke, minimalistische Silhouette
-      - Ausgezeichnete Haltbarkeit
-    slug: 'metal-eyewear'
-    image: '/media/products/kmo-007-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-007-1.webp'
-
-  - name: 'Titan-Fassungen'
-    subtitle: 'Medizinisches Metall für ultimative Leichtigkeit'
-    points:
-      - 40% leichter als Stahl
-      - Vollständig korrosionsbeständig
-      - 100% hypoallergen
-      - Außergewöhnliche Zugfestigkeit
-      - Flexibles Memory-Metall
+      - 'Leichter und fester als Stahl'
+      - '100% schweiß- und allergiebeständig'
+      - 'High-End-Business-Standard'
     slug: 'titanium-eyewear'
-    image: '/media/products/kto-001-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-001-1.webp'
+    image: '/media/products/kts-212-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kts-212-1.webp'
 
-  - name: 'Edelstahl-Fassungen'
-    subtitle: 'Rostfreie Haltbarkeit mit eleganter moderner Ästhetik'
+  - name: 'Beta-Titan-Brillen'
+    subtitle: 'Ultraflexibles Metall'
     points:
-      - Rostet oder läuft niemals an
-      - Robust und dennoch leicht
-      - Eleganter zeitgenössischer Look
-      - Preiswertes Metall
-      - Pflegeleicht
-    slug: 'stainless-steel-eyewear'
-    image: '/media/products/kmo-016-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-016-1.webp'
+      - 'Überragende Biegerückstellung'
+      - 'Ultradünne, leichte Designs'
+      - 'Schraubenloses Scharnier und minimalistisches Ideal'
+    slug: 'beta-titanium-eyewear'
+    image: '/media/products/kjs-005-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kjs-005-1.webp'
 
-  - name: 'Neusilber-Fassungen'
-    subtitle: 'Vintage-Charme mit ausgezeichneter Formbarkeit für filigrane Designs'
+  - name: 'Monel / Neusilber-Brillen'
+    subtitle: 'Klassische, vielseitige Legierung'
     points:
-      - Klassische Retro-Ästhetik
-      - Hochformbare Legierung
-      - Wunderschöner polierter Glanz
-      - Kostengünstiges Material
-      - Ideal für Detailarbeiten
-    slug: 'nickel-silver-eyewear'
-    image: '/media/products/kmo-227-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-227-1.webp'
+      - 'Einfaches Stanzen und Formen'
+      - 'Hochgradig anpassbar für die Montage'
+      - 'Klassische Vintage-Designs'
+    slug: 'monel-nickel-silver-eyewear'
+    image: '/media/products/kjs-024-metal-sunglasses/oem-odm-customized-metal-sunglasses-kjs-024-1.webp'
 
-  - name: 'Aluminium-Fassungen'
-    subtitle: 'Modernes Leichtmetall mit umweltfreundlicher Recyclingfähigkeit'
+  - name: 'Kohlefaser-Brillen'
+    subtitle: 'High-Tech-Rennmaterial'
     points:
-      - Unglaublich leichtes Tragegefühl
-      - Natürlich korrosionsbeständig
-      - 100% recycelbares Material
-      - Moderne Matt-Finishes
-      - Hohes Verhältnis von Festigkeit zu Gewicht
-    slug: 'aluminum-eyewear'
-    image: '/media/products/kmo-228-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-228-1.webp'
-
-  - name: 'Kohlefaser-Fassungen'
-    subtitle: 'Fortschrittlicher Verbundwerkstoff mit markanter gewebter Textur'
-    points:
-      - 5x stärker als Stahl
-      - Ultraleichtes Gewebe
-      - Markante moderne Textur
-      - Temperaturbeständig
-      - Premium High-Tech-Look
+      - 'Hohes Festigkeits-Gewichts-Verhältnis'
+      - 'Gewebte High-Tech-Ästhetik'
+      - 'Premium-Fokus auf Geeks und Motorsport'
     slug: 'carbon-fiber-eyewear'
-    image: '/media/products/kso-005-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-005-1.webp'
+    image: '/media/products/kss-033-carbon-fiber-sunglasses/oem-odm-customized-carbon-fiber-sunglasses-kss-033-1.webp'
 
-  - name: 'Holz-Fassungen'
-    subtitle: 'Natürliche Maserung macht jede Fassung zu einem Unikat'
+  - name: 'Nylon-Brillen'
+    subtitle: 'Hohe Schlagfestigkeit'
     points:
-      - Einzigartige natürliche Maserung
-      - Umweltbewusstes Material
-      - Leichtes und warmes Tragegefühl
-      - Handwerkliche Kunstfertigkeit
-      - Herausragende Individualität
-    slug: 'wood-eyewear'
-    image: '/media/products/kso-225-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-225-1.webp'
+      - 'Überragende Stoß- und Wetterbeständigkeit'
+      - 'Spannungsrissbeständige Strukturen'
+      - 'Perfekt für Rundum-Designs'
+    slug: 'nylon-eyewear'
+    image: '/media/products/kas-311-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-311-1.webp'
 
-  - name: 'Büffelhorn-Fassungen'
-    subtitle: 'Seltener natürlicher Luxus mit organischen marmorierten Mustern'
+  - name: 'TR90-Brillen'
+    subtitle: 'Ultraleichter Memory-Rahmen'
     points:
-      - Einzigartige Muster
-      - Natürlich hypoallergen
-      - Luxuriös glatte Oberfläche
-      - Handwerkliche Tradition
-      - Warmer organischer Farbton
-    slug: 'buffalo-horn-eyewear'
-    image: '/media/products/kas-106-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-106-1.webp'
+      - 'Extreme Formgedächtnis-Rückstellung'
+      - 'Federleichter, ganztägiger Komfort'
+      - 'Dominierend bei Sport- und Aktivbekleidung'
+    slug: 'tr90-eyewear'
+    image: '/media/products/kas-164-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-164-1.webp'
 
-  - name: 'Gummi- / Elastomer-Fassungen'
-    subtitle: 'Weiche Flexibilität für Komfort und Griffigkeit'
+  - name: 'Polycarbonat (PC)-Brillen'
+    subtitle: 'Ultimative Schlagfestigkeit'
     points:
-      - Außergewöhnliche Flexibilität
-      - Rutschfester, komfortabler Halt
-      - Hohe Stoßdämpfung
-      - Ideal für den aktiven Einsatz
-      - Langlebiges und strapazierfähiges Material
-    slug: 'rubber-elastomer-eyewear'
-    image: '/media/products/kas-107-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-107-1.webp'
+      - 'Bruchsicherer, extremer Schutz'
+      - 'Höchst kosteneffizient für große Mengen'
+      - 'Standbein für FMCG und Sicherheit'
+    slug: 'polycarbonate-pc-eyewear'
+    image: '/media/products/kas-142-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-142-1.webp'
 
-  - name: 'Verbundstoff-Fassungen'
-    subtitle: 'Multi-Material-Konstruktion für das Beste aus allen Welten'
+  - name: 'Edelstahl-Brillen'
+    subtitle: 'Langlebig und kostengünstig'
     points:
-      - Kombiniert Materialvorteile
-      - Erhöhte strukturelle Steifigkeit
-      - Leichtes Hybrid-Design
-      - Moderne Schichtoptik
-      - Anpassbare Eigenschaften
-    slug: 'composite-eyewear'
-    image: '/media/products/kso-009-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-009-1.webp'
+      - 'Dünne Profile mit hoher Zugfestigkeit'
+      - 'Nickelfrei und allergiesicher'
+      - 'Das Metall-Arbeitspferd der Fast-Fashion'
+    slug: 'stainless-steel-eyewear'
+    image: '/media/products/kms-227-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-227-1.webp'
 
-  - name: 'Memory-Metall-Fassungen'
-    subtitle: 'Biegen, verdrehen — es kehrt immer in seine ursprüngliche Form zurück'
+  - name: 'Memory-Metall-Brillen'
+    subtitle: 'Formgedächtnislegierung'
     points:
-      - Formgedächtnislegierungs-Technologie
-      - Biegt sich in die ursprüngliche Form zurück
-      - Extrem langlebige Fassung
-      - Leichte Titan-Basis
-      - Perfekt für den täglichen Gebrauch
+      - 'Extreme Formrückstellung'
+      - 'Unzerbrechliche tägliche Haltbarkeit'
+      - 'Hoher Marketingwert'
     slug: 'memory-metal-eyewear'
-    image: '/media/products/kto-002-titanium-optical-frames/oem-odm-customized-titanium-optical-frames-kto-002-1.webp'
+    image: '/media/products/kms-136-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-136-1.webp'
+
+  - name: 'Aluminium-Brillen'
+    subtitle: 'Mutig und leicht'
+    points:
+      - 'Dicke Textur, minimales Gewicht'
+      - 'Atemberaubende eloxierte Oberflächen'
+      - 'Robuste Outdoor- und Radsport-Stile'
+    slug: 'aluminum-eyewear'
+    image: '/media/products/kms-229-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-229-1.webp'
+
+  - name: 'Bio-Acetat-Brillen'
+    subtitle: 'Umweltfreundliche, nachhaltige Wahl'
+    points:
+      - '100% biologisch abbaubar auf pflanzlicher Basis'
+      - 'Traditionelle Premium-Acetat-Textur'
+      - 'ESG-konformer europäischer Standard'
+    slug: 'bio-acetate-eyewear'
+    image: '/media/products/kas-020-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-020-4.webp'
+
+  - name: 'Holz- / Bambus-Brillen'
+    subtitle: 'Natürliche, organische Ästhetik'
+    points:
+      - 'Einzigartige, unwiederholbare natürliche Maserung'
+      - 'Spezialisierte Feuchtigkeitsbehandlung'
+      - 'Umweltbewusster Nischenmarkt'
+    slug: 'wood-bamboo-eyewear'
+    image: '/media/collection/home/wood-bamboo-eyewear.webp'
+
+  - name: 'Büffelhorn-Brillen'
+    subtitle: 'Maßgeschneidertes Luxusmaterial'
+    points:
+      - '100% natürlich und handgefertigt'
+      - 'Warme, luxuriöse Textur'
+      - 'Maßgeschneiderte Kunden mit hohem Vermögen'
+    slug: 'buffalo-horn-eyewear'
+    image: '/media/products/kas-304-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-304-5.webp'
+
+  - name: 'CP-Injektions-Brillen'
+    subtitle: 'Kostengünstige Mode'
+    points:
+      - 'Effiziente Massenproduktion durch Spritzguss'
+      - 'Glänzende Ästhetik ähnlich wie Acetat'
+      - 'Ideal für mittelschichtige Fast-Fashion'
+    slug: 'injection-cp-eyewear'
+    image: '/media/products/kas-301-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-301-5.webp'
+
+  - name: 'Ultem (PEI)-Brillen'
+    subtitle: 'Harz in Luft- und Raumfahrtqualität'
+    points:
+      - 'Extreme Hitze- und Chemikalienbeständigkeit'
+      - 'Unübertroffene Formstabilität'
+      - 'Funktionelle optische Premium-Wahl'
+    slug: 'ultem-pei-eyewear'
+    image: '/media/collection/home/ultem-pei-eyewear.webp'
 ---
