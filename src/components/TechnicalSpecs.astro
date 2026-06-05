@@ -408,10 +408,9 @@ for (const k of orderedKeys) {
     background: rgba(180, 83, 9, 0.08);
   }
 
-  /* Prevent label from wrapping, give all labels same min-width for alignment */
+  /* Give all labels same min-width for alignment; allow long labels to wrap to a new line */
   .product-highlights-content > ul:first-of-type li strong,
   .product-highlights-content > ul:first-of-type li b {
-    white-space: nowrap;
     min-width: 200px;
   }
 
