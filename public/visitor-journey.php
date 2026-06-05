@@ -209,6 +209,7 @@ $visSessionsMin  = $_GET['sessions_min'] ?? '';
 $visSessionsMax  = $_GET['sessions_max'] ?? '';
 $visSubmissionsMin = $_GET['submissions_min'] ?? '';
 $visSubmissionsMax = $_GET['submissions_max'] ?? '';
+$visSessionTimeMin = $_GET['session_time_min'] ?? '';
 $visSortBy    = $_GET['sort'] ?? 'last_seen_at';
 $visSortOrder = $_GET['order'] ?? 'desc';
 $visTotal     = 0;
@@ -222,6 +223,7 @@ if ($tab === 'visitors') {
         'sessions_max' => $visSessionsMax,
         'submissions_min' => $visSubmissionsMin,
         'submissions_max' => $visSubmissionsMax,
+        'session_time_min' => $visSessionTimeMin,
         'date_from' => $_GET['date_from'] ?? '',
         'date_to' => $_GET['date_to'] ?? '',
         'sort_by' => $visSortBy,
@@ -942,8 +944,17 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                     <option value="3" <?php echo $visSubmissionsMin === '3' ? 'selected' : ''; ?>>3+</option>
                                     <option value="5" <?php echo $visSubmissionsMin === '5' ? 'selected' : ''; ?>>5+</option>
                                 </select>
+                                <select name="session_time_min">
+                                    <option value="">Session Time (min)</option>
+                                    <option value="30" <?php echo $visSessionTimeMin === '30' ? 'selected' : ''; ?>>30s+</option>
+                                    <option value="60" <?php echo $visSessionTimeMin === '60' ? 'selected' : ''; ?>>1m+</option>
+                                    <option value="180" <?php echo $visSessionTimeMin === '180' ? 'selected' : ''; ?>>3m+</option>
+                                    <option value="300" <?php echo $visSessionTimeMin === '300' ? 'selected' : ''; ?>>5m+</option>
+                                    <option value="600" <?php echo $visSessionTimeMin === '600' ? 'selected' : ''; ?>>10m+</option>
+                                    <option value="1800" <?php echo $visSessionTimeMin === '1800' ? 'selected' : ''; ?>>30m+</option>
+                                </select>
                                 <button type="submit" class="btn btn-primary btn-small">Filter</button>
-                                <?php if ($visSearch || $visDevice || $visSource || $visSessionsMin !== '' || $visSessionsMax !== '' || $visSubmissionsMin !== '' || $visSubmissionsMax !== ''): ?>
+                                <?php if ($visSearch || $visDevice || $visSource || $visSessionsMin !== '' || $visSessionsMax !== '' || $visSubmissionsMin !== '' || $visSubmissionsMax !== '' || $visSessionTimeMin !== ''): ?>
                                     <a href="?tab=visitors" class="btn btn-secondary btn-small">Clear</a>
                                 <?php endif; ?>
                             </form>
@@ -958,6 +969,7 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                                 <th><?php echo sortLink('visitor_id', 'Visitor ID', $visSortBy, $visSortOrder); ?></th>
                                                 <th><?php echo sortLink('first_seen_at', 'First Seen', $visSortBy, $visSortOrder); ?></th>
                                                 <th><?php echo sortLink('last_seen_at', 'Last Seen', $visSortBy, $visSortOrder); ?></th>
+                                                <th><?php echo sortLink('session_time', 'Session Time', $visSortBy, $visSortOrder); ?></th>
                                                 <th><?php echo sortLink('country', 'Country', $visSortBy, $visSortOrder); ?></th>
                                                 <th><?php echo sortLink('device_type', 'Device', $visSortBy, $visSortOrder); ?></th>
                                                 <th><?php echo sortLink('browser', 'Browser', $visSortBy, $visSortOrder); ?></th>
@@ -973,6 +985,7 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                                     <td class="mono"><a href="?tab=journey&visitor_id=<?php echo urlencode($v['visitor_id']); ?>" class="link"><?php echo htmlspecialchars($v['short_id']); ?></a></td>
                                                     <td style="font-size:12px;"><?php echo htmlspecialchars($v['first_seen_at']); ?></td>
                                                     <td style="font-size:12px;"><?php echo htmlspecialchars($v['last_seen_at']); ?></td>
+                                                    <td style="font-size:12px;"><?php echo $v['session_time'] > 0 ? fmtDuration($v['session_time']) : '-'; ?></td>
                                                     <td><?php echo $v['country'] ? htmlspecialchars(getCountryName($v['country'])) : '-'; ?></td>
                                                     <td><?php echo htmlspecialchars(ucfirst($v['device_type'] ?: '-')); ?></td>
                                                     <td><?php echo htmlspecialchars($v['browser'] ?: '-'); ?></td>
@@ -997,6 +1010,7 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                             if ($visSessionsMax !== '') $pageUrl .= '&sessions_max=' . urlencode($visSessionsMax);
                                             if ($visSubmissionsMin !== '') $pageUrl .= '&submissions_min=' . urlencode($visSubmissionsMin);
                                             if ($visSubmissionsMax !== '') $pageUrl .= '&submissions_max=' . urlencode($visSubmissionsMax);
+                                            if ($visSessionTimeMin !== '') $pageUrl .= '&session_time_min=' . urlencode($visSessionTimeMin);
                                             $pageUrl .= '&sort=' . urlencode($visSortBy) . '&order=' . urlencode($visSortOrder);
                                         ?>
                                             <?php if ($i === $visPage): ?>
@@ -1013,7 +1027,18 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
 
                 <?php elseif ($tab === 'journey' && $journeyData): ?>
                     <!-- Journey Detail -->
-                    <?php $v = $journeyData['visitor']; ?>
+                    <?php
+                        $v = $journeyData['visitor'];
+                        // Total Session Time = sum of each session window (last_seen_at - started_at)
+                        $totalSessionTime = 0;
+                        foreach ($journeyData['sessions'] as $sess) {
+                            $st = strtotime($sess['started_at'] ?? '');
+                            $ls = strtotime($sess['last_seen_at'] ?? '');
+                            if ($st && $ls && $ls > $st) {
+                                $totalSessionTime += ($ls - $st);
+                            }
+                        }
+                    ?>
                     <div class="panel">
                         <div class="panel-header">
                             Journey: <?php echo htmlspecialchars($v['visitor_id']); ?>
@@ -1035,6 +1060,7 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                     <div class="journey-item"><label>Screen</label><div class="val"><?php echo htmlspecialchars($v['screen_resolution'] ?: '-'); ?></div></div>
                                     <div class="journey-item"><label>First Seen</label><div class="val"><?php echo htmlspecialchars($v['first_seen_at']); ?></div></div>
                                     <div class="journey-item"><label>Last Seen</label><div class="val"><?php echo htmlspecialchars($v['last_seen_at']); ?></div></div>
+                                    <div class="journey-item"><label>Session Time <span style="font-weight:400;color:#888;">(Total on site)</span></label><div class="val"><?php echo $totalSessionTime > 0 ? fmtDuration($totalSessionTime) : '-'; ?></div></div>
                                     <div class="journey-item" style="grid-column: 1 / -1;"><label>User Agent</label><div class="val" style="font-size:11px;word-break:break-all;"><?php echo htmlspecialchars($v['user_agent'] ?? 'N/A'); ?></div></div>
                                 </div>
                             </div>

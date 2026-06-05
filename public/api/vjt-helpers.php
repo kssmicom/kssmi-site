@@ -585,18 +585,25 @@ function vjt_get_visitors_list($filters) {
     $sessionsMax    = $filters['sessions_max'] ?? '';
     $submissionsMin = $filters['submissions_min'] ?? '';
     $submissionsMax = $filters['submissions_max'] ?? '';
+    $sessionTimeMin = $filters['session_time_min'] ?? '';
     $dateFrom       = $filters['date_from'] ?? '';
     $dateTo         = $filters['date_to'] ?? '';
 
-    // Pre-compute session/submission counts and source per visitor
+    // Pre-compute session/submission counts, source, and total session time per visitor
     $visitorSessions = [];
     $visitorSubmissions = [];
     $visitorSource = [];
+    $visitorSessionTime = []; // total seconds spent on site (sum of session windows)
     foreach ($sessions ?: [] as $s) {
         $vid = $s['visitor_id'];
         $visitorSessions[$vid] = ($visitorSessions[$vid] ?? 0) + 1;
         if (!isset($visitorSource[$vid])) {
             $visitorSource[$vid] = vjt_classify_source($s);
+        }
+        $st = strtotime($s['started_at'] ?? '');
+        $ls = strtotime($s['last_seen_at'] ?? '');
+        if ($st && $ls && $ls > $st) {
+            $visitorSessionTime[$vid] = ($visitorSessionTime[$vid] ?? 0) + ($ls - $st);
         }
     }
     foreach ($submissions ?: [] as $sub) {
@@ -623,6 +630,8 @@ function vjt_get_visitors_list($filters) {
         $vSubmissions = $visitorSubmissions[$vid] ?? 0;
         if ($submissionsMin !== '' && $vSubmissions < (int)$submissionsMin) continue;
         if ($submissionsMax !== '' && $vSubmissions > (int)$submissionsMax) continue;
+        $vSessionTime = $visitorSessionTime[$vid] ?? 0;
+        if ($sessionTimeMin !== '' && $vSessionTime < (int)$sessionTimeMin) continue;
         if ($dateFrom && ($v['first_seen_at'] ?? '') < $dateFrom) continue;
         if ($dateTo && ($v['first_seen_at'] ?? '') > $dateTo . ' 23:59:59') continue;
         $filtered[] = [
@@ -640,15 +649,16 @@ function vjt_get_visitors_list($filters) {
             'user_agent'    => $v['user_agent'] ?? '',
             'sessions'      => $visitorSessions[$vid] ?? 0,
             'submissions'   => $visitorSubmissions[$vid] ?? 0,
+            'session_time'  => $vSessionTime,
             'source'        => $vSource,
         ];
     }
 
     // Sort
-    $allowedSorts = ['visitor_id', 'first_seen_at', 'last_seen_at', 'country', 'device_type', 'browser', 'sessions', 'submissions', 'source'];
+    $allowedSorts = ['visitor_id', 'first_seen_at', 'last_seen_at', 'country', 'device_type', 'browser', 'sessions', 'submissions', 'session_time', 'source'];
     $sortBy    = in_array($filters['sort_by'] ?? '', $allowedSorts) ? $filters['sort_by'] : 'last_seen_at';
     $sortOrder = strtolower($filters['sort_order'] ?? 'desc') === 'asc' ? 'asc' : 'desc';
-    $numericCols = ['sessions', 'submissions'];
+    $numericCols = ['sessions', 'submissions', 'session_time'];
     usort($filtered, function($a, $b) use ($sortBy, $sortOrder, $numericCols) {
         $va = $a[$sortBy] ?? '';
         $vb = $b[$sortBy] ?? '';
