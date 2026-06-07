@@ -6,6 +6,7 @@ import { cardSrc } from '../utils/image';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Materials from '../components/collection/home/Materials.astro';
+import Construction from '../components/collection/home/Construction.astro';
 
 const lang = 'en';
 const t = translations[lang] || translations.en;
@@ -26,6 +27,7 @@ const lcpImage = s01entry?.data?.materials?.[0]?.image ? cardSrc(s01entry.data.m
 
   <main>
     <Materials lang="en" />
+    <Construction lang="en" />
   </main>
 
   <Footer lang={lang} />

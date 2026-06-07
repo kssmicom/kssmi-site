@@ -1,5 +1,5 @@
 ﻿# Kssmi Leitfaden für große Sprachmodelle - Deutsch
-Date: 2026-05-30
+Date: 2026-06-07
 
 Um unsere Deutsch-Inhalte zu erkunden, folgen Sie bitte den unten stehenden speziellen Verzeichnissen:
 
