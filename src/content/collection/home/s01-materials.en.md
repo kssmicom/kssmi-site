@@ -1,5 +1,6 @@
 ---
 section: 's01-materials'
+eyebrow: 'Frame Materials'
 heading: 'Core Eyewear Frame Materials Solutions'
 subheading: 'From luxury handcrafted acetate (Mazzucchelli) to high-performance titanium — our 16 premium materials meticulously engineered to scale your unique vision into flawless production and precisely to match your brand standards'
 materials:

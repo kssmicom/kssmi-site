@@ -1,5 +1,6 @@
 ---
 section: 's02-construction'
+eyebrow: 'Construção da Armação'
 heading: 'Soluções de Construção de Armações de Óculos'
 subheading: 'A linha de fundo do controle de produção em massa: previne os pontos cegos de montagem e os riscos de devolução pós-venda, ajudando você a calcular com precisão os custos desembarcados e a obter uma correspondência altamente lucrativa entre suas linhas de produtos e canais de vendas.'
 materials:

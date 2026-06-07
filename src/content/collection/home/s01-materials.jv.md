@@ -1,5 +1,6 @@
 ---
 section: 's01-materials'
+eyebrow: 'Bahan Pigura'
 heading: 'Solusi Bahan Bingkai Kacamata Inti'
 subheading: 'Saka asetat buatan tangan sing mewah (Mazzucchelli) nganti titanium kinerja dhuwur — 16 bahan premium kita dirancang kanthi tliti kanggo mujudake visi unik sampeyan dadi produksi tanpa cacat lan cocog banget karo standar merek sampeyan'
 materials:

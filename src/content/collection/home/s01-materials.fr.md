@@ -1,5 +1,6 @@
 ---
 section: 's01-materials'
+eyebrow: 'Matériaux de la Monture'
 heading: 'Solutions de Matériaux pour Montures de Lunettes'
 subheading: 'De l''acétate artisanal de luxe (Mazzucchelli) au titane haute performance — nos 16 matériaux premium sont méticuleusement conçus pour transformer votre vision unique en une production irréprochable et correspondre précisément aux normes de votre marque'
 materials:

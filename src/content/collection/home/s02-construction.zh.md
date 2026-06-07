@@ -1,5 +1,6 @@
 ---
 section: 's02-construction'
+eyebrow: '镜架结构'
 heading: '眼镜架结构解决方案'
 subheading: '量产控制的底线：提前消除组装盲点和售后退货风险，帮助您精确计算到岸成本，实现产品线与销售渠道的高利润匹配。'
 materials:

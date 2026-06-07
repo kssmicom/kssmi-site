@@ -1,5 +1,6 @@
 ---
 section: 's01-materials'
+eyebrow: 'フレーム素材'
 heading: 'コアアイウェアフレーム素材ソリューション'
 subheading: '高級なハンドメイドアセテート（Mazzucchelli）から高性能チタンまで — 独自のビジョンを完璧な生産へと導き、ブランド基準に正確に合わせるために綿密に設計された16種類のプレミアム素材'
 materials:

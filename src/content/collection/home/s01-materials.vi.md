@@ -1,5 +1,6 @@
 ---
 section: 's01-materials'
+eyebrow: 'Vật Liệu Gọng'
 heading: 'Giải pháp chất liệu gọng kính cốt lõi'
 subheading: 'Từ acetate làm thủ công sang trọng (Mazzucchelli) đến titanium hiệu suất cao — 16 chất liệu cao cấp của chúng tôi được chế tạo tỉ mỉ để hiện thực hóa tầm nhìn độc đáo của bạn thành quá trình sản xuất hoàn hảo và đáp ứng chính xác các tiêu chuẩn thương hiệu của bạn'
 materials:

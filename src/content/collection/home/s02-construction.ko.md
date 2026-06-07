@@ -1,5 +1,6 @@
 ---
 section: 's02-construction'
+eyebrow: '프레임 구조'
 heading: '안경테 구조 솔루션'
 subheading: '대량 생산 제어의 본질: 조립 사각지대와 판매 후 반품 위험을 미연에 방지하여 정확한 도착 가격을 계산하고 제품 라인과 판매 채널 간의 수익성 높은 매칭을 달성하도록 돕습니다.'
 materials:

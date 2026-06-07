@@ -1,5 +1,6 @@
 ---
 section: 's02-construction'
+eyebrow: 'Cấu Trúc Gọng'
 heading: 'Giải Pháp Cấu Trúc Gọng Kính'
 subheading: 'Bản chất của kiểm soát sản xuất hàng loạt: ngăn ngừa các điểm mù trong lắp ráp và rủi ro trả lại hàng sau bán, giúp bạn tính toán chính xác chi phí cập bờ và đạt được sự phù hợp có lợi nhuận cao giữa các dòng sản phẩm và kênh bán hàng.'
 materials:

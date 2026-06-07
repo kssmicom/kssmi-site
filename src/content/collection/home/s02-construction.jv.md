@@ -1,5 +1,6 @@
 ---
 section: 's02-construction'
+eyebrow: 'Konstruksi Pigura'
 heading: 'Solusi Konstruksi Pigura Kacamata'
 subheading: 'Intine saka kontrol produksi massal: nyegah titik wuta perakitan lan risiko bali sawise adol, mbantu sampeyan ngetung kanthi akurat biaya kebangkrutan lan entuk pencocokan sing nguntungake banget ing antarane lini produk lan saluran dodolan.'
 materials:

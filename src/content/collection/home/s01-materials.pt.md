@@ -1,5 +1,6 @@
 ---
 section: 's01-materials'
+eyebrow: 'Materiais da Armação'
 heading: 'Soluções de Materiais para Armações de Óculos'
 subheading: 'Desde o luxuoso acetato artesanal (Mazzucchelli) ao titânio de alto desempenho — nossos 16 materiais premium são meticulosamente projetados para dimensionar sua visão única em uma produção impecável e corresponder precisamente aos padrões de sua marca'
 materials:

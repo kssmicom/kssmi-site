@@ -1,5 +1,6 @@
 ---
 section: 's02-construction'
+eyebrow: 'Construcción de la Montura'
 heading: 'Soluciones para la Construcción de Monturas de Gafas'
 subheading: 'El factor clave del control de la producción en masa: evita los puntos ciegos del ensamblaje y los riesgos de devolución posventa, ayudándole a calcular con precisión los costos landed y lograr una combinación altamente rentable entre sus líneas de productos y canales de venta.'
 materials:

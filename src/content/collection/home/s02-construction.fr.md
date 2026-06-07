@@ -1,5 +1,6 @@
 ---
 section: 's02-construction'
+eyebrow: 'Construction de la Monture'
 heading: 'Solutions de Construction de Montures de Lunettes'
 subheading: "Le point essentiel du contrôle de la production de masse : il prévient les angles morts de l'assemblage et les risques de retour après-vente, vous aidant à calculer précisément les coûts débarqués et à obtenir une correspondance très rentable entre vos lignes de produits et vos canaux de vente."
 materials:

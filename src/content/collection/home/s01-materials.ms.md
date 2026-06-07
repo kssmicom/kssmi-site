@@ -1,5 +1,6 @@
 ---
 section: 's01-materials'
+eyebrow: 'Bahan Bingkai'
 heading: 'Penyelesaian Bahan Bingkai Cermin Mata Teras'
 subheading: 'Daripada asetat buatan tangan mewah (Mazzucchelli) kepada titanium berprestasi tinggi — 16 bahan premium kami direka bentuk dengan teliti untuk merealisasikan visi unik anda menjadi pengeluaran yang sempurna dan tepat menepati standard jenama anda'
 materials:

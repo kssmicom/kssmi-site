@@ -1,5 +1,6 @@
 ---
 section: 's01-materials'
+eyebrow: 'Materiali della Montatura'
 heading: 'Soluzioni per Materiali di Montature per Occhiali'
 subheading: 'Dall''acetato artigianale di lusso (Mazzucchelli) al titanio ad alte prestazioni — i nostri 16 materiali premium sono meticolosamente progettati per tradurre la tua visione in una produzione impeccabile e abbinare esattamente gli standard del tuo marchio'
 materials:

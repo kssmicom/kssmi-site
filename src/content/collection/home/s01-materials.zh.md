@@ -1,5 +1,6 @@
 ---
 section: 's01-materials'
+eyebrow: '镜架材质'
 heading: '核心眼镜镜框材质解决方案'
 subheading: '从奢华手工板材 (Mazzucchelli) 到高性能钛金属 — 我们精心打造16种优质材质，完美契合您的品牌标准，将您的独特愿景转化为完美的产品'
 materials:

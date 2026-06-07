@@ -1,5 +1,6 @@
 ---
 section: 's01-materials'
+eyebrow: 'Çerçeve Malzemeleri'
 heading: 'Temel Gözlük Çerçevesi Malzeme Çözümleri'
 subheading: 'Lüks el yapımı asetattan (Mazzucchelli) yüksek performanslı titanyuma kadar — benzersiz vizyonunuzu kusursuz üretime dönüştürmek ve marka standartlarınıza tam olarak uymak için titizlikle tasarlanmış 16 birinci sınıf malzememiz'
 materials:

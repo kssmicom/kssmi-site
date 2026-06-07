@@ -1,5 +1,6 @@
 ---
 section: 's01-materials'
+eyebrow: '프레임 소재'
 heading: '핵심 아이웨어 프레임 소재 솔루션'
 subheading: '고급 수제 아세테이트(Mazzucchelli)부터 고성능 티타늄까지 — 고객의 고유한 비전을 결점 없는 제품으로 실현하고 브랜드 기준에 완벽하게 부합하도록 세심하게 설계된 16가지 프리미엄 소재'
 materials:

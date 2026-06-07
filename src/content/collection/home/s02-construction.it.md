@@ -1,5 +1,6 @@
 ---
 section: 's02-construction'
+eyebrow: 'Costruzione della Montatura'
 heading: 'Soluzioni per la Costruzione delle Montature per Occhiali'
 subheading: "L'essenza del controllo della produzione di massa: previene i punti ciechi del montaggio e i rischi di reso post-vendita, aiutandovi a calcolare con precisione i costi landed e a ottenere un abbinamento altamente redditizio tra le vostre linee di prodotto e i canali di vendita."
 materials:

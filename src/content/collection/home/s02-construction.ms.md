@@ -1,5 +1,6 @@
 ---
 section: 's02-construction'
+eyebrow: 'Pembinaan Bingkai'
 heading: 'Penyelesaian Pembinaan Bingkai Cermin Mata'
 subheading: 'Inti pati kawalan pengeluaran besar-besaran: ia menghalang titik buta pemasangan dan risiko pulangan selepas jualan, membantu anda mengira kos darat dengan tepat dan mencapai pemadanan yang sangat menguntungkan antara barisan produk dan saluran jualan anda.'
 materials:

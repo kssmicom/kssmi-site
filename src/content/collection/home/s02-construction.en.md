@@ -1,5 +1,6 @@
 ---
 section: 's02-construction'
+eyebrow: 'Frame Construction'
 heading: 'Eyewear Frame Construction Solutions'
 subheading: 'The bottom line of mass production control: it pre-empts assembly blind spots and after-sales return risks, helping you precisely calculate landed costs and achieve highly profitable matching between your product lines and sales channels.'
 materials:

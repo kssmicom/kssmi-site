@@ -1,5 +1,6 @@
 ---
 section: 's02-construction'
+eyebrow: 'Çerçeve Yapısı'
 heading: 'Gözlük Çerçevesi Konstrüksiyon Çözümleri'
 subheading: "Seri üretim kontrolünün özü: montajdaki kör noktaları ve satış sonrası iade risklerini önler, maliyetleri hassas bir şekilde hesaplamanıza ve ürün hatlarınızla satış kanallarınız arasında son derece karlı bir eşleşme elde etmenize yardımcı olur."
 materials:

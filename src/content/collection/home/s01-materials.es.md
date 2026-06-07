@@ -1,5 +1,6 @@
 ---
 section: 's01-materials'
+eyebrow: 'Materiales de la Montura'
 heading: 'Soluciones de Materiales de Marcos para Gafas'
 subheading: 'Desde lujoso acetato artesanal (Mazzucchelli) hasta titanio de alto rendimiento: nuestros 16 materiales premium están diseñados meticulosamente para escalar su visión única en una producción impecable y coincidir precisamente con los estándares de su marca'
 materials:

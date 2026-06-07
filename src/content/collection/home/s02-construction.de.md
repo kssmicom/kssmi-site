@@ -1,5 +1,6 @@
 ---
 section: 's02-construction'
+eyebrow: 'Rahmenkonstruktion'
 heading: 'Lösungen für die Konstruktion von Brillenfassungen'
 subheading: 'Der Kern der Massenproduktionskontrolle: Sie beugt Montage-Blindspots und After-Sales-Rückgaberisiken vor und hilft Ihnen, Landed Costs präzise zu berechnen und eine hochprofitable Abstimmung zwischen Ihren Produktlinien und Vertriebskanälen zu erreichen.'
 materials:

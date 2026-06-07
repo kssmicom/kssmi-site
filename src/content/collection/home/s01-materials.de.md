@@ -1,5 +1,6 @@
 ---
 section: 's01-materials'
+eyebrow: 'Rahmenmaterialien'
 heading: 'Lösungen für Brillenrahmenmaterialien'
 subheading: 'Vom luxuriösen handgefertigten Acetat (Mazzucchelli) bis hin zu hochleistungsfähigem Titan — unsere 16 Premium-Materialien sind sorgfältig darauf ausgelegt, Ihre einzigartige Vision in eine makellose Produktion umzusetzen und genau Ihren Markenstandards zu entsprechen'
 materials:
