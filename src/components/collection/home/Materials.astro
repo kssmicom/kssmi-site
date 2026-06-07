@@ -19,17 +19,17 @@ const badgeText = t.product?.materials || 'Frame Materials';
   <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4 lg:px-0">
     <!-- Section header - Clean minimal style -->
     <div class="text-center mb-12 md:mb-16">
-      <span class="inline-block text-stone-500 text-xs font-medium tracking-[0.2em] uppercase mb-4">
+      <span class="block text-stone-500 hover:text-amber-700 text-xs font-medium tracking-[0.2em] uppercase mb-4 transition-colors duration-300 cursor-pointer">
         — {badgeText} —
       </span>
-      <h2 class="text-2xl md:text-4xl font-bold text-stone-800 tracking-tight mb-4">
+      <h2 class="text-2xl md:text-4xl font-bold text-stone-800 bg-gradient-to-r from-[#32170D] via-[#B85C27] to-[#32170D] bg-[length:200%_auto] bg-right hover:bg-left text-transparent bg-clip-text transition-all duration-700 ease-in-out cursor-pointer mb-6">
         {heading}
       </h2>
-      <p class="text-base md:text-lg text-stone-600 leading-relaxed max-w-2xl mx-auto" set:html={highlightedSubheading}></p>
+      <p class="text-base md:text-lg text-stone-600 hover:text-[#5D4E37] leading-relaxed max-w-2xl mx-auto transition-colors duration-300 cursor-pointer" set:html={highlightedSubheading}></p>
     </div>
 
     <!-- Materials grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-6">
+    <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-6">
       {materials.map((m: any, i: number) => (
         <div
           class="mat-card group flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm ring-1 ring-stone-200/70 hover:shadow-xl hover:shadow-stone-200/60 hover:ring-stone-300 transition-all duration-500 cursor-pointer motion-safe:animate-[matFadeInUp_0.5s_ease-out_both]"
@@ -50,11 +50,11 @@ const badgeText = t.product?.materials || 'Frame Materials';
 
           <div class="p-5 md:p-6 flex flex-col flex-1">
             <a href={`${prefix}/product/?material=${m.slug}`} class="block text-center">
-              <h3 class="text-sm md:text-base font-bold text-stone-800 hover:text-stone-600 transition-colors duration-300 mb-1.5">
+              <h3 class="text-sm md:text-base font-bold text-stone-800 group-hover:text-amber-700 transition-colors duration-300 mb-1.5">
                 {m.name}
               </h3>
             </a>
-            <p class="text-xs md:text-sm text-stone-600 leading-relaxed mb-5 text-center">
+            <p class="text-xs md:text-sm text-stone-600 hover:text-[#5D4E37] leading-relaxed mb-5 text-center transition-colors duration-300 cursor-pointer">
               {m.subtitle}
             </p>
             <div class="w-10 h-px bg-stone-200 mx-auto mb-5 transition-all duration-500 group-hover:w-20 group-hover:bg-stone-400"></div>
@@ -80,12 +80,12 @@ const badgeText = t.product?.materials || 'Frame Materials';
   }
 
   .mat-point:hover .mat-dot {
-    background-color: #8B7355;
+    background-color: #B45309;
     transform: scale(1.2);
-    box-shadow: 0 0 0 3px rgba(139, 115, 85, 0.12);
+    box-shadow: 0 0 0 3px rgba(180, 83, 9, 0.18);
   }
   .mat-point:hover .mat-text {
-    color: #5D4E37;
+    color: #B45309;
     font-weight: 500;
   }
 
