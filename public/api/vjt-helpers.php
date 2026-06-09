@@ -65,6 +65,93 @@ function vjt_data_init() {
         // Ensure writable (deploy scripts may lock permissions to 644)
         @chmod($path, 0666);
     }
+
+    // Run auto-cleanup once per day (I2 fix: prevent unbounded JSON file growth)
+    vjt_auto_cleanup();
+}
+
+/**
+ * Prune data older than retention_days to prevent unbounded file growth.
+ * Runs at most once per 24 hours (checked via a timestamp file).
+ */
+function vjt_auto_cleanup() {
+    $stampFile = VJT_DATA_DIR . '/.last_cleanup';
+    $now = time();
+    if (file_exists($stampFile)) {
+        $lastCleanup = (int)@file_get_contents($stampFile);
+        if ($lastCleanup > 0 && ($now - $lastCleanup) < 86400) return; // < 24h, skip
+    }
+
+    $settings = vjt_get_settings();
+    $retentionDays = (int)($settings['retention_days'] ?? 90);
+    if ($retentionDays < 1) $retentionDays = 90;
+    $cutoff = date('Y-m-d H:i:s', $now - ($retentionDays * 86400));
+
+    // Prune pageviews
+    $pageviews = vjt_read_json('pageviews.json');
+    if (is_array($pageviews) && count($pageviews) > 0) {
+        $before = count($pageviews);
+        $pageviews = array_values(array_filter($pageviews, function ($pv) use ($cutoff) {
+            return ($pv['visited_at'] ?? '') >= $cutoff;
+        }));
+        if (count($pageviews) < $before) {
+            vjt_write_json('pageviews.json', $pageviews);
+            error_log('VJT cleanup: pruned ' . ($before - count($pageviews)) . ' old pageviews');
+        }
+    }
+
+    // Prune submissions
+    $submissions = vjt_read_json('submissions.json');
+    if (is_array($submissions) && count($submissions) > 0) {
+        $before = count($submissions);
+        $submissions = array_values(array_filter($submissions, function ($sub) use ($cutoff) {
+            return ($sub['submitted_at'] ?? '') >= $cutoff;
+        }));
+        if (count($submissions) < $before) {
+            vjt_write_json('submissions.json', $submissions);
+            error_log('VJT cleanup: pruned ' . ($before - count($submissions)) . ' old submissions');
+        }
+    }
+
+    // Prune expired sessions
+    $sessions = vjt_read_json('sessions.json');
+    if (is_array($sessions) && count($sessions) > 0) {
+        $before = count($sessions);
+        $sessions = array_filter($sessions, function ($s) use ($cutoff) {
+            return ($s['last_seen_at'] ?? '') >= $cutoff;
+        });
+        if (count($sessions) < $before) {
+            vjt_write_json('sessions.json', $sessions);
+            error_log('VJT cleanup: pruned ' . ($before - count($sessions)) . ' old sessions');
+        }
+    }
+
+    // Prune inactive visitors
+    $visitors = vjt_read_json('visitors.json');
+    if (is_array($visitors) && count($visitors) > 0) {
+        $before = count($visitors);
+        $visitors = array_filter($visitors, function ($v) use ($cutoff) {
+            return ($v['last_seen_at'] ?? '') >= $cutoff;
+        });
+        if (count($visitors) < $before) {
+            vjt_write_json('visitors.json', $visitors);
+            error_log('VJT cleanup: pruned ' . ($before - count($visitors)) . ' inactive visitors');
+        }
+    }
+
+    // Prune stale geo cache entries
+    $geoCache = vjt_read_json('geo_cache.json');
+    if (is_array($geoCache) && count($geoCache) > 0) {
+        $before = count($geoCache);
+        $geoCache = array_filter($geoCache, function ($entry) use ($cutoff) {
+            return ($entry['cached_at'] ?? '') >= $cutoff;
+        });
+        if (count($geoCache) < $before) {
+            vjt_write_json('geo_cache.json', $geoCache);
+        }
+    }
+
+    @file_put_contents($stampFile, (string)$now);
 }
 
 function vjt_read_json($filename) {
@@ -83,20 +170,38 @@ function vjt_read_json($filename) {
 
 function vjt_write_json($filename, $data) {
     $path = VJT_DATA_DIR . '/' . $filename;
-    $fp = @fopen($path, 'c+');
+    $tmp  = $path . '.' . bin2hex(random_bytes(4)) . '.tmp';
+
+    $fp = @fopen($tmp, 'w');
     if (!$fp) {
-        error_log("VJT ERROR: Failed to open file for writing: " . $path);
+        error_log("VJT ERROR: Failed to open temp file for writing: " . $tmp);
         return false;
     }
-    if (!flock($fp, LOCK_EX)) { fclose($fp); return false; }
-    ftruncate($fp, 0);
-    rewind($fp);
-    $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-    fwrite($fp, $json);
-    fflush($fp);
-    flock($fp, LOCK_UN);
+    // Acquire lock on the REAL file to serialize writes
+    $lockFp = @fopen($path, 'c+');
+    if ($lockFp && flock($lockFp, LOCK_EX)) {
+        $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        fwrite($fp, $json);
+        fflush($fp);
+        fclose($fp);
+        // Atomic rename — either the old file or the new one is always intact
+        if (!@rename($tmp, $path)) {
+            error_log("VJT ERROR: Failed to rename temp file: " . $tmp . " → " . $path);
+            @unlink($tmp);
+            flock($lockFp, LOCK_UN);
+            fclose($lockFp);
+            return false;
+        }
+        flock($lockFp, LOCK_UN);
+        fclose($lockFp);
+        return true;
+    }
+    // Fallback: direct write if lock fails
+    if ($lockFp) fclose($lockFp);
     fclose($fp);
-    return true;
+    @unlink($tmp);
+    $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    return (bool)@file_put_contents($path, $json, LOCK_EX);
 }
 
 // ── UUID generation ─────────────────────────────────────────────────────────

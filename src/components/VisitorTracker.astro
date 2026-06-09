@@ -58,10 +58,18 @@ const trackerScriptUrl = isDev
     }
     // Load after 3s idle to avoid competing with critical rendering
     setTimeout(injectTracker, 3000);
-    // Re-inject after View Transitions (config is already set by inline script above)
+    // On SPA navigations, call init directly instead of re-downloading the script
     document.addEventListener('astro:page-load', function() {
-      loaded = false;
-      setTimeout(injectTracker, 1000);
+      if (window.VJT_init) {
+        // Already loaded — just re-init with updated config and URL (I1 fix)
+        window.VJTTracker.page.url = window.location.href;
+        window.VJTTracker.page.title = document.title || '';
+        window.VJT_init();
+      } else {
+        // First load hasn't happened yet — inject script
+        loaded = false;
+        setTimeout(injectTracker, 1000);
+      }
     });
   })();
 </script>

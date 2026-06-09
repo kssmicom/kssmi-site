@@ -234,10 +234,7 @@ if ($tab === 'visitors') {
     $visitors = $result['items'];
     $visTotal = $result['total'];
 
-    foreach ($visitors as &$v) {
-        $v['short_id'] = str_replace('vjtv_', '', $v['visitor_id']);
-    }
-    unset($v);
+
 }
 
 // ── Journey detail ───────────────────────────────────────────────────────────
@@ -982,7 +979,7 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                         <tbody>
                                             <?php foreach ($visitors as $v): ?>
                                                 <tr>
-                                                    <td class="mono"><a href="?tab=journey&visitor_id=<?php echo urlencode($v['visitor_id']); ?>" class="link"><?php echo htmlspecialchars($v['short_id']); ?></a></td>
+                                                    <td class="mono"><a href="?tab=journey&visitor_id=<?php echo urlencode($v['visitor_id']); ?>" class="link"><?php echo htmlspecialchars(str_replace('vjtv_', '', $v['visitor_id'])); ?></a></td>
                                                     <td style="font-size:12px;"><?php echo htmlspecialchars($v['first_seen_at']); ?></td>
                                                     <td style="font-size:12px;"><?php echo htmlspecialchars($v['last_seen_at']); ?></td>
                                                     <td style="font-size:12px;"><?php echo $v['session_time'] > 0 ? fmtDuration($v['session_time']) : '-'; ?></td>
@@ -1041,14 +1038,14 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                     ?>
                     <div class="panel">
                         <div class="panel-header">
-                            Journey: <?php echo htmlspecialchars($v['visitor_id']); ?>
+                            Journey: <?php echo htmlspecialchars(str_replace('vjtv_', '', $v['visitor_id'])); ?>
                             <a href="?tab=visitors" class="btn btn-secondary btn-small">Back to Visitors</a>
                         </div>
                         <div class="panel-body">
                             <div class="journey-section">
                                 <h3>Visitor Info</h3>
                                 <div class="journey-grid">
-                                    <div class="journey-item"><label>Visitor ID</label><div class="val mono"><?php echo htmlspecialchars($v['visitor_id']); ?></div></div>
+                                    <div class="journey-item"><label>Visitor ID</label><div class="val mono"><?php echo htmlspecialchars(str_replace('vjtv_', '', $v['visitor_id'])); ?></div></div>
                                     <div class="journey-item"><label>First IP</label><div class="val"><?php echo htmlspecialchars($v['first_ip']); ?></div></div>
                                     <div class="journey-item"><label>Country</label><div class="val"><?php echo htmlspecialchars(getCountryName($v['country'])); ?></div></div>
                                     <div class="journey-item"><label>City</label><div class="val"><?php if ($v['city']): ?><a href="https://www.google.com/maps/search/<?php echo urlencode($v['city'] . ($v['country'] ? ', ' . getCountryName($v['country']) : '')); ?>" target="_blank" rel="noopener" class="city-link" title="Open in Google Maps"><?php echo htmlspecialchars($v['city']); ?></a><?php else: ?>-<?php endif; ?></div></div>

@@ -17,6 +17,7 @@
   var flushed         = false;
   var maxScrollDepth  = 0;
   var scrollTimer     = null;
+  var _deviceInfo     = null; // I3: stored globally for event handlers
 
   function newTrackingId(prefix) {
     var now = new Date();
@@ -128,23 +129,10 @@
     } catch (e) { return 0; }
   }
 
-  window.addEventListener('scroll', function () {
-    clearTimeout(scrollTimer);
-    scrollTimer = setTimeout(function () {
-      var d = calcScrollDepth();
-      if (d > maxScrollDepth) maxScrollDepth = d;
-    }, 200);
-  }, { passive: true });
-
   function getVisitorId() {
     var id = readStorage(VISITOR_KEY);
     if (!id) {
-      var now = new Date();
-      var pad = function (n) { return (n < 10 ? '0' : '') + n; };
-      var dateStr = now.getFullYear() + '-' + pad(now.getMonth() + 1) + '-' + pad(now.getDate());
-      var timeStr = pad(now.getHours()) + pad(now.getMinutes()) + pad(now.getSeconds());
-      var rand = Math.random().toString(16).slice(2, 6);
-      id = 'vjtv_' + dateStr + '-' + timeStr + '-' + rand;
+      id = newTrackingId('vjtv_');
     }
     writeStorage(VISITOR_KEY, id);
     setCookie('vjt_visitor_id', id, cfg.cookieExpires || 31536000);
@@ -253,6 +241,7 @@
     // Strip VJT tracking parameters from URLs
     if (!url) return url;
     return url.replace(/[?&]vjt_(visitor_id|session_id|submit_page|submit_title|referrer|landing_url|landing_title|path_snapshot)=[^&]*/gi, '')
+              .replace(/\?&/, '?')   // fix leftover ?& after first param is stripped
               .replace(/\?$/, '')
               .replace(/&$/, '');
   }
@@ -357,7 +346,7 @@
     });
     writePath(path);
 
-    if (!flushed || reason === 'beforeunload' || reason === 'pagehide') {
+    if (!flushed || reason === 'beforeunload' || reason === 'pagehide' || reason === 'spa-navigate') {
       post(cfg.routes.pageview, pageview, true);
     }
     flushed = true;
@@ -404,7 +393,7 @@
       if (!form || form.tagName.toLowerCase() !== 'form') return;
       if (isSearchForm(form)) return;
 
-      var session  = getSession();
+      var session  = getSession(_deviceInfo);
       var pageview = readJson(PAGE_KEY);
       var snapshot = buildPathSnapshot(pageview);
       patchForms(visitorId, session);
@@ -484,7 +473,7 @@
         event.preventDefault();
       }
 
-      var session  = getSession();
+      var session  = getSession(_deviceInfo);
       var pageview = readJson(PAGE_KEY);
       var snapshot = buildPathSnapshot(pageview);
       var attrReferrer = session.originalReferrer || session.referrer || '';
@@ -522,7 +511,7 @@
         }
       };
 
-      var navTimer = setTimeout(proceed, 600);
+      var navTimer = setTimeout(proceed, 300);
       var done = false;
       var markDone = function() {
         if (done) return;
@@ -568,9 +557,13 @@
     cfg.page.url = cleanUrl(window.location.href);
     cfg.page.title = document.title || '';
 
-    var deviceInfo = getDeviceInfo();
+    _deviceInfo = getDeviceInfo();
     var visitorId  = getVisitorId();
-    var session    = getSession(deviceInfo);
+    var session    = getSession(_deviceInfo);
+
+    // Always update site language to reflect CURRENT page language,
+    // not the stale value from session creation (fixes /ko/ pages showing as EN)
+    session.siteLanguage = getSiteLanguage();
 
     // If tracker is already bound (this is an Astro SPA navigation), flush previous view
     if (window.__vjtBound) {
@@ -585,9 +578,23 @@
       bindSubmissionAttempts(visitorId);
       bindOutboundLinks(visitorId);
 
+      // Debounced form patching on DOM mutations (B3 fix)
+      var formsTimer = null;
       new MutationObserver(function () {
-        patchForms(visitorId, getSession());
+        clearTimeout(formsTimer);
+        formsTimer = setTimeout(function () {
+          patchForms(visitorId, getSession());
+        }, 500);
       }).observe(document.documentElement, { childList: true, subtree: true });
+
+      // Scroll depth tracking (B1 fix — bound once, not on every SPA nav)
+      window.addEventListener('scroll', function () {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(function () {
+          var d = calcScrollDepth();
+          if (d > maxScrollDepth) maxScrollDepth = d;
+        }, 200);
+      }, { passive: true });
 
       window.addEventListener('pagehide', function () { flushPageview('pagehide'); });
 
@@ -601,22 +608,24 @@
 
       window.addEventListener('beforeunload', function () { flushPageview('beforeunload'); });
       window.__vjtBound = true;
+    } else {
+      // B2 fix: reset flushed so subsequent SPA navigations send leave events
+      flushed = false;
     }
 
-    session = getSession(deviceInfo);
+    session = getSession(_deviceInfo);
     startTracking(pageview, session);
   }
 
-  // Hook into Astro's View Transitions
-  document.addEventListener('astro:page-load', initVJT);
-  
-  // Fallback for first load / non-Astro pages
+  // Expose init globally so VisitorTracker.astro can call it directly
+  // without re-downloading the entire script on every SPA navigation (I1 fix)
+  window.VJT_init = initVJT;
+
+  // Bootstrap — first load
   if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    if (!window.__vjtBound) setTimeout(initVJT, 0);
+    setTimeout(initVJT, 0);
   } else {
-    document.addEventListener('DOMContentLoaded', function() {
-      if (!window.__vjtBound) initVJT();
-    });
+    document.addEventListener('DOMContentLoaded', function () { initVJT(); });
   }
 
 })();
