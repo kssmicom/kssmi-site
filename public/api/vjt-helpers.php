@@ -170,38 +170,20 @@ function vjt_read_json($filename) {
 
 function vjt_write_json($filename, $data) {
     $path = VJT_DATA_DIR . '/' . $filename;
-    $tmp  = $path . '.' . bin2hex(random_bytes(4)) . '.tmp';
-
-    $fp = @fopen($tmp, 'w');
+    $fp = @fopen($path, 'c+');
     if (!$fp) {
-        error_log("VJT ERROR: Failed to open temp file for writing: " . $tmp);
+        error_log("VJT ERROR: Failed to open file for writing: " . $path);
         return false;
     }
-    // Acquire lock on the REAL file to serialize writes
-    $lockFp = @fopen($path, 'c+');
-    if ($lockFp && flock($lockFp, LOCK_EX)) {
-        $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-        fwrite($fp, $json);
-        fflush($fp);
-        fclose($fp);
-        // Atomic rename — either the old file or the new one is always intact
-        if (!@rename($tmp, $path)) {
-            error_log("VJT ERROR: Failed to rename temp file: " . $tmp . " → " . $path);
-            @unlink($tmp);
-            flock($lockFp, LOCK_UN);
-            fclose($lockFp);
-            return false;
-        }
-        flock($lockFp, LOCK_UN);
-        fclose($lockFp);
-        return true;
-    }
-    // Fallback: direct write if lock fails
-    if ($lockFp) fclose($lockFp);
-    fclose($fp);
-    @unlink($tmp);
+    if (!flock($fp, LOCK_EX)) { fclose($fp); return false; }
+    ftruncate($fp, 0);
+    rewind($fp);
     $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-    return (bool)@file_put_contents($path, $json, LOCK_EX);
+    fwrite($fp, $json);
+    fflush($fp);
+    flock($fp, LOCK_UN);
+    fclose($fp);
+    return true;
 }
 
 // ── UUID generation ─────────────────────────────────────────────────────────
