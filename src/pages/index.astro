@@ -8,6 +8,7 @@ import Footer from '../components/Footer.astro';
 import Materials from '../components/collection/home/Materials.astro';
 import Construction from '../components/collection/home/Construction.astro';
 import S03_FrameShape from '../components/collection/home/S03_FrameShape.astro';
+import S04_FrameStyle from '../components/collection/home/S04_FrameStyle.astro';
 
 const lang = 'en';
 const t = translations[lang] || translations.en;
@@ -30,6 +31,7 @@ const lcpImage = s01entry?.data?.materials?.[0]?.image ? cardSrc(s01entry.data.m
     <Materials lang="en" />
     <Construction lang="en" />
     <S03_FrameShape lang="en" />
+    <S04_FrameStyle lang="en" />
   </main>
 
   <Footer lang={lang} />
