@@ -1,13 +1,22 @@
+# All crawlers (including AI bots listed below)
 User-agent: *
 Allow: /
 
-# Private admin pages — no indexing
+# Private admin pages -- no indexing
 Disallow: /visitor-journey.php
 Disallow: /email-logs.php
 Disallow: /php-status.php
 Disallow: /send-mail.php
 Disallow: /vjt-db-setup.php
 Disallow: /api/
+
+# Non-indexable utility pages
+Disallow: /thank-you
+Disallow: /quote
+
+# AI crawlers -- explicitly welcomed (inherits rules from User-agent: * above)
+# GPTBot (OpenAI), ChatGPT-User, ClaudeBot, Claude-Web (Anthropic),
+# PerplexityBot, Google-Extended, CCBot (CommonCrawl), OAI-SearchBot
 
 # Sitemaps
 Sitemap: https://kssmi.com/sitemap.xml

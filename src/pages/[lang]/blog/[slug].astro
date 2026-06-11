@@ -36,9 +36,20 @@ const blogSchema = {
   "headline": title,
   "image": image,
   "datePublished": published,
+  "dateModified": data.updated || published,
   "author": {
     "@type": "Person",
-    "name": author
+    "name": author,
+    "url": "https://kssmi.com/about-us/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://kssmi.com/#organization",
+    "name": "Kssmi Eyewear",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://kssmi.com/favicon.svg"
+    }
   }
 };
 ---

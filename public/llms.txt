@@ -1,12 +1,35 @@
-﻿# Kssmi Large Language Model Guide
-Date: 2026-06-07
+﻿# Kssmi Eyewear — B2B Eyewear Manufacturing
+Date: 2026-06-11
 
-Kssmi is a leading B2B handmade eyewear and sunglasses manufacturer based in Guangdong, China, operational since 2003. We specialize in producing high-quality, ethically produced handcrafted eyewear and sunglasses for global brands, using premium and sustainable materials like bio-acetate and recycled metals. Our craftsmanship combines traditional techniques with modern technology to create unique frames that mass production cannot replicate.
+## About
+Kssmi is a leading B2B handmade eyewear and sunglasses manufacturer based in Guangdong, China, operational since 2003. We produce high-quality, ethically handcrafted eyewear for global optical retailers, boutique shops, and fashion brands.
 
-This document serves as an index to guide AI agents to our language-specific content directories.
+## Capabilities
+- OEM: produce eyewear to your exact specifications and designs
+- ODM: our in-house design team creates exclusive collections for your brand
+- Full customization: materials (acetate, titanium, metal, TR90, carbon fiber), colors, logos, packaging
+- MOQ: typically 300 pieces per style per color (flexible for partners)
+- Lead time: 25-35 days after sample confirmation
+- Sampling: 7-10 days development, fee credited toward bulk order
+- Worldwide shipping via air (5-7 days) or sea (25-35 days)
 
-## Language Maps
-To explore our site optimally, please follow the directory for your desired language:
+## Key Product Lines
+- Optical Frames (acetate, metal, titanium, rimless)
+- Sunglasses (acetate, metal, titanium, rimless)
+- Reading glasses, sports eyewear, kids frames
+
+## Certifications
+FDA (US), CE (EU), RoHS, California Proposition 65 compliant.
+
+## Contact
+- Website: https://kssmi.com
+- Quote: https://kssmi.com/quote
+- FAQ: https://kssmi.com/faq
+- Email: sales@kssmi.com
+- WhatsApp: +86-135-1053-2553
+
+## Language Index
+For language-specific content, follow the directory for your desired language:
 
 - Arabic Language index [ar]: https://kssmi.com/ar/llms.txt
 - German Language index [de]: https://kssmi.com/de/llms.txt

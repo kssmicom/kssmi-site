@@ -158,6 +158,13 @@ const websiteSchema = {
   <meta property="og:url" content={canonical || `https://kssmi.com/${selfUrl}`} />
   <meta property="og:type" content={type} />
 	<meta property="og:locale" content={localeMap[lang] || "en_US"} />
+  <meta property="og:site_name" content="Kssmi Eyewear" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={image.startsWith('http') ? image : `https://kssmi.com${image}`} />
 
   <!-- Canonical URL -->
   {canonical ? (
