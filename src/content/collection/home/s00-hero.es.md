@@ -1,0 +1,22 @@
+---
+section: 's00-hero'
+lang: 'es'
+heading: 'Fabricante OEM/ODM de Gafas para Colecciones de Marca'
+subheadingLine1: 'Gafas de Sol y Monturas Ópticas a Medida,'
+subheadingLine2: 'del Concepto a la Entrega Lista para Venta.'
+description: 'Kssmi apoya a marcas de gafas, marcas propias y equipos de producto en el desarrollo de monturas de acetato, titanio, metal, TR90 y materiales híbridos, con muestreo fiable, calidad controlada y gestión de producción clara.'
+primaryCta: 'Inicia Tu Proyecto'
+primaryCtaUrl: '/quote'
+secondaryCta: 'Envía Tu Diseño'
+secondaryCtaUrl: '/quote'
+tags:
+  - 'Monturas Personalizadas'
+  - 'Muestreo'
+  - 'Utillaje'
+  - 'Producción'
+  - 'Packaging'
+  - 'Soporte QC'
+videoUrl: 'https://video.gumlet.io/67dad81fde27d6cecd801d87/6a2c1129a0e544789cbda7b2/main.mp4'
+posterImage: '/media/collection/home/octagonal-eyewear.webp'
+posterAlt: 'Fabricación de monturas de gafas personalizadas Kssmi'
+---

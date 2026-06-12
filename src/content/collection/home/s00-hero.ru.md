@@ -1,0 +1,22 @@
+---
+section: 's00-hero'
+lang: 'ru'
+heading: 'OEM/ODM-производитель очков для брендовых коллекций'
+subheadingLine1: 'Солнечные очки и оправы на заказ,'
+subheadingLine2: 'от концепции до готовой розничной поставки.'
+description: 'Kssmi помогает брендам очков, частным торговым маркам и продуктовым командам разрабатывать оправы из ацетата, титана, металла, TR90 и гибридных материалов — с надёжным изготовлением образцов, контролем качества и прозрачным управлением производством.'
+primaryCta: 'Начать проект'
+primaryCtaUrl: '/quote'
+secondaryCta: 'Отправить дизайн'
+secondaryCtaUrl: '/quote'
+tags:
+  - 'Оправы на заказ'
+  - 'Образцы'
+  - 'Оснастка'
+  - 'Производство'
+  - 'Упаковка'
+  - 'Поддержка QC'
+videoUrl: 'https://video.gumlet.io/67dad81fde27d6cecd801d87/6a2c1129a0e544789cbda7b2/main.mp4'
+posterImage: '/media/collection/home/octagonal-eyewear.webp'
+posterAlt: 'Производство оправ для очков на заказ Kssmi'
+---

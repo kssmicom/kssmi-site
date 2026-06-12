@@ -1,0 +1,22 @@
+---
+section: 's00-hero'
+lang: 'ja'
+heading: 'ブランドコレクション向けアイウェア OEM/ODM メーカー'
+subheadingLine1: 'カスタムサングラス・光学フレームの製造、'
+subheadingLine2: 'コンセプトから販売可能な状態での納品まで。'
+description: 'Kssmi はアイウェアブランド、プライベートブランド、製品チームを支援し、アセテート・チタン・メタル・TR90・ハイブリッド素材のフレーム開発を提供します。信頼性の高いサンプリング、品質管理、明確な生産管理を一貫してご提供します。'
+primaryCta: 'プロジェクトを始める'
+primaryCtaUrl: '/quote'
+secondaryCta: 'デザインを送る'
+secondaryCtaUrl: '/quote'
+tags:
+  - 'カスタムフレーム'
+  - 'サンプリング'
+  - '金型製作'
+  - '生産'
+  - 'パッケージング'
+  - 'QCサポート'
+videoUrl: 'https://video.gumlet.io/67dad81fde27d6cecd801d87/6a2c1129a0e544789cbda7b2/main.mp4'
+posterImage: '/media/collection/home/octagonal-eyewear.webp'
+posterAlt: 'Kssmi カスタムアイウェアフレーム製造'
+---

@@ -1,0 +1,22 @@
+---
+section: 's00-hero'
+lang: 'tg'
+heading: 'Истеҳсолкунандаи OEM/ODM айнак барои коллексияҳои бренд'
+subheadingLine1: 'Айнаки офтобӣ ва чорчӯбаҳои оптикии фармоишӣ,'
+subheadingLine2: 'аз мафҳум то таҳвили омодаи фурӯш.'
+description: 'Kssmi ба брендҳои айнак, тамғаҳои хусусӣ ва гурӯҳҳои маҳсулот дар таҳияи чорчӯбаҳо аз атсетат, титан, металл, TR90 ва маводҳои омехта кӯмак мерасонад — бо намунасозии боэтимод, назорати сифати устувор ва идораи равшани истеҳсолот.'
+primaryCta: 'Лоиҳаи худро оғоз кунед'
+primaryCtaUrl: '/quote'
+secondaryCta: 'Тарҳи худро фиристед'
+secondaryCtaUrl: '/quote'
+tags:
+  - 'Чорчӯбаҳои фармоишӣ'
+  - 'Намунасозӣ'
+  - 'Қолаб'
+  - 'Истеҳсолот'
+  - 'Бастабандӣ'
+  - 'Дастгирии QC'
+videoUrl: 'https://video.gumlet.io/67dad81fde27d6cecd801d87/6a2c1129a0e544789cbda7b2/main.mp4'
+posterImage: '/media/collection/home/octagonal-eyewear.webp'
+posterAlt: 'Истеҳсоли чорчӯбаҳои айнаки фармоишии Kssmi'
+---

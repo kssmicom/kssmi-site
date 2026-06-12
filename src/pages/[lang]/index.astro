@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import { translations } from '../../translations';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import S00_Hero from '../../components/collection/home/S00_Hero.astro';
 import Materials from '../../components/collection/home/Materials.astro';
 import Construction from '../../components/collection/home/Construction.astro';
 import S03_FrameShape from '../../components/collection/home/S03_FrameShape.astro';
@@ -27,12 +28,17 @@ const entry = await getEntry('collection', `home/home.${lang}`);
 
 const title = entry?.data?.seoTitle || "Kssmi - Premium Eyewear & Sunglasses Manufacturer";
 const description = entry?.data?.seoDescription || "Premium eyewear manufacturer in China.";
+
+// LCP preload: the hero (S00) is the first paint — preload its full-bleed poster.
+const heroEntry = await getEntry('collection', `home/s00-hero.${lang}`);
+const lcpImage = heroEntry?.data?.posterImage;
 ---
 
-<Layout title={title} description={description} lang={lang} image={"/media/global/404-team.webp"}>
+<Layout title={title} description={description} lang={lang} image={"/media/global/404-team.webp"} lcpImage={lcpImage}>
   <Header lang={lang} />
 
   <main dir={isRTL ? 'rtl' : 'ltr'}>
+    <S00_Hero lang={lang} />
     <Materials lang={lang} />
     <Construction lang={lang} />
     <S03_FrameShape lang={lang} />

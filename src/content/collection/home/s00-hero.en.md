@@ -1,0 +1,22 @@
+---
+section: 's00-hero'
+lang: 'en'
+heading: 'Eyewear OEM/ODM Manufacturer for Brand Collections'
+subheadingLine1: 'Custom Sunglasses & Optical Frames,'
+subheadingLine2: 'Built from Concept to Retail-Ready Delivery.'
+description: 'Kssmi helps eyewear brands, private labels, and product teams develop acetate, titanium, metal, TR90, and hybrid frames with reliable sampling, controlled quality, and clear production management.'
+primaryCta: 'Start Your Project'
+primaryCtaUrl: '/quote'
+secondaryCta: 'Send Your Design'
+secondaryCtaUrl: '/quote'
+tags:
+  - 'Custom Frames'
+  - 'Sampling'
+  - 'Tooling'
+  - 'Production'
+  - 'Packaging'
+  - 'QC Support'
+videoUrl: 'https://video.gumlet.io/67dad81fde27d6cecd801d87/6a2c1129a0e544789cbda7b2/main.mp4'
+posterImage: '/media/collection/home/octagonal-eyewear.webp'
+posterAlt: 'Kssmi custom eyewear frames manufacturing'
+---

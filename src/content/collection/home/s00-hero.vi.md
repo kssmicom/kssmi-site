@@ -1,0 +1,22 @@
+---
+section: 's00-hero'
+lang: 'vi'
+heading: 'Nhà Sản Xuất OEM/ODM Kính Mắt cho Bộ Sưu Tập Thương Hiệu'
+subheadingLine1: 'Kính Mát và Gọng Kính Cận Theo Yêu Cầu,'
+subheadingLine2: 'Từ Ý Tưởng đến Giao Hàng Sẵn Sàng Bán Lẻ.'
+description: 'Kssmi hỗ trợ các thương hiệu kính mắt, nhãn hiệu riêng và đội ngũ phát triển sản phẩm trong việc sản xuất gọng từ axetat, titan, kim loại, TR90 và vật liệu kết hợp, với quy trình lấy mẫu đáng tin cậy, kiểm soát chất lượng chặt chẽ và quản lý sản xuất minh bạch.'
+primaryCta: 'Bắt Đầu Dự Án của Bạn'
+primaryCtaUrl: '/quote'
+secondaryCta: 'Gửi Thiết Kế của Bạn'
+secondaryCtaUrl: '/quote'
+tags:
+  - 'Gọng Kính Theo Yêu Cầu'
+  - 'Lấy Mẫu'
+  - 'Khuôn Mẫu'
+  - 'Sản Xuất'
+  - 'Đóng Gói'
+  - 'Hỗ Trợ QC'
+videoUrl: 'https://video.gumlet.io/67dad81fde27d6cecd801d87/6a2c1129a0e544789cbda7b2/main.mp4'
+posterImage: '/media/collection/home/octagonal-eyewear.webp'
+posterAlt: 'Sản xuất gọng kính mắt tùy chỉnh Kssmi'
+---

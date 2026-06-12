@@ -1,0 +1,22 @@
+---
+section: 's00-hero'
+lang: 'it'
+heading: 'Produttore OEM/ODM di Occhiali per Collezioni di Brand'
+subheadingLine1: 'Occhiali da Sole e Montature Ottiche su Misura,'
+subheadingLine2: 'dal Concept alla Consegna Retail-Ready.'
+description: 'Kssmi supporta brand di occhiali, private label e team di prodotto nello sviluppo di montature in acetato, titanio, metallo, TR90 e materiali ibridi, con campionatura affidabile, qualità controllata e gestione della produzione trasparente.'
+primaryCta: 'Avvia il Tuo Progetto'
+primaryCtaUrl: '/quote'
+secondaryCta: 'Invia il Tuo Design'
+secondaryCtaUrl: '/quote'
+tags:
+  - 'Montature Personalizzate'
+  - 'Campionatura'
+  - 'Stampi'
+  - 'Produzione'
+  - 'Packaging'
+  - 'Supporto QC'
+videoUrl: 'https://video.gumlet.io/67dad81fde27d6cecd801d87/6a2c1129a0e544789cbda7b2/main.mp4'
+posterImage: '/media/collection/home/octagonal-eyewear.webp'
+posterAlt: 'Produzione di montature per occhiali personalizzate Kssmi'
+---

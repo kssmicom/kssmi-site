@@ -1,0 +1,22 @@
+---
+section: 's00-hero'
+lang: 'ms'
+heading: 'Pengilang OEM/ODM Kacamata untuk Koleksi Jenama'
+subheadingLine1: 'Cermin Mata Hitam dan Bingkai Optik Tersuai,'
+subheadingLine2: 'dari Konsep hingga Penghantaran Sedia Runcit.'
+description: 'Kssmi membantu jenama kacamata, label peribadi, dan pasukan produk membangunkan bingkai asetat, titanium, logam, TR90, dan bahan hibrid dengan pensampelan yang boleh dipercayai, kawalan kualiti yang ketat, dan pengurusan pengeluaran yang jelas.'
+primaryCta: 'Mulakan Projek Anda'
+primaryCtaUrl: '/quote'
+secondaryCta: 'Hantar Reka Bentuk Anda'
+secondaryCtaUrl: '/quote'
+tags:
+  - 'Bingkai Tersuai'
+  - 'Pensampelan'
+  - 'Acuan'
+  - 'Pengeluaran'
+  - 'Pembungkusan'
+  - 'Sokongan QC'
+videoUrl: 'https://video.gumlet.io/67dad81fde27d6cecd801d87/6a2c1129a0e544789cbda7b2/main.mp4'
+posterImage: '/media/collection/home/octagonal-eyewear.webp'
+posterAlt: 'Pembuatan bingkai kacamata tersuai Kssmi'
+---

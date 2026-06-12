@@ -1,0 +1,22 @@
+---
+section: 's00-hero'
+lang: 'hi'
+heading: 'ब्रांड संग्रह के लिए आईवियर OEM/ODM निर्माता'
+subheadingLine1: 'कस्टम धूप के चश्मे और ऑप्टिकल फ्रेम,'
+subheadingLine2: 'अवधारणा से लेकर बिक्री-तैयार आपूर्ति तक।'
+description: 'Kssmi आईवियर ब्रांड, निजी लेबल और उत्पाद टीमों को एसीटेट, टाइटेनियम, धातु, TR90 और मिश्रित सामग्री के फ्रेम विकसित करने में सहायता करती है — विश्वसनीय नमूना निर्माण, नियंत्रित गुणवत्ता और स्पष्ट उत्पादन प्रबंधन के साथ।'
+primaryCta: 'अपना प्रोजेक्ट शुरू करें'
+primaryCtaUrl: '/quote'
+secondaryCta: 'अपना डिज़ाइन भेजें'
+secondaryCtaUrl: '/quote'
+tags:
+  - 'कस्टम फ्रेम'
+  - 'नमूना निर्माण'
+  - 'साँचा'
+  - 'उत्पादन'
+  - 'पैकेजिंग'
+  - 'गुणवत्ता सहायता'
+videoUrl: 'https://video.gumlet.io/67dad81fde27d6cecd801d87/6a2c1129a0e544789cbda7b2/main.mp4'
+posterImage: '/media/collection/home/octagonal-eyewear.webp'
+posterAlt: 'Kssmi कस्टम आईवियर फ्रेम निर्माण'
+---

@@ -1,0 +1,188 @@
+---
+import { getEntry } from 'astro:content';
+
+const { lang = 'en' } = Astro.props as { lang?: string };
+const isRTL = lang === 'ar';
+const prefix = lang === 'en' ? '' : `/${lang}`;
+
+const entry = await getEntry('collection', `home/s00-hero.${lang}`);
+const d = entry?.data || ({} as any);
+
+// All copy comes from the markdown file — nothing is hardcoded here.
+const heading = d.heading;
+const subheadingLine1 = d.subheadingLine1;
+const subheadingLine2 = d.subheadingLine2;
+const description = d.description;
+const primaryCta = d.primaryCta;
+const primaryCtaUrl = d.primaryCtaUrl;
+const secondaryCta = d.secondaryCta;
+const secondaryCtaUrl = d.secondaryCtaUrl;
+const tags: string[] = d.tags || [];
+const videoUrl = d.videoUrl;
+const posterImage = d.posterImage;
+const posterAlt = d.posterAlt;
+
+// Build locale-aware internal links (external URLs are left untouched)
+const toHref = (url?: string) =>
+  !url ? undefined : url.startsWith('http') ? url : `${prefix}${url}`;
+const primaryHref = toHref(primaryCtaUrl);
+const secondaryHref = toHref(secondaryCtaUrl);
+---
+
+<section
+  class="hero relative w-full overflow-hidden bg-[#1a0f08] -mt-20 pt-20 min-h-[620px] sm:min-h-[700px] lg:min-h-screen flex items-center"
+  dir={isRTL ? 'rtl' : 'ltr'}
+  aria-label={heading}
+>
+  <!-- Background video -->
+  {videoUrl && (
+    <video
+      class="hero-video absolute inset-0 w-full h-full object-cover"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster={posterImage}
+      aria-hidden="true"
+      tabindex="-1"
+    >
+      <source src={videoUrl} type="video/mp4" />
+    </video>
+  )}
+
+  <!-- Poster fallback / first paint image (also used when reduced-motion pauses video) -->
+  {!videoUrl && posterImage && (
+    <img
+      src={posterImage}
+      alt={posterAlt || heading || ''}
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+      decoding="async"
+    />
+  )}
+
+  <!-- Dark scrim: stronger on the text (start) side for 4.5:1 contrast -->
+  <div
+    class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/25 ltr-only"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="absolute inset-0 bg-gradient-to-l from-black/85 via-black/60 to-black/25 rtl-only hidden"
+    aria-hidden="true"
+  ></div>
+  <!-- Bottom vignette for tag legibility -->
+  <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/70 to-transparent" aria-hidden="true"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4 py-20 md:py-24 lg:py-28">
+    <div class="max-w-2xl lg:max-w-3xl">
+
+      <!-- Headline -->
+      {heading && (
+        <h1 class="hero-fade text-[1.2rem] sm:text-[1.44rem] lg:text-[1.92rem] xl:text-[2.176rem] font-extrabold leading-[1.15] text-white tracking-tight mb-6" style="animation-delay:0.08s">
+          {heading}
+        </h1>
+      )}
+
+      <!-- Emphasized subheading lines -->
+      {(subheadingLine1 || subheadingLine2) && (
+        <p class="hero-fade text-lg sm:text-xl lg:text-2xl font-semibold leading-snug mb-5" style="animation-delay:0.16s">
+          {subheadingLine1 && (
+            <span class="block bg-gradient-to-r from-[#F5D08A] via-[#F0B85A] to-[#E0A23C] bg-clip-text text-transparent">
+              {subheadingLine1}
+            </span>
+          )}
+          {subheadingLine2 && <span class="block text-white/95">{subheadingLine2}</span>}
+        </p>
+      )}
+
+      <!-- Description -->
+      {description && (
+        <p class="hero-fade text-sm sm:text-base lg:text-lg text-stone-200/90 leading-relaxed max-w-xl lg:max-w-2xl mb-8" style="animation-delay:0.24s">
+          {description}
+        </p>
+      )}
+
+      <!-- CTAs -->
+      {(primaryCta || secondaryCta) && (
+        <div class="hero-fade flex flex-col sm:flex-row sm:flex-wrap gap-3.5 sm:gap-4 mb-9" style="animation-delay:0.32s">
+          {primaryCta && (
+            <a
+              href={primaryHref}
+              class="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm sm:text-base font-semibold text-white bg-[#B45309] hover:bg-[#92400E] shadow-lg shadow-amber-950/30 hover:shadow-xl hover:shadow-amber-950/40 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-black/50 transition-all duration-300 cursor-pointer"
+            >
+              {primaryCta}
+              <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+          )}
+          {secondaryCta && (
+            <a
+              href={secondaryHref}
+              class="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm sm:text-base font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 hover:border-white/50 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black/50 transition-all duration-300 cursor-pointer"
+            >
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M12 3v13M7 8l5-5 5 5"/>
+              </svg>
+              {secondaryCta}
+            </a>
+          )}
+        </div>
+      )}
+
+      <!-- Process tags -->
+      {tags.length > 0 && (
+        <ul class="hero-fade flex flex-wrap items-center gap-x-5 gap-y-2.5 text-xs sm:text-sm text-stone-200/85" style="animation-delay:0.40s">
+          {tags.map((tag) => (
+            <li class="inline-flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-400/80" aria-hidden="true"></span>
+              {tag}
+            </li>
+          ))}
+        </ul>
+      )}
+
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .hero-fade {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: heroFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @keyframes heroFadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* RTL: swap which scrim shows */
+  [dir='rtl'] .ltr-only { display: none; }
+  [dir='rtl'] .rtl-only { display: block; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-fade {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  // Respect reduced-motion: pause the background video so it shows the poster frame.
+  const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const applyMotionPref = () => {
+    document.querySelectorAll<HTMLVideoElement>('.hero-video').forEach((v) => {
+      if (mq.matches) {
+        v.removeAttribute('autoplay');
+        v.pause();
+      }
+    });
+  };
+  applyMotionPref();
+  mq.addEventListener('change', applyMotionPref);
+</script>

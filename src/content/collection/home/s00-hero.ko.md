@@ -1,0 +1,22 @@
+---
+section: 's00-hero'
+lang: 'ko'
+heading: '브랜드 컬렉션을 위한 아이웨어 OEM/ODM 제조사'
+subheadingLine1: '맞춤형 선글라스 및 광학 프레임,'
+subheadingLine2: '컨셉부터 리테일 납품까지 전 과정을 책임집니다.'
+description: 'Kssmi는 아이웨어 브랜드, 프라이빗 라벨, 제품 팀을 위해 아세테이트, 티타늄, 금속, TR90, 하이브리드 소재 프레임 개발을 지원합니다. 신뢰할 수 있는 샘플링, 철저한 품질 관리, 명확한 생산 관리를 제공합니다.'
+primaryCta: '프로젝트 시작하기'
+primaryCtaUrl: '/quote'
+secondaryCta: '디자인 보내기'
+secondaryCtaUrl: '/quote'
+tags:
+  - '맞춤 프레임'
+  - '샘플링'
+  - '금형'
+  - '생산'
+  - '패키징'
+  - 'QC 지원'
+videoUrl: 'https://video.gumlet.io/67dad81fde27d6cecd801d87/6a2c1129a0e544789cbda7b2/main.mp4'
+posterImage: '/media/collection/home/octagonal-eyewear.webp'
+posterAlt: 'Kssmi 맞춤형 아이웨어 프레임 제조'
+---

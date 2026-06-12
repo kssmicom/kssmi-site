@@ -1,0 +1,22 @@
+---
+section: 's00-hero'
+lang: 'pt'
+heading: 'Fabricante OEM/ODM de Óculos para Coleções de Marca'
+subheadingLine1: 'Óculos de Sol e Armações Ópticas Personalizadas,'
+subheadingLine2: 'do Conceito à Entrega Pronta para Venda.'
+description: 'A Kssmi apoia marcas de óculos, marcas próprias e equipes de produto no desenvolvimento de armações em acetato, titânio, metal, TR90 e materiais híbridos, com amostragem confiável, qualidade controlada e gestão de produção clara.'
+primaryCta: 'Iniciar Seu Projeto'
+primaryCtaUrl: '/quote'
+secondaryCta: 'Enviar Seu Design'
+secondaryCtaUrl: '/quote'
+tags:
+  - 'Armações Personalizadas'
+  - 'Amostragem'
+  - 'Ferramental'
+  - 'Produção'
+  - 'Embalagem'
+  - 'Suporte QC'
+videoUrl: 'https://video.gumlet.io/67dad81fde27d6cecd801d87/6a2c1129a0e544789cbda7b2/main.mp4'
+posterImage: '/media/collection/home/octagonal-eyewear.webp'
+posterAlt: 'Fabricação de armações de óculos personalizadas Kssmi'
+---

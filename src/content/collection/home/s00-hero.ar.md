@@ -1,0 +1,22 @@
+---
+section: 's00-hero'
+lang: 'ar'
+heading: 'مصنّع OEM/ODM للنظارات لمجموعات العلامات التجارية'
+subheadingLine1: 'نظارات شمسية وإطارات بصرية مخصصة،'
+subheadingLine2: 'من المفهوم إلى التسليم الجاهز للبيع.'
+description: 'تدعم Kssmi علامات النظارات التجارية، والعلامات الخاصة، وفرق المنتجات في تطوير إطارات من الأسيتات والتيتانيوم والمعدن وTR90 والمواد الهجينة، مع نماذج موثوقة ورقابة جودة محكمة وإدارة إنتاج واضحة.'
+primaryCta: 'ابدأ مشروعك'
+primaryCtaUrl: '/quote'
+secondaryCta: 'أرسل تصميمك'
+secondaryCtaUrl: '/quote'
+tags:
+  - 'إطارات مخصصة'
+  - 'النماذج الأولية'
+  - 'القوالب'
+  - 'الإنتاج'
+  - 'التغليف'
+  - 'دعم QC'
+videoUrl: 'https://video.gumlet.io/67dad81fde27d6cecd801d87/6a2c1129a0e544789cbda7b2/main.mp4'
+posterImage: '/media/collection/home/octagonal-eyewear.webp'
+posterAlt: 'تصنيع إطارات نظارات مخصصة من Kssmi'
+---

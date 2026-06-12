@@ -1,0 +1,22 @@
+---
+section: 's00-hero'
+lang: 'de'
+heading: 'OEM/ODM-Brillenhersteller für Markenkollektionen'
+subheadingLine1: 'Individuelle Sonnen- und Korrektionsbrillen,'
+subheadingLine2: 'vom Konzept bis zur verkaufsfertigen Lieferung.'
+description: 'Kssmi unterstützt Brillenmarken, Eigenmarken und Produktteams bei der Entwicklung von Fassungen aus Acetat, Titan, Metall, TR90 und Hybridmaterialien – mit zuverlässiger Bemusterung, kontrollierter Qualität und klarem Produktionsmanagement.'
+primaryCta: 'Ihr Projekt starten'
+primaryCtaUrl: '/quote'
+secondaryCta: 'Design einsenden'
+secondaryCtaUrl: '/quote'
+tags:
+  - 'Individuelle Fassungen'
+  - 'Bemusterung'
+  - 'Werkzeugbau'
+  - 'Produktion'
+  - 'Verpackung'
+  - 'QC-Support'
+videoUrl: 'https://video.gumlet.io/67dad81fde27d6cecd801d87/6a2c1129a0e544789cbda7b2/main.mp4'
+posterImage: '/media/collection/home/octagonal-eyewear.webp'
+posterAlt: 'Kssmi individuelle Brillenfassung Herstellung'
+---

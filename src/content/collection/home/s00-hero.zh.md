@@ -1,0 +1,22 @@
+---
+section: 's00-hero'
+lang: 'zh'
+heading: '眼镜品牌系列 OEM/ODM 制造商'
+subheadingLine1: '定制太阳镜与光学镜架，'
+subheadingLine2: '从设计概念到零售成品，全流程交付。'
+description: 'Kssmi 服务于眼镜品牌、私有品牌及产品团队，提供板材、钛金属、合金、TR90 及混合材质镜架的开发服务，涵盖可靠的打样、严格的质量管控与清晰的生产管理。'
+primaryCta: '启动您的项目'
+primaryCtaUrl: '/quote'
+secondaryCta: '发送您的设计'
+secondaryCtaUrl: '/quote'
+tags:
+  - '定制镜架'
+  - '打样'
+  - '开模'
+  - '生产'
+  - '包装'
+  - '质量管控'
+videoUrl: 'https://video.gumlet.io/67dad81fde27d6cecd801d87/6a2c1129a0e544789cbda7b2/main.mp4'
+posterImage: '/media/collection/home/octagonal-eyewear.webp'
+posterAlt: 'Kssmi 定制眼镜架制造'
+---
