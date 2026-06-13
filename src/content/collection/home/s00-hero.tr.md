@@ -4,7 +4,7 @@ lang: 'tr'
 heading: 'Marka Koleksiyonları için Gözlük OEM/ODM Üreticisi'
 subheadingLine1: 'Özel Güneş Gözlükleri ve Optik Çerçeveler,'
 subheadingLine2: 'Konseptten Perakende Teslimatına Kadar.'
-description: "Kssmi, gözlük markalarına, özel etiket sahiplerine ve ürün ekiplerine asetat, titanyum, metal, TR90 ve hibrit malzemelerden çerçeve geliştirme konusunda destek verir; güvenilir numune üretimi, kontrollü kalite ve şeffaf üretim yönetimiyle."
+description: "Kssmi, gözlük markalarına, özel etiket sahiplerine ve ürün ekiplerine asetat, titanyum, metal, karbon fiber, TR90 ve hibrit malzemelerden çerçeve geliştirme konusunda destek verir; güvenilir numune üretimi, kontrollü kalite ve şeffaf üretim yönetimiyle."
 primaryCta: 'Projenizi Başlatın'
 primaryCtaUrl: '/quote'
 secondaryCta: 'Tasarımınızı Gönderin'

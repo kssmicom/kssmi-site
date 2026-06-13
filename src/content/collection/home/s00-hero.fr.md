@@ -4,7 +4,7 @@ lang: 'fr'
 heading: 'Fabricant OEM/ODM de Lunettes pour Collections de Marques'
 subheadingLine1: 'Lunettes de Soleil et Montures Optiques sur Mesure,'
 subheadingLine2: "du Concept à la Livraison Prête à la Vente."
-description: "Kssmi accompagne les marques de lunettes, les marques de distributeur et les équipes produit dans le développement de montures en acétate, titane, métal, TR90 et matériaux hybrides, avec un échantillonnage fiable, une qualité maîtrisée et une gestion de production claire."
+description: "Kssmi accompagne les marques de lunettes, les marques de distributeur et les équipes produit dans le développement de montures en acétate, titane, métal, fibre de carbone, TR90 et matériaux hybrides, avec un échantillonnage fiable, une qualité maîtrisée et une gestion de production claire."
 primaryCta: 'Démarrer Votre Projet'
 primaryCtaUrl: '/quote'
 secondaryCta: 'Envoyer Votre Design'
