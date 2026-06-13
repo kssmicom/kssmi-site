@@ -17,6 +17,6 @@ tags:
   - 'Packaging'
   - 'Soporte QC'
 videoUrl: 'https://video.gumlet.io/67dad81fde27d6cecd801d87/6a2c1129a0e544789cbda7b2/main.mp4'
-posterImage: '/media/collection/home/octagonal-eyewear.webp'
+posterImage: '/media/collection/home/kssmi-custom-eyewear-frames-manufacturing.webp'
 posterAlt: 'Fabricación de monturas de gafas personalizadas Kssmi'
 ---
