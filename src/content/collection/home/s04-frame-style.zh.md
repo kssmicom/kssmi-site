@@ -2,7 +2,7 @@
 section: 's04-frame-style'
 eyebrow: '眼镜框款式'
 heading: '定制眼镜框款式'
-subheading: '我们支持多种眼镜框款式，从经典和极简风格到前卫时尚、商务、运动以及大框设计。'
+subheading: '丰富的眼镜款式开发能力，助力品牌打造兼具永恒魅力、前沿趋势与品牌专属特色的系列产品。'
 materials:
   - name: '经典 / 复古'
     subtitle: '灵感源自经典眼镜设计的风格方向。'

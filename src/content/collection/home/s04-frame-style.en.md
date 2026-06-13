@@ -2,7 +2,7 @@
 section: 's04-frame-style'
 eyebrow: 'Frame Style'
 heading: 'Custom Eyewear Frame Styles'
-subheading: 'We support a wide range of eyewear frame styles, from classic and minimalist looks to fashion-forward, business, sport, and oversized designs.'
+subheading: 'Extensive eyewear style development capability helps brands build collections that balance timeless appeal, trend-led expression, and brand-specific direction.'
 materials:
   - name: 'Classic / Vintage'
     subtitle: 'A style direction inspired by timeless eyewear designs.'

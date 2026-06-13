@@ -2,219 +2,131 @@
 section: 's03-frame-shape'
 eyebrow: 'Çerçeve Şekli'
 heading: 'Gözlük Çerçeve Şekli Çözümleri'
-subheading: 'Çeşitli çerçeve yapılarındaki kapsamlı üretim deneyimi, sağlam bir teknik temel sağlayarak mevcut yapılandırmaları seçmenize veya özel yeni stiller tasarlamak için ilham almanıza olanak tanır.'
+subheading: "Markaların küresel uyuma göre optimize edilmiş pazara hazır koleksiyonlar oluşturmasına yardımcı olmak için, kanıtlanmış silüetlerden oluşan geniş bir kitaplığı, özel şekillere yönelik özel kalıplama yetenekleriyle birleştiriyoruz."
 materials:
   - name: 'Yuvarlak Gözlük'
-    subtitle: 'Kusursuz Dairesel Geometri'
+    subtitle: 'Yumuşak, dengeli bir görünüme sahip klasik dairesel bir çerçeve şekli.'
     points:
-      - 'Son derece simetrik kenarsız tasarım'
-      - 'Klasik retro endüstriyel standart'
-      - 'Yüksek hassasiyetli metal tel bükme gerektirir'
+      - 'Simetrik ve zamansız'
+      - 'Metal veya asetatta iyi çalışır'
+      - 'Retro esintili tasarımlarda yaygındır'
     slug: 'round-eyewear'
     image: '/media/products/kso-010-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-010-13.webp'
 
   - name: 'Oval Gözlük'
-    subtitle: 'Yatay Olarak Uzanmış Yuvarlak Yapı'
+    subtitle: 'Boyundan biraz daha geniş, yuvarlak bir çerçeve şekli.'
     points:
-      - 'Geniş ve düz kenarsız profil'
-      - 'Çeşitli yüz hatlarına kolayca uyum sağlar'
-      - 'Mini metal veya Y2K asetat çerçeveler için idealdir'
+      - 'Yumuşak ve takması kolay'
+      - 'Birçok yüz şekline yakışır'
+      - 'Genellikle mini metal veya asetat çerçevelerde kullanılır'
     slug: 'oval-eyewear'
     image: '/media/products/kas-501-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-501-13.webp'
 
   - name: 'Kare Gözlük'
-    subtitle: 'Eşit Genişlik ve Yükseklikte Dörtgen'
+    subtitle: 'Güçlü bir geometrik dış çizgiye sahip dengeli bir çerçeve şekli.'
     points:
-      - 'Neredeyse 1:1 genişlik-yükseklik oranı'
-      - 'Keskin veya yuvarlatılmış kenarlara sahiptir'
-      - 'Dikey görüş alanını en üst düzeye çıkarır'
+      - 'Temiz ve yapılandırılmış görünüm'
+      - 'Keskin veya yumuşak köşeleri mevcuttur'
+      - 'Modern ve klasik stiller için idealdir'
     slug: 'square-eyewear'
     image: '/media/products/kjs-004-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kjs-004-1.webp'
 
   - name: 'Dikdörtgen Gözlük'
-    subtitle: 'Geniş ve Düz Dörtgen'
+    subtitle: 'Daha aerodinamik bir profile sahip geniş, düz bir çerçeve şekli.'
     points:
-      - 'Genişlik yüksekliği önemli ölçüde aşıyor'
-      - 'Ağırlık kontrolü için kompakt yapı'
-      - 'Hafif titanyum minimalist tasarımda yaygındır'
+      - 'İnce ve hafif görünüm'
+      - 'Genellikle titanyum tasarımlarında kullanılır'
+      - 'Temiz günlük giyim için uygundur'
     slug: 'rectangle-eyewear'
     image: '/media/products/kas-131-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-131-9.webp'
 
   - name: 'Altıgen Gözlük'
-    subtitle: 'Temel Poligonal Kesim'
+    subtitle: 'Modern bir dokunuşa sahip altı kenarlı geometrik bir çerçeve şekli.'
     points:
-      - 'Altı hassas düz kenardan oluşur'
-      - 'Güçlü modern endüstriyel estetik'
-      - 'Keskin çizgiler için yüksek yoğunluklu asetat kullanır'
+      - 'Belirgin ve çağdaş görünüm'
+      - 'Görsel karaktere sahip güçlü çizgiler'
+      - 'Asetat veya metalde iyi çalışır'
     slug: 'hexagonal-eyewear'
     image: '/media/products/kas-125-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-125-1.webp'
 
   - name: 'Sekizgen Gözlük'
-    subtitle: 'Karmaşık Poligonal Yapı'
+    subtitle: 'Rafine modern bir his veren sekiz kenarlı geometrik bir çerçeve şekli.'
     points:
-      - 'Sekiz düz veya hafif kavisli kenardan oluşur'
-      - 'Çok boyutlu geometrik kontur'
-      - 'Hassas metal kalıp presleme ve kaynak gerektirir'
+      - 'Altıgen bir çerçeveden daha ayrıntılı'
+      - 'Göz alıcı ama yine de takılabilir'
+      - 'Hassas şekillendirme ve bitiş gerektirir'
     slug: 'octagonal-eyewear'
     image: '/media/collection/home/octagonal-eyewear.webp'
 
   - name: 'Panto Gözlük'
-    subtitle: 'Yüksek Menteşeli Retro Yuvarlak'
+    subtitle: 'Yuvarlak bir alt eğriye ve daha düz bir üst kısma sahip klasik bir çerçeve şekli.'
     points:
-      - 'Düz üst çizgi ve yuvarlak alt kısım'
-      - 'Sap ve menteşelerin yüksek yerleşimi'
-      - 'İkinci Dünya Savaşı sonrası optik endüstrisi standart şekli'
+      - 'Vintage esintili ve çok yönlü'
+      - 'Güçlü retro çekicilik'
+      - 'Optik ve moda çerçevelerinde yaygındır'
     slug: 'panto-eyewear'
     image: '/media/products/kas-310-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-310-5.webp'
 
   - name: 'D Çerçeve Gözlük'
-    subtitle: 'Düz Üstlü Yarı Dairesel Yapı'
+    subtitle: 'Düz bir üst kısma ve yuvarlak bir alt kenara sahip bir çerçeve şekli.'
     points:
-      - 'U şeklinde alt kemerli yatay üst kısım'
-      - 'Yatan bir D harfini andırır'
-      - 'Kalın asetat çerçevelerdeki hacmi vurgular'
+      - 'Cesur ve yapılandırılmış görünüm'
+      - 'Daha kalın asetat çerçevelerde iyi çalışır'
+      - 'Retro ve modern koleksiyonlarda popülerdir'
     slug: 'd-frame-eyewear'
     image: '/media/products/kas-309-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-309-1.webp'
 
   - name: 'Damla Gözlük'
-    subtitle: 'Çift Köprülü Damla Yapısı'
+    subtitle: 'Çift köprülü damla şeklinde bir çerçeve.'
     points:
-      - 'İkonik ve sağlam çift köprü tasarımı'
-      - 'Aşağı doğru sarkan damla şeklindeki çerçeveler'
-      - 'Fiziksel koruma için çerçeve yüzey alanını en üst düzeye çıkarır'
+      - 'İkonik ve tanınabilir tasarım'
+      - 'Geniş lens kapsama alanı sunar'
+      - 'Güneş gözlüğü ve optik stiller için uygundur'
     slug: 'aviator-eyewear'
     image: '/media/products/kas-344-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-344-1.webp'
 
   - name: 'Trapez Gözlük'
-    subtitle: 'Klasik Ters Trapez Yapı'
+    subtitle: 'Daha geniş bir üst ve daha dar bir alt kısma sahip bir çerçeve şekli.'
     points:
-      - 'Daha geniş üst ve daha dar alt kısım'
-      - 'Metal ön perçinlere sahip uzatılmış sap uçları'
-      - 'Asetat güneş gözlüğü kalıplarında her zaman popüler şekil'
+      - 'Eskimeyen ticari stil'
+      - 'Güçlü ve takması kolay'
+      - 'Asetat güneş gözlüklerinde yaygındır'
     slug: 'wayfarer-eyewear'
     image: '/media/products/kas-102-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-102-9.webp'
 
   - name: 'Kedi Gözü Gözlük'
-    subtitle: 'Yukarı Kıvrık Dış Köşe'
+    subtitle: 'Dış köşeleri kalkık bir çerçeve şekli.'
     points:
-      - 'Dış üst köşeler önemli ölçüde yukarı kalkar'
-      - 'Görsel odağı dış kenarlara kaydırır'
-      - 'Hassas asetat CNC 3D oymaya dayanır'
+      - 'Kadınsı ve etkileyici görünüm'
+      - 'Yüze görsel bir kaldırma katar'
+      - 'Modaya uygun koleksiyonlarda popülerdir'
     slug: 'cat-eye-eyewear'
     image: '/media/products/kas-111-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-111-1.webp'
 
   - name: 'Kelebek Gözlük'
-    subtitle: 'Genişleyen Büyük Boy Yapı'
+    subtitle: 'Köprüden dışa doğru genişleyen büyük boy bir çerçeve şekli.'
     points:
-      - 'Dışa doğru genişleyen dar iç köprü'
-      - 'İçe göre önemli ölçüde daha geniş dış kenar'
-      - 'Büyük boy kadın güneş gözlükleri için ana kalıp'
+      - 'Dramatik ve göz alıcı stil'
+      - 'Yüzü güçlü bir şekilde kaplar'
+      - 'Kadın güneş gözlüklerinde yaygındır'
     slug: 'butterfly-eyewear'
     image: '/media/products/kjs-001-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kjs-001-1.webp'
 
   - name: 'Kaş Çizgisi Gözlük'
-    subtitle: 'Karışık Malzemeli Kaş Yapısı'
+    subtitle: 'Daha güçlü bir üst çerçeveye sahip karışık malzemeli bir çerçeve şekli.'
     points:
-      - 'Kaşları simüle eden kalın üst çerçeve'
-      - 'Metal veya naylon iple sabitlenmiş alt çerçeve'
-      - 'Sıkı montaj tolerans kontrolü gerektirir'
+      - 'Belirgin ve vintage esintili'
+      - 'Farklı malzemeleri birleştirir'
+      - 'Genellikle optik koleksiyonlarda kullanılır'
     slug: 'browline-eyewear'
     image: '/media/products/kjs-018-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kjs-018-3.webp'
 
   - name: 'Saran Gözlük'
-    subtitle: 'Yüksek Eğimli Saran Yapı'
+    subtitle: 'Yüzün hatlarını takip eden kavisli bir çerçeve şekli.'
     points:
-      - 'Taban 6''dan taban 8 veya üstüne kadar yüksek kavisli tasarım'
-      - 'Fiziksel yanal rüzgar geçirmez koruma sağlar'
-      - 'Öncelikle enjekte TR90 veya karbon fiber kullanır'
+      - 'Spor odaklı ve koruyucu'
+      - 'Daha iyi yan koruma sağlar'
+      - 'Performans gözlüklerinde yaygındır'
     slug: 'wrap-around-eyewear'
     image: '/media/products/kas-164-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-164-1.webp'
 ---
-
-## Gözlük Çerçeve Şekilleri
-
-Klasik yuvarlak ve kare stillerden modaya uygun kedi gözü ve performans odaklı sarma tasarımlara kadar çok çeşitli çerçeve şekilleriyle çalışıyoruz.
-
-### 1. Yuvarlak Gözlükler
-Yumuşak ve dengeli bir görünüme sahip klasik dairesel çerçeve şekli.
-- Simetrik ve zamansız
-- Metal veya asetatta iyi çalışır
-- Retro esintili tasarımlarda yaygındır
-
-### 2. Oval Gözlükler
-Boyundan biraz daha geniş, yuvarlatılmış çerçeve şekli.
-- Yumuşak ve takması kolay
-- Birçok yüz şekline uyum sağlar
-- Genellikle mini metal veya asetat çerçevelerde kullanılır
-
-### 3. Kare Gözlükler
-Güçlü geometrik hatlara sahip dengeli çerçeve şekli.
-- Temiz ve yapılandırılmış görünüm
-- Keskin veya yumuşak köşeli olarak mevcuttur
-- Modern ve klasik stiller için iyidir
-
-### 4. Dikdörtgen Gözlükler
-Daha akıcı bir profile sahip geniş, düz çerçeve şekli.
-- İnce ve hafif görünüm
-- Genellikle titanyum tasarımlarda kullanılır
-- Temiz günlük kullanım için uygundur
-
-### 5. Altıgen Gözlükler
-Modern bir dokunuşa sahip altı kenarlı geometrik çerçeve şekli.
-- Ayırt edici ve çağdaş görünüm
-- Görsel karaktere sahip güçlü çizgiler
-- Asetat veya metalde iyi çalışır
-
-### 6. Sekizgen Gözlükler
-Zarif ve modern bir his veren sekiz kenarlı geometrik çerçeve şekli.
-- Altıgen çerçeveden daha detaylı
-- Göz alıcı ama yine de giyilebilir
-- Hassas şekillendirme ve bitiş gerektirir
-
-### 7. Panto Gözlükler
-Yuvarlak alt kıvrıma ve daha düz bir üst kısma sahip klasik çerçeve şekli.
-- Vintage esintili ve çok yönlü
-- Güçlü retro cazibe
-- Optik ve moda çerçevelerinde yaygındır
-
-### 8. D-Çerçeve Gözlükler
-Düz bir üst kısma ve yuvarlak alt kenara sahip çerçeve şekli.
-- Cesur ve yapılandırılmış görünüm
-- Daha kalın asetat çerçevelerde iyi çalışır
-- Retro ve modern koleksiyonlarda popülerdir
-
-### 9. Aviator (Pilot) Gözlükler
-Çift köprülü damla şeklindeki çerçeve.
-- İkonik ve tanınabilir tasarım
-- Geniş lens kapsama alanı sunar
-- Güneş gözlükleri ve optik stiller için uygundur
-
-### 10. Wayfarer / Trapez (Yamuk) Gözlükler
-Üst kısmı daha geniş ve alt kısmı daha dar çerçeve şekli.
-- Eskimeyen ticari stil
-- Güçlü ve takması kolay
-- Asetat güneş gözlüklerinde yaygındır
-
-### 11. Kedi Gözü (Cat-Eye) Gözlükler
-Dış köşeleri yukarı kalkık çerçeve şekli.
-- Kadınsı ve etkileyici görünüm
-- Yüze görsel bir kaldırma (lift) katar
-- Modaya yön veren koleksiyonlarda popülerdir
-
-### 12. Kelebek Gözlükler
-Köprüden dışarı doğru genişleyen büyük (oversize) çerçeve şekli.
-- Dramatik ve göz alıcı stil
-- Güçlü bir yüz kapsama alanı sunar
-- Kadın güneş gözlüklerinde yaygındır
-
-### 13. Browline Gözlükler
-Daha güçlü bir üst çerçeveye sahip karışık malzemeli çerçeve şekli.
-- Ayırt edici ve vintage esintili
-- Farklı malzemeleri birleştirir
-- Genellikle optik koleksiyonlarda kullanılır
-
-### 14. Saran (Wrap-Around) Gözlükler
-Yüzün hatlarını takip eden kavisli çerçeve şekli.
-- Spor odaklı ve koruyucu
-- Daha iyi yan koruma
-- Performans gözlüklerinde yaygındır

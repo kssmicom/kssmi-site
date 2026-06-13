@@ -2,7 +2,7 @@
 section: 's02-construction'
 eyebrow: 'Construction de Monture'
 heading: 'Constructions de Montures de Lunettes Sur Mesure'
-subheading: 'Nous proposons diverses constructions de montures pour différents objectifs, des conceptions cerclées et demi-cerclées aux solutions sans monture, pliables, à clipser (clip-on) et relevables.'
+subheading: "Notre expertise dans la construction de montures aide les marques à réduire les risques d'assemblage, à contrôler les retours après-vente et à gérer les coûts débarqués avec plus de précision sur les différents canaux de vente."
 materials:
   - name: 'Monture Cerclée'
     subtitle: 'Une construction qui entoure complètement le verre pour un soutien et une protection optimaux.'

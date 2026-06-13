@@ -2,7 +2,7 @@
 section: 's02-construction'
 eyebrow: 'Konstruksi Pigura'
 heading: 'Konstruksi Pigura Kacamata Khusus'
-subheading: 'Kita ndhukung macem-macem konstruksi pigura kanggo macem-macem target produk, saka desain pigura lengkap lan pigura setengah nganti solusi tanpa pigura, bisa dilipat, klip-tambah, lan bisa dibalik.'
+subheading: 'Keahlian konstruksi pigura kita mbantu merek nyuda risiko perakitan, ngontrol bali sawise dodolan, lan ngatur biaya sing didaratake kanthi luwih akurat ing macem-macem saluran dodolan.'
 materials:
   - name: 'Pigura Lengkap'
     subtitle: 'Konstruksi pigura sing ngubengi lensa kanthi lengkap kanggo dhukungan lan perlindungan maksimal.'

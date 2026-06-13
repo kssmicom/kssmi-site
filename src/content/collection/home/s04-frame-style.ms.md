@@ -2,7 +2,7 @@
 section: 's04-frame-style'
 eyebrow: 'Gaya Bingkai'
 heading: 'Gaya Bingkai Cermin Mata Tersuai'
-subheading: 'Kami menyokong pelbagai gaya bingkai cermin mata, daripada penampilan klasik dan minimalis kepada reka bentuk berorientasikan fesyen, perniagaan, sukan dan bersaiz besar.'
+subheading: 'Keupayaan pembangunan gaya cermin mata yang komprehensif membantu jenama membina koleksi yang mengimbangi daya tarikan abadi, ekspresi berteraskan trend dan hala tuju khusus jenama.'
 materials:
   - name: 'Klasik / Vintaj'
     subtitle: 'Hala tuju gaya yang diilhamkan oleh reka bentuk cermin mata yang abadi.'

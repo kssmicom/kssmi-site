@@ -2,7 +2,7 @@
 section: 's04-frame-style'
 eyebrow: 'Estilo de Montura'
 heading: 'Estilos de Monturas de Gafas Personalizadas'
-subheading: 'Apoyamos una amplia gama de estilos de monturas de gafas, desde looks clásicos y minimalistas hasta diseños vanguardistas, de negocios, deportivos y oversize.'
+subheading: 'La amplia capacidad de desarrollo de estilos de gafas ayuda a las marcas a construir colecciones que equilibran el atractivo atemporal, la expresión impulsada por las tendencias y la dirección específica de la marca.'
 materials:
   - name: 'Clásico / Vintage'
     subtitle: 'Una dirección de estilo inspirada en diseños de gafas atemporales.'

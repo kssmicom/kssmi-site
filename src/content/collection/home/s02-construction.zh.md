@@ -2,7 +2,7 @@
 section: 's02-construction'
 eyebrow: '镜架结构'
 heading: '定制眼镜架结构'
-subheading: '我们支持满足不同产品目标的各种镜架结构，包括全框、半框、无框、折叠、磁吸及上翻等解决方案。'
+subheading: '我们的镜架结构专业知识帮助品牌降低组装风险，控制售后退货率，并在不同销售渠道中更精确地管理落地成本。'
 materials:
   - name: '全框'
     subtitle: '一种完全包围镜片以提供最大支撑和保护的镜架结构。'

@@ -2,7 +2,7 @@
 section: 's02-construction'
 eyebrow: 'Cấu Trúc Gọng'
 heading: 'Các Cấu Trúc Gọng Kính Tùy Chỉnh'
-subheading: 'Chúng tôi hỗ trợ nhiều cấu trúc gọng khác nhau cho các mục tiêu sản phẩm khác nhau, từ thiết kế gọng nguyên khung và gọng nửa khung đến các giải pháp không gọng, gọng gấp, kẹp gọng (clip-on) và gọng lật.'
+subheading: 'Chuyên môn về cấu trúc gọng kính của chúng tôi giúp các thương hiệu giảm thiểu rủi ro lắp ráp, kiểm soát hàng trả lại sau bán hàng và quản lý chi phí cập bến chính xác hơn trên các kênh bán hàng khác nhau.'
 materials:
   - name: 'Gọng Nguyên Khung'
     subtitle: 'Cấu trúc gọng bao quanh hoàn toàn tròng kính để hỗ trợ và bảo vệ tối đa.'

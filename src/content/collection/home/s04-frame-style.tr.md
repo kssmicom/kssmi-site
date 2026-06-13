@@ -2,7 +2,7 @@
 section: 's04-frame-style'
 eyebrow: 'Çerçeve Stili'
 heading: 'Özel Gözlük Çerçevesi Stilleri'
-subheading: 'Klasik ve minimalist görünümlerden modaya yön veren, iş, spor ve büyük boy tasarımlara kadar çok çeşitli gözlük çerçevesi stillerini destekliyoruz.'
+subheading: 'Kapsamlı gözlük stili geliştirme yeteneği, markaların zamansız çekiciliği, trend odaklı tasarımı ve markaya özgü yönelimi dengeleyen koleksiyonlar oluşturmasına yardımcı olur.'
 materials:
   - name: 'Klasik / Vintage'
     subtitle: 'Zamansız gözlük tasarımlarından ilham alan bir stil yönü.'

@@ -2,7 +2,7 @@
 section: 's02-construction'
 eyebrow: 'Construção da Armação'
 heading: 'Construções Personalizadas de Armações de Óculos'
-subheading: 'Oferecemos uma variedade de construções de armações para diferentes objetivos de produto, desde modelos de armação completa e meia armação até soluções sem armação, dobráveis, clip-on e rebatíveis.'
+subheading: 'A nossa experiência na construção de armações ajuda as marcas a reduzir os riscos de montagem, controlar as devoluções pós-venda e gerir os custos de desembarque de forma mais precisa em diferentes canais de vendas.'
 materials:
   - name: 'Armação Completa'
     subtitle: 'Uma construção que envolve totalmente a lente para oferecer máximo suporte e proteção.'

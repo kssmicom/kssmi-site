@@ -2,7 +2,7 @@
 section: 's02-construction'
 eyebrow: 'Rahmenkonstruktion'
 heading: 'Maßgeschneiderte Brillenfassungskonstruktionen'
-subheading: 'Wir unterstützen eine Reihe von Rahmenkonstruktionen für verschiedene Produktziele, von Vollrand- und Halbranddesigns bis hin zu randlosen, klappbaren, Clip-on- und aufklappbaren Lösungen.'
+subheading: 'Unsere Expertise in der Fassungskonstruktion hilft Marken, Montagerisiken zu reduzieren, Retouren nach dem Verkauf zu kontrollieren und die Einstandskosten über verschiedene Vertriebskanäle hinweg genauer zu steuern.'
 materials:
   - name: 'Vollrand'
     subtitle: 'Eine Konstruktion, die das Brillenglas für maximalen Halt und Schutz vollständig umschließt.'

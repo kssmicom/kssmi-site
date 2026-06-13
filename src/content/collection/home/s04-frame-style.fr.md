@@ -2,7 +2,7 @@
 section: 's04-frame-style'
 eyebrow: 'Style de Monture'
 heading: 'Styles de Montures de Lunettes Personnalisées'
-subheading: 'Nous proposons une large gamme de styles de montures de lunettes, des looks classiques et minimalistes aux designs avant-gardistes, professionnels, sportifs et oversize.'
+subheading: 'La vaste capacité de développement de styles de lunettes aide les marques à concevoir des collections qui équilibrent attrait intemporel, expression tendance et direction spécifique à la marque.'
 materials:
   - name: 'Classique / Vintage'
     subtitle: 'Une direction de style inspirée des designs de lunettes intemporels.'

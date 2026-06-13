@@ -2,7 +2,7 @@
 section: 's02-construction'
 eyebrow: 'Construcción de Montura'
 heading: 'Construcciones Personalizadas de Monturas de Gafas'
-subheading: 'Admitimos una variedad de construcciones de monturas para diferentes objetivos de productos, desde diseños de montura completa y semi-montura hasta soluciones sin montura, plegables, clip-on y abatibles.'
+subheading: 'Nuestra experiencia en la construcción de monturas ayuda a las marcas a reducir los riesgos de ensamblaje, controlar las devoluciones posventa y gestionar los costes de destino de forma más precisa en los diferentes canales de venta.'
 materials:
   - name: 'Montura Completa'
     subtitle: 'Una construcción que rodea completamente la lente para obtener el máximo soporte y protección.'

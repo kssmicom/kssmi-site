@@ -2,247 +2,131 @@
 section: 's03-frame-shape'
 eyebrow: '框型'
 heading: '眼镜框型解决方案'
-subheading: '丰富的多结构框型制造经验提供了坚实的技术基础，使您能够选择现有的配置或汲取灵感来定制独家的新款式。'
+subheading: "为帮助品牌打造适配全球脸型的市场化镜框系列，我们将丰富的成熟款式轮廓库与专属形状的定制模具开发能力相结合。"
 materials:
   - name: '圆形框'
-    subtitle: '正圆几何基础型'
+    subtitle: '经典的圆形镜框，外观柔和平衡。'
     points:
-      - '高对称无棱角设计'
-      - '复古经典工业标准框型'
-      - '严苛要求金属线圈弯折成型精度'
+      - '对称且经典'
+      - '适合金属或板材材质'
+      - '常见于复古风格设计'
     slug: 'round-eyewear'
     image: '/media/products/kso-010-carbon-fiber-optical-frame/oem-odm-customized-carbon-fiber-optical-frame-kso-010-13.webp'
 
   - name: '椭圆形框'
-    subtitle: '横向拉长圆润结构'
+    subtitle: '一种宽度略大于高度的圆形镜框。'
     points:
-      - '宽大扁平无棱角外形'
-      - '轻松兼容多类面部轮廓公差'
-      - '适配金属微型框或Y2K板材/Acetate框'
+      - '柔和且易于佩戴'
+      - '适合多种脸型'
+      - '常用于迷你金属或板材镜框'
     slug: 'oval-eyewear'
     image: '/media/products/kas-501-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-501-13.webp'
 
   - name: '方形框'
-    subtitle: '等宽高四边形结构'
+    subtitle: '平衡的镜框形状，具有强烈的几何轮廓。'
     points:
-      - '近1:1框面宽高比例'
-      - '分为直角边缘与柔和圆角'
-      - '为佩戴者最大化垂直视觉视野'
+      - '干净、结构化的外观'
+      - '有锐角或圆角可选'
+      - '适合现代和经典款式'
     slug: 'square-eyewear'
     image: '/media/products/kjs-004-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kjs-004-1.webp'
 
   - name: '矩形框'
-    subtitle: '宽扁平行四边结构'
+    subtitle: '宽而平的镜框形状，轮廓更具流线型。'
     points:
-      - '框面宽度显著大于高度'
-      - '紧凑结构利于整体克重控制'
-      - '常见于轻量化钛架/Titanium极简设计'
+      - '外观纤薄轻巧'
+      - '常用于钛金属设计'
+      - '适合日常佩戴'
     slug: 'rectangle-eyewear'
     image: '/media/products/kas-131-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-131-9.webp'
 
   - name: '六边形框'
-    subtitle: '基础多边形切割'
+    subtitle: '六边形几何镜框，具有现代感。'
     points:
-      - '由六条直线边框精准构成'
-      - '具备强烈现代工业线条切割感'
-      - '多用高密度板材/Acetate维持线条锐度'
+      - '独特且具有现代感'
+      - '线条硬朗，视觉冲击力强'
+      - '适合板材或金属材质'
     slug: 'hexagonal-eyewear'
     image: '/media/products/kas-125-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-125-1.webp'
 
   - name: '八边形框'
-    subtitle: '复杂多边形结构'
+    subtitle: '八边形几何镜框，具有精致的现代感。'
     points:
-      - '由八条直线或微弧边框构成'
-      - '外围贴近圆形但具多维几何切面'
-      - '极度考验金属模具冲压与焊接工艺'
+      - '比六边形镜框更精致'
+      - '抢眼但依然适合佩戴'
+      - '需要精密的塑形和表面处理'
     slug: 'octagonal-eyewear'
     image: '/media/collection/home/octagonal-eyewear.webp'
 
   - name: '潘托框'
-    subtitle: '高铰链复古圆框'
+    subtitle: '经典的镜框形状，底部呈圆形，顶部较平。'
     points:
-      - '顶部平直且底部呈圆弧形'
-      - '装配桩头与铰链位置偏高'
-      - '二战后欧美眼镜工业标准经典款'
+      - '复古风格且百搭'
+      - '强烈的复古魅力'
+      - '常见于光学眼镜和时尚镜框'
     slug: 'panto-eyewear'
     image: '/media/products/kas-310-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-310-5.webp'
 
   - name: 'D型框'
-    subtitle: '顶部平直半圆结构'
+    subtitle: '具有平顶和圆形底边的镜框形状。'
     points:
-      - '顶部水平切齐与下半部U型圆弧'
-      - '整体框型形似向右平躺的字母D'
-      - '常以厚实板材/Acetate凸显产品体量感'
+      - '大胆且结构化的外观'
+      - '适合较厚的板材镜框'
+      - '在复古和现代系列中很受欢迎'
     slug: 'd-frame-eyewear'
     image: '/media/products/kas-309-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-309-1.webp'
 
   - name: '飞行员框'
-    subtitle: '双中梁水滴形结构'
+    subtitle: '具有双梁的泪珠形镜框。'
     points:
-      - '标志性双中梁稳固结构'
-      - '特征明显的下沉式水滴形镜圈'
-      - '最大化框面面积提供基础物理遮蔽'
+      - '标志性且易于辨认的设计'
+      - '提供宽广的镜片覆盖范围'
+      - '适合太阳镜和光学眼镜款式'
     slug: 'aviator-eyewear'
     image: '/media/products/kas-344-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-344-1.webp'
 
   - name: '梯形框'
-    subtitle: '经典倒梯形结构'
+    subtitle: '具有较宽顶部和较窄底部的镜框形状。'
     points:
-      - '上宽下窄的倒梯形外缘'
-      - '桩头向两侧横向外延常配金属前饰钉'
-      - '板材/Acetate太阳镜最高开模率常青款'
+      - '经久不衰的商业款式'
+      - '坚固且易于佩戴'
+      - '常见于板材太阳镜'
     slug: 'wayfarer-eyewear'
     image: '/media/products/kas-102-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-102-9.webp'
 
   - name: '猫眼框'
-    subtitle: '外角上扬结构'
+    subtitle: '具有上翘外角的镜框形状。'
     points:
-      - '外侧上角显著向斜上方扬起'
-      - '视觉重心强制集中于镜架两侧外缘'
-      - '高度依赖板材/Acetate精准CNC 3D立体切割'
+      - '充满女性魅力且富有表现力的外观'
+      - '增加面部的视觉提升感'
+      - '在前卫时尚的系列中很受欢迎'
     slug: 'cat-eye-eyewear'
     image: '/media/products/kas-111-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-111-1.webp'
 
   - name: '蝴蝶框'
-    subtitle: '大尺寸外扩结构'
+    subtitle: '一种从鼻梁向外扩展的超大镜框形状。'
     points:
-      - '鼻梁内侧极窄且向外侧大幅延展'
-      - '外缘宽度与表面积显著大于内缘'
-      - '大号女款太阳镜主流注塑/板材模具型'
+      - '充满戏剧性和迷人的风格'
+      - '提供强有力的面部覆盖'
+      - '常见于女士太阳镜'
     slug: 'butterfly-eyewear'
     image: '/media/products/kjs-001-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kjs-001-1.webp'
 
   - name: '眉线框'
-    subtitle: '异材质拼接眉线结构'
+    subtitle: '混合材质的镜框形状，具有更强的上边框。'
     points:
-      - '上半部板材加宽加厚模拟眉毛形态'
-      - '下半部为金属细框或无框尼龙丝固定'
-      - '对异材质拼接的装配公差管控极其严格'
+      - '独特且具有复古风格'
+      - '结合了不同的材质'
+      - '常用于光学眼镜系列'
     slug: 'browline-eyewear'
     image: '/media/products/kjs-018-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kjs-018-3.webp'
 
   - name: '包裹式框'
-    subtitle: '大弯度贴合结构'
+    subtitle: '贴合面部轮廓的弧形镜框形状。'
     points:
-      - '采用6弯至8弯以上的大弯度面弧设计'
-      - '极致贴合面部提供侧方防风物理防护'
-      - '多采用轻质柔韧的注塑TR90或碳纤维材质'
+      - '注重运动和保护'
+      - '提供更好的侧面覆盖'
+      - '常见于运动性能眼镜'
     slug: 'wrap-around-eyewear'
     image: '/media/products/kas-164-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-164-1.webp'
 ---
-
-## 眼镜框型
-
-我们提供多种镜框形状，从经典的圆形和方形款式，到时尚的猫眼和高性能的包裹式设计。
-
-### 1. 圆形眼镜
-
-经典的圆形镜框，外观柔和平衡。
-
-- 对称且永不过时
-- 适用于金属或板材
-- 常见于复古风格设计
-
-### 2. 椭圆形眼镜
-
-一种宽度略大于高度的圆形镜框。
-
-- 柔和且易于佩戴
-- 适合多种脸型
-- 常用于迷你金属或板材镜框
-
-### 3. 方形眼镜
-
-平衡的镜框形状，具有强烈的几何轮廓。
-
-- 外观整洁且结构感强
-- 可选择尖角或圆角
-- 适合现代和经典风格
-
-### 4. 矩形眼镜
-
-宽而平的镜框，具有更加流线型的轮廓。
-
-- 外观修长轻巧
-- 常用于钛金属设计
-- 适合简洁的日常佩戴
-
-### 5. 六边形眼镜
-
-具有现代前卫感的六边形几何镜框。
-
-- 独特且极具现代感
-- 线条硬朗，视觉个性鲜明
-- 适用于板材或金属
-
-### 6. 八边形眼镜
-
-具有精致现代感的八边形几何镜框。
-
-- 比六边形更具细节感
-- 抢眼但易于日常佩戴
-- 需要精准的塑形和表面处理
-
-### 7. Panto（潘托）眼镜
-
-经典的镜框形状，下半部圆润，上半部较平。
-
-- 极具复古风格且百搭
-- 强烈的复古魅力
-- 常见于光学眼镜和时尚镜框
-
-### 8. D型眼镜
-
-平顶且下边缘呈圆弧形的镜框。
-
-- 外观大胆且极具结构感
-- 适用于较厚的板材镜框
-- 在复古和现代系列中均很受欢迎
-
-### 9. 飞行员眼镜
-
-双中梁的水滴形镜框。
-
-- 标志性且极具辨识度的设计
-- 提供广阔的镜片覆盖范围
-- 适用于太阳镜和光学款式
-
-### 10. 徒步旅行者/梯形眼镜
-
-顶部较宽、底部较窄的镜框形状。
-
-- 常青的商业化款式
-- 坚固且易于佩戴
-- 常见于板材太阳镜
-
-### 11. 猫眼眼镜
-
-外角上扬的镜框形状。
-
-- 女性化且极具表现力
-- 为面部增加视觉提升感
-- 在时尚前卫的系列中很受欢迎
-
-### 12. 蝴蝶形眼镜
-
-从中梁向外逐渐加宽的超大号镜框。
-
-- 充满戏剧性且极具魅力的风格
-- 提供大面积的面部覆盖
-- 常见于女士太阳镜
-
-### 13. 眉线眼镜
-
-上边框较厚的混合材质镜框。
-
-- 独特且具有复古灵感
-- 结合了不同的材质
-- 常用于光学系列
-
-### 14. 包裹式眼镜
-
-贴合面部轮廓的弧形镜框。
-
-- 侧重于运动和防护
-- 更好的侧面防护
-- 常见于高性能眼镜

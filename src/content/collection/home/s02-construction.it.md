@@ -2,7 +2,7 @@
 section: 's02-construction'
 eyebrow: 'Costruzione della Montatura'
 heading: 'Costruzioni Personalizzate di Montature per Occhiali'
-subheading: 'Supportiamo una gamma di costruzioni di montature per diversi obiettivi di prodotto, dai design a montatura intera e mezza montatura, fino a soluzioni senza montatura, pieghevoli, clip-on e ribaltabili.'
+subheading: 'La nostra competenza nella costruzione delle montature aiuta i marchi a ridurre i rischi di assemblaggio, controllare i resi post-vendita e gestire i costi di sbarco in modo più accurato nei diversi canali di vendita.'
 materials:
   - name: 'Montatura Intera'
     subtitle: 'Una costruzione che avvolge completamente la lente per il massimo supporto e protezione.'

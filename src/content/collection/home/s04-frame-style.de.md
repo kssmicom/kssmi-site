@@ -2,7 +2,7 @@
 section: 's04-frame-style'
 eyebrow: 'Rahmenstil'
 heading: 'Individuelle Brillenrahmen-Stile'
-subheading: 'Wir unterstützen eine große Auswahl an Brillenrahmen-Stilen, von klassischen und minimalistischen Looks bis hin zu modischen, geschäftlichen, sportlichen und übergroßen Designs.'
+subheading: 'Unsere umfassende Kompetenz in der Entwicklung von Brillenstilen hilft Marken, Kollektionen aufzubauen, die zeitlose Attraktivität, trendbewussten Ausdruck und markenspezifische Ausrichtung perfekt ausbalancieren.'
 materials:
   - name: 'Klassisch / Vintage'
     subtitle: 'Eine Stilrichtung, inspiriert von zeitlosen Brillendesigns.'

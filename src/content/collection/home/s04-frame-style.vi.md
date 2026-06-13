@@ -2,7 +2,7 @@
 section: 's04-frame-style'
 eyebrow: 'Kiểu Gọng Kính'
 heading: 'Phong Cách Gọng Kính Tùy Chỉnh'
-subheading: 'Chúng tôi hỗ trợ nhiều phong cách gọng kính, từ vẻ ngoài cổ điển và tối giản đến các thiết kế tiên phong trong thời trang, doanh nhân, thể thao và gọng lớn.'
+subheading: 'Khả năng phát triển kiểu dáng kính mắt toàn diện giúp các thương hiệu xây dựng các bộ sưu tập cân bằng giữa sức hấp dẫn vượt thời gian, phong cách dẫn đầu xu hướng và định hướng đặc trưng của thương hiệu.'
 materials:
   - name: 'Cổ điển / Vintage'
     subtitle: 'Một hướng phong cách lấy cảm hứng từ các thiết kế kính mắt vượt thời gian.'

@@ -2,7 +2,7 @@
 section: 's02-construction'
 eyebrow: 'Pembinaan Bingkai'
 heading: 'Pembinaan Bingkai Kacamata Tersuai'
-subheading: 'Kami menyokong pelbagai pembinaan bingkai untuk matlamat produk yang berbeza, daripada reka bentuk bingkai penuh dan bingkai separuh kepada penyelesaian tanpa bingkai, boleh lipat, klip-tambah dan boleh angkat.'
+subheading: 'Kepakaran pembinaan bingkai kami membantu jenama mengurangkan risiko pemasangan, mengawal pulangan selepas jualan, dan menguruskan kos mendarat dengan lebih tepat merentasi saluran jualan yang berbeza.'
 materials:
   - name: 'Bingkai Penuh'
     subtitle: 'Pembinaan bingkai yang mengelilingi sepenuhnya kanta untuk sokongan dan perlindungan maksimum.'

@@ -2,7 +2,7 @@
 section: 's02-construction'
 eyebrow: 'Frame Construction'
 heading: 'Custom Eyewear Frame Constructions'
-subheading: 'We support a range of frame constructions for different product goals, from full-rim and half-rim designs to rimless, folding, clip-on, and flip-up solutions.'
+subheading: 'Our frame construction expertise helps brands reduce assembly risks, control after-sales returns, and manage landed costs more accurately across different sales channels.'
 materials:
   - name: 'Full-rim Eyewear'
     subtitle: 'A frame construction that fully surrounds the lens for maximum support and protection.'

@@ -2,7 +2,7 @@
 section: 's02-construction'
 eyebrow: 'Çerçeve Yapısı'
 heading: 'Özel Gözlük Çerçevesi Yapıları'
-subheading: 'Tam çerçeveli ve yarım çerçeveli tasarımlardan çerçevesiz, katlanır, klipsli ve kaldırma çözümlerine kadar farklı ürün hedefleri için çeşitli çerçeve yapılarını destekliyoruz.'
+subheading: 'Çerçeve yapımındaki uzmanlığımız, markaların montaj risklerini azaltmasına, satış sonrası iadeleri kontrol etmesine ve farklı satış kanallarında varış maliyetlerini daha doğru bir şekilde yönetmesine yardımcı olur.'
 materials:
   - name: 'Tam Çerçeveli'
     subtitle: 'Maksimum destek ve koruma için lensi tamamen çevreleyen bir çerçeve yapısı.'

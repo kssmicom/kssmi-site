@@ -2,7 +2,7 @@
 section: 's04-frame-style'
 eyebrow: 'Gaya Pigura'
 heading: 'Gaya Pigura Kacamata Khusus'
-subheading: 'Kita ndhukung macem-macem gaya pigura kacamata, saka tampilan klasik lan minimalis nganti desain fashion maju, bisnis, olahraga, lan ukuran gedhe.'
+subheading: 'Kemampuan pangembangan gaya kacamata sing wiyar mbantu merek nggawe koleksi sing ngimbangi daya tarik sing langgeng, ekspresi sing ngetutake tren, lan arah khusus merek.'
 materials:
   - name: 'Klasik / Vintage'
     subtitle: 'Arah gaya sing diilhami saka desain kacamata sing ora lekang wektu.'

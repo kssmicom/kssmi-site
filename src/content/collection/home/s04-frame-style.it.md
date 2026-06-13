@@ -2,7 +2,7 @@
 section: 's04-frame-style'
 eyebrow: 'Stile della Montatura'
 heading: 'Stili di Montature per Occhiali Personalizzati'
-subheading: "Supportiamo un'ampia gamma di stili di montature per occhiali, dai look classici e minimalisti ai design all'avanguardia, business, sportivi e oversize."
+subheading: 'Le ampie capacità di sviluppo di stili per occhiali aiutano i marchi a costruire collezioni che bilanciano fascino senza tempo, espressione orientata alle tendenze e direzione specifica del marchio.'
 materials:
   - name: 'Classico / Vintage'
     subtitle: 'Una direzione di stile ispirata a design di occhiali senza tempo.'

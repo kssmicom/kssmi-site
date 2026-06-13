@@ -2,7 +2,7 @@
 section: 's04-frame-style'
 eyebrow: 'Estilo de Armação'
 heading: 'Estilos de Armações de Óculos Personalizadas'
-subheading: 'Apoiamos uma vasta gama de estilos de armações de óculos, desde looks clássicos e minimalistas até designs vanguardistas, executivos, desportivos e oversize.'
+subheading: 'A ampla capacidade de desenvolvimento de estilos de óculos ajuda as marcas a construir coleções que equilibram apelo atemporal, expressão baseada em tendências e direção específica da marca.'
 materials:
   - name: 'Clássico / Vintage'
     subtitle: 'Uma direção de estilo inspirada em designs de óculos intemporais.'
