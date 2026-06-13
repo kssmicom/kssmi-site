@@ -130,3 +130,119 @@ materials:
     slug: 'wrap-around-eyewear'
     image: '/media/products/kas-164-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-164-1.webp'
 ---
+
+## Formas de Monturas de Gafas
+
+Trabajamos con una amplia gama de formas de monturas, desde estilos redondos y cuadrados clásicos hasta diseños de ojo de gato vanguardistas y envolventes de alto rendimiento.
+
+### 1. Gafas Redondas
+
+Una forma clásica de montura circular con un aspecto suave y equilibrado.
+
+- Simétricas y atemporales
+- Funcionan bien en metal o acetato
+- Comunes en diseños de inspiración retro
+
+### 2. Gafas Ovaladas
+
+Una forma de montura redondeada que es ligeramente más ancha que alta.
+
+- Suaves y fáciles de llevar
+- Favorecen a muchas formas de rostro
+- A menudo se usan en mini monturas de metal o acetato
+
+### 3. Gafas Cuadradas
+
+Una forma de montura equilibrada con un contorno geométrico fuerte.
+
+- Aspecto limpio y estructurado
+- Disponibles con esquinas afiladas o suaves
+- Buenas para estilos modernos y clásicos
+
+### 4. Gafas Rectangulares
+
+Una forma de montura ancha y plana con un perfil más aerodinámico.
+
+- Aspecto delgado y ligero
+- A menudo se usan en diseños de titanio
+- Adecuadas para uso diario y limpio
+
+### 5. Gafas Hexagonales
+
+Una forma de montura geométrica de seis lados con un toque moderno.
+
+- Aspecto distintivo y contemporáneo
+- Líneas fuertes con carácter visual
+- Funcionan bien en acetato o metal
+
+### 6. Gafas Octagonales
+
+Una forma de montura geométrica de ocho lados con una sensación moderna y refinada.
+
+- Más detalladas que una montura hexagonal
+- Llamativas pero fáciles de llevar
+- Requieren dar forma y acabado precisos
+
+### 7. Gafas Panto
+
+Una forma clásica de montura con una curva inferior redonda y una parte superior más plana.
+
+- De inspiración vintage y versátiles
+- Fuerte atractivo retro
+- Comunes en monturas ópticas y de moda
+
+### 8. Gafas en Forma de D
+
+Una forma de montura con una parte superior plana y un borde inferior redondeado.
+
+- Aspecto audaz y estructurado
+- Funcionan bien en monturas de acetato más gruesas
+- Populares en colecciones retro y modernas
+
+### 9. Gafas de Aviador
+
+Una montura en forma de lágrima con doble puente.
+
+- Diseño icónico y reconocible
+- Ofrecen amplia cobertura de lentes
+- Adecuadas para gafas de sol y estilos ópticos
+
+### 10. Gafas Wayfarer / Trapezoidales
+
+Una forma de montura con la parte superior más ancha y la parte inferior más estrecha.
+
+- Estilo comercial imperecedero
+- Fuertes y fáciles de llevar
+- Comunes en gafas de sol de acetato
+
+### 11. Gafas de Ojo de Gato (Cat-Eye)
+
+Una forma de montura con esquinas exteriores levantadas.
+
+- Aspecto femenino y expresivo
+- Añaden realce visual al rostro
+- Populares en colecciones de moda vanguardistas
+
+### 12. Gafas de Mariposa
+
+Una forma de montura de gran tamaño que se ensancha hacia afuera desde el puente.
+
+- Estilo dramático y glamuroso
+- Ofrecen una fuerte cobertura facial
+- Comunes en gafas de sol para mujeres
+
+### 13. Gafas Browline
+
+Una forma de montura de material mixto con un borde superior más fuerte.
+
+- Distintivas y de inspiración vintage
+- Combinan diferentes materiales
+- A menudo se usan en colecciones ópticas
+
+### 14. Gafas Envolventes
+
+Una forma de montura curvada que sigue el contorno del rostro.
+
+- Enfocadas en el deporte y protectoras
+- Mejor cobertura lateral
+- Comunes en gafas de rendimiento

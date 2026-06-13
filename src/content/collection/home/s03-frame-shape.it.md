@@ -130,3 +130,119 @@ materials:
     slug: 'wrap-around-eyewear'
     image: '/media/products/kas-164-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-164-1.webp'
 ---
+
+## Forme delle Montature per Occhiali
+
+Lavoriamo con una vasta gamma di forme di montature, dai classici stili rotondi e quadrati ai design cat-eye alla moda e avvolgenti ad alte prestazioni.
+
+### 1. Occhiali Rotondi
+
+Una classica forma circolare con un aspetto morbido ed equilibrato.
+
+- Simmetrico e senza tempo
+- Funziona bene in metallo o acetato
+- Comune nei design di ispirazione retrò
+
+### 2. Occhiali Ovali
+
+Una forma arrotondata che è leggermente più larga che alta.
+
+- Morbido e facile da indossare
+- Valorizza molte forme del viso
+- Spesso usato in mini montature in metallo o acetato
+
+### 3. Occhiali Quadrati
+
+Una forma equilibrata con un forte contorno geometrico.
+
+- Aspetto pulito e strutturato
+- Disponibile con angoli netti o morbidi
+- Ideale per stili moderni e classici
+
+### 4. Occhiali Rettangolari
+
+Una forma larga e piatta con un profilo più aerodinamico.
+
+- Aspetto sottile e leggero
+- Spesso usato nei design in titanio
+- Adatto per un abbigliamento quotidiano pulito
+
+### 5. Occhiali Esagonali
+
+Una forma geometrica a sei lati con un tocco moderno.
+
+- Aspetto distinto e contemporaneo
+- Linee forti con carattere visivo
+- Funziona bene in acetato o metallo
+
+### 6. Occhiali Ottagonali
+
+Una forma geometrica a otto lati con un tocco moderno e raffinato.
+
+- Più dettagliato di una montatura esagonale
+- Accattivante ma comunque indossabile
+- Richiede modellazione e finitura precise
+
+### 7. Occhiali Panto
+
+Una classica forma con una curva inferiore rotonda e una parte superiore più piatta.
+
+- Di ispirazione vintage e versatile
+- Forte fascino retrò
+- Comune in montature da vista e alla moda
+
+### 8. Occhiali a D
+
+Una forma con la parte superiore piatta e il bordo inferiore arrotondato.
+
+- Aspetto audace e strutturato
+- Funziona bene in montature spesse in acetato
+- Popolare nelle collezioni retrò e moderne
+
+### 9. Occhiali Aviator
+
+Una forma a goccia con doppio ponte.
+
+- Design iconico e riconoscibile
+- Offre un'ampia copertura delle lenti
+- Adatto per occhiali da sole e da vista
+
+### 10. Occhiali Wayfarer / Trapezoidali
+
+Una forma con la parte superiore più larga e la parte inferiore più stretta.
+
+- Stile commerciale sempreverde
+- Forte e facile da indossare
+- Comune negli occhiali da sole in acetato
+
+### 11. Occhiali Cat-Eye
+
+Una forma con gli angoli esterni sollevati.
+
+- Aspetto femminile ed espressivo
+- Aggiunge slancio visivo al viso
+- Popolare nelle collezioni alla moda
+
+### 12. Occhiali a Farfalla
+
+Una forma oversize che si allarga verso l'esterno dal ponte.
+
+- Stile drammatico e glamour
+- Offre una forte copertura facciale
+- Comune negli occhiali da sole da donna
+
+### 13. Occhiali Browline
+
+Una forma in materiale misto con un cerchio superiore più forte.
+
+- Distintivo e di ispirazione vintage
+- Combina materiali diversi
+- Spesso usato nelle collezioni da vista
+
+### 14. Occhiali Avvolgenti
+
+Una forma curva che segue il contorno del viso.
+
+- Focalizzato sullo sport e protettivo
+- Migliore copertura laterale
+- Comune negli occhiali ad alte prestazioni

@@ -130,3 +130,91 @@ materials:
     slug: 'wrap-around-eyewear'
     image: '/media/products/kas-164-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-164-1.webp'
 ---
+
+## Wujud Pigura Kacamata
+
+Kita nggarap macem-macem wujud pigura, wiwit saka gaya bunder lan kotak klasik nganti desain mripat kucing sing modis lan desain mbungkus kinerja dhuwur.
+
+### 1. Kacamata Bunder
+Wujud pigura bunder klasik kanthi tampilan sing alus lan seimbang.
+- Simetris lan ora lekang dening wektu
+- Apik digunakake ing logam utawa asetat
+- Umum ing desain inspirasi retro
+
+### 2. Kacamata Oval
+Wujud pigura sing dibunderake sing rada luwih amba tinimbang dhuwure.
+- Alus lan gampang digunakake
+- Pas kanggo akeh wujud rai
+- Asring digunakake ing pigura logam mini utawa asetat
+
+### 3. Kacamata Kotak
+Wujud pigura sing seimbang kanthi garis geometris sing kuwat.
+- Tampilan sing resik lan terstruktur
+- Kasedhiya kanthi sudut sing landhep utawa alus
+- Apik kanggo gaya modern lan klasik
+
+### 4. Kacamata Persegi Panjang
+Wujud pigura sing amba lan warata kanthi profil sing luwih apik.
+- Tampilan sing ramping lan entheng
+- Asring digunakake ing desain titanium
+- Cocog kanggo nyandhang saben dina sing resik
+
+### 5. Kacamata Heksagonal
+Wujud pigura geometris enem sisih kanthi sentuhan modern.
+- Tampilan sing beda lan kontemporer
+- Garis sing kuwat kanthi karakter visual
+- Apik digunakake ing asetat utawa logam
+
+### 6. Kacamata Oktagonal
+Wujud pigura geometris wolung sisih kanthi rasa modern sing apik.
+- Luwih rinci tinimbang pigura heksagonal
+- Narik kawigaten nanging isih gampang digunakake
+- Mbutuhake pembentukan lan finishing sing tepat
+
+### 7. Kacamata Panto
+Wujud pigura klasik kanthi kurva ngisor bunder lan sisih ndhuwur sing luwih warata.
+- Diilhami gaya vintage lan serbaguna
+- Daya tarik retro sing kuwat
+- Umum ing pigura optik lan fashion
+
+### 8. Kacamata Pigura D
+Wujud pigura kanthi sisih ndhuwur warata lan pinggir ngisor bunder.
+- Tampilan sing kandel lan terstruktur
+- Apik digunakake ing pigura asetat sing luwih kandel
+- Populer ing koleksi retro lan modern
+
+### 9. Kacamata Aviator
+Pigura bentuk tetesan banyu kanthi jembatan ganda.
+- Desain sing apik lan gampang dingerteni
+- Nyedhiyakake jangkoan lensa sing wiyar
+- Cocog kanggo kacamata hitam lan gaya optik
+
+### 10. Kacamata Wayfarer / Trapesium
+Wujud pigura kanthi sisih ndhuwur sing luwih amba lan sisih ngisor sing luwih sempit.
+- Gaya komersial sing ora tau mati
+- Kuwat lan gampang digunakake
+- Umum ing kacamata hitam asetat
+
+### 11. Kacamata Mripat Kucing
+Wujud pigura kanthi sudut njaba sing munggah.
+- Tampilan sing feminim lan ekspresif
+- Nambah efek visual munggah menyang rai
+- Populer ing koleksi fashion sing maju
+
+### 12. Kacamata Kupu-kupu
+Wujud pigura ukuran gedhe sing dadi amba metu saka jembatan.
+- Gaya dramatis lan glamor
+- Nyedhiyakake jangkoan rai sing kuwat
+- Umum ing kacamata hitam wanita
+
+### 13. Kacamata Garis Alis
+Wujud pigura bahan campuran kanthi pinggiran ndhuwur sing luwih kuwat.
+- Beda lan diilhami gaya vintage
+- Nggabungake bahan sing beda
+- Asring digunakake ing koleksi optik
+
+### 14. Kacamata Mbungkus
+Wujud pigura mlengkung sing ngetutake kontur rai.
+- Fokus olahraga lan nglindhungi
+- Jangkoan sisih sing luwih apik
+- Umum ing kacamata kinerja dhuwur

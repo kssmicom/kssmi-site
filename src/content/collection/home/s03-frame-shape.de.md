@@ -130,3 +130,119 @@ materials:
     slug: 'wrap-around-eyewear'
     image: '/media/products/kas-164-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-164-1.webp'
 ---
+
+## Brillenrahmenformen
+
+Wir arbeiten mit einer Vielzahl von Rahmenformen, von klassischen runden und quadratischen Stilen bis hin zu modischen Cat-Eye- und hochleistungsfähigen Wrap-Around-Designs.
+
+### 1. Runde Brillen
+
+Eine klassische kreisförmige Rahmenform mit einem weichen, ausgewogenen Look.
+
+- Symmetrisch und zeitlos
+- Eignen sich gut für Metall oder Acetat
+- Häufig bei retro-inspirierten Designs
+
+### 2. Ovale Brillen
+
+Eine abgerundete Rahmenform, die etwas breiter als hoch ist.
+
+- Weich und leicht zu tragen
+- Schmeicheln vielen Gesichtsformen
+- Häufig in Mini-Metall- oder Acetatfassungen verwendet
+
+### 3. Quadratische Brillen
+
+Eine ausgewogene Rahmenform mit starken geometrischen Konturen.
+
+- Klares und strukturiertes Erscheinungsbild
+- Erhältlich mit scharfen oder weichen Ecken
+- Gut für moderne und klassische Stile
+
+### 4. Rechteckige Brillen
+
+Eine breite, flache Rahmenform mit einem schlankeren Profil.
+
+- Schmales und leichtes Erscheinungsbild
+- Häufig in Titan-Designs verwendet
+- Geeignet für sauberes alltägliches Tragen
+
+### 5. Hexagonale Brillen
+
+Eine sechsseitige geometrische Rahmenform mit einem modernen Touch.
+
+- Markanter und zeitgemäßer Look
+- Starke Linien mit visuellem Charakter
+- Eignen sich gut für Acetat oder Metall
+
+### 6. Oktogonale Brillen
+
+Eine achtseitige geometrische Rahmenform mit einem raffinierten modernen Gefühl.
+
+- Detaillierter als ein hexagonaler Rahmen
+- Auffällig, aber dennoch tragbar
+- Erfordert präzise Formgebung und Veredelung
+
+### 7. Panto-Brillen
+
+Eine klassische Rahmenform mit runder unterer Kurve und flacherer Oberseite.
+
+- Vintage-inspiriert und vielseitig
+- Starker Retro-Reiz
+- Häufig bei optischen und modischen Fassungen
+
+### 8. D-Rahmen-Brillen
+
+Eine Rahmenform mit flacher Oberseite und abgerundeter Unterkante.
+
+- Kühner und strukturierter Look
+- Eignen sich gut für dickere Acetatfassungen
+- Beliebt in Retro- und modernen Kollektionen
+
+### 9. Pilotenbrillen (Aviator)
+
+Ein tropfenförmiger Rahmen mit Doppelsteg.
+
+- Ikonisches und wiedererkennbares Design
+- Bieten eine breite Abdeckung durch die Gläser
+- Geeignet für Sonnenbrillen und optische Stile
+
+### 10. Wayfarer / Trapez-Brillen
+
+Eine Rahmenform mit breiterer Oberseite und schmalerer Unterseite.
+
+- Immergrüner kommerzieller Stil
+- Stark und leicht zu tragen
+- Häufig bei Acetat-Sonnenbrillen
+
+### 11. Cat-Eye-Brillen
+
+Eine Rahmenform mit angehobenen äußeren Ecken.
+
+- Femininer und ausdrucksstarker Look
+- Verleihen dem Gesicht visuelle Hebung
+- Beliebt in modebewussten Kollektionen
+
+### 12. Schmetterlingsbrillen
+
+Eine übergroße Rahmenform, die sich vom Steg nach außen verbreitert.
+
+- Dramatischer und glamouröser Stil
+- Bieten starke Gesichtsabdeckung
+- Häufig bei Damen-Sonnenbrillen
+
+### 13. Browline-Brillen
+
+Eine Rahmenform aus verschiedenen Materialien mit stärkerem oberen Rand.
+
+- Markant und vintage-inspiriert
+- Kombinieren verschiedene Materialien
+- Häufig in optischen Kollektionen verwendet
+
+### 14. Wrap-Around-Brillen
+
+Eine gebogene Rahmenform, die den Konturen des Gesichts folgt.
+
+- Sportorientiert und schützend
+- Bessere seitliche Abdeckung
+- Häufig bei Sportbrillen

@@ -17,6 +17,7 @@ interface Props {
   type?: 'website' | 'product' | 'article';
   noindex?: boolean;
   noHreflang?: boolean;
+  preconnectVideo?: boolean;  // Preconnect to the gumlet video CDN (home hero only)
 }
 
 const {
@@ -29,7 +30,8 @@ const {
   canonical,
   type = 'website',
   noindex = false,
-  noHreflang = false
+  noHreflang = false,
+  preconnectVideo = false
 } = Astro.props;
 
 const t = translations[lang] || translations.en;
@@ -181,10 +183,19 @@ const websiteSchema = {
       href={`https://kssmi.com/${l === 'en' ? '' : l + '/'}${currentPath}`}
     />
   ))}
-  {!noHreflang && <link rel="alternate" hreflang="x-default" href={`https://kssmi.com/${currentPath}`} />}<!-- Preload LCP image: tells browser to fetch it immediately, before HTML is fully parsed -->
+  {!noHreflang && <link rel="alternate" hreflang="x-default" href={`https://kssmi.com/${currentPath}`} />}<!-- Warm the connection to the hero video CDN ASAP (home page only). -->
+  <!-- No crossorigin: the <video> fetch is non-CORS, so the reused socket must match. -->
+  {preconnectVideo && (
+    <>
+      <link rel="preconnect" href="https://video.gumlet.io" />
+      <link rel="dns-prefetch" href="//video.gumlet.io" />
+    </>
+  )}
+
+  <!-- Preload LCP image: tells browser to fetch it immediately, before HTML is fully parsed -->
   <!-- This is the single most impactful fix for Largest Contentful Paint on image-heavy pages -->
   {lcpImage && (
-    <link rel="preload" as="image" href={lcpImage} fetchpriority="high" />
+    <link rel="preload" as="image" href={lcpImage} type={lcpImage.endsWith('.webp') ? 'image/webp' : undefined} fetchpriority="high" />
   )}
 
   <!-- View Transitions for SPA-like speed -->

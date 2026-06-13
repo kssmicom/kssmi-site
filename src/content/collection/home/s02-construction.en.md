@@ -1,60 +1,60 @@
 ---
 section: 's02-construction'
 eyebrow: 'Frame Construction'
-heading: 'Eyewear Frame Construction Solutions'
-subheading: 'The bottom line of mass production control: it pre-empts assembly blind spots and after-sales return risks, helping you precisely calculate landed costs and achieve highly profitable matching between your product lines and sales channels.'
+heading: 'Custom Eyewear Frame Constructions'
+subheading: 'We support a range of frame constructions for different product goals, from full-rim and half-rim designs to rimless, folding, clip-on, and flip-up solutions.'
 materials:
   - name: 'Full-rim Eyewear'
-    subtitle: 'Maximum Lens Protection'
+    subtitle: 'A frame construction that fully surrounds the lens for maximum support and protection.'
     points:
-      - Secure 360° lens enclosure
-      - Conceals thick lens edges
-      - Supports all material types
+      - Secure 360° lens holding
+      - Helps conceal thicker lens edges
+      - Works with most frame materials
     slug: 'full-rim-eyewear'
     image: '/media/products/kas-010-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-010-1.webp'
 
   - name: 'Half-rim Eyewear'
-    subtitle: 'Lightweight and Unobstructed'
+    subtitle: 'A lightweight construction that leaves the lower lens edge open.'
     points:
-      - Nylor cord suspension mount
       - Reduced overall frame weight
-      - Clear lower field of vision
+      - Clearer lower field of vision
+      - Uses nylon cord or similar suspension systems
     slug: 'half-rim-eyewear'
     image: '/media/products/kjs-020-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kjs-020-1.webp'
 
   - name: 'Rimless Eyewear'
-    subtitle: 'Minimalist and Ultra-light'
+    subtitle: 'A minimalist construction where lenses are mounted directly to the frame hardware.'
     points:
-      - Direct structural lens mounting
-      - Requires high tensile lenses
-      - Barely-there facial footprint
+      - Ultra-light and visually minimal
+      - Requires strong lenses and precise drilling
+      - Suitable for clean, discreet designs
     slug: 'rimless-eyewear'
     image: '/media/products/krs-205-rimless-sunglasses/oem-odm-customized-rimless-sunglasses-krs-205-1.webp'
 
   - name: 'Clip-on Eyewear'
-    subtitle: 'Versatile Optical Solution'
+    subtitle: 'A versatile construction that allows a sun clip to attach to optical frames.'
     points:
-      - Seamless magnetic attachment
-      - Optical to sunglasses instantly
-      - Precision aligned front profile
+      - Quick optical-to-sunglass conversion
+      - Magnetic or aligned clip attachment
+      - Practical for dual-use eyewear
     slug: 'clip-on-eyewear'
     image: '/media/products/kts-020-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kts-020-1.webp'
 
   - name: 'Folding Eyewear'
-    subtitle: 'Ultra-compact Portability'
+    subtitle: 'A compact construction that folds down for easy storage and travel.'
     points:
-      - Multi-hinge collapsing mechanism
-      - Pocket-sized storage profile
-      - Strict closure tolerance control
+      - Multi-hinge folding design
+      - Pocket-friendly storage size
+      - Requires precise closure control
     slug: 'folding-eyewear'
     image: '/media/products/kts-207-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kts-207-1.webp'
 
   - name: 'Flip-up Eyewear'
-    subtitle: 'Dual-layer Mechanical Design'
+    subtitle: 'A dual-layer construction with a front lens section that flips upward.'
     points:
+      - Quick indoor-outdoor switching
       - Top-mounted hinge mechanism
-      - Quick environmental adaptation
-      - Retro-industrial functional aesthetic
+      - Retro-inspired functional style
     slug: 'flip-up-eyewear'
     image: '/media/products/kms-117-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-117-1.webp'
 ---

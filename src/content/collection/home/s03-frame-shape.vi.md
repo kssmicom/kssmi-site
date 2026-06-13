@@ -130,3 +130,91 @@ materials:
     slug: 'wrap-around-eyewear'
     image: '/media/products/kas-164-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-164-1.webp'
 ---
+
+## Hình dáng Gọng Kính
+
+Chúng tôi làm việc với nhiều hình dáng gọng kính khác nhau, từ các kiểu dáng tròn và vuông cổ điển cho đến thiết kế mắt mèo thời trang và thiết kế ôm sát hiệu suất cao.
+
+### 1. Kính Tròn
+Một hình dáng gọng tròn cổ điển với vẻ ngoài mềm mại, cân đối.
+- Đối xứng và vượt thời gian
+- Phù hợp với chất liệu kim loại hoặc acetate
+- Thường gặp trong các thiết kế mang cảm hứng retro
+
+### 2. Kính Bầu Dục
+Một hình dáng gọng bo tròn có chiều rộng lớn hơn một chút so với chiều cao.
+- Mềm mại và dễ đeo
+- Tôn lên nhiều hình dáng khuôn mặt
+- Thường được sử dụng trong gọng kim loại mini hoặc acetate
+
+### 3. Kính Vuông
+Một hình dáng gọng cân đối với đường nét hình học mạnh mẽ.
+- Vẻ ngoài gọn gàng và có cấu trúc
+- Có sẵn với các góc nhọn hoặc mềm mại
+- Phù hợp cho các phong cách hiện đại và cổ điển
+
+### 4. Kính Chữ Nhật
+Một hình dáng gọng rộng, phẳng với kiểu dáng bóng bẩy hơn.
+- Vẻ ngoài mỏng và nhẹ
+- Thường được sử dụng trong các thiết kế titan
+- Thích hợp cho trang phục hàng ngày thanh lịch
+
+### 5. Kính Lục Giác
+Một hình dáng gọng hình học sáu cạnh mang nét hiện đại.
+- Vẻ ngoài khác biệt và đương đại
+- Đường nét mạnh mẽ với cá tính thị giác
+- Phù hợp với chất liệu acetate hoặc kim loại
+
+### 6. Kính Bát Giác
+Một hình dáng gọng hình học tám cạnh với cảm giác hiện đại, tinh tế.
+- Chi tiết hơn gọng lục giác
+- Bắt mắt nhưng vẫn dễ đeo
+- Đòi hỏi tạo hình và hoàn thiện chính xác
+
+### 7. Kính Panto
+Một hình dáng gọng cổ điển với đường cong tròn phía dưới và phần trên phẳng hơn.
+- Lấy cảm hứng từ phong cách vintage và linh hoạt
+- Sức hút retro mạnh mẽ
+- Thường gặp trong gọng kính cận và kính thời trang
+
+### 8. Kính Gọng Chữ D
+Một hình dáng gọng với phần trên phẳng và cạnh dưới bo tròn.
+- Vẻ ngoài táo bạo và có cấu trúc
+- Phù hợp với gọng acetate dày hơn
+- Phổ biến trong các bộ sưu tập retro và hiện đại
+
+### 9. Kính Phi Công (Aviator)
+Gọng kính hình giọt nước với cầu kính kép.
+- Thiết kế mang tính biểu tượng và dễ nhận biết
+- Cung cấp độ che phủ tròng kính rộng
+- Phù hợp cho kính râm và kính cận
+
+### 10. Kính Wayfarer / Hình Thang
+Một hình dáng gọng với phần trên rộng hơn và phần dưới hẹp hơn.
+- Phong cách thương mại không bao giờ lỗi mốt
+- Chắc chắn và dễ đeo
+- Thường gặp trong kính râm acetate
+
+### 11. Kính Mắt Mèo
+Một hình dáng gọng với các góc ngoài hếch lên.
+- Vẻ ngoài nữ tính và biểu cảm
+- Thêm hiệu ứng nâng cơ mặt trực quan
+- Phổ biến trong các bộ sưu tập thời trang
+
+### 12. Kính Cánh Bướm
+Một hình dáng gọng quá khổ mở rộng ra bên ngoài từ cầu kính.
+- Phong cách kịch tính và quyến rũ
+- Cung cấp độ che phủ khuôn mặt lớn
+- Thường gặp trong kính râm nữ
+
+### 13. Kính Browline
+Một hình dáng gọng kết hợp nhiều chất liệu với viền trên rõ nét hơn.
+- Khác biệt và lấy cảm hứng từ phong cách vintage
+- Kết hợp các chất liệu khác nhau
+- Thường được sử dụng trong các bộ sưu tập kính cận
+
+### 14. Kính Ôm Sát (Wrap-Around)
+Một hình dáng gọng cong theo đường nét của khuôn mặt.
+- Tập trung vào thể thao và bảo vệ
+- Che phủ hai bên tốt hơn
+- Thường gặp trong kính hiệu suất cao

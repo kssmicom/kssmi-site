@@ -130,3 +130,119 @@ materials:
     slug: 'wrap-around-eyewear'
     image: '/media/products/kas-164-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-164-1.webp'
 ---
+
+## Formas de Armações de Óculos
+
+Trabalhamos com uma ampla gama de formas de armações, desde estilos redondos e quadrados clássicos até designs de olho de gato modernos e envolventes de alto desempenho.
+
+### 1. Óculos Redondos
+
+Uma forma clássica de armação circular com uma aparência suave e equilibrada.
+
+- Simétrico e atemporal
+- Funciona bem em metal ou acetato
+- Comum em designs de inspiração retrô
+
+### 2. Óculos Ovais
+
+Uma forma de armação arredondada que é ligeiramente mais larga do que alta.
+
+- Suave e fácil de usar
+- Favorece muitos formatos de rosto
+- Frequentemente usado em mini armações de metal ou acetato
+
+### 3. Óculos Quadrados
+
+Uma forma de armação equilibrada com um contorno geométrico forte.
+
+- Aparência limpa e estruturada
+- Disponível com cantos vivos ou suaves
+- Ótimo para estilos modernos e clássicos
+
+### 4. Óculos Retangulares
+
+Uma forma de armação larga e plana com um perfil mais simplificado.
+
+- Aparência fina e leve
+- Frequentemente usado em designs de titânio
+- Adequado para uso diário simples
+
+### 5. Óculos Hexagonais
+
+Uma forma de armação geométrica de seis lados com um toque moderno.
+
+- Aparência distinta e contemporânea
+- Linhas fortes com caráter visual
+- Funciona bem em acetato ou metal
+
+### 6. Óculos Octogonais
+
+Uma forma de armação geométrica de oito lados com uma sensação moderna refinada.
+
+- Mais detalhado do que uma armação hexagonal
+- Atraente, mas fácil de usar
+- Requer modelagem e acabamento precisos
+
+### 7. Óculos Panto
+
+Uma forma de armação clássica com uma curva inferior redonda e uma parte superior mais plana.
+
+- De inspiração vintage e versátil
+- Forte apelo retrô
+- Comum em armações ópticas e de moda
+
+### 8. Óculos D-Frame
+
+Uma forma de armação com topo plano e borda inferior arredondada.
+
+- Aparência ousada e estruturada
+- Funciona bem em armações de acetato mais grossas
+- Popular em coleções retrô e modernas
+
+### 9. Óculos Aviador
+
+Uma armação em forma de lágrima com ponte dupla.
+
+- Design icônico e reconhecível
+- Oferece ampla cobertura da lente
+- Adequado para óculos de sol e estilos ópticos
+
+### 10. Óculos Wayfarer / Trapezóide
+
+Uma forma de armação com a parte superior mais larga e a parte inferior mais estreita.
+
+- Estilo comercial perene
+- Forte e fácil de usar
+- Comum em óculos de sol de acetato
+
+### 11. Óculos Olho de Gato (Cat-Eye)
+
+Uma forma de armação com os cantos externos levantados.
+
+- Aparência feminina e expressiva
+- Adiciona elevação visual ao rosto
+- Popular em coleções de moda vanguardistas
+
+### 12. Óculos Borboleta
+
+Uma forma de armação superdimensionada que se alarga para fora a partir da ponte.
+
+- Estilo dramático e glamoroso
+- Oferece forte cobertura facial
+- Comum em óculos de sol femininos
+
+### 13. Óculos Browline
+
+Uma forma de armação de material misto com um aro superior mais forte.
+
+- Distinto e de inspiração vintage
+- Combina diferentes materiais
+- Frequentemente usado em coleções ópticas
+
+### 14. Óculos Envolventes
+
+Uma forma de armação curva que segue o contorno do rosto.
+
+- Focado em esportes e proteção
+- Melhor cobertura lateral
+- Comum em óculos de desempenho

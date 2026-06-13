@@ -130,3 +130,119 @@ materials:
     slug: 'wrap-around-eyewear'
     image: '/media/products/kas-164-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-164-1.webp'
 ---
+
+## Eyewear Frame Shapes
+
+We work with a wide range of frame shapes, from classic round and square styles to fashion-forward cat-eye and performance wrap-around designs.
+
+### 1. Round Eyewear
+
+A classic circular frame shape with a soft, balanced look.
+
+- Symmetrical and timeless
+- Works well in metal or acetate
+- Common in retro-inspired designs
+
+### 2. Oval Eyewear
+
+A rounded frame shape that is slightly wider than it is tall.
+
+- Soft and easy to wear
+- Flatters many face shapes
+- Often used in mini metal or acetate frames
+
+### 3. Square Eyewear
+
+A balanced frame shape with a strong geometric outline.
+
+- Clean and structured appearance
+- Available with sharp or soft corners
+- Good for modern and classic styles
+
+### 4. Rectangle Eyewear
+
+A wide, flat frame shape with a more streamlined profile.
+
+- Slim and lightweight appearance
+- Often used in titanium designs
+- Suitable for clean everyday wear
+
+### 5. Hexagonal Eyewear
+
+A six-sided geometric frame shape with a modern edge.
+
+- Distinct and contemporary look
+- Strong lines with visual character
+- Works well in acetate or metal
+
+### 6. Octagonal Eyewear
+
+An eight-sided geometric frame shape with a refined modern feel.
+
+- More detailed than a hexagonal frame
+- Eye-catching but still wearable
+- Requires precise shaping and finishing
+
+### 7. Panto Eyewear
+
+A classic frame shape with a round lower curve and a flatter top.
+
+- Vintage-inspired and versatile
+- Strong retro appeal
+- Common in optical and fashion frames
+
+### 8. D-Frame Eyewear
+
+A frame shape with a flat top and a rounded lower edge.
+
+- Bold and structured look
+- Works well in thicker acetate frames
+- Popular in retro and modern collections
+
+### 9. Aviator Eyewear
+
+A teardrop-shaped frame with a double bridge.
+
+- Iconic and recognizable design
+- Offers broad lens coverage
+- Suitable for sunglasses and optical styles
+
+### 10. Wayfarer / Trapezoid Eyewear
+
+A frame shape with a wider top and narrower bottom.
+
+- Evergreen commercial style
+- Strong and easy to wear
+- Common in acetate sunglasses
+
+### 11. Cat-Eye Eyewear
+
+A frame shape with lifted outer corners.
+
+- Feminine and expressive look
+- Adds visual lift to the face
+- Popular in fashion-forward collections
+
+### 12. Butterfly Eyewear
+
+An oversized frame shape that widens outward from the bridge.
+
+- Dramatic and glamorous style
+- Offers strong facial coverage
+- Common in women’s sunglasses
+
+### 13. Browline Eyewear
+
+A mixed-material frame shape with a stronger upper rim.
+
+- Distinctive and vintage-inspired
+- Combines different materials
+- Often used in optical collections
+
+### 14. Wrap-Around Eyewear
+
+A curved frame shape that follows the contour of the face.
+
+- Sport-focused and protective
+- Better side coverage
+- Common in performance eyewear

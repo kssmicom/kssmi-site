@@ -130,3 +130,119 @@ materials:
     slug: 'wrap-around-eyewear'
     image: '/media/products/kas-164-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-164-1.webp'
 ---
+
+## Formes de Montures de Lunettes
+
+Nous travaillons avec une large gamme de formes de montures, des styles ronds et carrés classiques aux designs œil-de-chat avant-gardistes et enveloppants haute performance.
+
+### 1. Lunettes Rondes
+
+Une forme de monture circulaire classique avec un aspect doux et équilibré.
+
+- Symétriques et intemporelles
+- Fonctionnent bien en métal ou en acétate
+- Courantes dans les designs d'inspiration rétro
+
+### 2. Lunettes Ovales
+
+Une forme de monture arrondie qui est légèrement plus large que haute.
+
+- Douces et faciles à porter
+- Mettent en valeur de nombreuses formes de visage
+- Souvent utilisées dans les mini-montures en métal ou en acétate
+
+### 3. Lunettes Carrées
+
+Une forme de monture équilibrée avec un contour géométrique fort.
+
+- Aspect épuré et structuré
+- Disponibles avec des coins nets ou arrondis
+- Idéales pour les styles modernes et classiques
+
+### 4. Lunettes Rectangulaires
+
+Une forme de monture large et plate avec un profil plus aérodynamique.
+
+- Aspect fin et léger
+- Souvent utilisées dans les designs en titane
+- Adaptées pour un port quotidien discret
+
+### 5. Lunettes Hexagonales
+
+Une forme de monture géométrique à six côtés avec une touche moderne.
+
+- Aspect distinct et contemporain
+- Lignes fortes avec un caractère visuel
+- Fonctionnent bien en acétate ou en métal
+
+### 6. Lunettes Octogonales
+
+Une forme de monture géométrique à huit côtés avec une touche moderne et raffinée.
+
+- Plus détaillées qu'une monture hexagonale
+- Attrayantes mais faciles à porter
+- Nécessitent un façonnage et une finition précis
+
+### 7. Lunettes Panto
+
+Une forme de monture classique avec une courbe inférieure ronde et un dessus plus plat.
+
+- D'inspiration vintage et polyvalentes
+- Fort attrait rétro
+- Courantes dans les montures optiques et de mode
+
+### 8. Lunettes en Forme de D
+
+Une forme de monture avec un dessus plat et un bord inférieur arrondi.
+
+- Aspect audacieux et structuré
+- Fonctionnent bien avec des montures en acétate plus épaisses
+- Populaires dans les collections rétro et modernes
+
+### 9. Lunettes Aviateur
+
+Une monture en forme de goutte d'eau avec un double pont.
+
+- Design iconique et reconnaissable
+- Offrent une large couverture des verres
+- Adaptées pour les lunettes de soleil et les styles optiques
+
+### 10. Lunettes Wayfarer / Trapèze
+
+Une forme de monture avec un dessus plus large et un dessous plus étroit.
+
+- Style commercial indémodable
+- Solides et faciles à porter
+- Courantes dans les lunettes de soleil en acétate
+
+### 11. Lunettes Œil-de-Chat (Cat-Eye)
+
+Une forme de monture avec des coins extérieurs relevés.
+
+- Aspect féminin et expressif
+- Ajoutent un effet lifting visuel au visage
+- Populaires dans les collections avant-gardistes
+
+### 12. Lunettes Papillon
+
+Une forme de monture oversize qui s'élargit vers l'extérieur à partir du pont.
+
+- Style dramatique et glamour
+- Offrent une forte couverture du visage
+- Courantes dans les lunettes de soleil pour femmes
+
+### 13. Lunettes Browline
+
+Une forme de monture multi-matériaux avec un bord supérieur plus prononcé.
+
+- Distinctives et d'inspiration vintage
+- Combinent différents matériaux
+- Souvent utilisées dans les collections optiques
+
+### 14. Lunettes Enveloppantes
+
+Une forme de monture incurvée qui épouse le contour du visage.
+
+- Axées sur le sport et protectrices
+- Meilleure couverture latérale
+- Courantes dans les lunettes de performance

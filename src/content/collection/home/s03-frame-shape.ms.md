@@ -130,3 +130,91 @@ materials:
     slug: 'wrap-around-eyewear'
     image: '/media/products/kas-164-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-164-1.webp'
 ---
+
+## Bentuk Bingkai Cermin Mata
+
+Kami bekerja dengan pelbagai bentuk bingkai, dari gaya bulat dan persegi klasik hingga reka bentuk mata kucing yang ke hadapan fesyen dan lilitan berprestasi tinggi.
+
+### 1. Cermin Mata Bulat
+Bentuk bingkai bulat klasik dengan penampilan yang lembut dan seimbang.
+- Simetri dan abadi
+- Berfungsi dengan baik dalam logam atau asetat
+- Biasa dalam reka bentuk inspirasi retro
+
+### 2. Cermin Mata Bujur
+Bentuk bingkai bulat yang sedikit lebih lebar daripada ketinggiannya.
+- Lembut dan mudah dipakai
+- Sesuai dengan pelbagai bentuk muka
+- Selalu digunakan dalam bingkai logam mini atau asetat
+
+### 3. Cermin Mata Persegi
+Bentuk bingkai yang seimbang dengan garis besar geometri yang kuat.
+- Penampilan yang bersih dan berstruktur
+- Terdapat dengan sudut tajam atau lembut
+- Sesuai untuk gaya moden dan klasik
+
+### 4. Cermin Mata Segi Empat Tepat
+Bentuk bingkai lebar dan rata dengan profil yang lebih kemas.
+- Penampilan langsing dan ringan
+- Selalu digunakan dalam reka bentuk titanium
+- Sesuai untuk pakaian harian yang bersih
+
+### 5. Cermin Mata Heksagon
+Bentuk bingkai geometri enam sisi dengan sentuhan moden.
+- Penampilan tersendiri dan kontemporari
+- Garis yang kuat dengan watak visual
+- Berfungsi dengan baik dalam asetat atau logam
+
+### 6. Cermin Mata Oktagon
+Bentuk bingkai geometri lapan sisi dengan rasa moden yang halus.
+- Lebih terperinci daripada bingkai heksagon
+- Menarik perhatian tetapi masih mudah dipakai
+- Memerlukan pembentukan dan kemasan yang tepat
+
+### 7. Cermin Mata Panto
+Bentuk bingkai klasik dengan lengkungan bawah bulat dan bahagian atas yang lebih rata.
+- Diilhamkan dari gaya vintaj dan serba guna
+- Daya tarikan retro yang kuat
+- Biasa dalam bingkai optik dan fesyen
+
+### 8. Cermin Mata Rangka D
+Bentuk bingkai dengan bahagian atas rata dan pinggir bawah yang bulat.
+- Penampilan yang berani dan berstruktur
+- Berfungsi dengan baik dalam bingkai asetat yang lebih tebal
+- Popular dalam koleksi retro dan moden
+
+### 9. Cermin Mata Juruterbang (Aviator)
+Bingkai berbentuk titisan air mata dengan jambatan berkembar.
+- Reka bentuk yang ikonik dan dikenali
+- Menawarkan liputan lensa yang luas
+- Sesuai untuk cermin mata hitam dan gaya optik
+
+### 10. Cermin Mata Wayfarer / Trapezoid
+Bentuk bingkai dengan bahagian atas yang lebih lebar dan bahagian bawah yang lebih sempit.
+- Gaya komersial malar hijau
+- Kuat dan mudah dipakai
+- Biasa dalam cermin mata hitam asetat
+
+### 11. Cermin Mata Mata Kucing (Cat-Eye)
+Bentuk bingkai dengan sudut luar yang terangkat.
+- Penampilan feminin dan ekspresif
+- Menambah peningkatan visual pada wajah
+- Popular dalam koleksi fesyen ke hadapan
+
+### 12. Cermin Mata Rama-rama
+Bentuk bingkai bersaiz besar yang melebar ke luar dari jambatan.
+- Gaya dramatik dan glamor
+- Menawarkan liputan wajah yang kuat
+- Biasa dalam cermin mata hitam wanita
+
+### 13. Cermin Mata Garis Kening (Browline)
+Bentuk bingkai bahan campuran dengan rim atas yang lebih kuat.
+- Tersendiri dan diilhamkan dari gaya vintaj
+- Menggabungkan bahan yang berbeza
+- Selalu digunakan dalam koleksi optik
+
+### 14. Cermin Mata Lilit (Wrap-Around)
+Bentuk bingkai melengkung yang mengikut kontur wajah.
+- Berfokuskan sukan dan perlindungan
+- Liputan sisi yang lebih baik
+- Biasa dalam cermin mata prestasi

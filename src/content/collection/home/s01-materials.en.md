@@ -1,150 +1,150 @@
 ---
 section: 's01-materials'
 eyebrow: 'Frame Materials'
-heading: 'Core Eyewear Frame Materials Solutions'
-subheading: 'From luxury handcrafted acetate (Mazzucchelli) to high-performance titanium — our 16 premium materials meticulously engineered to scale your unique vision into flawless production and precisely to match your brand standards'
+heading: 'Custom Eyewear Frame Materials'
+subheading: 'From premium handcrafted acetate, including Mazzucchelli options, to high-performance titanium, we work with a wide range of frame materials to support different brand positions, product functions, and production needs.'
 materials:
   - name: 'Acetate Eyewear'
-    subtitle: 'Premium Handcrafted Polymer'
+    subtitle: 'A premium plant-based frame material with rich color depth and strong design flexibility.'
     points:
-      - Rich, layered glossy colors
-      - Hypoallergenic and highly adjustable
-      - Luxury fashion brand core
+      - 'Premium fashion and optical frames'
+      - 'Rich layered colors and polished finish'
+      - 'Easy to shape into bold silhouettes'
     slug: 'acetate-eyewear'
     image: '/media/products/kas-007-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-007-1.webp'
 
   - name: 'Titanium Eyewear'
-    subtitle: 'Premium Featherweight Metal'
+    subtitle: 'A lightweight premium metal material with strength, corrosion resistance, and comfort.'
     points:
-      - Lighter and stronger than steel
-      - 100% sweat and allergy proof
-      - High-end business standard
+      - 'High-end optical and sunglasses frames'
+      - 'Very light, strong, and hypoallergenic'
+      - 'Ideal for minimalist premium designs'
     slug: 'titanium-eyewear'
     image: '/media/products/kts-212-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kts-212-1.webp'
 
-  - name: 'Beta-Titanium Eyewear'
-    subtitle: 'Ultra-Flexible Metal'
+  - name: 'Beta Titanium Eyewear'
+    subtitle: 'A flexible premium metal with excellent shape recovery and thin profiles.'
     points:
-      - Superior bending recovery
-      - Ultra-thin lightweight designs
-      - Screwless hinge and minimalist ideal
+      - 'Lightweight premium collections'
+      - 'Excellent bending recovery'
+      - 'Good for slim, screwless designs'
     slug: 'beta-titanium-eyewear'
     image: '/media/products/kjs-005-titanium-sunglasses/oem-odm-customized-titanium-sunglasses-kjs-005-1.webp'
 
   - name: 'Monel / Nickel Silver Eyewear'
-    subtitle: 'Classic Versatile Alloy'
+    subtitle: 'A classic metal material with stable shaping and easy assembly.'
     points:
-      - Easy stamping and shaping
-      - Highly adjustable for assembly
-      - Classic vintage designs
+      - 'Traditional metal eyewear styles'
+      - 'Easy to form and adjust'
+      - 'Good for vintage-inspired designs'
     slug: 'monel-nickel-silver-eyewear'
     image: '/media/products/kjs-024-metal-sunglasses/oem-odm-customized-metal-sunglasses-kjs-024-1.webp'
 
   - name: 'Carbon Fiber Eyewear'
-    subtitle: 'High-Tech Racing Material'
+    subtitle: 'A high-performance material with a strong, lightweight structure.'
     points:
-      - High strength-to-weight ratio
-      - High-tech woven aesthetic
-      - Premium geek and motorsport focus
+      - 'Sport-inspired frames'
+      - 'Very light with high strength'
+      - 'Distinct woven texture and modern appeal'
     slug: 'carbon-fiber-eyewear'
     image: '/media/products/kss-033-carbon-fiber-sunglasses/oem-odm-customized-carbon-fiber-sunglasses-kss-033-1.webp'
 
   - name: 'Nylon Eyewear'
-    subtitle: 'High-Impact Performance'
+    subtitle: 'A tough performance material with resistance and weather durability.'
     points:
-      - Superior impact and weather resistance
-      - Stress-crack resistant structures
-      - Perfect for wraparound designs
+      - 'Wraparound and outdoor eyewear'
+      - 'Resistant to cracking and stress'
+      - 'Good for activewear designs'
     slug: 'nylon-eyewear'
     image: '/media/products/kas-311-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-311-1.webp'
 
   - name: 'TR90 Eyewear'
-    subtitle: 'Ultra-Light Memory Frame'
+    subtitle: 'An ultra-light memory material with flexibility and all-day comfort.'
     points:
-      - Extreme shape-memory recovery
-      - Featherweight all-day comfort
-      - Dominating sports and activewear
+      - 'Sports and everyday lightweight frames'
+      - 'Flexible with shape recovery'
+      - 'Comfortable for long wear'
     slug: 'tr90-eyewear'
     image: '/media/products/kas-164-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-164-1.webp'
 
   - name: 'Polycarbonate (PC) Eyewear'
-    subtitle: 'Ultimate Impact Resistance'
+    subtitle: 'A high-impact material designed for durability and mass production.'
     points:
-      - Shatterproof extreme protection
-      - Highly cost-efficient for bulk
-      - FMCG and safety mainstay
+      - 'Safety and value-focused eyewear'
+      - 'Shatter-resistant and durable'
+      - 'Suitable for bulk programs'
     slug: 'polycarbonate-pc-eyewear'
     image: '/media/products/kas-142-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-142-1.webp'
 
   - name: 'Stainless Steel Eyewear'
-    subtitle: 'Durable and Cost-Effective'
+    subtitle: 'A durable metal with thin profiles and reliable wear.'
     points:
-      - High tensile thin profiles
-      - Nickel-free allergy safe
-      - Fast-fashion metal workhorse
+      - 'Commercial optical and sunglasses frames'
+      - 'Strong and suitable for slim shapes'
+      - 'Suitable for clean modern designs'
     slug: 'stainless-steel-eyewear'
     image: '/media/products/kms-227-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-227-1.webp'
 
   - name: 'Memory Metal Eyewear'
-    subtitle: 'Shape-Memory Alloy'
+    subtitle: 'A shape-recovery metal designed for flexible daily wear.'
     points:
-      - Extreme shape recovery
-      - Unbreakable daily durability
-      - High marketing value
+      - 'Frames that need bend recovery'
+      - 'Helps reduce damage from daily use'
+      - 'Adds functional value to collections'
     slug: 'memory-metal-eyewear'
     image: '/media/products/kms-136-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-136-1.webp'
 
   - name: 'Aluminum Eyewear'
-    subtitle: 'Bold and Lightweight'
+    subtitle: 'A lightweight metal with rigid structure and bold surface finishing.'
     points:
-      - Thick texture, minimal weight
-      - Stunning anodized finishes
-      - Rugged outdoor and cycling styles
+      - 'Modern outdoor and sport frames'
+      - 'Light, rigid, and easy to finish'
+      - 'Works well with anodized colors'
     slug: 'aluminum-eyewear'
     image: '/media/products/kms-229-metal-sunglasses/oem-odm-customized-metal-sunglasses-kms-229-1.webp'
 
   - name: 'Bio-Acetate Eyewear'
-    subtitle: 'Eco-Friendly Sustainable Choice'
+    subtitle: 'A plant-based material with the look and feel of acetate.'
     points:
-      - 100% biodegradable plant-based
-      - Premium traditional acetate texture
-      - ESG-compliant European standard
+      - 'Eco-conscious premium eyewear'
+      - 'Biodegradable and plant-based'
+      - 'Good for ESG-focused collections'
     slug: 'bio-acetate-eyewear'
     image: '/media/products/kas-020-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-020-4.webp'
 
   - name: 'Wood / Bamboo Eyewear'
-    subtitle: 'Natural Organic Aesthetic'
+    subtitle: 'A natural material with grain texture and a distinctive appearance.'
     points:
-      - Unique unrepeatable natural grain
-      - Specialized moisture treatment
-      - Eco-conscious niche market
+      - 'Niche fashion and eco collections'
+      - 'Unique natural patterns'
+      - 'Strong visual identity for limited designs'
     slug: 'wood-bamboo-eyewear'
     image: '/media/collection/home/wood-bamboo-eyewear.webp'
 
   - name: 'Buffalo Horn Eyewear'
-    subtitle: 'Bespoke Luxury Material'
+    subtitle: 'A handcrafted natural material with a warm texture and appeal.'
     points:
-      - 100% natural and handcrafted
-      - Warm luxurious texture
-      - High-net-worth custom clients
+      - 'Bespoke luxury eyewear projects'
+      - 'Natural and handcrafted finish'
+      - 'Highly distinctive premium material'
     slug: 'buffalo-horn-eyewear'
     image: '/media/products/kas-304-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-304-5.webp'
 
   - name: 'Injection CP Eyewear'
-    subtitle: 'Cost-Effective Fashion'
+    subtitle: 'A cost-effective molded material for efficient fashion production.'
     points:
-      - Efficient mass production injection
-      - Acetate-like glossy aesthetic
-      - Mid-tier fast-fashion ideal
+      - 'Mass-market fashion sunglasses'
+      - 'Glossy finish and efficient production'
+      - 'Good for commercial volume programs'
     slug: 'injection-cp-eyewear'
     image: '/media/products/kas-301-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-301-5.webp'
 
   - name: 'Ultem (PEI) Eyewear'
-    subtitle: 'Aerospace-Grade Resin'
+    subtitle: 'A high-stability resin with heat resistance and strong shape retention.'
     points:
-      - Extreme heat and chemical resistance
-      - Unmatched shape stability
-      - Functional optical premium choice
+      - 'Premium functional optical frames'
+      - 'Excellent heat and chemical resistance'
+      - 'Stable for technical eyewear designs'
     slug: 'ultem-pei-eyewear'
     image: '/media/collection/home/ultem-pei-eyewear.webp'
 ---

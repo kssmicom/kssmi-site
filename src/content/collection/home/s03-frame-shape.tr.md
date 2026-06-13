@@ -130,3 +130,91 @@ materials:
     slug: 'wrap-around-eyewear'
     image: '/media/products/kas-164-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-164-1.webp'
 ---
+
+## Gözlük Çerçeve Şekilleri
+
+Klasik yuvarlak ve kare stillerden modaya uygun kedi gözü ve performans odaklı sarma tasarımlara kadar çok çeşitli çerçeve şekilleriyle çalışıyoruz.
+
+### 1. Yuvarlak Gözlükler
+Yumuşak ve dengeli bir görünüme sahip klasik dairesel çerçeve şekli.
+- Simetrik ve zamansız
+- Metal veya asetatta iyi çalışır
+- Retro esintili tasarımlarda yaygındır
+
+### 2. Oval Gözlükler
+Boyundan biraz daha geniş, yuvarlatılmış çerçeve şekli.
+- Yumuşak ve takması kolay
+- Birçok yüz şekline uyum sağlar
+- Genellikle mini metal veya asetat çerçevelerde kullanılır
+
+### 3. Kare Gözlükler
+Güçlü geometrik hatlara sahip dengeli çerçeve şekli.
+- Temiz ve yapılandırılmış görünüm
+- Keskin veya yumuşak köşeli olarak mevcuttur
+- Modern ve klasik stiller için iyidir
+
+### 4. Dikdörtgen Gözlükler
+Daha akıcı bir profile sahip geniş, düz çerçeve şekli.
+- İnce ve hafif görünüm
+- Genellikle titanyum tasarımlarda kullanılır
+- Temiz günlük kullanım için uygundur
+
+### 5. Altıgen Gözlükler
+Modern bir dokunuşa sahip altı kenarlı geometrik çerçeve şekli.
+- Ayırt edici ve çağdaş görünüm
+- Görsel karaktere sahip güçlü çizgiler
+- Asetat veya metalde iyi çalışır
+
+### 6. Sekizgen Gözlükler
+Zarif ve modern bir his veren sekiz kenarlı geometrik çerçeve şekli.
+- Altıgen çerçeveden daha detaylı
+- Göz alıcı ama yine de giyilebilir
+- Hassas şekillendirme ve bitiş gerektirir
+
+### 7. Panto Gözlükler
+Yuvarlak alt kıvrıma ve daha düz bir üst kısma sahip klasik çerçeve şekli.
+- Vintage esintili ve çok yönlü
+- Güçlü retro cazibe
+- Optik ve moda çerçevelerinde yaygındır
+
+### 8. D-Çerçeve Gözlükler
+Düz bir üst kısma ve yuvarlak alt kenara sahip çerçeve şekli.
+- Cesur ve yapılandırılmış görünüm
+- Daha kalın asetat çerçevelerde iyi çalışır
+- Retro ve modern koleksiyonlarda popülerdir
+
+### 9. Aviator (Pilot) Gözlükler
+Çift köprülü damla şeklindeki çerçeve.
+- İkonik ve tanınabilir tasarım
+- Geniş lens kapsama alanı sunar
+- Güneş gözlükleri ve optik stiller için uygundur
+
+### 10. Wayfarer / Trapez (Yamuk) Gözlükler
+Üst kısmı daha geniş ve alt kısmı daha dar çerçeve şekli.
+- Eskimeyen ticari stil
+- Güçlü ve takması kolay
+- Asetat güneş gözlüklerinde yaygındır
+
+### 11. Kedi Gözü (Cat-Eye) Gözlükler
+Dış köşeleri yukarı kalkık çerçeve şekli.
+- Kadınsı ve etkileyici görünüm
+- Yüze görsel bir kaldırma (lift) katar
+- Modaya yön veren koleksiyonlarda popülerdir
+
+### 12. Kelebek Gözlükler
+Köprüden dışarı doğru genişleyen büyük (oversize) çerçeve şekli.
+- Dramatik ve göz alıcı stil
+- Güçlü bir yüz kapsama alanı sunar
+- Kadın güneş gözlüklerinde yaygındır
+
+### 13. Browline Gözlükler
+Daha güçlü bir üst çerçeveye sahip karışık malzemeli çerçeve şekli.
+- Ayırt edici ve vintage esintili
+- Farklı malzemeleri birleştirir
+- Genellikle optik koleksiyonlarda kullanılır
+
+### 14. Saran (Wrap-Around) Gözlükler
+Yüzün hatlarını takip eden kavisli çerçeve şekli.
+- Spor odaklı ve koruyucu
+- Daha iyi yan koruma
+- Performans gözlüklerinde yaygındır
