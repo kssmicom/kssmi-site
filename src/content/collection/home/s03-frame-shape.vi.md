@@ -1,7 +1,7 @@
 ---
 section: 's03-frame-shape'
 eyebrow: 'Hình Dáng Gọng'
-heading: 'Giải pháp Hình dáng Gọng Kính'
+heading: 'Hình Dáng Gọng Kính Tùy Chỉnh'
 subheading: "Để giúp các thương hiệu xây dựng các bộ sưu tập sẵn sàng cho thị trường được tối ưu hóa cho độ vừa vặn toàn cầu, chúng tôi kết hợp thư viện kiểu dáng gọng kính đã được chứng minh phong phú với năng lực chế tạo khuôn mẫu tùy chỉnh cho các hình dáng độc quyền."
 materials:
   - name: 'Kính Mắt Tròn'

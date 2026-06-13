@@ -1,7 +1,7 @@
 ---
 section: 's03-frame-shape'
 eyebrow: 'Forma della Montatura'
-heading: 'Soluzioni per Forme di Montature per Occhiali'
+heading: 'Forme di Montature per Occhiali Personalizzate'
 subheading: "Per aiutare i marchi a creare collezioni pronte per il mercato e ottimizzate per una vestibilità globale, combiniamo un ampio archivio di silhouette collaudate con capacità di stampaggio personalizzato per forme esclusive."
 materials:
   - name: 'Occhiali Rotondi'

@@ -1,7 +1,7 @@
 ---
 section: 's03-frame-shape'
 eyebrow: 'Bentuk Bingkai'
-heading: 'Penyelesaian Bentuk Bingkai Cermin Mata'
+heading: 'Bentuk Bingkai Cermin Mata Tersuai'
 subheading: "Untuk membantu jenama membina koleksi sedia pasaran yang dioptimumkan untuk padanan global, kami menggabungkan perpustakaan siluet terbukti yang luas dengan keupayaan acuan tersuai untuk bentuk eksklusif."
 materials:
   - name: 'Cermin Mata Bulat'

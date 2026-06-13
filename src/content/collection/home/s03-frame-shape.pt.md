@@ -1,7 +1,7 @@
 ---
 section: 's03-frame-shape'
 eyebrow: 'Formato da Armação'
-heading: 'Soluções de Formatos de Armações de Óculos'
+heading: 'Formatos de Armações de Óculos Personalizados'
 subheading: "Para ajudar as marcas a construir coleções prontas para o mercado e otimizadas para um ajuste global, combinamos uma ampla biblioteca de silhuetas comprovadas com capacidades de moldagem personalizada para formatos exclusivos."
 materials:
   - name: 'Óculos Redondos'

@@ -1,7 +1,7 @@
 ---
 section: 's03-frame-shape'
 eyebrow: 'Çerçeve Şekli'
-heading: 'Gözlük Çerçeve Şekli Çözümleri'
+heading: 'Özel Gözlük Çerçeve Şekli'
 subheading: "Markaların küresel uyuma göre optimize edilmiş pazara hazır koleksiyonlar oluşturmasına yardımcı olmak için, kanıtlanmış silüetlerden oluşan geniş bir kitaplığı, özel şekillere yönelik özel kalıplama yetenekleriyle birleştiriyoruz."
 materials:
   - name: 'Yuvarlak Gözlük'

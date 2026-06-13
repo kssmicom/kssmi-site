@@ -1,7 +1,7 @@
 ---
 section: 's03-frame-shape'
 eyebrow: 'Forma de la Montura'
-heading: 'Soluciones de Formas de Monturas de Gafas'
+heading: 'Formas de Monturas de Gafas Personalizadas'
 subheading: "Para ayudar a las marcas a crear colecciones listas para el mercado y optimizadas para un ajuste global, combinamos una amplia biblioteca de siluetas comprobadas con capacidades de moldeado personalizado para formas exclusivas."
 materials:
   - name: 'Gafas Redondas'

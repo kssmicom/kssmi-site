@@ -1,7 +1,7 @@
 ---
 section: 's03-frame-shape'
 eyebrow: 'Rahmenform'
-heading: 'Lösungen für Brillenrahmenformen'
+heading: 'Individuelle Brillenrahmenformen'
 subheading: "Um Marken beim Aufbau marktreifer und auf eine globale Passform optimierter Kollektionen zu unterstützen, kombinieren wir eine umfangreiche Auswahl bewährter Silhouetten mit maßgeschneiderten Werkzeugbaukapazitäten für exklusive Formen."
 materials:
   - name: 'Runde Brillen'

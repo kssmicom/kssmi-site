@@ -1,7 +1,7 @@
 ---
 section: 's03-frame-shape'
 eyebrow: 'Frame Shape'
-heading: 'Eyewear Frame Shape Solutions'
+heading: 'Custom Eyewear Frame Shape'
 subheading: 'To help brands build market-ready collections optimized for global fit, we combine an extensive library of proven silhouettes with custom tooling capabilities for proprietary shapes.'
 materials:
   - name: 'Round Eyewear'

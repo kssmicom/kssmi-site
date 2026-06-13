@@ -1,7 +1,7 @@
 ---
 section: 's03-frame-shape'
 eyebrow: 'Wujud Pigura'
-heading: 'Solusi Wujud Pigura Kacamata'
+heading: 'Wujud Pigura Kacamata Khusus'
 subheading: "Kanggo mbantu merek mbangun koleksi siap pasar sing dioptimalake kanggo pas global, kita nggabungake perpustakaan siluet terbukti sing jembar karo kemampuan cithakan kustom kanggo wujud eksklusif."
 materials:
   - name: 'Kacamata Bunder'

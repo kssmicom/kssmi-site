@@ -1,7 +1,7 @@
 ---
 section: 's03-frame-shape'
 eyebrow: 'Forme de Monture'
-heading: 'Solutions de Formes de Montures de Lunettes'
+heading: 'Formes de Montures de Lunettes Personnalisées'
 subheading: "Pour aider les marques à créer des collections prêtes pour le marché et optimisées pour un ajustement global, nous combinons une vaste bibliothèque de silhouettes éprouvées avec des capacités d'outillage personnalisé pour des formes exclusives."
 materials:
   - name: 'Lunettes Rondes'

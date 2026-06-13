@@ -1,7 +1,7 @@
 ---
 section: 's03-frame-shape'
 eyebrow: '框型'
-heading: '眼镜框型解决方案'
+heading: '定制眼镜框型'
 subheading: "为帮助品牌打造适配全球脸型的市场化镜框系列，我们将丰富的成熟款式轮廓库与专属形状的定制模具开发能力相结合。"
 materials:
   - name: '圆形框'
