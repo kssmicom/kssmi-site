@@ -9,6 +9,7 @@ import Materials from '../../components/collection/home/Materials.astro';
 import Construction from '../../components/collection/home/Construction.astro';
 import S03_FrameShape from '../../components/collection/home/S03_FrameShape.astro';
 import S04_FrameStyle from '../../components/collection/home/S04_FrameStyle.astro';
+import S05_FrameColor from '../../components/collection/home/S05_Frame_Color.astro';
 
 // Generate all language routes
 export async function getStaticPaths() {
@@ -43,6 +44,7 @@ const lcpImage = heroEntry?.data?.posterImage;
     <Construction lang={lang} />
     <S03_FrameShape lang={lang} />
     <S04_FrameStyle lang={lang} />
+    <S05_FrameColor lang={lang} />
   </main>
 
   <Footer lang={lang} />

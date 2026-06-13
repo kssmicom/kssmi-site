@@ -1,4 +1,25 @@
 ---
+/**
+ * CANONICAL TEMPLATE — STYLE A
+ *
+ * Clone this file when building a new Style A section.
+ * Only change the values marked with `← CHANGE` below.
+ *
+ * Source of truth: src/components/collection/home/Materials.astro
+ * Section type:    Large item lists (10+ items) — "primary selection"
+ * Visual:          Individual white cards on bg-stone-50, 2/2/3/4-col grid
+ *                  (2 on mobile, 2 sm, 3 lg, 4 xl), hover shadow lifts, ring
+ *                  darkens, soft warm-light surface
+ *
+ * Hover system (all independent, no group hover):
+ *   - Eyebrow:  stone-500 → amber-700
+ *   - Title:    stone-800 → logo gradient sweep (bg-right → hover:bg-left)
+ *   - Subheading: stone-600 → #5D4E37 (coffee brown)
+ *   - Card title: stone-800 → amber-700 (whole-card hover)
+ *   - Card subtitle: stone-600 → #5D4E37
+ *   - Bullet dot: stone-300 → bg-amber-700 + scale + glow
+ *   - Bullet text: stone-600 → amber-700 + bold
+ */
 import { getEntry } from 'astro:content';
 import { translations } from '../../../translations';
 import { cardSrc } from '../../../utils/image';
@@ -7,21 +28,21 @@ const { lang = 'en' } = Astro.props as { lang?: string };
 const isRTL = lang === 'ar';
 const t = (translations as any)[lang] || translations.en;
 const prefix = lang === 'en' ? '' : `/${lang}`;
-const entry = await getEntry('collection', `home/s01-materials.${lang}`);
-const eyebrow = entry?.data?.eyebrow || 'Materials';
-const heading = entry?.data?.heading || 'Eyewear Frame Materials';
+const entry = await getEntry('collection', `home/s05-frame-color.${lang}`);
+const eyebrow = entry?.data?.eyebrow || 'Frame Color';
+const heading = entry?.data?.heading || 'Custom Eyewear Frame Colors';
 const subheading = entry?.data?.subheading || '';
 const highlightedSubheading = subheading.replace(/Mazzucchelli/g, '<span class="text-amber-600 font-medium">Mazzucchelli</span>');
 const materials = entry?.data?.materials || [];
 ---
 
-<section class="relative pt-11 pb-20 md:pt-14 md:pb-20 bg-stone-50 overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
+<section class="relative pt-11 pb-20 md:pt-14 md:pb-20 bg-stone-50 border-t border-stone-300/80 overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
   <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4 lg:px-0">
-    <!-- Section header - Clean minimal style -->
+    <!-- Section header - Clean minimal style (eyebrow + title gradient + subheading coffee) -->
     <div class="text-center mb-12 md:mb-16">
       <span class="flex items-center justify-center gap-2 text-stone-500 hover:text-amber-700 text-xs font-medium tracking-[0.2em] uppercase mb-4 transition-colors duration-300 cursor-pointer">
         <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+          <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>
         </svg>
         — {eyebrow} —
       </span>
@@ -38,7 +59,7 @@ const materials = entry?.data?.materials || [];
           class="mat-card group flex flex-col w-[calc(50%-0.625rem)] sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(25%-1.125rem)] bg-white rounded-2xl overflow-hidden shadow-sm ring-1 ring-stone-200/70 hover:shadow-xl hover:shadow-stone-200/60 hover:ring-stone-300 transition-all duration-500 cursor-pointer motion-safe:animate-[matFadeInUp_0.5s_ease-out_both]"
           style={`animation-delay: ${0.1 + i * 0.05}s`}
         >
-          <a href={`${prefix}/product/?material=${m.slug}`} class="relative aspect-[4/3] overflow-hidden bg-stone-100 block">
+          <a href={`${prefix}/product/?color=${m.slug}`} class="relative aspect-[4/3] overflow-hidden bg-stone-100 block">
             <img
               src={cardSrc(m.image)}
               alt={m.name}
@@ -52,7 +73,7 @@ const materials = entry?.data?.materials || [];
           </a>
 
           <div class="p-5 md:p-6 flex flex-col flex-1">
-            <a href={`${prefix}/product/?material=${m.slug}`} class="block text-center">
+            <a href={`${prefix}/product/?color=${m.slug}`} class="block text-center">
               <h3 class="text-sm md:text-base font-bold text-stone-800 group-hover:text-amber-700 transition-colors duration-300 mb-1.5">
                 {m.name}
               </h3>

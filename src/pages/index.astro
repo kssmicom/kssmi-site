@@ -9,6 +9,7 @@ import Materials from '../components/collection/home/Materials.astro';
 import Construction from '../components/collection/home/Construction.astro';
 import S03_FrameShape from '../components/collection/home/S03_FrameShape.astro';
 import S04_FrameStyle from '../components/collection/home/S04_FrameStyle.astro';
+import S05_FrameColor from '../components/collection/home/S05_Frame_Color.astro';
 
 const lang = 'en';
 const t = translations[lang] || translations.en;
@@ -33,6 +34,7 @@ const lcpImage = heroEntry?.data?.posterImage;
     <Construction lang="en" />
     <S03_FrameShape lang="en" />
     <S04_FrameStyle lang="en" />
+    <S05_FrameColor lang="en" />
   </main>
 
   <Footer lang={lang} />
