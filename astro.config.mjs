@@ -29,7 +29,12 @@ export default defineConfig({
     }
   },
   build: {
-    format: 'directory'
+    format: 'directory',
+    // Inline all CSS into <style> tags instead of external <link> files. This removes the
+    // render-blocking CSS request (Lighthouse "Render-blocking requests: _slug_.css") from the
+    // critical path, the main FCP/LCP cost on Slow 4G. Trade-off: ~12KB inlined per page instead
+    // of one cached request — a net win for first-visit / Core Web Vitals.
+    inlineStylesheets: 'always'
   },
   vite: {
     plugins: [
