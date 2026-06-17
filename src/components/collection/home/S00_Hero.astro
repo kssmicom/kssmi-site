@@ -22,6 +22,14 @@ const videoUrl = d.videoUrl;
 const posterImage = d.posterImage;
 const posterAlt = d.posterAlt;
 
+// Adaptive (HLS) background player via Gumlet. The asset ID is derived from the existing
+// video URL (…/{assetId}/main.mp4). We mount the player lazily after first paint, so the
+// 15 MB progressive MP4 is never fetched and mobile gets a low-bitrate rendition automatically.
+const gumletId = typeof videoUrl === 'string' ? videoUrl.split('/').filter(Boolean).at(-2) : undefined;
+const embedSrc = gumletId
+  ? `https://play.gumlet.io/embed/${gumletId}?background=true&autoplay=true&loop=true&disable_player_controls=true&muted=true`
+  : undefined;
+
 // Build locale-aware internal links (external URLs are left untouched)
 const toHref = (url?: string) =>
   !url ? undefined : url.startsWith('http') ? url : `${prefix}${url}`;
@@ -34,32 +42,27 @@ const secondaryHref = toHref(secondaryCtaUrl);
   dir={isRTL ? 'rtl' : 'ltr'}
   aria-label={heading}
 >
-  <!-- Background video -->
-  {videoUrl && (
-    <video
-      class="hero-video absolute inset-0 w-full h-full object-cover"
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="auto"
-      poster={posterImage}
-      aria-hidden="true"
-      tabindex="-1"
-    >
-      <source src={videoUrl} type="video/mp4" />
-    </video>
-  )}
-
-  <!-- Poster fallback / first paint image (also used when reduced-motion pauses video) -->
-  {!videoUrl && posterImage && (
+  <!-- Poster image = instant first paint / LCP. It stays as the base layer; the adaptive
+       video player is layered on top after load, so it never competes with LCP for bandwidth. -->
+  {posterImage && (
     <img
       src={posterImage}
       alt={posterAlt || heading || ''}
       class="absolute inset-0 w-full h-full object-cover"
       loading="eager"
+      fetchpriority="high"
       decoding="async"
     />
+  )}
+
+  <!-- Adaptive (HLS) background video via the Gumlet player, mounted lazily by the script
+       below. Stays hidden (and unfetched) until after load; skipped under reduced-motion. -->
+  {embedSrc && (
+    <div
+      class="hero-video-mount absolute inset-0 w-full h-full overflow-hidden opacity-0 transition-opacity duration-700"
+      data-embed={embedSrc}
+      aria-hidden="true"
+    ></div>
   )}
 
   <!-- Dark scrim: stronger on the text (start) side for 4.5:1 contrast -->
@@ -149,6 +152,22 @@ const secondaryHref = toHref(secondaryCtaUrl);
 </section>
 
 <style is:global>
+  /* The Gumlet player keeps the video's 16:9 ratio (letterboxes inside the iframe), so we
+     over-scale the iframe and center it to emulate object-fit:cover — the video fully covers
+     the hero box and overflow is clipped, matching the poster image exactly. */
+  .hero-video-mount iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 56.25vw;        /* 16:9 derived from width  */
+    min-width: 177.78vh;    /* 16:9 derived from height */
+    min-height: 100vh;
+    border: 0;
+    pointer-events: none;
+  }
+
   .hero-fade {
     opacity: 0;
     transform: translateY(18px);
@@ -173,16 +192,35 @@ const secondaryHref = toHref(secondaryCtaUrl);
 </style>
 
 <script>
-  // Respect reduced-motion: pause the background video so it shows the poster frame.
+  // Lazily mount the Gumlet adaptive-streaming player AFTER first paint, so the hero video
+  // never competes with LCP. Skipped entirely under prefers-reduced-motion (poster stays).
+  // Uses astro:page-load so it also runs after client-side View Transitions navigations.
   const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const applyMotionPref = () => {
-    document.querySelectorAll<HTMLVideoElement>('.hero-video').forEach((v) => {
-      if (mq.matches) {
-        v.removeAttribute('autoplay');
-        v.pause();
-      }
+
+  function mountHeroVideo() {
+    if (mq.matches) return;
+    document.querySelectorAll<HTMLElement>('.hero-video-mount').forEach((mount) => {
+      if (mount.dataset.mounted || !mount.dataset.embed) return;
+      const iframe = document.createElement('iframe');
+      iframe.src = mount.dataset.embed;
+      iframe.title = 'Background showreel';
+      iframe.loading = 'lazy';
+      iframe.tabIndex = -1;
+      iframe.setAttribute('referrerpolicy', 'origin');
+      iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
+      mount.appendChild(iframe);
+      mount.dataset.mounted = '1';
+      requestAnimationFrame(() => { mount.style.opacity = '1'; });
     });
-  };
-  applyMotionPref();
-  mq.addEventListener('change', applyMotionPref);
+  }
+
+  function scheduleHeroVideo() {
+    if ('requestIdleCallback' in window) {
+      (window as any).requestIdleCallback(mountHeroVideo, { timeout: 2500 });
+    } else {
+      setTimeout(mountHeroVideo, 1200);
+    }
+  }
+
+  document.addEventListener('astro:page-load', scheduleHeroVideo);
 </script>
