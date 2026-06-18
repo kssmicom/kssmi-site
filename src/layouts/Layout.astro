@@ -206,37 +206,45 @@ const websiteSchema = {
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
   <link rel="dns-prefetch" href="https://static.cloudflareinsights.com" />
 
-  <!-- Google Fonts: split-load strategy to minimize font-swap reflow -->
-  <!-- Step 1: Preconnect to font origins so DNS/TLS is ready early -->
+  <!-- Google Fonts: deferred to after load so ~61KB of fonts don't starve the LCP image on Slow 4G.
+       display=optional means first paint already uses the system fallback — zero visual change. -->
+  <!-- Preconnect to font origins so DNS/TLS is ready when fonts load later -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- Step 2a: Critical body + heading fonts → display=optional (zero CLS: fallback on first visit, cached font on return) -->
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=optional"
-    media="print"
-    onload="this.media='all'"
-  />
-  <!-- Step 2b: Decorative accent fonts → display=optional (uses fallback on first visit, instant on cached visits — zero reflow) -->
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@600;700&display=optional"
-    media="print"
-    onload="this.media='all'"
-  />
-  <!-- Step 3: Fallback for users with JS disabled -->
+  <!-- Web fonts loaded AFTER load: their ~61KB no longer compete with the LCP poster on Slow 4G.
+       display=optional means first paint already uses the system fallback, so this changes nothing visually. -->
+  <script>
+    (function () {
+      var FONTS = [
+        'https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=optional',
+        'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@600;700&display=optional'
+      ];
+      // Arabic (RTL) font — only injected on RTL pages
+      if (document.documentElement.dir === 'rtl') {
+        FONTS.push('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap');
+      }
+      function load() {
+        FONTS.forEach(function (href) {
+          var l = document.createElement('link');
+          l.rel = 'stylesheet';
+          l.href = href;
+          document.head.appendChild(l);
+        });
+      }
+      if (document.readyState === 'complete') {
+        ('requestIdleCallback' in window) ? requestIdleCallback(load) : setTimeout(load, 200);
+      } else {
+        window.addEventListener('load', function () {
+          ('requestIdleCallback' in window) ? requestIdleCallback(load) : setTimeout(load, 200);
+        }, { once: true });
+      }
+    })();
+  </script>
+  <!-- Fallback for users with JS disabled -->
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=optional" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@600;700&display=optional" />
   </noscript>
-  {isRTL && (
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap"
-      media="print"
-      onload="this.media='all'"
-    />
-  )}
 
   <!-- Organization Schema for Google Graph -->
   <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />

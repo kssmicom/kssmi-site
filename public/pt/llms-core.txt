@@ -1,7 +1,7 @@
-﻿# Kssmi - Páginas Principais (Português)
+# Kssmi - Páginas Principais (Português)
 
-Navegação primária e informações da empresa.
+> Navegação primária e informações da empresa.
 
-- Página Inicial | https://kssmi.com/pt/
-- Sobre Nós | https://kssmi.com/pt/about-us/
-- Contato | https://kssmi.com/pt/contact/
+- [Página Inicial](https://kssmi.com/pt/)
+- [Sobre Nós](https://kssmi.com/pt/about-us/)
+- [Contato](https://kssmi.com/pt/contact/)

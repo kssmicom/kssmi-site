@@ -1,4 +1,4 @@
-﻿# Kssmi - Blogs (Português)
+# Kssmi - Blogs (Português)
 
-Insights do setor, notícias e artigos editoriais.
+> Insights do setor, notícias e artigos editoriais.
 

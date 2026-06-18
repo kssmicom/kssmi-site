@@ -1,18 +1,17 @@
-﻿# Kssmi Guida ai modelli linguistici di grandi dimensioni - Italiano
-Date: 2026-06-18
+# Kssmi Guida ai modelli linguistici di grandi dimensioni - Italiano
 
-Per esplorare i nostri contenuti in Italiano, segui le directory specializzate di seguito:
+> Per esplorare i nostri contenuti in Italiano, segui le directory specializzate di seguito:
 
 ## Pagine principali (Navigazione primaria e informazioni aziendali.)
-- https://kssmi.com/it/llms-core.txt
+- [Pagine principali](https://kssmi.com/it/llms-core.txt)
 
 ## Prodotti (Catalogo dei nostri occhiali da sole e montature B2B premium.)
-- https://kssmi.com/it/llms-products.txt
+- [Prodotti](https://kssmi.com/it/llms-products.txt)
 
 ## Pagine di atterraggio (Collezioni di prodotti, guide ai materiali e pagine di marketing.)
-- https://kssmi.com/it/llms-landing.txt
+- [Pagine di atterraggio](https://kssmi.com/it/llms-landing.txt)
 
 ## Blog (Approfondimenti del settore, notizie e articoli editoriali.)
-- https://kssmi.com/it/llms-blogs.txt
+- [Blog](https://kssmi.com/it/llms-blogs.txt)
 
 *Generato da Kssmi Eyewear*

@@ -1,18 +1,17 @@
-﻿# Kssmi Büyük Dil Modeli Kılavuzu - Türkçe
-Date: 2026-06-18
+# Kssmi Büyük Dil Modeli Kılavuzu - Türkçe
 
-Türkçe İçeriğimizi keşfetmek için lütfen aşağıdaki özel dizinleri takip edin:
+> Türkçe İçeriğimizi keşfetmek için lütfen aşağıdaki özel dizinleri takip edin:
 
 ## Ana Sayfalar (Birincil gezinme ve şirket bilgileri.)
-- https://kssmi.com/tr/llms-core.txt
+- [Ana Sayfalar](https://kssmi.com/tr/llms-core.txt)
 
 ## Ürünler (Premium B2B güneş gözlüklerimiz ve gözlük çerçevelerimiz kataloğu.)
-- https://kssmi.com/tr/llms-products.txt
+- [Ürünler](https://kssmi.com/tr/llms-products.txt)
 
 ## Açılış Sayfaları (Ürün koleksiyonları, malzeme kılavuzları ve pazarlama sayfaları.)
-- https://kssmi.com/tr/llms-landing.txt
+- [Açılış Sayfaları](https://kssmi.com/tr/llms-landing.txt)
 
 ## Bloglar (Sektörel içgörüler, haberler ve editoryal makaleler.)
-- https://kssmi.com/tr/llms-blogs.txt
+- [Bloglar](https://kssmi.com/tr/llms-blogs.txt)
 
 *Kssmi Eyewear tarafından oluşturuldu*

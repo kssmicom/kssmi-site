@@ -11,13 +11,11 @@ interface Props {
 
 const { product, lang, index = -1 } = Astro.props;
 
-// First 8 products load eager (covers visible viewport on most screens)
-// Only index 0 gets sync decode + high fetchpriority (the true LCP candidate)
-// Others use async decode to avoid blocking the main thread (reduces TBT)
-const isEager = index >= 0 && index < 8;
-const loadingStrategy = isEager ? "eager" : "lazy";
-const fetchPriority = index === 0 ? "high" : "auto";
-const decoding = index === 0 ? "sync" : "async";
+// All product card images lazy-load + async decode so below-fold cards
+// never compete with the LCP poster for bandwidth on Slow 4G.
+// The true LCP candidate on listing pages is preloaded in <head> via lcpImage.
+const loadingStrategy = "lazy";
+const decoding = "async";
 
 // Skip rendering for cards below first 2 rows to reduce initial layout work
 const belowFold = index >= 6;
@@ -58,7 +56,6 @@ const coverSrc = cardSrc(cover);
           class="w-full h-full object-cover motion-safe:group-hover:scale-105 transition-transform duration-500"
           decoding={decoding}
           loading={loadingStrategy}
-          fetchpriority={fetchPriority}
         />
       ) : (
         <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">

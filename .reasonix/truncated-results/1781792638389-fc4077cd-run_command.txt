@@ -1,0 +1,367 @@
+$ npm run build
+[killed after timeout]
+
+> kssmi-site@0.0.1 prebuild
+> node scripts/validate-content.mjs && node src/scripts/generate-llms.js && node src/scripts/generate-sitemap.js
+
+
+[36m🔍 Validating content files...[0m
+
+Content directory: D:\001 Tools\004 Desk\Desk\Tools\Kssmi\kssmi-site\src\content\products
+  4182 file(s) found
+
+Content directory: D:\001 Tools\004 Desk\Desk\Tools\Kssmi\kssmi-site\src\content\collection
+  170 file(s) found
+
+Content directory: D:\001 Tools\004 Desk\Desk\Tools\Kssmi\kssmi-site\src\content\blog
+  0 file(s) found
+
+[33m⚠ Warnings:[0m
+
+[33m⚠[0m src\content\collection\home\s00-hero.ar.md
+      [33m→[0m File uses CRLF line endings (Windows) - LF is preferred
+[33m⚠[0m src\content\collection\home\s00-hero.de.md
+      [33m→[0m File uses CRLF line endings (Windows) - LF is preferred
+[33m⚠[0m src\content\collection\home\s00-hero.en.md
+      [33m→[0m File uses CRLF line endings (Windows) - LF is preferred
+[33m⚠[0m src\content\collection\home\s00-hero.es.md
+      [33m→[0m File uses CRLF line endings (Windows) - LF is preferred
+[33m⚠[0m src\content\collection\home\s00-hero.fr.md
+      [33m→[0m File uses CRLF line endings (Windows) - LF is preferred
+[33m⚠[0m src\content\collection\home\s00-hero.hi.md
+      [33m→[0m File uses CRLF line endings (Windows) - LF is preferred
+[33m⚠[0m src\content\collection\home\s00-hero.it.md
+      [33m→[0m File uses CRLF line endings (Windows) - LF is preferred
+[33m⚠[0m src\content\collection\home\s00-hero.ja.md
+      [33m→[0m File uses CRLF line endings (Windows) - LF is preferred
+[33m⚠[0m src\content\collection\home\s00-hero.jv.md
+      [33m→[0m File uses CRLF line endings (Windows) - LF is preferred
+[33m⚠[0m src\content\collection\home\s00-hero.ko.md
+      [33m→[0m File uses CRLF line endings (Windows) - LF is preferred
+[33m⚠[0m src\content\collection\home\s00-hero.ms.md
+      [33m→[0m File uses CRLF line endings (Windows) - LF is preferred
+[33m⚠[0m src\content\collection\home\s00-hero.pt.md
+      [33m→[0m File uses CRLF line endings (Windows) - LF is preferred
+[33m⚠[0m src\content\collection\home\s00-hero.ru.md
+      [33m→[0m File uses CRLF line endings (Windows) - LF is preferred
+[33m⚠[0m src\content\collection\home\s00-hero.tg.md
+      [33m→[0m File uses CRLF line endings (Windows) - LF is preferred
+[33m⚠[0m src\content\collection\home\s00-hero.tr.md
+      [33m→[0m File uses CRLF line endings (Windows) - LF is preferred
+[33m⚠[0m src\content\collection\home\s00-hero.vi.md
+      [33m→[0m File uses CRLF line endings (Windows) - LF is preferred
+[33m⚠[0m src\content\collection\home\s00-hero.zh.md
+      [33m→[0m File uses CRLF line endings (Windows) - LF is preferred
+
+[32m✅ All 4352 files validated successfully.[0m
+[33m   17 warning(s) (non-critical)[0m
+
+✅ Generated split llms tree architecture inside public/ directory successfully!
+✅ Generated split custom XML sitemap tree architecture inside public/ directory successfully!
+
+> kssmi-site@0.0.1 build
+> astro build
+
+[2m22:19:05[22m [34m[content][39m Syncing content
+[33m[1m22:19:05[22m [WARN] [glob-loader][39m No files found matching "**/*.md" in directory "src\content\feature"
+[33m[1m22:19:05[22m [WARN] [glob-loader][39m No files found matching "**/*.md" in directory "src\content\blog"
+[2m22:19:07[22m [34m[content][39m Synced content
+[2m22:19:07[22m [34m[types][39m Generated [2m2.65s[22m
+[2m22:19:07[22m [34m[build][39m output: [34m"static"[39m
+[2m22:19:07[22m [34m[build][39m mode: [34m"static"[39m
+[2m22:19:07[22m [34m[build][39m directory: [34mD:\001 Tools\004 Desk\Desk\Tools\Kssmi\kssmi-site\dist\[39m
+[2m22:19:07[22m [34m[build][39m Collecting build info...
+[2m22:19:07[22m [34m[build][39m [32m✓ Completed in 2.72s.[39m
+[2m22:19:17[22m [34m[build][39m Building static entrypoints...
+[2m22:20:00[22m [34m[vite][39m [32m✓ built in 43.07s[39m
+[2m22:20:00[22m [34m[build][39m [32m✓ Completed in 43.14s.[39m
+
+[42m[30m building client (vite) [39m[49m
+[2m22:20:00[22m [34m[vite][39m transforming...
+[2m22:20:01[22m [34m[vite][39m [32m✓[39m 23 modules transformed.
+[2m22:20:01[22m [34m[vite][39m rendering chunks...
+[2m22:20:01[22m [34m[vite][39m computing gzip size...
+[2m22:20:01[22m [34m[vite][39m [2mdist/[22m[36m_astro/page.prh1sXVb.js                                               [39m[1m[2m 0.05 kB[22m[1m[22m[2m │ gzip: 0.07 kB[22m
+[2m22:20:01[22m [34m[vite][39m [2mdist/[22m[36m_astro/index.Cr5b0yWc.js                                              [39m[1m[2m 2.31 kB[22m[1m[22m[2m │ gzip: 1.05 kB[22m
+[2m22:20:01[22m [34m[vite][39m [2mdist/[22m[36m_astro/search.astro_astro_type_script_index_0_lang.CT54msEW.js        [39m[1m[2m10.20 kB[22m[1m[22m[2m │ gzip: 3.19 kB[22m
+[2m22:20:01[22m [34m[vite][39m [2mdist/[22m[36m_astro/search.astro_astro_type_script_index_0_lang.qHMdszjS.js        [39m[1m[2m10.56 kB[22m[1m[22m[2m │ gzip: 3.24 kB[22m
+[2m22:20:01[22m [34m[vite][39m [2mdist/[22m[36m_astro/ClientRouter.astro_astro_type_script_index_0_lang.C17rgyn5.js  [39m[1m[2m13.11 kB[22m[1m[22m[2m │ gzip: 4.54 kB[22m
+[2m22:20:01[22m [34m[vite][39m [2mdist/[22m[36m_astro/fuse.Dw8P0qyA.js                                               [39m[1m[2m18.25 kB[22m[1m[22m[2m │ gzip: 6.61 kB[22m
+[2m22:20:01[22m [34m[vite][39m [32m✓ built in 393ms[39m
+
+[42m[30m generating static routes [39m[49m
+[2m22:20:01[22m [32m▶[39m src/pages/404.astro
+[2m22:20:01[22m   [34m└─[39m [2m/404.html[22m [2m(+38ms)[22m 
+[2m22:20:01[22m [32m▶[39m src/pages/about-us.astro
+[2m22:20:01[22m   [34m└─[39m [2m/about-us/index.html[22m [2m(+12ms)[22m 
+[2m22:20:01[22m [35mλ[39m src/pages/api/products/[lang].json.ts
+[2m22:20:01[22m   [34m├─[39m [2m/api/products/en.json[22m [31m(+1.02s)[39m 
+[2m22:20:02[22m   [34m├─[39m [2m/api/products/it.json[22m [2m(+242ms)[22m 
+[2m22:20:02[22m   [34m├─[39m [2m/api/products/es.json[22m [2m(+235ms)[22m 
+[2m22:20:02[22m   [34m├─[39m [2m/api/products/fr.json[22m [2m(+251ms)[22m 
+[2m22:20:03[22m   [34m├─[39m [2m/api/products/de.json[22m [2m(+154ms)[22m 
+[2m22:20:03[22m   [34m├─[39m [2m/api/products/pt.json[22m [2m(+160ms)[22m 
+[2m22:20:03[22m   [34m├─[39m [2m/api/products/ru.json[22m [2m(+173ms)[22m 
+[2m22:20:03[22m   [34m├─[39m [2m/api/products/ja.json[22m [2m(+149ms)[22m 
+[2m22:20:03[22m   [34m├─[39m [2m/api/products/tr.json[22m [2m(+125ms)[22m 
+[2m22:20:03[22m   [34m├─[39m [2m/api/products/ar.json[22m [2m(+145ms)[22m 
+[2m22:20:04[22m   [34m├─[39m [2m/api/products/ko.json[22m [2m(+151ms)[22m 
+[2m22:20:04[22m   [34m├─[39m [2m/api/products/zh.json[22m [2m(+151ms)[22m 
+[2m22:20:04[22m   [34m├─[39m [2m/api/products/hi.json[22m [2m(+154ms)[22m 
+[2m22:20:04[22m   [34m├─[39m [2m/api/products/vi.json[22m [2m(+170ms)[22m 
+[2m22:20:04[22m   [34m├─[39m [2m/api/products/jv.json[22m [2m(+151ms)[22m 
+[2m22:20:04[22m   [34m├─[39m [2m/api/products/ms.json[22m [2m(+142ms)[22m 
+[2m22:20:04[22m   [34m└─[39m [2m/api/products/tg.json[22m [2m(+183ms)[22m 
+[2m22:20:05[22m [35mλ[39m src/pages/api/search-index/[lang].json.ts
+[2m22:20:05[22m   [34m├─[39m [2m/api/search-index/en.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+234ms)[22m 
+[2m22:20:05[22m   [34m├─[39m [2m/api/search-index/it.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+214ms)[22m 
+[2m22:20:05[22m   [34m├─[39m [2m/api/search-index/es.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+179ms)[22m 
+[2m22:20:05[22m   [34m├─[39m [2m/api/search-index/fr.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+171ms)[22m 
+[2m22:20:05[22m   [34m├─[39m [2m/api/search-index/de.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+196ms)[22m 
+[2m22:20:06[22m   [34m├─[39m [2m/api/search-index/pt.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+246ms)[22m 
+[2m22:20:06[22m   [34m├─[39m [2m/api/search-index/ru.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+258ms)[22m 
+[2m22:20:06[22m   [34m├─[39m [2m/api/search-index/ja.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+209ms)[22m 
+[2m22:20:06[22m   [34m├─[39m [2m/api/search-index/tr.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+216ms)[22m 
+[2m22:20:07[22m   [34m├─[39m [2m/api/search-index/ar.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+162ms)[22m 
+[2m22:20:07[22m   [34m├─[39m [2m/api/search-index/ko.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+157ms)[22m 
+[2m22:20:07[22m   [34m├─[39m [2m/api/search-index/zh.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+164ms)[22m 
+[2m22:20:07[22m   [34m├─[39m [2m/api/search-index/hi.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+155ms)[22m 
+[2m22:20:07[22m   [34m├─[39m [2m/api/search-index/vi.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+184ms)[22m 
+[2m22:20:07[22m   [34m├─[39m [2m/api/search-index/jv.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+215ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/api/search-index/ms.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+248ms)[22m 
+[2m22:20:08[22m   [34m└─[39m [2m/api/search-index/tg.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+257ms)[22m 
+[2m22:20:08[22m [32m▶[39m src/pages/blog/[page].astro
+The collection "blog" does not exist or is empty. Please check your content config file for errors.
+[2m22:20:08[22m [32m▶[39m src/pages/blog/[category]/[...page].astro
+The collection "blog" does not exist or is empty. Please check your content config file for errors.
+[2m22:20:08[22m   [34m├─[39m [2m/blog/sunglasses/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+21ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/blog/acetate-sunglasses/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+12ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/blog/metal-sunglasses/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+14ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/blog/titanium-sunglasses/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+16ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/blog/carbon-fiber-sunglasses/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+12ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/blog/rimless-sunglasses/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+12ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/blog/optical-frames/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+12ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/blog/acetate-optical-frames/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+12ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/blog/metal-optical-frames/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+10ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/blog/titanium-optical-frames/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+9ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/blog/carbon-fiber-optical-frames/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+13ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/blog/rimless-optical-frames/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+10ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/blog/fashion-acetate-sunglasses/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+10ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/blog/fashion-metal-sunglasses/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+9ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/blog/fashion-acetate-optical-frames/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+8ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/blog/fashion-metal-optical-frames/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+12ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/blog/luxury-acetate-sunglasses/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+11ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/blog/luxury-titanium-sunglasses/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+11ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/blog/luxury-acetate-optical-frames/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+12ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/blog/luxury-titanium-optical-frames/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+12ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/blog/fashion-eyewear/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+13ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/blog/luxury-eyewear/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+15ms)[22m 
+[2m22:20:08[22m   [34m├─[39m [2m/blog/carbon-fiber-eyewear/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+10ms)[22m 
+[2m22:20:08[22m   [34m└─[39m [2m/blog/rimless-eyewear/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+10ms)[22m 
+[2m22:20:08[22m [32m▶[39m src/pages/blog/index.astro
+[2m22:20:08[22m   [34m└─[39m [2m/blog/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+20ms)[22m 
+[2m22:20:08[22m [32m▶[39m src/pages/collection/index.astro
+[2m22:20:08[22m   [34m└─[39m [2m/collection/index.html[22m [2m(+13ms)[22m 
+[2m22:20:08[22m [32m▶[39m src/pages/contact.astro
+[2m22:20:08[22m   [34m└─[39m [2m/contact/index.html[22m [2m(+12ms)[22m 
+[2m22:20:09[22m [32m▶[39m src/pages/eyewear/[page].astro
+The collection "feature" does not exist or is empty. Please check your content config file for errors.
+[2m22:20:09[22m [32m▶[39m src/pages/eyewear/[category]/[...page].astro
+The collection "feature" does not exist or is empty. Please check your content config file for errors.
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/sunglasses/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+17ms)[22m 
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/acetate-sunglasses/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+12ms)[22m 
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/metal-sunglasses/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+10ms)[22m 
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/titanium-sunglasses/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+11ms)[22m 
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/carbon-fiber-sunglasses/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+10ms)[22m 
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/rimless-sunglasses/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+11ms)[22m 
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/optical-frames/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+11ms)[22m 
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/acetate-optical-frames/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+17ms)[22m 
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/metal-optical-frames/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+14ms)[22m 
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/titanium-optical-frames/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+16ms)[22m 
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/carbon-fiber-optical-frames/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+13ms)[22m 
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/rimless-optical-frames/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+13ms)[22m 
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/fashion-acetate-sunglasses/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+10ms)[22m 
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/fashion-metal-sunglasses/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+9ms)[22m 
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/fashion-acetate-optical-frames/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+9ms)[22m 
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/fashion-metal-optical-frames/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+11ms)[22m 
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/luxury-acetate-sunglasses/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+23ms)[22m 
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/luxury-titanium-sunglasses/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+13ms)[22m 
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/luxury-acetate-optical-frames/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+12ms)[22m 
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/luxury-titanium-optical-frames/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+11ms)[22m 
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/fashion-eyewear/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+12ms)[22m 
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/luxury-eyewear/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+10ms)[22m 
+[2m22:20:09[22m   [34m├─[39m [2m/eyewear/carbon-fiber-eyewear/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+9ms)[22m 
+[2m22:20:09[22m   [34m└─[39m [2m/eyewear/rimless-eyewear/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+9ms)[22m 
+[2m22:20:09[22m [32m▶[39m src/pages/eyewear/index.astro
+[2m22:20:09[22m   [34m└─[39m [2m/eyewear/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+11ms)[22m 
+[2m22:20:09[22m [32m▶[39m src/pages/faq.astro
+[2m22:20:09[22m   [34m└─[39m [2m/faq/index.html[22m [2m(+14ms)[22m 
+[2m22:20:09[22m [32m▶[39m src/pages/product/[page].astro
+[2m22:20:09[22m   [34m├─[39m [2m/product/2/index.html[22m [31m(+503ms)[39m 
+[2m22:20:10[22m   [34m├─[39m [2m/product/3/index.html[22m [31m(+701ms)[39m 
+[2m22:20:10[22m   [34m├─[39m [2m/product/4/index.html[22m [2m(+461ms)[22m 
+[2m22:20:11[22m   [34m├─[39m [2m/product/5/index.html[22m [2m(+407ms)[22m 
+[2m22:20:11[22m   [34m├─[39m [2m/product/6/index.html[22m [2m(+330ms)[22m 
+[2m22:20:12[22m   [34m├─[39m [2m/product/7/index.html[22m [2m(+461ms)[22m 
+[2m22:20:12[22m   [34m├─[39m [2m/product/8/index.html[22m [2m(+435ms)[22m 
+[2m22:20:13[22m   [34m├─[39m [2m/product/9/index.html[22m [31m(+537ms)[39m 
+[2m22:20:13[22m   [34m├─[39m [2m/product/10/index.html[22m [2m(+405ms)[22m 
+[2m22:20:13[22m   [34m├─[39m [2m/product/11/index.html[22m [2m(+314ms)[22m 
+[2m22:20:14[22m   [34m├─[39m [2m/product/12/index.html[22m [2m(+333ms)[22m 
+[2m22:20:14[22m   [34m├─[39m [2m/product/13/index.html[22m [2m(+305ms)[22m 
+[2m22:20:14[22m   [34m├─[39m [2m/product/14/index.html[22m [2m(+248ms)[22m 
+[2m22:20:15[22m   [34m├─[39m [2m/product/15/index.html[22m [2m(+219ms)[22m 
+[2m22:20:15[22m   [34m├─[39m [2m/product/16/index.html[22m [2m(+186ms)[22m 
+[2m22:20:15[22m   [34m├─[39m [2m/product/17/index.html[22m [2m(+173ms)[22m 
+[2m22:20:15[22m   [34m├─[39m [2m/product/18/index.html[22m [2m(+214ms)[22m 
+[2m22:20:15[22m   [34m├─[39m [2m/product/19/index.html[22m [2m(+181ms)[22m 
+[2m22:20:16[22m   [34m├─[39m [2m/product/20/index.html[22m [2m(+172ms)[22m 
+[2m22:20:16[22m   [34m├─[39m [2m/product/21/index.html[22m [2m(+206ms)[22m 
+[2m22:20:16[22m   [34m└─[39m [2m/product/22/index.html[22m [2m(+191ms)[22m 
+[2m22:20:16[22m [32m▶[39m src/pages/product/[slug].astro
+[2m22:20:16[22m   [34m├─[39m [2m/product/kao-001-acetate-optical-frame/index.html[22m [2m(+407ms)[22m 
+[2m22:20:17[22m   [34m├─[39m [2m/product/kao-002-acetate-optical-frame/index.html[22m [2m(+358ms)[22m 
+[2m22:20:17[22m   [34m├─[39m [2m/product/kao-003-acetate-optical-frame/index.html[22m [2m(+328ms)[22m 
+[2m22:20:17[22m   [34m├─[39m [2m/product/kao-004-acetate-optical-frame/index.html[22m [2m(+360ms)[22m 
+[2m22:20:18[22m   [34m├─[39m [2m/product/kao-014-acetate-optical-frame/index.html[22m [2m(+380ms)[22m 
+[2m22:20:18[22m   [34m├─[39m [2m/product/kao-015-acetate-optical-frame/index.html[22m [2m(+432ms)[22m 
+[2m22:20:19[22m   [34m├─[39m [2m/product/kao-155-acetate-optical-frame/index.html[22m [2m(+431ms)[22m 
+[2m22:20:19[22m   [34m├─[39m [2m/product/kao-156-acetate-optical-frame/index.html[22m [2m(+419ms)[22m 
+[2m22:20:20[22m   [34m├─[39m [2m/product/kao-157-acetate-optical-frame/index.html[22m [2m(+311ms)[22m 
+[2m22:20:20[22m   [34m├─[39m [2m/product/kao-158-acetate-optical-frame/index.html[22m [2m(+333ms)[22m 
+[2m22:20:20[22m   [34m├─[39m [2m/product/kao-301-acetate-optical-frame/index.html[22m [2m(+304ms)[22m 
+[2m22:20:20[22m   [34m├─[39m [2m/product/kao-304-acetate-optical-frame/index.html[22m [2m(+337ms)[22m 
+[2m22:20:21[22m   [34m├─[39m [2m/product/kao-305-acetate-optical-frame/index.html[22m [2m(+302ms)[22m 
+[2m22:20:21[22m   [34m├─[39m [2m/product/kao-306-acetate-optical-frame/index.html[22m [2m(+354ms)[22m 
+[2m22:20:21[22m   [34m├─[39m [2m/product/kao-307-acetate-optical-frame/index.html[22m [2m(+439ms)[22m 
+[2m22:20:22[22m   [34m├─[39m [2m/product/kao-308-acetate-optical-frame/index.html[22m [2m(+327ms)[22m 
+[2m22:20:22[22m   [34m├─[39m [2m/product/kao-309-acetate-optical-frame/index.html[22m [2m(+305ms)[22m 
+[2m22:20:23[22m   [34m├─[39m [2m/product/kao-310-acetate-optical-frame/index.html[22m [2m(+318ms)[22m 
+[2m22:20:23[22m   [34m├─[39m [2m/product/kao-311-acetate-optical-frame/index.html[22m [2m(+328ms)[22m 
+[2m22:20:23[22m   [34m├─[39m [2m/product/kao-312-acetate-optical-frame/index.html[22m [2m(+313ms)[22m 
+[2m22:20:23[22m   [34m├─[39m [2m/product/kao-314-acetate-optical-frame/index.html[22m [2m(+302ms)[22m 
+[2m22:20:24[22m   [34m├─[39m [2m/product/kao-315-acetate-optical-frame/index.html[22m [2m(+327ms)[22m 
+[2m22:20:24[22m   [34m├─[39m [2m/product/kao-317-acetate-optical-frame/index.html[22m [2m(+422ms)[22m 
+[2m22:20:25[22m   [34m├─[39m [2m/product/kao-318-acetate-optical-frame/index.html[22m [2m(+395ms)[22m 
+[2m22:20:25[22m   [34m├─[39m [2m/product/kao-319-acetate-optical-frame/index.html[22m [2m(+332ms)[22m 
+[2m22:20:25[22m   [34m├─[39m [2m/product/kao-320-acetate-optical-frame/index.html[22m [2m(+317ms)[22m 
+[2m22:20:26[22m   [34m├─[39m [2m/product/kao-321-acetate-optical-frame/index.html[22m [2m(+302ms)[22m 
+[2m22:20:26[22m   [34m├─[39m [2m/product/kao-322-acetate-optical-frame/index.html[22m [2m(+294ms)[22m 
+[2m22:20:26[22m   [34m├─[39m [2m/product/kao-323-acetate-optical-frame/index.html[22m [2m(+331ms)[22m 
+[2m22:20:27[22m   [34m├─[39m [2m/product/kao-325-acetate-optical-frame/index.html[22m [31m(+781ms)[39m 
+[2m22:20:27[22m   [34m├─[39m [2m/product/kao-326-acetate-optical-frame/index.html[22m [31m(+937ms)[39m 
+[2m22:20:28[22m   [34m├─[39m [2m/product/kao-327-acetate-optical-frame/index.html[22m [31m(+591ms)[39m 
+[2m22:20:29[22m   [34m├─[39m [2m/product/kao-328-acetate-optical-frame/index.html[22m [31m(+631ms)[39m 
+[2m22:20:29[22m   [34m├─[39m [2m/product/kao-329-acetate-optical-frame/index.html[22m [2m(+488ms)[22m 
+[2m22:20:30[22m   [34m├─[39m [2m/product/kao-331-acetate-optical-frame/index.html[22m [2m(+495ms)[22m 
+[2m22:20:30[22m   [34m├─[39m [2m/product/kao-332-acetate-optical-frame/index.html[22m [31m(+573ms)[39m 
+[2m22:20:31[22m   [34m├─[39m [2m/product/kao-333-acetate-optical-frame/index.html[22m [31m(+505ms)[39m 
+[2m22:20:32[22m   [34m├─[39m [2m/product/kao-334-acetate-optical-frame/index.html[22m [2m(+473ms)[22m 
+[2m22:20:32[22m   [34m├─[39m [2m/product/kao-335-acetate-optical-frame/index.html[22m [31m(+520ms)[39m 
+[2m22:20:32[22m   [34m├─[39m [2m/product/kao-336-acetate-optical-frame/index.html[22m [31m(+505ms)[39m 
+[2m22:20:33[22m   [34m├─[39m [2m/product/kao-337-acetate-optical-frame/index.html[22m [2m(+461ms)[22m 
+[2m22:20:33[22m   [34m├─[39m [2m/product/kao-338-acetate-optical-frame/index.html[22m [2m(+404ms)[22m 
+[2m22:20:34[22m   [34m├─[39m [2m/product/kao-339-acetate-optical-frame/index.html[22m [2m(+390ms)[22m 
+[2m22:20:34[22m   [34m├─[39m [2m/product/kao-340-acetate-optical-frame/index.html[22m [2m(+400ms)[22m 
+[2m22:20:35[22m   [34m├─[39m [2m/product/kao-341-acetate-optical-frame/index.html[22m [2m(+397ms)[22m 
+[2m22:20:35[22m   [34m├─[39m [2m/product/kao-342-acetate-optical-frame/index.html[22m [2m(+453ms)[22m 
+[2m22:20:36[22m   [34m├─[39m [2m/product/kao-343-acetate-optical-frame/index.html[22m [2m(+433ms)[22m 
+[2m22:20:36[22m   [34m├─[39m [2m/product/kao-344-acetate-optical-frame/index.html[22m [2m(+455ms)[22m 
+[2m22:20:36[22m   [34m├─[39m [2m/product/kao-347-acetate-optical-frame/index.html[22m [2m(+387ms)[22m 
+[2m22:20:37[22m   [34m├─[39m [2m/product/kao-501-acetate-optical-frame/index.html[22m [2m(+445ms)[22m 
+[2m22:20:37[22m   [34m├─[39m [2m/product/kao-348-acetate-optical-frame/index.html[22m [31m(+529ms)[39m 
+[2m22:20:38[22m   [34m├─[39m [2m/product/kao-502-acetate-optical-frame/index.html[22m [31m(+597ms)[39m 
+[2m22:20:38[22m   [34m├─[39m [2m/product/kao-511-acetate-optical-frame/index.html[22m [31m(+858ms)[39m 
+[2m22:20:39[22m   [34m├─[39m [2m/product/kas-007-acetate-sunglasses/index.html[22m [31m(+704ms)[39m 
+[2m22:20:40[22m   [34m├─[39m [2m/product/kas-010-acetate-sunglasses/index.html[22m [31m(+765ms)[39m 
+[2m22:20:41[22m   [34m├─[39m [2m/product/kas-011-acetate-sunglasses/index.html[22m [31m(+688ms)[39m 
+[2m22:20:41[22m   [34m├─[39m [2m/product/kas-014-acetate-sunglasses/index.html[22m [31m(+801ms)[39m 
+[2m22:20:42[22m   [34m├─[39m [2m/product/kas-015-acetate-sunglasses/index.html[22m [31m(+577ms)[39m 
+[2m22:20:43[22m   [34m├─[39m [2m/product/kas-016-acetate-sunglasses/index.html[22m [2m(+408ms)[22m 
+[2m22:20:43[22m   [34m├─[39m [2m/product/kas-017-acetate-sunglasses/index.html[22m [2m(+400ms)[22m 
+[2m22:20:44[22m   [34m├─[39m [2m/product/kas-019-acetate-sunglasses/index.html[22m [2m(+376ms)[22m 
+[2m22:20:44[22m   [34m├─[39m [2m/product/kas-018-acetate-sunglasses/index.html[22m [2m(+428ms)[22m 
+[2m22:20:44[22m   [34m├─[39m [2m/product/kas-020-acetate-sunglasses/index.html[22m [31m(+643ms)[39m 
+[2m22:20:45[22m   [34m├─[39m [2m/product/kas-101-acetate-sunglasses/index.html[22m [2m(+405ms)[22m 
+[2m22:20:45[22m   [34m├─[39m [2m/product/kas-102-acetate-sunglasses/index.html[22m [2m(+345ms)[22m 
+[2m22:20:46[22m   [34m├─[39m [2m/product/kas-103-acetate-sunglasses/index.html[22m [2m(+274ms)[22m 
+[2m22:20:46[22m   [34m├─[39m [2m/product/kas-104-acetate-sunglasses/index.html[22m [2m(+270ms)[22m 
+[2m22:20:46[22m   [34m├─[39m [2m/product/kas-106-acetate-sunglasses/index.html[22m [2m(+286ms)[22m 
+[2m22:20:47[22m   [34m├─[39m [2m/product/kas-105-acetate-sunglasses/index.html[22m [2m(+297ms)[22m 
+[2m22:20:47[22m   [34m├─[39m [2m/product/kas-107-acetate-sunglasses/index.html[22m [2m(+334ms)[22m 
+[2m22:20:47[22m   [34m├─[39m [2m/product/kas-107s-acetate-sunglasses/index.html[22m [2m(+376ms)[22m 
+[2m22:20:48[22m   [34m├─[39m [2m/product/kas-108-acetate-sunglasses/index.html[22m [2m(+376ms)[22m 
+[2m22:20:48[22m   [34m├─[39m [2m/product/kas-109-acetate-sunglasses/index.html[22m [2m(+309ms)[22m 
+[2m22:20:48[22m   [34m├─[39m [2m/product/kas-110-acetate-sunglasses/index.html[22m [2m(+314ms)[22m 
+[2m22:20:49[22m   [34m├─[39m [2m/product/kas-111-acetate-sunglasses/index.html[22m [2m(+404ms)[22m 
+[2m22:20:49[22m   [34m├─[39m [2m/product/kas-112-acetate-sunglasses/index.html[22m [2m(+460ms)[22m 
+[2m22:20:49
+
+[… truncated 217526 chars …]

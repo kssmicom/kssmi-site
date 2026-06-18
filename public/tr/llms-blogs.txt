@@ -1,4 +1,4 @@
-﻿# Kssmi - Bloglar (Türkçe)
+# Kssmi - Bloglar (Türkçe)
 
-Sektörel içgörüler, haberler ve editoryal makaleler.
+> Sektörel içgörüler, haberler ve editoryal makaleler.
 

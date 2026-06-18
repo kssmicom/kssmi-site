@@ -87,9 +87,9 @@ const processCollection = (collectionName, titlePathPattern) => {
             const urlPathParams = titlePathPattern ? `${titlePathPattern}/` : '';
             const url = `${SITE_URL}${urlPrefix}/${urlPathParams}${slugPart}`;
 
-            const header = data.itemNo ? `- ${data.title} (${data.itemNo})` : `- ${data.title}`;
+            const label = data.itemNo ? `${data.title} (${data.itemNo})` : `${data.title}`;
 
-            let entry = `${header} | ${url}\n`;
+            let entry = `- [${label}](${url})\n`;
             if (data.categories) entry += `  > Categories: ${data.categories.join(', ')}\n`;
             if (data.materials) entry += `  > Materials: ${data.materials.join(', ')}\n`;
             if (data.serviceMode) entry += `  > Service Modes: ${data.serviceMode.join(', ')}\n`;
@@ -304,38 +304,37 @@ Object.keys(langData).forEach(lang => {
     const llmsBaseUrl = `${SITE_URL}/${lang}`;
 
     // 1. llms-core.txt
-    const coreContent = `\uFEFF# Kssmi - ${t.core} (${localLangName})\n\n${t.coreDesc}\n\n- ${t.home} | ${baseUrl}/\n- ${t.about} | ${baseUrl}/about-us/\n- ${t.contact} | ${baseUrl}/contact/\n`;
+    const coreContent = `# Kssmi - ${t.core} (${localLangName})\n\n> ${t.coreDesc}\n\n- [${t.home}](${baseUrl}/)\n- [${t.about}](${baseUrl}/about-us/)\n- [${t.contact}](${baseUrl}/contact/)\n`;
     fs.writeFileSync(path.join(langDir, 'llms-core.txt'), coreContent, 'utf-8');
 
     // 2. llms-products.txt
-    const productsContent = `\uFEFF# Kssmi - ${t.products} (${localLangName})\n\n${t.productsDesc}\n\n${langData[lang].products.join('')}`;
+    const productsContent = `# Kssmi - ${t.products} (${localLangName})\n\n> ${t.productsDesc}\n\n${langData[lang].products.join('')}`;
     fs.writeFileSync(path.join(langDir, 'llms-products.txt'), productsContent, 'utf-8');
 
     // 3. llms-landing.txt
-    const landingContent = `\uFEFF# Kssmi - ${t.landing} (${localLangName})\n\n${t.landingDesc}\n\n${langData[lang].landing.join('')}`;
+    const landingContent = `# Kssmi - ${t.landing} (${localLangName})\n\n> ${t.landingDesc}\n\n${langData[lang].landing.join('')}`;
     fs.writeFileSync(path.join(langDir, 'llms-landing.txt'), landingContent, 'utf-8');
 
     // 4. llms-blogs.txt
-    const blogContent = `\uFEFF# Kssmi - ${t.blog} (${localLangName})\n\n${t.blogDesc}\n\n${langData[lang].blog.join('')}`;
+    const blogContent = `# Kssmi - ${t.blog} (${localLangName})\n\n> ${t.blogDesc}\n\n${langData[lang].blog.join('')}`;
     fs.writeFileSync(path.join(langDir, 'llms-blogs.txt'), blogContent, 'utf-8');
 
     // 5. Language Index (llms.txt) for this specific language
-    const langIndexContent = `\uFEFF# Kssmi ${t.guide} - ${localLangName}
-Date: ${currentDate}
+    const langIndexContent = `# Kssmi ${t.guide} - ${localLangName}
 
-${exploreText}
+> ${exploreText}
 
 ## ${t.core} (${t.coreDesc})
-- ${llmsBaseUrl}/llms-core.txt
+- [${t.core}](${llmsBaseUrl}/llms-core.txt)
 
 ## ${t.products} (${t.productsDesc})
-- ${llmsBaseUrl}/llms-products.txt
+- [${t.products}](${llmsBaseUrl}/llms-products.txt)
 
 ## ${t.landing} (${t.landingDesc})
-- ${llmsBaseUrl}/llms-landing.txt
+- [${t.landing}](${llmsBaseUrl}/llms-landing.txt)
 
 ## ${t.blog} (${t.blogDesc})
-- ${llmsBaseUrl}/llms-blogs.txt
+- [${t.blog}](${llmsBaseUrl}/llms-blogs.txt)
 
 *${t.generated}*
 `;
@@ -344,8 +343,9 @@ ${exploreText}
 });
 
 // Finally, generate the Global Router at public/llms.txt
-let globalContent = `\uFEFF# Kssmi Eyewear — B2B Eyewear Manufacturing
-Date: ${currentDate}
+let globalContent = `# Kssmi Eyewear — B2B Eyewear Manufacturing
+
+> Kssmi is a B2B handmade eyewear and sunglasses manufacturer (OEM/ODM) based in Guangdong, China since 2003, serving global optical retailers, boutique shops, and fashion brands.
 
 ## About
 Kssmi is a leading B2B handmade eyewear and sunglasses manufacturer based in Guangdong, China, operational since 2003. We produce high-quality, ethically handcrafted eyewear for global optical retailers, boutique shops, and fashion brands.
@@ -368,9 +368,9 @@ Kssmi is a leading B2B handmade eyewear and sunglasses manufacturer based in Gua
 FDA (US), CE (EU), RoHS, California Proposition 65 compliant.
 
 ## Contact
-- Website: https://kssmi.com
-- Quote: https://kssmi.com/quote
-- FAQ: https://kssmi.com/faq
+- [Website](https://kssmi.com)
+- [Request a Quote](https://kssmi.com/quote)
+- [FAQ](https://kssmi.com/faq)
 - Email: sales@kssmi.com
 - WhatsApp: +86-135-1053-2553
 
@@ -389,12 +389,12 @@ Object.keys(langData).sort().forEach(lang => {
     } catch (e) {
         // Fallback to uppercase code if Intl fails for some reason
     }
-    globalContent += `- ${langName} Language index [${lang}]: https://kssmi.com/${lang}/llms.txt\n`;
+    globalContent += `- [${langName} (${lang})](https://kssmi.com/${lang}/llms.txt)\n`;
 });
 
 globalContent += `
-Company Legal Information & Sitemap:
-- sitemap | https://kssmi.com/sitemap.xml
+## Sitemap
+- [XML Sitemap](https://kssmi.com/sitemap.xml)
 
 *Generated by Kssmi Eyewear*
 `;

@@ -1,18 +1,17 @@
-﻿# Kssmi دليل نماذج اللغة الكبيرة - العربية
-Date: 2026-06-18
+# Kssmi دليل نماذج اللغة الكبيرة - العربية
 
-لاستكشاف محتوانا بـ العربية، يرجى اتباع الأدلة المتخصصة أدناه:
+> لاستكشاف محتوانا بـ العربية، يرجى اتباع الأدلة المتخصصة أدناه:
 
 ## الصفحات الأساسية (التنقل الأساسي ومعلومات الشركة.)
-- https://kssmi.com/ar/llms-core.txt
+- [الصفحات الأساسية](https://kssmi.com/ar/llms-core.txt)
 
 ## المنتجات (كتالوج نظاراتنا الشمسية B2B وإطارات النظارات الفاخرة.)
-- https://kssmi.com/ar/llms-products.txt
+- [المنتجات](https://kssmi.com/ar/llms-products.txt)
 
 ## الصفحات المقصودة (مجموعات المنتجات وأدلة المواد وصفحات التسويق.)
-- https://kssmi.com/ar/llms-landing.txt
+- [الصفحات المقصودة](https://kssmi.com/ar/llms-landing.txt)
 
 ## المدونات (رؤى الصناعة والأخبار والمقالات التحريرية.)
-- https://kssmi.com/ar/llms-blogs.txt
+- [المدونات](https://kssmi.com/ar/llms-blogs.txt)
 
 *تم الإنشاء بواسطة Kssmi Eyewear*
