@@ -1,7 +1,12 @@
 <?php
 /**
  * VJT Data Helper
- * JSON flat-file storage (no database required).
+ * SQLite storage (PDO). Drop-in replacement for the former JSON flat-file store.
+ *
+ * All public vjt_* functions keep their original signatures and return shapes,
+ * so the ingest endpoints and dashboard need no structural changes.
+ *
+ * On first run it auto-migrates any existing *.json data into vjt.sqlite.
  */
 
 date_default_timezone_set('Asia/Shanghai');
@@ -10,7 +15,6 @@ date_default_timezone_set('Asia/Shanghai');
 // If the value is already a date string without "T" or "Z", return as-is.
 function vjt_to_beijing($timeStr) {
     if (empty($timeStr)) return date('Y-m-d H:i:s');
-    // Already in "Y-m-d H:i:s" format (no T, no Z) — assume already local
     if (strpos($timeStr, 'T') === false && strpos($timeStr, 'Z') === false) {
         return $timeStr;
     }
@@ -19,8 +23,9 @@ function vjt_to_beijing($timeStr) {
     return date('Y-m-d H:i:s', $ts);
 }
 
-// Store data directly inside the API folder to avoid web-root permission issues on shared hosting
+// Store data inside the API folder to avoid web-root permission issues on shared hosting
 define('VJT_DATA_DIR', __DIR__ . '/vjt_data');
+define('VJT_DB_PATH', VJT_DATA_DIR . '/vjt.sqlite');
 
 // Country code → name mapping
 function vjt_country_name($code) {
@@ -38,152 +43,389 @@ function vjt_country_name($code) {
     return $map[$code] ?? $code;
 }
 
+// ── Database connection ──────────────────────────────────────────────────────
+
+function vjt_db() {
+    static $pdo = null;
+    if ($pdo !== null) return $pdo;
+
+    if (!is_dir(VJT_DATA_DIR)) {
+        @mkdir(VJT_DATA_DIR, 0755, true);
+    }
+    // Block web access to the data dir (sqlite file + WAL/SHM)
+    $htaccess = VJT_DATA_DIR . '/.htaccess';
+    if (!file_exists($htaccess)) {
+        @file_put_contents($htaccess, "Deny from all\n");
+    }
+
+    try {
+        $pdo = new PDO('sqlite:' . VJT_DB_PATH);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        // WAL = concurrent reads while writing; far better than the old global flock()
+        $pdo->exec('PRAGMA journal_mode = WAL');
+        $pdo->exec('PRAGMA synchronous = NORMAL');
+        $pdo->exec('PRAGMA busy_timeout = 5000');
+        $pdo->exec('PRAGMA foreign_keys = OFF');
+        @chmod(VJT_DB_PATH, 0666);
+    } catch (Exception $e) {
+        error_log('VJT ERROR: cannot open SQLite DB: ' . $e->getMessage());
+        throw $e;
+    }
+    return $pdo;
+}
+
+function vjt_create_schema() {
+    $db = vjt_db();
+    $db->exec("CREATE TABLE IF NOT EXISTS visitors (
+        visitor_id        TEXT PRIMARY KEY,
+        first_ip          TEXT DEFAULT '',
+        country           TEXT DEFAULT '',
+        city              TEXT DEFAULT '',
+        user_agent        TEXT DEFAULT '',
+        browser           TEXT DEFAULT 'Unknown',
+        device_type       TEXT DEFAULT 'Unknown',
+        screen_resolution TEXT DEFAULT '',
+        timezone          TEXT DEFAULT '',
+        language          TEXT DEFAULT '',
+        site_language     TEXT DEFAULT 'EN',
+        first_seen_at     TEXT DEFAULT '',
+        last_seen_at      TEXT DEFAULT ''
+    )");
+    $db->exec("CREATE TABLE IF NOT EXISTS sessions (
+        session_id    TEXT PRIMARY KEY,
+        visitor_id    TEXT DEFAULT '',
+        ip            TEXT DEFAULT '',
+        country       TEXT DEFAULT '',
+        city          TEXT DEFAULT '',
+        region        TEXT DEFAULT '',
+        calling_code  TEXT DEFAULT '',
+        referrer      TEXT DEFAULT '',
+        landing_url   TEXT DEFAULT '',
+        landing_title TEXT DEFAULT '',
+        utm_source    TEXT DEFAULT '',
+        utm_medium    TEXT DEFAULT '',
+        utm_campaign  TEXT DEFAULT '',
+        utm_content   TEXT DEFAULT '',
+        utm_term      TEXT DEFAULT '',
+        started_at    TEXT DEFAULT '',
+        last_seen_at  TEXT DEFAULT ''
+    )");
+    $db->exec("CREATE TABLE IF NOT EXISTS pageviews (
+        id               INTEGER PRIMARY KEY AUTOINCREMENT,
+        session_id       TEXT DEFAULT '',
+        visitor_id       TEXT DEFAULT '',
+        url              TEXT DEFAULT '',
+        title            TEXT DEFAULT '',
+        visited_at       TEXT DEFAULT '',
+        leave_at         TEXT,
+        duration_seconds INTEGER DEFAULT 0,
+        scroll_depth     INTEGER DEFAULT 0,
+        step_order       INTEGER DEFAULT 1
+    )");
+    $db->exec("CREATE TABLE IF NOT EXISTS submissions (
+        id            INTEGER PRIMARY KEY AUTOINCREMENT,
+        visitor_id    TEXT DEFAULT '',
+        session_id    TEXT DEFAULT '',
+        form_plugin   TEXT DEFAULT '',
+        form_id       TEXT DEFAULT '',
+        form_name     TEXT DEFAULT '',
+        submit_page   TEXT DEFAULT '',
+        submit_title  TEXT DEFAULT '',
+        submitted_at  TEXT DEFAULT '',
+        status        TEXT DEFAULT 'attempt',
+        contact_url   TEXT DEFAULT '',
+        ip            TEXT DEFAULT '',
+        country       TEXT DEFAULT '',
+        city          TEXT DEFAULT '',
+        region        TEXT DEFAULT '',
+        calling_code  TEXT DEFAULT ''
+    )");
+    $db->exec("CREATE TABLE IF NOT EXISTS geo_cache (
+        ip           TEXT PRIMARY KEY,
+        country      TEXT DEFAULT '',
+        city         TEXT DEFAULT '',
+        region       TEXT DEFAULT '',
+        calling_code TEXT DEFAULT '',
+        cached_at    TEXT DEFAULT ''
+    )");
+    // Item 6: pending IPs awaiting geo resolution (resolved off the ingest path)
+    $db->exec("CREATE TABLE IF NOT EXISTS geo_queue (
+        ip        TEXT PRIMARY KEY,
+        queued_at TEXT DEFAULT ''
+    )");
+    $db->exec("CREATE TABLE IF NOT EXISTS settings (
+        key   TEXT PRIMARY KEY,
+        value TEXT DEFAULT ''
+    )");
+    $db->exec("CREATE TABLE IF NOT EXISTS meta (
+        key   TEXT PRIMARY KEY,
+        value TEXT DEFAULT ''
+    )");
+
+    // Indexes — these are what make growth a non-issue
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_pv_visited   ON pageviews(visited_at)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_pv_session   ON pageviews(session_id)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_pv_visitor   ON pageviews(visitor_id)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_pv_url       ON pageviews(url)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_sub_time     ON submissions(submitted_at)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_sub_visitor  ON submissions(visitor_id)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_sub_session  ON submissions(session_id)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_sess_visitor ON sessions(visitor_id)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_sess_started ON sessions(started_at)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_sess_seen    ON sessions(last_seen_at)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_vis_seen     ON visitors(last_seen_at)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_vis_country  ON visitors(country)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_vis_device   ON visitors(device_type)");
+}
+
+function vjt_meta_get($key, $default = null) {
+    try {
+        $stmt = vjt_db()->prepare("SELECT value FROM meta WHERE key = ?");
+        $stmt->execute([$key]);
+        $row = $stmt->fetch();
+        return $row ? $row['value'] : $default;
+    } catch (Exception $e) { return $default; }
+}
+
+function vjt_meta_set($key, $value) {
+    try {
+        $stmt = vjt_db()->prepare("INSERT INTO meta (key, value) VALUES (?, ?)
+            ON CONFLICT(key) DO UPDATE SET value = excluded.value");
+        $stmt->execute([$key, (string)$value]);
+    } catch (Exception $e) {}
+}
+
 function vjt_data_init() {
     if (!is_dir(VJT_DATA_DIR)) {
         if (!@mkdir(VJT_DATA_DIR, 0755, true)) {
             error_log("VJT ERROR: Failed to create data directory at " . VJT_DATA_DIR);
         }
     }
-    // Always verify .htaccess exists (may be deleted during deployment)
-    $htaccess = VJT_DATA_DIR . '/.htaccess';
-    if (!file_exists($htaccess)) {
-        @file_put_contents($htaccess, "Deny from all\n");
-    }
-    $defaults = [
-        'visitors.json'    => new stdClass(),
-        'sessions.json'    => new stdClass(),
-        'pageviews.json'   => [],
-        'submissions.json' => [],
-        'geo_cache.json'   => new stdClass(),
-        'settings.json'    => ['session_timeout' => '30', 'retention_days' => '90', 'enable_geo' => '1'],
-    ];
-    foreach ($defaults as $file => $default) {
-        $path = VJT_DATA_DIR . '/' . $file;
-        if (!file_exists($path)) {
-            vjt_write_json($file, $default);
-        }
-        // Ensure writable (deploy scripts may lock permissions to 644)
-        @chmod($path, 0666);
+    vjt_create_schema();
+
+    // Seed default settings if missing
+    $defaults = ['session_timeout' => '30', 'retention_days' => '90', 'enable_geo' => '1'];
+    foreach ($defaults as $k => $v) {
+        $stmt = vjt_db()->prepare("INSERT OR IGNORE INTO settings (key, value) VALUES (?, ?)");
+        $stmt->execute([$k, $v]);
     }
 
-    // Run auto-cleanup once per day (I2 fix: prevent unbounded JSON file growth)
+    // One-time migration from the old JSON flat files
+    vjt_migrate_json_if_needed();
+
+    // Run auto-cleanup once per day
     vjt_auto_cleanup();
 }
 
+// ── One-time JSON → SQLite migration ─────────────────────────────────────────
+
+function vjt_read_legacy_json($filename) {
+    $path = VJT_DATA_DIR . '/' . $filename;
+    if (!file_exists($path)) return null;
+    $content = @file_get_contents($path);
+    if ($content === false || $content === '') return null;
+    return json_decode($content, true);
+}
+
+function vjt_migrate_json_if_needed() {
+    if (vjt_meta_get('json_migrated') === '1') return;
+
+    $db = vjt_db();
+    // Only migrate if legacy files exist
+    $hasLegacy = file_exists(VJT_DATA_DIR . '/pageviews.json')
+        || file_exists(VJT_DATA_DIR . '/visitors.json')
+        || file_exists(VJT_DATA_DIR . '/submissions.json');
+    if (!$hasLegacy) {
+        vjt_meta_set('json_migrated', '1');
+        return;
+    }
+
+    try {
+        $db->beginTransaction();
+
+        $visitors = vjt_read_legacy_json('visitors.json');
+        if (is_array($visitors)) {
+            $stmt = $db->prepare("INSERT OR IGNORE INTO visitors
+                (visitor_id, first_ip, country, city, user_agent, browser, device_type,
+                 screen_resolution, timezone, language, site_language, first_seen_at, last_seen_at)
+                VALUES (:visitor_id,:first_ip,:country,:city,:user_agent,:browser,:device_type,
+                 :screen_resolution,:timezone,:language,:site_language,:first_seen_at,:last_seen_at)");
+            foreach ($visitors as $vid => $v) {
+                if (!is_array($v)) continue;
+                $stmt->execute([
+                    ':visitor_id' => $v['visitor_id'] ?? $vid,
+                    ':first_ip' => $v['first_ip'] ?? '',
+                    ':country' => $v['country'] ?? '',
+                    ':city' => $v['city'] ?? '',
+                    ':user_agent' => $v['user_agent'] ?? '',
+                    ':browser' => $v['browser'] ?? 'Unknown',
+                    ':device_type' => $v['device_type'] ?? 'Unknown',
+                    ':screen_resolution' => $v['screen_resolution'] ?? '',
+                    ':timezone' => $v['timezone'] ?? '',
+                    ':language' => $v['language'] ?? '',
+                    ':site_language' => $v['site_language'] ?? 'EN',
+                    ':first_seen_at' => $v['first_seen_at'] ?? '',
+                    ':last_seen_at' => $v['last_seen_at'] ?? '',
+                ]);
+            }
+        }
+
+        $sessions = vjt_read_legacy_json('sessions.json');
+        if (is_array($sessions)) {
+            $stmt = $db->prepare("INSERT OR IGNORE INTO sessions
+                (session_id, visitor_id, ip, country, city, region, calling_code, referrer,
+                 landing_url, landing_title, utm_source, utm_medium, utm_campaign, utm_content,
+                 utm_term, started_at, last_seen_at)
+                VALUES (:session_id,:visitor_id,:ip,:country,:city,:region,:calling_code,:referrer,
+                 :landing_url,:landing_title,:utm_source,:utm_medium,:utm_campaign,:utm_content,
+                 :utm_term,:started_at,:last_seen_at)");
+            foreach ($sessions as $sid => $s) {
+                if (!is_array($s)) continue;
+                $stmt->execute([
+                    ':session_id' => $s['session_id'] ?? $sid,
+                    ':visitor_id' => $s['visitor_id'] ?? '',
+                    ':ip' => $s['ip'] ?? '',
+                    ':country' => $s['country'] ?? '',
+                    ':city' => $s['city'] ?? '',
+                    ':region' => $s['region'] ?? '',
+                    ':calling_code' => $s['calling_code'] ?? '',
+                    ':referrer' => $s['referrer'] ?? '',
+                    ':landing_url' => $s['landing_url'] ?? '',
+                    ':landing_title' => $s['landing_title'] ?? '',
+                    ':utm_source' => $s['utm_source'] ?? '',
+                    ':utm_medium' => $s['utm_medium'] ?? '',
+                    ':utm_campaign' => $s['utm_campaign'] ?? '',
+                    ':utm_content' => $s['utm_content'] ?? '',
+                    ':utm_term' => $s['utm_term'] ?? '',
+                    ':started_at' => $s['started_at'] ?? '',
+                    ':last_seen_at' => $s['last_seen_at'] ?? '',
+                ]);
+            }
+        }
+
+        $pageviews = vjt_read_legacy_json('pageviews.json');
+        if (is_array($pageviews)) {
+            $stmt = $db->prepare("INSERT INTO pageviews
+                (session_id, visitor_id, url, title, visited_at, leave_at, duration_seconds, scroll_depth, step_order)
+                VALUES (:session_id,:visitor_id,:url,:title,:visited_at,:leave_at,:duration_seconds,:scroll_depth,:step_order)");
+            foreach ($pageviews as $pv) {
+                if (!is_array($pv)) continue;
+                $stmt->execute([
+                    ':session_id' => $pv['session_id'] ?? '',
+                    ':visitor_id' => $pv['visitor_id'] ?? '',
+                    ':url' => $pv['url'] ?? '',
+                    ':title' => $pv['title'] ?? '',
+                    ':visited_at' => $pv['visited_at'] ?? '',
+                    ':leave_at' => $pv['leave_at'] ?? null,
+                    ':duration_seconds' => (int)($pv['duration_seconds'] ?? 0),
+                    ':scroll_depth' => (int)($pv['scroll_depth'] ?? 0),
+                    ':step_order' => (int)($pv['step_order'] ?? 1),
+                ]);
+            }
+        }
+
+        $submissions = vjt_read_legacy_json('submissions.json');
+        if (is_array($submissions)) {
+            $stmt = $db->prepare("INSERT INTO submissions
+                (visitor_id, session_id, form_plugin, form_id, form_name, submit_page, submit_title,
+                 submitted_at, status, contact_url, ip, country, city, region, calling_code)
+                VALUES (:visitor_id,:session_id,:form_plugin,:form_id,:form_name,:submit_page,:submit_title,
+                 :submitted_at,:status,:contact_url,:ip,:country,:city,:region,:calling_code)");
+            foreach ($submissions as $sub) {
+                if (!is_array($sub)) continue;
+                $stmt->execute([
+                    ':visitor_id' => $sub['visitor_id'] ?? '',
+                    ':session_id' => $sub['session_id'] ?? '',
+                    ':form_plugin' => $sub['form_plugin'] ?? '',
+                    ':form_id' => $sub['form_id'] ?? '',
+                    ':form_name' => $sub['form_name'] ?? '',
+                    ':submit_page' => $sub['submit_page'] ?? '',
+                    ':submit_title' => $sub['submit_title'] ?? '',
+                    ':submitted_at' => $sub['submitted_at'] ?? '',
+                    ':status' => $sub['status'] ?? 'attempt',
+                    ':contact_url' => $sub['contact_url'] ?? '',
+                    ':ip' => $sub['ip'] ?? '',
+                    ':country' => $sub['country'] ?? '',
+                    ':city' => $sub['city'] ?? '',
+                    ':region' => $sub['region'] ?? '',
+                    ':calling_code' => $sub['calling_code'] ?? '',
+                ]);
+            }
+        }
+
+        $geo = vjt_read_legacy_json('geo_cache.json');
+        if (is_array($geo)) {
+            $stmt = $db->prepare("INSERT OR IGNORE INTO geo_cache
+                (ip, country, city, region, calling_code, cached_at)
+                VALUES (:ip,:country,:city,:region,:calling_code,:cached_at)");
+            foreach ($geo as $ip => $entry) {
+                if (!is_array($entry)) continue;
+                $stmt->execute([
+                    ':ip' => $ip,
+                    ':country' => $entry['country'] ?? '',
+                    ':city' => $entry['city'] ?? '',
+                    ':region' => $entry['region'] ?? '',
+                    ':calling_code' => $entry['calling_code'] ?? '',
+                    ':cached_at' => $entry['cached_at'] ?? '',
+                ]);
+            }
+        }
+
+        $legacySettings = vjt_read_legacy_json('settings.json');
+        if (is_array($legacySettings)) {
+            foreach ($legacySettings as $k => $v) {
+                if (!is_scalar($v)) continue;
+                $st = $db->prepare("INSERT INTO settings (key, value) VALUES (?, ?)
+                    ON CONFLICT(key) DO UPDATE SET value = excluded.value");
+                $st->execute([$k, (string)$v]);
+            }
+        }
+
+        $db->commit();
+        vjt_meta_set('json_migrated', '1');
+
+        // Archive legacy files so they are not re-read (keep as .bak backup)
+        foreach (['visitors.json','sessions.json','pageviews.json','submissions.json','geo_cache.json','settings.json'] as $f) {
+            $p = VJT_DATA_DIR . '/' . $f;
+            if (file_exists($p)) @rename($p, $p . '.migrated.bak');
+        }
+        error_log('VJT: migrated legacy JSON data into SQLite.');
+    } catch (Exception $e) {
+        if ($db->inTransaction()) $db->rollBack();
+        error_log('VJT migration error: ' . $e->getMessage());
+    }
+}
+
 /**
- * Prune data older than retention_days to prevent unbounded file growth.
- * Runs at most once per 24 hours (checked via a timestamp file).
+ * Prune data older than retention_days. Runs at most once per 24h.
+ * SQLite makes this a few indexed DELETEs instead of full-file rewrites.
  */
 function vjt_auto_cleanup() {
-    $stampFile = VJT_DATA_DIR . '/.last_cleanup';
     $now = time();
-    if (file_exists($stampFile)) {
-        $lastCleanup = (int)@file_get_contents($stampFile);
-        if ($lastCleanup > 0 && ($now - $lastCleanup) < 86400) return; // < 24h, skip
-    }
+    $last = (int)vjt_meta_get('last_cleanup', 0);
+    if ($last > 0 && ($now - $last) < 86400) return;
 
     $settings = vjt_get_settings();
     $retentionDays = (int)($settings['retention_days'] ?? 90);
     if ($retentionDays < 1) $retentionDays = 90;
     $cutoff = date('Y-m-d H:i:s', $now - ($retentionDays * 86400));
 
-    // Prune pageviews
-    $pageviews = vjt_read_json('pageviews.json');
-    if (is_array($pageviews) && count($pageviews) > 0) {
-        $before = count($pageviews);
-        $pageviews = array_values(array_filter($pageviews, function ($pv) use ($cutoff) {
-            return ($pv['visited_at'] ?? '') >= $cutoff;
-        }));
-        if (count($pageviews) < $before) {
-            vjt_write_json('pageviews.json', $pageviews);
-            error_log('VJT cleanup: pruned ' . ($before - count($pageviews)) . ' old pageviews');
-        }
+    try {
+        $db = vjt_db();
+        $db->prepare("DELETE FROM pageviews WHERE visited_at < ?")->execute([$cutoff]);
+        $db->prepare("DELETE FROM submissions WHERE submitted_at < ?")->execute([$cutoff]);
+        $db->prepare("DELETE FROM sessions WHERE last_seen_at < ?")->execute([$cutoff]);
+        $db->prepare("DELETE FROM visitors WHERE last_seen_at < ?")->execute([$cutoff]);
+        $db->prepare("DELETE FROM geo_cache WHERE cached_at < ?")->execute([$cutoff]);
+        // Drop stale geo-queue entries (anything older than 2 days is unlikely to matter)
+        $db->prepare("DELETE FROM geo_queue WHERE queued_at < ?")->execute([date('Y-m-d H:i:s', $now - 2 * 86400)]);
+        vjt_meta_set('last_cleanup', $now);
+        // Reclaim space periodically (cheap on a bounded DB)
+        $db->exec('PRAGMA wal_checkpoint(TRUNCATE)');
+    } catch (Exception $e) {
+        error_log('VJT cleanup error: ' . $e->getMessage());
     }
-
-    // Prune submissions
-    $submissions = vjt_read_json('submissions.json');
-    if (is_array($submissions) && count($submissions) > 0) {
-        $before = count($submissions);
-        $submissions = array_values(array_filter($submissions, function ($sub) use ($cutoff) {
-            return ($sub['submitted_at'] ?? '') >= $cutoff;
-        }));
-        if (count($submissions) < $before) {
-            vjt_write_json('submissions.json', $submissions);
-            error_log('VJT cleanup: pruned ' . ($before - count($submissions)) . ' old submissions');
-        }
-    }
-
-    // Prune expired sessions
-    $sessions = vjt_read_json('sessions.json');
-    if (is_array($sessions) && count($sessions) > 0) {
-        $before = count($sessions);
-        $sessions = array_filter($sessions, function ($s) use ($cutoff) {
-            return ($s['last_seen_at'] ?? '') >= $cutoff;
-        });
-        if (count($sessions) < $before) {
-            vjt_write_json('sessions.json', $sessions);
-            error_log('VJT cleanup: pruned ' . ($before - count($sessions)) . ' old sessions');
-        }
-    }
-
-    // Prune inactive visitors
-    $visitors = vjt_read_json('visitors.json');
-    if (is_array($visitors) && count($visitors) > 0) {
-        $before = count($visitors);
-        $visitors = array_filter($visitors, function ($v) use ($cutoff) {
-            return ($v['last_seen_at'] ?? '') >= $cutoff;
-        });
-        if (count($visitors) < $before) {
-            vjt_write_json('visitors.json', $visitors);
-            error_log('VJT cleanup: pruned ' . ($before - count($visitors)) . ' inactive visitors');
-        }
-    }
-
-    // Prune stale geo cache entries
-    $geoCache = vjt_read_json('geo_cache.json');
-    if (is_array($geoCache) && count($geoCache) > 0) {
-        $before = count($geoCache);
-        $geoCache = array_filter($geoCache, function ($entry) use ($cutoff) {
-            return ($entry['cached_at'] ?? '') >= $cutoff;
-        });
-        if (count($geoCache) < $before) {
-            vjt_write_json('geo_cache.json', $geoCache);
-        }
-    }
-
-    @file_put_contents($stampFile, (string)$now);
-}
-
-function vjt_read_json($filename) {
-    $path = VJT_DATA_DIR . '/' . $filename;
-    if (!file_exists($path)) return null;
-    $fp = @fopen($path, 'r');
-    if (!$fp) return null;
-    if (!flock($fp, LOCK_SH)) { fclose($fp); return null; }
-    $content = stream_get_contents($fp);
-    flock($fp, LOCK_UN);
-    fclose($fp);
-    if ($content === false || $content === '') return null;
-    $data = json_decode($content, true);
-    return $data;
-}
-
-function vjt_write_json($filename, $data) {
-    $path = VJT_DATA_DIR . '/' . $filename;
-    $fp = @fopen($path, 'c+');
-    if (!$fp) {
-        error_log("VJT ERROR: Failed to open file for writing: " . $path);
-        return false;
-    }
-    if (!flock($fp, LOCK_EX)) { fclose($fp); return false; }
-    ftruncate($fp, 0);
-    rewind($fp);
-    $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-    fwrite($fp, $json);
-    fflush($fp);
-    flock($fp, LOCK_UN);
-    fclose($fp);
-    return true;
 }
 
 // ── UUID generation ─────────────────────────────────────────────────────────
@@ -198,227 +440,368 @@ function vjt_uuid() {
 // ── Visitor ─────────────────────────────────────────────────────────────────
 
 function vjt_upsert_visitor($data) {
-    $visitors = vjt_read_json('visitors.json');
-    if ($visitors === null) $visitors = [];
+    $db = vjt_db();
     $vid = $data['visitor_id'];
     $now = date('Y-m-d H:i:s');
-    if (isset($visitors[$vid])) {
-        $visitors[$vid]['last_seen_at'] = $now;
-        if (!empty($data['country'])) $visitors[$vid]['country'] = $data['country'];
-        if (!empty($data['city'])) $visitors[$vid]['city'] = $data['city'];
-        if (!empty($data['browser']) && $data['browser'] !== 'Unknown') $visitors[$vid]['browser'] = $data['browser'];
-        if (!empty($data['device_type']) && $data['device_type'] !== 'Unknown') $visitors[$vid]['device_type'] = $data['device_type'];
-        if (!empty($data['screen_resolution'])) $visitors[$vid]['screen_resolution'] = $data['screen_resolution'];
-        if (!empty($data['timezone'])) $visitors[$vid]['timezone'] = $data['timezone'];
-        if (!empty($data['language'])) $visitors[$vid]['language'] = $data['language'];
-        if (!empty($data['site_language'])) $visitors[$vid]['site_language'] = $data['site_language'];
-        if (!empty($data['user_agent'])) $visitors[$vid]['user_agent'] = $data['user_agent'];
-    } else {
-        $visitors[$vid] = [
-            'visitor_id'        => $vid,
-            'first_ip'          => $data['first_ip'] ?? '',
-            'country'           => $data['country'] ?? '',
-            'city'              => $data['city'] ?? '',
-            'user_agent'        => $data['user_agent'] ?? '',
-            'browser'           => $data['browser'] ?? 'Unknown',
-            'device_type'       => $data['device_type'] ?? 'Unknown',
+
+    $stmt = $db->prepare("SELECT visitor_id FROM visitors WHERE visitor_id = ?");
+    $stmt->execute([$vid]);
+    $exists = (bool)$stmt->fetch();
+
+    if ($exists) {
+        // Build a dynamic update that only overwrites meaningful new values
+        $sets = ['last_seen_at = :last_seen_at'];
+        $params = [':last_seen_at' => $now, ':vid' => $vid];
+        $maybe = [
+            'country' => $data['country'] ?? '',
+            'city' => $data['city'] ?? '',
             'screen_resolution' => $data['screen_resolution'] ?? '',
-            'timezone'          => $data['timezone'] ?? '',
-            'language'          => $data['language'] ?? '',
-            'site_language'     => $data['site_language'] ?? 'EN',
-            'first_seen_at'     => $now,
-            'last_seen_at'      => $now,
+            'timezone' => $data['timezone'] ?? '',
+            'language' => $data['language'] ?? '',
+            'site_language' => $data['site_language'] ?? '',
+            'user_agent' => $data['user_agent'] ?? '',
         ];
+        foreach ($maybe as $col => $val) {
+            if ($val !== '') { $sets[] = "$col = :$col"; $params[":$col"] = $val; }
+        }
+        // browser/device only overwrite when not Unknown
+        if (!empty($data['browser']) && $data['browser'] !== 'Unknown') {
+            $sets[] = "browser = :browser"; $params[':browser'] = $data['browser'];
+        }
+        if (!empty($data['device_type']) && $data['device_type'] !== 'Unknown') {
+            $sets[] = "device_type = :device_type"; $params[':device_type'] = $data['device_type'];
+        }
+        $sql = "UPDATE visitors SET " . implode(', ', $sets) . " WHERE visitor_id = :vid";
+        $db->prepare($sql)->execute($params);
+    } else {
+        $stmt = $db->prepare("INSERT INTO visitors
+            (visitor_id, first_ip, country, city, user_agent, browser, device_type,
+             screen_resolution, timezone, language, site_language, first_seen_at, last_seen_at)
+            VALUES (:visitor_id,:first_ip,:country,:city,:user_agent,:browser,:device_type,
+             :screen_resolution,:timezone,:language,:site_language,:first_seen_at,:last_seen_at)");
+        $stmt->execute([
+            ':visitor_id' => $vid,
+            ':first_ip' => $data['first_ip'] ?? '',
+            ':country' => $data['country'] ?? '',
+            ':city' => $data['city'] ?? '',
+            ':user_agent' => $data['user_agent'] ?? '',
+            ':browser' => $data['browser'] ?? 'Unknown',
+            ':device_type' => $data['device_type'] ?? 'Unknown',
+            ':screen_resolution' => $data['screen_resolution'] ?? '',
+            ':timezone' => $data['timezone'] ?? '',
+            ':language' => $data['language'] ?? '',
+            ':site_language' => $data['site_language'] ?? 'EN',
+            ':first_seen_at' => $now,
+            ':last_seen_at' => $now,
+        ]);
     }
-    vjt_write_json('visitors.json', $visitors);
 }
 
 // ── Session ─────────────────────────────────────────────────────────────────
 
 function vjt_upsert_session($data) {
-    $sessions = vjt_read_json('sessions.json');
-    if ($sessions === null) $sessions = [];
+    $db = vjt_db();
     $sid = $data['session_id'];
     $now = date('Y-m-d H:i:s');
-    if (isset($sessions[$sid])) {
-        $sessions[$sid]['last_seen_at'] = $now;
-        if (!empty($data['ip'])) $sessions[$sid]['ip'] = $data['ip'];
-        if (!empty($data['country'])) $sessions[$sid]['country'] = $data['country'];
-        if (!empty($data['city'])) $sessions[$sid]['city'] = $data['city'];
-        if (!empty($data['region'])) $sessions[$sid]['region'] = $data['region'];
-        if (!empty($data['calling_code'])) $sessions[$sid]['calling_code'] = $data['calling_code'];
-        // Late referrer capture: if session has no referrer but new data does, update it
-        if (empty($sessions[$sid]['referrer']) && !empty($data['referrer'])) {
-            $sessions[$sid]['referrer'] = $data['referrer'];
+
+    $stmt = $db->prepare("SELECT referrer, landing_url, landing_title FROM sessions WHERE session_id = ?");
+    $stmt->execute([$sid]);
+    $row = $stmt->fetch();
+
+    if ($row) {
+        $sets = ['last_seen_at = :last_seen_at'];
+        $params = [':last_seen_at' => $now, ':sid' => $sid];
+        foreach (['ip', 'country', 'city', 'region', 'calling_code'] as $col) {
+            if (!empty($data[$col])) { $sets[] = "$col = :$col"; $params[":$col"] = $data[$col]; }
         }
-        if (!empty($data['landing_url']) && empty($sessions[$sid]['landing_url'])) {
-            $sessions[$sid]['landing_url'] = $data['landing_url'];
+        // Late capture: only fill these if currently empty
+        if (empty($row['referrer']) && !empty($data['referrer'])) {
+            $sets[] = "referrer = :referrer"; $params[':referrer'] = $data['referrer'];
         }
-        if (!empty($data['landing_title']) && empty($sessions[$sid]['landing_title'])) {
-            $sessions[$sid]['landing_title'] = $data['landing_title'];
+        if (empty($row['landing_url']) && !empty($data['landing_url'])) {
+            $sets[] = "landing_url = :landing_url"; $params[':landing_url'] = $data['landing_url'];
         }
+        if (empty($row['landing_title']) && !empty($data['landing_title'])) {
+            $sets[] = "landing_title = :landing_title"; $params[':landing_title'] = $data['landing_title'];
+        }
+        $sql = "UPDATE sessions SET " . implode(', ', $sets) . " WHERE session_id = :sid";
+        $db->prepare($sql)->execute($params);
     } else {
-        $sessions[$sid] = [
-            'session_id'    => $sid,
-            'visitor_id'    => $data['visitor_id'],
-            'ip'            => $data['ip'] ?? '',
-            'country'       => $data['country'] ?? '',
-            'city'          => $data['city'] ?? '',
-            'region'        => $data['region'] ?? '',
-            'calling_code'  => $data['calling_code'] ?? '',
-            'referrer'      => $data['referrer'] ?? '',
-            'landing_url'   => $data['landing_url'] ?? '',
-            'landing_title' => $data['landing_title'] ?? '',
-            'utm_source'    => $data['utm_source'] ?? '',
-            'utm_medium'    => $data['utm_medium'] ?? '',
-            'utm_campaign'  => $data['utm_campaign'] ?? '',
-            'utm_content'   => $data['utm_content'] ?? '',
-            'utm_term'      => $data['utm_term'] ?? '',
-            'started_at'    => $now,
-            'last_seen_at'  => $now,
-        ];
+        $stmt = $db->prepare("INSERT INTO sessions
+            (session_id, visitor_id, ip, country, city, region, calling_code, referrer,
+             landing_url, landing_title, utm_source, utm_medium, utm_campaign, utm_content,
+             utm_term, started_at, last_seen_at)
+            VALUES (:session_id,:visitor_id,:ip,:country,:city,:region,:calling_code,:referrer,
+             :landing_url,:landing_title,:utm_source,:utm_medium,:utm_campaign,:utm_content,
+             :utm_term,:started_at,:last_seen_at)");
+        $stmt->execute([
+            ':session_id' => $sid,
+            ':visitor_id' => $data['visitor_id'] ?? '',
+            ':ip' => $data['ip'] ?? '',
+            ':country' => $data['country'] ?? '',
+            ':city' => $data['city'] ?? '',
+            ':region' => $data['region'] ?? '',
+            ':calling_code' => $data['calling_code'] ?? '',
+            ':referrer' => $data['referrer'] ?? '',
+            ':landing_url' => $data['landing_url'] ?? '',
+            ':landing_title' => $data['landing_title'] ?? '',
+            ':utm_source' => $data['utm_source'] ?? '',
+            ':utm_medium' => $data['utm_medium'] ?? '',
+            ':utm_campaign' => $data['utm_campaign'] ?? '',
+            ':utm_content' => $data['utm_content'] ?? '',
+            ':utm_term' => $data['utm_term'] ?? '',
+            ':started_at' => $now,
+            ':last_seen_at' => $now,
+        ]);
     }
-    vjt_write_json('sessions.json', $sessions);
 }
 
 // ── Pageview ────────────────────────────────────────────────────────────────
 
 function vjt_add_pageview($data) {
-    $pageviews = vjt_read_json('pageviews.json');
-    if ($pageviews === null) $pageviews = [];
-    $pageviews[] = [
-        'session_id'       => $data['session_id'],
-        'visitor_id'       => $data['visitor_id'],
-        'url'              => $data['url'] ?? '',
-        'title'            => $data['title'] ?? '',
-        'visited_at'       => vjt_to_beijing($data['visited_at'] ?? ''),
-        'leave_at'         => $data['leave_at'] ? vjt_to_beijing($data['leave_at']) : null,
-        'duration_seconds' => (int)($data['duration_seconds'] ?? 0),
-        'scroll_depth'     => (int)($data['scroll_depth'] ?? 0),
-        'step_order'       => (int)($data['step_order'] ?? 1),
-    ];
-    vjt_write_json('pageviews.json', $pageviews);
+    $db = vjt_db();
+    $stmt = $db->prepare("INSERT INTO pageviews
+        (session_id, visitor_id, url, title, visited_at, leave_at, duration_seconds, scroll_depth, step_order)
+        VALUES (:session_id,:visitor_id,:url,:title,:visited_at,:leave_at,:duration_seconds,:scroll_depth,:step_order)");
+    $stmt->execute([
+        ':session_id' => $data['session_id'],
+        ':visitor_id' => $data['visitor_id'],
+        ':url' => $data['url'] ?? '',
+        ':title' => $data['title'] ?? '',
+        ':visited_at' => vjt_to_beijing($data['visited_at'] ?? ''),
+        ':leave_at' => !empty($data['leave_at']) ? vjt_to_beijing($data['leave_at']) : null,
+        ':duration_seconds' => (int)($data['duration_seconds'] ?? 0),
+        ':scroll_depth' => (int)($data['scroll_depth'] ?? 0),
+        ':step_order' => (int)($data['step_order'] ?? 1),
+    ]);
 }
 
 function vjt_update_pageview_leave($sessionId, $url, $leaveAt, $duration, $scrollDepth) {
-    $pageviews = vjt_read_json('pageviews.json');
-    if ($pageviews === null) return;
-    for ($i = count($pageviews) - 1; $i >= 0; $i--) {
-        if ($pageviews[$i]['session_id'] === $sessionId && $pageviews[$i]['url'] === $url && empty($pageviews[$i]['leave_at'])) {
-            $pageviews[$i]['leave_at'] = vjt_to_beijing($leaveAt);
-            $pageviews[$i]['duration_seconds'] = max(0, (int)$duration);
-            $pageviews[$i]['scroll_depth'] = max($pageviews[$i]['scroll_depth'], (int)$scrollDepth);
-            vjt_write_json('pageviews.json', $pageviews);
-            return;
-        }
-    }
+    $db = vjt_db();
+    // Most recent open pageview for this session+url
+    $stmt = $db->prepare("SELECT id, scroll_depth FROM pageviews
+        WHERE session_id = ? AND url = ? AND (leave_at IS NULL OR leave_at = '')
+        ORDER BY id DESC LIMIT 1");
+    $stmt->execute([$sessionId, $url]);
+    $row = $stmt->fetch();
+    if (!$row) return;
+
+    $newScroll = max((int)$row['scroll_depth'], (int)$scrollDepth);
+    $upd = $db->prepare("UPDATE pageviews
+        SET leave_at = :leave_at, duration_seconds = :duration, scroll_depth = :scroll
+        WHERE id = :id");
+    $upd->execute([
+        ':leave_at' => vjt_to_beijing($leaveAt),
+        ':duration' => max(0, (int)$duration),
+        ':scroll' => $newScroll,
+        ':id' => $row['id'],
+    ]);
 }
 
 function vjt_sync_pageview_snapshot($sessionId, $pages) {
     if (empty($pages)) return;
-    $pageviews = vjt_read_json('pageviews.json');
-    if ($pageviews === null) $pageviews = [];
-    $existingUrls = [];
-    foreach ($pageviews as $pv) {
-        if ($pv['session_id'] === $sessionId) {
-            $existingUrls[$pv['url']] = true;
-        }
-    }
-    $step = count($existingUrls);
+    $db = vjt_db();
+
+    // Existing URLs for this session
+    $stmt = $db->prepare("SELECT url FROM pageviews WHERE session_id = ?");
+    $stmt->execute([$sessionId]);
+    $existing = [];
+    foreach ($stmt->fetchAll() as $r) { $existing[$r['url']] = true; }
+    $step = count($existing);
+
+    $ins = $db->prepare("INSERT INTO pageviews
+        (session_id, visitor_id, url, title, visited_at, leave_at, duration_seconds, scroll_depth, step_order)
+        VALUES (:session_id,:visitor_id,:url,:title,:visited_at,NULL,0,0,:step_order)");
     foreach ($pages as $page) {
         $url = $page['url'] ?? '';
-        if (isset($existingUrls[$url])) continue;
-        $pageviews[] = [
-            'session_id'       => $sessionId,
-            'visitor_id'       => $page['visitor_id'] ?? '',
-            'url'              => $url,
-            'title'            => $page['title'] ?? '',
-            'visited_at'       => vjt_to_beijing($page['visited_at'] ?? ''),
-            'leave_at'         => null,
-            'duration_seconds' => 0,
-            'scroll_depth'     => 0,
-            'step_order'       => ++$step,
-        ];
-        $existingUrls[$url] = true;
+        if ($url === '' || isset($existing[$url])) continue;
+        $ins->execute([
+            ':session_id' => $sessionId,
+            ':visitor_id' => $page['visitor_id'] ?? '',
+            ':url' => $url,
+            ':title' => $page['title'] ?? '',
+            ':visited_at' => vjt_to_beijing($page['visited_at'] ?? ''),
+            ':step_order' => ++$step,
+        ]);
+        $existing[$url] = true;
     }
-    vjt_write_json('pageviews.json', $pageviews);
 }
 
 // ── Submission ──────────────────────────────────────────────────────────────
 
 function vjt_add_submission($data) {
-    $submissions = vjt_read_json('submissions.json');
-    if ($submissions === null) $submissions = [];
-    // Deduplication: skip if same visitor+session+form submitted within 10 minutes
+    $db = vjt_db();
     $now = date('Y-m-d H:i:s');
     $cutoff = date('Y-m-d H:i:s', strtotime('-10 minutes'));
-    foreach (array_reverse($submissions) as $sub) {
-        if ($sub['submitted_at'] < $cutoff) break;
-        if ($sub['visitor_id'] === $data['visitor_id']
-            && $sub['session_id'] === $data['session_id']
-            && $sub['form_plugin'] === ($data['form_plugin'] ?? '')
-            && $sub['status'] === ($data['status'] ?? 'attempt')) {
-            return; // Duplicate
-        }
-    }
-    $submissions[] = [
-        'visitor_id'   => $data['visitor_id'],
-        'session_id'   => $data['session_id'],
-        'form_plugin'  => $data['form_plugin'] ?? '',
-        'form_id'      => $data['form_id'] ?? '',
-        'form_name'    => $data['form_name'] ?? '',
-        'submit_page'  => $data['submit_page'] ?? '',
-        'submit_title' => $data['submit_title'] ?? '',
-        'submitted_at' => $now,
-        'status'       => $data['status'] ?? 'attempt',
-        'contact_url'  => $data['contact_url'] ?? '',
-        'ip'           => $data['ip'] ?? '',
-        'country'      => $data['country'] ?? '',
-        'city'         => $data['city'] ?? '',
-        'region'       => $data['region'] ?? '',
-        'calling_code' => $data['calling_code'] ?? '',
-    ];
-    vjt_write_json('submissions.json', $submissions);
+
+    // Deduplication: same visitor+session+form+status within 10 minutes
+    $stmt = $db->prepare("SELECT id FROM submissions
+        WHERE visitor_id = ? AND session_id = ? AND form_plugin = ? AND status = ?
+          AND submitted_at >= ? LIMIT 1");
+    $stmt->execute([
+        $data['visitor_id'],
+        $data['session_id'],
+        $data['form_plugin'] ?? '',
+        $data['status'] ?? 'attempt',
+        $cutoff,
+    ]);
+    if ($stmt->fetch()) return; // duplicate
+
+    $ins = $db->prepare("INSERT INTO submissions
+        (visitor_id, session_id, form_plugin, form_id, form_name, submit_page, submit_title,
+         submitted_at, status, contact_url, ip, country, city, region, calling_code)
+        VALUES (:visitor_id,:session_id,:form_plugin,:form_id,:form_name,:submit_page,:submit_title,
+         :submitted_at,:status,:contact_url,:ip,:country,:city,:region,:calling_code)");
+    $ins->execute([
+        ':visitor_id' => $data['visitor_id'],
+        ':session_id' => $data['session_id'],
+        ':form_plugin' => $data['form_plugin'] ?? '',
+        ':form_id' => $data['form_id'] ?? '',
+        ':form_name' => $data['form_name'] ?? '',
+        ':submit_page' => $data['submit_page'] ?? '',
+        ':submit_title' => $data['submit_title'] ?? '',
+        ':submitted_at' => $now,
+        ':status' => $data['status'] ?? 'attempt',
+        ':contact_url' => $data['contact_url'] ?? '',
+        ':ip' => $data['ip'] ?? '',
+        ':country' => $data['country'] ?? '',
+        ':city' => $data['city'] ?? '',
+        ':region' => $data['region'] ?? '',
+        ':calling_code' => $data['calling_code'] ?? '',
+    ]);
 }
 
-// ── Geo ─────────────────────────────────────────────────────────────────────
+// ── Geo (item 6: non-blocking) ───────────────────────────────────────────────
 
+/**
+ * On the ingest path this NEVER makes an external HTTP call.
+ * It returns cached geo if present, otherwise queues the IP for later
+ * batch resolution (vjt_process_geo_queue, run from the dashboard) and
+ * returns empty geo immediately.
+ */
 function vjt_resolve_geo($ip) {
-    if (in_array($ip, ['127.0.0.1', '::1', '']) || !filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE)) {
+    if (in_array($ip, ['127.0.0.1', '::1', '']) ||
+        !filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE)) {
         return ['country' => '', 'city' => '', 'region' => '', 'calling_code' => ''];
     }
 
-    $cache = vjt_read_json('geo_cache.json');
-    if ($cache === null) $cache = [];
-    if (isset($cache[$ip]) && isset($cache[$ip]['cached_at']) && $cache[$ip]['cached_at'] > date('Y-m-d H:i:s', strtotime('-1 day'))) {
-        return [
-            'country'      => $cache[$ip]['country'] ?? '',
-            'city'         => $cache[$ip]['city'] ?? '',
-            'region'       => $cache[$ip]['region'] ?? '',
-            'calling_code' => $cache[$ip]['calling_code'] ?? '',
-        ];
+    // Respect the geo toggle
+    $settings = vjt_get_settings();
+    if (($settings['enable_geo'] ?? '1') !== '1') {
+        return ['country' => '', 'city' => '', 'region' => '', 'calling_code' => ''];
     }
 
-    $result = ['country' => '', 'city' => '', 'region' => '', 'calling_code' => ''];
     try {
-        $ctx = stream_context_create(['http' => ['timeout' => 3]]);
-        $response = @file_get_contents("http://ip-api.com/json/{$ip}?fields=countryCode,city,regionName,callingCode", false, $ctx);
-        if ($response) {
-            $geo = json_decode($response, true);
-            if (!empty($geo['countryCode'])) {
-                $result = [
-                    'country'      => $geo['countryCode'] ?? '',
-                    'city'         => $geo['city'] ?? '',
-                    'region'       => $geo['regionName'] ?? '',
-                    'calling_code' => isset($geo['callingCode']) ? (string)$geo['callingCode'] : '',
-                ];
-                $cache[$ip] = $result + ['cached_at' => date('Y-m-d H:i:s')];
-                vjt_write_json('geo_cache.json', $cache);
+        $db = vjt_db();
+        $stmt = $db->prepare("SELECT country, city, region, calling_code FROM geo_cache WHERE ip = ?");
+        $stmt->execute([$ip]);
+        $row = $stmt->fetch();
+        if ($row) {
+            return [
+                'country' => $row['country'] ?? '',
+                'city' => $row['city'] ?? '',
+                'region' => $row['region'] ?? '',
+                'calling_code' => $row['calling_code'] ?? '',
+            ];
+        }
+        // Not cached → queue for off-path resolution (no blocking HTTP here)
+        $q = $db->prepare("INSERT OR IGNORE INTO geo_queue (ip, queued_at) VALUES (?, ?)");
+        $q->execute([$ip, date('Y-m-d H:i:s')]);
+    } catch (Exception $e) {
+        error_log('VJT geo enqueue error: ' . $e->getMessage());
+    }
+
+    return ['country' => '', 'city' => '', 'region' => '', 'calling_code' => ''];
+}
+
+/**
+ * Resolve queued IPs in batch (ip-api.com /batch, up to 100 per call).
+ * Called from the dashboard, off the visitor ingest path. Backfills the
+ * country/city of sessions, visitors and submissions that used the IP.
+ */
+function vjt_process_geo_queue($limit = 100) {
+    $settings = vjt_get_settings();
+    if (($settings['enable_geo'] ?? '1') !== '1') return 0;
+
+    $db = vjt_db();
+    try {
+        $stmt = $db->prepare("SELECT ip FROM geo_queue ORDER BY queued_at ASC LIMIT ?");
+        $stmt->bindValue(1, (int)$limit, PDO::PARAM_INT);
+        $stmt->execute();
+        $ips = array_column($stmt->fetchAll(), 'ip');
+    } catch (Exception $e) {
+        return 0;
+    }
+    if (empty($ips)) return 0;
+
+    $resolved = 0;
+    // ip-api batch is capped at 100 per request
+    foreach (array_chunk($ips, 100) as $chunk) {
+        $payload = [];
+        foreach ($chunk as $ip) {
+            $payload[] = ['query' => $ip, 'fields' => 'status,countryCode,city,regionName,callingCode,query'];
+        }
+        $results = null;
+        try {
+            $ctx = stream_context_create(['http' => [
+                'method' => 'POST',
+                'header' => "Content-Type: application/json\r\n",
+                'content' => json_encode($payload),
+                'timeout' => 5,
+            ]]);
+            $response = @file_get_contents('http://ip-api.com/batch?fields=status,countryCode,city,regionName,callingCode,query', false, $ctx);
+            if ($response) $results = json_decode($response, true);
+        } catch (Exception $e) {
+            $results = null;
+        }
+        if (!is_array($results)) break; // network/throttle — stop, leave remaining queued
+
+        $now = date('Y-m-d H:i:s');
+        foreach ($results as $geo) {
+            $ip = $geo['query'] ?? '';
+            if ($ip === '') continue;
+            $country = ($geo['status'] ?? '') === 'success' ? ($geo['countryCode'] ?? '') : '';
+            $city = $geo['city'] ?? '';
+            $region = $geo['regionName'] ?? '';
+            $calling = isset($geo['callingCode']) ? (string)$geo['callingCode'] : '';
+
+            try {
+                $db->beginTransaction();
+                // Cache (even empty results, to avoid re-querying dead IPs for a day)
+                $c = $db->prepare("INSERT INTO geo_cache (ip, country, city, region, calling_code, cached_at)
+                    VALUES (:ip,:country,:city,:region,:calling_code,:cached_at)
+                    ON CONFLICT(ip) DO UPDATE SET country=excluded.country, city=excluded.city,
+                        region=excluded.region, calling_code=excluded.calling_code, cached_at=excluded.cached_at");
+                $c->execute([
+                    ':ip' => $ip, ':country' => $country, ':city' => $city,
+                    ':region' => $region, ':calling_code' => $calling, ':cached_at' => $now,
+                ]);
+
+                if ($country !== '') {
+                    // Backfill rows that have this IP but no country yet
+                    $u1 = $db->prepare("UPDATE sessions SET country=:country, city=:city, region=:region, calling_code=:calling
+                        WHERE ip = :ip AND (country IS NULL OR country = '')");
+                    $u1->execute([':country'=>$country, ':city'=>$city, ':region'=>$region, ':calling'=>$calling, ':ip'=>$ip]);
+
+                    $u2 = $db->prepare("UPDATE visitors SET country=:country, city=:city
+                        WHERE first_ip = :ip AND (country IS NULL OR country = '')");
+                    $u2->execute([':country'=>$country, ':city'=>$city, ':ip'=>$ip]);
+
+                    $u3 = $db->prepare("UPDATE submissions SET country=:country, city=:city, region=:region, calling_code=:calling
+                        WHERE ip = :ip AND (country IS NULL OR country = '')");
+                    $u3->execute([':country'=>$country, ':city'=>$city, ':region'=>$region, ':calling'=>$calling, ':ip'=>$ip]);
+                }
+
+                $db->prepare("DELETE FROM geo_queue WHERE ip = ?")->execute([$ip]);
+                $db->commit();
+                $resolved++;
+            } catch (Exception $e) {
+                if ($db->inTransaction()) $db->rollBack();
+                error_log('VJT geo backfill error: ' . $e->getMessage());
             }
         }
-    } catch (Exception $e) {}
-
-    return $result;
+    }
+    return $resolved;
 }
 
 // ── Utility ─────────────────────────────────────────────────────────────────
@@ -432,6 +815,26 @@ function vjt_get_client_ip() {
         }
     }
     return '';
+}
+
+// Item 7: detect bots/crawlers so we don't store (or geo-resolve) their hits
+function vjt_is_bot($ua) {
+    if ($ua === null || trim($ua) === '') return true; // empty UA = almost always a bot/script
+    $ua = strtolower($ua);
+    static $needles = [
+        'bot', 'crawl', 'spider', 'slurp', 'mediapartners', 'adsbot', 'apis-google',
+        'feedfetcher', 'bingpreview', 'facebookexternalhit', 'facebot', 'ia_archiver',
+        'archive.org', 'semrush', 'ahrefs', 'mj12', 'dotbot', 'petalbot', 'yandex',
+        'baiduspider', 'sogou', 'exabot', 'gigabot', 'python-requests', 'python-urllib',
+        'curl/', 'wget', 'go-http-client', 'java/', 'okhttp', 'headlesschrome',
+        'phantomjs', 'puppeteer', 'playwright', 'scrapy', 'httpclient', 'lighthouse',
+        'gtmetrix', 'pingdom', 'uptimerobot', 'statuscake', 'censys', 'masscan', 'zgrab',
+        'ahc/', 'node-fetch', 'axios/', 'guzzle', 'monitoring', 'preview', 'whatsapp',
+    ];
+    foreach ($needles as $n) {
+        if (strpos($ua, $n) !== false) return true;
+    }
+    return false;
 }
 
 function vjt_detect_browser($ua) {
@@ -479,191 +882,189 @@ function vjt_classify_source($session) {
 
 // ── Settings ────────────────────────────────────────────────────────────────
 
-function vjt_get_settings() {
-    $settings = vjt_read_json('settings.json');
-    return is_array($settings) ? $settings : ['session_timeout' => '30', 'retention_days' => '90', 'enable_geo' => '1'];
+function vjt_get_settings($forceReload = false) {
+    static $cache = null;
+    if ($cache !== null && !$forceReload) return $cache;
+    $defaults = ['session_timeout' => '30', 'retention_days' => '90', 'enable_geo' => '1'];
+    try {
+        $rows = vjt_db()->query("SELECT key, value FROM settings")->fetchAll();
+        $out = $defaults;
+        foreach ($rows as $r) { $out[$r['key']] = $r['value']; }
+        $cache = $out;
+        return $out;
+    } catch (Exception $e) {
+        return $defaults;
+    }
 }
 
 function vjt_save_settings($data) {
-    $settings = vjt_get_settings();
-    $settings['session_timeout'] = max(5, (int)($data['session_timeout'] ?? 30));
-    $settings['retention_days'] = max(1, (int)($data['retention_days'] ?? 90));
-    $settings['enable_geo'] = !empty($data['enable_geo']) ? '1' : '0';
-    vjt_write_json('settings.json', $settings);
+    $db = vjt_db();
+    $settings = [
+        'session_timeout' => (string)max(5, (int)($data['session_timeout'] ?? 30)),
+        'retention_days'  => (string)max(1, (int)($data['retention_days'] ?? 90)),
+        'enable_geo'      => !empty($data['enable_geo']) ? '1' : '0',
+    ];
+    $stmt = $db->prepare("INSERT INTO settings (key, value) VALUES (?, ?)
+        ON CONFLICT(key) DO UPDATE SET value = excluded.value");
+    foreach ($settings as $k => $v) {
+        $stmt->execute([$k, $v]);
+    }
+    // Refresh the in-request static cache so the dashboard shows new values immediately
+    vjt_get_settings(true);
 }
 
 // ── Dashboard: Overview Stats ───────────────────────────────────────────────
 
 function vjt_get_overview($since) {
-    $visitors = vjt_read_json('visitors.json');
-    $sessions = vjt_read_json('sessions.json');
-    $pageviews = vjt_read_json('pageviews.json');
-    $submissions = vjt_read_json('submissions.json');
+    $db = vjt_db();
 
-    $visitors = $visitors ?: new stdClass();
-    $sessions = $sessions ?: new stdClass();
-    $pageviews = $pageviews ?: [];
-    $submissions = $submissions ?: [];
+    $totalVisitors = (int)$db->query("SELECT COUNT(*) c FROM visitors WHERE last_seen_at >= " . $db->quote($since))->fetch()['c'];
+    $totalSessions = (int)$db->query("SELECT COUNT(*) c FROM sessions WHERE started_at >= " . $db->quote($since))->fetch()['c'];
 
-    $totalVisitors = 0;
-    foreach ($visitors as $v) {
-        if (($v['last_seen_at'] ?? '') >= $since) $totalVisitors++;
-    }
+    $subRow = $db->query("SELECT
+            COUNT(*) total,
+            SUM(CASE WHEN status='success' THEN 1 ELSE 0 END) success
+        FROM submissions WHERE submitted_at >= " . $db->quote($since))->fetch();
+    $totalSubmissions = (int)($subRow['total'] ?? 0);
+    $successSubmissions = (int)($subRow['success'] ?? 0);
 
-    $totalSessions = 0;
-    foreach ($sessions as $s) {
-        if (($s['started_at'] ?? '') >= $since) $totalSessions++;
-    }
-
-    $totalSubmissions = 0;
-    $successSubmissions = 0;
-    foreach ($submissions as $sub) {
-        if (($sub['submitted_at'] ?? '') >= $since) {
-            $totalSubmissions++;
-            if (($sub['status'] ?? '') === 'success') $successSubmissions++;
-        }
-    }
-
-    $totalDuration = 0;
-    $durationCount = 0;
-    foreach ($pageviews as $pv) {
-        if (($pv['visited_at'] ?? '') >= $since && ($pv['duration_seconds'] ?? 0) > 0) {
-            $totalDuration += $pv['duration_seconds'];
-            $durationCount++;
-        }
-    }
-    $avgDuration = $durationCount > 0 ? round($totalDuration / $durationCount) : 0;
+    $durRow = $db->query("SELECT AVG(duration_seconds) a FROM pageviews
+        WHERE visited_at >= " . $db->quote($since) . " AND duration_seconds > 0")->fetch();
+    $avgDuration = $durRow && $durRow['a'] !== null ? round($durRow['a']) : 0;
     $conversionRate = $totalSessions > 0 ? round(($successSubmissions / $totalSessions) * 100, 1) : 0;
 
     // Submission trend (30 days)
     $trend = [];
-    for ($i = 29; $i >= 0; $i--) {
-        $day = date('Y-m-d', strtotime("-{$i} days"));
-        $trend[$day] = 0;
-    }
-    foreach ($submissions as $sub) {
-        $day = substr($sub['submitted_at'] ?? '', 0, 10);
-        if (isset($trend[$day])) $trend[$day]++;
-    }
+    for ($i = 29; $i >= 0; $i--) { $trend[date('Y-m-d', strtotime("-{$i} days"))] = 0; }
+    $rows = $db->query("SELECT substr(submitted_at,1,10) d, COUNT(*) c FROM submissions
+        WHERE submitted_at >= " . $db->quote(date('Y-m-d 00:00:00', strtotime('-29 days'))) . "
+        GROUP BY d")->fetchAll();
+    foreach ($rows as $r) { if (isset($trend[$r['d']])) $trend[$r['d']] = (int)$r['c']; }
 
     // Submission trend (12 months)
     $trendMonthly = [];
-    for ($i = 11; $i >= 0; $i--) {
-        $month = date('Y-m', strtotime("-{$i} months"));
-        $trendMonthly[$month] = 0;
-    }
-    foreach ($submissions as $sub) {
-        $month = substr($sub['submitted_at'] ?? '', 0, 7);
-        if (isset($trendMonthly[$month])) $trendMonthly[$month]++;
-    }
+    for ($i = 11; $i >= 0; $i--) { $trendMonthly[date('Y-m', strtotime("-{$i} months"))] = 0; }
+    $rows = $db->query("SELECT substr(submitted_at,1,7) m, COUNT(*) c FROM submissions GROUP BY m")->fetchAll();
+    foreach ($rows as $r) { if (isset($trendMonthly[$r['m']])) $trendMonthly[$r['m']] = (int)$r['c']; }
 
     // Submission trend (years)
     $trendYearly = [];
     $minYear = (int)date('Y');
-    foreach ($submissions as $sub) {
-        $y = (int)substr($sub['submitted_at'] ?? '', 0, 4);
-        if ($y > 0 && $y < $minYear) $minYear = $y;
+    $rows = $db->query("SELECT substr(submitted_at,1,4) y, COUNT(*) c FROM submissions GROUP BY y")->fetchAll();
+    $yearCounts = [];
+    foreach ($rows as $r) {
+        $y = (int)$r['y'];
+        if ($y > 0) { $yearCounts[(string)$r['y']] = (int)$r['c']; if ($y < $minYear) $minYear = $y; }
     }
     for ($y = $minYear; $y <= (int)date('Y'); $y++) {
-        $trendYearly[(string)$y] = 0;
-    }
-    foreach ($submissions as $sub) {
-        $y = substr($sub['submitted_at'] ?? '', 0, 4);
-        if (isset($trendYearly[$y])) $trendYearly[$y]++;
+        $trendYearly[(string)$y] = $yearCounts[(string)$y] ?? 0;
     }
 
-    // Top referrers (include direct + external referrers)
+    // Top referrers within window
     $directCount = 0;
     $referrerCounts = [];
-    foreach ($sessions as $s) {
-        if (($s['started_at'] ?? '') < $since) continue;
-        $r = $s['referrer'] ?? '';
-        if (empty($r) || $r === 'direct') {
-            $directCount++;
-        } else {
-            $referrerCounts[$r] = ($referrerCounts[$r] ?? 0) + 1;
-        }
+    $rows = $db->query("SELECT referrer FROM sessions WHERE started_at >= " . $db->quote($since))->fetchAll();
+    foreach ($rows as $r) {
+        $ref = $r['referrer'] ?? '';
+        if (empty($ref) || $ref === 'direct') $directCount++;
+        else $referrerCounts[$ref] = ($referrerCounts[$ref] ?? 0) + 1;
     }
     arsort($referrerCounts);
     $topReferrers = array_slice($referrerCounts, 0, 7);
-    // Put Direct first if there are any
     if ($directCount > 0) {
         $topReferrers = array_merge(['Direct' => $directCount], $topReferrers);
     }
 
     // Device breakdown
     $deviceCounts = ['desktop' => 0, 'mobile' => 0, 'tablet' => 0, 'Unknown' => 0];
-    foreach ($visitors as $v) {
-        if (($v['last_seen_at'] ?? '') >= $since) {
-            $d = $v['device_type'] ?? 'Unknown';
-            $deviceCounts[$d] = ($deviceCounts[$d] ?? 0) + 1;
-        }
+    $rows = $db->query("SELECT device_type, COUNT(*) c FROM visitors
+        WHERE last_seen_at >= " . $db->quote($since) . " GROUP BY device_type")->fetchAll();
+    foreach ($rows as $r) {
+        $d = $r['device_type'] ?: 'Unknown';
+        $deviceCounts[$d] = ($deviceCounts[$d] ?? 0) + (int)$r['c'];
     }
 
-    // Source breakdown
+    // Source breakdown (classify in PHP — needs referrer + utm)
     $sourceCounts = ['direct' => 0, 'search' => 0, 'social' => 0, 'ads' => 0, 'ai' => 0, 'other' => 0];
-    foreach ($sessions as $s) {
-        if (($s['started_at'] ?? '') >= $since) {
-            $src = vjt_classify_source($s);
-            $sourceCounts[$src] = ($sourceCounts[$src] ?? 0) + 1;
-        }
+    $rows = $db->query("SELECT referrer, utm_medium FROM sessions WHERE started_at >= " . $db->quote($since))->fetchAll();
+    foreach ($rows as $s) {
+        $src = vjt_classify_source($s);
+        $sourceCounts[$src] = ($sourceCounts[$src] ?? 0) + 1;
     }
 
     return [
-        'totalVisitors'       => $totalVisitors,
-        'totalSessions'       => $totalSessions,
-        'totalSubmissions'    => $totalSubmissions,
-        'successSubmissions'  => $successSubmissions,
-        'avgDuration'         => $avgDuration,
-        'conversionRate'      => $conversionRate,
-        'trend'               => $trend,
-        'trendMonthly'        => $trendMonthly,
-        'trendYearly'         => $trendYearly,
-        'topReferrers'        => $topReferrers,
-        'deviceCounts'        => $deviceCounts,
-        'sourceCounts'        => $sourceCounts,
+        'totalVisitors'      => $totalVisitors,
+        'totalSessions'      => $totalSessions,
+        'totalSubmissions'   => $totalSubmissions,
+        'successSubmissions' => $successSubmissions,
+        'avgDuration'        => $avgDuration,
+        'conversionRate'     => $conversionRate,
+        'trend'              => $trend,
+        'trendMonthly'       => $trendMonthly,
+        'trendYearly'        => $trendYearly,
+        'topReferrers'       => $topReferrers,
+        'deviceCounts'       => $deviceCounts,
+        'sourceCounts'       => $sourceCounts,
     ];
 }
 
 // ── Dashboard: Submissions List ──────────────────────────────────────────────
 
 function vjt_get_submissions_list($filters) {
-    $submissions = vjt_read_json('submissions.json');
-    if (!$submissions) return ['items' => [], 'total' => 0];
+    $db = vjt_db();
+    $where = [];
+    $params = [];
+    if (!empty($filters['status']))  { $where[] = "status = ?";       $params[] = $filters['status']; }
+    if (!empty($filters['plugin']))  { $where[] = "form_plugin = ?";  $params[] = $filters['plugin']; }
+    if (!empty($filters['date_from'])) { $where[] = "submitted_at >= ?"; $params[] = $filters['date_from']; }
+    if (!empty($filters['date_to']))   { $where[] = "submitted_at <= ?"; $params[] = $filters['date_to'] . ' 23:59:59'; }
+    $whereSql = $where ? ('WHERE ' . implode(' AND ', $where)) : '';
 
-    $status  = $filters['status'] ?? '';
-    $plugin  = $filters['plugin'] ?? '';
-    $dateFrom = $filters['date_from'] ?? '';
-    $dateTo   = $filters['date_to'] ?? '';
+    $cnt = $db->prepare("SELECT COUNT(*) c FROM submissions $whereSql");
+    $cnt->execute($params);
+    $total = (int)$cnt->fetch()['c'];
 
-    $filtered = [];
-    foreach (array_reverse($submissions) as $sub) {
-        if ($status && ($sub['status'] ?? '') !== $status) continue;
-        if ($plugin && ($sub['form_plugin'] ?? '') !== $plugin) continue;
-        if ($dateFrom && ($sub['submitted_at'] ?? '') < $dateFrom) continue;
-        if ($dateTo && ($sub['submitted_at'] ?? '') > $dateTo . ' 23:59:59') continue;
-        $filtered[] = $sub;
-    }
-
-    $total = count($filtered);
     $page = max(1, (int)($filters['page'] ?? 1));
     $perPage = max(1, (int)($filters['per_page'] ?? 50));
     $offset = ($page - 1) * $perPage;
 
-    return [
-        'items' => array_slice($filtered, $offset, $perPage),
-        'total' => $total,
-    ];
+    $sql = "SELECT * FROM submissions $whereSql ORDER BY submitted_at DESC, id DESC LIMIT ? OFFSET ?";
+    $stmt = $db->prepare($sql);
+    // Bind positionally; LIMIT/OFFSET need explicit int types for SQLite
+    $idx = 1;
+    foreach ($params as $p) { $stmt->bindValue($idx++, $p); }
+    $stmt->bindValue($idx++, $perPage, PDO::PARAM_INT);
+    $stmt->bindValue($idx++, $offset, PDO::PARAM_INT);
+    $stmt->execute();
+    $items = $stmt->fetchAll();
+
+    return ['items' => $items, 'total' => $total];
 }
 
 // ── Dashboard: Visitors List ─────────────────────────────────────────────────
 
 function vjt_get_visitors_list($filters) {
-    $visitors = vjt_read_json('visitors.json');
-    $sessions = vjt_read_json('sessions.json');
-    $submissions = vjt_read_json('submissions.json');
+    $db = vjt_db();
 
-    if (!$visitors) return ['items' => [], 'total' => 0];
+    // Pre-aggregate per-visitor sessions, submissions, session time, source
+    $visitorSessions = [];
+    $visitorSubmissions = [];
+    $visitorSource = [];
+    $visitorSessionTime = [];
+
+    $rows = $db->query("SELECT visitor_id, referrer, utm_medium, started_at, last_seen_at FROM sessions")->fetchAll();
+    foreach ($rows as $s) {
+        $vid = $s['visitor_id'];
+        $visitorSessions[$vid] = ($visitorSessions[$vid] ?? 0) + 1;
+        if (!isset($visitorSource[$vid])) $visitorSource[$vid] = vjt_classify_source($s);
+        $st = strtotime($s['started_at'] ?? '');
+        $ls = strtotime($s['last_seen_at'] ?? '');
+        if ($st && $ls && $ls > $st) {
+            $visitorSessionTime[$vid] = ($visitorSessionTime[$vid] ?? 0) + ($ls - $st);
+        }
+    }
+    $rows = $db->query("SELECT visitor_id, COUNT(*) c FROM submissions GROUP BY visitor_id")->fetchAll();
+    foreach ($rows as $r) { $visitorSubmissions[$r['visitor_id']] = (int)$r['c']; }
 
     $search         = trim($filters['search'] ?? '');
     $device         = $filters['device'] ?? '';
@@ -676,30 +1077,19 @@ function vjt_get_visitors_list($filters) {
     $dateFrom       = $filters['date_from'] ?? '';
     $dateTo         = $filters['date_to'] ?? '';
 
-    // Pre-compute session/submission counts, source, and total session time per visitor
-    $visitorSessions = [];
-    $visitorSubmissions = [];
-    $visitorSource = [];
-    $visitorSessionTime = []; // total seconds spent on site (sum of session windows)
-    foreach ($sessions ?: [] as $s) {
-        $vid = $s['visitor_id'];
-        $visitorSessions[$vid] = ($visitorSessions[$vid] ?? 0) + 1;
-        if (!isset($visitorSource[$vid])) {
-            $visitorSource[$vid] = vjt_classify_source($s);
-        }
-        $st = strtotime($s['started_at'] ?? '');
-        $ls = strtotime($s['last_seen_at'] ?? '');
-        if ($st && $ls && $ls > $st) {
-            $visitorSessionTime[$vid] = ($visitorSessionTime[$vid] ?? 0) + ($ls - $st);
-        }
-    }
-    foreach ($submissions ?: [] as $sub) {
-        $vid = $sub['visitor_id'];
-        $visitorSubmissions[$vid] = ($visitorSubmissions[$vid] ?? 0) + 1;
-    }
+    // Narrow visitors at the DB level where we can
+    $where = [];
+    $params = [];
+    if ($device)   { $where[] = "device_type = ?"; $params[] = $device; }
+    if ($dateFrom) { $where[] = "first_seen_at >= ?"; $params[] = $dateFrom; }
+    if ($dateTo)   { $where[] = "first_seen_at <= ?"; $params[] = $dateTo . ' 23:59:59'; }
+    $whereSql = $where ? ('WHERE ' . implode(' AND ', $where)) : '';
+    $stmt = $db->prepare("SELECT * FROM visitors $whereSql");
+    $stmt->execute($params);
+    $visitorRows = $stmt->fetchAll();
 
     $filtered = [];
-    foreach ($visitors as $v) {
+    foreach ($visitorRows as $v) {
         $vid = $v['visitor_id'];
         if ($search) {
             $matchIp = stripos($v['first_ip'] ?? '', $search) !== false;
@@ -708,7 +1098,6 @@ function vjt_get_visitors_list($filters) {
             $matchCountry = stripos(vjt_country_name($v['country'] ?? ''), $search) !== false || stripos($v['country'] ?? '', $search) !== false;
             if (!$matchIp && !$matchBrowser && !$matchVid && !$matchCountry) continue;
         }
-        if ($device && ($v['device_type'] ?? '') !== $device) continue;
         $vSource = $visitorSource[$vid] ?? 'direct';
         if ($source && $vSource !== $source) continue;
         $vSessions = $visitorSessions[$vid] ?? 0;
@@ -719,8 +1108,6 @@ function vjt_get_visitors_list($filters) {
         if ($submissionsMax !== '' && $vSubmissions > (int)$submissionsMax) continue;
         $vSessionTime = $visitorSessionTime[$vid] ?? 0;
         if ($sessionTimeMin !== '' && $vSessionTime < (int)$sessionTimeMin) continue;
-        if ($dateFrom && ($v['first_seen_at'] ?? '') < $dateFrom) continue;
-        if ($dateTo && ($v['first_seen_at'] ?? '') > $dateTo . ' 23:59:59') continue;
         $filtered[] = [
             'visitor_id'    => $vid,
             'first_ip'      => $v['first_ip'] ?? '',
@@ -734,8 +1121,8 @@ function vjt_get_visitors_list($filters) {
             'first_seen_at' => $v['first_seen_at'] ?? '',
             'last_seen_at'  => $v['last_seen_at'] ?? '',
             'user_agent'    => $v['user_agent'] ?? '',
-            'sessions'      => $visitorSessions[$vid] ?? 0,
-            'submissions'   => $visitorSubmissions[$vid] ?? 0,
+            'sessions'      => $vSessions,
+            'submissions'   => $vSubmissions,
             'session_time'  => $vSessionTime,
             'source'        => $vSource,
         ];
@@ -749,15 +1136,9 @@ function vjt_get_visitors_list($filters) {
     usort($filtered, function($a, $b) use ($sortBy, $sortOrder, $numericCols) {
         $va = $a[$sortBy] ?? '';
         $vb = $b[$sortBy] ?? '';
-        if ($sortBy === 'country') {
-            $va = vjt_country_name($va);
-            $vb = vjt_country_name($vb);
-        }
-        if (in_array($sortBy, $numericCols)) {
-            $cmp = (int)$va <=> (int)$vb;
-        } else {
-            $cmp = strcasecmp((string)$va, (string)$vb);
-        }
+        if ($sortBy === 'country') { $va = vjt_country_name($va); $vb = vjt_country_name($vb); }
+        if (in_array($sortBy, $numericCols)) $cmp = (int)$va <=> (int)$vb;
+        else $cmp = strcasecmp((string)$va, (string)$vb);
         return $sortOrder === 'asc' ? $cmp : -$cmp;
     });
 
@@ -766,51 +1147,35 @@ function vjt_get_visitors_list($filters) {
     $perPage = max(1, (int)($filters['per_page'] ?? 50));
     $offset = ($page - 1) * $perPage;
 
-    return [
-        'items' => array_slice($filtered, $offset, $perPage),
-        'total' => $total,
-    ];
+    return ['items' => array_slice($filtered, $offset, $perPage), 'total' => $total];
 }
 
 // ── Dashboard: Journey Detail ────────────────────────────────────────────────
 
 function vjt_get_journey($visitorId) {
-    $visitors = vjt_read_json('visitors.json');
-    $sessions = vjt_read_json('sessions.json');
-    $pageviews = vjt_read_json('pageviews.json');
-    $submissions = vjt_read_json('submissions.json');
-
-    $visitor = null;
-    if ($visitors && isset($visitors[$visitorId])) {
-        $visitor = $visitors[$visitorId];
-    }
+    $db = vjt_db();
+    $stmt = $db->prepare("SELECT * FROM visitors WHERE visitor_id = ?");
+    $stmt->execute([$visitorId]);
+    $visitor = $stmt->fetch();
     if (!$visitor) return null;
 
-    $visitorSessions = [];
-    $visitorPageviews = [];
-    $visitorSubmissions = [];
+    $s = $db->prepare("SELECT * FROM sessions WHERE visitor_id = ? ORDER BY started_at ASC");
+    $s->execute([$visitorId]);
+    $sessions = $s->fetchAll();
 
-    foreach ($sessions ?: [] as $s) {
-        if ($s['visitor_id'] === $visitorId) {
-            $visitorSessions[] = $s;
-        }
-    }
-    foreach ($pageviews ?: [] as $pv) {
-        if ($pv['visitor_id'] === $visitorId) {
-            $visitorPageviews[] = $pv;
-        }
-    }
-    foreach ($submissions ?: [] as $sub) {
-        if ($sub['visitor_id'] === $visitorId) {
-            $visitorSubmissions[] = $sub;
-        }
-    }
+    $p = $db->prepare("SELECT * FROM pageviews WHERE visitor_id = ? ORDER BY visited_at ASC, id ASC");
+    $p->execute([$visitorId]);
+    $pageviews = $p->fetchAll();
+
+    $sub = $db->prepare("SELECT * FROM submissions WHERE visitor_id = ? ORDER BY submitted_at ASC");
+    $sub->execute([$visitorId]);
+    $submissions = $sub->fetchAll();
 
     return [
-        'visitor'      => $visitor,
-        'sessions'     => $visitorSessions,
-        'pageviews'    => $visitorPageviews,
-        'submissions'  => $visitorSubmissions,
+        'visitor'     => $visitor,
+        'sessions'    => $sessions,
+        'pageviews'   => $pageviews,
+        'submissions' => $submissions,
     ];
 }
 
@@ -818,187 +1183,99 @@ function vjt_get_journey($visitorId) {
 
 function vjt_cleanup_old_data($days) {
     $cutoff = date('Y-m-d H:i:s', time() - ($days * 86400));
-
-    $visitors = vjt_read_json('visitors.json');
-    if ($visitors) {
-        foreach ($visitors as $vid => $v) {
-            if (($v['last_seen_at'] ?? '') < $cutoff) {
-                unset($visitors[$vid]);
-            }
-        }
-        vjt_write_json('visitors.json', $visitors);
-    }
-
-    $sessions = vjt_read_json('sessions.json');
-    if ($sessions) {
-        foreach ($sessions as $sid => $s) {
-            if (($s['last_seen_at'] ?? '') < $cutoff) {
-                unset($sessions[$sid]);
-            }
-        }
-        vjt_write_json('sessions.json', $sessions);
-    }
-
-    $pageviews = vjt_read_json('pageviews.json');
-    if ($pageviews) {
-        $pageviews = array_filter($pageviews, function($pv) use ($cutoff) {
-            return ($pv['visited_at'] ?? '') >= $cutoff;
-        });
-        vjt_write_json('pageviews.json', array_values($pageviews));
-    }
-
-    $submissions = vjt_read_json('submissions.json');
-    if ($submissions) {
-        $submissions = array_filter($submissions, function($sub) use ($cutoff) {
-            return ($sub['submitted_at'] ?? '') >= $cutoff;
-        });
-        vjt_write_json('submissions.json', array_values($submissions));
-    }
-
-    // Also clean geo cache older than 7 days
-    $geoCuttoff = date('Y-m-d H:i:s', time() - (7 * 86400));
-    $geoCache = vjt_read_json('geo_cache.json');
-    if ($geoCache) {
-        foreach ($geoCache as $cip => $entry) {
-            if (($entry['cached_at'] ?? '') < $geoCuttoff) {
-                unset($geoCache[$cip]);
-            }
-        }
-        vjt_write_json('geo_cache.json', $geoCache);
-    }
+    $db = vjt_db();
+    $db->prepare("DELETE FROM visitors    WHERE last_seen_at < ?")->execute([$cutoff]);
+    $db->prepare("DELETE FROM sessions    WHERE last_seen_at < ?")->execute([$cutoff]);
+    $db->prepare("DELETE FROM pageviews   WHERE visited_at  < ?")->execute([$cutoff]);
+    $db->prepare("DELETE FROM submissions WHERE submitted_at < ?")->execute([$cutoff]);
+    $geoCutoff = date('Y-m-d H:i:s', time() - (7 * 86400));
+    $db->prepare("DELETE FROM geo_cache WHERE cached_at < ?")->execute([$geoCutoff]);
+    $db->exec('PRAGMA wal_checkpoint(TRUNCATE)');
 }
 
 function vjt_wipe_all_data() {
-    vjt_write_json('visitors.json', []);
-    vjt_write_json('sessions.json', []);
-    vjt_write_json('pageviews.json', []);
-    vjt_write_json('submissions.json', []);
-    vjt_write_json('geo_cache.json', []);
+    $db = vjt_db();
+    foreach (['visitors','sessions','pageviews','submissions','geo_cache','geo_queue'] as $t) {
+        $db->exec("DELETE FROM $t");
+    }
+    $db->exec('PRAGMA wal_checkpoint(TRUNCATE)');
 }
 
 // ── Dashboard: Traffic Performance ──────────────────────────────────────────
 
 function vjt_get_traffic_data($since) {
-    $pageviews = vjt_read_json('pageviews.json');
-    if ($pageviews === null) $pageviews = [];
-    $submissions = vjt_read_json('submissions.json');
-    if ($submissions === null) $submissions = [];
+    $db = vjt_db();
+    $q = $db->quote($since);
 
-    $filteredPvs = [];
-    foreach ($pageviews as $pv) {
-        if (($pv['visited_at'] ?? '') >= $since) {
-            $filteredPvs[] = $pv;
-        }
-    }
+    $totalPageviews = (int)$db->query("SELECT COUNT(*) c FROM pageviews WHERE visited_at >= $q")->fetch()['c'];
 
-    $totalPageviews = count($filteredPvs);
-
-    // Daily pageview trend (30 days)
+    // Daily trend (30 days)
     $dailyTrend = [];
-    for ($i = 29; $i >= 0; $i--) {
-        $day = date('Y-m-d', strtotime("-{$i} days"));
-        $dailyTrend[$day] = 0;
-    }
-    foreach ($filteredPvs as $pv) {
-        $day = substr($pv['visited_at'] ?? '', 0, 10);
-        if (isset($dailyTrend[$day])) $dailyTrend[$day]++;
-    }
+    for ($i = 29; $i >= 0; $i--) { $dailyTrend[date('Y-m-d', strtotime("-{$i} days"))] = 0; }
+    $rows = $db->query("SELECT substr(visited_at,1,10) d, COUNT(*) c FROM pageviews
+        WHERE visited_at >= " . $db->quote(date('Y-m-d 00:00:00', strtotime('-29 days'))) . " GROUP BY d")->fetchAll();
+    foreach ($rows as $r) { if (isset($dailyTrend[$r['d']])) $dailyTrend[$r['d']] = (int)$r['c']; }
 
     // Monthly trend (12 months)
     $monthlyTrend = [];
-    for ($i = 11; $i >= 0; $i--) {
-        $month = date('Y-m', strtotime("-{$i} months"));
-        $monthlyTrend[$month] = 0;
-    }
-    foreach ($filteredPvs as $pv) {
-        $month = substr($pv['visited_at'] ?? '', 0, 7);
-        if (isset($monthlyTrend[$month])) $monthlyTrend[$month]++;
-    }
+    for ($i = 11; $i >= 0; $i--) { $monthlyTrend[date('Y-m', strtotime("-{$i} months"))] = 0; }
+    $rows = $db->query("SELECT substr(visited_at,1,7) m, COUNT(*) c FROM pageviews GROUP BY m")->fetchAll();
+    foreach ($rows as $r) { if (isset($monthlyTrend[$r['m']])) $monthlyTrend[$r['m']] = (int)$r['c']; }
 
     // Yearly trend
     $yearlyTrend = [];
     $minYear = (int)date('Y');
-    foreach ($filteredPvs as $pv) {
-        $y = (int)substr($pv['visited_at'] ?? '', 0, 4);
-        if ($y > 0 && $y < $minYear) $minYear = $y;
+    $rows = $db->query("SELECT substr(visited_at,1,4) y, COUNT(*) c FROM pageviews GROUP BY y")->fetchAll();
+    $yearCounts = [];
+    foreach ($rows as $r) {
+        $y = (int)$r['y'];
+        if ($y > 0) { $yearCounts[(string)$r['y']] = (int)$r['c']; if ($y < $minYear) $minYear = $y; }
     }
-    for ($y = $minYear; $y <= (int)date('Y'); $y++) {
-        $yearlyTrend[(string)$y] = 0;
-    }
-    foreach ($filteredPvs as $pv) {
-        $y = substr($pv['visited_at'] ?? '', 0, 4);
-        if (isset($yearlyTrend[$y])) $yearlyTrend[$y]++;
-    }
+    for ($y = $minYear; $y <= (int)date('Y'); $y++) { $yearlyTrend[(string)$y] = $yearCounts[(string)$y] ?? 0; }
 
-    // Top pages
-    $pageCounts = [];
-    $pageDurations = [];
-    $pageScrolls = [];
-    foreach ($filteredPvs as $pv) {
-        $url = $pv['url'] ?? '';
-        if (empty($url)) continue;
-        $pageCounts[$url] = ($pageCounts[$url] ?? 0) + 1;
-        if (($pv['duration_seconds'] ?? 0) > 0) {
-            $pageDurations[$url] = ($pageDurations[$url] ?? 0) + $pv['duration_seconds'];
-        }
-        $pageScrolls[$url] = max($pageScrolls[$url] ?? 0, (int)($pv['scroll_depth'] ?? 0));
-    }
-    arsort($pageCounts);
+    // Top pages (views, avg duration, max scroll) within window
+    $rows = $db->query("SELECT url,
+            COUNT(*) views,
+            AVG(CASE WHEN duration_seconds > 0 THEN duration_seconds END) avg_dur,
+            MAX(scroll_depth) max_scroll
+        FROM pageviews WHERE visited_at >= $q AND url <> ''
+        GROUP BY url ORDER BY views DESC LIMIT 20")->fetchAll();
     $topPages = [];
-    $rank = 0;
-    foreach ($pageCounts as $url => $count) {
-        if ($rank >= 20) break;
-        $avgDuration = isset($pageDurations[$url]) ? round($pageDurations[$url] / $count) : 0;
+    foreach ($rows as $r) {
         $topPages[] = [
-            'url'          => $url,
-            'views'        => $count,
-            'avg_duration' => $avgDuration,
-            'avg_scroll'   => $pageScrolls[$url] ?? 0,
+            'url'          => $r['url'],
+            'views'        => (int)$r['views'],
+            'avg_duration' => $r['avg_dur'] !== null ? round($r['avg_dur']) : 0,
+            'avg_scroll'   => (int)($r['max_scroll'] ?? 0),
         ];
-        $rank++;
+    }
+    // Submissions per page (only for the pages we show)
+    if ($topPages) {
+        $urls = array_column($topPages, 'url');
+        $place = implode(',', array_fill(0, count($urls), '?'));
+        $stmt = $db->prepare("SELECT submit_page, COUNT(*) c FROM submissions
+            WHERE submitted_at >= ? AND submit_page IN ($place) GROUP BY submit_page");
+        $stmt->execute(array_merge([$since], $urls));
+        $subByPage = [];
+        foreach ($stmt->fetchAll() as $r) { $subByPage[$r['submit_page']] = (int)$r['c']; }
+        foreach ($topPages as &$tp) { $tp['submissions'] = $subByPage[$tp['url']] ?? 0; }
+        unset($tp);
     }
 
-    // Submissions per page
-    $pageSubmissions = [];
-    foreach ($submissions as $sub) {
-        if (($sub['submitted_at'] ?? '') >= $since) {
-            $page = $sub['submit_page'] ?? '';
-            if (!empty($page)) {
-                $pageSubmissions[$page] = ($pageSubmissions[$page] ?? 0) + 1;
-            }
-        }
-    }
-    foreach ($topPages as &$tp) {
-        $tp['submissions'] = $pageSubmissions[$tp['url']] ?? 0;
-    }
-    unset($tp);
+    $uniqueUrls = (int)$db->query("SELECT COUNT(DISTINCT url) c FROM pageviews WHERE visited_at >= $q AND url <> ''")->fetch()['c'];
 
-    // Unique URLs
-    $uniqueUrls = count($pageCounts);
-
-    // Bounce rate (single-pageview sessions)
-    $sessionPageviews = [];
-    foreach ($filteredPvs as $pv) {
-        $sid = $pv['session_id'] ?? '';
-        $sessionPageviews[$sid] = ($sessionPageviews[$sid] ?? 0) + 1;
-    }
-    $bounceSessions = 0;
-    $totalSessions = count($sessionPageviews);
-    foreach ($sessionPageviews as $cnt) {
-        if ($cnt <= 1) $bounceSessions++;
-    }
+    // Bounce rate: sessions with a single pageview within window
+    $bounceRow = $db->query("SELECT
+            COUNT(*) total_sessions,
+            SUM(CASE WHEN pv = 1 THEN 1 ELSE 0 END) bounces
+        FROM (SELECT session_id, COUNT(*) pv FROM pageviews WHERE visited_at >= $q GROUP BY session_id)")->fetch();
+    $totalSessions = (int)($bounceRow['total_sessions'] ?? 0);
+    $bounceSessions = (int)($bounceRow['bounces'] ?? 0);
     $bounceRate = $totalSessions > 0 ? round(($bounceSessions / $totalSessions) * 100) : 0;
 
-    // Average dwell across all pageviews
-    $totalDwell = 0;
-    $dwellCount = 0;
-    foreach ($filteredPvs as $pv) {
-        if (($pv['duration_seconds'] ?? 0) > 0) {
-            $totalDwell += $pv['duration_seconds'];
-            $dwellCount++;
-        }
-    }
-    $avgDwellAll = $dwellCount > 0 ? round($totalDwell / $dwellCount) : 0;
+    $dwellRow = $db->query("SELECT AVG(duration_seconds) a FROM pageviews
+        WHERE visited_at >= $q AND duration_seconds > 0")->fetch();
+    $avgDwellAll = $dwellRow && $dwellRow['a'] !== null ? round($dwellRow['a']) : 0;
 
     return [
         'totalPageviews' => $totalPageviews,
@@ -1016,72 +1293,52 @@ function vjt_get_traffic_data($since) {
 // ── Dashboard: Countries ────────────────────────────────────────────────────
 
 function vjt_get_countries() {
-    $visitors = vjt_read_json('visitors.json');
-    $sessions = vjt_read_json('sessions.json');
-    $submissions = vjt_read_json('submissions.json');
-
-    $visitors = $visitors ?: [];
-    $sessions = $sessions ?: [];
-    $submissions = $submissions ?: [];
-
+    $db = vjt_db();
     $countries = [];
 
-    foreach ($visitors as $v) {
-        $cc = !empty($v['country']) ? strtoupper($v['country']) : 'UNKNOWN';
-        if (!isset($countries[$cc])) {
-            $countries[$cc] = ['code' => $cc, 'visitors' => 0, 'sessions' => 0, 'submissions' => 0];
-        }
-        $countries[$cc]['visitors']++;
+    $rows = $db->query("SELECT CASE WHEN country IS NULL OR country = '' THEN 'UNKNOWN' ELSE upper(country) END cc,
+        COUNT(*) c FROM visitors GROUP BY cc")->fetchAll();
+    foreach ($rows as $r) {
+        $cc = $r['cc'];
+        $countries[$cc] = ['code' => $cc, 'visitors' => (int)$r['c'], 'sessions' => 0, 'submissions' => 0];
     }
 
-    // Count sessions per country
+    // visitor → country map
     $visitorCountry = [];
-    foreach ($visitors as $vid => $v) {
-        $visitorCountry[$vid] = !empty($v['country']) ? strtoupper($v['country']) : 'UNKNOWN';
+    foreach ($db->query("SELECT visitor_id, country FROM visitors")->fetchAll() as $v) {
+        $visitorCountry[$v['visitor_id']] = !empty($v['country']) ? strtoupper($v['country']) : 'UNKNOWN';
     }
-    foreach ($sessions as $s) {
+    foreach ($db->query("SELECT visitor_id FROM sessions")->fetchAll() as $s) {
         $cc = $visitorCountry[$s['visitor_id']] ?? 'UNKNOWN';
-        if (isset($countries[$cc])) {
-            $countries[$cc]['sessions']++;
-        }
+        if (isset($countries[$cc])) $countries[$cc]['sessions']++;
     }
-    foreach ($submissions as $sub) {
+    foreach ($db->query("SELECT visitor_id FROM submissions")->fetchAll() as $sub) {
         $cc = $visitorCountry[$sub['visitor_id']] ?? 'UNKNOWN';
-        if (isset($countries[$cc])) {
-            $countries[$cc]['submissions']++;
-        }
+        if (isset($countries[$cc])) $countries[$cc]['submissions']++;
     }
 
-    // Sort by visitors descending
-    uasort($countries, function ($a, $b) {
-        return $b['visitors'] - $a['visitors'];
-    });
-
+    uasort($countries, function ($a, $b) { return $b['visitors'] - $a['visitors']; });
     return array_values($countries);
 }
 
 // ── Dashboard: Products ─────────────────────────────────────────────────────
 
 function vjt_get_products($dateFrom = '', $dateTo = '') {
-    $pageviews = vjt_read_json('pageviews.json');
-    if (!$pageviews) return [];
+    $db = vjt_db();
+    $where = ["url <> ''"];
+    $params = [];
+    if ($dateFrom) { $where[] = "visited_at >= ?"; $params[] = $dateFrom; }
+    if ($dateTo)   { $where[] = "visited_at <= ?"; $params[] = $dateTo . ' 23:59:59'; }
+    $whereSql = 'WHERE ' . implode(' AND ', $where);
+
+    $stmt = $db->prepare("SELECT url, visitor_id FROM pageviews $whereSql");
+    $stmt->execute($params);
 
     $products = [];
-
-    foreach ($pageviews as $pv) {
+    foreach ($stmt->fetchAll() as $pv) {
         $url = $pv['url'] ?? '';
-        // Extract Kssmi product SKU from URL. Kssmi models start with K,
-        // old Yeetian models start with Y — exclude those.
-        if (preg_match('#/product/(k[\w-]+)/?#i', $url, $m)) {
-            $sku = strtoupper($m[1]);
-        } else {
-            continue;
-        }
-
-        $visited = $pv['visited_at'] ?? '';
-        if ($dateFrom && $visited < $dateFrom) continue;
-        if ($dateTo && $visited > $dateTo . ' 23:59:59') continue;
-
+        if (!preg_match('#/product/(k[\w-]+)/?#i', $url, $m)) continue;
+        $sku = strtoupper($m[1]);
         if (!isset($products[$sku])) {
             $products[$sku] = ['sku' => $sku, 'views' => 0, 'visitors' => 0, 'visitor_set' => [], 'url_counts' => []];
         }
@@ -1091,17 +1348,12 @@ function vjt_get_products($dateFrom = '', $dateTo = '') {
             $products[$sku]['visitor_set'][$vid] = true;
             $products[$sku]['visitors']++;
         }
-        // Track most common URL for this SKU
         $cleanUrl = preg_replace('/\?.*$/', '', $url);
         $products[$sku]['url_counts'][$cleanUrl] = ($products[$sku]['url_counts'][$cleanUrl] ?? 0) + 1;
     }
 
-    // Sort by views descending
-    uasort($products, function ($a, $b) {
-        return $b['views'] - $a['views'];
-    });
+    uasort($products, function ($a, $b) { return $b['views'] - $a['views']; });
 
-    // Pick most common URL per SKU, remove working data
     return array_map(function ($p) {
         arsort($p['url_counts']);
         $p['url'] = count($p['url_counts']) > 0 ? array_key_first($p['url_counts']) : ('/product/' . strtolower($p['sku']) . '/');

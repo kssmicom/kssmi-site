@@ -83,6 +83,12 @@ if (!in_array($tab, $validTabs)) $tab = 'overview';
 
 vjt_data_init();
 
+// Resolve any pending geo lookups off the visitor ingest path (admin-only).
+// Backfills country/city for IPs collected since the last dashboard view.
+if ($isAuthenticated && function_exists('vjt_process_geo_queue')) {
+    vjt_process_geo_queue(100);
+}
+
 function getSettings() {
     return vjt_get_settings();
 }

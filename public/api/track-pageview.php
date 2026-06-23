@@ -56,6 +56,13 @@ if (empty($visitorId) || empty($sessionId)) {
 
 $ip      = vjt_get_client_ip();
 $ua      = $_SERVER['HTTP_USER_AGENT'] ?? '';
+
+// Bot filtering: skip storage for crawlers/scripts/empty UA (return 200 so they don't retry)
+if (vjt_is_bot($ua)) {
+    echo json_encode(['success' => true, 'skipped' => 'bot']);
+    exit;
+}
+
 $browser = vjt_detect_browser($ua);
 $device  = vjt_detect_device($ua);
 $geo     = vjt_resolve_geo($ip);

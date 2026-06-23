@@ -89,11 +89,11 @@ jobs:
             # Set writable permissions for data files (PHP needs to write to these)
             chmod 666 email-logs.json .email_logs_password .email_reset_tokens.json 2>/dev/null || true
 
-            # VJT JSON data files — must be writable by PHP (644 from find above breaks writes)
+            # VJT SQLite store — DB + WAL/SHM sidecars must be writable by PHP
+            # (the find above sets 644, which blocks writes under some PHP SAPIs)
             mkdir -p api/vjt_data 2>/dev/null || true
             chmod 755 api/vjt_data 2>/dev/null || true
-            touch api/vjt_data/visitors.json api/vjt_data/sessions.json api/vjt_data/pageviews.json api/vjt_data/submissions.json api/vjt_data/geo_cache.json api/vjt_data/settings.json 2>/dev/null || true
-            chmod 666 api/vjt_data/*.json 2>/dev/null || true
+            chmod 666 api/vjt_data/vjt.sqlite api/vjt_data/vjt.sqlite-wal api/vjt_data/vjt.sqlite-shm 2>/dev/null || true
 
             # Set ownership for data files
             chown kssmi:kssmi email-logs.json .email_logs_password .email_reset_tokens.json 2>/dev/null || sudo chown kssmi:kssmi email-logs.json .email_logs_password .email_reset_tokens.json 2>/dev/null || true
