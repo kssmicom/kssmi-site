@@ -1,7 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import { translations } from '../translations';
+import { getTranslations, type Translations } from '../translations';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import S00_Hero from '../components/collection/home/S00_Hero.astro';
@@ -13,7 +13,7 @@ import S05_FrameColor from '../components/collection/home/S05_Frame_Color.astro'
 import S06_FrameSurfaceFinish from '../components/collection/home/S06_FrameSurfaceFinish.astro';
 
 const lang = 'en';
-const t = translations[lang] || translations.en;
+const t = await getTranslations(lang);
 
 // Get content entry
 const entry = await getEntry('collection', 'home/home.en');

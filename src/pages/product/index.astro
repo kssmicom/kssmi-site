@@ -1,213 +1,54 @@
 ---
-/**
- * Products Index Page (English - Root Level)
- * Redirects to the first page of products
- */
-
-import { getCollection } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
 import ProductCard from '../../components/ProductCard.astro';
-import { translations } from '../../translations';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { isCategoryMatch, getSlug } from '../../utils/categoryMatching';
-import Pagination from '../../components/Pagination.astro';
+import ProductListingPage from '../../components/pages/ProductListingPage.astro';
+import { getCollection } from 'astro:content';
 import { getProductLang } from '../../utils/language';
 import { cardSrc } from '../../utils/image';
-import { buildPrimaryCategories, buildSidebarTags } from '../../utils/sidebar';
-import Breadcrumb from '../../components/Breadcrumb.astro';
+import { getTranslations } from '../../translations';
 
 const lang = 'en';
+const currentPath = '';
+const PAGE_SIZE = 12;
 
 const allProducts = await getCollection('products');
+const langProducts = allProducts.filter((p: any) => getProductLang(p) === lang);
 
-// Filter products for English only
-// ID format: "kso-001.en" -> extract "en" by splitting on "."
-const langProducts = allProducts.filter((product) => {
-  const productLang = getProductLang(product);
-  return productLang === lang;
-});
-
-// Sort by date (newest first) and then by featured
-const sortedProducts = langProducts.sort((a, b) => {
+const sortedProducts = langProducts.sort((a: any, b: any) => {
   if (a.data.featured && !b.data.featured) return -1;
   if (!a.data.featured && b.data.featured) return 1;
-  const dateA = (a.data as any).date ? new Date((a.data as any).date).getTime() : 0;
-  const dateB = (b.data as any).date ? new Date((b.data as any).date).getTime() : 0;
+  const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
+  const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
   if (dateA !== dateB) return dateB - dateA;
   return b.id.localeCompare(a.id);
 });
 
-// Show first 12 products on index page
-const products = sortedProducts.slice(0, 12);
-
-// Extract first product cover for LCP preload
+const products = sortedProducts.slice(0, PAGE_SIZE);
+const totalPages = Math.ceil(sortedProducts.length / PAGE_SIZE);
+const t = await getTranslations(lang);
 const lcpImage = products[0]?.data?.cover ? cardSrc(products[0].data.cover) : undefined;
-
-const t = translations.en;
-const pt = t.product || {};
-
-const primaryCategories = buildPrimaryCategories(t, '');
-
-const sidebarTags = buildSidebarTags(t, '');
 
 const breadcrumbItems = [
   { label: t.nav.home, href: '/' },
   { label: t.nav.products || 'Products', href: '#' },
 ];
-
-function getCanonicalSlug(categoryName: string): string {
-  return getSlug(categoryName);
-}
-
-function getCategoryCount(href: string): number {
-  const pathWithoutQuery = href.split('?')[0];
-  const targetSlug = pathWithoutQuery.split('/').pop() || '';
-  return langProducts.filter(p => {
-    const cats = p.data.series || '';
-    return isCategoryMatch(cats, targetSlug);
-  }).length;
-}
-
 ---
 
-<Layout title={t.nav.products} lang={lang} lcpImage={lcpImage}>
-  <Header lang={lang} />
-  <Breadcrumb items={breadcrumbItems} lang={lang} />
-
-  <main class="w-full min-h-screen py-6 lg:py-8 bg-stone-50">
-    <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
-      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-        <!-- Sidebar: Category Filter (Hidden on mobile/tablet) -->
-        <aside class="hidden lg:block lg:col-span-1">
-          <div class="sticky top-24 space-y-6">
-            <!-- Categories Card -->
-            <div class="bg-gradient-to-br from-white to-[#faf8f5] rounded-xl shadow-sm p-6 border border-stone-200/50">
-              <!-- All Products Link - Page Title (Active) -->
-              <a href="/product" class="flex items-center justify-between py-1.5 px-2 text-sm lg:text-base font-bold bg-[#5D4E37] text-white rounded-lg mb-3">
-                <span>{t.sidebar.all_products}</span>
-                <span class="text-xs font-normal text-white/70">{langProducts.length}</span>
-              </a>
-
-              <!-- Category Groups with Sub-categories -->
-              <div class="space-y-3">
-                {primaryCategories.map((cat) => (
-                  <div class="border-b border-gray-100 pb-3 last:border-0 last:pb-0">
-                    <!-- Main Category -->
-                    <a
-                      href={cat.href}
-                      class="flex items-center justify-between py-2 px-2 text-sm font-bold text-[#5D4E37] hover:bg-stone-50 rounded-lg transition-colors"
-                    >
-                      <span>{cat.label}</span>
-                      <span class="text-xs text-gray-500">{getCategoryCount(cat.href)}</span>
-                    </a>
-                    <!-- Sub-categories -->
-                    <ul class="ml-3 mt-1 space-y-1">
-                      {cat.items.map((sub) => (
-                        <li>
-                          <a
-                            href={sub.href}
-                            class="flex items-center justify-between py-1.5 px-2 text-sm text-gray-600 hover:text-[#5D4E37] hover:bg-stone-50 rounded transition-colors"
-                          >
-                            <span>{sub.label}</span>
-                            <span class="text-xs text-gray-500">{getCategoryCount(sub.href)}</span>
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-
-              <!-- Tags & Filters -->
-              <div class="mt-8 pt-6 border-t border-gray-100">
-                <h4 class="text-xs font-bold text-gray-900 uppercase tracking-wider mb-4">{t.sidebar.tags_filters}</h4>
-                <div class="space-y-6">
-                  {sidebarTags.map((group) => (
-                    <div>
-                      <a href={group.href} class="text-sm font-bold text-gray-900 mb-2.5 flex items-center hover:text-[#5D4E37] transition-colors">
-                        <span class="text-[#5D4E37] mr-1">#</span> {group.label}
-                      </a>
-                      <div class="flex flex-col gap-1.5">
-                        {group.items.map((tag) => (
-                          <a
-                            href={tag.href}
-                            class="px-3 py-1.5 text-[11px] font-bold rounded-md border bg-stone-50 text-stone-600 border-stone-200 hover:border-[#8B7355] hover:text-[#5D4E37] hover:bg-stone-100 transition-all duration-200 w-full"
-                          >
-                            {tag.label}
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <!-- CTA Card - Always visible below categories -->
-            <div class="bg-[#5D4E37] rounded-xl p-6 text-white">
-              <h4 class="font-bold mb-2">{pt.needCustomEyewear || 'Need Custom Eyewear?'}</h4>
-              <p class="text-sm text-white/90 mb-4">
-                {pt.oemServices || 'We offer full OEM & ODM services for your brand.'}
-              </p>
-              <a
-                href="/quote"
-                class="inline-block bg-white text-[#5D4E37] px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
-              >
-                {t.cta.quote || 'Get Quote'}
-              </a>
-            </div>
-          </div>
-        </aside>
-
-        <!-- Product Grid -->
-        <div class="col-span-1 lg:col-span-3">
-          <h1 class="text-base lg:text-lg font-bold text-stone-900 mb-3">{t.nav.products}</h1>
-          {products.length === 0 ? (
-            <div class="text-center py-16 bg-white rounded-xl shadow-sm">
-              <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-              </svg>
-              <p class="text-gray-500 mb-4">{pt.noProducts || 'No products available yet.'}</p>
-              <a
-                href="/"
-                class="text-[#5D4E37] hover:underline"
-              >
-                {pt.returnHome || 'Return to Homepage'}
-              </a>
-            </div>
-          ) : (
-            <>
-              <!-- Results Info -->
-              <div class="flex justify-between items-center mb-3 text-sm text-gray-500">
-                <span>
-                  {(pt.showingResults || 'Showing {start}-{end} of {total} products')
-                    .replace('{start}', '1')
-                    .replace('{end}', String(products.length))
-                    .replace('{total}', String(langProducts.length))}
-                </span>
-              </div>
-
-              <!-- Products Grid -->
-              <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-6 xl:gap-x-6 xl:gap-y-10">
-                {products.map((product, index) => (
-                  <ProductCard product={product} lang={lang} index={index} />
-                ))}
-              </div>
-
-              <Pagination
-                currentPage={1}
-                lastPage={Math.ceil(langProducts.length / 12)}
-                basePath="/product"
-                prevLabel={pt.previousPage || 'Previous'}
-                nextLabel={pt.nextPage || 'Next'}
-              />
-            </>
-          )}
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <Footer lang={lang} />
-</Layout>
+<ProductListingPage
+  lang={lang}
+  currentPath={currentPath}
+  baseSegment="product"
+  products={products}
+  allProducts={sortedProducts}
+  currentPage={1}
+  totalPages={totalPages}
+  basePath="/product"
+  breadcrumbItems={breadcrumbItems}
+  title={t.nav.products}
+  lcpImage={lcpImage}
+>
+  <Fragment slot="cards">
+    {products.map((product: any, index: number) => (
+      <ProductCard product={product} lang={lang} index={index} />
+    ))}
+  </Fragment>
+</ProductListingPage>

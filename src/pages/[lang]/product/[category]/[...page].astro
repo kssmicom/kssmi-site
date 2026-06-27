@@ -1,36 +1,14 @@
 ---
-/**
- * Category Page (Multilingual)
- * Displays products filtered by a specific category
- * URL format: /[lang]/product/[category-slug] (e.g., /ko/product/luxury-glasses)
- *
- * IMPORTANT: All category URLs use English slugs for consistency across languages.
- * Products may have translated category names, but they map to English slugs.
- */
-
-import { getCollection } from 'astro:content';
-import Layout from '../../../../layouts/Layout.astro';
 import ProductCard from '../../../../components/ProductCard.astro';
-import { translations } from '../../../../translations';
-import Header from '../../../../components/Header.astro';
-import Footer from '../../../../components/Footer.astro';
-import Breadcrumb from '../../../../components/Breadcrumb.astro';
+import ProductCategoryPage from '../../../../components/pages/ProductCategoryPage.astro';
+import { getCollection } from 'astro:content';
+import { getTranslations, LANGUAGES, type Translations } from '../../../../translations';
 import { isCategoryMatch, getSlug } from '../../../../utils/categoryMatching';
 import { getProductLang } from '../../../../utils/language';
-import { cardSrc } from '../../../../utils/image';
-import { buildPrimaryCategories, buildSidebarTags } from '../../../../utils/sidebar';
-import Pagination from '../../../../components/Pagination.astro';
-
-// Category translation mapping: maps translated category names to English slugs
-// Function to get canonical slug from any category name
-function getCanonicalSlug(categoryName: string): string {
-  return getSlug(categoryName);
-}
 
 export async function getStaticPaths({ paginate }: { paginate: any }) {
   const allProducts = await getCollection('products');
 
-  // Dynamically derive categories from product series fields
   const allCategorySlugs = new Set<string>();
   for (const p of allProducts) {
     const series = p.data.series || p.data.categories || '';
@@ -40,7 +18,6 @@ export async function getStaticPaths({ paginate }: { paginate: any }) {
     }
   }
 
-  // Ensure all sidebar-navigable category slugs exist, even if no products match exactly
   const SIDEBAR_SLUGS = [
     'sunglasses', 'acetate-sunglasses', 'metal-sunglasses', 'titanium-sunglasses', 'carbon-fiber-sunglasses', 'rimless-sunglasses',
     'optical-frames', 'acetate-optical-frames', 'metal-optical-frames', 'titanium-optical-frames', 'carbon-fiber-optical-frames', 'rimless-optical-frames',
@@ -50,29 +27,19 @@ export async function getStaticPaths({ paginate }: { paginate: any }) {
   ];
   for (const s of SIDEBAR_SLUGS) allCategorySlugs.add(s);
 
-  const languages = Object.keys(translations).filter(lang => lang !== 'en');
-
+  const languages = LANGUAGES.filter(l => l !== 'en');
   const paths = [];
 
-  // For each language, create pages for all dynamic categories
   for (const lang of languages) {
-    // Get all products in this language
-    const langProducts = allProducts.filter(p => {
-      const pLang = getProductLang(p);
-      return pLang === lang;
-    });
-
-    // For each dynamic category, find matching products
+    const langProducts = allProducts.filter(p => getProductLang(p) === lang);
     for (const canonicalSlug of allCategorySlugs) {
-      // Find products that map to this category
       const categoryProducts = langProducts.filter(p => {
         const cats = p.data.series || p.data.categories || '';
         return isCategoryMatch(cats, canonicalSlug);
       });
-
-      // Create page if there are products OR if it's a sidebar-navigable slug
       if (categoryProducts.length > 0 || SIDEBAR_SLUGS.includes(canonicalSlug)) {
-        const sorted = categoryProducts.sort((a, b) => {
+
+    const sorted = categoryProducts.sort((a: any, b: any) => {
           if (a.data.featured && !b.data.featured) return -1;
           if (!a.data.featured && b.data.featured) return 1;
           const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
@@ -88,285 +55,24 @@ export async function getStaticPaths({ paginate }: { paginate: any }) {
       }
     }
   }
-
   return paths;
 }
 
 const { page, categorySlug, lang } = Astro.props;
-const products = page.data;
-const t = translations[lang as keyof typeof translations] || translations.en;
-type TranslationType = typeof translations.en;
-const sidebar = (t as TranslationType).sidebar;
-const currentPath = `${lang}/`;
-const isRTL = lang === 'ar';
+const currentPath = lang + '/';
 
-// First product cover for LCP preload
-const lcpImage = (products[0] as any)?.data?.cover ? cardSrc((products[0] as any).data.cover) : undefined;
-
-// Format category name for display (fallback)
-let categoryTitle = categorySlug
-  .split('-')
-  .map((word: any) => word.charAt(0).toUpperCase() + word.slice(1))
-  .join(' ');
-
-// Get product translations
-const pt = t.product || {
-  viewAllCollections: "View All Collections",
-  productsInCategory: "products in this category",
-  allProducts: "All Products",
-};
-
-// Get all products for count
+// Fetch fresh — getStaticPaths vars not accessible here
 const allProducts = await getCollection('products');
-const langProducts = allProducts.filter((product) => {
-  const productLang = getProductLang(product);
-  return productLang === lang;
+const langProducts = allProducts.filter((p: any) => {
+  const pLang = p.id.split('.').pop();
+  return (pLang && pLang.length === 2) ? pLang === lang : lang === 'en';
 });
-
-// Helper for category counts
-function getCategoryCount(href: string): number {
-  const pathWithoutQuery = href.split('?')[0];
-  const targetSlug = pathWithoutQuery.split('/').pop() || '';
-  return langProducts.filter(p => {
-    const cats = p.data.series || p.data.categories || [];
-    return isCategoryMatch(cats, targetSlug);
-  }).length;
-}
-
-const primaryCategories = buildPrimaryCategories(t, currentPath);
-
-const sidebarTags = buildSidebarTags(t, currentPath);
-
-
-
-// Check if current category matches any in sidebar
-function isActiveCategory(href: string): boolean {
-  const pathWithoutQuery = href.split('?')[0];
-  const hrefSlug = pathWithoutQuery.replace(`/${currentPath}product/`, '').replace('/product/', '');
-  return hrefSlug === categorySlug;
-}
-
-// Find localized category title from sidebar definitions
-// First check primary categories
-for (const cat of primaryCategories) {
-  if (isActiveCategory(cat.href)) {
-    categoryTitle = cat.label;
-    break;
-  }
-  const sub = cat.items.find(s => isActiveCategory(s.href));
-  if (sub) {
-    categoryTitle = sub.label;
-    break;
-  }
-}
-// Then check sidebar tags if no match found
-if (categoryTitle === categorySlug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')) {
-  for (const tag of sidebarTags) {
-    if (isActiveCategory(tag.href)) {
-      categoryTitle = tag.label;
-      break;
-    }
-  }
-}
-
-// Build breadcrumb items
-const categoryBreadcrumbItems = (() => {
-  const items: Array<{ label: string; href: string }> = [
-    { label: t.nav.home, href: `/${lang}` },
-    { label: t.nav.products || 'Products', href: `/${lang}/product` },
-  ];
-  for (const cat of primaryCategories) {
-    if (isActiveCategory(cat.href)) {
-      items.push({ label: cat.label, href: '#' });
-      return items;
-    }
-    for (const sub of cat.items) {
-      if (isActiveCategory(sub.href)) {
-        items.push({ label: cat.label, href: cat.href });
-        items.push({ label: sub.label, href: '#' });
-        return items;
-      }
-    }
-  }
-  for (const group of sidebarTags) {
-    if (isActiveCategory(group.href)) {
-      items.push({ label: group.label, href: '#' });
-      return items;
-    }
-    for (const item of group.items) {
-      if (isActiveCategory(item.href)) {
-        items.push({ label: group.label, href: group.href });
-        items.push({ label: item.label, href: '#' });
-        return items;
-      }
-    }
-  }
-  items.push({ label: categoryTitle, href: '#' });
-  return items;
-})();
 ---
 
-<Layout title={`${categoryTitle} - ${t.nav.products}`} lang={lang} lcpImage={lcpImage}>
-  <Header lang={lang} />
-  <Breadcrumb items={categoryBreadcrumbItems} lang={lang} />
-
-  <main class="w-full min-h-screen py-6 lg:py-8 bg-stone-50" dir={isRTL ? 'rtl' : 'ltr'}>
-    <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
-
-      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-        <!-- Sidebar -->
-        <aside class="hidden lg:block lg:col-span-1">
-          <div class="sticky top-24 space-y-6">
-            <div class="bg-gradient-to-br from-white to-[#faf8f5] rounded-xl shadow-sm p-6 border border-stone-200/50">
-              <!-- All Products Link -->
-              <a href={`/${currentPath}product`} class="flex items-center justify-between py-1.5 px-2 text-sm lg:text-base font-bold text-[#5D4E37] hover:bg-stone-50 rounded-lg transition-colors mb-3">
-                <span>{sidebar.all_products}</span>
-                <span class="text-xs text-gray-500">{langProducts.length}</span>
-              </a>
-
-              <div class="space-y-3">
-                {primaryCategories.map((cat) => (
-                  <div class="border-b border-gray-100 pb-3 last:border-0 last:pb-0">
-                    <a
-                      href={cat.href}
-                      class={`flex items-center justify-between py-2 px-2 text-sm font-bold rounded-lg transition-colors ${
-                        isActiveCategory(cat.href)
-                          ? 'bg-[#5D4E37] text-white'
-                          : 'text-[#5D4E37] hover:bg-stone-50'
-                      }`}
-                    >
-                      <span>{cat.label}</span>
-                      <span class={`text-xs ${
-                        isActiveCategory(cat.href) ? 'text-white/70' : 'text-gray-500'
-                      }`}>{getCategoryCount(cat.href)}</span>
-                    </a>
-                    <ul class="ms-3 mt-1 space-y-1">
-                      {cat.items.map((sub) => (
-                        <li>
-                          <a
-                            href={sub.href}
-                            class={`flex items-center justify-between py-1.5 px-2 text-sm rounded transition-colors ${
-                              isActiveCategory(sub.href)
-                                ? 'bg-[#5D4E37] text-white'
-                                : 'text-gray-600 hover:text-[#5D4E37] hover:bg-stone-50'
-                            }`}
-                          >
-                            <span>{sub.label}</span>
-                            <span class={`text-xs ${
-                              isActiveCategory(sub.href) ? 'text-white/90' : 'text-gray-500'
-                            }`}>{getCategoryCount(sub.href)}</span>
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-
-              <div class="mt-8 pt-6 border-t border-gray-100">
-                <h4 class="text-xs font-bold text-gray-900 uppercase tracking-wider mb-4">{sidebar.tags_filters}</h4>
-                <div class="space-y-6">
-                  {sidebarTags.map((group) => (
-                    <div>
-                      <a href={group.href} class="text-sm font-bold text-gray-900 mb-2.5 flex items-center hover:text-[#5D4E37] transition-colors">
-                        <span class="text-[#5D4E37] mr-1">#</span> {group.label}
-                      </a>
-                      <div class="flex flex-col gap-1.5">
-                        {group.items.map((tag) => {
-                          const isActive = isActiveCategory(tag.href);
-                          return (
-                            <a
-                              href={tag.href}
-                              class={`px-3 py-1.5 text-[11px] font-bold rounded-md border transition-all duration-200 w-full ${
-                                isActive
-                                  ? 'bg-[#5D4E37] text-white border-[#8B7355] shadow-md'
-                                  : 'bg-white text-stone-600 border-stone-200 hover:border-[#8B7355] hover:text-[#5D4E37] hover:bg-stone-50'
-                              }`}
-                            >
-                              {tag.label}
-                            </a>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-[#5D4E37] rounded-xl p-6 text-white">
-              <h4 class="font-bold mb-2">{pt.needCustomEyewear || 'Need Custom Eyewear?'}</h4>
-              <p class="text-sm text-white mb-4">
-                {pt.oemServices || 'We offer full OEM & ODM services for your brand.'}
-              </p>
-              <a
-                href={`/${currentPath}quote`}
-                class="inline-block bg-white text-[#5D4E37] px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
-              >
-                {t.cta.quote || 'Get Quote'}
-              </a>
-            </div>
-          </div>
-        </aside>
-
-        <!-- Product Grid -->
-        <div class="col-span-1 lg:col-span-3">
-          <h1 class="text-base lg:text-lg font-bold text-stone-900 mb-3">{categoryTitle}</h1>
-          {page.total === 0 ? (
-            <div class="text-center py-16 bg-white rounded-xl shadow-sm">
-              <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-              </svg>
-              <p class="text-gray-500 mb-4">{pt.noProducts || 'No products in this category.'}</p>
-              <a href={`/${currentPath}product`} class="text-[#5D4E37] hover:underline">View All Products</a>
-            </div>
-          ) : (
-            <>
-              <!-- Results Info -->
-              <div class="flex justify-between items-center mb-3 text-sm text-gray-500">
-                <span>
-                  {(pt.showingResults || 'Showing {start}-{end} of {total} products')
-                    .replace('{start}', String(page.start + 1))
-                    .replace('{end}', String(Math.min(page.end, page.total)))
-                    .replace('{total}', String(page.total))}
-                </span>
-              </div>
-
-              <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-6 xl:gap-x-6 xl:gap-y-10">
-                {products.map((product: any, index: number) => (
-                  <ProductCard product={product} lang={lang} index={index} />
-                ))}
-              </div>
-
-              <Pagination
-                currentPage={page.currentPage}
-                lastPage={page.lastPage}
-                basePath={`/${currentPath}product`}
-                categorySlug={categorySlug}
-                prevUrl={page.url.prev}
-                nextUrl={page.url.next}
-                prevLabel={pt.previousPage || 'Previous'}
-                nextLabel={pt.nextPage || 'Next'}
-              />
-            </>
-          )}
-        </div>
-      </div>
-
-      <!-- Back to All -->
-      <div class="mt-12 text-center">
-        <a
-          href={`/${currentPath}product`}
-          class="inline-flex items-center gap-2 text-[#5D4E37] hover:text-[#5D4E37] font-medium transition-colors"
-        >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-          {pt.viewAllCollections}
-        </a>
-      </div>
-    </div>
-  </main>
-
-  <Footer lang={lang} />
-</Layout>
+<ProductCategoryPage { lang, currentPath, categorySlug, page } langProducts={langProducts} allProducts={allProducts} baseSegment="product" >
+  <Fragment slot="cards">
+    {page.data.map((product: any, index: number) => (
+      <ProductCard product={product} lang={lang} index={index} />
+    ))}
+  </Fragment>
+</ProductCategoryPage>

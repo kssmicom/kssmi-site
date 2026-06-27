@@ -1,0 +1,46 @@
+---
+/** InquiryFormLazy — loads InquiryForm via fetch immediately — saves 44KB from initial HTML */
+interface Props {
+  lang?: string;
+  productName?: string;
+}
+const { lang = 'en', productName = '' } = Astro.props;
+---
+
+<div
+  id="inquiry-form-lazy"
+  data-lang={lang}
+  data-product={productName}
+  style="min-height:200px"
+  class="inquiry-form-placeholder"
+></div>
+
+<script>
+  function loadInquiryForm() {
+    var el = document.getElementById('inquiry-form-lazy');
+    if (!el || el.dataset.loaded === 'true') return;
+    el.dataset.loaded = 'true';
+    var lang = el.dataset.lang || 'en';
+    var product = el.dataset.product || '';
+    var url = '/inquiry-form/' + lang + '?product=' + encodeURIComponent(product);
+    fetch(url)
+      .then(function (r) { return r.text(); })
+      .then(function (html) {
+        el.innerHTML = html;
+        var scripts = el.querySelectorAll('script');
+        scripts.forEach(function (s) {
+          var ns = document.createElement('script');
+          Array.from(s.attributes).forEach(function (a) { ns.setAttribute(a.name, a.value); });
+          ns.textContent = s.textContent;
+          s.parentNode.replaceChild(ns, s);
+        });
+      })
+      .catch(function () {
+        el.innerHTML = '<p class="text-gray-500 text-center py-8">Form failed to load. Please <a href="/contact" class="text-[#8B7355] underline">contact us</a> directly.</p>';
+      });
+  }
+
+  // Run on initial load AND on Astro View Transitions (SPA navigation)
+  loadInquiryForm();
+  document.addEventListener('astro:page-load', loadInquiryForm);
+</script>

@@ -1,0 +1,307 @@
+---
+/**
+ * Product Category Page — Shared Component
+ */
+import Layout from '../../layouts/Layout.astro';
+import { getTranslations } from '../../translations';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { isCategoryMatch } from '../../utils/categoryMatching';
+import { getProductLang } from '../../utils/language';
+import Pagination from '../../components/Pagination.astro';
+import { buildPrimaryCategories, buildSidebarTags } from '../../utils/sidebar';
+import { getCollection } from 'astro:content';
+import { cardSrc } from '../../utils/image';
+
+interface Props {
+  lang: string;
+  currentPath: string;
+  categorySlug: string;
+  baseSegment?: string;
+  page: any;
+}
+
+let { lang = 'en', currentPath = '', categorySlug, page, baseSegment = 'product', allProducts = [], langProducts: langProds } = Astro.props;
+
+// If lang is still 'en' but the URL has a locale prefix, override it.
+// Astro's i18n routing may route prefixed URLs to the English route tree.
+if (lang === 'en') {
+  const LANGUAGES = ['it','es','fr','de','pt','ru','ja','tr','ar','ko','zh','hi','vi','jv','ms','tg'];
+  const urlPath = Astro.url.pathname;
+  for (const l of LANGUAGES) {
+    if (urlPath.startsWith('/' + l + '/') || urlPath === '/' + l) {
+      lang = l;
+      currentPath = l + '/';
+      break;
+    }
+  }
+}
+
+// If categorySlug is not provided by getStaticPaths (Astro v5 paginate may not
+// pass through custom props), extract it from the URL path.
+if (!categorySlug) {
+  const segments = Astro.url.pathname.split('/').filter(Boolean);
+  // URL pattern: /[lang/]product/category-name or /[lang/]blog/category-name etc.
+  // segments[0] = 'product'|'blog'|'eyewear', segments[1] = category-slug
+  if (segments.length >= 2) {
+    // Use second-to-last segment if last is a page number (e.g. /sunglasses/2)
+    const last = segments[segments.length - 1];
+    categorySlug = /^\d+$/.test(last) && segments.length >= 3
+      ? segments[segments.length - 2]
+      : last;
+  }
+}
+const products = page?.data || [];
+
+// LCP preload from first product
+const lcpImage = products[0]?.data?.cover ? cardSrc(products[0].data.cover) : undefined;
+
+const t = await getTranslations(lang);
+console.log('[ProductCategoryPage] lang:', lang, 't.nav.products:', t.nav?.products, 't.nav.home:', t.nav?.home);
+const pt = t.product || {};
+const sidebar = (t as any).sidebar || {};
+const isRTL = lang === 'ar';
+
+const collectionName = baseSegment === 'blog' ? 'blog' : baseSegment === 'eyewear' ? 'feature' : 'products';
+const _allProducts = allProducts.length > 0 ? allProducts : await getCollection(collectionName);
+const langProducts = langProds && langProds.length > 0 ? langProds : _allProducts.filter((p: any) => getProductLang(p) === lang);
+
+function getCategoryCount(href: string): number {
+  const targetSlug = href.split('/').pop() || '';
+  return langProducts.filter((p: any) => {
+    const cats = p.data.series || p.data.categories || '';
+    return isCategoryMatch(cats, targetSlug);
+  }).length;
+}
+
+const primaryCategories = buildPrimaryCategories(t, currentPath, baseSegment);
+const sidebarTags = buildSidebarTags(t, currentPath, baseSegment);
+
+function isActiveCategory(href: string): boolean {
+  if (!categorySlug) return false;
+  const pathWithoutQuery = href.split('?')[0];
+  const hrefSlug = pathWithoutQuery.replace(`/${currentPath}${baseSegment}/`, '').replace(`/${baseSegment}/`, '');
+  return hrefSlug === categorySlug;
+}
+
+let categoryTitle = (categorySlug || '').split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+
+for (const cat of primaryCategories) {
+  if (isActiveCategory(cat.href)) { categoryTitle = cat.label; break; }
+  const sub = cat.items.find((s: any) => isActiveCategory(s.href));
+  if (sub) { categoryTitle = sub.label; break; }
+}
+if (categoryTitle === (categorySlug || '').split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')) {
+  for (const tag of sidebarTags) {
+    if (isActiveCategory(tag.href)) { categoryTitle = tag.label; break; }
+    const sub = tag.items.find((s: any) => isActiveCategory(s.href));
+    if (sub) { categoryTitle = sub.label; break; }
+  }
+}
+
+const categoryBreadcrumbItems = (() => {
+  const items: Array<{ label: string; href: string }> = [
+    { label: t.nav.home, href: currentPath ? '/' + currentPath.replace(/\/$/, '') : '/' },
+    { label: baseSegment === 'blog' ? (t.nav.blog || 'Blog') : baseSegment === 'eyewear' ? (t.nav.feature || 'Eyewear') : (t.nav.products || 'Products'), href: '/' + currentPath + baseSegment },
+  ];
+  for (const cat of primaryCategories) {
+    if (isActiveCategory(cat.href)) { items.push({ label: cat.label, href: '#' }); return items; }
+    for (const sub of cat.items) {
+      if (isActiveCategory(sub.href)) { items.push({ label: cat.label, href: cat.href }); items.push({ label: sub.label, href: '#' }); return items; }
+    }
+  }
+  for (const group of sidebarTags) {
+    if (isActiveCategory(group.href)) { items.push({ label: group.label, href: '#' }); return items; }
+    for (const item of group.items) {
+      if (isActiveCategory(item.href)) { items.push({ label: group.label, href: group.href }); items.push({ label: item.label, href: '#' }); return items; }
+    }
+  }
+  items.push({ label: categoryTitle, href: '#' });
+  return items;
+})();
+---
+
+<Layout title={`${categoryTitle} - ${t.nav.products}`} lang={lang} lcpImage={lcpImage}>
+  <Header lang={lang} />
+  <Breadcrumb items={categoryBreadcrumbItems} lang={lang} />
+
+  <main class="w-full min-h-screen py-6 lg:py-8 bg-stone-50" dir={isRTL ? 'rtl' : 'ltr'}>
+    <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
+
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Sidebar -->
+        <aside class="hidden lg:block lg:col-span-1">
+          <div class="sticky top-24 space-y-6">
+            <div class="bg-gradient-to-br from-white to-[#faf8f5] rounded-xl shadow-sm p-6 border border-stone-200/50">
+              <!-- All Products Link -->
+              <a href={`/${currentPath}${baseSegment}`} class="flex items-center justify-between py-1.5 px-2 text-sm lg:text-base font-bold text-[#5D4E37] hover:bg-stone-50 rounded-lg transition-colors mb-3">
+                <span>{baseSegment === 'blog' ? sidebar.all_posts : baseSegment === 'eyewear' ? sidebar.all_features : sidebar.all_products}</span>
+                <span class="text-xs text-gray-500">{langProducts.length}</span>
+              </a>
+
+              <div class="space-y-3">
+                {primaryCategories.map((cat) => (
+                  <div class="border-b border-gray-100 pb-3 last:border-0 last:pb-0">
+                    <a
+                      href={cat.href}
+                      class={`flex items-center justify-between py-2 px-2 text-sm font-bold rounded-lg transition-colors ${
+                        isActiveCategory(cat.href)
+                          ? 'bg-[#5D4E37] text-white'
+                          : 'text-[#5D4E37] hover:bg-stone-50'
+                      }`}
+                    >
+                      <span>{cat.label}</span>
+                      <span class={`text-xs ${
+                        isActiveCategory(cat.href) ? 'text-white/70' : 'text-gray-500'
+                      }`}>{getCategoryCount(cat.href)}</span>
+                    </a>
+                    <ul class="ms-3 mt-1 space-y-1">
+                      {cat.items.map((sub) => (
+                        <li>
+                          <a
+                            href={sub.href}
+                            class={`flex items-center justify-between py-1.5 px-2 text-sm rounded transition-colors ${
+                              isActiveCategory(sub.href)
+                                ? 'bg-[#5D4E37] text-white'
+                                : 'text-gray-600 hover:text-[#5D4E37] hover:bg-stone-50'
+                            }`}
+                          >
+                            <span>{sub.label}</span>
+                            <span class={`text-xs ${
+                              isActiveCategory(sub.href) ? 'text-white/90' : 'text-gray-500'
+                            }`}>{getCategoryCount(sub.href)}</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+
+              <div class="mt-8 pt-6 border-t border-gray-100">
+                <h4 class="text-xs font-bold text-gray-900 uppercase tracking-wider mb-4">{sidebar.tags_filters}</h4>
+                <div class="space-y-6">
+                  {sidebarTags.map((group) => (
+                    <div>
+                      <a href={group.href} class="text-sm font-bold text-gray-900 mb-2.5 flex items-center hover:text-[#5D4E37] transition-colors">
+                        <span class="text-[#5D4E37] mr-1">#</span> {group.label}
+                      </a>
+                      <div class="flex flex-col gap-1.5">
+                        {group.items.map((tag) => {
+                          const isActive = isActiveCategory(tag.href);
+                          return (
+                            <a
+                              href={tag.href}
+                              class={`px-3 py-1.5 text-[11px] font-bold rounded-md border transition-all duration-200 w-full ${
+                                isActive
+                                  ? 'bg-[#5D4E37] text-white border-[#8B7355] shadow-md'
+                                  : 'bg-white text-stone-600 border-stone-200 hover:border-[#8B7355] hover:text-[#5D4E37] hover:bg-stone-50'
+                              }`}
+                            >
+                              {tag.label}
+                            </a>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-[#5D4E37] rounded-xl p-6 text-white">
+              <h4 class="font-bold mb-2">{pt.needCustomEyewear || 'Need Custom Eyewear?'}</h4>
+              <p class="text-sm text-white mb-4">
+                {pt.oemServices || 'We offer full OEM & ODM services for your brand.'}
+              </p>
+              <a
+                href={`/${currentPath}quote`}
+                class="inline-block bg-white text-[#5D4E37] px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              >
+                {t.cta.quote || 'Get Quote'}
+              </a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Product Grid -->
+        <div class="col-span-1 lg:col-span-3">
+          <h1 class="text-base lg:text-lg font-bold text-stone-900 mb-3">{categoryTitle} — <span class="text-xs lg:text-sm font-medium text-stone-500">{((t as any).pagination?.page || 'Page {n}').replace('{n}', String((() => { const s = Astro.url.pathname.split('/').filter(Boolean); const l = s[s.length-1]; const n = parseInt(l,10); return isNaN(n) ? 1 : n; })()))}</span></h1>
+          {page?.total === 0 ? (
+            <div class="text-center py-16 bg-white rounded-xl shadow-sm">
+              <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+              <p class="text-gray-500 mb-4">{pt.noProducts || 'No products in this category.'}</p>
+              <a href={`/${currentPath}${baseSegment}`} class="text-[#5D4E37] hover:underline">View All Products</a>
+            </div>
+          ) : (
+            <>
+              <!-- Results Info -->
+              <div class="flex justify-between items-center mb-3 text-sm text-gray-500">
+                <span>
+                  {(() => {
+                    const PAGE_SIZE = 12;
+                    const matchedTotal = langProducts.filter((p: any) => {
+                      const cats = p.data.series || p.data.categories || '';
+                      return isCategoryMatch(cats, categorySlug || '');
+                    }).length;
+const currentPg = (() => { const segs = Astro.url.pathname.split('/').filter(Boolean); const last = segs[segs.length-1]; const n=parseInt(last,10);return isNaN(n)?1:n; })();
+                    const s = matchedTotal > 0 ? (currentPg - 1) * PAGE_SIZE + 1 : 0;
+                    const e = Math.min(currentPg * PAGE_SIZE, matchedTotal);
+                    return (pt.showingResults || 'Showing {start}-{end} of {total} products')
+                      .replace('{start}', String(s))
+                      .replace('{end}', String(e))
+                      .replace('{total}', String(matchedTotal));
+                  })()}
+                </span>
+              </div>
+
+              <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-6 xl:gap-x-6 xl:gap-y-10">
+                <slot name="cards" />
+              </div>
+
+              {(() => {
+                const PAGE_SIZE = 12;
+                const matchedTotal = langProducts.filter((p: any) => {
+                  const cats = p.data.series || p.data.categories || '';
+                  return isCategoryMatch(cats, categorySlug || '');
+                }).length;
+                const currentPg = (() => { const s = Astro.url.pathname.split('/').filter(Boolean); const l = s[s.length-1]; const n = parseInt(l,10); return isNaN(n) ? 1 : n; })();
+                const totalPages = Math.ceil(matchedTotal / PAGE_SIZE) || 1;
+                return totalPages > 1 && (
+                  <Pagination
+                    currentPage={currentPg}
+                    lastPage={totalPages}
+                    basePath={`/${currentPath}${baseSegment}`}
+                    categorySlug={categorySlug}
+                    prevUrl={page?.url?.prev}
+                    nextUrl={page?.url?.next}
+                    prevLabel={pt.previousPage || 'Previous'}
+                    nextLabel={pt.nextPage || 'Next'}
+                  />
+                );
+              })()}
+            </>
+          )}
+        </div>
+      </div>
+
+      <!-- Back to All -->
+      <div class="mt-12 text-center">
+        <a
+          href={`/${currentPath}product`}
+          class="inline-flex items-center gap-2 text-[#5D4E37] hover:text-[#5D4E37] font-medium transition-colors"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          {pt.viewAllCollections}
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

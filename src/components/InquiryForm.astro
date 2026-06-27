@@ -7,7 +7,7 @@
  * Protected by Cloudflare Turnstile (can be disabled for testing)
  */
 
-import { translations } from '../translations';
+import { translations, getTranslations, type Translations } from '../translations';
 
 interface Props {
   lang?: string;
@@ -15,7 +15,7 @@ interface Props {
 }
 
 const { lang = 'en', productName = '' } = Astro.props;
-const t = translations[lang as keyof typeof translations] || translations.en;
+const t = await getTranslations(lang);
 const isRTL = lang === 'ar';
 
 // Get product-specific translations (fallback to English)

@@ -1,6 +1,6 @@
 ---
 
-import { translations } from '../translations';
+import { getTranslations, type Translations } from '../translations';
 import { cardSrc } from '../utils/image';
 
 interface Props {
@@ -31,7 +31,7 @@ const {
 } = data;
 
 const isRTL = lang === 'ar';
-const t = translations[lang] || translations.en;
+const t = await getTranslations(lang);
 const currentPath = lang === 'en' ? '' : `${lang}/`;
 
 // Use slug from data, fallback to extracting from ID

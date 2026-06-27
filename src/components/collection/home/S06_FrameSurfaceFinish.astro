@@ -1,11 +1,11 @@
 ---
 import { getEntry } from 'astro:content';
-import { translations } from '../../../translations';
+import { getTranslations, type Translations } from '../../../translations';
 import { cardSrc } from '../../../utils/image';
 
 const { lang = 'en' } = Astro.props as { lang?: string };
 const isRTL = lang === 'ar';
-const t = (translations as any)[lang] || translations.en;
+const t = await getTranslations(lang);
 const prefix = lang === 'en' ? '' : `/${lang}`;
 const entry = await getEntry('collection', `home/s06-frame-surface-finish.${lang}`);
 const eyebrow = entry?.data?.eyebrow || 'Surface Finish';

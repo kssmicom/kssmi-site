@@ -1,0 +1,47 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getTranslations, LANGUAGES } from '../../translations';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const { lang } = Astro.props;
+const t = await getTranslations(lang);
+const isRTL = lang === 'ar';
+
+const faqItems = [
+  { question: "What is your Minimum Order Quantity (MOQ)?", answer: "Our standard MOQ is 300 pieces per style per color. For custom designs, the MOQ may vary depending on material and complexity. Contact our sales team for specific requirements — we're flexible for long-term partners." },
+  { question: "Do you offer OEM and ODM services?", answer: "Yes! Kssmi specializes in both OEM (Original Equipment Manufacturing) and ODM (Original Design Manufacturing). OEM: we produce eyewear to your exact specifications and designs. ODM: our in-house design team creates exclusive collections for your brand based on your target market and preferences. Both services include full customization of materials, colors, logos, and packaging." },
+  { question: "What is your production lead time?", answer: "Standard production lead time is 25-35 days after sample confirmation. Rush orders may be accommodated depending on current production capacity. Sample development typically takes 7-10 days. Bulk shipping time varies by destination and method (air: 5-7 days, sea: 25-35 days)." },
+  { question: "Can I order samples before bulk production?", answer: "Absolutely. We offer sample development services so you can evaluate quality, fit, and finish before committing to bulk production. Sample fees are typically credited toward your bulk order. We can produce samples matching your specifications, including custom colors, materials, and branding." },
+  { question: "What materials do you use for your eyewear?", answer: "We work with a wide range of materials: high-quality acetate (Mazzucchelli, Eastman), titanium (pure and beta), stainless steel, Monel, TR90, Ultem, carbon fiber, buffalo horn, and wood. All materials are sourced from certified suppliers and comply with international safety standards (FDA, CE, RoHS, California Prop 65)." },
+  { question: "What certifications do your products have?", answer: "Our eyewear meets international standards including FDA (US), CE (EU), RoHS, and California Proposition 65. We maintain rigorous quality control throughout production. Certification documentation is available upon request for your compliance records." },
+  { question: "Do you provide custom packaging and branding?", answer: "Yes, we offer complete branding solutions: custom logo engraving/printing on frames, custom temple tips, branded cases, cleaning cloths, boxes, and hangtags. We can match your brand's color palette and design language across all packaging materials." },
+  { question: "What payment terms do you accept?", answer: "Our standard payment terms are 30% deposit to start production, 70% balance before shipment. We accept T/T (wire transfer) and Letter of Credit (L/C) for larger orders. Payment terms can be discussed for established partnerships." },
+  { question: "Where do you ship to?", answer: "We ship worldwide. Major markets include the United States, European Union, United Kingdom, Japan, South Korea, Australia, Middle East, and Southeast Asia. We work with reliable freight partners for both air and sea shipping." },
+  { question: "How do I request a quote?", answer: `Visit our Quote page (/${lang}/quote/) and fill out the form with your requirements. Include details such as frame type, material preference, estimated quantity, and any specific design requests. Our sales team typically responds within 24 hours.` },
+  { question: "Can you match an existing frame design?", answer: "Yes, we can replicate or adapt existing frame designs. Simply provide reference images, technical drawings, or physical samples, and our engineering team will create production-ready specifications. We ensure all designs respect intellectual property rights." },
+  { question: "What is your quality control process?", answer: "Every frame undergoes multi-stage quality inspection: incoming material inspection, in-line production QC, final inspection (100% check on appearance, fit, finish, and dimensional accuracy), and pre-shipment random sampling. We maintain detailed QC reports for each production batch." }
+];
+---
+
+<Layout title="FAQ — Kssmi Eyewear | Frequently Asked Questions" lang={lang} description="Frequently asked questions about Kssmi eyewear manufacturing: MOQ, OEM/ODM, lead time, materials, certifications, shipping, and more." type="website">
+  <Header lang={lang} />
+  <main class="w-full min-h-[70vh] bg-stone-50 pt-12 pb-24 flex items-center" dir={isRTL ? 'rtl' : 'ltr'}>
+    <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[820px] mx-auto px-4 text-center">
+      <div class="inline-flex flex-col items-center justify-center mb-8">
+        <span class="text-3xl font-bold text-[#503629] tracking-tight leading-none uppercase">KSSMI</span>
+        <span class="h-[1px] w-8 bg-[#503629] mt-1.5"></span>
+        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#503629] mt-1.5">Eyewear Mfg.</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold text-[#5D4E37] mb-3 tracking-tight">Frequently Asked Questions</h1>
+      <p class="text-lg text-stone-500 mb-10 max-w-xl mx-auto">Everything you need to know about working with Kssmi Eyewear</p>
+    </div>
+  </main>
+  <section class="w-full py-12 lg:py-20 bg-white">
+    <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1240px] mx-auto px-4">
+      <FAQ items={faqItems} lang={lang} />
+    </div>
+  </section>
+  <Footer lang={lang} />
+</Layout>

@@ -4,7 +4,7 @@
  * Specification card layout with editorial header, data table, and certification badges.
  */
 
-import { translations } from '../translations';
+import { translations, getTranslations, type Translations } from '../translations';
 
 const certifications = [
   { image: '/media/icon/ISO-9001.webp', label: 'ISO 9001' },
@@ -47,7 +47,7 @@ interface SpecProps {
 
 const { product, lang = 'en' } = Astro.props;
 const isRTL = lang === 'ar';
-const t = translations[lang] || translations.en;
+const t = await getTranslations(lang);
 
 const printLabels: Record<string, string> = {
   en: 'Print Spec Sheet', it: 'Stampa Scheda Tecnica', es: 'Imprimir Ficha Técnica',

@@ -1,8 +1,8 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
-import { translations } from '../../../translations';
+import { getTranslations, LANGUAGES } from '../../../translations';
 
-const LANGS = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
+const LANGS = LANGUAGES;
 
 export function getStaticPaths() {
     return LANGS.map((lang) => ({ params: { lang } }));
@@ -10,7 +10,7 @@ export function getStaticPaths() {
 
 export const GET: APIRoute = async ({ params }) => {
     const lang = params.lang as string;
-    const t = (translations as any)[lang] || (translations as any).en;
+    const t = await getTranslations(lang);
     const basePath = lang === 'en' ? '' : `/${lang}`;
     const results: object[] = [];
 

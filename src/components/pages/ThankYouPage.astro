@@ -1,0 +1,149 @@
+---
+/**
+ * Thank You Page - Multi-language
+ * URL: /{lang}/thank-you/
+ *
+ * IMPORTANT: This page has noindex to prevent Google indexing
+ * Redirected after successful form submission
+ */
+
+import Layout from '../../layouts/Layout.astro';
+import { getTranslations } from '../../translations';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+
+
+const { lang } = Astro.props;
+const t = await getTranslations(lang);
+const ty = t.thankyou;
+const pt = t.product || {};
+const fl = t.floating || {};
+const isRTL = lang === 'ar';
+---
+
+<Layout title={`${ty.title} - Kssmi`} lang={lang} noindex={true}>
+  <Header lang={lang} />
+
+  <main class="min-h-[35vh] flex items-center justify-center py-8 lg:py-12 bg-gradient-to-b from-stone-50 to-white" dir={isRTL ? 'rtl' : 'ltr'}>
+    <div class="w-[95%] lg:w-[90%] max-w-[820px] mx-auto">
+      <!-- Success Icon -->
+      <div class="text-center mb-8">
+        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 motion-safe:animate-[thankFadeIn_0.6s_ease-out]">
+          <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Title & Subtitle -->
+      <div class="text-center mb-8 motion-safe:animate-[thankFadeIn_0.6s_0.1s_ease-out_both]">
+        <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-3">{ty.title}</h1>
+        <p class="text-lg text-[#5D4E37] font-medium">{ty.subtitle}</p>
+      </div>
+
+      <!-- Message -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 lg:p-8 mb-8 hover:shadow-md hover:border-[#8B7355]/20 transition-all duration-300 motion-safe:animate-[thankFadeIn_0.6s_0.15s_ease-out_both]">
+        <p class="text-gray-600 text-center leading-relaxed">{ty.message}</p>
+      </div>
+
+      <!-- Next Steps -->
+      <div class="bg-stone-50 rounded-xl p-6 lg:p-8 mb-8 hover:shadow-md transition-all duration-300 motion-safe:animate-[thankFadeIn_0.6s_0.2s_ease-out_both]">
+        <h2 class="text-lg font-semibold text-gray-900 mb-6 text-center">{ty.nextSteps}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="text-center group cursor-default motion-safe:hover:-translate-y-1 transition-all duration-300">
+            <div class="w-12 h-12 bg-[#5D4E37] text-white rounded-full flex items-center justify-center mx-auto mb-3 text-lg font-bold group-hover:bg-[#8B7355] group-hover:shadow-lg motion-safe:group-hover:scale-110 transition-all duration-300">1</div>
+            <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-[#5D4E37] transition-colors">{ty.step1Title}</h3>
+            <p class="text-sm text-gray-500">{ty.step1Desc}</p>
+          </div>
+          <div class="text-center group cursor-default motion-safe:hover:-translate-y-1 transition-all duration-300">
+            <div class="w-12 h-12 bg-[#5D4E37] text-white rounded-full flex items-center justify-center mx-auto mb-3 text-lg font-bold group-hover:bg-[#8B7355] group-hover:shadow-lg motion-safe:group-hover:scale-110 transition-all duration-300">2</div>
+            <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-[#5D4E37] transition-colors">{ty.step2Title}</h3>
+            <p class="text-sm text-gray-500">{ty.step2Desc}</p>
+          </div>
+          <div class="text-center group cursor-default motion-safe:hover:-translate-y-1 transition-all duration-300">
+            <div class="w-12 h-12 bg-[#5D4E37] text-white rounded-full flex items-center justify-center mx-auto mb-3 text-lg font-bold group-hover:bg-[#8B7355] group-hover:shadow-lg motion-safe:group-hover:scale-110 transition-all duration-300">3</div>
+            <h3 class="font-semibold text-gray-900 mb-1 group-hover:text-[#5D4E37] transition-colors">{ty.step3Title}</h3>
+            <p class="text-sm text-gray-500">{ty.step3Desc}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 lg:p-8 mb-8 hover:shadow-md hover:border-[#8B7355]/20 transition-all duration-300 motion-safe:animate-[thankFadeIn_0.6s_0.25s_ease-out_both]">
+        <p class="text-gray-500 text-sm text-center mb-5">{pt.contactDirectly || 'Or contact us directly:'}</p>
+        <div class="flex flex-wrap justify-center gap-x-10 gap-y-4">
+          <a
+            href="tel:+86-135-1053-2553"
+            class={`flex items-center gap-2 text-gray-600 hover:text-[#5D4E37] transition-colors group cursor-pointer ${isRTL ? 'flex-row-reverse' : ''}`}
+          >
+            <span class="w-9 h-9 rounded-full bg-[#8B7355]/10 flex items-center justify-center group-hover:bg-[#8B7355]/20 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+            </span>
+            <span class="text-sm font-medium">+86-135-1053-2553</span>
+          </a>
+          <!-- Email (same obfuscation pattern as Footer/InquiryForm) -->
+          <a
+            href="#email"
+            data-email-user="sales"
+            data-email-domain="kssmi.com"
+            class={`flex items-center gap-2 text-gray-600 hover:text-[#5D4E37] transition-colors group cursor-pointer ${isRTL ? 'flex-row-reverse' : ''}`}
+          >
+            <span class="w-9 h-9 rounded-full bg-[#8B7355]/10 flex items-center justify-center group-hover:bg-[#8B7355]/20 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </span>
+            <span class="text-sm font-medium">sales#kssmi.com</span>
+          </a>
+          <a
+            href="https://wa.me/8613510532553"
+            target="_blank"
+            rel="noopener noreferrer"
+            class={`flex items-center gap-2 text-gray-600 hover:text-green-600 transition-colors group cursor-pointer ${isRTL ? 'flex-row-reverse' : ''}`}
+          >
+            <span class="w-9 h-9 rounded-full bg-green-50 flex items-center justify-center group-hover:bg-green-100 transition-colors">
+              <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.5-.173-.007-.371-.009-.57-.009-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </span>
+            <span class="text-sm font-medium">{fl.whatsapp || 'WhatsApp'}</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center motion-safe:animate-[thankFadeIn_0.6s_0.3s_ease-out_both]">
+        <a
+          href={`/${lang}/product/`}
+          class="inline-flex items-center justify-center px-8 py-4 bg-[#5D4E37] text-white rounded-lg font-semibold hover:bg-[#4A3D2E] active:bg-[#3A2D1E] transition-all duration-300 motion-safe:hover:-translate-y-0.5 hover:shadow-lg group"
+        >
+          {ty.continueShopping}
+          <svg class={`w-5 h-5 ${isRTL ? 'mr-2 rotate-180' : 'ml-2'} motion-safe:group-hover:translate-x-1 transition-transform`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+        <a
+          href={`/${lang}/`}
+          class="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-200 text-gray-700 rounded-lg font-semibold hover:border-[#8B7355] hover:text-[#5D4E37] active:bg-stone-50 transition-all duration-300 motion-safe:hover:-translate-y-0.5 hover:shadow-md"
+        >
+          <svg class={`w-5 h-5 ${isRTL ? 'ml-2 rotate-180' : 'mr-2'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+          {ty.backHome}
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>
+
+<style is:global>
+  @keyframes thankFadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>

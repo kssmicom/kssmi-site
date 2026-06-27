@@ -8,8 +8,8 @@ const lang = Astro.props.lang || 'en';
 const isRTL = lang === 'ar';
 
 // Get translation file for UI text
-import { translations } from '../translations';
-const t = translations[lang] || translations.en;
+import { translations, getTranslations, type Translations } from '../translations';
+const t = await getTranslations(lang);
 
 // Current path for building URLs (includes language prefix for non-English)
 const currentPath = lang === 'en' ? '' : `${lang}/`;
@@ -53,6 +53,70 @@ const currentLangUpper = lang.toUpperCase();
 
 // Enhanced Menu Structure (WordPress-style mega menu)
 // Products use flat URL architecture; Collections use dynamic filter shortcuts
+// Helper: generate mega-menu children for a given base segment (product/eyewear/blog)
+function buildMegaMenu(base: string) {
+  return [
+    {
+      label: t.sidebar.sunglasses,
+      href: `/${currentPath}${base}/sunglasses`,
+      items: [
+        { label: t.sidebar.acetate_sunglasses,       href: `/${currentPath}${base}/acetate-sunglasses` },
+        { label: t.sidebar.metal_sunglasses,         href: `/${currentPath}${base}/metal-sunglasses` },
+        { label: t.sidebar.titanium_sunglasses,      href: `/${currentPath}${base}/titanium-sunglasses` },
+        { label: t.sidebar.carbon_fiber_sunglasses,  href: `/${currentPath}${base}/carbon-fiber-sunglasses` },
+        { label: t.sidebar.rimless_sunglasses,       href: `/${currentPath}${base}/rimless-sunglasses` }
+      ]
+    },
+    {
+      label: t.sidebar.optical_frames,
+      href: `/${currentPath}${base}/optical-frames`,
+      items: [
+        { label: t.sidebar.acetate_glasses,       href: `/${currentPath}${base}/acetate-optical-frames` },
+        { label: t.sidebar.metal_glasses,         href: `/${currentPath}${base}/metal-optical-frames` },
+        { label: t.sidebar.titanium_glasses,      href: `/${currentPath}${base}/titanium-optical-frames` },
+        { label: t.sidebar.carbon_glasses,        href: `/${currentPath}${base}/carbon-fiber-optical-frames` },
+        { label: t.sidebar.rimless_glasses,       href: `/${currentPath}${base}/rimless-optical-frames` }
+      ]
+    },
+    {
+      label: t.sidebar.fashion,
+      href: `/${currentPath}${base}/fashion-eyewear`,
+      items: [
+        { label: t.sidebar.fashion_acetate_sunglasses, href: `/${currentPath}${base}/fashion-acetate-sunglasses` },
+        { label: t.sidebar.fashion_metal_sunglasses,   href: `/${currentPath}${base}/fashion-metal-sunglasses` },
+        { label: t.sidebar.fashion_acetate_glasses,     href: `/${currentPath}${base}/fashion-acetate-optical-frames` },
+        { label: t.sidebar.fashion_metal_glasses,       href: `/${currentPath}${base}/fashion-metal-optical-frames` }
+      ]
+    },
+    {
+      label: t.sidebar.luxury,
+      href: `/${currentPath}${base}/luxury-eyewear`,
+      items: [
+        { label: t.sidebar.luxury_acetate_sunglasses,  href: `/${currentPath}${base}/luxury-acetate-sunglasses` },
+        { label: t.sidebar.luxury_titanium_sunglasses, href: `/${currentPath}${base}/luxury-titanium-sunglasses` },
+        { label: t.sidebar.luxury_acetate_glasses,      href: `/${currentPath}${base}/luxury-acetate-optical-frames` },
+        { label: t.sidebar.luxury_titanium_glasses,    href: `/${currentPath}${base}/luxury-titanium-optical-frames` }
+      ]
+    },
+    {
+      label: t.sidebar.carbon_fiber,
+      href: `/${currentPath}${base}/carbon-fiber-eyewear`,
+      items: [
+        { label: t.sidebar.carbon_fiber_sunglasses, href: `/${currentPath}${base}/carbon-fiber-sunglasses` },
+        { label: t.sidebar.carbon_glasses,     href: `/${currentPath}${base}/carbon-fiber-optical-frames` }
+      ]
+    },
+    {
+      label: t.sidebar.rimless,
+      href: `/${currentPath}${base}/rimless-eyewear`,
+      items: [
+        { label: t.sidebar.rimless_sunglasses, href: `/${currentPath}${base}/rimless-sunglasses` },
+        { label: t.sidebar.rimless_glasses,     href: `/${currentPath}${base}/rimless-optical-frames` }
+      ]
+    }
+  ];
+}
+
 const menuStructure = [
   { label: t.nav.home, href: `/${currentPath}` },
   {
@@ -60,132 +124,14 @@ const menuStructure = [
     href: `/${currentPath}product`,
     menuKey: 'products',
     hasDropdown: true,
-    children: [
-      {
-        label: t.sidebar.sunglasses,
-        href: `/${currentPath}product/sunglasses`,
-        items: [
-          { label: t.sidebar.acetate_sunglasses,       href: `/${currentPath}product/acetate-sunglasses` },
-          { label: t.sidebar.metal_sunglasses,         href: `/${currentPath}product/metal-sunglasses` },
-          { label: t.sidebar.titanium_sunglasses,      href: `/${currentPath}product/titanium-sunglasses` },
-          { label: t.sidebar.carbon_fiber_sunglasses,  href: `/${currentPath}product/carbon-fiber-sunglasses` },
-          { label: t.sidebar.rimless_sunglasses,       href: `/${currentPath}product/rimless-sunglasses` }
-        ]
-      },
-      {
-        label: t.sidebar.optical_frames,
-        href: `/${currentPath}product/optical-frames`,
-        items: [
-          { label: t.sidebar.acetate_glasses,       href: `/${currentPath}product/acetate-optical-frames` },
-          { label: t.sidebar.metal_glasses,         href: `/${currentPath}product/metal-optical-frames` },
-          { label: t.sidebar.titanium_glasses,      href: `/${currentPath}product/titanium-optical-frames` },
-          { label: t.sidebar.carbon_glasses,        href: `/${currentPath}product/carbon-fiber-optical-frames` },
-          { label: t.sidebar.rimless_glasses,       href: `/${currentPath}product/rimless-optical-frames` }
-        ]
-      },
-      {
-        label: t.sidebar.fashion,
-        href: `/${currentPath}product/fashion-eyewear`,
-        items: [
-          { label: t.sidebar.fashion_acetate_sunglasses, href: `/${currentPath}product/fashion-acetate-sunglasses` },
-          { label: t.sidebar.fashion_metal_sunglasses,   href: `/${currentPath}product/fashion-metal-sunglasses` },
-          { label: t.sidebar.fashion_acetate_glasses,     href: `/${currentPath}product/fashion-acetate-optical-frames` },
-          { label: t.sidebar.fashion_metal_glasses,       href: `/${currentPath}product/fashion-metal-optical-frames` }
-        ]
-      },
-      {
-        label: t.sidebar.luxury,
-        href: `/${currentPath}product/luxury-eyewear`,
-        items: [
-          { label: t.sidebar.luxury_acetate_sunglasses,  href: `/${currentPath}product/luxury-acetate-sunglasses` },
-          { label: t.sidebar.luxury_titanium_sunglasses, href: `/${currentPath}product/luxury-titanium-sunglasses` },
-          { label: t.sidebar.luxury_acetate_glasses,      href: `/${currentPath}product/luxury-acetate-optical-frames` },
-          { label: t.sidebar.luxury_titanium_glasses,    href: `/${currentPath}product/luxury-titanium-optical-frames` }
-        ]
-      },
-      {
-        label: t.sidebar.carbon_fiber,
-        href: `/${currentPath}product/carbon-fiber-eyewear`,
-        items: [
-          { label: t.sidebar.carbon_fiber_sunglasses, href: `/${currentPath}product/carbon-fiber-sunglasses` },
-          { label: t.sidebar.carbon_glasses,     href: `/${currentPath}product/carbon-fiber-optical-frames` }
-        ]
-      },
-      {
-        label: t.sidebar.rimless,
-        href: `/${currentPath}product/rimless-eyewear`,
-        items: [
-          { label: t.sidebar.rimless_sunglasses, href: `/${currentPath}product/rimless-sunglasses` },
-          { label: t.sidebar.rimless_glasses,     href: `/${currentPath}product/rimless-optical-frames` }
-        ]
-      }
-    ]
+    children: buildMegaMenu('product')
   },
   {
     label: t.nav.feature,
     href: `/${currentPath}eyewear`,
     menuKey: 'eyewear',
     hasDropdown: true,
-    children: [
-      {
-        label: t.sidebar.sunglasses,
-        href: `/${currentPath}eyewear/sunglasses`,
-        items: [
-          { label: t.sidebar.acetate_sunglasses,       href: `/${currentPath}eyewear/acetate-sunglasses` },
-          { label: t.sidebar.metal_sunglasses,         href: `/${currentPath}eyewear/metal-sunglasses` },
-          { label: t.sidebar.titanium_sunglasses,      href: `/${currentPath}eyewear/titanium-sunglasses` },
-          { label: t.sidebar.carbon_fiber_sunglasses,  href: `/${currentPath}eyewear/carbon-fiber-sunglasses` },
-          { label: t.sidebar.rimless_sunglasses,       href: `/${currentPath}eyewear/rimless-sunglasses` }
-        ]
-      },
-      {
-        label: t.sidebar.optical_frames,
-        href: `/${currentPath}eyewear/optical-frames`,
-        items: [
-          { label: t.sidebar.acetate_glasses,       href: `/${currentPath}eyewear/acetate-optical-frames` },
-          { label: t.sidebar.metal_glasses,         href: `/${currentPath}eyewear/metal-optical-frames` },
-          { label: t.sidebar.titanium_glasses,      href: `/${currentPath}eyewear/titanium-optical-frames` },
-          { label: t.sidebar.carbon_glasses,        href: `/${currentPath}eyewear/carbon-fiber-optical-frames` },
-          { label: t.sidebar.rimless_glasses,       href: `/${currentPath}eyewear/rimless-optical-frames` }
-        ]
-      },
-      {
-        label: t.sidebar.fashion,
-        href: `/${currentPath}eyewear/fashion-eyewear`,
-        items: [
-          { label: t.sidebar.fashion_acetate_sunglasses, href: `/${currentPath}eyewear/fashion-acetate-sunglasses` },
-          { label: t.sidebar.fashion_metal_sunglasses,   href: `/${currentPath}eyewear/fashion-metal-sunglasses` },
-          { label: t.sidebar.fashion_acetate_glasses,     href: `/${currentPath}eyewear/fashion-acetate-optical-frames` },
-          { label: t.sidebar.fashion_metal_glasses,       href: `/${currentPath}eyewear/fashion-metal-optical-frames` }
-        ]
-      },
-      {
-        label: t.sidebar.luxury,
-        href: `/${currentPath}eyewear/luxury-eyewear`,
-        items: [
-          { label: t.sidebar.luxury_acetate_sunglasses,  href: `/${currentPath}eyewear/luxury-acetate-sunglasses` },
-          { label: t.sidebar.luxury_titanium_sunglasses, href: `/${currentPath}eyewear/luxury-titanium-sunglasses` },
-          { label: t.sidebar.luxury_acetate_glasses,      href: `/${currentPath}eyewear/luxury-acetate-optical-frames` },
-          { label: t.sidebar.luxury_titanium_glasses,    href: `/${currentPath}eyewear/luxury-titanium-optical-frames` }
-        ]
-      },
-      {
-        label: t.sidebar.carbon_fiber,
-        href: `/${currentPath}eyewear/carbon-fiber-eyewear`,
-        items: [
-          { label: t.sidebar.carbon_fiber_sunglasses, href: `/${currentPath}eyewear/carbon-fiber-sunglasses` },
-          { label: t.sidebar.carbon_glasses,     href: `/${currentPath}eyewear/carbon-fiber-optical-frames` }
-        ]
-      },
-      {
-        label: t.sidebar.rimless,
-        href: `/${currentPath}eyewear/rimless-eyewear`,
-        items: [
-          { label: t.sidebar.rimless_sunglasses, href: `/${currentPath}eyewear/rimless-sunglasses` },
-          { label: t.sidebar.rimless_glasses,     href: `/${currentPath}eyewear/rimless-optical-frames` }
-        ]
-      }
-    ]
+    children: buildMegaMenu('eyewear')
   },
   { label: t.nav.about, href: aboutUrl },
   { label: t.nav.contact, href: contactUrl },
@@ -194,66 +140,7 @@ const menuStructure = [
     href: `/${currentPath}blog`,
     menuKey: 'blog',
     hasDropdown: true,
-    children: [
-      {
-        label: t.sidebar.sunglasses,
-        href: `/${currentPath}blog/sunglasses`,
-        items: [
-          { label: t.sidebar.acetate_sunglasses,       href: `/${currentPath}blog/acetate-sunglasses` },
-          { label: t.sidebar.metal_sunglasses,         href: `/${currentPath}blog/metal-sunglasses` },
-          { label: t.sidebar.titanium_sunglasses,      href: `/${currentPath}blog/titanium-sunglasses` },
-          { label: t.sidebar.carbon_fiber_sunglasses,  href: `/${currentPath}blog/carbon-fiber-sunglasses` },
-          { label: t.sidebar.rimless_sunglasses,       href: `/${currentPath}blog/rimless-sunglasses` }
-        ]
-      },
-      {
-        label: t.sidebar.optical_frames,
-        href: `/${currentPath}blog/optical-frames`,
-        items: [
-          { label: t.sidebar.acetate_glasses,       href: `/${currentPath}blog/acetate-optical-frames` },
-          { label: t.sidebar.metal_glasses,         href: `/${currentPath}blog/metal-optical-frames` },
-          { label: t.sidebar.titanium_glasses,      href: `/${currentPath}blog/titanium-optical-frames` },
-          { label: t.sidebar.carbon_glasses,        href: `/${currentPath}blog/carbon-fiber-optical-frames` },
-          { label: t.sidebar.rimless_glasses,       href: `/${currentPath}blog/rimless-optical-frames` }
-        ]
-      },
-      {
-        label: t.sidebar.fashion,
-        href: `/${currentPath}blog/fashion-eyewear`,
-        items: [
-          { label: t.sidebar.fashion_acetate_sunglasses, href: `/${currentPath}blog/fashion-acetate-sunglasses` },
-          { label: t.sidebar.fashion_metal_sunglasses,   href: `/${currentPath}blog/fashion-metal-sunglasses` },
-          { label: t.sidebar.fashion_acetate_glasses,     href: `/${currentPath}blog/fashion-acetate-optical-frames` },
-          { label: t.sidebar.fashion_metal_glasses,       href: `/${currentPath}blog/fashion-metal-optical-frames` }
-        ]
-      },
-      {
-        label: t.sidebar.luxury,
-        href: `/${currentPath}blog/luxury-eyewear`,
-        items: [
-          { label: t.sidebar.luxury_acetate_sunglasses,  href: `/${currentPath}blog/luxury-acetate-sunglasses` },
-          { label: t.sidebar.luxury_titanium_sunglasses, href: `/${currentPath}blog/luxury-titanium-sunglasses` },
-          { label: t.sidebar.luxury_acetate_glasses,      href: `/${currentPath}blog/luxury-acetate-optical-frames` },
-          { label: t.sidebar.luxury_titanium_glasses,    href: `/${currentPath}blog/luxury-titanium-optical-frames` }
-        ]
-      },
-      {
-        label: t.sidebar.carbon_fiber,
-        href: `/${currentPath}blog/carbon-fiber-eyewear`,
-        items: [
-          { label: t.sidebar.carbon_fiber_sunglasses, href: `/${currentPath}blog/carbon-fiber-sunglasses` },
-          { label: t.sidebar.carbon_glasses,     href: `/${currentPath}blog/carbon-fiber-optical-frames` }
-        ]
-      },
-      {
-        label: t.sidebar.rimless,
-        href: `/${currentPath}blog/rimless-eyewear`,
-        items: [
-          { label: t.sidebar.rimless_sunglasses, href: `/${currentPath}blog/rimless-sunglasses` },
-          { label: t.sidebar.rimless_glasses,     href: `/${currentPath}blog/rimless-optical-frames` }
-        ]
-      }
-    ]
+    children: buildMegaMenu('blog')
   },
 ];
 

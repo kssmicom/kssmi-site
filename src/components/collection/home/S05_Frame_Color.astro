@@ -21,12 +21,12 @@
  *   - Bullet text: stone-600 → amber-700 + bold
  */
 import { getEntry } from 'astro:content';
-import { translations } from '../../../translations';
+import { getTranslations, type Translations } from '../../../translations';
 import { cardSrc } from '../../../utils/image';
 
 const { lang = 'en' } = Astro.props as { lang?: string };
 const isRTL = lang === 'ar';
-const t = (translations as any)[lang] || translations.en;
+const t = await getTranslations(lang);
 const prefix = lang === 'en' ? '' : `/${lang}`;
 const entry = await getEntry('collection', `home/s05-frame-color.${lang}`);
 const eyebrow = entry?.data?.eyebrow || 'Frame Color';

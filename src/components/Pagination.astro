@@ -15,7 +15,7 @@
  *   dir          - Text direction ("ltr" or "rtl")
  */
 
-import { translations } from '../translations';
+import { translations, getTranslations, type Translations } from '../translations';
 
 export interface Props {
   currentPage: number;
@@ -44,7 +44,7 @@ const {
 } = Astro.props;
 
 const isRTL = dir === 'rtl';
-const t = lang ? (translations[lang as keyof typeof translations] || translations.en) : null;
+const t = lang ? (translations[lang as keyof typeof translations] || await getTranslations('en')) : null;
 
 const prevLabel = Astro.props.prevLabel ?? (t?.product?.previousPage ?? 'Previous');
 const nextLabel = Astro.props.nextLabel ?? (t?.product?.nextPage ?? 'Next');

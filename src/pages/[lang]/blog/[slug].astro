@@ -1,12 +1,13 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Layout from '../../../layouts/Layout.astro';
-import { translations } from '../../../translations';
+import { getTranslations, type Translations } from '../../../translations';
 import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
+  if (posts.length === 0) return [];
   return posts.map(post => {
     const lang = post.data.lang;
     const slug = post.data.slug || (post as any).slug || post.id;
@@ -23,7 +24,7 @@ const { data } = post;
 const title = data.title;
 const { excerpt, image, published, author, tags } = data;
 const { Content } = await render(post);
-const t = (translations as any)[lang as string] || translations.en;
+const t = await getTranslations(lang);
 
 const isRTL = lang === 'ar';
 

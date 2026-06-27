@@ -1,9 +1,8 @@
 ---
 import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
-import { translations } from '../translations';
+import { getTranslations, type Translations } from '../translations';
 import VisitorTracker from '../components/VisitorTracker.astro';
-import CookieBanner from '../components/CookieBanner.astro';
 
 // Props
 interface Props {
@@ -34,8 +33,8 @@ const {
   preconnectVideo = false
 } = Astro.props;
 
-const t = translations[lang] || translations.en;
-const layoutMeta = t.layout || translations.en.layout;
+const t = await getTranslations(lang);
+const layoutMeta = t.layout || await getTranslations('en').layout;
 
 const description = propDescription || layoutMeta.description;
 
@@ -119,7 +118,10 @@ const websiteSchema = {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#FCFAF8" />
+    <meta name="theme-color" content="#FCFAF8" />
+
+  <!-- Content-Security-Policy for static site -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com https://challenges.cloudflare.com http://localhost:4325; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; frame-src https://play.gumlet.io https://challenges.cloudflare.com; connect-src 'self' https://www.google-analytics.com https://static.cloudflareinsights.com https://cloudflareinsights.com; media-src 'self' https://play.gumlet.io https://video.gumlet.io;" />
 
   <!-- Google Tag Manager (loads on user interaction — never blocks critical path) -->
   <script>
@@ -378,6 +380,37 @@ const websiteSchema = {
     <slot />
   </main>
   <VisitorTracker />
-  <CookieBanner lang={lang} />
+
+  <!-- Google Consent Mode v2 — default state (denied until user consents) -->
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      personalization_storage: 'denied',
+      security_storage: 'granted',
+      wait_for_update: 500,
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('set', 'url_passthrough', true);
+  </script>
+
+  <!-- Cookie Banner — deferred: 18KB fetched only when consent not yet given -->
+  <script>
+    (function () {
+      try {
+        var consent = JSON.parse(localStorage.getItem('cookie-consent'));
+        if (consent) return; // Already consented — skip loading banner
+      } catch (_) {}
+      var s = document.createElement('script');
+      s.src = '/cookie-banner.js';
+      s.async = true;
+      document.body.appendChild(s);
+    })();
+  </script>
 </body>
 </html>

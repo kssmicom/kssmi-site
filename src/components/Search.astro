@@ -1,5 +1,5 @@
 ---
-import { translations } from '../translations';
+import { translations, getTranslations, type Translations } from '../translations';
 import { getCollection } from 'astro:content';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 
 const { lang } = Astro.props;
 const isRTL = lang === 'ar';
-const t = translations[lang as keyof typeof translations] || translations.en;
+const t = await getTranslations(lang);
 
 // Fetch products server-side at request time (dev) or build time (production)
 const allProducts = await getCollection('products');

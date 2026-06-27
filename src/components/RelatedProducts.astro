@@ -4,7 +4,7 @@
  * Random selection happens server-side to avoid embedding the entire catalog as inline JSON.
  */
 import { getCollection } from 'astro:content';
-import { translations } from '../translations';
+import { getTranslations, type Translations } from '../translations';
 import { cardSrc } from '../utils/image';
 
 interface Props {
@@ -16,7 +16,7 @@ interface Props {
 
 const { currentProductId, lang = 'en', limit = 4 } = Astro.props;
 const isRTL = lang === 'ar';
-const t = translations[lang as keyof typeof translations] || translations.en;
+const t = await getTranslations(lang);
 const pt = (t as any).product || {};
 const currentPath = lang === 'en' ? '' : `${lang}/`;
 
