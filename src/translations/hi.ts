@@ -242,9 +242,14 @@ export default {
       rimless_group: "रिमलेस चश्मा",
     },
     blog: {
+      showingResults: "Showing {start}-{end} of {total} posts",
       emptyState: "अभी तक कोई ब्लॉग पोस्ट नहीं। जल्द ही वापस आएं!",
     },
       pagination: {
       page: "पृष्ठ {n}",
+    },
+      feature: {
+      showingResults: "Showing {start}-{end} of {total} features",
+      emptyState: "अभी तक कोई सुविधा नहीं है। जल्द ही वापस जांचें!",
     },
   } as const;

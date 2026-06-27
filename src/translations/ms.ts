@@ -242,9 +242,14 @@ export default {
       rimless_group: "Cermin Mata Tanpa Rangka",
     },
     blog: {
+      showingResults: "Showing {start}-{end} of {total} posts",
       emptyState: "Belum ada artikel. Sila kembali nanti!",
     },
       pagination: {
       page: "Halaman {n}",
+    },
+      feature: {
+      showingResults: "Showing {start}-{end} of {total} features",
+      emptyState: "Tiada ciri lagi. Semak semula tidak lama lagi!",
     },
   } as const;

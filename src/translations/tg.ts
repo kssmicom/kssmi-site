@@ -247,4 +247,8 @@ export default {
       pagination: {
       page: "Саҳ. {n}",
     },
+      feature: {
+      showingResults: "Showing {start}-{end} of {total} features",
+      emptyState: "Ҳанӯз хусусиятҳо нест. Ба наздикӣ тафтиш кунед!",
+    },
   } as const;

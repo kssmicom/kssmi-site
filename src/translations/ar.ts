@@ -242,9 +242,14 @@ export default {
       rimless_group: "بدون إطار النظارات",
     },
     blog: {
+      showingResults: "Showing {start}-{end} of {total} posts",
       emptyState: "لا توجد مقالات بعد. تحقق قريبا!",
     },
       pagination: {
       page: "صفحة {n}",
+    },
+      feature: {
+      showingResults: "Showing {start}-{end} of {total} features",
+      emptyState: "لا توجد ميزات بعد. تحقق قريبا!",
     },
   } as const;

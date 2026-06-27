@@ -249,9 +249,14 @@ export default {
       rimless_group: "Óculos Sem Aro",
     },
     blog: {
+      showingResults: "Showing {start}-{end} of {total} posts",
       emptyState: "Nenhum artigo ainda. Volte em breve!",
     },
       pagination: {
       page: "Página {n}",
+    },
+      feature: {
+      showingResults: "Showing {start}-{end} of {total} features",
+      emptyState: "Nenhum recurso ainda. Volte em breve!",
     },
   } as const;

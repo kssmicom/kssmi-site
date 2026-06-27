@@ -249,9 +249,14 @@ export default {
       rimless_group: "縁なし眼鏡",
     },
     blog: {
+      showingResults: "Showing {start}-{end} of {total} posts",
       emptyState: "まだ記事がありません。近日中にご確認ください！",
     },
       pagination: {
       page: "{n}ページ",
+    },
+      feature: {
+      showingResults: "Showing {start}-{end} of {total} features",
+      emptyState: "まだ特集はありません。また後でチェックしてください！",
     },
   } as const;

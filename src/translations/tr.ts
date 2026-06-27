@@ -249,9 +249,14 @@ export default {
       rimless_group: "Çerçevesiz Gözlükleri",
     },
     blog: {
+      showingResults: "Showing {start}-{end} of {total} posts",
       emptyState: "Henüz blog yazısı yok. Yakında tekrar kontrol edin!",
     },
       pagination: {
       page: "Sayfa {n}",
+    },
+      feature: {
+      showingResults: "Showing {start}-{end} of {total} features",
+      emptyState: "Henüz özellik yok. Yakında tekrar kontrol edin!",
     },
   } as const;

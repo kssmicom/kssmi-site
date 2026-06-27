@@ -242,9 +242,14 @@ export default {
       rimless_group: "无框眼镜",
     },
     blog: {
+      showingResults: "显示 {total} 篇文章中的 第 {start}-{end} 篇",
       emptyState: "暂无文章。请稍后再来查看！",
     },
       pagination: {
       page: "第{n}页",
+    },
+      feature: {
+      showingResults: "显示 {total} 篇文章中的 第 {start}-{end} 篇",
+      emptyState: "暂无特色。请稍后再来查看！",
     },
   } as const;

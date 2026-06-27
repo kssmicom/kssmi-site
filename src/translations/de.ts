@@ -249,9 +249,14 @@ export default {
       rimless_group: "Brillen Randlos",
     },
     blog: {
+      showingResults: "Showing {start}-{end} of {total} posts",
       emptyState: "Noch keine Blogbeiträge. Schauen Sie bald wieder vorbei!",
     },
       pagination: {
       page: "Seite {n}",
+    },
+      feature: {
+      showingResults: "Showing {start}-{end} of {total} features",
+      emptyState: "Noch keine Features. Bald wieder vorbeischauen!",
     },
   } as const;

@@ -249,9 +249,14 @@ export default {
       rimless_group: "Очки Без ободка",
     },
     blog: {
+      showingResults: "Showing {start}-{end} of {total} posts",
       emptyState: "Пока нет записей. Загляните позже!",
     },
       pagination: {
       page: "Стр. {n}",
+    },
+      feature: {
+      showingResults: "Showing {start}-{end} of {total} features",
+      emptyState: "Пока нет функций. Заходите позже!",
     },
   } as const;

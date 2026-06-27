@@ -250,7 +250,7 @@ const categoryBreadcrumbItems = (() => {
 const currentPg = (() => { const segs = Astro.url.pathname.split('/').filter(Boolean); const last = segs[segs.length-1]; const n=parseInt(last,10);return isNaN(n)?1:n; })();
                     const s = matchedTotal > 0 ? (currentPg - 1) * PAGE_SIZE + 1 : 0;
                     const e = Math.min(currentPg * PAGE_SIZE, matchedTotal);
-                    return (pt.showingResults || 'Showing {start}-{end} of {total} products')
+                    return (baseSegment === 'blog' ? ((t as any).blog?.showingResults || 'Showing {start}-{end} of {total} posts') : baseSegment === 'eyewear' ? ((t as any).feature?.showingResults || 'Showing {start}-{end} of {total} features') : (pt.showingResults || 'Showing {start}-{end} of {total} products'))
                       .replace('{start}', String(s))
                       .replace('{end}', String(e))
                       .replace('{total}', String(matchedTotal));

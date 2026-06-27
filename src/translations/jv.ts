@@ -239,9 +239,14 @@ export default {
       rimless_group: "Kacamata Tanpa Rangka",
     },
     blog: {
+      showingResults: "Showing {start}-{end} of {total} posts",
       emptyState: "Durung ana artikel. Enggal dipriksa maneh!",
     },
       pagination: {
       page: "Kaca {n}",
+    },
+      feature: {
+      showingResults: "Showing {start}-{end} of {total} features",
+      emptyState: "Durung ana fitur. Priksa maneh enggal!",
     },
   } as const;

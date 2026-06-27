@@ -262,9 +262,14 @@ export default {
       rimless_group: "Rimless Eyewear",
     },
     blog: {
+      showingResults: "Showing {start}-{end} of {total} posts",
       emptyState: "No blog posts yet. Check back soon!",
     },
       pagination: {
       page: "Page {n}",
+    },
+      feature: {
+      showingResults: "Showing {start}-{end} of {total} features",
+      emptyState: "No features yet. Check back soon!",
     },
   } as const;

@@ -242,9 +242,14 @@ export default {
       rimless_group: "Occhiali Senza Montatura",
     },
     blog: {
+      showingResults: "Showing {start}-{end} of {total} posts",
       emptyState: "Nessun articolo ancora. Torna a trovarci presto!",
     },
       pagination: {
       page: "Pagina {n}",
+    },
+      feature: {
+      showingResults: "Showing {start}-{end} of {total} features",
+      emptyState: "Nessuna caratteristica ancora. Torna presto!",
     },
   } as const;

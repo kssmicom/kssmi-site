@@ -249,9 +249,14 @@ export default {
       rimless_group: "Lunettes Sans Monture",
     },
     blog: {
+      showingResults: "Showing {start}-{end} of {total} posts",
       emptyState: "Aucun article pour le moment. Revenez bientôt!",
     },
       pagination: {
       page: "Page {n}",
+    },
+      feature: {
+      showingResults: "Showing {start}-{end} of {total} features",
+      emptyState: "Pas encore de fonctionnalités. Revenez bientôt!",
     },
   } as const;

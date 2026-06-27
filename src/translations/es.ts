@@ -249,9 +249,14 @@ export default {
       rimless_group: "Gafas Sin Montura",
     },
     blog: {
+      showingResults: "Showing {start}-{end} of {total} posts",
       emptyState: "No hay artículos todavía. Vuelve pronto!",
     },
       pagination: {
       page: "Página {n}",
+    },
+      feature: {
+      showingResults: "Showing {start}-{end} of {total} features",
+      emptyState: "¡Sin características todavía. Vuelve pronto!",
     },
   } as const;

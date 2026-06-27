@@ -239,9 +239,14 @@ export default {
       rimless_group: "Kính Không vành",
     },
     blog: {
+      showingResults: "Showing {start}-{end} of {total} posts",
       emptyState: "Chưa có bài viết nào. Hãy quay lại sớm!",
     },
       pagination: {
       page: "Trang {n}",
+    },
+      feature: {
+      showingResults: "Showing {start}-{end} of {total} features",
+      emptyState: "Chưa có tính năng nào. Kiểm tra lại sớm!",
     },
   } as const;

@@ -242,9 +242,14 @@ export default {
       rimless_group: "림레스 안경",
     },
     blog: {
+      showingResults: "Showing {start}-{end} of {total} posts",
       emptyState: "아직 게시글이 없습니다. 곧 확인해 주세요!",
     },
       pagination: {
       page: "{n}페이지",
+    },
+      feature: {
+      showingResults: "Showing {start}-{end} of {total} features",
+      emptyState: "아직 기능이 없습니다. 곧 다시 확인하세요!",
     },
   } as const;
