@@ -40,8 +40,8 @@ RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 
-# ─── 404 fallback: all 404s → /404.html (locale detected client-side) ─
-RewriteRule ^.*$ /404.html [L]
+# ─── 404 fallback: pass original URI as query param for locale detection ─
+RewriteRule ^.*$ /404.html?orig=%{REQUEST_URI} [QSA,L]
 
 # ─── 404 handler — MUST return HTTP 404 status (not soft 404) ────────────
 ErrorDocument 404 /404.html
