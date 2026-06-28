@@ -1,7 +1,17 @@
 ---
+/**
+ * 404 Rescue Page (English)
+ * Non-English 404s redirect to their localized version via inline script.
+ * Redirect only triggers once — if already on /{lang}/404, no redirect.
+ */
 import NotFoundPage from '../components/pages/NotFoundPage.astro';
 ---
-<div id="notfound-root"><NotFoundPage lang="en" /></div>
+<!-- Render English version immediately (before any JS runs) -->
+<NotFoundPage lang="en" />
+
+<!-- Redirect non-English 404s to localized version.
+     Inline script runs synchronously in <head> before render,
+     so non-English users barely see the English version. -->
 <script is:inline>
   (function() {
     var path = window.location.pathname;
@@ -13,7 +23,6 @@ import NotFoundPage from '../components/pages/NotFoundPage.astro';
         break;
       }
     }
-    // If we detected a non-English language and it's not already /{lang}/404, redirect once
     if (found && path !== '/' + found + '/404' && path !== '/' + found + '/404/') {
       window.location.replace('/' + found + '/404');
     }
