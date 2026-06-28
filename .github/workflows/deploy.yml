@@ -44,6 +44,7 @@ jobs:
           cp public/php-status.php dist/
           cp public/visitor-journey.php dist/
           cp public/vjt-db-setup.php dist/
+          cp public/404-router.php dist/
           cp -r public/api dist/
           cp -r public/vendor dist/
 

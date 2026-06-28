@@ -40,7 +40,17 @@ RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 
-# ─── 404 handler — PHP router (works on any server with PHP) ──────────────
+# ─── 404 handler — internal rewrite to PHP router ──────────────────────────
+# Any path that is not a real file/dir and was not served as a clean URL above
+# is handed to the PHP router, which sets a real 404 status and serves the
+# correct-language 404 page. No [R=404] (OLS discards the target and shows the
+# default server error page) and no reliance on ErrorDocument firing.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/404-router\.php$
+RewriteRule ^ /404-router.php [L]
+
+# Backup layer in case the rewrite above is bypassed.
 ErrorDocument 404 /404-router.php
 
 # ─── Security headers (bare — no IfModule wrappers for OLS compatibility) ───
