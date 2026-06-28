@@ -40,8 +40,10 @@ RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 
-# ─── 404 handler — MUST return HTTP 404 status (not soft 404) ────────────
-ErrorDocument 404 /404.html
+# ─── 404 handler — RewriteRule fallback (works even if ErrorDocument disabled) ─
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ /404.html [L]
 
 # ─── Security headers (bare — no IfModule wrappers for OLS compatibility) ───
 Header always set X-Content-Type-Options "nosniff"
