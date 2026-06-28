@@ -1,9 +1,31 @@
 ---
 /**
- * 404 Rescue Page
- * Language routing is handled server-side by vhost.conf rewrite rules.
- * This page serves as the English fallback only.
+ * 404 Rescue Page (English fallback).
+ *
+ * Production: language routing is handled server-side by 404-router.php, which
+ * serves /{lang}/404/index.html directly — this English page is not shown for
+ * localized paths.
+ *
+ * Local dev / preview & no-PHP / JS-enabled fallback: the inline script below
+ * detects a language prefix in the URL and redirects to /{lang}/404, so
+ * http://localhost:4321/zh/eyewear shows the Chinese 404 too.
  */
 import NotFoundPage from '../components/pages/NotFoundPage.astro';
 ---
+<script is:inline>
+  (function () {
+    var path = window.location.pathname;
+    var langs = ['it','es','fr','de','pt','ru','ja','tr','ar','ko','zh','hi','vi','jv','ms','tg'];
+    for (var i = 0; i < langs.length; i++) {
+      var l = langs[i];
+      if (path === '/' + l || path.indexOf('/' + l + '/') === 0) {
+        // Avoid loops if we are already on the localized 404 route.
+        if (path !== '/' + l + '/404' && path !== '/' + l + '/404/') {
+          window.location.replace('/' + l + '/404');
+        }
+        break;
+      }
+    }
+  })();
+</script>
 <NotFoundPage lang="en" />
