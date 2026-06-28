@@ -1,0 +1,13 @@
+{
+  "name": "Kssmi Eyewear",
+  "short_name": "Kssmi",
+  "start_url": "/",
+  "display": "browser",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

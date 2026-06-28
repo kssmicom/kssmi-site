@@ -55,7 +55,7 @@ const start = (pageNum - 1) * PAGE_SIZE;
 const items = sortedProducts.slice(start, start + PAGE_SIZE);
 
 const t = await getTranslations(lang);
-const lcpImage = products[0]?.data?.image ? cardSrc(products[0].data.cover) : undefined;
+const lcpImage = items[0]?.data?.image ? cardSrc(items[0].data.image) : undefined;
 
 const breadcrumbItems = [
   { label: t.nav.home, href: '/' + lang },

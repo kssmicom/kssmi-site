@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "Montature Ottiche in Titanio Personalizzate"
 slug: "kto-019-titanium-optical-frames"
-itemNo: "kto-019"
+itemNo: "KTO-019"
 date: "2026-05-02"
 colors: "Blu Argentato & Oro Argentato & Arancione Argentato"
 materials: "Titanio Premium"

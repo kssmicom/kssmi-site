@@ -6,8 +6,17 @@ import { getProductLang } from '../../utils/language';
 import { cardSrc } from '../../utils/image';
 import { getTranslations } from '../../translations';
 
-const lang = 'en';
-const currentPath = '';
+let lang = 'en';
+// Detect locale from URL — Astro may route prefixed URLs to English route tree
+const LANGUAGES = ['it','es','fr','de','pt','ru','ja','tr','ar','ko','zh','hi','vi','jv','ms','tg'];
+const urlPath = Astro.url.pathname;
+for (const l of LANGUAGES) {
+  if (urlPath.startsWith('/' + l + '/') || urlPath === '/' + l) {
+    lang = l;
+    break;
+  }
+}
+const currentPath = lang === 'en' ? '' : lang + '/';
 const PAGE_SIZE = 12;
 
 const allProducts = await getCollection('products');

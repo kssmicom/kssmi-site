@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "Bingkai Optik Titanium Tersuai"
 slug: "kto-018-titanium-optical-frames"
-itemNo: "kto-018"
+itemNo: "KTO-018"
 date: "2026-05-02"
 colors: "Perak Ungu & Emas Ungu & Emas Putih & Emas Berwarna"
 materials: "Titanium Premium"

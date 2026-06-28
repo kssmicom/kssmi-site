@@ -95,7 +95,7 @@ const end = Math.min(currentPage * PAGE_SIZE, allProducts.length);
               </div>
 
               <div class="mt-8 pt-6 border-t border-gray-100">
-                <h4 class="text-xs font-bold text-gray-900 uppercase tracking-wider mb-4">{t.sidebar.tags_filters}</h4>
+                <p class="text-xs font-bold text-gray-900 uppercase tracking-wider mb-4">{t.sidebar.tags_filters}</p>
                 <div class="space-y-6">
                   {sidebarTags.map((group) => (
                     <div>
@@ -119,7 +119,7 @@ const end = Math.min(currentPage * PAGE_SIZE, allProducts.length);
             </div>
 
             <div class="bg-[#5D4E37] rounded-xl p-6 text-white">
-              <h4 class="font-bold mb-2">{pt.needCustomEyewear || 'Need Custom Eyewear?'}</h4>
+              <p class="font-bold mb-2">{pt.needCustomEyewear || 'Need Custom Eyewear?'}</p>
               <p class="text-sm text-white mb-4">
                 {pt.oemServices || 'We offer full OEM & ODM services for your brand.'}
               </p>

@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "Armações Ópticas de Titânio Personalizadas"
 slug: "kto-017-titanium-optical-frames"
-itemNo: "kto-017"
+itemNo: "KTO-017"
 date: "2026-05-02"
 colors: "Ouro Vermelho & Ouro Laranja & Prata Vermelha & Prata Branca"
 materials: "Titânio Premium"

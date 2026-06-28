@@ -119,9 +119,9 @@ const websiteSchema = {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#FCFAF8" />
-
-  <!-- Content-Security-Policy for static site -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com https://challenges.cloudflare.com http://localhost:4325; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; frame-src https://play.gumlet.io https://challenges.cloudflare.com; connect-src 'self' https://www.google-analytics.com https://static.cloudflareinsights.com https://cloudflareinsights.com; media-src 'self' https://play.gumlet.io https://video.gumlet.io;" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.json" />
 
   <!-- Google Tag Manager (loads on user interaction — never blocks critical path) -->
   <script>
@@ -159,6 +159,8 @@ const websiteSchema = {
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={image.startsWith('http') ? image : `https://kssmi.com${image}`} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:url" content={canonical || `https://kssmi.com/${selfUrl}`} />
   <meta property="og:type" content={type} />
 	<meta property="og:locale" content={localeMap[lang] || "en_US"} />

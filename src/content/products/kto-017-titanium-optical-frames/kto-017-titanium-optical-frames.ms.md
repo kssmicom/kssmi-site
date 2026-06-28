@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "Bingkai Optik Titanium Tersuai"
 slug: "kto-017-titanium-optical-frames"
-itemNo: "kto-017"
+itemNo: "KTO-017"
 date: "2026-05-02"
 colors: "Emas Merah & Emas Jingga & Perak Merah & Perak Putih"
 materials: "Titanium Premium"

@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "Monturas Ópticas de Titanio Personalizadas"
 slug: "kto-017-titanium-optical-frames"
-itemNo: "kto-017"
+itemNo: "KTO-017"
 date: "2026-05-02"
 colors: "Oro Rojo & Oro Naranja & Plata Roja & Plata Blanca"
 materials: "Titanio Premium"

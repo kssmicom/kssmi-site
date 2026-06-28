@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "定制钛金属光学眼镜架"
 slug: "kto-019-titanium-optical-frames"
-itemNo: "kto-019"
+itemNo: "KTO-019"
 date: "2026-05-02"
 colors: "蓝银色 & 金银色 & 橙银色"
 materials: "优质钛金属"

@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "Frame Optik Titanium Kustom"
 slug: "kto-019-titanium-optical-frames"
-itemNo: "kto-019"
+itemNo: "KTO-019"
 date: "2026-05-02"
 colors: "Biru Selaka & Kencana Selaka & Oranye Selaka"
 materials: "Titanium Premium"

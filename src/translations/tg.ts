@@ -242,6 +242,7 @@ export default {
       rimless_group: "Айнаки Бечорчӯба",
     },
     blog: {
+      showingResults: 'Намоиши {start}-{end} аз {total} мақолаҳо',
       emptyState: "Ҳоло ягон мақола нашр нашудааст. Ба наздикӣ тафтиш кунед!",
     },
       pagination: {

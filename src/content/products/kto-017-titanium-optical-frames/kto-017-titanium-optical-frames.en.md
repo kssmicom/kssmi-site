@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "Custom Titanium Optical Frames"
 slug: "kto-017-titanium-optical-frames"
-itemNo: "kto-017"
+itemNo: "KTO-017"
 date: "2026-05-02"
 colors: "Red Golden & Orange Golden & Red Silver & White Silver"
 materials: "Premium Titanium"

@@ -18,6 +18,28 @@ const locales = [
 // Standard XML dates (YYYY-MM-DD)
 const currentDate = new Date().toISOString().split('T')[0];
 
+// Helper: get file modification date as YYYY-MM-DD
+const fileDate = (filePath) => {
+  try {
+    const mtime = fs.statSync(filePath).mtime;
+    return mtime.toISOString().split('T')[0];
+  } catch { return currentDate; }
+};
+
+// Map core page slugs to their source .astro files
+const coreSourceMap = {
+  '':            'index.astro',
+  'about-us':    'about-us.astro',
+  'contact':     'contact.astro',
+  'faq':         'faq.astro',
+  'quote':       'quote.astro',
+  'search':      'search.astro',
+  'terms-privacy': 'terms-privacy.astro',
+  'product':     'product/index.astro',
+  'blog':        'blog/index.astro',
+  'eyewear':     'eyewear/index.astro',
+};
+
 let rootSitemapIndexEntries = '';
 
 // Helper to generate a urlset XML from a list of urls
@@ -41,7 +63,7 @@ const generateUrlset = (items) => {
     }
     xml += `  <url>\n`;
     xml += `    <loc>${url}</loc>\n`;
-    xml += `    <lastmod>${currentDate}</lastmod>\n`;
+    xml += `    <lastmod>${item.lastmod || currentDate}</lastmod>\n`;
     xml += `    <changefreq>weekly</changefreq>\n`;
     xml += `    <priority>${priority}</priority>\n`;
     if (cover) {
@@ -68,11 +90,28 @@ locales.forEach(lang => {
   const sitemapBaseUrl = `${SITE_URL}/${lang}`;
 
   // 1. Core Pages
-  const coreUrls = [
-    `${baseUrl}/`,
-    `${baseUrl}/about-us/`,
-    `${baseUrl}/contact/`
+  const coreUrlDefs = [
+    { slug: '', route: '' },
+    { slug: 'about-us', route: 'about-us' },
+    { slug: 'contact', route: 'contact' },
+    { slug: 'faq', route: 'faq' },
+    { slug: 'quote', route: 'quote' },
+    { slug: 'search', route: 'search' },
+    { slug: 'terms-privacy', route: 'terms-privacy' },
+    { slug: 'product', route: 'product' },
+    { slug: 'blog', route: 'blog' },
+    { slug: 'eyewear', route: 'eyewear' },
   ];
+  const coreUrls = coreUrlDefs.map(d => {
+    const astroFile = coreSourceMap[d.slug];
+    const srcPath = lang === 'en'
+      ? path.join(process.cwd(), 'src', 'pages', astroFile)
+      : path.join(process.cwd(), 'src', 'pages', '[lang]', astroFile);
+    return {
+      url: `${baseUrl}${d.route ? '/' + d.route : ''}/`,
+      lastmod: fileDate(srcPath)
+    };
+  });
   fs.writeFileSync(path.join(langDir, 'sitemap-core.xml'), generateUrlset(coreUrls), 'utf-8');
 
   // Dynamically retrieve collections
@@ -121,10 +160,11 @@ locales.forEach(lang => {
                 }
             }
           }
+          const itemLastmod = fileDate(filePath);
           if (cover) {
-            urls.push({ url: urlStr, cover, title });
+            urls.push({ url: urlStr, cover, title, lastmod: itemLastmod });
           } else {
-            urls.push(urlStr);
+            urls.push({ url: urlStr, lastmod: itemLastmod });
           }
         }
       });
@@ -136,20 +176,42 @@ locales.forEach(lang => {
   const productUrls = getCollectionUrls('products', 'product');
   fs.writeFileSync(path.join(langDir, 'sitemap-products.xml'), generateUrlset(productUrls), 'utf-8');
 
-  // 3. Blogs
+  // 3. Blogs (skip if empty)
   const blogUrls = getCollectionUrls('blog', 'blog');
-  fs.writeFileSync(path.join(langDir, 'sitemap-blogs.xml'), generateUrlset(blogUrls), 'utf-8');
+  if (blogUrls.length > 0) {
+    fs.writeFileSync(path.join(langDir, 'sitemap-blogs.xml'), generateUrlset(blogUrls), 'utf-8');
+  }
+
+  // 4. Features / Eyewear (skip if empty)
+  const featureUrls = getCollectionUrls('feature', 'eyewear');
+  if (featureUrls.length > 0) {
+    fs.writeFileSync(path.join(langDir, 'sitemap-features.xml'), generateUrlset(featureUrls), 'utf-8');
+  }
 
   // Language specific sitemap.xml (index for this language)
   let langSitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>\n`;
   langSitemapIndex += `<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>\n`;
   langSitemapIndex += `<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
-  ['core', 'products', 'blogs'].forEach(cat => {
+  ['core', 'products'].forEach(cat => {
     langSitemapIndex += `  <sitemap>\n`;
     langSitemapIndex += `    <loc>${sitemapBaseUrl}/sitemap-${cat}.xml</loc>\n`;
     langSitemapIndex += `    <lastmod>${currentDate}</lastmod>\n`;
     langSitemapIndex += `  </sitemap>\n`;
   });
+  if (blogUrls.length > 0) {
+    langSitemapIndex += `  <sitemap>
+    <loc>${sitemapBaseUrl}/sitemap-blogs.xml</loc>
+    <lastmod>${currentDate}</lastmod>
+  </sitemap>
+`;
+  }
+  if (featureUrls.length > 0) {
+    langSitemapIndex += `  <sitemap>
+    <loc>${sitemapBaseUrl}/sitemap-features.xml</loc>
+    <lastmod>${currentDate}</lastmod>
+  </sitemap>
+`;
+  }
   langSitemapIndex += `</sitemapindex>`;
 
   fs.writeFileSync(path.join(langDir, 'sitemap.xml'), langSitemapIndex, 'utf-8');

@@ -24,6 +24,7 @@ export async function getStaticPaths() {
   const products = await getCollection('products');
   const lang = 'en';
 
+
   // Get all product slugs
   const productSlugs = new Set(
     products
@@ -50,22 +51,22 @@ export async function getStaticPaths() {
 
 const { product, type } = Astro.props;
 const { lang: langParam } = Astro.params;
-const lang = langParam || 'en';
+let lang = langParam || 'en';
+// Detect locale from URL — Astro may route prefixed URLs to English route tree
+const LANGUAGES = ['it','es','fr','de','pt','ru','ja','tr','ar','ko','zh','hi','vi','jv','ms','tg'];
+const urlPath = Astro.url.pathname;
+for (const l of LANGUAGES) {
+  if (urlPath.startsWith('/' + l + '/') || urlPath === '/' + l) {
+    lang = l;
+    break;
+  }
+}
+const currentPath = lang === 'en' ? '' : lang + '/';
 
 const t = await getTranslations(lang);
 const pt = t.product || {};
-const currentPath = '';
 
-// Deterministic price from slug hash ($13.00-$19.99 range, consistent per product)
-function slugToPrice(slug) {
-  let hash = 0;
-  for (let i = 0; i < slug.length; i++) {
-    hash = ((hash << 5) - hash) + slug.charCodeAt(i);
-    hash |= 0;
-  }
-  const normalized = Math.abs(hash) % 700;
-  return (13.00 + (normalized / 100)).toFixed(2);
-}
+
 
 if (!product) {
   return Astro.redirect('/404');
@@ -304,8 +305,7 @@ if (type === 'product' && product) {
       "availability": "https://schema.org/InStock",
       "offerCount": "1",
       "priceCurrency": "USD",
-      "lowPrice": slugToPrice(imageSlug),
-      "highPrice": slugToPrice(imageSlug + 'high'),
+      "price": "Contact for pricing",
       "url": `https://kssmi.com/product/${imageSlug}`
     }
   };

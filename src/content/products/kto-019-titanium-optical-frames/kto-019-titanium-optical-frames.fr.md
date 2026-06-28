@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "Montures Optiques en Titane Personnalisées"
 slug: "kto-019-titanium-optical-frames"
-itemNo: "kto-019"
+itemNo: "KTO-019"
 date: "2026-05-02"
 colors: "Bleu Argenté & Doré Argenté & Orange Argenté"
 materials: "Titane Premium"

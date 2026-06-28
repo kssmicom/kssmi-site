@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "Özel Titanyum Optik Çerçeveler"
 slug: "kto-019-titanium-optical-frames"
-itemNo: "kto-019"
+itemNo: "KTO-019"
 date: "2026-05-02"
 colors: "Mavi Gümüş & Altın Gümüş & Turuncu Gümüş"
 materials: "Premium Titanyum"

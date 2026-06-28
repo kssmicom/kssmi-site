@@ -6,6 +6,7 @@ import { cardSrc } from '../../../utils/image';
 
 export async function getStaticPaths() {
   const allItems = await getCollection('feature');
+  if (allItems.length === 0) return [];
   const languages = LANGUAGES.filter(l => l !== 'en');
   return languages.map((lang) => {
     const langItems = allItems.filter((item: any) => item.data.lang === lang);
@@ -51,7 +52,7 @@ const breadcrumbItems = [
     {items.map((item: any) => {
       const img = item.data.image || '/media/global/placeholder.webp';
       const slug = item.data.slug || item.id.split('/').pop()?.replace(/\.[a-z]{2}$/, '') || '';
-      const href = `/${slug}/`;
+      const href = `/${currentPath}eyewear/${slug}/`;
       return (
         <a href={href} class="group bg-white rounded-xl shadow-sm border border-stone-200/50 overflow-hidden hover:shadow-md transition-all duration-300">
           <div class="aspect-[4/3] overflow-hidden bg-stone-100">

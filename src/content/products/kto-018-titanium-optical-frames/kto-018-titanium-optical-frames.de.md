@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "Maßgeschneiderte Titan-Brillenfassungen"
 slug: "kto-018-titanium-optical-frames"
-itemNo: "kto-018"
+itemNo: "KTO-018"
 date: "2026-05-02"
 colors: "Violett-Silber & Violett-Gold & Weiß-Gold & Buntes Gold"
 materials: "Premium-Titan"

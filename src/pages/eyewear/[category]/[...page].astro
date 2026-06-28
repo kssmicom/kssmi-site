@@ -9,6 +9,7 @@ import { getTranslations } from '../../../translations';
 export async function getStaticPaths({ paginate }: { paginate: any }) {
   const lang = 'en';
   const allProducts = await getCollection('feature');
+  if (allProducts.length === 0) return [];
 
   const allCategorySlugs = new Set<string>();
   for (const p of allProducts) {
@@ -19,14 +20,6 @@ export async function getStaticPaths({ paginate }: { paginate: any }) {
     }
   }
 
-  const SIDEBAR_SLUGS = [
-    'sunglasses', 'acetate-sunglasses', 'metal-sunglasses', 'titanium-sunglasses', 'carbon-fiber-sunglasses', 'rimless-sunglasses',
-    'optical-frames', 'acetate-optical-frames', 'metal-optical-frames', 'titanium-optical-frames', 'carbon-fiber-optical-frames', 'rimless-optical-frames',
-    'fashion-acetate-sunglasses', 'fashion-metal-sunglasses', 'fashion-acetate-optical-frames', 'fashion-metal-optical-frames',
-    'luxury-acetate-sunglasses', 'luxury-titanium-sunglasses', 'luxury-acetate-optical-frames', 'luxury-titanium-optical-frames',
-    'fashion-eyewear', 'luxury-eyewear', 'carbon-fiber-eyewear', 'rimless-eyewear',
-  ];
-  for (const s of SIDEBAR_SLUGS) allCategorySlugs.add(s);
 
   return [...allCategorySlugs].flatMap((category) => {
     const categoryProducts = allProducts.filter((p) => {
@@ -83,7 +76,7 @@ const langProducts = (allProducts || []).filter((p: any) => {
     {page.data.map((item: any) => {
       const img = item.data.image || '/media/global/placeholder.webp';
       const slug = item.data.slug || item.id.split('/').pop()?.replace(/\.[a-z]{2}$/, '') || '';
-      const href = `/${slug}/`;
+      const href = `/${currentPath}eyewear/${slug}/`;
       return (
         <a href={href} class="group bg-white rounded-xl shadow-sm border border-stone-200/50 overflow-hidden hover:shadow-md transition-all duration-300">
           <div class="aspect-[4/3] overflow-hidden bg-stone-100">

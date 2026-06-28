@@ -127,7 +127,9 @@ const products = defineCollection({
     seoTitle: z.string().optional(),
     seoDescription: z.string().optional(),
     seoKeywords: z.string().optional(),
-  }).catchall(z.any()),
+    series: z.string().optional(),
+    carbonFiberFeature: z.string().optional(),
+  }),
 });
 
 // ── Collection (Landing Pages + About/Contact/etc.) ───────────────────────────

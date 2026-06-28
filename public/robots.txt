@@ -12,7 +12,6 @@ Disallow: /api/
 
 # Non-indexable utility pages
 Disallow: /thank-you
-Disallow: /quote
 
 # AI crawlers -- explicitly welcomed (inherits rules from User-agent: * above)
 # GPTBot (OpenAI), ChatGPT-User, ClaudeBot, Claude-Web (Anthropic),

@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "Frame Optik Titanium Kustom"
 slug: "kto-017-titanium-optical-frames"
-itemNo: "kto-017"
+itemNo: "KTO-017"
 date: "2026-05-02"
 colors: "Kencana Abrit & Kencana Oranye & Selaka Abrit & Selaka Putih"
 materials: "Titanium Premium"

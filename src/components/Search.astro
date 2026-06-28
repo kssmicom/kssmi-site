@@ -1,6 +1,5 @@
 ---
 import { translations, getTranslations, type Translations } from '../translations';
-import { getCollection } from 'astro:content';
 
 interface Props {
   lang: string;
@@ -10,37 +9,9 @@ const { lang } = Astro.props;
 const isRTL = lang === 'ar';
 const t = await getTranslations(lang);
 
-// Fetch products server-side at request time (dev) or build time (production)
-const allProducts = await getCollection('products');
-const langProducts = allProducts
-  .filter((product) => (product as any).slug && (product as any).slug.endsWith(`.${lang}`))
-  .map((product: any) => {
-    // Handle categories - convert string to array if needed
-    const rawCategories = product.data?.categories || '';
-    const categoriesArray = typeof rawCategories === 'string'
-      ? rawCategories.split(',').map((c: string) => c.trim()).filter(Boolean)
-      : rawCategories;
-
-    return {
-      slug: product.slug ? product.slug.replace(`.${lang}`, '') : '',
-      title: product.data?.title || '',
-      itemNo: product.data?.itemNo || '',
-      excerpt: product.data?.seoDescription || '',
-      categories: categoriesArray,
-      materials: product.data?.materials || [],
-      colors: product.data?.colors || [],
-      url: lang === 'en'
-        ? `/product/${product.data?.slug || (product.slug ? (product.slug as string).replace(`.${lang}`, '') : '')}/`
-        : `/${lang}/product/${product.data?.slug || (product.slug ? (product.slug as string).replace(`.${lang}`, '') : '')}/`,
-      cover: product.data?.cover || '',
-    };
-  });
-
-// Serialize for client-side use
-// Note: For catalogs exceeding 200+ products, consider lazy-loading via
-// fetch('/api/search-index/${lang}.json') instead of inline embedding to
-// reduce HTML payload size.
-const productsJson = JSON.stringify(langProducts);
+// Products are lazy-loaded via fetch('/api/search-index/${lang}.json')
+// to keep inline HTML payload small. The API endpoint is pre-built at
+// /api/search-index/<lang>.json (see src/pages/api/search-index/[lang].json.ts)
 
 // Placeholder text translations
 const placeholders: Record<string, string> = {
@@ -64,7 +35,7 @@ const placeholders: Record<string, string> = {
 };
 ---
 
-<div id={`search-${lang}`} class="search-component relative w-full max-w-md" data-lang={lang} data-products={productsJson} dir={isRTL ? 'rtl' : 'ltr'}>
+<div id={`search-${lang}`} class="search-component relative w-full max-w-md" data-lang={lang} dir={isRTL ? 'rtl' : 'ltr'}>
   <!-- Search Input -->
   <div class="relative">
     <label for={`search-input-${lang}`} class="sr-only">Search products</label>
@@ -90,8 +61,8 @@ const placeholders: Record<string, string> = {
 <script>
   function initSearchComponent(container: HTMLElement) {
     const lang = container.getAttribute('data-lang') || 'en';
-    const productsJson = container.getAttribute('data-products') || '[]';
-    const products = JSON.parse(productsJson);
+    let products: any[] = [];
+    let productsLoaded = false;
 
     const searchInput = container.querySelector('input') as HTMLInputElement;
     const searchResults = container.querySelector(`#search-results-${lang}`);
@@ -102,6 +73,24 @@ const placeholders: Record<string, string> = {
     // AbortController for cleanup on re-initialization
     const ac = new AbortController();
     const signal = ac.signal;
+    // Lazy-load products from pre-built JSON endpoint
+    async function loadProducts() {
+      if (productsLoaded) return;
+      try {
+        const resp = await fetch(`/api/search-index/${lang}.json`);
+        if (!resp.ok) throw new Error('Failed to load search index');
+        products = await resp.json();
+        productsLoaded = true;
+      } catch (e) {
+        // Retry once after 2s
+        await new Promise(r => setTimeout(r, 2000));
+        try {
+          const resp = await fetch(`/api/search-index/${lang}.json`);
+          if (resp.ok) { products = await resp.json(); productsLoaded = true; }
+        } catch {}
+      }
+    }
+
     if ('_searchAbort' in container) {
       (container as any)._searchAbort.abort();
     }
@@ -128,8 +117,16 @@ const placeholders: Record<string, string> = {
 
     // Perform search
     function performSearch(query: string) {
-      if (!fuse || !query.trim()) {
-        searchResults?.classList.add('hidden');
+      if (!fuse || !productsLoaded || !query.trim()) {
+        if (query.trim() && !productsLoaded) {
+          // Still loading products — show loading indicator
+          if (searchResults) {
+            searchResults.innerHTML = '<div class="p-4 text-gray-500 text-center">Loading...</div>';
+            searchResults.classList.remove('hidden');
+          }
+        } else {
+          searchResults?.classList.add('hidden');
+        }
         return;
       }
 
@@ -199,8 +196,11 @@ const placeholders: Record<string, string> = {
       searchResults.classList.remove('hidden');
     }
 
-    // Initialize lazily on first focus/input
-    searchInput?.addEventListener("focus", () => initializeSearch(), { once: true });
+    // Initialize lazily on first focus/input: load products + init Fuse
+    searchInput?.addEventListener("focus", async () => {
+      await loadProducts();
+      await initializeSearch();
+    }, { once: true });
 
     // Event listeners
     searchInput?.addEventListener('input', (e: Event) => {

@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "Gọng kính cận Titanium tùy chỉnh"
 slug: "kto-017-titanium-optical-frames"
-itemNo: "kto-017"
+itemNo: "KTO-017"
 date: "2026-05-02"
 colors: "Vàng đỏ & Vàng cam & Bạc đỏ & Bạc trắng"
 materials: "Titan cao cấp"

@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "Individuelle Titan-Brillenfassungen"
 slug: "kto-019-titanium-optical-frames"
-itemNo: "kto-019"
+itemNo: "KTO-019"
 date: "2026-05-02"
 colors: "Blau-Silber & Gold-Silber & Orange-Silber"
 materials: "Premium-Titan"

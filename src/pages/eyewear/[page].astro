@@ -1,12 +1,20 @@
 ---
 import ProductListingPage from '../../components/pages/ProductListingPage.astro';
 import { getCollection } from 'astro:content';
-// import { getProductLang } 
 import { cardSrc } from '../../utils/image';
 import { getTranslations } from '../../translations';
 
-const lang = 'en';
-const currentPath = '';
+let lang = 'en';
+// Detect locale from URL — Astro may route prefixed URLs to English route tree
+const LANGUAGES = ['it','es','fr','de','pt','ru','ja','tr','ar','ko','zh','hi','vi','jv','ms','tg'];
+const urlPath = Astro.url.pathname;
+for (const l of LANGUAGES) {
+  if (urlPath.startsWith('/' + l + '/') || urlPath === '/' + l) {
+    lang = l;
+    break;
+  }
+}
+const currentPath = lang === 'en' ? '' : lang + '/';
 const PAGE_SIZE = 12;
 
 const allProducts = await getCollection('feature');
@@ -47,18 +55,18 @@ const { page } = Astro.params;
 const pageNum = parseInt(page, 10);
 
 if (pageNum < 2 || pageNum > totalPages) {
-  return Astro.redirect('/eyewear');
+  return Astro.redirect('/' + currentPath + 'eyewear');
 }
 
 const start = (pageNum - 1) * PAGE_SIZE;
 const items = sortedProducts.slice(start, start + PAGE_SIZE);
 
 const t = await getTranslations(lang);
-const lcpImage = products[0]?.data?.image ? cardSrc(products[0].data.cover) : undefined;
+const lcpImage = items[0]?.data?.image ? cardSrc(items[0].data.image) : undefined;
 
 const breadcrumbItems = [
-  { label: t.nav.home, href: '/' },
-  { label: 'Eyewear' || 'Products', href: '/eyewear' },
+  { label: t.nav.home, href: currentPath ? '/' + currentPath.replace(/\/$/, '') : '/' },
+  { label: t.nav.feature || 'Eyewear', href: '/' + currentPath + 'eyewear' },
 ];
 ---
 
@@ -66,11 +74,11 @@ const breadcrumbItems = [
   lang={lang}
   currentPath={currentPath}
   baseSegment="eyewear"
-  products={products}
+  products={items}
   allProducts={sortedProducts}
   currentPage={pageNum}
   totalPages={totalPages}
-  basePath="/product"
+  basePath={'/' + currentPath + 'eyewear'}
   breadcrumbItems={breadcrumbItems}
   title={t.nav.feature || 'Eyewear'}
   lcpImage={lcpImage}
@@ -78,8 +86,8 @@ const breadcrumbItems = [
     <Fragment slot="cards">
     {items.map((item: any) => {
       const img = item.data.image || '/media/global/placeholder.webp';
-      const slug = item.data.slug || item.id.split('/').pop()?.replace(/\.[a-z]{2}$/, '') || '';
-      const href = `/${slug}/`;
+      const slug = item.data.slug || item.id.split('/').pop()?.replace(/.[a-z]{2}$/, '') || '';
+      const href = `/${currentPath}eyewear/${slug}/`;
       return (
         <a href={href} class="group bg-white rounded-xl shadow-sm border border-stone-200/50 overflow-hidden hover:shadow-md transition-all duration-300">
           <div class="aspect-[4/3] overflow-hidden bg-stone-100">

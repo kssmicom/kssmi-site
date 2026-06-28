@@ -6,6 +6,7 @@ import { cardSrc } from '../../../utils/image';
 
 export async function getStaticPaths() {
   const allItems = await getCollection('blog');
+  if (allItems.length === 0) return [];
   const languages = LANGUAGES.filter(l => l !== 'en');
   return languages.map((lang) => {
     const langItems = allItems.filter((item: any) => item.data.lang === lang);

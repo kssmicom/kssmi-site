@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "맞춤형 티타늄 안경테"
 slug: "kto-017-titanium-optical-frames"
-itemNo: "kto-017"
+itemNo: "KTO-017"
 date: "2026-05-02"
 colors: "레드 골드 & 오렌지 골드 & 레드 실버 & 화이트 실버"
 materials: "프리미엄 티타늄"

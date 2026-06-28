@@ -29,6 +29,10 @@ npm run dev                 # Start dev server at localhost:4321
 
 # Production
 npm run build              # Full build with validation → outputs to dist/
+# After significant route changes, clean caches first:
+# rm -rf .astro dist && npm run build
+# After significant route changes, clean caches first:
+# rm -rf .astro dist && npm run build
 npm run preview            # Preview production build locally
 
 # Utilities
@@ -47,6 +51,7 @@ Defined in `src/content/config.ts` with three collections:
 | `products` | `src/content/products/` | Product markdown files |
 | `collection` | `src/content/collection/` | Landing pages, about, contact |
 | `blog` | `src/content/blog/` | Blog posts |
+| `feature` | `src/content/feature/` | Eyewear landing/feature pages |
 
 ### Hybrid Content Architecture
 
@@ -69,6 +74,27 @@ Configured in `astro.config.mjs`:
 - Other locales: prefixed (`/it/`, `/fr/`, etc.)
 - RTL support: Arabic (`ar`) uses RTL layout
 - Translations in: `src/translations/index.ts` (17 language objects)
+
+### Locale Detection in English-Tree Pages (CRITICAL)
+
+English-tree pages (those without `[lang]` prefix, e.g., `product/index.astro`) use a standard
+locale detection block as a safety net when Astro routes non-English URLs to the English tree:
+
+```js
+let lang = 'en';
+// Detect locale from URL — Astro may route prefixed URLs to English route tree
+const LANGUAGES = ['it','es','fr','de','pt','ru','ja','tr','ar','ko','zh','hi','vi','jv','ms','tg'];
+const urlPath = Astro.url.pathname;
+for (const l of LANGUAGES) {
+  if (urlPath.startsWith('/' + l + '/') || urlPath === '/' + l) {
+    lang = l;
+    break;
+  }
+}
+const currentPath = lang === 'en' ? '' : lang + '/';
+```
+
+**CRITICAL**: This must be placed OUTSIDE `getStaticPaths()` — `Astro.url` is not available inside `getStaticPaths`.
 
 ### Image Architecture (CRITICAL)
 
@@ -108,7 +134,30 @@ gallery:
 | Product List | `/product/` or `/{lang}/product/` | `/product/`, `/it/product/` |
 | Product Detail | `/product/{slug}` or `/{lang}/product/{slug}` | `/product/yto-001/` |
 | Category | `/product/{category}` | `/product/optical-frames/` |
+| Blog List | `/blog/` or `/{lang}/blog/` | `/blog/`, `/zh/blog/` |
+| Blog Detail | `/blog/{slug}` or `/{lang}/blog/{slug}` | `/blog/manufacturing-tips/` |
+| Blog Category | `/blog/{category}` | `/blog/material-science/` |
+| Eyewear List | `/eyewear/` or `/{lang}/eyewear/` | `/eyewear/`, `/fr/eyewear/` |
+| Eyewear Category | `/eyewear/{category}` | `/eyewear/titanium-sunglasses/` |
 | Landing Page | `/{slug}` or `/{lang}/{slug}` | `/about-us/`, `/it/about-us/` |
+
+## Empty Collection Guards
+
+Collections without content (blog, feature) use guards in `getStaticPaths` to prevent empty page generation:
+
+```js
+// In getStaticPaths, add early return when collection is empty:
+const allProducts = await getCollection('blog');
+if (allProducts.length === 0) return [];  // generates 0 pages
+```
+
+This prevents ~800+ empty category pages when `src/content/blog/` or `src/content/feature/` have no `.md` files.
+When content is added, the guard is skipped automatically — no code change needed.
+
+Affected files: `blog/[category]/[...page].astro`, `blog/[page].astro`,
+`eyewear/[category]/[...page].astro`, `eyewear/[page].astro`, and their `[lang]` counterparts.
+
+Also applied in `scripts/generate-sitemap.js` to skip empty blog/feature sitemaps.
 
 ## Key Components
 
@@ -135,11 +184,11 @@ Run manually: `npm run validate`
 
 ## Dynamic Search (Fuse.js)
 
-Search automatically updates when products change:
-- No build required - data fetched fresh on each request in dev
-- Searches: title, itemNo, excerpt, categories, materials
-- Weights: title (40%), itemNo (30%), excerpt (20%)
-- Refresh page after adding products to see them in search
+Search uses lazy-loading from pre-built JSON endpoint:
+- Search index served via  (static, rebuilt on each deploy)
+- Fuse.js loaded on first search input focus (lazy import)
+- No inline JSON in page HTML — reduces page weight ~50KB
+- Rebuild required after product changes
 
 ## Development Server Features
 

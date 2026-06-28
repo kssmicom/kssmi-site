@@ -5,8 +5,17 @@ import { getCollection } from 'astro:content';
 import { cardSrc } from '../../utils/image';
 import { getTranslations } from '../../translations';
 
-const lang = 'en';
-const currentPath = '';
+let lang = 'en';
+// Detect locale from URL — Astro may route prefixed URLs to English route tree
+const LANGUAGES = ['it','es','fr','de','pt','ru','ja','tr','ar','ko','zh','hi','vi','jv','ms','tg'];
+const urlPath = Astro.url.pathname;
+for (const l of LANGUAGES) {
+  if (urlPath.startsWith('/' + l + '/') || urlPath === '/' + l) {
+    lang = l;
+    break;
+  }
+}
+const currentPath = lang === 'en' ? '' : lang + '/';
 const PAGE_SIZE = 12;
 
 const allProducts = await getCollection('blog');
@@ -54,7 +63,7 @@ const start = (pageNum - 1) * PAGE_SIZE;
 const items = sortedProducts.slice(start, start + PAGE_SIZE);
 
 const t = await getTranslations(lang);
-const lcpImage = products[0]?.data?.image ? cardSrc(products[0].data.cover) : undefined;
+const lcpImage = items[0]?.data?.image ? cardSrc(items[0].data.image) : undefined;
 
 const breadcrumbItems = [
   { label: t.nav.home, href: '/' },
@@ -70,7 +79,7 @@ const breadcrumbItems = [
   allProducts={sortedProducts}
   currentPage={pageNum}
   totalPages={totalPages}
-  basePath="/product"
+  basePath="/blog"
   breadcrumbItems={breadcrumbItems}
   title={t.nav.blog || 'Blog'}
   lcpImage={lcpImage}

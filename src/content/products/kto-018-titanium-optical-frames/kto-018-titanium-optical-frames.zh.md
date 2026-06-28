@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "定制钛材光学镜架"
 slug: "kto-018-titanium-optical-frames"
-itemNo: "kto-018"
+itemNo: "KTO-018"
 date: "2026-05-02"
 colors: "紫银 & 紫金 & 白金 & 彩金"
 materials: "优质钛"

@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "Özel Tasarım Titanyum Optik Gözlük Çerçeveleri"
 slug: "kto-018-titanium-optical-frames"
-itemNo: "kto-018"
+itemNo: "KTO-018"
 date: "2026-05-02"
 colors: "Mor Gümüş & Mor Altın & Beyaz Altın & Renkli Altın"
 materials: "Premium Titanyum"

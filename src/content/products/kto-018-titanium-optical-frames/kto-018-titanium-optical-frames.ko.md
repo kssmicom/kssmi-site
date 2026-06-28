@@ -2,7 +2,7 @@
 # ─────────────────────────────────────────────────────
 title: "맞춤형 티타늄 안경테"
 slug: "kto-018-titanium-optical-frames"
-itemNo: "kto-018"
+itemNo: "KTO-018"
 date: "2026-05-02"
 colors: "퍼플 실버 & 퍼플 골드 & 화이트 골드 & 컬러 골드"
 materials: "프리미엄 티타늄"
