@@ -34,9 +34,14 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}/index.html -f
 RewriteRule ^(.*)$ $1/index.html [L]
 
+
 # ─── HTTPS redirect ────────────────────────────────────────────────────────
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+# ─── 404 fallback: serve Astro 404 for unmatched URLs ────────────────────
+RewriteRule ^(.*)$ /404.html [L]
 
 # ─── 404 handler — MUST return HTTP 404 status (not soft 404) ────────────
 ErrorDocument 404 /404.html
