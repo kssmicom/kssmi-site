@@ -18,7 +18,7 @@ export default {
       home: "الرئيسية",
       products: "المنتجات",
       collection: "المجموعة",
-      feature: "نظارات",
+      feature: "حلول",
       about: "حول",
       contact: "اتصل",
       blog: "مدونة",
@@ -159,7 +159,7 @@ export default {
       allProducts: "جميع المنتجات",
       productsInCategory: "منتج في هذه الفئة",
       // Sidebar CTA
-      needCustomEyewear: "تحتاج نظارات مخصصة؟",
+      needCustomSolutions: "تحتاج نظارات مخصصة؟",
       oemServices: "نحن نقدم خدمات تصنيع بالتفويض وتصميم وتصنيع بالكامل لعلامتك التجارية.",
       // Certifications
       certificationsTitle: "الشهادات والامتثال",
@@ -233,7 +233,7 @@ export default {
       tags_filters: "الوسوم والمرشحات",
       all_products: "جميع المنتجات",
       all_posts: "جميع المقالات",
-      all_features: "جميع النظارات",
+      all_features: "حلول",
       view_all_collections: "عرض جميع المجموعات",
       products_in_category: "منتج في هذه الفئة",
       fashion_group: "موضة النظارات",

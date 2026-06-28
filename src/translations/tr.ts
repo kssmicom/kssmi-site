@@ -18,7 +18,7 @@ export default {
       home: "Anasayfa",
       products: "Ürünler",
       collection: "Koleksiyon",
-      feature: "Gözlük",
+      feature: "Çözümler",
       about: "Hakkımızda",
       contact: "İletişim",
       blog: "Blog",
@@ -166,7 +166,7 @@ export default {
       allProducts: "Tüm Ürünler",
       productsInCategory: "bu kategorideki ürün",
       // Sidebar CTA
-      needCustomEyewear: "Özel Gözlük mü Gerekiyor?",
+      needCustomSolutions: "Özel Gözlük mü Gerekiyor?",
       oemServices: "Markanız için tam kapsamlı Sözleşmeli Üretim ve Tasarım ve Üretim hizmetleri sunuyoruz.",
       // Certifications
       certificationsTitle: "Sertifikalar ve Uyumluluk",
@@ -240,7 +240,7 @@ export default {
       tags_filters: "Etiketler ve Filtreler",
       all_products: "Tüm Ürünler",
       all_posts: "Tüm Yazılar",
-      all_features: "Tüm Gözlükler",
+      all_features: "Çözümler",
       view_all_collections: "Tüm Koleksiyonları Gör",
       products_in_category: "bu kategoride ürün",
       fashion_group: "Moda Gözlükleri",

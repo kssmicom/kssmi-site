@@ -18,7 +18,7 @@ export default {
       home: "Laman Utama",
       products: "Produk",
       collection: "Koleksi",
-      feature: "Cermin Mata",
+      feature: "Solusi",
       about: "Perihal",
       contact: "Hubungi",
       blog: "Blog",
@@ -159,7 +159,7 @@ export default {
       allProducts: "Semua Produk",
       productsInCategory: "produk dalam kategori ini",
       // Sidebar CTA
-      needCustomEyewear: "Perlukan Cermin Mata Tersuai?",
+      needCustomSolutions: "Perlukan Cermin Mata Tersuai?",
       oemServices: "Kami menawarkan perkhidmatan Pengeluaran Kontrak dan Reka Bentuk dan Pengeluaran penuh untuk jenama anda.",
       // Certifications
       certificationsTitle: "Pensijilan & Pematuhan",
@@ -233,7 +233,7 @@ export default {
       tags_filters: "Tag dan Penapis",
       all_products: "Semua Produk",
       all_posts: "Semua Kiriman",
-      all_features: "Semua Cermin Mata",
+      all_features: "Solusi",
       view_all_collections: "Lihat Semua Koleksi",
       products_in_category: "produk dalam kategori ini",
       fashion_group: "Cermin Mata Fesyen",

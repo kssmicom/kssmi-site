@@ -18,7 +18,7 @@ export default {
       home: "Home",
       products: "Products",
       collection: "Collection",
-      feature: "Eyewear",
+      feature: "Solutions",
       about: "About",
       contact: "Contact",
       blog: "Blog",
@@ -179,7 +179,7 @@ export default {
       allProducts: "All Products",
       productsInCategory: "products in this category",
       // Sidebar CTA
-      needCustomEyewear: "Need Custom Eyewear?",
+      needCustomSolutions: "Need Custom Eyewear?",
       oemServices: "We offer full Contract Manufacturing & Design Manufacturing services for your brand.",
       // Certifications
       certificationsTitle: "Certifications & Compliance",
@@ -253,7 +253,7 @@ export default {
       tags_filters: "Tags & Filters",
       all_products: "All Products",
       all_posts: "All Posts",
-      all_features: "All Eyewear",
+      all_features: "Solutions",
       view_all_collections: "View All Collections",
       products_in_category: "products in this category",
       fashion_group: "Fashion Eyewear",

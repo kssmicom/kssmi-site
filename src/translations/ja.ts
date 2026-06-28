@@ -18,7 +18,7 @@ export default {
       home: "ホーム",
       products: "製品",
       collection: "コレクション",
-      feature: "眼鏡",
+      feature: "ソリューション",
       about: "概要",
       contact: "連絡",
       blog: "ブログ",
@@ -166,7 +166,7 @@ export default {
       allProducts: "すべての製品",
       productsInCategory: "カテゴリ内の製品",
       // Sidebar CTA
-      needCustomEyewear: "カスタムアイウェアが必要ですか？",
+      needCustomSolutions: "カスタムアイウェアが必要ですか？",
       oemServices: "貴社ブランド向けの完全な受託製造・設計製造サービスを提供します。",
       // Certifications
       certificationsTitle: "認証・コンプライアンス",
@@ -240,7 +240,7 @@ export default {
       tags_filters: "タグとフィルター",
       all_products: "すべての製品",
       all_posts: "すべての記事",
-      all_features: "すべての眼鏡",
+      all_features: "ソリューション",
       view_all_collections: "すべてのコレクションを見る",
       products_in_category: "このカテゴリーの製品",
       fashion_group: "ファッション眼鏡",

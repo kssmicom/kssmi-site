@@ -18,7 +18,7 @@ export default {
       home: "Асосӣ",
       products: "Маҳсулот",
       collection: "Коллексия",
-      feature: "Айнак",
+      feature: "Ҳалли",
       about: "Дар бора",
       contact: "Тамос",
       blog: "Блог",
@@ -159,7 +159,7 @@ export default {
       allProducts: "Ҳамаи Маҳсулот",
       productsInCategory: "маҳсулот дар ин категория",
       // Sidebar CTA
-      needCustomEyewear: "Ба Айнаки Фармоишӣ Эҳтиёҷ Доред?",
+      needCustomSolutions: "Ба Айнаки Фармоишӣ Эҳтиёҷ Доред?",
       oemServices: "Мо хидматҳои пураи Истехсолоти Шартномавӣ ва Тарроҳӣ ва Истехсолот-ро барои бренди шумо пешниҳод мекунем.",
       // Certifications
       certificationsTitle: "Сертификатсия ва Мутобиқат",
@@ -233,7 +233,7 @@ export default {
       tags_filters: "Тегҳо ва Филтрҳо",
       all_products: "Ҳамаи Маҳсулот",
       all_posts: "Ҳамаи Навиштаҳо",
-      all_features: "Ҳамаи Айнакҳо",
+      all_features: "Ҳалли",
       view_all_collections: "Дидани Ҳамаи Маҷмӯаҳо",
       products_in_category: "маҳсулот дар ин категория",
       fashion_group: "Айнаки Муд",

@@ -12,3 +12,20 @@ for (const l of LANGUAGES) {
 }
 ---
 <NotFoundPage lang={lang} />
+<script>
+  // Client-side locale detection for .htaccess-rewritten 404s
+  // When server internally rewrites /zh/eyewear to /404.html,
+  // Astro sees /404.html, so detect language from browser URL
+  (function() {
+    var path = window.location.pathname;
+    var langs = ['it','es','fr','de','pt','ru','ja','tr','ar','ko','zh','hi','vi','jv','ms','tg'];
+    for (var i = 0; i < langs.length; i++) {
+      if (path.startsWith('/' + langs[i] + '/') || path === '/' + langs[i]) {
+        if (path !== '/' + langs[i] + '/404') {
+          window.location.replace('/' + langs[i] + '/404');
+        }
+        return;
+      }
+    }
+  })();
+</script>

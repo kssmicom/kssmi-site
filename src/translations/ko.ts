@@ -18,7 +18,7 @@ export default {
       home: "홈",
       products: "제품",
       collection: "컬렉션",
-      feature: "안경",
+      feature: "솔루션",
       about: "소개",
       contact: "문의",
       blog: "블로그",
@@ -159,7 +159,7 @@ export default {
       allProducts: "모든 상품",
       productsInCategory: "이 카테고리의 제품수",
       // Sidebar CTA
-      needCustomEyewear: "맞춤형 안경이 필요하신가요?",
+      needCustomSolutions: "맞춤형 안경이 필요하신가요?",
       oemServices: "귀사의 브랜드를 위한 완전한 위탁생산 및 디자인 제조 서비스를 제공합니다.",
       // Certifications
       certificationsTitle: "인증 및 규정 준수",
@@ -233,7 +233,7 @@ export default {
       tags_filters: "태그와 필터",
       all_products: "모든 제품",
       all_posts: "모든 게시글",
-      all_features: "모든 안경",
+      all_features: "솔루션",
       view_all_collections: "모든 컬렉션 보기",
       products_in_category: "이 카테고리의 제품",
       fashion_group: "패션 안경",

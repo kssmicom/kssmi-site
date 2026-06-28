@@ -18,7 +18,7 @@ export default {
       home: "Home",
       products: "Prodotti",
       collection: "Collezione",
-      feature: "Occhiali",
+      feature: "Soluzioni",
       about: "Chi siamo",
       contact: "Contatti",
       blog: "Blog",
@@ -159,7 +159,7 @@ export default {
       allProducts: "Tutti i Prodotti",
       productsInCategory: "prodotti in questa categoria",
       // Sidebar CTA
-      needCustomEyewear: "Hai bisogno di occhiali personalizzati?",
+      needCustomSolutions: "Hai bisogno di occhiali personalizzati?",
       oemServices: "Offriamo servizi completi di Produzione per Conto Terzi e Design e Produzione per il tuo marchio.",
       // Certifications
       certificationsTitle: "Certificazioni e Conformità",
@@ -233,7 +233,7 @@ export default {
       tags_filters: "Tag e Filtri",
       all_products: "Tutti i Prodotti",
       all_posts: "Tutti gli Articoli",
-      all_features: "Tutti gli Occhiali",
+      all_features: "Soluzioni",
       view_all_collections: "Vedi Tutte le Collezioni",
       products_in_category: "prodotti in questa categoria",
       fashion_group: "Occhiali Moda",

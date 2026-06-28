@@ -18,7 +18,7 @@ export default {
       home: "首页",
       products: "产品",
       collection: "系列",
-      feature: "眼镜",
+      feature: "方案",
       about: "关于",
       contact: "联系",
       blog: "博客",
@@ -159,7 +159,7 @@ export default {
       allProducts: "所有产品",
       productsInCategory: "此分类下的产品",
       // Sidebar CTA
-      needCustomEyewear: "需要定制眼镜？",
+      needCustomSolutions: "需要定制眼镜？",
       oemServices: "我们为您的品牌提供全方位的代工生产和设计制造服务。",
       // Certifications
       certificationsTitle: "认证与合规",
@@ -233,7 +233,7 @@ export default {
       tags_filters: "标签和筛选",
       all_products: "所有产品",
       all_posts: "所有文章",
-      all_features: "所有眼镜",
+      all_features: "方案",
       view_all_collections: "查看所有系列",
       products_in_category: "此类别中的产品",
       fashion_group: "时尚眼镜",

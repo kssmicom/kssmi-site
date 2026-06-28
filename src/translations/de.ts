@@ -18,7 +18,7 @@ export default {
       home: "Startseite",
       products: "Produkte",
       collection: "Kollektion",
-      feature: "Brillen",
+      feature: "Lösungen",
       about: "Über uns",
       contact: "Kontakt",
       blog: "Blog",
@@ -50,8 +50,8 @@ export default {
       carbon_sun: "Kohlenstoff Sonnenbrillen",
       carbon_glass: "Kohlenstoff Brillen",
       // Collection Landing Pages
-      collection_men: "Herren Eyewear",
-      collection_women: "Damen Eyewear",
+      collection_men: "Herren Solutions",
+      collection_women: "Damen Solutions",
       collection_unisex: "Unisex Eyewear",
       collection_new: "Neuheiten",
       collection_bestsellers: "Bestseller",
@@ -166,7 +166,7 @@ export default {
       allProducts: "Alle Produkte",
       productsInCategory: "Produkte in dieser Kategorie",
       // Sidebar CTA
-      needCustomEyewear: "Benötigen Sie massgeschneiderte Brillen?",
+      needCustomSolutions: "Benötigen Sie massgeschneiderte Brillen?",
       oemServices: "Wir bieten vollständige Auftragsfertigung und Design und Fertigung Dienstleistungen für Ihre Marke.",
       // Certifications
       certificationsTitle: "Zertifizierungen und Konformität",
@@ -240,7 +240,7 @@ export default {
       tags_filters: "Tags und Filter",
       all_products: "Alle Produkte",
       all_posts: "Alle Beiträge",
-      all_features: "Alle Brillen",
+      all_features: "Lösungen",
       view_all_collections: "Alle Kollektionen Anzeigen",
       products_in_category: "Produkte in dieser Kategorie",
       fashion_group: "Brillen Mode",

@@ -18,7 +18,7 @@ export default {
       home: "Главная",
       products: "Продукты",
       collection: "Коллекция",
-      feature: "Очки",
+      feature: "Решения",
       about: "О нас",
       contact: "Контакты",
       blog: "Блог",
@@ -166,7 +166,7 @@ export default {
       allProducts: "Все Продукты",
       productsInCategory: "продуктов в этой категории",
       // Sidebar CTA
-      needCustomEyewear: "Нужны индивидуальные очки?",
+      needCustomSolutions: "Нужны индивидуальные очки?",
       oemServices: "Мы предоставляем полные услуги Контрактного Производства и Проектирования и Производства для вашего бренда.",
       // Certifications
       certificationsTitle: "Сертификаты и Соответствие",
@@ -240,7 +240,7 @@ export default {
       tags_filters: "Теги и Фильтры",
       all_products: "Все Продукты",
       all_posts: "Все Посты",
-      all_features: "Все Очки",
+      all_features: "Решения",
       view_all_collections: "Посмотреть Все Коллекции",
       products_in_category: "продуктов в этой категории",
       fashion_group: "Очки Мода",

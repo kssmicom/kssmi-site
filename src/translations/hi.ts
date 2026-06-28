@@ -18,7 +18,7 @@ export default {
       home: "मुख पृष्ठ",
       products: "उत्पाद",
       collection: "संग्रह",
-      feature: "चश्मा",
+      feature: "समाधान",
       about: "परिचय",
       contact: "संपर्क",
       blog: "ब्लॉग",
@@ -159,7 +159,7 @@ export default {
       allProducts: "सभी उत्पाद",
       productsInCategory: "इस श्रेणी में उत्पाद",
       // Sidebar CTA
-      needCustomEyewear: "कस्टम आईवियर चाहिए?",
+      needCustomSolutions: "कस्टम आईवियर चाहिए?",
       oemServices: "हम आपके ब्रांड के लिए पूर्ण अनुबंध निर्माण और डिजाइन और निर्माण सेवाएं प्रदान करते हैं।",
       // Certifications
       certificationsTitle: "प्रमाणन और अनुपालन",
@@ -233,7 +233,7 @@ export default {
       tags_filters: "टैग और फिल्टर",
       all_products: "सभी उत्पाद",
       all_posts: "सभी पोस्ट",
-      all_features: "सभी चश्मे",
+      all_features: "समाधान",
       view_all_collections: "सभी कलेक्शन देखें",
       products_in_category: "इस श्रेणी में उत्पाद",
       fashion_group: "फैशन चश्मा",
