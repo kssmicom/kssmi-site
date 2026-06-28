@@ -122,6 +122,18 @@ if ($isAuthenticated && isset($_POST['cleanup_data'])) {
     }
 }
 
+// Handle submission deletion (single or bulk)
+if ($isAuthenticated && isset($_POST['delete_ids']) && isset($_POST['csrf_token']) && hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+    $ids = array_filter(array_map('intval', explode(',', $_POST['delete_ids'])));
+    if ($ids) {
+        $db = vjt_db();
+        $placeholders = implode(',', array_fill(0, count($ids), '?'));
+        $stmt = $db->prepare("DELETE FROM submissions WHERE id IN ($placeholders)");
+        $stmt->execute(array_values($ids));
+        $message = count($ids) . ' submission(s) deleted. Stats will update on next page load.';
+    }
+}
+
 // Handle CSV export
 if ($isAuthenticated && isset($_GET['export_csv'])) {
     vjt_export_submissions_csv_start([
@@ -754,6 +766,7 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                         <div class="panel-body">
                             <form class="filters" method="GET">
                                 <input type="hidden" name="tab" value="submissions">
+                                <input type="hidden" name="csrf_token" id="vjt_csrf" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
                                 <select name="status">
                                     <option value="">All Statuses</option>
                                     <option value="success" <?php echo $subStatus === 'success' ? 'selected' : ''; ?>>Success</option>
@@ -773,6 +786,7 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                 <?php if ($subStatus || $subPlugin || $subDateFrom || $subDateTo): ?>
                                     <a href="?tab=submissions" class="btn btn-secondary btn-small">Clear</a>
                                 <?php endif; ?>
+                                <button type="button" class="btn btn-danger btn-small" onclick="vjtBulkDelete()" style="margin-left:12px;">Delete</button>
                             </form>
 
                             <?php if (empty($submissions)): ?>
@@ -782,18 +796,20 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                     <table>
                                         <thead>
                                             <tr>
+                                                <th style="width:30px;"><input type="checkbox" id="vjtSelectAll" onclick="vjtToggleAll()"></th>
                                                 <th>Time</th>
                                                 <th>Visitor ID</th>
                                                 <th>Form</th>
                                                 <th>Page</th>
                                                 <th>IP / Country</th>
                                                 <th>Status</th>
-                                                <th></th>
+                                                <th>Journey</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php foreach ($submissions as $sub): ?>
                                                 <tr>
+                                                    <td><input type="checkbox" class="vjt-row-cb" value="<?php echo (int)$sub['id']; ?>"></td>
                                                     <td style="white-space:nowrap;font-size:12px;"><?php echo htmlspecialchars($sub['submitted_at']); ?></td>
                                                     <td class="mono"><a href="?tab=journey&visitor_id=<?php echo urlencode($sub['visitor_id']); ?>" class="link"><?php echo htmlspecialchars(str_replace('vjtv_', '', $sub['visitor_id'])); ?></a></td>
                                                     <td><?php echo htmlspecialchars($sub['form_plugin'] . ': ' . ($sub['form_name'] ?: $sub['form_id'])); ?></td>
@@ -805,7 +821,10 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                                         <?php endif; ?>
                                                     </td>
                                                     <td><span class="status status-<?php echo $sub['display_status']; ?>"><?php echo ucfirst($sub['display_status']); ?></span></td>
-                                                    <td><a href="?tab=journey&visitor_id=<?php echo urlencode($sub['visitor_id']); ?>" class="btn btn-primary btn-small">Journey</a></td>
+                                                    <td style="white-space:nowrap;">
+                                                        <a href="?tab=journey&visitor_id=<?php echo urlencode($sub['visitor_id']); ?>" class="btn btn-primary btn-small">Check</a>
+                                                        <button type="button" class="btn btn-danger btn-small" onclick="vjtDeleteOne(<?php echo (int)$sub['id']; ?>)" title="Delete this submission">Del</button>
+                                                    </td>
                                                 </tr>
                                             <?php endforeach; ?>
                                         </tbody>
@@ -1300,5 +1319,38 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                 <?php endif; ?>
         <?php endif; ?>
     </div>
+<script>
+function vjtToggleAll() {
+  var master = document.getElementById('vjtSelectAll');
+  var cbs = document.querySelectorAll('.vjt-row-cb');
+  for (var i = 0; i < cbs.length; i++) cbs[i].checked = master.checked;
+}
+function vjtGetSelected() {
+  var cbs = document.querySelectorAll('.vjt-row-cb:checked');
+  var ids = [];
+  for (var i = 0; i < cbs.length; i++) ids.push(cbs[i].value);
+  return ids;
+}
+function vjtBulkDelete() {
+  var ids = vjtGetSelected();
+  if (!ids.length) { alert('No rows selected.'); return; }
+  if (!confirm('Delete ' + ids.length + ' submission(s)? This cannot be undone.')) return;
+  var form = document.createElement('form');
+  form.method = 'POST';
+  form.innerHTML = '<input name="delete_ids" value="' + ids.join(',') + '">';
+  form.innerHTML += '<input name="csrf_token" value="' + (document.getElementById('vjt_csrf')||{}).value + '">';
+  document.body.appendChild(form);
+  form.submit();
+}
+function vjtDeleteOne(id) {
+  if (!confirm('Delete this submission? This cannot be undone.')) return;
+  var form = document.createElement('form');
+  form.method = 'POST';
+  form.innerHTML = '<input name="delete_ids" value="' + id + '">';
+  form.innerHTML += '<input name="csrf_token" value="' + (document.getElementById('vjt_csrf')||{}).value + '">';
+  document.body.appendChild(form);
+  form.submit();
+}
+</script>
 </body>
 </html>
