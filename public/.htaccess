@@ -40,8 +40,18 @@ RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 
-# ─── 404 handler — ErrorDocument preserves original URL for language detection ─
+# ─── 404 handler — language-aware routing (backup for vhost.conf) ─────────
 ErrorDocument 404 /404.html
+
+# Language prefix 404 routing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} ^/(it|es|fr|de|pt|ru|ja|tr|ar|ko|zh|hi|vi|jv|ms|tg)(/.*)?$
+RewriteRule ^([a-z]{2})(/.*)?$ /$1/404.html [R=404,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /404.html [R=404,L]
 
 # ─── Security headers (bare — no IfModule wrappers for OLS compatibility) ───
 Header always set X-Content-Type-Options "nosniff"
