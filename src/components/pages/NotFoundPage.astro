@@ -21,7 +21,7 @@ const { lang } = Astro.props;
 const isDev = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.0.0.1';
 const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 const isRTL = lang === 'ar';
-const currentPath = `${lang}/`;
+const currentPath = lang === 'en' ? '' : lang + '/';
 
 const i18n: Record<string, any> = {
   en: {
