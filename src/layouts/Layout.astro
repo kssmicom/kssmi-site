@@ -124,6 +124,20 @@ const websiteSchema = {
   <link rel="manifest" href="/manifest.json" />
 
   <!-- Google Tag Manager (loads on user interaction — never blocks critical path) -->
+  <!-- Google Consent Mode v2 — default: denied (no ads yet). When Google Ads enabled, update via cookie banner. -->
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'denied',
+      'personalization_storage': 'denied',
+      'security_storage': 'granted',
+    });
+  </script>
   <script>
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({'gtm.start': new Date().getTime(), event:'gtm.js'});
