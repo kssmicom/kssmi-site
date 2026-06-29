@@ -179,9 +179,11 @@ const qt = {
   betterMarginsDesc: (quoteText.betterMarginsDesc as any)[currentLang] || 'Optimized cost structures with uncompromising high-end Shenzhen manufacturing quality.',
 };
 
+// English has no /en prefix (default locale, prefixDefaultLocale: false)
+const langPrefix = lang === 'en' ? '' : `/${lang}`;
 const breadcrumbItems = [
-  { label: t.nav.home, href: `/${lang}` },
-  { label: qt.title, href: `/${lang}/quote` },
+  { label: t.nav.home, href: `${langPrefix}/` },
+  { label: qt.title, href: `${langPrefix}/quote` },
 ];
 ---
 

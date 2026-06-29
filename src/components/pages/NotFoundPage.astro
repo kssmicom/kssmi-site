@@ -763,8 +763,8 @@ const t = i18n[lang] || i18n.en;
             </div>
           </div>
 
-          <!-- Back to Home -->
-          <a href={`/${lang}`}
+          <!-- Back to Home (English has no /en prefix → "/") -->
+          <a href={`/${currentPath}`}
             class="inline-flex items-center gap-2 text-sm font-medium text-[#5D4E37] hover:text-[#5D4E37] transition-colors">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -964,7 +964,7 @@ const t = i18n[lang] || i18n.en;
         var result = await response.json();
 
         if (result.success) {
-          window.location.href = '/' + lang + '/thank-you/';
+          window.location.href = (lang === 'en' ? '/thank-you/' : '/' + lang + '/thank-you/');
         } else {
           els2.errorMessage.textContent = result.message || generalError;
           els2.errorContainer.classList.remove('hidden');

@@ -23,6 +23,16 @@ RewriteRule ^api/vjt_data(/.*)?$ - [F,L]
 RewriteRule ^send-mail\.php$ - [L]
 RewriteRule ^email-logs\.php$ - [L]
 
+# ─── /en has no homepage — force branded 404 ──────────────────────────────
+# English is the default locale (prefixDefaultLocale: false), so it lives at the
+# site root and there is NO /en/index.html. The /en/ directory only exists to
+# hold generated files (/en/sitemap.xml, /en/llms.txt, …). A bare request to
+# /en or /en/ would otherwise match the directory pass-through below (-d) and
+# return an empty/403 listing instead of the 404 page. Route it to the PHP
+# router explicitly. Real sub-files like /en/sitemap.xml still pass through via
+# the static-asset rule (they are matched by -f). MUST stay above the -d rule.
+RewriteRule ^en/?$ /404-router.php [L]
+
 # ─── Static assets (pass through as-is) ────────────────────────────────────
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
