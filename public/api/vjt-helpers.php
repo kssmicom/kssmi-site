@@ -1149,6 +1149,7 @@ function vjt_get_visitors_list($filters) {
     $submissionsMin = $filters['submissions_min'] ?? '';
     $submissionsMax = $filters['submissions_max'] ?? '';
     $sessionTimeMin = $filters['session_time_min'] ?? '';
+    $countryExact   = strtoupper(trim($filters['country'] ?? '')); // exact alpha-2 match (Countries tab drill-down)
     $dateFrom       = $filters['date_from'] ?? '';
     $dateTo         = $filters['date_to'] ?? '';
 
@@ -1166,6 +1167,7 @@ function vjt_get_visitors_list($filters) {
     $filtered = [];
     foreach ($visitorRows as $v) {
         $vid = $v['visitor_id'];
+        if ($countryExact !== '' && strtoupper($v['country'] ?? '') !== $countryExact) continue;
         if ($search) {
             $matchIp = stripos($v['first_ip'] ?? '', $search) !== false;
             $matchBrowser = stripos($v['browser'] ?? '', $search) !== false;

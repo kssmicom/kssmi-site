@@ -228,6 +228,7 @@ $visSessionsMax  = $_GET['sessions_max'] ?? '';
 $visSubmissionsMin = $_GET['submissions_min'] ?? '';
 $visSubmissionsMax = $_GET['submissions_max'] ?? '';
 $visSessionTimeMin = $_GET['session_time_min'] ?? '';
+$visCountry   = $_GET['country'] ?? '';
 $visSortBy    = $_GET['sort'] ?? 'last_seen_at';
 $visSortOrder = $_GET['order'] ?? 'desc';
 $visTotal     = 0;
@@ -242,6 +243,7 @@ if ($tab === 'visitors') {
         'submissions_min' => $visSubmissionsMin,
         'submissions_max' => $visSubmissionsMax,
         'session_time_min' => $visSessionTimeMin,
+        'country' => $visCountry,
         'date_from' => $_GET['date_from'] ?? '',
         'date_to' => $_GET['date_to'] ?? '',
         'sort_by' => $visSortBy,
@@ -924,6 +926,9 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                         <div class="panel-body">
                             <form class="filters" method="GET">
                                 <input type="hidden" name="tab" value="visitors">
+                                <?php if ($visCountry !== ''): ?>
+                                    <input type="hidden" name="country" value="<?php echo htmlspecialchars($visCountry); ?>">
+                                <?php endif; ?>
                                 <input type="text" name="search" value="<?php echo htmlspecialchars($visSearch); ?>" placeholder="Search ID, IP, country, browser..." style="width:250px;">
                                 <button type="submit" class="btn btn-primary btn-small">Search</button>
                                 <select name="device">
@@ -966,7 +971,13 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                     <option value="1800" <?php echo $visSessionTimeMin === '1800' ? 'selected' : ''; ?>>30m+</option>
                                 </select>
                                 <button type="submit" class="btn btn-primary btn-small">Filter</button>
-                                <?php if ($visSearch || $visDevice || $visSource || $visSessionsMin !== '' || $visSessionsMax !== '' || $visSubmissionsMin !== '' || $visSubmissionsMax !== '' || $visSessionTimeMin !== ''): ?>
+                                <?php if ($visCountry !== ''): ?>
+                                    <span class="country-badge" style="font-size:12px;display:inline-flex;align-items:center;gap:6px;">
+                                        Country: <strong><?php echo htmlspecialchars(getCountryName($visCountry)); ?></strong>
+                                        <a href="?tab=visitors" title="Remove country filter" style="color:#e74c3c;text-decoration:none;font-weight:700;">✕</a>
+                                    </span>
+                                <?php endif; ?>
+                                <?php if ($visSearch || $visDevice || $visSource || $visCountry !== '' || $visSessionsMin !== '' || $visSessionsMax !== '' || $visSubmissionsMin !== '' || $visSubmissionsMax !== '' || $visSessionTimeMin !== ''): ?>
                                     <a href="?tab=visitors" class="btn btn-secondary btn-small">Clear</a>
                                 <?php endif; ?>
                             </form>
@@ -1023,6 +1034,7 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                             if ($visSubmissionsMin !== '') $pageUrl .= '&submissions_min=' . urlencode($visSubmissionsMin);
                                             if ($visSubmissionsMax !== '') $pageUrl .= '&submissions_max=' . urlencode($visSubmissionsMax);
                                             if ($visSessionTimeMin !== '') $pageUrl .= '&session_time_min=' . urlencode($visSessionTimeMin);
+                                            if ($visCountry !== '') $pageUrl .= '&country=' . urlencode($visCountry);
                                             $pageUrl .= '&sort=' . urlencode($visSortBy) . '&order=' . urlencode($visSortOrder);
                                         ?>
                                             <?php if ($i === $visPage): ?>
@@ -1173,7 +1185,7 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                                 <tr>
                                                     <td style="color:#999;font-size:12px;"><?php echo $rank++; ?></td>
                                                     <td>
-                                                        <span class="country-badge" style="font-size:13px;"><?php echo htmlspecialchars(getCountryName($c['code'])); ?></span>
+                                                        <a href="?tab=visitors&country=<?php echo urlencode($c['code']); ?>" class="country-badge" style="font-size:13px;text-decoration:none;color:#5D4E37;cursor:pointer;" title="View all visitors from this country"><?php echo htmlspecialchars(getCountryName($c['code'])); ?></a>
                                                     </td>
                                                     <td style="text-align:center;font-weight:600;"><?php echo number_format($c['visitors']); ?></td>
                                                     <td style="text-align:center;"><?php echo number_format($c['sessions']); ?></td>
