@@ -8,7 +8,6 @@
 
   // === i18n ===
   var I18N = {
-{
   en: {
     title: 'Cookie Consent',
     message: 'We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.',
@@ -146,11 +145,15 @@
     adsLabel: 'Маркетинг', adsDesc: 'Барои пешниҳоди таблиғоти мувофиқ ва пайгирии самаранокии маъракаҳо истифода мешавад.',
     cancel: 'Бекор Кардан',
   },
-}
   };
 
   function getLang() {
-    return document.documentElement.lang || 'en';
+    // Normalise <html lang> (e.g. 'EN', 'zh-CN') to a supported i18n key so each
+    // language reliably gets its own banner text; fall back to base code, then 'en'.
+    var l = (document.documentElement.lang || 'en').toLowerCase();
+    if (I18N[l]) return l;
+    l = l.split('-')[0];
+    return I18N[l] ? l : 'en';
   }
 
   function t() {
@@ -178,6 +181,11 @@
   }
   function vjtConsentUpdate(analytics) {
     if (window.VJTTracker) { window.VJTTracker.enabled = !!analytics; }
+    // When consent is granted, start tracking the current page right away
+    // (the tracker skips init while disabled, so it needs a kick on opt-in).
+    if (analytics && typeof window.VJT_init === 'function') {
+      try { window.VJT_init(); } catch (e) {}
+    }
   }
 
   // Build DOM

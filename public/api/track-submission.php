@@ -36,6 +36,11 @@ require_once __DIR__ . '/vjt-helpers.php';
 vjt_data_init();
 
 $body = file_get_contents('php://input');
+if (strlen($body) > 65536) { // 64KB hard cap — real payloads are a few KB
+    http_response_code(413);
+    echo json_encode(['success' => false, 'error' => 'Payload too large']);
+    exit;
+}
 $data = json_decode($body, true);
 if (!is_array($data)) {
     http_response_code(400);
@@ -43,8 +48,11 @@ if (!is_array($data)) {
     exit;
 }
 
-$visitorId = trim($data['visitor_id'] ?? '');
-$sessionId = trim($data['session_id'] ?? '');
+// Clip free-text fields to guard against storage bloat / abuse
+foreach (vjt_field_caps() as $k => $max) { if (isset($data[$k])) $data[$k] = vjt_clip($data[$k], $max); }
+
+$visitorId = vjt_clip(trim($data['visitor_id'] ?? ''), 64);
+$sessionId = vjt_clip(trim($data['session_id'] ?? ''), 64);
 if (empty($visitorId) || empty($sessionId)) {
     http_response_code(400);
     echo json_encode(['success' => false, 'error' => 'Missing visitor_id or session_id']);
@@ -52,7 +60,7 @@ if (empty($visitorId) || empty($sessionId)) {
 }
 
 $ip      = vjt_get_client_ip();
-$ua      = $_SERVER['HTTP_USER_AGENT'] ?? '';
+$ua      = vjt_clip($_SERVER['HTTP_USER_AGENT'] ?? '', 512);
 
 // Bot filtering: skip storage for crawlers/scripts/empty UA (return 200 so they don't retry)
 if (vjt_is_bot($ua)) {

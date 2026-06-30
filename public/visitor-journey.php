@@ -229,6 +229,7 @@ $visSubmissionsMin = $_GET['submissions_min'] ?? '';
 $visSubmissionsMax = $_GET['submissions_max'] ?? '';
 $visSessionTimeMin = $_GET['session_time_min'] ?? '';
 $visCountry   = $_GET['country'] ?? '';
+$visProduct   = $_GET['product'] ?? '';
 $visSortBy    = $_GET['sort'] ?? 'last_seen_at';
 $visSortOrder = $_GET['order'] ?? 'desc';
 $visTotal     = 0;
@@ -244,6 +245,7 @@ if ($tab === 'visitors') {
         'submissions_max' => $visSubmissionsMax,
         'session_time_min' => $visSessionTimeMin,
         'country' => $visCountry,
+        'product_sku' => $visProduct,
         'date_from' => $_GET['date_from'] ?? '',
         'date_to' => $_GET['date_to'] ?? '',
         'sort_by' => $visSortBy,
@@ -334,6 +336,52 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
     $params['vp'] = 1; // reset to page 1 on re-sort
     $url = '?' . http_build_query($params);
     return '<a href="' . htmlspecialchars($url) . '" style="color:#5D4E37;text-decoration:none;">' . htmlspecialchars($label) . $arrow . '</a>';
+}
+
+// Windowed pagination with first/prev/next/last + a go-to-page box.
+// Replaces the old min($totalPages, 20) cap so all pages stay reachable.
+// $baseParams = query params to preserve (tab, filters, sort…), minus the page param.
+function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
+    if ($totalPages <= 1) return '';
+    $currentPage = max(1, min((int)$currentPage, $totalPages));
+    $mk = function ($p) use ($pageParam, $baseParams) {
+        $params = $baseParams;
+        $params[$pageParam] = $p;
+        return '?' . htmlspecialchars(http_build_query($params));
+    };
+    $html = '<div class="pagination">';
+    if ($currentPage > 1) {
+        $html .= '<a href="' . $mk(1) . '">« First</a>';
+        $html .= '<a href="' . $mk($currentPage - 1) . '">‹ Prev</a>';
+    }
+    $window = 3;
+    $start = max(1, $currentPage - $window);
+    $end   = min($totalPages, $currentPage + $window);
+    if ($start > 1) $html .= '<span>…</span>';
+    for ($i = $start; $i <= $end; $i++) {
+        $html .= ($i === $currentPage)
+            ? '<span class="current">' . $i . '</span>'
+            : '<a href="' . $mk($i) . '">' . $i . '</a>';
+    }
+    if ($end < $totalPages) $html .= '<span>…</span>';
+    if ($currentPage < $totalPages) {
+        $html .= '<a href="' . $mk($currentPage + 1) . '">Next ›</a>';
+        $html .= '<a href="' . $mk($totalPages) . '">Last »</a>';
+    }
+    // Go-to-page form (GET; hidden inputs keep current filters/sort)
+    $hidden = '';
+    foreach ($baseParams as $k => $v) {
+        $hidden .= '<input type="hidden" name="' . htmlspecialchars($k) . '" value="' . htmlspecialchars($v) . '">';
+    }
+    $html .= '<form method="GET" style="display:inline-flex;gap:4px;align-items:center;margin-left:8px;">'
+        . $hidden
+        . '<input type="number" name="' . htmlspecialchars($pageParam) . '" min="1" max="' . $totalPages . '" value="' . $currentPage . '" '
+        . 'style="width:64px;padding:5px 8px;border:1px solid #ddd;border-radius:4px;font-size:13px;" title="Go to page" aria-label="Go to page"> '
+        . '<span style="color:#888;font-size:12px;">/ ' . number_format($totalPages) . '</span> '
+        . '<button type="submit" class="btn btn-primary btn-small">Go</button>'
+        . '</form>';
+    $html .= '</div>';
+    return $html;
 }
 ?>
 <!DOCTYPE html>
@@ -719,7 +767,7 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                         <div class="panel-header">
                             Submissions (<?php echo number_format($subTotal); ?>)
                             <div>
-                                <a href="?tab=submissions&export_csv=1<?php echo $subStatus ? '&status=' . urlencode($subStatus) : ''; ?><?php echo $subPlugin ? '&plugin=' . urlencode($subPlugin) : ''; ?>" class="btn btn-success btn-small">Export CSV</a>
+                                <a href="?tab=submissions&export_csv=1<?php echo $subStatus ? '&status=' . urlencode($subStatus) : ''; ?><?php echo $subPlugin ? '&plugin=' . urlencode($subPlugin) : ''; ?><?php echo $subDateFrom ? '&date_from=' . urlencode($subDateFrom) : ''; ?><?php echo $subDateTo ? '&date_to=' . urlencode($subDateTo) : ''; ?>" class="btn btn-success btn-small">Export CSV (filtered)</a>
                             </div>
                         </div>
                         <div class="panel-body">
@@ -790,23 +838,14 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                     </table>
                                 </div>
 
-                                <?php if ($subTotalPages > 1): ?>
-                                    <div class="pagination">
-                                        <?php for ($i = 1; $i <= min($subTotalPages, 20); $i++):
-                                            $pageUrl = "?tab=submissions&sp={$i}";
-                                            if ($subStatus) $pageUrl .= '&status=' . urlencode($subStatus);
-                                            if ($subPlugin) $pageUrl .= '&plugin=' . urlencode($subPlugin);
-                                            if ($subDateFrom) $pageUrl .= '&date_from=' . urlencode($subDateFrom);
-                                            if ($subDateTo) $pageUrl .= '&date_to=' . urlencode($subDateTo);
-                                        ?>
-                                            <?php if ($i === $subPage): ?>
-                                                <span class="current"><?php echo $i; ?></span>
-                                            <?php else: ?>
-                                                <a href="<?php echo $pageUrl; ?>"><?php echo $i; ?></a>
-                                            <?php endif; ?>
-                                        <?php endfor; ?>
-                                    </div>
-                                <?php endif; ?>
+                                <?php
+                                    $subBase = ['tab' => 'submissions'];
+                                    if ($subStatus)   $subBase['status'] = $subStatus;
+                                    if ($subPlugin)   $subBase['plugin'] = $subPlugin;
+                                    if ($subDateFrom) $subBase['date_from'] = $subDateFrom;
+                                    if ($subDateTo)   $subBase['date_to'] = $subDateTo;
+                                    echo vjtPagination('sp', $subPage, $subTotalPages, $subBase);
+                                ?>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -929,6 +968,9 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                 <?php if ($visCountry !== ''): ?>
                                     <input type="hidden" name="country" value="<?php echo htmlspecialchars($visCountry); ?>">
                                 <?php endif; ?>
+                                <?php if ($visProduct !== ''): ?>
+                                    <input type="hidden" name="product" value="<?php echo htmlspecialchars($visProduct); ?>">
+                                <?php endif; ?>
                                 <input type="text" name="search" value="<?php echo htmlspecialchars($visSearch); ?>" placeholder="Search ID, IP, country, browser..." style="width:250px;">
                                 <button type="submit" class="btn btn-primary btn-small">Search</button>
                                 <select name="device">
@@ -977,7 +1019,13 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                         <a href="?tab=visitors" title="Remove country filter" style="color:#e74c3c;text-decoration:none;font-weight:700;">✕</a>
                                     </span>
                                 <?php endif; ?>
-                                <?php if ($visSearch || $visDevice || $visSource || $visCountry !== '' || $visSessionsMin !== '' || $visSessionsMax !== '' || $visSubmissionsMin !== '' || $visSubmissionsMax !== '' || $visSessionTimeMin !== ''): ?>
+                                <?php if ($visProduct !== ''): ?>
+                                    <span class="country-badge" style="font-size:12px;display:inline-flex;align-items:center;gap:6px;">
+                                        Product: <strong><?php echo htmlspecialchars(strtoupper($visProduct)); ?></strong>
+                                        <a href="?tab=visitors" title="Remove product filter" style="color:#e74c3c;text-decoration:none;font-weight:700;">✕</a>
+                                    </span>
+                                <?php endif; ?>
+                                <?php if ($visSearch || $visDevice || $visSource || $visCountry !== '' || $visProduct !== '' || $visSessionsMin !== '' || $visSessionsMax !== '' || $visSubmissionsMin !== '' || $visSubmissionsMax !== '' || $visSessionTimeMin !== ''): ?>
                                     <a href="?tab=visitors" class="btn btn-secondary btn-small">Clear</a>
                                 <?php endif; ?>
                             </form>
@@ -1022,29 +1070,22 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                     </table>
                                 </div>
 
-                                <?php if ($visTotalPages > 1): ?>
-                                    <div class="pagination">
-                                        <?php for ($i = 1; $i <= min($visTotalPages, 20); $i++):
-                                            $pageUrl = "?tab=visitors&vp={$i}";
-                                            if ($visSearch) $pageUrl .= '&search=' . urlencode($visSearch);
-                                            if ($visDevice) $pageUrl .= '&device=' . urlencode($visDevice);
-                                            if ($visSource) $pageUrl .= '&source=' . urlencode($visSource);
-                                            if ($visSessionsMin !== '') $pageUrl .= '&sessions_min=' . urlencode($visSessionsMin);
-                                            if ($visSessionsMax !== '') $pageUrl .= '&sessions_max=' . urlencode($visSessionsMax);
-                                            if ($visSubmissionsMin !== '') $pageUrl .= '&submissions_min=' . urlencode($visSubmissionsMin);
-                                            if ($visSubmissionsMax !== '') $pageUrl .= '&submissions_max=' . urlencode($visSubmissionsMax);
-                                            if ($visSessionTimeMin !== '') $pageUrl .= '&session_time_min=' . urlencode($visSessionTimeMin);
-                                            if ($visCountry !== '') $pageUrl .= '&country=' . urlencode($visCountry);
-                                            $pageUrl .= '&sort=' . urlencode($visSortBy) . '&order=' . urlencode($visSortOrder);
-                                        ?>
-                                            <?php if ($i === $visPage): ?>
-                                                <span class="current"><?php echo $i; ?></span>
-                                            <?php else: ?>
-                                                <a href="<?php echo $pageUrl; ?>"><?php echo $i; ?></a>
-                                            <?php endif; ?>
-                                        <?php endfor; ?>
-                                    </div>
-                                <?php endif; ?>
+                                <?php
+                                    $visBase = ['tab' => 'visitors'];
+                                    if ($visSearch !== '')        $visBase['search'] = $visSearch;
+                                    if ($visDevice !== '')        $visBase['device'] = $visDevice;
+                                    if ($visSource !== '')        $visBase['source'] = $visSource;
+                                    if ($visSessionsMin !== '')   $visBase['sessions_min'] = $visSessionsMin;
+                                    if ($visSessionsMax !== '')   $visBase['sessions_max'] = $visSessionsMax;
+                                    if ($visSubmissionsMin !== '') $visBase['submissions_min'] = $visSubmissionsMin;
+                                    if ($visSubmissionsMax !== '') $visBase['submissions_max'] = $visSubmissionsMax;
+                                    if ($visSessionTimeMin !== '') $visBase['session_time_min'] = $visSessionTimeMin;
+                                    if ($visCountry !== '')       $visBase['country'] = $visCountry;
+                                    if ($visProduct !== '')       $visBase['product'] = $visProduct;
+                                    $visBase['sort'] = $visSortBy;
+                                    $visBase['order'] = $visSortOrder;
+                                    echo vjtPagination('vp', $visPage, $visTotalPages, $visBase);
+                                ?>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -1235,7 +1276,13 @@ function sortLink($column, $label, $currentSort, $currentOrder) {
                                                     <td class="mono" style="font-weight:600;"><?php echo htmlspecialchars($p['sku']); ?></td>
                                                     <td class="url-cell"><a href="<?php echo htmlspecialchars($p['url']); ?>" target="_blank" style="font-size:12px;"><?php echo htmlspecialchars($p['url']); ?></a></td>
                                                     <td style="text-align:center;font-weight:600;"><?php echo number_format($p['views']); ?></td>
-                                                    <td style="text-align:center;"><?php echo number_format($p['visitors']); ?></td>
+                                                    <td style="text-align:center;">
+                                                        <?php if ($p['visitors'] > 0): ?>
+                                                            <a href="?tab=visitors&product=<?php echo urlencode($p['sku']); ?>" class="link" style="font-weight:600;" title="View visitors who viewed this product"><?php echo number_format($p['visitors']); ?></a>
+                                                        <?php else: ?>
+                                                            <?php echo number_format($p['visitors']); ?>
+                                                        <?php endif; ?>
+                                                    </td>
                                                 </tr>
                                             <?php endforeach; ?>
                                         </tbody>

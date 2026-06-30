@@ -247,15 +247,18 @@
   }
 
   function patchForms(visitorId, session) {
+    var forms = document.querySelectorAll('form');
+    if (!forms.length) return; // nothing to patch — skip the localStorage/JSON work
     var pageview = readJson(PAGE_KEY);
     var snapshot = JSON.stringify(buildPathSnapshot(pageview));
     var attrReferrer = session.originalReferrer || session.referrer || '';
-    document.querySelectorAll('form').forEach(function (form) {
+    var pageUrl = cleanUrl(cfg.page.url); // hoisted: same for every form
+    forms.forEach(function (form) {
       // Skip GET forms — hidden fields would pollute the URL
       if ((form.method || '').toUpperCase() === 'GET') return;
       ensureHidden(form, hiddenNames[0], visitorId);
       ensureHidden(form, hiddenNames[1], session.id);
-      ensureHidden(form, hiddenNames[2], cleanUrl(cfg.page.url));
+      ensureHidden(form, hiddenNames[2], pageUrl);
       ensureHidden(form, hiddenNames[3], cfg.page.title);
       ensureHidden(form, hiddenNames[4], attrReferrer);
       ensureHidden(form, hiddenNames[5], session.landingUrl   || '');
@@ -578,22 +581,40 @@
       bindSubmissionAttempts(visitorId);
       bindOutboundLinks(visitorId);
 
-      // Debounced form patching on DOM mutations (B3 fix)
+      // Debounced form patching on DOM mutations (B3 fix).
+      // Perf: bail out cheaply unless a <form> was actually added, so image
+      // carousels / lazy-load / animations don't churn timers on every mutation
+      // (this is the main cause of phones running hot).
       var formsTimer = null;
-      new MutationObserver(function () {
+      var mutationAddedForm = function (mutations) {
+        for (var i = 0; i < mutations.length; i++) {
+          var added = mutations[i].addedNodes;
+          for (var j = 0; j < added.length; j++) {
+            var n = added[j];
+            if (n.nodeType !== 1) continue; // elements only
+            if (n.tagName === 'FORM' || (n.querySelector && n.querySelector('form'))) return true;
+          }
+        }
+        return false;
+      };
+      new MutationObserver(function (mutations) {
+        if (!mutationAddedForm(mutations)) return;
         clearTimeout(formsTimer);
         formsTimer = setTimeout(function () {
           patchForms(visitorId, getSession());
         }, 500);
       }).observe(document.documentElement, { childList: true, subtree: true });
 
-      // Scroll depth tracking (B1 fix — bound once, not on every SPA nav)
+      // Scroll depth tracking (B1 fix — bound once, not on every SPA nav).
+      // Perf: throttle (skip while a tick is pending) instead of re-creating a
+      // timer on every scroll event — far fewer wakeups while scrolling.
       window.addEventListener('scroll', function () {
-        clearTimeout(scrollTimer);
+        if (scrollTimer) return;
         scrollTimer = setTimeout(function () {
+          scrollTimer = null;
           var d = calcScrollDepth();
           if (d > maxScrollDepth) maxScrollDepth = d;
-        }, 200);
+        }, 300);
       }, { passive: true });
 
       window.addEventListener('pagehide', function () { flushPageview('pagehide'); });

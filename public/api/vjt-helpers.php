@@ -118,6 +118,27 @@ function vjt_country_alpha3($code) {
     return isset($map[$code]) ? $map[$code][0] : $code;
 }
 
+// Clip overly long strings before storage (anti-bloat / abuse guard on ingest).
+function vjt_clip($v, $max) {
+    if (!is_string($v)) return $v;
+    if (function_exists('mb_substr')) {
+        return mb_strlen($v) > $max ? mb_substr($v, 0, $max) : $v;
+    }
+    return strlen($v) > $max ? substr($v, 0, $max) : $v;
+}
+
+// Per-field length caps applied to ingest payloads (track-pageview / track-submission).
+function vjt_field_caps() {
+    return [
+        'url' => 2048, 'title' => 512, 'referrer' => 2048,
+        'landing_url' => 2048, 'landing_title' => 512,
+        'utm_source' => 256, 'utm_medium' => 256, 'utm_campaign' => 256, 'utm_content' => 256, 'utm_term' => 256,
+        'screen_resolution' => 32, 'timezone' => 64, 'language' => 64, 'site_language' => 8,
+        'form_plugin' => 64, 'form_id' => 256, 'form_name' => 256,
+        'submit_page' => 2048, 'submit_title' => 512, 'contact_url' => 2048,
+    ];
+}
+
 // ── Database connection ──────────────────────────────────────────────────────
 
 function vjt_db() {
@@ -1127,8 +1148,10 @@ function vjt_get_visitors_list($filters) {
     $visitorSource = [];
     $visitorSessionTime = [];
 
-    $rows = $db->query("SELECT visitor_id, referrer, utm_medium, started_at, last_seen_at FROM sessions")->fetchAll();
-    foreach ($rows as $s) {
+    // Stream rows (fetch one at a time) instead of fetchAll() so we never hold
+    // the whole sessions table in memory alongside the aggregate maps.
+    $sessStmt = $db->query("SELECT visitor_id, referrer, utm_medium, started_at, last_seen_at FROM sessions");
+    while ($s = $sessStmt->fetch()) {
         $vid = $s['visitor_id'];
         $visitorSessions[$vid] = ($visitorSessions[$vid] ?? 0) + 1;
         if (!isset($visitorSource[$vid])) $visitorSource[$vid] = vjt_classify_source($s);
@@ -1138,8 +1161,8 @@ function vjt_get_visitors_list($filters) {
             $visitorSessionTime[$vid] = ($visitorSessionTime[$vid] ?? 0) + ($ls - $st);
         }
     }
-    $rows = $db->query("SELECT visitor_id, COUNT(*) c FROM submissions GROUP BY visitor_id")->fetchAll();
-    foreach ($rows as $r) { $visitorSubmissions[$r['visitor_id']] = (int)$r['c']; }
+    $subStmt = $db->query("SELECT visitor_id, COUNT(*) c FROM submissions GROUP BY visitor_id");
+    while ($r = $subStmt->fetch()) { $visitorSubmissions[$r['visitor_id']] = (int)$r['c']; }
 
     $search         = trim($filters['search'] ?? '');
     $device         = $filters['device'] ?? '';
@@ -1150,8 +1173,22 @@ function vjt_get_visitors_list($filters) {
     $submissionsMax = $filters['submissions_max'] ?? '';
     $sessionTimeMin = $filters['session_time_min'] ?? '';
     $countryExact   = strtoupper(trim($filters['country'] ?? '')); // exact alpha-2 match (Countries tab drill-down)
+    $productSku     = strtoupper(trim($filters['product_sku'] ?? '')); // visitors who viewed this product (Products tab drill-down)
     $dateFrom       = $filters['date_from'] ?? '';
     $dateTo         = $filters['date_to'] ?? '';
+
+    // Build the set of visitors who viewed the given product SKU (same regex as vjt_get_products).
+    // Only runs when the product drill-down is active, so the common path pays nothing.
+    $productVisitorSet = null;
+    if ($productSku !== '') {
+        $productVisitorSet = [];
+        $pvStmt = $db->query("SELECT DISTINCT visitor_id, url FROM pageviews WHERE url <> '' AND url LIKE '%/product/%'");
+        while ($pv = $pvStmt->fetch()) {
+            if (preg_match('#/product/(k[\w-]+)/?#i', $pv['url'], $m) && strtoupper($m[1]) === $productSku) {
+                $productVisitorSet[$pv['visitor_id']] = true;
+            }
+        }
+    }
 
     // Narrow visitors at the DB level where we can
     $where = [];
@@ -1162,12 +1199,14 @@ function vjt_get_visitors_list($filters) {
     $whereSql = $where ? ('WHERE ' . implode(' AND ', $where)) : '';
     $stmt = $db->prepare("SELECT * FROM visitors $whereSql");
     $stmt->execute($params);
-    $visitorRows = $stmt->fetchAll();
 
+    // Stream visitor rows so the full table is never materialised at once;
+    // only the post-filter $filtered list is kept.
     $filtered = [];
-    foreach ($visitorRows as $v) {
+    while ($v = $stmt->fetch()) {
         $vid = $v['visitor_id'];
         if ($countryExact !== '' && strtoupper($v['country'] ?? '') !== $countryExact) continue;
+        if ($productVisitorSet !== null && !isset($productVisitorSet[$vid])) continue;
         if ($search) {
             $matchIp = stripos($v['first_ip'] ?? '', $search) !== false;
             $matchBrowser = stripos($v['browser'] ?? '', $search) !== false;
@@ -1384,16 +1423,19 @@ function vjt_get_countries() {
         $countries[$cc] = ['code' => $cc, 'visitors' => (int)$r['c'], 'sessions' => 0, 'submissions' => 0];
     }
 
-    // visitor → country map
+    // visitor → country map (stream rows to keep peak memory low)
     $visitorCountry = [];
-    foreach ($db->query("SELECT visitor_id, country FROM visitors")->fetchAll() as $v) {
+    $vcStmt = $db->query("SELECT visitor_id, country FROM visitors");
+    while ($v = $vcStmt->fetch()) {
         $visitorCountry[$v['visitor_id']] = !empty($v['country']) ? strtoupper($v['country']) : 'UNKNOWN';
     }
-    foreach ($db->query("SELECT visitor_id FROM sessions")->fetchAll() as $s) {
+    $csStmt = $db->query("SELECT visitor_id FROM sessions");
+    while ($s = $csStmt->fetch()) {
         $cc = $visitorCountry[$s['visitor_id']] ?? 'UNKNOWN';
         if (isset($countries[$cc])) $countries[$cc]['sessions']++;
     }
-    foreach ($db->query("SELECT visitor_id FROM submissions")->fetchAll() as $sub) {
+    $cbStmt = $db->query("SELECT visitor_id FROM submissions");
+    while ($sub = $cbStmt->fetch()) {
         $cc = $visitorCountry[$sub['visitor_id']] ?? 'UNKNOWN';
         if (isset($countries[$cc])) $countries[$cc]['submissions']++;
     }
@@ -1415,8 +1457,9 @@ function vjt_get_products($dateFrom = '', $dateTo = '') {
     $stmt = $db->prepare("SELECT url, visitor_id FROM pageviews $whereSql");
     $stmt->execute($params);
 
+    // Stream pageviews — this can be the largest table; never materialise it all.
     $products = [];
-    foreach ($stmt->fetchAll() as $pv) {
+    while ($pv = $stmt->fetch()) {
         $url = $pv['url'] ?? '';
         if (!preg_match('#/product/(k[\w-]+)/?#i', $url, $m)) continue;
         $sku = strtoupper($m[1]);

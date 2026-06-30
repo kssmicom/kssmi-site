@@ -126,17 +126,21 @@ const websiteSchema = {
   <!-- Google Tag Manager (loads on user interaction — never blocks critical path) -->
   <!-- Google Consent Mode v2 — default: denied (no ads yet). When Google Ads enabled, update via cookie banner. -->
   <script is:inline>
+    // Google Consent Mode v2 — single source of truth (must run before GTM).
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'analytics_storage': 'denied',
-      'functionality_storage': 'denied',
-      'personalization_storage': 'denied',
-      'security_storage': 'granted',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      personalization_storage: 'denied',
+      security_storage: 'granted',
+      wait_for_update: 500,
     });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('set', 'url_passthrough', true);
   </script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -397,24 +401,6 @@ const websiteSchema = {
   </main>
   <VisitorTracker />
 
-  <!-- Google Consent Mode v2 — default state (denied until user consents) -->
-  <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: 'denied',
-      functionality_storage: 'granted',
-      personalization_storage: 'denied',
-      security_storage: 'granted',
-      wait_for_update: 500,
-    });
-    gtag('set', 'ads_data_redaction', true);
-    gtag('set', 'url_passthrough', true);
-  </script>
-
   <!-- Cookie Banner — deferred: 18KB fetched only when consent not yet given -->
   <script>
     (function () {
@@ -423,7 +409,7 @@ const websiteSchema = {
         if (consent) return; // Already consented — skip loading banner
       } catch (_) {}
       var s = document.createElement('script');
-      s.src = '/cookie-banner.js';
+      s.src = '/cookie-banner.js?v=2';
       s.async = true;
       document.body.appendChild(s);
     })();
