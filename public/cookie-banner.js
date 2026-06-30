@@ -196,7 +196,43 @@
     var div = document.createElement('div');
     div.id = 'cookie-banner';
     div.setAttribute('dir', isRTL() ? 'rtl' : 'ltr');
-    div.innerHTML = '<div id="cookie-banner-main" class="fixed bottom-0 left-0 right-0 z-50 border-t border-gray-200 bg-white/95 backdrop-blur-md"><div class="mx-auto flex w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] flex-col gap-4 px-4 py-5 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:py-4"><div class="max-w-3xl"><p class="text-sm leading-relaxed text-gray-600">' + t().message + '</p></div><div class="flex flex-shrink-0 flex-wrap items-center gap-3"><button id="cookie-btn-preferences" class="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100">' + t().preferences + '</button><button id="cookie-btn-reject" class="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100">' + t().reject + '</button><button id="cookie-btn-accept" class="rounded-lg bg-[#5D4E37] px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-[#4A3D2E]">' + t().accept + '</button></div></div></div><div id="cookie-modal-overlay" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50"><div id="cookie-modal" class="mx-4 w-full max-w-lg rounded-2xl border border-gray-200 bg-white p-6 shadow-xl" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title"><h3 id="cookie-modal-title" class="text-lg font-semibold text-gray-900">' + t().title + '</h3><p class="mt-2 text-sm text-gray-500">' + t().message + '</p><div class="mt-5 space-y-3"><label class="flex cursor-not-allowed items-start gap-3 rounded-lg border border-gray-200 bg-gray-50 p-3"><input type="checkbox" checked disabled class="mt-0.5 h-4 w-4 accent-[#8B7355]" /><div><span class="text-sm font-medium text-gray-900">' + t().essentialLabel + '</span><p class="text-xs text-gray-500">' + t().essentialDesc + '</p></div></label><label class="flex cursor-pointer items-start gap-3 rounded-lg border border-gray-200 p-3 transition-colors hover:bg-gray-50"><input id="cookie-check-analytics" type="checkbox" checked class="mt-0.5 h-4 w-4 accent-[#8B7355]" /><div><span class="text-sm font-medium text-gray-900">' + t().analyticsLabel + '</span><p class="text-xs text-gray-500">' + t().analyticsDesc + '</p></div></label><label class="flex cursor-pointer items-start gap-3 rounded-lg border border-gray-200 p-3 transition-colors hover:bg-gray-50"><input id="cookie-check-ads" type="checkbox" checked class="mt-0.5 h-4 w-4 accent-[#8B7355]" /><div><span class="text-sm font-medium text-gray-900">' + t().adsLabel + '</span><p class="text-xs text-gray-500">' + t().adsDesc + '</p></div></label></div><div class="mt-6 flex justify-end gap-3"><button id="cookie-modal-cancel" class="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100">' + t().cancel + '</button><button id="cookie-modal-save" class="rounded-lg bg-[#5D4E37] px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-[#4A3D2E]">' + t().save + '</button></div></div></div>';
+    // Self-contained INLINE styles only — this file lives in /public and is NOT
+    // processed by Tailwind, so utility classes would not be generated (that was
+    // the cause of the broken full-width / tall layout). Compact bar: text left,
+    // buttons right; wraps gracefully on small screens.
+    var BTN_SEC = 'padding:7px 14px;font-size:13px;font-weight:500;line-height:1;border:1px solid #d1d5db;border-radius:8px;background:#fff;color:#374151;cursor:pointer;white-space:nowrap;';
+    var BTN_PRI = 'padding:7px 18px;font-size:13px;font-weight:500;line-height:1;border:1px solid #5D4E37;border-radius:8px;background:#5D4E37;color:#fff;cursor:pointer;white-space:nowrap;';
+    var LBL_ROW = 'display:flex;align-items:flex-start;gap:10px;border:1px solid #e5e7eb;border-radius:8px;padding:10px;cursor:pointer;';
+    var LBL_OFF = 'display:flex;align-items:flex-start;gap:10px;border:1px solid #e5e7eb;border-radius:8px;padding:10px;background:#f9fafb;cursor:not-allowed;';
+    var CHK = 'margin-top:2px;width:16px;height:16px;accent-color:#8B7355;flex:0 0 auto;';
+    var LT = 'font-size:13px;font-weight:500;color:#111827;';
+    var LD = 'margin:2px 0 0;font-size:12px;line-height:1.4;color:#6b7280;';
+    div.innerHTML =
+      '<div id="cookie-banner-main" style="position:fixed;left:0;right:0;bottom:0;z-index:9999;background:rgba(255,255,255,0.97);border-top:1px solid #e5e7eb;box-shadow:0 -2px 12px rgba(0,0,0,0.06);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);">'
+        + '<div style="max-width:1860px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;padding:10px 20px;">'
+          + '<p style="flex:1 1 340px;min-width:220px;margin:0;font-size:13px;line-height:1.5;color:#4b5563;">' + t().message + '</p>'
+          + '<div style="display:flex;flex:0 0 auto;flex-wrap:wrap;align-items:center;gap:8px;">'
+            + '<button id="cookie-btn-preferences" style="' + BTN_SEC + '">' + t().preferences + '</button>'
+            + '<button id="cookie-btn-reject" style="' + BTN_SEC + '">' + t().reject + '</button>'
+            + '<button id="cookie-btn-accept" style="' + BTN_PRI + '">' + t().accept + '</button>'
+          + '</div>'
+        + '</div>'
+      + '</div>'
+      + '<div id="cookie-modal-overlay" style="position:fixed;inset:0;z-index:10000;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.5);padding:16px;">'
+        + '<div id="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title" dir="' + (isRTL() ? 'rtl' : 'ltr') + '" style="width:100%;max-width:520px;background:#fff;border:1px solid #e5e7eb;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,0.2);padding:24px;max-height:85vh;overflow:auto;">'
+          + '<h3 id="cookie-modal-title" style="margin:0;font-size:18px;font-weight:600;color:#111827;">' + t().title + '</h3>'
+          + '<p style="margin:8px 0 0;font-size:13px;line-height:1.5;color:#6b7280;">' + t().message + '</p>'
+          + '<div style="margin-top:18px;display:flex;flex-direction:column;gap:10px;">'
+            + '<label style="' + LBL_OFF + '"><input type="checkbox" checked disabled style="' + CHK + '" /><div><span style="' + LT + '">' + t().essentialLabel + '</span><p style="' + LD + '">' + t().essentialDesc + '</p></div></label>'
+            + '<label style="' + LBL_ROW + '"><input id="cookie-check-analytics" type="checkbox" checked style="' + CHK + '" /><div><span style="' + LT + '">' + t().analyticsLabel + '</span><p style="' + LD + '">' + t().analyticsDesc + '</p></div></label>'
+            + '<label style="' + LBL_ROW + '"><input id="cookie-check-ads" type="checkbox" checked style="' + CHK + '" /><div><span style="' + LT + '">' + t().adsLabel + '</span><p style="' + LD + '">' + t().adsDesc + '</p></div></label>'
+          + '</div>'
+          + '<div style="margin-top:20px;display:flex;justify-content:flex-end;gap:10px;">'
+            + '<button id="cookie-modal-cancel" style="' + BTN_SEC + '">' + t().cancel + '</button>'
+            + '<button id="cookie-modal-save" style="' + BTN_PRI + '">' + t().save + '</button>'
+          + '</div>'
+        + '</div>'
+      + '</div>';
     document.body.appendChild(div);
   }
 
@@ -215,14 +251,13 @@
     var checkAnalytics = document.getElementById('cookie-check-analytics');
     var checkAds = document.getElementById('cookie-check-ads');
     if (!banner || !overlay) return;
-    banner.classList.remove('hidden');
-    function closeModal() { overlay.classList.add('hidden'); overlay.classList.remove('flex'); }
+    function closeModal() { overlay.style.display = 'none'; }
     document.getElementById('cookie-btn-accept').addEventListener('click', function () { setConsent({ analytics: true, ads: true }); gtagConsentUpdate(true, true); vjtConsentUpdate(true); removeBanner(); });
     document.getElementById('cookie-btn-reject').addEventListener('click', function () { setConsent({ analytics: false, ads: false }); gtagConsentUpdate(false, false); vjtConsentUpdate(false); removeBanner(); });
-    document.getElementById('cookie-btn-preferences').addEventListener('click', function () { overlay.classList.remove('hidden'); overlay.classList.add('flex'); });
+    document.getElementById('cookie-btn-preferences').addEventListener('click', function () { overlay.style.display = 'flex'; });
     document.getElementById('cookie-modal-cancel').addEventListener('click', closeModal);
     overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !overlay.classList.contains('hidden')) closeModal(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && overlay.style.display !== 'none') closeModal(); });
     document.getElementById('cookie-modal-save').addEventListener('click', function () { var a = checkAnalytics.checked; var d = checkAds.checked; setConsent({ analytics: a, ads: d }); gtagConsentUpdate(a, d); vjtConsentUpdate(a); removeBanner(); closeModal(); });
   }
 

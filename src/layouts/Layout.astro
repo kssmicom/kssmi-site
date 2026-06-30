@@ -424,7 +424,7 @@ const websiteSchema = {
         if (consent) return; // Already consented — skip loading banner
       } catch (_) {}
       var s = document.createElement('script');
-      s.src = '/cookie-banner.js?v=3';
+      s.src = '/cookie-banner.js?v=4';
       s.async = true;
       document.body.appendChild(s);
     })();
