@@ -141,6 +141,21 @@ const websiteSchema = {
     });
     gtag('set', 'ads_data_redaction', true);
     gtag('set', 'url_passthrough', true);
+    // Restore a returning visitor's stored choice so GA/Ads consent is re-granted
+    // on every load — even when the deferred cookie-banner script is NOT loaded
+    // for them (it only loads when no consent is stored). Without this, returning
+    // visitors who accepted would stay in denied/cookieless mode.
+    try {
+      var _vjtConsent = JSON.parse(localStorage.getItem('cookie-consent'));
+      if (_vjtConsent) {
+        gtag('consent', 'update', {
+          ad_storage: _vjtConsent.ads ? 'granted' : 'denied',
+          ad_user_data: _vjtConsent.ads ? 'granted' : 'denied',
+          ad_personalization: _vjtConsent.ads ? 'granted' : 'denied',
+          analytics_storage: _vjtConsent.analytics ? 'granted' : 'denied',
+        });
+      }
+    } catch (e) {}
   </script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -409,7 +424,7 @@ const websiteSchema = {
         if (consent) return; // Already consented — skip loading banner
       } catch (_) {}
       var s = document.createElement('script');
-      s.src = '/cookie-banner.js?v=2';
+      s.src = '/cookie-banner.js?v=3';
       s.async = true;
       document.body.appendChild(s);
     })();

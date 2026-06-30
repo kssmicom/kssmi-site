@@ -551,7 +551,7 @@
 
   function initVJT() {
     cfg = window.VJTTracker || cfg;
-    if (!cfg || !cfg.enabled) return;
+    if (!cfg) return;
 
     // Skip tracking for admin (cookie set by dashboard login)
     if (getCookie('vjt_admin')) return;
@@ -568,16 +568,12 @@
     // not the stale value from session creation (fixes /ko/ pages showing as EN)
     session.siteLanguage = getSiteLanguage();
 
-    // If tracker is already bound (this is an Astro SPA navigation), flush previous view
-    if (window.__vjtBound) {
-      flushPageview('spa-navigate');
-    }
-
-    var pageview   = currentPageview(visitorId, session);
-
+    // ── Conversion tracking (form submit / WhatsApp / mailto) — ALWAYS on ────
+    // These are necessary business/lead records and must be captured even
+    // before/without analytics consent. Delegated listeners → bind once;
+    // forms are re-patched on every navigation so hidden fields stay current.
     patchForms(visitorId, session);
-
-    if (!window.__vjtBound) {
+    if (!window.__vjtConvBound) {
       bindSubmissionAttempts(visitorId);
       bindOutboundLinks(visitorId);
 
@@ -605,6 +601,21 @@
         }, 500);
       }).observe(document.documentElement, { childList: true, subtree: true });
 
+      window.__vjtConvBound = true;
+    }
+
+    // ── Passive pageview / behaviour tracking — CONSENT-GATED ────────────────
+    // Only runs once analytics consent is granted (cfg.enabled).
+    if (!cfg.enabled) return;
+
+    // If pageview tracking already bound (Astro SPA navigation), flush previous view
+    if (window.__vjtPvBound) {
+      flushPageview('spa-navigate');
+    }
+
+    var pageview = currentPageview(visitorId, session);
+
+    if (!window.__vjtPvBound) {
       // Scroll depth tracking (B1 fix — bound once, not on every SPA nav).
       // Perf: throttle (skip while a tick is pending) instead of re-creating a
       // timer on every scroll event — far fewer wakeups while scrolling.
@@ -628,7 +639,7 @@
       });
 
       window.addEventListener('beforeunload', function () { flushPageview('beforeunload'); });
-      window.__vjtBound = true;
+      window.__vjtPvBound = true;
     } else {
       // B2 fix: reset flushed so subsequent SPA navigations send leave events
       flushed = false;

@@ -4,7 +4,6 @@
  */
 (function () {
   var STORAGE_KEY = 'cookie-consent';
-  var INITIALIZED = false;
 
   // === i18n ===
   var I18N = {
@@ -188,30 +187,43 @@
     }
   }
 
-  // Build DOM
-  var div = document.createElement('div');
-  div.id = 'cookie-banner';
-  div.setAttribute('dir', isRTL() ? 'rtl' : 'ltr');
-  div.innerHTML = '<div id="cookie-banner-main" class="fixed bottom-0 left-0 right-0 z-50 border-t border-gray-200 bg-white/95 backdrop-blur-md"><div class="mx-auto flex w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] flex-col gap-4 px-4 py-5 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:py-4"><div class="max-w-3xl"><p class="text-sm leading-relaxed text-gray-600">' + t().message + '</p></div><div class="flex flex-shrink-0 flex-wrap items-center gap-3"><button id="cookie-btn-preferences" class="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100">' + t().preferences + '</button><button id="cookie-btn-reject" class="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100">' + t().reject + '</button><button id="cookie-btn-accept" class="rounded-lg bg-[#5D4E37] px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-[#4A3D2E]">' + t().accept + '</button></div></div></div><div id="cookie-modal-overlay" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50"><div id="cookie-modal" class="mx-4 w-full max-w-lg rounded-2xl border border-gray-200 bg-white p-6 shadow-xl" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title"><h3 id="cookie-modal-title" class="text-lg font-semibold text-gray-900">' + t().title + '</h3><p class="mt-2 text-sm text-gray-500">' + t().message + '</p><div class="mt-5 space-y-3"><label class="flex cursor-not-allowed items-start gap-3 rounded-lg border border-gray-200 bg-gray-50 p-3"><input type="checkbox" checked disabled class="mt-0.5 h-4 w-4 accent-[#8B7355]" /><div><span class="text-sm font-medium text-gray-900">' + t().essentialLabel + '</span><p class="text-xs text-gray-500">' + t().essentialDesc + '</p></div></label><label class="flex cursor-pointer items-start gap-3 rounded-lg border border-gray-200 p-3 transition-colors hover:bg-gray-50"><input id="cookie-check-analytics" type="checkbox" checked class="mt-0.5 h-4 w-4 accent-[#8B7355]" /><div><span class="text-sm font-medium text-gray-900">' + t().analyticsLabel + '</span><p class="text-xs text-gray-500">' + t().analyticsDesc + '</p></div></label><label class="flex cursor-pointer items-start gap-3 rounded-lg border border-gray-200 p-3 transition-colors hover:bg-gray-50"><input id="cookie-check-ads" type="checkbox" checked class="mt-0.5 h-4 w-4 accent-[#8B7355]" /><div><span class="text-sm font-medium text-gray-900">' + t().adsLabel + '</span><p class="text-xs text-gray-500">' + t().adsDesc + '</p></div></label></div><div class="mt-6 flex justify-end gap-3"><button id="cookie-modal-cancel" class="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100">' + t().cancel + '</button><button id="cookie-modal-save" class="rounded-lg bg-[#5D4E37] px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-[#4A3D2E]">' + t().save + '</button></div></div></div>';
-  document.body.appendChild(div);
+  // Build (or rebuild) the banner DOM in the CURRENT language. Astro View
+  // Transitions swap <body> on every navigation/language switch, which deletes
+  // a previously-injected banner — so we re-inject it fresh each page-load and
+  // keep it visible until the user actually clicks Accept/Reject/Save.
+  function buildBannerDom() {
+    removeBanner();
+    var div = document.createElement('div');
+    div.id = 'cookie-banner';
+    div.setAttribute('dir', isRTL() ? 'rtl' : 'ltr');
+    div.innerHTML = '<div id="cookie-banner-main" class="fixed bottom-0 left-0 right-0 z-50 border-t border-gray-200 bg-white/95 backdrop-blur-md"><div class="mx-auto flex w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] flex-col gap-4 px-4 py-5 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:py-4"><div class="max-w-3xl"><p class="text-sm leading-relaxed text-gray-600">' + t().message + '</p></div><div class="flex flex-shrink-0 flex-wrap items-center gap-3"><button id="cookie-btn-preferences" class="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100">' + t().preferences + '</button><button id="cookie-btn-reject" class="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100">' + t().reject + '</button><button id="cookie-btn-accept" class="rounded-lg bg-[#5D4E37] px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-[#4A3D2E]">' + t().accept + '</button></div></div></div><div id="cookie-modal-overlay" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50"><div id="cookie-modal" class="mx-4 w-full max-w-lg rounded-2xl border border-gray-200 bg-white p-6 shadow-xl" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title"><h3 id="cookie-modal-title" class="text-lg font-semibold text-gray-900">' + t().title + '</h3><p class="mt-2 text-sm text-gray-500">' + t().message + '</p><div class="mt-5 space-y-3"><label class="flex cursor-not-allowed items-start gap-3 rounded-lg border border-gray-200 bg-gray-50 p-3"><input type="checkbox" checked disabled class="mt-0.5 h-4 w-4 accent-[#8B7355]" /><div><span class="text-sm font-medium text-gray-900">' + t().essentialLabel + '</span><p class="text-xs text-gray-500">' + t().essentialDesc + '</p></div></label><label class="flex cursor-pointer items-start gap-3 rounded-lg border border-gray-200 p-3 transition-colors hover:bg-gray-50"><input id="cookie-check-analytics" type="checkbox" checked class="mt-0.5 h-4 w-4 accent-[#8B7355]" /><div><span class="text-sm font-medium text-gray-900">' + t().analyticsLabel + '</span><p class="text-xs text-gray-500">' + t().analyticsDesc + '</p></div></label><label class="flex cursor-pointer items-start gap-3 rounded-lg border border-gray-200 p-3 transition-colors hover:bg-gray-50"><input id="cookie-check-ads" type="checkbox" checked class="mt-0.5 h-4 w-4 accent-[#8B7355]" /><div><span class="text-sm font-medium text-gray-900">' + t().adsLabel + '</span><p class="text-xs text-gray-500">' + t().adsDesc + '</p></div></label></div><div class="mt-6 flex justify-end gap-3"><button id="cookie-modal-cancel" class="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100">' + t().cancel + '</button><button id="cookie-modal-save" class="rounded-lg bg-[#5D4E37] px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-[#4A3D2E]">' + t().save + '</button></div></div></div>';
+    document.body.appendChild(div);
+  }
 
-  function initBanner() {
-    if (INITIALIZED) return;
+  function removeBanner() {
+    var old = document.getElementById('cookie-banner');
+    if (old && old.parentNode) old.parentNode.removeChild(old);
+  }
+
+  // Build a fresh banner (current language) and wire up its buttons.
+  function showBanner() {
+    if (getConsent()) { removeBanner(); return; } // already chose — never show
+    if (!document.body) return;
+    buildBannerDom();
     var banner = document.getElementById('cookie-banner');
     var overlay = document.getElementById('cookie-modal-overlay');
     var checkAnalytics = document.getElementById('cookie-check-analytics');
     var checkAds = document.getElementById('cookie-check-ads');
     if (!banner || !overlay) return;
-    INITIALIZED = true;
     banner.classList.remove('hidden');
     function closeModal() { overlay.classList.add('hidden'); overlay.classList.remove('flex'); }
-    document.getElementById('cookie-btn-accept').addEventListener('click', function () { setConsent({ analytics: true, ads: true }); gtagConsentUpdate(true, true); vjtConsentUpdate(true); banner.classList.add('hidden'); });
-    document.getElementById('cookie-btn-reject').addEventListener('click', function () { setConsent({ analytics: false, ads: false }); gtagConsentUpdate(false, false); vjtConsentUpdate(false); banner.classList.add('hidden'); });
+    document.getElementById('cookie-btn-accept').addEventListener('click', function () { setConsent({ analytics: true, ads: true }); gtagConsentUpdate(true, true); vjtConsentUpdate(true); removeBanner(); });
+    document.getElementById('cookie-btn-reject').addEventListener('click', function () { setConsent({ analytics: false, ads: false }); gtagConsentUpdate(false, false); vjtConsentUpdate(false); removeBanner(); });
     document.getElementById('cookie-btn-preferences').addEventListener('click', function () { overlay.classList.remove('hidden'); overlay.classList.add('flex'); });
     document.getElementById('cookie-modal-cancel').addEventListener('click', closeModal);
     overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !overlay.classList.contains('hidden')) closeModal(); });
-    document.getElementById('cookie-modal-save').addEventListener('click', function () { var a = checkAnalytics.checked; var d = checkAds.checked; setConsent({ analytics: a, ads: d }); gtagConsentUpdate(a, d); vjtConsentUpdate(a); banner.classList.add('hidden'); closeModal(); });
+    document.getElementById('cookie-modal-save').addEventListener('click', function () { var a = checkAnalytics.checked; var d = checkAds.checked; setConsent({ analytics: a, ads: d }); gtagConsentUpdate(a, d); vjtConsentUpdate(a); removeBanner(); closeModal(); });
   }
 
   function applyExistingConsent() {
@@ -220,7 +232,13 @@
     return false;
   }
 
-  if (applyExistingConsent()) return;
-  initBanner();
-  document.addEventListener('astro:page-load', function () { if (applyExistingConsent()) return; INITIALIZED = false; initBanner(); });
+  // Initial load: apply stored consent, otherwise show the banner.
+  if (!applyExistingConsent()) showBanner();
+
+  // Every SPA navigation / language switch: re-apply consent if chosen, else
+  // re-inject the banner in the new page's language so it persists until clicked.
+  document.addEventListener('astro:page-load', function () {
+    if (applyExistingConsent()) { removeBanner(); return; }
+    showBanner();
+  });
 })();
