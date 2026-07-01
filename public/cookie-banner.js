@@ -234,6 +234,42 @@
         + '</div>'
       + '</div>';
     document.body.appendChild(div);
+
+    // Wire up handlers. Moved here (out of showBanner) so the modal handlers
+    // persist whether the banner was built for the initial flow OR re-opened
+    // via the persistent settings button after consent.
+    var overlay = document.getElementById('cookie-modal-overlay');
+    var checkAnalytics = document.getElementById('cookie-check-analytics');
+    var checkAds = document.getElementById('cookie-check-ads');
+    function closeModal() { overlay.style.display = 'none'; }
+    document.getElementById('cookie-btn-accept').addEventListener('click', function () {
+      setConsent({ analytics: true, ads: true });
+      gtagConsentUpdate(true, true);
+      vjtConsentUpdate(true);
+      showSettingsButton(); // persistent affordance after accepting
+      removeBanner();
+    });
+    document.getElementById('cookie-btn-reject').addEventListener('click', function () {
+      setConsent({ analytics: false, ads: false });
+      gtagConsentUpdate(false, false);
+      vjtConsentUpdate(false);
+      showSettingsButton(); // persistent affordance after rejecting too
+      removeBanner();
+    });
+    document.getElementById('cookie-btn-preferences').addEventListener('click', function () { overlay.style.display = 'flex'; });
+    document.getElementById('cookie-modal-cancel').addEventListener('click', closeModal);
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && overlay.style.display !== 'none') closeModal(); });
+    document.getElementById('cookie-modal-save').addEventListener('click', function () {
+      var a = checkAnalytics.checked;
+      var d = checkAds.checked;
+      setConsent({ analytics: a, ads: d });
+      gtagConsentUpdate(a, d);
+      vjtConsentUpdate(a);
+      showSettingsButton(); // idempotent — button stays visible after save
+      removeBanner(); // drops the main banner; settings button persists
+      closeModal();
+    });
   }
 
   function removeBanner() {
@@ -241,29 +277,66 @@
     if (old && old.parentNode) old.parentNode.removeChild(old);
   }
 
+  // === Persistent "Cookie Settings" button (GDPR Art. 7(3) — withdrawal of consent).
+  // Shown at bottom-left (or bottom-right in RTL) AFTER the user accepts/rejects/saves.
+  // Click it to re-open the preferences modal without clearing localStorage. ===
+  function removeSettingsButton() {
+    var old = document.getElementById('cookie-settings-btn');
+    if (old && old.parentNode) old.parentNode.removeChild(old);
+  }
+  function showSettingsButton() {
+    if (document.getElementById('cookie-settings-btn')) return; // idempotent
+    if (!document.body) return;
+    var rtl = isRTL();
+    var btn = document.createElement('button');
+    btn.id = 'cookie-settings-btn';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', t().preferences);
+    btn.title = t().preferences;
+    btn.style.cssText = 'position:fixed;bottom:16px;' + (rtl ? 'right' : 'left') + ':16px;z-index:9998;width:32px;height:32px;border-radius:50%;background:#5D4E37;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;box-shadow:0 3px 10px rgba(0,0,0,0.18);transition:transform .2s,background .2s;';
+    btn.onmouseenter = function () { btn.style.transform = 'scale(1.08)'; btn.style.background = '#4a3d2a'; };
+    btn.onmouseleave = function () { btn.style.transform = 'scale(1)'; btn.style.background = '#5D4E37'; };
+    btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="9" cy="6" r="2.2" fill="#5D4E37"/><circle cx="15" cy="12" r="2.2" fill="#5D4E37"/><circle cx="8" cy="18" r="2.2" fill="#5D4E37"/></svg>';
+    btn.onclick = function () {
+      var overlay = document.getElementById('cookie-modal-overlay');
+      if (!overlay) {
+        // After SPA navigation, body was swapped so the previous overlay is gone.
+        // Build the full banner DOM, hide the bottom strip, then show the overlay.
+        buildBannerDom();
+        var main = document.getElementById('cookie-banner-main');
+        if (main) main.style.display = 'none';
+        overlay = document.getElementById('cookie-modal-overlay');
+      }
+      // Pre-fill checkboxes with current consent so the user sees what they
+      // previously chose (otherwise they default to checked even after Reject All).
+      var existing = getConsent();
+      if (existing) {
+        var a = document.getElementById('cookie-check-analytics');
+        var d = document.getElementById('cookie-check-ads');
+        if (a) a.checked = !!existing.analytics;
+        if (d) d.checked = !!existing.ads;
+      }
+      if (overlay) overlay.style.display = 'flex';
+    };
+    document.body.appendChild(btn);
+  }
+
   // Build a fresh banner (current language) and wire up its buttons.
   function showBanner() {
-    if (getConsent()) { removeBanner(); return; } // already chose — never show
+    if (getConsent()) { removeBanner(); showSettingsButton(); return; } // already chose
     if (!document.body) return;
+    removeSettingsButton(); // hide persistent button while full banner shows
     buildBannerDom();
-    var banner = document.getElementById('cookie-banner');
-    var overlay = document.getElementById('cookie-modal-overlay');
-    var checkAnalytics = document.getElementById('cookie-check-analytics');
-    var checkAds = document.getElementById('cookie-check-ads');
-    if (!banner || !overlay) return;
-    function closeModal() { overlay.style.display = 'none'; }
-    document.getElementById('cookie-btn-accept').addEventListener('click', function () { setConsent({ analytics: true, ads: true }); gtagConsentUpdate(true, true); vjtConsentUpdate(true); removeBanner(); });
-    document.getElementById('cookie-btn-reject').addEventListener('click', function () { setConsent({ analytics: false, ads: false }); gtagConsentUpdate(false, false); vjtConsentUpdate(false); removeBanner(); });
-    document.getElementById('cookie-btn-preferences').addEventListener('click', function () { overlay.style.display = 'flex'; });
-    document.getElementById('cookie-modal-cancel').addEventListener('click', closeModal);
-    overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && overlay.style.display !== 'none') closeModal(); });
-    document.getElementById('cookie-modal-save').addEventListener('click', function () { var a = checkAnalytics.checked; var d = checkAds.checked; setConsent({ analytics: a, ads: d }); gtagConsentUpdate(a, d); vjtConsentUpdate(a); removeBanner(); closeModal(); });
   }
 
   function applyExistingConsent() {
     var existing = getConsent();
-    if (existing) { gtagConsentUpdate(existing.analytics || false, existing.ads || false); vjtConsentUpdate(existing.analytics || false); return true; }
+    if (existing) {
+      gtagConsentUpdate(existing.analytics || false, existing.ads || false);
+      vjtConsentUpdate(existing.analytics || false);
+      showSettingsButton(); // persistent button after prior consent
+      return true;
+    }
     return false;
   }
 
@@ -273,6 +346,9 @@
   // Every SPA navigation / language switch: re-apply consent if chosen, else
   // re-inject the banner in the new page's language so it persists until clicked.
   document.addEventListener('astro:page-load', function () {
+    // Body was swapped — defensively remove any leftover settings button so we
+    // don't double-stack it across view transitions.
+    removeSettingsButton();
     if (applyExistingConsent()) { removeBanner(); return; }
     showBanner();
   });
