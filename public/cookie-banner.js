@@ -209,9 +209,9 @@
     var LD = 'margin:2px 0 0;font-size:12px;line-height:1.4;color:#6b7280;';
     div.innerHTML =
       '<div id="cookie-banner-main" style="position:fixed;left:0;right:0;bottom:0;z-index:9999;background:rgba(255,255,255,0.97);border-top:1px solid #e5e7eb;box-shadow:0 -2px 12px rgba(0,0,0,0.06);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);">'
-        + '<div style="max-width:1860px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;padding:10px 20px;">'
-          + '<p style="flex:1 1 340px;min-width:220px;margin:0;font-size:13px;line-height:1.5;color:#4b5563;">' + t().message + '</p>'
-          + '<div style="display:flex;flex:0 0 auto;flex-wrap:wrap;align-items:center;gap:8px;">'
+        + '<div style="max-width:1860px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;padding:12px 20px;">'
+          + '<p style="margin:0;font-size:13px;line-height:1.5;color:#4b5563;">' + t().message + '</p>'
+          + '<div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;">'
             + '<button id="cookie-btn-preferences" style="' + BTN_SEC + '">' + t().preferences + '</button>'
             + '<button id="cookie-btn-reject" style="' + BTN_SEC + '">' + t().reject + '</button>'
             + '<button id="cookie-btn-accept" style="' + BTN_PRI + '">' + t().accept + '</button>'
