@@ -15,7 +15,7 @@ import InquiryFormLazy from '../../components/InquiryFormLazy.astro';
 
 
 
-const { lang } = Astro.params;
+const { lang } = Astro.props;
 const t = await getTranslations(lang);
 const isRTL = lang === 'ar';
 
