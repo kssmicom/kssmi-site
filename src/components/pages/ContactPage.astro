@@ -46,11 +46,11 @@ const isRTL = lang === 'ar';
       </div>
       <p class="text-lg text-stone-600 mb-3 font-medium">{t.underConstruction}</p>
       <p class="text-base text-stone-600 mb-10 max-w-md mx-auto">
-        {t.messageBefore}<a href="mailto:sales@kssmi.com" class="text-[#5D4E37] font-semibold hover:underline">sales@kssmi.com</a>{t.messageAfter}
+        {t.messageBefore}<a href="#email" data-email-user="sales" data-email-domain="kssmi.com" class="text-[#5D4E37] font-semibold hover:underline">sales#kssmi.com</a>{t.messageAfter}
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href={`/${lang}/quote/`} class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#4A3D2E] transition-colors duration-300 shadow-lg">{t.requestQuote}</a>
-        <a href={`/${lang}/product/`} class="inline-flex items-center px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#5D4E37] hover:text-white transition-all duration-300">{t.browseProducts}</a>
+        <a href={lang === 'en' ? '/quote/' : `/${lang}/quote/`} class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#4A3D2E] transition-colors duration-300 shadow-lg">{t.requestQuote}</a>
+        <a href={lang === 'en' ? '/product/' : `/${lang}/product/`} class="inline-flex items-center px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#5D4E37] hover:text-white transition-all duration-300">{t.browseProducts}</a>
       </div>
     </div>
   </main>

@@ -54,10 +54,10 @@ const isRTL = lang === 'ar';
       <p class="text-base text-stone-600 mb-10 max-w-md mx-auto">{t.message}</p>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href={`/${lang}/product/`} class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#4A3D2E] transition-colors duration-300 shadow-lg">
+        <a href={lang === 'en' ? '/product/' : `/${lang}/product/`} class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#4A3D2E] transition-colors duration-300 shadow-lg">
           {t.browseProducts}
         </a>
-        <a href={`/${lang}/`} class="inline-flex items-center px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#5D4E37] hover:text-white transition-all duration-300">
+        <a href={lang === 'en' ? '/' : `/${lang}/`} class="inline-flex items-center px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#5D4E37] hover:text-white transition-all duration-300">
           {t.backToHome}
         </a>
       </div>

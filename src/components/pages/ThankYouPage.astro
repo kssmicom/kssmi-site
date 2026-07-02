@@ -117,7 +117,7 @@ const isRTL = lang === 'ar';
       <!-- CTA Buttons -->
       <div class="flex flex-col sm:flex-row gap-4 justify-center motion-safe:animate-[thankFadeIn_0.6s_0.3s_ease-out_both]">
         <a
-          href={`/${lang}/product/`}
+          href={lang === 'en' ? '/product/' : `/${lang}/product/`}
           class="inline-flex items-center justify-center px-8 py-4 bg-[#5D4E37] text-white rounded-lg font-semibold hover:bg-[#4A3D2E] active:bg-[#3A2D1E] transition-all duration-300 motion-safe:hover:-translate-y-0.5 hover:shadow-lg group"
         >
           {ty.continueShopping}
@@ -126,7 +126,7 @@ const isRTL = lang === 'ar';
           </svg>
         </a>
         <a
-          href={`/${lang}/`}
+          href={lang === 'en' ? '/' : `/${lang}/`}
           class="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-200 text-gray-700 rounded-lg font-semibold hover:border-[#8B7355] hover:text-[#5D4E37] active:bg-stone-50 transition-all duration-300 motion-safe:hover:-translate-y-0.5 hover:shadow-md"
         >
           <svg class={`w-5 h-5 ${isRTL ? 'ml-2 rotate-180' : 'mr-2'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">

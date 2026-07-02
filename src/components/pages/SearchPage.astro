@@ -265,7 +265,7 @@ const searchKeywords = {
 
       <!-- Search Form Block -->
       <div class="max-w-3xl mx-auto mb-8 relative z-10">
-        <form action={`/${lang}/search`} method="GET" class="relative group">
+        <form action={`/${lang === 'en' ? 'search' : `${lang}/search`}`} method="GET" class="relative group">
           <div class="absolute inset-0 bg-[#5D4E37]/5 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
           <div class="flex items-center border-2 border-stone-200 bg-white rounded-full overflow-hidden focus-within:border-[#8B7355] shadow-sm transition-all duration-300 focus-within:ring-4 focus-within:ring-[#8B7355]/10 relative z-10">
@@ -322,7 +322,7 @@ const searchKeywords = {
               const kw = (searchKeywords as any)[lang] || searchKeywords.en;
               const keys = ['optical', 'sunglasses', 'acetate', 'titanium', 'metal'] as const;
               return keys.map((k) => (
-                <a href={`/${lang}/search?q=${kw[k]}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#5D4E37] transition-all duration-300 shadow-sm hover:shadow-md">
+                <a href={`/${lang === 'en' ? 'search' : `${lang}/search`}?q=${kw[k]}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#5D4E37] transition-all duration-300 shadow-sm hover:shadow-md">
                   {kw[k]}
                 </a>
               ));
@@ -361,7 +361,7 @@ const searchKeywords = {
               const kw = (searchKeywords as any)[lang] || searchKeywords.en;
               const keys = ['optical', 'sunglasses', 'acetate', 'titanium', 'metal'] as const;
               return keys.map((k) => (
-                <a href={`/${lang}/search?q=${kw[k]}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#5D4E37] transition-all duration-300 shadow-sm hover:shadow-md">
+                <a href={`/${lang === 'en' ? 'search' : `${lang}/search`}?q=${kw[k]}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#5D4E37] transition-all duration-300 shadow-sm hover:shadow-md">
                   {kw[k]}
                 </a>
               ));
