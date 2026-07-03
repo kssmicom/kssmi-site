@@ -16,6 +16,8 @@
     "@astrojs/tailwind": "^6.0.2",
     "astro": "^5.18.1",
     "astro-pagefind": "^1.8.5",
+    "baseline-browser-mapping": "^2.10.40",
+    "caniuse-lite": "^1.0.30001800",
     "fuse.js": "^7.1.0",
     "gray-matter": "^4.0.3",
     "js-yaml": "^4.1.1",
