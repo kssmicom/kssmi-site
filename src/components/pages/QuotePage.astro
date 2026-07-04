@@ -33,6 +33,10 @@ const title = data?.title || "Request a Quote";
 const seoTitle = data?.seoTitle || "Request a Quote | Kssmi Eyewear";
 const seoDescription = data?.seoDescription || "Get a custom quote for your eyewear collection. Rapid prototyping and competitive B2B pricing for premium frames.";
 
+// productName is the form subject label — passed through to /inquiry-form.
+// Falls back to English if not in the md file.
+const productName = data?.productName || "General Inquiry";
+
 // English has no /en prefix (default locale, prefixDefaultLocale: false)
 const langPrefix = lang === 'en' ? '' : `/${lang}`;
 const breadcrumbItems = [
@@ -52,7 +56,7 @@ const breadcrumbItems = [
     <S002_Benefits lang={lang} />
 
     <!-- Inquiry Form -->
-    <InquiryFormLazy lang={lang} productName="General Inquiry" />
+    <InquiryFormLazy lang={lang} productName={productName} />
   </main>
 
   <Footer lang={lang} />

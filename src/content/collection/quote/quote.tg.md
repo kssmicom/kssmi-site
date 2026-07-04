@@ -3,6 +3,8 @@ lang: tg
 title: "Humiling ng Quote"
 slug: "quote"
 layout: "full-width"
-seoTitle: "Humiling ng Quote | De-kalidad na Kasosyo sa Paggawa ng Eyewear"
-seoDescription: "Kumuha ng quote mula sa Kssmi Eyewear para sa mga pagkakataon sa pakikipagtulungan, mga inquiry sa OEM/ODM, at mga solusyon sa negosyo ng eyewear na milyong dolyar."
+seoTitle: "OEM айнакҳои Quote | Истеҳсолкунандаи Фармоишии Kssmi Чин"
+seoDescription: "Аз корхонаи Kssmi Шенчжэн quote OEM/ODM барои айнакҳои шумо гиред. MOQ 300, 45 рӯз истеҳсол, дастгирии пурраи тамғаи хусусӣ барои брендҳои ҷаҳонии premium."
+seoKeywords: "quote айнак, OEM истеҳсолкунандаи айнак, корхонаи айнаки фармоишӣ, B2B дархости айнак, корхонаи айнак Чин, айнаки тамғаи хусусӣ, таъминкунандаи яклухти айнак"
+productName: "Pangkalahatang Katanungan"
 ---

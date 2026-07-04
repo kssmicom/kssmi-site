@@ -3,6 +3,8 @@ lang: zh
 title: "获取报价"
 slug: "quote"
 layout: "full-width"
-seoTitle: "获取报价 | 优质眼镜制造合作伙伴"
-seoDescription: "获取亿天眼镜（Kssmi Eyewear）的报价，涵盖 OEM/ODM 咨询、百万级眼镜业务解决方案及合作伙伴机会。"
+seoTitle: "OEM定制眼镜报价 | 深圳Kssmi制造厂家"
+seoDescription: "从深圳Kssmi工厂获取您的OEM/ODM定制眼镜报价。300 MOQ，45天生产周期，为全球高端品牌提供完整私有标签服务。"
+seoKeywords: "眼镜报价, OEM眼镜制造商, 定制眼镜工厂, B2B眼镜咨询, 中国眼镜工厂, 私有标签眼镜, 眼镜批发供应商"
+productName: "一般询盘"
 ---

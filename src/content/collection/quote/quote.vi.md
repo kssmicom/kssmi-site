@@ -3,6 +3,8 @@ lang: vi
 title: "Yêu Cầu Báo Giá"
 slug: "quote"
 layout: "full-width"
-seoTitle: "Yêu Cầu Báo Giá | Đối Tác Sản Xuất Kính Mắt Chất Lượng"
-seoDescription: "Nhận báo giá từ Kssmi Eyewear cho các cơ hội hợp tác, yêu cầu OEM/ODM và các giải pháp kinh doanh kính mắt triệu đô."
+seoTitle: "Báo Giá Kính Mắt | Nhà Sản Xuất OEM Tùy Chỉnh Trung Quốc"
+seoDescription: "Nhận báo giá OEM/ODM cho kính mắt của bạn từ nhà máy Kssmi Thâm Quyến. MOQ 300, 45 ngày, hỗ trợ nhãn hiệu riêng đầy đủ cho thương hiệu cao cấp toàn cầu."
+seoKeywords: "báo giá kính mắt, nhà sản xuất kính OEM, nhà máy kính tùy chỉnh, tư vấn B2B kính mắt, nhà máy kính Trung Quốc, kính nhãn hiệu riêng, nhà cung cấp kính bán sỉ"
+productName: "Yêu cầu chung"
 ---

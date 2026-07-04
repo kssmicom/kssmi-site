@@ -3,6 +3,8 @@ lang: fr
 title: "Demander un Devis"
 slug: "quote"
 layout: "full-width"
-seoTitle: "Demander un Devis | Partenaire de Fabrication de Lunettes de Qualité"
-seoDescription: "Obtenez un devis de Kssmi Eyewear pour des opportunités de partenariat, des demandes OEM/ODM et des solutions commerciales pour lunettes d’un million de dollars."
+seoTitle: "Devis Lunettes | Fabricant OEM Personnalisé en Chine"
+seoDescription: "Obtenez un devis OEM/ODM pour vos lunettes auprès de l'usine Kssmi à Shenzhen. MOQ 300, 45 jours, support complet marque privée pour marques premium mondiales."
+seoKeywords: "devis lunettes, fabricant OEM lunettes, usine lunettes personnalisées, demande B2B lunettes, usine lunettes Chine, lunettes marque privée, fournisseur grossiste lunettes"
+productName: "Demande Générale"
 ---

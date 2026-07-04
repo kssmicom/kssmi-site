@@ -3,6 +3,8 @@ lang: pt
 title: "Solicite um Orçamento"
 slug: "quote"
 layout: "full-width"
-seoTitle: "Solicite um Orçamento | Parceiro de Fabricação de Óculos de Qualidade"
-seoDescription: "Obtenha um orçamento da Kssmi Eyewear para oportunidades de parceria, consultas OEM/ODM e soluciones comerciais de óculos de um milhão de dólares."
+seoTitle: "Solicitar Orçamento | Fabricante OEM de Óculos na China"
+seoDescription: "Obtenha um orçamento OEM/ODM para seus óculos da fábrica Kssmi em Shenzhen. MOQ 300, 45 dias, suporte completo de marca própria para marcas premium globais."
+seoKeywords: "orçamento óculos, fabricante OEM óculos, fábrica óculos personalizados, consulta B2B óculos, fábrica óculos China, óculos marca própria, fornecedor atacado óculos"
+productName: "Consulta Geral"
 ---
