@@ -135,8 +135,6 @@ export default {
       highlightsLabel: "Titikan Unggulan",
       highlightsTitle: "Fitur lan Aplikasi",
       startJourney: "Daftar Lan Ngeserake Rencanamu",
-      privateLabelTitle: "Daftar Lan Ngeserake Pabrikan Mewah Babagan Kacamata",
-      privateLabelDesc: "Atur kabeh jinis-materiale, wangun, lan saran teknologi kaca sampeyan dhewe.",
       partnerTitle: "Kontak Mitra Pribadi Supaya Kancamu Nguripake Pabrik",
       partnerDesc: "Berkolaborasi kanthi mitra ahli kang bisa dadi pimpinan sakdurunge abad kapungkur. Lakukan perombakan kanthi rinciane wiwit saka warna nganti kacamata sampeyan bakal luwih dipercaya.",
       benefit1: "Latar Belakang Ahli Puluhan taun jroning manufaktur kacamata kemewahan.",
@@ -184,6 +182,8 @@ export default {
       customizableBadge: "Bisa Dicocokake",
       previousPage: "Sadurunge",
       nextPage: "Sabanjuré",
+      listingSeoDescription: "Jelajahi {count} produk kacamata premium saka Kssmi — manufaktur khusus OEM/ODM kanggo merek lan pengecer global.",
+      categorySeoDescription: "Jelajahi koleksi {category} — {count} gaya tersedia. Manufaktur kacamata OEM/ODM khusus dening Kssmi.",
     },
     layout: {
       description: "Produsen Pembuatan Kaca Mata Premium Sangking Cina kanggi Reseller ing Global.",

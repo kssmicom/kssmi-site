@@ -1,0 +1,65 @@
+---
+/**
+ * S01 First Screen — reads from src/content/collection/contact/s01_first_screen.{lang}.md
+ * Contact page landing section with KSSMI branding, heading, email link, and CTA buttons.
+ *
+ * Returns nothing if the section file is missing (graceful no-op).
+ */
+
+import { getEntry } from 'astro:content';
+
+const { lang = 'en' } = Astro.props as { lang?: string };
+const isRTL = lang === 'ar';
+
+const entry = await getEntry('collection', `contact/s01_first_screen.${lang}`);
+const data = entry?.data as any;
+
+const heading = data?.heading || '';
+const underConstruction = data?.underConstruction || '';
+const messageBefore = data?.messageBefore || '';
+const messageAfter = data?.messageAfter || '';
+const requestQuote = data?.requestQuote || '';
+const browseProducts = data?.browseProducts || '';
+
+// Sales email is the same for all languages — kept as a constant.
+const salesEmail = 'sales@kssmi.com';
+
+// Skip section entirely if there's no data
+if (!heading) return;
+
+const langPrefix = lang === 'en' ? '' : `/${lang}`;
+---
+
+<section class="w-full min-h-[70vh] bg-stone-50 pt-12 pb-24 flex items-center" dir={isRTL ? 'rtl' : 'ltr'}>
+  <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[820px] mx-auto px-4 text-center">
+    <div class="inline-flex flex-col items-center justify-center mb-8">
+      <span class="text-3xl font-bold text-[#503629] tracking-tight leading-none uppercase">KSSMI</span>
+      <span class="h-[1px] w-8 bg-[#503629] mt-1.5"></span>
+      <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#503629] mt-1.5">Eyewear Mfg.</span>
+    </div>
+
+    <h1 class="text-3xl md:text-4xl font-bold text-[#5D4E37] mb-4 tracking-tight">{heading}</h1>
+
+    <div class="inline-flex items-center justify-center w-16 h-16 bg-white border border-stone-200 rounded-full mb-8 shadow-sm">
+      <svg class="w-6 h-6 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    </div>
+
+    {underConstruction && (
+      <p class="text-lg text-stone-600 mb-3 font-medium">{underConstruction}</p>
+    )}
+    <p class="text-base text-stone-600 mb-10 max-w-md mx-auto">
+      {messageBefore}<a href={`mailto:${salesEmail}`} class="text-[#5D4E37] font-semibold hover:underline">{salesEmail}</a>{messageAfter}
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href={`${langPrefix}/quote/`} class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#4A3D2E] transition-colors duration-300 shadow-lg">
+        {requestQuote}
+      </a>
+      <a href={`${langPrefix}/product/`} class="inline-flex items-center px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#5D4E37] hover:text-white transition-all duration-300">
+        {browseProducts}
+      </a>
+    </div>
+  </div>
+</section>

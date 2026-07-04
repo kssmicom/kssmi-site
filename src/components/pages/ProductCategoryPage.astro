@@ -11,7 +11,7 @@ import { isCategoryMatch } from '../../utils/categoryMatching';
 import { getProductLang } from '../../utils/language';
 import Pagination from '../../components/Pagination.astro';
 import { buildPrimaryCategories, buildSidebarTags } from '../../utils/sidebar';
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import { cardSrc } from '../../utils/image';
 
 interface Props {
@@ -119,9 +119,41 @@ const categoryBreadcrumbItems = (() => {
   items.push({ label: categoryTitle, href: '#' });
   return items;
 })();
+
+const categoryMatchedCount = langProducts.filter((p: any) => {
+  const cats = p.data.series || p.data.categories || '';
+  return isCategoryMatch(cats, categorySlug || '');
+}).length;
+
+// ── Read rich SEO content from category-product collection (with fallback) ────
+// Priority: SEO file > translation template. Missing file → warn + fallback.
+const categorySeoEntry = categorySlug
+  ? await getEntry('category-product', categorySlug)
+  : undefined;
+
+let pageTitle: string;
+let pageDescription: string;
+
+if (categorySeoEntry) {
+  // Use rich per-category SEO from markdown file
+  pageTitle = categorySeoEntry.data.seoTitle[lang]
+           ?? categorySeoEntry.data.seoTitle.en
+           ?? `${categoryTitle} - ${t.nav.products}`;
+  const rawDesc = categorySeoEntry.data.seoDescription[lang]
+               ?? categorySeoEntry.data.seoDescription.en
+               ?? '';
+  pageDescription = rawDesc.replace('{count}', String(categoryMatchedCount));
+} else {
+  // Fallback: old translation template (also logs warning so missing files are visible)
+  console.warn(`[SEO] No category md for ${baseSegment}/${categorySlug} (lang=${lang}) — using translation template fallback`);
+  pageTitle = `${categoryTitle} - ${t.nav.products}`;
+  pageDescription = (pt.categorySeoDescription || '')
+    .replace('{category}', categoryTitle)
+    .replace('{count}', String(categoryMatchedCount));
+}
 ---
 
-<Layout title={`${categoryTitle} - ${t.nav.products}`} lang={lang} lcpImage={lcpImage}>
+<Layout title={pageTitle} description={pageDescription} lang={lang} lcpImage={lcpImage}>
   <Header lang={lang} />
   <Breadcrumb items={categoryBreadcrumbItems} lang={lang} />
 

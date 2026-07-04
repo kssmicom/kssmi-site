@@ -135,8 +135,6 @@ export default {
       highlightsLabel: "Điểm Nổi Bật",
       highlightsTitle: "Tính Năng và Ứng Dụng",
       startJourney: "Bắt đầu Hành trình của bạn",
-      privateLabelTitle: "Bắt đầu doanh nghiệp thương hiệu tỷ đô của bạn",
-      privateLabelDesc: "Tùy chỉnh hoàn toàn mọi chi tiết của kính mắt của bạn - chất liệu, hình dáng, màu sắc và thông số kỹ thuật.",
       partnerTitle: "Đối tác xây dựng thương hiệu kính mắt sang trọng của riêng bạn",
       partnerDesc: "Hợp tác với nhà sản xuất được các nhà lãnh đạo ngành công nghiệp tin tưởng trong hơn một thế kỷ qua. Tùy chỉnh hoàn toàn mọi khía cạnh - chất liệu, hình dáng, màu sắc và thông số kỹ thuật - mang đến tay nghề tinh xảo và chất lượng cao cấp với quy mô lớn.",
       benefit1: "Hàng thập kỷ chuyên môn trong sản xuất kính mắt sang trọng.",
@@ -184,6 +182,8 @@ export default {
       customizableBadge: "Có thể tùy chỉnh",
       previousPage: "Trước",
       nextPage: "Tiếp theo",
+      listingSeoDescription: "Duyệt {count} sản phẩm kính mắt cao cấp từ Kssmi — sản xuất tùy chỉnh OEM/ODM cho các thương hiệu và nhà bán lẻ toàn cầu.",
+      categorySeoDescription: "Khám phá bộ sưu tập {category} — có {count} kiểu dáng. Sản xuất kính mắt OEM/ODM tùy chỉnh bởi Kssmi.",
     },
     layout: {
       description: "Sản xuất kính mắt B2B cao cấp đến từ Trung Quốc. OEM/ODM gọng kính tùy chỉnh cho các nhà bán lẻ và thương hiệu toàn cầu.",

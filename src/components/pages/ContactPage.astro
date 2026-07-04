@@ -1,58 +1,37 @@
 ---
+/**
+ * Contact Page - Multi-language
+ * URL: /{lang}/contact/
+ *
+ * Composes section components:
+ *   - src/components/collection/contact/S01_FirstScreen.astro
+ *
+ * Meta + SEO are read from src/content/collection/contact/contact.{lang}.md
+ */
+
 import Layout from '../../layouts/Layout.astro';
+import { getEntry } from 'astro:content';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import S01_FirstScreen from '../../components/collection/contact/S01_FirstScreen.astro';
 
 const { lang } = Astro.props;
-
-const i18n: Record<string, Record<string, string>> = {
-  en: { title: 'Contact Us', heading: 'Contact Us', underConstruction: 'This page is under construction.', messageBefore: "We're building a better way to connect. In the meantime, you can reach us at ", messageAfter: '.', requestQuote: 'Quote', browseProducts: 'Browse Products' },
-  it: { title: 'Contattaci', heading: 'Contattaci', underConstruction: 'Questa pagina è in costruzione.', messageBefore: 'Stiamo costruendo un modo migliore per connetterci. Nel frattempo, puoi contattarci a ', messageAfter: '.', requestQuote: 'Richiedi', browseProducts: 'Sfoglia Prodotti' },
-  es: { title: 'Contacto', heading: 'Contacto', underConstruction: 'Esta página está en construcción.', messageBefore: 'Estamos construyendo una mejor forma de conectar. Mientras tanto, puedes contactarnos en ', messageAfter: '.', requestQuote: 'Cotizar', browseProducts: 'Explorar Productos' },
-  fr: { title: 'Contact', heading: 'Contact', underConstruction: 'Cette page est en construction.', messageBefore: 'Nous construisons une meilleure façon de se connecter. En attendant, vous pouvez nous joindre à ', messageAfter: '.', requestQuote: 'Devis', browseProducts: 'Parcourir les Produits' },
-  de: { title: 'Kontakt', heading: 'Kontakt', underConstruction: 'Diese Seite befindet sich im Aufbau.', messageBefore: 'Wir bauen einen besseren Weg zur Kontaktaufnahme. In der Zwischenzeit erreichen Sie uns unter ', messageAfter: '.', requestQuote: 'Anfrage', browseProducts: 'Produkte Durchsuchen' },
-  pt: { title: 'Contacto', heading: 'Contacto', underConstruction: 'Esta página está em construção.', messageBefore: 'Estamos a construir uma melhor forma de se conectar. Entretanto, pode contactar-nos em ', messageAfter: '.', requestQuote: 'Cotação', browseProducts: 'Explorar Produtos' },
-  ru: { title: 'Контакты', heading: 'Контакты', underConstruction: 'Эта страница находится в разработке.', messageBefore: 'Мы создаем лучший способ связи. А пока вы можете связаться с нами по адресу ', messageAfter: '.', requestQuote: 'Запрос', browseProducts: 'Смотреть Товары' },
-  ja: { title: 'お問い合わせ', heading: 'お問い合わせ', underConstruction: 'このページは準備中です。', messageBefore: 'より良い接続方法を構築中です。準備ができるまで、', messageAfter: ' までご連絡ください。', requestQuote: '見積', browseProducts: '製品を見る' },
-  tr: { title: 'İletişim', heading: 'İletişim', underConstruction: 'Bu sayfa yapım aşamasındadır.', messageBefore: 'Bağlantı kurmanın daha iyi bir yolunu inşa ediyoruz. Bu arada, ', messageAfter: ' adresinden bize ulaşabilirsiniz.', requestQuote: 'Teklif', browseProducts: 'Ürünlere Göz At' },
-  ar: { title: 'اتصل بنا', heading: 'اتصل بنا', underConstruction: 'هذه الصفحة قيد الإنشاء.', messageBefore: 'نحن نبني طريقة أفضل للتواصل. في الوقت الحالي، يمكنك التواصل معنا على ', messageAfter: '.', requestQuote: 'عرض سعر', browseProducts: 'تصفح المنتجات' },
-  ko: { title: '문의하기', heading: '문의하기', underConstruction: '이 페이지는 준비 중입니다.', messageBefore: '더 나은 연락 방법을 구축하고 있습니다. 준비되는 동안 ', messageAfter: '으로 문의하실 수 있습니다.', requestQuote: '견적', browseProducts: '제품 보기' },
-  zh: { title: '联系我们', heading: '联系我们', underConstruction: '此页面正在建设中。', messageBefore: '我们正在打造更好的沟通方式。在此期间，您可以通过 ', messageAfter: ' 与我们联系。', requestQuote: '询价', browseProducts: '浏览产品' },
-  hi: { title: 'संपर्क करें', heading: 'संपर्क करें', underConstruction: 'यह पृष्ठ निर्माणाधीन है।', messageBefore: 'हम जुड़ने का एक बेहतर तरीका बना रहे हैं। तब तक, आप ', messageAfter: ' पर हमसे संपर्क कर सकते हैं।', requestQuote: 'कोटेशन', browseProducts: 'उत्पाद देखें' },
-  vi: { title: 'Liên Hệ', heading: 'Liên Hệ', underConstruction: 'Trang này đang được xây dựng.', messageBefore: 'Chúng tôi đang xây dựng cách kết nối tốt hơn. Trong lúc chờ đợi, bạn có thể liên hệ với chúng tôi qua ', messageAfter: '.', requestQuote: 'Báo giá', browseProducts: 'Xem Sản Phẩm' },
-  jv: { title: 'Hubungi Kita', heading: 'Hubungi Kita', underConstruction: 'Kaca iki lagi digawe.', messageBefore: 'Kita lagi nggawe cara sing luwih apik kanggo nyambung. Saiki, sampeyan bisa hubungi kita ing ', messageAfter: '.', requestQuote: 'Nyuwun', browseProducts: 'Deleng Produk' },
-  ms: { title: 'Hubungi Kami', heading: 'Hubungi Kami', underConstruction: 'Halaman ini sedang dalam pembinaan.', messageBefore: 'Kami sedang membina cara yang lebih baik untuk berhubung. Sementara itu, anda boleh menghubungi kami di ', messageAfter: '.', requestQuote: 'Tawaran', browseProducts: 'Lihat Produk' },
-  tg: { title: 'Тамос', heading: 'Тамос', underConstruction: 'Ин саҳифа дар ҳоли сохташавӣ аст.', messageBefore: 'Мо роҳи беҳтари пайвастшавиро месозем. Дар ин муддат, шумо метавонед бо мо дар ', messageAfter: ' дар тамос шавед.', requestQuote: 'Дархост', browseProducts: 'Маҳсулотро Дидан' },
-};
-
-const t = i18n[lang] || i18n.en;
 const isRTL = lang === 'ar';
+
+// SEO meta only — first-screen content is handled by S01_FirstScreen.
+const entry = await getEntry('collection', `contact/contact.${lang}`);
+const data = entry?.data as any;
+
+const seoTitle = data?.seoTitle || "Contact Kssmi Eyewear | OEM/ODM Eyewear Manufacturer";
+const seoDescription = data?.seoDescription || "Get in touch with Kssmi Eyewear for OEM/ODM eyewear manufacturing. Reach our sales team for quotes, samples, and global partnership inquiries.";
 ---
 
-<Layout title={`${t.title} | Kssmi Eyewear`} lang={lang} noindex={true}>
+<Layout title={seoTitle} description={seoDescription} lang={lang} noindex={true}>
   <Header lang={lang} />
-  <main class="w-full min-h-[70vh] bg-stone-50 pt-12 pb-24 flex items-center" dir={isRTL ? 'rtl' : 'ltr'}>
-    <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[820px] mx-auto px-4 text-center">
-      <div class="inline-flex flex-col items-center justify-center mb-8">
-        <span class="text-3xl font-bold text-[#503629] tracking-tight leading-none uppercase">KSSMI</span>
-        <span class="h-[1px] w-8 bg-[#503629] mt-1.5"></span>
-        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#503629] mt-1.5">Eyewear Mfg.</span>
-      </div>
-      <h1 class="text-3xl md:text-4xl font-bold text-[#5D4E37] mb-4 tracking-tight">{t.heading}</h1>
-      <div class="inline-flex items-center justify-center w-16 h-16 bg-white border border-stone-200 rounded-full mb-8 shadow-sm">
-        <svg class="w-6 h-6 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-      </div>
-      <p class="text-lg text-stone-600 mb-3 font-medium">{t.underConstruction}</p>
-      <p class="text-base text-stone-600 mb-10 max-w-md mx-auto">
-        {t.messageBefore}<a href="#email" data-email-user="sales" data-email-domain="kssmi.com" class="text-[#5D4E37] font-semibold hover:underline">sales#kssmi.com</a>{t.messageAfter}
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href={lang === 'en' ? '/quote/' : `/${lang}/quote/`} class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#4A3D2E] transition-colors duration-300 shadow-lg">{t.requestQuote}</a>
-        <a href={lang === 'en' ? '/product/' : `/${lang}/product/`} class="inline-flex items-center px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#5D4E37] hover:text-white transition-all duration-300">{t.browseProducts}</a>
-      </div>
-    </div>
+
+  <main dir={isRTL ? 'rtl' : 'ltr'}>
+    <S01_FirstScreen lang={lang} />
   </main>
+
   <Footer lang={lang} />
 </Layout>

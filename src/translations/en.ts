@@ -153,8 +153,6 @@ export default {
       highlightsTitle: "Features & Applications",
       // CTA Section
       startJourney: "Start Your Journey",
-      privateLabelTitle: "Start Your Private-Label Million-Dollar Business",
-      privateLabelDesc: "Fully customize every detail of your eyewear—material, shape, color, and technical specs. Partner with a manufacturer that understands the nuances of luxury.",
       partnerTitle: "Partner to Build Your Private-Label Luxury Eyewear Brand",
       partnerDesc: "Collaborate with a manufacturer trusted by industry leaders for over a century. Fully customize every aspect—materials, shapes, colors, and technical specifications—delivering exceptional craftsmanship and premium quality at scale.",
       benefit1: "Decades of expertise in luxury eyewear manufacturing.",
@@ -207,6 +205,8 @@ export default {
       customizableBadge: "Customizable",
       previousPage: "Previous",
       nextPage: "Next",
+      listingSeoDescription: "Browse {count} premium eyewear products from Kssmi — OEM/ODM custom manufacturing for global brands and retailers.",
+      categorySeoDescription: "Explore {category} collection — {count} styles available. OEM/ODM custom eyewear manufacturing by Kssmi.",
     },
     layout: {
       description: "Premium B2B eyewear manufacturing from China. OEM/ODM custom eyewear frames for global retailers and brands.",

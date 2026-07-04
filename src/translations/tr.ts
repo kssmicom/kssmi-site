@@ -142,8 +142,6 @@ export default {
       highlightsLabel: "Ürün Özellikleri",
       highlightsTitle: "Özellikler ve Uygulamalar",
       startJourney: "Seyahatinize Başlayın",
-      privateLabelTitle: "Özel Marka İşletmenize Başlayın",
-      privateLabelDesc: "Gözlüklerinizin her detayını tamamen özelleştirin—malzeme, şekil, renk ve teknik spesifikasyonlar.",
       partnerTitle: "Özel Etiket Lüks Gözlük Markanızı İnşa Etmek İçin Ortaklık",
       partnerDesc: "Bir asırdan fazladır sektör liderlerinin güvendiği bir üreticiyle işbirliği yapın. Her yönü tamamen özelleştirin—malzemeler, şekiller, renkler ve teknik özellikler—ölçekte istisnai işçilik ve premium kalite sunarak.",
       benefit1: "Lüks gözlük üretiminde onlarca yıllık uzmanlık.",
@@ -194,6 +192,8 @@ export default {
       customizableBadge: "Kişiselleştirilebilir",
       previousPage: "Önceki",
       nextPage: "Sonraki",
+      listingSeoDescription: "Kssmi'nin {count} premium gözlük ürününü inceleyin — küresel markalar ve perakendeciler için OEM/ODM özel üretim.",
+      categorySeoDescription: "{category} koleksiyonunu keşfedin — {count} model mevcut. Kssmi tarafından OEM/ODM özel gözlük üretimi.",
     },
     layout: {
       description: "Çin'den birinci sınıf B2B (kurumsal) gözlük üretimi. Küresel perakendeciler ve markalar için OEM/ODM özel gözlük çerçeveleri.",

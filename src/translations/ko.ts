@@ -135,8 +135,6 @@ export default {
       highlightsLabel: "제품 하이라이트",
       highlightsTitle: "특징 및 응용",
       startJourney: "여정을 시작하세요",
-      privateLabelTitle: "자체 상표 비즈니스를 시작하세요",
-      privateLabelDesc: "소재, 모양, 색상 및 기술 사양 등 안경의 모든 세부 사항을 완전히 맞춤화하세요.",
       partnerTitle: "자체 상표 럭셔리 아이ウェア 브랜드를 구축하기 위한 파트너십",
       partnerDesc: "1세기 넘게 업계 리더들이 신뢰해 온 제조업체와 협력하세요. 소재, 형태, 색상, 기술 사양에 이르기까지 모든 측면을 전면 맞춤화하여 탁월한 장인 정신과 프리미엄 품질을 대규모로 제공합니다.",
       benefit1: "럭셔리 안경 제조에서 수십 년의 전문 지식.",
@@ -187,6 +185,8 @@ export default {
       customizableBadge: "맞춤 가능",
       previousPage: "이전",
       nextPage: "다음",
+      listingSeoDescription: "Kssmi의 프리미엄 안경 제품 {count}개를 둘러보세요 — 글로벌 브랜드 및 리테일러를 위한 OEM/ODM 맞춤 제작.",
+      categorySeoDescription: "{category} 컬렉션을 둘러보세요 — {count}가지 스타일 제공. Kssmi의 OEM/ODM 맞춤 안경 제작.",
     },
     layout: {
       description: "중국의 프리미엄 B2B 안경 제조. 글로벌 소매업체 및 브랜드를 위한 OEM/ODM 맞춤형 안경테.",

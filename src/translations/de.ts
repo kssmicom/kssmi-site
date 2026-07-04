@@ -142,8 +142,6 @@ export default {
       highlightsLabel: "Produkt Highlights",
       highlightsTitle: "Eigenschaften und Anwendungen",
       startJourney: "Starten Sie Ihre Reise",
-      privateLabelTitle: "Starten Sie Ihr Private-Label Geschäft",
-      privateLabelDesc: "Passen Sie jedes Detail Ihrer Brillen an—Material, Form, Farbe und technische Spezifikationen.",
       partnerTitle: "Partner für den Aufbau Ihrer Private-Label Luxus-Brillenmarke",
       partnerDesc: "Kooperieren Sie mit einem Hersteller, dem Branchenführer seit über einem Jahrhundert vertrauen. Passen Sie jeden Aspekt vollständig an—Materialien, Formen, Farben und technische Spezifikationen—und liefern Sie außergewöhnliche Handwerkskunst und Premium-Qualität im großen Maßstab.",
       benefit1: "Jahrzehnte an Expertise in der Luxus-Brillenherstellung.",
@@ -194,6 +192,8 @@ export default {
       customizableBadge: "Anpassbar",
       previousPage: "Zurück",
       nextPage: "Weiter",
+      listingSeoDescription: "Durchsuchen Sie {count} Premium-Brillenprodukte von Kssmi — OEM/ODM-Sonderanfertigung für globale Marken und Händler.",
+      categorySeoDescription: "Entdecken Sie die {category}-Kollektion — {count} Stile verfügbar. OEM/ODM-Maßanfertigung von Brillen durch Kssmi.",
     },
     layout: {
       description: "Premium-Brillenherstellung B2B (Geschäftskunden) aus China. OEM/ODM-maßgeschneiderte Brillenfassungen für globale Einzelhändler und Marken.",

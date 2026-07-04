@@ -142,8 +142,6 @@ export default {
       highlightsLabel: "Points Forts",
       highlightsTitle: "Caractéristiques et Applications",
       startJourney: "Commencez votre Voyage",
-      privateLabelTitle: "Lancez votre Marque Privée",
-      privateLabelDesc: "Personnalisez chaque détail de vos lunettes—matériau, forme, couleur et spécifications techniques.",
       partnerTitle: "Partenaires pour Construire votre Marque de Lunettes de Luxe en Marque Privée",
       partnerDesc: "Collaborez avec un fabricant de confiance des leaders de l'industrie depuis plus d'un siècle. Personnalisez entièrement chaque aspect—matériaux, formes, couleurs et spécifications techniques—offrant un artisanat exceptionnel et une qualité premium à grande échelle.",
       benefit1: "Des décennies d'expertise dans la fabrication de lunettes de luxe.",
@@ -194,6 +192,8 @@ export default {
       customizableBadge: "Personnalisable",
       previousPage: "Précédent",
       nextPage: "Suivant",
+      listingSeoDescription: "Parcourez {count} produits de lunetterie premium de Kssmi — fabrication personnalisée OEM/ODM pour les marques et détaillants mondiaux.",
+      categorySeoDescription: "Explorez la collection {category} — {count} styles disponibles. Fabrication de lunettes OEM/ODM personnalisées par Kssmi.",
     },
     layout: {
       description: "Fabrication de lunettes B2B (professionnel) haut de gamme en Chine. Montures personnalisées OEM/ODM pour les détaillants et marques mondiales.",

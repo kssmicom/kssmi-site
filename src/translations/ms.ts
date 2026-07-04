@@ -135,8 +135,6 @@ export default {
       highlightsLabel: "Ciri-ciri Utama",
       highlightsTitle: "Ciri dan Aplikasi",
       startJourney: "Mulakan Perjalanan Anda",
-      privateLabelTitle: "Mulakan Perniagaan Label Peribadi Jutaan Dolar Anda",
-      privateLabelDesc: "Sesuaikan sepenuhnya setiap perincian cermin mata anda—bahan, bentuk, warna dan spesifikasi teknikal.",
       partnerTitle: "Rakan Kongsi untuk Membina Jenama Cermin Mata Mewah Label Swasta Anda",
       partnerDesc: "Bekerjasama dengan pengeluar yang dipercayai oleh peneraju industri selama lebih satu abad. Sesuaikan sepenuhnya setiap aspek — bahan, bentuk, warna dan spesifikasi teknikal — memberikan ketukangan yang luar biasa dan kualiti premium pada skala.",
       benefit1: "Pakar selama beberapa dekad dalam pembuatan cermin mata mewah.",
@@ -187,6 +185,8 @@ export default {
       customizableBadge: "Boleh Suai",
       previousPage: "Sebelumnya",
       nextPage: "Seterusnya",
+      listingSeoDescription: "Layari {count} produk cermin mata premium daripada Kssmi — pembuatan tersuai OEM/ODM untuk jenama dan peruncit global.",
+      categorySeoDescription: "Terokai koleksi {category} — {count} gaya tersedia. Pembuatan cermin mata OEM/ODM tersuai oleh Kssmi.",
     },
     layout: {
       description: "Pembuatan cermin mata B2B premium dari China. Bingkai cermin mata tersuai OEM/ODM untuk peruncit dan jenama global.",

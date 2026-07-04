@@ -6,7 +6,6 @@ import { getTranslations, type Translations } from '../../translations';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import QuoteBenefits from '../../components/sections/QuoteBenefits.astro';
-import PartnershipAdvantage from '../../components/sections/PartnershipAdvantage.astro';
 import InquiryFormLazy from '../../components/InquiryFormLazy.astro';
 
 export async function getStaticPaths() {
@@ -46,7 +45,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { lang, slug } = Astro.params;
 const { data } = entry;
-const { title, layout, cta, ctaLink, image, showPartnershipHero, showQuoteBenefits, showInquiryForm, partnershipHero } = data;
+const { title, layout, cta, ctaLink, image, showQuoteBenefits, showInquiryForm } = data;
 const t = await getTranslations(lang);
 const { Content } = await render(entry);
 
@@ -60,17 +59,14 @@ const isRTL = lang === 'ar';
   <Header lang={lang} />
 
   <main class="w-full min-h-screen" dir={isRTL ? 'rtl' : 'ltr'}>
-    {/* 1st SECTION: Partnership Hero (Optional) */}
-    {showPartnershipHero && <PartnershipAdvantage partnershipHero={partnershipHero} />}
-
-    {/* 2nd SECTION: Quote Benefits (Optional) */}
+    {/* 1st SECTION: Quote Benefits (Optional) */}
     {showQuoteBenefits && <QuoteBenefits lang={lang} />}
 
     {/* 3rd SECTION: Main Content Area (Only if hasContent) */}
     {hasContent && (
       layout === 'full-width' ? (
-        <section class={`w-full py-16 lg:py-24 bg-white ${(showPartnershipHero || showQuoteBenefits) ? 'border-t border-stone-100' : ''}`}>
-          {!showPartnershipHero && !showQuoteBenefits && image && (
+        <section class={`w-full py-16 lg:py-24 bg-white ${(showQuoteBenefits) ? 'border-t border-stone-100' : ''}`}>
+          {!showQuoteBenefits && image && (
             <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto mb-16 rounded-3xl overflow-hidden aspect-[21/9]">
               <img src={image} alt={title} class="w-full h-full object-cover" width="1260" height="540" loading="eager" decoding="async" fetchpriority="high" />
             </div>
@@ -78,7 +74,7 @@ const isRTL = lang === 'ar';
 
           <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
             <div class="w-full">
-              {!showPartnershipHero && !showQuoteBenefits && (
+              {!showQuoteBenefits && (
                   <h1 class="text-4xl md:text-6xl font-bold text-stone-900 mb-12 tracking-tight">
                       {title}
                   </h1>
@@ -106,13 +102,13 @@ const isRTL = lang === 'ar';
         <section class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4 py-24">
           <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
             <div class="lg:col-span-3">
-              {image && !showPartnershipHero && !showQuoteBenefits && (
+              {image && !showQuoteBenefits && (
                 <div class="mb-12 rounded-2xl overflow-hidden shadow-xl aspect-video lg:aspect-auto">
                   <img src={image} alt={title} class="w-full h-auto" width="800" height="450" loading="lazy" decoding="async" />
                 </div>
               )}
 
-              {!showPartnershipHero && !showQuoteBenefits && (
+              {!showQuoteBenefits && (
                   <h1 class="text-4xl font-bold text-stone-900 mb-8 tracking-tight">
                       {title}
                   </h1>

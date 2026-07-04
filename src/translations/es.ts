@@ -142,8 +142,6 @@ export default {
       highlightsLabel: "Puntos Destacados",
       highlightsTitle: "Características y Aplicaciones",
       startJourney: "Comienza tu Viaje",
-      privateLabelTitle: "Inicia tu Negocio de Marca Privada",
-      privateLabelDesc: "Personaliza cada detalle de tus gafas—material, forma, color y especificaciones técnicas.",
       partnerTitle: "Asociate para Construir tu Marca de Gafas de Lujo de Etiqueta Privada",
       partnerDesc: "Colabora con un fabricante en el que confían los líderes de la industria desde hace más de un siglo. Personaliza completamente cada aspecto—materiales, formas, colores y especificaciones técnicas—ofreciendo una artesanía excepcional y una calidad premium a gran escala.",
       benefit1: "Décadas de experiencia en fabricación de gafas de lujo.",
@@ -194,6 +192,8 @@ export default {
       customizableBadge: "Personalizable",
       previousPage: "Anterior",
       nextPage: "Siguiente",
+      listingSeoDescription: "Explore {count} productos de gafas premium de Kssmi — fabricación personalizada OEM/ODM para marcas y distribuidores globales.",
+      categorySeoDescription: "Explore la colección {category} — {count} estilos disponibles. Fabricación de gafas OEM/ODM personalizadas por Kssmi.",
     },
     layout: {
       description: "Fabricación premium de gafas B2B (comercio entre empresas) desde China. Monturas personalizadas OEM/ODM para minoristas y marcas globales.",

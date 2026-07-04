@@ -1,0 +1,61 @@
+---
+/**
+ * S01 First Screen — reads from src/content/collection/about-us/s01_first_screen.{lang}.md
+ * About Us page landing section with KSSMI branding, heading, and CTA buttons.
+ *
+ * Returns nothing if the section file is missing (graceful no-op).
+ */
+
+import { getEntry } from 'astro:content';
+
+const { lang = 'en' } = Astro.props as { lang?: string };
+const isRTL = lang === 'ar';
+
+const entry = await getEntry('collection', `about-us/s01_first_screen.${lang}`);
+const data = entry?.data as any;
+
+const heading = data?.heading || '';
+const underConstruction = data?.underConstruction || '';
+const message = data?.message || '';
+const browseProducts = data?.browseProducts || '';
+const backToHome = data?.backToHome || '';
+
+// Skip section entirely if there's no data
+if (!heading) return;
+
+const langPrefix = lang === 'en' ? '' : `/${lang}`;
+---
+
+<section class="w-full min-h-[70vh] bg-stone-50 pt-12 pb-24 flex items-center" dir={isRTL ? 'rtl' : 'ltr'}>
+  <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[820px] mx-auto px-4 text-center">
+    <div class="inline-flex flex-col items-center justify-center mb-8">
+      <span class="text-3xl font-bold text-[#503629] tracking-tight leading-none uppercase">KSSMI</span>
+      <span class="h-[1px] w-8 bg-[#503629] mt-1.5"></span>
+      <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#503629] mt-1.5">Eyewear Mfg.</span>
+    </div>
+
+    <h1 class="text-3xl md:text-4xl font-bold text-[#5D4E37] mb-4 tracking-tight">{heading}</h1>
+
+    <div class="inline-flex items-center justify-center w-16 h-16 bg-white border border-stone-200 rounded-full mb-8 shadow-sm">
+      <svg class="w-6 h-6 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+      </svg>
+    </div>
+
+    {underConstruction && (
+      <p class="text-lg text-stone-600 mb-3 font-medium">{underConstruction}</p>
+    )}
+    {message && (
+      <p class="text-base text-stone-600 mb-10 max-w-md mx-auto">{message}</p>
+    )}
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href={`${langPrefix}/product/`} class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#4A3D2E] transition-colors duration-300 shadow-lg">
+        {browseProducts}
+      </a>
+      <a href={`${langPrefix}/`} class="inline-flex items-center px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#5D4E37] hover:text-white transition-all duration-300">
+        {backToHome}
+      </a>
+    </div>
+  </div>
+</section>

@@ -48,9 +48,10 @@ function getCategoryCount(href: string): number {
 const PAGE_SIZE = 12;
 const start = (currentPage - 1) * PAGE_SIZE;
 const end = Math.min(currentPage * PAGE_SIZE, allProducts.length);
+const listingDescription = (pt.listingSeoDescription || '').replace('{count}', String(allProducts.length));
 ---
 
-<Layout title={title} lang={lang} lcpImage={lcpImage}>
+<Layout title={title} description={listingDescription} lang={lang} lcpImage={lcpImage}>
   <Header lang={lang} />
   <Breadcrumb items={breadcrumbItems} lang={lang} />
 

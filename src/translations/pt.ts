@@ -142,8 +142,6 @@ export default {
       highlightsLabel: "Destaques do Produto",
       highlightsTitle: "Características e Aplicações",
       startJourney: "Inicie sua Jornada",
-      privateLabelTitle: "Inicie seu Negócio de Marca Própria",
-      privateLabelDesc: "Personalize cada detalhe dos seus óculos—material, forma, cor e especificações técnicas.",
       partnerTitle: "Parceria para Construir sua Marca de Óculos de Luxo de Marca Própria",
       partnerDesc: "Colabore com um fabricante confiável dos líderes da indústria há mais de um século. Personalize completamente cada aspecto—materiais, formas, cores e especificações técnicas—oferecendo artesanato excepcional e qualidade premium em escala.",
       benefit1: "Décadas de experiência na fabricação de óculos de luxo.",
@@ -194,6 +192,8 @@ export default {
       customizableBadge: "Personalizável",
       previousPage: "Anterior",
       nextPage: "Próximo",
+      listingSeoDescription: "Navegue por {count} produtos de óculos premium da Kssmi — fabricação personalizada OEM/ODM para marcas e varejistas globais.",
+      categorySeoDescription: "Explore a coleção {category} — {count} estilos disponíveis. Fabricação de óculos OEM/ODM personalizados pela Kssmi.",
     },
     layout: {
       description: "Fabricação premium de óculos B2B (comércio entre empresas) da China. Molduras personalizadas OEM/ODM para varejistas e marcas globais.",

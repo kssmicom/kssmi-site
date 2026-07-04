@@ -135,8 +135,6 @@ export default {
       highlightsLabel: "产品亮点",
       highlightsTitle: "特点与应用",
       startJourney: "开启您的旅程",
-      privateLabelTitle: "开启您的自有品牌百万美金业务",
-      privateLabelDesc: "完全定制您眼镜的每一个细节——材质、形状、颜色和技术规格。与真正了解奢华品味的制造商合作。",
       partnerTitle: "携手共建您的自有高端眼镜品牌",
       partnerDesc: "与一个世纪以来备受行业领导者信赖的制造商合作。从材质、形状、颜色到技术规格的每一个方面进行完全定制，为您大规模提供卓越的工艺和优质的品质。",
       benefit1: "数十年高端眼镜制造的专业经验。",
@@ -187,6 +185,8 @@ export default {
       customizableBadge: "可定制",
       previousPage: "上一页",
       nextPage: "下一页",
+      listingSeoDescription: "浏览 Kssmi 的 {count} 款优质眼镜产品 — 为全球品牌和零售商提供 OEM/ODM 定制制造。",
+      categorySeoDescription: "探索 {category} 系列 — 共 {count} 款款式可选。Kssmi OEM/ODM 眼镜定制制造。",
     },
     layout: {
       description: "来自中国的高端B2B眼镜制造。为全球零售商和品牌提供OEM/ODM定制眼镜框。",

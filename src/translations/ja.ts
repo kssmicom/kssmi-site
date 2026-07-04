@@ -142,8 +142,6 @@ export default {
       highlightsLabel: "製品のハイライト",
       highlightsTitle: "特徴と応用",
       startJourney: "プロジェクトを開始",
-      privateLabelTitle: "プライベートブランド事業を開始する",
-      privateLabelDesc: "素材、形状、カラー、技術仕様など、アイウェアのあらゆるディテールを完全にカスタマイズできます。",
       partnerTitle: "独自のラグジュアリーアイウェアブランドを構築するパートナー",
       partnerDesc: "1世紀以上にわたり業界トップから信頼されるメーカーと協力してください。素材、形状、カラー、技術仕様を完全にカスタマイズし、卓越した職人技とプレミアムな品質を大規模にお届けします。",
       benefit1: "ラグジュアリーアイウェア製造における長年の専門知識と経験。",
@@ -194,6 +192,8 @@ export default {
       customizableBadge: "カスタマイズ可能",
       previousPage: "前へ",
       nextPage: "次へ",
+      listingSeoDescription: "Kssmiのプレミアムアイウェア製品{count}点をご覧ください — グローバルブランドおよび小売業者向けOEM/ODMカスタム製造。",
+      categorySeoDescription: "{category}コレクションをご覧ください — {count}スタイルをご用意。KssmiによるOEM/ODMカスタムアイウェア製造。",
     },
     layout: {
       description: "中国のプレミアム企業間 (B2B) アイウェア製造。グローバルな小売業者やブランド向けのOEM/ODMカスタム眼鏡フレーム。",

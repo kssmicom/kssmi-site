@@ -89,6 +89,14 @@ export const MetaSchema = z.object({
 // e.g. "acetate-sunglass-manufacturer/meta.en" not just "meta.en"
 // ─────────────────────────────────────────────────────────────────────────────
 
+// ── localizableString: 17-lang nested object, all required ────────────────────
+// Used by category SEO schema so missing any language fails the build.
+const localizableString = z.object(
+  Object.fromEntries(
+    LangEnum.options.map((l) => [l, z.string().min(1)])
+  ) as Record<typeof LangEnum.options[number], z.string>
+);
+
 const generateFullPathId = ({ entry }: { entry: string }) =>
   entry.replace(/\\/g, '/').replace(/\.md$/, '');
 
@@ -162,17 +170,6 @@ const collection = defineCollection({
     ]).optional(),
     cta: z.string().optional(),
     ctaLink: z.string().optional(),
-    partnershipHero: z.object({
-      badge: z.string().optional(),
-      headerPrimary: z.string().optional(),
-      headerSecondary: z.string().optional(),
-      description: z.string().optional(),
-      team: z.array(z.object({
-        name: z.string(),
-        image: z.string(),
-        description: z.string(),
-      })).optional(),
-    }).optional(),
     seoTitle: z.string().optional(),
     seoDescription: z.string().optional(),
     seoKeywords: z.string().optional(),
@@ -247,4 +244,25 @@ const blog = defineCollection({
   }).catchall(z.any()),
 });
 
-export const collections = { products, collection, feature, blog };
+// ── Category SEO (per-category, per-language SEO metadata) ────────────────────
+// Drives /product/[category]/ pages. One file per category (e.g. sunglasses.md)
+// with 17 languages nested in frontmatter — NOT 17 files per category.
+const categoryProduct = defineCollection({
+  loader: glob({
+    pattern: '*.md',
+    base: './src/content/category-product',
+    generateId: generateFullPathId,
+  }),
+  schema: z.object({
+    slug: z.string(),
+    baseSegment: z.literal('product'),
+    displayName: localizableString,
+    seoTitle: localizableString,
+    seoDescription: localizableString,
+    seoKeywords: z.record(z.string(), z.array(z.string().min(1))),
+    relatedCategories: z.array(z.string()).default([]),
+    displayOrder: z.number().default(0),
+  }),
+});
+
+export const collections = { products, collection, feature, blog, 'category-product': categoryProduct };

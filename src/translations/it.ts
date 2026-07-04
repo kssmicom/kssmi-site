@@ -135,8 +135,6 @@ export default {
       highlightsLabel: "In Evidenza",
       highlightsTitle: "Caratteristiche e Applicazioni",
       startJourney: "Inizia il Tuo Viaggio",
-      privateLabelTitle: "Inizia la Tua Attività di Private Label",
-      privateLabelDesc: "Personalizza ogni dettaglio dei tuoi occhiali—materiale, forma, colore e specifiche tecniche.",
       partnerTitle: "Collabora per Creare il Tuo Brand di Occhiali di Lusso a Marchio Privato",
       partnerDesc: "Collabora con un produttore fidato dai leader del settore da oltre un secolo. Personalizza completamente ogni aspetto—materiali, forme, colori e specifiche tecniche—offrendo un'artigianalità eccezionale e una qualità premium su larga scala.",
       benefit1: "Decenni di esperienza nella produzione di occhiali di lusso.",
@@ -187,6 +185,8 @@ export default {
       customizableBadge: "Personalizzabile",
       previousPage: "Precedente",
       nextPage: "Successivo",
+      listingSeoDescription: "Sfoglia {count} prodotti di occhialeria premium di Kssmi — produzione personalizzata OEM/ODM per marchi e rivenditori globali.",
+      categorySeoDescription: "Esplora la collezione {category} — {count} stili disponibili. Produzione occhiali OEM/ODM personalizzati da Kssmi.",
     },
     layout: {
       description: "Produzione premium di occhiali B2B (commercio tra imprese) dalla Cina. Montature personalizzate OEM/ODM per rivenditori e marchi globali.",

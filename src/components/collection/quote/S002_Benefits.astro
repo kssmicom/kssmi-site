@@ -1,0 +1,87 @@
+---
+/**
+ * S002 Benefits — reads from src/content/collection/quote/s002-benefits.{lang}.md
+ * Renders the 3 benefit cards (Faster to Market / Lower Risk / Better Margins) for the Quote page.
+ */
+
+import { getEntry } from 'astro:content';
+
+const { lang = 'en' } = Astro.props as { lang?: string };
+const isRTL = lang === 'ar';
+
+const entry = await getEntry('collection', `quote/s002-benefits.${lang}`);
+const data = entry?.data as any;
+
+// Each value falls back to English so a missing field never breaks the page.
+const subtitle = data?.subtitle || "Tell us about your eyewear project and we'll provide a detailed quote within 24 hours.";
+const fasterToMarket = data?.fasterToMarket || 'Faster to Market';
+const fasterToMarketDesc = data?.fasterToMarketDesc || 'Rapid prototyping and on-time delivery to significantly shorten your product launch cycles.';
+const lowerRisk = data?.lowerRisk || 'Lower Risk';
+const lowerRiskDesc = data?.lowerRiskDesc || 'Strict quality control, fully compliant premium materials, and transparent inspection reports.';
+const betterMargins = data?.betterMargins || 'Better Margins';
+const betterMarginsDesc = data?.betterMarginsDesc || 'Optimized cost structures with uncompromising high-end Shenzhen manufacturing quality.';
+
+const benefits = [
+  {
+    title: fasterToMarket,
+    desc: fasterToMarketDesc,
+    iconPath: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
+  },
+  {
+    title: lowerRisk,
+    desc: lowerRiskDesc,
+    iconPath: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+  },
+  {
+    title: betterMargins,
+    desc: betterMarginsDesc,
+    iconPath: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
+  },
+];
+---
+
+<section class="py-12 lg:py-16 bg-gradient-to-b from-white to-stone-50" dir={isRTL ? 'rtl' : 'ltr'}>
+  <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1240px] mx-auto px-4">
+    {subtitle && (
+      <p class="text-center text-base md:text-lg text-stone-600 max-w-2xl mx-auto mb-12 leading-relaxed">
+        {subtitle}
+      </p>
+    )}
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {benefits.map((benefit, i) => (
+        <div
+          class="benefit-card group bg-[#FCFAF8] rounded-xl p-8 shadow-sm ring-1 ring-[#8B7355]/10 hover:shadow-xl hover:bg-white hover:ring-[#8B7355]/30 transition-all duration-500 ease-out text-center cursor-default hover:-translate-y-2 motion-safe:animate-[benefitFadeInUp_0.5s_ease-out_both]"
+          style={`animation-delay: ${0.1 + i * 0.08}s`}
+        >
+          <div class="w-16 h-16 bg-white shadow-sm ring-1 ring-[#8B7355]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-500 ease-out group-hover:scale-110 group-hover:shadow-md group-hover:bg-[#4A3D2E]/5 group-hover:ring-[#8B7355]/20">
+            <svg class="w-8 h-8 text-[#5D4E37] transition-transform duration-500 ease-out" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={benefit.iconPath} />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-[#5D4E37] mb-3 transition-colors duration-500 group-hover:text-[#5D4E37]">
+            {benefit.title}
+          </h3>
+          <p class="text-sm text-stone-600 leading-relaxed">
+            {benefit.desc}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  @keyframes benefitFadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .benefit-card,
+    [class*="benefitFadeInUp"] {
+      animation: none !important;
+      opacity: 1 !important;
+    }
+  }
+</style>
