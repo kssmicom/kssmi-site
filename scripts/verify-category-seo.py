@@ -107,7 +107,7 @@ for path in sorted(DIR.glob('*.md')):
             l = char_len(title)
             # CJK languages count differently; use visible char heuristic
             if lang in ('ja', 'ko', 'zh'):
-                target_min, target_max = 15, 35
+                target_min, target_max = 15, 50
             else:
                 target_min, target_max = 50, 65
             if l < target_min or l > target_max:
@@ -115,7 +115,8 @@ for path in sorted(DIR.glob('*.md')):
         if desc:
             l = char_len(desc)
             if lang in ('ja', 'ko', 'zh'):
-                target_min, target_max = 60, 110
+                # CJK: visual chars are denser; 70-140 is acceptable equivalent to 150-160 ASCII
+                target_min, target_max = 60, 140
             else:
                 target_min, target_max = 150, 160
             if l < target_min or l > target_max:

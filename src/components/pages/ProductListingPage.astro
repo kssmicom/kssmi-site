@@ -4,6 +4,7 @@
  */
 import Layout from '../../layouts/Layout.astro';
 import { getTranslations } from '../../translations';
+import { getEntry } from 'astro:content';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { isCategoryMatch } from '../../utils/categoryMatching';
@@ -48,10 +49,30 @@ function getCategoryCount(href: string): number {
 const PAGE_SIZE = 12;
 const start = (currentPage - 1) * PAGE_SIZE;
 const end = Math.min(currentPage * PAGE_SIZE, allProducts.length);
-const listingDescription = (pt.listingSeoDescription || '').replace('{count}', String(allProducts.length));
+
+// ── Read rich SEO content from category-product/product.md (with fallback) ──
+// Priority: SEO file > translation template. Missing file → warn + fallback.
+const productSeoEntry = await getEntry('category-product', 'product');
+
+let pageTitle: string;
+let pageDescription: string;
+
+if (productSeoEntry) {
+  pageTitle = productSeoEntry.data.seoTitle[lang]
+           ?? productSeoEntry.data.seoTitle.en
+           ?? title;
+  const rawDesc = productSeoEntry.data.seoDescription[lang]
+               ?? productSeoEntry.data.seoDescription.en
+               ?? '';
+  pageDescription = rawDesc.replace('{count}', String(allProducts.length));
+} else {
+  console.warn(`[SEO] No product.md — using translation template fallback for /${baseSegment}`);
+  pageTitle = title;
+  pageDescription = (pt.listingSeoDescription || '').replace('{count}', String(allProducts.length));
+}
 ---
 
-<Layout title={title} description={listingDescription} lang={lang} lcpImage={lcpImage}>
+<Layout title={pageTitle} description={pageDescription} lang={lang} lcpImage={lcpImage}>
   <Header lang={lang} />
   <Breadcrumb items={breadcrumbItems} lang={lang} />
 
