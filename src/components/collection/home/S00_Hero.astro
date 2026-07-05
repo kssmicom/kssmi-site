@@ -18,6 +18,7 @@ const primaryCtaUrl = d.primaryCtaUrl;
 const secondaryCta = d.secondaryCta;
 const secondaryCtaUrl = d.secondaryCtaUrl;
 const tags: string[] = d.tags || [];
+const featureTags: string[] = d.featureTags || [];
 const posterImage = d.posterImage;
 const posterAlt = d.posterAlt;
 
@@ -143,12 +144,23 @@ const secondaryHref = toHref(secondaryCtaUrl);
         </div>
       )}
 
-      <!-- Process tags -->
+      <!-- SEO / category tags (smaller bullet row) -->
       {tags.length > 0 && (
         <ul class="hero-fade flex flex-wrap items-center gap-x-5 gap-y-2.5 text-xs sm:text-sm text-stone-200/85" style="animation-delay:0.40s">
           {tags.map((tag) => (
             <li class="inline-flex items-center gap-1.5">
               <span class="w-1.5 h-1.5 rounded-full bg-amber-400/80" aria-hidden="true"></span>
+              {tag}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <!-- Process feature tags (third visual row of hero — pill chips) -->
+      {featureTags.length > 0 && (
+        <ul class="hero-fade flex flex-wrap items-center gap-2.5 text-xs sm:text-sm mt-3.5" style="animation-delay:0.48s">
+          {featureTags.map((tag) => (
+            <li class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/25 text-stone-100/90 hover:bg-white/15 hover:border-white/40 transition-colors duration-200">
               {tag}
             </li>
           ))}
@@ -180,6 +192,15 @@ const secondaryHref = toHref(secondaryCtaUrl);
       opacity: 1;
       transform: none;
     }
+  }
+</style>
+
+<style>
+  /* Feature tags (process tags) — pill chips rendered as the third visual row
+     of the hero. The pill style is more prominent than the bullet-dot row and
+     visually groups the 5 capability tags as one cohesive unit. */
+  ul.hero-fade li.inline-flex {
+    white-space: nowrap;
   }
 </style>
 

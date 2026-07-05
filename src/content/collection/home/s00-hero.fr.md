@@ -1,22 +1,30 @@
 ---
 section: 's00-hero'
 lang: 'fr'
-heading: 'Fabricant OEM/ODM de Lunettes pour Collections de Marques'
-subheadingLine1: 'Lunettes de Soleil et Montures Optiques sur Mesure,'
-subheadingLine2: "du Concept à la Livraison Prête à la Vente."
-description: "Kssmi accompagne les marques de lunettes, les marques de distributeur et les équipes produit dans le développement de montures en acétate, titane, métal, fibre de carbone, TR90 et matériaux hybrides, avec un échantillonnage fiable, une qualité maîtrisée et une gestion de production claire."
-primaryCta: 'Démarrer Votre Projet'
+heading: 'Fabricant OEM/ODM de Lunettes — 300 Pièces/Modèle pour Montures Sur Mesure en Acétate, Titane et Fibre de Carbone'
+subheadingLine1: 'Usine à Shenzhen. Échantillonnage en 30 Jours. Production en 60 Jours.'
+subheadingLine2: 'Lunettes de Soleil et Montures Optiques Sur Mesure'
+description: "Kssmi est un fabricant de lunettes OEM et ODM basé à Shenzhen, desservant des marques haut de gamme, des designers indépendants et des acheteurs de marques de distributeur. Nos matériaux incluent l'acétate, le titane, la fibre de carbone, le métal, le TR90 et les montures hybrides. L'acétate de qualité supérieure provient de Mazzucchelli et JINYU, et les matériaux en titane proviennent de Kobe Steel et Baoji Titanium."
+primaryCta: 'Demander un Devis'
 primaryCtaUrl: '/quote'
-secondaryCta: 'Envoyer Votre Design'
-secondaryCtaUrl: '/quote'
+secondaryCta: 'Voir les Matériaux des Montures'
+secondaryCtaUrl: '/materials'
 tags:
-  - 'Montures Personnalisées'
+  - 'Fabricant de Lunettes Sur Mesure'
+  - 'Montures Optiques Sur Mesure en Titane'
+  - 'Lunettes de Soleil Sur Mesure en Acétate'
+  - 'OEM/ODM de Lunettes'
+  - 'OEM/ODM de Lunettes de Soleil'
+  - 'Lunettes de Marque de Distributeur'
+  - 'Entièrement Personnalisable'
+featureTags:
+  - 'Montures Sur Mesure'
   - 'Échantillonnage'
-  - 'Outillage'
+  - 'Moulage'
   - 'Production'
-  - 'Emballage'
   - 'Support QC'
+  - 'Emballage'
 videoUrl: 'https://video.gumlet.io/67dad81fde27d6cecd801d87/6a2c1129a0e544789cbda7b2/main.mp4'
 posterImage: '/media/collection/home/kssmi-custom-eyewear-frames-manufacturing.webp'
-posterAlt: 'Fabrication de montures de lunettes personnalisées Kssmi'
+posterAlt: 'Fabrication de montures de lunettes sur mesure Kssmi'
 ---
