@@ -58,9 +58,20 @@ const secondaryHref = toHref(secondaryCtaUrl);
   <!-- Background video: native <video> with browser-native autoplay. muted + playsinline
        guarantee autoplay is allowed regardless of any user-gesture heuristics, so we don't
        need JS-driven play(). preload="metadata" only fetches a few KB of metadata so the
-       poster image above stays the LCP. object-cover fills the hero. -->
+       poster image above stays the LCP. object-cover fills the hero.
+
+       transition:persist keeps the SAME <video> DOM node across Astro view transitions
+       (language switch / page navigation). Without it, Astro's morph algorithm removes
+       and re-adds the element on every navigation; the browser auto-pauses the video on
+       detach, and because the src matches the new node, autoplay never re-triggers —
+       the video freezes on the first frame until a hard reload. With transition:persist
+       + id="hero-video", Astro keeps this exact node (and its playback state) alive
+       across all language switches, so playback continues seamlessly. The id is required
+       so Astro can uniquely identify the persisted element. -->
   {videoUrl && (
     <video
+      id="hero-video"
+      transition:persist
       class="hero-video absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
       autoplay
       muted
@@ -219,7 +230,14 @@ const secondaryHref = toHref(secondaryCtaUrl);
       const show = () => {
         if (v.dataset.fadedIn) return;
         v.dataset.fadedIn = '1';
-        requestAnimationFrame(() => { v.style.opacity = '1'; });
+        requestAnimationFrame(() => {
+          v.style.opacity = '1';
+          // Belt-and-suspenders: if the browser ever paused playback across a view
+          // transition (e.g., a browser/UA that doesn't honor transition:persist),
+          // resume it. play() is a no-op when the element is already playing, so this
+          // costs nothing on the normal path.
+          if (v.paused) v.play().catch(() => {});
+        });
       };
       if (v.readyState >= 2 /* HAVE_CURRENT_DATA */) {
         show();
@@ -241,6 +259,14 @@ const secondaryHref = toHref(secondaryCtaUrl);
   }
 
   document.addEventListener('astro:page-load', scheduleFadeIn);
+  // Belt-and-suspenders: explicitly resume playback after every view transition, in
+  // case transition:persist ever fails to preserve playback state on a given browser.
+  // astro:after-swap fires after the new DOM is in place, before astro:page-load.
+  document.addEventListener('astro:after-swap', () => {
+    document.querySelectorAll<HTMLVideoElement>('.hero-video').forEach((v) => {
+      if (v.paused) v.play().catch(() => {});
+    });
+  });
   // Back/forward cache restore — astro:page-load doesn't fire after bfcache restore.
   window.addEventListener('pageshow', (e) => {
     if ((e as any).persisted) scheduleFadeIn();
