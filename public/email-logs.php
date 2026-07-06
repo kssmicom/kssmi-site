@@ -185,7 +185,9 @@ function cleanExpiredTokens() {
 function sendResetEmail($token) {
     global $_privateCfg;
 
-    $resetUrl = 'https://kssmi.com/email-logs.php?reset=' . $token;
+    // Include the session's CSRF token in the reset link so the user clicking
+    // from email brings a valid token to the GET handler.
+    $resetUrl = 'https://kssmi.com/email-logs.php?reset=' . $token . '&csrf=' . urlencode($_SESSION['csrf_reset'] ?? '');
 
     $htmlBody = "
     <html>
@@ -278,55 +280,88 @@ $passwordError = '';
 $showResetForm = false;
 $resetMode = false;
 
+// CSRF token for password reset flow (generated once per session; rotated after successful use)
+// This prevents third-party pages from auto-submitting a reset request / reset submission
+// while the admin is logged in (P2-1 of security-004.md).
+if (empty($_SESSION['csrf_reset'])) {
+    $_SESSION['csrf_reset'] = bin2hex(random_bytes(32));
+}
+
 // Handle password reset request
 if (isset($_POST['request_reset'])) {
-    // Generate token
-    $token = generateResetToken();
-    $tokens = cleanExpiredTokens();
-    $tokens[$token] = [
-        'created' => time(),
-        'expires' => time() + 3600 // 1 hour
-    ];
-
-    if (saveResetTokens($tokens)) {
-        $result = sendResetEmail($token);
-        if ($result['success']) {
-            $message = 'Reset link sent to ' . ADMIN_EMAIL . '. Please check your inbox. The link expires in 1 hour.';
-        } else {
-            $error = 'Failed to send reset email: ' . ($result['error'] ?? 'Unknown error');
-        }
+    // CSRF check — third-party sites must not be able to auto-trigger a reset email
+    if (!isset($_POST['csrf_token']) ||
+        !hash_equals($_SESSION['csrf_reset'] ?? '', $_POST['csrf_token'])) {
+        $error = 'Security check failed. Please reload the page and try again.';
     } else {
-        $error = 'Failed to generate reset token. Please check file permissions.';
+        // Generate token
+        $token = generateResetToken();
+        $tokens = cleanExpiredTokens();
+        $tokens[$token] = [
+            'created' => time(),
+            'expires' => time() + 3600 // 1 hour
+        ];
+
+        if (saveResetTokens($tokens)) {
+            $result = sendResetEmail($token);
+            if ($result['success']) {
+                $message = 'Reset link sent to ' . ADMIN_EMAIL . '. Please check your inbox. The link expires in 1 hour.';
+                // Rotate CSRF token after successful use (prevents email-bombing via
+                // repeated form submissions even with a known token)
+                $_SESSION['csrf_reset'] = bin2hex(random_bytes(32));
+            } else {
+                $error = 'Failed to send reset email: ' . ($result['error'] ?? 'Unknown error');
+            }
+        } else {
+            $error = 'Failed to generate reset token. Please check file permissions.';
+        }
     }
 }
 
 // Handle password reset with token
 if (isset($_GET['reset'])) {
     $token = $_GET['reset'];
+    $urlCsrf = $_GET['csrf'] ?? '';
     $tokens = cleanExpiredTokens();
 
     if (isset($tokens[$token])) {
-        $resetMode = true;
+        // CSRF check — the reset link's URL must include a valid CSRF token
+        // matching the session. This prevents a crafted link (e.g. forwarded
+        // by an attacker) from being used.
+        if (!hash_equals($_SESSION['csrf_reset'] ?? '', $urlCsrf)) {
+            $error = 'Security check failed. The reset link may have been tampered with. Please request a new one.';
+            $resetMode = false;
+        } else {
+            $resetMode = true;
 
-        // Handle new password submission
-        if (isset($_POST['reset_password'])) {
-            $newPass = trim($_POST['new_password']);
-            $confirmPass = trim($_POST['confirm_password']);
-
-            if (strlen($newPass) < 12) {
-                $passwordError = 'Password must be at least 12 characters';
-            } elseif ($newPass !== $confirmPass) {
-                $passwordError = 'Passwords do not match';
-            } else {
-                if (setPassword($newPass)) {
-                    // Remove used token
-                    unset($tokens[$token]);
-                    saveResetTokens($tokens);
-
-                    $passwordMessage = 'Password reset successfully! You can now login with your new password.';
-                    $resetMode = false;
+            // Handle new password submission
+            if (isset($_POST['reset_password'])) {
+                // Re-check CSRF on the form submit as well (defense in depth)
+                if (!isset($_POST['csrf_token']) ||
+                    !hash_equals($_SESSION['csrf_reset'] ?? '', $_POST['csrf_token'])) {
+                    $passwordError = 'Security check failed. Please use the link from your email.';
                 } else {
-                    $passwordError = 'Failed to save new password. Please try again.';
+                    $newPass = trim($_POST['new_password']);
+                    $confirmPass = trim($_POST['confirm_password']);
+
+                    if (strlen($newPass) < 12) {
+                        $passwordError = 'Password must be at least 12 characters';
+                    } elseif ($newPass !== $confirmPass) {
+                        $passwordError = 'Passwords do not match';
+                    } else {
+                        if (setPassword($newPass)) {
+                            // Remove used token
+                            unset($tokens[$token]);
+                            saveResetTokens($tokens);
+
+                            $passwordMessage = 'Password reset successfully! You can now login with your new password.';
+                            $resetMode = false;
+                            // Rotate CSRF token after successful reset
+                            $_SESSION['csrf_reset'] = bin2hex(random_bytes(32));
+                        } else {
+                            $passwordError = 'Failed to save new password. Please try again.';
+                        }
+                    }
                 }
             }
         }
@@ -882,8 +917,9 @@ function resendEmail($log) {
                 <?php else: ?>
                     <p style="color:#666;margin-bottom:20px;">Enter your new password below.</p>
                     <form method="POST">
-                        <input type="password" name="new_password" placeholder="New password (min 6 characters)" required minlength="6">
-                        <input type="password" name="confirm_password" placeholder="Confirm new password" required minlength="6">
+                        <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_reset'] ?? ''); ?>">
+                        <input type="password" name="new_password" placeholder="New password (min 12 characters)" required minlength="12">
+                        <input type="password" name="confirm_password" placeholder="Confirm new password" required minlength="12">
                         <button type="submit" name="reset_password">Set New Password</button>
                     </form>
                 <?php endif; ?>
@@ -918,6 +954,7 @@ function resendEmail($log) {
                             <strong><?php echo htmlspecialchars(ADMIN_EMAIL); ?></strong>
                         </p>
                         <form method="POST">
+                            <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_reset'] ?? ''); ?>">
                             <button type="submit" name="request_reset" class="secondary">Send Reset Link</button>
                         </form>
                     </div>
