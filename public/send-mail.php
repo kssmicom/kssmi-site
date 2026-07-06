@@ -108,7 +108,7 @@ function logEmail($config, $data, $status, $message = '', $error = '', $visitorI
     if (!$config['log_enabled']) return;
 
     // Use provided IP or fall back to server detection
-    $ipToLog = $visitorIP ?? $data['client_ip'] ?? getRealIP();
+    $ipToLog = $visitorIP ?? getRealIP();
 
     // Store form details for potential resend
     $formDetails = $data['details'] ?? '';
@@ -136,7 +136,7 @@ function logEmail($config, $data, $status, $message = '', $error = '', $visitorI
         'message' => $message,
         'error' => $error,
         'ip_address' => $ipToLog,
-        'country' => $visitorCountry ?? $data['client_country'] ?? 'Unknown',
+        'country' => $visitorCountry ?? 'Unknown',
         'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? 'Unknown',
     ];
 
@@ -229,14 +229,12 @@ function getRecentLogs($config, $limit = 50) {
 // TURNSTILE VERIFICATION
 // ============================================
 
-function verifyTurnstile($token, $secret, $clientIP = null) {
+function verifyTurnstile($token, $secret) {
     if (empty($token)) return false;
 
-    // Use client-reported IP if available, otherwise fall back to server detection
-    $ip = $clientIP;
-    if (empty($ip) || !filter_var($ip, FILTER_VALIDATE_IP)) {
-        $ip = getRealIP();
-    }
+    // Always use server-detected IP — never trust client-reported
+    // (client IP was spoofable, see P1-4 of security-004)
+    $ip = getRealIP();
 
     $data = [
         'secret' => $secret,
@@ -648,6 +646,9 @@ This email was automatically generated from the KSSMI Eyewear contact form.
 // ============================================
 
 // Get and sanitize form data
+// Note: client_ip and client_country are NO LONGER accepted from the client.
+// They were spoofable and have been removed for security (P1-4 of security-004).
+// The server always uses HTTP_CF_CONNECTING_IP via getRealIP() instead.
 $formData = [
     'name' => sanitize($_POST['name'] ?? ''),
     'email' => sanitize($_POST['email'] ?? ''),
@@ -656,8 +657,6 @@ $formData = [
     'product_url' => sanitize($_POST['product_url'] ?? ''),
     'product_name' => sanitize($_POST['product_name'] ?? 'N/A'),
     'language' => sanitize($_POST['language'] ?? 'en'),
-    'client_ip' => sanitize($_POST['client_ip'] ?? ''),
-    'client_country' => sanitize($_POST['client_country'] ?? ''),
 ];
 
 $turnstileToken = $_POST['cf-turnstile-response'] ?? '';
@@ -683,7 +682,7 @@ if (empty($formData['details'])) {
 
 // Verify Turnstile (skip in debug mode)
 if (!$config['debug_mode']) {
-    if (!verifyTurnstile($turnstileToken, $config['turnstile_secret'], $formData['client_ip'] ?? null)) {
+    if (!verifyTurnstile($turnstileToken, $config['turnstile_secret'])) {
         $errors[] = 'Security verification failed. Please complete the captcha.';
     }
 } else {
@@ -699,28 +698,12 @@ if (!empty($errors)) {
     exit;
 }
 
-// Get visitor metadata - use client-reported IP (more accurate behind Cloudflare)
-// Client-side JavaScript fetches the real IP from ipapi.co
-$clientIP = $formData['client_ip'] ?? '';
-$clientCountry = $formData['client_country'] ?? '';
-
-// Use client-reported IP if available, otherwise fall back to server detection
-if (!empty($clientIP) && filter_var($clientIP, FILTER_VALIDATE_IP)) {
-    $visitorIP = $clientIP;
-    debugIPLog('IP-source', ['source' => 'client-reported', 'ip' => $visitorIP]);
-} else {
-    $visitorIP = getRealIP();
-    debugIPLog('IP-source', ['source' => 'server-detected', 'ip' => $visitorIP]);
-}
-
-// Use client-reported country if available, otherwise detect from IP
-if (!empty($clientCountry) && strlen($clientCountry) === 2) {
-    $visitorCountry = strtoupper($clientCountry);
-    debugIPLog('Country-source', ['source' => 'client-reported', 'country' => $visitorCountry]);
-} else {
-    $visitorCountry = getCountryFromIP($visitorIP);
-    debugIPLog('Country-source', ['source' => 'server-detected', 'country' => $visitorCountry]);
-}
+// Get visitor metadata — ALWAYS server-detected, never trust client-reported
+// (P1-4 of security-004: client IP was spoofable via hidden form fields)
+$visitorIP = getRealIP();
+$visitorCountry = getCountryFromIP($visitorIP);
+debugIPLog('IP-source', ['source' => 'server-detected', 'ip' => $visitorIP]);
+debugIPLog('Country-source', ['source' => 'server-detected', 'country' => $visitorCountry]);
 
 $inquiryId = generateInquiryId();
 
