@@ -989,7 +989,7 @@ function vjt_get_settings($forceReload = false) {
     if ($cache !== null && !$forceReload) return $cache;
     $defaults = ['session_timeout' => '30', 'retention_days' => '90', 'enable_geo' => '1'];
     try {
-        $rows = vjt_db()->query("SELECT key, value FROM settings")->fetchAll();
+        $rows = vjt_db()->prepare("SELECT key, value FROM settings")->execute()->fetchAll();
         $out = $defaults;
         foreach ($rows as $r) { $out[$r['key']] = $r['value']; }
         $cache = $out;
@@ -1020,39 +1020,53 @@ function vjt_save_settings($data) {
 function vjt_get_overview($since) {
     $db = vjt_db();
 
-    $totalVisitors = (int)$db->query("SELECT COUNT(*) c FROM visitors WHERE last_seen_at >= " . $db->quote($since))->fetch()['c'];
-    $totalSessions = (int)$db->query("SELECT COUNT(*) c FROM sessions WHERE started_at >= " . $db->quote($since))->fetch()['c'];
+    $totalVisitorsStmt = $db->prepare("SELECT COUNT(*) c FROM visitors WHERE last_seen_at >= ?");
+    $totalVisitorsStmt->execute([$since]);
+    $totalVisitors = (int)$totalVisitorsStmt->fetch()['c'];
+    $totalSessionsStmt = $db->prepare("SELECT COUNT(*) c FROM sessions WHERE started_at >= ?");
+    $totalSessionsStmt->execute([$since]);
+    $totalSessions = (int)$totalSessionsStmt->fetch()['c'];
 
-    $subRow = $db->query("SELECT
+    $subStmt = $db->prepare("SELECT
             COUNT(*) total,
             SUM(CASE WHEN status='success' THEN 1 ELSE 0 END) success
-        FROM submissions WHERE submitted_at >= " . $db->quote($since))->fetch();
+        FROM submissions WHERE submitted_at >= ?");
+    $subStmt->execute([$since]);
+    $subRow = $subStmt->fetch();
     $totalSubmissions = (int)($subRow['total'] ?? 0);
     $successSubmissions = (int)($subRow['success'] ?? 0);
 
-    $durRow = $db->query("SELECT AVG(duration_seconds) a FROM pageviews
-        WHERE visited_at >= " . $db->quote($since) . " AND duration_seconds > 0")->fetch();
+    $durStmt = $db->prepare("SELECT AVG(duration_seconds) a FROM pageviews
+        WHERE visited_at >= ? AND duration_seconds > 0");
+    $durStmt->execute([$since]);
+    $durRow = $durStmt->fetch();
     $avgDuration = $durRow && $durRow['a'] !== null ? round($durRow['a']) : 0;
     $conversionRate = $totalSessions > 0 ? round(($successSubmissions / $totalSessions) * 100, 1) : 0;
 
     // Submission trend (30 days)
     $trend = [];
     for ($i = 29; $i >= 0; $i--) { $trend[date('Y-m-d', strtotime("-{$i} days"))] = 0; }
-    $rows = $db->query("SELECT substr(submitted_at,1,10) d, COUNT(*) c FROM submissions
-        WHERE submitted_at >= " . $db->quote(date('Y-m-d 00:00:00', strtotime('-29 days'))) . "
-        GROUP BY d")->fetchAll();
+    $trendStmt = $db->prepare("SELECT substr(submitted_at,1,10) d, COUNT(*) c FROM submissions
+        WHERE submitted_at >= ?
+        GROUP BY d");
+    $trendStmt->execute([date('Y-m-d 00:00:00', strtotime('-29 days'))]);
+    $rows = $trendStmt->fetchAll();
     foreach ($rows as $r) { if (isset($trend[$r['d']])) $trend[$r['d']] = (int)$r['c']; }
 
     // Submission trend (12 months)
     $trendMonthly = [];
     for ($i = 11; $i >= 0; $i--) { $trendMonthly[date('Y-m', strtotime("-{$i} months"))] = 0; }
-    $rows = $db->query("SELECT substr(submitted_at,1,7) m, COUNT(*) c FROM submissions GROUP BY m")->fetchAll();
+    $monthlyStmt = $db->prepare("SELECT substr(submitted_at,1,7) m, COUNT(*) c FROM submissions GROUP BY m");
+    $monthlyStmt->execute();
+    $rows = $monthlyStmt->fetchAll();
     foreach ($rows as $r) { if (isset($trendMonthly[$r['m']])) $trendMonthly[$r['m']] = (int)$r['c']; }
 
     // Submission trend (years)
     $trendYearly = [];
     $minYear = (int)date('Y');
-    $rows = $db->query("SELECT substr(submitted_at,1,4) y, COUNT(*) c FROM submissions GROUP BY y")->fetchAll();
+    $yearlyStmt = $db->prepare("SELECT substr(submitted_at,1,4) y, COUNT(*) c FROM submissions GROUP BY y");
+    $yearlyStmt->execute();
+    $rows = $yearlyStmt->fetchAll();
     $yearCounts = [];
     foreach ($rows as $r) {
         $y = (int)$r['y'];
@@ -1065,7 +1079,9 @@ function vjt_get_overview($since) {
     // Top referrers within window
     $directCount = 0;
     $referrerCounts = [];
-    $rows = $db->query("SELECT referrer FROM sessions WHERE started_at >= " . $db->quote($since))->fetchAll();
+    $refStmt = $db->prepare("SELECT referrer FROM sessions WHERE started_at >= ?");
+    $refStmt->execute([$since]);
+    $rows = $refStmt->fetchAll();
     foreach ($rows as $r) {
         $ref = $r['referrer'] ?? '';
         if (empty($ref) || $ref === 'direct') $directCount++;
@@ -1079,8 +1095,10 @@ function vjt_get_overview($since) {
 
     // Device breakdown
     $deviceCounts = ['desktop' => 0, 'mobile' => 0, 'tablet' => 0, 'Unknown' => 0];
-    $rows = $db->query("SELECT device_type, COUNT(*) c FROM visitors
-        WHERE last_seen_at >= " . $db->quote($since) . " GROUP BY device_type")->fetchAll();
+    $devStmt = $db->prepare("SELECT device_type, COUNT(*) c FROM visitors
+        WHERE last_seen_at >= ? GROUP BY device_type");
+    $devStmt->execute([$since]);
+    $rows = $devStmt->fetchAll();
     foreach ($rows as $r) {
         $d = $r['device_type'] ?: 'Unknown';
         $deviceCounts[$d] = ($deviceCounts[$d] ?? 0) + (int)$r['c'];
@@ -1088,7 +1106,9 @@ function vjt_get_overview($since) {
 
     // Source breakdown (classify in PHP — needs referrer + utm)
     $sourceCounts = ['direct' => 0, 'search' => 0, 'social' => 0, 'ads' => 0, 'ai' => 0, 'other' => 0];
-    $rows = $db->query("SELECT referrer, utm_medium FROM sessions WHERE started_at >= " . $db->quote($since))->fetchAll();
+    $utmStmt = $db->prepare("SELECT referrer, utm_medium FROM sessions WHERE started_at >= ?");
+    $utmStmt->execute([$since]);
+    $rows = $utmStmt->fetchAll();
     foreach ($rows as $s) {
         $src = vjt_classify_source($s);
         $sourceCounts[$src] = ($sourceCounts[$src] ?? 0) + 1;
@@ -1156,7 +1176,8 @@ function vjt_get_visitors_list($filters) {
 
     // Stream rows (fetch one at a time) instead of fetchAll() so we never hold
     // the whole sessions table in memory alongside the aggregate maps.
-    $sessStmt = $db->query("SELECT visitor_id, referrer, utm_medium, started_at, last_seen_at FROM sessions");
+    $sessStmt = $db->prepare("SELECT visitor_id, referrer, utm_medium, started_at, last_seen_at FROM sessions");
+    $sessStmt->execute();
     while ($s = $sessStmt->fetch()) {
         $vid = $s['visitor_id'];
         $visitorSessions[$vid] = ($visitorSessions[$vid] ?? 0) + 1;
@@ -1167,7 +1188,8 @@ function vjt_get_visitors_list($filters) {
             $visitorSessionTime[$vid] = ($visitorSessionTime[$vid] ?? 0) + ($ls - $st);
         }
     }
-    $subStmt = $db->query("SELECT visitor_id, COUNT(*) c FROM submissions GROUP BY visitor_id");
+    $subStmt = $db->prepare("SELECT visitor_id, COUNT(*) c FROM submissions GROUP BY visitor_id");
+    $subStmt->execute();
     while ($r = $subStmt->fetch()) { $visitorSubmissions[$r['visitor_id']] = (int)$r['c']; }
 
     $search         = trim($filters['search'] ?? '');
@@ -1188,7 +1210,8 @@ function vjt_get_visitors_list($filters) {
     $productVisitorSet = null;
     if ($productSku !== '') {
         $productVisitorSet = [];
-        $pvStmt = $db->query("SELECT DISTINCT visitor_id, url FROM pageviews WHERE url <> '' AND url LIKE '%/product/%'");
+        $pvStmt = $db->prepare("SELECT DISTINCT visitor_id, url FROM pageviews WHERE url <> '' AND url LIKE '%/product/%'");
+        $pvStmt->execute();
         while ($pv = $pvStmt->fetch()) {
             if (preg_match('#/product/(k[\w-]+)/?#i', $pv['url'], $m) && strtoupper($m[1]) === $productSku) {
                 $productVisitorSet[$pv['visitor_id']] = true;
@@ -1331,27 +1354,34 @@ function vjt_wipe_all_data() {
 
 function vjt_get_traffic_data($since) {
     $db = vjt_db();
-    $q = $db->quote($since);
 
-    $totalPageviews = (int)$db->query("SELECT COUNT(*) c FROM pageviews WHERE visited_at >= $q")->fetch()['c'];
+    $totalPageviewsStmt = $db->prepare("SELECT COUNT(*) c FROM pageviews WHERE visited_at >= ?");
+    $totalPageviewsStmt->execute([$since]);
+    $totalPageviews = (int)$totalPageviewsStmt->fetch()['c'];
 
     // Daily trend (30 days)
     $dailyTrend = [];
     for ($i = 29; $i >= 0; $i--) { $dailyTrend[date('Y-m-d', strtotime("-{$i} days"))] = 0; }
-    $rows = $db->query("SELECT substr(visited_at,1,10) d, COUNT(*) c FROM pageviews
-        WHERE visited_at >= " . $db->quote(date('Y-m-d 00:00:00', strtotime('-29 days'))) . " GROUP BY d")->fetchAll();
+    $dailyTrendStmt = $db->prepare("SELECT substr(visited_at,1,10) d, COUNT(*) c FROM pageviews
+        WHERE visited_at >= ? GROUP BY d");
+    $dailyTrendStmt->execute([date('Y-m-d 00:00:00', strtotime('-29 days'))]);
+    $rows = $dailyTrendStmt->fetchAll();
     foreach ($rows as $r) { if (isset($dailyTrend[$r['d']])) $dailyTrend[$r['d']] = (int)$r['c']; }
 
     // Monthly trend (12 months)
     $monthlyTrend = [];
     for ($i = 11; $i >= 0; $i--) { $monthlyTrend[date('Y-m', strtotime("-{$i} months"))] = 0; }
-    $rows = $db->query("SELECT substr(visited_at,1,7) m, COUNT(*) c FROM pageviews GROUP BY m")->fetchAll();
+    $monthlyTrendStmt = $db->prepare("SELECT substr(visited_at,1,7) m, COUNT(*) c FROM pageviews GROUP BY m");
+    $monthlyTrendStmt->execute();
+    $rows = $monthlyTrendStmt->fetchAll();
     foreach ($rows as $r) { if (isset($monthlyTrend[$r['m']])) $monthlyTrend[$r['m']] = (int)$r['c']; }
 
     // Yearly trend
     $yearlyTrend = [];
     $minYear = (int)date('Y');
-    $rows = $db->query("SELECT substr(visited_at,1,4) y, COUNT(*) c FROM pageviews GROUP BY y")->fetchAll();
+    $yearlyTrendStmt = $db->prepare("SELECT substr(visited_at,1,4) y, COUNT(*) c FROM pageviews GROUP BY y");
+    $yearlyTrendStmt->execute();
+    $rows = $yearlyTrendStmt->fetchAll();
     $yearCounts = [];
     foreach ($rows as $r) {
         $y = (int)$r['y'];
@@ -1360,12 +1390,14 @@ function vjt_get_traffic_data($since) {
     for ($y = $minYear; $y <= (int)date('Y'); $y++) { $yearlyTrend[(string)$y] = $yearCounts[(string)$y] ?? 0; }
 
     // Top pages (views, avg duration, max scroll) within window
-    $rows = $db->query("SELECT url,
+    $topPagesStmt = $db->prepare("SELECT url,
             COUNT(*) views,
             AVG(CASE WHEN duration_seconds > 0 THEN duration_seconds END) avg_dur,
             MAX(scroll_depth) max_scroll
-        FROM pageviews WHERE visited_at >= $q AND url <> ''
-        GROUP BY url ORDER BY views DESC LIMIT 20")->fetchAll();
+        FROM pageviews WHERE visited_at >= ? AND url <> ''
+        GROUP BY url ORDER BY views DESC LIMIT 20");
+    $topPagesStmt->execute([$since]);
+    $rows = $topPagesStmt->fetchAll();
     $topPages = [];
     foreach ($rows as $r) {
         $topPages[] = [
@@ -1388,19 +1420,25 @@ function vjt_get_traffic_data($since) {
         unset($tp);
     }
 
-    $uniqueUrls = (int)$db->query("SELECT COUNT(DISTINCT url) c FROM pageviews WHERE visited_at >= $q AND url <> ''")->fetch()['c'];
+    $uniqueUrlsStmt = $db->prepare("SELECT COUNT(DISTINCT url) c FROM pageviews WHERE visited_at >= ? AND url <> ''");
+    $uniqueUrlsStmt->execute([$since]);
+    $uniqueUrls = (int)$uniqueUrlsStmt->fetch()['c'];
 
     // Bounce rate: sessions with a single pageview within window
-    $bounceRow = $db->query("SELECT
+    $bounceStmt = $db->prepare("SELECT
             COUNT(*) total_sessions,
             SUM(CASE WHEN pv = 1 THEN 1 ELSE 0 END) bounces
-        FROM (SELECT session_id, COUNT(*) pv FROM pageviews WHERE visited_at >= $q GROUP BY session_id)")->fetch();
+        FROM (SELECT session_id, COUNT(*) pv FROM pageviews WHERE visited_at >= ? GROUP BY session_id)");
+    $bounceStmt->execute([$since]);
+    $bounceRow = $bounceStmt->fetch();
     $totalSessions = (int)($bounceRow['total_sessions'] ?? 0);
     $bounceSessions = (int)($bounceRow['bounces'] ?? 0);
     $bounceRate = $totalSessions > 0 ? round(($bounceSessions / $totalSessions) * 100) : 0;
 
-    $dwellRow = $db->query("SELECT AVG(duration_seconds) a FROM pageviews
-        WHERE visited_at >= $q AND duration_seconds > 0")->fetch();
+    $dwellStmt = $db->prepare("SELECT AVG(duration_seconds) a FROM pageviews
+        WHERE visited_at >= ? AND duration_seconds > 0");
+    $dwellStmt->execute([$since]);
+    $dwellRow = $dwellStmt->fetch();
     $avgDwellAll = $dwellRow && $dwellRow['a'] !== null ? round($dwellRow['a']) : 0;
 
     return [
@@ -1422,8 +1460,10 @@ function vjt_get_countries() {
     $db = vjt_db();
     $countries = [];
 
-    $rows = $db->query("SELECT CASE WHEN country IS NULL OR country = '' THEN 'UNKNOWN' ELSE upper(country) END cc,
-        COUNT(*) c FROM visitors GROUP BY cc")->fetchAll();
+    $countryRowsStmt = $db->prepare("SELECT CASE WHEN country IS NULL OR country = '' THEN 'UNKNOWN' ELSE upper(country) END cc,
+        COUNT(*) c FROM visitors GROUP BY cc");
+    $countryRowsStmt->execute();
+    $rows = $countryRowsStmt->fetchAll();
     foreach ($rows as $r) {
         $cc = $r['cc'];
         $countries[$cc] = ['code' => $cc, 'visitors' => (int)$r['c'], 'sessions' => 0, 'submissions' => 0];
@@ -1431,16 +1471,19 @@ function vjt_get_countries() {
 
     // visitor → country map (stream rows to keep peak memory low)
     $visitorCountry = [];
-    $vcStmt = $db->query("SELECT visitor_id, country FROM visitors");
+    $vcStmt = $db->prepare("SELECT visitor_id, country FROM visitors");
+    $vcStmt->execute();
     while ($v = $vcStmt->fetch()) {
         $visitorCountry[$v['visitor_id']] = !empty($v['country']) ? strtoupper($v['country']) : 'UNKNOWN';
     }
-    $csStmt = $db->query("SELECT visitor_id FROM sessions");
+    $csStmt = $db->prepare("SELECT visitor_id FROM sessions");
+    $csStmt->execute();
     while ($s = $csStmt->fetch()) {
         $cc = $visitorCountry[$s['visitor_id']] ?? 'UNKNOWN';
         if (isset($countries[$cc])) $countries[$cc]['sessions']++;
     }
-    $cbStmt = $db->query("SELECT visitor_id FROM submissions");
+    $cbStmt = $db->prepare("SELECT visitor_id FROM submissions");
+    $cbStmt->execute();
     while ($sub = $cbStmt->fetch()) {
         $cc = $visitorCountry[$sub['visitor_id']] ?? 'UNKNOWN';
         if (isset($countries[$cc])) $countries[$cc]['submissions']++;
