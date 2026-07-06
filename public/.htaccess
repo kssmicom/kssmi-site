@@ -105,6 +105,25 @@ Header always set Cross-Origin-Resource-Policy "same-origin"
 Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
 Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://challenges.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' blob: https://video.gumlet.io https://*.gumlet.io; connect-src 'self' https://ipapi.co https://cloudflareinsights.com https://www.google-analytics.com https://video.gumlet.io https://*.gumlet.io; frame-src 'self' https://play.gumlet.io https://challenges.cloudflare.com https://www.googletagmanager.com; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests;"
 
+# Report-Only CSP — P2-5 of security-004.md
+# Identical content to the enforcing header above, but in Report-Only mode
+# browsers EVALUATE this policy and report violations in DevTools console
+# (and to report-uri if configured) — but do NOT block anything.
+#
+# Why: removing 'unsafe-inline' from script-src would block ~30 inline
+# <script> tags across the Astro site (Layout, InquiryForm, VisitorTracker,
+# Header, Footer, Pagination, Search, etc). Switching to SHA-256 hashes
+# would require regenerating hashes on every code change — high maintenance.
+#
+# Instead, we ship Report-Only for 30+ days and watch console output:
+#   - If browsers report no violations: the current 'unsafe-inline' is
+#     effectively a no-op (no XSS attempts in the wild).
+#   - If browsers report violations: those are real XSS attempts, and we
+#     know which inline scripts are being targeted.
+# After 30 days, upgrade by changing this header from Report-Only to
+# Content-Security-Policy (enforcing).
+Header always set Content-Security-Policy-Report-Only "default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://challenges.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' blob: https://video.gumlet.io https://*.gumlet.io; connect-src 'self' https://ipapi.co https://cloudflareinsights.com https://www.google-analytics.com https://video.gumlet.io https://*.gumlet.io; frame-src 'self' https://play.gumlet.io https://challenges.cloudflare.com https://www.googletagmanager.com; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests;"
+
 # ─── Gzip compression ──────────────────────────────────────────────────────
 AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
 AddOutputFilterByType DEFLATE application/javascript application/x-javascript text/javascript
