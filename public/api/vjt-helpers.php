@@ -831,70 +831,74 @@ function vjt_process_geo_queue($limit = 100) {
     if (empty($ips)) return 0;
 
     $resolved = 0;
-    // ip-api batch is capped at 100 per request
-    foreach (array_chunk($ips, 100) as $chunk) {
-        $payload = [];
-        foreach ($chunk as $ip) {
-            $payload[] = ['query' => $ip, 'fields' => 'status,countryCode,city,regionName,callingCode,query'];
-        }
+    // Switched from ip-api.com /batch to ipapi.co per-IP HTTPS lookups because:
+    //   1. ip-api.com requires the paid Pro plan for HTTPS (free tier is HTTP-only)
+    //   2. ipapi.co's free tier supports HTTPS /json/{ip} single-IP lookups
+    //   3. We already cache results in geo_cache, so repeat IPs don't re-query
+    // Per-IP cost: 1 HTTPS GET per uncached IP, ~100ms each. For a B2B site
+    // this is acceptable (and only runs from the admin dashboard).
+    foreach ($ips as $ip) {
         $results = null;
         try {
             $ctx = stream_context_create(['http' => [
-                'method' => 'POST',
-                'header' => "Content-Type: application/json\r\n",
-                'content' => json_encode($payload),
+                'method' => 'GET',
+                'header' => "Accept: application/json\r\n",
                 'timeout' => 5,
+                'ignore_errors' => true,
             ]]);
-            $response = @file_get_contents('http://ip-api.com/batch?fields=status,countryCode,city,regionName,callingCode,query', false, $ctx);
+            $response = @file_get_contents("https://ipapi.co/{$ip}/json/", false, $ctx);
             if ($response) $results = json_decode($response, true);
         } catch (Exception $e) {
             $results = null;
         }
-        if (!is_array($results)) break; // network/throttle — stop, leave remaining queued
+        if (!is_array($results)) continue; // skip on error, leave in queue for retry
 
         $now = date('Y-m-d H:i:s');
-        foreach ($results as $geo) {
-            $ip = $geo['query'] ?? '';
-            if ($ip === '') continue;
-            $country = ($geo['status'] ?? '') === 'success' ? ($geo['countryCode'] ?? '') : '';
-            $city = $geo['city'] ?? '';
-            $region = $geo['regionName'] ?? '';
-            $calling = isset($geo['callingCode']) ? (string)$geo['callingCode'] : '';
+        // ipapi.co response fields (vs. previous ip-api.com):
+        //   country_code  (was countryCode) — ISO-2 code, e.g. "US"
+        //   city          (same)
+        //   region        (was regionName)
+        //   country_calling_code (was callingCode) — includes leading "+", strip it
+        $ip_returned = $results['ip'] ?? $ip;
+        if ($ip_returned === '') continue;
+        $country = strtoupper($results['country_code'] ?? '');
+        $city = $results['city'] ?? '';
+        $region = $results['region'] ?? '';
+        $calling = isset($results['country_calling_code']) ? ltrim('+', (string)$results['country_calling_code']) : '';
 
-            try {
-                $db->beginTransaction();
-                // Cache (even empty results, to avoid re-querying dead IPs for a day)
-                $c = $db->prepare("INSERT INTO geo_cache (ip, country, city, region, calling_code, cached_at)
-                    VALUES (:ip,:country,:city,:region,:calling_code,:cached_at)
-                    ON CONFLICT(ip) DO UPDATE SET country=excluded.country, city=excluded.city,
-                        region=excluded.region, calling_code=excluded.calling_code, cached_at=excluded.cached_at");
-                $c->execute([
-                    ':ip' => $ip, ':country' => $country, ':city' => $city,
-                    ':region' => $region, ':calling_code' => $calling, ':cached_at' => $now,
-                ]);
+        try {
+            $db->beginTransaction();
+            // Cache (even empty results, to avoid re-querying dead IPs for a day)
+            $c = $db->prepare("INSERT INTO geo_cache (ip, country, city, region, calling_code, cached_at)
+                VALUES (:ip,:country,:city,:region,:calling_code,:cached_at)
+                ON CONFLICT(ip) DO UPDATE SET country=excluded.country, city=excluded.city,
+                    region=excluded.region, calling_code=excluded.calling_code, cached_at=excluded.cached_at");
+            $c->execute([
+                ':ip' => $ip_returned, ':country' => $country, ':city' => $city,
+                ':region' => $region, ':calling_code' => $calling, ':cached_at' => $now,
+            ]);
 
-                if ($country !== '') {
-                    // Backfill rows that have this IP but no country yet
-                    $u1 = $db->prepare("UPDATE sessions SET country=:country, city=:city, region=:region, calling_code=:calling
-                        WHERE ip = :ip AND (country IS NULL OR country = '')");
-                    $u1->execute([':country'=>$country, ':city'=>$city, ':region'=>$region, ':calling'=>$calling, ':ip'=>$ip]);
+            if ($country !== '') {
+                // Backfill rows that have this IP but no country yet
+                $u1 = $db->prepare("UPDATE sessions SET country=:country, city=:city, region=:region, calling_code=:calling
+                    WHERE ip = :ip AND (country IS NULL OR country = '')");
+                $u1->execute([':country'=>$country, ':city'=>$city, ':region'=>$region, ':calling'=>$calling, ':ip'=>$ip_returned]);
 
-                    $u2 = $db->prepare("UPDATE visitors SET country=:country, city=:city
-                        WHERE first_ip = :ip AND (country IS NULL OR country = '')");
-                    $u2->execute([':country'=>$country, ':city'=>$city, ':ip'=>$ip]);
+                $u2 = $db->prepare("UPDATE visitors SET country=:country, city=:city
+                    WHERE first_ip = :ip AND (country IS NULL OR country = '')");
+                $u2->execute([':country'=>$country, ':city'=>$city, ':ip'=>$ip_returned]);
 
-                    $u3 = $db->prepare("UPDATE submissions SET country=:country, city=:city, region=:region, calling_code=:calling
-                        WHERE ip = :ip AND (country IS NULL OR country = '')");
-                    $u3->execute([':country'=>$country, ':city'=>$city, ':region'=>$region, ':calling'=>$calling, ':ip'=>$ip]);
-                }
-
-                $db->prepare("DELETE FROM geo_queue WHERE ip = ?")->execute([$ip]);
-                $db->commit();
-                $resolved++;
-            } catch (Exception $e) {
-                if ($db->inTransaction()) $db->rollBack();
-                error_log('VJT geo backfill error: ' . $e->getMessage());
+                $u3 = $db->prepare("UPDATE submissions SET country=:country, city=:city, region=:region, calling_code=:calling
+                    WHERE ip = :ip AND (country IS NULL OR country = '')");
+                $u3->execute([':country'=>$country, ':city'=>$city, ':region'=>$region, ':calling'=>$calling, ':ip'=>$ip_returned]);
             }
+
+            $db->prepare("DELETE FROM geo_queue WHERE ip = ?")->execute([$ip_returned]);
+            $db->commit();
+            $resolved++;
+        } catch (Exception $e) {
+            if ($db->inTransaction()) $db->rollBack();
+            error_log('VJT geo backfill error: ' . $e->getMessage());
         }
     }
     return $resolved;

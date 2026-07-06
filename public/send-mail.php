@@ -342,17 +342,22 @@ function getCountryFromIP($ip) {
         return 'LOCAL';
     }
 
-    // Fallback: Use IP-API service
-    $ch = curl_init("http://ip-api.com/json/{$ip}?fields=countryCode&lang=en");
+    // Fallback: Use ipapi.co (HTTPS — prevents MITM tampering of country code)
+    // Note: ip-api.com (the previous service) only supports HTTPS on the paid Pro plan.
+    // ipapi.co's free tier supports HTTPS single-IP lookups, which is enough for
+    // a B2B site's per-inquiry geocoding (we hit this at most once per inquiry).
+    $ch = curl_init("https://ipapi.co/{$ip}/json/");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_TIMEOUT, 3);
     $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
 
-    if ($response) {
+    if ($response && $httpCode === 200) {
         $data = json_decode($response, true);
-        $country = $data['countryCode'] ?? 'UNKNOWN';
-        debugIPLog('getCountryFromIP', ['source' => 'IP-API', 'ip' => $ip, 'country' => $country]);
+        // ipapi.co returns ISO-2 country code in 'country_code' (ip-api.com used 'countryCode')
+        $country = strtoupper($data['country_code'] ?? 'UNKNOWN');
+        debugIPLog('getCountryFromIP', ['source' => 'IPAPI.CO', 'ip' => $ip, 'country' => $country]);
         return $country;
     }
 
