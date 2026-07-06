@@ -19,6 +19,9 @@ RewriteRule ^vjt-db-setup\.php$ - [F,L]
 # ─── Block VJT data directory (contains raw visitor JSON files with IPs, emails) ──
 RewriteRule ^api/vjt_data(/.*)?$ - [F,L]
 
+# ─── Block rate-limit helper (shared security utility — must not be accessible via HTTP) ──
+RewriteRule ^api/rate-limit\.php$ - [F,L]
+
 # ─── PHP API endpoints (pass through as-is) ────────────────────────────────
 RewriteRule ^send-mail\.php$ - [L]
 RewriteRule ^email-logs\.php$ - [L]
