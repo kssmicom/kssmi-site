@@ -26,6 +26,20 @@
 declare(strict_types=1);
 
 /**
+ * IP whitelist — these IPs bypass rate limiting entirely.
+ *
+ * Single-admin setup: the only admin's home/office IP should be here,
+ * so accidental wrong-password attempts don't lock out the legitimate
+ * owner. Edit this list when the admin's IP changes.
+ *
+ * To replace the placeholder with your real IP, run in FinalShell:
+ *   sed -i "s/REPLACE_WITH_YOUR_IP/$(curl -s ifconfig.me)/" /home/kssmi.com/public_html/api/rate-limit.php
+ */
+const RATE_LIMIT_WHITELIST_IPS = [
+    'REPLACE_WITH_YOUR_IP',  // ← run the sed above to fill in your real public IP
+];
+
+/**
  * Returns true if the request is within the quota; false if rate-limited.
  *
  * @param string $key           Endpoint identifier, e.g. 'send-mail', 'admin-login'
@@ -41,6 +55,11 @@ function checkRateLimit(string $key, int $maxRequests, int $windowSeconds): bool
     // Take only the first IP if X-Forwarded-For is a chain
     if (strpos($ip, ',') !== false) {
         $ip = trim(explode(',', $ip)[0]);
+    }
+
+    // Whitelist bypass — allow the admin's own IP through always
+    if (in_array($ip, RATE_LIMIT_WHITELIST_IPS, true)) {
+        return true;
     }
 
     $cacheKey = "rl:{$key}:" . md5($ip);
@@ -69,6 +88,11 @@ function checkRateLimit(string $key, int $maxRequests, int $windowSeconds): bool
  * Stores counter files in /home/kssmi.com/rate_limit/ (outside public_html).
  */
 function checkRateLimitFile(string $key, string $ip, int $max, int $window): bool {
+    // Whitelist bypass — also applies to the file-fallback path
+    if (in_array($ip, RATE_LIMIT_WHITELIST_IPS, true)) {
+        return true;
+    }
+
     // __DIR__ here is /home/kssmi.com/public_html/api
     // dirname(__DIR__, 2) jumps 2 levels up to /home/kssmi.com/
     $dir = dirname(__DIR__, 2) . '/rate_limit';

@@ -45,13 +45,15 @@ $PASSWORD_HASH = getPasswordHash();
 $error = '';
 $message = '';
 
-// Rate limit: 5 admin login attempts per IP per 15 minutes (brute-force protection
-// as a fallback for the .htaccess IP whitelist in case it gets bypassed).
+// Rate limit: 5 admin login attempts per IP per YEAR (31536000 seconds).
+// Combined with the IP whitelist in rate-limit.php (single-admin bypass),
+// this is effectively "permanently ban" any non-whitelisted IP after 5 failures.
+// (Was 5/15min — but a single admin mistyping 5 times would lock themselves out.)
 require_once __DIR__ . '/api/rate-limit.php';
 
 // Handle login
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
-    if (!checkRateLimit('vj-login', 5, 900)) {
+    if (!checkRateLimit('vj-login', 5, 31536000)) {
         $error = 'Too many login attempts. Please wait 15 minutes.';
     } else {
         $submitted = trim($_POST['password']);
