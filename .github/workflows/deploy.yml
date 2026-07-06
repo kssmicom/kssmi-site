@@ -49,7 +49,7 @@ jobs:
           cp -r public/vendor dist/
 
       - name: Deploy to Hetzner Server
-        uses: easingthemes/ssh-deploy@main
+        uses: easingthemes/ssh-deploy@2cc5b27bf3029d0455dd5e09fe02633904031447  # v6.0.1 pinned 2026-07-06 (was @main — supply-chain risk)
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
@@ -59,7 +59,7 @@ jobs:
           ARGS: "-avz --delete --exclude=email-logs.json --exclude=.email_logs_password --exclude=.email_reset_tokens.json --exclude=api/vjt_data"
 
       - name: Set file permissions
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b  # v1.2.5+ pinned 2026-07-06 (was @master — supply-chain risk)
         with:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
