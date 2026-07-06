@@ -22,6 +22,35 @@ RewriteRule ^api/vjt_data(/.*)?$ - [F,L]
 # ─── Block rate-limit helper (shared security utility — must not be accessible via HTTP) ──
 RewriteRule ^api/rate-limit\.php$ - [F,L]
 
+# ─── Admin backends: IP whitelist (REPLACE 'all denied' with 'ip YOUR.PUBLIC.IP' after deploy) ──
+# Default is 'Require all denied' so that forgetting to replace still keeps the admin pages
+# safely locked. To enable your own access:
+#   1. Run in FinalShell: curl -s ifconfig.me            (note the IP, e.g. 203.0.113.45)
+#   2. Run in FinalShell:
+#        sed -i 's/Require all denied/Require ip 203.0.113.45/' /home/kssmi.com/public_html/.htaccess
+#      (replace 203.0.113.45 with your real IP)
+#   3. Reload https://kssmi.com/email-logs.php in browser — should now load login page
+# To allow multiple IPs (e.g. office + home): add multiple `Require ip x.x.x.x` lines.
+# If your IP changes frequently (dynamic IP), consider Cloudflare Access (Zero Trust) instead.
+<Files "email-logs.php">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</Files>
+<Files "visitor-journey.php">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</Files>
+
 # ─── PHP API endpoints (pass through as-is) ────────────────────────────────
 RewriteRule ^send-mail\.php$ - [L]
 RewriteRule ^email-logs\.php$ - [L]
