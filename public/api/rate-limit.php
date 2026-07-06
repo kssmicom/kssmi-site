@@ -28,16 +28,46 @@ declare(strict_types=1);
 /**
  * IP whitelist — these IPs bypass rate limiting entirely.
  *
- * Single-admin setup: the only admin's home/office IP should be here,
- * so accidental wrong-password attempts don't lock out the legitimate
- * owner. Edit this list when the admin's IP changes.
+ * Single-admin setup: the admin's home/office IP should be here, so
+ * accidental wrong-password attempts don't lock out the legitimate owner.
  *
- * To replace the placeholder with your real IP, run in FinalShell:
- *   sed -i "s/REPLACE_WITH_YOUR_IP/$(curl -s ifconfig.me)/" /home/kssmi.com/public_html/api/rate-limit.php
+ * IMPORTANT: The whitelist is read from an external file at
+ *   /home/kssmi.com/private/rate-limit-whitelist.txt
+ * (deliberately OUTSIDE the deploy path so it doesn't get clobbered by
+ * git pushes). To manage your whitelist:
+ *
+ *   # View current whitelist
+ *   cat /home/kssmi.com/private/rate-limit-whitelist.txt
+ *
+ *   # Add your current IP (one-time setup)
+ *   echo "$(curl -s ifconfig.me)" > /home/kssmi.com/private/rate-limit-whitelist.txt
+ *   chmod 640 /home/kssmi.com/private/rate-limit-whitelist.txt
+ *
+ *   # When your IP changes (e.g. ISP rotated your IPv6)
+ *   echo "$(curl -s ifconfig.me)" > /home/kssmi.com/private/rate-limit-whitelist.txt
+ *
+ *   # To whitelist multiple IPs (office + home), one per line:
+ *   cat > /home/kssmi.com/private/rate-limit-whitelist.txt <<'EOF'
+ *   203.0.113.45      # office
+ *   198.51.100.7      # home
+ *   2600:1f14:2c31::1 # another location (IPv6 supported)
+ *   EOF
+ *
+ * The file is re-read on every checkRateLimit() call, so changes take
+ * effect immediately — no PHP-FPM restart needed.
+ *
+ * If the file doesn't exist or is empty, no IPs are whitelisted.
  */
-const RATE_LIMIT_WHITELIST_IPS = [
-    'REPLACE_WITH_YOUR_IP',  // ← run the sed above to fill in your real public IP
-];
+function kssmi_load_rate_limit_whitelist(): array {
+    $whitelistFile = '/home/kssmi.com/private/rate-limit-whitelist.txt';
+    if (!file_exists($whitelistFile) || !is_readable($whitelistFile)) {
+        return [];
+    }
+    $lines = @file($whitelistFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    if ($lines === false) return [];
+    $trimmed = array_map('trim', $lines);
+    return array_values(array_filter($trimmed, fn($l) => $l !== '' && $l[0] !== '#'));
+}
 
 /**
  * Returns true if the request is within the quota; false if rate-limited.
@@ -58,7 +88,7 @@ function checkRateLimit(string $key, int $maxRequests, int $windowSeconds): bool
     }
 
     // Whitelist bypass — allow the admin's own IP through always
-    if (in_array($ip, RATE_LIMIT_WHITELIST_IPS, true)) {
+    if (in_array($ip, kssmi_load_rate_limit_whitelist(), true)) {
         return true;
     }
 
@@ -89,7 +119,7 @@ function checkRateLimit(string $key, int $maxRequests, int $windowSeconds): bool
  */
 function checkRateLimitFile(string $key, string $ip, int $max, int $window): bool {
     // Whitelist bypass — also applies to the file-fallback path
-    if (in_array($ip, RATE_LIMIT_WHITELIST_IPS, true)) {
+    if (in_array($ip, kssmi_load_rate_limit_whitelist(), true)) {
         return true;
     }
 
