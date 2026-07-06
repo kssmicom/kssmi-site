@@ -23,8 +23,10 @@ function vjt_to_beijing($timeStr) {
     return date('Y-m-d H:i:s', $ts);
 }
 
-// Store data inside the API folder to avoid web-root permission issues on shared hosting
-define('VJT_DATA_DIR', __DIR__ . '/vjt_data');
+// Store data OUTSIDE public_html so the SQLite file cannot be downloaded
+// directly even if the .htaccess F rule gets bypassed / AllowOverride is off.
+// Lives at /home/<domain>/vjt_data/ on the Hetzner VPS.
+define('VJT_DATA_DIR', '/home/kssmi.com/vjt_data');
 define('VJT_DB_PATH', VJT_DATA_DIR . '/vjt.sqlite');
 
 // ── Country mapping (single source of truth) ─────────────────────────────────
