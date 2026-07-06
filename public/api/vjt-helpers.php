@@ -989,7 +989,9 @@ function vjt_get_settings($forceReload = false) {
     if ($cache !== null && !$forceReload) return $cache;
     $defaults = ['session_timeout' => '30', 'retention_days' => '90', 'enable_geo' => '1'];
     try {
-        $rows = vjt_db()->prepare("SELECT key, value FROM settings")->execute()->fetchAll();
+        $settingsStmt = vjt_db()->prepare("SELECT key, value FROM settings");
+        $settingsStmt->execute();
+        $rows = $settingsStmt->fetchAll();
         $out = $defaults;
         foreach ($rows as $r) { $out[$r['key']] = $r['value']; }
         $cache = $out;
