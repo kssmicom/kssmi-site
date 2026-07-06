@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
         if ($PASSWORD_HASH && password_verify($submitted, $PASSWORD_HASH)) {
             $_SESSION['email_logs_auth'] = true;
             $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-            setcookie('vjt_admin', '1', time() + 86400 * 7, '/', '', false, true);
+            setcookie('vjt_admin', '1', time() + 86400 * 7, '/', '', true, true);
             session_regenerate_id(true);
         } else {
             $error = 'Invalid password.';
@@ -78,7 +78,7 @@ $isAuthenticated = isset($_SESSION['email_logs_auth']) && $_SESSION['email_logs_
 
 // Keep admin cookie alive so the tracker skips admin visits
 if ($isAuthenticated) {
-    setcookie('vjt_admin', '1', time() + 86400 * 7, '/', '', false, true);
+    setcookie('vjt_admin', '1', time() + 86400 * 7, '/', '', true, true);
 }
 
 // Determine active tab

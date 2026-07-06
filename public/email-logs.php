@@ -313,8 +313,8 @@ if (isset($_GET['reset'])) {
             $newPass = trim($_POST['new_password']);
             $confirmPass = trim($_POST['confirm_password']);
 
-            if (strlen($newPass) < 6) {
-                $passwordError = 'Password must be at least 6 characters';
+            if (strlen($newPass) < 12) {
+                $passwordError = 'Password must be at least 12 characters';
             } elseif ($newPass !== $confirmPass) {
                 $passwordError = 'Passwords do not match';
             } else {
@@ -348,7 +348,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password']) && !isset
         if ($PASSWORD_HASH && password_verify($submittedPassword, $PASSWORD_HASH)) {
             $_SESSION['email_logs_auth'] = true;
             $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-            setcookie('vjt_admin', '1', time() + 86400 * 7, '/', '', false, true);
+            setcookie('vjt_admin', '1', time() + 86400 * 7, '/', '', true, true);
             session_regenerate_id(true);
         } else {
             $error = 'Invalid password. Please try again.';
@@ -368,7 +368,7 @@ if (isset($_GET['logout'])) {
 $isAuthenticated = false;
 if (isset($_SESSION['email_logs_auth']) && $_SESSION['email_logs_auth'] === true) {
     $isAuthenticated = true;
-    setcookie('vjt_admin', '1', time() + 86400 * 7, '/', '', false, true);
+    setcookie('vjt_admin', '1', time() + 86400 * 7, '/', '', true, true);
 }
 
 // Handle password change (when logged in)
@@ -377,8 +377,8 @@ if ($isAuthenticated && isset($_POST['change_password'])) {
         $passwordError = 'Security check failed. Please try again.';
     } else {
         $newPass = trim($_POST['new_password']);
-        if (strlen($newPass) < 6) {
-            $passwordError = 'Password must be at least 6 characters';
+        if (strlen($newPass) < 12) {
+            $passwordError = 'Password must be at least 12 characters';
         } else {
             if (setPassword($newPass)) {
                 $PASSWORD_HASH = getPasswordHash();
