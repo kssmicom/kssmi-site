@@ -272,6 +272,12 @@ function sanitize($input) {
  * Debug log for IP detection troubleshooting
  */
 function debugIPLog($source, $data) {
+    // P3-1 (N9): gate on debug_mode to avoid I/O on every production request.
+    // The function still writes synchronously when explicitly enabled — only
+    // when $config['debug_mode'] is true in the contact-form config.
+    // Other call sites (outside of this file) won't have $GLOBALS['config']
+    // populated, but they would just no-op (same as silent mode).
+    if (empty($GLOBALS['config']['debug_mode'])) return;
     $logFile = dirname(__DIR__) . '/ip-debug.log';
     $entry = date('Y-m-d H:i:s') . " [$source]: " . json_encode($data, JSON_UNESCAPED_UNICODE) . "\n";
     file_put_contents($logFile, $entry, FILE_APPEND);
@@ -782,7 +788,7 @@ try {
     logEmail($config, $formData, 'success', 'Email sent successfully', '', $visitorIP, $visitorCountry);
 
     // Record to VJT database
-    recordVJTSubmission($config, $_POST, 'success', $visitorIP, $visitorCountry);
+    recordVJTSubmission($config, $formData, 'success', $visitorIP, $visitorCountry);
 
     // Determine redirect URL based on language
     $lang = $formData['language'] ?? 'en';
@@ -799,7 +805,7 @@ try {
     // Log failure
     $errorMsg = $e->getMessage();
     logEmail($config, $formData, 'failed', 'PHPMailer error', $errorMsg, $visitorIP, $visitorCountry);
-    recordVJTSubmission($config, $_POST, 'error', $visitorIP, $visitorCountry);
+    recordVJTSubmission($config, $formData, 'error', $visitorIP, $visitorCountry);
     error_log("KSSMI Form Error (PHPMailer): " . $errorMsg);
 
     http_response_code(500);
@@ -812,7 +818,7 @@ try {
     // Log failure
     $errorMsg = $e->getMessage();
     logEmail($config, $formData, 'failed', 'General error', $errorMsg, $visitorIP, $visitorCountry);
-    recordVJTSubmission($config, $_POST, 'error', $visitorIP, $visitorCountry);
+    recordVJTSubmission($config, $formData, 'error', $visitorIP, $visitorCountry);
     error_log("KSSMI Form Error: " . $errorMsg);
 
     http_response_code(500);

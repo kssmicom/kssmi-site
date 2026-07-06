@@ -70,11 +70,6 @@
       '; path=/; SameSite=Lax';
   }
 
-  function getCookie(name) {
-    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-    return match ? decodeURIComponent(match[2]) : null;
-  }
-
   function getSiteLanguage() {
     try {
       var path = window.location.pathname;
@@ -552,9 +547,6 @@
   function initVJT() {
     cfg = window.VJTTracker || cfg;
     if (!cfg) return;
-
-    // Skip tracking for admin (cookie set by dashboard login)
-    if (getCookie('vjt_admin')) return;
 
     // Always use live URL/title for SPA navigations (Astro View Transitions)
     cfg.page.url = cleanUrl(window.location.href);
