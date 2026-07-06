@@ -335,16 +335,24 @@ if (isset($_GET['reset'])) {
     }
 }
 
+// Rate limit: 5 admin login attempts per IP per 15 minutes (brute-force protection
+// as a fallback for the .htaccess IP whitelist in case it gets bypassed).
+require_once __DIR__ . '/api/rate-limit.php';
+
 // Handle login
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password']) && !isset($_POST['change_password']) && !isset($_POST['reset_password'])) {
-    $submittedPassword = trim($_POST['password']);
-    if ($PASSWORD_HASH && password_verify($submittedPassword, $PASSWORD_HASH)) {
-        $_SESSION['email_logs_auth'] = true;
-        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-        setcookie('vjt_admin', '1', time() + 86400 * 7, '/', '', false, true);
-        session_regenerate_id(true);
+    if (!checkRateLimit('admin-login', 5, 900)) {
+        $error = 'Too many login attempts. Please wait 15 minutes.';
     } else {
-        $error = 'Invalid password. Please try again.';
+        $submittedPassword = trim($_POST['password']);
+        if ($PASSWORD_HASH && password_verify($submittedPassword, $PASSWORD_HASH)) {
+            $_SESSION['email_logs_auth'] = true;
+            $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+            setcookie('vjt_admin', '1', time() + 86400 * 7, '/', '', false, true);
+            session_regenerate_id(true);
+        } else {
+            $error = 'Invalid password. Please try again.';
+        }
     }
 }
 
