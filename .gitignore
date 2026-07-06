@@ -15,6 +15,7 @@ pnpm-debug.log*
 *.log
 build*.log
 check*.log
+build-output.txt   # Build script stdout (P3-3: avoid commit — regenerated each build)
 
 # environment variables
 .env

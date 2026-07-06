@@ -88,7 +88,11 @@ jobs:
             touch .email_reset_tokens.json 2>/dev/null || true
 
             # Set writable permissions for data files (PHP needs to write to these)
-            chmod 666 email-logs.json .email_logs_password .email_reset_tokens.json 2>/dev/null || true
+            # chmod 640 (was 666): owner read/write, group read, other none.
+            # PHP-FPM runs as kssmi4374:kssmi4374 — owner can write, others can't.
+            # 666 was overly permissive: let any user on the server read/write these
+            # sensitive files (email reset tokens, password hash).
+            chmod 640 email-logs.json .email_logs_password .email_reset_tokens.json 2>/dev/null || true
 
             # VJT SQLite store — lives OUTSIDE public_html (P2-4 of security-004.md)
             # The actual data file (vjt.sqlite + WAL/SHM) is NOT touched by deploy:
