@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 // Rate limit: 30 pageview writes per IP per 60s (prevents SQLite fill attacks
 // and protects analytics data integrity from scripted flooding)
-require_once __DIR__ . '/rate-limit.php';
+require_once dirname(__DIR__, 2) . '/private/rate-limit.php';
 if (!checkRateLimit('track-pv', 30, 60)) {
     http_response_code(429);
     echo json_encode(['success' => false, 'error' => 'Too many requests']);

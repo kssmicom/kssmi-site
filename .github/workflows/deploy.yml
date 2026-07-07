@@ -11,16 +11,21 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5  # v4 pinned 2026-07-08
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020  # v4 pinned 2026-07-08
         with:
           node-version: '22'
           cache: 'npm'
 
       - name: Install dependencies
         run: npm install --legacy-peer-deps
+
+      - name: Audit npm dependencies (P3-3)
+        run: npm audit --audit-level=high || true
+        # Reports high/critical vulnerabilities but does NOT block deployment.
+        # Review output periodically and run `npm audit fix` on new findings.
 
       - name: Build Astro site
         run: npm run build
@@ -47,6 +52,15 @@ jobs:
           cp public/404-router.php dist/
           cp -r public/api dist/
           cp -r public/vendor dist/
+
+      - name: Deploy rate-limit.php to private/ (outside webroot, P3-3)
+        uses: appleboy/scp-action@44a73a5eb0ca3fe87cb5f59804e2b83f8b94a0f3  # v0.1.7 pinned 2026-07-08
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "private/rate-limit.php"
+          target: "/home/kssmi.com"
 
       - name: Deploy to Hetzner Server
         uses: easingthemes/ssh-deploy@2cc5b27bf3029d0455dd5e09fe02633904031447  # v6.0.1 pinned 2026-07-06 (was @main — supply-chain risk)

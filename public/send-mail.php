@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 // Rate limit: 2 form submissions per IP per 60s (prevents mail-bomb attacks
 // that would exhaust Gmail SMTP quota and blacklist our sender IP)
-require_once __DIR__ . '/api/rate-limit.php';
+require_once dirname(__DIR__) . '/private/rate-limit.php';
 if (!checkRateLimit('send-mail', 2, 60)) {
     http_response_code(429);
     header('Content-Type: application/json');

@@ -16,6 +16,7 @@ pnpm-debug.log*
 build*.log
 check*.log
 build-output.txt   # Build script stdout (P3-3: avoid commit — regenerated each build)
+_build.log          # Astro build log (P3-3: avoid commit)
 
 # environment variables
 .env

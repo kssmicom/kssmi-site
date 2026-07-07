@@ -548,6 +548,14 @@
     cfg = window.VJTTracker || cfg;
     if (!cfg) return;
 
+    // P3-1 (N11): Skip tracking for admin users (vjt_admin cookie set by
+    // email-logs.php / visitor-journey.php after successful login).
+    // This prevents admin pageviews from polluting analytics data.
+    // Note: this is a client-side convenience check — a visitor could manually
+    // set this cookie to bypass tracking, but that only affects data accuracy
+    // (not security). Server-side admin filtering is the long-term plan.
+    if (document.cookie.indexOf('vjt_admin=1') !== -1) return;
+
     // Always use live URL/title for SPA navigations (Astro View Transitions)
     cfg.page.url = cleanUrl(window.location.href);
     cfg.page.title = document.title || '';

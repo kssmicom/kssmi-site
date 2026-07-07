@@ -19,9 +19,6 @@ RewriteRule ^vjt-db-setup\.php$ - [F,L]
 # ─── Block VJT data directory (contains raw visitor JSON files with IPs, emails) ──
 RewriteRule ^api/vjt_data(/.*)?$ - [F,L]
 
-# ─── Block rate-limit helper (shared security utility — must not be accessible via HTTP) ──
-RewriteRule ^api/rate-limit\.php$ - [F,L]
-
 # ─── Admin backends: IP whitelist (REPLACE 'all denied' with 'ip YOUR.PUBLIC.IP' after deploy) ──
 # Default is 'Require all denied' so that forgetting to replace still keeps the admin pages
 # safely locked. To enable your own access:
@@ -105,24 +102,45 @@ Header always set Cross-Origin-Resource-Policy "same-origin"
 Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
 Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://challenges.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' blob: https://video.gumlet.io https://*.gumlet.io; connect-src 'self' https://ipapi.co https://cloudflareinsights.com https://www.google-analytics.com https://video.gumlet.io https://*.gumlet.io; frame-src 'self' https://play.gumlet.io https://challenges.cloudflare.com https://www.googletagmanager.com; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests;"
 
-# Report-Only CSP — P2-5 of security-004.md
-# Identical content to the enforcing header above, but in Report-Only mode
-# browsers EVALUATE this policy and report violations in DevTools console
-# (and to report-uri if configured) — but do NOT block anything.
+# ─── Report-Only CSP (P2-5 target: hash-based, no 'unsafe-inline') ─────────
+# This is the GOAL — browsers evaluate & report violations but do NOT block.
+# Once 30-day monitoring shows zero unexpected violations, switch this from
+# Report-Only → Content-Security-Policy (replacing the enforcing header above).
 #
-# Why: removing 'unsafe-inline' from script-src would block ~30 inline
-# <script> tags across the Astro site (Layout, InquiryForm, VisitorTracker,
-# Header, Footer, Pagination, Search, etc). Switching to SHA-256 hashes
-# would require regenerating hashes on every code change — high maintenance.
+# Hashes were computed from src/ Astro source; re-run on build output before
+# final switch (Astro may modify scripts during SSR/build).
+# Regenerate with: node -e "const c=require('crypto');process.stdin.setEncoding('utf8');let d='';process.stdin.on('data',c=>d+=c);process.stdin.on('end',()=>console.log('sha256-'+c.createHash('sha256').update(d).digest('base64')))" < script.js
 #
-# Instead, we ship Report-Only for 30+ days and watch console output:
-#   - If browsers report no violations: the current 'unsafe-inline' is
-#     effectively a no-op (no XSS attempts in the wild).
-#   - If browsers report violations: those are real XSS attempts, and we
-#     know which inline scripts are being targeted.
-# After 30 days, upgrade by changing this header from Report-Only to
-# Content-Security-Policy (enforcing).
-Header always set Content-Security-Policy-Report-Only "default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://challenges.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' blob: https://video.gumlet.io https://*.gumlet.io; connect-src 'self' https://ipapi.co https://cloudflareinsights.com https://www.google-analytics.com https://video.gumlet.io https://*.gumlet.io; frame-src 'self' https://play.gumlet.io https://challenges.cloudflare.com https://www.googletagmanager.com; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests;"
+# Layout.astro (7 scripts + 1 style):
+#   sha256-vmsxtuhHypdK60yNyo/XvRCbgBpuGsHj/PA0Oc1M9lg=  Consent Mode v2
+#   sha256-xsUXGXAkmBFwIsM3Bv4wCB1D6ZPSYxKGM/gc0YxaI7k=  GTM lazy-load
+#   sha256-ujAkpxfS/7Iq0WS8rjQmbOzB+FTQSiEpRGKUqbdaO50=  Deferred Google Fonts
+#   sha256-qnGLSerJCltoEbLjeFj6yKLeBELUlYR2mqlJCiHEZ7s=  Cloudflare Analytics
+#   sha256-XLcb45yydkObZtjgjn4sKpkD69AVBUu7trf9yMSeE10=  URL tracking cleanup
+#   sha256-INLA7yjYJIHCsIh7QFedpNv3lSeUensH6XV1ncRy0Ks=  Page Transition Loader
+#   sha256-yrHYvgqgevZ77i22HBTRTBtYltbGa7Lgcvq27pjJIR4=  Cookie Banner lazy-load
+#   sha256-MUMhOVB+cxlHpzShb0W4kfsTG8Kxwlvk7Sk+5Wz5Rjc=  Layout base styles
+# Footer.astro:      sha256-Ba/SW79UVJIuLJnujE8wstzMITGMVY7WFiEIwVQuImI=  scrollTop+email
+# Header.astro:      sha256-eBTDmQ3958OKknRtT6loWJKwNpz8fenOWBjbgE/rWxQ=  megaMenu+lang+transparent header
+#   style:           sha256-tYJGnnIHHUQH2WgiOOS1Zh79b5TsM4xHBOWwOjiHXH8=  Header scoped CSS
+#   style:           sha256-kfTv1x2ch9ACUiH+Az2G13zoqKMVyW29wzctbObEm0Y=  search input hide
+#   style:           sha256-tORKHB248Ajf6snE+JNeZyKps2pn1nBYfxPM6moClLY=  transparent header scroll
+# InquiryForm.astro: sha256-bR+ozgTMTT1ncT4+if/ll+IC41yBdNpYSvYz6DAHJ6I=  Turnstile config
+#                    sha256-eMrR5c7YYBKC7Af5bGQY90xWgpt2iTWGDAKtMA1wzPk=  Turnstile lazy-load
+#                    sha256-9ngk949lEpahr0akdIAQzTfuiHNJO+U14ILK1Glm5Y0=  Form submission handler
+# LanguagePicker:    sha256-s5n3Ee6jJwOPGOYzCfjm9w1ZLigokkrBReNnSLB74S0=  custom element
+#   style:           sha256-/Xz+IhMaXszH14U7zd/EezYSq+xjAHLRo7G4QLGMfLI=  scrollbar hide
+#
+# ⚠️  Missing hashes (will appear as violations during monitoring):
+#   - NotFoundPage.astro (Turnstile + mailto form)
+#   - SearchPage.astro (search results pagination)
+#   - Product gallery pages (zoom, thumbnail swap)
+#   - TechnicalSpecs.astro (print onclick)
+#   - RelatedProducts.astro (img onerror)
+#   - InquiryFormLazy.astro (dynamic form loader)
+#   - Pagination.astro (search clear button)
+#   - Collection components (various keyframe styles)
+Header always set Content-Security-Policy-Report-Only "default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-vmsxtuhHypdK60yNyo/XvRCbgBpuGsHj/PA0Oc1M9lg=' 'sha256-xsUXGXAkmBFwIsM3Bv4wCB1D6ZPSYxKGM/gc0YxaI7k=' 'sha256-ujAkpxfS/7Iq0WS8rjQmbOzB+FTQSiEpRGKUqbdaO50=' 'sha256-qnGLSerJCltoEbLjeFj6yKLeBELUlYR2mqlJCiHEZ7s=' 'sha256-XLcb45yydkObZtjgjn4sKpkD69AVBUu7trf9yMSeE10=' 'sha256-INLA7yjYJIHCsIh7QFedpNv3lSeUensH6XV1ncRy0Ks=' 'sha256-yrHYvgqgevZ77i22HBTRTBtYltbGa7Lgcvq27pjJIR4=' 'sha256-Ba/SW79UVJIuLJnujE8wstzMITGMVY7WFiEIwVQuImI=' 'sha256-eBTDmQ3958OKknRtT6loWJKwNpz8fenOWBjbgE/rWxQ=' 'sha256-bR+ozgTMTT1ncT4+if/ll+IC41yBdNpYSvYz6DAHJ6I=' 'sha256-eMrR5c7YYBKC7Af5bGQY90xWgpt2iTWGDAKtMA1wzPk=' 'sha256-9ngk949lEpahr0akdIAQzTfuiHNJO+U14ILK1Glm5Y0=' 'sha256-s5n3Ee6jJwOPGOYzCfjm9w1ZLigokkrBReNnSLB74S0=' https://static.cloudflareinsights.com https://challenges.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'sha256-MUMhOVB+cxlHpzShb0W4kfsTG8Kxwlvk7Sk+5Wz5Rjc=' 'sha256-tYJGnnIHHUQH2WgiOOS1Zh79b5TsM4xHBOWwOjiHXH8=' 'sha256-kfTv1x2ch9ACUiH+Az2G13zoqKMVyW29wzctbObEm0Y=' 'sha256-tORKHB248Ajf6snE+JNeZyKps2pn1nBYfxPM6moClLY=' 'sha256-/Xz+IhMaXszH14U7zd/EezYSq+xjAHLRo7G4QLGMfLI=' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' blob: https://video.gumlet.io https://*.gumlet.io; connect-src 'self' https://ipapi.co https://cloudflareinsights.com https://www.google-analytics.com https://video.gumlet.io https://*.gumlet.io; frame-src 'self' https://play.gumlet.io https://challenges.cloudflare.com https://www.googletagmanager.com; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests;"
 
 # ─── Gzip compression ──────────────────────────────────────────────────────
 AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml

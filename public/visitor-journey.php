@@ -4,6 +4,11 @@
  * Password-protected (shares password with email-logs.php)
  */
 
+session_set_cookie_params([
+    'secure' => true,
+    'httponly' => true,
+    'samesite' => 'Strict'
+]);
 session_start();
 
 header('X-Robots-Tag: noindex, nofollow');
@@ -49,7 +54,7 @@ $message = '';
 // Combined with the IP whitelist in rate-limit.php (single-admin bypass),
 // this is effectively "permanently ban" any non-whitelisted IP after 5 failures.
 // (Was 5/15min — but a single admin mistyping 5 times would lock themselves out.)
-require_once __DIR__ . '/api/rate-limit.php';
+require_once dirname(__DIR__) . '/private/rate-limit.php';
 
 // Handle login
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {

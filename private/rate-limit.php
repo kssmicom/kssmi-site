@@ -3,8 +3,8 @@
  * KSSMI Rate Limiter — shared by send-mail.php / email-logs.php / visitor-journey.php
  *                          / track-pageview.php / track-submission.php
  *
- * Location: public/api/rate-limit.php (webroot内, blocked by .htaccess)
- * Block rule: `RewriteRule ^api/rate-limit\.php$ - [F,L]` in public/.htaccess
+ * Location: private/rate-limit.php — DEPLOYED to /home/kssmi.com/private/rate-limit.php
+ * (OUTSIDE public_html, alongside private_config.php — cannot be accessed via HTTP)
  *
  * Storage:
  *   - Preferred: APCu (in-memory, fast). Check `apcu_fetch` exists.
@@ -14,8 +14,10 @@
  * Per-IP, per-endpoint quotas — different endpoints don't share quotas.
  *
  * Usage:
- *   require_once __DIR__ . '/rate-limit.php';   // from public/api/
- *   require_once dirname(__DIR__) . '/api/rate-limit.php';  // from public/
+ *   // From files in public_html/:
+ *   require_once dirname(__DIR__) . '/private/rate-limit.php';
+ *   // From files in public_html/api/:
+ *   require_once dirname(__DIR__, 2) . '/private/rate-limit.php';
  *
  *   if (!checkRateLimit('send-mail', 2, 60)) {
  *       http_response_code(429);
@@ -123,9 +125,9 @@ function checkRateLimitFile(string $key, string $ip, int $max, int $window): boo
         return true;
     }
 
-    // __DIR__ here is /home/kssmi.com/public_html/api
-    // dirname(__DIR__, 2) jumps 2 levels up to /home/kssmi.com/
-    $dir = dirname(__DIR__, 2) . '/rate_limit';
+    // This file lives at /home/kssmi.com/private/rate-limit.php
+    // dirname(__DIR__) = /home/kssmi.com/
+    $dir = dirname(__DIR__) . '/rate_limit';
 
     if (!is_dir($dir)) {
         @mkdir($dir, 0750, true);

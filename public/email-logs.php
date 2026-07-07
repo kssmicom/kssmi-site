@@ -10,6 +10,11 @@
  */
 
 // Start session first
+session_set_cookie_params([
+    'secure' => true,
+    'httponly' => true,
+    'samesite' => 'Strict'
+]);
 session_start();
 
 header('X-Robots-Tag: noindex, nofollow');
@@ -374,7 +379,7 @@ if (isset($_GET['reset'])) {
 // Combined with the IP whitelist in rate-limit.php (single-admin bypass),
 // this is effectively "permanently ban" any non-whitelisted IP after 5 failures.
 // (Was 5/15min — but a single admin mistyping 5 times would lock themselves out.)
-require_once __DIR__ . '/api/rate-limit.php';
+require_once dirname(__DIR__) . '/private/rate-limit.php';
 
 // Handle login
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password']) && !isset($_POST['change_password']) && !isset($_POST['reset_password'])) {
@@ -1191,7 +1196,7 @@ function resendEmail($log) {
             <?php endif; ?>
             <form method="POST">
                 <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
-                <input type="password" name="new_password" placeholder="New password (min 6 characters)" required minlength="6">
+                <input type="password" name="new_password" placeholder="New password (min 12 characters)" required minlength="12">
                 <div class="modal-actions">
                     <button type="button" class="btn btn-secondary" onclick="document.getElementById('passwordModal').classList.remove('show')">Cancel</button>
                     <button type="submit" name="change_password" class="btn btn-primary">Save</button>
