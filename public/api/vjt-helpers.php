@@ -837,36 +837,29 @@ function vjt_process_geo_queue($limit = 100) {
     //   1. ip-api.com requires the paid Pro plan for HTTPS (free tier is HTTP-only)
     //   2. ipapi.co's free tier supports HTTPS /json/{ip} single-IP lookups
     //   3. We already cache results in geo_cache, so repeat IPs don't re-query
-    // Per-IP cost: 1 HTTPS GET per uncached IP, ~100ms each. For a B2B site
-    // this is acceptable (and only runs from the admin dashboard).
+    // Per-IP cost: 1 local MaxMind mmdb read, ~1ms each. No rate limits,
+    // no external API, no network egress. Reads only — safe to share one
+    // reader instance across the whole process via static.
+    //
+    // Pre-P2-2-P3-2-hotfix this called http://ip-api.com/batch.
+    // P2-2 changed to https://ipapi.co/... (then got RateLimited).
+    // Now: local mmdb file, no rate limits, ~1ms lookup.
     foreach ($ips as $ip) {
-        $results = null;
-        try {
-            $ctx = stream_context_create(['http' => [
-                'method' => 'GET',
-                'header' => "Accept: application/json\r\n",
-                'timeout' => 5,
-                'ignore_errors' => true,
-            ]]);
-            $response = @file_get_contents("https://ipapi.co/{$ip}/json/", false, $ctx);
-            if ($response) $results = json_decode($response, true);
-        } catch (Exception $e) {
-            $results = null;
-        }
-        if (!is_array($results)) continue; // skip on error, leave in queue for retry
+        // Reuse the same reader across all IPs in this run.
+        $record = vjt_mmdb_lookup($ip);
+        if (!is_array($record)) continue; // skip on error, leave in queue for retry
 
         $now = date('Y-m-d H:i:s');
-        // ipapi.co response fields (vs. previous ip-api.com):
-        //   country_code  (was countryCode) — ISO-2 code, e.g. "US"
-        //   city          (same)
-        //   region        (was regionName)
-        //   country_calling_code (was callingCode) — includes leading "+", strip it
-        $ip_returned = $results['ip'] ?? $ip;
-        if ($ip_returned === '') continue;
-        $country = strtoupper($results['country_code'] ?? '');
-        $city = $results['city'] ?? '';
-        $region = $results['region'] ?? '';
-        $calling = isset($results['country_calling_code']) ? ltrim('+', (string)$results['country_calling_code']) : '';
+        // MaxMind GeoLite2 City response fields:
+        //   $record['country']['iso_code']         — "US" (ISO-2)
+        //   $record['country']['calling_code']     — "1" (no "+", just digits)
+        //   $record['subdivisions'][0]['iso_code']  — "CA" (state, ISO-2)
+        //   $record['city']['names']['en']          — "Mountain View"
+        $ip_returned = $ip;
+        $country = isset($record['country']['iso_code']) ? strtoupper($record['country']['iso_code']) : '';
+        $city    = isset($record['city']['names']['en']) ? $record['city']['names']['en'] : '';
+        $region  = isset($record['subdivisions'][0]['iso_code']) ? $record['subdivisions'][0]['iso_code'] : '';
+        $calling = isset($record['country']['calling_code']) ? (string)$record['country']['calling_code'] : '';
 
         try {
             $db->beginTransaction();
@@ -907,6 +900,59 @@ function vjt_process_geo_queue($limit = 100) {
 }
 
 // ── Utility ─────────────────────────────────────────────────────────────────
+
+/**
+ * Lookup an IP in the local MaxMind GeoLite2 City mmdb file.
+ * Returns the raw record array on success, or null if:
+ *   - the file doesn't exist
+ *   - the PHP maxminddb extension is not loaded
+ *   - the lookup throws (invalid IP format, corrupt mmdb, etc.)
+ *
+ * The reader is opened once per request (mmdb files are read-only — safe
+ * to share across all IPs in a single vjt_process_geo_queue run).
+ */
+function vjt_mmdb_lookup($ip) {
+    static $reader = null;
+    static $checked = false;
+    static $available = false;
+
+    // Skip the (expensive) mmdb lookup for localhost / empty / private IPs
+    // (GeoLite2 has no useful data for them anyway).
+    if ($ip === '' || $ip === '127.0.0.1' || $ip === '::1') return null;
+    if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) === false) {
+        return null;
+    }
+
+    // One-time: try to open the reader
+    if (!$checked) {
+        $checked = true;
+        $mmdb = '/home/kssmi.com/private/geoip/GeoLite2-City.mmdb';
+        if (!file_exists($mmdb)) {
+            error_log('VJT geo: mmdb not found at ' . $mmdb);
+        } elseif (!extension_loaded('maxminddb')) {
+            error_log('VJT geo: maxminddb PHP extension not loaded');
+        } elseif (!class_exists('\\MaxMind\\Db\\Reader')) {
+            error_log('VJT geo: MaxMind\\Db\\Reader class not found');
+        } else {
+            try {
+                $reader = new \MaxMind\Db\Reader($mmdb);
+                $available = true;
+            } catch (Exception $e) {
+                error_log('VJT geo: mmdb open failed: ' . $e->getMessage());
+            }
+        }
+    }
+
+    if (!$available) return null;
+
+    try {
+        $record = $reader->get($ip);
+    } catch (Exception $e) {
+        error_log('VJT geo: mmdb lookup failed for ' . $ip . ': ' . $e->getMessage());
+        return null;
+    }
+    return is_array($record) ? $record : null;
+}
 
 function vjt_get_client_ip() {
     $headers = ['HTTP_CF_CONNECTING_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_CLIENT_IP', 'REMOTE_ADDR'];
