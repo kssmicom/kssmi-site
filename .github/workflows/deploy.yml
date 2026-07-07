@@ -54,7 +54,7 @@ jobs:
           cp -r public/vendor dist/
 
       - name: Deploy rate-limit.php to private/ (outside webroot, P3-3)
-        uses: appleboy/scp-action@44a73a5eb0ca3fe87cb5f59804e2b83f8b94a0f3  # v0.1.7 pinned 2026-07-08
+        uses: appleboy/scp-action@ff85246acaad7bdce478db94a363cd2bf7c90345  # v1.0.0 pinned 2026-07-08
         with:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
