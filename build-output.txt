@@ -1,0 +1,200 @@
+(node:3316) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2m23:36:23[22m [34m[content][39m Syncing content
+[33m[1m23:36:23[22m [WARN] [glob-loader][39m No files found matching "**/*.md" in directory "src\content\feature"
+[33m[1m23:36:23[22m [WARN] [glob-loader][39m No files found matching "**/*.md" in directory "src\content\blog"
+[2m23:36:29[22m [34m[content][39m Synced content
+[2m23:36:29[22m [34m[types][39m Generated [2m9.30s[22m
+[2m23:36:29[22m [34m[build][39m output: [34m"static"[39m
+[2m23:36:29[22m [34m[build][39m mode: [34m"static"[39m
+[2m23:36:29[22m [34m[build][39m directory: [34mD:\001 Tools\004 Desk\Desk\Tools\KS\Kssmi\kssmi-site\dist\[39m
+[2m23:36:29[22m [34m[build][39m Collecting build info...
+[2m23:36:29[22m [34m[build][39m [32m✓ Completed in 9.66s.[39m
+[2m23:36:42[22m [34m[build][39m Building static entrypoints...
+[2m23:37:59[22m [34m[vite][39m [32m✓ built in 1m 17s[39m
+[2m23:37:59[22m [34m[build][39m [32m✓ Completed in 76.84s.[39m
+
+[42m[30m building client (vite) [39m[49m
+[2m23:37:59[22m [34m[vite][39m transforming...
+[2m23:38:00[22m [34m[vite][39m [32m✓[39m 25 modules transformed.
+[2m23:38:00[22m [34m[vite][39m rendering chunks...
+[2m23:38:00[22m [34m[vite][39m computing gzip size...
+[2m23:38:00[22m [34m[vite][39m [2mdist/[22m[36m_astro/page.prh1sXVb.js                                               [39m[1m[2m 0.05 kB[22m[1m[22m[2m │ gzip: 0.07 kB[22m
+[2m23:38:00[22m [34m[vite][39m [2mdist/[22m[36m_astro/index.Cr5b0yWc.js                                              [39m[1m[2m 2.31 kB[22m[1m[22m[2m │ gzip: 1.05 kB[22m
+[2m23:38:00[22m [34m[vite][39m [2mdist/[22m[36m_astro/SearchPage.astro_astro_type_script_index_0_lang.5eUE6bwK.js    [39m[1m[2m11.36 kB[22m[1m[22m[2m │ gzip: 3.75 kB[22m
+[2m23:38:00[22m [34m[vite][39m [2mdist/[22m[36m_astro/ClientRouter.astro_astro_type_script_index_0_lang.C17rgyn5.js  [39m[1m[2m13.11 kB[22m[1m[22m[2m │ gzip: 4.54 kB[22m
+[2m23:38:00[22m [34m[vite][39m [2mdist/[22m[36m_astro/fuse.DY2X8b3J.js                                               [39m[1m[2m18.25 kB[22m[1m[22m[2m │ gzip: 6.61 kB[22m
+[2m23:38:00[22m [34m[vite][39m [32m✓ built in 674ms[39m
+
+[42m[30m generating static routes [39m[49m
+[2m23:38:00[22m [32m▶[39m src/pages/404.astro
+[2m23:38:00[22m   [34m└─[39m [2m/404.html[22m [2m(+64ms)[22m 
+[2m23:38:00[22m [32m▶[39m src/pages/about-us.astro
+[2m23:38:00[22m   [34m└─[39m [2m/about-us/index.html[22m [31m(+1.99s)[39m 
+[2m23:38:02[22m [35mλ[39m src/pages/api/products/[lang].json.ts
+[2m23:38:02[22m   [34m├─[39m [2m/api/products/en.json[22m [31m(+647ms)[39m 
+[2m23:38:03[22m   [34m├─[39m [2m/api/products/it.json[22m [31m(+505ms)[39m 
+[2m23:38:03[22m   [34m├─[39m [2m/api/products/es.json[22m [2m(+435ms)[22m 
+[2m23:38:04[22m   [34m├─[39m [2m/api/products/fr.json[22m [2m(+430ms)[22m 
+[2m23:38:04[22m   [34m├─[39m [2m/api/products/de.json[22m [2m(+373ms)[22m 
+[2m23:38:05[22m   [34m├─[39m [2m/api/products/pt.json[22m [2m(+413ms)[22m 
+[2m23:38:05[22m   [34m├─[39m [2m/api/products/ru.json[22m [31m(+521ms)[39m 
+[2m23:38:06[22m   [34m├─[39m [2m/api/products/ja.json[22m [2m(+420ms)[22m 
+[2m23:38:06[22m   [34m├─[39m [2m/api/products/tr.json[22m [2m(+407ms)[22m 
+[2m23:38:06[22m   [34m├─[39m [2m/api/products/ar.json[22m [2m(+392ms)[22m 
+[2m23:38:07[22m   [34m├─[39m [2m/api/products/ko.json[22m [31m(+546ms)[39m 
+[2m23:38:07[22m   [34m├─[39m [2m/api/products/zh.json[22m [31m(+903ms)[39m 
+[2m23:38:08[22m   [34m├─[39m [2m/api/products/hi.json[22m [2m(+382ms)[22m 
+[2m23:38:09[22m   [34m├─[39m [2m/api/products/vi.json[22m [2m(+416ms)[22m 
+[2m23:38:09[22m   [34m├─[39m [2m/api/products/jv.json[22m [2m(+330ms)[22m 
+[2m23:38:09[22m   [34m├─[39m [2m/api/products/ms.json[22m [2m(+450ms)[22m 
+[2m23:38:10[22m   [34m└─[39m [2m/api/products/tg.json[22m [2m(+373ms)[22m 
+[2m23:38:10[22m [35mλ[39m src/pages/api/search-index/[lang].json.ts
+[2m23:38:10[22m   [34m├─[39m [2m/api/search-index/en.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+437ms)[22m 
+[2m23:38:11[22m   [34m├─[39m [2m/api/search-index/ar.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+396ms)[22m 
+[2m23:38:11[22m   [34m├─[39m [2m/api/search-index/it.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+431ms)[22m 
+[2m23:38:12[22m   [34m├─[39m [2m/api/search-index/es.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+477ms)[22m 
+[2m23:38:12[22m   [34m├─[39m [2m/api/search-index/fr.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [31m(+733ms)[39m 
+[2m23:38:13[22m   [34m├─[39m [2m/api/search-index/de.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [31m(+556ms)[39m 
+[2m23:38:13[22m   [34m├─[39m [2m/api/search-index/pt.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+398ms)[22m 
+[2m23:38:14[22m   [34m├─[39m [2m/api/search-index/ru.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+342ms)[22m 
+[2m23:38:14[22m   [34m├─[39m [2m/api/search-index/ja.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+393ms)[22m 
+[2m23:38:14[22m   [34m├─[39m [2m/api/search-index/tr.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+489ms)[22m 
+[2m23:38:15[22m   [34m├─[39m [2m/api/search-index/ko.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+378ms)[22m 
+[2m23:38:15[22m   [34m├─[39m [2m/api/search-index/zh.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+340ms)[22m 
+[2m23:38:16[22m   [34m├─[39m [2m/api/search-index/hi.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+394ms)[22m 
+[2m23:38:16[22m   [34m├─[39m [2m/api/search-index/vi.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+410ms)[22m 
+[2m23:38:16[22m   [34m├─[39m [2m/api/search-index/jv.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+455ms)[22m 
+[2m23:38:17[22m   [34m├─[39m [2m/api/search-index/ms.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [31m(+640ms)[39m 
+[2m23:38:18[22m   [34m└─[39m [2m/api/search-index/tg.json[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+398ms)[22m 
+[2m23:38:18[22m [32m▶[39m src/pages/blog/[page].astro
+The collection "blog" does not exist or is empty. Please check your content config file for errors.
+[2m23:38:18[22m [32m▶[39m src/pages/blog/[category]/[...page].astro
+The collection "blog" does not exist or is empty. Please check your content config file for errors.
+[2m23:38:18[22m [32m▶[39m src/pages/blog/index.astro
+[2m23:38:18[22m   [34m└─[39m [2m/blog/index.html[22mThe collection "blog" does not exist or is empty. Please check your content config file for errors.
+ [2m(+53ms)[22m 
+[2m23:38:18[22m [32m▶[39m src/pages/collection/index.astro
+[2m23:38:18[22m   [34m└─[39m [2m/collection/index.html[22m [2m(+24ms)[22m 
+[2m23:38:18[22m [32m▶[39m src/pages/contact.astro
+[2m23:38:18[22m   [34m└─[39m [2m/contact/index.html[22m [2m(+37ms)[22m 
+[2m23:38:18[22m [32m▶[39m src/pages/eyewear/[page].astro
+The collection "feature" does not exist or is empty. Please check your content config file for errors.
+[2m23:38:18[22m [32m▶[39m src/pages/eyewear/[category]/[...page].astro
+The collection "feature" does not exist or is empty. Please check your content config file for errors.
+[2m23:38:18[22m [32m▶[39m src/pages/eyewear/index.astro
+[2m23:38:18[22m   [34m└─[39m [2m/eyewear/index.html[22mThe collection "feature" does not exist or is empty. Please check your content config file for errors.
+ [2m(+29ms)[22m 
+[2m23:38:18[22m [32m▶[39m src/pages/faq.astro
+[2m23:38:18[22m   [34m└─[39m [2m/faq/index.html[22m [2m(+24ms)[22m 
+[2m23:38:18[22m [32m▶[39m src/pages/inquiry-form/[lang].astro
+[2m23:38:18[22m   [34m├─[39m [2m/inquiry-form/en/index.html[22m [2m(+27ms)[22m 
+[2m23:38:18[22m   [34m├─[39m [2m/inquiry-form/it/index.html[22m [2m(+8ms)[22m 
+[2m23:38:18[22m   [34m├─[39m [2m/inquiry-form/es/index.html[22m [2m(+5ms)[22m 
+[2m23:38:18[22m   [34m├─[39m [2m/inquiry-form/fr/index.html[22m [2m(+8ms)[22m 
+[2m23:38:18[22m   [34m├─[39m [2m/inquiry-form/de/index.html[22m [2m(+5ms)[22m 
+[2m23:38:18[22m   [34m├─[39m [2m/inquiry-form/pt/index.html[22m [2m(+6ms)[22m 
+[2m23:38:18[22m   [34m├─[39m [2m/inquiry-form/ru/index.html[22m [2m(+7ms)[22m 
+[2m23:38:18[22m   [34m├─[39m [2m/inquiry-form/ja/index.html[22m [2m(+5ms)[22m 
+[2m23:38:18[22m   [34m├─[39m [2m/inquiry-form/tr/index.html[22m [2m(+4ms)[22m 
+[2m23:38:18[22m   [34m├─[39m [2m/inquiry-form/ar/index.html[22m [2m(+5ms)[22m 
+[2m23:38:18[22m   [34m├─[39m [2m/inquiry-form/ko/index.html[22m [2m(+4ms)[22m 
+[2m23:38:18[22m   [34m├─[39m [2m/inquiry-form/zh/index.html[22m [2m(+4ms)[22m 
+[2m23:38:18[22m   [34m├─[39m [2m/inquiry-form/hi/index.html[22m [2m(+12ms)[22m 
+[2m23:38:18[22m   [34m├─[39m [2m/inquiry-form/vi/index.html[22m [2m(+4ms)[22m 
+[2m23:38:18[22m   [34m├─[39m [2m/inquiry-form/jv/index.html[22m [2m(+22ms)[22m 
+[2m23:38:18[22m   [34m├─[39m [2m/inquiry-form/ms/index.html[22m [2m(+28ms)[22m 
+[2m23:38:18[22m   [34m└─[39m [2m/inquiry-form/tg/index.html[22m [2m(+14ms)[22m 
+[2m23:38:18[22m [32m▶[39m src/pages/product/[page].astro
+[2m23:38:19[22m   [34m├─[39m [2m/product/2/index.html[22m [2m(+448ms)[22m 
+[2m23:38:19[22m   [34m├─[39m [2m/product/3/index.html[22m [31m(+527ms)[39m 
+[2m23:38:20[22m   [34m├─[39m [2m/product/4/index.html[22m [2m(+414ms)[22m 
+[2m23:38:20[22m   [34m├─[39m [2m/product/5/index.html[22m [31m(+883ms)[39m 
+[2m23:38:21[22m   [34m├─[39m [2m/product/6/index.html[22m [2m(+426ms)[22m 
+[2m23:38:21[22m   [34m├─[39m [2m/product/7/index.html[22m [31m(+578ms)[39m 
+[2m23:38:22[22m   [34m├─[39m [2m/product/8/index.html[22m [2m(+485ms)[22m 
+[2m23:38:23[22m   [34m├─[39m [2m/product/9/index.html[22m [31m(+619ms)[39m 
+[2m23:38:23[22m   [34m├─[39m [2m/product/10/index.html[22m [2m(+393ms)[22m 
+[2m23:38:24[22m   [34m├─[39m [2m/product/11/index.html[22m [2m(+417ms)[22m 
+[2m23:38:24[22m   [34m├─[39m [2m/product/12/index.html[22m [2m(+372ms)[22m 
+[2m23:38:24[22m   [34m├─[39m [2m/product/13/index.html[22m [2m(+431ms)[22m 
+[2m23:38:25[22m   [34m├─[39m [2m/product/14/index.html[22m [2m(+395ms)[22m 
+[2m23:38:25[22m   [34m├─[39m [2m/product/15/index.html[22m [2m(+411ms)[22m 
+[2m23:38:26[22m   [34m├─[39m [2m/product/16/index.html[22m [31m(+983ms)[39m 
+[2m23:38:27[22m   [34m├─[39m [2m/product/17/index.html[22m [31m(+1.04s)[39m 
+[2m23:38:28[22m   [34m├─[39m [2m/product/18/index.html[22m [2m(+493ms)[22m 
+[2m23:38:28[22m   [34m├─[39m [2m/product/19/index.html[22m [2m(+370ms)[22m 
+[2m23:38:28[22m   [34m├─[39m [2m/product/20/index.html[22m [2m(+358ms)[22m 
+[2m23:38:29[22m   [34m├─[39m [2m/product/21/index.html[22m [2m(+345ms)[22m 
+[2m23:38:29[22m   [34m└─[39m [2m/product/22/index.html[22m [2m(+317ms)[22m 
+[2m23:38:29[22m [32m▶[39m src/pages/product/[slug].astro
+[2m23:38:30[22m   [34m├─[39m [2m/product/kao-001-acetate-optical-frame/index.html[22m [31m(+697ms)[39m 
+[2m23:38:30[22m   [34m├─[39m [2m/product/kao-002-acetate-optical-frame/index.html[22m [31m(+1.01s)[39m 
+[2m23:38:32[22m   [34m├─[39m [2m/product/kao-003-acetate-optical-frame/index.html[22m [31m(+857ms)[39m 
+[2m23:38:32[22m   [34m├─[39m [2m/product/kao-004-acetate-optical-frame/index.html[22m [31m(+762ms)[39m 
+[2m23:38:33[22m   [34m├─[39m [2m/product/kao-014-acetate-optical-frame/index.html[22m [31m(+779ms)[39m 
+[2m23:38:34[22m   [34m├─[39m [2m/product/kao-015-acetate-optical-frame/index.html[22m [31m(+790ms)[39m 
+[2m23:38:35[22m   [34m├─[39m [2m/product/kao-155-acetate-optical-frame/index.html[22m [31m(+1.26s)[39m 
+[2m23:38:36[22m   [34m├─[39m [2m/product/kao-156-acetate-optical-frame/index.html[22m [31m(+683ms)[39m 
+[2m23:38:37[22m   [34m├─[39m [2m/product/kao-157-acetate-optical-frame/index.html[22m [31m(+1.35s)[39m 
+[2m23:38:38[22m   [34m├─[39m [2m/product/kao-158-acetate-optical-frame/index.html[22m [31m(+569ms)[39m 
+[2m23:38:39[22m   [34m├─[39m [2m/product/kao-301-acetate-optical-frame/index.html[22m [31m(+553ms)[39m 
+[2m23:38:39[22m   [34m├─[39m [2m/product/kao-304-acetate-optical-frame/index.html[22m [31m(+1.16s)[39m 
+[2m23:38:40[22m   [34m├─[39m [2m/product/kao-305-acetate-optical-frame/index.html[22m [31m(+647ms)[39m 
+[2m23:38:41[22m   [34m├─[39m [2m/product/kao-306-acetate-optical-frame/index.html[22m [31m(+621ms)[39m 
+[2m23:38:42[22m   [34m├─[39m [2m/product/kao-307-acetate-optical-frame/index.html[22m [31m(+634ms)[39m 
+[2m23:38:42[22m   [34m├─[39m [2m/product/kao-308-acetate-optical-frame/index.html[22m [31m(+683ms)[39m 
+[2m23:38:43[22m   [34m├─[39m [2m/product/kao-309-acetate-optical-frame/index.html[22m [31m(+774ms)[39m 
+[2m23:38:44[22m   [34m├─[39m [2m/product/kao-310-acetate-optical-frame/index.html[22m [31m(+990ms)[39m 
+[2m23:38:45[22m   [34m├─[39m [2m/product/kao-311-acetate-optical-frame/index.html[22m [31m(+980ms)[39m 
+[2m23:38:46[22m   [34m├─[39m [2m/product/kao-312-acetate-optical-frame/index.html[22m [31m(+689ms)[39m 
+[2m23:38:46[22m   [34m├─[39m [2m/product/kao-314-acetate-optical-frame/index.html[22m [31m(+673ms)[39m 
+[2m23:38:47[22m   [34m├─[39m [2m/product/kao-315-acetate-optical-frame/index.html[22m [31m(+1.07s)[39m 
+[2m23:38:48[22m   [34m├─[39m [2m/product/kao-317-acetate-optical-frame/index.html[22m [31m(+839ms)[39m 
+[2m23:38:49[22m   [34m├─[39m [2m/product/kao-318-acetate-optical-frame/index.html[22m [31m(+769ms)[39m 
+[2m23:38:50[22m   [34m├─[39m [2m/product/kao-319-acetate-optical-frame/index.html[22m [31m(+701ms)[39m 
+[2m23:38:50[22m   [34m├─[39m [2m/product/kao-320-acetate-optical-frame/index.html[22m [31m(+712ms)[39m 
+[2m23:38:51[22m   [34m├─[39m [2m/product/kao-321-acetate-optical-frame/index.html[22m [31m(+668ms)[39m 
+[2m23:38:52[22m   [34m├─[39m [2m/product/kao-323-acetate-optical-frame/index.html[22m [31m(+787ms)[39m 
+[2m23:38:53[22m   [34m├─[39m [2m/product/kao-325-acetate-optical-frame/index.html[22m [31m(+1.15s)[39m 
+[2m23:38:54[22m   [34m├─[39m [2m/product/kao-322-acetate-optical-frame/index.html[22m [31m(+773ms)[39m 
+[2m23:38:54[22m   [34m├─[39m [2m/product/kao-326-acetate-optical-frame/index.html[22m [31m(+659ms)[39m 
+[2m23:38:55[22m   [34m├─[39m [2m/product/kao-327-acetate-optical-frame/index.html[22m [31m(+586ms)[39m 
+[2m23:38:56[22m   [34m├─[39m [2m/product/kao-328-acetate-optical-frame/index.html[22m [31m(+671ms)[39m 
+[2m23:38:56[22m   [34m├─[39m [2m/product/kao-331-acetate-optical-frame/index.html[22m [31m(+889ms)[39m 
+[2m23:38:57[22m   [34m├─[39m [2m/product/kao-329-acetate-optical-frame/index.html[22m [31m(+807ms)[39m 
+[2m23:38:58[22m   [34m├─[39m [2m/product/kao-332-acetate-optical-frame/index.html[22m [31m(+711ms)[39m 
+[2m23:38:59[22m   [34m├─[39m [2m/product/kao-335-acetate-optical-frame/index.html[22m [31m(+660ms)[39m 
+[2m23:38:59[22m   [34m├─[39m [2m/product/kao-333-acetate-optical-frame/index.html[22m [31m(+972ms)[39m 
+[2m23:39:00[22m   [34m├─[39m [2m/product/kao-334-acetate-optical-frame/index.html[22m [31m(+853ms)[39m 
+[2m23:39:01[22m   [34m├─[39m [2m/product/kao-337-acetate-optical-frame/index.html[22m [31m(+1.10s)[39m 
+[2m23:39:02[22m   [34m├─[39m [2m/product/kao-336-acetate-optical-frame/index.html[22m [31m(+710ms)[39m 
+[2m23:39:03[22m   [34m├─[39m [2m/product/kao-338-acetate-optical-frame/index.html[22m [31m(+619ms)[39m 
+[2m23:39:04[22m   [34m├─[39m [2m/product/kao-339-acetate-optical-frame/index.html[22m [31m(+616ms)[39m 
+[2m23:39:04[22m   [34m├─[39m [2m/product/kao-340-acetate-optical-frame/index.html[22m [31m(+600ms)[39m 
+[2m23:39:05[22m   [34m├─[39m [2m/product/kao-341-acetate-optical-frame/index.html[22m [31m(+675ms)[39m 
+[2m23:39:06[22m   [34m├─[39m [2m/product/kao-342-acetate-optical-frame/index.html[22m [31m(+1.33s)[39m 
+[2m23:39:07[22m   [34m├─[39m [2m/product/kao-343-acetate-optical-frame/index.html[22m [31m(+952ms)[39m 
+[2m23:39:08[22m   [34m├─[39m [2m/product/kao-344-acetate-optical-frame/index.html[22m [31m(+943ms)[39m 
+[2m23:39:09[22m   [34m├─[39m [2m/product/kao-347-acetate-optical-frame/index.html[22m [31m(+1.22s)[39m 
+[2m23:39:10[22m   [34m├─[39m [2m/product/kao-348-acetate-optical-frame/index.html[22m [31m(+881ms)[39m 
+[2m23:39:11[22m   [34m├─[39m [2m/product/kao-501-acetate-optical-frame/index.html[22m [31m(+1.33s)[39m 
+[2m23:39:12[22m   [34m├─[39m [2m/product/kao-502-acetate-optical-frame/index.html[22m [31m(+1.17s)[39m 
+[2m23:39:13[22m   [34m├─[39m [2m/product/kao-511-acetate-optical-frame/index.html[22m

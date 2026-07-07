@@ -11,47 +11,52 @@
 
 date_default_timezone_set('Asia/Shanghai');
 
-// Parse a time string (ISO 8601 from JS toISOString(), OR legacy
-// Y-m-d H:i:s) into a UTC epoch. Returns false on failure.
-function vjt_to_utc_ts($timeStr) {
-    if (empty($timeStr)) return false;
-    if (strpos($timeStr, 'T') === false && strpos($timeStr, 'Z') === false) {
-        // Legacy Y-m-d H:i:s format was previously stored as 'fake UTC'
-        // (which was actually Asia/Shanghai time, written under
-        // date_default_timezone_set('Asia/Shanghai')). It is *not* real
-        // UTC; the +8h offset was already baked in. To get the correct
-        // UTC ts, we must subtract 8h:
-        $ts = strtotime($timeStr . ' -0800');
-    } else {
-        $ts = strtotime($timeStr);
-    }
-    return ($ts === false || $ts <= 0) ? false : $ts;
+// ── Time helpers ─────────────────────────────────────────────────────────────
+// All datetime values are stored as real UTC Y-m-d H:i:s, using gmdate().
+// This eliminates timezone ambiguity regardless of server PHP configuration.
+//
+// Display: vjt_format_for_admin() converts UTC → Beijing (+8h).
+//          vjt_format_for_visitor() converts UTC → the visitor's IANA tz.
+//
+// Ingest:  vjt_to_beijing() converts JS ISO-8601 UTC → UTC Y-m-d H:i:s.
+
+// Convert a JS ISO-8601 UTC string (e.g. "2026-07-08T07:36:36.000Z")
+// to UTC Y-m-d H:i:s for storage.
+function vjt_to_beijing($isoStr) {
+    if (empty($isoStr)) return '';
+    $ts = strtotime($isoStr);
+    if ($ts === false || $ts <= 0) return $isoStr;
+    return gmdate('Y-m-d H:i:s', $ts);
 }
 
-// Format a time value for the admin dashboard (admin is in Asia/Shanghai,
-// so display admin's local time: UTC + 8h).
-// Accepts ISO 8601 OR legacy Y-m-d H:i:s (see vjt_to_utc_ts for handling).
+// Format a stored UTC time for the admin dashboard (admin is in China).
+// Stored values are real UTC Y-m-d H:i:s; always display as Beijing time (+8h).
 function vjt_format_for_admin($timeStr) {
     if (empty($timeStr)) return '-';
-    $ts = vjt_to_utc_ts($timeStr);
-    if ($ts === false) return $timeStr;
-    return gmdate('Y-m-d H:i:s', $ts + 8 * 3600);
+    // ISO 8601 from JS (contains T or Z) — parse as UTC, display as Beijing
+    if (strpos($timeStr, 'T') !== false || strpos($timeStr, 'Z') !== false) {
+        $ts = strtotime($timeStr);
+        if ($ts !== false && $ts > 0) return date('Y-m-d H:i:s', $ts); // Asia/Shanghai adds 8h
+    }
+    // Y-m-d H:i:s stored as UTC — convert to Beijing for display
+    $ts = strtotime($timeStr . ' UTC');
+    if ($ts !== false && $ts > 0) {
+        return date('Y-m-d H:i:s', $ts); // Asia/Shanghai is set, adds +8h
+    }
+    return $timeStr;
 }
 
-// Format a time value for the visitor's local time using their IANA
-// timezone (from session.timezone, e.g. 'Asia/Shanghai', 'Europe/Berlin',
-// 'America/Los_Angeles'). Falls back to the raw value if no tz is set.
+// Format a stored UTC time for the visitor's local timezone.
+// Falls back to Beijing time if no timezone is provided.
 function vjt_format_for_visitor($timeStr, $tz) {
     if (empty($timeStr)) return '-';
-    if (empty($tz)) return $timeStr;
-    $ts = vjt_to_utc_ts($timeStr);
-    if ($ts === false) return $timeStr;
+    if (empty($tz)) return vjt_format_for_admin($timeStr);
     try {
-        $dt = new DateTime('@' . $ts);
+        $dt = new DateTime($timeStr, new DateTimeZone('UTC'));
         $dt->setTimezone(new DateTimeZone($tz));
         return $dt->format('Y-m-d H:i:s');
     } catch (Exception $e) {
-        return $timeStr;
+        return vjt_format_for_admin($timeStr);
     }
 }
 
@@ -572,7 +577,7 @@ function vjt_uuid() {
 function vjt_upsert_visitor($data) {
     $db = vjt_db();
     $vid = $data['visitor_id'];
-    $now = date('Y-m-d H:i:s');
+    $now = gmdate('Y-m-d H:i:s');
 
     $stmt = $db->prepare("SELECT visitor_id FROM visitors WHERE visitor_id = ?");
     $stmt->execute([$vid]);
@@ -632,7 +637,7 @@ function vjt_upsert_visitor($data) {
 function vjt_upsert_session($data) {
     $db = vjt_db();
     $sid = $data['session_id'];
-    $now = date('Y-m-d H:i:s');
+    $now = gmdate('Y-m-d H:i:s');
 
     $stmt = $db->prepare("SELECT referrer, landing_url, landing_title FROM sessions WHERE session_id = ?");
     $stmt->execute([$sid]);
@@ -761,7 +766,7 @@ function vjt_sync_pageview_snapshot($sessionId, $pages) {
 
 function vjt_add_submission($data) {
     $db = vjt_db();
-    $now = date('Y-m-d H:i:s');
+    $now = gmdate('Y-m-d H:i:s');
     $cutoff = date('Y-m-d H:i:s', strtotime('-10 minutes'));
 
     // Deduplication: same visitor+session+form+status within 10 minutes
@@ -836,7 +841,7 @@ function vjt_resolve_geo($ip) {
         }
         // Not cached → queue for off-path resolution (no blocking HTTP here)
         $q = $db->prepare("INSERT OR IGNORE INTO geo_queue (ip, queued_at) VALUES (?, ?)");
-        $q->execute([$ip, date('Y-m-d H:i:s')]);
+        $q->execute([$ip, gmdate('Y-m-d H:i:s')]);
     } catch (Exception $e) {
         error_log('VJT geo enqueue error: ' . $e->getMessage());
     }
@@ -881,7 +886,7 @@ function vjt_process_geo_queue($limit = 100) {
         $record = vjt_mmdb_lookup($ip);
         if (!is_array($record)) continue; // skip on error, leave in queue for retry
 
-        $now = date('Y-m-d H:i:s');
+        $now = gmdate('Y-m-d H:i:s');
         // MaxMind GeoLite2 City response fields:
         //   $record['country']['iso_code']         — "US" (ISO-2)
         //   $record['country']['calling_code']     — "1" (no "+", just digits)

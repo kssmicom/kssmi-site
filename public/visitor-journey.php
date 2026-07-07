@@ -1196,7 +1196,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                             <div class="pv-url"><?php echo htmlspecialchars($pv['title'] ?: $pv['url']); ?></div>
                                             <div class="pv-meta">
                                                 Step <?php echo $pv['step_order']; ?> |
-                                                <?php echo htmlspecialchars(vjt_format_for_visitor($pv['visited_at'], $pv['timezone'] ?? '')); ?> |
+                                                <?php echo htmlspecialchars(vjt_format_for_visitor($pv['visited_at'], $v['timezone'] ?? '')); ?> |
                                                 Dwell: <?php echo fmtDuration($pv['duration_seconds']); ?> |
                                                 Scroll: <?php echo $pv['scroll_depth']; ?>%
                                                 <?php if ($pv['url']): ?>
