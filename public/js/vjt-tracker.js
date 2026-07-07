@@ -154,7 +154,7 @@
       var di  = deviceInfo || {};
       session = {
         id               : newTrackingId('vjts_'),
-        startedAt        : nowBeijing(),
+        startedAt        : new Date().toISOString(),
         landingUrl       : cfg.page.url,
         landingTitle     : cfg.page.title,
         referrer         : document.referrer || '',
@@ -277,7 +277,7 @@
       landing_url       : session.landingUrl,
       landing_title     : session.landingTitle,
       session_started_at: session.startedAt,
-      visited_at        : nowBeijing(),
+      visited_at        : new Date().toISOString(),
       leave_at          : '',
       duration_seconds  : 0,
       scroll_depth      : 0,
@@ -324,7 +324,7 @@
     if (!pageview) return;
 
     var leaveMs = Date.now();
-    pageview.leave_at         = nowBeijing();
+    pageview.leave_at         = new Date().toISOString();
     pageview.duration_seconds = secondsBetween(pageview.created_at_ms || leaveMs, leaveMs);
     pageview.flush_reason     = reason || 'unknown';
     maxScrollDepth             = Math.max(maxScrollDepth, calcScrollDepth());
@@ -407,7 +407,7 @@
         form_name    : meta.name,
         submit_page  : cfg.page.url,
         submit_title : cfg.page.title,
-        submitted_at : nowBeijing(),
+        submitted_at : new Date().toISOString(),
         status       : 'success',
         referrer     : attrReferrer,
         landing_url  : session.landingUrl   || '',
@@ -491,7 +491,7 @@
         form_name    : kind === 'whatsapp' ? 'WhatsApp Click' : 'Mailto Click',
         submit_page  : cfg.page.url,
         submit_title : cfg.page.title,
-        submitted_at : nowBeijing(),
+        submitted_at : new Date().toISOString(),
         status       : 'success',
         contact_url  : href,
         referrer     : attrReferrer,
