@@ -1064,8 +1064,8 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                             <?php foreach ($visitors as $v): ?>
                                                 <tr>
                                                     <td class="mono"><a href="?tab=journey&visitor_id=<?php echo urlencode($v['visitor_id']); ?>" class="link"><?php echo htmlspecialchars(str_replace('vjtv_', '', $v['visitor_id'])); ?></a></td>
-                                                    <td style="font-size:12px;"><?php echo htmlspecialchars($v['first_seen_at']); ?></td>
-                                                    <td style="font-size:12px;"><?php echo htmlspecialchars($v['last_seen_at']); ?></td>
+                                                    <td style="font-size:12px;"><?php echo htmlspecialchars(vjt_format_for_admin($v['first_seen_at'])); ?></td>
+                                                    <td style="font-size:12px;"><?php echo htmlspecialchars(vjt_format_for_admin($v['last_seen_at'])); ?></td>
                                                     <td style="font-size:12px;"><?php echo $v['session_time'] > 0 ? fmtDuration($v['session_time']) : '-'; ?></td>
                                                     <td><?php echo $v['country'] ? htmlspecialchars(getCountryName($v['country'])) : '-'; ?></td>
                                                     <td><?php echo htmlspecialchars(ucfirst($v['device_type'] ?: '-')); ?></td>
@@ -1133,8 +1133,8 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                     <div class="journey-item"><label>Browser</label><div class="val"><?php echo htmlspecialchars($v['browser'] ?: '-'); ?></div></div>
                                     <div class="journey-item"><label>Device</label><div class="val"><?php echo htmlspecialchars(ucfirst($v['device_type'] ?: '-')); ?></div></div>
                                     <div class="journey-item"><label>Screen</label><div class="val"><?php echo htmlspecialchars($v['screen_resolution'] ?: '-'); ?></div></div>
-                                    <div class="journey-item"><label>First Seen</label><div class="val"><?php echo htmlspecialchars($v['first_seen_at']); ?></div></div>
-                                    <div class="journey-item"><label>Last Seen</label><div class="val"><?php echo htmlspecialchars($v['last_seen_at']); ?></div></div>
+                                    <div class="journey-item"><label>First Seen</label><div class="val"><?php echo htmlspecialchars(vjt_format_for_admin($v['first_seen_at'])); ?></div></div>
+                                    <div class="journey-item"><label>Last Seen</label><div class="val"><?php echo htmlspecialchars(vjt_format_for_admin($v['last_seen_at'])); ?></div></div>
                                     <div class="journey-item"><label>Session Time <span style="font-weight:400;color:#888;">(Total on site)</span></label><div class="val"><?php echo $totalSessionTime > 0 ? fmtDuration($totalSessionTime) : '-'; ?></div></div>
                                     <div class="journey-item" style="grid-column: 1 / -1;"><label>User Agent</label><div class="val" style="font-size:11px;word-break:break-all;"><?php echo htmlspecialchars($v['user_agent'] ?? 'N/A'); ?></div></div>
                                 </div>
@@ -1172,7 +1172,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                     Session: <?php echo htmlspecialchars(substr($sess['session_id'], 0, 20)); ?>...
                                     <?php echo sourceBadge(vjt_classify_source($sess)); ?>
                                     <span style="font-weight:normal;font-size:12px;color:#888;">
-                                        | <?php echo htmlspecialchars($sess['started_at']); ?> - <?php echo htmlspecialchars($sess['last_seen_at']); ?>
+                                        | <?php echo htmlspecialchars(vjt_format_for_admin($sess['started_at'])); ?> - <?php echo htmlspecialchars(vjt_format_for_admin($sess['last_seen_at'])); ?>
                                         <?php if ($sess['utm_campaign']): ?>
                                             | Campaign: <?php echo htmlspecialchars($sess['utm_campaign']); ?>
                                         <?php endif; ?>
@@ -1196,7 +1196,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                             <div class="pv-url"><?php echo htmlspecialchars($pv['title'] ?: $pv['url']); ?></div>
                                             <div class="pv-meta">
                                                 Step <?php echo $pv['step_order']; ?> |
-                                                <?php echo htmlspecialchars($pv['visited_at']); ?> |
+                                                <?php echo htmlspecialchars(vjt_format_for_visitor($pv['visited_at'], $pv['timezone'] ?? '')); ?> |
                                                 Dwell: <?php echo fmtDuration($pv['duration_seconds']); ?> |
                                                 Scroll: <?php echo $pv['scroll_depth']; ?>%
                                                 <?php if ($pv['url']): ?>

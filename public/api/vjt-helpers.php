@@ -11,16 +11,48 @@
 
 date_default_timezone_set('Asia/Shanghai');
 
-// Convert a UTC ISO 8601 string (from JS) to Beijing time Y-m-d H:i:s.
-// If the value is already a date string without "T" or "Z", return as-is.
-function vjt_to_beijing($timeStr) {
-    if (empty($timeStr)) return date('Y-m-d H:i:s');
+// Parse a time string (ISO 8601 from JS toISOString(), OR legacy
+// Y-m-d H:i:s) into a UTC epoch. Returns false on failure.
+function vjt_to_utc_ts($timeStr) {
+    if (empty($timeStr)) return false;
     if (strpos($timeStr, 'T') === false && strpos($timeStr, 'Z') === false) {
+        // Legacy Y-m-d H:i:s format was previously stored as 'fake UTC'
+        // (which was actually Asia/Shanghai time, written under
+        // date_default_timezone_set('Asia/Shanghai')). It is *not* real
+        // UTC; the +8h offset was already baked in. To get the correct
+        // UTC ts, we must subtract 8h:
+        $ts = strtotime($timeStr . ' -0800');
+    } else {
+        $ts = strtotime($timeStr);
+    }
+    return ($ts === false || $ts <= 0) ? false : $ts;
+}
+
+// Format a time value for the admin dashboard (admin is in Asia/Shanghai,
+// so display admin's local time: UTC + 8h).
+// Accepts ISO 8601 OR legacy Y-m-d H:i:s (see vjt_to_utc_ts for handling).
+function vjt_format_for_admin($timeStr) {
+    if (empty($timeStr)) return '-';
+    $ts = vjt_to_utc_ts($timeStr);
+    if ($ts === false) return $timeStr;
+    return gmdate('Y-m-d H:i:s', $ts + 8 * 3600);
+}
+
+// Format a time value for the visitor's local time using their IANA
+// timezone (from session.timezone, e.g. 'Asia/Shanghai', 'Europe/Berlin',
+// 'America/Los_Angeles'). Falls back to the raw value if no tz is set.
+function vjt_format_for_visitor($timeStr, $tz) {
+    if (empty($timeStr)) return '-';
+    if (empty($tz)) return $timeStr;
+    $ts = vjt_to_utc_ts($timeStr);
+    if ($ts === false) return $timeStr;
+    try {
+        $dt = new DateTime('@' . $ts);
+        $dt->setTimezone(new DateTimeZone($tz));
+        return $dt->format('Y-m-d H:i:s');
+    } catch (Exception $e) {
         return $timeStr;
     }
-    $ts = strtotime($timeStr);
-    if ($ts === false || $ts <= 0) return date('Y-m-d H:i:s');
-    return date('Y-m-d H:i:s', $ts);
 }
 
 // Store data OUTSIDE public_html so the SQLite file cannot be downloaded
