@@ -898,6 +898,15 @@ function vjt_process_geo_queue($limit = 100) {
         $region  = isset($record['subdivisions'][0]['iso_code']) ? $record['subdivisions'][0]['iso_code'] : '';
         $calling = isset($record['country']['calling_code']) ? (string)$record['country']['calling_code'] : '';
 
+        // P3-4: ip-api.com fallback to fill city gaps in GeoLite2 (mostly IPv6).
+        // Free tier: 45 req/min, supports HTTPS, no API key. Only called when
+        // mmdb returns no city — not for every IP.
+        if ($city === '') {
+            $fallback = vjt_ipapi_fallback_city($ip);
+            if ($fallback['city'] !== '')   $city   = $fallback['city'];
+            if ($fallback['region'] !== '') $region = $fallback['region'];
+        }
+
         try {
             $db->beginTransaction();
             // Cache (even empty results, to avoid re-querying dead IPs for a day)
@@ -937,6 +946,40 @@ function vjt_process_geo_queue($limit = 100) {
 }
 
 // ── Utility ─────────────────────────────────────────────────────────────────
+
+/**
+ * P3-4: ip-api.com fallback for missing city data in MaxMind GeoLite2.
+ * GeoLite2 (free) has sparse city data for IPv6; ip-api.com fills the gap.
+ *
+ * Free tier: 45 req/min, HTTPS supported, no API key required.
+ * Called only when mmdb returns no city — not for every IP.
+ *
+ * @param  string $ip   Valid public IP (IPv4 or IPv6)
+ * @return array        ['city' => '', 'region' => '']
+ */
+function vjt_ipapi_fallback_city($ip) {
+    $result = ['city' => '', 'region' => ''];
+    if ($ip === '' || filter_var($ip, FILTER_VALIDATE_IP) === false) return $result;
+
+    $url = 'https://ip-api.com/json/' . rawurlencode($ip) . '?fields=status,city,region';
+    $ctx = stream_context_create([
+        'http' => [
+            'method' => 'GET',
+            'timeout' => 3,
+            'header' => "Accept: application/json\r\n",
+        ],
+    ]);
+
+    $body = @file_get_contents($url, false, $ctx);
+    if ($body === false) return $result; // timeout / network error → skip
+
+    $data = json_decode($body, true);
+    if (!is_array($data) || ($data['status'] ?? '') !== 'success') return $result;
+
+    $result['city']   = (string)($data['city'] ?? '');
+    $result['region'] = (string)($data['region'] ?? '');
+    return $result;
+}
 
 /**
  * Lookup an IP in the local MaxMind GeoLite2 City mmdb file.
