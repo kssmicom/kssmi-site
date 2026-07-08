@@ -5,7 +5,7 @@
  *
  * Composes section components:
  *   - src/components/collection/quote/S002_Benefits.astro
- * Plus the InquiryFormLazy form at the bottom.
+ *   - src/components/collection/quote/S003_ContactForm.astro
  *
  * Meta + SEO are read from src/content/collection/quote/quote.{lang}.md
  */
@@ -16,8 +16,8 @@ import { getEntry } from 'astro:content';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
-import InquiryFormLazy from '../../components/InquiryFormLazy.astro';
 import S002_Benefits from '../../components/collection/quote/S002_Benefits.astro';
+import S003_ContactForm from '../../components/collection/quote/S003_ContactForm.astro';
 
 // Accept lang as a prop (passed by both /quote.astro and /[lang]/quote.astro).
 // Fall back to Astro.params, then 'en'.
@@ -55,8 +55,8 @@ const breadcrumbItems = [
     <!-- Section 002: Key Benefits (3 cards) -->
     <S002_Benefits lang={lang} />
 
-    <!-- Inquiry Form -->
-    <InquiryFormLazy lang={lang} productName={productName} />
+    <!-- Section 003: Contact Form -->
+    <S003_ContactForm lang={lang} productName={productName} />
   </main>
 
   <Footer lang={lang} />

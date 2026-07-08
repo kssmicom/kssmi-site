@@ -563,8 +563,10 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
             .tabs { flex-wrap: wrap; overflow-x: auto; -webkit-overflow-scrolling: touch; }
             .tab { padding: 10px 12px; font-size: 12px; white-space: nowrap; }
             .filters { flex-direction: column; align-items: flex-start; }
-            .header { flex-direction: row; flex-wrap: wrap; }
-            .header-right { width: 100%; justify-content: flex-end; }
+            .header { flex-wrap: nowrap; gap: 6px; }
+            .header-left h1 { font-size: 14px; }
+            .header-right { display: flex; gap: 4px; }
+            .header-right .btn { padding: 4px 8px; font-size: 11px; }
             /* Overview grid: stack referrers + source/device vertically */
             .overview-grid { grid-template-columns: 1fr !important; }
             .journey-grid { grid-template-columns: 1fr; }
@@ -607,7 +609,6 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
             <div class="header">
                 <div class="header-left">
                     <h1>VJT</h1>
-                    <p class="subtitle"></p>
                 </div>
                 <div class="header-right">
                     <a href="/email-logs.php" class="btn btn-secondary">Email Logs</a>

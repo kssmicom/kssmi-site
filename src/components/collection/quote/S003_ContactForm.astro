@@ -1,0 +1,16 @@
+---
+/**
+ * S003 Contact Form — wraps InquiryFormLazy.
+ * Reads content from src/content/collection/quote/s003-contact-form.{lang}.md
+ */
+
+import InquiryFormLazy from '../../InquiryFormLazy.astro';
+
+const { lang = 'en', productName = '' } = Astro.props as { lang?: string; productName?: string };
+---
+
+<section class="bg-[#F5F5F4]">
+  <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1240px] mx-auto px-4">
+    <InquiryFormLazy lang={lang} productName={productName} />
+  </div>
+</section>
