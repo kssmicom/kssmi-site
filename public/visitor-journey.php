@@ -619,6 +619,9 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                 <p class="success"><?php echo htmlspecialchars($message); ?></p>
             <?php endif; ?>
 
+                <!-- Global CSRF token for all tabs (used by JS delete functions) -->
+                <input type="hidden" id="vjt_csrf" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
+
                 <!-- Tabs -->
                 <div class="tabs">
                     <a href="?tab=overview" class="tab <?php echo $tab === 'overview' ? 'active' : ''; ?>">Overview</a>
