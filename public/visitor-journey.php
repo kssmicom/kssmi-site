@@ -149,6 +149,27 @@ if ($isAuthenticated && isset($_POST['delete_ids']) && isset($_POST['csrf_token'
     }
 }
 
+// Handle visitor deletion (deletes visitor + all associated sessions/pageviews/submissions)
+if ($isAuthenticated && isset($_POST['delete_visitor']) && isset($_POST['csrf_token']) && hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+    $vid = trim((string)($_POST['delete_visitor'] ?? ''));
+    if ($vid !== '') {
+        $db = vjt_db();
+        $db->beginTransaction();
+        try {
+            $db->prepare("DELETE FROM pageviews   WHERE visitor_id = ?")->execute([$vid]);
+            $db->prepare("DELETE FROM sessions    WHERE visitor_id = ?")->execute([$vid]);
+            $db->prepare("DELETE FROM submissions WHERE visitor_id = ?")->execute([$vid]);
+            $db->prepare("DELETE FROM visitors    WHERE visitor_id = ?")->execute([$vid]);
+            $db->commit();
+            $message = 'Visitor and all associated records deleted.';
+        } catch (Exception $e) {
+            $db->rollBack();
+            $message = 'Failed to delete visitor.';
+            error_log('VJT visitor delete error: ' . $e->getMessage());
+        }
+    }
+}
+
 // Handle CSV export
 if ($isAuthenticated && isset($_GET['export_csv'])) {
     vjt_export_submissions_csv_start([
@@ -825,7 +846,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                                 <th>Page</th>
                                                 <th>IP / Country</th>
                                                 <th>Status</th>
-                                                <th>Journey</th>
+                                                <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -1078,7 +1099,10 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                                     <td style="text-align:center;"><?php echo $v['sessions']; ?></td>
                                                     <td style="text-align:center;"><?php echo $v['submissions']; ?></td>
                                                     <td><?php echo sourceBadge($v['source']); ?></td>
-                                                    <td><a href="?tab=journey&visitor_id=<?php echo urlencode($v['visitor_id']); ?>" class="btn btn-primary btn-small">Journey</a></td>
+                                                    <td>
+                                                        <a href="?tab=journey&visitor_id=<?php echo urlencode($v['visitor_id']); ?>" class="btn btn-primary btn-small">Journey</a>
+                                                        <button type="button" class="btn btn-danger btn-small" onclick="vjtDeleteVisitor('<?php echo htmlspecialchars($v['visitor_id'], ENT_QUOTES); ?>')" title="Delete visitor and all records" style="margin-left:4px;">Del</button>
+                                                    </td>
                                                 </tr>
                                             <?php endforeach; ?>
                                         </tbody>
@@ -1379,6 +1403,15 @@ function vjtDeleteOne(id) {
   var form = document.createElement('form');
   form.method = 'POST';
   form.innerHTML = '<input name="delete_ids" value="' + id + '">';
+  form.innerHTML += '<input name="csrf_token" value="' + (document.getElementById('vjt_csrf')||{}).value + '">';
+  document.body.appendChild(form);
+  form.submit();
+}
+function vjtDeleteVisitor(visitorId) {
+  if (!confirm('Delete this visitor and ALL associated records (sessions, pageviews, submissions)? This cannot be undone.')) return;
+  var form = document.createElement('form');
+  form.method = 'POST';
+  form.innerHTML = '<input name="delete_visitor" value="' + visitorId + '">';
   form.innerHTML += '<input name="csrf_token" value="' + (document.getElementById('vjt_csrf')||{}).value + '">';
   document.body.appendChild(form);
   form.submit();
