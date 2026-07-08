@@ -425,10 +425,10 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visitor Journey Tracker - KSSMI</title>
+    <title>VJT - KSSMI</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; padding: 14px 20px; color: #333; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; padding: 14px 20px; color: #333; overflow-y: scroll; }
         .container { width: 100%; max-width: 1500px; margin: 0 auto; }
         h1 { color: #5D4E37; }
         .subtitle { color: #888; }
@@ -590,7 +590,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
     <div class="container">
         <?php if (!$isAuthenticated): ?>
             <div class="login-box">
-                <h2>Visitor Journey Tracker</h2>
+                <h2>VJT</h2>
                 <?php if ($error): ?>
                     <p class="error"><?php echo htmlspecialchars($error); ?></p>
                 <?php endif; ?>
@@ -606,8 +606,8 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
             <!-- Header -->
             <div class="header">
                 <div class="header-left">
-                    <h1>Visitor Journey Tracker</h1>
-                    <p class="subtitle"><?php echo htmlspecialchars($subtitle ?? 'Track visitor behavior, traffic sources, and conversions'); ?></p>
+                    <h1>VJT</h1>
+                    <p class="subtitle"></p>
                 </div>
                 <div class="header-right">
                     <a href="/email-logs.php" class="btn btn-secondary">Email Logs</a>
