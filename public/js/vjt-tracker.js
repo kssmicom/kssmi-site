@@ -378,10 +378,14 @@
 
   function isSearchForm(form) {
     if (form.getAttribute('role') === 'search') return true;
-    var searchInput = form.querySelector('input[name="s"]');
-    if (searchInput) return true;
-    var action = form.getAttribute('action') || '';
-    if (action.indexOf('?s=') !== -1 || action.indexOf('/search/') !== -1) return true;
+    // Input name: s (WordPress-style) or q (KSSMI-style)
+    if (form.querySelector('input[name="s"], input[name="q"]')) return true;
+    var action = (form.getAttribute('action') || '').toLowerCase();
+    // Action path: /search, /search/, ?s=, /search?... (any form posting to a search route)
+    if (action.indexOf('?s=') !== -1 || action.indexOf('/search') !== -1) return true;
+    // Form ID: any id containing "search" (header-search, mobile-search, etc.)
+    var id = (form.getAttribute('id') || '').toLowerCase();
+    if (id.indexOf('search') !== -1) return true;
     return false;
   }
 

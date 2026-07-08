@@ -1172,19 +1172,24 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                 </div>
                             </div>
 
-                            <?php if (!empty($journeyData['submissions'])): ?>
+                            <?php
+                                $realSubmissions = array_filter($journeyData['submissions'], function($s) {
+                                    return ($s['form_plugin'] ?? '') !== 'generic';
+                                });
+                            ?>
+                            <?php if (!empty($realSubmissions)): ?>
                             <div class="journey-section">
-                                <h3>Submissions (<?php echo count($journeyData['submissions']); ?>)</h3>
+                                <h3>Submissions (<?php echo count($realSubmissions); ?>)</h3>
                                 <div class="table-wrapper">
                                     <table>
                                         <thead><tr><th>Time</th><th>Form</th><th>Page</th><th>Status</th></tr></thead>
                                         <tbody>
-                                            <?php foreach ($journeyData['submissions'] as $sub): ?>
+                                            <?php foreach ($realSubmissions as $sub): ?>
                                                 <tr>
-                                                    <td style="font-size:12px;"><?php echo htmlspecialchars($sub['submitted_at']); ?></td>
-                                                    <td><?php echo htmlspecialchars($sub['form_plugin'] . ': ' . $sub['form_name']); ?></td>
+                                                    <td style="font-size:12px;"><?php echo htmlspecialchars(vjt_format_for_visitor($sub['submitted_at'], $v['timezone'] ?? '')); ?></td>
+                                                    <td><?php echo htmlspecialchars(($sub['form_plugin'] ?? '') . ': ' . ($sub['form_name'] ?? '')); ?></td>
                                                     <td class="url-cell"><a href="<?php echo htmlspecialchars($sub['submit_page'] ?? '#'); ?>" target="_blank"><?php echo htmlspecialchars(fmtUrl($sub['submit_page'] ?? '-')); ?></a></td>
-                                                    <td><span class="status status-<?php echo $sub['status']; ?>"><?php echo ucfirst($sub['status']); ?></span></td>
+                                                    <td><span class="status status-<?php echo $sub['status'] ?? ''; ?>"><?php echo ucfirst($sub['status'] ?? ''); ?></span></td>
                                                 </tr>
                                             <?php endforeach; ?>
                                         </tbody>
@@ -1194,10 +1199,24 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                             <?php endif; ?>
 
                             <?php foreach ($journeyData['sessions'] as $sess):
-                                $sessPageviews = array_filter($journeyData['pageviews'], function($pv) use ($sess) {
-                                    return $pv['session_id'] === $sess['session_id'];
-                                });
-                                usort($sessPageviews, function($a, $b) { return $a['step_order'] - $b['step_order']; });
+                                // Merge pageviews + submissions into one timeline sorted by time
+                                $timeline = [];
+                                foreach ($journeyData['pageviews'] as $pv) {
+                                    if ($pv['session_id'] !== $sess['session_id']) continue;
+                                    $pv['_type'] = 'pageview';
+                                    $pv['_sort'] = $pv['visited_at'];
+                                    $timeline[] = $pv;
+                                }
+                                foreach ($journeyData['submissions'] as $sub) {
+                                    if ($sub['session_id'] !== $sess['session_id']) continue;
+                                    // Skip generic/search submissions (only show real conversions)
+                                    $plugin = $sub['form_plugin'] ?? '';
+                                    if ($plugin === 'generic') continue;
+                                    $sub['_type'] = 'submission';
+                                    $sub['_sort'] = $sub['submitted_at'];
+                                    $timeline[] = $sub;
+                                }
+                                usort($timeline, function($a, $b) { return strcmp($a['_sort'], $b['_sort']); });
                             ?>
                             <div class="journey-section">
                                 <h3>
@@ -1221,21 +1240,36 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                     <?php endif; ?>
                                 </div>
 
-                                <?php if (!empty($sessPageviews)): ?>
+                                <?php if (!empty($timeline)): ?>
                                 <div class="timeline">
-                                    <?php foreach ($sessPageviews as $pv): ?>
-                                        <div class="timeline-item">
-                                            <div class="pv-url"><?php echo htmlspecialchars($pv['title'] ?: $pv['url']); ?></div>
-                                            <div class="pv-meta">
-                                                Step <?php echo $pv['step_order']; ?> |
-                                                <?php echo htmlspecialchars(vjt_format_for_visitor($pv['visited_at'], $v['timezone'] ?? '')); ?> |
-                                                Dwell: <?php echo fmtDuration($pv['duration_seconds']); ?> |
-                                                Scroll: <?php echo $pv['scroll_depth']; ?>%
-                                                <?php if ($pv['url']): ?>
-                                                    <br><a href="<?php echo htmlspecialchars($pv['url']); ?>" target="_blank" style="color:#8B7355;font-size:11px;"><?php echo htmlspecialchars(fmtUrl($pv['url'])); ?></a>
-                                                <?php endif; ?>
+                                    <?php foreach ($timeline as $item): ?>
+                                        <?php if ($item['_type'] === 'submission'): ?>
+                                            <div class="timeline-item" style="background:#f0fdf4;border-left:3px solid #22c55e;">
+                                                <div class="pv-url" style="color:#166534;">
+                                                    📨 <?php echo htmlspecialchars(($item['form_plugin'] ?? '') . ': ' . ($item['form_name'] ?? '')); ?>
+                                                </div>
+                                                <div class="pv-meta">
+                                                    <?php echo htmlspecialchars(vjt_format_for_visitor($item['submitted_at'], $v['timezone'] ?? '')); ?> |
+                                                    <span class="status status-<?php echo $item['status']; ?>"><?php echo ucfirst($item['status'] ?? ''); ?></span>
+                                                    <?php if ($item['submit_page']): ?>
+                                                        <br><a href="<?php echo htmlspecialchars($item['submit_page']); ?>" target="_blank" style="color:#8B7355;font-size:11px;"><?php echo htmlspecialchars(fmtUrl($item['submit_page'])); ?></a>
+                                                    <?php endif; ?>
+                                                </div>
                                             </div>
-                                        </div>
+                                        <?php else: ?>
+                                            <div class="timeline-item">
+                                                <div class="pv-url"><?php echo htmlspecialchars($item['title'] ?: $item['url']); ?></div>
+                                                <div class="pv-meta">
+                                                    Step <?php echo $item['step_order']; ?> |
+                                                    <?php echo htmlspecialchars(vjt_format_for_visitor($item['visited_at'], $v['timezone'] ?? '')); ?> |
+                                                    Dwell: <?php echo fmtDuration($item['duration_seconds']); ?> |
+                                                    Scroll: <?php echo $item['scroll_depth']; ?>%
+                                                    <?php if ($item['url']): ?>
+                                                        <br><a href="<?php echo htmlspecialchars($item['url']); ?>" target="_blank" style="color:#8B7355;font-size:11px;"><?php echo htmlspecialchars(fmtUrl($item['url'])); ?></a>
+                                                    <?php endif; ?>
+                                                </div>
+                                            </div>
+                                        <?php endif; ?>
                                     <?php endforeach; ?>
                                 </div>
                                 <?php endif; ?>
