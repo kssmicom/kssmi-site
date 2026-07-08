@@ -249,7 +249,7 @@ export default {
       page: "Саҳ. {n}",
     },
       feature: {
-      showingResults: "Showing {start}-{end} of {total} features",
+      showingResults: "Намоиши {start}-{end} аз {total} хусусият",
       emptyState: "Ҳанӯз хусусиятҳо нест. Ба наздикӣ тафтиш кунед!",
     },
   } as const;
