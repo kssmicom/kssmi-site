@@ -563,7 +563,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
             .tabs { flex-wrap: wrap; overflow-x: auto; -webkit-overflow-scrolling: touch; }
             .tab { padding: 10px 12px; font-size: 12px; white-space: nowrap; }
             .filters { flex-direction: column; align-items: flex-start; }
-            .header { flex-direction: column; align-items: flex-start; }
+            .header { flex-direction: row; flex-wrap: wrap; }
             .header-right { width: 100%; justify-content: flex-end; }
             /* Overview grid: stack referrers + source/device vertically */
             .overview-grid { grid-template-columns: 1fr !important; }
@@ -1102,9 +1102,9 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                                     <td style="text-align:center;"><?php echo $v['sessions']; ?></td>
                                                     <td style="text-align:center;"><?php echo $v['submissions']; ?></td>
                                                     <td><?php echo sourceBadge($v['source']); ?></td>
-                                                    <td>
-                                                        <a href="?tab=journey&visitor_id=<?php echo urlencode($v['visitor_id']); ?>" class="btn btn-primary btn-small">Journey</a>
-                                                        <button type="button" class="btn btn-danger btn-small" onclick="vjtDeleteVisitor('<?php echo htmlspecialchars($v['visitor_id'], ENT_QUOTES); ?>')" title="Delete visitor and all records" style="margin-left:4px;">Del</button>
+                                                    <td style="white-space:nowrap;">
+                                                        <a href="?tab=journey&visitor_id=<?php echo urlencode($v['visitor_id']); ?>" class="btn btn-primary btn-small">Check</a>
+                                                        <button type="button" class="btn btn-danger btn-small" onclick="vjtDeleteVisitor('<?php echo htmlspecialchars($v['visitor_id'], ENT_QUOTES); ?>')" title="Delete visitor and all records">Del</button>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>
