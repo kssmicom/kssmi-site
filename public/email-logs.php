@@ -768,7 +768,7 @@ function resendEmail($log) {
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; padding: 14px 20px; color: #333; }
-        .container { max-width: 1500px; margin: 0 auto; }
+        .container { width: 100%; max-width: 1500px; margin: 0 auto; }
         h1 { color: #5D4E37; }
         .subtitle { color: #888; }
 
