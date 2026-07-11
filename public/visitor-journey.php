@@ -877,8 +877,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                                 <tr>
                                                     <td><input type="checkbox" class="vjt-row-cb" value="<?php echo htmlspecialchars($sub['visitor_id']); ?>"></td>
                                                     <td style="white-space:nowrap;font-size:12px;">
-                                                        <?php echo htmlspecialchars(vjt_format_for_admin($sub['last_submitted_at'] ?? $sub['submitted_at'])); ?><br>
-                                                        <span style="color:#888;font-size:11px;">First: <?php echo htmlspecialchars(vjt_format_for_admin($sub['first_submitted_at'] ?? '')); ?></span>
+                                                        <?php echo htmlspecialchars(vjt_format_for_admin($sub['last_submitted_at'] ?? $sub['submitted_at'])); ?>
                                                     </td>
                                                     <td class="mono"><a href="?tab=journey&visitor_id=<?php echo urlencode($sub['visitor_id']); ?>" class="link"><?php echo htmlspecialchars(str_replace('vjtv_', '', $sub['visitor_id'])); ?></a></td>
                                                     <td><?php echo htmlspecialchars($sub['channels'] ?? $sub['form_name']); ?></td>
