@@ -38,6 +38,16 @@ jobs:
         env:
           PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.PUBLIC_TURNSTILE_SITE_KEY }}
 
+      - name: Generate strict CSP from built HTML
+        run: node scripts/generate-csp-hashes.mjs dist
+
+      - name: Assert built static CSP is strict
+        run: |
+          if sed -n '/Static HTML CSP BEGIN/,/Static HTML CSP END/p' dist/.htaccess | grep -q 'unsafe-inline'; then
+            echo 'Static HTML CSP must not contain unsafe-inline'
+            exit 1
+          fi
+
       - name: Install PHPMailer
         run: |
           cd public

@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "prebuild": "node scripts/validate-content.mjs && node src/scripts/generate-llms.js && node src/scripts/generate-sitemap.js",
-    "build": "astro build",
+    "build": "astro build && node scripts/generate-csp-hashes.mjs dist",
     "preview": "astro preview",
     "astro": "astro",
     "validate": "node scripts/validate-content.mjs"

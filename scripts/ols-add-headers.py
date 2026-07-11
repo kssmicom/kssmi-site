@@ -46,7 +46,8 @@ context / {
   extraHeaders            Cross-Origin-Opener-Policy:same-origin
   extraHeaders            Cross-Origin-Resource-Policy:same-origin
   extraHeaders            Permissions-Policy:camera=()\\, microphone=()\\, geolocation=()\\, interest-cohort=()
-  extraHeaders            Content-Security-Policy:default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://ipapi.co https://cloudflareinsights.com; frame-src 'self' https://play.gumlet.io https://challenges.cloudflare.com; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests;
+  # CSP is intentionally managed by public/.htaccess. A site-wide OLS CSP
+  # would break the static Astro hash policy and the separately scoped admin UI.
 }
 
 """
@@ -72,7 +73,7 @@ def main():
             flags=re.DOTALL,
         )
         content = re.sub(
-            r"context\s+/\s*\{.*?Content-Security-Policy.*?\}\s*",
+            r"context\s+/\s*\{.*?Permissions-Policy.*?\}\s*",
             "",
             content,
             flags=re.DOTALL,
