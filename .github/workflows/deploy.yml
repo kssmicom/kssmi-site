@@ -22,10 +22,13 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Audit npm dependencies (P3-3)
-        run: npm audit --audit-level=high || true
-        # Reports high/critical vulnerabilities but does NOT block deployment.
-        # Review output periodically and run `npm audit fix` on new findings.
+      - name: Audit npm dependencies
+        run: npm audit --audit-level=critical
+        # Blocks deployment on CRITICAL vulnerabilities only.
+        # NOTE: Astro has known HIGH vulns (GHSA-8hv8-536x-4wqp; fixed in 6.3.3).
+        # Upgrading Astro 5→6 requires migrating @astrojs/tailwind→@tailwindcss/vite
+        # (Tailwind v4 migration). Until then, HIGH vulns are tolerated.
+        # Review output periodically; fix immediately if critical appears.
 
       - name: Build Astro site
         run: npm run build
@@ -46,9 +49,9 @@ jobs:
         run: |
           cp public/send-mail.php dist/
           cp public/email-logs.php dist/
-          cp public/php-status.php dist/
+
           cp public/visitor-journey.php dist/
-          cp public/vjt-db-setup.php dist/
+
           cp public/404-router.php dist/
           cp -r public/api dist/
           cp -r public/vendor dist/
@@ -92,9 +95,6 @@ jobs:
 
             # Make PHP files executable
             find . -name "*.php" -exec chmod 755 {} \; 2>/dev/null || true
-
-            # Run VJT setup (idempotent — creates data files if first run)
-            php vjt-db-setup.php 2>/dev/null || true
 
             # Create writable files if they don't exist
             touch email-logs.json 2>/dev/null || true
