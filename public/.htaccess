@@ -16,6 +16,13 @@ RewriteRule ^ip-debug\.php$ - [F,L]
 RewriteRule ^php-status\.php$ - [F,L]
 RewriteRule ^vjt-db-setup\.php$ - [F,L]
 
+# ─── Block dev/dependency files (P2-03) ────────────────────────────────────
+RewriteRule ^composer\.json$ - [F,L]
+RewriteRule ^composer\.lock$ - [F,L]
+RewriteRule ^api/vjt-helpers\.php$ - [F,L]
+RewriteRule ^\.git - [F,L]
+RewriteRule \.map$ - [F,L]
+
 # ─── Block VJT data directory (contains raw visitor JSON files with IPs, emails) ──
 RewriteRule ^api/vjt_data(/.*)?$ - [F,L]
 
