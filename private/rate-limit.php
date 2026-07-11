@@ -72,6 +72,67 @@ function kssmi_load_rate_limit_whitelist(): array {
 }
 
 /**
+ * Return true when an address belongs to a Cloudflare proxy network.
+ *
+ * Client-controlled headers are accepted only when REMOTE_ADDR is one of
+ * Cloudflare's published proxy ranges. This prevents direct-origin callers
+ * from spoofing CF-Connecting-IP/X-Forwarded-For to bypass rate limits.
+ * Keep this list synchronized with https://www.cloudflare.com/ips/.
+ */
+function kssmi_ip_in_cidr(string $ip, string $cidr): bool {
+    [$network, $prefix] = array_pad(explode('/', $cidr, 2), 2, null);
+    if ($network === null || $prefix === null) return false;
+
+    $ipBinary = @inet_pton($ip);
+    $networkBinary = @inet_pton($network);
+    $prefixLength = (int)$prefix;
+    if ($ipBinary === false || $networkBinary === false || strlen($ipBinary) !== strlen($networkBinary)) {
+        return false;
+    }
+    $maxBits = strlen($ipBinary) * 8;
+    if ($prefixLength < 0 || $prefixLength > $maxBits) return false;
+
+    $fullBytes = intdiv($prefixLength, 8);
+    if ($fullBytes > 0 && substr($ipBinary, 0, $fullBytes) !== substr($networkBinary, 0, $fullBytes)) {
+        return false;
+    }
+    $remainingBits = $prefixLength % 8;
+    if ($remainingBits === 0) return true;
+
+    $mask = (0xFF << (8 - $remainingBits)) & 0xFF;
+    return (ord($ipBinary[$fullBytes]) & $mask) === (ord($networkBinary[$fullBytes]) & $mask);
+}
+
+function kssmi_is_cloudflare_proxy(string $ip): bool {
+    static $ranges = [
+        '173.245.48.0/20', '103.21.244.0/22', '103.22.200.0/22',
+        '103.31.4.0/22', '141.101.64.0/18', '108.162.192.0/18',
+        '190.93.240.0/20', '188.114.96.0/20', '197.234.240.0/22',
+        '198.41.128.0/17', '162.158.0.0/15', '104.16.0.0/13',
+        '104.24.0.0/14', '172.64.0.0/13', '131.0.72.0/22',
+        '2400:cb00::/32', '2606:4700::/32', '2803:f800::/32',
+        '2405:b500::/32', '2405:8100::/32', '2a06:98c0::/29',
+        '2c0f:f248::/32',
+    ];
+    foreach ($ranges as $range) {
+        if (kssmi_ip_in_cidr($ip, $range)) return true;
+    }
+    return false;
+}
+
+/**
+ * Resolve the client IP without trusting spoofable headers on direct-origin requests.
+ */
+function kssmi_get_client_ip(): string {
+    $remote = trim((string)($_SERVER['REMOTE_ADDR'] ?? ''));
+    if (filter_var($remote, FILTER_VALIDATE_IP) && kssmi_is_cloudflare_proxy($remote)) {
+        $cloudflareIp = trim((string)($_SERVER['HTTP_CF_CONNECTING_IP'] ?? ''));
+        if (filter_var($cloudflareIp, FILTER_VALIDATE_IP)) return $cloudflareIp;
+    }
+    return filter_var($remote, FILTER_VALIDATE_IP) ? $remote : 'unknown';
+}
+
+/**
  * Returns true if the request is within the quota; false if rate-limited.
  *
  * @param string $key           Endpoint identifier, e.g. 'send-mail', 'admin-login'
@@ -79,15 +140,7 @@ function kssmi_load_rate_limit_whitelist(): array {
  * @param int    $windowSeconds Sliding window length in seconds
  */
 function checkRateLimit(string $key, int $maxRequests, int $windowSeconds): bool {
-    $ip = $_SERVER['HTTP_CF_CONNECTING_IP']
-       ?? $_SERVER['HTTP_X_FORWARDED_FOR']
-       ?? $_SERVER['REMOTE_ADDR']
-       ?? 'unknown';
-
-    // Take only the first IP if X-Forwarded-For is a chain
-    if (strpos($ip, ',') !== false) {
-        $ip = trim(explode(',', $ip)[0]);
-    }
+    $ip = kssmi_get_client_ip();
 
     // Whitelist bypass — allow the admin's own IP through always
     if (in_array($ip, kssmi_load_rate_limit_whitelist(), true)) {

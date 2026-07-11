@@ -288,44 +288,13 @@ function debugIPLog($source, $data) {
  * Handles Cloudflare proxy and other common proxy headers
  */
 function getRealIP() {
-    // Debug: Log all IP-related headers for troubleshooting
-    $debugInfo = [
-        'HTTP_CF_CONNECTING_IP' => $_SERVER['HTTP_CF_CONNECTING_IP'] ?? null,
-        'HTTP_X_FORWARDED_FOR' => $_SERVER['HTTP_X_FORWARDED_FOR'] ?? null,
-        'HTTP_X_REAL_IP' => $_SERVER['HTTP_X_REAL_IP'] ?? null,
-        'REMOTE_ADDR' => $_SERVER['REMOTE_ADDR'] ?? null,
-        'HTTP_CF_IPCOUNTRY' => $_SERVER['HTTP_CF_IPCOUNTRY'] ?? null,
-    ];
-    debugIPLog('getRealIP', $debugInfo);
-
-    // Cloudflare provides the real visitor IP in this header
-    if (!empty($_SERVER['HTTP_CF_CONNECTING_IP'])) {
-        $ip = $_SERVER['HTTP_CF_CONNECTING_IP'];
-        debugIPLog('getRealIP-result', ['source' => 'HTTP_CF_CONNECTING_IP', 'ip' => $ip]);
-        return $ip;
-    }
-
-    // Check X-Forwarded-For header (common proxy header)
-    if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-        // X-Forwarded-For can contain multiple IPs, the first one is the client
-        $ips = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
-        $ip = trim($ips[0]);
-        if (filter_var($ip, FILTER_VALIDATE_IP)) {
-            debugIPLog('getRealIP-result', ['source' => 'HTTP_X_FORWARDED_FOR', 'ip' => $ip]);
-            return $ip;
-        }
-    }
-
-    // Check X-Real-IP header (used by some proxies)
-    if (!empty($_SERVER['HTTP_X_REAL_IP'])) {
-        $ip = $_SERVER['HTTP_X_REAL_IP'];
-        debugIPLog('getRealIP-result', ['source' => 'HTTP_X_REAL_IP', 'ip' => $ip]);
-        return $ip;
-    }
-
-    // Fall back to REMOTE_ADDR
-    $ip = $_SERVER['REMOTE_ADDR'] ?? 'Unknown';
-    debugIPLog('getRealIP-result', ['source' => 'REMOTE_ADDR', 'ip' => $ip]);
+    // private/rate-limit.php provides a trusted resolver: CF-Connecting-IP is
+    // used only when REMOTE_ADDR belongs to a Cloudflare proxy range.
+    $ip = function_exists('kssmi_get_client_ip') ? kssmi_get_client_ip() : 'unknown';
+    debugIPLog('getRealIP-result', [
+        'ip' => $ip,
+        'remote_addr' => $_SERVER['REMOTE_ADDR'] ?? null,
+    ]);
     return $ip;
 }
 

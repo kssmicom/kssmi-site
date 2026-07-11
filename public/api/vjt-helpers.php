@@ -1035,14 +1035,17 @@ function vjt_mmdb_lookup($ip) {
 }
 
 function vjt_get_client_ip() {
-    $headers = ['HTTP_CF_CONNECTING_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_CLIENT_IP', 'REMOTE_ADDR'];
-    foreach ($headers as $key) {
-        if (!empty($_SERVER[$key])) {
-            $ip = trim(explode(',', $_SERVER[$key])[0]);
-            if (filter_var($ip, FILTER_VALIDATE_IP)) return $ip;
-        }
+    // track-pageview.php and track-submission.php load private/rate-limit.php
+    // first, which provides the trusted Cloudflare proxy/IP-chain resolver.
+    if (function_exists('kssmi_get_client_ip')) {
+        $ip = kssmi_get_client_ip();
+        return $ip === 'unknown' ? '' : $ip;
     }
-    return '';
+
+    // Safe fallback for any internal caller that did not load the shared helper:
+    // never trust client-supplied forwarding headers.
+    $remote = trim((string)($_SERVER['REMOTE_ADDR'] ?? ''));
+    return filter_var($remote, FILTER_VALIDATE_IP) ? $remote : '';
 }
 
 // Item 7: detect bots/crawlers so we don't store (or geo-resolve) their hits

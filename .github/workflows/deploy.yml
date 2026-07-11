@@ -5,6 +5,9 @@ on:
     branches: [ main ]
   workflow_dispatch:  # Allow manual trigger
 
+permissions:
+  contents: read
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -20,7 +23,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm ci --legacy-peer-deps
 
       - name: Audit npm dependencies
         run: npm audit --audit-level=critical
@@ -120,6 +123,36 @@ jobs:
 
             # Set ownership for data files
             chown kssmi:kssmi email-logs.json .email_logs_password .email_reset_tokens.json 2>/dev/null || sudo chown kssmi:kssmi email-logs.json .email_logs_password .email_reset_tokens.json 2>/dev/null || true
+
+      - name: Verify deployed security controls
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          check_status() {
+            local url="$1"
+            local expected="$2"
+            local actual
+            actual="$(curl -ksS -o /dev/null -w '%{http_code}' "$url")"
+            echo "$url -> $actual (expected $expected)"
+            test "$actual" = "$expected"
+          }
+
+          headers="$(curl -ksS -D - -o /dev/null -H 'Cache-Control: no-cache' "https://kssmi.com/?deploy-security-check=$(date +%s)")"
+          echo "$headers"
+          csp="$(printf '%s\n' "$headers" | awk 'BEGIN{IGNORECASE=1} /^Content-Security-Policy:/ {print}')"
+          if printf '%s' "$csp" | grep -qi 'unsafe-inline'; then
+            echo 'ERROR: online CSP still contains unsafe-inline.' >&2
+            exit 1
+          fi
+
+          check_status 'https://kssmi.com/email-logs.php' 302
+          check_status 'https://kssmi.com/visitor-journey.php' 302
+          check_status 'https://kssmi.com/ip-debug.php' 404
+          check_status 'https://kssmi.com/php-status.php' 404
+          check_status 'https://kssmi.com/vjt-db-setup.php' 404
+          check_status 'https://kssmi.com/.env' 404
+          check_status 'https://kssmi.com/composer.json' 403
 
       - name: Deployment Complete
         run: |
