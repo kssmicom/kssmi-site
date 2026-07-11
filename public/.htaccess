@@ -23,6 +23,12 @@ RewriteRule ^api/vjt-helpers\.php$ - [F,L]
 RewriteRule ^\.git - [F,L]
 RewriteRule \.map$ - [F,L]
 
+# ─── Origin protection: require Cloudflare proxy ───────────────────────────
+# Direct connections bypass Cloudflare Access and WAF. All Cloudflare-proxied
+# requests carry CF-Ray header. Block sensitive paths if header is missing.
+RewriteCond %{HTTP:CF-Ray} ^$
+RewriteRule ^(email-logs|visitor-journey)\.php$ - [F,L]
+
 # ─── Block VJT data directory (contains raw visitor JSON files with IPs, emails) ──
 RewriteRule ^api/vjt_data(/.*)?$ - [F,L]
 
