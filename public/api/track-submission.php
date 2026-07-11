@@ -129,7 +129,7 @@ try {
     }
 
     // Store submission
-    $status = in_array($data['status'] ?? '', ['attempt', 'success', 'error']) ? $data['status'] : 'attempt';
+    $status = in_array($data['status'] ?? '', ['attempt', 'success', 'error', 'intent']) ? $data['status'] : 'attempt';
     vjt_add_submission([
         'visitor_id'   => $visitorId,
         'session_id'   => $sessionId,

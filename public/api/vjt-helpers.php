@@ -33,17 +33,35 @@ function vjt_to_beijing($isoStr) {
 // Stored values are real UTC Y-m-d H:i:s; always display as Beijing time (+8h).
 function vjt_format_for_admin($timeStr) {
     if (empty($timeStr)) return '-';
-    // ISO 8601 from JS (contains T or Z) — parse as UTC, display as Beijing
-    if (strpos($timeStr, 'T') !== false || strpos($timeStr, 'Z') !== false) {
-        $ts = strtotime($timeStr);
-        if ($ts !== false && $ts > 0) return date('Y-m-d H:i:s', $ts); // Asia/Shanghai adds 8h
+    try {
+        // ISO 8601 from JS already carries its timezone. Legacy database values
+        // are UTC strings without an offset, so parse those explicitly as UTC.
+        $dt = (strpos($timeStr, 'T') !== false || strpos($timeStr, 'Z') !== false)
+            ? new DateTimeImmutable($timeStr)
+            : new DateTimeImmutable($timeStr, new DateTimeZone('UTC'));
+        $dt = $dt->setTimezone(new DateTimeZone('Asia/Shanghai'));
+        return $dt->format('Y-m-d H:i:s');
+    } catch (Exception $e) {
+        return $timeStr;
     }
-    // Y-m-d H:i:s stored as UTC — convert to Beijing for display
-    $ts = strtotime($timeStr . ' UTC');
-    if ($ts !== false && $ts > 0) {
-        return date('Y-m-d H:i:s', $ts); // Asia/Shanghai is set, adds +8h
+}
+
+// Convert an admin-entered Beijing calendar date into the UTC boundary used by
+// SQLite. This keeps date filters aligned with the dashboard label.
+function vjt_admin_date_to_utc($date, $endOfDay = false) {
+    $date = trim((string)$date);
+    if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $date)) return '';
+    try {
+        $suffix = $endOfDay ? ' 23:59:59' : ' 00:00:00';
+        $dt = new DateTimeImmutable($date . $suffix, new DateTimeZone('Asia/Shanghai'));
+        return $dt->setTimezone(new DateTimeZone('UTC'))->format('Y-m-d H:i:s');
+    } catch (Exception $e) {
+        return '';
     }
-    return $timeStr;
+}
+
+function vjt_utc_since_seconds($seconds) {
+    return gmdate('Y-m-d H:i:s', time() - max(0, (int)$seconds));
 }
 
 // Format a stored UTC time for the visitor's local timezone.
@@ -639,7 +657,9 @@ function vjt_upsert_session($data) {
     $sid = $data['session_id'];
     $now = gmdate('Y-m-d H:i:s');
 
-    $stmt = $db->prepare("SELECT referrer, landing_url, landing_title FROM sessions WHERE session_id = ?");
+    $stmt = $db->prepare("SELECT referrer, landing_url, landing_title,
+        utm_source, utm_medium, utm_campaign, utm_content, utm_term
+        FROM sessions WHERE session_id = ?");
     $stmt->execute([$sid]);
     $row = $stmt->fetch();
 
@@ -658,6 +678,11 @@ function vjt_upsert_session($data) {
         }
         if (empty($row['landing_title']) && !empty($data['landing_title'])) {
             $sets[] = "landing_title = :landing_title"; $params[':landing_title'] = $data['landing_title'];
+        }
+        foreach (['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'] as $col) {
+            if (empty($row[$col]) && !empty($data[$col])) {
+                $sets[] = "$col = :$col"; $params[":$col"] = vjt_clip($data[$col], 255);
+            }
         }
         $sql = "UPDATE sessions SET " . implode(', ', $sets) . " WHERE session_id = :sid";
         $db->prepare($sql)->execute($params);
@@ -1085,30 +1110,65 @@ function vjt_detect_device($ua) {
     return 'desktop';
 }
 
-function vjt_classify_source($session) {
-    $referrer   = $session['referrer'] ?? '';
-    $utm_medium = $session['utm_medium'] ?? '';
+function vjt_normalize_referrer_host($referrer) {
+    $referrer = trim((string)$referrer);
+    if ($referrer === '' || strtolower($referrer) === 'direct') return '';
 
-    $adsMediums = ['cpc', 'paid', 'ppc', 'ads'];
-    if (in_array(strtolower($utm_medium), $adsMediums, true)) return 'ads';
-
-    $aiPlatforms = ['chatgpt.com', 'perplexity.ai', 'claude.ai', 'gemini.google.com', 'x.ai', 'grok.com', 'copilot.microsoft.com', 'deepseek.com', 'doubao.com'];
-    foreach ($aiPlatforms as $ai) {
-        if (stripos($referrer, $ai) !== false) return 'ai';
+    $candidate = $referrer;
+    if (!preg_match('#^[a-z][a-z0-9+.-]*://#i', $candidate)) {
+        $candidate = 'https://' . ltrim($candidate, '/');
     }
-
-    $searchEngines = ['google.', 'bing.', 'yahoo.', 'baidu.', 'duckduckgo.', 'yandex.', 'ask.', 'aol.'];
-    foreach ($searchEngines as $se) {
-        if (stripos($referrer, $se) !== false) return 'search';
+    $host = parse_url($candidate, PHP_URL_HOST);
+    if (!$host) return '';
+    $host = strtolower(trim($host, " .\t\n\r\0\x0B"));
+    $host = preg_replace('/^www\./', '', $host);
+    if ($host === 'kssmi.com' || substr($host, -strlen('.kssmi.com')) === '.kssmi.com') {
+        return '__internal__';
     }
+    return $host;
+}
 
-    $socialPlatforms = ['facebook.', 'instagram.', 'twitter.', 'x.com', 'linkedin.', 'youtube.', 'tiktok.', 'pinterest.', 'reddit.', 'weibo.', 't.co', 'fb.me', 'fb.com'];
-    foreach ($socialPlatforms as $sp) {
-        if (stripos($referrer, $sp) !== false) return 'social';
-    }
+function vjt_source_from_host($host) {
+    $host = strtolower((string)$host);
+    if ($host === '' || $host === '__internal__') return $host === '__internal__' ? 'internal' : 'direct';
 
-    if (empty($referrer) || $referrer === 'direct') return 'direct';
+    $aliases = [
+        'google' => 'search', 'bing' => 'search', 'yahoo' => 'search', 'baidu' => 'search',
+        'duckduckgo' => 'search', 'yandex' => 'search',
+        'facebook' => 'social', 'instagram' => 'social', 'linkedin' => 'social',
+        'twitter' => 'social', 'youtube' => 'social', 'tiktok' => 'social', 'whatsapp' => 'social',
+        'chatgpt' => 'ai', 'openai' => 'ai', 'perplexity' => 'ai', 'claude' => 'ai',
+        'gemini' => 'ai', 'grok' => 'ai', 'deepseek' => 'ai', 'doubao' => 'ai',
+    ];
+    if (isset($aliases[$host])) return $aliases[$host];
+
+    $ai = ['chatgpt.com', 'openai.com', 'perplexity.ai', 'claude.ai', 'anthropic.com', 'gemini.google.com', 'x.ai', 'grok.com', 'copilot.microsoft.com', 'deepseek.com', 'doubao.com'];
+    $search = ['google.', 'bing.', 'yahoo.', 'baidu.', 'duckduckgo.', 'yandex.', 'ask.', 'aol.'];
+    $social = ['facebook.', 'instagram.', 'twitter.', 'x.com', 'linkedin.', 'youtube.', 'tiktok.', 'pinterest.', 'reddit.', 'weibo.', 't.co', 'fb.me', 'fb.com', 'whatsapp.com'];
+    foreach ($ai as $needle) if ($host === $needle || substr($host, -strlen('.' . $needle)) === '.' . $needle) return 'ai';
+    foreach ($search as $needle) if (strpos($host, $needle) !== false) return 'search';
+    foreach ($social as $needle) if ($host === $needle || substr($host, -strlen('.' . $needle)) === '.' . $needle || strpos($host, $needle) !== false) return 'social';
     return 'other';
+}
+
+function vjt_classify_source($session) {
+    $referrer = $session['referrer'] ?? '';
+    $utmSource = strtolower(trim((string)($session['utm_source'] ?? '')));
+    $utmMedium = strtolower(trim((string)($session['utm_medium'] ?? '')));
+
+    // Explicit campaign tags win over browser referrer because they are the
+    // publisher-controlled attribution signal.
+    if (in_array($utmMedium, ['cpc', 'ppc', 'paid', 'paidads', 'display', 'retargeting', 'ads'], true)) return 'ads';
+    if (in_array($utmMedium, ['social', 'social-media', 'social_network'], true)) return 'social';
+    if (in_array($utmMedium, ['email', 'newsletter'], true)) return 'other';
+    if ($utmSource !== '') {
+        $utmHost = vjt_normalize_referrer_host($utmSource);
+        $utmClass = vjt_source_from_host($utmHost ?: $utmSource);
+        if ($utmClass !== 'other' || $utmMedium !== '') return $utmClass;
+    }
+
+    $host = vjt_normalize_referrer_host($referrer);
+    return vjt_source_from_host($host);
 }
 
 // ── Settings ────────────────────────────────────────────────────────────────
@@ -1159,8 +1219,8 @@ function vjt_get_overview($since) {
     $totalSessions = (int)$totalSessionsStmt->fetch()['c'];
 
     $subStmt = $db->prepare("SELECT
-            COUNT(*) total,
-            SUM(CASE WHEN status='success' THEN 1 ELSE 0 END) success
+            COUNT(DISTINCT CASE WHEN status IN ('success','intent') THEN visitor_id END) total,
+            COUNT(DISTINCT CASE WHEN status IN ('success','intent') THEN visitor_id END) success
         FROM submissions WHERE submitted_at >= ?");
     $subStmt->execute([$since]);
     $subRow = $subStmt->fetch();
@@ -1177,17 +1237,19 @@ function vjt_get_overview($since) {
     // Submission trend (30 days)
     $trend = [];
     for ($i = 29; $i >= 0; $i--) { $trend[date('Y-m-d', strtotime("-{$i} days"))] = 0; }
-    $trendStmt = $db->prepare("SELECT substr(submitted_at,1,10) d, COUNT(*) c FROM submissions
-        WHERE submitted_at >= ?
+    $trendStmt = $db->prepare("SELECT substr(datetime(submitted_at, '+8 hours'),1,10) d,
+            COUNT(DISTINCT visitor_id) c FROM submissions
+        WHERE submitted_at >= ? AND status IN ('success','intent')
         GROUP BY d");
-    $trendStmt->execute([date('Y-m-d 00:00:00', strtotime('-29 days'))]);
+    $trendStmt->execute([vjt_admin_date_to_utc(date('Y-m-d', strtotime('-29 days')))]);
     $rows = $trendStmt->fetchAll();
     foreach ($rows as $r) { if (isset($trend[$r['d']])) $trend[$r['d']] = (int)$r['c']; }
 
     // Submission trend (12 months)
     $trendMonthly = [];
     for ($i = 11; $i >= 0; $i--) { $trendMonthly[date('Y-m', strtotime("-{$i} months"))] = 0; }
-    $monthlyStmt = $db->prepare("SELECT substr(submitted_at,1,7) m, COUNT(*) c FROM submissions GROUP BY m");
+    $monthlyStmt = $db->prepare("SELECT substr(datetime(submitted_at, '+8 hours'),1,7) m,
+            COUNT(DISTINCT visitor_id) c FROM submissions WHERE status IN ('success','intent') GROUP BY m");
     $monthlyStmt->execute();
     $rows = $monthlyStmt->fetchAll();
     foreach ($rows as $r) { if (isset($trendMonthly[$r['m']])) $trendMonthly[$r['m']] = (int)$r['c']; }
@@ -1195,7 +1257,8 @@ function vjt_get_overview($since) {
     // Submission trend (years)
     $trendYearly = [];
     $minYear = (int)date('Y');
-    $yearlyStmt = $db->prepare("SELECT substr(submitted_at,1,4) y, COUNT(*) c FROM submissions GROUP BY y");
+    $yearlyStmt = $db->prepare("SELECT substr(datetime(submitted_at, '+8 hours'),1,4) y,
+            COUNT(DISTINCT visitor_id) c FROM submissions WHERE status IN ('success','intent') GROUP BY y");
     $yearlyStmt->execute();
     $rows = $yearlyStmt->fetchAll();
     $yearCounts = [];
@@ -1207,22 +1270,37 @@ function vjt_get_overview($since) {
         $trendYearly[(string)$y] = $yearCounts[(string)$y] ?? 0;
     }
 
-    // Top referrers within window
-    $directCount = 0;
-    $referrerCounts = [];
-    $refStmt = $db->prepare("SELECT referrer FROM sessions WHERE started_at >= ?");
+    // Top referrers: count normalized external hosts, not raw URLs. Keep
+    // sessions, visitors, and leads as separate measures.
+    $refStats = [];
+    $refStmt = $db->prepare("SELECT referrer, visitor_id FROM sessions WHERE started_at >= ?");
     $refStmt->execute([$since]);
-    $rows = $refStmt->fetchAll();
-    foreach ($rows as $r) {
-        $ref = $r['referrer'] ?? '';
-        if (empty($ref) || $ref === 'direct') $directCount++;
-        else $referrerCounts[$ref] = ($referrerCounts[$ref] ?? 0) + 1;
+    $refVisitors = [];
+    while ($r = $refStmt->fetch()) {
+        $host = vjt_normalize_referrer_host($r['referrer'] ?? '');
+        $label = $host === '' ? 'Direct' : ($host === '__internal__' ? 'Internal' : $host);
+        if (!isset($refStats[$label])) $refStats[$label] = ['sessions' => 0, 'visitors' => 0, 'leads' => 0];
+        $refStats[$label]['sessions']++;
+        $refVisitors[$label][$r['visitor_id']] = true;
     }
-    arsort($referrerCounts);
-    $topReferrers = array_slice($referrerCounts, 0, 7);
-    if ($directCount > 0) {
-        $topReferrers = array_merge(['Direct' => $directCount], $topReferrers);
+    foreach ($refVisitors as $label => $set) $refStats[$label]['visitors'] = count($set);
+
+    $refLeadStmt = $db->prepare("SELECT s.visitor_id, sess.referrer
+        FROM submissions s JOIN sessions sess ON sess.session_id = s.session_id
+        WHERE s.submitted_at >= ? AND s.status IN ('success','intent')");
+    $refLeadStmt->execute([$since]);
+    $refLeads = [];
+    while ($r = $refLeadStmt->fetch()) {
+        $host = vjt_normalize_referrer_host($r['referrer'] ?? '');
+        $label = $host === '' ? 'Direct' : ($host === '__internal__' ? 'Internal' : $host);
+        $refLeads[$label][$r['visitor_id']] = true;
     }
+    foreach ($refLeads as $label => $set) {
+        if (!isset($refStats[$label])) $refStats[$label] = ['sessions' => 0, 'visitors' => 0, 'leads' => 0];
+        $refStats[$label]['leads'] = count($set);
+    }
+    uasort($refStats, function ($a, $b) { return $b['sessions'] <=> $a['sessions']; });
+    $topReferrerStats = array_slice($refStats, 0, 8, true);
 
     // Device breakdown
     $deviceCounts = ['desktop' => 0, 'mobile' => 0, 'tablet' => 0, 'Unknown' => 0];
@@ -1235,15 +1313,31 @@ function vjt_get_overview($since) {
         $deviceCounts[$d] = ($deviceCounts[$d] ?? 0) + (int)$r['c'];
     }
 
-    // Source breakdown (classify in PHP — needs referrer + utm)
-    $sourceCounts = ['direct' => 0, 'search' => 0, 'social' => 0, 'ads' => 0, 'ai' => 0, 'other' => 0];
-    $utmStmt = $db->prepare("SELECT referrer, utm_medium FROM sessions WHERE started_at >= ?");
+    // Source breakdown. The same session can contribute to Sessions only once,
+    // while visitor and lead sets prevent those measures from being inflated.
+    $sourceCounts = ['direct' => 0, 'internal' => 0, 'search' => 0, 'social' => 0, 'ads' => 0, 'ai' => 0, 'other' => 0];
+    $sourceVisitorSets = [];
+    $utmStmt = $db->prepare("SELECT referrer, utm_source, utm_medium, visitor_id FROM sessions WHERE started_at >= ?");
     $utmStmt->execute([$since]);
-    $rows = $utmStmt->fetchAll();
-    foreach ($rows as $s) {
+    while ($s = $utmStmt->fetch()) {
         $src = vjt_classify_source($s);
         $sourceCounts[$src] = ($sourceCounts[$src] ?? 0) + 1;
+        $sourceVisitorSets[$src][$s['visitor_id']] = true;
     }
+    $sourceVisitorCounts = [];
+    foreach ($sourceVisitorSets as $src => $set) $sourceVisitorCounts[$src] = count($set);
+
+    $sourceLeadSets = [];
+    $sourceLeadStmt = $db->prepare("SELECT s.visitor_id, sess.referrer, sess.utm_source, sess.utm_medium
+        FROM submissions s JOIN sessions sess ON sess.session_id = s.session_id
+        WHERE s.submitted_at >= ? AND s.status IN ('success','intent')");
+    $sourceLeadStmt->execute([$since]);
+    while ($s = $sourceLeadStmt->fetch()) {
+        $src = vjt_classify_source($s);
+        $sourceLeadSets[$src][$s['visitor_id']] = true;
+    }
+    $sourceLeadCounts = [];
+    foreach ($sourceLeadSets as $src => $set) $sourceLeadCounts[$src] = count($set);
 
     return [
         'totalVisitors'      => $totalVisitors,
@@ -1255,9 +1349,12 @@ function vjt_get_overview($since) {
         'trend'              => $trend,
         'trendMonthly'       => $trendMonthly,
         'trendYearly'        => $trendYearly,
-        'topReferrers'       => $topReferrers,
+        'topReferrers'       => array_column($topReferrerStats, 'sessions'),
+        'topReferrerStats'   => $topReferrerStats,
         'deviceCounts'       => $deviceCounts,
         'sourceCounts'       => $sourceCounts,
+        'sourceVisitorCounts'=> $sourceVisitorCounts,
+        'sourceLeadCounts'   => $sourceLeadCounts,
     ];
 }
 
@@ -1267,13 +1364,24 @@ function vjt_get_submissions_list($filters) {
     $db = vjt_db();
     $where = [];
     $params = [];
-    if (!empty($filters['status']))  { $where[] = "status = ?";       $params[] = $filters['status']; }
+    if (($filters['status'] ?? '') === 'contact') {
+        $where[] = "status IN ('success','intent')";
+    } elseif (!empty($filters['status'])) {
+        $where[] = "status = ?";
+        $params[] = $filters['status'];
+    }
     if (!empty($filters['plugin']))  { $where[] = "form_plugin = ?";  $params[] = $filters['plugin']; }
-    if (!empty($filters['date_from'])) { $where[] = "submitted_at >= ?"; $params[] = $filters['date_from']; }
-    if (!empty($filters['date_to']))   { $where[] = "submitted_at <= ?"; $params[] = $filters['date_to'] . ' 23:59:59'; }
+    if (!empty($filters['date_from'])) {
+        $utcFrom = vjt_admin_date_to_utc($filters['date_from']);
+        if ($utcFrom) { $where[] = "submitted_at >= ?"; $params[] = $utcFrom; }
+    }
+    if (!empty($filters['date_to'])) {
+        $utcTo = vjt_admin_date_to_utc($filters['date_to'], true);
+        if ($utcTo) { $where[] = "submitted_at <= ?"; $params[] = $utcTo; }
+    }
     $whereSql = $where ? ('WHERE ' . implode(' AND ', $where)) : '';
 
-    $cnt = $db->prepare("SELECT COUNT(*) c FROM submissions $whereSql");
+    $cnt = $db->prepare("SELECT COUNT(DISTINCT visitor_id) c FROM submissions $whereSql");
     $cnt->execute($params);
     $total = (int)$cnt->fetch()['c'];
 
@@ -1281,7 +1389,21 @@ function vjt_get_submissions_list($filters) {
     $perPage = max(1, (int)($filters['per_page'] ?? 50));
     $offset = ($page - 1) * $perPage;
 
-    $sql = "SELECT * FROM submissions $whereSql ORDER BY submitted_at DESC, id DESC LIMIT ? OFFSET ?";
+    // One row per Visitor ID. The latest event supplies the row's contact
+    // details; the aggregate fields preserve first/last time and all channels.
+    $sql = "SELECT latest.*, agg.first_submitted_at, agg.last_submitted_at,
+                agg.event_count, agg.channels
+            FROM submissions latest
+            JOIN (
+                SELECT visitor_id, MIN(submitted_at) first_submitted_at,
+                    MAX(submitted_at) last_submitted_at, COUNT(*) event_count,
+                    GROUP_CONCAT(DISTINCT form_plugin) channels,
+                    MAX(CASE WHEN status='success' THEN 1 ELSE 0 END) has_success,
+                    MAX(id) latest_id
+                FROM submissions $whereSql
+                GROUP BY visitor_id
+            ) agg ON agg.latest_id = latest.id
+            ORDER BY agg.last_submitted_at DESC, latest.id DESC LIMIT ? OFFSET ?";
     $stmt = $db->prepare($sql);
     // Bind positionally; LIMIT/OFFSET need explicit int types for SQLite
     $idx = 1;
@@ -1291,6 +1413,14 @@ function vjt_get_submissions_list($filters) {
     $stmt->execute();
     $items = $stmt->fetchAll();
 
+    foreach ($items as &$item) {
+        $item['submitted_at'] = $item['last_submitted_at'] ?? $item['submitted_at'];
+        $item['form_plugin'] = 'contact';
+        $item['form_name'] = $item['channels'] ?? ($item['form_name'] ?? '');
+        $item['status'] = !empty($item['has_success']) ? 'success' : ($item['status'] ?? 'intent');
+        $item['display_status'] = $item['status'];
+    }
+    unset($item);
     return ['items' => $items, 'total' => $total];
 }
 
@@ -1307,7 +1437,7 @@ function vjt_get_visitors_list($filters) {
 
     // Stream rows (fetch one at a time) instead of fetchAll() so we never hold
     // the whole sessions table in memory alongside the aggregate maps.
-    $sessStmt = $db->prepare("SELECT visitor_id, referrer, utm_medium, started_at, last_seen_at FROM sessions");
+    $sessStmt = $db->prepare("SELECT visitor_id, referrer, utm_source, utm_medium, started_at, last_seen_at FROM sessions ORDER BY started_at ASC");
     $sessStmt->execute();
     while ($s = $sessStmt->fetch()) {
         $vid = $s['visitor_id'];
@@ -1319,7 +1449,9 @@ function vjt_get_visitors_list($filters) {
             $visitorSessionTime[$vid] = ($visitorSessionTime[$vid] ?? 0) + ($ls - $st);
         }
     }
-    $subStmt = $db->prepare("SELECT visitor_id, COUNT(*) c FROM submissions GROUP BY visitor_id");
+    $subStmt = $db->prepare("SELECT visitor_id,
+        MAX(CASE WHEN status IN ('success','intent') THEN 1 ELSE 0 END) c
+        FROM submissions GROUP BY visitor_id");
     $subStmt->execute();
     while ($r = $subStmt->fetch()) { $visitorSubmissions[$r['visitor_id']] = (int)$r['c']; }
 
@@ -1354,8 +1486,14 @@ function vjt_get_visitors_list($filters) {
     $where = [];
     $params = [];
     if ($device)   { $where[] = "device_type = ?"; $params[] = $device; }
-    if ($dateFrom) { $where[] = "first_seen_at >= ?"; $params[] = $dateFrom; }
-    if ($dateTo)   { $where[] = "first_seen_at <= ?"; $params[] = $dateTo . ' 23:59:59'; }
+    if ($dateFrom) {
+        $utcFrom = vjt_admin_date_to_utc($dateFrom);
+        if ($utcFrom) { $where[] = "first_seen_at >= ?"; $params[] = $utcFrom; }
+    }
+    if ($dateTo) {
+        $utcTo = vjt_admin_date_to_utc($dateTo, true);
+        if ($utcTo) { $where[] = "first_seen_at <= ?"; $params[] = $utcTo; }
+    }
     $whereSql = $where ? ('WHERE ' . implode(' AND ', $where)) : '';
     $stmt = $db->prepare("SELECT * FROM visitors $whereSql");
     $stmt->execute($params);
@@ -1462,13 +1600,13 @@ function vjt_get_journey($visitorId) {
 // ── Dashboard: Data Cleanup ──────────────────────────────────────────────────
 
 function vjt_cleanup_old_data($days) {
-    $cutoff = date('Y-m-d H:i:s', time() - ($days * 86400));
+    $cutoff = gmdate('Y-m-d H:i:s', time() - ($days * 86400));
     $db = vjt_db();
     $db->prepare("DELETE FROM visitors    WHERE last_seen_at < ?")->execute([$cutoff]);
     $db->prepare("DELETE FROM sessions    WHERE last_seen_at < ?")->execute([$cutoff]);
     $db->prepare("DELETE FROM pageviews   WHERE visited_at  < ?")->execute([$cutoff]);
     $db->prepare("DELETE FROM submissions WHERE submitted_at < ?")->execute([$cutoff]);
-    $geoCutoff = date('Y-m-d H:i:s', time() - (7 * 86400));
+    $geoCutoff = gmdate('Y-m-d H:i:s', time() - (7 * 86400));
     $db->prepare("DELETE FROM geo_cache WHERE cached_at < ?")->execute([$geoCutoff]);
     $db->exec('PRAGMA wal_checkpoint(TRUNCATE)');
 }
@@ -1493,16 +1631,16 @@ function vjt_get_traffic_data($since) {
     // Daily trend (30 days)
     $dailyTrend = [];
     for ($i = 29; $i >= 0; $i--) { $dailyTrend[date('Y-m-d', strtotime("-{$i} days"))] = 0; }
-    $dailyTrendStmt = $db->prepare("SELECT substr(visited_at,1,10) d, COUNT(*) c FROM pageviews
+    $dailyTrendStmt = $db->prepare("SELECT substr(datetime(visited_at, '+8 hours'),1,10) d, COUNT(*) c FROM pageviews
         WHERE visited_at >= ? GROUP BY d");
-    $dailyTrendStmt->execute([date('Y-m-d 00:00:00', strtotime('-29 days'))]);
+    $dailyTrendStmt->execute([vjt_admin_date_to_utc(date('Y-m-d', strtotime('-29 days')))]);
     $rows = $dailyTrendStmt->fetchAll();
     foreach ($rows as $r) { if (isset($dailyTrend[$r['d']])) $dailyTrend[$r['d']] = (int)$r['c']; }
 
     // Monthly trend (12 months)
     $monthlyTrend = [];
     for ($i = 11; $i >= 0; $i--) { $monthlyTrend[date('Y-m', strtotime("-{$i} months"))] = 0; }
-    $monthlyTrendStmt = $db->prepare("SELECT substr(visited_at,1,7) m, COUNT(*) c FROM pageviews GROUP BY m");
+    $monthlyTrendStmt = $db->prepare("SELECT substr(datetime(visited_at, '+8 hours'),1,7) m, COUNT(*) c FROM pageviews GROUP BY m");
     $monthlyTrendStmt->execute();
     $rows = $monthlyTrendStmt->fetchAll();
     foreach ($rows as $r) { if (isset($monthlyTrend[$r['m']])) $monthlyTrend[$r['m']] = (int)$r['c']; }
@@ -1510,7 +1648,7 @@ function vjt_get_traffic_data($since) {
     // Yearly trend
     $yearlyTrend = [];
     $minYear = (int)date('Y');
-    $yearlyTrendStmt = $db->prepare("SELECT substr(visited_at,1,4) y, COUNT(*) c FROM pageviews GROUP BY y");
+    $yearlyTrendStmt = $db->prepare("SELECT substr(datetime(visited_at, '+8 hours'),1,4) y, COUNT(*) c FROM pageviews GROUP BY y");
     $yearlyTrendStmt->execute();
     $rows = $yearlyTrendStmt->fetchAll();
     $yearCounts = [];
@@ -1542,8 +1680,8 @@ function vjt_get_traffic_data($since) {
     if ($topPages) {
         $urls = array_column($topPages, 'url');
         $place = implode(',', array_fill(0, count($urls), '?'));
-        $stmt = $db->prepare("SELECT submit_page, COUNT(*) c FROM submissions
-            WHERE submitted_at >= ? AND submit_page IN ($place) GROUP BY submit_page");
+        $stmt = $db->prepare("SELECT submit_page, COUNT(DISTINCT visitor_id) c FROM submissions
+            WHERE submitted_at >= ? AND status IN ('success','intent') AND submit_page IN ($place) GROUP BY submit_page");
         $stmt->execute(array_merge([$since], $urls));
         $subByPage = [];
         foreach ($stmt->fetchAll() as $r) { $subByPage[$r['submit_page']] = (int)$r['c']; }
@@ -1613,11 +1751,15 @@ function vjt_get_countries() {
         $cc = $visitorCountry[$s['visitor_id']] ?? 'UNKNOWN';
         if (isset($countries[$cc])) $countries[$cc]['sessions']++;
     }
-    $cbStmt = $db->prepare("SELECT visitor_id FROM submissions");
+    $cbStmt = $db->prepare("SELECT visitor_id FROM submissions WHERE status IN ('success','intent')");
     $cbStmt->execute();
+    $countryLeadVisitors = [];
     while ($sub = $cbStmt->fetch()) {
         $cc = $visitorCountry[$sub['visitor_id']] ?? 'UNKNOWN';
-        if (isset($countries[$cc])) $countries[$cc]['submissions']++;
+        $countryLeadVisitors[$cc][$sub['visitor_id']] = true;
+    }
+    foreach ($countryLeadVisitors as $cc => $set) {
+        if (isset($countries[$cc])) $countries[$cc]['submissions'] = count($set);
     }
 
     uasort($countries, function ($a, $b) { return $b['visitors'] - $a['visitors']; });
@@ -1630,8 +1772,14 @@ function vjt_get_products($dateFrom = '', $dateTo = '') {
     $db = vjt_db();
     $where = ["url <> ''"];
     $params = [];
-    if ($dateFrom) { $where[] = "visited_at >= ?"; $params[] = $dateFrom; }
-    if ($dateTo)   { $where[] = "visited_at <= ?"; $params[] = $dateTo . ' 23:59:59'; }
+    if ($dateFrom) {
+        $utcFrom = vjt_admin_date_to_utc($dateFrom);
+        if ($utcFrom) { $where[] = "visited_at >= ?"; $params[] = $utcFrom; }
+    }
+    if ($dateTo) {
+        $utcTo = vjt_admin_date_to_utc($dateTo, true);
+        if ($utcTo) { $where[] = "visited_at <= ?"; $params[] = $utcTo; }
+    }
     $whereSql = 'WHERE ' . implode(' AND ', $where);
 
     $stmt = $db->prepare("SELECT url, visitor_id FROM pageviews $whereSql");
@@ -1675,13 +1823,14 @@ function vjt_export_submissions_csv_start($filters) {
     header('Content-Type: text/csv; charset=utf-8');
     header('Content-Disposition: attachment; filename=vjt-submissions-' . date('Y-m-d') . '.csv');
     $output = fopen('php://output', 'w');
-    fputcsv($output, ['Time', 'Visitor ID', 'Form', 'Form Name', 'Page', 'IP', 'Country', 'Status']);
+    fputcsv($output, ['Last Contact (Beijing)', 'First Contact (Beijing)', 'Visitor ID', 'Channels', 'Events', 'Page', 'IP', 'Country', 'Status']);
     foreach ($items as $sub) {
         fputcsv($output, [
-            $sub['submitted_at'] ?? '',
+            vjt_format_for_admin($sub['last_submitted_at'] ?? ($sub['submitted_at'] ?? '')),
+            vjt_format_for_admin($sub['first_submitted_at'] ?? ''),
             $sub['visitor_id'] ?? '',
-            $sub['form_plugin'] ?? '',
-            $sub['form_name'] ?? '',
+            $sub['channels'] ?? ($sub['form_name'] ?? ''),
+            $sub['event_count'] ?? 1,
             $sub['submit_page'] ?? '',
             $sub['ip'] ?? '',
             $sub['country'] ?? '',

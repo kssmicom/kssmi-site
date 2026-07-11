@@ -412,7 +412,9 @@
         submit_page  : cfg.page.url,
         submit_title : cfg.page.title,
         submitted_at : new Date().toISOString(),
-        status       : 'success',
+        // Browser submit only proves an attempt. The PHP mail handler records
+        // success after SMTP accepts the message.
+        status       : 'attempt',
         referrer     : attrReferrer,
         landing_url  : session.landingUrl   || '',
         landing_title: session.landingTitle || '',
@@ -496,7 +498,8 @@
         submit_page  : cfg.page.url,
         submit_title : cfg.page.title,
         submitted_at : new Date().toISOString(),
-        status       : 'success',
+        // A click is a contact intent, not proof that WhatsApp/mail was sent.
+        status       : 'intent',
         contact_url  : href,
         referrer     : attrReferrer,
         landing_url  : session.landingUrl   || '',
