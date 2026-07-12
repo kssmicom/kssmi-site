@@ -180,6 +180,7 @@
   }
   function vjtConsentUpdate(analytics) {
     if (window.VJTTracker) { window.VJTTracker.enabled = !!analytics; }
+    if (analytics) window.dispatchEvent(new Event('vjt:consent-granted'));
     // When consent is granted, start tracking the current page right away
     // (the tracker skips init while disabled, so it needs a kick on opt-in).
     if (analytics && typeof window.VJT_init === 'function') {

@@ -48,7 +48,7 @@ const trackerScriptUrl = isDev
   </script>
 )}
 
-<!-- Defer tracker script injection until after critical rendering (3s delay) -->
+<!-- Defer tracker script injection until after critical rendering and analytics consent. -->
 <script is:inline define:vars={{ trackerScriptUrl }}>
   (function() {
     var loaded = false;
@@ -60,8 +60,18 @@ const trackerScriptUrl = isDev
       s.defer = true;
       document.head.appendChild(s);
     }
-    // Load after 3s idle to avoid competing with critical rendering
-    setTimeout(injectTracker, 3000);
+    function scheduleInject() {
+      if (!window.VJTTracker || !window.VJTTracker.enabled) return;
+      if ('requestIdleCallback' in window) {
+        (window as any).requestIdleCallback(injectTracker, { timeout: 5000 });
+      } else {
+        setTimeout(injectTracker, 3000);
+      }
+    }
+    // Existing consent may be available on the first load.
+    scheduleInject();
+    // The cookie banner dispatches this after the visitor grants analytics consent.
+    window.addEventListener('vjt:consent-granted', scheduleInject);
     // On SPA navigations, call init directly instead of re-downloading the script
     document.addEventListener('astro:page-load', function() {
       if (window.VJT_init) {
@@ -72,7 +82,7 @@ const trackerScriptUrl = isDev
       } else {
         // First load hasn't happened yet — inject script
         loaded = false;
-        setTimeout(injectTracker, 1000);
+        scheduleInject();
       }
     });
   })();

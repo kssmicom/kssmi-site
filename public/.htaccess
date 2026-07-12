@@ -180,6 +180,11 @@ ExpiresByType text/javascript "access plus 1 year"
   Header set Cache-Control "public, max-age=3600, must-revalidate"
 </FilesMatch>
 
+# Cookie banner is versioned by query string and can be cached for one year.
+<FilesMatch "^cookie-banner\.js$">
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+
 # All image types — 1 year
 <FilesMatch "\.(webp|png|jpg|jpeg|gif|svg|ico|avif)$">
   Header set Cache-Control "public, max-age=31536000"

@@ -22,11 +22,10 @@ const featureTags: string[] = d.featureTags || [];
 const posterImage = d.posterImage;
 const posterAlt = d.posterAlt;
 
-// Background video = mp4 URL from the markdown (`videoUrl`). A native <video> with native
-// autoplay (muted + playsinline — guaranteed to be allowed by browser autoplay policy) is
-// used; no third-party player JS. `preload="metadata"` keeps the critical path free (the
-// poster image above is the LCP); the script at the bottom only handles the 700ms fade-in
-// once the browser has buffered enough to render. Skipped under prefers-reduced-motion.
+// Background video = mp4 URL from the markdown (`videoUrl`). The URL is intentionally kept
+// out of the initial <source> so the poster remains the only first-load media request.
+// The client loads the video only after the page is idle on desktop; mobile, reduced-motion,
+// Save-Data and slow connections keep the poster permanently to avoid a 15 MB background file.
 const videoUrl: string | undefined = d.videoUrl;
 
 // Build locale-aware internal links (external URLs are left untouched)
@@ -48,17 +47,16 @@ const secondaryHref = toHref(secondaryCtaUrl);
     <img
       src={posterImage}
       alt={posterAlt || heading || ''}
-      class="absolute inset-0 w-full h-full object-cover"
+      class="absolute inset-0 w-full h-full object-cover" width="1920" height="1080"
       loading="eager"
       fetchpriority="high"
       decoding="async"
     />
   )}
 
-  <!-- Background video: native <video> with browser-native autoplay. muted + playsinline
-       guarantee autoplay is allowed regardless of any user-gesture heuristics, so we don't
-       need JS-driven play(). preload="metadata" only fetches a few KB of metadata so the
-       poster image above stays the LCP. object-cover fills the hero.
+  <!-- Background video: the poster is the default experience. The URL is assigned after
+       idle by the script below, so this element cannot compete with the poster for the
+       initial connection. object-cover fills the hero.
 
        transition:persist keeps the SAME <video> DOM node across Astro view transitions
        (language switch / page navigation). Without it, Astro's morph algorithm removes
@@ -73,16 +71,14 @@ const secondaryHref = toHref(secondaryCtaUrl);
       id="hero-video"
       transition:persist
       class="hero-video absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700"
-      autoplay
       muted
       loop
       playsinline
-      preload="metadata"
+      preload="none"
+      data-src={videoUrl}
       aria-hidden="true"
       tabindex="-1"
-    >
-      <source src={videoUrl} type="video/mp4" />
-    </video>
+    ></video>
   )}
 
   <!-- Dark scrim: stronger on the text (start) side for 4.5:1 contrast -->
@@ -216,19 +212,35 @@ const secondaryHref = toHref(secondaryCtaUrl);
 </style>
 
 <script>
-  // Fade the hero video in over 700ms once the browser has buffered enough to render its
-  // first real frame. Autoplay is browser-native (the <video> element has autoplay), so
-  // this JS only handles the opacity transition — and a reduced-motion short-circuit.
-  // Runs on astro:page-load (initial load + View Transitions) and on pageshow-persisted
-  // (back/forward cache restore, which astro:page-load doesn't cover).
+  // The hero poster is the mobile/default experience. Desktop video is deliberately loaded
+  // only after the page is idle; a background video is decorative and must not consume the
+  // initial mobile data budget or compete with LCP.
   const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const isSmallScreen = window.matchMedia('(max-width: 767px)');
+
+  function shouldSkipVideo() {
+    const connection = (navigator as any).connection;
+    return mq.matches || isSmallScreen.matches || connection?.saveData
+      || /slow-2g|2g/.test(connection?.effectiveType || '');
+  }
+
+  function loadHeroVideo() {
+    if (shouldSkipVideo()) return;
+    document.querySelectorAll<HTMLVideoElement>('.hero-video').forEach((v) => {
+      if (v.dataset.loaded || !v.dataset.src) return;
+      v.dataset.loaded = '1';
+      v.src = v.dataset.src;
+      v.load();
+      v.play().catch(() => {});
+    });
+  }
 
   function fadeInHeroVideo() {
-    if (mq.matches) return;
+    if (shouldSkipVideo()) return;
     document.querySelectorAll<HTMLVideoElement>('.hero-video').forEach((v) => {
-      if (v.dataset.fadedIn) return;
+      if (v.dataset.fadedIn || !v.dataset.loaded) return;
       const show = () => {
-        if (v.dataset.fadedIn) return;
+        if (v.dataset.fadedIn || !v.dataset.loaded) return;
         v.dataset.fadedIn = '1';
         requestAnimationFrame(() => {
           v.style.opacity = '1';
@@ -243,32 +255,36 @@ const secondaryHref = toHref(secondaryCtaUrl);
         show();
       } else {
         v.addEventListener('loadeddata', show, { once: true });
-        // Safety net: never leave the user stuck on the static poster, even on flaky
-        // connections where loadeddata might never fire.
-        setTimeout(show, 1500);
       }
     });
   }
 
-  function scheduleFadeIn() {
+  function scheduleVideo() {
+    if (shouldSkipVideo()) return;
     if ('requestIdleCallback' in window) {
-      (window as any).requestIdleCallback(fadeInHeroVideo, { timeout: 1500 });
+      (window as any).requestIdleCallback(() => {
+        loadHeroVideo();
+        fadeInHeroVideo();
+      }, { timeout: 5000 });
     } else {
-      setTimeout(fadeInHeroVideo, 200);
+      setTimeout(() => {
+        loadHeroVideo();
+        fadeInHeroVideo();
+      }, 3000);
     }
   }
 
-  document.addEventListener('astro:page-load', scheduleFadeIn);
+  document.addEventListener('astro:page-load', scheduleVideo);
   // Belt-and-suspenders: explicitly resume playback after every view transition, in
   // case transition:persist ever fails to preserve playback state on a given browser.
   // astro:after-swap fires after the new DOM is in place, before astro:page-load.
   document.addEventListener('astro:after-swap', () => {
     document.querySelectorAll<HTMLVideoElement>('.hero-video').forEach((v) => {
-      if (v.paused) v.play().catch(() => {});
+      if (v.dataset.loaded && v.paused) v.play().catch(() => {});
     });
   });
   // Back/forward cache restore — astro:page-load doesn't fire after bfcache restore.
   window.addEventListener('pageshow', (e) => {
-    if ((e as any).persisted) scheduleFadeIn();
+    if ((e as any).persisted) scheduleVideo();
   });
 </script>

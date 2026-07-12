@@ -347,7 +347,7 @@ function thumbSrc(originalPath: string): string {
   keywords={seoKeywords}
   lang={lang}
   image={cover}
-  lcpImage={cover ? cardSrc(cover) : undefined}
+  lcpImage={cover}
   type="product"
 >
   {productSchema && <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />}
@@ -359,7 +359,7 @@ function thumbSrc(originalPath: string): string {
   {materials && <div class="sr-only" data-pagefind-meta="materials">{materials}</div>}
   {colors && <div class="sr-only" data-pagefind-meta="colors">{colors}</div>}
   {categories && <div class="sr-only" data-pagefind-meta="category">{categories}</div>}
-  {cover && <img src={cover} alt={title} data-pagefind-meta="image" class="sr-only" width="800" height="800" loading="lazy" decoding="async" />}
+  {cover && <meta data-pagefind-meta="image[content]" content={cover} />}
 
   <Header lang={lang} />
 
