@@ -63,7 +63,7 @@ const trackerScriptUrl = isDev
     function scheduleInject() {
       if (!window.VJTTracker || !window.VJTTracker.enabled) return;
       if ('requestIdleCallback' in window) {
-        (window as any).requestIdleCallback(injectTracker, { timeout: 5000 });
+        window.requestIdleCallback(injectTracker, { timeout: 5000 });
       } else {
         setTimeout(injectTracker, 3000);
       }
