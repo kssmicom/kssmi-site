@@ -216,11 +216,10 @@ const secondaryHref = toHref(secondaryCtaUrl);
   // only after the page is idle; a background video is decorative and must not consume the
   // initial mobile data budget or compete with LCP.
   const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const isSmallScreen = window.matchMedia('(max-width: 767px)');
 
   function shouldSkipVideo() {
     const connection = (navigator as any).connection;
-    return mq.matches || isSmallScreen.matches || connection?.saveData
+    return mq.matches || connection?.saveData
       || /slow-2g|2g/.test(connection?.effectiveType || '');
   }
 
