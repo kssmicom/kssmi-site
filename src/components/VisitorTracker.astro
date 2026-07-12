@@ -13,7 +13,7 @@ const trackerScriptUrl = isDev
     window.VJTTracker = {
       // Consent-gated: only enabled once the visitor grants analytics consent.
       // The cookie banner flips this on (and calls VJT_init) when consent is given.
-      get enabled() { try { var c = JSON.parse(localStorage.getItem('cookie-consent')); return c ? !!c.analytics : false; } catch(e) { return false; } },
+      get enabled() { try { var c = JSON.parse(localStorage.getItem('cookie-consent')); return c ? !!c.analytics : false; } catch(e) { return false; } }, set enabled(v) {},
       page: {
         url: window.location.href,
         title: document.title || ''
@@ -33,7 +33,7 @@ const trackerScriptUrl = isDev
     window.VJTTracker = {
       // Consent-gated: only enabled once the visitor grants analytics consent.
       // The cookie banner flips this on (and calls VJT_init) when consent is given.
-      get enabled() { try { var c = JSON.parse(localStorage.getItem('cookie-consent')); return c ? !!c.analytics : false; } catch(e) { return false; } },
+      get enabled() { try { var c = JSON.parse(localStorage.getItem('cookie-consent')); return c ? !!c.analytics : false; } catch(e) { return false; } }, set enabled(v) {},
       page: {
         url: window.location.href,
         title: document.title || ''
