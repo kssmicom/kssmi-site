@@ -1128,26 +1128,65 @@ function vjt_normalize_referrer_host($referrer) {
     return $host;
 }
 
+function vjt_source_host_matches($host, $domains) {
+    $host = strtolower(trim((string)$host, " .\t\n\r\0\x0B"));
+    $host = preg_replace('/^www\./', '', $host);
+    if ($host === '') return false;
+
+    foreach ($domains as $domain) {
+        $domain = strtolower(trim((string)$domain, " .\t\n\r\0\x0B"));
+        $domain = preg_replace('/^www\./', '', $domain);
+        if ($domain === '') continue;
+        if ($host === $domain || substr($host, -strlen('.' . $domain)) === '.' . $domain) return true;
+    }
+    return false;
+}
+
+function vjt_source_catalog() {
+    return [
+        'ai' => [
+            'chatgpt.com', 'chat.openai.com', 'perplexity.ai', 'gemini.google.com', 'bard.google.com',
+            'copilot.microsoft.com', 'copilot.cloud.microsoft.com', 'claude.ai', 'grok.com', 'x.ai',
+            'chat.deepseek.com', 'deepseek.com', 'doubao.com',
+        ],
+        'search' => [
+            'google.com', 'google.co.uk', 'google.ca', 'google.com.au', 'google.de', 'google.fr',
+            'google.co.jp', 'google.com.br', 'google.co.in', 'google.com.hk', 'google.com.sg',
+            'google.com.tw', 'google.es', 'google.it', 'google.nl', 'google.com.mx', 'google.co.kr',
+            'google.co.nz', 'google.co.za', 'google.ae', 'google.sa', 'google.pl', 'google.pt',
+            'google.se', 'google.no', 'google.dk', 'google.fi', 'google.be', 'google.ch', 'google.at',
+            'google.cz', 'google.gr', 'google.ie', 'google.co.id', 'google.co.th', 'google.com.tr',
+            'google.com.vn', 'google.com.ar', 'google.cl', 'google.com.co', 'bing.com',
+            'baidu.com', 'yahoo.com', 'search.yahoo.com', 'yahoo.co.jp', 'duckduckgo.com',
+            'yandex.com', 'yandex.ru', 'naver.com', 'sogou.com', 'so.com', '360.cn',
+            'search.brave.com', 'ask.com', 'aol.com',
+        ],
+        'social' => [
+            'facebook.com', 'fb.com', 'fb.me', 'instagram.com', 'linkedin.com', 'x.com', 't.co',
+            'twitter.com', 'youtube.com', 'youtu.be', 'tiktok.com', 'reddit.com', 'pinterest.com',
+            'pin.it', 'weibo.com', 'weixin.qq.com', 'mp.weixin.qq.com', 'whatsapp.com',
+        ],
+    ];
+}
+
 function vjt_source_from_host($host) {
-    $host = strtolower((string)$host);
+    $host = strtolower(trim((string)$host));
     if ($host === '' || $host === '__internal__') return $host === '__internal__' ? 'internal' : 'direct';
 
     $aliases = [
         'google' => 'search', 'bing' => 'search', 'yahoo' => 'search', 'baidu' => 'search',
-        'duckduckgo' => 'search', 'yandex' => 'search',
+        'duckduckgo' => 'search', 'yandex' => 'search', 'naver' => 'search', 'sogou' => 'search',
         'facebook' => 'social', 'instagram' => 'social', 'linkedin' => 'social',
-        'twitter' => 'social', 'youtube' => 'social', 'tiktok' => 'social', 'whatsapp' => 'social',
-        'chatgpt' => 'ai', 'openai' => 'ai', 'perplexity' => 'ai', 'claude' => 'ai',
-        'gemini' => 'ai', 'grok' => 'ai', 'deepseek' => 'ai', 'doubao' => 'ai',
+        'twitter' => 'social', 'x' => 'social', 'youtube' => 'social', 'tiktok' => 'social',
+        'whatsapp' => 'social', 'reddit' => 'social', 'pinterest' => 'social', 'wechat' => 'social',
+        'chatgpt' => 'ai', 'perplexity' => 'ai', 'claude' => 'ai', 'gemini' => 'ai',
+        'copilot' => 'ai', 'grok' => 'ai', 'deepseek' => 'ai', 'doubao' => 'ai',
     ];
     if (isset($aliases[$host])) return $aliases[$host];
 
-    $ai = ['chatgpt.com', 'openai.com', 'perplexity.ai', 'claude.ai', 'anthropic.com', 'gemini.google.com', 'x.ai', 'grok.com', 'copilot.microsoft.com', 'deepseek.com', 'doubao.com'];
-    $search = ['google.', 'bing.', 'yahoo.', 'baidu.', 'duckduckgo.', 'yandex.', 'ask.', 'aol.'];
-    $social = ['facebook.', 'instagram.', 'twitter.', 'x.com', 'linkedin.', 'youtube.', 'tiktok.', 'pinterest.', 'reddit.', 'weibo.', 't.co', 'fb.me', 'fb.com', 'whatsapp.com'];
-    foreach ($ai as $needle) if ($host === $needle || substr($host, -strlen('.' . $needle)) === '.' . $needle) return 'ai';
-    foreach ($search as $needle) if (strpos($host, $needle) !== false) return 'search';
-    foreach ($social as $needle) if ($host === $needle || substr($host, -strlen('.' . $needle)) === '.' . $needle || strpos($host, $needle) !== false) return 'social';
+    foreach (vjt_source_catalog() as $channel => $domains) {
+        if (vjt_source_host_matches($host, $domains)) return $channel;
+    }
     return 'other';
 }
 
@@ -1158,7 +1197,7 @@ function vjt_classify_source($session) {
 
     // Explicit campaign tags win over browser referrer because they are the
     // publisher-controlled attribution signal.
-    if (in_array($utmMedium, ['cpc', 'ppc', 'paid', 'paidads', 'display', 'retargeting', 'ads'], true)) return 'ads';
+    if (in_array($utmMedium, ['cpc', 'ppc', 'paid', 'paid-search', 'paid_search', 'paid-social', 'paid_social', 'paidads', 'display', 'retargeting', 'remarketing', 'ads'], true)) return 'ads';
     if (in_array($utmMedium, ['social', 'social-media', 'social_network'], true)) return 'social';
     if (in_array($utmMedium, ['email', 'newsletter'], true)) return 'other';
     if ($utmSource !== '') {
@@ -1168,7 +1207,25 @@ function vjt_classify_source($session) {
     }
 
     $host = vjt_normalize_referrer_host($referrer);
+    $referrerPath = strtolower((string)parse_url((string)$referrer, PHP_URL_PATH));
+    if (vjt_source_host_matches($host, ['bing.com']) && preg_match('#^/chat(?:/|$)#', $referrerPath)) return 'ai';
     return vjt_source_from_host($host);
+}
+
+function vjt_source_label($session) {
+    $utmSource = trim((string)($session['utm_source'] ?? ''));
+    $utmMedium = trim((string)($session['utm_medium'] ?? ''));
+    if ($utmSource !== '' || $utmMedium !== '') {
+        $source = strtolower(preg_replace('/[\x00-\x1F\x7F]/', '', $utmSource));
+        $source = function_exists('mb_substr') ? mb_substr($source, 0, 120, 'UTF-8') : substr($source, 0, 120);
+        $medium = strtolower(preg_replace('/[\x00-\x1F\x7F]/', '', $utmMedium));
+        $medium = function_exists('mb_substr') ? mb_substr($medium, 0, 60, 'UTF-8') : substr($medium, 0, 60);
+        return 'UTM: ' . ($source !== '' ? $source : '(source not set)') . ($medium !== '' ? ' / ' . $medium : '');
+    }
+
+    $host = vjt_normalize_referrer_host($session['referrer'] ?? '');
+    if ($host === '__internal__') return 'Internal';
+    return $host === '' ? 'Direct' : $host;
 }
 
 // ── Settings ────────────────────────────────────────────────────────────────
@@ -1270,29 +1327,27 @@ function vjt_get_overview($since) {
         $trendYearly[(string)$y] = $yearCounts[(string)$y] ?? 0;
     }
 
-    // Top referrers: count normalized external hosts, not raw URLs. Keep
-    // sessions, visitors, and leads as separate measures.
+    // Top sources: explicit UTM attribution wins; otherwise use a normalized
+    // referrer host. Keep sessions, visitors, and leads as separate measures.
     $refStats = [];
-    $refStmt = $db->prepare("SELECT referrer, visitor_id FROM sessions WHERE started_at >= ?");
+    $refStmt = $db->prepare("SELECT referrer, utm_source, utm_medium, visitor_id FROM sessions WHERE started_at >= ?");
     $refStmt->execute([$since]);
     $refVisitors = [];
     while ($r = $refStmt->fetch()) {
-        $host = vjt_normalize_referrer_host($r['referrer'] ?? '');
-        $label = $host === '' ? 'Direct' : ($host === '__internal__' ? 'Internal' : $host);
+        $label = vjt_source_label($r);
         if (!isset($refStats[$label])) $refStats[$label] = ['sessions' => 0, 'visitors' => 0, 'leads' => 0];
         $refStats[$label]['sessions']++;
         $refVisitors[$label][$r['visitor_id']] = true;
     }
     foreach ($refVisitors as $label => $set) $refStats[$label]['visitors'] = count($set);
 
-    $refLeadStmt = $db->prepare("SELECT s.visitor_id, sess.referrer
+    $refLeadStmt = $db->prepare("SELECT s.visitor_id, sess.referrer, sess.utm_source, sess.utm_medium
         FROM submissions s JOIN sessions sess ON sess.session_id = s.session_id
         WHERE s.submitted_at >= ? AND s.status IN ('success','intent')");
     $refLeadStmt->execute([$since]);
     $refLeads = [];
     while ($r = $refLeadStmt->fetch()) {
-        $host = vjt_normalize_referrer_host($r['referrer'] ?? '');
-        $label = $host === '' ? 'Direct' : ($host === '__internal__' ? 'Internal' : $host);
+        $label = vjt_source_label($r);
         $refLeads[$label][$r['visitor_id']] = true;
     }
     foreach ($refLeads as $label => $set) {
@@ -1433,6 +1488,7 @@ function vjt_get_visitors_list($filters) {
     $visitorSessions = [];
     $visitorSubmissions = [];
     $visitorSource = [];
+    $visitorSourceRank = [];
     $visitorSessionTime = [];
 
     // Stream rows (fetch one at a time) instead of fetchAll() so we never hold
@@ -1442,7 +1498,15 @@ function vjt_get_visitors_list($filters) {
     while ($s = $sessStmt->fetch()) {
         $vid = $s['visitor_id'];
         $visitorSessions[$vid] = ($visitorSessions[$vid] ?? 0) + 1;
-        if (!isset($visitorSource[$vid])) $visitorSource[$vid] = vjt_classify_source($s);
+        $candidateSource = vjt_classify_source($s);
+        $candidateRank = !in_array($candidateSource, ['direct', 'internal'], true) ? 2 : ($candidateSource === 'direct' ? 1 : 0);
+        // Match WP-VJT 8.0.2's useful attribution rule: prefer the earliest
+        // identifiable non-direct source instead of permanently locking a
+        // visitor to an initial Direct/Internal session.
+        if (!isset($visitorSource[$vid]) || $candidateRank > $visitorSourceRank[$vid]) {
+            $visitorSource[$vid] = $candidateSource;
+            $visitorSourceRank[$vid] = $candidateRank;
+        }
         $st = strtotime($s['started_at'] ?? '');
         $ls = strtotime($s['last_seen_at'] ?? '');
         if ($st && $ls && $ls > $st) {

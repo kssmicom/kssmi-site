@@ -49,6 +49,14 @@
     try { return window.localStorage.getItem(key); } catch (e) { return null; }
   }
 
+  function readCookie(name) {
+    try {
+      var escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      var match = document.cookie.match(new RegExp('(?:^|; )' + escaped + '=([^;]*)'));
+      return match ? decodeURIComponent(match[1]) : '';
+    } catch (e) { return ''; }
+  }
+
   function writeStorage(key, val) {
     try { window.localStorage.setItem(key, val); } catch (e) {}
   }
@@ -86,13 +94,43 @@
       if (!search) return {};
       var utm = {};
       search.slice(1).split('&').forEach(function (pair) {
-        var kv = pair.split('=');
-        if (kv[0] && kv[0].slice(0, 4) === 'utm_') {
-          utm[kv[0]] = decodeURIComponent((kv[1] || '').replace(/\+/g, ' '));
+        var separator = pair.indexOf('=');
+        var rawKey = separator === -1 ? pair : pair.slice(0, separator);
+        var rawValue = separator === -1 ? '' : pair.slice(separator + 1);
+        var key = decodeURIComponent(rawKey || '').toLowerCase();
+        if (key.slice(0, 4) === 'utm_' && !Object.prototype.hasOwnProperty.call(utm, key)) {
+          utm[key] = decodeURIComponent(rawValue.replace(/\+/g, ' '));
         }
       });
       return utm;
     } catch (e) { return {}; }
+  }
+
+  function referrerHost(value) {
+    try {
+      var link = document.createElement('a');
+      link.href = value || '';
+      return (link.hostname || '').toLowerCase().replace(/^www\./, '').replace(/\.$/, '');
+    } catch (e) { return ''; }
+  }
+
+  function isInternalReferrer(value) {
+    var host = referrerHost(value);
+    var siteHost = (window.location.hostname || '').toLowerCase().replace(/^www\./, '').replace(/\.$/, '');
+    return !!host && (host === siteHost || host.slice(-(siteHost.length + 1)) === '.' + siteHost);
+  }
+
+  function hasUtm(utm) {
+    return !!(utm.utm_source || utm.utm_medium || utm.utm_campaign || utm.utm_content || utm.utm_term);
+  }
+
+  function campaignChanged(session, utm) {
+    if (!session || !hasUtm(utm)) return false;
+    return (utm.utm_source || '') !== (session.utmSource || '') ||
+      (utm.utm_medium || '') !== (session.utmMedium || '') ||
+      (utm.utm_campaign || '') !== (session.utmCampaign || '') ||
+      (utm.utm_content || '') !== (session.utmContent || '') ||
+      (utm.utm_term || '') !== (session.utmTerm || '');
   }
 
   function getDeviceInfo() {
@@ -125,7 +163,10 @@
   }
 
   function getVisitorId() {
-    var id = readStorage(VISITOR_KEY);
+    // Cookie fallback keeps one visitor identity when localStorage is blocked
+    // or cleared independently. The server-facing cookie never wins over a
+    // valid localStorage value.
+    var id = readStorage(VISITOR_KEY) || readCookie('vjt_visitor_id');
     if (!id) {
       id = newTrackingId('vjtv_');
     }
@@ -145,27 +186,47 @@
 
   function getSession(deviceInfo) {
     var session    = readJson(SESSION_KEY);
+    var previous   = session;
     var now        = Date.now();
     var timeoutMs  = (cfg.sessionTimeout || 30) * 60 * 1000;
     var expired    = !session || !session.lastActivity || (now - session.lastActivity > timeoutMs);
+    var utm        = extractUtm();
+    var pageReferrer = document.referrer || '';
+    var externalReferrer = pageReferrer && !isInternalReferrer(pageReferrer) ? pageReferrer : '';
+
+    // A new campaign or a genuinely new external referrer starts a fresh
+    // attribution session even if the inactivity timeout has not elapsed.
+    if (!expired && (campaignChanged(session, utm) ||
+        (externalReferrer && referrerHost(externalReferrer) !== referrerHost(session.originalReferrer || session.referrer)))) {
+      expired = true;
+    }
 
     if (expired) {
-      var utm = extractUtm();
       var di  = deviceInfo || {};
+      // If a timed-out visit continues through an internal link, retain the
+      // previous non-direct attribution (last non-direct model). A later true
+      // direct visit has an empty referrer and therefore does not inherit it.
+      var internalContinuation = !!(!externalReferrer && isInternalReferrer(pageReferrer) && previous);
+      var previousReferrer = previous ? (previous.originalReferrer || previous.referrer || '') : '';
+      var inheritedReferrer = internalContinuation && previousReferrer && !isInternalReferrer(previousReferrer)
+        ? previousReferrer
+        : '';
+      var inheritCampaign = !!(internalContinuation && previous && !hasUtm(utm));
+      var attributedReferrer = externalReferrer || inheritedReferrer;
       session = {
         id               : newTrackingId('vjts_'),
         startedAt        : new Date().toISOString(),
         landingUrl       : cfg.page.url,
         landingTitle     : cfg.page.title,
-        referrer         : document.referrer || '',
-        originalReferrer : document.referrer || '',
+        referrer         : attributedReferrer,
+        originalReferrer : attributedReferrer,
         stepOrder        : 0,
         lastActivity     : now,
-        utmSource        : utm['utm_source']   || '',
-        utmMedium        : utm['utm_medium']   || '',
-        utmCampaign      : utm['utm_campaign'] || '',
-        utmContent       : utm['utm_content']  || '',
-        utmTerm          : utm['utm_term']      || '',
+        utmSource        : utm['utm_source']   || (inheritCampaign ? previous.utmSource   || '' : ''),
+        utmMedium        : utm['utm_medium']   || (inheritCampaign ? previous.utmMedium   || '' : ''),
+        utmCampaign      : utm['utm_campaign'] || (inheritCampaign ? previous.utmCampaign || '' : ''),
+        utmContent       : utm['utm_content']  || (inheritCampaign ? previous.utmContent  || '' : ''),
+        utmTerm          : utm['utm_term']     || (inheritCampaign ? previous.utmTerm     || '' : ''),
         screenResolution : di.screen_resolution || '',
         timezone         : di.timezone          || '',
         language         : di.language          || '',
@@ -176,19 +237,15 @@
 
     session.lastActivity = now;
 
-    if (!session.referrer && document.referrer) {
-      session.referrer = document.referrer;
-    }
-
     writeJson(SESSION_KEY, session);
-    setCookie('vjt_session_id', session.id, cfg.cookieExpires || 31536000);
+    setCookie('vjt_session_id', session.id, (cfg.sessionTimeout || 30) * 60);
     return session;
   }
 
   function saveSession(session) {
     session.lastActivity = Date.now();
     writeJson(SESSION_KEY, session);
-    setCookie('vjt_session_id', session.id, cfg.cookieExpires || 31536000);
+    setCookie('vjt_session_id', session.id, (cfg.sessionTimeout || 30) * 60);
   }
 
   // ── Network ────────────────────────────────────────────────────────────────

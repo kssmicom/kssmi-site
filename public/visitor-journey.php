@@ -663,7 +663,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                             <div class="value"><?php echo number_format($overview['totalSessions']); ?></div>
                         </div>
                         <div class="stat-card">
-                            <h3>Contact Leads (30d)</h3>
+                            <h3>Leads (30d)</h3>
                             <div class="value"><?php echo number_format($overview['totalSubmissions']); ?></div>
                         </div>
                         <div class="stat-card">
@@ -724,10 +724,10 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                     <?php endif; ?>
 
                     <div class="overview-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                        <!-- Top Referrers -->
+                        <!-- Top Sources -->
                         <div class="panel">
                             <div class="panel-header">
-                                <span>Top Referrers (<?php echo $periodLabel; ?>)</span>
+                                <span>Top Sources (<?php echo $periodLabel; ?>)</span>
                                 <div style="display:flex;gap:4px;">
                                     <a href="?tab=overview&trend=days" class="trend-tab <?php echo $trendPeriod === 'days' ? 'trend-tab-active' : ''; ?>">30 Days</a>
                                     <a href="?tab=overview&trend=months" class="trend-tab <?php echo $trendPeriod === 'months' ? 'trend-tab-active' : ''; ?>">12 Months</a>
@@ -736,10 +736,10 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                             </div>
                             <div class="panel-body" style="padding:0;">
                                 <?php if (empty($overview['topReferrers'])): ?>
-                                    <div class="empty" style="padding:30px;"><p>No referrer data yet</p></div>
+                                    <div class="empty" style="padding:30px;"><p>No source data yet</p></div>
                                 <?php else: ?>
                                     <table>
-                                        <thead><tr><th>Source Host</th><th style="text-align:right;">Sessions</th><th style="text-align:right;">Visitors</th><th style="text-align:right;">Leads</th></tr></thead>
+                                        <thead><tr><th>Attributed Source</th><th style="text-align:right;">Sessions</th><th style="text-align:right;">Visitors</th><th style="text-align:right;">Leads</th></tr></thead>
                                         <tbody>
                                             <?php foreach (($overview['topReferrerStats'] ?? []) as $label => $stats):
                                                 $display = $label ?: 'Direct';
