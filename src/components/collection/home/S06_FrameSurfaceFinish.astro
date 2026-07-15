@@ -26,7 +26,7 @@ const materials = entry?.data?.materials || [];
         </svg>
         — {eyebrow} —
       </span>
-      <h2 class="text-2xl md:text-4xl font-bold text-stone-800 bg-gradient-to-r from-[#32170D] via-[#B85C27] to-[#32170D] bg-[length:200%_auto] bg-right hover:bg-left text-transparent bg-clip-text transition-all duration-700 ease-in-out cursor-pointer mb-6">
+      <h2 class="text-2xl md:text-4xl font-bold text-stone-800 bg-linear-to-r from-[#32170D] via-[#B85C27] to-[#32170D] bg-[length:200%_auto] bg-right hover:bg-left text-transparent bg-clip-text transition-all duration-700 ease-in-out cursor-pointer mb-6">
         {heading}
       </h2>
       <p class="text-base md:text-lg text-stone-600 hover:text-[#5D4E37] leading-relaxed max-w-3xl mx-auto transition-colors duration-300 cursor-pointer">
@@ -35,7 +35,7 @@ const materials = entry?.data?.materials || [];
     </div>
 
     <!-- Grid -->
-    <div class="max-w-[1440px] mx-auto bg-gray-100/60 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/40 shadow-sm">
+    <div class="max-w-[1440px] mx-auto bg-gray-100/60 backdrop-blur-xs rounded-2xl overflow-hidden border border-white/40 shadow-xs">
       <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-[1px]">
         {materials.map((m: any, i: number) => (
           <div
@@ -87,7 +87,7 @@ const materials = entry?.data?.materials || [];
             </div>
 
             <!-- Bottom accent line -->
-            <div class="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent group-hover:via-stone-700 transition-all duration-500"></div>
+            <div class="absolute bottom-0 left-0 right-0 h-[1px] bg-linear-to-r from-transparent via-gray-300 to-transparent group-hover:via-stone-700 transition-all duration-500"></div>
           </div>
         ))}
       </div>

@@ -82,7 +82,7 @@ if (productSeoEntry) {
         <!-- Sidebar -->
         <aside class="hidden lg:block lg:col-span-1">
           <div class="sticky top-24 space-y-6">
-            <div class="bg-gradient-to-br from-white to-[#faf8f5] rounded-xl shadow-sm p-6 border border-stone-200/50">
+            <div class="bg-linear-to-br from-white to-[#faf8f5] rounded-xl shadow-xs p-6 border border-stone-200/50">
               <!-- All Products Link - Page Title (Active) -->
               <a href={`/${currentPath}${baseSegment}`} class="flex items-center justify-between py-1.5 px-2 text-sm lg:text-base font-bold bg-[#5D4E37] text-white rounded-lg mb-3">
                 <span>{baseSegment === 'blog' ? t.sidebar.all_posts : baseSegment === 'eyewear' ? t.sidebar.all_features : t.sidebar.all_products}</span>
@@ -104,7 +104,7 @@ if (productSeoEntry) {
                         <li>
                           <a
                             href={sub.href}
-                            class="flex items-center justify-between py-1.5 px-2 text-sm text-gray-600 hover:text-[#5D4E37] hover:bg-stone-50 rounded transition-colors"
+                            class="flex items-center justify-between py-1.5 px-2 text-sm text-gray-600 hover:text-[#5D4E37] hover:bg-stone-50 rounded-sm transition-colors"
                           >
                             <span>{sub.label}</span>
                             <span class="text-xs text-gray-500">{getCategoryCount(sub.href)}</span>
@@ -164,7 +164,7 @@ if (productSeoEntry) {
             </span>
           </div>
           {products.length === 0 ? (
-            <div class="text-center py-16 bg-white rounded-xl shadow-sm">
+            <div class="text-center py-16 bg-white rounded-xl shadow-xs">
               <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
               </svg>

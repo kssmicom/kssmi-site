@@ -88,7 +88,7 @@ const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
           href={categorySlug ? `${basePath}/${categorySlug}` : basePath}
           class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
             currentPage === 1
-              ? 'bg-[#5D4E37] text-white shadow-sm'
+              ? 'bg-[#5D4E37] text-white shadow-xs'
               : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37]'
           }`}
           aria-current={currentPage === 1 ? 'page' : undefined}
@@ -110,7 +110,7 @@ const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
               href={categorySlug ? `${basePath}/${categorySlug}/${p}` : `${basePath}/${p}`}
               class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
                 p === currentPage
-                  ? 'bg-[#5D4E37] text-white shadow-sm'
+                  ? 'bg-[#5D4E37] text-white shadow-xs'
                   : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37]'
               }`}
             >
@@ -129,7 +129,7 @@ const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
             href={categorySlug ? `${basePath}/${categorySlug}/${lastPage}` : `${basePath}/${lastPage}`}
             class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
               currentPage === lastPage
-                ? 'bg-[#5D4E37] text-white shadow-sm'
+                ? 'bg-[#5D4E37] text-white shadow-xs'
                 : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37]'
             }`}
             aria-current={currentPage === lastPage ? 'page' : undefined}
@@ -143,14 +143,14 @@ const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
       <div class="flex sm:hidden items-center gap-1 flex-nowrap">
         {currentPage !== lastPage ? (
           <>
-            <span class="w-11 h-11 flex items-center justify-center rounded text-xs font-medium bg-[#5D4E37] text-white shadow-sm" aria-current="page">
+            <span class="w-11 h-11 flex items-center justify-center rounded-sm text-xs font-medium bg-[#5D4E37] text-white shadow-xs" aria-current="page">
               {currentPage}
             </span>
             {currentPage + 1 < lastPage ? (
               <>
                 <a
                   href={categorySlug ? `${basePath}/${categorySlug}/${currentPage + 1}` : `${basePath}/${currentPage + 1}`}
-                  class="w-11 h-11 flex items-center justify-center rounded text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+                  class="w-11 h-11 flex items-center justify-center rounded-sm text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
                 >
                   {currentPage + 1}
                 </a>
@@ -159,7 +159,7 @@ const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
                 ) : currentPage + 2 === lastPage && (
                   <a
                     href={categorySlug ? `${basePath}/${categorySlug}/${currentPage + 2}` : `${basePath}/${currentPage + 2}`}
-                    class="w-11 h-11 flex items-center justify-center rounded text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+                    class="w-11 h-11 flex items-center justify-center rounded-sm text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
                   >
                     {currentPage + 2}
                   </a>
@@ -169,7 +169,7 @@ const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
               currentPage + 1 === lastPage && (
                 <a
                   href={categorySlug ? `${basePath}/${categorySlug}/${lastPage}` : `${basePath}/${lastPage}`}
-                  class="w-11 h-11 flex items-center justify-center rounded text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+                  class="w-11 h-11 flex items-center justify-center rounded-sm text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
                 >
                   {lastPage}
                 </a>
@@ -178,7 +178,7 @@ const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
             {currentPage + 1 < lastPage - 1 && (
               <a
                 href={categorySlug ? `${basePath}/${categorySlug}/${lastPage}` : `${basePath}/${lastPage}`}
-                class="w-11 h-11 flex items-center justify-center rounded text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+                class="w-11 h-11 flex items-center justify-center rounded-sm text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
               >
                 {lastPage}
               </a>
@@ -188,7 +188,7 @@ const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
           <>
             <a
               href={categorySlug ? `${basePath}/${categorySlug}` : basePath}
-              class="w-11 h-11 flex items-center justify-center rounded text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+              class="w-11 h-11 flex items-center justify-center rounded-sm text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
             >
               1
             </a>
@@ -198,12 +198,12 @@ const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
             {lastPage > 2 && (
               <a
                 href={categorySlug ? `${basePath}/${categorySlug}/${lastPage - 1}` : `${basePath}/${lastPage - 1}`}
-                class="w-11 h-11 flex items-center justify-center rounded text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+                class="w-11 h-11 flex items-center justify-center rounded-sm text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
               >
                 {lastPage - 1}
               </a>
             )}
-            <span class="w-11 h-11 flex items-center justify-center rounded text-xs font-medium bg-[#5D4E37] text-white shadow-sm" aria-current="page">
+            <span class="w-11 h-11 flex items-center justify-center rounded-sm text-xs font-medium bg-[#5D4E37] text-white shadow-xs" aria-current="page">
               {lastPage}
             </span>
           </>
@@ -219,7 +219,7 @@ const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
           pattern="[0-9]*"
           maxlength={String(lastPage).length}
           placeholder="#"
-          class="pagination-goto-input w-10 sm:w-14 h-10 text-center border border-gray-200 rounded-lg text-sm text-gray-600 focus:outline-none focus:border-[#8B7355] focus:ring-1 focus:ring-[#8B7355]"
+          class="pagination-goto-input w-10 sm:w-14 h-10 text-center border border-gray-200 rounded-lg text-sm text-gray-600 focus:outline-hidden focus:border-[#8B7355] focus:ring-1 focus:ring-[#8B7355]"
           aria-label={goToLabel}
           data-base-path={basePath}
           data-category-slug={categorySlug || ''}

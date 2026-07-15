@@ -25,7 +25,7 @@ const materials = entry?.data?.materials || [];
         </svg>
         — {eyebrow} —
       </span>
-      <h2 class="text-2xl md:text-4xl font-bold text-stone-800 bg-gradient-to-r from-[#32170D] via-[#B85C27] to-[#32170D] bg-[length:200%_auto] bg-right hover:bg-left text-transparent bg-clip-text transition-all duration-700 ease-in-out cursor-pointer mb-6">
+      <h2 class="text-2xl md:text-4xl font-bold text-stone-800 bg-linear-to-r from-[#32170D] via-[#B85C27] to-[#32170D] bg-[length:200%_auto] bg-right hover:bg-left text-transparent bg-clip-text transition-all duration-700 ease-in-out cursor-pointer mb-6">
         {heading}
       </h2>
       <p class="text-base md:text-lg text-stone-600 hover:text-[#5D4E37] leading-relaxed max-w-2xl mx-auto transition-colors duration-300 cursor-pointer" set:html={highlightedSubheading}></p>
@@ -35,7 +35,7 @@ const materials = entry?.data?.materials || [];
     <div class="flex flex-wrap justify-center gap-5 md:gap-6">
       {materials.map((m: any, i: number) => (
         <div
-          class="mat-card group flex flex-col w-[calc(50%-0.625rem)] sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(25%-1.125rem)] bg-white rounded-2xl overflow-hidden shadow-sm ring-1 ring-stone-200/70 hover:shadow-xl hover:shadow-stone-200/60 hover:ring-stone-300 transition-all duration-500 cursor-pointer motion-safe:animate-[matFadeInUp_0.5s_ease-out_both]"
+          class="mat-card group flex flex-col w-[calc(50%-0.625rem)] sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(25%-1.125rem)] bg-white rounded-2xl overflow-hidden shadow-xs ring-1 ring-stone-200/70 hover:shadow-xl hover:shadow-stone-200/60 hover:ring-stone-300 transition-all duration-500 cursor-pointer motion-safe:animate-[matFadeInUp_0.5s_ease-out_both]"
           style={`animation-delay: ${0.1 + i * 0.05}s`}
         >
           <a href={`${prefix}/product/?material=${m.slug}`} class="relative aspect-[4/3] overflow-hidden bg-stone-100 block">
@@ -48,7 +48,7 @@ const materials = entry?.data?.materials || [];
               decoding="async"
               class="w-full h-full object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-110"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-stone-900/0 to-transparent group-hover:from-stone-900/8 transition-all duration-500"></div>
+            <div class="absolute inset-0 bg-linear-to-t from-stone-900/0 to-transparent group-hover:from-stone-900/8 transition-all duration-500"></div>
           </a>
 
           <div class="p-5 md:p-6 flex flex-col flex-1">

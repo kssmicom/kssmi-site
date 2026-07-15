@@ -6,10 +6,14 @@
 
 header('X-Robots-Tag: noindex, nofollow');
 header('Content-Type: application/json');
+header('Cache-Control: no-store');
+header('X-Content-Type-Options: nosniff');
+header('Referrer-Policy: no-referrer');
+header("Content-Security-Policy: default-src 'none'; frame-ancestors 'none'");
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 $allowedOrigins = ['https://kssmi.com', 'https://www.kssmi.com', 'http://localhost:4321', 'http://localhost:4324', 'http://localhost:4325', 'http://127.0.0.1:4321'];
-if (!in_array($origin, $allowedOrigins)) {
+if (!in_array($origin, $allowedOrigins, true)) {
     if (!empty($origin)) {
         http_response_code(403);
         echo json_encode(['success' => false, 'error' => 'Origin not allowed']);
@@ -42,10 +46,15 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 require_once __DIR__ . '/vjt-helpers.php';
-vjt_data_init();
 
-$body = file_get_contents('php://input');
-if (strlen($body) > 65536) { // 64KB hard cap — real payloads are a few KB
+$contentLength = (int)($_SERVER['CONTENT_LENGTH'] ?? 0);
+if ($contentLength > 65536) {
+    http_response_code(413);
+    echo json_encode(['success' => false, 'error' => 'Payload too large']);
+    exit;
+}
+$body = file_get_contents('php://input', false, null, 0, 65537);
+if ($body === false || strlen($body) > 65536) { // 64KB hard cap — real payloads are a few KB
     http_response_code(413);
     echo json_encode(['success' => false, 'error' => 'Payload too large']);
     exit;
@@ -58,24 +67,38 @@ if (!is_array($data)) {
 }
 
 // Clip free-text fields to guard against storage bloat / abuse
-foreach (vjt_field_caps() as $k => $max) { if (isset($data[$k])) $data[$k] = vjt_clip($data[$k], $max); }
+foreach (vjt_field_caps() as $k => $max) {
+    if (isset($data[$k])) $data[$k] = is_scalar($data[$k]) ? vjt_clip((string)$data[$k], $max) : '';
+}
+$data['submit_page'] = vjt_safe_http_url($data['submit_page'] ?? '');
+$data['contact_url'] = vjt_safe_http_url($data['contact_url'] ?? '');
+$data['landing_url'] = vjt_safe_http_url($data['landing_url'] ?? '');
+$data['referrer'] = vjt_safe_http_url($data['referrer'] ?? '');
 
-$visitorId = vjt_clip(trim($data['visitor_id'] ?? ''), 64);
-$sessionId = vjt_clip(trim($data['session_id'] ?? ''), 64);
-if (empty($visitorId) || empty($sessionId)) {
+$visitorId = is_scalar($data['visitor_id'] ?? null) ? vjt_clip(trim((string)$data['visitor_id']), 64) : '';
+$sessionId = is_scalar($data['session_id'] ?? null) ? vjt_clip(trim((string)$data['session_id']), 64) : '';
+if (!preg_match('/^vjtv_[A-Za-z0-9_-]{8,60}$/', $visitorId) || !preg_match('/^vjts_[A-Za-z0-9_-]{8,60}$/', $sessionId)) {
     http_response_code(400);
-    echo json_encode(['success' => false, 'error' => 'Missing visitor_id or session_id']);
+    echo json_encode(['success' => false, 'error' => 'Invalid visitor_id or session_id']);
     exit;
 }
 
 $ip      = vjt_get_client_ip();
 $ua      = vjt_clip($_SERVER['HTTP_USER_AGENT'] ?? '', 512);
 
+if (vjt_ip_is_excluded($ip)) {
+    echo json_encode(['success' => true, 'skipped' => 'internal']);
+    exit;
+}
+
 // Bot filtering: skip storage for crawlers/scripts/empty UA (return 200 so they don't retry)
 if (vjt_is_bot($ua)) {
     echo json_encode(['success' => true, 'skipped' => 'bot']);
     exit;
 }
+
+// Only valid, non-bot writes should trigger schema migrations/backfills/cleanup.
+vjt_data_init();
 
 $browser = vjt_detect_browser($ua);
 $device  = vjt_detect_device($ua);
@@ -121,15 +144,21 @@ try {
     if (is_array($snapshot) && !empty($snapshot)) {
         $cleanSnapshot = [];
         foreach (array_slice($snapshot, -20) as $item) {
-            if (is_array($item)) {
-                $cleanSnapshot[] = $item;
-            }
+            if (!is_array($item) || empty($item['url'])) continue;
+            $snapshotUrl = vjt_safe_http_url($item['url']);
+            if ($snapshotUrl === '') continue;
+            $cleanSnapshot[] = [
+                'visitor_id' => $visitorId,
+                'url' => $snapshotUrl,
+                'title' => is_scalar($item['title'] ?? null) ? vjt_clip((string)$item['title'], 512) : '',
+                'visited_at' => is_scalar($item['visited_at'] ?? null) ? vjt_clip((string)$item['visited_at'], 64) : '',
+            ];
         }
         vjt_sync_pageview_snapshot($sessionId, $cleanSnapshot);
     }
 
     // Store submission
-    $status = in_array($data['status'] ?? '', ['attempt', 'success', 'error', 'intent']) ? $data['status'] : 'attempt';
+    $status = in_array($data['status'] ?? '', ['attempt', 'success', 'error', 'intent'], true) ? $data['status'] : 'attempt';
     vjt_add_submission([
         'visitor_id'   => $visitorId,
         'session_id'   => $sessionId,

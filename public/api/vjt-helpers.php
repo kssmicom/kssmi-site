@@ -83,6 +83,7 @@ function vjt_format_for_visitor($timeStr, $tz) {
 // Lives at /home/<domain>/vjt_data/ on the Hetzner VPS.
 define('VJT_DATA_DIR', '/home/kssmi.com/vjt_data');
 define('VJT_DB_PATH', VJT_DATA_DIR . '/vjt.sqlite');
+define('VJT_SOURCE_MODEL_VERSION', 2);
 
 // ── Country mapping (single source of truth) ─────────────────────────────────
 // alpha-2 (stored in DB, from ip-api countryCode) => [alpha-3, full English name]
@@ -184,6 +185,22 @@ function vjt_clip($v, $max) {
     return strlen($v) > $max ? substr($v, 0, $max) : $v;
 }
 
+// Accept only absolute HTTP(S) URLs from browser-controlled analytics fields.
+// HTML escaping alone is not sufficient for href values because javascript:
+// and data: URLs would still be executable when an admin clicks them.
+function vjt_safe_http_url($value) {
+    if (!is_scalar($value)) return '';
+    $url = trim((string)$value);
+    $url = vjt_clip($url, 2048);
+    if ($url === '' || preg_match('/[\x00-\x1F\x7F]/', $url)) return '';
+    $parts = @parse_url($url);
+    if (!is_array($parts)) return '';
+    $scheme = strtolower((string)($parts['scheme'] ?? ''));
+    if (!in_array($scheme, ['http', 'https'], true) || empty($parts['host'])) return '';
+    if (isset($parts['user']) || isset($parts['pass'])) return '';
+    return $url;
+}
+
 // Per-field length caps applied to ingest payloads (track-pageview / track-submission).
 function vjt_field_caps() {
     return [
@@ -203,8 +220,9 @@ function vjt_db() {
     if ($pdo !== null) return $pdo;
 
     if (!is_dir(VJT_DATA_DIR)) {
-        @mkdir(VJT_DATA_DIR, 0755, true);
+        @mkdir(VJT_DATA_DIR, 0700, true);
     }
+    @chmod(VJT_DATA_DIR, 0700);
     // Block web access to the data dir (sqlite file + WAL/SHM)
     $htaccess = VJT_DATA_DIR . '/.htaccess';
     if (!file_exists($htaccess)) {
@@ -220,7 +238,9 @@ function vjt_db() {
         $pdo->exec('PRAGMA synchronous = NORMAL');
         $pdo->exec('PRAGMA busy_timeout = 5000');
         $pdo->exec('PRAGMA foreign_keys = OFF');
-        @chmod(VJT_DB_PATH, 0666);
+        // Analytics data and cached GSC access tokens must never be world-readable
+        // or world-writable. The PHP worker that creates the DB remains its owner.
+        @chmod(VJT_DB_PATH, 0600);
     } catch (Exception $e) {
         error_log('VJT ERROR: cannot open SQLite DB: ' . $e->getMessage());
         throw $e;
@@ -261,6 +281,10 @@ function vjt_create_schema() {
         utm_campaign  TEXT DEFAULT '',
         utm_content   TEXT DEFAULT '',
         utm_term      TEXT DEFAULT '',
+        source_slug   TEXT DEFAULT '',
+        source_host   TEXT DEFAULT '',
+        source_type   TEXT DEFAULT '',
+        source_model_version INTEGER DEFAULT 0,
         started_at    TEXT DEFAULT '',
         last_seen_at  TEXT DEFAULT ''
     )");
@@ -273,7 +297,13 @@ function vjt_create_schema() {
         visited_at       TEXT DEFAULT '',
         leave_at         TEXT,
         duration_seconds INTEGER DEFAULT 0,
+        active_duration_seconds INTEGER DEFAULT 0,
+        engagement_score INTEGER DEFAULT 0,
+        is_engaged       INTEGER DEFAULT 0,
+        last_activity_at TEXT DEFAULT '',
+        heartbeat_count  INTEGER DEFAULT 0,
         scroll_depth     INTEGER DEFAULT 0,
+        max_scroll_depth INTEGER DEFAULT 0,
         step_order       INTEGER DEFAULT 1
     )");
     $db->exec("CREATE TABLE IF NOT EXISTS submissions (
@@ -332,6 +362,52 @@ function vjt_create_schema() {
     $db->exec("CREATE INDEX IF NOT EXISTS idx_vis_device   ON visitors(device_type)");
 }
 
+function vjt_column_exists($table, $column) {
+    $stmt = vjt_db()->query('PRAGMA table_info(' . preg_replace('/[^a-z_]/', '', $table) . ')');
+    foreach ($stmt->fetchAll() as $row) {
+        if (($row['name'] ?? '') === $column) return true;
+    }
+    return false;
+}
+
+function vjt_add_column_if_missing($table, $definition) {
+    $column = strtolower(strtok(trim($definition), ' '));
+    if (!vjt_column_exists($table, $column)) {
+        vjt_db()->exec('ALTER TABLE ' . preg_replace('/[^a-z_]/', '', $table) . ' ADD COLUMN ' . $definition);
+    }
+}
+
+function vjt_run_schema_migrations() {
+    $db = vjt_db();
+    $current = (int)vjt_meta_get('schema_version', 0);
+    if ($current >= 3) return;
+
+    try {
+        $db->beginTransaction();
+        // v1: activity metrics. Keep raw fields so scoring can evolve later.
+        vjt_add_column_if_missing('pageviews', 'active_duration_seconds INTEGER DEFAULT 0');
+        vjt_add_column_if_missing('pageviews', 'engagement_score INTEGER DEFAULT 0');
+        vjt_add_column_if_missing('pageviews', 'is_engaged INTEGER DEFAULT 0');
+        vjt_add_column_if_missing('pageviews', 'last_activity_at TEXT DEFAULT \'\'');
+        vjt_add_column_if_missing('pageviews', 'heartbeat_count INTEGER DEFAULT 0');
+        vjt_add_column_if_missing('pageviews', 'max_scroll_depth INTEGER DEFAULT 0');
+        // v2: session-level normalized attribution snapshot.
+        vjt_add_column_if_missing('sessions', 'source_slug TEXT DEFAULT \'\'');
+        vjt_add_column_if_missing('sessions', 'source_host TEXT DEFAULT \'\'');
+        vjt_add_column_if_missing('sessions', 'source_type TEXT DEFAULT \'\'');
+        vjt_add_column_if_missing('sessions', 'source_model_version INTEGER DEFAULT 0');
+        $db->exec('CREATE INDEX IF NOT EXISTS idx_sess_source_slug ON sessions(source_slug)');
+        $db->exec('CREATE INDEX IF NOT EXISTS idx_sess_source_host ON sessions(source_host)');
+        $db->exec('CREATE INDEX IF NOT EXISTS idx_sess_source_type ON sessions(source_type)');
+        vjt_meta_set('schema_version', 3);
+        $db->commit();
+    } catch (Exception $e) {
+        if ($db->inTransaction()) $db->rollBack();
+        error_log('VJT schema migration error: ' . $e->getMessage());
+        throw $e;
+    }
+}
+
 function vjt_meta_get($key, $default = null) {
     try {
         $stmt = vjt_db()->prepare("SELECT value FROM meta WHERE key = ?");
@@ -351,14 +427,18 @@ function vjt_meta_set($key, $value) {
 
 function vjt_data_init() {
     if (!is_dir(VJT_DATA_DIR)) {
-        if (!@mkdir(VJT_DATA_DIR, 0755, true)) {
+        if (!@mkdir(VJT_DATA_DIR, 0700, true)) {
             error_log("VJT ERROR: Failed to create data directory at " . VJT_DATA_DIR);
         }
     }
     vjt_create_schema();
+    vjt_run_schema_migrations();
 
     // Seed default settings if missing
-    $defaults = ['session_timeout' => '30', 'retention_days' => '90', 'enable_geo' => '1'];
+    $defaults = [
+        'session_timeout' => '30', 'retention_days' => '90', 'enable_geo' => '1',
+        'excluded_ips' => '', 'heartbeat_seconds' => '45', 'enable_email_summary' => '1'
+    ];
     foreach ($defaults as $k => $v) {
         $stmt = vjt_db()->prepare("INSERT OR IGNORE INTO settings (key, value) VALUES (?, ?)");
         $stmt->execute([$k, $v]);
@@ -366,6 +446,13 @@ function vjt_data_init() {
 
     // One-time migration from the old JSON flat files
     vjt_migrate_json_if_needed();
+
+    // Backfill attribution snapshots gradually so a large legacy database never
+    // receives a long blocking migration during a public tracking request.
+    if ((int)vjt_meta_get('source_backfill_at', 0) < time() - 3600) {
+        vjt_backfill_source_metadata(500);
+        vjt_meta_set('source_backfill_at', time());
+    }
 
     // Run auto-cleanup once per day
     vjt_auto_cleanup();
@@ -562,7 +649,7 @@ function vjt_auto_cleanup() {
     $settings = vjt_get_settings();
     $retentionDays = (int)($settings['retention_days'] ?? 90);
     if ($retentionDays < 1) $retentionDays = 90;
-    $cutoff = date('Y-m-d H:i:s', $now - ($retentionDays * 86400));
+    $cutoff = gmdate('Y-m-d H:i:s', $now - ($retentionDays * 86400));
 
     try {
         $db = vjt_db();
@@ -572,7 +659,7 @@ function vjt_auto_cleanup() {
         $db->prepare("DELETE FROM visitors WHERE last_seen_at < ?")->execute([$cutoff]);
         $db->prepare("DELETE FROM geo_cache WHERE cached_at < ?")->execute([$cutoff]);
         // Drop stale geo-queue entries (anything older than 2 days is unlikely to matter)
-        $db->prepare("DELETE FROM geo_queue WHERE queued_at < ?")->execute([date('Y-m-d H:i:s', $now - 2 * 86400)]);
+        $db->prepare("DELETE FROM geo_queue WHERE queued_at < ?")->execute([gmdate('Y-m-d H:i:s', $now - 2 * 86400)]);
         vjt_meta_set('last_cleanup', $now);
         // Reclaim space periodically (cheap on a bounded DB)
         $db->exec('PRAGMA wal_checkpoint(TRUNCATE)');
@@ -658,7 +745,8 @@ function vjt_upsert_session($data) {
     $now = gmdate('Y-m-d H:i:s');
 
     $stmt = $db->prepare("SELECT referrer, landing_url, landing_title,
-        utm_source, utm_medium, utm_campaign, utm_content, utm_term
+        utm_source, utm_medium, utm_campaign, utm_content, utm_term,
+        source_slug, source_host, source_type, source_model_version
         FROM sessions WHERE session_id = ?");
     $stmt->execute([$sid]);
     $row = $stmt->fetch();
@@ -666,12 +754,14 @@ function vjt_upsert_session($data) {
     if ($row) {
         $sets = ['last_seen_at = :last_seen_at'];
         $params = [':last_seen_at' => $now, ':sid' => $sid];
+        $attributionChanged = false;
         foreach (['ip', 'country', 'city', 'region', 'calling_code'] as $col) {
             if (!empty($data[$col])) { $sets[] = "$col = :$col"; $params[":$col"] = $data[$col]; }
         }
         // Late capture: only fill these if currently empty
         if (empty($row['referrer']) && !empty($data['referrer'])) {
             $sets[] = "referrer = :referrer"; $params[':referrer'] = $data['referrer'];
+            $attributionChanged = true;
         }
         if (empty($row['landing_url']) && !empty($data['landing_url'])) {
             $sets[] = "landing_url = :landing_url"; $params[':landing_url'] = $data['landing_url'];
@@ -682,18 +772,33 @@ function vjt_upsert_session($data) {
         foreach (['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'] as $col) {
             if (empty($row[$col]) && !empty($data[$col])) {
                 $sets[] = "$col = :$col"; $params[":$col"] = vjt_clip($data[$col], 255);
+                $attributionChanged = true;
             }
+        }
+        $sourceInput = $row;
+        foreach (['referrer', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'] as $field) {
+            if (!empty($data[$field])) $sourceInput[$field] = $data[$field];
+        }
+        $source = vjt_source_metadata($sourceInput);
+        if ($attributionChanged || (int)($row['source_model_version'] ?? 0) < VJT_SOURCE_MODEL_VERSION || empty($row['source_slug'])) {
+            foreach (['source_slug', 'source_host', 'source_type'] as $col) {
+                $sets[] = "$col = :$col";
+                $params[":$col"] = $source[$col];
+            }
+            $sets[] = 'source_model_version = :source_model_version';
+            $params[':source_model_version'] = VJT_SOURCE_MODEL_VERSION;
         }
         $sql = "UPDATE sessions SET " . implode(', ', $sets) . " WHERE session_id = :sid";
         $db->prepare($sql)->execute($params);
     } else {
+        $source = vjt_source_metadata($data);
         $stmt = $db->prepare("INSERT INTO sessions
             (session_id, visitor_id, ip, country, city, region, calling_code, referrer,
              landing_url, landing_title, utm_source, utm_medium, utm_campaign, utm_content,
-             utm_term, started_at, last_seen_at)
+             utm_term, source_slug, source_host, source_type, source_model_version, started_at, last_seen_at)
             VALUES (:session_id,:visitor_id,:ip,:country,:city,:region,:calling_code,:referrer,
              :landing_url,:landing_title,:utm_source,:utm_medium,:utm_campaign,:utm_content,
-             :utm_term,:started_at,:last_seen_at)");
+             :utm_term,:source_slug,:source_host,:source_type,:source_model_version,:started_at,:last_seen_at)");
         $stmt->execute([
             ':session_id' => $sid,
             ':visitor_id' => $data['visitor_id'] ?? '',
@@ -710,6 +815,10 @@ function vjt_upsert_session($data) {
             ':utm_campaign' => $data['utm_campaign'] ?? '',
             ':utm_content' => $data['utm_content'] ?? '',
             ':utm_term' => $data['utm_term'] ?? '',
+            ':source_slug' => $source['source_slug'],
+            ':source_host' => $source['source_host'],
+            ':source_type' => $source['source_type'],
+            ':source_model_version' => VJT_SOURCE_MODEL_VERSION,
             ':started_at' => $now,
             ':last_seen_at' => $now,
         ]);
@@ -721,8 +830,10 @@ function vjt_upsert_session($data) {
 function vjt_add_pageview($data) {
     $db = vjt_db();
     $stmt = $db->prepare("INSERT INTO pageviews
-        (session_id, visitor_id, url, title, visited_at, leave_at, duration_seconds, scroll_depth, step_order)
-        VALUES (:session_id,:visitor_id,:url,:title,:visited_at,:leave_at,:duration_seconds,:scroll_depth,:step_order)");
+        (session_id, visitor_id, url, title, visited_at, leave_at, duration_seconds, active_duration_seconds,
+         engagement_score, is_engaged, last_activity_at, heartbeat_count, scroll_depth, max_scroll_depth, step_order)
+        VALUES (:session_id,:visitor_id,:url,:title,:visited_at,:leave_at,:duration_seconds,:active_duration_seconds,
+         :engagement_score,:is_engaged,:last_activity_at,:heartbeat_count,:scroll_depth,:max_scroll_depth,:step_order)");
     $stmt->execute([
         ':session_id' => $data['session_id'],
         ':visitor_id' => $data['visitor_id'],
@@ -731,28 +842,53 @@ function vjt_add_pageview($data) {
         ':visited_at' => vjt_to_beijing($data['visited_at'] ?? ''),
         ':leave_at' => !empty($data['leave_at']) ? vjt_to_beijing($data['leave_at']) : null,
         ':duration_seconds' => (int)($data['duration_seconds'] ?? 0),
+        ':active_duration_seconds' => max(0, (int)($data['active_duration_seconds'] ?? 0)),
+        ':engagement_score' => min(100, max(0, (int)($data['engagement_score'] ?? 0))),
+        ':is_engaged' => !empty($data['is_engaged']) ? 1 : 0,
+        ':last_activity_at' => !empty($data['last_activity_at']) ? vjt_to_beijing($data['last_activity_at']) : '',
+        ':heartbeat_count' => max(0, (int)($data['heartbeat_count'] ?? 0)),
         ':scroll_depth' => (int)($data['scroll_depth'] ?? 0),
+        ':max_scroll_depth' => max(0, min(100, (int)($data['max_scroll_depth'] ?? ($data['scroll_depth'] ?? 0)))),
         ':step_order' => (int)($data['step_order'] ?? 1),
     ]);
 }
 
-function vjt_update_pageview_leave($sessionId, $url, $leaveAt, $duration, $scrollDepth) {
+function vjt_update_pageview_leave($sessionId, $url, $leaveAt, $duration, $scrollDepth, $activeDuration = 0, $heartbeatCount = 0, $maxScroll = 0, $lastActivityAt = '', $engagementScore = 0, $isEngaged = false, $stepOrder = 0) {
     $db = vjt_db();
-    // Most recent open pageview for this session+url
-    $stmt = $db->prepare("SELECT id, scroll_depth FROM pageviews
-        WHERE session_id = ? AND url = ? AND (leave_at IS NULL OR leave_at = '')
-        ORDER BY id DESC LIMIT 1");
-    $stmt->execute([$sessionId, $url]);
+    // Visibility changes may temporarily close a pageview and later resume it.
+    // Prefer the immutable step_order so delayed packets for a repeated URL do
+    // not update a newer visit to that same URL.
+    $where = 'session_id = ? AND url = ?';
+    $params = [$sessionId, $url];
+    if ((int)$stepOrder > 0) {
+        $where .= ' AND step_order = ?';
+        $params[] = (int)$stepOrder;
+    }
+    $stmt = $db->prepare("SELECT id, scroll_depth, max_scroll_depth, duration_seconds, active_duration_seconds, heartbeat_count, engagement_score, is_engaged FROM pageviews
+        WHERE $where ORDER BY id DESC LIMIT 1");
+    $stmt->execute($params);
     $row = $stmt->fetch();
     if (!$row) return;
 
-    $newScroll = max((int)$row['scroll_depth'], (int)$scrollDepth);
+    $newScroll = max((int)$row['scroll_depth'], (int)$scrollDepth, (int)$maxScroll);
     $upd = $db->prepare("UPDATE pageviews
-        SET leave_at = :leave_at, duration_seconds = :duration, scroll_depth = :scroll
+        SET leave_at = CASE WHEN :leave_at <> '' THEN :leave_at ELSE leave_at END,
+            duration_seconds = MAX(duration_seconds, :duration),
+            active_duration_seconds = MAX(active_duration_seconds, :active_duration),
+            heartbeat_count = MAX(heartbeat_count, :heartbeat_count),
+            engagement_score = MAX(engagement_score, :engagement_score),
+            is_engaged = MAX(is_engaged, :is_engaged),
+            last_activity_at = CASE WHEN :last_activity_at <> '' THEN :last_activity_at ELSE last_activity_at END,
+            scroll_depth = :scroll, max_scroll_depth = MAX(max_scroll_depth, :scroll)
         WHERE id = :id");
     $upd->execute([
         ':leave_at' => vjt_to_beijing($leaveAt),
         ':duration' => max(0, (int)$duration),
+        ':active_duration' => max(0, (int)$activeDuration),
+        ':heartbeat_count' => max(0, (int)$heartbeatCount),
+        ':engagement_score' => min(100, max(0, (int)$engagementScore)),
+        ':is_engaged' => $isEngaged ? 1 : 0,
+        ':last_activity_at' => !empty($lastActivityAt) ? vjt_to_beijing($lastActivityAt) : '',
         ':scroll' => $newScroll,
         ':id' => $row['id'],
     ]);
@@ -792,7 +928,7 @@ function vjt_sync_pageview_snapshot($sessionId, $pages) {
 function vjt_add_submission($data) {
     $db = vjt_db();
     $now = gmdate('Y-m-d H:i:s');
-    $cutoff = date('Y-m-d H:i:s', strtotime('-10 minutes'));
+    $cutoff = gmdate('Y-m-d H:i:s', time() - 600);
 
     // Deduplication: same visitor+session+form+status within 10 minutes
     $stmt = $db->prepare("SELECT id FROM submissions
@@ -1228,12 +1364,74 @@ function vjt_source_label($session) {
     return $host === '' ? 'Direct' : $host;
 }
 
+function vjt_source_metadata($session) {
+    $host = vjt_normalize_referrer_host($session['referrer'] ?? '');
+    $type = vjt_classify_source($session);
+    $utmSource = strtolower(trim((string)($session['utm_source'] ?? '')));
+    $slug = $utmSource !== '' ? preg_replace('/[^a-z0-9._-]+/', '-', $utmSource) : $host;
+    if ($slug === '' || $slug === '__internal__') $slug = $type;
+    // Separate Bing chat from normal Bing search without treating all Bing as AI.
+    $path = strtolower((string)parse_url((string)($session['referrer'] ?? ''), PHP_URL_PATH));
+    if ($type === 'ai' && vjt_source_host_matches($host, ['bing.com']) && preg_match('#^/chat(?:/|$)#', $path)) $slug = 'copilot';
+    foreach (['chatgpt', 'perplexity', 'gemini', 'copilot', 'claude', 'grok', 'deepseek', 'doubao'] as $ai) {
+        if ($type === 'ai' && ($utmSource === $ai || strpos($host, $ai) !== false)) { $slug = $ai; break; }
+    }
+    return [
+        'source_slug' => vjt_clip($slug, 64),
+        'source_host' => vjt_clip($host === '__internal__' ? '' : $host, 190),
+        'source_type' => vjt_clip($type, 32),
+    ];
+}
+
+function vjt_is_google_organic_session($session) {
+    if (vjt_classify_source($session) === 'ads') return false;
+    $utmSource = strtolower(trim((string)($session['utm_source'] ?? '')));
+    if ($utmSource === 'google' || strpos($utmSource, 'google.') === 0) return true;
+
+    $host = vjt_normalize_referrer_host($session['referrer'] ?? '');
+    foreach (vjt_source_catalog()['search'] as $domain) {
+        if (strpos($domain, 'google.') === 0 && vjt_source_host_matches($host, [$domain])) return true;
+    }
+    return false;
+}
+
+function vjt_backfill_source_metadata($limit = 500) {
+    $db = vjt_db();
+    $stmt = $db->prepare("SELECT session_id, referrer, utm_source, utm_medium, source_model_version
+        FROM sessions WHERE source_model_version < ? OR source_slug = '' LIMIT ?");
+    $stmt->execute([VJT_SOURCE_MODEL_VERSION, max(1, min(5000, (int)$limit))]);
+    $upd = $db->prepare('UPDATE sessions SET source_slug=?, source_host=?, source_type=?, source_model_version=? WHERE session_id=?');
+    foreach ($stmt->fetchAll() as $row) {
+        $meta = vjt_source_metadata($row);
+        $upd->execute([$meta['source_slug'], $meta['source_host'], $meta['source_type'], VJT_SOURCE_MODEL_VERSION, $row['session_id']]);
+    }
+}
+
+function vjt_ip_is_excluded($ip) {
+    $ip = trim((string)$ip);
+    if ($ip === '') return false;
+    $rules = preg_split('/[\r\n,]+/', (string)(vjt_get_settings()['excluded_ips'] ?? ''));
+    foreach ($rules as $rule) {
+        $rule = trim($rule);
+        if ($rule === '') continue;
+        if (strpos($rule, '/') === false && hash_equals($rule, $ip)) return true;
+        if (strpos($rule, '/') !== false) {
+            [$network, $bits] = array_pad(explode('/', $rule, 2), 2, '');
+            if (filter_var($network, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) && filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) && ctype_digit($bits) && (int)$bits >= 0 && (int)$bits <= 32) {
+                $mask = (int)$bits === 0 ? 0 : (-1 << (32 - (int)$bits));
+                if ((ip2long($ip) & $mask) === (ip2long($network) & $mask)) return true;
+            }
+        }
+    }
+    return false;
+}
+
 // ── Settings ────────────────────────────────────────────────────────────────
 
 function vjt_get_settings($forceReload = false) {
     static $cache = null;
     if ($cache !== null && !$forceReload) return $cache;
-    $defaults = ['session_timeout' => '30', 'retention_days' => '90', 'enable_geo' => '1'];
+    $defaults = ['session_timeout' => '30', 'retention_days' => '90', 'enable_geo' => '1', 'excluded_ips' => '', 'heartbeat_seconds' => '45', 'enable_email_summary' => '1'];
     try {
         $settingsStmt = vjt_db()->prepare("SELECT key, value FROM settings");
         $settingsStmt->execute();
@@ -1253,6 +1451,9 @@ function vjt_save_settings($data) {
         'session_timeout' => (string)max(5, (int)($data['session_timeout'] ?? 30)),
         'retention_days'  => (string)max(1, (int)($data['retention_days'] ?? 90)),
         'enable_geo'      => !empty($data['enable_geo']) ? '1' : '0',
+        'excluded_ips'    => vjt_clip(trim((string)($data['excluded_ips'] ?? '')), 4096),
+        'heartbeat_seconds'=> (string)min(120, max(30, (int)($data['heartbeat_seconds'] ?? 45))),
+        'enable_email_summary' => !empty($data['enable_email_summary']) ? '1' : '0',
     ];
     $stmt = $db->prepare("INSERT INTO settings (key, value) VALUES (?, ?)
         ON CONFLICT(key) DO UPDATE SET value = excluded.value");
@@ -1284,7 +1485,7 @@ function vjt_get_overview($since) {
     $totalSubmissions = (int)($subRow['total'] ?? 0);
     $successSubmissions = (int)($subRow['success'] ?? 0);
 
-    $durStmt = $db->prepare("SELECT AVG(duration_seconds) a FROM pageviews
+    $durStmt = $db->prepare("SELECT AVG(CASE WHEN active_duration_seconds > 0 THEN active_duration_seconds ELSE duration_seconds END) a FROM pageviews
         WHERE visited_at >= ? AND duration_seconds > 0");
     $durStmt->execute([$since]);
     $durRow = $durStmt->fetch();
@@ -1411,6 +1612,32 @@ function vjt_get_overview($since) {
         'sourceVisitorCounts'=> $sourceVisitorCounts,
         'sourceLeadCounts'   => $sourceLeadCounts,
     ];
+}
+
+function vjt_get_ai_referrals($since) {
+    $db = vjt_db();
+    $stmt = $db->prepare("SELECT session_id, visitor_id, source_slug, source_host, landing_url
+        FROM sessions WHERE started_at >= ? AND source_type = 'ai'");
+    $stmt->execute([$since]);
+    $rows = [];
+    $leadStmt = $db->prepare("SELECT 1 FROM submissions WHERE session_id = ? AND status IN ('success','intent') LIMIT 1");
+    foreach ($stmt->fetchAll() as $session) {
+        $platform = $session['source_slug'] ?: 'other-ai';
+        if (!isset($rows[$platform])) $rows[$platform] = ['platform'=>$platform, 'sessions'=>0, 'visitors'=>[], 'leads'=>[], 'pages'=>[]];
+        $rows[$platform]['sessions']++;
+        $rows[$platform]['visitors'][$session['visitor_id']] = true;
+        if ($session['landing_url']) $rows[$platform]['pages'][$session['landing_url']] = true;
+        $leadStmt->execute([$session['session_id']]);
+        if ($leadStmt->fetch()) $rows[$platform]['leads'][$session['visitor_id']] = true;
+    }
+    $out = [];
+    foreach ($rows as $row) {
+        $visitors = count($row['visitors']);
+        $leads = count($row['leads']);
+        $out[] = ['platform'=>$row['platform'], 'sessions'=>$row['sessions'], 'visitors'=>$visitors, 'leads'=>$leads, 'pages'=>count($row['pages']), 'conversion_rate'=>$visitors ? round($leads / $visitors * 100, 1) : 0];
+    }
+    usort($out, function($a, $b) { return $b['visitors'] <=> $a['visitors']; });
+    return $out;
 }
 
 // ── Dashboard: Submissions List ──────────────────────────────────────────────
@@ -1645,6 +1872,23 @@ function vjt_get_journey($visitorId) {
     $s->execute([$visitorId]);
     $sessions = $s->fetchAll();
 
+    // GSC data is delayed and aggregate, so query only the most recent eligible
+    // historical Google Organic session. This caps an uncached journey request
+    // at one external API call and never presents the terms as visitor-level data.
+    if (vjt_gsc_config()) {
+        for ($i = count($sessions) - 1; $i >= 0; $i--) {
+            if (!vjt_is_google_organic_session($sessions[$i])) continue;
+            $startedTs = strtotime((string)($sessions[$i]['started_at'] ?? ''));
+            if ($startedTs === false || gmdate('Y-m-d', $startedTs) > gmdate('Y-m-d', time() - 2 * 86400)) continue;
+            $sessions[$i]['gsc_keywords'] = vjt_gsc_keywords_for_landing(
+                $sessions[$i]['landing_url'] ?? '',
+                $sessions[$i]['started_at'] ?? '',
+                5
+            );
+            break;
+        }
+    }
+
     $p = $db->prepare("SELECT * FROM pageviews WHERE visitor_id = ? ORDER BY visited_at ASC, id ASC");
     $p->execute([$visitorId]);
     $pageviews = $p->fetchAll();
@@ -1662,6 +1906,99 @@ function vjt_get_journey($visitorId) {
 }
 
 // ── Dashboard: Data Cleanup ──────────────────────────────────────────────────
+
+function vjt_gsc_base64url($value) { return rtrim(strtr(base64_encode($value), '+/', '-_'), '='); }
+
+function vjt_gsc_config() {
+    $credentialsPath = trim((string)getenv('VJT_GSC_SERVICE_ACCOUNT_JSON'));
+    $siteUrl = trim((string)getenv('VJT_GSC_SITE_URL'));
+    return ($credentialsPath !== '' && $siteUrl !== '' && is_file($credentialsPath)) ? ['credentials'=>$credentialsPath, 'site_url'=>$siteUrl] : null;
+}
+
+function vjt_gsc_access_token($config) {
+    $cached = json_decode((string)vjt_meta_get('gsc_access_token', ''), true);
+    if (is_array($cached) && !empty($cached['token']) && (int)($cached['expires_at'] ?? 0) > time() + 60) return $cached['token'];
+    if (!function_exists('openssl_sign')) return '';
+    $credentials = json_decode((string)@file_get_contents($config['credentials']), true);
+    if (!is_array($credentials) || empty($credentials['client_email']) || empty($credentials['private_key'])) return '';
+    $now = time();
+    $header = vjt_gsc_base64url(json_encode(['alg'=>'RS256','typ'=>'JWT']));
+    $claims = vjt_gsc_base64url(json_encode(['iss'=>$credentials['client_email'], 'scope'=>'https://www.googleapis.com/auth/webmasters.readonly', 'aud'=>'https://oauth2.googleapis.com/token', 'iat'=>$now, 'exp'=>$now + 3600]));
+    $input = $header . '.' . $claims;
+    if (!openssl_sign($input, $signature, $credentials['private_key'], OPENSSL_ALGO_SHA256)) return '';
+    $body = http_build_query(['grant_type'=>'urn:ietf:params:oauth:grant-type:jwt-bearer', 'assertion'=>$input . '.' . vjt_gsc_base64url($signature)]);
+    $context = stream_context_create(['http'=>['method'=>'POST','header'=>"Content-Type: application/x-www-form-urlencoded\r\nContent-Length: " . strlen($body), 'content'=>$body, 'timeout'=>5, 'ignore_errors'=>true]]);
+    $response = @file_get_contents('https://oauth2.googleapis.com/token', false, $context);
+    $data = json_decode((string)$response, true);
+    if (empty($data['access_token'])) return '';
+    vjt_meta_set('gsc_access_token', json_encode(['token'=>$data['access_token'], 'expires_at'=>$now + max(60, (int)($data['expires_in'] ?? 3600) - 60)]));
+    return $data['access_token'];
+}
+
+function vjt_gsc_keywords_for_landing($landingUrl, $startedAt, $limit = 5) {
+    $config = vjt_gsc_config();
+    if (!$config || !$landingUrl) return [];
+    $startedTs = strtotime((string)$startedAt);
+    if ($startedTs === false || $startedTs <= 0) return [];
+    $date = gmdate('Y-m-d', $startedTs);
+    // GSC typically has delayed data; this remains aggregate page/day data.
+    if ($date > gmdate('Y-m-d', time() - 2 * 86400)) return [];
+
+    // GSC's page dimension does not normally include campaign query strings.
+    $landingUrl = vjt_safe_http_url($landingUrl);
+    if ($landingUrl === '') return [];
+    $parts = parse_url($landingUrl);
+    if (empty($parts['scheme']) || empty($parts['host'])) return [];
+    $landingUrl = strtolower($parts['scheme']) . '://' . strtolower($parts['host']) . ($parts['path'] ?? '/');
+
+    $key = 'gsc_keywords_' . sha1($date . '|' . $landingUrl);
+    $cached = json_decode((string)vjt_meta_get($key, ''), true);
+    if (is_array($cached) && isset($cached['keywords'])) {
+        $ttl = !empty($cached['keywords']) ? 7 * 86400 : 12 * 3600;
+        if ((int)($cached['cached_at'] ?? 0) > time() - $ttl) return $cached['keywords'];
+    }
+    $token = vjt_gsc_access_token($config);
+    if ($token === '') return [];
+    $payload = json_encode(['startDate'=>$date, 'endDate'=>$date, 'dimensions'=>['query'], 'rowLimit'=>max(1, min(10, (int)$limit)), 'dimensionFilterGroups'=>[['filters'=>[['dimension'=>'page','operator'=>'equals','expression'=>$landingUrl]]]]]);
+    $url = 'https://www.googleapis.com/webmasters/v3/sites/' . rawurlencode($config['site_url']) . '/searchAnalytics/query';
+    $context = stream_context_create(['http'=>['method'=>'POST','header'=>"Content-Type: application/json\r\nAuthorization: Bearer {$token}\r\nContent-Length: " . strlen($payload), 'content'=>$payload, 'timeout'=>5, 'ignore_errors'=>true]]);
+    $response = @file_get_contents($url, false, $context);
+    $data = json_decode((string)$response, true);
+    $keywords = [];
+    foreach (($data['rows'] ?? []) as $row) if (!empty($row['keys'][0])) $keywords[] = vjt_clip((string)$row['keys'][0], 160);
+    vjt_meta_set($key, json_encode(['keywords'=>$keywords, 'cached_at'=>time()]));
+    return $keywords;
+}
+
+function vjt_build_email_summary($visitorId, $sessionId) {
+    $settings = vjt_get_settings();
+    if (($settings['enable_email_summary'] ?? '1') !== '1') return '';
+    $db = vjt_db();
+    $sessionStmt = $db->prepare('SELECT * FROM sessions WHERE session_id = ? AND visitor_id = ? LIMIT 1');
+    $sessionStmt->execute([$sessionId, $visitorId]);
+    $session = $sessionStmt->fetch();
+    if (!$session) return '';
+
+    $pageStmt = $db->prepare('SELECT url, title, duration_seconds, active_duration_seconds, max_scroll_depth, scroll_depth FROM pageviews WHERE session_id = ? ORDER BY step_order ASC, id ASC LIMIT 20');
+    $pageStmt->execute([$sessionId]);
+    $pages = $pageStmt->fetchAll();
+    $active = 0;
+    $maxScroll = 0;
+    foreach ($pages as $page) {
+        $active += (int)($page['active_duration_seconds'] ?: $page['duration_seconds']);
+        $maxScroll = max($maxScroll, (int)($page['max_scroll_depth'] ?: $page['scroll_depth']));
+    }
+    $lines = ['VJT ATTRIBUTION', 'Attributed source: ' . vjt_source_label($session), 'Landing page: ' . ($session['landing_url'] ?: '-')];
+    if (!empty($session['utm_source']) || !empty($session['utm_medium']) || !empty($session['utm_campaign'])) {
+        $lines[] = 'Campaign: ' . trim(($session['utm_source'] ?: '-') . ' / ' . ($session['utm_medium'] ?: '-') . ' / ' . ($session['utm_campaign'] ?: '-'));
+    }
+    if (vjt_is_google_organic_session($session) && ($keywords = vjt_gsc_keywords_for_landing($session['landing_url'] ?? '', $session['started_at'] ?? '', 5))) {
+        $lines[] = 'Related GSC queries (aggregate page/day, not this visitor): ' . implode(', ', $keywords);
+    }
+    $lines[] = 'Journey: ' . count($pages) . ' page(s), active time ' . $active . 's, max scroll ' . $maxScroll . '%';
+    foreach (array_slice($pages, 0, 6) as $index => $page) $lines[] = ($index + 1) . '. ' . ($page['title'] ?: $page['url']);
+    return implode("\n", $lines);
+}
 
 function vjt_cleanup_old_data($days) {
     $cutoff = gmdate('Y-m-d H:i:s', time() - ($days * 86400));
@@ -1722,11 +2059,11 @@ function vjt_get_traffic_data($since) {
     }
     for ($y = $minYear; $y <= (int)date('Y'); $y++) { $yearlyTrend[(string)$y] = $yearCounts[(string)$y] ?? 0; }
 
-    // Top pages (views, avg duration, max scroll) within window
+    // Top pages (views, active-time-first average, max scroll) within window
     $topPagesStmt = $db->prepare("SELECT url,
             COUNT(*) views,
-            AVG(CASE WHEN duration_seconds > 0 THEN duration_seconds END) avg_dur,
-            MAX(scroll_depth) max_scroll
+            AVG(CASE WHEN active_duration_seconds > 0 THEN active_duration_seconds WHEN duration_seconds > 0 THEN duration_seconds END) avg_dur,
+            MAX(CASE WHEN max_scroll_depth > 0 THEN max_scroll_depth ELSE scroll_depth END) max_scroll
         FROM pageviews WHERE visited_at >= ? AND url <> ''
         GROUP BY url ORDER BY views DESC LIMIT 20");
     $topPagesStmt->execute([$since]);
@@ -1757,18 +2094,29 @@ function vjt_get_traffic_data($since) {
     $uniqueUrlsStmt->execute([$since]);
     $uniqueUrls = (int)$uniqueUrlsStmt->fetch()['c'];
 
-    // Bounce rate: sessions with a single pageview within window
+    // Bounce rate: single-page sessions without an engagement signal or Lead.
+    // Old rows fall back to duration/scroll because they predate is_engaged.
     $bounceStmt = $db->prepare("SELECT
             COUNT(*) total_sessions,
-            SUM(CASE WHEN pv = 1 THEN 1 ELSE 0 END) bounces
-        FROM (SELECT session_id, COUNT(*) pv FROM pageviews WHERE visited_at >= ? GROUP BY session_id)");
+            SUM(CASE WHEN pv = 1 AND engaged = 0 AND has_lead = 0 THEN 1 ELSE 0 END) bounces
+        FROM (
+            SELECT p.session_id, COUNT(*) pv,
+                MAX(CASE WHEN p.is_engaged = 1 OR p.active_duration_seconds >= 10
+                    OR (p.active_duration_seconds = 0 AND p.duration_seconds >= 10)
+                    OR p.max_scroll_depth >= 50 OR p.scroll_depth >= 50 THEN 1 ELSE 0 END) engaged,
+                CASE WHEN EXISTS (
+                    SELECT 1 FROM submissions s WHERE s.session_id = p.session_id
+                    AND s.status IN ('success','intent')
+                ) THEN 1 ELSE 0 END has_lead
+            FROM pageviews p WHERE p.visited_at >= ? GROUP BY p.session_id
+        )");
     $bounceStmt->execute([$since]);
     $bounceRow = $bounceStmt->fetch();
     $totalSessions = (int)($bounceRow['total_sessions'] ?? 0);
     $bounceSessions = (int)($bounceRow['bounces'] ?? 0);
     $bounceRate = $totalSessions > 0 ? round(($bounceSessions / $totalSessions) * 100) : 0;
 
-    $dwellStmt = $db->prepare("SELECT AVG(duration_seconds) a FROM pageviews
+    $dwellStmt = $db->prepare("SELECT AVG(CASE WHEN active_duration_seconds > 0 THEN active_duration_seconds ELSE duration_seconds END) a FROM pageviews
         WHERE visited_at >= ? AND duration_seconds > 0");
     $dwellStmt->execute([$since]);
     $dwellRow = $dwellStmt->fetch();
@@ -1880,16 +2228,32 @@ function vjt_get_products($dateFrom = '', $dateTo = '') {
 
 // ── Dashboard: CSV Export ────────────────────────────────────────────────────
 
+// Prevent spreadsheet formula execution when an exported value begins with a
+// formula marker. Values originate from public analytics endpoints and therefore
+// must remain data when opened in Excel/LibreOffice.
+function vjt_csv_safe_cell($value) {
+    if ($value === null) return '';
+    if (is_bool($value)) return $value ? '1' : '0';
+    if (is_int($value) || is_float($value)) return $value;
+    $value = (string)$value;
+    return preg_match('/^[\x00-\x20]*[=+\-@]/', $value) ? "'" . $value : $value;
+}
+
+function vjt_csv_safe_row($row) {
+    return array_map('vjt_csv_safe_cell', $row);
+}
+
 function vjt_export_submissions_csv_start($filters) {
     $result = vjt_get_submissions_list($filters);
     $items = $result['items'];
 
     header('Content-Type: text/csv; charset=utf-8');
+    header('X-Content-Type-Options: nosniff');
     header('Content-Disposition: attachment; filename=vjt-submissions-' . date('Y-m-d') . '.csv');
     $output = fopen('php://output', 'w');
     fputcsv($output, ['Last Contact (Beijing)', 'First Contact (Beijing)', 'Visitor ID', 'Channels', 'Events', 'Page', 'IP', 'Country', 'Status']);
     foreach ($items as $sub) {
-        fputcsv($output, [
+        fputcsv($output, vjt_csv_safe_row([
             vjt_format_for_admin($sub['last_submitted_at'] ?? ($sub['submitted_at'] ?? '')),
             vjt_format_for_admin($sub['first_submitted_at'] ?? ''),
             $sub['visitor_id'] ?? '',
@@ -1899,8 +2263,32 @@ function vjt_export_submissions_csv_start($filters) {
             $sub['ip'] ?? '',
             $sub['country'] ?? '',
             $sub['status'] ?? '',
-        ]);
+        ]));
     }
     fclose($output);
     exit;
+}
+
+function vjt_export_visitors_csv_start($filters) {
+    $result = vjt_get_visitors_list(array_merge($filters, ['page'=>1, 'per_page'=>100000]));
+    header('Content-Type: text/csv; charset=utf-8');
+    header('X-Content-Type-Options: nosniff');
+    header('Content-Disposition: attachment; filename=vjt-visitors-' . date('Y-m-d') . '.csv');
+    $out = fopen('php://output', 'w');
+    fputcsv($out, ['Visitor ID','First Seen (Beijing)','Last Seen (Beijing)','Country','Device','Browser','Source','Sessions','Leads','Session Time (s)']);
+    foreach ($result['items'] as $v) fputcsv($out, vjt_csv_safe_row([$v['visitor_id'], vjt_format_for_admin($v['first_seen_at']), vjt_format_for_admin($v['last_seen_at']), vjt_country_name($v['country']), $v['device_type'], $v['browser'], $v['source'], $v['sessions'], $v['submissions'], $v['session_time']]));
+    fclose($out); exit;
+}
+
+function vjt_export_journey_csv_start($visitorId) {
+    $journey = vjt_get_journey($visitorId);
+    header('Content-Type: text/csv; charset=utf-8');
+    header('X-Content-Type-Options: nosniff');
+    header('Content-Disposition: attachment; filename=vjt-journey-' . preg_replace('/[^A-Za-z0-9_-]/', '', $visitorId) . '.csv');
+    $out = fopen('php://output', 'w');
+    fputcsv($out, ['Session','Visited (Beijing)','URL','Title','Duration (s)','Active Duration (s)','Max Scroll (%)','Source']);
+    $sources = [];
+    foreach ($journey['sessions'] as $s) $sources[$s['session_id']] = vjt_source_label($s);
+    foreach ($journey['pageviews'] as $pv) fputcsv($out, vjt_csv_safe_row([$pv['session_id'], vjt_format_for_admin($pv['visited_at']), $pv['url'], $pv['title'], $pv['duration_seconds'], $pv['active_duration_seconds'] ?? 0, $pv['max_scroll_depth'] ?? ($pv['scroll_depth'] ?? 0), $sources[$pv['session_id']] ?? '']));
+    fclose($out); exit;
 }

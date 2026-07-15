@@ -173,7 +173,7 @@ const placeholders: Record<string, string> = {
           link.dir = dir;
 
           // Highlight item number
-          const itemNoDisplay = item.itemNo ? `<span class="text-xs text-[#5D4E37] font-mono bg-[#F5F5DC] px-2 py-0.5 rounded">${item.itemNo}</span>` : '';
+          const itemNoDisplay = item.itemNo ? `<span class="text-xs text-[#5D4E37] font-mono bg-[#F5F5DC] px-2 py-0.5 rounded-sm">${item.itemNo}</span>` : '';
 
           link.innerHTML = `
             <div class="flex items-center justify-between gap-2 mb-1">
@@ -184,7 +184,7 @@ const placeholders: Record<string, string> = {
             ${item.categories?.length ? `
               <div class="flex flex-wrap gap-1 mt-2">
                 ${item.categories.slice(0, 3).map((cat: string) =>
-                  `<span class="text-xs text-gray-600 bg-gray-100 px-2 py-0.5 rounded">${cat}</span>`
+                  `<span class="text-xs text-gray-600 bg-gray-100 px-2 py-0.5 rounded-sm">${cat}</span>`
                 ).join('')}
               </div>
             ` : ''}

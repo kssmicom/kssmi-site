@@ -26,12 +26,11 @@ jobs:
         run: npm ci --legacy-peer-deps
 
       - name: Audit npm dependencies
-        run: npm audit --audit-level=critical
-        # Blocks deployment on CRITICAL vulnerabilities only.
-        # NOTE: Astro has known HIGH vulns (GHSA-8hv8-536x-4wqp; fixed in 6.3.3).
-        # Upgrading Astro 5→6 requires migrating @astrojs/tailwind→@tailwindcss/vite
-        # (Tailwind v4 migration). Until then, HIGH vulns are tolerated.
-        # Review output periodically; fix immediately if critical appears.
+        run: npm audit --audit-level=high
+        # Astro is now on the patched 6.x line, so HIGH vulnerabilities block deployment.
+
+      - name: Lint PHP sources
+        run: find public private -name '*.php' -not -path '*/vendor/*' -print0 | xargs -0 -n1 php -l
 
       - name: Build Astro site
         run: npm run build
@@ -52,11 +51,7 @@ jobs:
         run: |
           cd public
           composer install --no-dev --optimize-autoloader
-
-      - name: Create email logs file
-        run: |
-          touch dist/email-logs.json
-          echo "[]" > dist/email-logs.json
+          composer audit --locked --no-dev
 
       - name: Copy PHP files to dist
         run: |
@@ -109,17 +104,19 @@ jobs:
             # Make PHP files executable
             find . -name "*.php" -exec chmod 755 {} \; 2>/dev/null || true
 
-            # Create writable files if they don't exist
-            touch email-logs.json 2>/dev/null || true
-            touch .email_logs_password 2>/dev/null || true
-            touch .email_reset_tokens.json 2>/dev/null || true
+            # Email data and credentials live above public_html, outside web access.
+            PRIVATE_ROOT=/home/kssmi.com
+            touch "$PRIVATE_ROOT/email-logs.json" 2>/dev/null || true
+            test -s "$PRIVATE_ROOT/email-logs.json" || echo '[]' > "$PRIVATE_ROOT/email-logs.json" 2>/dev/null || true
+            touch "$PRIVATE_ROOT/.email_logs_password" 2>/dev/null || true
+            touch "$PRIVATE_ROOT/.email_reset_tokens.json" 2>/dev/null || true
 
             # Set writable permissions for data files (PHP needs to write to these)
             # chmod 640 (was 666): owner read/write, group read, other none.
             # PHP-FPM runs as kssmi4374:kssmi4374 — owner can write, others can't.
             # 666 was overly permissive: let any user on the server read/write these
             # sensitive files (email reset tokens, password hash).
-            chmod 640 email-logs.json .email_logs_password .email_reset_tokens.json 2>/dev/null || true
+            chmod 640 "$PRIVATE_ROOT/email-logs.json" "$PRIVATE_ROOT/.email_logs_password" "$PRIVATE_ROOT/.email_reset_tokens.json" 2>/dev/null || true
 
             # VJT SQLite store — lives OUTSIDE public_html (P2-4 of security-004.md)
             # The actual data file (vjt.sqlite + WAL/SHM) is NOT touched by deploy:
@@ -132,7 +129,7 @@ jobs:
             chmod 750 /home/kssmi.com/vjt_data 2>/dev/null || sudo chmod 750 /home/kssmi.com/vjt_data 2>/dev/null || true
 
             # Set ownership for data files
-            chown kssmi:kssmi email-logs.json .email_logs_password .email_reset_tokens.json 2>/dev/null || sudo chown kssmi:kssmi email-logs.json .email_logs_password .email_reset_tokens.json 2>/dev/null || true
+            chown kssmi:kssmi "$PRIVATE_ROOT/email-logs.json" "$PRIVATE_ROOT/.email_logs_password" "$PRIVATE_ROOT/.email_reset_tokens.json" 2>/dev/null || sudo chown kssmi:kssmi "$PRIVATE_ROOT/email-logs.json" "$PRIVATE_ROOT/.email_logs_password" "$PRIVATE_ROOT/.email_reset_tokens.json" 2>/dev/null || true
 
       - name: Verify deployed security controls
         shell: bash
@@ -164,6 +161,7 @@ jobs:
           check_status 'https://kssmi.com/php-status.php' 404
           check_status 'https://kssmi.com/vjt-db-setup.php' 404
           check_status 'https://kssmi.com/.env' 404
+          check_status 'https://kssmi.com/email-logs.json' 403
           check_status 'https://kssmi.com/composer.json' 403
 
       - name: Deployment Complete

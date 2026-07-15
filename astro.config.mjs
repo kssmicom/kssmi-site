@@ -1,6 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 import pagefind from 'astro-pagefind';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -13,12 +13,7 @@ export default defineConfig({
     prefetchAll: false,        // Don't auto-prefetch every link on the page
     defaultStrategy: 'viewport', // Prefetch as soon as the link is visible on screen
   },
-  integrations: [
-    tailwind({
-      applyBaseStyles: false,
-    }),
-    pagefind(),
-  ],
+  integrations: [pagefind()],
   i18n: {
     defaultLocale: 'en',
     locales: [
@@ -37,6 +32,7 @@ export default defineConfig({
   },
   vite: {
     plugins: [
+      tailwindcss(),
       {
         name: 'content-folder-watcher',
         configureServer(server) {
@@ -44,7 +40,7 @@ export default defineConfig({
           const state = {
             knownFolders: new Set(),
             restarting: false,
-            interval: null,
+            interval: /** @type {ReturnType<typeof setInterval> | null} */ (null),
           };
 
           const productsDir = path.resolve('./src/content/products');

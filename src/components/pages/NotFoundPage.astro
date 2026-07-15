@@ -593,7 +593,7 @@ const t = i18n[lang] || i18n.en;
 <Layout title={t.title} lang={lang} noindex={true}>
   <Header lang={lang} />
 
-  <main id="main-content" tabindex="-1" class="w-full min-h-screen bg-stone-50 pt-12 pb-16 flex items-center focus:outline-none" dir={isRTL ? 'rtl' : 'ltr'}>
+  <main id="main-content" tabindex="-1" class="w-full min-h-screen bg-stone-50 pt-12 pb-16 flex items-center focus:outline-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
     <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1240px] mx-auto px-4">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -610,7 +610,7 @@ const t = i18n[lang] || i18n.en;
               loading="lazy"
               decoding="async"
             />
-            <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-3 shadow-sm transition-all duration-300 group-hover:bg-white group-hover:shadow-md group-hover:-translate-y-1">
+            <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-xs rounded-lg px-4 py-3 shadow-xs transition-all duration-300 group-hover:bg-white group-hover:shadow-md group-hover:-translate-y-1">
               <p class="text-sm font-semibold text-[#5D4E37]">{t.companyName}</p>
               <p class="text-xs text-stone-500">{t.since}</p>
             </div>
@@ -650,7 +650,7 @@ const t = i18n[lang] || i18n.en;
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-xl mx-auto lg:mx-0">
               <a href={`/${currentPath}quote`}
                 class="group flex items-center gap-3 bg-white rounded-xl p-4 border border-stone-200 hover:border-[#8B7355] hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-                <span class="flex-shrink-0 w-10 h-10 bg-[#8B7355]/10 rounded-lg flex items-center justify-center group-hover:bg-[#4A3D2E]/20 transition-colors">
+                <span class="shrink-0 w-10 h-10 bg-[#8B7355]/10 rounded-lg flex items-center justify-center group-hover:bg-[#4A3D2E]/20 transition-colors">
                   <svg class="w-5 h-5 text-[#5D4E37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
@@ -663,7 +663,7 @@ const t = i18n[lang] || i18n.en;
 
               <a href={`/${currentPath}product`}
                 class="group flex items-center gap-3 bg-white rounded-xl p-4 border border-stone-200 hover:border-[#8B7355] hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-                <span class="flex-shrink-0 w-10 h-10 bg-[#8B7355]/10 rounded-lg flex items-center justify-center group-hover:bg-[#4A3D2E]/20 transition-colors">
+                <span class="shrink-0 w-10 h-10 bg-[#8B7355]/10 rounded-lg flex items-center justify-center group-hover:bg-[#4A3D2E]/20 transition-colors">
                   <svg class="w-5 h-5 text-[#5D4E37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
                   </svg>
@@ -676,7 +676,7 @@ const t = i18n[lang] || i18n.en;
 
               <a href={`/${currentPath}about-us`}
                 class="group flex items-center gap-3 bg-white rounded-xl p-4 border border-stone-200 hover:border-[#8B7355] hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-                <span class="flex-shrink-0 w-10 h-10 bg-[#8B7355]/10 rounded-lg flex items-center justify-center group-hover:bg-[#4A3D2E]/20 transition-colors">
+                <span class="shrink-0 w-10 h-10 bg-[#8B7355]/10 rounded-lg flex items-center justify-center group-hover:bg-[#4A3D2E]/20 transition-colors">
                   <svg class="w-5 h-5 text-[#5D4E37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
@@ -699,7 +699,7 @@ const t = i18n[lang] || i18n.en;
           </div>
 
           <!-- Mini Rescue Form (with Turnstile) -->
-          <div class="bg-white rounded-xl p-6 border border-stone-200 shadow-sm max-w-xl mx-auto lg:mx-0 mb-8">
+          <div class="bg-white rounded-xl p-6 border border-stone-200 shadow-xs max-w-xl mx-auto lg:mx-0 mb-8">
             <p class="text-sm font-bold text-[#5D4E37] mb-1">{t.formHeading}</p>
             <p class="text-xs text-stone-600 mb-4">{t.formSub}</p>
 
@@ -715,7 +715,7 @@ const t = i18n[lang] || i18n.en;
                 id="rescue-email"
                 placeholder={t.emailPlaceholder}
                 required
-                class="w-full px-4 py-2.5 text-sm border border-stone-200 rounded-lg focus:border-[#8B7355] focus:ring-2 focus:ring-[#8B7355]/10 outline-none transition-all bg-stone-50"
+                class="w-full px-4 py-2.5 text-sm border border-stone-200 rounded-lg focus:border-[#8B7355] focus:ring-2 focus:ring-[#8B7355]/10 outline-hidden transition-all bg-stone-50"
               />
               <label for="rescue-message" class="sr-only">{t.formSub}</label>
               <textarea
@@ -724,7 +724,7 @@ const t = i18n[lang] || i18n.en;
                 rows="3"
                 placeholder=""
                 required
-                class="w-full px-4 py-2.5 text-sm border border-stone-200 rounded-lg focus:border-[#8B7355] focus:ring-2 focus:ring-[#8B7355]/10 outline-none transition-all bg-stone-50 resize-y min-h-[80px]"
+                class="w-full px-4 py-2.5 text-sm border border-stone-200 rounded-lg focus:border-[#8B7355] focus:ring-2 focus:ring-[#8B7355]/10 outline-hidden transition-all bg-stone-50 resize-y min-h-[80px]"
               ></textarea>
 
               <input type="hidden" name="name" value="404 Rescue" />
@@ -778,21 +778,21 @@ const t = i18n[lang] || i18n.en;
           {t.searchHeading}
         </p>
         <form id="search-form" action={`/${currentPath}search`} method="GET" class="relative group">
-          <div class="flex items-center border-2 border-stone-200 bg-white rounded-full overflow-hidden focus-within:border-[#8B7355] shadow-sm transition-all duration-300 focus-within:ring-4 focus-within:ring-[#8B7355]/10">
+          <div class="flex items-center border-2 border-stone-200 bg-white rounded-full overflow-hidden focus-within:border-[#8B7355] shadow-xs transition-all duration-300 focus-within:ring-4 focus-within:ring-[#8B7355]/10">
             <input
               id="search-input"
               type="search"
               name="q"
               autocomplete="off"
-              class="flex-grow py-3.5 px-5 bg-transparent border-none outline-none text-sm text-stone-900 placeholder-stone-400 font-medium focus:ring-0"
+              class="grow py-3.5 px-5 bg-transparent border-none outline-hidden text-sm text-stone-900 placeholder-stone-400 font-medium focus:ring-0"
               placeholder={t.searchPlaceholder}
             />
-            <button type="button" id="search-clear" class="hidden px-3 text-stone-500 hover:text-[#5D4E37] transition-colors flex-shrink-0" aria-label="Clear search">
+            <button type="button" id="search-clear" class="hidden px-3 text-stone-500 hover:text-[#5D4E37] transition-colors shrink-0" aria-label="Clear search">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
               </svg>
             </button>
-            <button type="submit" class="px-5 py-2 mr-1.5 bg-[#5D4E37] text-white rounded-full hover:bg-[#4A3D2E] transition-all duration-300 font-bold tracking-wide text-xs uppercase shadow-md flex-shrink-0 flex items-center gap-2">
+            <button type="submit" class="px-5 py-2 mr-1.5 bg-[#5D4E37] text-white rounded-full hover:bg-[#4A3D2E] transition-all duration-300 font-bold tracking-wide text-xs uppercase shadow-md shrink-0 flex items-center gap-2">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
@@ -849,6 +849,7 @@ const t = i18n[lang] || i18n.en;
       try {
         window.turnstile.render(widgetDiv, {
           sitekey: window.TURNSTILE_SITE_KEY,
+          action: 'contact_form',
           theme: 'light',
           callback: function(token) {
             window.turnstileToken = token;

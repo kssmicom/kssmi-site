@@ -1,6 +1,21 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* Tailwind CSS v4 uses CSS-first theme configuration. These tokens preserve
+   the existing utility names from the former tailwind.config.js file. */
+@theme {
+  --color-havana-bronze: #8b7355;
+  --color-havana-tortoise: #5d4e37;
+  --color-brand-gold: #c9a66b;
+  --color-brand-brown: #6b5340;
+  --color-brand-dark: #2f221b;
+  --color-brand-deep: #503629;
+
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-Manrope: Manrope, sans-serif;
+  --font-Raleway: Raleway, sans-serif;
+  --font-Playfair: "Playfair Display", serif;
+  --font-arabic: "Noto Sans Arabic", sans-serif;
+}
 
 /* ─── Color Scale Convention ────────────────────────────────────────────
    Prefer `stone-*` for neutrals (warmer tone matching brand).

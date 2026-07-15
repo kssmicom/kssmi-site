@@ -83,15 +83,15 @@ const secondaryHref = toHref(secondaryCtaUrl);
 
   <!-- Dark scrim: stronger on the text (start) side for 4.5:1 contrast -->
   <div
-    class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/25 ltr-only"
+    class="absolute inset-0 bg-linear-to-r from-black/85 via-black/60 to-black/25 ltr-only"
     aria-hidden="true"
   ></div>
   <div
-    class="absolute inset-0 bg-gradient-to-l from-black/85 via-black/60 to-black/25 rtl-only hidden"
+    class="absolute inset-0 bg-linear-to-l from-black/85 via-black/60 to-black/25 rtl-only hidden"
     aria-hidden="true"
   ></div>
   <!-- Bottom vignette for tag legibility -->
-  <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/70 to-transparent" aria-hidden="true"></div>
+  <div class="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-black/70 to-transparent" aria-hidden="true"></div>
 
   <!-- Content -->
   <div class="relative z-10 w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4 py-20 md:py-24 lg:py-28">
@@ -108,7 +108,7 @@ const secondaryHref = toHref(secondaryCtaUrl);
       {(subheadingLine1 || subheadingLine2) && (
         <p class="hero-fade text-lg sm:text-xl lg:text-2xl font-semibold leading-snug mb-5" style="animation-delay:0.16s">
           {subheadingLine1 && (
-            <span class="block bg-gradient-to-r from-[#F5D08A] via-[#F0B85A] to-[#E0A23C] bg-clip-text text-transparent">
+            <span class="block bg-linear-to-r from-[#F5D08A] via-[#F0B85A] to-[#E0A23C] bg-clip-text text-transparent">
               {subheadingLine1}
             </span>
           )}
@@ -129,7 +129,7 @@ const secondaryHref = toHref(secondaryCtaUrl);
           {primaryCta && (
             <a
               href={primaryHref}
-              class="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm sm:text-base font-semibold text-white bg-[#B45309] hover:bg-[#92400E] shadow-lg shadow-amber-950/30 hover:shadow-xl hover:shadow-amber-950/40 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-black/50 transition-all duration-300 cursor-pointer"
+              class="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm sm:text-base font-semibold text-white bg-[#B45309] hover:bg-[#92400E] shadow-lg shadow-amber-950/30 hover:shadow-xl hover:shadow-amber-950/40 hover:-translate-y-0.5 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-black/50 transition-all duration-300 cursor-pointer"
             >
               {primaryCta}
               <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -140,7 +140,7 @@ const secondaryHref = toHref(secondaryCtaUrl);
           {secondaryCta && (
             <a
               href={secondaryHref}
-              class="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm sm:text-base font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 hover:border-white/50 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black/50 transition-all duration-300 cursor-pointer"
+              class="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm sm:text-base font-semibold text-white bg-white/10 backdrop-blur-xs border border-white/30 hover:bg-white/20 hover:border-white/50 hover:-translate-y-0.5 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black/50 transition-all duration-300 cursor-pointer"
             >
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M12 3v13M7 8l5-5 5 5"/>
@@ -167,7 +167,7 @@ const secondaryHref = toHref(secondaryCtaUrl);
       {featureTags.length > 0 && (
         <ul class="hero-fade flex flex-wrap items-center gap-2.5 text-xs sm:text-sm mt-3.5" style="animation-delay:0.48s">
           {featureTags.map((tag) => (
-            <li class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/25 text-stone-100/90 hover:bg-white/15 hover:border-white/40 transition-colors duration-200">
+            <li class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-xs border border-white/25 text-stone-100/90 hover:bg-white/15 hover:border-white/40 transition-colors duration-200">
               {tag}
             </li>
           ))}

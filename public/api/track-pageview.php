@@ -6,11 +6,15 @@
 
 header('X-Robots-Tag: noindex, nofollow');
 header('Content-Type: application/json');
+header('Cache-Control: no-store');
+header('X-Content-Type-Options: nosniff');
+header('Referrer-Policy: no-referrer');
+header("Content-Security-Policy: default-src 'none'; frame-ancestors 'none'");
 
 // CORS
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 $allowedOrigins = ['https://kssmi.com', 'https://www.kssmi.com', 'http://localhost:4321', 'http://localhost:4324', 'http://localhost:4325', 'http://127.0.0.1:4321'];
-if (!in_array($origin, $allowedOrigins)) {
+if (!in_array($origin, $allowedOrigins, true)) {
     if (!empty($origin)) {
         http_response_code(403);
         echo json_encode(['success' => false, 'error' => 'Origin not allowed']);
@@ -44,11 +48,14 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 require_once __DIR__ . '/vjt-helpers.php';
 
-// Ensure data directory and files exist
-vjt_data_init();
-
-$body = file_get_contents('php://input');
-if (strlen($body) > 65536) { // 64KB hard cap — real payloads are a few KB
+$contentLength = (int)($_SERVER['CONTENT_LENGTH'] ?? 0);
+if ($contentLength > 65536) {
+    http_response_code(413);
+    echo json_encode(['success' => false, 'error' => 'Payload too large']);
+    exit;
+}
+$body = file_get_contents('php://input', false, null, 0, 65537);
+if ($body === false || strlen($body) > 65536) { // 64KB hard cap — real payloads are a few KB
     http_response_code(413);
     echo json_encode(['success' => false, 'error' => 'Payload too large']);
     exit;
@@ -61,24 +68,54 @@ if (!is_array($data)) {
 }
 
 // Clip free-text fields to guard against storage bloat / abuse
-foreach (vjt_field_caps() as $k => $max) { if (isset($data[$k])) $data[$k] = vjt_clip($data[$k], $max); }
-
-$visitorId = vjt_clip(trim($data['visitor_id'] ?? ''), 64);
-$sessionId = vjt_clip(trim($data['session_id'] ?? ''), 64);
-if (empty($visitorId) || empty($sessionId)) {
+foreach (vjt_field_caps() as $k => $max) {
+    if (isset($data[$k])) $data[$k] = is_scalar($data[$k]) ? vjt_clip((string)$data[$k], $max) : '';
+}
+$data['url'] = vjt_safe_http_url($data['url'] ?? '');
+$data['landing_url'] = vjt_safe_http_url($data['landing_url'] ?? '');
+$data['referrer'] = vjt_safe_http_url($data['referrer'] ?? '');
+if ($data['url'] === '') {
     http_response_code(400);
-    echo json_encode(['success' => false, 'error' => 'Missing visitor_id or session_id']);
+    echo json_encode(['success' => false, 'error' => 'Invalid page URL']);
+    exit;
+}
+foreach (['visited_at', 'leave_at', 'last_activity_at'] as $field) {
+    $data[$field] = is_scalar($data[$field] ?? null) ? vjt_clip((string)$data[$field], 64) : '';
+}
+foreach (['duration_seconds', 'active_duration_seconds'] as $field) {
+    $data[$field] = is_numeric($data[$field] ?? null) ? min(86400, max(0, (int)$data[$field])) : 0;
+}
+foreach (['scroll_depth', 'max_scroll_depth', 'engagement_score'] as $field) {
+    $data[$field] = is_numeric($data[$field] ?? null) ? min(100, max(0, (int)$data[$field])) : 0;
+}
+$data['heartbeat_count'] = is_numeric($data['heartbeat_count'] ?? null) ? min(10000, max(0, (int)$data['heartbeat_count'])) : 0;
+$data['step_order'] = is_numeric($data['step_order'] ?? null) ? min(10000, max(0, (int)$data['step_order'])) : 0;
+$data['event_type'] = is_scalar($data['event_type'] ?? null) ? (string)$data['event_type'] : '';
+
+$visitorId = is_scalar($data['visitor_id'] ?? null) ? vjt_clip(trim((string)$data['visitor_id']), 64) : '';
+$sessionId = is_scalar($data['session_id'] ?? null) ? vjt_clip(trim((string)$data['session_id']), 64) : '';
+if (!preg_match('/^vjtv_[A-Za-z0-9_-]{8,60}$/', $visitorId) || !preg_match('/^vjts_[A-Za-z0-9_-]{8,60}$/', $sessionId)) {
+    http_response_code(400);
+    echo json_encode(['success' => false, 'error' => 'Invalid visitor_id or session_id']);
     exit;
 }
 
 $ip      = vjt_get_client_ip();
 $ua      = vjt_clip($_SERVER['HTTP_USER_AGENT'] ?? '', 512);
 
+if (vjt_ip_is_excluded($ip)) {
+    echo json_encode(['success' => true, 'skipped' => 'internal']);
+    exit;
+}
+
 // Bot filtering: skip storage for crawlers/scripts/empty UA (return 200 so they don't retry)
 if (vjt_is_bot($ua)) {
     echo json_encode(['success' => true, 'skipped' => 'bot']);
     exit;
 }
+
+// Only valid, non-bot writes should trigger schema migrations/backfills/cleanup.
+vjt_data_init();
 
 $browser = vjt_detect_browser($ua);
 $device  = vjt_detect_device($ua);
@@ -122,13 +159,21 @@ try {
 
     // Handle leave event (update existing pageview) vs new pageview
     $isLeave = !empty($data['leave_at']);
-    if ($isLeave) {
+    $isHeartbeat = ($data['event_type'] ?? '') === 'heartbeat';
+    if ($isLeave || $isHeartbeat) {
         vjt_update_pageview_leave(
             $sessionId,
             $data['url'] ?? '',
             $data['leave_at'],
             $data['duration_seconds'] ?? 0,
-            $data['scroll_depth'] ?? 0
+            $data['scroll_depth'] ?? 0,
+            $data['active_duration_seconds'] ?? 0,
+            $data['heartbeat_count'] ?? 0,
+            $data['max_scroll_depth'] ?? 0,
+            $data['last_activity_at'] ?? '',
+            $data['engagement_score'] ?? 0,
+            !empty($data['is_engaged']),
+            max(0, (int)($data['step_order'] ?? 0))
         );
     } else {
         vjt_add_pageview([
@@ -139,7 +184,13 @@ try {
             'visited_at'       => $data['visited_at'] ?? $now,
             'leave_at'         => $data['leave_at'] ?? null,
             'duration_seconds' => $data['duration_seconds'] ?? 0,
+            'active_duration_seconds' => $data['active_duration_seconds'] ?? 0,
+            'engagement_score' => $data['engagement_score'] ?? 0,
+            'is_engaged'       => !empty($data['is_engaged']),
+            'last_activity_at' => $data['last_activity_at'] ?? '',
+            'heartbeat_count'  => $data['heartbeat_count'] ?? 0,
             'scroll_depth'     => $data['scroll_depth'] ?? 0,
+            'max_scroll_depth' => $data['max_scroll_depth'] ?? ($data['scroll_depth'] ?? 0),
             'step_order'       => max(1, (int)($data['step_order'] ?? 1)),
         ]);
     }

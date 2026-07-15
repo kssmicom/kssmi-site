@@ -40,7 +40,7 @@ const benefits = [
 ];
 ---
 
-<section class="py-12 lg:py-16 bg-gradient-to-b from-white to-stone-50" dir={isRTL ? 'rtl' : 'ltr'}>
+<section class="py-12 lg:py-16 bg-linear-to-b from-white to-stone-50" dir={isRTL ? 'rtl' : 'ltr'}>
   <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1240px] mx-auto px-4">
     {subtitle && (
       <p class="text-center text-base md:text-lg text-stone-600 max-w-2xl mx-auto mb-12 leading-relaxed">
@@ -51,10 +51,10 @@ const benefits = [
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       {benefits.map((benefit, i) => (
         <div
-          class="benefit-card group bg-[#FCFAF8] rounded-xl p-8 shadow-sm ring-1 ring-[#8B7355]/10 hover:shadow-xl hover:bg-white hover:ring-[#8B7355]/30 transition-all duration-500 ease-out text-center cursor-default hover:-translate-y-2 motion-safe:animate-[benefitFadeInUp_0.5s_ease-out_both]"
+          class="benefit-card group bg-[#FCFAF8] rounded-xl p-8 shadow-xs ring-1 ring-[#8B7355]/10 hover:shadow-xl hover:bg-white hover:ring-[#8B7355]/30 transition-all duration-500 ease-out text-center cursor-default hover:-translate-y-2 motion-safe:animate-[benefitFadeInUp_0.5s_ease-out_both]"
           style={`animation-delay: ${0.1 + i * 0.08}s`}
         >
-          <div class="w-16 h-16 bg-white shadow-sm ring-1 ring-[#8B7355]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-500 ease-out group-hover:scale-110 group-hover:shadow-md group-hover:bg-[#4A3D2E]/5 group-hover:ring-[#8B7355]/20">
+          <div class="w-16 h-16 bg-white shadow-xs ring-1 ring-[#8B7355]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-500 ease-out group-hover:scale-110 group-hover:shadow-md group-hover:bg-[#4A3D2E]/5 group-hover:ring-[#8B7355]/20">
             <svg class="w-8 h-8 text-[#5D4E37] transition-transform duration-500 ease-out" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={benefit.iconPath} />
             </svg>

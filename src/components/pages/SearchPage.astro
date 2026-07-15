@@ -235,7 +235,7 @@ const searchKeywords = {
       <!-- Search Header Block -->
       <div class="text-center mb-6 relative max-w-4xl mx-auto">
         <!-- Kssmi Text Logo -->
-        <div class="inline-flex flex-col items-center justify-center w-20 h-20 rounded-full bg-white border border-stone-300 hover:border-[#8B7355] hover:shadow-lg transition-all duration-700 ease-out mb-4 shadow-sm">
+        <div class="inline-flex flex-col items-center justify-center w-20 h-20 rounded-full bg-white border border-stone-300 hover:border-[#8B7355] hover:shadow-lg transition-all duration-700 ease-out mb-4 shadow-xs">
           <span class="text-sm font-bold text-[#503629] tracking-tight leading-none uppercase">KSSMI</span>
           <span class="h-[1px] w-4 bg-stone-400 mt-[2px]"></span>
           <span class="text-[7px] font-bold uppercase tracking-[0.15em] text-stone-500 mt-[2px]">{eyewearText}</span>
@@ -268,14 +268,14 @@ const searchKeywords = {
         <form action={`/${lang === 'en' ? 'search' : `${lang}/search`}`} method="GET" class="relative group">
           <div class="absolute inset-0 bg-[#5D4E37]/5 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-          <div class="flex items-center border-2 border-stone-200 bg-white rounded-full overflow-hidden focus-within:border-[#8B7355] shadow-sm transition-all duration-300 focus-within:ring-4 focus-within:ring-[#8B7355]/10 relative z-10">
+          <div class="flex items-center border-2 border-stone-200 bg-white rounded-full overflow-hidden focus-within:border-[#8B7355] shadow-xs transition-all duration-300 focus-within:ring-4 focus-within:ring-[#8B7355]/10 relative z-10">
             <label for="search-input" class="sr-only">Search products</label>
             <input
               type="search"
               name="q"
               id="search-input"
               placeholder={(searchPlaceholder as any)[lang]}
-              class="flex-grow py-4 px-6 bg-transparent border-none outline-none text-base text-stone-900 placeholder-stone-400 font-medium focus:ring-0"
+              class="grow py-4 px-6 bg-transparent border-none outline-hidden text-base text-stone-900 placeholder-stone-400 font-medium focus:ring-0"
               autocomplete="off"
             >
 
@@ -285,7 +285,7 @@ const searchKeywords = {
             </button>
 
             <!-- Search Button -->
-            <button type="submit" class="px-5 py-2.5 mr-1.5 bg-[#5D4E37] text-white rounded-full hover:bg-[#4A3D2E] transition-all duration-300 font-bold tracking-wide text-xs uppercase shadow-md flex-shrink-0 flex items-center gap-2">
+            <button type="submit" class="px-5 py-2.5 mr-1.5 bg-[#5D4E37] text-white rounded-full hover:bg-[#4A3D2E] transition-all duration-300 font-bold tracking-wide text-xs uppercase shadow-md shrink-0 flex items-center gap-2">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
@@ -306,7 +306,7 @@ const searchKeywords = {
 
       <!-- Empty State -->
       <div id="empty-state" class="text-center py-6">
-        <div class="inline-flex items-center justify-center w-20 h-20 bg-white border border-stone-200 rounded-full mb-8 shadow-sm">
+        <div class="inline-flex items-center justify-center w-20 h-20 bg-white border border-stone-200 rounded-full mb-8 shadow-xs">
           <svg class="w-8 h-8 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
           </svg>
@@ -322,7 +322,7 @@ const searchKeywords = {
               const kw = (searchKeywords as any)[lang] || searchKeywords.en;
               const keys = ['optical', 'sunglasses', 'acetate', 'titanium', 'metal'] as const;
               return keys.map((k) => (
-                <a href={`/${lang === 'en' ? 'search' : `${lang}/search`}?q=${kw[k]}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#5D4E37] transition-all duration-300 shadow-sm hover:shadow-md">
+                <a href={`/${lang === 'en' ? 'search' : `${lang}/search`}?q=${kw[k]}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-xs hover:border-[#8B7355] hover:text-[#5D4E37] transition-all duration-300 shadow-xs hover:shadow-md">
                   {kw[k]}
                 </a>
               ));
@@ -337,7 +337,7 @@ const searchKeywords = {
 
       <!-- No Results State -->
       <div id="no-results" class="hidden text-center py-6">
-        <div class="inline-flex items-center justify-center w-20 h-20 bg-white border border-stone-200 rounded-full mb-8 shadow-sm hover:border-[#8B7355] transition-colors duration-500">
+        <div class="inline-flex items-center justify-center w-20 h-20 bg-white border border-stone-200 rounded-full mb-8 shadow-xs hover:border-[#8B7355] transition-colors duration-500">
           <svg class="w-8 h-8 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
@@ -361,7 +361,7 @@ const searchKeywords = {
               const kw = (searchKeywords as any)[lang] || searchKeywords.en;
               const keys = ['optical', 'sunglasses', 'acetate', 'titanium', 'metal'] as const;
               return keys.map((k) => (
-                <a href={`/${lang === 'en' ? 'search' : `${lang}/search`}?q=${kw[k]}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-sm hover:border-[#8B7355] hover:text-[#5D4E37] transition-all duration-300 shadow-sm hover:shadow-md">
+                <a href={`/${lang === 'en' ? 'search' : `${lang}/search`}?q=${kw[k]}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-xs hover:border-[#8B7355] hover:text-[#5D4E37] transition-all duration-300 shadow-xs hover:shadow-md">
                   {kw[k]}
                 </a>
               ));

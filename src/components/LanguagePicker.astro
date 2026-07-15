@@ -33,7 +33,7 @@ const currentLanguage = languages.find(l => l.code === lang) || languages[0];
 <language-picker class="relative inline-block text-left z-50">
   <button
     type="button"
-    class="inline-flex w-full items-center justify-between gap-x-2 rounded-lg bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:ring-2 focus:ring-[#8B7355] focus:outline-none transition-all duration-200 min-w-[140px]"
+    class="inline-flex w-full items-center justify-between gap-x-2 rounded-lg bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-xs ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:ring-2 focus:ring-[#8B7355] focus:outline-hidden transition-all duration-200 min-w-[140px]"
     aria-expanded="false"
     aria-haspopup="true"
   >
@@ -50,7 +50,7 @@ const currentLanguage = languages.find(l => l.code === lang) || languages[0];
   </button>
 
   <div
-    class="absolute right-0 z-50 mt-2 w-56 origin-top-right rounded-xl bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none opacity-0 invisible translate-y-[-10px] transition-all duration-200 ease-in-out menu-container"
+    class="absolute right-0 z-50 mt-2 w-56 origin-top-right rounded-xl bg-white shadow-lg ring-1 ring-black/5 focus:outline-hidden opacity-0 invisible translate-y-[-10px] transition-all duration-200 ease-in-out menu-container"
     role="menu"
     aria-orientation="vertical"
     tabindex="-1"

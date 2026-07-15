@@ -4,8 +4,8 @@
 
 const isDev = import.meta.env.DEV;
 const trackerScriptUrl = isDev
-  ? 'http://localhost:4325/js/vjt-tracker.js?v=11'
-  : '/js/vjt-tracker.js?v=11';
+  ? 'http://localhost:4325/js/vjt-tracker.js?v=12'
+  : '/js/vjt-tracker.js?v=12';
 ---
 
 {isDev && (
@@ -20,7 +20,8 @@ const trackerScriptUrl = isDev
       },
       routes: {
         pageview: 'http://localhost:4325/api/track-pageview.php',
-        submission: 'http://localhost:4325/api/track-submission.php'
+        submission: 'http://localhost:4325/api/track-submission.php',
+        config: 'http://localhost:4325/api/vjt-config.php'
       },
       sessionTimeout: 30,
       cookieExpires: 31536000
@@ -40,7 +41,8 @@ const trackerScriptUrl = isDev
       },
       routes: {
         pageview: '/api/track-pageview.php',
-        submission: '/api/track-submission.php'
+        submission: '/api/track-submission.php',
+        config: '/api/vjt-config.php'
       },
       sessionTimeout: 30,
       cookieExpires: 31536000
@@ -51,6 +53,10 @@ const trackerScriptUrl = isDev
 <!-- Defer tracker script injection until after critical rendering and analytics consent. -->
 <script is:inline define:vars={{ trackerScriptUrl }}>
   (function() {
+    // Inline scripts run again after Astro view transitions. Keep one persistent
+    // loader/listener so a navigation cannot start the same pageview twice.
+    if (window.__vjtLoaderBound) return;
+    window.__vjtLoaderBound = true;
     var loaded = false;
     function injectTracker() {
       if (loaded) return;

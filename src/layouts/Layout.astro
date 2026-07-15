@@ -42,13 +42,23 @@ const description = propDescription || layoutMeta.description;
 const isRTL = lang === 'ar';
 const dir = isRTL ? 'rtl' : 'ltr';
 
-	// Root path without language prefix (for hreflang alternates)
-	let currentPath = Astro.url.pathname.replace(`/${lang}/`, '').replace(`/${lang}`, '').replace(/^\//, '');
-	// Self-referencing URL with language prefix (for canonical + OG)
-	const selfUrl = lang === 'en' ? currentPath : `/${lang}/${currentPath}`;
-
 // All supported languages
 const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
+
+// Build canonical and alternate URLs from absolute paths. This avoids //de/...
+// URLs and only removes a locale when it is the leading URL segment.
+const localePrefix = lang === 'en' ? '' : `/${lang}`;
+const basePath = localePrefix && (Astro.url.pathname === localePrefix || Astro.url.pathname.startsWith(localePrefix + '/'))
+  ? (Astro.url.pathname.slice(localePrefix.length) || '/')
+  : Astro.url.pathname;
+const normalizedBasePath = basePath.startsWith('/') ? basePath : `/${basePath}`;
+const localizedPath = (locale: string) => locale === 'en'
+  ? normalizedBasePath
+  : `/${locale}${normalizedBasePath}`;
+const absoluteUrl = (pathname: string) => new URL(pathname, Astro.site ?? 'https://kssmi.com').href;
+const selfCanonical = absoluteUrl(localizedPath(lang));
+// A noindex page must not advertise itself as an indexable language variant.
+const shouldRenderHreflang = !noindex && !noHreflang;
 
 // Locale code mapping for og:locale
 const localeMap: Record<string, string> = {
@@ -202,7 +212,7 @@ const websiteSchema = {
   <meta property="og:image" content={image.startsWith('http') ? image : `https://kssmi.com${image}`} />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:url" content={canonical || `https://kssmi.com/${selfUrl}`} />
+  <meta property="og:url" content={canonical || selfCanonical} />
   <meta property="og:type" content={type} />
 	<meta property="og:locale" content={localeMap[lang] || "en_US"} />
   <meta property="og:site_name" content="Kssmi Eyewear" />
@@ -217,18 +227,18 @@ const websiteSchema = {
   {canonical ? (
     <link rel="canonical" href={canonical} />
   ) : (
-    <link rel="canonical" href={`https://kssmi.com/${selfUrl}`} />
+    <link rel="canonical" href={selfCanonical} />
   )}
 
   <!-- Hreflang Tags for Multilingual SEO -->
-  {!noHreflang && languages.map((l) => (
+  {shouldRenderHreflang && languages.map((l) => (
     <link
       rel="alternate"
       hreflang={l}
-      href={`https://kssmi.com/${l === 'en' ? '' : l + '/'}${currentPath}`}
+      href={absoluteUrl(localizedPath(l))}
     />
   ))}
-  {!noHreflang && <link rel="alternate" hreflang="x-default" href={`https://kssmi.com/${currentPath}`} />}<!-- Warm the connection to the hero video CDN ASAP (home page only). -->
+  {shouldRenderHreflang && <link rel="alternate" hreflang="x-default" href={absoluteUrl(localizedPath('en'))} />}<!-- Warm the connection to the hero video CDN ASAP (home page only). -->
   <!-- No crossorigin: the <video> fetch is non-CORS, so the reused socket must match. -->
   {preconnectVideo && (
     <>
@@ -389,7 +399,7 @@ const websiteSchema = {
     });
   </script>
   <!-- Accessibility: Skip to Content Link -->
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[9999] bg-[#5D4E37] text-white px-4 py-2 font-bold rounded-md shadow-lg outline-none focus:ring-4 focus:ring-[#8B7355]/50">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[9999] bg-[#5D4E37] text-white px-4 py-2 font-bold rounded-md shadow-lg outline-hidden focus:ring-4 focus:ring-[#8B7355]/50">
     {t.nav?.skipToContent || 'Skip to content'}
   </a>
   <style define:vars={{

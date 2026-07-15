@@ -164,7 +164,7 @@ if (categorySeoEntry) {
         <!-- Sidebar -->
         <aside class="hidden lg:block lg:col-span-1">
           <div class="sticky top-24 space-y-6">
-            <div class="bg-gradient-to-br from-white to-[#faf8f5] rounded-xl shadow-sm p-6 border border-stone-200/50">
+            <div class="bg-linear-to-br from-white to-[#faf8f5] rounded-xl shadow-xs p-6 border border-stone-200/50">
               <!-- All Products Link -->
               <a href={`/${currentPath}${baseSegment}`} class="flex items-center justify-between py-1.5 px-2 text-sm lg:text-base font-bold text-[#5D4E37] hover:bg-stone-50 rounded-lg transition-colors mb-3">
                 <span>{baseSegment === 'blog' ? sidebar.all_posts : baseSegment === 'eyewear' ? sidebar.all_features : sidebar.all_products}</span>
@@ -192,7 +192,7 @@ if (categorySeoEntry) {
                         <li>
                           <a
                             href={sub.href}
-                            class={`flex items-center justify-between py-1.5 px-2 text-sm rounded transition-colors ${
+                            class={`flex items-center justify-between py-1.5 px-2 text-sm rounded-sm transition-colors ${
                               isActiveCategory(sub.href)
                                 ? 'bg-[#5D4E37] text-white'
                                 : 'text-gray-600 hover:text-[#5D4E37] hover:bg-stone-50'
@@ -260,7 +260,7 @@ if (categorySeoEntry) {
         <div class="col-span-1 lg:col-span-3">
           <h1 class="text-base lg:text-lg font-bold text-stone-900 mb-3">{categoryTitle} — <span class="text-xs lg:text-sm font-medium text-stone-500">{((t as any).pagination?.page || 'Page {n}').replace('{n}', String((() => { const s = Astro.url.pathname.split('/').filter(Boolean); const l = s[s.length-1]; const n = parseInt(l,10); return isNaN(n) ? 1 : n; })()))}</span></h1>
           {page?.total === 0 ? (
-            <div class="text-center py-16 bg-white rounded-xl shadow-sm">
+            <div class="text-center py-16 bg-white rounded-xl shadow-xs">
               <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
               </svg>

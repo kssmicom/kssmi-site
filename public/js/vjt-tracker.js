@@ -4,6 +4,8 @@
   var SESSION_KEY = 'vjt_session_meta';
   var PAGE_KEY    = 'vjt_current_pageview';
   var PATH_KEY    = 'vjt_session_path';
+  var ACTIVE_WINDOW_MS = 15000;
+  var HEARTBEAT_MS = 45000;
   var hiddenNames = [
     'vjt_visitor_id',
     'vjt_session_id',
@@ -12,12 +14,21 @@
     'vjt_referrer',
     'vjt_landing_url',
     'vjt_landing_title',
-    'vjt_path_snapshot'
+    'vjt_path_snapshot',
+    'vjt_utm_source',
+    'vjt_utm_medium',
+    'vjt_utm_campaign',
+    'vjt_utm_content',
+    'vjt_utm_term'
   ];
   var flushed         = false;
   var maxScrollDepth  = 0;
   var scrollTimer     = null;
   var _deviceInfo     = null; // I3: stored globally for event handlers
+  var lastActivityAtMs = 0;
+  var lastSyncMs = 0;
+  var activeAccumulatedMs = 0;
+  var heartbeatTimer = null;
 
   function newTrackingId(prefix) {
     var now = new Date();
@@ -43,6 +54,46 @@
 
   function secondsBetween(start, end) {
     return Math.max(0, Math.round((end - start) / 1000));
+  }
+
+  function accrueActiveTime(endMs) {
+    if (!lastSyncMs) {
+      lastSyncMs = endMs;
+      return;
+    }
+    var activeUntil = Math.min(endMs, (lastActivityAtMs || 0) + ACTIVE_WINDOW_MS);
+    if (lastActivityAtMs && activeUntil > lastSyncMs) {
+      activeAccumulatedMs += activeUntil - lastSyncMs;
+    }
+    lastSyncMs = endMs;
+  }
+
+  function recordActivity() {
+    var now = Date.now();
+    // Close the previous activity window before starting a new one. Without
+    // this, an interaction after a long idle gap would count that entire gap.
+    accrueActiveTime(now);
+    lastActivityAtMs = now;
+  }
+
+  function updateActivityMetrics(pageview, endMs, isHeartbeat) {
+    var startMs = pageview.created_at_ms || endMs;
+    accrueActiveTime(endMs);
+    pageview.duration_seconds = secondsBetween(startMs, endMs);
+    pageview.active_duration_seconds = Math.min(
+      pageview.duration_seconds,
+      Math.max(pageview.active_duration_seconds || 0, Math.round(activeAccumulatedMs / 1000))
+    );
+    pageview.max_scroll_depth = Math.max(pageview.max_scroll_depth || 0, maxScrollDepth);
+    pageview.scroll_depth = pageview.max_scroll_depth;
+    if (lastActivityAtMs) pageview.last_activity_at = new Date(lastActivityAtMs).toISOString();
+    if (isHeartbeat) pageview.heartbeat_count = (pageview.heartbeat_count || 0) + 1;
+    pageview.is_engaged = !!(pageview.active_duration_seconds >= 10 || pageview.max_scroll_depth >= 50 || (pageview.heartbeat_count || 0) >= 2);
+    pageview.engagement_score = Math.min(100,
+      Math.min(60, pageview.active_duration_seconds || 0) +
+      Math.min(20, (pageview.heartbeat_count || 0) * 5) +
+      Math.min(20, Math.round((pageview.max_scroll_depth || 0) / 5))
+    );
   }
 
   function readStorage(key) {
@@ -251,6 +302,11 @@
   // ── Network ────────────────────────────────────────────────────────────────
 
   function post(url, payload, useBeacon) {
+    // Consent can be withdrawn after the persistent SPA/pagehide listeners were
+    // registered. Re-check at the single network boundary so no later
+    // heartbeat, leave event or conversion intent can escape after withdrawal.
+    if (!cfg.enabled) return false;
+
     if (useBeacon && navigator.sendBeacon) {
       try {
         return navigator.sendBeacon(url, new Blob([JSON.stringify(payload)], { type: 'application/json' }));
@@ -292,7 +348,7 @@
   function cleanUrl(url) {
     // Strip VJT tracking parameters from URLs
     if (!url) return url;
-    return url.replace(/[?&]vjt_(visitor_id|session_id|submit_page|submit_title|referrer|landing_url|landing_title|path_snapshot)=[^&]*/gi, '')
+    return url.replace(/[?&]vjt_(visitor_id|session_id|submit_page|submit_title|referrer|landing_url|landing_title|path_snapshot|utm_source|utm_medium|utm_campaign|utm_content|utm_term)=[^&]*/gi, '')
               .replace(/\?&/, '?')   // fix leftover ?& after first param is stripped
               .replace(/\?$/, '')
               .replace(/&$/, '');
@@ -316,6 +372,11 @@
       ensureHidden(form, hiddenNames[5], session.landingUrl   || '');
       ensureHidden(form, hiddenNames[6], session.landingTitle || '');
       ensureHidden(form, hiddenNames[7], snapshot);
+      ensureHidden(form, hiddenNames[8], session.utmSource   || '');
+      ensureHidden(form, hiddenNames[9], session.utmMedium   || '');
+      ensureHidden(form, hiddenNames[10], session.utmCampaign || '');
+      ensureHidden(form, hiddenNames[11], session.utmContent || '');
+      ensureHidden(form, hiddenNames[12], session.utmTerm    || '');
     });
   }
 
@@ -337,7 +398,13 @@
       visited_at        : new Date().toISOString(),
       leave_at          : '',
       duration_seconds  : 0,
+      active_duration_seconds: 0,
+      engagement_score  : 0,
+      is_engaged        : false,
+      last_activity_at  : '',
+      heartbeat_count   : 0,
       scroll_depth      : 0,
+      max_scroll_depth  : maxScrollDepth,
       step_order        : session.stepOrder,
       created_at_ms     : Date.now()
     };
@@ -362,7 +429,14 @@
       visited_at        : pageview.visited_at,
       leave_at          : pageview.leave_at,
       duration_seconds  : pageview.duration_seconds,
+      active_duration_seconds: pageview.active_duration_seconds || 0,
+      engagement_score  : pageview.engagement_score || 0,
+      is_engaged        : pageview.is_engaged ? 1 : 0,
+      last_activity_at  : pageview.last_activity_at || '',
+      heartbeat_count   : pageview.heartbeat_count || 0,
       scroll_depth      : pageview.scroll_depth,
+      max_scroll_depth  : pageview.max_scroll_depth || pageview.scroll_depth || 0,
+      event_type        : 'start',
       step_order        : pageview.step_order,
       utm_source        : session.utmSource        || '',
       utm_medium        : session.utmMedium        || '',
@@ -382,10 +456,9 @@
 
     var leaveMs = Date.now();
     pageview.leave_at         = new Date().toISOString();
-    pageview.duration_seconds = secondsBetween(pageview.created_at_ms || leaveMs, leaveMs);
     pageview.flush_reason     = reason || 'unknown';
     maxScrollDepth             = Math.max(maxScrollDepth, calcScrollDepth());
-    pageview.scroll_depth     = maxScrollDepth;
+    updateActivityMetrics(pageview, leaveMs, false);
 
     writeJson(PAGE_KEY, pageview);
 
@@ -395,7 +468,9 @@
           item.visited_at === pageview.visited_at) {
         item.leave_at         = pageview.leave_at;
         item.duration_seconds = pageview.duration_seconds;
-        item.scroll_depth     = maxScrollDepth;
+        item.active_duration_seconds = pageview.active_duration_seconds;
+        item.scroll_depth     = pageview.scroll_depth;
+        item.max_scroll_depth = pageview.max_scroll_depth;
       }
       return item;
     });
@@ -405,6 +480,33 @@
       post(cfg.routes.pageview, pageview, true);
     }
     flushed = true;
+  }
+
+  function sendHeartbeat() {
+    var pageview = readJson(PAGE_KEY);
+    if (!pageview || document.visibilityState !== 'visible' || !lastActivityAtMs || (Date.now() - lastActivityAtMs) > ACTIVE_WINDOW_MS) return;
+    maxScrollDepth = Math.max(maxScrollDepth, calcScrollDepth());
+    updateActivityMetrics(pageview, Date.now(), true);
+    writeJson(PAGE_KEY, pageview);
+    var payload = {};
+    Object.keys(pageview).forEach(function (key) { payload[key] = pageview[key]; });
+    payload.leave_at = '';
+    payload.event_type = 'heartbeat';
+    post(cfg.routes.pageview, payload, false);
+  }
+
+  function loadTrackerConfig() {
+    if (window.__vjtConfigLoaded || !cfg.routes || !cfg.routes.config) return;
+    window.__vjtConfigLoaded = true;
+    fetch(cfg.routes.config, { credentials: 'same-origin' })
+      .then(function (response) { return response.ok ? response.json() : null; })
+      .then(function (data) {
+        var seconds = data && Number(data.heartbeat_seconds);
+        if (!seconds || seconds < 30 || seconds > 120) return;
+        HEARTBEAT_MS = seconds * 1000;
+        if (heartbeatTimer) { clearInterval(heartbeatTimer); heartbeatTimer = window.setInterval(sendHeartbeat, HEARTBEAT_MS); }
+      })
+      .catch(function () {});
   }
 
   // ── Form submission detection ───────────────────────────────────────────────
@@ -448,6 +550,7 @@
 
   function bindSubmissionAttempts(visitorId) {
     document.addEventListener('submit', function (event) {
+      if (!cfg.enabled) return;
       var form = event.target;
       if (!form || form.tagName.toLowerCase() !== 'form') return;
       if (isSearchForm(form)) return;
@@ -475,6 +578,11 @@
         referrer     : attrReferrer,
         landing_url  : session.landingUrl   || '',
         landing_title: session.landingTitle || '',
+        utm_source   : session.utmSource     || '',
+        utm_medium   : session.utmMedium     || '',
+        utm_campaign : session.utmCampaign   || '',
+        utm_content  : session.utmContent    || '',
+        utm_term     : session.utmTerm       || '',
         path_snapshot: snapshot,
         site_language: session.siteLanguage || getSiteLanguage()
       };
@@ -523,6 +631,7 @@
 
   function bindOutboundLinks(visitorId) {
     document.addEventListener('click', function (event) {
+      if (!cfg.enabled) return;
       var anchor = resolveAnchor(event.target);
       if (!anchor) return;
 
@@ -561,6 +670,11 @@
         referrer     : attrReferrer,
         landing_url  : session.landingUrl   || '',
         landing_title: session.landingTitle || '',
+        utm_source   : session.utmSource     || '',
+        utm_medium   : session.utmMedium     || '',
+        utm_campaign : session.utmCampaign   || '',
+        utm_content  : session.utmContent    || '',
+        utm_term     : session.utmTerm       || '',
         path_snapshot: snapshot,
         site_language: session.siteLanguage || getSiteLanguage()
       };
@@ -611,6 +725,7 @@
   function initVJT() {
     cfg = window.VJTTracker || cfg;
     if (!cfg) return;
+    loadTrackerConfig();
 
     // P3-1 (N11): Skip tracking for admin users (vjt_admin cookie set by
     // email-logs.php / visitor-journey.php after successful login).
@@ -624,6 +739,11 @@
     cfg.page.url = cleanUrl(window.location.href);
     cfg.page.title = document.title || '';
 
+    // VJT identifiers, form context, contact intents and passive behaviour are
+    // all analytics-consent gated. A real Inquiry is still recorded server-side
+    // by send-mail.php even when no VJT identifier exists.
+    if (!cfg.enabled) return;
+
     _deviceInfo = getDeviceInfo();
     var visitorId  = getVisitorId();
     var session    = getSession(_deviceInfo);
@@ -632,10 +752,9 @@
     // not the stale value from session creation (fixes /ko/ pages showing as EN)
     session.siteLanguage = getSiteLanguage();
 
-    // ── Conversion tracking (form submit / WhatsApp / mailto) — ALWAYS on ────
-    // These are necessary business/lead records and must be captured even
-    // before/without analytics consent. Delegated listeners → bind once;
-    // forms are re-patched on every navigation so hidden fields stay current.
+    // ── Consent-gated conversion context (form / WhatsApp / mailto) ──────────
+    // Delegated listeners bind once; forms are re-patched on navigation so
+    // hidden fields retain the current session and attribution evidence.
     patchForms(visitorId, session);
     if (!window.__vjtConvBound) {
       bindSubmissionAttempts(visitorId);
@@ -661,6 +780,7 @@
         if (!mutationAddedForm(mutations)) return;
         clearTimeout(formsTimer);
         formsTimer = setTimeout(function () {
+          if (!cfg.enabled) return;
           patchForms(visitorId, getSession());
         }, 500);
       }).observe(document.documentElement, { childList: true, subtree: true });
@@ -668,9 +788,7 @@
       window.__vjtConvBound = true;
     }
 
-    // ── Passive pageview / behaviour tracking — CONSENT-GATED ────────────────
-    // Only runs once analytics consent is granted (cfg.enabled).
-    if (!cfg.enabled) return;
+    // ── Passive pageview / behaviour tracking ───────────────────────────────
 
     // If pageview tracking already bound (Astro SPA navigation), flush previous view
     if (window.__vjtPvBound) {
@@ -678,12 +796,16 @@
     }
 
     var pageview = currentPageview(visitorId, session);
+    activeAccumulatedMs = 0;
+    lastActivityAtMs = Date.now();
+    lastSyncMs = pageview.created_at_ms;
 
     if (!window.__vjtPvBound) {
       // Scroll depth tracking (B1 fix — bound once, not on every SPA nav).
       // Perf: throttle (skip while a tick is pending) instead of re-creating a
       // timer on every scroll event — far fewer wakeups while scrolling.
       window.addEventListener('scroll', function () {
+        recordActivity();
         if (scrollTimer) return;
         scrollTimer = setTimeout(function () {
           scrollTimer = null;
@@ -692,17 +814,26 @@
         }, 300);
       }, { passive: true });
 
+      ['pointerdown', 'keydown', 'touchstart', 'input', 'change'].forEach(function (eventName) {
+        document.addEventListener(eventName, recordActivity, { passive: true });
+      });
+
       window.addEventListener('pagehide', function () { flushPageview('pagehide'); });
 
       document.addEventListener('visibilitychange', function () {
         if (document.visibilityState === 'hidden') {
           flushPageview('visibilitychange');
+          // Do not let the 15-second activity window continue accumulating
+          // while the tab is hidden.
+          lastActivityAtMs = 0;
         } else {
+          recordActivity();
           flushed = false;
         }
       });
 
       window.addEventListener('beforeunload', function () { flushPageview('beforeunload'); });
+      heartbeatTimer = window.setInterval(sendHeartbeat, HEARTBEAT_MS);
       window.__vjtPvBound = true;
     } else {
       // B2 fix: reset flushed so subsequent SPA navigations send leave events

@@ -13,6 +13,12 @@
  * - CORS support for local development
  */
 
+header('X-Robots-Tag: noindex, nofollow');
+header('Cache-Control: no-store');
+header('X-Content-Type-Options: nosniff');
+header('Referrer-Policy: no-referrer');
+header("Content-Security-Policy: default-src 'none'; frame-ancestors 'none'");
+
 // Load private credentials (file lives outside public_html)
 $_privateConfigPath = dirname(__DIR__) . '/private_config.php';
 if (file_exists($_privateConfigPath)) {
@@ -35,7 +41,13 @@ $allowedOrigins = [
 ];
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
-if (in_array($origin, $allowedOrigins)) {
+if ($origin !== '' && !in_array($origin, $allowedOrigins, true)) {
+    http_response_code(403);
+    header('Content-Type: application/json');
+    echo json_encode(['success' => false, 'message' => 'Origin not allowed']);
+    exit;
+}
+if (in_array($origin, $allowedOrigins, true)) {
     header('Access-Control-Allow-Origin: ' . $origin);
     header('Access-Control-Allow-Methods: POST, OPTIONS');
     header('Access-Control-Allow-Headers: Content-Type');
@@ -52,6 +64,14 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     header('Content-Type: application/json');
     echo json_encode(['success' => false, 'message' => 'Method Not Allowed']);
+    exit;
+}
+
+// Reject oversized form bodies before values are copied into logs, email, or VJT.
+if ((int)($_SERVER['CONTENT_LENGTH'] ?? 0) > 131072) {
+    http_response_code(413);
+    header('Content-Type: application/json');
+    echo json_encode(['success' => false, 'message' => 'Payload too large']);
     exit;
 }
 
@@ -137,7 +157,7 @@ function logEmail($config, $data, $status, $message = '', $error = '', $visitorI
         'error' => $error,
         'ip_address' => $ipToLog,
         'country' => $visitorCountry ?? 'Unknown',
-        'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? 'Unknown',
+        'user_agent' => vjt_clip((string)($_SERVER['HTTP_USER_AGENT'] ?? 'Unknown'), 512),
     ];
 
     // Read existing logs
@@ -162,9 +182,21 @@ function recordVJTSubmission($config, $data, $status, $visitorIP, $visitorCountr
     try {
         $visitorId = trim($data['vjt_visitor_id'] ?? '');
         $sessionId = trim($data['vjt_session_id'] ?? '');
-        if (empty($visitorId) || empty($sessionId)) return;
 
-        $ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
+        vjt_data_init();
+
+        // Staff/test traffic must still receive the business email, but it must
+        // not pollute VJT attribution. The IP resolver is server-trusted.
+        if (vjt_ip_is_excluded($visitorIP)) return;
+
+        // A real server-validated Inquiry is a business Lead even if the visitor
+        // did not grant analytics consent and therefore has no browser VJT IDs.
+        // In that case create lead-only IDs here; do not infer or reconstruct a
+        // browsing journey that was never collected.
+        if (!preg_match('/^vjtv_[A-Za-z0-9_-]{8,60}$/', $visitorId)) $visitorId = 'vjtv_' . vjt_uuid();
+        if (!preg_match('/^vjts_[A-Za-z0-9_-]{8,60}$/', $sessionId)) $sessionId = 'vjts_' . vjt_uuid();
+
+        $ua = vjt_clip((string)($_SERVER['HTTP_USER_AGENT'] ?? ''), 512);
         $submitPage = $data['vjt_submit_page'] ?? '';
         if (empty($submitPage)) {
             $submitPage = 'https://kssmi.com' . ($data['product_url'] ?? '');
@@ -175,9 +207,6 @@ function recordVJTSubmission($config, $data, $status, $visitorIP, $visitorCountr
             $knownLangs = ['it','es','fr','de','pt','ru','ja','tr','ar','ko','zh','hi','vi','jv','ms','tg'];
             if (in_array($m[1], $knownLangs)) $siteLanguage = strtoupper($m[1]);
         }
-
-        vjt_data_init();
-
         vjt_upsert_visitor([
             'visitor_id'    => $visitorId,
             'first_ip'      => $visitorIP,
@@ -194,9 +223,31 @@ function recordVJTSubmission($config, $data, $status, $visitorIP, $visitorCountr
             'ip'           => $visitorIP,
             'country'      => $visitorCountry,
             'referrer'     => $data['vjt_referrer'] ?? '',
-            'landing_url'  => $submitPage,
-            'landing_title' => 'KSSMI Inquiry',
+            'landing_url'  => !empty($data['vjt_landing_url']) ? $data['vjt_landing_url'] : $submitPage,
+            'landing_title' => !empty($data['vjt_landing_title']) ? $data['vjt_landing_title'] : ($data['vjt_submit_title'] ?? 'KSSMI Inquiry'),
+            'utm_source'   => $data['vjt_utm_source'] ?? '',
+            'utm_medium'   => $data['vjt_utm_medium'] ?? '',
+            'utm_campaign' => $data['vjt_utm_campaign'] ?? '',
+            'utm_content'  => $data['vjt_utm_content'] ?? '',
+            'utm_term'     => $data['vjt_utm_term'] ?? '',
         ]);
+
+        $snapshot = json_decode((string)($data['vjt_path_snapshot'] ?? ''), true);
+        if (is_array($snapshot)) {
+            $cleanSnapshot = [];
+            foreach (array_slice($snapshot, -20) as $item) {
+                if (!is_array($item) || empty($item['url'])) continue;
+                $snapshotUrl = vjt_safe_http_url($item['url']);
+                if ($snapshotUrl === '') continue;
+                $cleanSnapshot[] = [
+                    'visitor_id' => $visitorId,
+                    'url' => $snapshotUrl,
+                    'title' => is_scalar($item['title'] ?? null) ? vjt_clip((string)$item['title'], 512) : '',
+                    'visited_at' => is_scalar($item['visited_at'] ?? null) ? vjt_clip((string)$item['visited_at'], 64) : '',
+                ];
+            }
+            vjt_sync_pageview_snapshot($sessionId, $cleanSnapshot);
+        }
 
         vjt_add_submission([
             'visitor_id'   => $visitorId,
@@ -230,7 +281,7 @@ function getRecentLogs($config, $limit = 50) {
 // ============================================
 
 function verifyTurnstile($token, $secret) {
-    if (empty($token)) return false;
+    if (!is_string($token) || $token === '' || strlen($token) > 4096 || $secret === '') return false;
 
     // Always use server-detected IP — never trust client-reported
     // (client IP was spoofable, see P1-4 of security-004)
@@ -257,15 +308,33 @@ function verifyTurnstile($token, $secret) {
     }
 
     $result = json_decode($response, true);
-    return isset($result['success']) && $result['success'] === true;
+    if (!is_array($result) || ($result['success'] ?? false) !== true) return false;
+    $hostname = strtolower((string)($result['hostname'] ?? ''));
+    $allowedHostnames = ['kssmi.com', 'www.kssmi.com', 'localhost', '127.0.0.1'];
+    return in_array($hostname, $allowedHostnames, true)
+        && hash_equals('contact_form', (string)($result['action'] ?? ''));
 }
 
 // ============================================
 // HELPER FUNCTIONS
 // ============================================
 
-function sanitize($input) {
-    return htmlspecialchars(strip_tags(trim($input)), ENT_QUOTES, 'UTF-8');
+function sanitize($input, $maxLength = 1024) {
+    if (!is_scalar($input)) return '';
+    $value = strip_tags(trim((string)$input));
+    if (function_exists('mb_substr')) $value = mb_substr($value, 0, $maxLength);
+    else $value = substr($value, 0, $maxLength);
+    return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+}
+
+function sanitizeLocalPath($input) {
+    $path = sanitize($input, 2048);
+    if ($path === '' || $path[0] !== '/' || strpos($path, '//') === 0 || preg_match('/[\x00-\x1F\x7F]/', $path)) return '';
+    return $path;
+}
+
+function requestString($value) {
+    return is_scalar($value) ? (string)$value : '';
 }
 
 /**
@@ -630,19 +699,39 @@ This email was automatically generated from the KSSMI Eyewear contact form.
 // They were spoofable and have been removed for security (P1-4 of security-004).
 // The server always uses HTTP_CF_CONNECTING_IP via getRealIP() instead.
 $formData = [
-    'name' => sanitize($_POST['name'] ?? ''),
-    'email' => sanitize($_POST['email'] ?? ''),
-    'details' => sanitize($_POST['details'] ?? ''),
-    'source' => sanitize($_POST['source'] ?? 'unknown'),
-    'product_url' => sanitize($_POST['product_url'] ?? ''),
-    'product_name' => sanitize($_POST['product_name'] ?? 'N/A'),
-    'language' => sanitize($_POST['language'] ?? 'en'),
+    'name' => sanitize($_POST['name'] ?? '', 160),
+    'email' => sanitize($_POST['email'] ?? '', 254),
+    'details' => sanitize($_POST['details'] ?? '', 10000),
+    'source' => sanitize($_POST['source'] ?? 'unknown', 128),
+    'product_url' => sanitizeLocalPath($_POST['product_url'] ?? ''),
+    'product_name' => sanitize($_POST['product_name'] ?? 'N/A', 256),
+    'language' => sanitize($_POST['language'] ?? 'en', 8),
+];
+$allowedLanguages = ['en','it','es','fr','de','pt','ru','ja','tr','ar','ko','zh','hi','vi','jv','ms','tg'];
+if (!in_array($formData['language'], $allowedLanguages, true)) $formData['language'] = 'en';
+
+// VJT context is intentionally separate from business form fields. These are
+// client hints only: IP/country remain server-derived, and IDs/URLs are
+// validated/length-capped before they can reach SQLite.
+$vjtData = [
+    'vjt_visitor_id' => trim(requestString($_POST['vjt_visitor_id'] ?? '')),
+    'vjt_session_id' => trim(requestString($_POST['vjt_session_id'] ?? '')),
+    'vjt_submit_page' => vjt_safe_http_url($_POST['vjt_submit_page'] ?? ''),
+    'vjt_submit_title' => vjt_clip(trim(requestString($_POST['vjt_submit_title'] ?? '')), 512),
+    'vjt_referrer' => vjt_safe_http_url($_POST['vjt_referrer'] ?? ''),
+    'vjt_landing_url' => vjt_safe_http_url($_POST['vjt_landing_url'] ?? ''),
+    'vjt_landing_title' => vjt_clip(trim(requestString($_POST['vjt_landing_title'] ?? '')), 512),
+    'vjt_path_snapshot' => vjt_clip(trim(requestString($_POST['vjt_path_snapshot'] ?? '')), 32768),
+    'vjt_utm_source' => vjt_clip(trim(requestString($_POST['vjt_utm_source'] ?? '')), 256),
+    'vjt_utm_medium' => vjt_clip(trim(requestString($_POST['vjt_utm_medium'] ?? '')), 256),
+    'vjt_utm_campaign' => vjt_clip(trim(requestString($_POST['vjt_utm_campaign'] ?? '')), 256),
+    'vjt_utm_content' => vjt_clip(trim(requestString($_POST['vjt_utm_content'] ?? '')), 256),
+    'vjt_utm_term' => vjt_clip(trim(requestString($_POST['vjt_utm_term'] ?? '')), 256),
 ];
 
-$turnstileToken = $_POST['cf-turnstile-response'] ?? '';
+$turnstileToken = is_string($_POST['cf-turnstile-response'] ?? null) ? $_POST['cf-turnstile-response'] : '';
 
 // Set JSON response header
-header('X-Robots-Tag: noindex, nofollow');
 header('Content-Type: application/json');
 
 // Validate required fields
@@ -744,8 +833,21 @@ try {
     // Email Content
     $mail->isHTML(true);
     $mail->Subject = "{$formData['name']} - Kssmi Eyewear - {$inquiryId}";
-    $mail->Body = buildHtmlEmail($formData, $visitorIP, $visitorCountry, $inquiryId);
-    $mail->AltBody = buildTextEmail($formData, $visitorIP, $visitorCountry, $inquiryId);
+    $vjtSummary = '';
+    try {
+        $vjtSummary = vjt_build_email_summary($vjtData['vjt_visitor_id'], $vjtData['vjt_session_id']);
+    } catch (Exception $e) {
+        // Attribution must never interfere with a real inquiry email.
+        error_log('VJT email summary error: ' . $e->getMessage());
+    }
+    $htmlBody = buildHtmlEmail($formData, $visitorIP, $visitorCountry, $inquiryId);
+    if ($vjtSummary !== '') {
+        $safeSummary = nl2br(htmlspecialchars($vjtSummary, ENT_QUOTES, 'UTF-8'));
+        $summaryHtml = "<div style='margin:20px 30px;padding:14px;border:1px solid #ded6ca;background:#faf8f5;font:12px/1.6 Arial;color:#4a4137'><strong>Visitor Journey</strong><br>{$safeSummary}</div>";
+        $htmlBody = str_replace('</body>', $summaryHtml . '</body>', $htmlBody);
+    }
+    $mail->Body = $htmlBody;
+    $mail->AltBody = buildTextEmail($formData, $visitorIP, $visitorCountry, $inquiryId) . ($vjtSummary !== '' ? "\n\n" . $vjtSummary : '');
 
     // Set higher timeout for slow connections
     $mail->Timeout = 30;
@@ -757,7 +859,7 @@ try {
     logEmail($config, $formData, 'success', 'Email sent successfully', '', $visitorIP, $visitorCountry);
 
     // Record to VJT database
-    recordVJTSubmission($config, $formData, 'success', $visitorIP, $visitorCountry);
+    recordVJTSubmission($config, array_merge($formData, $vjtData), 'success', $visitorIP, $visitorCountry);
 
     // Determine redirect URL based on language
     $lang = $formData['language'] ?? 'en';
@@ -774,7 +876,7 @@ try {
     // Log failure
     $errorMsg = $e->getMessage();
     logEmail($config, $formData, 'failed', 'PHPMailer error', $errorMsg, $visitorIP, $visitorCountry);
-    recordVJTSubmission($config, $formData, 'error', $visitorIP, $visitorCountry);
+    recordVJTSubmission($config, array_merge($formData, $vjtData), 'error', $visitorIP, $visitorCountry);
     error_log("KSSMI Form Error (PHPMailer): " . $errorMsg);
 
     http_response_code(500);
@@ -787,7 +889,7 @@ try {
     // Log failure
     $errorMsg = $e->getMessage();
     logEmail($config, $formData, 'failed', 'General error', $errorMsg, $visitorIP, $visitorCountry);
-    recordVJTSubmission($config, $formData, 'error', $visitorIP, $visitorCountry);
+    recordVJTSubmission($config, array_merge($formData, $vjtData), 'error', $visitorIP, $visitorCountry);
     error_log("KSSMI Form Error: " . $errorMsg);
 
     http_response_code(500);

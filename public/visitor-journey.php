@@ -12,6 +12,12 @@ session_set_cookie_params([
 session_start();
 
 header('X-Robots-Tag: noindex, nofollow');
+header('Cache-Control: no-store, private');
+header('Pragma: no-cache');
+header('X-Content-Type-Options: nosniff');
+header('X-Frame-Options: DENY');
+header('Referrer-Policy: no-referrer');
+header("Content-Security-Policy: frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
 
 require_once __DIR__ . '/api/vjt-helpers.php';
 
@@ -50,15 +56,13 @@ $PASSWORD_HASH = getPasswordHash();
 $error = '';
 $message = '';
 
-// Rate limit: 5 admin login attempts per IP per YEAR (31536000 seconds).
-// Combined with the IP whitelist in rate-limit.php (single-admin bypass),
-// this is effectively "permanently ban" any non-whitelisted IP after 5 failures.
-// (Was 5/15min — but a single admin mistyping 5 times would lock themselves out.)
+// Rate limit password guessing without creating an attacker-triggered year-long
+// lockout for an administrator behind a shared/changing IP.
 require_once dirname(__DIR__) . '/private/rate-limit.php';
 
 // Handle login
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
-    if (!checkRateLimit('vj-login', 5, 31536000)) {
+    if (!checkRateLimit('vj-login', 10, 900)) {
         $error = 'Too many login attempts. Please wait 15 minutes.';
     } else {
         $submitted = trim($_POST['password']);
@@ -96,7 +100,9 @@ if (!in_array($tab, $validTabs)) $tab = 'overview';
 
 // ── Data helpers ────────────────────────────────────────────────────────────
 
-vjt_data_init();
+// Never initialize, migrate, backfill, clean, or query analytics data before
+// authentication. This keeps the public login page cheap and prevents DB-work DoS.
+if ($isAuthenticated) vjt_data_init();
 
 // Resolve any pending geo lookups off the visitor ingest path (admin-only).
 // Backfills country/city for IPs collected since the last dashboard view.
@@ -114,7 +120,7 @@ if ($isAuthenticated && isset($_POST['save_settings'])) {
     if (!isset($_POST['csrf_token']) || !isset($_SESSION['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
         $message = 'Security check failed. Please try again.';
     } else {
-        $allowed = ['session_timeout', 'retention_days', 'enable_geo'];
+        $allowed = ['session_timeout', 'retention_days', 'enable_geo', 'excluded_ips', 'heartbeat_seconds', 'enable_email_summary'];
         $settings = array_intersect_key($_POST, array_flip($allowed));
         vjt_save_settings($settings);
         $message = 'Settings saved.';
@@ -195,6 +201,19 @@ if ($isAuthenticated && isset($_GET['export_csv'])) {
     ]);
     exit;
 }
+if ($isAuthenticated && isset($_GET['export_visitors_csv'])) {
+    vjt_export_visitors_csv_start([
+        'search' => $_GET['search'] ?? '', 'device' => $_GET['device'] ?? '', 'source' => $_GET['source'] ?? '',
+        'sessions_min' => $_GET['sessions_min'] ?? '', 'sessions_max' => $_GET['sessions_max'] ?? '',
+        'submissions_min' => $_GET['submissions_min'] ?? '', 'submissions_max' => $_GET['submissions_max'] ?? '',
+        'session_time_min' => $_GET['session_time_min'] ?? '', 'country' => $_GET['country'] ?? '', 'product_sku' => $_GET['product'] ?? '',
+        'date_from' => $_GET['date_from'] ?? '', 'date_to' => $_GET['date_to'] ?? '',
+        'sort_by' => $_GET['sort'] ?? 'last_seen_at', 'sort_order' => $_GET['order'] ?? 'desc',
+    ]);
+}
+if ($isAuthenticated && !empty($_GET['export_journey_csv']) && !empty($_GET['visitor_id'])) {
+    vjt_export_journey_csv_start($_GET['visitor_id']);
+}
 
 // ── Fetch data for tabs ──────────────────────────────────────────────────────
 
@@ -202,9 +221,10 @@ $overview = null;
 $submissions = [];
 $visitors = [];
 $journeyData = null;
-$settings = getSettings();
+$aiReferrals = [];
+$settings = $isAuthenticated ? getSettings() : [];
 
-if ($tab === 'overview') {
+if ($isAuthenticated && $tab === 'overview') {
     if ($trendPeriod === 'months') {
         $since = vjt_utc_since_seconds(365 * 86400);
         $periodLabel = '12m';
@@ -216,6 +236,7 @@ if ($tab === 'overview') {
         $periodLabel = '30d';
     }
     $overview = vjt_get_overview($since);
+    $aiReferrals = vjt_get_ai_referrals($since);
 }
 
 // ── Submissions list ─────────────────────────────────────────────────────────
@@ -228,7 +249,7 @@ $subDateFrom = $_GET['date_from'] ?? '';
 $subDateTo   = $_GET['date_to'] ?? '';
 $subTotal    = 0;
 
-if ($tab === 'submissions') {
+if ($isAuthenticated && $tab === 'submissions') {
     $result = vjt_get_submissions_list([
         'status' => $subStatus,
         'plugin' => $subPlugin,
@@ -254,7 +275,7 @@ if ($tab === 'submissions') {
 
 $trafficData = null;
 $trafficPeriod = $_GET['tp'] ?? 'days';
-if ($tab === 'traffic') {
+if ($isAuthenticated && $tab === 'traffic') {
     if ($trafficPeriod === 'months') {
         $trafficSince = vjt_utc_since_seconds(365 * 86400);
     } elseif ($trafficPeriod === 'years') {
@@ -283,7 +304,7 @@ $visSortBy    = $_GET['sort'] ?? 'last_seen_at';
 $visSortOrder = $_GET['order'] ?? 'desc';
 $visTotal     = 0;
 
-if ($tab === 'visitors') {
+if ($isAuthenticated && $tab === 'visitors') {
     $result = vjt_get_visitors_list([
         'search' => $visSearch,
         'device' => $visDevice,
@@ -310,21 +331,21 @@ if ($tab === 'visitors') {
 
 // ── Journey detail ───────────────────────────────────────────────────────────
 
-if ($tab === 'journey' && !empty($_GET['visitor_id'])) {
+if ($isAuthenticated && $tab === 'journey' && !empty($_GET['visitor_id'])) {
     $journeyData = vjt_get_journey($_GET['visitor_id']);
 }
 
 // ── Countries & Products ──────────────────────────────────────────────────────
 
 $countries = [];
-if ($tab === 'countries') {
+if ($isAuthenticated && $tab === 'countries') {
     $countries = vjt_get_countries();
 }
 
 $products = [];
 $prodDateFrom = $_GET['prod_date_from'] ?? '';
 $prodDateTo   = $_GET['prod_date_to'] ?? '';
-if ($tab === 'products') {
+if ($isAuthenticated && $tab === 'products') {
     $products = vjt_get_products($prodDateFrom, $prodDateTo);
 }
 
@@ -355,6 +376,26 @@ function fmtUrl($url) {
     return $clean;
 }
 
+// Safe href for legacy or poisoned analytics rows. New ingest also rejects
+// non-HTTP(S) URLs, but output encoding must remain independently safe.
+function safeHref($url) {
+    $safe = vjt_safe_http_url($url);
+    return $safe !== '' ? htmlspecialchars($safe, ENT_QUOTES, 'UTF-8') : '#';
+}
+
+function safeStatus($status) {
+    $status = strtolower((string)$status);
+    return in_array($status, ['success', 'attempt', 'error', 'intent', 'abandoned'], true) ? $status : 'unknown';
+}
+
+function jsArg($value) {
+    return htmlspecialchars(
+        json_encode((string)$value, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),
+        ENT_QUOTES,
+        'UTF-8'
+    );
+}
+
 // Source badge color
 function sourceBadge($source) {
     $map = [
@@ -366,7 +407,7 @@ function sourceBadge($source) {
         'internal' => ['#7f8c8d', '#f0f3f4', 'Internal'],
         'other' => ['#f39c12', '#fef9e7', 'Other'],
     ];
-    $info = $map[$source] ?? ['#95a5a6', '#eaeded', ucfirst($source)];
+    $info = $map[$source] ?? ['#95a5a6', '#eaeded', htmlspecialchars(ucfirst((string)$source), ENT_QUOTES, 'UTF-8')];
     return "<span style='background:{$info[1]};color:{$info[0]};padding:2px 8px;border-radius:3px;font-size:11px;font-weight:600;'>{$info[2]}</span>";
 }
 
@@ -671,7 +712,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                             <div class="value"><?php echo $overview['totalSessions'] > 0 ? round(($overview['totalSubmissions'] / $overview['totalSessions']) * 100, 1) . '%' : '0%'; ?></div>
                         </div>
                         <div class="stat-card">
-                            <h3>Avg Dwell Time</h3>
+                            <h3>Avg Active Time</h3>
                             <div class="value"><?php echo fmtDuration((int)$overview['avgDuration']); ?></div>
                         </div>
                     </div>
@@ -679,13 +720,13 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                     <!-- Submission Trend -->
                     <?php
                     $trendData = $overview['trend'] ?? [];
-                    $trendTitle = 'Contact Lead Trend (30 Days)';
+                    $trendTitle = 'Lead Trend (30 Days)';
                     if ($trendPeriod === 'months') {
                         $trendData = $overview['trendMonthly'] ?? [];
-                        $trendTitle = 'Contact Lead Trend (12 Months)';
+                        $trendTitle = 'Lead Trend (12 Months)';
                     } elseif ($trendPeriod === 'years') {
                         $trendData = $overview['trendYearly'] ?? [];
-                        $trendTitle = 'Contact Lead Trend (Years)';
+                        $trendTitle = 'Lead Trend (Years)';
                     }
                     ?>
                     <?php if (!empty($trendData)): ?>
@@ -817,11 +858,24 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                         </div>
                     </div>
 
+                    <div class="panel" style="margin-top:20px;">
+                        <div class="panel-header">AI Referrals (<?php echo $periodLabel; ?>) <span style="font-size:11px;color:#888;font-weight:400;">verified referrer/UTM evidence, not AI citations</span></div>
+                        <div class="panel-body" style="padding:0;">
+                            <?php if (empty($aiReferrals)): ?>
+                                <div class="empty" style="padding:24px;"><p>No verified AI referrals yet</p></div>
+                            <?php else: ?>
+                                <table><thead><tr><th>Platform</th><th style="text-align:right;">Sessions</th><th style="text-align:right;">Visitors</th><th style="text-align:right;">Leads</th><th style="text-align:right;">Landing Pages</th><th style="text-align:right;">Lead Rate</th></tr></thead><tbody>
+                                <?php foreach ($aiReferrals as $row): ?><tr><td><?php echo htmlspecialchars(ucfirst($row['platform'])); ?></td><td style="text-align:right;"><?php echo number_format($row['sessions']); ?></td><td style="text-align:right;"><?php echo number_format($row['visitors']); ?></td><td style="text-align:right;"><?php echo number_format($row['leads']); ?></td><td style="text-align:right;"><?php echo number_format($row['pages']); ?></td><td style="text-align:right;"><?php echo $row['conversion_rate']; ?>%</td></tr><?php endforeach; ?>
+                                </tbody></table>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+
                 <?php elseif ($tab === 'submissions'): ?>
                     <!-- Submissions List -->
                     <div class="panel">
                         <div class="panel-header">
-                            Contact Leads (unique Visitors: <?php echo number_format($subTotal); ?>)
+                            Leads (unique Visitors: <?php echo number_format($subTotal); ?>)
                             <div>
                                 <a href="?tab=submissions&export_csv=1<?php echo $subStatus ? '&status=' . urlencode($subStatus) : ''; ?><?php echo $subPlugin ? '&plugin=' . urlencode($subPlugin) : ''; ?><?php echo $subDateFrom ? '&date_from=' . urlencode($subDateFrom) : ''; ?><?php echo $subDateTo ? '&date_to=' . urlencode($subDateTo) : ''; ?>" class="btn btn-success btn-small">Export CSV (filtered)</a>
                             </div>
@@ -882,17 +936,18 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                                     <td class="mono"><a href="?tab=journey&visitor_id=<?php echo urlencode($sub['visitor_id']); ?>" class="link"><?php echo htmlspecialchars(str_replace('vjtv_', '', $sub['visitor_id'])); ?></a></td>
                                                     <td><?php echo htmlspecialchars($sub['channels'] ?? $sub['form_name']); ?></td>
                                                     <td style="text-align:center;"><?php echo number_format((int)($sub['event_count'] ?? 1)); ?></td>
-                                                    <td class="url-cell"><a href="<?php echo htmlspecialchars($sub['submit_page'] ?? '#'); ?>" target="_blank"><?php echo htmlspecialchars(fmtUrl($sub['submit_page'] ?? '-')); ?></a></td>
+                                                    <td class="url-cell"><a href="<?php echo safeHref($sub['submit_page'] ?? ''); ?>" target="_blank" rel="noopener noreferrer"><?php echo htmlspecialchars(fmtUrl($sub['submit_page'] ?? '-')); ?></a></td>
                                                     <td>
                                                         <?php echo htmlspecialchars($sub['ip']); ?>
                                                         <?php if ($sub['country']): ?>
                                                             <br><span class="country-badge"><?php echo htmlspecialchars(getCountryName($sub['country'])); ?></span>
                                                         <?php endif; ?>
                                                     </td>
-                                                    <td><span class="status status-<?php echo $sub['display_status']; ?>"><?php echo ucfirst($sub['display_status']); ?></span></td>
+                                                    <?php $displayStatus = safeStatus($sub['display_status'] ?? ''); ?>
+                                                    <td><span class="status status-<?php echo $displayStatus; ?>"><?php echo htmlspecialchars(ucfirst($displayStatus)); ?></span></td>
                                                     <td style="white-space:nowrap;">
                                                         <a href="?tab=journey&visitor_id=<?php echo urlencode($sub['visitor_id']); ?>" class="btn btn-primary btn-small">Check</a>
-                                                        <button type="button" class="btn btn-danger btn-small" onclick="vjtDeleteLead('<?php echo htmlspecialchars($sub['visitor_id'], ENT_QUOTES); ?>')" title="Delete this contact lead and its contact events">Del</button>
+                                                        <button type="button" class="btn btn-danger btn-small" onclick="vjtDeleteLead(<?php echo jsArg($sub['visitor_id']); ?>)" title="Delete this contact lead and its contact events">Del</button>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>
@@ -927,7 +982,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                             <div class="value"><?php echo number_format($trafficData['uniqueUrls']); ?></div>
                         </div>
                         <div class="stat-card">
-                            <h3>Avg Dwell Time</h3>
+                            <h3>Avg Active Time</h3>
                             <div class="value"><?php echo fmtDuration($trafficData['avgDwellAll']); ?></div>
                         </div>
                         <div class="stat-card">
@@ -993,9 +1048,9 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                         <th style="width:40px;">#</th>
                                         <th>Page URL</th>
                                         <th style="text-align:center;width:70px;">Views</th>
-                                        <th style="text-align:center;width:80px;">Avg Dwell</th>
+                                        <th style="text-align:center;width:90px;">Avg Active</th>
                                         <th style="text-align:center;width:80px;">Scroll</th>
-                                        <th style="text-align:center;width:80px;">Contact Leads</th>
+                                                <th style="text-align:center;width:80px;">Leads</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -1003,7 +1058,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                         <tr>
                                             <td style="color:#999;"><?php echo $rank++; ?></td>
                                             <td class="url-cell">
-                                                <a href="<?php echo htmlspecialchars($page['url']); ?>" target="_blank" rel="noopener">
+                                                <a href="<?php echo safeHref($page['url']); ?>" target="_blank" rel="noopener noreferrer">
                                                     <?php echo htmlspecialchars(strlen($page['url']) > 80 ? substr($page['url'], 0, 80) . '...' : $page['url']); ?>
                                                 </a>
                                             </td>
@@ -1023,7 +1078,14 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                 <?php elseif ($tab === 'visitors'): ?>
                     <!-- Visitors List -->
                     <div class="panel">
-                        <div class="panel-header">Visitors (<?php echo number_format($visTotal); ?>)</div>
+                        <div class="panel-header">Visitors (<?php echo number_format($visTotal); ?>)<a href="?<?php echo htmlspecialchars(http_build_query([
+                            'tab'=>'visitors', 'export_visitors_csv'=>1, 'search'=>$visSearch, 'source'=>$visSource, 'device'=>$visDevice,
+                            'sessions_min'=>$visSessionsMin, 'sessions_max'=>$visSessionsMax,
+                            'submissions_min'=>$visSubmissionsMin, 'submissions_max'=>$visSubmissionsMax,
+                            'session_time_min'=>$visSessionTimeMin, 'country'=>$visCountry, 'product'=>$visProduct,
+                            'date_from'=>$_GET['date_from'] ?? '', 'date_to'=>$_GET['date_to'] ?? '',
+                            'sort'=>$visSortBy, 'order'=>$visSortOrder,
+                        ])); ?>" class="btn btn-success btn-small">Export CSV (filtered)</a></div>
                         <div class="panel-body">
                             <form class="filters" method="GET">
                                 <input type="hidden" name="tab" value="visitors">
@@ -1128,7 +1190,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                                     <td><?php echo sourceBadge($v['source']); ?></td>
                                                     <td style="white-space:nowrap;">
                                                         <a href="?tab=journey&visitor_id=<?php echo urlencode($v['visitor_id']); ?>" class="btn btn-primary btn-small">Check</a>
-                                                        <button type="button" class="btn btn-danger btn-small" onclick="vjtDeleteVisitor('<?php echo htmlspecialchars($v['visitor_id'], ENT_QUOTES); ?>')" title="Delete visitor and all records">Del</button>
+                                                        <button type="button" class="btn btn-danger btn-small" onclick="vjtDeleteVisitor(<?php echo jsArg($v['visitor_id']); ?>)" title="Delete visitor and all records">Del</button>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>
@@ -1173,7 +1235,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                     <div class="panel">
                         <div class="panel-header">
                             Journey: <?php echo htmlspecialchars(str_replace('vjtv_', '', $v['visitor_id'])); ?>
-                            <a href="?tab=visitors" class="btn btn-secondary btn-small">Back to Visitors</a>
+                            <span><a href="?tab=journey&visitor_id=<?php echo urlencode($v['visitor_id']); ?>&export_journey_csv=1" class="btn btn-success btn-small">Export CSV</a> <a href="?tab=visitors" class="btn btn-secondary btn-small">Back to Visitors</a></span>
                         </div>
                         <div class="panel-body">
                             <div class="journey-section">
@@ -1212,8 +1274,9 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                                 <tr>
                                                     <td style="font-size:12px;"><?php echo htmlspecialchars(vjt_format_for_visitor($sub['submitted_at'], $v['timezone'] ?? '')); ?></td>
                                                     <td><?php echo htmlspecialchars(($sub['form_plugin'] ?? '') . ': ' . ($sub['form_name'] ?? '')); ?></td>
-                                                    <td class="url-cell"><a href="<?php echo htmlspecialchars($sub['submit_page'] ?? '#'); ?>" target="_blank"><?php echo htmlspecialchars(fmtUrl($sub['submit_page'] ?? '-')); ?></a></td>
-                                                    <td><span class="status status-<?php echo $sub['status'] ?? ''; ?>"><?php echo ucfirst($sub['status'] ?? ''); ?></span></td>
+                                                    <td class="url-cell"><a href="<?php echo safeHref($sub['submit_page'] ?? ''); ?>" target="_blank" rel="noopener noreferrer"><?php echo htmlspecialchars(fmtUrl($sub['submit_page'] ?? '-')); ?></a></td>
+                                                    <?php $submissionStatus = safeStatus($sub['status'] ?? ''); ?>
+                                                    <td><span class="status status-<?php echo $submissionStatus; ?>"><?php echo htmlspecialchars(ucfirst($submissionStatus)); ?></span></td>
                                                 </tr>
                                             <?php endforeach; ?>
                                         </tbody>
@@ -1262,6 +1325,13 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                     <?php if ($sess['utm_medium']): ?>
                                         <div class="journey-item"><label>UTM Medium</label><div class="val"><?php echo htmlspecialchars($sess['utm_medium']); ?></div></div>
                                     <?php endif; ?>
+                                    <?php if (!empty($sess['gsc_keywords'])): ?>
+                                        <div class="journey-item" style="grid-column:1/-1;">
+                                            <label>Related GSC Queries</label>
+                                            <div class="val"><?php echo htmlspecialchars(implode(', ', $sess['gsc_keywords'])); ?></div>
+                                            <div style="margin-top:4px;font-size:11px;color:#888;">Aggregate queries for this landing page/date; not this visitor's exact search.</div>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
 
                                 <?php if (!empty($timeline)): ?>
@@ -1274,9 +1344,10 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                                 </div>
                                                 <div class="pv-meta">
                                                     <?php echo htmlspecialchars(vjt_format_for_visitor($item['submitted_at'], $v['timezone'] ?? '')); ?> |
-                                                    <span class="status status-<?php echo $item['status']; ?>"><?php echo ucfirst($item['status'] ?? ''); ?></span>
+                                                    <?php $timelineStatus = safeStatus($item['status'] ?? ''); ?>
+                                                    <span class="status status-<?php echo $timelineStatus; ?>"><?php echo htmlspecialchars(ucfirst($timelineStatus)); ?></span>
                                                     <?php if ($item['submit_page']): ?>
-                                                        <br><a href="<?php echo htmlspecialchars($item['submit_page']); ?>" target="_blank" style="color:#8B7355;font-size:11px;"><?php echo htmlspecialchars(fmtUrl($item['submit_page'])); ?></a>
+                                                        <br><a href="<?php echo safeHref($item['submit_page']); ?>" target="_blank" rel="noopener noreferrer" style="color:#8B7355;font-size:11px;"><?php echo htmlspecialchars(fmtUrl($item['submit_page'])); ?></a>
                                                     <?php endif; ?>
                                                 </div>
                                             </div>
@@ -1289,7 +1360,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                                     Dwell: <?php echo fmtDuration($item['duration_seconds']); ?> |
                                                     Scroll: <?php echo $item['scroll_depth']; ?>%
                                                     <?php if ($item['url']): ?>
-                                                        <br><a href="<?php echo htmlspecialchars($item['url']); ?>" target="_blank" style="color:#8B7355;font-size:11px;"><?php echo htmlspecialchars(fmtUrl($item['url'])); ?></a>
+                                                        <br><a href="<?php echo safeHref($item['url']); ?>" target="_blank" rel="noopener noreferrer" style="color:#8B7355;font-size:11px;"><?php echo htmlspecialchars(fmtUrl($item['url'])); ?></a>
                                                     <?php endif; ?>
                                                 </div>
                                             </div>
@@ -1318,7 +1389,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                                 <th>Country</th>
                                                 <th style="text-align:center;">Visitors</th>
                                                 <th style="text-align:center;">Sessions</th>
-                                                <th style="text-align:center;">Contact Leads</th>
+                                                <th style="text-align:center;">Leads</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -1374,7 +1445,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                                 <tr>
                                                     <td style="color:#999;font-size:12px;"><?php echo $rank++; ?></td>
                                                     <td class="mono" style="font-weight:600;"><?php echo htmlspecialchars($p['sku']); ?></td>
-                                                    <td class="url-cell"><a href="<?php echo htmlspecialchars($p['url']); ?>" target="_blank" style="font-size:12px;"><?php echo htmlspecialchars($p['url']); ?></a></td>
+                                                    <td class="url-cell"><a href="<?php echo safeHref($p['url']); ?>" target="_blank" rel="noopener noreferrer" style="font-size:12px;"><?php echo htmlspecialchars($p['url']); ?></a></td>
                                                     <td style="text-align:center;font-weight:600;"><?php echo number_format($p['views']); ?></td>
                                                     <td style="text-align:center;">
                                                         <?php if ($p['visitors'] > 0): ?>
@@ -1413,6 +1484,21 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                     <label>Enable Geo Lookup</label>
                                     <input type="checkbox" name="enable_geo" <?php echo ($settings['enable_geo'] ?? '1') === '1' ? 'checked' : ''; ?>>
                                     <span style="color:#888;font-size:12px;">Resolve IP to country/city via ip-api.com (free)</span>
+                                </div>
+                                <div class="setting-row">
+                                    <label>Internal IP / CIDR Exclusions</label>
+                                    <textarea name="excluded_ips" rows="3" style="width:320px;padding:6px 10px;border:1px solid #ddd;border-radius:4px;font-size:12px;" placeholder="203.0.113.10&#10;198.51.100.0/24"><?php echo htmlspecialchars($settings['excluded_ips'] ?? ''); ?></textarea>
+                                    <span style="color:#888;font-size:12px;">One per line. Excludes analytics writes only; inquiry email delivery remains unaffected.</span>
+                                </div>
+                                <div class="setting-row">
+                                    <label>Active Dwell Heartbeat</label>
+                                    <input type="number" name="heartbeat_seconds" value="<?php echo htmlspecialchars($settings['heartbeat_seconds'] ?? '45'); ?>" min="30" max="120">
+                                    <span style="color:#888;font-size:12px;">Seconds between active-page recovery writes. Tracker refreshes this public setting with a short cache.</span>
+                                </div>
+                                <div class="setting-row">
+                                    <label>Inquiry Email Journey Summary</label>
+                                    <input type="checkbox" name="enable_email_summary" <?php echo ($settings['enable_email_summary'] ?? '1') === '1' ? 'checked' : ''; ?>>
+                                    <span style="color:#888;font-size:12px;">Append attributed source and a compact journey summary to successful inquiry emails.</span>
                                 </div>
                                 <div style="margin-top:15px;">
                                     <button type="submit" name="save_settings" class="btn btn-primary">Save Settings</button>
@@ -1484,8 +1570,14 @@ function vjtDeleteOne(id) {
   if (!confirm('Delete this submission? This cannot be undone.')) return;
   var form = document.createElement('form');
   form.method = 'POST';
-  form.innerHTML = '<input name="delete_ids" value="' + id + '">';
-  form.innerHTML += '<input name="csrf_token" value="' + (document.getElementById('vjt_csrf')||{}).value + '">';
+  var deleteInput = document.createElement('input');
+  deleteInput.name = 'delete_ids';
+  deleteInput.value = id;
+  form.appendChild(deleteInput);
+  var csrf = document.createElement('input');
+  csrf.name = 'csrf_token';
+  csrf.value = (document.getElementById('vjt_csrf')||{}).value || '';
+  form.appendChild(csrf);
   document.body.appendChild(form);
   form.submit();
 }
@@ -1493,8 +1585,14 @@ function vjtDeleteVisitor(visitorId) {
   if (!confirm('Delete this visitor and ALL associated records (sessions, pageviews, submissions)? This cannot be undone.')) return;
   var form = document.createElement('form');
   form.method = 'POST';
-  form.innerHTML = '<input name="delete_visitor" value="' + visitorId + '">';
-  form.innerHTML += '<input name="csrf_token" value="' + (document.getElementById('vjt_csrf')||{}).value + '">';
+  var visitorInput = document.createElement('input');
+  visitorInput.name = 'delete_visitor';
+  visitorInput.value = visitorId;
+  form.appendChild(visitorInput);
+  var csrf = document.createElement('input');
+  csrf.name = 'csrf_token';
+  csrf.value = (document.getElementById('vjt_csrf')||{}).value || '';
+  form.appendChild(csrf);
   document.body.appendChild(form);
   form.submit();
 }

@@ -18,6 +18,12 @@ session_set_cookie_params([
 session_start();
 
 header('X-Robots-Tag: noindex, nofollow');
+header('Cache-Control: no-store, private');
+header('Pragma: no-cache');
+header('X-Content-Type-Options: nosniff');
+header('X-Frame-Options: DENY');
+header('Referrer-Policy: no-referrer');
+header("Content-Security-Policy: default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://challenges.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://www.google-analytics.com; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests");
 
 // Load private credentials (file lives outside public_html)
 $_privateConfigPath = dirname(__DIR__) . '/private_config.php';
@@ -375,15 +381,12 @@ if (isset($_GET['reset'])) {
     }
 }
 
-// Rate limit: 5 admin login attempts per IP per YEAR (31536000 seconds).
-// Combined with the IP whitelist in rate-limit.php (single-admin bypass),
-// this is effectively "permanently ban" any non-whitelisted IP after 5 failures.
-// (Was 5/15min — but a single admin mistyping 5 times would lock themselves out.)
+// Rate limit failed/attempted admin logins without creating year-long denial of service.
 require_once dirname(__DIR__) . '/private/rate-limit.php';
 
 // Handle login
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password']) && !isset($_POST['change_password']) && !isset($_POST['reset_password'])) {
-    if (!checkRateLimit('admin-login', 5, 31536000)) {
+    if (!checkRateLimit('admin-login', 10, 900)) {
         $error = 'Too many login attempts. Please wait 15 minutes.';
     } else {
         $submittedPassword = trim($_POST['password']);
@@ -1055,7 +1058,8 @@ function resendEmail($log) {
                             <?php
                             $displayLogs = array_slice($logs, 0, 100);
                             foreach ($displayLogs as $i => $log):
-                                $status = $log['status'] ?? 'unknown';
+                                $rawStatus = is_scalar($log['status'] ?? null) ? (string)$log['status'] : 'unknown';
+                                $status = in_array($rawStatus, ['success', 'failed'], true) ? $rawStatus : 'unknown';
                                 $timestamp = $log['timestamp'] ?? 'Unknown';
                                 $name = $log['form_data']['name'] ?? 'N/A';
                                 $email = $log['form_data']['email'] ?? 'N/A';

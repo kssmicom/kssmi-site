@@ -396,12 +396,12 @@ function thumbSrc(originalPath: string): string {
 
             <div class="flex flex-wrap justify-center gap-2 w-full max-w-[640px] mx-auto">
               {cover && (
-                <button class="thumb flex-none w-16 h-16 rounded-lg overflow-hidden border-2 border-[#8B7355] shadow-sm hover:shadow-md transition-shadow" data-full={cover} aria-label={getAltText(cover, "View main image")}>
+                <button class="thumb flex-none w-16 h-16 rounded-lg overflow-hidden border-2 border-[#8B7355] shadow-xs hover:shadow-md transition-shadow" data-full={cover} aria-label={getAltText(cover, "View main image")}>
                   <img src={thumbSrc(cover)} alt={getAltText(cover, "Main")} class="w-full h-full object-cover" width="64" height="64" loading="lazy" decoding="async" onerror="const btn=this.closest('.thumb');if(btn&&!this.dataset.retried){this.dataset.retried=true;this.src=btn.getAttribute('data-full')||this.src}" />
                 </button>
               )}
               {gallery?.map((img: string, index: number) => (
-                <button class="thumb flex-none w-16 h-16 rounded-lg overflow-hidden border-2 border-transparent hover:border-[#8B7355] shadow-sm hover:shadow-md transition-all" data-full={img} aria-label={getAltText(img, `View gallery image ${index + 1}`)}>
+                <button class="thumb flex-none w-16 h-16 rounded-lg overflow-hidden border-2 border-transparent hover:border-[#8B7355] shadow-xs hover:shadow-md transition-all" data-full={img} aria-label={getAltText(img, `View gallery image ${index + 1}`)}>
                   <img src={thumbSrc(img)} alt={getAltText(img, `Gallery ${index + 1}`)} class="w-full h-full object-cover" width="64" height="64" loading="lazy" decoding="async" onerror="const btn=this.closest('.thumb');if(btn&&!this.dataset.retried){this.dataset.retried=true;this.src=btn.getAttribute('data-full')||this.src}" />
                 </button>
               ))}
@@ -422,28 +422,28 @@ function thumbSrc(originalPath: string): string {
 
             <div class="border-y border-gray-200 py-6 mb-6 space-y-3">
               {itemNo && (
-                <div class="flex items-start gap-2 hover:bg-stone-100 -mx-3 px-3 py-1 rounded transition-colors cursor-default">
+                <div class="flex items-start gap-2 hover:bg-stone-100 -mx-3 px-3 py-1 rounded-sm transition-colors cursor-default">
                   <span class="text-sm text-gray-500 min-w-[160px]">{pt.itemNo}:</span>
                   <span class="text-sm font-medium text-gray-900">{itemNo}</span>
                 </div>
               )}
               {colors && (
-                <div class="flex items-start gap-2 hover:bg-stone-100 -mx-3 px-3 py-1 rounded transition-colors cursor-default">
+                <div class="flex items-start gap-2 hover:bg-stone-100 -mx-3 px-3 py-1 rounded-sm transition-colors cursor-default">
                   <span class="text-sm text-gray-500 min-w-[160px]">{pt.color}:</span>
                   <span class="text-sm font-medium text-gray-900">{colors}</span>
                 </div>
               )}
               {materials && (
-                <div class="flex items-start gap-2 hover:bg-stone-100 -mx-3 px-3 py-1 rounded transition-colors cursor-default">
+                <div class="flex items-start gap-2 hover:bg-stone-100 -mx-3 px-3 py-1 rounded-sm transition-colors cursor-default">
                   <span class="text-sm text-gray-500 min-w-[160px]">{pt.materials}:</span>
                   <span class="text-sm font-medium text-gray-900">{materials}</span>
                 </div>
               )}
-              <div class="flex items-start gap-2 hover:bg-stone-100 -mx-3 px-3 py-1 rounded transition-colors cursor-default">
+              <div class="flex items-start gap-2 hover:bg-stone-100 -mx-3 px-3 py-1 rounded-sm transition-colors cursor-default">
                 <span class="text-sm text-gray-500 min-w-[160px]">{pt.serviceMode}:</span>
                 <span class="text-sm font-medium text-gray-900">{serviceMode || 'OEM / ODM'}</span>
               </div>
-              <div class="flex items-start gap-2 hover:bg-stone-100 -mx-3 px-3 py-1 rounded transition-colors cursor-default">
+              <div class="flex items-start gap-2 hover:bg-stone-100 -mx-3 px-3 py-1 rounded-sm transition-colors cursor-default">
                 <span class="text-sm text-gray-500 min-w-[160px]">{pt.moq}:</span>
                 <span class="text-sm font-medium text-gray-900">{moq || '100 PCS/Model'}</span>
               </div>
@@ -472,7 +472,7 @@ function thumbSrc(originalPath: string): string {
       {ProductContent && <ProductContent slot="highlights" />}
     </TechnicalSpecs>
 
-    <section class="py-16 lg:py-20 bg-gradient-to-r from-[#8B7355] to-[#5D4E37] text-white contain-below-fold">
+    <section class="py-16 lg:py-20 bg-linear-to-r from-[#8B7355] to-[#5D4E37] text-white contain-below-fold">
       <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
         <div class="text-center mb-10">
           <h2 class="text-2xl lg:text-3xl font-bold mb-4">{pt.partnerTitle}</h2>
