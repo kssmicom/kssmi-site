@@ -8,6 +8,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: kssmi-production
+  cancel-in-progress: true
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -91,9 +95,12 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/kssmi.com/public_html
+            SITE_USER=kssmi4374
+            SITE_GROUP=kssmi4374
+            SITE_OWNER="$SITE_USER:$SITE_GROUP"
 
-            # Set ownership (may require sudo — fail silently if not available)
-            chown -R kssmi:kssmi * 2>/dev/null || sudo chown -R kssmi:kssmi * 2>/dev/null || true
+            # Set ownership, including dotfiles such as .htaccess.
+            chown -R "$SITE_OWNER" . 2>/dev/null || sudo chown -R "$SITE_OWNER" .
 
             # Set directory permissions
             find . -type d -exec chmod 755 {} \; 2>/dev/null || true
@@ -125,11 +132,30 @@ jobs:
             #   2. The Mkdir below ensures the destination directory exists with
             #      correct ownership so PHP can create vjt.sqlite on first init.
             mkdir -p /home/kssmi.com/vjt_data 2>/dev/null || sudo mkdir -p /home/kssmi.com/vjt_data 2>/dev/null || true
-            chown kssmi:kssmi /home/kssmi.com/vjt_data 2>/dev/null || sudo chown kssmi:kssmi /home/kssmi.com/vjt_data 2>/dev/null || true
+            chown "$SITE_OWNER" /home/kssmi.com/vjt_data 2>/dev/null || sudo chown "$SITE_OWNER" /home/kssmi.com/vjt_data
             chmod 750 /home/kssmi.com/vjt_data 2>/dev/null || sudo chmod 750 /home/kssmi.com/vjt_data 2>/dev/null || true
 
             # Set ownership for data files
-            chown kssmi:kssmi "$PRIVATE_ROOT/email-logs.json" "$PRIVATE_ROOT/.email_logs_password" "$PRIVATE_ROOT/.email_reset_tokens.json" 2>/dev/null || sudo chown kssmi:kssmi "$PRIVATE_ROOT/email-logs.json" "$PRIVATE_ROOT/.email_logs_password" "$PRIVATE_ROOT/.email_reset_tokens.json" 2>/dev/null || true
+            chown "$SITE_OWNER" "$PRIVATE_ROOT/email-logs.json" "$PRIVATE_ROOT/.email_logs_password" "$PRIVATE_ROOT/.email_reset_tokens.json" 2>/dev/null || sudo chown "$SITE_OWNER" "$PRIVATE_ROOT/email-logs.json" "$PRIVATE_ROOT/.email_logs_password" "$PRIVATE_ROOT/.email_reset_tokens.json"
+
+            # GSC credentials stay outside public_html and must be readable only
+            # by the real LiteSpeed PHP account. If the manually uploaded file
+            # exists, make a permission regression fail the deploy visibly.
+            GSC_DIR="$PRIVATE_ROOT/private/gsc"
+            GSC_JSON="$GSC_DIR/google-service-account.json"
+            if [ -f "$GSC_JSON" ]; then
+              chown -R "$SITE_OWNER" "$GSC_DIR" 2>/dev/null || sudo chown -R "$SITE_OWNER" "$GSC_DIR"
+              chmod 700 "$GSC_DIR" 2>/dev/null || sudo chmod 700 "$GSC_DIR"
+              chmod 600 "$GSC_JSON" 2>/dev/null || sudo chmod 600 "$GSC_JSON"
+              if [ "$(id -un)" = "$SITE_USER" ]; then
+                test -r "$GSC_JSON"
+              else
+                sudo -u "$SITE_USER" test -r "$GSC_JSON"
+              fi
+              echo "GSC JSON readable by $SITE_USER: OK"
+            else
+              echo "GSC JSON not present; skipping credential permission check."
+            fi
 
       - name: Verify deployed security controls
         shell: bash

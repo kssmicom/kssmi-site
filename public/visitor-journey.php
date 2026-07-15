@@ -55,6 +55,7 @@ function getPasswordHash() {
 $PASSWORD_HASH = getPasswordHash();
 $error = '';
 $message = '';
+$messageClass = 'success';
 
 // Rate limit password guessing without creating an attacker-triggered year-long
 // lockout for an administrator behind a shared/changing IP.
@@ -95,7 +96,7 @@ if ($isAuthenticated) {
 // Determine active tab
 $tab = $_GET['tab'] ?? 'overview';
 $trendPeriod = $_GET['trend'] ?? 'days';
-$validTabs = ['overview', 'submissions', 'traffic', 'visitors', 'journey', 'countries', 'products', 'settings'];
+$validTabs = ['overview', 'submissions', 'traffic', 'visitors', 'journey', 'countries', 'products', 'gsc', 'settings'];
 if (!in_array($tab, $validTabs)) $tab = 'overview';
 
 // ── Data helpers ────────────────────────────────────────────────────────────
@@ -124,6 +125,20 @@ if ($isAuthenticated && isset($_POST['save_settings'])) {
         $settings = array_intersect_key($_POST, array_flip($allowed));
         vjt_save_settings($settings);
         $message = 'Settings saved.';
+    }
+}
+
+// Test the server-side service account and Search Console property without ever
+// exposing the private key or OAuth token to the browser.
+if ($isAuthenticated && isset($_POST['test_gsc_connection'])) {
+    if (!isset($_POST['csrf_token']) || !isset($_SESSION['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+        $message = 'Security check failed. Please try again.';
+        $messageClass = 'error';
+    } else {
+        $gscTest = vjt_gsc_diagnostics(true);
+        $gscLastTest = $gscTest['last_test'] ?? [];
+        $message = !empty($gscLastTest['ok']) ? 'GSC connection test passed.' : 'GSC connection test failed: ' . ($gscLastTest['message'] ?? 'Unknown error.');
+        $messageClass = !empty($gscLastTest['ok']) ? 'success' : 'error';
     }
 }
 
@@ -223,6 +238,16 @@ $visitors = [];
 $journeyData = null;
 $aiReferrals = [];
 $settings = $isAuthenticated ? getSettings() : [];
+$gscDiagnostics = [];
+$gscReport = [];
+$gscDays = in_array((int)($_GET['days'] ?? 28), [7, 28, 90], true) ? (int)($_GET['days'] ?? 28) : 28;
+
+if ($isAuthenticated && ($tab === 'settings' || $tab === 'gsc')) {
+    $gscDiagnostics = vjt_gsc_diagnostics(false);
+}
+if ($isAuthenticated && $tab === 'gsc' && !empty($gscDiagnostics['ready'])) {
+    $gscReport = vjt_gsc_top_queries($gscDays);
+}
 
 if ($isAuthenticated && $tab === 'overview') {
     if ($trendPeriod === 'months') {
@@ -599,6 +624,12 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         .setting-row label { font-weight: 500; min-width: 200px; }
         .setting-row input[type="number"] { width: 80px; padding: 6px 10px; border: 1px solid #ddd; border-radius: 4px; }
         .setting-row input[type="checkbox"] { width: 20px; height: 20px; }
+        .gsc-status-grid { display: grid; grid-template-columns: minmax(180px, 240px) 1fr; gap: 8px 18px; margin: 14px 0; }
+        .gsc-status-label { color: #666; font-size: 12px; font-weight: 600; }
+        .gsc-status-value { color: #333; font-size: 12px; word-break: break-word; }
+        .status-pill { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+        .status-ok { color: #20733a; background: #d4edda; }
+        .status-bad { color: #b52b27; background: #fdeaea; }
 
         /* Empty state */
         .empty { text-align: center; padding: 60px; }
@@ -672,7 +703,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
             </div>
 
             <?php if ($message): ?>
-                <p class="success"><?php echo htmlspecialchars($message); ?></p>
+                <p class="<?php echo $messageClass === 'error' ? 'error' : 'success'; ?>"><?php echo htmlspecialchars($message); ?></p>
             <?php endif; ?>
 
                 <!-- Global CSRF token for all tabs (used by JS delete functions) -->
@@ -689,6 +720,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                     <?php if ($tab === 'journey'): ?>
                         <a href="?tab=journey&visitor_id=<?php echo urlencode($_GET['visitor_id'] ?? ''); ?>" class="tab active">Journey Detail</a>
                     <?php endif; ?>
+                    <a href="?tab=gsc" class="tab <?php echo $tab === 'gsc' ? 'active' : ''; ?>">GSC Keywords</a>
                     <a href="?tab=settings" class="tab <?php echo $tab === 'settings' ? 'active' : ''; ?>">Settings</a>
                 </div>
 
@@ -1463,6 +1495,53 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                         </div>
                     </div>
 
+                <?php elseif ($tab === 'gsc'): ?>
+                    <!-- Google Search Console aggregate query report -->
+                    <div class="panel">
+                        <div class="panel-header">Google Search Console Keywords</div>
+                        <div class="panel-body">
+                            <p style="color:#666;font-size:13px;line-height:1.55;margin-bottom:15px;">
+                                Aggregate Google Search query data for the whole verified property. These are not exact keywords for an individual visitor. Finalized data is shown through <?php echo htmlspecialchars($gscReport['end_date'] ?? gmdate('Y-m-d', time() - 2 * 86400)); ?>.
+                            </p>
+                            <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px;">
+                                <?php foreach ([7, 28, 90] as $daysOption): ?>
+                                    <a href="?tab=gsc&amp;days=<?php echo $daysOption; ?>" class="trend-tab <?php echo $gscDays === $daysOption ? 'trend-tab-active' : ''; ?>"><?php echo $daysOption; ?> days</a>
+                                <?php endforeach; ?>
+                                <a href="?tab=settings" class="trend-tab">Connection status</a>
+                            </div>
+
+                            <?php if (empty($gscDiagnostics['ready'])): ?>
+                                <p class="error">GSC is not ready on this server. Open <a href="?tab=settings" class="link">Settings</a> to see the failed configuration check and test the connection.</p>
+                            <?php elseif (empty($gscReport['ok'])): ?>
+                                <p class="error">Could not load GSC keywords: <?php echo htmlspecialchars($gscReport['error'] ?? 'Unknown Google API error.'); ?></p>
+                            <?php elseif (empty($gscReport['rows'])): ?>
+                                <div class="empty"><div class="empty-icon">🔎</div><p>The connection works, but Google returned no query rows for this period.</p></div>
+                            <?php else: ?>
+                                <p style="color:#888;font-size:11px;margin-bottom:10px;">
+                                    <?php echo htmlspecialchars($gscReport['start_date']); ?> to <?php echo htmlspecialchars($gscReport['end_date']); ?> · Top <?php echo number_format(count($gscReport['rows'])); ?> rows sorted by Google by clicks<?php echo !empty($gscReport['cached']) ? ' · cached up to 1 hour' : ''; ?>
+                                </p>
+                                <div class="table-wrapper">
+                                    <table>
+                                        <thead><tr><th>#</th><th>Query</th><th style="text-align:right;">Clicks</th><th style="text-align:right;">Impressions</th><th style="text-align:right;">CTR</th><th style="text-align:right;">Avg Position</th></tr></thead>
+                                        <tbody>
+                                            <?php foreach ($gscReport['rows'] as $index => $row): ?>
+                                                <tr>
+                                                    <td style="color:#999;font-size:12px;"><?php echo $index + 1; ?></td>
+                                                    <td><?php echo htmlspecialchars($row['query']); ?></td>
+                                                    <td style="text-align:right;font-weight:600;"><?php echo number_format($row['clicks']); ?></td>
+                                                    <td style="text-align:right;"><?php echo number_format($row['impressions']); ?></td>
+                                                    <td style="text-align:right;"><?php echo number_format($row['ctr'] * 100, 2); ?>%</td>
+                                                    <td style="text-align:right;"><?php echo number_format($row['position'], 1); ?></td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p style="color:#888;font-size:11px;margin-top:10px;">Search Console may omit low-volume rows and does not guarantee every query row.</p>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+
                 <?php elseif ($tab === 'settings'): ?>
                     <!-- Settings -->
                     <div class="panel">
@@ -1503,6 +1582,51 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                 <div style="margin-top:15px;">
                                     <button type="submit" name="save_settings" class="btn btn-primary">Save Settings</button>
                                 </div>
+                            </form>
+
+                            <hr style="margin:30px 0;border:none;border-top:1px solid #eee;">
+
+                            <h3 style="color:#5D4E37;margin-bottom:8px;">Google Search Console</h3>
+                            <p style="color:#666;font-size:13px;line-height:1.5;">
+                                Server-only service-account configuration. The private key and OAuth token are never displayed or sent to the browser.
+                            </p>
+                            <div class="gsc-status-grid">
+                                <div class="gsc-status-label">Environment variables</div>
+                                <div class="gsc-status-value"><span class="status-pill <?php echo !empty($gscDiagnostics['path_configured']) && !empty($gscDiagnostics['site_configured']) ? 'status-ok' : 'status-bad'; ?>"><?php echo !empty($gscDiagnostics['path_configured']) && !empty($gscDiagnostics['site_configured']) ? 'Configured' : 'Missing'; ?></span></div>
+
+                                <div class="gsc-status-label">Credentials file</div>
+                                <div class="gsc-status-value"><span class="status-pill <?php echo !empty($gscDiagnostics['file_readable']) ? 'status-ok' : 'status-bad'; ?>"><?php echo !empty($gscDiagnostics['file_readable']) ? 'Readable by PHP' : 'Not readable by PHP'; ?></span> <?php echo htmlspecialchars($gscDiagnostics['credentials_path'] ?? '-'); ?></div>
+
+                                <div class="gsc-status-label">Credentials JSON</div>
+                                <div class="gsc-status-value"><span class="status-pill <?php echo !empty($gscDiagnostics['json_valid']) ? 'status-ok' : 'status-bad'; ?>"><?php echo !empty($gscDiagnostics['json_valid']) ? 'Valid' : 'Invalid or unavailable'; ?></span></div>
+
+                                <div class="gsc-status-label">Service account</div>
+                                <div class="gsc-status-value"><?php echo htmlspecialchars($gscDiagnostics['service_account'] ?: '-'); ?></div>
+
+                                <div class="gsc-status-label">Search Console property</div>
+                                <div class="gsc-status-value"><?php echo htmlspecialchars($gscDiagnostics['site_url'] ?: '-'); ?></div>
+
+                                <div class="gsc-status-label">PHP requirements</div>
+                                <div class="gsc-status-value"><span class="status-pill <?php echo !empty($gscDiagnostics['openssl']) && !empty($gscDiagnostics['http_transport']) ? 'status-ok' : 'status-bad'; ?>"><?php echo !empty($gscDiagnostics['openssl']) && !empty($gscDiagnostics['http_transport']) ? 'OpenSSL + HTTP ready' : 'Missing OpenSSL or HTTP transport'; ?></span></div>
+
+                                <div class="gsc-status-label">Last connection test</div>
+                                <div class="gsc-status-value">
+                                    <?php $lastGscTest = $gscDiagnostics['last_test'] ?? []; ?>
+                                    <?php if (empty($lastGscTest)): ?>
+                                        <span class="status-pill status-bad">Not tested</span>
+                                    <?php else: ?>
+                                        <span class="status-pill <?php echo !empty($lastGscTest['ok']) ? 'status-ok' : 'status-bad'; ?>"><?php echo !empty($lastGscTest['ok']) ? 'Passed' : 'Failed'; ?></span>
+                                        <?php echo htmlspecialchars(($lastGscTest['tested_at'] ?? '') . ' — ' . ($lastGscTest['message'] ?? '')); ?>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                            <?php if (empty($gscDiagnostics['file_readable'])): ?>
+                                <p class="error">The current server evidence shows this file is owned by root and cannot be read by PHP user kssmi4374. Fix its owner and mode before testing.</p>
+                            <?php endif; ?>
+                            <form method="POST" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+                                <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
+                                <button type="submit" name="test_gsc_connection" class="btn btn-primary">Test GSC Connection</button>
+                                <?php if (!empty($gscDiagnostics['last_test']['ok'])): ?><a href="?tab=gsc" class="btn btn-secondary">Open GSC Keywords</a><?php endif; ?>
                             </form>
 
                             <hr style="margin:30px 0;border:none;border-top:1px solid #eee;">

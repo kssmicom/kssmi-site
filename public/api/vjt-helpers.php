@@ -1909,30 +1909,183 @@ function vjt_get_journey($visitorId) {
 
 function vjt_gsc_base64url($value) { return rtrim(strtr(base64_encode($value), '+/', '-_'), '='); }
 
-function vjt_gsc_config() {
-    $credentialsPath = trim((string)getenv('VJT_GSC_SERVICE_ACCOUNT_JSON'));
-    $siteUrl = trim((string)getenv('VJT_GSC_SITE_URL'));
-    return ($credentialsPath !== '' && $siteUrl !== '' && is_file($credentialsPath)) ? ['credentials'=>$credentialsPath, 'site_url'=>$siteUrl] : null;
+function vjt_gsc_environment() {
+    return [
+        'credentials' => trim((string)getenv('VJT_GSC_SERVICE_ACCOUNT_JSON')),
+        'site_url' => trim((string)getenv('VJT_GSC_SITE_URL')),
+    ];
 }
 
-function vjt_gsc_access_token($config) {
+function vjt_gsc_config() {
+    $env = vjt_gsc_environment();
+    return ($env['credentials'] !== '' && $env['site_url'] !== '' && is_file($env['credentials']) && is_readable($env['credentials'])) ? $env : null;
+}
+
+function vjt_gsc_error_message($data, $fallback) {
+    if (is_array($data)) {
+        if (!empty($data['error']['message'])) return vjt_clip((string)$data['error']['message'], 300);
+        if (!empty($data['error_description'])) return vjt_clip((string)$data['error_description'], 300);
+        if (!empty($data['error']) && is_string($data['error'])) return vjt_clip((string)$data['error'], 300);
+    }
+    return $fallback;
+}
+
+function vjt_gsc_http_json($url, $method = 'GET', $headers = [], $body = '', $timeout = 8) {
+    $headers = array_values($headers);
+    $status = 0;
+    $response = false;
+    $transportError = '';
+
+    if (function_exists('curl_init')) {
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_CUSTOMREQUEST => $method,
+            CURLOPT_HTTPHEADER => $headers,
+            CURLOPT_CONNECTTIMEOUT => min(5, $timeout),
+            CURLOPT_TIMEOUT => $timeout,
+        ]);
+        if ($body !== '') curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
+        $response = curl_exec($ch);
+        $status = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        if ($response === false) $transportError = (string)curl_error($ch);
+        curl_close($ch);
+    } elseif ((bool)ini_get('allow_url_fopen')) {
+        $context = stream_context_create(['http' => [
+            'method' => $method,
+            'header' => implode("\r\n", $headers),
+            'content' => $body,
+            'timeout' => $timeout,
+            'ignore_errors' => true,
+        ]]);
+        $response = @file_get_contents($url, false, $context);
+        foreach (($http_response_header ?? []) as $line) {
+            if (preg_match('/^HTTP\/\S+\s+(\d{3})/', $line, $match)) {
+                $status = (int)$match[1];
+                break;
+            }
+        }
+        if ($response === false) $transportError = 'HTTP request failed.';
+    } else {
+        $transportError = 'Neither cURL nor allow_url_fopen is available.';
+    }
+
+    $data = is_string($response) ? json_decode($response, true) : null;
+    $ok = $status >= 200 && $status < 300 && is_array($data);
+    $fallback = $transportError !== '' ? $transportError : ($status ? 'Google API returned HTTP ' . $status . '.' : 'Google API request failed.');
+    if ($response !== false && $response !== '' && !is_array($data) && $status >= 200 && $status < 300) {
+        $fallback = 'Google API returned invalid JSON.';
+    }
+    return ['ok'=>$ok, 'status'=>$status, 'data'=>$data, 'error'=>$ok ? '' : vjt_gsc_error_message($data, $fallback)];
+}
+
+function vjt_gsc_access_token_result($config, $forceRefresh = false) {
     $cached = json_decode((string)vjt_meta_get('gsc_access_token', ''), true);
-    if (is_array($cached) && !empty($cached['token']) && (int)($cached['expires_at'] ?? 0) > time() + 60) return $cached['token'];
-    if (!function_exists('openssl_sign')) return '';
+    if (!$forceRefresh && is_array($cached) && !empty($cached['token']) && (int)($cached['expires_at'] ?? 0) > time() + 60) {
+        return ['ok'=>true, 'token'=>$cached['token'], 'error'=>'', 'status'=>200];
+    }
+    if (!function_exists('openssl_sign')) return ['ok'=>false, 'token'=>'', 'error'=>'PHP OpenSSL is unavailable.', 'status'=>0];
+    if (empty($config['credentials']) || !is_file($config['credentials'])) return ['ok'=>false, 'token'=>'', 'error'=>'Service-account JSON file was not found.', 'status'=>0];
+    if (!is_readable($config['credentials'])) return ['ok'=>false, 'token'=>'', 'error'=>'Service-account JSON file is not readable by PHP.', 'status'=>0];
     $credentials = json_decode((string)@file_get_contents($config['credentials']), true);
-    if (!is_array($credentials) || empty($credentials['client_email']) || empty($credentials['private_key'])) return '';
+    if (!is_array($credentials)) return ['ok'=>false, 'token'=>'', 'error'=>'Service-account JSON is invalid.', 'status'=>0];
+    if (empty($credentials['client_email']) || empty($credentials['private_key'])) return ['ok'=>false, 'token'=>'', 'error'=>'Service-account JSON is missing client_email or private_key.', 'status'=>0];
     $now = time();
     $header = vjt_gsc_base64url(json_encode(['alg'=>'RS256','typ'=>'JWT']));
     $claims = vjt_gsc_base64url(json_encode(['iss'=>$credentials['client_email'], 'scope'=>'https://www.googleapis.com/auth/webmasters.readonly', 'aud'=>'https://oauth2.googleapis.com/token', 'iat'=>$now, 'exp'=>$now + 3600]));
     $input = $header . '.' . $claims;
-    if (!openssl_sign($input, $signature, $credentials['private_key'], OPENSSL_ALGO_SHA256)) return '';
+    if (!@openssl_sign($input, $signature, $credentials['private_key'], OPENSSL_ALGO_SHA256)) return ['ok'=>false, 'token'=>'', 'error'=>'Could not sign the Google OAuth request. Check the private key.', 'status'=>0];
     $body = http_build_query(['grant_type'=>'urn:ietf:params:oauth:grant-type:jwt-bearer', 'assertion'=>$input . '.' . vjt_gsc_base64url($signature)]);
-    $context = stream_context_create(['http'=>['method'=>'POST','header'=>"Content-Type: application/x-www-form-urlencoded\r\nContent-Length: " . strlen($body), 'content'=>$body, 'timeout'=>5, 'ignore_errors'=>true]]);
-    $response = @file_get_contents('https://oauth2.googleapis.com/token', false, $context);
-    $data = json_decode((string)$response, true);
-    if (empty($data['access_token'])) return '';
+    $response = vjt_gsc_http_json('https://oauth2.googleapis.com/token', 'POST', ['Content-Type: application/x-www-form-urlencoded', 'Content-Length: ' . strlen($body)], $body, 8);
+    $data = $response['data'];
+    if (!$response['ok'] || empty($data['access_token'])) return ['ok'=>false, 'token'=>'', 'error'=>$response['error'] ?: 'Google OAuth did not return an access token.', 'status'=>$response['status']];
     vjt_meta_set('gsc_access_token', json_encode(['token'=>$data['access_token'], 'expires_at'=>$now + max(60, (int)($data['expires_in'] ?? 3600) - 60)]));
-    return $data['access_token'];
+    return ['ok'=>true, 'token'=>$data['access_token'], 'error'=>'', 'status'=>$response['status']];
+}
+
+function vjt_gsc_access_token($config) {
+    $result = vjt_gsc_access_token_result($config);
+    return $result['ok'] ? $result['token'] : '';
+}
+
+function vjt_gsc_search_analytics($payload, $forceTokenRefresh = false) {
+    $config = vjt_gsc_config();
+    if (!$config) return ['ok'=>false, 'rows'=>[], 'error'=>'GSC environment variables or readable credentials are missing.', 'status'=>0];
+    $token = vjt_gsc_access_token_result($config, $forceTokenRefresh);
+    if (!$token['ok']) return ['ok'=>false, 'rows'=>[], 'error'=>$token['error'], 'status'=>$token['status']];
+    $body = json_encode($payload);
+    if ($body === false) return ['ok'=>false, 'rows'=>[], 'error'=>'Could not encode the GSC request.', 'status'=>0];
+    $url = 'https://www.googleapis.com/webmasters/v3/sites/' . rawurlencode($config['site_url']) . '/searchAnalytics/query';
+    $response = vjt_gsc_http_json($url, 'POST', ['Content-Type: application/json', 'Authorization: Bearer ' . $token['token'], 'Content-Length: ' . strlen($body)], $body, 10);
+    return ['ok'=>$response['ok'], 'rows'=>$response['ok'] ? ($response['data']['rows'] ?? []) : [], 'error'=>$response['error'], 'status'=>$response['status']];
+}
+
+function vjt_gsc_diagnostics($testConnection = false) {
+    $env = vjt_gsc_environment();
+    $raw = ($env['credentials'] !== '' && is_readable($env['credentials'])) ? @file_get_contents($env['credentials']) : false;
+    $credentials = is_string($raw) ? json_decode($raw, true) : null;
+    $diagnostics = [
+        'path_configured' => $env['credentials'] !== '',
+        'site_configured' => $env['site_url'] !== '',
+        'credentials_path' => $env['credentials'],
+        'site_url' => $env['site_url'],
+        'file_exists' => $env['credentials'] !== '' && is_file($env['credentials']),
+        'file_readable' => $raw !== false,
+        'json_valid' => is_array($credentials) && !empty($credentials['client_email']) && !empty($credentials['private_key']),
+        'service_account' => is_array($credentials) ? (string)($credentials['client_email'] ?? '') : '',
+        'openssl' => function_exists('openssl_sign'),
+        'http_transport' => function_exists('curl_init') || (bool)ini_get('allow_url_fopen'),
+        'last_test' => json_decode((string)vjt_meta_get('gsc_last_test', ''), true),
+    ];
+    $diagnostics['ready'] = $diagnostics['path_configured'] && $diagnostics['site_configured'] && $diagnostics['file_exists'] && $diagnostics['file_readable'] && $diagnostics['json_valid'] && $diagnostics['openssl'] && $diagnostics['http_transport'];
+
+    if ($testConnection) {
+        if (!$diagnostics['ready']) {
+            $result = ['ok'=>false, 'tested_at'=>gmdate('Y-m-d H:i:s') . ' UTC', 'message'=>'Local GSC configuration is incomplete.'];
+        } else {
+            $end = gmdate('Y-m-d', time() - 2 * 86400);
+            $start = gmdate('Y-m-d', strtotime($end . ' -6 days'));
+            $probe = vjt_gsc_search_analytics(['startDate'=>$start, 'endDate'=>$end, 'dimensions'=>['query'], 'rowLimit'=>1], true);
+            $result = [
+                'ok' => $probe['ok'],
+                'tested_at' => gmdate('Y-m-d H:i:s') . ' UTC',
+                'message' => $probe['ok'] ? 'Google OAuth and Search Console property access succeeded.' : $probe['error'],
+                'http_status' => $probe['status'],
+            ];
+        }
+        vjt_meta_set('gsc_last_test', json_encode($result));
+        $diagnostics['last_test'] = $result;
+    }
+    return $diagnostics;
+}
+
+function vjt_gsc_top_queries($days = 28) {
+    $days = in_array((int)$days, [7, 28, 90], true) ? (int)$days : 28;
+    $end = gmdate('Y-m-d', time() - 2 * 86400);
+    $start = gmdate('Y-m-d', strtotime($end . ' -' . ($days - 1) . ' days'));
+    $cacheKey = 'gsc_top_queries_' . $days;
+    $cached = json_decode((string)vjt_meta_get($cacheKey, ''), true);
+    if (is_array($cached) && !empty($cached['ok']) && (int)($cached['cached_at'] ?? 0) > time() - 3600) {
+        $cached['cached'] = true;
+        return $cached;
+    }
+
+    $response = vjt_gsc_search_analytics(['startDate'=>$start, 'endDate'=>$end, 'dimensions'=>['query'], 'rowLimit'=>250]);
+    $report = ['ok'=>$response['ok'], 'error'=>$response['error'], 'status'=>$response['status'], 'start_date'=>$start, 'end_date'=>$end, 'days'=>$days, 'rows'=>[], 'cached_at'=>time(), 'cached'=>false];
+    if ($response['ok']) {
+        foreach ($response['rows'] as $row) {
+            if (empty($row['keys'][0])) continue;
+            $report['rows'][] = [
+                'query' => vjt_clip((string)$row['keys'][0], 240),
+                'clicks' => (float)($row['clicks'] ?? 0),
+                'impressions' => (float)($row['impressions'] ?? 0),
+                'ctr' => (float)($row['ctr'] ?? 0),
+                'position' => (float)($row['position'] ?? 0),
+            ];
+        }
+        vjt_meta_set($cacheKey, json_encode($report));
+    }
+    return $report;
 }
 
 function vjt_gsc_keywords_for_landing($landingUrl, $startedAt, $limit = 5) {
@@ -1957,15 +2110,10 @@ function vjt_gsc_keywords_for_landing($landingUrl, $startedAt, $limit = 5) {
         $ttl = !empty($cached['keywords']) ? 7 * 86400 : 12 * 3600;
         if ((int)($cached['cached_at'] ?? 0) > time() - $ttl) return $cached['keywords'];
     }
-    $token = vjt_gsc_access_token($config);
-    if ($token === '') return [];
-    $payload = json_encode(['startDate'=>$date, 'endDate'=>$date, 'dimensions'=>['query'], 'rowLimit'=>max(1, min(10, (int)$limit)), 'dimensionFilterGroups'=>[['filters'=>[['dimension'=>'page','operator'=>'equals','expression'=>$landingUrl]]]]]);
-    $url = 'https://www.googleapis.com/webmasters/v3/sites/' . rawurlencode($config['site_url']) . '/searchAnalytics/query';
-    $context = stream_context_create(['http'=>['method'=>'POST','header'=>"Content-Type: application/json\r\nAuthorization: Bearer {$token}\r\nContent-Length: " . strlen($payload), 'content'=>$payload, 'timeout'=>5, 'ignore_errors'=>true]]);
-    $response = @file_get_contents($url, false, $context);
-    $data = json_decode((string)$response, true);
+    $response = vjt_gsc_search_analytics(['startDate'=>$date, 'endDate'=>$date, 'dimensions'=>['query'], 'rowLimit'=>max(1, min(10, (int)$limit)), 'dimensionFilterGroups'=>[['filters'=>[['dimension'=>'page','operator'=>'equals','expression'=>$landingUrl]]]]]);
+    if (!$response['ok']) return [];
     $keywords = [];
-    foreach (($data['rows'] ?? []) as $row) if (!empty($row['keys'][0])) $keywords[] = vjt_clip((string)$row['keys'][0], 160);
+    foreach ($response['rows'] as $row) if (!empty($row['keys'][0])) $keywords[] = vjt_clip((string)$row['keys'][0], 160);
     vjt_meta_set($key, json_encode(['keywords'=>$keywords, 'cached_at'=>time()]));
     return $keywords;
 }
