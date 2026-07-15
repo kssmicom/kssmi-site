@@ -27,8 +27,9 @@ export async function getStaticPaths() {
       // Skip meta/top/bottom files
       if (['meta', 'top', 'bottom'].includes(fileType || '')) return false;
 
-      // Skip about-us and contact (they have their own pages)
-      if (slug === 'about-us' || slug === 'contact') return false;
+      // Skip pages with dedicated routes. Localized home content belongs at
+      // /{lang}/ and must not also create duplicate /{lang}/home/ documents.
+      if (slug === 'about-us' || slug === 'contact' || slug === 'home') return false;
 
       return true;
     })

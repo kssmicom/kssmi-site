@@ -11,6 +11,11 @@ RewriteEngine On
 SetEnv VJT_GSC_SERVICE_ACCOUNT_JSON /home/kssmi.com/private/gsc/google-service-account.json
 SetEnv VJT_GSC_SITE_URL https://kssmi.com/
 
+# Inquiry form endpoints return HTML fragments for client-side insertion, not
+# standalone indexable documents. Keep them out of search results.
+SetEnvIf Request_URI "^/inquiry-form/" KSSMI_INTERNAL_FRAGMENT=1
+Header always set X-Robots-Tag "noindex, nofollow" env=KSSMI_INTERNAL_FRAGMENT
+
 # ─── Block sensitive files (403 Forbidden) ───────────────────────────────────
 RewriteRule ^email-logs\.json$ - [F,L]
 RewriteRule ^\.email_logs_password$ - [F,L]

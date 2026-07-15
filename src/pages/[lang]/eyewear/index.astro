@@ -47,6 +47,7 @@ const breadcrumbItems = [
   breadcrumbItems={breadcrumbItems}
   title={t.nav.feature || 'Eyewear'}
   lcpImage={lcpImage}
+  noindex={sortedItems.length === 0}
 >
   <Fragment slot="cards">
     {items.map((item: any) => {

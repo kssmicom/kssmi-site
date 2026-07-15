@@ -24,11 +24,13 @@ interface Props {
   breadcrumbItems: any[];
   title: string;
   lcpImage?: string;
+  noindex?: boolean;
 }
 
 const {
   lang = 'en', currentPath = '', products, allProducts, baseSegment = 'product',
-  currentPage, totalPages, basePath, breadcrumbItems, title, lcpImage
+  currentPage, totalPages, basePath, breadcrumbItems, title, lcpImage,
+  noindex = false
 } = Astro.props;
 
 const t = await getTranslations(lang);
@@ -72,7 +74,7 @@ if (productSeoEntry) {
 }
 ---
 
-<Layout title={pageTitle} description={pageDescription} lang={lang} lcpImage={lcpImage}>
+<Layout title={pageTitle} description={pageDescription} lang={lang} lcpImage={lcpImage} noindex={noindex}>
   <Header lang={lang} />
   <Breadcrumb items={breadcrumbItems} lang={lang} />
 

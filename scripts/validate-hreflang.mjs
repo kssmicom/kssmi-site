@@ -12,7 +12,15 @@ const origin = 'https://kssmi.com';
 const languages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
 const requiredHreflangs = [...languages, 'x-default'];
 const htmlCache = new Map();
+const documentCache = new Map();
 const errors = [];
+
+// These files are fetched and inserted into an existing page by
+// InquiryFormLazy.astro. They are HTML fragments, not standalone documents,
+// so they intentionally have no <html>, canonical URL, or hreflang matrix.
+function isInternalHtmlFragment(relativeFile) {
+  return /^inquiry-form\/[^/]+\/index\.html$/.test(relativeFile);
+}
 
 function findHtmlFiles(dir) {
   const files = [];
@@ -79,25 +87,42 @@ function readHtml(file) {
   return htmlCache.get(file);
 }
 
+// A target can be referenced by thousands of pages. Parse each document only
+// once instead of rescanning its complete HTML for every reciprocal link.
+function readDocument(file) {
+  if (!documentCache.has(file)) {
+    const html = readHtml(file);
+    documentCache.set(file, {
+      alternates: getHreflangLinks(html),
+      canonical: canonicalUrl(html),
+      sourceLang: htmlLang(html),
+      noindex: isNoindex(html),
+    });
+  }
+  return documentCache.get(file);
+}
+
 if (!fs.existsSync(distDir)) {
   console.error('hreflang validation failed: dist directory not found: ' + distDir);
   process.exit(1);
 }
 
 const files = findHtmlFiles(distDir);
-for (const file of files) {
-  const html = readHtml(file);
+for (const [fileIndex, file] of files.entries()) {
   const relativeFile = path.relative(distDir, file).replace(/\\/g, '/');
-  const alternates = getHreflangLinks(html);
-  const noindex = isNoindex(html);
+  if (isInternalHtmlFragment(relativeFile)) continue;
+
+  const { alternates, canonical, sourceLang, noindex } = readDocument(file);
+
+  if ((fileIndex + 1) % 1000 === 0) {
+    console.log(`hreflang validation progress: ${fileIndex + 1}/${files.length}`);
+  }
 
   if (noindex) {
     if (alternates.length) errors.push(relativeFile + ': noindex page must not emit hreflang alternates');
     continue;
   }
 
-  const canonical = canonicalUrl(html);
-  const sourceLang = htmlLang(html);
   if (!canonical) errors.push(relativeFile + ': missing canonical URL');
   if (canonical.startsWith(origin + '//')) errors.push(relativeFile + ': canonical contains a double slash after the host: ' + canonical);
   if (!languages.includes(sourceLang)) errors.push(relativeFile + ': unsupported or missing html lang: ' + (sourceLang || '(empty)'));
@@ -127,7 +152,7 @@ for (const file of files) {
       errors.push(relativeFile + ': hreflang=' + alternate.hreflang + ' target is missing from dist: ' + alternate.href);
       continue;
     }
-    const targetLinks = getHreflangLinks(readHtml(targetFile));
+    const targetLinks = readDocument(targetFile).alternates;
     if (!targetLinks.some((item) => item.hreflang === sourceLang && item.href === canonical)) {
       errors.push(relativeFile + ': ' + alternate.hreflang + ' target does not reciprocally reference ' + sourceLang);
     }
