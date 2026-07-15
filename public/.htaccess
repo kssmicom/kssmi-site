@@ -7,6 +7,10 @@ Options -Indexes
 Options +FollowSymLinks
 RewriteEngine On
 
+# ─── GSC (Google Search Console) environment variables ──────────────────────
+SetEnv VJT_GSC_SERVICE_ACCOUNT_JSON /home/kssmi.com/private/gsc/google-service-account.json
+SetEnv VJT_GSC_SITE_URL https://kssmi.com/
+
 # ─── Block sensitive files (403 Forbidden) ───────────────────────────────────
 RewriteRule ^email-logs\.json$ - [F,L]
 RewriteRule ^\.email_logs_password$ - [F,L]
