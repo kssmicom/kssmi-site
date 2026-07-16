@@ -1,8 +1,10 @@
 # KSSMI cache policy
 
-`public/.htaccess` is the only source of origin `Cache-Control` headers.
-Do not add cache TTLs in the OpenLiteSpeed vhost, PHP files, the hosting panel,
-or Cloudflare Browser Cache TTL overrides.
+OpenLiteSpeed native static contexts are the source of origin `Cache-Control`
+headers for HTML and assets. Dynamic PHP endpoints send one explicit policy in
+application code. OpenLiteSpeed only processes rewrite rules from `.htaccess`;
+Apache `Header`, `FilesMatch`, and `Expires` cache directives must not be used
+there.
 
 ## Origin policy
 
@@ -10,29 +12,41 @@ or Cloudflare Browser Cache TTL overrides.
 |---|---|
 | Astro/content-fingerprinted assets | `public, max-age=31536000, immutable` |
 | Stable-name images, fonts and video | `public, max-age=31536000` |
-| Stable-name CSS/JS | `public, max-age=86400, must-revalidate` |
+| Stable-name CSS/JS | no explicit managed policy; use fingerprinted URLs for long caching |
 | HTML | `public, max-age=0, must-revalidate, s-maxage=600, stale-while-revalidate=60` |
 | JSON/XML/TXT/manifests | `public, max-age=3600, must-revalidate` |
 | PHP/API | `no-store, private` |
 | `vjt-config.php` | `public, max-age=300, must-revalidate` |
 
-The HTML policy is the unconditional fallback in `.htaccess`; later file-type
-rules replace it for assets and PHP. This is required because OpenLiteSpeed may
-not match a directory-index request such as `/` against `FilesMatch "\.html$"`.
+The native vhost configuration includes an exact `/` context mapped to
+`index.html`. This is required because a directory-index request is not reliably
+matched by an extension-based context. PHP is deliberately excluded from every
+static context to preserve the LSAPI handler.
 
 Runtime asset fingerprints are derived from the first 12 hexadecimal characters
 of the source file's SHA-256 digest after text line endings are normalized to LF,
-matching the repository and Linux deployment representation. Run
+matching the repository and Linux deployment representation. The build runs
+`scripts/materialize-runtime-assets.mjs` after Astro and writes real fingerprinted
+files under `dist/assets/runtime/`; a dedicated, non-overlapping OLS regex context
+maps those physical JS files with `$DOC_ROOT/$0` and owns their immutable policy.
+OpenLiteSpeed 1.7.19 did not apply header operations from a plain directory
+context in production, so the working regex form is intentional. Run
 `npm run validate:cache` after changing `cookie-banner.js`, `vjt-tracker.js`,
-their references, or `.htaccess`.
+their references, `.htaccess`, or the OLS helper.
 
-## One-time OpenLiteSpeed cleanup
+## One-time OpenLiteSpeed installation
 
-The old vhost `expires { ... }` block must be removed because it independently
-generates a second cache header. On the server, review and run the updated
-`scripts/ols-add-headers.py`; it creates a timestamped vhost backup, removes the
-legacy expires block, preserves the security-header context, and then requires
-an OpenLiteSpeed reload.
+Upload `scripts/ols-add-headers.py` to `/home/kssmi.com/ols-add-headers.py`, then
+review and run it as root. It creates a timestamped vhost backup, replaces only
+its marker-delimited cache contexts, removes a legacy `expires { ... }` block if
+present, and leaves PHP outside static contexts. Validate the configuration
+before restarting OpenLiteSpeed:
+
+```sh
+sudo python3 /home/kssmi.com/ols-add-headers.py
+sudo /usr/local/lsws/bin/openlitespeed -t
+sudo systemctl restart lsws
+```
 
 Do not run this automatically from application deployment without first
 checking the current vhost file and confirming sudo/reload access.
@@ -66,6 +80,7 @@ header for:
 - the fingerprinted cookie banner (`immutable`);
 - a tracking API endpoint (`no-store`).
 
-If this check fails, inspect Cloudflare Response Header Rules, Browser Cache TTL,
-the OLS vhost `expires` block, and the deployed `.htaccess`. Do not add another
-override to hide the duplicate.
+If this check fails, compare a direct-origin request made with `curl --resolve`
+against the public Cloudflare response. Inspect Cloudflare Response Header Rules,
+Browser Cache TTL, the OLS managed cache contexts, and each PHP endpoint's own
+header. Do not add another override to hide a duplicate.

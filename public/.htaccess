@@ -153,57 +153,11 @@ AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/xml
 AddOutputFilterByType BROTLI_COMPRESS application/javascript application/x-javascript text/javascript
 AddOutputFilterByType BROTLI_COMPRESS application/json image/svg+xml
 
-# ─── Cache policy: .htaccess is the ONLY origin source ─────────────────────
-# Disable inherited mod_expires/OLS MIME expiry. Expires and Cache-Control must
-# never be generated independently because that produced duplicate/conflicting
-# max-age values in production.
-ExpiresActive Off
-
-# Clear both Apache/OLS header tables before assigning exactly one policy below.
-# This also normalizes Cache-Control values emitted by PHP scripts.
-Header unset Cache-Control
-Header always unset Cache-Control
-Header unset Expires
-Header always unset Expires
-
-# Default to the HTML policy. OpenLiteSpeed treats a directory-index request
-# such as `/` as the directory during <FilesMatch> processing, so an
-# `\.html$` FilesMatch does not reliably match the served index.html. The
-# type-specific rules below replace this default for assets and PHP endpoints.
-Header always set Cache-Control "public, max-age=0, must-revalidate, s-maxage=600, stale-while-revalidate=60"
-
-# Mark only genuinely fingerprinted URLs as immutable. Public assets with stable
-# names are deliberately excluded so a same-path update cannot be cached forever.
-SetEnvIf Request_URI "^/_astro/.*\.(css|js|mjs|woff2?)$" KSSMI_CACHE_IMMUTABLE=1
-SetEnvIf Request_URI "^/assets/runtime/(cookie-banner\.c74eef5363a6|vjt-tracker\.b25e07bc179b)\.js$" KSSMI_CACHE_IMMUTABLE=1
-
-# Stable-name CSS/JS (Pagefind and direct source URLs): short, revalidated cache.
-<FilesMatch "\.(css|js|mjs)$">
-  Header always set Cache-Control "public, max-age=86400, must-revalidate"
-</FilesMatch>
-
-# Product/media URLs are treated as durable assets but not immutable.
-<FilesMatch "\.(webp|png|jpg|jpeg|gif|svg|ico|avif|woff2|woff|ttf|eot|mp4|webm)$">
-  Header always set Cache-Control "public, max-age=31536000"
-</FilesMatch>
-
-# Generated indexes, manifests and discovery files update with deployments.
-<FilesMatch "\.(json|xml|txt|webmanifest)$">
-  Header always set Cache-Control "public, max-age=3600, must-revalidate"
-</FilesMatch>
-
-# Dynamic endpoints are private by default. vjt-config is the single explicit
-# exception and may be shared for five minutes.
-<FilesMatch "\.php$">
-  Header always set Cache-Control "no-store, private"
-</FilesMatch>
-<FilesMatch "^vjt-config\.php$">
-  Header always set Cache-Control "public, max-age=300, must-revalidate"
-</FilesMatch>
-
-# This override stays last so an internally rewritten fingerprint URL receives
-# the immutable policy instead of the stable source filename's one-day policy.
-Header always set Cache-Control "public, max-age=31536000, immutable" env=KSSMI_CACHE_IMMUTABLE
+# ─── Browser cache policy ──────────────────────────────────────────────────
+# OpenLiteSpeed reads rewrite rules from .htaccess but does not implement the
+# Apache Header/FilesMatch cache directives here. Static Cache-Control headers
+# are installed as native vhost contexts by scripts/ols-add-headers.py. Dynamic
+# PHP endpoints set their own Cache-Control response header.
 
 # ─── CSP scope override ────────────────────────────────────────────────────
 # The legacy global CSP above is intentionally cleared here. Static Astro HTML

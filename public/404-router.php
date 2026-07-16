@@ -21,6 +21,7 @@ foreach ($langs as $l) {
 http_response_code(404);
 header('Content-Type: text/html; charset=UTF-8');
 header('X-Robots-Tag: noindex, nofollow');
+header('Cache-Control: no-store, private', true);
 
 // Try language page (directory format first, then flat), then English fallback.
 $candidates = [];

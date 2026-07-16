@@ -1,6 +1,7 @@
 <?php
 // Public, non-identifying tracker tuning values. No visitor data or secrets.
 header('X-Robots-Tag: noindex, nofollow');
+header('Cache-Control: public, max-age=300, must-revalidate', true);
 header('Content-Type: application/json');
 header('X-Content-Type-Options: nosniff');
 header('Referrer-Policy: no-referrer');

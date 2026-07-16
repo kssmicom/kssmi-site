@@ -22,6 +22,7 @@ const assets = [
 
 const htaccess = await readText('public/.htaccess');
 const failures = [];
+const runtimeUrls = [];
 const assert = (condition, message) => {
   if (!condition) failures.push(message);
 };
@@ -34,6 +35,7 @@ for (const asset of assets) {
   const canonicalBytes = Buffer.from(bytes.toString('utf8').replaceAll('\r\n', '\n'));
   const hash = createHash('sha256').update(canonicalBytes).digest('hex').slice(0, 12);
   const url = `/assets/runtime/${asset.publicName}.${hash}.js`;
+  runtimeUrls.push(url);
   const reference = await readText(asset.reference);
 
   assert(reference.includes(url), `${asset.reference} must reference ${url}`);
@@ -43,27 +45,42 @@ for (const asset of assets) {
 const layout = await readText('src/layouts/Layout.astro');
 const tracker = await readText('src/components/VisitorTracker.astro');
 const olsHelper = await readText('scripts/ols-add-headers.py');
+const packageJson = JSON.parse(await readText('package.json'));
+const materializer = await readText('scripts/materialize-runtime-assets.mjs');
 assert(!layout.includes('cookie-banner.js?v='), 'cookie banner must not use query-string versioning');
 assert(!tracker.includes('vjt-tracker.js?v='), 'VJT tracker must not use query-string versioning');
-assert(htaccess.includes('ExpiresActive Off'), 'public/.htaccess must disable inherited Expires rules');
 assert(!/^ExpiresByType\b/m.test(htaccess), 'public/.htaccess must not define ExpiresByType');
-assert(htaccess.includes('Header unset Cache-Control'), 'onsuccess Cache-Control must be cleared');
-assert(htaccess.includes('Header always unset Cache-Control'), 'always Cache-Control must be cleared');
-assert(/^Header always set Cache-Control "[^"]*s-maxage=600[^"]*"$/m.test(htaccess), 'HTML cache policy must be an unconditional fallback for OLS directory indexes');
-assert(htaccess.includes('KSSMI_CACHE_IMMUTABLE'), 'fingerprinted assets must have an immutable override');
-assert(htaccess.includes('<FilesMatch "\\.php$">'), 'PHP must have a central no-store policy');
+assert(!/^\s*Header\s+(?:always\s+)?(?:set|unset|append|merge)\s+Cache-Control\b/im.test(htaccess), 'public/.htaccess must not use unsupported OLS Cache-Control Header directives');
 assert(!olsHelper.includes('expiresByType'), 'OLS helper must not install a second MIME cache policy');
+assert(olsHelper.includes('KSSMI MANAGED CACHE CONTEXTS BEGIN'), 'OLS helper must install a marker-delimited native cache context block');
+assert(olsHelper.includes('s-maxage=600'), 'OLS helper must define the HTML shared-cache policy');
+assert(olsHelper.includes('max-age=31536000, immutable'), 'OLS helper must define an immutable asset policy');
+assert(packageJson.scripts?.build?.includes('node scripts/materialize-runtime-assets.mjs dist'), 'build must materialize fingerprinted runtime assets in dist');
+assert(!/context exp:[^\n]*\\\.\(css\|js\|mjs\)/.test(olsHelper), 'OLS helper must not install an overlapping catch-all JS/CSS regex context');
+assert(olsHelper.includes('context exp:^/(?!_astro/).*\\.(webp|png|jpg|jpeg|gif|svg|ico|avif|woff2|woff|ttf|eot|mp4|webm)$ {'), 'general media context must exclude Astro fingerprints');
+assert(olsHelper.includes('context /_astro/ {'), 'OLS helper must define an Astro fingerprint directory context');
+assert(olsHelper.includes('location                $DOC_ROOT/_astro/'), 'Astro context must map to its physical directory');
+assert(olsHelper.includes('context exp:^/assets/runtime/.*\\.js$ {'), 'OLS helper must define a non-overlapping runtime fingerprint context');
+assert(olsHelper.includes('location                $DOC_ROOT/$0'), 'runtime context must map to its physical files');
 
-for (const phpPath of [
-  'public/email-logs.php',
-  'public/send-mail.php',
-  'public/visitor-journey.php',
-  'public/api/track-submission.php',
-  'public/api/vjt-config.php',
-  'public/api/track-pageview.php',
-]) {
+for (const [index, url] of runtimeUrls.entries()) {
+  assert(materializer.includes(assets[index].source), `runtime materializer must read ${assets[index].source}`);
+  assert(materializer.includes(`publicName: '${assets[index].publicName}'`), `runtime materializer must emit ${assets[index].publicName}`);
+}
+
+const phpPolicies = new Map([
+  ['public/email-logs.php', 'Cache-Control: no-store, private'],
+  ['public/send-mail.php', 'Cache-Control: no-store, private'],
+  ['public/visitor-journey.php', 'Cache-Control: no-store, private'],
+  ['public/404-router.php', 'Cache-Control: no-store, private'],
+  ['public/api/track-submission.php', 'Cache-Control: no-store, private'],
+  ['public/api/vjt-config.php', 'Cache-Control: public, max-age=300, must-revalidate'],
+  ['public/api/track-pageview.php', 'Cache-Control: no-store, private'],
+]);
+
+for (const [phpPath, expectedPolicy] of phpPolicies) {
   const php = await readText(phpPath);
-  assert(!php.includes('Cache-Control:'), `${phpPath} must defer Cache-Control to .htaccess`);
+  assert(php.includes(expectedPolicy), `${phpPath} must send ${expectedPolicy}`);
 }
 
 if (failures.length) {
@@ -75,4 +92,6 @@ if (failures.length) {
 console.log('Cache policy validation passed.');
 console.log('- Runtime asset fingerprints match their source content.');
 console.log('- Query-string versioning is absent.');
-console.log('- .htaccess is the single origin Cache-Control source.');
+console.log('- Build materializes physical fingerprinted runtime files.');
+console.log('- OpenLiteSpeed native static contexts match the deployed fingerprints.');
+console.log('- PHP endpoints send their own explicit Cache-Control policy.');

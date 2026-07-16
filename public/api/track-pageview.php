@@ -5,6 +5,7 @@
  */
 
 header('X-Robots-Tag: noindex, nofollow');
+header('Cache-Control: no-store, private', true);
 header('Content-Type: application/json');
 header('X-Content-Type-Options: nosniff');
 header('Referrer-Policy: no-referrer');

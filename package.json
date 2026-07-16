@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "astro dev",
     "prebuild": "node scripts/validate-content.mjs && node src/scripts/generate-llms.js && node src/scripts/generate-sitemap.js",
-    "build": "astro build && node scripts/generate-csp-hashes.mjs dist && node scripts/validate-hreflang.mjs dist",
+    "build": "astro build && node scripts/materialize-runtime-assets.mjs dist && node scripts/generate-csp-hashes.mjs dist && node scripts/validate-hreflang.mjs dist",
     "preview": "astro preview",
     "astro": "astro",
     "validate": "node scripts/validate-content.mjs",
