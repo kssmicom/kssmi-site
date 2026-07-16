@@ -53,7 +53,7 @@ const policy = [
   "img-src 'self' data: https:",
   "media-src 'self' blob: https://video.gumlet.io https://*.gumlet.io",
   "connect-src 'self' https://ipapi.co https://cloudflareinsights.com https://www.google-analytics.com https://video.gumlet.io https://*.gumlet.io",
-  "frame-src 'self' https://play.gumlet.io https://challenges.cloudflare.com https://www.googletagmanager.com",
+  "frame-src 'self' https://challenges.cloudflare.com https://www.googletagmanager.com",
   "frame-ancestors 'self'",
   "form-action 'self'",
   'upgrade-insecure-requests',

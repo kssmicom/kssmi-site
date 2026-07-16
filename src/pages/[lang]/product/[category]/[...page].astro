@@ -69,7 +69,7 @@ const langProducts = allProducts.filter((p: any) => {
 });
 ---
 
-<ProductCategoryPage { lang, currentPath, categorySlug, page } langProducts={langProducts} allProducts={allProducts} baseSegment="product" >
+<ProductCategoryPage lang={lang} currentPath={currentPath} categorySlug={categorySlug} page={page} langProducts={langProducts} allProducts={allProducts} baseSegment="product">
   <Fragment slot="cards">
     {page.data.map((product: any, index: number) => (
       <ProductCard product={product} lang={lang} index={index} />

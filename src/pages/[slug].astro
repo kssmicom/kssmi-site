@@ -1,6 +1,5 @@
 ---
 import { getCollection, render } from 'astro:content';
-import { cardSrc } from '../utils/image';
 import Layout from '../layouts/Layout.astro';
 import { getTranslations, type Translations } from '../translations';
 import Header from '../components/Header.astro';
@@ -62,7 +61,7 @@ const { Content } = await render(entry);
 const hasContent = entry.body && entry.body.trim().length > 0;
 ---
 
-<Layout title={title} lang={lang} image={image} lcpImage={image ? cardSrc(image) : undefined}>
+<Layout title={title || ''} lang={lang} image={image} lcpImage={image}>
   <Header lang={lang} />
 
   <main class="w-full min-h-screen">

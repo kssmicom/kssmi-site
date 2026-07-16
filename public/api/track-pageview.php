@@ -6,7 +6,6 @@
 
 header('X-Robots-Tag: noindex, nofollow');
 header('Content-Type: application/json');
-header('Cache-Control: no-store');
 header('X-Content-Type-Options: nosniff');
 header('Referrer-Policy: no-referrer');
 header("Content-Security-Policy: default-src 'none'; frame-ancestors 'none'");

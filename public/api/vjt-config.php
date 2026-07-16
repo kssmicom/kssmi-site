@@ -2,7 +2,6 @@
 // Public, non-identifying tracker tuning values. No visitor data or secrets.
 header('X-Robots-Tag: noindex, nofollow');
 header('Content-Type: application/json');
-header('Cache-Control: public, max-age=300');
 header('X-Content-Type-Options: nosniff');
 header('Referrer-Policy: no-referrer');
 header("Content-Security-Policy: default-src 'none'; frame-ancestors 'none'");

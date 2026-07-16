@@ -11,7 +11,11 @@
     "build": "astro build && node scripts/generate-csp-hashes.mjs dist && node scripts/validate-hreflang.mjs dist",
     "preview": "astro preview",
     "astro": "astro",
-    "validate": "node scripts/validate-content.mjs"
+    "validate": "node scripts/validate-content.mjs",
+    "validate:cache": "node scripts/validate-cache-policy.mjs",
+    "validate:dom": "node scripts/validate-dom-policy.mjs",
+    "validate:lcp": "node scripts/validate-lcp-policy.mjs",
+    "validate:astro-syntax": "node scripts/validate-astro-syntax.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",

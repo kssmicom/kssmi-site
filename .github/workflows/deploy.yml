@@ -36,6 +36,18 @@ jobs:
       - name: Lint PHP sources
         run: find public private -name '*.php' -not -path '*/vendor/*' -print0 | xargs -0 -n1 php -l
 
+      - name: Validate cache policy and runtime fingerprints
+        run: npm run validate:cache
+
+      - name: Validate DOM regression policy
+        run: npm run validate:dom
+
+      - name: Validate LCP and video loading policy
+        run: npm run validate:lcp
+
+      - name: Validate Astro template syntax
+        run: npm run validate:astro-syntax
+
       - name: Build Astro site
         run: npm run build
         env:
@@ -157,6 +169,31 @@ jobs:
               echo "GSC JSON not present; skipping credential permission check."
             fi
 
+      - name: Purge Cloudflare after atomic deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${CLOUDFLARE_API_TOKEN:-}" ] || [ -z "${CLOUDFLARE_ZONE_ID:-}" ]; then
+            echo 'WARNING: Cloudflare purge skipped; add CLOUDFLARE_API_TOKEN and CLOUDFLARE_ZONE_ID before enabling HTML edge caching.'
+            exit 0
+          fi
+
+          response="$(curl --fail-with-body -sS -X POST \
+            "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache" \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            -H 'Content-Type: application/json' \
+            --data '{"purge_everything":true}')"
+          printf '%s\n' "$response"
+          printf '%s' "$response" | grep -q '"success":true'
+
+          # Re-warm the most important HTML documents after the purge.
+          for path in / /it/ /es/ /fr/ /de/ /pt/ /ru/ /ja/ /tr/ /ar/ /ko/ /zh/ /hi/ /vi/ /jv/ /ms/ /tg/; do
+            curl -ksS -o /dev/null "https://kssmi.com${path}"
+          done
+
       - name: Verify deployed security controls
         shell: bash
         run: |
@@ -169,6 +206,21 @@ jobs:
             actual="$(curl -ksS -o /dev/null -w '%{http_code}' "$url")"
             echo "$url -> $actual (expected $expected)"
             test "$actual" = "$expected"
+          }
+
+          assert_single_cache_control() {
+            local url="$1"
+            local expected="$2"
+            local response_headers values count
+            response_headers="$(curl -ksS -D - -o /dev/null -H 'Cache-Control: no-cache' "$url")"
+            values="$(printf '%s\n' "$response_headers" | awk 'BEGIN{IGNORECASE=1} /^Cache-Control:/ {sub(/^[^:]+:[[:space:]]*/, ""); sub(/\r$/, ""); print}')"
+            count="$(printf '%s\n' "$values" | sed '/^$/d' | wc -l | tr -d ' ')"
+            echo "$url -> Cache-Control: $values"
+            if [ "$count" != '1' ]; then
+              echo "ERROR: expected exactly one Cache-Control header, found $count"
+              exit 1
+            fi
+            printf '%s' "$values" | grep -Fqi "$expected"
           }
 
           headers="$(curl -ksS -D - -o /dev/null -H 'Cache-Control: no-cache' "https://kssmi.com/?deploy-security-check=$(date +%s)")"
@@ -189,6 +241,10 @@ jobs:
           check_status 'https://kssmi.com/.env' 404
           check_status 'https://kssmi.com/email-logs.json' 403
           check_status 'https://kssmi.com/composer.json' 403
+
+          assert_single_cache_control 'https://kssmi.com/' 's-maxage=600'
+          assert_single_cache_control 'https://kssmi.com/assets/runtime/cookie-banner.f6b7338dd9e4.js' 'immutable'
+          assert_single_cache_control 'https://kssmi.com/api/track-pageview.php' 'no-store'
 
       - name: Deployment Complete
         run: |

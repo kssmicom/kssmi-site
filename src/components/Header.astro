@@ -58,87 +58,98 @@ const eyewearText = eyewearLabels[lang as keyof typeof eyewearLabels] || 'Eyewea
 const searchText = searchLabels[lang as keyof typeof searchLabels] || 'Search';
 const currentLangUpper = lang.toUpperCase();
 
-// Enhanced Menu Structure (WordPress-style mega menu)
-// Products use flat URL architecture; Collections use dynamic filter shortcuts
-// Helper: generate mega-menu children for a given base segment (product/eyewear/blog)
-function buildMegaMenu(base: string) {
-  return [
+// Secondary links share the same translated labels and route suffixes for the
+// product, eyewear, and blog menu families. Serialize one copy and create the
+// expanded DOM only when a visitor opens a menu.
+const menuGroups = [
     {
       label: t.sidebar.sunglasses,
-      href: `/${currentPath}${base}/sunglasses`,
+      slug: 'sunglasses',
       items: [
-        { label: t.sidebar.acetate_sunglasses,       href: `/${currentPath}${base}/acetate-sunglasses` },
-        { label: t.sidebar.metal_sunglasses,         href: `/${currentPath}${base}/metal-sunglasses` },
-        { label: t.sidebar.titanium_sunglasses,      href: `/${currentPath}${base}/titanium-sunglasses` },
-        { label: t.sidebar.carbon_fiber_sunglasses,  href: `/${currentPath}${base}/carbon-fiber-sunglasses` },
-        { label: t.sidebar.rimless_sunglasses,       href: `/${currentPath}${base}/rimless-sunglasses` }
+        { label: t.sidebar.acetate_sunglasses,      slug: 'acetate-sunglasses' },
+        { label: t.sidebar.metal_sunglasses,        slug: 'metal-sunglasses' },
+        { label: t.sidebar.titanium_sunglasses,     slug: 'titanium-sunglasses' },
+        { label: t.sidebar.carbon_fiber_sunglasses, slug: 'carbon-fiber-sunglasses' },
+        { label: t.sidebar.rimless_sunglasses,      slug: 'rimless-sunglasses' }
       ]
     },
     {
       label: t.sidebar.optical_frames,
-      href: `/${currentPath}${base}/optical-frames`,
+      slug: 'optical-frames',
       items: [
-        { label: t.sidebar.acetate_glasses,       href: `/${currentPath}${base}/acetate-optical-frames` },
-        { label: t.sidebar.metal_glasses,         href: `/${currentPath}${base}/metal-optical-frames` },
-        { label: t.sidebar.titanium_glasses,      href: `/${currentPath}${base}/titanium-optical-frames` },
-        { label: t.sidebar.carbon_glasses,        href: `/${currentPath}${base}/carbon-fiber-optical-frames` },
-        { label: t.sidebar.rimless_glasses,       href: `/${currentPath}${base}/rimless-optical-frames` }
+        { label: t.sidebar.acetate_glasses,  slug: 'acetate-optical-frames' },
+        { label: t.sidebar.metal_glasses,    slug: 'metal-optical-frames' },
+        { label: t.sidebar.titanium_glasses, slug: 'titanium-optical-frames' },
+        { label: t.sidebar.carbon_glasses,   slug: 'carbon-fiber-optical-frames' },
+        { label: t.sidebar.rimless_glasses,  slug: 'rimless-optical-frames' }
       ]
     },
     {
       label: t.sidebar.fashion,
-      href: `/${currentPath}${base}/fashion-eyewear`,
+      slug: 'fashion-eyewear',
       items: [
-        { label: t.sidebar.fashion_acetate_sunglasses, href: `/${currentPath}${base}/fashion-acetate-sunglasses` },
-        { label: t.sidebar.fashion_metal_sunglasses,   href: `/${currentPath}${base}/fashion-metal-sunglasses` },
-        { label: t.sidebar.fashion_acetate_glasses,     href: `/${currentPath}${base}/fashion-acetate-optical-frames` },
-        { label: t.sidebar.fashion_metal_glasses,       href: `/${currentPath}${base}/fashion-metal-optical-frames` }
+        { label: t.sidebar.fashion_acetate_sunglasses, slug: 'fashion-acetate-sunglasses' },
+        { label: t.sidebar.fashion_metal_sunglasses,   slug: 'fashion-metal-sunglasses' },
+        { label: t.sidebar.fashion_acetate_glasses,    slug: 'fashion-acetate-optical-frames' },
+        { label: t.sidebar.fashion_metal_glasses,      slug: 'fashion-metal-optical-frames' }
       ]
     },
     {
       label: t.sidebar.luxury,
-      href: `/${currentPath}${base}/luxury-eyewear`,
+      slug: 'luxury-eyewear',
       items: [
-        { label: t.sidebar.luxury_acetate_sunglasses,  href: `/${currentPath}${base}/luxury-acetate-sunglasses` },
-        { label: t.sidebar.luxury_titanium_sunglasses, href: `/${currentPath}${base}/luxury-titanium-sunglasses` },
-        { label: t.sidebar.luxury_acetate_glasses,      href: `/${currentPath}${base}/luxury-acetate-optical-frames` },
-        { label: t.sidebar.luxury_titanium_glasses,    href: `/${currentPath}${base}/luxury-titanium-optical-frames` }
+        { label: t.sidebar.luxury_acetate_sunglasses,  slug: 'luxury-acetate-sunglasses' },
+        { label: t.sidebar.luxury_titanium_sunglasses, slug: 'luxury-titanium-sunglasses' },
+        { label: t.sidebar.luxury_acetate_glasses,     slug: 'luxury-acetate-optical-frames' },
+        { label: t.sidebar.luxury_titanium_glasses,    slug: 'luxury-titanium-optical-frames' }
       ]
     },
     {
       label: t.sidebar.carbon_fiber,
-      href: `/${currentPath}${base}/carbon-fiber-eyewear`,
+      slug: 'carbon-fiber-eyewear',
       items: [
-        { label: t.sidebar.carbon_fiber_sunglasses, href: `/${currentPath}${base}/carbon-fiber-sunglasses` },
-        { label: t.sidebar.carbon_glasses,     href: `/${currentPath}${base}/carbon-fiber-optical-frames` }
+        { label: t.sidebar.carbon_fiber_sunglasses, slug: 'carbon-fiber-sunglasses' },
+        { label: t.sidebar.carbon_glasses,           slug: 'carbon-fiber-optical-frames' }
       ]
     },
     {
       label: t.sidebar.rimless,
-      href: `/${currentPath}${base}/rimless-eyewear`,
+      slug: 'rimless-eyewear',
       items: [
-        { label: t.sidebar.rimless_sunglasses, href: `/${currentPath}${base}/rimless-sunglasses` },
-        { label: t.sidebar.rimless_glasses,     href: `/${currentPath}${base}/rimless-optical-frames` }
+        { label: t.sidebar.rimless_sunglasses, slug: 'rimless-sunglasses' },
+        { label: t.sidebar.rimless_glasses,    slug: 'rimless-optical-frames' }
       ]
     }
-  ];
+];
+
+const serializedHeaderMenuData = JSON.stringify({
+  basePath: `/${currentPath}`,
+  groups: menuGroups,
+}).replace(/</g, '\\u003c');
+
+interface MenuItem {
+  label: string;
+  href: string;
+  menuKey?: string;
+  menuBase?: string;
+  hasDropdown?: boolean;
 }
 
-const menuStructure = [
+const menuStructure: MenuItem[] = [
   { label: t.nav.home, href: `/${currentPath}` },
   {
     label: t.nav.products,
     href: `/${currentPath}product`,
     menuKey: 'products',
+    menuBase: 'product',
     hasDropdown: true,
-    children: buildMegaMenu('product')
   },
   {
     label: t.nav.feature,
     href: `/${currentPath}eyewear`,
     menuKey: 'eyewear',
+    menuBase: 'eyewear',
     hasDropdown: true,
-    children: buildMegaMenu('eyewear')
   },
   { label: t.nav.about, href: aboutUrl },
   { label: t.nav.contact, href: contactUrl },
@@ -146,8 +157,8 @@ const menuStructure = [
     label: t.nav.blog,
     href: `/${currentPath}blog`,
     menuKey: 'blog',
+    menuBase: 'blog',
     hasDropdown: true,
-    children: buildMegaMenu('blog')
   },
 ];
 
@@ -159,10 +170,6 @@ const languageNames = {
   jv: 'ꦧꦱꦗꦮ', ms: 'Bahasa Melayu', tg: 'Тоҷикӣ'
 };
 
-// Get Products, Eyewear, and Blog menu data
-const productsMenu = menuStructure.find(item => item.menuKey === 'products');
-const eyewearMenu = menuStructure.find(item => item.menuKey === 'eyewear');
-const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
 ---
 
 <header id="site-header"
@@ -225,7 +232,8 @@ const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
                      ? 'text-white/90 hover:text-amber-300'
                      : 'text-gray-700 hover:text-[#5D4E37]',
                  ]}
-                 data-mega-trigger={item.hasDropdown ? item.menuKey : undefined}>
+                 data-mega-trigger={item.hasDropdown ? item.menuKey : undefined}
+                 data-mega-base={item.hasDropdown ? item.menuBase : undefined}>
                 {item.label}
               </a>
             </li>
@@ -238,9 +246,9 @@ const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
 
       <!-- Right Actions -->
       <div class="flex items-center gap-3 xl:gap-4 shrink-0">
-        <div class="hidden sm:flex items-center gap-3">
+        <div class="flex items-center gap-3">
           <!-- Search with icon buttons -->
-          <form id="header-search" action={lang === 'en' ? '/search' : `/${lang}/search`} method="GET" class="relative">
+          <form id="header-search" action={lang === 'en' ? '/search' : `/${lang}/search`} method="GET" class="relative hidden sm:block">
             <div class:list={[
               'flex items-center border rounded-xs overflow-hidden transition-colors duration-300',
               transparent
@@ -306,35 +314,7 @@ const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
         </a>
 
         <!-- Mobile Menu Button -->
-        <div class="lg:hidden flex items-center gap-3">
-          <div class="lang-dropdown-container sm:hidden relative group">
-            <button class:list={[
-              'lang-btn text-[11px] font-bold uppercase tracking-widest flex items-center gap-2 transition-colors py-2 z-50 relative',
-              transparent ? 'text-white hover:text-amber-300' : 'text-stone-900 hover:text-[#5D4E37]',
-            ]} aria-haspopup="true" aria-expanded="false" tabindex="0">
-              {currentLangUpper}
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
-            </button>
-            <div class="lang-dropdown-wrapper absolute top-full right-0 mt-2 w-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60] shadow-[0_10px_30px_rgba(0,0,0,0.25)] rounded-lg bg-[#2d2926] pointer-events-none group-hover:pointer-events-auto">
-              <!-- Invisible bridge to keep hover active -->
-              <div class="absolute -top-3 left-0 w-full h-3"></div>
-              <div class="lang-dropdown-menu max-h-[calc(100vh-5rem)] overflow-y-auto p-2 pb-6 flex flex-col rounded-lg">
-                {Object.entries(languageNames).map(([langCode, displayName]) => {
-                  const isActive = langCode === lang;
-                  // Build correct URL: /en/path or /fr/path (not /frit/path)
-                  const langUrl = langCode === 'en' ? (pagePath === '/' ? '/' : pagePath) : `/${langCode}${pagePath === '/' ? '' : pagePath}`;
-                  return (
-                    <a href={langUrl} class:list={['block py-2.5 px-4 text-sm font-medium transition-all duration-200 rounded-sm', isActive ? 'text-[#c9a66b] font-bold' : 'text-white/90 hover:bg-white/10 hover:text-[#c9a66b] hover:pl-6 whitespace-nowrap']}>
-                      {displayName}
-                    </a>
-                  );
-                })}
-              </div>
-              <div class="scroll-hint absolute bottom-0 left-0 w-full h-8 bg-linear-to-t from-[#2d2926] to-transparent pointer-events-none transition-opacity duration-300 flex items-end justify-center pb-1.5 rounded-b-lg opacity-0">
-                <svg class="w-4 h-4 text-[#c9a66b] motion-safe:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
-              </div>
-            </div>
-          </div>
+        <div class="lg:hidden flex items-center">
           <button id="mobile-menu-button" class:list={[
             'p-2 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 transition-colors relative z-[70] cursor-pointer',
             transparent
@@ -349,66 +329,7 @@ const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
 
     <!-- Mega Menu Panel (inside header container for proper width constraint) -->
     <div id="mega-menu-panel" class="absolute top-full left-0 right-0 bg-white border-t-4 border-[#8B7355] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.15)] rounded-b-2xl opacity-0 invisible transition-all duration-300 z-[55] pointer-events-none" data-active-menu="">
-      <!-- Products Menu Content -->
-      <div class="mega-menu-content hidden py-8 px-4" data-menu="products">
-        <div class="grid grid-cols-6 gap-4 xl:gap-6">
-          {productsMenu?.children?.map((group) => (
-            <div class="flex flex-col">
-              <a href={group.href} class="font-['Manrope'] font-bold text-xs uppercase tracking-wider text-[#5D4E37] mb-4 whitespace-nowrap hover:text-[#5D4E37] transition-colors">
-                {group.label}
-              </a>
-              <div class="flex flex-col space-y-1">
-                {group.items.map((subItem) => (
-                  <a href={subItem.href} class="font-['Plus_Jakarta_Sans'] text-sm font-medium text-stone-600 py-1.5 transition-all duration-200 hover:text-[#5D4E37] hover:pl-1 whitespace-nowrap">
-                    {subItem.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <!-- Eyewear Menu Content -->
-      <div class="mega-menu-content hidden py-8 px-4" data-menu="eyewear">
-        <div class="grid grid-cols-6 gap-4 xl:gap-6">
-          {eyewearMenu?.children?.map((group) => (
-            <div class="flex flex-col">
-              <a href={group.href} class="font-['Manrope'] font-bold text-xs uppercase tracking-wider text-[#5D4E37] mb-4 whitespace-nowrap hover:text-[#5D4E37] transition-colors">
-                {group.label}
-              </a>
-              <div class="flex flex-col space-y-1">
-                {group.items.map((subItem) => (
-                  <a href={subItem.href} class="font-['Plus_Jakarta_Sans'] text-sm font-medium text-stone-600 py-1.5 transition-all duration-200 hover:text-[#5D4E37] hover:pl-1 whitespace-nowrap">
-                    {subItem.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <!-- Blog Menu Content -->
-      <div class="mega-menu-content hidden py-8 px-4" data-menu="blog">
-        <div class="grid grid-cols-6 gap-4 xl:gap-6">
-          {blogMenu?.children?.map((group) => (
-            <div class="flex flex-col">
-              <a href={group.href} class="font-['Manrope'] font-bold text-xs uppercase tracking-wider text-[#5D4E37] mb-4 whitespace-nowrap hover:text-[#5D4E37] transition-colors">
-                {group.label}
-              </a>
-              <div class="flex flex-col space-y-1">
-                {group.items.map((subItem) => (
-                  <a href={subItem.href} class="font-['Plus_Jakarta_Sans'] text-sm font-medium text-stone-600 py-1.5 transition-all duration-200 hover:text-[#5D4E37] hover:pl-1 whitespace-nowrap">
-                    {subItem.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
+      <div id="mega-menu-content" class="py-8 px-4"></div>
     </div>
   </div>
 </header>
@@ -434,14 +355,14 @@ const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
   </div>
   <div id="mobile-menu-container" class="flex flex-col space-y-2 pb-20">
     {menuStructure.map((item) => (
-      <div class="mobile-menu-item relative border-b border-stone-100 last:border-0">
+      <div class="mobile-menu-item relative border-b border-stone-100 last:border-0" data-menu-base={item.menuBase}>
         <div class="flex items-center justify-between w-full pr-4">
           {item.hasDropdown ? (
             <>
               <a href={item.href} class="mobile-menu-link block py-3 hover:text-[#5D4E37] transition-colors grow flex items-center font-['Manrope'] font-bold text-lg">
                 {item.label}
               </a>
-              <button class="mobile-toggle-btn w-11 h-11 flex items-center justify-center text-[#5D4E37] rounded-full active:bg-stone-100 transition-all z-20 cursor-pointer" aria-label={t.nav?.ariaToggleSubmenu || 'Toggle submenu'}>
+              <button class="mobile-toggle-btn w-11 h-11 flex items-center justify-center text-[#5D4E37] rounded-full active:bg-stone-100 transition-all z-20 cursor-pointer" aria-label={t.nav?.ariaToggleSubmenu || 'Toggle submenu'} aria-expanded="false">
                 <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
               </button>
             </>
@@ -451,22 +372,8 @@ const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
             </a>
           )}
         </div>
-        {item.hasDropdown && item.children && (
-          <div class="mobile-sub-menu bg-[#fafaf9] overflow-hidden max-h-0 transition-all duration-500 ease-out">
-            {item.children.map((group) => (
-              <div class="pt-4 pb-2">
-                <div class="py-3 text-xs md:text-sm font-semibold text-[#5D4E37] font-['Manrope'] uppercase tracking-wide">
-                  {group.label}
-                </div>
-                {group.items.map((subItem) => (
-                  <a href={subItem.href} class="flex items-center font-['Plus_Jakarta_Sans'] text-base md:text-lg font-medium text-stone-700 py-3 pl-6 transition-all duration-200 hover:text-[#5D4E37] hover:pl-8">
-                    <span class="mr-3 text-[#5D4E37]">→</span>
-                    {subItem.label}
-                  </a>
-                ))}
-              </div>
-            ))}
-          </div>
+        {item.hasDropdown && item.menuBase && (
+          <div class="mobile-sub-menu bg-[#fafaf9] overflow-hidden max-h-0 transition-all duration-500 ease-out" data-menu-base={item.menuBase}></div>
         )}
       </div>
     ))}
@@ -477,6 +384,8 @@ const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
     </div>
   </div>
 </div>
+
+<script is:inline id="header-menu-data" type="application/json" set:html={serializedHeaderMenuData}></script>
 
 <style>
   .mobile-sub-menu.open {
@@ -511,10 +420,6 @@ const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
     pointer-events: auto;
   }
 
-  #mega-menu-panel .mega-menu-content.active {
-    display: block;
-  }
-
   /* Language Dropdown Scrollbar */
   .lang-dropdown-menu::-webkit-scrollbar {
     display: none;
@@ -538,59 +443,202 @@ const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
 </style>
 
 <script is:inline>
-  // Global timeout reference for mega menu
+  (() => {
+  // Inline scripts can run again after an Astro ClientRouter navigation. Keep
+  // exactly one Header lifecycle alive and tear down the previous one first.
+  const lifecycleKey = '__kssmiHeaderLifecycle';
+  const previousLifecycle = window[lifecycleKey];
+  if (previousLifecycle && typeof previousLifecycle.destroy === 'function') {
+    previousLifecycle.destroy();
+  }
+
+  const lifecycleController = new AbortController();
+  let pageController = null;
+  let activeHeader = null;
   let megaMenuTimeout;
-
-  // Store handlers globally so we can properly remove them
-  const storedHandlers = new WeakMap();
-
-  function getHandlerMap(element) {
-    if (!storedHandlers.has(element)) {
-      storedHandlers.set(element, new Map());
-    }
-    return storedHandlers.get(element);
-  }
-
-  function setListener(element, event, handler) {
-    const map = getHandlerMap(element);
-    const oldHandler = map.get(event);
-    if (oldHandler) {
-      element.removeEventListener(event, oldHandler);
-    }
-    element.addEventListener(event, handler);
-    map.set(event, handler);
-  }
-
-  // Global mega menu elements
   let megaMenuPanel = null;
-  let megaMenuContents = null;
+  let megaMenuContent = null;
+  let headerMenuData = null;
+  let transparentObserver = null;
+  let transparentRafId = 0;
+  let resizeObservers = [];
+  const pageTimers = new Set();
+  const pageRafs = new Set();
 
-  function showMegaMenu(menuKey) {
-    clearTimeout(megaMenuTimeout);
+  function setListener(element, event, handler, options = {}) {
+    if (!pageController || pageController.signal.aborted) return;
+    element.addEventListener(event, handler, {
+      ...options,
+      signal: pageController.signal,
+    });
+  }
 
-    megaMenuContents?.forEach(content => {
-      content.classList.remove('active');
+  function setPageTimeout(callback, delay) {
+    if (!pageController || pageController.signal.aborted) return 0;
+    const controller = pageController;
+    const timerId = window.setTimeout(() => {
+      pageTimers.delete(timerId);
+      if (!controller.signal.aborted) callback();
+    }, delay);
+    pageTimers.add(timerId);
+    return timerId;
+  }
+
+  function clearPageTimeout(timerId) {
+    if (!timerId) return;
+    window.clearTimeout(timerId);
+    pageTimers.delete(timerId);
+  }
+
+  function requestPageFrame(callback) {
+    if (!pageController || pageController.signal.aborted) return 0;
+    const controller = pageController;
+    const rafId = window.requestAnimationFrame(() => {
+      pageRafs.delete(rafId);
+      if (!controller.signal.aborted) callback();
+    });
+    pageRafs.add(rafId);
+    return rafId;
+  }
+
+  function cleanupPage() {
+    pageController?.abort();
+    pageController = null;
+
+    pageTimers.forEach(timerId => window.clearTimeout(timerId));
+    pageTimers.clear();
+    pageRafs.forEach(rafId => window.cancelAnimationFrame(rafId));
+    pageRafs.clear();
+
+    resizeObservers.forEach(observer => observer.disconnect());
+    resizeObservers = [];
+    transparentObserver?.disconnect();
+    transparentObserver = null;
+    transparentRafId = 0;
+
+    window.clearTimeout(megaMenuTimeout);
+    megaMenuTimeout = undefined;
+    megaMenuPanel = null;
+    megaMenuContent = null;
+    headerMenuData = null;
+    activeHeader = null;
+
+    // A route change while the mobile menu is open must not leave the new page
+    // fixed and unscrollable.
+    document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.width = '';
+  }
+
+  function destroy() {
+    cleanupPage();
+    lifecycleController.abort();
+  }
+
+  window[lifecycleKey] = { destroy };
+
+  function createMenuLink(label, href, className) {
+    const link = document.createElement('a');
+    link.href = href;
+    link.className = className;
+    link.textContent = label;
+    return link;
+  }
+
+  function buildMenuHref(menuBase, slug) {
+    return `${headerMenuData.basePath}${menuBase}/${slug}`;
+  }
+
+  function renderMenuContent(container, menuBase, mode) {
+    if (!headerMenuData?.groups || !menuBase) return;
+    if (container.dataset.renderedBase === menuBase && container.dataset.renderedMode === mode) return;
+
+    const fragment = document.createDocumentFragment();
+    const contentRoot = document.createElement('div');
+    if (mode === 'desktop') {
+      contentRoot.className = 'grid grid-cols-6 gap-4 xl:gap-6';
+    }
+
+    headerMenuData.groups.forEach(group => {
+      const groupElement = document.createElement('div');
+      groupElement.className = mode === 'desktop' ? 'flex flex-col' : 'pt-4 pb-2';
+
+      const groupLink = createMenuLink(
+        group.label,
+        buildMenuHref(menuBase, group.slug),
+        mode === 'desktop'
+          ? "font-['Manrope'] font-bold text-xs uppercase tracking-wider text-[#5D4E37] mb-4 whitespace-nowrap hover:text-[#5D4E37] transition-colors"
+          : "block py-3 text-xs md:text-sm font-semibold text-[#5D4E37] font-['Manrope'] uppercase tracking-wide"
+      );
+      groupElement.appendChild(groupLink);
+
+      const itemsElement = document.createElement('div');
+      if (mode === 'desktop') itemsElement.className = 'flex flex-col space-y-1';
+
+      group.items.forEach(item => {
+        const itemLink = createMenuLink(
+          item.label,
+          buildMenuHref(menuBase, item.slug),
+          mode === 'desktop'
+            ? "font-['Plus_Jakarta_Sans'] text-sm font-medium text-stone-600 py-1.5 transition-all duration-200 hover:text-[#5D4E37] hover:pl-1 whitespace-nowrap"
+            : "flex items-center font-['Plus_Jakarta_Sans'] text-base md:text-lg font-medium text-stone-700 py-3 pl-6 transition-all duration-200 hover:text-[#5D4E37] hover:pl-8"
+        );
+        if (mode === 'mobile') {
+          const arrow = document.createElement('span');
+          arrow.className = 'mr-3 text-[#5D4E37]';
+          arrow.textContent = '→';
+          itemLink.prepend(arrow);
+        }
+        itemsElement.appendChild(itemLink);
+      });
+
+      groupElement.appendChild(itemsElement);
+      contentRoot.appendChild(groupElement);
     });
 
-    const targetContent = document.querySelector(`.mega-menu-content[data-menu="${menuKey}"]`);
-    if (targetContent) {
-      targetContent.classList.add('active');
-    }
+    fragment.appendChild(contentRoot);
+    container.replaceChildren(fragment);
+    container.dataset.renderedBase = menuBase;
+    container.dataset.renderedMode = mode;
+  }
+
+  function showMegaMenu(menuKey, menuBase) {
+    clearPageTimeout(megaMenuTimeout);
+    if (megaMenuContent) renderMenuContent(megaMenuContent, menuBase, 'desktop');
 
     megaMenuPanel?.classList.add('active');
     megaMenuPanel?.setAttribute('data-active-menu', menuKey);
   }
 
   function hideMegaMenu() {
-    megaMenuTimeout = setTimeout(() => {
+    clearPageTimeout(megaMenuTimeout);
+    megaMenuTimeout = setPageTimeout(() => {
       megaMenuPanel?.classList.remove('active');
       megaMenuPanel?.setAttribute('data-active-menu', '');
     }, 150);
   }
 
   function initHeader() {
+    const header = document.getElementById('site-header');
+    if (!header) {
+      cleanupPage();
+      return;
+    }
+    if (activeHeader === header && pageController && !pageController.signal.aborted) {
+      return;
+    }
+
+    cleanupPage();
+    activeHeader = header;
+    pageController = new AbortController();
     megaMenuPanel = document.getElementById('mega-menu-panel');
-    megaMenuContents = document.querySelectorAll('.mega-menu-content');
+    megaMenuContent = document.getElementById('mega-menu-content');
+    const menuDataElement = document.getElementById('header-menu-data');
+    try {
+      headerMenuData = JSON.parse(menuDataElement?.textContent || 'null');
+    } catch {
+      headerMenuData = null;
+    }
 
     // Update language switcher links to preserve search params (e.g. ?q=001)
     // This runs on page load AND handles clicks dynamically for View Transitions
@@ -610,7 +658,7 @@ const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
     // Also handle clicks on language links to ensure search params are preserved
     // This is needed because View Transitions might intercept navigation
     document.querySelectorAll('.lang-dropdown-menu').forEach(menu => {
-      menu.addEventListener('click', (e) => {
+      setListener(menu, 'click', (e) => {
         const link = e.target.closest('a');
         if (link) {
           const currentSearch = window.location.search;
@@ -651,8 +699,10 @@ const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
         const parentDiv = btn.closest('.mobile-menu-item');
         const subMenu = parentDiv?.querySelector('.mobile-sub-menu');
         if (subMenu) {
+          renderMenuContent(subMenu, parentDiv.dataset.menuBase, 'mobile');
           subMenu.classList.toggle('open');
           btn.classList.toggle('rotated');
+          btn.setAttribute('aria-expanded', subMenu.classList.contains('open') ? 'true' : 'false');
         }
       };
       setListener(btn, 'click', handler);
@@ -663,9 +713,10 @@ const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
 
     megaTriggers.forEach(trigger => {
       const menuKey = trigger.getAttribute('data-mega-trigger');
+      const menuBase = trigger.getAttribute('data-mega-base');
 
       const enterHandler = () => {
-        if (menuKey) showMegaMenu(menuKey);
+        if (menuKey && menuBase) showMegaMenu(menuKey, menuBase);
       };
       setListener(trigger, 'mouseenter', enterHandler);
 
@@ -674,12 +725,12 @@ const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
         const keyEvent = e;
         if (keyEvent.key === 'Enter' || keyEvent.key === ' ') {
           keyEvent.preventDefault();
-          if (menuKey) {
+          if (menuKey && menuBase) {
             // Toggle menu on key press
             if (megaMenuPanel?.getAttribute('data-active-menu') === menuKey) {
               hideMegaMenu();
             } else {
-              showMegaMenu(menuKey);
+              showMegaMenu(menuKey, menuBase);
             }
           }
         }
@@ -699,7 +750,7 @@ const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
     });
 
     if (megaMenuPanel) {
-      setListener(megaMenuPanel, 'mouseenter', () => clearTimeout(megaMenuTimeout));
+      setListener(megaMenuPanel, 'mouseenter', () => clearPageTimeout(megaMenuTimeout));
       setListener(megaMenuPanel, 'mouseleave', () => hideMegaMenu());
     }
 
@@ -757,7 +808,7 @@ const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
         if (hintRafPending) return;
         hintRafPending = true;
         // Batch read + write in same rAF to avoid forced reflow
-        requestAnimationFrame(() => {
+        requestPageFrame(() => {
           const isScrollable = menu.scrollHeight > menu.clientHeight;
           const isNotAtBottom = Math.ceil(menu.scrollTop + menu.clientHeight) < menu.scrollHeight - 2;
           hint.style.opacity = (isScrollable && isNotAtBottom) ? '1' : '0';
@@ -770,7 +821,7 @@ const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
       const container = menu.closest('.lang-dropdown-container');
       if (container) {
         setListener(container, 'mouseenter', () => {
-          setTimeout(updateHint, 50);
+          setPageTimeout(updateHint, 50);
         });
       }
 
@@ -778,9 +829,10 @@ const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
       if (typeof ResizeObserver !== 'undefined') {
         const observer = new ResizeObserver(updateHint);
         observer.observe(menu);
+        resizeObservers.push(observer);
       }
       // Initial check: batch read + write in rAF to avoid forced reflow
-      requestAnimationFrame(() => {
+      requestPageFrame(() => {
         const isScrollable = menu.scrollHeight > menu.clientHeight;
         const isNotAtBottom = Math.ceil(menu.scrollTop + menu.clientHeight) < menu.scrollHeight - 2;
         hint.style.opacity = (isScrollable && isNotAtBottom) ? '1' : '0';
@@ -818,7 +870,7 @@ const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
             // update hint when opened via click
             const menu = wrapper.querySelector('.lang-dropdown-menu');
             if (menu) {
-              setTimeout(() => menu.dispatchEvent(new Event('scroll')), 50);
+              setPageTimeout(() => menu.dispatchEvent(new Event('scroll')), 50);
             }
           }
         });
@@ -826,7 +878,7 @@ const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
     });
 
     // Close language dropdowns when clicking outside
-    document.addEventListener('click', (e) => {
+    setListener(document, 'click', (e) => {
       const target = e.target;
       if (!target.closest('.lang-dropdown-container')) {
         document.querySelectorAll('.lang-dropdown-container').forEach(container => {
@@ -840,18 +892,15 @@ const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
         });
       }
     });
-  }
 
-  // Initialize on DOMContentLoaded (ensures DOM is ready on first load)
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initHeader);
-  } else {
-    // DOM already loaded, initialize immediately
-    initHeader();
+    // The Header itself is already parsed because this inline script sits at
+    // the end of the component. The hero may still be below it in the parser.
+    if (document.readyState === 'loading') {
+      setListener(document, 'DOMContentLoaded', scheduleTransparentHeader, { once: true });
+    } else {
+      scheduleTransparentHeader();
+    }
   }
-
-  // Re-initialize after View Transitions navigation
-  document.addEventListener('astro:page-load', initHeader);
 
   // ── Transparent-on-hero mode ───────────────────────────────────────────────
   // When the header is rendered transparent (home page only), watch the hero
@@ -859,7 +908,9 @@ const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
   // white state so the rest of the page stays readable.
   function initTransparentHeader() {
     const header = document.getElementById('site-header');
-    if (!header || header.dataset.transparent !== 'true') return;
+    if (!header || header !== activeHeader || header.dataset.transparent !== 'true') return;
+    const controller = pageController;
+    if (!controller || controller.signal.aborted) return;
 
     const hero = document.getElementById('hero-section');
     if (!hero) return;
@@ -867,30 +918,35 @@ const blogMenu = menuStructure.find(item => item.menuKey === 'blog');
     // rootMargin top: -80px accounts for the header's own height, so the
     // toggle happens when the hero has fully scrolled out from under the
     // header (not just when its top edge passes the viewport top).
-    const io = new IntersectionObserver(
+    transparentObserver?.disconnect();
+    transparentObserver = new IntersectionObserver(
       ([entry]) => {
+        if (controller.signal.aborted || header !== activeHeader) return;
         header.classList.toggle('is-scrolled', !entry.isIntersecting);
       },
       { rootMargin: '-80px 0px 0px 0px', threshold: 0 }
     );
-    io.observe(hero);
+    transparentObserver.observe(hero);
   }
 
   function scheduleTransparentHeader() {
-    if ('requestIdleCallback' in window) {
-      window.requestIdleCallback(initTransparentHeader, { timeout: 1500 });
-    } else {
-      setTimeout(initTransparentHeader, 500);
-    }
+    if (transparentObserver || transparentRafId) return;
+    transparentRafId = requestPageFrame(() => {
+      transparentRafId = 0;
+      initTransparentHeader();
+    });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', scheduleTransparentHeader);
-  } else {
-    scheduleTransparentHeader();
-  }
-
-  document.addEventListener('astro:page-load', scheduleTransparentHeader);
+  // `astro:before-swap` owns cleanup of the old DOM. `astro:page-load` binds
+  // the new Header. Calling init once also covers the initial non-router load.
+  document.addEventListener('astro:before-swap', cleanupPage, {
+    signal: lifecycleController.signal,
+  });
+  document.addEventListener('astro:page-load', initHeader, {
+    signal: lifecycleController.signal,
+  });
+  initHeader();
+  })();
 </script>
 
 <style is:global>

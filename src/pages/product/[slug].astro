@@ -95,7 +95,6 @@ function getCategoryCount(href: string): number {
 let cover = '';
 let gallery: string[] = [];
 let title = '';
-let videoId = '';
 let materials = '';
 let moq = '';
 let categories = '';
@@ -118,7 +117,6 @@ let cats: string[] = [];
 let ProductContent: any = null;
 let breadcrumbItems: any[] = [];
 let productSchema: any = null;
-let videoSchema: any = null;
 let categorySchema: any = null;
 let imageSlug = '';
 
@@ -127,7 +125,6 @@ let imageSlug = '';
 if (type === 'product' && product) {
   const data = product.data as any;
   title = data.title || '';
-  videoId = data.videoId || '';
   materials = data.materials || '';
   moq = data.moq || '';
   categories = data.categories || data.series || '';
@@ -251,7 +248,7 @@ if (type === 'product' && product) {
   if (customizable) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.customizable || "Customizable", "value": "Yes" });
 
   const ignoreSchemaKeys = new Set([
-    'title', 'slug', 'cover', 'gallery', 'videoId', 'itemNo', 'colors',
+    'title', 'slug', 'cover', 'gallery', 'itemNo', 'colors',
     'price', 'customizable', 'materials', 'featured', 'categories', 'date',
     'seoTitle', 'seoDescription', 'seoKeywords', 'serviceMode', 'moq'
   ]);
@@ -310,18 +307,6 @@ if (type === 'product' && product) {
     }
   };
 
-  if (videoId) {
-    videoSchema = {
-      "@context": "https://schema.org",
-      "@type": "VideoObject",
-      "name": title,
-      "description": seoDescription || title,
-      "thumbnailUrl": [cover],
-      "uploadDate": product.data.date || new Date().toISOString(),
-      "contentUrl": `https://play.gumlet.io/embed/${videoId}`,
-      "embedUrl": `https://play.gumlet.io/embed/${videoId}`
-    };
-  }
 }
 
 function getAltText(url: string | undefined, fallback: string): string {
@@ -351,7 +336,6 @@ function thumbSrc(originalPath: string): string {
   type="product"
 >
   {productSchema && <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />}
-  {videoSchema && <script type="application/ld+json" set:html={JSON.stringify(videoSchema)} />}
 
   <div class="sr-only" data-pagefind-meta="title">{title}</div>
   {itemNo && <div class="sr-only" data-pagefind-meta="itemNo">{itemNo}</div>}
@@ -407,11 +391,6 @@ function thumbSrc(originalPath: string): string {
               ))}
             </div>
 
-            {videoId && (
-              <div class="aspect-video bg-gray-900 rounded-xl overflow-hidden shadow-lg w-full max-w-[500px]">
-                <iframe src={`https://play.gumlet.io/embed/${videoId}`} title={`${title} - Product Video`} class="w-full h-full" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
-              </div>
-            )}
           </div>
 
           <div class="lg:py-4">

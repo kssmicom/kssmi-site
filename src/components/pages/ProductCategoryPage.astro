@@ -20,6 +20,8 @@ interface Props {
   categorySlug: string;
   baseSegment?: string;
   page: any;
+  allProducts?: any[];
+  langProducts?: any[];
 }
 
 let { lang = 'en', currentPath = '', categorySlug, page, baseSegment = 'product', allProducts = [], langProducts: langProds } = Astro.props;
@@ -54,8 +56,12 @@ if (!categorySlug) {
 }
 const products = page?.data || [];
 
-// LCP preload from first product
-const lcpImage = products[0]?.data?.cover ? cardSrc(products[0].data.cover) : undefined;
+// Product cards use `cover`; blog/eyewear cards use `image`. The preload must
+// resolve to the exact same 400px URL rendered by the first card.
+const firstCardImage = baseSegment === 'product'
+  ? products[0]?.data?.cover
+  : products[0]?.data?.image;
+const lcpImage = firstCardImage ? cardSrc(firstCardImage) : undefined;
 
 const t = await getTranslations(lang);
 const pt = t.product || {};
@@ -135,12 +141,14 @@ let pageTitle: string;
 let pageDescription: string;
 
 if (categorySeoEntry) {
+  const localizedTitles = categorySeoEntry.data.seoTitle as Record<string, string | undefined>;
+  const localizedDescriptions = categorySeoEntry.data.seoDescription as Record<string, string | undefined>;
   // Use rich per-category SEO from markdown file
-  pageTitle = categorySeoEntry.data.seoTitle[lang]
-           ?? categorySeoEntry.data.seoTitle.en
+  pageTitle = localizedTitles[lang]
+           ?? localizedTitles.en
            ?? `${categoryTitle} - ${t.nav.products}`;
-  const rawDesc = categorySeoEntry.data.seoDescription[lang]
-               ?? categorySeoEntry.data.seoDescription.en
+  const rawDesc = localizedDescriptions[lang]
+               ?? localizedDescriptions.en
                ?? '';
   pageDescription = rawDesc.replace('{count}', String(categoryMatchedCount));
 } else {

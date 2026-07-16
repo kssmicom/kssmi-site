@@ -16,7 +16,6 @@ interface Props {
   type?: 'website' | 'product' | 'article';
   noindex?: boolean;
   noHreflang?: boolean;
-  preconnectVideo?: boolean;  // Preconnect to the gumlet video CDN (home hero only)
 }
 
 const {
@@ -29,12 +28,12 @@ const {
   canonical,
   type = 'website',
   noindex = false,
-  noHreflang = false,
-  preconnectVideo = false
+  noHreflang = false
 } = Astro.props;
 
 const t = await getTranslations(lang);
-const layoutMeta = t.layout || await getTranslations('en').layout;
+const fallbackTranslations = await getTranslations('en');
+const layoutMeta = t.layout || fallbackTranslations.layout;
 
 const description = propDescription || layoutMeta.description;
 
@@ -238,15 +237,7 @@ const websiteSchema = {
       href={absoluteUrl(localizedPath(l))}
     />
   ))}
-  {shouldRenderHreflang && <link rel="alternate" hreflang="x-default" href={absoluteUrl(localizedPath('en'))} />}<!-- Warm the connection to the hero video CDN ASAP (home page only). -->
-  <!-- No crossorigin: the <video> fetch is non-CORS, so the reused socket must match. -->
-  {preconnectVideo && (
-    <>
-      <link rel="preconnect" href="https://video.gumlet.io" />
-      <link rel="dns-prefetch" href="//video.gumlet.io" />
-      <link rel="dns-prefetch" href="//play.gumlet.io" />
-    </>
-  )}
+  {shouldRenderHreflang && <link rel="alternate" hreflang="x-default" href={absoluteUrl(localizedPath('en'))} />}
 
   <!-- Preload LCP image: tells browser to fetch it immediately, before HTML is fully parsed -->
   <!-- This is the single most impactful fix for Largest Contentful Paint on image-heavy pages -->
@@ -357,14 +348,31 @@ const websiteSchema = {
   <!-- Page Transition Loader -->
   <div id="page-loader" class="fixed top-0 left-0 w-full h-[3px] bg-[#8B7355] z-[99999] origin-left scale-x-0 transition-transform duration-300 pointer-events-none" style="transform:translateZ(0)"></div>
   <script is:inline>
+    (() => {
+    const lifecycleKey = '__kssmiClientRouterLifecycle';
+    const previousLifecycle = window[lifecycleKey];
+    if (previousLifecycle && typeof previousLifecycle.destroy === 'function') {
+      previousLifecycle.destroy();
+    }
+
+    const controller = new AbortController();
+    let resetTimer = 0;
+
+    function clearResetTimer() {
+      if (!resetTimer) return;
+      window.clearTimeout(resetTimer);
+      resetTimer = 0;
+    }
+
     document.addEventListener('astro:before-preparation', () => {
+      clearResetTimer();
       const loader = document.getElementById('page-loader');
       if (loader) {
         loader.style.transitionDuration = '3s';
         loader.style.transform = 'scaleX(0.6)';
         document.body.style.cursor = 'wait';
       }
-    });
+    }, { signal: controller.signal });
     document.addEventListener('astro:after-preparation', () => {
       const loader = document.getElementById('page-loader');
       if (loader) {
@@ -372,11 +380,13 @@ const websiteSchema = {
         loader.style.transform = 'scaleX(1)';
         document.body.style.cursor = 'default';
       }
-    });
+    }, { signal: controller.signal });
     document.addEventListener('astro:page-load', () => {
       const loader = document.getElementById('page-loader');
       if (loader) {
-        setTimeout(() => {
+        clearResetTimer();
+        resetTimer = window.setTimeout(() => {
+          resetTimer = 0;
           loader.style.transitionDuration = '0s';
           loader.style.transform = 'scaleX(0)';
           document.body.style.cursor = 'default';
@@ -396,7 +406,16 @@ const websiteSchema = {
         c += location.hash;
         history.replaceState(history.state, '', c);
       }
-    });
+    }, { signal: controller.signal });
+
+    window[lifecycleKey] = {
+      destroy() {
+        controller.abort();
+        clearResetTimer();
+        document.body.style.cursor = 'default';
+      },
+    };
+    })();
   </script>
   <!-- Accessibility: Skip to Content Link -->
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[9999] bg-[#5D4E37] text-white px-4 py-2 font-bold rounded-md shadow-lg outline-hidden focus:ring-4 focus:ring-[#8B7355]/50">
@@ -442,7 +461,9 @@ const websiteSchema = {
         if (consent) return; // Already consented — skip loading banner
       } catch (_) {}
       var s = document.createElement('script');
-      s.src = '/cookie-banner.js?v=5';
+      s.src = import.meta.env.DEV
+        ? '/cookie-banner.js'
+        : '/assets/runtime/cookie-banner.f6b7338dd9e4.js';
       s.async = true;
       document.body.appendChild(s);
     })();

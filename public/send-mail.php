@@ -14,7 +14,6 @@
  */
 
 header('X-Robots-Tag: noindex, nofollow');
-header('Cache-Control: no-store');
 header('X-Content-Type-Options: nosniff');
 header('Referrer-Policy: no-referrer');
 header("Content-Security-Policy: default-src 'none'; frame-ancestors 'none'");

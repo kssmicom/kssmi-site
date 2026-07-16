@@ -113,7 +113,6 @@ const products = defineCollection({
     slug: z.string().optional(),
     cover: z.string().optional(),
     gallery: z.array(z.string()).optional(),
-    videoId: z.string().optional(),
     itemNo: z.string().optional(),
     colors: z.string().optional(),
     serviceMode: z.string().default('OEM, ODM'),

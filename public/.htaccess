@@ -91,6 +91,12 @@ RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # ─── Static assets (pass through as-is) ────────────────────────────────────
+# Content-fingerprinted runtime assets. The public source file keeps a stable
+# server-side name, while browsers/CDNs only see a URL that changes with its
+# SHA-256 content hash. These rules MUST stay before the generic -f/-d bypass.
+RewriteRule ^assets/runtime/cookie-banner\.f6b7338dd9e4\.js$ cookie-banner.js [L]
+RewriteRule ^assets/runtime/vjt-tracker\.b25e07bc179b\.js$ js/vjt-tracker.js [L]
+
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
@@ -147,67 +153,57 @@ AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/xml
 AddOutputFilterByType BROTLI_COMPRESS application/javascript application/x-javascript text/javascript
 AddOutputFilterByType BROTLI_COMPRESS application/json image/svg+xml
 
-# ─── Cache static assets via Expires ───────────────────────────────────────
-ExpiresActive On
+# ─── Cache policy: .htaccess is the ONLY origin source ─────────────────────
+# Disable inherited mod_expires/OLS MIME expiry. Expires and Cache-Control must
+# never be generated independently because that produced duplicate/conflicting
+# max-age values in production.
+ExpiresActive Off
 
-# Images — 1 year
-ExpiresByType image/webp "access plus 1 year"
-ExpiresByType image/avif "access plus 1 year"
-ExpiresByType image/png  "access plus 1 year"
-ExpiresByType image/jpeg "access plus 1 year"
-ExpiresByType image/gif  "access plus 1 year"
-ExpiresByType image/svg+xml "access plus 1 year"
-ExpiresByType image/x-icon "access plus 1 year"
-ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
+# Clear both Apache/OLS header tables before assigning exactly one policy below.
+# This also normalizes Cache-Control values emitted by PHP scripts.
+Header unset Cache-Control
+Header always unset Cache-Control
+Header unset Expires
+Header always unset Expires
 
-# Fonts — 1 year
-ExpiresByType font/woff2 "access plus 1 year"
-ExpiresByType font/woff  "access plus 1 year"
-ExpiresByType application/font-woff2 "access plus 1 year"
+# Mark only genuinely fingerprinted URLs as immutable. Public assets with stable
+# names are deliberately excluded so a same-path update cannot be cached forever.
+SetEnvIf Request_URI "^/_astro/.*\.(css|js|mjs|woff2?)$" KSSMI_CACHE_IMMUTABLE=1
+SetEnvIf Request_URI "^/assets/runtime/(cookie-banner\.f6b7338dd9e4|vjt-tracker\.b25e07bc179b)\.js$" KSSMI_CACHE_IMMUTABLE=1
 
-# CSS — 1 year
-ExpiresByType text/css "access plus 1 year"
-
-# JS — 1 year (all common MIME types)
-ExpiresByType application/javascript "access plus 1 year"
-ExpiresByType application/x-javascript "access plus 1 year"
-ExpiresByType text/javascript "access plus 1 year"
-
-# ─── Cache-Control headers ─────────────────────────────────────────────────
-# CSS bundles — immutable (Astro hashes filenames)
-<FilesMatch "\.css$">
-  Header set Cache-Control "public, max-age=31536000, immutable"
-</FilesMatch>
-
-# JS bundles — immutable (Astro hashes filenames)
-<FilesMatch "\.js$">
-  Header set Cache-Control "public, max-age=31536000, immutable"
-</FilesMatch>
-
-# Exception: vjt-tracker.js has NO content hash, so it must NOT be immutable
-<FilesMatch "^vjt-tracker\.js$">
-  Header set Cache-Control "public, max-age=3600, must-revalidate"
-</FilesMatch>
-
-# Cookie banner is versioned by query string and can be cached for one year.
-<FilesMatch "^cookie-banner\.js$">
-  Header set Cache-Control "public, max-age=31536000, immutable"
-</FilesMatch>
-
-# All image types — 1 year
-<FilesMatch "\.(webp|png|jpg|jpeg|gif|svg|ico|avif)$">
-  Header set Cache-Control "public, max-age=31536000"
-</FilesMatch>
-
-# Fonts — 1 year
-<FilesMatch "\.(woff2|woff|ttf|eot)$">
-  Header set Cache-Control "public, max-age=31536000, immutable"
-</FilesMatch>
-
-# HTML — short cache so updates deploy quickly
+# HTML: browsers revalidate; a configured CDN may keep it for 10 minutes.
+# Cloudflare must use "Respect existing headers" and purge HTML on deploy.
 <FilesMatch "\.html$">
-  Header set Cache-Control "public, max-age=3600, must-revalidate"
+  Header always set Cache-Control "public, max-age=0, must-revalidate, s-maxage=600, stale-while-revalidate=60"
 </FilesMatch>
+
+# Stable-name CSS/JS (Pagefind and direct source URLs): short, revalidated cache.
+<FilesMatch "\.(css|js|mjs)$">
+  Header always set Cache-Control "public, max-age=86400, must-revalidate"
+</FilesMatch>
+
+# Product/media URLs are treated as durable assets but not immutable.
+<FilesMatch "\.(webp|png|jpg|jpeg|gif|svg|ico|avif|woff2|woff|ttf|eot|mp4|webm)$">
+  Header always set Cache-Control "public, max-age=31536000"
+</FilesMatch>
+
+# Generated indexes, manifests and discovery files update with deployments.
+<FilesMatch "\.(json|xml|txt|webmanifest)$">
+  Header always set Cache-Control "public, max-age=3600, must-revalidate"
+</FilesMatch>
+
+# Dynamic endpoints are private by default. vjt-config is the single explicit
+# exception and may be shared for five minutes.
+<FilesMatch "\.php$">
+  Header always set Cache-Control "no-store, private"
+</FilesMatch>
+<FilesMatch "^vjt-config\.php$">
+  Header always set Cache-Control "public, max-age=300, must-revalidate"
+</FilesMatch>
+
+# This override stays last so an internally rewritten fingerprint URL receives
+# the immutable policy instead of the stable source filename's one-day policy.
+Header always set Cache-Control "public, max-age=31536000, immutable" env=KSSMI_CACHE_IMMUTABLE
 
 # ─── CSP scope override ────────────────────────────────────────────────────
 # The legacy global CSP above is intentionally cleared here. Static Astro HTML
@@ -224,7 +220,6 @@ Header always unset Content-Security-Policy
 
 <FilesMatch "^(email-logs|visitor-journey)\.php$">
   Header always set X-Frame-Options "DENY"
-  Header always set Cache-Control "no-store, private"
   Header always set Referrer-Policy "no-referrer"
   Header always set Content-Security-Policy "default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://challenges.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://www.google-analytics.com; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests"
 </FilesMatch>

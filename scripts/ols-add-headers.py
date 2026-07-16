@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Adds security headers, cache expiration to OpenLiteSpeed vhost config (kssmi.com).
+Adds security headers to the OpenLiteSpeed vhost config (kssmi.com).
+Cache policy intentionally lives only in public/.htaccess.
 Backs up the original config before making changes.
 
 Usage (on server):
@@ -15,29 +16,9 @@ VHOST_CONF = "/usr/local/lsws/conf/vhosts/kssmi.com/vhost.conf"
 
 # ── Config to insert ──────────────────────────────────────────────────────────
 # Inserted before the "rewrite  {" block.
-# "expires" is a top-level OLS block (not inside a context).
 # "context /" with extraHeaders applies security headers site-wide.
 # No "type static" — that would break PHP.
 INSERTION = """\
-expires  {
-  enableExpires           1
-  expiresByType           image/webp A31536000
-  expiresByType           image/avif A31536000
-  expiresByType           image/png A31536000
-  expiresByType           image/jpeg A31536000
-  expiresByType           image/gif A31536000
-  expiresByType           image/svg+xml A31536000
-  expiresByType           image/x-icon A31536000
-  expiresByType           image/vnd.microsoft.icon A31536000
-  expiresByType           font/woff2 A31536000
-  expiresByType           font/woff A31536000
-  expiresByType           application/font-woff2 A31536000
-  expiresByType           text/css A31536000
-  expiresByType           application/javascript A31536000
-  expiresByType           application/x-javascript A31536000
-  expiresByType           text/javascript A31536000
-}
-
 context / {
   extraHeaders            X-Content-Type-Options:nosniff
   extraHeaders            X-Frame-Options:SAMEORIGIN
@@ -62,16 +43,18 @@ def main():
     with open(VHOST_CONF, "r") as f:
         content = f.read()
 
-    # Guard against double-insertion
+    # Guard against double-insertion. Also remove the legacy OLS expires block:
+    # public/.htaccess is now the only cache-policy source.
+    import re
+    content = re.sub(
+        r"expires\s*\{.*?enableExpires\s+1.*?\}\s*",
+        "",
+        content,
+        flags=re.DOTALL,
+    )
+
     if "X-Content-Type-Options:nosniff" in content:
         print("Headers already present in config. Removing old block first...")
-        import re
-        content = re.sub(
-            r"expires\s*\{.*?enableExpires\s+1.*?\}\s*",
-            "",
-            content,
-            flags=re.DOTALL,
-        )
         content = re.sub(
             r"context\s+/\s*\{.*?Permissions-Policy.*?\}\s*",
             "",

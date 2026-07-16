@@ -18,7 +18,6 @@ session_set_cookie_params([
 session_start();
 
 header('X-Robots-Tag: noindex, nofollow');
-header('Cache-Control: no-store, private');
 header('Pragma: no-cache');
 header('X-Content-Type-Options: nosniff');
 header('X-Frame-Options: DENY');

@@ -82,14 +82,9 @@ const materials = entry?.data?.materials || [];
               {m.subtitle}
             </p>
             <div class="w-10 h-px bg-stone-200 mx-auto mb-5 transition-all duration-500 group-hover:w-20 group-hover:bg-stone-400"></div>
-            <ul class="space-y-2.5 flex-1">
-              {m.points?.map((point: string) => (
-                <li class="mat-point flex items-start gap-3 text-xs md:text-sm text-stone-600 transition-all duration-300 cursor-default">
-                  <span class="mat-dot mt-1.5 w-1.5 h-1.5 rounded-full bg-stone-300 shrink-0 transition-all duration-300"></span>
-                  <span class="mat-text leading-snug transition-colors duration-300">{point}</span>
-                </li>
-              ))}
-            </ul>
+            <p class="flex-1 text-xs md:text-sm text-stone-600 leading-relaxed transition-colors duration-300 group-hover:text-amber-700">
+              {m.points?.join(' · ')}
+            </p>
           </div>
         </div>
       ))}
@@ -101,16 +96,6 @@ const materials = entry?.data?.materials || [];
   @keyframes matFadeInUp {
     from { opacity: 0; transform: translateY(24px); }
     to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .mat-point:hover .mat-dot {
-    background-color: #B45309;
-    transform: scale(1.2);
-    box-shadow: 0 0 0 3px rgba(180, 83, 9, 0.18);
-  }
-  .mat-point:hover .mat-text {
-    color: #B45309;
-    font-weight: 500;
   }
 
   @media (prefers-reduced-motion: reduce) {

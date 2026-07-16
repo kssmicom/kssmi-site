@@ -24,8 +24,8 @@ const posterAlt = d.posterAlt;
 
 // Background video = mp4 URL from the markdown (`videoUrl`). The URL is intentionally kept
 // out of the initial <source> so the poster remains the only first-load media request.
-// The client loads the video only after the page is idle on desktop; mobile, reduced-motion,
-// Save-Data and slow connections keep the poster permanently to avoid a 15 MB background file.
+// On every device, the client assigns the URL only after both window.load and the first
+// real user interaction. This keeps the 15 MB background file out of the critical path.
 const videoUrl: string | undefined = d.videoUrl;
 
 // Build locale-aware internal links (external URLs are left untouched)
@@ -37,7 +37,7 @@ const secondaryHref = toHref(secondaryCtaUrl);
 
 <section
   id="hero-section"
-  class="hero relative w-full overflow-hidden bg-[#1a0f08] -mt-20 pt-20 min-h-[620px] sm:min-h-[700px] lg:min-h-screen flex items-center"
+  class="hero relative w-full overflow-hidden bg-[#1a0f08] -mt-20 pt-20 min-h-screen min-h-svh flex items-center"
   dir={isRTL ? 'rtl' : 'ltr'}
   aria-label={heading}
 >
@@ -74,6 +74,7 @@ const secondaryHref = toHref(secondaryCtaUrl);
       muted
       loop
       playsinline
+      poster={posterImage}
       preload="none"
       data-src={videoUrl}
       aria-hidden="true"
@@ -212,19 +213,16 @@ const secondaryHref = toHref(secondaryCtaUrl);
 </style>
 
 <script>
-  // The hero poster is the mobile/default experience. Desktop video is deliberately loaded
-  // only after the page is idle; a background video is decorative and must not consume the
-  // initial mobile data budget or compete with LCP.
-  const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-  function shouldSkipVideo() {
-    const connection = (navigator as any).connection;
-    return mq.matches || connection?.saveData
-      || /slow-2g|2g/.test(connection?.effectiveType || '');
-  }
+  // Policy: every device can play the full-bleed hero video, but the MP4 URL is not assigned
+  // until the initial page has fully loaded AND the visitor has interacted. The interaction
+  // also closes the initial LCP observation window before the video can replace the poster.
+  const interactionEvents = ['pointerdown', 'touchstart', 'click', 'keydown', 'scroll'] as const;
+  const interactionOptions: AddEventListenerOptions = { passive: true };
+  let pageLoaded = document.readyState === 'complete';
+  let interactionSeen = navigator.userActivation?.hasBeenActive === true;
+  let loadCallbackPending = false;
 
   function loadHeroVideo() {
-    if (shouldSkipVideo()) return;
     document.querySelectorAll<HTMLVideoElement>('.hero-video').forEach((v) => {
       if (v.dataset.loaded || !v.dataset.src) return;
       v.dataset.loaded = '1';
@@ -235,7 +233,6 @@ const secondaryHref = toHref(secondaryCtaUrl);
   }
 
   function fadeInHeroVideo() {
-    if (shouldSkipVideo()) return;
     document.querySelectorAll<HTMLVideoElement>('.hero-video').forEach((v) => {
       if (v.dataset.fadedIn || !v.dataset.loaded) return;
       const show = () => {
@@ -258,22 +255,69 @@ const secondaryHref = toHref(secondaryCtaUrl);
     });
   }
 
-  function scheduleVideo() {
-    if (shouldSkipVideo()) return;
+  function runVideoLoad() {
+    loadCallbackPending = false;
+    loadHeroVideo();
+    fadeInHeroVideo();
+  }
+
+  function scheduleVideoAfterPolicyGate() {
+    if (!pageLoaded || !interactionSeen || loadCallbackPending) return;
+
+    const hasPendingVideo = Array.from(
+      document.querySelectorAll<HTMLVideoElement>('.hero-video')
+    ).some((v) => !v.dataset.loaded && Boolean(v.dataset.src));
+
+    if (!hasPendingVideo) {
+      fadeInHeroVideo();
+      return;
+    }
+
+    loadCallbackPending = true;
     if ('requestIdleCallback' in window) {
-      (window as any).requestIdleCallback(() => {
-        loadHeroVideo();
-        fadeInHeroVideo();
-      }, { timeout: 5000 });
+      (window as any).requestIdleCallback(runVideoLoad, { timeout: 1500 });
     } else {
-      setTimeout(() => {
-        loadHeroVideo();
-        fadeInHeroVideo();
-      }, 3000);
+      setTimeout(runVideoLoad, 0);
     }
   }
 
-  document.addEventListener('astro:page-load', scheduleVideo);
+  function removeInteractionListeners() {
+    interactionEvents.forEach((eventName) => {
+      document.removeEventListener(eventName, markFirstInteraction, interactionOptions);
+    });
+  }
+
+  function markFirstInteraction(event: Event) {
+    if (interactionSeen || !event.isTrusted) return;
+    interactionSeen = true;
+    removeInteractionListeners();
+    scheduleVideoAfterPolicyGate();
+  }
+
+  if (!interactionSeen) {
+    interactionEvents.forEach((eventName) => {
+      document.addEventListener(eventName, markFirstInteraction, interactionOptions);
+    });
+  }
+
+  if (!pageLoaded) {
+    window.addEventListener('load', () => {
+      pageLoaded = true;
+      scheduleVideoAfterPolicyGate();
+    }, { once: true });
+  }
+
+  document.addEventListener('astro:page-load', () => {
+    // Sticky user activation survives Astro client-side navigation. This also covers a
+    // visitor whose navigation click happened before this home-page component was mounted.
+    interactionSeen ||= navigator.userActivation?.hasBeenActive === true;
+    if (interactionSeen) removeInteractionListeners();
+    scheduleVideoAfterPolicyGate();
+  });
+
+  // Also cover late script execution where astro:page-load has already fired.
+  scheduleVideoAfterPolicyGate();
+
   // Belt-and-suspenders: explicitly resume playback after every view transition, in
   // case transition:persist ever fails to preserve playback state on a given browser.
   // astro:after-swap fires after the new DOM is in place, before astro:page-load.
@@ -284,6 +328,10 @@ const secondaryHref = toHref(secondaryCtaUrl);
   });
   // Back/forward cache restore — astro:page-load doesn't fire after bfcache restore.
   window.addEventListener('pageshow', (e) => {
-    if ((e as any).persisted) scheduleVideo();
+    if ((e as any).persisted) {
+      pageLoaded = true;
+      interactionSeen ||= navigator.userActivation?.hasBeenActive === true;
+      scheduleVideoAfterPolicyGate();
+    }
   });
 </script>
