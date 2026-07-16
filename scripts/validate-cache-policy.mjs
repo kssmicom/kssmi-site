@@ -57,11 +57,18 @@ assert(olsHelper.includes('s-maxage=600'), 'OLS helper must define the HTML shar
 assert(olsHelper.includes('max-age=31536000, immutable'), 'OLS helper must define an immutable asset policy');
 assert(packageJson.scripts?.build?.includes('node scripts/materialize-runtime-assets.mjs dist'), 'build must materialize fingerprinted runtime assets in dist');
 assert(!/context exp:[^\n]*\\\.\(css\|js\|mjs\)/.test(olsHelper), 'OLS helper must not install an overlapping catch-all JS/CSS regex context');
-assert(olsHelper.includes('context exp:^/(?!_astro/).*\\.(webp|png|jpg|jpeg|gif|svg|ico|avif|woff2|woff|ttf|eot|mp4|webm)$ {'), 'general media context must exclude Astro fingerprints');
-assert(olsHelper.includes('context /_astro/ {'), 'OLS helper must define an Astro fingerprint directory context');
-assert(olsHelper.includes('location                $DOC_ROOT/_astro/'), 'Astro context must map to its physical directory');
 assert(olsHelper.includes('context exp:^/assets/runtime/.*\\.js$ {'), 'OLS helper must define a non-overlapping runtime fingerprint context');
 assert(olsHelper.includes('location                $DOC_ROOT/$0'), 'runtime context must map to its physical files');
+
+const nativeContexts = [...olsHelper.matchAll(/^context (.+) \{$/gm)].map((match) => match[1]);
+assert(nativeContexts.length === 2, 'OLS helper must install only the exact homepage and runtime asset contexts');
+assert(nativeContexts.includes('exp:^/$'), 'OLS helper must define only an exact homepage HTML context');
+assert(nativeContexts.includes('exp:^/assets/runtime/.*\\.js$'), 'OLS helper must allowlist the runtime fingerprint directory');
+assert(!/context exp:[^\n]*\\\.\(json\|xml\|txt\|webmanifest\)/.test(olsHelper), 'OLS helper must not install a broad data-file context that bypasses security rewrites');
+assert(!/context exp:[^\n]*\\\.html\$/.test(olsHelper), 'OLS helper must not install a broad HTML context that bypasses routing rewrites');
+assert(!/context exp:[^\n]*webp\|png\|jpg/.test(olsHelper), 'OLS helper must not install a broad media context that bypasses routing rewrites');
+assert(/^RewriteRule \^email-logs\\\.json\$ - \[F,L\]$/m.test(htaccess), 'public/.htaccess must forbid email-logs.json');
+assert(/^RewriteRule \^composer\\\.json\$ - \[F,L\]$/m.test(htaccess), 'public/.htaccess must forbid composer.json');
 
 for (const [index, url] of runtimeUrls.entries()) {
   assert(materializer.includes(assets[index].source), `runtime materializer must read ${assets[index].source}`);
@@ -93,5 +100,6 @@ console.log('Cache policy validation passed.');
 console.log('- Runtime asset fingerprints match their source content.');
 console.log('- Query-string versioning is absent.');
 console.log('- Build materializes physical fingerprinted runtime files.');
-console.log('- OpenLiteSpeed native static contexts match the deployed fingerprints.');
+console.log('- OpenLiteSpeed contexts are restricted to explicit safe paths.');
+console.log('- Security-sensitive JSON paths remain blocked by rewrite rules.');
 console.log('- PHP endpoints send their own explicit Cache-Control policy.');

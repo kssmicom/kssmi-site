@@ -97,7 +97,9 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           SOURCE: "dist/"
           TARGET: "/home/kssmi.com/public_html"
-          ARGS: "-avz --delete --exclude=email-logs.json --exclude=.email_logs_password --exclude=.email_reset_tokens.json --exclude=api/vjt_data"
+          # Private email data now lives in /home/kssmi.com, above public_html.
+          # Do not preserve legacy webroot copies of logs, credentials or tokens.
+          ARGS: "-avz --delete --exclude=api/vjt_data"
 
       - name: Set file permissions
         uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b  # v1.2.5+ pinned 2026-07-06 (was @master — supply-chain risk)

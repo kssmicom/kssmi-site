@@ -22,9 +22,9 @@ BEGIN_MARKER = "# KSSMI MANAGED CACHE CONTEXTS BEGIN"
 END_MARKER = "# KSSMI MANAGED CACHE CONTEXTS END"
 
 # Runtime URLs are physical files produced by materialize-runtime-assets.mjs.
-# Dedicated directory contexts own fingerprinted assets. OpenLiteSpeed 1.7.19
-# does not reliably exclude directory prefixes from regex contexts, so there is
-# deliberately no overlapping catch-all CSS/JS context.
+# Keep this list intentionally narrow: OLS static contexts can take precedence
+# over .htaccess rewrite denials. Broad extension contexts (especially JSON)
+# can therefore expose files that security rewrites are meant to forbid.
 INSERTION = r"""# KSSMI MANAGED CACHE CONTEXTS BEGIN
 context exp:^/$ {
   location                $DOC_ROOT/index.html
@@ -32,46 +32,6 @@ context exp:^/$ {
   extraHeaders            <<<END_extraHeaders
 unset Cache-Control
 set Cache-Control public, max-age=0, must-revalidate, s-maxage=600, stale-while-revalidate=60
-END_extraHeaders
-  addDefaultCharset       off
-}
-
-context exp:^/(?!_astro/).*\.(webp|png|jpg|jpeg|gif|svg|ico|avif|woff2|woff|ttf|eot|mp4|webm)$ {
-  location                $DOC_ROOT/$0
-  allowBrowse             1
-  extraHeaders            <<<END_extraHeaders
-unset Cache-Control
-set Cache-Control public, max-age=31536000
-END_extraHeaders
-  addDefaultCharset       off
-}
-
-context exp:^/.*\.(json|xml|txt|webmanifest)$ {
-  location                $DOC_ROOT/$0
-  allowBrowse             1
-  extraHeaders            <<<END_extraHeaders
-unset Cache-Control
-set Cache-Control public, max-age=3600, must-revalidate
-END_extraHeaders
-  addDefaultCharset       off
-}
-
-context exp:^/.*\.html$ {
-  location                $DOC_ROOT/$0
-  allowBrowse             1
-  extraHeaders            <<<END_extraHeaders
-unset Cache-Control
-set Cache-Control public, max-age=0, must-revalidate, s-maxage=600, stale-while-revalidate=60
-END_extraHeaders
-  addDefaultCharset       off
-}
-
-context /_astro/ {
-  location                $DOC_ROOT/_astro/
-  allowBrowse             1
-  extraHeaders            <<<END_extraHeaders
-unset Cache-Control
-set Cache-Control public, max-age=31536000, immutable
 END_extraHeaders
   addDefaultCharset       off
 }
