@@ -1932,7 +1932,7 @@ function vjt_gsc_environment() {
     // PHP's getenv()/$_SERVER. These site-specific values contain no secret; the
     // JSON contents remain outside public_html and protected by Unix permissions.
     if ($credentials === '') $credentials = '/home/kssmi.com/private/gsc/google-service-account.json';
-    if ($siteUrl === '') $siteUrl = 'https://kssmi.com/';
+    if ($siteUrl === '') $siteUrl = 'sc-domain:kssmi.com';
 
     return [
         'credentials' => $credentials,

@@ -9,7 +9,7 @@ RewriteEngine On
 
 # ─── GSC (Google Search Console) environment variables ──────────────────────
 SetEnv VJT_GSC_SERVICE_ACCOUNT_JSON /home/kssmi.com/private/gsc/google-service-account.json
-SetEnv VJT_GSC_SITE_URL https://kssmi.com/
+SetEnv VJT_GSC_SITE_URL sc-domain:kssmi.com
 
 # Inquiry form endpoints return HTML fragments for client-side insertion, not
 # standalone indexable documents. Keep them out of search results.

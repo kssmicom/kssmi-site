@@ -115,6 +115,13 @@ function getSettings() {
     return vjt_get_settings();
 }
 
+function isGscPermissionError($message) {
+    $message = strtolower((string)$message);
+    return strpos($message, 'sufficient permission') !== false
+        || strpos($message, 'insufficient permission') !== false
+        || strpos($message, 'permission denied') !== false;
+}
+
 // ── Handle settings save ─────────────────────────────────────────────────────
 
 if ($isAuthenticated && isset($_POST['save_settings'])) {
@@ -137,7 +144,13 @@ if ($isAuthenticated && isset($_POST['test_gsc_connection'])) {
     } else {
         $gscTest = vjt_gsc_diagnostics(true);
         $gscLastTest = $gscTest['last_test'] ?? [];
-        $message = !empty($gscLastTest['ok']) ? 'GSC connection test passed.' : 'GSC connection test failed: ' . ($gscLastTest['message'] ?? 'Unknown error.');
+        if (!empty($gscLastTest['ok'])) {
+            $message = 'GSC connection test passed.';
+        } elseif (isGscPermissionError($gscLastTest['message'] ?? '')) {
+            $message = 'GSC connection test failed: grant the displayed service account access to the exact Search Console property, then test again.';
+        } else {
+            $message = 'GSC connection test failed: ' . ($gscLastTest['message'] ?? 'Unknown error.');
+        }
         $messageClass = !empty($gscLastTest['ok']) ? 'success' : 'error';
     }
 }
@@ -508,8 +521,9 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
     <title>VJT - KSSMI</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; padding: 14px 20px; color: #333; overflow-y: scroll; }
-        .container { width: 100%; max-width: 1500px; margin: 0 auto; }
+        .container { width: 100%; max-width: 1500px; min-width: 0; margin: 0 auto; }
         h1 { color: #5D4E37; }
         .subtitle { color: #888; }
 
@@ -555,12 +569,17 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         .stat-card .sub { font-size: 12px; color: #888; margin-top: 4px; }
 
         /* Panels */
-        .panel { background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 14px; }
-        .panel-header { padding: 12px 16px; border-bottom: 1px solid #eee; font-weight: 600; color: #5D4E37; font-size: 13px; display: flex; justify-content: space-between; align-items: center; }
-        .panel-body { padding: 16px; }
+        .panel { min-width: 0; max-width: 100%; background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 14px; }
+        .panel-header { min-width: 0; padding: 12px 16px; border-bottom: 1px solid #eee; font-weight: 600; color: #5D4E37; font-size: 13px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+        .panel-header > * { min-width: 0; }
+        .panel-note { color: #888; font-size: 11px; font-weight: 400; text-align: right; }
+        .panel-body { min-width: 0; max-width: 100%; padding: 16px; }
 
         /* Tables */
-        .table-wrapper { overflow-x: auto; }
+        .table-wrapper { width: 100%; max-width: 100%; min-width: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
+        .table-wrapper table { min-width: 640px; }
+        .table-wrapper.table-compact table { min-width: 420px; }
+        .table-wrapper.table-wide table { min-width: 720px; }
         table { width: 100%; border-collapse: collapse; font-size: 13px; }
         th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #eee; }
         th { background: #f8f8f8; font-weight: 600; color: #5D4E37; font-size: 10px; text-transform: uppercase; white-space: nowrap; }
@@ -580,7 +599,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         .filters input[type="date"] { width: 140px; }
 
         /* Pagination */
-        .pagination { display: flex; gap: 4px; justify-content: center; margin-top: 15px; }
+        .pagination { display: flex; gap: 4px; justify-content: center; flex-wrap: wrap; max-width: 100%; margin-top: 15px; }
         .pagination a, .pagination span { padding: 6px 12px; border: 1px solid #ddd; border-radius: 4px; text-decoration: none; color: #666; font-size: 13px; }
         .pagination a:hover { background: #8B7355; color: white; border-color: #8B7355; }
         .pagination .current { background: #8B7355; color: white; border-color: #8B7355; }
@@ -630,6 +649,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         .status-pill { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
         .status-ok { color: #20733a; background: #d4edda; }
         .status-bad { color: #b52b27; background: #fdeaea; }
+        .gsc-action { margin: 12px 0 15px; padding: 12px 14px; color: #6f4d00; background: #fff7d6; border-left: 3px solid #d4a72c; border-radius: 4px; font-size: 12px; line-height: 1.55; }
 
         /* Empty state */
         .empty { text-align: center; padding: 60px; }
@@ -646,16 +666,24 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         /* Mobile responsive */
         @media (max-width: 768px) {
             .stats { grid-template-columns: repeat(2, 1fr); }
-            .tabs { flex-wrap: wrap; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .tabs { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; }
             .tab { padding: 10px 12px; font-size: 12px; white-space: nowrap; }
-            .filters { flex-direction: column; align-items: flex-start; }
+            .filters { flex-direction: column; align-items: stretch; }
+            .filters input, .filters select, .filters .btn { max-width: 100%; }
             .header { flex-wrap: nowrap; gap: 6px; }
             .header-left h1 { font-size: 14px; }
             .header-right { display: flex; gap: 4px; }
             .header-right .btn { padding: 4px 8px; font-size: 11px; }
             /* Overview grid: stack referrers + source/device vertically */
-            .overview-grid { grid-template-columns: 1fr !important; }
+            .overview-grid { min-width: 0; grid-template-columns: minmax(0, 1fr) !important; }
+            .overview-grid > * { min-width: 0; max-width: 100%; }
             .journey-grid { grid-template-columns: 1fr; }
+            .setting-row { flex-direction: column; align-items: flex-start; gap: 7px; }
+            .setting-row label { min-width: 0; }
+            .gsc-status-grid { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+            .gsc-status-value { margin-bottom: 8px; }
+            .panel-header { flex-wrap: wrap; align-items: flex-start; }
+            .panel-note { width: 100%; text-align: left; }
             /* Tables: tighter padding on mobile */
             th, td { padding: 6px 8px; font-size: 12px; }
         }
@@ -811,6 +839,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                 <?php if (empty($overview['topReferrers'])): ?>
                                     <div class="empty" style="padding:30px;"><p>No source data yet</p></div>
                                 <?php else: ?>
+                                    <div class="table-wrapper">
                                     <table>
                                         <thead><tr><th>Attributed Source</th><th style="text-align:right;">Sessions</th><th style="text-align:right;">Visitors</th><th style="text-align:right;">Leads</th></tr></thead>
                                         <tbody>
@@ -826,6 +855,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                             <?php endforeach; ?>
                                         </tbody>
                                     </table>
+                                    </div>
                                 <?php endif; ?>
                             </div>
                         </div>
@@ -842,6 +872,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                     </div>
                                 </div>
                                 <div class="panel-body" style="padding:0;">
+                                    <div class="table-wrapper">
                                     <table>
                                         <thead><tr><th>Source</th><th style="text-align:right;">Sessions</th><th style="text-align:right;">Visitors</th><th style="text-align:right;">Leads</th></tr></thead>
                                         <tbody>
@@ -857,6 +888,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                             <?php endforeach; ?>
                                         </tbody>
                                     </table>
+                                    </div>
                                 </div>
                             </div>
 
@@ -873,6 +905,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                     <?php if (empty($overview['deviceCounts'])): ?>
                                         <div class="empty" style="padding:30px;"><p>No device data yet</p></div>
                                     <?php else: ?>
+                                        <div class="table-wrapper table-compact">
                                         <table>
                                             <thead><tr><th>Device</th><th style="text-align:right;">Visitors</th></tr></thead>
                                             <tbody>
@@ -884,6 +917,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                                 <?php endforeach; ?>
                                             </tbody>
                                         </table>
+                                        </div>
                                     <?php endif; ?>
                                 </div>
                             </div>
@@ -891,14 +925,16 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                     </div>
 
                     <div class="panel" style="margin-top:20px;">
-                        <div class="panel-header">AI Referrals (<?php echo $periodLabel; ?>) <span style="font-size:11px;color:#888;font-weight:400;">verified referrer/UTM evidence, not AI citations</span></div>
+                        <div class="panel-header"><span>AI Referrals (<?php echo $periodLabel; ?>)</span><span class="panel-note">verified referrer/UTM evidence, not AI citations</span></div>
                         <div class="panel-body" style="padding:0;">
                             <?php if (empty($aiReferrals)): ?>
                                 <div class="empty" style="padding:24px;"><p>No verified AI referrals yet</p></div>
                             <?php else: ?>
+                                <div class="table-wrapper table-wide">
                                 <table><thead><tr><th>Platform</th><th style="text-align:right;">Sessions</th><th style="text-align:right;">Visitors</th><th style="text-align:right;">Leads</th><th style="text-align:right;">Landing Pages</th><th style="text-align:right;">Lead Rate</th></tr></thead><tbody>
                                 <?php foreach ($aiReferrals as $row): ?><tr><td><?php echo htmlspecialchars(ucfirst($row['platform'])); ?></td><td style="text-align:right;"><?php echo number_format($row['sessions']); ?></td><td style="text-align:right;"><?php echo number_format($row['visitors']); ?></td><td style="text-align:right;"><?php echo number_format($row['leads']); ?></td><td style="text-align:right;"><?php echo number_format($row['pages']); ?></td><td style="text-align:right;"><?php echo $row['conversion_rate']; ?>%</td></tr><?php endforeach; ?>
                                 </tbody></table>
+                                </div>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -1500,9 +1536,6 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                     <div class="panel">
                         <div class="panel-header">Google Search Console Keywords</div>
                         <div class="panel-body">
-                            <p style="color:#666;font-size:13px;line-height:1.55;margin-bottom:15px;">
-                                Aggregate Google Search query data for the whole verified property. These are not exact keywords for an individual visitor. Finalized data is shown through <?php echo htmlspecialchars($gscReport['end_date'] ?? gmdate('Y-m-d', time() - 2 * 86400)); ?>.
-                            </p>
                             <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px;">
                                 <?php foreach ([7, 28, 90] as $daysOption): ?>
                                     <a href="?tab=gsc&amp;days=<?php echo $daysOption; ?>" class="trend-tab <?php echo $gscDays === $daysOption ? 'trend-tab-active' : ''; ?>"><?php echo $daysOption; ?> days</a>
@@ -1513,7 +1546,11 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                             <?php if (empty($gscDiagnostics['ready'])): ?>
                                 <p class="error">GSC is not ready on this server. Open <a href="?tab=settings" class="link">Settings</a> to see the failed configuration check and test the connection.</p>
                             <?php elseif (empty($gscReport['ok'])): ?>
-                                <p class="error">Could not load GSC keywords: <?php echo htmlspecialchars($gscReport['error'] ?? 'Unknown Google API error.'); ?></p>
+                                <?php if (isGscPermissionError($gscReport['error'] ?? '')): ?>
+                                    <div class="gsc-action"><strong>Search Console permission required.</strong> Add <strong><?php echo htmlspecialchars($gscDiagnostics['service_account'] ?? 'the service account shown in Settings'); ?></strong> as a Restricted or Full user of the exact property <strong><?php echo htmlspecialchars($gscDiagnostics['site_url'] ?? 'sc-domain:kssmi.com'); ?></strong>, then return to Settings and run the connection test.</div>
+                                <?php else: ?>
+                                    <p class="error">Could not load GSC keywords: <?php echo htmlspecialchars($gscReport['error'] ?? 'Unknown Google API error.'); ?></p>
+                                <?php endif; ?>
                             <?php elseif (empty($gscReport['rows'])): ?>
                                 <div class="empty"><div class="empty-icon">🔎</div><p>The connection works, but Google returned no query rows for this period.</p></div>
                             <?php else: ?>
@@ -1620,12 +1657,22 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                         <span class="status-pill status-bad">Not tested</span>
                                     <?php else: ?>
                                         <span class="status-pill <?php echo !empty($lastGscTest['ok']) ? 'status-ok' : 'status-bad'; ?>"><?php echo !empty($lastGscTest['ok']) ? 'Passed' : 'Failed'; ?></span>
-                                        <?php echo htmlspecialchars(($lastGscTest['tested_at'] ?? '') . ' — ' . ($lastGscTest['message'] ?? '')); ?>
+                                        <?php echo htmlspecialchars($lastGscTest['tested_at'] ?? ''); ?>
+                                        <?php if (!empty($lastGscTest['ok'])): ?>
+                                            — <?php echo htmlspecialchars($lastGscTest['message'] ?? 'Connection successful.'); ?>
+                                        <?php elseif (isGscPermissionError($lastGscTest['message'] ?? '')): ?>
+                                            — Search Console access has not been granted for this property.
+                                        <?php else: ?>
+                                            — <?php echo htmlspecialchars($lastGscTest['message'] ?? 'Unknown error.'); ?>
+                                        <?php endif; ?>
                                     <?php endif; ?>
                                 </div>
                             </div>
                             <?php if (empty($gscDiagnostics['file_readable'])): ?>
                                 <p class="error">PHP user kssmi4374 still cannot read the credentials path shown above. Verify the current owner/mode on the server, then test again.</p>
+                            <?php endif; ?>
+                            <?php if (isGscPermissionError($gscDiagnostics['last_test']['message'] ?? '')): ?>
+                                <div class="gsc-action"><strong>One manual Google step remains:</strong> in Search Console, select the exact property <strong><?php echo htmlspecialchars($gscDiagnostics['site_url'] ?? 'sc-domain:kssmi.com'); ?></strong>, open <strong>Settings → Users and permissions → Add user</strong>, add <strong><?php echo htmlspecialchars($gscDiagnostics['service_account'] ?? ''); ?></strong> with <strong>Restricted or Full</strong> permission, then click the test button below.</div>
                             <?php endif; ?>
                             <form method="POST" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
                                 <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
