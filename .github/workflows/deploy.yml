@@ -243,7 +243,7 @@ jobs:
           check_status 'https://kssmi.com/composer.json' 403
 
           assert_single_cache_control 'https://kssmi.com/' 's-maxage=600'
-          assert_single_cache_control 'https://kssmi.com/assets/runtime/cookie-banner.f6b7338dd9e4.js' 'immutable'
+          assert_single_cache_control 'https://kssmi.com/assets/runtime/cookie-banner.c74eef5363a6.js' 'immutable'
           assert_single_cache_control 'https://kssmi.com/api/track-pageview.php' 'no-store'
 
       - name: Deployment Complete

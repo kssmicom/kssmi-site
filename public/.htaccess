@@ -94,7 +94,7 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # Content-fingerprinted runtime assets. The public source file keeps a stable
 # server-side name, while browsers/CDNs only see a URL that changes with its
 # SHA-256 content hash. These rules MUST stay before the generic -f/-d bypass.
-RewriteRule ^assets/runtime/cookie-banner\.f6b7338dd9e4\.js$ cookie-banner.js [L]
+RewriteRule ^assets/runtime/cookie-banner\.c74eef5363a6\.js$ cookie-banner.js [L]
 RewriteRule ^assets/runtime/vjt-tracker\.b25e07bc179b\.js$ js/vjt-tracker.js [L]
 
 RewriteCond %{REQUEST_FILENAME} -f [OR]
@@ -169,7 +169,7 @@ Header always unset Expires
 # Mark only genuinely fingerprinted URLs as immutable. Public assets with stable
 # names are deliberately excluded so a same-path update cannot be cached forever.
 SetEnvIf Request_URI "^/_astro/.*\.(css|js|mjs|woff2?)$" KSSMI_CACHE_IMMUTABLE=1
-SetEnvIf Request_URI "^/assets/runtime/(cookie-banner\.f6b7338dd9e4|vjt-tracker\.b25e07bc179b)\.js$" KSSMI_CACHE_IMMUTABLE=1
+SetEnvIf Request_URI "^/assets/runtime/(cookie-banner\.c74eef5363a6|vjt-tracker\.b25e07bc179b)\.js$" KSSMI_CACHE_IMMUTABLE=1
 
 # HTML: browsers revalidate; a configured CDN may keep it for 10 minutes.
 # Cloudflare must use "Respect existing headers" and purge HTML on deploy.

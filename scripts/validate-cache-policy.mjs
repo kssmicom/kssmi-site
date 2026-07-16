@@ -28,7 +28,11 @@ const assert = (condition, message) => {
 
 for (const asset of assets) {
   const bytes = await read(asset.source);
-  const hash = createHash('sha256').update(bytes).digest('hex').slice(0, 12);
+  // Git stores these text assets with LF line endings, but editors may leave a
+  // normalized-equivalent CRLF working copy on Windows. Hash the canonical Git
+  // representation so local validation and Linux CI produce the same URL.
+  const canonicalBytes = Buffer.from(bytes.toString('utf8').replaceAll('\r\n', '\n'));
+  const hash = createHash('sha256').update(canonicalBytes).digest('hex').slice(0, 12);
   const url = `/assets/runtime/${asset.publicName}.${hash}.js`;
   const reference = await readText(asset.reference);
 

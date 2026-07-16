@@ -17,8 +17,10 @@ or Cloudflare Browser Cache TTL overrides.
 | `vjt-config.php` | `public, max-age=300, must-revalidate` |
 
 Runtime asset fingerprints are derived from the first 12 hexadecimal characters
-of the source file's SHA-256 digest. Run `npm run validate:cache` after changing
-`cookie-banner.js`, `vjt-tracker.js`, their references, or `.htaccess`.
+of the source file's SHA-256 digest after text line endings are normalized to LF,
+matching the repository and Linux deployment representation. Run
+`npm run validate:cache` after changing `cookie-banner.js`, `vjt-tracker.js`,
+their references, or `.htaccess`.
 
 ## One-time OpenLiteSpeed cleanup
 
