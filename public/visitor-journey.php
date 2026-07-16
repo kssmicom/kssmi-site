@@ -720,7 +720,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                     <?php if ($tab === 'journey'): ?>
                         <a href="?tab=journey&visitor_id=<?php echo urlencode($_GET['visitor_id'] ?? ''); ?>" class="tab active">Journey Detail</a>
                     <?php endif; ?>
-                    <a href="?tab=gsc" class="tab <?php echo $tab === 'gsc' ? 'active' : ''; ?>">GSC Keywords</a>
+                    <a href="?tab=gsc" class="tab <?php echo $tab === 'gsc' ? 'active' : ''; ?>">Keywords</a>
                     <a href="?tab=settings" class="tab <?php echo $tab === 'settings' ? 'active' : ''; ?>">Settings</a>
                 </div>
 
@@ -1591,8 +1591,12 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                 Server-only service-account configuration. The private key and OAuth token are never displayed or sent to the browser.
                             </p>
                             <div class="gsc-status-grid">
-                                <div class="gsc-status-label">Environment variables</div>
-                                <div class="gsc-status-value"><span class="status-pill <?php echo !empty($gscDiagnostics['path_configured']) && !empty($gscDiagnostics['site_configured']) ? 'status-ok' : 'status-bad'; ?>"><?php echo !empty($gscDiagnostics['path_configured']) && !empty($gscDiagnostics['site_configured']) ? 'Configured' : 'Missing'; ?></span></div>
+                                <div class="gsc-status-label">Server configuration</div>
+                                <div class="gsc-status-value">
+                                    <?php $gscServerEnv = ($gscDiagnostics['credentials_source'] ?? '') === 'server environment' && ($gscDiagnostics['site_source'] ?? '') === 'server environment'; ?>
+                                    <span class="status-pill <?php echo !empty($gscDiagnostics['path_configured']) && !empty($gscDiagnostics['site_configured']) ? 'status-ok' : 'status-bad'; ?>"><?php echo $gscServerEnv ? 'Environment active' : 'Application fallback active'; ?></span>
+                                    Credentials: <?php echo htmlspecialchars($gscDiagnostics['credentials_source'] ?? '-'); ?>; property: <?php echo htmlspecialchars($gscDiagnostics['site_source'] ?? '-'); ?>
+                                </div>
 
                                 <div class="gsc-status-label">Credentials file</div>
                                 <div class="gsc-status-value"><span class="status-pill <?php echo !empty($gscDiagnostics['file_readable']) ? 'status-ok' : 'status-bad'; ?>"><?php echo !empty($gscDiagnostics['file_readable']) ? 'Readable by PHP' : 'Not readable by PHP'; ?></span> <?php echo htmlspecialchars($gscDiagnostics['credentials_path'] ?? '-'); ?></div>
@@ -1621,12 +1625,12 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                 </div>
                             </div>
                             <?php if (empty($gscDiagnostics['file_readable'])): ?>
-                                <p class="error">The current server evidence shows this file is owned by root and cannot be read by PHP user kssmi4374. Fix its owner and mode before testing.</p>
+                                <p class="error">PHP user kssmi4374 still cannot read the credentials path shown above. Verify the current owner/mode on the server, then test again.</p>
                             <?php endif; ?>
                             <form method="POST" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
                                 <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
                                 <button type="submit" name="test_gsc_connection" class="btn btn-primary">Test GSC Connection</button>
-                                <?php if (!empty($gscDiagnostics['last_test']['ok'])): ?><a href="?tab=gsc" class="btn btn-secondary">Open GSC Keywords</a><?php endif; ?>
+                                <?php if (!empty($gscDiagnostics['last_test']['ok'])): ?><a href="?tab=gsc" class="btn btn-secondary">Open Keywords</a><?php endif; ?>
                             </form>
 
                             <hr style="margin:30px 0;border:none;border-top:1px solid #eee;">

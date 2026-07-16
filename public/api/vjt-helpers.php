@@ -1909,10 +1909,36 @@ function vjt_get_journey($visitorId) {
 
 function vjt_gsc_base64url($value) { return rtrim(strtr(base64_encode($value), '+/', '-_'), '='); }
 
+function vjt_gsc_runtime_value($name) {
+    $values = [getenv($name)];
+    if (function_exists('apache_getenv')) $values[] = @apache_getenv($name);
+    $values[] = $_SERVER[$name] ?? '';
+    $values[] = $_ENV[$name] ?? '';
+    $values[] = $_SERVER['REDIRECT_' . $name] ?? '';
+    foreach ($values as $value) {
+        $value = trim((string)$value);
+        if ($value !== '') return $value;
+    }
+    return '';
+}
+
 function vjt_gsc_environment() {
+    $credentials = vjt_gsc_runtime_value('VJT_GSC_SERVICE_ACCOUNT_JSON');
+    $siteUrl = vjt_gsc_runtime_value('VJT_GSC_SITE_URL');
+    $credentialsSource = $credentials !== '' ? 'server environment' : 'application fallback';
+    $siteSource = $siteUrl !== '' ? 'server environment' : 'application fallback';
+
+    // OpenLiteSpeed can apply SetEnv for request routing without exposing it to
+    // PHP's getenv()/$_SERVER. These site-specific values contain no secret; the
+    // JSON contents remain outside public_html and protected by Unix permissions.
+    if ($credentials === '') $credentials = '/home/kssmi.com/private/gsc/google-service-account.json';
+    if ($siteUrl === '') $siteUrl = 'https://kssmi.com/';
+
     return [
-        'credentials' => trim((string)getenv('VJT_GSC_SERVICE_ACCOUNT_JSON')),
-        'site_url' => trim((string)getenv('VJT_GSC_SITE_URL')),
+        'credentials' => $credentials,
+        'site_url' => $siteUrl,
+        'credentials_source' => $credentialsSource,
+        'site_source' => $siteSource,
     ];
 }
 
@@ -2029,6 +2055,8 @@ function vjt_gsc_diagnostics($testConnection = false) {
         'site_configured' => $env['site_url'] !== '',
         'credentials_path' => $env['credentials'],
         'site_url' => $env['site_url'],
+        'credentials_source' => $env['credentials_source'],
+        'site_source' => $env['site_source'],
         'file_exists' => $env['credentials'] !== '' && is_file($env['credentials']),
         'file_readable' => $raw !== false,
         'json_valid' => is_array($credentials) && !empty($credentials['client_email']) && !empty($credentials['private_key']),
