@@ -16,6 +16,10 @@ or Cloudflare Browser Cache TTL overrides.
 | PHP/API | `no-store, private` |
 | `vjt-config.php` | `public, max-age=300, must-revalidate` |
 
+The HTML policy is the unconditional fallback in `.htaccess`; later file-type
+rules replace it for assets and PHP. This is required because OpenLiteSpeed may
+not match a directory-index request such as `/` against `FilesMatch "\.html$"`.
+
 Runtime asset fingerprints are derived from the first 12 hexadecimal characters
 of the source file's SHA-256 digest after text line endings are normalized to LF,
 matching the repository and Linux deployment representation. Run

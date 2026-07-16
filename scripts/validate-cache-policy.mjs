@@ -49,7 +49,7 @@ assert(htaccess.includes('ExpiresActive Off'), 'public/.htaccess must disable in
 assert(!/^ExpiresByType\b/m.test(htaccess), 'public/.htaccess must not define ExpiresByType');
 assert(htaccess.includes('Header unset Cache-Control'), 'onsuccess Cache-Control must be cleared');
 assert(htaccess.includes('Header always unset Cache-Control'), 'always Cache-Control must be cleared');
-assert(htaccess.includes('s-maxage=600'), 'HTML must define the CDN edge TTL');
+assert(/^Header always set Cache-Control "[^"]*s-maxage=600[^"]*"$/m.test(htaccess), 'HTML cache policy must be an unconditional fallback for OLS directory indexes');
 assert(htaccess.includes('KSSMI_CACHE_IMMUTABLE'), 'fingerprinted assets must have an immutable override');
 assert(htaccess.includes('<FilesMatch "\\.php$">'), 'PHP must have a central no-store policy');
 assert(!olsHelper.includes('expiresByType'), 'OLS helper must not install a second MIME cache policy');
