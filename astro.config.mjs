@@ -25,10 +25,10 @@ export default defineConfig({
   },
   build: {
     format: 'directory',
-    // Keep CSS as hashed external files. This is required by the strict static-page CSP and
-    // prevents a future CSP change from rendering the entire frontend without styling.
-    // Browsers cache the hashed files, so subsequent pages do not pay the full CSS cost again.
-    inlineStylesheets: 'never'
+    // Inline only small CSS chunks to remove high-latency render-blocking requests. The main
+    // Tailwind/critical bundle stays hashed and external; generate-csp-hashes.mjs hashes any
+    // resulting inline styles before deployment, so the strict static CSP remains valid.
+    inlineStylesheets: 'auto'
   },
   vite: {
     plugins: [

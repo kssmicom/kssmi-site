@@ -19,6 +19,8 @@ assert(header.includes('function renderMenuContent('), 'Header secondary menus m
 assert(!header.includes('productsMenu?.children'), 'Products mega-menu tree must not be server-rendered.');
 assert(!header.includes('eyewearMenu?.children'), 'Eyewear mega-menu tree must not be server-rendered.');
 assert(!header.includes('blogMenu?.children'), 'Blog mega-menu tree must not be server-rendered.');
+assert(!header.includes('new ResizeObserver(updateHint)'), 'Hidden language menus must not trigger layout measurement during page initialization.');
+assert(!header.includes('Initial check: batch read'), 'Language-menu scroll hints must be measured only after interaction.');
 
 const homeCardFiles = [
   'src/components/collection/home/Materials.astro',
@@ -33,7 +35,11 @@ for (const file of homeCardFiles) {
   const source = read(file);
   assert(!source.includes('m.points?.map('), `${file} must not restore a multi-node feature list per card.`);
   assert(source.includes("m.points?.join(' · ')"), `${file} must retain all feature text in the compact summary.`);
+  assert(source.includes('contain-below-fold--lg'), `${file} must defer below-the-fold layout and paint work.`);
 }
+
+const astroConfig = read('astro.config.mjs');
+assert(astroConfig.includes("inlineStylesheets: 'auto'"), 'Astro must inline small CSS chunks while keeping the main critical bundle external.');
 
 if (failures.length) {
   console.error('DOM policy validation failed:');

@@ -227,7 +227,7 @@ const languageNames = {
             <li class="h-full flex items-center">
               <a href={item.href}
                  class:list={[
-                   'nav-link relative inline-block font-[\'Manrope\'] font-bold text-xs md:text-sm uppercase tracking-wider transition-colors duration-300 px-2 xl:px-3 py-2',
+                   'nav-link relative inline-block font-Manrope font-bold text-xs md:text-sm uppercase tracking-wider transition-colors duration-300 px-2 xl:px-3 py-2',
                    transparent
                      ? 'text-white/90 hover:text-amber-300'
                      : 'text-gray-700 hover:text-[#5D4E37]',
@@ -305,7 +305,7 @@ const languageNames = {
           </div>
         </div>
         <a href={`/${currentPath}quote`} class:list={[
-          'hidden sm:block px-5 xl:px-6 py-2.5 text-xs xl:text-sm font-[\'Manrope\'] font-bold uppercase tracking-[0.15em] active:scale-95 transition-all duration-300 rounded-xs hover:-translate-y-0.5',
+          'hidden sm:block px-5 xl:px-6 py-2.5 text-xs xl:text-sm font-Manrope font-bold uppercase tracking-[0.15em] active:scale-95 transition-all duration-300 rounded-xs hover:-translate-y-0.5',
           transparent
             ? 'bg-white/15 backdrop-blur-md text-white border border-white/40 hover:bg-white hover:text-slate-900 shadow-lg hover:shadow-xl'
             : 'bg-[#5D4E37] text-white hover:bg-[#4A3D2E] shadow-lg',
@@ -337,7 +337,7 @@ const languageNames = {
 <!-- Mobile Menu -->
 <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-[10000] p-6 overflow-y-auto" role="dialog" aria-modal="true" aria-label={t.nav?.menu || 'Menu'} dir={isRTL ? 'rtl' : 'ltr'}>
   <div class="flex justify-between items-center mb-8 sticky top-0 bg-white z-10 py-4 border-b border-gray-50">
-    <span class="text-2xl font-['Manrope'] font-bold text-[#503629]">{t.nav?.menu || 'Menu'}</span>
+    <span class="text-2xl font-Manrope font-bold text-[#503629]">{t.nav?.menu || 'Menu'}</span>
     <button id="mobile-menu-close" class="p-3 bg-stone-100 rounded-full text-stone-700 hover:text-[#5D4E37] hover:bg-stone-200 transition-colors shadow-xs" aria-label={t.nav?.ariaCloseMenu || 'Close menu'}>
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
     </button>
@@ -359,7 +359,7 @@ const languageNames = {
         <div class="flex items-center justify-between w-full pr-4">
           {item.hasDropdown ? (
             <>
-              <a href={item.href} class="mobile-menu-link block py-3 hover:text-[#5D4E37] transition-colors grow flex items-center font-['Manrope'] font-bold text-lg">
+              <a href={item.href} class="mobile-menu-link block py-3 hover:text-[#5D4E37] transition-colors grow flex items-center font-Manrope font-bold text-lg">
                 {item.label}
               </a>
               <button class="mobile-toggle-btn w-11 h-11 flex items-center justify-center text-[#5D4E37] rounded-full active:bg-stone-100 transition-all z-20 cursor-pointer" aria-label={t.nav?.ariaToggleSubmenu || 'Toggle submenu'} aria-expanded="false">
@@ -367,7 +367,7 @@ const languageNames = {
               </button>
             </>
           ) : (
-            <a href={item.href} class="mobile-menu-link block py-3 hover:text-[#5D4E37] transition-colors grow flex items-center font-['Manrope'] font-bold text-lg">
+            <a href={item.href} class="mobile-menu-link block py-3 hover:text-[#5D4E37] transition-colors grow flex items-center font-Manrope font-bold text-lg">
               {item.label}
             </a>
           )}
@@ -461,7 +461,6 @@ const languageNames = {
   let headerMenuData = null;
   let transparentObserver = null;
   let transparentRafId = 0;
-  let resizeObservers = [];
   const pageTimers = new Set();
   const pageRafs = new Set();
 
@@ -510,8 +509,6 @@ const languageNames = {
     pageRafs.forEach(rafId => window.cancelAnimationFrame(rafId));
     pageRafs.clear();
 
-    resizeObservers.forEach(observer => observer.disconnect());
-    resizeObservers = [];
     transparentObserver?.disconnect();
     transparentObserver = null;
     transparentRafId = 0;
@@ -567,8 +564,8 @@ const languageNames = {
         group.label,
         buildMenuHref(menuBase, group.slug),
         mode === 'desktop'
-          ? "font-['Manrope'] font-bold text-xs uppercase tracking-wider text-[#5D4E37] mb-4 whitespace-nowrap hover:text-[#5D4E37] transition-colors"
-          : "block py-3 text-xs md:text-sm font-semibold text-[#5D4E37] font-['Manrope'] uppercase tracking-wide"
+          ? "font-Manrope font-bold text-xs uppercase tracking-wider text-[#5D4E37] mb-4 whitespace-nowrap hover:text-[#5D4E37] transition-colors"
+          : "block py-3 text-xs md:text-sm font-semibold text-[#5D4E37] font-Manrope uppercase tracking-wide"
       );
       groupElement.appendChild(groupLink);
 
@@ -580,8 +577,8 @@ const languageNames = {
           item.label,
           buildMenuHref(menuBase, item.slug),
           mode === 'desktop'
-            ? "font-['Plus_Jakarta_Sans'] text-sm font-medium text-stone-600 py-1.5 transition-all duration-200 hover:text-[#5D4E37] hover:pl-1 whitespace-nowrap"
-            : "flex items-center font-['Plus_Jakarta_Sans'] text-base md:text-lg font-medium text-stone-700 py-3 pl-6 transition-all duration-200 hover:text-[#5D4E37] hover:pl-8"
+            ? "font-sans text-sm font-medium text-stone-600 py-1.5 transition-all duration-200 hover:text-[#5D4E37] hover:pl-1 whitespace-nowrap"
+            : "flex items-center font-sans text-base md:text-lg font-medium text-stone-700 py-3 pl-6 transition-all duration-200 hover:text-[#5D4E37] hover:pl-8"
         );
         if (mode === 'mobile') {
           const arrow = document.createElement('span');
@@ -807,10 +804,13 @@ const languageNames = {
       const updateHint = () => {
         if (hintRafPending) return;
         hintRafPending = true;
-        // Batch read + write in same rAF to avoid forced reflow
+        // Measure only after the menu is used; keep all reads before the write.
         requestPageFrame(() => {
-          const isScrollable = menu.scrollHeight > menu.clientHeight;
-          const isNotAtBottom = Math.ceil(menu.scrollTop + menu.clientHeight) < menu.scrollHeight - 2;
+          const scrollHeight = menu.scrollHeight;
+          const clientHeight = menu.clientHeight;
+          const scrollTop = menu.scrollTop;
+          const isScrollable = scrollHeight > clientHeight;
+          const isNotAtBottom = Math.ceil(scrollTop + clientHeight) < scrollHeight - 2;
           hint.style.opacity = (isScrollable && isNotAtBottom) ? '1' : '0';
           hintRafPending = false;
         });
@@ -825,18 +825,8 @@ const languageNames = {
         });
       }
 
-      // Try to use ResizeObserver
-      if (typeof ResizeObserver !== 'undefined') {
-        const observer = new ResizeObserver(updateHint);
-        observer.observe(menu);
-        resizeObservers.push(observer);
-      }
-      // Initial check: batch read + write in rAF to avoid forced reflow
-      requestPageFrame(() => {
-        const isScrollable = menu.scrollHeight > menu.clientHeight;
-        const isNotAtBottom = Math.ceil(menu.scrollTop + menu.clientHeight) < menu.scrollHeight - 2;
-        hint.style.opacity = (isScrollable && isNotAtBottom) ? '1' : '0';
-      });
+      // Do not measure the hidden dropdown during page initialization. Hover,
+      // click and scroll already call updateHint once the menu is relevant.
     });
 
     // Language Dropdown Click Toggle (for touch devices)

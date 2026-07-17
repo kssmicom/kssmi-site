@@ -12,6 +12,10 @@ function assert(condition, message) {
 
 const layout = read('src/layouts/Layout.astro');
 assert(layout.includes('rel="preload" as="image" href={lcpImage}'), 'Layout must preload the declared LCP image URL.');
+assert(!layout.includes('fonts.googleapis.com') && !layout.includes('fonts.gstatic.com'), 'Layout must not inject late Google Fonts that can reflow settled text.');
+
+const globalStyles = read('src/styles/global.css');
+assert(globalStyles.includes('--font-sans: system-ui'), 'Primary font utilities must use the stable local system-font stack.');
 
 const productCard = read('src/components/ProductCard.astro');
 assert(productCard.includes('index === 0'), 'ProductCard must identify the first card as the LCP candidate.');
@@ -62,6 +66,7 @@ const hero = read('src/components/collection/home/S00_Hero.astro');
 assert(hero.includes('loading="eager"') && hero.includes('fetchpriority="high"'), 'Home poster must remain the LCP image.');
 assert(hero.includes('preload="none"') && hero.includes('data-src={videoUrl}'), 'Home video URL must stay outside the initial media request.');
 assert(hero.includes('pageLoaded') && hero.includes('interactionSeen'), 'Home video must wait for both load and trusted interaction.');
+assert(!hero.includes('<h1 class="hero-fade'), 'Home LCP heading must be visible on the first frame, without the entrance fade.');
 assert(!hero.includes('navigator.userActivation'), 'Home video must not inherit sticky activation from an earlier page or lifecycle event.');
 assert(!hero.includes("addEventListener('scroll'"), 'Home video must not treat generic scroll events as proof of user interaction.');
 assert(!hero.includes("addEventListener('pointerdown'"), 'Home video must not start on pointerdown alone.');
