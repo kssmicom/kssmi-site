@@ -85,6 +85,10 @@ header for:
 - the fingerprinted cookie banner (`immutable`);
 - a tracking API endpoint (`no-store`).
 
+The removed legacy `/email-logs.json` webroot path may return either `403`
+(explicitly forbidden) or `404` (not present). Both satisfy the security
+requirement; HTTP `200` does not.
+
 If this check fails, compare a direct-origin request made with `curl --resolve`
 against the public Cloudflare response. Inspect Cloudflare Response Header Rules,
 Browser Cache TTL, the OLS managed cache contexts, and each PHP endpoint's own

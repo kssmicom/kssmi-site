@@ -47,6 +47,7 @@ const tracker = await readText('src/components/VisitorTracker.astro');
 const olsHelper = await readText('scripts/ols-add-headers.py');
 const packageJson = JSON.parse(await readText('package.json'));
 const materializer = await readText('scripts/materialize-runtime-assets.mjs');
+const deployWorkflow = await readText('.github/workflows/deploy.yml');
 assert(!layout.includes('cookie-banner.js?v='), 'cookie banner must not use query-string versioning');
 assert(!tracker.includes('vjt-tracker.js?v='), 'VJT tracker must not use query-string versioning');
 assert(!/^ExpiresByType\b/m.test(htaccess), 'public/.htaccess must not define ExpiresByType');
@@ -69,6 +70,7 @@ assert(!/context exp:[^\n]*\\\.html\$/.test(olsHelper), 'OLS helper must not ins
 assert(!/context exp:[^\n]*webp\|png\|jpg/.test(olsHelper), 'OLS helper must not install a broad media context that bypasses routing rewrites');
 assert(/^RewriteRule \^email-logs\\\.json\$ - \[F,L\]$/m.test(htaccess), 'public/.htaccess must forbid email-logs.json');
 assert(/^RewriteRule \^composer\\\.json\$ - \[F,L\]$/m.test(htaccess), 'public/.htaccess must forbid composer.json');
+assert(deployWorkflow.includes("check_status 'https://kssmi.com/email-logs.json' '403 404'"), 'deploy must accept either forbidden or not-found for the removed legacy email log');
 
 for (const [index, url] of runtimeUrls.entries()) {
   assert(materializer.includes(assets[index].source), `runtime materializer must read ${assets[index].source}`);

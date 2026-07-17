@@ -203,11 +203,11 @@ jobs:
 
           check_status() {
             local url="$1"
-            local expected="$2"
+            local expected_codes="$2"
             local actual
             actual="$(curl -ksS -o /dev/null -w '%{http_code}' "$url")"
-            echo "$url -> $actual (expected $expected)"
-            test "$actual" = "$expected"
+            echo "$url -> $actual (expected one of: $expected_codes)"
+            [[ " $expected_codes " == *" $actual "* ]]
           }
 
           assert_single_cache_control() {
@@ -241,7 +241,9 @@ jobs:
           check_status 'https://kssmi.com/php-status.php' 404
           check_status 'https://kssmi.com/vjt-db-setup.php' 404
           check_status 'https://kssmi.com/.env' 404
-          check_status 'https://kssmi.com/email-logs.json' 403
+          # The legacy webroot file has been removed. Depending on OLS routing,
+          # a protected/missing sensitive path may correctly return 403 or 404.
+          check_status 'https://kssmi.com/email-logs.json' '403 404'
           check_status 'https://kssmi.com/composer.json' 403
 
           assert_single_cache_control 'https://kssmi.com/' 's-maxage=600'
