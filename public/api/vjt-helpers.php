@@ -208,7 +208,7 @@ function vjt_field_caps() {
         'landing_url' => 2048, 'landing_title' => 512,
         'utm_source' => 256, 'utm_medium' => 256, 'utm_campaign' => 256, 'utm_content' => 256, 'utm_term' => 256,
         'screen_resolution' => 32, 'timezone' => 64, 'language' => 64, 'site_language' => 8,
-        'form_plugin' => 64, 'form_id' => 256, 'form_name' => 256,
+        'form_plugin' => 64, 'form_id' => 256, 'form_name' => 256, 'event_id' => 96,
         'submit_page' => 2048, 'submit_title' => 512, 'contact_url' => 2048,
     ];
 }
@@ -316,6 +316,7 @@ function vjt_create_schema() {
         submit_page   TEXT DEFAULT '',
         submit_title  TEXT DEFAULT '',
         submitted_at  TEXT DEFAULT '',
+        event_id      TEXT DEFAULT '',
         status        TEXT DEFAULT 'attempt',
         contact_url   TEXT DEFAULT '',
         ip            TEXT DEFAULT '',
@@ -354,6 +355,11 @@ function vjt_create_schema() {
     $db->exec("CREATE INDEX IF NOT EXISTS idx_sub_time     ON submissions(submitted_at)");
     $db->exec("CREATE INDEX IF NOT EXISTS idx_sub_visitor  ON submissions(visitor_id)");
     $db->exec("CREATE INDEX IF NOT EXISTS idx_sub_session  ON submissions(session_id)");
+    // Older production databases receive event_id in the migration below.
+    // Do not create its index until the column actually exists.
+    if (vjt_column_exists('submissions', 'event_id')) {
+        $db->exec("CREATE UNIQUE INDEX IF NOT EXISTS idx_sub_event_id ON submissions(event_id) WHERE event_id <> ''");
+    }
     $db->exec("CREATE INDEX IF NOT EXISTS idx_sess_visitor ON sessions(visitor_id)");
     $db->exec("CREATE INDEX IF NOT EXISTS idx_sess_started ON sessions(started_at)");
     $db->exec("CREATE INDEX IF NOT EXISTS idx_sess_seen    ON sessions(last_seen_at)");
@@ -380,7 +386,7 @@ function vjt_add_column_if_missing($table, $definition) {
 function vjt_run_schema_migrations() {
     $db = vjt_db();
     $current = (int)vjt_meta_get('schema_version', 0);
-    if ($current >= 3) return;
+    if ($current >= 4) return;
 
     try {
         $db->beginTransaction();
@@ -399,7 +405,10 @@ function vjt_run_schema_migrations() {
         $db->exec('CREATE INDEX IF NOT EXISTS idx_sess_source_slug ON sessions(source_slug)');
         $db->exec('CREATE INDEX IF NOT EXISTS idx_sess_source_host ON sessions(source_host)');
         $db->exec('CREATE INDEX IF NOT EXISTS idx_sess_source_type ON sessions(source_type)');
-        vjt_meta_set('schema_version', 3);
+        // v4: browser conversion retries use one exact event ID.
+        vjt_add_column_if_missing('submissions', 'event_id TEXT DEFAULT \'\'');
+        $db->exec("CREATE UNIQUE INDEX IF NOT EXISTS idx_sub_event_id ON submissions(event_id) WHERE event_id <> ''");
+        vjt_meta_set('schema_version', 4);
         $db->commit();
     } catch (Exception $e) {
         if ($db->inTransaction()) $db->rollBack();
@@ -929,25 +938,37 @@ function vjt_add_submission($data) {
     $db = vjt_db();
     $now = gmdate('Y-m-d H:i:s');
     $cutoff = gmdate('Y-m-d H:i:s', time() - 600);
+    $eventId = trim((string)($data['event_id'] ?? ''));
 
-    // Deduplication: same visitor+session+form+status within 10 minutes
+    // Retries retain one event ID, so a transient network failure is safe to
+    // resend without suppressing a separate intentional contact click.
+    if ($eventId !== '') {
+        $stmt = $db->prepare('SELECT id FROM submissions WHERE event_id = ? LIMIT 1');
+        $stmt->execute([$eventId]);
+        if ($stmt->fetch()) return 'duplicate';
+    }
+
+    // Backward-compatible fallback for server-originated records that do not
+    // have an event ID (for example, a confirmed SMTP Inquiry result).
     $stmt = $db->prepare("SELECT id FROM submissions
         WHERE visitor_id = ? AND session_id = ? AND form_plugin = ? AND status = ?
           AND submitted_at >= ? LIMIT 1");
-    $stmt->execute([
-        $data['visitor_id'],
-        $data['session_id'],
-        $data['form_plugin'] ?? '',
-        $data['status'] ?? 'attempt',
-        $cutoff,
-    ]);
-    if ($stmt->fetch()) return; // duplicate
+    if ($eventId === '') {
+        $stmt->execute([
+            $data['visitor_id'],
+            $data['session_id'],
+            $data['form_plugin'] ?? '',
+            $data['status'] ?? 'attempt',
+            $cutoff,
+        ]);
+        if ($stmt->fetch()) return 'duplicate';
+    }
 
-    $ins = $db->prepare("INSERT INTO submissions
+    $ins = $db->prepare("INSERT OR IGNORE INTO submissions
         (visitor_id, session_id, form_plugin, form_id, form_name, submit_page, submit_title,
-         submitted_at, status, contact_url, ip, country, city, region, calling_code)
+         submitted_at, event_id, status, contact_url, ip, country, city, region, calling_code)
         VALUES (:visitor_id,:session_id,:form_plugin,:form_id,:form_name,:submit_page,:submit_title,
-         :submitted_at,:status,:contact_url,:ip,:country,:city,:region,:calling_code)");
+         :submitted_at,:event_id,:status,:contact_url,:ip,:country,:city,:region,:calling_code)");
     $ins->execute([
         ':visitor_id' => $data['visitor_id'],
         ':session_id' => $data['session_id'],
@@ -957,6 +978,7 @@ function vjt_add_submission($data) {
         ':submit_page' => $data['submit_page'] ?? '',
         ':submit_title' => $data['submit_title'] ?? '',
         ':submitted_at' => $now,
+        ':event_id' => $eventId,
         ':status' => $data['status'] ?? 'attempt',
         ':contact_url' => $data['contact_url'] ?? '',
         ':ip' => $data['ip'] ?? '',
@@ -965,6 +987,7 @@ function vjt_add_submission($data) {
         ':region' => $data['region'] ?? '',
         ':calling_code' => $data['calling_code'] ?? '',
     ]);
+    return $ins->rowCount() > 0 ? 'stored' : 'duplicate';
 }
 
 // ── Geo (item 6: non-blocking) ───────────────────────────────────────────────
@@ -1221,7 +1244,7 @@ function vjt_is_bot($ua) {
         'curl/', 'wget', 'go-http-client', 'java/', 'okhttp', 'headlesschrome',
         'phantomjs', 'puppeteer', 'playwright', 'scrapy', 'httpclient', 'lighthouse',
         'gtmetrix', 'pingdom', 'uptimerobot', 'statuscake', 'censys', 'masscan', 'zgrab',
-        'ahc/', 'node-fetch', 'axios/', 'guzzle', 'monitoring', 'preview', 'whatsapp',
+        'ahc/', 'node-fetch', 'axios/', 'guzzle', 'monitoring', 'preview',
     ];
     foreach ($needles as $n) {
         if (strpos($ua, $n) !== false) return true;

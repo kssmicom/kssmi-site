@@ -4,6 +4,9 @@
   var SESSION_KEY = 'vjt_session_meta';
   var PAGE_KEY    = 'vjt_current_pageview';
   var PATH_KEY    = 'vjt_session_path';
+  var CONVERSION_QUEUE_KEY = 'vjt_pending_conversions';
+  var MAX_PENDING_CONVERSIONS = 20;
+  var PENDING_CONVERSION_TTL_MS = 7 * 24 * 60 * 60 * 1000;
   var ACTIVE_WINDOW_MS = 15000;
   var HEARTBEAT_MS = 45000;
   var hiddenNames = [
@@ -322,6 +325,88 @@
     }).catch(function () { return null; });
   }
 
+  // Conversion events are queued before sending. A page can leave immediately
+  // after a WhatsApp/mail click, so keeping the event ID locally makes a later
+  // retry safe without recording the same click twice.
+  function pendingConversions() {
+    var items = readJson(CONVERSION_QUEUE_KEY);
+    if (!Array.isArray(items)) return [];
+    var cutoff = Date.now() - PENDING_CONVERSION_TTL_MS;
+    return items.filter(function (item) {
+      return item && item.payload && item.payload.event_id && item.queued_at >= cutoff;
+    }).slice(-MAX_PENDING_CONVERSIONS);
+  }
+
+  function savePendingConversions(items) {
+    writeJson(CONVERSION_QUEUE_KEY, Array.isArray(items) ? items.slice(-MAX_PENDING_CONVERSIONS) : []);
+  }
+
+  function queueConversion(payload) {
+    var items = pendingConversions();
+    var exists = items.some(function (item) { return item.payload.event_id === payload.event_id; });
+    if (!exists) {
+      items.push({ payload: payload, queued_at: Date.now() });
+      savePendingConversions(items);
+    }
+  }
+
+  function removeQueuedConversion(eventId) {
+    savePendingConversions(pendingConversions().filter(function (item) {
+      return item.payload.event_id !== eventId;
+    }));
+  }
+
+  function deliverConversion(payload) {
+    if (!cfg.enabled || !cfg.routes || !cfg.routes.submission) return Promise.resolve('drop');
+    try {
+      return fetch(cfg.routes.submission, {
+        method      : 'POST',
+        credentials : 'same-origin',
+        keepalive   : true,
+        headers     : { 'Content-Type': 'application/json' },
+        body        : JSON.stringify(payload)
+      }).then(function (response) {
+        // Malformed input is not recoverable; 429/5xx remain queued for retry.
+        if (!response.ok) return (response.status === 429 || response.status >= 500) ? 'retry' : 'drop';
+        return response.json().then(function (body) {
+          if (!body || body.success !== true) return 'retry';
+          if (body.result === 'skipped_internal' || body.result === 'skipped_bot') return 'drop';
+          // Accept legacy successful responses during a rolling deployment.
+          return 'stored';
+        }, function () { return 'retry'; });
+      }, function () { return 'retry'; });
+    } catch (e) {
+      return Promise.resolve('retry');
+    }
+  }
+
+  function submitConversion(payload, onSettled) {
+    if (!payload.event_id) payload.event_id = newTrackingId('vjtev_');
+    queueConversion(payload);
+    deliverConversion(payload).then(function (result) {
+      if (result === 'stored' || result === 'drop') removeQueuedConversion(payload.event_id);
+      if (onSettled) onSettled(result);
+    }, function () {
+      if (onSettled) onSettled('retry');
+    });
+  }
+
+  function flushPendingConversions() {
+    if (window.__vjtConversionFlush || !cfg.enabled) return;
+    var items = pendingConversions();
+    if (!items.length) return;
+    window.__vjtConversionFlush = true;
+    var next = function () {
+      var item = items.shift();
+      if (!item) { window.__vjtConversionFlush = false; return; }
+      deliverConversion(item.payload).then(function (result) {
+        if (result === 'stored' || result === 'drop') removeQueuedConversion(item.payload.event_id);
+        next();
+      }, next);
+    };
+    next();
+  }
+
   function ensureHidden(form, name, value) {
     var f = form.querySelector('input[name="' + name + '"]');
     if (!f) {
@@ -566,6 +651,7 @@
       var payload = {
         visitor_id   : visitorId,
         session_id   : session.id,
+        event_id     : newTrackingId('vjtev_'),
         form_plugin  : meta.plugin,
         form_id      : meta.id,
         form_name    : meta.name,
@@ -587,23 +673,7 @@
         site_language: session.siteLanguage || getSiteLanguage()
       };
 
-      try {
-        fetch(cfg.routes.submission, {
-          method      : 'POST',
-          credentials : 'same-origin',
-          keepalive   : true,
-          headers     : { 'Content-Type': 'application/json' },
-          body        : JSON.stringify(payload)
-        }).catch(function () {
-          if (navigator.sendBeacon) {
-            navigator.sendBeacon(cfg.routes.submission, new Blob([JSON.stringify(payload)], { type: 'application/json' }));
-          }
-        });
-      } catch (e) {
-        if (navigator.sendBeacon) {
-          navigator.sendBeacon(cfg.routes.submission, new Blob([JSON.stringify(payload)], { type: 'application/json' }));
-        }
-      }
+      submitConversion(payload);
     }, true);
   }
 
@@ -620,7 +690,7 @@
 
   function classifyOutboundLink(href) {
     if (!href) return null;
-    if (href.indexOf('wa.me') !== -1 || href.indexOf('api.whatsapp.com') !== -1) {
+    if (href.indexOf('wa.me') !== -1 || href.indexOf('api.whatsapp.com') !== -1 || href.indexOf('web.whatsapp.com') !== -1) {
       return 'whatsapp';
     }
     if (href.slice(0, 7).toLowerCase() === 'mailto:') {
@@ -629,19 +699,36 @@
     return null;
   }
 
+  function explicitContactKind(anchor) {
+    var kind = (anchor.getAttribute('data-vjt-contact') || '').toLowerCase();
+    return kind === 'whatsapp' || kind === 'mailto' ? kind : null;
+  }
+
+  function resolveContactHref(anchor, kind) {
+    var href = anchor.getAttribute('href') || anchor.href || '';
+    // Email addresses are intentionally obfuscated in static HTML. On touch
+    // and keyboard activation there may be no mouseenter before this handler.
+    if (kind === 'mailto' && href.slice(0, 7).toLowerCase() !== 'mailto:') {
+      var user = anchor.getAttribute('data-email-user') || '';
+      var domain = anchor.getAttribute('data-email-domain') || '';
+      if (user && domain) return 'mailto:' + user + '@' + domain;
+    }
+    return href;
+  }
+
   function bindOutboundLinks(visitorId) {
     document.addEventListener('click', function (event) {
       if (!cfg.enabled) return;
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       var anchor = resolveAnchor(event.target);
       if (!anchor) return;
 
-      var href = anchor.getAttribute('href') || anchor.href || '';
-      var kind = classifyOutboundLink(href);
+      var kind = explicitContactKind(anchor);
+      var href = resolveContactHref(anchor, kind || '');
+      if (!kind) kind = classifyOutboundLink(href);
       if (!kind) return;
 
-      if (!event.defaultPrevented) {
-        event.preventDefault();
-      }
+      event.preventDefault();
 
       var session  = getSession(_deviceInfo);
       var pageview = readJson(PAGE_KEY);
@@ -658,6 +745,7 @@
       var payload = {
         visitor_id   : visitorId,
         session_id   : session.id,
+        event_id     : newTrackingId('vjtev_'),
         form_plugin  : kind,
         form_id      : label,
         form_name    : kind === 'whatsapp' ? 'WhatsApp Click' : 'Mailto Click',
@@ -696,27 +784,7 @@
         proceed();
       };
 
-      try {
-        fetch(cfg.routes.submission, {
-          method      : 'POST',
-          credentials : 'same-origin',
-          keepalive   : true,
-          headers     : { 'Content-Type': 'application/json' },
-          body        : JSON.stringify(payload)
-        })
-        .then(markDone)
-        .catch(function () {
-          if (navigator.sendBeacon) {
-            navigator.sendBeacon(cfg.routes.submission, new Blob([JSON.stringify(payload)], { type: 'application/json' }));
-          }
-          markDone();
-        });
-      } catch (e) {
-        if (navigator.sendBeacon) {
-          navigator.sendBeacon(cfg.routes.submission, new Blob([JSON.stringify(payload)], { type: 'application/json' }));
-        }
-        markDone();
-      }
+      submitConversion(payload, markDone);
     }, true);
   }
 
@@ -787,6 +855,11 @@
 
       window.__vjtConvBound = true;
     }
+    if (!window.__vjtConvOnlineBound) {
+      window.addEventListener('online', flushPendingConversions);
+      window.__vjtConvOnlineBound = true;
+    }
+    flushPendingConversions();
 
     // ── Passive pageview / behaviour tracking ───────────────────────────────
 

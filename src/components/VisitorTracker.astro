@@ -6,7 +6,7 @@ const isDev = import.meta.env.DEV;
 const allowLocalVjt = import.meta.env.PUBLIC_ENABLE_LOCAL_VJT === 'true';
 const trackerScriptUrl = isDev
   ? 'http://localhost:4325/js/vjt-tracker.js'
-  : '/assets/runtime/vjt-tracker.b25e07bc179b.js';
+  : '/assets/runtime/vjt-tracker.8355c5cef465.js';
 ---
 
 {isDev && (
@@ -51,7 +51,8 @@ const trackerScriptUrl = isDev
   </script>
 )}
 
-<!-- Defer tracker script injection until after critical rendering and analytics consent. -->
+<!-- Tracker remains analytics-consent gated, but starts immediately once allowed
+     so a visitor cannot click WhatsApp/Email before its listener is bound. -->
 <script is:inline define:vars={{ trackerScriptUrl, allowLocalVjt }}>
   (function() {
     // Inline scripts run again after Astro view transitions. Keep one persistent
@@ -64,7 +65,7 @@ const trackerScriptUrl = isDev
       loaded = true;
       var s = document.createElement('script');
       s.src = trackerScriptUrl;
-      s.defer = true;
+      s.async = true;
       document.head.appendChild(s);
     }
     function scheduleInject() {
@@ -72,11 +73,7 @@ const trackerScriptUrl = isDev
       var isLocalHost = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1';
       if (isLocalHost && !allowLocalVjt) return;
       if (!window.VJTTracker || !window.VJTTracker.enabled) return;
-      if ('requestIdleCallback' in window) {
-        window.requestIdleCallback(injectTracker, { timeout: 5000 });
-      } else {
-        setTimeout(injectTracker, 3000);
-      }
+      injectTracker();
     }
     // Existing consent may be available on the first load.
     scheduleInject();

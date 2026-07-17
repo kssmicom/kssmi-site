@@ -30,10 +30,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit;
 }
 
-// Rate limit: 10 submission writes per IP per 60s (prevents SQLite fill attacks
-// and protects form-submission analytics from scripted flooding)
+// Contact intents are low-cost analytics writes. Keep a finite per-IP limit,
+// while allowing shared mobile/corporate networks and queued retries to work.
 require_once dirname(__DIR__, 2) . '/private/rate-limit.php';
-if (!checkRateLimit('track-sub', 10, 60)) {
+if (!checkRateLimit('track-sub', 30, 60)) {
     http_response_code(429);
     echo json_encode(['success' => false, 'error' => 'Too many requests']);
     exit;
@@ -77,9 +77,15 @@ $data['referrer'] = vjt_safe_http_url($data['referrer'] ?? '');
 
 $visitorId = is_scalar($data['visitor_id'] ?? null) ? vjt_clip(trim((string)$data['visitor_id']), 64) : '';
 $sessionId = is_scalar($data['session_id'] ?? null) ? vjt_clip(trim((string)$data['session_id']), 64) : '';
+$eventId = is_scalar($data['event_id'] ?? null) ? vjt_clip(trim((string)$data['event_id']), 96) : '';
 if (!preg_match('/^vjtv_[A-Za-z0-9_-]{8,60}$/', $visitorId) || !preg_match('/^vjts_[A-Za-z0-9_-]{8,60}$/', $sessionId)) {
     http_response_code(400);
     echo json_encode(['success' => false, 'error' => 'Invalid visitor_id or session_id']);
+    exit;
+}
+if ($eventId !== '' && !preg_match('/^vjtev_[A-Za-z0-9_-]{8,80}$/', $eventId)) {
+    http_response_code(400);
+    echo json_encode(['success' => false, 'error' => 'Invalid event_id']);
     exit;
 }
 
@@ -87,13 +93,13 @@ $ip      = vjt_get_client_ip();
 $ua      = vjt_clip($_SERVER['HTTP_USER_AGENT'] ?? '', 512);
 
 if (vjt_ip_is_excluded($ip)) {
-    echo json_encode(['success' => true, 'skipped' => 'internal']);
+    echo json_encode(['success' => true, 'result' => 'skipped_internal']);
     exit;
 }
 
 // Bot filtering: skip storage for crawlers/scripts/empty UA (return 200 so they don't retry)
 if (vjt_is_bot($ua)) {
-    echo json_encode(['success' => true, 'skipped' => 'bot']);
+    echo json_encode(['success' => true, 'result' => 'skipped_bot']);
     exit;
 }
 
@@ -159,7 +165,7 @@ try {
 
     // Store submission
     $status = in_array($data['status'] ?? '', ['attempt', 'success', 'error', 'intent'], true) ? $data['status'] : 'attempt';
-    vjt_add_submission([
+    $writeResult = vjt_add_submission([
         'visitor_id'   => $visitorId,
         'session_id'   => $sessionId,
         'form_plugin'  => $data['form_plugin'] ?? 'generic',
@@ -167,6 +173,7 @@ try {
         'form_name'    => $data['form_name'] ?? '',
         'submit_page'  => $data['submit_page'] ?? '',
         'submit_title' => $data['submit_title'] ?? '',
+        'event_id'     => $eventId,
         'status'       => $status,
         'contact_url'  => $data['contact_url'] ?? '',
         'ip'           => $ip,
@@ -176,7 +183,7 @@ try {
         'calling_code' => $geo['calling_code'],
     ]);
 
-    echo json_encode(['success' => true]);
+    echo json_encode(['success' => true, 'result' => $writeResult]);
 
 } catch (Exception $e) {
     error_log('VJT submission error: ' . $e->getMessage());
