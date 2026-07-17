@@ -60,10 +60,11 @@ let pageTitle: string;
 let pageDescription: string;
 
 if (productSeoEntry) {
-  pageTitle = productSeoEntry.data.seoTitle[lang]
+  const seoLang = lang as keyof typeof productSeoEntry.data.seoTitle;
+  pageTitle = productSeoEntry.data.seoTitle[seoLang]
            ?? productSeoEntry.data.seoTitle.en
            ?? title;
-  const rawDesc = productSeoEntry.data.seoDescription[lang]
+  const rawDesc = productSeoEntry.data.seoDescription[seoLang]
                ?? productSeoEntry.data.seoDescription.en
                ?? '';
   pageDescription = rawDesc.replace('{count}', String(allProducts.length));
@@ -188,6 +189,8 @@ if (productSeoEntry) {
                 basePath={`/${currentPath}${baseSegment}`}
                 prevLabel={pt.previousPage || 'Previous'}
                 nextLabel={pt.nextPage || 'Next'}
+                lang={lang}
+                dir={isRTL ? 'rtl' : 'ltr'}
               />
             </>
           )}

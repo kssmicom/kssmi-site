@@ -95,7 +95,7 @@ export const MetaSchema = z.object({
 const localizableString = z.object(
   Object.fromEntries(
     LangEnum.options.map((l) => [l, z.string().min(1)])
-  ) as Record<typeof LangEnum.options[number], z.string>
+  )
 );
 
 const generateFullPathId = ({ entry }: { entry: string }) =>

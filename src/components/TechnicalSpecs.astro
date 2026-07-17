@@ -4,7 +4,7 @@
  * Specification card layout with editorial header, data table, and certification badges.
  */
 
-import { translations, getTranslations, type Translations } from '../translations';
+import { getTranslations } from '../translations';
 
 const certifications = [
   { image: '/media/icon/ISO-9001.webp', label: 'ISO 9001' },
@@ -82,13 +82,21 @@ const toArray = (val: string | string[] | undefined): string[] => {
   return Array.isArray(val) ? val : val.split(',').map(s => s.trim());
 };
 
+function getProductLabel(key: string): string | undefined {
+  const value = (pt as Record<string, unknown>)[key];
+  return typeof value === 'string' ? value : undefined;
+}
+
 function formatKey(key: string): string {
   // Normalize key to camelCase for translation matching
   // e.g. "Frame Material" -> "frameMaterial"
   const camelKey = key.replace(/(?:^\w|[A-Z]|\b\w)/g, (w, i) => i === 0 ? w.toLowerCase() : w.toUpperCase()).replace(/\s+/g, '');
   
-  if (pt[camelKey]) return pt[camelKey];
-  if (pt[key]) return pt[key];
+  const camelLabel = getProductLabel(camelKey);
+  if (camelLabel) return camelLabel;
+
+  const exactLabel = getProductLabel(key);
+  if (exactLabel) return exactLabel;
 
   // Try legacy mapping if translations match
   if (key === 'specService') return pt.service || 'Service';
@@ -178,7 +186,7 @@ for (const k of orderedKeys) {
               </span>
             </div>
             <h2 class="font-Playfair font-extrabold text-[22px] md:text-[32px] text-stone-900 leading-tight tracking-tight">
-              {pt.specProfile || pt.specificationProfile || 'Specification Profile'}
+              {pt.specificationProfile || 'Specification Profile'}
             </h2>
           </div>
 

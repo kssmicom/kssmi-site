@@ -1,10 +1,18 @@
 // Per-language translations — dynamic imports (~11KB per page vs 180KB)
-import type enType from './en';
-export const translations = {} as Record<string, enType>; // minimal stub for type compat
+type DeepWiden<T> =
+  T extends string ? string :
+  T extends number ? number :
+  T extends boolean ? boolean :
+  T extends readonly (infer U)[] ? readonly DeepWiden<U>[] :
+  T extends object ? { [K in keyof T]: DeepWiden<T[K]> } :
+  T;
+
+export type Translations = DeepWiden<
+  typeof import('./en').default
+>;
 
 // ── Optimized per-language loader ──
 export const LANGUAGES = ['en','ar','it','es','fr','de','pt','ru','ja','tr','ko','zh','hi','vi','jv','ms','tg'] as const;
-export type Translations = enType;
 
 // Per-language dynamic import — only the current language is bundled (~11KB vs 180KB)
 const langLoaders: Record<string, () => Promise<Translations>> = {

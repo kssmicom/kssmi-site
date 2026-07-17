@@ -48,6 +48,9 @@ jobs:
       - name: Validate Astro template syntax
         run: npm run validate:astro-syntax
 
+      - name: Validate translation loading regressions
+        run: npm run validate:translations
+
       - name: Build Astro site
         run: npm run build
         env:

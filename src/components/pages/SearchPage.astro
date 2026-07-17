@@ -597,19 +597,34 @@ const searchKeywords = {
 </style>
 
 <script>
+  import type FuseInstance from 'fuse.js';
+
+  type SearchItem = {
+    url?: string;
+    title?: string;
+    type?: string;
+    itemNo?: string;
+    image400?: string;
+    image?: string;
+    description?: string;
+    slug?: string;
+    keywords?: string;
+  };
 
   document.addEventListener('astro:page-load', () => {
   // Get translation text and lang from data attributes
   const searchPage = document.getElementById('search-page');
   const lang = searchPage?.dataset.lang || 'en';
-  const viewDetailsText = JSON.parse(searchPage?.dataset.viewDetails || '{}');
+  const viewDetailsText = JSON.parse(
+    searchPage?.dataset.viewDetails || '{}'
+  ) as Record<string, string>;
   // Read query fresh from URL each time (avoids stale-closure bugs)
-  function getQuery() {
+  function getQuery(): string {
     return new URLSearchParams(window.location.search).get('q') || '';
   }
 
   // DOM elements
-  const searchInput = document.getElementById('search-input');
+  const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
   const searchClear = document.getElementById('search-clear');
   const searchInfo = document.getElementById('search-info');
   const queryDisplay = document.getElementById('query-display');
@@ -624,8 +639,9 @@ const searchKeywords = {
 
   const RESULTS_PER_PAGE = 12;
   let currentPage = 1;
-  let allResults = [];
-  let fuse = null;
+  let allResults: SearchItem[] = [];
+  let rawItems: SearchItem[] = [];
+  let fuse: FuseInstance<SearchItem> | null = null;
 
   // Clear button functionality
   if (searchInput) {
@@ -700,11 +716,11 @@ const searchKeywords = {
   // Fetches the live per-language search index covering products, blog posts,
   // landing pages and key static pages. New content is picked up instantly in
   // dev mode via Astro HMR.
-  async function initFuse() {
+  async function initFuse(): Promise<boolean> {
     try {
       const res = await fetch(`/api/search-index/${lang}.json`, { cache: 'no-store' });
       if (!res.ok) throw new Error(`Failed to fetch search index: ${res.status}`);
-      const items = await res.json();
+      const items = await res.json() as SearchItem[];
 
       const { default: Fuse } = await import('fuse.js');
       fuse = new Fuse(items, {
@@ -720,8 +736,8 @@ const searchKeywords = {
         ignoreLocation: true,
         minMatchCharLength: 2,
       });
-      // Keep raw items for the substring pre-filter
-      fuse._items = items;
+      // Keep raw items for the substring pre-filter without mutating Fuse internals.
+      rawItems = items;
       return true;
     } catch (err) {
       return false;
@@ -729,7 +745,7 @@ const searchKeywords = {
   }
 
   // Guarantee product-code substring matches always appear
-  function substringFilter(items, q) {
+  function substringFilter(items: SearchItem[], q: string): SearchItem[] {
     const lower = q.toLowerCase().replace(/\s+/g, '');
     return items.filter(item => {
       const itemNo = (item.itemNo || '').toLowerCase().replace(/\s+/g, '');
@@ -739,7 +755,7 @@ const searchKeywords = {
     });
   }
 
-  async function performSearch(searchQuery) {
+  async function performSearch(searchQuery: string): Promise<void> {
     if (!searchQuery) {
       showEmpty();
       return;
@@ -756,13 +772,18 @@ const searchKeywords = {
         }
       }
 
+      const activeFuse = fuse;
+      if (!activeFuse) {
+        showError();
+        return;
+      }
+
       // 1. Guaranteed substring matches (always included)
-      const rawItems = fuse._items || [];
       const subMatches = substringFilter(rawItems, searchQuery);
       const subMatchUrls = new Set(subMatches.map(i => i.url));
 
       // 2. Fuse fuzzy matches
-      const fuseResults = fuse.search(searchQuery).map(r => r.item);
+      const fuseResults = activeFuse.search(searchQuery).map(r => r.item);
 
       // 3. Merge: substring matches first, then additional Fuse results
       const merged = [...subMatches];
@@ -791,7 +812,7 @@ const searchKeywords = {
     }
   }
 
-  function createResultCard(data, index = -1) {
+  function createResultCard(data: SearchItem, index = -1): string {
     const url = data.url || '#';
     const title = data.title || 'Untitled';
     const type = data.type || 'product';
@@ -882,7 +903,7 @@ const searchKeywords = {
       </a>`;
   }
 
-  function renderPage(page) {
+  function renderPage(page: number): void {
     currentPage = page;
     const startIndex = (page - 1) * RESULTS_PER_PAGE;
     const endIndex = startIndex + RESULTS_PER_PAGE;
@@ -894,7 +915,7 @@ const searchKeywords = {
     renderPagination();
   }
 
-  function renderPagination() {
+  function renderPagination(): void {
     const totalPages = Math.ceil(allResults.length / RESULTS_PER_PAGE);
 
     if (totalPages <= 1) {
@@ -990,8 +1011,8 @@ const searchKeywords = {
     });
 
     // Go-to-page handlers
-    const gotoInput = paginationContainer.querySelector('.search-goto-input');
-    const gotoBtn = paginationContainer.querySelector('.search-goto-btn');
+    const gotoInput = paginationContainer.querySelector<HTMLInputElement>('.search-goto-input');
+    const gotoBtn = paginationContainer.querySelector<HTMLButtonElement>('.search-goto-btn');
     if (gotoInput && gotoBtn) {
       const doGoTo = () => {
         const raw = gotoInput.value.trim();

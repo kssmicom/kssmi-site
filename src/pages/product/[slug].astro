@@ -381,12 +381,12 @@ function thumbSrc(originalPath: string): string {
             <div class="flex flex-wrap justify-center gap-2 w-full max-w-[640px] mx-auto">
               {cover && (
                 <button class="thumb flex-none w-16 h-16 rounded-lg overflow-hidden border-2 border-[#8B7355] shadow-xs hover:shadow-md transition-shadow" data-full={cover} aria-label={getAltText(cover, "View main image")}>
-                  <img src={thumbSrc(cover)} alt={getAltText(cover, "Main")} class="w-full h-full object-cover" width="64" height="64" loading="lazy" decoding="async" onerror="const btn=this.closest('.thumb');if(btn&&!this.dataset.retried){this.dataset.retried=true;this.src=btn.getAttribute('data-full')||this.src}" />
+                  <img src={thumbSrc(cover)} alt={getAltText(cover, "Main")} class="w-full h-full object-cover" width="64" height="64" loading="lazy" decoding="async" onerror="if(!this.dataset.retried){this.dataset.retried=true;this.src=this.closest('.thumb')?.getAttribute('data-full')||this.src}" />
                 </button>
               )}
               {gallery?.map((img: string, index: number) => (
                 <button class="thumb flex-none w-16 h-16 rounded-lg overflow-hidden border-2 border-transparent hover:border-[#8B7355] shadow-xs hover:shadow-md transition-all" data-full={img} aria-label={getAltText(img, `View gallery image ${index + 1}`)}>
-                  <img src={thumbSrc(img)} alt={getAltText(img, `Gallery ${index + 1}`)} class="w-full h-full object-cover" width="64" height="64" loading="lazy" decoding="async" onerror="const btn=this.closest('.thumb');if(btn&&!this.dataset.retried){this.dataset.retried=true;this.src=btn.getAttribute('data-full')||this.src}" />
+                  <img src={thumbSrc(img)} alt={getAltText(img, `Gallery ${index + 1}`)} class="w-full h-full object-cover" width="64" height="64" loading="lazy" decoding="async" onerror="if(!this.dataset.retried){this.dataset.retried=true;this.src=this.closest('.thumb')?.getAttribute('data-full')||this.src}" />
                 </button>
               ))}
             </div>
@@ -458,8 +458,8 @@ function thumbSrc(originalPath: string): string {
           <p class="text-lg text-white/90 max-w-3xl mx-auto">{pt.partnerDesc}</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {[pt.benefit1, pt.benefit2, pt.benefit3, pt.benefit4, pt.benefit5, pt.benefit6].map((benefit, i) => benefit && (
-            <div key={i} class="flex items-start gap-3 bg-white/15 rounded-lg p-4 transition-all duration-300 motion-safe:hover:-translate-y-1 hover:bg-white/25 hover:shadow-lg hover:shadow-black/20 cursor-default group">
+          {[pt.benefit1, pt.benefit2, pt.benefit3, pt.benefit4, pt.benefit5, pt.benefit6].map((benefit) => benefit && (
+            <div class="flex items-start gap-3 bg-white/15 rounded-lg p-4 transition-all duration-300 motion-safe:hover:-translate-y-1 hover:bg-white/25 hover:shadow-lg hover:shadow-black/20 cursor-default group">
               <svg class="w-5 h-5 mt-0.5 text-amber-300 shrink-0 transition-transform duration-300 motion-safe:group-hover:scale-110" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
               </svg>
@@ -481,14 +481,16 @@ function thumbSrc(originalPath: string): string {
 
 <script>
   function initGallery() {
-    const mainImage = document.getElementById('main-image');
+    const mainImage = document.getElementById('main-image') as HTMLImageElement | null;
     const zoomContainer = document.getElementById('image-zoom-container');
     if (!mainImage) return;
 
     const thumbsParent = document.querySelector('.space-y-4.flex.flex-col.items-center');
     if (thumbsParent) {
       thumbsParent.addEventListener('click', (e) => {
-        const thumb = e.target.closest('.thumb');
+        const target = e.target;
+        if (!(target instanceof Element)) return;
+        const thumb = target.closest('.thumb');
         if (thumb) {
           const fullSrc = thumb.getAttribute('data-full');
           if (fullSrc) {
@@ -508,7 +510,7 @@ function thumbSrc(originalPath: string): string {
     }
 
     if (zoomContainer) {
-      let cachedRect = null;
+      let cachedRect: DOMRect | null = null;
       mainImage.style.willChange = 'transform';
       zoomContainer.addEventListener('mouseenter', () => {
         cachedRect = zoomContainer.getBoundingClientRect();

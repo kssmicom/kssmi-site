@@ -15,7 +15,7 @@ const transparent = Astro.props.transparent ?? false;
 const isRTL = lang === 'ar';
 
 // Get translation file for UI text
-import { translations, getTranslations, type Translations } from '../translations';
+import { getTranslations } from '../translations';
 const t = await getTranslations(lang);
 
 // Current path for building URLs (includes language prefix for non-English)

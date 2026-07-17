@@ -116,7 +116,7 @@ const currentLanguage = languages.find(l => l.code === lang) || languages[0];
 
       button.addEventListener('click', toggleMenu);
 
-      const closeMenu = (event) => {
+      const closeMenu = (event: MouseEvent) => {
         if (isOpen && event.target instanceof Node && !this.contains(event.target)) {
           toggleMenu();
         }
@@ -138,8 +138,11 @@ const currentLanguage = languages.find(l => l.code === lang) || languages[0];
           const targetUrl = link.getAttribute('href');
           if (targetUrl) {
             const fullUrl = targetUrl + window.location.search;
-            if (typeof window.navigate === 'function') {
-              window.navigate(fullUrl);
+            const navigationWindow = window as Window & {
+              navigate?: (url: string) => void;
+            };
+            if (typeof navigationWindow.navigate === 'function') {
+              navigationWindow.navigate(fullUrl);
             } else {
               window.location.href = fullUrl;
             }

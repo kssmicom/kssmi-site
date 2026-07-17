@@ -3,6 +3,7 @@
 // Include this in Layout.astro before </body>
 
 const isDev = import.meta.env.DEV;
+const allowLocalVjt = import.meta.env.PUBLIC_ENABLE_LOCAL_VJT === 'true';
 const trackerScriptUrl = isDev
   ? 'http://localhost:4325/js/vjt-tracker.js'
   : '/assets/runtime/vjt-tracker.b25e07bc179b.js';
@@ -51,7 +52,7 @@ const trackerScriptUrl = isDev
 )}
 
 <!-- Defer tracker script injection until after critical rendering and analytics consent. -->
-<script is:inline define:vars={{ trackerScriptUrl }}>
+<script is:inline define:vars={{ trackerScriptUrl, allowLocalVjt }}>
   (function() {
     // Inline scripts run again after Astro view transitions. Keep one persistent
     // loader/listener so a navigation cannot start the same pageview twice.
@@ -67,6 +68,9 @@ const trackerScriptUrl = isDev
       document.head.appendChild(s);
     }
     function scheduleInject() {
+      var hostname = window.location.hostname;
+      var isLocalHost = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1';
+      if (isLocalHost && !allowLocalVjt) return;
       if (!window.VJTTracker || !window.VJTTracker.enabled) return;
       if ('requestIdleCallback' in window) {
         window.requestIdleCallback(injectTracker, { timeout: 5000 });

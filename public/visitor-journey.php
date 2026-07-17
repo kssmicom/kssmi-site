@@ -597,6 +597,9 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         .filters { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
         .filters select, .filters input { padding: 5px 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 12px; }
         .filters input[type="date"] { width: 140px; }
+        .filter-disclosure { width: 100%; }
+        .filter-disclosure > summary { display: none; }
+        .keyword-filters { margin-bottom: 16px; }
 
         /* Pagination */
         .pagination { display: flex; gap: 4px; justify-content: center; flex-wrap: wrap; max-width: 100%; margin-top: 15px; }
@@ -668,8 +671,80 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
             .stats { grid-template-columns: repeat(2, 1fr); }
             .tabs { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; }
             .tab { padding: 10px 12px; font-size: 12px; white-space: nowrap; }
-            .filters { flex-direction: column; align-items: stretch; }
-            .filters input, .filters select, .filters .btn { max-width: 100%; }
+            .filter-disclosure { margin: 0 0 12px; }
+            .filter-disclosure > summary {
+                display: flex;
+                width: 100%;
+                min-height: 42px;
+                box-sizing: border-box;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+                padding: 9px 12px;
+                color: #5D4E37;
+                background: #f8f7f5;
+                border: 1px solid #ddd6ce;
+                border-radius: 6px;
+                font-size: 12px;
+                font-weight: 600;
+                cursor: pointer;
+                list-style: none;
+                user-select: none;
+            }
+            .filter-disclosure > summary::-webkit-details-marker { display: none; }
+            .filter-disclosure > summary::after {
+                content: '\25BC';
+                flex: 0 0 auto;
+                color: #8B7355;
+                font-size: 10px;
+                transition: transform 0.15s ease;
+            }
+            .filter-disclosure[open] > summary::after { transform: rotate(180deg); }
+            .filter-summary-hint { margin-left: auto; color: #888; font-size: 10px; font-weight: 400; }
+            .filter-summary-hint::before { content: 'Tap to expand'; }
+            .filter-disclosure[open] .filter-summary-hint::before { content: 'Tap to collapse'; }
+            .filters {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr);
+                width: 100%;
+                box-sizing: border-box;
+                gap: 8px;
+                align-items: stretch;
+                margin: 8px 0 0;
+                padding: 10px;
+                background: #fcfbfa;
+                border: 1px solid #eee8e2;
+                border-radius: 6px;
+            }
+            .filter-disclosure:not([open]) > .filters { display: none; }
+            .filters input:not([type="hidden"]),
+            .filters select,
+            .filters .btn,
+            .filters .country-badge {
+                width: 100% !important;
+                min-width: 0;
+                max-width: none;
+                min-height: 36px;
+                box-sizing: border-box;
+                margin: 0 !important;
+            }
+            .filters .btn,
+            .filters .country-badge {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .keyword-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .keyword-filters .trend-tab {
+                display: flex;
+                width: 100%;
+                min-height: 36px;
+                box-sizing: border-box;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+                text-align: center;
+            }
             .header { flex-wrap: nowrap; gap: 6px; }
             .header-left h1 { font-size: 14px; }
             .header-right { display: flex; gap: 4px; }
@@ -693,9 +768,10 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
             .stat-card .value { font-size: 22px; }
             th, td { padding: 5px 6px; font-size: 11px; }
             .panel-header { font-size: 12px; padding: 10px 12px; }
+            .panel-body { padding: 12px; }
             .container { padding: 0 4px; }
             body { padding: 8px 4px; }
-            .filters input, .filters select { font-size: 11px; padding: 4px 6px; }
+            .filters input:not([type="hidden"]), .filters select { font-size: 12px; padding: 7px 9px; }
             .url-cell { max-width: 140px; }
             .mono { font-size: 10px; }
             .login-box { margin: 40px auto; padding: 24px; }
@@ -949,6 +1025,8 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                             </div>
                         </div>
                         <div class="panel-body">
+                            <details class="filter-disclosure" open>
+                                <summary>Filters <span class="filter-summary-hint"></span></summary>
                             <form class="filters" method="GET">
                                 <input type="hidden" name="tab" value="submissions">
                                 <input type="hidden" name="csrf_token" id="vjt_csrf" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
@@ -975,6 +1053,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                 <?php endif; ?>
                                 <button type="button" class="btn btn-danger btn-small" onclick="vjtBulkDelete()" style="margin-left:12px;">Delete</button>
                             </form>
+                            </details>
 
                             <?php if (empty($submissions)): ?>
                                 <div class="empty"><div class="empty-icon">📋</div><p>No submissions found</p></div>
@@ -1155,6 +1234,8 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                             'sort'=>$visSortBy, 'order'=>$visSortOrder,
                         ])); ?>" class="btn btn-success btn-small">Export CSV (filtered)</a></div>
                         <div class="panel-body">
+                            <details class="filter-disclosure" open>
+                                <summary>Filters <span class="filter-summary-hint"></span></summary>
                             <form class="filters" method="GET">
                                 <input type="hidden" name="tab" value="visitors">
                                 <?php if ($visCountry !== ''): ?>
@@ -1222,6 +1303,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                     <a href="?tab=visitors" class="btn btn-secondary btn-small">Clear</a>
                                 <?php endif; ?>
                             </form>
+                            </details>
 
                             <?php if (empty($visitors)): ?>
                                 <div class="empty"><div class="empty-icon">👥</div><p>No visitors found</p></div>
@@ -1484,6 +1566,8 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                     <div class="panel">
                         <div class="panel-header">Products (<?php echo number_format(count($products)); ?>)</div>
                         <div class="panel-body">
+                            <details class="filter-disclosure" open>
+                                <summary>Filters <span class="filter-summary-hint"></span></summary>
                             <form class="filters" method="GET">
                                 <input type="hidden" name="tab" value="products">
                                 <input type="date" name="prod_date_from" value="<?php echo htmlspecialchars($prodDateFrom); ?>" placeholder="From">
@@ -1493,6 +1577,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                     <a href="?tab=products" class="btn btn-secondary btn-small">Clear</a>
                                 <?php endif; ?>
                             </form>
+                            </details>
 
                             <?php if (empty($products)): ?>
                                 <div class="empty"><div class="empty-icon">📦</div><p>No product pageviews yet</p></div>
@@ -1536,12 +1621,15 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                     <div class="panel">
                         <div class="panel-header">Google Search Console Keywords</div>
                         <div class="panel-body">
-                            <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px;">
+                            <details class="filter-disclosure" open>
+                                <summary>Period &amp; options <span class="filter-summary-hint"></span></summary>
+                            <div class="filters keyword-filters">
                                 <?php foreach ([7, 28, 90] as $daysOption): ?>
                                     <a href="?tab=gsc&amp;days=<?php echo $daysOption; ?>" class="trend-tab <?php echo $gscDays === $daysOption ? 'trend-tab-active' : ''; ?>"><?php echo $daysOption; ?> days</a>
                                 <?php endforeach; ?>
                                 <a href="?tab=settings" class="trend-tab">Connection status</a>
                             </div>
+                            </details>
 
                             <?php if (empty($gscDiagnostics['ready'])): ?>
                                 <p class="error">GSC is not ready on this server. Open <a href="?tab=settings" class="link">Settings</a> to see the failed configuration check and test the connection.</p>
@@ -1698,6 +1786,24 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         <?php endif; ?>
     </div>
 <script>
+(function () {
+  var mobileFilters = window.matchMedia('(max-width: 768px)');
+
+  function syncFilterDisclosures(event) {
+    var disclosures = document.querySelectorAll('.filter-disclosure');
+    for (var i = 0; i < disclosures.length; i++) {
+      disclosures[i].open = !event.matches;
+    }
+  }
+
+  syncFilterDisclosures(mobileFilters);
+  if (typeof mobileFilters.addEventListener === 'function') {
+    mobileFilters.addEventListener('change', syncFilterDisclosures);
+  } else {
+    mobileFilters.addListener(syncFilterDisclosures);
+  }
+})();
+
 function vjtToggleAll() {
   var master = document.getElementById('vjtSelectAll');
   var cbs = document.querySelectorAll('.vjt-row-cb');

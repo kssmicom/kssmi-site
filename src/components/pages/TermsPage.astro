@@ -3,9 +3,11 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 
+interface Props {
+  lang?: string;
+}
 
-
-const { lang } = Astro.props;
+const { lang = 'en' } = Astro.props;
 
 const i18n = {
   en: { title: 'Terms & Privacy', heading: 'Terms & Privacy', underConstruction: 'This page is under construction.', message: 'Our legal team is finalizing the terms and privacy policy. Check back soon or explore our product catalog.', browseProducts: 'Browse Products', backToHome: 'Back to Home' },
@@ -27,7 +29,9 @@ const i18n = {
   tg: { title: 'Шартҳо ва Махфият', heading: 'Шартҳо ва Махфият', underConstruction: 'Ин саҳифа дар ҳоли сохташавӣ аст.', message: 'Гурӯҳи ҳуқуқии мо шартҳо ва сиёсати махфиятро ба анҷом мерасонад. Ба қарибӣ бозгашт кунед ё феҳристи маҳсулоти моро аз назар гузаронед.', browseProducts: 'Маҳсулотро Дидан', backToHome: 'Ба Саҳифаи Асосӣ Бозгашт' },
 };
 
-const t = i18n[lang] || i18n.en;
+type TermsLanguage = keyof typeof i18n;
+const termsLanguage: TermsLanguage = lang in i18n ? lang as TermsLanguage : 'en';
+const t = i18n[termsLanguage];
 const isRTL = lang === 'ar';
 ---
 

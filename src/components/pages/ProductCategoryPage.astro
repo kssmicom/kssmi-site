@@ -319,6 +319,8 @@ const currentPg = (() => { const segs = Astro.url.pathname.split('/').filter(Boo
                     nextUrl={page?.url?.next}
                     prevLabel={pt.previousPage || 'Previous'}
                     nextLabel={pt.nextPage || 'Next'}
+                    lang={lang}
+                    dir={isRTL ? 'rtl' : 'ltr'}
                   />
                 );
               })()}

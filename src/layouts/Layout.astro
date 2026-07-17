@@ -36,6 +36,7 @@ const fallbackTranslations = await getTranslations('en');
 const layoutMeta = t.layout || fallbackTranslations.layout;
 
 const description = propDescription || layoutMeta.description;
+const cloudflareAnalyticsToken = import.meta.env.PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN?.trim();
 
 // Detect if language is Right-to-Left (Arabic)
 const isRTL = lang === 'ar';
@@ -145,7 +146,7 @@ const websiteSchema = {
   <script is:inline>
     // Google Consent Mode v2 — single source of truth (must run before GTM).
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){window.dataLayer.push(arguments);}
     gtag('consent', 'default', {
       ad_storage: 'denied',
       ad_user_data: 'denied',
@@ -163,8 +164,9 @@ const websiteSchema = {
     // for them (it only loads when no consent is stored). Without this, returning
     // visitors who accepted would stay in denied/cookieless mode.
     try {
-      var _vjtConsent = JSON.parse(localStorage.getItem('cookie-consent'));
-      if (_vjtConsent) {
+      var _vjtRawConsent = localStorage.getItem('cookie-consent');
+      var _vjtConsent = _vjtRawConsent ? JSON.parse(_vjtRawConsent) : null;
+      if (typeof _vjtConsent === 'object' && _vjtConsent !== null) {
         gtag('consent', 'update', {
           ad_storage: _vjtConsent.ads ? 'granted' : 'denied',
           ad_user_data: _vjtConsent.ads ? 'granted' : 'denied',
@@ -175,23 +177,43 @@ const websiteSchema = {
     } catch (e) {}
   </script>
   <script>
-    window.dataLayer = window.dataLayer || [];
+    window.dataLayer ??= [];
     window.dataLayer.push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-    var _gtmLoaded = false;
-    function loadGTM() {
-      if (_gtmLoaded) return; _gtmLoaded = true;
-      var d=document,s='script',l='dataLayer',i='GTM-TSW9LBMG';
-      var f=d.getElementsByTagName(s)[0],j=d.createElement(s);
-      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+'&l='+l;
-      f.parentNode.insertBefore(j,f);
+    let gtmLoaded = false;
+
+    function loadGTM(): void {
+      if (gtmLoaded) return;
+      gtmLoaded = true;
+
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-TSW9LBMG&l=dataLayer';
+
+      const firstScript = document.scripts.item(0);
+      if (firstScript?.parentNode) {
+        firstScript.parentNode.insertBefore(script, firstScript);
+      } else {
+        document.head.appendChild(script);
+      }
     }
+
     // Load on first user interaction (scroll, click, touch, keypress)
-    var _events = ['scroll','click','touchstart','keydown'];
-    function _onInteraction(e) {
+    const interactionEvents = ['scroll', 'click', 'touchstart', 'keydown'] as const;
+
+    function onInteraction(): void {
       loadGTM();
-      for (var i=0;i<_events.length;i++) document.removeEventListener(_events[i],_onInteraction,{once:true,passive:true});
+      for (const eventName of interactionEvents) {
+        document.removeEventListener(eventName, onInteraction);
+      }
     }
-    for (var i=0;i<_events.length;i++) document.addEventListener(_events[i],_onInteraction,{once:true,passive:true});
+
+    for (const eventName of interactionEvents) {
+      document.addEventListener(eventName, onInteraction, {
+        once: true,
+        passive: true,
+      });
+    }
+
     // Fallback: load after 8s even with no interaction
     setTimeout(loadGTM, 8000);
   </script>
@@ -250,7 +272,7 @@ const websiteSchema = {
 
   <!-- Preconnect to font origins to save DNS+TLS on critical path -->
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-  <link rel="dns-prefetch" href="https://static.cloudflareinsights.com" />
+  {cloudflareAnalyticsToken && <link rel="dns-prefetch" href="https://static.cloudflareinsights.com" />}
 
   <!-- Keep the first and settled frames on the same local system-font metrics.
        Late web-font injection caused mobile text reflow and avoidable third-party requests. -->
@@ -258,14 +280,20 @@ const websiteSchema = {
   <!-- Organization Schema for Google Graph -->
   <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
 
-  <!-- Cloudflare Web Analytics (loads after GTM, never blocks critical path) -->
-  <script>
-    (function(){var s=document.createElement('script');s.defer=true;
-    s.src='https://static.cloudflareinsights.com/beacon.min.js';
-    s.setAttribute('data-cf-beacon','{"token":"70e1c20d83a34e0ebfa6b3fb9053e96a"}');
-    setTimeout(function(){document.head.appendChild(s)},6000);
-    })();
-  </script>
+  <!-- Cloudflare Web Analytics is opt-in and never runs on local preview hosts. -->
+  {cloudflareAnalyticsToken && (
+    <script is:inline define:vars={{ cloudflareAnalyticsToken }}>
+      (function(){
+        var hostname = window.location.hostname;
+        if (hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1') return;
+        var s = document.createElement('script');
+        s.defer = true;
+        s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+        s.setAttribute('data-cf-beacon', JSON.stringify({ token: cloudflareAnalyticsToken }));
+        setTimeout(function(){document.head.appendChild(s)}, 6000);
+      })();
+    </script>
+  )}
 
   <!-- Clean tracking query parameters from URL (GA4 _gl, UTM, GCLID, FBCLID, etc.) -->
   <script is:inline>
@@ -418,17 +446,27 @@ const websiteSchema = {
 
   <!-- Cookie Banner — deferred: 18KB fetched only when consent not yet given -->
   <script>
+    type StoredConsent = {
+      ads?: boolean;
+      analytics?: boolean;
+    };
+
+    function isStoredConsent(value: unknown): value is StoredConsent {
+      return typeof value === 'object' && value !== null;
+    }
+
     (function () {
       try {
-        var consent = JSON.parse(localStorage.getItem('cookie-consent'));
-        if (consent) return; // Already consented — skip loading banner
+        const rawConsent = localStorage.getItem('cookie-consent');
+        const consent: unknown = rawConsent ? JSON.parse(rawConsent) : null;
+        if (isStoredConsent(consent)) return; // Already consented — skip loading banner
       } catch (_) {}
-      var s = document.createElement('script');
-      s.src = import.meta.env.DEV
+      const script = document.createElement('script');
+      script.src = import.meta.env.DEV
         ? '/cookie-banner.js'
         : '/assets/runtime/cookie-banner.c74eef5363a6.js';
-      s.async = true;
-      document.body.appendChild(s);
+      script.async = true;
+      document.body.appendChild(script);
     })();
   </script>
 </body>
