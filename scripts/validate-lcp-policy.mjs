@@ -62,6 +62,13 @@ const hero = read('src/components/collection/home/S00_Hero.astro');
 assert(hero.includes('loading="eager"') && hero.includes('fetchpriority="high"'), 'Home poster must remain the LCP image.');
 assert(hero.includes('preload="none"') && hero.includes('data-src={videoUrl}'), 'Home video URL must stay outside the initial media request.');
 assert(hero.includes('pageLoaded') && hero.includes('interactionSeen'), 'Home video must wait for both load and trusted interaction.');
+assert(!hero.includes('navigator.userActivation'), 'Home video must not inherit sticky activation from an earlier page or lifecycle event.');
+assert(!hero.includes("addEventListener('scroll'"), 'Home video must not treat generic scroll events as proof of user interaction.');
+assert(!hero.includes("addEventListener('pointerdown'"), 'Home video must not start on pointerdown alone.');
+assert(hero.includes('event.isTrusted'), 'Home video interaction handlers must reject synthetic events.');
+assert(hero.includes('TOUCH_SCROLL_THRESHOLD') && hero.includes("addEventListener('touchmove'"), 'Home video must require thresholded real touch movement on mobile.');
+assert(hero.includes("addEventListener('wheel'") && hero.includes('event.deltaX === 0 && event.deltaY === 0'), 'Home video must require real wheel movement on desktop.');
+assert(hero.includes("v.dataset.userStarted = '1'") && hero.includes("v.dataset.userStarted !== '1'"), 'Home video loading must be guarded by a current-hero user-started marker.');
 
 if (failures.length) {
   console.error('LCP policy validation failed:');

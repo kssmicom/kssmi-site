@@ -54,9 +54,10 @@ const secondaryHref = toHref(secondaryCtaUrl);
     />
   )}
 
-  <!-- Background video: the poster is the default experience. The URL is assigned after
-       idle by the script below, so this element cannot compete with the poster for the
-       initial connection. object-cover fills the hero.
+  <!-- Background video: the poster is the default experience. The URL is assigned only
+       after window.load and a trusted click or real scroll on the current home page, so
+       this element cannot compete with the poster for the initial connection. object-cover
+       fills the hero.
 
        transition:persist keeps the SAME <video> DOM node across Astro view transitions
        (language switch / page navigation). Without it, Astro's morph algorithm removes
@@ -214,17 +215,25 @@ const secondaryHref = toHref(secondaryCtaUrl);
 
 <script>
   // Policy: every device can play the full-bleed hero video, but the MP4 URL is not assigned
-  // until the initial page has fully loaded AND the visitor has interacted. The interaction
-  // also closes the initial LCP observation window before the video can replace the poster.
-  const interactionEvents = ['pointerdown', 'touchstart', 'click', 'keydown', 'scroll'] as const;
+  // until the page has fully loaded AND the visitor clicks or genuinely scrolls on the
+  // current home page. Generic scroll events and sticky browser userActivation are
+  // intentionally excluded because restoration, browser chrome and earlier pages can
+  // trigger them without a current-page gesture.
+  const TOUCH_SCROLL_THRESHOLD = 12;
   const interactionOptions: AddEventListenerOptions = { passive: true };
   let pageLoaded = document.readyState === 'complete';
-  let interactionSeen = navigator.userActivation?.hasBeenActive === true;
+  let interactionSeen = false;
   let loadCallbackPending = false;
+  let interactionListenersAttached = false;
+  let touchStartY: number | null = null;
+
+  function currentHeroVideos() {
+    return Array.from(document.querySelectorAll<HTMLVideoElement>('.hero-video'));
+  }
 
   function loadHeroVideo() {
-    document.querySelectorAll<HTMLVideoElement>('.hero-video').forEach((v) => {
-      if (v.dataset.loaded || !v.dataset.src) return;
+    currentHeroVideos().forEach((v) => {
+      if (!v.isConnected || v.dataset.userStarted !== '1' || v.dataset.loaded || !v.dataset.src) return;
       v.dataset.loaded = '1';
       v.src = v.dataset.src;
       v.load();
@@ -233,12 +242,13 @@ const secondaryHref = toHref(secondaryCtaUrl);
   }
 
   function fadeInHeroVideo() {
-    document.querySelectorAll<HTMLVideoElement>('.hero-video').forEach((v) => {
-      if (v.dataset.fadedIn || !v.dataset.loaded) return;
+    currentHeroVideos().forEach((v) => {
+      if (v.dataset.userStarted !== '1' || v.dataset.fadedIn || !v.dataset.loaded) return;
       const show = () => {
-        if (v.dataset.fadedIn || !v.dataset.loaded) return;
+        if (!v.isConnected || v.dataset.userStarted !== '1' || v.dataset.fadedIn || !v.dataset.loaded) return;
         v.dataset.fadedIn = '1';
         requestAnimationFrame(() => {
+          if (!v.isConnected || v.dataset.userStarted !== '1') return;
           v.style.opacity = '1';
           // Belt-and-suspenders: if the browser ever paused playback across a view
           // transition (e.g., a browser/UA that doesn't honor transition:persist),
@@ -264,9 +274,9 @@ const secondaryHref = toHref(secondaryCtaUrl);
   function scheduleVideoAfterPolicyGate() {
     if (!pageLoaded || !interactionSeen || loadCallbackPending) return;
 
-    const hasPendingVideo = Array.from(
-      document.querySelectorAll<HTMLVideoElement>('.hero-video')
-    ).some((v) => !v.dataset.loaded && Boolean(v.dataset.src));
+    const hasPendingVideo = currentHeroVideos().some(
+      (v) => v.dataset.userStarted === '1' && !v.dataset.loaded && Boolean(v.dataset.src)
+    );
 
     if (!hasPendingVideo) {
       fadeInHeroVideo();
@@ -282,23 +292,107 @@ const secondaryHref = toHref(secondaryCtaUrl);
   }
 
   function removeInteractionListeners() {
-    interactionEvents.forEach((eventName) => {
-      document.removeEventListener(eventName, markFirstInteraction, interactionOptions);
-    });
+    if (!interactionListenersAttached) return;
+    document.removeEventListener('click', markClickInteraction, interactionOptions);
+    document.removeEventListener('touchstart', recordTouchStart, interactionOptions);
+    document.removeEventListener('touchmove', markTouchScrollInteraction, interactionOptions);
+    document.removeEventListener('touchend', clearTouchStart, interactionOptions);
+    document.removeEventListener('touchcancel', clearTouchStart, interactionOptions);
+    document.removeEventListener('wheel', markWheelInteraction, interactionOptions);
+    interactionListenersAttached = false;
+    touchStartY = null;
   }
 
-  function markFirstInteraction(event: Event) {
-    if (interactionSeen || !event.isTrusted) return;
+  function addInteractionListeners() {
+    if (interactionListenersAttached) return;
+    document.addEventListener('click', markClickInteraction, interactionOptions);
+    document.addEventListener('touchstart', recordTouchStart, interactionOptions);
+    document.addEventListener('touchmove', markTouchScrollInteraction, interactionOptions);
+    document.addEventListener('touchend', clearTouchStart, interactionOptions);
+    document.addEventListener('touchcancel', clearTouchStart, interactionOptions);
+    document.addEventListener('wheel', markWheelInteraction, interactionOptions);
+    interactionListenersAttached = true;
+  }
+
+  function markCurrentHeroStarted() {
+    const videos = currentHeroVideos();
+    if (interactionSeen || videos.length === 0) return;
     interactionSeen = true;
+    videos.forEach((v) => {
+      v.dataset.userStarted = '1';
+    });
     removeInteractionListeners();
     scheduleVideoAfterPolicyGate();
   }
 
-  if (!interactionSeen) {
-    interactionEvents.forEach((eventName) => {
-      document.addEventListener(eventName, markFirstInteraction, interactionOptions);
+  function clickLeavesCurrentPage(event: MouseEvent) {
+    const target = event.target instanceof Element ? event.target : null;
+    const anchor = target?.closest<HTMLAnchorElement>('a[href]');
+    if (!anchor) return false;
+    if (anchor.hasAttribute('download') || (anchor.target && anchor.target !== '_self')) return true;
+
+    try {
+      const destination = new URL(anchor.href, window.location.href);
+      return destination.origin !== window.location.origin
+        || destination.pathname !== window.location.pathname
+        || destination.search !== window.location.search;
+    } catch {
+      return true;
+    }
+  }
+
+  function markClickInteraction(event: MouseEvent) {
+    if (!event.isTrusted || clickLeavesCurrentPage(event)) return;
+    markCurrentHeroStarted();
+  }
+
+  function recordTouchStart(event: TouchEvent) {
+    if (!event.isTrusted || interactionSeen || currentHeroVideos().length === 0) {
+      touchStartY = null;
+      return;
+    }
+    touchStartY = event.touches[0]?.clientY ?? null;
+  }
+
+  function markTouchScrollInteraction(event: TouchEvent) {
+    if (!event.isTrusted || touchStartY === null) return;
+    const currentY = event.touches[0]?.clientY;
+    if (currentY === undefined || Math.abs(currentY - touchStartY) < TOUCH_SCROLL_THRESHOLD) return;
+    touchStartY = null;
+    markCurrentHeroStarted();
+  }
+
+  function clearTouchStart() {
+    touchStartY = null;
+  }
+
+  function markWheelInteraction(event: WheelEvent) {
+    if (!event.isTrusted || (event.deltaX === 0 && event.deltaY === 0)) return;
+    markCurrentHeroStarted();
+  }
+
+  function syncInteractionGate() {
+    const videos = currentHeroVideos();
+    interactionSeen = videos.some((v) => v.dataset.userStarted === '1');
+
+    if (videos.length === 0 || interactionSeen) {
+      removeInteractionListeners();
+    } else {
+      addInteractionListeners();
+    }
+
+    scheduleVideoAfterPolicyGate();
+  }
+
+  function resumeStartedHeroVideos() {
+    currentHeroVideos().forEach((v) => {
+      if (v.dataset.userStarted === '1' && v.dataset.loaded && v.paused) {
+        v.play().catch(() => {});
+      }
     });
   }
+
+  syncInteractionGate();
 
   if (!pageLoaded) {
     window.addEventListener('load', () => {
@@ -308,11 +402,9 @@ const secondaryHref = toHref(secondaryCtaUrl);
   }
 
   document.addEventListener('astro:page-load', () => {
-    // Sticky user activation survives Astro client-side navigation. This also covers a
-    // visitor whose navigation click happened before this home-page component was mounted.
-    interactionSeen ||= navigator.userActivation?.hasBeenActive === true;
-    if (interactionSeen) removeInteractionListeners();
-    scheduleVideoAfterPolicyGate();
+    // Re-evaluate the video element after Astro has installed the current page. A click
+    // that navigated here does not count; only a marker on the current/persisted hero does.
+    syncInteractionGate();
   });
 
   // Also cover late script execution where astro:page-load has already fired.
@@ -322,16 +414,15 @@ const secondaryHref = toHref(secondaryCtaUrl);
   // case transition:persist ever fails to preserve playback state on a given browser.
   // astro:after-swap fires after the new DOM is in place, before astro:page-load.
   document.addEventListener('astro:after-swap', () => {
-    document.querySelectorAll<HTMLVideoElement>('.hero-video').forEach((v) => {
-      if (v.dataset.loaded && v.paused) v.play().catch(() => {});
-    });
+    syncInteractionGate();
+    resumeStartedHeroVideos();
   });
   // Back/forward cache restore — astro:page-load doesn't fire after bfcache restore.
   window.addEventListener('pageshow', (e) => {
     if ((e as any).persisted) {
       pageLoaded = true;
-      interactionSeen ||= navigator.userActivation?.hasBeenActive === true;
-      scheduleVideoAfterPolicyGate();
+      syncInteractionGate();
+      resumeStartedHeroVideos();
     }
   });
 </script>
