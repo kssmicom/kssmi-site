@@ -135,14 +135,14 @@ if ($isAuthenticated && isset($_POST['save_settings'])) {
     }
 }
 
-// Contact Core rows are independent business events and use their own IDs.
+// Core rows are independent business events and use their own IDs.
 if ($isAuthenticated && isset($_POST['delete_contact_ids'], $_POST['csrf_token'], $_SESSION['csrf_token']) && hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
     $ids = array_filter(array_map('intval', explode(',', (string)$_POST['delete_contact_ids'])));
     if ($ids) {
         $placeholders = implode(',', array_fill(0, count($ids), '?'));
         $stmt = vjt_db()->prepare("DELETE FROM contact_events WHERE id IN ($placeholders)");
         $stmt->execute(array_values($ids));
-        $message = count($ids) . ' Contact Core event(s) deleted.';
+        $message = count($ids) . ' Core event(s) deleted.';
     }
 }
 
@@ -233,25 +233,28 @@ if ($isAuthenticated && isset($_POST['delete_visitor']) && isset($_POST['csrf_to
 
 // Handle CSV export
 if ($isAuthenticated && isset($_GET['export_csv'])) {
+    session_write_close();
     vjt_export_submissions_csv_start([
         'status' => $_GET['status'] ?? '',
         'plugin' => $_GET['plugin'] ?? '',
         'date_from' => $_GET['date_from'] ?? '',
         'date_to' => $_GET['date_to'] ?? '',
-        'page' => 1,
-        'per_page' => 10000,
     ]);
     exit;
 }
 if ($isAuthenticated && isset($_GET['export_contacts_csv'])) {
+    session_write_close();
     vjt_export_contact_events_csv_start([
         'channel' => $_GET['channel'] ?? '',
         'status' => $_GET['status'] ?? '',
         'date_from' => $_GET['date_from'] ?? '',
         'date_to' => $_GET['date_to'] ?? '',
-        'page' => 1,
-        'per_page' => 10000,
     ]);
+}
+if ($isAuthenticated && isset($_GET['export_gsc_csv'])) {
+    session_write_close();
+    $days = in_array((int)($_GET['days'] ?? 28), [7, 28, 90], true) ? (int)($_GET['days'] ?? 28) : 28;
+    vjt_export_gsc_keywords_csv_start($days);
 }
 if ($isAuthenticated && isset($_GET['export_visitors_csv'])) {
     vjt_export_visitors_csv_start([
@@ -279,12 +282,14 @@ $settings = $isAuthenticated ? getSettings() : [];
 $gscDiagnostics = [];
 $gscReport = [];
 $gscDays = in_array((int)($_GET['days'] ?? 28), [7, 28, 90], true) ? (int)($_GET['days'] ?? 28) : 28;
+$gscPage = min(1000, max(1, (int)($_GET['gkp'] ?? 1)));
+$gscPerPage = 100;
 
 if ($isAuthenticated && ($tab === 'settings' || $tab === 'gsc')) {
     $gscDiagnostics = vjt_gsc_diagnostics(false);
 }
 if ($isAuthenticated && $tab === 'gsc' && !empty($gscDiagnostics['ready'])) {
-    $gscReport = vjt_gsc_top_queries($gscDays);
+    $gscReport = vjt_gsc_query_page($gscDays, $gscPage, $gscPerPage);
 }
 
 if ($isAuthenticated && $tab === 'overview') {
@@ -302,7 +307,7 @@ if ($isAuthenticated && $tab === 'overview') {
     $aiReferrals = vjt_get_ai_referrals($since);
 }
 
-// ── Consent-independent Contact Core ─────────────────────────────────────────
+// ── Consent-independent Core events ──────────────────────────────────────────
 
 $contactPage = max(1, (int)($_GET['cp'] ?? 1));
 $contactPerPage = 100;
@@ -866,7 +871,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                 <!-- Tabs -->
                 <div class="tabs">
                     <a href="?tab=overview" class="tab <?php echo $tab === 'overview' ? 'active' : ''; ?>">Overview</a>
-                    <a href="?tab=contacts" class="tab <?php echo $tab === 'contacts' ? 'active' : ''; ?>">Contact Core</a>
+                    <a href="?tab=contacts" class="tab <?php echo $tab === 'contacts' ? 'active' : ''; ?>">Core</a>
                     <a href="?tab=submissions" class="tab <?php echo $tab === 'submissions' ? 'active' : ''; ?>">Submissions</a>
                     <a href="?tab=traffic" class="tab <?php echo $tab === 'traffic' ? 'active' : ''; ?>">Traffic</a>
                     <a href="?tab=visitors" class="tab <?php echo $tab === 'visitors' ? 'active' : ''; ?>">Visitors</a>
@@ -1069,8 +1074,10 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                 <?php elseif ($tab === 'contacts'): ?>
                     <div class="panel">
                         <div class="panel-header">
-                            <span>Contact Core Events (<?php echo number_format($contactTotal); ?>)</span>
-                            <span class="panel-note">Business contact events; no-consent rows remain unattributed and contain no IP/UA/Journey</span>
+                            <span>Core Events (<?php echo number_format($contactTotal); ?>)</span>
+                            <div>
+                                <a href="?tab=contacts&amp;export_contacts_csv=1<?php echo $contactChannel ? '&amp;channel=' . urlencode($contactChannel) : ''; ?><?php echo $contactStatus ? '&amp;status=' . urlencode($contactStatus) : ''; ?><?php echo $contactDateFrom ? '&amp;date_from=' . urlencode($contactDateFrom) : ''; ?><?php echo $contactDateTo ? '&amp;date_to=' . urlencode($contactDateTo) : ''; ?>" class="btn btn-success btn-small">Export CSV (<?php echo number_format($contactTotal); ?> rows)</a>
+                            </div>
                         </div>
                         <div class="panel-body">
                             <details class="filter-disclosure" open>
@@ -1095,20 +1102,19 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                     <?php if ($contactChannel || $contactStatus || $contactDateFrom || $contactDateTo): ?>
                                         <a href="?tab=contacts" class="btn btn-secondary btn-small">Clear</a>
                                     <?php endif; ?>
-                                    <a href="?tab=contacts&amp;export_contacts_csv=1<?php echo $contactChannel ? '&amp;channel=' . urlencode($contactChannel) : ''; ?><?php echo $contactStatus ? '&amp;status=' . urlencode($contactStatus) : ''; ?><?php echo $contactDateFrom ? '&amp;date_from=' . urlencode($contactDateFrom) : ''; ?><?php echo $contactDateTo ? '&amp;date_to=' . urlencode($contactDateTo) : ''; ?>" class="btn btn-success btn-small">Export CSV</a>
                                     <button type="button" class="btn btn-danger btn-small" onclick="vjtDeleteContactEvents()">Delete</button>
                                 </form>
                             </details>
 
                             <?php if (empty($contactEvents)): ?>
-                                <div class="empty"><div class="empty-icon">☎</div><p>No Contact Core events found</p></div>
+                                <div class="empty"><div class="empty-icon">☎</div><p>No Core events found</p></div>
                             <?php else: ?>
                                 <div class="table-wrapper table-wide">
                                     <table>
                                         <thead><tr>
                                             <th style="width:30px;"><input type="checkbox" id="contactSelectAll" onclick="vjtToggleContactEvents()"></th>
                                             <th>Time (Beijing)</th><th>Channel / Event</th><th>Page / Placement</th>
-                                            <th>Product / Language</th><th>Attribution</th><th>Status</th><th>Retention</th>
+                                            <th>Product / Language</th><th>Attribution</th><th>Status</th><th>Retention</th><th>Actions</th>
                                         </tr></thead>
                                         <tbody>
                                         <?php foreach ($contactEvents as $event): ?>
@@ -1128,6 +1134,14 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                                 <?php $contactDisplayStatus = safeStatus($event['status'] ?? ''); ?>
                                                 <td><span class="status status-<?php echo $contactDisplayStatus; ?>"><?php echo htmlspecialchars(ucfirst($contactDisplayStatus)); ?></span></td>
                                                 <td style="font-size:11px;"><?php echo htmlspecialchars($event['retention_class'] ?? ''); ?></td>
+                                                <td style="white-space:nowrap;">
+                                                    <?php if (!empty($event['vjt_visitor_id'])): ?>
+                                                        <a href="?tab=journey&amp;visitor_id=<?php echo urlencode($event['vjt_visitor_id']); ?>" class="btn btn-primary btn-small">Check</a>
+                                                    <?php else: ?>
+                                                        <button type="button" class="btn btn-secondary btn-small" disabled aria-disabled="true" title="No consented Journey is linked to this Core event" style="opacity:.45;cursor:not-allowed;">Check</button>
+                                                    <?php endif; ?>
+                                                    <button type="button" class="btn btn-danger btn-small" onclick="vjtDeleteContactEvent(<?php echo (int)$event['id']; ?>)" title="Delete this Core event">Del</button>
+                                                </td>
                                             </tr>
                                         <?php endforeach; ?>
                                         </tbody>
@@ -1151,7 +1165,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                         <div class="panel-header">
                             Leads (unique Visitors: <?php echo number_format($subTotal); ?>)
                             <div>
-                                <a href="?tab=submissions&export_csv=1<?php echo $subStatus ? '&status=' . urlencode($subStatus) : ''; ?><?php echo $subPlugin ? '&plugin=' . urlencode($subPlugin) : ''; ?><?php echo $subDateFrom ? '&date_from=' . urlencode($subDateFrom) : ''; ?><?php echo $subDateTo ? '&date_to=' . urlencode($subDateTo) : ''; ?>" class="btn btn-success btn-small">Export CSV (filtered)</a>
+                                <a href="?tab=submissions&export_csv=1<?php echo $subStatus ? '&status=' . urlencode($subStatus) : ''; ?><?php echo $subPlugin ? '&plugin=' . urlencode($subPlugin) : ''; ?><?php echo $subDateFrom ? '&date_from=' . urlencode($subDateFrom) : ''; ?><?php echo $subDateTo ? '&date_to=' . urlencode($subDateTo) : ''; ?>" class="btn btn-success btn-small">Export CSV (<?php echo number_format($subTotal); ?> rows)</a>
                             </div>
                         </div>
                         <div class="panel-body">
@@ -1567,7 +1581,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
 
                             <?php if (!empty($journeyData['contact_events'])): ?>
                             <div class="journey-section">
-                                <h3>Linked Contact Core Events (<?php echo count($journeyData['contact_events']); ?>)</h3>
+                                <h3>Linked Core Events (<?php echo count($journeyData['contact_events']); ?>)</h3>
                                 <div class="table-wrapper">
                                     <table>
                                         <thead><tr><th>Time</th><th>Channel</th><th>Event</th><th>Page / Placement</th><th>Status</th></tr></thead>
@@ -1772,7 +1786,12 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                 <?php elseif ($tab === 'gsc'): ?>
                     <!-- Google Search Console aggregate query report -->
                     <div class="panel">
-                        <div class="panel-header">Google Search Console Keywords</div>
+                        <div class="panel-header">
+                            <span>Google Search Console Keywords</span>
+                            <div>
+                                <a href="?tab=gsc&amp;days=<?php echo $gscDays; ?>&amp;export_gsc_csv=1" class="btn btn-success btn-small">Export All CSV</a>
+                            </div>
+                        </div>
                         <div class="panel-body">
                             <details class="filter-disclosure" open>
                                 <summary>Period &amp; options <span class="filter-summary-hint"></span></summary>
@@ -1793,18 +1812,15 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                     <p class="error">Could not load GSC keywords: <?php echo htmlspecialchars($gscReport['error'] ?? 'Unknown Google API error.'); ?></p>
                                 <?php endif; ?>
                             <?php elseif (empty($gscReport['rows'])): ?>
-                                <div class="empty"><div class="empty-icon">🔎</div><p>The connection works, but Google returned no query rows for this period.</p></div>
+                                <div class="empty"><div class="empty-icon">🔎</div><p><?php echo $gscPage > 1 ? 'No keyword rows on this page.' : 'The connection works, but Google returned no query rows for this period.'; ?></p></div>
                             <?php else: ?>
-                                <p style="color:#888;font-size:11px;margin-bottom:10px;">
-                                    <?php echo htmlspecialchars($gscReport['start_date']); ?> to <?php echo htmlspecialchars($gscReport['end_date']); ?> · Top <?php echo number_format(count($gscReport['rows'])); ?> rows sorted by Google by clicks<?php echo !empty($gscReport['cached']) ? ' · cached up to 1 hour' : ''; ?>
-                                </p>
                                 <div class="table-wrapper">
                                     <table>
                                         <thead><tr><th>#</th><th>Query</th><th style="text-align:right;">Clicks</th><th style="text-align:right;">Impressions</th><th style="text-align:right;">CTR</th><th style="text-align:right;">Avg Position</th></tr></thead>
                                         <tbody>
                                             <?php foreach ($gscReport['rows'] as $index => $row): ?>
                                                 <tr>
-                                                    <td style="color:#999;font-size:12px;"><?php echo $index + 1; ?></td>
+                                                    <td style="color:#999;font-size:12px;"><?php echo (int)($gscReport['row_offset'] ?? 0) + $index + 1; ?></td>
                                                     <td><?php echo htmlspecialchars($row['query']); ?></td>
                                                     <td style="text-align:right;font-weight:600;"><?php echo number_format($row['clicks']); ?></td>
                                                     <td style="text-align:right;"><?php echo number_format($row['impressions']); ?></td>
@@ -1815,7 +1831,17 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                         </tbody>
                                     </table>
                                 </div>
-                                <p style="color:#888;font-size:11px;margin-top:10px;">Search Console may omit low-volume rows and does not guarantee every query row.</p>
+                            <?php endif; ?>
+                            <?php if (!empty($gscReport['ok']) && ($gscPage > 1 || !empty($gscReport['has_next']))): ?>
+                                <div class="pagination">
+                                    <?php if ($gscPage > 1): ?>
+                                        <a href="?tab=gsc&amp;days=<?php echo $gscDays; ?>&amp;gkp=<?php echo $gscPage - 1; ?>">&laquo; Previous</a>
+                                    <?php endif; ?>
+                                    <span class="current">Page <?php echo number_format($gscPage); ?></span>
+                                    <?php if (!empty($gscReport['has_next'])): ?>
+                                        <a href="?tab=gsc&amp;days=<?php echo $gscDays; ?>&amp;gkp=<?php echo $gscPage + 1; ?>">Next &raquo;</a>
+                                    <?php endif; ?>
+                                </div>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -1987,8 +2013,15 @@ function vjtDeleteContactEvents() {
   var cbs = document.querySelectorAll('.contact-row-cb:checked');
   var ids = [];
   for (var i = 0; i < cbs.length; i++) ids.push(cbs[i].value);
-  if (!ids.length) { alert('No Contact Core events selected.'); return; }
-  if (!confirm('Delete ' + ids.length + ' Contact Core event(s)? This cannot be undone.')) return;
+  if (!ids.length) { alert('No Core events selected.'); return; }
+  if (!confirm('Delete ' + ids.length + ' Core event(s)? This cannot be undone.')) return;
+  vjtSubmitContactDeletion(ids);
+}
+function vjtDeleteContactEvent(id) {
+  if (!confirm('Delete this Core event? This cannot be undone.')) return;
+  vjtSubmitContactDeletion([id]);
+}
+function vjtSubmitContactDeletion(ids) {
   var form = document.createElement('form');
   form.method = 'POST';
   var idInput = document.createElement('input');

@@ -1123,9 +1123,12 @@ function vjt_get_contact_events_list($filters) {
 
     $sqlWhere = $where ? ' WHERE ' . implode(' AND ', $where) : '';
     $db = vjt_db();
-    $countStmt = $db->prepare('SELECT COUNT(*) AS c FROM contact_events' . $sqlWhere);
-    $countStmt->execute($params);
-    $total = (int)($countStmt->fetch()['c'] ?? 0);
+    $total = null;
+    if (empty($filters['skip_count'])) {
+        $countStmt = $db->prepare('SELECT COUNT(*) AS c FROM contact_events' . $sqlWhere);
+        $countStmt->execute($params);
+        $total = (int)($countStmt->fetch()['c'] ?? 0);
+    }
 
     $page = max(1, (int)($filters['page'] ?? 1));
     $perPage = min(10000, max(1, (int)($filters['per_page'] ?? 100)));
@@ -1841,9 +1844,12 @@ function vjt_get_submissions_list($filters) {
     }
     $whereSql = $where ? ('WHERE ' . implode(' AND ', $where)) : '';
 
-    $cnt = $db->prepare("SELECT COUNT(DISTINCT visitor_id) c FROM submissions $whereSql");
-    $cnt->execute($params);
-    $total = (int)$cnt->fetch()['c'];
+    $total = null;
+    if (empty($filters['skip_count'])) {
+        $cnt = $db->prepare("SELECT COUNT(DISTINCT visitor_id) c FROM submissions $whereSql");
+        $cnt->execute($params);
+        $total = (int)$cnt->fetch()['c'];
+    }
 
     $page = max(1, (int)($filters['page'] ?? 1));
     $perPage = max(1, (int)($filters['per_page'] ?? 50));
@@ -2270,29 +2276,60 @@ function vjt_gsc_diagnostics($testConnection = false) {
     return $diagnostics;
 }
 
-function vjt_gsc_top_queries($days = 28) {
+function vjt_gsc_query_period($days = 28) {
     $days = in_array((int)$days, [7, 28, 90], true) ? (int)$days : 28;
     $end = gmdate('Y-m-d', time() - 2 * 86400);
     $start = gmdate('Y-m-d', strtotime($end . ' -' . ($days - 1) . ' days'));
-    $cacheKey = 'gsc_top_queries_' . $days;
+    return ['days'=>$days, 'start_date'=>$start, 'end_date'=>$end];
+}
+
+function vjt_gsc_normalize_query_row($row) {
+    if (empty($row['keys'][0])) return null;
+    return [
+        'query' => vjt_clip((string)$row['keys'][0], 240),
+        'clicks' => (float)($row['clicks'] ?? 0),
+        'impressions' => (float)($row['impressions'] ?? 0),
+        'ctr' => (float)($row['ctr'] ?? 0),
+        'position' => (float)($row['position'] ?? 0),
+    ];
+}
+
+function vjt_gsc_query_page($days = 28, $page = 1, $perPage = 100) {
+    $period = vjt_gsc_query_period($days);
+    $days = $period['days'];
+    $start = $period['start_date'];
+    $end = $period['end_date'];
+    $page = min(1000, max(1, (int)$page));
+    $perPage = min(250, max(1, (int)$perPage));
+    $startRow = ($page - 1) * $perPage;
+    $cacheKey = 'gsc_query_page_' . $days . '_' . $page . '_' . $perPage;
     $cached = json_decode((string)vjt_meta_get($cacheKey, ''), true);
     if (is_array($cached) && !empty($cached['ok']) && (int)($cached['cached_at'] ?? 0) > time() - 3600) {
         $cached['cached'] = true;
         return $cached;
     }
 
-    $response = vjt_gsc_search_analytics(['startDate'=>$start, 'endDate'=>$end, 'dimensions'=>['query'], 'rowLimit'=>250]);
-    $report = ['ok'=>$response['ok'], 'error'=>$response['error'], 'status'=>$response['status'], 'start_date'=>$start, 'end_date'=>$end, 'days'=>$days, 'rows'=>[], 'cached_at'=>time(), 'cached'=>false];
+    // Fetch one look-ahead row so pagination can expose Next without loading
+    // every Search Console row just to calculate a total page count.
+    $response = vjt_gsc_search_analytics([
+        'startDate' => $start,
+        'endDate' => $end,
+        'dimensions' => ['query'],
+        'rowLimit' => $perPage + 1,
+        'startRow' => $startRow,
+    ]);
+    $report = [
+        'ok'=>$response['ok'], 'error'=>$response['error'], 'status'=>$response['status'],
+        'start_date'=>$start, 'end_date'=>$end, 'days'=>$days,
+        'page'=>$page, 'per_page'=>$perPage, 'row_offset'=>$startRow,
+        'rows'=>[], 'has_next'=>false, 'cached_at'=>time(), 'cached'=>false,
+    ];
     if ($response['ok']) {
-        foreach ($response['rows'] as $row) {
-            if (empty($row['keys'][0])) continue;
-            $report['rows'][] = [
-                'query' => vjt_clip((string)$row['keys'][0], 240),
-                'clicks' => (float)($row['clicks'] ?? 0),
-                'impressions' => (float)($row['impressions'] ?? 0),
-                'ctr' => (float)($row['ctr'] ?? 0),
-                'position' => (float)($row['position'] ?? 0),
-            ];
+        $rawRows = $response['rows'] ?? [];
+        $report['has_next'] = count($rawRows) > $perPage;
+        foreach (array_slice($rawRows, 0, $perPage) as $row) {
+            $normalized = vjt_gsc_normalize_query_row($row);
+            if ($normalized !== null) $report['rows'][] = $normalized;
         }
         vjt_meta_set($cacheKey, json_encode($report));
     }
@@ -2604,55 +2641,172 @@ function vjt_csv_safe_row($row) {
 }
 
 function vjt_export_submissions_csv_start($filters) {
-    $result = vjt_get_submissions_list($filters);
-    $items = $result['items'];
-
     header('Content-Type: text/csv; charset=utf-8');
     header('X-Content-Type-Options: nosniff');
     header('Content-Disposition: attachment; filename=vjt-submissions-' . date('Y-m-d') . '.csv');
     $output = fopen('php://output', 'w');
     fputcsv($output, ['Last Contact (Beijing)', 'First Contact (Beijing)', 'Visitor ID', 'Channels', 'Events', 'Page', 'IP', 'Country', 'Status']);
-    foreach ($items as $sub) {
-        fputcsv($output, vjt_csv_safe_row([
-            vjt_format_for_admin($sub['last_submitted_at'] ?? ($sub['submitted_at'] ?? '')),
-            vjt_format_for_admin($sub['first_submitted_at'] ?? ''),
-            $sub['visitor_id'] ?? '',
-            $sub['channels'] ?? ($sub['form_name'] ?? ''),
-            $sub['event_count'] ?? 1,
-            $sub['submit_page'] ?? '',
-            $sub['ip'] ?? '',
-            $sub['country'] ?? '',
-            $sub['status'] ?? '',
+
+    $page = 1;
+    $batchSize = 1000;
+    do {
+        $result = vjt_get_submissions_list(array_merge($filters, [
+            'page' => $page,
+            'per_page' => $batchSize,
+            'skip_count' => true,
         ]));
-    }
+        $items = $result['items'];
+        foreach ($items as $sub) {
+            fputcsv($output, vjt_csv_safe_row([
+                vjt_format_for_admin($sub['last_submitted_at'] ?? ($sub['submitted_at'] ?? '')),
+                vjt_format_for_admin($sub['first_submitted_at'] ?? ''),
+                $sub['visitor_id'] ?? '',
+                $sub['channels'] ?? ($sub['form_name'] ?? ''),
+                $sub['event_count'] ?? 1,
+                $sub['submit_page'] ?? '',
+                $sub['ip'] ?? '',
+                $sub['country'] ?? '',
+                $sub['status'] ?? '',
+            ]));
+        }
+        fflush($output);
+        $page++;
+    } while (count($items) === $batchSize);
+
     fclose($output);
     exit;
 }
 
 function vjt_export_contact_events_csv_start($filters) {
-    $result = vjt_get_contact_events_list($filters);
     header('Content-Type: text/csv; charset=utf-8');
     header('X-Content-Type-Options: nosniff');
     header('Content-Disposition: attachment; filename=contact-events-' . date('Y-m-d') . '.csv');
     $output = fopen('php://output', 'w');
     fputcsv($output, ['Time (Beijing)', 'Channel', 'Event Type', 'Status', 'Page Path', 'Placement', 'Product', 'Language', 'Attribution', 'Visitor ID', 'Session ID', 'Retention Class', 'Event ID']);
-    foreach ($result['items'] as $event) {
-        fputcsv($output, vjt_csv_safe_row([
-            vjt_format_for_admin($event['occurred_at'] ?? ''),
-            $event['channel'] ?? '',
-            $event['event_type'] ?? '',
-            $event['status'] ?? '',
-            $event['page_path'] ?? '',
-            $event['placement'] ?? '',
-            $event['product_sku'] ?? '',
-            $event['site_language'] ?? '',
-            !empty($event['vjt_visitor_id']) ? 'Consented journey linked' : 'Unattributed / no analytics linkage',
-            $event['vjt_visitor_id'] ?? '',
-            $event['vjt_session_id'] ?? '',
-            $event['retention_class'] ?? '',
-            $event['event_id'] ?? '',
+
+    $page = 1;
+    $batchSize = 1000;
+    do {
+        $result = vjt_get_contact_events_list(array_merge($filters, [
+            'page' => $page,
+            'per_page' => $batchSize,
+            'skip_count' => true,
         ]));
+        $items = $result['items'];
+        foreach ($items as $event) {
+            fputcsv($output, vjt_csv_safe_row([
+                vjt_format_for_admin($event['occurred_at'] ?? ''),
+                $event['channel'] ?? '',
+                $event['event_type'] ?? '',
+                $event['status'] ?? '',
+                $event['page_path'] ?? '',
+                $event['placement'] ?? '',
+                $event['product_sku'] ?? '',
+                $event['site_language'] ?? '',
+                !empty($event['vjt_visitor_id']) ? 'Consented journey linked' : 'Unattributed / no analytics linkage',
+                $event['vjt_visitor_id'] ?? '',
+                $event['vjt_session_id'] ?? '',
+                $event['retention_class'] ?? '',
+                $event['event_id'] ?? '',
+            ]));
+        }
+        fflush($output);
+        $page++;
+    } while (count($items) === $batchSize);
+
+    fclose($output);
+    exit;
+}
+
+function vjt_export_gsc_keywords_csv_start($days = 28) {
+    $period = vjt_gsc_query_period($days);
+    $days = $period['days'];
+    $start = $period['start_date'];
+    $end = $period['end_date'];
+    $batchSize = 5000;
+    $startRow = 0;
+    $response = vjt_gsc_search_analytics([
+        'startDate' => $start,
+        'endDate' => $end,
+        'dimensions' => ['query'],
+        'rowLimit' => $batchSize,
+        'startRow' => $startRow,
+    ]);
+
+    if (empty($response['ok'])) {
+        http_response_code(503);
+        header('Content-Type: text/plain; charset=utf-8');
+        header('Cache-Control: no-store, private');
+        header('X-Content-Type-Options: nosniff');
+        echo 'Google Search Console export is temporarily unavailable.';
+        exit;
     }
+
+    // Build the paginated Google export in a disk-backed temporary stream.
+    // This keeps memory bounded and prevents a mid-export API failure from
+    // delivering a silently truncated CSV to the administrator.
+    $output = tmpfile();
+    if ($output === false) {
+        http_response_code(500);
+        header('Content-Type: text/plain; charset=utf-8');
+        header('Cache-Control: no-store, private');
+        header('X-Content-Type-Options: nosniff');
+        echo 'Could not create a temporary export file.';
+        exit;
+    }
+    fputcsv($output, ['Start Date', 'End Date', 'Query', 'Clicks', 'Impressions', 'CTR', 'Average Position']);
+
+    $complete = true;
+    while (true) {
+        $rawRows = $response['rows'] ?? [];
+        foreach ($rawRows as $rawRow) {
+            $row = vjt_gsc_normalize_query_row($rawRow);
+            if ($row === null) continue;
+            fputcsv($output, vjt_csv_safe_row([
+                $start,
+                $end,
+                $row['query'],
+                $row['clicks'],
+                $row['impressions'],
+                round((float)$row['ctr'] * 100, 4) . '%',
+                round((float)$row['position'], 2),
+            ]));
+        }
+        fflush($output);
+
+        $rowCount = count($rawRows);
+        if ($rowCount < $batchSize) break;
+        $startRow += $rowCount;
+        $response = vjt_gsc_search_analytics([
+            'startDate' => $start,
+            'endDate' => $end,
+            'dimensions' => ['query'],
+            'rowLimit' => $batchSize,
+            'startRow' => $startRow,
+        ]);
+        if (empty($response['ok'])) {
+            error_log('VJT GSC CSV export stopped after row ' . $startRow . ': ' . ($response['error'] ?? 'Unknown Google API error.'));
+            $complete = false;
+            break;
+        }
+    }
+
+    if (!$complete) {
+        fclose($output);
+        http_response_code(503);
+        header('Content-Type: text/plain; charset=utf-8');
+        header('Cache-Control: no-store, private');
+        header('X-Content-Type-Options: nosniff');
+        echo 'Google Search Console export was interrupted. Please try again.';
+        exit;
+    }
+
+    rewind($output);
+    header('Content-Type: text/csv; charset=utf-8');
+    header('Cache-Control: no-store, private');
+    header('X-Content-Type-Options: nosniff');
+    header('Content-Disposition: attachment; filename=gsc-keywords-' . $days . 'd-' . date('Y-m-d') . '.csv');
+    fpassthru($output);
     fclose($output);
     exit;
 }

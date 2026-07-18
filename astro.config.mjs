@@ -25,10 +25,9 @@ export default defineConfig({
   },
   build: {
     format: 'directory',
-    // Inline only small CSS chunks to remove high-latency render-blocking requests. The main
-    // Tailwind/critical bundle stays hashed and external; generate-csp-hashes.mjs hashes any
-    // resulting inline styles before deployment, so the strict static CSP remains valid.
-    inlineStylesheets: 'auto'
+    // A/B test: inline every stylesheet to remove the render-blocking CSS timing window.
+    // generate-csp-hashes.mjs hashes the resulting inline styles for the strict static CSP.
+    inlineStylesheets: 'always'
   },
   vite: {
     plugins: [
