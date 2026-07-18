@@ -22,7 +22,8 @@
     'vjt_utm_medium',
     'vjt_utm_campaign',
     'vjt_utm_content',
-    'vjt_utm_term'
+    'vjt_utm_term',
+    'vjt_analytics_consent'
   ];
   var flushed         = false;
   var maxScrollDepth  = 0;
@@ -433,7 +434,7 @@
   function cleanUrl(url) {
     // Strip VJT tracking parameters from URLs
     if (!url) return url;
-    return url.replace(/[?&]vjt_(visitor_id|session_id|submit_page|submit_title|referrer|landing_url|landing_title|path_snapshot|utm_source|utm_medium|utm_campaign|utm_content|utm_term)=[^&]*/gi, '')
+    return url.replace(/[?&]vjt_(visitor_id|session_id|submit_page|submit_title|referrer|landing_url|landing_title|path_snapshot|utm_source|utm_medium|utm_campaign|utm_content|utm_term|analytics_consent)=[^&]*/gi, '')
               .replace(/\?&/, '?')   // fix leftover ?& after first param is stripped
               .replace(/\?$/, '')
               .replace(/&$/, '');
@@ -462,6 +463,7 @@
       ensureHidden(form, hiddenNames[10], session.utmCampaign || '');
       ensureHidden(form, hiddenNames[11], session.utmContent || '');
       ensureHidden(form, hiddenNames[12], session.utmTerm    || '');
+      ensureHidden(form, hiddenNames[13], '1');
     });
   }
 
@@ -633,13 +635,14 @@
     return false;
   }
 
-  function bindSubmissionAttempts(visitorId) {
+  function bindSubmissionAttempts() {
     document.addEventListener('submit', function (event) {
       if (!cfg.enabled) return;
       var form = event.target;
       if (!form || form.tagName.toLowerCase() !== 'form') return;
       if (isSearchForm(form)) return;
 
+      var visitorId = getVisitorId();
       var session  = getSession(_deviceInfo);
       var pageview = readJson(PAGE_KEY);
       var snapshot = buildPathSnapshot(pageview);
@@ -706,6 +709,7 @@
 
   function resolveContactHref(anchor, kind) {
     var href = anchor.getAttribute('href') || anchor.href || '';
+    if (anchor.getAttribute('data-contact-core') === '1') return href;
     // Email addresses are intentionally obfuscated in static HTML. On touch
     // and keyboard activation there may be no mouseenter before this handler.
     if (kind === 'mailto' && href.slice(0, 7).toLowerCase() !== 'mailto:') {
@@ -716,7 +720,27 @@
     return href;
   }
 
-  function bindOutboundLinks(visitorId) {
+  function isContactCoreLink(anchor, href) {
+    if (anchor.getAttribute('data-contact-core') !== '1') return false;
+    try {
+      var url = new URL(href, window.location.href);
+      return url.origin === window.location.origin && url.pathname === '/api/contact-intent.php';
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function addContactCoreAnalyticsFlag(href) {
+    try {
+      var url = new URL(href, window.location.href);
+      url.searchParams.set('analytics', '1');
+      return url.pathname + url.search + url.hash;
+    } catch (e) {
+      return href;
+    }
+  }
+
+  function bindOutboundLinks() {
     document.addEventListener('click', function (event) {
       if (!cfg.enabled) return;
       if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
@@ -730,6 +754,20 @@
 
       event.preventDefault();
 
+      // Contact Core owns the one authoritative business event. With consent,
+      // mark this same-site navigation so the server may link existing VJT
+      // cookies; do not also create a duplicate analytics submission.
+      if (isContactCoreLink(anchor, href)) {
+        href = addContactCoreAnalyticsFlag(href);
+        if (anchor.target === '_blank') {
+          window.open(href, '_blank', 'noopener');
+        } else {
+          window.location.href = href;
+        }
+        return;
+      }
+
+      var visitorId = getVisitorId();
       var session  = getSession(_deviceInfo);
       var pageview = readJson(PAGE_KEY);
       var snapshot = buildPathSnapshot(pageview);
@@ -825,8 +863,8 @@
     // hidden fields retain the current session and attribution evidence.
     patchForms(visitorId, session);
     if (!window.__vjtConvBound) {
-      bindSubmissionAttempts(visitorId);
-      bindOutboundLinks(visitorId);
+      bindSubmissionAttempts();
+      bindOutboundLinks();
 
       // Debounced form patching on DOM mutations (B3 fix).
       // Perf: bail out cheaply unless a <form> was actually added, so image
@@ -911,6 +949,7 @@
     } else {
       // B2 fix: reset flushed so subsequent SPA navigations send leave events
       flushed = false;
+      if (!heartbeatTimer) heartbeatTimer = window.setInterval(sendHeartbeat, HEARTBEAT_MS);
     }
 
     session = getSession(_deviceInfo);
@@ -920,6 +959,12 @@
   // Expose init globally so VisitorTracker.astro can call it directly
   // without re-downloading the entire script on every SPA navigation (I1 fix)
   window.VJT_init = initVJT;
+
+  window.addEventListener('vjt:consent-withdrawn', function () {
+    if (heartbeatTimer) clearInterval(heartbeatTimer);
+    heartbeatTimer = null;
+    flushed = true;
+  });
 
   // Bootstrap — first load
   if (document.readyState === 'complete' || document.readyState === 'interactive') {

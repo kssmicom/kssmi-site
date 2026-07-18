@@ -1,0 +1,74 @@
+---
+interface TocItem {
+  anchor: string;
+  navLabel: string;
+}
+
+interface Props {
+  items: TocItem[];
+  label?: string;
+}
+
+const { items, label = 'On this page' } = Astro.props;
+---
+
+<nav aria-label={label} class="legal-toc">
+  <p class="legal-toc__title">{label}</p>
+  <ol class="legal-toc__list">
+    {items.map((item, index) => (
+      <li>
+        <a href={`#${item.anchor}`}>
+          <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          {item.navLabel}
+        </a>
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<style>
+  .legal-toc__title {
+    margin: 0 0 0.9rem;
+    color: #292524;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+
+  .legal-toc__list {
+    display: grid;
+    gap: 0.15rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .legal-toc a {
+    display: grid;
+    grid-template-columns: 1.8rem minmax(0, 1fr);
+    gap: 0.35rem;
+    align-items: baseline;
+    padding: 0.55rem 0.7rem;
+    border-inline-start: 2px solid transparent;
+    border-radius: 0.45rem;
+    color: #57534e;
+    font-size: 0.875rem;
+    line-height: 1.35;
+    text-decoration: none;
+    transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease;
+  }
+
+  .legal-toc a:hover,
+  .legal-toc a:focus-visible {
+    border-inline-start-color: #8b7355;
+    background: #f5f1eb;
+    color: #503629;
+    outline: none;
+  }
+
+  .legal-toc a span {
+    color: #a8a29e;
+    font-size: 0.7rem;
+    font-variant-numeric: tabular-nums;
+  }
+</style>

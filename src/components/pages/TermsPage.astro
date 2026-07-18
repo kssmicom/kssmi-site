@@ -1,72 +1,76 @@
 ---
+import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import TermsPrivacyDocument from '../../components/collection/terms-privacy/TermsPrivacyDocument.astro';
 
 interface Props {
   lang?: string;
 }
 
 const { lang = 'en' } = Astro.props;
+const supportedContentLanguages = new Set([
+  'ar', 'de', 'en', 'es', 'fr', 'hi', 'it', 'ja', 'jv',
+  'ko', 'ms', 'pt', 'ru', 'tg', 'tr', 'vi', 'zh',
+]);
+const requestedLang = lang || 'en';
+const contentLang = supportedContentLanguages.has(requestedLang) ? requestedLang : 'en';
 
-const i18n = {
-  en: { title: 'Terms & Privacy', heading: 'Terms & Privacy', underConstruction: 'This page is under construction.', message: 'Our legal team is finalizing the terms and privacy policy. Check back soon or explore our product catalog.', browseProducts: 'Browse Products', backToHome: 'Back to Home' },
-  it: { title: 'Termini e Privacy', heading: 'Termini e Privacy', underConstruction: 'Questa pagina è in costruzione.', message: 'Il nostro team legale sta finalizzando i termini e la politica sulla privacy. Torna presto o esplora il nostro catalogo prodotti.', browseProducts: 'Sfoglia Prodotti', backToHome: 'Torna alla Home' },
-  es: { title: 'Términos y Privacidad', heading: 'Términos y Privacidad', underConstruction: 'Esta página está en construcción.', message: 'Nuestro equipo legal está finalizando los términos y la política de privacidad. Vuelve pronto o explora nuestro catálogo de productos.', browseProducts: 'Explorar Productos', backToHome: 'Volver al Inicio' },
-  fr: { title: 'Conditions et Confidentialité', heading: 'Conditions et Confidentialité', underConstruction: 'Cette page est en construction.', message: 'Notre équipe juridique finalise les conditions et la politique de confidentialité. Revenez bientôt ou explorez notre catalogue de produits.', browseProducts: 'Parcourir les Produits', backToHome: "Retour à l'Accueil" },
-  de: { title: 'AGB und Datenschutz', heading: 'AGB und Datenschutz', underConstruction: 'Diese Seite befindet sich im Aufbau.', message: 'Unser Rechtsteam finalisiert die AGB und Datenschutzrichtlinie. Schauen Sie bald wieder vorbei oder durchstöbern Sie unseren Produktkatalog.', browseProducts: 'Produkte Durchsuchen', backToHome: 'Zurück zur Startseite' },
-  pt: { title: 'Termos e Privacidade', heading: 'Termos e Privacidade', underConstruction: 'Esta página está em construção.', message: 'A nossa equipa jurídica está a finalizar os termos e a política de privacidade. Volte em breve ou explore o nosso catálogo de produtos.', browseProducts: 'Explorar Produtos', backToHome: 'Voltar ao Início' },
-  ru: { title: 'Условия и Конфиденциальность', heading: 'Условия и Конфиденциальность', underConstruction: 'Эта страница находится в разработке.', message: 'Наша юридическая команда завершает работу над условиями и политикой конфиденциальности. Загляните позже или ознакомьтесь с каталогом продукции.', browseProducts: 'Смотреть Товары', backToHome: 'Вернуться на Главную' },
-  ja: { title: '利用規約とプライバシー', heading: '利用規約とプライバシー', underConstruction: 'このページは準備中です。', message: '法務チームが利用規約とプライバシーポリシーを最終確認中です。後ほど再度ご確認いただくか、製品カタログをご覧ください。', browseProducts: '製品を見る', backToHome: 'ホームに戻る' },
-  tr: { title: 'Şartlar ve Gizlilik', heading: 'Şartlar ve Gizlilik', underConstruction: 'Bu sayfa yapım aşamasındadır.', message: 'Hukuk ekibimiz şartlar ve gizlilik politikasını sonlandırıyor. Yakında tekrar kontrol edin veya ürün kataloğumuzu keşfedin.', browseProducts: 'Ürünlere Göz At', backToHome: 'Ana Sayfaya Dön' },
-  ar: { title: 'الشروط والخصوصية', heading: 'الشروط والخصوصية', underConstruction: 'هذه الصفحة قيد الإنشاء.', message: 'يقوم فريقنا القانوني بوضع اللمسات الأخيرة على الشروط وسياسة الخصوصية. عد قريبًا أو استكشف كتالوج منتجاتنا.', browseProducts: 'تصفح المنتجات', backToHome: 'العودة للرئيسية' },
-  ko: { title: '이용약관 및 개인정보', heading: '이용약관 및 개인정보', underConstruction: '이 페이지는 준비 중입니다.', message: '법무팀이 이용약관과 개인정보 처리방침을 마무리하고 있습니다. 곧 다시 확인하거나 제품 카탈로그를 둘러보세요.', browseProducts: '제품 보기', backToHome: '홈으로 돌아가기' },
-  zh: { title: '条款与隐私', heading: '条款与隐私', underConstruction: '此页面正在建设中。', message: '我们的法务团队正在最终确定条款和隐私政策。请稍后再来查看，或浏览我们的产品目录。', browseProducts: '浏览产品', backToHome: '返回首页' },
-  hi: { title: 'शर्तें और गोपनीयता', heading: 'शर्तें और गोपनीयता', underConstruction: 'यह पृष्ठ निर्माणाधीन है।', message: 'हमारी कानूनी टीम शर्तों और गोपनीयता नीति को अंतिम रूप दे रही है। जल्द ही वापस आएं या हमारी उत्पाद सूची देखें।', browseProducts: 'उत्पाद देखें', backToHome: 'होम पर वापस जाएं' },
-  vi: { title: 'Điều Khoản và Quyền Riêng Tư', heading: 'Điều Khoản và Quyền Riêng Tư', underConstruction: 'Trang này đang được xây dựng.', message: 'Đội ngũ pháp lý của chúng tôi đang hoàn thiện các điều khoản và chính sách quyền riêng tư. Hãy quay lại sớm hoặc khám phá danh mục sản phẩm.', browseProducts: 'Xem Sản Phẩm', backToHome: 'Về Trang Chủ' },
-  jv: { title: 'Ketentuan lan Privasi', heading: 'Ketentuan lan Privasi', underConstruction: 'Kaca iki lagi digawe.', message: 'Tim hukum kita lagi ngrampungake ketentuan lan kebijakan privasi. Balik maneh ra neng kene utawa delengen katalog produk kita.', browseProducts: 'Deleng Produk', backToHome: 'Balik menyang Kaca Utama' },
-  ms: { title: 'Terma dan Privasi', heading: 'Terma dan Privasi', underConstruction: 'Halaman ini sedang dalam pembinaan.', message: 'Pasukan undang-undang kami sedang memuktamadkan terma dan dasar privasi. Semak semula nanti atau terokai katalog produk kami.', browseProducts: 'Lihat Produk', backToHome: 'Kembali ke Laman Utama' },
-  tg: { title: 'Шартҳо ва Махфият', heading: 'Шартҳо ва Махфият', underConstruction: 'Ин саҳифа дар ҳоли сохташавӣ аст.', message: 'Гурӯҳи ҳуқуқии мо шартҳо ва сиёсати махфиятро ба анҷом мерасонад. Ба қарибӣ бозгашт кунед ё феҳристи маҳсулоти моро аз назар гузаронед.', browseProducts: 'Маҳсулотро Дидан', backToHome: 'Ба Саҳифаи Асосӣ Бозгашт' },
-};
+const allTermsEntries = await getCollection('collection', ({ data }) => (
+  data.pageKey === 'terms-privacy' && data.lang === contentLang
+));
+const metaEntry = allTermsEntries.find(({ data }) => data.fileType === 'meta');
+if (!metaEntry) {
+  throw new Error(`Missing Terms & Privacy metadata for language: ${contentLang}`);
+}
 
-type TermsLanguage = keyof typeof i18n;
-const termsLanguage: TermsLanguage = lang in i18n ? lang as TermsLanguage : 'en';
-const t = i18n[termsLanguage];
-const isRTL = lang === 'ar';
+const meta = metaEntry.data as Record<string, any>;
+const sectionEntries = allTermsEntries.filter(({ data }) => (
+  typeof data.order === 'number'
+  && typeof data.anchor === 'string'
+  && typeof data.navLabel === 'string'
+  && typeof data.title === 'string'
+));
+
+sectionEntries.sort((a, b) => Number(a.data.order) - Number(b.data.order));
+
+const sections = await Promise.all(sectionEntries.map(async (entry) => {
+  const { Content } = await render(entry);
+  return {
+    anchor: String(entry.data.anchor),
+    navLabel: String(entry.data.navLabel),
+    title: String(entry.data.title),
+    Content,
+  };
+}));
+
+if (sections.length === 0) {
+  throw new Error(`No Terms & Privacy sections were found for language: ${contentLang}`);
+}
+
+const isPublished = requestedLang === contentLang && meta.status === 'published';
+const pageTitle = meta.seoTitle || `${meta.title} | Kssmi Eyewear`;
+const pageDescription = meta.seoDescription || meta.intro;
 ---
 
-<Layout title={`${t.title} | Kssmi Eyewear`} lang={lang} noindex={true}>
-  <Header lang={lang} />
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  keywords={meta.seoKeywords}
+  image={meta.ogImage}
+  lang={contentLang}
+  noindex={!isPublished}
+  noHreflang={!isPublished}
+>
+  <Header lang={requestedLang} />
 
-  <main class="w-full min-h-[70vh] bg-stone-50 pt-12 pb-24 flex items-center" dir={isRTL ? 'rtl' : 'ltr'}>
-    <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[820px] mx-auto px-4 text-center">
-      <div class="inline-flex flex-col items-center justify-center mb-8">
-        <span class="text-3xl font-bold text-[#503629] tracking-tight leading-none uppercase">KSSMI</span>
-        <span class="h-[1px] w-8 bg-[#503629] mt-1.5"></span>
-        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#503629] mt-1.5">Eyewear Mfg.</span>
-      </div>
+  <TermsPrivacyDocument
+    meta={meta}
+    sections={sections}
+    requestedLang={requestedLang}
+    contentLang={contentLang}
+  />
 
-      <h1 class="text-3xl md:text-4xl font-bold text-[#5D4E37] mb-4 tracking-tight">{t.heading}</h1>
-
-      <div class="inline-flex items-center justify-center w-16 h-16 bg-white border border-stone-200 rounded-full mb-8 shadow-xs">
-        <svg class="w-6 h-6 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-      </div>
-
-      <p class="text-lg text-stone-600 mb-3 font-medium">{t.underConstruction}</p>
-      <p class="text-base text-stone-600 mb-10 max-w-md mx-auto">{t.message}</p>
-
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href={lang === 'en' ? '/product/' : `/${lang}/product/`} class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#4A3D2E] transition-colors duration-300 shadow-lg">
-          {t.browseProducts}
-        </a>
-        <a href={lang === 'en' ? '/' : `/${lang}/`} class="inline-flex items-center px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#5D4E37] hover:text-white transition-all duration-300">
-          {t.backToHome}
-        </a>
-      </div>
-    </div>
-  </main>
-
-  <Footer lang={lang} />
+  <Footer lang={requestedLang} />
 </Layout>

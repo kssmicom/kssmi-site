@@ -1,0 +1,301 @@
+---
+import LegalSection from './LegalSection.astro';
+import LegalTableOfContents from './LegalTableOfContents.astro';
+
+interface RenderedLegalSection {
+  anchor: string;
+  navLabel: string;
+  title: string;
+  Content: any;
+}
+
+interface Props {
+  meta: Record<string, any>;
+  sections: RenderedLegalSection[];
+  requestedLang?: string;
+  contentLang?: string;
+}
+
+interface LegalUiLabels {
+  legal: string;
+  documentInformation: string;
+  effectiveDate: string;
+  lastUpdated: string;
+  version: string;
+  onThisPage: string;
+}
+
+const legalUiByLanguage: Record<string, LegalUiLabels> = {
+  ar: { legal: 'معلومات Kssmi القانونية', documentInformation: 'معلومات المستند', effectiveDate: 'تاريخ السريان', lastUpdated: 'آخر تحديث', version: 'الإصدار', onThisPage: 'في هذه الصفحة' },
+  de: { legal: 'Rechtliche Informationen von Kssmi', documentInformation: 'Dokumentinformationen', effectiveDate: 'Gültig ab', lastUpdated: 'Zuletzt aktualisiert', version: 'Version', onThisPage: 'Auf dieser Seite' },
+  en: { legal: 'Kssmi legal', documentInformation: 'Document information', effectiveDate: 'Effective date', lastUpdated: 'Last updated', version: 'Version', onThisPage: 'On this page' },
+  es: { legal: 'Información legal de Kssmi', documentInformation: 'Información del documento', effectiveDate: 'Fecha de entrada en vigor', lastUpdated: 'Última actualización', version: 'Versión', onThisPage: 'En esta página' },
+  fr: { legal: 'Informations juridiques de Kssmi', documentInformation: 'Informations sur le document', effectiveDate: "Date d'entrée en vigueur", lastUpdated: 'Dernière mise à jour', version: 'Version', onThisPage: 'Sur cette page' },
+  hi: { legal: 'Kssmi कानूनी जानकारी', documentInformation: 'दस्तावेज़ की जानकारी', effectiveDate: 'प्रभावी तिथि', lastUpdated: 'अंतिम अपडेट', version: 'संस्करण', onThisPage: 'इस पृष्ठ पर' },
+  it: { legal: 'Informazioni legali di Kssmi', documentInformation: 'Informazioni sul documento', effectiveDate: 'Data di entrata in vigore', lastUpdated: 'Ultimo aggiornamento', version: 'Versione', onThisPage: 'In questa pagina' },
+  ja: { legal: 'Kssmi 法務情報', documentInformation: '文書情報', effectiveDate: '発効日', lastUpdated: '最終更新日', version: 'バージョン', onThisPage: 'このページの内容' },
+  jv: { legal: 'Informasi hukum Kssmi', documentInformation: 'Informasi dokumen', effectiveDate: 'Tanggal efektif', lastUpdated: 'Pungkasan dianyari', version: 'Versi', onThisPage: 'Ing kaca iki' },
+  ko: { legal: 'Kssmi 법률 정보', documentInformation: '문서 정보', effectiveDate: '시행일', lastUpdated: '최종 업데이트', version: '버전', onThisPage: '이 페이지의 내용' },
+  ms: { legal: 'Maklumat undang-undang Kssmi', documentInformation: 'Maklumat dokumen', effectiveDate: 'Tarikh berkuat kuasa', lastUpdated: 'Kemas kini terakhir', version: 'Versi', onThisPage: 'Pada halaman ini' },
+  pt: { legal: 'Informações jurídicas da Kssmi', documentInformation: 'Informações do documento', effectiveDate: 'Data de vigência', lastUpdated: 'Última atualização', version: 'Versão', onThisPage: 'Nesta página' },
+  ru: { legal: 'Правовая информация Kssmi', documentInformation: 'Информация о документе', effectiveDate: 'Дата вступления в силу', lastUpdated: 'Последнее обновление', version: 'Версия', onThisPage: 'На этой странице' },
+  tg: { legal: 'Маълумоти ҳуқуқии Kssmi', documentInformation: 'Маълумоти ҳуҷҷат', effectiveDate: 'Санаи эътибор', lastUpdated: 'Навсозии охирин', version: 'Нусха', onThisPage: 'Дар ин саҳифа' },
+  tr: { legal: 'Kssmi yasal bilgileri', documentInformation: 'Belge bilgileri', effectiveDate: 'Yürürlük tarihi', lastUpdated: 'Son güncelleme', version: 'Sürüm', onThisPage: 'Bu sayfada' },
+  vi: { legal: 'Thông tin pháp lý Kssmi', documentInformation: 'Thông tin tài liệu', effectiveDate: 'Ngày có hiệu lực', lastUpdated: 'Cập nhật lần cuối', version: 'Phiên bản', onThisPage: 'Trong trang này' },
+  zh: { legal: 'Kssmi 法律信息', documentInformation: '文档信息', effectiveDate: '生效日期', lastUpdated: '最后更新', version: '版本', onThisPage: '本页内容' },
+};
+
+const {
+  meta,
+  sections,
+  requestedLang = 'en',
+  contentLang = 'en',
+} = Astro.props;
+
+const isFallback = requestedLang !== contentLang;
+const isRTL = contentLang === 'ar';
+const ui = legalUiByLanguage[contentLang] || legalUiByLanguage.en;
+const effectiveDate = meta.effectiveDate && meta.effectiveDate !== 'TBD'
+  ? meta.effectiveDate
+  : '';
+const lastUpdated = meta.lastUpdated || '';
+const tocItems = sections.map(({ anchor, navLabel }) => ({ anchor, navLabel }));
+---
+
+<main class="legal-page" dir={isRTL ? 'rtl' : 'ltr'} lang={contentLang}>
+  <header class="legal-hero">
+    <div class="legal-shell">
+      <p class="legal-eyebrow">{ui.legal}</p>
+      <h1>{meta.title}</h1>
+      {meta.intro && <p class="legal-intro">{meta.intro}</p>}
+
+      <div class="legal-meta" aria-label={ui.documentInformation}>
+        {effectiveDate && <span><strong>{ui.effectiveDate}</strong> {effectiveDate}</span>}
+        {lastUpdated && <span><strong>{ui.lastUpdated}</strong> {lastUpdated}</span>}
+        {meta.version && <span><strong>{ui.version}</strong> {meta.version}</span>}
+      </div>
+    </div>
+  </header>
+
+  <div class="legal-shell legal-body-shell">
+    {isFallback && (
+      <aside class="language-notice" aria-label="Language notice">
+        This legal document is currently available in English. A reviewed translation for this language has not yet been published.
+      </aside>
+    )}
+
+    <details class="mobile-toc">
+      <summary>{ui.onThisPage}</summary>
+      <div class="mobile-toc__content">
+        <LegalTableOfContents items={tocItems} label={ui.onThisPage} />
+      </div>
+    </details>
+
+    <div class="legal-grid">
+      <aside class="desktop-toc">
+        <div class="desktop-toc__inner">
+          <LegalTableOfContents items={tocItems} label={ui.onThisPage} />
+        </div>
+      </aside>
+
+      <article class="legal-document" aria-label={meta.title}>
+        {sections.map((section, index) => (
+          <LegalSection
+            anchor={section.anchor}
+            title={section.title}
+            Content={section.Content}
+            isFirst={index === 0}
+          />
+        ))}
+      </article>
+    </div>
+  </div>
+</main>
+
+<style>
+  .legal-page {
+    min-height: 100vh;
+    background: #f7f5f2;
+    color: #292524;
+  }
+
+  .legal-shell {
+    width: min(92%, 1280px);
+    margin: 0 auto;
+  }
+
+  .legal-hero {
+    padding: clamp(2rem, 4vw, 3.5rem) 0 clamp(2rem, 4vw, 3.5rem);
+    border-bottom: 1px solid #e7e5e4;
+    background:
+      radial-gradient(circle at 88% 12%, rgba(139, 115, 85, 0.12), transparent 32%),
+      #fcfaf8;
+  }
+
+  .legal-eyebrow {
+    margin: 0 0 1rem;
+    color: #8b7355;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+  }
+
+  .legal-hero h1 {
+    max-width: 900px;
+    margin: 0;
+    color: #292524;
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+    font-weight: 750;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+  }
+
+  .legal-intro {
+    max-width: 800px;
+    margin: 1.5rem 0 0;
+    color: #57534e;
+    font-size: clamp(1rem, 1.6vw, 1.18rem);
+    line-height: 1.7;
+  }
+
+  .legal-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem 1.5rem;
+    margin-top: 1.75rem;
+    color: #78716c;
+    font-size: 0.8rem;
+  }
+
+  .legal-meta strong {
+    margin-right: 0.3rem;
+    color: #57534e;
+    font-weight: 750;
+  }
+
+  .legal-body-shell {
+    padding-top: 1rem;
+    padding-bottom: 6rem;
+  }
+
+  .language-notice {
+    margin-bottom: 1.5rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid #d8cfc3;
+    border-radius: 0.6rem;
+    background: #fffaf3;
+    color: #6f5338;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .legal-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .desktop-toc {
+    display: none;
+  }
+
+  .legal-document {
+    min-width: 0;
+    padding: clamp(1.5rem, 4vw, 3.5rem);
+    border: 1px solid #e7e5e4;
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 14px 45px rgba(68, 58, 48, 0.055);
+  }
+
+  .mobile-toc {
+    margin-bottom: 1.5rem;
+    border: 1px solid #e1ddd7;
+    border-radius: 0.75rem;
+    background: #fff;
+  }
+
+  .mobile-toc summary {
+    padding: 0.9rem 1rem;
+    color: #3f3a36;
+    font-size: 0.85rem;
+    font-weight: 750;
+    cursor: pointer;
+  }
+
+  .mobile-toc__content {
+    padding: 0 0.75rem 0.9rem;
+  }
+
+  @media (min-width: 1024px) {
+    .legal-page {
+      --legal-sticky-top: calc(5rem + 5mm);
+    }
+
+    .legal-body-shell {
+      padding-top: 1.5rem;
+    }
+
+    .legal-grid {
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 2.5rem;
+    }
+
+    .desktop-toc {
+      display: block;
+      position: sticky;
+      top: var(--legal-sticky-top);
+      align-self: start;
+      z-index: 10;
+      max-height: calc(100vh - var(--legal-sticky-top) - 1.5rem);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: thin;
+    }
+
+    .desktop-toc__inner {
+      padding: 1.1rem 0.85rem;
+      border: 1px solid #e1ddd7;
+      border-radius: 0.75rem;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(10px);
+    }
+
+    .mobile-toc {
+      display: none;
+    }
+  }
+
+  @media print {
+    .legal-page,
+    .legal-hero,
+    .legal-document {
+      background: #fff;
+    }
+
+    .legal-hero {
+      padding: 1rem 0 2rem;
+    }
+
+    .legal-hero h1 {
+      font-size: 2rem;
+    }
+
+    .desktop-toc,
+    .mobile-toc,
+    .language-notice {
+      display: none;
+    }
+
+    .legal-grid {
+      display: block;
+    }
+
+    .legal-document {
+      padding: 0;
+      border: 0;
+      box-shadow: none;
+    }
+  }
+</style>

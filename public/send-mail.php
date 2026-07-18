@@ -178,35 +178,69 @@ function logEmail($config, $data, $status, $message = '', $error = '', $visitorI
 // VJT Tracking
 require_once __DIR__ . '/api/vjt-helpers.php';
 
-function recordVJTSubmission($config, $data, $status, $visitorIP, $visitorCountry) {
-    try {
-        $visitorId = trim($data['vjt_visitor_id'] ?? '');
-        $sessionId = trim($data['vjt_session_id'] ?? '');
+function recordInquiryOutcome($config, $data, $status, $visitorIP, $visitorCountry) {
+    $hasAnalyticsConsent = ($data['vjt_analytics_consent'] ?? '') === '1';
+    $visitorId = trim($data['vjt_visitor_id'] ?? '');
+    $sessionId = trim($data['vjt_session_id'] ?? '');
+    if (!$hasAnalyticsConsent) {
+        $visitorId = '';
+        $sessionId = '';
+    }
+    $submitPage = $data['vjt_submit_page'] ?? '';
+    if (empty($submitPage)) {
+        $submitPage = 'https://kssmi.com' . ($data['product_url'] ?? '');
+    }
 
+    $siteLanguage = 'EN';
+    if (preg_match('#^https?://[^/]+/([a-z]{2})/#', $submitPage, $m)) {
+        $knownLangs = ['it','es','fr','de','pt','ru','ja','tr','ar','ko','zh','hi','vi','jv','ms','tg'];
+        if (in_array($m[1], $knownLangs, true)) $siteLanguage = strtoupper($m[1]);
+    }
+
+    $productSku = vjt_contact_token($data['product_name'] ?? '', 80);
+    if ($productSku === '') {
+        $productPath = vjt_contact_page_path($data['product_url'] ?? '');
+        $segments = array_values(array_filter(explode('/', trim($productPath, '/')), 'strlen'));
+        $productIndex = array_search('product', $segments, true);
+        if ($productIndex !== false && !empty($segments[$productIndex + 1])) {
+            $productSku = vjt_contact_token($segments[$productIndex + 1], 80);
+        }
+    }
+
+    // The business outcome is authoritative and consent-independent. It is
+    // intentionally stored without IP, UA, geo, referrer, UTM or path history.
+    try {
+        vjt_data_init();
+        vjt_add_contact_event([
+            'channel' => 'inquiry',
+            'event_type' => $status === 'success' ? 'submission_success' : 'submission_error',
+            'status' => $status === 'success' ? 'success' : 'error',
+            'page_path' => $submitPage,
+            'placement' => 'inquiry-form',
+            'product_sku' => $productSku,
+            'site_language' => $siteLanguage,
+            'vjt_visitor_id' => $visitorId,
+            'vjt_session_id' => $sessionId,
+        ]);
+    } catch (Throwable $e) {
+        error_log('Contact Core inquiry record error: ' . $e->getMessage());
+    }
+
+    // Journey enrichment remains analytics-consent gated: without both real
+    // browser VJT IDs, do not create synthetic visitor/session records.
+    if (!preg_match('/^vjtv_[A-Za-z0-9_-]{8,60}$/', $visitorId)
+        || !preg_match('/^vjts_[A-Za-z0-9_-]{8,60}$/', $sessionId)) {
+        return;
+    }
+
+    try {
         vjt_data_init();
 
         // Staff/test traffic must still receive the business email, but it must
         // not pollute VJT attribution. The IP resolver is server-trusted.
         if (vjt_ip_is_excluded($visitorIP)) return;
 
-        // A real server-validated Inquiry is a business Lead even if the visitor
-        // did not grant analytics consent and therefore has no browser VJT IDs.
-        // In that case create lead-only IDs here; do not infer or reconstruct a
-        // browsing journey that was never collected.
-        if (!preg_match('/^vjtv_[A-Za-z0-9_-]{8,60}$/', $visitorId)) $visitorId = 'vjtv_' . vjt_uuid();
-        if (!preg_match('/^vjts_[A-Za-z0-9_-]{8,60}$/', $sessionId)) $sessionId = 'vjts_' . vjt_uuid();
-
         $ua = vjt_clip((string)($_SERVER['HTTP_USER_AGENT'] ?? ''), 512);
-        $submitPage = $data['vjt_submit_page'] ?? '';
-        if (empty($submitPage)) {
-            $submitPage = 'https://kssmi.com' . ($data['product_url'] ?? '');
-        }
-        // Extract site language from URL
-        $siteLanguage = 'EN';
-        if (preg_match('#^https?://[^/]+/([a-z]{2})/#', $submitPage, $m)) {
-            $knownLangs = ['it','es','fr','de','pt','ru','ja','tr','ar','ko','zh','hi','vi','jv','ms','tg'];
-            if (in_array($m[1], $knownLangs)) $siteLanguage = strtoupper($m[1]);
-        }
         vjt_upsert_visitor([
             'visitor_id'    => $visitorId,
             'first_ip'      => $visitorIP,
@@ -260,8 +294,8 @@ function recordVJTSubmission($config, $data, $status, $visitorIP, $visitorCountr
             'ip'           => $visitorIP,
             'country'      => $visitorCountry,
         ]);
-    } catch (Exception $e) {
-        error_log('VJT submission record error: ' . $e->getMessage());
+    } catch (Throwable $e) {
+        error_log('VJT inquiry enrichment error: ' . $e->getMessage());
     }
 }
 
@@ -714,6 +748,7 @@ if (!in_array($formData['language'], $allowedLanguages, true)) $formData['langua
 // client hints only: IP/country remain server-derived, and IDs/URLs are
 // validated/length-capped before they can reach SQLite.
 $vjtData = [
+    'vjt_analytics_consent' => requestString($_POST['vjt_analytics_consent'] ?? '') === '1' ? '1' : '0',
     'vjt_visitor_id' => trim(requestString($_POST['vjt_visitor_id'] ?? '')),
     'vjt_session_id' => trim(requestString($_POST['vjt_session_id'] ?? '')),
     'vjt_submit_page' => vjt_safe_http_url($_POST['vjt_submit_page'] ?? ''),
@@ -859,7 +894,7 @@ try {
     logEmail($config, $formData, 'success', 'Email sent successfully', '', $visitorIP, $visitorCountry);
 
     // Record to VJT database
-    recordVJTSubmission($config, array_merge($formData, $vjtData), 'success', $visitorIP, $visitorCountry);
+    recordInquiryOutcome($config, array_merge($formData, $vjtData), 'success', $visitorIP, $visitorCountry);
 
     // Determine redirect URL based on language
     $lang = $formData['language'] ?? 'en';
@@ -876,7 +911,7 @@ try {
     // Log failure
     $errorMsg = $e->getMessage();
     logEmail($config, $formData, 'failed', 'PHPMailer error', $errorMsg, $visitorIP, $visitorCountry);
-    recordVJTSubmission($config, array_merge($formData, $vjtData), 'error', $visitorIP, $visitorCountry);
+    recordInquiryOutcome($config, array_merge($formData, $vjtData), 'error', $visitorIP, $visitorCountry);
     error_log("KSSMI Form Error (PHPMailer): " . $errorMsg);
 
     http_response_code(500);
@@ -889,7 +924,7 @@ try {
     // Log failure
     $errorMsg = $e->getMessage();
     logEmail($config, $formData, 'failed', 'General error', $errorMsg, $visitorIP, $visitorCountry);
-    recordVJTSubmission($config, array_merge($formData, $vjtData), 'error', $visitorIP, $visitorCountry);
+    recordInquiryOutcome($config, array_merge($formData, $vjtData), 'error', $visitorIP, $visitorCountry);
     error_log("KSSMI Form Error: " . $errorMsg);
 
     http_response_code(500);

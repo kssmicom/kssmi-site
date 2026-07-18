@@ -168,6 +168,25 @@
     try { return JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch (_) { return null; }
   }
   function setConsent(value) { localStorage.setItem(STORAGE_KEY, JSON.stringify(value)); }
+  function clearVjtAnalyticsState() {
+    var keys = [
+      'vjt_visitor_id',
+      'vjt_session_meta',
+      'vjt_current_pageview',
+      'vjt_session_path',
+      'vjt_pending_conversions'
+    ];
+    keys.forEach(function (key) {
+      try { localStorage.removeItem(key); } catch (_) {}
+    });
+    ['vjt_visitor_id', 'vjt_session_id'].forEach(function (name) {
+      document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax';
+    });
+    document.querySelectorAll('input[name^="vjt_"]').forEach(function (input) {
+      input.remove();
+    });
+    window.dispatchEvent(new Event('vjt:consent-withdrawn'));
+  }
   function gtagConsentUpdate(analytics, ads) {
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || function () { dataLayer.push(arguments); };
@@ -180,7 +199,11 @@
   }
   function vjtConsentUpdate(analytics) {
     if (window.VJTTracker) { window.VJTTracker.enabled = !!analytics; }
-    if (analytics) window.dispatchEvent(new Event('vjt:consent-granted'));
+    if (analytics) {
+      window.dispatchEvent(new Event('vjt:consent-granted'));
+    } else {
+      clearVjtAnalyticsState();
+    }
     // When consent is granted, start tracking the current page right away
     // (the tracker skips init while disabled, so it needs a kick on opt-in).
     if (analytics && typeof window.VJT_init === 'function') {

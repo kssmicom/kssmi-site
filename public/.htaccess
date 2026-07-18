@@ -94,8 +94,8 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # Content-fingerprinted runtime assets. The public source file keeps a stable
 # server-side name, while browsers/CDNs only see a URL that changes with its
 # SHA-256 content hash. These rules MUST stay before the generic -f/-d bypass.
-RewriteRule ^assets/runtime/cookie-banner\.c74eef5363a6\.js$ cookie-banner.js [L]
-RewriteRule ^assets/runtime/vjt-tracker\.8355c5cef465\.js$ js/vjt-tracker.js [L]
+RewriteRule ^assets/runtime/cookie-banner\.5107dfdbd150\.js$ cookie-banner.js [L]
+RewriteRule ^assets/runtime/vjt-tracker\.fdce709391c0\.js$ js/vjt-tracker.js [L]
 
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
@@ -178,7 +178,7 @@ Header always unset Content-Security-Policy
   Header always set Content-Security-Policy "default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://challenges.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://www.google-analytics.com; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests"
 </FilesMatch>
 
-<FilesMatch "^(send-mail|track-pageview|track-submission|vjt-config)\.php$">
+<FilesMatch "^(send-mail|contact-intent|track-pageview|track-submission|vjt-config)\.php$">
   Header always set X-Frame-Options "DENY"
   Header always set Referrer-Policy "no-referrer"
   Header always set Content-Security-Policy "default-src 'none'; frame-ancestors 'none'"

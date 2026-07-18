@@ -545,9 +545,10 @@ const currentUrl = Astro.url.pathname;
         </a>
         <!-- Email (Keep in sync with Footer.astro email obfuscation) -->
         <a
-          href="#email"
+          href="/api/contact-intent.php?channel=mailto&amp;placement=inquiry-contact-email"
           data-email-user="sales"
           data-email-domain="kssmi.com"
+          data-contact-core="1"
           data-vjt-contact="mailto"
           class="flex items-center gap-2 text-gray-600 hover:text-[#5D4E37] transition-colors cursor-pointer"
         >
@@ -557,7 +558,8 @@ const currentUrl = Astro.url.pathname;
           <span class="text-sm">sales#kssmi.com</span>
         </a>
         <a
-          href="https://wa.me/8613510532553"
+          href="/api/contact-intent.php?channel=whatsapp&amp;placement=inquiry-contact-whatsapp"
+          data-contact-core="1"
           data-vjt-contact="whatsapp"
           target="_blank"
           rel="noopener noreferrer"
@@ -711,6 +713,22 @@ const currentUrl = Astro.url.pathname;
     if (turnstileErrorContainer) turnstileErrorContainer.classList.add('hidden');
   }
 
+  function removeVjtContextWithoutCurrentConsent(formData) {
+    let analyticsAllowed = false;
+    try {
+      const consent = JSON.parse(localStorage.getItem('cookie-consent'));
+      analyticsAllowed = !!(consent && consent.analytics === true);
+    } catch (_) {}
+    if (analyticsAllowed) return;
+    [
+      'vjt_analytics_consent', 'vjt_visitor_id', 'vjt_session_id',
+      'vjt_submit_page', 'vjt_submit_title', 'vjt_referrer',
+      'vjt_landing_url', 'vjt_landing_title', 'vjt_path_snapshot',
+      'vjt_utm_source', 'vjt_utm_medium', 'vjt_utm_campaign',
+      'vjt_utm_content', 'vjt_utm_term'
+    ].forEach((name) => formData.delete(name));
+  }
+
   // Redirect helper
   function redirectToThankYou(lang) {
     const thankYouUrl = (lang === 'en') ? '/thank-you/' : `/${lang}/thank-you/`;
@@ -740,6 +758,9 @@ const currentUrl = Astro.url.pathname;
 
       // Gather form data
       const formData = new FormData(newForm);
+      // A form may have been patched while consent was granted and submitted
+      // after withdrawal. Re-check live consent at the final request boundary.
+      removeVjtContextWithoutCurrentConsent(formData);
       if (!isDev && token) {
         formData.append('cf-turnstile-response', token);
       }
@@ -777,20 +798,14 @@ const currentUrl = Astro.url.pathname;
       } catch (error) {
 
         if (isDev && (error.message.includes('Failed to fetch') || error.message.includes('NetworkError') || error.message === 'PHP_NOT_CONFIGURED')) {
-          const name = formData.get('name');
-          const email = formData.get('email');
-          const details = formData.get('details');
-          const product = formData.get('product_name') || 'N/A';
-
-          const subject = encodeURIComponent(`Inquiry from Kssmi Website - ${name}`);
-          const body = encodeURIComponent(
-            `Name: ${name}\nEmail: ${email}\nProduct: ${product}\n\nProject Details:\n${details}`
-          );
-
           showError(fm.phpNotRunning);
 
           const mailtoLink = document.createElement('a');
-          mailtoLink.href = `mailto:sales@kssmi.com?subject=${subject}&body=${body}`;
+          // Keep form contents out of URL/access logs. Contact Core records only
+          // a minimal intent before opening a blank email draft.
+          mailtoLink.href = '/api/contact-intent.php?channel=mailto&placement=inquiry-fallback';
+          mailtoLink.setAttribute('data-contact-core', '1');
+          mailtoLink.setAttribute('data-vjt-contact', 'mailto');
           mailtoLink.className = 'inline-block mt-3 px-6 py-3 bg-[#5D4E37] text-white rounded-lg hover:bg-[#4A3D2E]';
           mailtoLink.textContent = fm.openEmailClient;
           mailtoLink.id = 'mailto-fallback';
@@ -828,6 +843,7 @@ const currentUrl = Astro.url.pathname;
   function initEmailButtons() {
     const emailButtons = document.querySelectorAll('[data-email-user][data-email-domain]');
     emailButtons.forEach(function(btn) {
+      if (btn.getAttribute('data-contact-core') === '1') return;
       const user = btn.getAttribute('data-email-user');
       const domain = btn.getAttribute('data-email-domain');
       const mailtoUrl = 'mailto:' + user + '@' + domain;

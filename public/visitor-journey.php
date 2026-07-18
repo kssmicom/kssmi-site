@@ -96,7 +96,7 @@ if ($isAuthenticated) {
 // Determine active tab
 $tab = $_GET['tab'] ?? 'overview';
 $trendPeriod = $_GET['trend'] ?? 'days';
-$validTabs = ['overview', 'submissions', 'traffic', 'visitors', 'journey', 'countries', 'products', 'gsc', 'settings'];
+$validTabs = ['overview', 'contacts', 'submissions', 'traffic', 'visitors', 'journey', 'countries', 'products', 'gsc', 'settings'];
 if (!in_array($tab, $validTabs)) $tab = 'overview';
 
 // ── Data helpers ────────────────────────────────────────────────────────────
@@ -128,10 +128,21 @@ if ($isAuthenticated && isset($_POST['save_settings'])) {
     if (!isset($_POST['csrf_token']) || !isset($_SESSION['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
         $message = 'Security check failed. Please try again.';
     } else {
-        $allowed = ['session_timeout', 'retention_days', 'enable_geo', 'excluded_ips', 'heartbeat_seconds', 'enable_email_summary'];
+        $allowed = ['session_timeout', 'retention_days', 'enable_geo', 'excluded_ips', 'heartbeat_seconds', 'enable_email_summary', 'contact_intent_retention_days', 'contact_inquiry_retention_days'];
         $settings = array_intersect_key($_POST, array_flip($allowed));
         vjt_save_settings($settings);
         $message = 'Settings saved.';
+    }
+}
+
+// Contact Core rows are independent business events and use their own IDs.
+if ($isAuthenticated && isset($_POST['delete_contact_ids'], $_POST['csrf_token'], $_SESSION['csrf_token']) && hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+    $ids = array_filter(array_map('intval', explode(',', (string)$_POST['delete_contact_ids'])));
+    if ($ids) {
+        $placeholders = implode(',', array_fill(0, count($ids), '?'));
+        $stmt = vjt_db()->prepare("DELETE FROM contact_events WHERE id IN ($placeholders)");
+        $stmt->execute(array_values($ids));
+        $message = count($ids) . ' Contact Core event(s) deleted.';
     }
 }
 
@@ -206,6 +217,9 @@ if ($isAuthenticated && isset($_POST['delete_visitor']) && isset($_POST['csrf_to
             $db->prepare("DELETE FROM pageviews   WHERE visitor_id = ?")->execute([$vid]);
             $db->prepare("DELETE FROM sessions    WHERE visitor_id = ?")->execute([$vid]);
             $db->prepare("DELETE FROM submissions WHERE visitor_id = ?")->execute([$vid]);
+            // Preserve independently lawful business events, but remove the
+            // consented analytics linkage when the Journey visitor is deleted.
+            $db->prepare("UPDATE contact_events SET vjt_visitor_id = '', vjt_session_id = '' WHERE vjt_visitor_id = ?")->execute([$vid]);
             $db->prepare("DELETE FROM visitors    WHERE visitor_id = ?")->execute([$vid]);
             $db->commit();
             $message = 'Visitor and all associated records deleted.';
@@ -229,6 +243,16 @@ if ($isAuthenticated && isset($_GET['export_csv'])) {
     ]);
     exit;
 }
+if ($isAuthenticated && isset($_GET['export_contacts_csv'])) {
+    vjt_export_contact_events_csv_start([
+        'channel' => $_GET['channel'] ?? '',
+        'status' => $_GET['status'] ?? '',
+        'date_from' => $_GET['date_from'] ?? '',
+        'date_to' => $_GET['date_to'] ?? '',
+        'page' => 1,
+        'per_page' => 10000,
+    ]);
+}
 if ($isAuthenticated && isset($_GET['export_visitors_csv'])) {
     vjt_export_visitors_csv_start([
         'search' => $_GET['search'] ?? '', 'device' => $_GET['device'] ?? '', 'source' => $_GET['source'] ?? '',
@@ -246,6 +270,7 @@ if ($isAuthenticated && !empty($_GET['export_journey_csv']) && !empty($_GET['vis
 // ── Fetch data for tabs ──────────────────────────────────────────────────────
 
 $overview = null;
+$contactEvents = [];
 $submissions = [];
 $visitors = [];
 $journeyData = null;
@@ -275,6 +300,28 @@ if ($isAuthenticated && $tab === 'overview') {
     }
     $overview = vjt_get_overview($since);
     $aiReferrals = vjt_get_ai_referrals($since);
+}
+
+// ── Consent-independent Contact Core ─────────────────────────────────────────
+
+$contactPage = max(1, (int)($_GET['cp'] ?? 1));
+$contactPerPage = 100;
+$contactChannel = $_GET['channel'] ?? '';
+$contactStatus = $_GET['status'] ?? '';
+$contactDateFrom = $_GET['date_from'] ?? '';
+$contactDateTo = $_GET['date_to'] ?? '';
+$contactTotal = 0;
+if ($isAuthenticated && $tab === 'contacts') {
+    $result = vjt_get_contact_events_list([
+        'channel' => $contactChannel,
+        'status' => $contactStatus,
+        'date_from' => $contactDateFrom,
+        'date_to' => $contactDateTo,
+        'page' => $contactPage,
+        'per_page' => $contactPerPage,
+    ]);
+    $contactEvents = $result['items'];
+    $contactTotal = $result['total'];
 }
 
 // ── Submissions list ─────────────────────────────────────────────────────────
@@ -450,6 +497,7 @@ function sourceBadge($source) {
 }
 
 $subTotalPages = ceil($subTotal / $subPerPage);
+$contactTotalPages = ceil($contactTotal / $contactPerPage);
 $visTotalPages = ceil($visTotal / $visPerPage);
 
 // Sortable header link helper
@@ -589,9 +637,11 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         /* Status badges */
         .status { padding: 3px 8px; border-radius: 3px; font-size: 11px; font-weight: 500; }
         .status-success { background: #d4edda; color: #155724; }
+        .status-intent { background: #d6eaf8; color: #1f618d; }
         .status-attempt { background: #fff3cd; color: #856404; }
         .status-error { background: #f8d7da; color: #721c24; }
         .status-abandoned { background: #eaeded; color: #7f8c8d; }
+        .status-unknown { background: #eaeded; color: #555; }
 
         /* Filters */
         .filters { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
@@ -816,6 +866,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                 <!-- Tabs -->
                 <div class="tabs">
                     <a href="?tab=overview" class="tab <?php echo $tab === 'overview' ? 'active' : ''; ?>">Overview</a>
+                    <a href="?tab=contacts" class="tab <?php echo $tab === 'contacts' ? 'active' : ''; ?>">Contact Core</a>
                     <a href="?tab=submissions" class="tab <?php echo $tab === 'submissions' ? 'active' : ''; ?>">Submissions</a>
                     <a href="?tab=traffic" class="tab <?php echo $tab === 'traffic' ? 'active' : ''; ?>">Traffic</a>
                     <a href="?tab=visitors" class="tab <?php echo $tab === 'visitors' ? 'active' : ''; ?>">Visitors</a>
@@ -1011,6 +1062,85 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                 <?php foreach ($aiReferrals as $row): ?><tr><td><?php echo htmlspecialchars(ucfirst($row['platform'])); ?></td><td style="text-align:right;"><?php echo number_format($row['sessions']); ?></td><td style="text-align:right;"><?php echo number_format($row['visitors']); ?></td><td style="text-align:right;"><?php echo number_format($row['leads']); ?></td><td style="text-align:right;"><?php echo number_format($row['pages']); ?></td><td style="text-align:right;"><?php echo $row['conversion_rate']; ?>%</td></tr><?php endforeach; ?>
                                 </tbody></table>
                                 </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+
+                <?php elseif ($tab === 'contacts'): ?>
+                    <div class="panel">
+                        <div class="panel-header">
+                            <span>Contact Core Events (<?php echo number_format($contactTotal); ?>)</span>
+                            <span class="panel-note">Business contact events; no-consent rows remain unattributed and contain no IP/UA/Journey</span>
+                        </div>
+                        <div class="panel-body">
+                            <details class="filter-disclosure" open>
+                                <summary>Filters <span class="filter-summary-hint"></span></summary>
+                                <form class="filters" method="GET">
+                                    <input type="hidden" name="tab" value="contacts">
+                                    <select name="channel">
+                                        <option value="">All Channels</option>
+                                        <option value="whatsapp" <?php echo $contactChannel === 'whatsapp' ? 'selected' : ''; ?>>WhatsApp</option>
+                                        <option value="mailto" <?php echo $contactChannel === 'mailto' ? 'selected' : ''; ?>>Mailto</option>
+                                        <option value="inquiry" <?php echo $contactChannel === 'inquiry' ? 'selected' : ''; ?>>Inquiry</option>
+                                    </select>
+                                    <select name="status">
+                                        <option value="">All Statuses</option>
+                                        <option value="intent" <?php echo $contactStatus === 'intent' ? 'selected' : ''; ?>>Intent</option>
+                                        <option value="success" <?php echo $contactStatus === 'success' ? 'selected' : ''; ?>>Confirmed Success</option>
+                                        <option value="error" <?php echo $contactStatus === 'error' ? 'selected' : ''; ?>>Error</option>
+                                    </select>
+                                    <input type="date" name="date_from" value="<?php echo htmlspecialchars($contactDateFrom); ?>">
+                                    <input type="date" name="date_to" value="<?php echo htmlspecialchars($contactDateTo); ?>">
+                                    <button type="submit" class="btn btn-primary btn-small">Filter</button>
+                                    <?php if ($contactChannel || $contactStatus || $contactDateFrom || $contactDateTo): ?>
+                                        <a href="?tab=contacts" class="btn btn-secondary btn-small">Clear</a>
+                                    <?php endif; ?>
+                                    <a href="?tab=contacts&amp;export_contacts_csv=1<?php echo $contactChannel ? '&amp;channel=' . urlencode($contactChannel) : ''; ?><?php echo $contactStatus ? '&amp;status=' . urlencode($contactStatus) : ''; ?><?php echo $contactDateFrom ? '&amp;date_from=' . urlencode($contactDateFrom) : ''; ?><?php echo $contactDateTo ? '&amp;date_to=' . urlencode($contactDateTo) : ''; ?>" class="btn btn-success btn-small">Export CSV</a>
+                                    <button type="button" class="btn btn-danger btn-small" onclick="vjtDeleteContactEvents()">Delete</button>
+                                </form>
+                            </details>
+
+                            <?php if (empty($contactEvents)): ?>
+                                <div class="empty"><div class="empty-icon">☎</div><p>No Contact Core events found</p></div>
+                            <?php else: ?>
+                                <div class="table-wrapper table-wide">
+                                    <table>
+                                        <thead><tr>
+                                            <th style="width:30px;"><input type="checkbox" id="contactSelectAll" onclick="vjtToggleContactEvents()"></th>
+                                            <th>Time (Beijing)</th><th>Channel / Event</th><th>Page / Placement</th>
+                                            <th>Product / Language</th><th>Attribution</th><th>Status</th><th>Retention</th>
+                                        </tr></thead>
+                                        <tbody>
+                                        <?php foreach ($contactEvents as $event): ?>
+                                            <tr>
+                                                <td><input type="checkbox" class="contact-row-cb" value="<?php echo (int)$event['id']; ?>"></td>
+                                                <td style="white-space:nowrap;font-size:12px;"><?php echo htmlspecialchars(vjt_format_for_admin($event['occurred_at'] ?? '')); ?></td>
+                                                <td><strong><?php echo htmlspecialchars(ucfirst($event['channel'] ?? '')); ?></strong><br><span style="color:#888;font-size:11px;"><?php echo htmlspecialchars(str_replace('_', ' ', $event['event_type'] ?? '')); ?></span></td>
+                                                <td><span class="mono"><?php echo htmlspecialchars($event['page_path'] ?: '-'); ?></span><br><span style="color:#888;font-size:11px;"><?php echo htmlspecialchars($event['placement'] ?: '-'); ?></span></td>
+                                                <td><?php echo htmlspecialchars($event['product_sku'] ?: '-'); ?><br><span style="color:#888;font-size:11px;"><?php echo htmlspecialchars($event['site_language'] ?: '-'); ?></span></td>
+                                                <td>
+                                                    <?php if (!empty($event['vjt_visitor_id'])): ?>
+                                                        <a class="link" href="?tab=journey&amp;visitor_id=<?php echo urlencode($event['vjt_visitor_id']); ?>">Consented Journey</a>
+                                                    <?php else: ?>
+                                                        <span style="color:#888;">Unattributed / no analytics linkage</span>
+                                                    <?php endif; ?>
+                                                </td>
+                                                <?php $contactDisplayStatus = safeStatus($event['status'] ?? ''); ?>
+                                                <td><span class="status status-<?php echo $contactDisplayStatus; ?>"><?php echo htmlspecialchars(ucfirst($contactDisplayStatus)); ?></span></td>
+                                                <td style="font-size:11px;"><?php echo htmlspecialchars($event['retention_class'] ?? ''); ?></td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <?php
+                                    $contactBase = ['tab' => 'contacts'];
+                                    if ($contactChannel) $contactBase['channel'] = $contactChannel;
+                                    if ($contactStatus) $contactBase['status'] = $contactStatus;
+                                    if ($contactDateFrom) $contactBase['date_from'] = $contactDateFrom;
+                                    if ($contactDateTo) $contactBase['date_to'] = $contactDateTo;
+                                    echo vjtPagination('cp', $contactPage, $contactTotalPages, $contactBase);
+                                ?>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -1435,6 +1565,29 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                             </div>
                             <?php endif; ?>
 
+                            <?php if (!empty($journeyData['contact_events'])): ?>
+                            <div class="journey-section">
+                                <h3>Linked Contact Core Events (<?php echo count($journeyData['contact_events']); ?>)</h3>
+                                <div class="table-wrapper">
+                                    <table>
+                                        <thead><tr><th>Time</th><th>Channel</th><th>Event</th><th>Page / Placement</th><th>Status</th></tr></thead>
+                                        <tbody>
+                                        <?php foreach ($journeyData['contact_events'] as $event): ?>
+                                            <tr>
+                                                <td style="font-size:12px;"><?php echo htmlspecialchars(vjt_format_for_visitor($event['occurred_at'], $v['timezone'] ?? '')); ?></td>
+                                                <td><?php echo htmlspecialchars(ucfirst($event['channel'] ?? '')); ?></td>
+                                                <td><?php echo htmlspecialchars(str_replace('_', ' ', $event['event_type'] ?? '')); ?></td>
+                                                <td><span class="mono"><?php echo htmlspecialchars($event['page_path'] ?: '-'); ?></span><br><span style="color:#888;font-size:11px;"><?php echo htmlspecialchars($event['placement'] ?: '-'); ?></span></td>
+                                                <?php $linkedContactStatus = safeStatus($event['status'] ?? ''); ?>
+                                                <td><span class="status status-<?php echo $linkedContactStatus; ?>"><?php echo htmlspecialchars(ucfirst($linkedContactStatus)); ?></span></td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <?php endif; ?>
+
                             <?php foreach ($journeyData['sessions'] as $sess):
                                 // Merge pageviews + submissions into one timeline sorted by time
                                 $timeline = [];
@@ -1682,7 +1835,17 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                 <div class="setting-row">
                                     <label>Data Retention (days)</label>
                                     <input type="number" name="retention_days" value="<?php echo htmlspecialchars($settings['retention_days'] ?? '90'); ?>" min="1" max="3650">
-                                    <span style="color:#888;font-size:12px;">Auto-delete data older than this (max 3650 = 10 years)</span>
+                                    <span style="color:#888;font-size:12px;">Analytics Journey retention only (max 3650 = 10 years)</span>
+                                </div>
+                                <div class="setting-row">
+                                    <label>Contact Intent Retention (days)</label>
+                                    <input type="number" name="contact_intent_retention_days" value="<?php echo htmlspecialchars($settings['contact_intent_retention_days'] ?? '90'); ?>" min="1" max="365">
+                                    <span style="color:#888;font-size:12px;">WhatsApp/mailto open intents; default 90, maximum 365</span>
+                                </div>
+                                <div class="setting-row">
+                                    <label>Confirmed Inquiry Retention (days)</label>
+                                    <input type="number" name="contact_inquiry_retention_days" value="<?php echo htmlspecialchars($settings['contact_inquiry_retention_days'] ?? '730'); ?>" min="1" max="3650">
+                                    <span style="color:#888;font-size:12px;">Server-confirmed inquiry outcomes; default 730</span>
                                 </div>
                                 <div class="setting-row">
                                     <label>Enable Geo Lookup</label>
@@ -1814,6 +1977,30 @@ function vjtGetSelected() {
   var ids = [];
   for (var i = 0; i < cbs.length; i++) ids.push(cbs[i].value);
   return ids;
+}
+function vjtToggleContactEvents() {
+  var master = document.getElementById('contactSelectAll');
+  var cbs = document.querySelectorAll('.contact-row-cb');
+  for (var i = 0; i < cbs.length; i++) cbs[i].checked = !!(master && master.checked);
+}
+function vjtDeleteContactEvents() {
+  var cbs = document.querySelectorAll('.contact-row-cb:checked');
+  var ids = [];
+  for (var i = 0; i < cbs.length; i++) ids.push(cbs[i].value);
+  if (!ids.length) { alert('No Contact Core events selected.'); return; }
+  if (!confirm('Delete ' + ids.length + ' Contact Core event(s)? This cannot be undone.')) return;
+  var form = document.createElement('form');
+  form.method = 'POST';
+  var idInput = document.createElement('input');
+  idInput.name = 'delete_contact_ids';
+  idInput.value = ids.join(',');
+  form.appendChild(idInput);
+  var csrf = document.createElement('input');
+  csrf.name = 'csrf_token';
+  csrf.value = (document.getElementById('vjt_csrf') || {}).value || '';
+  form.appendChild(csrf);
+  document.body.appendChild(form);
+  form.submit();
 }
 function vjtBulkDelete() {
   var ids = vjtGetSelected();

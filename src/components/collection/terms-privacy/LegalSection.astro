@@ -1,0 +1,177 @@
+---
+interface Props {
+  anchor: string;
+  title: string;
+  Content: any;
+  isFirst?: boolean;
+}
+
+const { anchor, title, Content, isFirst = false } = Astro.props;
+---
+
+<section
+  id={anchor}
+  aria-labelledby={`${anchor}-title`}
+  class:list={['legal-section scroll-mt-28', { 'legal-section--first': isFirst }]}
+>
+  <h2 id={`${anchor}-title`}>{title}</h2>
+  <div class="legal-copy">
+    <Content />
+  </div>
+</section>
+
+<style>
+  .legal-section {
+    padding: 1.5rem 0 2.5rem;
+    border-top: 1px solid #e7e5e4;
+  }
+
+  .legal-section--first {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .legal-section > h2 {
+    margin: 0 0 1.5rem;
+    color: #292524;
+    font-size: clamp(1.55rem, 2vw, 2rem);
+    font-weight: 750;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+
+  .legal-copy {
+    color: #57534e;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .legal-copy :global(p) {
+    margin: 0 0 1.15rem;
+  }
+
+  .legal-copy :global(h3) {
+    margin: 2rem 0 0.8rem;
+    color: #3f3a36;
+    font-size: 1.15rem;
+    font-weight: 750;
+    line-height: 1.4;
+  }
+
+  .legal-copy :global(h4) {
+    margin: 1.5rem 0 0.65rem;
+    color: #44403c;
+    font-size: 1rem;
+    font-weight: 750;
+  }
+
+  .legal-copy :global(ul),
+  .legal-copy :global(ol) {
+    margin: 0.8rem 0 1.25rem;
+    padding-inline-start: 1.5rem;
+  }
+
+  .legal-copy :global(ul) {
+    list-style: disc;
+  }
+
+  .legal-copy :global(ol) {
+    list-style: decimal;
+  }
+
+  .legal-copy :global(li) {
+    margin: 0.35rem 0;
+    padding-inline-start: 0.2rem;
+  }
+
+  .legal-copy :global(strong) {
+    color: #3f3a36;
+    font-weight: 750;
+  }
+
+  .legal-copy :global(a) {
+    color: #6f5338;
+    text-decoration: underline;
+    text-decoration-color: #c7b7a4;
+    text-underline-offset: 0.18em;
+  }
+
+  .legal-copy :global(a:hover),
+  .legal-copy :global(a:focus-visible) {
+    color: #503629;
+    text-decoration-color: currentColor;
+  }
+
+  .legal-copy :global(blockquote) {
+    margin: 1.5rem 0;
+    padding: 1rem 1.2rem;
+    border-inline-start: 3px solid #8b7355;
+    background: #faf8f5;
+    color: #57534e;
+  }
+
+  .legal-copy :global(blockquote p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .legal-copy :global(table) {
+    width: 100%;
+    margin: 1.4rem 0 1.75rem;
+    border-collapse: collapse;
+    color: #57534e;
+    font-size: 0.875rem;
+    line-height: 1.55;
+  }
+
+  .legal-copy :global(th),
+  .legal-copy :global(td) {
+    padding: 0.8rem 0.9rem;
+    border: 1px solid #e7e5e4;
+    text-align: start;
+    vertical-align: top;
+  }
+
+  .legal-copy :global(th) {
+    background: #f5f1eb;
+    color: #3f3a36;
+    font-weight: 750;
+  }
+
+  .legal-copy :global(code) {
+    padding: 0.08rem 0.3rem;
+    border-radius: 0.25rem;
+    background: #f5f1eb;
+    color: #503629;
+    font-size: 0.9em;
+  }
+
+  @media (max-width: 720px) {
+    .legal-section {
+      padding: 1.125rem 0 2rem;
+    }
+
+    .legal-copy {
+      font-size: 0.96rem;
+      line-height: 1.72;
+    }
+
+    .legal-copy :global(table) {
+      display: block;
+      max-width: 100%;
+      overflow-x: auto;
+      white-space: normal;
+    }
+  }
+
+  @media print {
+    .legal-section {
+      break-inside: avoid-page;
+      padding: 1.5rem 0;
+    }
+
+    .legal-copy :global(a) {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+</style>

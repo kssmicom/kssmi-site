@@ -86,9 +86,10 @@ const isRTL = lang === 'ar';
           </a>
           <!-- Email (same obfuscation pattern as Footer/InquiryForm) -->
           <a
-            href="#email"
+            href="/api/contact-intent.php?channel=mailto&amp;placement=thank-you-email"
             data-email-user="sales"
             data-email-domain="kssmi.com"
+            data-contact-core="1"
             data-vjt-contact="mailto"
             class={`flex items-center gap-2 text-gray-600 hover:text-[#5D4E37] transition-colors group cursor-pointer ${isRTL ? 'flex-row-reverse' : ''}`}
           >
@@ -100,7 +101,8 @@ const isRTL = lang === 'ar';
             <span class="text-sm font-medium">sales#kssmi.com</span>
           </a>
           <a
-            href="https://wa.me/8613510532553"
+            href="/api/contact-intent.php?channel=whatsapp&amp;placement=thank-you-whatsapp"
+            data-contact-core="1"
             data-vjt-contact="whatsapp"
             target="_blank"
             rel="noopener noreferrer"

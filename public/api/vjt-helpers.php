@@ -325,6 +325,24 @@ function vjt_create_schema() {
         region        TEXT DEFAULT '',
         calling_code  TEXT DEFAULT ''
     )");
+    // Contact Core is deliberately independent from Analytics Journey. Records
+    // may exist without visitor/session IDs and never contain IP, UA, referrer,
+    // UTM data or a path snapshot.
+    $db->exec("CREATE TABLE IF NOT EXISTS contact_events (
+        id              INTEGER PRIMARY KEY AUTOINCREMENT,
+        event_id        TEXT NOT NULL UNIQUE,
+        channel         TEXT NOT NULL,
+        event_type      TEXT NOT NULL,
+        occurred_at     TEXT NOT NULL,
+        page_path       TEXT DEFAULT '',
+        placement       TEXT DEFAULT '',
+        product_sku     TEXT DEFAULT '',
+        site_language   TEXT DEFAULT '',
+        status          TEXT NOT NULL,
+        vjt_visitor_id  TEXT DEFAULT '',
+        vjt_session_id  TEXT DEFAULT '',
+        retention_class TEXT NOT NULL
+    )");
     $db->exec("CREATE TABLE IF NOT EXISTS geo_cache (
         ip           TEXT PRIMARY KEY,
         country      TEXT DEFAULT '',
@@ -360,6 +378,10 @@ function vjt_create_schema() {
     if (vjt_column_exists('submissions', 'event_id')) {
         $db->exec("CREATE UNIQUE INDEX IF NOT EXISTS idx_sub_event_id ON submissions(event_id) WHERE event_id <> ''");
     }
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_contact_time ON contact_events(occurred_at)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_contact_channel ON contact_events(channel)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_contact_status ON contact_events(status)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_contact_visitor ON contact_events(vjt_visitor_id)");
     $db->exec("CREATE INDEX IF NOT EXISTS idx_sess_visitor ON sessions(visitor_id)");
     $db->exec("CREATE INDEX IF NOT EXISTS idx_sess_started ON sessions(started_at)");
     $db->exec("CREATE INDEX IF NOT EXISTS idx_sess_seen    ON sessions(last_seen_at)");
@@ -386,7 +408,7 @@ function vjt_add_column_if_missing($table, $definition) {
 function vjt_run_schema_migrations() {
     $db = vjt_db();
     $current = (int)vjt_meta_get('schema_version', 0);
-    if ($current >= 4) return;
+    if ($current >= 5) return;
 
     try {
         $db->beginTransaction();
@@ -408,7 +430,9 @@ function vjt_run_schema_migrations() {
         // v4: browser conversion retries use one exact event ID.
         vjt_add_column_if_missing('submissions', 'event_id TEXT DEFAULT \'\'');
         $db->exec("CREATE UNIQUE INDEX IF NOT EXISTS idx_sub_event_id ON submissions(event_id) WHERE event_id <> ''");
-        vjt_meta_set('schema_version', 4);
+        // v5: consent-independent Contact Core. The table is created by the
+        // idempotent schema pass above; the version records the architecture.
+        vjt_meta_set('schema_version', 5);
         $db->commit();
     } catch (Exception $e) {
         if ($db->inTransaction()) $db->rollBack();
@@ -446,7 +470,8 @@ function vjt_data_init() {
     // Seed default settings if missing
     $defaults = [
         'session_timeout' => '30', 'retention_days' => '90', 'enable_geo' => '1',
-        'excluded_ips' => '', 'heartbeat_seconds' => '45', 'enable_email_summary' => '1'
+        'excluded_ips' => '', 'heartbeat_seconds' => '45', 'enable_email_summary' => '1',
+        'contact_intent_retention_days' => '90', 'contact_inquiry_retention_days' => '730'
     ];
     foreach ($defaults as $k => $v) {
         $stmt = vjt_db()->prepare("INSERT OR IGNORE INTO settings (key, value) VALUES (?, ?)");
@@ -664,6 +689,12 @@ function vjt_auto_cleanup() {
         $db = vjt_db();
         $db->prepare("DELETE FROM pageviews WHERE visited_at < ?")->execute([$cutoff]);
         $db->prepare("DELETE FROM submissions WHERE submitted_at < ?")->execute([$cutoff]);
+        $intentDays = max(1, (int)($settings['contact_intent_retention_days'] ?? 90));
+        $inquiryDays = max(1, (int)($settings['contact_inquiry_retention_days'] ?? 730));
+        $intentCutoff = gmdate('Y-m-d H:i:s', $now - ($intentDays * 86400));
+        $inquiryCutoff = gmdate('Y-m-d H:i:s', $now - ($inquiryDays * 86400));
+        $db->prepare("DELETE FROM contact_events WHERE retention_class = 'intent_short' AND occurred_at < ?")->execute([$intentCutoff]);
+        $db->prepare("DELETE FROM contact_events WHERE retention_class = 'customer_inquiry' AND occurred_at < ?")->execute([$inquiryCutoff]);
         $db->prepare("DELETE FROM sessions WHERE last_seen_at < ?")->execute([$cutoff]);
         $db->prepare("DELETE FROM visitors WHERE last_seen_at < ?")->execute([$cutoff]);
         $db->prepare("DELETE FROM geo_cache WHERE cached_at < ?")->execute([$cutoff]);
@@ -988,6 +1019,124 @@ function vjt_add_submission($data) {
         ':calling_code' => $data['calling_code'] ?? '',
     ]);
     return $ins->rowCount() > 0 ? 'stored' : 'duplicate';
+}
+
+// ── Contact Core ────────────────────────────────────────────────────────────
+
+function vjt_contact_page_path($value) {
+    $value = trim((string)$value);
+    if ($value === '') return '';
+    $path = parse_url($value, PHP_URL_PATH);
+    if (!is_string($path) || $path === '' || $path[0] !== '/') return '';
+    return vjt_clip($path, 512);
+}
+
+function vjt_contact_token($value, $max = 64) {
+    $value = strtolower(trim((string)$value));
+    return preg_match('/^[a-z0-9][a-z0-9_-]{0,' . max(0, $max - 1) . '}$/', $value) ? $value : '';
+}
+
+/**
+ * Store one minimal business-contact event. Analytics identifiers are optional
+ * enrichment and are discarded unless both values match VJT's ID format.
+ */
+function vjt_add_contact_event($data) {
+    $channel = strtolower(trim((string)($data['channel'] ?? '')));
+    $allowedChannels = ['whatsapp', 'mailto', 'inquiry'];
+    if (!in_array($channel, $allowedChannels, true)) {
+        throw new InvalidArgumentException('Invalid contact channel');
+    }
+
+    $eventType = strtolower(trim((string)($data['event_type'] ?? '')));
+    $allowedTypes = ['open_intent', 'submission_success', 'submission_error'];
+    if (!in_array($eventType, $allowedTypes, true)) {
+        throw new InvalidArgumentException('Invalid contact event type');
+    }
+
+    $status = strtolower(trim((string)($data['status'] ?? '')));
+    if (!in_array($status, ['intent', 'success', 'error'], true)) {
+        throw new InvalidArgumentException('Invalid contact status');
+    }
+
+    $visitorId = trim((string)($data['vjt_visitor_id'] ?? ''));
+    $sessionId = trim((string)($data['vjt_session_id'] ?? ''));
+    if (!preg_match('/^vjtv_[A-Za-z0-9_-]{8,60}$/', $visitorId)
+        || !preg_match('/^vjts_[A-Za-z0-9_-]{8,60}$/', $sessionId)) {
+        $visitorId = '';
+        $sessionId = '';
+    }
+
+    $eventId = trim((string)($data['event_id'] ?? ''));
+    if (!preg_match('/^vjtce_[A-Za-z0-9_-]{8,80}$/', $eventId)) {
+        $eventId = 'vjtce_' . vjt_uuid();
+    }
+
+    $retentionClass = $channel === 'inquiry' ? 'customer_inquiry' : 'intent_short';
+    $siteLanguage = strtoupper(vjt_contact_token($data['site_language'] ?? '', 3));
+    $placement = vjt_contact_token($data['placement'] ?? '', 64);
+    $productSku = vjt_contact_token($data['product_sku'] ?? '', 80);
+
+    $stmt = vjt_db()->prepare("INSERT OR IGNORE INTO contact_events
+        (event_id, channel, event_type, occurred_at, page_path, placement,
+         product_sku, site_language, status, vjt_visitor_id, vjt_session_id, retention_class)
+        VALUES (:event_id,:channel,:event_type,:occurred_at,:page_path,:placement,
+         :product_sku,:site_language,:status,:vjt_visitor_id,:vjt_session_id,:retention_class)");
+    $stmt->execute([
+        ':event_id' => $eventId,
+        ':channel' => $channel,
+        ':event_type' => $eventType,
+        ':occurred_at' => gmdate('Y-m-d H:i:s'),
+        ':page_path' => vjt_contact_page_path($data['page_path'] ?? ''),
+        ':placement' => $placement,
+        ':product_sku' => $productSku,
+        ':site_language' => $siteLanguage,
+        ':status' => $status,
+        ':vjt_visitor_id' => $visitorId,
+        ':vjt_session_id' => $sessionId,
+        ':retention_class' => $retentionClass,
+    ]);
+
+    return ['result' => $stmt->rowCount() > 0 ? 'stored' : 'duplicate', 'event_id' => $eventId];
+}
+
+function vjt_get_contact_events_list($filters) {
+    $where = [];
+    $params = [];
+    $channel = strtolower(trim((string)($filters['channel'] ?? '')));
+    $status = strtolower(trim((string)($filters['status'] ?? '')));
+    if (in_array($channel, ['whatsapp', 'mailto', 'inquiry'], true)) {
+        $where[] = 'channel = ?';
+        $params[] = $channel;
+    }
+    if (in_array($status, ['intent', 'success', 'error'], true)) {
+        $where[] = 'status = ?';
+        $params[] = $status;
+    }
+    if (!empty($filters['date_from'])) {
+        $where[] = 'occurred_at >= ?';
+        $params[] = vjt_admin_date_to_utc($filters['date_from']);
+    }
+    if (!empty($filters['date_to'])) {
+        $where[] = 'occurred_at <= ?';
+        $params[] = vjt_admin_date_to_utc($filters['date_to'], true);
+    }
+
+    $sqlWhere = $where ? ' WHERE ' . implode(' AND ', $where) : '';
+    $db = vjt_db();
+    $countStmt = $db->prepare('SELECT COUNT(*) AS c FROM contact_events' . $sqlWhere);
+    $countStmt->execute($params);
+    $total = (int)($countStmt->fetch()['c'] ?? 0);
+
+    $page = max(1, (int)($filters['page'] ?? 1));
+    $perPage = min(10000, max(1, (int)($filters['per_page'] ?? 100)));
+    $offset = ($page - 1) * $perPage;
+    $stmt = $db->prepare('SELECT * FROM contact_events' . $sqlWhere . ' ORDER BY occurred_at DESC, id DESC LIMIT ? OFFSET ?');
+    $index = 1;
+    foreach ($params as $value) $stmt->bindValue($index++, $value, PDO::PARAM_STR);
+    $stmt->bindValue($index++, $perPage, PDO::PARAM_INT);
+    $stmt->bindValue($index, $offset, PDO::PARAM_INT);
+    $stmt->execute();
+    return ['items' => $stmt->fetchAll(), 'total' => $total];
 }
 
 // ── Geo (item 6: non-blocking) ───────────────────────────────────────────────
@@ -1454,7 +1603,11 @@ function vjt_ip_is_excluded($ip) {
 function vjt_get_settings($forceReload = false) {
     static $cache = null;
     if ($cache !== null && !$forceReload) return $cache;
-    $defaults = ['session_timeout' => '30', 'retention_days' => '90', 'enable_geo' => '1', 'excluded_ips' => '', 'heartbeat_seconds' => '45', 'enable_email_summary' => '1'];
+    $defaults = [
+        'session_timeout' => '30', 'retention_days' => '90', 'enable_geo' => '1',
+        'excluded_ips' => '', 'heartbeat_seconds' => '45', 'enable_email_summary' => '1',
+        'contact_intent_retention_days' => '90', 'contact_inquiry_retention_days' => '730',
+    ];
     try {
         $settingsStmt = vjt_db()->prepare("SELECT key, value FROM settings");
         $settingsStmt->execute();
@@ -1477,6 +1630,8 @@ function vjt_save_settings($data) {
         'excluded_ips'    => vjt_clip(trim((string)($data['excluded_ips'] ?? '')), 4096),
         'heartbeat_seconds'=> (string)min(120, max(30, (int)($data['heartbeat_seconds'] ?? 45))),
         'enable_email_summary' => !empty($data['enable_email_summary']) ? '1' : '0',
+        'contact_intent_retention_days' => (string)min(365, max(1, (int)($data['contact_intent_retention_days'] ?? 90))),
+        'contact_inquiry_retention_days' => (string)min(3650, max(1, (int)($data['contact_inquiry_retention_days'] ?? 730))),
     ];
     $stmt = $db->prepare("INSERT INTO settings (key, value) VALUES (?, ?)
         ON CONFLICT(key) DO UPDATE SET value = excluded.value");
@@ -1920,11 +2075,16 @@ function vjt_get_journey($visitorId) {
     $sub->execute([$visitorId]);
     $submissions = $sub->fetchAll();
 
+    $contact = $db->prepare("SELECT * FROM contact_events WHERE vjt_visitor_id = ? ORDER BY occurred_at ASC, id ASC");
+    $contact->execute([$visitorId]);
+    $contactEvents = $contact->fetchAll();
+
     return [
         'visitor'     => $visitor,
         'sessions'    => $sessions,
         'pageviews'   => $pageviews,
         'submissions' => $submissions,
+        'contact_events' => $contactEvents,
     ];
 }
 
@@ -2206,6 +2366,7 @@ function vjt_cleanup_old_data($days) {
     $db->prepare("DELETE FROM sessions    WHERE last_seen_at < ?")->execute([$cutoff]);
     $db->prepare("DELETE FROM pageviews   WHERE visited_at  < ?")->execute([$cutoff]);
     $db->prepare("DELETE FROM submissions WHERE submitted_at < ?")->execute([$cutoff]);
+    $db->prepare("DELETE FROM contact_events WHERE occurred_at < ?")->execute([$cutoff]);
     $geoCutoff = gmdate('Y-m-d H:i:s', time() - (7 * 86400));
     $db->prepare("DELETE FROM geo_cache WHERE cached_at < ?")->execute([$geoCutoff]);
     $db->exec('PRAGMA wal_checkpoint(TRUNCATE)');
@@ -2213,7 +2374,7 @@ function vjt_cleanup_old_data($days) {
 
 function vjt_wipe_all_data() {
     $db = vjt_db();
-    foreach (['visitors','sessions','pageviews','submissions','geo_cache','geo_queue'] as $t) {
+    foreach (['visitors','sessions','pageviews','submissions','contact_events','geo_cache','geo_queue'] as $t) {
         $db->exec("DELETE FROM $t");
     }
     $db->exec('PRAGMA wal_checkpoint(TRUNCATE)');
@@ -2462,6 +2623,34 @@ function vjt_export_submissions_csv_start($filters) {
             $sub['ip'] ?? '',
             $sub['country'] ?? '',
             $sub['status'] ?? '',
+        ]));
+    }
+    fclose($output);
+    exit;
+}
+
+function vjt_export_contact_events_csv_start($filters) {
+    $result = vjt_get_contact_events_list($filters);
+    header('Content-Type: text/csv; charset=utf-8');
+    header('X-Content-Type-Options: nosniff');
+    header('Content-Disposition: attachment; filename=contact-events-' . date('Y-m-d') . '.csv');
+    $output = fopen('php://output', 'w');
+    fputcsv($output, ['Time (Beijing)', 'Channel', 'Event Type', 'Status', 'Page Path', 'Placement', 'Product', 'Language', 'Attribution', 'Visitor ID', 'Session ID', 'Retention Class', 'Event ID']);
+    foreach ($result['items'] as $event) {
+        fputcsv($output, vjt_csv_safe_row([
+            vjt_format_for_admin($event['occurred_at'] ?? ''),
+            $event['channel'] ?? '',
+            $event['event_type'] ?? '',
+            $event['status'] ?? '',
+            $event['page_path'] ?? '',
+            $event['placement'] ?? '',
+            $event['product_sku'] ?? '',
+            $event['site_language'] ?? '',
+            !empty($event['vjt_visitor_id']) ? 'Consented journey linked' : 'Unattributed / no analytics linkage',
+            $event['vjt_visitor_id'] ?? '',
+            $event['vjt_session_id'] ?? '',
+            $event['retention_class'] ?? '',
+            $event['event_id'] ?? '',
         ]));
     }
     fclose($output);

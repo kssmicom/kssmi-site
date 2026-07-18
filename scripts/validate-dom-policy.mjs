@@ -33,8 +33,12 @@ const homeCardFiles = [
 
 for (const file of homeCardFiles) {
   const source = read(file);
-  assert(!source.includes('m.points?.map('), `${file} must not restore a multi-node feature list per card.`);
-  assert(source.includes("m.points?.join(' · ')"), `${file} must retain all feature text in the compact summary.`);
+  assert(source.includes('m.points?.map('), `${file} must render each feature as an independently interactive item.`);
+  assert(!source.includes("m.points?.join(' · ')"), `${file} must not collapse the three feature items into one summary.`);
+  assert(
+    source.includes('mat-point') || source.includes('con-point'),
+    `${file} must retain the per-item point hook used by the badge and text hover effects.`,
+  );
   assert(source.includes('contain-below-fold--lg'), `${file} must defer below-the-fold layout and paint work.`);
 }
 
@@ -47,4 +51,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('DOM policy validation passed: Header trees are lazy/singleton and home card features are compact.');
+console.log('DOM policy validation passed: Header trees are lazy/singleton and home card features remain independently interactive.');
