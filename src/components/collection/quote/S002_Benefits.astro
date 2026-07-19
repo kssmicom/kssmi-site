@@ -1,7 +1,7 @@
 ---
 /**
- * S002 Benefits — reads from src/content/collection/quote/s002-benefits.{lang}.md
- * Renders the 3 benefit cards (Faster to Market / Lower Risk / Better Margins) for the Quote page.
+ * S002 Quote intro — reads from src/content/collection/quote/s002-benefits.{lang}.md
+ * Renders the Quote-page introduction and three project-review outcomes.
  */
 
 import { getEntry } from 'astro:content';
@@ -10,56 +10,143 @@ const { lang = 'en' } = Astro.props as { lang?: string };
 const isRTL = lang === 'ar';
 
 const entry = await getEntry('collection', `quote/s002-benefits.${lang}`);
-const data = entry?.data as any;
+if (!entry) {
+  throw new Error(`Missing Quote intro content for language: ${lang}`);
+}
 
-// Each value falls back to English so a missing field never breaks the page.
-const subtitle = data?.subtitle || "Tell us about your eyewear project and we'll provide a detailed quote within 24 hours.";
-const fasterToMarket = data?.fasterToMarket || 'Faster to Market';
-const fasterToMarketDesc = data?.fasterToMarketDesc || 'Rapid prototyping and on-time delivery to significantly shorten your product launch cycles.';
-const lowerRisk = data?.lowerRisk || 'Lower Risk';
-const lowerRiskDesc = data?.lowerRiskDesc || 'Strict quality control, fully compliant premium materials, and transparent inspection reports.';
-const betterMargins = data?.betterMargins || 'Better Margins';
-const betterMarginsDesc = data?.betterMarginsDesc || 'Optimized cost structures with uncompromising high-end Shenzhen manufacturing quality.';
+const requiredFields = [
+  'eyebrow',
+  'heading',
+  'subtitle',
+  'secondaryText',
+  'ctaText',
+  'reassurance',
+  'resultsHeading',
+  'fasterToMarket',
+  'fasterToMarketDesc',
+  'lowerRisk',
+  'lowerRiskDesc',
+  'betterMargins',
+  'betterMarginsDesc',
+] as const;
+const missingFields = requiredFields.filter((field) => {
+  const value = (entry.data as Record<string, unknown>)[field];
+  return typeof value !== 'string' || value.trim().length === 0;
+});
+if (missingFields.length > 0) {
+  throw new Error(`Incomplete Quote intro content for language ${lang}: ${missingFields.join(', ')}`);
+}
+
+const {
+  eyebrow,
+  heading,
+  subtitle,
+  secondaryText,
+  ctaText,
+  reassurance,
+  resultsHeading,
+  fasterToMarket,
+  fasterToMarketDesc,
+  lowerRisk,
+  lowerRiskDesc,
+  betterMargins,
+  betterMarginsDesc,
+} = entry.data as any;
 
 const benefits = [
   {
+    number: '01',
     title: fasterToMarket,
     desc: fasterToMarketDesc,
-    iconPath: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
+    iconPath: 'M4 6h6a2 2 0 012 2v8a2 2 0 002 2h6m-4-4 4 4-4 4M8 2l4 4-4 4',
   },
   {
+    number: '02',
     title: lowerRisk,
     desc: lowerRiskDesc,
-    iconPath: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+    iconPath: 'M4 6h16M4 12h16M4 18h16M8 4v4m8 2v4m-6 2v4',
   },
   {
+    number: '03',
     title: betterMargins,
     desc: betterMarginsDesc,
-    iconPath: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
+    iconPath: 'M5 13l4 4L19 7',
   },
 ];
 ---
 
-<section class="py-12 lg:py-16 bg-linear-to-b from-white to-stone-50" dir={isRTL ? 'rtl' : 'ltr'}>
+<section class="pt-6 pb-12 lg:pt-8 lg:pb-16 bg-white" dir={isRTL ? 'rtl' : 'ltr'}>
   <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1240px] mx-auto px-4">
-    {subtitle && (
-      <p class="text-center text-base md:text-lg text-stone-600 max-w-2xl mx-auto mb-12 leading-relaxed">
-        {subtitle}
-      </p>
+    <div class="text-center max-w-4xl mx-auto mb-10 lg:mb-12">
+      {eyebrow && (
+        <p class="inline-flex items-center text-[11px] sm:text-xs font-bold uppercase tracking-[0.22em] text-[#8B7355] mb-4">
+          {eyebrow}
+        </p>
+      )}
+
+      {heading && (
+        <h1 class="font-Playfair text-[24px] sm:text-[30px] lg:text-[38px] font-bold text-[#4A3D2E] leading-[1.15] tracking-tight mb-5">
+          {heading}
+        </h1>
+      )}
+
+      {subtitle && (
+        <p class="text-base md:text-lg text-stone-600 max-w-3xl mx-auto leading-relaxed">
+          {subtitle}
+        </p>
+      )}
+
+      {secondaryText && (
+        <p class="text-sm md:text-base font-medium text-stone-800 max-w-3xl mx-auto mt-3 leading-relaxed">
+          {secondaryText}
+        </p>
+      )}
+
+      {ctaText && (
+        <div class="mt-7">
+          <a
+            href="#inquiry-form-lazy"
+            class="inline-flex items-center justify-center gap-2 bg-[#5D4E37] text-white px-7 py-3.5 rounded-lg text-sm font-bold tracking-wide shadow-md hover:bg-[#4A3D2E] active:bg-[#4a4030] transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#8B7355] focus:ring-offset-2"
+          >
+            {ctaText}
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+        </div>
+      )}
+
+      {reassurance && (
+        <p class="text-xs md:text-sm text-stone-500 mt-3 leading-relaxed">
+          {reassurance}
+        </p>
+      )}
+    </div>
+
+    {resultsHeading && (
+      <h2 class="font-Playfair text-2xl md:text-[28px] font-bold text-[#4A3D2E] text-center mb-7">
+        {resultsHeading}
+      </h2>
     )}
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       {benefits.map((benefit, i) => (
         <div
-          class="benefit-card group bg-[#FCFAF8] rounded-xl p-8 shadow-xs ring-1 ring-[#8B7355]/10 hover:shadow-xl hover:bg-white hover:ring-[#8B7355]/30 transition-all duration-500 ease-out text-center cursor-default hover:-translate-y-2 motion-safe:animate-[benefitFadeInUp_0.5s_ease-out_both]"
+          class:list={[
+            'benefit-card group bg-[#FCFAF8] rounded-xl p-7 lg:p-8 ring-1 ring-[#8B7355]/15 motion-safe:animate-[benefitFadeInUp_0.5s_ease-out_both]',
+            'text-start shadow-sm hover:-translate-y-1 hover:shadow-lg hover:bg-white hover:ring-[#8B7355]/30 transition-all duration-300 ease-out',
+          ]}
           style={`animation-delay: ${0.1 + i * 0.08}s`}
         >
-          <div class="w-16 h-16 bg-white shadow-xs ring-1 ring-[#8B7355]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-all duration-500 ease-out group-hover:scale-110 group-hover:shadow-md group-hover:bg-[#4A3D2E]/5 group-hover:ring-[#8B7355]/20">
-            <svg class="w-8 h-8 text-[#5D4E37] transition-transform duration-500 ease-out" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={benefit.iconPath} />
-            </svg>
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-12 h-12 bg-white ring-1 ring-[#8B7355]/15 rounded-xl flex items-center justify-center shadow-xs group-hover:bg-[#4A3D2E]/5 group-hover:ring-[#8B7355]/30 transition-colors duration-300">
+              <svg class="w-6 h-6 text-[#5D4E37] group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d={benefit.iconPath} />
+              </svg>
+            </div>
+            <span class="font-Playfair text-2xl font-bold text-[#8B7355]/45" aria-hidden="true">{benefit.number}</span>
           </div>
-          <h3 class="text-lg font-bold text-[#5D4E37] mb-3 transition-colors duration-500 group-hover:text-[#5D4E37]">
+          <h3 class="text-lg font-bold text-[#5D4E37] mb-3">
             {benefit.title}
           </h3>
           <p class="text-sm text-stone-600 leading-relaxed">

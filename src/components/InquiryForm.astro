@@ -20,12 +20,12 @@ const isRTL = lang === 'ar';
 
 // Get product-specific translations (fallback to English)
 const pt = t.product || {
-  projectFormTitle: "Start Your Project",
-  projectFormDesc: "Submit your project information, and our engineering team will deliver a detailed preliminary review within 24 hours.",
-  nameOrg: "Name / Organization",
-  officialEmail: "Official Email",
+  projectFormTitle: "Tell Us About Your Eyewear Project",
+  projectFormDesc: "Share what you know—even if your specifications are not final. We’ll review the details and recommend the next best step for customization, sampling, or pricing.",
+  nameOrg: "Name / Company or Brand",
+  officialEmail: "Business Email",
   projectDetails: "Project Details",
-  submitRequest: "Submit Request",
+  submitRequest: "Get My Project Review",
 };
 
 // Turnstile error message translations
@@ -54,101 +54,121 @@ const turnstileErrorMsg = turnstileErrorMessages[lang as keyof typeof turnstileE
 // Form placeholder translations
 const placeholders = {
   en: {
-    name: "Your name or company name",
+    name: "Your name, company, or brand",
     email: "your@company.com",
-    details: "Describe your project requirements, quantities, timeline, etc."
+    details: "Tell us what you want to make, your approximate quantity, customization needs, and timeline.",
+    detailsHelper: "Helpful details: frame type, material, target quantity, logo or branding needs, reference style, target market, and desired timeline."
   },
   it: {
-    name: "Il tuo nome o nome dell'azienda",
+    name: "Il tuo nome, azienda o marchio",
     email: "tua@azienda.com",
-    details: "Descrivi i requisiti del tuo progetto, quantità, tempistiche, ecc."
+    details: "Descrivi cosa vuoi realizzare, la quantità approssimativa, le esigenze di personalizzazione e le tempistiche.",
+    detailsHelper: "Dettagli utili: tipo di montatura, materiale, quantità desiderata, esigenze relative a logo o marchio, stile di riferimento, mercato di destinazione e tempistiche desiderate."
   },
   es: {
-    name: "Su nombre o nombre de la empresa",
+    name: "Su nombre, empresa o marca",
     email: "su@empresa.com",
-    details: "Describa los requisitos de su proyecto, cantidades, plazos, etc."
+    details: "Cuéntenos qué desea fabricar, la cantidad aproximada, las necesidades de personalización y el plazo.",
+    detailsHelper: "Información útil: tipo de montura, material, cantidad objetivo, necesidades de logotipo o marca, estilo de referencia, mercado objetivo y plazo deseado."
   },
   fr: {
-    name: "Votre nom ou nom de l'entreprise",
+    name: "Votre nom, entreprise ou marque",
     email: "votre@entreprise.com",
-    details: "Décrivez vos exigences de projet, quantités, délais, etc."
+    details: "Indiquez-nous ce que vous souhaitez fabriquer, la quantité approximative, les besoins de personnalisation et le délai.",
+    detailsHelper: "Détails utiles : type de monture, matériau, quantité cible, besoins en logo ou en marquage, style de référence, marché cible et délai souhaité."
   },
   de: {
-    name: "Ihr Name oder Firmenname",
+    name: "Ihr Name, Unternehmen oder Ihre Marke",
     email: "ihre@firma.com",
-    details: "Beschreiben Sie Ihre Projektanforderungen, Mengen, Zeitpläne usw."
+    details: "Beschreiben Sie, was Sie herstellen möchten, die ungefähre Menge, Ihre Individualisierungswünsche und den Zeitplan.",
+    detailsHelper: "Hilfreiche Angaben: Fassungstyp, Material, Zielmenge, Logo- oder Markenwünsche, Referenzstil, Zielmarkt und gewünschter Zeitplan."
   },
   pt: {
-    name: "Seu nome ou nome da empresa",
+    name: "Seu nome, empresa ou marca",
     email: "seu@empresa.com",
-    details: "Descreva os requisitos do seu projeto, quantidades, prazos, etc."
+    details: "Conte-nos o que deseja produzir, a quantidade aproximada, as necessidades de personalização e o prazo.",
+    detailsHelper: "Detalhes úteis: tipo de armação, material, quantidade desejada, necessidades de logotipo ou marca, estilo de referência, mercado-alvo e prazo desejado."
   },
   ru: {
-    name: "Ваше имя или название компании",
+    name: "Ваше имя, компания или бренд",
     email: "vash@kompaniya.com",
-    details: "Опишите требования к проекту, количество, сроки и т.д."
+    details: "Расскажите, что вы хотите изготовить, укажите примерное количество, требования к кастомизации и сроки.",
+    detailsHelper: "Полезные сведения: тип оправы, материал, желаемое количество, требования к логотипу или брендингу, референсный стиль, целевой рынок и желаемые сроки."
   },
   ja: {
-    name: "お名前または会社名",
+    name: "お名前、会社名またはブランド名",
     email: "your@company.com",
-    details: "プロジェクトの要件、数量、スケジュールなどを入力してください"
+    details: "製作したい内容、おおよその数量、カスタマイズのご要望、希望納期をお知らせください。",
+    detailsHelper: "参考情報：フレームの種類、素材、希望数量、ロゴ・ブランディングのご要望、参考スタイル、対象市場、希望納期。"
   },
   tr: {
-    name: "Adınız veya şirket adı",
+    name: "Adınız, şirketiniz veya markanız",
     email: "sizin@sirket.com",
-    details: "Proje gereksinimlerinizi, miktarları, zaman çizelgesini vb. açıklayın"
+    details: "Ne üretmek istediğinizi, yaklaşık miktarı, özelleştirme ihtiyaçlarınızı ve zaman planınızı belirtin.",
+    detailsHelper: "Faydalı ayrıntılar: çerçeve türü, malzeme, hedef miktar, logo veya marka ihtiyaçları, referans stil, hedef pazar ve istenen zaman planı."
   },
   ar: {
-    name: "اسمك أو اسم الشركة",
+    name: "اسمك أو شركتك أو علامتك التجارية",
     email: "your@company.com",
-    details: "صف متطلبات مشروعك والكميات والجدول الزمني وما إلى ذلك"
+    details: "أخبرنا بما تريد تصنيعه والكمية التقريبية واحتياجات التخصيص والجدول الزمني.",
+    detailsHelper: "تفاصيل مفيدة: نوع الإطار، المادة، الكمية المستهدفة، متطلبات الشعار أو العلامة التجارية، النمط المرجعي، السوق المستهدف والموعد المطلوب."
   },
   ko: {
-    name: "이름 또는 회사 이름",
+    name: "이름, 회사 또는 브랜드명",
     email: "your@company.com",
-    details: "프로젝트 요구 사항, 수량, 일정 등을 설명하세요."
+    details: "제작하려는 제품, 대략적인 수량, 맞춤 제작 요구사항 및 일정을 알려주세요.",
+    detailsHelper: "도움이 되는 정보: 프레임 유형, 소재, 목표 수량, 로고 또는 브랜딩 요구사항, 참고 스타일, 목표 시장 및 희망 일정."
   },
   zh: {
-    name: "您的姓名或公司名称",
+    name: "您的姓名、公司或品牌",
     email: "your@company.com",
-    details: "描述您的项目需求、数量、时间表等"
+    details: "请告诉我们您想生产的产品、大致数量、定制需求和期望时间。",
+    detailsHelper: "建议提供：镜框类型、材质、目标数量、Logo或品牌需求、参考款式、目标市场和期望交期。"
   },
   hi: {
-    name: "आपका नाम या कंपनी का नाम",
+    name: "आपका नाम, कंपनी या ब्रांड",
     email: "your@company.com",
-    details: "अपनी परियोजना की आवश्यकताओं, मात्रा, समयरेखा आदि का वर्णन करें"
+    details: "हमें बताएं कि आप क्या बनवाना चाहते हैं, अनुमानित मात्रा, कस्टमाइज़ेशन की आवश्यकताएं और समयसीमा।",
+    detailsHelper: "उपयोगी विवरण: फ्रेम का प्रकार, सामग्री, लक्षित मात्रा, लोगो या ब्रांडिंग की आवश्यकताएं, संदर्भ शैली, लक्षित बाज़ार और वांछित समयसीमा।"
   },
   vi: {
-    name: "Tên của bạn hoặc tên công ty",
+    name: "Tên, công ty hoặc thương hiệu của bạn",
     email: "your@company.com",
-    details: "Mô tả các yêu cầu dự án, số lượng, tiến độ của bạn, v.v."
+    details: "Hãy cho chúng tôi biết bạn muốn sản xuất gì, số lượng ước tính, nhu cầu tùy chỉnh và thời gian mong muốn.",
+    detailsHelper: "Thông tin hữu ích: loại gọng, vật liệu, số lượng mục tiêu, yêu cầu về logo hoặc thương hiệu, kiểu tham khảo, thị trường mục tiêu và thời gian mong muốn."
   },
   jv: {
-    name: "Jeneng utawa jeneng perusahaan sampeyan",
+    name: "Jeneng, perusahaan, utawa merek sampeyan",
     email: "your@company.com",
-    details: "Ater-ater syarat proyek sampeyan, jumlah, jadwal, lsp."
+    details: "Critakna apa sing pengin digawe, kira-kira jumlahe, kabutuhan kustomisasi, lan wektu sing dikarepake.",
+    detailsHelper: "Rincian sing migunani: jinis pigura, bahan, jumlah target, kabutuhan logo utawa merek, gaya referensi, target pasar, lan wektu sing dikarepake."
   },
   ms: {
-    name: "Nama anda atau nama syarikat",
+    name: "Nama, syarikat atau jenama anda",
     email: "your@company.com",
-    details: "Terangkan keperluan projek anda, kuantiti, garis masa, dll."
+    details: "Beritahu kami perkara yang ingin anda hasilkan, anggaran kuantiti, keperluan penyesuaian dan garis masa.",
+    detailsHelper: "Butiran berguna: jenis bingkai, bahan, kuantiti sasaran, keperluan logo atau penjenamaan, gaya rujukan, pasaran sasaran dan garis masa yang diingini."
   },
   tg: {
-    name: "Номи шумо ё номи ширкат",
+    name: "Ном, ширкат ё бренди шумо",
     email: "your@company.com",
-    details: "Талаботи лоиҳа, миқдор, ҷадвал ва ғайраро тавсиф кунед"
+    details: "Ба мо бигӯед, ки чӣ мехоҳед истеҳсол кунед, миқдори тахминӣ, ниёзҳои фармоишӣ ва муҳлат.",
+    detailsHelper: "Тафсилоти муфид: навъи чорчӯба, мавод, миқдори мақсаднок, ниёзҳои логотип ё брендинг, услуби намунавӣ, бозори мақсаднок ва муҳлати дилхоҳ."
   }
 };
 
 const ph = placeholders[lang as keyof typeof placeholders] || placeholders.en;
 
+const trustItems = [
+  ...(pt.secure256 || 'Secure submission · No purchase commitment').split(' · '),
+  ...(pt.ndasAvailable || 'NDA available · Initial reply within 24 hours').split(' · '),
+];
+
 // Form message translations (success, error, loading states)
 const formMessages: Record<string, Record<string, string>> = {
   en: {
-    successTitle: 'Thank You!',
-    successMessage: 'Your inquiry has been sent successfully. We will contact you within 24 hours.',
     errorDefault: 'An error occurred. Please try again.',
-    submitting: 'Submitting...',
+    submitting: 'Sending Project Details...',
     phpNotRunning: 'PHP server not running. Click below to send via your email client:',
     openEmailClient: 'Open Email Client',
     phpNotConfigured: 'PHP is not configured on this server. Please contact the administrator.',
@@ -157,10 +177,8 @@ const formMessages: Record<string, Record<string, string>> = {
     errorPrefix: 'Error: {0}. Please try again.',
   },
   it: {
-    successTitle: 'Grazie!',
-    successMessage: 'La tua richiesta è stata inviata con successo. Ti contatteremo entro 24 ore.',
     errorDefault: 'Si è verificato un errore. Riprova.',
-    submitting: 'Invio in corso...',
+    submitting: 'Invio dei dettagli del progetto...',
     phpNotRunning: 'Server PHP non in esecuzione. Clicca qui sotto per inviare tramite il tuo client email:',
     openEmailClient: 'Apri Client Email',
     phpNotConfigured: 'PHP non è configurato su questo server. Contatta l\'amministratore.',
@@ -169,10 +187,8 @@ const formMessages: Record<string, Record<string, string>> = {
     errorPrefix: 'Errore: {0}. Riprova.',
   },
   es: {
-    successTitle: '¡Gracias!',
-    successMessage: 'Su consulta ha sido enviada con éxito. Lo contactaremos dentro de las 24 horas.',
     errorDefault: 'Ocurrió un error. Por favor, inténtelo de nuevo.',
-    submitting: 'Enviando...',
+    submitting: 'Enviando los detalles del proyecto...',
     phpNotRunning: 'Servidor PHP no está en ejecución. Haga clic abajo para enviar a través de su cliente de correo:',
     openEmailClient: 'Abrir Cliente de Correo',
     phpNotConfigured: 'PHP no está configurado en este servidor. Póngase en contacto con el administrador.',
@@ -181,10 +197,8 @@ const formMessages: Record<string, Record<string, string>> = {
     errorPrefix: 'Error: {0}. Inténtelo de nuevo.',
   },
   fr: {
-    successTitle: 'Merci !',
-    successMessage: 'Votre demande a été envoyée avec succès. Nous vous contacterons dans les 24 heures.',
     errorDefault: 'Une erreur s\'est produite. Veuillez réessayer.',
-    submitting: 'Envoi en cours...',
+    submitting: 'Envoi des détails du projet...',
     phpNotRunning: 'Serveur PHP non démarré. Cliquez ci-dessous pour envoyer via votre client de messagerie :',
     openEmailClient: 'Ouvrir le Client Email',
     phpNotConfigured: 'PHP n\'est pas configuré sur ce serveur. Veuillez contacter l\'administrateur.',
@@ -193,10 +207,8 @@ const formMessages: Record<string, Record<string, string>> = {
     errorPrefix: 'Erreur : {0}. Veuillez réessayer.',
   },
   de: {
-    successTitle: 'Vielen Dank!',
-    successMessage: 'Ihre Anfrage wurde erfolgreich gesendet. Wir werden Sie innerhalb von 24 Stunden kontaktieren.',
     errorDefault: 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.',
-    submitting: 'Wird gesendet...',
+    submitting: 'Projektdetails werden gesendet...',
     phpNotRunning: 'PHP-Server läuft nicht. Klicken Sie unten, um über Ihren E-Mail-Client zu senden:',
     openEmailClient: 'E-Mail-Client öffnen',
     phpNotConfigured: 'PHP ist auf diesem Server nicht konfiguriert. Bitte kontaktieren Sie den Administrator.',
@@ -205,10 +217,8 @@ const formMessages: Record<string, Record<string, string>> = {
     errorPrefix: 'Fehler: {0}. Bitte versuchen Sie es erneut.',
   },
   pt: {
-    successTitle: 'Obrigado!',
-    successMessage: 'Sua consulta foi enviada com sucesso. Entraremos em contato dentro de 24 horas.',
     errorDefault: 'Ocorreu um erro. Tente novamente.',
-    submitting: 'Enviando...',
+    submitting: 'Enviando detalhes do projeto...',
     phpNotRunning: 'Servidor PHP não está em execução. Clique abaixo para enviar através do seu cliente de email:',
     openEmailClient: 'Abrir Cliente de Email',
     phpNotConfigured: 'PHP não está configurado neste servidor. Entre em contato com o administrador.',
@@ -217,10 +227,8 @@ const formMessages: Record<string, Record<string, string>> = {
     errorPrefix: 'Erro: {0}. Tente novamente.',
   },
   ru: {
-    successTitle: 'Спасибо!',
-    successMessage: 'Ваш запрос успешно отправлен. Мы свяжемся с вами в течение 24 часов.',
     errorDefault: 'Произошла ошибка. Пожалуйста, попробуйте еще раз.',
-    submitting: 'Отправка...',
+    submitting: 'Отправка деталей проекта...',
     phpNotRunning: 'PHP-сервер не запущен. Нажмите ниже, чтобы отправить через ваш почтовый клиент:',
     openEmailClient: 'Открыть Почтовый Клиент',
     phpNotConfigured: 'PHP не настроен на этом сервере. Пожалуйста, свяжитесь с администратором.',
@@ -229,10 +237,8 @@ const formMessages: Record<string, Record<string, string>> = {
     errorPrefix: 'Ошибка: {0}. Попробуйте еще раз.',
   },
   ja: {
-    successTitle: 'ありがとうございます！',
-    successMessage: 'お問い合わせは正常に送信されました。24時間以内にご連絡いたします。',
     errorDefault: 'エラーが発生しました。もう一度お試しください。',
-    submitting: '送信中...',
+    submitting: 'プロジェクトの詳細を送信中...',
     phpNotRunning: 'PHPサーバーが実行されていません。メールクライアントで送信するには、下をクリックしてください：',
     openEmailClient: 'メールクライアントを開く',
     phpNotConfigured: 'このサーバーにはPHPが設定されていません。管理者にお問い合わせください。',
@@ -241,10 +247,8 @@ const formMessages: Record<string, Record<string, string>> = {
     errorPrefix: 'エラー: {0}。もう一度お試しください。',
   },
   tr: {
-    successTitle: 'Teşekkürler!',
-    successMessage: 'Talebiniz başarıyla gönderildi. 24 saat içinde sizinle iletişime geçeceğiz.',
     errorDefault: 'Bir hata oluştu. Lütfen tekrar deneyin.',
-    submitting: 'Gönderiliyor...',
+    submitting: 'Proje ayrıntıları gönderiliyor...',
     phpNotRunning: 'PHP sunucusu çalışmıyor. E-posta istemcinizle göndermek için aşağıya tıklayın:',
     openEmailClient: 'E-posta İstemcisini Aç',
     phpNotConfigured: 'PHP bu sunucuda yapılandırılmamış. Lütfen yöneticiyle iletişime geçin.',
@@ -253,10 +257,8 @@ const formMessages: Record<string, Record<string, string>> = {
     errorPrefix: 'Hata: {0}. Lütfen tekrar deneyin.',
   },
   ar: {
-    successTitle: 'شكراً لك!',
-    successMessage: 'تم إرسال استفسارك بنجاح. سنتواصل معك في غضون 24 ساعة.',
     errorDefault: 'حدث خطأ. يرجى المحاولة مرة أخرى.',
-    submitting: 'جارٍ الإرسال...',
+    submitting: 'جارٍ إرسال تفاصيل المشروع...',
     phpNotRunning: 'خادم PHP لا يعمل. انقر أدناه للإرسال عبر عميل البريد الإلكتروني الخاص بك:',
     openEmailClient: 'فتح عميل البريد الإلكتروني',
     phpNotConfigured: 'لم يتم تكوين PHP على هذا الخادم. يرجى الاتصال بالمسؤول.',
@@ -265,10 +267,8 @@ const formMessages: Record<string, Record<string, string>> = {
     errorPrefix: 'خطأ: {0}. يرجى المحاولة مرة أخرى.',
   },
   ko: {
-    successTitle: '감사합니다!',
-    successMessage: '문의가 성공적으로 전송되었습니다. 24시간 이내에 연락드리겠습니다.',
     errorDefault: '오류가 발생했습니다. 다시 시도해 주세요.',
-    submitting: '제출 중...',
+    submitting: '프로젝트 세부 정보 전송 중...',
     phpNotRunning: 'PHP 서버가 실행되고 있지 않습니다. 이메일 클라이언트로 보내려면 아래를 클릭하세요:',
     openEmailClient: '이메일 클라이언트 열기',
     phpNotConfigured: '이 서버에 PHP가 구성되어 있지 않습니다. 관리자에게 문의하세요.',
@@ -277,10 +277,8 @@ const formMessages: Record<string, Record<string, string>> = {
     errorPrefix: '오류: {0}. 다시 시도해 주세요.',
   },
   zh: {
-    successTitle: '谢谢！',
-    successMessage: '您的咨询已成功发送。我们将在24小时内与您联系。',
     errorDefault: '发生错误。请重试。',
-    submitting: '提交中...',
+    submitting: '正在发送项目详情……',
     phpNotRunning: 'PHP 服务器未运行。请点击下方通过您的邮件客户端发送：',
     openEmailClient: '打开邮件客户端',
     phpNotConfigured: '此服务器上未配置 PHP。请联系管理员。',
@@ -289,10 +287,8 @@ const formMessages: Record<string, Record<string, string>> = {
     errorPrefix: '错误：{0}。请重试。',
   },
   hi: {
-    successTitle: 'धन्यवाद!',
-    successMessage: 'आपकी पूछताछ सफलतापूर्वक भेज दी गई है। हम 24 घंटे के भीतर आपसे संपर्क करेंगे।',
     errorDefault: 'एक त्रुटि हुई। कृपया पुनः प्रयास करें।',
-    submitting: 'सबमिट हो रहा है...',
+    submitting: 'प्रोजेक्ट विवरण भेजे जा रहे हैं...',
     phpNotRunning: 'PHP सर्वर नहीं चल रहा है। अपने ईमेल क्लाइंट के माध्यम से भेजने के लिए नीचे क्लिक करें:',
     openEmailClient: 'ईमेल क्लाइंट खोलें',
     phpNotConfigured: 'इस सर्वर पर PHP कॉन्फ़िगर नहीं है। कृपया व्यवस्थापक से संपर्क करें।',
@@ -301,10 +297,8 @@ const formMessages: Record<string, Record<string, string>> = {
     errorPrefix: 'त्रुटि: {0}। कृपया पुनः प्रयास करें।',
   },
   vi: {
-    successTitle: 'Cảm Ơn!',
-    successMessage: 'Yêu cầu của bạn đã được gửi thành công. Chúng tôi sẽ liên hệ với bạn trong vòng 24 giờ.',
     errorDefault: 'Đã xảy ra lỗi. Vui lòng thử lại.',
-    submitting: 'Đang gửi...',
+    submitting: 'Đang gửi thông tin dự án...',
     phpNotRunning: 'Máy chủ PHP không chạy. Nhấp vào bên dưới để gửi qua ứng dụng email của bạn:',
     openEmailClient: 'Mở Ứng Dụng Email',
     phpNotConfigured: 'PHP chưa được cấu hình trên máy chủ này. Vui lòng liên hệ quản trị viên.',
@@ -313,10 +307,8 @@ const formMessages: Record<string, Record<string, string>> = {
     errorPrefix: 'Lỗi: {0}. Vui lòng thử lại.',
   },
   jv: {
-    successTitle: 'Matur Nuwun!',
-    successMessage: 'Pitakon sampeyan wis dikirim kanthi sukses. Kita bakal ngubungi sampeyan ing 24 jam.',
     errorDefault: 'Ana kesalahan. Mangga coba maneh.',
-    submitting: 'Ngirim...',
+    submitting: 'Ngirim rincian proyek...',
     phpNotRunning: 'Server PHP ora mlaku. Klik ing ngisor iki kanggo ngirim liwat klien email sampeyan:',
     openEmailClient: 'Bukak Klien Email',
     phpNotConfigured: 'PHP ora dikonfigurasi ing server iki. Mangga hubungi administrator.',
@@ -325,10 +317,8 @@ const formMessages: Record<string, Record<string, string>> = {
     errorPrefix: 'Kesalahan: {0}. Mangga coba maneh.',
   },
   ms: {
-    successTitle: 'Terima Kasih!',
-    successMessage: 'Pertanyaan anda telah berjaya dihantar. Kami akan menghubungi anda dalam masa 24 jam.',
     errorDefault: 'Ralat telah berlaku. Sila cuba lagi.',
-    submitting: 'Menghantar...',
+    submitting: 'Menghantar butiran projek...',
     phpNotRunning: 'Pelayan PHP tidak berjalan. Klik di bawah untuk menghantar melalui klien e-mel anda:',
     openEmailClient: 'Buka Klien E-mel',
     phpNotConfigured: 'PHP tidak dikonfigurasikan pada pelayan ini. Sila hubungi pentadbir.',
@@ -337,10 +327,8 @@ const formMessages: Record<string, Record<string, string>> = {
     errorPrefix: 'Ralat: {0}. Sila cuba lagi.',
   },
   tg: {
-    successTitle: 'Ташаккур!',
-    successMessage: 'Дархости шумо бо муваффақият фиристода шуд. Мо дар давоми 24 соат бо шумо тамос мегирем.',
     errorDefault: 'Хатогӣ рух дод. Лутфан дубора кӯшиш кунед.',
-    submitting: 'Ирсол...',
+    submitting: 'Тафсилоти лоиҳа ирсол мешавад...',
     phpNotRunning: 'Сервери PHP кор намекунад. Барои фиристодан тавассути клиенти почтаи худ, дар зер клик кунед:',
     openEmailClient: 'Кушодани Клиенти Почта',
     phpNotConfigured: 'PHP дар ин сервер танзим нашудааст. Лутфан бо администратор тамос гиред.',
@@ -364,27 +352,16 @@ const currentUrl = Astro.url.pathname;
 <section id="inquiry-form-section" class="pt-8 pb-16 lg:pt-12 lg:pb-24 bg-[#F5F5F4] contain-below-fold--lg" dir={isRTL ? 'rtl' : 'ltr'}>
   <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
     <div class="text-center mb-10">
-      <h2 class="font-Playfair text-[32px] lg:text-[42px] font-bold mb-4 text-[#5D4E37] leading-tight">
+      <h2 class="font-Playfair text-[22px] sm:text-[28px] lg:text-[34px] font-bold mb-4 text-[#5D4E37] leading-tight">
         {pt.projectFormTitle}
       </h2>
-      <p class="text-stone-600 max-w-2xl mx-auto text-lg leading-relaxed">
+      <p class="text-stone-600 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
         {pt.projectFormDesc}
       </p>
     </div>
 
     <!-- Form Container -->
     <div class="bg-[#FAFAFA] rounded-xl shadow-lg p-8 lg:p-10 border border-stone-100 max-w-5xl mx-auto">
-      <!-- Success Message (hidden by default) -->
-      <div id="form-success" class="hidden text-center py-10">
-        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg>
-        </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">{fm.successTitle}</h3>
-        <p class="text-gray-600">{fm.successMessage}</p>
-      </div>
-
       <!-- Error Message (hidden by default) -->
       <div id="form-error" class="hidden text-center py-6 px-4 bg-red-50 rounded-lg mb-6">
         <div class="flex items-center justify-center gap-2 text-red-600">
@@ -468,6 +445,9 @@ const currentUrl = Astro.url.pathname;
                    placeholder:text-gray-400"
             placeholder={ph.details}
           ></textarea>
+          <p class="mt-2 text-center sm:text-start text-sm leading-relaxed text-gray-500">
+            {ph.detailsHelper}
+          </p>
         </div>
 
         <!-- Cloudflare Turnstile Widget (only in production) -->
@@ -495,15 +475,15 @@ const currentUrl = Astro.url.pathname;
           <button
             type="submit"
             id="submit-btn"
-            class="w-full bg-[#5D4E37] text-white py-4 px-6 rounded-lg font-semibold
-                   hover:bg-[#4A3D2E] active:bg-[#4a4030]
-                   transition-colors duration-200
+            class="group w-full bg-[#5D4E37] text-white py-4 px-6 rounded-lg font-semibold
+                   hover:bg-[#4A3D2E] hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:bg-[#4a4030]
+                   transition-all duration-200
                    focus:outline-hidden focus:ring-2 focus:ring-[#8B7355] focus:ring-offset-2
                    flex items-center justify-center gap-2
                    disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <span id="btn-text">{pt.submitRequest}</span>
-            <svg id="btn-arrow" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg id="btn-arrow" class="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1 rtl:group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
             <svg id="btn-spinner" class="hidden animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
@@ -515,16 +495,13 @@ const currentUrl = Astro.url.pathname;
 
         <!-- Security Notice -->
         <div class="pt-4 text-center">
-          <div class="flex items-center justify-center gap-4 text-xs text-gray-500">
-            <!-- Lock Icon -->
-            <span class="flex items-center gap-1">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-              </svg>
-              {pt.secure256 || 'Secure 256-bit Encrypted'}
-            </span>
-            <span class="text-gray-400">|</span>
-            <span>{pt.ndasAvailable || 'NDAs available'}</span>
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-2 max-w-sm lg:max-w-none mx-auto text-xs text-gray-500">
+            {trustItems.map((item) => (
+              <span class="group flex items-center justify-start lg:justify-center gap-1.5 text-start lg:text-center leading-snug hover:text-[#5D4E37] transition-colors duration-300">
+                <span class="w-1.5 h-1.5 shrink-0 rounded-full bg-[#8B7355] group-hover:bg-[#B45309] motion-safe:group-hover:scale-125 transition-all duration-300" aria-hidden="true"></span>
+                <span>{item}</span>
+              </span>
+            ))}
           </div>
         </div>
       </form>
@@ -678,7 +655,7 @@ const currentUrl = Astro.url.pathname;
       if (btnSpinner) btnSpinner.classList.remove('hidden');
     } else {
       if (submitBtn) submitBtn.disabled = false;
-      if (btnText) btnText.textContent = pt.submitRequest || 'Submit Request';
+      if (btnText) btnText.textContent = pt.submitRequest || 'Get My Project Review';
       if (btnArrow) btnArrow.classList.remove('hidden');
       if (btnSpinner) btnSpinner.classList.add('hidden');
     }

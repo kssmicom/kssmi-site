@@ -11,47 +11,34 @@
  */
 
 import Layout from '../../layouts/Layout.astro';
-import { getTranslations } from '../../translations';
 import { getEntry } from 'astro:content';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import Breadcrumb from '../../components/Breadcrumb.astro';
 import S002_Benefits from '../../components/collection/quote/S002_Benefits.astro';
 import S003_ContactForm from '../../components/collection/quote/S003_ContactForm.astro';
 
 // Accept lang as a prop (passed by both /quote.astro and /[lang]/quote.astro).
 // Fall back to Astro.params, then 'en'.
 const lang = Astro.props.lang ?? Astro.params?.lang ?? 'en';
-const t = await getTranslations(lang);
 const isRTL = lang === 'ar';
 
 // Read SEO + page-title from the meta file only.
 const entry = await getEntry('collection', `quote/quote.${lang}`);
-const data = entry?.data as any;
+if (!entry) {
+  throw new Error(`Missing Quote SEO content for language: ${lang}`);
+}
 
-const title = data?.title || "Request a Quote";
-const seoTitle = data?.seoTitle || "Request a Quote | Kssmi Eyewear";
-const seoDescription = data?.seoDescription || "Get a custom quote for your eyewear collection. Rapid prototyping and competitive B2B pricing for premium frames.";
+const { seoTitle, seoDescription, productName } = entry.data as any;
+if (!seoTitle || !seoDescription || !productName) {
+  throw new Error(`Incomplete Quote SEO content for language: ${lang}`);
+}
 
-// productName is the form subject label — passed through to /inquiry-form.
-// Falls back to English if not in the md file.
-const productName = data?.productName || "General Inquiry";
-
-// English has no /en prefix (default locale, prefixDefaultLocale: false)
-const langPrefix = lang === 'en' ? '' : `/${lang}`;
-const breadcrumbItems = [
-  { label: t.nav.home, href: `${langPrefix}/` },
-  { label: title, href: `${langPrefix}/quote` },
-];
 ---
 
 <Layout title={seoTitle} description={seoDescription} lang={lang}>
   <Header lang={lang} />
 
   <main dir={isRTL ? 'rtl' : 'ltr'}>
-    <!-- Breadcrumb Navigation -->
-    <Breadcrumb items={breadcrumbItems} lang={lang} />
-
     <!-- Section 002: Key Benefits (3 cards) -->
     <S002_Benefits lang={lang} />
 
