@@ -1666,6 +1666,19 @@ function vjt_get_overview($since) {
     $totalSubmissions = (int)($subRow['total'] ?? 0);
     $successSubmissions = (int)($subRow['success'] ?? 0);
 
+    // Compact daily dashboard counters, using the admin's Beijing calendar day.
+    // C = all valid Core contact events; L = Journey-attributed unique visitors.
+    $todayStart = vjt_admin_date_to_utc(date('Y-m-d'));
+    $todayCoreStmt = $db->prepare("SELECT COUNT(*) c FROM contact_events
+        WHERE occurred_at >= ? AND status IN ('success','intent')");
+    $todayCoreStmt->execute([$todayStart]);
+    $todayCore = (int)$todayCoreStmt->fetch()['c'];
+
+    $todayLeadsStmt = $db->prepare("SELECT COUNT(DISTINCT visitor_id) c FROM submissions
+        WHERE submitted_at >= ? AND status IN ('success','intent')");
+    $todayLeadsStmt->execute([$todayStart]);
+    $todayLeads = (int)$todayLeadsStmt->fetch()['c'];
+
     $durStmt = $db->prepare("SELECT AVG(CASE WHEN active_duration_seconds > 0 THEN active_duration_seconds ELSE duration_seconds END) a FROM pageviews
         WHERE visited_at >= ? AND duration_seconds > 0");
     $durStmt->execute([$since]);
@@ -1781,6 +1794,8 @@ function vjt_get_overview($since) {
         'totalSessions'      => $totalSessions,
         'totalSubmissions'   => $totalSubmissions,
         'successSubmissions' => $successSubmissions,
+        'todayCore'          => $todayCore,
+        'todayLeads'         => $todayLeads,
         'avgDuration'        => $avgDuration,
         'conversionRate'     => $conversionRate,
         'trend'              => $trend,

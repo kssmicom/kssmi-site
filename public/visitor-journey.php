@@ -620,12 +620,14 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         .stat-card h3 { font-size: 10px; text-transform: uppercase; color: #888; margin-bottom: 4px; letter-spacing: 0.8px; }
         .stat-card .value { font-size: 26px; font-weight: bold; color: #5D4E37; flex: 1; display: flex; align-items: center; }
         .stat-card .sub { font-size: 12px; color: #888; margin-top: 4px; }
+        .stat-card .today-cl { flex: 1; display: flex; align-items: center; gap: 20px; color: #5D4E37; }
+        .stat-card .today-cl span { display: inline-flex; align-items: baseline; gap: 6px; font-size: 12px; color: #888; }
+        .stat-card .today-cl strong { font-size: 26px; color: #5D4E37; }
 
         /* Panels */
         .panel { min-width: 0; max-width: 100%; background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 14px; }
         .panel-header { min-width: 0; padding: 12px 16px; border-bottom: 1px solid #eee; font-weight: 600; color: #5D4E37; font-size: 13px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
         .panel-header > * { min-width: 0; }
-        .panel-note { color: #888; font-size: 11px; font-weight: 400; text-align: right; }
         .panel-body { min-width: 0; max-width: 100%; padding: 16px; }
 
         /* Tables */
@@ -813,7 +815,6 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
             .gsc-status-grid { grid-template-columns: minmax(0, 1fr); gap: 4px; }
             .gsc-status-value { margin-bottom: 8px; }
             .panel-header { flex-wrap: wrap; align-items: flex-start; }
-            .panel-note { width: 100%; text-align: left; }
             /* Tables: tighter padding on mobile */
             th, td { padding: 6px 8px; font-size: 12px; }
         }
@@ -872,7 +873,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                 <div class="tabs">
                     <a href="?tab=overview" class="tab <?php echo $tab === 'overview' ? 'active' : ''; ?>">Overview</a>
                     <a href="?tab=contacts" class="tab <?php echo $tab === 'contacts' ? 'active' : ''; ?>">Core</a>
-                    <a href="?tab=submissions" class="tab <?php echo $tab === 'submissions' ? 'active' : ''; ?>">Submissions</a>
+                    <a href="?tab=submissions" class="tab <?php echo $tab === 'submissions' ? 'active' : ''; ?>">Leads</a>
                     <a href="?tab=traffic" class="tab <?php echo $tab === 'traffic' ? 'active' : ''; ?>">Traffic</a>
                     <a href="?tab=visitors" class="tab <?php echo $tab === 'visitors' ? 'active' : ''; ?>">Visitors</a>
                     <a href="?tab=countries" class="tab <?php echo $tab === 'countries' ? 'active' : ''; ?>">Countries</a>
@@ -888,16 +889,19 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                     <!-- Overview -->
                     <div class="stats">
                         <div class="stat-card">
-                            <h3>Visitors (30d)</h3>
+                            <h3>Visitors</h3>
                             <div class="value"><?php echo number_format($overview['totalVisitors']); ?></div>
                         </div>
                         <div class="stat-card">
-                            <h3>Sessions (30d)</h3>
+                            <h3>Sessions</h3>
                             <div class="value"><?php echo number_format($overview['totalSessions']); ?></div>
                         </div>
                         <div class="stat-card">
-                            <h3>Leads (30d)</h3>
-                            <div class="value"><?php echo number_format($overview['totalSubmissions']); ?></div>
+                            <div class="today-cl">
+                                <span title="Core contacts today">C <strong><?php echo number_format($overview['todayCore']); ?></strong></span>
+                                <span title="Journey-attributed leads today">L <strong><?php echo number_format($overview['todayLeads']); ?></strong></span>
+                            </div>
+                            <div class="sub"><?php echo htmlspecialchars($periodLabel); ?> L <?php echo number_format($overview['totalSubmissions']); ?></div>
                         </div>
                         <div class="stat-card">
                             <h3>Lead Rate</h3>
@@ -912,19 +916,15 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                     <!-- Submission Trend -->
                     <?php
                     $trendData = $overview['trend'] ?? [];
-                    $trendTitle = 'Lead Trend (30 Days)';
                     if ($trendPeriod === 'months') {
                         $trendData = $overview['trendMonthly'] ?? [];
-                        $trendTitle = 'Lead Trend (12 Months)';
                     } elseif ($trendPeriod === 'years') {
                         $trendData = $overview['trendYearly'] ?? [];
-                        $trendTitle = 'Lead Trend (Years)';
                     }
                     ?>
                     <?php if (!empty($trendData)): ?>
                     <div class="panel">
-                        <div class="panel-header">
-                            <span><?php echo $trendTitle; ?></span>
+                        <div class="panel-header" style="justify-content:flex-end;">
                             <div style="display:flex;gap:4px;">
                                 <a href="?tab=overview&trend=days" class="trend-tab <?php echo $trendPeriod === 'days' ? 'trend-tab-active' : ''; ?>">30 Days</a>
                                 <a href="?tab=overview&trend=months" class="trend-tab <?php echo $trendPeriod === 'months' ? 'trend-tab-active' : ''; ?>">12 Months</a>
@@ -959,8 +959,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                     <div class="overview-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                         <!-- Top Sources -->
                         <div class="panel">
-                            <div class="panel-header">
-                                <span>Top Sources (<?php echo $periodLabel; ?>)</span>
+                            <div class="panel-header" style="justify-content:flex-end;">
                                 <div style="display:flex;gap:4px;">
                                     <a href="?tab=overview&trend=days" class="trend-tab <?php echo $trendPeriod === 'days' ? 'trend-tab-active' : ''; ?>">30 Days</a>
                                     <a href="?tab=overview&trend=months" class="trend-tab <?php echo $trendPeriod === 'months' ? 'trend-tab-active' : ''; ?>">12 Months</a>
@@ -995,8 +994,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                         <!-- Source & Device -->
                         <div style="display:flex;flex-direction:column;gap:20px;">
                             <div class="panel">
-                                <div class="panel-header">
-                                    <span>Traffic Sources (<?php echo $periodLabel; ?>)</span>
+                                <div class="panel-header" style="justify-content:flex-end;">
                                     <div style="display:flex;gap:4px;">
                                         <a href="?tab=overview&trend=days" class="trend-tab <?php echo $trendPeriod === 'days' ? 'trend-tab-active' : ''; ?>">30 Days</a>
                                         <a href="?tab=overview&trend=months" class="trend-tab <?php echo $trendPeriod === 'months' ? 'trend-tab-active' : ''; ?>">12 Months</a>
@@ -1025,8 +1023,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                             </div>
 
                             <div class="panel">
-                                <div class="panel-header">
-                                    <span>Device Breakdown (<?php echo $periodLabel; ?>)</span>
+                                <div class="panel-header" style="justify-content:flex-end;">
                                     <div style="display:flex;gap:4px;">
                                         <a href="?tab=overview&trend=days" class="trend-tab <?php echo $trendPeriod === 'days' ? 'trend-tab-active' : ''; ?>">30 Days</a>
                                         <a href="?tab=overview&trend=months" class="trend-tab <?php echo $trendPeriod === 'months' ? 'trend-tab-active' : ''; ?>">12 Months</a>
@@ -1057,7 +1054,6 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                     </div>
 
                     <div class="panel" style="margin-top:20px;">
-                        <div class="panel-header"><span>AI Referrals (<?php echo $periodLabel; ?>)</span><span class="panel-note">verified referrer/UTM evidence, not AI citations</span></div>
                         <div class="panel-body" style="padding:0;">
                             <?php if (empty($aiReferrals)): ?>
                                 <div class="empty" style="padding:24px;"><p>No verified AI referrals yet</p></div>
