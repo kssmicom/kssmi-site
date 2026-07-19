@@ -1666,18 +1666,12 @@ function vjt_get_overview($since) {
     $totalSubmissions = (int)($subRow['total'] ?? 0);
     $successSubmissions = (int)($subRow['success'] ?? 0);
 
-    // Compact daily dashboard counters, using the admin's Beijing calendar day.
-    // C = all valid Core contact events; L = Journey-attributed unique visitors.
-    $todayStart = vjt_admin_date_to_utc(date('Y-m-d'));
-    $todayCoreStmt = $db->prepare("SELECT COUNT(*) c FROM contact_events
+    // C follows the same selected Overview period as Visitors, Sessions and L.
+    // It counts valid Core events; L remains the attributed unique-visitor count.
+    $totalCoreStmt = $db->prepare("SELECT COUNT(*) c FROM contact_events
         WHERE occurred_at >= ? AND status IN ('success','intent')");
-    $todayCoreStmt->execute([$todayStart]);
-    $todayCore = (int)$todayCoreStmt->fetch()['c'];
-
-    $todayLeadsStmt = $db->prepare("SELECT COUNT(DISTINCT visitor_id) c FROM submissions
-        WHERE submitted_at >= ? AND status IN ('success','intent')");
-    $todayLeadsStmt->execute([$todayStart]);
-    $todayLeads = (int)$todayLeadsStmt->fetch()['c'];
+    $totalCoreStmt->execute([$since]);
+    $totalCore = (int)$totalCoreStmt->fetch()['c'];
 
     $durStmt = $db->prepare("SELECT AVG(CASE WHEN active_duration_seconds > 0 THEN active_duration_seconds ELSE duration_seconds END) a FROM pageviews
         WHERE visited_at >= ? AND duration_seconds > 0");
@@ -1697,6 +1691,16 @@ function vjt_get_overview($since) {
     $rows = $trendStmt->fetchAll();
     foreach ($rows as $r) { if (isset($trend[$r['d']])) $trend[$r['d']] = (int)$r['c']; }
 
+    $coreTrend = array_fill_keys(array_keys($trend), 0);
+    $coreTrendStmt = $db->prepare("SELECT substr(datetime(occurred_at, '+8 hours'),1,10) d,
+            COUNT(*) c FROM contact_events
+        WHERE occurred_at >= ? AND status IN ('success','intent')
+        GROUP BY d");
+    $coreTrendStmt->execute([vjt_admin_date_to_utc(date('Y-m-d', strtotime('-29 days')))]);
+    foreach ($coreTrendStmt->fetchAll() as $r) {
+        if (isset($coreTrend[$r['d']])) $coreTrend[$r['d']] = (int)$r['c'];
+    }
+
     // Submission trend (12 months)
     $trendMonthly = [];
     for ($i = 11; $i >= 0; $i--) { $trendMonthly[date('Y-m', strtotime("-{$i} months"))] = 0; }
@@ -1705,6 +1709,14 @@ function vjt_get_overview($since) {
     $monthlyStmt->execute();
     $rows = $monthlyStmt->fetchAll();
     foreach ($rows as $r) { if (isset($trendMonthly[$r['m']])) $trendMonthly[$r['m']] = (int)$r['c']; }
+
+    $coreTrendMonthly = array_fill_keys(array_keys($trendMonthly), 0);
+    $coreMonthlyStmt = $db->prepare("SELECT substr(datetime(occurred_at, '+8 hours'),1,7) m,
+            COUNT(*) c FROM contact_events WHERE status IN ('success','intent') GROUP BY m");
+    $coreMonthlyStmt->execute();
+    foreach ($coreMonthlyStmt->fetchAll() as $r) {
+        if (isset($coreTrendMonthly[$r['m']])) $coreTrendMonthly[$r['m']] = (int)$r['c'];
+    }
 
     // Submission trend (years)
     $trendYearly = [];
@@ -1718,8 +1730,20 @@ function vjt_get_overview($since) {
         $y = (int)$r['y'];
         if ($y > 0) { $yearCounts[(string)$r['y']] = (int)$r['c']; if ($y < $minYear) $minYear = $y; }
     }
+
+    $coreYearlyStmt = $db->prepare("SELECT substr(datetime(occurred_at, '+8 hours'),1,4) y,
+            COUNT(*) c FROM contact_events WHERE status IN ('success','intent') GROUP BY y");
+    $coreYearlyStmt->execute();
+    $coreYearCounts = [];
+    foreach ($coreYearlyStmt->fetchAll() as $r) {
+        $y = (int)$r['y'];
+        if ($y > 0) { $coreYearCounts[(string)$r['y']] = (int)$r['c']; if ($y < $minYear) $minYear = $y; }
+    }
+
+    $coreTrendYearly = [];
     for ($y = $minYear; $y <= (int)date('Y'); $y++) {
         $trendYearly[(string)$y] = $yearCounts[(string)$y] ?? 0;
+        $coreTrendYearly[(string)$y] = $coreYearCounts[(string)$y] ?? 0;
     }
 
     // Top sources: explicit UTM attribution wins; otherwise use a normalized
@@ -1794,13 +1818,15 @@ function vjt_get_overview($since) {
         'totalSessions'      => $totalSessions,
         'totalSubmissions'   => $totalSubmissions,
         'successSubmissions' => $successSubmissions,
-        'todayCore'          => $todayCore,
-        'todayLeads'         => $todayLeads,
+        'totalCore'          => $totalCore,
         'avgDuration'        => $avgDuration,
         'conversionRate'     => $conversionRate,
         'trend'              => $trend,
+        'coreTrend'          => $coreTrend,
         'trendMonthly'       => $trendMonthly,
+        'coreTrendMonthly'   => $coreTrendMonthly,
         'trendYearly'        => $trendYearly,
+        'coreTrendYearly'    => $coreTrendYearly,
         'topReferrers'       => array_column($topReferrerStats, 'sessions'),
         'topReferrerStats'   => $topReferrerStats,
         'deviceCounts'       => $deviceCounts,

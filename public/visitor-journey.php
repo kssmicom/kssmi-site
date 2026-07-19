@@ -295,13 +295,10 @@ if ($isAuthenticated && $tab === 'gsc' && !empty($gscDiagnostics['ready'])) {
 if ($isAuthenticated && $tab === 'overview') {
     if ($trendPeriod === 'months') {
         $since = vjt_utc_since_seconds(365 * 86400);
-        $periodLabel = '12m';
     } elseif ($trendPeriod === 'years') {
         $since = vjt_utc_since_seconds(5 * 365 * 86400);
-        $periodLabel = '5y';
     } else {
         $since = vjt_utc_since_seconds(30 * 86400);
-        $periodLabel = '30d';
     }
     $overview = vjt_get_overview($since);
     $aiReferrals = vjt_get_ai_referrals($since);
@@ -619,10 +616,9 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         .stat-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.08); }
         .stat-card h3 { font-size: 10px; text-transform: uppercase; color: #888; margin-bottom: 4px; letter-spacing: 0.8px; }
         .stat-card .value { font-size: 26px; font-weight: bold; color: #5D4E37; flex: 1; display: flex; align-items: center; }
-        .stat-card .sub { font-size: 12px; color: #888; margin-top: 4px; }
-        .stat-card .today-cl { flex: 1; display: flex; align-items: center; gap: 20px; color: #5D4E37; }
-        .stat-card .today-cl span { display: inline-flex; align-items: baseline; gap: 6px; font-size: 12px; color: #888; }
-        .stat-card .today-cl strong { font-size: 26px; color: #5D4E37; }
+        .stat-card .core-leads { flex: 1; display: flex; align-items: center; gap: 20px; color: #5D4E37; }
+        .stat-card .core-leads span { display: inline-flex; align-items: baseline; gap: 6px; font-size: 12px; color: #888; }
+        .stat-card .core-leads strong { font-size: 14px; font-weight: 600; color: #5D4E37; }
 
         /* Panels */
         .panel { min-width: 0; max-width: 100%; background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 14px; }
@@ -671,6 +667,14 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         .bar:hover { background: #5D4E37; opacity: 0.85; transform: scaleY(1.05); transform-origin: bottom; }
         .bar-label { font-size: 9px; color: #888; margin-top: 4px; transform: rotate(-45deg); transform-origin: top left; white-space: nowrap; }
         .bar-value { font-size: 10px; color: #5D4E37; font-weight: 600; margin-bottom: 4px; }
+        .bar-chart-scroll { max-width: 100%; overflow-x: auto; }
+        .bar-chart-dual { min-width: 720px; }
+        .bar-pair { width: 100%; height: 112px; display: flex; justify-content: center; align-items: flex-end; gap: 2px; }
+        .bar-series { flex: 1; max-width: 18px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; }
+        .bar-series .bar { max-width: 18px; }
+        .bar-series .bar-value { font-size: 8px; white-space: nowrap; }
+        .bar-core { background: #B8A58A; }
+        .bar-core:hover { background: #8B7355; }
 
         /* Trend sub-tabs */
         .trend-tab { padding: 3px 10px; border-radius: 4px; text-decoration: none; font-size: 11px; font-weight: 500; color: #888; background: #f0f0f0; transition: all 0.15s; }
@@ -897,11 +901,10 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                             <div class="value"><?php echo number_format($overview['totalSessions']); ?></div>
                         </div>
                         <div class="stat-card">
-                            <div class="today-cl">
-                                <span title="Core contacts today">C <strong><?php echo number_format($overview['todayCore']); ?></strong></span>
-                                <span title="Journey-attributed leads today">L <strong><?php echo number_format($overview['todayLeads']); ?></strong></span>
+                            <div class="core-leads">
+                                <span title="Core contacts in selected period">C <strong><?php echo number_format($overview['totalCore']); ?></strong></span>
+                                <span title="Journey-attributed leads in selected period">L <strong><?php echo number_format($overview['totalSubmissions']); ?></strong></span>
                             </div>
-                            <div class="sub"><?php echo htmlspecialchars($periodLabel); ?> L <?php echo number_format($overview['totalSubmissions']); ?></div>
                         </div>
                         <div class="stat-card">
                             <h3>Lead Rate</h3>
@@ -916,10 +919,13 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                     <!-- Submission Trend -->
                     <?php
                     $trendData = $overview['trend'] ?? [];
+                    $coreTrendData = $overview['coreTrend'] ?? [];
                     if ($trendPeriod === 'months') {
                         $trendData = $overview['trendMonthly'] ?? [];
+                        $coreTrendData = $overview['coreTrendMonthly'] ?? [];
                     } elseif ($trendPeriod === 'years') {
                         $trendData = $overview['trendYearly'] ?? [];
+                        $coreTrendData = $overview['coreTrendYearly'] ?? [];
                     }
                     ?>
                     <?php if (!empty($trendData)): ?>
@@ -932,11 +938,14 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                             </div>
                         </div>
                         <div class="panel-body">
-                            <div class="bar-chart">
+                            <div class="bar-chart-scroll">
+                            <div class="bar-chart bar-chart-dual">
                                 <?php
-                                $maxCnt = max($trendData) ?: 1;
-                                foreach ($trendData as $key => $cnt):
-                                    $h = $maxCnt > 0 ? round(($cnt / $maxCnt) * 100) : 0;
+                                $maxCnt = max(max($trendData), max($coreTrendData ?: [0]), 1);
+                                foreach ($trendData as $key => $leadCnt):
+                                    $coreCnt = (int)($coreTrendData[$key] ?? 0);
+                                    $leadH = round(($leadCnt / $maxCnt) * 100);
+                                    $coreH = round(($coreCnt / $maxCnt) * 100);
                                     if ($trendPeriod === 'months') {
                                         $label = date('M', strtotime($key . '-01'));
                                     } elseif ($trendPeriod === 'years') {
@@ -946,11 +955,20 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                     }
                                 ?>
                                     <div class="bar-col">
-                                        <div class="bar-value"><?php echo $cnt; ?></div>
-                                        <div class="bar" style="height:<?php echo max(2, $h); ?>px;" title="<?php echo $key; ?>: <?php echo $cnt; ?>"></div>
+                                        <div class="bar-pair">
+                                            <div class="bar-series">
+                                                <div class="bar-value">L<?php echo number_format($leadCnt); ?></div>
+                                                <div class="bar" style="height:<?php echo max(2, $leadH); ?>px;" title="<?php echo htmlspecialchars($key); ?> · L <?php echo number_format($leadCnt); ?>"></div>
+                                            </div>
+                                            <div class="bar-series">
+                                                <div class="bar-value">C<?php echo number_format($coreCnt); ?></div>
+                                                <div class="bar bar-core" style="height:<?php echo max(2, $coreH); ?>px;" title="<?php echo htmlspecialchars($key); ?> · C <?php echo number_format($coreCnt); ?>"></div>
+                                            </div>
+                                        </div>
                                         <div class="bar-label"><?php echo htmlspecialchars($label); ?></div>
                                     </div>
                                 <?php endforeach; ?>
+                            </div>
                             </div>
                         </div>
                     </div>
