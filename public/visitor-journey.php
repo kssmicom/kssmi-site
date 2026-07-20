@@ -177,13 +177,14 @@ if ($isAuthenticated && isset($_POST['cleanup_data'])) {
             $message = 'All tracking data has been deleted.';
         } else {
             vjt_cleanup_old_data($days);
-            $message = 'Old data cleaned up (older than ' . $days . ' days).';
+            $message = 'Old Analytics Journey data cleaned up (older than ' . $days . ' days). Core follows its separate retention settings.';
         }
     }
 }
 
 // Handle submission deletion (single or bulk)
-if ($isAuthenticated && isset($_POST['delete_ids']) && isset($_POST['csrf_token']) && hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+if ($isAuthenticated && isset($_POST['delete_ids'], $_POST['csrf_token'], $_SESSION['csrf_token'])
+    && hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
     $ids = array_filter(array_map('intval', explode(',', $_POST['delete_ids'])));
     if ($ids) {
         $db = vjt_db();
@@ -240,7 +241,8 @@ if ($isAuthenticated && ($leadDeleteRaw !== null || $legacyLeadDeleteRaw !== nul
 }
 
 // Handle visitor deletion (deletes visitor + all associated sessions/pageviews/submissions)
-if ($isAuthenticated && isset($_POST['delete_visitor']) && isset($_POST['csrf_token']) && hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+if ($isAuthenticated && isset($_POST['delete_visitor'], $_POST['csrf_token'], $_SESSION['csrf_token'])
+    && hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
     $vid = trim((string)($_POST['delete_visitor'] ?? ''));
     if ($vid !== '') {
         $db = vjt_db();
@@ -251,7 +253,7 @@ if ($isAuthenticated && isset($_POST['delete_visitor']) && isset($_POST['csrf_to
             $db->prepare("DELETE FROM submissions WHERE visitor_id = ?")->execute([$vid]);
             // Preserve independently lawful business events, but remove the
             // consented analytics linkage when the Journey visitor is deleted.
-            $db->prepare("UPDATE contact_events SET vjt_visitor_id = '', vjt_session_id = '' WHERE vjt_visitor_id = ?")->execute([$vid]);
+            $db->prepare("UPDATE contact_events SET vjt_visitor_id = '', vjt_session_id = '', journey_step = 0 WHERE vjt_visitor_id = ?")->execute([$vid]);
             $db->prepare("DELETE FROM visitors    WHERE visitor_id = ?")->execute([$vid]);
             $db->commit();
             $message = 'Visitor and all associated records deleted.';
@@ -490,6 +492,13 @@ function fmtUrl($url) {
 // Safe href for legacy or poisoned analytics rows. New ingest also rejects
 // non-HTTP(S) URLs, but output encoding must remain independently safe.
 function safeHref($url) {
+    $url = is_scalar($url) ? trim((string)$url) : '';
+    // Contact Core deliberately stores only a same-site root-relative path.
+    // Keep it clickable without accepting protocol-relative external URLs.
+    if ($url !== '' && preg_match('#^/(?!/)#', $url)
+        && !preg_match('/[\x00-\x1F\x7F]/', $url)) {
+        return htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
+    }
     $safe = vjt_safe_http_url($url);
     return $safe !== '' ? htmlspecialchars($safe, ENT_QUOTES, 'UTF-8') : '#';
 }
@@ -1165,6 +1174,9 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                                 <td>
                                                     <?php if (!empty($event['vjt_visitor_id'])): ?>
                                                         <a class="link" href="?tab=journey&amp;visitor_id=<?php echo urlencode($event['vjt_visitor_id']); ?>">Consented Journey</a>
+                                                        <?php if ((int)($event['journey_step'] ?? 0) > 0): ?>
+                                                            <br><span style="color:#888;font-size:11px;">Step <?php echo (int)$event['journey_step']; ?></span>
+                                                        <?php endif; ?>
                                                     <?php else: ?>
                                                         <span style="color:#888;">Unattributed / no analytics linkage</span>
                                                     <?php endif; ?>
@@ -1274,7 +1286,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                                     </td>
                                                     <td><?php echo htmlspecialchars($lead['channels'] ?? $lead['channel']); ?></td>
                                                     <td style="text-align:center;"><?php echo number_format((int)($lead['event_count'] ?? 1)); ?></td>
-                                                    <td><span class="mono"><?php echo htmlspecialchars($lead['page_path'] ?: '-'); ?></span><br><span style="color:#888;font-size:11px;"><?php echo htmlspecialchars($lead['placement'] ?: '-'); ?></span></td>
+                                                    <td><span class="mono"><?php echo htmlspecialchars($lead['page_path'] ?: '-'); ?></span><br><span style="color:#888;font-size:11px;"><?php echo htmlspecialchars($lead['placement'] ?: '-'); ?><?php echo (int)($lead['journey_step'] ?? 0) > 0 ? ' · Step ' . (int)$lead['journey_step'] : ''; ?></span></td>
                                                     <td><?php echo htmlspecialchars(str_replace('_', ' ', $lead['event_type'] ?? '-')); ?><br><span style="color:#888;font-size:11px;"><?php echo htmlspecialchars($lead['product_sku'] ?: ($lead['site_language'] ?: '-')); ?></span></td>
                                                     <?php $displayStatus = safeStatus($lead['display_status'] ?? ''); ?>
                                                     <td><span class="status status-<?php echo $displayStatus; ?>"><?php echo htmlspecialchars(ucfirst($displayStatus)); ?></span></td>
@@ -1627,11 +1639,15 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                 <h3>Linked Core Events (<?php echo count($journeyData['contact_events']); ?>)</h3>
                                 <div class="table-wrapper">
                                     <table>
-                                        <thead><tr><th>Time</th><th>Channel</th><th>Event</th><th>Page / Placement</th><th>Status</th></tr></thead>
+                                        <thead><tr><th>Time</th><th>Journey Step</th><th>Channel</th><th>Event</th><th>Page / Placement</th><th>Status</th></tr></thead>
                                         <tbody>
                                         <?php foreach ($journeyData['contact_events'] as $event): ?>
                                             <tr>
                                                 <td style="font-size:12px;"><?php echo htmlspecialchars(vjt_format_for_visitor($event['occurred_at'], $v['timezone'] ?? '')); ?></td>
+                                                <td style="white-space:nowrap;font-weight:600;">
+                                                    <?php $coreJourneyStep = (int)($event['journey_step'] ?? 0); ?>
+                                                    <?php echo $coreJourneyStep > 0 ? 'Step ' . $coreJourneyStep : 'Before / without pageview'; ?>
+                                                </td>
                                                 <td><?php echo htmlspecialchars(ucfirst($event['channel'] ?? '')); ?></td>
                                                 <td><?php echo htmlspecialchars(str_replace('_', ' ', $event['event_type'] ?? '')); ?></td>
                                                 <td><span class="mono"><?php echo htmlspecialchars($event['page_path'] ?: '-'); ?></span><br><span style="color:#888;font-size:11px;"><?php echo htmlspecialchars($event['placement'] ?: '-'); ?></span></td>
@@ -1646,24 +1662,40 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                             <?php endif; ?>
 
                             <?php foreach ($journeyData['sessions'] as $sess):
-                                // Merge pageviews + submissions into one timeline sorted by time
+                                // The session timeline uses Contact Core as the canonical business
+                                // event source. Legacy submissions remain in the clearly labelled
+                                // enrichment table above and are not repeated here.
                                 $timeline = [];
+                                $stepSortTimes = [];
                                 foreach ($journeyData['pageviews'] as $pv) {
                                     if ($pv['session_id'] !== $sess['session_id']) continue;
                                     $pv['_type'] = 'pageview';
                                     $pv['_sort'] = $pv['visited_at'];
+                                    $pv['_sort_rank'] = 0;
+                                    $stepSortTimes[(int)($pv['step_order'] ?? 0)] = $pv['visited_at'];
                                     $timeline[] = $pv;
                                 }
-                                foreach ($journeyData['submissions'] as $sub) {
-                                    if ($sub['session_id'] !== $sess['session_id']) continue;
-                                    // Skip generic/search submissions (only show real conversions)
-                                    $plugin = $sub['form_plugin'] ?? '';
-                                    if ($plugin === 'generic') continue;
-                                    $sub['_type'] = 'submission';
-                                    $sub['_sort'] = $sub['submitted_at'];
-                                    $timeline[] = $sub;
+                                foreach ($journeyData['contact_events'] as $event) {
+                                    if (($event['vjt_session_id'] ?? '') !== $sess['session_id']) continue;
+                                    $event['_type'] = 'contact';
+                                    $resolvedStep = (int)($event['journey_step'] ?? 0);
+                                    // A validated step is stronger ordering evidence than clocks
+                                    // from two devices. Place the contact immediately after its
+                                    // pageview; legacy/unmatched rows still use occurred_at.
+                                    $event['_sort'] = $resolvedStep > 0 && isset($stepSortTimes[$resolvedStep])
+                                        ? $stepSortTimes[$resolvedStep] : $event['occurred_at'];
+                                    // A contact at the same stored second as its pageview belongs
+                                    // after that pageview, so the Journey step is readable in order.
+                                    $event['_sort_rank'] = 1;
+                                    $timeline[] = $event;
                                 }
-                                usort($timeline, function($a, $b) { return strcmp($a['_sort'], $b['_sort']); });
+                                usort($timeline, function($a, $b) {
+                                    $timeOrder = strcmp($a['_sort'], $b['_sort']);
+                                    if ($timeOrder !== 0) return $timeOrder;
+                                    $rankOrder = ($a['_sort_rank'] ?? 0) <=> ($b['_sort_rank'] ?? 0);
+                                    if ($rankOrder !== 0) return $rankOrder;
+                                    return (int)($a['id'] ?? 0) <=> (int)($b['id'] ?? 0);
+                                });
                             ?>
                             <div class="journey-section">
                                 <h3>
@@ -1697,17 +1729,26 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                 <?php if (!empty($timeline)): ?>
                                 <div class="timeline">
                                     <?php foreach ($timeline as $item): ?>
-                                        <?php if ($item['_type'] === 'submission'): ?>
+                                        <?php if ($item['_type'] === 'contact'): ?>
+                                            <?php
+                                                $timelineContactStep = (int)($item['journey_step'] ?? 0);
+                                                $timelineContactStatus = safeStatus($item['status'] ?? '');
+                                                $timelineContactChannel = ucfirst((string)($item['channel'] ?? 'Contact'));
+                                                $timelineContactEvent = str_replace('_', ' ', (string)($item['event_type'] ?? ''));
+                                                $timelineContactIcon = ($item['channel'] ?? '') === 'whatsapp' ? '💬' : ((($item['channel'] ?? '') === 'mailto') ? '✉️' : '📨');
+                                            ?>
                                             <div class="timeline-item" style="background:#f0fdf4;border-left:3px solid #22c55e;">
                                                 <div class="pv-url" style="color:#166534;">
-                                                    📨 <?php echo htmlspecialchars(($item['form_plugin'] ?? '') . ': ' . ($item['form_name'] ?? '')); ?>
+                                                    <?php echo $timelineContactIcon; ?>
+                                                    <?php echo $timelineContactStep > 0 ? 'At Step ' . $timelineContactStep : 'Before / without pageview'; ?> ·
+                                                    <?php echo htmlspecialchars($timelineContactChannel . ': ' . $timelineContactEvent); ?>
                                                 </div>
                                                 <div class="pv-meta">
-                                                    <?php echo htmlspecialchars(vjt_format_for_visitor($item['submitted_at'], $v['timezone'] ?? '')); ?> |
-                                                    <?php $timelineStatus = safeStatus($item['status'] ?? ''); ?>
-                                                    <span class="status status-<?php echo $timelineStatus; ?>"><?php echo htmlspecialchars(ucfirst($timelineStatus)); ?></span>
-                                                    <?php if ($item['submit_page']): ?>
-                                                        <br><a href="<?php echo safeHref($item['submit_page']); ?>" target="_blank" rel="noopener noreferrer" style="color:#8B7355;font-size:11px;"><?php echo htmlspecialchars(fmtUrl($item['submit_page'])); ?></a>
+                                                    <?php echo htmlspecialchars(vjt_format_for_visitor($item['occurred_at'], $v['timezone'] ?? '')); ?> |
+                                                    <span class="status status-<?php echo $timelineContactStatus; ?>"><?php echo htmlspecialchars(ucfirst($timelineContactStatus)); ?></span> |
+                                                    Placement: <?php echo htmlspecialchars($item['placement'] ?: '-'); ?>
+                                                    <?php if (!empty($item['page_path'])): ?>
+                                                        <br>Contact page: <a href="<?php echo safeHref($item['page_path']); ?>" target="_blank" rel="noopener noreferrer" style="color:#8B7355;font-size:11px;"><?php echo htmlspecialchars($item['page_path']); ?></a>
                                                     <?php endif; ?>
                                                 </div>
                                             </div>
@@ -2004,7 +2045,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
 
                             <h3 style="color:#e74c3c;margin-bottom:10px;">Danger Zone</h3>
                             <p style="color:#666;font-size:13px;margin-bottom:10px;">
-                                Delete tracking data older than the specified number of days.
+                                Delete Analytics Journey data older than the specified number of days. Core events follow the separate intent/inquiry retention settings above; 0 deletes everything.
                             </p>
                             <form method="POST" onsubmit="return confirm('Delete old data? This cannot be undone.');" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
                                 <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">

@@ -182,9 +182,12 @@ function recordInquiryOutcome($config, $data, $status, $visitorIP, $visitorCount
     $hasAnalyticsConsent = ($data['vjt_analytics_consent'] ?? '') === '1';
     $visitorId = trim($data['vjt_visitor_id'] ?? '');
     $sessionId = trim($data['vjt_session_id'] ?? '');
+    $journeyStep = is_numeric($data['vjt_journey_step'] ?? null)
+        ? min(10000, max(0, (int)$data['vjt_journey_step'])) : 0;
     if (!$hasAnalyticsConsent) {
         $visitorId = '';
         $sessionId = '';
+        $journeyStep = 0;
     }
     $submitPage = $data['vjt_submit_page'] ?? '';
     if (empty($submitPage)) {
@@ -209,8 +212,21 @@ function recordInquiryOutcome($config, $data, $status, $visitorIP, $visitorCount
 
     // The business outcome is authoritative and consent-independent. It is
     // intentionally stored without IP, UA, geo, referrer, UTM or path history.
+    // Linkage is optional enrichment, so require an existing visitor/session
+    // pair and strip it for excluded staff/test traffic. The Core event itself
+    // is still retained because the business email outcome remains real.
     try {
         vjt_data_init();
+        $resolvedLink = vjt_ip_is_excluded($visitorIP)
+            ? ['valid' => false, 'journey_step' => 0]
+            : vjt_resolve_analytics_link($visitorId, $sessionId, $journeyStep, $submitPage);
+        if (empty($resolvedLink['valid'])) {
+            $visitorId = '';
+            $sessionId = '';
+            $journeyStep = 0;
+        } else {
+            $journeyStep = (int)($resolvedLink['journey_step'] ?? 0);
+        }
         vjt_add_contact_event([
             'channel' => 'inquiry',
             'event_type' => $status === 'success' ? 'submission_success' : 'submission_error',
@@ -221,6 +237,7 @@ function recordInquiryOutcome($config, $data, $status, $visitorIP, $visitorCount
             'site_language' => $siteLanguage,
             'vjt_visitor_id' => $visitorId,
             'vjt_session_id' => $sessionId,
+            'journey_step' => $journeyStep,
         ]);
     } catch (Throwable $e) {
         error_log('Contact Core inquiry record error: ' . $e->getMessage());
@@ -235,10 +252,6 @@ function recordInquiryOutcome($config, $data, $status, $visitorIP, $visitorCount
 
     try {
         vjt_data_init();
-
-        // Staff/test traffic must still receive the business email, but it must
-        // not pollute VJT attribution. The IP resolver is server-trusted.
-        if (vjt_ip_is_excluded($visitorIP)) return;
 
         $ua = vjt_clip((string)($_SERVER['HTTP_USER_AGENT'] ?? ''), 512);
         vjt_upsert_visitor([
@@ -751,6 +764,8 @@ $vjtData = [
     'vjt_analytics_consent' => requestString($_POST['vjt_analytics_consent'] ?? '') === '1' ? '1' : '0',
     'vjt_visitor_id' => trim(requestString($_POST['vjt_visitor_id'] ?? '')),
     'vjt_session_id' => trim(requestString($_POST['vjt_session_id'] ?? '')),
+    'vjt_journey_step' => is_numeric($_POST['vjt_journey_step'] ?? null)
+        ? min(10000, max(0, (int)$_POST['vjt_journey_step'])) : 0,
     'vjt_submit_page' => vjt_safe_http_url($_POST['vjt_submit_page'] ?? ''),
     'vjt_submit_title' => vjt_clip(trim(requestString($_POST['vjt_submit_title'] ?? '')), 512),
     'vjt_referrer' => vjt_safe_http_url($_POST['vjt_referrer'] ?? ''),

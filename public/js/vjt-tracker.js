@@ -23,7 +23,8 @@
     'vjt_utm_campaign',
     'vjt_utm_content',
     'vjt_utm_term',
-    'vjt_analytics_consent'
+    'vjt_analytics_consent',
+    'vjt_journey_step'
   ];
   var flushed         = false;
   var maxScrollDepth  = 0;
@@ -434,7 +435,7 @@
   function cleanUrl(url) {
     // Strip VJT tracking parameters from URLs
     if (!url) return url;
-    return url.replace(/[?&]vjt_(visitor_id|session_id|submit_page|submit_title|referrer|landing_url|landing_title|path_snapshot|utm_source|utm_medium|utm_campaign|utm_content|utm_term|analytics_consent)=[^&]*/gi, '')
+    return url.replace(/[?&]vjt_(visitor_id|session_id|submit_page|submit_title|referrer|landing_url|landing_title|path_snapshot|utm_source|utm_medium|utm_campaign|utm_content|utm_term|analytics_consent|journey_step)=[^&]*/gi, '')
               .replace(/\?&/, '?')   // fix leftover ?& after first param is stripped
               .replace(/\?$/, '')
               .replace(/&$/, '');
@@ -464,6 +465,7 @@
       ensureHidden(form, hiddenNames[11], session.utmContent || '');
       ensureHidden(form, hiddenNames[12], session.utmTerm    || '');
       ensureHidden(form, hiddenNames[13], '1');
+      ensureHidden(form, hiddenNames[14], pageview && pageview.session_id === session.id ? String(pageview.step_order || 0) : '0');
     });
   }
 
@@ -734,16 +736,46 @@
     try {
       var url = new URL(href, window.location.href);
       url.searchParams.set('analytics', '1');
+      var pageview = readJson(PAGE_KEY);
+      var session = readJson(SESSION_KEY);
+      var step = pageview && Number(pageview.step_order);
+      if (pageview && session && pageview.session_id === session.id && step >= 1 && step <= 10000) {
+        url.searchParams.set('step', String(Math.floor(step)));
+      } else {
+        url.searchParams.delete('step');
+      }
       return url.pathname + url.search + url.hash;
     } catch (e) {
       return href;
     }
   }
 
+  function temporarilyEnhanceContactCoreAnchor(anchor, href) {
+    var original = anchor.getAttribute('href');
+    var enhanced = addContactCoreAnalyticsFlag(href);
+    anchor.setAttribute('href', enhanced);
+    setTimeout(function () {
+      if (anchor.getAttribute('href') !== enhanced) return;
+      if (original === null) anchor.removeAttribute('href');
+      else anchor.setAttribute('href', original);
+    }, 0);
+  }
+
+  function enhanceModifiedContactCoreClick(event) {
+    if (!cfg.enabled || event.defaultPrevented) return;
+    var anchor = resolveAnchor(event.target);
+    if (!anchor) return;
+    var kind = explicitContactKind(anchor);
+    var href = resolveContactHref(anchor, kind || '');
+    if (!kind) kind = classifyOutboundLink(href);
+    if (!kind || !isContactCoreLink(anchor, href)) return;
+    temporarilyEnhanceContactCoreAnchor(anchor, href);
+  }
+
   function bindOutboundLinks() {
     document.addEventListener('click', function (event) {
       if (!cfg.enabled) return;
-      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      if (event.defaultPrevented) return;
       var anchor = resolveAnchor(event.target);
       if (!anchor) return;
 
@@ -751,6 +783,13 @@
       var href = resolveContactHref(anchor, kind || '');
       if (!kind) kind = classifyOutboundLink(href);
       if (!kind) return;
+
+      // Keep native new-tab/new-window behaviour for modified clicks while
+      // still attaching the consented Journey linkage and exact current step.
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+        if (isContactCoreLink(anchor, href)) temporarilyEnhanceContactCoreAnchor(anchor, href);
+        return;
+      }
 
       event.preventDefault();
 
@@ -823,6 +862,11 @@
       };
 
       submitConversion(payload, markDone);
+    }, true);
+
+    // Chromium dispatches middle-click as auxclick rather than click.
+    document.addEventListener('auxclick', function (event) {
+      if (event.button === 1) enhanceModifiedContactCoreClick(event);
     }, true);
   }
 

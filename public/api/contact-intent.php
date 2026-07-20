@@ -21,7 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
     exit;
 }
 
-$channel = strtolower(trim((string)($_GET['channel'] ?? '')));
+$channelParam = $_GET['channel'] ?? '';
+$channel = is_scalar($channelParam) ? strtolower(trim((string)$channelParam)) : '';
 $destinations = [
     'whatsapp' => 'https://wa.me/8613510532553',
     'mailto' => 'mailto:sales@kssmi.com',
@@ -41,6 +42,18 @@ try {
 } catch (Throwable $e) {
     $shouldRecord = true;
     error_log('Contact Core rate-limit error: ' . $e->getMessage());
+}
+
+// This GET endpoint exists to preserve native WhatsApp/mail navigation, so it
+// can be embedded or prefetched without JavaScript. Do not turn cross-site
+// requests, images/subresources, or speculative prefetches into fake intents.
+$fetchSite = strtolower(trim((string)($_SERVER['HTTP_SEC_FETCH_SITE'] ?? '')));
+$fetchMode = strtolower(trim((string)($_SERVER['HTTP_SEC_FETCH_MODE'] ?? '')));
+$purpose = strtolower(trim((string)($_SERVER['HTTP_SEC_PURPOSE'] ?? ($_SERVER['HTTP_PURPOSE'] ?? ''))));
+if ($fetchSite === 'cross-site'
+    || ($fetchMode !== '' && $fetchMode !== 'navigate')
+    || strpos($purpose, 'prefetch') !== false) {
+    $shouldRecord = false;
 }
 
 try {
@@ -77,9 +90,25 @@ try {
         // explicit signal, any old/stale VJT cookies are ignored.
         $visitorId = '';
         $sessionId = '';
-        if (($_GET['analytics'] ?? '') === '1') {
+        $journeyStep = 0;
+        if (is_scalar($_GET['analytics'] ?? null) && (string)$_GET['analytics'] === '1') {
             $visitorId = trim((string)($_COOKIE['vjt_visitor_id'] ?? ''));
             $sessionId = trim((string)($_COOKIE['vjt_session_id'] ?? ''));
+            $journeyStep = is_scalar($_GET['step'] ?? null) && is_numeric($_GET['step'])
+                ? min(10000, max(0, (int)$_GET['step'])) : 0;
+            // A browser-controlled ID format is not enough to establish a
+            // Journey link. Excluded traffic and stale/forged pairs keep the
+            // business event, but it remains safely unattributed. A short
+            // bounded retry handles a first click that overtakes pageview POST.
+            $clientIp = vjt_get_client_ip();
+            $resolvedLink = vjt_ip_is_excluded($clientIp)
+                ? ['valid' => false]
+                : vjt_wait_for_analytics_link($visitorId, $sessionId, $journeyStep, $pagePath);
+            if (empty($resolvedLink['valid'])) {
+                $visitorId = '';
+                $sessionId = '';
+                $journeyStep = 0;
+            }
         }
 
         vjt_add_contact_event([
@@ -87,11 +116,12 @@ try {
             'event_type' => 'open_intent',
             'status' => 'intent',
             'page_path' => $pagePath,
-            'placement' => $_GET['placement'] ?? '',
+            'placement' => is_scalar($_GET['placement'] ?? null) ? (string)$_GET['placement'] : '',
             'product_sku' => $productSku,
             'site_language' => $siteLanguage,
             'vjt_visitor_id' => $visitorId,
             'vjt_session_id' => $sessionId,
+            'journey_step' => $journeyStep,
         ]);
     }
 } catch (Throwable $e) {
