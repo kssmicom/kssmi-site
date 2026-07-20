@@ -373,7 +373,7 @@ const currentUrl = Astro.url.pathname;
       </div>
 
       <!-- Form -->
-      <form id="inquiry-form" class="space-y-6">
+      <form id="inquiry-form" method="post" action="/send-mail.php" class="space-y-6">
         <!-- Hidden Fields for Context -->
         <input type="hidden" name="source" value="product_page" />
         <input type="hidden" name="product_url" value={currentUrl} />
@@ -702,7 +702,7 @@ const currentUrl = Astro.url.pathname;
       'vjt_submit_page', 'vjt_submit_title', 'vjt_referrer',
       'vjt_landing_url', 'vjt_landing_title', 'vjt_path_snapshot',
       'vjt_utm_source', 'vjt_utm_medium', 'vjt_utm_campaign',
-      'vjt_utm_content', 'vjt_utm_term'
+      'vjt_utm_content', 'vjt_utm_term', 'vjt_journey_step'
     ].forEach((name) => formData.delete(name));
   }
 

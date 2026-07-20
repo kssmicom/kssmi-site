@@ -707,7 +707,7 @@ const t = i18n[lang] || i18n.en;
               <span id="error-message" class="text-xs text-red-600"></span>
             </div>
 
-            <form id="rescue-form" class="space-y-3">
+            <form id="rescue-form" method="post" action="/send-mail.php" class="space-y-3">
               <label for="rescue-email" class="sr-only">{t.emailPlaceholder}</label>
               <input
                 type="email"

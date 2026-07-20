@@ -45,10 +45,29 @@ for (const file of homeCardFiles) {
 const astroConfig = read('astro.config.mjs');
 assert(astroConfig.includes("inlineStylesheets: 'auto'"), 'Astro must inline small CSS chunks while keeping the main critical bundle external.');
 
+// VJT injects consented Visitor/Session/Step fields only into POST forms so
+// search GET requests never leak analytics context into their URLs. These two
+// AJAX inquiry forms must therefore declare their real transport explicitly;
+// an omitted method defaults to GET in the DOM and silently drops attribution.
+const inquiryForm = read('src/components/InquiryForm.astro');
+const notFoundPage = read('src/components/pages/NotFoundPage.astro');
+assert(
+  /<form\s+id="inquiry-form"\s+method="post"\s+action="\/send-mail\.php"/.test(inquiryForm),
+  'Inquiry form must explicitly POST to /send-mail.php so VJT context reaches the successful Core outcome.',
+);
+assert(
+  /<form\s+id="rescue-form"\s+method="post"\s+action="\/send-mail\.php"/.test(notFoundPage),
+  '404 rescue form must explicitly POST to /send-mail.php so VJT context reaches the successful Core outcome.',
+);
+assert(
+  inquiryForm.includes("'vjt_utm_content', 'vjt_utm_term', 'vjt_journey_step'"),
+  'Inquiry consent withdrawal cleanup must remove the Journey step with the other VJT fields.',
+);
+
 if (failures.length) {
   console.error('DOM policy validation failed:');
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exit(1);
 }
 
-console.log('DOM policy validation passed: Header trees are lazy/singleton and home card features remain independently interactive.');
+console.log('DOM policy validation passed: Header trees, home cards, and inquiry attribution form contracts are intact.');
