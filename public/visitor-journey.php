@@ -194,16 +194,48 @@ if ($isAuthenticated && isset($_POST['delete_ids']) && isset($_POST['csrf_token'
     }
 }
 
-// Submission list rows are grouped by Visitor ID. Delete only that visitor's
-// contact events, not the visitor/session/pageview history.
-if ($isAuthenticated && isset($_POST['delete_lead_visitors']) && isset($_POST['csrf_token']) && hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
-    $visitorIds = array_values(array_filter(array_map('trim', explode(',', (string)$_POST['delete_lead_visitors']))));
-    if ($visitorIds) {
+// Canonical Lead rows are backed by Contact Core. Linked rows are grouped by
+// Visitor ID; unlinked rows are addressed by their stable Core event ID. This
+// never deletes Journey visitor/session/pageview history or legacy enrichment.
+$leadDeleteRaw = $_POST['delete_lead_keys'] ?? null;
+$legacyLeadDeleteRaw = $_POST['delete_lead_visitors'] ?? null;
+if ($isAuthenticated && ($leadDeleteRaw !== null || $legacyLeadDeleteRaw !== null)
+    && isset($_POST['csrf_token'], $_SESSION['csrf_token'])
+    && hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+    $keys = array_values(array_filter(array_map('trim', explode(',', (string)($leadDeleteRaw ?? '')))));
+    // Accept a cached copy of the old dashboard once during rolling deployment.
+    if (!$keys && $legacyLeadDeleteRaw !== null) {
+        foreach (array_filter(array_map('trim', explode(',', (string)$legacyLeadDeleteRaw))) as $visitorId) {
+            $keys[] = 'visitor:' . $visitorId;
+        }
+    }
+    if ($keys) {
         $db = vjt_db();
-        $placeholders = implode(',', array_fill(0, count($visitorIds), '?'));
-        $stmt = $db->prepare("DELETE FROM submissions WHERE visitor_id IN ($placeholders)");
-        $stmt->execute($visitorIds);
-        $message = count($visitorIds) . ' contact lead(s) and their contact events deleted.';
+        $deleted = 0;
+        $db->beginTransaction();
+        try {
+            $deleteVisitorEvents = $db->prepare("DELETE FROM contact_events WHERE vjt_visitor_id = ?");
+            $deleteSingleEvent = $db->prepare("DELETE FROM contact_events WHERE event_id = ?");
+            foreach (array_unique($keys) as $key) {
+                if (strpos($key, 'visitor:') === 0) {
+                    $visitorId = substr($key, 8);
+                    if (!preg_match('/^vjtv_[A-Za-z0-9_-]{8,60}$/', $visitorId)) continue;
+                    $deleteVisitorEvents->execute([$visitorId]);
+                    $deleted += $deleteVisitorEvents->rowCount();
+                } elseif (strpos($key, 'event:') === 0) {
+                    $eventId = substr($key, 6);
+                    if (!preg_match('/^vjtce_[A-Za-z0-9_-]{8,80}$/', $eventId)) continue;
+                    $deleteSingleEvent->execute([$eventId]);
+                    $deleted += $deleteSingleEvent->rowCount();
+                }
+            }
+            $db->commit();
+            $message = $deleted . ' Contact Core event(s) deleted. Journey history was preserved.';
+        } catch (Exception $e) {
+            if ($db->inTransaction()) $db->rollBack();
+            $message = 'Failed to delete Lead event(s).';
+            error_log('VJT Lead deletion error: ' . $e->getMessage());
+        }
     }
 }
 
@@ -234,9 +266,9 @@ if ($isAuthenticated && isset($_POST['delete_visitor']) && isset($_POST['csrf_to
 // Handle CSV export
 if ($isAuthenticated && isset($_GET['export_csv'])) {
     session_write_close();
-    vjt_export_submissions_csv_start([
-        'status' => $_GET['status'] ?? '',
-        'plugin' => $_GET['plugin'] ?? '',
+    vjt_export_leads_csv_start([
+        'status' => $_GET['status'] ?? 'contact',
+        'channel' => $_GET['channel'] ?? ($_GET['plugin'] ?? ''),
         'date_from' => $_GET['date_from'] ?? '',
         'date_to' => $_GET['date_to'] ?? '',
     ]);
@@ -274,7 +306,7 @@ if ($isAuthenticated && !empty($_GET['export_journey_csv']) && !empty($_GET['vis
 
 $overview = null;
 $contactEvents = [];
-$submissions = [];
+$leads = [];
 $visitors = [];
 $journeyData = null;
 $aiReferrals = [];
@@ -326,36 +358,28 @@ if ($isAuthenticated && $tab === 'contacts') {
     $contactTotal = $result['total'];
 }
 
-// ── Submissions list ─────────────────────────────────────────────────────────
+// ── Canonical Contact Core Leads list ────────────────────────────────────────
 
-$subPage     = max(1, (int)($_GET['sp'] ?? 1));
-$subPerPage  = 100;
-$subStatus   = $_GET['status'] ?? 'contact';
-$subPlugin   = $_GET['plugin'] ?? '';
-$subDateFrom = $_GET['date_from'] ?? '';
-$subDateTo   = $_GET['date_to'] ?? '';
-$subTotal    = 0;
+$leadPage     = max(1, (int)($_GET['sp'] ?? 1));
+$leadPerPage  = 100;
+$leadStatus   = $_GET['status'] ?? 'contact';
+$leadChannel  = $_GET['channel'] ?? ($_GET['plugin'] ?? '');
+if ($leadChannel === 'kssmi-inquiry') $leadChannel = 'inquiry';
+$leadDateFrom = $_GET['date_from'] ?? '';
+$leadDateTo   = $_GET['date_to'] ?? '';
+$leadTotal    = 0;
 
 if ($isAuthenticated && $tab === 'submissions') {
-    $result = vjt_get_submissions_list([
-        'status' => $subStatus,
-        'plugin' => $subPlugin,
-        'date_from' => $subDateFrom,
-        'date_to' => $subDateTo,
-        'page' => $subPage,
-        'per_page' => $subPerPage,
+    $result = vjt_get_leads_list([
+        'status' => $leadStatus,
+        'channel' => $leadChannel,
+        'date_from' => $leadDateFrom,
+        'date_to' => $leadDateTo,
+        'page' => $leadPage,
+        'per_page' => $leadPerPage,
     ]);
-    $submissions = $result['items'];
-    $subTotal = $result['total'];
-
-    foreach ($submissions as &$sub) {
-        if ($sub['status'] === 'attempt' && strtotime($sub['submitted_at']) < time() - 1800) {
-            $sub['display_status'] = 'abandoned';
-        } else {
-            $sub['display_status'] = $sub['status'];
-        }
-    }
-    unset($sub);
+    $leads = $result['items'];
+    $leadTotal = $result['total'];
 }
 
 // ── Traffic Performance ──────────────────────────────────────────────────────
@@ -498,7 +522,7 @@ function sourceBadge($source) {
     return "<span style='background:{$info[1]};color:{$info[0]};padding:2px 8px;border-radius:3px;font-size:11px;font-weight:600;'>{$info[2]}</span>";
 }
 
-$subTotalPages = ceil($subTotal / $subPerPage);
+$leadTotalPages = ceil($leadTotal / $leadPerPage);
 $contactTotalPages = ceil($contactTotal / $contactPerPage);
 $visTotalPages = ceil($visTotal / $visPerPage);
 
@@ -903,12 +927,12 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                         <div class="stat-card">
                             <div class="core-leads">
                                 <span title="Core contacts in selected period">C <strong><?php echo number_format($overview['totalCore']); ?></strong></span>
-                                <span title="Journey-attributed leads in selected period">L <strong><?php echo number_format($overview['totalSubmissions']); ?></strong></span>
+                                <span title="Journey-attributed leads in selected period">L <strong><?php echo number_format($overview['totalLeads']); ?></strong></span>
                             </div>
                         </div>
                         <div class="stat-card">
                             <h3>Lead Rate</h3>
-                            <div class="value"><?php echo $overview['totalSessions'] > 0 ? round(($overview['totalSubmissions'] / $overview['totalSessions']) * 100, 1) . '%' : '0%'; ?></div>
+                            <div class="value"><?php echo htmlspecialchars((string)$overview['conversionRate']); ?>%</div>
                         </div>
                         <div class="stat-card">
                             <h3>Avg Active Time</h3>
@@ -916,7 +940,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                         </div>
                     </div>
 
-                    <!-- Submission Trend -->
+                    <!-- Canonical Lead Trend -->
                     <?php
                     $trendData = $overview['trend'] ?? [];
                     $coreTrendData = $overview['coreTrend'] ?? [];
@@ -1174,47 +1198,48 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                     </div>
 
                 <?php elseif ($tab === 'submissions'): ?>
-                    <!-- Submissions List -->
+                    <!-- Canonical Contact Core Leads -->
                     <div class="panel">
                         <div class="panel-header">
-                            Leads (unique Visitors: <?php echo number_format($subTotal); ?>)
+                            Leads (canonical rows: <?php echo number_format($leadTotal); ?>)
                             <div>
-                                <a href="?tab=submissions&export_csv=1<?php echo $subStatus ? '&status=' . urlencode($subStatus) : ''; ?><?php echo $subPlugin ? '&plugin=' . urlencode($subPlugin) : ''; ?><?php echo $subDateFrom ? '&date_from=' . urlencode($subDateFrom) : ''; ?><?php echo $subDateTo ? '&date_to=' . urlencode($subDateTo) : ''; ?>" class="btn btn-success btn-small">Export CSV (<?php echo number_format($subTotal); ?> rows)</a>
+                                <a href="?tab=submissions&export_csv=1&status=<?php echo urlencode($leadStatus); ?><?php echo $leadChannel ? '&channel=' . urlencode($leadChannel) : ''; ?><?php echo $leadDateFrom ? '&date_from=' . urlencode($leadDateFrom) : ''; ?><?php echo $leadDateTo ? '&date_to=' . urlencode($leadDateTo) : ''; ?>" class="btn btn-success btn-small">Export CSV (<?php echo number_format($leadTotal); ?> rows)</a>
                             </div>
                         </div>
                         <div class="panel-body">
+                            <div style="margin-bottom:12px;color:#666;font-size:12px;line-height:1.5;">
+                                Contact Core is the canonical Lead source. Linked events are grouped by Visitor; unlinked events remain separate because no Analytics identity exists.
+                            </div>
                             <details class="filter-disclosure" open>
                                 <summary>Filters <span class="filter-summary-hint"></span></summary>
                             <form class="filters" method="GET">
                                 <input type="hidden" name="tab" value="submissions">
                                 <input type="hidden" name="csrf_token" id="vjt_csrf" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
                                 <select name="status">
-                                    <option value="contact" <?php echo $subStatus === 'contact' ? 'selected' : ''; ?>>Contacts (Success + Intent)</option>
+                                    <option value="contact" <?php echo $leadStatus === 'contact' ? 'selected' : ''; ?>>Contacts (Success + Intent)</option>
                                     <option value="">All Statuses</option>
-                                    <option value="success" <?php echo $subStatus === 'success' ? 'selected' : ''; ?>>Success</option>
-                                    <option value="intent" <?php echo $subStatus === 'intent' ? 'selected' : ''; ?>>Contact Intent</option>
-                                    <option value="attempt" <?php echo $subStatus === 'attempt' ? 'selected' : ''; ?>>Attempt</option>
-                                    <option value="error" <?php echo $subStatus === 'error' ? 'selected' : ''; ?>>Error</option>
+                                    <option value="success" <?php echo $leadStatus === 'success' ? 'selected' : ''; ?>>Confirmed Inquiry</option>
+                                    <option value="intent" <?php echo $leadStatus === 'intent' ? 'selected' : ''; ?>>Contact Intent</option>
+                                    <option value="error" <?php echo $leadStatus === 'error' ? 'selected' : ''; ?>>Error</option>
                                 </select>
-                                <select name="plugin">
-                                    <option value="">All Forms</option>
-                                    <option value="kssmi-inquiry" <?php echo $subPlugin === 'kssmi-inquiry' ? 'selected' : ''; ?>>Inquiry Form</option>
-                                    <option value="whatsapp" <?php echo $subPlugin === 'whatsapp' ? 'selected' : ''; ?>>WhatsApp Click</option>
-                                    <option value="mailto" <?php echo $subPlugin === 'mailto' ? 'selected' : ''; ?>>Mailto Click</option>
-                                    <option value="generic" <?php echo $subPlugin === 'generic' ? 'selected' : ''; ?>>Generic</option>
+                                <select name="channel">
+                                    <option value="">All Channels</option>
+                                    <option value="inquiry" <?php echo $leadChannel === 'inquiry' ? 'selected' : ''; ?>>Inquiry Form</option>
+                                    <option value="whatsapp" <?php echo $leadChannel === 'whatsapp' ? 'selected' : ''; ?>>WhatsApp Intent</option>
+                                    <option value="mailto" <?php echo $leadChannel === 'mailto' ? 'selected' : ''; ?>>Mailto Intent</option>
                                 </select>
-                                <input type="date" name="date_from" value="<?php echo htmlspecialchars($subDateFrom); ?>" placeholder="From">
-                                <input type="date" name="date_to" value="<?php echo htmlspecialchars($subDateTo); ?>" placeholder="To">
+                                <input type="date" name="date_from" value="<?php echo htmlspecialchars($leadDateFrom); ?>" placeholder="From">
+                                <input type="date" name="date_to" value="<?php echo htmlspecialchars($leadDateTo); ?>" placeholder="To">
                                 <button type="submit" class="btn btn-primary btn-small">Filter</button>
-                                <?php if ($subStatus || $subPlugin || $subDateFrom || $subDateTo): ?>
+                                <?php if ($leadStatus !== 'contact' || $leadChannel || $leadDateFrom || $leadDateTo): ?>
                                     <a href="?tab=submissions" class="btn btn-secondary btn-small">Clear</a>
                                 <?php endif; ?>
                                 <button type="button" class="btn btn-danger btn-small" onclick="vjtBulkDelete()" style="margin-left:12px;">Delete</button>
                             </form>
                             </details>
 
-                            <?php if (empty($submissions)): ?>
-                                <div class="empty"><div class="empty-icon">📋</div><p>No submissions found</p></div>
+                            <?php if (empty($leads)): ?>
+                                <div class="empty"><div class="empty-icon">📋</div><p>No Contact Core Leads found</p></div>
                             <?php else: ?>
                                 <div class="table-wrapper">
                                     <table>
@@ -1222,37 +1247,44 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                             <tr>
                                                 <th style="width:30px;"><input type="checkbox" id="vjtSelectAll" onclick="vjtToggleAll()"></th>
                                                 <th>Last Contact (Beijing)</th>
-                                                <th>Visitor ID</th>
+                                                <th>Attribution</th>
                                                 <th>Channels</th>
                                                 <th style="text-align:center;">Events</th>
-                                                <th>Page</th>
-                                                <th>IP / Country</th>
+                                                <th>Page / Placement</th>
+                                                <th>Latest Event</th>
                                                 <th>Status</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach ($submissions as $sub): ?>
+                                            <?php foreach ($leads as $lead): ?>
                                                 <tr>
-                                                    <td><input type="checkbox" class="vjt-row-cb" value="<?php echo htmlspecialchars($sub['visitor_id']); ?>"></td>
+                                                    <td><input type="checkbox" class="vjt-row-cb" value="<?php echo htmlspecialchars($lead['lead_key']); ?>"></td>
                                                     <td style="white-space:nowrap;font-size:12px;">
-                                                        <?php echo htmlspecialchars(vjt_format_for_admin($sub['last_submitted_at'] ?? $sub['submitted_at'])); ?>
+                                                        <?php echo htmlspecialchars(vjt_format_for_admin($lead['last_contact_at'] ?? $lead['occurred_at'])); ?>
                                                     </td>
-                                                    <td class="mono"><a href="?tab=journey&visitor_id=<?php echo urlencode($sub['visitor_id']); ?>" class="link"><?php echo htmlspecialchars(str_replace('vjtv_', '', $sub['visitor_id'])); ?></a></td>
-                                                    <td><?php echo htmlspecialchars($sub['channels'] ?? $sub['form_name']); ?></td>
-                                                    <td style="text-align:center;"><?php echo number_format((int)($sub['event_count'] ?? 1)); ?></td>
-                                                    <td class="url-cell"><a href="<?php echo safeHref($sub['submit_page'] ?? ''); ?>" target="_blank" rel="noopener noreferrer"><?php echo htmlspecialchars(fmtUrl($sub['submit_page'] ?? '-')); ?></a></td>
                                                     <td>
-                                                        <?php echo htmlspecialchars($sub['ip']); ?>
-                                                        <?php if ($sub['country']): ?>
-                                                            <br><span class="country-badge"><?php echo htmlspecialchars(getCountryName($sub['country'])); ?></span>
+                                                        <?php if (!empty($lead['vjt_visitor_id'])): ?>
+                                                            <a href="?tab=journey&visitor_id=<?php echo urlencode($lead['vjt_visitor_id']); ?>" class="link mono"><?php echo htmlspecialchars(str_replace('vjtv_', '', $lead['vjt_visitor_id'])); ?></a>
+                                                            <br><span style="color:#888;font-size:11px;">Consented Journey</span>
+                                                        <?php else: ?>
+                                                            <span style="color:#888;">Unattributed</span>
+                                                            <br><span style="color:#888;font-size:11px;">No analytics linkage</span>
                                                         <?php endif; ?>
                                                     </td>
-                                                    <?php $displayStatus = safeStatus($sub['display_status'] ?? ''); ?>
+                                                    <td><?php echo htmlspecialchars($lead['channels'] ?? $lead['channel']); ?></td>
+                                                    <td style="text-align:center;"><?php echo number_format((int)($lead['event_count'] ?? 1)); ?></td>
+                                                    <td><span class="mono"><?php echo htmlspecialchars($lead['page_path'] ?: '-'); ?></span><br><span style="color:#888;font-size:11px;"><?php echo htmlspecialchars($lead['placement'] ?: '-'); ?></span></td>
+                                                    <td><?php echo htmlspecialchars(str_replace('_', ' ', $lead['event_type'] ?? '-')); ?><br><span style="color:#888;font-size:11px;"><?php echo htmlspecialchars($lead['product_sku'] ?: ($lead['site_language'] ?: '-')); ?></span></td>
+                                                    <?php $displayStatus = safeStatus($lead['display_status'] ?? ''); ?>
                                                     <td><span class="status status-<?php echo $displayStatus; ?>"><?php echo htmlspecialchars(ucfirst($displayStatus)); ?></span></td>
                                                     <td style="white-space:nowrap;">
-                                                        <a href="?tab=journey&visitor_id=<?php echo urlencode($sub['visitor_id']); ?>" class="btn btn-primary btn-small">Check</a>
-                                                        <button type="button" class="btn btn-danger btn-small" onclick="vjtDeleteLead(<?php echo jsArg($sub['visitor_id']); ?>)" title="Delete this contact lead and its contact events">Del</button>
+                                                        <?php if (!empty($lead['vjt_visitor_id'])): ?>
+                                                            <a href="?tab=journey&visitor_id=<?php echo urlencode($lead['vjt_visitor_id']); ?>" class="btn btn-primary btn-small">Check</a>
+                                                        <?php else: ?>
+                                                            <button type="button" class="btn btn-secondary btn-small" disabled aria-disabled="true" title="No consented Journey is linked" style="opacity:.45;cursor:not-allowed;">Check</button>
+                                                        <?php endif; ?>
+                                                        <button type="button" class="btn btn-danger btn-small" onclick="vjtDeleteLead(<?php echo jsArg($lead['lead_key']); ?>)" title="Delete this canonical Contact Core Lead event set">Del</button>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>
@@ -1261,12 +1293,12 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                 </div>
 
                                 <?php
-                                    $subBase = ['tab' => 'submissions'];
-                                    if ($subStatus)   $subBase['status'] = $subStatus;
-                                    if ($subPlugin)   $subBase['plugin'] = $subPlugin;
-                                    if ($subDateFrom) $subBase['date_from'] = $subDateFrom;
-                                    if ($subDateTo)   $subBase['date_to'] = $subDateTo;
-                                    echo vjtPagination('sp', $subPage, $subTotalPages, $subBase);
+                                    $leadBase = ['tab' => 'submissions'];
+                                    if ($leadStatus)   $leadBase['status'] = $leadStatus;
+                                    if ($leadChannel)  $leadBase['channel'] = $leadChannel;
+                                    if ($leadDateFrom) $leadBase['date_from'] = $leadDateFrom;
+                                    if ($leadDateTo)   $leadBase['date_to'] = $leadDateTo;
+                                    echo vjtPagination('sp', $leadPage, $leadTotalPages, $leadBase);
                                 ?>
                             <?php endif; ?>
                         </div>
@@ -1429,11 +1461,8 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                     <option value="10" <?php echo $visSessionsMin === '10' ? 'selected' : ''; ?>>10+</option>
                                 </select>
                                 <select name="submissions_min">
-                                    <option value="">Submissions (min)</option>
-                                    <option value="1" <?php echo $visSubmissionsMin === '1' ? 'selected' : ''; ?>>1+</option>
-                                    <option value="2" <?php echo $visSubmissionsMin === '2' ? 'selected' : ''; ?>>2+</option>
-                                    <option value="3" <?php echo $visSubmissionsMin === '3' ? 'selected' : ''; ?>>3+</option>
-                                    <option value="5" <?php echo $visSubmissionsMin === '5' ? 'selected' : ''; ?>>5+</option>
+                                    <option value="">Any Lead status</option>
+                                    <option value="1" <?php echo $visSubmissionsMin === '1' ? 'selected' : ''; ?>>Has Lead</option>
                                 </select>
                                 <select name="session_time_min">
                                     <option value="">Session Time (min)</option>
@@ -1478,7 +1507,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                                 <th><?php echo sortLink('device_type', 'Device', $visSortBy, $visSortOrder); ?></th>
                                                 <th><?php echo sortLink('browser', 'Browser', $visSortBy, $visSortOrder); ?></th>
                                                 <th style="text-align:center;"><?php echo sortLink('sessions', 'Sessions', $visSortBy, $visSortOrder); ?></th>
-                                                <th style="text-align:center;"><?php echo sortLink('submissions', 'Submissions', $visSortBy, $visSortOrder); ?></th>
+                                                <th style="text-align:center;"><?php echo sortLink('submissions', 'Leads', $visSortBy, $visSortOrder); ?></th>
                                                 <th><?php echo sortLink('source', 'Source', $visSortBy, $visSortOrder); ?></th>
                                                 <th></th>
                                             </tr>
@@ -1573,7 +1602,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                             ?>
                             <?php if (!empty($realSubmissions)): ?>
                             <div class="journey-section">
-                                <h3>Submissions (<?php echo count($realSubmissions); ?>)</h3>
+                                <h3>Legacy Analytics Enrichment (<?php echo count($realSubmissions); ?>)</h3>
                                 <div class="table-wrapper">
                                     <table>
                                         <thead><tr><th>Time</th><th>Form</th><th>Page</th><th>Status</th></tr></thead>
@@ -2052,11 +2081,11 @@ function vjtSubmitContactDeletion(ids) {
 function vjtBulkDelete() {
   var ids = vjtGetSelected();
   if (!ids.length) { alert('No rows selected.'); return; }
-  if (!confirm('Delete ' + ids.length + ' contact lead(s) and their contact events? This cannot be undone.')) return;
+  if (!confirm('Delete the selected canonical Contact Core Lead event(s)? Journey history will be preserved. This cannot be undone.')) return;
   var form = document.createElement('form');
   form.method = 'POST';
   var leadInput = document.createElement('input');
-  leadInput.name = 'delete_lead_visitors';
+  leadInput.name = 'delete_lead_keys';
   leadInput.value = ids.join(',');
   form.appendChild(leadInput);
   var csrf = document.createElement('input');
@@ -2066,13 +2095,13 @@ function vjtBulkDelete() {
   document.body.appendChild(form);
   form.submit();
 }
-function vjtDeleteLead(visitorId) {
-  if (!confirm('Delete this contact lead and all of its contact events? This will not delete visitor history.')) return;
+function vjtDeleteLead(leadKey) {
+  if (!confirm('Delete this canonical Contact Core Lead event set? Journey history will be preserved.')) return;
   var form = document.createElement('form');
   form.method = 'POST';
   var leadInput = document.createElement('input');
-  leadInput.name = 'delete_lead_visitors';
-  leadInput.value = visitorId;
+  leadInput.name = 'delete_lead_keys';
+  leadInput.value = leadKey;
   form.appendChild(leadInput);
   var csrf = document.createElement('input');
   csrf.name = 'csrf_token';

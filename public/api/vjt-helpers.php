@@ -382,6 +382,8 @@ function vjt_create_schema() {
     $db->exec("CREATE INDEX IF NOT EXISTS idx_contact_channel ON contact_events(channel)");
     $db->exec("CREATE INDEX IF NOT EXISTS idx_contact_status ON contact_events(status)");
     $db->exec("CREATE INDEX IF NOT EXISTS idx_contact_visitor ON contact_events(vjt_visitor_id)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_contact_session ON contact_events(vjt_session_id)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_contact_status_visitor ON contact_events(status, vjt_visitor_id)");
     $db->exec("CREATE INDEX IF NOT EXISTS idx_sess_visitor ON sessions(visitor_id)");
     $db->exec("CREATE INDEX IF NOT EXISTS idx_sess_started ON sessions(started_at)");
     $db->exec("CREATE INDEX IF NOT EXISTS idx_sess_seen    ON sessions(last_seen_at)");
@@ -1657,14 +1659,17 @@ function vjt_get_overview($since) {
     $totalSessionsStmt->execute([$since]);
     $totalSessions = (int)$totalSessionsStmt->fetch()['c'];
 
-    $subStmt = $db->prepare("SELECT
-            COUNT(DISTINCT CASE WHEN status IN ('success','intent') THEN visitor_id END) total,
-            COUNT(DISTINCT CASE WHEN status IN ('success','intent') THEN visitor_id END) success
-        FROM submissions WHERE submitted_at >= ?");
-    $subStmt->execute([$since]);
-    $subRow = $subStmt->fetch();
-    $totalSubmissions = (int)($subRow['total'] ?? 0);
-    $successSubmissions = (int)($subRow['success'] ?? 0);
+    // Contact Core is the canonical Lead ledger. L counts only Core contacts
+    // with a consented Journey linkage; unlinked contacts remain visible in C
+    // and in the Leads list, but cannot be attributed to a unique visitor.
+    $leadStmt = $db->prepare("SELECT
+            COUNT(DISTINCT CASE WHEN status IN ('success','intent') AND vjt_visitor_id <> '' THEN vjt_visitor_id END) total,
+            COUNT(DISTINCT CASE WHEN status = 'success' AND vjt_visitor_id <> '' THEN vjt_visitor_id END) success
+        FROM contact_events WHERE occurred_at >= ?");
+    $leadStmt->execute([$since]);
+    $leadRow = $leadStmt->fetch();
+    $totalLeads = (int)($leadRow['total'] ?? 0);
+    $successLeads = (int)($leadRow['success'] ?? 0);
 
     // C follows the same selected Overview period as Visitors, Sessions and L.
     // It counts valid Core events; L remains the attributed unique-visitor count.
@@ -1678,14 +1683,14 @@ function vjt_get_overview($since) {
     $durStmt->execute([$since]);
     $durRow = $durStmt->fetch();
     $avgDuration = $durRow && $durRow['a'] !== null ? round($durRow['a']) : 0;
-    $conversionRate = $totalSessions > 0 ? round(($successSubmissions / $totalSessions) * 100, 1) : 0;
+    $conversionRate = $totalSessions > 0 ? round(($totalLeads / $totalSessions) * 100, 1) : 0;
 
-    // Submission trend (30 days)
+    // Journey-attributed unique Lead trend (30 days)
     $trend = [];
     for ($i = 29; $i >= 0; $i--) { $trend[date('Y-m-d', strtotime("-{$i} days"))] = 0; }
-    $trendStmt = $db->prepare("SELECT substr(datetime(submitted_at, '+8 hours'),1,10) d,
-            COUNT(DISTINCT visitor_id) c FROM submissions
-        WHERE submitted_at >= ? AND status IN ('success','intent')
+    $trendStmt = $db->prepare("SELECT substr(datetime(occurred_at, '+8 hours'),1,10) d,
+            COUNT(DISTINCT vjt_visitor_id) c FROM contact_events
+        WHERE occurred_at >= ? AND status IN ('success','intent') AND vjt_visitor_id <> ''
         GROUP BY d");
     $trendStmt->execute([vjt_admin_date_to_utc(date('Y-m-d', strtotime('-29 days')))]);
     $rows = $trendStmt->fetchAll();
@@ -1701,11 +1706,12 @@ function vjt_get_overview($since) {
         if (isset($coreTrend[$r['d']])) $coreTrend[$r['d']] = (int)$r['c'];
     }
 
-    // Submission trend (12 months)
+    // Journey-attributed unique Lead trend (12 months)
     $trendMonthly = [];
     for ($i = 11; $i >= 0; $i--) { $trendMonthly[date('Y-m', strtotime("-{$i} months"))] = 0; }
-    $monthlyStmt = $db->prepare("SELECT substr(datetime(submitted_at, '+8 hours'),1,7) m,
-            COUNT(DISTINCT visitor_id) c FROM submissions WHERE status IN ('success','intent') GROUP BY m");
+    $monthlyStmt = $db->prepare("SELECT substr(datetime(occurred_at, '+8 hours'),1,7) m,
+            COUNT(DISTINCT vjt_visitor_id) c FROM contact_events
+        WHERE status IN ('success','intent') AND vjt_visitor_id <> '' GROUP BY m");
     $monthlyStmt->execute();
     $rows = $monthlyStmt->fetchAll();
     foreach ($rows as $r) { if (isset($trendMonthly[$r['m']])) $trendMonthly[$r['m']] = (int)$r['c']; }
@@ -1718,11 +1724,12 @@ function vjt_get_overview($since) {
         if (isset($coreTrendMonthly[$r['m']])) $coreTrendMonthly[$r['m']] = (int)$r['c'];
     }
 
-    // Submission trend (years)
+    // Journey-attributed unique Lead trend (years)
     $trendYearly = [];
     $minYear = (int)date('Y');
-    $yearlyStmt = $db->prepare("SELECT substr(datetime(submitted_at, '+8 hours'),1,4) y,
-            COUNT(DISTINCT visitor_id) c FROM submissions WHERE status IN ('success','intent') GROUP BY y");
+    $yearlyStmt = $db->prepare("SELECT substr(datetime(occurred_at, '+8 hours'),1,4) y,
+            COUNT(DISTINCT vjt_visitor_id) c FROM contact_events
+        WHERE status IN ('success','intent') AND vjt_visitor_id <> '' GROUP BY y");
     $yearlyStmt->execute();
     $rows = $yearlyStmt->fetchAll();
     $yearCounts = [];
@@ -1760,9 +1767,9 @@ function vjt_get_overview($since) {
     }
     foreach ($refVisitors as $label => $set) $refStats[$label]['visitors'] = count($set);
 
-    $refLeadStmt = $db->prepare("SELECT s.visitor_id, sess.referrer, sess.utm_source, sess.utm_medium
-        FROM submissions s JOIN sessions sess ON sess.session_id = s.session_id
-        WHERE s.submitted_at >= ? AND s.status IN ('success','intent')");
+    $refLeadStmt = $db->prepare("SELECT c.vjt_visitor_id AS visitor_id, sess.referrer, sess.utm_source, sess.utm_medium
+        FROM contact_events c JOIN sessions sess ON sess.session_id = c.vjt_session_id
+        WHERE c.occurred_at >= ? AND c.status IN ('success','intent') AND c.vjt_visitor_id <> ''");
     $refLeadStmt->execute([$since]);
     $refLeads = [];
     while ($r = $refLeadStmt->fetch()) {
@@ -1802,9 +1809,9 @@ function vjt_get_overview($since) {
     foreach ($sourceVisitorSets as $src => $set) $sourceVisitorCounts[$src] = count($set);
 
     $sourceLeadSets = [];
-    $sourceLeadStmt = $db->prepare("SELECT s.visitor_id, sess.referrer, sess.utm_source, sess.utm_medium
-        FROM submissions s JOIN sessions sess ON sess.session_id = s.session_id
-        WHERE s.submitted_at >= ? AND s.status IN ('success','intent')");
+    $sourceLeadStmt = $db->prepare("SELECT c.vjt_visitor_id AS visitor_id, sess.referrer, sess.utm_source, sess.utm_medium
+        FROM contact_events c JOIN sessions sess ON sess.session_id = c.vjt_session_id
+        WHERE c.occurred_at >= ? AND c.status IN ('success','intent') AND c.vjt_visitor_id <> ''");
     $sourceLeadStmt->execute([$since]);
     while ($s = $sourceLeadStmt->fetch()) {
         $src = vjt_classify_source($s);
@@ -1816,8 +1823,12 @@ function vjt_get_overview($since) {
     return [
         'totalVisitors'      => $totalVisitors,
         'totalSessions'      => $totalSessions,
-        'totalSubmissions'   => $totalSubmissions,
-        'successSubmissions' => $successSubmissions,
+        'totalLeads'         => $totalLeads,
+        'successLeads'       => $successLeads,
+        // Compatibility aliases for any external dashboard consumers that still
+        // read the pre-Contact-Core response names.
+        'totalSubmissions'   => $totalLeads,
+        'successSubmissions' => $successLeads,
         'totalCore'          => $totalCore,
         'avgDuration'        => $avgDuration,
         'conversionRate'     => $conversionRate,
@@ -1842,7 +1853,8 @@ function vjt_get_ai_referrals($since) {
         FROM sessions WHERE started_at >= ? AND source_type = 'ai'");
     $stmt->execute([$since]);
     $rows = [];
-    $leadStmt = $db->prepare("SELECT 1 FROM submissions WHERE session_id = ? AND status IN ('success','intent') LIMIT 1");
+    $leadStmt = $db->prepare("SELECT 1 FROM contact_events
+        WHERE vjt_session_id = ? AND status IN ('success','intent') LIMIT 1");
     foreach ($stmt->fetchAll() as $session) {
         $platform = $session['source_slug'] ?: 'other-ai';
         if (!isset($rows[$platform])) $rows[$platform] = ['platform'=>$platform, 'sessions'=>0, 'visitors'=>[], 'leads'=>[], 'pages'=>[]];
@@ -1862,32 +1874,40 @@ function vjt_get_ai_referrals($since) {
     return $out;
 }
 
-// ── Dashboard: Submissions List ──────────────────────────────────────────────
+// ── Dashboard: Canonical Leads List ──────────────────────────────────────────
 
-function vjt_get_submissions_list($filters) {
+function vjt_get_leads_list($filters) {
     $db = vjt_db();
     $where = [];
     $params = [];
     if (($filters['status'] ?? '') === 'contact') {
         $where[] = "status IN ('success','intent')";
-    } elseif (!empty($filters['status'])) {
+    } elseif (in_array($filters['status'] ?? '', ['success', 'intent', 'error'], true)) {
         $where[] = "status = ?";
         $params[] = $filters['status'];
     }
-    if (!empty($filters['plugin']))  { $where[] = "form_plugin = ?";  $params[] = $filters['plugin']; }
+    $channel = strtolower(trim((string)($filters['channel'] ?? ($filters['plugin'] ?? ''))));
+    if ($channel === 'kssmi-inquiry') $channel = 'inquiry';
+    if (in_array($channel, ['whatsapp', 'mailto', 'inquiry'], true)) {
+        $where[] = "channel = ?";
+        $params[] = $channel;
+    }
     if (!empty($filters['date_from'])) {
         $utcFrom = vjt_admin_date_to_utc($filters['date_from']);
-        if ($utcFrom) { $where[] = "submitted_at >= ?"; $params[] = $utcFrom; }
+        if ($utcFrom) { $where[] = "occurred_at >= ?"; $params[] = $utcFrom; }
     }
     if (!empty($filters['date_to'])) {
         $utcTo = vjt_admin_date_to_utc($filters['date_to'], true);
-        if ($utcTo) { $where[] = "submitted_at <= ?"; $params[] = $utcTo; }
+        if ($utcTo) { $where[] = "occurred_at <= ?"; $params[] = $utcTo; }
     }
     $whereSql = $where ? ('WHERE ' . implode(' AND ', $where)) : '';
+    $groupExpr = "CASE WHEN vjt_visitor_id <> '' THEN 'visitor:' || vjt_visitor_id ELSE 'event:' || event_id END";
 
     $total = null;
     if (empty($filters['skip_count'])) {
-        $cnt = $db->prepare("SELECT COUNT(DISTINCT visitor_id) c FROM submissions $whereSql");
+        $cnt = $db->prepare("SELECT COUNT(*) c FROM (
+            SELECT 1 FROM contact_events $whereSql GROUP BY $groupExpr
+        ) grouped_leads");
         $cnt->execute($params);
         $total = (int)$cnt->fetch()['c'];
     }
@@ -1896,21 +1916,23 @@ function vjt_get_submissions_list($filters) {
     $perPage = max(1, (int)($filters['per_page'] ?? 50));
     $offset = ($page - 1) * $perPage;
 
-    // One row per Visitor ID. The latest event supplies the row's contact
-    // details; the aggregate fields preserve first/last time and all channels.
-    $sql = "SELECT latest.*, agg.first_submitted_at, agg.last_submitted_at,
-                agg.event_count, agg.channels
-            FROM submissions latest
+    // Linked Core events are grouped by Visitor ID. Without Analytics linkage
+    // there is no lawful persistent visitor identity, so each event remains its
+    // own Lead row, keyed by its stable Contact Core event ID.
+    $sql = "SELECT latest.*, agg.lead_key, agg.first_contact_at, agg.last_contact_at,
+                agg.event_count, agg.channels, agg.has_success, agg.has_intent
+            FROM contact_events latest
             JOIN (
-                SELECT visitor_id, MIN(submitted_at) first_submitted_at,
-                    MAX(submitted_at) last_submitted_at, COUNT(*) event_count,
-                    GROUP_CONCAT(DISTINCT form_plugin) channels,
+                SELECT $groupExpr lead_key, MIN(occurred_at) first_contact_at,
+                    MAX(occurred_at) last_contact_at, COUNT(*) event_count,
+                    GROUP_CONCAT(DISTINCT channel) channels,
                     MAX(CASE WHEN status='success' THEN 1 ELSE 0 END) has_success,
+                    MAX(CASE WHEN status='intent' THEN 1 ELSE 0 END) has_intent,
                     MAX(id) latest_id
-                FROM submissions $whereSql
-                GROUP BY visitor_id
+                FROM contact_events $whereSql
+                GROUP BY $groupExpr
             ) agg ON agg.latest_id = latest.id
-            ORDER BY agg.last_submitted_at DESC, latest.id DESC LIMIT ? OFFSET ?";
+            ORDER BY agg.last_contact_at DESC, latest.id DESC LIMIT ? OFFSET ?";
     $stmt = $db->prepare($sql);
     // Bind positionally; LIMIT/OFFSET need explicit int types for SQLite
     $idx = 1;
@@ -1921,14 +1943,26 @@ function vjt_get_submissions_list($filters) {
     $items = $stmt->fetchAll();
 
     foreach ($items as &$item) {
-        $item['submitted_at'] = $item['last_submitted_at'] ?? $item['submitted_at'];
-        $item['form_plugin'] = 'contact';
-        $item['form_name'] = $item['channels'] ?? ($item['form_name'] ?? '');
-        $item['status'] = !empty($item['has_success']) ? 'success' : ($item['status'] ?? 'intent');
+        $item['visitor_id'] = $item['vjt_visitor_id'] ?? '';
+        $item['session_id'] = $item['vjt_session_id'] ?? '';
+        $item['submitted_at'] = $item['last_contact_at'] ?? ($item['occurred_at'] ?? '');
+        $item['first_submitted_at'] = $item['first_contact_at'] ?? '';
+        $item['last_submitted_at'] = $item['last_contact_at'] ?? ($item['occurred_at'] ?? '');
+        $item['form_plugin'] = $item['channel'] ?? '';
+        $item['form_name'] = $item['channels'] ?? ($item['channel'] ?? '');
+        $item['submit_page'] = $item['page_path'] ?? '';
+        $item['status'] = !empty($item['has_success']) ? 'success'
+            : (!empty($item['has_intent']) ? 'intent' : ($item['status'] ?? 'error'));
         $item['display_status'] = $item['status'];
     }
     unset($item);
     return ['items' => $items, 'total' => $total];
+}
+
+// Backward-compatible name for callers/bookmarks retained during the Contact
+// Core migration. The returned rows now come exclusively from contact_events.
+function vjt_get_submissions_list($filters) {
+    return vjt_get_leads_list($filters);
 }
 
 // ── Dashboard: Visitors List ─────────────────────────────────────────────────
@@ -1936,7 +1970,7 @@ function vjt_get_submissions_list($filters) {
 function vjt_get_visitors_list($filters) {
     $db = vjt_db();
 
-    // Pre-aggregate per-visitor sessions, submissions, session time, source
+    // Pre-aggregate per-visitor sessions, canonical Core Leads, session time, source
     $visitorSessions = [];
     $visitorSubmissions = [];
     $visitorSource = [];
@@ -1965,9 +1999,9 @@ function vjt_get_visitors_list($filters) {
             $visitorSessionTime[$vid] = ($visitorSessionTime[$vid] ?? 0) + ($ls - $st);
         }
     }
-    $subStmt = $db->prepare("SELECT visitor_id,
+    $subStmt = $db->prepare("SELECT vjt_visitor_id AS visitor_id,
         MAX(CASE WHEN status IN ('success','intent') THEN 1 ELSE 0 END) c
-        FROM submissions GROUP BY visitor_id");
+        FROM contact_events WHERE vjt_visitor_id <> '' GROUP BY vjt_visitor_id");
     $subStmt->execute();
     while ($r = $subStmt->fetch()) { $visitorSubmissions[$r['visitor_id']] = (int)$r['c']; }
 
@@ -2515,17 +2549,29 @@ function vjt_get_traffic_data($since) {
             'avg_scroll'   => (int)($r['max_scroll'] ?? 0),
         ];
     }
-    // Submissions per page (only for the pages we show)
+    // Journey-attributed canonical Leads per page (only for pages we show).
+    // Core stores a path rather than a full analytics URL, by design.
     if ($topPages) {
-        $urls = array_column($topPages, 'url');
-        $place = implode(',', array_fill(0, count($urls), '?'));
-        $stmt = $db->prepare("SELECT submit_page, COUNT(DISTINCT visitor_id) c FROM submissions
-            WHERE submitted_at >= ? AND status IN ('success','intent') AND submit_page IN ($place) GROUP BY submit_page");
-        $stmt->execute(array_merge([$since], $urls));
-        $subByPage = [];
-        foreach ($stmt->fetchAll() as $r) { $subByPage[$r['submit_page']] = (int)$r['c']; }
-        foreach ($topPages as &$tp) { $tp['submissions'] = $subByPage[$tp['url']] ?? 0; }
+        $pathIndexes = [];
+        foreach ($topPages as $index => &$tp) {
+            $tp['submissions'] = 0;
+            $path = vjt_contact_page_path($tp['url']);
+            if ($path !== '') $pathIndexes[$path][] = $index;
+        }
         unset($tp);
+        if ($pathIndexes) {
+            $paths = array_keys($pathIndexes);
+            $place = implode(',', array_fill(0, count($paths), '?'));
+            $stmt = $db->prepare("SELECT page_path, COUNT(DISTINCT vjt_visitor_id) c FROM contact_events
+                WHERE occurred_at >= ? AND status IN ('success','intent') AND vjt_visitor_id <> ''
+                  AND page_path IN ($place) GROUP BY page_path");
+            $stmt->execute(array_merge([$since], $paths));
+            foreach ($stmt->fetchAll() as $r) {
+                foreach ($pathIndexes[$r['page_path']] ?? [] as $index) {
+                    $topPages[$index]['submissions'] = (int)$r['c'];
+                }
+            }
+        }
     }
 
     $uniqueUrlsStmt = $db->prepare("SELECT COUNT(DISTINCT url) c FROM pageviews WHERE visited_at >= ? AND url <> ''");
@@ -2543,8 +2589,8 @@ function vjt_get_traffic_data($since) {
                     OR (p.active_duration_seconds = 0 AND p.duration_seconds >= 10)
                     OR p.max_scroll_depth >= 50 OR p.scroll_depth >= 50 THEN 1 ELSE 0 END) engaged,
                 CASE WHEN EXISTS (
-                    SELECT 1 FROM submissions s WHERE s.session_id = p.session_id
-                    AND s.status IN ('success','intent')
+                    SELECT 1 FROM contact_events c WHERE c.vjt_session_id = p.session_id
+                    AND c.status IN ('success','intent')
                 ) THEN 1 ELSE 0 END has_lead
             FROM pageviews p WHERE p.visited_at >= ? GROUP BY p.session_id
         )");
@@ -2601,7 +2647,8 @@ function vjt_get_countries() {
         $cc = $visitorCountry[$s['visitor_id']] ?? 'UNKNOWN';
         if (isset($countries[$cc])) $countries[$cc]['sessions']++;
     }
-    $cbStmt = $db->prepare("SELECT visitor_id FROM submissions WHERE status IN ('success','intent')");
+    $cbStmt = $db->prepare("SELECT vjt_visitor_id AS visitor_id FROM contact_events
+        WHERE status IN ('success','intent') AND vjt_visitor_id <> ''");
     $cbStmt->execute();
     $countryLeadVisitors = [];
     while ($sub = $cbStmt->fetch()) {
@@ -2681,33 +2728,39 @@ function vjt_csv_safe_row($row) {
     return array_map('vjt_csv_safe_cell', $row);
 }
 
-function vjt_export_submissions_csv_start($filters) {
+function vjt_export_leads_csv_start($filters) {
     header('Content-Type: text/csv; charset=utf-8');
     header('X-Content-Type-Options: nosniff');
-    header('Content-Disposition: attachment; filename=vjt-submissions-' . date('Y-m-d') . '.csv');
+    header('Content-Disposition: attachment; filename=vjt-leads-' . date('Y-m-d') . '.csv');
     $output = fopen('php://output', 'w');
-    fputcsv($output, ['Last Contact (Beijing)', 'First Contact (Beijing)', 'Visitor ID', 'Channels', 'Events', 'Page', 'IP', 'Country', 'Status']);
+    fputcsv($output, ['Last Contact (Beijing)', 'First Contact (Beijing)', 'Lead Key', 'Visitor ID', 'Attribution', 'Channels', 'Events', 'Page Path', 'Placement', 'Event Type', 'Status', 'Product', 'Language', 'Retention Class', 'Latest Event ID']);
 
     $page = 1;
     $batchSize = 1000;
     do {
-        $result = vjt_get_submissions_list(array_merge($filters, [
+        $result = vjt_get_leads_list(array_merge($filters, [
             'page' => $page,
             'per_page' => $batchSize,
             'skip_count' => true,
         ]));
         $items = $result['items'];
-        foreach ($items as $sub) {
+        foreach ($items as $lead) {
             fputcsv($output, vjt_csv_safe_row([
-                vjt_format_for_admin($sub['last_submitted_at'] ?? ($sub['submitted_at'] ?? '')),
-                vjt_format_for_admin($sub['first_submitted_at'] ?? ''),
-                $sub['visitor_id'] ?? '',
-                $sub['channels'] ?? ($sub['form_name'] ?? ''),
-                $sub['event_count'] ?? 1,
-                $sub['submit_page'] ?? '',
-                $sub['ip'] ?? '',
-                $sub['country'] ?? '',
-                $sub['status'] ?? '',
+                vjt_format_for_admin($lead['last_contact_at'] ?? ($lead['occurred_at'] ?? '')),
+                vjt_format_for_admin($lead['first_contact_at'] ?? ''),
+                $lead['lead_key'] ?? '',
+                $lead['vjt_visitor_id'] ?? '',
+                !empty($lead['vjt_visitor_id']) ? 'Consented journey linked' : 'Unattributed / no analytics linkage',
+                $lead['channels'] ?? ($lead['channel'] ?? ''),
+                $lead['event_count'] ?? 1,
+                $lead['page_path'] ?? '',
+                $lead['placement'] ?? '',
+                $lead['event_type'] ?? '',
+                $lead['status'] ?? '',
+                $lead['product_sku'] ?? '',
+                $lead['site_language'] ?? '',
+                $lead['retention_class'] ?? '',
+                $lead['event_id'] ?? '',
             ]));
         }
         fflush($output);
@@ -2716,6 +2769,10 @@ function vjt_export_submissions_csv_start($filters) {
 
     fclose($output);
     exit;
+}
+
+function vjt_export_submissions_csv_start($filters) {
+    vjt_export_leads_csv_start($filters);
 }
 
 function vjt_export_contact_events_csv_start($filters) {
