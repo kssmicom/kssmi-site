@@ -1002,9 +1002,47 @@ function vjt_add_submission($data) {
     // Retries retain one event ID, so a transient network failure is safe to
     // resend without suppressing a separate intentional contact click.
     if ($eventId !== '') {
-        $stmt = $db->prepare('SELECT id FROM submissions WHERE event_id = ? LIMIT 1');
+        $stmt = $db->prepare('SELECT id, visitor_id, session_id, form_plugin, status
+            FROM submissions WHERE event_id = ? LIMIT 1');
         $stmt->execute([$eventId]);
-        if ($stmt->fetch()) return 'duplicate';
+        $existing = $stmt->fetch();
+        if ($existing) {
+            $incomingStatus = $data['status'] ?? 'attempt';
+            $sameLifecycle = hash_equals((string)$existing['visitor_id'], (string)$data['visitor_id'])
+                && hash_equals((string)$existing['session_id'], (string)$data['session_id'])
+                && hash_equals((string)$existing['form_plugin'], (string)($data['form_plugin'] ?? ''));
+            $canPromote = $sameLifecycle
+                && $existing['status'] === 'attempt'
+                && in_array($incomingStatus, ['success', 'error'], true);
+
+            if ($canPromote) {
+                $update = $db->prepare("UPDATE submissions SET
+                    status = :status,
+                    form_name = CASE WHEN :form_name <> '' THEN :form_name ELSE form_name END,
+                    submit_page = CASE WHEN :submit_page <> '' THEN :submit_page ELSE submit_page END,
+                    submit_title = CASE WHEN :submit_title <> '' THEN :submit_title ELSE submit_title END,
+                    ip = CASE WHEN :ip <> '' THEN :ip ELSE ip END,
+                    country = CASE WHEN :country <> '' THEN :country ELSE country END,
+                    city = CASE WHEN :city <> '' THEN :city ELSE city END,
+                    region = CASE WHEN :region <> '' THEN :region ELSE region END,
+                    calling_code = CASE WHEN :calling_code <> '' THEN :calling_code ELSE calling_code END
+                    WHERE id = :id AND status = 'attempt'");
+                $update->execute([
+                    ':status' => $incomingStatus,
+                    ':form_name' => $data['form_name'] ?? '',
+                    ':submit_page' => $data['submit_page'] ?? '',
+                    ':submit_title' => $data['submit_title'] ?? '',
+                    ':ip' => $data['ip'] ?? '',
+                    ':country' => $data['country'] ?? '',
+                    ':city' => $data['city'] ?? '',
+                    ':region' => $data['region'] ?? '',
+                    ':calling_code' => $data['calling_code'] ?? '',
+                    ':id' => $existing['id'],
+                ]);
+                return $update->rowCount() > 0 ? 'updated' : 'duplicate';
+            }
+            return 'duplicate';
+        }
     }
 
     // Backward-compatible fallback for server-originated records that do not

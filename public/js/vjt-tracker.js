@@ -637,48 +637,60 @@
     return false;
   }
 
+  function trackSubmissionAttempt(form, requestedEventId) {
+    if (!cfg.enabled || !form || form.tagName.toLowerCase() !== 'form' || isSearchForm(form)) return '';
+
+    var visitorId = getVisitorId();
+    var session  = getSession(_deviceInfo);
+    var pageview = readJson(PAGE_KEY);
+    var snapshot = buildPathSnapshot(pageview);
+    patchForms(visitorId, session);
+
+    var meta = deriveFormMeta(form);
+    var attrReferrer = session.originalReferrer || session.referrer || '';
+    var eventId = /^vjtev_[A-Za-z0-9_-]{8,80}$/.test(requestedEventId || '')
+      ? requestedEventId
+      : newTrackingId('vjtev_');
+
+    var payload = {
+      visitor_id   : visitorId,
+      session_id   : session.id,
+      event_id     : eventId,
+      form_plugin  : meta.plugin,
+      form_id      : meta.id,
+      form_name    : meta.name,
+      submit_page  : cfg.page.url,
+      submit_title : cfg.page.title,
+      submitted_at : new Date().toISOString(),
+      status       : 'attempt',
+      referrer     : attrReferrer,
+      landing_url  : session.landingUrl   || '',
+      landing_title: session.landingTitle || '',
+      utm_source   : session.utmSource     || '',
+      utm_medium   : session.utmMedium     || '',
+      utm_campaign : session.utmCampaign  || '',
+      utm_content  : session.utmContent    || '',
+      utm_term     : session.utmTerm       || '',
+      path_snapshot: snapshot,
+      site_language: session.siteLanguage || getSiteLanguage()
+    };
+
+    submitConversion(payload);
+    return eventId;
+  }
+
   function bindSubmissionAttempts() {
     document.addEventListener('submit', function (event) {
       if (!cfg.enabled) return;
       var form = event.target;
-      if (!form || form.tagName.toLowerCase() !== 'form') return;
-      if (isSearchForm(form)) return;
+      if (!form || form.tagName.toLowerCase() !== 'form' || isSearchForm(form)) return;
 
-      var visitorId = getVisitorId();
-      var session  = getSession(_deviceInfo);
-      var pageview = readJson(PAGE_KEY);
-      var snapshot = buildPathSnapshot(pageview);
-      patchForms(visitorId, session);
-
-      var meta = deriveFormMeta(form);
-      var attrReferrer = session.originalReferrer || session.referrer || '';
-
-      var payload = {
-        visitor_id   : visitorId,
-        session_id   : session.id,
-        event_id     : newTrackingId('vjtev_'),
-        form_plugin  : meta.plugin,
-        form_id      : meta.id,
-        form_name    : meta.name,
-        submit_page  : cfg.page.url,
-        submit_title : cfg.page.title,
-        submitted_at : new Date().toISOString(),
-        // Browser submit only proves an attempt. The PHP mail handler records
-        // success after SMTP accepts the message.
-        status       : 'attempt',
-        referrer     : attrReferrer,
-        landing_url  : session.landingUrl   || '',
-        landing_title: session.landingTitle || '',
-        utm_source   : session.utmSource     || '',
-        utm_medium   : session.utmMedium     || '',
-        utm_campaign : session.utmCampaign   || '',
-        utm_content  : session.utmContent    || '',
-        utm_term     : session.utmTerm       || '',
-        path_snapshot: snapshot,
-        site_language: session.siteLanguage || getSiteLanguage()
-      };
-
-      submitConversion(payload);
+      // Inquiry Form owns its lifecycle. It starts tracking only after its
+      // Turnstile check passes, then sends the same event ID to send-mail.php.
+      // Keeping it out of this capture-phase listener prevents a single valid
+      // click from being counted once here and once by the real request path.
+      if (deriveFormMeta(form).plugin === 'kssmi-inquiry') return;
+      trackSubmissionAttempt(form, '');
     }, true);
   }
 
@@ -894,6 +906,21 @@
     // by send-mail.php even when no VJT identifier exists.
     if (!cfg.enabled) return;
 
+    // The async loader, the tracker's DOM-ready bootstrap and Astro's initial
+    // page-load event can all meet on the same document. Make page
+    // initialization idempotent across duplicate script instances as well as
+    // repeated calls within one instance.
+    var initUrl = cleanUrl(window.location.href);
+    if (window.__vjtInitializedUrl === initUrl) {
+      _deviceInfo = getDeviceInfo();
+      var existingVisitorId = getVisitorId();
+      var existingSession = getSession(_deviceInfo);
+      patchForms(existingVisitorId, existingSession);
+      flushPendingConversions();
+      return;
+    }
+    window.__vjtInitializedUrl = initUrl;
+
     _deviceInfo = getDeviceInfo();
     var visitorId  = getVisitorId();
     var session    = getSession(_deviceInfo);
@@ -1003,11 +1030,16 @@
   // Expose init globally so VisitorTracker.astro can call it directly
   // without re-downloading the entire script on every SPA navigation (I1 fix)
   window.VJT_init = initVJT;
+  window.VJT_beginInquirySubmission = function (form) {
+    if (!form || deriveFormMeta(form).plugin !== 'kssmi-inquiry') return '';
+    return trackSubmissionAttempt(form, '');
+  };
 
   window.addEventListener('vjt:consent-withdrawn', function () {
     if (heartbeatTimer) clearInterval(heartbeatTimer);
     heartbeatTimer = null;
     flushed = true;
+    window.__vjtInitializedUrl = '';
   });
 
   // Bootstrap — first load

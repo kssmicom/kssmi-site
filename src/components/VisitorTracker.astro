@@ -6,7 +6,7 @@ const isDev = import.meta.env.DEV;
 const allowLocalVjt = import.meta.env.PUBLIC_ENABLE_LOCAL_VJT === 'true';
 const trackerScriptUrl = isDev
   ? 'http://localhost:4325/js/vjt-tracker.js'
-  : '/assets/runtime/vjt-tracker.2ab0506dd926.js';
+  : '/assets/runtime/vjt-tracker.01207c803d90.js';
 ---
 
 {isDev && (
@@ -59,13 +59,23 @@ const trackerScriptUrl = isDev
     // loader/listener so a navigation cannot start the same pageview twice.
     if (window.__vjtLoaderBound) return;
     window.__vjtLoaderBound = true;
+    var loading = false;
     var loaded = false;
     function injectTracker() {
-      if (loaded) return;
-      loaded = true;
+      if (loading || loaded || window.VJT_init) return;
+      loading = true;
       var s = document.createElement('script');
       s.src = trackerScriptUrl;
       s.async = true;
+      s.onload = function() {
+        loading = false;
+        loaded = true;
+        if (window.VJT_init) window.VJT_init();
+      };
+      s.onerror = function() {
+        loading = false;
+        loaded = false;
+      };
       document.head.appendChild(s);
     }
     function scheduleInject() {
@@ -87,8 +97,8 @@ const trackerScriptUrl = isDev
         window.VJTTracker.page.title = document.title || '';
         window.VJT_init();
       } else {
-        // First load hasn't happened yet — inject script
-        loaded = false;
+        // First load has not completed yet. injectTracker() keeps the in-flight
+        // script unique; never clear its guard from astro:page-load.
         scheduleInject();
       }
     });

@@ -184,10 +184,15 @@ function recordInquiryOutcome($config, $data, $status, $visitorIP, $visitorCount
     $sessionId = trim($data['vjt_session_id'] ?? '');
     $journeyStep = is_numeric($data['vjt_journey_step'] ?? null)
         ? min(10000, max(0, (int)$data['vjt_journey_step'])) : 0;
+    $submissionEventId = trim((string)($data['vjt_submission_event_id'] ?? ''));
+    if (!preg_match('/^vjtev_[A-Za-z0-9_-]{8,80}$/', $submissionEventId)) {
+        $submissionEventId = '';
+    }
     if (!$hasAnalyticsConsent) {
         $visitorId = '';
         $sessionId = '';
         $journeyStep = 0;
+        $submissionEventId = '';
     }
     $submitPage = $data['vjt_submit_page'] ?? '';
     if (empty($submitPage)) {
@@ -228,6 +233,11 @@ function recordInquiryOutcome($config, $data, $status, $visitorIP, $visitorCount
             $journeyStep = (int)($resolvedLink['journey_step'] ?? 0);
         }
         vjt_add_contact_event([
+            // One browser submission lifecycle maps to one authoritative Core
+            // result even if the mail response is retried or handled twice.
+            'event_id' => $submissionEventId !== ''
+                ? 'vjtce_' . hash('sha256', $submissionEventId . '|inquiry-outcome')
+                : '',
             'channel' => 'inquiry',
             'event_type' => $status === 'success' ? 'submission_success' : 'submission_error',
             'status' => $status === 'success' ? 'success' : 'error',
@@ -303,6 +313,7 @@ function recordInquiryOutcome($config, $data, $status, $visitorIP, $visitorCount
             'form_name'    => $data['product_name'] ?? 'Inquiry',
             'submit_page'  => $submitPage,
             'submit_title' => 'KSSMI Inquiry',
+            'event_id'     => $submissionEventId,
             'status'       => $status,
             'ip'           => $visitorIP,
             'country'      => $visitorCountry,
@@ -766,6 +777,7 @@ $vjtData = [
     'vjt_session_id' => trim(requestString($_POST['vjt_session_id'] ?? '')),
     'vjt_journey_step' => is_numeric($_POST['vjt_journey_step'] ?? null)
         ? min(10000, max(0, (int)$_POST['vjt_journey_step'])) : 0,
+    'vjt_submission_event_id' => vjt_clip(trim(requestString($_POST['vjt_submission_event_id'] ?? '')), 96),
     'vjt_submit_page' => vjt_safe_http_url($_POST['vjt_submit_page'] ?? ''),
     'vjt_submit_title' => vjt_clip(trim(requestString($_POST['vjt_submit_title'] ?? '')), 512),
     'vjt_referrer' => vjt_safe_http_url($_POST['vjt_referrer'] ?? ''),

@@ -702,7 +702,8 @@ const currentUrl = Astro.url.pathname;
       'vjt_submit_page', 'vjt_submit_title', 'vjt_referrer',
       'vjt_landing_url', 'vjt_landing_title', 'vjt_path_snapshot',
       'vjt_utm_source', 'vjt_utm_medium', 'vjt_utm_campaign',
-      'vjt_utm_content', 'vjt_utm_term', 'vjt_journey_step'
+      'vjt_utm_content', 'vjt_utm_term', 'vjt_journey_step',
+      'vjt_submission_event_id'
     ].forEach((name) => formData.delete(name));
   }
 
@@ -723,6 +724,7 @@ const currentUrl = Astro.url.pathname;
 
     newForm.addEventListener('submit', async function(e) {
       e.preventDefault();
+      if (newForm.dataset.vjtSubmitting === '1') return;
       hideError();
       hideTurnstileError();
 
@@ -733,8 +735,19 @@ const currentUrl = Astro.url.pathname;
         return;
       }
 
+      // From this point there is one real logical request in flight. The
+      // tracker returns the ID used for its Attempt row; send-mail.php uses the
+      // same ID to promote that row to Success/Error instead of adding another
+      // Legacy row.
+      newForm.dataset.vjtSubmitting = '1';
+      let submissionEventId = '';
+      if (typeof window.VJT_beginInquirySubmission === 'function') {
+        submissionEventId = window.VJT_beginInquirySubmission(newForm) || '';
+      }
+
       // Gather form data
       const formData = new FormData(newForm);
+      if (submissionEventId) formData.set('vjt_submission_event_id', submissionEventId);
       // A form may have been patched while consent was granted and submitted
       // after withdrawal. Re-check live consent at the final request boundary.
       removeVjtContextWithoutCurrentConsent(formData);
@@ -770,6 +783,7 @@ const currentUrl = Astro.url.pathname;
             ? result.errors.join('. ')
             : (result.message || fm.errorDefault);
           showError(errorMsg);
+          delete newForm.dataset.vjtSubmitting;
           setLoading(false);
         }
       } catch (error) {
@@ -793,6 +807,7 @@ const currentUrl = Astro.url.pathname;
           const { errorContainer } = getFormElements();
           if (errorContainer) errorContainer.appendChild(mailtoLink);
 
+          delete newForm.dataset.vjtSubmitting;
           setLoading(false);
           return;
         }
@@ -807,6 +822,7 @@ const currentUrl = Astro.url.pathname;
           showError(fm.errorPrefix.replace('{0}', error.message));
         }
 
+        delete newForm.dataset.vjtSubmitting;
         setLoading(false);
       }
     });

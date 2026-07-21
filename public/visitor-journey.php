@@ -1611,10 +1611,18 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                 $realSubmissions = array_filter($journeyData['submissions'], function($s) {
                                     return ($s['form_plugin'] ?? '') !== 'generic';
                                 });
+                                $confirmedInquirySuccesses = count(array_filter($journeyData['contact_events'], function($event) {
+                                    return ($event['channel'] ?? '') === 'inquiry'
+                                        && ($event['event_type'] ?? '') === 'submission_success'
+                                        && ($event['status'] ?? '') === 'success';
+                                }));
                             ?>
                             <?php if (!empty($realSubmissions)): ?>
                             <div class="journey-section">
-                                <h3>Legacy Analytics Enrichment (<?php echo count($realSubmissions); ?>)</h3>
+                                <h3>Legacy Browser / Server Events (<?php echo count($realSubmissions); ?> raw events; <?php echo $confirmedInquirySuccesses; ?> confirmed success<?php echo $confirmedInquirySuccesses === 1 ? '' : 'es'; ?>)</h3>
+                                <p style="margin:-4px 0 12px;color:#666;font-size:12px;line-height:1.5;">
+                                    Raw Attempt rows are diagnostic browser events. Confirmed Inquiry totals come from Linked Core Events below.
+                                </p>
                                 <div class="table-wrapper">
                                     <table>
                                         <thead><tr><th>Time</th><th>Form</th><th>Page</th><th>Status</th></tr></thead>
