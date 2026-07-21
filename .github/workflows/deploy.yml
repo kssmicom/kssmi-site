@@ -31,7 +31,8 @@ jobs:
 
       - name: Audit npm dependencies
         run: npm audit --audit-level=high
-        # Astro is now on the patched 6.x line, so HIGH vulnerabilities block deployment.
+        # Astro 7 and its patched transitive dependencies are required; HIGH
+        # vulnerabilities continue to block deployment.
 
       - name: Lint PHP sources
         run: find public private -name '*.php' -not -path '*/vendor/*' -print0 | xargs -0 -n1 php -l

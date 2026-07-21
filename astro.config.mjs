@@ -9,6 +9,9 @@ import path from 'node:path';
 export default defineConfig({
   site: 'https://kssmi.com',
   output: 'static',
+  // Preserve Astro 6's HTML-aware whitespace behavior after upgrading to
+  // Astro 7, whose new default uses JSX-style whitespace compression.
+  compressHTML: true,
   prefetch: {
     prefetchAll: false,        // Don't auto-prefetch every link on the page
     defaultStrategy: 'viewport', // Prefetch as soon as the link is visible on screen
