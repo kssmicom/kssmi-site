@@ -79,6 +79,7 @@ for (const [index, url] of runtimeUrls.entries()) {
 
 const phpPolicies = new Map([
   ['public/api/contact-intent.php', 'Cache-Control: no-store, private'],
+  ['public/api/track-contact-intent.php', 'Cache-Control: no-store, private'],
   ['public/email-logs.php', 'Cache-Control: no-store, private'],
   ['public/send-mail.php', 'Cache-Control: no-store, private'],
   ['public/visitor-journey.php', 'Cache-Control: no-store, private'],

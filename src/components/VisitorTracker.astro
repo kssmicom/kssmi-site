@@ -6,7 +6,10 @@ const isDev = import.meta.env.DEV;
 const allowLocalVjt = import.meta.env.PUBLIC_ENABLE_LOCAL_VJT === 'true';
 const trackerScriptUrl = isDev
   ? 'http://localhost:4325/js/vjt-tracker.js'
-  : '/assets/runtime/vjt-tracker.72f1ac625b8d.js';
+  : '/assets/runtime/vjt-tracker.8f7d8c21f484.js';
+const contactIntentUrl = isDev
+  ? 'http://localhost:4325/api/track-contact-intent.php'
+  : '/api/track-contact-intent.php';
 ---
 
 {isDev && (
@@ -50,6 +53,128 @@ const trackerScriptUrl = isDev
     };
   </script>
 )}
+
+<!-- Contact Core is independent of analytics consent and never owns navigation.
+     It submits only a minimal event unless current analytics consent allows the
+     server to validate and attach an existing Journey. -->
+<script is:inline define:vars={{ contactIntentUrl }}>
+  (function() {
+    if (window.__vjtContactCoreBound) return;
+    window.__vjtContactCoreBound = true;
+
+    function readJson(key) {
+      try {
+        var value = localStorage.getItem(key);
+        return value ? JSON.parse(value) : null;
+      } catch (_) {
+        return null;
+      }
+    }
+
+    function readCookie(name) {
+      var prefix = name + '=';
+      var parts = document.cookie ? document.cookie.split(';') : [];
+      for (var i = 0; i < parts.length; i++) {
+        var part = parts[i].trim();
+        if (part.indexOf(prefix) === 0) return decodeURIComponent(part.slice(prefix.length));
+      }
+      return '';
+    }
+
+    function newCoreEventId() {
+      try {
+        if (window.crypto && typeof window.crypto.randomUUID === 'function') {
+          return 'vjtce_' + window.crypto.randomUUID().replace(/-/g, '');
+        }
+      } catch (_) {}
+      return 'vjtce_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 14);
+    }
+
+    function resolveAnchor(target) {
+      var node = target;
+      while (node && node.tagName) {
+        if (node.tagName.toLowerCase() === 'a') return node;
+        node = node.parentElement;
+      }
+      return null;
+    }
+
+    function addAnalyticsLinkage(payload) {
+      var consent = readJson('cookie-consent');
+      if (!consent || consent.analytics !== true) return;
+
+      // These analytics values are read only after current analytics consent.
+      var visitorId = '';
+      try { visitorId = localStorage.getItem('vjt_visitor_id') || ''; } catch (_) {}
+      if (!visitorId) visitorId = readCookie('vjt_visitor_id');
+
+      var session = readJson('vjt_session_meta');
+      var pageview = readJson('vjt_current_pageview');
+      var sessionId = session && typeof session.id === 'string' ? session.id : readCookie('vjt_session_id');
+      if (!/^vjtv_[A-Za-z0-9_-]{8,60}$/.test(visitorId)
+          || !/^vjts_[A-Za-z0-9_-]{8,60}$/.test(sessionId)) return;
+
+      payload.analytics = true;
+      payload.vjt_visitor_id = visitorId;
+      payload.vjt_session_id = sessionId;
+      if (pageview && pageview.session_id === sessionId) {
+        var step = Number(pageview.step_order);
+        if (step >= 1 && step <= 10000) payload.journey_step = Math.floor(step);
+      }
+    }
+
+    function sendIntent(payload) {
+      var body = JSON.stringify(payload);
+      if (navigator.sendBeacon) {
+        try {
+          if (navigator.sendBeacon(contactIntentUrl, new Blob([body], { type: 'text/plain;charset=UTF-8' }))) return;
+        } catch (_) {}
+      }
+      try {
+        fetch(contactIntentUrl, {
+          method: 'POST',
+          credentials: 'same-origin',
+          keepalive: true,
+          headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+          body: body
+        }).catch(function() {});
+      } catch (_) {}
+    }
+
+    function recordContactIntent(event) {
+      var anchor = resolveAnchor(event.target);
+      if (!anchor || anchor.getAttribute('data-contact-core') === '1') return;
+
+      var channel = (anchor.getAttribute('data-vjt-contact') || '').toLowerCase();
+      var href = anchor.getAttribute('href') || '';
+      if (channel === 'whatsapp') {
+        if (!/^https:\/\/(?:wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)(?:\/|$)/i.test(href)) return;
+      } else if (channel === 'mailto') {
+        if (href.slice(0, 7).toLowerCase() !== 'mailto:') return;
+      } else {
+        return;
+      }
+
+      var payload = {
+        event_id: newCoreEventId(),
+        channel: channel,
+        event_type: 'open_intent',
+        status: 'intent',
+        page_path: window.location.pathname || '/',
+        placement: anchor.getAttribute('data-vjt-placement') || '',
+        site_language: (document.documentElement.lang || 'en').slice(0, 3).toUpperCase(),
+        analytics: false
+      };
+      addAnalyticsLinkage(payload);
+      sendIntent(payload);
+    }
+
+    document.addEventListener('click', recordContactIntent, true);
+    document.addEventListener('auxclick', function(event) {
+      if (event.button === 1) recordContactIntent(event);
+    }, true);
+  })();
+</script>
 
 <!-- Tracker remains analytics-consent gated, but starts immediately once allowed
      so a visitor cannot click WhatsApp/Email before its listener is bound. -->

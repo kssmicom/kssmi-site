@@ -817,72 +817,9 @@
         return;
       }
 
-      var visitorId = getVisitorId();
-      var session  = getSession(_deviceInfo);
-      var pageview = readJson(PAGE_KEY);
-      var snapshot = buildPathSnapshot(pageview);
-      var attrReferrer = session.originalReferrer || session.referrer || '';
-
-      var label = href;
-      if (kind === 'whatsapp') {
-        label = href.replace(/^https?:\/\/[^/]*wa\.me\//i, '').replace(/^https?:\/\/api\.whatsapp\.com\/send\??/i, '').split('?')[0] || href;
-      } else if (kind === 'mailto') {
-        label = href.slice(7).split('?')[0] || href;
-      }
-
-      var payload = {
-        visitor_id   : visitorId,
-        session_id   : session.id,
-        event_id     : newTrackingId('vjtev_'),
-        form_plugin  : kind,
-        form_id      : label,
-        form_name    : kind === 'whatsapp' ? 'WhatsApp Click' : 'Mailto Click',
-        submit_page  : cfg.page.url,
-        submit_title : cfg.page.title,
-        submitted_at : new Date().toISOString(),
-        // A click is a contact intent, not proof that WhatsApp/mail was sent.
-        status       : 'intent',
-        contact_url  : href,
-        referrer     : attrReferrer,
-        landing_url  : session.landingUrl   || '',
-        landing_title: session.landingTitle || '',
-        utm_source   : session.utmSource     || '',
-        utm_medium   : session.utmMedium     || '',
-        utm_campaign : session.utmCampaign   || '',
-        utm_content  : session.utmContent    || '',
-        utm_term     : session.utmTerm       || '',
-        path_snapshot: snapshot,
-        site_language: session.siteLanguage || getSiteLanguage()
-      };
-
-      // Direct contact is conversion-critical: preserve the browser's native
-      // navigation and send tracking in the background. deliverConversion uses
-      // keepalive and the local retry queue, so analytics never delays contact.
-      if (kind === 'whatsapp' || kind === 'mailto') {
-        submitConversion(payload);
-        return;
-      }
-
-      event.preventDefault();
-
-      var proceed = function() {
-        if (anchor.target === '_blank') {
-          window.open(href, '_blank');
-        } else {
-          window.location.href = href;
-        }
-      };
-
-      var navTimer = setTimeout(proceed, 300);
-      var done = false;
-      var markDone = function() {
-        if (done) return;
-        done = true;
-        clearTimeout(navTimer);
-        proceed();
-      };
-
-      submitConversion(payload, markDone);
+      // Direct mailto/WhatsApp links are owned by the always-on Contact Core.
+      // Never duplicate the same click in the legacy submissions table.
+      return;
     }, true);
 
     // Chromium dispatches middle-click as auxclick rather than click.

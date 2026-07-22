@@ -95,7 +95,7 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # server-side name, while browsers/CDNs only see a URL that changes with its
 # SHA-256 content hash. These rules MUST stay before the generic -f/-d bypass.
 RewriteRule ^assets/runtime/cookie-banner\.5107dfdbd150\.js$ cookie-banner.js [L]
-RewriteRule ^assets/runtime/vjt-tracker\.72f1ac625b8d\.js$ js/vjt-tracker.js [L]
+RewriteRule ^assets/runtime/vjt-tracker\.8f7d8c21f484\.js$ js/vjt-tracker.js [L]
 
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d

@@ -524,6 +524,7 @@ const currentUrl = Astro.url.pathname;
         <a
           href="mailto:sales@kssmi.com"
           data-vjt-contact="mailto"
+          data-vjt-placement="inquiry-contact-email"
           class="flex items-center gap-2 text-gray-600 hover:text-[#5D4E37] transition-colors cursor-pointer"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -534,6 +535,7 @@ const currentUrl = Astro.url.pathname;
         <a
           href="https://wa.me/8613510532553"
           data-vjt-contact="whatsapp"
+          data-vjt-placement="inquiry-contact-whatsapp"
           target="_blank"
           rel="noopener noreferrer"
           class="flex items-center gap-2 text-gray-600 hover:text-green-600 transition-colors"
@@ -791,6 +793,7 @@ const currentUrl = Astro.url.pathname;
           // Open a blank email draft directly; never place form contents in the URL.
           mailtoLink.href = 'mailto:sales@kssmi.com';
           mailtoLink.setAttribute('data-vjt-contact', 'mailto');
+          mailtoLink.setAttribute('data-vjt-placement', 'inquiry-fallback');
           mailtoLink.className = 'inline-block mt-3 px-6 py-3 bg-[#5D4E37] text-white rounded-lg hover:bg-[#4A3D2E]';
           mailtoLink.textContent = fm.openEmailClient;
           mailtoLink.id = 'mailto-fallback';
