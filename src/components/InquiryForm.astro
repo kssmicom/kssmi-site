@@ -520,12 +520,9 @@ const currentUrl = Astro.url.pathname;
           </svg>
           <span class="text-sm">+86-135-1053-2553</span>
         </a>
-        <!-- Email (Keep in sync with Footer.astro email obfuscation) -->
+        <!-- Email -->
         <a
-          href="/api/contact-intent.php?channel=mailto&amp;placement=inquiry-contact-email"
-          data-email-user="sales"
-          data-email-domain="kssmi.com"
-          data-contact-core="1"
+          href="mailto:sales@kssmi.com"
           data-vjt-contact="mailto"
           class="flex items-center gap-2 text-gray-600 hover:text-[#5D4E37] transition-colors cursor-pointer"
         >
@@ -535,8 +532,7 @@ const currentUrl = Astro.url.pathname;
           <span class="text-sm">sales#kssmi.com</span>
         </a>
         <a
-          href="/api/contact-intent.php?channel=whatsapp&amp;placement=inquiry-contact-whatsapp"
-          data-contact-core="1"
+          href="https://wa.me/8613510532553"
           data-vjt-contact="whatsapp"
           target="_blank"
           rel="noopener noreferrer"
@@ -792,10 +788,8 @@ const currentUrl = Astro.url.pathname;
           showError(fm.phpNotRunning);
 
           const mailtoLink = document.createElement('a');
-          // Keep form contents out of URL/access logs. Contact Core records only
-          // a minimal intent before opening a blank email draft.
-          mailtoLink.href = '/api/contact-intent.php?channel=mailto&placement=inquiry-fallback';
-          mailtoLink.setAttribute('data-contact-core', '1');
+          // Open a blank email draft directly; never place form contents in the URL.
+          mailtoLink.href = 'mailto:sales@kssmi.com';
           mailtoLink.setAttribute('data-vjt-contact', 'mailto');
           mailtoLink.className = 'inline-block mt-3 px-6 py-3 bg-[#5D4E37] text-white rounded-lg hover:bg-[#4A3D2E]';
           mailtoLink.textContent = fm.openEmailClient;
@@ -831,39 +825,8 @@ const currentUrl = Astro.url.pathname;
   // Initialize form
   setupFormSubmission();
 
-  // Email Button Logic - Construct mailto dynamically to bypass obfuscation
-  // Keep in sync with Footer.astro email obfuscation JS
-  function initEmailButtons() {
-    const emailButtons = document.querySelectorAll('[data-email-user][data-email-domain]');
-    emailButtons.forEach(function(btn) {
-      if (btn.getAttribute('data-contact-core') === '1') return;
-      const user = btn.getAttribute('data-email-user');
-      const domain = btn.getAttribute('data-email-domain');
-      const mailtoUrl = 'mailto:' + user + '@' + domain;
-
-      // On hover, set the real href so browser shows it in status bar
-      btn.onmouseenter = function() {
-        this.href = mailtoUrl;
-      };
-
-      // On mouse leave, reset to placeholder
-      btn.onmouseleave = function() {
-        this.href = '#email';
-      };
-
-      // On click, ensure href is set and let browser handle it
-      btn.onclick = function(e) {
-        this.href = mailtoUrl;
-      };
-    });
-  }
-
-  // Initialize email buttons
-  initEmailButtons();
-
   // Re-setup after View Transitions
   document.addEventListener('astro:page-load', function() {
     setupFormSubmission();
-    initEmailButtons();
   });
 </script>

@@ -196,9 +196,9 @@ const currentYear = new Date().getFullYear();
             </a>
           </li>
 
-          <!-- Email (Keep in sync with InquiryForm.astro email obfuscation) -->
+          <!-- Email -->
           <li>
-            <a href="/api/contact-intent.php?channel=mailto&amp;placement=footer-contact" data-email-user="sales" data-email-domain="kssmi.com" data-contact-core="1" data-vjt-contact="mailto" class="flex items-center gap-3 group hover:text-white transition-colors duration-300">
+            <a href="mailto:sales@kssmi.com" data-vjt-contact="mailto" class="flex items-center gap-3 group hover:text-white transition-colors duration-300">
               <svg class="w-5 h-5 text-[#b45309] shrink-0 motion-safe:group-hover:scale-110 motion-safe:group-hover:-translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"></path>
               </svg>
@@ -234,11 +234,8 @@ const currentYear = new Date().getFullYear();
     </span>
   </a>
 
-  <!-- Email Button - uses JS to bypass email obfuscation -->
-  <a href="/api/contact-intent.php?channel=mailto&amp;placement=floating-email"
-     data-email-user="sales"
-     data-email-domain="kssmi.com"
-     data-contact-core="1"
+  <!-- Email Button -->
+  <a href="mailto:sales@kssmi.com"
      data-vjt-contact="mailto"
      title={t.floating.email}
      aria-label={t.floating.email}
@@ -252,8 +249,7 @@ const currentYear = new Date().getFullYear();
   </a>
 
   <!-- WhatsApp Button -->
-  <a href="/api/contact-intent.php?channel=whatsapp&amp;placement=floating-whatsapp"
-     data-contact-core="1"
+  <a href="https://wa.me/8613510532553"
      data-vjt-contact="whatsapp"
      rel="noopener noreferrer"
      target="_blank"
@@ -311,47 +307,11 @@ const currentYear = new Date().getFullYear();
     };
   }
 
-  // Email Button Logic - Construct mailto dynamically to bypass obfuscation
-  // Keep in sync with InquiryForm.astro email obfuscation JS
-  function initEmailButtons() {
-    const emailButtons = document.querySelectorAll('[data-email-user][data-email-domain]');
-    emailButtons.forEach(function(btn) {
-      if (btn.getAttribute('data-contact-core') === '1') return;
-      const user = btn.getAttribute('data-email-user');
-      const domain = btn.getAttribute('data-email-domain');
-      const mailtoUrl = 'mailto:' + user + '@' + domain;
-
-      // On hover, set the real href so browser shows it in status bar
-      // @ts-ignore
-      btn.onmouseenter = function() {
-        // @ts-ignore
-        btn.href = mailtoUrl;
-      };
-
-      // On mouse leave, reset to placeholder (prevents Cloudflare from seeing it in HTML)
-      // @ts-ignore
-      btn.onmouseleave = function() {
-        // @ts-ignore
-        btn.href = '#email';
-      };
-
-      // On click, ensure href is set and let browser handle it
-      // @ts-ignore
-      btn.onclick = function(e) {
-        // @ts-ignore
-        btn.href = mailtoUrl;
-        // Let the browser handle the mailto link naturally
-      };
-    });
-  }
-
   // Initialize on first load
   initScrollTopButton();
-  initEmailButtons();
 
   // Re-initialize after View Transitions navigation
   document.addEventListener('astro:page-load', function() {
     initScrollTopButton();
-    initEmailButtons();
   });
 </script>

@@ -803,12 +803,11 @@
         return;
       }
 
-      event.preventDefault();
-
       // Contact Core owns the one authoritative business event. With consent,
       // mark this same-site navigation so the server may link existing VJT
       // cookies; do not also create a duplicate analytics submission.
       if (isContactCoreLink(anchor, href)) {
+        event.preventDefault();
         href = addContactCoreAnalyticsFlag(href);
         if (anchor.target === '_blank') {
           window.open(href, '_blank', 'noopener');
@@ -855,6 +854,16 @@
         path_snapshot: snapshot,
         site_language: session.siteLanguage || getSiteLanguage()
       };
+
+      // Direct contact is conversion-critical: preserve the browser's native
+      // navigation and send tracking in the background. deliverConversion uses
+      // keepalive and the local retry queue, so analytics never delays contact.
+      if (kind === 'whatsapp' || kind === 'mailto') {
+        submitConversion(payload);
+        return;
+      }
+
+      event.preventDefault();
 
       var proceed = function() {
         if (anchor.target === '_blank') {
