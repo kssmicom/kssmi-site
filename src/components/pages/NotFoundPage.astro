@@ -847,7 +847,7 @@ const t = i18n[lang] || i18n.en;
       var widgetDiv = document.createElement('div');
       container.appendChild(widgetDiv);
       try {
-        window.turnstile.render(widgetDiv, {
+        window.turnstileWidgetId = window.turnstile.render(widgetDiv, {
           sitekey: window.TURNSTILE_SITE_KEY,
           action: 'contact_form',
           theme: 'light',
@@ -936,13 +936,22 @@ const t = i18n[lang] || i18n.en;
         var apiUrl = isDev ? 'http://localhost:4325/send-mail.php' : '/send-mail.php';
         var response = await fetch(apiUrl, { method: 'POST', body: formData });
 
-        if (!response.ok) {
-          var ct = response.headers.get('content-type');
-          if (ct && ct.includes('text/html')) throw new Error('PHP_NOT_CONFIGURED');
-          throw new Error('HTTP ' + response.status);
-        }
-
+        var ct = response.headers.get('content-type');
+        if (ct && ct.includes('text/html')) throw new Error('PHP_NOT_CONFIGURED');
         var result = await response.json();
+
+        if (!response.ok) {
+          els2.errorMessage.textContent = result.errors
+            ? result.errors.join('. ')
+            : (result.message || generalError);
+          els2.errorContainer.classList.remove('hidden');
+          if (window.turnstile && window.turnstileWidgetId !== undefined) {
+            window.turnstile.reset(window.turnstileWidgetId);
+            window.turnstileToken = null;
+          }
+          setLoading(false);
+          return;
+        }
 
         if (result.success) {
           window.location.href = (lang === 'en' ? '/thank-you/' : '/' + lang + '/thank-you/');
@@ -955,6 +964,10 @@ const t = i18n[lang] || i18n.en;
 
         els2.errorMessage.textContent = errorFallback.replace('{email}', emailUser + '@' + emailDomain);
         els2.errorContainer.classList.remove('hidden');
+        if (window.turnstile && window.turnstileWidgetId !== undefined) {
+          window.turnstile.reset(window.turnstileWidgetId);
+          window.turnstileToken = null;
+        }
         setLoading(false);
       }
     });

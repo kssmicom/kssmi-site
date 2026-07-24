@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "node scripts/validate-content.mjs && node src/scripts/generate-llms.js && node src/scripts/generate-sitemap.js",
+    "prebuild": "node scripts/validate-content.mjs && node scripts/validate-email-log-policy.mjs && node src/scripts/generate-llms.js && node src/scripts/generate-sitemap.js",
     "build": "astro build && node scripts/materialize-runtime-assets.mjs dist && node scripts/generate-csp-hashes.mjs dist && node scripts/validate-hreflang.mjs dist",
     "preview": "astro preview",
     "astro": "astro",
@@ -15,6 +15,7 @@
     "validate:cache": "node scripts/validate-cache-policy.mjs",
     "validate:dom": "node scripts/validate-dom-policy.mjs",
     "validate:lcp": "node scripts/validate-lcp-policy.mjs",
+    "validate:email-logs": "node scripts/validate-email-log-policy.mjs",
     "validate:astro-syntax": "node scripts/validate-astro-syntax.mjs",
     "validate:translations": "node scripts/validate-translations.mjs"
   },

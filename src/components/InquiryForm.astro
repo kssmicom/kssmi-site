@@ -572,7 +572,7 @@ const currentUrl = Astro.url.pathname;
 
       // Render Turnstile widget
       try {
-        window.turnstile.render(widgetDiv, {
+        window.turnstileWidgetId = window.turnstile.render(widgetDiv, {
           sitekey: window.TURNSTILE_SITE_KEY,
           action: 'contact_form',
           theme: 'light',
@@ -763,15 +763,26 @@ const currentUrl = Astro.url.pathname;
           body: formData
         });
 
-        if (!response.ok) {
-          const contentType = response.headers.get('content-type');
-          if (contentType && contentType.includes('text/html')) {
-            throw new Error('PHP_NOT_CONFIGURED');
-          }
-          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        const contentType = response.headers.get('content-type');
+        if (contentType && contentType.includes('text/html')) {
+          throw new Error('PHP_NOT_CONFIGURED');
         }
 
         const result = await response.json();
+
+        if (!response.ok) {
+          const errorMsg = result.errors
+            ? result.errors.join('. ')
+            : (result.message || fm.errorDefault);
+          showError(errorMsg);
+          if (window.turnstile && window.turnstileWidgetId !== undefined) {
+            window.turnstile.reset(window.turnstileWidgetId);
+            window.turnstileToken = null;
+          }
+          delete newForm.dataset.vjtSubmitting;
+          setLoading(false);
+          return;
+        }
 
         if (result.success) {
           const currentLang = formData.get('language') || 'en';
@@ -819,6 +830,10 @@ const currentUrl = Astro.url.pathname;
           showError(fm.errorPrefix.replace('{0}', error.message));
         }
 
+        if (window.turnstile && window.turnstileWidgetId !== undefined) {
+          window.turnstile.reset(window.turnstileWidgetId);
+          window.turnstileToken = null;
+        }
         delete newForm.dataset.vjtSubmitting;
         setLoading(false);
       }

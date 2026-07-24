@@ -78,6 +78,18 @@ if ((int)($_SERVER['CONTENT_LENGTH'] ?? 0) > 131072) {
 // Rate limit: 2 form submissions per IP per 60s (prevents mail-bomb attacks
 // that would exhaust Gmail SMTP quota and blacklist our sender IP)
 require_once dirname(__DIR__) . '/private/rate-limit.php';
+require_once dirname(__DIR__) . '/private/email-log-store.php';
+$emailLogPath = dirname(__DIR__) . '/email_data/email-logs.json';
+if (kssmi_email_logs_cutover_is_active($emailLogPath)) {
+    http_response_code(503);
+    header('Content-Type: application/json');
+    header('Retry-After: 60');
+    echo json_encode([
+        'success' => false,
+        'message' => 'The inquiry service is being updated. Please try again in one minute.',
+    ]);
+    exit;
+}
 if (!checkRateLimit('send-mail', 2, 60)) {
     http_response_code(429);
     header('Content-Type: application/json');
@@ -116,7 +128,7 @@ $config = [
 
     // Email Logging
     'log_enabled' => true,
-    'log_file' => dirname(__DIR__) . '/email-logs.json',
+    'log_file' => $emailLogPath,
 
 ];
 
@@ -124,7 +136,17 @@ $config = [
 // EMAIL LOGGING FUNCTIONS
 // ============================================
 
-function logEmail($config, $data, $status, $message = '', $error = '', $visitorIP = null, $visitorCountry = null) {
+function logEmail(
+    $config,
+    $data,
+    $status,
+    $message = '',
+    $error = '',
+    $visitorIP = null,
+    $visitorCountry = null,
+    $securityState = 'unverified',
+    $failureType = null
+) {
     if (!$config['log_enabled']) return;
 
     // Use provided IP or fall back to server detection
@@ -133,8 +155,23 @@ function logEmail($config, $data, $status, $message = '', $error = '', $visitorI
     // Store form details for potential resend
     $formDetails = $data['details'] ?? '';
 
+    try {
+        $logId = bin2hex(random_bytes(16));
+    } catch (Throwable $e) {
+        $logId = hash('sha256', uniqid('kssmi-log-', true));
+    }
+
+    $deliveryOutcome = null;
+    if ($status === 'success') {
+        $deliveryOutcome = 'success';
+    } elseif ($failureType === 'delivery_uncertain') {
+        $deliveryOutcome = 'uncertain';
+    } elseif ($failureType === 'delivery') {
+        $deliveryOutcome = 'definite_failure';
+    }
+
     $logEntry = [
-        'id' => uniqid(),
+        'id' => $logId,
         'timestamp' => date('Y-m-d H:i:s T'),
         'unix_time' => time(),
         'status' => $status, // 'success', 'failed', 'pending'
@@ -155,24 +192,22 @@ function logEmail($config, $data, $status, $message = '', $error = '', $visitorI
         ],
         'message' => $message,
         'error' => $error,
+        'security_state' => $securityState,
+        'security_verified' => $securityState === 'verified',
+        'failure_type' => is_string($failureType) && $failureType !== '' ? $failureType : null,
+        'delivery_outcome' => $deliveryOutcome,
         'ip_address' => $ipToLog,
         'country' => $visitorCountry ?? 'Unknown',
         'user_agent' => vjt_clip((string)($_SERVER['HTTP_USER_AGENT'] ?? 'Unknown'), 512),
     ];
 
-    // Read existing logs
-    $logs = [];
-    if (file_exists($config['log_file'])) {
-        $logsContent = file_get_contents($config['log_file']);
-        $logs = json_decode($logsContent, true) ?: [];
+    $result = kssmi_email_logs_mutate($config['log_file'], function($logs) use ($logEntry) {
+        array_unshift($logs, $logEntry);
+        return array_slice($logs, 0, 1000);
+    });
+    if (!$result['ok']) {
+        error_log('KSSMI Email Logs: unable to append log entry; reason=' . ($result['error'] ?? 'unknown'));
     }
-
-    // Add new entry (keep last 1000 entries)
-    array_unshift($logs, $logEntry);
-    $logs = array_slice($logs, 0, 1000);
-
-    // Save logs
-    file_put_contents($config['log_file'], json_encode($logs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 
 // VJT Tracking
@@ -324,22 +359,39 @@ function recordInquiryOutcome($config, $data, $status, $visitorIP, $visitorCount
 }
 
 function getRecentLogs($config, $limit = 50) {
-    if (!file_exists($config['log_file'])) {
-        return [];
-    }
-
-    $logsContent = file_get_contents($config['log_file']);
-    $logs = json_decode($logsContent, true) ?: [];
-
-    return array_slice($logs, 0, $limit);
+    $result = kssmi_email_logs_read($config['log_file']);
+    if (!$result['ok']) return [];
+    return array_slice($result['logs'], 0, $limit);
 }
 
 // ============================================
 // TURNSTILE VERIFICATION
 // ============================================
 
-function verifyTurnstile($token, $secret) {
-    if (!is_string($token) || $token === '' || strlen($token) > 4096 || $secret === '') return false;
+function verifyTurnstileDetailed($token, $secret) {
+    if (!is_string($token) || $token === '' || strlen($token) > 4096) {
+        return [
+            'ok' => false,
+            'service_error' => false,
+            'reason' => 'missing_or_invalid_token',
+        ];
+    }
+
+    if (!is_string($secret) || $secret === '') {
+        return [
+            'ok' => false,
+            'service_error' => true,
+            'reason' => 'missing_secret',
+        ];
+    }
+
+    if (!function_exists('curl_init')) {
+        return [
+            'ok' => false,
+            'service_error' => true,
+            'reason' => 'curl_unavailable',
+        ];
+    }
 
     // Always use server-detected IP — never trust client-reported
     // (client IP was spoofable, see P1-4 of security-004)
@@ -352,6 +404,13 @@ function verifyTurnstile($token, $secret) {
     ];
 
     $ch = curl_init('https://challenges.cloudflare.com/turnstile/v0/siteverify');
+    if ($ch === false) {
+        return [
+            'ok' => false,
+            'service_error' => true,
+            'reason' => 'siteverify_init_failed',
+        ];
+    }
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -361,16 +420,73 @@ function verifyTurnstile($token, $secret) {
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
 
-    if ($response === false || $httpCode !== 200) {
-        return false;
+    if ($response === false) {
+        return [
+            'ok' => false,
+            'service_error' => true,
+            'reason' => 'siteverify_transport_error',
+        ];
+    }
+
+    if ($httpCode !== 200) {
+        return [
+            'ok' => false,
+            'service_error' => true,
+            'reason' => 'siteverify_http_error',
+        ];
     }
 
     $result = json_decode($response, true);
-    if (!is_array($result) || ($result['success'] ?? false) !== true) return false;
+    if (!is_array($result)) {
+        return [
+            'ok' => false,
+            'service_error' => true,
+            'reason' => 'siteverify_invalid_json',
+        ];
+    }
+
+    if (($result['success'] ?? false) !== true) {
+        $rawErrorCodes = $result['error-codes'] ?? [];
+        $errorCodes = is_array($rawErrorCodes)
+            ? array_values(array_filter($rawErrorCodes, 'is_string'))
+            : [];
+        $serviceErrorCodes = [
+            'missing-input-secret',
+            'invalid-input-secret',
+            'internal-error',
+        ];
+        $serviceError = count(array_intersect($errorCodes, $serviceErrorCodes)) > 0;
+
+        return [
+            'ok' => false,
+            'service_error' => $serviceError,
+            'reason' => $serviceError ? 'siteverify_service_error' : 'token_rejected',
+        ];
+    }
+
     $hostname = strtolower((string)($result['hostname'] ?? ''));
     $allowedHostnames = ['kssmi.com', 'www.kssmi.com', 'localhost', '127.0.0.1'];
-    return in_array($hostname, $allowedHostnames, true)
-        && hash_equals('contact_form', (string)($result['action'] ?? ''));
+    if (!in_array($hostname, $allowedHostnames, true)) {
+        return [
+            'ok' => false,
+            'service_error' => false,
+            'reason' => 'hostname_mismatch',
+        ];
+    }
+
+    if (!hash_equals('contact_form', (string)($result['action'] ?? ''))) {
+        return [
+            'ok' => false,
+            'service_error' => false,
+            'reason' => 'action_mismatch',
+        ];
+    }
+
+    return [
+        'ok' => true,
+        'service_error' => false,
+        'reason' => 'verified',
+    ];
 }
 
 // ============================================
@@ -796,7 +912,37 @@ $turnstileToken = is_string($_POST['cf-turnstile-response'] ?? null) ? $_POST['c
 // Set JSON response header
 header('Content-Type: application/json');
 
-// Validate required fields
+// Verify Turnstile (skip in debug mode)
+$securityState = 'debug_bypass';
+if (!$config['debug_mode']) {
+    $turnstileResult = verifyTurnstileDetailed($turnstileToken, $config['turnstile_secret']);
+    if (!$turnstileResult['ok']) {
+        $isServiceError = $turnstileResult['service_error'] === true;
+        $reason = (string)($turnstileResult['reason'] ?? 'unknown');
+        // Ordinary bot/token rejections are intentionally silent. Logging one
+        // line per rejection lets distributed spam grow the PHP error log.
+        if ($isServiceError) {
+            error_log('KSSMI Turnstile service/configuration error: reason=' . $reason);
+        }
+
+        http_response_code($isServiceError ? 503 : 403);
+        echo json_encode([
+            'success' => false,
+            'errors' => [
+                $isServiceError
+                    ? 'Security verification is temporarily unavailable. Please try again.'
+                    : 'Security verification failed. Please complete the captcha and try again.'
+            ]
+        ]);
+        exit;
+    }
+    $securityState = 'verified';
+} else {
+    // Log that we're in debug mode
+    error_log("KSSMI Form: Debug mode enabled - Turnstile verification skipped");
+}
+
+// Validate required business fields only after the security gate has passed.
 $errors = [];
 
 if (empty($formData['name'])) {
@@ -811,20 +957,9 @@ if (empty($formData['details'])) {
     $errors[] = 'Project details are required';
 }
 
-// Verify Turnstile (skip in debug mode)
-if (!$config['debug_mode']) {
-    if (!verifyTurnstile($turnstileToken, $config['turnstile_secret'])) {
-        $errors[] = 'Security verification failed. Please complete the captcha.';
-    }
-} else {
-    // Log that we're in debug mode
-    error_log("KSSMI Form: Debug mode enabled - Turnstile verification skipped");
-}
-
-// Return errors if any
+// Invalid form data is not an email delivery attempt and does not belong in Email Logs.
 if (!empty($errors)) {
-    logEmail($config, $formData, 'failed', 'Validation failed', implode(', ', $errors));
-    http_response_code(400);
+    http_response_code(422);
     echo json_encode(['success' => false, 'errors' => $errors]);
     exit;
 }
@@ -848,7 +983,17 @@ $phpmailerPath = __DIR__ . '/vendor/phpmailer/phpmailer/src/';
 if (!file_exists($phpmailerPath . 'PHPMailer.php')) {
     // PHPMailer not installed - log and return error
     $errorMsg = 'PHPMailer not installed. Run: composer require phpmailer/phpmailer';
-    logEmail($config, $formData, 'failed', 'PHPMailer missing', $errorMsg, $visitorIP, $visitorCountry);
+    logEmail(
+        $config,
+        $formData,
+        'failed',
+        'PHPMailer missing',
+        $errorMsg,
+        $visitorIP,
+        $visitorCountry,
+        $securityState,
+        'delivery'
+    );
     error_log("KSSMI Form Error: " . $errorMsg);
 
     http_response_code(500);
@@ -866,6 +1011,8 @@ require_once $phpmailerPath . 'SMTP.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception as PHPMailerException;
+
+$smtpSendStarted = false;
 
 try {
     $mail = new PHPMailer(true);
@@ -914,11 +1061,25 @@ try {
     // Set higher timeout for slow connections
     $mail->Timeout = 30;
 
-    // Send
-    $mail->send();
+    // Any exception after this point has an ambiguous delivery outcome: the
+    // SMTP server may have accepted DATA before the acknowledgement was lost.
+    $smtpSendStarted = true;
+    if (!$mail->send()) {
+        throw new PHPMailerException('SMTP send returned false');
+    }
 
     // Log success
-    logEmail($config, $formData, 'success', 'Email sent successfully', '', $visitorIP, $visitorCountry);
+    logEmail(
+        $config,
+        $formData,
+        'success',
+        'Email sent successfully',
+        '',
+        $visitorIP,
+        $visitorCountry,
+        $securityState,
+        null
+    );
 
     // Record to VJT database
     recordInquiryOutcome($config, array_merge($formData, $vjtData), 'success', $visitorIP, $visitorCountry);
@@ -935,29 +1096,59 @@ try {
     ]);
 
 } catch (PHPMailerException $e) {
-    // Log failure
     $errorMsg = $e->getMessage();
-    logEmail($config, $formData, 'failed', 'PHPMailer error', $errorMsg, $visitorIP, $visitorCountry);
+    $failureType = $smtpSendStarted ? 'delivery_uncertain' : 'delivery';
+    $failureMessage = $smtpSendStarted
+        ? 'PHPMailer delivery outcome uncertain'
+        : 'PHPMailer definite failure';
+    logEmail(
+        $config,
+        $formData,
+        'failed',
+        $failureMessage,
+        $errorMsg,
+        $visitorIP,
+        $visitorCountry,
+        $securityState,
+        $failureType
+    );
     recordInquiryOutcome($config, array_merge($formData, $vjtData), 'error', $visitorIP, $visitorCountry);
     error_log("KSSMI Form Error (PHPMailer): " . $errorMsg);
 
     http_response_code(500);
     echo json_encode([
         'success' => false,
-        'message' => 'Sorry, there was an error sending your message. Please email us directly at sales@kssmi.com',
+        'message' => $smtpSendStarted
+            ? 'We could not confirm the delivery result. Please do not submit again; our team will check the mailbox.'
+            : 'Sorry, there was an error sending your message. Please email us directly at sales@kssmi.com',
         'debug' => $config['debug_mode'] ? $errorMsg : null
     ]);
 } catch (Exception $e) {
-    // Log failure
     $errorMsg = $e->getMessage();
-    logEmail($config, $formData, 'failed', 'General error', $errorMsg, $visitorIP, $visitorCountry);
+    $failureType = $smtpSendStarted ? 'delivery_uncertain' : 'delivery';
+    $failureMessage = $smtpSendStarted
+        ? 'General delivery outcome uncertain'
+        : 'General definite failure';
+    logEmail(
+        $config,
+        $formData,
+        'failed',
+        $failureMessage,
+        $errorMsg,
+        $visitorIP,
+        $visitorCountry,
+        $securityState,
+        $failureType
+    );
     recordInquiryOutcome($config, array_merge($formData, $vjtData), 'error', $visitorIP, $visitorCountry);
     error_log("KSSMI Form Error: " . $errorMsg);
 
     http_response_code(500);
     echo json_encode([
         'success' => false,
-        'message' => 'Sorry, there was an error sending your message. Please email us directly at sales@kssmi.com',
+        'message' => $smtpSendStarted
+            ? 'We could not confirm the delivery result. Please do not submit again; our team will check the mailbox.'
+            : 'Sorry, there was an error sending your message. Please email us directly at sales@kssmi.com',
         'debug' => $config['debug_mode'] ? $errorMsg : null
     ]);
 }

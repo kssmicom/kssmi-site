@@ -38,10 +38,11 @@ if (file_exists($_privateConfigPath)) {
 // Old paths (inside public_html) kept for migration; new paths are one level up
 define('PASSWORD_FILE_OLD', dirname(__FILE__) . '/.email_logs_password');
 define('PASSWORD_FILE', dirname(__DIR__) . '/.email_logs_password');
-define('LOGS_FILE', dirname(dirname(__FILE__)) . '/email-logs.json');
+define('LOGS_FILE', dirname(dirname(__FILE__)) . '/email_data/email-logs.json');
 define('RESET_TOKENS_FILE_OLD', dirname(__FILE__) . '/.email_reset_tokens.json');
 define('RESET_TOKENS_FILE', dirname(__DIR__) . '/.email_reset_tokens.json');
 define('ADMIN_EMAIL', 'kssmi@kssmi.com');
+require_once dirname(__DIR__) . '/private/email-log-store.php';
 
 // Migrate sensitive files from public_html to the safe directory above it
 foreach ([
@@ -440,9 +441,28 @@ if ($isAuthenticated && isset($_POST['clear_logs'])) {
     if (!validateCSRF()) {
         $error = 'Security check failed. Please try again.';
     } else {
-        file_put_contents(LOGS_FILE, '[]');
-        $message = 'All logs cleared';
+        $clearResult = kssmi_email_logs_mutate(LOGS_FILE, function($logs) {
+            return [];
+        });
+        if ($clearResult['ok']) {
+            $message = 'All logs cleared';
+        } else {
+            $error = 'Unable to clear logs safely. The existing log file was preserved.';
+        }
     }
+}
+
+/**
+ * Email Logs historically included validation and Turnstile rejections.
+ * Keep those old rows visible for cleanup, but never treat them as accepted
+ * inquiries or allow them to enter the resend path.
+ */
+function isAcceptedInquiryLog($log) {
+    return kssmi_email_log_is_accepted($log);
+}
+
+function isResendEligibleLog($log) {
+    return kssmi_email_log_is_resend_eligible($log);
 }
 
 // Handle resend
@@ -451,28 +471,78 @@ if ($isAuthenticated && isset($_POST['resend_id'])) {
     if (!validateCSRF()) {
         $resendMessage = 'Security check failed. Please try again.';
     } else {
-    $resendId = $_POST['resend_id'];
-    $logs = [];
-    if (file_exists(LOGS_FILE)) {
-        $content = file_get_contents(LOGS_FILE);
-        $logs = json_decode($content, true) ?: [];
-    }
+        $resendId = is_scalar($_POST['resend_id']) ? (string)$_POST['resend_id'] : '';
+        $claim = kssmi_email_logs_claim_resend(LOGS_FILE, $resendId);
 
-    foreach ($logs as $key => $log) {
-        if (isset($log['id']) && $log['id'] === $resendId) {
-            $result = resendEmail($log);
-            $logs[$key]['status'] = $result['success'] ? 'success' : 'failed';
-            if (!$result['success']) {
-                $logs[$key]['error'] = $result['error'] ?? 'Unknown error';
+        if (!$claim['ok']) {
+            $resendMessage = 'Resend blocked: the log file could not be updated safely.';
+        } elseif (!$claim['claimed']) {
+            if (!($claim['found'] ?? false)) {
+                $resendMessage = 'Resend failed: log entry not found.';
+            } elseif (($claim['block_reason'] ?? '') === 'resend_outcome_uncertain') {
+                $resendMessage =
+                    'Resend blocked: a previous resend has an uncertain outcome. ' .
+                    'Check the sales mailbox before taking any manual action.';
+            } elseif (($claim['block_reason'] ?? '') === 'resend_in_progress') {
+                $resendMessage = 'Resend blocked: this entry is already being resent.';
+            } else {
+                $resendMessage =
+                    'Resend blocked: this entry is not a verified delivery failure.';
             }
-            $logs[$key]['resent_at'] = date('Y-m-d H:i:s T');
-            $resendMessage = $result['success'] ? 'Email resent successfully!' : 'Resend failed: ' . ($result['error'] ?? 'Unknown error');
-            break;
+        } else {
+            // The exclusive claim is persisted before SMTP starts. A second
+            // request therefore cannot send the same row at the same time.
+            $result = resendEmail($claim['log']);
+            $finish = kssmi_email_logs_finish_resend(
+                LOGS_FILE,
+                $resendId,
+                $claim['token'],
+                $result
+            );
+
+            if (!$finish['ok']) {
+                $resendMessage = 'Email resend completed, but its log could not be updated safely.';
+            } elseif (!$finish['updated']) {
+                $resendMessage = 'Email resend completed, but its claim was no longer current.';
+            } elseif (($result['outcome'] ?? null) === 'uncertain') {
+                $resendMessage =
+                    'Resend outcome uncertain. Check the sales mailbox before unlocking another attempt.';
+            } else {
+                $resendMessage = $result['success']
+                    ? 'Email resent successfully!'
+                    : 'Resend failed: ' . ($result['error'] ?? 'Unknown error');
+            }
+        }
+    } // end CSRF check
+}
+
+// An expired claim means SMTP may already have accepted the message before the
+// PHP worker died. Unlock only after an authenticated admin explicitly confirms
+// that the sales mailbox was checked and the message was not received.
+if ($isAuthenticated && isset($_POST['resolve_uncertain_resend_id'])) {
+    if (!validateCSRF()) {
+        $resendMessage = 'Security check failed. Please try again.';
+    } elseif (($_POST['confirm_mailbox_checked'] ?? '') !== 'yes') {
+        $resendMessage =
+            'Unlock blocked: confirm that the sales mailbox was checked first.';
+    } else {
+        $resolveId = is_scalar($_POST['resolve_uncertain_resend_id'])
+            ? (string)$_POST['resolve_uncertain_resend_id']
+            : '';
+        $resolve = kssmi_email_logs_resolve_uncertain_resend(LOGS_FILE, $resolveId);
+        if (!$resolve['ok']) {
+            $resendMessage = 'Unlock blocked: the log file could not be updated safely.';
+        } elseif ($resolve['resolved']) {
+            $resendMessage =
+                'Uncertain resend reviewed and unlocked successfully. You may now resend if needed.';
+        } elseif (!($resolve['found'] ?? false)) {
+            $resendMessage = 'Unlock failed: log entry not found.';
+        } elseif (($resolve['blocked_reason'] ?? '') === 'resend_in_progress') {
+            $resendMessage = 'Unlock blocked: the resend claim is still active.';
+        } else {
+            $resendMessage = 'Unlock blocked: this entry is not eligible for recovery.';
         }
     }
-
-    file_put_contents(LOGS_FILE, json_encode($logs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-    } // end CSRF check
 }
 
 // Handle delete single log
@@ -480,19 +550,15 @@ if ($isAuthenticated && isset($_POST['delete_id'])) {
     if (!validateCSRF()) {
         $message = 'Security check failed. Please try again.';
     } else {
-    $deleteId = $_POST['delete_id'];
-    $logs = [];
-    if (file_exists(LOGS_FILE)) {
-        $content = file_get_contents(LOGS_FILE);
-        $logs = json_decode($content, true) ?: [];
-    }
-
-    $logs = array_values(array_filter($logs, function($log) use ($deleteId) {
-        return !isset($log['id']) || $log['id'] !== $deleteId;
-    }));
-
-    file_put_contents(LOGS_FILE, json_encode($logs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-    $message = 'Log entry deleted';
+    $deleteId = is_scalar($_POST['delete_id']) ? (string)$_POST['delete_id'] : '';
+    $deleteResult = kssmi_email_logs_mutate(LOGS_FILE, function($logs) use ($deleteId) {
+        return array_values(array_filter($logs, function($log) use ($deleteId) {
+            return !isset($log['id']) || $log['id'] !== $deleteId;
+        }));
+    });
+    $message = $deleteResult['ok']
+        ? 'Log entry deleted'
+        : 'Unable to delete the log safely. The existing file was preserved.';
     } // end CSRF check
 }
 
@@ -501,41 +567,46 @@ if ($isAuthenticated && isset($_POST['bulk_delete']) && isset($_POST['selected_i
     if (!validateCSRF()) {
         $message = 'Security check failed. Please try again.';
     } else {
-    $selectedIds = $_POST['selected_ids'];
-    $logs = [];
-    if (file_exists(LOGS_FILE)) {
-        $content = file_get_contents(LOGS_FILE);
-        $logs = json_decode($content, true) ?: [];
-    }
-
-    $logs = array_values(array_filter($logs, function($log) use ($selectedIds) {
-        return !isset($log['id']) || !in_array($log['id'], $selectedIds);
-    }));
-
-    file_put_contents(LOGS_FILE, json_encode($logs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-    $message = count($selectedIds) . ' log entries deleted';
+    $selectedIds = is_array($_POST['selected_ids'])
+        ? array_values(array_filter($_POST['selected_ids'], 'is_scalar'))
+        : [];
+    $selectedIds = array_map('strval', $selectedIds);
+    $bulkResult = kssmi_email_logs_mutate(LOGS_FILE, function($logs) use ($selectedIds) {
+        return array_values(array_filter($logs, function($log) use ($selectedIds) {
+            return !isset($log['id']) || !in_array((string)$log['id'], $selectedIds, true);
+        }));
+    });
+    $message = $bulkResult['ok']
+        ? count($selectedIds) . ' log entries deleted'
+        : 'Unable to delete the selected logs safely. The existing file was preserved.';
     } // end CSRF check
 }
 
 // Load logs
-$logs = [];
-if (file_exists(LOGS_FILE)) {
-    $content = file_get_contents(LOGS_FILE);
-    $logs = json_decode($content, true) ?: [];
+$loadResult = kssmi_email_logs_read(LOGS_FILE);
+$logs = $loadResult['ok'] ? $loadResult['logs'] : [];
+if (!$loadResult['ok'] && $isAuthenticated) {
+    $error = 'Email Logs could not be read safely. No data was overwritten; check the server error log.';
 }
 
 // Stats
-$totalEmails = count($logs);
+$acceptedCount = 0;
 $successCount = 0;
 $failedCount = 0;
+$uncertainCount = 0;
 $recent24h = 0;
 
 foreach ($logs as $l) {
-    if (isset($l['status'])) {
-        if ($l['status'] === 'success') $successCount++;
-        if ($l['status'] === 'failed') $failedCount++;
+    if (!isAcceptedInquiryLog($l)) continue;
+
+    $acceptedCount++;
+    if (($l['status'] ?? '') === 'success') $successCount++;
+    if (($l['failure_type'] ?? null) === 'delivery_uncertain') {
+        $uncertainCount++;
+    } elseif (($l['status'] ?? '') === 'failed') {
+        $failedCount++;
     }
-    if (isset($l['unix_time']) && $l['unix_time'] > time() - 86400) {
+    if (isset($l['unix_time']) && is_numeric($l['unix_time']) && (int)$l['unix_time'] > time() - 86400) {
         $recent24h++;
     }
 }
@@ -684,7 +755,9 @@ This email was automatically generated from the KSSMI Eyewear contact form.
 ";
 }
 
-// Resend function (with PHP mail() fallback)
+// Resend function. The local mail() fallback is used only when SMTP was never
+// attempted. Once SMTP starts, an exception can mean that DATA was accepted
+// but the acknowledgement was lost, so a second transport could duplicate it.
 function resendEmail($log) {
     global $_privateCfg;
 
@@ -694,6 +767,15 @@ function resendEmail($log) {
     $ip = $log['ip_address'] ?? 'Unknown';
     $country = $log['country'] ?? 'Unknown';
     $origTime = $log['timestamp'] ?? 'Unknown';
+    $rawLogId = is_scalar($log['id'] ?? null) ? (string)$log['id'] : '';
+    $messageKey = strtolower((string)preg_replace('/[^a-z0-9]+/i', '-', $rawLogId));
+    $messageKey = trim(substr($messageKey, 0, 80), '-');
+    if ($messageKey === '') {
+        $messageKey = substr(hash('sha256', json_encode($log)), 0, 32);
+    }
+    // Stable across retries of the same inquiry, helping mail systems and
+    // operators recognize a duplicate after an uncertain SMTP outcome.
+    $messageId = '<kssmi-inquiry-' . $messageKey . '@kssmi.com>';
 
     $htmlBody = buildResendHtmlEmail($formData, $ip, $country, $inquiryId, $origTime);
     $textBody = buildResendTextEmail($formData, $ip, $country, $inquiryId, $origTime);
@@ -704,12 +786,11 @@ function resendEmail($log) {
         'X-Mailer: PHP/' . phpversion(),
         'MIME-Version: 1.0',
         'Content-Type: text/html; charset=UTF-8',
+        'Message-ID: ' . $messageId,
     ];
 
     // Try PHPMailer SMTP first
     $phpmailerPath = __DIR__ . '/vendor/phpmailer/phpmailer/src/';
-    $smtpTried = false;
-
     if (file_exists($phpmailerPath . 'PHPMailer.php') && !empty($_privateCfg['smtp_pass'])) {
         require_once $phpmailerPath . 'Exception.php';
         require_once $phpmailerPath . 'PHPMailer.php';
@@ -736,30 +817,36 @@ function resendEmail($log) {
             $mail->Subject = "{$name} - Kssmi Eyewear - {$inquiryId}";
             $mail->Body = $htmlBody;
             $mail->AltBody = $textBody;
+            $mail->MessageID = $messageId;
 
             $mail->Timeout = 30;
-            $mail->send();
+            if (!$mail->send()) {
+                throw new Exception('SMTP send returned false');
+            }
 
-            return ['success' => true];
+            return ['success' => true, 'outcome' => 'success'];
         } catch (Exception $e) {
-            $smtpTried = true;
-            $smtpError = $e->getMessage();
-            // Fall through to mail() fallback
+            return [
+                'success' => false,
+                'outcome' => 'uncertain',
+                'error' => 'SMTP outcome uncertain: ' . $e->getMessage(),
+            ];
         }
     }
 
-    // Fallback: use PHP's built-in mail()
+    // PHPMailer/SMTP was unavailable and therefore never attempted. Only this
+    // pre-SMTP state is safe to route through the local MTA fallback.
     $sent = @mail('sales@kssmi.com', "{$name} - Kssmi Eyewear - {$inquiryId}", $htmlBody, implode("\r\n", $headers));
 
     if ($sent) {
-        return ['success' => true, 'fallback' => true];
+        return ['success' => true, 'outcome' => 'success', 'fallback' => true];
     }
 
-    $errorDetail = $smtpTried
-        ? 'SMTP Error: ' . $smtpError . '; mail() fallback also failed.'
-        : 'PHPMailer not installed and mail() failed.';
-
-    return ['success' => false, 'error' => $errorDetail];
+    return [
+        'success' => false,
+        'outcome' => 'definite_failure',
+        'error' => 'PHPMailer/SMTP unavailable and mail() failed.',
+    ];
 }
 ?>
 <!DOCTYPE html>
@@ -840,6 +927,8 @@ function resendEmail($log) {
         .status { padding: 3px 8px; border-radius: 3px; font-size: 11px; font-weight: 500; }
         .status-success { background: #d4edda; color: #155724; }
         .status-failed { background: #f8d7da; color: #721c24; }
+        .status-uncertain { background: #fff3cd; color: #856404; }
+        .status-rejected { background: #fff3cd; color: #856404; }
         .email-link { color: #8B7355; text-decoration: none; }
         .email-link:hover { text-decoration: underline; }
         .time { color: #666; font-size: 12px; white-space: nowrap; }
@@ -1001,19 +1090,23 @@ function resendEmail($log) {
 
             <div class="stats">
                 <div class="stat-card">
-                    <h3>Total Emails</h3>
-                    <div class="value"><?php echo $totalEmails; ?></div>
+                    <h3>Accepted Inquiries</h3>
+                    <div class="value"><?php echo $acceptedCount; ?></div>
                 </div>
                 <div class="stat-card success">
-                    <h3>Successful</h3>
+                    <h3>Sent</h3>
                     <div class="value"><?php echo $successCount; ?></div>
                 </div>
                 <div class="stat-card failed">
-                    <h3>Failed</h3>
+                    <h3>Delivery Failed</h3>
                     <div class="value"><?php echo $failedCount; ?></div>
                 </div>
                 <div class="stat-card">
-                    <h3>Last 24 Hours</h3>
+                    <h3>Delivery Uncertain</h3>
+                    <div class="value"><?php echo $uncertainCount; ?></div>
+                </div>
+                <div class="stat-card">
+                    <h3>Accepted in Last 24 Hours</h3>
                     <div class="value"><?php echo $recent24h; ?></div>
                 </div>
             </div>
@@ -1059,7 +1152,22 @@ function resendEmail($log) {
                             $displayLogs = array_slice($logs, 0, 100);
                             foreach ($displayLogs as $i => $log):
                                 $rawStatus = is_scalar($log['status'] ?? null) ? (string)$log['status'] : 'unknown';
-                                $status = in_array($rawStatus, ['success', 'failed'], true) ? $rawStatus : 'unknown';
+                                $acceptedInquiry = isAcceptedInquiryLog($log);
+                                $resendEligible = isResendEligibleLog($log);
+                                $resendClaimActive = kssmi_email_log_has_active_resend_claim($log);
+                                $resendOutcomeUncertain =
+                                    kssmi_email_log_has_resend_claim($log) &&
+                                    !$resendClaimActive;
+                                $deliveryOutcomeUncertain =
+                                    ($log['failure_type'] ?? null) === 'delivery_uncertain' ||
+                                    ($log['resend_outcome'] ?? null) === 'uncertain';
+                                if ($acceptedInquiry && $deliveryOutcomeUncertain) {
+                                    $status = 'uncertain';
+                                } elseif (in_array($rawStatus, ['success', 'failed'], true)) {
+                                    $status = $acceptedInquiry ? $rawStatus : 'rejected';
+                                } else {
+                                    $status = 'unknown';
+                                }
                                 $timestamp = $log['timestamp'] ?? 'Unknown';
                                 $name = $log['form_data']['name'] ?? 'N/A';
                                 $email = $log['form_data']['email'] ?? 'N/A';
@@ -1079,13 +1187,19 @@ function resendEmail($log) {
                                     </td>
                                     <td onclick="toggleDetail(<?php echo $i; ?>)" style="cursor:pointer;">
                                         <span class="status status-<?php echo $status; ?>"><?php echo ucfirst($status); ?></span>
-                                        <?php if ($status === 'failed' && $error): ?>
+                                        <?php if (in_array($status, ['failed', 'uncertain', 'rejected'], true) && $error): ?>
                                             <br><small style="color:#e74c3c;"><?php echo htmlspecialchars(substr($error, 0, 30)); ?>...</small>
                                         <?php endif; ?>
                                     </td>
                                     <td onclick="toggleDetail(<?php echo $i; ?>)" class="time" style="cursor:pointer;"><?php echo htmlspecialchars($timestamp); ?></td>
                                     <td onclick="toggleDetail(<?php echo $i; ?>)" style="cursor:pointer;"><?php echo htmlspecialchars($name); ?></td>
-                                    <td><a href="mailto:<?php echo htmlspecialchars($email); ?>" class="email-link"><?php echo htmlspecialchars($email); ?></a></td>
+                                    <td>
+                                        <?php if ($acceptedInquiry): ?>
+                                            <a href="mailto:<?php echo htmlspecialchars($email); ?>" class="email-link"><?php echo htmlspecialchars($email); ?></a>
+                                        <?php else: ?>
+                                            <?php echo htmlspecialchars($email); ?>
+                                        <?php endif; ?>
+                                    </td>
                                     <td onclick="toggleDetail(<?php echo $i; ?>)" style="cursor:pointer;"><?php echo htmlspecialchars($product); ?></td>
                                     <td class="url-cell">
                                         <?php if ($pageUrl): ?>
@@ -1122,7 +1236,13 @@ function resendEmail($log) {
                                                 </div>
                                                 <div class="detail-item">
                                                     <label>Email</label>
-                                                    <div class="value"><a href="mailto:<?php echo htmlspecialchars($formData['email'] ?? ''); ?>"><?php echo htmlspecialchars($formData['email'] ?? 'N/A'); ?></a></div>
+                                                    <div class="value">
+                                                        <?php if ($acceptedInquiry): ?>
+                                                            <a href="mailto:<?php echo htmlspecialchars($formData['email'] ?? ''); ?>"><?php echo htmlspecialchars($formData['email'] ?? 'N/A'); ?></a>
+                                                        <?php else: ?>
+                                                            <?php echo htmlspecialchars($formData['email'] ?? 'N/A'); ?>
+                                                        <?php endif; ?>
+                                                    </div>
                                                 </div>
                                                 <div class="detail-item">
                                                     <label>Product</label>
@@ -1166,12 +1286,28 @@ function resendEmail($log) {
                                             <div class="message-box" style="border-left-color:#e74c3c;background:#fdeaea;"><?php echo htmlspecialchars($log['error']); ?></div>
                                             <?php endif; ?>
                                             <div class="actions">
+                                                <?php if ($resendEligible): ?>
                                                 <form method="POST" style="display:inline;" onsubmit="return confirm('Resend this email to sales@kssmi.com?');">
                                                     <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
                                                     <input type="hidden" name="resend_id" value="<?php echo htmlspecialchars($logId); ?>">
                                                     <button type="submit" class="btn btn-success">Resend</button>
                                                 </form>
+                                                <?php elseif ($resendOutcomeUncertain): ?>
+                                                <span class="error">Resend outcome uncertain — check the sales mailbox.</span>
+                                                <form method="POST" style="display:inline;" onsubmit="return confirm('I checked the sales mailbox and confirmed this resend was NOT received. Unlock resend?');">
+                                                    <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
+                                                    <input type="hidden" name="resolve_uncertain_resend_id" value="<?php echo htmlspecialchars($logId); ?>">
+                                                    <input type="hidden" name="confirm_mailbox_checked" value="yes">
+                                                    <button type="submit" class="btn btn-danger">Checked: Unlock Resend</button>
+                                                </form>
+                                                <?php elseif ($resendClaimActive): ?>
+                                                <span>Resend in progress…</span>
+                                                <?php elseif ($deliveryOutcomeUncertain): ?>
+                                                <span class="error">Delivery outcome uncertain — check the sales mailbox before any manual resend.</span>
+                                                <?php endif; ?>
+                                                <?php if ($acceptedInquiry): ?>
                                                 <a href="mailto:<?php echo htmlspecialchars($formData['email'] ?? ''); ?>" class="btn btn-primary">Reply to Customer</a>
+                                                <?php endif; ?>
                                                 <button class="btn btn-secondary" onclick="toggleDetail(<?php echo $i; ?>)">Collapse</button>
                                             </div>
                                         </div>
