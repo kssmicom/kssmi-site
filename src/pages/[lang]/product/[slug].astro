@@ -225,12 +225,6 @@ if (type === 'product' && product) {
   if (serviceMode) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.service || "Service Mode", "value": serviceMode });
   if (customizable) schemaSpecs.push({ "@type": "PropertyValue", "name": pt.customizable || "Customizable", "value": "Yes" });
 
-  const ignoreSchemaKeys = new Set([
-    'title', 'slug', 'cover', 'gallery', 'itemNo', 'colors',
-    'price', 'customizable', 'materials', 'featured', 'categories', 'date',
-    'seoTitle', 'seoDescription', 'seoKeywords', 'serviceMode', 'moq'
-  ]);
-
   function formatSchemaKey(key: string): string {
     const camelKey = key.replace(/(?:^\w|[A-Z]|\b\w)/g, (w: string, i: number) => i === 0 ? w.toLowerCase() : w.toUpperCase()).replace(/\s+/g, '');
     if ((pt as any)[camelKey]) return (pt as any)[camelKey];
@@ -241,47 +235,56 @@ if (type === 'product' && product) {
     return key;
   }
 
-  for (const [k, v] of Object.entries(product.data)) {
-    if (ignoreSchemaKeys.has(k)) continue;
+  const schemaSpecKeys = [
+    'size',
+    'frameMaterial',
+    'lensMaterial',
+    'designStyle',
+    'nosePads',
+    'hinge',
+    'electroplating',
+    'logo',
+    'carbonFiberFeature'
+  ];
+
+  for (const key of schemaSpecKeys) {
+    const value = data[key];
+    const v = Array.isArray(value) ? value.join(', ') : value;
     if (v === undefined || v === null || v === '') continue;
-    const name = formatSchemaKey(k);
-    const value = Array.isArray(v) ? v.join(', ') : String(v);
-    schemaSpecs.push({ "@type": "PropertyValue", "name": name, "value": value });
+    schemaSpecs.push({ "@type": "PropertyValue", "name": formatSchemaKey(key), "value": String(v) });
   }
+
+  const siteUrl = new URL('/', Astro.site ?? 'https://kssmi.com').href.replace(/\/$/, '');
+  const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://kssmi.com').href;
+  const productImages = [cover, ...gallery]
+    .filter(Boolean)
+    .map(img => img.startsWith('http') ? img : `https://kssmi.com${img}`);
 
   productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
+    "@id": `${canonicalUrl}#product`,
+    "url": canonicalUrl,
     "name": title,
-    "image": [cover, ...gallery].filter(Boolean).map(img => img.startsWith('http') ? img : `https://kssmi.com${img}`),
+    "image": productImages.length > 0 ? productImages : undefined,
     "description": seoDescription || title,
-    "sku": itemNo,
-    "mpn": itemNo,
+    "sku": itemNo || undefined,
+    "mpn": itemNo || undefined,
     "brand": {
       "@type": "Brand",
-      "@id": `${Astro.site?.href.replace(/\/$/, '') || ''}/#organization`,
+      "@id": `${siteUrl}/#brand`,
       "name": "Kssmi Eyewear"
     },
     "manufacturer": {
-      "@type": "Organization",
-      "@id": `${Astro.site?.href.replace(/\/$/, '') || ''}/#organization`,
-      "name": "Kssmi Eyewear"
+      "@id": `${siteUrl}/#organization`
     },
-    "material": materials,
-    "color": colors,
+    "material": materials || undefined,
+    "color": colors || undefined,
     "category": cats.length > 0 ? cats[0] : undefined,
-    "additionalProperty": schemaSpecs,
+    "additionalProperty": schemaSpecs.length > 0 ? schemaSpecs : undefined,
     "audience": {
-      "@type": "Audience",
-      "audienceType": "Retailers, Brands, Wholesale"
-    },
-    "offers": {
-      "@type": "AggregateOffer",
-      "availability": "https://schema.org/InStock",
-      "offerCount": "1",
-      "priceCurrency": "USD",
-      "price": "Contact for pricing",
-      "url": `https://kssmi.com/${lang}/product/${imageSlug}`
+      "@type": "BusinessAudience",
+      "audienceType": "Eyewear brands, wholesalers and retailers"
     }
   };
 
