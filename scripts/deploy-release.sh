@@ -58,8 +58,15 @@ PRIVATE_MODULES="email-log-store.php rate-limit.php"
 RATE_LIMIT_MODULE="$SHARED_PRIVATE/rate-limit.php"
 EMAIL_LOG_MODULE="$SHARED_PRIVATE/email-log-store.php"
 # Endpoints whose PHP guard consults the email cutover marker (send-mail.php
-# and email-log-store.php) or that must not accept writes during migration.
-CUTOVER_ENDPOINTS="send-mail.php email-logs.php visitor-journey.php api/track-pageview.php api/track-submission.php api/track-contact-intent.php api/contact-intent.php api/vjt-config.php"
+# Endpoints whose PHP guard consults the email cutover marker (send-mail.php
+# checks kssmi_email_logs_cutover_is_active and returns 503 while the marker
+# is active). Only these can prove the barrier via HTTP status. email-logs.php
+# also checks the marker but sits behind Cloudflare Access, which answers 302
+# at the edge before the request reaches this origin — the cutover proof
+# treats a stable CF-Access 302 baseline as "already blocked at the edge" and
+# excludes it from the status proof. Other API endpoints do not consult the
+# marker and therefore cannot prove it.
+CUTOVER_ENDPOINTS="send-mail.php"
 
 fail() {
   echo "ERROR: $*" >&2
@@ -334,14 +341,18 @@ cutover_baseline_status() {
 prove_cutover_barriers() {
   # The email cutover marker blocks email-log mutations and send-mail.php
   # submissions, but LSAPI workers can retain an OPcache entry until recycled.
-  # Probe every endpoint as a group for up to a minute so worker respawns and
-  # edge propagation cannot cause a false rollback. The barrier's safety
-  # contract is "normal request processing is provably interrupted", which
-  # three outcomes satisfy:
+  # Probe the guarded endpoints as a group for up to a minute so worker
+  # respawns and edge propagation cannot cause a false rollback. The barrier's
+  # safety contract is "normal request processing is provably interrupted",
+  # which these outcomes satisfy:
   #   1. 503 - the PHP guard answered as designed;
   #   2. 404 with a 404 baseline - the live webroot never routes the URL;
   #   3. any 5xx that differs from the endpoint's pre-barrier baseline.
-  # An endpoint still returning its normal baseline status is the only
+  #   4. a stable 302 CF-Access baseline - the request is answered by
+  #      Cloudflare Access at the edge and never reaches this origin, so the
+  #      endpoint is provably unreachable regardless of the marker (this is
+  #      why email-logs.php is not in CUTOVER_ENDPOINTS).
+  # An endpoint still returning its normal non-302 baseline status is the only
   # genuinely unsafe outcome and keeps failing closed.
   attempts=20
   delay_seconds=3
@@ -362,6 +373,10 @@ prove_cutover_barriers() {
       fi
       baseline="$(cutover_baseline_status "$endpoint")"
       if [ "$status" = 404 ] && [ "$baseline" = 404 ]; then
+        continue
+      fi
+      if [ "$status" = 302 ] && [ "$baseline" = 302 ]; then
+        # Blocked at the Cloudflare Access edge before reaching the origin.
         continue
       fi
       if [ -n "$baseline" ] && [ "$status" != "$baseline" ] &&
@@ -563,6 +578,17 @@ rollback_webroot() {
   current_target=""
   if [ -L "$LIVE_WEBROOT" ]; then
     current_target="$(readlink -f "$LIVE_WEBROOT")"
+  fi
+
+  # First-deploy bootstrap never reached activate_webroot: previous_target was
+  # never written and public_html is still the original directory. Nothing to
+  # restore — completing the rollback is the correct outcome.
+  if [ -z "$previous_target" ]; then
+    if [ -d "$LIVE_WEBROOT" ] && [ ! -L "$LIVE_WEBROOT" ]; then
+      echo "No previous webroot was recorded; public_html is still the original directory."
+      return 0
+    fi
+    fail "Rollback required but no previous webroot was recorded and public_html is not the original directory."
   fi
 
   if [ "$previous_kind" = symlink ]; then
