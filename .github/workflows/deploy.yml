@@ -34,14 +34,32 @@ jobs:
         # Astro 7 and its patched transitive dependencies are required; HIGH
         # vulnerabilities continue to block deployment.
 
-      - name: Lint PHP sources
-        run: find public private -name '*.php' -not -path '*/vendor/*' -print0 | xargs -0 -n1 php -l
+      - name: Setup PHP 8.3
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240  # 2.37.2 pinned (same as php-ci.yml)
+        with:
+          php-version: '8.3'
+          extensions: pdo_sqlite, curl, mbstring
+          coverage: none
+          tools: none
+        env:
+          fail-fast: true
 
-      - name: Test email log policy and storage
+      - name: Verify PHP runtime and required extensions
+        run: php scripts/verify-php-runtime.php
+
+      - name: Lint PHP sources
+        run: find public private scripts -name '*.php' -not -path '*/vendor/*' -print0 | xargs -0 -n1 php -l
+
+      - name: Test email log policy and storage (incl. cutover worker)
         run: |
           bash scripts/test-email-log-migration.sh
-          php scripts/test-email-log-store.php
-          php scripts/test-rate-limit.php
+          npm run test:email-log
+          npm run test:rate-limit
+          npm run test:vjt-checkpoint
+          npm run test:contact-core
+          npm run test:vjt-event-state
+          npm run test:vjt-heartbeat
+          npm run test:vjt-data-quality
 
       - name: Validate cache policy and runtime fingerprints
         run: npm run validate:cache
