@@ -18,6 +18,7 @@
     "validate:email-logs": "node scripts/validate-email-log-policy.mjs",
     "validate:astro-syntax": "node scripts/validate-astro-syntax.mjs",
     "validate:translations": "node scripts/validate-translations.mjs",
+    "validate:release": "node scripts/validate-release-policy.mjs",
     "test:backend": "php scripts/verify-php-runtime.php",
     "test:email-log": "php scripts/test-email-log-store.php",
     "test:rate-limit": "php scripts/test-rate-limit.php",

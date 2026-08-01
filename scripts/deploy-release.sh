@@ -565,7 +565,9 @@ rollback_webroot() {
     current_target="$(readlink -f "$LIVE_WEBROOT")"
   fi
 
-  if [ "$previous_kind" = symlink ] && [ -d "$previous_target" ]; then
+  if [ "$previous_kind" = symlink ]; then
+    [ -d "$previous_target" ] ||
+      fail "Previous webroot target is missing (release was pruned?): $previous_target — refusing to declare rollback complete."
     if [ "$current_target" != "$previous_target" ]; then
       rollback_link="$PRIVATE_ROOT/.public_html.rollback-$RELEASE_ID"
       run_root rm -f "$rollback_link"
@@ -573,7 +575,9 @@ rollback_webroot() {
       run_root mv -Tf "$rollback_link" "$LIVE_WEBROOT"
       run_root chown -h "$SITE_USER:$SITE_GROUP" "$LIVE_WEBROOT"
     fi
-  elif [ "$previous_kind" = directory ] && [ -d "$previous_target" ]; then
+  elif [ "$previous_kind" = directory ]; then
+    [ -d "$previous_target" ] ||
+      fail "Previous bootstrap webroot is missing: $previous_target — refusing to declare rollback complete."
     case "$previous_target" in
       "$RELEASES_DIR"/bootstrap-*/dist) ;;
       *) fail "Refusing unsafe bootstrap rollback target: $previous_target" ;;
@@ -661,28 +665,8 @@ finalize_release() {
   echo "Email log cutover barrier released: OK"
   state_write finalized_at "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
   run_root sh -c "umask 0027; printf '%s\n' '$RELEASE_ID' > '$PRIVATE_ROOT/.kssmi-current-release.tmp'; chown '$SITE_USER:$SITE_GROUP' '$PRIVATE_ROOT/.kssmi-current-release.tmp'; chmod 640 '$PRIVATE_ROOT/.kssmi-current-release.tmp'; mv -f '$PRIVATE_ROOT/.kssmi-current-release.tmp' '$PRIVATE_ROOT/.kssmi-current-release'"
-  prune_old_releases
   echo "Release finalized after production smoke: $RELEASE_ID"
-}
-
-prune_old_releases() {
-  # Keep the finalized release plus the most recent KEEP_RELEASES prior ones
-  # so the last-known-good is always recoverable, then delete older release
-  # bundles and their deploy_state. Runtime data (email_data, rate_limit,
-  # vjt_data) lives above the releases dir and is never pruned here.
-  keep="${KEEP_RELEASES:-5}"
-  mapfile -t old_dirs < <(cd "$RELEASES_DIR" && ls -1d [0-9a-f]*-* 2>/dev/null | grep -v '^bootstrap-' || true)
-  # Newest first by name (SHA-attempt sorts lexicographically by attempt for
-  # the same SHA, and newer SHAs sort later for a single branch).
-  for dir in "${old_dirs[@]}"; do
-    [ "$dir" = "$RELEASE_ID" ] && continue
-    if [ "$keep" -le 0 ]; then
-      run_root rm -rf "$RELEASES_DIR/$dir" "$STATE_ROOT/$dir"
-      echo "Pruned old release: $dir"
-    else
-      keep=$((keep - 1))
-    fi
-  done
+  echo "NOTE: old releases under $RELEASES_DIR and $STATE_ROOT are pruned manually (keep the newest few)."
 }
 
 validate_release_id

@@ -41,6 +41,11 @@ jobs:
       - name: Verify PHP runtime and required extensions
         run: php scripts/verify-php-runtime.php
 
+      - name: Validate deployment release policy
+        run: |
+          bash -n scripts/deploy-release.sh
+          npm run validate:release
+
       - name: Lint all PHP sources
         run: find public private scripts -name '*.php' -not -path '*/vendor/*' -print0 | xargs -0 -r -n1 php -l
 
