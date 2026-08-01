@@ -81,7 +81,12 @@ function vjt_format_for_visitor($timeStr, $tz) {
 // Store data OUTSIDE public_html so the SQLite file cannot be downloaded
 // directly even if the .htaccess F rule gets bypassed / AllowOverride is off.
 // Lives at /home/<domain>/vjt_data/ on the Hetzner VPS.
-define('VJT_DATA_DIR', '/home/kssmi.com/vjt_data');
+// An explicit KSSMI_VJT_DATA_DIR override is honored so regression tests and
+// CI can run against an isolated temp database without touching production.
+$vjtDataDirEnv = getenv('KSSMI_VJT_DATA_DIR');
+define('VJT_DATA_DIR', ($vjtDataDirEnv !== false && $vjtDataDirEnv !== '')
+    ? $vjtDataDirEnv
+    : '/home/kssmi.com/vjt_data');
 define('VJT_DB_PATH', VJT_DATA_DIR . '/vjt.sqlite');
 define('VJT_SOURCE_MODEL_VERSION', 2);
 
@@ -712,8 +717,9 @@ function vjt_auto_cleanup() {
         // Drop stale geo-queue entries (anything older than 2 days is unlikely to matter)
         $db->prepare("DELETE FROM geo_queue WHERE queued_at < ?")->execute([gmdate('Y-m-d H:i:s', $now - 2 * 86400)]);
         vjt_meta_set('last_cleanup', $now);
-        // Reclaim space periodically (cheap on a bounded DB)
-        $db->exec('PRAGMA wal_checkpoint(TRUNCATE)');
+        // Reclaim space periodically (cheap on a bounded DB). Best-effort:
+        // a busy WAL is logged, never fatal (see vjt_checkpoint_wal).
+        vjt_checkpoint_wal();
     } catch (Exception $e) {
         error_log('VJT cleanup error: ' . $e->getMessage());
     }
@@ -734,6 +740,60 @@ function vjt_detach_expired_contact_links($cutoff) {
                 WHERE v.visitor_id=contact_events.vjt_visitor_id AND v.last_seen_at < ?)
         )");
     $stmt->execute([$cutoff, $cutoff]);
+}
+
+/**
+ * Best-effort WAL checkpoint used after cleanup/wipe operations.
+ *
+ * PRAGMA wal_checkpoint(TRUNCATE) needs exclusive access and throws
+ * "database table is locked" when a prepared statement is still open on the
+ * connection or another reader holds the WAL. A busy WAL must never turn a
+ * cleanup into a request-fatal, so this guard logs and falls back to the
+ * non-blocking PASSIVE checkpoint instead of rethrowing.
+ *
+ * Safety boundary: all cleanup DELETEs in vjt_auto_cleanup() /
+ * vjt_cleanup_old_data() / vjt_wipe_all_data() are chained
+ * $db->prepare(...)->execute(...) calls whose temporary PDOStatement is
+ * destroyed at the end of the full expression, so no statement is left open
+ * on this connection when the checkpoint runs (verified: completed
+ * statements release their read lock at SQLITE_DONE). The residual contention
+ * is a concurrent reader on ANOTHER connection, which is what the bounded
+ * retry below absorbs.
+ *
+ * The TRUNCATE attempt is bounded: cleanup runs from public tracking
+ * endpoints (once per day via vjt_auto_cleanup), and with the default 5s
+ * busy_timeout a contended WAL would stall that request ~5s. busy_timeout is
+ * lowered for the attempt and restored afterwards, and TRUNCATE gets up to 3
+ * short attempts (transient readers usually release within a few hundred ms,
+ * so TRUNCATE genuinely reclaims WAL space) before degrading to the
+ * non-blocking PASSIVE — worst case ~400ms, never a request-fatal.
+ */
+function vjt_checkpoint_wal() {
+    $db = vjt_db();
+    $savedBusyTimeout = 5000;
+    try {
+        $savedBusyTimeout = (int)$db->query('PRAGMA busy_timeout')->fetchColumn();
+        // Bounded retry: a transient reader on another connection typically
+        // releases the WAL within a few hundred ms. 3 attempts with a short
+        // busy_timeout let TRUNCATE succeed (and truncate the WAL file) when
+        // contention is brief; a long-held reader still degrades to PASSIVE.
+        $db->exec('PRAGMA busy_timeout = 100');
+        $busy = 1;
+        for ($attempt = 0; $attempt < 3; $attempt++) {
+            $row = $db->query('PRAGMA wal_checkpoint(TRUNCATE)')->fetch(PDO::FETCH_ASSOC);
+            $busy = is_array($row) ? (int)($row['busy'] ?? 0) : 1;
+            if ($busy === 0) break;
+            if ($attempt < 2) usleep(50000); // 50ms between attempts
+        }
+        if ($busy !== 0) {
+            $db->exec('PRAGMA wal_checkpoint(PASSIVE)');
+            error_log('VJT checkpoint: TRUNCATE busy, fell back to PASSIVE (busy=' . $busy . ')');
+        }
+    } catch (Exception $e) {
+        error_log('VJT checkpoint skipped (non-fatal): ' . $e->getMessage());
+    } finally {
+        try { $db->exec('PRAGMA busy_timeout = ' . (int)$savedBusyTimeout); } catch (Exception $e) {}
+    }
 }
 
 // ── UUID generation ─────────────────────────────────────────────────────────
@@ -2701,7 +2761,8 @@ function vjt_cleanup_old_data($days) {
     // replace those independently configured periods.
     $geoCutoff = gmdate('Y-m-d H:i:s', time() - (7 * 86400));
     $db->prepare("DELETE FROM geo_cache WHERE cached_at < ?")->execute([$geoCutoff]);
-    $db->exec('PRAGMA wal_checkpoint(TRUNCATE)');
+    // Best-effort WAL checkpoint; a locked/busy WAL is logged, never fatal.
+    vjt_checkpoint_wal();
 }
 
 function vjt_wipe_all_data() {
@@ -2709,7 +2770,8 @@ function vjt_wipe_all_data() {
     foreach (['visitors','sessions','pageviews','submissions','contact_events','geo_cache','geo_queue'] as $t) {
         $db->exec("DELETE FROM $t");
     }
-    $db->exec('PRAGMA wal_checkpoint(TRUNCATE)');
+    // Best-effort WAL checkpoint; a locked/busy WAL is logged, never fatal.
+    vjt_checkpoint_wal();
 }
 
 // ── Dashboard: Traffic Performance ──────────────────────────────────────────

@@ -17,7 +17,8 @@
     "validate:lcp": "node scripts/validate-lcp-policy.mjs",
     "validate:email-logs": "node scripts/validate-email-log-policy.mjs",
     "validate:astro-syntax": "node scripts/validate-astro-syntax.mjs",
-    "validate:translations": "node scripts/validate-translations.mjs"
+    "validate:translations": "node scripts/validate-translations.mjs",
+    "test:vjt-checkpoint": "php scripts/test-vjt-checkpoint.php"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
