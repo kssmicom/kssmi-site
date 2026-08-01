@@ -1814,6 +1814,21 @@ function vjt_backfill_source_metadata($limit = 500) {
     }
 }
 
+// True when the request carries a VALID signed admin marker (阶段 3 步骤 3).
+// Admin traffic is excluded from analytics at the server: the browser cookie
+// is HttpOnly (invisible to document.cookie) and its value is HMAC-signed, so
+// a visitor cannot forge it. The shared module is loaded lazily to keep the
+// public track endpoints dependency-free when the module is absent.
+function vjt_tracking_admin_excluded(): bool {
+    if (!function_exists('kssmi_admin_tracking_excluded')) {
+        $module = dirname(__DIR__, 2) . '/private/http-security.php';
+        if (file_exists($module)) {
+            require_once $module;
+        }
+    }
+    return function_exists('kssmi_admin_tracking_excluded') && kssmi_admin_tracking_excluded();
+}
+
 function vjt_ip_is_excluded($ip) {
     $ip = trim((string)$ip);
     if ($ip === '') return false;

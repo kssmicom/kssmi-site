@@ -35,6 +35,7 @@ function kssmi_sec_remove_tree(string $directory): void {
 $testDirectory = sys_get_temp_dir() . DIRECTORY_SEPARATOR .
     'kssmi-http-security-' . bin2hex(random_bytes(6));
 kssmi_sec_assert(mkdir($testDirectory, 0700, true), 'create test directory');
+putenv('KSSMI_ADMIN_MARKER_SECRET_FILE=' . $testDirectory . DIRECTORY_SEPARATOR . '.email_logs_password');
 
 try {
     require_once dirname(__DIR__) . '/private/http-security.php';
@@ -89,6 +90,51 @@ try {
         kssmi_sec_assert((fileperms($secretPath) & 0777) === 0600, 'secret write keeps 0600');
     }
     kssmi_sec_assert(kssmi_admin_secret_write($secretPath, '') === false, 'empty secret write rejected');
+
+    // ── signed admin marker cookie ──
+    // Set a real password hash so marker key derivation works.
+    $passwordPath = $testDirectory . DIRECTORY_SEPARATOR . '.email_logs_password';
+    kssmi_sec_assert(
+        kssmi_admin_secret_write($passwordPath, password_hash('correct horse battery staple', PASSWORD_BCRYPT)),
+        'seed password hash for marker tests'
+    );
+
+    // The marker secret path reads dirname(__DIR__) in production; for tests
+    // point it at our temp file so we control the key.
+    $markerNonce = str_repeat('a', 32);
+    $expires = time() + 3600;
+    $marker = kssmi_admin_marker_value($expires, $markerNonce);
+    kssmi_sec_assert(is_string($marker), 'marker value generated');
+    kssmi_sec_assert(
+        preg_match('/^v1\.[0-9]{10,11}\.[a-f0-9]{32}\.[a-f0-9]{64}$/D', (string)$marker) === 1,
+        'marker has v1.expires.nonce.hmac shape'
+    );
+    kssmi_sec_assert(kssmi_admin_marker_valid($marker, $expires - 10), 'valid unexpired marker passes');
+    kssmi_sec_assert(kssmi_admin_marker_valid($marker, $expires + 1) === false, 'expired marker rejected');
+    kssmi_sec_assert(kssmi_admin_marker_valid('v1.' . $expires . '.' . $markerNonce . '.' . str_repeat('0', 64), $expires - 10) === false, 'forged hmac rejected');
+    kssmi_sec_assert(kssmi_admin_marker_valid('vjt_admin=1', $expires - 10) === false, 'plaintext legacy value rejected');
+    kssmi_sec_assert(kssmi_admin_marker_valid('v1.99999999999.' . $markerNonce . '.' . str_repeat('f', 64), $expires - 10) === false, 'implausible future expiry rejected');
+    kssmi_sec_assert(kssmi_admin_marker_valid(null, $expires - 10) === false, 'null marker rejected');
+
+    // Changing the password hash changes the derived key → old marker invalid.
+    kssmi_sec_assert(
+        kssmi_admin_secret_write($passwordPath, password_hash('different password', PASSWORD_BCRYPT)),
+        'rewrite password hash'
+    );
+    kssmi_sec_assert(kssmi_admin_marker_valid($marker, $expires - 10) === false, 'marker invalid after password change');
+
+    // ── tracking exclusion consults the signed marker ──
+    kssmi_sec_assert(
+        kssmi_admin_secret_write($passwordPath, password_hash('correct horse battery staple', PASSWORD_BCRYPT)),
+        'restore password hash for tracking tests'
+    );
+    $validMarker = kssmi_admin_marker_value(time() + 3600, str_repeat('b', 32));
+    $_COOKIE['vjt_admin'] = (string)$validMarker;
+    kssmi_sec_assert(kssmi_admin_tracking_excluded() === true, 'valid marker excludes admin from tracking');
+    $_COOKIE['vjt_admin'] = '1';
+    kssmi_sec_assert(kssmi_admin_tracking_excluded() === false, 'plaintext forged marker does not exclude');
+    unset($_COOKIE['vjt_admin']);
+    kssmi_sec_assert(kssmi_admin_tracking_excluded() === false, 'absent marker does not exclude');
 
     fwrite(STDOUT, "HTTP security module tests passed.\n");
 } finally {

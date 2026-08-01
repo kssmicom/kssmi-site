@@ -101,7 +101,7 @@ try {
             // business event, but it remains safely unattributed. A short
             // bounded retry handles a first click that overtakes pageview POST.
             $clientIp = vjt_get_client_ip();
-            $resolvedLink = vjt_ip_is_excluded($clientIp)
+            $resolvedLink = (vjt_ip_is_excluded($clientIp) || vjt_tracking_admin_excluded())
                 ? ['valid' => false]
                 : vjt_wait_for_analytics_link($visitorId, $sessionId, $journeyStep, $pagePath);
             if (empty($resolvedLink['valid'])) {

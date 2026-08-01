@@ -835,13 +835,13 @@
     if (!cfg) return;
     loadTrackerConfig();
 
-    // P3-1 (N11): Skip tracking for admin users (vjt_admin cookie set by
-    // email-logs.php / visitor-journey.php after successful login).
-    // This prevents admin pageviews from polluting analytics data.
-    // Note: this is a client-side convenience check — a visitor could manually
-    // set this cookie to bypass tracking, but that only affects data accuracy
-    // (not security). Server-side admin filtering is the long-term plan.
-    if (document.cookie.indexOf('vjt_admin=1') !== -1) return;
+    // P3-1 (N11): Admin traffic is excluded from analytics SERVER-SIDE by
+    // private/http-security.php (kssmi_admin_tracking_excluded validates the
+    // HMAC-signed vjt_admin marker). The cookie is HttpOnly so this client
+    // check can never see it — the check below is a harmless best-effort for
+    // legacy non-HttpOnly scenarios and is NOT the security boundary. A forged
+    // value cannot pass server-side HMAC validation.
+    if (document.cookie.indexOf('vjt_admin=') !== -1) return;
 
     // Always use live URL/title for SPA navigations (Astro View Transitions)
     cfg.page.url = cleanUrl(window.location.href);

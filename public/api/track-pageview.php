@@ -103,7 +103,7 @@ if (!preg_match('/^vjtv_[A-Za-z0-9_-]{8,60}$/', $visitorId) || !preg_match('/^vj
 $ip      = vjt_get_client_ip();
 $ua      = vjt_clip($_SERVER['HTTP_USER_AGENT'] ?? '', 512);
 
-if (vjt_ip_is_excluded($ip)) {
+if (vjt_ip_is_excluded($ip) || vjt_tracking_admin_excluded()) {
     echo json_encode(['success' => true, 'skipped' => 'internal']);
     exit;
 }

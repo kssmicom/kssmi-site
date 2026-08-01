@@ -161,7 +161,7 @@ try {
         if (preg_match('/^vjtv_[A-Za-z0-9_-]{8,60}$/', $candidateVisitor)
             && preg_match('/^vjts_[A-Za-z0-9_-]{8,60}$/', $candidateSession)) {
             $clientIp = vjt_get_client_ip();
-            $resolved = vjt_ip_is_excluded($clientIp)
+            $resolved = (vjt_ip_is_excluded($clientIp) || vjt_tracking_admin_excluded())
                 ? ['valid' => false]
                 : vjt_wait_for_analytics_link(
                     $candidateVisitor,

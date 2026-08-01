@@ -188,3 +188,113 @@ function kssmi_admin_secret_write(string $path, string $contents): bool {
         kssmi_admin_file_unlock($lock);
     }
 }
+
+// ── Signed admin marker cookie (阶段 3 步骤 3) ────────────────────────────
+// The admin pages used to set a plaintext `vjt_admin=1` cookie that any
+// visitor could forge to disappear from analytics. The cookie now carries a
+// server-signed value `v1.<expires>.<nonce>.<hmac>` whose key is derived from
+// the password hash: without the hash nobody can mint a valid marker, and
+// expiry is enforced on every validation. The cookie name stays `vjt_admin`
+// so the existing client-side tracker check keeps working.
+
+function kssmi_admin_marker_ttl(): int {
+    return 43200; // 12 hours, matching the admin session lifetime
+}
+
+/**
+ * The marker key derives from the password hash file (never stored
+ * separately). Changing the password invalidates every outstanding marker.
+ */
+function kssmi_admin_marker_secret_path(): string {
+    $override = getenv('KSSMI_ADMIN_MARKER_SECRET_FILE');
+    if (is_string($override) && trim($override) !== '') return trim($override);
+    return dirname(__DIR__) . '/.email_logs_password';
+}
+
+function kssmi_admin_marker_key(): ?string {
+    $passwordHash = kssmi_admin_secret_read(kssmi_admin_marker_secret_path());
+    if (!is_string($passwordHash) || $passwordHash === '') return null;
+    return hash_hmac('sha256', 'kssmi-admin-marker-key-v1', $passwordHash, true);
+}
+
+/**
+ * Build a signed marker value: v1.<expires>.<nonce>.<hmac>.
+ * Returns null when no key is available (e.g. no password set yet).
+ */
+function kssmi_admin_marker_value(int $expiresAt, ?string $nonce = null): ?string {
+    $key = kssmi_admin_marker_key();
+    if ($key === null) return null;
+
+    if ($nonce === null) {
+        try {
+            $nonce = bin2hex(random_bytes(16));
+        } catch (Throwable $e) {
+            return null;
+        }
+    }
+    if (!preg_match('/^[a-f0-9]{32}$/D', $nonce)) return null;
+
+    $payload = 'v1.' . $expiresAt . '.' . $nonce;
+    return $payload . '.' . hash_hmac('sha256', $payload, $key);
+}
+
+/**
+ * Validate a marker value: format, expiry window, and HMAC. A forged or
+ * expired marker returns false (a visitor can set any cookie value; only a
+ * signed one is accepted).
+ */
+function kssmi_admin_marker_valid($value, ?int $now = null): bool {
+    if (!is_string($value)) return false;
+    if (!preg_match('/^v1\.([0-9]{10,11})\.([a-f0-9]{32})\.([a-f0-9]{64})$/D', $value, $parts)) {
+        return false;
+    }
+
+    $now = $now ?? time();
+    $expiresAt = (int)$parts[1];
+    if ($expiresAt <= $now || $expiresAt > $now + kssmi_admin_marker_ttl()) return false;
+
+    $key = kssmi_admin_marker_key();
+    if ($key === null) return false;
+    $payload = 'v1.' . $parts[1] . '.' . $parts[2];
+    return hash_equals(hash_hmac('sha256', $payload, $key), $parts[3]);
+}
+
+/**
+ * Set or clear the signed admin marker cookie. Authenticated → signed value
+ * with a 12h expiry; otherwise → expired empty cookie (logout).
+ */
+function kssmi_admin_set_marker_cookie(bool $authenticated): void {
+    $expiresAt = time() - 3600;
+    $value = '';
+    if ($authenticated) {
+        $expiresAt = time() + kssmi_admin_marker_ttl();
+        $signedValue = kssmi_admin_marker_value($expiresAt);
+        if (is_string($signedValue)) {
+            $value = $signedValue;
+        } else {
+            $expiresAt = time() - 3600;
+        }
+    }
+
+    setcookie('vjt_admin', $value, [
+        'expires' => $expiresAt,
+        'path' => '/',
+        'secure' => true,
+        'httponly' => true,
+        'samesite' => 'Strict',
+    ]);
+    if ($value !== '') {
+        $_COOKIE['vjt_admin'] = $value;
+    } else {
+        unset($_COOKIE['vjt_admin']);
+    }
+}
+
+/**
+ * True when the request carries a VALID signed admin marker. This is used to
+ * exclude admin traffic from analytics — it never grants admin access (the
+ * session check does that).
+ */
+function kssmi_admin_tracking_excluded(): bool {
+    return kssmi_admin_marker_valid($_COOKIE['vjt_admin'] ?? null);
+}

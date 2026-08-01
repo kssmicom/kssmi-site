@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
         if ($PASSWORD_HASH && password_verify($submitted, $PASSWORD_HASH)) {
             $_SESSION['email_logs_auth'] = true;
             $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-            setcookie('vjt_admin', '1', time() + 86400 * 7, '/', '', true, true);
+            kssmi_admin_set_marker_cookie(true);
             session_regenerate_id(true);
         } else {
             $error = 'Invalid password.';
@@ -68,16 +68,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
 // Handle logout
 if (isset($_GET['logout'])) {
     session_destroy();
-    setcookie('vjt_admin', '', time() - 3600, '/');
+    kssmi_admin_set_marker_cookie(false);
     header('Location: visitor-journey.php');
     exit;
 }
 
 $isAuthenticated = isset($_SESSION['email_logs_auth']) && $_SESSION['email_logs_auth'] === true;
 
-// Keep admin cookie alive so the tracker skips admin visits
+// Keep admin marker cookie alive so the tracker skips admin visits
 if ($isAuthenticated) {
-    setcookie('vjt_admin', '1', time() + 86400 * 7, '/', '', true, true);
+    kssmi_admin_set_marker_cookie(true);
 }
 
 // Determine active tab

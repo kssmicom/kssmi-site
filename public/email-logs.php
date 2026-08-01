@@ -374,7 +374,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password']) && !isset
         if ($PASSWORD_HASH && password_verify($submittedPassword, $PASSWORD_HASH)) {
             $_SESSION['email_logs_auth'] = true;
             $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-            setcookie('vjt_admin', '1', time() + 86400 * 7, '/', '', true, true);
+            kssmi_admin_set_marker_cookie(true);
             session_regenerate_id(true);
         } else {
             $error = 'Invalid password. Please try again.';
@@ -385,7 +385,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password']) && !isset
 // Handle logout
 if (isset($_GET['logout'])) {
     session_destroy();
-    setcookie('vjt_admin', '', time() - 3600, '/');
+    kssmi_admin_set_marker_cookie(false);
     header('Location: email-logs.php');
     exit;
 }
@@ -394,7 +394,7 @@ if (isset($_GET['logout'])) {
 $isAuthenticated = false;
 if (isset($_SESSION['email_logs_auth']) && $_SESSION['email_logs_auth'] === true) {
     $isAuthenticated = true;
-    setcookie('vjt_admin', '1', time() + 86400 * 7, '/', '', true, true);
+    kssmi_admin_set_marker_cookie(true);
 }
 
 // Handle password change (when logged in)
