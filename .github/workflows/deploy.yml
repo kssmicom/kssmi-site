@@ -53,13 +53,13 @@ jobs:
       - name: Test email log policy and storage (incl. cutover worker)
         run: |
           bash scripts/test-email-log-migration.sh
-          npm run test:email-log
-          npm run test:rate-limit
-          npm run test:vjt-checkpoint
-          npm run test:contact-core
-          npm run test:vjt-event-state
-          npm run test:vjt-heartbeat
-          npm run test:vjt-data-quality
+          php scripts/test-email-log-store.php
+          php scripts/test-rate-limit.php
+          php scripts/test-vjt-checkpoint.php
+          php scripts/test-contact-core.php
+          php scripts/test-vjt-event-state.php
+          php scripts/test-vjt-heartbeat.php
+          php scripts/test-vjt-data-quality.php
 
       - name: Validate cache policy and runtime fingerprints
         run: npm run validate:cache
