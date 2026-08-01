@@ -136,6 +136,25 @@ try {
     unset($_COOKIE['vjt_admin']);
     kssmi_sec_assert(kssmi_admin_tracking_excluded() === false, 'absent marker does not exclude');
 
+    // ── CSRF helpers ──
+    $_SESSION = [];
+    $token = kssmi_admin_csrf_token();
+    kssmi_sec_assert(is_string($token) && strlen($token) === 64, 'csrf token generated as 64-hex');
+    kssmi_sec_assert(kssmi_admin_csrf_token() === $token, 'csrf token stable within session');
+    kssmi_sec_assert(kssmi_admin_csrf_valid($token), 'valid csrf token passes');
+    kssmi_sec_assert(kssmi_admin_csrf_valid('forged-token') === false, 'forged csrf token rejected');
+    kssmi_sec_assert(kssmi_admin_csrf_valid(null) === false, 'null csrf token rejected');
+    kssmi_sec_assert(kssmi_admin_csrf_valid('') === false, 'empty csrf token rejected');
+    $rotated = kssmi_admin_csrf_rotate();
+    kssmi_sec_assert($rotated !== $token && strlen($rotated) === 64, 'csrf rotate issues a new token');
+    kssmi_sec_assert(kssmi_admin_csrf_valid($token) === false, 'old token invalid after rotation');
+    kssmi_sec_assert(kssmi_admin_csrf_valid($rotated), 'rotated token valid');
+    // Custom key (csrf_reset flow) stays independent.
+    $resetToken = kssmi_admin_csrf_token('csrf_reset');
+    kssmi_sec_assert(kssmi_admin_csrf_valid($resetToken, 'csrf_reset'), 'custom-key csrf token works');
+    kssmi_sec_assert(kssmi_admin_csrf_valid($resetToken) === false, 'custom-key token not valid under default key');
+    $_SESSION = [];
+
     fwrite(STDOUT, "HTTP security module tests passed.\n");
 } finally {
     kssmi_sec_remove_tree($testDirectory);

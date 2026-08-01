@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
         $submitted = trim($_POST['password']);
         if ($PASSWORD_HASH && password_verify($submitted, $PASSWORD_HASH)) {
             $_SESSION['email_logs_auth'] = true;
-            $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+            kssmi_admin_csrf_rotate();
             kssmi_admin_set_marker_cookie(true);
             session_regenerate_id(true);
         } else {
@@ -65,12 +65,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
     }
 }
 
-// Handle logout
-if (isset($_GET['logout'])) {
-    session_destroy();
-    kssmi_admin_set_marker_cookie(false);
-    header('Location: visitor-journey.php');
-    exit;
+// Handle logout — POST + CSRF only (a GET logout can be triggered by an
+// <img>/prefetch and would silently end an admin session).
+if ($isAuthenticated = isset($_SESSION['email_logs_auth']) && $_SESSION['email_logs_auth'] === true) {
+    if (isset($_POST['logout'])) {
+        if (!kssmi_admin_csrf_valid($_POST['csrf_token'] ?? null)) {
+            http_response_code(403);
+            echo 'Security check failed.';
+            exit;
+        }
+        session_destroy();
+        kssmi_admin_set_marker_cookie(false);
+        header('Location: visitor-journey.php');
+        exit;
+    }
 }
 
 $isAuthenticated = isset($_SESSION['email_logs_auth']) && $_SESSION['email_logs_auth'] === true;
@@ -112,7 +120,7 @@ function isGscPermissionError($message) {
 // ── Handle settings save ─────────────────────────────────────────────────────
 
 if ($isAuthenticated && isset($_POST['save_settings'])) {
-    if (!isset($_POST['csrf_token']) || !isset($_SESSION['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+    if (!kssmi_admin_csrf_valid($_POST['csrf_token'] ?? null)) {
         $message = 'Security check failed. Please try again.';
     } else {
         $allowed = ['session_timeout', 'retention_days', 'enable_geo', 'excluded_ips', 'heartbeat_seconds', 'enable_email_summary', 'contact_intent_retention_days', 'contact_inquiry_retention_days'];
@@ -123,7 +131,7 @@ if ($isAuthenticated && isset($_POST['save_settings'])) {
 }
 
 // Core rows are independent business events and use their own IDs.
-if ($isAuthenticated && isset($_POST['delete_contact_ids'], $_POST['csrf_token'], $_SESSION['csrf_token']) && hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+if ($isAuthenticated && isset($_POST['delete_contact_ids']) && kssmi_admin_csrf_valid($_POST['csrf_token'] ?? null)) {
     $ids = array_filter(array_map('intval', explode(',', (string)$_POST['delete_contact_ids'])));
     if ($ids) {
         $placeholders = implode(',', array_fill(0, count($ids), '?'));
@@ -136,7 +144,7 @@ if ($isAuthenticated && isset($_POST['delete_contact_ids'], $_POST['csrf_token']
 // Test the server-side service account and Search Console property without ever
 // exposing the private key or OAuth token to the browser.
 if ($isAuthenticated && isset($_POST['test_gsc_connection'])) {
-    if (!isset($_POST['csrf_token']) || !isset($_SESSION['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+    if (!kssmi_admin_csrf_valid($_POST['csrf_token'] ?? null)) {
         $message = 'Security check failed. Please try again.';
         $messageClass = 'error';
     } else {
@@ -155,7 +163,7 @@ if ($isAuthenticated && isset($_POST['test_gsc_connection'])) {
 
 // Handle data cleanup
 if ($isAuthenticated && isset($_POST['cleanup_data'])) {
-    if (!isset($_POST['csrf_token']) || !isset($_SESSION['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+    if (!kssmi_admin_csrf_valid($_POST['csrf_token'] ?? null)) {
         $message = 'Security check failed. Please try again.';
     } else {
         $days = max(0, (int)($_POST['cleanup_days'] ?? 90));
@@ -170,8 +178,8 @@ if ($isAuthenticated && isset($_POST['cleanup_data'])) {
 }
 
 // Handle submission deletion (single or bulk)
-if ($isAuthenticated && isset($_POST['delete_ids'], $_POST['csrf_token'], $_SESSION['csrf_token'])
-    && hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+if ($isAuthenticated && isset($_POST['delete_ids'])
+    && kssmi_admin_csrf_valid($_POST['csrf_token'] ?? null)) {
     $ids = array_filter(array_map('intval', explode(',', $_POST['delete_ids'])));
     if ($ids) {
         $db = vjt_db();
@@ -188,8 +196,7 @@ if ($isAuthenticated && isset($_POST['delete_ids'], $_POST['csrf_token'], $_SESS
 $leadDeleteRaw = $_POST['delete_lead_keys'] ?? null;
 $legacyLeadDeleteRaw = $_POST['delete_lead_visitors'] ?? null;
 if ($isAuthenticated && ($leadDeleteRaw !== null || $legacyLeadDeleteRaw !== null)
-    && isset($_POST['csrf_token'], $_SESSION['csrf_token'])
-    && hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+    && kssmi_admin_csrf_valid($_POST['csrf_token'] ?? null)) {
     $keys = array_values(array_filter(array_map('trim', explode(',', (string)($leadDeleteRaw ?? '')))));
     // Accept a cached copy of the old dashboard once during rolling deployment.
     if (!$keys && $legacyLeadDeleteRaw !== null) {
@@ -228,8 +235,8 @@ if ($isAuthenticated && ($leadDeleteRaw !== null || $legacyLeadDeleteRaw !== nul
 }
 
 // Handle visitor deletion (deletes visitor + all associated sessions/pageviews/submissions)
-if ($isAuthenticated && isset($_POST['delete_visitor'], $_POST['csrf_token'], $_SESSION['csrf_token'])
-    && hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+if ($isAuthenticated && isset($_POST['delete_visitor'])
+    && kssmi_admin_csrf_valid($_POST['csrf_token'] ?? null)) {
     $vid = trim((string)($_POST['delete_visitor'] ?? ''));
     if ($vid !== '') {
         $db = vjt_db();
@@ -882,7 +889,10 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                 </div>
                 <div class="header-right">
                     <a href="/email-logs.php" class="btn btn-secondary">Email Logs</a>
-                    <a href="?logout" class="btn btn-secondary">Logout</a>
+                    <form method="post" action="visitor-journey.php" style="display:inline;">
+                        <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
+                        <button type="submit" name="logout" value="1" class="btn btn-secondary">Logout</button>
+                    </form>
                 </div>
             </div>
 
@@ -891,7 +901,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
             <?php endif; ?>
 
                 <!-- Global CSRF token for all tabs (used by JS delete functions) -->
-                <input type="hidden" id="vjt_csrf" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
+                <input type="hidden" id="vjt_csrf" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
 
                 <!-- Tabs -->
                 <div class="tabs">
@@ -1213,7 +1223,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                 <summary>Filters <span class="filter-summary-hint"></span></summary>
                             <form class="filters" method="GET">
                                 <input type="hidden" name="tab" value="submissions">
-                                <input type="hidden" name="csrf_token" id="vjt_csrf" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
+                                <input type="hidden" name="csrf_token" id="vjt_csrf" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
                                 <select name="status">
                                     <option value="contact" <?php echo $leadStatus === 'contact' ? 'selected' : ''; ?>>Contacts (Success + Intent)</option>
                                     <option value="">All Statuses</option>
@@ -1931,7 +1941,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                         <div class="panel-header">Settings</div>
                         <div class="panel-body">
                             <form method="POST">
-                                <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
+                                <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
                                 <div class="setting-row">
                                     <label>Session Timeout (minutes)</label>
                                     <input type="number" name="session_timeout" value="<?php echo htmlspecialchars($settings['session_timeout'] ?? '30'); ?>" min="1" max="525600">
@@ -2031,7 +2041,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                 <div class="gsc-action"><strong>One manual Google step remains:</strong> in Search Console, select the exact property <strong><?php echo htmlspecialchars($gscDiagnostics['site_url'] ?? 'sc-domain:kssmi.com'); ?></strong>, open <strong>Settings → Users and permissions → Add user</strong>, add <strong><?php echo htmlspecialchars($gscDiagnostics['service_account'] ?? ''); ?></strong> with <strong>Restricted or Full</strong> permission, then click the test button below.</div>
                             <?php endif; ?>
                             <form method="POST" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-                                <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
+                                <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
                                 <button type="submit" name="test_gsc_connection" class="btn btn-primary">Test GSC Connection</button>
                                 <?php if (!empty($gscDiagnostics['last_test']['ok'])): ?><a href="?tab=gsc" class="btn btn-secondary">Open Keywords</a><?php endif; ?>
                             </form>
@@ -2043,7 +2053,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                 Delete Analytics Journey data older than the specified number of days. Core events follow the separate intent/inquiry retention settings above; 0 deletes everything.
                             </p>
                             <form method="POST" onsubmit="return confirm('Delete old data? This cannot be undone.');" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-                                <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
+                                <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
                                 <input type="number" name="cleanup_days" value="<?php echo htmlspecialchars($settings['retention_days'] ?? '90'); ?>" min="0" max="3650" style="width:80px;padding:6px 10px;border:1px solid #ddd;border-radius:4px;font-size:13px;" required>
                                 <span style="color:#888;font-size:12px;">days (0 = delete all)</span>
                                 <button type="submit" name="cleanup_data" class="btn btn-danger">Clean Up Old Data</button>

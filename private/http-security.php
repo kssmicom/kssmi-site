@@ -298,3 +298,27 @@ function kssmi_admin_set_marker_cookie(bool $authenticated): void {
 function kssmi_admin_tracking_excluded(): bool {
     return kssmi_admin_marker_valid($_COOKIE['vjt_admin'] ?? null);
 }
+
+// ── CSRF tokens (阶段 3 步骤 4) ───────────────────────────────────────────
+// The admin pages used to hand-roll CSRF checks with scattered
+// hash_equals($_SESSION['csrf_token'], ...) calls. These helpers centralize
+// token generation/validation/rotation with a stable 64-hex shape. The reset
+// flow keeps its own csrf_reset token (consumed atomically in step 5).
+
+function kssmi_admin_csrf_token(string $key = 'csrf_token'): string {
+    if (!is_string($_SESSION[$key] ?? null) || strlen($_SESSION[$key]) !== 64) {
+        $_SESSION[$key] = bin2hex(random_bytes(32));
+    }
+    return $_SESSION[$key];
+}
+
+function kssmi_admin_csrf_valid($submitted, string $key = 'csrf_token'): bool {
+    return is_string($submitted) &&
+        is_string($_SESSION[$key] ?? null) &&
+        hash_equals($_SESSION[$key], $submitted);
+}
+
+function kssmi_admin_csrf_rotate(string $key = 'csrf_token'): string {
+    $_SESSION[$key] = bin2hex(random_bytes(32));
+    return $_SESSION[$key];
+}

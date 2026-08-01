@@ -151,12 +151,9 @@ function saveResetTokens($tokens) {
     return $result !== false;
 }
 
-// CSRF protection
+// CSRF protection (shared helper, key stays 'csrf_token')
 function validateCSRF() {
-    if (!isset($_POST['csrf_token']) || !isset($_SESSION['csrf_token'])) {
-        return false;
-    }
-    return hash_equals($_SESSION['csrf_token'], $_POST['csrf_token']);
+    return kssmi_admin_csrf_valid($_POST['csrf_token'] ?? null);
 }
 
 // Clean expired tokens (older than 1 hour)
@@ -373,7 +370,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password']) && !isset
         $submittedPassword = trim($_POST['password']);
         if ($PASSWORD_HASH && password_verify($submittedPassword, $PASSWORD_HASH)) {
             $_SESSION['email_logs_auth'] = true;
-            $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+            kssmi_admin_csrf_rotate();
             kssmi_admin_set_marker_cookie(true);
             session_regenerate_id(true);
         } else {
@@ -382,8 +379,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password']) && !isset
     }
 }
 
-// Handle logout
-if (isset($_GET['logout'])) {
+// Handle logout — POST + CSRF only (a GET logout can be triggered by an
+// <img>/prefetch and would silently end an admin session).
+if (isset($_POST['logout'])) {
+    if (!validateCSRF()) {
+        http_response_code(403);
+        echo 'Security check failed.';
+        exit;
+    }
     session_destroy();
     kssmi_admin_set_marker_cookie(false);
     header('Location: email-logs.php');
@@ -1048,7 +1051,10 @@ function resendEmail($log) {
                 <div class="header-right">
                     <a href="/visitor-journey.php" class="btn btn-secondary">Visitor Journey</a>
                     <button class="btn btn-secondary" onclick="document.getElementById('passwordModal').classList.add('show')">Change Password</button>
-                    <a href="?logout" class="btn btn-secondary">Logout</a>
+                    <form method="post" action="email-logs.php" style="display:inline;">
+                        <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
+                        <button type="submit" name="logout" value="1" class="btn btn-secondary">Logout</button>
+                    </form>
                 </div>
             </div>
 
@@ -1104,7 +1110,7 @@ function resendEmail($log) {
                 <div class="bulk-actions" id="bulkActionsBar" style="display:none;">
                     <span id="selectedCount">0</span> selected
                     <form method="POST" style="display:inline;" onsubmit="return confirm('Delete selected log entries?');" id="bulkDeleteForm">
-                        <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
+                        <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
                         <input type="hidden" name="bulk_delete" value="1">
                         <div id="selectedIdsContainer"></div>
                         <button type="submit" class="btn btn-danger btn-small">Delete Selected</button>
@@ -1196,7 +1202,7 @@ function resendEmail($log) {
                                     </td>
                                     <td onclick="event.stopPropagation();">
                                         <form method="POST" style="display:inline;" onsubmit="return confirm('Delete this log entry?');">
-                                            <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
+                                            <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
                                             <input type="hidden" name="delete_id" value="<?php echo htmlspecialchars($logId); ?>">
                                             <button type="submit" class="btn btn-danger btn-small">Del</button>
                                         </form>
@@ -1268,14 +1274,14 @@ function resendEmail($log) {
                                             <div class="actions">
                                                 <?php if ($resendEligible): ?>
                                                 <form method="POST" style="display:inline;" onsubmit="return confirm('Resend this email to sales@kssmi.com?');">
-                                                    <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
+                                                    <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
                                                     <input type="hidden" name="resend_id" value="<?php echo htmlspecialchars($logId); ?>">
                                                     <button type="submit" class="btn btn-success">Resend</button>
                                                 </form>
                                                 <?php elseif ($resendOutcomeUncertain): ?>
                                                 <span class="error">Resend outcome uncertain — check the sales mailbox.</span>
                                                 <form method="POST" style="display:inline;" onsubmit="return confirm('I checked the sales mailbox and confirmed this resend was NOT received. Unlock resend?');">
-                                                    <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
+                                                    <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
                                                     <input type="hidden" name="resolve_uncertain_resend_id" value="<?php echo htmlspecialchars($logId); ?>">
                                                     <input type="hidden" name="confirm_mailbox_checked" value="yes">
                                                     <button type="submit" class="btn btn-danger">Checked: Unlock Resend</button>
@@ -1300,7 +1306,7 @@ function resendEmail($log) {
 
                 <div style="margin-top:20px;text-align:center;">
                     <form method="POST" onsubmit="return confirm('Clear all logs? This cannot be undone.');" style="display:inline;">
-                        <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
+                        <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
                         <button type="submit" name="clear_logs" class="btn btn-danger">Clear All Logs</button>
                     </form>
                 </div>
@@ -1315,7 +1321,7 @@ function resendEmail($log) {
                 <p class="error"><?php echo htmlspecialchars($passwordError); ?></p>
             <?php endif; ?>
             <form method="POST">
-                <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token'] ?? ''); ?>">
+                <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
                 <input type="password" name="new_password" placeholder="New password (min 12 characters)" required minlength="12">
                 <div class="modal-actions">
                     <button type="button" class="btn btn-secondary" onclick="document.getElementById('passwordModal').classList.remove('show')">Cancel</button>
