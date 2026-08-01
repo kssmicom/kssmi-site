@@ -51,10 +51,10 @@ PASSWORD_FILE="$PRIVATE_ROOT/.email_logs_password"
 RESET_TOKENS_FILE="$PRIVATE_ROOT/.email_reset_tokens.json"
 GSC_JSON="$SHARED_PRIVATE/gsc/google-service-account.json"
 
-# Shared module deployment: private/rate-limit.php,private/email-log-store.php
+# Shared module deployment: private/rate-limit.php,private/email-log-store.php,private/http-security.php
 # are uploaded in the release bundle and atomically installed into
 # $SHARED_PRIVATE before the webroot switch.
-PRIVATE_MODULES="email-log-store.php rate-limit.php"
+PRIVATE_MODULES="email-log-store.php rate-limit.php http-security.php"
 RATE_LIMIT_MODULE="$SHARED_PRIVATE/rate-limit.php"
 EMAIL_LOG_MODULE="$SHARED_PRIVATE/email-log-store.php"
 # Endpoints whose PHP guard consults the email cutover marker (send-mail.php

@@ -1,0 +1,190 @@
+<?php
+declare(strict_types=1);
+
+/**
+ * Kssmi shared HTTP security module (优化-001 阶段 3 步骤 2).
+ *
+ * This is the Kssmi counterpart of the XinXin private/http-security.php, built
+ * with kssmi_* prefixes and only the pieces Kssmi needs TODAY:
+ *
+ *   1. Admin page security headers (parameterized CSP because the two admin
+ *      pages ship different policies; the .htaccess FilesMatch CSP is not
+ *      reliably honored by OpenLiteSpeed, so pages set their own).
+ *   2. Atomic file write / stable flock helpers for credentials and reset
+ *      tokens (tmp + fsync + rename, lock sidecar).
+ *   3. Secret read/write with the same semantics the backends already use:
+ *      an empty or missing file reads as null; writes are 0600.
+ *   4. Scalar/text sanitization helpers used by later stages.
+ *
+ * Deliberately NOT included yet (later steps of 阶段 3):
+ *   - HMAC-signed admin marker cookie        (步骤 3)
+ *   - unified CSRF token helpers             (步骤 4)
+ *   - reset-token atomic consumption         (步骤 5)
+ *   - Cloudflare Access / allowlist gating   (步骤 1 already done via CF Access)
+ *
+ * All functions are pure helpers: including this file MUST NOT change any
+ * backend behavior by itself.
+ */
+
+if (defined('KSSMI_HTTP_SECURITY_LOADED')) {
+    return;
+}
+define('KSSMI_HTTP_SECURITY_LOADED', true);
+
+/**
+ * Emit the security headers every Kssmi admin page must send.
+ *
+ * The CSP differs between the two admin pages (email-logs.php ships a richer
+ * policy that allows Cloudflare Turnstile + GTM; visitor-journey.php uses a
+ * minimal frame/form policy). Pass the exact policy string; the remaining
+ * headers are common to all admin pages.
+ */
+function kssmi_admin_security_headers(string $contentSecurityPolicy): void {
+    header('X-Robots-Tag: noindex, nofollow');
+    header('Cache-Control: no-store, private', true);
+    header('Pragma: no-cache');
+    header('X-Content-Type-Options: nosniff');
+    header('X-Frame-Options: DENY');
+    header('Referrer-Policy: no-referrer');
+    header('Cross-Origin-Opener-Policy: same-origin');
+    header('Cross-Origin-Resource-Policy: same-origin');
+    header('Content-Security-Policy: ' . $contentSecurityPolicy);
+}
+
+/**
+ * Sanitize a scalar to a bounded string; non-scalar or negative max → ''.
+ */
+function kssmi_scalar_text($value, int $maxLength, bool $trim = true): string {
+    if (!is_scalar($value) || $maxLength < 0) return '';
+    $text = (string)$value;
+    if ($trim) $text = trim($text);
+    if (function_exists('mb_substr')) {
+        return mb_substr($text, 0, $maxLength);
+    }
+    return substr($text, 0, $maxLength);
+}
+
+/**
+ * array_is_list polyfill (PHP < 8.1 servers, mirrors email-log-store.php).
+ */
+function kssmi_array_is_list($value): bool {
+    if (!is_array($value)) return false;
+    if (function_exists('array_is_list')) return array_is_list($value);
+    $expected = 0;
+    foreach ($value as $key => $_value) {
+        if ($key !== $expected++) return false;
+    }
+    return true;
+}
+
+/**
+ * Write every byte to the handle; returns false on short/zero write.
+ */
+function kssmi_admin_write_all($handle, string $contents): bool {
+    $length = strlen($contents);
+    $offset = 0;
+    while ($offset < $length) {
+        $written = fwrite($handle, substr($contents, $offset));
+        if ($written === false || $written === 0) return false;
+        $offset += $written;
+    }
+    return fflush($handle);
+}
+
+/**
+ * Atomic file write: temp file in the same directory, chmod before any
+ * content is written, fsync, then rename into place. Never leaves a partial
+ * destination file.
+ */
+function kssmi_admin_atomic_write(string $path, string $contents, int $mode = 0600): bool {
+    $parent = dirname($path);
+    if (!is_dir($parent) || !is_writable($parent)) return false;
+
+    try {
+        $tempPath = $path . '.tmp-' . bin2hex(random_bytes(8));
+    } catch (Throwable $e) {
+        return false;
+    }
+
+    $handle = @fopen($tempPath, 'xb');
+    if ($handle === false) return false;
+    if (!@chmod($tempPath, $mode)) {
+        fclose($handle);
+        @unlink($tempPath);
+        return false;
+    }
+
+    $written = kssmi_admin_write_all($handle, $contents);
+    if ($written && function_exists('fsync')) $written = @fsync($handle);
+    fclose($handle);
+    if (!$written || !@rename($tempPath, $path)) {
+        @unlink($tempPath);
+        return false;
+    }
+    @chmod($path, $mode);
+    return true;
+}
+
+/**
+ * Acquire an exclusive (LOCK_EX) or shared (LOCK_SH) flock on a stable
+ * sidecar lock file. Returns ['ok' => bool, 'handle' => resource|null,
+ * 'error' => string|null].
+ */
+function kssmi_admin_file_lock(string $path, int $operation): array {
+    $parent = dirname($path);
+    if (!is_dir($parent) || !is_writable($parent)) {
+        return ['ok' => false, 'error' => 'parent_not_writable'];
+    }
+    $handle = @fopen($path . '.lock', 'c+b');
+    if ($handle === false) return ['ok' => false, 'error' => 'lock_open_failed'];
+    @chmod($path . '.lock', 0600);
+    if (!flock($handle, $operation)) {
+        fclose($handle);
+        return ['ok' => false, 'error' => 'lock_failed'];
+    }
+    return ['ok' => true, 'handle' => $handle, 'error' => null];
+}
+
+/**
+ * Release a lock acquired by kssmi_admin_file_lock.
+ */
+function kssmi_admin_file_unlock(array $lock): void {
+    if (!is_resource($lock['handle'] ?? null)) return;
+    flock($lock['handle'], LOCK_UN);
+    fclose($lock['handle']);
+}
+
+/**
+ * Read a secret file (password hash / reset tokens) under a shared lock.
+ * Missing or empty file → null, matching the backends' current getPasswordHash
+ * fallback semantics (they treat an absent hash as "no password set").
+ */
+function kssmi_admin_secret_read(string $path): ?string {
+    $lock = kssmi_admin_file_lock($path, LOCK_SH);
+    if (!$lock['ok']) return null;
+    try {
+        if (!is_file($path) || !is_readable($path)) return null;
+        $contents = @file_get_contents($path);
+        if (!is_string($contents)) return null;
+        $contents = trim($contents);
+        return $contents === '' ? null : $contents;
+    } finally {
+        kssmi_admin_file_unlock($lock);
+    }
+}
+
+/**
+ * Write a secret file atomically (0600) under an exclusive lock.
+ * Empty contents are rejected (matching the "missing hash disables login"
+ * semantics of the current backends).
+ */
+function kssmi_admin_secret_write(string $path, string $contents): bool {
+    if ($contents === '') return false;
+    $lock = kssmi_admin_file_lock($path, LOCK_EX);
+    if (!$lock['ok']) return false;
+    try {
+        return kssmi_admin_atomic_write($path, $contents, 0600);
+    } finally {
+        kssmi_admin_file_unlock($lock);
+    }
+}

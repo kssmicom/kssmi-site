@@ -89,7 +89,20 @@ const phpPolicies = new Map([
   ['public/api/track-pageview.php', 'Cache-Control: no-store, private'],
 ]);
 
+// Admin pages (email-logs.php, visitor-journey.php) emit their security and
+// cache headers via the shared private/http-security.php module
+// (kssmi_admin_security_headers), so their literal policy lives there, not
+// inline in each page. Non-admin PHP endpoints still send their own header.
+const sharedHttpSecurity = await readText('private/http-security.php');
+
 for (const [phpPath, expectedPolicy] of phpPolicies) {
+  if (phpPath === 'public/email-logs.php' || phpPath === 'public/visitor-journey.php') {
+    assert(
+      sharedHttpSecurity.includes(expectedPolicy),
+      `${phpPath} policy must be provided by private/http-security.php: ${expectedPolicy}`
+    );
+    continue;
+  }
   const php = await readText(phpPath);
   assert(php.includes(expectedPolicy), `${phpPath} must send ${expectedPolicy}`);
 }

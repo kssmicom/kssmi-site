@@ -234,7 +234,7 @@ requireText(
 );
 requireText(
   deployReleaseScript,
-  'PRIVATE_MODULES="email-log-store.php rate-limit.php"',
+  'PRIVATE_MODULES="email-log-store.php rate-limit.php http-security.php"',
   'Shared module list matches production modules',
 );
 requireText(

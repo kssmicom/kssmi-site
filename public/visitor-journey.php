@@ -11,13 +11,9 @@ session_set_cookie_params([
 ]);
 session_start();
 
-header('X-Robots-Tag: noindex, nofollow');
-header('Cache-Control: no-store, private', true);
-header('Pragma: no-cache');
-header('X-Content-Type-Options: nosniff');
-header('X-Frame-Options: DENY');
-header('Referrer-Policy: no-referrer');
-header("Content-Security-Policy: frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
+// Shared admin security headers (CSP matches this page's existing policy).
+require_once dirname(__DIR__) . '/private/http-security.php';
+kssmi_admin_security_headers("frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
 
 require_once __DIR__ . '/api/vjt-helpers.php';
 
@@ -34,20 +30,11 @@ if (file_exists(PASSWORD_FILE_OLD) && !file_exists(PASSWORD_FILE)) {
 }
 
 function getPasswordHash() {
-    if (file_exists(PASSWORD_FILE)) {
-        $content = @file_get_contents(PASSWORD_FILE);
-        if ($content !== false) {
-            $hash = trim($content);
-            if (!empty($hash)) return $hash;
-        }
-    }
+    $hash = kssmi_admin_secret_read(PASSWORD_FILE);
+    if ($hash !== null) return $hash;
     // Fallback: file may not have been migrated yet
     if (file_exists(PASSWORD_FILE_OLD)) {
-        $content = @file_get_contents(PASSWORD_FILE_OLD);
-        if ($content !== false) {
-            $hash = trim($content);
-            if (!empty($hash)) return $hash;
-        }
+        return kssmi_admin_secret_read(PASSWORD_FILE_OLD);
     }
     return null;
 }
