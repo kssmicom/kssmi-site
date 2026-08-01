@@ -155,6 +155,39 @@ try {
     kssmi_sec_assert(kssmi_admin_csrf_valid($resetToken) === false, 'custom-key token not valid under default key');
     $_SESSION = [];
 
+    // ── reset token atomic consumption ──
+    $tokensPath = $testDirectory . DIRECTORY_SEPARATOR . '.email_reset_tokens.json';
+    $now = time();
+    $tokenA = str_repeat('a', 64);
+    $tokenB = str_repeat('b', 64);
+
+    // An existing EMPTY file (touch-created by deploy) must behave as no tokens.
+    file_put_contents($tokensPath, '');
+    kssmi_sec_assert(kssmi_admin_reset_tokens_read($tokensPath, $now)['ok'] === true, 'empty token store reads as ok');
+    kssmi_sec_assert(count(kssmi_admin_reset_tokens_read($tokensPath, $now)['tokens']) === 0, 'empty token store has no tokens');
+    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, $tokenA, $now) === false, 'empty store: no token valid');
+    kssmi_sec_assert(kssmi_admin_reset_token_add($tokensPath, $tokenA, $now + 3600) === true, 'token A added to empty store');
+
+    kssmi_sec_assert(kssmi_admin_reset_token_add($tokensPath, $tokenB, $now + 3600) === true, 'reset token B added');
+    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, $tokenA, $now) === true, 'token A valid');
+    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, str_repeat('c', 64), $now) === false, 'unknown token invalid');
+
+    $consume = kssmi_admin_reset_token_consume($tokensPath, $tokenA, $now);
+    kssmi_sec_assert($consume['ok'] === true && $consume['consumed'] === true, 'token A consumed atomically');
+    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, $tokenA, $now) === false, 'consumed token A invalid (replay blocked)');
+    $replay = kssmi_admin_reset_token_consume($tokensPath, $tokenA, $now);
+    kssmi_sec_assert($replay['ok'] === true && $replay['consumed'] === false, 'replay of consumed token A reports not-consumed');
+    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, $tokenB, $now) === true, 'unrelated token B survives consumption');
+
+    // Expired tokens are dropped on read/add.
+    $tokenC = str_repeat('c', 64);
+    kssmi_sec_assert(kssmi_admin_reset_token_add($tokensPath, $tokenC, $now - 10) === false, 'already-expired token rejected at add');
+    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, $tokenC, $now) === false, 'expired token invalid');
+
+    // Malformed token shapes never crash and never consume.
+    $malformed = kssmi_admin_reset_token_consume($tokensPath, 'not-64-hex', $now);
+    kssmi_sec_assert($malformed['ok'] === true && $malformed['consumed'] === false, 'malformed token consume is a safe no-op');
+
     fwrite(STDOUT, "HTTP security module tests passed.\n");
 } finally {
     kssmi_sec_remove_tree($testDirectory);

@@ -322,3 +322,144 @@ function kssmi_admin_csrf_rotate(string $key = 'csrf_token'): string {
     $_SESSION[$key] = bin2hex(random_bytes(32));
     return $_SESSION[$key];
 }
+
+// ── Reset token atomic consumption (阶段 3 步骤 5) ────────────────────────
+// The reset-token store (.email_reset_tokens.json) must be read-modified-
+// written under an exclusive lock so concurrent clicks on the emailed reset
+// link can only ever consume the token once (replay protection). The token
+// file shape is { "<64-hex>": { "created": int, "expires": int }, ... }.
+
+function kssmi_admin_reset_tokens_decode($raw, &$error): ?array {
+    $error = null;
+    if (!is_string($raw) || trim($raw) === '') {
+        // An empty/whitespace store is a valid "no tokens yet" state
+        // (deploy-release.sh touch-creates the file empty on activation).
+        return [];
+    }
+    $tokens = json_decode($raw, true);
+    if (!is_array($tokens) || json_last_error() !== JSON_ERROR_NONE) {
+        $error = 'invalid_json';
+        return null;
+    }
+    foreach ($tokens as $token => $data) {
+        if (
+            !is_string($token) ||
+            preg_match('/^[a-f0-9]{64}$/D', $token) !== 1 ||
+            !is_array($data) ||
+            !is_numeric($data['expires'] ?? null)
+        ) {
+            $error = 'invalid_schema';
+            return null;
+        }
+    }
+    return $tokens;
+}
+
+function kssmi_admin_reset_tokens_read(string $path, ?int $now = null): array {
+    $lock = kssmi_admin_file_lock($path, LOCK_SH);
+    if (!$lock['ok']) return ['ok' => false, 'tokens' => [], 'error' => $lock['error']];
+    try {
+        if (!file_exists($path)) return ['ok' => true, 'tokens' => [], 'error' => null];
+        $raw = @file_get_contents($path);
+        $decodeError = null;
+        $tokens = kssmi_admin_reset_tokens_decode($raw, $decodeError);
+        if ($decodeError !== null) {
+            return ['ok' => false, 'tokens' => [], 'error' => $decodeError];
+        }
+        $current = $now ?? time();
+        $tokens = array_filter(
+            $tokens,
+            fn($data) => (int)($data['expires'] ?? 0) > $current
+        );
+        return ['ok' => true, 'tokens' => $tokens, 'error' => null];
+    } finally {
+        kssmi_admin_file_unlock($lock);
+    }
+}
+
+function kssmi_admin_reset_tokens_mutate(string $path, callable $mutator): array {
+    $lock = kssmi_admin_file_lock($path, LOCK_EX);
+    if (!$lock['ok']) return ['ok' => false, 'tokens' => [], 'error' => $lock['error']];
+    try {
+        $raw = file_exists($path) ? @file_get_contents($path) : '[]';
+        $decodeError = null;
+        $tokens = kssmi_admin_reset_tokens_decode($raw, $decodeError);
+        if ($decodeError !== null) {
+            return ['ok' => false, 'tokens' => [], 'error' => $decodeError];
+        }
+        try {
+            $tokens = $mutator($tokens);
+        } catch (Throwable $e) {
+            return ['ok' => false, 'tokens' => [], 'error' => 'mutation_failed'];
+        }
+        if (!is_array($tokens)) {
+            return ['ok' => false, 'tokens' => [], 'error' => 'mutation_invalid'];
+        }
+        $encoded = json_encode($tokens, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+        if (!is_string($encoded)) {
+            return ['ok' => false, 'tokens' => [], 'error' => 'encode_failed'];
+        }
+        if (!kssmi_admin_atomic_write($path, $encoded, 0600)) {
+            return ['ok' => false, 'tokens' => [], 'error' => 'write_failed'];
+        }
+        return ['ok' => true, 'tokens' => $tokens, 'error' => null];
+    } finally {
+        kssmi_admin_file_unlock($lock);
+    }
+}
+
+function kssmi_admin_reset_token_add(string $path, string $token, int $expires, ?int $now = null): bool {
+    if (preg_match('/^[a-f0-9]{64}$/D', $token) !== 1) return false;
+    $current = $now ?? time();
+    if ($expires <= $current) return false;
+    $result = kssmi_admin_reset_tokens_mutate(
+        $path,
+        function(array $tokens) use ($token, $expires, $current): array {
+            foreach ($tokens as $storedToken => $data) {
+                if ((int)($data['expires'] ?? 0) <= $current) unset($tokens[$storedToken]);
+            }
+            $tokens[$token] = ['created' => $current, 'expires' => $expires];
+            return $tokens;
+        }
+    );
+    return $result['ok'];
+}
+
+function kssmi_admin_reset_token_valid(string $path, string $token, ?int $now = null): bool {
+    if (preg_match('/^[a-f0-9]{64}$/D', $token) !== 1) return false;
+    $result = kssmi_admin_reset_tokens_read($path, $now);
+    return $result['ok'] && isset($result['tokens'][$token]);
+}
+
+/**
+ * Atomically remove a reset token (and expired tokens) under an exclusive
+ * lock. Returns ['ok' => bool, 'consumed' => bool, 'error' => ?string].
+ * Replay of an already-consumed token returns consumed=false, never true.
+ */
+function kssmi_admin_reset_token_consume(string $path, string $token, ?int $now = null): array {
+    if (preg_match('/^[a-f0-9]{64}$/D', $token) !== 1) {
+        return ['ok' => true, 'consumed' => false, 'error' => null];
+    }
+    $current = $now ?? time();
+    $consumed = false;
+    $result = kssmi_admin_reset_tokens_mutate(
+        $path,
+        function(array $tokens) use ($token, $current, &$consumed): array {
+            foreach ($tokens as $storedToken => $data) {
+                if ((int)($data['expires'] ?? 0) <= $current) {
+                    unset($tokens[$storedToken]);
+                }
+            }
+            if (isset($tokens[$token])) {
+                unset($tokens[$token]);
+                $consumed = true;
+            }
+            return $tokens;
+        }
+    );
+    return [
+        'ok' => $result['ok'],
+        'consumed' => $result['ok'] && $consumed,
+        'error' => $result['error'] ?? null,
+    ];
+}

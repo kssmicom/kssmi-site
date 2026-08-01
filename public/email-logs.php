@@ -122,52 +122,9 @@ function generateResetToken() {
     return bin2hex(random_bytes(32));
 }
 
-// Get reset tokens (try new safe path first, fall back to old path)
-function getResetTokens() {
-    if (file_exists(RESET_TOKENS_FILE)) {
-        $content = @file_get_contents(RESET_TOKENS_FILE);
-        if ($content !== false) {
-            $tokens = json_decode($content, true);
-            if (is_array($tokens)) return $tokens;
-        }
-    }
-    // Fallback: file may not have been migrated yet
-    if (file_exists(RESET_TOKENS_FILE_OLD)) {
-        $content = @file_get_contents(RESET_TOKENS_FILE_OLD);
-        if ($content !== false) {
-            $tokens = json_decode($content, true);
-            if (is_array($tokens)) return $tokens;
-        }
-    }
-    return [];
-}
-
-// Save reset tokens
-function saveResetTokens($tokens) {
-    $result = @file_put_contents(RESET_TOKENS_FILE, json_encode($tokens, JSON_PRETTY_PRINT));
-    if ($result !== false) {
-        @chmod(RESET_TOKENS_FILE, 0600);
-    }
-    return $result !== false;
-}
-
 // CSRF protection (shared helper, key stays 'csrf_token')
 function validateCSRF() {
     return kssmi_admin_csrf_valid($_POST['csrf_token'] ?? null);
-}
-
-// Clean expired tokens (older than 1 hour)
-function cleanExpiredTokens() {
-    $tokens = getResetTokens();
-    $now = time();
-    $validTokens = [];
-    foreach ($tokens as $token => $data) {
-        if (isset($data['expires']) && $data['expires'] > $now) {
-            $validTokens[$token] = $data;
-        }
-    }
-    saveResetTokens($validTokens);
-    return $validTokens;
 }
 
 // Send reset email via PHPMailer with PHP mail() fallback
@@ -176,7 +133,9 @@ function sendResetEmail($token) {
 
     // Include the session's CSRF token in the reset link so the user clicking
     // from email brings a valid token to the GET handler.
-    $resetUrl = 'https://kssmi.com/email-logs.php?reset=' . $token . '&csrf=' . urlencode($_SESSION['csrf_reset'] ?? '');
+    // The reset link carries only the unguessable 64-hex token — that IS the
+    // credential and CSRF protection. No session-bound parameter is included.
+    $resetUrl = 'https://kssmi.com/email-logs.php?reset=' . $token;
 
     $htmlBody = "
     <html>
@@ -269,37 +228,28 @@ $passwordError = '';
 $showResetForm = false;
 $resetMode = false;
 
-// CSRF token for password reset flow (generated once per session; rotated after successful use)
-// This prevents third-party pages from auto-submitting a reset request / reset submission
-// while the admin is logged in (P2-1 of security-004.md).
-if (empty($_SESSION['csrf_reset'])) {
-    $_SESSION['csrf_reset'] = bin2hex(random_bytes(32));
-}
-
 // Handle password reset request
 if (isset($_POST['request_reset'])) {
     // CSRF check — third-party sites must not be able to auto-trigger a reset email
-    if (!isset($_POST['csrf_token']) ||
-        !hash_equals($_SESSION['csrf_reset'] ?? '', $_POST['csrf_token'])) {
+    if (!kssmi_admin_csrf_valid($_POST['csrf_token'] ?? null)) {
         $error = 'Security check failed. Please reload the page and try again.';
     } else {
-        // Generate token
+        // Generate token and store it atomically (expires in 1 hour)
         $token = generateResetToken();
-        $tokens = cleanExpiredTokens();
-        $tokens[$token] = [
-            'created' => time(),
-            'expires' => time() + 3600 // 1 hour
-        ];
-
-        if (saveResetTokens($tokens)) {
+        if (kssmi_admin_reset_token_add(RESET_TOKENS_FILE, $token, time() + 3600)) {
             $result = sendResetEmail($token);
             if ($result['success']) {
                 $message = 'Reset link sent to ' . ADMIN_EMAIL . '. Please check your inbox. The link expires in 1 hour.';
                 // Rotate CSRF token after successful use (prevents email-bombing via
                 // repeated form submissions even with a known token)
-                $_SESSION['csrf_reset'] = bin2hex(random_bytes(32));
+                kssmi_admin_csrf_rotate();
             } else {
                 $error = 'Failed to send reset email: ' . ($result['error'] ?? 'Unknown error');
+                // Roll back the stored token so a failed email leaves no orphan.
+                $rollback = kssmi_admin_reset_token_consume(RESET_TOKENS_FILE, $token);
+                if (!$rollback['ok']) {
+                    error_log('KSSMI: failed to roll back reset token after email failure: ' . ($rollback['error'] ?? 'unknown'));
+                }
             }
         } else {
             $error = 'Failed to generate reset token. Please check file permissions.';
@@ -310,26 +260,19 @@ if (isset($_POST['request_reset'])) {
 // Handle password reset with token
 if (isset($_GET['reset'])) {
     $token = $_GET['reset'];
-    $urlCsrf = $_GET['csrf'] ?? '';
-    $tokens = cleanExpiredTokens();
+    // The token itself is the credential: a 64-hex random value only the
+    // email recipient knows. Its unguessability is the CSRF protection, so no
+    // session-bound csrf parameter is needed in the link (the old &csrf=
+    // parameter could never match a fresh session, breaking every reset link).
+    if (kssmi_admin_reset_token_valid(RESET_TOKENS_FILE, $token)) {
+        $resetMode = true;
 
-    if (isset($tokens[$token])) {
-        // CSRF check — the reset link's URL must include a valid CSRF token
-        // matching the session. This prevents a crafted link (e.g. forwarded
-        // by an attacker) from being used.
-        if (!hash_equals($_SESSION['csrf_reset'] ?? '', $urlCsrf)) {
-            $error = 'Security check failed. The reset link may have been tampered with. Please request a new one.';
-            $resetMode = false;
-        } else {
-            $resetMode = true;
-
-            // Handle new password submission
-            if (isset($_POST['reset_password'])) {
-                // Re-check CSRF on the form submit as well (defense in depth)
-                if (!isset($_POST['csrf_token']) ||
-                    !hash_equals($_SESSION['csrf_reset'] ?? '', $_POST['csrf_token'])) {
-                    $passwordError = 'Security check failed. Please use the link from your email.';
-                } else {
+        // Handle new password submission
+        if (isset($_POST['reset_password'])) {
+            // CSRF on the form submit (defense in depth; login-page token)
+            if (!kssmi_admin_csrf_valid($_POST['csrf_token'] ?? null)) {
+                $passwordError = 'Security check failed. Please use the link from your email.';
+            } else {
                     $newPass = trim($_POST['new_password']);
                     $confirmPass = trim($_POST['confirm_password']);
 
@@ -339,26 +282,26 @@ if (isset($_GET['reset'])) {
                         $passwordError = 'Passwords do not match';
                     } else {
                         if (setPassword($newPass)) {
-                            // Remove used token
-                            unset($tokens[$token]);
-                            saveResetTokens($tokens);
+                            // Atomically consume the reset token (replay-safe)
+                            $consumeResult = kssmi_admin_reset_token_consume(RESET_TOKENS_FILE, $token);
+                            if (!$consumeResult['ok']) {
+                                error_log('KSSMI: reset token not consumed after password change: ' . ($consumeResult['error'] ?? 'unknown'));
+                            }
 
                             $passwordMessage = 'Password reset successfully! You can now login with your new password.';
                             $resetMode = false;
                             // Rotate CSRF token after successful reset
-                            $_SESSION['csrf_reset'] = bin2hex(random_bytes(32));
+                            kssmi_admin_csrf_rotate();
                         } else {
                             $passwordError = 'Failed to save new password. Please try again.';
                         }
                     }
-                }
             }
         }
     } else {
         $error = 'Invalid or expired reset link. Please request a new one.';
     }
 }
-
 // Rate limit failed/attempted admin logins without creating year-long denial of service.
 require_once dirname(__DIR__) . '/private/rate-limit.php';
 
@@ -997,7 +940,7 @@ function resendEmail($log) {
                 <?php else: ?>
                     <p style="color:#666;margin-bottom:20px;">Enter your new password below.</p>
                     <form method="POST">
-                        <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_reset'] ?? ''); ?>">
+                        <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
                         <input type="password" name="new_password" placeholder="New password (min 12 characters)" required minlength="12">
                         <input type="password" name="confirm_password" placeholder="Confirm new password" required minlength="12">
                         <button type="submit" name="reset_password">Set New Password</button>
@@ -1034,7 +977,7 @@ function resendEmail($log) {
                             <strong><?php echo htmlspecialchars(ADMIN_EMAIL); ?></strong>
                         </p>
                         <form method="POST">
-                            <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_reset'] ?? ''); ?>">
+                            <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
                             <button type="submit" name="request_reset" class="secondary">Send Reset Link</button>
                         </form>
                     </div>
