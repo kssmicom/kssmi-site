@@ -10,7 +10,10 @@ permissions:
 
 concurrency:
   group: kssmi-production
-  cancel-in-progress: true
+  # New pushes while a deploy is in-flight wait for the previous one to
+  # finish, then run with the latest code (not intermediate states). This
+  # prevents two deploys from clobbering each other on the server.
+  cancel-in-progress: false
 
 jobs:
   build-and-deploy:
@@ -108,252 +111,29 @@ jobs:
           cp -r public/api dist/
           cp -r public/vendor dist/
 
-      - name: Deploy shared PHP modules to private/ (outside webroot)
+      - name: Upload immutable release bundle
         uses: appleboy/scp-action@ff85246acaad7bdce478db94a363cd2bf7c90345  # v1.0.0 pinned 2026-07-08
         with:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "private/rate-limit.php,private/email-log-store.php"
-          target: "/home/kssmi.com"
+          source: "dist,private,scripts/deploy-release.sh"
+          target: "/home/kssmi.com/releases/${{ github.sha }}-${{ github.run_attempt }}"
 
-      - name: Prepare private email data storage
-        uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b
-        with:
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.REMOTE_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            set -eu
-            SITE_USER=kssmi4374
-            SITE_GROUP=kssmi4374
-            PRIVATE_ROOT=/home/kssmi.com
-            EMAIL_DATA_DIR="$PRIVATE_ROOT/email_data"
-            EMAIL_LOG="$EMAIL_DATA_DIR/email-logs.json"
-            EMAIL_LOCK="$EMAIL_LOG.lock"
-            CUTOVER_MARKER="$EMAIL_DATA_DIR/email-log-cutover-until"
-            LEGACY_EMAIL_LOG="$PRIVATE_ROOT/email-logs.json"
-            LEGACY_EMAIL_LOCK="$LEGACY_EMAIL_LOG.lock"
-            RATE_LIMIT_DIR="$PRIVATE_ROOT/rate_limit"
-            PRIVATE_MODULE_DIR="$PRIVATE_ROOT/private"
-            RATE_LIMIT_MODULE="$PRIVATE_MODULE_DIR/rate-limit.php"
-            EMAIL_LOG_MODULE="$PRIVATE_MODULE_DIR/email-log-store.php"
-
-            run_root() {
-              if [ "$(id -u)" = 0 ]; then
-                "$@"
-              else
-                sudo "$@"
-              fi
-            }
-
-            run_as_site() {
-              if [ "$(id -un)" = "$SITE_USER" ]; then
-                "$@"
-              else
-                sudo -u "$SITE_USER" "$@"
-              fi
-            }
-
-            run_root install -d -o "$SITE_USER" -g "$SITE_GROUP" -m 750 "$EMAIL_DATA_DIR"
-            run_root install -d -o "$SITE_USER" -g "$SITE_GROUP" -m 750 "$RATE_LIMIT_DIR"
-            # Both stable locks must exist with final ownership before the
-            # marker is published. The migration later holds the new lock and
-            # the legacy lock in this fixed order.
-            run_root touch "$EMAIL_LOCK" "$LEGACY_EMAIL_LOCK"
-            run_root chown "$SITE_USER:$SITE_GROUP" "$EMAIL_LOCK" "$LEGACY_EMAIL_LOCK"
-            run_root chmod 640 "$EMAIL_LOCK" "$LEGACY_EMAIL_LOCK"
-            CUTOVER_UNTIL="$(($(date +%s) + 1800))"
-            run_root env \
-              CUTOVER_MARKER="$CUTOVER_MARKER" \
-              CUTOVER_UNTIL="$CUTOVER_UNTIL" \
-              SITE_USER="$SITE_USER" \
-              SITE_GROUP="$SITE_GROUP" \
-              sh -c '
-                set -eu
-                umask 0027
-                marker_tmp="$CUTOVER_MARKER.tmp-$$"
-                trap '\''rm -f "$marker_tmp"'\'' EXIT HUP INT TERM
-                printf "%s" "$CUTOVER_UNTIL" > "$marker_tmp"
-                chown "$SITE_USER:$SITE_GROUP" "$marker_tmp"
-                chmod 640 "$marker_tmp"
-                mv -f "$marker_tmp" "$CUTOVER_MARKER"
-                trap - EXIT HUP INT TERM
-              '
-            run_root chown "$SITE_USER:$SITE_GROUP" "$PRIVATE_MODULE_DIR"
-            run_root chmod 750 "$PRIVATE_MODULE_DIR"
-            run_root chown "$SITE_USER:$SITE_GROUP" "$RATE_LIMIT_MODULE" "$EMAIL_LOG_MODULE"
-            run_root chmod 640 "$RATE_LIMIT_MODULE" "$EMAIL_LOG_MODULE"
-            run_as_site test -r "$RATE_LIMIT_MODULE"
-            run_as_site test -r "$EMAIL_LOG_MODULE"
-            run_root find "$RATE_LIMIT_DIR" -maxdepth 1 -type f -name '*.json' ! -name 'bucket-??.json' -delete
-            run_root find "$RATE_LIMIT_DIR" -maxdepth 1 -type f -name '*.json.lock' ! -name 'bucket-??.json.lock' -delete
-            run_root chown -R "$SITE_USER:$SITE_GROUP" "$RATE_LIMIT_DIR"
-            run_root chmod 750 "$RATE_LIMIT_DIR"
-            run_root find "$RATE_LIMIT_DIR" -maxdepth 1 -type f -name 'bucket-??.json' -exec chmod 600 {} \;
-            run_root find "$RATE_LIMIT_DIR" -maxdepth 1 -type f -name 'bucket-??.json.lock' -exec chmod 600 {} \;
-            # Move the legacy log once, then leave a compatibility symlink at
-            # its old path. An old PHP request that is already in flight keeps
-            # writing the same inode, while a request opened during deployment
-            # follows the symlink to the new private data path. Holding the new
-            # lock after publishing the marker drains any mutation that passed
-            # its preflight check before cutover began.
-            run_root env \
-              LEGACY_EMAIL_LOG="$LEGACY_EMAIL_LOG" \
-              EMAIL_LOG="$EMAIL_LOG" \
-              EMAIL_LOCK="$EMAIL_LOCK" \
-              sh -c '
-                set -eu
-                exec 8>"$EMAIL_LOCK"
-                flock -x 8
-                exec 9>"$LEGACY_EMAIL_LOG.lock"
-                flock -x 9
-
-                if [ -L "$LEGACY_EMAIL_LOG" ]; then
-                  resolved="$(readlink -f "$LEGACY_EMAIL_LOG")"
-                  if [ "$resolved" != "$EMAIL_LOG" ]; then
-                    echo "Legacy email log symlink points to an unexpected target: $resolved" >&2
-                    exit 1
-                  fi
-                elif [ -e "$LEGACY_EMAIL_LOG" ] && [ -e "$EMAIL_LOG" ]; then
-                  if ! cmp -s "$LEGACY_EMAIL_LOG" "$EMAIL_LOG"; then
-                    echo "Both legacy and new email logs contain different data; refusing an unsafe merge." >&2
-                    exit 1
-                  fi
-                  rm "$LEGACY_EMAIL_LOG"
-                  ln -s "$EMAIL_LOG" "$LEGACY_EMAIL_LOG"
-                elif [ -e "$LEGACY_EMAIL_LOG" ]; then
-                  mv "$LEGACY_EMAIL_LOG" "$EMAIL_LOG"
-                fi
-
-                if [ ! -e "$EMAIL_LOG" ]; then
-                  umask 0077
-                  printf "[]" > "$EMAIL_LOG"
-                fi
-                if [ ! -e "$LEGACY_EMAIL_LOG" ]; then
-                  ln -s "$EMAIL_LOG" "$LEGACY_EMAIL_LOG"
-                fi
-              '
-
-            run_root chown "$SITE_USER:$SITE_GROUP" "$EMAIL_LOG" "$EMAIL_LOCK" "$EMAIL_DATA_DIR"
-            run_root chown -h "$SITE_USER:$SITE_GROUP" "$LEGACY_EMAIL_LOG"
-            run_root chmod 640 "$EMAIL_LOG" "$EMAIL_LOCK"
-            run_root chmod 750 "$EMAIL_DATA_DIR"
-
-            # Exercise the exact filesystem operations used by atomic logging
-            # as the real PHP-FPM account. Do not deploy if any step fails.
-            run_as_site sh -c '
-              set -eu
-              umask 0077
-              probe="$1/.email-log-write-probe-$$"
-              moved="$probe.moved"
-              : > "$probe"
-              : > "$moved"
-              chmod 600 "$probe"
-              mv -f "$probe" "$moved"
-              rm "$moved"
-            ' sh "$EMAIL_DATA_DIR"
-            run_as_site sh -c '
-              set -eu
-              probe="$1/.rate-limit-write-probe-$$"
-              moved="$probe.moved"
-              : > "$probe"
-              : > "$moved"
-              chmod 600 "$probe"
-              mv -f "$probe" "$moved"
-              rm "$moved"
-            ' sh "$RATE_LIMIT_DIR"
-            echo "Shared PHP module readability: OK"
-            echo "Email data atomic-write permissions: OK"
-            echo "Rate-limit storage permissions: OK"
-
-      - name: Deploy to Hetzner Server
-        uses: easingthemes/ssh-deploy@2cc5b27bf3029d0455dd5e09fe02633904031447  # v6.0.1 pinned 2026-07-06 (was @main — supply-chain risk)
-        with:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          SOURCE: "dist/"
-          TARGET: "/home/kssmi.com/public_html"
-          # Private email data now lives in /home/kssmi.com, above public_html.
-          # Do not preserve legacy webroot copies of logs, credentials or tokens.
-          ARGS: "-avz --delete --exclude=api/vjt_data"
-
-      - name: Set file permissions
+      - name: Activate versioned release atomically
         uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b  # v1.2.5+ pinned 2026-07-06 (was @master — supply-chain risk)
         with:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          command_timeout: 300s
           script: |
-            cd /home/kssmi.com/public_html
-            SITE_USER=kssmi4374
-            SITE_GROUP=kssmi4374
-            SITE_OWNER="$SITE_USER:$SITE_GROUP"
-
-            # Set ownership, including dotfiles such as .htaccess.
-            chown -R "$SITE_OWNER" . 2>/dev/null || sudo chown -R "$SITE_OWNER" .
-
-            # Set directory permissions
-            find . -type d -exec chmod 755 {} \; 2>/dev/null || true
-
-            # Set file permissions
-            find . -type f -exec chmod 644 {} \; 2>/dev/null || true
-
-            # Make PHP files executable
-            find . -name "*.php" -exec chmod 755 {} \; 2>/dev/null || true
-
-            # Credentials live above public_html, outside web access.
-            PRIVATE_ROOT=/home/kssmi.com
-            touch "$PRIVATE_ROOT/.email_logs_password" 2>/dev/null || true
-            touch "$PRIVATE_ROOT/.email_reset_tokens.json" 2>/dev/null || true
-
-            # Set writable permissions for data files (PHP needs to write to these)
-            # chmod 640 (was 666): owner read/write, group read, other none.
-            # PHP-FPM runs as kssmi4374:kssmi4374 — owner can write, others can't.
-            # 666 was overly permissive: let any user on the server read/write these
-            # sensitive files (email reset tokens, password hash).
-            chmod 640 "$PRIVATE_ROOT/.email_logs_password" "$PRIVATE_ROOT/.email_reset_tokens.json" 2>/dev/null || true
-
-            # VJT SQLite store — lives OUTSIDE public_html (P2-4 of security-004.md)
-            # The actual data file (vjt.sqlite + WAL/SHM) is NOT touched by deploy:
-            #   1. easingthemes/ssh-deploy --exclude=api/vjt_data skips any directory
-            #      called vjt_data inside dist/ (it lives above public_html now).
-            #   2. The Mkdir below ensures the destination directory exists with
-            #      correct ownership so PHP can create vjt.sqlite on first init.
-            mkdir -p /home/kssmi.com/vjt_data 2>/dev/null || sudo mkdir -p /home/kssmi.com/vjt_data 2>/dev/null || true
-            chown "$SITE_OWNER" /home/kssmi.com/vjt_data 2>/dev/null || sudo chown "$SITE_OWNER" /home/kssmi.com/vjt_data
-            chmod 750 /home/kssmi.com/vjt_data 2>/dev/null || sudo chmod 750 /home/kssmi.com/vjt_data 2>/dev/null || true
-
-            # Set ownership for data files
-            chown "$SITE_OWNER" "$PRIVATE_ROOT/.email_logs_password" "$PRIVATE_ROOT/.email_reset_tokens.json" 2>/dev/null || sudo chown "$SITE_OWNER" "$PRIVATE_ROOT/.email_logs_password" "$PRIVATE_ROOT/.email_reset_tokens.json"
-
-            # GSC credentials stay outside public_html and must be readable only
-            # by the real LiteSpeed PHP account. If the manually uploaded file
-            # exists, make a permission regression fail the deploy visibly.
-            GSC_DIR="$PRIVATE_ROOT/private/gsc"
-            GSC_JSON="$GSC_DIR/google-service-account.json"
-            if [ -f "$GSC_JSON" ]; then
-              chown -R "$SITE_OWNER" "$GSC_DIR" 2>/dev/null || sudo chown -R "$SITE_OWNER" "$GSC_DIR"
-              chmod 700 "$GSC_DIR" 2>/dev/null || sudo chmod 700 "$GSC_DIR"
-              chmod 600 "$GSC_JSON" 2>/dev/null || sudo chmod 600 "$GSC_JSON"
-              if [ "$(id -un)" = "$SITE_USER" ]; then
-                test -r "$GSC_JSON"
-              else
-                sudo -u "$SITE_USER" test -r "$GSC_JSON"
-              fi
-              echo "GSC JSON readable by $SITE_USER: OK"
-            else
-              echo "GSC JSON not present; skipping credential permission check."
-            fi
-
-            # New PHP code refuses mutations while this marker is active. Wait
-            # out the old SMTP timeout, then reopen writes after all public
-            # files and permissions have switched to the new implementation.
-            CUTOVER_MARKER="$PRIVATE_ROOT/email_data/email-log-cutover-until"
-            sleep 60
-            rm "$CUTOVER_MARKER" 2>/dev/null || sudo rm -f "$CUTOVER_MARKER"
-            echo "Email log cutover barrier released: OK"
+            set -eu
+            RELEASE_ID='${{ github.sha }}-${{ github.run_attempt }}'
+            RELEASE_SCRIPT="/home/kssmi.com/releases/$RELEASE_ID/scripts/deploy-release.sh"
+            test -f "$RELEASE_SCRIPT"
+            chmod 750 "$RELEASE_SCRIPT"
+            RELEASE_ID="$RELEASE_ID" bash "$RELEASE_SCRIPT" activate
 
       - name: Purge Cloudflare after atomic deploy
         env:
@@ -434,6 +214,38 @@ jobs:
           assert_single_cache_control 'https://kssmi.com/assets/runtime/cookie-banner.5107dfdbd150.js' 'immutable'
           assert_single_cache_control 'https://kssmi.com/api/track-pageview.php' 'no-store'
           assert_single_cache_control 'https://kssmi.com/api/contact-intent.php' 'no-store'
+
+      - name: Finalize successful release
+        uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b  # v1.2.5+ pinned 2026-07-06
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          command_timeout: 60s
+          script: |
+            set -eu
+            RELEASE_ID='${{ github.sha }}-${{ github.run_attempt }}'
+            RELEASE_SCRIPT="/home/kssmi.com/releases/$RELEASE_ID/scripts/deploy-release.sh"
+            test -f "$RELEASE_SCRIPT"
+            RELEASE_ID="$RELEASE_ID" bash "$RELEASE_SCRIPT" finalize
+
+      - name: Rollback on failure
+        if: failure()
+        uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b  # v1.2.5+ pinned 2026-07-06
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          command_timeout: 180s
+          script: |
+            set -eu
+            RELEASE_ID='${{ github.sha }}-${{ github.run_attempt }}'
+            RELEASE_SCRIPT="/home/kssmi.com/releases/$RELEASE_ID/scripts/deploy-release.sh"
+            if [ -f "$RELEASE_SCRIPT" ]; then
+              RELEASE_ID="$RELEASE_ID" bash "$RELEASE_SCRIPT" rollback
+            else
+              echo "No release bundle uploaded; rollback not required."
+            fi
 
       - name: Deployment Complete
         run: |

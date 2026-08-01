@@ -14,6 +14,12 @@ const emailLogTests = read('scripts/test-email-log-store.php');
 const rateLimitTests = read('scripts/test-rate-limit.php');
 const migrationTests = read('scripts/test-email-log-migration.sh');
 const deployWorkflow = read('.github/workflows/deploy.yml');
+// Phase 2 moved the deployment runtime behavior (cutover barrier, atomic
+// install, permission probes, migration) into scripts/deploy-release.sh, which
+// the workflow uploads and executes on the server. The policy literals below
+// are checked against the union so the contract survives the relocation.
+const deployReleaseScript = read('scripts/deploy-release.sh');
+const deploySource = deployWorkflow + '\n' + deployReleaseScript;
 const inquiryForm = read('src/components/InquiryForm.astro');
 const notFoundPage = read('src/components/pages/NotFoundPage.astro');
 
@@ -218,46 +224,56 @@ requireText(
 );
 requireText(
   deployWorkflow,
+  'scripts/deploy-release.sh',
+  'Release script upload',
+);
+requireText(
+  deploySource,
   'private/rate-limit.php,private/email-log-store.php',
   'Shared module deployment',
 );
 requireText(
-  deployWorkflow,
+  deployReleaseScript,
+  'PRIVATE_MODULES="email-log-store.php rate-limit.php"',
+  'Shared module list matches production modules',
+);
+requireText(
+  deploySource,
   'EMAIL_LOCK="$EMAIL_LOG.lock"',
   'Stable lock-file permissions',
 );
-requireText(deployWorkflow, 'exec 8>"$EMAIL_LOCK"', 'Cutover new-lock serialization');
+requireText(deploySource, 'exec 8>"$EMAIL_LOCK"', 'Cutover new-lock serialization');
 requireText(
-  deployWorkflow,
+  deploySource,
   'ln -s "$EMAIL_LOG" "$LEGACY_EMAIL_LOG"',
   'Legacy email-log compatibility path',
 );
 requireText(
-  deployWorkflow,
+  deploySource,
   'run_root chown "$SITE_USER:$SITE_GROUP" "$EMAIL_LOCK" "$LEGACY_EMAIL_LOCK"',
   'Legacy lock compatibility permissions',
 );
 requireText(
-  deployWorkflow,
+  deploySource,
   'refusing an unsafe merge',
   'Divergent email-log migration guard',
 );
 requireText(
-  deployWorkflow,
+  deploySource,
   'email-log-cutover-until',
   'Email-log cutover barrier marker',
 );
 requireText(
-  deployWorkflow,
+  deploySource,
   'Email log cutover barrier released: OK',
   'Email-log cutover barrier release',
 );
-requireText(deployWorkflow, 'EMAIL_DATA_DIR="$PRIVATE_ROOT/email_data"', 'Dedicated email data directory');
-requireText(deployWorkflow, 'run_as_site test -r "$RATE_LIMIT_MODULE"', 'Rate-limit module readability');
-requireText(deployWorkflow, 'run_as_site test -r "$EMAIL_LOG_MODULE"', 'Email-log module readability');
-requireText(deployWorkflow, 'Email data atomic-write permissions: OK', 'Deployment write/rename smoke test');
-requireText(deployWorkflow, 'Rate-limit storage permissions: OK', 'Rate-limit directory smoke test');
-requireText(deployWorkflow, 'sudo -u "$SITE_USER"', 'PHP-account permission verification');
+requireText(deploySource, 'EMAIL_DATA_DIR="$PRIVATE_ROOT/email_data"', 'Dedicated email data directory');
+requireText(deploySource, 'run_as_site test -r "$RATE_LIMIT_MODULE"', 'Rate-limit module readability');
+requireText(deploySource, 'run_as_site test -r "$EMAIL_LOG_MODULE"', 'Email-log module readability');
+requireText(deploySource, 'Email data atomic-write permissions: OK', 'Deployment write/rename smoke test');
+requireText(deploySource, 'Rate-limit storage permissions: OK', 'Rate-limit directory smoke test');
+requireText(deploySource, 'sudo -u "$SITE_USER"', 'PHP-account permission verification');
 requireText(emailLogTests, "run_email_log_workers('--append-worker'", 'Concurrent append regression');
 requireText(emailLogTests, "run_email_log_workers('--claim-worker'", 'Concurrent resend regression');
 requireText(emailLogTests, "'parent_not_writable'", 'Parent-directory failure regression');
