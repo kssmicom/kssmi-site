@@ -314,9 +314,12 @@ record_cutover_baseline() {
   # Probe every live endpoint before any barrier change so the proof can
   # distinguish "the barrier never engaged" from "the endpoint was already
   # unroutable". Endpoints absent from the live webroot are skipped.
+  # POST is required: send-mail.php answers 405 to GET before reaching the
+  # cutover guard (L63-65), so only a POST request exercises the 503 path.
   CUTOVER_BASELINE=""
   for endpoint in $(cutover_endpoints_in_live_webroot); do
     status="$(curl -sS --connect-timeout 5 --max-time 10 \
+      -X POST --data '' \
       -H 'Cache-Control: no-cache' \
       -o /dev/null \
       -w '%{http_code}' \
@@ -363,6 +366,7 @@ prove_cutover_barriers() {
     failures=""
     for endpoint in $endpoints; do
       status="$(curl -sS --connect-timeout 5 --max-time 10 \
+        -X POST --data '' \
         -H 'Cache-Control: no-cache' \
         -H 'Pragma: no-cache' \
         -o /dev/null \
