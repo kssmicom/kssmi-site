@@ -1,4 +1,8 @@
 import https from 'node:https';
+import {
+  requireSmokeCredentials,
+  runAuthenticatedAdminSmoke,
+} from './smoke-admin-security.mjs';
 
 /**
  * Kssmi production deployment smoke (优化-001 阶段 3 步骤 7).
@@ -6,18 +10,16 @@ import https from 'node:https';
  * Verifies the deployed site after activate, before finalize:
  *   - public pages, endpoints and sensitive-path blocking;
  *   - security headers (CSP / nosniff / cache policies);
- *   - when SMOKE_ADMIN_PASSWORD is configured AND Cloudflare Access service
- *     credentials are available, a REAL authenticated admin login and
- *     read-only dashboard checks (email-logs + visitor-journey).
+ *   - a mandatory REAL authenticated admin login plus cookie, CSRF, logout,
+ *     Access-denial and read-only data-health checks.
  *
  * The admin pages sit behind Cloudflare Access (Zero Trust): an unauthenticated
  * request is 302-redirected to kssmi.cloudflareaccess.com before reaching the
  * origin. To authenticate, the smoke must present CF-Access-Client-Id/Secret
  * service-token headers (SMOKE_ACCESS_CLIENT_ID / SMOKE_ACCESS_CLIENT_SECRET).
  *
- * Degradation (VJT-037 lesson): if SMOKE_ADMIN_PASSWORD is unset, the
- * authenticated-admin checks are skipped with a warning — never a hard fail.
- * The public checks always run.
+ * All three smoke secrets are mandatory in production. Missing credentials
+ * are a hard failure so a green deployment can never mean "admin skipped".
  */
 
 if (process.env.NODE_TLS_REJECT_UNAUTHORIZED === '0') {
@@ -45,31 +47,7 @@ if (baseUrl.hostname !== 'kssmi.com') {
   throw new Error('Production smoke is restricted to https://kssmi.com.');
 }
 
-const accessClientId = (process.env.SMOKE_ACCESS_CLIENT_ID || '').trim();
-const accessClientSecret = (process.env.SMOKE_ACCESS_CLIENT_SECRET || '').trim();
-if (Boolean(accessClientId) !== Boolean(accessClientSecret)) {
-  throw new Error('Both SMOKE_ACCESS_CLIENT_ID and SMOKE_ACCESS_CLIENT_SECRET are required together.');
-}
-
-const adminPassword = process.env.SMOKE_ADMIN_PASSWORD;
-const skipAdminSmoke =
-  typeof adminPassword !== 'string' || adminPassword.length === 0;
-if (skipAdminSmoke) {
-  console.warn(
-    '[smoke] SMOKE_ADMIN_PASSWORD is not set; skipping authenticated admin checks (email-logs / visitor-journey).'
-  );
-} else if (adminPassword.length > 4096) {
-  throw new Error('SMOKE_ADMIN_PASSWORD exceeds the application password input boundary.');
-}
-// Without Access service-token credentials the admin pages can never be
-// reached through the edge, so the authenticated checks cannot run either.
-const canReachAdmin = accessClientId.length > 0 && !skipAdminSmoke;
-if (!canReachAdmin && !skipAdminSmoke) {
-  console.warn(
-    '[smoke] SMOKE_ADMIN_PASSWORD is set but SMOKE_ACCESS_CLIENT_ID/SECRET are missing; ' +
-    'admin pages are behind Cloudflare Access and cannot be reached, skipping authenticated checks.'
-  );
-}
+const { accessClientId, accessClientSecret, adminPassword } = requireSmokeCredentials(process.env);
 
 const requestHeaders = {
   'Cache-Control': 'no-cache',
@@ -91,7 +69,7 @@ function requestOnce(pathname, options = {}) {
 
   const method = options.method || 'GET';
   if (method !== 'GET' && !(method === 'POST' && pathname === '/email-logs.php')) {
-    throw new Error(`Smoke only permits GET requests plus the application login POST: ${method} ${pathname}`);
+    throw new Error(`Smoke only permits GET requests plus bounded Email Logs authentication POSTs: ${method} ${pathname}`);
   }
   const body = options.body ?? null;
   if (method === 'GET' && body !== null) {
@@ -99,7 +77,6 @@ function requestOnce(pathname, options = {}) {
   }
   const headers = {
     ...requestHeaders,
-    ...(options.accessHeaders ? options.accessHeaders : {}),
     ...(options.headers || {}),
   };
   if (body !== null) headers['Content-Length'] = Buffer.byteLength(body);
@@ -195,29 +172,6 @@ function assertSingleCacheControl(response, pattern) {
   console.log(`OK Cache-Control ${response.url.href} -> ${values[0]}`);
 }
 
-function mergeResponseCookies(cookieHeader, response) {
-  const jar = new Map();
-  for (const pair of (cookieHeader || '').split(/;\s*/)) {
-    const separator = pair.indexOf('=');
-    if (separator > 0) jar.set(pair.slice(0, separator), pair.slice(separator + 1));
-  }
-  const setCookies = Array.isArray(response.headers['set-cookie'])
-    ? response.headers['set-cookie']
-    : [];
-  for (const setCookie of setCookies) {
-    const pair = setCookie.split(';', 1)[0];
-    const separator = pair.indexOf('=');
-    if (separator > 0) jar.set(pair.slice(0, separator), pair.slice(separator + 1));
-  }
-  return [...jar].map(([name, value]) => `${name}=${value}`).join('; ');
-}
-
-function assertAdminHeaders(response) {
-  assertHeader(response, 'x-content-type-options', /^nosniff$/i);
-  assertHeader(response, 'x-frame-options', /^DENY$/i);
-  assertSingleCacheControl(response, /no-store.*private|private.*no-store/i);
-}
-
 console.log(`Running ${target} smoke against ${baseUrl.origin}`);
 
 const failures = [];
@@ -266,60 +220,16 @@ for (const [pathname, expectedStatuses] of [
   });
 }
 
-// ── Authenticated admin checks (only when credentials are available) ──
-if (canReachAdmin) {
-  const accessHeaders = {
-    'CF-Access-Client-Id': accessClientId,
-    'CF-Access-Client-Secret': accessClientSecret,
-  };
-
-  await runCheck('authenticated admin read-only health', async () => {
-    // The public check above already asserted the unauthenticated 302. This
-    // request carries the Access service token so the edge lets it through to
-    // the origin login form — it must NOT reuse the pathname cache.
-    const loginPage = await requestOnce('/email-logs.php', {
-      headers: { ...accessHeaders, 'Cache-Control': 'no-cache' },
-    });
-    assertStatus(loginPage, [200]);
-    assertAdminHeaders(loginPage);
-    if (!/<input[^>]+type=["']password["'][^>]+name=["']password["']/i.test(loginPage.body)) {
-      throw new Error('Email Logs login form was not rendered after the Access gate.');
-    }
-
-    let cookies = mergeResponseCookies('', loginPage);
-    const loginBody = new URLSearchParams({ password: adminPassword }).toString();
-    const loginResponse = await requestOnce('/email-logs.php', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        ...accessHeaders,
-        ...(cookies ? { Cookie: cookies } : {}),
-      },
-      body: loginBody,
-    });
-    assertStatus(loginResponse, [200]);
-    assertAdminHeaders(loginResponse);
-    cookies = mergeResponseCookies(cookies, loginResponse);
-    if (
-      !/<h1>Email Logs<\/h1>/i.test(loginResponse.body)
-      || !/name=["']logout["']/i.test(loginResponse.body)
-    ) {
-      throw new Error('Email Logs authenticated dashboard did not render after login.');
-    }
-
-    const journey = await requestOnce('/visitor-journey.php?tab=contacts', {
-      headers: { ...accessHeaders, Cookie: cookies },
-    });
-    assertStatus(journey, [200]);
-    assertAdminHeaders(journey);
-    if (
-      !/<h1>VJT<\/h1>/i.test(journey.body)
-      || !/name=["']logout["']/i.test(journey.body)
-    ) {
-      throw new Error('Visitor Journey authenticated view did not render after login.');
-    }
+// ── Authenticated admin security flow (mandatory; never skipped) ──
+await runCheck('authenticated admin security flow', async () => {
+  await runAuthenticatedAdminSmoke({
+    request: requestOnce,
+    accessClientId,
+    accessClientSecret,
+    adminPassword,
+    log: (message) => console.log(message),
   });
-}
+});
 
 // ── Sensitive paths must be blocked ──
 for (const pathname of [
