@@ -4,6 +4,12 @@
  * Password-protected (shares password with email-logs.php)
  */
 
+// Cloudflare Access authenticates at the edge; independently prove that the
+// origin connection itself came from a Cloudflare proxy. This must run before
+// session/application initialization and never trusts client-supplied CF-* headers.
+require_once dirname(__DIR__) . '/private/http-security.php';
+kssmi_admin_require_trusted_proxy();
+
 session_set_cookie_params([
     'secure' => true,
     'httponly' => true,
@@ -12,7 +18,6 @@ session_set_cookie_params([
 session_start();
 
 // Shared admin security headers (CSP matches this page's existing policy).
-require_once dirname(__DIR__) . '/private/http-security.php';
 kssmi_admin_security_headers("frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
 
 require_once __DIR__ . '/api/vjt-helpers.php';

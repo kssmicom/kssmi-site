@@ -40,6 +40,34 @@ putenv('KSSMI_ADMIN_MARKER_SECRET_FILE=' . $testDirectory . DIRECTORY_SEPARATOR 
 try {
     require_once dirname(__DIR__) . '/private/http-security.php';
 
+    // ── trusted admin origin gate ──
+    // The decision is based exclusively on the TCP peer (REMOTE_ADDR), never
+    // on forgeable CF-* request headers.
+    $_SERVER['HTTP_CF_RAY'] = 'forged-direct-request';
+    $_SERVER['HTTP_CF_CONNECTING_IP'] = '203.0.113.50';
+    $_SERVER['REMOTE_ADDR'] = '203.0.113.50';
+    kssmi_sec_assert(
+        kssmi_admin_request_from_trusted_proxy('173.245.48.1') === true,
+        'Cloudflare IPv4 peer is trusted'
+    );
+    kssmi_sec_assert(
+        kssmi_admin_request_from_trusted_proxy('2606:4700::1234') === true,
+        'Cloudflare IPv6 peer is trusted'
+    );
+    kssmi_sec_assert(
+        kssmi_admin_request_from_trusted_proxy() === false,
+        'REMOTE_ADDR direct peer is rejected even with forged CF headers'
+    );
+    kssmi_sec_assert(
+        kssmi_admin_request_from_trusted_proxy('not-an-ip') === false,
+        'invalid peer address is rejected'
+    );
+    kssmi_sec_assert(
+        kssmi_admin_request_from_trusted_proxy(['173.245.48.1']) === false,
+        'non-scalar peer address is rejected'
+    );
+    unset($_SERVER['HTTP_CF_RAY'], $_SERVER['HTTP_CF_CONNECTING_IP'], $_SERVER['REMOTE_ADDR']);
+
     // ── scalar_text sanitization ──
     kssmi_sec_assert(kssmi_scalar_text('  hello world  ', 20) === 'hello world', 'scalar_text trims and bounds');
     kssmi_sec_assert(kssmi_scalar_text('hello world', 5) === 'hello', 'scalar_text truncates to max');

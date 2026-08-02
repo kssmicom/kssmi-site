@@ -54,6 +54,7 @@ jobs:
         run: |
           bash -n scripts/deploy-release.sh
           npm run validate:release
+          npm run validate:admin-origin
 
       - name: Lint PHP sources
         run: find public private scripts -name '*.php' -not -path '*/vendor/*' -print0 | xargs -0 -n1 php -l
@@ -68,6 +69,7 @@ jobs:
           php scripts/test-vjt-event-state.php
           php scripts/test-vjt-heartbeat.php
           php scripts/test-vjt-data-quality.php
+          php scripts/test-http-security.php
 
       - name: Validate cache policy and runtime fingerprints
         run: npm run validate:cache

@@ -57,6 +57,7 @@ GSC_JSON="$SHARED_PRIVATE/gsc/google-service-account.json"
 PRIVATE_MODULES="email-log-store.php rate-limit.php http-security.php"
 RATE_LIMIT_MODULE="$SHARED_PRIVATE/rate-limit.php"
 EMAIL_LOG_MODULE="$SHARED_PRIVATE/email-log-store.php"
+HTTP_SECURITY_MODULE="$SHARED_PRIVATE/http-security.php"
 # Endpoints whose PHP guard consults the email cutover marker (send-mail.php
 # Endpoints whose PHP guard consults the email cutover marker (send-mail.php
 # checks kssmi_email_logs_cutover_is_active and returns 503 while the marker
@@ -270,6 +271,7 @@ install_shared_private() {
   done
   run_as_site test -r "$RATE_LIMIT_MODULE"
   run_as_site test -r "$EMAIL_LOG_MODULE"
+  run_as_site test -r "$HTTP_SECURITY_MODULE"
 }
 
 restore_shared_private() {
@@ -488,6 +490,7 @@ PHP
   # Rate-limit module readability + storage permissions as the site account.
   run_as_site test -r "$SHARED_PRIVATE/rate-limit.php"
   run_as_site test -r "$SHARED_PRIVATE/email-log-store.php"
+  run_as_site test -r "$SHARED_PRIVATE/http-security.php"
   run_as_site sh -c '
     set -eu
     probe="$1/.rate-limit-write-probe-$$"

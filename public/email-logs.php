@@ -9,7 +9,12 @@
  * - Country lookup from IP
  */
 
-// Start session first
+// Cloudflare Access authenticates at the edge; independently prove that the
+// origin connection itself came from a Cloudflare proxy. This must run before
+// session/application initialization and never trusts client-supplied CF-* headers.
+require_once dirname(__DIR__) . '/private/http-security.php';
+kssmi_admin_require_trusted_proxy();
+
 session_set_cookie_params([
     'secure' => true,
     'httponly' => true,
@@ -19,7 +24,6 @@ session_start();
 
 // Shared admin security headers (CSP matches this page's existing policy:
 // Turnstile + GTM + Google Fonts are allowed inline for the admin UI).
-require_once dirname(__DIR__) . '/private/http-security.php';
 kssmi_admin_security_headers("default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://challenges.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://www.google-analytics.com; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests");
 
 // Load private credentials (file lives outside public_html)

@@ -19,6 +19,7 @@
     "validate:astro-syntax": "node scripts/validate-astro-syntax.mjs",
     "validate:translations": "node scripts/validate-translations.mjs",
     "validate:release": "node scripts/validate-release-policy.mjs",
+    "validate:admin-origin": "node scripts/validate-admin-origin-policy.mjs",
     "smoke:deployment": "node scripts/smoke-deployment.mjs",
     "test:backend": "php scripts/verify-php-runtime.php",
     "test:email-log": "php scripts/test-email-log-store.php",

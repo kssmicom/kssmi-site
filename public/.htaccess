@@ -32,12 +32,6 @@ RewriteRule ^api/vjt-helpers\.php$ - [F,L]
 RewriteRule ^\.git - [F,L]
 RewriteRule \.map$ - [F,L]
 
-# ─── Origin protection: require Cloudflare proxy ───────────────────────────
-# Direct connections bypass Cloudflare Access and WAF. All Cloudflare-proxied
-# requests carry CF-Ray header. Block sensitive paths if header is missing.
-RewriteCond %{HTTP:CF-Ray} ^$
-RewriteRule ^(email-logs|visitor-journey)\.php$ - [F,L]
-
 # ─── Block VJT data directory (contains raw visitor JSON files with IPs, emails) ──
 RewriteRule ^api/vjt_data(/.*)?$ - [F,L]
 
@@ -45,11 +39,11 @@ RewriteRule ^api/vjt_data(/.*)?$ - [F,L]
 # Admin pages (email-logs.php, visitor-journey.php) are protected by
 # Cloudflare Access (Zero Trust) at the edge — the redirect to
 # kssmi.cloudflareaccess.com happens before requests reach this origin.
-# The CF-Ray check above (L35-39) additionally blocks direct origin access
-# that bypasses Cloudflare. No .htaccess IP allowlist is used: it would be
-# overwritten by every versioned release and OLS does not honor Apache
-# <Files>/Require directives reliably. To change who can reach the admin
-# pages, edit the Cloudflare Access application policy, not this file.
+# Each PHP admin entrypoint also validates that REMOTE_ADDR belongs to a
+# published Cloudflare proxy range before starting a session. CF-Ray and other
+# client-controlled request headers are never treated as proof of proxying.
+# No .htaccess IP allowlist is used: it would be overwritten by every release
+# and OLS does not honor Apache <Files>/Require directives reliably.
 
 # ─── PHP API endpoints (pass through as-is) ────────────────────────────────
 RewriteRule ^send-mail\.php$ - [L]

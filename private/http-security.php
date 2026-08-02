@@ -7,7 +7,7 @@ declare(strict_types=1);
  * This is the Kssmi counterpart of the XinXin private/http-security.php, built
  * with kssmi_* prefixes and only the pieces Kssmi needs TODAY:
  *
- *   1. Admin page security headers (parameterized CSP because the two admin
+ *   1. Admin origin gate + security headers (parameterized CSP because the two admin
  *      pages ship different policies; the .htaccess FilesMatch CSP is not
  *      reliably honored by OpenLiteSpeed, so pages set their own).
  *   2. Atomic file write / stable flock helpers for credentials and reset
@@ -16,20 +16,59 @@ declare(strict_types=1);
  *      an empty or missing file reads as null; writes are 0600.
  *   4. Scalar/text sanitization helpers used by later stages.
  *
- * Deliberately NOT included yet (later steps of 阶段 3):
- *   - HMAC-signed admin marker cookie        (步骤 3)
- *   - unified CSRF token helpers             (步骤 4)
- *   - reset-token atomic consumption         (步骤 5)
- *   - Cloudflare Access / allowlist gating   (步骤 1 already done via CF Access)
- *
- * All functions are pure helpers: including this file MUST NOT change any
- * backend behavior by itself.
+ * Cloudflare Access remains the authentication gate at the edge. The origin
+ * gate below independently verifies the TCP peer address (REMOTE_ADDR) before
+ * either admin page starts a session. Client-controlled CF-* headers are never
+ * accepted as proof that a request traversed Cloudflare.
  */
 
 if (defined('KSSMI_HTTP_SECURITY_LOADED')) {
     return;
 }
 define('KSSMI_HTTP_SECURITY_LOADED', true);
+
+/**
+ * Return true only when the connection peer is a published Cloudflare proxy.
+ *
+ * REMOTE_ADDR is supplied by the web server from the TCP connection. Unlike
+ * CF-Ray / CF-Connecting-IP / X-Forwarded-For, a direct-origin HTTP client
+ * cannot choose it. The CIDR matcher currently lives in rate-limit.php and is
+ * shared here so the two trust decisions cannot drift apart. 阶段 4 will move
+ * its range list to the validated versioned snapshot.
+ */
+function kssmi_admin_request_from_trusted_proxy($remoteAddress = null): bool {
+    if ($remoteAddress === null) {
+        $remoteAddress = $_SERVER['REMOTE_ADDR'] ?? null;
+    }
+    if (!is_string($remoteAddress)) return false;
+
+    $remoteAddress = trim($remoteAddress);
+    if (filter_var($remoteAddress, FILTER_VALIDATE_IP) === false) return false;
+
+    if (!function_exists('kssmi_is_cloudflare_proxy')) {
+        $rateLimitModule = __DIR__ . '/rate-limit.php';
+        if (!is_file($rateLimitModule) || !is_readable($rateLimitModule)) {
+            return false;
+        }
+        require_once $rateLimitModule;
+    }
+
+    return function_exists('kssmi_is_cloudflare_proxy')
+        && kssmi_is_cloudflare_proxy($remoteAddress);
+}
+
+/**
+ * Fail closed before session or application initialization on admin pages.
+ */
+function kssmi_admin_require_trusted_proxy(): void {
+    if (kssmi_admin_request_from_trusted_proxy()) return;
+
+    http_response_code(403);
+    header('Content-Type: text/plain; charset=UTF-8');
+    kssmi_admin_security_headers("default-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'");
+    echo 'Forbidden';
+    exit;
+}
 
 /**
  * Emit the security headers every Kssmi admin page must send.
@@ -194,8 +233,8 @@ function kssmi_admin_secret_write(string $path, string $contents): bool {
 // visitor could forge to disappear from analytics. The cookie now carries a
 // server-signed value `v1.<expires>.<nonce>.<hmac>` whose key is derived from
 // the password hash: without the hash nobody can mint a valid marker, and
-// expiry is enforced on every validation. The cookie name stays `vjt_admin`
-// so the existing client-side tracker check keeps working.
+// expiry is enforced on every validation. The cookie is HttpOnly and is
+// intentionally evaluated only by server-side tracking endpoints.
 
 function kssmi_admin_marker_ttl(): int {
     return 43200; // 12 hours, matching the admin session lifetime
