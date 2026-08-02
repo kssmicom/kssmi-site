@@ -114,6 +114,8 @@ export default {
         additional: "Amostra personalizada idêntica adicional",
         additionalDescription: "Mesmo design e especificações, encomendada com a primeira amostra personalizada.",
         piece: "un.",
+        creditNote: "Ambas as taxas de amostra são integralmente creditadas no seu pedido em quantidade do mesmo modelo.",
+        creditEmphasis: "integralmente creditadas",
         disclaimer: "Frete e impostos são cotados separadamente. O preço da produção em escala é cotado separadamente."
       },
         goToPage: 'Ir para página',

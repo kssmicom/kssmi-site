@@ -122,6 +122,8 @@ export default {
         additional: "Additional identical custom sample",
         additionalDescription: "Same design and specifications, ordered with the first custom sample.",
         piece: "PCS",
+        creditNote: "Both sample fees are fully credited toward your bulk order for the same model.",
+        creditEmphasis: "fully credited",
         disclaimer: "Shipping and taxes are quoted separately. Bulk production pricing is quoted separately."
       },
         goToPage: 'Go to page',

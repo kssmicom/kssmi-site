@@ -107,6 +107,8 @@ export default {
         additional: "Mẫu tùy chỉnh giống hệt bổ sung",
         additionalDescription: "Cùng thiết kế và thông số, đặt cùng với mẫu tùy chỉnh đầu tiên.",
         piece: "cái",
+        creditNote: "Cả hai khoản phí mẫu đều được khấu trừ toàn bộ vào đơn hàng số lượng lớn của cùng mẫu.",
+        creditEmphasis: "được khấu trừ toàn bộ",
         disclaimer: "Phí vận chuyển và thuế được báo riêng. Giá sản xuất số lượng lớn được báo riêng."
       },
         goToPage: 'Đến trang',

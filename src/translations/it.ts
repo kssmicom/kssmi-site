@@ -107,6 +107,8 @@ export default {
         additional: "Campione personalizzato identico aggiuntivo",
         additionalDescription: "Stesso design e specifiche, ordinato insieme al primo campione personalizzato.",
         piece: "pz",
+        creditNote: "Entrambi i costi dei campioni vengono interamente accreditati sul suo ordine all’ingrosso dello stesso modello.",
+        creditEmphasis: "interamente accreditati",
         disclaimer: "Spedizione e tasse sono quotate separatamente. Il prezzo della produzione in serie è quotato separatamente."
       },
         goToPage: 'Vai alla pagina',

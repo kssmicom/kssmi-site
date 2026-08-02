@@ -107,6 +107,8 @@ export default {
         additional: "Sampel kustom padha tambahan",
         additionalDescription: "Desain lan spesifikasi padha, dipesen bebarengan karo sampel kustom pisanan.",
         piece: "pcs",
+        creditNote: "Ragad kanggo loro sampel bakal dikreditake kanthi lengkap ing pesenan grosir kanggo model sing padha.",
+        creditEmphasis: "dikreditake kanthi lengkap",
         disclaimer: "Pangiriman lan pajak diitung kapisah. Rega produksi massal ditawakake kapisah."
       },
         goToPage: 'Menyang kaca',

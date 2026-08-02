@@ -114,6 +114,8 @@ export default {
         additional: "Muestra personalizada idéntica adicional",
         additionalDescription: "Mismo diseño y especificaciones, solicitada junto con la primera muestra personalizada.",
         piece: "ud.",
+        creditNote: "Ambas tarifas de muestra se acreditan íntegramente en su pedido al por mayor del mismo modelo.",
+        creditEmphasis: "se acreditan íntegramente",
         disclaimer: "El envío y los impuestos se cotizan por separado. La producción en serie se cotiza por separado."
       },
         goToPage: 'Ir a la página',

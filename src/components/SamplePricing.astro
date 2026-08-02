@@ -9,6 +9,7 @@ interface Props {
 const { lang = 'en' } = Astro.props;
 const t = await getTranslations(lang);
 const labels = t.product.samplePricing;
+const [creditBefore, creditAfter = ''] = labels.creditNote.split(labels.creditEmphasis);
 ---
 
 <div class="flex items-start gap-2 hover:bg-stone-100 -mx-3 px-3 py-1 rounded-sm transition-colors cursor-default">
@@ -18,4 +19,9 @@ const labels = t.product.samplePricing;
 <div class="flex items-start gap-2 hover:bg-stone-100 -mx-3 px-3 py-1 rounded-sm transition-colors cursor-default">
   <span class="text-sm text-gray-500 min-w-[160px]">{labels.custom}:</span>
   <span class="text-sm font-medium text-gray-900">{formatSamplePrice(samplePricing.customMin)}–{formatSamplePrice(samplePricing.customMax)}/{labels.piece}</span>
+</div>
+<div class="flex items-start gap-2 hover:bg-stone-100 -mx-3 px-3 py-1 rounded-sm transition-colors cursor-default">
+  <span class="text-sm font-medium text-gray-900">
+    {creditBefore}<strong class="font-bold">{labels.creditEmphasis}</strong>{creditAfter}
+  </span>
 </div>

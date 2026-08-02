@@ -114,6 +114,8 @@ export default {
         additional: "同仕様の追加カスタムサンプル",
         additionalDescription: "最初のカスタムサンプルと同じデザイン・仕様で同時に注文します。",
         piece: "点",
+        creditNote: "両方のサンプル料金は、同一モデルの量産注文時に全額充当されます。",
+        creditEmphasis: "全額充当",
         disclaimer: "送料と税金は別途お見積りします。量産価格も別途お見積りします。"
       },
         goToPage: 'ページへ移動',

@@ -114,6 +114,8 @@ export default {
         additional: "Échantillon personnalisé identique supplémentaire",
         additionalDescription: "Même design et mêmes spécifications, commandé avec le premier échantillon personnalisé.",
         piece: "pièce",
+        creditNote: "Les deux frais d’échantillon sont intégralement déduits de votre commande en gros du même modèle.",
+        creditEmphasis: "intégralement déduits",
         disclaimer: "L’expédition et les taxes sont calculées séparément. Le prix de la production en série est établi séparément."
       },
         goToPage: 'Aller à la page',

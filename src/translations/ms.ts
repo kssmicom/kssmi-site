@@ -107,6 +107,8 @@ export default {
         additional: "Sampel tersuai serupa tambahan",
         additionalDescription: "Reka bentuk dan spesifikasi yang sama, ditempah bersama sampel tersuai pertama.",
         piece: "unit",
+        creditNote: "Kedua-dua yuran sampel akan dikreditkan sepenuhnya kepada pesanan pukal anda untuk model yang sama.",
+        creditEmphasis: "dikreditkan sepenuhnya",
         disclaimer: "Penghantaran dan cukai disebut secara berasingan. Harga pengeluaran pukal disebut secara berasingan."
       },
         goToPage: 'Ke halaman',

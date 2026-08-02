@@ -114,6 +114,8 @@ export default {
         additional: "Zusätzliches identisches Sondermuster",
         additionalDescription: "Gleiches Design und gleiche Spezifikationen, zusammen mit dem ersten Sondermuster bestellt.",
         piece: "Stk.",
+        creditNote: "Beide Mustergebühren werden bei Ihrer Großbestellung desselben Modells vollständig angerechnet.",
+        creditEmphasis: "vollständig angerechnet",
         disclaimer: "Versand und Steuern werden separat berechnet. Preise für die Serienproduktion werden separat angeboten."
       },
         goToPage: 'Zur Seite',
