@@ -97,6 +97,18 @@ export default {
       backToTop: "맨 위로"
     },
     product: {
+      samplePricing: {
+        title: "샘플 가격",
+        readyStockBadge: "재고 있음",
+        readyStock: "재고 샘플",
+        readyStockDescription: "이 모델의 재고 샘플 1개입니다.",
+        custom: "맞춤 샘플",
+        customDescription: "최종 가격은 소재, 색상, 로고 및 사양에 따라 달라집니다.",
+        additional: "동일 맞춤 샘플 추가",
+        additionalDescription: "첫 맞춤 샘플과 동일한 디자인 및 사양으로 함께 주문합니다.",
+        piece: "개",
+        disclaimer: "배송비와 세금은 별도 견적이며, 대량 생산 가격도 별도로 견적합니다."
+      },
         goToPage: '페이지로 이동',
         goToButton: '이동',
       itemNo: "품목 번호",

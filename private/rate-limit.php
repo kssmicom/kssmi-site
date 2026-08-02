@@ -84,17 +84,11 @@ function kssmi_load_rate_limit_whitelist(): array {
     return array_values(array_filter($trimmed, fn($l) => $l !== '' && $l[0] !== '#'));
 }
 
-/**
- * Return true when an address belongs to a Cloudflare proxy network.
- *
- * Client-controlled headers are accepted only when REMOTE_ADDR is one of
- * Cloudflare's published proxy ranges. This prevents direct-origin callers
- * from spoofing CF-Connecting-IP/X-Forwarded-For to bypass rate limits.
- * Keep this list synchronized with https://www.cloudflare.com/ips/.
- */
 function kssmi_ip_in_cidr(string $ip, string $cidr): bool {
     [$network, $prefix] = array_pad(explode('/', $cidr, 2), 2, null);
-    if ($network === null || $prefix === null) return false;
+    if ($network === null || $prefix === null || !preg_match('/^[0-9]{1,3}$/', $prefix)) {
+        return false;
+    }
 
     $ipBinary = @inet_pton($ip);
     $networkBinary = @inet_pton($network);
@@ -116,17 +110,157 @@ function kssmi_ip_in_cidr(string $ip, string $cidr): bool {
     return (ord($ipBinary[$fullBytes]) & $mask) === (ord($networkBinary[$fullBytes]) & $mask);
 }
 
+function kssmi_rate_limit_has_exact_keys(array $value, array $expected): bool {
+    $actual = array_keys($value);
+    sort($actual, SORT_STRING);
+    sort($expected, SORT_STRING);
+    return $actual === $expected;
+}
+
+function kssmi_cloudflare_snapshot_path(): string {
+    if (PHP_SAPI === 'cli') {
+        $override = getenv('KSSMI_CLOUDFLARE_RANGES_FILE');
+        if (is_string($override) && $override !== '') return $override;
+    }
+    return __DIR__ . '/cloudflare-ip-ranges.json';
+}
+
+function kssmi_cloudflare_snapshot_max_age_seconds(): int {
+    return 45 * 86400;
+}
+
+function kssmi_cloudflare_cidr_valid(string $cidr, int $expectedFamily): bool {
+    if (!preg_match('/^([^\/\s]+)\/([0-9]{1,3})$/', $cidr, $match)) return false;
+
+    $address = $match[1];
+    $prefix = (int)$match[2];
+    $addressBinary = @inet_pton($address);
+    if ($addressBinary === false) return false;
+
+    $family = strlen($addressBinary) === 4 ? 4 : (strlen($addressBinary) === 16 ? 6 : 0);
+    $maximumPrefix = $family === 4 ? 32 : 128;
+    if ($family !== $expectedFamily || $prefix < 0 || $prefix > $maximumPrefix) return false;
+
+    $fullBytes = intdiv($prefix, 8);
+    $remainingBits = $prefix % 8;
+    if ($remainingBits > 0) {
+        $hostMask = (1 << (8 - $remainingBits)) - 1;
+        if ((ord($addressBinary[$fullBytes]) & $hostMask) !== 0) return false;
+        $fullBytes++;
+    }
+    for ($index = $fullBytes, $length = strlen($addressBinary); $index < $length; $index++) {
+        if (ord($addressBinary[$index]) !== 0) return false;
+    }
+    return true;
+}
+
+/**
+ * Strictly load a locally verified Cloudflare proxy-range snapshot.
+ *
+ * Returning null is intentional fail-closed behaviour: forwarded client-IP
+ * headers are ignored whenever the snapshot is missing, malformed, stale or
+ * otherwise outside the format validated by the offline update tool.
+ */
+function kssmi_cloudflare_snapshot_load(string $path, ?int $now = null): ?array {
+    clearstatcache(true, $path);
+    if (!is_file($path) || !is_readable($path)) return null;
+    $size = @filesize($path);
+    if (!is_int($size) || $size < 1 || $size > 65536) return null;
+
+    $contents = @file_get_contents($path);
+    if (!is_string($contents) || strlen($contents) !== $size) return null;
+    try {
+        $snapshot = json_decode($contents, true, 32, JSON_THROW_ON_ERROR);
+    } catch (Throwable $_error) {
+        return null;
+    }
+    if (!is_array($snapshot) || kssmi_rate_limit_array_is_list($snapshot)) return null;
+    if (!kssmi_rate_limit_has_exact_keys(
+        $snapshot,
+        ['schema_version', 'verified_at', 'sources', 'ipv4', 'ipv6']
+    )) return null;
+    if (($snapshot['schema_version'] ?? null) !== 1) return null;
+
+    $sources = $snapshot['sources'] ?? null;
+    if (!is_array($sources) || kssmi_rate_limit_array_is_list($sources)) return null;
+    if (!kssmi_rate_limit_has_exact_keys($sources, ['ipv4', 'ipv6'])) return null;
+    if (
+        ($sources['ipv4'] ?? null) !== 'https://www.cloudflare.com/ips-v4/' ||
+        ($sources['ipv6'] ?? null) !== 'https://www.cloudflare.com/ips-v6/'
+    ) return null;
+
+    $verifiedAtText = $snapshot['verified_at'] ?? null;
+    if (!is_string($verifiedAtText) ||
+        !preg_match('/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/', $verifiedAtText)) {
+        return null;
+    }
+    $verifiedAt = DateTimeImmutable::createFromFormat(
+        '!Y-m-d\TH:i:s\Z',
+        $verifiedAtText,
+        new DateTimeZone('UTC')
+    );
+    $dateErrors = DateTimeImmutable::getLastErrors();
+    if ($verifiedAt === false ||
+        ($dateErrors !== false && ($dateErrors['warning_count'] > 0 || $dateErrors['error_count'] > 0)) ||
+        $verifiedAt->format('Y-m-d\TH:i:s\Z') !== $verifiedAtText) {
+        return null;
+    }
+    $currentTime = $now ?? time();
+    $verifiedTimestamp = $verifiedAt->getTimestamp();
+    if ($verifiedTimestamp > $currentTime + 300 ||
+        $currentTime - $verifiedTimestamp > kssmi_cloudflare_snapshot_max_age_seconds()) {
+        return null;
+    }
+
+    $allRanges = [];
+    foreach ([['ipv4', 4, 10], ['ipv6', 6, 5]] as [$key, $family, $minimum]) {
+        $ranges = $snapshot[$key] ?? null;
+        if (!kssmi_rate_limit_array_is_list($ranges) || count($ranges) < $minimum || count($ranges) > 100) {
+            return null;
+        }
+        $seen = [];
+        foreach ($ranges as $cidr) {
+            if (!is_string($cidr) || !kssmi_cloudflare_cidr_valid($cidr, $family) || isset($seen[$cidr])) {
+                return null;
+            }
+            $seen[$cidr] = true;
+            $allRanges[] = $cidr;
+        }
+    }
+    return $allRanges;
+}
+
+function kssmi_cloudflare_ranges(): ?array {
+    static $cachedKey = null;
+    static $cachedRanges = null;
+    static $loggedFailures = [];
+
+    $path = kssmi_cloudflare_snapshot_path();
+    clearstatcache(true, $path);
+    $mtime = @filemtime($path);
+    $size = @filesize($path);
+    $inode = @fileinode($path);
+    $cacheKey = $path . '|' . (string)$inode . '|' . (string)$mtime . '|' .
+        (string)$size . '|' . intdiv(time(), 3600);
+    if ($cachedKey !== $cacheKey) {
+        $cachedKey = $cacheKey;
+        $cachedRanges = kssmi_cloudflare_snapshot_load($path);
+    }
+    if ($cachedRanges === null && !isset($loggedFailures[$cacheKey])) {
+        if (count($loggedFailures) >= 32) $loggedFailures = [];
+        $loggedFailures[$cacheKey] = true;
+        error_log('KSSMI security: Cloudflare range snapshot invalid; forwarded client IP headers disabled.');
+    }
+    return $cachedRanges;
+}
+
+/**
+ * Return true when an address belongs to a currently verified Cloudflare
+ * proxy network. No embedded fallback is used: invalid snapshot = no trust.
+ */
 function kssmi_is_cloudflare_proxy(string $ip): bool {
-    static $ranges = [
-        '173.245.48.0/20', '103.21.244.0/22', '103.22.200.0/22',
-        '103.31.4.0/22', '141.101.64.0/18', '108.162.192.0/18',
-        '190.93.240.0/20', '188.114.96.0/20', '197.234.240.0/22',
-        '198.41.128.0/17', '162.158.0.0/15', '104.16.0.0/13',
-        '104.24.0.0/14', '172.64.0.0/13', '131.0.72.0/22',
-        '2400:cb00::/32', '2606:4700::/32', '2803:f800::/32',
-        '2405:b500::/32', '2405:8100::/32', '2a06:98c0::/29',
-        '2c0f:f248::/32',
-    ];
+    $ranges = kssmi_cloudflare_ranges();
+    if ($ranges === null) return false;
     foreach ($ranges as $range) {
         if (kssmi_ip_in_cidr($ip, $range)) return true;
     }

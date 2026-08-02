@@ -97,6 +97,18 @@ export default {
       backToTop: "إلى الأعلى"
     },
     product: {
+      samplePricing: {
+        title: "أسعار العينات",
+        readyStockBadge: "متوفر",
+        readyStock: "عينة جاهزة",
+        readyStockDescription: "عينة واحدة جاهزة من هذا الطراز.",
+        custom: "عينة مخصصة",
+        customDescription: "يعتمد السعر النهائي على المواد والألوان والشعار والمواصفات.",
+        additional: "عينة مخصصة إضافية مطابقة",
+        additionalDescription: "بنفس التصميم والمواصفات، وتُطلب مع العينة المخصصة الأولى.",
+        piece: "قطعة",
+        disclaimer: "يتم احتساب الشحن والضرائب بشكل منفصل، كما يتم تسعير الإنتاج بالجملة بشكل منفصل."
+      },
         goToPage: 'انتقل للصفحة',
         goToButton: 'انتقال',
       itemNo: "رقم الصنف",

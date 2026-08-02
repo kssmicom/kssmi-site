@@ -15,6 +15,8 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import TechnicalSpecs from '../../components/TechnicalSpecs.astro';
 import InquiryFormLazy from '../../components/InquiryFormLazy.astro';
 import RelatedProducts from '../../components/RelatedProducts.astro';
+import SamplePricing from '../../components/SamplePricing.astro';
+import { samplePricing } from '../../config/samplePricing';
 import { isCategoryMatch } from '../../utils/categoryMatching';
 import { getProductLang } from '../../utils/language';
 import { cardSrc } from '../../utils/image';
@@ -300,6 +302,19 @@ if (type === 'product' && product) {
     "manufacturer": {
       "@id": `${siteUrl}/#organization`
     },
+    "offers": {
+      "@type": "Offer",
+      "@id": `${canonicalUrl}#ready-stock-sample-offer`,
+      "url": canonicalUrl,
+      "name": pt.samplePricing.readyStock,
+      "price": samplePricing.readyStock,
+      "priceCurrency": samplePricing.currency,
+      "itemCondition": "https://schema.org/NewCondition",
+      "description": pt.samplePricing.readyStockDescription,
+      "seller": {
+        "@id": `${siteUrl}/#organization`
+      }
+    },
     "material": materials || undefined,
     "color": colors || undefined,
     "category": cats.length > 0 ? cats[0] : undefined,
@@ -429,6 +444,7 @@ function thumbSrc(originalPath: string): string {
                 <span class="text-sm text-gray-500 min-w-[160px]">{pt.moq}:</span>
                 <span class="text-sm font-medium text-gray-900">{moq || '100 PCS/Model'}</span>
               </div>
+              <SamplePricing lang={lang} />
             </div>
 
             <div class="flex flex-wrap gap-4 mb-8">

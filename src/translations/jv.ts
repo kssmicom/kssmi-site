@@ -97,6 +97,18 @@ export default {
       backToTop: "Kembali Katon Ndhuwur"
     },
     product: {
+      samplePricing: {
+        title: "Rega Sampel",
+        readyStockBadge: "Stok siap",
+        readyStock: "Sampel stok siap",
+        readyStockDescription: "Siji sampel stok siap saka model iki.",
+        custom: "Sampel kustom",
+        customDescription: "Rega pungkasan gumantung bahan, warna, logo lan spesifikasi.",
+        additional: "Sampel kustom padha tambahan",
+        additionalDescription: "Desain lan spesifikasi padha, dipesen bebarengan karo sampel kustom pisanan.",
+        piece: "pcs",
+        disclaimer: "Pangiriman lan pajak diitung kapisah. Rega produksi massal ditawakake kapisah."
+      },
         goToPage: 'Menyang kaca',
         goToButton: 'Menyang',
       itemNo: "No Barang",

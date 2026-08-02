@@ -228,13 +228,13 @@ requireText(
   'Release script upload',
 );
 requireText(
-  deploySource,
-  'private/rate-limit.php,private/email-log-store.php',
-  'Shared module deployment',
+  deployWorkflow,
+  'source: "dist,private,scripts/deploy-release.sh"',
+  'Shared private directory deployment',
 );
 requireText(
   deployReleaseScript,
-  'PRIVATE_MODULES="email-log-store.php rate-limit.php http-security.php"',
+  'PRIVATE_MODULES="email-log-store.php cloudflare-ip-ranges.json rate-limit.php http-security.php"',
   'Shared module list matches production modules',
 );
 requireText(

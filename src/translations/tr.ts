@@ -104,6 +104,18 @@ export default {
       backToTop: "Yukarı Dön"
     },
     product: {
+      samplePricing: {
+        title: "Numune Fiyatları",
+        readyStockBadge: "Stokta",
+        readyStock: "Hazır stok numunesi",
+        readyStockDescription: "Bu modelden bir adet hazır stok numunesi.",
+        custom: "Özel numune",
+        customDescription: "Nihai fiyat malzeme, renk, logo ve teknik özelliklere bağlıdır.",
+        additional: "Ek aynı özel numune",
+        additionalDescription: "İlk özel numuneyle aynı tasarım ve özelliklerde birlikte sipariş edilir.",
+        piece: "adet",
+        disclaimer: "Nakliye ve vergiler ayrıca fiyatlandırılır. Seri üretim fiyatı ayrıca teklif edilir."
+      },
         goToPage: 'Sayfaya git',
         goToButton: 'Git',
       itemNo: "Ürün No",

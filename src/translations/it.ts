@@ -97,6 +97,18 @@ export default {
       backToTop: "Torna su"
     },
     product: {
+      samplePricing: {
+        title: "Prezzi dei Campioni",
+        readyStockBadge: "Disponibile",
+        readyStock: "Campione disponibile",
+        readyStockDescription: "Un campione disponibile di questo modello.",
+        custom: "Campione personalizzato",
+        customDescription: "Il prezzo finale dipende da materiali, colori, logo e specifiche.",
+        additional: "Campione personalizzato identico aggiuntivo",
+        additionalDescription: "Stesso design e specifiche, ordinato insieme al primo campione personalizzato.",
+        piece: "pz",
+        disclaimer: "Spedizione e tasse sono quotate separatamente. Il prezzo della produzione in serie è quotato separatamente."
+      },
         goToPage: 'Vai alla pagina',
         goToButton: 'Vai',
       itemNo: "Codice Articolo",

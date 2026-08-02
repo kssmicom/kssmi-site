@@ -97,6 +97,18 @@ export default {
       backToTop: "शीर्ष पर वापस"
     },
     product: {
+      samplePricing: {
+        title: "नमूना मूल्य",
+        readyStockBadge: "स्टॉक में",
+        readyStock: "रेडी-स्टॉक नमूना",
+        readyStockDescription: "इस मॉडल का एक तैयार स्टॉक नमूना।",
+        custom: "कस्टम नमूना",
+        customDescription: "अंतिम मूल्य सामग्री, रंग, लोगो और विनिर्देशों पर निर्भर करता है।",
+        additional: "अतिरिक्त समान कस्टम नमूना",
+        additionalDescription: "समान डिज़ाइन और विनिर्देश, पहले कस्टम नमूने के साथ ऑर्डर किया गया।",
+        piece: "पीस",
+        disclaimer: "शिपिंग और कर अलग से उद्धृत किए जाते हैं। थोक उत्पादन मूल्य अलग से उद्धृत किया जाता है।"
+      },
         goToPage: 'पृष्ठ पर जाएं',
         goToButton: 'जाएं',
       itemNo: "आइटम नं",

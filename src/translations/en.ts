@@ -112,6 +112,18 @@ export default {
       backToTop: "Top"
     },
     product: {
+      samplePricing: {
+        title: "Sample Pricing",
+        readyStockBadge: "Ready stock",
+        readyStock: "Ready-stock Sample",
+        readyStockDescription: "One ready-stock sample of this model.",
+        custom: "Custom Sample",
+        customDescription: "Final price depends on materials, colors, logo and specifications.",
+        additional: "Additional identical custom sample",
+        additionalDescription: "Same design and specifications, ordered with the first custom sample.",
+        piece: "PCS",
+        disclaimer: "Shipping and taxes are quoted separately. Bulk production pricing is quoted separately."
+      },
         goToPage: 'Go to page',
         goToButton: 'Go',
       // Product Detail Page

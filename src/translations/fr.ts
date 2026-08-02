@@ -104,6 +104,18 @@ export default {
       backToTop: "Retour en Haut"
     },
     product: {
+      samplePricing: {
+        title: "Prix des Échantillons",
+        readyStockBadge: "En stock",
+        readyStock: "Échantillon en stock",
+        readyStockDescription: "Un échantillon disponible de ce modèle.",
+        custom: "Échantillon personnalisé",
+        customDescription: "Le prix final dépend des matériaux, des couleurs, du logo et des spécifications.",
+        additional: "Échantillon personnalisé identique supplémentaire",
+        additionalDescription: "Même design et mêmes spécifications, commandé avec le premier échantillon personnalisé.",
+        piece: "pièce",
+        disclaimer: "L’expédition et les taxes sont calculées séparément. Le prix de la production en série est établi séparément."
+      },
         goToPage: 'Aller à la page',
         goToButton: 'Aller',
       itemNo: "Numéro d'Article",

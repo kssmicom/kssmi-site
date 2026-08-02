@@ -104,6 +104,18 @@ export default {
       backToTop: "Voltar ao Topo"
     },
     product: {
+      samplePricing: {
+        title: "Preços de Amostras",
+        readyStockBadge: "Em estoque",
+        readyStock: "Amostra em estoque",
+        readyStockDescription: "Uma amostra disponível deste modelo.",
+        custom: "Amostra personalizada",
+        customDescription: "O preço final depende dos materiais, cores, logotipo e especificações.",
+        additional: "Amostra personalizada idêntica adicional",
+        additionalDescription: "Mesmo design e especificações, encomendada com a primeira amostra personalizada.",
+        piece: "un.",
+        disclaimer: "Frete e impostos são cotados separadamente. O preço da produção em escala é cotado separadamente."
+      },
         goToPage: 'Ir para página',
         goToButton: 'Ir',
       itemNo: "Número do Item",

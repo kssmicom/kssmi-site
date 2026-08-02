@@ -104,6 +104,18 @@ export default {
       backToTop: "Volver Arriba"
     },
     product: {
+      samplePricing: {
+        title: "Precios de Muestras",
+        readyStockBadge: "En stock",
+        readyStock: "Muestra en stock",
+        readyStockDescription: "Una muestra disponible de este modelo.",
+        custom: "Muestra personalizada",
+        customDescription: "El precio final depende de los materiales, colores, logotipo y especificaciones.",
+        additional: "Muestra personalizada idéntica adicional",
+        additionalDescription: "Mismo diseño y especificaciones, solicitada junto con la primera muestra personalizada.",
+        piece: "ud.",
+        disclaimer: "El envío y los impuestos se cotizan por separado. La producción en serie se cotiza por separado."
+      },
         goToPage: 'Ir a la página',
         goToButton: 'Ir',
       itemNo: "Número de Artículo",

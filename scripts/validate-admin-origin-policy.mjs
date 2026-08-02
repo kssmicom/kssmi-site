@@ -6,8 +6,10 @@ import { fileURLToPath } from 'node:url';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const readText = (relativePath) => readFile(resolve(root, relativePath), 'utf8');
 
-const [security, emailAdmin, journeyAdmin, htaccess, release] = await Promise.all([
+const [security, rateLimit, rateLimitTest, emailAdmin, journeyAdmin, htaccess, release] = await Promise.all([
   readText('private/http-security.php'),
+  readText('private/rate-limit.php'),
+  readText('scripts/test-rate-limit.php'),
   readText('public/email-logs.php'),
   readText('public/visitor-journey.php'),
   readText('public/.htaccess'),
@@ -19,6 +21,34 @@ assert.match(
   /function\s+kssmi_admin_request_from_trusted_proxy\s*\(/,
   'Shared security module must define the trusted-proxy predicate.'
 );
+assert.match(
+  rateLimit,
+  /function\s+kssmi_cloudflare_snapshot_load\s*\(/,
+  'Trusted-proxy ranges must be loaded through the strict PHP snapshot consumer.'
+);
+assert.match(
+  rateLimit,
+  /__DIR__\s*\.\s*['"]\/cloudflare-ip-ranges\.json['"]/,
+  'The PHP trusted-proxy consumer must use the deployed private snapshot.'
+);
+assert.match(
+  rateLimit,
+  /\$ranges\s*=\s*kssmi_cloudflare_ranges\s*\(\s*\)\s*;[\s\S]*?if\s*\(\s*\$ranges\s*===\s*null\s*\)\s*return false\s*;/,
+  'An invalid Cloudflare snapshot must fail closed before any proxy range is trusted.'
+);
+assert.doesNotMatch(
+  rateLimit,
+  /static\s+\$ranges\s*=\s*\[/,
+  'Cloudflare CIDRs must not return to an embedded PHP fallback list.'
+);
+for (const marker of [
+  'direct caller changed its identity with a forged Cloudflare header',
+  'trusted Cloudflare peer did not supply the forwarded client IP',
+  'invalid snapshot trusted a forwarded header',
+  'missing snapshot trusted a forwarded header',
+]) {
+  assert.ok(rateLimitTest.includes(marker), `Rate-limit tests missing proxy boundary case: ${marker}`);
+}
 assert.match(
   security,
   /\$_SERVER\[['"]REMOTE_ADDR['"]\]/,
@@ -69,6 +99,11 @@ assert.match(
   release,
   /HTTP_SECURITY_MODULE="\$SHARED_PRIVATE\/http-security\.php"/,
   'Release manager must name the shared HTTP security module.'
+);
+assert.match(
+  release,
+  /CLOUDFLARE_RANGES="\$SHARED_PRIVATE\/cloudflare-ip-ranges\.json"/,
+  'Release manager must name the shared Cloudflare range snapshot.'
 );
 assert.match(
   release,

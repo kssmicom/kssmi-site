@@ -97,6 +97,18 @@ export default {
       backToTop: "回到顶部"
     },
     product: {
+      samplePricing: {
+        title: "样品价格",
+        readyStockBadge: "现货",
+        readyStock: "现货样品",
+        readyStockDescription: "本型号现货样品一件。",
+        custom: "定制样品",
+        customDescription: "最终价格取决于材料、颜色、Logo 和规格。",
+        additional: "同款定制样品加购",
+        additionalDescription: "与首件定制样品采用相同设计和规格。",
+        piece: "件",
+        disclaimer: "运费和税费另行核算；大货生产价格另行报价。"
+      },
         goToPage: '跳转到页面',
         goToButton: '跳转',
       itemNo: "产品编号",

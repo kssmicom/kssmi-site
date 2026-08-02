@@ -54,6 +54,8 @@ jobs:
         run: |
           bash -n scripts/deploy-release.sh
           npm run validate:release
+          npm run validate:cloudflare-ranges
+          npm run test:cloudflare-ranges
           npm run validate:admin-origin
           npm run validate:password-reset
           npm run validate:admin-input-session

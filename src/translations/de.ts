@@ -104,6 +104,18 @@ export default {
       backToTop: "Nach Oben"
     },
     product: {
+      samplePricing: {
+        title: "Musterpreise",
+        readyStockBadge: "Sofort verfügbar",
+        readyStock: "Lagermuster",
+        readyStockDescription: "Ein verfügbares Muster dieses Modells.",
+        custom: "Individuelles Muster",
+        customDescription: "Der Endpreis hängt von Materialien, Farben, Logo und Spezifikationen ab.",
+        additional: "Zusätzliches identisches Sondermuster",
+        additionalDescription: "Gleiches Design und gleiche Spezifikationen, zusammen mit dem ersten Sondermuster bestellt.",
+        piece: "Stk.",
+        disclaimer: "Versand und Steuern werden separat berechnet. Preise für die Serienproduktion werden separat angeboten."
+      },
         goToPage: 'Zur Seite',
         goToButton: 'Los',
       itemNo: "Artikelnummer",

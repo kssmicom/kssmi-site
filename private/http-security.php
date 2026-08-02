@@ -33,9 +33,9 @@ define('KSSMI_HTTP_SECURITY_LOADED', true);
  *
  * REMOTE_ADDR is supplied by the web server from the TCP connection. Unlike
  * CF-Ray / CF-Connecting-IP / X-Forwarded-For, a direct-origin HTTP client
- * cannot choose it. The CIDR matcher currently lives in rate-limit.php and is
- * shared here so the two trust decisions cannot drift apart. 阶段 4 will move
- * its range list to the validated versioned snapshot.
+ * cannot choose it. The CIDR matcher and strict versioned-snapshot consumer
+ * live in rate-limit.php and are shared here so the two trust decisions cannot
+ * drift apart. If that snapshot is unusable, this predicate returns false.
  */
 function kssmi_admin_request_from_trusted_proxy($remoteAddress = null): bool {
     if ($remoteAddress === null) {

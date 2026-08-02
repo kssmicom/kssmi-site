@@ -11,10 +11,8 @@
 # when the post-deploy smoke test fails.
 #
 # Kssmi specifics vs the XinXin reference script:
-#   - Only two shared private modules: email-log-store.php, rate-limit.php.
-#   - No http-security.php / vjt-db-setup.php / private_config.php yet
-#     (those arrive in later stages; their absence is asserted here so a
-#     future stage that adds them also updates this script).
+#   - Shared PHP security modules and the verified Cloudflare range snapshot
+#     are installed, backed up and restored together outside the webroot.
 #   - VJT data already lives OUTSIDE the webroot (/home/kssmi.com/vjt_data),
 #     so there is no VJT cutover barrier and no webroot migration — only a
 #     SQLite integrity probe before activation.
@@ -51,14 +49,13 @@ PASSWORD_FILE="$PRIVATE_ROOT/.email_logs_password"
 RESET_TOKENS_FILE="$PRIVATE_ROOT/.email_reset_tokens.json"
 GSC_JSON="$SHARED_PRIVATE/gsc/google-service-account.json"
 
-# Shared module deployment: private/rate-limit.php,private/email-log-store.php,private/http-security.php
-# are uploaded in the release bundle and atomically installed into
-# $SHARED_PRIVATE before the webroot switch.
-PRIVATE_MODULES="email-log-store.php rate-limit.php http-security.php"
+# Shared security deployment: the JSON snapshot is installed before the PHP
+# consumer, so the new consumer can never observe a missing new dependency.
+PRIVATE_MODULES="email-log-store.php cloudflare-ip-ranges.json rate-limit.php http-security.php"
 RATE_LIMIT_MODULE="$SHARED_PRIVATE/rate-limit.php"
 EMAIL_LOG_MODULE="$SHARED_PRIVATE/email-log-store.php"
 HTTP_SECURITY_MODULE="$SHARED_PRIVATE/http-security.php"
-# Endpoints whose PHP guard consults the email cutover marker (send-mail.php
+CLOUDFLARE_RANGES="$SHARED_PRIVATE/cloudflare-ip-ranges.json"
 # Endpoints whose PHP guard consults the email cutover marker (send-mail.php
 # checks kssmi_email_logs_cutover_is_active and returns 503 while the marker
 # is active). Only these can prove the barrier via HTTP status. email-logs.php
@@ -238,6 +235,36 @@ prepare_release_layout() {
   run_root sh -c "umask 0027; printf '%s\n' '$RELEASE_ID' > '$RELEASE_DIR/.kssmi-release'; chown '$SITE_USER:$SITE_GROUP' '$RELEASE_DIR/.kssmi-release'; chmod 640 '$RELEASE_DIR/.kssmi-release'"
 }
 
+validate_cloudflare_snapshot_pair() {
+  rate_limit_path="$1"
+  snapshot_path="$2"
+  pair_label="$3"
+  run_as_site test -r "$rate_limit_path" ||
+    fail "$pair_label rate-limit consumer is not readable by $SITE_USER."
+  run_as_site test -r "$snapshot_path" ||
+    fail "$pair_label Cloudflare snapshot is not readable by $SITE_USER."
+
+  php_bin="$(resolve_php_sqlite)"
+  snapshot_probe="$(mktemp)"
+  chmod 644 "$snapshot_probe"
+  cat > "$snapshot_probe" <<'PHP'
+<?php
+declare(strict_types=1);
+require_once $argv[1];
+$ranges = kssmi_cloudflare_snapshot_load($argv[2]);
+if (!is_array($ranges) || count($ranges) < 15) {
+    fwrite(STDERR, "Cloudflare snapshot rejected by deployed PHP consumer.\n");
+    exit(1);
+}
+PHP
+  if ! run_as_site "$php_bin" "$snapshot_probe" "$rate_limit_path" "$snapshot_path"; then
+    rm -f "$snapshot_probe"
+    fail "$pair_label Cloudflare snapshot/consumer validation failed."
+  fi
+  rm -f "$snapshot_probe"
+  echo "$pair_label Cloudflare snapshot/consumer pair: OK"
+}
+
 backup_shared_private() {
   run_root install -d -o "$SITE_USER" -g "$SITE_GROUP" -m 750 "$PRIVATE_BACKUP"
   for module in $PRIVATE_MODULES; do
@@ -268,10 +295,18 @@ install_shared_private() {
       "$RELEASE_DIR/private/$module" \
       "$SHARED_PRIVATE/$module" \
       640
+    run_as_site test -r "$SHARED_PRIVATE/$module" ||
+      fail "Installed private file is not readable by $SITE_USER: $module"
   done
+  # Named probes are retained as explicit policy markers for the three PHP
+  # modules that are loaded directly by public endpoints.
   run_as_site test -r "$RATE_LIMIT_MODULE"
   run_as_site test -r "$EMAIL_LOG_MODULE"
   run_as_site test -r "$HTTP_SECURITY_MODULE"
+  validate_cloudflare_snapshot_pair \
+    "$RATE_LIMIT_MODULE" \
+    "$CLOUDFLARE_RANGES" \
+    "Installed"
 }
 
 restore_shared_private() {
@@ -286,6 +321,18 @@ restore_shared_private() {
       run_root rm -f "$SHARED_PRIVATE/$module"
     fi
   done
+  if [ -f "$RATE_LIMIT_MODULE" ] && [ -f "$CLOUDFLARE_RANGES" ]; then
+    validate_cloudflare_snapshot_pair \
+      "$RATE_LIMIT_MODULE" \
+      "$CLOUDFLARE_RANGES" \
+      "Restored"
+  elif [ -f "$PRIVATE_BACKUP/cloudflare-ip-ranges.json.missing" ]; then
+    # Compatibility with the one-time rollback to a pre-4.2 release whose
+    # rate-limit.php still carried its own ranges and required no JSON file.
+    echo "Restored legacy pre-snapshot private runtime."
+  else
+    fail "Rollback restored an incomplete Cloudflare snapshot/consumer pair."
+  fi
 }
 
 write_cutover_markers() {
@@ -491,6 +538,7 @@ PHP
   run_as_site test -r "$SHARED_PRIVATE/rate-limit.php"
   run_as_site test -r "$SHARED_PRIVATE/email-log-store.php"
   run_as_site test -r "$SHARED_PRIVATE/http-security.php"
+  run_as_site test -r "$SHARED_PRIVATE/cloudflare-ip-ranges.json"
   run_as_site sh -c '
     set -eu
     probe="$1/.rate-limit-write-probe-$$"
@@ -669,6 +717,10 @@ activate_release() {
   trap 'exit 143' TERM
 
   prepare_release_layout
+  validate_cloudflare_snapshot_pair \
+    "$RELEASE_DIR/private/rate-limit.php" \
+    "$RELEASE_DIR/private/cloudflare-ip-ranges.json" \
+    "Release"
   record_previous_webroot
   backup_shared_private
   record_cutover_baseline

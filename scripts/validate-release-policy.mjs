@@ -49,9 +49,11 @@ for (const marker of [
   'RELEASES_DIR="$PRIVATE_ROOT/releases"',
   'STATE_DIR="$STATE_ROOT/$RELEASE_ID"',
   'PRIVATE_BACKUP="$STATE_DIR/private-before"',
+  'CLOUDFLARE_RANGES="$SHARED_PRIVATE/cloudflare-ip-ranges.json"',
   'flock -x 9',
   'backup_shared_private',
   'restore_shared_private',
+  'validate_cloudflare_snapshot_pair',
   'write_cutover_markers',
   'prove_cutover_barriers',
   'Cache-Control: no-cache',
@@ -63,6 +65,11 @@ for (const marker of [
 ]) {
   assert.ok(release.includes(marker), `Release manager missing safety marker: ${marker}`);
 }
+assert.match(
+  release,
+  /PRIVATE_MODULES="[^"]*cloudflare-ip-ranges\.json rate-limit\.php[^"]*"/,
+  'The verified Cloudflare snapshot must be installed before its PHP consumer.'
+);
 assert.doesNotMatch(
   release,
   /\brm\s+-(?:[A-Za-z]*r[A-Za-z]*|-[^\s]*recursive)\b/,
@@ -111,6 +118,32 @@ requireBefore(
   'prove_cutover_barriers',
   'Rollback cutover markers must be written before the application barrier is proven.'
 );
+assert.ok(
+  rollbackBody.includes('restore_shared_private'),
+  'Rollback must restore the shared PHP modules and Cloudflare snapshot backup.'
+);
+
+const installStart = release.indexOf('install_shared_private() {');
+const installEnd = release.indexOf('\nrestore_shared_private() {', installStart);
+assert.ok(installStart >= 0 && installEnd > installStart, 'install_shared_private function is missing.');
+const installBody = release.slice(installStart, installEnd);
+assert.ok(
+  installBody.includes('run_as_site test -r "$SHARED_PRIVATE/$module"'),
+  'Every installed private file must be readable by the real site account.'
+);
+assert.ok(
+  installBody.includes('validate_cloudflare_snapshot_pair'),
+  'The installed Cloudflare snapshot and PHP consumer must be validated together.'
+);
+
+const restoreStart = release.indexOf('restore_shared_private() {');
+const restoreEnd = release.indexOf('\nwrite_cutover_markers() {', restoreStart);
+assert.ok(restoreStart >= 0 && restoreEnd > restoreStart, 'restore_shared_private function is missing.');
+const restoreBody = release.slice(restoreStart, restoreEnd);
+assert.ok(
+  restoreBody.includes('validate_cloudflare_snapshot_pair'),
+  'Rollback must validate the restored Cloudflare snapshot and PHP consumer pair.'
+);
 requireBefore(
   rollbackBody,
   'prove_cutover_barriers',
@@ -123,6 +156,7 @@ const activationEnd = release.indexOf('\nfinalize_release() {', activationStart)
 assert.ok(activationStart >= 0 && activationEnd > activationStart, 'activate_release function is missing.');
 const activationBody = release.slice(activationStart, activationEnd);
 for (const [first, second, message] of [
+  ['validate_cloudflare_snapshot_pair', 'backup_shared_private', 'The release snapshot must be validated before shared runtime backup or mutation.'],
   ['backup_shared_private', 'write_cutover_markers', 'Private backup must precede marker creation.'],
   ['write_cutover_markers', 'prove_cutover_barriers', 'Markers must be written before the barrier is proven.'],
   ['prove_cutover_barriers', 'install_shared_private', 'The application barrier must be proven before private modules change.'],
@@ -138,5 +172,9 @@ assert.ok(workflow.includes('npm run validate:release'), 'Deploy must validate t
 assert.ok(workflow.includes('bash -n scripts/deploy-release.sh'), 'Deploy must syntax-check the release manager before build.');
 assert.ok(phpCi.includes('bash -n scripts/deploy-release.sh'), 'php-ci must syntax-check the release manager.');
 assert.ok(phpCi.includes('npm run validate:release'), 'php-ci must validate the release policy.');
+for (const command of ['npm run validate:cloudflare-ranges', 'npm run test:cloudflare-ranges']) {
+  assert.ok(workflow.includes(command), `Deploy must run the offline Cloudflare gate: ${command}`);
+  assert.ok(phpCi.includes(command), `php-ci must run the offline Cloudflare gate: ${command}`);
+}
 
 console.log('Versioned release, atomic activation and rollback policy validated.');

@@ -97,6 +97,18 @@ export default {
       backToTop: "Lên đầu trang"
     },
     product: {
+      samplePricing: {
+        title: "Giá Mẫu",
+        readyStockBadge: "Có sẵn",
+        readyStock: "Mẫu có sẵn",
+        readyStockDescription: "Một mẫu có sẵn của mẫu mã này.",
+        custom: "Mẫu tùy chỉnh",
+        customDescription: "Giá cuối cùng phụ thuộc vào vật liệu, màu sắc, logo và thông số kỹ thuật.",
+        additional: "Mẫu tùy chỉnh giống hệt bổ sung",
+        additionalDescription: "Cùng thiết kế và thông số, đặt cùng với mẫu tùy chỉnh đầu tiên.",
+        piece: "cái",
+        disclaimer: "Phí vận chuyển và thuế được báo riêng. Giá sản xuất số lượng lớn được báo riêng."
+      },
         goToPage: 'Đến trang',
         goToButton: 'Đi',
       itemNo: "Mã sản phẩm",
