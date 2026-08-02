@@ -72,6 +72,9 @@ assert(!hero.includes("addEventListener('scroll'"), 'Home video must not treat g
 assert(!hero.includes("addEventListener('pointerdown'"), 'Home video must not start on pointerdown alone.');
 assert(hero.includes('event.isTrusted'), 'Home video interaction handlers must reject synthetic events.');
 assert(hero.includes('TOUCH_SCROLL_THRESHOLD') && hero.includes("addEventListener('touchmove'"), 'Home video must require thresholded real touch movement on mobile.');
+assert(hero.includes("addEventListener('keydown', markKeyboardInteraction"), 'Home video must support trusted keyboard interaction.');
+assert(hero.includes('event.repeat') && hero.includes("['Alt', 'Control', 'Meta', 'Shift']"), 'Home video keyboard interaction must reject repeats and modifier-only keys.');
+assert(hero.includes("event.key === 'Enter' || event.key === ' '") && hero.includes('interactionLeavesCurrentPage(event)'), 'Home video keyboard activation must not start a download while navigating away.');
 assert(hero.includes("addEventListener('wheel'") && hero.includes('event.deltaX === 0 && event.deltaY === 0'), 'Home video must require real wheel movement on desktop.');
 assert(hero.includes("v.dataset.userStarted = '1'") && hero.includes("v.dataset.userStarted !== '1'"), 'Home video loading must be guarded by a current-hero user-started marker.');
 

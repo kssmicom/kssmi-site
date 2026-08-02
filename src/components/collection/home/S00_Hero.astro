@@ -55,7 +55,7 @@ const secondaryHref = toHref(secondaryCtaUrl);
   )}
 
   <!-- Background video: the poster is the default experience. The URL is assigned only
-       after window.load and a trusted click or real scroll on the current home page, so
+       after window.load and a trusted click, keyboard input or real scroll on the current home page, so
        this element cannot compete with the poster for the initial connection. object-cover
        fills the hero.
 
@@ -215,7 +215,7 @@ const secondaryHref = toHref(secondaryCtaUrl);
 
 <script>
   // Policy: every device can play the full-bleed hero video, but the MP4 URL is not assigned
-  // until the page has fully loaded AND the visitor clicks or genuinely scrolls on the
+  // until the page has fully loaded AND the visitor clicks, uses the keyboard or genuinely scrolls on the
   // current home page. Generic scroll events and sticky browser userActivation are
   // intentionally excluded because restoration, browser chrome and earlier pages can
   // trigger them without a current-page gesture.
@@ -298,6 +298,7 @@ const secondaryHref = toHref(secondaryCtaUrl);
     document.removeEventListener('touchmove', markTouchScrollInteraction, interactionOptions);
     document.removeEventListener('touchend', clearTouchStart, interactionOptions);
     document.removeEventListener('touchcancel', clearTouchStart, interactionOptions);
+    document.removeEventListener('keydown', markKeyboardInteraction, interactionOptions);
     document.removeEventListener('wheel', markWheelInteraction, interactionOptions);
     interactionListenersAttached = false;
     touchStartY = null;
@@ -310,6 +311,7 @@ const secondaryHref = toHref(secondaryCtaUrl);
     document.addEventListener('touchmove', markTouchScrollInteraction, interactionOptions);
     document.addEventListener('touchend', clearTouchStart, interactionOptions);
     document.addEventListener('touchcancel', clearTouchStart, interactionOptions);
+    document.addEventListener('keydown', markKeyboardInteraction, interactionOptions);
     document.addEventListener('wheel', markWheelInteraction, interactionOptions);
     interactionListenersAttached = true;
   }
@@ -325,7 +327,7 @@ const secondaryHref = toHref(secondaryCtaUrl);
     scheduleVideoAfterPolicyGate();
   }
 
-  function clickLeavesCurrentPage(event: MouseEvent) {
+  function interactionLeavesCurrentPage(event: Event) {
     const target = event.target instanceof Element ? event.target : null;
     const anchor = target?.closest<HTMLAnchorElement>('a[href]');
     if (!anchor) return false;
@@ -342,7 +344,14 @@ const secondaryHref = toHref(secondaryCtaUrl);
   }
 
   function markClickInteraction(event: MouseEvent) {
-    if (!event.isTrusted || clickLeavesCurrentPage(event)) return;
+    if (!event.isTrusted || interactionLeavesCurrentPage(event)) return;
+    markCurrentHeroStarted();
+  }
+
+  function markKeyboardInteraction(event: KeyboardEvent) {
+    if (!event.isTrusted || event.repeat) return;
+    if (['Alt', 'Control', 'Meta', 'Shift'].includes(event.key)) return;
+    if ((event.key === 'Enter' || event.key === ' ') && interactionLeavesCurrentPage(event)) return;
     markCurrentHeroStarted();
   }
 
