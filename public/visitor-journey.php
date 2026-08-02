@@ -10,12 +10,67 @@
 require_once dirname(__DIR__) . '/private/http-security.php';
 kssmi_admin_require_trusted_proxy();
 
-session_set_cookie_params([
-    'secure' => true,
-    'httponly' => true,
-    'samesite' => 'Strict'
+// Normalize the complete dashboard input surface before password checks,
+// exports, filters, pagination, settings, or destructive actions use it.
+$_GET = kssmi_admin_normalize_request($_GET, [
+    'tab' => 32,
+    'trend' => 16,
+    'export_csv' => 8,
+    'export_contacts_csv' => 8,
+    'export_gsc_csv' => 8,
+    'export_visitors_csv' => 8,
+    'export_journey_csv' => 8,
+    'status' => 32,
+    'channel' => 64,
+    'plugin' => 64,
+    'date_from' => 16,
+    'date_to' => 16,
+    'days' => 4,
+    'search' => 256,
+    'device' => 32,
+    'source' => 64,
+    'sessions_min' => 16,
+    'sessions_max' => 16,
+    'submissions_min' => 16,
+    'submissions_max' => 16,
+    'session_time_min' => 16,
+    'country' => 128,
+    'product' => 256,
+    'sort' => 64,
+    'order' => 8,
+    'visitor_id' => 128,
+    'gkp' => 12,
+    'cp' => 12,
+    'sp' => 12,
+    'vp' => 12,
+    'tp' => 16,
+    'prod_date_from' => 16,
+    'prod_date_to' => 16,
 ]);
-session_start();
+$_POST = kssmi_admin_normalize_request($_POST, [
+    'password' => 1024,
+    'csrf_token' => 128,
+    'logout' => 8,
+    'save_settings' => 8,
+    'session_timeout' => 12,
+    'retention_days' => 12,
+    'enable_geo' => 8,
+    'excluded_ips' => 8192,
+    'heartbeat_seconds' => 12,
+    'enable_email_summary' => 8,
+    'contact_intent_retention_days' => 12,
+    'contact_inquiry_retention_days' => 12,
+    'delete_contact_ids' => 8192,
+    'test_gsc_connection' => 8,
+    'cleanup_data' => 8,
+    'cleanup_days' => 12,
+    'delete_ids' => 8192,
+    'delete_lead_keys' => 32768,
+    'delete_lead_visitors' => 32768,
+    'delete_visitor' => 128,
+]);
+
+kssmi_admin_session_bootstrap();
 
 // Shared admin security headers (CSP matches this page's existing policy).
 kssmi_admin_security_headers("frame-ancestors 'none'; base-uri 'none'; form-action 'self'");

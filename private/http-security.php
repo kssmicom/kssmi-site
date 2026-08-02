@@ -15,6 +15,7 @@ declare(strict_types=1);
  *   3. Secret read/write with the same semantics the backends already use:
  *      an empty or missing file reads as null; writes are 0600.
  *   4. Scalar/text sanitization helpers used by later stages.
+ *   5. One hardened admin-session bootstrap and bounded request normalization.
  *
  * Cloudflare Access remains the authentication gate at the edge. The origin
  * gate below independently verifies the TCP peer address (REMOTE_ADDR) before
@@ -101,6 +102,92 @@ function kssmi_scalar_text($value, int $maxLength, bool $trim = true): string {
         return mb_substr($text, 0, $maxLength);
     }
     return substr($text, 0, $maxLength);
+}
+
+/**
+ * Normalize an HTTP input array against an explicit per-page allowlist.
+ *
+ * PHP normally supplies GET/POST leaf values as strings, but an attacker can
+ * turn any field into an array with `field[]=...`. Scalar fields with any
+ * other shape are discarded, unknown fields are discarded, and accepted
+ * strings are trimmed and bounded before application code sees them.
+ *
+ * List rules use [maximum item count, maximum item length]. They exist only
+ * for forms that intentionally submit `name[]` controls.
+ */
+function kssmi_admin_normalize_request(
+    array $input,
+    array $scalarLimits,
+    array $listLimits = []
+): array {
+    $normalized = [];
+
+    foreach ($scalarLimits as $key => $maxLength) {
+        if (!is_string($key) || !is_int($maxLength) || $maxLength < 0) continue;
+        if (!array_key_exists($key, $input) || !is_string($input[$key])) continue;
+        $normalized[$key] = kssmi_scalar_text($input[$key], $maxLength);
+    }
+
+    foreach ($listLimits as $key => $limits) {
+        if (!is_string($key)
+            || !is_array($limits)
+            || count($limits) !== 2
+            || !is_int($limits[0] ?? null)
+            || !is_int($limits[1] ?? null)
+            || $limits[0] < 0
+            || $limits[1] < 0
+            || !array_key_exists($key, $input)
+            || !kssmi_array_is_list($input[$key])) {
+            continue;
+        }
+
+        $items = [];
+        $seen = 0;
+        foreach ($input[$key] as $value) {
+            if ($seen++ >= $limits[0]) break;
+            if (!is_string($value)) continue;
+            $items[] = kssmi_scalar_text($value, $limits[1]);
+        }
+        $normalized[$key] = $items;
+    }
+
+    return $normalized;
+}
+
+/**
+ * Canonical session policy shared by every Kssmi admin page.
+ */
+function kssmi_admin_session_options(): array {
+    return [
+        'use_strict_mode' => 1,
+        'use_cookies' => 1,
+        'use_only_cookies' => 1,
+        'use_trans_sid' => 0,
+        'cookie_lifetime' => 0,
+        'cookie_path' => '/',
+        'cookie_secure' => true,
+        'cookie_httponly' => true,
+        'cookie_samesite' => 'Strict',
+    ];
+}
+
+/**
+ * Start the admin session once with strict, cookie-only semantics.
+ *
+ * Failure is closed centrally so an admin page can never continue with a
+ * missing or partially configured session.
+ */
+function kssmi_admin_session_bootstrap(): void {
+    if (session_status() === PHP_SESSION_ACTIVE) return;
+
+    if (session_status() === PHP_SESSION_DISABLED || !@session_start(kssmi_admin_session_options())) {
+        error_log('KSSMI: unable to start hardened admin session');
+        http_response_code(500);
+        header('Content-Type: text/plain; charset=UTF-8');
+        kssmi_admin_security_headers("default-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'");
+        echo 'Service unavailable.';
+        exit;
+    }
 }
 
 /**

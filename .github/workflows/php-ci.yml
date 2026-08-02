@@ -47,6 +47,7 @@ jobs:
           npm run validate:release
           npm run validate:admin-origin
           npm run validate:password-reset
+          npm run validate:admin-input-session
 
       - name: Lint all PHP sources
         run: find public private scripts -name '*.php' -not -path '*/vendor/*' -print0 | xargs -0 -r -n1 php -l

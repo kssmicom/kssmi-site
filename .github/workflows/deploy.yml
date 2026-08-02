@@ -56,6 +56,7 @@ jobs:
           npm run validate:release
           npm run validate:admin-origin
           npm run validate:password-reset
+          npm run validate:admin-input-session
 
       - name: Lint PHP sources
         run: find public private scripts -name '*.php' -not -path '*/vendor/*' -print0 | xargs -0 -n1 php -l
@@ -72,6 +73,7 @@ jobs:
           php scripts/test-vjt-data-quality.php
           php scripts/test-http-security.php
           php scripts/test-reset-token-race.php
+          php scripts/test-admin-session.php
 
       - name: Validate cache policy and runtime fingerprints
         run: npm run validate:cache

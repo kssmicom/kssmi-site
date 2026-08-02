@@ -81,6 +81,34 @@ try {
     kssmi_sec_assert(kssmi_array_is_list([0 => 'a', 2 => 'b']) === false, 'gapped keys are not a list');
     kssmi_sec_assert(kssmi_array_is_list('nope') === false, 'non-array is not a list');
 
+    // ── bounded request normalization ──
+    $normalized = kssmi_admin_normalize_request([
+        'password' => ['array-injection'],
+        'search' => '  ' . str_repeat('x', 200000) . '  ',
+        'flag' => '1',
+        'unknown' => 'must be discarded',
+        'ids' => ['  first  ', ['nested'], 'second', 'third'],
+    ], [
+        'password' => 1024,
+        'search' => 32,
+        'flag' => 8,
+    ], [
+        'ids' => [3, 16],
+    ]);
+    kssmi_sec_assert(!isset($normalized['password']), 'array-shaped scalar input is discarded');
+    kssmi_sec_assert($normalized['search'] === str_repeat('x', 32), 'oversized scalar input is bounded');
+    kssmi_sec_assert($normalized['flag'] === '1', 'allowed scalar input is retained');
+    kssmi_sec_assert(!isset($normalized['unknown']), 'unknown request field is discarded');
+    kssmi_sec_assert($normalized['ids'] === ['first', 'second'], 'list is bounded by inspected items and rejects nested values');
+    kssmi_sec_assert(
+        kssmi_admin_normalize_request(['ids' => ['named' => 'value']], [], ['ids' => [10, 10]]) === [],
+        'associative array cannot impersonate a list field'
+    );
+    kssmi_sec_assert(
+        kssmi_admin_normalize_request(['field' => 42], ['field' => 10]) === [],
+        'non-string HTTP leaf is rejected'
+    );
+
     // ── atomic write: no partial destination, correct mode ──
     $secretPath = $testDirectory . DIRECTORY_SEPARATOR . 'secret.txt';
     kssmi_sec_assert(kssmi_admin_atomic_write($secretPath, 'first-secret', 0600), 'atomic write succeeds');

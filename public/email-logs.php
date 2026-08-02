@@ -15,12 +15,31 @@
 require_once dirname(__DIR__) . '/private/http-security.php';
 kssmi_admin_require_trusted_proxy();
 
-session_set_cookie_params([
-    'secure' => true,
-    'httponly' => true,
-    'samesite' => 'Strict'
+// Reject array-shaped/unknown request fields and bound every accepted value
+// before it can reach password, token, file, or mail operations.
+$_GET = kssmi_admin_normalize_request($_GET, [
+    'reset' => 128,
 ]);
-session_start();
+$_POST = kssmi_admin_normalize_request($_POST, [
+    'csrf_token' => 128,
+    'request_reset' => 8,
+    'reset_password' => 8,
+    'new_password' => 1024,
+    'confirm_password' => 1024,
+    'password' => 1024,
+    'change_password' => 8,
+    'logout' => 8,
+    'clear_logs' => 8,
+    'resend_id' => 256,
+    'resolve_uncertain_resend_id' => 256,
+    'confirm_mailbox_checked' => 8,
+    'delete_id' => 256,
+    'bulk_delete' => 8,
+], [
+    'selected_ids' => [500, 256],
+]);
+
+kssmi_admin_session_bootstrap();
 
 // Shared admin security headers (CSP matches this page's existing policy:
 // Turnstile + GTM + Google Fonts are allowed inline for the admin UI).
@@ -277,8 +296,8 @@ if (isset($_GET['reset'])) {
             if (!kssmi_admin_csrf_valid($_POST['csrf_token'] ?? null)) {
                 $passwordError = 'Security check failed. Please use the link from your email.';
             } else {
-                $newPass = trim($_POST['new_password']);
-                $confirmPass = trim($_POST['confirm_password']);
+                $newPass = trim($_POST['new_password'] ?? '');
+                $confirmPass = trim($_POST['confirm_password'] ?? '');
 
                 if (strlen($newPass) < 12) {
                     $passwordError = 'Password must be at least 12 characters';
@@ -363,7 +382,7 @@ if ($isAuthenticated && isset($_POST['change_password'])) {
     if (!validateCSRF()) {
         $passwordError = 'Security check failed. Please try again.';
     } else {
-        $newPass = trim($_POST['new_password']);
+        $newPass = trim($_POST['new_password'] ?? '');
         if (strlen($newPass) < 12) {
             $passwordError = 'Password must be at least 12 characters';
         } else {

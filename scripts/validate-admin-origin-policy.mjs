@@ -45,10 +45,10 @@ for (const [label, source] of [
   ['Visitor Journey', journeyAdmin],
 ]) {
   const gateIndex = source.indexOf('kssmi_admin_require_trusted_proxy();');
-  const sessionIndex = source.indexOf('session_start();');
+  const sessionIndex = source.indexOf('kssmi_admin_session_bootstrap();');
   assert.ok(gateIndex >= 0, `${label} must invoke the shared trusted-proxy gate.`);
-  assert.ok(sessionIndex >= 0, `${label} must start its hardened admin session.`);
-  assert.ok(gateIndex < sessionIndex, `${label} must enforce the origin gate before session_start().`);
+  assert.ok(sessionIndex >= 0, `${label} must invoke the shared hardened admin-session bootstrap.`);
+  assert.ok(gateIndex < sessionIndex, `${label} must enforce the origin gate before the session bootstrap.`);
 }
 
 const adminOriginBlock = htaccess.match(
