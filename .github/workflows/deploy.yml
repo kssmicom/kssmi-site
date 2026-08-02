@@ -220,6 +220,15 @@ jobs:
           assert_single_cache_control 'https://kssmi.com/api/track-pageview.php' 'no-store'
           assert_single_cache_control 'https://kssmi.com/api/contact-intent.php' 'no-store'
 
+      - name: Run production deployment smoke
+        run: npm run smoke:deployment
+        env:
+          SMOKE_TARGET: production
+          SMOKE_BASE_URL: https://kssmi.com
+          SMOKE_ACCESS_CLIENT_ID: ${{ secrets.SMOKE_ACCESS_CLIENT_ID }}
+          SMOKE_ACCESS_CLIENT_SECRET: ${{ secrets.SMOKE_ACCESS_CLIENT_SECRET }}
+          SMOKE_ADMIN_PASSWORD: ${{ secrets.SMOKE_ADMIN_PASSWORD }}
+
       - name: Finalize successful release
         uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b  # v1.2.5+ pinned 2026-07-06
         with:

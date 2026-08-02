@@ -24,6 +24,7 @@ for (const marker of [
   'target: "/home/kssmi.com/releases/${{ github.sha }}-${{ github.run_attempt }}"',
   'Activate versioned release atomically',
   'Verify deployed security controls',
+  'Run production deployment smoke',
   'Finalize successful release',
   'Rollback on failure',
   'if: failure()',
