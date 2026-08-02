@@ -502,3 +502,52 @@ function kssmi_admin_reset_token_consume(string $path, string $token, ?int $now 
         'error' => $result['error'] ?? null,
     ];
 }
+
+/**
+ * Change the admin password only for the single request that atomically wins
+ * reset-token consumption.
+ *
+ * Token consumption happens before the comparatively expensive password hash,
+ * so concurrent requests cannot all spend CPU hashing. Only consumed=true may
+ * proceed to hash and write. If either step fails, the token deliberately
+ * remains consumed: restoring it would reopen a replay window while another
+ * request may already be in flight.
+ *
+ * Returns ['ok' => bool, 'changed' => bool, 'consumed' => bool,
+ *          'error' => ?string]. A replay is ok=true/changed=false.
+ */
+function kssmi_admin_reset_password(
+    string $tokensPath,
+    string $passwordPath,
+    string $token,
+    string $newPassword,
+    ?int $now = null
+): array {
+    if ($newPassword === '') {
+        return ['ok' => false, 'changed' => false, 'consumed' => false, 'error' => 'empty_password'];
+    }
+
+    $consume = kssmi_admin_reset_token_consume($tokensPath, $token, $now);
+    if (!$consume['ok']) {
+        return [
+            'ok' => false,
+            'changed' => false,
+            'consumed' => false,
+            'error' => $consume['error'] ?? 'token_consume_failed',
+        ];
+    }
+    if (!$consume['consumed']) {
+        return ['ok' => true, 'changed' => false, 'consumed' => false, 'error' => null];
+    }
+
+    $passwordHash = password_hash($newPassword, PASSWORD_BCRYPT);
+    if (!is_string($passwordHash) || $passwordHash === '') {
+        return ['ok' => false, 'changed' => false, 'consumed' => true, 'error' => 'password_hash_failed'];
+    }
+
+    if (!kssmi_admin_secret_write($passwordPath, $passwordHash)) {
+        return ['ok' => false, 'changed' => false, 'consumed' => true, 'error' => 'password_write_failed'];
+    }
+
+    return ['ok' => true, 'changed' => true, 'consumed' => true, 'error' => null];
+}

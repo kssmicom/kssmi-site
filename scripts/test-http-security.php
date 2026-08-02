@@ -207,6 +207,67 @@ try {
     kssmi_sec_assert($replay['ok'] === true && $replay['consumed'] === false, 'replay of consumed token A reports not-consumed');
     kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, $tokenB, $now) === true, 'unrelated token B survives consumption');
 
+    // The complete password-reset operation must consume first and let only
+    // the winning request write the password file.
+    $resetPasswordPath = $testDirectory . DIRECTORY_SEPARATOR . '.reset_password_hash';
+    $resetPassword = 'correct horse battery staple 2026';
+    $passwordReset = kssmi_admin_reset_password(
+        $tokensPath,
+        $resetPasswordPath,
+        $tokenB,
+        $resetPassword,
+        $now
+    );
+    kssmi_sec_assert(
+        $passwordReset['ok'] === true && $passwordReset['changed'] === true && $passwordReset['consumed'] === true,
+        'token-gated password reset succeeds exactly after consumption'
+    );
+    $storedResetHash = kssmi_admin_secret_read($resetPasswordPath);
+    kssmi_sec_assert(
+        is_string($storedResetHash) && password_verify($resetPassword, $storedResetHash),
+        'winning reset stores the requested password hash'
+    );
+    $storedHashBeforeReplay = file_get_contents($resetPasswordPath);
+    $passwordReplay = kssmi_admin_reset_password(
+        $tokensPath,
+        $resetPasswordPath,
+        $tokenB,
+        'replay must never become the password',
+        $now
+    );
+    kssmi_sec_assert(
+        $passwordReplay['ok'] === true && $passwordReplay['changed'] === false && $passwordReplay['consumed'] === false,
+        'replayed token cannot change the password'
+    );
+    kssmi_sec_assert(
+        file_get_contents($resetPasswordPath) === $storedHashBeforeReplay,
+        'replay leaves the password file byte-for-byte unchanged'
+    );
+
+    $tokenD = str_repeat('d', 64);
+    kssmi_sec_assert(kssmi_admin_reset_token_add($tokensPath, $tokenD, $now + 3600), 'token D added');
+    $emptyPassword = kssmi_admin_reset_password($tokensPath, $resetPasswordPath, $tokenD, '', $now);
+    kssmi_sec_assert($emptyPassword['ok'] === false && $emptyPassword['consumed'] === false, 'invalid password does not consume token');
+    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, $tokenD, $now), 'token D remains valid after pre-consume failure');
+
+    $tokenE = str_repeat('e', 64);
+    kssmi_sec_assert(kssmi_admin_reset_token_add($tokensPath, $tokenE, $now + 3600), 'token E added');
+    $writeFailure = kssmi_admin_reset_password(
+        $tokensPath,
+        $testDirectory . DIRECTORY_SEPARATOR . 'missing' . DIRECTORY_SEPARATOR . 'password',
+        $tokenE,
+        'valid password whose destination is unavailable',
+        $now
+    );
+    kssmi_sec_assert(
+        $writeFailure['ok'] === false && $writeFailure['changed'] === false && $writeFailure['consumed'] === true,
+        'password write failure remains fail-closed after consumption'
+    );
+    kssmi_sec_assert(
+        kssmi_admin_reset_token_valid($tokensPath, $tokenE, $now) === false,
+        'write failure never restores a consumed token'
+    );
+
     // Expired tokens are dropped on read/add.
     $tokenC = str_repeat('c', 64);
     kssmi_sec_assert(kssmi_admin_reset_token_add($tokensPath, $tokenC, $now - 10) === false, 'already-expired token rejected at add');

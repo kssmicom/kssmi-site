@@ -20,6 +20,7 @@
     "validate:translations": "node scripts/validate-translations.mjs",
     "validate:release": "node scripts/validate-release-policy.mjs",
     "validate:admin-origin": "node scripts/validate-admin-origin-policy.mjs",
+    "validate:password-reset": "node scripts/validate-password-reset-policy.mjs",
     "smoke:deployment": "node scripts/smoke-deployment.mjs",
     "test:backend": "php scripts/verify-php-runtime.php",
     "test:email-log": "php scripts/test-email-log-store.php",
@@ -30,7 +31,8 @@
     "test:vjt-heartbeat": "php scripts/test-vjt-heartbeat.php",
     "test:vjt-data-quality": "php scripts/test-vjt-data-quality.php",
     "test:http-security": "php scripts/test-http-security.php",
-    "test:php": "npm run test:backend && npm run test:email-log && npm run test:rate-limit && npm run test:vjt-checkpoint && npm run test:contact-core && npm run test:vjt-event-state && npm run test:vjt-heartbeat && npm run test:vjt-data-quality && npm run test:http-security"
+    "test:reset-race": "php scripts/test-reset-token-race.php",
+    "test:php": "npm run test:backend && npm run test:email-log && npm run test:rate-limit && npm run test:vjt-checkpoint && npm run test:contact-core && npm run test:vjt-event-state && npm run test:vjt-heartbeat && npm run test:vjt-data-quality && npm run test:http-security && npm run test:reset-race"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",

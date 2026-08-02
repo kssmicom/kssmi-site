@@ -277,29 +277,40 @@ if (isset($_GET['reset'])) {
             if (!kssmi_admin_csrf_valid($_POST['csrf_token'] ?? null)) {
                 $passwordError = 'Security check failed. Please use the link from your email.';
             } else {
-                    $newPass = trim($_POST['new_password']);
-                    $confirmPass = trim($_POST['confirm_password']);
+                $newPass = trim($_POST['new_password']);
+                $confirmPass = trim($_POST['confirm_password']);
 
-                    if (strlen($newPass) < 12) {
-                        $passwordError = 'Password must be at least 12 characters';
-                    } elseif ($newPass !== $confirmPass) {
-                        $passwordError = 'Passwords do not match';
-                    } else {
-                        if (setPassword($newPass)) {
-                            // Atomically consume the reset token (replay-safe)
-                            $consumeResult = kssmi_admin_reset_token_consume(RESET_TOKENS_FILE, $token);
-                            if (!$consumeResult['ok']) {
-                                error_log('KSSMI: reset token not consumed after password change: ' . ($consumeResult['error'] ?? 'unknown'));
-                            }
-
-                            $passwordMessage = 'Password reset successfully! You can now login with your new password.';
+                if (strlen($newPass) < 12) {
+                    $passwordError = 'Password must be at least 12 characters';
+                } elseif ($newPass !== $confirmPass) {
+                    $passwordError = 'Passwords do not match';
+                } else {
+                    // Exactly one concurrent request may consume this token.
+                    // Only that winner is allowed to write the new password.
+                    $resetResult = kssmi_admin_reset_password(
+                        RESET_TOKENS_FILE,
+                        PASSWORD_FILE,
+                        $token,
+                        $newPass
+                    );
+                    if ($resetResult['ok'] && $resetResult['changed']) {
+                        $message = 'Password reset successfully! You can now login with your new password.';
+                        $resetMode = false;
+                        // Rotate CSRF token after successful reset
+                        kssmi_admin_csrf_rotate();
+                    } elseif (!$resetResult['ok']) {
+                        error_log('KSSMI: password reset transaction failed: ' . ($resetResult['error'] ?? 'unknown'));
+                        if ($resetResult['consumed']) {
+                            $error = 'Failed to save the new password. This reset link has been used; please request a new one.';
                             $resetMode = false;
-                            // Rotate CSRF token after successful reset
-                            kssmi_admin_csrf_rotate();
                         } else {
-                            $passwordError = 'Failed to save new password. Please try again.';
+                            $passwordError = 'Unable to process the reset safely. Please try again.';
                         }
+                    } else {
+                        $error = 'Invalid or expired reset link. Please request a new one.';
+                        $resetMode = false;
                     }
+                }
             }
         }
     } else {
