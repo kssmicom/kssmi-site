@@ -835,13 +835,13 @@
     if (!cfg) return;
     loadTrackerConfig();
 
-    // P3-1 (N11): Admin traffic is excluded from analytics SERVER-SIDE by
-    // private/http-security.php (kssmi_admin_tracking_excluded validates the
-    // HMAC-signed vjt_admin marker). The cookie is HttpOnly so this client
-    // check can never see it — the check below is a harmless best-effort for
-    // legacy non-HttpOnly scenarios and is NOT the security boundary. A forged
-    // value cannot pass server-side HMAC validation.
-    if (document.cookie.indexOf('vjt_admin=') !== -1) return;
+    // Admin traffic is excluded from analytics SERVER-SIDE only:
+    // private/http-security.php validates the HMAC-signed vjt_admin marker
+    // (kssmi_admin_tracking_excluded) at every track/contact API endpoint.
+    // The marker cookie is HttpOnly, so this client script can never read it
+    // and no client-side check exists here — a forged cookie cannot pass
+    // server-side HMAC validation, and a visitor cannot opt out of analytics
+    // by setting any cookie value.
 
     // Always use live URL/title for SPA navigations (Astro View Transitions)
     cfg.page.url = cleanUrl(window.location.href);
