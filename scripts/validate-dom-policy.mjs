@@ -45,6 +45,20 @@ for (const file of homeCardFiles) {
 const astroConfig = read('astro.config.mjs');
 assert(astroConfig.includes("inlineStylesheets: 'auto'"), 'Astro must inline small CSS chunks while keeping the main critical bundle external.');
 
+const technicalSpecs = read('src/components/TechnicalSpecs.astro');
+assert(
+  /@media \(max-width: 1023px\)[\s\S]*?\.product-highlights-content\s*\{\s*display:\s*block;/.test(technicalSpecs),
+  'Product highlights must leave desktop grid placement on tablet and phone viewports.',
+);
+assert(
+  /\.product-highlights-content > h2:nth-of-type\(2\)\s*\{\s*display:\s*block;/.test(technicalSpecs),
+  'The Perfect For heading must be explicitly visible on tablet and phone viewports.',
+);
+assert(
+  /@media \(min-width: 640px\) and \(max-width: 1023px\)[\s\S]*?grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\);/.test(technicalSpecs),
+  'The Perfect For list must retain its two-column tablet layout.',
+);
+
 // VJT injects consented Visitor/Session/Step fields only into POST forms so
 // search GET requests never leak analytics context into their URLs. These two
 // AJAX inquiry forms must therefore declare their real transport explicitly;
