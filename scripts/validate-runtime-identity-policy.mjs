@@ -41,6 +41,15 @@ assert.doesNotMatch(
   /curl[^\n]*(?:-k|--insecure)/,
   'The runtime identity request must not weaken TLS policy elsewhere.',
 );
+assert.ok(
+  release.includes('curl --fail --show-error --silent'),
+  'The loopback runtime probe must use curl options supported by the production host.',
+);
+assert.doesNotMatch(
+  release,
+  /--fail-with-body/,
+  'Server-side release checks must not require curl --fail-with-body on the production host.',
+);
 
 const activationStart = release.indexOf('activate_release() {');
 const activationEnd = release.indexOf('\nfinalize_release() {', activationStart);

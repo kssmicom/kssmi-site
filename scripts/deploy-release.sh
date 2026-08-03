@@ -381,7 +381,10 @@ probe_real_runtime_capabilities() {
     "$RUNTIME_PROBE_SOURCE" "$RUNTIME_PROBE_PATH"
 
   response=""
-  if ! response="$(curl --fail-with-body --show-error --silent \
+  # The origin host may provide an older curl without newer failure options.
+  # This is a loopback HTTP capability probe, so portable --fail preserves
+  # strict status handling without weakening any public HTTPS verification.
+  if ! response="$(curl --fail --show-error --silent \
     --connect-timeout 5 --max-time 30 \
     -H "Host: $SITE_HOST" \
     -H 'X-Forwarded-Proto: https' \

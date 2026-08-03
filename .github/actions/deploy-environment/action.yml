@@ -259,7 +259,7 @@ runs:
 
     - name: Capture finalized environment evidence
       id: deployment-proof
-      if: always()
+      if: always() && steps.activate.outcome == 'success' && steps.deployment-smoke.outcome == 'success' && steps.finalize.outcome == 'success'
       uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b  # v1.2.5+ pinned 2026-07-06
       with:
         host: ${{ inputs.remote-host }}

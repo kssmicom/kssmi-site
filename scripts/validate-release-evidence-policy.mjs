@@ -50,6 +50,7 @@ for (const marker of [
   'id: activate', 'id: deployment-smoke', 'id: finalize',
   'AUTHENTICATED_SMOKE_VERIFIED=true',
   'Capture finalized environment evidence',
+  "if: always() && steps.activate.outcome == 'success' && steps.deployment-smoke.outcome == 'success' && steps.finalize.outcome == 'success'",
   'Assemble environment deployment evidence',
   'Upload environment deployment evidence',
   'Enforce environment evidence gate',
