@@ -50,10 +50,10 @@ const langPrefix = lang === 'en' ? '' : `/${lang}`;
     )}
 
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href={`${langPrefix}/product/`} class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#4A3D2E] transition-colors duration-300 shadow-lg">
+      <a href={`${langPrefix}/product/`} class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#4A3D2E] active:bg-[#4A3D2E] focus-visible:bg-[#4A3D2E] focus-within:bg-[#4A3D2E] transition-colors duration-300 shadow-lg">
         {browseProducts}
       </a>
-      <a href={`${langPrefix}/`} class="inline-flex items-center px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#5D4E37] hover:text-white transition-all duration-300">
+      <a href={`${langPrefix}/`} class="inline-flex items-center px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#5D4E37] active:bg-[#5D4E37] focus-visible:bg-[#5D4E37] focus-within:bg-[#5D4E37] hover:text-white active:text-white focus-visible:text-white focus-within:text-white transition-all duration-300">
         {backToHome}
       </a>
     </div>

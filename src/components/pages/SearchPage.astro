@@ -235,7 +235,7 @@ const searchKeywords = {
       <!-- Search Header Block -->
       <div class="text-center mb-6 relative max-w-4xl mx-auto">
         <!-- Kssmi Text Logo -->
-        <div class="inline-flex flex-col items-center justify-center w-20 h-20 rounded-full bg-white border border-stone-300 hover:border-[#8B7355] hover:shadow-lg transition-all duration-700 ease-out mb-4 shadow-xs">
+        <div class="inline-flex flex-col items-center justify-center w-20 h-20 rounded-full bg-white border border-stone-300 hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355] hover:shadow-lg active:shadow-lg focus-visible:shadow-lg focus-within:shadow-lg transition-all duration-700 ease-out mb-4 shadow-xs">
           <span class="text-sm font-bold text-[#503629] tracking-tight leading-none uppercase">KSSMI</span>
           <span class="h-[1px] w-4 bg-stone-400 mt-[2px]"></span>
           <span class="text-[7px] font-bold uppercase tracking-[0.15em] text-stone-500 mt-[2px]">{eyewearText}</span>
@@ -266,7 +266,7 @@ const searchKeywords = {
       <!-- Search Form Block -->
       <div class="max-w-3xl mx-auto mb-8 relative z-10">
         <form action={`/${lang === 'en' ? 'search' : `${lang}/search`}`} method="GET" class="relative group">
-          <div class="absolute inset-0 bg-[#5D4E37]/5 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="absolute inset-0 bg-[#5D4E37]/5 rounded-full blur-md opacity-0 group-hover:opacity-100 group-active:opacity-100 group-focus-visible:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500"></div>
 
           <div class="flex items-center border-2 border-stone-200 bg-white rounded-full overflow-hidden focus-within:border-[#8B7355] shadow-xs transition-all duration-300 focus-within:ring-4 focus-within:ring-[#8B7355]/10 relative z-10">
             <label for="search-input" class="sr-only">Search products</label>
@@ -280,12 +280,12 @@ const searchKeywords = {
             >
 
             <!-- Clear Button (X icon) -->
-            <button type="button" id="search-clear" class="hidden px-2 text-stone-400 hover:text-stone-600 transition-colors" aria-label="Clear search">
+            <button type="button" id="search-clear" class="hidden px-2 text-stone-400 hover:text-stone-600 active:text-stone-600 focus-visible:text-stone-600 focus-within:text-stone-600 transition-colors" aria-label="Clear search">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
             </button>
 
             <!-- Search Button -->
-            <button type="submit" class="px-5 py-2.5 mr-1.5 bg-[#5D4E37] text-white rounded-full hover:bg-[#4A3D2E] transition-all duration-300 font-bold tracking-wide text-xs uppercase shadow-md shrink-0 flex items-center gap-2">
+            <button type="submit" class="px-5 py-2.5 mr-1.5 bg-[#5D4E37] text-white rounded-full hover:bg-[#4A3D2E] active:bg-[#4A3D2E] focus-visible:bg-[#4A3D2E] focus-within:bg-[#4A3D2E] transition-all duration-300 font-bold tracking-wide text-xs uppercase shadow-md shrink-0 flex items-center gap-2">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
@@ -322,7 +322,7 @@ const searchKeywords = {
               const kw = (searchKeywords as any)[lang] || searchKeywords.en;
               const keys = ['optical', 'sunglasses', 'acetate', 'titanium', 'metal'] as const;
               return keys.map((k) => (
-                <a href={`/${lang === 'en' ? 'search' : `${lang}/search`}?q=${kw[k]}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-xs hover:border-[#8B7355] hover:text-[#5D4E37] transition-all duration-300 shadow-xs hover:shadow-md">
+                <a href={`/${lang === 'en' ? 'search' : `${lang}/search`}?q=${kw[k]}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-xs hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355] hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] transition-all duration-300 shadow-xs hover:shadow-md active:shadow-md focus-visible:shadow-md focus-within:shadow-md">
                   {kw[k]}
                 </a>
               ));
@@ -337,7 +337,7 @@ const searchKeywords = {
 
       <!-- No Results State -->
       <div id="no-results" class="hidden text-center py-6">
-        <div class="inline-flex items-center justify-center w-20 h-20 bg-white border border-stone-200 rounded-full mb-8 shadow-xs hover:border-[#8B7355] transition-colors duration-500">
+        <div class="inline-flex items-center justify-center w-20 h-20 bg-white border border-stone-200 rounded-full mb-8 shadow-xs hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355] transition-colors duration-500">
           <svg class="w-8 h-8 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
@@ -345,10 +345,10 @@ const searchKeywords = {
         <h2 class="text-3xl font-bold text-[#5D4E37] mb-4">{(noResultsText as any)[lang]}</h2>
         <p class="text-base text-stone-600 mb-10 max-w-md mx-auto" id="no-results-text">{(tryDifferentText as any)[lang]}</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a href={`/${lang === 'en' ? '' : lang + '/'}`} class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#4A3D2E] transition-colors duration-300 shadow-lg">
+          <a href={`/${lang === 'en' ? '' : lang + '/'}`} class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#4A3D2E] active:bg-[#4A3D2E] focus-visible:bg-[#4A3D2E] focus-within:bg-[#4A3D2E] transition-colors duration-300 shadow-lg">
             {t.nav?.home || 'Home'}
           </a>
-          <a href={`/${lang === 'en' ? '' : lang + '/'}product`} class="inline-flex items-center px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#4A3D2E] hover:text-white transition-all duration-300">
+          <a href={`/${lang === 'en' ? '' : lang + '/'}product`} class="inline-flex items-center px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#4A3D2E] active:bg-[#4A3D2E] focus-visible:bg-[#4A3D2E] focus-within:bg-[#4A3D2E] hover:text-white active:text-white focus-visible:text-white focus-within:text-white transition-all duration-300">
             {t.nav?.products || 'Catalog'}
           </a>
         </div>
@@ -361,7 +361,7 @@ const searchKeywords = {
               const kw = (searchKeywords as any)[lang] || searchKeywords.en;
               const keys = ['optical', 'sunglasses', 'acetate', 'titanium', 'metal'] as const;
               return keys.map((k) => (
-                <a href={`/${lang === 'en' ? 'search' : `${lang}/search`}?q=${kw[k]}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-xs hover:border-[#8B7355] hover:text-[#5D4E37] transition-all duration-300 shadow-xs hover:shadow-md">
+                <a href={`/${lang === 'en' ? 'search' : `${lang}/search`}?q=${kw[k]}`} class="px-5 py-2.5 bg-white border border-stone-200 text-stone-700 text-xs font-bold tracking-wide uppercase rounded-xs hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355] hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] transition-all duration-300 shadow-xs hover:shadow-md active:shadow-md focus-visible:shadow-md focus-within:shadow-md">
                   {kw[k]}
                 </a>
               ));
@@ -406,7 +406,7 @@ const searchKeywords = {
     overflow: hidden;
     transition: box-shadow 0.3s ease;
   }
-  .src-card:hover .src-card-inner {
+  .src-card:is(:hover, :active, :focus-visible, :focus-within) .src-card-inner {
     box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
   }
   .src-img-wrap {
@@ -427,7 +427,7 @@ const searchKeywords = {
     object-fit: cover;
     transition: transform 0.5s ease;
   }
-  .src-card:hover .src-img {
+  .src-card:is(:hover, :active, :focus-visible, :focus-within) .src-img {
     transform: scale(1.05);
   }
   .src-img-placeholder {
@@ -447,7 +447,7 @@ const searchKeywords = {
     justify-content: center;
     z-index: 10;
   }
-  .src-card:hover .src-overlay {
+  .src-card:is(:hover, :active, :focus-visible, :focus-within) .src-overlay {
     opacity: 1;
   }
   .src-overlay-pill {
@@ -463,13 +463,13 @@ const searchKeywords = {
     transform: translateY(0.5rem);
     transition: transform 0.3s ease;
   }
-  .src-card:hover .src-overlay-pill {
+  .src-card:is(:hover, :active, :focus-visible, :focus-within) .src-overlay-pill {
     transform: translateY(0);
   }
   .src-overlay-pill .src-arrow {
     transition: transform 0.3s ease;
   }
-  .src-card:hover .src-overlay-pill .src-arrow {
+  .src-card:is(:hover, :active, :focus-visible, :focus-within) .src-overlay-pill .src-arrow {
     transform: translateX(4px);
   }
   .src-info {
@@ -492,7 +492,7 @@ const searchKeywords = {
     overflow: hidden;
     transition: color 0.3s ease;
   }
-  .src-card:hover .src-title {
+  .src-card:is(:hover, :active, :focus-visible, :focus-within) .src-title {
     color: #8B7355;
   }
   .src-desc {
@@ -521,7 +521,7 @@ const searchKeywords = {
     transition: color 0.15s, background-color 0.15s, border-color 0.15s;
     cursor: pointer;
   }
-  .search-pagination-btn:hover {
+  .search-pagination-btn:is(:hover, :active, :focus-visible, :focus-within) {
     background-color: #f9fafb;
     border-color: #8B7355;
     color: #5D4E37;
@@ -548,7 +548,7 @@ const searchKeywords = {
       padding: 0.375rem 1rem;
     }
   }
-  .search-pagination-nav-btn:hover {
+  .search-pagination-nav-btn:is(:hover, :active, :focus-visible, :focus-within) {
     background-color: #f9fafb;
     border-color: #8B7355;
     color: #5D4E37;
@@ -589,7 +589,7 @@ const searchKeywords = {
     transition: color 0.15s, background-color 0.15s, border-color 0.15s;
     cursor: pointer;
   }
-  .search-goto-btn:hover {
+  .search-goto-btn:is(:hover, :active, :focus-visible, :focus-within) {
     background-color: #f9fafb;
     border-color: #8B7355;
     color: #5D4E37;

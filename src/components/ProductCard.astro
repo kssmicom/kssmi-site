@@ -43,7 +43,7 @@ const coverSrc = cardSrc(cover);
 ---
 
 <a href={`/${currentPath}product/${productSlug}`} class="group block" dir={isRTL ? 'rtl' : 'ltr'}>
-  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300" style={belowFold ? "content-visibility:auto;contain-intrinsic-size:auto 360px" : ""}>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl active:shadow-xl focus-visible:shadow-xl focus-within:shadow-xl transition-all duration-300" style={belowFold ? "content-visibility:auto;contain-intrinsic-size:auto 360px" : ""}>
     <!-- Product Image with Hover Overlay -->
     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100" data-product-cover>
       {cover ? (
@@ -53,7 +53,7 @@ const coverSrc = cardSrc(cover);
           width="400"
           height="300"
           sizes="(min-width: 1280px) 33vw, (min-width: 1024px) 25vw, (min-width: 640px) 50vw, 50vw"
-          class="w-full h-full object-cover motion-safe:group-hover:scale-105 transition-transform duration-500"
+          class="w-full h-full object-cover motion-safe:group-hover:scale-105 motion-safe:group-active:scale-105 motion-safe:group-focus-visible:scale-105 motion-safe:group-focus-within:scale-105 transition-transform duration-500"
           decoding={decoding}
           loading={loadingStrategy}
           fetchpriority={isLcpCandidate ? "high" : "auto"}
@@ -67,10 +67,10 @@ const coverSrc = cardSrc(cover);
       )}
 
       <!-- Hover Overlay with "View Details" -->
-      <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-        <span class="bg-black text-white px-4 py-2 rounded-lg font-semibold text-sm flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+      <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 group-active:opacity-100 group-focus-within:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <span class="bg-black text-white px-4 py-2 rounded-lg font-semibold text-sm flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 group-active:translate-y-0 group-focus-visible:translate-y-0 group-focus-within:translate-y-0 transition-transform duration-300">
           {t.product?.viewDetails || 'View Details'}
-          <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-active:translate-x-1 group-focus-visible:translate-x-1 group-focus-within:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
           </svg>
         </span>
@@ -87,7 +87,7 @@ const coverSrc = cardSrc(cover);
       )}
 
       <!-- Product Title -->
-      <h2 class="text-xs font-semibold text-gray-900 group-hover:text-[#5D4E37] transition-colors leading-tight">
+      <h2 class="text-xs font-semibold text-gray-900 group-hover:text-[#5D4E37] group-active:text-[#5D4E37] group-focus-visible:text-[#5D4E37] group-focus-within:text-[#5D4E37] transition-colors leading-tight">
         {title}
       </h2>
     </div>

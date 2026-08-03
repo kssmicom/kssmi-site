@@ -19,23 +19,23 @@ const materials = entry?.data?.materials || [];
   <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4 lg:px-0">
     <!-- Section header - Clean minimal style -->
     <div class="text-center mb-12 md:mb-16">
-      <span class="flex items-center justify-center gap-2 text-stone-500 hover:text-amber-700 text-xs font-medium tracking-[0.2em] uppercase mb-4 transition-colors duration-300 cursor-pointer">
+      <span class="flex items-center justify-center gap-2 text-stone-500 hover:text-amber-700 active:text-amber-700 focus-visible:text-amber-700 focus-within:text-amber-700 text-xs font-medium tracking-[0.2em] uppercase mb-4 transition-colors duration-300 cursor-pointer">
         <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
         </svg>
         — {eyebrow} —
       </span>
-      <h2 class="text-2xl md:text-4xl font-bold text-stone-800 bg-linear-to-r from-[#32170D] via-[#B85C27] to-[#32170D] bg-[length:200%_auto] bg-right hover:bg-left text-transparent bg-clip-text transition-all duration-700 ease-in-out cursor-pointer mb-6">
+      <h2 class="text-2xl md:text-4xl font-bold text-stone-800 bg-linear-to-r from-[#32170D] via-[#B85C27] to-[#32170D] bg-[length:200%_auto] bg-right hover:bg-left active:bg-left focus-visible:bg-left focus-within:bg-left text-transparent bg-clip-text transition-all duration-700 ease-in-out cursor-pointer mb-6">
         {heading}
       </h2>
-      <p class="text-base md:text-lg text-stone-600 hover:text-[#5D4E37] leading-relaxed max-w-2xl mx-auto transition-colors duration-300 cursor-pointer" set:html={highlightedSubheading}></p>
+      <p class="text-base md:text-lg text-stone-600 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] leading-relaxed max-w-2xl mx-auto transition-colors duration-300 cursor-pointer" set:html={highlightedSubheading}></p>
     </div>
 
     <!-- Materials grid -->
     <div class="flex flex-wrap justify-center gap-5 md:gap-6">
       {materials.map((m: any, i: number) => (
         <div
-          class="mat-card group flex flex-col w-[calc(50%-0.625rem)] sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(25%-1.125rem)] bg-white rounded-2xl overflow-hidden shadow-xs ring-1 ring-stone-200/70 hover:shadow-xl hover:shadow-stone-200/60 hover:ring-stone-300 transition-all duration-500 cursor-pointer motion-safe:animate-[matFadeInUp_0.5s_ease-out_both]"
+          class="mat-card group flex flex-col w-[calc(50%-0.625rem)] sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(25%-1.125rem)] bg-white rounded-2xl overflow-hidden shadow-xs ring-1 ring-stone-200/70 hover:shadow-xl active:shadow-xl focus-visible:shadow-xl focus-within:shadow-xl hover:shadow-stone-200/60 active:shadow-stone-200/60 focus-visible:shadow-stone-200/60 focus-within:shadow-stone-200/60 hover:ring-stone-300 active:ring-stone-300 focus-visible:ring-stone-300 focus-within:ring-stone-300 transition-all duration-500 cursor-pointer motion-safe:animate-[matFadeInUp_0.5s_ease-out_both]"
           style={`animation-delay: ${0.1 + i * 0.05}s`}
         >
           <a href={`${prefix}/product/?material=${m.slug}`} class="relative aspect-[4/3] overflow-hidden bg-stone-100 block">
@@ -46,21 +46,21 @@ const materials = entry?.data?.materials || [];
               height="300"
               loading="lazy"
               decoding="async"
-              class="w-full h-full object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-110"
+              class="w-full h-full object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-110 motion-safe:group-active:scale-110 motion-safe:group-focus-visible:scale-110 motion-safe:group-focus-within:scale-110"
             />
-            <div class="absolute inset-0 bg-linear-to-t from-stone-900/0 to-transparent group-hover:from-stone-900/8 transition-all duration-500"></div>
+            <div class="absolute inset-0 bg-linear-to-t from-stone-900/0 to-transparent group-hover:from-stone-900/8 group-active:from-stone-900/8 group-focus-visible:from-stone-900/8 group-focus-within:from-stone-900/8 transition-all duration-500"></div>
           </a>
 
           <div class="p-5 md:p-6 flex flex-col flex-1">
             <a href={`${prefix}/product/?material=${m.slug}`} class="block text-center">
-              <h3 class="text-sm md:text-base font-bold text-stone-800 group-hover:text-amber-700 transition-colors duration-300 mb-1.5">
+              <h3 class="text-sm md:text-base font-bold text-stone-800 group-hover:text-amber-700 group-active:text-amber-700 group-focus-visible:text-amber-700 group-focus-within:text-amber-700 transition-colors duration-300 mb-1.5">
                 {m.name}
               </h3>
             </a>
-            <p class="text-xs md:text-sm text-stone-600 hover:text-[#5D4E37] leading-relaxed mb-5 text-center transition-colors duration-300 cursor-pointer">
+            <p class="text-xs md:text-sm text-stone-600 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] leading-relaxed mb-5 text-center transition-colors duration-300 cursor-pointer">
               {m.subtitle}
             </p>
-            <div class="w-10 h-px bg-stone-200 mx-auto mb-5 transition-all duration-500 group-hover:w-20 group-hover:bg-stone-400"></div>
+            <div class="w-10 h-px bg-stone-200 mx-auto mb-5 transition-all duration-500 group-hover:w-20 group-active:w-20 group-focus-visible:w-20 group-focus-within:w-20 group-hover:bg-stone-400 group-active:bg-stone-400 group-focus-visible:bg-stone-400 group-focus-within:bg-stone-400"></div>
             <ul class="space-y-2.5 flex-1">
               {m.points?.map((point: string) => (
                 <li class="mat-point flex items-start gap-3 text-xs md:text-sm text-stone-600 transition-all duration-300 cursor-default">
@@ -82,12 +82,12 @@ const materials = entry?.data?.materials || [];
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  .mat-point:hover .mat-dot {
+  .mat-point:is(:hover, :active, :focus-visible, :focus-within) .mat-dot {
     background-color: #B45309;
     transform: scale(1.2);
     box-shadow: 0 0 0 3px rgba(180, 83, 9, 0.18);
   }
-  .mat-point:hover .mat-text {
+  .mat-point:is(:hover, :active, :focus-visible, :focus-within) .mat-text {
     color: #B45309;
     font-weight: 500;
   }

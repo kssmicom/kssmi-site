@@ -131,10 +131,10 @@ const secondaryHref = toHref(secondaryCtaUrl);
           {primaryCta && (
             <a
               href={primaryHref}
-              class="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm sm:text-base font-semibold text-white bg-[#B45309] hover:bg-[#92400E] shadow-lg shadow-amber-950/30 hover:shadow-xl hover:shadow-amber-950/40 hover:-translate-y-0.5 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-black/50 transition-all duration-300 cursor-pointer"
+              class="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm sm:text-base font-semibold text-white bg-[#B45309] hover:bg-[#92400E] active:bg-[#92400E] focus-visible:bg-[#92400E] focus-within:bg-[#92400E] shadow-lg shadow-amber-950/30 hover:shadow-xl active:shadow-xl focus-visible:shadow-xl focus-within:shadow-xl hover:shadow-amber-950/40 active:shadow-amber-950/40 focus-visible:shadow-amber-950/40 focus-within:shadow-amber-950/40 hover:-translate-y-0.5 active:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-within:-translate-y-0.5 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-black/50 transition-all duration-300 cursor-pointer"
             >
               {primaryCta}
-              <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-active:translate-x-1 group-focus-visible:translate-x-1 group-focus-within:translate-x-1 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M5 12h14M13 6l6 6-6 6"/>
               </svg>
             </a>
@@ -142,7 +142,7 @@ const secondaryHref = toHref(secondaryCtaUrl);
           {secondaryCta && (
             <a
               href={secondaryHref}
-              class="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm sm:text-base font-semibold text-white bg-white/10 backdrop-blur-xs border border-white/30 hover:bg-white/20 hover:border-white/50 hover:-translate-y-0.5 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black/50 transition-all duration-300 cursor-pointer"
+              class="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm sm:text-base font-semibold text-white bg-white/10 backdrop-blur-xs border border-white/30 hover:bg-white/20 active:bg-white/20 focus-visible:bg-white/20 focus-within:bg-white/20 hover:border-white/50 active:border-white/50 focus-visible:border-white/50 focus-within:border-white/50 hover:-translate-y-0.5 active:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-within:-translate-y-0.5 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black/50 transition-all duration-300 cursor-pointer"
             >
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M12 3v13M7 8l5-5 5 5"/>
@@ -169,7 +169,7 @@ const secondaryHref = toHref(secondaryCtaUrl);
       {featureTags.length > 0 && (
         <ul class="hero-fade flex flex-wrap items-center gap-2.5 text-xs sm:text-sm mt-3.5" style="animation-delay:0.48s">
           {featureTags.map((tag) => (
-            <li class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-xs border border-white/25 text-stone-100/90 hover:bg-white/15 hover:border-white/40 transition-colors duration-200">
+            <li class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-xs border border-white/25 text-stone-100/90 hover:bg-white/15 active:bg-white/15 focus-visible:bg-white/15 focus-within:bg-white/15 hover:border-white/40 active:border-white/40 focus-visible:border-white/40 focus-within:border-white/40 transition-colors duration-200">
               {tag}
             </li>
           ))}

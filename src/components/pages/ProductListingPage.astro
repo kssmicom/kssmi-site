@@ -97,7 +97,7 @@ if (productSeoEntry) {
                   <div class="border-b border-gray-100 pb-3 last:border-0 last:pb-0">
                     <a
                       href={cat.href}
-                      class="flex items-center justify-between py-2 px-2 text-sm font-bold text-[#5D4E37] hover:bg-stone-50 rounded-lg transition-colors"
+                      class="flex items-center justify-between py-2 px-2 text-sm font-bold text-[#5D4E37] hover:bg-stone-50 active:bg-stone-50 focus-visible:bg-stone-50 focus-within:bg-stone-50 rounded-lg transition-colors"
                     >
                       <span>{cat.label}</span>
                       <span class="text-xs text-gray-500">{getCategoryCount(cat.href)}</span>
@@ -107,7 +107,7 @@ if (productSeoEntry) {
                         <li>
                           <a
                             href={sub.href}
-                            class="flex items-center justify-between py-1.5 px-2 text-sm text-gray-600 hover:text-[#5D4E37] hover:bg-stone-50 rounded-sm transition-colors"
+                            class="flex items-center justify-between py-1.5 px-2 text-sm text-gray-600 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] hover:bg-stone-50 active:bg-stone-50 focus-visible:bg-stone-50 focus-within:bg-stone-50 rounded-sm transition-colors"
                           >
                             <span>{sub.label}</span>
                             <span class="text-xs text-gray-500">{getCategoryCount(sub.href)}</span>
@@ -124,14 +124,14 @@ if (productSeoEntry) {
                 <div class="space-y-6">
                   {sidebarTags.map((group) => (
                     <div>
-                      <a href={group.href} class="text-sm font-bold text-gray-900 mb-2.5 flex items-center hover:text-[#5D4E37] transition-colors">
+                      <a href={group.href} class="text-sm font-bold text-gray-900 mb-2.5 flex items-center hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] transition-colors">
                         <span class="text-[#5D4E37] mr-1">#</span> {group.label}
                       </a>
                       <div class="flex flex-col gap-1.5">
                         {group.items.map((tag) => (
                           <a
                             href={tag.href}
-                            class="px-3 py-1.5 text-[11px] font-bold rounded-md border bg-stone-50 text-stone-600 border-stone-200 hover:border-[#8B7355] hover:text-[#5D4E37] hover:bg-stone-100 transition-all duration-200 w-full"
+                            class="px-3 py-1.5 text-[11px] font-bold rounded-md border bg-stone-50 text-stone-600 border-stone-200 hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355] hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] hover:bg-stone-100 active:bg-stone-100 focus-visible:bg-stone-100 focus-within:bg-stone-100 transition-all duration-200 w-full"
                           >
                             {tag.label}
                           </a>
@@ -150,7 +150,7 @@ if (productSeoEntry) {
               </p>
               <a
                 href={`/${currentPath}quote`}
-                class="inline-block bg-white text-[#5D4E37] px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                class="inline-block bg-white text-[#5D4E37] px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:scale-105 active:scale-105 focus-visible:scale-105 focus-within:scale-105 hover:shadow-lg active:shadow-lg focus-visible:shadow-lg focus-within:shadow-lg"
               >
                 {t.cta.quote || 'Get Quote'}
               </a>
@@ -172,7 +172,7 @@ if (productSeoEntry) {
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
               </svg>
               <p class="text-gray-500 mb-4">{baseSegment === 'blog' ? ((t as any).blog?.emptyState || 'No blog posts yet.') : baseSegment === 'eyewear' ? ((t as any).feature?.emptyState || 'No features yet.') : (pt.noProducts || 'No products available yet.')}</p>
-              <a href={`/${currentPath}`} class="text-[#5D4E37] hover:underline">
+              <a href={`/${currentPath}`} class="text-[#5D4E37] hover:underline active:underline focus-visible:underline focus-within:underline">
                 {pt.returnHome || 'Return to Homepage'}
               </a>
             </div>

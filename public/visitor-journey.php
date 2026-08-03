@@ -669,7 +669,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         .login-box h2 { margin-bottom: 20px; color: #5D4E37; }
         .login-box input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 15px; font-size: 16px; }
         .login-box button { width: 100%; padding: 12px; background: #8B7355; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
-        .login-box button:hover { background: #5D4E37; }
+        .login-box button:is(:hover, :active, :focus-visible, :focus-within) { background: #5D4E37; }
 
         /* Header */
         .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 8px; background: white; padding: 12px 16px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); border-left: 3px solid #8B7355; }
@@ -681,26 +681,26 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         /* Tabs */
         .tabs { display: flex; gap: 0; margin-bottom: 14px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
         .tab { padding: 10px 20px; text-decoration: none; color: #666; font-weight: 500; font-size: 13px; transition: all 0.15s; border-bottom: 3px solid transparent; }
-        .tab:hover { color: #5D4E37; background: #faf9f7; }
+        .tab:is(:hover, :active, :focus-visible, :focus-within) { color: #5D4E37; background: #faf9f7; }
         .tab.active { color: #5D4E37; border-bottom-color: #8B7355; background: #faf9f7; }
 
         /* Buttons */
         .btn { padding: 6px 14px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; font-size: 12px; display: inline-block; font-weight: 500; }
         .btn-primary { background: #8B7355; color: white; }
-        .btn-primary:hover { background: #5D4E37; }
+        .btn-primary:is(:hover, :active, :focus-visible, :focus-within) { background: #5D4E37; }
         .btn-danger { background: #e74c3c; color: white; }
-        .btn-danger:hover { background: #c0392b; }
+        .btn-danger:is(:hover, :active, :focus-visible, :focus-within) { background: #c0392b; }
         .btn-secondary { background: #666; color: white; }
-        .btn-secondary:hover { background: #444; }
+        .btn-secondary:is(:hover, :active, :focus-visible, :focus-within) { background: #444; }
         .btn-success { background: #27ae60; color: white; }
-        .btn-success:hover { background: #219a52; }
+        .btn-success:is(:hover, :active, :focus-visible, :focus-within) { background: #219a52; }
         .btn-small { padding: 4px 10px; font-size: 11px; }
-        .btn:hover { opacity: 0.9; }
+        .btn:is(:hover, :active, :focus-visible, :focus-within) { opacity: 0.9; }
 
         /* Stats */
         .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 14px; align-items: stretch; }
         .stat-card { background: white; padding: 16px 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-top: 3px solid #8B7355; transition: box-shadow 0.15s; display: flex; flex-direction: column; }
-        .stat-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.08); }
+        .stat-card:is(:hover, :active, :focus-visible, :focus-within) { box-shadow: 0 3px 12px rgba(0,0,0,0.08); }
         .stat-card h3 { font-size: 10px; text-transform: uppercase; color: #888; margin-bottom: 4px; letter-spacing: 0.8px; }
         .stat-card .value { font-size: 26px; font-weight: bold; color: #5D4E37; flex: 1; display: flex; align-items: center; }
         .stat-card .core-leads { flex: 1; display: flex; align-items: center; gap: 20px; color: #5D4E37; }
@@ -721,7 +721,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         table { width: 100%; border-collapse: collapse; font-size: 13px; }
         th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #eee; }
         th { background: #f8f8f8; font-weight: 600; color: #5D4E37; font-size: 10px; text-transform: uppercase; white-space: nowrap; }
-        tr:hover { background: #fafafa; }
+        tr:is(:hover, :active, :focus-visible, :focus-within) { background: #fafafa; }
         .mono { font-family: monospace; font-size: 11px; }
 
         /* Status badges */
@@ -744,14 +744,14 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         /* Pagination */
         .pagination { display: flex; gap: 4px; justify-content: center; flex-wrap: wrap; max-width: 100%; margin-top: 15px; }
         .pagination a, .pagination span { padding: 6px 12px; border: 1px solid #ddd; border-radius: 4px; text-decoration: none; color: #666; font-size: 13px; }
-        .pagination a:hover { background: #8B7355; color: white; border-color: #8B7355; }
+        .pagination a:is(:hover, :active, :focus-visible, :focus-within) { background: #8B7355; color: white; border-color: #8B7355; }
         .pagination .current { background: #8B7355; color: white; border-color: #8B7355; }
 
         /* Bar chart */
         .bar-chart { display: flex; align-items: flex-end; gap: 6px; height: 140px; padding: 0 10px; }
         .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; min-width: 0; }
         .bar { background: #8B7355; width: 100%; max-width: 40px; border-radius: 3px 3px 0 0; min-height: 2px; transition: all 0.2s ease; cursor: pointer; }
-        .bar:hover { background: #5D4E37; opacity: 0.85; transform: scaleY(1.05); transform-origin: bottom; }
+        .bar:is(:hover, :active, :focus-visible, :focus-within) { background: #5D4E37; opacity: 0.85; transform: scaleY(1.05); transform-origin: bottom; }
         .bar-label { font-size: 9px; color: #888; margin-top: 4px; transform: rotate(-45deg); transform-origin: top left; white-space: nowrap; }
         .bar-value { font-size: 10px; color: #5D4E37; font-weight: 600; margin-bottom: 4px; }
         .bar-chart-scroll { max-width: 100%; overflow-x: auto; }
@@ -761,13 +761,13 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         .bar-series .bar { max-width: 18px; }
         .bar-series .bar-value { font-size: 8px; white-space: nowrap; }
         .bar-core { background: #B8A58A; }
-        .bar-core:hover { background: #8B7355; }
+        .bar-core:is(:hover, :active, :focus-visible, :focus-within) { background: #8B7355; }
 
         /* Trend sub-tabs */
         .trend-tab { padding: 3px 10px; border-radius: 4px; text-decoration: none; font-size: 11px; font-weight: 500; color: #888; background: #f0f0f0; transition: all 0.15s; }
-        .trend-tab:hover { color: #5D4E37; background: #e0d8cc; }
+        .trend-tab:is(:hover, :active, :focus-visible, :focus-within) { color: #5D4E37; background: #e0d8cc; }
         .trend-tab-active { background: #8B7355; color: white; }
-        .trend-tab-active:hover { background: #5D4E37; color: white; }
+        .trend-tab-active:is(:hover, :active, :focus-visible, :focus-within) { background: #5D4E37; color: white; }
 
         /* Journey detail */
         .journey-section { margin-bottom: 25px; }
@@ -777,7 +777,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         .journey-item label { font-size: 10px; color: #888; display: block; text-transform: uppercase; letter-spacing: 0.5px; }
         .journey-item .val { font-size: 13px; color: #333; word-break: break-word; }
         .city-link { color: #8B7355; text-decoration: none; border-bottom: 1px dashed #c4b896; }
-        .city-link:hover { color: #5D4E37; border-bottom-color: #5D4E37; }
+        .city-link:is(:hover, :active, :focus-visible, :focus-within) { color: #5D4E37; border-bottom-color: #5D4E37; }
         .timeline { position: relative; padding-left: 20px; }
         .timeline::before { content: ''; position: absolute; left: 7px; top: 0; bottom: 0; width: 2px; background: #e0d8cc; }
         .timeline-item { position: relative; padding: 8px 0 8px 16px; margin-bottom: 4px; }
@@ -808,7 +808,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         .empty p { color: #999; }
 
         .link { color: #8B7355; text-decoration: none; }
-        .link:hover { text-decoration: underline; }
+        .link:is(:hover, :active, :focus-visible, :focus-within) { text-decoration: underline; }
 
         .country-badge { background: #e8e4df; padding: 2px 8px; border-radius: 3px; font-size: 11px; }
         .url-cell { max-width: 240px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

@@ -132,10 +132,10 @@ const viewAllCollections = (pt as any).viewAllCollections || 'View All Collectio
       </h2>
       <a
         href={`/${currentPath}product`}
-        class="inline-flex items-center gap-2 text-[#5D4E37] hover:text-[#5D4E37] font-medium transition-colors duration-200 group"
+        class="inline-flex items-center gap-2 text-[#5D4E37] hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] font-medium transition-colors duration-200 group"
       >
         <span>{viewAllCollections}</span>
-        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-4 h-4 transform group-hover:translate-x-1 group-active:translate-x-1 group-focus-visible:translate-x-1 group-focus-within:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
       </a>
@@ -144,18 +144,18 @@ const viewAllCollections = (pt as any).viewAllCollections || 'View All Collectio
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
       {selected.map((p) => (
         <a href={`/${currentPath}product/${p.slug}`} class="group block">
-          <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
+          <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl active:shadow-xl focus-visible:shadow-xl focus-within:shadow-xl transition-all duration-300">
             <div class="relative aspect-[4/3] overflow-hidden bg-gray-100">
               {p.cover
-                ? <img src={cardSrc(p.cover)} alt={p.displayName} class="w-full h-full object-cover motion-safe:group-hover:scale-105 transition-transform duration-500" loading="lazy" fetchpriority="low" decoding="async" width="400" height="300" onerror="if(!this.dataset.retried){this.dataset.retried=true;setTimeout(()=>{this.src=this.src.split('?')[0]+'?retry=1'}, 50);}" />
+                ? <img src={cardSrc(p.cover)} alt={p.displayName} class="w-full h-full object-cover motion-safe:group-hover:scale-105 motion-safe:group-active:scale-105 motion-safe:group-focus-visible:scale-105 motion-safe:group-focus-within:scale-105 transition-transform duration-500" loading="lazy" fetchpriority="low" decoding="async" width="400" height="300" onerror="if(!this.dataset.retried){this.dataset.retried=true;setTimeout(()=>{this.src=this.src.split('?')[0]+'?retry=1'}, 50);}" />
                 : <div class="w-full h-full flex items-center justify-center bg-linear-to-br from-gray-100 to-gray-200">
                     <svg class="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                   </div>
               }
-              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span class="bg-black text-white px-4 py-2 rounded-lg font-semibold text-sm flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 group-active:opacity-100 group-focus-visible:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span class="bg-black text-white px-4 py-2 rounded-lg font-semibold text-sm flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 group-active:translate-y-0 group-focus-visible:translate-y-0 group-focus-within:translate-y-0 transition-transform duration-300">
                   {viewDetails}
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -165,7 +165,7 @@ const viewAllCollections = (pt as any).viewAllCollections || 'View All Collectio
             </div>
             <div class="p-4 xl:p-5 text-center">
               {p.itemNo && <p class="text-xs xl:text-sm text-[#5D4E37] font-bold mb-1 xl:mb-2">{p.itemNo}</p>}
-              <h3 class="text-sm xl:text-base font-semibold text-gray-900 line-clamp-2 group-hover:text-[#5D4E37] transition-colors">{p.title}</h3>
+              <h3 class="text-sm xl:text-base font-semibold text-gray-900 line-clamp-2 group-hover:text-[#5D4E37] group-active:text-[#5D4E37] group-focus-visible:text-[#5D4E37] group-focus-within:text-[#5D4E37] transition-colors">{p.title}</h3>
             </div>
           </div>
         </a>

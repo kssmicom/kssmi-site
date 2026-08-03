@@ -58,7 +58,7 @@ const { items, label = 'On this page' } = Astro.props;
     transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease;
   }
 
-  .legal-toc a:hover,
+  .legal-toc a:is(:hover, :active, :focus-visible, :focus-within),
   .legal-toc a:focus-visible {
     border-inline-start-color: #8b7355;
     background: #f5f1eb;

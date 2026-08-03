@@ -34,7 +34,7 @@ const faqSchema = items.length > 0 ? {
 
 <div class="w-full max-w-3xl mx-auto space-y-4" dir={isRTL ? 'rtl' : 'ltr'}>
   {items.map(item => (
-    <details class="group bg-white border border-stone-200 rounded-lg overflow-hidden shadow-xs hover:border-[#8B7355] transition-colors duration-300">
+    <details class="group bg-white border border-stone-200 rounded-lg overflow-hidden shadow-xs hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355] transition-colors duration-300">
       <summary class="flex items-center justify-between px-5 py-4 cursor-pointer select-none font-semibold text-sm text-stone-800 group-open:text-[#5D4E37]">
         {item.question}
         <svg class="w-4 h-4 text-stone-400 group-open:rotate-180 transition-transform duration-300 shrink-0 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">

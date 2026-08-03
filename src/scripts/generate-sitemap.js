@@ -251,9 +251,9 @@ const xslContent = `<?xml version="1.0" encoding="UTF-8"?>
           table { width: 100%; border-collapse: collapse; font-size: 14px; }
           th { text-align: left; background-color: #f1f5f9; padding: 12px; font-weight: 600; color: #475569; border-bottom: 2px solid #e2e8f0; }
           td { padding: 12px; border-bottom: 1px solid #f1f5f9; }
-          tr:hover td { background-color: #f8fafc; }
+          tr:is(:hover, :active, :focus-visible, :focus-within) td { background-color: #f8fafc; }
           a { color: #2563eb; text-decoration: none; }
-          a:hover { text-decoration: underline; }
+          a:is(:hover, :active, :focus-visible, :focus-within) { text-decoration: underline; }
         </style>
       </head>
       <body>

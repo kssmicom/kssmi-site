@@ -64,7 +64,7 @@ const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
               ? basePath
               : `${basePath}/${currentPage - 1}`
           )}
-          class="flex items-center gap-1 px-2 py-1.5 sm:px-4 sm:py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+          class="flex items-center gap-1 px-2 py-1.5 sm:px-4 sm:py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 focus-within:bg-gray-50 hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355] hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] transition-colors"
           aria-label={prevLabel}
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -89,7 +89,7 @@ const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
           class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
             currentPage === 1
               ? 'bg-[#5D4E37] text-white shadow-xs'
-              : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37]'
+              : 'border border-gray-200 text-gray-600 hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 focus-within:bg-gray-50 hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355] hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37]'
           }`}
           aria-current={currentPage === 1 ? 'page' : undefined}
           aria-label="Page 1"
@@ -111,7 +111,7 @@ const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
               class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
                 p === currentPage
                   ? 'bg-[#5D4E37] text-white shadow-xs'
-                  : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37]'
+                  : 'border border-gray-200 text-gray-600 hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 focus-within:bg-gray-50 hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355] hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37]'
               }`}
             >
               {p}
@@ -130,7 +130,7 @@ const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
             class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
               currentPage === lastPage
                 ? 'bg-[#5D4E37] text-white shadow-xs'
-                : 'border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37]'
+                : 'border border-gray-200 text-gray-600 hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 focus-within:bg-gray-50 hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355] hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37]'
             }`}
             aria-current={currentPage === lastPage ? 'page' : undefined}
           >
@@ -150,7 +150,7 @@ const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
               <>
                 <a
                   href={categorySlug ? `${basePath}/${categorySlug}/${currentPage + 1}` : `${basePath}/${currentPage + 1}`}
-                  class="w-11 h-11 flex items-center justify-center rounded-sm text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+                  class="w-11 h-11 flex items-center justify-center rounded-sm text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 focus-within:bg-gray-50 hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355] hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] transition-colors"
                 >
                   {currentPage + 1}
                 </a>
@@ -159,7 +159,7 @@ const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
                 ) : currentPage + 2 === lastPage && (
                   <a
                     href={categorySlug ? `${basePath}/${categorySlug}/${currentPage + 2}` : `${basePath}/${currentPage + 2}`}
-                    class="w-11 h-11 flex items-center justify-center rounded-sm text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+                    class="w-11 h-11 flex items-center justify-center rounded-sm text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 focus-within:bg-gray-50 hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355] hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] transition-colors"
                   >
                     {currentPage + 2}
                   </a>
@@ -169,7 +169,7 @@ const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
               currentPage + 1 === lastPage && (
                 <a
                   href={categorySlug ? `${basePath}/${categorySlug}/${lastPage}` : `${basePath}/${lastPage}`}
-                  class="w-11 h-11 flex items-center justify-center rounded-sm text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+                  class="w-11 h-11 flex items-center justify-center rounded-sm text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 focus-within:bg-gray-50 hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355] hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] transition-colors"
                 >
                   {lastPage}
                 </a>
@@ -178,7 +178,7 @@ const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
             {currentPage + 1 < lastPage - 1 && (
               <a
                 href={categorySlug ? `${basePath}/${categorySlug}/${lastPage}` : `${basePath}/${lastPage}`}
-                class="w-11 h-11 flex items-center justify-center rounded-sm text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+                class="w-11 h-11 flex items-center justify-center rounded-sm text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 focus-within:bg-gray-50 hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355] hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] transition-colors"
               >
                 {lastPage}
               </a>
@@ -188,7 +188,7 @@ const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
           <>
             <a
               href={categorySlug ? `${basePath}/${categorySlug}` : basePath}
-              class="w-11 h-11 flex items-center justify-center rounded-sm text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+              class="w-11 h-11 flex items-center justify-center rounded-sm text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 focus-within:bg-gray-50 hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355] hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] transition-colors"
             >
               1
             </a>
@@ -198,7 +198,7 @@ const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
             {lastPage > 2 && (
               <a
                 href={categorySlug ? `${basePath}/${categorySlug}/${lastPage - 1}` : `${basePath}/${lastPage - 1}`}
-                class="w-11 h-11 flex items-center justify-center rounded-sm text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+                class="w-11 h-11 flex items-center justify-center rounded-sm text-xs font-medium border border-gray-200 text-gray-600 hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 focus-within:bg-gray-50 hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355] hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] transition-colors"
               >
                 {lastPage - 1}
               </a>
@@ -227,10 +227,10 @@ const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
         />
         <button
           type="button"
-          class="pagination-goto-btn group px-2 h-10 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors cursor-pointer"
+          class="pagination-goto-btn group px-2 h-10 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 focus-within:bg-gray-50 hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355] hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] transition-colors cursor-pointer"
           aria-label={goToButton}
         >
-          <svg class="w-4 h-4 transition-transform duration-200 motion-safe:group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 transition-transform duration-200 motion-safe:group-hover:scale-110 motion-safe:group-active:scale-110 motion-safe:group-focus-visible:scale-110 motion-safe:group-focus-within:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
         </button>
@@ -240,7 +240,7 @@ const goToButton = Astro.props.goToButton ?? (t?.product?.goToButton ?? 'Go');
       {currentPage < lastPage ? (
         <a
           href={nextUrl ?? (categorySlug ? `${basePath}/${categorySlug}/${currentPage + 1}` : `${basePath}/${currentPage + 1}`)}
-          class="flex items-center gap-1 px-2 py-1.5 sm:px-4 sm:py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 hover:border-[#8B7355] hover:text-[#5D4E37] transition-colors"
+          class="flex items-center gap-1 px-2 py-1.5 sm:px-4 sm:py-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 focus-within:bg-gray-50 hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355] hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] transition-colors"
           aria-label={nextLabel}
         >
           <span class="hidden sm:inline">{nextLabel}</span>

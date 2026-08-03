@@ -82,7 +82,7 @@ const isRTL = lang === 'ar';
                 <div class="mt-12">
                   <a
                     href={ctaLink || `/${currentPath}contact`}
-                    class="inline-flex items-center px-10 py-5 bg-[#5D4E37] text-white font-bold rounded-lg hover:bg-[#4A3D2E] transition-all duration-300 shadow-lg hover:shadow-xl"
+                    class="inline-flex items-center px-10 py-5 bg-[#5D4E37] text-white font-bold rounded-lg hover:bg-[#4A3D2E] active:bg-[#4A3D2E] focus-visible:bg-[#4A3D2E] focus-within:bg-[#4A3D2E] transition-all duration-300 shadow-lg hover:shadow-xl active:shadow-xl focus-visible:shadow-xl focus-within:shadow-xl"
                   >
                     {cta}
                   </a>
@@ -114,7 +114,7 @@ const isRTL = lang === 'ar';
                 <div class="mt-12">
                   <a
                     href={ctaLink || `/${currentPath}contact`}
-                    class="inline-flex items-center px-10 py-5 bg-[#5D4E37] text-white font-bold rounded-lg hover:bg-[#4A3D2E] transition-all duration-300"
+                    class="inline-flex items-center px-10 py-5 bg-[#5D4E37] text-white font-bold rounded-lg hover:bg-[#4A3D2E] active:bg-[#4A3D2E] focus-visible:bg-[#4A3D2E] focus-within:bg-[#4A3D2E] transition-all duration-300"
                   >
                     {cta}
                   </a>
@@ -128,10 +128,10 @@ const isRTL = lang === 'ar';
                   {t.footer?.quickLinksTitle || 'Quick Links'}
                 </p>
                 <ul class="space-y-4">
-                  <li><a href={`/${currentPath}product`} class="text-stone-600 hover:text-[#5D4E37] font-semibold transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-[#8B7355] opacity-0 group-hover:opacity-100 transition-opacity"></span>{t.nav.products}</a></li>
-                  <li><a href={`/${currentPath}collection`} class="text-stone-600 hover:text-[#5D4E37] font-semibold transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-[#8B7355] opacity-0 group-hover:opacity-100 transition-opacity"></span>{t.nav.collection}</a></li>
-                  <li><a href={`/${currentPath}about-us`} class="text-stone-600 hover:text-[#5D4E37] font-semibold transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-[#8B7355] opacity-0 group-hover:opacity-100 transition-opacity"></span>{t.nav.about}</a></li>
-                  <li><a href={`/${currentPath}contact`} class="text-stone-600 hover:text-[#5D4E37] font-semibold transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-[#8B7355] opacity-0 group-hover:opacity-100 transition-opacity"></span>{t.nav.contact}</a></li>
+                  <li><a href={`/${currentPath}product`} class="text-stone-600 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] font-semibold transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-[#8B7355] opacity-0 group-hover:opacity-100 group-active:opacity-100 group-focus-visible:opacity-100 group-focus-within:opacity-100 transition-opacity"></span>{t.nav.products}</a></li>
+                  <li><a href={`/${currentPath}collection`} class="text-stone-600 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] font-semibold transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-[#8B7355] opacity-0 group-hover:opacity-100 group-active:opacity-100 group-focus-visible:opacity-100 group-focus-within:opacity-100 transition-opacity"></span>{t.nav.collection}</a></li>
+                  <li><a href={`/${currentPath}about-us`} class="text-stone-600 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] font-semibold transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-[#8B7355] opacity-0 group-hover:opacity-100 group-active:opacity-100 group-focus-visible:opacity-100 group-focus-within:opacity-100 transition-opacity"></span>{t.nav.about}</a></li>
+                  <li><a href={`/${currentPath}contact`} class="text-stone-600 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] font-semibold transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-[#8B7355] opacity-0 group-hover:opacity-100 group-active:opacity-100 group-focus-visible:opacity-100 group-focus-within:opacity-100 transition-opacity"></span>{t.nav.contact}</a></li>
                 </ul>
               </div>
             </aside>

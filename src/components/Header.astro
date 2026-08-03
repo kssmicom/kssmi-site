@@ -188,7 +188,7 @@ const languageNames = {
       <a href={`/${currentPath}`} class="flex flex-col group min-w-max z-50 relative shrink-0 py-1">
         <span
           class:list={[
-            'logo-text text-2xl md:text-[32px] font-semibold tracking-[0.15em] bg-[length:200%_auto] bg-left group-hover:bg-right text-transparent bg-clip-text transition-all duration-[1000ms] ease-in-out leading-none font-Manrope',
+            'logo-text text-2xl md:text-[32px] font-semibold tracking-[0.15em] bg-[length:200%_auto] bg-left group-hover:bg-right group-active:bg-right group-focus-visible:bg-right group-focus-within:bg-right text-transparent bg-clip-text transition-all duration-[1000ms] ease-in-out leading-none font-Manrope',
             transparent
               ? 'bg-linear-to-r from-white via-white/95 to-white/90'
               : 'bg-linear-to-r from-[#32170D] via-[#B85C27] to-[#32170D]',
@@ -200,10 +200,10 @@ const languageNames = {
           <div class="w-6 flex items-center h-full">
             <span
               class:list={[
-                'logo-accent h-[1px] w-2.5 group-hover:w-full transition-all duration-[1000ms] ease-in-out',
+                'logo-accent h-[1px] w-2.5 group-hover:w-full group-active:w-full group-focus-visible:w-full group-focus-within:w-full transition-all duration-[1000ms] ease-in-out',
                 transparent
-                  ? 'bg-white/70 group-hover:bg-white'
-                  : 'bg-[#8B7355] group-hover:bg-[#2F221B]',
+                  ? 'bg-white/70 group-hover:bg-white group-active:bg-white group-focus-visible:bg-white group-focus-within:bg-white'
+                  : 'bg-[#8B7355] group-hover:bg-[#2F221B] group-active:bg-[#2F221B] group-focus-visible:bg-[#2F221B] group-focus-within:bg-[#2F221B]',
               ]}
             ></span>
           </div>
@@ -211,8 +211,8 @@ const languageNames = {
             class:list={[
               'logo-sub text-[9px] font-medium uppercase tracking-[0.2em] transition-colors duration-[1000ms] ease-in-out font-Manrope',
               transparent
-                ? 'text-white/85 group-hover:text-white'
-                : 'text-[#6B5340] group-hover:text-[#2F221B]',
+                ? 'text-white/85 group-hover:text-white group-active:text-white group-focus-visible:text-white group-focus-within:text-white'
+                : 'text-[#6B5340] group-hover:text-[#2F221B] group-active:text-[#2F221B] group-focus-visible:text-[#2F221B] group-focus-within:text-[#2F221B]',
             ]}
           >
             {eyewearText}
@@ -229,8 +229,8 @@ const languageNames = {
                  class:list={[
                    'nav-link relative inline-block font-Manrope font-bold text-xs md:text-sm uppercase tracking-wider transition-colors duration-300 px-2 xl:px-3 py-2',
                    transparent
-                     ? 'text-white/90 hover:text-amber-300'
-                     : 'text-gray-700 hover:text-[#5D4E37]',
+                     ? 'text-white/90 hover:text-amber-300 active:text-amber-300 focus-visible:text-amber-300 focus-within:text-amber-300'
+                     : 'text-gray-700 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37]',
                  ]}
                  data-mega-trigger={item.hasDropdown ? item.menuKey : undefined}
                  data-mega-base={item.hasDropdown ? item.menuBase : undefined}>
@@ -262,14 +262,14 @@ const languageNames = {
               <!-- Clear button (hidden by default) -->
               <button type="button" id="header-search-clear" class:list={[
                 'hidden px-2 transition-colors',
-                transparent ? 'text-white/60 hover:text-white' : 'text-stone-400 hover:text-stone-600',
+                transparent ? 'text-white/60 hover:text-white active:text-white focus-visible:text-white focus-within:text-white' : 'text-stone-400 hover:text-stone-600 active:text-stone-600 focus-visible:text-stone-600 focus-within:text-stone-600',
               ]} aria-label={t.nav?.ariaClearSearch || 'Clear search'}>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
               </button>
               <!-- Search button -->
               <button type="submit" id="header-search-btn" class:list={[
                 'px-2 transition-colors',
-                transparent ? 'text-white/85 hover:text-white' : 'text-stone-700 hover:text-[#5D4E37]',
+                transparent ? 'text-white/85 hover:text-white active:text-white focus-visible:text-white focus-within:text-white' : 'text-stone-700 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37]',
               ]} aria-label={t.nav?.ariaSearch || 'Search'}>
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
               </button>
@@ -278,12 +278,12 @@ const languageNames = {
           <div class="lang-dropdown-container relative group">
             <button class:list={[
               'lang-btn text-[11px] font-bold uppercase tracking-widest flex items-center gap-2 transition-colors py-2 z-50 relative',
-              transparent ? 'text-white hover:text-amber-300' : 'text-stone-900 hover:text-[#5D4E37]',
+              transparent ? 'text-white hover:text-amber-300 active:text-amber-300 focus-visible:text-amber-300 focus-within:text-amber-300' : 'text-stone-900 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37]',
             ]} aria-haspopup="true" aria-expanded="false" tabindex="0">
               {currentLangUpper}
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
             </button>
-            <div class="lang-dropdown-wrapper absolute top-full right-0 mt-2 w-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60] shadow-[0_10px_30px_rgba(0,0,0,0.25)] rounded-lg bg-[#2d2926] pointer-events-none group-hover:pointer-events-auto">
+            <div class="lang-dropdown-wrapper absolute top-full right-0 mt-2 w-40 opacity-0 invisible group-hover:opacity-100 group-active:opacity-100 group-focus-visible:opacity-100 group-focus-within:opacity-100 group-hover:visible group-active:visible group-focus-visible:visible group-focus-within:visible transition-all duration-300 z-[60] shadow-[0_10px_30px_rgba(0,0,0,0.25)] rounded-lg bg-[#2d2926] pointer-events-none group-hover:pointer-events-auto group-active:pointer-events-auto group-focus-visible:pointer-events-auto group-focus-within:pointer-events-auto">
               <!-- Invisible bridge to keep hover active -->
               <div class="absolute -top-3 left-0 w-full h-3"></div>
               <div class="lang-dropdown-menu max-h-[calc(100vh-5rem)] overflow-y-auto p-2 pb-6 flex flex-col rounded-lg">
@@ -292,7 +292,7 @@ const languageNames = {
                   // Build correct URL: /en/path or /fr/path (not /frit/path)
                   const langUrl = langCode === 'en' ? (pagePath === '/' ? '/' : pagePath) : `/${langCode}${pagePath === '/' ? '' : pagePath}`;
                   return (
-                    <a href={langUrl} class:list={['block py-2.5 px-4 text-sm font-medium transition-all duration-200 rounded-sm', isActive ? 'text-[#c9a66b] font-bold' : 'text-white/90 hover:bg-white/10 hover:text-[#c9a66b] hover:pl-6 whitespace-nowrap']}>
+                    <a href={langUrl} class:list={['block py-2.5 px-4 text-sm font-medium transition-all duration-200 rounded-sm', isActive ? 'text-[#c9a66b] font-bold' : 'text-white/90 hover:bg-white/10 active:bg-white/10 focus-visible:bg-white/10 focus-within:bg-white/10 hover:text-[#c9a66b] active:text-[#c9a66b] focus-visible:text-[#c9a66b] focus-within:text-[#c9a66b] hover:pl-6 active:pl-6 focus-visible:pl-6 focus-within:pl-6 whitespace-nowrap']}>
                       {displayName}
                     </a>
                   );
@@ -305,10 +305,10 @@ const languageNames = {
           </div>
         </div>
         <a href={`/${currentPath}quote`} class:list={[
-          'hidden sm:block px-5 xl:px-6 py-2.5 text-xs xl:text-sm font-Manrope font-bold uppercase tracking-[0.15em] active:scale-95 transition-all duration-300 rounded-xs hover:-translate-y-0.5',
+          'hidden sm:block px-5 xl:px-6 py-2.5 text-xs xl:text-sm font-Manrope font-bold uppercase tracking-[0.15em] active:scale-95 transition-all duration-300 rounded-xs hover:-translate-y-0.5 active:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-within:-translate-y-0.5',
           transparent
-            ? 'bg-white/15 backdrop-blur-md text-white border border-white/40 hover:bg-white hover:text-slate-900 shadow-lg hover:shadow-xl'
-            : 'bg-[#5D4E37] text-white hover:bg-[#4A3D2E] shadow-lg',
+            ? 'bg-white/15 backdrop-blur-md text-white border border-white/40 hover:bg-white active:bg-white focus-visible:bg-white focus-within:bg-white hover:text-slate-900 active:text-slate-900 focus-visible:text-slate-900 focus-within:text-slate-900 shadow-lg hover:shadow-xl active:shadow-xl focus-visible:shadow-xl focus-within:shadow-xl'
+            : 'bg-[#5D4E37] text-white hover:bg-[#4A3D2E] active:bg-[#4A3D2E] focus-visible:bg-[#4A3D2E] focus-within:bg-[#4A3D2E] shadow-lg',
         ]}>
           {t.cta.quote}
         </a>
@@ -318,8 +318,8 @@ const languageNames = {
           <button id="mobile-menu-button" class:list={[
             'p-2 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 transition-colors relative z-[70] cursor-pointer',
             transparent
-              ? 'text-white hover:text-amber-300 focus-visible:ring-white focus-visible:ring-offset-transparent'
-              : 'text-stone-700 hover:text-[#5D4E37] focus-visible:ring-[#8B7355] focus-visible:ring-offset-2',
+              ? 'text-white hover:text-amber-300 active:text-amber-300 focus-visible:text-amber-300 focus-within:text-amber-300 focus-visible:ring-white focus-visible:ring-offset-transparent'
+              : 'text-stone-700 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] focus-visible:ring-[#8B7355] focus-visible:ring-offset-2',
           ]} aria-label={t.nav?.ariaOpenMenu || 'Open menu'}>
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" d="M4 8h16M4 16h16" /></svg>
           </button>
@@ -338,17 +338,17 @@ const languageNames = {
 <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-[10000] p-6 overflow-y-auto" role="dialog" aria-modal="true" aria-label={t.nav?.menu || 'Menu'} dir={isRTL ? 'rtl' : 'ltr'}>
   <div class="flex justify-between items-center mb-8 sticky top-0 bg-white z-10 py-4 border-b border-gray-50">
     <span class="text-2xl font-Manrope font-bold text-[#503629]">{t.nav?.menu || 'Menu'}</span>
-    <button id="mobile-menu-close" class="p-3 bg-stone-100 rounded-full text-stone-700 hover:text-[#5D4E37] hover:bg-stone-200 transition-colors shadow-xs" aria-label={t.nav?.ariaCloseMenu || 'Close menu'}>
+    <button id="mobile-menu-close" class="p-3 bg-stone-100 rounded-full text-stone-700 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] hover:bg-stone-200 active:bg-stone-200 focus-visible:bg-stone-200 focus-within:bg-stone-200 transition-colors shadow-xs" aria-label={t.nav?.ariaCloseMenu || 'Close menu'}>
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
     </button>
   </div>
   <div class="relative mb-8">
     <form id="mobile-search" action={lang === 'en' ? '/search' : `/${lang}/search`} method="GET" class="flex items-center bg-stone-50 border border-stone-200 rounded-md focus-within:border-[#8B7355] focus-within:bg-white transition-colors">
       <input type="search" id="mobile-search-input" name="q" placeholder={searchText} aria-label={searchText} class="grow py-4 px-4 bg-transparent border-none outline-hidden text-sm font-bold text-stone-900 focus:ring-0" />
-      <button type="button" id="mobile-search-clear" class="hidden px-3 text-stone-400 hover:text-stone-600 transition-colors" aria-label={t.nav?.ariaClearSearch || 'Clear search'}>
+      <button type="button" id="mobile-search-clear" class="hidden px-3 text-stone-400 hover:text-stone-600 active:text-stone-600 focus-visible:text-stone-600 focus-within:text-stone-600 transition-colors" aria-label={t.nav?.ariaClearSearch || 'Clear search'}>
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
       </button>
-      <button type="submit" id="mobile-search-btn" class="px-4 text-stone-700 hover:text-[#5D4E37] transition-colors" aria-label={t.nav?.ariaSearch || 'Search'}>
+      <button type="submit" id="mobile-search-btn" class="px-4 text-stone-700 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] transition-colors" aria-label={t.nav?.ariaSearch || 'Search'}>
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
       </button>
     </form>
@@ -359,7 +359,7 @@ const languageNames = {
         <div class="flex items-center justify-between w-full pr-4">
           {item.hasDropdown ? (
             <>
-              <a href={item.href} class="mobile-menu-link block py-3 hover:text-[#5D4E37] transition-colors grow flex items-center font-Manrope font-bold text-lg">
+              <a href={item.href} class="mobile-menu-link block py-3 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] transition-colors grow flex items-center font-Manrope font-bold text-lg">
                 {item.label}
               </a>
               <button class="mobile-toggle-btn w-11 h-11 flex items-center justify-center text-[#5D4E37] rounded-full active:bg-stone-100 transition-all z-20 cursor-pointer" aria-label={t.nav?.ariaToggleSubmenu || 'Toggle submenu'} aria-expanded="false">
@@ -367,7 +367,7 @@ const languageNames = {
               </button>
             </>
           ) : (
-            <a href={item.href} class="mobile-menu-link block py-3 hover:text-[#5D4E37] transition-colors grow flex items-center font-Manrope font-bold text-lg">
+            <a href={item.href} class="mobile-menu-link block py-3 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] transition-colors grow flex items-center font-Manrope font-bold text-lg">
               {item.label}
             </a>
           )}
@@ -409,7 +409,7 @@ const languageNames = {
     background-color: #8B7355;
     transition: width 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
-  .nav-link:hover::after {
+  .nav-link:is(:hover, :active, :focus-visible, :focus-within)::after {
     width: 100%;
   }
 
@@ -564,7 +564,7 @@ const languageNames = {
         group.label,
         buildMenuHref(menuBase, group.slug),
         mode === 'desktop'
-          ? "font-Manrope font-bold text-xs uppercase tracking-wider text-[#5D4E37] mb-4 whitespace-nowrap hover:text-[#5D4E37] transition-colors"
+          ? "font-Manrope font-bold text-xs uppercase tracking-wider text-[#5D4E37] mb-4 whitespace-nowrap hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] transition-colors"
           : "block py-3 text-xs md:text-sm font-semibold text-[#5D4E37] font-Manrope uppercase tracking-wide"
       );
       groupElement.appendChild(groupLink);
@@ -577,8 +577,8 @@ const languageNames = {
           item.label,
           buildMenuHref(menuBase, item.slug),
           mode === 'desktop'
-            ? "font-sans text-sm font-medium text-stone-600 py-1.5 transition-all duration-200 hover:text-[#5D4E37] hover:pl-1 whitespace-nowrap"
-            : "flex items-center font-sans text-base md:text-lg font-medium text-stone-700 py-3 pl-6 transition-all duration-200 hover:text-[#5D4E37] hover:pl-8"
+            ? "font-sans text-sm font-medium text-stone-600 py-1.5 transition-all duration-200 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] hover:pl-1 active:pl-1 focus-visible:pl-1 focus-within:pl-1 whitespace-nowrap"
+            : "flex items-center font-sans text-base md:text-lg font-medium text-stone-700 py-3 pl-6 transition-all duration-200 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] hover:pl-8 active:pl-8 focus-visible:pl-8 focus-within:pl-8"
         );
         if (mode === 'mobile') {
           const arrow = document.createElement('span');
@@ -958,20 +958,20 @@ const languageNames = {
   .site-header.is-scrolled .logo-accent {
     background-color: #8B7355 !important;
   }
-  .site-header.is-scrolled:hover .logo-accent {
+  .site-header.is-scrolled:is(:hover, :active, :focus-visible, :focus-within) .logo-accent {
     background-color: #2F221B !important;
     width: 100% !important;
   }
   .site-header.is-scrolled .logo-sub {
     color: #6B5340 !important;
   }
-  .site-header.is-scrolled:hover .logo-sub {
+  .site-header.is-scrolled:is(:hover, :active, :focus-visible, :focus-within) .logo-sub {
     color: #2F221B !important;
   }
   .site-header.is-scrolled .nav-link {
     color: rgb(55 65 81) !important;
   }
-  .site-header.is-scrolled:hover .nav-link:hover {
+  .site-header.is-scrolled:is(:hover, :active, :focus-visible, :focus-within) .nav-link:is(:hover, :active, :focus-visible, :focus-within) {
     color: #5D4E37 !important;
   }
   .site-header.is-scrolled #header-search > div {
@@ -993,13 +993,13 @@ const languageNames = {
   .site-header.is-scrolled .lang-btn {
     color: rgb(28 25 23) !important;
   }
-  .site-header.is-scrolled .lang-btn:hover {
+  .site-header.is-scrolled .lang-btn:is(:hover, :active, :focus-visible, :focus-within) {
     color: #5D4E37 !important;
   }
   .site-header.is-scrolled #mobile-menu-button {
     color: rgb(68 64 60) !important;
   }
-  .site-header.is-scrolled #mobile-menu-button:hover {
+  .site-header.is-scrolled #mobile-menu-button:is(:hover, :active, :focus-visible, :focus-within) {
     color: #5D4E37 !important;
   }
   /* When scrolled, the Quote CTA flips back to brown-fill (Kssmi's brand color) */
@@ -1009,7 +1009,7 @@ const languageNames = {
     border-color: transparent !important;
     backdrop-filter: none !important;
   }
-  .site-header.is-scrolled a[href$="/quote"]:hover {
+  .site-header.is-scrolled a[href$="/quote"]:is(:hover, :active, :focus-visible, :focus-within) {
     background-color: #4A3D2E !important;
   }
 

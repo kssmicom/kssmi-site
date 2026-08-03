@@ -827,12 +827,12 @@ function resendEmail($log) {
         .login-box h2 { margin-bottom: 20px; color: #5D4E37; }
         .login-box input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 15px; font-size: 16px; }
         .login-box button { width: 100%; padding: 12px; background: #8B7355; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
-        .login-box button:hover { background: #5D4E37; }
+        .login-box button:is(:hover, :active, :focus-visible, :focus-within) { background: #5D4E37; }
         .login-box button.secondary { background: #666; margin-top: 10px; }
-        .login-box button.secondary:hover { background: #444; }
+        .login-box button.secondary:is(:hover, :active, :focus-visible, :focus-within) { background: #444; }
         .forgot-link { text-align: center; margin-top: 15px; }
         .forgot-link a { color: #8B7355; text-decoration: none; font-size: 14px; }
-        .forgot-link a:hover { text-decoration: underline; }
+        .forgot-link a:is(:hover, :active, :focus-visible, :focus-within) { text-decoration: underline; }
 
         /* Header */
         .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 8px; background: white; padding: 12px 16px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); border-left: 3px solid #8B7355; }
@@ -844,15 +844,15 @@ function resendEmail($log) {
         /* Buttons */
         .btn { padding: 6px 14px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; font-size: 12px; display: inline-block; font-weight: 500; }
         .btn-primary { background: #8B7355; color: white; }
-        .btn-primary:hover { background: #5D4E37; }
+        .btn-primary:is(:hover, :active, :focus-visible, :focus-within) { background: #5D4E37; }
         .btn-danger { background: #e74c3c; color: white; }
-        .btn-danger:hover { background: #c0392b; }
+        .btn-danger:is(:hover, :active, :focus-visible, :focus-within) { background: #c0392b; }
         .btn-secondary { background: #666; color: white; }
-        .btn-secondary:hover { background: #444; }
+        .btn-secondary:is(:hover, :active, :focus-visible, :focus-within) { background: #444; }
         .btn-success { background: #27ae60; color: white; }
-        .btn-success:hover { background: #219a52; }
+        .btn-success:is(:hover, :active, :focus-visible, :focus-within) { background: #219a52; }
         .btn-small { padding: 4px 10px; font-size: 11px; }
-        .btn:hover { opacity: 0.9; }
+        .btn:is(:hover, :active, :focus-visible, :focus-within) { opacity: 0.9; }
 
         /* Messages */
         .error { color: #e74c3c; margin-bottom: 15px; padding: 10px; background: #fdeaea; border-radius: 4px; }
@@ -861,7 +861,7 @@ function resendEmail($log) {
         /* Stats */
         .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 14px; }
         .stat-card { background: white; padding: 18px 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border-top: 3px solid #8B7355; transition: box-shadow 0.2s, transform 0.2s; display: flex; flex-direction: column; justify-content: center; height: 100%; box-sizing: border-box; }
-        .stat-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); transform: translateY(-1px); }
+        .stat-card:is(:hover, :active, :focus-visible, :focus-within) { box-shadow: 0 4px 16px rgba(0,0,0,0.1); transform: translateY(-1px); }
         .stat-card h3 { font-size: 10px; text-transform: uppercase; color: #888; margin: 0 0 6px 0; letter-spacing: 0.8px; line-height: 1.3; }
         .stat-card .value { font-size: 28px; font-weight: 700; color: #5D4E37; line-height: 1.2; }
         .stat-card .sub { font-size: 12px; color: #888; margin-top: 6px; }
@@ -880,7 +880,7 @@ function resendEmail($log) {
         table { width: 100%; border-collapse: collapse; font-size: 13px; }
         th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #eee; }
         th { background: #f8f8f8; font-weight: 600; color: #5D4E37; font-size: 10px; text-transform: uppercase; white-space: nowrap; }
-        tr:hover { background: #fafafa; }
+        tr:is(:hover, :active, :focus-visible, :focus-within) { background: #fafafa; }
         .mono { font-family: monospace; font-size: 11px; }
 
         /* Status badges */
@@ -890,7 +890,7 @@ function resendEmail($log) {
         .status-uncertain { background: #fff3cd; color: #856404; }
         .status-rejected { background: #fff3cd; color: #856404; }
         .email-link { color: #8B7355; text-decoration: none; }
-        .email-link:hover { text-decoration: underline; }
+        .email-link:is(:hover, :active, :focus-visible, :focus-within) { text-decoration: underline; }
         .time { color: #666; font-size: 12px; white-space: nowrap; }
 
         /* Modals */
@@ -917,19 +917,19 @@ function resendEmail($log) {
         .actions { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
         .url-cell { max-width: 240px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
         .url-cell a { color: #8B7355; text-decoration: none; font-size: 12px; }
-        .url-cell a:hover { text-decoration: underline; }
+        .url-cell a:is(:hover, :active, :focus-visible, :focus-within) { text-decoration: underline; }
         .country-badge { background: #e8e4df; padding: 2px 8px; border-radius: 3px; font-size: 11px; }
 
         /* Bulk actions */
         .bulk-actions { background: #5D4E37; color: white; padding: 10px 16px; border-radius: 8px; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 13px; }
         .bulk-actions .btn-danger { background: #c0392b; }
-        .bulk-actions .btn-danger:hover { background: #a93226; }
+        .bulk-actions .btn-danger:is(:hover, :active, :focus-visible, :focus-within) { background: #a93226; }
         .data-row.selected { background: #fff3cd !important; }
-        .data-row:hover { background: #f5f5f5; }
+        .data-row:is(:hover, :active, :focus-visible, :focus-within) { background: #f5f5f5; }
         tr.detail-row.show + tr.data-row, tr.data-row:has(+ tr.detail-row.show) { background: #faf9f7; }
         .reset-info { background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 4px; margin-bottom: 20px; font-size: 14px; }
         .link { color: #8B7355; text-decoration: none; }
-        .link:hover { text-decoration: underline; }
+        .link:is(:hover, :active, :focus-visible, :focus-within) { text-decoration: underline; }
 
         /* Mobile responsive */
         @media (max-width: 768px) {

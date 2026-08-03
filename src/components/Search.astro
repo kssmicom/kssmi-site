@@ -166,7 +166,7 @@ const placeholders: Record<string, string> = {
         results.forEach(({ item }) => {
           const link = document.createElement('a');
           link.href = item.url;
-          link.className = 'block p-4 hover:bg-gray-50 border-b border-gray-100 last:border-b-0 transition-colors';
+          link.className = 'block p-4 hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 focus-within:bg-gray-50 border-b border-gray-100 last:border-b-0 transition-colors';
 
           // RTL support
           const dir = lang === 'ar' ? 'rtl' : 'ltr';

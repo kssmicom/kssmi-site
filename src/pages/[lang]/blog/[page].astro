@@ -83,13 +83,13 @@ const breadcrumbItems = [
       const itemSlug = item.data.slug || item.id.split('/').pop()?.replace(/\.[a-z]{2}$/, '') || '';
       const href = `/${currentPath}blog/${itemSlug}/`;
       return (
-        <a href={href} class="group bg-white rounded-xl shadow-xs border border-stone-200/50 overflow-hidden hover:shadow-md transition-all duration-300">
+        <a href={href} class="group bg-white rounded-xl shadow-xs border border-stone-200/50 overflow-hidden hover:shadow-md active:shadow-md focus-visible:shadow-md focus-within:shadow-md transition-all duration-300">
           <div class="aspect-[4/3] overflow-hidden bg-stone-100">
-            <img src={img} alt={item.data.title || ''} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" loading={isLcpCandidate ? 'eager' : 'lazy'} decoding={isLcpCandidate ? 'sync' : 'async'} fetchpriority={isLcpCandidate ? 'high' : 'auto'} />
+            <img src={img} alt={item.data.title || ''} class="w-full h-full object-cover group-hover:scale-105 group-active:scale-105 group-focus-visible:scale-105 group-focus-within:scale-105 transition-transform duration-500" width="400" height="300" loading={isLcpCandidate ? 'eager' : 'lazy'} decoding={isLcpCandidate ? 'sync' : 'async'} fetchpriority={isLcpCandidate ? 'high' : 'auto'} />
           </div>
           <div class="p-4">
             {item.data.category && (<span class="text-[10px] font-bold text-[#8B7355] uppercase tracking-wider">{item.data.category}</span>)}
-            <h3 class="text-sm font-bold text-stone-900 mt-1 line-clamp-2 group-hover:text-[#5D4E37] transition-colors">{item.data.title}</h3>
+            <h3 class="text-sm font-bold text-stone-900 mt-1 line-clamp-2 group-hover:text-[#5D4E37] group-active:text-[#5D4E37] group-focus-visible:text-[#5D4E37] group-focus-within:text-[#5D4E37] transition-colors">{item.data.title}</h3>
             {item.data.excerpt && (<p class="text-xs text-stone-600 mt-2 line-clamp-2">{item.data.excerpt}</p>)}
           </div>
         </a>

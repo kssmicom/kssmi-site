@@ -18,7 +18,7 @@ const materials = entry?.data?.materials || [];
   <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4 lg:px-0">
     <!-- Section header -->
     <div class="text-center mb-12 md:mb-16">
-      <span class="flex items-center justify-center gap-2 text-stone-500 hover:text-amber-700 text-xs font-medium tracking-[0.2em] uppercase mb-4 transition-colors duration-300 cursor-pointer">
+      <span class="flex items-center justify-center gap-2 text-stone-500 hover:text-amber-700 active:text-amber-700 focus-visible:text-amber-700 focus-within:text-amber-700 text-xs font-medium tracking-[0.2em] uppercase mb-4 transition-colors duration-300 cursor-pointer">
         <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M12 2L2 7l10 5 10-5-10-5z"/>
           <path d="M2 17l10 5 10-5"/>
@@ -26,10 +26,10 @@ const materials = entry?.data?.materials || [];
         </svg>
         — {eyebrow} —
       </span>
-      <h2 class="text-2xl md:text-4xl font-bold text-stone-800 bg-linear-to-r from-[#32170D] via-[#B85C27] to-[#32170D] bg-[length:200%_auto] bg-right hover:bg-left text-transparent bg-clip-text transition-all duration-700 ease-in-out cursor-pointer mb-6">
+      <h2 class="text-2xl md:text-4xl font-bold text-stone-800 bg-linear-to-r from-[#32170D] via-[#B85C27] to-[#32170D] bg-[length:200%_auto] bg-right hover:bg-left active:bg-left focus-visible:bg-left focus-within:bg-left text-transparent bg-clip-text transition-all duration-700 ease-in-out cursor-pointer mb-6">
         {heading}
       </h2>
-      <p class="text-base md:text-lg text-stone-600 hover:text-[#5D4E37] leading-relaxed max-w-3xl mx-auto transition-colors duration-300 cursor-pointer">
+      <p class="text-base md:text-lg text-stone-600 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] leading-relaxed max-w-3xl mx-auto transition-colors duration-300 cursor-pointer">
         {subheading}
       </p>
     </div>
@@ -51,7 +51,7 @@ const materials = entry?.data?.materials || [];
                 height="300"
                 loading="lazy"
                 decoding="async"
-                class="w-full h-full object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-110 motion-safe:group-hover:brightness-105"
+                class="w-full h-full object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-110 motion-safe:group-active:scale-110 motion-safe:group-focus-visible:scale-110 motion-safe:group-focus-within:scale-110 motion-safe:group-hover:brightness-105 motion-safe:group-active:brightness-105 motion-safe:group-focus-visible:brightness-105 motion-safe:group-focus-within:brightness-105"
               />
             </a>
 
@@ -59,15 +59,15 @@ const materials = entry?.data?.materials || [];
             <div class="p-5 md:p-6 bg-white/70 backdrop-blur-md flex-1 flex flex-col">
               <!-- Title -->
               <a href={`${prefix}/product/?surface-finish=${m.slug}`} class="block text-center">
-                <h3 class="con-title relative text-sm md:text-base font-bold text-stone-800 group-hover:text-amber-700 transition-colors duration-300 mb-1.5 inline-block pb-2">
+                <h3 class="con-title relative text-sm md:text-base font-bold text-stone-800 group-hover:text-amber-700 group-active:text-amber-700 group-focus-visible:text-amber-700 group-focus-within:text-amber-700 transition-colors duration-300 mb-1.5 inline-block pb-2">
                   {m.name}
                   <!-- Underline -->
-                  <span class="con-underline absolute bottom-0 left-1/2 w-0 h-[1px] bg-stone-700 transition-all duration-500 group-hover:w-[70%] group-hover:-translate-x-1/2"></span>
+                  <span class="con-underline absolute bottom-0 left-1/2 w-0 h-[1px] bg-stone-700 transition-all duration-500 group-hover:w-[70%] group-active:w-[70%] group-focus-visible:w-[70%] group-focus-within:w-[70%] group-hover:-translate-x-1/2 group-active:-translate-x-1/2 group-focus-visible:-translate-x-1/2 group-focus-within:-translate-x-1/2"></span>
                 </h3>
               </a>
 
               <!-- Subtitle -->
-              <p class="text-xs md:text-sm text-stone-600 hover:text-[#5D4E37] leading-relaxed mb-5 text-center transition-colors duration-300 cursor-pointer">
+              <p class="text-xs md:text-sm text-stone-600 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] leading-relaxed mb-5 text-center transition-colors duration-300 cursor-pointer">
                 {m.subtitle}
               </p>
 
@@ -75,19 +75,19 @@ const materials = entry?.data?.materials || [];
               <ul class="space-y-2.5 flex-1">
                 {m.points?.map((point: string) => (
                   <li class="con-point group/item flex items-start gap-2 text-xs md:text-sm text-stone-600 transition-all duration-300 cursor-default">
-                    <span class="con-circle mt-0.5 w-3 h-3 rounded-full bg-gray-200/80 flex items-center justify-center mr-1 shrink-0 transition-all duration-300 group-hover/item:bg-amber-700 group-hover/item:scale-105">
-                      <svg class="w-[7px] h-[7px] text-stone-500 group-hover/item:text-white transition-all duration-300 group-hover/item:scale-105" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <span class="con-circle mt-0.5 w-3 h-3 rounded-full bg-gray-200/80 flex items-center justify-center mr-1 shrink-0 transition-all duration-300 group-hover/item:bg-amber-700 group-active/item:bg-amber-700 group-focus-visible/item:bg-amber-700 group-focus-within/item:bg-amber-700 group-hover/item:scale-105 group-active/item:scale-105 group-focus-visible/item:scale-105 group-focus-within/item:scale-105">
+                      <svg class="w-[7px] h-[7px] text-stone-500 group-hover/item:text-white group-active/item:text-white group-focus-visible/item:text-white group-focus-within/item:text-white transition-all duration-300 group-hover/item:scale-105 group-active/item:scale-105 group-focus-visible/item:scale-105 group-focus-within/item:scale-105" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
                       </svg>
                     </span>
-                    <span class="con-text leading-snug transition-colors duration-300 group-hover/item:text-amber-700 group-hover/item:font-medium">{point}</span>
+                    <span class="con-text leading-snug transition-colors duration-300 group-hover/item:text-amber-700 group-active/item:text-amber-700 group-focus-visible/item:text-amber-700 group-focus-within/item:text-amber-700 group-hover/item:font-medium group-active/item:font-medium group-focus-visible/item:font-medium group-focus-within/item:font-medium">{point}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             <!-- Bottom accent line -->
-            <div class="absolute bottom-0 left-0 right-0 h-[1px] bg-linear-to-r from-transparent via-gray-300 to-transparent group-hover:via-stone-700 transition-all duration-500"></div>
+            <div class="absolute bottom-0 left-0 right-0 h-[1px] bg-linear-to-r from-transparent via-gray-300 to-transparent group-hover:via-stone-700 group-active:via-stone-700 group-focus-visible:via-stone-700 group-focus-within:via-stone-700 transition-all duration-500"></div>
           </div>
         ))}
       </div>
@@ -105,24 +105,24 @@ const materials = entry?.data?.materials || [];
     will-change: transform, box-shadow;
   }
 
-  .con-cell:hover {
+  .con-cell:is(:hover, :active, :focus-visible, :focus-within) {
     transform: translateY(-4px);
     box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.12);
     z-index: 10;
   }
 
-  .con-point:hover .con-circle {
+  .con-point:is(:hover, :active, :focus-visible, :focus-within) .con-circle {
     background-color: #B45309;
     transform: scale(1.08) rotate(3deg);
     box-shadow: 0 0 0 1px rgba(180, 83, 9, 0.14);
   }
 
-  .con-point:hover .con-circle svg {
+  .con-point:is(:hover, :active, :focus-visible, :focus-within) .con-circle svg {
     color: #fff;
     transform: scale(1.1);
   }
 
-  .con-point:hover .con-text {
+  .con-point:is(:hover, :active, :focus-visible, :focus-within) .con-text {
     color: #B45309;
     font-weight: 500;
   }
@@ -132,11 +132,11 @@ const materials = entry?.data?.materials || [];
       animation: none;
       opacity: 1;
     }
-    .con-cell:hover {
+    .con-cell:is(:hover, :active, :focus-visible, :focus-within) {
       transform: none;
     }
-    .con-point:hover .con-circle,
-    .con-point:hover .con-circle svg {
+    .con-point:is(:hover, :active, :focus-visible, :focus-within) .con-circle,
+    .con-point:is(:hover, :active, :focus-visible, :focus-within) .con-circle svg {
       transform: none;
     }
   }

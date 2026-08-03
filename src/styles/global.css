@@ -17,6 +17,42 @@
   --font-arabic: Tahoma, Arial, sans-serif;
 }
 
+/* ─── Cross-device interaction baseline ────────────────────────────────
+   Pointer hover is only one form of feedback. Keep a strong keyboard focus
+   indicator on every native/custom control; component-level utilities may
+   refine this because :where() deliberately has zero specificity.
+   ─────────────────────────────────────────────────────────────────────── */
+:where(
+  a[href],
+  button,
+  input:not([type="hidden"]),
+  select,
+  textarea,
+  summary,
+  [role="button"],
+  [role="link"],
+  [tabindex]:not([tabindex="-1"])
+):focus-visible {
+  outline: 3px solid var(--color-brand-gold);
+  outline-offset: 3px;
+}
+
+@media (hover: none), (pointer: coarse) {
+  :where(
+    a[href],
+    button,
+    input:not([type="hidden"]),
+    select,
+    textarea,
+    summary,
+    [role="button"],
+    [role="link"]
+  ) {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgb(201 166 107 / 28%);
+  }
+}
+
 /* ─── Color Scale Convention ────────────────────────────────────────────
    Prefer `stone-*` for neutrals (warmer tone matching brand).
    `gray-*` is acceptable in components where cool neutrals are intentional.

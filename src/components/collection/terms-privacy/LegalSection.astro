@@ -96,7 +96,7 @@ const { anchor, title, Content, isFirst = false } = Astro.props;
     text-underline-offset: 0.18em;
   }
 
-  .legal-copy :global(a:hover),
+  .legal-copy :global(a:is(:hover, :active, :focus-visible, :focus-within)),
   .legal-copy :global(a:focus-visible) {
     color: #503629;
     text-decoration-color: currentColor;

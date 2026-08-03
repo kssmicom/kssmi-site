@@ -106,7 +106,7 @@ const benefits = [
         <div class="mt-7">
           <a
             href="#inquiry-form-lazy"
-            class="inline-flex items-center justify-center gap-2 bg-[#5D4E37] text-white px-7 py-3.5 rounded-lg text-sm font-bold tracking-wide shadow-md hover:bg-[#4A3D2E] active:bg-[#4a4030] transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#8B7355] focus:ring-offset-2"
+            class="inline-flex items-center justify-center gap-2 bg-[#5D4E37] text-white px-7 py-3.5 rounded-lg text-sm font-bold tracking-wide shadow-md hover:bg-[#4A3D2E] focus-visible:bg-[#4A3D2E] focus-within:bg-[#4A3D2E] active:bg-[#4a4030] transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-[#8B7355] focus:ring-offset-2"
           >
             {ctaText}
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -134,13 +134,13 @@ const benefits = [
         <div
           class:list={[
             'benefit-card group bg-[#FCFAF8] rounded-xl p-7 lg:p-8 ring-1 ring-[#8B7355]/15 motion-safe:animate-[benefitFadeInUp_0.5s_ease-out_both]',
-            'text-start shadow-sm hover:-translate-y-1 hover:shadow-lg hover:bg-white hover:ring-[#8B7355]/30 transition-all duration-300 ease-out',
+            'text-start shadow-sm hover:-translate-y-1 active:-translate-y-1 focus-visible:-translate-y-1 focus-within:-translate-y-1 hover:shadow-lg active:shadow-lg focus-visible:shadow-lg focus-within:shadow-lg hover:bg-white active:bg-white focus-visible:bg-white focus-within:bg-white hover:ring-[#8B7355]/30 active:ring-[#8B7355]/30 focus-visible:ring-[#8B7355]/30 focus-within:ring-[#8B7355]/30 transition-all duration-300 ease-out',
           ]}
           style={`animation-delay: ${0.1 + i * 0.08}s`}
         >
           <div class="flex items-center justify-between mb-6">
-            <div class="w-12 h-12 bg-white ring-1 ring-[#8B7355]/15 rounded-xl flex items-center justify-center shadow-xs group-hover:bg-[#4A3D2E]/5 group-hover:ring-[#8B7355]/30 transition-colors duration-300">
-              <svg class="w-6 h-6 text-[#5D4E37] group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <div class="w-12 h-12 bg-white ring-1 ring-[#8B7355]/15 rounded-xl flex items-center justify-center shadow-xs group-hover:bg-[#4A3D2E]/5 group-active:bg-[#4A3D2E]/5 group-focus-visible:bg-[#4A3D2E]/5 group-focus-within:bg-[#4A3D2E]/5 group-hover:ring-[#8B7355]/30 group-active:ring-[#8B7355]/30 group-focus-visible:ring-[#8B7355]/30 group-focus-within:ring-[#8B7355]/30 transition-colors duration-300">
+              <svg class="w-6 h-6 text-[#5D4E37] group-hover:scale-110 group-active:scale-110 group-focus-visible:scale-110 group-focus-within:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d={benefit.iconPath} />
               </svg>
             </div>

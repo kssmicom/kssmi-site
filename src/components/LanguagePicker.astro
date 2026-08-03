@@ -33,7 +33,7 @@ const currentLanguage = languages.find(l => l.code === lang) || languages[0];
 <language-picker class="relative inline-block text-left z-50">
   <button
     type="button"
-    class="inline-flex w-full items-center justify-between gap-x-2 rounded-lg bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-xs ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:ring-2 focus:ring-[#8B7355] focus:outline-hidden transition-all duration-200 min-w-[140px]"
+    class="inline-flex w-full items-center justify-between gap-x-2 rounded-lg bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-xs ring-1 ring-inset ring-gray-300 hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 focus-within:bg-gray-50 focus:ring-2 focus:ring-[#8B7355] focus:outline-hidden transition-all duration-200 min-w-[140px]"
     aria-expanded="false"
     aria-haspopup="true"
   >
@@ -65,13 +65,13 @@ const currentLanguage = languages.find(l => l.code === lang) || languages[0];
             class={`group flex items-center justify-between px-4 py-2.5 text-sm transition-colors ${
               isSelected 
                 ? 'bg-[#8B7355]/5 text-[#5D4E37] font-semibold' 
-                : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+                : 'text-gray-700 hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 focus-within:bg-gray-50 hover:text-gray-900 active:text-gray-900 focus-visible:text-gray-900 focus-within:text-gray-900'
             }`}
             role="menuitem"
           >
             <div class="flex items-center gap-3">
               <span class={`flex h-6 w-6 items-center justify-center rounded-full text-[10px] font-bold transition-colors border ${
-                isSelected ? 'bg-[#5D4E37] text-white border-[#8B7355]' : 'bg-gray-50 text-gray-600 border-gray-200 group-hover:bg-white'
+                isSelected ? 'bg-[#5D4E37] text-white border-[#8B7355]' : 'bg-gray-50 text-gray-600 border-gray-200 group-hover:bg-white group-active:bg-white group-focus-visible:bg-white group-focus-within:bg-white'
               }`}>
                 {l.flag}
               </span>

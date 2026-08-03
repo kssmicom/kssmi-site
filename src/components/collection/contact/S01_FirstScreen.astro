@@ -50,14 +50,14 @@ const langPrefix = lang === 'en' ? '' : `/${lang}`;
       <p class="text-lg text-stone-600 mb-3 font-medium">{underConstruction}</p>
     )}
     <p class="text-base text-stone-600 mb-10 max-w-md mx-auto">
-      {messageBefore}<a href="mailto:sales@kssmi.com" data-vjt-contact="mailto" data-vjt-placement="contact-hero-email" class="text-[#5D4E37] font-semibold hover:underline">sales#kssmi.com</a>{messageAfter}
+      {messageBefore}<a href="mailto:sales@kssmi.com" data-vjt-contact="mailto" data-vjt-placement="contact-hero-email" class="text-[#5D4E37] font-semibold hover:underline active:underline focus-visible:underline focus-within:underline">sales#kssmi.com</a>{messageAfter}
     </p>
 
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href={`${langPrefix}/quote/`} class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#4A3D2E] transition-colors duration-300 shadow-lg">
+      <a href={`${langPrefix}/quote/`} class="inline-flex items-center px-8 py-3 bg-[#5D4E37] text-white font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#4A3D2E] active:bg-[#4A3D2E] focus-visible:bg-[#4A3D2E] focus-within:bg-[#4A3D2E] transition-colors duration-300 shadow-lg">
         {requestQuote}
       </a>
-      <a href={`${langPrefix}/product/`} class="inline-flex items-center px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#5D4E37] hover:text-white transition-all duration-300">
+      <a href={`${langPrefix}/product/`} class="inline-flex items-center px-8 py-3 border-2 border-[#5D4E37] text-[#5D4E37] font-bold uppercase tracking-wider text-xs rounded-full hover:bg-[#5D4E37] active:bg-[#5D4E37] focus-visible:bg-[#5D4E37] focus-within:bg-[#5D4E37] hover:text-white active:text-white focus-visible:text-white focus-within:text-white transition-all duration-300">
         {browseProducts}
       </a>
     </div>
