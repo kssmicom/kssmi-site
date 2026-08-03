@@ -1,7 +1,7 @@
 export default {
     thankyou: {
       title: "Matur Nuwun!",
-      subtitle: "Penyelakon Sampeyan Uwis Kita Tampa",
+      subtitle: "Panjaluk sampeyan wis ditampa — ngobrol karo kami liwat WhatsApp ing ndhuwur.",
       message: "Matur nuwun dhumateng pitakon sampeyan ing Kssmi Eyewear. Tim kami bakal mriksa detail proyek sampeyan lan mbaleni wektu 24 jam.",
       inquiryId: "ID Panjaluk Sampeyan",
       nextSteps: "Langkah-langkah Lanjut?",
@@ -107,7 +107,7 @@ export default {
         additional: "Sampel kustom padha tambahan",
         additionalDescription: "Desain lan spesifikasi padha, dipesen bebarengan karo sampel kustom pisanan.",
         piece: "pcs",
-        priceContext: "Ragad sampel B2B — dudu rega saben unit kanggo pesenan grosir.",
+        priceContext: "Ragad sampel kanggo validasi proyek kustom sampeyan, dudu rega eceran utawa produksi massal.",
         creditNote: "Ragad kanggo loro sampel bakal dikreditake kanthi lengkap ing pesenan grosir kanggo model sing padha.",
         creditEmphasis: "dikreditake kanthi lengkap",
         disclaimer: "Pangiriman lan pajak diitung kapisah. Rega produksi massal ditawakake kapisah."
@@ -120,6 +120,13 @@ export default {
       moq: "Tiyangan Panjaluk",
       backToCatalog: "Menyang Produk",
       kssmiCollection: "Kssmi Kacamata Kustomisasi Pabrik Koleksi",
+      customizationPositioning: "Iki model referensi kanggo proyek merek pribadi sampeyan, dudu produk eceran. Miwiti saka model iki lan kustomisasi bahan, warna, lensa, logo, lan spesifikasi sing dipilih.",
+      customizeModel: "Kustomisasi kanggo merek sampeyan",
+      browseReferenceModels: "Deleng model liyane",
+      referenceModelStart: "Miwiti saka model referensi iki.",
+      referenceModelStartDetail: "Selarasake bahan, warna, lensa, logo, lan spesifikasi sing dipilih.",
+      ownDesignStart: "Kembangake saka gagasan sampeyan dhewe.",
+      ownDesignStartDetail: "Kirim sketsa, foto, sampel, utawa gambar teknis.",
       technicalData: "Sarat Teknisi",
       specificationProfile: "Spesifikasi Teknis",
       status: "Setatus",
@@ -194,7 +201,7 @@ export default {
       // Product card
       viewDetails: "Deleng Rincian",
       customizable: "Bisa Dicocokake",
-      customizableBadge: "Bisa Dicocokake",
+        customizableBadge: "Siap kanggo merek pribadi",
       previousPage: "Sadurunge",
       nextPage: "Sabanjuré",
       listingSeoDescription: "Jelajahi {count} produk kacamata premium saka Kssmi — manufaktur khusus OEM/ODM kanggo merek lan pengecer global.",

@@ -21,12 +21,12 @@ const [creditBefore, creditAfter = ''] = labels.creditNote.split(labels.creditEm
   <span class="min-w-0 break-words text-sm font-medium text-gray-900">{formatSamplePrice(samplePricing.customMin)}–{formatSamplePrice(samplePricing.customMax)}/{labels.piece}</span>
 </div>
 <div class="flex items-start gap-2 hover:bg-stone-100 active:bg-stone-100 focus-visible:bg-stone-100 focus-within:bg-stone-100 -mx-3 px-3 py-1 rounded-sm transition-colors cursor-default">
-  <span class="text-sm font-medium text-gray-900">
+  <span class="text-sm text-gray-900">
     {labels.priceContext}
   </span>
 </div>
 <div class="flex items-start gap-2 hover:bg-stone-100 active:bg-stone-100 focus-visible:bg-stone-100 focus-within:bg-stone-100 -mx-3 px-3 py-1 rounded-sm transition-colors cursor-default">
-  <span class="text-sm font-medium text-gray-900">
+  <span class="text-sm text-gray-900">
     {creditBefore}<strong class="font-bold">{labels.creditEmphasis}</strong>{creditAfter}
   </span>
 </div>

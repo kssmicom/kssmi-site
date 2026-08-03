@@ -1,7 +1,7 @@
 export default {
     thankyou: {
       title: "Terima Kasih!",
-      subtitle: "Pertanyaan anda telah diterima",
+      subtitle: "Pertanyaan diterima — berbual dengan kami di WhatsApp di atas.",
       message: "Kami menghargai minat anda terhadap Kssmi. Pasukan kami akan menyemak butiran projek anda dan menghubungi anda dalam masa 24 jam.",
       inquiryId: "ID Pertanyaan Anda",
       nextSteps: "Apa yang berlaku seterusnya?",
@@ -107,7 +107,7 @@ export default {
         additional: "Sampel tersuai serupa tambahan",
         additionalDescription: "Reka bentuk dan spesifikasi yang sama, ditempah bersama sampel tersuai pertama.",
         piece: "unit",
-        priceContext: "Yuran sampel B2B — bukan harga unit pesanan pukal.",
+        priceContext: "Yuran sampel untuk mengesahkan projek tersuai anda, bukan harga runcit atau pengeluaran pukal.",
         creditNote: "Kedua-dua yuran sampel akan dikreditkan sepenuhnya kepada pesanan pukal anda untuk model yang sama.",
         creditEmphasis: "dikreditkan sepenuhnya",
         disclaimer: "Penghantaran dan cukai disebut secara berasingan. Harga pengeluaran pukal disebut secara berasingan."
@@ -120,6 +120,13 @@ export default {
       moq: "Kuantiti Pesanan Minimum",
       backToCatalog: "Kembali ke Katalog",
       kssmiCollection: "Kssmi Cermin Mata Penyesuaian Pengilang Koleksi",
+      customizationPositioning: "Ini ialah model rujukan untuk projek jenama peribadi anda, bukan produk runcit. Mulakan daripada model ini dan sesuaikan bahan, warna, kanta, logo dan spesifikasi terpilih.",
+      customizeModel: "Sesuaikan untuk jenama anda",
+      browseReferenceModels: "Lihat lebih banyak model",
+      referenceModelStart: "Mulakan dengan model rujukan ini.",
+      referenceModelStartDetail: "Sesuaikan bahan, warna, kanta, logo dan spesifikasi terpilih.",
+      ownDesignStart: "Bangunkan daripada idea anda sendiri.",
+      ownDesignStartDetail: "Hantar lakaran, foto, sampel atau lukisan teknikal.",
       technicalData: "Data Teknikal",
       specificationProfile: "Spesifikasi Teknikal",
       status: "Status",
@@ -197,7 +204,7 @@ export default {
       // Product card
       viewDetails: "Lihat Butiran",
       customizable: "Boleh Suai",
-      customizableBadge: "Boleh Suai",
+        customizableBadge: "Sedia untuk jenama peribadi",
       previousPage: "Sebelumnya",
       nextPage: "Seterusnya",
       listingSeoDescription: "Layari {count} produk cermin mata premium daripada Kssmi — pembuatan tersuai OEM/ODM untuk jenama dan peruncit global.",

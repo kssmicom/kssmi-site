@@ -1,7 +1,7 @@
 export default {
     thankyou: {
       title: "Grazie!",
-      subtitle: "La tua richiesta è stata ricevuta",
+      subtitle: "Richiesta ricevuta: chatta con noi su WhatsApp qui sopra.",
       message: "Apprezziamo il tuo interesse per Kssmi. Il nostro team esaminerà i dettagli del tuo progetto e ti contatterà entro 24 ore.",
       inquiryId: "ID della tua richiesta",
       nextSteps: "Cosa succede dopo?",
@@ -107,7 +107,7 @@ export default {
         additional: "Campione personalizzato identico aggiuntivo",
         additionalDescription: "Stesso design e specifiche, ordinato insieme al primo campione personalizzato.",
         piece: "pz",
-        priceContext: "Tariffe campione B2B — non prezzi unitari per ordini all’ingrosso.",
+        priceContext: "Costi del campione per validare il vostro progetto personalizzato — non prezzi al dettaglio o di produzione in serie.",
         creditNote: "Entrambi i costi dei campioni vengono interamente accreditati sul suo ordine all’ingrosso dello stesso modello.",
         creditEmphasis: "interamente accreditati",
         disclaimer: "Spedizione e tasse sono quotate separatamente. Il prezzo della produzione in serie è quotato separatamente."
@@ -120,6 +120,13 @@ export default {
       moq: "Ordine Minimo",
       backToCatalog: "Torna al Catalogo",
       kssmiCollection: "Kssmi Collezione Personalizzazione Occhiali Produttore",
+      customizationPositioning: "Questo è un modello di riferimento per il vostro progetto private label, non un prodotto al dettaglio. Partite da questo modello e personalizzate materiali, colori, lenti, logo e specifiche selezionate.",
+      customizeModel: "Personalizza per il tuo brand",
+      browseReferenceModels: "Esplora altri modelli",
+      referenceModelStart: "Parti da questo modello di riferimento.",
+      referenceModelStartDetail: "Adatta materiali, colori, lenti, logo e specifiche selezionate.",
+      ownDesignStart: "Sviluppa dalla tua idea.",
+      ownDesignStartDetail: "Invia uno schizzo, una foto, un campione o un disegno tecnico.",
       technicalData: "Dati Tecnici",
       specificationProfile: "Specifiche Tecniche",
       status: "Stato",
@@ -197,7 +204,7 @@ export default {
       // Product card
       viewDetails: "Vedi Dettagli",
       customizable: "Personalizzabile",
-      customizableBadge: "Personalizzabile",
+        customizableBadge: "Pronto per private label",
       previousPage: "Precedente",
       nextPage: "Successivo",
       listingSeoDescription: "Sfoglia {count} prodotti di occhialeria premium di Kssmi — produzione personalizzata OEM/ODM per marchi e rivenditori globali.",

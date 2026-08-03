@@ -878,6 +878,83 @@ This email was automatically generated from the KSSMI Eyewear contact form.
 ";
 }
 
+/**
+ * Build the short, plain-text confirmation that is sent to an inquiry sender.
+ * It deliberately excludes internal IDs and product references so the reply
+ * reads as a simple conversation starter in every site language.
+ */
+function buildInquiryAutoReply($data) {
+    $translations = [
+        'en' => ['subject' => 'We received your inquiry — Kssmi Eyewear', 'greeting' => 'Hello {name},', 'received' => 'We have received your inquiry. Reply directly to this email to continue the conversation, or chat with us on WhatsApp:', 'follow_up' => 'Our team will follow up within one business day.', 'signoff' => 'Best regards,', 'team' => 'Kssmi Eyewear Team'],
+        'it' => ['subject' => 'Abbiamo ricevuto la tua richiesta — Kssmi Eyewear', 'greeting' => 'Ciao {name},', 'received' => 'Abbiamo ricevuto la tua richiesta. Rispondi direttamente a questa email per continuare la conversazione oppure contattaci su WhatsApp:', 'follow_up' => 'Il nostro team ti risponderà entro un giorno lavorativo.', 'signoff' => 'Cordiali saluti,', 'team' => 'Team Kssmi Eyewear'],
+        'es' => ['subject' => 'Hemos recibido su consulta — Kssmi Eyewear', 'greeting' => 'Hola {name},', 'received' => 'Hemos recibido su consulta. Responda directamente a este correo para continuar la conversación o escríbanos por WhatsApp:', 'follow_up' => 'Nuestro equipo responderá en un día laborable.', 'signoff' => 'Saludos cordiales,', 'team' => 'Equipo Kssmi Eyewear'],
+        'fr' => ['subject' => 'Nous avons reçu votre demande — Kssmi Eyewear', 'greeting' => 'Bonjour {name},', 'received' => 'Nous avons reçu votre demande. Répondez directement à cet e-mail pour poursuivre la conversation, ou contactez-nous sur WhatsApp :', 'follow_up' => 'Notre équipe vous répondra sous un jour ouvré.', 'signoff' => 'Cordialement,', 'team' => 'Équipe Kssmi Eyewear'],
+        'de' => ['subject' => 'Wir haben Ihre Anfrage erhalten — Kssmi Eyewear', 'greeting' => 'Hallo {name},', 'received' => 'Wir haben Ihre Anfrage erhalten. Antworten Sie direkt auf diese E-Mail, um das Gespräch fortzusetzen, oder schreiben Sie uns über WhatsApp:', 'follow_up' => 'Unser Team meldet sich innerhalb eines Werktags.', 'signoff' => 'Freundliche Grüße,', 'team' => 'Kssmi Eyewear Team'],
+        'pt' => ['subject' => 'Recebemos a sua solicitação — Kssmi Eyewear', 'greeting' => 'Olá {name},', 'received' => 'Recebemos a sua solicitação. Responda diretamente a este e-mail para continuar a conversa ou fale connosco pelo WhatsApp:', 'follow_up' => 'A nossa equipa responderá dentro de um dia útil.', 'signoff' => 'Com os melhores cumprimentos,', 'team' => 'Equipa Kssmi Eyewear'],
+        'ru' => ['subject' => 'Мы получили ваш запрос — Kssmi Eyewear', 'greeting' => 'Здравствуйте, {name},', 'received' => 'Мы получили ваш запрос. Ответьте прямо на это письмо, чтобы продолжить общение, или напишите нам в WhatsApp:', 'follow_up' => 'Наша команда ответит в течение одного рабочего дня.', 'signoff' => 'С уважением,', 'team' => 'Команда Kssmi Eyewear'],
+        'ja' => ['subject' => 'お問い合わせを受け付けました — Kssmi Eyewear', 'greeting' => '{name} 様', 'received' => 'お問い合わせを受け付けました。このメールに直接返信するか、WhatsAppでお問い合わせください。', 'follow_up' => '担当チームが1営業日以内にご連絡します。', 'signoff' => 'よろしくお願いいたします。', 'team' => 'Kssmi Eyewear チーム'],
+        'tr' => ['subject' => 'Talebinizi aldık — Kssmi Eyewear', 'greeting' => 'Merhaba {name},', 'received' => 'Talebinizi aldık. Görüşmeye devam etmek için bu e-postayı doğrudan yanıtlayın veya WhatsApp üzerinden bize yazın:', 'follow_up' => 'Ekibimiz bir iş günü içinde size dönüş yapacaktır.', 'signoff' => 'Saygılarımızla,', 'team' => 'Kssmi Eyewear Ekibi'],
+        'ar' => ['subject' => 'لقد تلقينا استفسارك — Kssmi Eyewear', 'greeting' => 'مرحباً {name}،', 'received' => 'لقد تلقينا استفسارك. يمكنك الرد مباشرةً على هذا البريد لمتابعة المحادثة أو مراسلتنا عبر واتساب:', 'follow_up' => 'سيتابع فريقنا معك خلال يوم عمل واحد.', 'signoff' => 'مع أطيب التحيات،', 'team' => 'فريق Kssmi Eyewear'],
+        'ko' => ['subject' => '문의가 접수되었습니다 — Kssmi Eyewear', 'greeting' => '{name}님, 안녕하세요.', 'received' => '문의가 접수되었습니다. 대화를 계속하려면 이 이메일에 직접 회신하거나 WhatsApp으로 문의해 주세요:', 'follow_up' => '저희 팀이 영업일 기준 1일 이내에 연락드리겠습니다.', 'signoff' => '감사합니다.', 'team' => 'Kssmi Eyewear 팀'],
+        'zh' => ['subject' => '我们已收到您的询盘 — Kssmi Eyewear', 'greeting' => '{name}，您好：', 'received' => '我们已收到您的询盘。您可以直接回复此邮件继续沟通，或通过 WhatsApp 联系我们：', 'follow_up' => '我们的团队将在一个工作日内跟进。', 'signoff' => '此致，', 'team' => 'Kssmi Eyewear 团队'],
+        'hi' => ['subject' => 'हमें आपकी पूछताछ मिल गई है — Kssmi Eyewear', 'greeting' => 'नमस्ते {name},', 'received' => 'हमें आपकी पूछताछ मिल गई है। बातचीत जारी रखने के लिए इस ईमेल का सीधे उत्तर दें या WhatsApp पर हमें संदेश भेजें:', 'follow_up' => 'हमारी टीम एक कार्य दिवस के भीतर आपसे संपर्क करेगी।', 'signoff' => 'सादर,', 'team' => 'Kssmi Eyewear टीम'],
+        'vi' => ['subject' => 'Chúng tôi đã nhận được yêu cầu của bạn — Kssmi Eyewear', 'greeting' => 'Xin chào {name},', 'received' => 'Chúng tôi đã nhận được yêu cầu của bạn. Hãy trả lời trực tiếp email này để tiếp tục trao đổi hoặc nhắn cho chúng tôi qua WhatsApp:', 'follow_up' => 'Đội ngũ của chúng tôi sẽ phản hồi trong một ngày làm việc.', 'signoff' => 'Trân trọng,', 'team' => 'Đội ngũ Kssmi Eyewear'],
+        'jv' => ['subject' => 'Panjaluk sampeyan wis ditampa — Kssmi Eyewear', 'greeting' => 'Halo {name},', 'received' => 'Panjaluk sampeyan wis ditampa. Wangsulana email iki langsung kanggo nerusake obrolan utawa hubungi kami liwat WhatsApp:', 'follow_up' => 'Tim kami bakal nanggapi sajrone siji dina kerja.', 'signoff' => 'Salam,', 'team' => 'Tim Kssmi Eyewear'],
+        'ms' => ['subject' => 'Kami telah menerima pertanyaan anda — Kssmi Eyewear', 'greeting' => 'Helo {name},', 'received' => 'Kami telah menerima pertanyaan anda. Balas terus e-mel ini untuk meneruskan perbualan atau hubungi kami melalui WhatsApp:', 'follow_up' => 'Pasukan kami akan menghubungi anda dalam satu hari bekerja.', 'signoff' => 'Salam hormat,', 'team' => 'Pasukan Kssmi Eyewear'],
+        'tg' => ['subject' => 'Мо дархости шуморо қабул кардем — Kssmi Eyewear', 'greeting' => 'Салом {name},', 'received' => 'Мо дархости шуморо қабул кардем. Барои идомаи суҳбат ба ин нома мустақиман ҷавоб диҳед ё тавассути WhatsApp ба мо нависед:', 'follow_up' => 'Гурӯҳи мо дар давоми як рӯзи корӣ бо шумо тамос мегирад.', 'signoff' => 'Бо эҳтиром,', 'team' => 'Гурӯҳи Kssmi Eyewear'],
+    ];
+
+    $language = $data['language'] ?? 'en';
+    $copy = $translations[$language] ?? $translations['en'];
+    $name = trim((string)preg_replace('/[\r\n]+/u', ' ', (string)($data['name'] ?? '')));
+    $greeting = str_replace('{name}', $name !== '' ? $name : 'there', $copy['greeting']);
+
+    return [
+        'subject' => $copy['subject'],
+        'body' => implode("\n", [
+            $greeting,
+            '',
+            $copy['received'],
+            'https://wa.me/8613510532553',
+            '',
+            $copy['follow_up'],
+            '',
+            $copy['signoff'],
+            $copy['team'],
+            'sales@kssmi.com',
+        ]),
+        'recipient_name' => $name,
+    ];
+}
+
+/** Send a best-effort plain-text confirmation without affecting the inquiry outcome. */
+function sendInquiryAutoReply($config, $data) {
+    $reply = buildInquiryAutoReply($data);
+    $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
+    $mail->isSMTP();
+    $mail->Host = $config['smtp']['host'];
+    $mail->SMTPAuth = true;
+    $mail->Username = $config['smtp']['user'];
+    $mail->Password = $config['smtp']['pass'];
+    $mail->SMTPSecure = $config['smtp']['secure'];
+    $mail->Port = $config['smtp']['port'];
+    $mail->CharSet = 'UTF-8';
+    $mail->Timeout = 15;
+    $mail->setFrom($config['from_email'], $config['from_name']);
+    $mail->addAddress($data['email'], $reply['recipient_name']);
+    $mail->addCC('sales@kssmi.com', 'Kssmi Eyewear Team');
+    $mail->addReplyTo('sales@kssmi.com', 'Kssmi Eyewear Team');
+    $mail->addCustomHeader('Auto-Submitted', 'auto-replied');
+    $mail->addCustomHeader('X-Auto-Response-Suppress', 'All');
+    $mail->isHTML(false);
+    $mail->Subject = $reply['subject'];
+    $mail->Body = $reply['body'];
+
+    if (!$mail->send()) {
+        throw new \RuntimeException('SMTP auto-reply send returned false');
+    }
+}
+
 // ============================================
 // MAIN PROCESSING
 // ============================================
@@ -1098,6 +1175,14 @@ try {
 
     // Record to VJT database
     recordInquiryOutcome($config, array_merge($formData, $vjtData), 'success', $visitorIP, $visitorCountry);
+
+    // The confirmation is intentionally best-effort: an SMTP issue here must
+    // never turn a delivered inquiry into a failed form submission.
+    try {
+        sendInquiryAutoReply($config, $formData);
+    } catch (Throwable $autoReplyError) {
+        error_log('KSSMI inquiry auto-reply failed: ' . $autoReplyError->getMessage());
+    }
 
     // Determine redirect URL based on language
     $lang = $formData['language'] ?? 'en';

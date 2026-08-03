@@ -1,7 +1,7 @@
 export default {
     thankyou: {
       title: "Teşekkürler!",
-      subtitle: "Talebiniz alındı",
+      subtitle: "Talebiniz alındı — yukarıdaki WhatsApp'tan hemen sohbet edin.",
       message: "Kssmi'e gösterdiğiniz ilgi için teşekkür ederiz. Ekibimiz proje detaylarınızı inceleyecek ve 24 saat içinde sizinle iletişime geçecektir.",
       inquiryId: "Talep ID'niz",
       nextSteps: "Sırada ne var?",
@@ -114,7 +114,7 @@ export default {
         additional: "Ek aynı özel numune",
         additionalDescription: "İlk özel numuneyle aynı tasarım ve özelliklerde birlikte sipariş edilir.",
         piece: "adet",
-        priceContext: "B2B numune ücretleridir — toplu sipariş birim fiyatları değildir.",
+        priceContext: "Özel projenizi doğrulamak için numune ücretleridir; perakende veya seri üretim fiyatları değildir.",
         creditNote: "Her iki numune ücreti, aynı model için vereceğiniz toplu siparişten tamamen düşülür.",
         creditEmphasis: "tamamen düşülür",
         disclaimer: "Nakliye ve vergiler ayrıca fiyatlandırılır. Seri üretim fiyatı ayrıca teklif edilir."
@@ -127,6 +127,13 @@ export default {
       moq: "Minimum Sipariş",
       backToCatalog: "Kataloğa Dön",
       kssmiCollection: "Kssmi Gözlük Özelleştirme Üretici Koleksiyon",
+      customizationPositioning: "Bu, private-label projeniz için bir referans modeldir; perakende ürünü değildir. Bu modelden başlayarak malzeme, renk, lens, logo ve seçili özellikleri özelleştirebilirsiniz.",
+      customizeModel: "Markanız için özelleştirin",
+      browseReferenceModels: "Daha fazla model görün",
+      referenceModelStart: "Bu referans modelle başlayın.",
+      referenceModelStartDetail: "Seçili malzeme, renk, lens, logo ve özellikleri uyarlayın.",
+      ownDesignStart: "Kendi fikrinizden geliştirin.",
+      ownDesignStartDetail: "Eskiz, fotoğraf, numune veya teknik çizim gönderin.",
       technicalData: "Teknik Veriler",
       specificationProfile: "Teknik Özellikler",
       status: "Durum",
@@ -204,7 +211,7 @@ export default {
       // Product card
       viewDetails: "Detayları Gör",
       customizable: "Kişiselleştirilebilir",
-      customizableBadge: "Kişiselleştirilebilir",
+        customizableBadge: "Private label için hazır",
       previousPage: "Önceki",
       nextPage: "Sonraki",
       listingSeoDescription: "Kssmi'nin {count} premium gözlük ürününü inceleyin — küresel markalar ve perakendeciler için OEM/ODM özel üretim.",

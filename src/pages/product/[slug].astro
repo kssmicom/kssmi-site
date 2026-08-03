@@ -377,6 +377,9 @@ if (type === 'product' && product) {
               <p class="text-sm text-[#5D4E37] font-medium mb-2 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] transition-colors duration-200">- {pt.kssmiCollection}</p>
             )}
             <h1 class="text-lg lg:text-xl font-bold mb-6 text-gray-900">{productDisplayName}</h1>
+            <p class="text-sm font-medium text-gray-900 mb-6">
+              {pt.customizationPositioning}
+            </p>
 
             <div class="border-y border-gray-200 py-6 mb-6 space-y-3">
               {itemNo && (
@@ -410,17 +413,16 @@ if (type === 'product' && product) {
 
             <div class="flex flex-wrap gap-4 mb-8">
               <a href="#inquiry-form-lazy" class="flex-1 min-w-[200px] bg-[#5D4E37] text-white px-6 py-4 rounded-lg font-semibold hover:bg-[#4A3D2E] focus-visible:bg-[#4A3D2E] focus-within:bg-[#4A3D2E] active:bg-[#4a4030] transition-colors duration-200 text-center flex items-center justify-center gap-2">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                {t.cta.quote} for {itemNo}
+                {pt.customizeModel || 'Customize for Your Brand'}
               </a>
               <a href={`/${currentPath}product`} class="flex-1 min-w-[200px] border-2 border-[#8B7355] text-[#5D4E37] px-6 py-4 rounded-lg font-semibold hover:bg-[#4A3D2E] active:bg-[#4A3D2E] focus-visible:bg-[#4A3D2E] focus-within:bg-[#4A3D2E] hover:text-white active:text-white focus-visible:text-white focus-within:text-white transition-colors duration-200 text-center flex items-center justify-center gap-2">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                </svg>
-                {pt.backToCatalog}
+                {pt.browseReferenceModels || pt.backToCatalog}
               </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-900">
+              <p class="border-s border-gray-300 ps-3"><span class="font-medium">{pt.referenceModelStart} </span>{pt.referenceModelStartDetail}</p>
+              <p class="border-s border-gray-300 ps-3"><span class="font-medium">{pt.ownDesignStart} </span>{pt.ownDesignStartDetail}</p>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 export default {
     thankyou: {
       title: "Cảm ơn bạn!",
-      subtitle: "Yêu cầu của bạn đã được nhận",
+      subtitle: "Đã nhận yêu cầu — trò chuyện với chúng tôi qua WhatsApp ở trên.",
       message: "Chúng tôi đánh giá cao sự quan tâm của bạn đối với Kssmi. Đội ngũ của chúng tôi sẽ xem xét chi tiết dự án của bạn và phản hồi trong vòng 24 giờ.",
       inquiryId: "ID Yêu cầu của bạn",
       nextSteps: "Điều gì xảy ra tiếp theo?",
@@ -107,7 +107,7 @@ export default {
         additional: "Mẫu tùy chỉnh giống hệt bổ sung",
         additionalDescription: "Cùng thiết kế và thông số, đặt cùng với mẫu tùy chỉnh đầu tiên.",
         piece: "cái",
-        priceContext: "Phí mẫu B2B — không phải đơn giá sản xuất số lượng lớn.",
+        priceContext: "Phí mẫu để xác nhận dự án tùy chỉnh của bạn, không phải giá bán lẻ hoặc giá sản xuất hàng loạt.",
         creditNote: "Cả hai khoản phí mẫu đều được khấu trừ toàn bộ vào đơn hàng số lượng lớn của cùng mẫu.",
         creditEmphasis: "được khấu trừ toàn bộ",
         disclaimer: "Phí vận chuyển và thuế được báo riêng. Giá sản xuất số lượng lớn được báo riêng."
@@ -120,6 +120,13 @@ export default {
       moq: "Số lượng Đặt hàng Tối thiểu",
       backToCatalog: "Trở lại Danh mục",
       kssmiCollection: "Kssmi Kính mát Tùy chỉnh theo yêu cầu Nhà sản xuất Bộ sưu tập",
+      customizationPositioning: "Đây là mẫu tham khảo cho dự án thương hiệu riêng của bạn, không phải sản phẩm bán lẻ. Hãy bắt đầu từ mẫu này và tùy chỉnh vật liệu, màu sắc, tròng kính, logo và các thông số đã chọn.",
+      customizeModel: "Tùy chỉnh cho thương hiệu của bạn",
+      browseReferenceModels: "Xem thêm mẫu",
+      referenceModelStart: "Bắt đầu từ mẫu tham khảo này.",
+      referenceModelStartDetail: "Điều chỉnh vật liệu, màu sắc, tròng kính, logo và thông số đã chọn.",
+      ownDesignStart: "Phát triển từ ý tưởng của riêng bạn.",
+      ownDesignStartDetail: "Gửi phác thảo, ảnh, mẫu hoặc bản vẽ kỹ thuật.",
       technicalData: "Dữ liệu Kỹ thuật",
       specificationProfile: "Thông số Kỹ thuật",
       status: "Trạng thái",
@@ -194,7 +201,7 @@ export default {
       // Product card
       viewDetails: "Xem Chi Tiết",
       customizable: "Có thể tùy chỉnh",
-      customizableBadge: "Có thể tùy chỉnh",
+        customizableBadge: "Sẵn sàng cho thương hiệu riêng",
       previousPage: "Trước",
       nextPage: "Tiếp theo",
       listingSeoDescription: "Duyệt {count} sản phẩm kính mắt cao cấp từ Kssmi — sản xuất tùy chỉnh OEM/ODM cho các thương hiệu và nhà bán lẻ toàn cầu.",

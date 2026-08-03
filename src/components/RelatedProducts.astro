@@ -83,6 +83,8 @@ const candidateProducts = allProducts
     ));
     const materials = materialFamilies(tags);
     const materialText = String(p.data.materials || '').trim().toLowerCase();
+    const sameProductType = currentTypes.size === 0 || matchingCount(currentTypes, types) > 0;
+    const sameMaterialFamily = currentMaterials.size === 0 || matchingCount(currentMaterials, materials) > 0;
 
     // Product type is the strongest signal. Material and specific series then
     // refine the result; positioning is deliberately only a small tie-breaker.
@@ -107,8 +109,13 @@ const candidateProducts = allProducts
       cover: p.data.cover || null,
       itemNo,
       score,
+      sameProductType,
+      sameMaterialFamily,
     };
   })
+  // Keep client-side rotation within the same product type and material
+  // family. The prior scoring only made these products rank first.
+  .filter(p => p.sameProductType && p.sameMaterialFamily)
   .sort((a, b) =>
     b.score - a.score ||
     stableCompare(a.itemNo || a.slug, b.itemNo || b.slug) ||
@@ -124,7 +131,7 @@ const relatedSeries = (pt as any).relatedSeries || 'Related Series';
 const viewAllCollections = (pt as any).viewAllCollections || 'View All Collections';
 ---
 
-<section class="py-16 lg:py-24 bg-white border-t border-stone-100 contain-below-fold" dir={isRTL ? 'rtl' : 'ltr'}>
+<section class="py-8 lg:py-12 bg-white border-t border-stone-100 contain-below-fold" dir={isRTL ? 'rtl' : 'ltr'}>
   <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-10">
       <h2 class="font-Playfair text-[24px] lg:text-[30px] font-bold text-stone-900 leading-tight">
@@ -141,7 +148,7 @@ const viewAllCollections = (pt as any).viewAllCollections || 'View All Collectio
       </a>
     </div>
 
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8" data-related-products>
       {selected.map((p) => (
         <a href={`/${currentPath}product/${p.slug}`} class="group block">
           <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl active:shadow-xl focus-visible:shadow-xl focus-within:shadow-xl transition-all duration-300">
@@ -171,6 +178,159 @@ const viewAllCollections = (pt as any).viewAllCollections || 'View All Collectio
         </a>
       ))}
     </div>
+    <script
+      type="application/json"
+      data-related-products-data
+      set:html={JSON.stringify({
+        storageKey: `related-products:${lang}:${currentProductId}`,
+        currentPath,
+        viewDetails,
+        candidates: candidateProducts.map(({ slug, title, displayName, cover, itemNo }) => ({
+          slug,
+          title,
+          displayName,
+          cover: cover ? cardSrc(cover) : null,
+          itemNo,
+        })),
+      }).replace(/</g, '\\u003c')}
+    ></script>
   </div>
 </section>
 
+<script>
+  type RelatedProduct = {
+    slug: string;
+    title: string;
+    displayName: string;
+    cover: string | null;
+    itemNo: string;
+  };
+
+  type RelatedProductsPayload = {
+    storageKey: string;
+    currentPath: string;
+    viewDetails: string;
+    candidates: RelatedProduct[];
+  };
+
+  const relatedProductData = document.querySelector<HTMLScriptElement>('[data-related-products-data]');
+
+  if (relatedProductData?.textContent) {
+    const payload = JSON.parse(relatedProductData.textContent) as RelatedProductsPayload;
+    const grid = relatedProductData.parentElement?.querySelector<HTMLElement>('[data-related-products]');
+
+    const randomIndex = (limit: number) => {
+      if (globalThis.crypto?.getRandomValues) {
+        const value = new Uint32Array(1);
+        globalThis.crypto.getRandomValues(value);
+        return Math.floor((value[0] / 0x100000000) * limit);
+      }
+      return Math.floor(Math.random() * limit);
+    };
+
+    const previousSelection = () => {
+      try {
+        const saved = JSON.parse(sessionStorage.getItem(payload.storageKey) || '[]');
+        return Array.isArray(saved) ? new Set(saved.filter((slug): slug is string => typeof slug === 'string')) : new Set<string>();
+      } catch {
+        return new Set<string>();
+      }
+    };
+
+    const chooseProducts = () => {
+      const previous = previousSelection();
+      // With a normal product pool, avoid every card shown on the prior visit.
+      // If a category is very small, gracefully fall back to the full pool.
+      const pool = payload.candidates.filter(product => !previous.has(product.slug));
+      const source = pool.length >= 4 ? pool : payload.candidates;
+      const shuffled = [...source];
+
+      for (let index = shuffled.length - 1; index > 0; index -= 1) {
+        const swapIndex = randomIndex(index + 1);
+        [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+      }
+
+      return shuffled.slice(0, 4);
+    };
+
+    const svg = (path: string, extraClass = '') => {
+      const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      icon.setAttribute('class', extraClass);
+      icon.setAttribute('fill', 'none');
+      icon.setAttribute('stroke', 'currentColor');
+      icon.setAttribute('viewBox', '0 0 24 24');
+      const iconPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      iconPath.setAttribute('stroke-linecap', 'round');
+      iconPath.setAttribute('stroke-linejoin', 'round');
+      iconPath.setAttribute('stroke-width', '2');
+      iconPath.setAttribute('d', path);
+      icon.append(iconPath);
+      return icon;
+    };
+
+    const createCard = (product: RelatedProduct) => {
+      const link = document.createElement('a');
+      link.href = `/${payload.currentPath}product/${product.slug}`;
+      link.className = 'group block';
+
+      const card = document.createElement('div');
+      card.className = 'bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl active:shadow-xl focus-visible:shadow-xl focus-within:shadow-xl transition-all duration-300';
+      const media = document.createElement('div');
+      media.className = 'relative aspect-[4/3] overflow-hidden bg-gray-100';
+
+      if (product.cover) {
+        const image = document.createElement('img');
+        image.src = product.cover;
+        image.alt = product.displayName;
+        image.className = 'w-full h-full object-cover motion-safe:group-hover:scale-105 motion-safe:group-active:scale-105 motion-safe:group-focus-visible:scale-105 motion-safe:group-focus-within:scale-105 transition-transform duration-500';
+        image.loading = 'lazy';
+        image.decoding = 'async';
+        image.width = 400;
+        image.height = 300;
+        media.append(image);
+      }
+
+      const overlay = document.createElement('div');
+      overlay.className = 'absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 group-active:opacity-100 group-focus-visible:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 flex items-center justify-center';
+      const action = document.createElement('span');
+      action.className = 'bg-black text-white px-4 py-2 rounded-lg font-semibold text-sm flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 group-active:translate-y-0 group-focus-visible:translate-y-0 group-focus-within:translate-y-0 transition-transform duration-300';
+      action.textContent = `${payload.viewDetails} `;
+      action.append(svg('M9 5l7 7-7 7', 'w-4 h-4'));
+      overlay.append(action);
+      media.append(overlay);
+
+      const details = document.createElement('div');
+      details.className = 'p-4 xl:p-5 text-center';
+      if (product.itemNo) {
+        const itemNo = document.createElement('p');
+        itemNo.className = 'text-xs xl:text-sm text-[#5D4E37] font-bold mb-1 xl:mb-2';
+        itemNo.textContent = product.itemNo;
+        details.append(itemNo);
+      }
+      const title = document.createElement('h3');
+      title.className = 'text-sm xl:text-base font-semibold text-gray-900 line-clamp-2 group-hover:text-[#5D4E37] group-active:text-[#5D4E37] group-focus-visible:text-[#5D4E37] group-focus-within:text-[#5D4E37] transition-colors';
+      title.textContent = product.title;
+      details.append(title);
+
+      card.append(media, details);
+      link.append(card);
+      return link;
+    };
+
+    const redraw = () => {
+      if (!grid) return;
+      const products = chooseProducts();
+      grid.replaceChildren(...products.map(createCard));
+      try {
+        sessionStorage.setItem(payload.storageKey, JSON.stringify(products.map(product => product.slug)));
+      } catch {
+        // Private browsing may deny session storage; random selection still works.
+      }
+    };
+
+    redraw();
+    addEventListener('pageshow', event => {
+      if (event.persisted) redraw();
+    });
+  }
+</script>

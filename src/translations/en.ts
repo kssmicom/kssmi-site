@@ -1,7 +1,7 @@
 export default {
     thankyou: {
       title: "Thank You!",
-      subtitle: "Your inquiry has been received",
+      subtitle: "Inquiry received — chat with us on WhatsApp above.",
       message: "We appreciate your interest in Kssmi. Our team will review your project details and get back to you within 24 hours.",
       inquiryId: "Your Inquiry ID",
       nextSteps: "What happens next?",
@@ -122,7 +122,7 @@ export default {
         additional: "Additional identical custom sample",
         additionalDescription: "Same design and specifications, ordered with the first custom sample.",
         piece: "PCS",
-        priceContext: "B2B sample fees — not bulk unit prices.",
+        priceContext: "Sample fees for validating your custom project — not retail or bulk product prices.",
         creditNote: "Both sample fees are fully credited toward your bulk order for the same model.",
         creditEmphasis: "fully credited",
         disclaimer: "Shipping and taxes are quoted separately. Bulk production pricing is quoted separately."
@@ -136,6 +136,13 @@ export default {
       moq: "MOQ",
       backToCatalog: "Back to Catalog",
       kssmiCollection: "Kssmi Eyewear Manufacturer Customization Collection",
+      customizationPositioning: "This is a reference model for your private-label project — not a retail product. Start from this model and customize materials, colors, lenses, logo and selected specifications for your market.",
+      customizeModel: "Customize for Your Brand",
+      browseReferenceModels: "Browse More Models",
+      referenceModelStart: "Start from this reference model.",
+      referenceModelStartDetail: "Adapt selected materials, colors, lenses, logo and specifications.",
+      ownDesignStart: "Develop from your own idea.",
+      ownDesignStartDetail: "Send a sketch, photo, sample or technical drawing.",
       // Technical Specifications
       technicalData: "Technical Data",
       specificationProfile: "Technical Specifications",
@@ -217,7 +224,7 @@ export default {
       // Product card
       viewDetails: "View Details",
       customizable: "Customizable",
-      customizableBadge: "Customizable",
+        customizableBadge: "Private-Label Ready",
       previousPage: "Previous",
       nextPage: "Next",
       listingSeoDescription: "Browse {count} premium eyewear products from Kssmi — OEM/ODM custom manufacturing for global brands and retailers.",

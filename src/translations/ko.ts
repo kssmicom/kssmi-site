@@ -1,7 +1,7 @@
 export default {
     thankyou: {
       title: "감사합니다!",
-      subtitle: "문의가 접수되었습니다",
+      subtitle: "문의가 접수되었습니다. 위의 WhatsApp으로 바로 상담하세요.",
       message: "Kssmi에 관심을 가져주셔서 감사합니다. 양사 팀이 귀하의 프로젝트 세부 정보를 검토하고 24시간 이내에 연락드릴 것입니다.",
       inquiryId: "문의 ID",
       nextSteps: "다음 단계 제안",
@@ -107,7 +107,7 @@ export default {
         additional: "동일 맞춤 샘플 추가",
         additionalDescription: "첫 맞춤 샘플과 동일한 디자인 및 사양으로 함께 주문합니다.",
         piece: "개",
-        priceContext: "B2B 샘플 비용이며, 대량 주문 단가가 아닙니다.",
+        priceContext: "맞춤 프로젝트 검증을 위한 샘플 비용이며, 소매가나 양산 가격이 아닙니다.",
         creditNote: "두 가지 샘플 비용은 동일 모델의 대량 주문 시 전액 차감됩니다.",
         creditEmphasis: "전액 차감",
         disclaimer: "배송비와 세금은 별도 견적이며, 대량 생산 가격도 별도로 견적합니다."
@@ -120,6 +120,13 @@ export default {
       moq: "최소 주문 수량",
       backToCatalog: "카탈로그로 돌아가기",
       kssmiCollection: "Kssmi 안경 맞춤 서비스 제조업체 컬렉션",
+      customizationPositioning: "이 제품은 자체 브랜드 프로젝트를 위한 레퍼런스 모델이며 소매 제품이 아닙니다. 이 모델을 기반으로 소재, 색상, 렌즈, 로고 및 선택 사양을 맞춤 제작할 수 있습니다.",
+      customizeModel: "브랜드를 위해 맞춤 제작",
+      browseReferenceModels: "더 많은 모델 보기",
+      referenceModelStart: "이 레퍼런스 모델부터 시작하세요.",
+      referenceModelStartDetail: "선택한 소재, 색상, 렌즈, 로고 및 사양을 조정합니다.",
+      ownDesignStart: "나만의 아이디어로 개발하세요.",
+      ownDesignStartDetail: "스케치, 사진, 샘플 또는 기술 도면을 보내주세요.",
       technicalData: "기술 데이터",
       specificationProfile: "기술 사양",
       status: "상태",
@@ -197,7 +204,7 @@ export default {
       // Product card
       viewDetails: "상세 보기",
       customizable: "맞춤 가능",
-      customizableBadge: "맞춤 가능",
+        customizableBadge: "자체 브랜드 제작 가능",
       previousPage: "이전",
       nextPage: "다음",
       listingSeoDescription: "Kssmi의 프리미엄 안경 제품 {count}개를 둘러보세요 — 글로벌 브랜드 및 리테일러를 위한 OEM/ODM 맞춤 제작.",

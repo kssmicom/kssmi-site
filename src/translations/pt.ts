@@ -1,7 +1,7 @@
 export default {
     thankyou: {
       title: "Obrigado!",
-      subtitle: "Sua solicitação foi recebida",
+      subtitle: "Pedido recebido: fale connosco no WhatsApp acima.",
       message: "Agradecemos seu interesse na Kssmi. Nossa equipe revisará os detalhes do seu projeto e entrará em contato em até 24 horas.",
       inquiryId: "ID da sua solicitação",
       nextSteps: "O que acontece depois?",
@@ -114,7 +114,7 @@ export default {
         additional: "Amostra personalizada idêntica adicional",
         additionalDescription: "Mesmo design e especificações, encomendada com a primeira amostra personalizada.",
         piece: "un.",
-        priceContext: "Taxas de amostra B2B — não são preços unitários para pedidos em quantidade.",
+        priceContext: "Taxas de amostra para validar o seu projeto personalizado — não são preços de retalho ou produção em série.",
         creditNote: "Ambas as taxas de amostra são integralmente creditadas no seu pedido em quantidade do mesmo modelo.",
         creditEmphasis: "integralmente creditadas",
         disclaimer: "Frete e impostos são cotados separadamente. O preço da produção em escala é cotado separadamente."
@@ -127,6 +127,13 @@ export default {
       moq: "Quantidade Mínima",
       backToCatalog: "Voltar ao Catálogo",
       kssmiCollection: "Kssmi Óculos Personalização Fabricante Coleção",
+      customizationPositioning: "Este é um modelo de referência para o seu projeto de marca própria, não um produto de retalho. Comece por este modelo e personalize materiais, cores, lentes, logótipo e especificações selecionadas.",
+      customizeModel: "Personalize para a sua marca",
+      browseReferenceModels: "Ver mais modelos",
+      referenceModelStart: "Comece por este modelo de referência.",
+      referenceModelStartDetail: "Adapte materiais, cores, lentes, logótipo e especificações selecionadas.",
+      ownDesignStart: "Desenvolva a partir da sua ideia.",
+      ownDesignStartDetail: "Envie um esboço, fotografia, amostra ou desenho técnico.",
       technicalData: "Dados Técnicos",
       specificationProfile: "Especificações Técnicas",
       status: "Status",
@@ -204,7 +211,7 @@ export default {
       // Product card
       viewDetails: "Ver Detalhes",
       customizable: "Personalizável",
-      customizableBadge: "Personalizável",
+        customizableBadge: "Pronto para marca própria",
       previousPage: "Anterior",
       nextPage: "Próximo",
       listingSeoDescription: "Navegue por {count} produtos de óculos premium da Kssmi — fabricação personalizada OEM/ODM para marcas e varejistas globais.",

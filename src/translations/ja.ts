@@ -1,7 +1,7 @@
 export default {
     thankyou: {
       title: "ありがとうございます！",
-      subtitle: "お問い合わせを受け付けました",
+      subtitle: "お問い合わせを受け付けました。上のWhatsAppからすぐご相談ください。",
       message: "Kssmiにご関心をお寄せいただき、誠にありがとうございます。担当チームがプロジェクトの詳細を確認し、24時間以内にご連絡いたします。",
       inquiryId: "お問い合わせID",
       nextSteps: "次のステップ",
@@ -114,7 +114,7 @@ export default {
         additional: "同仕様の追加カスタムサンプル",
         additionalDescription: "最初のカスタムサンプルと同じデザイン・仕様で同時に注文します。",
         piece: "点",
-        priceContext: "B2Bサンプル料金です。量産時の単価ではありません。",
+        priceContext: "カスタムプロジェクト確認のためのサンプル料金であり、小売価格や量産価格ではありません。",
         creditNote: "両方のサンプル料金は、同一モデルの量産注文時に全額充当されます。",
         creditEmphasis: "全額充当",
         disclaimer: "送料と税金は別途お見積りします。量産価格も別途お見積りします。"
@@ -127,6 +127,13 @@ export default {
       moq: "最小ロット",
       backToCatalog: "カタログに戻る",
       kssmiCollection: "Kssmi アイウェア カスタマイズ対応 メーカー コレクション",
+      customizationPositioning: "これはプライベートブランドプロジェクト向けの参考モデルであり、小売商品ではありません。このモデルを起点に、素材、カラー、レンズ、ロゴ、仕様をカスタマイズできます。",
+      customizeModel: "ブランド向けにカスタマイズ",
+      browseReferenceModels: "他のモデルを見る",
+      referenceModelStart: "この参考モデルから始める。",
+      referenceModelStartDetail: "素材、カラー、レンズ、ロゴ、仕様を選んで調整できます。",
+      ownDesignStart: "独自のアイデアから開発する。",
+      ownDesignStartDetail: "スケッチ、写真、サンプル、技術図面をお送りください。",
       technicalData: "技術データ",
       specificationProfile: "技術仕様",
       status: "ステータス",
@@ -204,7 +211,7 @@ export default {
       // Product card
       viewDetails: "詳細を見る",
       customizable: "カスタマイズ可能",
-      customizableBadge: "カスタマイズ可能",
+        customizableBadge: "プライベートブランド対応",
       previousPage: "前へ",
       nextPage: "次へ",
       listingSeoDescription: "Kssmiのプレミアムアイウェア製品{count}点をご覧ください — グローバルブランドおよび小売業者向けOEM/ODMカスタム製造。",

@@ -1,7 +1,7 @@
 export default {
     thankyou: {
       title: "Danke!",
-      subtitle: "Ihre Anfrage wurde erhalten",
+      subtitle: "Anfrage erhalten – chatten Sie oben über WhatsApp mit uns.",
       message: "Wir schätzen Ihr Interesse an Kssmi. Unser Team wird Ihre Projektdetails prüfen und Sie innerhalb von 24 Stunden kontaktieren.",
       inquiryId: "Ihre Anfragen-ID",
       nextSteps: "Was passiert als Nächstes?",
@@ -114,7 +114,7 @@ export default {
         additional: "Zusätzliches identisches Sondermuster",
         additionalDescription: "Gleiches Design und gleiche Spezifikationen, zusammen mit dem ersten Sondermuster bestellt.",
         piece: "Stk.",
-        priceContext: "B2B-Mustergebühren — keine Stückpreise für Großbestellungen.",
+        priceContext: "Mustergebühren zur Validierung Ihres individuellen Projekts — keine Einzelhandels- oder Serienpreise.",
         creditNote: "Beide Mustergebühren werden bei Ihrer Großbestellung desselben Modells vollständig angerechnet.",
         creditEmphasis: "vollständig angerechnet",
         disclaimer: "Versand und Steuern werden separat berechnet. Preise für die Serienproduktion werden separat angeboten."
@@ -127,6 +127,13 @@ export default {
       moq: "Mindestbestellmenge",
       backToCatalog: "Zurück zum Katalog",
       kssmiCollection: "Kssmi Brillen Individualisierung Hersteller Kollektion",
+      customizationPositioning: "Dies ist ein Referenzmodell für Ihr Private-Label-Projekt, kein Einzelhandelsprodukt. Nutzen Sie dieses Modell als Ausgangspunkt und passen Sie Materialien, Farben, Gläser, Logo und ausgewählte Spezifikationen an.",
+      customizeModel: "Für Ihre Marke individualisieren",
+      browseReferenceModels: "Weitere Modelle ansehen",
+      referenceModelStart: "Mit diesem Referenzmodell starten.",
+      referenceModelStartDetail: "Ausgewählte Materialien, Farben, Gläser, Logo und Spezifikationen anpassen.",
+      ownDesignStart: "Mit Ihrer eigenen Idee entwickeln.",
+      ownDesignStartDetail: "Senden Sie eine Skizze, ein Foto, Muster oder eine technische Zeichnung.",
       technicalData: "Technische Daten",
       specificationProfile: "Technische Spezifikationen",
       status: "Status",
@@ -204,7 +211,7 @@ export default {
       // Product card
       viewDetails: "Details Anzeigen",
       customizable: "Anpassbar",
-      customizableBadge: "Anpassbar",
+        customizableBadge: "Private-Label-bereit",
       previousPage: "Zurück",
       nextPage: "Weiter",
       listingSeoDescription: "Durchsuchen Sie {count} Premium-Brillenprodukte von Kssmi — OEM/ODM-Sonderanfertigung für globale Marken und Händler.",

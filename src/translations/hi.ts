@@ -1,7 +1,7 @@
 export default {
     thankyou: {
       title: "धन्यवाद!",
-      subtitle: "आपकी पूछताछ प्राप्त हो गई है",
+      subtitle: "आपकी पूछताछ प्राप्त हो गई है — ऊपर WhatsApp पर अभी बात करें।",
       message: "Kssmi में आपकी रुचि के लिए धन्यवाद। हमारी टीम आपके प्रोजेक्ट विवरण की समीक्षा करेगी और 24 घंटों के भीतर आपसे संपर्क करेगी।",
       inquiryId: "आपकी पूछताछ आईडी",
       nextSteps: "आगे क्या होगा?",
@@ -107,7 +107,7 @@ export default {
         additional: "अतिरिक्त समान कस्टम नमूना",
         additionalDescription: "समान डिज़ाइन और विनिर्देश, पहले कस्टम नमूने के साथ ऑर्डर किया गया।",
         piece: "पीस",
-        priceContext: "B2B नमूना शुल्क — थोक ऑर्डर की प्रति-इकाई कीमत नहीं।",
+        priceContext: "आपकी कस्टम परियोजना के सत्यापन के लिए नमूना शुल्क — खुदरा या बड़े उत्पादन की कीमत नहीं।",
         creditNote: "दोनों सैंपल शुल्क उसी मॉडल के आपके थोक ऑर्डर में पूरी तरह समायोजित किए जाते हैं।",
         creditEmphasis: "पूरी तरह समायोजित",
         disclaimer: "शिपिंग और कर अलग से उद्धृत किए जाते हैं। थोक उत्पादन मूल्य अलग से उद्धृत किया जाता है।"
@@ -120,6 +120,13 @@ export default {
       moq: "MOQ",
       backToCatalog: "कैटलॉग पर वापस",
       kssmiCollection: "Kssmi चश्मा कस्टमाइज़ेशन निर्माता संग्रह",
+      customizationPositioning: "यह आपके प्राइवेट-लेबल प्रोजेक्ट के लिए एक संदर्भ मॉडल है, खुदरा उत्पाद नहीं। इस मॉडल से शुरू करके सामग्री, रंग, लेंस, लोगो और चुने गए विनिर्देश अनुकूलित करें।",
+      customizeModel: "अपने ब्रांड के लिए कस्टमाइज़ करें",
+      browseReferenceModels: "और मॉडल देखें",
+      referenceModelStart: "इस संदर्भ मॉडल से शुरू करें।",
+      referenceModelStartDetail: "चुनी हुई सामग्री, रंग, लेंस, लोगो और विनिर्देश अनुकूलित करें।",
+      ownDesignStart: "अपने विचार से विकसित करें।",
+      ownDesignStartDetail: "स्केच, फोटो, नमूना या तकनीकी ड्राइंग भेजें।",
       technicalData: "तकनीकी डेटा",
       specificationProfile: "तकनीकी विशिष्टताएँ",
       status: "स्थिति",
@@ -197,7 +204,7 @@ export default {
       // Product card
       viewDetails: "विवरण देखें",
       customizable: "कस्टमाइज़ेबल",
-      customizableBadge: "कस्टमाइज़ेबल",
+        customizableBadge: "प्राइवेट लेबल के लिए तैयार",
       previousPage: "पिछला",
       nextPage: "अगला",
       listingSeoDescription: "Kssmi के {count} प्रीमियम आईवियर उत्पाद देखें — वैश्विक ब्रांडों और रिटेलर्स के लिए OEM/ODM कस्टम निर्माण।",

@@ -1,7 +1,7 @@
 export default {
     thankyou: {
       title: "شكراً لك!",
-      subtitle: "تم استلام استفسارك",
+      subtitle: "تم استلام استفسارك — تواصل معنا فوراً عبر واتساب أعلاه.",
       message: "نقدر اهتمامك بـ Kssmi. سيقوم فريقنا بمراجعة تفاصيل مشروعك والتواصل معك خلال 24 ساعة.",
       inquiryId: "رقم الاستفسار",
       nextSteps: "ماذا يحدث بعد؟",
@@ -107,7 +107,7 @@ export default {
         additional: "عينة مخصصة إضافية مطابقة",
         additionalDescription: "بنفس التصميم والمواصفات، وتُطلب مع العينة المخصصة الأولى.",
         piece: "قطعة",
-        priceContext: "رسوم عينات B2B — وليست أسعار الوحدة للإنتاج بالجملة.",
+        priceContext: "رسوم عينات للتحقق من مشروعك المخصص، وليست أسعار بيع بالتجزئة أو إنتاج كمي.",
         creditNote: "يتم احتساب رسوم كلا النموذجين بالكامل كرصيد في طلب الإنتاج بالجملة للطراز نفسه.",
         creditEmphasis: "بالكامل كرصيد",
         disclaimer: "يتم احتساب الشحن والضرائب بشكل منفصل، كما يتم تسعير الإنتاج بالجملة بشكل منفصل."
@@ -120,6 +120,13 @@ export default {
       moq: "الحد الأدنى للطلب",
       backToCatalog: "العودة للكتالوج",
       kssmiCollection: "مجموعة Kssmi لتصنيع النظارات المخصصة",
+      customizationPositioning: "هذا نموذج مرجعي لمشروع علامتك التجارية الخاصة، وليس منتجاً للبيع بالتجزئة. ابدأ من هذا النموذج وخصص المواد والألوان والعدسات والشعار والمواصفات المختارة.",
+      customizeModel: "خصص لعلامتك التجارية",
+      browseReferenceModels: "استعرض المزيد من النماذج",
+      referenceModelStart: "ابدأ من هذا النموذج المرجعي.",
+      referenceModelStartDetail: "عدّل المواد والألوان والعدسات والشعار والمواصفات المختارة.",
+      ownDesignStart: "طوّر انطلاقاً من فكرتك الخاصة.",
+      ownDesignStartDetail: "أرسل رسماً أو صورة أو عينة أو مخططاً تقنياً.",
       technicalData: "البيانات الفنية",
       specificationProfile: "المواصفات الفنية",
       status: "الحالة",
@@ -197,7 +204,7 @@ export default {
       // Product card
       viewDetails: "عرض التفاصيل",
       customizable: "قابل للتخصيص",
-      customizableBadge: "قابل للتخصيص",
+        customizableBadge: "جاهز للعلامة الخاصة",
       previousPage: "السابق",
       nextPage: "التالي",
       listingSeoDescription: "تصفح {count} منتج نظارات فاخرة من Kssmi — تصنيع مخصص OEM/ODM للعلامات التجارية وتجار التجزئة العالميين.",

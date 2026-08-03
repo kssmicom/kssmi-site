@@ -1,7 +1,7 @@
 export default {
     thankyou: {
       title: "Merci!",
-      subtitle: "Votre demande a été reçue",
+      subtitle: "Demande reçue : discutez avec nous sur WhatsApp ci-dessus.",
       message: "Nous apprécions votre intérêt pour Kssmi. Notre équipe examinera les détails de votre projet et vous contactera dans les 24 heures.",
       inquiryId: "ID de votre demande",
       nextSteps: "Que se passe-t-il ensuite?",
@@ -114,7 +114,7 @@ export default {
         additional: "Échantillon personnalisé identique supplémentaire",
         additionalDescription: "Même design et mêmes spécifications, commandé avec le premier échantillon personnalisé.",
         piece: "pièce",
-        priceContext: "Frais d’échantillon B2B — pas des prix unitaires de gros.",
+        priceContext: "Frais d’échantillon pour valider votre projet sur mesure, et non prix de détail ou de production en série.",
         creditNote: "Les deux frais d’échantillon sont intégralement déduits de votre commande en gros du même modèle.",
         creditEmphasis: "intégralement déduits",
         disclaimer: "L’expédition et les taxes sont calculées séparément. Le prix de la production en série est établi séparément."
@@ -127,6 +127,13 @@ export default {
       moq: "Quantité minimale de commande",
       backToCatalog: "Retour au Catalogue",
       kssmiCollection: "Kssmi Lunettes Personnalisation Fabricant Collection",
+      customizationPositioning: "Ce modèle est une référence pour votre projet de marque privée, et non un produit de détail. Partez de ce modèle et personnalisez les matériaux, couleurs, verres, logo et spécifications choisies.",
+      customizeModel: "Personnalisez pour votre marque",
+      browseReferenceModels: "Voir plus de modèles",
+      referenceModelStart: "Partez de ce modèle de référence.",
+      referenceModelStartDetail: "Adaptez matériaux, couleurs, verres, logo et spécifications choisies.",
+      ownDesignStart: "Développez votre propre idée.",
+      ownDesignStartDetail: "Envoyez un croquis, une photo, un échantillon ou un dessin technique.",
       technicalData: "Données Techniques",
       specificationProfile: "Spécifications Techniques",
       status: "Statut",
@@ -204,7 +211,7 @@ export default {
       // Product card
       viewDetails: "Voir les Détails",
       customizable: "Personnalisable",
-      customizableBadge: "Personnalisable",
+        customizableBadge: "Prêt pour marque privée",
       previousPage: "Précédent",
       nextPage: "Suivant",
       listingSeoDescription: "Parcourez {count} produits de lunetterie premium de Kssmi — fabrication personnalisée OEM/ODM pour les marques et détaillants mondiaux.",

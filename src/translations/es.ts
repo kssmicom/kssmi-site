@@ -1,7 +1,7 @@
 export default {
     thankyou: {
       title: "¡Gracias!",
-      subtitle: "Tu consulta ha sido recibida",
+      subtitle: "Consulta recibida: chatea con nosotros en WhatsApp arriba.",
       message: "Agradecemos tu interés en Kssmi. Nuestro equipo revisará los detalles de tu proyecto y te contactará dentro de 24 horas.",
       inquiryId: "ID de tu consulta",
       nextSteps: "¿Qué pasa después?",
@@ -114,7 +114,7 @@ export default {
         additional: "Muestra personalizada idéntica adicional",
         additionalDescription: "Mismo diseño y especificaciones, solicitada junto con la primera muestra personalizada.",
         piece: "ud.",
-        priceContext: "Tarifas de muestra B2B — no son precios unitarios al por mayor.",
+        priceContext: "Tarifas de muestra para validar su proyecto personalizado, no precios de venta al público ni de producción en serie.",
         creditNote: "Ambas tarifas de muestra se acreditan íntegramente en su pedido al por mayor del mismo modelo.",
         creditEmphasis: "se acreditan íntegramente",
         disclaimer: "El envío y los impuestos se cotizan por separado. La producción en serie se cotiza por separado."
@@ -127,6 +127,13 @@ export default {
       moq: "Pedido mínimo",
       backToCatalog: "Volver al Catálogo",
       kssmiCollection: "Kssmi Gafas Personalización Fabricante Colección",
+      customizationPositioning: "Este es un modelo de referencia para su proyecto de marca privada, no un producto de venta al público. Parta de este modelo y personalice materiales, colores, lentes, logotipo y especificaciones seleccionadas.",
+      customizeModel: "Personalice para su marca",
+      browseReferenceModels: "Ver más modelos",
+      referenceModelStart: "Empiece con este modelo de referencia.",
+      referenceModelStartDetail: "Adapte materiales, colores, lentes, logotipo y especificaciones seleccionadas.",
+      ownDesignStart: "Desarrolle desde su propia idea.",
+      ownDesignStartDetail: "Envíe un boceto, foto, muestra o plano técnico.",
       technicalData: "Datos Técnicos",
       specificationProfile: "Especificaciones Técnicas",
       status: "Estado",
@@ -204,7 +211,7 @@ export default {
       // Product card
       viewDetails: "Ver Detalles",
       customizable: "Personalizable",
-      customizableBadge: "Personalizable",
+        customizableBadge: "Listo para marca privada",
       previousPage: "Anterior",
       nextPage: "Siguiente",
       listingSeoDescription: "Explore {count} productos de gafas premium de Kssmi — fabricación personalizada OEM/ODM para marcas y distribuidores globales.",

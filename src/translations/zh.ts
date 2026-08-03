@@ -1,7 +1,7 @@
 export default {
     thankyou: {
       title: "谢谢！",
-      subtitle: "您的询价已收到",
+      subtitle: "询盘已收到，点击上方 WhatsApp 立即沟通。",
       message: "感谢您对 Kssmi 的关注。我们的团队将评估您的项目细节，并在 24 小时内与您联系。",
       inquiryId: "您的询价编号",
       nextSteps: "下一步是什么？",
@@ -107,7 +107,7 @@ export default {
         additional: "同款定制样品加购",
         additionalDescription: "与首件定制样品采用相同设计和规格。",
         piece: "件",
-        priceContext: "B2B 样品费，并非大货单价。",
+        priceContext: "用于确认定制项目的样品费，并非零售或大货产品价格。",
         creditNote: "两种样品费均可在同款产品的大货订单中全额抵扣。",
         creditEmphasis: "全额抵扣",
         disclaimer: "运费和税费另行核算；大货生产价格另行报价。"
@@ -120,6 +120,13 @@ export default {
       moq: "起订量",
       backToCatalog: "返回目录",
       kssmiCollection: "Kssmi 眼镜 定制服务 制造商 系列",
+      customizationPositioning: "本款为您的自有品牌项目参考款，并非零售产品。您可从此款开始，按目标市场定制材料、颜色、镜片、Logo 和指定规格。",
+      customizeModel: "为您的品牌定制",
+      browseReferenceModels: "浏览更多款式",
+      referenceModelStart: "从此参考款开始。",
+      referenceModelStartDetail: "调整指定材料、颜色、镜片、Logo 和规格。",
+      ownDesignStart: "从您的创意开始开发。",
+      ownDesignStartDetail: "发送草图、照片、实物样品或技术图纸。",
       technicalData: "技术参数",
       specificationProfile: "技术规格",
       status: "状态",
@@ -197,7 +204,7 @@ export default {
       // Product card
       viewDetails: "查看详情",
       customizable: "可定制",
-      customizableBadge: "可定制",
+        customizableBadge: "适用于自有品牌",
       previousPage: "上一页",
       nextPage: "下一页",
       listingSeoDescription: "浏览 Kssmi 的 {count} 款优质眼镜产品 — 为全球品牌和零售商提供 OEM/ODM 定制制造。",
