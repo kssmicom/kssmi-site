@@ -102,7 +102,7 @@ export default {
         readyStockBadge: "Stok siap",
         readyStock: "Sampel stok siap",
         readyStockDescription: "Siji sampel stok siap saka model iki.",
-        custom: "Sampel kustom",
+        custom: "Sampel kustom lengkap",
         customDescription: "Rega pungkasan gumantung bahan, warna, logo lan spesifikasi.",
         additional: "Sampel kustom padha tambahan",
         additionalDescription: "Desain lan spesifikasi padha, dipesen bebarengan karo sampel kustom pisanan.",

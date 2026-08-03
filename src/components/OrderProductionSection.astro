@@ -1,0 +1,226 @@
+---
+import { samplePricing } from '../config/samplePricing';
+import { formatDayRange, formatUsd, orderProduction } from '../config/orderProduction';
+import { orderProductionCopy, orderProductionCta } from '../content/orderProductionCopy';
+
+interface Props {
+  lang?: string;
+  itemNo?: string;
+}
+
+const { lang = 'en', itemNo = '' } = Astro.props;
+const copy = orderProductionCopy[lang] || orderProductionCopy.en;
+const isRTL = lang === 'ar';
+
+const values: Record<string, string | number> = {
+  logoFee: formatUsd(orderProduction.logoFeePerModel),
+  revisions: orderProduction.renderingRevisionRounds,
+  standardMoq: orderProduction.standardMoq,
+  colors: orderProduction.colorsPerModel,
+  perColor: orderProduction.minimumPerColor,
+  tr90Moq: orderProduction.tr90Moq,
+  deposit: orderProduction.bulkDepositPercent,
+  samplePayment: orderProduction.sampleAdvancePercent,
+  readyPrice: formatUsd(samplePricing.readyStock),
+  customMin: formatUsd(samplePricing.customMin),
+  customMax: formatUsd(samplePricing.customMax),
+};
+
+const fill = (text: string) => Object.entries(values).reduce(
+  (result, [key, value]) => result.replaceAll(`{${key}}`, String(value)),
+  text,
+);
+
+const leadTimes = [
+  {
+    label: copy.readyLabel,
+    value: formatDayRange(orderProduction.readyStockMinDays, orderProduction.readyStockMaxDays),
+  },
+  {
+    label: copy.readyLogoLabel,
+    value: String(orderProduction.readyStockWithLogoDays),
+  },
+  {
+    label: copy.renderingLabel,
+    value: formatDayRange(orderProduction.renderingMinDays, orderProduction.renderingMaxDays),
+  },
+  {
+    label: copy.customSampleLabel,
+    value: formatDayRange(orderProduction.customSampleMinDays, orderProduction.customSampleMaxDays),
+  },
+  {
+    label: copy.bulkLabel,
+    value: formatDayRange(orderProduction.bulkProductionMinDays, orderProduction.bulkProductionMaxDays),
+  },
+];
+
+const customProjectLabel = itemNo
+  ? `${orderProductionCta[lang] || orderProductionCta.en} — ${itemNo}`
+  : orderProductionCta[lang] || orderProductionCta.en;
+---
+
+<section
+  id="order-production"
+  class="relative isolate w-full overflow-hidden bg-[#F4F0E9] pt-8 pb-8 lg:pt-12 lg:pb-12 border-y border-stone-200 contain-below-fold"
+  dir={isRTL ? 'rtl' : 'ltr'}
+>
+  <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+    <div class="absolute inset-x-0 top-0 h-56 bg-linear-to-b from-white/80 to-transparent"></div>
+    <div class="absolute -start-32 top-1/4 h-80 w-80 rounded-full bg-amber-700/8 blur-3xl"></div>
+    <div class="absolute -end-40 bottom-12 h-96 w-96 rounded-full bg-[#8B7355]/10 blur-3xl"></div>
+  </div>
+
+  <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1480px] mx-auto px-4">
+    <header class="text-center max-w-4xl mx-auto mb-9 lg:mb-11">
+      <p class="text-[10px] font-mono font-bold uppercase tracking-[0.34em] text-amber-800 mb-3">
+        {copy.eyebrow}
+      </p>
+      <h2 class="font-Playfair text-[26px] lg:text-[30px] font-bold text-stone-950 leading-tight mb-4 tracking-[-0.018em]">
+        {copy.title}
+      </h2>
+      <p class="text-sm lg:text-base leading-7 text-stone-600 max-w-3xl mx-auto text-pretty">
+        {copy.intro}
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-7 items-stretch">
+      <article class="group/card relative h-full overflow-hidden rounded-[22px] border border-white/80 bg-white/85 p-5 sm:p-6 lg:p-8 shadow-[0_18px_50px_-36px_rgba(41,37,36,0.55)] ring-1 ring-stone-900/5 backdrop-blur-sm transition-all duration-500 motion-safe:hover:-translate-y-1.5 hover:border-amber-700/25 hover:bg-white hover:shadow-[0_28px_70px_-38px_rgba(92,64,38,0.55)]">
+        <div class="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-linear-to-r from-amber-800 via-[#D5B47A] to-transparent transition-transform duration-500 motion-safe:group-hover/card:scale-x-100"></div>
+        <div class="absolute -end-20 -top-20 h-48 w-48 rounded-full bg-amber-700/0 blur-3xl transition-colors duration-500 group-hover/card:bg-amber-700/8"></div>
+        <div class="relative flex items-center gap-4 mb-6">
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-amber-800/20 bg-linear-to-br from-amber-50 to-stone-100 font-mono text-xs font-bold text-amber-900 shadow-inner transition-transform duration-500 motion-safe:group-hover/card:rotate-6 motion-safe:group-hover/card:scale-105">01</span>
+          <h3 class="font-Playfair text-xl font-bold text-stone-950">{copy.routesTitle}</h3>
+        </div>
+        <div class="relative grid sm:grid-cols-2 gap-4 h-[calc(100%-4.25rem)]">
+          <div class="group/route rounded-2xl border border-stone-200/80 bg-[#F8F6F2] p-5 transition-all duration-300 hover:border-stone-300 hover:bg-white hover:shadow-lg hover:shadow-stone-900/5">
+            <div class="mb-3 h-1 w-8 rounded-full bg-stone-400 transition-all duration-300 group-hover/route:w-12 group-hover/route:bg-amber-700"></div>
+            <h4 class="font-semibold text-stone-950 mb-2">{copy.readyTitle}</h4>
+            <p class="text-sm leading-6 text-stone-600">{fill(copy.readyBody)}</p>
+          </div>
+          <div class="group/route rounded-2xl border border-amber-800/15 bg-linear-to-br from-[#FBF5EA] to-white p-5 transition-all duration-300 hover:border-amber-700/30 hover:shadow-lg hover:shadow-amber-900/8">
+            <div class="mb-3 h-1 w-8 rounded-full bg-amber-700 transition-all duration-300 group-hover/route:w-12"></div>
+            <h4 class="font-semibold text-stone-950 mb-2">{copy.customTitle}</h4>
+            <p class="text-sm leading-6 text-stone-600">{copy.customBody}</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="group/card relative h-full overflow-hidden rounded-[22px] border border-white/80 bg-white/85 p-5 sm:p-6 lg:p-8 shadow-[0_18px_50px_-36px_rgba(41,37,36,0.55)] ring-1 ring-stone-900/5 backdrop-blur-sm transition-all duration-500 motion-safe:hover:-translate-y-1.5 hover:border-amber-700/25 hover:bg-white hover:shadow-[0_28px_70px_-38px_rgba(92,64,38,0.55)]">
+        <div class="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-linear-to-r from-amber-800 via-[#D5B47A] to-transparent transition-transform duration-500 motion-safe:group-hover/card:scale-x-100"></div>
+        <div class="absolute -end-20 -top-20 h-48 w-48 rounded-full bg-amber-700/0 blur-3xl transition-colors duration-500 group-hover/card:bg-amber-700/8"></div>
+        <div class="relative flex items-center gap-4 mb-6">
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-amber-800/20 bg-linear-to-br from-amber-50 to-stone-100 font-mono text-xs font-bold text-amber-900 shadow-inner transition-transform duration-500 motion-safe:group-hover/card:rotate-6 motion-safe:group-hover/card:scale-105">02</span>
+          <h3 class="font-Playfair text-xl font-bold text-stone-950">{copy.optionsTitle}</h3>
+        </div>
+        <div class="relative rounded-2xl border border-stone-200/80 bg-linear-to-br from-white to-stone-50 p-5">
+          <p class="text-sm leading-7 text-stone-700">{copy.optionsBody}</p>
+          <div class="my-5 h-px bg-linear-to-r from-transparent via-stone-300 to-transparent"></div>
+          <p class="group/package -mx-2 flex items-start gap-3 rounded-xl px-2 py-2 text-sm leading-6 text-stone-600 transition-colors duration-300 hover:text-stone-900">
+            <span class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-stone-300 bg-[#3B342D] text-[#F7F4EE] shadow-[0_2px_5px_rgba(41,37,36,0.16),inset_0_1px_0_rgba(255,255,255,0.16)] transition-all duration-300 group-hover/package:-translate-y-px group-hover/package:border-[#8C755B] group-hover/package:bg-[#675746] group-hover/package:shadow-[0_5px_12px_rgba(41,37,36,0.2),inset_0_1px_0_rgba(255,255,255,0.2)]">
+              <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 7.5 12 3l7.5 4.5v9L12 21l-7.5-4.5v-9Z M4.8 7.7 12 12l7.2-4.3 M12 12v9" />
+              </svg>
+            </span>
+            <span>{copy.packaging}</span>
+          </p>
+        </div>
+      </article>
+
+      <article class="group/card relative h-full overflow-hidden rounded-[22px] border border-white/80 bg-white/85 p-5 sm:p-6 lg:p-8 shadow-[0_18px_50px_-36px_rgba(41,37,36,0.55)] ring-1 ring-stone-900/5 backdrop-blur-sm transition-all duration-500 motion-safe:hover:-translate-y-1.5 hover:border-amber-700/25 hover:bg-white hover:shadow-[0_28px_70px_-38px_rgba(92,64,38,0.55)]">
+        <div class="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-linear-to-r from-amber-800 via-[#D5B47A] to-transparent transition-transform duration-500 motion-safe:group-hover/card:scale-x-100"></div>
+        <div class="relative flex items-center gap-4 mb-6">
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-amber-800/20 bg-linear-to-br from-amber-50 to-stone-100 font-mono text-xs font-bold text-amber-900 shadow-inner transition-transform duration-500 motion-safe:group-hover/card:rotate-6 motion-safe:group-hover/card:scale-105">03</span>
+          <h3 class="font-Playfair text-xl font-bold text-stone-950">{copy.processTitle}</h3>
+        </div>
+        <ol class="relative grid sm:grid-cols-2 gap-3 mb-5">
+          {copy.processSteps.map((step, index) => (
+            <li class="group/step relative flex items-center gap-3 overflow-hidden rounded-xl border border-stone-200/90 bg-[#F7F5F1] px-3.5 py-3 text-sm leading-5 text-stone-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-300 hover:-translate-y-px hover:border-stone-300 hover:bg-white hover:text-stone-950 hover:shadow-[0_7px_18px_-12px_rgba(41,37,36,0.45),inset_0_1px_0_rgba(255,255,255,1)]">
+              <span class="absolute inset-y-2 start-0 w-px bg-[#9A8267]/0 transition-colors duration-300 group-hover/step:bg-[#9A8267]/70" aria-hidden="true"></span>
+              <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-stone-400/50 bg-[#3B342D] font-mono text-[10px] font-bold text-[#F7F4EE] shadow-[0_2px_5px_rgba(41,37,36,0.16),inset_0_1px_0_rgba(255,255,255,0.16)] transition-all duration-300 group-hover/step:-translate-y-px group-hover/step:border-[#8C755B] group-hover/step:bg-[#675746] group-hover/step:shadow-[0_5px_12px_rgba(41,37,36,0.2),inset_0_1px_0_rgba(255,255,255,0.2)]">{String(index + 1).padStart(2, '0')}</span>
+              <span class="font-medium">{step}</span>
+            </li>
+          ))}
+        </ol>
+        <p class="relative text-xs leading-5 text-stone-500 border-t border-stone-200 pt-4">{fill(copy.processNote)}</p>
+      </article>
+
+      <article class="group/card relative h-full overflow-hidden rounded-[22px] border border-white/80 bg-white/85 p-5 sm:p-6 lg:p-8 shadow-[0_18px_50px_-36px_rgba(41,37,36,0.55)] ring-1 ring-stone-900/5 backdrop-blur-sm transition-all duration-500 motion-safe:hover:-translate-y-1.5 hover:border-amber-700/25 hover:bg-white hover:shadow-[0_28px_70px_-38px_rgba(92,64,38,0.55)]">
+        <div class="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-linear-to-r from-amber-800 via-[#D5B47A] to-transparent transition-transform duration-500 motion-safe:group-hover/card:scale-x-100"></div>
+        <div class="relative flex items-center gap-4 mb-6">
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-amber-800/20 bg-linear-to-br from-amber-50 to-stone-100 font-mono text-xs font-bold text-amber-900 shadow-inner transition-transform duration-500 motion-safe:group-hover/card:rotate-6 motion-safe:group-hover/card:scale-105">04</span>
+          <h3 class="font-Playfair text-xl font-bold text-stone-950">{copy.leadTimesTitle}</h3>
+        </div>
+        <div class="relative rounded-2xl border border-stone-200/80 bg-[#FCFBF8] p-4 sm:p-5">
+            <dl class="divide-y divide-stone-200/80">
+              {leadTimes.map((leadTime) => (
+                <div class="group/time flex flex-col items-start justify-between gap-1.5 py-3 text-sm leading-6 sm:flex-row sm:items-center sm:gap-5 first:pt-0 last:pb-0">
+                  <dt class="text-stone-600 transition-colors group-hover/time:text-stone-950">{leadTime.label}</dt>
+                  <dd class="rounded-full bg-white px-3 py-1 font-semibold text-stone-950 whitespace-nowrap shadow-sm ring-1 ring-stone-200 transition-colors group-hover/time:bg-amber-700 group-hover/time:text-white group-hover/time:ring-amber-700">{leadTime.value} {copy.workingDays}</dd>
+                </div>
+              ))}
+            </dl>
+        </div>
+        <p class="relative text-xs leading-5 text-stone-500 border-t border-stone-200 mt-5 pt-4">{fill(copy.timingNote)}</p>
+      </article>
+    </div>
+
+    <div class="relative isolate mt-7 overflow-hidden rounded-[26px] bg-[#302820] text-white shadow-[0_30px_80px_-38px_rgba(32,24,18,0.75)] ring-1 ring-white/10">
+      <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+        <div class="absolute -start-24 -top-28 h-72 w-72 rounded-full bg-amber-600/20 blur-3xl"></div>
+        <div class="absolute -end-20 bottom-0 h-64 w-64 rounded-full bg-[#9C7A52]/20 blur-3xl"></div>
+        <div class="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(115deg,transparent_0%,transparent_48%,rgba(255,255,255,0.35)_49%,transparent_50%,transparent_100%)] [background-size:48px_48px]"></div>
+      </div>
+      <div class="p-6 lg:p-10">
+        <div class="mb-7 flex items-center justify-center gap-4">
+          <span class="h-px w-12 bg-linear-to-r from-transparent to-amber-300/60"></span>
+          <h3 class="font-Playfair text-xl lg:text-[26px] font-bold text-center text-white">{copy.termsTitle}</h3>
+          <span class="h-px w-12 bg-linear-to-l from-transparent to-amber-300/60"></span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+          <div class="group/term rounded-2xl border border-white/10 bg-white/[0.055] p-5 backdrop-blur-sm transition-all duration-300 hover:border-amber-200/25 hover:bg-white/[0.09] motion-safe:hover:-translate-y-1">
+            <div class="mb-3 flex items-center gap-3">
+              <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-amber-200/20 bg-amber-200/10 text-amber-200 transition-transform duration-300 motion-safe:group-hover/term:scale-110">
+                <span class="h-2 w-2 rotate-45 bg-current"></span>
+              </div>
+              <h4 class="text-sm font-bold text-amber-200">{copy.paymentTitle}</h4>
+            </div>
+            <p class="text-sm leading-6 text-white/85">{fill(copy.paymentBody)}</p>
+          </div>
+          <div class="group/term rounded-2xl border border-white/10 bg-white/[0.055] p-5 backdrop-blur-sm transition-all duration-300 hover:border-amber-200/25 hover:bg-white/[0.09] motion-safe:hover:-translate-y-1">
+            <div class="mb-3 flex items-center gap-3">
+              <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-amber-200/20 bg-amber-200/10 text-amber-200 transition-transform duration-300 motion-safe:group-hover/term:scale-110">
+                <span class="h-2 w-2 rotate-45 bg-current"></span>
+              </div>
+              <h4 class="text-sm font-bold text-amber-200">{copy.samplesToolingTitle}</h4>
+            </div>
+            <p class="text-sm leading-6 text-white/85">{copy.toolingBody}</p>
+          </div>
+          <div class="group/term rounded-2xl border border-white/10 bg-white/[0.055] p-5 backdrop-blur-sm transition-all duration-300 hover:border-amber-200/25 hover:bg-white/[0.09] motion-safe:hover:-translate-y-1 md:col-span-2 lg:col-span-1">
+            <div class="mb-3 flex items-center gap-3">
+              <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-amber-200/20 bg-amber-200/10 text-amber-200 transition-transform duration-300 motion-safe:group-hover/term:scale-110">
+                <span class="h-2 w-2 rotate-45 bg-current"></span>
+              </div>
+              <h4 class="text-sm font-bold text-amber-200">{copy.deliveryTitle}</h4>
+            </div>
+            <p class="text-sm leading-6 text-white/85">{copy.deliveryBody}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative border-t border-white/10 bg-black/15 px-6 py-8 lg:px-10 lg:py-9 text-center">
+        <h3 class="font-Playfair text-xl lg:text-2xl font-bold mb-2">{copy.quoteTitle}</h3>
+        <p class="text-sm leading-6 text-white/75 max-w-3xl mx-auto mb-6">{copy.quoteBody}</p>
+        <a
+          href="#inquiry-form-lazy"
+          class="group/cta inline-flex items-center justify-center gap-3 rounded-full border border-amber-100/30 bg-linear-to-r from-[#E4C58E] to-[#D4AE6E] px-7 py-3.5 text-sm font-bold text-[#2D251E] shadow-[0_12px_30px_-12px_rgba(228,197,142,0.65)] transition-all duration-300 hover:from-[#F0D7AA] hover:to-[#E4C58E] hover:shadow-[0_16px_36px_-12px_rgba(228,197,142,0.8)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white motion-safe:hover:-translate-y-0.5"
+        >
+          {customProjectLabel}
+          <svg class={`h-4 w-4 transition-transform duration-300 motion-safe:group-hover/cta:translate-x-1 ${isRTL ? 'rotate-180 motion-safe:group-hover/cta:-translate-x-1' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+        <p class="text-[11px] uppercase tracking-[0.12em] text-white/50 mt-4">{copy.reply}</p>
+      </div>
+    </div>
+  </div>
+</section>

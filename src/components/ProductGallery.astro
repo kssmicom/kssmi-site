@@ -1,0 +1,311 @@
+---
+import { productGalleryCopy } from '../content/productGalleryCopy';
+
+interface Props {
+  cover?: string;
+  gallery?: string[];
+  productName: string;
+  lang?: string;
+  customizable?: boolean;
+  customizableLabel?: string;
+}
+
+const {
+  cover,
+  gallery = [],
+  productName,
+  lang = 'en',
+  customizable = false,
+  customizableLabel = 'Customizable',
+} = Astro.props;
+
+const copy = productGalleryCopy[lang] || productGalleryCopy.en;
+const images = [cover, ...gallery].filter((image): image is string => Boolean(image));
+const isRTL = lang === 'ar';
+
+const imageAlt = (index: number) => index === 0
+  ? `${productName} — ${copy.mainView}`
+  : `${productName} — ${copy.additionalView} ${index + 1}`;
+
+const imageCount = (current: number) => copy.imageOf
+  .replace('{current}', String(current))
+  .replace('{total}', String(images.length));
+
+function thumbSrc(originalPath: string): string {
+  const lastDot = originalPath.lastIndexOf('.');
+  return lastDot > -1
+    ? originalPath.slice(0, lastDot) + '-120w' + originalPath.slice(lastDot)
+    : originalPath;
+}
+---
+
+<div class="product-gallery space-y-4 flex flex-col items-center" data-product-gallery dir={isRTL ? 'rtl' : 'ltr'}>
+  <div class="relative aspect-square bg-gray-50 rounded-xl overflow-hidden shadow-lg w-full max-w-[500px]">
+    {images.length > 0 ? (
+      <button
+        type="button"
+        class="gallery-main block h-full w-full overflow-hidden cursor-zoom-in focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#8B7355]"
+        data-gallery-open
+        aria-label={`${copy.openGallery}: ${imageAlt(0)}`}
+        aria-haspopup="dialog"
+      >
+        <img
+          src={images[0]}
+          alt={imageAlt(0)}
+          class="gallery-main-image w-full h-full object-cover"
+          width="800"
+          height="800"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          data-gallery-main-image
+          onerror="if(!this.dataset.retried){this.dataset.retried=true;setTimeout(()=>{this.src=this.src.split('?')[0]+'?retry=1'}, 50);}"
+        />
+      </button>
+    ) : (
+      <div class="w-full h-full flex items-center justify-center">
+        <svg class="w-24 h-24 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2 1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z" />
+        </svg>
+      </div>
+    )}
+
+    {customizable && (
+      <div class="absolute top-4 start-4 z-10 pointer-events-none">
+        <span class="bg-[#5D4E37] text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
+          {customizableLabel}
+        </span>
+      </div>
+    )}
+  </div>
+
+  {images.length > 0 && (
+    <div class="flex flex-wrap justify-center gap-2 w-full max-w-[640px] mx-auto" role="group" aria-label={copy.thumbnails}>
+      {images.map((image, index) => (
+        <button
+          type="button"
+          class:list={[
+            'gallery-thumb flex-none w-16 h-16 rounded-lg overflow-hidden border-2 shadow-xs hover:shadow-md transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5D4E37]',
+            index === 0 ? 'border-[#8B7355]' : 'border-transparent hover:border-[#8B7355]',
+          ]}
+          data-gallery-index={index}
+          data-full={image}
+          data-alt={imageAlt(index)}
+          aria-label={imageAlt(index)}
+          aria-pressed={index === 0 ? 'true' : 'false'}
+        >
+          <img
+            src={thumbSrc(image)}
+            alt=""
+            aria-hidden="true"
+            class="w-full h-full object-cover"
+            width="64"
+            height="64"
+            loading="lazy"
+            decoding="async"
+            onerror="if(!this.dataset.retried){this.dataset.retried=true;this.src=this.closest('button')?.getAttribute('data-full')||this.src;}"
+          />
+        </button>
+      ))}
+    </div>
+  )}
+
+  {images.length > 0 && (
+    <dialog
+      class="gallery-dialog m-0 h-[100dvh] max-h-none w-screen max-w-none border-0 bg-[#171513]/98 p-0 text-white backdrop:bg-black/80"
+      data-gallery-dialog
+      aria-label={copy.openGallery}
+    >
+      <div class="relative flex h-full w-full items-center justify-center overflow-hidden px-4 py-16 sm:px-16" data-gallery-stage>
+        <button
+          type="button"
+          class="absolute end-4 top-4 z-20 flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-black/35 text-white backdrop-blur-sm transition-colors hover:bg-white hover:text-stone-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          data-gallery-close
+          aria-label={copy.close}
+        >
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path stroke-linecap="round" d="M6 6l12 12M18 6 6 18" />
+          </svg>
+        </button>
+
+        {images.length > 1 && (
+          <button
+            type="button"
+            class="absolute start-3 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/30 text-white backdrop-blur-sm transition-colors hover:bg-white hover:text-stone-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:start-5"
+            data-gallery-previous
+            aria-label={copy.previous}
+          >
+            <svg class={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m15 18-6-6 6-6" />
+            </svg>
+          </button>
+        )}
+
+        <figure class="flex h-full w-full max-w-6xl flex-col items-center justify-center gap-4">
+          <img
+            src={images[0]}
+            alt={imageAlt(0)}
+            class="max-h-[calc(100dvh-8rem)] max-w-full select-none object-contain"
+            width="1200"
+            height="1200"
+            decoding="async"
+            draggable="false"
+            data-gallery-dialog-image
+          />
+          <figcaption class="text-center text-xs font-medium tracking-wide text-white/70" aria-live="polite" aria-atomic="true" data-gallery-count data-count-template={copy.imageOf}>
+            {imageCount(1)}
+          </figcaption>
+        </figure>
+
+        {images.length > 1 && (
+          <button
+            type="button"
+            class="absolute end-3 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/30 text-white backdrop-blur-sm transition-colors hover:bg-white hover:text-stone-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:end-5"
+            data-gallery-next
+            aria-label={copy.next}
+          >
+            <svg class={`h-5 w-5 ${isRTL ? 'rotate-180' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6" />
+            </svg>
+          </button>
+        )}
+      </div>
+    </dialog>
+  )}
+</div>
+
+<script>
+  function initProductGalleries() {
+    document.querySelectorAll<HTMLElement>('[data-product-gallery]').forEach((gallery) => {
+      if (gallery.dataset.galleryReady === 'true') return;
+
+      const mainButton = gallery.querySelector<HTMLButtonElement>('[data-gallery-open]');
+      const mainImage = gallery.querySelector<HTMLImageElement>('[data-gallery-main-image]');
+      const thumbs = Array.from(gallery.querySelectorAll<HTMLButtonElement>('[data-gallery-index]'));
+      const dialog = gallery.querySelector<HTMLDialogElement>('[data-gallery-dialog]');
+      const dialogImage = gallery.querySelector<HTMLImageElement>('[data-gallery-dialog-image]');
+      const count = gallery.querySelector<HTMLElement>('[data-gallery-count]');
+      const closeButton = gallery.querySelector<HTMLButtonElement>('[data-gallery-close]');
+      const previousButton = gallery.querySelector<HTMLButtonElement>('[data-gallery-previous]');
+      const nextButton = gallery.querySelector<HTMLButtonElement>('[data-gallery-next]');
+      const stage = gallery.querySelector<HTMLElement>('[data-gallery-stage]');
+
+      if (!mainButton || !mainImage || !dialog || !dialogImage || thumbs.length === 0) return;
+
+      gallery.dataset.galleryReady = 'true';
+      let currentIndex = 0;
+      let pointerStartX: number | null = null;
+      let pointerStartY: number | null = null;
+
+      const countTemplate = count?.dataset.countTemplate || 'Image {current} of {total}';
+      const formatCount = (current: number) => countTemplate
+        .replace('{current}', String(current))
+        .replace('{total}', String(thumbs.length));
+
+      const setImage = (index: number) => {
+        currentIndex = (index + thumbs.length) % thumbs.length;
+        const selected = thumbs[currentIndex];
+        const src = selected.dataset.full;
+        const alt = selected.dataset.alt || '';
+        if (!src) return;
+
+        mainImage.src = src;
+        mainImage.alt = alt;
+        mainImage.removeAttribute('srcset');
+        mainImage.removeAttribute('sizes');
+        mainImage.style.transform = 'scale(1)';
+
+        dialogImage.src = src;
+        dialogImage.alt = alt;
+        if (count) count.textContent = formatCount(currentIndex + 1);
+
+        thumbs.forEach((thumb, thumbIndex) => {
+          const active = thumbIndex === currentIndex;
+          thumb.setAttribute('aria-pressed', String(active));
+          thumb.classList.toggle('border-[#8B7355]', active);
+          thumb.classList.toggle('border-transparent', !active);
+        });
+      };
+
+      thumbs.forEach((thumb, index) => thumb.addEventListener('click', () => setImage(index)));
+
+      mainButton.addEventListener('click', () => {
+        setImage(currentIndex);
+        dialog.showModal();
+        closeButton?.focus();
+      });
+
+      closeButton?.addEventListener('click', () => dialog.close());
+      previousButton?.addEventListener('click', () => setImage(currentIndex - 1));
+      nextButton?.addEventListener('click', () => setImage(currentIndex + 1));
+
+      dialog.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') setImage(currentIndex - 1);
+        if (event.key === 'ArrowRight') setImage(currentIndex + 1);
+      });
+
+      stage?.addEventListener('pointerdown', (event) => {
+        if (event.pointerType !== 'touch') return;
+        pointerStartX = event.clientX;
+        pointerStartY = event.clientY;
+      }, { passive: true });
+
+      stage?.addEventListener('pointerup', (event) => {
+        if (pointerStartX === null || pointerStartY === null) return;
+        const distanceX = event.clientX - pointerStartX;
+        const distanceY = event.clientY - pointerStartY;
+        pointerStartX = null;
+        pointerStartY = null;
+        if (Math.abs(distanceX) < 48 || Math.abs(distanceX) <= Math.abs(distanceY)) return;
+        setImage(currentIndex + (distanceX < 0 ? 1 : -1));
+      }, { passive: true });
+
+      if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        let imageBounds: DOMRect | null = null;
+        mainButton.addEventListener('mouseenter', () => {
+          imageBounds = mainButton.getBoundingClientRect();
+          mainImage.style.transition = 'transform 0.1s ease-out';
+          mainImage.style.transformOrigin = 'center center';
+          mainImage.style.transform = 'scale(2)';
+        });
+        mainButton.addEventListener('mousemove', (event) => {
+          if (!imageBounds) return;
+          const x = ((event.clientX - imageBounds.left) / imageBounds.width) * 100;
+          const y = ((event.clientY - imageBounds.top) / imageBounds.height) * 100;
+          mainImage.style.transformOrigin = `${x}% ${y}%`;
+        });
+        mainButton.addEventListener('mouseleave', () => {
+          imageBounds = null;
+          mainImage.style.transform = 'scale(1)';
+        });
+      }
+    });
+  }
+
+  initProductGalleries();
+  document.addEventListener('astro:page-load', initProductGalleries);
+</script>
+
+<style>
+  .gallery-dialog::backdrop {
+    background: rgb(0 0 0 / 0.82);
+  }
+
+  .gallery-dialog[open] {
+    animation: gallery-fade-in 180ms ease-out;
+  }
+
+  [data-gallery-stage] {
+    touch-action: pan-y;
+  }
+
+  @keyframes gallery-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gallery-dialog[open] { animation: none; }
+    .gallery-main-image { transition: none !important; }
+  }
+</style>

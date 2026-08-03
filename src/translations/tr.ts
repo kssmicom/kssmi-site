@@ -109,7 +109,7 @@ export default {
         readyStockBadge: "Stokta",
         readyStock: "Hazır stok numunesi",
         readyStockDescription: "Bu modelden bir adet hazır stok numunesi.",
-        custom: "Özel numune",
+        custom: "Tamamen özel numune",
         customDescription: "Nihai fiyat malzeme, renk, logo ve teknik özelliklere bağlıdır.",
         additional: "Ek aynı özel numune",
         additionalDescription: "İlk özel numuneyle aynı tasarım ve özelliklerde birlikte sipariş edilir.",

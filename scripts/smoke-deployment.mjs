@@ -1,11 +1,18 @@
-import https from 'node:https';
+import { createHash } from 'node:crypto';
+import { resolve } from 'node:path';
 import {
+  requireAdminSmokePolicy,
   requireSmokeCredentials,
   runAuthenticatedAdminSmoke,
 } from './smoke-admin-security.mjs';
+import {
+  createSmokeRequester,
+} from './lib/smoke-http.mjs';
+import { readRuntimeAssetManifest } from './lib/runtime-assets.mjs';
+import { validateSmokeTargetConfig } from './lib/smoke-target.mjs';
 
 /**
- * Kssmi production deployment smoke (优化-001 阶段 3 步骤 7).
+ * Kssmi staging/production deployment smoke (优化-001 阶段 3 步骤 7).
  *
  * Verifies the deployed site after activate, before finalize:
  *   - public pages, endpoints and sensitive-path blocking;
@@ -18,38 +25,31 @@ import {
  * origin. To authenticate, the smoke must present CF-Access-Client-Id/Secret
  * service-token headers (SMOKE_ACCESS_CLIENT_ID / SMOKE_ACCESS_CLIENT_SECRET).
  *
- * All three smoke secrets are mandatory in production. Missing credentials
- * are a hard failure so a green deployment can never mean "admin skipped".
+ * SMOKE_REQUIRE_ADMIN=true makes all three secrets and the authenticated flow
+ * mandatory. Release environments always set that value. Local diagnostics
+ * may explicitly set false, but there is no implicit or credential-based skip.
  */
 
 if (process.env.NODE_TLS_REJECT_UNAUTHORIZED === '0') {
   throw new Error('Deployment smoke refuses to run with TLS certificate verification disabled.');
 }
 
-const target = (process.env.SMOKE_TARGET || 'production').trim().toLowerCase();
-if (target !== 'production') {
-  throw new Error('Kssmi smoke currently supports SMOKE_TARGET=production only.');
-}
-
 const configuredBaseUrl = (process.env.SMOKE_BASE_URL || '').trim();
-const baseUrl = new URL(configuredBaseUrl || 'https://kssmi.com');
-if (
-  baseUrl.protocol !== 'https:'
-  || baseUrl.username
-  || baseUrl.password
-  || baseUrl.pathname !== '/'
-  || baseUrl.search
-  || baseUrl.hash
-) {
-  throw new Error('SMOKE_BASE_URL must be an HTTPS origin without credentials, path, query or hash.');
-}
-if (baseUrl.hostname !== 'kssmi.com') {
-  throw new Error('Production smoke is restricted to https://kssmi.com.');
-}
+const { target, baseUrl } = validateSmokeTargetConfig({
+  target: process.env.SMOKE_TARGET,
+  configuredBaseUrl,
+  expectedHost: process.env.SMOKE_EXPECTED_HOST,
+});
 
-const { accessClientId, accessClientSecret, adminPassword } = requireSmokeCredentials(process.env);
+const requireAdmin = requireAdminSmokePolicy(process.env);
+const adminCredentials = requireAdmin ? requireSmokeCredentials(process.env) : null;
+const runtimeManifestPath = resolve(
+  (process.env.SMOKE_RUNTIME_MANIFEST || 'dist/assets/runtime/manifest.json').trim()
+);
+const runtimeManifest = await readRuntimeAssetManifest(runtimeManifestPath);
 
 const requestHeaders = {
+  'Accept-Encoding': 'identity',
   'Cache-Control': 'no-cache',
   'User-Agent': 'Kssmi-Deployment-Smoke/1.0',
 };
@@ -60,61 +60,14 @@ const requestHeaders = {
 // login) behavior is what gets asserted for the admin pages.
 
 const sleep = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
-
-function requestOnce(pathname, options = {}) {
-  const url = new URL(pathname, baseUrl);
-  if (url.origin !== baseUrl.origin) {
-    throw new Error(`Smoke request escaped the configured origin: ${url.href}`);
-  }
-
-  const method = options.method || 'GET';
-  if (method !== 'GET' && !(method === 'POST' && pathname === '/email-logs.php')) {
-    throw new Error(`Smoke only permits GET requests plus bounded Email Logs authentication POSTs: ${method} ${pathname}`);
-  }
-  const body = options.body ?? null;
-  if (method === 'GET' && body !== null) {
-    throw new Error(`Smoke GET request cannot contain a body: ${url.href}`);
-  }
-  const headers = {
+const strictRequest = createSmokeRequester({ baseUrl });
+const requestOnce = (pathname, options = {}) => strictRequest(pathname, {
+  ...options,
+  headers: {
     ...requestHeaders,
     ...(options.headers || {}),
-  };
-  if (body !== null) headers['Content-Length'] = Buffer.byteLength(body);
-
-  return new Promise((resolve, reject) => {
-    const request = https.request(url, {
-      method,
-      headers,
-      timeout: 10_000,
-    }, (response) => {
-      const chunks = [];
-      let bodyBytes = 0;
-
-      response.on('data', (chunk) => {
-        bodyBytes += chunk.length;
-        if (bodyBytes > 2_000_000) {
-          request.destroy(new Error(`Smoke response exceeded 2 MB: ${url.href}`));
-          return;
-        }
-        chunks.push(chunk);
-      });
-      response.on('end', () => {
-        resolve({
-          url,
-          status: response.statusCode ?? 0,
-          headers: response.headers,
-          rawHeaders: response.rawHeaders,
-          body: Buffer.concat(chunks).toString('utf8'),
-        });
-      });
-    });
-
-    request.on('timeout', () => request.destroy(new Error(`Smoke request timed out: ${url.href}`)));
-    request.on('error', reject);
-    if (body !== null) request.write(body);
-    request.end();
-  });
-}
+  },
+});
 
 async function requestPath(pathname, options = {}) {
   if ((options.method || 'GET') !== 'GET') {
@@ -206,6 +159,20 @@ await runCheck('homepage cache policy', async () => {
   assertSingleCacheControl(homepage, /(?:^|,\s*)s-maxage=600(?:,|$)/i);
 });
 
+for (const [logicalName, asset] of Object.entries(runtimeManifest.assets)) {
+  await runCheck(`runtime asset ${logicalName}`, async () => {
+    const response = await getResponse(asset.url);
+    assertStatus(response, [200]);
+    assertHeader(response, 'content-type', /(?:java|ecma)script/i);
+    assertSingleCacheControl(response, /(?:^|,\s*)immutable(?:,|$)/i);
+    const digest = createHash('sha256').update(Buffer.from(response.body, 'utf8')).digest('hex');
+    if (digest !== asset.sha256) {
+      throw new Error(`${response.url.href} content digest does not match the release manifest.`);
+    }
+    console.log(`OK SHA-256 ${response.url.href}`);
+  });
+}
+
 for (const [pathname, expectedStatuses] of [
   ['/send-mail.php', [405]],
   ['/api/track-pageview.php', [405]],
@@ -220,16 +187,18 @@ for (const [pathname, expectedStatuses] of [
   });
 }
 
-// ── Authenticated admin security flow (mandatory; never skipped) ──
-await runCheck('authenticated admin security flow', async () => {
-  await runAuthenticatedAdminSmoke({
-    request: requestOnce,
-    accessClientId,
-    accessClientSecret,
-    adminPassword,
-    log: (message) => console.log(message),
+// ── Authenticated admin security flow ──
+if (requireAdmin) {
+  await runCheck('authenticated admin security flow', async () => {
+    await runAuthenticatedAdminSmoke({
+      request: requestOnce,
+      ...adminCredentials,
+      log: (message) => console.log(message),
+    });
   });
-});
+} else {
+  console.warn('SKIP authenticated admin flow: explicitly disabled with SMOKE_REQUIRE_ADMIN=false (local diagnostics only).');
+}
 
 // ── Sensitive paths must be blocked ──
 for (const pathname of [

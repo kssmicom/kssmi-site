@@ -7,7 +7,7 @@ export async function getStaticPaths() {
 }
 
 const { lang } = Astro.params;
-const productName = Astro.url.searchParams.get('product') || '';
 ---
 
-<InquiryForm lang={lang} productName={productName} />
+<!-- Product context is injected by InquiryFormLazy in the browser. This route is static. -->
+<InquiryForm lang={lang} source="inquiry_fragment" />

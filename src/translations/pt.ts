@@ -109,7 +109,7 @@ export default {
         readyStockBadge: "Em estoque",
         readyStock: "Amostra em estoque",
         readyStockDescription: "Uma amostra disponível deste modelo.",
-        custom: "Amostra personalizada",
+        custom: "Amostra totalmente personalizada",
         customDescription: "O preço final depende dos materiais, cores, logotipo e especificações.",
         additional: "Amostra personalizada idêntica adicional",
         additionalDescription: "Mesmo design e especificações, encomendada com a primeira amostra personalizada.",

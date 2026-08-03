@@ -1,0 +1,102 @@
+---
+import { getTranslations } from '../translations';
+
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'en' } = Astro.props;
+const t = await getTranslations(lang);
+const pt = t.product || {};
+const isRTL = lang === 'ar';
+const benefits = [pt.benefit1, pt.benefit2, pt.benefit3, pt.benefit4, pt.benefit5, pt.benefit6]
+  .filter((benefit): benefit is string => Boolean(benefit));
+const accents = [
+  { color: '#9B694E', soft: '#F3E9E3' },
+  { color: '#63796B', soft: '#E7EFEA' },
+  { color: '#63778B', soft: '#E8EDF2' },
+  { color: '#806A7D', soft: '#EEE8ED' },
+  { color: '#967B51', soft: '#F2ECE2' },
+  { color: '#706A63', soft: '#ECEAE7' },
+];
+---
+
+<section
+  class="relative overflow-hidden border-y border-[#E2E5DF] bg-[#F5F6F3] py-12 text-[#262924] lg:py-16 contain-below-fold"
+  dir={isRTL ? 'rtl' : 'ltr'}
+>
+  <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1480px] mx-auto px-4">
+    <header class="mx-auto mb-10 max-w-3xl text-center lg:mb-12">
+      <h2 class="font-Playfair text-[26px] font-bold leading-tight tracking-[-0.018em] text-[#262924] lg:text-[30px]">
+        {pt.partnerTitle}
+      </h2>
+      <p class="mx-auto mt-4 max-w-3xl text-[15px] leading-7 text-[#656B62] lg:text-base">
+        {pt.partnerDesc}
+      </p>
+    </header>
+
+    <ul class="mx-auto grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5" aria-label={pt.partnerTitle}>
+      {benefits.map((benefit, index) => (
+        <li
+          class="partner-benefit group/benefit relative flex min-h-[92px] items-center gap-3.5 overflow-hidden rounded-[14px] border border-[#E1E4DE] bg-white px-5 py-4 shadow-[0_12px_26px_-22px_rgba(39,44,37,0.38),inset_0_1px_0_rgba(255,255,255,1)] transition-all duration-300"
+          style={`--benefit-accent:${accents[index % accents.length].color};--benefit-soft:${accents[index % accents.length].soft};`}
+        >
+          <span class="benefit-icon flex h-7 w-7 shrink-0 items-center justify-center rounded-full border text-[var(--benefit-accent)] transition-all duration-300 group-hover/benefit:scale-110 group-hover/benefit:text-white">
+            <svg class="h-3 w-3 transition-transform duration-300 group-hover/benefit:rotate-[-5deg]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m6.75 12.75 3 3 7.5-7.5" />
+            </svg>
+          </span>
+          <span class="text-sm font-medium leading-6 text-[#4D534B] transition-colors duration-300 group-hover/benefit:text-[#232720]">
+            {benefit}
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .partner-benefit::before {
+    content: '';
+    position: absolute;
+    inset-block-start: -1px;
+    inset-inline-start: 20px;
+    width: 38px;
+    height: 3px;
+    border-radius: 0 0 999px 999px;
+    background: var(--benefit-accent);
+    transition: width 280ms ease;
+  }
+
+  .benefit-icon {
+    border-color: color-mix(in srgb, var(--benefit-accent) 38%, white);
+    background: var(--benefit-soft);
+  }
+
+  .partner-benefit:hover {
+    border-color: color-mix(in srgb, var(--benefit-accent) 58%, white);
+    box-shadow: 0 18px 34px -24px color-mix(in srgb, var(--benefit-accent) 38%, transparent), inset 0 1px 0 white;
+    transform: translateY(-3px);
+  }
+
+  .partner-benefit:hover::before {
+    width: calc(100% - 40px);
+  }
+
+  .partner-benefit:hover .benefit-icon {
+    border-color: var(--benefit-accent);
+    background: var(--benefit-accent);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .partner-benefit,
+    .partner-benefit::before,
+    .benefit-icon {
+      transition: none;
+    }
+
+    .partner-benefit:hover {
+      transform: none;
+    }
+  }
+</style>

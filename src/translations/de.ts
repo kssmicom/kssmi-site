@@ -109,7 +109,7 @@ export default {
         readyStockBadge: "Sofort verfügbar",
         readyStock: "Lagermuster",
         readyStockDescription: "Ein verfügbares Muster dieses Modells.",
-        custom: "Individuelles Muster",
+        custom: "Vollständig individuelles Muster",
         customDescription: "Der Endpreis hängt von Materialien, Farben, Logo und Spezifikationen ab.",
         additional: "Zusätzliches identisches Sondermuster",
         additionalDescription: "Gleiches Design und gleiche Spezifikationen, zusammen mit dem ersten Sondermuster bestellt.",

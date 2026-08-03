@@ -102,7 +102,7 @@ export default {
         readyStockBadge: "Có sẵn",
         readyStock: "Mẫu có sẵn",
         readyStockDescription: "Một mẫu có sẵn của mẫu mã này.",
-        custom: "Mẫu tùy chỉnh",
+        custom: "Mẫu tùy chỉnh hoàn toàn",
         customDescription: "Giá cuối cùng phụ thuộc vào vật liệu, màu sắc, logo và thông số kỹ thuật.",
         additional: "Mẫu tùy chỉnh giống hệt bổ sung",
         additionalDescription: "Cùng thiết kế và thông số, đặt cùng với mẫu tùy chỉnh đầu tiên.",

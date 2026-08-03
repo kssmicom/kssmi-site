@@ -102,7 +102,7 @@ export default {
         readyStockBadge: "متوفر",
         readyStock: "عينة جاهزة",
         readyStockDescription: "عينة واحدة جاهزة من هذا الطراز.",
-        custom: "عينة مخصصة",
+        custom: "عينة مخصصة بالكامل",
         customDescription: "يعتمد السعر النهائي على المواد والألوان والشعار والمواصفات.",
         additional: "عينة مخصصة إضافية مطابقة",
         additionalDescription: "بنفس التصميم والمواصفات، وتُطلب مع العينة المخصصة الأولى.",

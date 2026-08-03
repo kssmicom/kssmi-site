@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=24.0.0"
   },
   "scripts": {
     "dev": "astro dev",
@@ -24,8 +24,19 @@
     "validate:admin-input-session": "node scripts/validate-admin-input-session-policy.mjs",
     "validate:security": "node scripts/validate-security-policy.mjs",
     "validate:cloudflare-ranges": "node scripts/validate-cloudflare-ranges.mjs",
+    "validate:cloudflare-audit": "node scripts/validate-cloudflare-audit-policy.mjs",
+    "validate:tls-policy": "node scripts/validate-tls-policy.mjs",
+    "validate:runtime-assets": "node scripts/validate-runtime-assets.mjs",
+    "validate:permissions": "node scripts/validate-permission-policy.mjs",
+    "validate:runtime-identity": "node scripts/validate-runtime-identity-policy.mjs",
+    "validate:promotion": "node scripts/validate-promotion-policy.mjs",
+    "validate:rollback-safety": "node scripts/validate-rollback-safety-policy.mjs",
+    "validate:release-evidence": "node scripts/validate-release-evidence-policy.mjs",
     "update:cloudflare-ranges": "node scripts/update-cloudflare-ranges.mjs",
     "test:cloudflare-ranges": "node scripts/test-cloudflare-ranges.mjs",
+    "test:runtime-assets": "node scripts/test-runtime-assets.mjs",
+    "test:permissions": "bash scripts/test-permission-policy.sh",
+    "test:runtime-identity": "php scripts/runtime-capability-probe.php --identity-self-test",
     "smoke:deployment": "node scripts/smoke-deployment.mjs",
     "test:smoke": "node scripts/test-smoke-deployment.mjs",
     "test:backend": "php scripts/verify-php-runtime.php",

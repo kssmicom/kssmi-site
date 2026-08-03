@@ -109,6 +109,26 @@ export function requireSmokeCredentials(env) {
   return { accessClientId, accessClientSecret, adminPassword };
 }
 
+export function requireAdminSmokePolicy(env) {
+  const configured = String(env.SMOKE_REQUIRE_ADMIN ?? '').trim().toLowerCase();
+  if (configured === 'true') return true;
+  if (configured === 'false') return false;
+  throw new Error('SMOKE_REQUIRE_ADMIN must be explicitly set to true or false.');
+}
+
+function assertCredentialsNotReflected(response, credentials, label) {
+  const responseSurface = [
+    String(response.body || ''),
+    ...(response.rawHeaders || []).map(String),
+  ].join('\n');
+  for (const credential of credentials) {
+    const value = String(credential || '');
+    if (value && responseSurface.includes(value)) {
+      throw new Error(`${label} reflected a smoke credential in its response.`);
+    }
+  }
+}
+
 export async function runAuthenticatedAdminSmoke({
   request,
   accessClientId,
@@ -118,13 +138,23 @@ export async function runAuthenticatedAdminSmoke({
 }) {
   if (typeof request !== 'function') throw new Error('Authenticated smoke requires a request function.');
 
+  const requestWithoutCredentialReflection = async (pathname, options = {}) => {
+    const response = await request(pathname, options);
+    assertCredentialsNotReflected(
+      response,
+      [accessClientId, accessClientSecret, adminPassword],
+      pathname,
+    );
+    return response;
+  };
+
   const accessHeaders = {
     'CF-Access-Client-Id': accessClientId,
     'CF-Access-Client-Secret': accessClientSecret,
   };
 
   // An intentionally invalid service token must never reach the origin login.
-  const invalidAccess = await request('/email-logs.php', {
+  const invalidAccess = await requestWithoutCredentialReflection('/email-logs.php', {
     headers: {
       'CF-Access-Client-Id': 'invalid-smoke-token.access',
       'CF-Access-Client-Secret': 'invalid-smoke-secret',
@@ -132,7 +162,7 @@ export async function runAuthenticatedAdminSmoke({
   });
   assertStatus(invalidAccess, [302, 403], 'Invalid Cloudflare Access token');
 
-  const loginPage = await request('/email-logs.php', { headers: accessHeaders });
+  const loginPage = await requestWithoutCredentialReflection('/email-logs.php', { headers: accessHeaders });
   assertStatus(loginPage, [200], 'Email Logs login page');
   assertAdminHeaders(loginPage, 'Email Logs login page');
   if (!/<input[^>]+type=["']password["'][^>]+name=["']password["']/i.test(loginPage.body)) {
@@ -148,7 +178,7 @@ export async function runAuthenticatedAdminSmoke({
   assertHardenedCookie(sessionCookie, 'Admin session', { session: true });
 
   let cookies = mergeResponseCookies('', loginPage);
-  const loginResponse = await request('/email-logs.php', {
+  const loginResponse = await requestWithoutCredentialReflection('/email-logs.php', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -182,7 +212,7 @@ export async function runAuthenticatedAdminSmoke({
   }
   cookies = mergeResponseCookies(cookies, loginResponse);
 
-  const journey = await request('/visitor-journey.php?tab=contacts', {
+  const journey = await requestWithoutCredentialReflection('/visitor-journey.php?tab=contacts', {
     headers: { ...accessHeaders, Cookie: cookies },
   });
   assertStatus(journey, [200], 'Visitor Journey authenticated view');
@@ -194,7 +224,7 @@ export async function runAuthenticatedAdminSmoke({
   const csrfToken = findLogoutCsrf(loginResponse.body);
 
   // GET logout must be inert and preserve authentication.
-  const getLogout = await request('/email-logs.php?logout=1', {
+  const getLogout = await requestWithoutCredentialReflection('/email-logs.php?logout=1', {
     headers: { ...accessHeaders, Cookie: cookies },
   });
   assertStatus(getLogout, [200], 'GET logout attempt');
@@ -208,7 +238,7 @@ export async function runAuthenticatedAdminSmoke({
   ]) {
     const fields = { logout: '1' };
     if (submittedToken !== null) fields.csrf_token = submittedToken;
-    const response = await request('/email-logs.php', {
+    const response = await requestWithoutCredentialReflection('/email-logs.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -220,7 +250,7 @@ export async function runAuthenticatedAdminSmoke({
     assertStatus(response, [403], label);
   }
 
-  const stillAuthenticated = await request('/email-logs.php', {
+  const stillAuthenticated = await requestWithoutCredentialReflection('/email-logs.php', {
     headers: { ...accessHeaders, Cookie: cookies },
   });
   assertStatus(stillAuthenticated, [200], 'Session after rejected logout');
@@ -228,7 +258,7 @@ export async function runAuthenticatedAdminSmoke({
     throw new Error('Rejected logout request damaged the authenticated session.');
   }
 
-  const logoutResponse = await request('/email-logs.php', {
+  const logoutResponse = await requestWithoutCredentialReflection('/email-logs.php', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -249,7 +279,7 @@ export async function runAuthenticatedAdminSmoke({
     throw new Error('Expired vjt_admin marker remained in the smoke cookie jar.');
   }
 
-  const afterLogout = await request('/email-logs.php', {
+  const afterLogout = await requestWithoutCredentialReflection('/email-logs.php', {
     headers: { ...accessHeaders, ...(cookies ? { Cookie: cookies } : {}) },
   });
   assertStatus(afterLogout, [200], 'Email Logs after logout');

@@ -6,6 +6,8 @@ import { fileURLToPath } from 'node:url';
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const read = (relativePath) => fs.readFileSync(path.join(root, relativePath), 'utf8');
 const workflow = read('.github/workflows/deploy.yml');
+const environmentAction = read('.github/actions/deploy-environment/action.yml');
+const deployment = `${workflow}\n${environmentAction}`;
 const phpCi = read('.github/workflows/php-ci.yml');
 const release = read('scripts/deploy-release.sh');
 const packageJson = JSON.parse(read('package.json'));
@@ -16,15 +18,25 @@ const requireBefore = (source, first, second, message) => {
   assert.ok(firstIndex >= 0 && secondIndex >= 0 && firstIndex < secondIndex, message);
 };
 
-// ── Workflow: versioned-release shape ──
+// ── Workflow: immutable promotion shape ──
 for (const marker of [
   'cancel-in-progress: false',
+  'Seal immutable release artifact',
+  'Upload sealed release artifact',
+  'deploy-production:',
+  'needs: build-release',
+]) {
+  assert.ok(workflow.includes(marker), `Deploy workflow missing promotion marker: ${marker}`);
+}
+
+// ── Shared environment action: versioned-release shape ──
+for (const marker of [
   'Upload immutable release bundle',
-  'source: "dist,private,scripts/deploy-release.sh"',
-  'target: "/home/kssmi.com/releases/${{ github.sha }}-${{ github.run_attempt }}"',
+  'source: "dist,private,scripts/deploy-release.sh,scripts/permission-policy.sh,scripts/runtime-capability-probe.php"',
+  'target: "${{ inputs.private-root }}/releases/${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}"',
   'Activate versioned release atomically',
   'Verify deployed security controls',
-  'Run production deployment smoke',
+  'Run authenticated deployment smoke',
   'Finalize successful release',
   'Rollback on failure',
   'if: failure()',
@@ -32,16 +44,17 @@ for (const marker of [
   'bash "$RELEASE_SCRIPT" rollback',
   'bash "$RELEASE_SCRIPT" finalize',
 ]) {
-  assert.ok(workflow.includes(marker), `Deploy workflow missing release marker: ${marker}`);
+  assert.ok(environmentAction.includes(marker), `Environment deploy action missing release marker: ${marker}`);
 }
 assert.doesNotMatch(
-  workflow,
+  deployment,
   /easingthemes\/ssh-deploy|TARGET:\s*["']?\/home\/kssmi\.com\/public_html|target:\s*["']?\/home\/kssmi\.com\/public_html|--delete/,
   'Deploy workflow must not synchronize files directly into the live webroot.'
 );
-requireBefore(workflow, 'Upload immutable release bundle', 'Activate versioned release atomically', 'Activation must follow immutable upload.');
-requireBefore(workflow, 'Activate versioned release atomically', 'Verify deployed security controls', 'Smoke must follow activation.');
-requireBefore(workflow, 'Verify deployed security controls', 'Finalize successful release', 'Finalization must follow smoke.');
+requireBefore(environmentAction, 'Upload immutable release bundle', 'Activate versioned release atomically', 'Activation must follow immutable upload.');
+requireBefore(environmentAction, 'Activate versioned release atomically', 'Verify deployed security controls', 'Security verification must follow activation.');
+requireBefore(environmentAction, 'Verify deployed security controls', 'Run authenticated deployment smoke', 'Authenticated smoke must follow security verification.');
+requireBefore(environmentAction, 'Run authenticated deployment smoke', 'Finalize successful release', 'Finalization must follow authenticated smoke.');
 
 // ── Release manager: safety markers ──
 for (const marker of [
@@ -50,6 +63,7 @@ for (const marker of [
   'STATE_DIR="$STATE_ROOT/$RELEASE_ID"',
   'PRIVATE_BACKUP="$STATE_DIR/private-before"',
   'CLOUDFLARE_RANGES="$SHARED_PRIVATE/cloudflare-ip-ranges.json"',
+  'PRIVATE_CONFIG="$PRIVATE_ROOT/private_config.php"',
   'flock -x 9',
   'backup_shared_private',
   'restore_shared_private',
@@ -62,6 +76,7 @@ for (const marker of [
   'state_write private_installed_at',
   'state_write activated_at',
   'state_write finalized_at',
+  'create_release_link "$RELEASE_DIR/private_config.php" "$PRIVATE_CONFIG"',
 ]) {
   assert.ok(release.includes(marker), `Release manager missing safety marker: ${marker}`);
 }
@@ -77,7 +92,7 @@ assert.doesNotMatch(
 );
 assert.doesNotMatch(release, /chmod\s+755[^\n]*\.php/, 'PHP source files must not be made executable.');
 assert.doesNotMatch(
-  workflow,
+  deployment,
   /find[^\n]*-name\s+["']?\*\.php["']?[^\n]*chmod\s+755/,
   'Deploy workflow must not make PHP source files executable.'
 );
@@ -98,8 +113,8 @@ assert.match(
 );
 assert.match(
   release,
-  /chmod 750 "\$RELEASE_DIR\/scripts\/deploy-release\.sh"/,
-  'Only the release manager needs an executable release-file mode.'
+  /find "\$RELEASE_DIR\/scripts" -type f -name '\*\.sh' -exec chmod 750 \{\} \\;/,
+  'Release and permission-policy shell scripts must use mode 0750.'
 );
 assert.match(
   release,

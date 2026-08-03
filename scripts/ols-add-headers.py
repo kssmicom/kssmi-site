@@ -13,11 +13,17 @@ Usage on the server:
   sudo systemctl restart lsws
 """
 
+import argparse
+import base64
+import hashlib
+import json
+import os
 import re
 import shutil
 from datetime import datetime
 
 VHOST_CONF = "/usr/local/lsws/conf/vhosts/kssmi.com/vhost.conf"
+DEFAULT_MANIFEST = "/home/kssmi.com/public_html/assets/runtime/manifest.json"
 BEGIN_MARKER = "# KSSMI MANAGED CACHE CONTEXTS BEGIN"
 END_MARKER = "# KSSMI MANAGED CACHE CONTEXTS END"
 
@@ -49,7 +55,54 @@ END_extraHeaders
 """
 
 
+def validate_runtime_manifest(manifest_path):
+    with open(manifest_path, "r", encoding="utf-8") as file:
+        manifest = json.load(file)
+    if set(manifest) != {"schema_version", "assets"} or manifest["schema_version"] != 1:
+        raise ValueError("runtime manifest schema is invalid")
+    if not isinstance(manifest["assets"], dict) or not manifest["assets"]:
+        raise ValueError("runtime manifest assets must be a non-empty object")
+
+    manifest_dir = os.path.dirname(os.path.realpath(manifest_path))
+    for logical_name, asset in manifest["assets"].items():
+        if set(asset) != {"url", "file_name", "sha256", "integrity", "bytes"}:
+            raise ValueError(f"runtime asset {logical_name} has invalid fields")
+        digest = asset["sha256"]
+        expected_name = f"{logical_name}.{digest[:12]}.js"
+        if not re.fullmatch(r"[a-f0-9]{64}", digest) or asset["file_name"] != expected_name:
+            raise ValueError(f"runtime asset {logical_name} has an invalid fingerprint")
+        if asset["url"] != f"/assets/runtime/{expected_name}":
+            raise ValueError(f"runtime asset {logical_name} escaped the OLS runtime context")
+        asset_path = os.path.join(manifest_dir, expected_name)
+        with open(asset_path, "rb") as file:
+            content = file.read()
+        actual_digest = hashlib.sha256(content).hexdigest()
+        actual_integrity = "sha256-" + base64.b64encode(hashlib.sha256(content).digest()).decode("ascii")
+        if actual_digest != digest or actual_integrity != asset["integrity"]:
+            raise ValueError(f"runtime asset {logical_name} digest does not match the manifest")
+        if len(content) != asset["bytes"]:
+            raise ValueError(f"runtime asset {logical_name} byte count does not match the manifest")
+    return manifest
+
+
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--check-manifest",
+        metavar="PATH",
+        help="validate a built runtime manifest and files without changing OLS",
+    )
+    args = parser.parse_args()
+    manifest_path = args.check_manifest or DEFAULT_MANIFEST
+    try:
+        manifest = validate_runtime_manifest(manifest_path)
+    except (OSError, ValueError, json.JSONDecodeError) as error:
+        print(f"ERROR: Runtime asset manifest validation failed: {error}")
+        return 1
+    print(f"Validated {len(manifest['assets'])} runtime assets from {manifest_path}")
+    if args.check_manifest:
+        return 0
+
     with open(VHOST_CONF, "r", encoding="utf-8") as file:
         original = file.read()
 

@@ -66,11 +66,12 @@ RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # ─── Static assets (pass through as-is) ────────────────────────────────────
-# Content-fingerprinted runtime assets. The public source file keeps a stable
-# server-side name, while browsers/CDNs only see a URL that changes with its
-# SHA-256 content hash. These rules MUST stay before the generic -f/-d bypass.
-RewriteRule ^assets/runtime/cookie-banner\.5107dfdbd150\.js$ cookie-banner.js [L]
-RewriteRule ^assets/runtime/vjt-tracker\.221fe93a8e56\.js$ js/vjt-tracker.js [L]
+# Content-fingerprinted runtime assets. The build replaces this marker block in
+# dist/.htaccess from assets/runtime/manifest.json. Keep it before the generic
+# -f/-d bypass and never put fingerprint values in this source template.
+# KSSMI RUNTIME ASSET REWRITES BEGIN
+# Generated during build by scripts/materialize-runtime-assets.mjs.
+# KSSMI RUNTIME ASSET REWRITES END
 
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d

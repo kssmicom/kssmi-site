@@ -102,7 +102,7 @@ export default {
         readyStockBadge: "Disponibile",
         readyStock: "Campione disponibile",
         readyStockDescription: "Un campione disponibile di questo modello.",
-        custom: "Campione personalizzato",
+        custom: "Campione completamente personalizzato",
         customDescription: "Il prezzo finale dipende da materiali, colori, logo e specifiche.",
         additional: "Campione personalizzato identico aggiuntivo",
         additionalDescription: "Stesso design e specifiche, ordinato insieme al primo campione personalizzato.",

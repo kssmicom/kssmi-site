@@ -186,6 +186,7 @@ function logEmail(
             'email' => $data['email'] ?? '',
             'details' => $formDetails,
             'product_name' => $data['product_name'] ?? '',
+            'product_sku' => $data['product_sku'] ?? '',
             'source' => $data['source'] ?? '',
             'language' => $data['language'] ?? '',
             'product_url' => $data['product_url'] ?? '',
@@ -234,13 +235,13 @@ function recordInquiryOutcome($config, $data, $status, $visitorIP, $visitorCount
         $submitPage = 'https://kssmi.com' . ($data['product_url'] ?? '');
     }
 
-    $siteLanguage = 'EN';
-    if (preg_match('#^https?://[^/]+/([a-z]{2})/#', $submitPage, $m)) {
-        $knownLangs = ['it','es','fr','de','pt','ru','ja','tr','ar','ko','zh','hi','vi','jv','ms','tg'];
-        if (in_array($m[1], $knownLangs, true)) $siteLanguage = strtoupper($m[1]);
+    $siteLanguage = strtoupper(trim((string)($data['language'] ?? '')));
+    $knownLanguages = ['EN','IT','ES','FR','DE','PT','RU','JA','TR','AR','KO','ZH','HI','VI','JV','MS','TG'];
+    if (!in_array($siteLanguage, $knownLanguages, true)) {
+        $siteLanguage = 'EN';
     }
 
-    $productSku = vjt_contact_token($data['product_name'] ?? '', 80);
+    $productSku = vjt_contact_token($data['product_sku'] ?? '', 80);
     if ($productSku === '') {
         $productPath = vjt_contact_page_path($data['product_url'] ?? '');
         $segments = array_values(array_filter(explode('/', trim($productPath, '/')), 'strlen'));
@@ -607,6 +608,8 @@ function buildMarkdownEmail($data, $ip, $country, $inquiryId) {
 
 **Product Interest:** {$data['product_name']}
 
+**SKU:** {$data['product_sku']}
+
 ---
 
 ## Here is the user details...
@@ -620,7 +623,9 @@ function buildMarkdownEmail($data, $ip, $country, $inquiryId) {
 | Field | Value |
 |-------|-------|
 | **Time** | {$timestamp} |
-| **Source** | {$source} |
+| **Product Page** | {$source} |
+| **Form Source** | {$data['source']} |
+| **Language** | {$data['language']} |
 | **IP** | {$ip} |
 | **Country** | {$country} |
 | **ID** | {$inquiryId} |
@@ -810,6 +815,10 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
                     <div class='field-label'>{$t['product']}</div>
                     <div class='field-value'>" . htmlspecialchars($data['product_name']) . "</div>
                 </div>
+                <div class='field'>
+                    <div class='field-label'>SKU</div>
+                    <div class='field-value'>" . htmlspecialchars($data['product_sku']) . "</div>
+                </div>
             </div>
             <div class='section'>
                 <div class='section-title'>{$t['projectDetails']}</div>
@@ -820,6 +829,8 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
                 <table class='meta-table'>
                     <tr><td>{$t['time']}</td><td>{$timestamp}</td></tr>
                     <tr><td>{$t['source']}</td><td><a href='{$source}' style='color: #8B7355;'>{$source}</a></td></tr>
+                    <tr><td>Form Source</td><td>" . htmlspecialchars($data['source']) . "</td></tr>
+                    <tr><td>Language</td><td>" . htmlspecialchars($data['language']) . "</td></tr>
                     <tr><td>IP</td><td>{$ip}</td></tr>
                     <tr><td>{$t['country']}</td><td>{$country}</td></tr>
                     <tr><td>ID</td><td><span class='inquiry-id'>{$inquiryId}</span></td></tr>
@@ -846,6 +857,7 @@ function buildTextEmail($data, $ip, $country, $inquiryId) {
 Name: {$data['name']}
 Email Address: {$data['email']}
 Product Interest: {$data['product_name']}
+SKU: {$data['product_sku']}
 
 PROJECT DETAILS:
 ----------------
@@ -855,6 +867,8 @@ METADATA:
 ---------
 Time: {$timestamp}
 Source: {$source}
+Form Source: {$data['source']}
+Language: {$data['language']}
 IP: {$ip}
 Country: {$country}
 ID: {$inquiryId}
@@ -879,6 +893,7 @@ $formData = [
     'source' => sanitize($_POST['source'] ?? 'unknown', 128),
     'product_url' => sanitizeLocalPath($_POST['product_url'] ?? ''),
     'product_name' => sanitize($_POST['product_name'] ?? 'N/A', 256),
+    'product_sku' => strtoupper(sanitize($_POST['product_sku'] ?? '', 80)),
     'language' => sanitize($_POST['language'] ?? 'en', 8),
 ];
 $allowedLanguages = ['en','it','es','fr','de','pt','ru','ja','tr','ar','ko','zh','hi','vi','jv','ms','tg'];

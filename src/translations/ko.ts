@@ -102,7 +102,7 @@ export default {
         readyStockBadge: "재고 있음",
         readyStock: "재고 샘플",
         readyStockDescription: "이 모델의 재고 샘플 1개입니다.",
-        custom: "맞춤 샘플",
+        custom: "완전 맞춤 샘플",
         customDescription: "최종 가격은 소재, 색상, 로고 및 사양에 따라 달라집니다.",
         additional: "동일 맞춤 샘플 추가",
         additionalDescription: "첫 맞춤 샘플과 동일한 디자인 및 사양으로 함께 주문합니다.",

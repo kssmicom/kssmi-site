@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const readText = (relativePath) => readFile(resolve(root, relativePath), 'utf8');
 
-const [smoke, adminSmoke, smokeTest, security, httpTest, packageJson, phpCi, deploy] = await Promise.all([
+const [smoke, adminSmoke, smokeTest, security, httpTest, packageJson, phpCi, deploy, environmentAction] = await Promise.all([
   readText('scripts/smoke-deployment.mjs'),
   readText('scripts/smoke-admin-security.mjs'),
   readText('scripts/test-smoke-deployment.mjs'),
@@ -15,11 +15,16 @@ const [smoke, adminSmoke, smokeTest, security, httpTest, packageJson, phpCi, dep
   readText('package.json'),
   readText('.github/workflows/php-ci.yml'),
   readText('.github/workflows/deploy.yml'),
+  readText('.github/actions/deploy-environment/action.yml'),
 ]);
 
-assert.match(smoke, /requireSmokeCredentials\(process\.env\)/, 'Production smoke must require its admin credentials.');
+assert.match(smoke, /requireAdminSmokePolicy\(process\.env\)/, 'Smoke must require an explicit authenticated-admin policy.');
+assert.match(smoke, /requireAdmin\s*\?\s*requireSmokeCredentials\(process\.env\)\s*:\s*null/, 'Required admin mode must fail on missing credentials.');
 assert.match(smoke, /runAuthenticatedAdminSmoke\s*\(/, 'Production smoke must execute the full admin security flow.');
-assert.doesNotMatch(smoke, /skipAdminSmoke|canReachAdmin|skipping authenticated admin/i, 'Production smoke must never silently skip admin checks.');
+assert.doesNotMatch(smoke, /skipAdminSmoke|canReachAdmin/i, 'Smoke must not infer an admin skip from credential availability.');
+assert.match(smoke, /SMOKE_REQUIRE_ADMIN=false \(local diagnostics only\)/, 'A local admin skip must be explicit and visible.');
+assert.match(adminSmoke, /SMOKE_REQUIRE_ADMIN must be explicitly set to true or false/, 'Admin-smoke policy must fail closed when unset or invalid.');
+assert.match(adminSmoke, /reflected a smoke credential in its response/, 'Authenticated smoke must reject credential reflection.');
 
 for (const secret of ['SMOKE_ACCESS_CLIENT_ID', 'SMOKE_ACCESS_CLIENT_SECRET', 'SMOKE_ADMIN_PASSWORD']) {
   assert.match(adminSmoke, new RegExp(`missing\\.push\\(['\"]${secret}['\"]\\)`), `${secret} must be mandatory.`);
@@ -38,6 +43,7 @@ assert.match(adminSmoke, /Core Events/, 'Smoke must verify the VJT Core data hea
 for (const scenario of [
   'wrong admin password must fail the smoke',
   'wrong Access credentials must fail the smoke',
+  'sensitive credentials reflected by an admin response must fail the smoke',
   'weak session cookie attributes must fail the smoke',
   'weak marker cookie attributes must fail the smoke',
   'logout without CSRF must fail the smoke',
@@ -58,14 +64,36 @@ for (const [label, workflow] of [['PHP CI', phpCi], ['Deploy', deploy]]) {
   assert.match(workflow, /npm run test:smoke/, `${label} must execute offline smoke runner self-tests.`);
 }
 
-const activateIndex = deploy.indexOf('- name: Activate versioned release atomically');
-const smokeIndex = deploy.indexOf('- name: Run production deployment smoke');
-const finalizeIndex = deploy.indexOf('- name: Finalize successful release');
-assert.ok(activateIndex >= 0 && smokeIndex > activateIndex && finalizeIndex > smokeIndex, 'Production smoke must run after activation and before finalize.');
-const productionSmokeStep = deploy.slice(smokeIndex, finalizeIndex);
-assert.match(productionSmokeStep, /SMOKE_ACCESS_CLIENT_ID:\s*\$\{\{ secrets\.SMOKE_ACCESS_CLIENT_ID \}\}/, 'Deploy smoke must receive its Access client ID secret.');
-assert.match(productionSmokeStep, /SMOKE_ACCESS_CLIENT_SECRET:\s*\$\{\{ secrets\.SMOKE_ACCESS_CLIENT_SECRET \}\}/, 'Deploy smoke must receive its Access client secret.');
-assert.match(productionSmokeStep, /SMOKE_ADMIN_PASSWORD:\s*\$\{\{ secrets\.SMOKE_ADMIN_PASSWORD \}\}/, 'Deploy smoke must receive its admin password secret.');
+const activateIndex = environmentAction.indexOf('- name: Activate versioned release atomically');
+const smokeIndex = environmentAction.indexOf('- name: Run authenticated deployment smoke');
+const finalizeIndex = environmentAction.indexOf('- name: Finalize successful release');
+assert.ok(activateIndex >= 0 && smokeIndex > activateIndex && finalizeIndex > smokeIndex, 'Authenticated environment smoke must run after activation and before finalize.');
+const productionSmokeStep = environmentAction.slice(smokeIndex, finalizeIndex);
+assert.match(productionSmokeStep, /SMOKE_REQUIRE_ADMIN:\s*['"]true['"]/, 'Every release environment must force authenticated admin smoke.');
+assert.match(productionSmokeStep, /SMOKE_ACCESS_CLIENT_ID:\s*\$\{\{ inputs\.smoke-access-client-id \}\}/, 'Deploy smoke must receive its production Access client ID.');
+assert.match(productionSmokeStep, /SMOKE_ACCESS_CLIENT_SECRET:\s*\$\{\{ inputs\.smoke-access-client-secret \}\}/, 'Deploy smoke must receive its production Access client secret.');
+assert.match(productionSmokeStep, /SMOKE_ADMIN_PASSWORD:\s*\$\{\{ inputs\.smoke-admin-password \}\}/, 'Deploy smoke must receive its production admin password.');
 assert.doesNotMatch(productionSmokeStep, /continue-on-error/, 'Production smoke must remain release-blocking.');
+const rollbackIndex = environmentAction.indexOf('- name: Rollback on failure');
+assert.ok(rollbackIndex > finalizeIndex, 'A failed required smoke must reach the environment rollback step.');
+assert.match(environmentAction.slice(rollbackIndex), /if:\s*failure\(\)/, 'Environment rollback must run on smoke failure.');
+for (const secret of [
+  'SMOKE_ACCESS_CLIENT_ID',
+  'SMOKE_ACCESS_CLIENT_SECRET',
+  'SMOKE_ADMIN_PASSWORD',
+]) {
+  assert.ok(deploy.includes(`secrets.${secret}`), `Production promotion must pass ${secret}.`);
+}
+
+const sealStart = deploy.indexOf('- name: Seal immutable release artifact');
+const sealEnd = deploy.indexOf('- name: Upload sealed release artifact', sealStart);
+assert.ok(sealStart >= 0 && sealEnd > sealStart, 'Immutable artifact sealing step is missing.');
+const sealStep = deploy.slice(sealStart, sealEnd);
+assert.doesNotMatch(sealStep, /SMOKE_|secrets\./, 'Smoke credentials must never enter the release artifact.');
+
+const adminSmokeDocs = await readText('docs/admin-smoke-policy.md');
+for (const marker of ['SMOKE_REQUIRE_ADMIN=true', 'local diagnostics', 'repository-scoped', '不得写入 artifact', 'rotation']) {
+  assert.ok(adminSmokeDocs.includes(marker), `Admin-smoke documentation missing: ${marker}`);
+}
 
 console.log('Unified admin security and mandatory production-smoke policy validated.');

@@ -102,7 +102,7 @@ export default {
         readyStockBadge: "现货",
         readyStock: "现货样品",
         readyStockDescription: "本型号现货样品一件。",
-        custom: "定制样品",
+        custom: "全定制样品",
         customDescription: "最终价格取决于材料、颜色、Logo 和规格。",
         additional: "同款定制样品加购",
         additionalDescription: "与首件定制样品采用相同设计和规格。",

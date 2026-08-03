@@ -102,7 +102,7 @@ export default {
         readyStockBadge: "Sedia ada",
         readyStock: "Sampel stok sedia ada",
         readyStockDescription: "Satu sampel stok sedia ada bagi model ini.",
-        custom: "Sampel tersuai",
+        custom: "Sampel tersuai sepenuhnya",
         customDescription: "Harga akhir bergantung pada bahan, warna, logo dan spesifikasi.",
         additional: "Sampel tersuai serupa tambahan",
         additionalDescription: "Reka bentuk dan spesifikasi yang sama, ditempah bersama sampel tersuai pertama.",

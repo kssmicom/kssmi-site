@@ -12,9 +12,18 @@ import { getTranslations } from '../translations';
 interface Props {
   lang?: string;
   productName?: string;
+  productSku?: string;
+  productUrl?: string;
+  source?: string;
 }
 
-const { lang = 'en', productName = '' } = Astro.props;
+const {
+  lang = 'en',
+  productName = '',
+  productSku = '',
+  productUrl = '',
+  source = 'general_inquiry',
+} = Astro.props;
 const t = await getTranslations(lang);
 const isRTL = lang === 'ar';
 
@@ -346,8 +355,6 @@ const TURNSTILE_SITE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 // Check if we're in development (localhost) - Turnstile doesn't work on localhost
 const isDev = import.meta.env.DEV;
 
-// Current page URL for form context
-const currentUrl = Astro.url.pathname;
 ---
 <section id="inquiry-form-section" class="pt-8 pb-16 lg:pt-12 lg:pb-24 bg-[#F5F5F4] contain-below-fold--lg" dir={isRTL ? 'rtl' : 'ltr'}>
   <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
@@ -355,13 +362,13 @@ const currentUrl = Astro.url.pathname;
       <h2 class="font-Playfair text-[22px] sm:text-[28px] lg:text-[34px] font-bold mb-4 text-[#5D4E37] leading-tight">
         {pt.projectFormTitle}
       </h2>
-      <p class="text-stone-600 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+      <p class="text-stone-600 max-w-4xl mx-auto text-base sm:text-lg leading-relaxed">
         {pt.projectFormDesc}
       </p>
     </div>
 
     <!-- Form Container -->
-    <div class="bg-[#FAFAFA] rounded-xl shadow-lg p-8 lg:p-10 border border-stone-100 max-w-5xl mx-auto">
+    <div class="bg-[#FAFAFA] rounded-xl shadow-lg p-5 sm:p-8 lg:p-10 border border-stone-100 max-w-5xl mx-auto">
       <!-- Error Message (hidden by default) -->
       <div id="form-error" class="hidden text-center py-6 px-4 bg-red-50 rounded-lg mb-6">
         <div class="flex items-center justify-center gap-2 text-red-600">
@@ -375,12 +382,11 @@ const currentUrl = Astro.url.pathname;
       <!-- Form -->
       <form id="inquiry-form" method="post" action="/send-mail.php" class="space-y-6">
         <!-- Hidden Fields for Context -->
-        <input type="hidden" name="source" value="product_page" />
-        <input type="hidden" name="product_url" value={currentUrl} />
+        <input type="hidden" name="source" value={source} />
+        <input type="hidden" name="product_url" value={productUrl} />
         <input type="hidden" name="language" value={lang} />
-        {productName && (
-          <input type="hidden" name="product_name" value={productName} />
-        )}
+        <input type="hidden" name="product_name" value={productName} />
+        <input type="hidden" name="product_sku" value={productSku} />
 
         <!-- Name / Organization Field -->
         <div>

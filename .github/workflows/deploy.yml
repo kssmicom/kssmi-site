@@ -3,21 +3,25 @@ name: Deploy KSSMI Site
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:  # Allow manual trigger
+  workflow_dispatch:
 
 permissions:
   contents: read
+  actions: read
+  issues: read
 
 concurrency:
   group: kssmi-production
-  # New pushes while a deploy is in-flight wait for the previous one to
-  # finish, then run with the latest code (not intermediate states). This
-  # prevents two deploys from clobbering each other on the server.
+  # Never overlap production releases. A running deployment completes or rolls
+  # back before the next commit can begin.
   cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  build-release:
+    name: Build and seal release artifact
     runs-on: ubuntu-latest
+    outputs:
+      artifact-name: ${{ steps.release-metadata.outputs.artifact_name }}
 
     steps:
       - name: Checkout code
@@ -26,19 +30,17 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e  # v6.4.0 pinned 2026-08-02
         with:
-          node-version: '22'
-          cache: 'npm'
+          node-version: '24'
+          cache: npm
 
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
       - name: Audit npm dependencies
         run: npm audit --audit-level=high
-        # Astro 7 and its patched transitive dependencies are required; HIGH
-        # vulnerabilities continue to block deployment.
 
       - name: Setup PHP 8.3
-        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240  # 2.37.2 pinned (same as php-ci.yml)
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240  # 2.37.2 pinned
         with:
           php-version: '8.3'
           extensions: pdo_sqlite, curl, mbstring
@@ -50,22 +52,38 @@ jobs:
       - name: Verify PHP runtime and required extensions
         run: php scripts/verify-php-runtime.php
 
-      - name: Validate deployment release policy
+      - name: Validate deployment and promotion policies
         run: |
           bash -n scripts/deploy-release.sh
+          bash -n scripts/permission-policy.sh
+          bash -n scripts/test-permission-policy.sh
           npm run validate:release
+          npm run validate:permissions
+          npm run test:permissions
+          npm run validate:runtime-identity
+          npm run test:runtime-identity
+          npm run validate:promotion
+          npm run validate:rollback-safety
+          npm run validate:release-evidence
           npm run validate:cloudflare-ranges
           npm run test:cloudflare-ranges
+          npm run validate:cloudflare-audit
+          npm run validate:tls-policy
+          npm run validate:runtime-assets
+          npm run test:runtime-assets
           npm run validate:admin-origin
           npm run validate:password-reset
           npm run validate:admin-input-session
           npm run validate:security
           npm run test:smoke
 
+      - name: Require current official Cloudflare ranges
+        run: npm run validate:cloudflare-ranges -- --check-remote
+
       - name: Lint PHP sources
         run: find public private scripts -name '*.php' -not -path '*/vendor/*' -print0 | xargs -0 -n1 php -l
 
-      - name: Test email log policy and storage (incl. cutover worker)
+      - name: Test backend storage and security policies
         run: |
           bash scripts/test-email-log-migration.sh
           php scripts/test-email-log-store.php
@@ -79,25 +97,23 @@ jobs:
           php scripts/test-reset-token-race.php
           php scripts/test-admin-session.php
 
-      - name: Validate cache policy and runtime fingerprints
-        run: npm run validate:cache
-
-      - name: Validate DOM regression policy
-        run: npm run validate:dom
-
-      - name: Validate LCP and video loading policy
-        run: npm run validate:lcp
-
-      - name: Validate Astro template syntax
-        run: npm run validate:astro-syntax
-
-      - name: Validate translation loading regressions
-        run: npm run validate:translations
+      - name: Validate frontend policies
+        run: |
+          npm run validate:cache
+          npm run validate:dom
+          npm run validate:lcp
+          npm run validate:astro-syntax
+          npm run validate:translations
 
       - name: Build Astro site
         run: npm run build
         env:
           PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.PUBLIC_TURNSTILE_SITE_KEY }}
+
+      - name: Verify built runtime asset manifest
+        run: |
+          node scripts/read-runtime-asset-manifest.mjs dist/assets/runtime/manifest.json
+          python3 scripts/ols-add-headers.py --check-manifest dist/assets/runtime/manifest.json
 
       - name: Generate strict CSP from built HTML
         run: node scripts/generate-csp-hashes.mjs dist
@@ -119,159 +135,131 @@ jobs:
         run: |
           cp public/send-mail.php dist/
           cp public/email-logs.php dist/
-
           cp public/visitor-journey.php dist/
-
           cp public/404-router.php dist/
           cp -r public/api dist/
           cp -r public/vendor dist/
 
-      - name: Upload immutable release bundle
-        uses: appleboy/scp-action@ff85246acaad7bdce478db94a363cd2bf7c90345  # v1.0.0 pinned 2026-07-08
-        with:
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.REMOTE_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "dist,private,scripts/deploy-release.sh"
-          target: "/home/kssmi.com/releases/${{ github.sha }}-${{ github.run_attempt }}"
+      - name: Generate secret-free build evidence
+        run: node scripts/generate-build-evidence.mjs release-evidence/build
 
-      - name: Activate versioned release atomically
-        uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b  # v1.2.5+ pinned 2026-07-06 (was @master — supply-chain risk)
-        with:
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.REMOTE_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          command_timeout: 300s
-          script: |
-            set -eu
-            RELEASE_ID='${{ github.sha }}-${{ github.run_attempt }}'
-            RELEASE_SCRIPT="/home/kssmi.com/releases/$RELEASE_ID/scripts/deploy-release.sh"
-            test -f "$RELEASE_SCRIPT"
-            chmod 750 "$RELEASE_SCRIPT"
-            RELEASE_ID="$RELEASE_ID" bash "$RELEASE_SCRIPT" activate
-
-      - name: Purge Cloudflare after atomic deploy
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+      - name: Seal immutable release artifact
+        id: release-metadata
         shell: bash
         run: |
           set -euo pipefail
-          if [ -z "${CLOUDFLARE_API_TOKEN:-}" ] || [ -z "${CLOUDFLARE_ZONE_ID:-}" ]; then
-            echo 'WARNING: Cloudflare purge skipped; add CLOUDFLARE_API_TOKEN and CLOUDFLARE_ZONE_ID before enabling HTML edge caching.'
-            exit 0
-          fi
+          artifact_name="kssmi-release-${GITHUB_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          printf 'artifact_name=%s\n' "$artifact_name" >> "$GITHUB_OUTPUT"
+          printf '%s-%s-%s\n' "$GITHUB_SHA" "$GITHUB_RUN_ID" "$GITHUB_RUN_ATTEMPT" > .kssmi-artifact-release
+          tar -cf kssmi-release.tar \
+            .kssmi-artifact-release \
+            dist private \
+            scripts/deploy-release.sh \
+            scripts/permission-policy.sh \
+            scripts/runtime-capability-probe.php
+          sha256sum kssmi-release.tar > kssmi-release.tar.sha256
 
-          response="$(curl --fail-with-body -sS -X POST \
-            "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache" \
-            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
-            -H 'Content-Type: application/json' \
-            --data '{"purge_everything":true}')"
-          printf '%s\n' "$response"
-          printf '%s' "$response" | grep -q '"success":true'
+      - name: Upload sealed release artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1, Node.js 24
+        with:
+          name: ${{ steps.release-metadata.outputs.artifact_name }}
+          path: |
+            kssmi-release.tar
+            kssmi-release.tar.sha256
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7
 
-          # Re-warm the most important HTML documents after the purge.
-          for path in / /it/ /es/ /fr/ /de/ /pt/ /ru/ /ja/ /tr/ /ar/ /ko/ /zh/ /hi/ /vi/ /jv/ /ms/ /tg/; do
-            curl -ksS -o /dev/null "https://kssmi.com${path}"
-          done
+      - name: Upload build evidence
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1, Node.js 24
+        with:
+          name: kssmi-build-evidence-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: release-evidence/build
+          if-no-files-found: error
+          retention-days: 90
 
-      - name: Verify deployed security controls
+  deploy-production:
+    name: Deploy and verify production
+    needs: build-release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout deployment action
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2 pinned
+
+      - name: Download exact sealed release artifact
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131  # v7.0.0, Node.js 24
+        with:
+          name: ${{ needs.build-release.outputs.artifact-name }}
+          path: release-artifact
+
+      - name: Verify and extract sealed release artifact
         shell: bash
         run: |
           set -euo pipefail
+          cd release-artifact
+          sha256sum -c kssmi-release.tar.sha256
+          tar -xf kssmi-release.tar -C ..
+          test "$(cat ../.kssmi-artifact-release)" = "${GITHUB_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
 
-          check_status() {
-            local url="$1"
-            local expected_codes="$2"
-            local actual
-            actual="$(curl -ksS -o /dev/null -w '%{http_code}' "$url")"
-            echo "$url -> $actual (expected one of: $expected_codes)"
-            [[ " $expected_codes " == *" $actual "* ]]
-          }
+      - name: Deploy verified artifact to production
+        uses: ./.github/actions/deploy-environment
+        with:
+          environment-name: production
+          site-url: https://kssmi.com
+          site-host: kssmi.com
+          private-root: /home/kssmi.com
+          site-user: kssmi4374
+          site-group: kssmi4374
+          remote-host: ${{ secrets.REMOTE_HOST }}
+          remote-user: ${{ secrets.REMOTE_USER }}
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          smoke-access-client-id: ${{ secrets.SMOKE_ACCESS_CLIENT_ID }}
+          smoke-access-client-secret: ${{ secrets.SMOKE_ACCESS_CLIENT_SECRET }}
+          smoke-admin-password: ${{ secrets.SMOKE_ADMIN_PASSWORD }}
+          cloudflare-api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          cloudflare-zone-id: ${{ secrets.CLOUDFLARE_ZONE_ID }}
 
-          assert_single_cache_control() {
-            local url="$1"
-            local expected="$2"
-            local response_headers values count
-            response_headers="$(curl -ksS -D - -o /dev/null -H 'Cache-Control: no-cache' "$url")"
-            values="$(printf '%s\n' "$response_headers" | awk 'BEGIN{IGNORECASE=1} /^Cache-Control:/ {sub(/^[^:]+:[[:space:]]*/, ""); sub(/\r$/, ""); print}')"
-            count="$(printf '%s\n' "$values" | sed '/^$/d' | wc -l | tr -d ' ')"
-            echo "$url -> Cache-Control: $values"
-            if [ "$count" != '1' ]; then
-              echo "ERROR: expected exactly one Cache-Control header, found $count"
-              exit 1
-            fi
-            printf '%s' "$values" | grep -Fqi "$expected"
-          }
+  release-evidence:
+    name: Publish release evidence and final signoff
+    needs: [build-release, deploy-production]
+    if: ${{ always() }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
 
-          headers="$(curl -ksS -D - -o /dev/null -H 'Cache-Control: no-cache' "https://kssmi.com/?deploy-security-check=$(date +%s)")"
-          echo "$headers"
-          csp="$(printf '%s\n' "$headers" | awk 'BEGIN{IGNORECASE=1} /^Content-Security-Policy:/ {print}')"
-          if printf '%s' "$csp" | grep -qi 'unsafe-inline'; then
-            echo 'WARNING: Cloudflare layer CSP has unsafe-inline (intentional safety net).'
-            echo 'Origin .htaccess CSP is strict hash-based — verified during build step.'
-          else
-            echo 'OK: online CSP is strict (no unsafe-inline detected at edge).'
-          fi
+    steps:
+      - name: Checkout evidence policy
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2 pinned
 
-          check_status 'https://kssmi.com/email-logs.php' 302
-          check_status 'https://kssmi.com/visitor-journey.php' 302
-          check_status 'https://kssmi.com/ip-debug.php' 404
-          check_status 'https://kssmi.com/php-status.php' 404
-          check_status 'https://kssmi.com/vjt-db-setup.php' 404
-          check_status 'https://kssmi.com/.env' 404
-          # The legacy webroot file has been removed. Depending on OLS routing,
-          # a protected/missing sensitive path may correctly return 403 or 404.
-          check_status 'https://kssmi.com/email-logs.json' '403 404'
-          check_status 'https://kssmi.com/composer.json' 403
+      - name: Download build evidence
+        continue-on-error: true
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131  # v7.0.0, Node.js 24
+        with:
+          name: kssmi-build-evidence-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: evidence-input/build
 
-          assert_single_cache_control 'https://kssmi.com/' 's-maxage=600'
-          assert_single_cache_control 'https://kssmi.com/assets/runtime/cookie-banner.5107dfdbd150.js' 'immutable'
-          assert_single_cache_control 'https://kssmi.com/api/track-pageview.php' 'no-store'
-          assert_single_cache_control 'https://kssmi.com/api/contact-intent.php' 'no-store'
+      - name: Download production evidence
+        continue-on-error: true
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131  # v7.0.0, Node.js 24
+        with:
+          name: kssmi-production-evidence-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: evidence-input/production
 
-      - name: Run production deployment smoke
-        run: npm run smoke:deployment
+      - name: Collect GitHub checks and assemble final evidence
+        run: node scripts/collect-release-evidence.mjs evidence-input release-evidence/final
         env:
-          SMOKE_TARGET: production
-          SMOKE_BASE_URL: https://kssmi.com
-          SMOKE_ACCESS_CLIENT_ID: ${{ secrets.SMOKE_ACCESS_CLIENT_ID }}
-          SMOKE_ACCESS_CLIENT_SECRET: ${{ secrets.SMOKE_ACCESS_CLIENT_SECRET }}
-          SMOKE_ADMIN_PASSWORD: ${{ secrets.SMOKE_ADMIN_PASSWORD }}
+          GITHUB_TOKEN: ${{ github.token }}
 
-      - name: Finalize successful release
-        uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b  # v1.2.5+ pinned 2026-07-06
+      - name: Upload final evidence package
+        id: final-evidence-upload
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1, Node.js 24
         with:
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.REMOTE_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          command_timeout: 60s
-          script: |
-            set -eu
-            RELEASE_ID='${{ github.sha }}-${{ github.run_attempt }}'
-            RELEASE_SCRIPT="/home/kssmi.com/releases/$RELEASE_ID/scripts/deploy-release.sh"
-            test -f "$RELEASE_SCRIPT"
-            RELEASE_ID="$RELEASE_ID" bash "$RELEASE_SCRIPT" finalize
+          name: kssmi-release-evidence-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: release-evidence/final
+          if-no-files-found: error
+          retention-days: 90
 
-      - name: Rollback on failure
-        if: failure()
-        uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b  # v1.2.5+ pinned 2026-07-06
-        with:
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.REMOTE_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          command_timeout: 180s
-          script: |
-            set -eu
-            RELEASE_ID='${{ github.sha }}-${{ github.run_attempt }}'
-            RELEASE_SCRIPT="/home/kssmi.com/releases/$RELEASE_ID/scripts/deploy-release.sh"
-            if [ -f "$RELEASE_SCRIPT" ]; then
-              RELEASE_ID="$RELEASE_ID" bash "$RELEASE_SCRIPT" rollback
-            else
-              echo "No release bundle uploaded; rollback not required."
-            fi
-
-      - name: Deployment Complete
-        run: |
-          echo "Deployment complete!"
-          echo "Visit: https://kssmi.com"
+      - name: Enforce final release signoff
+        if: always()
+        run: node scripts/enforce-release-evidence.mjs release-evidence/final/release-evidence.json

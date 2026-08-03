@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 import { getTranslations, type Translations } from '../translations';
 import VisitorTracker from '../components/VisitorTracker.astro';
+import { runtimeAssetUrl } from '../config/runtimeAssets.mjs';
 
 // Props
 interface Props {
@@ -37,6 +38,9 @@ const layoutMeta = t.layout || fallbackTranslations.layout;
 
 const description = propDescription || layoutMeta.description;
 const cloudflareAnalyticsToken = import.meta.env.PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN?.trim();
+const cookieBannerScriptUrl = import.meta.env.DEV
+  ? '/cookie-banner.js'
+  : runtimeAssetUrl('cookie-banner');
 
 // Detect if language is Right-to-Left (Arabic)
 const isRTL = lang === 'ar';
@@ -110,7 +114,7 @@ const organizationSchema = {
     "contactType": "sales",
     "telephone": "+86-135-1053-2553",
     "email": "sales@kssmi.com",
-    "areaServed": ["US", "EU", "IT", "FR", "DE", "JP", "TR", "RU", "CN", "BR", "PT"]
+    "areaServed": "Worldwide"
   }
 };
 // WebSite Schema (Google Sitelinks Search Box)
@@ -331,7 +335,10 @@ const websiteSchema = {
     })();
   </script>
 </head>
-<body class={`${isRTL ? 'font-arabic' : 'font-sans'} antialiased relative min-h-screen`}>
+<body
+  class={`${isRTL ? 'font-arabic' : 'font-sans'} antialiased relative min-h-screen`}
+  data-cookie-banner-url={cookieBannerScriptUrl}
+>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TSW9LBMG"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -462,9 +469,7 @@ const websiteSchema = {
         if (isStoredConsent(consent)) return; // Already consented — skip loading banner
       } catch (_) {}
       const script = document.createElement('script');
-      script.src = import.meta.env.DEV
-        ? '/cookie-banner.js'
-        : '/assets/runtime/cookie-banner.5107dfdbd150.js';
+      script.src = document.body.dataset.cookieBannerUrl || '/cookie-banner.js';
       script.async = true;
       document.body.appendChild(script);
     })();

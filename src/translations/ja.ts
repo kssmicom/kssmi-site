@@ -109,7 +109,7 @@ export default {
         readyStockBadge: "在庫あり",
         readyStock: "在庫サンプル",
         readyStockDescription: "このモデルの在庫サンプル1点です。",
-        custom: "カスタムサンプル",
+        custom: "フルカスタムサンプル",
         customDescription: "最終価格は素材、色、ロゴ、仕様によって異なります。",
         additional: "同仕様の追加カスタムサンプル",
         additionalDescription: "最初のカスタムサンプルと同じデザイン・仕様で同時に注文します。",

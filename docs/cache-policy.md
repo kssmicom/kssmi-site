@@ -30,14 +30,24 @@ Only explicit, reviewed public paths belong in the managed context block.
 
 Runtime asset fingerprints are derived from the first 12 hexadecimal characters
 of the source file's SHA-256 digest after text line endings are normalized to LF,
-matching the repository and Linux deployment representation. The build runs
-`scripts/materialize-runtime-assets.mjs` after Astro and writes real fingerprinted
-files under `dist/assets/runtime/`; a dedicated, allowlisted OLS regex context
-maps those physical JS files with `$DOC_ROOT/$0` and owns their immutable policy.
+matching the repository and Linux deployment representation. Astro templates and
+the post-Astro materializer use the same `scripts/lib/runtime-assets.mjs` generator,
+so no fingerprint is copied manually between source files. The build writes:
+
+- physical fingerprinted JavaScript files under `dist/assets/runtime/`;
+- `dist/assets/runtime/manifest.json`, containing each logical name, URL, full
+  SHA-256 digest, SRI value and byte count;
+- exact runtime rewrite rules in `dist/.htaccess`, generated between the marker
+  lines in the source template.
+
+A dedicated, allowlisted OLS regex context maps those physical JS files with
+`$DOC_ROOT/$0` and owns their immutable policy. Before changing the vhost,
+`ols-add-headers.py` validates the deployed manifest and every referenced file.
 OpenLiteSpeed 1.7.19 did not apply header operations from a plain directory
 context in production, so the working regex form is intentional. Run
-`npm run validate:cache` after changing `cookie-banner.js`, `vjt-tracker.js`,
-their references, `.htaccess`, or the OLS helper.
+`npm run validate:cache`, `npm run validate:runtime-assets` and
+`npm run test:runtime-assets` after changing a runtime source, consumer,
+`.htaccess`, materializer, manifest library, or the OLS helper.
 
 ## One-time OpenLiteSpeed installation
 
@@ -82,8 +92,14 @@ After deployment, the workflow requires exactly one `Cache-Control` response
 header for:
 
 - the homepage (`s-maxage=600`);
-- the fingerprinted cookie banner (`immutable`);
+- every runtime asset enumerated by the release manifest (`immutable`);
 - a tracking API endpoint (`no-store`).
+
+The production Node smoke independently reads the same release manifest and
+requires every runtime asset to return HTTP 200, a JavaScript MIME type, one
+immutable cache policy and bytes matching the manifest's complete SHA-256
+digest. A source edit therefore needs only the normal build; page references,
+generated rewrites and online checks all move to the new URL automatically.
 
 The removed legacy `/email-logs.json` webroot path may return either `403`
 (explicitly forbidden) or `404` (not present). Both satisfy the security

@@ -14,12 +14,13 @@ const emailLogTests = read('scripts/test-email-log-store.php');
 const rateLimitTests = read('scripts/test-rate-limit.php');
 const migrationTests = read('scripts/test-email-log-migration.sh');
 const deployWorkflow = read('.github/workflows/deploy.yml');
+const environmentAction = read('.github/actions/deploy-environment/action.yml');
 // Phase 2 moved the deployment runtime behavior (cutover barrier, atomic
 // install, permission probes, migration) into scripts/deploy-release.sh, which
 // the workflow uploads and executes on the server. The policy literals below
 // are checked against the union so the contract survives the relocation.
 const deployReleaseScript = read('scripts/deploy-release.sh');
-const deploySource = deployWorkflow + '\n' + deployReleaseScript;
+const deploySource = deployWorkflow + '\n' + environmentAction + '\n' + deployReleaseScript;
 const inquiryForm = read('src/components/InquiryForm.astro');
 const notFoundPage = read('src/components/pages/NotFoundPage.astro');
 
@@ -223,13 +224,13 @@ requireText(
   'Rate-limit behavior regression test',
 );
 requireText(
-  deployWorkflow,
+  deploySource,
   'scripts/deploy-release.sh',
   'Release script upload',
 );
 requireText(
-  deployWorkflow,
-  'source: "dist,private,scripts/deploy-release.sh"',
+  environmentAction,
+  'source: "dist,private,scripts/deploy-release.sh,scripts/permission-policy.sh,scripts/runtime-capability-probe.php"',
   'Shared private directory deployment',
 );
 requireText(

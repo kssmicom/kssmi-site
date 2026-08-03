@@ -1,0 +1,315 @@
+name: Deploy verified Kssmi production release
+description: Deploy, smoke, finalize or automatically roll back one Kssmi production artifact.
+
+inputs:
+  environment-name:
+    required: true
+    description: Must be production
+  site-url:
+    required: true
+    description: Exact HTTPS origin
+  site-host:
+    required: true
+    description: Hostname without scheme
+  private-root:
+    required: true
+    description: Production private root
+  site-user:
+    required: true
+    description: Dedicated Unix account
+  site-group:
+    required: true
+    description: Dedicated Unix group
+  remote-host:
+    required: true
+    description: Production SSH host
+  remote-user:
+    required: true
+    description: Production SSH user
+  ssh-private-key:
+    required: true
+    description: Production SSH key
+  smoke-access-client-id:
+    required: true
+    description: Production Cloudflare Access service-token ID
+  smoke-access-client-secret:
+    required: true
+    description: Production Cloudflare Access service-token secret
+  smoke-admin-password:
+    required: true
+    description: Production admin smoke password
+  cloudflare-api-token:
+    required: false
+    description: Optional production cache-purge token
+  cloudflare-zone-id:
+    required: false
+    description: Optional production cache-purge zone
+runs:
+  using: composite
+  steps:
+    - name: Setup Node.js for environment smoke
+      uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e  # v6.4.0, Node.js 24 action runtime
+      with:
+        node-version: '24'
+
+    - name: Validate production deployment contract
+      shell: bash
+      env:
+        DEPLOY_ENVIRONMENT: ${{ inputs.environment-name }}
+        SITE_URL: ${{ inputs.site-url }}
+        SITE_HOST: ${{ inputs.site-host }}
+        PRIVATE_ROOT: ${{ inputs.private-root }}
+        SITE_USER: ${{ inputs.site-user }}
+        SITE_GROUP: ${{ inputs.site-group }}
+        REMOTE_HOST_VALUE: ${{ inputs.remote-host }}
+        REMOTE_USER_VALUE: ${{ inputs.remote-user }}
+        SSH_KEY_VALUE: ${{ inputs.ssh-private-key }}
+        ACCESS_ID_VALUE: ${{ inputs.smoke-access-client-id }}
+        ACCESS_SECRET_VALUE: ${{ inputs.smoke-access-client-secret }}
+        ADMIN_PASSWORD_VALUE: ${{ inputs.smoke-admin-password }}
+      run: |
+        set -euo pipefail
+        test "$DEPLOY_ENVIRONMENT" = production
+        [[ "$SITE_HOST" =~ ^[A-Za-z0-9]([A-Za-z0-9.-]*[A-Za-z0-9])?$ ]]
+        [[ "$SITE_URL" == "https://$SITE_HOST" ]]
+        [[ "$PRIVATE_ROOT" =~ ^/home/[A-Za-z0-9._-]+$ ]]
+        test "$PRIVATE_ROOT" != /home/.
+        test "$PRIVATE_ROOT" != /home/..
+        [[ "$SITE_USER" =~ ^[a-z_][a-z0-9_-]*$ ]]
+        [[ "$SITE_GROUP" =~ ^[a-z_][a-z0-9_-]*$ ]]
+        test -n "$REMOTE_HOST_VALUE"
+        test -n "$REMOTE_USER_VALUE"
+        test -n "$SSH_KEY_VALUE"
+        test -n "$ACCESS_ID_VALUE"
+        test -n "$ACCESS_SECRET_VALUE"
+        test -n "$ADMIN_PASSWORD_VALUE"
+        test "$SITE_HOST" = kssmi.com
+        test "$SITE_URL" = https://kssmi.com
+        test "$PRIVATE_ROOT" = /home/kssmi.com
+        test "$SITE_USER" = kssmi4374
+        test "$SITE_GROUP" = kssmi4374
+
+    - name: Upload immutable release bundle
+      uses: appleboy/scp-action@ff85246acaad7bdce478db94a363cd2bf7c90345  # v1.0.0 pinned 2026-07-08
+      with:
+        host: ${{ inputs.remote-host }}
+        username: ${{ inputs.remote-user }}
+        key: ${{ inputs.ssh-private-key }}
+        source: "dist,private,scripts/deploy-release.sh,scripts/permission-policy.sh,scripts/runtime-capability-probe.php"
+        target: "${{ inputs.private-root }}/releases/${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}"
+
+    - name: Activate versioned release atomically
+      id: activate
+      uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b  # v1.2.5+ pinned 2026-07-06
+      with:
+        host: ${{ inputs.remote-host }}
+        username: ${{ inputs.remote-user }}
+        key: ${{ inputs.ssh-private-key }}
+        command_timeout: 300s
+        script: |
+          set -eu
+          RELEASE_ID='${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}'
+          PRIVATE_ROOT='${{ inputs.private-root }}'
+          RELEASE_SCRIPT="$PRIVATE_ROOT/releases/$RELEASE_ID/scripts/deploy-release.sh"
+          test -f "$RELEASE_SCRIPT"
+          chmod 750 "$RELEASE_SCRIPT"
+          DEPLOY_ENVIRONMENT='${{ inputs.environment-name }}' \
+          SITE_URL='${{ inputs.site-url }}' \
+          SITE_HOST='${{ inputs.site-host }}' \
+          SITE_USER='${{ inputs.site-user }}' \
+          SITE_GROUP='${{ inputs.site-group }}' \
+          PRIVATE_ROOT="$PRIVATE_ROOT" \
+          RELEASE_ID="$RELEASE_ID" \
+            bash "$RELEASE_SCRIPT" activate
+
+    - name: Purge Cloudflare after atomic deploy
+      shell: bash
+      env:
+        CLOUDFLARE_API_TOKEN: ${{ inputs.cloudflare-api-token }}
+        CLOUDFLARE_ZONE_ID: ${{ inputs.cloudflare-zone-id }}
+        SITE_URL: ${{ inputs.site-url }}
+      run: |
+        set -euo pipefail
+        if [ -z "${CLOUDFLARE_API_TOKEN:-}" ] || [ -z "${CLOUDFLARE_ZONE_ID:-}" ]; then
+          echo 'WARNING: Cloudflare purge skipped; configure the repository purge secrets before enabling edge HTML caching.'
+          exit 0
+        fi
+        response="$(curl --fail-with-body --show-error --silent --connect-timeout 5 --max-time 30 -X POST \
+          "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache" \
+          -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+          -H 'Content-Type: application/json' \
+          --data '{"purge_everything":true}')"
+        printf '%s\n' "$response"
+        printf '%s' "$response" | grep -q '"success":true'
+        for path in / /it/ /es/ /fr/ /de/ /pt/ /ru/ /ja/ /tr/ /ar/ /ko/ /zh/ /hi/ /vi/ /jv/ /ms/ /tg/; do
+          curl --fail-with-body --show-error --silent --connect-timeout 5 --max-time 15 \
+            -o /dev/null "${SITE_URL}${path}"
+        done
+
+    - name: Verify deployed security controls
+      shell: bash
+      env:
+        SITE_URL: ${{ inputs.site-url }}
+      run: |
+        set -euo pipefail
+        check_status() {
+          local url="$1"
+          local expected_codes="$2"
+          local actual
+          actual="$(curl --fail-with-body --show-error --silent --connect-timeout 5 --max-time 15 \
+            -o /dev/null -w '%{http_code}' "$url" || true)"
+          echo "$url -> $actual (expected one of: $expected_codes)"
+          [[ " $expected_codes " == *" $actual "* ]]
+        }
+        assert_single_cache_control() {
+          local url="$1"
+          local expected="$2"
+          local response_headers values count
+          response_headers="$(curl --fail-with-body --show-error --silent --connect-timeout 5 --max-time 15 \
+            -D - -o /dev/null -H 'Cache-Control: no-cache' "$url" || true)"
+          values="$(printf '%s\n' "$response_headers" | awk 'BEGIN{IGNORECASE=1} /^Cache-Control:/ {sub(/^[^:]+:[[:space:]]*/, ""); sub(/\r$/, ""); print}')"
+          count="$(printf '%s\n' "$values" | sed '/^$/d' | wc -l | tr -d ' ')"
+          echo "$url -> Cache-Control: $values"
+          test "$count" = 1
+          printf '%s' "$values" | grep -Fqi "$expected"
+        }
+        headers="$(curl --fail-with-body --show-error --silent --connect-timeout 5 --max-time 15 \
+          -D - -o /dev/null -H 'Cache-Control: no-cache' \
+          "$SITE_URL/?deploy-security-check=$(date +%s)")"
+        echo "$headers"
+        check_status "$SITE_URL/email-logs.php" 302
+        check_status "$SITE_URL/visitor-journey.php" 302
+        check_status "$SITE_URL/ip-debug.php" 404
+        check_status "$SITE_URL/php-status.php" 404
+        check_status "$SITE_URL/vjt-db-setup.php" 404
+        check_status "$SITE_URL/.env" 404
+        check_status "$SITE_URL/email-logs.json" '403 404'
+        check_status "$SITE_URL/composer.json" 403
+        assert_single_cache_control "$SITE_URL/" 's-maxage=600'
+        while IFS= read -r runtime_asset_url; do
+          assert_single_cache_control "${SITE_URL}${runtime_asset_url}" immutable
+        done < <(node scripts/read-runtime-asset-manifest.mjs dist/assets/runtime/manifest.json)
+        assert_single_cache_control "$SITE_URL/api/track-pageview.php" no-store
+        assert_single_cache_control "$SITE_URL/api/contact-intent.php" no-store
+
+    - name: Run authenticated deployment smoke
+      id: deployment-smoke
+      shell: bash
+      run: npm run smoke:deployment
+      env:
+        SMOKE_TARGET: ${{ inputs.environment-name }}
+        SMOKE_BASE_URL: ${{ inputs.site-url }}
+        SMOKE_EXPECTED_HOST: ${{ inputs.site-host }}
+        SMOKE_RUNTIME_MANIFEST: dist/assets/runtime/manifest.json
+        SMOKE_REQUIRE_ADMIN: 'true'
+        SMOKE_ACCESS_CLIENT_ID: ${{ inputs.smoke-access-client-id }}
+        SMOKE_ACCESS_CLIENT_SECRET: ${{ inputs.smoke-access-client-secret }}
+        SMOKE_ADMIN_PASSWORD: ${{ inputs.smoke-admin-password }}
+
+    - name: Finalize successful release
+      id: finalize
+      uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b  # v1.2.5+ pinned 2026-07-06
+      with:
+        host: ${{ inputs.remote-host }}
+        username: ${{ inputs.remote-user }}
+        key: ${{ inputs.ssh-private-key }}
+        command_timeout: 60s
+        script: |
+          set -eu
+          RELEASE_ID='${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}'
+          PRIVATE_ROOT='${{ inputs.private-root }}'
+          RELEASE_SCRIPT="$PRIVATE_ROOT/releases/$RELEASE_ID/scripts/deploy-release.sh"
+          test -f "$RELEASE_SCRIPT"
+          DEPLOY_ENVIRONMENT='${{ inputs.environment-name }}' \
+          SITE_URL='${{ inputs.site-url }}' \
+          SITE_HOST='${{ inputs.site-host }}' \
+          SITE_USER='${{ inputs.site-user }}' \
+          SITE_GROUP='${{ inputs.site-group }}' \
+          PRIVATE_ROOT="$PRIVATE_ROOT" \
+          RELEASE_ID="$RELEASE_ID" \
+          AUTHENTICATED_SMOKE_VERIFIED=true \
+            bash "$RELEASE_SCRIPT" finalize
+
+    - name: Rollback on failure
+      id: rollback
+      if: failure()
+      uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b  # v1.2.5+ pinned 2026-07-06
+      with:
+        host: ${{ inputs.remote-host }}
+        username: ${{ inputs.remote-user }}
+        key: ${{ inputs.ssh-private-key }}
+        command_timeout: 180s
+        script: |
+          set -eu
+          RELEASE_ID='${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}'
+          PRIVATE_ROOT='${{ inputs.private-root }}'
+          RELEASE_SCRIPT="$PRIVATE_ROOT/releases/$RELEASE_ID/scripts/deploy-release.sh"
+          if [ -f "$RELEASE_SCRIPT" ]; then
+            DEPLOY_ENVIRONMENT='${{ inputs.environment-name }}' \
+            SITE_URL='${{ inputs.site-url }}' \
+            SITE_HOST='${{ inputs.site-host }}' \
+            SITE_USER='${{ inputs.site-user }}' \
+            SITE_GROUP='${{ inputs.site-group }}' \
+            PRIVATE_ROOT="$PRIVATE_ROOT" \
+            RELEASE_ID="$RELEASE_ID" \
+              bash "$RELEASE_SCRIPT" rollback
+          else
+            echo 'No release bundle uploaded; rollback not required.'
+          fi
+
+    - name: Capture finalized environment evidence
+      id: deployment-proof
+      if: always()
+      uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b  # v1.2.5+ pinned 2026-07-06
+      with:
+        host: ${{ inputs.remote-host }}
+        username: ${{ inputs.remote-user }}
+        key: ${{ inputs.ssh-private-key }}
+        command_timeout: 60s
+        capture_stdout: true
+        script: |
+          set -eu
+          RELEASE_ID='${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}'
+          PRIVATE_ROOT='${{ inputs.private-root }}'
+          RELEASE_SCRIPT="$PRIVATE_ROOT/releases/$RELEASE_ID/scripts/deploy-release.sh"
+          test -f "$RELEASE_SCRIPT"
+          DEPLOY_ENVIRONMENT='${{ inputs.environment-name }}' \
+          SITE_URL='${{ inputs.site-url }}' \
+          SITE_HOST='${{ inputs.site-host }}' \
+          SITE_USER='${{ inputs.site-user }}' \
+          SITE_GROUP='${{ inputs.site-group }}' \
+          PRIVATE_ROOT="$PRIVATE_ROOT" \
+          RELEASE_ID="$RELEASE_ID" \
+            bash "$RELEASE_SCRIPT" evidence
+
+    - name: Assemble environment deployment evidence
+      id: environment-evidence
+      if: always()
+      shell: bash
+      run: node scripts/generate-environment-evidence.mjs "release-evidence/${{ inputs.environment-name }}"
+      env:
+        DEPLOY_ENVIRONMENT: ${{ inputs.environment-name }}
+        REMOTE_EVIDENCE: ${{ steps.deployment-proof.outputs.stdout }}
+        ACTIVATE_OUTCOME: ${{ steps.activate.outcome }}
+        SMOKE_OUTCOME: ${{ steps.deployment-smoke.outcome }}
+        FINALIZE_OUTCOME: ${{ steps.finalize.outcome }}
+        PROOF_OUTCOME: ${{ steps.deployment-proof.outcome }}
+
+    - name: Upload environment deployment evidence
+      id: environment-evidence-upload
+      if: always()
+      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1, Node.js 24
+      with:
+        name: kssmi-${{ inputs.environment-name }}-evidence-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+        path: release-evidence/${{ inputs.environment-name }}
+        if-no-files-found: error
+        retention-days: 90
+
+    - name: Enforce environment evidence gate
+      if: always()
+      shell: bash
+      run: node scripts/enforce-release-evidence.mjs "release-evidence/${{ inputs.environment-name }}/${{ inputs.environment-name }}.json"
+
+    - name: Environment deployment complete
+      shell: bash
+      run: echo '${{ inputs.environment-name }} deployment complete — ${{ inputs.site-url }}'

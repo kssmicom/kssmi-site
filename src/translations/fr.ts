@@ -109,7 +109,7 @@ export default {
         readyStockBadge: "En stock",
         readyStock: "Échantillon en stock",
         readyStockDescription: "Un échantillon disponible de ce modèle.",
-        custom: "Échantillon personnalisé",
+        custom: "Échantillon entièrement personnalisé",
         customDescription: "Le prix final dépend des matériaux, des couleurs, du logo et des spécifications.",
         additional: "Échantillon personnalisé identique supplémentaire",
         additionalDescription: "Même design et mêmes spécifications, commandé avec le premier échantillon personnalisé.",
