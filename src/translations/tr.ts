@@ -114,6 +114,7 @@ export default {
         additional: "Ek aynı özel numune",
         additionalDescription: "İlk özel numuneyle aynı tasarım ve özelliklerde birlikte sipariş edilir.",
         piece: "adet",
+        priceContext: "B2B numune ücretleridir — toplu sipariş birim fiyatları değildir.",
         creditNote: "Her iki numune ücreti, aynı model için vereceğiniz toplu siparişten tamamen düşülür.",
         creditEmphasis: "tamamen düşülür",
         disclaimer: "Nakliye ve vergiler ayrıca fiyatlandırılır. Seri üretim fiyatı ayrıca teklif edilir."

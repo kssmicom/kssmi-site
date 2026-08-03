@@ -107,6 +107,7 @@ export default {
         additional: "동일 맞춤 샘플 추가",
         additionalDescription: "첫 맞춤 샘플과 동일한 디자인 및 사양으로 함께 주문합니다.",
         piece: "개",
+        priceContext: "B2B 샘플 비용이며, 대량 주문 단가가 아닙니다.",
         creditNote: "두 가지 샘플 비용은 동일 모델의 대량 주문 시 전액 차감됩니다.",
         creditEmphasis: "전액 차감",
         disclaimer: "배송비와 세금은 별도 견적이며, 대량 생산 가격도 별도로 견적합니다."

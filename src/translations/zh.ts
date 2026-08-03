@@ -107,6 +107,7 @@ export default {
         additional: "同款定制样品加购",
         additionalDescription: "与首件定制样品采用相同设计和规格。",
         piece: "件",
+        priceContext: "B2B 样品费，并非大货单价。",
         creditNote: "两种样品费均可在同款产品的大货订单中全额抵扣。",
         creditEmphasis: "全额抵扣",
         disclaimer: "运费和税费另行核算；大货生产价格另行报价。"
