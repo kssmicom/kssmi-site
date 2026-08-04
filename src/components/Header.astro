@@ -276,14 +276,14 @@ const languageNames = {
             </div>
           </form>
           <div class="lang-dropdown-container relative group">
-            <button class:list={[
+            <button type="button" class:list={[
               'lang-btn text-[11px] font-bold uppercase tracking-widest flex items-center gap-2 transition-colors py-2 z-50 relative',
               transparent ? 'text-white hover:text-amber-300 active:text-amber-300 focus-visible:text-amber-300 focus-within:text-amber-300' : 'text-stone-900 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37]',
             ]} aria-haspopup="true" aria-expanded="false" tabindex="0">
               {currentLangUpper}
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
             </button>
-            <div class="lang-dropdown-wrapper absolute top-full right-0 mt-2 w-40 opacity-0 invisible group-hover:opacity-100 group-active:opacity-100 group-focus-visible:opacity-100 group-focus-within:opacity-100 group-hover:visible group-active:visible group-focus-visible:visible group-focus-within:visible transition-all duration-300 z-[60] shadow-[0_10px_30px_rgba(0,0,0,0.25)] rounded-lg bg-[#2d2926] pointer-events-none group-hover:pointer-events-auto group-active:pointer-events-auto group-focus-visible:pointer-events-auto group-focus-within:pointer-events-auto">
+            <div class="lang-dropdown-wrapper absolute top-full right-0 mt-2 w-40 opacity-0 invisible transition-all duration-300 z-[60] shadow-[0_10px_30px_rgba(0,0,0,0.25)] rounded-lg bg-[#2d2926] pointer-events-none">
               <!-- Invisible bridge to keep hover active -->
               <div class="absolute -top-3 left-0 w-full h-3"></div>
               <div class="lang-dropdown-menu max-h-[calc(100vh-5rem)] overflow-y-auto p-2 pb-6 flex flex-col rounded-lg">
@@ -427,6 +427,14 @@ const languageNames = {
   .lang-dropdown-menu {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+  }
+
+  /* The menu only opens through the explicit click state, so it remains open
+     consistently after tapping the language label on every device. */
+  .lang-dropdown-container.is-open .lang-dropdown-wrapper {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 </style>
 
@@ -840,22 +848,20 @@ const languageNames = {
           e.stopPropagation();
 
           // Close all other language dropdowns first
-          document.querySelectorAll('.lang-dropdown-wrapper').forEach(w => {
-            if (w !== wrapper) {
-              w.classList.remove('opacity-100', 'visible', 'pointer-events-auto');
-              w.classList.add('opacity-0', 'invisible', 'pointer-events-none');
+          document.querySelectorAll('.lang-dropdown-container').forEach(otherContainer => {
+            if (otherContainer !== container) {
+              otherContainer.classList.remove('is-open');
+              otherContainer.querySelector('.lang-btn')?.setAttribute('aria-expanded', 'false');
             }
           });
 
           // Toggle current dropdown
-          const isVisible = wrapper.classList.contains('opacity-100');
+          const isVisible = container.classList.contains('is-open');
           if (isVisible) {
-            wrapper.classList.remove('opacity-100', 'visible', 'pointer-events-auto');
-            wrapper.classList.add('opacity-0', 'invisible', 'pointer-events-none');
+            container.classList.remove('is-open');
             btn.setAttribute('aria-expanded', 'false');
           } else {
-            wrapper.classList.remove('opacity-0', 'invisible', 'pointer-events-none');
-            wrapper.classList.add('opacity-100', 'visible', 'pointer-events-auto');
+            container.classList.add('is-open');
             btn.setAttribute('aria-expanded', 'true');
             // update hint when opened via click
             const menu = wrapper.querySelector('.lang-dropdown-menu');
@@ -872,12 +878,8 @@ const languageNames = {
       const target = e.target;
       if (!target.closest('.lang-dropdown-container')) {
         document.querySelectorAll('.lang-dropdown-container').forEach(container => {
-          const wrapper = container.querySelector('.lang-dropdown-wrapper');
           const btn = container.querySelector('.lang-btn');
-          if (wrapper) {
-            wrapper.classList.remove('opacity-100', 'visible', 'pointer-events-auto');
-            wrapper.classList.add('opacity-0', 'invisible', 'pointer-events-none');
-          }
+          container.classList.remove('is-open');
           if (btn) btn.setAttribute('aria-expanded', 'false');
         });
       }
