@@ -3011,7 +3011,8 @@ function vjt_upsert_anon_view($day, $url) {
 }
 
 // Dashboard data for the "Today" tab. Summary cards use full-day aggregates
-// (COUNT/SUM) so they are never truncated by the Top-50 list limit.
+// (COUNT/SUM); the list shows every distinct URL recorded today (storage is
+// bounded by the 500/day anti-abuse soft cap, so the list is bounded too).
 function vjt_get_anon_today() {
     $db = vjt_db();
     $day = vjt_anon_day();
@@ -3022,7 +3023,7 @@ function vjt_get_anon_today() {
     $total    = (int)($sumRow['s'] ?? 0);
     $unique   = (int)($sumRow['c'] ?? 0);
 
-    $stmt = $db->prepare("SELECT url, views FROM anon_views WHERE day = ? ORDER BY views DESC, url ASC LIMIT 50");
+    $stmt = $db->prepare("SELECT url, views FROM anon_views WHERE day = ? ORDER BY views DESC, url ASC");
     $stmt->execute([$day]);
     $rows = $stmt->fetchAll();
 
