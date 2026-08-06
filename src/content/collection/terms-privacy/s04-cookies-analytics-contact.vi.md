@@ -64,3 +64,6 @@ Hệ thống lưu trữ cookie, biểu ngữ đồng ý và quá trình triển 
 ### 5. Thay đổi các lựa chọn đồng ý
 
 Khách truy cập phải có thể mở lại Cài đặt Cookie và thay đổi hoặc rút lại sự đồng ý về quảng cáo và phân tích một cách dễ dàng như khi họ đã cấp quyền đó. Việc rút lại không ảnh hưởng đến quá trình xử lý hợp pháp trước khi rút lại.
+
+### 6. Đếm lượt xem trang ẩn danh
+Tách biệt với phân tích dựa trên sự đồng ý được mô tả ở trên, trang web đếm lượt xem trang dưới dạng tổng hợp: với mỗi ngày dương lịch (theo giờ Bắc Kinh) và đường dẫn trang, chỉ lưu tổng số lượt xem. Bảng đếm này không sử dụng cookie, bộ nhớ trình duyệt hoặc mã định danh khách truy cập/phiên và không bao gồm địa chỉ IP, chuỗi tác nhân người dùng, người giới thiệu hoặc dấu thời gian của từng lượt truy cập. Giới hạn tốc độ, lọc bot và nhật ký máy chủ là các hoạt động bảo mật riêng biệt được mô tả trong các mục tương ứng; chúng không thuộc bảng tổng hợp này. Máy chủ có thể đọc riêng một dấu hiệu loại trừ quản trị viên đã ký để tránh đếm lưu lượng quản trị; dấu hiệu đó không được lưu trong bảng tổng hợp ẩn danh.

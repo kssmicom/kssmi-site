@@ -38,6 +38,12 @@ const layoutMeta = t.layout || fallbackTranslations.layout;
 
 const description = propDescription || layoutMeta.description;
 const cloudflareAnalyticsToken = import.meta.env.PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN?.trim();
+// Anonymous page-view counter endpoint: in DEV the PHP server runs on 4325
+// (see start-servers.bat) while Astro serves on 4324; in production use the
+// same-origin relative path.
+const anonEndpoint = import.meta.env.DEV
+  ? 'http://localhost:4325/api/track-anon-view.php'
+  : '/api/track-anon-view.php';
 const cookieBannerScriptUrl = import.meta.env.DEV
   ? '/cookie-banner.js'
   : runtimeAssetUrl('cookie-banner');
@@ -273,6 +279,34 @@ const websiteSchema = {
 
   <!-- View Transitions for SPA-like speed -->
   <ClientRouter />
+
+  <!-- Anonymous page-view counter (anonymous aggregate, consent-independent).
+       Sends only the root-relative path; never reads/writes localStorage or cookies,
+       never sends identifiers. Aggregated server-side per Beijing day. -->
+  <script is:inline define:vars={{ anonEndpoint }}>
+    (function () {
+      var ENDPOINT = anonEndpoint;
+      var lastFired = '';
+      function fire() {
+        var path = window.location.pathname;
+        if (!path || path === lastFired) return;
+        lastFired = path;
+        var body = JSON.stringify({ url: path });
+        try {
+          var sent = false;
+          if (navigator.sendBeacon) {
+            // sendBeacon can return false (e.g. keepalive queue full) or throw;
+            // either way fall back to fetch with keepalive so the view is not
+            // silently lost. Counting must never break the page.
+            try { sent = navigator.sendBeacon(ENDPOINT, new Blob([body], { type: 'application/json' })); } catch (e) { sent = false; }
+            if (sent) return;
+          }
+          fetch(ENDPOINT, { method: 'POST', body: body, keepalive: true, headers: { 'Content-Type': 'application/json' } }).catch(function () {});
+        } catch (e) { /* counting must never break the page */ }
+      }
+      document.addEventListener('astro:page-load', fire);
+    })();
+  </script>
 
   <!-- Preconnect to font origins to save DNS+TLS on critical path -->
   <link rel="dns-prefetch" href="https://www.google-analytics.com" />

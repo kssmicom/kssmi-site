@@ -64,3 +64,6 @@ The cookie inventory, consent banner and live implementation must agree. Renamin
 ### 5. Changing consent choices
 
 Visitors must be able to reopen Cookie Settings and change or withdraw analytics and advertising consent as easily as it was given. Withdrawal does not affect processing that was lawful before withdrawal.
+
+### 6. Anonymous page-view counting
+Separately from the consent-based analytics described above, the website counts page views in an aggregated form: for each calendar day (Beijing time) and page path it stores only the total number of views. This count table uses no cookies, no browser storage and no visitor or session identifiers, and it does not contain IP addresses, user agents, referrers or individual visit timestamps. Rate limiting, bot filtering and server logs are separate security operations described in their own sections; they are not part of this aggregate table. The server may separately read a signed administrator-exclusion marker to avoid counting admin traffic; that marker is not stored in the anonymous aggregate table.

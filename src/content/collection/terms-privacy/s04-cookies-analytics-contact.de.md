@@ -64,3 +64,6 @@ Das Cookie-Inventar, das Einwilligungs-Banner und die Live-Implementierung müss
 ### 5. Änderung der Einwilligungsentscheidungen
 
 Besucher müssen in der Lage sein, die Cookie-Einstellungen erneut zu öffnen und die Einwilligung zur Analyse und Werbung genauso einfach zu ändern oder zu widerrufen, wie sie erteilt wurde. Der Widerruf berührt nicht die Rechtmäßigkeit der vor dem Widerruf erfolgten Verarbeitung.
+
+### 6. Anonyme Seitenaufruf-Zählung
+Unabhängig von der oben beschriebenen einwilligungsbasierten Analyse zählt die Website Seitenaufrufe in aggregierter Form: Für jeden Kalendertag (Pekinger Zeit) und jeden Seitenpfad wird nur die Gesamtzahl der Aufrufe gespeichert. Diese Zähltabelle verwendet keine Cookies, keinen Browser-Speicher und keine Besucher- oder Sitzungskennungen und enthält weder IP-Adressen, User-Agents, Referrer noch einzelne Besuchszeitstempel. Ratenbegrenzung, Bot-Filterung und Server-Logs sind getrennte Sicherheitsvorgänge, die in ihren eigenen Abschnitten beschrieben sind und nicht Teil dieser Aggregattabelle sind. Der Server kann separat ein signiertes Administrations-Ausschlusskennzeichen lesen, um Administrationsverkehr nicht zu zählen; dieses Kennzeichen wird nicht in der anonymen Aggregattabelle gespeichert.

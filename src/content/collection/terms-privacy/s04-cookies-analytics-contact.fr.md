@@ -64,3 +64,6 @@ L'inventaire des cookies, la bannière de consentement et l'implémentation en d
 ### 5. Modification des choix de consentement
 
 Les visiteurs doivent pouvoir rouvrir les Paramètres des cookies et modifier ou retirer leur consentement aux analyses et à la publicité aussi facilement qu'il a été donné. Le retrait n'affecte pas le traitement qui était légal avant le retrait.
+
+### 6. Comptage anonyme des pages vues
+Indépendamment de l'analyse fondée sur le consentement décrite ci-dessus, le site compte les pages vues sous une forme agrégée : pour chaque jour calendaire (heure de Pékin) et chaque chemin de page, il ne stocke que le nombre total de vues. Ce tableau de comptage n'utilise aucun cookie, aucun stockage du navigateur ni identifiant de visiteur ou de session, et n'inclut ni adresses IP, ni agents utilisateurs, ni référents, ni horodatages de visites individuelles. La limitation de débit, le filtrage des robots et les journaux serveur sont des opérations de sécurité distinctes décrites dans leurs propres sections ; ils ne font pas partie de ce tableau agrégé. Le serveur peut lire séparément un marqueur signé d'exclusion des administrateurs afin de ne pas compter le trafic d'administration ; ce marqueur n'est pas stocké dans le tableau agrégé anonyme.

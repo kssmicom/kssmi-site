@@ -64,3 +64,6 @@ L'inventario dei cookie, il banner di consenso e l'implementazione live devono c
 ### 5. Modifica delle scelte di consenso
 
 I visitatori devono essere in grado di riaprire le Impostazioni dei cookie e modificare o revocare il consenso per l'analisi e la pubblicità con la stessa facilità con cui è stato fornito. La revoca non pregiudica il trattamento che era lecito prima della revoca.
+
+### 6. Conteggio anonimo delle visualizzazioni di pagina
+Indipendentemente dall'analisi basata sul consenso descritta sopra, il sito conteggia le visualizzazioni di pagina in forma aggregata: per ogni giorno di calendario (ora di Pechino) e percorso di pagina, memorizza solo il numero totale di visualizzazioni. Questa tabella di conteggio non utilizza cookie, memoria del browser o identificatori di visitatore/sessione e non include indirizzi IP, user agent, referrer o timestamp di singole visite. La limitazione della frequenza, il filtraggio dei bot e i log del server sono operazioni di sicurezza separate descritte nelle rispettive sezioni; non fanno parte di questa tabella aggregata. Il server può leggere separatamente un marcatore firmato di esclusione degli amministratori per non conteggiare il traffico amministrativo; tale marcatore non è memorizzato nella tabella aggregata anonima.

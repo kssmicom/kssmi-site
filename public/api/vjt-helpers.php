@@ -311,6 +311,9 @@ function vjt_create_schema() {
         max_scroll_depth INTEGER DEFAULT 0,
         step_order       INTEGER DEFAULT 1
     )");
+    // Anonymous count-only analytics (no identifiers, no IP, no UA, no
+    // per-event rows). Aggregated per Beijing day + page path.
+    $db->exec(vjt_anon_table_ddl());
     $db->exec("CREATE TABLE IF NOT EXISTS submissions (
         id            INTEGER PRIMARY KEY AUTOINCREMENT,
         visitor_id    TEXT DEFAULT '',
@@ -376,6 +379,7 @@ function vjt_create_schema() {
     $db->exec("CREATE INDEX IF NOT EXISTS idx_pv_session   ON pageviews(session_id)");
     $db->exec("CREATE INDEX IF NOT EXISTS idx_pv_visitor   ON pageviews(visitor_id)");
     $db->exec("CREATE INDEX IF NOT EXISTS idx_pv_url       ON pageviews(url)");
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_anon_day     ON anon_views(day)");
     $db->exec("CREATE INDEX IF NOT EXISTS idx_sub_time     ON submissions(submitted_at)");
     $db->exec("CREATE INDEX IF NOT EXISTS idx_sub_visitor  ON submissions(visitor_id)");
     $db->exec("CREATE INDEX IF NOT EXISTS idx_sub_session  ON submissions(session_id)");
@@ -714,6 +718,9 @@ function vjt_auto_cleanup() {
         $db->prepare("DELETE FROM sessions WHERE last_seen_at < ?")->execute([$cutoff]);
         $db->prepare("DELETE FROM visitors WHERE last_seen_at < ?")->execute([$cutoff]);
         $db->prepare("DELETE FROM geo_cache WHERE cached_at < ?")->execute([$cutoff]);
+        // Anonymous aggregate table: Beijing calendar-day cutoff, same retention.
+        $anonCutoff = gmdate('Y-m-d', $now + 8 * 3600 - ($retentionDays * 86400));
+        $db->prepare("DELETE FROM anon_views WHERE day < ?")->execute([$anonCutoff]);
         // Drop stale geo-queue entries (anything older than 2 days is unlikely to matter)
         $db->prepare("DELETE FROM geo_queue WHERE queued_at < ?")->execute([gmdate('Y-m-d H:i:s', $now - 2 * 86400)]);
         vjt_meta_set('last_cleanup', $now);
@@ -2771,6 +2778,10 @@ function vjt_cleanup_old_data($days) {
     $db->prepare("DELETE FROM sessions    WHERE last_seen_at < ?")->execute([$cutoff]);
     $db->prepare("DELETE FROM pageviews   WHERE visited_at  < ?")->execute([$cutoff]);
     $db->prepare("DELETE FROM submissions WHERE submitted_at < ?")->execute([$cutoff]);
+    // Anonymous aggregate table uses Beijing calendar-day strings, so it needs
+    // its own day-boundary cutoff instead of the UTC timestamp cutoff above.
+    $anonCutoff = gmdate('Y-m-d', time() + 8 * 3600 - ($days * 86400));
+    $db->prepare("DELETE FROM anon_views WHERE day < ?")->execute([$anonCutoff]);
     // Core business events have their own intent/inquiry retention settings
     // and are pruned by vjt_auto_cleanup(); a Journey cleanup must not silently
     // replace those independently configured periods.
@@ -2782,7 +2793,7 @@ function vjt_cleanup_old_data($days) {
 
 function vjt_wipe_all_data() {
     $db = vjt_db();
-    foreach (['visitors','sessions','pageviews','submissions','contact_events','geo_cache','geo_queue'] as $t) {
+    foreach (['visitors','sessions','pageviews','submissions','contact_events','geo_cache','geo_queue','anon_views'] as $t) {
         $db->exec("DELETE FROM $t");
     }
     // Best-effort WAL checkpoint; a locked/busy WAL is logged, never fatal.
@@ -2917,6 +2928,120 @@ function vjt_get_traffic_data($since) {
         'bounceRate'     => $bounceRate,
         'totalSessions'  => $totalSessions,
         'avgDwellAll'    => $avgDwellAll,
+    ];
+}
+
+// ── Anonymous page-view counter (consent-independent, anonymous aggregate) ───
+
+// Single source of truth for the anon_views DDL, shared by the full schema
+// (vjt_create_schema) and the lightweight anonymous init (vjt_anon_init).
+function vjt_anon_table_ddl() {
+    return "CREATE TABLE IF NOT EXISTS anon_views (
+        id    INTEGER PRIMARY KEY AUTOINCREMENT,
+        day   TEXT NOT NULL,
+        url   TEXT NOT NULL,
+        views INTEGER NOT NULL DEFAULT 0,
+        UNIQUE(day, url)
+    )";
+}
+
+// Lightweight init for the public anonymous endpoint. Unlike vjt_data_init(),
+// this only ensures the anonymous table + its index + the meta table (used for
+// the retention prune marker). It deliberately does NOT run schema migrations,
+// JSON migration, source backfill or cleanup on every anonymous page view.
+function vjt_anon_init() {
+    $db = vjt_db();
+    $db->exec(vjt_anon_table_ddl());
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_anon_day ON anon_views(day)");
+    $db->exec("CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT DEFAULT '')");
+}
+
+// Beijing (UTC+8) calendar day — same day boundary as the dashboard trends.
+function vjt_anon_day() {
+    return gmdate('Y-m-d', time() + 8 * 3600);
+}
+
+// Accept only a root-relative path (no scheme/host/query). Mirrors safeHref's
+// path rule; rejects control chars, protocol-relative URLs and path traversal;
+// the final allowlist also excludes query/hash/whitespace/backslash and any
+// character outside a normal URL-path set.
+function vjt_safe_anon_path($value) {
+    if (!is_scalar($value)) return '';
+    $path = trim((string)$value);
+    // Reject over-long values outright instead of clipping: clipping before
+    // validation could merge two distinct long paths that share a 2048-char
+    // prefix into a single counting bucket.
+    if ($path === '' || strlen($path) > 2048) return '';
+    if (preg_match('/[\x00-\x1F\x7F]/', $path)) return '';
+    if (!preg_match('#^/(?!/)#', $path)) return '';
+    if (strpos($path, '..') !== false) return '';
+    if (!preg_match('#^[A-Za-z0-9\-._~/%]*$#', $path)) return '';
+    return $path;
+}
+
+// Write-time aggregation: (day, path) → views+1. No per-event rows are kept.
+// The 500-distinct-paths-per-day cap is best-effort (soft): under concurrency
+// a few extra rows may slip through; the UNIQUE(day,url) constraint still
+// prevents duplicate rows for the same path.
+// Old days are pruned once per Beijing day using settings.retention_days.
+function vjt_upsert_anon_view($day, $url) {
+    $db = vjt_db();
+    $exists = $db->prepare("SELECT 1 FROM anon_views WHERE day = ? AND url = ?");
+    $exists->execute([$day, $url]);
+    if (!$exists->fetch()) {
+        $count = $db->prepare("SELECT COUNT(*) c FROM anon_views WHERE day = ?");
+        $count->execute([$day]);
+        if ((int)$count->fetch()['c'] >= 500) return; // soft cap: drop new distinct paths
+    }
+    $stmt = $db->prepare("INSERT INTO anon_views (day, url, views) VALUES (?, ?, 1)
+        ON CONFLICT(day, url) DO UPDATE SET views = views + 1");
+    $stmt->execute([$day, $url]);
+
+    // Daily prune (at most once per Beijing day), following the configured
+    // retention_days (default 90). vjt_get_settings() falls back to defaults
+    // if the settings table does not exist yet.
+    $pruneKey = 'anon_pruned_day';
+    if (vjt_meta_get($pruneKey, '') !== $day) {
+        $retentionDays = max(1, (int)(vjt_get_settings()['retention_days'] ?? 90));
+        $cutoff = gmdate('Y-m-d', time() + 8 * 3600 - $retentionDays * 86400);
+        $prune = $db->prepare("DELETE FROM anon_views WHERE day < ?");
+        $prune->execute([$cutoff]);
+        vjt_meta_set($pruneKey, $day);
+    }
+}
+
+// Dashboard data for the "Today" tab. Summary cards use full-day aggregates
+// (COUNT/SUM) so they are never truncated by the Top-50 list limit.
+function vjt_get_anon_today() {
+    $db = vjt_db();
+    $day = vjt_anon_day();
+
+    $summary = $db->prepare("SELECT COUNT(*) c, COALESCE(SUM(views), 0) s FROM anon_views WHERE day = ?");
+    $summary->execute([$day]);
+    $sumRow = $summary->fetch();
+    $total    = (int)($sumRow['s'] ?? 0);
+    $unique   = (int)($sumRow['c'] ?? 0);
+
+    $stmt = $db->prepare("SELECT url, views FROM anon_views WHERE day = ? ORDER BY views DESC, url ASC LIMIT 50");
+    $stmt->execute([$day]);
+    $rows = $stmt->fetchAll();
+
+    $items = [];
+    $topUrl   = '';
+    $topViews = 0;
+    foreach ($rows as $r) {
+        $v = (int)$r['views'];
+        $items[] = ['url' => (string)$r['url'], 'views' => $v];
+        if ($v > $topViews) { $topViews = $v; $topUrl = (string)$r['url']; }
+    }
+
+    return [
+        'day'        => $day,
+        'total'      => $total,
+        'uniqueUrls' => $unique,
+        'topUrl'     => $topUrl,
+        'topViews'   => $topViews,
+        'rows'       => $items,
     ];
 }
 

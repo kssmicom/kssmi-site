@@ -64,3 +64,6 @@ Inventaris cookie, spanduk idin lan implementasi langsung kudu padha. Ngganti je
 ### 5. Ngganti pilihan idin
 
 Pengunjung kudu bisa mbukak maneh Pengaturan Cookie lan ngganti utawa narik idin analitik lan iklan kanthi gampang kaya nalika diwenehake. Penarikan ora mengaruhi pangolahan sing sah sadurunge ditarik maneh.
+
+### 6. Etungan tampilan kaca tanpa jeneng (anonim)
+Kajaba saka analitik adhedhasar idin sing diterangake ing ndhuwur, situs web ngetung tampilan kaca kanthi wujud gabungan: kanggo saben dina tanggalan (wektu Beijing) lan path kaca, mung nyimpen gunggunge tampilan. Tabel etungan iki ora nganggo cookie, panyimpenan browser, utawa pengenal pengunjung/sesi, lan ora ngemot alamat IP, agen pangguna, referrer, utawa stempel wektu kunjungan individu. Watesan tingkat, panyaring bot, lan log server minangka operasi keamanan sing kapisah sing diterangake ing bagean dhewe-dhewe; iku dudu bagean saka tabel gabungan iki. Server bisa maca penanda pengecualian admin sing ditandatangani kanthi kapisah supaya ora ngetung lalu lintas admin; penanda kasebut ora disimpen ing tabel gabungan anonim.

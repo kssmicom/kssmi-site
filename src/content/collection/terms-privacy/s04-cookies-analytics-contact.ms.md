@@ -64,3 +64,6 @@ Inventori kuki, sepanduk persetujuan dan pelaksanaan langsung mesti bersetuju. M
 ### 5. Menukar pilihan kebenaran
 
 Pelawat mesti boleh membuka semula Tetapan Kuki dan menukar atau menarik balik persetujuan analitis dan pengiklanan semudah yang diberikan. Penarikan balik tidak menjejaskan pemprosesan yang sah sebelum penarikan balik.
+
+### 6. Pengiraan paparan halaman tanpa nama
+Berasingan daripada analitik berasaskan persetujuan yang diterangkan di atas, laman web mengira paparan halaman dalam bentuk agregat: bagi setiap hari kalendar (waktu Beijing) dan laluan halaman, ia hanya menyimpan jumlah paparan. Jadual pengiraan ini tidak menggunakan kuki, storan penyemak imbas atau pengecam pelawat/sesi, dan tidak mengandungi alamat IP, agen pengguna, perujuk atau cap masa lawatan individu. Had kadar, penapisan bot dan log pelayan ialah operasi keselamatan berasingan yang diterangkan dalam bahagian masing-masing; ia bukan sebahagian daripada jadual agregat ini. Pelayan boleh membaca secara berasingan penanda pengecualian pentadbir yang ditandatangani untuk mengelak daripada mengira trafik pentadbir; penanda itu tidak disimpan dalam jadual agregat tanpa nama.

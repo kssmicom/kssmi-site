@@ -151,7 +151,7 @@ if ($isAuthenticated) {
 // Determine active tab
 $tab = $_GET['tab'] ?? 'overview';
 $trendPeriod = $_GET['trend'] ?? 'days';
-$validTabs = ['overview', 'contacts', 'submissions', 'traffic', 'visitors', 'journey', 'countries', 'products', 'gsc', 'settings'];
+$validTabs = ['overview', 'contacts', 'submissions', 'traffic', 'today', 'visitors', 'journey', 'countries', 'products', 'gsc', 'settings'];
 if (!in_array($tab, $validTabs)) $tab = 'overview';
 
 // ── Data helpers ────────────────────────────────────────────────────────────
@@ -451,6 +451,13 @@ if ($isAuthenticated && $tab === 'traffic') {
         $trafficSince = vjt_utc_since_seconds(30 * 86400);
     }
     $trafficData = vjt_get_traffic_data($trafficSince);
+}
+
+// ── Anonymous Today (fully anonymous, count-only) ────────────────────────────
+
+$todayData = null;
+if ($isAuthenticated && $tab === 'today') {
+    $todayData = vjt_get_anon_today();
 }
 
 // ── Visitors list ────────────────────────────────────────────────────────────
@@ -969,6 +976,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                     <a href="?tab=contacts" class="tab <?php echo $tab === 'contacts' ? 'active' : ''; ?>">Core</a>
                     <a href="?tab=submissions" class="tab <?php echo $tab === 'submissions' ? 'active' : ''; ?>">Leads</a>
                     <a href="?tab=traffic" class="tab <?php echo $tab === 'traffic' ? 'active' : ''; ?>">Traffic</a>
+                    <a href="?tab=today" class="tab <?php echo $tab === 'today' ? 'active' : ''; ?>">Today</a>
                     <a href="?tab=visitors" class="tab <?php echo $tab === 'visitors' ? 'active' : ''; ?>">Visitors</a>
                     <a href="?tab=countries" class="tab <?php echo $tab === 'countries' ? 'active' : ''; ?>">Countries</a>
                     <a href="?tab=products" class="tab <?php echo $tab === 'products' ? 'active' : ''; ?>">Products</a>
@@ -1480,6 +1488,55 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                         </div>
                     </div>
                     <?php endif; ?>
+
+                <?php elseif ($tab === 'today' && $todayData): ?>
+                    <!-- Anonymous Today (fully anonymous, count-only) -->
+                    <div class="stats">
+                        <div class="stat-card">
+                            <h3>Views Today</h3>
+                            <div class="value"><?php echo number_format($todayData['total']); ?></div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Unique Pages Today</h3>
+                            <div class="value"><?php echo number_format($todayData['uniqueUrls']); ?></div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Top Page Today</h3>
+                            <div class="value" style="font-size:14px;line-height:1.4;"><?php echo htmlspecialchars($todayData['topUrl'] === '' ? '—' : (strlen($todayData['topUrl']) > 60 ? substr($todayData['topUrl'], 0, 60) . '…' : $todayData['topUrl'])); ?></div>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-header"><span>Pages Opened Today (Anonymous)</span></div>
+                        <div class="panel-body" style="padding:0;">
+                            <?php if (empty($todayData['rows'])): ?>
+                                <div style="padding:20px;color:#888;font-size:13px;">No anonymous views recorded yet today.</div>
+                            <?php else: ?>
+                            <div class="table-wrapper table-compact">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th style="width:40px;">#</th>
+                                            <th>Page URL</th>
+                                            <th style="text-align:center;width:80px;">Views</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php $rank = 1; foreach ($todayData['rows'] as $row): ?>
+                                        <tr>
+                                            <td style="color:#999;"><?php echo $rank++; ?></td>
+                                            <td class="url-cell">
+                                                <a href="<?php echo safeHref($row['url']); ?>" target="_blank" rel="noopener noreferrer"><?php echo htmlspecialchars($row['url']); ?></a>
+                                            </td>
+                                            <td style="text-align:center;font-weight:600;"><?php echo number_format($row['views']); ?></td>
+                                        </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
 
                 <?php elseif ($tab === 'visitors'): ?>
                     <!-- Visitors List -->

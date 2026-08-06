@@ -64,3 +64,6 @@ Bu bildirimde açıklanan web sitesi sistemleri için aşağıdaki süreler ve �
 ### 5. Onay seçimlerini değiştirme
 
 Ziyaretçiler Çerez Ayarları'nı yeniden açabilmeli ve analitik ve reklam onaylarını, verdikleri zamanki kadar kolay bir şekilde değiştirebilmeli veya geri çekebilmelidir. Geri çekme, geri çekilmeden önce yasal olan işlemeyi etkilemez.
+
+### 6. Anonim sayfa görüntüleme sayımı
+Yukarıda açıklanan izne dayalı analizden ayrı olarak, web sitesi sayfa görüntülemelerini toplu biçimde sayar: her takvim günü (Pekin saatine göre) ve sayfa yolu için yalnızca toplam görüntüleme sayısını saklar. Bu sayım tablosu çerez, tarayıcı deposu veya ziyaretçi/oturum tanımlayıcısı kullanmaz ve IP adresleri, kullanıcı aracıları, yönlendirenler veya tek tek ziyaret zaman damgaları içermez. Hız sınırlama, bot filtreleme ve sunucu günlükleri kendi bölümlerinde açıklanan ayrı güvenlik işlemleridir; bu toplu tablonun parçası değildir. Sunucu, yönetici trafiğini saymamak için imzalı bir yönetici hariç tutma işaretini ayrıca okuyabilir; bu işaret anonim toplu tabloda saklanmaz.

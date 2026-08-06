@@ -64,3 +64,6 @@ El inventario de cookies, el banner de consentimiento y la implementación en vi
 ### 5. Modificación de las opciones de consentimiento
 
 Los visitantes deben poder volver a abrir la Configuración de cookies y cambiar o retirar su consentimiento para publicidad y análisis con la misma facilidad con la que lo dieron. La retirada no afecta al procesamiento que era legal antes de la misma.
+
+### 6. Recuento anónimo de visitas a páginas
+Independientemente del análisis basado en consentimiento descrito anteriormente, el sitio web cuenta las visitas a páginas de forma agregada: para cada día natural (hora de Pekín) y ruta de página, solo almacena el número total de visitas. Esta tabla de recuento no utiliza cookies, ni almacenamiento del navegador, ni identificadores de visitante o sesión, y no incluye direcciones IP, agentes de usuario, referentes ni marcas de tiempo de visitas individuales. La limitación de velocidad, el filtrado de bots y los registros del servidor son operaciones de seguridad independientes descritas en sus propias secciones; no forman parte de esta tabla agregada. El servidor puede leer por separado una marca firmada de exclusión de administradores para evitar contar el tráfico de administración; esa marca no se almacena en la tabla agregada anónima.

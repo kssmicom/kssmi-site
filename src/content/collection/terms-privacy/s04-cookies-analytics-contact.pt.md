@@ -64,3 +64,6 @@ O inventário de cookies, o banner de consentimento e a implementação ao vivo 
 ### 5. Alteração das escolhas de consentimento
 
 Os visitantes devem poder reabrir as Configurações de cookies e alterar ou retirar o consentimento para análises e publicidade com a mesma facilidade com que o concederam. A retirada não afeta o processamento que era lícito antes de ser solicitada.
+
+### 6. Contagem anônima de visualizações de página
+Independentemente da análise baseada em consentimento descrita acima, o site conta as visualizações de páginas de forma agregada: para cada dia do calendário (horário de Pequim) e caminho de página, armazena apenas o número total de visualizações. Essa tabela de contagem não usa cookies, armazenamento do navegador ou identificadores de visitante/sessão e não inclui endereços IP, user agents, referentes nem registros de horário de visitas individuais. A limitação de taxa, a filtragem de bots e os registros do servidor são operações de segurança separadas, descritas em suas próprias seções; não fazem parte dessa tabela agregada. O servidor pode ler separadamente um marcador assinado de exclusão de administradores para não contar o tráfego de administração; esse marcador não é armazenado na tabela agregada anônima.
