@@ -986,6 +986,37 @@ activate_release() {
   echo "Versioned release activated: $RELEASE_ID"
 }
 
+prune_old_releases() {
+  # Keep only the newest release (the one just finalized) plus the current
+  # deploy lock. Older release and state directories are removed so release
+  # artifacts cannot fill the disk. Best-effort by design: a cleanup failure
+  # must not fail an already-verified deployment.
+  kept=0; removed=0; failed=0
+  for entry in "$RELEASES_DIR"/*; do
+    [ -e "$entry" ] || continue
+    if [ "$entry" = "$RELEASE_DIR" ]; then
+      kept=$((kept+1))
+    elif rm -rf "$entry" 2>/dev/null; then
+      removed=$((removed+1))
+    else
+      failed=$((failed+1))
+      echo "WARN: could not prune old release: $entry" >&2
+    fi
+  done
+  for entry in "$STATE_ROOT"/*; do
+    [ -e "$entry" ] || continue
+    if [ "$entry" = "$STATE_DIR" ] || [ "$entry" = "$DEPLOY_LOCK" ]; then
+      kept=$((kept+1))
+    elif rm -rf "$entry" 2>/dev/null; then
+      removed=$((removed+1))
+    else
+      failed=$((failed+1))
+      echo "WARN: could not prune old deploy state: $entry" >&2
+    fi
+  done
+  echo "Pruned old releases (keeping newest only): kept=$kept removed=$removed failed=$failed"
+}
+
 finalize_release() {
   [ -d "$STATE_DIR" ] || fail "Release state is missing."
   [ "$AUTHENTICATED_SMOKE_VERIFIED" = true ] ||
@@ -999,7 +1030,7 @@ finalize_release() {
   state_write finalized_at "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
   run_root sh -c "umask 0027; printf '%s\n' '$RELEASE_ID' > '$CURRENT_RELEASE_MARKER.tmp'; chown '$SITE_USER:$SITE_GROUP' '$CURRENT_RELEASE_MARKER.tmp'; chmod 640 '$CURRENT_RELEASE_MARKER.tmp'; mv -f '$CURRENT_RELEASE_MARKER.tmp' '$CURRENT_RELEASE_MARKER'"
   echo "Release finalized after $DEPLOY_ENVIRONMENT smoke: $RELEASE_ID"
-  echo "NOTE: old releases under $RELEASES_DIR and $STATE_ROOT are pruned manually (keep the newest few)."
+  prune_old_releases
 }
 
 emit_release_evidence() {
