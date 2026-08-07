@@ -230,7 +230,7 @@ requireText(
 );
 requireText(
   environmentAction,
-  'source: "dist,private,scripts/deploy-release.sh,scripts/permission-policy.sh,scripts/runtime-capability-probe.php"',
+  'source: "dist,private,scripts/deploy-release.sh,scripts/permission-policy.sh,scripts/runtime-capability-probe.php,scripts/prune-old-releases.sh"',
   'Shared private directory deployment',
 );
 requireText(
