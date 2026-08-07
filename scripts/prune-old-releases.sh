@@ -41,7 +41,7 @@ esac
 printf '%s' "$RELEASE_ID" | grep -Eq '^[0-9a-f]{40}-[1-9][0-9]*(-[1-9][0-9]*)?$' ||
   fail "RELEASE_ID must be a full Git commit SHA plus run id/run attempt."
 
-RELEASE_NAME_RE='^[0-9a-f]{40}-[1-9][0-9]*(-[1-9][0-9]*)?$|^bootstrap-'
+RELEASE_NAME_RE='^[0-9a-f]{40}-[1-9][0-9]*(-[1-9][0-9]*)?$|^bootstrap-[0-9]{14}-[0-9a-f]{40}(-[1-9][0-9]*)?$'
 
 run_root() {
   if [ "$(id -u)" = 0 ]; then

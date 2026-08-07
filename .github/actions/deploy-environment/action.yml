@@ -100,8 +100,8 @@ runs:
           set -eu
           PRIVATE_ROOT='${{ inputs.private-root }}'
           MIN_FREE_GB=6
-          avail_kb="$(df -Pk -- "$PRIVATE_ROOT" | awk 'NR==2 {print $4}')"
-          avail_gb="$(( avail_kb / 1024 / 1024 ))"
+          avail_mb="$(df -P -B 1M -- "$PRIVATE_ROOT" | awk 'NR==2 {print $4}')"
+          avail_gb="$(( avail_mb / 1024 ))"
           echo "Free disk on ${PRIVATE_ROOT}: ${avail_gb}G (minimum required: ${MIN_FREE_GB}G)"
           [ "$avail_gb" -ge "$MIN_FREE_GB" ] || {
             echo "ERROR: insufficient disk space (${avail_gb}G < ${MIN_FREE_GB}G). Free space before deploying."

@@ -115,7 +115,7 @@ for (const ciSource of [workflow, phpCi]) {
   assert.ok(ciSource.includes('npm run test:permissions'));
 }
 assert.ok(
-  environmentAction.includes('source: "dist,private,scripts/deploy-release.sh,scripts/permission-policy.sh,scripts/runtime-capability-probe.php"'),
+  environmentAction.includes('source: "dist,private,scripts/deploy-release.sh,scripts/permission-policy.sh,scripts/runtime-capability-probe.php,scripts/prune-old-releases.sh"'),
   'The runtime policy must ship in every immutable release.',
 );
 

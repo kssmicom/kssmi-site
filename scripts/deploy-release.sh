@@ -992,8 +992,8 @@ check_disk_space() {
   # alongside the current one. Mirrors the pre-upload check in the deploy
   # action (6G minimum) so a near-full disk fails with a clear message
   # instead of surfacing later as SQLite disk I/O errors.
-  avail_kb="$(df -Pk -- "$PRIVATE_ROOT" | awk 'NR==2 {print $4}')"
-  avail_gb="$(( avail_kb / 1024 / 1024 ))"
+  avail_mb="$(df -P -B 1M -- "$PRIVATE_ROOT" | awk 'NR==2 {print $4}')"
+  avail_gb="$(( avail_mb / 1024 ))"
   echo "Free disk on $PRIVATE_ROOT: ${avail_gb}G (minimum required: 6G)"
   [ "$avail_gb" -ge 6 ] || fail "Insufficient disk space (${avail_gb}G < 6G). Free space before deploying."
 }
