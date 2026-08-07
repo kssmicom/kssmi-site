@@ -63,6 +63,7 @@ jobs:
           bash -n scripts/deploy-release.sh
           bash -n scripts/permission-policy.sh
           bash -n scripts/test-permission-policy.sh
+          bash -n scripts/prune-old-releases.sh
           npm run validate:release
           npm run validate:permissions
           npm run test:permissions
@@ -162,7 +163,8 @@ jobs:
             dist private \
             scripts/deploy-release.sh \
             scripts/permission-policy.sh \
-            scripts/runtime-capability-probe.php
+            scripts/runtime-capability-probe.php \
+            scripts/prune-old-releases.sh
           sha256sum kssmi-release.tar > kssmi-release.tar.sha256
 
       - name: Upload sealed release artifact

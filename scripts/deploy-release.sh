@@ -938,6 +938,7 @@ rollback_release() {
 }
 
 activate_release() {
+  check_disk_space
   validate_release_bundle
   prepare_persistent_storage
   [ ! -e "$STATE_DIR" ] || fail "Release state already exists: $STATE_DIR"
@@ -986,35 +987,15 @@ activate_release() {
   echo "Versioned release activated: $RELEASE_ID"
 }
 
-prune_old_releases() {
-  # Keep only the newest release (the one just finalized) plus the current
-  # deploy lock. Older release and state directories are removed so release
-  # artifacts cannot fill the disk. Best-effort by design: a cleanup failure
-  # must not fail an already-verified deployment.
-  kept=0; removed=0; failed=0
-  for entry in "$RELEASES_DIR"/*; do
-    [ -e "$entry" ] || continue
-    if [ "$entry" = "$RELEASE_DIR" ]; then
-      kept=$((kept+1))
-    elif rm -rf "$entry" 2>/dev/null; then
-      removed=$((removed+1))
-    else
-      failed=$((failed+1))
-      echo "WARN: could not prune old release: $entry" >&2
-    fi
-  done
-  for entry in "$STATE_ROOT"/*; do
-    [ -e "$entry" ] || continue
-    if [ "$entry" = "$STATE_DIR" ] || [ "$entry" = "$DEPLOY_LOCK" ]; then
-      kept=$((kept+1))
-    elif rm -rf "$entry" 2>/dev/null; then
-      removed=$((removed+1))
-    else
-      failed=$((failed+1))
-      echo "WARN: could not prune old deploy state: $entry" >&2
-    fi
-  done
-  echo "Pruned old releases (keeping newest only): kept=$kept removed=$removed failed=$failed"
+check_disk_space() {
+  # Fail fast before any mutation when the server cannot hold the new release
+  # alongside the current one. Mirrors the pre-upload check in the deploy
+  # action (6G minimum) so a near-full disk fails with a clear message
+  # instead of surfacing later as SQLite disk I/O errors.
+  avail_kb="$(df -Pk -- "$PRIVATE_ROOT" | awk 'NR==2 {print $4}')"
+  avail_gb="$(( avail_kb / 1024 / 1024 ))"
+  echo "Free disk on $PRIVATE_ROOT: ${avail_gb}G (minimum required: 6G)"
+  [ "$avail_gb" -ge 6 ] || fail "Insufficient disk space (${avail_gb}G < 6G). Free space before deploying."
 }
 
 finalize_release() {
@@ -1030,7 +1011,9 @@ finalize_release() {
   state_write finalized_at "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
   run_root sh -c "umask 0027; printf '%s\n' '$RELEASE_ID' > '$CURRENT_RELEASE_MARKER.tmp'; chown '$SITE_USER:$SITE_GROUP' '$CURRENT_RELEASE_MARKER.tmp'; chmod 640 '$CURRENT_RELEASE_MARKER.tmp'; mv -f '$CURRENT_RELEASE_MARKER.tmp' '$CURRENT_RELEASE_MARKER'"
   echo "Release finalized after $DEPLOY_ENVIRONMENT smoke: $RELEASE_ID"
-  prune_old_releases
+  # Old releases are pruned by scripts/prune-old-releases.sh (invoked by the
+  # deploy action after finalize, keeping the newest release only). The
+  # release manager itself never performs recursive deletes.
 }
 
 emit_release_evidence() {

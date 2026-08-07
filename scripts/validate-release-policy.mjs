@@ -25,6 +25,7 @@ for (const marker of [
   'Upload sealed release artifact',
   'deploy-production:',
   'needs: build-release',
+  'scripts/prune-old-releases.sh',
 ]) {
   assert.ok(workflow.includes(marker), `Deploy workflow missing promotion marker: ${marker}`);
 }
@@ -32,12 +33,14 @@ for (const marker of [
 // ── Shared environment action: versioned-release shape ──
 for (const marker of [
   'Upload immutable release bundle',
-  'source: "dist,private,scripts/deploy-release.sh,scripts/permission-policy.sh,scripts/runtime-capability-probe.php"',
+  'Check production disk space before upload',
+  'source: "dist,private,scripts/deploy-release.sh,scripts/permission-policy.sh,scripts/runtime-capability-probe.php,scripts/prune-old-releases.sh"',
   'target: "${{ inputs.private-root }}/releases/${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}"',
   'Activate versioned release atomically',
   'Verify deployed security controls',
   'Run authenticated deployment smoke',
   'Finalize successful release',
+  'Prune old releases (keep newest)',
   'Rollback on failure',
   'if: failure()',
   'bash "$RELEASE_SCRIPT" activate',

@@ -89,13 +89,32 @@ runs:
         test "$SITE_USER" = kssmi4374
         test "$SITE_GROUP" = kssmi4374
 
+    - name: Check production disk space before upload
+      uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b  # v1.2.5+ pinned 2026-07-06
+      with:
+        host: ${{ inputs.remote-host }}
+        username: ${{ inputs.remote-user }}
+        key: ${{ inputs.ssh-private-key }}
+        command_timeout: 60s
+        script: |
+          set -eu
+          PRIVATE_ROOT='${{ inputs.private-root }}'
+          MIN_FREE_GB=6
+          avail_kb="$(df -Pk -- "$PRIVATE_ROOT" | awk 'NR==2 {print $4}')"
+          avail_gb="$(( avail_kb / 1024 / 1024 ))"
+          echo "Free disk on ${PRIVATE_ROOT}: ${avail_gb}G (minimum required: ${MIN_FREE_GB}G)"
+          [ "$avail_gb" -ge "$MIN_FREE_GB" ] || {
+            echo "ERROR: insufficient disk space (${avail_gb}G < ${MIN_FREE_GB}G). Free space before deploying."
+            exit 1
+          }
+
     - name: Upload immutable release bundle
       uses: appleboy/scp-action@ff85246acaad7bdce478db94a363cd2bf7c90345  # v1.0.0 pinned 2026-07-08
       with:
         host: ${{ inputs.remote-host }}
         username: ${{ inputs.remote-user }}
         key: ${{ inputs.ssh-private-key }}
-        source: "dist,private,scripts/deploy-release.sh,scripts/permission-policy.sh,scripts/runtime-capability-probe.php"
+        source: "dist,private,scripts/deploy-release.sh,scripts/permission-policy.sh,scripts/runtime-capability-probe.php,scripts/prune-old-releases.sh"
         target: "${{ inputs.private-root }}/releases/${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}"
 
     - name: Activate versioned release atomically
@@ -229,6 +248,23 @@ runs:
           RELEASE_ID="$RELEASE_ID" \
           AUTHENTICATED_SMOKE_VERIFIED=true \
             bash "$RELEASE_SCRIPT" finalize
+
+    - name: Prune old releases (keep newest)
+      id: prune
+      if: steps.finalize.outcome == 'success'
+      uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b  # v1.2.5+ pinned 2026-07-06
+      with:
+        host: ${{ inputs.remote-host }}
+        username: ${{ inputs.remote-user }}
+        key: ${{ inputs.ssh-private-key }}
+        command_timeout: 120s
+        script: |
+          set -eu
+          RELEASE_ID='${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}'
+          PRIVATE_ROOT='${{ inputs.private-root }}'
+          PRUNE_SCRIPT="$PRIVATE_ROOT/releases/$RELEASE_ID/scripts/prune-old-releases.sh"
+          test -f "$PRUNE_SCRIPT"
+          PRIVATE_ROOT="$PRIVATE_ROOT" RELEASE_ID="$RELEASE_ID" bash "$PRUNE_SCRIPT"
 
     - name: Rollback on failure
       id: rollback

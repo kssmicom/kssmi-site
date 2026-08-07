@@ -46,6 +46,7 @@ jobs:
           bash -n scripts/deploy-release.sh
           bash -n scripts/permission-policy.sh
           bash -n scripts/test-permission-policy.sh
+          bash -n scripts/prune-old-releases.sh
           npm run validate:release
           npm run validate:permissions
           npm run test:permissions
