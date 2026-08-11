@@ -15,19 +15,24 @@ const [security, emailAdmin, raceTest, packageJson, phpCi, deploy] = await Promi
   readText('.github/workflows/deploy.yml'),
 ]);
 
-const transactionStart = security.indexOf('function kssmi_admin_reset_password(');
+const transactionStart = security.indexOf('function kssmi_admin_rotate_credentials(');
 assert.ok(transactionStart >= 0, 'Shared security module must define the token-gated password reset operation.');
 const transaction = security.slice(transactionStart);
 const hashIndex = transaction.indexOf('password_hash(');
-const consumeIndex = transaction.indexOf('kssmi_admin_reset_token_consume(');
+const consumeIndex = transaction.indexOf("kssmi_admin_atomic_write($tokensPath, '[]', 0600)");
 const writeIndex = transaction.indexOf('kssmi_admin_secret_write(');
 assert.ok(hashIndex >= 0, 'Password reset must prepare a password hash.');
-assert.ok(consumeIndex >= 0, 'Password reset must atomically consume its token.');
+assert.ok(consumeIndex >= 0, 'Password reset must atomically revoke its token set.');
 assert.ok(hashIndex > consumeIndex, 'Only the token-consumption winner may perform password hashing.');
 assert.ok(writeIndex > hashIndex, 'Password file must be written only after consumption and hashing succeed.');
 assert.match(
+  security,
+  /function kssmi_admin_reset_password[\s\S]*?return kssmi_admin_rotate_credentials\(/,
+  'Password reset entry point must use the token-gated credential rotation.'
+);
+assert.match(
   transaction,
-  /if\s*\(\s*!\$consume\[['"]consumed['"]\]\s*\)[\s\S]*?changed['"]\s*=>\s*false/,
+  /if\s*\(\$token\s*!==\s*null\s*&&\s*\(!isset\(\$tokens\[\$token\]\)[\s\S]*?changed['"]\s*=>\s*false/,
   'A request that does not consume the token must not report a password change.'
 );
 

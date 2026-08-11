@@ -706,11 +706,6 @@ function kssmi_admin_rotate_credentials(
     if ($token !== null && preg_match('/^[a-f0-9]{64}$/D', $token) !== 1) {
         return ['ok' => true, 'changed' => false, 'consumed' => false, 'error' => null];
     }
-    $passwordHash = password_hash($newPassword, PASSWORD_BCRYPT);
-    if (!is_string($passwordHash) || $passwordHash === '') {
-        return ['ok' => false, 'changed' => false, 'consumed' => false, 'error' => 'password_hash_failed'];
-    }
-
     $lock = kssmi_admin_file_lock($tokensPath, LOCK_EX);
     if (!$lock['ok']) return ['ok' => false, 'changed' => false, 'consumed' => false, 'error' => $lock['error']];
     try {
@@ -737,6 +732,13 @@ function kssmi_admin_rotate_credentials(
         // sibling token capable of replacing the password.
         if (!kssmi_admin_atomic_write($tokensPath, '[]', 0600)) {
             return ['ok' => false, 'changed' => false, 'consumed' => false, 'error' => 'token_revoke_failed'];
+        }
+        // Password hashing is intentionally deferred until this request owns
+        // the reset token. Concurrent replays return above without spending
+        // CPU on attacker-chosen password input.
+        $passwordHash = password_hash($newPassword, PASSWORD_BCRYPT);
+        if (!is_string($passwordHash) || $passwordHash === '') {
+            return ['ok' => false, 'changed' => false, 'consumed' => $token !== null, 'error' => 'password_hash_failed'];
         }
         if ($version >= 2147483647
             || !kssmi_admin_secret_write($versionPath, (string)($version + 1))) {
