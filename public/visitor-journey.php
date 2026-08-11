@@ -80,6 +80,7 @@ require_once __DIR__ . '/api/vjt-helpers.php';
 // Password config (shared with email-logs.php, stored ABOVE public_html)
 define('PASSWORD_FILE_OLD', __DIR__ . '/.email_logs_password');
 define('PASSWORD_FILE', dirname(__DIR__) . '/.email_logs_password');
+define('CREDENTIAL_VERSION_FILE', kssmi_admin_credential_version_path(PASSWORD_FILE));
 define('ADMIN_EMAIL', 'kssmi@kssmi.com');
 
 // Migrate password file if it still lives inside public_html
@@ -115,10 +116,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
     } else {
         $submitted = trim($_POST['password']);
         if ($PASSWORD_HASH && password_verify($submitted, $PASSWORD_HASH)) {
-            $_SESSION['email_logs_auth'] = true;
-            kssmi_admin_csrf_rotate();
-            kssmi_admin_set_marker_cookie(true);
-            session_regenerate_id(true);
+            if (!kssmi_admin_session_establish(CREDENTIAL_VERSION_FILE)) {
+                $error = 'Unable to establish a secure admin session. Please try again.';
+            } else {
+                kssmi_admin_set_marker_cookie(true);
+            }
         } else {
             $error = 'Invalid password.';
         }
@@ -127,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
 
 // Handle logout — POST + CSRF only (a GET logout can be triggered by an
 // <img>/prefetch and would silently end an admin session).
-if ($isAuthenticated = isset($_SESSION['email_logs_auth']) && $_SESSION['email_logs_auth'] === true) {
+if ($isAuthenticated = kssmi_admin_session_authenticated(CREDENTIAL_VERSION_FILE)) {
     if (isset($_POST['logout'])) {
         if (!kssmi_admin_csrf_valid($_POST['csrf_token'] ?? null)) {
             http_response_code(403);
@@ -141,11 +143,13 @@ if ($isAuthenticated = isset($_SESSION['email_logs_auth']) && $_SESSION['email_l
     }
 }
 
-$isAuthenticated = isset($_SESSION['email_logs_auth']) && $_SESSION['email_logs_auth'] === true;
+$isAuthenticated = kssmi_admin_session_authenticated(CREDENTIAL_VERSION_FILE);
 
 // Keep admin marker cookie alive so the tracker skips admin visits
 if ($isAuthenticated) {
     kssmi_admin_set_marker_cookie(true);
+} else {
+    kssmi_admin_set_marker_cookie(false);
 }
 
 // Determine active tab
@@ -269,8 +273,12 @@ if ($isAuthenticated && ($leadDeleteRaw !== null || $legacyLeadDeleteRaw !== nul
         $deleted = 0;
         $db->beginTransaction();
         try {
-            $deleteVisitorEvents = $db->prepare("DELETE FROM contact_events WHERE vjt_visitor_id = ?");
-            $deleteSingleEvent = $db->prepare("DELETE FROM contact_events WHERE event_id = ?");
+            $canonicalDeletePredicate = "server_verified = 1 AND channel = 'inquiry'
+                AND event_type = 'submission_success' AND status = 'success'";
+            $deleteVisitorEvents = $db->prepare("DELETE FROM contact_events
+                WHERE vjt_visitor_id = ? AND $canonicalDeletePredicate");
+            $deleteSingleEvent = $db->prepare("DELETE FROM contact_events
+                WHERE event_id = ? AND $canonicalDeletePredicate");
             foreach (array_unique($keys) as $key) {
                 if (strpos($key, 'visitor:') === 0) {
                     $visitorId = substr($key, 8);
@@ -279,7 +287,9 @@ if ($isAuthenticated && ($leadDeleteRaw !== null || $legacyLeadDeleteRaw !== nul
                     $deleted += $deleteVisitorEvents->rowCount();
                 } elseif (strpos($key, 'event:') === 0) {
                     $eventId = substr($key, 6);
-                    if (!preg_match('/^vjtce_[A-Za-z0-9_-]{8,80}$/', $eventId)) continue;
+                    // v7+ rows use vjtcv_; verified vjtce_ rows are retained
+                    // only for authoritative Inquiry outcomes migrated from v6.
+                    if (!preg_match('/^(?:vjtcv_[A-Za-z0-9_-]{16,96}|vjtce_[A-Za-z0-9_-]{8,80})$/D', $eventId)) continue;
                     $deleteSingleEvent->execute([$eventId]);
                     $deleted += $deleteSingleEvent->rowCount();
                 }
@@ -999,13 +1009,14 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                             <div class="value"><?php echo number_format($overview['totalSessions']); ?></div>
                         </div>
                         <div class="stat-card">
+                            <h3>SMTP-Verified Canonical Inquiries</h3>
                             <div class="core-leads">
-                                <span title="Core contacts in selected period">C <strong><?php echo number_format($overview['totalCore']); ?></strong></span>
-                                <span title="Journey-attributed leads in selected period">L <strong><?php echo number_format($overview['totalLeads']); ?></strong></span>
+                                <span title="SMTP-verified canonical inquiry successes in selected period">C <strong><?php echo number_format($overview['totalCore']); ?></strong></span>
+                                <span title="Journey-attributed visitors with an SMTP-verified canonical inquiry in selected period">L <strong><?php echo number_format($overview['totalLeads']); ?></strong></span>
                             </div>
                         </div>
                         <div class="stat-card">
-                            <h3>Lead Rate</h3>
+                            <h3>Verified Inquiry Rate</h3>
                             <div class="value"><?php echo htmlspecialchars((string)$overview['conversionRate']); ?>%</div>
                         </div>
                         <div class="stat-card">
@@ -1014,7 +1025,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                         </div>
                     </div>
 
-                    <!-- Canonical Lead Trend -->
+                    <!-- SMTP-verified canonical inquiry trend -->
                     <?php
                     $trendData = $overview['trend'] ?? [];
                     $coreTrendData = $overview['coreTrend'] ?? [];
@@ -1028,7 +1039,11 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                     ?>
                     <?php if (!empty($trendData)): ?>
                     <div class="panel">
-                        <div class="panel-header" style="justify-content:flex-end;">
+                        <div class="panel-header">
+                            <div>
+                                <div>SMTP-Verified Canonical Inquiry Trend</div>
+                                <div style="font-size:11px;font-weight:400;color:#888;margin-top:2px;">C = confirmed inquiry rows; L = Journey-attributed visitors</div>
+                            </div>
                             <div style="display:flex;gap:4px;">
                                 <a href="?tab=overview&trend=days" class="trend-tab <?php echo $trendPeriod === 'days' ? 'trend-tab-active' : ''; ?>">30 Days</a>
                                 <a href="?tab=overview&trend=months" class="trend-tab <?php echo $trendPeriod === 'months' ? 'trend-tab-active' : ''; ?>">12 Months</a>
@@ -1056,11 +1071,11 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                         <div class="bar-pair">
                                             <div class="bar-series">
                                                 <div class="bar-value">L<?php echo number_format($leadCnt); ?></div>
-                                                <div class="bar" style="height:<?php echo max(2, $leadH); ?>px;" title="<?php echo htmlspecialchars($key); ?> · L <?php echo number_format($leadCnt); ?>"></div>
+                                                <div class="bar" style="height:<?php echo max(2, $leadH); ?>px;" title="<?php echo htmlspecialchars($key); ?>: <?php echo number_format($leadCnt); ?> Journey-attributed visitors with an SMTP-verified inquiry"></div>
                                             </div>
                                             <div class="bar-series">
                                                 <div class="bar-value">C<?php echo number_format($coreCnt); ?></div>
-                                                <div class="bar bar-core" style="height:<?php echo max(2, $coreH); ?>px;" title="<?php echo htmlspecialchars($key); ?> · C <?php echo number_format($coreCnt); ?>"></div>
+                                                <div class="bar bar-core" style="height:<?php echo max(2, $coreH); ?>px;" title="<?php echo htmlspecialchars($key); ?>: <?php echo number_format($coreCnt); ?> SMTP-verified canonical inquiries"></div>
                                             </div>
                                         </div>
                                         <div class="bar-label"><?php echo htmlspecialchars($label); ?></div>
@@ -1186,12 +1201,15 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                 <?php elseif ($tab === 'contacts'): ?>
                     <div class="panel">
                         <div class="panel-header">
-                            <span>Core Events (<?php echo number_format($contactTotal); ?>)</span>
+                            <span>Raw Contact/Core Event Stream (<?php echo number_format($contactTotal); ?>)</span>
                             <div>
                                 <a href="?tab=contacts&amp;export_contacts_csv=1<?php echo $contactChannel ? '&amp;channel=' . urlencode($contactChannel) : ''; ?><?php echo $contactStatus ? '&amp;status=' . urlencode($contactStatus) : ''; ?><?php echo $contactDateFrom ? '&amp;date_from=' . urlencode($contactDateFrom) : ''; ?><?php echo $contactDateTo ? '&amp;date_to=' . urlencode($contactDateTo) : ''; ?>" class="btn btn-success btn-small">Export CSV (<?php echo number_format($contactTotal); ?> rows)</a>
                             </div>
                         </div>
                         <div class="panel-body">
+                            <div style="margin-bottom:12px;color:#666;font-size:12px;line-height:1.5;">
+                                This is the raw audit and telemetry stream. Public WhatsApp/mailto intents are unverified signals and never count as canonical Leads. Only an Inquiry success marked <strong>SMTP success</strong> is canonical; verified server errors remain visible here but are excluded from Leads.
+                            </div>
                             <details class="filter-disclosure" open>
                                 <summary>Filters <span class="filter-summary-hint"></span></summary>
                                 <form class="filters" method="GET">
@@ -1204,9 +1222,9 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                     </select>
                                     <select name="status">
                                         <option value="">All Statuses</option>
-                                        <option value="intent" <?php echo $contactStatus === 'intent' ? 'selected' : ''; ?>>Intent</option>
-                                        <option value="success" <?php echo $contactStatus === 'success' ? 'selected' : ''; ?>>Confirmed Success</option>
-                                        <option value="error" <?php echo $contactStatus === 'error' ? 'selected' : ''; ?>>Error</option>
+                                        <option value="intent" <?php echo $contactStatus === 'intent' ? 'selected' : ''; ?>>Raw Intent (Unverified)</option>
+                                        <option value="success" <?php echo $contactStatus === 'success' ? 'selected' : ''; ?>>SMTP-Verified Success</option>
+                                        <option value="error" <?php echo $contactStatus === 'error' ? 'selected' : ''; ?>>Server Outcome Error</option>
                                     </select>
                                     <input type="date" name="date_from" value="<?php echo htmlspecialchars($contactDateFrom); ?>">
                                     <input type="date" name="date_to" value="<?php echo htmlspecialchars($contactDateTo); ?>">
@@ -1219,14 +1237,14 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                             </details>
 
                             <?php if (empty($contactEvents)): ?>
-                                <div class="empty"><div class="empty-icon">☎</div><p>No Core events found</p></div>
+                                <div class="empty"><div class="empty-icon">☎</div><p>No raw Contact/Core events found</p></div>
                             <?php else: ?>
                                 <div class="table-wrapper table-wide">
                                     <table>
                                         <thead><tr>
                                             <th style="width:30px;"><input type="checkbox" id="contactSelectAll" onclick="vjtToggleContactEvents()"></th>
                                             <th>Time (Beijing)</th><th>Channel / Event</th><th>Page / Placement</th>
-                                            <th>Product / Language</th><th>Attribution</th><th>Status</th><th>Retention</th><th>Actions</th>
+                                            <th>Product / Language</th><th>Attribution</th><th>Verification</th><th>Status</th><th>Retention</th><th>Actions</th>
                                         </tr></thead>
                                         <tbody>
                                         <?php foreach ($contactEvents as $event): ?>
@@ -1244,6 +1262,15 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                                         <?php endif; ?>
                                                     <?php else: ?>
                                                         <span style="color:#888;">Unattributed / no analytics linkage</span>
+                                                    <?php endif; ?>
+                                                </td>
+                                                <td>
+                                                    <?php if (!empty($event['server_verified']) && ($event['status'] ?? '') === 'success'): ?>
+                                                        <span class="status status-success" title="The server-side Inquiry mail path confirmed SMTP success">SMTP success</span>
+                                                    <?php elseif (!empty($event['server_verified'])): ?>
+                                                        <span class="status status-error" title="Authoritative server-side mail outcome; excluded from canonical Leads">Server outcome</span>
+                                                    <?php else: ?>
+                                                        <span class="status status-unknown" title="Raw public telemetry; excluded from canonical Leads">Raw / unverified</span>
                                                     <?php endif; ?>
                                                 </td>
                                                 <?php $contactDisplayStatus = safeStatus($event['status'] ?? ''); ?>
@@ -1275,17 +1302,17 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                     </div>
 
                 <?php elseif ($tab === 'submissions'): ?>
-                    <!-- Canonical Contact Core Leads -->
+                    <!-- Canonical SMTP-Verified Inquiry Leads -->
                     <div class="panel">
                         <div class="panel-header">
-                            Leads (canonical rows: <?php echo number_format($leadTotal); ?>)
+                            SMTP-Verified Inquiry Leads (canonical rows: <?php echo number_format($leadTotal); ?>)
                             <div>
                                 <a href="?tab=submissions&export_csv=1&status=<?php echo urlencode($leadStatus); ?><?php echo $leadChannel ? '&channel=' . urlencode($leadChannel) : ''; ?><?php echo $leadDateFrom ? '&date_from=' . urlencode($leadDateFrom) : ''; ?><?php echo $leadDateTo ? '&date_to=' . urlencode($leadDateTo) : ''; ?>" class="btn btn-success btn-small">Export CSV (<?php echo number_format($leadTotal); ?> rows)</a>
                             </div>
                         </div>
                         <div class="panel-body">
                             <div style="margin-bottom:12px;color:#666;font-size:12px;line-height:1.5;">
-                                Contact Core is the canonical Lead source. Linked events are grouped by Visitor; unlinked events remain separate because no Analytics identity exists.
+                                Only <strong>server_verified=1</strong> Inquiry <strong>submission_success</strong> rows accepted by SMTP appear here. Raw contact intents remain in Core and never become canonical Leads. Journey linkage is optional attribution; an unlinked SMTP-verified Inquiry is still canonical because the server-side mail result is the business proof.
                             </div>
                             <details class="filter-disclosure" open>
                                 <summary>Filters <span class="filter-summary-hint"></span></summary>
@@ -1293,17 +1320,17 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                 <input type="hidden" name="tab" value="submissions">
                                 <input type="hidden" name="csrf_token" id="vjt_csrf" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
                                 <select name="status">
-                                    <option value="contact" <?php echo $leadStatus === 'contact' ? 'selected' : ''; ?>>Contacts (Success + Intent)</option>
-                                    <option value="">All Statuses</option>
-                                    <option value="success" <?php echo $leadStatus === 'success' ? 'selected' : ''; ?>>Confirmed Inquiry</option>
-                                    <option value="intent" <?php echo $leadStatus === 'intent' ? 'selected' : ''; ?>>Contact Intent</option>
-                                    <option value="error" <?php echo $leadStatus === 'error' ? 'selected' : ''; ?>>Error</option>
+                                    <option value="contact" <?php echo $leadStatus === 'contact' ? 'selected' : ''; ?>>Canonical Inquiry Successes</option>
+                                    <option value="">All Canonical Rows</option>
+                                    <option value="success" <?php echo $leadStatus === 'success' ? 'selected' : ''; ?>>SMTP-Verified Inquiry</option>
+                                    <option value="intent" <?php echo $leadStatus === 'intent' ? 'selected' : ''; ?>>Raw Intent (Core only)</option>
+                                    <option value="error" <?php echo $leadStatus === 'error' ? 'selected' : ''; ?>>Outcome Error (Core only)</option>
                                 </select>
                                 <select name="channel">
                                     <option value="">All Channels</option>
                                     <option value="inquiry" <?php echo $leadChannel === 'inquiry' ? 'selected' : ''; ?>>Inquiry Form</option>
-                                    <option value="whatsapp" <?php echo $leadChannel === 'whatsapp' ? 'selected' : ''; ?>>WhatsApp Intent</option>
-                                    <option value="mailto" <?php echo $leadChannel === 'mailto' ? 'selected' : ''; ?>>Mailto Intent</option>
+                                    <option value="whatsapp" <?php echo $leadChannel === 'whatsapp' ? 'selected' : ''; ?>>WhatsApp Intent (Core only)</option>
+                                    <option value="mailto" <?php echo $leadChannel === 'mailto' ? 'selected' : ''; ?>>Mailto Intent (Core only)</option>
                                 </select>
                                 <input type="date" name="date_from" value="<?php echo htmlspecialchars($leadDateFrom); ?>" placeholder="From">
                                 <input type="date" name="date_to" value="<?php echo htmlspecialchars($leadDateTo); ?>" placeholder="To">
@@ -1316,7 +1343,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                             </details>
 
                             <?php if (empty($leads)): ?>
-                                <div class="empty"><div class="empty-icon">📋</div><p>No Contact Core Leads found</p></div>
+                                <div class="empty"><div class="empty-icon">📋</div><p>No SMTP-verified canonical inquiry Leads found</p></div>
                             <?php else: ?>
                                 <div class="table-wrapper">
                                     <table>
@@ -1361,7 +1388,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                                         <?php else: ?>
                                                             <button type="button" class="btn btn-secondary btn-small" disabled aria-disabled="true" title="No consented Journey is linked" style="opacity:.45;cursor:not-allowed;">Check</button>
                                                         <?php endif; ?>
-                                                        <button type="button" class="btn btn-danger btn-small" onclick="vjtDeleteLead(<?php echo jsArg($lead['lead_key']); ?>)" title="Delete this canonical Contact Core Lead event set">Del</button>
+                                                        <button type="button" class="btn btn-danger btn-small" onclick="vjtDeleteLead(<?php echo jsArg($lead['lead_key']); ?>)" title="Delete this canonical SMTP-verified Inquiry event set">Del</button>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>
@@ -1728,14 +1755,15 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                 $confirmedInquirySuccesses = count(array_filter($journeyData['contact_events'], function($event) {
                                     return ($event['channel'] ?? '') === 'inquiry'
                                         && ($event['event_type'] ?? '') === 'submission_success'
-                                        && ($event['status'] ?? '') === 'success';
+                                        && ($event['status'] ?? '') === 'success'
+                                        && (int)($event['server_verified'] ?? 0) === 1;
                                 }));
                             ?>
                             <?php if (!empty($realSubmissions)): ?>
                             <div class="journey-section">
                                 <h3>Legacy Browser / Server Events (<?php echo count($realSubmissions); ?> raw events; <?php echo $confirmedInquirySuccesses; ?> confirmed success<?php echo $confirmedInquirySuccesses === 1 ? '' : 'es'; ?>)</h3>
                                 <p style="margin:-4px 0 12px;color:#666;font-size:12px;line-height:1.5;">
-                                    Raw Attempt rows are diagnostic browser events. Confirmed Inquiry totals come from Linked Core Events below.
+                                    Raw Attempt rows are diagnostic browser events. Confirmed Inquiry totals require an SMTP-verified Contact/Core success below.
                                 </p>
                                 <div class="table-wrapper">
                                     <table>
@@ -1758,10 +1786,10 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
 
                             <?php if (!empty($journeyData['contact_events'])): ?>
                             <div class="journey-section">
-                                <h3>Linked Core Events (<?php echo count($journeyData['contact_events']); ?>)</h3>
+                                <h3>Linked Contact/Core Events — Raw + Verified (<?php echo count($journeyData['contact_events']); ?>)</h3>
                                 <div class="table-wrapper">
                                     <table>
-                                        <thead><tr><th>Time</th><th>Journey Step</th><th>Channel</th><th>Event</th><th>Page / Placement</th><th>Status</th></tr></thead>
+                                        <thead><tr><th>Time</th><th>Journey Step</th><th>Channel</th><th>Event</th><th>Page / Placement</th><th>Verification</th><th>Status</th></tr></thead>
                                         <tbody>
                                         <?php foreach ($journeyData['contact_events'] as $event): ?>
                                             <tr>
@@ -1773,6 +1801,15 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                                 <td><?php echo htmlspecialchars(ucfirst($event['channel'] ?? '')); ?></td>
                                                 <td><?php echo htmlspecialchars(str_replace('_', ' ', $event['event_type'] ?? '')); ?></td>
                                                 <td><span class="mono"><?php echo htmlspecialchars($event['page_path'] ?: '-'); ?></span><br><span style="color:#888;font-size:11px;"><?php echo htmlspecialchars($event['placement'] ?: '-'); ?></span></td>
+                                                <td>
+                                                    <?php if (!empty($event['server_verified']) && ($event['status'] ?? '') === 'success'): ?>
+                                                        <span class="status status-success">SMTP success</span>
+                                                    <?php elseif (!empty($event['server_verified'])): ?>
+                                                        <span class="status status-error">Server outcome</span>
+                                                    <?php else: ?>
+                                                        <span class="status status-unknown">Raw / unverified</span>
+                                                    <?php endif; ?>
+                                                </td>
                                                 <?php $linkedContactStatus = safeStatus($event['status'] ?? ''); ?>
                                                 <td><span class="status status-<?php echo $linkedContactStatus; ?>"><?php echo htmlspecialchars(ucfirst($linkedContactStatus)); ?></span></td>
                                             </tr>
@@ -1784,9 +1821,10 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                             <?php endif; ?>
 
                             <?php foreach ($journeyData['sessions'] as $sess):
-                                // The session timeline uses Contact Core as the canonical business
-                                // event source. Legacy submissions remain in the clearly labelled
-                                // enrichment table above and are not repeated here.
+                                // The session timeline includes raw Contact/Core telemetry and
+                                // SMTP-verified outcomes. Canonical business counts use only the
+                                // verified Inquiry success rows; legacy submissions remain in the
+                                // clearly labelled enrichment table above and are not repeated here.
                                 $timeline = [];
                                 $stepSortTimes = [];
                                 foreach ($journeyData['pageviews'] as $pv) {
@@ -1867,6 +1905,13 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                                                 </div>
                                                 <div class="pv-meta">
                                                     <?php echo htmlspecialchars(vjt_format_for_visitor($item['occurred_at'], $v['timezone'] ?? '')); ?> |
+                                                    <?php if (!empty($item['server_verified']) && ($item['status'] ?? '') === 'success'): ?>
+                                                        <span class="status status-success">SMTP success</span> |
+                                                    <?php elseif (!empty($item['server_verified'])): ?>
+                                                        <span class="status status-error">Server outcome</span> |
+                                                    <?php else: ?>
+                                                        <span class="status status-unknown">Raw / unverified</span> |
+                                                    <?php endif; ?>
                                                     <span class="status status-<?php echo $timelineContactStatus; ?>"><?php echo htmlspecialchars(ucfirst($timelineContactStatus)); ?></span> |
                                                     Placement: <?php echo htmlspecialchars($item['placement'] ?: '-'); ?>
                                                     <?php if (!empty($item['page_path'])): ?>

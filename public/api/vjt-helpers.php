@@ -89,6 +89,16 @@ define('VJT_DATA_DIR', ($vjtDataDirEnv !== false && $vjtDataDirEnv !== '')
     : '/home/kssmi.com/vjt_data');
 define('VJT_DB_PATH', VJT_DATA_DIR . '/vjt.sqlite');
 define('VJT_SOURCE_MODEL_VERSION', 2);
+// Hard limits for browser-originated submission writes. They bound a single
+// write (1 visitor + 1 session + 8 pageviews + submission/capability/geo rows), each session,
+// and the shared SQLite/WAL footprint independently of retention cleanup.
+define('VJT_SUBMISSION_SNAPSHOT_MAX_ROWS', 8);
+define('VJT_SESSION_PAGEVIEW_MAX_ROWS', 24);
+define('VJT_SESSION_SUBMISSION_MAX_ROWS', 3);
+define('VJT_SQLITE_MAX_ROWS', 200000);
+define('VJT_SQLITE_MAIN_MAX_BYTES', 64 * 1024 * 1024);
+define('VJT_SQLITE_WAL_MAX_BYTES', 16 * 1024 * 1024);
+define('VJT_SUBMISSION_WRITE_MAX_BYTES', 768 * 1024);
 
 // ── Country mapping (single source of truth) ─────────────────────────────────
 // alpha-2 (stored in DB, from ip-api countryCode) => [alpha-3, full English name]
@@ -350,7 +360,14 @@ function vjt_create_schema() {
         vjt_visitor_id  TEXT DEFAULT '',
         vjt_session_id  TEXT DEFAULT '',
         journey_step    INTEGER DEFAULT 0,
-        retention_class TEXT NOT NULL
+        retention_class TEXT NOT NULL,
+        server_verified INTEGER NOT NULL DEFAULT 0
+    )");
+    $db->exec("CREATE TABLE IF NOT EXISTS used_event_capabilities (
+        token_hash  TEXT PRIMARY KEY,
+        purpose     TEXT NOT NULL,
+        consumed_at TEXT NOT NULL,
+        expires_at  INTEGER NOT NULL
     )");
     $db->exec("CREATE TABLE IF NOT EXISTS geo_cache (
         ip           TEXT PRIMARY KEY,
@@ -394,6 +411,10 @@ function vjt_create_schema() {
     $db->exec("CREATE INDEX IF NOT EXISTS idx_contact_visitor ON contact_events(vjt_visitor_id)");
     $db->exec("CREATE INDEX IF NOT EXISTS idx_contact_session ON contact_events(vjt_session_id)");
     $db->exec("CREATE INDEX IF NOT EXISTS idx_contact_status_visitor ON contact_events(status, vjt_visitor_id)");
+    if (vjt_column_exists('contact_events', 'server_verified')) {
+        $db->exec("CREATE INDEX IF NOT EXISTS idx_contact_verified_time ON contact_events(server_verified, occurred_at)");
+    }
+    $db->exec("CREATE INDEX IF NOT EXISTS idx_capability_expiry ON used_event_capabilities(expires_at)");
     $db->exec("CREATE INDEX IF NOT EXISTS idx_sess_visitor ON sessions(visitor_id)");
     $db->exec("CREATE INDEX IF NOT EXISTS idx_sess_started ON sessions(started_at)");
     $db->exec("CREATE INDEX IF NOT EXISTS idx_sess_seen    ON sessions(last_seen_at)");
@@ -420,7 +441,7 @@ function vjt_add_column_if_missing($table, $definition) {
 function vjt_run_schema_migrations() {
     $db = vjt_db();
     $current = (int)vjt_meta_get('schema_version', 0);
-    if ($current >= 6) return;
+    if ($current >= 7) return;
 
     try {
         $db->beginTransaction();
@@ -448,13 +469,118 @@ function vjt_run_schema_migrations() {
         // WhatsApp/mailto click or successful Inquiry submission. Legacy rows
         // keep 0 and continue using the timestamp fallback in vjt_get_journey().
         vjt_add_column_if_missing('contact_events', 'journey_step INTEGER DEFAULT 0');
-        vjt_meta_set('schema_version', 6);
+        // v7: distinguish public click telemetry from SMTP-verified business
+        // outcomes. Before v7, every Inquiry outcome in this table came from
+        // send-mail.php; the public Contact endpoints accepted only
+        // WhatsApp/mailto open_intent rows. Preserve those authoritative
+        // historical outcomes while leaving all public intent rows unverified.
+        vjt_add_column_if_missing('contact_events', 'server_verified INTEGER NOT NULL DEFAULT 0');
+        $db->exec("UPDATE contact_events SET server_verified = 1
+            WHERE channel = 'inquiry' AND (
+                (event_type = 'submission_success' AND status = 'success')
+                OR (event_type = 'submission_error' AND status = 'error')
+            )");
+        $db->exec('CREATE INDEX IF NOT EXISTS idx_contact_verified_time ON contact_events(server_verified, occurred_at)');
+        $db->exec("CREATE TABLE IF NOT EXISTS used_event_capabilities (
+            token_hash TEXT PRIMARY KEY,
+            purpose TEXT NOT NULL,
+            consumed_at TEXT NOT NULL,
+            expires_at INTEGER NOT NULL
+        )");
+        $db->exec('CREATE INDEX IF NOT EXISTS idx_capability_expiry ON used_event_capabilities(expires_at)');
+        vjt_meta_set('schema_version', 7);
         $db->commit();
     } catch (Exception $e) {
         if ($db->inTransaction()) $db->rollBack();
         error_log('VJT schema migration error: ' . $e->getMessage());
         throw $e;
     }
+}
+
+function vjt_create_security_boundaries() {
+    $db = vjt_db();
+    // All canonical consumers read this view. Public endpoints can write only
+    // unverified click telemetry; the server-only Inquiry writer is the sole
+    // producer of rows visible here.
+    $db->exec("CREATE VIEW IF NOT EXISTS canonical_contact_events AS
+        SELECT * FROM contact_events
+        WHERE server_verified = 1
+          AND channel = 'inquiry'
+          AND event_type = 'submission_success'
+          AND status = 'success'");
+
+    // A rollback to the pre-v7 application can still insert genuine Inquiry
+    // outcomes without the new provenance column. The old public endpoints
+    // could only insert WhatsApp/mailto open_intent rows, so this narrowly
+    // scoped legacy trigger preserves verified mail outcomes across a rolling
+    // rollback/re-upgrade window without promoting public telemetry.
+    $db->exec("CREATE TRIGGER IF NOT EXISTS trg_legacy_inquiry_verification
+        AFTER INSERT ON contact_events
+        WHEN NEW.server_verified = 0
+          AND NEW.event_id LIKE 'vjtce_%'
+          AND NEW.channel = 'inquiry'
+          AND ((NEW.event_type = 'submission_success' AND NEW.status = 'success')
+            OR (NEW.event_type = 'submission_error' AND NEW.status = 'error'))
+        BEGIN
+            UPDATE contact_events SET server_verified = 1 WHERE id = NEW.id;
+        END");
+
+    // SQLite enforces immutable session ownership and rejects child rows whose
+    // visitor/session pair does not exist, even if a future caller forgets the
+    // application-layer check.
+    $db->exec("CREATE TRIGGER IF NOT EXISTS trg_sessions_owner_insert
+        BEFORE INSERT ON sessions
+        WHEN NEW.visitor_id IS NULL OR NEW.visitor_id = '' OR NOT EXISTS (
+            SELECT 1 FROM visitors v WHERE v.visitor_id = NEW.visitor_id
+        )
+        BEGIN SELECT RAISE(ABORT, 'invalid session visitor ownership'); END");
+    $db->exec("CREATE TRIGGER IF NOT EXISTS trg_sessions_owner_immutable
+        BEFORE UPDATE OF visitor_id ON sessions
+        WHEN NEW.visitor_id IS NOT OLD.visitor_id
+        BEGIN SELECT RAISE(ABORT, 'session visitor ownership is immutable'); END");
+    $db->exec("CREATE TRIGGER IF NOT EXISTS trg_pageviews_owner_insert
+        BEFORE INSERT ON pageviews
+        WHEN NEW.visitor_id IS NULL OR NEW.visitor_id = ''
+          OR NEW.session_id IS NULL OR NEW.session_id = '' OR NOT EXISTS (
+            SELECT 1 FROM sessions s
+            WHERE s.session_id = NEW.session_id AND s.visitor_id = NEW.visitor_id
+        )
+        BEGIN SELECT RAISE(ABORT, 'invalid pageview session ownership'); END");
+    $db->exec("CREATE TRIGGER IF NOT EXISTS trg_pageviews_owner_update
+        BEFORE UPDATE OF visitor_id, session_id ON pageviews
+        WHEN NEW.visitor_id IS NULL OR NEW.visitor_id = ''
+          OR NEW.session_id IS NULL OR NEW.session_id = '' OR NOT EXISTS (
+            SELECT 1 FROM sessions s
+            WHERE s.session_id = NEW.session_id AND s.visitor_id = NEW.visitor_id
+        )
+        BEGIN SELECT RAISE(ABORT, 'invalid pageview session ownership'); END");
+    $db->exec("CREATE TRIGGER IF NOT EXISTS trg_submissions_owner_insert
+        BEFORE INSERT ON submissions
+        WHEN NEW.visitor_id IS NULL OR NEW.visitor_id = ''
+          OR NEW.session_id IS NULL OR NEW.session_id = '' OR NOT EXISTS (
+            SELECT 1 FROM sessions s
+            WHERE s.session_id = NEW.session_id AND s.visitor_id = NEW.visitor_id
+        )
+        BEGIN SELECT RAISE(ABORT, 'invalid submission session ownership'); END");
+    $db->exec("CREATE TRIGGER IF NOT EXISTS trg_submissions_owner_update
+        BEFORE UPDATE OF visitor_id, session_id ON submissions
+        WHEN NEW.visitor_id IS NULL OR NEW.visitor_id = ''
+          OR NEW.session_id IS NULL OR NEW.session_id = '' OR NOT EXISTS (
+            SELECT 1 FROM sessions s
+            WHERE s.session_id = NEW.session_id AND s.visitor_id = NEW.visitor_id
+        )
+        BEGIN SELECT RAISE(ABORT, 'invalid submission session ownership'); END");
+    // Keep each issued Journey finite even when a caller has valid event
+    // capabilities. These database-layer limits close concurrent-check races;
+    // the endpoint also preflights them to return a clean 429 before writing.
+    $db->exec("CREATE TRIGGER IF NOT EXISTS trg_pageviews_session_budget
+        BEFORE INSERT ON pageviews
+        WHEN (SELECT COUNT(*) FROM pageviews WHERE session_id = NEW.session_id) >= " . VJT_SESSION_PAGEVIEW_MAX_ROWS . "
+        BEGIN SELECT RAISE(ABORT, 'session pageview budget exceeded'); END");
+    $db->exec("CREATE TRIGGER IF NOT EXISTS trg_submissions_session_budget
+        BEFORE INSERT ON submissions
+        WHEN (SELECT COUNT(*) FROM submissions WHERE session_id = NEW.session_id) >= " . VJT_SESSION_SUBMISSION_MAX_ROWS . "
+        BEGIN SELECT RAISE(ABORT, 'session submission budget exceeded'); END");
 }
 
 function vjt_meta_get($key, $default = null) {
@@ -496,6 +622,7 @@ function vjt_data_init() {
 
     // One-time migration from the old JSON flat files
     vjt_migrate_json_if_needed();
+    vjt_create_security_boundaries();
 
     // Backfill attribution snapshots gradually so a large legacy database never
     // receives a long blocking migration during a public tracking request.
@@ -723,6 +850,7 @@ function vjt_auto_cleanup() {
         $db->prepare("DELETE FROM anon_views WHERE day < ?")->execute([$anonCutoff]);
         // Drop stale geo-queue entries (anything older than 2 days is unlikely to matter)
         $db->prepare("DELETE FROM geo_queue WHERE queued_at < ?")->execute([gmdate('Y-m-d H:i:s', $now - 2 * 86400)]);
+        $db->prepare('DELETE FROM used_event_capabilities WHERE expires_at < ?')->execute([$now]);
         vjt_meta_set('last_cleanup', $now);
         // Reclaim space periodically (cheap on a bounded DB). Best-effort:
         // a busy WAL is logged, never fatal (see vjt_checkpoint_wal).
@@ -879,7 +1007,7 @@ function vjt_upsert_session($data) {
     $sid = $data['session_id'];
     $now = gmdate('Y-m-d H:i:s');
 
-    $stmt = $db->prepare("SELECT referrer, landing_url, landing_title,
+    $stmt = $db->prepare("SELECT visitor_id, referrer, landing_url, landing_title,
         utm_source, utm_medium, utm_campaign, utm_content, utm_term,
         source_slug, source_host, source_type, source_model_version
         FROM sessions WHERE session_id = ?");
@@ -887,6 +1015,10 @@ function vjt_upsert_session($data) {
     $row = $stmt->fetch();
 
     if ($row) {
+        $incomingVisitorId = (string)($data['visitor_id'] ?? '');
+        if ($incomingVisitorId === '' || !hash_equals((string)$row['visitor_id'], $incomingVisitorId)) {
+            throw new DomainException('Session does not belong to the supplied visitor');
+        }
         $sets = ['last_seen_at = :last_seen_at'];
         $params = [':last_seen_at' => $now, ':sid' => $sid];
         $attributionChanged = false;
@@ -1056,6 +1188,106 @@ function vjt_sync_pageview_snapshot($sessionId, $pages) {
         ]);
         $existing[$url] = true;
     }
+}
+
+function vjt_submission_write_limits() {
+    return [
+        'snapshot_rows' => VJT_SUBMISSION_SNAPSHOT_MAX_ROWS,
+        'session_pageviews' => VJT_SESSION_PAGEVIEW_MAX_ROWS,
+        'session_submissions' => VJT_SESSION_SUBMISSION_MAX_ROWS,
+        'sqlite_rows' => VJT_SQLITE_MAX_ROWS,
+        'main_bytes' => VJT_SQLITE_MAIN_MAX_BYTES,
+        'wal_bytes' => VJT_SQLITE_WAL_MAX_BYTES,
+        // Upper bound for a fully populated request, including SQLite pages
+        // and index churn. It reserves space before any durable write starts.
+        'write_bytes' => VJT_SUBMISSION_WRITE_MAX_BYTES,
+    ];
+}
+
+function vjt_submission_write_cost($snapshotRows) {
+    return 2 + min(VJT_SUBMISSION_SNAPSHOT_MAX_ROWS, max(0, (int)$snapshotRows));
+}
+
+function vjt_log_submission_budget_rejection($reason) {
+    static $lastLogged = [];
+    $reason = preg_replace('/[^a-z_]/', '', (string)$reason) ?: 'unknown';
+    $now = time();
+    if (($lastLogged[$reason] ?? 0) + 60 > $now) return;
+    $lastLogged[$reason] = $now;
+    error_log('VJT submission write budget rejected: ' . $reason);
+}
+
+function vjt_storage_file_size($path) {
+    clearstatcache(true, $path);
+    if (!file_exists($path)) return 0;
+    $size = @filesize($path);
+    return is_int($size) && $size >= 0 ? $size : null;
+}
+
+/**
+ * Preflight the complete submission transaction. It is deliberately
+ * conservative: duplicate submissions reserve one row and every accepted
+ * request reserves the full bounded write footprint. The DB triggers remain
+ * the concurrency-safe enforcement point for per-session row limits.
+ */
+function vjt_submission_write_budget($visitorId, $sessionId, $pages, $limits = null) {
+    $limits = is_array($limits) ? array_merge(vjt_submission_write_limits(), $limits) : vjt_submission_write_limits();
+    if (!is_array($pages) || count($pages) > (int)$limits['snapshot_rows']) {
+        return ['ok' => false, 'reason' => 'snapshot_budget'];
+    }
+
+    $db = vjt_db();
+    $visitorStmt = $db->prepare('SELECT 1 FROM visitors WHERE visitor_id = ? LIMIT 1');
+    $visitorStmt->execute([$visitorId]);
+    $visitorExists = (bool)$visitorStmt->fetch();
+    $sessionStmt = $db->prepare('SELECT visitor_id FROM sessions WHERE session_id = ? LIMIT 1');
+    $sessionStmt->execute([$sessionId]);
+    $session = $sessionStmt->fetch();
+    if ($session && !hash_equals((string)$session['visitor_id'], (string)$visitorId)) {
+        return ['ok' => false, 'reason' => 'session_owner'];
+    }
+
+    $existingStmt = $db->prepare('SELECT url FROM pageviews WHERE session_id = ?');
+    $existingStmt->execute([$sessionId]);
+    $urls = [];
+    foreach ($existingStmt->fetchAll() as $row) $urls[(string)$row['url']] = true;
+    $newPageviews = 0;
+    foreach ($pages as $page) {
+        $url = is_array($page) ? (string)($page['url'] ?? '') : '';
+        if ($url !== '' && !isset($urls[$url])) {
+            $urls[$url] = true;
+            $newPageviews++;
+        }
+    }
+    if (count($urls) > (int)$limits['session_pageviews']) {
+        return ['ok' => false, 'reason' => 'session_pageview_budget'];
+    }
+    $submissionStmt = $db->prepare('SELECT COUNT(*) FROM submissions WHERE session_id = ?');
+    $submissionStmt->execute([$sessionId]);
+    if ((int)$submissionStmt->fetchColumn() >= (int)$limits['session_submissions']) {
+        return ['ok' => false, 'reason' => 'session_submission_budget'];
+    }
+
+    $rowCount = (int)$db->query("SELECT
+        (SELECT COUNT(*) FROM visitors) + (SELECT COUNT(*) FROM sessions) +
+        (SELECT COUNT(*) FROM pageviews) + (SELECT COUNT(*) FROM submissions) +
+        (SELECT COUNT(*) FROM contact_events) + (SELECT COUNT(*) FROM used_event_capabilities) +
+        (SELECT COUNT(*) FROM geo_cache) + (SELECT COUNT(*) FROM geo_queue) +
+        (SELECT COUNT(*) FROM anon_views) + (SELECT COUNT(*) FROM settings) + (SELECT COUNT(*) FROM meta)")->fetchColumn();
+    // Submission, consumed capability and a possible new geo-queue entry are
+    // all reserved even when a retry turns one of them into an UPDATE/IGNORE.
+    $projectedRows = ($visitorExists ? 0 : 1) + ($session ? 0 : 1) + $newPageviews + 3;
+    if ($rowCount + $projectedRows > (int)$limits['sqlite_rows']) {
+        return ['ok' => false, 'reason' => 'sqlite_row_budget'];
+    }
+    $mainBytes = vjt_storage_file_size(VJT_DB_PATH);
+    $walBytes = vjt_storage_file_size(VJT_DB_PATH . '-wal');
+    if ($mainBytes === null || $walBytes === null
+        || $mainBytes + (int)$limits['write_bytes'] > (int)$limits['main_bytes']
+        || $walBytes + (int)$limits['write_bytes'] > (int)$limits['wal_bytes']) {
+        return ['ok' => false, 'reason' => 'sqlite_byte_budget'];
+    }
+    return ['ok' => true, 'new_pageviews' => $newPageviews, 'projected_rows' => $projectedRows];
 }
 
 // ── Submission ──────────────────────────────────────────────────────────────
@@ -1254,11 +1486,34 @@ function vjt_wait_for_analytics_link($visitorId, $sessionId, $requestedStep = 0,
     return $last;
 }
 
-/**
- * Store one minimal business-contact event. Analytics identifiers are optional
- * enrichment and are discarded unless both values match VJT's ID format.
- */
+/** Store one public click signal. It is never a canonical business Lead. */
 function vjt_add_contact_event($data) {
+    $channel = strtolower(trim((string)($data['channel'] ?? '')));
+    if (!in_array($channel, ['whatsapp', 'mailto'], true)
+        || strtolower(trim((string)($data['event_type'] ?? ''))) !== 'open_intent'
+        || strtolower(trim((string)($data['status'] ?? ''))) !== 'intent') {
+        throw new InvalidArgumentException('Public Contact Core writes accept intent signals only');
+    }
+    return vjt_insert_contact_event($data, false);
+}
+
+/**
+ * Store an authoritative Inquiry outcome. Only server-side business code may
+ * call this wrapper; public endpoint payloads never select server_verified.
+ */
+function vjt_add_verified_contact_event($data) {
+    $channel = strtolower(trim((string)($data['channel'] ?? '')));
+    $eventType = strtolower(trim((string)($data['event_type'] ?? '')));
+    $status = strtolower(trim((string)($data['status'] ?? '')));
+    $validOutcome = ($eventType === 'submission_success' && $status === 'success')
+        || ($eventType === 'submission_error' && $status === 'error');
+    if ($channel !== 'inquiry' || !$validOutcome) {
+        throw new InvalidArgumentException('Invalid verified Inquiry outcome');
+    }
+    return vjt_insert_contact_event($data, true);
+}
+
+function vjt_insert_contact_event($data, $serverVerified) {
     $channel = strtolower(trim((string)($data['channel'] ?? '')));
     $allowedChannels = ['whatsapp', 'mailto', 'inquiry'];
     if (!in_array($channel, $allowedChannels, true)) {
@@ -1293,8 +1548,11 @@ function vjt_add_contact_event($data) {
     $journeyStep = !empty($resolvedLink['valid']) ? (int)$resolvedLink['journey_step'] : 0;
 
     $eventId = trim((string)($data['event_id'] ?? ''));
-    if (!preg_match('/^vjtce_[A-Za-z0-9_-]{8,80}$/', $eventId)) {
-        $eventId = 'vjtce_' . vjt_uuid();
+    $eventPattern = $serverVerified
+        ? '/^vjtcv_[A-Za-z0-9_-]{16,96}$/D'
+        : '/^vjtce_[A-Za-z0-9_-]{8,80}$/D';
+    if (!preg_match($eventPattern, $eventId)) {
+        $eventId = ($serverVerified ? 'vjtcv_' : 'vjtce_') . vjt_uuid();
     }
 
     $retentionClass = $channel === 'inquiry' ? 'customer_inquiry' : 'intent_short';
@@ -1304,9 +1562,11 @@ function vjt_add_contact_event($data) {
 
     $stmt = vjt_db()->prepare("INSERT OR IGNORE INTO contact_events
         (event_id, channel, event_type, occurred_at, page_path, placement,
-         product_sku, site_language, status, vjt_visitor_id, vjt_session_id, journey_step, retention_class)
+         product_sku, site_language, status, vjt_visitor_id, vjt_session_id, journey_step,
+         retention_class, server_verified)
         VALUES (:event_id,:channel,:event_type,:occurred_at,:page_path,:placement,
-         :product_sku,:site_language,:status,:vjt_visitor_id,:vjt_session_id,:journey_step,:retention_class)");
+         :product_sku,:site_language,:status,:vjt_visitor_id,:vjt_session_id,:journey_step,
+         :retention_class,:server_verified)");
     $stmt->execute([
         ':event_id' => $eventId,
         ':channel' => $channel,
@@ -1321,6 +1581,7 @@ function vjt_add_contact_event($data) {
         ':vjt_session_id' => $sessionId,
         ':journey_step' => $journeyStep,
         ':retention_class' => $retentionClass,
+        ':server_verified' => $serverVerified ? 1 : 0,
     ]);
 
     return ['result' => $stmt->rowCount() > 0 ? 'stored' : 'duplicate', 'event_id' => $eventId];
@@ -1912,15 +2173,14 @@ function vjt_get_overview($since) {
     $totalSessionsStmt->execute([$since]);
     $totalSessions = (int)$totalSessionsStmt->fetch()['c'];
 
-    // Contact Core is the canonical Lead ledger. L counts only Core contacts
-    // with a consented Journey linkage; unlinked contacts remain visible in C
-    // and in the Leads list, but cannot be attributed to a unique visitor.
+    // Canonical Leads are SMTP-confirmed Inquiry successes. Public click
+    // signals remain in contact_events for audit/telemetry, never in this view.
     $leadStmt = $db->prepare("SELECT
-            COUNT(DISTINCT CASE WHEN c.status IN ('success','intent') AND $validContactLink
+            COUNT(DISTINCT CASE WHEN $validContactLink
                 THEN c.vjt_visitor_id END) total,
-            COUNT(DISTINCT CASE WHEN c.status = 'success' AND $validContactLink
+            COUNT(DISTINCT CASE WHEN $validContactLink
                 THEN c.vjt_visitor_id END) success
-        FROM contact_events c WHERE c.occurred_at >= ?");
+        FROM canonical_contact_events c WHERE c.occurred_at >= ?");
     $leadStmt->execute([$since]);
     $leadRow = $leadStmt->fetch();
     $totalLeads = (int)($leadRow['total'] ?? 0);
@@ -1928,8 +2188,8 @@ function vjt_get_overview($since) {
 
     // C follows the same selected Overview period as Visitors, Sessions and L.
     // It counts valid Core events; L remains the attributed unique-visitor count.
-    $totalCoreStmt = $db->prepare("SELECT COUNT(*) c FROM contact_events
-        WHERE occurred_at >= ? AND status IN ('success','intent')");
+    $totalCoreStmt = $db->prepare("SELECT COUNT(*) c FROM canonical_contact_events
+        WHERE occurred_at >= ?");
     $totalCoreStmt->execute([$since]);
     $totalCore = (int)$totalCoreStmt->fetch()['c'];
 
@@ -1944,8 +2204,8 @@ function vjt_get_overview($since) {
     $trend = [];
     for ($i = 29; $i >= 0; $i--) { $trend[date('Y-m-d', strtotime("-{$i} days"))] = 0; }
     $trendStmt = $db->prepare("SELECT substr(datetime(occurred_at, '+8 hours'),1,10) d,
-            COUNT(DISTINCT c.vjt_visitor_id) c FROM contact_events c
-        WHERE c.occurred_at >= ? AND c.status IN ('success','intent') AND $validContactLink
+            COUNT(DISTINCT c.vjt_visitor_id) c FROM canonical_contact_events c
+        WHERE c.occurred_at >= ? AND $validContactLink
         GROUP BY d");
     $trendStmt->execute([vjt_admin_date_to_utc(date('Y-m-d', strtotime('-29 days')))]);
     $rows = $trendStmt->fetchAll();
@@ -1953,8 +2213,8 @@ function vjt_get_overview($since) {
 
     $coreTrend = array_fill_keys(array_keys($trend), 0);
     $coreTrendStmt = $db->prepare("SELECT substr(datetime(occurred_at, '+8 hours'),1,10) d,
-            COUNT(*) c FROM contact_events
-        WHERE occurred_at >= ? AND status IN ('success','intent')
+            COUNT(*) c FROM canonical_contact_events
+        WHERE occurred_at >= ?
         GROUP BY d");
     $coreTrendStmt->execute([vjt_admin_date_to_utc(date('Y-m-d', strtotime('-29 days')))]);
     foreach ($coreTrendStmt->fetchAll() as $r) {
@@ -1965,8 +2225,8 @@ function vjt_get_overview($since) {
     $trendMonthly = [];
     for ($i = 11; $i >= 0; $i--) { $trendMonthly[date('Y-m', strtotime("-{$i} months"))] = 0; }
     $monthlyStmt = $db->prepare("SELECT substr(datetime(occurred_at, '+8 hours'),1,7) m,
-            COUNT(DISTINCT c.vjt_visitor_id) c FROM contact_events c
-        WHERE c.status IN ('success','intent') AND $validContactLink
+            COUNT(DISTINCT c.vjt_visitor_id) c FROM canonical_contact_events c
+        WHERE $validContactLink
         GROUP BY m");
     $monthlyStmt->execute();
     $rows = $monthlyStmt->fetchAll();
@@ -1974,7 +2234,7 @@ function vjt_get_overview($since) {
 
     $coreTrendMonthly = array_fill_keys(array_keys($trendMonthly), 0);
     $coreMonthlyStmt = $db->prepare("SELECT substr(datetime(occurred_at, '+8 hours'),1,7) m,
-            COUNT(*) c FROM contact_events WHERE status IN ('success','intent') GROUP BY m");
+            COUNT(*) c FROM canonical_contact_events GROUP BY m");
     $coreMonthlyStmt->execute();
     foreach ($coreMonthlyStmt->fetchAll() as $r) {
         if (isset($coreTrendMonthly[$r['m']])) $coreTrendMonthly[$r['m']] = (int)$r['c'];
@@ -1984,8 +2244,8 @@ function vjt_get_overview($since) {
     $trendYearly = [];
     $minYear = (int)date('Y');
     $yearlyStmt = $db->prepare("SELECT substr(datetime(occurred_at, '+8 hours'),1,4) y,
-            COUNT(DISTINCT c.vjt_visitor_id) c FROM contact_events c
-        WHERE c.status IN ('success','intent') AND $validContactLink
+            COUNT(DISTINCT c.vjt_visitor_id) c FROM canonical_contact_events c
+        WHERE $validContactLink
         GROUP BY y");
     $yearlyStmt->execute();
     $rows = $yearlyStmt->fetchAll();
@@ -1996,7 +2256,7 @@ function vjt_get_overview($since) {
     }
 
     $coreYearlyStmt = $db->prepare("SELECT substr(datetime(occurred_at, '+8 hours'),1,4) y,
-            COUNT(*) c FROM contact_events WHERE status IN ('success','intent') GROUP BY y");
+            COUNT(*) c FROM canonical_contact_events GROUP BY y");
     $coreYearlyStmt->execute();
     $coreYearCounts = [];
     foreach ($coreYearlyStmt->fetchAll() as $r) {
@@ -2025,10 +2285,10 @@ function vjt_get_overview($since) {
     foreach ($refVisitors as $label => $set) $refStats[$label]['visitors'] = count($set);
 
     $refLeadStmt = $db->prepare("SELECT c.vjt_visitor_id AS visitor_id, sess.referrer, sess.utm_source, sess.utm_medium
-        FROM contact_events c JOIN sessions sess
+        FROM canonical_contact_events c JOIN sessions sess
           ON sess.session_id = c.vjt_session_id AND sess.visitor_id = c.vjt_visitor_id
         JOIN visitors linked_visitor ON linked_visitor.visitor_id = sess.visitor_id
-        WHERE c.occurred_at >= ? AND c.status IN ('success','intent') AND c.vjt_visitor_id <> ''");
+        WHERE c.occurred_at >= ? AND c.vjt_visitor_id <> ''");
     $refLeadStmt->execute([$since]);
     $refLeads = [];
     while ($r = $refLeadStmt->fetch()) {
@@ -2069,10 +2329,10 @@ function vjt_get_overview($since) {
 
     $sourceLeadSets = [];
     $sourceLeadStmt = $db->prepare("SELECT c.vjt_visitor_id AS visitor_id, sess.referrer, sess.utm_source, sess.utm_medium
-        FROM contact_events c JOIN sessions sess
+        FROM canonical_contact_events c JOIN sessions sess
           ON sess.session_id = c.vjt_session_id AND sess.visitor_id = c.vjt_visitor_id
         JOIN visitors linked_visitor ON linked_visitor.visitor_id = sess.visitor_id
-        WHERE c.occurred_at >= ? AND c.status IN ('success','intent') AND c.vjt_visitor_id <> ''");
+        WHERE c.occurred_at >= ? AND c.vjt_visitor_id <> ''");
     $sourceLeadStmt->execute([$since]);
     while ($s = $sourceLeadStmt->fetch()) {
         $src = vjt_classify_source($s);
@@ -2115,9 +2375,9 @@ function vjt_get_ai_referrals($since) {
         WHERE s.started_at >= ? AND s.source_type = 'ai'");
     $stmt->execute([$since]);
     $rows = [];
-    $leadStmt = $db->prepare("SELECT 1 FROM contact_events
+    $leadStmt = $db->prepare("SELECT 1 FROM canonical_contact_events
         WHERE vjt_session_id = ? AND vjt_visitor_id = ?
-          AND status IN ('success','intent') LIMIT 1");
+        LIMIT 1");
     foreach ($stmt->fetchAll() as $session) {
         $platform = $session['source_slug'] ?: 'other-ai';
         if (!isset($rows[$platform])) $rows[$platform] = ['platform'=>$platform, 'sessions'=>0, 'visitors'=>[], 'leads'=>[], 'pages'=>[]];
@@ -2170,7 +2430,7 @@ function vjt_get_leads_list($filters) {
     $total = null;
     if (empty($filters['skip_count'])) {
         $cnt = $db->prepare("SELECT COUNT(*) c FROM (
-            SELECT 1 FROM contact_events ce $whereSql GROUP BY $groupExpr
+            SELECT 1 FROM canonical_contact_events ce $whereSql GROUP BY $groupExpr
         ) grouped_leads");
         $cnt->execute($params);
         $total = (int)$cnt->fetch()['c'];
@@ -2185,7 +2445,7 @@ function vjt_get_leads_list($filters) {
     // own Lead row, keyed by its stable Contact Core event ID.
     $sql = "SELECT latest.*, agg.lead_key, agg.first_contact_at, agg.last_contact_at,
                 agg.event_count, agg.channels, agg.has_success, agg.has_intent, agg.journey_linked
-            FROM contact_events latest
+            FROM canonical_contact_events latest
             JOIN (
                 SELECT $groupExpr lead_key, MIN(ce.occurred_at) first_contact_at,
                     MAX(ce.occurred_at) last_contact_at, COUNT(*) event_count,
@@ -2194,7 +2454,7 @@ function vjt_get_leads_list($filters) {
                     MAX(CASE WHEN ce.status='intent' THEN 1 ELSE 0 END) has_intent,
                     MAX(CASE WHEN $validLinkExpr THEN 1 ELSE 0 END) journey_linked,
                     MAX(ce.id) latest_id
-                FROM contact_events ce $whereSql
+                FROM canonical_contact_events ce $whereSql
                 GROUP BY $groupExpr
             ) agg ON agg.latest_id = latest.id
             ORDER BY agg.last_contact_at DESC, latest.id DESC LIMIT ? OFFSET ?";
@@ -2274,7 +2534,7 @@ function vjt_get_visitors_list($filters) {
     $validVisitorLeadLink = vjt_contact_link_exists_sql('c');
     $subStmt = $db->prepare("SELECT vjt_visitor_id AS visitor_id,
         MAX(CASE WHEN status IN ('success','intent') THEN 1 ELSE 0 END) c
-        FROM contact_events c WHERE $validVisitorLeadLink
+        FROM canonical_contact_events c WHERE $validVisitorLeadLink
         GROUP BY vjt_visitor_id");
     $subStmt->execute();
     while ($r = $subStmt->fetch()) { $visitorSubmissions[$r['visitor_id']] = (int)$r['c']; }
@@ -2430,8 +2690,10 @@ function vjt_get_journey($visitorId) {
     $sub->execute([$visitorId]);
     $submissions = $sub->fetchAll();
 
-    // New Core rows persist a server-validated step captured at click/submit.
-    // Legacy rows keep journey_step=0 and use the timestamp inference fallback.
+    // Journey detail is an audit surface, so it shows both raw telemetry and
+    // verified outcomes with their provenance flag. Canonical counts and Leads
+    // use canonical_contact_events elsewhere. Legacy rows keep journey_step=0
+    // and use the timestamp inference fallback.
     $contact = $db->prepare("SELECT c.*,
             COALESCE((
                 SELECT p.step_order FROM pageviews p
@@ -2793,6 +3055,8 @@ function vjt_cleanup_old_data($days) {
 
 function vjt_wipe_all_data() {
     $db = vjt_db();
+    // Consumed capability tombstones are security state, not analytics data.
+    // Keep them until normal TTL cleanup so an admin wipe cannot revive replay.
     foreach (['visitors','sessions','pageviews','submissions','contact_events','geo_cache','geo_queue','anon_views'] as $t) {
         $db->exec("DELETE FROM $t");
     }
@@ -2804,7 +3068,7 @@ function vjt_wipe_all_data() {
 
 function vjt_get_traffic_data($since) {
     $db = vjt_db();
-    $validTrafficLeadLink = vjt_contact_link_exists_sql('contact_events');
+    $validTrafficLeadLink = vjt_contact_link_exists_sql('c');
 
     $totalPageviewsStmt = $db->prepare("SELECT COUNT(*) c FROM pageviews WHERE visited_at >= ?");
     $totalPageviewsStmt->execute([$since]);
@@ -2871,9 +3135,9 @@ function vjt_get_traffic_data($since) {
         if ($pathIndexes) {
             $paths = array_keys($pathIndexes);
             $place = implode(',', array_fill(0, count($paths), '?'));
-            $stmt = $db->prepare("SELECT page_path, COUNT(DISTINCT vjt_visitor_id) c FROM contact_events
-                WHERE occurred_at >= ? AND status IN ('success','intent') AND $validTrafficLeadLink
-                  AND page_path IN ($place) GROUP BY page_path");
+            $stmt = $db->prepare("SELECT c.page_path, COUNT(DISTINCT c.vjt_visitor_id) c FROM canonical_contact_events c
+                WHERE occurred_at >= ? AND $validTrafficLeadLink
+                  AND c.page_path IN ($place) GROUP BY c.page_path");
             $stmt->execute(array_merge([$since], $paths));
             foreach ($stmt->fetchAll() as $r) {
                 foreach ($pathIndexes[$r['page_path']] ?? [] as $index) {
@@ -2899,9 +3163,8 @@ function vjt_get_traffic_data($since) {
                     OR (p.active_duration_seconds = 0 AND p.duration_seconds >= 10)
                     OR p.max_scroll_depth >= 50 OR p.scroll_depth >= 50 THEN 1 ELSE 0 END) engaged,
                 CASE WHEN EXISTS (
-                    SELECT 1 FROM contact_events c WHERE c.vjt_session_id = p.session_id
+                    SELECT 1 FROM canonical_contact_events c WHERE c.vjt_session_id = p.session_id
                     AND c.vjt_visitor_id = p.visitor_id
-                    AND c.status IN ('success','intent')
                     AND $validBounceLeadLink
                 ) THEN 1 ELSE 0 END has_lead
             FROM pageviews p WHERE p.visited_at >= ? GROUP BY p.session_id
@@ -3051,7 +3314,7 @@ function vjt_get_anon_today() {
 function vjt_get_countries() {
     $db = vjt_db();
     $countries = [];
-    $validCountryLeadLink = vjt_contact_link_exists_sql('contact_events');
+    $validCountryLeadLink = vjt_contact_link_exists_sql('c');
 
     $countryRowsStmt = $db->prepare("SELECT CASE WHEN country IS NULL OR country = '' THEN 'UNKNOWN' ELSE upper(country) END cc,
         COUNT(*) c FROM visitors GROUP BY cc");
@@ -3075,8 +3338,8 @@ function vjt_get_countries() {
         $cc = $visitorCountry[$s['visitor_id']] ?? 'UNKNOWN';
         if (isset($countries[$cc])) $countries[$cc]['sessions']++;
     }
-    $cbStmt = $db->prepare("SELECT vjt_visitor_id AS visitor_id FROM contact_events
-        WHERE status IN ('success','intent') AND $validCountryLeadLink");
+    $cbStmt = $db->prepare("SELECT c.vjt_visitor_id AS visitor_id FROM canonical_contact_events c
+        WHERE $validCountryLeadLink");
     $cbStmt->execute();
     $countryLeadVisitors = [];
     while ($sub = $cbStmt->fetch()) {
@@ -3209,7 +3472,7 @@ function vjt_export_contact_events_csv_start($filters) {
     header('X-Content-Type-Options: nosniff');
     header('Content-Disposition: attachment; filename=contact-events-' . date('Y-m-d') . '.csv');
     $output = fopen('php://output', 'w');
-    fputcsv($output, ['Time (Beijing)', 'Channel', 'Event Type', 'Status', 'Page Path', 'Placement', 'Product', 'Language', 'Attribution', 'Visitor ID', 'Session ID', 'Journey Step', 'Retention Class', 'Event ID']);
+    fputcsv($output, ['Time (Beijing)', 'Channel', 'Event Type', 'Status', 'Verification', 'Page Path', 'Placement', 'Product', 'Language', 'Attribution', 'Visitor ID', 'Session ID', 'Journey Step', 'Retention Class', 'Event ID']);
 
     $page = 1;
     $batchSize = 1000;
@@ -3226,6 +3489,9 @@ function vjt_export_contact_events_csv_start($filters) {
                 $event['channel'] ?? '',
                 $event['event_type'] ?? '',
                 $event['status'] ?? '',
+                !empty($event['server_verified'])
+                    ? (($event['status'] ?? '') === 'success' ? 'SMTP success' : 'Server outcome')
+                    : 'Unverified telemetry',
                 $event['page_path'] ?? '',
                 $event['placement'] ?? '',
                 $event['product_sku'] ?? '',

@@ -93,8 +93,11 @@ jobs:
       - name: Test backend storage and security policies
         run: |
           bash scripts/test-email-log-migration.sh
+          npm run test:vjt-capability-proof
           php scripts/test-email-log-store.php
           php scripts/test-rate-limit.php
+          php scripts/test-vjt-event-authenticity.php
+          php scripts/test-vjt-write-budget.php
           php scripts/test-vjt-checkpoint.php
           php scripts/test-contact-core.php
           php scripts/test-vjt-event-state.php

@@ -273,10 +273,37 @@ function kssmi_is_cloudflare_proxy(string $ip): bool {
 function kssmi_get_client_ip(): string {
     $remote = trim((string)($_SERVER['REMOTE_ADDR'] ?? ''));
     if (filter_var($remote, FILTER_VALIDATE_IP) && kssmi_is_cloudflare_proxy($remote)) {
-        $cloudflareIp = trim((string)($_SERVER['HTTP_CF_CONNECTING_IP'] ?? ''));
+        $cloudflareIp = kssmi_get_trusted_cloudflare_header('HTTP_CF_CONNECTING_IP');
         if (filter_var($cloudflareIp, FILTER_VALIDATE_IP)) return $cloudflareIp;
     }
     return filter_var($remote, FILTER_VALIDATE_IP) ? $remote : 'unknown';
+}
+
+/**
+ * Return a Cloudflare-added request header only after authenticating the TCP
+ * peer against the pinned Cloudflare CIDR snapshot. Direct-origin clients must
+ * never be able to influence CF-* metadata.
+ */
+function kssmi_get_trusted_cloudflare_header(string $serverKey): ?string {
+    if (preg_match('/^HTTP_CF_[A-Z0-9_]+$/D', $serverKey) !== 1) return null;
+    $remote = trim((string)($_SERVER['REMOTE_ADDR'] ?? ''));
+    if (filter_var($remote, FILTER_VALIDATE_IP) === false || !kssmi_is_cloudflare_proxy($remote)) {
+        return null;
+    }
+    $value = $_SERVER[$serverKey] ?? null;
+    if (!is_string($value)) return null;
+    $value = trim($value);
+    return $value === '' ? null : $value;
+}
+
+/**
+ * Cloudflare country metadata is an ISO-3166 alpha-2 code. Return null for
+ * an untrusted peer or any malformed value so callers fail closed to UNKNOWN.
+ */
+function kssmi_get_trusted_cloudflare_country(): ?string {
+    $country = kssmi_get_trusted_cloudflare_header('HTTP_CF_IPCOUNTRY');
+    if ($country === null || preg_match('/^[A-Z]{2}$/D', $country) !== 1) return null;
+    return $country;
 }
 
 /**
@@ -287,6 +314,18 @@ function kssmi_get_client_ip(): string {
  * @param int    $windowSeconds Sliding window length in seconds
  */
 function checkRateLimit(string $key, int $maxRequests, int $windowSeconds): bool {
+    return checkRateLimitCost($key, $maxRequests, $windowSeconds, 1);
+}
+
+/**
+ * Consume a bounded number of quota units atomically where the backing store
+ * permits it. This lets ingest endpoints charge for the durable work a request
+ * can cause, rather than treating an empty request and a multi-row write alike.
+ */
+function checkRateLimitCost(string $key, int $maxRequests, int $windowSeconds, int $cost): bool {
+    $maxRequests = max(1, $maxRequests);
+    $windowSeconds = max(1, $windowSeconds);
+    if ($cost < 1 || $cost > $maxRequests) return false;
     $ip = kssmi_get_client_ip();
 
     // Whitelist bypass — allow the admin's own IP through always
@@ -294,7 +333,34 @@ function checkRateLimit(string $key, int $maxRequests, int $windowSeconds): bool
         return true;
     }
 
-    $cacheKey = "rl:{$key}:" . md5($ip);
+    return kssmi_check_rate_limit_identity($key, $ip, $maxRequests, $windowSeconds, $cost);
+}
+
+/**
+ * Enforce a process-wide quota for work that must be bounded even when an
+ * attacker distributes requests across source IPs. Unlike the per-IP helper,
+ * this deliberately has no whitelist bypass.
+ */
+function checkRateLimitGlobal(string $key, int $maxRequests, int $windowSeconds): bool {
+    return kssmi_check_rate_limit_identity($key, 'global', $maxRequests, $windowSeconds, 1);
+}
+
+/**
+ * Consume a quota for a supplied server-derived identity. The public helpers
+ * select either the trusted client IP or the fixed global identity above.
+ */
+function kssmi_check_rate_limit_identity(
+    string $key,
+    string $identity,
+    int $maxRequests,
+    int $windowSeconds,
+    int $cost
+): bool {
+    $maxRequests = max(1, $maxRequests);
+    $windowSeconds = max(1, $windowSeconds);
+    if ($cost < 1 || $cost > $maxRequests) return false;
+
+    $cacheKey = "rl:{$key}:" . md5($identity);
 
     // Preferred: APCu in-memory cache (very fast, shared across PHP-FPM workers)
     $forceFileFallback =
@@ -305,21 +371,34 @@ function checkRateLimit(string $key, int $maxRequests, int $windowSeconds): bool
         function_exists('apcu_inc') &&
         (!function_exists('apcu_enabled') || apcu_enabled());
     if (!$forceFileFallback && $apcuAvailable) {
-        if (apcu_add($cacheKey, 1, $windowSeconds)) {
+        if (apcu_add($cacheKey, $cost, $windowSeconds)) {
             return true;
         }
 
-        $count = apcu_inc($cacheKey, 1, $success);
+        // CAS avoids charging a denied request. The common APCu extension
+        // supports it; retain the increment fallback for older deployments.
+        if (function_exists('apcu_cas')) {
+            for ($attempt = 0; $attempt < 4; $attempt++) {
+                $current = apcu_fetch($cacheKey, $found);
+                if (!$found) return apcu_add($cacheKey, $cost, $windowSeconds);
+                if (!is_int($current)) return false;
+                if ($current > $maxRequests - $cost) return false;
+                if (apcu_cas($cacheKey, $current, $current + $cost)) return true;
+            }
+            return false;
+        }
+
+        $count = apcu_inc($cacheKey, $cost, $success);
         if (!$success) {
             // The entry can expire between add() and inc(). Retry one atomic
             // initialization; fail closed only if the cache remains unusable.
-            return apcu_add($cacheKey, 1, $windowSeconds);
+            return apcu_add($cacheKey, $cost, $windowSeconds);
         }
         return $count <= $maxRequests;
     }
 
     // Fallback: file-based counter, slower but works without APCu
-    return checkRateLimitFile($key, $ip, $maxRequests, $windowSeconds);
+    return checkRateLimitFile($key, $identity, $maxRequests, $windowSeconds, $cost, false);
 }
 
 /**
@@ -427,9 +506,16 @@ function kssmi_rate_limit_decode_bucket(string $raw, ?array &$bucket): bool {
     return true;
 }
 
-function checkRateLimitFile(string $key, string $ip, int $max, int $window): bool {
+function checkRateLimitFile(
+    string $key,
+    string $ip,
+    int $max,
+    int $window,
+    int $cost = 1,
+    bool $allowWhitelistBypass = true
+): bool {
     // Whitelist bypass — also applies to the file-fallback path
-    if (in_array($ip, kssmi_load_rate_limit_whitelist(), true)) {
+    if ($allowWhitelistBypass && in_array($ip, kssmi_load_rate_limit_whitelist(), true)) {
         return true;
     }
 
@@ -441,6 +527,10 @@ function checkRateLimitFile(string $key, string $ip, int $max, int $window): boo
         if (!@mkdir($dir, 0750, true) && !is_dir($dir)) return false;
     }
     @chmod($dir, 0750);
+
+    $max = max(1, $max);
+    $window = max(1, $window);
+    if ($cost < 1 || $cost > $max) return false;
 
     $identity = hash('sha256', "{$key}:{$ip}");
     $file = $dir . '/bucket-' . substr($identity, 0, 2) . '.json';
@@ -499,12 +589,14 @@ function checkRateLimitFile(string $key, string $ip, int $max, int $window): boo
         }
 
         $requests = $bucket[$identity] ?? [];
-        $allowed = count($requests) < max(1, $max);
+        $allowed = count($requests) <= $max - $cost;
         if ($allowed) {
             if (!isset($bucket[$identity]) && count($bucket) >= $maxEntriesPerBucket) {
                 $allowed = false;
             } else {
-                $requests[] = $now + max(1, $window);
+                for ($unit = 0; $unit < $cost; $unit++) {
+                    $requests[] = $now + $window;
+                }
                 $bucket[$identity] = $requests;
                 $dirty = true;
             }

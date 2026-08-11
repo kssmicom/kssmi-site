@@ -36,6 +36,9 @@ $allowedOrigins = [
     'http://127.0.0.1:4321',
     'http://127.0.0.1:4324',
     'http://127.0.0.1:4325',
+    'http://[::1]:4321',
+    'http://[::1]:4324',
+    'http://[::1]:4325',
     'https://kssmi.com',
     'https://www.kssmi.com',
 ];
@@ -51,6 +54,8 @@ if (in_array($origin, $allowedOrigins, true)) {
     header('Access-Control-Allow-Origin: ' . $origin);
     header('Access-Control-Allow-Methods: POST, OPTIONS');
     header('Access-Control-Allow-Headers: Content-Type');
+    header('Access-Control-Allow-Credentials: true');
+    header('Vary: Origin');
 }
 
 // Handle preflight request
@@ -213,8 +218,12 @@ function logEmail(
 
 // VJT Tracking
 require_once __DIR__ . '/api/vjt-helpers.php';
+require_once dirname(__DIR__) . '/private/vjt-event-auth.php';
 
 function recordInquiryOutcome($config, $data, $status, $visitorIP, $visitorCountry) {
+    // Tracking is strictly best-effort. No VJT/auth/storage failure may change
+    // the already determined SMTP outcome returned to the customer.
+    try {
     $hasAnalyticsConsent = ($data['vjt_analytics_consent'] ?? '') === '1';
     $visitorId = trim($data['vjt_visitor_id'] ?? '');
     $sessionId = trim($data['vjt_session_id'] ?? '');
@@ -229,6 +238,28 @@ function recordInquiryOutcome($config, $data, $status, $visitorIP, $visitorCount
         $sessionId = '';
         $journeyStep = 0;
         $submissionEventId = '';
+    }
+    try {
+        $identity = kssmi_vjt_identity_from_request();
+    } catch (Throwable $identityError) {
+        error_log('VJT inquiry identity error: ' . $identityError->getMessage());
+        $identity = null;
+    }
+    $verifiedIdentityVisitorId = '';
+    $verifiedIdentitySessionId = '';
+    if ($identity === null
+        || !hash_equals((string)$identity['visitor_id'], $visitorId)
+        || !hash_equals((string)$identity['session_id'], $sessionId)) {
+        $visitorId = '';
+        $sessionId = '';
+        $journeyStep = 0;
+        $submissionEventId = '';
+    } else {
+        // Keep the proven browser identity for canonical deduplication even if
+        // the optional Journey row has not reached SQLite yet and attribution
+        // is therefore stored as unlinked below.
+        $verifiedIdentityVisitorId = $visitorId;
+        $verifiedIdentitySessionId = $sessionId;
     }
     $submitPage = $data['vjt_submit_page'] ?? '';
     if (empty($submitPage)) {
@@ -268,12 +299,23 @@ function recordInquiryOutcome($config, $data, $status, $visitorIP, $visitorCount
         } else {
             $journeyStep = (int)($resolvedLink['journey_step'] ?? 0);
         }
-        vjt_add_contact_event([
+        $canonicalCorrelation = $submissionEventId !== ''
+            ? implode('|', [
+                $status,
+                $verifiedIdentityVisitorId,
+                $verifiedIdentitySessionId,
+                $submissionEventId,
+            ])
+            : bin2hex(random_bytes(16));
+        vjt_add_verified_contact_event([
             // One browser submission lifecycle maps to one authoritative Core
-            // result even if the mail response is retried or handled twice.
-            'event_id' => $submissionEventId !== ''
-                ? 'vjtce_' . hash('sha256', $submissionEventId . '|inquiry-outcome')
-                : '',
+            // result. The server-only namespace and keyed derivation prevent a
+            // public event from pre-claiming the canonical row identifier.
+            'event_id' => 'vjtcv_' . hash_hmac(
+                'sha256',
+                'inquiry-outcome|' . $canonicalCorrelation,
+                kssmi_vjt_event_auth_secret()
+            ),
             'channel' => 'inquiry',
             'event_type' => $status === 'success' ? 'submission_success' : 'submission_error',
             'status' => $status === 'success' ? 'success' : 'error',
@@ -356,6 +398,9 @@ function recordInquiryOutcome($config, $data, $status, $visitorIP, $visitorCount
         ]);
     } catch (Throwable $e) {
         error_log('VJT inquiry enrichment error: ' . $e->getMessage());
+    }
+    } catch (Throwable $e) {
+        error_log('VJT inquiry tracking error: ' . $e->getMessage());
     }
 }
 
@@ -502,6 +547,19 @@ function sanitize($input, $maxLength = 1024) {
     return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
 }
 
+/**
+ * HTML mail is an output sink. Legacy request values may already carry one
+ * encoding layer, so normalize that layer and encode exactly once here.
+ */
+function kssmi_html_escape($value): string {
+    if (!is_scalar($value)) return '';
+    return htmlspecialchars(
+        htmlspecialchars_decode((string)$value, ENT_QUOTES),
+        ENT_QUOTES | ENT_SUBSTITUTE,
+        'UTF-8'
+    );
+}
+
 function sanitizeLocalPath($input) {
     $path = sanitize($input, 2048);
     if ($path === '' || $path[0] !== '/' || strpos($path, '//') === 0 || preg_match('/[\x00-\x1F\x7F]/', $path)) return '';
@@ -547,9 +605,11 @@ function getRealIP() {
  * First tries Cloudflare's country header, then falls back to IP-API
  */
 function getCountryFromIP($ip) {
-    // First check if Cloudflare provides the country directly (most reliable)
-    if (!empty($_SERVER['HTTP_CF_IPCOUNTRY'])) {
-        $country = $_SERVER['HTTP_CF_IPCOUNTRY'];
+    // Only a verified Cloudflare TCP peer may provide CF-IPCountry.
+    $country = function_exists('kssmi_get_trusted_cloudflare_country')
+        ? kssmi_get_trusted_cloudflare_country()
+        : null;
+    if ($country !== null) {
         debugIPLog('getCountryFromIP', ['source' => 'HTTP_CF_IPCOUNTRY', 'country' => $country]);
         return $country;
     }
@@ -575,9 +635,11 @@ function getCountryFromIP($ip) {
     if ($response && $httpCode === 200) {
         $data = json_decode($response, true);
         // ipapi.co returns ISO-2 country code in 'country_code' (ip-api.com used 'countryCode')
-        $country = strtoupper($data['country_code'] ?? 'UNKNOWN');
-        debugIPLog('getCountryFromIP', ['source' => 'IPAPI.CO', 'ip' => $ip, 'country' => $country]);
-        return $country;
+        $country = strtoupper(is_scalar($data['country_code'] ?? null) ? (string)$data['country_code'] : '');
+        if (preg_match('/^[A-Z]{2}$/D', $country) === 1) {
+            debugIPLog('getCountryFromIP', ['source' => 'IPAPI.CO', 'ip' => $ip, 'country' => $country]);
+            return $country;
+        }
     }
 
     debugIPLog('getCountryFromIP', ['source' => 'UNKNOWN', 'ip' => $ip]);
@@ -767,8 +829,18 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
 
     $t = $translations[$lang] ?? $translations['en'];
 
-    // Header title: "Name - Kssmi"
-    $headerTitle = htmlspecialchars($data['name']) . ' - Kssmi';
+    $name = kssmi_html_escape($data['name'] ?? '');
+    $email = kssmi_html_escape($data['email'] ?? '');
+    $productName = kssmi_html_escape($data['product_name'] ?? '');
+    $productSku = kssmi_html_escape($data['product_sku'] ?? '');
+    $details = kssmi_html_escape($data['details'] ?? '');
+    $sourceHtml = kssmi_html_escape($source);
+    $formSource = kssmi_html_escape($data['source'] ?? '');
+    $language = kssmi_html_escape($data['language'] ?? '');
+    $ipHtml = kssmi_html_escape($ip);
+    $countryHtml = kssmi_html_escape($country);
+    $inquiryIdHtml = kssmi_html_escape($inquiryId);
+    $headerTitle = $name . ' - Kssmi';
 
     return "
 <!DOCTYPE html>
@@ -805,35 +877,35 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
                 <div class='section-title'>{$t['contactInfo']}</div>
                 <div class='field'>
                     <div class='field-label'>{$t['name']}</div>
-                    <div class='field-value'>" . htmlspecialchars($data['name']) . "</div>
+                    <div class='field-value'>{$name}</div>
                 </div>
                 <div class='field'>
                     <div class='field-label'>{$t['email']}</div>
-                    <div class='field-value'><a href='mailto:" . htmlspecialchars($data['email']) . "'>" . htmlspecialchars($data['email']) . "</a></div>
+                    <div class='field-value'><a href='mailto:{$email}'>{$email}</a></div>
                 </div>
                 <div class='field'>
                     <div class='field-label'>{$t['product']}</div>
-                    <div class='field-value'>" . htmlspecialchars($data['product_name']) . "</div>
+                    <div class='field-value'>{$productName}</div>
                 </div>
                 <div class='field'>
                     <div class='field-label'>SKU</div>
-                    <div class='field-value'>" . htmlspecialchars($data['product_sku']) . "</div>
+                    <div class='field-value'>{$productSku}</div>
                 </div>
             </div>
             <div class='section'>
                 <div class='section-title'>{$t['projectDetails']}</div>
-                <div class='details-box'>" . htmlspecialchars($data['details']) . "</div>
+                <div class='details-box'>{$details}</div>
             </div>
             <div class='section'>
                 <div class='section-title'>{$t['metadata']}</div>
                 <table class='meta-table'>
                     <tr><td>{$t['time']}</td><td>{$timestamp}</td></tr>
-                    <tr><td>{$t['source']}</td><td><a href='{$source}' style='color: #8B7355;'>{$source}</a></td></tr>
-                    <tr><td>Form Source</td><td>" . htmlspecialchars($data['source']) . "</td></tr>
-                    <tr><td>Language</td><td>" . htmlspecialchars($data['language']) . "</td></tr>
-                    <tr><td>IP</td><td>{$ip}</td></tr>
-                    <tr><td>{$t['country']}</td><td>{$country}</td></tr>
-                    <tr><td>ID</td><td><span class='inquiry-id'>{$inquiryId}</span></td></tr>
+                    <tr><td>{$t['source']}</td><td><a href='{$sourceHtml}' style='color: #8B7355;'>{$sourceHtml}</a></td></tr>
+                    <tr><td>Form Source</td><td>{$formSource}</td></tr>
+                    <tr><td>Language</td><td>{$language}</td></tr>
+                    <tr><td>IP</td><td>{$ipHtml}</td></tr>
+                    <tr><td>{$t['country']}</td><td>{$countryHtml}</td></tr>
+                    <tr><td>ID</td><td><span class='inquiry-id'>{$inquiryIdHtml}</span></td></tr>
                 </table>
             </div>
         </div>
@@ -999,6 +1071,26 @@ $vjtData = [
     'vjt_utm_term' => vjt_clip(trim(requestString($_POST['vjt_utm_term'] ?? '')), 256),
 ];
 
+// Browser fields are attribution hints, not identity proof. Discard all
+// Journey linkage unless the HttpOnly server-issued identity matches exactly.
+try {
+    $vjtIdentity = kssmi_vjt_identity_from_request();
+} catch (Throwable $vjtIdentityError) {
+    // Event-auth state must never become a dependency of the inquiry email.
+    error_log('VJT request identity error: ' . $vjtIdentityError->getMessage());
+    $vjtIdentity = null;
+}
+if (($vjtData['vjt_analytics_consent'] ?? '') !== '1'
+    || $vjtIdentity === null
+    || !hash_equals((string)$vjtIdentity['visitor_id'], (string)$vjtData['vjt_visitor_id'])
+    || !hash_equals((string)$vjtIdentity['session_id'], (string)$vjtData['vjt_session_id'])) {
+    $vjtData['vjt_analytics_consent'] = '0';
+    $vjtData['vjt_visitor_id'] = '';
+    $vjtData['vjt_session_id'] = '';
+    $vjtData['vjt_journey_step'] = 0;
+    $vjtData['vjt_submission_event_id'] = '';
+}
+
 $turnstileToken = is_string($_POST['cf-turnstile-response'] ?? null) ? $_POST['cf-turnstile-response'] : '';
 
 // Set JSON response header
@@ -1137,7 +1229,7 @@ try {
     $vjtSummary = '';
     try {
         $vjtSummary = vjt_build_email_summary($vjtData['vjt_visitor_id'], $vjtData['vjt_session_id']);
-    } catch (Exception $e) {
+    } catch (Throwable $e) {
         // Attribution must never interfere with a real inquiry email.
         error_log('VJT email summary error: ' . $e->getMessage());
     }

@@ -11,23 +11,23 @@ header('X-Content-Type-Options: nosniff');
 header('Referrer-Policy: no-referrer');
 header("Content-Security-Policy: default-src 'none'; frame-ancestors 'none'");
 
-// CORS
-$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
-$allowedOrigins = ['https://kssmi.com', 'https://www.kssmi.com', 'http://localhost:4321', 'http://localhost:4324', 'http://localhost:4325', 'http://127.0.0.1:4321'];
-if (!in_array($origin, $allowedOrigins, true)) {
-    if (!empty($origin)) {
-        http_response_code(403);
-        echo json_encode(['success' => false, 'error' => 'Origin not allowed']);
-        exit;
-    }
-} else {
-    header('Access-Control-Allow-Origin: ' . $origin);
-    header('Access-Control-Allow-Methods: POST, OPTIONS');
-    header('Access-Control-Allow-Headers: Content-Type');
-}
+require_once __DIR__ . '/vjt-helpers.php';
+require_once dirname(__DIR__, 2) . '/private/vjt-event-auth.php';
 
+$corsAllowed = kssmi_vjt_apply_cors();
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(200);
+    http_response_code($corsAllowed ? 204 : 403);
+    exit;
+}
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Allow: POST, OPTIONS');
+    http_response_code(405);
+    echo json_encode(['success' => false, 'error' => 'Method Not Allowed']);
+    exit;
+}
+if (!$corsAllowed || !kssmi_vjt_same_site_issuance_request()) {
+    http_response_code(403);
+    echo json_encode(['success' => false, 'error' => 'Event write rejected']);
     exit;
 }
 
@@ -39,14 +39,6 @@ if (!checkRateLimit('track-pv', 30, 60)) {
     echo json_encode(['success' => false, 'error' => 'Too many requests']);
     exit;
 }
-
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405);
-    echo json_encode(['success' => false, 'error' => 'Method Not Allowed']);
-    exit;
-}
-
-require_once __DIR__ . '/vjt-helpers.php';
 
 $contentLength = (int)($_SERVER['CONTENT_LENGTH'] ?? 0);
 if ($contentLength > 65536) {
@@ -100,6 +92,23 @@ if (!preg_match('/^vjtv_[A-Za-z0-9_-]{8,60}$/', $visitorId) || !preg_match('/^vj
     exit;
 }
 
+$identity = kssmi_vjt_identity_from_request();
+$capabilityToken = is_scalar($data['capability_token'] ?? null)
+    ? (string)$data['capability_token'] : '';
+if ($identity === null
+    || !hash_equals((string)$identity['visitor_id'], $visitorId)
+    || !hash_equals((string)$identity['session_id'], $sessionId)) {
+    http_response_code(403);
+    echo json_encode(['success' => false, 'error' => 'Invalid event identity']);
+    exit;
+}
+$capability = kssmi_vjt_validate_capability($capabilityToken, 'pageview', $identity);
+if ($capability === null) {
+    http_response_code(403);
+    echo json_encode(['success' => false, 'error' => 'Invalid event capability']);
+    exit;
+}
+
 $ip      = vjt_get_client_ip();
 $ua      = vjt_clip($_SERVER['HTTP_USER_AGENT'] ?? '', 512);
 
@@ -123,6 +132,14 @@ $geo     = vjt_resolve_geo($ip);
 $now     = date('Y-m-d H:i:s');
 
 try {
+    $db = vjt_db();
+    $db->beginTransaction();
+    if (!kssmi_vjt_consume_capability($capability)) {
+        $db->rollBack();
+        http_response_code(409);
+        echo json_encode(['success' => false, 'error' => 'Event capability already used']);
+        exit;
+    }
     // Upsert visitor
     vjt_upsert_visitor([
         'visitor_id'        => $visitorId,
@@ -195,9 +212,11 @@ try {
         ]);
     }
 
+    $db->commit();
     echo json_encode(['success' => true]);
 
-} catch (Exception $e) {
+} catch (Throwable $e) {
+    if (isset($db) && $db->inTransaction()) $db->rollBack();
     error_log('VJT pageview error: ' . $e->getMessage());
     http_response_code(500);
     echo json_encode(['success' => false, 'error' => 'Internal server error']);

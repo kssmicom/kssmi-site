@@ -6,12 +6,15 @@ import { fileURLToPath } from 'node:url';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const readText = (relativePath) => readFile(resolve(root, relativePath), 'utf8');
 
-const [smoke, adminSmoke, smokeTest, security, httpTest, packageJson, phpCi, deploy, environmentAction] = await Promise.all([
+const [smoke, adminSmoke, smokeTest, security, httpTest, sendMail, rateLimit, rateLimitTest, packageJson, phpCi, deploy, environmentAction] = await Promise.all([
   readText('scripts/smoke-deployment.mjs'),
   readText('scripts/smoke-admin-security.mjs'),
   readText('scripts/test-smoke-deployment.mjs'),
   readText('private/http-security.php'),
   readText('scripts/test-http-security.php'),
+  readText('public/send-mail.php'),
+  readText('private/rate-limit.php'),
+  readText('scripts/test-rate-limit.php'),
   readText('package.json'),
   readText('.github/workflows/php-ci.yml'),
   readText('.github/workflows/deploy.yml'),
@@ -54,6 +57,16 @@ for (const scenario of [
 
 assert.match(security, /setcookie\(['\"]vjt_admin['\"][\s\S]*?'secure'\s*=>\s*true[\s\S]*?'httponly'\s*=>\s*true[\s\S]*?'samesite'\s*=>\s*'Strict'/, 'Marker cookie policy must remain hardened.');
 assert.match(httpTest, /plaintext forged marker does not exclude/, 'PHP tests must prove a forged marker cannot suppress analytics.');
+
+assert.match(rateLimit, /function kssmi_get_trusted_cloudflare_header\(/, 'Cloudflare headers must share a trusted-proxy resolver.');
+assert.match(rateLimit, /function kssmi_get_trusted_cloudflare_country\(/, 'Cloudflare country must be ISO-code validated centrally.');
+assert.match(sendMail, /kssmi_get_trusted_cloudflare_country\(\)/, 'Mail country lookup must use the trusted Cloudflare resolver.');
+assert.doesNotMatch(sendMail, /\$_SERVER\['HTTP_CF_IPCOUNTRY'\]/, 'Mail country lookup must not read an untrusted header directly.');
+assert.match(sendMail, /function kssmi_html_escape\(/, 'HTML email needs a shared output encoder.');
+assert.match(sendMail, /ENT_QUOTES \| ENT_SUBSTITUTE,\s*'UTF-8'/, 'HTML email encoding must protect attribute and text contexts.');
+assert.match(sendMail, /\$countryHtml = kssmi_html_escape\(\$country\)/, 'Country must be encoded at the HTML mail sink.');
+assert.match(sendMail, /\$ipHtml = kssmi_html_escape\(\$ip\)/, 'IP must be encoded at the HTML mail sink.');
+assert.match(rateLimitTest, /direct caller supplied a trusted Cloudflare country header/, 'PHP tests must cover forged country headers.');
 
 const packageData = JSON.parse(packageJson);
 assert.equal(packageData.scripts?.['test:smoke'], 'node scripts/test-smoke-deployment.mjs', 'package.json must expose smoke self-tests.');

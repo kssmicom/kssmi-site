@@ -22,6 +22,180 @@ import {
 } from './lib/runtime-assets.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const [vjtTrackerSource, inquiryFormSource, visitorTrackerSource] = await Promise.all([
+  readFile(resolve(root, 'public/js/vjt-tracker.js'), 'utf8'),
+  readFile(resolve(root, 'src/components/InquiryForm.astro'), 'utf8'),
+  readFile(resolve(root, 'src/components/VisitorTracker.astro'), 'utf8'),
+]);
+
+function extractNamedFunction(source, name) {
+  const start = source.indexOf(`function ${name}(`);
+  assert.notEqual(start, -1, `${name} function is missing`);
+  const bodyStart = source.indexOf('{', start);
+  assert.notEqual(bodyStart, -1, `${name} function body is missing`);
+
+  let depth = 0;
+  let quote = '';
+  let escaped = false;
+  let lineComment = false;
+  let blockComment = false;
+  for (let index = bodyStart; index < source.length; index += 1) {
+    const character = source[index];
+    const next = source[index + 1];
+    if (lineComment) {
+      if (character === '\n') lineComment = false;
+      continue;
+    }
+    if (blockComment) {
+      if (character === '*' && next === '/') {
+        blockComment = false;
+        index += 1;
+      }
+      continue;
+    }
+    if (quote) {
+      if (escaped) escaped = false;
+      else if (character === '\\') escaped = true;
+      else if (character === quote) quote = '';
+      continue;
+    }
+    if (character === '/' && next === '/') {
+      lineComment = true;
+      index += 1;
+      continue;
+    }
+    if (character === '/' && next === '*') {
+      blockComment = true;
+      index += 1;
+      continue;
+    }
+    if (character === "'" || character === '"' || character === '`') {
+      quote = character;
+      continue;
+    }
+    if (character === '{') depth += 1;
+    if (character === '}') {
+      depth -= 1;
+      if (depth === 0) return source.slice(start, index + 1);
+    }
+  }
+  assert.fail(`${name} function body is not balanced`);
+}
+
+// F-01 browser regressions: optional analytics must fail soft and must never
+// relabel a queued conversion when a capability refill rotates the identity.
+const buildPathSnapshot = Function(
+  'readPath',
+  `'use strict'; ${extractNamedFunction(vjtTrackerSource, 'buildPathSnapshot')}; return buildPathSnapshot;`
+)(() => [null, { session_id: 'vjts_old', step_order: 1, visited_at: '2026-01-01T00:00:00Z' }]);
+const snapshot = buildPathSnapshot({
+  session_id: 'vjts_current',
+  step_order: 2,
+  visited_at: '2026-01-01T00:01:00Z',
+});
+assert.equal(snapshot.includes(null), false, 'corrupt null path entries must be discarded');
+assert.equal(snapshot.length, 2, 'valid stored and current path entries must survive sanitization');
+
+const currentIdentity = { visitorId: 'vjtv_current', sessionId: 'vjts_current' };
+let submissionFetches = 0;
+let submissionBody = null;
+const deliverConversion = Function(
+  'cfg',
+  'identityReady',
+  'serverIdentity',
+  'acquireCapability',
+  'payloadMatchesServerIdentity',
+  'fetch',
+  'payloadWithCapability',
+  `'use strict'; ${extractNamedFunction(vjtTrackerSource, 'deliverConversion')}; return deliverConversion;`
+)(
+  { enabled: true, routes: { submission: '/api/track-submission.php' } },
+  true,
+  currentIdentity,
+  () => Promise.resolve('fresh-capability'),
+  (payload) => !!payload
+    && payload.visitor_id === currentIdentity.visitorId
+    && payload.session_id === currentIdentity.sessionId,
+  async (_url, options) => {
+    submissionFetches += 1;
+    submissionBody = JSON.parse(options.body);
+    return { ok: true, json: async () => ({ success: true, result: 'stored' }) };
+  },
+  (payload, token) => ({ ...payload, capability_token: token })
+);
+const stalePayload = {
+  event_id: 'vjtev_stale',
+  visitor_id: 'vjtv_old',
+  session_id: 'vjts_old',
+  status: 'attempt',
+};
+assert.equal(
+  await deliverConversion(stalePayload),
+  'drop',
+  'capability refill identity mismatch must drop the stale queued conversion'
+);
+assert.equal(submissionFetches, 0, 'stale conversion must not reach the submission endpoint');
+assert.deepEqual(
+  { visitor_id: stalePayload.visitor_id, session_id: stalePayload.session_id },
+  { visitor_id: 'vjtv_old', session_id: 'vjts_old' },
+  'delivery must not relabel a queued conversion to the current identity'
+);
+
+const validPayload = {
+  event_id: 'vjtev_current',
+  visitor_id: currentIdentity.visitorId,
+  session_id: currentIdentity.sessionId,
+  status: 'attempt',
+};
+assert.equal(await deliverConversion(validPayload), 'stored', 'matching identity remains deliverable');
+assert.equal(submissionFetches, 1, 'matching conversion performs exactly one request');
+assert.deepEqual(
+  {
+    visitor_id: submissionBody?.visitor_id,
+    session_id: submissionBody?.session_id,
+    capability_token: submissionBody?.capability_token,
+  },
+  {
+    visitor_id: currentIdentity.visitorId,
+    session_id: currentIdentity.sessionId,
+    capability_token: 'fresh-capability',
+  },
+  'matching conversion keeps its captured identity and receives only the fresh capability'
+);
+
+const trackerCall = inquiryFormSource.indexOf('window.VJT_beginInquirySubmission(newForm)');
+const formDataCreation = inquiryFormSource.indexOf('new FormData(newForm)', trackerCall);
+assert.ok(trackerCall >= 0 && formDataCreation > trackerCall, 'InquiryForm tracker hook is missing');
+const trackerBoundary = inquiryFormSource.slice(Math.max(0, trackerCall - 200), formDataCreation);
+const hookCall = trackerBoundary.lastIndexOf('window.VJT_beginInquirySubmission(newForm)');
+const localTry = trackerBoundary.lastIndexOf('try {', hookCall);
+const localCatch = trackerBoundary.indexOf('catch', hookCall);
+assert.ok(localTry >= 0 && localCatch > localTry, 'optional tracker hook must be guarded by local try/catch');
+assert.match(
+  trackerBoundary.slice(localCatch),
+  /submissionEventId\s*=\s*['"]['"]\s*;/,
+  'tracker failure must fall back to an empty submission event ID'
+);
+
+const hostnameMappings = [
+  ...visitorTrackerSource.matchAll(/var\s+(?:vjtDevHostname|devHostname)\s*=\s*window\.location\.hostname[\s\S]*?;/g),
+  ...inquiryFormSource.matchAll(/const\s+devHostname\s*=\s*window\.location\.hostname[\s\S]*?;/g),
+].map((match) => match[0]);
+assert.ok(hostnameMappings.length >= 4, 'development hostname mappings are missing');
+for (const mapping of hostnameMappings) {
+  const bracketedLoopbackLiterals = mapping.match(/['"]\[::1\]['"]/g) || [];
+  assert.ok(
+    /['"]::1['"]/.test(mapping) && bracketedLoopbackLiterals.length >= 2,
+    'every development API hostname mapping must recognize bracketed and unbracketed IPv6 loopback'
+  );
+}
+const localHostBoundary = visitorTrackerSource.match(/var\s+isLocalHost\s*=[\s\S]*?;/)?.[0] || '';
+assert.ok(
+  /hostname\s*===\s*['"]::1['"]/.test(localHostBoundary)
+    && /hostname\s*===\s*['"]\[::1\]['"]/.test(localHostBoundary),
+  'local tracker suppression must recognize bracketed and unbracketed IPv6 loopback'
+);
+
 const manifest = await createRuntimeAssetManifest(root);
 assert.deepEqual(
   Object.keys(manifest.assets).sort(),

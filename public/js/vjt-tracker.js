@@ -9,6 +9,8 @@
   var PENDING_CONVERSION_TTL_MS = 7 * 24 * 60 * 60 * 1000;
   var ACTIVE_WINDOW_MS = 15000;
   var HEARTBEAT_MS = 45000;
+  var CAPABILITY_LOW_WATER = 3;
+  var MAX_CAPABILITY_POOL = 32;
   var hiddenNames = [
     'vjt_visitor_id',
     'vjt_session_id',
@@ -34,8 +36,27 @@
   var lastSyncMs = 0;
   var activeAccumulatedMs = 0;
   var heartbeatTimer = null;
+  var capabilityPools = { pageview: [], submission: [] };
+  var capabilityRefreshPromise = null;
+  var capabilityEpoch = 0;
+  var serverIdentity = null;
+  var identityReady = false;
+  var initPromise = null;
+  var initPromiseUrl = '';
 
   function newTrackingId(prefix) {
+    try {
+      if (window.crypto && typeof window.crypto.randomUUID === 'function') {
+        return prefix + window.crypto.randomUUID().replace(/-/g, '');
+      }
+      if (window.crypto && typeof window.crypto.getRandomValues === 'function') {
+        var bytes = new Uint8Array(16);
+        window.crypto.getRandomValues(bytes);
+        return prefix + Array.prototype.map.call(bytes, function (value) {
+          return value.toString(16).padStart(2, '0');
+        }).join('');
+      }
+    } catch (e) {}
     var now = new Date();
     var p = function (n) { return (n < 10 ? '0' : '') + n; };
     var dateStr = now.getFullYear() + '-' + p(now.getMonth() + 1) + '-' + p(now.getDate());
@@ -219,13 +240,10 @@
   }
 
   function getVisitorId() {
-    // Cookie fallback keeps one visitor identity when localStorage is blocked
-    // or cleared independently. The server-facing cookie never wins over a
-    // valid localStorage value.
-    var id = readStorage(VISITOR_KEY) || readCookie('vjt_visitor_id');
-    if (!id) {
-      id = newTrackingId('vjtv_');
-    }
+    // Analytics identities are authoritative only after the server has issued
+    // the signed HttpOnly identity cookie and matching capability bundle.
+    if (!identityReady || !serverIdentity) return '';
+    var id = serverIdentity.visitorId;
     writeStorage(VISITOR_KEY, id);
     setCookie('vjt_visitor_id', id, cfg.cookieExpires || 31536000);
     return id;
@@ -240,24 +258,32 @@
     try { writeJson(PATH_KEY, Array.isArray(p) ? p.slice(-20) : []); } catch (e) {}
   }
 
-  function getSession(deviceInfo) {
+  function sessionNeedsRotation() {
     var session    = readJson(SESSION_KEY);
-    var previous   = session;
     var now        = Date.now();
     var timeoutMs  = (cfg.sessionTimeout || 30) * 60 * 1000;
     var expired    = !session || !session.lastActivity || (now - session.lastActivity > timeoutMs);
     var utm        = extractUtm();
     var pageReferrer = document.referrer || '';
     var externalReferrer = pageReferrer && !isInternalReferrer(pageReferrer) ? pageReferrer : '';
-
-    // A new campaign or a genuinely new external referrer starts a fresh
-    // attribution session even if the inactivity timeout has not elapsed.
     if (!expired && (campaignChanged(session, utm) ||
         (externalReferrer && referrerHost(externalReferrer) !== referrerHost(session.originalReferrer || session.referrer)))) {
       expired = true;
     }
+    return expired;
+  }
 
-    if (expired) {
+  function getSession(deviceInfo, forceNewMetadata) {
+    if (!identityReady || !serverIdentity) return null;
+    var session    = readJson(SESSION_KEY);
+    var previous   = session;
+    var now        = Date.now();
+    var utm        = extractUtm();
+    var pageReferrer = document.referrer || '';
+    var externalReferrer = pageReferrer && !isInternalReferrer(pageReferrer) ? pageReferrer : '';
+    var resetMetadata = !!forceNewMetadata || !session || session.id !== serverIdentity.sessionId;
+
+    if (resetMetadata) {
       var di  = deviceInfo || {};
       // If a timed-out visit continues through an internal link, retain the
       // previous non-direct attribution (last non-direct model). A later true
@@ -270,7 +296,7 @@
       var inheritCampaign = !!(internalContinuation && previous && !hasUtm(utm));
       var attributedReferrer = externalReferrer || inheritedReferrer;
       session = {
-        id               : newTrackingId('vjts_'),
+        id               : serverIdentity.sessionId,
         startedAt        : new Date().toISOString(),
         landingUrl       : cfg.page.url,
         landingTitle     : cfg.page.title,
@@ -291,6 +317,8 @@
       writePath([]);
     }
 
+    // The server identity always wins over any predictable/stale client ID.
+    session.id = serverIdentity.sessionId;
     session.lastActivity = now;
 
     writeJson(SESSION_KEY, session);
@@ -299,6 +327,8 @@
   }
 
   function saveSession(session) {
+    if (!identityReady || !serverIdentity || !session) return;
+    session.id = serverIdentity.sessionId;
     session.lastActivity = Date.now();
     writeJson(SESSION_KEY, session);
     setCookie('vjt_session_id', session.id, (cfg.sessionTimeout || 30) * 60);
@@ -306,25 +336,256 @@
 
   // ── Network ────────────────────────────────────────────────────────────────
 
+  function clearCapabilityPools() {
+    capabilityPools.pageview = [];
+    capabilityPools.submission = [];
+  }
+
+  function invalidateServerIdentity() {
+    capabilityEpoch += 1;
+    clearCapabilityPools();
+    serverIdentity = null;
+    identityReady = false;
+    if (heartbeatTimer) clearInterval(heartbeatTimer);
+    heartbeatTimer = null;
+    window.__vjtInitializedUrl = '';
+  }
+
+  function isValidTrackingId(value, prefix) {
+    var pattern = prefix === 'vjtv_'
+      ? /^vjtv_[A-Za-z0-9_-]{8,60}$/
+      : /^vjts_[A-Za-z0-9_-]{8,60}$/;
+    return typeof value === 'string' && pattern.test(value);
+  }
+
+  function validCapabilityList(value) {
+    return Array.isArray(value) && value.length > 0 && value.every(function (token) {
+      return typeof token === 'string' && token.length > 0 && token.length <= 4096;
+    });
+  }
+
+  function mergeCapabilities(kind, tokens) {
+    var merged = capabilityPools[kind].slice();
+    tokens.forEach(function (token) {
+      if (merged.indexOf(token) === -1) merged.push(token);
+    });
+    capabilityPools[kind] = merged.slice(0, MAX_CAPABILITY_POOL);
+  }
+
+  function updateHeartbeatInterval(seconds) {
+    HEARTBEAT_MS = seconds * 1000;
+    if (heartbeatTimer) {
+      clearInterval(heartbeatTimer);
+      heartbeatTimer = window.setInterval(sendHeartbeat, HEARTBEAT_MS);
+    }
+  }
+
+  function persistServerIdentity(visitorId, sessionId) {
+    writeStorage(VISITOR_KEY, visitorId);
+    setCookie('vjt_visitor_id', visitorId, cfg.cookieExpires || 31536000);
+    setCookie('vjt_session_id', sessionId, (cfg.sessionTimeout || 30) * 60);
+
+    // Overwrite an old client-generated session ID immediately. getSession()
+    // will rebuild attribution metadata before anything is patched or sent.
+    var storedSession = readJson(SESSION_KEY);
+    if (storedSession) {
+      storedSession.id = sessionId;
+      writeJson(SESSION_KEY, storedSession);
+    }
+  }
+
+  function requestCapabilityProof() {
+    if (typeof window.KSSMI_VJT_CAPABILITY_PROOF !== 'function') {
+      return Promise.reject(new Error('VJT Turnstile proof unavailable'));
+    }
+    return window.KSSMI_VJT_CAPABILITY_PROOF().then(function (token) {
+      if (typeof token !== 'string' || token.length === 0 || token.length > 4096) {
+        throw new Error('VJT Turnstile proof rejected');
+      }
+      return token;
+    });
+  }
+
+  function requestAnalyticsCapabilities(rotateSession, allowIdentityChange) {
+    if (!cfg.enabled || !cfg.routes || !cfg.routes.capability) {
+      return Promise.reject(new Error('VJT capability route unavailable'));
+    }
+
+    var requestEpoch = capabilityEpoch;
+    return requestCapabilityProof().then(function (turnstileToken) {
+      return fetch(cfg.routes.capability, {
+        method      : 'POST',
+        credentials : 'include',
+        headers     : { 'Content-Type': 'application/json' },
+        body        : JSON.stringify({
+          mode: 'analytics',
+          rotate_session: !!rotateSession,
+          turnstile_token: turnstileToken
+        })
+      });
+    }).then(function (response) {
+      if (!response.ok) throw new Error('VJT capability request failed');
+      return response.json();
+    }).then(function (data) {
+      if (!cfg.enabled || requestEpoch !== capabilityEpoch) {
+        var supersededError = new Error('VJT capability request superseded');
+        supersededError.vjtSuperseded = true;
+        throw supersededError;
+      }
+      var capabilities = data && data.capabilities;
+      var visitorId = data && data.visitor_id;
+      var sessionId = data && data.session_id;
+      var heartbeatSeconds = data && Number(data.heartbeat_seconds);
+      if (!data || data.success !== true ||
+          !isValidTrackingId(visitorId, 'vjtv_') ||
+          !isValidTrackingId(sessionId, 'vjts_') ||
+          !heartbeatSeconds || heartbeatSeconds < 30 || heartbeatSeconds > 120 ||
+          !capabilities ||
+          !validCapabilityList(capabilities.pageview) ||
+          !validCapabilityList(capabilities.submission)) {
+        throw new Error('Invalid VJT capability response');
+      }
+
+      var identityChanged = !!serverIdentity &&
+        (serverIdentity.visitorId !== visitorId || serverIdentity.sessionId !== sessionId);
+      var refillIdentityChanged = identityChanged && !allowIdentityChange;
+
+      var storedSession = readJson(SESSION_KEY);
+      var localSessionChanged = !storedSession || storedSession.id !== sessionId;
+      if (!serverIdentity || identityChanged) clearCapabilityPools();
+      serverIdentity = { visitorId: visitorId, sessionId: sessionId };
+      identityReady = true;
+      persistServerIdentity(visitorId, sessionId);
+      mergeCapabilities('pageview', capabilities.pageview);
+      mergeCapabilities('submission', capabilities.submission);
+      updateHeartbeatInterval(heartbeatSeconds);
+
+      if (refillIdentityChanged) {
+        // The server may rotate an expired session during an ordinary refill.
+        // Adopt it, rebuild local attribution, and reinitialize the current
+        // page; old page payloads are rejected by payloadMatchesServerIdentity.
+        getSession(_deviceInfo, true);
+        window.__vjtInitializedUrl = '';
+        setTimeout(function () {
+          if (cfg.enabled && identityReady) initVJT();
+        }, 0);
+      }
+      return {
+        localSessionChanged: localSessionChanged,
+        identityChanged: identityChanged,
+        refillIdentityChanged: refillIdentityChanged
+      };
+    });
+  }
+
+  function replenishCapabilities() {
+    if (!cfg.enabled || !identityReady || !serverIdentity) return Promise.resolve(false);
+    if (capabilityRefreshPromise) return capabilityRefreshPromise;
+    capabilityRefreshPromise = requestAnalyticsCapabilities(false, false).then(function () {
+      return true;
+    }, function () {
+      return false;
+    }).then(function (result) {
+      capabilityRefreshPromise = null;
+      return result;
+    });
+    return capabilityRefreshPromise;
+  }
+
+  function bootstrapCapabilities(rotateSession) {
+    // A SPA navigation can race a low-water refill triggered while flushing
+    // the previous page. Serialize them so an old response cannot replace the
+    // newly rotated server session.
+    var waitForRefill = capabilityRefreshPromise || Promise.resolve(true);
+    return waitForRefill.then(function () {
+      return requestAnalyticsCapabilities(rotateSession, true);
+    }).catch(function (error) {
+      if (!error || !error.vjtSuperseded) invalidateServerIdentity();
+      throw error;
+    });
+  }
+
+  function capabilityIsFresh(token) {
+    // Server capabilities expose their signed expiry in the first base64url
+    // segment. Treat opaque future token formats as usable; the server still
+    // performs the authoritative signature and expiry validation.
+    var parts = String(token || '').split('.');
+    if (parts.length !== 2) return true;
+    try {
+      var encoded = parts[0].replace(/-/g, '+').replace(/_/g, '/');
+      while (encoded.length % 4) encoded += '=';
+      var claims = JSON.parse(atob(encoded));
+      return typeof claims.exp !== 'number' || claims.exp * 1000 > Date.now() + 5000;
+    } catch (e) {
+      return true;
+    }
+  }
+
+  function takeCapability(kind) {
+    if (!cfg.enabled || !identityReady || !capabilityPools[kind]) return '';
+    var token = '';
+    while (capabilityPools[kind].length && !token) {
+      var candidate = capabilityPools[kind].shift() || '';
+      if (candidate && capabilityIsFresh(candidate)) token = candidate;
+    }
+    if (capabilityPools[kind].length <= CAPABILITY_LOW_WATER) replenishCapabilities();
+    return token;
+  }
+
+  function acquireCapability(kind) {
+    var token = takeCapability(kind);
+    if (token) return Promise.resolve(token);
+    return replenishCapabilities().then(function () { return takeCapability(kind); });
+  }
+
+  function payloadWithCapability(payload, token) {
+    var securedPayload = {};
+    Object.keys(payload || {}).forEach(function (key) { securedPayload[key] = payload[key]; });
+    securedPayload.capability_token = token;
+    return securedPayload;
+  }
+
+  function payloadMatchesServerIdentity(payload) {
+    return !!(identityReady && serverIdentity && payload &&
+      payload.visitor_id === serverIdentity.visitorId &&
+      payload.session_id === serverIdentity.sessionId);
+  }
+
+  function sendPageviewWithToken(url, payload, token, useBeacon) {
+    if (!payloadMatchesServerIdentity(payload)) return false;
+    var securedPayload = payloadWithCapability(payload, token);
+    if (useBeacon && navigator.sendBeacon) {
+      try {
+        if (navigator.sendBeacon(url, new Blob([JSON.stringify(securedPayload)], { type: 'application/json' }))) {
+          return true;
+        }
+      } catch (e) {}
+    }
+    return fetch(url, {
+      method      : 'POST',
+      credentials : 'include',
+      keepalive   : !!useBeacon,
+      headers     : { 'Content-Type': 'application/json' },
+      body        : JSON.stringify(securedPayload)
+    }).catch(function () { return null; });
+  }
+
   function post(url, payload, useBeacon) {
     // Consent can be withdrawn after the persistent SPA/pagehide listeners were
     // registered. Re-check at the single network boundary so no later
     // heartbeat, leave event or conversion intent can escape after withdrawal.
-    if (!cfg.enabled) return false;
+    if (!cfg.enabled || !identityReady || !url) return false;
 
-    if (useBeacon && navigator.sendBeacon) {
-      try {
-        return navigator.sendBeacon(url, new Blob([JSON.stringify(payload)], { type: 'application/json' }));
-      } catch (e) {}
+    // Unload paths cannot wait for the network. They use one already-issued
+    // token and fail closed when the pageview pool is empty.
+    if (useBeacon) {
+      var beaconToken = takeCapability('pageview');
+      return beaconToken ? sendPageviewWithToken(url, payload, beaconToken, true) : false;
     }
 
-    return fetch(url, {
-      method      : 'POST',
-      credentials : 'same-origin',
-      keepalive   : !!useBeacon,
-      headers     : { 'Content-Type': 'application/json' },
-      body        : JSON.stringify(payload)
-    }).catch(function () { return null; });
+    return acquireCapability('pageview').then(function (token) {
+      return token ? sendPageviewWithToken(url, payload, token, false) : false;
+    });
   }
 
   // Conversion events are queued before sending. A page can leave immediately
@@ -359,24 +620,34 @@
   }
 
   function deliverConversion(payload) {
-    if (!cfg.enabled || !cfg.routes || !cfg.routes.submission) return Promise.resolve('drop');
+    if (!cfg.enabled || !identityReady || !cfg.routes || !cfg.routes.submission) return Promise.resolve('retry');
     try {
-      return fetch(cfg.routes.submission, {
-        method      : 'POST',
-        credentials : 'same-origin',
-        keepalive   : true,
-        headers     : { 'Content-Type': 'application/json' },
-        body        : JSON.stringify(payload)
-      }).then(function (response) {
-        // Malformed input is not recoverable; 429/5xx remain queued for retry.
-        if (!response.ok) return (response.status === 429 || response.status >= 500) ? 'retry' : 'drop';
-        return response.json().then(function (body) {
-          if (!body || body.success !== true) return 'retry';
-          if (body.result === 'skipped_internal' || body.result === 'skipped_bot') return 'drop';
-          // Accept legacy successful responses during a rolling deployment.
-          return 'stored';
+      // Acquire inside every delivery attempt: queued payloads never contain a
+      // token, and each retry consumes a newly issued submission capability.
+      return acquireCapability('submission').then(function (token) {
+        if (!token || !identityReady || !serverIdentity) return 'retry';
+        // A refill may rotate an expired server session. Never relabel a queued
+        // browser event as belonging to that new identity: the form fields and
+        // canonical mail outcome still describe the identity captured when the
+        // event was created. Drop the now-stale diagnostic attempt instead.
+        if (!payloadMatchesServerIdentity(payload)) return 'drop';
+        return fetch(cfg.routes.submission, {
+          method      : 'POST',
+          credentials : 'include',
+          keepalive   : true,
+          headers     : { 'Content-Type': 'application/json' },
+          body        : JSON.stringify(payloadWithCapability(payload, token))
+        }).then(function (response) {
+          // Malformed input is not recoverable; 429/5xx remain queued for retry.
+          if (!response.ok) return (response.status === 429 || response.status >= 500) ? 'retry' : 'drop';
+          return response.json().then(function (body) {
+            if (!body || body.success !== true) return 'retry';
+            if (body.result === 'skipped_internal' || body.result === 'skipped_bot') return 'drop';
+            // Accept legacy successful responses during a rolling deployment.
+            return 'stored';
+          }, function () { return 'retry'; });
         }, function () { return 'retry'; });
-      }, function () { return 'retry'; });
+      });
     } catch (e) {
       return Promise.resolve('retry');
     }
@@ -420,7 +691,12 @@
   }
 
   function buildPathSnapshot(currentPageview) {
-    var path = readPath().slice();
+    // localStorage is browser-controlled and may contain legacy/corrupt items.
+    // Invalid entries are telemetry loss only; they must never throw through a
+    // real inquiry form submission.
+    var path = readPath().filter(function (item) {
+      return !!item && typeof item === 'object' && !Array.isArray(item);
+    });
     if (currentPageview) {
       var exists = path.some(function (item) {
         return item.session_id === currentPageview.session_id &&
@@ -442,6 +718,7 @@
   }
 
   function patchForms(visitorId, session) {
+    if (!identityReady || !visitorId || !session) return;
     var forms = document.querySelectorAll('form');
     if (!forms.length) return; // nothing to patch — skip the localStorage/JSON work
     var pageview = readJson(PAGE_KEY);
@@ -584,20 +861,6 @@
     post(cfg.routes.pageview, payload, false);
   }
 
-  function loadTrackerConfig() {
-    if (window.__vjtConfigLoaded || !cfg.routes || !cfg.routes.config) return;
-    window.__vjtConfigLoaded = true;
-    fetch(cfg.routes.config, { credentials: 'same-origin' })
-      .then(function (response) { return response.ok ? response.json() : null; })
-      .then(function (data) {
-        var seconds = data && Number(data.heartbeat_seconds);
-        if (!seconds || seconds < 30 || seconds > 120) return;
-        HEARTBEAT_MS = seconds * 1000;
-        if (heartbeatTimer) { clearInterval(heartbeatTimer); heartbeatTimer = window.setInterval(sendHeartbeat, HEARTBEAT_MS); }
-      })
-      .catch(function () {});
-  }
-
   // ── Form submission detection ───────────────────────────────────────────────
 
   function getFieldValue(form, sel) {
@@ -638,10 +901,11 @@
   }
 
   function trackSubmissionAttempt(form, requestedEventId) {
-    if (!cfg.enabled || !form || form.tagName.toLowerCase() !== 'form' || isSearchForm(form)) return '';
+    if (!cfg.enabled || !identityReady || !serverIdentity || !form || form.tagName.toLowerCase() !== 'form' || isSearchForm(form)) return '';
 
     var visitorId = getVisitorId();
     var session  = getSession(_deviceInfo);
+    if (!visitorId || !session) return '';
     var pageview = readJson(PAGE_KEY);
     var snapshot = buildPathSnapshot(pageview);
     patchForms(visitorId, session);
@@ -744,35 +1008,6 @@
     }
   }
 
-  function addContactCoreAnalyticsFlag(href) {
-    try {
-      var url = new URL(href, window.location.href);
-      url.searchParams.set('analytics', '1');
-      var pageview = readJson(PAGE_KEY);
-      var session = readJson(SESSION_KEY);
-      var step = pageview && Number(pageview.step_order);
-      if (pageview && session && pageview.session_id === session.id && step >= 1 && step <= 10000) {
-        url.searchParams.set('step', String(Math.floor(step)));
-      } else {
-        url.searchParams.delete('step');
-      }
-      return url.pathname + url.search + url.hash;
-    } catch (e) {
-      return href;
-    }
-  }
-
-  function temporarilyEnhanceContactCoreAnchor(anchor, href) {
-    var original = anchor.getAttribute('href');
-    var enhanced = addContactCoreAnalyticsFlag(href);
-    anchor.setAttribute('href', enhanced);
-    setTimeout(function () {
-      if (anchor.getAttribute('href') !== enhanced) return;
-      if (original === null) anchor.removeAttribute('href');
-      else anchor.setAttribute('href', original);
-    }, 0);
-  }
-
   function enhanceModifiedContactCoreClick(event) {
     if (!cfg.enabled || event.defaultPrevented) return;
     var anchor = resolveAnchor(event.target);
@@ -781,7 +1016,8 @@
     var href = resolveContactHref(anchor, kind || '');
     if (!kind) kind = classifyOutboundLink(href);
     if (!kind || !isContactCoreLink(anchor, href)) return;
-    temporarilyEnhanceContactCoreAnchor(anchor, href);
+    // The always-on Contact Core owns its capability and navigation lifecycle.
+    return;
   }
 
   function bindOutboundLinks() {
@@ -796,24 +1032,14 @@
       if (!kind) kind = classifyOutboundLink(href);
       if (!kind) return;
 
-      // Keep native new-tab/new-window behaviour for modified clicks while
-      // still attaching the consented Journey linkage and exact current step.
-      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
-        if (isContactCoreLink(anchor, href)) temporarilyEnhanceContactCoreAnchor(anchor, href);
-        return;
-      }
+      // Contact Core independently attaches its one-time capability plus the
+      // optional analytics/step linkage. Do not mutate or navigate this href in
+      // the analytics tracker; two listeners would race when restoring it.
+      if (isContactCoreLink(anchor, href)) return;
 
-      // Contact Core owns the one authoritative business event. With consent,
-      // mark this same-site navigation so the server may link existing VJT
-      // cookies; do not also create a duplicate analytics submission.
-      if (isContactCoreLink(anchor, href)) {
-        event.preventDefault();
-        href = addContactCoreAnalyticsFlag(href);
-        if (anchor.target === '_blank') {
-          window.open(href, '_blank', 'noopener');
-        } else {
-          window.location.href = href;
-        }
+      // Keep native new-tab/new-window behaviour for modified clicks; the
+      // analytics tracker never intercepts direct contact navigation.
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
         return;
       }
 
@@ -830,11 +1056,7 @@
 
   // ── Bootstrap ──────────────────────────────────────────────────────────────
 
-  function initVJT() {
-    cfg = window.VJTTracker || cfg;
-    if (!cfg) return;
-    loadTrackerConfig();
-
+  function completeVJTInitialization(forceNewMetadata) {
     // Admin traffic is excluded from analytics SERVER-SIDE only:
     // private/http-security.php validates the HMAC-signed vjt_admin marker
     // (kssmi_admin_tracking_excluded) at every track/contact API endpoint.
@@ -843,33 +1065,9 @@
     // server-side HMAC validation, and a visitor cannot opt out of analytics
     // by setting any cookie value.
 
-    // Always use live URL/title for SPA navigations (Astro View Transitions)
-    cfg.page.url = cleanUrl(window.location.href);
-    cfg.page.title = document.title || '';
-
-    // VJT identifiers, form context, contact intents and passive behaviour are
-    // all analytics-consent gated. A real Inquiry is still recorded server-side
-    // by send-mail.php even when no VJT identifier exists.
-    if (!cfg.enabled) return;
-
-    // The async loader, the tracker's DOM-ready bootstrap and Astro's initial
-    // page-load event can all meet on the same document. Make page
-    // initialization idempotent across duplicate script instances as well as
-    // repeated calls within one instance.
-    var initUrl = cleanUrl(window.location.href);
-    if (window.__vjtInitializedUrl === initUrl) {
-      _deviceInfo = getDeviceInfo();
-      var existingVisitorId = getVisitorId();
-      var existingSession = getSession(_deviceInfo);
-      patchForms(existingVisitorId, existingSession);
-      flushPendingConversions();
-      return;
-    }
-    window.__vjtInitializedUrl = initUrl;
-
-    _deviceInfo = getDeviceInfo();
     var visitorId  = getVisitorId();
-    var session    = getSession(_deviceInfo);
+    var session    = getSession(_deviceInfo, forceNewMetadata);
+    if (!visitorId || !session) return false;
 
     // Always update site language to reflect CURRENT page language,
     // not the stale value from session creation (fixes /ko/ pages showing as EN)
@@ -903,8 +1101,8 @@
         if (!mutationAddedForm(mutations)) return;
         clearTimeout(formsTimer);
         formsTimer = setTimeout(function () {
-          if (!cfg.enabled) return;
-          patchForms(visitorId, getSession());
+          if (!cfg.enabled || !identityReady) return;
+          patchForms(getVisitorId(), getSession());
         }, 500);
       }).observe(document.documentElement, { childList: true, subtree: true });
 
@@ -917,11 +1115,6 @@
     flushPendingConversions();
 
     // ── Passive pageview / behaviour tracking ───────────────────────────────
-
-    // If pageview tracking already bound (Astro SPA navigation), flush previous view
-    if (window.__vjtPvBound) {
-      flushPageview('spa-navigate');
-    }
 
     var pageview = currentPageview(visitorId, session);
     activeAccumulatedMs = 0;
@@ -971,6 +1164,77 @@
 
     session = getSession(_deviceInfo);
     startTracking(pageview, session);
+    return true;
+  }
+
+  function initVJT() {
+    cfg = window.VJTTracker || cfg;
+    if (!cfg) return Promise.resolve(false);
+    cfg.page = cfg.page || {};
+
+    // Always use live URL/title for SPA navigations (Astro View Transitions).
+    var initUrl = cleanUrl(window.location.href);
+    var initTitle = document.title || '';
+    cfg.page.url = initUrl;
+    cfg.page.title = initTitle;
+
+    // VJT identifiers, form context, contact intents and passive behaviour are
+    // all analytics-consent gated. A real Inquiry is still recorded server-side
+    // by send-mail.php even when no VJT identifier exists.
+    if (!cfg.enabled) return Promise.resolve(false);
+
+    // The async loader, DOM-ready bootstrap and Astro page-load event can all
+    // meet on the same document. Share the in-flight server bootstrap for the
+    // same URL and queue a newer SPA URL behind it.
+    if (initPromise) {
+      if (initPromiseUrl === initUrl) return initPromise;
+      return initPromise.then(function () { return initVJT(); });
+    }
+
+    if (window.__vjtInitializedUrl === initUrl && identityReady) {
+      _deviceInfo = getDeviceInfo();
+      var existingVisitorId = getVisitorId();
+      var existingSession = getSession(_deviceInfo);
+      patchForms(existingVisitorId, existingSession);
+      flushPendingConversions();
+      return Promise.resolve(true);
+    }
+
+    var rotateSession = sessionNeedsRotation();
+
+    // Flush the old SPA view while its identity and prefetched token are still
+    // current. A rotated capability bundle cannot authorize the old session.
+    if (window.__vjtPvBound && identityReady && window.__vjtInitializedUrl !== initUrl) {
+      flushPageview('spa-navigate');
+    }
+
+    _deviceInfo = getDeviceInfo();
+    initPromiseUrl = initUrl;
+    var pendingInit = bootstrapCapabilities(rotateSession).then(function (capabilityResult) {
+      // A faster SPA navigation may have superseded this initialization while
+      // the capability request was in flight. Leave no page write for it.
+      if (!cfg.enabled || cleanUrl(window.location.href) !== initUrl) return false;
+      cfg.page.url = initUrl;
+      cfg.page.title = initTitle;
+      var completed = completeVJTInitialization(
+        rotateSession || capabilityResult.localSessionChanged || capabilityResult.identityChanged
+      );
+      if (completed) window.__vjtInitializedUrl = initUrl;
+      return !!completed;
+    }).catch(function (error) {
+      // Invalid/missing configuration and bootstrap failures are fail closed.
+      if (!error || !error.vjtSuperseded) invalidateServerIdentity();
+      return false;
+    });
+
+    initPromise = pendingInit;
+    pendingInit.then(function () {
+      if (initPromise === pendingInit) {
+        initPromise = null;
+        initPromiseUrl = '';
+      }
+    });
+    return pendingInit;
   }
 
   // Expose init globally so VisitorTracker.astro can call it directly
@@ -982,8 +1246,9 @@
   };
 
   window.addEventListener('vjt:consent-withdrawn', function () {
-    if (heartbeatTimer) clearInterval(heartbeatTimer);
-    heartbeatTimer = null;
+    invalidateServerIdentity();
+    initPromise = null;
+    initPromiseUrl = '';
     flushed = true;
     window.__vjtInitializedUrl = '';
   });

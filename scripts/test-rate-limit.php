@@ -108,14 +108,29 @@ try {
     // trusted identity, while a verified Cloudflare peer can supply one.
     $_SERVER['REMOTE_ADDR'] = '203.0.113.10';
     $_SERVER['HTTP_CF_CONNECTING_IP'] = '198.51.100.77';
+    $_SERVER['HTTP_CF_IPCOUNTRY'] = '<img src=x onerror=alert(1)>';
     rate_limit_assert(
         kssmi_get_client_ip() === '203.0.113.10',
         'direct caller changed its identity with a forged Cloudflare header'
+    );
+    rate_limit_assert(
+        kssmi_get_trusted_cloudflare_country() === null,
+        'direct caller supplied a trusted Cloudflare country header'
     );
     $_SERVER['REMOTE_ADDR'] = '173.245.48.1';
     rate_limit_assert(
         kssmi_get_client_ip() === '198.51.100.77',
         'trusted Cloudflare peer did not supply the forwarded client IP'
+    );
+    $_SERVER['HTTP_CF_IPCOUNTRY'] = 'US';
+    rate_limit_assert(
+        kssmi_get_trusted_cloudflare_country() === 'US',
+        'trusted Cloudflare peer country was rejected'
+    );
+    $_SERVER['HTTP_CF_IPCOUNTRY'] = 'US<script>';
+    rate_limit_assert(
+        kssmi_get_trusted_cloudflare_country() === null,
+        'malformed Cloudflare country was accepted'
     );
     $_SERVER['HTTP_CF_CONNECTING_IP'] = 'not-an-ip';
     rate_limit_assert(
@@ -174,16 +189,25 @@ try {
     rate_limit_assert(checkRateLimit('test-endpoint', 2, 60), 'second request rejected');
     rate_limit_assert(!checkRateLimit('test-endpoint', 2, 60), 'third request was not limited');
 
-    $initialBuckets = glob($testRoot . DIRECTORY_SEPARATOR . 'bucket-*.json') ?: [];
-    rate_limit_assert(count($initialBuckets) === 1, 'one identity created more than one bucket');
+    // Durable writes consume quota units, not just request slots. A request
+    // that can write a full submission snapshot must therefore exhaust the
+    // same per-IP budget faster than a minimal write.
+    rate_limit_assert(checkRateLimitCost('write-cost-test', 10, 60, 2), 'minimal write cost was rejected');
+    rate_limit_assert(checkRateLimitCost('write-cost-test', 10, 60, 8), 'full snapshot write cost was rejected');
+    rate_limit_assert(!checkRateLimitCost('write-cost-test', 10, 60, 1), 'write-cost quota accepted an over-budget request');
+    rate_limit_assert(!checkRateLimitCost('write-cost-invalid', 10, 60, 11), 'oversized write cost was accepted');
+
+    $testEndpointIdentity = hash('sha256', 'test-endpoint:203.0.113.10');
+    $initialBucket = $testRoot . DIRECTORY_SEPARATOR .
+        'bucket-' . substr($testEndpointIdentity, 0, 2) . '.json';
+    rate_limit_assert(file_exists($initialBucket), 'test endpoint bucket was not created');
     if (DIRECTORY_SEPARATOR === '/') {
         rate_limit_assert(
-            (fileperms($initialBuckets[0]) & 0777) === 0600,
+            (fileperms($initialBucket) & 0777) === 0600,
             'bucket permissions are not 0600'
         );
-        $initialLocks = glob($testRoot . DIRECTORY_SEPARATOR . 'bucket-*.json.lock') ?: [];
         rate_limit_assert(
-            count($initialLocks) === 1 && (fileperms($initialLocks[0]) & 0777) === 0600,
+            (fileperms($initialBucket . '.lock') & 0777) === 0600,
             'bucket sidecar lock permissions are not 0600'
         );
     }
@@ -191,12 +215,12 @@ try {
     // A denied request that has nothing to clean must not replace or rewrite
     // the bucket. This keeps abusive traffic from forcing a write + fsync.
     $oldMtime = time() - 120;
-    rate_limit_assert(touch($initialBuckets[0], $oldMtime), 'unable to set bucket test mtime');
-    clearstatcache(true, $initialBuckets[0]);
+    rate_limit_assert(touch($initialBucket, $oldMtime), 'unable to set bucket test mtime');
+    clearstatcache(true, $initialBucket);
     rate_limit_assert(!checkRateLimit('test-endpoint', 2, 60), 'fourth request was not limited');
-    clearstatcache(true, $initialBuckets[0]);
+    clearstatcache(true, $initialBucket);
     rate_limit_assert(
-        filemtime($initialBuckets[0]) === $oldMtime,
+        filemtime($initialBucket) === $oldMtime,
         'unchanged denied request rewrote the bucket'
     );
 
@@ -204,6 +228,18 @@ try {
         run_rate_limit_workers($testRoot, 8) === 3,
         'concurrent requests did not enforce the exact quota'
     );
+
+    // Password-reset issuance has distinct IP and global quotas. The global
+    // budget is deliberately shared across source addresses.
+    $_SERVER['REMOTE_ADDR'] = '203.0.113.30';
+    rate_limit_assert(checkRateLimit('admin-reset-ip', 3, 3600), 'first reset request rejected');
+    rate_limit_assert(checkRateLimit('admin-reset-ip', 3, 3600), 'second reset request rejected');
+    rate_limit_assert(checkRateLimit('admin-reset-ip', 3, 3600), 'third reset request rejected');
+    rate_limit_assert(!checkRateLimit('admin-reset-ip', 3, 3600), 'fourth reset request was not limited');
+    rate_limit_assert(checkRateLimitGlobal('admin-reset-global-test', 2, 3600), 'first global reset request rejected');
+    $_SERVER['REMOTE_ADDR'] = '203.0.113.31';
+    rate_limit_assert(checkRateLimitGlobal('admin-reset-global-test', 2, 3600), 'global reset quota was not shared');
+    rate_limit_assert(!checkRateLimitGlobal('admin-reset-global-test', 2, 3600), 'global reset quota was not limited');
 
     $_SERVER['REMOTE_ADDR'] = '203.0.113.99';
     $expiryIdentity = hash('sha256', 'expiry-test:203.0.113.99');

@@ -82,6 +82,10 @@ try {
     kssmi_quality_assert(vjt_classify_source(['utm_source' => 'linkedin', 'utm_medium' => 'paid-social']) === 'ads', 'paid campaign overrides referrer');
     kssmi_quality_assert(vjt_classify_source(['referrer' => 'https://supplier-directory.example/listing']) === 'other', 'unknown referral remains explicit');
 
+    vjt_upsert_visitor([
+        'visitor_id' => 'vjtv_source_snapshot',
+        'site_language' => 'EN',
+    ]);
     vjt_upsert_session([
         'session_id' => 'vjts_source_snapshot',
         'visitor_id' => 'vjtv_source_snapshot',

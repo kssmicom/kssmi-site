@@ -133,26 +133,19 @@ function kssmi_email_logs_decode($raw, &$error) {
         return null;
     }
 
-    $decoded = json_decode($raw);
+    // Decode once into the associative shape consumed by every caller. Root
+    // array syntax is checked from the JSON text so a numeric-key object
+    // cannot masquerade as a PHP list after associative decoding.
+    $rootOffset = strspn($raw, " \t\r\n");
+    $logs = json_decode($raw, true);
     if (json_last_error() !== JSON_ERROR_NONE) {
         $error = 'invalid_json';
         return null;
     }
 
-    if (!is_array($decoded)) {
-        $error = 'invalid_schema';
-        return null;
-    }
-
-    foreach ($decoded as $log) {
-        if (!is_object($log) || get_object_vars($log) === []) {
-            $error = 'invalid_schema';
-            return null;
-        }
-    }
-
-    $logs = json_decode($raw, true);
-    if (!kssmi_email_logs_is_valid_list($logs)) {
+    if ($rootOffset >= strlen($raw)
+        || $raw[$rootOffset] !== '['
+        || !kssmi_email_logs_is_valid_list($logs)) {
         $error = 'invalid_schema';
         return null;
     }

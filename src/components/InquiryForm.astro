@@ -746,7 +746,13 @@ const isDev = import.meta.env.DEV;
       newForm.dataset.vjtSubmitting = '1';
       let submissionEventId = '';
       if (typeof window.VJT_beginInquirySubmission === 'function') {
-        submissionEventId = window.VJT_beginInquirySubmission(newForm) || '';
+        try {
+          submissionEventId = window.VJT_beginInquirySubmission(newForm) || '';
+        } catch (_) {
+          // Analytics is optional: corrupt/stale browser state must never stop
+          // the real inquiry request from reaching send-mail.php.
+          submissionEventId = '';
+        }
       }
 
       // Gather form data
@@ -762,10 +768,14 @@ const isDev = import.meta.env.DEV;
       setLoading(true);
 
       try {
-        const apiUrl = isDev ? 'http://localhost:4325/send-mail.php' : '/send-mail.php';
+        const devHostname = window.location.hostname === '127.0.0.1'
+          ? '127.0.0.1'
+          : ((window.location.hostname === '::1' || window.location.hostname === '[::1]') ? '[::1]' : 'localhost');
+        const apiUrl = isDev ? `http://${devHostname}:4325/send-mail.php` : '/send-mail.php';
 
         const response = await fetch(apiUrl, {
           method: 'POST',
+          credentials: 'include',
           body: formData
         });
 

@@ -347,6 +347,16 @@ try {
         'JSON root object must be rejected'
     );
 
+    assert_true(
+        kssmi_email_logs_atomic_write($logPath, '{"0":{"id":"unexpected"}}'),
+        'unable to write numeric-key root object fixture'
+    );
+    $numericRootObjectRead = kssmi_email_logs_read($logPath);
+    assert_true(
+        !$numericRootObjectRead['ok'] && ($numericRootObjectRead['error'] ?? '') === 'invalid_schema',
+        'numeric-key root object must not become an accepted list'
+    );
+
     assert_true(kssmi_email_logs_atomic_write($logPath, '[{"id":"ok"},[]]'), 'unable to write mixed fixture');
     $mixedMutation = kssmi_email_logs_mutate($logPath, fn($logs) => []);
     assert_true(

@@ -11,10 +11,18 @@ const trackerScriptUrl = isDev
 const contactIntentUrl = isDev
   ? 'http://localhost:4325/api/track-contact-intent.php'
   : '/api/track-contact-intent.php';
+const capabilityUrl = isDev
+  ? 'http://localhost:4325/api/vjt-capability.php'
+  : '/api/vjt-capability.php';
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
 {isDev && (
   <script is:inline>
+    var vjtDevHostname = window.location.hostname === '127.0.0.1'
+      ? '127.0.0.1'
+      : ((window.location.hostname === '::1' || window.location.hostname === '[::1]') ? '[::1]' : 'localhost');
+    var vjtDevApiOrigin = 'http://' + vjtDevHostname + ':4325';
     window.VJTTracker = {
       // Consent-gated: only enabled once the visitor grants analytics consent.
       // The cookie banner flips this on (and calls VJT_init) when consent is given.
@@ -24,9 +32,10 @@ const contactIntentUrl = isDev
         title: document.title || ''
       },
       routes: {
-        pageview: 'http://localhost:4325/api/track-pageview.php',
-        submission: 'http://localhost:4325/api/track-submission.php',
-        config: 'http://localhost:4325/api/vjt-config.php'
+        pageview: vjtDevApiOrigin + '/api/track-pageview.php',
+        submission: vjtDevApiOrigin + '/api/track-submission.php',
+        config: vjtDevApiOrigin + '/api/vjt-config.php',
+        capability: vjtDevApiOrigin + '/api/vjt-capability.php'
       },
       sessionTimeout: 30,
       cookieExpires: 31536000
@@ -47,7 +56,8 @@ const contactIntentUrl = isDev
       routes: {
         pageview: '/api/track-pageview.php',
         submission: '/api/track-submission.php',
-        config: '/api/vjt-config.php'
+        config: '/api/vjt-config.php',
+        capability: '/api/vjt-capability.php'
       },
       sessionTimeout: 30,
       cookieExpires: 31536000
@@ -55,13 +65,199 @@ const contactIntentUrl = isDev
   </script>
 )}
 
+<!-- The capability issuer verifies this proof server-side. It is intentionally
+     separate from the inquiry-form widget so analytics/contact capabilities
+     can be minted only after a fresh, single-use Turnstile response. -->
+{!isDev && (
+  <script is:inline define:vars={{ turnstileSiteKey }}>
+    (function() {
+      if (window.KSSMI_VJT_CAPABILITY_PROOF) return;
+      var siteKey = String(turnstileSiteKey || '');
+      var apiPromise = null;
+      var widgetId = null;
+      // A Turnstile response is single-use. Contact Core and analytics can
+      // both ask for capabilities during page startup, so queue requests
+      // instead of handing the same response to concurrent callers.
+      var proofQueue = Promise.resolve();
+      var resolveProof = null;
+
+      function ensureApi() {
+        if (window.turnstile && typeof window.turnstile.render === 'function') return Promise.resolve(window.turnstile);
+        if (apiPromise) return apiPromise;
+        apiPromise = new Promise(function(resolve, reject) {
+          var script = document.createElement('script');
+          script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+          script.async = true;
+          script.defer = true;
+          script.onload = function() {
+            if (window.turnstile && typeof window.turnstile.render === 'function') resolve(window.turnstile);
+            else reject(new Error('Turnstile API unavailable'));
+          };
+          script.onerror = function() { reject(new Error('Turnstile API failed to load')); };
+          document.head.appendChild(script);
+        });
+        return apiPromise;
+      }
+
+      function ensureWidget(api) {
+        if (widgetId !== null) return widgetId;
+        var container = document.createElement('div');
+        container.id = 'kssmi-vjt-capability-turnstile';
+        container.setAttribute('aria-label', 'Security verification');
+        container.style.cssText = 'position:fixed;right:12px;bottom:12px;z-index:2147483647;max-width:calc(100vw - 24px)';
+        document.body.appendChild(container);
+        widgetId = api.render(container, {
+          sitekey: siteKey,
+          action: 'vjt_capability',
+          execution: 'execute',
+          appearance: 'interaction-only',
+          callback: function(token) {
+            if (!resolveProof) return;
+            var resolve = resolveProof;
+            resolveProof = null;
+            resolve(typeof token === 'string' ? token : '');
+          },
+          'error-callback': function() {
+            if (!resolveProof) return true;
+            var resolve = resolveProof;
+            resolveProof = null;
+            resolve('');
+            return true;
+          },
+          'expired-callback': function() {
+            if (!resolveProof) return;
+            var resolve = resolveProof;
+            resolveProof = null;
+            resolve('');
+          }
+        });
+        return widgetId;
+      }
+
+      function obtainSingleProof() {
+        return ensureApi().then(function(api) {
+          var id = ensureWidget(api);
+          return new Promise(function(resolve) {
+            resolveProof = resolve;
+            window.setTimeout(function() {
+              if (resolveProof !== resolve) return;
+              resolveProof = null;
+              resolve('');
+            }, 15000);
+            api.reset(id);
+            // Cloudflare documents execute() against the rendered container;
+            // reset() keeps the per-widget identity for this fresh attempt.
+            api.execute('#kssmi-vjt-capability-turnstile');
+          });
+        });
+      }
+
+      function obtainProof() {
+        if (siteKey === '') return Promise.resolve('');
+        var next = proofQueue.then(obtainSingleProof);
+        // Keep the queue alive after a network or widget failure while each
+        // caller receives its own result.
+        proofQueue = next.catch(function() { return ''; });
+        return next.catch(function() { return ''; });
+      }
+
+      window.KSSMI_VJT_CAPABILITY_PROOF = obtainProof;
+    })();
+  </script>
+)}
+{isDev && (
+  <script is:inline>
+    // The PHP issuer accepts this only when its TCP peer and Host are both
+    // loopback. Production never receives this development placeholder.
+    window.KSSMI_VJT_CAPABILITY_PROOF = function() { return Promise.resolve('local-development'); };
+  </script>
+)}
+
 <!-- Contact Core is independent of analytics consent and never owns navigation.
      It submits only a minimal event unless current analytics consent allows the
      server to validate and attach an existing Journey. -->
-<script is:inline define:vars={{ contactIntentUrl }}>
+<script is:inline define:vars={{ contactIntentUrl, capabilityUrl, isDev }}>
   (function() {
     if (window.__vjtContactCoreBound) return;
     window.__vjtContactCoreBound = true;
+    var contactCapabilities = [];
+    var capabilityRequest = null;
+    var capabilityRefreshTimer = null;
+    var capabilitiesLoadedAt = 0;
+    var contactEndpoint = contactIntentUrl;
+    var capabilityEndpoint = capabilityUrl;
+    if (isDev) {
+      var devHostname = window.location.hostname === '127.0.0.1'
+        ? '127.0.0.1'
+        : ((window.location.hostname === '::1' || window.location.hostname === '[::1]') ? '[::1]' : 'localhost');
+      var devApiOrigin = 'http://' + devHostname + ':4325';
+      contactEndpoint = devApiOrigin + '/api/track-contact-intent.php';
+      capabilityEndpoint = devApiOrigin + '/api/vjt-capability.php';
+    }
+
+    function capabilityIsFresh(token) {
+      var parts = String(token || '').split('.');
+      if (parts.length !== 2) return false;
+      try {
+        var encoded = parts[0].replace(/-/g, '+').replace(/_/g, '/');
+        while (encoded.length % 4) encoded += '=';
+        var claims = JSON.parse(atob(encoded));
+        return typeof claims.exp === 'number' && claims.exp * 1000 > Date.now() + 5000;
+      } catch (_) {
+        return false;
+      }
+    }
+
+    function scheduleCapabilityRefresh() {
+      if (capabilityRefreshTimer) clearTimeout(capabilityRefreshTimer);
+      capabilityRefreshTimer = setTimeout(loadContactCapabilities, 7 * 60 * 1000);
+    }
+
+    function loadContactCapabilities() {
+      if (capabilityRequest) return capabilityRequest;
+      var proof = typeof window.KSSMI_VJT_CAPABILITY_PROOF === 'function'
+        ? window.KSSMI_VJT_CAPABILITY_PROOF() : Promise.resolve('');
+      capabilityRequest = proof.then(function(token) {
+        if (!token && !isDev) return null;
+        return fetch(capabilityEndpoint, {
+          method: 'POST',
+          credentials: 'include',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ mode: 'contact', turnstile_token: token })
+        });
+      }).then(function(response) {
+        if (!response) return null;
+        return response.ok ? response.json() : null;
+      }).then(function(data) {
+        var issued = data && data.capabilities && data.capabilities.contact_intent;
+        if (Array.isArray(issued)) {
+          contactCapabilities = issued.filter(function(token) {
+            return typeof token === 'string' && capabilityIsFresh(token);
+          }).slice(0, 16);
+          capabilitiesLoadedAt = Date.now();
+          scheduleCapabilityRefresh();
+        }
+        return contactCapabilities.length > 0;
+      }).catch(function() {
+        return false;
+      }).then(function(ok) {
+        capabilityRequest = null;
+        return ok;
+      });
+      return capabilityRequest;
+    }
+
+    function takeContactCapability() {
+      var token = '';
+      while (contactCapabilities.length && !token) {
+        var candidate = contactCapabilities.shift() || '';
+        if (capabilityIsFresh(candidate)) token = candidate;
+      }
+      if (contactCapabilities.length < 3) loadContactCapabilities();
+      return token;
+    }
+
+    loadContactCapabilities();
 
     function readJson(key) {
       try {
@@ -125,16 +321,19 @@ const contactIntentUrl = isDev
     }
 
     function sendIntent(payload) {
+      var capability = takeContactCapability();
+      if (!capability) return;
+      payload.capability_token = capability;
       var body = JSON.stringify(payload);
       if (navigator.sendBeacon) {
         try {
-          if (navigator.sendBeacon(contactIntentUrl, new Blob([body], { type: 'text/plain;charset=UTF-8' }))) return;
+          if (navigator.sendBeacon(contactEndpoint, new Blob([body], { type: 'text/plain;charset=UTF-8' }))) return;
         } catch (_) {}
       }
       try {
-        fetch(contactIntentUrl, {
+        fetch(contactEndpoint, {
           method: 'POST',
-          credentials: 'same-origin',
+          credentials: 'include',
           keepalive: true,
           headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
           body: body
@@ -144,10 +343,50 @@ const contactIntentUrl = isDev
 
     function recordContactIntent(event) {
       var anchor = resolveAnchor(event.target);
-      if (!anchor || anchor.getAttribute('data-contact-core') === '1') return;
+      if (!anchor) return;
 
       var channel = (anchor.getAttribute('data-vjt-contact') || '').toLowerCase();
       var href = anchor.getAttribute('href') || '';
+
+      // Same-site redirect links authenticate the navigation itself. The
+      // analytics tracker deliberately ignores these links so this one handler
+      // owns the temporary href and native navigation stays race-free.
+      if (anchor.getAttribute('data-contact-core') === '1') {
+        if (channel !== 'whatsapp' && channel !== 'mailto') return;
+        try {
+          var coreUrl = new URL(href, window.location.href);
+          if (coreUrl.origin !== window.location.origin
+              || coreUrl.pathname !== '/api/contact-intent.php') return;
+          var capability = takeContactCapability();
+          if (!capability) return;
+          coreUrl.searchParams.set('capability_token', capability);
+
+          var analyticsLink = {};
+          addAnalyticsLinkage(analyticsLink);
+          if (analyticsLink.analytics === true) {
+            coreUrl.searchParams.set('analytics', '1');
+            if (analyticsLink.journey_step) {
+              coreUrl.searchParams.set('step', String(analyticsLink.journey_step));
+            } else {
+              coreUrl.searchParams.delete('step');
+            }
+          } else {
+            coreUrl.searchParams.delete('analytics');
+            coreUrl.searchParams.delete('step');
+          }
+
+          var originalHref = anchor.getAttribute('href');
+          var enhancedHref = coreUrl.pathname + coreUrl.search + coreUrl.hash;
+          anchor.setAttribute('href', enhancedHref);
+          setTimeout(function() {
+            if (anchor.getAttribute('href') !== enhancedHref) return;
+            if (originalHref === null) anchor.removeAttribute('href');
+            else anchor.setAttribute('href', originalHref);
+          }, 0);
+        } catch (_) {}
+        return;
+      }
+
       if (channel === 'whatsapp') {
         if (!/^https:\/\/(?:wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)(?:\/|$)/i.test(href)) return;
       } else if (channel === 'mailto') {
@@ -174,12 +413,18 @@ const contactIntentUrl = isDev
     document.addEventListener('auxclick', function(event) {
       if (event.button === 1) recordContactIntent(event);
     }, true);
+    document.addEventListener('visibilitychange', function() {
+      if (document.visibilityState === 'visible'
+          && Date.now() - capabilitiesLoadedAt >= 7 * 60 * 1000) {
+        loadContactCapabilities();
+      }
+    });
   })();
 </script>
 
 <!-- Tracker remains analytics-consent gated, but starts immediately once allowed
      so a visitor cannot click WhatsApp/Email before its listener is bound. -->
-<script is:inline define:vars={{ trackerScriptUrl, allowLocalVjt }}>
+<script is:inline define:vars={{ trackerScriptUrl, allowLocalVjt, isDev }}>
   (function() {
     // Inline scripts run again after Astro view transitions. Keep one persistent
     // loader/listener so a navigation cannot start the same pageview twice.
@@ -191,7 +436,14 @@ const contactIntentUrl = isDev
       if (loading || loaded || window.VJT_init) return;
       loading = true;
       var s = document.createElement('script');
-      s.src = trackerScriptUrl;
+      if (isDev) {
+        var devHostname = window.location.hostname === '127.0.0.1'
+          ? '127.0.0.1'
+          : ((window.location.hostname === '::1' || window.location.hostname === '[::1]') ? '[::1]' : 'localhost');
+        s.src = 'http://' + devHostname + ':4325/js/vjt-tracker.js';
+      } else {
+        s.src = trackerScriptUrl;
+      }
       s.async = true;
       s.onload = function() {
         loading = false;
@@ -206,7 +458,8 @@ const contactIntentUrl = isDev
     }
     function scheduleInject() {
       var hostname = window.location.hostname;
-      var isLocalHost = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1';
+      var isLocalHost = hostname === 'localhost' || hostname === '127.0.0.1'
+        || hostname === '::1' || hostname === '[::1]';
       if (isLocalHost && !allowLocalVjt) return;
       if (!window.VJTTracker || !window.VJTTracker.enabled) return;
       injectTracker();

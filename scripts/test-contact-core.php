@@ -9,6 +9,8 @@ declare(strict_types=1);
  *     utm/message/contact_url);
  *   - analytics identifiers are optional enrichment, validated against
  *     existing visitor/session/pageview pairs, never trusted from the browser;
+ *   - public click telemetry remains unverified while authoritative Inquiry
+ *     success is written through the server-only verified wrapper;
  *   - event_id deduplication keeps one row per conversion;
  *   - retention classes: intent_short vs customer_inquiry, with layered
  *     cleanup (Journey cleanup detaches, never deletes Core rows);
@@ -78,6 +80,7 @@ try {
     kssmi_contact_assert($row['vjt_visitor_id'] === '' && $row['vjt_session_id'] === '', 'invalid analytics identity is discarded');
     kssmi_contact_assert($row['page_path'] === '/contact/', 'query data is removed from the stored page path');
     kssmi_contact_assert($row['retention_class'] === 'intent_short', 'contact intent uses short retention');
+    kssmi_contact_assert((int)$row['server_verified'] === 0, 'public contact intent is never server verified');
 
     // ── Verified enrichment: existing visitor/session/pageview pair ──
     $db->exec("INSERT INTO visitors (visitor_id, first_seen_at, last_seen_at) VALUES ('vjtv_testuser01', '2026-01-01 00:00:00', '2026-01-01 00:00:00')");
@@ -101,9 +104,10 @@ try {
     kssmi_contact_assert($linked['vjt_session_id'] === 'vjts_testsession01', 'existing session may be enriched');
     kssmi_contact_assert((int)$linked['journey_step'] === 4, 'existing page step may be enriched');
 
-    // ── Inquiry class + nonexistent link is discarded, row still stored ──
-    $r = vjt_add_contact_event([
-        'event_id' => 'vjtce_' . str_repeat('c', 32),
+    // ── Verified Inquiry survives without optional Journey enrichment ──
+    $verifiedInquiryId = 'vjtcv_' . str_repeat('c', 64);
+    $r = vjt_add_verified_contact_event([
+        'event_id' => $verifiedInquiryId,
         'channel' => 'inquiry',
         'event_type' => 'submission_success',
         'status' => 'success',
@@ -111,10 +115,13 @@ try {
         'vjt_visitor_id' => 'vjtv_missinguser01',
         'vjt_session_id' => 'vjts_missingsession1',
     ]);
-    kssmi_contact_assert(($r['result'] ?? '') === 'stored', 'event survives invalid optional analytics link');
-    $unlinked = $db->query("SELECT vjt_session_id FROM contact_events WHERE event_id = 'vjtce_" . str_repeat('c', 32) . "'")->fetch();
+    kssmi_contact_assert(($r['result'] ?? '') === 'stored', 'verified event survives invalid optional analytics link');
+    $unlinked = $db->query("SELECT vjt_session_id, server_verified FROM contact_events WHERE event_id = " .
+        $db->quote($verifiedInquiryId))->fetch();
     kssmi_contact_assert($unlinked['vjt_session_id'] === '', 'nonexistent analytics link is discarded');
-    $inquiryClass = $db->query("SELECT retention_class FROM contact_events WHERE event_id = 'vjtce_" . str_repeat('c', 32) . "'")->fetch();
+    kssmi_contact_assert((int)$unlinked['server_verified'] === 1, 'server Inquiry outcome is marked verified');
+    $inquiryClass = $db->query("SELECT retention_class FROM contact_events WHERE event_id = " .
+        $db->quote($verifiedInquiryId))->fetch();
     kssmi_contact_assert($inquiryClass['retention_class'] === 'customer_inquiry', 'confirmed inquiry uses long retention');
 
     $list = vjt_get_contact_events_list(['page' => 1, 'per_page' => 100]);
@@ -122,14 +129,14 @@ try {
 
     // ── Layered retention: intent short vs inquiry long ──
     $oldIntentId = 'vjtce_' . str_repeat('d', 32);
-    $oldInquiryId = 'vjtce_' . str_repeat('e', 32);
+    $oldInquiryId = 'vjtcv_' . str_repeat('e', 64);
     kssmi_contact_assert(($r = vjt_add_contact_event([
         'event_id' => $oldIntentId,
         'channel' => 'whatsapp',
         'event_type' => 'open_intent',
         'status' => 'intent',
     ]))['result'] === 'stored', 'old intent fixture inserts');
-    kssmi_contact_assert(($r = vjt_add_contact_event([
+    kssmi_contact_assert(($r = vjt_add_verified_contact_event([
         'event_id' => $oldInquiryId,
         'channel' => 'inquiry',
         'event_type' => 'submission_success',
@@ -138,7 +145,7 @@ try {
 
     $setOccurredAt = $db->prepare('UPDATE contact_events SET occurred_at = ? WHERE event_id = ?');
     $setOccurredAt->execute([gmdate('Y-m-d H:i:s', time() - 100 * 86400), $oldIntentId]);
-    $setOccurredAt->execute([gmdate('Y-m-d H:i:s', time() - 100 * 86400), 'vjtce_' . str_repeat('c', 32)]);
+    $setOccurredAt->execute([gmdate('Y-m-d H:i:s', time() - 100 * 86400), $verifiedInquiryId]);
     $setOccurredAt->execute([gmdate('Y-m-d H:i:s', time() - 800 * 86400), $oldInquiryId]);
 
     vjt_save_settings([
@@ -156,7 +163,7 @@ try {
     $eventExists = $db->prepare('SELECT COUNT(*) FROM contact_events WHERE event_id = ?');
     $eventExists->execute([$oldIntentId]);
     kssmi_contact_assert((int)$eventExists->fetchColumn() === 0, 'intent older than short retention is deleted');
-    $eventExists->execute(['vjtce_' . str_repeat('c', 32)]);
+    $eventExists->execute([$verifiedInquiryId]);
     kssmi_contact_assert((int)$eventExists->fetchColumn() === 1, 'inquiry older than Journey retention remains');
     $eventExists->execute([$oldInquiryId]);
     kssmi_contact_assert((int)$eventExists->fetchColumn() === 0, 'inquiry older than long retention is deleted');
@@ -174,8 +181,8 @@ try {
         (session_id, visitor_id, url, visited_at, step_order)
         VALUES ('vjts_cleanup', 'vjtv_cleanup', 'https://kssmi.com/contact/', '$oldAnalyticsAt', 2)");
 
-    $manualInquiryId = 'vjtce_' . str_repeat('f', 32);
-    kssmi_contact_assert(($r = vjt_add_contact_event([
+    $manualInquiryId = 'vjtcv_' . str_repeat('f', 64);
+    kssmi_contact_assert(($r = vjt_add_verified_contact_event([
         'event_id' => $manualInquiryId,
         'channel' => 'inquiry',
         'event_type' => 'submission_success',
@@ -215,7 +222,7 @@ try {
         'CSV row protection is applied to every cell'
     );
 
-    // ── Leads: linked events group under the Visitor, unlinked stay separate ──
+    // ── Leads: only server-verified Inquiry success is canonical ──
     $db->exec('DELETE FROM contact_events');
     $db->exec('DELETE FROM pageviews');
     $db->exec('DELETE FROM sessions');
@@ -235,40 +242,56 @@ try {
     $insertPage->execute([$adminSessionId, $adminVisitorId, 'https://kssmi.com/contact/', $now, 3]);
 
     $linkedIntentId = 'vjtce_' . str_repeat('g', 32);
-    $linkedInquiryId = 'vjtce_' . str_repeat('h', 32);
+    $linkedInquiryId = 'vjtcv_' . str_repeat('h', 64);
     $unlinkedIntentId = 'vjtce_' . str_repeat('i', 32);
-    $unlinkedInquiryId = 'vjtce_' . str_repeat('j', 32);
-    foreach ([
-        [$linkedIntentId, 'whatsapp', 'intent'],
-        [$linkedInquiryId, 'inquiry', 'success'],
-    ] as [$id, $channel, $status]) {
-        $r = vjt_add_contact_event([
-            'event_id' => $id,
-            'channel' => $channel,
-            'event_type' => $status === 'success' ? 'submission_success' : 'open_intent',
-            'status' => $status,
-            'page_path' => '/contact/',
-            'vjt_visitor_id' => $adminVisitorId,
-            'vjt_session_id' => $adminSessionId,
-        ]);
-        kssmi_contact_assert(($r['result'] ?? '') === 'stored', "linked {$channel}/{$status} management fixture inserts");
-    }
-    foreach ([
-        [$unlinkedIntentId, 'mailto', 'intent'],
-        [$unlinkedInquiryId, 'inquiry', 'success'],
-    ] as [$id, $channel, $status]) {
-        $r = vjt_add_contact_event([
-            'event_id' => $id,
-            'channel' => $channel,
-            'event_type' => $status === 'success' ? 'submission_success' : 'open_intent',
-            'status' => $status,
-            'page_path' => '/contact/',
-        ]);
-        kssmi_contact_assert(($r['result'] ?? '') === 'stored', "unlinked {$channel}/{$status} management fixture inserts");
-    }
+    $unlinkedInquiryId = 'vjtcv_' . str_repeat('j', 64);
+
+    $r = vjt_add_contact_event([
+        'event_id' => $linkedIntentId,
+        'channel' => 'whatsapp',
+        'event_type' => 'open_intent',
+        'status' => 'intent',
+        'page_path' => '/contact/',
+        'vjt_visitor_id' => $adminVisitorId,
+        'vjt_session_id' => $adminSessionId,
+    ]);
+    kssmi_contact_assert(($r['result'] ?? '') === 'stored', 'linked public intent fixture inserts');
+    $r = vjt_add_verified_contact_event([
+        'event_id' => $linkedInquiryId,
+        'channel' => 'inquiry',
+        'event_type' => 'submission_success',
+        'status' => 'success',
+        'page_path' => '/contact/',
+        'vjt_visitor_id' => $adminVisitorId,
+        'vjt_session_id' => $adminSessionId,
+    ]);
+    kssmi_contact_assert(($r['result'] ?? '') === 'stored', 'linked verified Inquiry fixture inserts');
+    $r = vjt_add_contact_event([
+        'event_id' => $unlinkedIntentId,
+        'channel' => 'mailto',
+        'event_type' => 'open_intent',
+        'status' => 'intent',
+        'page_path' => '/contact/',
+    ]);
+    kssmi_contact_assert(($r['result'] ?? '') === 'stored', 'unlinked public intent fixture inserts');
+    $r = vjt_add_verified_contact_event([
+        'event_id' => $unlinkedInquiryId,
+        'channel' => 'inquiry',
+        'event_type' => 'submission_success',
+        'status' => 'success',
+        'page_path' => '/contact/',
+    ]);
+    kssmi_contact_assert(($r['result'] ?? '') === 'stored', 'unlinked verified Inquiry fixture inserts');
+
+    $rawResult = vjt_get_contact_events_list(['page' => 1, 'per_page' => 100]);
+    kssmi_contact_assert((int)$rawResult['total'] === 4, 'raw Core list retains public telemetry and verified outcomes');
+    kssmi_contact_assert(
+        (int)$db->query('SELECT COUNT(*) FROM canonical_contact_events')->fetchColumn() === 2,
+        'canonical view contains only the two verified Inquiry successes'
+    );
 
     $leadResult = vjt_get_leads_list(['status' => 'contact', 'page' => 1, 'per_page' => 100]);
-    kssmi_contact_assert((int)$leadResult['total'] === 3, 'linked events group while unlinked events remain separate Leads');
+    kssmi_contact_assert((int)$leadResult['total'] === 2, 'verified linked and unlinked Inquiry outcomes form canonical Leads');
     $linkedLead = null;
     $unlinkedLeadKeys = [];
     foreach ($leadResult['items'] as $lead) {
@@ -279,9 +302,9 @@ try {
         }
     }
     kssmi_contact_assert(is_array($linkedLead), 'linked canonical Lead is keyed by Visitor');
-    kssmi_contact_assert((int)$linkedLead['event_count'] === 2, 'linked canonical Lead contains both Core events');
-    kssmi_contact_assert($linkedLead['display_status'] === 'success', 'successful inquiry wins canonical Lead status');
-    kssmi_contact_assert(count($unlinkedLeadKeys) === 2, 'unlinked Core events are not merged');
+    kssmi_contact_assert((int)$linkedLead['event_count'] === 1, 'public linked intent is excluded from the canonical Lead');
+    kssmi_contact_assert($linkedLead['display_status'] === 'success', 'verified Inquiry determines canonical Lead status');
+    kssmi_contact_assert(count($unlinkedLeadKeys) === 1, 'only unlinked verified Inquiry remains a standalone Lead');
 
     fwrite(STDOUT, "Contact Core runtime tests passed.\n");
 } finally {

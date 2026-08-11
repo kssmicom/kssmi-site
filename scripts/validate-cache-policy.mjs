@@ -72,6 +72,7 @@ const phpPolicies = new Map([
   ['public/visitor-journey.php', 'Cache-Control: no-store, private'],
   ['public/404-router.php', 'Cache-Control: no-store, private'],
   ['public/api/track-submission.php', 'Cache-Control: no-store, private'],
+  ['public/api/vjt-capability.php', 'Cache-Control: no-store, private'],
   ['public/api/vjt-config.php', 'Cache-Control: public, max-age=300, must-revalidate'],
   ['public/api/track-pageview.php', 'Cache-Control: no-store, private'],
 ]);

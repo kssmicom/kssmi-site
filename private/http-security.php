@@ -315,6 +315,82 @@ function kssmi_admin_secret_write(string $path, string $contents): bool {
     }
 }
 
+// ── Credential versioned admin sessions ─────────────────────────────────────
+// A password change advances this server-owned value. Every pre-change
+// session then fails closed, even though PHP's file-backed sessions cannot be
+// enumerated and deleted individually.
+
+function kssmi_admin_credential_version_path(string $passwordPath): string {
+    return dirname($passwordPath) . '/.admin_credential_version';
+}
+
+function kssmi_admin_credential_version_read(string $path): ?int {
+    $value = kssmi_admin_secret_read($path);
+    if (!is_string($value) || preg_match('/^[1-9][0-9]{0,9}$/D', $value) !== 1) return null;
+    $version = (int)$value;
+    return $version > 0 ? $version : null;
+}
+
+function kssmi_admin_credential_version_ensure(string $path): ?int {
+    $version = kssmi_admin_credential_version_read($path);
+    if ($version !== null) return $version;
+    if (file_exists($path) || !kssmi_admin_secret_write($path, '1')) return null;
+    return kssmi_admin_credential_version_read($path);
+}
+
+function kssmi_admin_session_absolute_ttl(): int {
+    return 8 * 3600;
+}
+
+function kssmi_admin_session_inactivity_ttl(): int {
+    return 30 * 60;
+}
+
+function kssmi_admin_session_revoke_local(): void {
+    unset(
+        $_SESSION['email_logs_auth'],
+        $_SESSION['credential_version'],
+        $_SESSION['admin_authenticated_at'],
+        $_SESSION['admin_last_seen_at'],
+        $_SESSION['csrf_token']
+    );
+}
+
+function kssmi_admin_session_establish(string $credentialVersionPath, ?int $now = null): bool {
+    $version = kssmi_admin_credential_version_ensure($credentialVersionPath);
+    if ($version === null) return false;
+    $current = $now ?? time();
+    if (!session_regenerate_id(true)) return false;
+    $_SESSION['email_logs_auth'] = true;
+    $_SESSION['credential_version'] = $version;
+    $_SESSION['admin_authenticated_at'] = $current;
+    $_SESSION['admin_last_seen_at'] = $current;
+    kssmi_admin_csrf_rotate();
+    return true;
+}
+
+function kssmi_admin_session_authenticated(string $credentialVersionPath, ?int $now = null): bool {
+    $current = $now ?? time();
+    $storedVersion = kssmi_admin_credential_version_read($credentialVersionPath);
+    $sessionVersion = $_SESSION['credential_version'] ?? null;
+    $issuedAt = $_SESSION['admin_authenticated_at'] ?? null;
+    $lastSeenAt = $_SESSION['admin_last_seen_at'] ?? null;
+    $valid = ($_SESSION['email_logs_auth'] ?? false) === true
+        && is_int($sessionVersion)
+        && $storedVersion !== null
+        && hash_equals((string)$storedVersion, (string)$sessionVersion)
+        && is_int($issuedAt) && $issuedAt > 0 && $issuedAt <= $current
+        && is_int($lastSeenAt) && $lastSeenAt > 0 && $lastSeenAt <= $current
+        && $current - $issuedAt <= kssmi_admin_session_absolute_ttl()
+        && $current - $lastSeenAt <= kssmi_admin_session_inactivity_ttl();
+    if (!$valid) {
+        kssmi_admin_session_revoke_local();
+        return false;
+    }
+    $_SESSION['admin_last_seen_at'] = $current;
+    return true;
+}
+
 // ── Signed admin marker cookie (阶段 3 步骤 3) ────────────────────────────
 // The admin pages used to set a plaintext `vjt_admin=1` cookie that any
 // visitor could forge to disappear from analytics. The cookie now carries a
@@ -472,7 +548,9 @@ function kssmi_admin_reset_tokens_decode($raw, &$error): ?array {
             !is_string($token) ||
             preg_match('/^[a-f0-9]{64}$/D', $token) !== 1 ||
             !is_array($data) ||
-            !is_numeric($data['expires'] ?? null)
+            !is_numeric($data['expires'] ?? null) ||
+            (array_key_exists('credential_version', $data)
+                && (!is_int($data['credential_version']) || $data['credential_version'] < 1))
         ) {
             $error = 'invalid_schema';
             return null;
@@ -534,27 +612,41 @@ function kssmi_admin_reset_tokens_mutate(string $path, callable $mutator): array
     }
 }
 
-function kssmi_admin_reset_token_add(string $path, string $token, int $expires, ?int $now = null): bool {
+function kssmi_admin_reset_token_add(string $path, string $token, int $expires, ?int $now = null, ?string $credentialVersionPath = null): bool {
     if (preg_match('/^[a-f0-9]{64}$/D', $token) !== 1) return false;
     $current = $now ?? time();
     if ($expires <= $current) return false;
+    $credentialVersion = 1;
+    if ($credentialVersionPath !== null) {
+        $credentialVersion = kssmi_admin_credential_version_ensure($credentialVersionPath);
+        if ($credentialVersion === null) return false;
+    }
     $result = kssmi_admin_reset_tokens_mutate(
         $path,
-        function(array $tokens) use ($token, $expires, $current): array {
-            foreach ($tokens as $storedToken => $data) {
-                if ((int)($data['expires'] ?? 0) <= $current) unset($tokens[$storedToken]);
-            }
-            $tokens[$token] = ['created' => $current, 'expires' => $expires];
-            return $tokens;
+        function(array $tokens) use ($token, $expires, $current, $credentialVersion): array {
+            // A reset email is a credential issuance event, not a collection
+            // of parallel credentials. Replacing the complete set while the
+            // store lock is held atomically revokes any previous active link.
+            return [
+                $token => [
+                    'created' => $current,
+                    'expires' => $expires,
+                    'credential_version' => $credentialVersion,
+                ],
+            ];
         }
     );
     return $result['ok'];
 }
 
-function kssmi_admin_reset_token_valid(string $path, string $token, ?int $now = null): bool {
+function kssmi_admin_reset_token_valid(string $path, string $token, ?int $now = null, ?string $credentialVersionPath = null): bool {
     if (preg_match('/^[a-f0-9]{64}$/D', $token) !== 1) return false;
     $result = kssmi_admin_reset_tokens_read($path, $now);
-    return $result['ok'] && isset($result['tokens'][$token]);
+    if (!$result['ok'] || !isset($result['tokens'][$token])) return false;
+    if ($credentialVersionPath === null) return true;
+    $credentialVersion = kssmi_admin_credential_version_read($credentialVersionPath);
+    $tokenVersion = (int)($result['tokens'][$token]['credential_version'] ?? 1);
+    return $credentialVersion !== null && $tokenVersion === $credentialVersion;
 }
 
 /**
@@ -591,50 +683,95 @@ function kssmi_admin_reset_token_consume(string $path, string $token, ?int $now 
 }
 
 /**
- * Change the admin password only for the single request that atomically wins
- * reset-token consumption.
- *
- * Token consumption happens before the comparatively expensive password hash,
- * so concurrent requests cannot all spend CPU hashing. Only consumed=true may
- * proceed to hash and write. If either step fails, the token deliberately
- * remains consumed: restoring it would reopen a replay window while another
- * request may already be in flight.
+ * Rotate password, reset credentials, and the session-revocation version
+ * under the reset-token store's exclusive lock. The security-safe order is
+ * token revocation, version advance, then password replacement: a filesystem
+ * failure can require a new reset, but cannot leave a sibling reset token or
+ * old authenticated session usable after a successful password change.
  *
  * Returns ['ok' => bool, 'changed' => bool, 'consumed' => bool,
  *          'error' => ?string]. A replay is ok=true/changed=false.
  */
-function kssmi_admin_reset_password(
+function kssmi_admin_rotate_credentials(
     string $tokensPath,
     string $passwordPath,
-    string $token,
     string $newPassword,
+    ?string $token = null,
+    ?string $credentialVersionPath = null,
     ?int $now = null
 ): array {
     if ($newPassword === '') {
         return ['ok' => false, 'changed' => false, 'consumed' => false, 'error' => 'empty_password'];
     }
-
-    $consume = kssmi_admin_reset_token_consume($tokensPath, $token, $now);
-    if (!$consume['ok']) {
-        return [
-            'ok' => false,
-            'changed' => false,
-            'consumed' => false,
-            'error' => $consume['error'] ?? 'token_consume_failed',
-        ];
-    }
-    if (!$consume['consumed']) {
+    if ($token !== null && preg_match('/^[a-f0-9]{64}$/D', $token) !== 1) {
         return ['ok' => true, 'changed' => false, 'consumed' => false, 'error' => null];
     }
-
     $passwordHash = password_hash($newPassword, PASSWORD_BCRYPT);
     if (!is_string($passwordHash) || $passwordHash === '') {
-        return ['ok' => false, 'changed' => false, 'consumed' => true, 'error' => 'password_hash_failed'];
+        return ['ok' => false, 'changed' => false, 'consumed' => false, 'error' => 'password_hash_failed'];
     }
 
-    if (!kssmi_admin_secret_write($passwordPath, $passwordHash)) {
-        return ['ok' => false, 'changed' => false, 'consumed' => true, 'error' => 'password_write_failed'];
-    }
+    $lock = kssmi_admin_file_lock($tokensPath, LOCK_EX);
+    if (!$lock['ok']) return ['ok' => false, 'changed' => false, 'consumed' => false, 'error' => $lock['error']];
+    try {
+        $raw = file_exists($tokensPath) ? @file_get_contents($tokensPath) : '[]';
+        $decodeError = null;
+        $tokens = kssmi_admin_reset_tokens_decode($raw, $decodeError);
+        if ($tokens === null) return ['ok' => false, 'changed' => false, 'consumed' => false, 'error' => $decodeError];
+        $current = $now ?? time();
+        foreach ($tokens as $storedToken => $data) {
+            if ((int)($data['expires'] ?? 0) <= $current) unset($tokens[$storedToken]);
+        }
+        $versionPath = $credentialVersionPath ?? kssmi_admin_credential_version_path($passwordPath);
+        $version = kssmi_admin_credential_version_ensure($versionPath);
+        if ($version === null) {
+            return ['ok' => false, 'changed' => false, 'consumed' => false, 'error' => 'version_read_failed'];
+        }
+        if ($token !== null && (!isset($tokens[$token])
+            || (int)($tokens[$token]['credential_version'] ?? 1) !== $version)) {
+            return ['ok' => true, 'changed' => false, 'consumed' => false, 'error' => null];
+        }
 
-    return ['ok' => true, 'changed' => true, 'consumed' => true, 'error' => null];
+        // Clear every active reset credential first. If a later file write
+        // fails, the operation may require a fresh reset but never leaves a
+        // sibling token capable of replacing the password.
+        if (!kssmi_admin_atomic_write($tokensPath, '[]', 0600)) {
+            return ['ok' => false, 'changed' => false, 'consumed' => false, 'error' => 'token_revoke_failed'];
+        }
+        if ($version >= 2147483647
+            || !kssmi_admin_secret_write($versionPath, (string)($version + 1))) {
+            return ['ok' => false, 'changed' => false, 'consumed' => $token !== null, 'error' => 'version_write_failed'];
+        }
+        if (!kssmi_admin_secret_write($passwordPath, $passwordHash)) {
+            return ['ok' => false, 'changed' => false, 'consumed' => $token !== null, 'error' => 'password_write_failed'];
+        }
+        return ['ok' => true, 'changed' => true, 'consumed' => $token !== null, 'error' => null];
+    } finally {
+        kssmi_admin_file_unlock($lock);
+    }
+}
+
+function kssmi_admin_change_password(
+    string $tokensPath,
+    string $passwordPath,
+    string $newPassword,
+    ?string $credentialVersionPath = null,
+    ?int $now = null
+): array {
+    return kssmi_admin_rotate_credentials(
+        $tokensPath, $passwordPath, $newPassword, null, $credentialVersionPath, $now
+    );
+}
+
+function kssmi_admin_reset_password(
+    string $tokensPath,
+    string $passwordPath,
+    string $token,
+    string $newPassword,
+    ?int $now = null,
+    ?string $credentialVersionPath = null
+): array {
+    return kssmi_admin_rotate_credentials(
+        $tokensPath, $passwordPath, $newPassword, $token, $credentialVersionPath, $now
+    );
 }

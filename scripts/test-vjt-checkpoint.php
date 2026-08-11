@@ -78,8 +78,8 @@ try {
 
     // Long-retention business event (customer_inquiry) linked to the OLD
     // analytics identity: Journey cleanup must detach the linkage, keep the row.
-    $inquiryId = 'vjtce_kssmiphase0inquiry';
-    $addResult = vjt_add_contact_event([
+    $inquiryId = 'vjtcv_kssmiphase0inquiry';
+    $addResult = vjt_add_verified_contact_event([
         'event_id' => $inquiryId,
         'channel' => 'inquiry',
         'event_type' => 'submission_success',

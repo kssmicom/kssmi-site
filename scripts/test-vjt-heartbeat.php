@@ -72,6 +72,19 @@ try {
         'migration preserves legacy pageview'
     );
 
+    // F-01 database ownership boundaries require all new pageviews to use an
+    // existing server-owned visitor/session pair. The legacy fixture above is
+    // preserved because triggers are installed after migration.
+    vjt_upsert_visitor([
+        'visitor_id' => 'vjtv_heartbeat_visitor',
+        'site_language' => 'EN',
+    ]);
+    vjt_upsert_session([
+        'session_id' => 'vjts_heartbeat_session',
+        'visitor_id' => 'vjtv_heartbeat_visitor',
+        'landing_url' => 'https://kssmi.com/en/product/test',
+    ]);
+
     vjt_add_pageview([
         'session_id' => 'vjts_heartbeat_session',
         'visitor_id' => 'vjtv_heartbeat_visitor',

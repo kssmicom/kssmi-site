@@ -59,6 +59,37 @@ try {
     kssmi_admin_session_bootstrap();
     kssmi_session_assert(session_id() === $establishedId, 'bootstrap is idempotent for an active session');
 
+    // Credential-version sessions are accepted by both admin entrypoints only
+    // while the version, absolute lifetime, and inactivity lifetime remain valid.
+    $credentialVersionPath = $testDirectory . DIRECTORY_SEPARATOR . '.admin_credential_version';
+    $now = time();
+    kssmi_session_assert(kssmi_admin_session_establish($credentialVersionPath, $now), 'establish versioned session');
+    kssmi_session_assert(kssmi_admin_session_authenticated($credentialVersionPath, $now + 60), 'fresh versioned session is accepted');
+    kssmi_session_assert(
+        !kssmi_admin_session_authenticated($credentialVersionPath, $now + 60 + kssmi_admin_session_inactivity_ttl() + 1),
+        'inactive admin session is revoked'
+    );
+    kssmi_session_assert(kssmi_admin_session_establish($credentialVersionPath, $now), 're-establish after inactivity revocation');
+    kssmi_session_assert(
+        !kssmi_admin_session_authenticated($credentialVersionPath, $now + kssmi_admin_session_absolute_ttl() + 1),
+        'absolute-lifetime-expired session is revoked'
+    );
+    kssmi_session_assert(kssmi_admin_session_establish($credentialVersionPath, $now), 're-establish before version revoke');
+    kssmi_session_assert(kssmi_admin_secret_write($credentialVersionPath, '2'), 'advance credential version');
+    kssmi_session_assert(!kssmi_admin_session_authenticated($credentialVersionPath, $now + 1), 'pre-change session is revoked by version mismatch');
+    kssmi_session_assert(kssmi_admin_session_establish($credentialVersionPath, $now + 2), 'new-version login establishes session');
+    kssmi_session_assert(kssmi_admin_session_authenticated($credentialVersionPath, $now + 3), 'new-version session remains authenticated');
+
+    foreach (['public/email-logs.php', 'public/visitor-journey.php'] as $relativePath) {
+        $source = file_get_contents(dirname(__DIR__) . DIRECTORY_SEPARATOR . $relativePath);
+        kssmi_session_assert(is_string($source), "read {$relativePath}");
+        kssmi_session_assert(
+            strpos($source, 'kssmi_admin_session_establish(CREDENTIAL_VERSION_FILE)') !== false
+                && strpos($source, 'kssmi_admin_session_authenticated(CREDENTIAL_VERSION_FILE)') !== false,
+            "{$relativePath} uses the shared versioned admin session boundary"
+        );
+    }
+
     $_SESSION = [];
     session_destroy();
     fwrite(STDOUT, "Admin session bootstrap test passed.\n");

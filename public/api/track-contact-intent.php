@@ -15,29 +15,12 @@ header('X-Content-Type-Options: nosniff');
 header('Referrer-Policy: no-referrer');
 header("Content-Security-Policy: default-src 'none'; frame-ancestors 'none'");
 
-$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
-$allowedOrigins = [
-    'https://kssmi.com',
-    'https://www.kssmi.com',
-    'http://localhost:4321',
-    'http://localhost:4324',
-    'http://localhost:4325',
-    'http://127.0.0.1:4321',
-];
-if (!in_array($origin, $allowedOrigins, true)) {
-    if ($origin !== '') {
-        http_response_code(403);
-        echo json_encode(['success' => false, 'error' => 'Origin not allowed']);
-        exit;
-    }
-} else {
-    header('Access-Control-Allow-Origin: ' . $origin);
-    header('Access-Control-Allow-Methods: POST, OPTIONS');
-    header('Access-Control-Allow-Headers: Content-Type');
-}
+require_once __DIR__ . '/vjt-helpers.php';
+require_once dirname(__DIR__, 2) . '/private/vjt-event-auth.php';
 
+$corsAllowed = kssmi_vjt_apply_cors();
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(200);
+    http_response_code($corsAllowed ? 204 : 403);
     exit;
 }
 
@@ -48,12 +31,11 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// Reject cross-site subresource abuse. Same-origin production requests and
-// same-site localhost development requests remain allowed.
-$fetchSite = strtolower(trim((string)($_SERVER['HTTP_SEC_FETCH_SITE'] ?? '')));
-if ($fetchSite === 'cross-site') {
+// A capability is necessary but not sufficient: public writes also require
+// browser-supplied same-site request metadata, including on direct requests.
+if (!$corsAllowed || !kssmi_vjt_same_site_issuance_request()) {
     http_response_code(403);
-    echo json_encode(['success' => false, 'error' => 'Cross-site request rejected']);
+    echo json_encode(['success' => false, 'error' => 'Event write rejected']);
     exit;
 }
 
@@ -85,8 +67,6 @@ if (!is_array($data)) {
     exit;
 }
 
-require_once __DIR__ . '/vjt-helpers.php';
-
 $channel = is_scalar($data['channel'] ?? null)
     ? strtolower(trim((string)$data['channel'])) : '';
 if (!in_array($channel, ['whatsapp', 'mailto'], true)) {
@@ -103,6 +83,20 @@ if (!preg_match('/^vjtce_[A-Za-z0-9_-]{8,80}$/', $eventId)) {
     exit;
 }
 
+$contactSession = kssmi_vjt_contact_session_from_request();
+$capabilityToken = is_scalar($data['capability_token'] ?? null)
+    ? (string)$data['capability_token'] : '';
+$capability = $contactSession === null ? null : kssmi_vjt_validate_capability(
+    $capabilityToken,
+    'contact_intent',
+    $contactSession
+);
+if ($capability === null) {
+    http_response_code(403);
+    echo json_encode(['success' => false, 'error' => 'Invalid event capability']);
+    exit;
+}
+
 $ua = vjt_clip($_SERVER['HTTP_USER_AGENT'] ?? '', 512);
 if (vjt_is_bot($ua)) {
     echo json_encode(['success' => true, 'result' => 'skipped_bot']);
@@ -116,7 +110,7 @@ $referer = trim((string)($_SERVER['HTTP_REFERER'] ?? ''));
 if ($referer !== '') {
     $parts = parse_url($referer);
     $host = strtolower((string)($parts['host'] ?? ''));
-    $allowedHosts = ['kssmi.com', 'www.kssmi.com', 'localhost', '127.0.0.1'];
+    $allowedHosts = ['kssmi.com', 'www.kssmi.com', 'localhost', '127.0.0.1', '::1', '[::1]'];
     if (in_array($host, $allowedHosts, true)) {
         $pagePath = vjt_contact_page_path((string)($parts['path'] ?? ''));
     }
@@ -158,8 +152,12 @@ try {
         $candidateStep = is_scalar($data['journey_step'] ?? null) && is_numeric($data['journey_step'])
             ? min(10000, max(0, (int)$data['journey_step'])) : 0;
 
-        if (preg_match('/^vjtv_[A-Za-z0-9_-]{8,60}$/', $candidateVisitor)
-            && preg_match('/^vjts_[A-Za-z0-9_-]{8,60}$/', $candidateSession)) {
+        $identity = kssmi_vjt_identity_from_request();
+        if ($identity !== null
+            && preg_match('/^vjtv_[A-Za-z0-9_-]{8,60}$/', $candidateVisitor)
+            && preg_match('/^vjts_[A-Za-z0-9_-]{8,60}$/', $candidateSession)
+            && hash_equals((string)$identity['visitor_id'], $candidateVisitor)
+            && hash_equals((string)$identity['session_id'], $candidateSession)) {
             $clientIp = vjt_get_client_ip();
             $resolved = (vjt_ip_is_excluded($clientIp) || vjt_tracking_admin_excluded())
                 ? ['valid' => false]
@@ -177,6 +175,14 @@ try {
         }
     }
 
+    $db = vjt_db();
+    $db->beginTransaction();
+    if (!kssmi_vjt_consume_capability($capability)) {
+        $db->rollBack();
+        http_response_code(409);
+        echo json_encode(['success' => false, 'error' => 'Event capability already used']);
+        exit;
+    }
     $result = vjt_add_contact_event([
         'event_id' => $eventId,
         'channel' => $channel,
@@ -190,8 +196,10 @@ try {
         'vjt_session_id' => $sessionId,
         'journey_step' => $journeyStep,
     ]);
+    $db->commit();
     echo json_encode(['success' => true] + $result);
 } catch (Throwable $e) {
+    if (isset($db) && $db->inTransaction()) $db->rollBack();
     error_log('Contact Core POST error: ' . $e->getMessage());
     http_response_code(500);
     echo json_encode(['success' => false, 'error' => 'Internal server error']);

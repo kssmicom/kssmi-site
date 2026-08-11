@@ -11,41 +11,34 @@ header('X-Content-Type-Options: nosniff');
 header('Referrer-Policy: no-referrer');
 header("Content-Security-Policy: default-src 'none'; frame-ancestors 'none'");
 
-$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
-$allowedOrigins = ['https://kssmi.com', 'https://www.kssmi.com', 'http://localhost:4321', 'http://localhost:4324', 'http://localhost:4325', 'http://127.0.0.1:4321'];
-if (!in_array($origin, $allowedOrigins, true)) {
-    if (!empty($origin)) {
-        http_response_code(403);
-        echo json_encode(['success' => false, 'error' => 'Origin not allowed']);
-        exit;
-    }
-} else {
-    header('Access-Control-Allow-Origin: ' . $origin);
-    header('Access-Control-Allow-Methods: POST, OPTIONS');
-    header('Access-Control-Allow-Headers: Content-Type');
-}
+require_once __DIR__ . '/vjt-helpers.php';
+require_once dirname(__DIR__, 2) . '/private/vjt-event-auth.php';
 
+$corsAllowed = kssmi_vjt_apply_cors();
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(200);
+    http_response_code($corsAllowed ? 204 : 403);
     exit;
 }
-
-// Contact intents are low-cost analytics writes. Keep a finite per-IP limit,
-// while allowing shared mobile/corporate networks and queued retries to work.
-require_once dirname(__DIR__, 2) . '/private/rate-limit.php';
-if (!checkRateLimit('track-sub', 30, 60)) {
-    http_response_code(429);
-    echo json_encode(['success' => false, 'error' => 'Too many requests']);
-    exit;
-}
-
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Allow: POST, OPTIONS');
     http_response_code(405);
     echo json_encode(['success' => false, 'error' => 'Method Not Allowed']);
     exit;
 }
+if (!$corsAllowed || !kssmi_vjt_same_site_issuance_request()) {
+    http_response_code(403);
+    echo json_encode(['success' => false, 'error' => 'Event write rejected']);
+    exit;
+}
 
-require_once __DIR__ . '/vjt-helpers.php';
+// Keep a finite request-rate guard before parsing the body. The durable-write
+// quota below is charged after the bounded snapshot has been validated.
+require_once dirname(__DIR__, 2) . '/private/rate-limit.php';
+if (!checkRateLimit('track-sub-request', 60, 60)) {
+    http_response_code(429);
+    echo json_encode(['success' => false, 'error' => 'Too many requests']);
+    exit;
+}
 
 $contentLength = (int)($_SERVER['CONTENT_LENGTH'] ?? 0);
 if ($contentLength > 65536) {
@@ -89,6 +82,32 @@ if ($eventId !== '' && !preg_match('/^vjtev_[A-Za-z0-9_-]{8,80}$/', $eventId)) {
     exit;
 }
 
+// This public endpoint records browser diagnostics only. Final business
+// outcomes are written exclusively by send-mail.php after SMTP processing.
+$requestedStatus = is_scalar($data['status'] ?? null) ? (string)$data['status'] : 'attempt';
+if ($requestedStatus !== 'attempt') {
+    http_response_code(400);
+    echo json_encode(['success' => false, 'error' => 'Only attempt status is accepted']);
+    exit;
+}
+
+$identity = kssmi_vjt_identity_from_request();
+$capabilityToken = is_scalar($data['capability_token'] ?? null)
+    ? (string)$data['capability_token'] : '';
+if ($identity === null
+    || !hash_equals((string)$identity['visitor_id'], $visitorId)
+    || !hash_equals((string)$identity['session_id'], $sessionId)) {
+    http_response_code(403);
+    echo json_encode(['success' => false, 'error' => 'Invalid event identity']);
+    exit;
+}
+$capability = kssmi_vjt_validate_capability($capabilityToken, 'submission', $identity);
+if ($capability === null) {
+    http_response_code(403);
+    echo json_encode(['success' => false, 'error' => 'Invalid event capability']);
+    exit;
+}
+
 $ip      = vjt_get_client_ip();
 $ua      = vjt_clip($_SERVER['HTTP_USER_AGENT'] ?? '', 512);
 
@@ -103,14 +122,58 @@ if (vjt_is_bot($ua)) {
     exit;
 }
 
+// A submission can create more than one durable row. Normalize it into a
+// bounded snapshot before spending the write-cost quota or opening a DB write
+// transaction. A 20-page client payload retains only the final 8 pages.
+$snapshot = $data['path_snapshot'] ?? [];
+if (is_string($snapshot)) $snapshot = json_decode($snapshot, true);
+$cleanSnapshot = [];
+if (is_array($snapshot)) {
+    foreach (array_slice($snapshot, -VJT_SUBMISSION_SNAPSHOT_MAX_ROWS) as $item) {
+        if (!is_array($item) || empty($item['url'])) continue;
+        $snapshotUrl = vjt_safe_http_url($item['url']);
+        if ($snapshotUrl === '') continue;
+        $cleanSnapshot[] = [
+            'visitor_id' => $visitorId,
+            'url' => $snapshotUrl,
+            'title' => is_scalar($item['title'] ?? null) ? vjt_clip((string)$item['title'], 512) : '',
+            'visited_at' => is_scalar($item['visited_at'] ?? null) ? vjt_clip((string)$item['visited_at'], 64) : '',
+        ];
+    }
+}
+if (!checkRateLimitCost('track-sub-write', 120, 60, vjt_submission_write_cost(count($cleanSnapshot)))) {
+    http_response_code(429);
+    echo json_encode(['success' => false, 'error' => 'Too many write units']);
+    exit;
+}
+
 // Only valid, non-bot writes should trigger schema migrations/backfills/cleanup.
 vjt_data_init();
 
 $browser = vjt_detect_browser($ua);
 $device  = vjt_detect_device($ua);
-$geo     = vjt_resolve_geo($ip);
 
 try {
+    $db = vjt_db();
+    $db->beginTransaction();
+    $writeBudget = vjt_submission_write_budget($visitorId, $sessionId, $cleanSnapshot);
+    if (empty($writeBudget['ok'])) {
+        vjt_log_submission_budget_rejection($writeBudget['reason'] ?? 'unknown');
+        $db->rollBack();
+        http_response_code(429);
+        echo json_encode(['success' => false, 'error' => 'Storage capacity reached']);
+        exit;
+    }
+    if (!kssmi_vjt_consume_capability($capability)) {
+        $db->rollBack();
+        http_response_code(409);
+        echo json_encode(['success' => false, 'error' => 'Event capability already used']);
+        exit;
+    }
+    // Geo misses enqueue one bounded row on this same transaction, so a
+    // capacity rejection above cannot leave any geo, capability, or analytics
+    // state behind.
+    $geo = vjt_resolve_geo($ip);
     // Upsert visitor
     vjt_upsert_visitor([
         'visitor_id'    => $visitorId,
@@ -142,29 +205,12 @@ try {
         'utm_term'      => $data['utm_term'] ?? '',
     ]);
 
-    // Sync pageview snapshot from path_snapshot
-    $snapshot = $data['path_snapshot'] ?? [];
-    if (is_string($snapshot)) {
-        $snapshot = json_decode($snapshot, true);
-    }
-    if (is_array($snapshot) && !empty($snapshot)) {
-        $cleanSnapshot = [];
-        foreach (array_slice($snapshot, -20) as $item) {
-            if (!is_array($item) || empty($item['url'])) continue;
-            $snapshotUrl = vjt_safe_http_url($item['url']);
-            if ($snapshotUrl === '') continue;
-            $cleanSnapshot[] = [
-                'visitor_id' => $visitorId,
-                'url' => $snapshotUrl,
-                'title' => is_scalar($item['title'] ?? null) ? vjt_clip((string)$item['title'], 512) : '',
-                'visited_at' => is_scalar($item['visited_at'] ?? null) ? vjt_clip((string)$item['visited_at'], 64) : '',
-            ];
-        }
+    // Sync the bounded snapshot only after all session/SQLite budgets pass.
+    if (!empty($cleanSnapshot)) {
         vjt_sync_pageview_snapshot($sessionId, $cleanSnapshot);
     }
 
     // Store submission
-    $status = in_array($data['status'] ?? '', ['attempt', 'success', 'error', 'intent'], true) ? $data['status'] : 'attempt';
     $writeResult = vjt_add_submission([
         'visitor_id'   => $visitorId,
         'session_id'   => $sessionId,
@@ -174,7 +220,7 @@ try {
         'submit_page'  => $data['submit_page'] ?? '',
         'submit_title' => $data['submit_title'] ?? '',
         'event_id'     => $eventId,
-        'status'       => $status,
+        'status'       => 'attempt',
         'contact_url'  => $data['contact_url'] ?? '',
         'ip'           => $ip,
         'country'      => $geo['country'],
@@ -183,10 +229,18 @@ try {
         'calling_code' => $geo['calling_code'],
     ]);
 
+    $db->commit();
     echo json_encode(['success' => true, 'result' => $writeResult]);
 
-} catch (Exception $e) {
+} catch (Throwable $e) {
+    if (isset($db) && $db->inTransaction()) $db->rollBack();
     error_log('VJT submission error: ' . $e->getMessage());
+    if ($e instanceof PDOException && strpos($e->getMessage(), 'budget exceeded') !== false) {
+        vjt_log_submission_budget_rejection('sqlite_trigger');
+        http_response_code(429);
+        echo json_encode(['success' => false, 'error' => 'Storage capacity reached']);
+        exit;
+    }
     http_response_code(500);
     echo json_encode(['success' => false, 'error' => 'Internal server error']);
 }

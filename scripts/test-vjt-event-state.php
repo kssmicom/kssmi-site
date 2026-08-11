@@ -53,6 +53,22 @@ $legacy->exec("CREATE TABLE submissions (
 $legacy->exec("INSERT INTO submissions
     (visitor_id, session_id, form_plugin, submitted_at, status)
     VALUES ('legacy-v', 'legacy-s', 'whatsapp', '2099-01-01 00:00:00', 'success')");
+$legacy->exec("CREATE TABLE contact_events (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    event_id TEXT NOT NULL UNIQUE,
+    channel TEXT NOT NULL,
+    event_type TEXT NOT NULL,
+    occurred_at TEXT NOT NULL,
+    page_path TEXT DEFAULT '', placement TEXT DEFAULT '', product_sku TEXT DEFAULT '',
+    site_language TEXT DEFAULT '', status TEXT NOT NULL,
+    vjt_visitor_id TEXT DEFAULT '', vjt_session_id TEXT DEFAULT '',
+    journey_step INTEGER DEFAULT 0, retention_class TEXT NOT NULL
+)");
+$legacy->exec("INSERT INTO contact_events
+    (event_id, channel, event_type, occurred_at, status, retention_class) VALUES
+    ('vjtce_legacyinquirysuccess', 'inquiry', 'submission_success', '2026-01-01 00:00:00', 'success', 'customer_inquiry'),
+    ('vjtce_legacyinquiryerror', 'inquiry', 'submission_error', '2026-01-01 00:00:01', 'error', 'customer_inquiry'),
+    ('vjtce_legacypublicintent', 'whatsapp', 'open_intent', '2026-01-01 00:00:02', 'intent', 'intent_short')");
 $legacy = null;
 
 try {
@@ -62,6 +78,36 @@ try {
 
     kssmi_state_assert(vjt_column_exists('submissions', 'event_id'), 'migration adds event_id');
     kssmi_state_assert((int)$db->query("SELECT COUNT(*) c FROM submissions WHERE visitor_id='legacy-v'")->fetch()['c'] === 1, 'schema migration preserves existing row');
+    kssmi_state_assert(
+        (int)$db->query("SELECT server_verified FROM contact_events WHERE event_id='vjtce_legacyinquirysuccess'")->fetchColumn() === 1,
+        'migration preserves historical server-side Inquiry successes as verified'
+    );
+    kssmi_state_assert(
+        (int)$db->query("SELECT server_verified FROM contact_events WHERE event_id='vjtce_legacyinquiryerror'")->fetchColumn() === 1,
+        'migration preserves historical server-side Inquiry errors as verified outcomes'
+    );
+    kssmi_state_assert(
+        (int)$db->query("SELECT server_verified FROM contact_events WHERE event_id='vjtce_legacypublicintent'")->fetchColumn() === 0,
+        'migration leaves historical public intent telemetry unverified'
+    );
+    kssmi_state_assert(
+        (int)$db->query('SELECT COUNT(*) FROM canonical_contact_events')->fetchColumn() === 1,
+        'only the migrated historical Inquiry success is canonical'
+    );
+
+    // F-01 ownership triggers require every new submission to reference an
+    // existing session belonging to the same visitor. The legacy row above is
+    // intentionally preserved, while all new lifecycle fixtures use a valid
+    // server-owned pair.
+    vjt_upsert_visitor([
+        'visitor_id' => 'vjtv_new',
+        'site_language' => 'EN',
+    ]);
+    vjt_upsert_session([
+        'session_id' => 'vjts_new',
+        'visitor_id' => 'vjtv_new',
+        'landing_url' => 'https://kssmi.com/contact/',
+    ]);
 
     $event = 'vjtev_' . str_repeat('a', 32);
     $base = [

@@ -44,6 +44,9 @@
     "test:backend": "php scripts/verify-php-runtime.php",
     "test:email-log": "php scripts/test-email-log-store.php",
     "test:rate-limit": "php scripts/test-rate-limit.php",
+    "test:vjt-capability-proof": "node scripts/test-vjt-capability-proof-policy.mjs",
+    "test:vjt-authenticity": "php scripts/test-vjt-event-authenticity.php",
+    "test:vjt-write-budget": "php scripts/test-vjt-write-budget.php",
     "test:vjt-checkpoint": "php scripts/test-vjt-checkpoint.php",
     "test:contact-core": "php scripts/test-contact-core.php",
     "test:vjt-event-state": "php scripts/test-vjt-event-state.php",
@@ -52,7 +55,7 @@
     "test:http-security": "php scripts/test-http-security.php",
     "test:reset-race": "php scripts/test-reset-token-race.php",
     "test:admin-session": "php scripts/test-admin-session.php",
-    "test:php": "npm run test:backend && npm run test:email-log && npm run test:rate-limit && npm run test:vjt-checkpoint && npm run test:contact-core && npm run test:vjt-event-state && npm run test:vjt-heartbeat && npm run test:vjt-data-quality && npm run test:http-security && npm run test:reset-race && npm run test:admin-session"
+    "test:php": "npm run test:vjt-capability-proof && npm run test:backend && npm run test:email-log && npm run test:rate-limit && npm run test:vjt-authenticity && npm run test:vjt-write-budget && npm run test:vjt-checkpoint && npm run test:contact-core && npm run test:vjt-event-state && npm run test:vjt-heartbeat && npm run test:vjt-data-quality && npm run test:http-security && npm run test:reset-race && npm run test:admin-session"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",

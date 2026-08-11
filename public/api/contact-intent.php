@@ -50,14 +50,25 @@ try {
 $fetchSite = strtolower(trim((string)($_SERVER['HTTP_SEC_FETCH_SITE'] ?? '')));
 $fetchMode = strtolower(trim((string)($_SERVER['HTTP_SEC_FETCH_MODE'] ?? '')));
 $purpose = strtolower(trim((string)($_SERVER['HTTP_SEC_PURPOSE'] ?? ($_SERVER['HTTP_PURPOSE'] ?? ''))));
-if ($fetchSite === 'cross-site'
-    || ($fetchMode !== '' && $fetchMode !== 'navigate')
+if (!in_array($fetchSite, ['same-origin', 'same-site'], true)
+    || $fetchMode !== 'navigate'
     || strpos($purpose, 'prefetch') !== false) {
     $shouldRecord = false;
 }
 
 try {
     require_once __DIR__ . '/vjt-helpers.php';
+    require_once dirname(__DIR__, 2) . '/private/vjt-event-auth.php';
+    $contactSession = kssmi_vjt_contact_session_from_request();
+    $capabilityToken = is_scalar($_GET['capability_token'] ?? null)
+        ? (string)$_GET['capability_token'] : '';
+    $capability = $contactSession === null ? null : kssmi_vjt_validate_capability(
+        $capabilityToken,
+        'contact_intent',
+        $contactSession
+    );
+    if ($capability === null) $shouldRecord = false;
+
     $ua = (string)($_SERVER['HTTP_USER_AGENT'] ?? '');
     if ($shouldRecord && !vjt_is_bot($ua)) {
         vjt_data_init();
@@ -67,7 +78,7 @@ try {
         if ($referer !== '') {
             $parts = parse_url($referer);
             $host = strtolower((string)($parts['host'] ?? ''));
-            $allowedHosts = ['kssmi.com', 'www.kssmi.com', 'localhost', '127.0.0.1'];
+            $allowedHosts = ['kssmi.com', 'www.kssmi.com', 'localhost', '127.0.0.1', '::1', '[::1]'];
             if (in_array($host, $allowedHosts, true)) {
                 $pagePath = vjt_contact_page_path((string)($parts['path'] ?? ''));
             }
@@ -100,8 +111,12 @@ try {
             // Journey link. Excluded traffic and stale/forged pairs keep the
             // business event, but it remains safely unattributed. A short
             // bounded retry handles a first click that overtakes pageview POST.
+            $identity = kssmi_vjt_identity_from_request();
             $clientIp = vjt_get_client_ip();
-            $resolvedLink = (vjt_ip_is_excluded($clientIp) || vjt_tracking_admin_excluded())
+            $identityMatches = $identity !== null
+                && hash_equals((string)$identity['visitor_id'], $visitorId)
+                && hash_equals((string)$identity['session_id'], $sessionId);
+            $resolvedLink = (!$identityMatches || vjt_ip_is_excluded($clientIp) || vjt_tracking_admin_excluded())
                 ? ['valid' => false]
                 : vjt_wait_for_analytics_link($visitorId, $sessionId, $journeyStep, $pagePath);
             if (empty($resolvedLink['valid'])) {
@@ -111,7 +126,13 @@ try {
             }
         }
 
-        vjt_add_contact_event([
+        $db = vjt_db();
+        $db->beginTransaction();
+        if (!kssmi_vjt_consume_capability($capability)) {
+            $db->rollBack();
+            $shouldRecord = false;
+        }
+        if ($shouldRecord) vjt_add_contact_event([
             'channel' => $channel,
             'event_type' => 'open_intent',
             'status' => 'intent',
@@ -123,8 +144,10 @@ try {
             'vjt_session_id' => $sessionId,
             'journey_step' => $journeyStep,
         ]);
+        if ($db->inTransaction()) $db->commit();
     }
 } catch (Throwable $e) {
+    if (isset($db) && $db->inTransaction()) $db->rollBack();
     // Recording must never stop a customer from opening their chosen channel.
     error_log('Contact Core write error: ' . $e->getMessage());
 }

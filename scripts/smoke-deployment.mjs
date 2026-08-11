@@ -176,6 +176,7 @@ for (const [logicalName, asset] of Object.entries(runtimeManifest.assets)) {
 for (const [pathname, expectedStatuses] of [
   ['/send-mail.php', [405]],
   ['/api/track-pageview.php', [405]],
+  ['/api/vjt-capability.php', [405]],
   ['/api/vjt-config.php', [200]],
   // Admin pages are behind Cloudflare Access: an unauthenticated request is
   // redirected to the Access login, which is the correct public behavior.

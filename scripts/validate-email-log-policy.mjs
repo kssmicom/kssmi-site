@@ -133,6 +133,11 @@ requireText(emailLogs, '<h3>Delivery Failed</h3>', 'Delivery failure statistics'
 forbidText(emailLogs, '$totalEmails = count($logs);', 'Email statistics');
 forbidText(emailLogs, 'file_get_contents(LOGS_FILE)', 'Unlocked email log read');
 forbidText(emailLogs, 'file_put_contents(LOGS_FILE', 'Unlocked email log write');
+requireText(
+  emailLogs,
+  "if ($isAuthenticated) {\n    $loadResult = kssmi_email_logs_read(LOGS_FILE);",
+  'Authenticated-only email log read',
+);
 
 requireText(emailLogStore, 'flock($handle, $operation)', 'Stable email log lock');
 requireText(
@@ -147,7 +152,9 @@ requireText(emailLogStore, "'.corrupt-'", 'Corrupt JSON backup');
 requireText(emailLogStore, "'invalid_json'", 'Corrupt JSON rejection');
 requireText(emailLogStore, "'empty_existing_file'", 'Zero-byte email log rejection');
 requireText(emailLogStore, "'invalid_schema'", 'Invalid log schema rejection');
-requireText(emailLogStore, 'json_decode($raw);', 'Root JSON type validation');
+requireText(emailLogStore, 'json_decode($raw, true);', 'Single associative JSON decode');
+requireText(emailLogStore, "$raw[$rootOffset] !== '['", 'Root JSON array syntax validation');
+forbidText(emailLogStore, 'json_decode($raw);', 'Duplicate object-tree JSON decode');
 requireText(emailLogStore, "function_exists('array_is_list')", 'PHP list-check compatibility');
 requireText(
   emailLogStore,
@@ -283,6 +290,7 @@ requireText(emailLogTests, "'zero-byte cutover marker failed open'", 'Malformed 
 requireText(emailLogTests, "'mutation crossed cutover after waiting on the email lock'", 'Cutover lock race regression');
 requireText(emailLogTests, "'existing zero-byte email log mutation failed open'", 'Zero-byte email log regression');
 requireText(emailLogTests, "'numeric-key object row must not become an accepted list row'", 'Row schema regression');
+requireText(emailLogTests, "'numeric-key root object must not become an accepted list'", 'Root schema regression');
 requireText(emailLogTests, "'resend_outcome_uncertain'", 'Uncertain resend regression');
 requireText(emailLogTests, "'active resend claim was incorrectly unlocked'", 'Active claim recovery guard');
 requireText(emailLogTests, "'explicit review did not unlock a stale resend claim'", 'Reviewed claim recovery');

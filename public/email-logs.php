@@ -13,6 +13,7 @@
 // origin connection itself came from a Cloudflare proxy. This must run before
 // session/application initialization and never trusts client-supplied CF-* headers.
 require_once dirname(__DIR__) . '/private/http-security.php';
+require_once dirname(__DIR__) . '/private/rate-limit.php';
 kssmi_admin_require_trusted_proxy();
 
 // Reject array-shaped/unknown request fields and bound every accepted value
@@ -61,6 +62,7 @@ define('PASSWORD_FILE', dirname(__DIR__) . '/.email_logs_password');
 define('LOGS_FILE', dirname(dirname(__FILE__)) . '/email_data/email-logs.json');
 define('RESET_TOKENS_FILE_OLD', dirname(__FILE__) . '/.email_reset_tokens.json');
 define('RESET_TOKENS_FILE', dirname(__DIR__) . '/.email_reset_tokens.json');
+define('CREDENTIAL_VERSION_FILE', kssmi_admin_credential_version_path(PASSWORD_FILE));
 define('ADMIN_EMAIL', 'kssmi@kssmi.com');
 require_once dirname(__DIR__) . '/private/email-log-store.php';
 
@@ -132,12 +134,6 @@ function getPasswordHash() {
     if ($hash !== null) return $hash;
     // Fallback: file may not have been migrated yet (rename failed or hasn't run)
     return kssmi_admin_secret_read(PASSWORD_FILE_OLD);
-}
-
-// Set password (stores bcrypt hash, atomically, 0600)
-function setPassword($newPassword) {
-    $hash = password_hash($newPassword, PASSWORD_BCRYPT);
-    return kssmi_admin_secret_write(PASSWORD_FILE, $hash);
 }
 
 // Generate secure reset token
@@ -257,25 +253,44 @@ if (isset($_POST['request_reset'])) {
     if (!kssmi_admin_csrf_valid($_POST['csrf_token'] ?? null)) {
         $error = 'Security check failed. Please reload the page and try again.';
     } else {
-        // Generate token and store it atomically (expires in 1 hour)
-        $token = generateResetToken();
-        if (kssmi_admin_reset_token_add(RESET_TOKENS_FILE, $token, time() + 3600)) {
-            $result = sendResetEmail($token);
-            if ($result['success']) {
-                $message = 'Reset link sent to ' . ADMIN_EMAIL . '. Please check your inbox. The link expires in 1 hour.';
-                // Rotate CSRF token after successful use (prevents email-bombing via
-                // repeated form submissions even with a known token)
-                kssmi_admin_csrf_rotate();
-            } else {
-                $error = 'Failed to send reset email: ' . ($result['error'] ?? 'Unknown error');
-                // Roll back the stored token so a failed email leaves no orphan.
-                $rollback = kssmi_admin_reset_token_consume(RESET_TOKENS_FILE, $token);
-                if (!$rollback['ok']) {
-                    error_log('KSSMI: failed to roll back reset token after email failure: ' . ($rollback['error'] ?? 'unknown'));
-                }
-            }
+        $now = time();
+        $lastResetRequest = (int)($_SESSION['admin_reset_last_requested_at'] ?? 0);
+        // This request reaches a fixed mailbox and can block a PHP worker on
+        // SMTP, so enforce source-IP, session, and global budgets before
+        // generating a credential or calling the mail transport.
+        $allowed = ($lastResetRequest <= 0 || $lastResetRequest <= $now - 900)
+            && checkRateLimit('admin-reset-ip', 3, 3600)
+            && checkRateLimitGlobal('admin-reset-global', 20, 3600);
+        if (!$allowed) {
+            // Keep the response invariant so the recovery endpoint does not
+            // disclose reset/account state.
+            $message = 'If a reset is available, a message will be sent shortly.';
         } else {
-            $error = 'Failed to generate reset token. Please check file permissions.';
+            // Reserve the session budget before the potentially slow send.
+            $_SESSION['admin_reset_last_requested_at'] = $now;
+            // Generate token and store it atomically (expires in 1 hour).
+            // Adding a token revokes the previous active link under one lock.
+            $token = generateResetToken();
+            if (kssmi_admin_reset_token_add(RESET_TOKENS_FILE, $token, $now + 3600, $now, CREDENTIAL_VERSION_FILE)) {
+                $result = sendResetEmail($token);
+                if ($result['success']) {
+                    $message = 'If a reset is available, a message will be sent shortly.';
+                    // Rotate CSRF token after successful use (prevents email-bombing via
+                    // repeated form submissions even with a known token)
+                    kssmi_admin_csrf_rotate();
+                } else {
+                    error_log('KSSMI: failed to send reset email: ' . ($result['error'] ?? 'unknown'));
+                    $message = 'If a reset is available, a message will be sent shortly.';
+                    // Roll back the stored token so a failed email leaves no orphan.
+                    $rollback = kssmi_admin_reset_token_consume(RESET_TOKENS_FILE, $token);
+                    if (!$rollback['ok']) {
+                        error_log('KSSMI: failed to roll back reset token after email failure: ' . ($rollback['error'] ?? 'unknown'));
+                    }
+                }
+            } else {
+                error_log('KSSMI: failed to create reset token');
+                $message = 'If a reset is available, a message will be sent shortly.';
+            }
         }
     }
 }
@@ -287,7 +302,7 @@ if (isset($_GET['reset'])) {
     // email recipient knows. Its unguessability is the CSRF protection, so no
     // session-bound csrf parameter is needed in the link (the old &csrf=
     // parameter could never match a fresh session, breaking every reset link).
-    if (kssmi_admin_reset_token_valid(RESET_TOKENS_FILE, $token)) {
+    if (kssmi_admin_reset_token_valid(RESET_TOKENS_FILE, $token, null, CREDENTIAL_VERSION_FILE)) {
         $resetMode = true;
 
         // Handle new password submission
@@ -310,7 +325,9 @@ if (isset($_GET['reset'])) {
                         RESET_TOKENS_FILE,
                         PASSWORD_FILE,
                         $token,
-                        $newPass
+                        $newPass,
+                        null,
+                        CREDENTIAL_VERSION_FILE
                     );
                     if ($resetResult['ok'] && $resetResult['changed']) {
                         $message = 'Password reset successfully! You can now login with your new password.';
@@ -336,9 +353,6 @@ if (isset($_GET['reset'])) {
         $error = 'Invalid or expired reset link. Please request a new one.';
     }
 }
-// Rate limit failed/attempted admin logins without creating year-long denial of service.
-require_once dirname(__DIR__) . '/private/rate-limit.php';
-
 // Handle login
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password']) && !isset($_POST['change_password']) && !isset($_POST['reset_password'])) {
     if (!checkRateLimit('admin-login', 10, 900)) {
@@ -346,10 +360,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password']) && !isset
     } else {
         $submittedPassword = trim($_POST['password']);
         if ($PASSWORD_HASH && password_verify($submittedPassword, $PASSWORD_HASH)) {
-            $_SESSION['email_logs_auth'] = true;
-            kssmi_admin_csrf_rotate();
-            kssmi_admin_set_marker_cookie(true);
-            session_regenerate_id(true);
+            if (!kssmi_admin_session_establish(CREDENTIAL_VERSION_FILE)) {
+                $error = 'Unable to establish a secure admin session. Please try again.';
+            } else {
+                kssmi_admin_set_marker_cookie(true);
+            }
         } else {
             $error = 'Invalid password. Please try again.';
         }
@@ -371,10 +386,11 @@ if (isset($_POST['logout'])) {
 }
 
 // Check auth
-$isAuthenticated = false;
-if (isset($_SESSION['email_logs_auth']) && $_SESSION['email_logs_auth'] === true) {
-    $isAuthenticated = true;
+$isAuthenticated = kssmi_admin_session_authenticated(CREDENTIAL_VERSION_FILE);
+if ($isAuthenticated) {
     kssmi_admin_set_marker_cookie(true);
+} else {
+    kssmi_admin_set_marker_cookie(false);
 }
 
 // Handle password change (when logged in)
@@ -386,11 +402,20 @@ if ($isAuthenticated && isset($_POST['change_password'])) {
         if (strlen($newPass) < 12) {
             $passwordError = 'Password must be at least 12 characters';
         } else {
-            if (setPassword($newPass)) {
+            $changeResult = kssmi_admin_change_password(
+                RESET_TOKENS_FILE,
+                PASSWORD_FILE,
+                $newPass,
+                CREDENTIAL_VERSION_FILE
+            );
+            if ($changeResult['ok'] && $changeResult['changed']) {
                 $PASSWORD_HASH = getPasswordHash();
-                $passwordMessage = 'Password changed successfully! Please use the new password next time you login.';
+                kssmi_admin_session_revoke_local();
+                kssmi_admin_set_marker_cookie(false);
+                $isAuthenticated = false;
+                $passwordMessage = 'Password changed successfully. Please login again with the new password.';
             } else {
-                $passwordError = 'Failed to save password. Please check file permissions.';
+                $passwordError = 'Failed to rotate credentials safely. Please check file permissions.';
             }
         }
     }
@@ -542,32 +567,35 @@ if ($isAuthenticated && isset($_POST['bulk_delete']) && isset($_POST['selected_i
     } // end CSRF check
 }
 
-// Load logs
-$loadResult = kssmi_email_logs_read(LOGS_FILE);
-$logs = $loadResult['ok'] ? $loadResult['logs'] : [];
-if (!$loadResult['ok'] && $isAuthenticated) {
-    $error = 'Email Logs could not be read safely. No data was overwritten; check the server error log.';
-}
-
-// Stats
+$logs = [];
 $acceptedCount = 0;
 $successCount = 0;
 $failedCount = 0;
 $uncertainCount = 0;
 $recent24h = 0;
 
-foreach ($logs as $l) {
-    if (!isAcceptedInquiryLog($l)) continue;
-
-    $acceptedCount++;
-    if (($l['status'] ?? '') === 'success') $successCount++;
-    if (($l['failure_type'] ?? null) === 'delivery_uncertain') {
-        $uncertainCount++;
-    } elseif (($l['status'] ?? '') === 'failed') {
-        $failedCount++;
+// The login and reset views need no inquiry data. Keep the locked read,
+// decoding, and aggregate work behind the authenticated session boundary.
+if ($isAuthenticated) {
+    $loadResult = kssmi_email_logs_read(LOGS_FILE);
+    $logs = $loadResult['ok'] ? $loadResult['logs'] : [];
+    if (!$loadResult['ok']) {
+        $error = 'Email Logs could not be read safely. No data was overwritten; check the server error log.';
     }
-    if (isset($l['unix_time']) && is_numeric($l['unix_time']) && (int)$l['unix_time'] > time() - 86400) {
-        $recent24h++;
+
+    foreach ($logs as $l) {
+        if (!isAcceptedInquiryLog($l)) continue;
+
+        $acceptedCount++;
+        if (($l['status'] ?? '') === 'success') $successCount++;
+        if (($l['failure_type'] ?? null) === 'delivery_uncertain') {
+            $uncertainCount++;
+        } elseif (($l['status'] ?? '') === 'failed') {
+            $failedCount++;
+        }
+        if (isset($l['unix_time']) && is_numeric($l['unix_time']) && (int)$l['unix_time'] > time() - 86400) {
+            $recent24h++;
+        }
     }
 }
 
