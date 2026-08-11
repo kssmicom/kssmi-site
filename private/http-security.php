@@ -720,6 +720,16 @@ function kssmi_admin_rotate_credentials(
         $versionPath = $credentialVersionPath ?? kssmi_admin_credential_version_path($passwordPath);
         $version = kssmi_admin_credential_version_ensure($versionPath);
         if ($version === null) {
+            // The credential version store is unavailable (for example when
+            // the password file's parent directory is missing). Fail closed:
+            // a presented token is burned so the failed attempt can never be
+            // replayed, and no password change is ever reported.
+            if ($token !== null && isset($tokens[$token])) {
+                if (!kssmi_admin_atomic_write($tokensPath, '[]', 0600)) {
+                    return ['ok' => false, 'changed' => false, 'consumed' => false, 'error' => 'token_revoke_failed'];
+                }
+                return ['ok' => false, 'changed' => false, 'consumed' => true, 'error' => 'version_read_failed'];
+            }
             return ['ok' => false, 'changed' => false, 'consumed' => false, 'error' => 'version_read_failed'];
         }
         if ($token !== null && (!isset($tokens[$token])
