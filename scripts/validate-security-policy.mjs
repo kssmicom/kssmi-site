@@ -41,7 +41,7 @@ assert.match(adminSmoke, /invalid-CSRF logout/, 'Smoke must reject logout with i
 assert.match(adminSmoke, /email-logs\.php\?logout=1/, 'Smoke must prove GET logout is inert.');
 assert.match(adminSmoke, /server-side admin session remained authenticated after logout/, 'Smoke must prove logout invalidates the server session.');
 assert.match(adminSmoke, /Accepted Inquiries/, 'Smoke must verify the Email Logs storage health marker.');
-assert.match(adminSmoke, /Core Events/, 'Smoke must verify the VJT Core data health marker.');
+assert.match(adminSmoke, /Core Event Stream/, 'Smoke must verify the VJT Core data health marker.');
 
 for (const scenario of [
   'wrong admin password must fail the smoke',

@@ -217,7 +217,7 @@ export async function runAuthenticatedAdminSmoke({
   });
   assertStatus(journey, [200], 'Visitor Journey authenticated view');
   assertAdminHeaders(journey, 'Visitor Journey authenticated view');
-  if (!/<h1>VJT<\/h1>/i.test(journey.body) || !/Core Events\s*\(/i.test(journey.body)) {
+  if (!/<h1>VJT<\/h1>/i.test(journey.body) || !/Core Event Stream\s*\(/i.test(journey.body)) {
     throw new Error('Visitor Journey dashboard or Core data health marker did not render after login.');
   }
 

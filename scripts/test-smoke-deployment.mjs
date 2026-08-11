@@ -91,7 +91,7 @@ function makeRequest({
     const url = new URL(pathname, 'https://kssmi.com');
     if (url.pathname === '/visitor-journey.php') {
       return authenticated
-        ? response(pathname, 200, `<h1>VJT</h1><div>Core Events (0)</div>${reflectedCredential}`)
+        ? response(pathname, 200, `<h1>VJT</h1><div>Raw Contact/Core Event Stream (0)</div>${reflectedCredential}`)
         : response(pathname, 200, loginBody(), { setCookies: [sessionCookie] });
     }
 
