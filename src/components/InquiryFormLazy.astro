@@ -1,5 +1,12 @@
 ---
-/** InquiryFormLazy — loads InquiryForm via fetch immediately — saves 44KB from initial HTML */
+/**
+ * Kept under its established name so existing pages and CTA anchors continue to
+ * work. The form itself is rendered with the page instead of fetched and
+ * injected after load: Turnstile and submission scripts are then managed by
+ * Astro normally and there is no second-request failure state.
+ */
+import InquiryForm from './InquiryForm.astro';
+
 interface Props {
   lang?: string;
   productName?: string;
@@ -7,6 +14,7 @@ interface Props {
   productUrl?: string;
   source?: string;
 }
+
 const {
   lang = 'en',
   productName = '',
@@ -14,20 +22,30 @@ const {
   productUrl = '',
   source = 'general_inquiry',
 } = Astro.props;
+const resolvedProductUrl = productUrl || Astro.url.pathname;
 ---
 
 <div
   id="inquiry-form-lazy"
-  data-lang={lang}
+  data-source={source}
   data-product={productName}
   data-product-sku={productSku}
-  data-product-url={productUrl}
-  data-source={source}
-  style="min-height:200px"
-  class="inquiry-form-placeholder scroll-mt-[80px]"
-></div>
+  data-product-url={resolvedProductUrl}
+  class="scroll-mt-[80px]"
+>
+  <InquiryForm
+    lang={lang}
+    productName={productName}
+    productSku={productSku}
+    productUrl={resolvedProductUrl}
+    source={source}
+  />
+</div>
 
 <script>
+  // Preserve product context supplied in legacy campaign links without making
+  // the form depend on a second HTTP request. Product-page context always comes
+  // from the generated page and must not be replaced by query-string values.
   function cleanText(value: string, maxLength: number): string {
     return value.replace(/[\u0000-\u001f\u007f]/g, '').trim().slice(0, maxLength);
   }
@@ -36,76 +54,45 @@ const {
     if (!value) return '';
     try {
       const parsed = new URL(value, window.location.origin);
-      if (parsed.origin !== window.location.origin) return '';
-      return parsed.pathname.startsWith('/') ? parsed.pathname : '';
-    } catch (_) {
+      return parsed.origin === window.location.origin && parsed.pathname.startsWith('/')
+        ? parsed.pathname
+        : '';
+    } catch {
       return '';
     }
   }
 
   function setHidden(form: HTMLFormElement, name: string, value: string): void {
-    let input = form.querySelector(`input[name="${name}"]`) as HTMLInputElement | null;
-    if (!input) {
-      input = document.createElement('input');
-      input.type = 'hidden';
-      input.name = name;
-      form.appendChild(input);
-    }
-    input.value = value;
+    const input = form.querySelector(`input[name="${name}"]`) as HTMLInputElement | null;
+    if (input) input.value = value;
   }
 
-  function loadInquiryForm(): void {
-    const el = document.getElementById('inquiry-form-lazy');
-    if (!el || el.dataset.loaded === 'true') return;
-    el.dataset.loaded = 'true';
-    const lang = el.dataset.lang || 'en';
-    const url = '/inquiry-form/' + lang + '/';
-    fetch(url)
-      .then(function (r) { return r.text(); })
-      .then(function (html) {
-        el.innerHTML = html;
+  function applyInquiryContext(): void {
+    const container = document.getElementById('inquiry-form-lazy');
+    const form = container?.querySelector('form') as HTMLFormElement | null;
+    if (!container || !form || container.dataset.contextApplied === 'true') return;
+    container.dataset.contextApplied = 'true';
 
-        const form = el.querySelector('form') as HTMLFormElement | null;
-        if (form) {
-          const params = new URLSearchParams(window.location.search);
-          const source = cleanText(el.dataset.source || 'general_inquiry', 128);
-          const isProductPage = source === 'product_page';
-          const productName = cleanText(
-            isProductPage
-              ? (el.dataset.product || '')
-              : (params.get('product_name') || params.get('product') || el.dataset.product || ''),
-            256
-          );
-          const productSku = cleanText(
-            isProductPage ? (el.dataset.productSku || '') : (params.get('sku') || el.dataset.productSku || ''),
-            80
-          ).toUpperCase();
-          const requestedProductUrl = isProductPage
-            ? (el.dataset.productUrl || window.location.pathname)
-            : (params.get('product_url') || el.dataset.productUrl || window.location.pathname);
-          const productUrl = localProductPath(requestedProductUrl) || window.location.pathname;
+    if (container.dataset.source === 'product_page') return;
 
-          setHidden(form, 'source', source);
-          setHidden(form, 'product_name', productName || 'General Inquiry');
-          setHidden(form, 'product_sku', productSku);
-          setHidden(form, 'product_url', productUrl);
-          setHidden(form, 'language', lang);
-        }
+    const params = new URLSearchParams(window.location.search);
+    const productName = cleanText(
+      params.get('product_name') || params.get('product') || container.dataset.product || '',
+      256,
+    );
+    const productSku = cleanText(
+      params.get('sku') || container.dataset.productSku || '',
+      80,
+    ).toUpperCase();
+    const productUrl = localProductPath(
+      params.get('product_url') || container.dataset.productUrl || window.location.pathname,
+    ) || window.location.pathname;
 
-        const scripts = el.querySelectorAll('script');
-        scripts.forEach(function (s) {
-          const ns = document.createElement('script');
-          Array.from(s.attributes).forEach(function (a) { ns.setAttribute(a.name, a.value); });
-          ns.textContent = s.textContent;
-          s.replaceWith(ns);
-        });
-      })
-      .catch(function () {
-        el.innerHTML = '<p class="text-gray-500 text-center py-8">Form failed to load. Please <a href="/contact" class="text-[#8B7355] underline">contact us</a> directly.</p>';
-      });
+    setHidden(form, 'product_name', productName || 'General Inquiry');
+    setHidden(form, 'product_sku', productSku);
+    setHidden(form, 'product_url', productUrl);
   }
 
-  // Run on initial load AND on Astro View Transitions (SPA navigation)
-  loadInquiryForm();
-  document.addEventListener('astro:page-load', loadInquiryForm);
+  applyInquiryContext();
+  document.addEventListener('astro:page-load', applyInquiryContext);
 </script>

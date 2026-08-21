@@ -64,6 +64,7 @@ assert(
 // AJAX inquiry forms must therefore declare their real transport explicitly;
 // an omitted method defaults to GET in the DOM and silently drops attribution.
 const inquiryForm = read('src/components/InquiryForm.astro');
+const inquiryFormLoader = read('src/components/InquiryFormLazy.astro');
 const notFoundPage = read('src/components/pages/NotFoundPage.astro');
 assert(
   /<form\s+id="inquiry-form"\s+method="post"\s+action="\/send-mail\.php"/.test(inquiryForm),
@@ -76,6 +77,15 @@ assert(
 assert(
   inquiryForm.includes("'vjt_utm_content', 'vjt_utm_term', 'vjt_journey_step'"),
   'Inquiry consent withdrawal cleanup must remove the Journey step with the other VJT fields.',
+);
+assert(
+  inquiryFormLoader.includes("import InquiryForm from './InquiryForm.astro';")
+    && inquiryFormLoader.includes('<InquiryForm'),
+  'Inquiry form loader must render the form with the page instead of fetching a separate HTML fragment.',
+);
+assert(
+  !inquiryFormLoader.includes('fetch(') && !inquiryFormLoader.includes('innerHTML'),
+  'Inquiry form loader must not use a second request or dynamic HTML injection.',
 );
 
 if (failures.length) {
