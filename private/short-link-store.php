@@ -63,6 +63,13 @@ function short_link_migrate(PDO $db): void {
 
 function short_link_now(): string { return gmdate('Y-m-d H:i:s'); }
 
+// PDO does not track transactions started with SQLite's BEGIN IMMEDIATE.
+// Keep all three operations in SQLite SQL so the busy-lock acquisition and
+// transaction lifecycle use the same mechanism.
+function short_link_begin_immediate(PDO $db): void { $db->exec('BEGIN IMMEDIATE'); }
+function short_link_commit(PDO $db): void { $db->exec('COMMIT'); }
+function short_link_rollback(PDO $db): void { try { $db->exec('ROLLBACK'); } catch (PDOException $ignored) {} }
+
 function short_link_text($value, int $max): string {
     $value = trim((string)$value);
     if (strlen($value) > $max || preg_match('/[\x00-\x1F\x7F]/', $value)) throw new InvalidArgumentException('Invalid text field.');
@@ -119,15 +126,15 @@ function short_link_normalize_url(string $input): array {
 function short_link_destination_create(string $url, string $admin): array {
     $normalized = short_link_normalize_url($url);
     $db = short_link_db();
-    $db->exec('BEGIN IMMEDIATE');
+    short_link_begin_immediate($db);
     try {
         $stmt = $db->prepare('INSERT INTO short_link_destinations(target_url, normalized_url, created_at, created_by) VALUES(?,?,?,?)');
         $stmt->execute([$normalized['target_url'], $normalized['normalized_url'], short_link_now(), $admin]);
         $id = (int)$db->lastInsertId();
-        $db->commit();
+        short_link_commit($db);
         return ['created' => true, 'destination' => short_link_destination_get($id)];
     } catch (PDOException $error) {
-        $db->rollBack();
+        short_link_rollback($db);
         if (str_contains($error->getMessage(), 'UNIQUE constraint failed')) {
             $stmt = $db->prepare('SELECT * FROM short_link_destinations WHERE normalized_url = ?');
             $stmt->execute([$normalized['normalized_url']]);
@@ -156,15 +163,15 @@ function short_link_create_distribution(int $destinationId, array $fields, strin
     for ($attempt = 0; $attempt < 10; $attempt++) {
         $code = short_link_code();
         try {
-            $db->exec('BEGIN IMMEDIATE');
+            short_link_begin_immediate($db);
             $reserved = $db->prepare('SELECT 1 FROM short_link_code_tombstones WHERE code = ?'); $reserved->execute([$code]);
-            if ($reserved->fetchColumn()) { $db->rollBack(); continue; }
+            if ($reserved->fetchColumn()) { short_link_rollback($db); continue; }
             $stmt = $db->prepare("INSERT INTO short_links(destination_id,code,label,campaign,recipient_ref,status,created_at,created_by) VALUES(?,?,?,?,?,'active',?,?)");
             $stmt->execute([$destinationId, $code, $label, $campaign, $recipient, short_link_now(), $admin]);
-            $id = (int)$db->lastInsertId(); $db->commit();
+            $id = (int)$db->lastInsertId(); short_link_commit($db);
             return short_link_get($id) ?? throw new RuntimeException('Created link could not be read.');
         } catch (PDOException $error) {
-            if ($db->inTransaction()) $db->rollBack();
+            short_link_rollback($db);
             if (!str_contains($error->getMessage(), 'UNIQUE constraint failed')) throw $error;
         }
     }
@@ -185,13 +192,13 @@ function short_link_record_open(int $id, string $recipient, bool $bot): void {
 function short_link_is_bot(string $ua): bool { return $ua !== '' && preg_match('/bot|spider|crawler|preview|facebookexternalhit|slackbot|whatsapp/i', $ua) === 1; }
 function short_link_set_status(int $id, string $status, string $admin): void {
     if (!in_array($status, ['active','archived','deleted'], true)) throw new InvalidArgumentException('Invalid status.');
-    $db = short_link_db(); $db->exec('BEGIN IMMEDIATE');
+    $db = short_link_db(); short_link_begin_immediate($db);
     try {
         $row = short_link_get($id); if (!$row) throw new InvalidArgumentException('Short link was not found.');
         if ($status === 'deleted') { $db->prepare('INSERT OR IGNORE INTO short_link_code_tombstones(code,retired_at) VALUES(?,?)')->execute([$row['code'], short_link_now()]); }
         $db->prepare('UPDATE short_links SET status=?, deleted_at=?, deleted_by=? WHERE id=?')->execute([$status, $status === 'deleted' ? short_link_now() : null, $status === 'deleted' ? $admin : null, $id]);
-        $db->commit();
-    } catch (Throwable $error) { if ($db->inTransaction()) $db->rollBack(); throw $error; }
+        short_link_commit($db);
+    } catch (Throwable $error) { short_link_rollback($db); throw $error; }
 }
 function short_link_list(string $search = '', int $limit = 100): array {
     $search = short_link_text($search, 256); $limit = max(1, min(250, $limit));
