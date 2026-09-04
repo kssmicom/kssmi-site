@@ -7,6 +7,18 @@
  * language pages live at /{lang}/404/index.html.
  */
 $uri = $_SERVER['REQUEST_URI'];
+
+// OpenLiteSpeed reaches this router for unmatched paths. Its per-directory
+// rewrite handling can skip a preceding exact short-link rule, so make the
+// six-character public namespace deterministic here as a final routing layer.
+// No ordinary Astro route can match this exact namespace.
+$requestPath = (string)(parse_url($uri, PHP_URL_PATH) ?? '');
+if (preg_match('#^/([A-Z][A-Za-z0-9]{5})/?$#D', $requestPath, $shortLinkMatch) === 1) {
+    $_GET['code'] = $shortLinkMatch[1];
+    require __DIR__ . '/short-link-redirect.php';
+    exit;
+}
+
 $langs = ['it','es','fr','de','pt','ru','ja','tr','ar','ko','zh','hi','vi','jv','ms','tg'];
 
 // Extract language prefix: /zh/eyewear/xxx -> zh
