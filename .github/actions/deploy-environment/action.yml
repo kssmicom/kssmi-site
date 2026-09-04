@@ -2,6 +2,9 @@ name: Deploy verified Kssmi production release
 description: Deploy, smoke, finalize or automatically roll back one Kssmi production artifact.
 
 inputs:
+  release-id:
+    required: true
+    description: Immutable release ID from the sealed build artifact
   environment-name:
     required: true
     description: Must be production
@@ -56,6 +59,7 @@ runs:
       shell: bash
       env:
         DEPLOY_ENVIRONMENT: ${{ inputs.environment-name }}
+        RELEASE_ID: ${{ inputs.release-id }}
         SITE_URL: ${{ inputs.site-url }}
         SITE_HOST: ${{ inputs.site-host }}
         PRIVATE_ROOT: ${{ inputs.private-root }}
@@ -70,6 +74,7 @@ runs:
       run: |
         set -euo pipefail
         test "$DEPLOY_ENVIRONMENT" = production
+        [[ "$RELEASE_ID" =~ ^[0-9a-f]{40}-[1-9][0-9]*(-[1-9][0-9]*)?$ ]]
         [[ "$SITE_HOST" =~ ^[A-Za-z0-9]([A-Za-z0-9.-]*[A-Za-z0-9])?$ ]]
         [[ "$SITE_URL" == "https://$SITE_HOST" ]]
         [[ "$PRIVATE_ROOT" =~ ^/home/[A-Za-z0-9._-]+$ ]]
@@ -115,7 +120,7 @@ runs:
         username: ${{ inputs.remote-user }}
         key: ${{ inputs.ssh-private-key }}
         source: "dist,private,scripts/deploy-release.sh,scripts/permission-policy.sh,scripts/runtime-capability-probe.php,scripts/prune-old-releases.sh"
-        target: "${{ inputs.private-root }}/releases/${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}"
+        target: "${{ inputs.private-root }}/releases/${{ inputs.release-id }}"
 
     - name: Activate versioned release atomically
       id: activate
@@ -127,7 +132,7 @@ runs:
         command_timeout: 300s
         script: |
           set -eu
-          RELEASE_ID='${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}'
+          RELEASE_ID='${{ inputs.release-id }}'
           PRIVATE_ROOT='${{ inputs.private-root }}'
           RELEASE_SCRIPT="$PRIVATE_ROOT/releases/$RELEASE_ID/scripts/deploy-release.sh"
           test -f "$RELEASE_SCRIPT"
@@ -235,7 +240,7 @@ runs:
         command_timeout: 60s
         script: |
           set -eu
-          RELEASE_ID='${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}'
+          RELEASE_ID='${{ inputs.release-id }}'
           PRIVATE_ROOT='${{ inputs.private-root }}'
           RELEASE_SCRIPT="$PRIVATE_ROOT/releases/$RELEASE_ID/scripts/deploy-release.sh"
           test -f "$RELEASE_SCRIPT"
@@ -260,7 +265,7 @@ runs:
         command_timeout: 120s
         script: |
           set -eu
-          RELEASE_ID='${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}'
+          RELEASE_ID='${{ inputs.release-id }}'
           PRIVATE_ROOT='${{ inputs.private-root }}'
           PRUNE_SCRIPT="$PRIVATE_ROOT/releases/$RELEASE_ID/scripts/prune-old-releases.sh"
           test -f "$PRUNE_SCRIPT"
@@ -277,7 +282,7 @@ runs:
         command_timeout: 180s
         script: |
           set -eu
-          RELEASE_ID='${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}'
+          RELEASE_ID='${{ inputs.release-id }}'
           PRIVATE_ROOT='${{ inputs.private-root }}'
           RELEASE_SCRIPT="$PRIVATE_ROOT/releases/$RELEASE_ID/scripts/deploy-release.sh"
           if [ -f "$RELEASE_SCRIPT" ]; then
@@ -305,7 +310,7 @@ runs:
         capture_stdout: true
         script: |
           set -eu
-          RELEASE_ID='${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}'
+          RELEASE_ID='${{ inputs.release-id }}'
           PRIVATE_ROOT='${{ inputs.private-root }}'
           RELEASE_SCRIPT="$PRIVATE_ROOT/releases/$RELEASE_ID/scripts/deploy-release.sh"
           test -f "$RELEASE_SCRIPT"

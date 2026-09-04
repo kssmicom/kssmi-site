@@ -35,7 +35,8 @@ for (const marker of [
   'Upload immutable release bundle',
   'Check production disk space before upload',
   'source: "dist,private,scripts/deploy-release.sh,scripts/permission-policy.sh,scripts/runtime-capability-probe.php,scripts/prune-old-releases.sh"',
-  'target: "${{ inputs.private-root }}/releases/${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}"',
+  'release-id:',
+  'target: "${{ inputs.private-root }}/releases/${{ inputs.release-id }}"',
   'Activate versioned release atomically',
   'Verify deployed security controls',
   'Run authenticated deployment smoke',
@@ -49,6 +50,10 @@ for (const marker of [
 ]) {
   assert.ok(environmentAction.includes(marker), `Environment deploy action missing release marker: ${marker}`);
 }
+assert.ok(
+  environmentAction.includes("RELEASE_ID='${{ inputs.release-id }}'"),
+  'Environment deploy action must use the immutable release ID supplied by the sealed artifact.'
+);
 assert.doesNotMatch(
   deployment,
   /easingthemes\/ssh-deploy|TARGET:\s*["']?\/home\/kssmi\.com\/public_html|target:\s*["']?\/home\/kssmi\.com\/public_html|--delete/,

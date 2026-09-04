@@ -23,7 +23,8 @@ const requireBefore = (source, first, second, message) => {
 for (const marker of [
   'actions: read', 'issues: read',
   'Generate secret-free build evidence',
-  'kssmi-build-evidence-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}',
+  'build-evidence-name: ${{ steps.release-metadata.outputs.build_evidence_name }}',
+  'name: ${{ needs.build-release.outputs.build-evidence-name }}',
   'release-evidence:',
   'needs: [build-release, deploy-production]',
   'Publish release evidence and final signoff',

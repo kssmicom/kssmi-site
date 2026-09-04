@@ -22,6 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       artifact-name: ${{ steps.release-metadata.outputs.artifact_name }}
+      release-id: ${{ steps.release-metadata.outputs.release_id }}
+      build-evidence-name: ${{ steps.release-metadata.outputs.build_evidence_name }}
 
     steps:
       - name: Checkout code
@@ -160,9 +162,12 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          artifact_name="kssmi-release-${GITHUB_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          release_id="${GITHUB_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          artifact_name="kssmi-release-${release_id}"
           printf 'artifact_name=%s\n' "$artifact_name" >> "$GITHUB_OUTPUT"
-          printf '%s-%s-%s\n' "$GITHUB_SHA" "$GITHUB_RUN_ID" "$GITHUB_RUN_ATTEMPT" > .kssmi-artifact-release
+          printf 'release_id=%s\n' "$release_id" >> "$GITHUB_OUTPUT"
+          printf 'build_evidence_name=kssmi-build-evidence-%s\n' "$release_id" >> "$GITHUB_OUTPUT"
+          printf '%s\n' "$release_id" > .kssmi-artifact-release
           tar -cf kssmi-release.tar \
             .kssmi-artifact-release \
             dist private \
@@ -186,7 +191,7 @@ jobs:
       - name: Upload build evidence
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1, Node.js 24
         with:
-          name: kssmi-build-evidence-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          name: ${{ steps.release-metadata.outputs.build_evidence_name }}
           path: release-evidence/build
           if-no-files-found: error
           retention-days: 90
@@ -213,11 +218,12 @@ jobs:
           cd release-artifact
           sha256sum -c kssmi-release.tar.sha256
           tar -xf kssmi-release.tar -C ..
-          test "$(cat ../.kssmi-artifact-release)" = "${GITHUB_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          test "$(cat ../.kssmi-artifact-release)" = "${{ needs.build-release.outputs.release-id }}"
 
       - name: Deploy verified artifact to production
         uses: ./.github/actions/deploy-environment
         with:
+          release-id: ${{ needs.build-release.outputs.release-id }}
           environment-name: production
           site-url: https://kssmi.com
           site-host: kssmi.com
@@ -248,7 +254,7 @@ jobs:
         continue-on-error: true
         uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131  # v7.0.0, Node.js 24
         with:
-          name: kssmi-build-evidence-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          name: ${{ needs.build-release.outputs.build-evidence-name }}
           path: evidence-input/build
 
       - name: Download production evidence
