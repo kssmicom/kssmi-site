@@ -223,3 +223,13 @@ function short_link_list(string $search = '', int $limit = 100): array {
     $params = []; if ($search !== '') { $sql .= ' AND (l.code LIKE ? OR d.target_url LIKE ? OR l.label LIKE ? OR l.campaign LIKE ? OR l.recipient_ref LIKE ?)'; $like='%'.$search.'%'; $params=[$like,$like,$like,$like,$like]; }
     $sql .= ' GROUP BY l.id ORDER BY l.created_at DESC LIMIT ' . $limit; $stmt=short_link_db()->prepare($sql); $stmt->execute($params); return $stmt->fetchAll();
 }
+function short_link_tracking(int $id, int $limit = 250): ?array {
+    $link = short_link_get($id);
+    if (!$link) return null;
+    $limit = max(1, min(500, $limit));
+    $summary = short_link_db()->prepare("SELECT SUM(CASE WHEN event_kind='server_count' THEN 1 ELSE 0 END) AS opens, SUM(CASE WHEN event_kind='bot' THEN 1 ELSE 0 END) AS bots, MAX(opened_at) AS last_opened FROM short_link_events WHERE short_link_id = ?");
+    $summary->execute([$id]);
+    $events = short_link_db()->prepare('SELECT opened_at,event_kind,recipient_ref_snapshot FROM short_link_events WHERE short_link_id = ? ORDER BY opened_at DESC, id DESC LIMIT ' . $limit);
+    $events->execute([$id]);
+    return ['link' => $link, 'summary' => $summary->fetch() ?: ['opens' => 0, 'bots' => 0, 'last_opened' => null], 'events' => $events->fetchAll()];
+}
