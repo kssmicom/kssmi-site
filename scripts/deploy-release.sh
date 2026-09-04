@@ -751,7 +751,8 @@ probe_vjt_integrity() {
   run_root chown -R "$SITE_USER:$SITE_GROUP" "$VJT_DATA_DIR"
   run_root chmod 750 "$VJT_DATA_DIR"
   run_root find "$VJT_DATA_DIR" -maxdepth 1 -type f -exec chmod 600 {} \;
-  if [ -f "$VJT_DATA_DIR/vjt.sqlite" ]; then
+  for sqlite_file in "$VJT_DATA_DIR/vjt.sqlite" "$VJT_DATA_DIR/shortlinks.sqlite"; do
+  if [ -f "$sqlite_file" ]; then
     php_sqlite_bin="$(resolve_php_sqlite)"
     integrity_probe="$(mktemp)"
     chmod 644 "$integrity_probe"
@@ -767,9 +768,10 @@ if ($result !== "ok") {
     exit(1);
 }
 PHP
-    run_as_site "$php_sqlite_bin" "$integrity_probe" "$VJT_DATA_DIR/vjt.sqlite"
+    run_as_site "$php_sqlite_bin" "$integrity_probe" "$sqlite_file"
     rm -f "$integrity_probe"
   fi
+  done
   run_as_site test -w "$VJT_DATA_DIR"
 }
 

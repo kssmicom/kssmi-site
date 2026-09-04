@@ -106,6 +106,7 @@ jobs:
           php scripts/test-http-security.php
           php scripts/test-reset-token-race.php
           php scripts/test-admin-session.php
+          php scripts/test-short-links.php
 
       - name: Validate frontend policies
         run: |
@@ -147,6 +148,7 @@ jobs:
           cp public/email-logs.php dist/
           cp public/visitor-journey.php dist/
           cp public/404-router.php dist/
+          cp public/short-link-redirect.php dist/
           cp -r public/api dist/
           cp -r public/vendor dist/
 

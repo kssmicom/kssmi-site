@@ -55,7 +55,8 @@
     "test:http-security": "php scripts/test-http-security.php",
     "test:reset-race": "php scripts/test-reset-token-race.php",
     "test:admin-session": "php scripts/test-admin-session.php",
-    "test:php": "npm run test:vjt-capability-proof && npm run test:backend && npm run test:email-log && npm run test:rate-limit && npm run test:vjt-authenticity && npm run test:vjt-write-budget && npm run test:vjt-checkpoint && npm run test:contact-core && npm run test:vjt-event-state && npm run test:vjt-heartbeat && npm run test:vjt-data-quality && npm run test:http-security && npm run test:reset-race && npm run test:admin-session"
+    "test:short-links": "php scripts/test-short-links.php",
+    "test:php": "npm run test:vjt-capability-proof && npm run test:backend && npm run test:email-log && npm run test:rate-limit && npm run test:vjt-authenticity && npm run test:vjt-write-budget && npm run test:vjt-checkpoint && npm run test:contact-core && npm run test:vjt-event-state && npm run test:vjt-heartbeat && npm run test:vjt-data-quality && npm run test:http-security && npm run test:reset-race && npm run test:admin-session && npm run test:short-links"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",

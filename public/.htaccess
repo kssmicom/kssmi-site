@@ -65,6 +65,13 @@ RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# Public short links use six characters with an uppercase first character.
+# This precedes Astro clean URLs, but only after HTTPS enforcement and with
+# real files/directories preserved.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([A-Z][A-Za-z0-9]{5})/?$ /short-link-redirect.php?code=$1 [END,QSA]
+
 # ─── Static assets (pass through as-is) ────────────────────────────────────
 # Content-fingerprinted runtime assets. The build replaces this marker block in
 # dist/.htaccess from assets/runtime/manifest.json. Keep it before the generic
@@ -154,7 +161,7 @@ Header always unset Content-Security-Policy
   Header always set Content-Security-Policy "default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://challenges.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://www.google-analytics.com; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests"
 </FilesMatch>
 
-<FilesMatch "^(send-mail|contact-intent|track-pageview|track-submission|track-anon-view|vjt-config|vjt-capability)\.php$">
+<FilesMatch "^(send-mail|contact-intent|track-pageview|track-submission|track-anon-view|vjt-config|vjt-capability|short-link-redirect)\.php$">
   Header always set X-Frame-Options "DENY"
   Header always set Referrer-Policy "no-referrer"
   Header always set Content-Security-Policy "default-src 'none'; frame-ancestors 'none'"

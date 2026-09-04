@@ -46,6 +46,7 @@ $_GET = kssmi_admin_normalize_request($_GET, [
     'tp' => 16,
     'prod_date_from' => 16,
     'prod_date_to' => 16,
+    'sl_search' => 256,
 ]);
 $_POST = kssmi_admin_normalize_request($_POST, [
     'password' => 1024,
@@ -155,7 +156,7 @@ if ($isAuthenticated) {
 // Determine active tab
 $tab = $_GET['tab'] ?? 'overview';
 $trendPeriod = $_GET['trend'] ?? 'days';
-$validTabs = ['overview', 'contacts', 'submissions', 'traffic', 'today', 'visitors', 'journey', 'countries', 'products', 'gsc', 'settings'];
+$validTabs = ['overview', 'contacts', 'submissions', 'traffic', 'today', 'visitors', 'journey', 'countries', 'products', 'gsc', 'settings', 'short-links'];
 if (!in_array($tab, $validTabs)) $tab = 'overview';
 
 // ── Data helpers ────────────────────────────────────────────────────────────
@@ -163,6 +164,14 @@ if (!in_array($tab, $validTabs)) $tab = 'overview';
 // Never initialize, migrate, backfill, clean, or query analytics data before
 // authentication. This keeps the public login page cheap and prevents DB-work DoS.
 if ($isAuthenticated) vjt_data_init();
+
+$shortLinkRows = [];
+$shortLinkSearch = $_GET['sl_search'] ?? '';
+if ($isAuthenticated && $tab === 'short-links') {
+    require_once dirname(__DIR__) . '/private/short-link-store.php';
+    try { $shortLinkRows = short_link_list($shortLinkSearch); }
+    catch (Throwable $e) { $message = 'Short-link storage is unavailable.'; $messageClass = 'error'; error_log('KSSMI short-link dashboard failure'); }
+}
 
 // Resolve any pending geo lookups off the visitor ingest path (admin-only).
 // Backfills country/city for IPs collected since the last dashboard view.
@@ -990,6 +999,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                     <a href="?tab=visitors" class="tab <?php echo $tab === 'visitors' ? 'active' : ''; ?>">Visitors</a>
                     <a href="?tab=countries" class="tab <?php echo $tab === 'countries' ? 'active' : ''; ?>">Countries</a>
                     <a href="?tab=products" class="tab <?php echo $tab === 'products' ? 'active' : ''; ?>">Products</a>
+                    <a href="?tab=short-links" class="tab <?php echo $tab === 'short-links' ? 'active' : ''; ?>">Short Links</a>
                     <?php if ($tab === 'journey'): ?>
                         <a href="?tab=journey&visitor_id=<?php echo urlencode($_GET['visitor_id'] ?? ''); ?>" class="tab active">Journey Detail</a>
                     <?php endif; ?>
@@ -997,7 +1007,18 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
                     <a href="?tab=settings" class="tab <?php echo $tab === 'settings' ? 'active' : ''; ?>">Settings</a>
                 </div>
 
-                <?php if ($tab === 'overview' && $overview): ?>
+                <?php if ($tab === 'short-links'): ?>
+                    <div class="panel"><div class="panel-header">Short Links</div><div class="panel-body">
+                        <p style="color:#666;margin-bottom:14px;">Register an approved HTTPS destination, then create customer or campaign distribution codes. A destination is stored only once.</p>
+                        <form id="shortDestinationForm" style="display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end;"><div style="flex:1;min-width:280px;"><label for="shortTarget">Destination URL</label><input id="shortTarget" type="url" required maxlength="4096" placeholder="https://video.gumlet.io/..." style="width:100%;padding:8px;border:1px solid #ddd;border-radius:4px;"></div><button class="btn btn-primary" type="submit">Find or register destination</button></form>
+                        <div id="shortDestinationResult" style="margin-top:12px;"></div>
+                        <form id="shortDistributionForm" hidden style="margin-top:14px;padding-top:14px;border-top:1px solid #eee;display:none;gap:8px;flex-wrap:wrap;align-items:flex-end;"><input id="shortDestinationId" type="hidden"><div><label>Label</label><input id="shortLabel" maxlength="256" style="padding:8px;border:1px solid #ddd;border-radius:4px;"></div><div><label>Campaign</label><input id="shortCampaign" maxlength="256" style="padding:8px;border:1px solid #ddd;border-radius:4px;"></div><div><label>CRM / recipient ref</label><input id="shortRecipient" maxlength="256" style="padding:8px;border:1px solid #ddd;border-radius:4px;"></div><button class="btn btn-primary" type="submit">Create distribution link</button></form>
+                    </div></div>
+                    <div class="panel" style="margin-top:14px;"><div class="panel-header">Existing distribution links</div><div class="panel-body">
+                        <form method="get" class="filters" style="margin-bottom:12px;"><input type="hidden" name="tab" value="short-links"><input name="sl_search" value="<?php echo htmlspecialchars($shortLinkSearch); ?>" placeholder="Code, URL, label, campaign, CRM reference"><button class="btn btn-secondary" type="submit">Search</button></form>
+                        <div class="table-wrap"><table><thead><tr><th>Short link</th><th>Target</th><th>Label / customer</th><th>Status</th><th>Opens</th><th>Last opened</th><th>Actions</th></tr></thead><tbody><?php foreach ($shortLinkRows as $row): ?><tr><td><code>https://kssmi.com/<?php echo htmlspecialchars($row['code']); ?></code></td><td class="url-cell" title="<?php echo htmlspecialchars($row['target_url']); ?>"><?php echo htmlspecialchars($row['target_url']); ?></td><td><?php echo htmlspecialchars(trim($row['label'] . ' ' . $row['campaign'] . ' ' . $row['recipient_ref'])); ?></td><td><?php echo htmlspecialchars($row['status']); ?></td><td><?php echo number_format((int)$row['opens']); ?> <span style="color:#888;">(+<?php echo number_format((int)$row['bots']); ?> bots)</span></td><td><?php echo htmlspecialchars($row['last_opened'] ?? '-'); ?></td><td><button class="btn btn-secondary btn-small" type="button" onclick="shortCopy('https://kssmi.com/<?php echo htmlspecialchars($row['code']); ?>')">Copy</button> <?php if ($row['status'] === 'active'): ?><button class="btn btn-danger btn-small" type="button" onclick="shortSetStatus(<?php echo (int)$row['id']; ?>,'archived')">Disable</button><?php else: ?><button class="btn btn-success btn-small" type="button" onclick="shortSetStatus(<?php echo (int)$row['id']; ?>,'active')">Restore</button><?php endif; ?></td></tr><?php endforeach; ?><?php if (!$shortLinkRows): ?><tr><td colspan="7" style="text-align:center;color:#888;">No distribution links found.</td></tr><?php endif; ?></tbody></table></div>
+                    </div></div>
+                <?php elseif ($tab === 'overview' && $overview): ?>
                     <!-- Overview -->
                     <div class="stats">
                         <div class="stat-card">
@@ -2348,6 +2369,11 @@ function vjtDeleteVisitor(visitorId) {
   document.body.appendChild(form);
   form.submit();
 }
+function shortApi(payload) { payload.csrf_token=(document.getElementById('vjt_csrf')||{}).value||''; return fetch('/api/short-links.php',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).then(async function(r){var b=await r.json();if(!r.ok&&r.status!==409)throw new Error(b.error||'Request failed.');return {status:r.status,body:b};}); }
+function shortDestinationMessage(text,error) { var e=document.getElementById('shortDestinationResult');if(e){e.textContent=text;e.style.color=error?'#c0392b':'#27734a';} }
+function shortCopy(value) { navigator.clipboard.writeText(value).catch(function(){window.prompt('Copy this link:',value);}); }
+function shortSetStatus(id,status) { if(!confirm(status==='archived'?'Disable this link? It will return 404.':'Restore this link?'))return;shortApi({action:'status',id:id,status:status}).then(function(){location.reload();}).catch(function(e){alert(e.message);}); }
+(function(){var d=document.getElementById('shortDestinationForm'),f=document.getElementById('shortDistributionForm');if(!d||!f)return;d.addEventListener('submit',function(e){e.preventDefault();shortDestinationMessage('Checking destination…');shortApi({action:'destination',target_url:document.getElementById('shortTarget').value}).then(function(r){var destination=r.body.destination;if(!destination)throw new Error('No destination returned.');document.getElementById('shortDestinationId').value=destination.id;f.hidden=false;f.style.display='flex';shortDestinationMessage(r.status===409?'This destination already exists. Create a customer/campaign distribution link below.':'Destination registered. Create its first distribution link below.');}).catch(function(err){shortDestinationMessage(err.message,true);});});f.addEventListener('submit',function(e){e.preventDefault();shortApi({action:'distribution',destination_id:document.getElementById('shortDestinationId').value,label:document.getElementById('shortLabel').value,campaign:document.getElementById('shortCampaign').value,recipient_ref:document.getElementById('shortRecipient').value}).then(function(r){shortDestinationMessage('Created https://kssmi.com/'+r.body.link.code);shortCopy('https://kssmi.com/'+r.body.link.code);setTimeout(function(){location.reload();},500);}).catch(function(err){shortDestinationMessage(err.message,true);});});})();
 </script>
 </body>
 </html>
