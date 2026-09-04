@@ -200,9 +200,26 @@ function short_link_set_status(int $id, string $status, string $admin): void {
         short_link_commit($db);
     } catch (Throwable $error) { short_link_rollback($db); throw $error; }
 }
+function short_link_permanently_delete(int $id, string $confirmation, string $admin): void {
+    $db = short_link_db(); short_link_begin_immediate($db);
+    try {
+        $row = short_link_get($id); if (!$row) throw new InvalidArgumentException('Short link was not found.');
+        if (!hash_equals('DELETE ' . $row['code'], $confirmation)) throw new InvalidArgumentException('Type DELETE followed by the short code to confirm permanent deletion.');
+        // Retain only the code tombstone. The link row and all per-open events
+        // are physically removed, while an old email can never acquire a new
+        // destination if this six-character code is generated again.
+        $db->prepare('INSERT OR IGNORE INTO short_link_code_tombstones(code,retired_at) VALUES(?,?)')->execute([$row['code'], short_link_now()]);
+        $db->prepare('DELETE FROM short_link_events WHERE short_link_id = ?')->execute([$id]);
+        $db->prepare('DELETE FROM short_links WHERE id = ?')->execute([$id]);
+        short_link_commit($db);
+    } catch (Throwable $error) { short_link_rollback($db); throw $error; }
+}
 function short_link_list(string $search = '', int $limit = 100): array {
     $search = short_link_text($search, 256); $limit = max(1, min(250, $limit));
     $sql = "SELECT l.*,d.target_url, SUM(CASE WHEN e.event_kind='server_count' THEN 1 ELSE 0 END) AS opens, SUM(CASE WHEN e.event_kind='bot' THEN 1 ELSE 0 END) AS bots, MAX(e.opened_at) AS last_opened FROM short_links l JOIN short_link_destinations d ON d.id=l.destination_id LEFT JOIN short_link_events e ON e.short_link_id=l.id";
-    $params = []; if ($search !== '') { $sql .= ' WHERE l.code LIKE ? OR d.target_url LIKE ? OR l.label LIKE ? OR l.campaign LIKE ? OR l.recipient_ref LIKE ?'; $like='%'.$search.'%'; $params=[$like,$like,$like,$like,$like]; }
+    // Hide any legacy soft-deleted rows; all new user-facing deletions use the
+    // permanent-delete operation above and remove their rows altogether.
+    $sql .= " WHERE l.status != 'deleted'";
+    $params = []; if ($search !== '') { $sql .= ' AND (l.code LIKE ? OR d.target_url LIKE ? OR l.label LIKE ? OR l.campaign LIKE ? OR l.recipient_ref LIKE ?)'; $like='%'.$search.'%'; $params=[$like,$like,$like,$like,$like]; }
     $sql .= ' GROUP BY l.id ORDER BY l.created_at DESC LIMIT ' . $limit; $stmt=short_link_db()->prepare($sql); $stmt->execute($params); return $stmt->fetchAll();
 }

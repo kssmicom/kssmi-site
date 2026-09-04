@@ -20,6 +20,12 @@ try {
     sl_assert((int)short_link_list()[0]['opens'] === 1, 'Open was not counted.');
     short_link_set_status((int)$link['id'], 'archived', 'test');
     sl_assert(short_link_find_active($link['code']) === null, 'Archived link is still public.');
+    short_link_permanently_delete((int)$link['id'], 'DELETE ' . $link['code'], 'test');
+    sl_assert(short_link_get((int)$link['id']) === null, 'Permanently deleted link row still exists.');
+    sl_assert(short_link_list() === [], 'Permanently deleted link is still shown in the normal list.');
+    $tombstone = short_link_db()->prepare('SELECT 1 FROM short_link_code_tombstones WHERE code = ?');
+    $tombstone->execute([$link['code']]);
+    sl_assert((bool)$tombstone->fetchColumn(), 'Soft-deleted code was not permanently reserved.');
     foreach (['http://video.gumlet.io/a', 'https://user:pass@video.gumlet.io/a', 'javascript:alert(1)'] as $invalid) {
         try { short_link_normalize_url($invalid); throw new RuntimeException('Invalid URL accepted: ' . $invalid); } catch (InvalidArgumentException $expected) {}
     }

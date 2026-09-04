@@ -66,12 +66,13 @@ RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Public short links use six characters with an uppercase first character.
-# This precedes Astro clean URLs, but only after HTTPS enforcement and with
-# real files/directories preserved. OpenLiteSpeed's .htaccess rewrite engine
-# does not consistently honour Apache's [END] flag; [L] is sufficient here
-# because the target is a concrete PHP endpoint.
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+# This precedes Astro clean URLs, but only after HTTPS enforcement. The exact
+# six-character namespace cannot overlap a normal site route. In particular,
+# do not use REQUEST_FILENAME conditions here: OpenLiteSpeed can resolve an
+# unknown path before this per-directory rule runs, which incorrectly sends a
+# valid short code to the 404 router. Its .htaccess engine also does not
+# consistently honour Apache's [END] flag; [L] is sufficient because the
+# target is a concrete PHP endpoint.
 RewriteRule ^([A-Z][A-Za-z0-9]{5})/?$ /short-link-redirect.php?code=$1 [L,QSA]
 
 # ─── Static assets (pass through as-is) ────────────────────────────────────

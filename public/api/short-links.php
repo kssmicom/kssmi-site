@@ -23,5 +23,6 @@ try {
     if ($action === 'destination') { $result = short_link_destination_create((string)($input['target_url'] ?? ''), $admin); if (!$result['created']) { http_response_code(409); } echo json_encode($result, JSON_THROW_ON_ERROR); exit; }
     if ($action === 'distribution') { $link = short_link_create_distribution((int)($input['destination_id'] ?? 0), $input, $admin); echo json_encode(['link'=>$link], JSON_THROW_ON_ERROR); exit; }
     if ($action === 'status') { short_link_set_status((int)($input['id'] ?? 0), (string)($input['status'] ?? ''), $admin); echo '{"ok":true}'; exit; }
+    if ($action === 'permanent-delete') { short_link_permanently_delete((int)($input['id'] ?? 0), (string)($input['confirmation'] ?? ''), $admin); echo '{"ok":true}'; exit; }
     http_response_code(400); echo '{"error":"Unknown action."}';
 } catch (InvalidArgumentException $e) { http_response_code(422); echo json_encode(['error'=>$e->getMessage()]); } catch (Throwable $e) { error_log('KSSMI short-link admin failure: '.$e->getMessage()); http_response_code(500); echo '{"error":"Unable to process short-link request."}'; }
