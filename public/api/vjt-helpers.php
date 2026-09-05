@@ -3424,7 +3424,7 @@ function vjt_export_leads_csv_start($filters) {
     header('X-Content-Type-Options: nosniff');
     header('Content-Disposition: attachment; filename=vjt-leads-' . date('Y-m-d') . '.csv');
     $output = fopen('php://output', 'w');
-    fputcsv($output, ['Last Contact (Beijing)', 'First Contact (Beijing)', 'Lead Key', 'Visitor ID', 'Attribution', 'Channels', 'Events', 'Page Path', 'Placement', 'Journey Step', 'Event Type', 'Status', 'Product', 'Language', 'Retention Class', 'Latest Event ID']);
+    fputcsv($output, ['Last Contact', 'First Contact', 'Lead Key', 'Visitor ID', 'Attribution', 'Channels', 'Events', 'Page Path', 'Placement', 'Journey Step', 'Event Type', 'Status', 'Product', 'Language', 'Retention Class', 'Latest Event ID']);
 
     $page = 1;
     $batchSize = 1000;
@@ -3472,7 +3472,7 @@ function vjt_export_contact_events_csv_start($filters) {
     header('X-Content-Type-Options: nosniff');
     header('Content-Disposition: attachment; filename=contact-events-' . date('Y-m-d') . '.csv');
     $output = fopen('php://output', 'w');
-    fputcsv($output, ['Time (Beijing)', 'Channel', 'Event Type', 'Status', 'Verification', 'Page Path', 'Placement', 'Product', 'Language', 'Attribution', 'Visitor ID', 'Session ID', 'Journey Step', 'Retention Class', 'Event ID']);
+    fputcsv($output, ['Time', 'Channel', 'Event Type', 'Status', 'Verification', 'Page Path', 'Placement', 'Product', 'Language', 'Attribution', 'Visitor ID', 'Session ID', 'Journey Step', 'Retention Class', 'Event ID']);
 
     $page = 1;
     $batchSize = 1000;
@@ -3611,7 +3611,7 @@ function vjt_export_visitors_csv_start($filters) {
     header('X-Content-Type-Options: nosniff');
     header('Content-Disposition: attachment; filename=vjt-visitors-' . date('Y-m-d') . '.csv');
     $out = fopen('php://output', 'w');
-    fputcsv($out, ['Visitor ID','First Seen (Beijing)','Last Seen (Beijing)','Country','Device','Browser','Source','Sessions','Leads','Session Time (s)']);
+    fputcsv($out, ['Visitor ID','First Seen','Last Seen','Country','Device','Browser','Source','Sessions','Leads','Session Time (s)']);
     foreach ($result['items'] as $v) fputcsv($out, vjt_csv_safe_row([$v['visitor_id'], vjt_format_for_admin($v['first_seen_at']), vjt_format_for_admin($v['last_seen_at']), vjt_country_name($v['country']), $v['device_type'], $v['browser'], $v['source'], $v['sessions'], $v['submissions'], $v['session_time']]));
     fclose($out); exit;
 }
@@ -3630,7 +3630,7 @@ function vjt_export_journey_csv_start($visitorId) {
     header('X-Content-Type-Options: nosniff');
     header('Content-Disposition: attachment; filename=vjt-journey-' . preg_replace('/[^A-Za-z0-9_-]/', '', $visitorId) . '.csv');
     $out = fopen('php://output', 'w');
-    fputcsv($out, ['Record Type','Session','Journey Step','Time (Beijing)','URL / Page','Title / Contact Event','Placement','Status','Duration (s)','Active Duration (s)','Max Scroll (%)','Source']);
+    fputcsv($out, ['Record Type','Session','Journey Step','Time','URL / Page','Title / Contact Event','Placement','Status','Duration (s)','Active Duration (s)','Max Scroll (%)','Source']);
     $sources = [];
     foreach ($journey['sessions'] as $s) $sources[$s['session_id']] = vjt_source_label($s);
     $rows = [];

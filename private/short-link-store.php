@@ -223,7 +223,28 @@ function short_link_list(string $search = '', int $limit = 100): array {
     // permanent-delete operation above and remove their rows altogether.
     $sql .= " WHERE l.status != 'deleted'";
     $params = []; if ($search !== '') { $sql .= ' AND (l.code LIKE ? OR d.target_url LIKE ? OR l.label LIKE ? OR l.campaign LIKE ? OR l.recipient_ref LIKE ?)'; $like='%'.$search.'%'; $params=[$like,$like,$like,$like,$like]; }
-    $sql .= ' GROUP BY l.id ORDER BY l.created_at DESC LIMIT ' . $limit; $stmt=short_link_db()->prepare($sql); $stmt->execute($params); return $stmt->fetchAll();
+    $sql .= ' GROUP BY l.id ORDER BY l.created_at DESC, l.id DESC LIMIT ' . $limit; $stmt=short_link_db()->prepare($sql); $stmt->execute($params); return $stmt->fetchAll();
+}
+function short_link_tracking_neighbors(int $id, string $search = ''): array {
+    $search = short_link_text($search, 256);
+    $current = short_link_db()->prepare('SELECT id,created_at FROM short_links WHERE id = ? AND status != \'deleted\'');
+    $current->execute([$id]);
+    $row = $current->fetch();
+    if (!$row) return ['previous' => null, 'next' => null];
+
+    $where = " FROM short_links l JOIN short_link_destinations d ON d.id = l.destination_id WHERE l.status != 'deleted'";
+    $params = [];
+    if ($search !== '') {
+        $where .= ' AND (l.code LIKE ? OR d.target_url LIKE ? OR l.label LIKE ? OR l.campaign LIKE ? OR l.recipient_ref LIKE ?)';
+        $like = '%' . $search . '%';
+        $params = [$like, $like, $like, $like, $like];
+    }
+    $select = 'SELECT l.id,l.code';
+    $newer = short_link_db()->prepare($select . $where . ' AND (l.created_at > ? OR (l.created_at = ? AND l.id > ?)) ORDER BY l.created_at ASC, l.id ASC LIMIT 1');
+    $newer->execute(array_merge($params, [$row['created_at'], $row['created_at'], $row['id']]));
+    $older = short_link_db()->prepare($select . $where . ' AND (l.created_at < ? OR (l.created_at = ? AND l.id < ?)) ORDER BY l.created_at DESC, l.id DESC LIMIT 1');
+    $older->execute(array_merge($params, [$row['created_at'], $row['created_at'], $row['id']]));
+    return ['previous' => $newer->fetch() ?: null, 'next' => $older->fetch() ?: null];
 }
 function short_link_tracking(int $id, int $limit = 250): ?array {
     $link = short_link_get($id);
@@ -231,7 +252,19 @@ function short_link_tracking(int $id, int $limit = 250): ?array {
     $limit = max(1, min(500, $limit));
     $summary = short_link_db()->prepare("SELECT SUM(CASE WHEN event_kind='server_count' THEN 1 ELSE 0 END) AS opens, SUM(CASE WHEN event_kind='bot' THEN 1 ELSE 0 END) AS bots, MAX(opened_at) AS last_opened FROM short_link_events WHERE short_link_id = ?");
     $summary->execute([$id]);
-    $events = short_link_db()->prepare('SELECT opened_at,event_kind,recipient_ref_snapshot,country FROM short_link_events WHERE short_link_id = ? ORDER BY opened_at DESC, id DESC LIMIT ' . $limit);
+    // The event list contains confirmed opens only. Bot checks remain in the
+    // summary, while a recipient reference (when one was assigned) gets its
+    // own open total without treating anonymous visitors as identifiable.
+    $events = short_link_db()->prepare("SELECT e.opened_at,e.recipient_ref_snapshot,e.country,
+        CASE WHEN e.recipient_ref_snapshot != '' THEN (
+            SELECT COUNT(*) FROM short_link_events counted
+            WHERE counted.short_link_id = e.short_link_id
+              AND counted.event_kind = 'server_count'
+              AND counted.recipient_ref_snapshot = e.recipient_ref_snapshot
+        ) ELSE NULL END AS recipient_opens
+        FROM short_link_events e
+        WHERE e.short_link_id = ? AND e.event_kind = 'server_count'
+        ORDER BY e.opened_at DESC, e.id DESC LIMIT " . $limit);
     $events->execute([$id]);
     $locations = short_link_db()->prepare("SELECT country, COUNT(*) AS opens, MAX(opened_at) AS last_opened FROM short_link_events WHERE short_link_id = ? AND event_kind = 'server_count' AND country != '' GROUP BY country ORDER BY opens DESC, country ASC");
     $locations->execute([$id]);

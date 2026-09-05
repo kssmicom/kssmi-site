@@ -19,8 +19,8 @@ import hashlib
 import json
 import os
 import re
-import shutil
-from datetime import datetime
+import stat
+import tempfile
 
 VHOST_CONF = "/usr/local/lsws/conf/vhosts/kssmi.com/vhost.conf"
 DEFAULT_MANIFEST = "/home/kssmi.com/public_html/assets/runtime/manifest.json"
@@ -132,12 +132,29 @@ def main():
         print("OpenLiteSpeed cache contexts are already current; no changes made.")
         return 0
 
-    backup = VHOST_CONF + f".bak.{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-    shutil.copy2(VHOST_CONF, backup)
-    print(f"Backed up to {backup}")
-
-    with open(VHOST_CONF, "w", encoding="utf-8") as file:
-        file.write(content)
+    # Write a replacement beside the live file, then atomically swap it in.
+    # This preserves a valid vhost.conf at all times without accumulating
+    # .bak files on the production server.
+    original_stat = os.stat(VHOST_CONF)
+    temp_path = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            dir=os.path.dirname(VHOST_CONF),
+            prefix=".vhost.conf.",
+            delete=False,
+        ) as file:
+            temp_path = file.name
+            file.write(content)
+            file.flush()
+            os.fsync(file.fileno())
+        os.chmod(temp_path, stat.S_IMODE(original_stat.st_mode))
+        os.chown(temp_path, original_stat.st_uid, original_stat.st_gid)
+        os.replace(temp_path, VHOST_CONF)
+    finally:
+        if temp_path and os.path.exists(temp_path):
+            os.unlink(temp_path)
 
     print(f"Updated {VHOST_CONF}")
     print("Validate and restart with:")

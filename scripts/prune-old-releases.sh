@@ -96,4 +96,20 @@ if [ -d "$STATE_ROOT" ]; then
   done
 fi
 
+# The private-module snapshot exists solely to make rollback possible while a
+# newly activated release is being smoke-tested. Once finalization succeeded,
+# the deployment action invokes this pruner and rollback is no longer an
+# available path. Remove that snapshot from the current state as well: it is a
+# backup, whereas the remaining state files are only small deployment proof.
+current_private_backup="$STATE_ROOT/$RELEASE_ID/private-before"
+if [ -d "$current_private_backup" ]; then
+  if run_root rm -rf -- "$current_private_backup"; then
+    removed=$((removed+1))
+    echo "pruned finalized private snapshot: $RELEASE_ID/private-before"
+  else
+    failed=$((failed+1))
+    echo "WARN: could not prune finalized private snapshot: $RELEASE_ID/private-before" >&2
+  fi
+fi
+
 echo "Release prune complete: kept=$kept removed=$removed failed=$failed"
