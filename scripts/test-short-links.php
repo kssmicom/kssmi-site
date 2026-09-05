@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 $temp = sys_get_temp_dir() . '/kssmi-short-links-' . bin2hex(random_bytes(6));
 putenv('KSSMI_SHORTLINK_DATA_DIR=' . $temp);
-putenv('KSSMI_SHORTLINK_ALLOWED_HOSTS=gumlet.io,*.gumlet.io');
+putenv('KSSMI_SHORTLINK_ALLOWED_HOSTS=gumlet.io,*.gumlet.io,drive.google.com');
 require_once dirname(__DIR__) . '/private/short-link-store.php';
 
 function sl_assert(bool $condition, string $message): void { if (!$condition) throw new RuntimeException($message); }
@@ -13,6 +13,8 @@ try {
     sl_assert($first['destination']['normalized_url'] === 'https://video.gumlet.io/a.mp4', 'URL was not normalized.');
     $duplicate = short_link_destination_create('https://video.gumlet.io/a.mp4', 'test');
     sl_assert($duplicate['created'] === false && $duplicate['destination']['id'] === $first['destination']['id'], 'Duplicate destination was accepted.');
+    $driveFolder = short_link_destination_create('https://drive.google.com/drive/folders/1V-rHxJrk9P9zzs1Vrmt4KA1YMu7qsDbR', 'test');
+    sl_assert($driveFolder['created'] === true && $driveFolder['destination']['normalized_url'] === 'https://drive.google.com/drive/folders/1V-rHxJrk9P9zzs1Vrmt4KA1YMu7qsDbR', 'Google Drive folder was not accepted.');
     $link = short_link_create_distribution((int)$first['destination']['id'], ['label'=>'A', 'campaign'=>'Launch', 'recipient_ref'=>'CRM-1'], 'test');
     sl_assert(preg_match('/^[A-Z][A-Za-z0-9]{5}$/D', $link['code']) === 1, 'Generated code has the wrong format.');
     sl_assert(short_link_find_active($link['code']) !== null, 'Active link cannot be found.');

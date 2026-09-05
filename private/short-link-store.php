@@ -79,7 +79,7 @@ function short_link_text($value, int $max): string {
 function short_link_allowed_hosts(): array {
     $configured = getenv('KSSMI_SHORTLINK_ALLOWED_HOSTS');
     $hosts = $configured === false || trim($configured) === ''
-        ? ['gumlet.io', '*.gumlet.io', 'kssmi.com', '*.kssmi.com'] : explode(',', $configured);
+        ? ['gumlet.io', '*.gumlet.io', 'drive.google.com', 'kssmi.com', '*.kssmi.com'] : explode(',', $configured);
     return array_values(array_filter(array_map(static fn($host) => strtolower(trim($host)), $hosts)));
 }
 
