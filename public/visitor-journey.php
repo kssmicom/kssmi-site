@@ -880,7 +880,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         .short-target-copy { display:block; max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; border:0; padding:0; background:transparent; color:#8B7355; cursor:pointer; font:inherit; text-align:left; }
         .short-plain-copy { color:#333; }
         .short-target-copy:is(:hover, :focus-visible) { text-decoration:underline; outline:0; }
-        .short-target-copy.is-copied { color:#27734a; font-weight:600; }
+        .short-target-copy.is-copied { color:#27734a; font-weight:inherit; }
         .short-index { width:32px; color:#888; text-align:right; }
         .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
         #shortLinkMap { width:100%; height:clamp(320px,34vw,430px); box-sizing:border-box; border:1px solid #d5d9dd; border-radius:10px; background:#e8f0f7; overflow:hidden; }
