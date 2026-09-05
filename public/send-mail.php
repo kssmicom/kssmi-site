@@ -846,7 +846,7 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #f5f5f5; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
