@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "astro dev",
     "prebuild": "node scripts/validate-content.mjs && node scripts/validate-email-log-policy.mjs && node scripts/validate-interaction-policy.mjs && node src/scripts/generate-llms.js && node src/scripts/generate-sitemap.js",
-    "build": "astro build && node scripts/materialize-runtime-assets.mjs dist && node scripts/generate-csp-hashes.mjs dist && node scripts/validate-hreflang.mjs dist",
+    "build": "node scripts/prepare-short-link-map-assets.mjs && astro build && node scripts/materialize-runtime-assets.mjs dist && node scripts/generate-csp-hashes.mjs dist && node scripts/validate-hreflang.mjs dist",
     "preview": "astro preview",
     "astro": "astro",
     "validate": "node scripts/validate-content.mjs",
@@ -69,8 +69,11 @@
     "fuse.js": "^7.1.0",
     "gray-matter": "^4.0.3",
     "js-yaml": "^4.1.1",
+    "leaflet": "^1.9.4",
     "tailwindcss": "^4.0.0",
-    "typescript": "^5.9.3"
+    "topojson-client": "^3.1.0",
+    "typescript": "^5.9.3",
+    "world-atlas": "^2.0.2"
   },
   "devDependencies": {
     "pagefind": "^1.4.0"
