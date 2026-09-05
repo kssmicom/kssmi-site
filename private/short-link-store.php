@@ -132,13 +132,14 @@ function short_link_destination_create(string $url, string $admin): array {
         $stmt->execute([$normalized['target_url'], $normalized['normalized_url'], short_link_now(), $admin]);
         $id = (int)$db->lastInsertId();
         short_link_commit($db);
-        return ['created' => true, 'destination' => short_link_destination_get($id)];
+        return ['created' => true, 'destination' => short_link_destination_get($id), 'distribution_count' => 0];
     } catch (PDOException $error) {
         short_link_rollback($db);
         if (str_contains($error->getMessage(), 'UNIQUE constraint failed')) {
             $stmt = $db->prepare('SELECT * FROM short_link_destinations WHERE normalized_url = ?');
             $stmt->execute([$normalized['normalized_url']]);
-            return ['created' => false, 'destination' => $stmt->fetch() ?: null];
+            $destination = $stmt->fetch() ?: null;
+            return ['created' => false, 'destination' => $destination, 'distribution_count' => $destination ? short_link_destination_distribution_count((int)$destination['id']) : 0];
         }
         throw $error;
     }
@@ -147,6 +148,11 @@ function short_link_destination_create(string $url, string $admin): array {
 function short_link_destination_get(int $id): ?array {
     $stmt = short_link_db()->prepare('SELECT * FROM short_link_destinations WHERE id = ?'); $stmt->execute([$id]);
     return $stmt->fetch() ?: null;
+}
+function short_link_destination_distribution_count(int $destinationId): int {
+    $stmt = short_link_db()->prepare("SELECT COUNT(*) FROM short_links WHERE destination_id = ? AND status != 'deleted'");
+    $stmt->execute([$destinationId]);
+    return (int)$stmt->fetchColumn();
 }
 
 function short_link_code(): string {

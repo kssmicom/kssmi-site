@@ -12,12 +12,14 @@ try {
     sl_assert($first['created'] === true, 'First destination should be created.');
     sl_assert($first['destination']['normalized_url'] === 'https://video.gumlet.io/a.mp4', 'URL was not normalized.');
     $duplicate = short_link_destination_create('https://video.gumlet.io/a.mp4', 'test');
-    sl_assert($duplicate['created'] === false && $duplicate['destination']['id'] === $first['destination']['id'], 'Duplicate destination was accepted.');
+    sl_assert($duplicate['created'] === false && $duplicate['destination']['id'] === $first['destination']['id'] && (int)$duplicate['distribution_count'] === 0, 'Duplicate destination was accepted.');
     $driveFolder = short_link_destination_create('https://drive.google.com/drive/folders/1V-rHxJrk9P9zzs1Vrmt4KA1YMu7qsDbR', 'test');
     sl_assert($driveFolder['created'] === true && $driveFolder['destination']['normalized_url'] === 'https://drive.google.com/drive/folders/1V-rHxJrk9P9zzs1Vrmt4KA1YMu7qsDbR', 'Google Drive folder was not accepted.');
     $link = short_link_create_distribution((int)$first['destination']['id'], ['label'=>'A', 'campaign'=>'Launch', 'recipient_ref'=>'CRM-1'], 'test');
     sl_assert(preg_match('/^[A-Z][A-Za-z0-9]{5}$/D', $link['code']) === 1, 'Generated code has the wrong format.');
     sl_assert(short_link_find_active($link['code']) !== null, 'Active link cannot be found.');
+    $existing = short_link_destination_create('https://video.gumlet.io/a.mp4', 'test');
+    sl_assert((int)$existing['distribution_count'] === 1, 'Existing destination distribution count is incorrect.');
     $nextLink = short_link_create_distribution((int)$first['destination']['id'], ['label'=>'B', 'campaign'=>'Launch', 'recipient_ref'=>'CRM-2'], 'test');
     $neighbors = short_link_tracking_neighbors((int)$link['id']);
     sl_assert((int)$neighbors['previous']['id'] === (int)$nextLink['id'] && $neighbors['next'] === null, 'Older link navigation is incorrect.');
