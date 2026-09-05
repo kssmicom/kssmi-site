@@ -698,7 +698,10 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; padding: 14px 20px; color: #333; overflow-y: scroll; }
+        html { scrollbar-gutter: stable; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; min-width:320px; padding: 14px 20px; color: #333; overflow-x:hidden; overflow-y:scroll; }
+        button, input, select, textarea { font: inherit; max-width: 100%; }
+        img, svg, video, canvas { max-width: 100%; height: auto; }
         .container { width: 100%; max-width: 1500px; min-width: 0; margin: 0 auto; }
         h1 { color: #5D4E37; }
         .subtitle { color: #888; }
@@ -718,8 +721,9 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         .header-right { display: flex; gap: 6px; align-items: center; }
 
         /* Tabs */
-        .tabs { display: flex; gap: 0; margin-bottom: 14px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-        .tab { padding: 10px 20px; text-decoration: none; color: #666; font-weight: 500; font-size: 13px; transition: all 0.15s; border-bottom: 3px solid transparent; }
+        .tabs { display: flex; gap: 0; margin-bottom: 14px; background: white; border-radius: 8px; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; -webkit-overflow-scrolling: touch; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .tabs::-webkit-scrollbar { display: none; }
+        .tab { flex: 0 0 auto; padding: 10px 20px; text-decoration: none; color: #666; font-weight: 500; font-size: 13px; white-space: nowrap; transition: color 0.15s, background-color 0.15s, border-color 0.15s; border-bottom: 3px solid transparent; }
         .tab:is(:hover, :active, :focus-visible, :focus-within) { color: #5D4E37; background: #faf9f7; }
         .tab.active { color: #5D4E37; border-bottom-color: #8B7355; background: #faf9f7; }
 
@@ -753,7 +757,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         .panel-body { min-width: 0; max-width: 100%; padding: 16px; }
 
         /* Tables */
-        .table-wrapper { width: 100%; max-width: 100%; min-width: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
+        .table-wrapper { width: 100%; max-width: 100%; min-width: 0; overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
         .table-wrapper table { min-width: 640px; }
         .table-wrapper.table-compact table { min-width: 420px; }
         .table-wrapper.table-wide table { min-width: 720px; }
@@ -866,7 +870,6 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         /* Mobile responsive */
         @media (max-width: 768px) {
             .stats { grid-template-columns: repeat(2, 1fr); }
-            .tabs { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; }
             .tab { padding: 10px 12px; font-size: 12px; white-space: nowrap; }
             .filter-disclosure { margin: 0 0 12px; }
             .filter-disclosure > summary {

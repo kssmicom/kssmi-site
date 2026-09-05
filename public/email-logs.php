@@ -845,8 +845,11 @@ function resendEmail($log) {
     <title>Email Logs - KSSMI</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; padding: 14px 20px; color: #333; }
-        .container { width: 100%; max-width: 1500px; margin: 0 auto; }
+        html { scrollbar-gutter: stable; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; min-width:320px; padding: 14px 20px; color: #333; overflow-x:hidden; overflow-y:scroll; }
+        button, input, select, textarea { font: inherit; max-width: 100%; }
+        img, svg, video, canvas { max-width: 100%; height: auto; }
+        .container { width: 100%; max-width: 1500px; min-width:0; margin: 0 auto; }
         h1 { color: #5D4E37; }
         .subtitle { color: #888; }
 
@@ -867,7 +870,7 @@ function resendEmail($log) {
         .header-left { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
         .header-left h1 { font-size: 16px; font-weight: 700; color: #5D4E37; white-space: nowrap; }
         .header-left .subtitle { font-size: 13px; color: #888; }
-        .header-right { display: flex; gap: 6px; align-items: center; }
+        .header-right { display: flex; gap: 6px; align-items: center; min-width: 0; flex-wrap: wrap; justify-content: flex-end; }
 
         /* Buttons */
         .btn { padding: 6px 14px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; font-size: 12px; display: inline-block; font-weight: 500; }
@@ -888,8 +891,8 @@ function resendEmail($log) {
 
         /* Stats */
         .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 14px; }
-        .stat-card { background: white; padding: 18px 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border-top: 3px solid #8B7355; transition: box-shadow 0.2s, transform 0.2s; display: flex; flex-direction: column; justify-content: center; height: 100%; box-sizing: border-box; }
-        .stat-card:is(:hover, :active, :focus-visible, :focus-within) { box-shadow: 0 4px 16px rgba(0,0,0,0.1); transform: translateY(-1px); }
+        .stat-card { background: white; padding: 18px 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border-top: 3px solid #8B7355; transition: box-shadow 0.2s; display: flex; flex-direction: column; justify-content: center; height: 100%; box-sizing: border-box; }
+        .stat-card:is(:hover, :active, :focus-visible, :focus-within) { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
         .stat-card h3 { font-size: 10px; text-transform: uppercase; color: #888; margin: 0 0 6px 0; letter-spacing: 0.8px; line-height: 1.3; }
         .stat-card .value { font-size: 28px; font-weight: 700; color: #5D4E37; line-height: 1.2; }
         .stat-card .sub { font-size: 12px; color: #888; margin-top: 6px; }
@@ -899,12 +902,13 @@ function resendEmail($log) {
         .stat-card.failed .value { color: #e74c3c; }
 
         /* Panels */
-        .panel { background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 14px; }
-        .panel-header { padding: 12px 16px; border-bottom: 1px solid #eee; font-weight: 600; color: #5D4E37; font-size: 13px; display: flex; justify-content: space-between; align-items: center; }
-        .panel-body { padding: 16px; }
+        .panel { min-width:0; max-width:100%; background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 14px; }
+        .panel-header { min-width:0; padding: 12px 16px; border-bottom: 1px solid #eee; font-weight: 600; color: #5D4E37; font-size: 13px; display: flex; justify-content: space-between; align-items: center; gap:8px; }
+        .panel-body { min-width:0; max-width:100%; padding: 16px; }
 
         /* Tables */
-        .table-wrapper { overflow-x: auto; }
+        .table-wrapper { width:100%; max-width:100%; min-width:0; overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch; overscroll-behavior-x:contain; }
+        .table-wrapper table { min-width:720px; }
         table { width: 100%; border-collapse: collapse; font-size: 13px; }
         th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #eee; }
         th { background: #f8f8f8; font-weight: 600; color: #5D4E37; font-size: 10px; text-transform: uppercase; white-space: nowrap; }
