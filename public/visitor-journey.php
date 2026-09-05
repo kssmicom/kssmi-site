@@ -2414,7 +2414,20 @@ function shortPermanentlyDelete(id,code) { var expected='DELETE '+code, value=wi
 <script src="/vendor/short-link-map/leaflet.js"></script>
 <script src="/vendor/short-link-map/topojson-client.min.js"></script>
 <script>
-(function(){var node=document.getElementById('shortLinkMap');if(!node||!window.L||!window.topojson)return;var rows;try{rows=JSON.parse(node.dataset.locations||'[]');}catch(e){return;}var map=L.map(node,{scrollWheelZoom:true,worldCopyJump:false,zoomControl:false,attributionControl:false,zoomSnap:.25,zoomDelta:.5,maxBoundsViscosity:1});fetch('/vendor/short-link-map/countries-110m.json',{cache:'force-cache'}).then(function(r){return r.json();}).then(function(world){var countries=L.geoJSON(topojson.feature(world,world.objects.countries),{style:{color:'#9aa0a6',weight:.8,fillColor:'#f7f7f5',fillOpacity:1,opacity:1},interactive:false}).addTo(map),bounds=countries.getBounds();map.fitBounds(bounds,{padding:[6,6],animate:false});map.setMinZoom(map.getZoom());map.setMaxZoom(7);map.setMaxBounds(L.latLngBounds([[-85,-180],[85,180]]));rows.forEach(function(row){var point=({CN:[35,103],US:[39,-98],CA:[56,-106],MX:[23,-102],BR:[-10,-55],GB:[55,-3],FR:[46,2],DE:[51,10],ES:[40,-4],IT:[42,12],RU:[61,105],TR:[39,35],IN:[21,79],JP:[36,138],KR:[36,128],ID:[-2,118],TH:[15,101],VN:[16,108],SG:[1,104],AU:[-25,134],ZA:[-30,25]}[row.country]);if(!point)return;L.circleMarker(point,{radius:Math.min(14,5+Math.sqrt(Number(row.opens)||1)*2),color:'#fff',weight:2,fillColor:'#1a73e8',fillOpacity:.9}).bindTooltip(row.country+' · '+row.opens+' opens',{direction:'top'}).addTo(map);});setTimeout(function(){map.invalidateSize(false);map.fitBounds(bounds,{padding:[6,6],animate:false});map.setMinZoom(map.getZoom());},0);}).catch(function(){node.textContent='Map data could not be loaded.';});})();
+(function(){
+  var node=document.getElementById('shortLinkMap');if(!node||!window.L||!window.topojson)return;
+  var rows;try{rows=JSON.parse(node.dataset.locations||'[]');}catch(e){return;}
+  var map=L.map(node,{scrollWheelZoom:true,worldCopyJump:false,zoomControl:false,attributionControl:false,zoomSnap:.25,zoomDelta:.5,maxBoundsViscosity:1});
+  function unwrapRing(ring){var output=[];ring.forEach(function(point,index){var longitude=point[0];if(index){var previous=output[index-1][0];while(longitude-previous>180)longitude-=360;while(longitude-previous<-180)longitude+=360;}output.push([longitude,point[1]]);});return output;}
+  function unwrapFeature(feature){var geometry=feature.geometry;if(geometry.type==='Polygon')geometry.coordinates=geometry.coordinates.map(unwrapRing);if(geometry.type==='MultiPolygon')geometry.coordinates=geometry.coordinates.map(function(polygon){return polygon.map(unwrapRing);});return feature;}
+  fetch('/vendor/short-link-map/countries-110m.json',{cache:'force-cache'}).then(function(r){return r.json();}).then(function(world){
+    var features=topojson.feature(world,world.objects.countries).features.filter(function(feature){return String(feature.id)!=='010'&&String(feature.id)!=='260';}).map(unwrapFeature);
+    var countries=L.geoJSON({type:'FeatureCollection',features:features},{style:{color:'#9aa0a6',weight:.8,fillColor:'#f7f7f5',fillOpacity:1,opacity:1},interactive:false}).addTo(map),bounds=countries.getBounds();
+    map.fitBounds(bounds,{padding:[6,6],animate:false});map.setMinZoom(map.getZoom());map.setMaxZoom(7);map.setMaxBounds(bounds.pad(.05));
+    rows.forEach(function(row){var point=({CN:[35,103],US:[39,-98],CA:[56,-106],MX:[23,-102],BR:[-10,-55],GB:[55,-3],FR:[46,2],DE:[51,10],ES:[40,-4],IT:[42,12],RU:[61,105],TR:[39,35],IN:[21,79],JP:[36,138],KR:[36,128],ID:[-2,118],TH:[15,101],VN:[16,108],SG:[1,104],AU:[-25,134],ZA:[-30,25]}[row.country]);if(!point)return;L.circleMarker(point,{radius:Math.min(14,5+Math.sqrt(Number(row.opens)||1)*2),color:'#fff',weight:2,fillColor:'#1a73e8',fillOpacity:.9}).bindTooltip(row.country+' · '+row.opens+' opens',{direction:'top'}).addTo(map);});
+    setTimeout(function(){map.invalidateSize(false);map.fitBounds(bounds,{padding:[6,6],animate:false});map.setMinZoom(map.getZoom());},0);
+  }).catch(function(){node.textContent='Map data could not be loaded.';});
+})();
 </script>
 </body>
 </html>
