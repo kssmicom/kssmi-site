@@ -24,7 +24,8 @@ try {
     short_link_record_open((int)$link['id'], 'CRM-1', false, 'US');
     short_link_record_open((int)$link['id'], 'CRM-1', false, 'US');
     short_link_record_open((int)$link['id'], 'CRM-2', true, 'CA');
-    sl_assert((int)short_link_list()[0]['opens'] === 2, 'Open was not counted.');
+    $listedLink = array_values(array_filter(short_link_list(), fn($candidate) => (int)$candidate['id'] === (int)$link['id']))[0] ?? null;
+    sl_assert($listedLink !== null && (int)$listedLink['opens'] === 2, 'Open was not counted.');
     $tracking = short_link_tracking((int)$link['id']);
     sl_assert($tracking !== null && (int)$tracking['summary']['opens'] === 2 && (int)$tracking['summary']['bots'] === 1, 'Tracking summary is incorrect.');
     sl_assert(count($tracking['events']) === 2 && $tracking['events'][0]['recipient_ref_snapshot'] === 'CRM-1' && $tracking['events'][0]['country'] === 'US' && (int)$tracking['events'][0]['recipient_opens'] === 2, 'Tracking event was not returned with its recipient open total.');
