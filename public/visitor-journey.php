@@ -179,6 +179,7 @@ if ($isAuthenticated && $tab === 'short-links') {
     }
     catch (Throwable $e) { $message = 'Short-link storage is unavailable.'; $messageClass = 'error'; error_log('KSSMI short-link dashboard failure'); }
 }
+$shortLinkMapVisible = $shortLinkTracking !== null && !empty($shortLinkTracking['locations']);
 
 // Resolve any pending geo lookups off the visitor ingest path (admin-only).
 // Backfills country/city for IPs collected since the last dashboard view.
@@ -972,7 +973,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
             .login-box { margin: 40px auto; padding: 24px; }
         }
     </style>
-    <link rel="stylesheet" href="/vendor/short-link-map/leaflet.css">
+    <?php if ($shortLinkMapVisible): ?><link rel="stylesheet" href="/vendor/short-link-map/leaflet.css"><?php endif; ?>
 </head>
 <body>
     <div class="container">
@@ -2411,6 +2412,7 @@ function shortSetStatus(id,status) { var message=status==='archived'?'Archive th
 function shortPermanentlyDelete(id,code) { var expected='DELETE '+code, value=window.prompt('This permanently removes the link and its open-event data. Type '+expected+' to continue:'); if(value!==expected)return;shortApi({action:'permanent-delete',id:id,confirmation:value}).then(function(){location.reload();}).catch(function(e){alert(e.message);}); }
 (function(){var d=document.getElementById('shortDestinationForm'),f=document.getElementById('shortDistributionForm');if(!d||!f)return;d.addEventListener('submit',function(e){e.preventDefault();shortDestinationMessage('Checking destination…');shortApi({action:'destination',target_url:document.getElementById('shortTarget').value}).then(function(r){var destination=r.body.destination;if(!destination)throw new Error('No destination returned.');document.getElementById('shortDestinationId').value=destination.id;f.hidden=false;f.style.display='flex';shortDestinationMessage(r.status===409?'This destination already exists. Create a customer/campaign distribution link below.':'Destination registered. Create its first distribution link below.');}).catch(function(err){shortDestinationMessage(err.message,true);});});f.addEventListener('submit',function(e){e.preventDefault();shortApi({action:'distribution',destination_id:document.getElementById('shortDestinationId').value,label:document.getElementById('shortLabel').value,campaign:document.getElementById('shortCampaign').value,recipient_ref:document.getElementById('shortRecipient').value}).then(function(r){shortDestinationMessage('Created https://kssmi.com/'+r.body.link.code);shortCopy('https://kssmi.com/'+r.body.link.code);setTimeout(function(){location.reload();},500);}).catch(function(err){shortDestinationMessage(err.message,true);});});})();
 </script>
+<?php if ($shortLinkMapVisible): ?>
 <script src="/vendor/short-link-map/leaflet.js"></script>
 <script src="/vendor/short-link-map/topojson-client.min.js"></script>
 <script>
@@ -2429,5 +2431,6 @@ function shortPermanentlyDelete(id,code) { var expected='DELETE '+code, value=wi
   }).catch(function(){node.textContent='Map data could not be loaded.';});
 })();
 </script>
+<?php endif; ?>
 </body>
 </html>
