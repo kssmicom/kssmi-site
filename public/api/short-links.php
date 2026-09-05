@@ -19,7 +19,7 @@ if (!kssmi_admin_csrf_valid($input['csrf_token'] ?? null)) { http_response_code(
 require_once dirname(__DIR__, 2) . '/private/rate-limit.php';
 if (!checkRateLimit('short-links-admin', 60, 300)) { http_response_code(429); echo '{"error":"Too many requests."}'; exit; }
 try {
-    $action = $input['action'] ?? ''; $admin = 'kssmi@kssmi.com';
+    $action = $input['action'] ?? ''; $admin = 'sales@kssmi.com';
     if ($action === 'destination') { $result = short_link_destination_create((string)($input['target_url'] ?? ''), $admin); if (!$result['created']) { http_response_code(409); } echo json_encode($result, JSON_THROW_ON_ERROR); exit; }
     if ($action === 'distribution') { $link = short_link_create_distribution((int)($input['destination_id'] ?? 0), $input, $admin); echo json_encode(['link'=>$link], JSON_THROW_ON_ERROR); exit; }
     if ($action === 'status') { short_link_set_status((int)($input['id'] ?? 0), (string)($input['status'] ?? ''), $admin); echo '{"ok":true}'; exit; }

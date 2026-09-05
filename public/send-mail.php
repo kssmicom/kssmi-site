@@ -113,14 +113,14 @@ $config = [
     // Email Settings
     'to_email' => 'sales@kssmi.com',
     'to_name' => 'KSSMI Sales Team',
-    'from_email' => 'kssmi@kssmi.com',
+    'from_email' => 'sales@kssmi.com',
     'from_name' => 'Kssmi Eyewear',
 
     // Gmail Workspace SMTP Settings
     'smtp' => [
         'host' => 'smtp.gmail.com',
         'port' => 587,
-        'user' => 'kssmi@kssmi.com',
+        'user' => 'sales@kssmi.com',
         'pass' => $_privateCfg['smtp_pass'],
         'secure' => 'tls',
     ],
@@ -846,6 +846,7 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #f5f5f5; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
@@ -1217,6 +1218,7 @@ try {
     $mail->Password = $config['smtp']['pass'];
     $mail->SMTPSecure = $config['smtp']['secure'];
     $mail->Port = $config['smtp']['port'];
+    $mail->CharSet = 'UTF-8';
 
     // Sender & Recipient
     $mail->setFrom($config['from_email'], $config['from_name']);

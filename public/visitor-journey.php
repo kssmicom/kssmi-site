@@ -84,7 +84,7 @@ require_once __DIR__ . '/api/vjt-helpers.php';
 define('PASSWORD_FILE_OLD', __DIR__ . '/.email_logs_password');
 define('PASSWORD_FILE', dirname(__DIR__) . '/.email_logs_password');
 define('CREDENTIAL_VERSION_FILE', kssmi_admin_credential_version_path(PASSWORD_FILE));
-define('ADMIN_EMAIL', 'kssmi@kssmi.com');
+define('ADMIN_EMAIL', 'sales@kssmi.com');
 
 // Migrate password file if it still lives inside public_html
 if (file_exists(PASSWORD_FILE_OLD) && !file_exists(PASSWORD_FILE)) {

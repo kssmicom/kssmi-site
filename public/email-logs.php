@@ -63,7 +63,7 @@ define('LOGS_FILE', dirname(dirname(__FILE__)) . '/email_data/email-logs.json');
 define('RESET_TOKENS_FILE_OLD', dirname(__FILE__) . '/.email_reset_tokens.json');
 define('RESET_TOKENS_FILE', dirname(__DIR__) . '/.email_reset_tokens.json');
 define('CREDENTIAL_VERSION_FILE', kssmi_admin_credential_version_path(PASSWORD_FILE));
-define('ADMIN_EMAIL', 'kssmi@kssmi.com');
+define('ADMIN_EMAIL', 'sales@kssmi.com');
 require_once dirname(__DIR__) . '/private/email-log-store.php';
 
 // Migrate sensitive files from public_html to the safe directory above it
@@ -180,8 +180,8 @@ function sendResetEmail($token) {
     $textBody = "Password Reset Request\n\nClick this link to reset your password:\n{$resetUrl}\n\nThis link expires in 1 hour.";
 
     $headers = [
-        'From: KSSMI Website <kssmi@kssmi.com>',
-        'Reply-To: kssmi@kssmi.com',
+        'From: KSSMI Website <sales@kssmi.com>',
+        'Reply-To: sales@kssmi.com',
         'X-Mailer: PHP/' . phpversion(),
         'MIME-Version: 1.0',
         'Content-Type: text/html; charset=UTF-8',
@@ -201,12 +201,13 @@ function sendResetEmail($token) {
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'kssmi@kssmi.com';
+            $mail->Username = 'sales@kssmi.com';
             $mail->Password = $_privateCfg['smtp_pass'];
             $mail->SMTPSecure = 'tls';
             $mail->Port = 587;
+            $mail->CharSet = 'UTF-8';
 
-            $mail->setFrom('kssmi@kssmi.com', 'KSSMI Website');
+            $mail->setFrom('sales@kssmi.com', 'KSSMI Website');
             $mail->addAddress(ADMIN_EMAIL);
 
             $mail->isHTML(true);
@@ -769,8 +770,8 @@ function resendEmail($log) {
     $textBody = buildResendTextEmail($formData, $ip, $country, $inquiryId, $origTime);
 
     $headers = [
-        'From: Kssmi Eyewear <kssmi@kssmi.com>',
-        'Reply-To: kssmi@kssmi.com',
+        'From: Kssmi Eyewear <sales@kssmi.com>',
+        'Reply-To: sales@kssmi.com',
         'X-Mailer: PHP/' . phpversion(),
         'MIME-Version: 1.0',
         'Content-Type: text/html; charset=UTF-8',
@@ -789,12 +790,13 @@ function resendEmail($log) {
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'kssmi@kssmi.com';
+            $mail->Username = 'sales@kssmi.com';
             $mail->Password = $_privateCfg['smtp_pass'];
             $mail->SMTPSecure = 'tls';
             $mail->Port = 587;
+            $mail->CharSet = 'UTF-8';
 
-            $mail->setFrom('kssmi@kssmi.com', 'Kssmi Eyewear');
+            $mail->setFrom('sales@kssmi.com', 'Kssmi Eyewear');
             $mail->addAddress('sales@kssmi.com', 'KSSMI Sales Team');
 
             if (!empty($formData['email'])) {
