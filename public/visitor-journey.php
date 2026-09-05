@@ -793,8 +793,8 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         /* Bar chart */
         .bar-chart { display: flex; align-items: flex-end; gap: 6px; height: 140px; padding: 0 10px; }
         .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; min-width: 0; }
-        .bar { background: #8B7355; width: 100%; max-width: 40px; border-radius: 3px 3px 0 0; min-height: 2px; transition: all 0.2s ease; cursor: pointer; }
-        .bar:is(:hover, :active, :focus-visible, :focus-within) { background: #5D4E37; opacity: 0.85; transform: scaleY(1.05); transform-origin: bottom; }
+        .bar { background: #8B7355; width: 100%; max-width: 40px; border-radius: 3px 3px 0 0; min-height: 2px; transition: background-color 0.2s ease, opacity 0.2s ease; cursor: pointer; }
+        .bar:is(:hover, :active, :focus-visible, :focus-within) { background: #5D4E37; opacity: 0.85; }
         .bar-label { font-size: 9px; color: #888; margin-top: 4px; transform: rotate(-45deg); transform-origin: top left; white-space: nowrap; }
         .bar-value { font-size: 10px; color: #5D4E37; font-weight: 600; margin-bottom: 4px; }
         .bar-chart-scroll { max-width: 100%; overflow-x: auto; }
@@ -807,7 +807,7 @@ function vjtPagination($pageParam, $currentPage, $totalPages, $baseParams) {
         .bar-core:is(:hover, :active, :focus-visible, :focus-within) { background: #8B7355; }
 
         /* Trend sub-tabs */
-        .trend-tab { padding: 3px 10px; border-radius: 4px; text-decoration: none; font-size: 11px; font-weight: 500; color: #888; background: #f0f0f0; transition: all 0.15s; }
+        .trend-tab { padding: 3px 10px; border-radius: 4px; text-decoration: none; font-size: 11px; font-weight: 500; color: #888; background: #f0f0f0; transition: color 0.15s, background-color 0.15s; }
         .trend-tab:is(:hover, :active, :focus-visible, :focus-within) { color: #5D4E37; background: #e0d8cc; }
         .trend-tab-active { background: #8B7355; color: white; }
         .trend-tab-active:is(:hover, :active, :focus-visible, :focus-within) { background: #5D4E37; color: white; }
