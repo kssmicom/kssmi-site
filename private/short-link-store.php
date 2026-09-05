@@ -223,7 +223,7 @@ function short_link_list(string $search = '', int $limit = 100): array {
     // permanent-delete operation above and remove their rows altogether.
     $sql .= " WHERE l.status != 'deleted'";
     $params = []; if ($search !== '') { $sql .= ' AND (l.code LIKE ? OR d.target_url LIKE ? OR l.label LIKE ? OR l.campaign LIKE ? OR l.recipient_ref LIKE ?)'; $like='%'.$search.'%'; $params=[$like,$like,$like,$like,$like]; }
-    $sql .= ' GROUP BY l.id ORDER BY l.created_at DESC, l.id DESC LIMIT ' . $limit; $stmt=short_link_db()->prepare($sql); $stmt->execute($params); return $stmt->fetchAll();
+    $sql .= ' GROUP BY l.id ORDER BY l.created_at ASC, l.id ASC LIMIT ' . $limit; $stmt=short_link_db()->prepare($sql); $stmt->execute($params); return $stmt->fetchAll();
 }
 function short_link_tracking_neighbors(int $id, string $search = ''): array {
     $search = short_link_text($search, 256);
