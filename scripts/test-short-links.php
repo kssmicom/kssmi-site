@@ -21,6 +21,10 @@ try {
     $existing = short_link_destination_create('https://video.gumlet.io/a.mp4', 'test');
     sl_assert((int)$existing['distribution_count'] === 1, 'Existing destination distribution count is incorrect.');
     $nextLink = short_link_create_distribution((int)$first['destination']['id'], ['label'=>'B', 'campaign'=>'Launch', 'recipient_ref'=>'CRM-2'], 'test');
+    sl_assert(short_link_count() === 2, 'Short-link count is incorrect.');
+    $newestPage = short_link_list('', 1, 0);
+    $oldestPage = short_link_list('', 1, 1);
+    sl_assert((int)$newestPage[0]['id'] === (int)$nextLink['id'] && (int)$oldestPage[0]['id'] === (int)$link['id'], 'Short-link pagination order is incorrect.');
     $neighbors = short_link_tracking_neighbors((int)$link['id']);
     sl_assert((int)$neighbors['previous']['id'] === (int)$nextLink['id'] && $neighbors['next'] === null, 'Older link navigation is incorrect.');
     $neighbors = short_link_tracking_neighbors((int)$nextLink['id']);

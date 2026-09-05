@@ -222,14 +222,22 @@ function short_link_permanently_delete(int $id, string $confirmation, string $ad
         short_link_commit($db);
     } catch (Throwable $error) { short_link_rollback($db); throw $error; }
 }
-function short_link_list(string $search = '', int $limit = 100): array {
-    $search = short_link_text($search, 256); $limit = max(1, min(250, $limit));
+function short_link_count(string $search = ''): int {
+    $search = short_link_text($search, 256);
+    $sql = "SELECT COUNT(*) FROM short_links l JOIN short_link_destinations d ON d.id=l.destination_id WHERE l.status != 'deleted'";
+    $params = [];
+    if ($search !== '') { $sql .= ' AND (l.code LIKE ? OR d.target_url LIKE ? OR l.label LIKE ? OR l.campaign LIKE ? OR l.recipient_ref LIKE ?)'; $like='%'.$search.'%'; $params=[$like,$like,$like,$like,$like]; }
+    $stmt = short_link_db()->prepare($sql); $stmt->execute($params);
+    return (int)$stmt->fetchColumn();
+}
+function short_link_list(string $search = '', int $limit = 100, int $offset = 0): array {
+    $search = short_link_text($search, 256); $limit = max(1, min(250, $limit)); $offset = max(0, $offset);
     $sql = "SELECT l.*,d.target_url, SUM(CASE WHEN e.event_kind='server_count' THEN 1 ELSE 0 END) AS opens, SUM(CASE WHEN e.event_kind='bot' THEN 1 ELSE 0 END) AS bots, MAX(e.opened_at) AS last_opened FROM short_links l JOIN short_link_destinations d ON d.id=l.destination_id LEFT JOIN short_link_events e ON e.short_link_id=l.id";
     // Hide any legacy soft-deleted rows; all new user-facing deletions use the
     // permanent-delete operation above and remove their rows altogether.
     $sql .= " WHERE l.status != 'deleted'";
     $params = []; if ($search !== '') { $sql .= ' AND (l.code LIKE ? OR d.target_url LIKE ? OR l.label LIKE ? OR l.campaign LIKE ? OR l.recipient_ref LIKE ?)'; $like='%'.$search.'%'; $params=[$like,$like,$like,$like,$like]; }
-    $sql .= ' GROUP BY l.id ORDER BY l.created_at DESC, l.id DESC LIMIT ' . $limit; $stmt=short_link_db()->prepare($sql); $stmt->execute($params); return $stmt->fetchAll();
+    $sql .= ' GROUP BY l.id ORDER BY l.created_at DESC, l.id DESC LIMIT ' . $limit . ' OFFSET ' . $offset; $stmt=short_link_db()->prepare($sql); $stmt->execute($params); return $stmt->fetchAll();
 }
 function short_link_tracking_neighbors(int $id, string $search = ''): array {
     $search = short_link_text($search, 256);
