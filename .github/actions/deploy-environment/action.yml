@@ -179,11 +179,24 @@ runs:
         check_status() {
           local url="$1"
           local expected_codes="$2"
-          local actual
-          actual="$(curl --fail-with-body --show-error --silent --connect-timeout 5 --max-time 15 \
-            -o /dev/null -w '%{http_code}' "$url" || true)"
-          echo "$url -> $actual (expected one of: $expected_codes)"
-          [[ " $expected_codes " == *" $actual "* ]]
+          local actual attempt
+          for attempt in 1 2 3; do
+            actual="$(curl --fail-with-body --show-error --silent --connect-timeout 5 --max-time 15 \
+              -o /dev/null -w '%{http_code}' "$url" || true)"
+            if [[ " $expected_codes " == *" $actual "* ]]; then
+              echo "$url -> $actual (expected one of: $expected_codes)"
+              return 0
+            fi
+            # A 000 is a transport failure (for example, a Cloudflare peer
+            # reset), not an HTTP response. Retry only that transient case;
+            # a real unexpected HTTP status must still fail immediately.
+            if [ "$actual" != 000 ] || [ "$attempt" = 3 ]; then
+              echo "$url -> $actual (expected one of: $expected_codes)"
+              return 1
+            fi
+            echo "$url -> 000 (transport retry $attempt/3)" >&2
+            sleep "$attempt"
+          done
         }
         assert_single_cache_control() {
           local url="$1"
