@@ -1034,10 +1034,6 @@ function resendEmail($log) {
 
                     <!-- Forgot Password Form -->
                     <div id="forgotForm" style="display:none;margin-top:20px;padding-top:20px;border-top:1px solid #eee;">
-                        <p style="color:#666;font-size:14px;margin-bottom:15px;">
-                            Click the button below to send a password reset link to:<br>
-                            <strong><?php echo htmlspecialchars(ADMIN_EMAIL); ?></strong>
-                        </p>
                         <form method="POST">
                             <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
                             <button type="submit" name="request_reset" class="secondary">Send Reset Link</button>
