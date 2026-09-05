@@ -185,9 +185,11 @@ function short_link_find_active(string $code): ?array {
     if (preg_match('/^[A-Z][A-Za-z0-9]{5}$/D', $code) !== 1) return null;
     $stmt = short_link_db()->prepare("SELECT l.*,d.target_url FROM short_links l JOIN short_link_destinations d ON d.id=l.destination_id WHERE l.code=? AND l.status='active'"); $stmt->execute([$code]); return $stmt->fetch() ?: null;
 }
-function short_link_record_open(int $id, string $recipient, bool $bot): void {
-    $stmt = short_link_db()->prepare('INSERT INTO short_link_events(short_link_id,opened_at,event_kind,recipient_ref_snapshot) VALUES(?,?,?,?)');
-    $stmt->execute([$id, short_link_now(), $bot ? 'bot' : 'server_count', $recipient]);
+function short_link_record_open(int $id, string $recipient, bool $bot, string $country = ''): void {
+    $country = strtoupper(trim($country));
+    if (preg_match('/^[A-Z]{2}$/D', $country) !== 1) $country = '';
+    $stmt = short_link_db()->prepare('INSERT INTO short_link_events(short_link_id,opened_at,event_kind,recipient_ref_snapshot,country) VALUES(?,?,?,?,?)');
+    $stmt->execute([$id, short_link_now(), $bot ? 'bot' : 'server_count', $recipient, $country]);
 }
 function short_link_is_bot(string $ua): bool { return $ua !== '' && preg_match('/bot|spider|crawler|preview|facebookexternalhit|slackbot|whatsapp/i', $ua) === 1; }
 function short_link_set_status(int $id, string $status, string $admin): void {
@@ -229,7 +231,9 @@ function short_link_tracking(int $id, int $limit = 250): ?array {
     $limit = max(1, min(500, $limit));
     $summary = short_link_db()->prepare("SELECT SUM(CASE WHEN event_kind='server_count' THEN 1 ELSE 0 END) AS opens, SUM(CASE WHEN event_kind='bot' THEN 1 ELSE 0 END) AS bots, MAX(opened_at) AS last_opened FROM short_link_events WHERE short_link_id = ?");
     $summary->execute([$id]);
-    $events = short_link_db()->prepare('SELECT opened_at,event_kind,recipient_ref_snapshot FROM short_link_events WHERE short_link_id = ? ORDER BY opened_at DESC, id DESC LIMIT ' . $limit);
+    $events = short_link_db()->prepare('SELECT opened_at,event_kind,recipient_ref_snapshot,country FROM short_link_events WHERE short_link_id = ? ORDER BY opened_at DESC, id DESC LIMIT ' . $limit);
     $events->execute([$id]);
-    return ['link' => $link, 'summary' => $summary->fetch() ?: ['opens' => 0, 'bots' => 0, 'last_opened' => null], 'events' => $events->fetchAll()];
+    $locations = short_link_db()->prepare("SELECT country, COUNT(*) AS opens, MAX(opened_at) AS last_opened FROM short_link_events WHERE short_link_id = ? AND event_kind = 'server_count' AND country != '' GROUP BY country ORDER BY opens DESC, country ASC");
+    $locations->execute([$id]);
+    return ['link' => $link, 'summary' => $summary->fetch() ?: ['opens' => 0, 'bots' => 0, 'last_opened' => null], 'events' => $events->fetchAll(), 'locations' => $locations->fetchAll()];
 }
