@@ -48,6 +48,7 @@ $_GET = kssmi_admin_normalize_request($_GET, [
     'prod_date_to' => 16,
     'sl_search' => 256,
     'sl_tracking' => 16,
+    'sl_page' => 8,
 ]);
 $_POST = kssmi_admin_normalize_request($_POST, [
     'password' => 1024,
