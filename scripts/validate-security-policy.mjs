@@ -69,6 +69,20 @@ assert.match(sendMail, /\$ipHtml = kssmi_html_escape\(\$ip\)/, 'IP must be encod
 assert.match(rateLimitTest, /direct caller supplied a trusted Cloudflare country header/, 'PHP tests must cover forged country headers.');
 
 const packageData = JSON.parse(packageJson);
+const [shortLinkStore, shortLinkRedirect, shortLinkDashboard, shortLinkTest] = await Promise.all([
+  readText('private/short-link-store.php'),
+  readText('public/short-link-redirect.php'),
+  readText('public/visitor-journey.php'),
+  readText('scripts/test-short-links.php'),
+]);
+assert.match(shortLinkRedirect, /kssmi_check_rate_limit_identity\('short-link-open-event',\s*kssmi_get_client_ip\(\),\s*60,\s*3600,\s*1\)/, 'Public short-link analytics must enforce the strict 60-per-hour limit.');
+assert.match(shortLinkStore, /KSSMI_SHORTLINK_EVENTS_PER_LINK/, 'Short-link storage must enforce a retained-event cap per link.');
+assert.match(shortLinkStore, /KSSMI_SHORTLINK_EVENTS_TOTAL/, 'Short-link storage must enforce a retained-event cap globally.');
+assert.match(shortLinkStore, /short_link_prune_events/, 'Short-link storage must automatically prune old detail events.');
+assert.match(shortLinkStore, /total_opens = total_opens \+ excluded\.total_opens/, 'Short-link lifetime opens must survive detail pruning.');
+assert.match(shortLinkStore, /short_link_begin_immediate\(\$db\)/, 'Short-link prune and insert decisions must be transactional.');
+assert.match(shortLinkDashboard, /Older event details are automatically pruned/, 'The short-link dashboard must disclose automatic detail cleanup.');
+assert.match(shortLinkTest, /sl_record_concurrently/, 'Short-link tests must exercise concurrent automatic cleanup.');
 assert.equal(packageData.scripts?.['test:smoke'], 'node scripts/test-smoke-deployment.mjs', 'package.json must expose smoke self-tests.');
 assert.equal(packageData.scripts?.['validate:security'], 'node scripts/validate-security-policy.mjs', 'package.json must expose the security policy validator.');
 

@@ -189,6 +189,17 @@ try {
     rate_limit_assert(checkRateLimit('test-endpoint', 2, 60), 'second request rejected');
     rate_limit_assert(!checkRateLimit('test-endpoint', 2, 60), 'third request was not limited');
 
+    for ($attempt = 1; $attempt <= 60; $attempt++) {
+        rate_limit_assert(
+            kssmi_check_rate_limit_identity('short-link-open-event', '203.0.113.61', 60, 3600, 1),
+            'strict short-link request was rejected before its 60-per-hour limit'
+        );
+    }
+    rate_limit_assert(
+        !kssmi_check_rate_limit_identity('short-link-open-event', '203.0.113.61', 60, 3600, 1),
+        'strict short-link request exceeded its 60-per-hour limit'
+    );
+
     // Durable writes consume quota units, not just request slots. A request
     // that can write a full submission snapshot must therefore exhaust the
     // same per-IP budget faster than a minimal write.

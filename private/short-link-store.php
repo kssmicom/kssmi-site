@@ -57,8 +57,42 @@ function short_link_migrate(PDO $db): void {
         recipient_ref_snapshot TEXT NOT NULL DEFAULT '', country TEXT NOT NULL DEFAULT '',
         region TEXT NOT NULL DEFAULT '', city TEXT NOT NULL DEFAULT ''
     )");
+    $db->exec("CREATE TABLE IF NOT EXISTS short_link_event_counts (
+        short_link_id INTEGER PRIMARY KEY REFERENCES short_links(id) ON DELETE CASCADE,
+        event_count INTEGER NOT NULL DEFAULT 0 CHECK(event_count >= 0),
+        total_opens INTEGER NOT NULL DEFAULT 0 CHECK(total_opens >= 0),
+        total_bots INTEGER NOT NULL DEFAULT 0 CHECK(total_bots >= 0),
+        last_opened TEXT,
+        pruned_events INTEGER NOT NULL DEFAULT 0 CHECK(pruned_events >= 0)
+    )");
+    short_link_add_event_count_column($db, 'total_opens', 'INTEGER NOT NULL DEFAULT 0');
+    short_link_add_event_count_column($db, 'total_bots', 'INTEGER NOT NULL DEFAULT 0');
+    short_link_add_event_count_column($db, 'last_opened', 'TEXT');
+    short_link_add_event_count_column($db, 'pruned_events', 'INTEGER NOT NULL DEFAULT 0');
+    $schemaVersion = (int)$db->query('SELECT version FROM short_link_schema LIMIT 1')->fetchColumn();
+    if ($schemaVersion < 3) {
+        $db->exec("INSERT OR IGNORE INTO short_link_event_counts(short_link_id, event_count, total_opens, total_bots, last_opened)
+            SELECT short_link_id,
+                COUNT(*),
+                SUM(CASE WHEN event_kind = 'server_count' THEN 1 ELSE 0 END),
+                SUM(CASE WHEN event_kind = 'bot' THEN 1 ELSE 0 END),
+                MAX(opened_at)
+            FROM short_link_events GROUP BY short_link_id");
+        $db->exec("UPDATE short_link_event_counts
+            SET event_count = COALESCE((SELECT COUNT(*) FROM short_link_events e WHERE e.short_link_id = short_link_event_counts.short_link_id), 0),
+                total_opens = COALESCE((SELECT SUM(CASE WHEN event_kind = 'server_count' THEN 1 ELSE 0 END) FROM short_link_events e WHERE e.short_link_id = short_link_event_counts.short_link_id), 0),
+                total_bots = COALESCE((SELECT SUM(CASE WHEN event_kind = 'bot' THEN 1 ELSE 0 END) FROM short_link_events e WHERE e.short_link_id = short_link_event_counts.short_link_id), 0),
+                last_opened = (SELECT MAX(opened_at) FROM short_link_events e WHERE e.short_link_id = short_link_event_counts.short_link_id)");
+        $db->exec('UPDATE short_link_schema SET version = 3');
+    }
     $db->exec('CREATE INDEX IF NOT EXISTS idx_short_links_status_created ON short_links(status, created_at DESC)');
     $db->exec('CREATE INDEX IF NOT EXISTS idx_short_link_events_link_opened ON short_link_events(short_link_id, opened_at DESC)');
+}
+
+function short_link_add_event_count_column(PDO $db, string $name, string $definition): void {
+    $columns = $db->query('PRAGMA table_info(short_link_event_counts)')->fetchAll();
+    foreach ($columns as $column) if (($column['name'] ?? '') === $name) return;
+    $db->exec('ALTER TABLE short_link_event_counts ADD COLUMN ' . $name . ' ' . $definition);
 }
 
 function short_link_now(): string { return gmdate('Y-m-d H:i:s'); }
@@ -191,11 +225,69 @@ function short_link_find_active(string $code): ?array {
     if (preg_match('/^[A-Z][A-Za-z0-9]{5}$/D', $code) !== 1) return null;
     $stmt = short_link_db()->prepare("SELECT l.*,d.target_url FROM short_links l JOIN short_link_destinations d ON d.id=l.destination_id WHERE l.code=? AND l.status='active'"); $stmt->execute([$code]); return $stmt->fetch() ?: null;
 }
-function short_link_record_open(int $id, string $recipient, bool $bot, string $country = ''): void {
+function short_link_event_limit(string $environmentName, int $default, int $hardMaximum): int {
+    $configured = getenv($environmentName);
+    if (!is_string($configured) || preg_match('/^[1-9][0-9]*$/D', $configured) !== 1) return $default;
+    return min((int)$configured, $hardMaximum);
+}
+function short_link_event_prune_batch(int $limit): int { return max(1, intdiv($limit, 10)); }
+function short_link_prune_events(PDO $db, ?int $id, int $limit): int {
+    $where = $id === null ? '' : ' WHERE short_link_id = ?';
+    $params = $id === null ? [$limit] : [$id, $limit];
+    $group = $db->prepare("SELECT short_link_id, COUNT(*) AS removed FROM (
+        SELECT short_link_id FROM short_link_events" . $where . " ORDER BY opened_at ASC, id ASC LIMIT ?
+    ) GROUP BY short_link_id");
+    $group->execute($params);
+    $removedByLink = $group->fetchAll();
+    if ($removedByLink === []) return 0;
+    $delete = $db->prepare('DELETE FROM short_link_events WHERE id IN (SELECT id FROM short_link_events' . $where . ' ORDER BY opened_at ASC, id ASC LIMIT ?)');
+    $delete->execute($params);
+    $update = $db->prepare('UPDATE short_link_event_counts SET event_count = MAX(event_count - ?, 0), pruned_events = pruned_events + ? WHERE short_link_id = ?');
+    foreach ($removedByLink as $row) {
+        $removed = (int)$row['removed'];
+        $update->execute([$removed, $removed, (int)$row['short_link_id']]);
+    }
+    return $delete->rowCount();
+}
+function short_link_record_open(int $id, string $recipient, bool $bot, string $country = ''): bool {
     $country = strtoupper(trim($country));
     if (preg_match('/^[A-Z]{2}$/D', $country) !== 1) $country = '';
-    $stmt = short_link_db()->prepare('INSERT INTO short_link_events(short_link_id,opened_at,event_kind,recipient_ref_snapshot,country) VALUES(?,?,?,?,?)');
-    $stmt->execute([$id, short_link_now(), $bot ? 'bot' : 'server_count', $recipient, $country]);
+    $perLinkLimit = short_link_event_limit('KSSMI_SHORTLINK_EVENTS_PER_LINK', 100000, 250000);
+    $globalLimit = short_link_event_limit('KSSMI_SHORTLINK_EVENTS_TOTAL', 500000, 1000000);
+    $db = short_link_db(); short_link_begin_immediate($db);
+    try {
+        $globalCount = (int)$db->query('SELECT COALESCE(SUM(event_count), 0) FROM short_link_event_counts')->fetchColumn();
+        if ($globalCount >= $globalLimit) short_link_prune_events($db, null, max(short_link_event_prune_batch($globalLimit), $globalCount - $globalLimit + 1));
+        $perLink = $db->prepare('SELECT event_count FROM short_link_event_counts WHERE short_link_id = ?');
+        $perLink->execute([$id]);
+        $perLinkCount = (int)($perLink->fetchColumn() ?: 0);
+        $perLink->closeCursor();
+        if ($perLinkCount >= $perLinkLimit) short_link_prune_events($db, $id, max(short_link_event_prune_batch($perLinkLimit), $perLinkCount - $perLinkLimit + 1));
+        $openedAt = short_link_now();
+        $db->prepare('INSERT INTO short_link_events(short_link_id,opened_at,event_kind,recipient_ref_snapshot,country) VALUES(?,?,?,?,?)')
+            ->execute([$id, $openedAt, $bot ? 'bot' : 'server_count', $recipient, $country]);
+        $db->prepare("INSERT INTO short_link_event_counts(short_link_id,event_count,total_opens,total_bots,last_opened)
+            VALUES(?,1,?,?,?) ON CONFLICT(short_link_id) DO UPDATE SET
+                event_count = event_count + 1,
+                total_opens = total_opens + excluded.total_opens,
+                total_bots = total_bots + excluded.total_bots,
+                last_opened = excluded.last_opened")
+            ->execute([$id, $bot ? 0 : 1, $bot ? 1 : 0, $openedAt]);
+        short_link_commit($db); return true;
+    } catch (Throwable $error) { short_link_rollback($db); throw $error; }
+}
+function short_link_event_capacity(?int $id = null): array {
+    $db = short_link_db();
+    $globalLimit = short_link_event_limit('KSSMI_SHORTLINK_EVENTS_TOTAL', 500000, 1000000);
+    $perLinkLimit = short_link_event_limit('KSSMI_SHORTLINK_EVENTS_PER_LINK', 100000, 250000);
+    $globalCount = (int)$db->query('SELECT COALESCE(SUM(event_count), 0) FROM short_link_event_counts')->fetchColumn();
+    $globalTotal = (int)$db->query('SELECT COALESCE(SUM(total_opens + total_bots), 0) FROM short_link_event_counts')->fetchColumn();
+    $row = [];
+    if ($id !== null) { $stmt = $db->prepare('SELECT event_count,total_opens,total_bots,pruned_events FROM short_link_event_counts WHERE short_link_id = ?'); $stmt->execute([$id]); $row = $stmt->fetch() ?: []; }
+    return ['global_count'=>$globalCount, 'global_total'=>$globalTotal, 'global_limit'=>$globalLimit,
+        'link_count'=>$id === null ? null : (int)($row['event_count'] ?? 0),
+        'link_total'=>$id === null ? null : (int)($row['total_opens'] ?? 0) + (int)($row['total_bots'] ?? 0),
+        'link_limit'=>$perLinkLimit, 'pruned_events'=>$id === null ? null : (int)($row['pruned_events'] ?? 0)];
 }
 function short_link_is_bot(string $ua): bool { return $ua !== '' && preg_match('/bot|spider|crawler|preview|facebookexternalhit|slackbot|whatsapp/i', $ua) === 1; }
 function short_link_set_status(int $id, string $status, string $admin): void {
@@ -218,6 +310,7 @@ function short_link_permanently_delete(int $id, string $confirmation, string $ad
         // destination if this six-character code is generated again.
         $db->prepare('INSERT OR IGNORE INTO short_link_code_tombstones(code,retired_at) VALUES(?,?)')->execute([$row['code'], short_link_now()]);
         $db->prepare('DELETE FROM short_link_events WHERE short_link_id = ?')->execute([$id]);
+        $db->prepare('DELETE FROM short_link_event_counts WHERE short_link_id = ?')->execute([$id]);
         $db->prepare('DELETE FROM short_links WHERE id = ?')->execute([$id]);
         short_link_commit($db);
     } catch (Throwable $error) { short_link_rollback($db); throw $error; }
@@ -232,12 +325,12 @@ function short_link_count(string $search = ''): int {
 }
 function short_link_list(string $search = '', int $limit = 100, int $offset = 0): array {
     $search = short_link_text($search, 256); $limit = max(1, min(250, $limit)); $offset = max(0, $offset);
-    $sql = "SELECT l.*,d.target_url, SUM(CASE WHEN e.event_kind='server_count' THEN 1 ELSE 0 END) AS opens, SUM(CASE WHEN e.event_kind='bot' THEN 1 ELSE 0 END) AS bots, MAX(e.opened_at) AS last_opened FROM short_links l JOIN short_link_destinations d ON d.id=l.destination_id LEFT JOIN short_link_events e ON e.short_link_id=l.id";
+    $sql = "SELECT l.*,d.target_url, COALESCE(c.total_opens,0) AS opens, COALESCE(c.total_bots,0) AS bots, c.last_opened FROM short_links l JOIN short_link_destinations d ON d.id=l.destination_id LEFT JOIN short_link_event_counts c ON c.short_link_id=l.id";
     // Hide any legacy soft-deleted rows; all new user-facing deletions use the
     // permanent-delete operation above and remove their rows altogether.
     $sql .= " WHERE l.status != 'deleted'";
     $params = []; if ($search !== '') { $sql .= ' AND (l.code LIKE ? OR d.target_url LIKE ? OR l.label LIKE ? OR l.campaign LIKE ? OR l.recipient_ref LIKE ?)'; $like='%'.$search.'%'; $params=[$like,$like,$like,$like,$like]; }
-    $sql .= ' GROUP BY l.id ORDER BY l.created_at DESC, l.id DESC LIMIT ' . $limit . ' OFFSET ' . $offset; $stmt=short_link_db()->prepare($sql); $stmt->execute($params); return $stmt->fetchAll();
+    $sql .= ' ORDER BY l.created_at DESC, l.id DESC LIMIT ' . $limit . ' OFFSET ' . $offset; $stmt=short_link_db()->prepare($sql); $stmt->execute($params); return $stmt->fetchAll();
 }
 function short_link_tracking_neighbors(int $id, string $search = ''): array {
     $search = short_link_text($search, 256);
@@ -264,7 +357,7 @@ function short_link_tracking(int $id, int $limit = 250): ?array {
     $link = short_link_get($id);
     if (!$link) return null;
     $limit = max(1, min(500, $limit));
-    $summary = short_link_db()->prepare("SELECT SUM(CASE WHEN event_kind='server_count' THEN 1 ELSE 0 END) AS opens, SUM(CASE WHEN event_kind='bot' THEN 1 ELSE 0 END) AS bots, MAX(opened_at) AS last_opened FROM short_link_events WHERE short_link_id = ?");
+    $summary = short_link_db()->prepare("SELECT COALESCE(total_opens,0) AS opens, COALESCE(total_bots,0) AS bots, last_opened FROM short_link_event_counts WHERE short_link_id = ?");
     $summary->execute([$id]);
     // The event list contains confirmed opens only. Bot checks remain in the
     // summary, while a recipient reference (when one was assigned) gets its
