@@ -83,6 +83,8 @@ require_once __DIR__ . '/api/vjt-helpers.php';
 // Password config (shared with email-logs.php, stored ABOVE public_html)
 define('PASSWORD_FILE_OLD', __DIR__ . '/.email_logs_password');
 define('PASSWORD_FILE', dirname(__DIR__) . '/.email_logs_password');
+define('RESET_TOKENS_FILE_OLD', __DIR__ . '/.email_reset_tokens.json');
+define('RESET_TOKENS_FILE', dirname(__DIR__) . '/.email_reset_tokens.json');
 define('CREDENTIAL_VERSION_FILE', kssmi_admin_credential_version_path(PASSWORD_FILE));
 define('ADMIN_EMAIL', 'sales@kssmi.com');
 

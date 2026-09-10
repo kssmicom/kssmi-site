@@ -115,6 +115,13 @@ try {
         );
     }
 
+    $visitorJourneySource = file_get_contents(dirname(__DIR__) . '/public/visitor-journey.php');
+    kssmi_session_assert(
+        is_string($visitorJourneySource)
+            && strpos($visitorJourneySource, "define('RESET_TOKENS_FILE', dirname(__DIR__) . '/.email_reset_tokens.json');") !== false,
+        'visitor journey defines the reset-token lock path used during login'
+    );
+
     $_SESSION = [];
     session_destroy();
     fwrite(STDOUT, "Admin session bootstrap test passed.\n");
