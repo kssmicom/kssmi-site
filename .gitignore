@@ -41,6 +41,12 @@ public/.email_reset_tokens.json
 short-links-users.txt
 private/short-links-reset-tokens.json
 
+# PHPMailer is installed by CI (deploy.yml "Install PHPMailer" step) from
+# public/composer.lock — never commit a local copy
+public/vendor/autoload.php
+public/vendor/composer/
+public/vendor/phpmailer/
+
 # Windows files
 Thumbs.db
 desktop.ini
