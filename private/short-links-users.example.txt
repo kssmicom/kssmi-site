@@ -1,0 +1,17 @@
+# Short Links tool (/short-links) — allowed @kssmi.com accounts.
+# Server location: $SHARED_PRIVATE/links/short-links-users.txt
+# (deploy-release.sh symlinks it into each release automatically).
+#
+# One account per line. Format:
+#   email bcrypt-hash            regular account — sees only its own links
+#   email bcrypt-hash admin      admin account — sees everyone's links
+# Lines starting with # are ignored. Every email must end in @kssmi.com.
+#
+# Generate a hash (PHP on the server):
+#   php -r "echo password_hash('THE PASSWORD', PASSWORD_DEFAULT);"
+#
+# ⚠️ bcrypt hashes are case-sensitive — never strtolower a hash.
+#
+# Example:
+# sales@kssmi.com $2y$10$abcdef... admin
+# alice@kssmi.com $2y$10$abcdef...

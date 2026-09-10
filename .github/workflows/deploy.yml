@@ -147,8 +147,6 @@ jobs:
           cp public/404-router.php dist/
           cp public/short-link-redirect.php dist/
           cp public/short-links.php dist/
-          mkdir -p dist/assets
-          cp public/assets/short-links.css dist/assets/
           cp -r public/api dist/
           cp -r public/vendor dist/
 
