@@ -197,7 +197,7 @@ function sl_tool_query(array $overrides = []): string {
         .login-box h2 { margin-bottom: 20px; color: #5D4E37; }
         .login-box input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 15px; font-size: 16px; }
         .login-box button { width: 100%; padding: 12px; background: #8B7355; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
-        .login-box button:hover { background: #5D4E37; }
+        .login-box button:is(:hover, :active, :focus-visible, :focus-within) { background: #5D4E37; }
         .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 8px; background: white; padding: 12px 16px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); border-left: 3px solid #8B7355; }
         .header-left { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
         .header-left h1 { font-size: 16px; font-weight: 700; color: #5D4E37; white-space: nowrap; }
@@ -205,13 +205,13 @@ function sl_tool_query(array $overrides = []): string {
         .header-right { display: flex; gap: 6px; align-items: center; }
         .btn { padding: 6px 14px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; font-size: 12px; display: inline-block; font-weight: 500; }
         .btn-primary { background: #8B7355; color: white; }
-        .btn-primary:hover { background: #5D4E37; }
+        .btn-primary:is(:hover, :active, :focus-visible, :focus-within) { background: #5D4E37; }
         .btn-danger { background: #e74c3c; color: white; }
-        .btn-danger:hover { background: #c0392b; }
+        .btn-danger:is(:hover, :active, :focus-visible, :focus-within) { background: #c0392b; }
         .btn-secondary { background: #666; color: white; }
-        .btn-secondary:hover { background: #444; }
+        .btn-secondary:is(:hover, :active, :focus-visible, :focus-within) { background: #444; }
         .btn-small { padding: 4px 10px; font-size: 11px; }
-        .btn:hover { opacity: 0.9; }
+        .btn:is(:hover, :active, :focus-visible, :focus-within) { opacity: 0.9; }
         .panel { background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 14px; }
         .panel-header { padding: 12px 16px; border-bottom: 1px solid #eee; font-weight: 600; color: #5D4E37; font-size: 13px; display: flex; justify-content: space-between; align-items: center; }
         .panel-body { padding: 16px; }
@@ -219,7 +219,7 @@ function sl_tool_query(array $overrides = []): string {
         table { width: 100%; border-collapse: collapse; font-size: 13px; }
         th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #eee; }
         th { background: #f8f8f8; font-weight: 600; color: #5D4E37; font-size: 10px; text-transform: uppercase; white-space: nowrap; }
-        tr:hover { background: #fafafa; }
+        tr:is(:hover, :active, :focus-visible, :focus-within) { background: #fafafa; }
         .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 14px; align-items: stretch; }
         .stat-card { background: white; padding: 16px 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-top: 3px solid #8B7355; display: flex; flex-direction: column; }
         .stat-card h3 { font-size: 10px; text-transform: uppercase; color: #888; margin-bottom: 4px; letter-spacing: 0.8px; }
@@ -238,11 +238,11 @@ function sl_tool_query(array $overrides = []): string {
         .short-links-search-input { position: relative; display: block; width: 360px; max-width: 100%; }
         .short-links-search input[name="sl_search"] { width: 100%; padding-right: 30px; }
         .short-links-search-clear { position: absolute; right: 4px; top: 50%; transform: translateY(-50%); width: 22px; height: 22px; border: 0; border-radius: 50%; background: transparent; color: #888; font-size: 18px; line-height: 1; cursor: pointer; }
-        .short-links-search-clear:hover, .short-links-search-clear:focus-visible { color: #333; background: #eee; outline: 0; }
+        .short-links-search-clear:is(:hover, :active, :focus-visible, :focus-within), .short-links-search-clear:focus-visible { color: #333; background: #eee; outline: 0; }
         .short-link-pagination { display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-top: 12px; color: #666; font-size: 12px; }
         .short-target-copy { display: block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; border: 0; padding: 0; background: transparent; color: #8B7355; cursor: pointer; font: inherit; text-align: left; }
         .short-plain-copy { color: #333; }
-        .short-target-copy:hover, .short-target-copy:focus-visible { text-decoration: underline; outline: 0; }
+        .short-target-copy:is(:hover, :active, :focus-visible, :focus-within), .short-target-copy:focus-visible { text-decoration: underline; outline: 0; }
         .short-target-copy.is-copied { color: #27734a; }
         .short-index { width: 32px; color: #888; text-align: right; }
         .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
