@@ -35,10 +35,51 @@ function kssmi_short_links_users(): array {
     return $users;
 }
 
+function kssmi_short_links_users_real_path(): string {
+    // deploy-release.sh symlinks the users file into each release from the
+    // shared private store. An atomic write renames a temp file OVER that
+    // path, which would silently replace the symlink with a release-local
+    // copy — detaching future server-side edits and rolling the change back
+    // on the next deploy. Resolve the real target first so writes always
+    // land on the shared file and the symlink survives.
+    $path = kssmi_short_links_users_path();
+    return is_file($path) ? (realpath($path) ?: $path) : $path;
+}
+
 function kssmi_short_links_write_users(array $users): bool {
     $lines = ['# email bcrypt-hash [admin]'];
     foreach ($users as $email => $row) $lines[] = $email . ' ' . $row['hash'] . ($row['admin'] ? ' admin' : '');
-    return kssmi_admin_atomic_write(kssmi_short_links_users_path(), implode("\n", $lines) . "\n", 0600);
+    return kssmi_admin_atomic_write(kssmi_short_links_users_real_path(), implode("\n", $lines) . "\n", 0600);
+}
+
+/**
+ * Change one account's bcrypt hash in the shared users file.
+ *
+ * The file is read INSIDE the exclusive lock so two concurrent changes
+ * (password change vs. reset confirm vs. a second account's change) can
+ * never overwrite each other with a stale snapshot.
+ *
+ * @throws InvalidArgumentException Account no longer exists in the file.
+ * @throws RuntimeException         File unavailable or not writable.
+ */
+function kssmi_short_links_update_user_password(string $email, string $hash): void {
+    $realPath = kssmi_short_links_users_real_path();
+    $lock = kssmi_admin_file_lock($realPath, LOCK_EX);
+    if (!$lock['ok']) {
+        throw new RuntimeException('Account file is unavailable; ask the administrator.');
+    }
+    try {
+        $users = kssmi_short_links_users();
+        if (!isset($users[$email])) {
+            throw new InvalidArgumentException('Account entry not found; ask the administrator.');
+        }
+        $users[$email]['hash'] = $hash;
+        if (!kssmi_short_links_write_users($users)) {
+            throw new RuntimeException('Password could not be saved; ask the administrator.');
+        }
+    } finally {
+        kssmi_admin_file_unlock($lock);
+    }
 }
 
 function kssmi_short_links_send_reset(string $email, string $token): bool {

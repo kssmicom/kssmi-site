@@ -74,23 +74,6 @@ function short_link_api_id($value): int {
     throw new InvalidArgumentException('A valid short-link ID is required.');
 }
 
-function sl_tool_update_password(string $email, string $hash): void {
-    // Rewrite the shared users file under an exclusive lock, preserving every
-    // other account (and each row's admin flag) exactly as parsed.
-    $path = kssmi_short_links_users_path();
-    $users = kssmi_short_links_users();
-    if (!isset($users[$email])) {
-        throw new RuntimeException('Account entry not found; ask the administrator.');
-    }
-    $users[$email]['hash'] = $hash;
-    $lock = kssmi_admin_file_lock($path, LOCK_EX);
-    if (!$lock['ok'] || !kssmi_short_links_write_users($users)) {
-        kssmi_admin_file_unlock($lock);
-        throw new RuntimeException('Password could not be saved; ask the administrator.');
-    }
-    kssmi_admin_file_unlock($lock);
-}
-
 try {
     $action = $input['action'] ?? '';
     // Attribute writes to the signed-in colleague's email.
@@ -126,7 +109,7 @@ try {
         if (strlen($new) < 10 || strlen($new) > 128) {
             throw new InvalidArgumentException('New password must be 10-128 characters.');
         }
-        sl_tool_update_password($admin, password_hash($new, PASSWORD_DEFAULT));
+        kssmi_short_links_update_user_password($admin, password_hash($new, PASSWORD_DEFAULT));
         echo '{"ok":true}';
         exit;
     }
@@ -168,6 +151,10 @@ try {
     echo '{"error":"Unknown action."}';
 } catch (InvalidArgumentException $error) {
     http_response_code(422);
+    echo json_encode(['error' => $error->getMessage()]);
+} catch (RuntimeException $error) {
+    error_log('KSSMI short-link tool failure: ' . $error->getMessage());
+    http_response_code(500);
     echo json_encode(['error' => $error->getMessage()]);
 } catch (Throwable $error) {
     error_log('KSSMI short-link tool failure: ' . $error->getMessage());

@@ -30,7 +30,6 @@ kssmi_admin_security_headers("default-src 'none'; base-uri 'none'; object-src 'n
 const SL_TOOL_CSRF_KEY = 'short_links_tool_csrf';
 
 $error = '';
-$message = '';
 
 // Logout is state-changing and requires the tool CSRF token.
 if (isset($_SESSION['short_links_tool_auth']) && $_SESSION['short_links_tool_auth'] === true
@@ -66,10 +65,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'], $_POST['pass
         } else {
             // Deliberately does NOT touch any shared admin session: this tool
             // must never unlock the VJT dashboard or email logs.
-            $_SESSION['short_links_tool_auth'] = true;
-            $_SESSION['short_links_tool_email'] = $email;
-            $_SESSION['short_links_tool_admin'] = $users[$email]['admin'];
-            kssmi_admin_csrf_rotate(SL_TOOL_CSRF_KEY);
+            // A fresh session ID keeps a pre-login session identifier from
+            // surviving the authentication boundary (fixation defense).
+            if (!session_regenerate_id(true)) {
+                $error = 'Sign-in failed. Please try again.';
+            } else {
+                $_SESSION['short_links_tool_auth'] = true;
+                $_SESSION['short_links_tool_email'] = $email;
+                $_SESSION['short_links_tool_admin'] = $users[$email]['admin'];
+                kssmi_admin_csrf_rotate(SL_TOOL_CSRF_KEY);
+            }
         }
     }
 }

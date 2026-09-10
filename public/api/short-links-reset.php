@@ -68,42 +68,40 @@ function sl_reset_tokens_path(): string {
     return dirname(__DIR__, 2) . '/private/short-links-reset-tokens.json';
 }
 
-/** @return array<string,array{email:string,expires:int}> */
-function sl_reset_tokens_read(): array {
-    $raw = @file_get_contents(sl_reset_tokens_path());
-    if ($raw === false || $raw === '') return [];
-    $tokens = json_decode($raw, true, 16);
-    return is_array($tokens) ? $tokens : [];
-}
-
-function sl_reset_tokens_write(array $tokens): bool {
-    $now = time();
-    $tokens = array_filter(
-        $tokens,
-        static fn($t) => is_array($t) && is_string($t['email'] ?? null) && (int)($t['expires'] ?? 0) > $now
-    );
-    return kssmi_admin_atomic_write(
-        sl_reset_tokens_path(),
-        json_encode($tokens, JSON_THROW_ON_ERROR) . "\n",
-        0600
-    );
-}
-
-function sl_reset_update_password(string $email, string $hash): void {
-    // Rewrite the shared users file under an exclusive lock, preserving every
-    // other account (and each row's admin flag) exactly as parsed.
-    $path = kssmi_short_links_users_path();
-    $users = kssmi_short_links_users();
-    if (!isset($users[$email])) {
-        throw new RuntimeException('Account entry not found.');
-    }
-    $users[$email]['hash'] = $hash;
+/**
+ * Read-mutate-write the token store under an exclusive lock so concurrent
+ * requests can never lose a created token or resurrect a consumed one.
+ * $mutator receives the token map BY REFERENCE, may modify it, and its
+ * return value is passed through. Expired entries are pruned on write.
+ *
+ * @param callable(array&,mixed):mixed $mutator
+ */
+function sl_reset_tokens_mutate(callable $mutator): mixed {
+    $path = sl_reset_tokens_path();
     $lock = kssmi_admin_file_lock($path, LOCK_EX);
-    if (!$lock['ok'] || !kssmi_short_links_write_users($users)) {
-        kssmi_admin_file_unlock($lock);
-        throw new RuntimeException('Password could not be saved.');
+    if (!$lock['ok']) {
+        throw new RuntimeException('Reset token store is unavailable.');
     }
-    kssmi_admin_file_unlock($lock);
+    try {
+        $tokens = [];
+        $raw = @file_get_contents($path);
+        if (is_string($raw) && $raw !== '') {
+            $decoded = json_decode($raw, true, 16);
+            if (is_array($decoded)) $tokens = $decoded;
+        }
+        $result = $mutator($tokens);
+        $now = time();
+        $tokens = array_filter(
+            $tokens,
+            static fn($t) => is_array($t) && is_string($t['email'] ?? null) && (int)($t['expires'] ?? 0) > $now
+        );
+        if (!kssmi_admin_atomic_write($path, json_encode($tokens, JSON_THROW_ON_ERROR) . "\n", 0600)) {
+            throw new RuntimeException('Reset token store could not be updated.');
+        }
+        return $result;
+    } finally {
+        kssmi_admin_file_unlock($lock);
+    }
 }
 
 try {
@@ -124,18 +122,19 @@ try {
             checkRateLimit('short-links-reset-mail:' . $email, 3, 3600)
         ) {
             $token = bin2hex(random_bytes(32));
-            $tokens = sl_reset_tokens_read();
-            $tokens[$token] = ['email' => $email, 'expires' => time() + SL_RESET_TOKEN_TTL];
-            if (sl_reset_tokens_write($tokens)) {
-                if (!kssmi_short_links_send_reset(
-                    $email,
-                    $token
-                )) {
-                    // kssmi_short_links_send_reset() already logged the failure.
-                    http_response_code(500);
-                    echo '{"error":"Could not send the reset email right now. Please try again later."}';
-                    exit;
+            sl_reset_tokens_mutate(
+                static function (array &$tokens) use ($token, $email): void {
+                    $tokens[$token] = ['email' => $email, 'expires' => time() + SL_RESET_TOKEN_TTL];
                 }
+            );
+            if (!kssmi_short_links_send_reset(
+                $email,
+                $token
+            )) {
+                // kssmi_short_links_send_reset() already logged the failure.
+                http_response_code(500);
+                echo '{"error":"Could not send the reset email right now. Please try again later."}';
+                exit;
             }
         }
         // Identical response whether or not the address is registered.
@@ -156,8 +155,13 @@ try {
         if (strlen($new) < 10 || strlen($new) > 128) {
             throw new InvalidArgumentException('New password must be 10-128 characters.');
         }
-        $tokens = sl_reset_tokens_read();
-        $entry = $tokens[$token] ?? null;
+        $entry = sl_reset_tokens_mutate(
+            static function (array &$tokens) use ($token): ?array {
+                $entry = $tokens[$token] ?? null;
+                unset($tokens[$token]);
+                return $entry;
+            }
+        );
         if (
             !is_array($entry) ||
             !is_string($entry['email'] ?? null) ||
@@ -166,9 +170,7 @@ try {
         ) {
             throw new InvalidArgumentException('Reset link is invalid or has expired.');
         }
-        sl_reset_update_password($entry['email'], password_hash($new, PASSWORD_DEFAULT));
-        unset($tokens[$token]);
-        sl_reset_tokens_write($tokens);
+        kssmi_short_links_update_user_password($entry['email'], password_hash($new, PASSWORD_DEFAULT));
         echo '{"ok":true}';
         exit;
     }
@@ -176,6 +178,10 @@ try {
     echo '{"error":"Unknown action."}';
 } catch (InvalidArgumentException $error) {
     http_response_code(422);
+    echo json_encode(['error' => $error->getMessage()]);
+} catch (RuntimeException $error) {
+    error_log('KSSMI short-links reset failure: ' . $error->getMessage());
+    http_response_code(500);
     echo json_encode(['error' => $error->getMessage()]);
 } catch (Throwable $error) {
     error_log('KSSMI short-links reset failure: ' . $error->getMessage());
