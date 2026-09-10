@@ -40,6 +40,10 @@ public/.email_reset_tokens.json
 # Short-links tool accounts (bcrypt hashes - lives on the server only)
 short-links-users.txt
 private/short-links-reset-tokens.json
+# Runtime flock sidecars (created next to the files they guard)
+.email_logs_password.lock
+short-links-users.txt.lock
+private/short-links-reset-tokens.json.lock
 
 # PHPMailer is installed by CI (deploy.yml "Install PHPMailer" step) from
 # public/composer.lock — never commit a local copy
