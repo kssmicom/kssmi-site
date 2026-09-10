@@ -187,15 +187,16 @@ if ($isAuthenticated && $tab === 'short-links') {
     require_once dirname(__DIR__) . '/private/short-link-store.php';
     try {
         $trackingId = filter_input(INPUT_GET, 'sl_tracking', FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]);
-        // The dashboard is owner-only, so it lists links regardless of which
-        // identity created them. Scoping by creator here once hid every link
-        // made before the dashboard identity changed (kssmi@ -> sales@).
-        if ($trackingId !== false && $trackingId !== null) { $shortLinkTracking = short_link_tracking((int)$trackingId, 250); if ($shortLinkTracking) $shortLinkTrackingNeighbors = short_link_tracking_neighbors((int)$trackingId, $shortLinkSearch); }
+        // The company dashboard shows company links only (sub-account links
+        // stay in /short-links). Legacy rows created under the old dashboard
+        // identity (kssmi@kssmi.com) were migrated to ADMIN_EMAIL on
+        // 2026-09-11; keep the scoping so colleague links never mix in.
+        if ($trackingId !== false && $trackingId !== null) { $shortLinkTracking = short_link_tracking((int)$trackingId, 250, ADMIN_EMAIL); if ($shortLinkTracking) $shortLinkTrackingNeighbors = short_link_tracking_neighbors((int)$trackingId, $shortLinkSearch, ADMIN_EMAIL); }
         else {
-            $shortLinkTotal = short_link_count($shortLinkSearch);
+            $shortLinkTotal = short_link_count($shortLinkSearch, ADMIN_EMAIL);
             $shortLinkPages = max(1, (int)ceil($shortLinkTotal / $shortLinkPerPage));
             $shortLinkPage = min($shortLinkPage, $shortLinkPages);
-            $shortLinkRows = short_link_list($shortLinkSearch, $shortLinkPerPage, ($shortLinkPage - 1) * $shortLinkPerPage);
+            $shortLinkRows = short_link_list($shortLinkSearch, $shortLinkPerPage, ($shortLinkPage - 1) * $shortLinkPerPage, ADMIN_EMAIL);
         }
         $shortLinkCapacity = short_link_event_capacity($shortLinkTracking ? (int)$shortLinkTracking['link']['id'] : null);
     }
