@@ -6,7 +6,7 @@ require_once __DIR__ . '/short-link-store.php';
 
 const KSSMI_SHORT_LINK_EMAIL_DOMAIN = '@kssmi.com';
 
-function kssmi_short_links_users_path(): string { return dirname(__DIR__) . '/private/short-links-users.txt'; }
+function kssmi_short_links_users_path(): string { return dirname(__DIR__) . '/short-links-users.txt'; }
 function kssmi_short_links_users(): array {
     $users = [];
     $path = kssmi_short_links_users_path();
