@@ -118,8 +118,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
         $error = 'Too many login attempts. Please wait 15 minutes.';
     } else {
         $submitted = trim($_POST['password']);
-        if ($PASSWORD_HASH && password_verify($submitted, $PASSWORD_HASH)) {
-            if (!kssmi_admin_session_establish(CREDENTIAL_VERSION_FILE)) {
+        if (kssmi_admin_authenticate_and_establish(
+            file_exists(PASSWORD_FILE) ? PASSWORD_FILE : PASSWORD_FILE_OLD,
+            RESET_TOKENS_FILE,
+            CREDENTIAL_VERSION_FILE,
+            $submitted
+        )) {
+            if (!kssmi_admin_session_authenticated(CREDENTIAL_VERSION_FILE)) {
                 $error = 'Unable to establish a secure admin session. Please try again.';
             } else {
                 kssmi_admin_set_marker_cookie(true);

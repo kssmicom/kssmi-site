@@ -105,6 +105,7 @@ jobs:
           php scripts/test-vjt-event-state.php
           php scripts/test-vjt-heartbeat.php
           php scripts/test-vjt-data-quality.php
+          php scripts/test-anon-page-path.php
           php scripts/test-http-security.php
           php scripts/test-reset-token-race.php
           php scripts/test-admin-session.php

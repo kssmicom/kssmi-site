@@ -3242,6 +3242,50 @@ function vjt_safe_anon_path($value) {
     return $path;
 }
 
+/**
+ * Resolve an anonymous view path only when it maps to a generated public HTML
+ * page.  The counter stores page views, so attacker-supplied nonexistent paths
+ * must not consume the shared daily path budget.
+ */
+function vjt_public_anon_page_path($value, ?string $publicRoot = null): string {
+    $path = vjt_safe_anon_path($value);
+    if ($path === '' || str_contains($path, '%')) return '';
+
+    $canonicalPath = $path === '/' ? '/' : '/' . trim($path, '/') . '/';
+    $root = realpath($publicRoot ?? dirname(__DIR__));
+    if ($root === false || !is_dir($root)) {
+        // Astro's development server serves generated routes from memory while
+        // this PHP endpoint runs locally on a separate port. Keep that local
+        // workflow working without creating a production bypass.
+        $remote = trim((string)($_SERVER['REMOTE_ADDR'] ?? ''));
+        $host = strtolower((string)preg_replace('/:\\d+$/', '', trim((string)($_SERVER['HTTP_HOST'] ?? ''))));
+        if ($publicRoot === null
+            && in_array($remote, ['127.0.0.1', '::1'], true)
+            && in_array($host, ['localhost', '127.0.0.1', '[::1]', ''], true)) {
+            return $canonicalPath;
+        }
+        return '';
+    }
+
+    $relative = trim($canonicalPath, '/');
+    $candidate = $root . DIRECTORY_SEPARATOR
+        . ($relative === '' ? 'index.html' : str_replace('/', DIRECTORY_SEPARATOR, $relative) . DIRECTORY_SEPARATOR . 'index.html');
+    $resolved = realpath($candidate);
+    $rootPrefix = rtrim($root, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
+    if ($resolved === false || !str_starts_with($resolved, $rootPrefix) || !is_file($resolved)) {
+        $remote = trim((string)($_SERVER['REMOTE_ADDR'] ?? ''));
+        $host = strtolower((string)preg_replace('/:\\d+$/', '', trim((string)($_SERVER['HTTP_HOST'] ?? ''))));
+        if ($publicRoot === null
+            && in_array($remote, ['127.0.0.1', '::1'], true)
+            && in_array($host, ['localhost', '127.0.0.1', '[::1]', ''], true)) {
+            return $canonicalPath;
+        }
+        return '';
+    }
+
+    return $canonicalPath;
+}
+
 // Write-time aggregation: (day, path) → views+1. No per-event rows are kept.
 // The 500-distinct-paths-per-day cap is best-effort (soft): under concurrency
 // a few extra rows may slip through; the UNIQUE(day,url) constraint still

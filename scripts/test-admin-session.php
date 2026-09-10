@@ -80,11 +80,36 @@ try {
     kssmi_session_assert(kssmi_admin_session_establish($credentialVersionPath, $now + 2), 'new-version login establishes session');
     kssmi_session_assert(kssmi_admin_session_authenticated($credentialVersionPath, $now + 3), 'new-version session remains authenticated');
 
+    $passwordPath = $testDirectory . DIRECTORY_SEPARATOR . '.email_logs_password';
+    $resetTokensPath = $testDirectory . DIRECTORY_SEPARATOR . '.email_reset_tokens.json';
+    $oldPassword = 'Old password for race test';
+    kssmi_session_assert(kssmi_admin_secret_write($passwordPath, password_hash($oldPassword, PASSWORD_BCRYPT)), 'write password hash');
+    kssmi_session_assert(
+        kssmi_admin_authenticate_and_establish($passwordPath, $resetTokensPath, $credentialVersionPath, $oldPassword, $now + 4),
+        'login binds a verified password to the current credential version'
+    );
+    kssmi_session_assert(kssmi_admin_session_authenticated($credentialVersionPath, $now + 5), 'bound login session is accepted');
+    kssmi_session_assert(
+        !kssmi_admin_authenticate_and_establish($passwordPath, $resetTokensPath, $credentialVersionPath, 'incorrect password', $now + 6),
+        'invalid password does not establish a session'
+    );
+    kssmi_session_assert(
+        !kssmi_admin_session_establish($credentialVersionPath, $now + 6, 1),
+        'a session cannot be issued with a version other than the verified credential generation'
+    );
+
+    $securitySource = file_get_contents(dirname(__DIR__) . '/private/http-security.php');
+    kssmi_session_assert(is_string($securitySource), 'read shared admin authentication source');
+    $loginStart = strpos($securitySource, 'function kssmi_admin_authenticate_and_establish(');
+    $loginLock = strpos($securitySource, 'kssmi_admin_file_lock($rotationLockPath, LOCK_EX)', $loginStart);
+    $loginRead = strpos($securitySource, '@file_get_contents($passwordPath)', $loginStart);
+    kssmi_session_assert($loginStart !== false && $loginLock !== false && $loginRead !== false && $loginLock < $loginRead, 'authentication locks rotation before reading the password hash');
+
     foreach (['public/email-logs.php', 'public/visitor-journey.php'] as $relativePath) {
         $source = file_get_contents(dirname(__DIR__) . DIRECTORY_SEPARATOR . $relativePath);
         kssmi_session_assert(is_string($source), "read {$relativePath}");
         kssmi_session_assert(
-            strpos($source, 'kssmi_admin_session_establish(CREDENTIAL_VERSION_FILE)') !== false
+            strpos($source, 'kssmi_admin_authenticate_and_establish(') !== false
                 && strpos($source, 'kssmi_admin_session_authenticated(CREDENTIAL_VERSION_FILE)') !== false,
             "{$relativePath} uses the shared versioned admin session boundary"
         );

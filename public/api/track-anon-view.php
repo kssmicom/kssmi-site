@@ -73,8 +73,9 @@ if (!is_array($data)) {
     exit;
 }
 
-// Only a root-relative path is accepted (scheme/host/query intentionally rejected).
-$path = vjt_safe_anon_path($data['url'] ?? '');
+// Count only generated public pages. A syntactically valid but nonexistent
+// path must never consume a shared anonymous-statistics slot.
+$path = vjt_public_anon_page_path($data['url'] ?? '');
 if ($path === '') {
     http_response_code(400);
     exit;

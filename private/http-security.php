@@ -356,9 +356,16 @@ function kssmi_admin_session_revoke_local(): void {
     );
 }
 
-function kssmi_admin_session_establish(string $credentialVersionPath, ?int $now = null): bool {
+function kssmi_admin_session_establish(
+    string $credentialVersionPath,
+    ?int $now = null,
+    ?int $expectedCredentialVersion = null
+): bool {
     $version = kssmi_admin_credential_version_ensure($credentialVersionPath);
-    if ($version === null) return false;
+    if ($version === null
+        || ($expectedCredentialVersion !== null && $version !== $expectedCredentialVersion)) {
+        return false;
+    }
     $current = $now ?? time();
     if (!session_regenerate_id(true)) return false;
     $_SESSION['email_logs_auth'] = true;
@@ -367,6 +374,36 @@ function kssmi_admin_session_establish(string $credentialVersionPath, ?int $now 
     $_SESSION['admin_last_seen_at'] = $current;
     kssmi_admin_csrf_rotate();
     return true;
+}
+
+/**
+ * Authenticate and create a versioned admin session while holding the same
+ * lock used by password rotation.  The password hash and credential version
+ * must come from one credential generation: accepting an old hash and then
+ * issuing a session with a newly-read version would defeat revocation.
+ */
+function kssmi_admin_authenticate_and_establish(
+    string $passwordPath,
+    string $rotationLockPath,
+    string $credentialVersionPath,
+    $submittedPassword,
+    ?int $now = null
+): bool {
+    if (!is_string($submittedPassword) || $submittedPassword === '') return false;
+
+    $lock = kssmi_admin_file_lock($rotationLockPath, LOCK_EX);
+    if (!$lock['ok']) return false;
+
+    try {
+        $storedHash = @file_get_contents($passwordPath);
+        if (!is_string($storedHash) || trim($storedHash) === '') return false;
+        $version = kssmi_admin_credential_version_ensure($credentialVersionPath);
+        if ($version === null || !password_verify($submittedPassword, trim($storedHash))) return false;
+
+        return kssmi_admin_session_establish($credentialVersionPath, $now, $version);
+    } finally {
+        kssmi_admin_file_unlock($lock);
+    }
 }
 
 function kssmi_admin_session_authenticated(string $credentialVersionPath, ?int $now = null): bool {
