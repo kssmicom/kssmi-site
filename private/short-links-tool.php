@@ -85,8 +85,15 @@ function kssmi_short_links_update_user_password(string $email, string $hash): vo
 function kssmi_short_links_send_reset(string $email, string $token): bool {
     $configPath = dirname(__DIR__) . '/private_config.php';
     $cfg = file_exists($configPath) ? (array)require $configPath : [];
-    $vendor = dirname(__DIR__) . '/public/vendor/autoload.php';
-    if (!is_file($vendor)) {
+    // The webroot is named "public" in the repo but "dist" in the deployed
+    // release (deploy-release.sh: NEW_WEBROOT="$RELEASE_DIR/dist"). Accept
+    // both so dev, CI, and production resolve the composer autoloader.
+    $vendor = null;
+    foreach (['dist/vendor/autoload.php', 'public/vendor/autoload.php'] as $candidate) {
+        $candidatePath = dirname(__DIR__) . '/' . $candidate;
+        if (is_file($candidatePath)) { $vendor = $candidatePath; break; }
+    }
+    if ($vendor === null) {
         throw new RuntimeException('Reset mailer is unavailable.');
     }
     require_once $vendor;
