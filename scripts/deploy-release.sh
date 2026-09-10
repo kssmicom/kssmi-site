@@ -63,7 +63,8 @@ GSC_JSON="$SHARED_PRIVATE/gsc/google-service-account.json"
 # Shared security deployment: the JSON snapshot is installed before the PHP
 # consumer, so the new consumer can never observe a missing new dependency.
 PRIVATE_MODULES="email-log-store.php cloudflare-ip-ranges.json rate-limit.php http-security.php"
-SHORT_LINK_USERS_FILE="$SHARED_PRIVATE/short-links-users.txt"
+SHORT_LINK_PRIVATE_DIR="$SHARED_PRIVATE/links"
+SHORT_LINK_USERS_FILE="$SHORT_LINK_PRIVATE_DIR/short-links-users.txt"
 RATE_LIMIT_MODULE="$SHARED_PRIVATE/rate-limit.php"
 EMAIL_LOG_MODULE="$SHARED_PRIVATE/email-log-store.php"
 HTTP_SECURITY_MODULE="$SHARED_PRIVATE/http-security.php"
@@ -234,7 +235,7 @@ prepare_persistent_storage() {
   # data and deployment state do not need world traverse and remain 0750.
   run_root install -d -o "$SITE_USER" -g "$SITE_GROUP" -m 751 "$RELEASES_DIR"
   run_root install -d -o "$SITE_USER" -g "$SITE_GROUP" -m 750 \
-    "$STATE_ROOT" "$SHARED_PRIVATE" "$EMAIL_DATA_DIR" \
+    "$STATE_ROOT" "$SHARED_PRIVATE" "$SHORT_LINK_PRIVATE_DIR" "$EMAIL_DATA_DIR" \
     "$RATE_LIMIT_DIR" "$VJT_DATA_DIR"
   run_root chown -R "$SITE_USER:$SITE_GROUP" "$SHARED_PRIVATE"
   run_root find "$SHARED_PRIVATE" -type d -exec chmod 750 {} \;
