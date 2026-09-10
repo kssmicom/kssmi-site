@@ -1,5 +1,6 @@
 # All crawlers (including AI bots listed below)
 User-agent: *
+Disallow: /short-links
 Allow: /
 
 # Private admin pages -- no indexing

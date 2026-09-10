@@ -112,13 +112,14 @@ function short_link_text($value, int $max): string {
 
 function short_link_allowed_hosts(): array {
     $configured = getenv('KSSMI_SHORTLINK_ALLOWED_HOSTS');
-    $hosts = $configured === false || trim($configured) === ''
-        ? ['gumlet.io', '*.gumlet.io', 'drive.google.com', 'kssmi.com', '*.kssmi.com'] : explode(',', $configured);
+    $hosts = $configured === false || trim($configured) === '' ? [] : explode(',', $configured);
     return array_values(array_filter(array_map(static fn($host) => strtolower(trim($host)), $hosts)));
 }
 
 function short_link_host_allowed(string $host): bool {
-    foreach (short_link_allowed_hosts() as $allowed) {
+    $allowedHosts = short_link_allowed_hosts();
+    if ($allowedHosts === []) return true;
+    foreach ($allowedHosts as $allowed) {
         if ($host === $allowed || (str_starts_with($allowed, '*.') && str_ends_with($host, substr($allowed, 1)))) return true;
     }
     return false;
@@ -315,32 +316,35 @@ function short_link_permanently_delete(int $id, string $confirmation, string $ad
         short_link_commit($db);
     } catch (Throwable $error) { short_link_rollback($db); throw $error; }
 }
-function short_link_count(string $search = ''): int {
+function short_link_count(string $search = '', ?string $createdBy = null): int {
     $search = short_link_text($search, 256);
     $sql = "SELECT COUNT(*) FROM short_links l JOIN short_link_destinations d ON d.id=l.destination_id WHERE l.status != 'deleted'";
     $params = [];
-    if ($search !== '') { $sql .= ' AND (l.code LIKE ? OR d.target_url LIKE ? OR l.label LIKE ? OR l.campaign LIKE ? OR l.recipient_ref LIKE ?)'; $like='%'.$search.'%'; $params=[$like,$like,$like,$like,$like]; }
+    if ($createdBy !== null) { $sql .= ' AND l.created_by = ?'; $params[] = $createdBy; }
+    if ($search !== '') { $sql .= ' AND (l.code LIKE ? OR d.target_url LIKE ? OR l.label LIKE ? OR l.campaign LIKE ? OR l.recipient_ref LIKE ?)'; $like='%'.$search.'%'; array_push($params,$like,$like,$like,$like,$like); }
     $stmt = short_link_db()->prepare($sql); $stmt->execute($params);
     return (int)$stmt->fetchColumn();
 }
-function short_link_list(string $search = '', int $limit = 100, int $offset = 0): array {
+function short_link_list(string $search = '', int $limit = 100, int $offset = 0, ?string $createdBy = null): array {
     $search = short_link_text($search, 256); $limit = max(1, min(250, $limit)); $offset = max(0, $offset);
     $sql = "SELECT l.*,d.target_url, COALESCE(c.total_opens,0) AS opens, COALESCE(c.total_bots,0) AS bots, c.last_opened FROM short_links l JOIN short_link_destinations d ON d.id=l.destination_id LEFT JOIN short_link_event_counts c ON c.short_link_id=l.id";
     // Hide any legacy soft-deleted rows; all new user-facing deletions use the
     // permanent-delete operation above and remove their rows altogether.
     $sql .= " WHERE l.status != 'deleted'";
-    $params = []; if ($search !== '') { $sql .= ' AND (l.code LIKE ? OR d.target_url LIKE ? OR l.label LIKE ? OR l.campaign LIKE ? OR l.recipient_ref LIKE ?)'; $like='%'.$search.'%'; $params=[$like,$like,$like,$like,$like]; }
+    $params = []; if ($createdBy !== null) { $sql .= ' AND l.created_by = ?'; $params[] = $createdBy; } if ($search !== '') { $sql .= ' AND (l.code LIKE ? OR d.target_url LIKE ? OR l.label LIKE ? OR l.campaign LIKE ? OR l.recipient_ref LIKE ?)'; $like='%'.$search.'%'; array_push($params,$like,$like,$like,$like,$like); }
     $sql .= ' ORDER BY l.created_at DESC, l.id DESC LIMIT ' . $limit . ' OFFSET ' . $offset; $stmt=short_link_db()->prepare($sql); $stmt->execute($params); return $stmt->fetchAll();
 }
-function short_link_tracking_neighbors(int $id, string $search = ''): array {
+function short_link_tracking_neighbors(int $id, string $search = '', ?string $createdBy = null): array {
     $search = short_link_text($search, 256);
-    $current = short_link_db()->prepare('SELECT id,created_at FROM short_links WHERE id = ? AND status != \'deleted\'');
-    $current->execute([$id]);
+    $currentSql = 'SELECT id,created_at FROM short_links WHERE id = ? AND status != \'deleted\'' . ($createdBy !== null ? ' AND created_by = ?' : '');
+    $current = short_link_db()->prepare($currentSql);
+    $current->execute($createdBy === null ? [$id] : [$id, $createdBy]);
     $row = $current->fetch();
     if (!$row) return ['previous' => null, 'next' => null];
 
     $where = " FROM short_links l JOIN short_link_destinations d ON d.id = l.destination_id WHERE l.status != 'deleted'";
     $params = [];
+    if ($createdBy !== null) { $where .= ' AND l.created_by = ?'; $params[] = $createdBy; }
     if ($search !== '') {
         $where .= ' AND (l.code LIKE ? OR d.target_url LIKE ? OR l.label LIKE ? OR l.campaign LIKE ? OR l.recipient_ref LIKE ?)';
         $like = '%' . $search . '%';
@@ -353,9 +357,10 @@ function short_link_tracking_neighbors(int $id, string $search = ''): array {
     $older->execute(array_merge($params, [$row['created_at'], $row['created_at'], $row['id']]));
     return ['previous' => $newer->fetch() ?: null, 'next' => $older->fetch() ?: null];
 }
-function short_link_tracking(int $id, int $limit = 250): ?array {
+function short_link_tracking(int $id, int $limit = 250, ?string $createdBy = null): ?array {
     $link = short_link_get($id);
     if (!$link) return null;
+    if ($createdBy !== null && !hash_equals((string)$link['created_by'], $createdBy)) return null;
     $limit = max(1, min(500, $limit));
     $summary = short_link_db()->prepare("SELECT COALESCE(total_opens,0) AS opens, COALESCE(total_bots,0) AS bots, last_opened FROM short_link_event_counts WHERE short_link_id = ?");
     $summary->execute([$id]);

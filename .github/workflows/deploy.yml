@@ -146,6 +146,7 @@ jobs:
           cp public/visitor-journey.php dist/
           cp public/404-router.php dist/
           cp public/short-link-redirect.php dist/
+          cp public/short-links.php dist/
           cp -r public/api dist/
           cp -r public/vendor dist/
 

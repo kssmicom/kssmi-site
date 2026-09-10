@@ -187,12 +187,12 @@ if ($isAuthenticated && $tab === 'short-links') {
     require_once dirname(__DIR__) . '/private/short-link-store.php';
     try {
         $trackingId = filter_input(INPUT_GET, 'sl_tracking', FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]);
-        if ($trackingId !== false && $trackingId !== null) { $shortLinkTracking = short_link_tracking((int)$trackingId); if ($shortLinkTracking) $shortLinkTrackingNeighbors = short_link_tracking_neighbors((int)$trackingId, $shortLinkSearch); }
+        if ($trackingId !== false && $trackingId !== null) { $shortLinkTracking = short_link_tracking((int)$trackingId, 250, ADMIN_EMAIL); if ($shortLinkTracking) $shortLinkTrackingNeighbors = short_link_tracking_neighbors((int)$trackingId, $shortLinkSearch, ADMIN_EMAIL); }
         else {
-            $shortLinkTotal = short_link_count($shortLinkSearch);
+            $shortLinkTotal = short_link_count($shortLinkSearch, ADMIN_EMAIL);
             $shortLinkPages = max(1, (int)ceil($shortLinkTotal / $shortLinkPerPage));
             $shortLinkPage = min($shortLinkPage, $shortLinkPages);
-            $shortLinkRows = short_link_list($shortLinkSearch, $shortLinkPerPage, ($shortLinkPage - 1) * $shortLinkPerPage);
+            $shortLinkRows = short_link_list($shortLinkSearch, $shortLinkPerPage, ($shortLinkPage - 1) * $shortLinkPerPage, ADMIN_EMAIL);
         }
         $shortLinkCapacity = short_link_event_capacity($shortLinkTracking ? (int)$shortLinkTracking['link']['id'] : null);
     }

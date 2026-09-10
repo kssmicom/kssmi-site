@@ -63,6 +63,7 @@ GSC_JSON="$SHARED_PRIVATE/gsc/google-service-account.json"
 # Shared security deployment: the JSON snapshot is installed before the PHP
 # consumer, so the new consumer can never observe a missing new dependency.
 PRIVATE_MODULES="email-log-store.php cloudflare-ip-ranges.json rate-limit.php http-security.php"
+SHORT_LINK_USERS_FILE="$SHARED_PRIVATE/short-links-users.txt"
 RATE_LIMIT_MODULE="$SHARED_PRIVATE/rate-limit.php"
 EMAIL_LOG_MODULE="$SHARED_PRIVATE/email-log-store.php"
 HTTP_SECURITY_MODULE="$SHARED_PRIVATE/http-security.php"
@@ -301,6 +302,7 @@ prepare_release_layout() {
   create_release_link "$RELEASE_DIR/.email_logs_password" "$PASSWORD_FILE"
   create_release_link "$RELEASE_DIR/.email_reset_tokens.json" "$RESET_TOKENS_FILE"
   create_release_link "$RELEASE_DIR/private_config.php" "$PRIVATE_CONFIG"
+  create_release_link "$RELEASE_DIR/private/short-links-users.txt" "$SHORT_LINK_USERS_FILE"
 
   state_write release_webroot "$NEW_WEBROOT"
   run_root sh -c "umask 0027; printf '%s\n' '$RELEASE_ID' > '$RELEASE_DIR/.kssmi-release'; chown '$SITE_USER:$SITE_GROUP' '$RELEASE_DIR/.kssmi-release'; chmod 640 '$RELEASE_DIR/.kssmi-release'"
@@ -329,7 +331,8 @@ verify_release_permission_policy() {
     "$RELEASE_DIR/rate_limit" "$RATE_LIMIT_DIR" \
     "$RELEASE_DIR/.email_logs_password" "$PASSWORD_FILE" \
     "$RELEASE_DIR/.email_reset_tokens.json" "$RESET_TOKENS_FILE" \
-    "$RELEASE_DIR/private_config.php" "$PRIVATE_CONFIG"
+    "$RELEASE_DIR/private_config.php" "$PRIVATE_CONFIG" \
+    "$RELEASE_DIR/private/short-links-users.txt" "$SHORT_LINK_USERS_FILE"
   echo "Immutable release permission policy v$KSSMI_PERMISSION_POLICY_VERSION: OK"
 }
 

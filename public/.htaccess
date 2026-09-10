@@ -74,6 +74,7 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # consistently honour Apache's [END] flag; [L] is sufficient because the
 # target is a concrete PHP endpoint.
 RewriteRule ^([A-Z][A-Za-z0-9]{5})/?$ /short-link-redirect.php?code=$1 [L,QSA]
+RewriteRule ^short-links/?$ /short-links.php [L,QSA]
 
 # ─── Static assets (pass through as-is) ────────────────────────────────────
 # Content-fingerprinted runtime assets. The build replaces this marker block in
