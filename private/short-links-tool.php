@@ -86,9 +86,16 @@ function kssmi_short_links_send_reset(string $email, string $token): bool {
     $configPath = dirname(__DIR__) . '/private_config.php';
     $cfg = file_exists($configPath) ? (array)require $configPath : [];
     $vendor = dirname(__DIR__) . '/public/vendor/autoload.php';
-    if (!is_file($vendor)) return false;
+    if (!is_file($vendor)) {
+        throw new RuntimeException('Reset mailer is unavailable.');
+    }
     require_once $vendor;
     try {
         $mail = new PHPMailer\PHPMailer\PHPMailer(true); $mail->isSMTP(); $mail->Host = 'smtp.gmail.com'; $mail->SMTPAuth = true; $mail->Username = 'sales@kssmi.com'; $mail->Password = (string)($cfg['smtp_pass'] ?? ''); $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS; $mail->Port = 587; $mail->CharSet = 'UTF-8'; $mail->setFrom('sales@kssmi.com', 'KSSMI'); $mail->addAddress($email); $mail->Subject = 'KSSMI short-links password reset'; $mail->Body = "Reset your password within 60 minutes:\nhttps://kssmi.com/short-links?reset=" . $token; return $mail->send();
-    } catch (Throwable $e) { error_log('KSSMI short-link reset mail failed: ' . $e->getMessage()); return false; }
+    } catch (Throwable $e) {
+        error_log('KSSMI short-link reset mail failed: ' . $e->getMessage());
+        // Surface the mailer's own message (never contains credentials) so a
+        // failed reset attempt can be diagnosed from the API response.
+        throw new RuntimeException('Reset email failed: ' . $e->getMessage());
+    }
 }

@@ -127,15 +127,9 @@ try {
                     $tokens[$token] = ['email' => $email, 'expires' => time() + SL_RESET_TOKEN_TTL];
                 }
             );
-            if (!kssmi_short_links_send_reset(
-                $email,
-                $token
-            )) {
-                // kssmi_short_links_send_reset() already logged the failure.
-                http_response_code(500);
-                echo '{"error":"Could not send the reset email right now. Please try again later."}';
-                exit;
-            }
+            // Throws RuntimeException (surfaced as 500) when the mailer is
+            // unavailable or the send fails.
+            kssmi_short_links_send_reset($email, $token);
         }
         // Identical response whether or not the address is registered.
         echo '{"ok":true}';
