@@ -128,6 +128,39 @@ function kssmi_short_links_write_users(array $users): bool {
 }
 
 /**
+ * Change the shared account file under one exclusive lock.
+ *
+ * @throws RuntimeException When the file cannot be safely updated.
+ */
+function kssmi_short_links_mutate_users(callable $mutator): mixed {
+    $realPath = kssmi_short_links_users_real_path();
+    $lock = kssmi_admin_file_lock($realPath, LOCK_EX);
+    if (!$lock['ok']) throw new RuntimeException('Account file is unavailable; ask the administrator.');
+    try {
+        $users = kssmi_short_links_users();
+        $result = $mutator($users);
+        if (!kssmi_short_links_write_users($users)) {
+            throw new RuntimeException('Account file could not be updated; ask the administrator.');
+        }
+        return $result;
+    } finally {
+        kssmi_admin_file_unlock($lock);
+    }
+}
+
+function kssmi_short_links_account_email(string $email): string {
+    $email = strtolower(trim($email));
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL) || !str_ends_with($email, KSSMI_SHORT_LINK_EMAIL_DOMAIN)) {
+        throw new InvalidArgumentException('Use a valid @kssmi.com email address.');
+    }
+    return $email;
+}
+
+function kssmi_short_links_admin_count(array $users): int {
+    return count(array_filter($users, static fn(array $row): bool => ($row['admin'] ?? false) === true));
+}
+
+/**
  * Change one account's bcrypt hash in the shared users file.
  *
  * The file is read INSIDE the exclusive lock so two concurrent changes

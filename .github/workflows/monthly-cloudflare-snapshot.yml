@@ -1,0 +1,46 @@
+name: Monthly Cloudflare snapshot PR
+
+on:
+  schedule:
+    - cron: '23 2 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: monthly-cloudflare-snapshot
+  cancel-in-progress: false
+
+jobs:
+  refresh-and-propose:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --legacy-peer-deps
+      - run: npm run update:cloudflare-ranges
+      - run: npm run test:cloudflare-ranges && npm run validate:cloudflare-ranges -- --check-remote
+      - name: Create reviewable update PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- private/cloudflare-ip-ranges.json; then
+            echo 'Snapshot already current.' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          branch="automation/cloudflare-snapshot-$(date -u +%Y-%m)"
+          git checkout -B "$branch"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add private/cloudflare-ip-ranges.json
+          git commit -m 'chore: refresh Cloudflare origin ranges'
+          git push --force-with-lease origin "$branch"
+          gh pr create --base main --head "$branch" --title 'chore: refresh Cloudflare origin ranges' --body 'Automated monthly snapshot refresh. Review the range diff, then merge normally; deployment remains protected by the regular release workflow.' || true

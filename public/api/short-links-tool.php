@@ -80,6 +80,61 @@ try {
     // Attribute writes to the signed-in colleague's email.
     $admin = $principal['email'];
     $isToolAdmin = $principal['admin'];
+    if (in_array($action, ['account-list', 'account-create', 'account-role', 'account-delete'], true) && !$isToolAdmin) {
+        http_response_code(403);
+        echo '{"error":"Short-links administrator access is required."}';
+        exit;
+    }
+    if ($action === 'account-list') {
+        $accounts = [];
+        foreach (kssmi_short_links_users() as $email => $entry) {
+            $accounts[] = ['email' => $email, 'admin' => ($entry['admin'] ?? false) === true];
+        }
+        usort($accounts, static fn(array $a, array $b): int => $a['email'] <=> $b['email']);
+        echo json_encode(['accounts' => $accounts], JSON_THROW_ON_ERROR);
+        exit;
+    }
+    if ($action === 'account-create') {
+        $email = kssmi_short_links_account_email((string)($input['email'] ?? ''));
+        $password = (string)($input['password'] ?? '');
+        $makeAdmin = ($input['admin'] ?? false) === true;
+        if (strlen($password) < 10 || strlen($password) > 128) {
+            throw new InvalidArgumentException('Initial password must be 10-128 characters.');
+        }
+        kssmi_short_links_mutate_users(static function (array &$users) use ($email, $password, $makeAdmin): void {
+            if (isset($users[$email])) throw new InvalidArgumentException('That account already exists.');
+            $users[$email] = ['hash' => password_hash($password, PASSWORD_DEFAULT), 'admin' => $makeAdmin];
+        });
+        echo '{"ok":true}';
+        exit;
+    }
+    if ($action === 'account-role') {
+        $email = kssmi_short_links_account_email((string)($input['email'] ?? ''));
+        $makeAdmin = ($input['admin'] ?? false) === true;
+        kssmi_short_links_mutate_users(static function (array &$users) use ($email, $makeAdmin, $admin): void {
+            if (!isset($users[$email])) throw new InvalidArgumentException('Account not found.');
+            if ($email === $admin && !$makeAdmin) throw new InvalidArgumentException('You cannot remove your own administrator role.');
+            if (!$makeAdmin && ($users[$email]['admin'] ?? false) === true && kssmi_short_links_admin_count($users) <= 1) {
+                throw new InvalidArgumentException('Keep at least one short-links administrator.');
+            }
+            $users[$email]['admin'] = $makeAdmin;
+        });
+        echo '{"ok":true}';
+        exit;
+    }
+    if ($action === 'account-delete') {
+        $email = kssmi_short_links_account_email((string)($input['email'] ?? ''));
+        kssmi_short_links_mutate_users(static function (array &$users) use ($email, $admin): void {
+            if (!isset($users[$email])) throw new InvalidArgumentException('Account not found.');
+            if ($email === $admin) throw new InvalidArgumentException('You cannot delete your own account.');
+            if (($users[$email]['admin'] ?? false) === true && kssmi_short_links_admin_count($users) <= 1) {
+                throw new InvalidArgumentException('Keep at least one short-links administrator.');
+            }
+            unset($users[$email]);
+        });
+        echo '{"ok":true}';
+        exit;
+    }
     // Regular accounts may only modify links they created.
     if (!$isToolAdmin && in_array($action, ['status', 'permanent-delete'], true)) {
         $owned = short_link_get(short_link_api_id($input['id'] ?? null));
