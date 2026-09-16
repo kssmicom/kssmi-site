@@ -18,7 +18,6 @@ const currentPath = lang === 'en' ? '' : lang + '/';
 const PAGE_SIZE = 12;
 
 const allProducts = await getCollection('feature');
-  if (allProducts.length === 0) return [];
 const langProducts = allProducts.filter((p: any) => p.data.lang === lang);
 
 const sortedProducts = langProducts.sort((a: any, b: any) => {
