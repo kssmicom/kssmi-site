@@ -13,6 +13,7 @@ try {
   await writeFile(path.join(dir, '.htaccess'), await readFile(path.join(projectRoot, 'public', '.htaccess')));
   await writeFile(path.join(dir, 'index.html'), '<!doctype html><html><head><title>KSSMI</title></head><body><script>window.example = 1;</script></body></html>');
   await writeFile(path.join(dir, 'nested.html'), '<!doctype html><html><head></head><body style="color:red"></body></html>');
+  await writeFile(path.join(dir, 'redirect.html'), '<!doctype html><title>Redirecting</title><meta http-equiv="refresh" content="0;url=/">');
 
   for (let pass = 0; pass < 2; pass += 1) {
     await run(process.execPath, ['scripts/generate-csp-hashes.mjs', dir], { cwd: projectRoot });
@@ -25,6 +26,8 @@ try {
     assert.match(matches[0], /default-src 'self'/);
     assert.doesNotMatch(matches[0], /unsafe-inline/);
   }
+  const redirect = await readFile(path.join(dir, 'redirect.html'), 'utf8');
+  assert.doesNotMatch(redirect, /data-kssmi-static-csp="1"/, 'Headless redirect must remain valid minimal HTML.');
   const htaccess = await readFile(path.join(dir, '.htaccess'), 'utf8');
   assert.doesNotMatch(htaccess, /Static HTML CSP BEGIN[\s\S]*unsafe-inline[\s\S]*Static HTML CSP END/);
   console.log('Static CSP generation tests passed.');

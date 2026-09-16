@@ -74,7 +74,11 @@ async function updateHtmlPolicy(file) {
   // This marker makes regeneration idempotent and avoids accepting a stale
   // policy when OpenLiteSpeed ignores Apache Header directives in .htaccess.
   html = html.replace(/\s*<meta\s+data-kssmi-static-csp\s*=\s*(["'])1\1[^>]*>\s*/gi, '\n');
-  if (!/<\/head\s*>/i.test(html)) throw new Error(`Closing head tag not found in ${file}`);
+  // Astro emits minimal noindex redirect documents without html/head elements.
+  // They contain no executable inline content, and a CSP meta is only valid
+  // inside head, so leave those redirects unchanged rather than failing a
+  // release that otherwise built successfully.
+  if (!/<\/head\s*>/i.test(html)) return;
   html = html.replace(/<\/head\s*>/i, `  ${cspMeta(policy)}\n</head>`);
   await writeFile(file, html, 'utf8');
 }
