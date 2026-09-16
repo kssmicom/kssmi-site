@@ -6,6 +6,21 @@ Dynamic PHP endpoints send one explicit policy in application code.
 OpenLiteSpeed only processes rewrite rules from `.htaccess`; Apache `Header`,
 `FilesMatch`, and `Expires` cache directives must not be used there.
 
+## Static HTML CSP
+
+The build generates the same strict Content Security Policy in two places:
+the `.htaccess` template for Apache-compatible environments, and a marked
+`<meta http-equiv="Content-Security-Policy">` element in every built HTML page.
+The latter is the production enforcement path on this OpenLiteSpeed host, where
+Apache `Header` directives are ignored. `npm run test:static-csp` checks that
+generation is strict and idempotent; the deployment smoke then checks the live
+homepage contains it.
+
+This browser-enforced meta policy cannot express `frame-ancestors`. The live
+`X-Frame-Options` header remains the clickjacking control. If a response-header
+CSP is later required, install it as a reviewed native vhost change with a
+backup and rollback plan; do not add it as an unverified application deploy.
+
 ## Origin policy
 
 | Response | Policy |

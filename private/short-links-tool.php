@@ -16,6 +16,81 @@ const KSSMI_SHORT_LINK_EMAIL_DOMAIN = '@kssmi.com';
 
 function kssmi_short_links_session(): void { kssmi_admin_session_bootstrap(); }
 
+/** Remove every privilege-bearing value from this tool's separate session. */
+function kssmi_short_links_session_revoke(): void {
+    unset(
+        $_SESSION['short_links_tool_auth'],
+        $_SESSION['short_links_tool_email'],
+        $_SESSION['short_links_tool_admin'],
+        $_SESSION['short_links_tool_password_fingerprint'],
+        $_SESSION['short_links_tool_authenticated_at'],
+        $_SESSION['short_links_tool_last_seen_at'],
+        $_SESSION['short_links_tool_csrf']
+    );
+}
+
+function kssmi_short_links_password_fingerprint(string $hash): string {
+    // A fingerprint is enough to bind the session to the current credential;
+    // never duplicate a password or bcrypt hash into session storage.
+    return hash('sha256', $hash);
+}
+
+function kssmi_short_links_session_establish(string $email, array $entry, ?int $now = null): bool {
+    $hash = $entry['hash'] ?? null;
+    if (!is_string($hash) || $hash === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) return false;
+    $now ??= time();
+    $_SESSION['short_links_tool_auth'] = true;
+    $_SESSION['short_links_tool_email'] = strtolower($email);
+    $_SESSION['short_links_tool_admin'] = ($entry['admin'] ?? false) === true;
+    $_SESSION['short_links_tool_password_fingerprint'] = kssmi_short_links_password_fingerprint($hash);
+    $_SESSION['short_links_tool_authenticated_at'] = $now;
+    $_SESSION['short_links_tool_last_seen_at'] = $now;
+    kssmi_admin_csrf_rotate('short_links_tool_csrf');
+    return true;
+}
+
+/**
+ * Return the currently valid tool principal, or revoke a stale/invalid session.
+ *
+ * The account file is intentionally checked on every protected request: account
+ * deletion, password reset/change, and admin-role demotion take effect without
+ * waiting for an old browser session to expire.
+ */
+function kssmi_short_links_session_principal(?array $users = null, ?int $now = null): ?array {
+    $now ??= time();
+    $email = $_SESSION['short_links_tool_email'] ?? null;
+    $fingerprint = $_SESSION['short_links_tool_password_fingerprint'] ?? null;
+    $issuedAt = $_SESSION['short_links_tool_authenticated_at'] ?? null;
+    $lastSeenAt = $_SESSION['short_links_tool_last_seen_at'] ?? null;
+    $validShape = ($_SESSION['short_links_tool_auth'] ?? false) === true
+        && is_string($email)
+        && filter_var($email, FILTER_VALIDATE_EMAIL)
+        && str_ends_with($email, KSSMI_SHORT_LINK_EMAIL_DOMAIN)
+        && is_string($fingerprint)
+        && preg_match('/^[a-f0-9]{64}$/D', $fingerprint) === 1
+        && is_int($issuedAt)
+        && is_int($lastSeenAt);
+    $users ??= kssmi_short_links_users();
+    $entry = $validShape ? ($users[strtolower($email)] ?? null) : null;
+    $validEntry = is_array($entry)
+        && is_string($entry['hash'] ?? null)
+        && hash_equals($fingerprint, kssmi_short_links_password_fingerprint($entry['hash']))
+        && $issuedAt <= $now
+        && $lastSeenAt <= $now
+        && ($now - $issuedAt) <= kssmi_admin_session_absolute_ttl()
+        && ($now - $lastSeenAt) <= kssmi_admin_session_inactivity_ttl();
+    if (!$validEntry) {
+        kssmi_short_links_session_revoke();
+        return null;
+    }
+    // The current file is authoritative; a cached role must never preserve
+    // administration after a role change.
+    $isAdmin = ($entry['admin'] ?? false) === true;
+    $_SESSION['short_links_tool_admin'] = $isAdmin;
+    $_SESSION['short_links_tool_last_seen_at'] = $now;
+    return ['email' => strtolower($email), 'admin' => $isAdmin];
+}
+
 function kssmi_short_links_users_path(): string { return dirname(__DIR__) . '/short-links-users.txt'; }
 
 function kssmi_short_links_users(): array {

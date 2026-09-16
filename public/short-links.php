@@ -37,8 +37,7 @@ if (isset($_SESSION['short_links_tool_auth']) && $_SESSION['short_links_tool_aut
     if (!kssmi_admin_csrf_valid($_POST['csrf_token'] ?? null, SL_TOOL_CSRF_KEY)) {
         $error = 'Security check failed. Please try again.';
     } else {
-        $_SESSION['short_links_tool_auth'] = false;
-        unset($_SESSION['short_links_tool_email'], $_SESSION['short_links_tool_admin']);
+        kssmi_short_links_session_revoke();
         header('Location: /short-links');
         exit;
     }
@@ -69,19 +68,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'], $_POST['pass
             // surviving the authentication boundary (fixation defense).
             if (!session_regenerate_id(true)) {
                 $error = 'Sign-in failed. Please try again.';
-            } else {
-                $_SESSION['short_links_tool_auth'] = true;
-                $_SESSION['short_links_tool_email'] = $email;
-                $_SESSION['short_links_tool_admin'] = $users[$email]['admin'];
-                kssmi_admin_csrf_rotate(SL_TOOL_CSRF_KEY);
+            } elseif (!kssmi_short_links_session_establish($email, $users[$email])) {
+                $error = 'Sign-in failed. Please try again.';
             }
         }
     }
 }
 
-$isAuthenticated = isset($_SESSION['short_links_tool_auth']) && $_SESSION['short_links_tool_auth'] === true;
-$toolEmail = (string)($_SESSION['short_links_tool_email'] ?? '');
-$toolIsAdmin = $isAuthenticated && ($_SESSION['short_links_tool_admin'] ?? false) === true;
+$toolPrincipal = kssmi_short_links_session_principal();
+$isAuthenticated = $toolPrincipal !== null;
+$toolEmail = $toolPrincipal['email'] ?? '';
+$toolIsAdmin = $toolPrincipal['admin'] ?? false;
 // Regular accounts only ever see links they created; admins see everything.
 $shortLinkOwner = $toolIsAdmin ? null : $toolEmail;
 

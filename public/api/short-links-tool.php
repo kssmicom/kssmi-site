@@ -20,7 +20,8 @@ header('X-Robots-Tag: noindex, nofollow');
 
 const SL_TOOL_CSRF_KEY = 'short_links_tool_csrf';
 
-if (!isset($_SESSION['short_links_tool_auth']) || $_SESSION['short_links_tool_auth'] !== true) {
+$principal = kssmi_short_links_session_principal();
+if ($principal === null) {
     http_response_code(401);
     echo '{"error":"Authentication required."}';
     exit;
@@ -77,18 +78,8 @@ function short_link_api_id($value): int {
 try {
     $action = $input['action'] ?? '';
     // Attribute writes to the signed-in colleague's email.
-    $admin = (string)($_SESSION['short_links_tool_email'] ?? '');
-    if ($admin === '' || !str_ends_with($admin, KSSMI_SHORT_LINK_EMAIL_DOMAIN)) {
-        http_response_code(401);
-        echo '{"error":"Authentication required."}';
-        exit;
-    }
-    // Admin status is re-read from the users file on every request so a role
-    // change (or a session created before the flag existed) takes effect
-    // immediately without waiting for a new login.
-    $usersFile = kssmi_short_links_users();
-    $isToolAdmin = ($usersFile[$admin]['admin'] ?? false)
-        || ($_SESSION['short_links_tool_admin'] ?? false) === true;
+    $admin = $principal['email'];
+    $isToolAdmin = $principal['admin'];
     // Regular accounts may only modify links they created.
     if (!$isToolAdmin && in_array($action, ['status', 'permanent-delete'], true)) {
         $owned = short_link_get(short_link_api_id($input['id'] ?? null));
@@ -110,6 +101,9 @@ try {
             throw new InvalidArgumentException('New password must be 10-128 characters.');
         }
         kssmi_short_links_update_user_password($admin, password_hash($new, PASSWORD_DEFAULT));
+        // The new bcrypt hash invalidates every existing session fingerprint,
+        // including this browser. Require a fresh sign-in immediately.
+        kssmi_short_links_session_revoke();
         echo '{"ok":true}';
         exit;
     }

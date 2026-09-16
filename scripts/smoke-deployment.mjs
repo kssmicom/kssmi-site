@@ -159,6 +159,17 @@ await runCheck('homepage cache policy', async () => {
   assertSingleCacheControl(homepage, /(?:^|,\s*)s-maxage=600(?:,|$)/i);
 });
 
+await runCheck('homepage static CSP policy', async () => {
+  const homepage = await getResponse('/');
+  const match = homepage.body.match(/<meta data-kssmi-static-csp="1"[^>]*content="([^"]+)"[^>]*>/i);
+  if (!match) throw new Error(`${homepage.url.href} is missing the generated static CSP meta policy.`);
+  const policy = match[1].replaceAll('&amp;', '&');
+  if (!policy.includes("default-src 'self'") || policy.includes('unsafe-inline')) {
+    throw new Error(`${homepage.url.href} has a non-strict generated static CSP policy.`);
+  }
+  console.log(`OK static CSP ${homepage.url.href}`);
+});
+
 for (const [logicalName, asset] of Object.entries(runtimeManifest.assets)) {
   await runCheck(`runtime asset ${logicalName}`, async () => {
     const response = await getResponse(asset.url);

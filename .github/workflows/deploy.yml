@@ -128,8 +128,13 @@ jobs:
 
       - name: Assert built static CSP is strict
         run: |
+          npm run test:static-csp
           if sed -n '/Static HTML CSP BEGIN/,/Static HTML CSP END/p' dist/.htaccess | grep -q 'unsafe-inline'; then
             echo 'Static HTML CSP must not contain unsafe-inline'
+            exit 1
+          fi
+          if ! grep -q 'data-kssmi-static-csp="1"' dist/index.html; then
+            echo 'Built homepage must contain the generated CSP meta policy'
             exit 1
           fi
 

@@ -67,7 +67,20 @@ const updateFile = async (file) => {
   await writeFile(file, text, 'utf8');
 };
 
+const cspMeta = (value) => `<meta data-kssmi-static-csp="1" http-equiv="Content-Security-Policy" content="${value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')}">`;
+
+async function updateHtmlPolicy(file) {
+  let html = await readFile(file, 'utf8');
+  // This marker makes regeneration idempotent and avoids accepting a stale
+  // policy when OpenLiteSpeed ignores Apache Header directives in .htaccess.
+  html = html.replace(/\s*<meta\s+data-kssmi-static-csp\s*=\s*(["'])1\1[^>]*>\s*/gi, '\n');
+  if (!/<\/head\s*>/i.test(html)) throw new Error(`Closing head tag not found in ${file}`);
+  html = html.replace(/<\/head\s*>/i, `  ${cspMeta(policy)}\n</head>`);
+  await writeFile(file, html, 'utf8');
+}
+
 await updateFile(path.join(distDir, '.htaccess'));
 if (writeSource) await updateFile(path.join(projectRoot, 'public', '.htaccess'));
+await Promise.all((await htmlFiles(distDir)).map(updateHtmlPolicy));
 
 console.log(`Generated static CSP: ${scriptHashes.size} script/event hashes, ${styleHashes.size} style hashes.`);

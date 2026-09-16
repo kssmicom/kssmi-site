@@ -36,6 +36,7 @@
     "update:cloudflare-ranges": "node scripts/update-cloudflare-ranges.mjs",
     "fix:interactions": "node scripts/fix-interaction-policy.mjs",
     "test:cloudflare-ranges": "node scripts/test-cloudflare-ranges.mjs",
+    "test:static-csp": "node scripts/test-static-csp.mjs",
     "test:runtime-assets": "node scripts/test-runtime-assets.mjs",
     "test:permissions": "bash scripts/test-permission-policy.sh",
     "test:runtime-identity": "php scripts/runtime-capability-probe.php --identity-self-test",
@@ -57,7 +58,8 @@
     "test:reset-race": "php scripts/test-reset-token-race.php",
     "test:admin-session": "php scripts/test-admin-session.php",
     "test:short-links": "php scripts/test-short-links.php",
-    "test:php": "npm run test:vjt-capability-proof && npm run test:backend && npm run test:email-log && npm run test:rate-limit && npm run test:vjt-authenticity && npm run test:vjt-write-budget && npm run test:vjt-checkpoint && npm run test:contact-core && npm run test:vjt-event-state && npm run test:vjt-heartbeat && npm run test:vjt-data-quality && npm run test:anon-page-path && npm run test:http-security && npm run test:reset-race && npm run test:admin-session && npm run test:short-links"
+    "test:short-links-session": "php scripts/test-short-links-session.php",
+    "test:php": "npm run test:vjt-capability-proof && npm run test:backend && npm run test:email-log && npm run test:rate-limit && npm run test:vjt-authenticity && npm run test:vjt-write-budget && npm run test:vjt-checkpoint && npm run test:contact-core && npm run test:vjt-event-state && npm run test:vjt-heartbeat && npm run test:vjt-data-quality && npm run test:anon-page-path && npm run test:http-security && npm run test:reset-race && npm run test:admin-session && npm run test:short-links && npm run test:short-links-session"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
