@@ -14,10 +14,9 @@ import {
 } from './lib/cloudflare-ranges.mjs';
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
-const snapshot = readSnapshot(
-  path.join(root, 'private', 'cloudflare-ip-ranges.json'),
-  { now: new Date('2026-08-03T00:00:00Z') }
-);
+const snapshot = readSnapshot(path.join(root, 'private', 'cloudflare-ip-ranges.json'));
+const fixtureNow = new Date('2026-08-03T00:00:00Z');
+const fixtureSnapshot = { ...snapshot, verified_at: '2026-08-02T07:02:22Z' };
 
 assert.ok(snapshot.ipv4.length >= 10, 'IPv4 snapshot is unexpectedly small');
 assert.ok(snapshot.ipv6.length >= 5, 'IPv6 snapshot is unexpectedly small');
@@ -85,29 +84,29 @@ assert.throws(
   'IPv6 ranges were accepted as IPv4'
 );
 
-const futureSnapshot = { ...snapshot, verified_at: '2026-08-03T00:06:00Z' };
+const futureSnapshot = { ...fixtureSnapshot, verified_at: '2026-08-03T00:06:00Z' };
 assert.throws(
-  () => validateSnapshot(futureSnapshot, { now: new Date('2026-08-03T00:00:00Z') }),
+  () => validateSnapshot(futureSnapshot, { now: fixtureNow }),
   /future/,
   'future-dated snapshot was accepted'
 );
 assert.throws(
-  () => validateSnapshot(snapshot, { now: new Date('2026-09-17T06:54:51Z') }),
+  () => validateSnapshot(fixtureSnapshot, { now: new Date('2026-09-17T06:54:51Z') }),
   /older than 45 days/,
   'stale snapshot was accepted'
 );
 assert.throws(
   () => validateSnapshot(
-    { ...snapshot, unexpected: true },
-    { now: new Date('2026-08-03T00:00:00Z') }
+    { ...fixtureSnapshot, unexpected: true },
+    { now: fixtureNow }
   ),
   /unexpected fields/,
   'snapshot with unknown fields was accepted'
 );
 assert.throws(
   () => validateSnapshot(
-    { ...snapshot, sources: { ...snapshot.sources, ipv4: 'http://www.cloudflare.com/ips-v4/' } },
-    { now: new Date('2026-08-03T00:00:00Z') }
+    { ...fixtureSnapshot, sources: { ...fixtureSnapshot.sources, ipv4: 'http://www.cloudflare.com/ips-v4/' } },
+    { now: fixtureNow }
   ),
   /official Cloudflare HTTPS/,
   'non-HTTPS source was accepted'
