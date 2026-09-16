@@ -27,7 +27,11 @@ export async function getStaticPaths() {
   });
 }
 
-const { lang, page } = Astro.params;
+// Astro evaluates this module while an empty getStaticPaths() set is being
+// built. Keep that no-route evaluation safe instead of calling translations
+// with undefined parameters.
+const lang = Astro.params.lang ?? 'en';
+const page = Astro.params.page ?? '2';
 const currentPath = lang + '/';
 const PAGE_SIZE = 12;
 
