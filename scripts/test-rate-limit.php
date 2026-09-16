@@ -117,6 +117,23 @@ try {
         kssmi_get_trusted_cloudflare_country() === null,
         'direct caller supplied a trusted Cloudflare country header'
     );
+    $_SERVER['PROXY_REMOTE_ADDR'] = '173.245.48.1';
+    rate_limit_assert(
+        kssmi_get_client_ip() === '198.51.100.77',
+        'LiteSpeed proxy peer did not authorize the Cloudflare client IP'
+    );
+    $_SERVER['HTTP_CF_IPCOUNTRY'] = 'US';
+    rate_limit_assert(
+        kssmi_get_trusted_cloudflare_country() === 'US',
+        'LiteSpeed proxy peer did not authorize Cloudflare country metadata'
+    );
+    $_SERVER['PROXY_REMOTE_ADDR'] = '203.0.113.11';
+    $_SERVER['HTTP_PROXY_REMOTE_ADDR'] = '173.245.48.1';
+    rate_limit_assert(
+        kssmi_get_trusted_cloudflare_header('HTTP_CF_CONNECTING_IP') === null,
+        'forgeable HTTP Proxy-Remote-Addr was accepted as the connection peer'
+    );
+    unset($_SERVER['PROXY_REMOTE_ADDR'], $_SERVER['HTTP_PROXY_REMOTE_ADDR']);
     $_SERVER['REMOTE_ADDR'] = '173.245.48.1';
     rate_limit_assert(
         kssmi_get_client_ip() === '198.51.100.77',

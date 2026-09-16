@@ -50,14 +50,24 @@ for (const marker of [
   assert.ok(rateLimitTest.includes(marker), `Rate-limit tests missing proxy boundary case: ${marker}`);
 }
 assert.match(
-  security,
+  rateLimit,
+  /\$_SERVER\[['"]PROXY_REMOTE_ADDR['"]\]/,
+  'Trusted-proxy boundary must inspect LiteSpeed PROXY_REMOTE_ADDR.'
+);
+assert.match(
+  rateLimit,
   /\$_SERVER\[['"]REMOTE_ADDR['"]\]/,
-  'Trusted-proxy predicate must inspect the connection peer REMOTE_ADDR.'
+  'Trusted-proxy boundary must retain a REMOTE_ADDR fallback.'
+);
+assert.doesNotMatch(
+  rateLimit,
+  /\$_SERVER\[['"]HTTP_PROXY_REMOTE_ADDR['"]\]/,
+  'Trusted-proxy boundary must never accept a forgeable Proxy-Remote-Addr HTTP header.'
 );
 assert.match(
   security,
   /kssmi_is_cloudflare_proxy\s*\(\s*\$remoteAddress\s*\)/,
-  'Trusted-proxy predicate must validate REMOTE_ADDR against Cloudflare CIDRs.'
+  'Trusted-proxy predicate must validate the resolved peer against Cloudflare CIDRs.'
 );
 assert.match(
   security,
@@ -91,8 +101,8 @@ assert.doesNotMatch(
 );
 assert.match(
   adminOriginBlock,
-  /REMOTE_ADDR belongs to a[\s\S]*Cloudflare proxy range/,
-  'Admin access-control documentation must describe the REMOTE_ADDR gate.'
+  /PROXY_REMOTE_ADDR[\s\S]*REMOTE_ADDR[\s\S]*Cloudflare proxy range/,
+  'Admin access-control documentation must describe the LiteSpeed peer-address gate.'
 );
 
 assert.match(

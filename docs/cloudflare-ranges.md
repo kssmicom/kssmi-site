@@ -14,11 +14,15 @@ a bounded response, and a final URL that remains the exact official endpoint.
 ## Runtime boundary
 
 The deployed PHP consumer reads the private snapshot and trusts forwarded
-client headers only when `REMOTE_ADDR` belongs to a validated Cloudflare range.
-The two administration endpoints invoke the strict trusted-proxy gate before
-starting a session. A missing, malformed, or stale snapshot therefore causes
-the administration request to fail closed; a forgeable `CF-*` header alone is
-never evidence that a request passed through Cloudflare.
+client headers only when the connection peer belongs to a validated Cloudflare
+range. When OpenLiteSpeed's trusted-proxy handling restores the visitor into
+`REMOTE_ADDR`, the original connection peer is retained in the server-created
+`PROXY_REMOTE_ADDR`; otherwise PHP falls back to `REMOTE_ADDR`. The two
+administration endpoints invoke this strict trusted-proxy gate before starting
+a session. A missing, malformed, or stale snapshot therefore causes the
+administration request to fail closed; a forgeable `CF-*` or
+`HTTP_PROXY_REMOTE_ADDR` request header alone is never evidence that a request
+passed through Cloudflare.
 
 Cloudflare Access remains the identity gate at the edge. The PHP gate is the
 independent origin boundary for these administration endpoints. If a host-level

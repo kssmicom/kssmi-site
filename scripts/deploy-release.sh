@@ -446,7 +446,7 @@ declare(strict_types=1);
 require_once $argv[1];
 $ranges = kssmi_cloudflare_snapshot_load($argv[2]);
 if (!is_array($ranges) || count($ranges) < 15) {
-    fwrite(STDERR, "Cloudflare snapshot rejected by deployed PHP consumer.\n");
+    file_put_contents('php://stderr', "Cloudflare snapshot rejected by deployed PHP consumer.\n");
     exit(1);
 }
 PHP

@@ -18,9 +18,10 @@ declare(strict_types=1);
  *   5. One hardened admin-session bootstrap and bounded request normalization.
  *
  * Cloudflare Access remains the authentication gate at the edge. The origin
- * gate below independently verifies the TCP peer address (REMOTE_ADDR) before
- * either admin page starts a session. Client-controlled CF-* headers are never
- * accepted as proof that a request traversed Cloudflare.
+ * gate below independently verifies the TCP peer address before either admin
+ * page starts a session. LiteSpeed exposes that peer as PROXY_REMOTE_ADDR when
+ * it rewrites REMOTE_ADDR to the visitor IP. Client-controlled CF-* headers
+ * are never accepted as proof that a request traversed Cloudflare.
  */
 
 if (defined('KSSMI_HTTP_SECURITY_LOADED')) {
@@ -31,21 +32,15 @@ define('KSSMI_HTTP_SECURITY_LOADED', true);
 /**
  * Return true only when the connection peer is a published Cloudflare proxy.
  *
- * REMOTE_ADDR is supplied by the web server from the TCP connection. Unlike
- * CF-Ray / CF-Connecting-IP / X-Forwarded-For, a direct-origin HTTP client
- * cannot choose it. The CIDR matcher and strict versioned-snapshot consumer
- * live in rate-limit.php and are shared here so the two trust decisions cannot
- * drift apart. If that snapshot is unusable, this predicate returns false.
+ * LiteSpeed supplies PROXY_REMOTE_ADDR from the TCP connection when trusted
+ * proxy processing has replaced REMOTE_ADDR with the visitor IP. Other web
+ * servers fall back to REMOTE_ADDR. Unlike CF-Ray / CF-Connecting-IP /
+ * X-Forwarded-For, a direct-origin HTTP client cannot choose either server
+ * variable. The CIDR matcher and strict versioned-snapshot consumer live in
+ * rate-limit.php and are shared here so the two trust decisions cannot drift
+ * apart. If that snapshot is unusable, this predicate returns false.
  */
 function kssmi_admin_request_from_trusted_proxy($remoteAddress = null): bool {
-    if ($remoteAddress === null) {
-        $remoteAddress = $_SERVER['REMOTE_ADDR'] ?? null;
-    }
-    if (!is_string($remoteAddress)) return false;
-
-    $remoteAddress = trim($remoteAddress);
-    if (filter_var($remoteAddress, FILTER_VALIDATE_IP) === false) return false;
-
     if (!function_exists('kssmi_is_cloudflare_proxy')) {
         $rateLimitModule = __DIR__ . '/rate-limit.php';
         if (!is_file($rateLimitModule) || !is_readable($rateLimitModule)) {
@@ -53,6 +48,16 @@ function kssmi_admin_request_from_trusted_proxy($remoteAddress = null): bool {
         }
         require_once $rateLimitModule;
     }
+
+    if ($remoteAddress === null) {
+        $remoteAddress = function_exists('kssmi_connection_peer_ip')
+            ? kssmi_connection_peer_ip()
+            : ($_SERVER['REMOTE_ADDR'] ?? null);
+    }
+    if (!is_string($remoteAddress)) return false;
+
+    $remoteAddress = trim($remoteAddress);
+    if (filter_var($remoteAddress, FILTER_VALIDATE_IP) === false) return false;
 
     return function_exists('kssmi_is_cloudflare_proxy')
         && kssmi_is_cloudflare_proxy($remoteAddress);

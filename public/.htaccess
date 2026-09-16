@@ -39,7 +39,8 @@ RewriteRule ^api/vjt_data(/.*)?$ - [F,L]
 # Admin pages (email-logs.php, visitor-journey.php) are protected by
 # Cloudflare Access (Zero Trust) at the edge — the redirect to
 # kssmi.cloudflareaccess.com happens before requests reach this origin.
-# Each PHP admin entrypoint also validates that REMOTE_ADDR belongs to a
+# Each PHP admin entrypoint also validates that LiteSpeed's server-created
+# PROXY_REMOTE_ADDR (or REMOTE_ADDR when it was not rewritten) belongs to a
 # published Cloudflare proxy range before starting a session. CF-Ray and other
 # client-controlled request headers are never treated as proof of proxying.
 # No .htaccess IP allowlist is used: it would be overwritten by every release

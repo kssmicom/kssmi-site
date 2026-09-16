@@ -268,11 +268,29 @@ function kssmi_is_cloudflare_proxy(string $ip): bool {
 }
 
 /**
+ * Resolve the network peer without confusing LiteSpeed's restored visitor IP
+ * with the proxy that opened the origin connection.
+ *
+ * With "Use Client IP in Header" enabled, LiteSpeed deliberately rewrites
+ * REMOTE_ADDR to the visitor address and preserves the actual proxy peer in
+ * the server-created PROXY_REMOTE_ADDR variable. An HTTP request header named
+ * Proxy-Remote-Addr would appear as HTTP_PROXY_REMOTE_ADDR and is never read.
+ */
+function kssmi_connection_peer_ip(): string {
+    $proxyRemote = trim((string)($_SERVER['PROXY_REMOTE_ADDR'] ?? ''));
+    if (filter_var($proxyRemote, FILTER_VALIDATE_IP)) return $proxyRemote;
+
+    $remote = trim((string)($_SERVER['REMOTE_ADDR'] ?? ''));
+    return filter_var($remote, FILTER_VALIDATE_IP) ? $remote : '';
+}
+
+/**
  * Resolve the client IP without trusting spoofable headers on direct-origin requests.
  */
 function kssmi_get_client_ip(): string {
     $remote = trim((string)($_SERVER['REMOTE_ADDR'] ?? ''));
-    if (filter_var($remote, FILTER_VALIDATE_IP) && kssmi_is_cloudflare_proxy($remote)) {
+    $peer = kssmi_connection_peer_ip();
+    if ($peer !== '' && kssmi_is_cloudflare_proxy($peer)) {
         $cloudflareIp = kssmi_get_trusted_cloudflare_header('HTTP_CF_CONNECTING_IP');
         if (filter_var($cloudflareIp, FILTER_VALIDATE_IP)) return $cloudflareIp;
     }
@@ -286,8 +304,8 @@ function kssmi_get_client_ip(): string {
  */
 function kssmi_get_trusted_cloudflare_header(string $serverKey): ?string {
     if (preg_match('/^HTTP_CF_[A-Z0-9_]+$/D', $serverKey) !== 1) return null;
-    $remote = trim((string)($_SERVER['REMOTE_ADDR'] ?? ''));
-    if (filter_var($remote, FILTER_VALIDATE_IP) === false || !kssmi_is_cloudflare_proxy($remote)) {
+    $peer = kssmi_connection_peer_ip();
+    if ($peer === '' || !kssmi_is_cloudflare_proxy($peer)) {
         return null;
     }
     $value = $_SERVER[$serverKey] ?? null;

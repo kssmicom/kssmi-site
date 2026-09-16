@@ -41,8 +41,9 @@ try {
     require_once dirname(__DIR__) . '/private/http-security.php';
 
     // ── trusted admin origin gate ──
-    // The decision is based exclusively on the TCP peer (REMOTE_ADDR), never
-    // on forgeable CF-* request headers.
+    // The decision is based exclusively on the server-supplied TCP peer,
+    // including LiteSpeed's PROXY_REMOTE_ADDR after visitor-IP restoration,
+    // never on forgeable CF-* request headers.
     $_SERVER['HTTP_CF_RAY'] = 'forged-direct-request';
     $_SERVER['HTTP_CF_CONNECTING_IP'] = '203.0.113.50';
     $_SERVER['REMOTE_ADDR'] = '203.0.113.50';
@@ -58,6 +59,17 @@ try {
         kssmi_admin_request_from_trusted_proxy() === false,
         'REMOTE_ADDR direct peer is rejected even with forged CF headers'
     );
+    $_SERVER['PROXY_REMOTE_ADDR'] = '173.245.48.1';
+    kssmi_sec_assert(
+        kssmi_admin_request_from_trusted_proxy() === true,
+        'LiteSpeed Cloudflare PROXY_REMOTE_ADDR peer is trusted'
+    );
+    $_SERVER['PROXY_REMOTE_ADDR'] = '203.0.113.51';
+    $_SERVER['HTTP_PROXY_REMOTE_ADDR'] = '173.245.48.1';
+    kssmi_sec_assert(
+        kssmi_admin_request_from_trusted_proxy() === false,
+        'forged HTTP Proxy-Remote-Addr cannot replace the server peer'
+    );
     kssmi_sec_assert(
         kssmi_admin_request_from_trusted_proxy('not-an-ip') === false,
         'invalid peer address is rejected'
@@ -66,7 +78,13 @@ try {
         kssmi_admin_request_from_trusted_proxy(['173.245.48.1']) === false,
         'non-scalar peer address is rejected'
     );
-    unset($_SERVER['HTTP_CF_RAY'], $_SERVER['HTTP_CF_CONNECTING_IP'], $_SERVER['REMOTE_ADDR']);
+    unset(
+        $_SERVER['HTTP_CF_RAY'],
+        $_SERVER['HTTP_CF_CONNECTING_IP'],
+        $_SERVER['HTTP_PROXY_REMOTE_ADDR'],
+        $_SERVER['PROXY_REMOTE_ADDR'],
+        $_SERVER['REMOTE_ADDR']
+    );
 
     // ── scalar_text sanitization ──
     kssmi_sec_assert(kssmi_scalar_text('  hello world  ', 20) === 'hello world', 'scalar_text trims and bounds');
