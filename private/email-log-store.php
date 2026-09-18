@@ -606,3 +606,55 @@ function kssmi_email_logs_finish_resend($path, $id, $token, $result) {
     $mutation['updated'] = $updated;
     return $mutation;
 }
+
+/**
+ * Daily submission counters (health signal, not an audit trail).
+ *
+ * Rejected submissions are intentionally not written to the email log to keep
+ * spam from bloating it, but a per-day tally makes a silent outage visible:
+ * a spike in "rejected" or a zeroed "success" means something is wrong.
+ * Every failure inside these helpers is swallowed: counters must never break
+ * the form submission itself.
+ */
+
+function kssmi_submission_counters_path() {
+    return dirname(__DIR__) . '/email_data/submission-counters.json';
+}
+
+function kssmi_bump_submission_counter($kind, $now = null) {
+    $now = $now ?? time();
+    $date = date('Y-m-d', $now);
+    $handle = @fopen(kssmi_submission_counters_path(), 'c+');
+    if (!$handle) return;
+    if (!flock($handle, LOCK_EX)) { fclose($handle); return; }
+
+    $raw = stream_get_contents($handle);
+    $counters = json_decode((string)$raw, true);
+    if (!is_array($counters)) $counters = [];
+
+    $day = is_array($counters[$date] ?? null) ? $counters[$date] : [];
+    $day[$kind] = (int)($day[$kind] ?? 0) + 1;
+    $counters[$date] = $day;
+
+    $cutoff = date('Y-m-d', $now - 35 * 86400);
+    foreach (array_keys($counters) as $key) {
+        if (is_string($key) && $key < $cutoff) unset($counters[$key]);
+    }
+
+    ftruncate($handle, 0);
+    rewind($handle);
+    fwrite($handle, json_encode($counters, JSON_UNESCAPED_SLASHES));
+    fflush($handle);
+    flock($handle, LOCK_UN);
+    fclose($handle);
+}
+
+function kssmi_read_submission_counter($date) {
+    $counters = @json_decode((string)@file_get_contents(kssmi_submission_counters_path()), true);
+    $day = is_array($counters) && is_array($counters[$date] ?? null) ? $counters[$date] : [];
+    return [
+        'success' => (int)($day['success'] ?? 0),
+        'failed' => (int)($day['failed'] ?? 0),
+        'rejected' => (int)($day['rejected'] ?? 0),
+    ];
+}

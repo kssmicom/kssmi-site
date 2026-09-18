@@ -579,11 +579,13 @@ $successCount = 0;
 $failedCount = 0;
 $uncertainCount = 0;
 $recent24h = 0;
+$todayCounters = ['success' => 0, 'failed' => 0, 'rejected' => 0];
 
 // The login and reset views need no inquiry data. Keep the locked read,
 // decoding, and aggregate work behind the authenticated session boundary.
 if ($isAuthenticated) {
     $loadResult = kssmi_email_logs_read(LOGS_FILE);
+    $todayCounters = kssmi_read_submission_counter(date('Y-m-d'));
     $logs = $loadResult['ok'] ? $loadResult['logs'] : [];
     if (!$loadResult['ok']) {
         $error = 'Email Logs could not be read safely. No data was overwritten; check the server error log.';
@@ -1106,6 +1108,12 @@ function resendEmail($log) {
                 <div class="stat-card">
                     <h3>Accepted in Last 24 Hours</h3>
                     <div class="value"><?php echo $recent24h; ?></div>
+                </div>
+                <div class="stat-card">
+                    <h3>Today Sent / Failed / Rejected</h3>
+                    <div class="value"><?php
+                        echo htmlspecialchars($todayCounters['success'] . ' / ' . $todayCounters['failed'] . ' / ' . $todayCounters['rejected']);
+                    ?></div>
                 </div>
             </div>
 

@@ -28,6 +28,10 @@ if (file_exists($_privateConfigPath)) {
     $_privateCfg = ['smtp_pass' => '', 'turnstile_secret' => ''];
 }
 
+// Loaded before the first rejection exit so rejected submissions can bump the
+// daily health counters (the helpers live in the same store module).
+require_once dirname(__DIR__) . '/private/email-log-store.php';
+
 // CORS Headers for local development
 $allowedOrigins = [
     'http://localhost:4321',
@@ -45,6 +49,9 @@ $allowedOrigins = [
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 if ($origin !== '' && !in_array($origin, $allowedOrigins, true)) {
+    if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
+        kssmi_bump_submission_counter('rejected');
+    }
     http_response_code(403);
     header('Content-Type: application/json');
     echo json_encode(['success' => false, 'message' => 'Origin not allowed']);
@@ -74,6 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 // Reject oversized form bodies before values are copied into logs, email, or VJT.
 if ((int)($_SERVER['CONTENT_LENGTH'] ?? 0) > 131072) {
+    kssmi_bump_submission_counter('rejected');
     http_response_code(413);
     header('Content-Type: application/json');
     echo json_encode(['success' => false, 'message' => 'Payload too large']);
@@ -83,7 +91,6 @@ if ((int)($_SERVER['CONTENT_LENGTH'] ?? 0) > 131072) {
 // Rate limit: 2 form submissions per IP per 60s (prevents mail-bomb attacks
 // that would exhaust Gmail SMTP quota and blacklist our sender IP)
 require_once dirname(__DIR__) . '/private/rate-limit.php';
-require_once dirname(__DIR__) . '/private/email-log-store.php';
 $emailLogPath = dirname(__DIR__) . '/email_data/email-logs.json';
 if (kssmi_email_logs_cutover_is_active($emailLogPath)) {
     http_response_code(503);
@@ -96,6 +103,7 @@ if (kssmi_email_logs_cutover_is_active($emailLogPath)) {
     exit;
 }
 if (!checkRateLimit('send-mail', 2, 60)) {
+    kssmi_bump_submission_counter('rejected');
     http_response_code(429);
     header('Content-Type: application/json');
     echo json_encode([
@@ -1106,8 +1114,15 @@ if (!$config['debug_mode']) {
         $reason = (string)($turnstileResult['reason'] ?? 'unknown');
         // Ordinary bot/token rejections are intentionally silent. Logging one
         // line per rejection lets distributed spam grow the PHP error log.
+        // They still bump the daily tally: a spike means aggressive spam or a
+        // broken widget blocking real customers. Deployment smoke probes
+        // (?kssmi_cutover=…) are expected to land here while the previous
+        // release is still active, so they are kept out of the tally.
         if ($isServiceError) {
             error_log('KSSMI Turnstile service/configuration error: reason=' . $reason);
+        }
+        if (!isset($_GET['kssmi_cutover'])) {
+            kssmi_bump_submission_counter('rejected');
         }
 
         http_response_code($isServiceError ? 503 : 403);
@@ -1168,6 +1183,7 @@ $phpmailerPath = __DIR__ . '/vendor/phpmailer/phpmailer/src/';
 if (!file_exists($phpmailerPath . 'PHPMailer.php')) {
     // PHPMailer not installed - log and return error
     $errorMsg = 'PHPMailer not installed. Run: composer require phpmailer/phpmailer';
+    kssmi_bump_submission_counter('failed');
     logEmail(
         $config,
         $formData,
@@ -1255,6 +1271,7 @@ try {
     }
 
     // Log success
+    kssmi_bump_submission_counter('success');
     logEmail(
         $config,
         $formData,
@@ -1295,6 +1312,7 @@ try {
     $failureMessage = $smtpSendStarted
         ? 'PHPMailer delivery outcome uncertain'
         : 'PHPMailer definite failure';
+    kssmi_bump_submission_counter('failed');
     logEmail(
         $config,
         $formData,
@@ -1323,6 +1341,7 @@ try {
     $failureMessage = $smtpSendStarted
         ? 'General delivery outcome uncertain'
         : 'General definite failure';
+    kssmi_bump_submission_counter('failed');
     logEmail(
         $config,
         $formData,
