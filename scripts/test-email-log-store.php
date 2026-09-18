@@ -605,6 +605,37 @@ try {
         !file_exists($orphanCorruptTemp),
         'stale corrupt-backup temporary file was not cleaned'
     );
+
+    // Daily submission counters must use Beijing calendar-day keys regardless
+    // of the ambient process timezone. Regression: the server runs UTC and
+    // email-logs.php used to read the previous day's key between 00:00 and
+    // 08:00 CST, so a successful inquiry showed as 0/0/0 on the admin card.
+    assert_true(
+        date_default_timezone_get() === 'Asia/Shanghai',
+        'email log store did not pin the Beijing timezone for the pipeline'
+    );
+    $counterPath = dirname(__DIR__) . '/email_data/submission-counters.json';
+    if (!is_dir(dirname($counterPath))) {
+        @mkdir(dirname($counterPath), 0770, true);
+    }
+    $counterBackup = @file_get_contents($counterPath);
+    $incidentTs = gmmktime(16, 46, 59, 9, 18, 2026); // 2026-09-19 00:46:59 CST
+    kssmi_bump_submission_counter('success', $incidentTs);
+    $incidentDayKey = date('Y-m-d', $incidentTs);
+    assert_true(
+        $incidentDayKey === '2026-09-19',
+        'incident timestamp did not map to the Beijing calendar day'
+    );
+    assert_true(
+        kssmi_read_submission_counter($incidentDayKey) ===
+            ['success' => 1, 'failed' => 0, 'rejected' => 0],
+        'submission counters did not round-trip on the Beijing day key'
+    );
+    if ($counterBackup === false) {
+        @unlink($counterPath);
+    } else {
+        file_put_contents($counterPath, $counterBackup);
+    }
 } finally {
     foreach (glob($testRoot . DIRECTORY_SEPARATOR . '*') ?: [] as $path) {
         @unlink($path);

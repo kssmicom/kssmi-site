@@ -7,6 +7,14 @@
  * concurrent admin actions cannot overwrite a newly accepted inquiry.
  */
 
+// The email pipeline stamps wall-clock strings (log timestamps, resend
+// bookkeeping, daily submission-counter day keys) in Beijing time. The server
+// PHP default is UTC, and entry points differ: send-mail.php inherits
+// Asia/Shanghai from vjt-helpers.php while email-logs.php does not — the
+// mismatch made the "Today" counters read the previous day between 00:00 and
+// 08:00 CST. Pin the pipeline here so every reader and writer agrees.
+date_default_timezone_set('Asia/Shanghai');
+
 function kssmi_email_logs_array_is_list($value) {
     if (!is_array($value)) return false;
     if (function_exists('array_is_list')) return array_is_list($value);
