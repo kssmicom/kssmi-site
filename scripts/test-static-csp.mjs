@@ -25,6 +25,15 @@ try {
     assert.match(matches[0], /http-equiv="Content-Security-Policy"/);
     assert.match(matches[0], /default-src 'self'/);
     assert.doesNotMatch(matches[0], /unsafe-inline/);
+    const policyValue = /content="([^"]*)"/.exec(matches[0])?.[1] ?? '';
+    for (const token of policyValue.split(/\s+/)) {
+      if (token.includes('sha256-')) {
+        assert.ok(
+          token.startsWith("'sha256-") && token.endsWith("'"),
+          `CSP hash source must be single-quoted or browsers ignore it: ${token}`,
+        );
+      }
+    }
   }
   const redirect = await readFile(path.join(dir, 'redirect.html'), 'utf8');
   assert.doesNotMatch(redirect, /data-kssmi-static-csp="1"/, 'Headless redirect must remain valid minimal HTML.');

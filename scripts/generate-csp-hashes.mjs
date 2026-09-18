@@ -45,10 +45,13 @@ const policy = [
   "default-src 'self'",
   "base-uri 'self'",
   "object-src 'none'",
-  ["script-src 'self' 'unsafe-hashes'", ...[...scriptHashes].sort(),
+  // CSP grammar requires every hash source to be single-quoted ('sha256-…=');
+  // unquoted hashes are reported as invalid sources and silently ignored, which
+  // blocks every inline script and style on the page.
+  ["script-src 'self' 'unsafe-hashes'", ...[...scriptHashes].sort().map((hash) => `'${hash}'`),
     'https://static.cloudflareinsights.com', 'https://challenges.cloudflare.com',
     'https://www.googletagmanager.com', 'https://www.google-analytics.com'].join(' '),
-  ["style-src 'self'", ...[...styleHashes].sort(), 'https://fonts.googleapis.com'].join(' '),
+  ["style-src 'self'", ...[...styleHashes].sort().map((hash) => `'${hash}'`), 'https://fonts.googleapis.com'].join(' '),
   "font-src 'self' https://fonts.gstatic.com",
   "img-src 'self' data: https:",
   "media-src 'self' blob: https://video.gumlet.io https://*.gumlet.io",
