@@ -438,12 +438,12 @@ const isDev = import.meta.env.DEV;
             <span class="shrink-0 text-sm text-gray-500">{attachmentCopy.optional}</span>
             </div>
             <p class="mt-2 text-xs text-gray-500">{attachmentCopy.dropHint}</p>
+            <p id="attachment-help" class="mt-2 text-sm leading-relaxed text-gray-500">
+              {attachmentCopy.helper}{' '}
+              <a href="mailto:sales@kssmi.com" data-vjt-contact="mailto" data-vjt-placement="inquiry-attachment-email" class="text-[#5D4E37] underline decoration-[#8B7355]/50 underline-offset-2 hover:text-[#4A3D2E] active:text-[#4A3D2E] focus-visible:text-[#4A3D2E] focus-within:text-[#4A3D2E]">sales#kssmi.com</a>.
+            </p>
           </div>
           <ul id="attachment-list" class="hidden mt-2 space-y-1 text-sm text-gray-600" aria-live="polite"></ul>
-          <p id="attachment-help" class="mt-2 text-sm leading-relaxed text-gray-500">
-            {attachmentCopy.helper}{' '}
-            <a href="mailto:sales@kssmi.com" data-vjt-contact="mailto" data-vjt-placement="inquiry-attachment-email" class="text-[#5D4E37] underline decoration-[#8B7355]/50 underline-offset-2 hover:text-[#4A3D2E] active:text-[#4A3D2E] focus-visible:text-[#4A3D2E] focus-within:text-[#4A3D2E]">sales#kssmi.com</a>.
-          </p>
         </div>
 
         <!-- Email Field -->
