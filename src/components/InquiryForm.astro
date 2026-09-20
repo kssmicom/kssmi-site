@@ -168,6 +168,18 @@ const placeholders = {
 
 const ph = placeholders[lang as keyof typeof placeholders] || placeholders.en;
 
+const attachmentCopy = lang === 'zh'
+  ? {
+      label: '上传参考文件（可选）',
+      helper: '最多 3 个文件；单个不超过 5 MB，总计不超过 8 MB。支持 PDF、JPG、PNG、WebP、DOCX 和 XLSX。',
+      fallback: '文件超过 8 MB？请发送至 sales@kssmi.com，并在邮件中注明您的询盘编号。',
+    }
+  : {
+      label: 'Upload reference files (optional)',
+      helper: 'Up to 3 files; 5 MB each and 8 MB in total. PDF, JPG, PNG, WebP, DOCX, and XLSX only.',
+      fallback: 'Files over 8 MB? Email sales@kssmi.com and include your inquiry ID.',
+    };
+
 const trustItems = [
   ...(pt.secure256 || 'Secure submission · No purchase commitment').split(' · '),
   ...(pt.ndasAvailable || 'NDA available · Initial reply within 24 hours').split(' · '),
@@ -380,7 +392,7 @@ const isDev = import.meta.env.DEV;
       </div>
 
       <!-- Form -->
-      <form id="inquiry-form" method="post" action="/send-mail.php" class="space-y-6">
+      <form id="inquiry-form" method="post" action="/send-mail.php" enctype="multipart/form-data" class="space-y-6">
         <!-- Hidden Fields for Context -->
         <input type="hidden" name="source" value={source} />
         <input type="hidden" name="product_url" value={productUrl} />
@@ -408,6 +420,24 @@ const isDev = import.meta.env.DEV;
                    placeholder:text-gray-400"
             placeholder={ph.name}
           />
+        </div>
+
+        <!-- Optional reference files. Server-side validation is authoritative. -->
+        <div>
+          <label for="attachments" class="block text-sm font-medium text-gray-700 mb-2">
+            {attachmentCopy.label}
+          </label>
+          <input
+            type="file"
+            id="attachments"
+            name="attachments[]"
+            multiple
+            accept=".pdf,.jpg,.jpeg,.png,.webp,.docx,.xlsx,application/pdf,image/jpeg,image/png,image/webp,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+            class="block w-full text-sm text-gray-700 file:me-4 file:rounded-lg file:border-0 file:bg-[#5D4E37] file:px-4 file:py-2.5 file:font-semibold file:text-white hover:file:bg-[#4A3D2E] active:file:bg-[#4A3D2E] focus-visible:file:bg-[#4A3D2E] focus-within:file:bg-[#4A3D2E] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#8B7355] focus-visible:ring-offset-2"
+            aria-describedby="attachment-help attachment-fallback"
+          />
+          <p id="attachment-help" class="mt-2 text-sm leading-relaxed text-gray-500">{attachmentCopy.helper}</p>
+          <p id="attachment-fallback" class="mt-1 text-sm leading-relaxed text-gray-500">{attachmentCopy.fallback}</p>
         </div>
 
         <!-- Email Field -->
@@ -711,6 +741,22 @@ const isDev = import.meta.env.DEV;
     ].forEach((name) => formData.delete(name));
   }
 
+  function validateAttachments(form) {
+    const input = form.querySelector('input[name="attachments[]"]');
+    const files = input && input.files ? Array.from(input.files) : [];
+    if (files.length > 3) return 'Please attach no more than 3 files.';
+    const allowedExtensions = new Set(['pdf', 'jpg', 'jpeg', 'png', 'webp', 'docx', 'xlsx']);
+    let totalBytes = 0;
+    for (const file of files) {
+      const extension = file.name.split('.').pop().toLowerCase();
+      if (!allowedExtensions.has(extension)) return 'Use PDF, JPG, PNG, WebP, DOCX, or XLSX files only.';
+      if (file.size > 5 * 1024 * 1024) return 'Each attachment must be 5 MB or smaller.';
+      totalBytes += file.size;
+    }
+    if (totalBytes > 8 * 1024 * 1024) return 'Attachments must total 8 MB or less.';
+    return '';
+  }
+
   // Redirect helper
   function redirectToThankYou(lang) {
     const thankYouUrl = (lang === 'en') ? '/thank-you/' : `/${lang}/thank-you/`;
@@ -736,6 +782,12 @@ const isDev = import.meta.env.DEV;
       const token = window.turnstileToken;
       if (!isDev && !token) {
         showTurnstileError(turnstileErrorMsg);
+        return;
+      }
+
+      const attachmentError = validateAttachments(newForm);
+      if (attachmentError) {
+        showError(attachmentError);
         return;
       }
 

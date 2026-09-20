@@ -31,6 +31,7 @@ if (file_exists($_privateConfigPath)) {
 // Loaded before the first rejection exit so rejected submissions can bump the
 // daily health counters (the helpers live in the same store module).
 require_once dirname(__DIR__) . '/private/email-log-store.php';
+require_once dirname(__DIR__) . '/private/inquiry-attachments.php';
 
 // CORS Headers for local development
 $allowedOrigins = [
@@ -80,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // Reject oversized form bodies before values are copied into logs, email, or VJT.
-if ((int)($_SERVER['CONTENT_LENGTH'] ?? 0) > 131072) {
+if ((int)($_SERVER['CONTENT_LENGTH'] ?? 0) > 10 * 1024 * 1024) {
     kssmi_bump_submission_counter('rejected');
     http_response_code(413);
     header('Content-Type: application/json');
@@ -1142,6 +1143,16 @@ if (!$config['debug_mode']) {
     error_log("KSSMI Form: Debug mode enabled - Turnstile verification skipped");
 }
 
+// Browser-side checks are only for usability. Validate every optional upload
+// after the anti-bot gate and before data can reach SMTP or Email Logs.
+$attachmentResult = kssmi_inquiry_validate_attachments($_FILES['attachments'] ?? null);
+if (!$attachmentResult['ok']) {
+    http_response_code(in_array(($attachmentResult['reason'] ?? ''), ['zip_unavailable', 'fileinfo_unavailable'], true) ? 503 : 422);
+    echo json_encode(['success' => false, 'errors' => [$attachmentResult['message']]]);
+    exit;
+}
+$attachments = $attachmentResult['files'];
+
 // Validate required business fields only after the security gate has passed.
 $errors = [];
 
@@ -1259,6 +1270,9 @@ try {
     }
     $mail->Body = $htmlBody;
     $mail->AltBody = buildTextEmail($formData, $visitorIP, $visitorCountry, $inquiryId) . ($vjtSummary !== '' ? "\n\n" . $vjtSummary : '');
+    foreach ($attachments as $attachment) {
+        $mail->addAttachment($attachment['path'], $attachment['name']);
+    }
 
     // Set higher timeout for slow connections
     $mail->Timeout = 30;
