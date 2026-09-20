@@ -170,14 +170,12 @@ const ph = placeholders[lang as keyof typeof placeholders] || placeholders.en;
 
 const attachmentCopy = lang === 'zh'
   ? {
-      label: '上传参考文件（可选）',
-      helper: '最多 3 个文件；单个不超过 5 MB，总计不超过 8 MB。支持 PDF、JPG、PNG、WebP、DOCX 和 XLSX。',
-      fallback: '文件超过 8 MB？请发送至 sales@kssmi.com，并在邮件中注明您的询盘编号。',
+      optional: '（可选）',
+      helper: '单个 5 MB、总计 8 MB。支持 PDF、图片及常见 CAD/设计文件；更大或其他文件请邮件发送至',
     }
   : {
-      label: 'Upload reference files (optional)',
-      helper: 'Up to 3 files; 5 MB each and 8 MB in total. PDF, JPG, PNG, WebP, DOCX, and XLSX only.',
-      fallback: 'Files over 8 MB? Email sales@kssmi.com and include your inquiry ID.',
+      optional: '(Optional)',
+      helper: '5 MB each and 8 MB in total. PDF, images, and common CAD/design files. For larger or other files, email',
     };
 
 const trustItems = [
@@ -424,20 +422,23 @@ const isDev = import.meta.env.DEV;
 
         <!-- Optional reference files. Server-side validation is authoritative. -->
         <div>
-          <label for="attachments" class="block text-sm font-medium text-gray-700 mb-2">
-            {attachmentCopy.label}
-          </label>
-          <input
-            type="file"
-            id="attachments"
-            name="attachments[]"
-            multiple
-            accept=".pdf,.jpg,.jpeg,.png,.webp,.docx,.xlsx,application/pdf,image/jpeg,image/png,image/webp,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-            class="block w-full text-sm text-gray-700 file:me-4 file:rounded-lg file:border-0 file:bg-[#5D4E37] file:px-4 file:py-2.5 file:font-semibold file:text-white hover:file:bg-[#4A3D2E] active:file:bg-[#4A3D2E] focus-visible:file:bg-[#4A3D2E] focus-within:file:bg-[#4A3D2E] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#8B7355] focus-visible:ring-offset-2"
-            aria-describedby="attachment-help attachment-fallback"
-          />
-          <p id="attachment-help" class="mt-2 text-sm leading-relaxed text-gray-500">{attachmentCopy.helper}</p>
-          <p id="attachment-fallback" class="mt-1 text-sm leading-relaxed text-gray-500">{attachmentCopy.fallback}</p>
+          <div class="flex items-center gap-3">
+            <input
+              type="file"
+              id="attachments"
+              name="attachments[]"
+              multiple
+              accept=".pdf,.jpg,.jpeg,.png,.webp,.docx,.xlsx,.dwg,.dxf,.stp,.step,.igs,.iges,.stl,.ai,.eps,.psd,.cdr,.3dm,.sldprt,.sldasm,.ipt,.iam,.x_t,application/pdf,image/jpeg,image/png,image/webp,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+              class="block min-w-0 flex-1 text-sm text-gray-700 file:me-4 file:rounded-lg file:border-0 file:bg-[#5D4E37] file:px-4 file:py-2.5 file:font-semibold file:text-white hover:file:bg-[#4A3D2E] active:file:bg-[#4A3D2E] focus-visible:file:bg-[#4A3D2E] focus-within:file:bg-[#4A3D2E] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#8B7355] focus-visible:ring-offset-2"
+              aria-describedby="attachment-help attachment-list"
+            />
+            <span class="shrink-0 text-sm text-gray-500">{attachmentCopy.optional}</span>
+          </div>
+          <ul id="attachment-list" class="hidden mt-2 space-y-1 text-sm text-gray-600" aria-live="polite"></ul>
+          <p id="attachment-help" class="mt-2 text-sm leading-relaxed text-gray-500">
+            {attachmentCopy.helper}{' '}
+            <a href="mailto:sales@kssmi.com" data-vjt-contact="mailto" data-vjt-placement="inquiry-attachment-email" class="text-[#5D4E37] underline decoration-[#8B7355]/50 underline-offset-2 hover:text-[#4A3D2E] active:text-[#4A3D2E] focus-visible:text-[#4A3D2E] focus-within:text-[#4A3D2E]">sales#kssmi.com</a>.
+          </p>
         </div>
 
         <!-- Email Field -->
@@ -745,11 +746,11 @@ const isDev = import.meta.env.DEV;
     const input = form.querySelector('input[name="attachments[]"]');
     const files = input && input.files ? Array.from(input.files) : [];
     if (files.length > 3) return 'Please attach no more than 3 files.';
-    const allowedExtensions = new Set(['pdf', 'jpg', 'jpeg', 'png', 'webp', 'docx', 'xlsx']);
+    const allowedExtensions = new Set(['pdf', 'jpg', 'jpeg', 'png', 'webp', 'docx', 'xlsx', 'dwg', 'dxf', 'stp', 'step', 'igs', 'iges', 'stl', 'ai', 'eps', 'psd', 'cdr', '3dm', 'sldprt', 'sldasm', 'ipt', 'iam', 'x_t']);
     let totalBytes = 0;
     for (const file of files) {
-      const extension = file.name.split('.').pop().toLowerCase();
-      if (!allowedExtensions.has(extension)) return 'Use PDF, JPG, PNG, WebP, DOCX, or XLSX files only.';
+      const extension = (file.name.split('.').pop() || '').toLowerCase();
+      if (!allowedExtensions.has(extension)) return 'Use a supported PDF, image, CAD, or design file.';
       if (file.size > 5 * 1024 * 1024) return 'Each attachment must be 5 MB or smaller.';
       totalBytes += file.size;
     }
@@ -771,6 +772,52 @@ const isDev = import.meta.env.DEV;
     // Clone and replace to remove old listeners
     const newForm = form.cloneNode(true);
     form.parentNode.replaceChild(newForm, form);
+
+    const attachmentInput = newForm.querySelector('input[name="attachments[]"]');
+    const attachmentList = document.getElementById('attachment-list');
+    let selectedAttachments = [];
+
+    function syncAttachments() {
+      if (!attachmentInput || !attachmentList) return;
+      try {
+        const transfer = new DataTransfer();
+        selectedAttachments.forEach((file) => transfer.items.add(file));
+        attachmentInput.files = transfer.files;
+      } catch (_) {
+        // The server remains authoritative if a legacy browser cannot rebuild FileList.
+      }
+      attachmentList.replaceChildren();
+      attachmentList.classList.toggle('hidden', selectedAttachments.length === 0);
+      selectedAttachments.forEach((file, index) => {
+        const item = document.createElement('li');
+        item.className = 'flex items-center justify-between gap-3 rounded bg-white px-3 py-2 border border-gray-200';
+        const name = document.createElement('span');
+        name.className = 'min-w-0 truncate';
+        name.textContent = `${file.name} (${(file.size / 1024 / 1024).toFixed(1)} MB)`;
+        const remove = document.createElement('button');
+        remove.type = 'button';
+        remove.className = 'shrink-0 text-[#5D4E37] underline hover:text-[#4A3D2E] active:text-[#4A3D2E] focus-visible:text-[#4A3D2E] focus-within:text-[#4A3D2E] focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#8B7355]';
+        remove.textContent = 'Remove';
+        remove.addEventListener('click', () => {
+          selectedAttachments.splice(index, 1);
+          syncAttachments();
+        });
+        item.append(name, remove);
+        attachmentList.appendChild(item);
+      });
+    }
+
+    if (attachmentInput) {
+      attachmentInput.addEventListener('change', () => {
+        const additions = Array.from(attachmentInput.files || []);
+        additions.forEach((file) => {
+          const duplicate = selectedAttachments.some((current) => current.name === file.name
+            && current.size === file.size && current.lastModified === file.lastModified);
+          if (!duplicate) selectedAttachments.push(file);
+        });
+        syncAttachments();
+      });
+    }
 
     newForm.addEventListener('submit', async function(e) {
       e.preventDefault();

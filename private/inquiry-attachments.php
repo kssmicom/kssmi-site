@@ -29,7 +29,7 @@ function kssmi_inquiry_safe_attachment_name($name, $extension) {
 function kssmi_inquiry_has_signature($path, $extension) {
     $handle = @fopen($path, 'rb');
     if ($handle === false) return false;
-    $head = fread($handle, 16);
+    $head = fread($handle, 512);
     fclose($handle);
     if (!is_string($head)) return false;
 
@@ -39,6 +39,17 @@ function kssmi_inquiry_has_signature($path, $extension) {
         'png' => str_starts_with($head, "\x89PNG\r\n\x1A\n"),
         'webp' => strlen($head) >= 12 && substr($head, 0, 4) === 'RIFF' && substr($head, 8, 4) === 'WEBP',
         'docx', 'xlsx' => str_starts_with($head, "PK\x03\x04"),
+        'dwg' => str_starts_with($head, 'AC10'),
+        'dxf' => preg_match('/^\s*0\r?\nSECTION\b/', $head) === 1,
+        'stp', 'step' => stripos($head, 'ISO-10303-21') !== false,
+        'igs', 'iges' => strlen($head) >= 73 && substr($head, 72, 1) === 'S',
+        'stl' => preg_match('/^\s*solid\b/i', $head) === 1,
+        'ai', 'eps' => str_starts_with($head, '%!PS') || str_starts_with($head, '%PDF-'),
+        'psd' => str_starts_with($head, '8BPS'),
+        'cdr' => strlen($head) >= 12 && substr($head, 0, 4) === 'RIFF' && substr($head, 8, 3) === 'CDR',
+        '3dm' => str_starts_with($head, '3D Geometry File Format'),
+        'sldprt', 'sldasm', 'ipt', 'iam' => str_starts_with($head, "\xD0\xCF\x11\xE0\xA1\xB1\x1A\xE1"),
+        'x_t' => stripos($head, 'PARASOLID') !== false,
         default => false,
     };
 }
@@ -100,6 +111,10 @@ function kssmi_inquiry_validate_attachments($upload, $requireUploadedFile = true
         'webp' => ['image/webp'],
         'docx' => ['application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/zip'],
         'xlsx' => ['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/zip'],
+        'dwg' => ['image/vnd.dwg', 'application/octet-stream'],
+        'dxf', 'stp', 'step', 'igs', 'iges', 'stl', 'x_t' => ['text/plain', 'application/octet-stream'],
+        'ai', 'eps' => ['application/pdf', 'application/postscript'],
+        'psd', 'cdr', '3dm', 'sldprt', 'sldasm', 'ipt', 'iam' => ['application/octet-stream'],
     ];
     $totalBytes = 0;
     $validated = [];
@@ -126,7 +141,7 @@ function kssmi_inquiry_validate_attachments($upload, $requireUploadedFile = true
         }
         $extension = strtolower(pathinfo((string)$file['name'], PATHINFO_EXTENSION));
         if (!isset($allowed[$extension])) {
-            return kssmi_inquiry_attachment_error('extension', 'Use PDF, JPG, PNG, WebP, DOCX, or XLSX files only.');
+            return kssmi_inquiry_attachment_error('extension', 'Use a supported PDF, image, CAD, or design file.');
         }
         $mime = $finfo->file($file['tmp_name']);
         if (!is_string($mime) || !in_array($mime, $allowed[$extension], true)

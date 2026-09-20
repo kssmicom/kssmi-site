@@ -39,11 +39,17 @@ try {
     $xlsx = office_fixture('xlsx', 'xl/workbook.xml'); $paths[] = $xlsx['tmp_name'];
     assert_true(test_upload([$xlsx])['ok'] === true, 'valid XLSX structure should pass');
 
+    $dwg = fixture('dwg', "AC1032\x00CAD drawing"); $paths[] = $dwg['tmp_name'];
+    assert_true(test_upload([$dwg])['ok'] === true, 'valid DWG signature should pass');
+
     $spoofed = fixture('pdf', "#!/bin/sh\necho unsafe\n"); $paths[] = $spoofed['tmp_name'];
     assert_true(test_upload([$spoofed])['reason'] === 'type', 'spoofed PDF must fail content checks');
 
     $executable = fixture('exe', "MZ\x90\x00"); $paths[] = $executable['tmp_name'];
     assert_true(test_upload([$executable])['reason'] === 'extension', 'executable must fail extension checks');
+
+    $archive = fixture('zip', "PK\x03\x04not accepted"); $paths[] = $archive['tmp_name'];
+    assert_true(test_upload([$archive])['reason'] === 'extension', 'general ZIP archive must fail');
 
     $tooMany = [$pdf, $pdf, $pdf, $pdf];
     assert_true(test_upload($tooMany)['reason'] === 'too_many', 'four files must fail');
