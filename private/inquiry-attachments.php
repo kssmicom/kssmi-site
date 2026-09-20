@@ -7,7 +7,10 @@
  * directly during the current request.
  */
 
-const KSSMI_INQUIRY_MAX_ATTACHMENTS = 3;
+// PHP's configured max_file_uploads is currently 20. The business limit is
+// deliberately the same so the 8 MB total cap, not an arbitrary small count,
+// is the practical customer constraint.
+const KSSMI_INQUIRY_MAX_ATTACHMENTS = 20;
 const KSSMI_INQUIRY_MAX_ATTACHMENT_BYTES = 5 * 1024 * 1024;
 const KSSMI_INQUIRY_MAX_ATTACHMENT_TOTAL_BYTES = 8 * 1024 * 1024;
 
@@ -100,7 +103,7 @@ function kssmi_inquiry_validate_attachments($upload, $requireUploadedFile = true
     $files = array_values(array_filter($files, static fn($file) => (int)$file['error'] !== UPLOAD_ERR_NO_FILE));
     if (count($files) === 0) return ['ok' => true, 'files' => []];
     if (count($files) > KSSMI_INQUIRY_MAX_ATTACHMENTS) {
-        return kssmi_inquiry_attachment_error('too_many', 'Please attach no more than 3 files.');
+        return kssmi_inquiry_attachment_error('too_many', 'Please attach no more than 20 files.');
     }
 
     $allowed = [

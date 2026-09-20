@@ -172,10 +172,12 @@ const attachmentCopy = lang === 'zh'
   ? {
       optional: '（可选）',
       helper: '单个 5 MB、总计 8 MB。支持 PDF、图片及常见 CAD/设计文件；更大或其他文件请邮件发送至',
+      dropHint: '可一次选择多个文件，或直接拖入这里。',
     }
   : {
       optional: '(Optional)',
       helper: '5 MB each and 8 MB in total. PDF, images, and common CAD/design files. For larger or other files, email',
+      dropHint: 'Select multiple files at once, or drop them here.',
     };
 
 const trustItems = [
@@ -422,7 +424,8 @@ const isDev = import.meta.env.DEV;
 
         <!-- Optional reference files. Server-side validation is authoritative. -->
         <div>
-          <div class="flex items-center gap-3">
+          <div id="attachment-dropzone" class="rounded-lg border border-dashed border-gray-300 p-3 transition-colors hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355]">
+            <div class="flex items-center gap-3">
             <input
               type="file"
               id="attachments"
@@ -433,6 +436,8 @@ const isDev = import.meta.env.DEV;
               aria-describedby="attachment-help attachment-list"
             />
             <span class="shrink-0 text-sm text-gray-500">{attachmentCopy.optional}</span>
+            </div>
+            <p class="mt-2 text-xs text-gray-500">{attachmentCopy.dropHint}</p>
           </div>
           <ul id="attachment-list" class="hidden mt-2 space-y-1 text-sm text-gray-600" aria-live="polite"></ul>
           <p id="attachment-help" class="mt-2 text-sm leading-relaxed text-gray-500">
@@ -745,7 +750,7 @@ const isDev = import.meta.env.DEV;
   function validateAttachments(form) {
     const input = form.querySelector('input[name="attachments[]"]');
     const files = input && input.files ? Array.from(input.files) : [];
-    if (files.length > 3) return 'Please attach no more than 3 files.';
+    if (files.length > 20) return 'Please attach no more than 20 files.';
     const allowedExtensions = new Set(['pdf', 'jpg', 'jpeg', 'png', 'webp', 'docx', 'xlsx', 'dwg', 'dxf', 'stp', 'step', 'igs', 'iges', 'stl', 'ai', 'eps', 'psd', 'cdr', '3dm', 'sldprt', 'sldasm', 'ipt', 'iam', 'x_t']);
     let totalBytes = 0;
     for (const file of files) {
@@ -775,6 +780,7 @@ const isDev = import.meta.env.DEV;
 
     const attachmentInput = newForm.querySelector('input[name="attachments[]"]');
     const attachmentList = document.getElementById('attachment-list');
+    const attachmentDropZone = document.getElementById('attachment-dropzone');
     let selectedAttachments = [];
 
     function syncAttachments() {
@@ -807,15 +813,29 @@ const isDev = import.meta.env.DEV;
       });
     }
 
+    function addAttachments(additions) {
+      additions.forEach((file) => {
+        const duplicate = selectedAttachments.some((current) => current.name === file.name
+          && current.size === file.size && current.lastModified === file.lastModified);
+        if (!duplicate) selectedAttachments.push(file);
+      });
+      syncAttachments();
+    }
+
     if (attachmentInput) {
-      attachmentInput.addEventListener('change', () => {
-        const additions = Array.from(attachmentInput.files || []);
-        additions.forEach((file) => {
-          const duplicate = selectedAttachments.some((current) => current.name === file.name
-            && current.size === file.size && current.lastModified === file.lastModified);
-          if (!duplicate) selectedAttachments.push(file);
-        });
-        syncAttachments();
+      attachmentInput.addEventListener('change', () => addAttachments(Array.from(attachmentInput.files || [])));
+    }
+    if (attachmentDropZone) {
+      ['dragenter', 'dragover'].forEach((eventName) => attachmentDropZone.addEventListener(eventName, (event) => {
+        event.preventDefault();
+        attachmentDropZone.classList.add('border-[#8B7355]', 'bg-stone-50');
+      }));
+      ['dragleave', 'drop'].forEach((eventName) => attachmentDropZone.addEventListener(eventName, (event) => {
+        event.preventDefault();
+        attachmentDropZone.classList.remove('border-[#8B7355]', 'bg-stone-50');
+      }));
+      attachmentDropZone.addEventListener('drop', (event) => {
+        addAttachments(Array.from(event.dataTransfer?.files || []));
       });
     }
 

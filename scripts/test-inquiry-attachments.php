@@ -51,8 +51,8 @@ try {
     $archive = fixture('zip', "PK\x03\x04not accepted"); $paths[] = $archive['tmp_name'];
     assert_true(test_upload([$archive])['reason'] === 'extension', 'general ZIP archive must fail');
 
-    $tooMany = [$pdf, $pdf, $pdf, $pdf];
-    assert_true(test_upload($tooMany)['reason'] === 'too_many', 'four files must fail');
+    $tooMany = array_fill(0, KSSMI_INQUIRY_MAX_ATTACHMENTS + 1, $pdf);
+    assert_true(test_upload($tooMany)['reason'] === 'too_many', 'more than 20 files must fail');
 
     $largePath = tempnam(sys_get_temp_dir(), 'kssmi-attachment-large-');
     file_put_contents($largePath, '%PDF-' . str_repeat('A', KSSMI_INQUIRY_MAX_ATTACHMENT_BYTES));
