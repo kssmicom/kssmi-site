@@ -5,7 +5,7 @@ slug: "kao-327-acetate-optical-frame"
 itemNo: "KAO-327"
 date: "2026-05-10"
 colors: "Şeffaf, Havana, Siyah"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim & Tasarım ve Üretim (Özelleştirme)"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -50,7 +50,7 @@ seoKeywords: "şık asetat optik çerçeveler, özel asetat optik çerçeve üre
 
 ## Özellikler
 
-- **Premium Malzeme:** Hafif ve olağanüstü dayanıklı bir yapı ile birlikte canlı, uzun ömürlü renk derinliği sunan premium Mazzucchelli ve JINYU asetatten üretilmiştir.
+- **Premium Malzeme:** Hafif ve olağanüstü dayanıklı bir yapı ile birlikte canlı, uzun ömürlü renk derinliği sunan premium Mazzucchelli ve JIMEI & JINYU asetatten üretilmiştir.
 - **Mühendislik Harikası Donanım:** Özel yaylı menteşe seçenekleriyle dengeli ve pürüzsüz sap hareketi sağlayan yüksek güvenilirlikli 3+2 perçinli menteşeler.
 - **Dayanıklı Optikler:** Tamamen isteğe özel kaplama seçenekleriyle mükemmel netlik ve darbe direnci sağlayan yüksek dayanıklılığa sahip naylon lensler.
 - **Entegre Konfor:** Dengeli ve kaymayan bir oturuş sunmak için özel 50-22-145 mm geometri ile birleştirilmiş dikişsiz entegre burun tamponları.
@@ -67,7 +67,7 @@ seoKeywords: "şık asetat optik çerçeveler, özel asetat optik çerçeve üre
 
 ## Genel Bakış
 
-Klasik gözlük tasarımı, birinci sınıf Mazzucchelli ve JINYU asetatinin canlı derinliğini sergileyen unisex bir çerçeve olan KAO-327'de üstün malzeme sanatı ile buluşuyor.
+Klasik gözlük tasarımı, birinci sınıf Mazzucchelli ve JIMEI & JINYU asetatinin canlı derinliğini sergileyen unisex bir çerçeve olan KAO-327'de üstün malzeme sanatı ile buluşuyor.
 
 Yapısal dayanıklılığı, mühendislik harikası 3+2 yivli perçin menteşeleriyle güçlendirilirken, el yapımı cila ve entegre burun tamponları günlük kullanım için dengeli ve kaymayan bir oturuş sağlar.
 

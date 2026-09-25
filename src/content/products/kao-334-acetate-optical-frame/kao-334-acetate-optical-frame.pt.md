@@ -5,7 +5,7 @@ slug: "kao-334-acetate-optical-frame"
 itemNo: "KAO-334"
 date: "2026-05-10"
 colors: "Preto com Mel, Azul Claro com Tartaruga, Listra Marrom com Azul"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda & Design e Fabricação ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -41,7 +41,7 @@ seoKeywords: "fabricante armação óptica acetato, óculos OEM personalizados C
 
 ## Características
 
-- **Material Premium:** Fabricado a partir de acetato premium Mazzucchelli e JINYU, proporcionando uma estrutura ultra-leve e excepcionalmente durável com uma estética de cores vibrantes e profundas.
+- **Material Premium:** Fabricado a partir de acetato premium Mazzucchelli e JIMEI & JINYU, proporcionando uma estrutura ultra-leve e excepcionalmente durável com uma estética de cores vibrantes e profundas.
 - **Componentes Metálicos:** Dobradiças de rebite de alta confiabilidade com estrutura 3+2 tambores que oferecem um movimento suave e estável das hastes, com opções de dobradiça de mola e de 5 tambores disponíveis.
 - **Óptica Tenace:** Lentes de nylon de alta durabilidade que oferecem excepcional clareza óptica e resistência ao impacto, com serviços completos de revestimento e personalização sob medida.
 - **Conforto Integrado:** Plaquetas nasais de acetato perfeitamente integradas combinadas com uma geometria sob medida de 44-23-145mm para proporcionar um ajuste equilibrado e sem pontos de pressão.
@@ -59,7 +59,7 @@ seoKeywords: "fabricante armação óptica acetato, óculos OEM personalizados C
 
 ## Visão Geral
 
-O design requintado de inspiração retro une-se a uma profundidade excecional de materiais nesta armação óptica de acetato premium Mazzucchelli e JINYU. Combinações cromáticas distintas, como o Azul Claro com Tartaruga e o Preto com Mel, conferem um apelo clássico mas moderno aos portfólios de óculos de gama alta.
+O design requintado de inspiração retro une-se a uma profundidade excecional de materiais nesta armação óptica de acetato premium Mazzucchelli e JIMEI & JINYU. Combinações cromáticas distintas, como o Azul Claro com Tartaruga e o Preto com Mel, conferem um apelo clássico mas moderno aos portfólios de óculos de gama alta.
 
 Um sistema de dobradiças de rebites de engenharia fina com 3+2 tambores, aliado a plaquetas nasais integradas e a uma geometria ajustada de 44-23-145mm, proporciona um assentamento leve e sem pressão, bem como uma estabilidade estrutural duradoura.
 

@@ -5,7 +5,7 @@ slug: "kas-306-acetate-sunglasses"
 itemNo: "KAS-306"
 date: "2026-05-12"
 colors: "Negro & Tortuga & Gris & Marrón & Olivo"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalización"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM)"
 moq: "300 uds/modelo (100uds/color)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante de gafas de sol de acetato premium, fábrica de gafas d
 
 ## Características
 
-- **Material Premium:** Construcción en acetato Mazzucchelli y JINYU de alta calidad que proporciona un acabado ligero, duradero y vibrante para una estética de lujo.
+- **Material Premium:** Construcción en acetato Mazzucchelli y JIMEI & JINYU de alta calidad que proporciona un acabado ligero, duradero y vibrante para una estética de lujo.
 - **Herrajes Duraderos:** Robustas bisagras con estructura de 4+3 barriles diseñadas para una suavidad operativa constante, con opciones de actualización a 5 barriles y bisagras de resorte.
 - **Óptica Superior:** Lentes de nylon resistentes a los impactos que ofrecen una claridad excepcional, con amplia personalización disponible para tintes específicos y recubrimientos técnicos.
 - **Confort Integrado:** Almohadillas nasales integradas moldeadas con precisión diseñadas para asegurar un ajuste seguro y equilibrado y un perfil de gama alta sin costuras.
@@ -76,7 +76,7 @@ seoKeywords: "fabricante de gafas de sol de acetato premium, fábrica de gafas d
 
 ## Resumen
 
-El acetato Mazzucchelli y JINYU definen el modelo KAS-306, fusionando colores ricos y multicapa con una montura geométrica atemporal diseñada tanto para la resistencia como para la versatilidad estética. Esta selección de materiales garantiza un acabado vibrante que mantiene su brillo tras años de uso.
+El acetato Mazzucchelli y JIMEI & JINYU definen el modelo KAS-306, fusionando colores ricos y multicapa con una montura geométrica atemporal diseñada tanto para la resistencia como para la versatilidad estética. Esta selección de materiales garantiza un acabado vibrante que mantiene su brillo tras años de uso.
 
 Las bisagras de 4+3 barriles diseñadas con precisión y las almohadillas nasales integradas proporcionan la integridad estructural y el confort equilibrado requeridos por los mercados de gafas de gama alta.
 

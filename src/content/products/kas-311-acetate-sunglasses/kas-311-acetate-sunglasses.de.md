@@ -5,7 +5,7 @@ slug: "kas-311-acetate-sunglasses"
 itemNo: "KAS-311"
 date: "2026-05-12"
 colors: "Schwarz & Rauchig-Violett & Schildpatt & Braun"
-materials: "Premium-Mazzucchelli & JINYU-Acetat & Individualisierung"
+materials: "Premium-Mazzucchelli & JIMEI & JINYU-Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) ( Individualisierung )"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -54,7 +54,7 @@ seoKeywords: "Acetat-Sonnenbrillen-Hersteller, individuelle Unisex-Brillen, Mazz
 
 ## Eigenschaften
 
-- **Premium-Material:** Hochwertige Mazzucchelli- und JINYU-Acetat-Konstruktion, die eine lebendige Ästhetik mit geringem Gewicht und Langlebigkeit verbindet.
+- **Premium-Material:** Hochwertige Mazzucchelli- und JIMEI & JINYU-Acetat-Konstruktion, die eine lebendige Ästhetik mit geringem Gewicht und Langlebigkeit verbindet.
 - **Strukturelle Integrität:** Robuste 4+3 Barrel-Scharniere, entwickelt für langfristige Leichtgängigkeit und Rahmenstabilität.
 - **Optische Exzellenz:** Widerstandsfähige Nylon-Gläser, die überlegene Klarheit und Schlagfestigkeit mit umfangreichen kundenspezifischen Beschichtungsoptionen bieten.
 - **Ergonomisches Design:** Integrierte Nasenpads für einen nahtlosen, bequemen Sitz auch bei längerem täglichen Tragen.
@@ -72,7 +72,7 @@ seoKeywords: "Acetat-Sonnenbrillen-Hersteller, individuelle Unisex-Brillen, Mazz
 
 ## Übersicht
 
-Gefertigt aus einer raffinierten Mischung aus Mazzucchelli- und JINYU-Acetat, bietet das Modell KAS-311 einen leichten und dennoch robusten Rahmen mit überlegener Farbbrillanz.
+Gefertigt aus einer raffinierten Mischung aus Mazzucchelli- und JIMEI & JINYU-Acetat, bietet das Modell KAS-311 einen leichten und dennoch robusten Rahmen mit überlegener Farbbrillanz.
 
 Die Architektur umfasst verstärkte 4+3 Barrel-Scharniere und integrierte Nasenpads, die eine leistungsstarke Stabilität gepaart mit einem raffinierten, ergonomischen Tragegefühl liefern.
 

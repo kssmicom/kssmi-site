@@ -5,7 +5,7 @@ slug: "kas-114-acetate-sunglasses"
 itemNo: "KAS-114"
 date: "2026-05-09"
 colors: "Negro & Champán & Amarillo"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalización"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -50,7 +50,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol unisex OEM per
 
 ## Características Técnicas
 
-- **Material Premium:** Construido con acetato Mazzucchelli y JINYU de alta calidad para proporcionar una estructura ligera y duradera con un atractivo visual vibrante.
+- **Material Premium:** Construido con acetato Mazzucchelli y JIMEI & JINYU de alta calidad para proporcionar una estructura ligera y duradera con un atractivo visual vibrante.
 - **Hardware Duradero:** Diseñado con robustas bisagras de estructura 3+2 que garantizan una suavidad operativa a largo plazo y estabilidad estructural.
 - **Óptica de Precisión:** Equipado con lentes de nailon tenaces que ofrecen una claridad superior y amplias opciones de personalización para colecciones premium.
 - **Comodidad Perfecta:** Almohadillas nasales integradas diseñadas para ofrecer un ajuste seguro y ergonómico para un uso prolongado durante todo el día.
@@ -68,7 +68,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol unisex OEM per
 
 ## Descripción General
 
-Fabricado para los mercados de lujo que exigen tanto presencia estética como integridad estructural, el KAS-114 utiliza acetato Mazzucchelli y JINYU de primer nivel para lograr una construcción vibrante y ligera.
+Fabricado para los mercados de lujo que exigen tanto presencia estética como integridad estructural, el KAS-114 utiliza acetato Mazzucchelli y JIMEI & JINYU de primer nivel para lograr una construcción vibrante y ligera.
 
 Diseñada con robustas bisagras de estructura 3+2 y almohadillas nasales integradas, la audaz montura unisex garantiza una suavidad operativa excepcional a largo plazo y un ajuste seguro y ergonómico.
 

@@ -5,7 +5,7 @@ slug: "kas-104-acetate-sunglasses"
 itemNo: "KAS-104"
 date: "2026-05-06"
 colors: "Đồi mồi & Nâu & Đen & Hoa văn & Purple-Stripe"
-materials: "Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli cao cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -58,7 +58,7 @@ seoKeywords: "nhà sản xuất kính mắt axetat Mazzucchelli, kính mát OEM 
 
 ## Đặc điểm
 
-- **Chất liệu gọng cao cấp:** Cấu trúc axetat Mazzucchelli và JINYU cấp cao mang lại lớp hoàn thiện rực rỡ, bóng sâu với độ bền cấu trúc vượt trội cho các dòng thời trang cao cấp.
+- **Chất liệu gọng cao cấp:** Cấu trúc axetat Mazzucchelli và JIMEI & JINYU cấp cao mang lại lớp hoàn thiện rực rỡ, bóng sâu với độ bền cấu trúc vượt trội cho các dòng thời trang cao cấp.
 - **Phụ kiện bền bỉ:** Bản lề cấu trúc thùng 2+1 được kỹ thuật chính xác cho khả năng vận hành êm ái nhất quán và độ ổn định lâu dài của gọng kính.
 - **Quang học vượt trội:** Tròng kính nylon bền bỉ mang lại khả năng chống va đập cao và độ rõ nét quang học, với khả năng tùy chỉnh linh hoạt cho bảo vệ tia UV và các lớp phủ chuyên dụng.
 - **Vừa vặn công thái học:** Đệm mũi liền khối được chạm khắc mượt mà vào cấu trúc axetat mang lại sự vừa vặn an toàn, không gây áp lực, giúp tăng cường sự thoải mái suốt cả ngày.
@@ -76,7 +76,7 @@ seoKeywords: "nhà sản xuất kính mắt axetat Mazzucchelli, kính mát OEM 
 
 ## Tổng quan
 
-Được chế tác từ sự tuyển chọn kỹ lưỡng của axetat Mazzucchelli và JINYU cao cấp, KAS-104 cân bằng giữa độ sâu màu sắc rực rỡ với lớp hoàn thiện có độ bóng cao, định nghĩa cho kính mắt xa xỉ đương đại.
+Được chế tác từ sự tuyển chọn kỹ lưỡng của axetat Mazzucchelli và JIMEI & JINYU cao cấp, KAS-104 cân bằng giữa độ sâu màu sắc rực rỡ với lớp hoàn thiện có độ bóng cao, định nghĩa cho kính mắt xa xỉ đương đại.
 
 Tính toàn vẹn của cấu trúc được cố định bởi hệ thống bản lề thùng 2+1 được kỹ thuật chính xác, kết hợp với đệm mũi liền khối để đảm bảo sự vừa vặn an toàn, công thái học cho nhiều hình dạng khuôn mặt khác nhau.
 

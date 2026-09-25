@@ -5,7 +5,7 @@ slug: "kas-305-acetate-sunglasses"
 itemNo: "KAS-305"
 date: "2026-05-12"
 colors: "Hitam & Berjalur & Havana & Zaitun"
-materials: "Asetat Premium Mazzucchelli & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Penyesuaian"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Ciri-ciri Utama
 
-- **Pilihan Bahan Premium:** Pembinaan asetat Mazzucchelli dan JINYU gred tinggi memberikan rasa ringan dengan ketahanan luar biasa dan kedalaman warna yang bertenaga.
+- **Pilihan Bahan Premium:** Pembinaan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi memberikan rasa ringan dengan ketahanan luar biasa dan kedalaman warna yang bertenaga.
 - **Perkakasan Teguh:** Engsel struktur 4+3 tong yang direka dengan ketepatan memberikan kelancaran operasi jangka panjang dan penjajaran bingkai yang konsisten.
 - **Optik Berprestasi Tinggi:** Lensa nylon tahan lasak menawarkan rintangan hentaman dan kejelasan optik yang unggul dengan pilihan penyesuaian dan salutan yang serba boleh.
 - **Keselesaan Ergonomik:** Alas hidung bersepadu dan reka bentuk jambatan unisex yang halus memastikan kesesuaian yang selamat dan hipoalergenik untuk pemakaian harian yang dilanjutkan.
@@ -71,7 +71,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Gambaran Keseluruhan
 
-Asetat Mazzucchelli dan JINYU gred tinggi menentukan keanggunan struktur KAS-305, memberikan rasa ringan dan ketepuan warna yang mendalam. Reka bentuk unisex klasik ini merapatkan estetika retro dengan tuntutan fesyen moden.
+Asetat Mazzucchelli dan JIMEI & JINYU gred tinggi menentukan keanggunan struktur KAS-305, memberikan rasa ringan dan ketepuan warna yang mendalam. Reka bentuk unisex klasik ini merapatkan estetika retro dengan tuntutan fesyen moden.
 
 Direka dengan sistem engsel 4+3 tong yang tepat dan alas hidung bersepadu, bingkai mengekalkan penjajaran dan keselesaan yang konsisten melalui pemakaian harian.
 

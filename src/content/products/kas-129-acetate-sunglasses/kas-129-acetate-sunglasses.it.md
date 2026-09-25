@@ -5,7 +5,7 @@ slug: "kas-129-acetate-sunglasses"
 itemNo: "KAS-129"
 date: "2026-05-09"
 colors: "Nero & Rubino & Blu Reale & Marmo Viola & Marmo Perla"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalizzazione"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione per Conto Terzi (OEM) & Design e Produzione (ODM) (Personalizzazione)"
 moq: "300 pz/modello (100pz/colore)"
 
@@ -58,7 +58,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali da sole OEM personal
 
 ## Caratteristiche
 
-- **Acetato Premium:** Montatura e aste in acetato Mazzucchelli e JINYU selezionate a mano, per un'esperienza d'uso leggera, vibrante e ipoallergenica.
+- **Acetato Premium:** Montatura e aste in acetato Mazzucchelli e JIMEI & JINYU selezionate a mano, per un'esperienza d'uso leggera, vibrante e ipoallergenica.
 - **Hardware Durevole:** Cerniere con struttura a 4+3 barili progettate con precisione per la massima stabilità e una fluidità operativa duratura.
 - **Lenti ad Alte Prestazioni:** Tecnologia delle lenti in nylon tenace che offre una resistenza agli urti e una chiarezza ottica superiori con opzioni di personalizzazione complete.
 - **Comfort Integrato:** Naselli integrati dal design ergonomico che assicurano una calzata stabile e antiscivolo per diversi profili facciali.
@@ -76,7 +76,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali da sole OEM personal
 
 ## Panoramica
 
-Le case di moda di lusso che cercano un vantaggio visivo distinto lo trovano nel modello KAS-129, che abbina l'acetato Mazzucchelli e JINYU selezionato a mano con una silhouette audace e unisex.
+Le case di moda di lusso che cercano un vantaggio visivo distinto lo trovano nel modello KAS-129, che abbina l'acetato Mazzucchelli e JIMEI & JINYU selezionato a mano con una silhouette audace e unisex.
 
 Questo design integra un sistema di cerniere a 4+3 barili durevole e naselli ergonomici per garantire prestazioni costanti e un comfort raffinato anche in caso di uso intensivo.
 

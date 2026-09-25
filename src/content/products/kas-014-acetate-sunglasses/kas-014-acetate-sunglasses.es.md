@@ -5,7 +5,7 @@ slug: "kas-014-acetate-sunglasses"
 itemNo: "KAS-014"
 date: "2026-05-10"
 colors: "Gris Oscuro & Azul Cielo & Naranja Atardecer & Púrpura Fantasía"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalización"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de lujo personalizada
 
 ## Características
 
-- **Material Premium:** Construcción de acetato Mazzucchelli y JINYU de alta calidad que ofrece una sensación de lujo con una profundidad de color vibrante y duradera.
+- **Material Premium:** Construcción de acetato Mazzucchelli y JIMEI & JINYU de alta calidad que ofrece una sensación de lujo con una profundidad de color vibrante y duradera.
 - **Tecnología Avanzada de Lentes:** Lentes de nylon tenaz que proporcionan una resistencia superior a los impactos y claridad con amplias opciones de recubrimiento personalizado.
 - **Fluidez Operativa:** Bisagras de resorte integradas diseñadas para un ajuste flexible y cómodo y durabilidad del hardware a largo plazo.
 - **Diseño Ergonómico:** Almohadillas nasales integradas sin costuras diseñadas para la comodidad durante todo el día y una estética elegante y minimalista.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de lujo personalizada
 
 ## Descripción General
 
-El acetato de alta calidad Mazzucchelli y JINYU define el modelo KAS-014, ofreciendo un perfil ligero y una vibrante profundidad de color que captura una estética moderna y de lujo. Estos materiales proporcionan la durabilidad y la sensación premium esenciales para las colecciones unisex centradas en las tendencias.
+El acetato de alta calidad Mazzucchelli y JIMEI & JINYU define el modelo KAS-014, ofreciendo un perfil ligero y una vibrante profundidad de color que captura una estética moderna y de lujo. Estos materiales proporcionan la durabilidad y la sensación premium esenciales para las colecciones unisex centradas en las tendencias.
 
 La inclusión de bisagras de resorte diseñadas con precisión y almohadillas nasales integradas garantiza un ajuste refinado y ergonómico que mantiene la comodidad en diversas formas de cara.
 

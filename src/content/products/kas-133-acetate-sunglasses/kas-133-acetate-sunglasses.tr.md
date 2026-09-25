@@ -5,7 +5,7 @@ slug: "kas-133-acetate-sunglasses"
 itemNo: "KAS-133"
 date: "2026-05-09"
 colors: "Siyah & Şeffaf & Derin Pembe & Şeffaf Mavi"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM & ODM ( Özelleştirme )"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Özellikler
 
-- **Premium Malzeme:** Hafiflik hissi ile canlı, uzun ömürlü renk derinliği sunan yüksek kaliteli Mazzucchelli ve JINYU asetat yapısı.
+- **Premium Malzeme:** Hafiflik hissi ile canlı, uzun ömürlü renk derinliği sunan yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat yapısı.
 - **Güçlendirilmiş Donanım:** Hassas hareket ve uzun süreli operasyonel dayanıklılık için tasarlanmış sağlam 3+2 barrel yapılı menteşeler.
 - **Yüksek Performanslı Optik:** Üstün netlik ve darbe direnci sağlayan, kapsamlı özelleştirme seçeneklerine sahip dayanıklı naylon lensler.
 - **Ergonomik Tasarım:** Uzun süreli kullanım için güvenli, hipoalerjenik ve rahat bir oturuş için tasarlanmış, dikişsiz entegre burun tamponları.
@@ -71,7 +71,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Genel Bakış
 
-Mazzucchelli ve JINYU asetat, KAS-133 için temel mükemmelliği sağlayarak olağanüstü renk canlılığına sahip hafif ama dayanıklı bir çerçeve sunar. Unisex tasarımı, lüks ve trend odaklı estetiğin dengesini arayan markalar için çok yönlü bir tuval görevi görür.
+Mazzucchelli ve JIMEI & JINYU asetat, KAS-133 için temel mükemmelliği sağlayarak olağanüstü renk canlılığına sahip hafif ama dayanıklı bir çerçeve sunar. Unisex tasarımı, lüks ve trend odaklı estetiğin dengesini arayan markalar için çok yönlü bir tuval görevi görür.
 
 Operasyonel hassasiyet, 3+2 barrel yapılı menteşeler ve uzun süreli kullanım sırasında konforu koruyan darbe dirençli naylon lensler aracılığıyla garanti edilir.
 

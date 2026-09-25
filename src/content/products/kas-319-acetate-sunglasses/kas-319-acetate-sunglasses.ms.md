@@ -5,7 +5,7 @@ slug: "kas-319-acetate-sunglasses"
 itemNo: "KAS-319"
 date: "2026-05-12"
 colors: "Hitam & Merah Jambu & Kura-kura & Lut Sinar"
-materials: "Asetat Premium Mazzucchelli & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Penyesuaian"
 serviceMode: "OEM & ODM ( Penyesuaian )"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat premium, pengeluaran eyewear OE
 
 ## Ciri-ciri Utama
 
-- **Bahan Artisan:** Binaan asetat premium Mazzucchelli dan JINYU yang menawarkan sentuhan mewah dengan ketahanan unggul dan pengekalan warna yang menyerlah.
+- **Bahan Artisan:** Binaan asetat premium Mazzucchelli dan JIMEI & JINYU yang menawarkan sentuhan mewah dengan ketahanan unggul dan pengekalan warna yang menyerlah.
 - **Perkakasan Diperkukuh:** Engsel struktur 4+3 tong yang direka dengan ketepatan untuk kelancaran operasi yang luar biasa dan kestabilan bingkai.
 - **Optik Termaju:** Lensa nilon tahan lasak yang memberikan kejelasan definisi tinggi dan perlindungan impak yang teguh untuk keselamatan solar premium.
 - **Keselesaan Dioptimumkan:** Alas hidung bersepadu dan dimensi ergonomik 53-19-145mm yang direka untuk pemakaian sepanjang hari dan padanan yang selamat serta seimbang.
@@ -71,7 +71,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat premium, pengeluaran eyewear OE
 
 ## Gambaran Keseluruhan
 
-Dihasilkan daripada gabungan halus asetat premium Mazzucchelli dan JINYU, cermin mata hitam ini mengutamakan kedalaman struktur dan kemasan berkilat tinggi. Bahan bingkai yang ringan dan menyerlah memastikan sentuhan premium yang selaras dengan piawaian fesyen tahap mewah.
+Dihasilkan daripada gabungan halus asetat premium Mazzucchelli dan JIMEI & JINYU, cermin mata hitam ini mengutamakan kedalaman struktur dan kemasan berkilat tinggi. Bahan bingkai yang ringan dan menyerlah memastikan sentuhan premium yang selaras dengan piawaian fesyen tahap mewah.
 
 Engsel struktur 4+3 tong yang direka dengan ketepatan dan reka bentuk alas hidung bersepadu memberikan padanan yang stabil dan seimbang untuk pemakaian sepanjang hari.
 

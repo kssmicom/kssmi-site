@@ -5,7 +5,7 @@ slug: "kao-306-acetate-optical-frame"
 itemNo: "KAO-306"
 date: "2026-05-10"
 colors: "Preto & Cinza & Marrom & Oliva"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -57,7 +57,7 @@ seoKeywords: "fabricante armações ópticas acetato, óculos de acetato persona
 
 ## Características
 
-- **Material Premium:** Construção em acetato Mazzucchelli e JINYU de alta qualidade que oferece uma sensação de leveza, durabilidade excepcional e profundidade de cor vibrante.
+- **Material Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que oferece uma sensação de leveza, durabilidade excepcional e profundidade de cor vibrante.
 - **Hardware de Precisão:** Dobradiças especializadas com estrutura de rebite 4+3 barrel projetadas para maior estabilidade e suavidade operacional a longo prazo.
 - **Óptica Avançada:** Lentes de nylon tenaz que proporcionam clareza superior com opções de personalização completa para tonalidades e revestimentos protetores especializados.
 - **Conforto Integrado:** Ponteiras nasicas integradas moldadas profissionalmente projetadas para distribuição ideal de peso e um ajuste seguro e hipoalergênico.
@@ -74,7 +74,7 @@ seoKeywords: "fabricante armações ópticas acetato, óculos de acetato persona
 
 ## Visão Geral
 
-O acetato Mazzucchelli e JINYU fornecem a base para esta armação, oferecendo um acabamento premium que combina saturação de cor vibrante com durabilidade excepcional. Seu perfil refinado de 46-23-145 mm oferece uma tela versátil para identidades de marcas de luxo.
+O acetato Mazzucchelli e JIMEI & JINYU fornecem a base para esta armação, oferecendo um acabamento premium que combina saturação de cor vibrante com durabilidade excepcional. Seu perfil refinado de 46-23-145 mm oferece uma tela versátil para identidades de marcas de luxo.
 
 A integração de dobradiças de rebite 4+3 barrel e lentes de nylon tenaz garante um produto que equilibra o desempenho técnico com o conforto de uso o dia todo.
 

@@ -5,7 +5,7 @@ slug: "kao-309-acetate-optical-frame"
 itemNo: "KAO-309"
 date: "2026-05-10"
 colors: "Ireng & Biru & Bulus & Zaitun"
-materials: "Asetat Premium Mazzucchelli & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -53,7 +53,7 @@ seoKeywords: "produsen frame optik asetat, kacamata kustom OEM, kacamata label p
 ---
 
 ## Fitur
-- **Bahan Premium:** Frame lan temple asetat Mazzucchelli lan JINYU kelas dhuwur sing menehi estetika sing padhang, entheng, lan awet.
+- **Bahan Premium:** Frame lan temple asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing menehi estetika sing padhang, entheng, lan awet.
 - **Hardware Awet:** Engsel struktur rivet 4+3 barrel sing dirancang kanthi presisi njamin kelancaran operasional sing luar biasa lan umur struktur sing dawa.
 - **Optik Premium:** Lensa nylone sing kuat nyedhiyakake resistensi impact sing unggul lan pilihan kustomisasi serbaguna kanggo warna lan lapisan khusus.
 - **Kenyamanan Ergonomis:** Bantalan irung sing terintegrasi kanthi mulus dirancang kanggo nyedhiyakake pas sing aman, hipoalergenik, lan nyaman kanggo panggunaan sing suwe.
@@ -70,7 +70,7 @@ seoKeywords: "produsen frame optik asetat, kacamata kustom OEM, kacamata label p
 
 ## Ringkesan
 
-Nggabungake asetat premium Mazzucchelli lan JINYU, KAO-309 nampilake profil inspirasi retro klasik sing dirancang kanggo pasar optik kelas dhuwur. Frame sing entheng njaga kedalaman warna sing kuat nalika nawakake daya tahan sing dibutuhake kanggo nyandhang saben dina.
+Nggabungake asetat premium Mazzucchelli lan JIMEI & JINYU, KAO-309 nampilake profil inspirasi retro klasik sing dirancang kanggo pasar optik kelas dhuwur. Frame sing entheng njaga kedalaman warna sing kuat nalika nawakake daya tahan sing dibutuhake kanggo nyandhang saben dina.
 
 Engsel rivet 4+3 barrel sing dirancang kanthi presisi lan bantalan irung sing terintegrasi nyedhiyakake keseimbangan umur panjang struktur lan kenyamanan ergonomis.
 

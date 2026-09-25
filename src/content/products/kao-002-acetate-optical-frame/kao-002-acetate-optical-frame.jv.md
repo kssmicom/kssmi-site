@@ -5,7 +5,7 @@ slug: "kao-002-acetate-optical-frame"
 itemNo: "KAO-002"
 date: "2026-05-10"
 colors: "Oranye & Bulus & Ungu & Ijo"
-materials: "Asetat Premium Mazzucchelli & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "frame optik asetat, kacamata optik kustom, produsen kacamata OEM, 
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JINYU kelas dhuwur sing menehi rasa entheng lan awet kanti kedalaman warna sing urip lan tahan suwe.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing menehi rasa entheng lan awet kanti kedalaman warna sing urip lan tahan suwe.
 - **Hardware sing Canggih:** Engsel rivet 4+3 barrel kinerja dhuwur sing nyedyakake stabilitas struktural sing luar biasa lan kelancaran operasional jangka panjang.
 - **Optik sing Maju:** Lensa nilon sing kuat sing nawakake kejelasan unggul lan tahan benturan kanthi pilihan kustomisasi lan lapisan sing jembar kasedhiya.
 - **Ergonomi Terintegrasi:** Bantalan irung terintegrasi sing dicetak kanthi presisi sing dirancang kanggo pas sing aman, nyaman lan profil estetika kelas dhuwur sing mulus.
@@ -71,7 +71,7 @@ seoKeywords: "frame optik asetat, kacamata optik kustom, produsen kacamata OEM, 
 
 ## Ringkesan
 
-Nggunakake asetat premium Mazzucchelli lan JINYU, frame optik iki nggayuh keseimbangan sing canggih antarane panggunaan sing entheng lan kedalaman warna sing sugih lan urip. Komposisi kelas dhuwur saka bahan kasebut njamin finish sing tahan banting lan polesan sing cocog karo standar pangembangan kacamata tingkat mewah.
+Nggunakake asetat premium Mazzucchelli lan JIMEI & JINYU, frame optik iki nggayuh keseimbangan sing canggih antarane panggunaan sing entheng lan kedalaman warna sing sugih lan urip. Komposisi kelas dhuwur saka bahan kasebut njamin finish sing tahan banting lan polesan sing cocog karo standar pangembangan kacamata tingkat mewah.
 
 Engsel rivet 4+3 barrel terintegrasi nyedyakake integritas struktural sing luar biasa lan operasi mekanik sing lancar, dirancang kanggo keandalan jangka panjang ing lingkungan ritel sing nuntut.
 

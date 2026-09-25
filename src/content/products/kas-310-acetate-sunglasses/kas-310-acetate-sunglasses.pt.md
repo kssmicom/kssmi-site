@@ -5,7 +5,7 @@ slug: "kas-310-acetate-sunglasses"
 itemNo: "KAS-310"
 date: "2026-05-12"
 colors: "Preto-Cinza & Transparente Fosco & Cinza Brilhante & Preto-Verde"
-materials: "Acetato Mazzucchelli e JINYU Premium & Personalização"
+materials: "Acetato Mazzucchelli e JIMEI & JINYU Premium & Personalização"
 serviceMode: "OEM & ODM ( Personalização )"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -53,7 +53,7 @@ seoKeywords: "óculos de sol em acetato Mazzucchelli, óculos de sol em acetato 
 ---
 
 ## Características
-- **Materiais Premium:** Construção em acetato Mazzucchelli e JINYU de alta qualidade, oferecendo uma armação vibrante, leve e durável com acabamento premium polido à mão.
+- **Materiais Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, oferecendo uma armação vibrante, leve e durável com acabamento premium polido à mão.
 - **Hardware Durável:** Dobradiças robustas de estrutura 4+3 projetadas para suavidade operacional consistente e integridade estrutural a longo prazo.
 - **Óptica Avançada:** Lentes de nylon tenaz que proporcionam clareza e resistência ao impacto superiores, com amplas opções de revestimento e tonalidade personalizadas.
 - **Design Ergonômico:** Ponteiras nasais integradas perfeitamente, projetadas para um ajuste seguro e confortável e uma estética refinada e minimalista.
@@ -70,7 +70,7 @@ seoKeywords: "óculos de sol em acetato Mazzucchelli, óculos de sol em acetato 
 
 ## Visão Geral
 
-A construção em acetato Mazzucchelli e JINYU define o modelo KAS-310, proporcionando uma profundidade de material vibrante e uma resiliência leve que equilibra o luxo com a durabilidade diária. As superfícies polidas à mão entregam a qualidade tátil refinada esperada pelas marcas globais premium.
+A construção em acetato Mazzucchelli e JIMEI & JINYU define o modelo KAS-310, proporcionando uma profundidade de material vibrante e uma resiliência leve que equilibra o luxo com a durabilidade diária. As superfícies polidas à mão entregam a qualidade tátil refinada esperada pelas marcas globais premium.
 
 As dobradiças integradas de 4+3 barris garantem uma operação suave e consistente, mantendo o alinhamento preciso da armação ao longo do uso intensivo a longo prazo.
 

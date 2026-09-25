@@ -5,7 +5,7 @@ slug: "kas-106-acetate-sunglasses"
 itemNo: "KAS-106"
 date: "2026-05-06"
 colors: "Kelabu & Havana Kilat & Havana Matte & Jernih & Hitam & Coklat & Hijau"
-materials: "Asetat Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Asetat Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -62,7 +62,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM kustom, 
 
 ## Ciri-ciri Utama
 
-- **Bahan Kraf:** Kemasan tangan menggunakan asetat Mazzucchelli dan JINYU premium untuk menghasilkan bingkai yang ringan, hipoalergenik dengan kedalaman warna dan ketahanan yang luar biasa.
+- **Bahan Kraf:** Kemasan tangan menggunakan asetat Mazzucchelli dan JIMEI & JINYU premium untuk menghasilkan bingkai yang ringan, hipoalergenik dengan kedalaman warna dan ketahanan yang luar biasa.
 - **Kejuruteraan Ketepatan:** Dilengkapi dengan sistem engsel struktur tong 3+2 yang stabil bagi memastikan ketegangan yang konsisten dan kelancaran operasi jangka panjang.
 - **Optik Berprestasi Tinggi:** Menampilkan lensa nilon tahan lasak yang memberikan rintangan impak unggul dan kejelasan optik untuk persekitaran runcit mewah.
 - **Ergonomik Dipertingkatkan:** Reka bentuk alas hidung bersepadu dan geometri bingkai telinga yang seimbang memberikan padanan yang selamat dan bebas tekanan untuk pemakaian berpanjangan.
@@ -80,7 +80,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM kustom, 
 
 ## Gambaran Keseluruhan
 
-Asetat Mazzucchelli dan JINYU gred tinggi memastikan KAS-106 memberikan kecerahan warna yang luar biasa di samping ketahanan struktur. Profil unisex yang berani menjadikannya pilihan utama untuk portfolio fesyen mewah.
+Asetat Mazzucchelli dan JIMEI & JINYU gred tinggi memastikan KAS-106 memberikan kecerahan warna yang luar biasa di samping ketahanan struktur. Profil unisex yang berani menjadikannya pilihan utama untuk portfolio fesyen mewah.
 
 Sistem engsel tong 3+2 yang diperkukuh dan alas hidung ergonomik memberikan kestabilan mekanikal dan keselesaan yang diperlukan untuk persekitaran runcit premium.
 

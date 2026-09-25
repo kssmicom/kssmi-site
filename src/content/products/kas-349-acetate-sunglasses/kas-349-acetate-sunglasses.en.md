@@ -5,7 +5,7 @@ slug: "kas-349-acetate-sunglasses"
 itemNo: "KAS-349"
 date: "2026-05-13"
 colors: "Black with Gradient Grey, White Tortoise with Black"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -41,7 +41,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, private la
 ---
 
 ## Technical Features
-- **Premium Frame Material:** Premium Mazzucchelli and JINYU acetate frame construction delivering lightweight durability and vibrant color options.
+- **Premium Frame Material:** Premium Mazzucchelli, JIMEI & JINYU acetate frame construction delivering lightweight durability and vibrant color options.
 - **Matching Acetate Temples:** Matching premium acetate temple construction offering structural stability and a unified aesthetic.
 - **Durable Hardware:** Robust 4+3 barrel structure hinges engineered for stable alignment and long-term operational durability.
 - **Premium Lens Technology:** Impact-resistant nylon lenses offering excellent optical clarity with custom tint and coating options.
@@ -58,7 +58,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, private la
 
 ## Overview
 
-Boutique fashion labels and high-end optical chains require a sophisticated balance of durability and vibrant color, which the premium Mazzucchelli and JINYU acetate in these KAS-349 frames provides. The classic unisex silhouette serves as a versatile canvas for diverse brand identities.
+Boutique fashion labels and high-end optical chains require a sophisticated balance of durability and vibrant color, which the premium Mazzucchelli, JIMEI & JINYU acetate in these KAS-349 frames provides. The classic unisex silhouette serves as a versatile canvas for diverse brand identities.
 
 Integrated acetate nose pads and a robust 4+3 barrel hinge structure deliver stable, long-lasting comfort and alignment for daily wear.
 

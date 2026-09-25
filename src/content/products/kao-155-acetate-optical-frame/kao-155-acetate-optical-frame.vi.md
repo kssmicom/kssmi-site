@@ -5,7 +5,7 @@ slug: "kao-155-acetate-optical-frame"
 itemNo: "KAO-155"
 date: "2026-05-10"
 colors: "Vàng hoa với tím, xanh mòng két hoa với hồng"
-materials: "Axetat Mazzucchelli cao cấp & JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Mazzucchelli cao cấp & JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -46,7 +46,7 @@ seoKeywords: "nhà sản xuất gọng kính cận axetat, kính mắt axetat t�
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Được chế tác từ axetat Mazzucchelli và JINYU đẳng cấp thế giới, mang lại chiều sâu màu sắc rực rỡ và độ bền lâu dài vượt trội.
+- **Chất liệu cao cấp:** Được chế tác từ axetat Mazzucchelli và JIMEI & JINYU đẳng cấp thế giới, mang lại chiều sâu màu sắc rực rỡ và độ bền lâu dài vượt trội.
 - **Kỹ thuật tinh xảo:** Cấu trúc bản lề đinh tán 2+1 ổn định được thiết kế để vận hành trơn tru và đảm bảo tính toàn vẹn của cấu trúc.
 - **Quang học hiệu suất cao:** Được trang bị tròng kính nylon bền bỉ, mang lại độ rõ nét vượt trội và khả năng chống va đập với các tùy chọn tùy chỉnh hoàn toàn.
 - **Thoải mái tối đa:** Được thiết kế với đệm mũi liền khối để đảm bảo vừa vặn an toàn, không gây dị ứng cho nhiều khuôn mặt khác nhau trong thời gian dài sử dụng.
@@ -64,7 +64,7 @@ seoKeywords: "nhà sản xuất gọng kính cận axetat, kính mắt axetat t�
 
 ## Tổng quan
 
-Axetat Mazzucchelli và JINYU hòa quyện trong mẫu gọng kính này để mang lại chiều sâu màu sắc rực rỡ và tuổi thọ cấu trúc mà các thương hiệu xa xỉ yêu cầu. Kiểu dáng unisex táo bạo là sự kết hợp giữa thiết kế cổ điển và thẩm mỹ hiện đại tập trung vào xu hướng.
+Axetat Mazzucchelli và JIMEI & JINYU hòa quyện trong mẫu gọng kính này để mang lại chiều sâu màu sắc rực rỡ và tuổi thọ cấu trúc mà các thương hiệu xa xỉ yêu cầu. Kiểu dáng unisex táo bạo là sự kết hợp giữa thiết kế cổ điển và thẩm mỹ hiện đại tập trung vào xu hướng.
 
 Bản lề cấu trúc đinh tán 2+1 và đệm mũi liền khối đảm bảo vận hành trơn tru và mang lại cảm giác vừa vặn, thoải mái trong suốt thời gian dài sử dụng.
 

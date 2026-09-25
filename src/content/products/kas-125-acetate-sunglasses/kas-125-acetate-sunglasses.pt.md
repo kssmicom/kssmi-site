@@ -5,7 +5,7 @@ slug: "kas-125-acetate-sunglasses"
 itemNo: "KAS-125"
 date: "2026-05-09"
 colors: "Preto & Tartaruga Clara & Tartaruga Escura & Chifre de Búfalo & Caqui"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) (Personalização)"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -57,7 +57,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos personalizados OE
 ---
 ## Características
 
-- **Materiais Premium:** Armação e hastes de acetato Mazzucchelli e JINYU, leves e vibrantes, oferecendo um toque premium e durabilidade duradoura.
+- **Materiais Premium:** Armação e hastes de acetato Mazzucchelli e JIMEI & JINYU, leves e vibrantes, oferecendo um toque premium e durabilidade duradoura.
 - **Hardware Durável:** Dobradiças robustas com estrutura de barril 4+3, projetadas para um alinhamento preciso e suavidade operacional constante.
 - **Óptica Avançada:** Lentes de nylon tenaz que proporcionam clareza superior e resistência ao impacto em um perfil de armação versátil de 53-19-145 mm.
 - **Conforto Integrado:** Ponteiras nasais ergonomicamente projetadas diretamente na armação para um ajuste estável e hipoalergênico.
@@ -74,7 +74,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos personalizados OE
 
 ## Visão Geral
 
-A construção em acetato Mazzucchelli e JINYU de qualidade premium confere ao KAS-125 um toque distinto e uma vibração duradoura que atende aos padrões dos portfólios globais de luxo.
+A construção em acetato Mazzucchelli e JIMEI & JINYU de qualidade premium confere ao KAS-125 um toque distinto e uma vibração duradoura que atende aos padrões dos portfólios globais de luxo.
 
 Projetada com dobradiças de estrutura de barril 4+3 para um alinhamento preciso, a armação combina lentes de nylon de alto impacto com uma ponte ergonômica e integrada para durabilidade sustentada.
 

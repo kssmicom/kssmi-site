@@ -5,7 +5,7 @@ slug: "kas-106-acetate-sunglasses"
 itemNo: "KAS-106"
 date: "2026-05-06"
 colors: "Kencana & Havana Kilap & Havana Matte & Bening & Ireng & Coklat & Ijo"
-materials: "Asetat Mazzucchelli Premium & Asetat JINYU & Kustomisasi"
+materials: "Asetat Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -62,7 +62,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 
 ## Fitur
 
-- **Bahan Kerajinan:** Rampung kanthi tangan nggunakake asetat Mazzucchelli lan JINYU premium kanggo menehi frame sing entheng, hypoallergenic kanthi jero warna lan daya tahan sing luar biasa.
+- **Bahan Kerajinan:** Rampung kanthi tangan nggunakake asetat Mazzucchelli lan JIMEI & JINYU premium kanggo menehi frame sing entheng, hypoallergenic kanthi jero warna lan daya tahan sing luar biasa.
 - **Teknik Presisi:** Dilengkapi sistem engsel struktur tong 3+2 sing stabil kanggo njamin tegangan sing konsisten lan kelancaran operasional jangka panjang.
 - **Optik Performa Dhuwur:** Fitur lensa nilon kuat sing menehi resistensi dampak unggul lan kejelasan optik kanggo lingkungan ritel kelas dhuwur.
 - **Ergonomi sing Ditingkatake:** Desain bantalan irung terpadu lan geometri gagang sing seimbang nyedhiyakake pas sing aman lan tanpa tekanan kanggo panggunaan sing suwe.
@@ -80,7 +80,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 
 ## Ringkesan
 
-Asetat Mazzucchelli lan JINYU kelas dhuwur njamin KAS-106 menehi semangat warna sing luar biasa bebarengan karo daya tahan struktural. Profil unisex sing wani ndadekake pilihan sing apik kanggo portofolio mode kelas dhuwur.
+Asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur njamin KAS-106 menehi semangat warna sing luar biasa bebarengan karo daya tahan struktural. Profil unisex sing wani ndadekake pilihan sing apik kanggo portofolio mode kelas dhuwur.
 
 Sistem engsel tong 3+2 sing dikuatake lan bantalan irung ergonomis nyedhiyakake stabilitas mekanik lan kenyamanan sing dibutuhake kanggo lingkungan ritel premium.
 

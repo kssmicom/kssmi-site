@@ -5,7 +5,7 @@ slug: "kas-014-acetate-sunglasses"
 itemNo: "KAS-014"
 date: "2026-05-10"
 colors: "Koyu Gri & Gök Mavisi & Gün Batımı Turuncusu & Fantezi Moru"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel lüks gözlük OEM, �
 
 ## Özellikler
 
-- **Premium Malzeme:** Lüks bir his ile canlı ve uzun ömürlü renk derinliği sunan yüksek kaliteli Mazzucchelli ve JINYU asetat yapısı.
+- **Premium Malzeme:** Lüks bir his ile canlı ve uzun ömürlü renk derinliği sunan yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat yapısı.
 - **Gelişmiş Lens Teknolojisi:** Kapsamlı özel kaplama seçenekleriyle üstün darbe direnci ve netlik sağlayan dayanıklı naylon lensler.
 - **Operasyonel Pürüzsüzlük:** Esnek, rahat bir uyum ve uzun süreli donanım dayanıklılığı için tasarlanmış entegre yaylı menteşeler.
 - **Ergonomik Tasarım:** Gün boyu konfor ve şık, minimalist bir estetik için tasarlanmış sorunsuz bir şekilde entegre edilmiş burun tamponları.
@@ -71,7 +71,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel lüks gözlük OEM, �
 
 ## Genel Bakış
 
-Yüksek kaliteli Mazzucchelli ve JINYU asetat, KAS-014'ü tanımlayarak modern ve lüks bir estetiği yakalayan hafif bir profil ve canlı renk derinliği sunar. Bu malzemeler, trend odaklı unisex koleksiyonlar için temel olan dayanıklılığı ve premium hissi sağlar.
+Yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat, KAS-014'ü tanımlayarak modern ve lüks bir estetiği yakalayan hafif bir profil ve canlı renk derinliği sunar. Bu malzemeler, trend odaklı unisex koleksiyonlar için temel olan dayanıklılığı ve premium hissi sağlar.
 
 Hassas mühendislikle üretilmiş yaylı menteşelerin ve entegre burun tamponlarının dahil edilmesi, çeşitli yüz şekillerinde konforu koruyan rafine ve ergonomik bir uyum sağlar.
 

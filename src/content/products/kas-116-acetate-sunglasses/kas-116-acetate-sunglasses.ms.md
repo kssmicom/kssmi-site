@@ -5,7 +5,7 @@ slug: "kas-116-acetate-sunglasses"
 itemNo: "KAS-116"
 date: "2026-05-09"
 colors: "Hitam & Hijau-Marmar & Putih & Marmar"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, kilang cermin mata OEM tersuai
 
 ## Ciri-ciri Utama
 
-- **Pembinaan Asetat Premium:** Bingkai dan pelipis asetat Mazzucchelli dan JINYU berkualiti tinggi menawarkan kemasan yang ringan, tahan lama dan bersemangat.
+- **Pembinaan Asetat Premium:** Bingkai dan pelipis asetat Mazzucchelli dan JIMEI & JINYU berkualiti tinggi menawarkan kemasan yang ringan, tahan lama dan bersemangat.
 - **Perkakasan Tahan Lama:** Engsel struktur 3+2 tong yang stabil direka untuk kelancaran operasi dan kebolehpercayaan jangka panjang.
 - **Optik Premium:** Kanta nilon tahan lasak dengan pelbagai pilihan warna dan salutan tersuai tersedia.
 - **Keselesaan Lancar:** Pad hidung bersepadu direka untuk memberikan kesesuaian yang selamat dan selesa untuk pemakaian harian.
@@ -72,7 +72,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, kilang cermin mata OEM tersuai
 
 ## Gambaran Keseluruhan
 
-Dihasilkan daripada asetat Mazzucchelli dan JINYU gred tinggi, KAS-116 mempersembahkan estetika uniseks yang berani yang menaikkan serta-merta mana-mana koleksi cermin mata premium. Bingkai bergaya ini mengimbangi struktur ringan dan tahan lama dengan daya tarikan visual yang sangat bersemangat.
+Dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU gred tinggi, KAS-116 mempersembahkan estetika uniseks yang berani yang menaikkan serta-merta mana-mana koleksi cermin mata premium. Bingkai bergaya ini mengimbangi struktur ringan dan tahan lama dengan daya tarikan visual yang sangat bersemangat.
 
 Direka untuk prestasi harian yang boleh dipercayai, ia menampilkan engsel 3+2 tong yang teguh, kanta nilon yang berdaya tahan dan pad hidung yang bersepadu dengan lancar untuk memastikan keselesaan luar biasa.
 

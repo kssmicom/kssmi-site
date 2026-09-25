@@ -5,7 +5,7 @@ slug: "kao-329-acetate-optical-frame"
 itemNo: "KAO-329"
 date: "2026-05-10"
 colors: "Verde oliva sólido, Rosa sólido, Tortuga"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalización"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación por Cuenta de Terceros & Diseño y Fabricación (Personalización)"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -50,7 +50,7 @@ seoKeywords: "monturas ópticas de acetato personalizadas, gafas de acetato al p
 
 ## Características
 
-- **Material Premium:** Fabricado con acetato premium Mazzucchelli y JINYU, ofreciendo una estructura ultra ligera pero excepcionalmente duradera con una estética de color vibrante y profunda.
+- **Material Premium:** Fabricado con acetato premium Mazzucchelli y JIMEI & JINYU, ofreciendo una estructura ultra ligera pero excepcionalmente duradera con una estética de color vibrante y profunda.
 - **Hardware de Ingeniería:** Bisagras de estructura de 3+2 barriletes de alta fiabilidad que proporcionan un movimiento de las varillas estable y suave, con opciones de bisagras de resorte y de 5 barriletes.
 - **Óptica Tenaz:** Lentes de nylon de alta durabilidad que ofrecen una claridad óptica excepcional y resistencia al impacto con servicios de revestimiento completamente personalizados.
 - **Confort Integrato:** Plaquetas nasales de acetato perfectamente integradas combinadas con una geometría a medida de 55-17-145mm para proporcionar un ajuste equilibrado y sin deslizamientos.
@@ -68,7 +68,7 @@ seoKeywords: "monturas ópticas de acetato personalizadas, gafas de acetato al p
 
 ## Resumen
 
-Al emparejar el acetato Mazzucchelli y JINYU, la montura KAO-329 logra una elegante profundidad de color combinada con una resistencia física duradera. Su silueta unisex retro-clásica, presentada en un rico verde oliva, un rosa suave y el clásico carey (tortuga), añade un punto de anclaje premium a cualquier línea de gafas de alta gama.
+Al emparejar el acetato Mazzucchelli y JIMEI & JINYU, la montura KAO-329 logra una elegante profundidad de color combinada con una resistencia física duradera. Su silueta unisex retro-clásica, presentada en un rico verde oliva, un rosa suave y el clásico carey (tortuga), añade un punto de anclaje premium a cualquier línea de gafas de alta gama.
 
 La fabricación de precisión garantiza que la geometría de 55-17-145mm trabaje en armonía con las plaquetas nasales de acetato integradas y una bisagra de 3+2 barriletes para ofrecer un movimiento suave y un ajuste equilibrado y sin puntos de presión.
 

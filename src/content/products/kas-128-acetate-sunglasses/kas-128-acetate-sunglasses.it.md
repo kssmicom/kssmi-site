@@ -5,7 +5,7 @@ slug: "kas-128-acetate-sunglasses"
 itemNo: "KAS-128"
 date: "2026-05-09"
 colors: "Nero & Bianco & Marmo Verde & Marmo Blu & Marmo Nero & Rubino"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalizzazione"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
 serviceMode: "OEM & ODM ( Personalizzazione )"
 moq: "300 pz/modello (100pz/colore)"
 
@@ -62,7 +62,7 @@ seoKeywords: "produttore occhiali acetato premium, occhiali OEM personalizzati K
 
 ## Caratteristiche
 
-- **Acetato Premium:** Realizzato con il rinomato acetato Mazzucchelli e JINYU, che offre una durata eccezionale e una finitura vibrante ad alta lucentezza.
+- **Acetato Premium:** Realizzato con il rinomato acetato Mazzucchelli e JIMEI & JINYU, che offre una durata eccezionale e una finitura vibrante ad alta lucentezza.
 - **Cerniere di Precisione:** Robuste cerniere a struttura 4+3 barili progettate per una stabilità superiore e una scorrevolezza operativa a lungo termine.
 - **Ottica ad Alte Prestazioni:** Lenti in nylon tenace che offrono eccellente chiarezza e resistenza agli urti con ampie opzioni di personalizzazione.
 - **Comfort Integrato:** Naselli integrati stampati di precisione, progettati per una calzata sicura, ipoallergenica e bilanciata durante l'uso prolungato.
@@ -79,7 +79,7 @@ seoKeywords: "produttore occhiali acetato premium, occhiali OEM personalizzati K
 
 ## Panoramica
 
-L'acetato Mazzucchelli e JINYU si uniscono in una silhouette audace e lucida che definisce il lusso moderno attraverso la sua estetica unisex unica.
+L'acetato Mazzucchelli e JIMEI & JINYU si uniscono in una silhouette audace e lucida che definisce il lusso moderno attraverso la sua estetica unisex unica.
 
 Le cerniere a 4+3 barili di precisione e i naselli integrati assicurano stabilità eccezionale e comfort a lungo termine per chi li indossa.
 

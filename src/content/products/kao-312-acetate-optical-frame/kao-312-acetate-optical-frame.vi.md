@@ -5,7 +5,7 @@ slug: "kao-312-acetate-optical-frame"
 itemNo: "KAO-312"
 date: "2026-05-10"
 colors: "Đen & Xanh Néon & Spark & Havana & Đồi mồi đỏ"
-materials: "Axetat Mazzucchelli Cao Cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Mazzucchelli Cao Cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -57,7 +57,7 @@ seoKeywords: "axetat Mazzucchelli, gọng kính cận axetat, nhà sản xuất 
 
 ## Đặc điểm
 
-- **Vật liệu cấp hàng không vũ trụ:** Axetat Mazzucchelli và JINYU cao cấp cho mặt trước và càng kính mang lại cảm giác nhẹ nhàng với độ bền vượt trội và chiều sâu màu sắc sống động.
+- **Vật liệu cấp hàng không vũ trụ:** Axetat Mazzucchelli và JIMEI & JINYU cao cấp cho mặt trước và càng kính mang lại cảm giác nhẹ nhàng với độ bền vượt trội và chiều sâu màu sắc sống động.
 - **Phần cứng chắc chắn:** Bản lề cấu trúc đinh tán 4+3 được chế tạo chính xác đảm bảo sự vận hành trơn tru lâu dài và ổn định cấu trúc.
 - **Thiết kế tiện dụng:** Đệm mũi tích hợp liền mạch được chế tạo để tạo sự thoải mái cả ngày và vừa vặn an toàn, không trơn trượt trên các đường nét khuôn mặt khác nhau.
 - **Quang học hiệu suất cao:** Tròng kính nylon bền bỉ với các tùy chọn tùy chỉnh rộng rãi cho màu sắc và lớp phủ để phù hợp với thẩm mỹ thương hiệu cụ thể.
@@ -75,7 +75,7 @@ seoKeywords: "axetat Mazzucchelli, gọng kính cận axetat, nhà sản xuất 
 
 ## Tổng quan
 
-Axetat Mazzucchelli và JINYU sống động tạo nên nét đặc trưng riêng biệt cho KAO-312, mang lại kiểu dáng nhẹ nhàng mà vẫn duy trì độ bền đặc biệt.
+Axetat Mazzucchelli và JIMEI & JINYU sống động tạo nên nét đặc trưng riêng biệt cho KAO-312, mang lại kiểu dáng nhẹ nhàng mà vẫn duy trì độ bền đặc biệt.
 
 Bản lề đinh tán 4+3 được chế tạo chính xác và đệm mũi tích hợp mang lại sự toàn vẹn về cấu trúc và sự thoải mái tiện dụng kỳ vọng ở các bộ sưu tập quang học cao cấp.
 

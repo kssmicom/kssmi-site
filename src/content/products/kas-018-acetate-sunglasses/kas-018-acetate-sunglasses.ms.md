@@ -5,7 +5,7 @@ slug: "kas-018-acetate-sunglasses"
 itemNo: "KAS-018"
 date: "2026-05-10"
 colors: "Hitam, Merah Lut Sinar, Biru Lut Sinar"
-materials: "Asetat Premium Mazzucchelli & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -41,7 +41,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, kacamata label peribadi mewah,
 
 ## Ciri-ciri Utama
 
-- **Asetat Berprestasi Tinggi:** Bingkai asetat premium Mazzucchelli dan JINYU menyediakan struktur ringan dan hipoalergenik dengan kedalaman warna yang bertenaga dan tahan lama.
+- **Asetat Berprestasi Tinggi:** Bingkai asetat premium Mazzucchelli dan JIMEI & JINYU menyediakan struktur ringan dan hipoalergenik dengan kedalaman warna yang bertenaga dan tahan lama.
 - **Perkakasan Tahan Lama:** Engsel struktur 3+2 tong yang stabil direka untuk kelancaran operasi berulang dan integriti struktur (boleh disesuaikan kepada 5-tong atau engsel spring).
 - **Optik Premium:** Kanta nilon tahan lasak yang menawarkan rintangan impak tinggi dan kejelasan optik dengan kemungkinan pewarnaan dan salutan tersuai yang meluas.
 - **Keselesaan Bersepadu:** Alas hidung bersepadu acuan ketepatan memastikan kesesuaian yang seguro, seimbang dan estetik yang bersih serta lancar.
@@ -59,7 +59,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, kacamata label peribadi mewah,
 
 ## Gambaran Keseluruhan
 
-Direka dengan asetat premium Mazzucchelli dan JINYU, model KAS-018 mencapai struktur ringan dan hipoalergenik yang mempamerkan keceriaan dan kedalaman warna yang luar biasa.
+Direka dengan asetat premium Mazzucchelli dan JIMEI & JINYU, model KAS-018 mencapai struktur ringan dan hipoalergenik yang mempamerkan keceriaan dan kedalaman warna yang luar biasa.
 
 Penyepaduan engsel 3+2 tong dan kanta nilon tahan lasak memastikan kestabilan operasi jangka panjang di samping rintangan impak dan kejelasan optik yang unggul.
 

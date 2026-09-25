@@ -5,7 +5,7 @@ slug: "kas-108-acetate-sunglasses"
 itemNo: "KAS-108"
 date: "2026-05-07"
 colors: "Ireng & Bening & Havana & Zaitun"
-materials: "Premium Mazzucchelli & Asetat JINYU & Kustomisasi"
+materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/werna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, eyewear
 
 ## Fitur
 
-- **Konstruksi Asetat Premium:** Frame lan gagang asetat Mazzucchelli lan JINYU kualitas dhuwur sing menehi asil polesan tangan sing padhang kanthi daya tahan sing luar biasa.
+- **Konstruksi Asetat Premium:** Frame lan gagang asetat Mazzucchelli lan JIMEI & JINYU kualitas dhuwur sing menehi asil polesan tangan sing padhang kanthi daya tahan sing luar biasa.
 - **Optik Performa Dhuwur:** Lensa nylon kuwat sing menehi ketahanan benturan lan kejelasan optik sing unggul kanthi macem-macem pilihan werna kustom sing kasedhiya.
 - **Hardware Presisi:** Engsel struktur 3+2 barel sing stabil dirancang kanggo kelancaran operasional sing konsisten lan kelurusan frame jangka panjang.
 - **Kenyamanan Ergonomis:** Bantalan irung integrasi lan struktur frame entheng sing dirancang kanggo pas sing aman lan kenyamanan sedina muput ing macem-macem profil rai.
@@ -72,7 +72,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, eyewear
 
 ## Ringkesan
 
-Asetat Mazzucchelli lan JINYU nyedhiyakake kaunggulan dhasar kanggo model iki, nggabungake asil polesan tangan sing padhang kanthi daya tahan entheng sing penting kanggo kacamata premium. Desain unisex sing diilhami vintage iki dadi barang dhasar sing serbaguna kanggo merek sing golek keseimbangan estetika sing kendel lan gaya sing langgeng.
+Asetat Mazzucchelli lan JIMEI & JINYU nyedhiyakake kaunggulan dhasar kanggo model iki, nggabungake asil polesan tangan sing padhang kanthi daya tahan entheng sing penting kanggo kacamata premium. Desain unisex sing diilhami vintage iki dadi barang dhasar sing serbaguna kanggo merek sing golek keseimbangan estetika sing kendel lan gaya sing langgeng.
 
 Sistem engsel 3+2 barel lan bantalan irung integrasi njamin performa sing konsisten lan kenyamanan ergonomis, nggambarake komitmen kanggo manufaktur presisi lan kelurusan frame jangka panjang.
 

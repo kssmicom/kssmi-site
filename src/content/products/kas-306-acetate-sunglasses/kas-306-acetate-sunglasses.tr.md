@@ -5,7 +5,7 @@ slug: "kas-306-acetate-sunglasses"
 itemNo: "KAS-306"
 date: "2026-05-12"
 colors: "Siyah & Kaplumbağa & Gri & Kahverengi & Zeytin"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM)"
 moq: "300 adet/model (100adet/renk)"
 
@@ -58,7 +58,7 @@ seoKeywords: "premium asetat güneş gözlüğü üreticisi, özel OEM güneş g
 
 ## Özellikler
 
-- **Premium Malzeme:** Lüks bir estetik için hafif, dayanıklı ve canlı bir yüzey sağlayan yüksek dereceli Mazzucchelli ve JINYU asetat yapı.
+- **Premium Malzeme:** Lüks bir estetik için hafif, dayanıklı ve canlı bir yüzey sağlayan yüksek dereceli Mazzucchelli ve JIMEI & JINYU asetat yapı.
 - **Dayanıklı Donanım:** İsteğe bağlı 5 menteşeli ve yaylı menteşe yükseltmeleriyle, tutarlı çalışma pürüzsüzlüğü için tasarlanmış sağlam 4+3 menteşe yapısı.
 - **Üstün Optik:** Belirli renk tonları ve teknik kaplamalar için kapsamlı özelleştirme imkanı sunan, olağanüstü netlik sağlayan darbe dirençli naylon lensler.
 - **Entegre Konfor:** Güvenli, dengeli bir oturuş ve kusursuz, üst düzey bir profil sağlamak üzere tasarlanmış hassas kalıplanmış entegre burun tamponları.
@@ -76,7 +76,7 @@ seoKeywords: "premium asetat güneş gözlüğü üreticisi, özel OEM güneş g
 
 ## Genel Bakış
 
-Mazzucchelli ve JINYU asetatı, KAS-306'yı tanımlayarak hem dayanıklılık hem de estetik çok yönlülük için tasarlanmış zamansız bir geometrik çerçeve ile zengin, çok katmanlı renkleri birleştirir. Bu malzeme seçimi, yıllarca kullanıma rağmen cilasını koruyan canlı bir yüzey sağlar.
+Mazzucchelli ve JIMEI & JINYU asetatı, KAS-306'yı tanımlayarak hem dayanıklılık hem de estetik çok yönlülük için tasarlanmış zamansız bir geometrik çerçeve ile zengin, çok katmanlı renkleri birleştirir. Bu malzeme seçimi, yıllarca kullanıma rağmen cilasını koruyan canlı bir yüzey sağlar.
 
 Hassas mühendislikle üretilen 4+3 menteşeler ve entegre burun tamponları, üst düzey gözlük pazarları için gerekli olan yapısal bütünlüğü ve dengeli konforu sunar.
 

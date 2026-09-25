@@ -5,7 +5,7 @@ slug: "kas-019-acetate-sunglasses"
 itemNo: "KAS-019"
 date: "2026-05-10"
 colors: "Nero, Verde Latte, Marrone Trasparente"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100pz/colore)"
 
@@ -41,7 +41,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali da sole OEM personal
 
 ## Caratteristiche
 
-- **Materiale Premium:** La struttura in acetato di alta qualità Mazzucchelli e JINYU offre una montatura leggera ma resistente con una profondità di colore vibrante.
+- **Materiale Premium:** La struttura in acetato di alta qualità Mazzucchelli e JIMEI & JINYU offre una montatura leggera ma resistente con una profondità di colore vibrante.
 - **Ingegneria di Precisione:** Cerniere a 3+2 barili personalizzate (aggiornabili a 5 barili o a molla) progettate per una fluidità operativa a lungo termine.
 - **Ottica ad Alte Prestazioni:** Le lenti in nylon tenace offrono una resistenza agli urti superiore e un'eccezionale chiarezza per gli standard dell'occhialeria premium.
 - **Comfort Ergonomico:** Naselli integrati progettati per una vestibilità bilanciata e ipoallergenica durante l'uso quotidiano prolungato.
@@ -59,7 +59,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali da sole OEM personal
 
 ## Panoramica
 
-Gli standard dell'occhialeria di lusso sono pienamente soddisfatti attraverso l'uso di pregiato acetato Mazzucchelli e JINYU, che conferisce a questa montatura una profonda vivacità cromatica e una finitura leggera.
+Gli standard dell'occhialeria di lusso sono pienamente soddisfatti attraverso l'uso di pregiato acetato Mazzucchelli e JIMEI & JINYU, che conferisce a questa montatura una profonda vivacità cromatica e una finitura leggera.
 
 Le cerniere di precisione a 3+2 barili lavorano in tandem con i naselli integrati per offrire un'esperienza stabile e di alto comfort, adatta a un uso quotidiano prolungato.
 

@@ -5,7 +5,7 @@ slug: "kas-124-acetate-sunglasses"
 itemNo: "KAS-124"
 date: "2026-05-09"
 colors: "Negro & Cuerno de Búfalo & Tortuga"
-materials: "Premium Mazzucchelli & Acetato JINYU & Personalización"
+materials: "Premium Mazzucchelli & Acetato JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100uds/color)"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -46,7 +46,7 @@ seoKeywords: "fabricante gafas de sol acetato, fábrica gafas sol OEM custom, ga
 
 ## Características
 
-- **Material Premium:** Construcción en acetato Mazzucchelli y JINYU de alta calidad que ofrece un acabado vibrante pulido a mano con una durabilidad excepcional.
+- **Material Premium:** Construcción en acetato Mazzucchelli y JIMEI & JINYU de alta calidad que ofrece un acabado vibrante pulido a mano con una durabilidad excepcional.
 - **Hardware Duradero:** Bisagras robustas con estructura de barril 3+2 diseñadas con precisión para una suavidad operativa a largo plazo y estabilidad del marco.
 - **Óptica Avanzada:** Lentes de nylon tenaz que proporcionan una resistencia al impacto y una claridad óptica superiores con amplias opciones de recubrimiento personalizado.
 - **Comodidad Ergonómica:** Marco ligero con almohadillas nasales integradas diseñado para un ajuste seguro y sin presión durante el uso diario prolongado.
@@ -64,7 +64,7 @@ seoKeywords: "fabricante gafas de sol acetato, fábrica gafas sol OEM custom, ga
 
 ## Descripción General
 
-Fabricado con acetato Mazzucchelli y JINYU de primera calidad, este modelo presenta un acabado pulido a mano que resalta su silueta atrevida de inspiración vintage. El marco equilibra una estética unisex de lujo con las cualidades vibrantes y ligeras esenciales para la óptica de alta moda.
+Fabricado con acetato Mazzucchelli y JIMEI & JINYU de primera calidad, este modelo presenta un acabado pulido a mano que resalta su silueta atrevida de inspiración vintage. El marco equilibra una estética unisex de lujo con las cualidades vibrantes y ligeras esenciales para la óptica de alta moda.
 
 Las bisagras de barril 3+2 diseñadas con precisión y las lentes de nylon tenaz aseguran un ajuste seguro y un rendimiento óptico excepcional en todos los lotes de producción.
 

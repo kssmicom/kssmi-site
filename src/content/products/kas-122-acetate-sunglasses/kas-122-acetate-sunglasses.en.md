@@ -5,7 +5,7 @@ slug: "kas-122-acetate-sunglasses"
 itemNo: "KAS-122"
 date: "2026-05-09"
 colors: "Black & Havana"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -46,7 +46,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM eyewear, luxury privat
 
 ## Technical Features
 
-- **Premium Materials:** High-grade Mazzucchelli and JINYU acetate construction delivering a lightweight feel, exceptional durability, and vibrant color depth.
+- **Premium Materials:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction delivering a lightweight feel, exceptional durability, and vibrant color depth.
 - **Precision Hardware:** Robust 3+2 barrel structure hinges engineered for consistent operational smoothness and long-term frame stability.
 - **Superior Optics:** Tenacious nylon lenses providing excellent impact resistance with fully customizable tinting and coating options.
 - **Ergonomic Comfort:** Seamlessly integrated nose pads designed for a secure, pressure-free fit and enhanced all-day comfort.
@@ -64,7 +64,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM eyewear, luxury privat
 
 ## Overview
 
-Crafted from premium Mazzucchelli and JINYU acetate, this vintage-inspired frame balances a lightweight, ergonomic feel with deep, vibrant color profiles.
+Crafted from premium Mazzucchelli, JIMEI & JINYU acetate, this vintage-inspired frame balances a lightweight, ergonomic feel with deep, vibrant color profiles.
 
 A robust 3+2 barrel hinge system provides the structural foundation for consistent smoothness and long-term durability.
 

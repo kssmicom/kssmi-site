@@ -5,7 +5,7 @@ slug: "kao-323-acetate-optical-frame"
 itemNo: "KAO-323"
 date: "2026-05-10"
 colors: "Merah & Havana & Hijau Neon & Hitam"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "OEM & ODM (Penyesuaian)"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "bingkai optik asetat, pengeluar bingkai asetat tersuai, kilang kac
 
 ## Ciri-ciri Utama
 
-- **Pembinaan Asetat Premium:** Asetat Mazzucchelli dan JINYU gred tinggi yang menawarkan bingkai yang cerah, ringan dan tahan lama untuk estetik yang canggih.
+- **Pembinaan Asetat Premium:** Asetat Mazzucchelli dan JIMEI & JINYU gred tinggi yang menawarkan bingkai yang cerah, ringan dan tahan lama untuk estetik yang canggih.
 - **Kejuruteraan Ketepatan:** Engsel struktur rivet 4+3 tong yang teguh direka untuk kestabilan unggul dan kelancaran operasi yang berkekalan.
 - **Optik Berprestasi Tinggi:** Lensa nilon yang teguh dengan rintangan hentaman yang luar biasa dan pilihan penyesuaian serba boleh untuk label premium.
 - **Reka Bentuk Ergonomik:** Alas hidung bersepadu yang direka untuk kesesuaian yang lancar tanpa tekanan dan pengagihan berat yang seimbang.
@@ -72,7 +72,7 @@ seoKeywords: "bingkai optik asetat, pengeluar bingkai asetat tersuai, kilang kac
 
 ## Gambaran Keseluruhan
 
-Reka bentuk optik kontemporari dizahirkan melalui komposisi asetat Mazzucchelli dan JINYU yang berkilat tinggi, menyediakan asas yang ringan namun cerah untuk portfolio kacamata premium.
+Reka bentuk optik kontemporari dizahirkan melalui komposisi asetat Mazzucchelli dan JIMEI & JINYU yang berkilat tinggi, menyediakan asas yang ringan namun cerah untuk portfolio kacamata premium.
 
 Penyepaduan sistem engsel rivet 4+3 tong yang direka dengan ketepatan menjamin jangka hayat mekanikal dan kesesuaian yang selamat tanpa tekanan.
 

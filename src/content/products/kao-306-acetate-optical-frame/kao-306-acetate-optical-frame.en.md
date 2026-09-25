@@ -5,7 +5,7 @@ slug: "kao-306-acetate-optical-frame"
 itemNo: "KAO-306"
 date: "2026-05-10"
 colors: "Black & Grey & Brown & Olive"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -58,7 +58,7 @@ seoKeywords: "acetate optical frames manufacturer, custom acetate eyewear, luxur
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli and JINYU acetate construction offering a lightweight feel, exceptional durability, and vibrant color depth.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction offering a lightweight feel, exceptional durability, and vibrant color depth.
 - **Precision Hardware:** Specialized 4+3 barrel rivet structure hinges engineered for enhanced stability and long-term operational smoothness.
 - **Advanced Optics:** Tenacious nylon lenses providing superior clarity with full customization options for tints and specialized protective coatings.
 - **Integrated Comfort:** Professionally molded integrated nose pads designed for optimal weight distribution and a secure, hypoallergenic fit.
@@ -75,7 +75,7 @@ seoKeywords: "acetate optical frames manufacturer, custom acetate eyewear, luxur
 
 ## Overview
 
-Mazzucchelli and JINYU acetate provide the foundation for this frame, delivering a premium finish that combines vibrant color saturation with exceptional durability. Its refined 46-23-145mm profile offers a versatile canvas for luxury brand identities.
+Mazzucchelli, JIMEI & JINYU acetate provide the foundation for this frame, delivering a premium finish that combines vibrant color saturation with exceptional durability. Its refined 46-23-145mm profile offers a versatile canvas for luxury brand identities.
 
 The integration of 4+3 barrel rivet hinges and tenacious nylon lenses ensures a product that balances technical performance with all-day wearable comfort.
 

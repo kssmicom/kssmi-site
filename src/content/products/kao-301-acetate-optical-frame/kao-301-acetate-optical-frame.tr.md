@@ -5,7 +5,7 @@ slug: "kao-301-acetate-optical-frame"
 itemNo: "KAO-301"
 date: "2026-05-10"
 colors: "Siyah & Dumanlı Mor & Kaplumbağa & Çizgili"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat optik çerçeve üreticisi, özel OEM optik çerçeveler, l
 
 ## Özellikler
 
-- **Premium Malzeme:** Olağanüstü dayanıklılık ve zengin, canlı bir estetik sunan yüksek kaliteli Mazzucchelli ve JINYU asetat yapı.
+- **Premium Malzeme:** Olağanüstü dayanıklılık ve zengin, canlı bir estetik sunan yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat yapı.
 - **Hassas Mühendislik:** Uzun vadeli operasyonel stabilite ve pürüzsüz hareket sağlayan sağlam 4+3 menteşe perçin yapılı menteşeler.
 - **Gelişmiş Optik:** Esnek özelleştirme seçenekleriyle yüksek netlik ve darbe direnci sunan dayanıklı naylon lensler.
 - **Ergonomik Tasarım:** Güvenli, dengeli bir oturuş ve gelişmiş gün boyu konfor için tasarlanmış entegre burun tamponları.
@@ -72,7 +72,7 @@ seoKeywords: "asetat optik çerçeve üreticisi, özel OEM optik çerçeveler, l
 
 ## Genel Bakış
 
-Mazzucchelli ve JINYU asetat, KAO-301'in temelini oluşturur ve hafiflik konforunu kalıcı dayanıklılıkla dengeleyen canlı bir malzeme kimliği sunar. Bu yüksek kaliteli malzeme seçimi, her çerçevenin çeşitli renk yollarında premium finişini ve yapısal bütünlüğünü korumasını sağlar.
+Mazzucchelli ve JIMEI & JINYU asetat, KAO-301'in temelini oluşturur ve hafiflik konforunu kalıcı dayanıklılıkla dengeleyen canlı bir malzeme kimliği sunar. Bu yüksek kaliteli malzeme seçimi, her çerçevenin çeşitli renk yollarında premium finişini ve yapısal bütünlüğünü korumasını sağlar.
 
 4+3 menteşe perçinli menteşelerin uygulanması, güçlendirilmiş bir mekanik yapı sağlayarak, yoğun kullanım ortamlarında pürüzsüz sap hareketini ve uzun vadeli stabiliteyi garanti eder.
 

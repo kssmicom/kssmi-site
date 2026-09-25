@@ -5,7 +5,7 @@ slug: "kao-337-acetate-optical-frame"
 itemNo: "KAO-337"
 date: "2026-05-10"
 colors: "Ireng karo Madu, Biru Bening karo Bulus, Garis Coklat karo Biru, Shampanye karo Coklat"
-materials: "Mazzucchelli Premium & Asetat JINYU & Kustomisasi"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi)"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -42,7 +42,7 @@ seoKeywords: "produsen frame optik asetat, frame optik OEM kustom, kacamata labe
 
 ## Fitur
 
-- **Bahan Premium：** Digawe saka asetat premium Mazzucchelli lan JINYU kanggo nyedhiyakake temple lan bagian ngarep sing entheng, awet banget, lan duwe warna sing ceria banget.
+- **Bahan Premium：** Digawe saka asetat premium Mazzucchelli lan JIMEI & JINYU kanggo nyedhiyakake temple lan bagian ngarep sing entheng, awet banget, lan duwe warna sing ceria banget.
 - **Hardware Presisi：** Dilengkapi sistem engsel struktur keling 3+2 tong sing stabil, dirancang kanggo njaga kelurusan sing pas lan ndukung kelancaran operasional jangka dawa.
 - **Optik Sing Kuat：** Dilengkapi lensa nilon sing tangguh lan menehi resistensi impact sing unggul lan kejelasan optik sing dhuwur, bisa disesuaikan karo lapisan khusus lan werna kustom.
 - **Kenyamanan Integrasi：** Digawe nganggo bantalan irung asetat integrasi sing mulus digabungake karo profil standar 48-21-145mm kanggo nyebarake bobot frame kanthi rata lan nyegah lunyu.
@@ -60,7 +60,7 @@ seoKeywords: "produsen frame optik asetat, frame optik OEM kustom, kacamata labe
 
 ## Ringkesan
 
-Nggabungake profil retro yang wani karo asetat premium Mazzucchelli lan JINYU, frame unisex iki dirancang kanggo label fesyen butik lan portofolio optik kelas dhuwur. Pilihan warna dwi-ton lan garis sing khas—kalebu Shampanye karo Coklat lan Garis Coklat karo Biru—nawakake pratelan estetika sing pribadhi banget.
+Nggabungake profil retro yang wani karo asetat premium Mazzucchelli lan JIMEI & JINYU, frame unisex iki dirancang kanggo label fesyen butik lan portofolio optik kelas dhuwur. Pilihan warna dwi-ton lan garis sing khas—kalebu Shampanye karo Coklat lan Garis Coklat karo Biru—nawakake pratelan estetika sing pribadhi banget.
 
 Kenyamanan nganggo sing optimal bisa digayuh liwat bantalan irung integrasi lan profil frame standar 48-21-145mm, diperkuat dening sistem engsel struktur keling 3+2 tong sing stabil kanggo njaga umur dawa struktur.
 

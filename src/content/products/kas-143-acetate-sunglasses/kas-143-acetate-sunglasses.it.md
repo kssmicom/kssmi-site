@@ -5,7 +5,7 @@ slug: "kas-143-acetate-sunglasses"
 itemNo: "KAS-143"
 date: "2026-05-09"
 colors: "Nero & Champagne & Tartaruga & Oliva"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalizzazione"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione per Conto Terzi (OEM) & Design e Produzione (ODM)"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali OEM personalizzati, 
 
 ## Caratteristiche
 
-- **Materiale Premium:** Costruzione in acetato Mazzucchelli e JINYU di alta qualità che offre un'estetica vibrante con una durata leggera e duratura per esposizioni retail di lusso.
+- **Materiale Premium:** Costruzione in acetato Mazzucchelli e JIMEI & JINYU di alta qualità che offre un'estetica vibrante con una durata leggera e duratura per esposizioni retail di lusso.
 - **Hardware di Precisione:** Cerniere robuste con struttura a 4+3 barili progettate per una fluidità operativa costante ed un'eccezionale longevità della montatura.
 - **Ottica Potenziata:** Lenti in nylon tenace che offrono una resistenza agli urti e una chiarezza superiori, con ampie opzioni di rivestimento personalizzato per soddisfare gli standard specifici del marchio.
 - **Comfort Integrato:** Naselli integrati stampati senza soluzione di continuità, progettati per una vestibilità sicura e ipoallergenica che garantisce la soddisfazione a lungo termine di chi li indossa.
@@ -71,7 +71,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali OEM personalizzati, 
 
 ## Panoramica
 
-Realizzato in acetato Mazzucchelli e JINYU di alta qualità, il modello KAS-143 incarna un raffinato equilibrio tra estetica vintage e durata moderna. La sua vibrante tavolozza di colori e la sofisticata silhouette unisex forniscono una base senza tempo per collezioni di moda di alto livello.
+Realizzato in acetato Mazzucchelli e JIMEI & JINYU di alta qualità, il modello KAS-143 incarna un raffinato equilibrio tra estetica vintage e durata moderna. La sua vibrante tavolozza di colori e la sofisticata silhouette unisex forniscono una base senza tempo per collezioni di moda di alto livello.
 
 Le cerniere a 4+3 barili progettate con precisione e i naselli integrati assicurano un'integrità strutturale duratura e una vestibilità sicura e confortevole per chi li indossa.
 

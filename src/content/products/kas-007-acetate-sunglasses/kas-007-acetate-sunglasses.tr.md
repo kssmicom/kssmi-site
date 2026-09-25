@@ -5,7 +5,7 @@ slug: "kas-007-acetate-sunglasses"
 itemNo: "KAS-007"
 date: "2026-05-10"
 colors: "Siyah-Altın & Siyah-Gümüş & Kristal & Kırmızı"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100adet/renk)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel lüks gözlük OEM, c
 
 ## Özellikler
 
-- **Premium Malzeme:** Canlı, hafif ve dayanıklı bir estetik sunan yüksek kaliteli Mazzucchelli ve JINYU asetat yapı.
+- **Premium Malzeme:** Canlı, hafif ve dayanıklı bir estetik sunan yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat yapı.
 - **Güvenilir Donanım:** Tutarlı çalışma pürüzsüzlüğü ve uzun süreli dayanıklılık için tasarlanmış profesyonel 3+2 menteşe yapısı.
 - **Gelişmiş Optik:** Kapsamlı özel renklendirme ve kaplama seçenekleri sunan, üstün netlik sağlayan dayanıklı naylon lensler.
 - **Ergonomik Tasarım:** Sorunsuz bir uyum ve gün boyu artırılmış kullanım konforu için tasarlanmış entegre burun tamponları.

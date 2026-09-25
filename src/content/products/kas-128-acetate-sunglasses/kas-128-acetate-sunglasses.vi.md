@@ -5,7 +5,7 @@ slug: "kas-128-acetate-sunglasses"
 itemNo: "KAS-128"
 date: "2026-05-09"
 colors: "Đen & Trắng & Cẩm thạch xanh & Cẩm thạch xanh dương & Cẩm thạch đen & Hồng ngọc"
-materials: "Premium Mazzucchelli & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Premium Mazzucchelli & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "OEM & ODM ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100cái/màu)"
 
@@ -62,7 +62,7 @@ seoKeywords: "nhà sản xuất kính mát axetat cao cấp, kính mắt OEM tù
 
 ## Đặc điểm
 
-- **Axetat cao cấp:** Được chế tác từ axetat Mazzucchelli và JINYU nổi tiếng thế giới, mang lại độ bền vượt trội và lớp hoàn thiện có độ bóng cao, sống động.
+- **Axetat cao cấp:** Được chế tác từ axetat Mazzucchelli và JIMEI & JINYU nổi tiếng thế giới, mang lại độ bền vượt trội và lớp hoàn thiện có độ bóng cao, sống động.
 - **Bản lề chính xác:** Bản lề cấu trúc 4+3 chấu chắc chắn được thiết kế để mang lại sự ổn định vượt trội và độ vận hành êm ái lâu dài.
 - **Quang học hiệu suất cao:** Tròng kính nylon bền bỉ cung cấp độ rõ nét tuyệt vời và khả năng chống va đập với các tùy chọn tùy chỉnh phong phú.
 - **Sự thoải mái tích hợp:** Đệm mũi liền gọng được đúc chính xác, được thiết kế để mang lại sự vừa vặn an toàn, không gây dị ứng và cân bằng khi đeo trong thời gian dài.
@@ -79,7 +79,7 @@ seoKeywords: "nhà sản xuất kính mát axetat cao cấp, kính mắt OEM tù
 
 ## Tổng quan
 
-Axetat Mazzucchelli và JINYU kết hợp với nhau trong một kiểu dáng táo bạo, có độ bóng cao, định nghĩa sự sang trọng hiện đại thông qua thẩm mỹ unisex độc đáo.
+Axetat Mazzucchelli và JIMEI & JINYU kết hợp với nhau trong một kiểu dáng táo bạo, có độ bóng cao, định nghĩa sự sang trọng hiện đại thông qua thẩm mỹ unisex độc đáo.
 
 Bản lề 4+3 chấu được thiết kế chính xác và đệm mũi liền gọng đảm bảo sự ổn định đặc biệt và sự thoải mái lâu dài cho người đeo.
 

@@ -5,7 +5,7 @@ slug: "kas-302-acetate-sunglasses"
 itemNo: "KAS-302"
 date: "2026-05-12"
 colors: "Preto & Tartaruga"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda & Design e Fabricação (Personalização)"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -41,7 +41,7 @@ seoKeywords: "óculos de sol em acetato, óculos de sol unissex, fabricante de �
 ---
 
 ## Características
-- **Material Premium:** Armação e hastes em acetato Mazzucchelli e JINYU de alta qualidade, oferecendo uma estética refinada com profundidade de cor vibrante e duradoura.
+- **Material Premium:** Armação e hastes em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, oferecendo uma estética refinada com profundidade de cor vibrante e duradoura.
 - **Engenharia de Precisão:** Dobradiças robustas com estrutura de 4+3 barris, projetadas para estabilidade operacional suave a longo prazo e durabilidade do hardware.
 - **Óptica de Alto Desempenho:** Lentes de nylon tenazes que proporcionam clareza óptica superior e resistência ao impacto com amplas opções de personalização.
 - **Design Ergonômico:** Plaquetas integradas projetadas para um ajuste seguro e confortável e uma estética unissex ousada e perfeita.
@@ -57,7 +57,7 @@ seoKeywords: "óculos de sol em acetato, óculos de sol unissex, fabricante de �
 - Casas de Moda de Luxo
 
 ## Visão Geral
-Esculpido em acetato premium Mazzucchelli e JINYU, o KAS-302 equilibra uma estética ousada e unissex com uma profundidade de cor vibrante que define os modernos óculos de luxo.
+Esculpido em acetato premium Mazzucchelli e JIMEI & JINYU, o KAS-302 equilibra uma estética ousada e unissex com uma profundidade de cor vibrante que define os modernos óculos de luxo.
 
 As dobradiças de 4+3 barris projetadas com precisão garantem durabilidade a longo prazo e operação suave, enquanto as plaquetas integradas proporcionam um ajuste seguro e ergonômico.
 

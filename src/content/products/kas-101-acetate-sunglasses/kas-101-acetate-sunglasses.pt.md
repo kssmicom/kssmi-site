@@ -5,7 +5,7 @@ slug: "kas-101-acetate-sunglasses"
 itemNo: "KAS-101"
 date: "2026-05-05"
 colors: "Branco & Panda & Leopardo & Havana & Transparente & Preto"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -61,7 +61,7 @@ seoKeywords: "fabricante de óculos de sol em acetato, óculos de sol OEM person
 ---
 
 ## Características
-- **Material Premium:** Construção em acetato Mazzucchelli e JINYU de alta qualidade, proporcionando uma sensação de leveza com profundidade de cor vibrante e duradoura.
+- **Material Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, proporcionando uma sensação de leveza com profundidade de cor vibrante e duradoura.
 - **Construção Reforçada:** Hastes de acetato duráveis integradas com dobradiças de estrutura 3+2 tambores, projetadas para maior integridade estrutural e suavidade operacional.
 - **Ótica de Alta Definição:** Lentes de nylon tenaz que oferecem clareza e resistência ao impacto superiores, com amplas opções de personalização para tonalidades e revestimentos.
 - **Design Ergonômico:** Ponteiras nasais integradas e tamanho sob medida de 58-17-143mm projetados para um ajuste seguro e confortável que mantém o perfil estético elegante da armação.
@@ -78,7 +78,7 @@ seoKeywords: "fabricante de óculos de sol em acetato, óculos de sol OEM person
 
 ## Visão Geral
 
-O vibrante acetato Mazzucchelli e JINYU confere ao KAS-101 sua impressionante profundidade de cor e durabilidade leve, posicionando-o como um item essencial para portfólios de óculos que seguem as tendências.
+O vibrante acetato Mazzucchelli e JIMEI & JINYU confere ao KAS-101 sua impressionante profundidade de cor e durabilidade leve, posicionando-o como um item essencial para portfólios de óculos que seguem as tendências.
 
 Cada armação incorpora dobradiças de 3+2 tambores projetadas com precisão e um perfil ergonômico para fornecer força estrutural consistente e conforto de uso a longo prazo.
 

@@ -5,7 +5,7 @@ slug: "kas-103-acetate-sunglasses"
 itemNo: "KAS-103"
 date: "2026-05-06"
 colors: "Hitam & Kisi-kisi Kuning & Marmar Mutiara & Kisi-kisi Merah & Kisi-kisi Biru & Kisi-kisi Hitam"
-materials: "Premium Mazzucchelli & Asetat JINYU & Penyesuaian"
+materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -62,7 +62,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Ciri-ciri Utama
 
-- **Bahan Bingkai Premium:** Bingkai dan sangga asetat Mazzucchelli dan JINYU gred tinggi yang memberikan kemasan bertenaga, kilauan mendalam dengan ketahanan struktur yang luar biasa.
+- **Bahan Bingkai Premium:** Bingkai dan sangga asetat Mazzucchelli dan JIMEI & JINYU gred tinggi yang memberikan kemasan bertenaga, kilauan mendalam dengan ketahanan struktur yang luar biasa.
 - **Perkakasan Tahan Lama:** Engsel struktur 3+2 barel yang direka dengan ketepatan untuk kelancaran operasi yang konsisten dan kestabilan bingkai jangka panjang.
 - **Optik Unggul:** Lensa nilon teguh yang menawarkan rintangan hentaman tinggi dan kejelasan optik, dengan penyesuaian berskala untuk perlindungan UV dan salutan khusus.
 - **Padanan Ergonomik:** Alas hidung bersepadu yang diukir dengan lancar ke dalam struktur asetat untuk padanan yang selamat dan tanpa tekanan yang meningkatkan keselesaan sepanjang hari.
@@ -80,7 +80,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Gambaran Keseluruhan
 
-KAS-103 menggunakan asetat Mazzucchelli dan JINYU premium untuk mencapai kemasan kilauan mendalam, menampilkan corak kisi-kisi dan marmar canggih yang bergema dengan trend fesyen tinggi.
+KAS-103 menggunakan asetat Mazzucchelli dan JIMEI & JINYU premium untuk mencapai kemasan kilauan mendalam, menampilkan corak kisi-kisi dan marmar canggih yang bergema dengan trend fesyen tinggi.
 
 Engsel barel 3+2 ketepatan dan alas hidung bersepadu memberikan kestabilan struktur dan keselesaan ergonomik yang diharapkan oleh pengguna mewah.
 

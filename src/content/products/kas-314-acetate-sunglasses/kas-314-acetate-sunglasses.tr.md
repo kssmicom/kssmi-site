@@ -5,7 +5,7 @@ slug: "kas-314-acetate-sunglasses"
 itemNo: "KAS-314"
 date: "2026-05-12"
 colors: "Neon Yeşil & Şampanya & Havana & Füme & Siyah"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM & ODM ( Özelleştirme )"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -58,7 +58,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Özellikler
 
-- **Premium Malzeme:** Hafif bir hisle birlikte olağanüstü dayanıklılık ve canlı renk derinliği sunan yüksek kaliteli Mazzucchelli ve JINYU asetat yapı.
+- **Premium Malzeme:** Hafif bir hisle birlikte olağanüstü dayanıklılık ve canlı renk derinliği sunan yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat yapı.
 - **Sağlam Donanım:** Uzun süreli çalışma pürüzsüzlüğü ve yapısal bütünlük sağlayan hassas mühendislik ürünü 4+3 menteşe yapısı.
 - **Üstün Optik:** Premium gözlük standartları için mükemmel darbe direnci ve görsel netlik sağlayan yüksek mukavemetli naylon lensler.
 - **Ergonomik Konfor:** Uzun süreli günlük kullanıma uygun, dengeli ve basınçsız bir oturuş için tasarlanmış dikişsiz entegre burun yastıkları.
@@ -76,7 +76,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Genel Bakış
 
-Mazzucchelli ve JINYU asetatın rafine dokularını birleştiren KAS-314, canlı renk derinliği ile hafif esnekliğin çarpıcı bir dengesini sunar. Bu unisex siluet, hem modern trendlere hem de zamansız asetat işçiliğine öncelik veren markalar için çok yönlü bir temel oluşturur.
+Mazzucchelli ve JIMEI & JINYU asetatın rafine dokularını birleştiren KAS-314, canlı renk derinliği ile hafif esnekliğin çarpıcı bir dengesini sunar. Bu unisex siluet, hem modern trendlere hem de zamansız asetat işçiliğine öncelik veren markalar için çok yönlü bir temel oluşturur.
 
 Çerçeve, yüksek performanslı dayanıklılığın yanı sıra kusursuz ve entegre bir oturuş sağlayan hassas 4+3 menteşeler ve darbeye dayanıklı naylon lenslerle tasarlanmıştır.
 

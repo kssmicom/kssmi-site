@@ -5,7 +5,7 @@ slug: "kao-344-acetate-optical-frame"
 itemNo: "KAO-344"
 date: "2026-05-10"
 colors: "Black & Amber-Tortoise & Dark-Tortoise & Reddish-Orange"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "Mazzucchelli acetate frames, wholesale optical frames, eyewear man
 
 ## Technical Features
 
-- **Premium Acetate Construction:** Utilizes high-grade Mazzucchelli and JINYU acetate to deliver exceptional structural integrity and vibrant, long-lasting color depth for high-end collections.
+- **Premium Acetate Construction:** Utilizes high-grade Mazzucchelli, JIMEI & JINYU acetate to deliver exceptional structural integrity and vibrant, long-lasting color depth for high-end collections.
 - **Precision Hardware:** Features a robust 4+3 barrel rivet hinge system designed for superior stability and smooth, reliable operation throughout the product's lifecycle.
 - **Advanced Lens Technology:** Equipped with tenacious nylon lenses that provide excellent impact resistance and optical clarity, customizable to meet specific brand requirements.
 - **Optimized Comfort:** Integrated nose pads and an ergonomic frame geometry provide a balanced, pressure-free fit suitable for diverse facial profiles.
@@ -71,7 +71,7 @@ seoKeywords: "Mazzucchelli acetate frames, wholesale optical frames, eyewear man
 
 ## Overview
 
-High-grade Mazzucchelli and JINYU acetate provide the KAO-344 with a sophisticated material foundation, balancing timeless retro styling with the vibrant translucency expected in premium eyewear.
+High-grade Mazzucchelli, JIMEI & JINYU acetate provide the KAO-344 with a sophisticated material foundation, balancing timeless retro styling with the vibrant translucency expected in premium eyewear.
 
 Precision-engineered 4+3 barrel rivet hinges ensure long-term structural stability while maintaining the fluid, effortless movement essential for professional-grade frames.
 

@@ -5,7 +5,7 @@ slug: "kao-331-acetate-optical-frame"
 itemNo: "KAO-331"
 date: "2026-05-10"
 colors: "Hitam, Madu"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "OEM & ODM ( Penyesuaian )"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -34,13 +34,13 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KAO-331 Bingkai Optik Asetat Retro Bergaya | Pembekal Kustom"
-seoDescription: "Mencari kacamata kustom? Bingkai optik asetat KAO-331 kami menggunakan asetat Mazzucchelli & JINYU, engsel kukuh dan penyesuaian OEM/ODM penuh. MOQ 300 unit."
+seoDescription: "Mencari kacamata kustom? Bingkai optik asetat KAO-331 kami menggunakan asetat Mazzucchelli & JIMEI & JINYU, engsel kukuh dan penyesuaian OEM/ODM penuh. MOQ 300 unit."
 seoKeywords: "bingkai optik asetat kustom, cermin mata kustom borong, pengeluar kacamata asetat premium, bingkai optik label peribadi, kilang kacamata asetat China, cermin mata retro kustom, bingkai optik pereka butik, pembekal bingkai asetat China"
 ---
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Diperbuat daripada asetat premium Mazzucchelli dan JINYU, menawarkan struktur yang sangat ringan namun sangat tahan lama dengan estetika warna yang ceria dan mendalam.
+- **Bahan Premium:** Diperbuat daripada asetat premium Mazzucchelli dan JIMEI & JINYU, menawarkan struktur yang sangat ringan namun sangat tahan lama dengan estetika warna yang ceria dan mendalam.
 - **Perkakasan Kejuruteraan:** Engsel struktur 3+2 tong yang kukuh memberikan pergerakan temple yang stabil dan lancar, dengan pilihan engsel spring dan 5 tong tersedia.
 - **Optik Tahan Lasak:** Lensa nilon berkekuatan tinggi menawarkan kejelasan optik yang luar biasa dan rintangan hentaman dengan salutan tersuai penuh dan perkhidmatan penyesuaian.
 - **Keselesaan Bersepadu:** Alas hidung asetat yang disepadukan dengan lancar digabungkan dengan geometri 56-17-145mm yang disesuaikan untuk memberikan padanan yang seimbang dan bebas tekanan.
@@ -58,7 +58,7 @@ seoKeywords: "bingkai optik asetat kustom, cermin mata kustom borong, pengeluar 
 
 ## Gambaran Keseluruhan
 
-Untuk label butik dan koleksi runcit mewah, bingkai optik unisex KAO-331 menggunakan asetat premium Mazzucchelli dan JINYU dalam warna hitam pekat dan madu untuk memberikan kemewahan visual serta-merta.
+Untuk label butik dan koleksi runcit mewah, bingkai optik unisex KAO-331 menggunakan asetat premium Mazzucchelli dan JIMEI & JINYU dalam warna hitam pekat dan madu untuk memberikan kemewahan visual serta-merta.
 
 Direka bentuk pada geometri 56-17-145mm yang tepat, bingkai ini menggabungkan alas hidung bersepadu dan engsel 3+2 tong yang kukuh untuk ketahanan yang luar biasa dan pemakaian yang seimbang serta tidak mudah tergelincir.
 

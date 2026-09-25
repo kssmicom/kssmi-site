@@ -5,7 +5,7 @@ slug: "kas-010-acetate-sunglasses"
 itemNo: "KAS-010"
 date: "2026-05-10"
 colors: "Hitam & Meteor-Crystal & Tanzanite & Bordeaux"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Binaan asetat Mazzucchelli dan JINYU gred tinggi yang memberikan kemasan bersemangat dan ketahanan luar biasa untuk estetika mewah.
+- **Bahan Premium:** Binaan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi yang memberikan kemasan bersemangat dan ketahanan luar biasa untuk estetika mewah.
 - **Perkakasan Tahan Lama:** Engsel struktur 4+3 tong yang teguh direka untuk kelancaran operasi jangka panjang dan kestabilan struktur.
 - **Optik Premium:** Lensa nilon tahan lasak yang menawarkan rintangan hentaman dan kejelasan unggul dengan pilihan pewarnaan tersuai yang meluas.
 - **Reka Bentuk Ergonomik:** Alas hidung bersepadu dan bingkai 52-18-145mm yang direka dengan ketepatan memastikan kesesuaian yang selesa dan selamat untuk pelbagai bentuk muka.
@@ -71,7 +71,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Gambaran Keseluruhan
 
-Asetat Mazzucchelli dan JINYU yang bersemangat memberikan bingkai unisex ini karakter mewah yang tersendiri, menawarkan profil ringan namun tahan lama yang mengekalkan kemasannya dari semasa ke semasa.
+Asetat Mazzucchelli dan JIMEI & JINYU yang bersemangat memberikan bingkai unisex ini karakter mewah yang tersendiri, menawarkan profil ringan namun tahan lama yang mengekalkan kemasannya dari semasa ke semasa.
 
 Integriti struktur diperkukuh oleh sistem engsel 4+3 tong yang tepat, memastikan operasi lancar dan kestabilan jangka panjang untuk persekitaran runcit mewah.
 

@@ -5,7 +5,7 @@ slug: "kao-306-acetate-optical-frame"
 itemNo: "KAO-306"
 date: "2026-05-10"
 colors: "Noir & Gris & Marron & Olive"
-materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
+materials: "Mazzucchelli Premium & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -57,7 +57,7 @@ seoKeywords: "fabricant montures optiques acétate, lunettes en acétate personn
 
 ## Caractéristiques Techniques
 
-- **Matériau Premium :** Construction en acétate Mazzucchelli et JINYU de haute qualité offrant une sensation de légèreté, une durabilité exceptionnelle et une profondeur de couleur vibrante.
+- **Matériau Premium :** Construction en acétate Mazzucchelli et JIMEI & JINYU de haute qualité offrant une sensation de légèreté, une durabilité exceptionnelle et une profondeur de couleur vibrante.
 - **Matériel de Précision :** Charnières spécialisées à structure de rivet 4+3 barrel conçues pour une stabilité accrue et une fluidité opérationnelle à long terme.
 - **Optique Avancée :** Verres en nylon tenace offrant une clarté supérieure avec des options de personnalisation complète pour les teintes et les revêtements protecteurs spécialisés.
 - **Confort Intégré :** Plaquettes de nez intégrées moulées professionnellement conçues pour une répartition optimale du poids et un ajustement sûr et hypoallergénique.
@@ -74,7 +74,7 @@ seoKeywords: "fabricant montures optiques acétate, lunettes en acétate personn
 
 ## Aperçu
 
-L'acétate Mazzucchelli et JINYU constituent la base de cette monture, offrant une finition premium qui allie une saturation de couleur vibrante à une durabilité exceptionnelle. Son profil raffiné de 46-23-145 mm offre une toile polyvalente pour les identités des marques de luxe.
+L'acétate Mazzucchelli et JIMEI & JINYU constituent la base de cette monture, offrant une finition premium qui allie une saturation de couleur vibrante à une durabilité exceptionnelle. Son profil raffiné de 46-23-145 mm offre une toile polyvalente pour les identités des marques de luxe.
 
 L'intégration de charnières à rivet 4+3 barrel et de verres en nylon tenace garantit un produit qui équilibre les performances techniques avec un confort de port tout au long de la journée.
 

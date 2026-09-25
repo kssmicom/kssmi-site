@@ -5,7 +5,7 @@ slug: "kao-511-acetate-optical-frame"
 itemNo: "KAO-511"
 date: "2026-05-10"
 colors: "Black, Khaki, Clear Pink"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -49,7 +49,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM optical frames, wh
 ---
 
 ## Technical Features
-- **Premium Material:** Lightweight, durable Mazzucchelli and JINYU acetate frame and temples offering high structural stability and vibrant colors.
+- **Premium Material:** Lightweight, durable Mazzucchelli, JIMEI & JINYU acetate frame and temples offering high structural stability and vibrant colors.
 - **Engineered Hardware:** High-precision 3+2 barrel structure hinges designed for smooth operational longevity, with custom 5-barrel and spring hinge options available.
 - **Optics Integration:** Tenacious nylon lenses providing high impact resistance and exceptional optical clarity, with custom lens options fully supported.
 - **Ergonomic Comfort:** Seamlessly integrated nose pads designed to distribute weight evenly and prevent slipping for all-day comfort.
@@ -66,7 +66,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM optical frames, wh
 
 ## Overview
 
-Blending a retro-inspired unisex aesthetic with premium Mazzucchelli and JINYU acetate, the KAO-511 optical frame provides a vibrant, lightweight foundation for fashion-forward collections. The high-grade materials ensure both exceptional structural stability and rich color depth in black, khaki, or clear pink.
+Blending a retro-inspired unisex aesthetic with premium Mazzucchelli, JIMEI & JINYU acetate, the KAO-511 optical frame provides a vibrant, lightweight foundation for fashion-forward collections. The high-grade materials ensure both exceptional structural stability and rich color depth in black, khaki, or clear pink.
 
 Precision-engineered 3+2 barrel hinges and integrated nose pads combine to deliver smooth temple movement alongside balanced, slip-free comfort for all-day wear.
 

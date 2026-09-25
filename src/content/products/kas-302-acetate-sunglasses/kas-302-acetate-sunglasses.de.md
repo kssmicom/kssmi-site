@@ -5,7 +5,7 @@ slug: "kas-302-acetate-sunglasses"
 itemNo: "KAS-302"
 date: "2026-05-12"
 colors: "Schwarz & Schildpatt"
-materials: "Premium-Mazzucchelli & JINYU-Acetat & Individualisierung"
+materials: "Premium-Mazzucchelli & JIMEI & JINYU-Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung & Design und Fertigung (Individualisierung)"
 moq: "300 Stk/Modell (100Stk/Farbe)"
 
@@ -41,7 +41,7 @@ seoKeywords: "Acetat-Sonnenbrille, Unisex-Sonnenbrille, Brillenhersteller, Brill
 ---
 
 ## Eigenschaften
-- **Premium-Material:** Hochwertiger Rahmen und Bügel aus Mazzucchelli- und JINYU-Acetat, der eine raffinierte Ästhetik mit lebendiger, langanhaltender Farbtiefe bietet.
+- **Premium-Material:** Hochwertiger Rahmen und Bügel aus Mazzucchelli- und JIMEI & JINYU-Acetat, der eine raffinierte Ästhetik mit lebendiger, langanhaltender Farbtiefe bietet.
 - **Präzisionstechnik:** Robuste 4+3-Fass-Struktur-Scharniere, entwickelt für langfristig stabile Laufruhe und Haltbarkeit der Hardware.
 - **Hochleistungsoptik:** Widerstandsfähige Nylon-Gläser, die eine überlegene optische Klarheit und Schlagfestigkeit mit umfangreichen Anpassungsoptionen bieten.
 - **Ergonomisches Design:** Integrierte Nasenpads für einen sicheren, bequemen Sitz und eine nahtlose, kühne Unisex-Ästhetik.
@@ -57,7 +57,7 @@ seoKeywords: "Acetat-Sonnenbrille, Unisex-Sonnenbrille, Brillenhersteller, Brill
 - Luxusmodehäuser
 
 ## Übersicht
-Die KAS-302 wurde aus hochwertigem Mazzucchelli- und JINYU-Acetat gefertigt und verbindet eine kühne Unisex-Ästhetik mit einer lebendigen Farbtiefe, die moderne Luxusbrillen definiert.
+Die KAS-302 wurde aus hochwertigem Mazzucchelli- und JIMEI & JINYU-Acetat gefertigt und verbindet eine kühne Unisex-Ästhetik mit einer lebendigen Farbtiefe, die moderne Luxusbrillen definiert.
 
 Die präzisionsgefertigten 4+3-Fass-Scharniere gewährleisten langfristige Haltbarkeit und reibungslosen Betrieb, während die integrierten Nasenpads für einen sicheren, ergonomischen Sitz sorgen.
 

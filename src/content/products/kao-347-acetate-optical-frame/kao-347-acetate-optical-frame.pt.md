@@ -5,7 +5,7 @@ slug: "kao-347-acetate-optical-frame"
 itemNo: "KAO-347"
 date: "2026-05-10"
 colors: "Preto, Havana, Cinza Transparente"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
 serviceMode: "OEM & ODM (Personalização)"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -41,7 +41,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, armações ópticas 
 
 ## Características
 
-- **Material de Acetato Premium:** Construção de acetato Mazzucchelli e JINYU de alta qualidade que oferece profundidade de cor vibrante, durabilidade estrutural a longo prazo e uma experiência tátil leve e premium.
+- **Material de Acetato Premium:** Construção de acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que oferece profundidade de cor vibrante, durabilidade estrutural a longo prazo e uma experiência tátil leve e premium.
 - **Componentes de Dobradiça Robustos:** Dobradiças de estrutura de mola de alta precisão que oferecem flexibilidade excepcional, ajuste confortável e autorregulável, e compatibilidade com atualizações personalizadas para dobradiças de 3 ou 5 cilindros.
 - **Lentes Protetoras Premium:** Lentes de nylon tenaz que proporcionam excelente resistência a impactos, alta clareza óptica e opções de tonalidade e revestimento totalmente personalizáveis.
 - **Ajuste Ergonômico Integrado:** Plaquetas integradas de acetato projetadas para distribuir a pressão uniformemente para um ajuste seguro, confortável e antiderrapante.
@@ -58,7 +58,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, armações ópticas 
 
 ## Visão Geral
 
-Fabricada com acetato premium Mazzucchelli e JINYU, a KAO-347 oferece a excepcional profundidade de cor e durabilidade estrutural duradoura exigidas pelas coleções de varejo de alto padrão.
+Fabricada com acetato premium Mazzucchelli e JIMEI & JINYU, a KAO-347 oferece a excepcional profundidade de cor e durabilidade estrutural duradoura exigidas pelas coleções de varejo de alto padrão.
 
 As dobradiças de mola projetadas com precisão proporcionam um ajuste altamente flexível e autorregulável, enquanto as plaquetas integradas de acetato garantem uma distribuição ideal do peso para conforto durante todo o dia.
 

@@ -5,7 +5,7 @@ slug: "kao-327-acetate-optical-frame"
 itemNo: "KAO-327"
 date: "2026-05-10"
 colors: "Trasparente, Avana, Nero"
-materials: "Acetato Mazzucchelli & JINYU Premium & Personalizzazione"
+materials: "Acetato Mazzucchelli & JIMEI & JINYU Premium & Personalizzazione"
 serviceMode: "Produzione per Conto Terzi & Design e Produzione (Personalizzazione)"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -50,7 +50,7 @@ seoKeywords: "montature ottiche in acetato eleganti, produttore di montature in 
 
 ## Caratteristiche
 
-- **Materiale Premium:** Realizzato in acetato premium Mazzucchelli e JINYU, offre una struttura leggera ma eccezionalmente durevole con una profondità di colore vivace e duratura.
+- **Materiale Premium:** Realizzato in acetato premium Mazzucchelli e JIMEI & JINYU, offre una struttura leggera ma eccezionalmente durevole con una profondità di colore vivace e duratura.
 - **Componenti Meccanici di Precisione:** Cerniere a rivetto a 3+2 cilindri ad alta affidabilità che garantiscono un movimento delle aste stabile e fluido, con opzioni di cerniere a molla personalizzate.
 - **Ottica Tenace:** Lenti in nylon ad alta durata che offrono un'eccellente chiarezza e resistenza agli urti con opzioni di rivestimento completamente personalizzate.
 - **Comfort Integrato:** Naselli integrati senza giunzioni combinati con una geometria su misura di 50-22-145mm per offrire una vestibilità bilanciata e antiscivolo.
@@ -67,7 +67,7 @@ seoKeywords: "montature ottiche in acetato eleganti, produttore di montature in 
 
 ## Panoramica
 
-Il design classico degli occhiali incontra l'arte dei materiali di alto livello nel modello KAO-327, una montatura unisex che mette in mostra la vivace profondità dell'acetato premium Mazzucchelli e JINYU.
+Il design classico degli occhiali incontra l'arte dei materiali di alto livello nel modello KAO-327, una montatura unisex che mette in mostra la vivace profondità dell'acetato premium Mazzucchelli e JIMEI & JINYU.
 
 La sua durata strutturale è rafforzata da cerniere ingegnerizzate a rivetto a 3+2 cilindri, mentre la finitura lucidata a mano e i naselli integrati assicurano una vestibilità equilibrata e antiscivolo per l'uso quotidiano.
 

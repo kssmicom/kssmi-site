@@ -5,7 +5,7 @@ slug: "kao-314-acetate-optical-frame"
 itemNo: "KAO-314"
 date: "2026-05-10"
 colors: "Noir & Vert Néon & Écaille & Champagne & Fumé"
-materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
+materials: "Mazzucchelli Premium & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100pcs/couleur)"
 
@@ -58,7 +58,7 @@ seoKeywords: "montures optiques en acétate, lunettes optiques personnalisées, 
 
 ## Caractéristiques
 
-- **Construction en Matériaux Premium :** Face et branches en acétate Mazzucchelli et JINYU de haute qualité offrant une sensation de légèreté avec une durabilité supérieure et une profondeur de couleur éclatante.
+- **Construction en Matériaux Premium :** Face et branches en acétate Mazzucchelli et JIMEI & JINYU de haute qualité offrant une sensation de légèreté avec une durabilité supérieure et une profondeur de couleur éclatante.
 - **Quincaillerie Robuste :** Charnières à structure de rivet 4+3 barillets conçues avec précision assurant une fluidité opérationnelle à long terme et une stabilité structurelle.
 - **Design Ergonomique :** Plaquettes de nez parfaitement intégrées, conçues pour un confort tout au long de la journée et un ajustement sûr et antiscivolo sur divers profils faciaux.
 - **Optique Haute Performance :** Verres en nylon tenace avec de vastes options de personnalisation pour les teintes et les revêtements afin de s'aligner sur l'esthétique spécifique de la marque.
@@ -76,7 +76,7 @@ seoKeywords: "montures optiques en acétate, lunettes optiques personnalisées, 
 
 ## Aperçu
 
-Combinant l'acétate Mazzucchelli et JINYU de haute qualité, ce modèle atteint un équilibre sophistiqué entre profondeur de couleur éclatante et durabilité structurelle.
+Combinant l'acétate Mazzucchelli et JIMEI & JINYU de haute qualité, ce modèle atteint un équilibre sophistiqué entre profondeur de couleur éclatante et durabilité structurelle.
 
 Les charnières à rivets 4+3 barillets conçues avec précision assurent une fluidité opérationnelle durable, tandis que les plaquettes de nez intégrées offrent un ajustement sûr et ergonomique.
 

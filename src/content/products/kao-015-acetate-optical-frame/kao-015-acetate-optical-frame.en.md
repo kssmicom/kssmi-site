@@ -5,7 +5,7 @@ slug: "kao-015-acetate-optical-frame"
 itemNo: "KAO-015"
 date: "2026-05-10"
 colors: "Clear & Yellow & Blue & Orange"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -42,7 +42,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear China, lux
 
 ## Technical Features
 
-- **Premium Materials:** Hand-finished Mazzucchelli and JINYU acetate construction offering exceptional vibrancy, durability, and a lightweight feel.
+- **Premium Materials:** Hand-finished Mazzucchelli, JIMEI & JINYU acetate construction offering exceptional vibrancy, durability, and a lightweight feel.
 - **Precision Engineering:** Robust 3+2 barrel rivet structure hinges designed for maximum stability and long-term operational smoothness.
 - **High-Performance Optics:** Tenacious nylon lenses providing superior clarity and impact resistance, with extensive custom coating options available.
 - **Ergonomic Design:** Seamlessly integrated nose pads engineered for a stable, comfortable fit and a refined, minimalist aesthetic.
@@ -60,7 +60,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear China, lux
 
 ## Overview
 
-Crafted from premium Mazzucchelli and JINYU acetate, this frame achieves a sophisticated balance between lightweight resilience and the bold, vibrant aesthetic required by modern luxury markets.
+Crafted from premium Mazzucchelli, JIMEI & JINYU acetate, this frame achieves a sophisticated balance between lightweight resilience and the bold, vibrant aesthetic required by modern luxury markets.
 
 The robust 3+2 barrel rivet hinge architecture provides exceptional mechanical durability, while the integrated nose pad design ensures a seamless, comfortable fit.
 

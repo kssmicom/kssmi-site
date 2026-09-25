@@ -5,7 +5,7 @@ slug: "kas-142-acetate-sunglasses"
 itemNo: "KAS-142"
 date: "2026-05-09"
 colors: "Preto & Branco & Vermelho & Tartaruga"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "óculos de sol de acetato, fabricante de óculos de moda, fábrica
 
 ## Características
 
-- **Material Premium:** Construção em acetato Mazzucchelli e JINYU de alta qualidade, oferecendo uma estética refinada com durabilidade excepcional e conforto leve.
+- **Material Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, oferecendo uma estética refinada com durabilidade excepcional e conforto leve.
 - **Hardware Robusto:** Dobradiças com estrutura de 4+3 barris projetadas com precisão para estabilidade superior e suavidade operacional duradoura.
 - **Óptica Superior:** Lentes de nylon tenaz de alta clareza que proporcionam excelente resistência ao impacto e opções versáteis para tonalidades e revestimentos especializados.
 - **Ergonomia Integrada:** Ponteiras nasicas integradas de forma perfeita e uma geometria de armação equilibrada de 57 mm, garantindo um ajuste estável e livre de pressão para diversos perfils faciais.
@@ -71,7 +71,7 @@ seoKeywords: "óculos de sol de acetato, fabricante de óculos de moda, fábrica
 
 ## Visão Geral
 
-Fabricado em acetato Mazzucchelli e JINYU de primeira qualidade, este modelo combina uma paleta de cores vibrantes com lentes de nylon de alta clareza para uma estética sofisticada de nível luxo.
+Fabricado em acetato Mazzucchelli e JIMEI & JINYU de primeira qualidade, este modelo combina uma paleta de cores vibrantes com lentes de nylon de alta clareza para uma estética sofisticada de nível luxo.
 
 As dobradiças com estrutura de 4+3 barris e os apoios nasais integrados garantem estabilidade estrutural duradoura e um ajuste ergonômico equilibrado em sua geometria de 57 mm.
 

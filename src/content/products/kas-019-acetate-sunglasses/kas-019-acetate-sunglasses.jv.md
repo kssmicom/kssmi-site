@@ -5,7 +5,7 @@ slug: "kas-019-acetate-sunglasses"
 itemNo: "KAS-019"
 date: "2026-05-10"
 colors: "Ireng, Ijo Susu, Coklat Transparan"
-materials: "Asetat Premium Mazzucchelli & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -41,7 +41,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, eyewear
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JINYU kelas dhuwur nyedhiyakake frame sing entheng nanging awet kanthi jero warna sing cetha.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur nyedhiyakake frame sing entheng nanging awet kanthi jero warna sing cetha.
 - **Teknik Presisi:** Engsel 3+2 barrel kustom (bisa di-upgrade dadi 5 barrel utawa engsel pegas) dirancang kanggo kelancaran operasional jangka panjang.
 - **Optik Performa Dhuwur:** Lensa nylon sing kuat nyedhiyakake resistensi dampak sing unggul lan kajelasan sing luar biasa kanggo standar eyewear premium.
 - **Kenyamanan Ergonomis:** Bantalan irung integrasi dirancang kanggo pas sing seimbang lan hypoallergenic sajrone panggunaan saben dina sing suwe.
@@ -59,7 +59,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, eyewear
 
 ## Ringkasan
 
-Standar eyewear mewah dipenuhi kanthi nggunakake asetat Mazzucchelli lan JINYU premium, menehi frame iki semangat warna sing jero lan hasil akhir sing entheng.
+Standar eyewear mewah dipenuhi kanthi nggunakake asetat Mazzucchelli lan JIMEI & JINYU premium, menehi frame iki semangat warna sing jero lan hasil akhir sing entheng.
 
 Engsel 3+2 barrel sing presisi kerja bareng karo bantalan irung integrasi kanggo nyedhiyakake pengalaman sing stabil lan kenyamanan dhuwur sing cocog kanggo panggunaan saben dina sing suwe.
 

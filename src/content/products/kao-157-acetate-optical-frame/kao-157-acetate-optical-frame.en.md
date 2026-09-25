@@ -5,7 +5,7 @@ slug: "kao-157-acetate-optical-frame"
 itemNo: "KAO-157"
 date: "2026-05-10"
 colors: "Gradient Blue with Clear Violet"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -42,7 +42,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM optical eyewear, l
 
 ## Technical Features
 
-- **Premium Acetate:** Hand-polished Mazzucchelli and JINYU acetate front and temples offering a vibrant Gradient Blue with Clear Violet aesthetic and superior durability.
+- **Premium Acetate:** Hand-polished Mazzucchelli, JIMEI & JINYU acetate front and temples offering a vibrant Gradient Blue with Clear Violet aesthetic and superior durability.
 - **Precision Hardware:** Durable 2+1 barrel rivet structure hinges engineered for consistent operational smoothness and long-term reliability.
 - **High-Performance Optics:** Tenacious nylon lenses with extensive custom tinting and coating options to meet specific brand requirements.
 - **Ergonomic Design:** Integrated nose pads and lightweight acetate construction providing a secure, hypoallergenic fit for all-day wear.
@@ -59,7 +59,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM optical eyewear, l
 
 ## Overview
 
-Merging vibrant aesthetics with structural integrity, the KAO-157 showcases hand-polished Mazzucchelli and JINYU acetate in a striking Gradient Blue and Clear Violet profile.
+Merging vibrant aesthetics with structural integrity, the KAO-157 showcases hand-polished Mazzucchelli, JIMEI & JINYU acetate in a striking Gradient Blue and Clear Violet profile.
 
 Engineered with a 2+1 barrel rivet hinge system, the lightweight construction and integrated nose pads deliver a secure, hypoallergenic fit designed for longevity.
 

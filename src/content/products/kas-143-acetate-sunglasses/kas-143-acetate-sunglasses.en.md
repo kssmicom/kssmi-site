@@ -5,7 +5,7 @@ slug: "kas-143-acetate-sunglasses"
 itemNo: "KAS-143"
 date: "2026-05-09"
 colors: "Black & Champagne & Havana & Olive"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM eyewear, luxury fashio
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli and JINYU acetate construction offering a vibrant aesthetic with lightweight, long-lasting durability for premium retail displays.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction offering a vibrant aesthetic with lightweight, long-lasting durability for premium retail displays.
 - **Precision Hardware:** Robust 4+3 barrel structure hinges engineered for consistent operational smoothness and exceptional frame longevity.
 - **Enhanced Optics:** Tenacious nylon lenses providing superior impact resistance and clarity with extensive custom coating options to meet specific brand standards.
 - **Integrated Comfort:** Seamlessly molded integrated nose pads designed for a secure, hypoallergenic fit that ensures long-term wearer satisfaction.
@@ -71,7 +71,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM eyewear, luxury fashio
 
 ## Overview
 
-Crafted from premium Mazzucchelli and JINYU acetate, the KAS-143 embodies a refined balance of vintage aesthetics and modern durability. Its vibrant color palette and sophisticated unisex silhouette provide a timeless foundation for high-end fashion collections.
+Crafted from premium Mazzucchelli, JIMEI & JINYU acetate, the KAS-143 embodies a refined balance of vintage aesthetics and modern durability. Its vibrant color palette and sophisticated unisex silhouette provide a timeless foundation for high-end fashion collections.
 
 Precision-engineered 4+3 barrel hinges and integrated nose pads ensure lasting structural integrity and a secure, comfortable fit for the wearer.
 

@@ -5,7 +5,7 @@ slug: "kao-158-acetate-optical-frame"
 itemNo: "KAO-158"
 date: "2026-05-10"
 colors: "Ireng, Abrit, Ijo"
-materials: "Asetat Premium Mazzucchelli & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -50,7 +50,7 @@ seoKeywords: "produsen frame optik asetat, pabrik kacamata unisex kustom, frame 
 
 ## Fitur
 
-- **Konstruksi Asetat Premium:** Asetat Mazzucchelli lan JINYU kelas dhuwur nyedhiyakake finishing entheng, werna padhang, lan dipoles tangan kanggo estetika mewah.
+- **Konstruksi Asetat Premium:** Asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur nyedhiyakake finishing entheng, werna padhang, lan dipoles tangan kanggo estetika mewah.
 - **Hardware Teknik:** Engsel struktur rivet barrel 3+2 presisi sing dirancang kanggo kelancaran operasional sing konsisten lan umur frame sing luwih dawa.
 - **Optik Unggul:** Lensa nylon kuat sing nawakake kajelasan lan daya tahan sing luar biasa, kanthi kemampuan pewarnaan lan lapisan kustom sing kasedhiya.
 - **Ergonomi Mulus:** Bantalan irung integrasi sing dirancang kanggo pas sing stabil lan nyaman sing nglengkapi desain unisex sing kendel.
@@ -67,7 +67,7 @@ seoKeywords: "produsen frame optik asetat, pabrik kacamata unisex kustom, frame 
 
 ## Ringkesan
 
-Frame unisex sing kendel iki nggunakake asetat Mazzucchelli lan JINYU sing dipoles tangan kanggo nggayuh finishing sing jero lan werna padhang sing memenuhi standar ketat rumah mode mewah.
+Frame unisex sing kendel iki nggunakake asetat Mazzucchelli lan JIMEI & JINYU sing dipoles tangan kanggo nggayuh finishing sing jero lan werna padhang sing memenuhi standar ketat rumah mode mewah.
 
 Dirancang kanthi struktur engsel rivet barrel 3+2 sing dipasang kanthi presisi, KAO-158 njamin linuwih mekanik jangka panjang lan stabilitas struktur kanggo panggunaan saben dina.
 

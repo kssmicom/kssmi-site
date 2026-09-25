@@ -5,7 +5,7 @@ slug: "kas-309-acetate-sunglasses"
 itemNo: "KAS-309"
 date: "2026-05-12"
 colors: "Noir & Bleu Royal & Écaille & Olive"
-materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
+materials: "Mazzucchelli Premium & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "OEM & ODM ( Personnalisation )"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, production de lunette
 
 ## Caractéristiques
 
-- **Matériau en Acétate Premium :** Construction en acétate Mazzucchelli et JINYU de haute qualité garantissant une monture durable et légère avec une rétention de couleur profonde et vibrante.
+- **Matériau en Acétate Premium :** Construction en acétate Mazzucchelli et JIMEI & JINYU de haute qualité garantissant une monture durable et légère avec une rétention de couleur profonde et vibrante.
 - **Quincaillerie de Précision :** Charnières à structure durable à 4+3 barillets conçues pour une stabilité constante et une fluidité de fonctionnement à long terme.
 - **Optique Supérieure :** Verres en nylon tenace offrant une haute résistance aux chocs et une clarté exceptionnelle pour une expérience visuelle premium.
 - **Confort Ergonomique :** Plaquettes de nez intégrées et équilibre de monture raffiné conçus pour offrir un ajustement sûr et hypoallergénique pour un port tout au long de la journée.
@@ -72,7 +72,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, production de lunette
 
 ## Aperçu
 
-L'acétate Mazzucchelli et JINYU constituent la base du modèle KAS-309, offrant un jeu sophistiqué entre une rétention de couleur profonde et une intégrité structurelle légère.
+L'acétate Mazzucchelli et JIMEI & JINYU constituent la base du modèle KAS-309, offrant un jeu sophistiqué entre une rétention de couleur profonde et une intégrité structurelle légère.
 
 L'architecture de la charnière à 4+3 barillets et les plaquettes de nez intégrées sont conçues pour la stabilité à long terme, assurant un ajustement sûr et confortable sur divers profils faciaux.
 

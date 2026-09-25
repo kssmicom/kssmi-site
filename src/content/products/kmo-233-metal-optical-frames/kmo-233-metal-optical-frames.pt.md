@@ -5,7 +5,7 @@ slug: "kmo-233-metal-optical-frames"
 itemNo: "KMO-233"
 date: "2026-05-01"
 colors: "Preto com Ouro Brilhante, Tartaruga com Ouro Brilhante"
-materials: "Acetato Premium e Metal (Acetato Mazzucchelli & JINYU)"
+materials: "Acetato Premium e Metal (Acetato Mazzucchelli & JIMEI & JINYU)"
 serviceMode: "OEM & ODM ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -45,7 +45,7 @@ seoKeywords: "fabricante de armações ópticas de metal, fábrica de óculos de
 ---
 
 ## Características
-- **Materiais Premium:** Armação de acetato de alta qualidade combinada com hastes de metal utilizando acetato Mazzucchelli & JINYU para um acabamento luxuoso e durabilidade duradoura.
+- **Materiais Premium:** Armação de acetato de alta qualidade combinada com hastes de metal utilizando acetato Mazzucchelli & JIMEI & JINYU para um acabamento luxuoso e durabilidade duradoura.
 - **Ferragens de Precisão:** Dobradiças estáveis de estrutura composta de 2+1 barris projetadas para suavidade operacional a longo prazo com opções de personalização para 5 barris ou dobradiças de mola.
 - **Óptica Premium:** Lentes de nylon tenaz que oferecem excepcional resistência ao impacto e clareza com personalização completa disponível para atender às especificações da marca.
 - **Conforto Ergonômico:** Ponteiras nasais integradas de silicone transparente garantindo um ajuste seguro e antiderrapante e conforto durante todo o dia para o usuário.

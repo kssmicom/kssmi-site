@@ -5,7 +5,7 @@ slug: "kao-002-acetate-optical-frame"
 itemNo: "KAO-002"
 date: "2026-05-10"
 colors: "Laranja & Tartaruga & Roxo & Verde"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "armações ópticas de acetato, óculos ópticos personalizados, f
 
 ## Características
 
-- **Material Premium:** Construção em acetato Mazzucchelli e JINYU de alta qualidade que proporciona uma sensação de leveza e durabilidade com uma profundidade de cor vibrante e duradoura.
+- **Material Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que proporciona uma sensação de leveza e durabilidade com uma profundidade de cor vibrante e duradoura.
 - **Hardware de Precisão:** Dobradiças de rebite de alto desempenho de 4+3 barris que oferecem estabilidade estrutural excepcional e suavidade operacional a longo prazo.
 - **Óptica Avançada:** Lentes de nylon tenaz que oferecem clareza superior e resistência ao impacto, com amplas opções de personalização e revestimento disponíveis.
 - **Ergonomia Integrada:** Ponteiras nasicas integradas moldadas com precisão, projetadas para um ajuste seguro e confortável e um perfil estético de alta gama sem emendas.
@@ -71,7 +71,7 @@ seoKeywords: "armações ópticas de acetato, óculos ópticos personalizados, f
 
 ## Visão Geral
 
-Utilizando acetato premium Mazzucchelli e JINYU, estas armações ópticas alcançam um equilíbrio sofisticado de leveza e profundidade rica e vibrante. A composição de alta qualidade do material garante um acabamento resiliente e polido que atende aos padrões exigentes do desenvolvimento de óculos de nível de luxo.
+Utilizando acetato premium Mazzucchelli e JIMEI & JINYU, estas armações ópticas alcançam um equilíbrio sofisticado de leveza e profundidade rica e vibrante. A composição de alta qualidade do material garante um acabamento resiliente e polido que atende aos padrões exigentes do desenvolvimento de óculos de nível de luxo.
 
 As dobradiças de rebite integradas de 4+3 barris proporcionam integridade estrutural excepcional e operação mecânica suave, projetadas para confiabilidade a longo prazo em ambientes de varejo exigentes.
 

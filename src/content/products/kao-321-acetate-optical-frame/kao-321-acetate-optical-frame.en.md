@@ -5,7 +5,7 @@ slug: "kao-321-acetate-optical-frame"
 itemNo: "KAO-321"
 date: "2026-05-10"
 colors: "Havana & Dark-Green & Black & Translucent-Grey"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate optical frames manufacturer, custom eyewear factory China,
 
 ## Technical Features
 
-- **Premium Acetate Composition:** Crafted from world-class Mazzucchelli and JINYU acetate, delivering an ultra-lightweight feel with exceptional structural durability and deep color vibrancy.
+- **Premium Acetate Composition:** Crafted from world-class Mazzucchelli, JIMEI & JINYU acetate, delivering an ultra-lightweight feel with exceptional structural durability and deep color vibrancy.
 - **Robust Hardware:** Features a professional 4+3 barrel rivet hinge architecture engineered for maximum stability and long-term operational smoothness.
 - **Advanced Optical Base:** Fitted with tenacious nylon lenses that offer superior impact resistance and clarity, with flexible customization for specialized coatings and tints.
 - **Integrated Comfort:** Precision-engineered integrated nose pads designed to provide a secure, hypoallergenic fit for extended daily wear.
@@ -71,7 +71,7 @@ seoKeywords: "acetate optical frames manufacturer, custom eyewear factory China,
 
 ## Overview
 
-Combining the timeless appeal of retro design with the superior tactile quality of premium Mazzucchelli and JINYU acetate, the KAO-321 offers a sophisticated silhouette for modern optical collections. These hand-selected materials provide the frame with deep color vibrancy and a lightweight finish that accentuates its high-end fashion profile.
+Combining the timeless appeal of retro design with the superior tactile quality of premium Mazzucchelli, JIMEI & JINYU acetate, the KAO-321 offers a sophisticated silhouette for modern optical collections. These hand-selected materials provide the frame with deep color vibrancy and a lightweight finish that accentuates its high-end fashion profile.
 
 The 4+3 barrel rivet hinge architecture ensures exceptional structural stability, complemented by integrated nose pads for a seamless and comfortable fit.
 

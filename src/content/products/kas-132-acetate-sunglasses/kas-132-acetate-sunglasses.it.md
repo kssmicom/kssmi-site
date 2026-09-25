@@ -5,7 +5,7 @@ slug: "kas-132-acetate-sunglasses"
 itemNo: "KAS-132"
 date: "2026-05-09"
 colors: "Nero & Bianco & Verde & Tartaruga"
-materials: "Acetato Mazzucchelli Premium & Acetato JINYU & Personalizzazione"
+materials: "Acetato Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
 serviceMode: "OEM & ODM (Personalizzazione)"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali flat-top personalizz
 
 ## Caratteristiche
 
-- **Materiali Premium:** Costruzione in acetato Mazzucchelli e JINYU di alta qualità che offre un'estetica raffinata con una profondità di colore vibrante e duratura.
+- **Materiali Premium:** Costruzione in acetato Mazzucchelli e JIMEI & JINYU di alta qualità che offre un'estetica raffinata con una profondità di colore vibrante e duratura.
 - **Ingegneria di Precisione:** Cerniere stabili con struttura a 3+2 barilotti progettate per una durata di livello professionale e prestazioni operative fluide.
 - **Ottica Superiore:** Lenti in nylon tenace che offrono un'eccezionale resistenza agli urti e chiarezza visiva, con ampie opzioni di personalizzazione.
 - **Comfort Ergonomico:** Naselli integrati e una struttura della montatura leggera che garantisce una vestibilità sicura e bilanciata per un uso prolungato tutto il giorno.
@@ -72,7 +72,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali flat-top personalizz
 
 ## Panoramica
 
-Proporzioni audaci e oversize e una distintiva silhouette flat-top definiscono il modello KAS-132, realizzato con una miscela premium di acetato Mazzucchelli e JINYU per una profondità e una durata senza pari.
+Proporzioni audaci e oversize e una distintiva silhouette flat-top definiscono il modello KAS-132, realizzato con una miscela premium di acetato Mazzucchelli e JIMEI & JINYU per una profondità e una durata senza pari.
 
 Le cerniere a 3+2 barilotti progettate con precisione e le lenti in nylon tenace assicurano che queste montature mantengano l'integrità strutturale e la chiarezza visiva anche in caso di uso intensivo.
 

@@ -5,7 +5,7 @@ slug: "kas-309-acetate-sunglasses"
 itemNo: "KAS-309"
 date: "2026-05-12"
 colors: "Black & Royal-Blue & Tortoise & Olive"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom eyewear production China, 
 
 ## Technical Features
 
-- **Premium Acetate Material:** High-grade Mazzucchelli and JINYU acetate construction ensuring a durable, lightweight frame with deep, vibrant color retention.
+- **Premium Acetate Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction ensuring a durable, lightweight frame with deep, vibrant color retention.
 - **Precision Hardware:** Durable 4+3 barrel structure hinges engineered for consistent stability and long-term operational smoothness.
 - **Superior Optics:** Tenacious nylon lenses providing high impact resistance and exceptional clarity for a premium visual experience.
 - **Ergonomic Comfort:** Integrated nose pads and a refined frame balance designed to offer a secure, hypoallergenic fit for all-day wear.
@@ -72,7 +72,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom eyewear production China, 
 
 ## Overview
 
-Mazzucchelli and JINYU acetate provide the foundation for the KAS-309, offering a sophisticated interplay of deep color retention and lightweight structural integrity.
+Mazzucchelli, JIMEI & JINYU acetate provide the foundation for the KAS-309, offering a sophisticated interplay of deep color retention and lightweight structural integrity.
 
 The 4+3 barrel hinge architecture and integrated nose pads are engineered for long-term stability, ensuring a secure and comfortable fit across diverse facial profiles.
 

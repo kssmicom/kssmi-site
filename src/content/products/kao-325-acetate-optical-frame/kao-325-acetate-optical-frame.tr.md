@@ -5,7 +5,7 @@ slug: "kao-325-acetate-optical-frame"
 itemNo: "KAO-325"
 date: "2026-05-10"
 colors: "Bordo Kaplumbağa, Haki, Düz Zeytin Yeşili"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim & Tasarım ve Üretim (Özelleştirme)"
 moq: "300 adet/model (100adet/Renk)"
 
@@ -50,7 +50,7 @@ seoKeywords: "asetat optik çerçeve üreticisi, özel OEM gözlük fabrikası, 
 
 ## Özellikler
 
-- **Premium Asetat Konstrüksiyon:** Canlı estetik çekiciliğe sahip hafif, dayanıklı bir çerçeve sunan yüksek dereceli Mazzucchelli ve JINYU asetattan üretilmiştir.
+- **Premium Asetat Konstrüksiyon:** Canlı estetik çekiciliğe sahip hafif, dayanıklı bir çerçeve sunan yüksek dereceli Mazzucchelli ve JIMEI & JINYU asetattan üretilmiştir.
 - **Sağlam Donanım Tasarımı:** Özel yay mekanizmaları seçenekleriyle güvenilir operasyonel pürüzsüzlük sağlayan sabit bir 3+2 namlu perçin menteşe yapısı ile tasarlanmıştır.
 - **Dayanıklı Optikler:** Kapsamlı özelleştirme olanaklarının yanı sıra mükemmel dayanıklılık sunan yüksek mukavemetli naylon lenslerle donatılmıştır.
 - **Entegre Konfor:** Sürekli günlük kullanıma uygun, güvenli ve dengeli bir uyum sağlamak için kusursuz bir şekilde entegre edilmiş burun pedlerine sahiptir.
@@ -68,7 +68,7 @@ seoKeywords: "asetat optik çerçeve üreticisi, özel OEM gözlük fabrikası, 
 
 ## Genel Bakış
 
-Mazzucchelli ve JINYU asetatın olağanüstü canlılığı ve dayanıklılığı etrafında inşa edilen KAO-325, sofistike gözlük koleksiyonları için temel bir çerçeve sağlar.
+Mazzucchelli ve JIMEI & JINYU asetatın olağanüstü canlılığı ve dayanıklılığı etrafında inşa edilen KAO-325, sofistike gözlük koleksiyonları için temel bir çerçeve sağlar.
 
 Sağlam bir 3+2 namlu perçin menteşe yapısı ve kusursuz entegre burun tamponları içeren hassas donanım, tutarlı operasyonel pürüzsüzlük ve güvenilir tüm gün konforu sunar.
 

@@ -5,7 +5,7 @@ slug: "kao-156-acetate-optical-frame"
 itemNo: "KAO-156"
 date: "2026-05-10"
 colors: "Biru Flora kaliyan Magenta"
-materials: "Asetat Mazzucchelli & JINYU Premium & Kustomisasi"
+materials: "Asetat Mazzucchelli & JIMEI & JINYU Premium & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -42,7 +42,7 @@ seoKeywords: "produsen frame optik asetat, produksi kacamata kustom, frame label
 
 ## Fitur
 
-- **Komposisi Bahan Premium:** Asetat Mazzucchelli lan JINYU sing dipoles tangan nyedhiyakake tampilan sing jero, padhang, lan daya tahan sing luar biasa.
+- **Komposisi Bahan Premium:** Asetat Mazzucchelli lan JIMEI & JINYU sing dipoles tangan nyedhiyakake tampilan sing jero, padhang, lan daya tahan sing luar biasa.
 - **Teknik Frame sing Halus:** Konstruksi frame lan gagang asetat premium sing entheng dirancang kanggo estetika kelas dhuwur lan panggunaan jangka panjang sing kuwat.
 - **Hardware sing Awet:** Engsel struktur rivet tong 2+1 sing dirancang kanthi presisi njamin kelancaran operasional sing konsisten lan stabilitas struktural.
 - **Teknologi Lensa Maju:** Lensa nilon kanthi kakuwatan dhuwur nyedhiyakake kejelasan sing unggul kanthi macem-macem pilihan lapisan lan warna kustom.
@@ -59,7 +59,7 @@ seoKeywords: "produsen frame optik asetat, produksi kacamata kustom, frame label
 
 ## Ringkesan
 
-Werna Biru Flora kaliyan Magenta ketemu karo ambane asetat Mazzucchelli lan JINYU sing dipoles tangan, nyiptakake identitas visual sing padhang sing cocog karo standar fashion mewah.
+Werna Biru Flora kaliyan Magenta ketemu karo ambane asetat Mazzucchelli lan JIMEI & JINYU sing dipoles tangan, nyiptakake identitas visual sing padhang sing cocog karo standar fashion mewah.
 
 Engsel rivet tong 2+1 sing presisi nahan frame sing entheng, njamin pengalaman taktil sing konsisten lan lancar sing nglengkapi bantalan irung integrasi ergonomis.
 

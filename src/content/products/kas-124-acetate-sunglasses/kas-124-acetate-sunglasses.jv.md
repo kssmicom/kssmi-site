@@ -5,7 +5,7 @@ slug: "kas-124-acetate-sunglasses"
 itemNo: "KAS-124"
 date: "2026-05-09"
 colors: "Ireng & Sungu Kebo & Bulus"
-materials: "Premium Mazzucchelli & Asetat JINYU & Kustomisasi"
+materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -46,7 +46,7 @@ seoKeywords: "produsen kacamata hitam asetat, pabrik kacamata hitam OEM kustom, 
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JINYU kelas dhuwur sing nawakake hasil pungkasan sing padhang lan dipoles tangan kanti daya tahan sing luar biasa.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing nawakake hasil pungkasan sing padhang lan dipoles tangan kanti daya tahan sing luar biasa.
 - **Hardware Awet:** Engsel struktur tong 3+2 sing kuwat lan dirancang kanti presisi kanggo kelancaran operasional jangka panjang lan stabilitas frame.
 - **Optik Canggih:** Lensa nylon kuwat sing nyedhiyakake resistensi dampak lan kajelasan optik sing unggul kanti pilihan lapisan kustom sing jembar.
 - **Kenyamanan Ergonomis:** Frame entheng kanti bantalan irung integrasi sing dirancang kanggo pas sing aman lan tanpa tekanan sajrone panggunaan saben dina sing suwe.
@@ -64,7 +64,7 @@ seoKeywords: "produsen kacamata hitam asetat, pabrik kacamata hitam OEM kustom, 
 
 ## Ringkesan
 
-Digawe saka asetat Mazzucchelli lan JINYU premium, model iki nduweni hasil pungkasan sing dipoles tangan sing nyoroti siluet sing kendel lan inspirasi vintage. Frame iki ngimbangi estetika unisex mewah kanti kualitas padhang lan entheng sing penting kanggo kacamata fashion kelas dhuwur.
+Digawe saka asetat Mazzucchelli lan JIMEI & JINYU premium, model iki nduweni hasil pungkasan sing dipoles tangan sing nyoroti siluet sing kendel lan inspirasi vintage. Frame iki ngimbangi estetika unisex mewah kanti kualitas padhang lan entheng sing penting kanggo kacamata fashion kelas dhuwur.
 
 Engsel tong 3+2 sing dirancang kanti presisi lan lensa nylon kuwat njamin pas sing aman lan kinerja optik sing luar biasa ing kabeh batch produksi.
 

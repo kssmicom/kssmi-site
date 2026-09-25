@@ -5,7 +5,7 @@ slug: "kas-323-acetate-sunglasses"
 itemNo: "KAS-323"
 date: "2026-05-12"
 colors: "Đen & Đỏ & Havana & Xanh Neon"
-materials: "Axetat Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Mazzucchelli cao cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) (Tùy chỉnh theo yêu cầu)"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -54,7 +54,7 @@ seoKeywords: "nhà sản xuất kính mát axetat cao cấp, xưởng sản xu�
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Cấu tạo từ Axetat Mazzucchelli và JINYU chất lượng cao mang lại lớp hoàn thiện nhẹ, bền và rực rỡ cho tính thẩm mỹ cao cấp.
+- **Chất liệu cao cấp:** Cấu tạo từ Axetat Mazzucchelli và JIMEI & JINYU chất lượng cao mang lại lớp hoàn thiện nhẹ, bền và rực rỡ cho tính thẩm mỹ cao cấp.
 - **Phụ kiện bền bỉ:** Bản lề cấu trúc 4+3 chấu chắc chắn được thiết kế để vận hành trơn tru nhất quán và duy trì tính toàn vẹn cấu trúc lâu dài.
 - **Quang học hiệu suất cao:** Tròng kính nylon bền bỉ cung cấp độ rõ nét vượt trội và khả năng chống va đập với các tùy chọn tùy chỉnh đầy đủ.
 - **Thiết kế công thái học:** Đệm mũi liền khối và cấu trúc cân bằng chính xác đảm bảo sự vừa vặn an toàn, không gây dị ứng cho cảm giác thoải mái cả ngày.
@@ -71,7 +71,7 @@ seoKeywords: "nhà sản xuất kính mát axetat cao cấp, xưởng sản xu�
 
 ## Tổng quan
 
-Được chế tác tỉ mỉ từ axetat cao cấp Mazzucchelli và JINYU, KAS-323 mang đến vẻ đẹp rực rỡ và bền bỉ, đáp ứng những yêu cầu khắt khe của thị trường xa xỉ toàn cầu.
+Được chế tác tỉ mỉ từ axetat cao cấp Mazzucchelli và JIMEI & JINYU, KAS-323 mang đến vẻ đẹp rực rỡ và bền bỉ, đáp ứng những yêu cầu khắt khe của thị trường xa xỉ toàn cầu.
 
 Mỗi chiếc gọng đều có cấu trúc bản lề 4+3 chấu chắc chắn và đệm mũi liền khối, mang lại khả năng vận hành trơn tru nhất quán và tăng cường sự thoải mái cho người đeo.
 

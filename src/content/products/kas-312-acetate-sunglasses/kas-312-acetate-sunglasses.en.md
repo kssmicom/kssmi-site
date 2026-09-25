@@ -5,7 +5,7 @@ slug: "kas-312-acetate-sunglasses"
 itemNo: "KAS-312"
 date: "2026-05-12"
 colors: "Spark & Havana & Red-Turtle & Black"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -58,7 +58,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom fashion eyewear, Chinese a
 
 ## Technical Features
 
-- **Premium Acetate Material:** High-grade Mazzucchelli and JINYU acetate construction providing a lightweight, durable, and vibrant finish for premium eyewear collections.
+- **Premium Acetate Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction providing a lightweight, durable, and vibrant finish for premium eyewear collections.
 - **Durable Hardware:** Precision-engineered 4+3 barrel structure hinges providing long-term operational smoothness and structural integrity.
 - **Advanced Lens Technology:** Tenacious nylon lenses engineered for clarity and impact resistance, with full customization options to meet specific brand requirements.
 - **Ergonomic Design:** Integrated nose pads and a 53-19-145mm standard fit optimized for all-day comfort across various facial profiles.
@@ -75,7 +75,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom fashion eyewear, Chinese a
 
 ## Overview
 
-For brands seeking the perfect balance of material depth and structural reliability, the KAS-312 utilizes premium Mazzucchelli and JINYU acetate to deliver a sophisticated, unisex aesthetic. Its vibrant finish and lightweight construction provide a high-end sensory experience essential for boutique eyewear portfolios.
+For brands seeking the perfect balance of material depth and structural reliability, the KAS-312 utilizes premium Mazzucchelli, JIMEI & JINYU acetate to deliver a sophisticated, unisex aesthetic. Its vibrant finish and lightweight construction provide a high-end sensory experience essential for boutique eyewear portfolios.
 
 The 4+3 barrel structure hinges offer exceptional operational smoothness, complementing the integrated nose pads designed for a secure and comfortable fit during extended wear.
 

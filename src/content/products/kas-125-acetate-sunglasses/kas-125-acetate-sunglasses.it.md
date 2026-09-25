@@ -5,7 +5,7 @@ slug: "kas-125-acetate-sunglasses"
 itemNo: "KAS-125"
 date: "2026-05-09"
 colors: "Nero & Tartaruga Chiara & Tartaruga Scura & Corno di Bufalo & Khaki"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalizzazione"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione per Conto Terzi (OEM) & Design e Produzione (ODM) (Personalizzazione)"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -57,7 +57,7 @@ seoKeywords: "produttore occhiali da sole in acetato, occhiali personalizzati OE
 ---
 ## Caratteristiche
 
-- **Materiali Premium:** Montatura e aste in acetato Mazzucchelli e JINYU, leggere e vivaci, che offrono una sensazione premium al tatto e una durata eccezionale.
+- **Materiali Premium:** Montatura e aste in acetato Mazzucchelli e JIMEI & JINYU, leggere e vivaci, che offrono una sensazione premium al tatto e una durata eccezionale.
 - **Hardware Resistente:** Cerniere robuste con struttura a 4+3 bariletti, progettate per un allineamento preciso e una fluidità operativa costante.
 - **Ottica Avanzata:** Lenti in nylon tenace che garantiscono chiarezza superiore e resistenza agli urti in un profilo di montatura versatile da 53-19-145 mm.
 - **Comfort Integrato:** Naselli dal design ergonomico integrati direttamente nella montatura per una calzata stabile e ipoallergenica.
@@ -74,7 +74,7 @@ seoKeywords: "produttore occhiali da sole in acetato, occhiali personalizzati OE
 
 ## Panoramica
 
-La costruzione in acetato pregiato Mazzucchelli e JINYU conferisce al modello KAS-125 una sensazione tattile distintiva e una brillantezza duratura, in linea con gli standard dei portafogli di lusso globali.
+La costruzione in acetato pregiato Mazzucchelli e JIMEI & JINYU conferisce al modello KAS-125 una sensazione tattile distintiva e una brillantezza duratura, in linea con gli standard dei portafogli di lusso globali.
 
 Progettata con cerniere a 4+3 bariletti per un allineamento millimetrico, la montatura combina lenti in nylon ad alto impatto con un ponte ergonomico integrato per una resistenza prolungata nel tempo.
 

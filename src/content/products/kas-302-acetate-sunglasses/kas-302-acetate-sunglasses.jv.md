@@ -5,7 +5,7 @@ slug: "kas-302-acetate-sunglasses"
 itemNo: "KAS-302"
 date: "2026-05-12"
 colors: "Ireng & Bulus"
-materials: "Mazzucchelli Premium & Asetat JINYU & Kustomisasi"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) (Kustomisasi)"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -41,7 +41,7 @@ seoKeywords: "kacamata hitam asetat, kacamata hitam unisex, produsen kacamata, p
 ---
 
 ## Fitur
-- **Bahan Premium:** Frame lan gagang asetat Mazzucchelli lan JINYU kelas dhuwur sing nawakake estetika halus kanthi jero warna sing padhang lan tahan lama.
+- **Bahan Premium:** Frame lan gagang asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing nawakake estetika halus kanthi jero warna sing padhang lan tahan lama.
 - **Teknik Presisi:** Engsel struktur 4+3 barrel sing kuwat dirancang kanggo kelancaran operasional sing stabil ing jangka panjang lan daya tahan hardware.
 - **Optik Performa Dhuwur:** Lensa nylon kuat sing nyedhiyakake kejelasan optik unggul lan tahan benturan kanthi pilihan kustomisasi sing jembar.
 - **Desain Ergonomis:** Bantalan irung integrasi dirancang kanggo pas sing aman lan nyaman lan estetika unisex sing kendel lan mulus.
@@ -57,7 +57,7 @@ seoKeywords: "kacamata hitam asetat, kacamata hitam unisex, produsen kacamata, p
 - Rumah Mode Mewah
 
 ## Ringkesan
-Digawe saka asetat premium Mazzucchelli lan JINYU, KAS-302 ngimbangi estetika unisex sing kendel kanthi jero warna sing padhang sing nemtokake kacamata mewah modern.
+Digawe saka asetat premium Mazzucchelli lan JIMEI & JINYU, KAS-302 ngimbangi estetika unisex sing kendel kanthi jero warna sing padhang sing nemtokake kacamata mewah modern.
 
 Engsel 4+3 barrel sing dirancang kanthi presisi njamin daya tahan jangka panjang lan operasi sing lancar, dene bantalan irung integrasi nyedhiyakake pas sing aman lan ergonomis.
 

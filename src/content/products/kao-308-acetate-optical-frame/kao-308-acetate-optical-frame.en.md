@@ -5,7 +5,7 @@ slug: "kao-308-acetate-optical-frame"
 itemNo: "KAO-308"
 date: "2026-05-10"
 colors: "Black & Royal-Blue & Brown & Olive"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear China, lux
 
 ## Technical Features
 
-- **Premium Acetate Construction:** High-grade Mazzucchelli and JINYU acetate offering vibrant color depth and lightweight durability for high-end eyewear collections.
+- **Premium Acetate Construction:** High-grade Mazzucchelli, JIMEI & JINYU acetate offering vibrant color depth and lightweight durability for high-end eyewear collections.
 - **Reinforced Hardware:** Durable 4+3 barrel rivet hinges providing exceptional structural integrity and consistent, smooth temple movement.
 - **Superior Lens Technology:** Impact-resistant nylon lenses featuring high-precision optics and versatile customization options for specialized coatings.
 - **Integrated Ergonomics:** Precisely sculpted integrated nose pads ensuring a balanced, pressure-free fit for diverse facial profiles.
@@ -72,7 +72,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear China, lux
 
 ## Overview
 
-Crafted from premium Mazzucchelli and JINYU acetate, this model captures a sophisticated retro aesthetic through its deep color profiles and artisanal hand-polished surfaces.
+Crafted from premium Mazzucchelli, JIMEI & JINYU acetate, this model captures a sophisticated retro aesthetic through its deep color profiles and artisanal hand-polished surfaces.
 
 The reinforced 4+3 barrel rivet hinge architecture provides the mechanical precision and structural resilience required by high-end eyewear standards.
 

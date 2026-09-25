@@ -5,7 +5,7 @@ slug: "kas-142-acetate-sunglasses"
 itemNo: "KAS-142"
 date: "2026-05-09"
 colors: "Ireng & Putih & Abrit & Bulus"
-materials: "Mazzucchelli Premium & Asetat JINYU & Kustomisasi"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "kacamata hitam asetat, produsen kacamata fashion, pabrik kacamata 
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JINYU kelas dhuwur sing nawakake estetika apik kanthi daya tahan sing luar biasa lan kenyamanan sing entheng.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing nawakake estetika apik kanthi daya tahan sing luar biasa lan kenyamanan sing entheng.
 - **Hardware Kuat:** Engsel struktur 4+3 barrel sing dirancang kanthi presisi kanggo stabilitas sing unggul lan kelancaran operasional sing awet.
 - **Optik Unggul:** Lensa nylon kuat kanthi kajelasan dhuwur sing nyedhiyakake resistensi dampak sing apik banget lan pilihan serbaguna kanggo warna lan lapisan khusus.
 - **Ergonomi Terintegrasi:** Bantalan irung sing terintegrasi kanthi mulus lan geometri frame 57mm sing seimbang njamin pas sing stabil lan bebas tekanan kanggo macem-macem profil rai.
@@ -71,7 +71,7 @@ seoKeywords: "kacamata hitam asetat, produsen kacamata fashion, pabrik kacamata 
 
 ## Ringkasan
 
-Digawe saka asetat Mazzucchelli lan JINYU premium, model iki nggabungake palet warna sing cerah karo lensa nylon kajelasan dhuwur kanggo estetika tingkat mewah sing canggih.
+Digawe saka asetat Mazzucchelli lan JIMEI & JINYU premium, model iki nggabungake palet warna sing cerah karo lensa nylon kajelasan dhuwur kanggo estetika tingkat mewah sing canggih.
 
 Engsel struktur 4+3 barrel lan bantalan irung terintegrasi njamin stabilitas struktur sing awet lan pas ergonomis sing seimbang ing geometri 57mm.
 

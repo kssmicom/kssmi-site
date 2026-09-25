@@ -5,7 +5,7 @@ slug: "kas-102-acetate-sunglasses"
 itemNo: "KAS-102"
 date: "2026-05-05"
 colors: "Trong suốt & Đen & Đen tuyền & Xanh dương tuyền & Xám tuyền & Tím tuyền & Cyan-Dot Blue-Dot & Mật ong & Xanh lá & Đỏ chuyển màu & Xanh dương đậm & Xanh dương nhạt & Xám mờ & Đồi mồi & Xám trong suốt & Gấu trúc"
-materials: "Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli cao cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -102,7 +102,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính axetat có thể tùy c
 
 ## Đặc điểm
 
-- **Chất liệu Axetat cao cấp:** Cấu tạo từ axetat Mazzucchelli và JINYU cấp cao mang lại cảm giác nhẹ nhàng cùng độ bền vượt trội và chiều sâu màu sắc sống động.
+- **Chất liệu Axetat cao cấp:** Cấu tạo từ axetat Mazzucchelli và JIMEI & JINYU cấp cao mang lại cảm giác nhẹ nhàng cùng độ bền vượt trội và chiều sâu màu sắc sống động.
 - **Phụ kiện phần cứng chính xác:** Bản lề cấu trúc thùng 3+2 chắc chắn được thiết kế để vận hành trơn tru lâu dài và ổn định về cấu trúc.
 - **Công nghệ tròng kính tiên tiến:** Tròng kính AC hoặc nylon bền bỉ linh hoạt với các tùy chọn nhuộm màu và phủ lớp bảo vệ tùy chỉnh rộng rãi cho độ rõ nét hình ảnh vượt trội.
 - **Thiết kế công thái học:** Đệm mũi tích hợp và cấu trúc gọng kính được cân bằng chính xác đảm bảo sự thoải mái cả ngày và vừa vặn an toàn.

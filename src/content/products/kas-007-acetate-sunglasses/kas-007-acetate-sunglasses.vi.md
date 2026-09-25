@@ -5,7 +5,7 @@ slug: "kas-007-acetate-sunglasses"
 itemNo: "KAS-007"
 date: "2026-05-10"
 colors: "Đen-Vàng & Đen-Bạc & Trong suốt & Đỏ"
-materials: "Axetat Mazzucchelli & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Mazzucchelli & JIMEI & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -54,7 +54,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mắt sang trọng tùy
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Cấu trúc Axetat Mazzucchelli và JINYU cao cấp mang lại vẻ đẹp rực rỡ, nhẹ nhàng và bền bỉ.
+- **Chất liệu cao cấp:** Cấu trúc Axetat Mazzucchelli và JIMEI & JINYU cao cấp mang lại vẻ đẹp rực rỡ, nhẹ nhàng và bền bỉ.
 - **Phụ kiện đáng tin cậy:** Bản lề cấu trúc 3+2 chấu chuyên nghiệp được thiết kế để vận hành trơn tru và bền bỉ lâu dài.
 - **Quang học tiên tiến:** Tròng kính nylon bền bỉ mang lại độ rõ nét vượt trội với nhiều tùy chọn màu sắc và lớp phủ tùy chỉnh.
 - **Thiết kế công thái học:** Đệm mũi liền khối được thiết kế để mang lại sự vừa vặn liền mạch và tăng cường sự thoải mái khi đeo cả ngày.

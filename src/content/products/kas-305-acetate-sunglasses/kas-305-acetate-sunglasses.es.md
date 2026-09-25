@@ -5,7 +5,7 @@ slug: "kas-305-acetate-sunglasses"
 itemNo: "KAS-305"
 date: "2026-05-12"
 colors: "Negro & Rayas & Habana & Oliva"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalización"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM) ( Personalización )"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Características
 
-- **Selección de Materiales Premium:** Construcción de acetato Mazzucchelli y JINYU de alta calidad que ofrece una sensación ligera con una durabilidad excepcional y una profundidad de color vibrante.
+- **Selección de Materiales Premium:** Construcción de acetato Mazzucchelli y JIMEI & JINYU de alta calidad que ofrece una sensación ligera con una durabilidad excepcional y una profundidad de color vibrante.
 - **Herrajes Robustos:** Bisagras de estructura de 4+3 barriles diseñadas con precisión que proporcionan una suavidad operativa a largo plazo y una alineación constante del marco.
 - **Óptica de Alto Rendimiento:** Lentes de nylon tenaz que ofrecen una resistencia al impacto y una claridad óptica superiores con opciones versátiles de personalización y recubrimiento.
 - **Comodidad Ergonómica:** Las plaquetas nasales integradas y un refinado diseño de puente unisex garantizan un ajuste seguro e hipoalergénico para un uso diario prolongado.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Resumen
 
-El acetato Mazzucchelli y JINYU de alta calidad definen la elegancia estructural del KAS-305, ofreciendo una sensación ligera y una profunda saturación de color. Este diseño unisex clásico une la estética retro con las demandas de la moda moderna.
+El acetato Mazzucchelli y JIMEI & JINYU de alta calidad definen la elegancia estructural del KAS-305, ofreciendo una sensación ligera y una profunda saturación de color. Este diseño unisex clásico une la estética retro con las demandas de la moda moderna.
 
 Diseñada con un sistema preciso de bisagras de 4+3 barriles y plaquetas nasales integradas, la montatura mantiene una alineación y comodidad constantes durante el uso diario.
 

@@ -5,7 +5,7 @@ slug: "kas-330-acetate-sunglasses"
 itemNo: "KAS-330"
 date: "2026-05-13"
 colors: "Black, Stripe, Tortoise"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -50,7 +50,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Technical Features
 
-- **Premium Acetate Material:** High-grade Mazzucchelli and JINYU acetate construction offering exceptional durability, vibrant color depth, and a lightweight feel.
+- **Premium Acetate Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction offering exceptional durability, vibrant color depth, and a lightweight feel.
 - **High-Performance Optics:** Tenacious nylon lenses providing superior clarity and impact resistance with full customization options for tints and coatings.
 - **Precision Engineering:** Stable 3+2 barrel structure hinges designed for smooth operational longevity and long-term structural integrity.
 - **Ergonomic Comfort:** Integrated acetate nose pads engineered for a secure, comfortable fit that maintains the frame's sleek, bold aesthetic.
@@ -67,7 +67,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Overview
 
-Bold geometry meets the refined texture of Mazzucchelli and JINYU acetate in a design built for high-impact unisex fashion. These frames emphasize structural integrity and vibrant color depth, providing a premium foundation for any eyewear collection.
+Bold geometry meets the refined texture of Mazzucchelli, JIMEI & JINYU acetate in a design built for high-impact unisex fashion. These frames emphasize structural integrity and vibrant color depth, providing a premium foundation for any eyewear collection.
 
 Precision-fitted 3+2 barrel hinges and tenacious nylon lenses deliver a balance of smooth mechanical operation and superior optical performance.
 

@@ -5,7 +5,7 @@ slug: "kas-115-acetate-sunglasses"
 itemNo: "KAS-115"
 date: "2026-05-09"
 colors: "Đen & Tím & Trắng & Đồi mồi & Cam"
-materials: "Axetat Mazzucchelli và JINYU Cao cấp & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Mazzucchelli và JIMEI & JINYU Cao cấp & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -58,7 +58,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát oem tùy chỉnh, 
 
 ## Đặc Điểm Kỹ Thuật
 
-- **Chất Liệu Cao Cấp:** Được chế tác từ axetat Mazzucchelli và JINYU chất lượng cao, mang lại gọng kính nhẹ, bền bỉ với các lớp hoàn thiện rực rỡ.
+- **Chất Liệu Cao Cấp:** Được chế tác từ axetat Mazzucchelli và JIMEI & JINYU chất lượng cao, mang lại gọng kính nhẹ, bền bỉ với các lớp hoàn thiện rực rỡ.
 - **Phụ Kiện Bền Bỉ:** Nổi bật với bản lề cấu trúc 3+2 chắc chắn được thiết kế để vận hành êm ái, ổn định lâu dài.
 - **Quang Học Cao Cấp:** Trang bị tròng kính nylon bền bỉ mang lại độ rõ nét tuyệt vời, với khả năng tùy chỉnh phong phú cho các cấu hình màu sắc độc đáo.
 - **Thoải Mái Suốt Cả Ngày:** Thiết kế với đệm mũi tích hợp để đảm bảo sự vừa vặn liền mạch, chắc chắn và thoải mái khi đeo trong thời gian dài.
@@ -76,7 +76,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát oem tùy chỉnh, 
 
 ## Tổng Quan
 
-Được chế tác từ axetat Mazzucchelli và JINYU cao cấp, KAS-115 mang đậm nét thẩm mỹ cổ điển, táo bạo đồng thời mang lại độ bền vượt trội và cấu hình màu sắc rực rỡ. Thiết kế unisex này nổi bật như một món đồ đa năng cho các bộ sưu tập kính mắt hiện đại, cao cấp.
+Được chế tác từ axetat Mazzucchelli và JIMEI & JINYU cao cấp, KAS-115 mang đậm nét thẩm mỹ cổ điển, táo bạo đồng thời mang lại độ bền vượt trội và cấu hình màu sắc rực rỡ. Thiết kế unisex này nổi bật như một món đồ đa năng cho các bộ sưu tập kính mắt hiện đại, cao cấp.
 
 Bản lề cấu trúc 3+2 chắc chắn và đệm mũi tích hợp được thiết kế để đảm bảo sự ổn định lâu dài và sự thoải mái suốt cả ngày.
 

@@ -5,7 +5,7 @@ slug: "kas-110-acetate-sunglasses"
 itemNo: "KAS-110"
 date: "2026-05-07"
 colors: "Şeker Kırmızısı & Pembe Kaplumbağa & Krem Beyazı & Siyah"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat gözlük üreticisi, özel OEM güneş gözlüğü, lüks �
 
 ## Teknik Özellikler
 
-- **Premium Malzeme:** Hafif ve dayanıklı bir yüzeyle canlı bir estetik sunan, el yapımı Mazzucchelli ve JINYU asetat yapısı.
+- **Premium Malzeme:** Hafif ve dayanıklı bir yüzeyle canlı bir estetik sunan, el yapımı Mazzucchelli ve JIMEI & JINYU asetat yapısı.
 - **Hassas Mühendislik:** Çeşitli demografik profillerde şık ve popüler bir uyum için tasarlanmış profesyonel 53-19-140 mm unisex boyutlar.
 - **Gelişmiş Optik:** Özel kaplamalar için kapsamlı özelleştirme ile üstün darbe direnci sağlayan yüksek netlikte dayanıklı naylon lensler.
 - **Sağlam Donanım:** Uzun süreli çalışma pürüzsüzlüğü ve çerçeve stabilitesi sağlayan güçlendirilmiş 3+2 varil yapılı menteşeler.
@@ -72,7 +72,7 @@ seoKeywords: "asetat gözlük üreticisi, özel OEM güneş gözlüğü, lüks �
 
 ## Genel Bakış
 
-El yapımı Mazzucchelli ve JINYU asetat, KAS-110'da birleşerek hem estetik derinliğe hem de yapısal dayanıklılığa öncelik veren canlı ve hafif bir çerçeve oluşturur.
+El yapımı Mazzucchelli ve JIMEI & JINYU asetat, KAS-110'da birleşerek hem estetik derinliğe hem de yapısal dayanıklılığa öncelik veren canlı ve hafif bir çerçeve oluşturur.
 
 Her bir ünite, hassas mühendislikle üretilmiş 3+2 varil menteşe sistemine ve entegre burun tamponlarına sahiptir ve premium gözlük markalarının beklediği tutarlı konforu ve çalışma pürüzsüzlüğünü sunar.
 

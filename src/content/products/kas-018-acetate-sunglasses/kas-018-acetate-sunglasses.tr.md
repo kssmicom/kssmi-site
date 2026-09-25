@@ -5,7 +5,7 @@ slug: "kas-018-acetate-sunglasses"
 itemNo: "KAS-018"
 date: "2026-05-10"
 colors: "Siyah, Şeffaf Kırmızı, Şeffaf Mavi"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -41,7 +41,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, lüks private label gözlü
 
 ## Özellikler
 
-- **Yüksek Performanslı Asetat:** Canlı ve uzun ömürlü renk derinliğine sahip, hafif ve hipoalerjenik bir yapı sunan premium Mazzucchelli ve JINYU asetat çerçeveler.
+- **Yüksek Performanslı Asetat:** Canlı ve uzun ömürlü renk derinliğine sahip, hafif ve hipoalerjenik bir yapı sunan premium Mazzucchelli ve JIMEI & JINYU asetat çerçeveler.
 - **Dayanıklı Donanım:** Tekrarlanabilir çalışma pürüzsüzlüğü ve yapısal bütünlük için tasarlanmış sağlam 3+2 varil yapılı menteşeler (5 varilli veya yaylı menteşelere özelleştirilebilir).
 - **Premium Optik:** Kapsamlı özel renklendirme ve kaplama olanaklarıyla yüksek darbe direnci ve optik netlik sunan dayanıklı naylon lensler.
 - **Entegre Konfor:** Güvenli, dengeli bir oturuş ve temiz, kusursuz bir estetik sağlayan hassas kalıplanmış entegre burun yastıkları.
@@ -59,7 +59,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, lüks private label gözlü
 
 ## Genel Bakış
 
-Premium Mazzucchelli ve JINYU asetattan üretilen KAS-018 modeli, olağanüstü canlılık ve renk derinliği sergileyen hafif, hipoalerjenik bir yapıya sahiptir.
+Premium Mazzucchelli ve JIMEI & JINYU asetattan üretilen KAS-018 modeli, olağanüstü canlılık ve renk derinliği sergileyen hafif, hipoalerjenik bir yapıya sahiptir.
 
 3+2 varil menteşelerin ve dayanıklı naylon lenslerin entegrasyonu, üstün darbe direnci ve optik netliğin yanı sıra uzun süreli operasyonel stabilite sağlar.
 

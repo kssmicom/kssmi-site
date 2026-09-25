@@ -5,7 +5,7 @@ slug: "kao-320-acetate-optical-frame"
 itemNo: "KAO-320"
 date: "2026-05-10"
 colors: "Black & Havana & Red & Translucent-Grey & Brown-Stripe & Neon-Green"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -62,7 +62,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM optical frames, lu
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli and JINYU acetate construction providing a lightweight feel and vibrant aesthetic durability.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction providing a lightweight feel and vibrant aesthetic durability.
 - **Durable Hardware:** Robust 4+3 barrel rivet structure hinges engineered for long-term operational smoothness and structural stability.
 - **High-Performance Optics:** Tenacious nylon lenses offering superior clarity with comprehensive custom tinting and coating options.
 - **Ergonomic Design:** Integrated nose pads designed for a seamless fit and enhanced all-day wearing comfort.
@@ -79,7 +79,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM optical frames, lu
 
 ## Overview
 
-Crafted from high-grade Mazzucchelli and JINYU acetate, the KAO-320 balances a vibrant, multi-tonal aesthetic with the lightweight durability required for premium fashion collections.
+Crafted from high-grade Mazzucchelli, JIMEI & JINYU acetate, the KAO-320 balances a vibrant, multi-tonal aesthetic with the lightweight durability required for premium fashion collections.
 
 The frame incorporates a robust 4+3 barrel rivet structure and integrated nose pads, ensuring lasting structural stability and a seamless fit for all-day wear.
 

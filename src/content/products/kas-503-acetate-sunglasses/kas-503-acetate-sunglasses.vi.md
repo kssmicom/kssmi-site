@@ -5,7 +5,7 @@ slug: "kas-503-acetate-sunglasses"
 itemNo: "KAS-503"
 date: "2026-05-13"
 colors: "Đen, Đỏ với Đỏ chuyển màu, Đồi mồi với Nâu"
-materials: "Axetat Cao Cấp Mazzucchelli & JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Cao Cấp Mazzucchelli & JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -42,7 +42,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát oem tùy chỉnh, 
 
 ## Đặc điểm
 
-- **Chất liệu Axetat cao cấp:** Axetat Mazzucchelli và JINYU cao cấp mang lại lớp hoàn thiện nhẹ, bền bỉ và sống động, tạo nên sức hấp dẫn thẩm mỹ vượt trội.
+- **Chất liệu Axetat cao cấp:** Axetat Mazzucchelli và JIMEI & JINYU cao cấp mang lại lớp hoàn thiện nhẹ, bền bỉ và sống động, tạo nên sức hấp dẫn thẩm mỹ vượt trội.
 - **Phụ kiện bền bỉ:** Bản lề cấu trúc 3+2 chốt ổn định được thiết kế để hoạt động êm ái lâu dài, với các tùy chọn nâng cấp 5 chốt và bản lề lò xo.
 - **Tròng kính cao cấp:** Tròng kính nylon bền bỉ mang lại độ rõ nét quang học và độ bền cao, cùng nhiều tùy chọn màu sắc tùy chỉnh đa dạng.
 - **Sự thoải mái theo công thái học:** Đệm mũi axetat tích hợp được thiết kế để mang lại sự vừa vặn an toàn, thoải mái cho việc đeo suốt cả ngày.
@@ -60,7 +60,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát oem tùy chỉnh, 
 
 ## Tổng quan
 
-Được chế tác từ axetat Mazzucchelli và JINYU cao cấp, kính mát KAS-503 mang đến sự sống động và bền bỉ vượt trội cho các bộ sưu tập kính mắt hiện đại.
+Được chế tác từ axetat Mazzucchelli và JIMEI & JINYU cao cấp, kính mát KAS-503 mang đến sự sống động và bền bỉ vượt trội cho các bộ sưu tập kính mắt hiện đại.
 
 Sự kết hợp giữa bản lề 3+2 chốt đáng tin cậy với tròng kính nylon bền bỉ đảm bảo sự ổn định về mặt cấu trúc, trong khi đệm mũi axetat mang lại sự thoải mái lâu dài theo công thái học.
 

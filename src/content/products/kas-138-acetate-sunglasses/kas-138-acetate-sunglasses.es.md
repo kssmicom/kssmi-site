@@ -5,7 +5,7 @@ slug: "kas-138-acetate-sunglasses"
 itemNo: "KAS-138"
 date: "2026-05-09"
 colors: "Negro & Tortuga & Gris-Rosado Pálido & Rosa Mate"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalización"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM) ( Personalización )"
 moq: "300 uds/modelo (100uds/color)"
 
@@ -53,7 +53,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 ---
 
 ## Características
-- **Material Premium:** Construcción de acetato Mazzucchelli y JINYU de alta calidad que ofrece una montatura vibrante, ligera y duradera para marcas de moda de lujo.
+- **Material Premium:** Construcción de acetato Mazzucchelli y JIMEI & JINYU de alta calidad que ofrece una montatura vibrante, ligera y duradera para marcas de moda de lujo.
 - **Hardware Robusto:** Bisagras profesionales con estructura de 3+2 barriles diseñadas para una suavidad operativa constante y durabilidad a largo plazo.
 - **Óptica Superior:** Lentes de nylon tenaz de alto rendimiento con amplias posibilidades de tinte y recubrimiento personalizados para diseñadores de gafas premium.
 - **Diseño Ergonómico:** Almohadillas nasales perfectamente integradas que proporcionan un ajuste seguro y cómodo para un uso diario prolongado en todas las formas de cara.
@@ -69,7 +69,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 - Tiendas de Concepto y Multi-Marca
 
 ## Resumen
-Fabricada con precisión a partir de auténtico acetato Mazzucchelli y JINYU, la serie KAS-138 destaca la profundidad de color vibrante y la durabilidad de alta gama para el mercado de lujo.
+Fabricada con precisión a partir de auténtico acetato Mazzucchelli y JIMEI & JINYU, la serie KAS-138 destaca la profundidad de color vibrante y la durabilidad de alta gama para el mercado de lujo.
 
 La integración de bisagras con estructura de 3+2 barriles y almohadillas nasales ergonómicas ofrece un equilibrio perfecto entre fiabilidad mecánica y comodidad de uso diario.
 

@@ -5,7 +5,7 @@ slug: "kao-318-acetate-optical-frame"
 itemNo: "KAO-318"
 date: "2026-05-10"
 colors: "Preto & Havana & Vermelho & Cinza Translúcido & Listras Marrons & Verde Neon"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "OEM & ODM (Personalização)"
 moq: "300 pçs/modelo (100 pçs/colore)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de armações de acetato, armações ópticas personali
 
 ## Características
 
-- **Armação de Acetato Premium:** Construída com acetato Mazzucchelli e JINYU de alta qualidade para um acabamento leve, durável e vibrante.
+- **Armação de Acetato Premium:** Construída com acetato Mazzucchelli e JIMEI & JINYU de alta qualidade para um acabamento leve, durável e vibrante.
 - **Hardware Reforçado:** Dobradiças de rebite robustas de 4+3 barris projetadas para integridade estrutural excepcional e suavidade operacional a longo prazo.
 - **Óptica de Alto Desempenho:** Lentes de nylon tenazes que oferecem clareza superior e resistência ao impacto com opções completas de personalização.
 - **Design Ergonômico:** Ponteiras nasais integradas e um tamanho de armação sob medida de 48-20-145mm proporcionando um ajuste seguro e confortável para uso durante todo o dia.
@@ -72,7 +72,7 @@ seoKeywords: "fabricante de armações de acetato, armações ópticas personali
 
 ## Visão Geral
 
-Os acetatos Mazzucchelli e JINYU constituem a base do KAO-318, proporcionando uma paleta rica e vibrante e durabilidade superior para coleções ópticas premium. O perfil retrô-clássico da armação atende aos altos padrões táteis esperados pelas modernas casas de moda de luxo.
+Os acetatos Mazzucchelli e JIMEI & JINYU constituem a base do KAO-318, proporcionando uma paleta rica e vibrante e durabilidade superior para coleções ópticas premium. O perfil retrô-clássico da armação atende aos altos padrões táteis esperados pelas modernas casas de moda de luxo.
 
 Um sistema de dobradiça de rebite de 4+3 barris reforçado combinado com ponteiras nasais integradas oferece estabilidade mecânica excepcional e conforto duradouro.
 

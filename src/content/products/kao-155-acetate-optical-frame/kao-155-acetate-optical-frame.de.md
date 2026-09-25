@@ -5,7 +5,7 @@ slug: "kao-155-acetate-optical-frame"
 itemNo: "KAO-155"
 date: "2026-05-10"
 colors: "Floralgelb mit Violett, Floral-Blaugrün mit Rosa"
-materials: "Premium Mazzucchelli & JINYU Acetat & Individualisierung"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -46,7 +46,7 @@ seoKeywords: "Hersteller von Acetat-Brillenfassungen, maßgeschneiderte Acetat-B
 
 ## Eigenschaften
 
-- **Premium-Material:** Hergestellt aus Weltklasse-Mazzucchelli- und JINYU-Acetat, das eine lebendige Farbtiefe und außergewöhnliche langfristige Haltbarkeit bietet.
+- **Premium-Material:** Hergestellt aus Weltklasse-Mazzucchelli- und JIMEI & JINYU-Acetat, das eine lebendige Farbtiefe und außergewöhnliche langfristige Haltbarkeit bietet.
 - **Anspruchsvolle Technik:** Verfügt über ein 2+1-Zylinder-Nietstruktur-Scharnier, das für gleichbleibende Laufruhe und strukturelle Integrität ausgelegt ist.
 - **Hochleistungsoptik:** Ausgestattet mit widerstandsfähigen Nylongläsern, die überlegene Klarheit und Schlagfestigkeit bei voller Anpassungsfähigkeit bieten.
 - **Ergonomischer Komfort:** Ausgestattet mit integrierten Nasenpads, um einen sicheren, hypoallergenen Sitz für verschiedene Gesichtsprofile bei längerem Tragen zu gewährleisten.
@@ -64,7 +64,7 @@ seoKeywords: "Hersteller von Acetat-Brillenfassungen, maßgeschneiderte Acetat-B
 
 ## Überblick
 
-Mazzucchelli- und JINYU-Acetat verschmelzen in dieser Fassung zu einer lebendigen Farbtiefe und strukturellen Langlebigkeit, die Luxusmarken verlangen. Die kühne Unisex-Silhouette schlägt die Brücke zwischen klassischem Design und moderner, trendorientierter Ästhetik.
+Mazzucchelli- und JIMEI & JINYU-Acetat verschmelzen in dieser Fassung zu einer lebendigen Farbtiefe und strukturellen Langlebigkeit, die Luxusmarken verlangen. Die kühne Unisex-Silhouette schlägt die Brücke zwischen klassischem Design und moderner, trendorientierter Ästhetik.
 
 Die 2+1-Zylinder-Nietstruktur-Scharniere und die integrierten Nasenpads sorgen für gleichbleibende Laufruhe und einen sicheren, bequemen Sitz bei längerem Tragen.
 

@@ -5,7 +5,7 @@ slug: "kas-106-acetate-sunglasses"
 itemNo: "KAS-106"
 date: "2026-05-06"
 colors: "Gri & Parlak-Havana & Mat-Havana & Şeffaf & Siyah & Kahverengi & Yeşil"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -62,7 +62,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Özellikler
 
-- **Zanaatkar Malzemeler:** Olağanüstü renk derinliği ve dayanıklılığa sahip hafif, hipoalerjenik bir çerçeve sunmak için birinci sınıf Mazzucchelli ve JINYU asetat kullanılarak elle finiş edilmiştir.
+- **Zanaatkar Malzemeler:** Olağanüstü renk derinliği ve dayanıklılığa sahip hafif, hipoalerjenik bir çerçeve sunmak için birinci sınıf Mazzucchelli ve JIMEI & JINYU asetat kullanılarak elle finiş edilmiştir.
 - **Hassas Mühendislik:** Tutarlı gerginlik ve uzun vadeli çalışma pürüzsüzlüğü sağlayan stabil bir 3+2 varil yapılı menteşe sistemi ile donatılmıştır.
 - **Yüksek Performanslı Optikler:** Üst düzey perakende ortamları için üstün darbe direnci ve optik netlik sağlayan dayanıklı naylon lenslere sahiptir.
 - **Geliştirilmiş Ergonomi:** Entegre burun tamponu tasarımı ve dengeli sap geometrisi, uzun süreli kullanım için basınçsız ve güvenli bir uyum sağlar.
@@ -80,7 +80,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Genel Bakış
 
-Yüksek dereceli Mazzucchelli ve JINYU asetat, KAS-106'nın yapısal dayanıklılığın yanı sıra olağanüstü renk canlılığı sunmasını sağlar. Cesur, unisex profili, onu üst düzey moda portföyleri için göze çarpan bir seçenek haline getirir.
+Yüksek dereceli Mazzucchelli ve JIMEI & JINYU asetat, KAS-106'nın yapısal dayanıklılığın yanı sıra olağanüstü renk canlılığı sunmasını sağlar. Cesur, unisex profili, onu üst düzey moda portföyleri için göze çarpan bir seçenek haline getirir.
 
 Güçlendirilmiş 3+2 varil menteşe sistemi ve ergonomik burun tamponları, premium perakende ortamları için gereken mekanik stabiliteyi ve konforu sağlar.
 

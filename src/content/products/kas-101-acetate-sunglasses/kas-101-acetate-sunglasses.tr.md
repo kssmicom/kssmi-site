@@ -5,7 +5,7 @@ slug: "kas-101-acetate-sunglasses"
 itemNo: "KAS-101"
 date: "2026-05-05"
 colors: "Beyaz & Panda & Leopar & Havana & Şeffaf & Siyah"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -61,7 +61,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlükl
 ---
 
 ## Özellikler
-- **Premium Malzeme:** Hafif bir hisle birlikte canlı ve uzun ömürlü renk derinliği sunan yüksek kaliteli Mazzucchelli ve JINYU asetat yapısı.
+- **Premium Malzeme:** Hafif bir hisle birlikte canlı ve uzun ömürlü renk derinliği sunan yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat yapısı.
 - **Güçlendirilmiş Yapı:** Artırılmış yapısal bütünlük ve operasyonel akıcılık için tasarlanmış 3+2 varil yapılı menteşelerle entegre dayanıklı asetat saplar.
 - **Yüksek Çözünürlüklü Optikler:** Renk tonları ve kaplamalar için kapsamlı özelleştirme seçenekleriyle üstün netlik ve darbe direnci sunan dayanıklı naylon lensler.
 - **Ergonomik Tasarım:** Çerçevenin şık estetik profilini korurken güvenli ve rahat bir oturuş için tasarlanmış entegre burun yastıkları ve 58-17-143 mm özel boyutlandırma.
@@ -78,7 +78,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlükl
 
 ## Genel Bakış
 
-Canlı Mazzucchelli ve JINYU asetat, KAS-101'e çarpıcı renk derinliğini ve hafif dayanıklılığını vererek, onu trend belirleyen gözlük portföyleri için temel bir parça haline getirir.
+Canlı Mazzucchelli ve JIMEI & JINYU asetat, KAS-101'e çarpıcı renk derinliğini ve hafif dayanıklılığını vererek, onu trend belirleyen gözlük portföyleri için temel bir parça haline getirir.
 
 Her çerçeve, tutarlı yapısal güç ve uzun süreli kullanım konforu sağlamak için hassas mühendislikle üretilmiş 3+2 varil menteşelere ve ergonomik bir profile sahiptir.
 

@@ -5,7 +5,7 @@ slug: "kas-164-acetate-sunglasses"
 itemNo: "KAS-164"
 date: "2026-05-09"
 colors: "Cinza Degradê"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
 serviceMode: "OEM & ODM ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -40,7 +40,7 @@ seoKeywords: "óculos de sol em acetato Mazzucchelli, fabricante de óculos em a
 
 ## Características
 
-- **Materiais Premium:** Construção em acetato Mazzucchelli e JINYU de alta qualidade, proporcionando um acabamento vibrante e de alto brilho com durabilidade excepcional.
+- **Materiais Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, proporcionando um acabamento vibrante e de alto brilho com durabilidade excepcional.
 - **Hardware Reforçado:** Dobradiças robustas com estrutura de rebite de 3+2 barris projetadas para estabilidade superior e suavidade operacional a longo prazo.
 - **Óptica de Alto Desempenho:** Lentes de nylon tenaz que oferecem excelente resistência ao impacto com amplas possibilidades de tingimento e revestimento personalizados.
 - **Design Ergonômico:** Ponteiras nasicas perfeitamente integradas, projetadas para um ajuste seguro e confortável e uma estética refinada e aerodinâmica.
@@ -58,7 +58,7 @@ seoKeywords: "óculos de sol em acetato Mazzucchelli, fabricante de óculos em a
 
 ## Visão Geral
 
-Fabricado em acetato premium Mazzucchelli e JINYU, o KAS-164 incorpora uma estética ousada e clássica com um acabamento vibrante e de alto brilho. Este design unissex combina o estilo de luxo com a durabilidade duradoura de materiais de alta qualidade.
+Fabricado em acetato premium Mazzucchelli e JIMEI & JINYU, o KAS-164 incorpora uma estética ousada e clássica com um acabamento vibrante e de alto brilho. Este design unissex combina o estilo de luxo com a durabilidade duradoura de materiais de alta qualidade.
 
 As dobradiças de rebite de 3+2 barris, projetadas com precisão, oferecem uma estabilidade excepcional, enquanto as ponteiras nasicas integradas e as lentes de nylon tenaz garantem conforto a longo prazo e clareza óptica.
 

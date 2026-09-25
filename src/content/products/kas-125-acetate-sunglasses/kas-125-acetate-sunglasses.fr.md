@@ -5,7 +5,7 @@ slug: "kas-125-acetate-sunglasses"
 itemNo: "KAS-125"
 date: "2026-05-09"
 colors: "Noir & Écaille Claire & Écaille Foncée & Corne de Buffle & Kaki"
-materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
+materials: "Mazzucchelli Premium & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication sous Contrat (OEM) & Conception et Fabrication (ODM) (Personnalisation)"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -57,7 +57,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes personnalis�
 ---
 ## Caractéristiques
 
-- **Matériaux Premium :** Monture et branches en acétate Mazzucchelli et JINYU, légères et vibrantes, offrant un toucher premium et une durabilité longue durée.
+- **Matériaux Premium :** Monture et branches en acétate Mazzucchelli et JIMEI & JINYU, légères et vibrantes, offrant un toucher premium et une durabilité longue durée.
 - **Matériel Robuste :** Charnières à structure 4+3 barillets conçues pour un alignement précis et une fluidité de fonctionnement constante.
 - **Optique Avancée :** Verres en nylon tenace offrant une clarté supérieure et une résistance aux chocs dans un profil de monture polyvalent de 53-19-145 mm.
 - **Confort Intégré :** Plaquettes de nez ergonomiques intégrées directement dans la monture pour un ajustement stable et hypoallergénique.
@@ -74,7 +74,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes personnalis�
 
 ## Aperçu
 
-La construction en acétate Mazzucchelli et JINYU de qualité supérieure confère aux KAS-125 un toucher distinctif et une vibrance durable qui répondent aux standards des portefeuilles de luxe mondiaux.
+La construction en acétate Mazzucchelli et JIMEI & JINYU de qualité supérieure confère aux KAS-125 un toucher distinctif et une vibrance durable qui répondent aux standards des portefeuilles de luxe mondiaux.
 
 Conçue avec des charnières à 4+3 barillets pour un alignement précis, la monture associe des verres en nylon haute résistance à un pont ergonomique intégré pour une durabilité soutenue.
 

@@ -5,7 +5,7 @@ slug: "kao-015-acetate-optical-frame"
 itemNo: "KAO-015"
 date: "2026-05-10"
 colors: "Trasparente & Giallo & Blu & Arancione"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalizzazione"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100pz/colore)"
 
@@ -42,7 +42,7 @@ seoKeywords: "produttore montature ottiche in acetato, occhiali OEM personalizza
 
 ## Caratteristiche
 
-- **Materiali Premium:** Costruzione in acetato Mazzucchelli e JINYU rifinito a mano, che offre eccezionale vivacità, durata e una sensazione di leggerezza.
+- **Materiali Premium:** Costruzione in acetato Mazzucchelli e JIMEI & JINYU rifinito a mano, che offre eccezionale vivacità, durata e una sensazione di leggerezza.
 - **Ingegneria di Precisione:** Robuste cerniere con struttura a ribattino 3+2 progettate per la massima stabilità e fluidità operativa a lungo termine.
 - **Ottica ad Alte Prestazioni:** Lenti in nylon tenace che offrono chiarezza superiore e resistenza agli urti, con ampie opzioni di rivestimento personalizzato disponibili.
 - **Design Ergonomico:** Naselli integrati senza soluzione di continuità, progettati per una vestibilità stabile e confortevole e un'estetica raffinata e minimalista.
@@ -60,7 +60,7 @@ seoKeywords: "produttore montature ottiche in acetato, occhiali OEM personalizza
 
 ## Panoramica
 
-Realizzata in acetato premium Mazzucchelli e JINYU, questa montatura raggiunge un sofisticato equilibrio tra resilienza leggera e l'estetica audace e vibrante richiesta dai moderni mercati del lusso.
+Realizzata in acetato premium Mazzucchelli e JIMEI & JINYU, questa montatura raggiunge un sofisticato equilibrio tra resilienza leggera e l'estetica audace e vibrante richiesta dai moderni mercati del lusso.
 
 La robusta architettura della cerniera a ribattino 3+2 offre un'eccezionale durata meccanica, mentre il design del nasello integrato assicura una vestibilità perfetta e confortevole.
 

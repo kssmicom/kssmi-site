@@ -5,7 +5,7 @@ slug: "kas-131-acetate-sunglasses"
 itemNo: "KAS-131"
 date: "2026-05-09"
 colors: "Noir & Violet & Écaille & Blanc"
-materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
+materials: "Mazzucchelli Premium & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication sous Contrat (OEM) & Conception et Fabrication (ODM) ( Personnalisation )"
 moq: "300 pcs/modèle (100pcs/couleur)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, fabricant lunettes personna
 
 ## Caractéristiques Techniques
 
-- **Matériau du Cadre Premium :** Fabriqué à partir d'acétate Mazzucchelli et JINYU de haute qualité, offrant une structure légère mais exceptionnellement durable avec une profondeur de couleur vibrante et durable.
+- **Matériau du Cadre Premium :** Fabriqué à partir d'acétate Mazzucchelli et JIMEI & JINYU de haute qualité, offrant une structure légère mais exceptionnellement durable avec une profondeur de couleur vibrante et durable.
 - **Matériel Durable :** Comprend un système de charnière professionnel à structure 4+3 barrel conçu pour une fluidité opérationnelle supérieure et une intégrité structurelle à long terme.
 - **Optique Avancée :** Équipé de verres en nylon tenaces offrant une haute résistance aux chocs et une clarté optique, entièrement personnalisables selon les exigences spécifiques de la marque.
 - **Confort Ergonomique :** Conçu avec des plaquettes de nez intégrées pour assurer un ajustement stable et sans pression, adapté à un usage quotidien prolongé.
@@ -71,7 +71,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, fabricant lunettes personna
 
 ## Aperçu
 
-L'acétate Mazzucchelli et JINYU constitue le cœur de ces lunettes de soleil, offrant une profondeur de couleur vibrante et une durabilité légère qui séduisent les marchés de la mode haut de gamme.
+L'acétate Mazzucchelli et JIMEI & JINYU constitue le cœur de ces lunettes de soleil, offrant une profondeur de couleur vibrante et une durabilité légère qui séduisent les marchés de la mode haut de gamme.
 
 Le système de charnière à structure 4+3 barrel assure une précision opérationnelle à long terme, tandis que les plaquettes de nez intégrées offrent une stabilité ergonomique pour un port tout au long de la journée.
 

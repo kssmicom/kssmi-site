@@ -5,7 +5,7 @@ slug: "kas-103-acetate-sunglasses"
 itemNo: "KAS-103"
 date: "2026-05-06"
 colors: "Negro & Cuadros Amarillos & Mármol Perlado & Cuadros Rojos & Cuadros Azules & Cuadros Negros"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalización"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -62,7 +62,7 @@ seoKeywords: "fabricante gafas de sol acetato, gafas sol OEM personalizadas, eye
 
 ## Características
 
-- **Material de Montura Premium:** Montura y varillas de acetato Mazzucchelli y JINYU de alta calidad que proporcionan un acabado vibrante y un brillo profundo con una durabilidad estructural excepcional.
+- **Material de Montura Premium:** Montura y varillas de acetato Mazzucchelli y JIMEI & JINYU de alta calidad que proporcionan un acabado vibrante y un brillo profundo con una durabilidad estructural excepcional.
 - **Herrajes Duraderos:** Bisagras de estructura de 3+2 barriles diseñadas con precisión para una suavidad operativa constante y estabilidad de la montatura a largo plazo.
 - **Óptica Superior:** Lentes de nylon tenaz que ofrecen una alta resistencia al impacto y claridad óptica, con personalización escalable para protección UV y recubrimientos especializados.
 - **Ajuste Ergonómico:** Almohadillas nasales integradas talladas a la perfección en la estructura de acetato para un ajuste seguro y sin presión que mejora la comodidad durante todo el día.
@@ -80,7 +80,7 @@ seoKeywords: "fabricante gafas de sol acetato, gafas sol OEM personalizadas, eye
 
 ## Resumen
 
-El modelo KAS-103 utiliza acetato Mazzucchelli y JINYU de primera calidad para lograr un acabado de brillo profundo, con sofisticados patrones de cuadros y mármol que resuenan con las tendencias de la alta moda.
+El modelo KAS-103 utiliza acetato Mazzucchelli y JIMEI & JINYU de primera calidad para lograr un acabado de brillo profundo, con sofisticados patrones de cuadros y mármol que resuenan con las tendencias de la alta moda.
 
 Las bisagras de precisión de 3+2 barriles y las almohadillas nasales integradas proporcionan la estabilidad estructural y la comodidad ergonómica que esperan los consumidores de lujo.
 

@@ -5,7 +5,7 @@ slug: "kas-105-acetate-sunglasses"
 itemNo: "KAS-105"
 date: "2026-05-06"
 colors: "Klawu & Havana Mengkilap & Havana Burem & Bening & Ireng"
-materials: "Mazzucchelli Premium & Asetat JINYU & Kustomisasi"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 
 ## Fitur
 
-- **Bahan Premium:** Frame sing dipoles nganggo tangan digawe saka asetat Mazzucchelli lan JINYU sing misuwur ing donya, nawakake daya tahan sing luar biasa lan kedalaman warna sing padhang.
+- **Bahan Premium:** Frame sing dipoles nganggo tangan digawe saka asetat Mazzucchelli lan JIMEI & JINYU sing misuwur ing donya, nawakake daya tahan sing luar biasa lan kedalaman warna sing padhang.
 - **Hardware Awet:** Engsel tong 3+2 sing dirancang kanthi presisi njamin stabilitas struktur lan kinerja operasional sing lancar ing wektu sing suwe.
 - **Optik Kinerja Dhuwur:** Lensa nilon tahan impact sing nyedhiyakake kajelasan lan daya tahan sing unggul kanggo standar kacamata fashion dhuwur.
 - **Desain Ergonomis:** Bantalan irung integrasi lan geometri frame sing imbang kanthi presisi (51-23-145mm) dirancang kanggo kenyamanan sedina muput lan pas kanggo kabeh wong.
@@ -71,7 +71,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 
 ## Ringkesan
 
-Digawe saka asetat Mazzucchelli lan JINYU premium, KAS-105 nyedhiyakake keseimbangan antarane desain unisex sing kendel karo kedalaman warna sing padhang. Frame sing dipoles nganggo tangan iki dadi dhasar sing serbaguna kanggo merek sing ngutamakake bahan kapadhetan dhuwur lan estetika fashion kontemporer.
+Digawe saka asetat Mazzucchelli lan JIMEI & JINYU premium, KAS-105 nyedhiyakake keseimbangan antarane desain unisex sing kendel karo kedalaman warna sing padhang. Frame sing dipoles nganggo tangan iki dadi dhasar sing serbaguna kanggo merek sing ngutamakake bahan kapadhetan dhuwur lan estetika fashion kontemporer.
 
 Integrasi engsel tong 3+2 lan lensa nilon tahan impact nyedhiyakake integritas struktural lan kinerja optik sing dibutuhake dening standar pasar mewah.
 

@@ -5,7 +5,7 @@ slug: "kas-130-acetate-sunglasses"
 itemNo: "KAS-130"
 date: "2026-05-09"
 colors: "Ireng & Klawu & Bulus & Peach & Coklat"
-materials: "Premium Mazzucchelli & Asetat JINYU & Kustomisasi"
+materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -58,7 +58,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom China, k
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JINYU kelas dhuwur sing nawakake daya tahan sing luar biasa lan ambane warna sing padhang kanggo daya tarik estetika sing tahan suwe.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing nawakake daya tahan sing luar biasa lan ambane warna sing padhang kanggo daya tarik estetika sing tahan suwe.
 - **Hardware Kuwat:** Engsel struktur 4+3 barrel sing dirancang kanthi presisi kanggo stabilitas sing unggul lan kinerja operasional jangka panjang sing lancar.
 - **Optik Definisi Tinggi:** Lensa nilon sing kuwat nyedhiyakake visi sing cetha banget lan resistensi dampak sing dhuwur, kanthi pilihan kustomisasi sing amba kanggo warna lan lapisan.
 - **Kenyamanan Ergonomis:** Desain bantalan irung integrasi njamin pas sing aman lan tanpa tekanan sing cocog kanggo nyandhang sedina muput ing macem-macem profil wajah.
@@ -76,7 +76,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom China, k
 
 ## Ringkesan
 
-Digawe saka asetat Mazzucchelli lan JINYU kelas dhuwur, frame iki nampilake gaya desain sing kendel lan fokus ing kemewahan sing nandheske ambane warna sing padhang lan stabilitas struktur sing tahan suwe.
+Digawe saka asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur, frame iki nampilake gaya desain sing kendel lan fokus ing kemewahan sing nandheske ambane warna sing padhang lan stabilitas struktur sing tahan suwe.
 
 Integrasi engsel 4+3 barrel lan desain bantalan irung tanpa tekanan nyedhiyakake pengalaman taktil sing refined lan daya tahan jangka panjang sing dikarepake dening pamirsa ritel kelas dhuwur.
 

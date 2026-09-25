@@ -5,7 +5,7 @@ slug: "kas-311-acetate-sunglasses"
 itemNo: "KAS-311"
 date: "2026-05-12"
 colors: "Preto & Roxo-Esfumaçado & Tartaruga & Marrom"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante óculos de sol acetato, óculos unisex personalizados, 
 
 ## Características
 
-- **Material Premium:** Construção em acetato Mazzucchelli e JINYU de alta qualidade, oferecendo uma estética vibrante com durabilidade leve.
+- **Material Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, oferecendo uma estética vibrante com durabilidade leve.
 - **Integridade Estrutural:** Dobradiças robustas de 4+3 barris, projetadas para suavidade operacional a longo prazo e estabilidade da armação.
 - **Excelência Óptica:** Lentes de nylon tenaz, proporcionando clareza superior e resistência ao impacto, com amplas opções de revestimento personalizado.
 - **Design Ergonômico:** Ponteiras nasicas integradas, projetadas para um ajuste perfeito e confortável durante o uso diário prolongado.
@@ -72,7 +72,7 @@ seoKeywords: "fabricante óculos de sol acetato, óculos unisex personalizados, 
 
 ## Visão Geral
 
-Fabricado a partir de uma mistura sofisticada de acetato Mazzucchelli e JINYU, o modelo KAS-311 oferece uma armação leve, porém durável, com vivacidade de cor superior.
+Fabricado a partir de uma mistura sofisticada de acetato Mazzucchelli e JIMEI & JINYU, o modelo KAS-311 oferece uma armação leve, porém durável, com vivacidade de cor superior.
 
 A arquitetura apresenta dobradiças reforçadas de 4+3 barris e ponteiras nasicas integradas, proporcionando estabilidade de alto desempenho junto com uma experiência de uso refinada e ergonômica.
 

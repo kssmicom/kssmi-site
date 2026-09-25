@@ -5,7 +5,7 @@ slug: "kas-318-acetate-sunglasses"
 itemNo: "KAS-318"
 date: "2026-05-12"
 colors: "Preto & Spark & Havana & Honey"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) (Personalização)"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Características
 
-- **Material Premium:** Construção em acetato Mazzucchelli e JINYU selecionado à mão, proporcionando uma armação leve e durável com uma profundidade de cor vibrante e duradoura.
+- **Material Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU selecionado à mão, proporcionando uma armação leve e durável com uma profundidade de cor vibrante e duradoura.
 - **Ferragens de Precisão:** Dobradiças com estrutura de 4+3 barris de alto desempenho, projetadas para estabilidade superior e suavidade operacional a longo prazo.
 - **Óptica de Alto Desempenho:** Lentes de Nylon Tenaz resistentes ao impacto, oferecendo clareza excepcional com possibilidades versáteis de tonalidade e revestimento personalizados.
 - **Design Ergonômico:** Estrutura de ponteira násica integrada meticulosamente projetada para um ajuste seguro e confortável e uma estética refinada e contínua.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Visão Geral
 
-Fabricado em acetato Mazzucchelli e JINYU selecionado à mão, o KAS-318 oferece brilho de cor e durabilidade estrutural excepcionais para o mercado de moda premium. Sua composição leve garante o conforto do usuário a longo prazo, sem comprometer o impacto estético.
+Fabricado em acetato Mazzucchelli e JIMEI & JINYU selecionado à mão, o KAS-318 oferece brilho de cor e durabilidade estrutural excepcionais para o mercado de moda premium. Sua composição leve garante o conforto do usuário a longo prazo, sem comprometer o impacto estético.
 
 As dobradiças de 4+3 barris projetadas com precisão e as ponteiras násicas integradas proporcionam a estabilità mecânica e o ajuste ergonômico exigidos pelas marcas de luxo exigentes.
 

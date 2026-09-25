@@ -5,7 +5,7 @@ slug: "kao-337-acetate-optical-frame"
 itemNo: "KAO-337"
 date: "2026-05-10"
 colors: "Hitam dengan Madu, Biru Jernih dengan Kura-kura, Jalur Coklat dengan Biru, Syampanya dengan Coklat"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk)"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -42,7 +42,7 @@ seoKeywords: "pengilang bingkai optik asetat, bingkai optik OEM tersuai, kacamat
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium：** Dibuat daripada asetat premium Mazzucchelli dan JINYU untuk menghasilkan temple dan bahagian hadapan yang ringan, sangat tahan lama serta menampilkan keceriaan warna yang luar biasa.
+- **Bahan Premium：** Dibuat daripada asetat premium Mazzucchelli dan JIMEI & JINYU untuk menghasilkan temple dan bahagian hadapan yang ringan, sangat tahan lama serta menampilkan keceriaan warna yang luar biasa.
 - **Perkakasan Terkejuruteraan：** Dilengkapi dengan sistem engsel struktur rivet 3+2 tong yang stabil, direka untuk mengekalkan penjajaran tepat dan menyokong kelancaran operasi jangka panjang.
 - **Optik Teguh：** Dilengkapi dengan lensa nilon tahan lasak yang menawarkan rintangan impak unggul dan kejelasan optik yang tinggi, boleh disesuaikan dengan salutan khusus dan warna tersuai.
 - **Keselesaan Bersepadu：** Dibina dengan alas hidung asetat bersepadu yang lancar digabungkan dengan profil standard 48-21-145mm untuk mengedarkan berat bingkai secara sekata dan mengelakkan gelinciran.
@@ -60,7 +60,7 @@ seoKeywords: "pengilang bingkai optik asetat, bingkai optik OEM tersuai, kacamat
 
 ## Gambaran Keseluruhan
 
-Menggabungkan profil retro yang berani dengan asetat premium Mazzucchelli dan JINYU, bingkai unisex ini direka untuk label fesyen butik dan portfolio optik mewah. Pilihan warna dwi-ton dan berjalur yang tersendiri—termasuk Syampanya dengan Coklat dan Jalur Coklat dengan Biru—menawarkan pernyataan estetik yang sangat diperibadikan.
+Menggabungkan profil retro yang berani dengan asetat premium Mazzucchelli dan JIMEI & JINYU, bingkai unisex ini direka untuk label fesyen butik dan portfolio optik mewah. Pilihan warna dwi-ton dan berjalur yang tersendiri—termasuk Syampanya dengan Coklat dan Jalur Coklat dengan Biru—menawarkan pernyataan estetik yang sangat diperibadikan.
 
 Keselesaan pemakaian yang optimum dicapai melalui alas hidung bersepadu dan profil bingkai standard 48-21-145mm, diperkukuh oleh sistem engsel struktur rivet 3+2 tong yang stabil yang mengekalkan jangka hayat struktur.
 

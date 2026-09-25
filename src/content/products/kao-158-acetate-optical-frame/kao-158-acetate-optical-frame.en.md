@@ -5,7 +5,7 @@ slug: "kao-158-acetate-optical-frame"
 itemNo: "KAO-158"
 date: "2026-05-10"
 colors: "Black, Red, Green"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -50,7 +50,7 @@ seoKeywords: "acetate optical frames manufacturer, custom unisex eyewear factory
 
 ## Technical Features
 
-- **Premium Acetate Construction:** High-grade Mazzucchelli and JINYU acetate providing a lightweight, vibrant, and hand-polished finish for a luxury aesthetic.
+- **Premium Acetate Construction:** High-grade Mazzucchelli, JIMEI & JINYU acetate providing a lightweight, vibrant, and hand-polished finish for a luxury aesthetic.
 - **Engineered Hardware:** Precision 3+2 barrel rivet structure hinges designed for consistent operational smoothness and enhanced frame longevity.
 - **Superior Optics:** Tenacious nylon lenses offering exceptional clarity and durability, with extensive custom tinting and coating capabilities available.
 - **Seamless Ergonomics:** Integrated nose pads engineered for a stable, comfortable fit that complements the bold, unisex design.
@@ -67,7 +67,7 @@ seoKeywords: "acetate optical frames manufacturer, custom unisex eyewear factory
 
 ## Overview
 
-This bold, unisex frame utilizes hand-polished Mazzucchelli and JINYU acetate to achieve a deep, vibrant finish that meets the exacting standards of luxury fashion houses.
+This bold, unisex frame utilizes hand-polished Mazzucchelli, JIMEI & JINYU acetate to achieve a deep, vibrant finish that meets the exacting standards of luxury fashion houses.
 
 Engineered with a precision-fitted 3+2 barrel rivet hinge structure, the KAO-158 ensures long-term mechanical reliability and structural stability for daily wear.
 

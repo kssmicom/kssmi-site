@@ -5,7 +5,7 @@ slug: "kas-020-acetate-sunglasses"
 itemNo: "KAS-020"
 date: "2026-05-10"
 colors: "Ireng, Shampanye, Bulus, Ijo Zaitun Bening"
-materials: "Asetat Premium Mazzucchelli & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -41,7 +41,7 @@ seoKeywords: "produsen kacamata hitam asetat, OEM kacamata mewah kustom, bingkai
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JINYU kanthi kualitas dhuwur sing nawakake daya tahan sing luar biasa lan kedalaman warna sing padhang kanggo estetika mewah.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kanthi kualitas dhuwur sing nawakake daya tahan sing luar biasa lan kedalaman warna sing padhang kanggo estetika mewah.
 - **Teknik Presisi:** Engsel struktur baril 3+2 sing stabil sing dirancang kanggo kelancaran operasional jangka panjang lan integritas struktural.
 - **Optik Performa Dhuwur:** Lensa nilon sing kuwat sing nyedhiyakake kajelasan sing unggul lan tahan benturan kanthi pilihan lapisan kustom sing akeh.
 - **Kenyamanan Ergonomis:** Bantalan irung sing terintegrasi kanthi lancar lan desain bingkai sing entheng njamin pas sing aman lan ora kesel kanggo panggunaan sing suwe.
@@ -59,7 +59,7 @@ seoKeywords: "produsen kacamata hitam asetat, OEM kacamata mewah kustom, bingkai
 
 ## Ringkesan
 
-Nggunakake kedalaman warna sing padhang lan daya tahan struktural saka asetat premium Mazzucchelli lan JINYU, KAS-020 nggambarake gabungan canggih saka estetika mewah lan daya tahan saben dina.
+Nggunakake kedalaman warna sing padhang lan daya tahan struktural saka asetat premium Mazzucchelli lan JIMEI & JINYU, KAS-020 nggambarake gabungan canggih saka estetika mewah lan daya tahan saben dina.
 
 Arsitektur engsel baril 3+2 lan lensa nilon kanthi kajelasan dhuwur dirancang kanggo kelancaran operasional jangka panjang lan perlindungan optik sing unggul.
 

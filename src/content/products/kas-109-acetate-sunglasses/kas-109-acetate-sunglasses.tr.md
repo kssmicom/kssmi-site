@@ -5,7 +5,7 @@ slug: "kas-109-acetate-sunglasses"
 itemNo: "KAS-109"
 date: "2026-05-07"
 colors: "Siyah & Şeffaf & Kaplumbağa & Zeytin"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100adet/renk)"
 
@@ -58,7 +58,7 @@ seoKeywords: "premium asetat güneş gözlüğü üreticisi, özel OEM gözlük 
 
 ## Özellikler
 
-- **Premium Malzeme:** Dünyaca ünlü Mazzucchelli ve JINYU asetattan üretilmiştir, olağanüstü dayanıklılık ve derin, canlı renk derinliği sunar.
+- **Premium Malzeme:** Dünyaca ünlü Mazzucchelli ve JIMEI & JINYU asetattan üretilmiştir, olağanüstü dayanıklılık ve derin, canlı renk derinliği sunar.
 - **Sağlam Donanım:** Uzun süreli operasyonel pürüzsüzlük ve yapısal kararlılık için hassas bir şekilde tasarlanmış 3+2 varil menteşelerle donatılmıştır.
 - **Yüksek Etkili Optikler:** Üstün netlik ve darbe direnci sağlayan dayanıklı naylon lenslere sahiptir ve kapsamlı özel kaplama seçenekleri mevcuttur.
 - **Kusursuz Konfor:** Şık ve minimalist bir estetik sunarken sağlam ve rahat bir oturuş sağlayan entegre burun tamponları ile tasarlanmıştır.
@@ -76,7 +76,7 @@ seoKeywords: "premium asetat güneş gözlüğü üreticisi, özel OEM gözlük 
 
 ## Genel Bakış
 
-Dünyaca ünlü Mazzucchelli ve JINYU asetattan üretilen KAS-109, çağdaş moda trendleriyle yankılanan cesur, vintage esintili bir estetiği bünyesinde barındırır. Malzemenin derin, canlı renk derinliği ve yüksek şeffaflıktaki bitişleri, premium gözlük koleksiyonları için sofistike bir temel sağlar.
+Dünyaca ünlü Mazzucchelli ve JIMEI & JINYU asetattan üretilen KAS-109, çağdaş moda trendleriyle yankılanan cesur, vintage esintili bir estetiği bünyesinde barındırır. Malzemenin derin, canlı renk derinliği ve yüksek şeffaflıktaki bitişleri, premium gözlük koleksiyonları için sofistike bir temel sağlar.
 
 Entegre burun tamponları ve hassas bir şekilde tasarlanmış 3+2 varil menteşeler, sağlam performansı hafif bir unisex silüetle dengeleyerek kusursuz bir uyum ve kalıcı yapısal kararlılık sağlar.
 

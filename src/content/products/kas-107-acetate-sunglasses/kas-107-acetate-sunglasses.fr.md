@@ -5,7 +5,7 @@ slug: "kas-107-acetate-sunglasses"
 itemNo: "KAS-107"
 date: "2026-05-06"
 colors: "Noir & Transparent & Havana & Olive"
-materials: "Acétate Premium Mazzucchelli & JINYU & Personnalisation"
+materials: "Acétate Premium Mazzucchelli & JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100pcs/couleur)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil OE
 
 ## Caractéristiques
 
-- **Matériau Premium :** Finies à la main à partir d'acétate Mazzucchelli et JINYU de haute qualité pour offrir une monture légère et hypoallergénique avec une vibrance exceptionnelle et une durabilité à long terme.
+- **Matériau Premium :** Finies à la main à partir d'acétate Mazzucchelli et JIMEI & JINYU de haute qualité pour offrir une monture légère et hypoallergénique avec une vibrance exceptionnelle et une durabilité à long terme.
 - **Ingénierie de Précision :** Comprend un système de charnière robuste à structure de barillet 3+2 conçu pour une stabilité opérationnelle supérieure et une tension d'ouverture/fermeture constante.
 - **Optique de Haute Performance :** Équipées de verres en nylon tenaces qui offrent une excellente résistance aux chocs et une clarté optique, avec des options complètes de teinture et de revêtement personnalisées disponibles.
 - **Confort Intégré :** Plaquettes de nez intégrées de conception ergonomique assurant une esthétique sans couture et un ajustement sûr et sans pression pour un port quotidien prolongé.
@@ -71,7 +71,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil OE
 
 ## Présentation
 
-Fabriquée à partir d'acétate de qualité supérieure Mazzucchelli et JINYU, cette silhouette classique équilibre une vibrance exceptionnelle des matériaux avec une finition légère et hypoallergénique.
+Fabriquée à partir d'acétate de qualité supérieure Mazzucchelli et JIMEI & JINYU, cette silhouette classique équilibre une vibrance exceptionnelle des matériaux avec une finition légère et hypoallergénique.
 
 Les montures fraisées de précision et les charnières robustes à barillet 3+2 offrent la fiabilité structurelle et le fonctionnement tactile fluide attendus dans les environnements de boutiques haut de gamme.
 

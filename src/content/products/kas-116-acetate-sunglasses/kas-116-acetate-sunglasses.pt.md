@@ -5,7 +5,7 @@ slug: "kas-116-acetate-sunglasses"
 itemNo: "KAS-116"
 date: "2026-05-09"
 colors: "Preto & Verde-Mármore & Branco & Mármore"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, fábrica de óculos OEM s
 
 ## Características Técnicas
 
-- **Construção em Acetato Premium:** Armação e hastes de acetato Mazzucchelli e JINYU de alta qualidade que oferecem um acabamento leve, durável e vibrante.
+- **Construção em Acetato Premium:** Armação e hastes de acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que oferecem um acabamento leve, durável e vibrante.
 - **Hardware Durável:** Dobradiças de estrutura 3+2 estáveis projetadas para suavidade operacional e confiabilidade a longo prazo.
 - **Óptica Premium:** Lentes de nylon tenazes com amplas opções de coloração e revestimento personalizados disponíveis.
 - **Conforto Perfeito:** Ponteiras nasais integradas projetadas para proporcionar um ajuste seguro e confortável para o uso diário.
@@ -72,7 +72,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, fábrica de óculos OEM s
 
 ## Visão Geral
 
-Fabricado em acetato Mazzucchelli e JINYU de alta qualidade, o KAS-116 apresenta uma estética ousada e unissex que eleva instantaneamente qualquer coleção de óculos premium. Esta armação elegante equilibra uma estrutura leve e durável com um apelo visual surpreendentemente vibrante.
+Fabricado em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, o KAS-116 apresenta uma estética ousada e unissex que eleva instantaneamente qualquer coleção de óculos premium. Esta armação elegante equilibra uma estrutura leve e durável com um apelo visual surpreendentemente vibrante.
 
 Projetado para desempenho diário confiável, possui dobradiças robustas de estrutura 3+2, lentes de nylon resilientes e ponteiras nasais perfeitamente integradas para garantir conforto excepcional.
 

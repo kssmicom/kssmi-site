@@ -5,7 +5,7 @@ slug: "kao-301-acetate-optical-frame"
 itemNo: "KAO-301"
 date: "2026-05-10"
 colors: "Black & Smoky-Purple & Tortoise & Stripe"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM optical frames, lu
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli and JINYU acetate construction delivering exceptional durability and a rich, vibrant aesthetic.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction delivering exceptional durability and a rich, vibrant aesthetic.
 - **Precision Engineering:** Robust 4+3 barrel rivet structure hinges ensuring long-term operational stability and smooth movement.
 - **Advanced Optics:** Tenacious nylon lenses featuring high clarity and impact resistance with flexible customization options.
 - **Ergonomic Design:** Integrated nose pads engineered for a secure, balanced fit and enhanced all-day comfort.
@@ -72,7 +72,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM optical frames, lu
 
 ## Overview
 
-Mazzucchelli and JINYU acetate form the foundation of the KAO-301, delivering a vibrant material identity that balances lightweight comfort with lasting durability. This selection of high-grade materials ensures that each frame maintains its premium finish and structural integrity across diverse colorways.
+Mazzucchelli, JIMEI & JINYU acetate form the foundation of the KAO-301, delivering a vibrant material identity that balances lightweight comfort with lasting durability. This selection of high-grade materials ensures that each frame maintains its premium finish and structural integrity across diverse colorways.
 
 The implementation of 4+3 barrel rivet hinges provides a reinforced mechanical structure, guaranteeing smooth temple movement and long-term stability in high-use environments.
 

@@ -5,7 +5,7 @@ slug: "kas-119-acetate-sunglasses"
 itemNo: "KAS-119"
 date: "2026-05-09"
 colors: "Preto & Floral & Azul Bruto & Amarelo & Tartaruga Polar & Tartaruga Ciano & Tartaruga Vermelha"
-materials: "Acetato Mazzucchelli & JINYU Premium & Personalização"
+materials: "Acetato Mazzucchelli & JIMEI & JINYU Premium & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -66,7 +66,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Características Técnicas
 
-- **Construção em Acetato Premium:** Trabalhada com acetato Mazzucchelli e JINYU de classe mundial, oferecendo uma estrutura de armação e haste leve, excepcionalmente durável e vibrante.
+- **Construção em Acetato Premium:** Trabalhada com acetato Mazzucchelli e JIMEI & JINYU de classe mundial, oferecendo uma estrutura de armação e haste leve, excepcionalmente durável e vibrante.
 - **Hardware de Precisão:** Projetado com dobradiças personalizadas de estrutura de 4+3 barris para proporcionar estabilidade superior e suavidade operacional a longo prazo.
 - **Óptica de Alto Desempenho:** Equipado com lentes de nylon tenaz que proporcionam excelente clareza óptica, além de amplas opções de personalização.
 - **Conforto o Dia Todo:** Projetado com ponteiras nasicas cuidadosamente integradas para garantir uma estética perfeita e um ajuste seguro e confortável para uso prolongado.
@@ -83,7 +83,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Visão Geral
 
-Luxo ousado encontra artesanato excepcional no KAS-119, apresentando um design unisex marcante esculpido nos renomados acetatos Mazzucchelli e JINYU. Esta construção de armação vibrante não apenas garante durabilidade leve, mas também estabelece uma presença visual imponente para portfólios de moda de alta qualidade.
+Luxo ousado encontra artesanato excepcional no KAS-119, apresentando um design unisex marcante esculpido nos renomados acetatos Mazzucchelli e JIMEI & JINYU. Esta construção de armação vibrante não apenas garante durabilidade leve, mas também estabelece uma presença visual imponente para portfólios de moda de alta qualidade.
 
 Projetado para uso a longo prazo, a integração de dobradiças personalizadas de 4+3 barris e ponteiras nasicas perfeitas garante um conforto estável durante todo o dia ao lado de ótica de nylon premium.
 

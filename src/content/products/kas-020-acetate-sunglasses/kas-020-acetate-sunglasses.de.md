@@ -5,7 +5,7 @@ slug: "kas-020-acetate-sunglasses"
 itemNo: "KAS-020"
 date: "2026-05-10"
 colors: "Schwarz, Champagner, Schildpatt, Transparentes Oliv"
-materials: "Premium Mazzucchelli & JINYU Acetat & Individualisierung"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -41,7 +41,7 @@ seoKeywords: "Acetat-Sonnenbrillen-Hersteller, individuelles Luxusbrillen-OEM, P
 
 ## Eigenschaften
 
-- **Premium-Materialien:** Hochwertige Mazzucchelli- und JINYU-Acetat-Konstruktion, die außergewöhnliche Haltbarkeit und lebendige Farbtiefe für Luxus-Ästhetik bietet.
+- **Premium-Materialien:** Hochwertige Mazzucchelli- und JIMEI & JINYU-Acetat-Konstruktion, die außergewöhnliche Haltbarkeit und lebendige Farbtiefe für Luxus-Ästhetik bietet.
 - **Präzisionstechnik:** Stabile 3+2 Barrel-Scharniere, entwickelt für langfristige Laufruhe und strukturelle Integrität.
 - **Hochleistungsoptik:** Widerstandsfähige Nylon-Gläser für überragende Klarheit und Schlagfestigkeit mit umfangreichen individuellen Beschichtungsoptionen.
 - **Ergonomischer Komfort:** Nahtlos integrierte Nasenpads und leichtes Rahmendesign für einen sicheren, ermüdungsfreien Sitz bei längerem Tragen.
@@ -59,7 +59,7 @@ seoKeywords: "Acetat-Sonnenbrillen-Hersteller, individuelles Luxusbrillen-OEM, P
 
 ## Überblick
 
-Unter Verwendung der lebendigen Farbtiefe und strukturellen Belastbarkeit von hochwertigem Mazzucchelli- und JINYU-Acetat stellt die KAS-020 eine anspruchsvolle Verschmelzung von Luxus-Ästhetik und täglicher Haltbarkeit dar.
+Unter Verwendung der lebendigen Farbtiefe und strukturellen Belastbarkeit von hochwertigem Mazzucchelli- und JIMEI & JINYU-Acetat stellt die KAS-020 eine anspruchsvolle Verschmelzung von Luxus-Ästhetik und täglicher Haltbarkeit dar.
 
 Die 3+2 Barrel-Scharnierarchitektur und die hochklaren Nylon-Gläser sind für langfristige Laufruhe und überlegenen optischen Schutz ausgelegt.
 

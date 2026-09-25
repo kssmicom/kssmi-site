@@ -5,7 +5,7 @@ slug: "kas-015-acetate-sunglasses"
 itemNo: "KAS-015"
 date: "2026-05-10"
 colors: "Tortuga con Verde, Negro con Negro-Amarillo, Negro Tortuga con Verde, Negro"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalización"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100uds/color)"
 
@@ -43,7 +43,7 @@ seoKeywords: "fabricante gafas de sol lujo acetato, fábrica gafas personalizada
 
 ## Características
 
-- **Material Premium:** Construcción en acetato Mazzucchelli y JINYU de alta calidad que ofrece un acabado ligero, duradero y vibrante para una estética de lujo.
+- **Material Premium:** Construcción en acetato Mazzucchelli y JIMEI & JINYU de alta calidad que ofrece un acabado ligero, duradero y vibrante para una estética de lujo.
 - **Integridad Estructural:** Montatura y varillas de acetato premium fabricadas con precisión que garantizan la retención de la forma y la resistencia a largo plazo.
 - **Herrajes Duraderos:** Bisagras estables con estructura de 2+1 barriles diseñadas para una suavidad de funcionamiento constante, con opciones de actualización a 5 barriles y bisagras de resorte.
 - **Óptica Superior:** Lentes de nylon tenaz que proporcionan una excelente claridad y resistencia a los impactos con amplias opciones de tintado personalizado.
@@ -61,7 +61,7 @@ seoKeywords: "fabricante gafas de sol lujo acetato, fábrica gafas personalizada
 
 ## Resumen
 
-Utilizando acetato Mazzucchelli y JINYU de alta calidad, este modelo ofrece un acabado vibrante y ligero adaptado al mercado premium.
+Utilizando acetato Mazzucchelli y JIMEI & JINYU de alta calidad, este modelo ofrece un acabado vibrante y ligero adaptado al mercado premium.
 
 Las bisagras de 2+1 barriles diseñadas con precisión y las almohadillas nasales integradas proporcionan una mezcla perfecta de estabilidad estructural y comodidad durante todo el día.
 

@@ -5,7 +5,7 @@ slug: "kas-163-acetate-sunglasses"
 itemNo: "KAS-163"
 date: "2026-05-09"
 colors: "Schwarz, Schildpatt, Uni-Braun"
-materials: "Premium-Acetat Mazzucchelli & JINYU & Individualisierung"
+materials: "Premium-Acetat Mazzucchelli & JIMEI & JINYU & Individualisierung"
 serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) (Individualisierung)"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -41,7 +41,7 @@ seoKeywords: "Hersteller von Acetat-Sonnenbrillen, KAS-163 individuelle Brillen,
 
 ## Eigenschaften
 
-- **Premium-Material:** Handverlesene Mazzucchelli- und JINYU-Acetat-Konstruktion, die außergewöhnliche Langlebigkeit mit einem leichten, lebendigen Finish bietet.
+- **Premium-Material:** Handverlesene Mazzucchelli- und JIMEI & JINYU-Acetat-Konstruktion, die außergewöhnliche Langlebigkeit mit einem leichten, lebendigen Finish bietet.
 - **Präzisionstechnik:** Robuste Scharniere mit 3+2-Fass-Nietenstruktur, entwickelt für dauerhafte Laufruhe und strukturelle Integrität.
 - **Hochleistungsoptik:** Widerstandsfähige Nylongläser, entwickelt für überlegene Klarheit mit vielseitigen Möglichkeiten für individuelle Beschichtungen und Tönungen.
 - **Ergonomisches Design:** Integrierte Nasenpads und ein 52-19-145 mm Rahmenprofil, optimiert für sicheren Sitz und raffinierten Tragekomfort.
@@ -58,7 +58,7 @@ seoKeywords: "Hersteller von Acetat-Sonnenbrillen, KAS-163 individuelle Brillen,
 
 ## Übersicht
 
-High-End-Mode trifft auf Materialexzellenz beim Modell KAS-163, das erstklassiges Mazzucchelli- und JINYU-Acetat für eine anspruchsvolle, langlebige und leichte Unisex-Ästhetik integriert.
+High-End-Mode trifft auf Materialexzellenz beim Modell KAS-163, das erstklassiges Mazzucchelli- und JIMEI & JINYU-Acetat für eine anspruchsvolle, langlebige und leichte Unisex-Ästhetik integriert.
 
 Ausgestattet mit einem robusten 3+2-Fass-Nietenscharniersystem sorgt der 52-mm-Rahmen für konstante Laufruhe und eine raffinierte ergonomische Passform.
 

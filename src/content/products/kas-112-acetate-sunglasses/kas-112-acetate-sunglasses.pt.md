@@ -5,7 +5,7 @@ slug: "kas-112-acetate-sunglasses"
 itemNo: "KAS-112"
 date: "2026-05-09"
 colors: "Preto & Preto Sólido & Havana & Vermelho Doce & Tartaruga Rosa & Branco Creme"
-materials: "Premium Mazzucchelli & Acetato JINYU & Personalização"
+materials: "Premium Mazzucchelli & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante de óculos de acetato, óculos de sol OEM personalizado
 
 ## Características
 
-- **Construção em Acetato Premium:** Armação e hastes em acetato de alta qualidade Mazzucchelli e JINYU, proporcionando uma sensação leve com profundidade de cor excepcional e durabilidade de longo prazo.
+- **Construção em Acetato Premium:** Armação e hastes em acetato de alta qualidade Mazzucchelli e JIMEI & JINYU, proporcionando uma sensação leve com profundidade de cor excepcional e durabilidade de longo prazo.
 - **Hardware de Precisão:** Dobradiças de estrutura estável 3+2 projetadas para suavidade operacional consistente e uma sensação tátil premium.
 - **Óptica de Alto Desempenho:** Lentes de nylon tenazes que oferecem resistência superior ao impacto e clareza óptica, totalmente personalizáveis para atender aos requisitos específicos da marca.
 - **Conforto Ergonômico:** Ponteiras nasicas perfeitamente integradas, projetadas para distribuir o peso uniformemente para conforto durante todo o dia em várias estruturas faciais.
@@ -76,7 +76,7 @@ seoKeywords: "fabricante de óculos de acetato, óculos de sol OEM personalizado
 
 ## Visão Geral
 
-A estética vintage ousada encontra a profundidade do material premium no modelo KAS-112, fabricado em acetato de alta qualidade Mazzucchelli e JINYU para garantir um acabamento vibrante e duradouro.
+A estética vintage ousada encontra a profundidade do material premium no modelo KAS-112, fabricado em acetato de alta qualidade Mazzucchelli e JIMEI & JINYU para garantir um acabamento vibrante e duradouro.
 
 Cada armação possui dobradiças 3+2 projetadas com precisão e ponteiras nasicas integradas, proporcionando um equilíbrio perfeito entre estabilidade estrutural e conforto ergonômico.
 

@@ -5,7 +5,7 @@ slug: "kao-328-acetate-optical-frame"
 itemNo: "KAO-328"
 date: "2026-05-10"
 colors: "Irem, Biru"
-materials: "Premium Mazzucchelli & JINYU Asetat & Kustomisasi"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -46,7 +46,7 @@ seoKeywords: "pabrikan frame optik asetat, pabrik kacamata OEM kustom, kacamata 
 
 ## Fitur
 
-- **Bahan Premium:** Digawe saka asetat premium Mazzucchelli lan JINYU, nawakake struktur sing enteng nanging awet banget kanthi jerone warna sing padhang lan tahan suwe.
+- **Bahan Premium:** Digawe saka asetat premium Mazzucchelli lan JIMEI & JINYU, nawakake struktur sing enteng nanging awet banget kanthi jerone warna sing padhang lan tahan suwe.
 - **Hardware Rekayasa:** Engsel struktur rivet 3+2 barel kanthi keandalan dhuwur sing nyedhiyakake gerakan gagang sing stabil lan lancar kanthi pilihan engsel pegas kustom.
 - **Optik Kuwat:** Lensa nylon kanthi daya tahan dhuwur sing nyedhiyakake kejelasan lan resistensi dampak sing apik banget kanthi pilihan lapisan kustomisasi lengkap.
 - **Kenyamanan Integrasi:** Bantalan irung integrasi sing mulus digabungake karo geometri 53-18-145mm dipun-rancang khusus kanggo nyedhiyakake pas sing seimbang lan ora lunyu.
@@ -64,7 +64,7 @@ seoKeywords: "pabrikan frame optik asetat, pabrik kacamata OEM kustom, kacamata 
 
 ## Ringkesan
 
-Jerone bahan sing sugih nemtokake model KAO-328, nggabungake asetat Mazzucchelli lan JINYU sing dipoles tangan karo siluet unisex klasik yang dirancang untuk portofolio premium.
+Jerone bahan sing sugih nemtokake model KAO-328, nggabungake asetat Mazzucchelli lan JIMEI & JINYU sing dipoles tangan karo siluet unisex klasik yang dirancang untuk portofolio premium.
 
 Model iki nggabungake engsel struktur rivet 3+2 barel sing kokoh lan bantalan irung sing diukir, njaga keselarasan struktural sing lancar bebarengan karo kenyamanan sing tahan suwe.
 

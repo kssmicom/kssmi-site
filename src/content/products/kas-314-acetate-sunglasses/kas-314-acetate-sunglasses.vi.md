@@ -5,7 +5,7 @@ slug: "kas-314-acetate-sunglasses"
 itemNo: "KAS-314"
 date: "2026-05-12"
 colors: "Xanh Neon & Sâm panh & Havana & Khói & Đen"
-materials: "Axetat Mazzucchelli cao cấp & JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Mazzucchelli cao cấp & JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "OEM & ODM ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -58,7 +58,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Cấu trúc axetat Mazzucchelli và JINYU chất lượng cao mang lại cảm giác nhẹ nhàng cùng độ bền vượt trội và chiều sâu màu sắc sống động.
+- **Chất liệu cao cấp:** Cấu trúc axetat Mazzucchelli và JIMEI & JINYU chất lượng cao mang lại cảm giác nhẹ nhàng cùng độ bền vượt trội và chiều sâu màu sắc sống động.
 - **Phụ kiện chắc chắn:** Bản lề cấu trúc 4+3 nòng được thiết kế chính xác đảm bảo vận hành trơn tru lâu dài và tính toàn vẹn của cấu trúc.
 - **Quang học vượt trội:** Tròng kính nylon có độ dẻo dai cao cung cấp khả năng chống va đập tuyệt vời và độ rõ nét của hình ảnh cho các tiêu chuẩn kính mắt cao cấp.
 - **Thoải mái công thái học:** Đệm mũi tích hợp liền mạch được thiết kế để mang lại cảm giác ổn định, không gây áp lực, phù hợp để đeo hàng ngày trong thời gian dài.
@@ -76,7 +76,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Tổng quan
 
-Kết hợp những đường nét tinh tế của axetat Mazzucchelli và JINYU, mẫu KAS-314 mang đến sự cân bằng ấn tượng giữa chiều sâu màu sắc sống động và khả năng phục hồi nhẹ nhàng. Kiểu dáng unisex này đóng vai trò là nền tảng linh hoạt cho các thương hiệu ưu tiên cả xu hướng hiện đại và kỹ thuật thủ công axetat vượt thời gian.
+Kết hợp những đường nét tinh tế của axetat Mazzucchelli và JIMEI & JINYU, mẫu KAS-314 mang đến sự cân bằng ấn tượng giữa chiều sâu màu sắc sống động và khả năng phục hồi nhẹ nhàng. Kiểu dáng unisex này đóng vai trò là nền tảng linh hoạt cho các thương hiệu ưu tiên cả xu hướng hiện đại và kỹ thuật thủ công axetat vượt thời gian.
 
 Gọng kính được thiết kế với bản lề 4+3 nòng chính xác và tròng kính nylon chống va đập, đảm bảo độ bền hiệu suất cao cùng với sự vừa vặn tích hợp và liền mạch.
 

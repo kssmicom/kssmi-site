@@ -5,7 +5,7 @@ slug: "kas-104-acetate-sunglasses"
 itemNo: "KAS-104"
 date: "2026-05-06"
 colors: "Havana & Braun & Schwarz & Floral & Purple-Stripe"
-materials: "Premium-Mazzucchelli & JINYU-Acetat & Individualisierung"
+materials: "Premium-Mazzucchelli & JIMEI & JINYU-Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -58,7 +58,7 @@ seoKeywords: "Mazzucchelli Acetat-Brillenhersteller, maßgeschneiderte OEM-Aceta
 
 ## Eigenschaften
 
-- **Premium-Rahmenmaterial:** Hochwertige Konstruktion aus Mazzucchelli- und JINYU-Acetat, die ein lebendiges, tiefglänzendes Finish mit außergewöhnlicher struktureller Haltbarkeit für High-End-Modelinien bietet.
+- **Premium-Rahmenmaterial:** Hochwertige Konstruktion aus Mazzucchelli- und JIMEI & JINYU-Acetat, die ein lebendiges, tiefglänzendes Finish mit außergewöhnlicher struktureller Haltbarkeit für High-End-Modelinien bietet.
 - **Langlebige Hardware:** Präzisionsgefertigte 2+1-Fass-Scharniere, die für gleichbleibende Laufruhe und langfristige Rahmenstabilität ausgelegt sind.
 - **Überlegene Optik:** Widerstandsfähige Nylon-Gläser mit hoher Schlagfestigkeit und optischer Klarheit, mit skalierbarer Anpassung für UV-Schutz und Spezialbeschichtungen.
 - **Ergonomische Passform:** Integrierte Nasenpads, die nahtlos in die Acetatstruktur eingearbeitet sind und für einen sicheren, druckfreien Sitz sorgen, der den ganztägigen Tragekomfort erhöht.
@@ -76,7 +76,7 @@ seoKeywords: "Mazzucchelli Acetat-Brillenhersteller, maßgeschneiderte OEM-Aceta
 
 ## Überblick
 
-Gefertigt aus einer kuratierten Auswahl an Premium-Mazzucchelli- und JINYU-Acetat, bietet die KAS-104 eine lebendige Farbtiefe und ein Hochglanz-Finish, das zeitgenössische Luxusbrillen definiert.
+Gefertigt aus einer kuratierten Auswahl an Premium-Mazzucchelli- und JIMEI & JINYU-Acetat, bietet die KAS-104 eine lebendige Farbtiefe und ein Hochglanz-Finish, das zeitgenössische Luxusbrillen definiert.
 
 Die strukturelle Integrität wird durch ein präzisionsgefertigtes 2+1-Fass-Scharniersystem verankert, gepaart mit integrierten Nasenpads, um einen sicheren, ergonomischen Sitz für verschiedene Gesichtsformen zu gewährleisten.
 

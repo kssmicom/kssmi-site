@@ -5,7 +5,7 @@ slug: "kao-315-acetate-optical-frame"
 itemNo: "KAO-315"
 date: "2026-05-10"
 colors: "Negro & Gris Translúcido & Habana & Champán & Transparente & Oliver"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalización"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -62,7 +62,7 @@ seoKeywords: "fabricante monturas ópticas acetato, gafas OEM personalizadas, mo
 
 ## Características
 
-- **Material de Alto Rendimiento:** Construcción de acetato premium Mazzucchelli y JINYU que ofrece una estética vibrante con una excepcional ligereza y durabilidad.
+- **Material de Alto Rendimiento:** Construcción de acetato premium Mazzucchelli y JIMEI & JINYU que ofrece una estética vibrante con una excepcional ligereza y durabilidad.
 - **Herrajes de Precisión:** Bisagras con estructura de remache 4+3 barrel de alta estabilidad, diseñadas para una integridad estructural superior y una suavidad operativa a largo plazo.
 - **Óptica Avanzada:** Lentes de nylon tenaz con opciones de personalización completas para tintes especializados y recubrimientos protectores.
 - **Confort Ergonómico:** Almohadillas nasales integradas sin costuras meticulosamente diseñadas para proporcionar un ajuste seguro y cómodo para un uso diario prolongado.
@@ -80,7 +80,7 @@ seoKeywords: "fabricante monturas ópticas acetato, gafas OEM personalizadas, mo
 
 ## Descripción General
 
-Una sofisticada mezcla de acetato Mazzucchelli y JINYU define el modelo KAO-315, ofreciendo un chasis vibrante pero ligero para las marcas de gafas enfocadas en una estética inspirada en la herencia.
+Una sofisticada mezcla de acetato Mazzucchelli y JIMEI & JINYU define el modelo KAO-315, ofreciendo un chasis vibrante pero ligero para las marcas de gafas enfocadas en una estética inspirada en la herencia.
 
 La arquitectura de bisagras de remache 4+3 barrel proporciona una base mecánica robusta, combinada con almohadillas nasales integradas sin costuras para un confort ergonómico sostenido.
 

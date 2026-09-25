@@ -5,7 +5,7 @@ slug: "kao-333-acetate-optical-frame"
 itemNo: "KAO-333"
 date: "2026-05-10"
 colors: "Tartaruga, Miele"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione per Conto Terzi & Design e Produzione ( Personalizzazione )"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -40,7 +40,7 @@ seoKeywords: "montature ottiche in acetato, montature in acetato personalizzabil
 
 ## Caratteristiche
 
-- **Materiale Premium:** Realizzato in acetato Mazzucchelli e JINYU di alta qualità, offre una struttura ultraleggera ma eccezionalmente durevole con un'estetica dai colori vivaci e intensi.
+- **Materiale Premium:** Realizzato in acetato Mazzucchelli e JIMEI & JINYU di alta qualità, offre una struttura ultraleggera ma eccezionalmente durevole con un'estetica dai colori vivaci e intensi.
 - **Componenti Meccanici:** Cerniere con struttura a rivetto a 3+2 barilotti ad alta affidabilità che offrono un movimento delle aste stabile e fluido, con opzioni di cerniera a molla e a 5 barilotti disponibili.
 - **Ottica Tenace:** Lenti in nylon ad alta durata che offrono un'eccezionale chiarezza ottica e resistenza agli urti con servizi completi di rivestimento personalizzato e personalizzazione.
 - **Comfort Integrato:** Naselli in acetato perfettamente integrati combinati con una geometria su misura di 51-22-145mm per offrire una vestibilità bilanciata e senza punti di pressione.
@@ -58,7 +58,7 @@ seoKeywords: "montature ottiche in acetato, montature in acetato personalizzabil
 
 ## Panoramica
 
-L'acetato premium Mazzucchelli e JINYU conferisce al modello KAO-333 una ricca profondità di colore dalle tonalità intense e una straordinaria longevità strutturale. La sua silhouette d'ispirazione retrò bilancia uno stile di lusso senza tempo con una vestibilità comoda e unisex.
+L'acetato premium Mazzucchelli e JIMEI & JINYU conferisce al modello KAO-333 una ricca profondità di colore dalle tonalità intense e una straordinaria longevità strutturale. La sua silhouette d'ispirazione retrò bilancia uno stile di lusso senza tempo con una vestibilità comoda e unisex.
 
 Le cerniere a rivetto a 3+2 barilotti progettate con precisione e i naselli integrati mantengono un allineamento stabile delle aste e una sensazione di leggerezza durante l'uso quotidiano.
 

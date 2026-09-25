@@ -5,7 +5,7 @@ slug: "kas-321-acetate-sunglasses"
 itemNo: "KAS-321"
 date: "2026-05-12"
 colors: "Translucent-Grey & Havana & Dark-Green & Black"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Technical Features
 
-- **Premium Material:** High-quality Mazzucchelli and JINYU acetate front and temples offering vibrant depth and lasting durability.
+- **Premium Material:** High-quality Mazzucchelli, JIMEI & JINYU acetate front and temples offering vibrant depth and lasting durability.
 - **Robust Hardware:** Stable 4+3 barrel structure hinges engineered for long-term operational smoothness and repeatable stability.
 - **Superior Optics:** Tenacious nylon lenses providing excellent clarity with comprehensive customization for tints and coatings.
 - **Ergonomic Design:** Integrated nose pads designed for a secure, comfortable fit and a refined, seamless aesthetic.
@@ -72,7 +72,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Overview
 
-By utilizing premium Mazzucchelli and JINYU acetate, these frames achieve a striking balance of vibrant depth and lasting durability. The translucent-grey and havana colorways reflect a refined aesthetic that translates seamlessly across diverse global fashion markets.
+By utilizing premium Mazzucchelli, JIMEI & JINYU acetate, these frames achieve a striking balance of vibrant depth and lasting durability. The translucent-grey and havana colorways reflect a refined aesthetic that translates seamlessly across diverse global fashion markets.
 
 The internal architecture features robust 4+3 barrel hinges and a classic 48-24-145mm profile, delivering a stable, unisex fit optimized for consistent daily wear.
 

@@ -5,7 +5,7 @@ slug: "kao-301-acetate-optical-frame"
 itemNo: "KAO-301"
 date: "2026-05-10"
 colors: "Hitam & Ungu-Berasap & Kura-kura & Jalur"
-materials: "Asetat Mazzucchelli Premium & JINYU & Penyesuaian"
+materials: "Asetat Mazzucchelli Premium & JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengilang bingkai optik asetat, bingkai optik OEM tersuai, cermin 
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Binaan asetat Mazzucchelli dan JINYU gred tinggi yang memberikan ketahanan luar biasa serta estetika yang kaya dan ceria.
+- **Bahan Premium:** Binaan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi yang memberikan ketahanan luar biasa serta estetika yang kaya dan ceria.
 - **Kejuruteraan Ketepatan:** Engsel struktur rivet 4+3 barrel yang teguh memastikan kestabilan operasi jangka panjang dan pergerakan yang lancar.
 - **Optik Termaju:** Lensa nylon kental yang menampilkan kejelasan tinggi dan rintangan hentaman dengan pilihan penyesuaian yang fleksibel.
 - **Reka Bentuk Ergonomik:** Alas hidung bersepadu yang direka untuk padanan yang selamat, seimbang dan keselesaan sepanjang hari yang dipertingkatkan.
@@ -72,7 +72,7 @@ seoKeywords: "pengilang bingkai optik asetat, bingkai optik OEM tersuai, cermin 
 
 ## Gambaran Keseluruhan
 
-Asetat Mazzucchelli dan JINYU membentuk asas bagi KAO-301, memberikan identiti bahan yang ceria yang mengimbangi keselesaan ringan dengan ketahanan yang berkekalan. Pemilihan bahan gred tinggi ini memastikan setiap bingkai mengekalkan kemasan premium dan integriti strukturnya merentasi pelbagai pilihan warna.
+Asetat Mazzucchelli dan JIMEI & JINYU membentuk asas bagi KAO-301, memberikan identiti bahan yang ceria yang mengimbangi keselesaan ringan dengan ketahanan yang berkekalan. Pemilihan bahan gred tinggi ini memastikan setiap bingkai mengekalkan kemasan premium dan integriti strukturnya merentasi pelbagai pilihan warna.
 
 Pelaksanaan engsel rivet 4+3 barrel memberikan struktur mekanikal yang diperkukuh, menjamin pergerakan tangkai yang lancar dan kestabilan jangka panjang dalam persekitaran penggunaan tinggi.
 

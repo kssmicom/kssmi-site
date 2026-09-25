@@ -5,7 +5,7 @@ slug: "kas-108-acetate-sunglasses"
 itemNo: "KAS-108"
 date: "2026-05-07"
 colors: "Noir & Transparent & Havane & Olive"
-materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
+materials: "Mazzucchelli Premium & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil OE
 
 ## Caractéristiques
 
-- **Construction en Acétate Premium :** Monture et branches en acétate Mazzucchelli et JINYU de haute qualité offrant une finition vibrante polie à la main avec une durabilité exceptionnelle.
+- **Construction en Acétate Premium :** Monture et branches en acétate Mazzucchelli et JIMEI & JINYU de haute qualité offrant une finition vibrante polie à la main avec une durabilité exceptionnelle.
 - **Optique Haute Performance :** Verres en nylon tenaces offrant une résistance aux chocs et une clarté optique supérieures avec de vastes options de teinture personnalisée disponibles.
 - **Matériel de Précision :** Charnières à structure stable de 3+2 barillets conçues pour une fluidité opérationnelle constante et un alignement de la monture à long terme.
 - **Confort Ergonomique :** Plaquettes de nez intégrées et structure de monture légère conçues pour un maintien sûr et un confort tout au long de la journée sur divers profils faciaux.
@@ -72,7 +72,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil OE
 
 ## Aperçu
 
-L'acétate Mazzucchelli et JINYU fournissent l'excellence fondamentale pour ce modèle, combinant une finition vibrante polie à la main avec la légèreté et la durabilité essentielles pour les lunettes haut de gamme. Ce design unisexe d'inspiration vintage constitue un élément polyvalent pour les marques recherchant un équilibre entre esthétique audacieuse et style intemporel.
+L'acétate Mazzucchelli et JIMEI & JINYU fournissent l'excellence fondamentale pour ce modèle, combinant une finition vibrante polie à la main avec la légèreté et la durabilité essentielles pour les lunettes haut de gamme. Ce design unisexe d'inspiration vintage constitue un élément polyvalent pour les marques recherchant un équilibre entre esthétique audacieuse et style intemporel.
 
 Un système de charnière à 3+2 barillets et des plaquettes de nez intégrées garantissent des performances constantes et un confort ergonomique, reflétant un engagement envers une fabrication de précision et un alignement à long terme de la monture.
 

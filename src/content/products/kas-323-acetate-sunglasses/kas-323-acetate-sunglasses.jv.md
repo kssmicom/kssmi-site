@@ -5,7 +5,7 @@ slug: "kas-323-acetate-sunglasses"
 itemNo: "KAS-323"
 date: "2026-05-12"
 colors: "Ireng & Abrit & Havana & Ijo-Neon"
-materials: "Asetat Mazzucchelli Premium & Asetat JINYU & Kustomisasi"
+materials: "Asetat Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak (OEM) & Desain lan Produksi (ODM) (Kustomisasi)"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen kacamata hitam asetat premium, pabrik kacamata hitam OEM 
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JINYU berkualitas tinggi sing nawakake finish entheng, awet, lan padhang kanggo estetika kelas dhuwur.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU berkualitas tinggi sing nawakake finish entheng, awet, lan padhang kanggo estetika kelas dhuwur.
 - **Hardware Awet:** Engsel struktur 4+3 barrel sing kuwat dirancang kanggo kelancaran operasional sing konsisten lan integritas struktural jangka panjang.
 - **Optik Performa Dhuwur:** Lensa nilon sing kuat nyedhiyakake kajelasan unggul lan resistensi dampak kanthi pilihan kustomisasi lengkap sing kasedhiya.
 - **Desain Ergonomis:** Bantalan irung integrasi lan struktur sing seimbang kanthi presisi njamin pas sing aman lan hypoallergenic kanggo kenyamanan sedina muput.
@@ -71,7 +71,7 @@ seoKeywords: "produsen kacamata hitam asetat premium, pabrik kacamata hitam OEM 
 
 ## Ringkesan
 
-Digawe kanthi presisi saka asetat Mazzucchelli lan JINYU premium, KAS-323 nawakake estetika sing padhang lan awet sing memenuhi panjaluk sing ketat saka pasar mewah global.
+Digawe kanthi presisi saka asetat Mazzucchelli lan JIMEI & JINYU premium, KAS-323 nawakake estetika sing padhang lan awet sing memenuhi panjaluk sing ketat saka pasar mewah global.
 
 Saben bingkai nduweni struktur engsel 4+3 barrel sing kuwat lan bantalan irung integrasi, nyedhiyakake kelancaran operasional sing konsisten lan kenyamanan sing luwih apik kanggo sing nganggo.
 

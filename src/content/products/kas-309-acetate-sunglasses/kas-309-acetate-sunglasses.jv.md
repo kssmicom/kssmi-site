@@ -5,7 +5,7 @@ slug: "kas-309-acetate-sunglasses"
 itemNo: "KAS-309"
 date: "2026-05-12"
 colors: "Ireng & Biru Diraja & Bulus & Olif"
-materials: "Mazzucchelli Premium & Asetat JINYU & Kustomisasi"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen kacamata hitam asetat, produksi kacamata kustom China, ka
 
 ## Fitur
 
-- **Bahan Asetat Premium:** Konstruksi asetat Mazzucchelli lan JINYU kualitas dhuwur njamin frame sing awet, entheng kanthi retensi warna sing jero lan padhang.
+- **Bahan Asetat Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kualitas dhuwur njamin frame sing awet, entheng kanthi retensi warna sing jero lan padhang.
 - **Hardware Presisi:** Engsel struktur 4+3 barrel sing awet dirancang kanggo stabilitas sing konsisten lan kelancaran operasional jangka panjang.
 - **Optik Unggul:** Lensa nilon sing kuat nyedhiyakake tahan impact dhuwur lan kejelasan sing luar biasa kanggo pengalaman visual premium.
 - **Kenyamanan Ergonomis:** Bantalan irung integrasi lan keseimbangan frame sing apik dirancang kanggo menehi pas sing aman lan hypoallergenic kanggo dienggo sedina muput.
@@ -72,7 +72,7 @@ seoKeywords: "produsen kacamata hitam asetat, produksi kacamata kustom China, ka
 
 ## Ringkesan
 
-Asetat Mazzucchelli lan JINYU nyedhiyakake dhasar kanggo KAS-309, nawakake interaksi canggih antarane retensi warna sing jero lan integritas struktural sing entheng.
+Asetat Mazzucchelli lan JIMEI & JINYU nyedhiyakake dhasar kanggo KAS-309, nawakake interaksi canggih antarane retensi warna sing jero lan integritas struktural sing entheng.
 
 Arsitektur engsel 4+3 barrel lan bantalan irung integrasi dirancang kanggo stabilitas jangka panjang, njamin pas sing aman lan nyaman ing macem-macem profil rai.
 

@@ -5,7 +5,7 @@ slug: "kao-337-acetate-optical-frame"
 itemNo: "KAO-337"
 date: "2026-05-10"
 colors: "Đen phối mật ong, Xanh dương trong suốt phối đồi mồi, Sọc nâu phối xanh dương, Sâm panh phối nâu"
-materials: "Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli cao cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM)"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -42,7 +42,7 @@ seoKeywords: "nhà sản xuất gọng kính axetat, gọng kính OEM tùy chỉ
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp：** Được chế tác tinh xảo từ chất liệu axetat Mazzucchelli và JINYU cao cấp, mang lại trọng lượng nhẹ, độ bền vượt trội cho càng kính và vành gọng trước, đồng thời giữ màu sắc rực rỡ lâu dài.
+- **Chất liệu cao cấp：** Được chế tác tinh xảo từ chất liệu axetat Mazzucchelli và JIMEI & JINYU cao cấp, mang lại trọng lượng nhẹ, độ bền vượt trội cho càng kính và vành gọng trước, đồng thời giữ màu sắc rực rỡ lâu dài.
 - **Phụ kiện tinh xảo：** Bản lề cấu trúc đinh tán 3+2 chốt bền bỉ giúp duy trì độ thẳng hàng chuẩn xác của gọng kính, mang lại sự êm ái trơn tru tối đa khi đóng mở trong suốt thời gian dài.
 - **Tròng kính tối ưu：** Trang bị tròng kính nylon chất lượng cao với khả năng chống va đập tuyệt hảo và độ quang học trong suốt ưu việt, dễ dàng tùy chọn lớp phủ bảo vệ chuyên dụng và màu sắc tùy chỉnh.
 - **Cảm giác đeo dễ chịu：** Thiết kế đệm mũi liền bằng axetat kết hợp cùng thông số kích thước tiêu chuẩn 48-21-145mm giúp phân bổ trọng lượng gọng kính cân bằng, chống trơn trượt tối ưu.
@@ -60,7 +60,7 @@ seoKeywords: "nhà sản xuất gọng kính axetat, gọng kính OEM tùy chỉ
 
 ## Tổng quan
 
-Kết hợp hoàn hảo giữa kiểu dáng retro táo bạo với chất liệu axetat Mazzucchelli và JINYU cao cấp, thiết kế gọng kính unisex này được phát triển chuyên biệt cho các thương hiệu thời trang boutique và dòng sản phẩm kính mắt cao cấp. Các tùy chọn phối màu hai tông và sọc độc đáo—bao gồm Sâm panh phối nâu và Sọc nâu phối xanh dương—tạo nên một tuyên ngôn thẩm mỹ mang tính cá nhân hóa sâu sắc.
+Kết hợp hoàn hảo giữa kiểu dáng retro táo bạo với chất liệu axetat Mazzucchelli và JIMEI & JINYU cao cấp, thiết kế gọng kính unisex này được phát triển chuyên biệt cho các thương hiệu thời trang boutique và dòng sản phẩm kính mắt cao cấp. Các tùy chọn phối màu hai tông và sọc độc đáo—bao gồm Sâm panh phối nâu và Sọc nâu phối xanh dương—tạo nên một tuyên ngôn thẩm mỹ mang tính cá nhân hóa sâu sắc.
 
 Sự thoải mái tối đa khi đeo đạt được nhờ thiết kế đệm mũi liền tinh tế cùng kích thước gọng chuẩn 48-21-145mm, được gia cố chắc chắn bởi hệ thống bản lề đinh tán 3+2 chốt bền vững giúp kéo dài tuổi thọ cấu trúc sản phẩm.
 

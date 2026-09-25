@@ -5,7 +5,7 @@ slug: "kas-019-acetate-sunglasses"
 itemNo: "KAS-019"
 date: "2026-05-10"
 colors: "Noir, Vert Laiteux, Brun Transparent"
-materials: "Acétate Premium Mazzucchelli & JINYU & Personnalisation"
+materials: "Acétate Premium Mazzucchelli & JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100pcs/couleur)"
 
@@ -41,7 +41,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil OE
 
 ## Caractéristiques
 
-- **Matériau Premium :** La construction en acétate Mazzucchelli et JINYU de haute qualité offre une monture à la fois légère et durable avec une profondeur de couleur éclatante.
+- **Matériau Premium :** La construction en acétate Mazzucchelli et JIMEI & JINYU de haute qualité offre une monture à la fois légère et durable avec une profondeur de couleur éclatante.
 - **Ingénierie de Précision :** Charnières à 3+2 barillets personnalisées (évolutives vers 5 barillets ou charnières à ressort) conçues pour une fluidité opérationnelle à long terme.
 - **Optique Haute Performance :** Les verres en nylon tenace offrent une résistance supérieure aux chocs et une clarté exceptionnelle pour les standards des lunettes haut de gamme.
 - **Confort Ergonomique :** Plaquettes de nez intégrées conçues pour un ajustement équilibré et hypoallergénique lors d'une utilisation quotidienne prolongée.
@@ -59,7 +59,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil OE
 
 ## Aperçu
 
-Les standards de la lunetterie de luxe sont respectés grâce à l'utilisation d'acétate de qualité supérieure Mazzucchelli et JINYU, offrant à cette montature une vivacité de couleur profonde et une finition légère.
+Les standards de la lunetterie de luxe sont respectés grâce à l'utilisation d'acétate de qualité supérieure Mazzucchelli et JIMEI & JINYU, offrant à cette montature une vivacité de couleur profonde et une finition légère.
 
 Les charnières de précision à 3+2 barillets fonctionnent en tandem avec les plaquettes de nez intégrées pour offrir une expérience stable et de grand confort, adaptée à un port quotidien prolongé.
 

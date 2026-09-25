@@ -5,7 +5,7 @@ slug: "kas-307-acetate-sunglasses"
 itemNo: "KAS-307"
 date: "2026-05-12"
 colors: "Black & Stripe & Clear & Tortoise"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom eyewear OEM, Mazzucchelli 
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli and JINYU acetate construction offering a vibrant, lightweight, and durable frame for long-lasting wear.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction offering a vibrant, lightweight, and durable frame for long-lasting wear.
 - **Durable Hardware:** Robust 4+3 barrel structure hinges engineered for superior stability and long-term operational smoothness.
 - **Superior Optics:** Tenacious nylon lenses providing exceptional clarity and impact resistance with extensive customization options.
 - **Ergonomic Design:** Integrated nose pads and a versatile unisex fit ensuring all-day comfort and a secure, balanced feel.
@@ -72,7 +72,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom eyewear OEM, Mazzucchelli 
 
 ## Overview
 
-Crafted from high-grade Mazzucchelli and JINYU acetate, the KAS-307 delivers a vibrant depth of color and a premium hand-feel. This material choice ensures a lightweight yet durable frame that resonates with high-end fashion sensibilities.
+Crafted from high-grade Mazzucchelli, JIMEI & JINYU acetate, the KAS-307 delivers a vibrant depth of color and a premium hand-feel. This material choice ensures a lightweight yet durable frame that resonates with high-end fashion sensibilities.
 
 The integration of robust 4+3 barrel structure hinges and tenacious nylon lenses provides long-term operational smoothness and exceptional optical clarity.
 

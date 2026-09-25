@@ -5,7 +5,7 @@ slug: "kas-133-acetate-sunglasses"
 itemNo: "KAS-133"
 date: "2026-05-09"
 colors: "Đen & Trong suốt & Hồng đậm & Xanh dương trong suốt"
-materials: "Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli cao cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công & Thiết kế và sản xuất ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -54,7 +54,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Cấu trúc Axetat Mazzucchelli và JINYU cấp cao mang lại cảm giác nhẹ nhàng với chiều sâu màu sắc sống động, lâu bền.
+- **Chất liệu cao cấp:** Cấu trúc Axetat Mazzucchelli và JIMEI & JINYU cấp cao mang lại cảm giác nhẹ nhàng với chiều sâu màu sắc sống động, lâu bền.
 - **Phụ kiện gia cố:** Bản lề cấu trúc 3+2 thùng chắc chắn được thiết kế để chuyển động chính xác và độ bền vận hành lâu dài.
 - **Quang học hiệu suất cao:** Tròng kính Nylon bền bỉ cung cấp độ rõ nét vượt trội và khả năng chống va đập với các tùy chọn tùy chỉnh phong phú.
 - **Thiết kế công thái học:** Đệm mũi tích hợp liền mạch được thiết kế để mang lại sự an toàn, không gây dị ứng và thoải mái khi đeo trong thời gian dài.
@@ -71,7 +71,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Tổng quan
 
-Axetat Mazzucchelli và JINYU cung cấp nền tảng xuất sắc cho mẫu KAS-133, mang đến một bộ gọng nhẹ nhưng bền bỉ với độ rực rỡ của màu sắc vượt trội. Thiết kế unisex của nó đóng vai trò như một bức màn đa năng cho các thương hiệu đang tìm kiếm sự cân bằng giữa sự sang trọng và thẩm mỹ dẫn đầu xu hướng.
+Axetat Mazzucchelli và JIMEI & JINYU cung cấp nền tảng xuất sắc cho mẫu KAS-133, mang đến một bộ gọng nhẹ nhưng bền bỉ với độ rực rỡ của màu sắc vượt trội. Thiết kế unisex của nó đóng vai trò như một bức màn đa năng cho các thương hiệu đang tìm kiếm sự cân bằng giữa sự sang trọng và thẩm mỹ dẫn đầu xu hướng.
 
 Độ chính xác trong vận hành được đảm bảo thông qua bản lề cấu trúc 3+2 thùng và tròng kính nylon chống va đập, giúp duy trì sự thoải mái khi đeo trong thời gian dài.
 

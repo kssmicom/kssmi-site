@@ -5,7 +5,7 @@ slug: "kas-105-acetate-sunglasses"
 itemNo: "KAS-105"
 date: "2026-05-06"
 colors: "Xám & Havana Bóng & Havana Mờ & Trong suốt & Đen"
-materials: "Mazzucchelli Cao Cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli Cao Cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -54,7 +54,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Đặc điểm
 
-- **Chất liệu Cao cấp:** Gọng kính được đánh bóng thủ công làm từ axetat Mazzucchelli và JINYU nổi tiếng thế giới, mang lại độ bền vượt trội và chiều sâu màu sắc sống động.
+- **Chất liệu Cao cấp:** Gọng kính được đánh bóng thủ công làm từ axetat Mazzucchelli và JIMEI & JINYU nổi tiếng thế giới, mang lại độ bền vượt trội và chiều sâu màu sắc sống động.
 - **Phụ kiện Bền bỉ:** Bản lề cấu trúc thùng 3+2 được thiết kế chính xác đảm bảo sự ổn định về cấu trúc và hiệu suất vận hành trơn tru, lâu dài.
 - **Quang học Hiệu suất cao:** Tròng kính nylon chống va đập cung cấp độ rõ nét và độ bền vượt trội cho các tiêu chuẩn kính mắt thời trang cao cấp.
 - **Thiết kế Công thái học:** Đệm mũi liền gọng và hình học gọng kính được cân bằng chính xác (51-23-145mm) được thiết kế để mang lại sự thoải mái cả ngày và phù hợp với mọi khuôn mặt.
@@ -71,7 +71,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Tổng quan
 
-Được chế tác từ axetat Mazzucchelli và JINYU cao cấp, KAS-105 cân bằng giữa thiết kế unisex táo bạo với chiều sâu màu sắc sống động. Gọng kính được đánh bóng thủ công này phục vụ như một nền tảng linh hoạt cho các thương hiệu ưu tiên chất liệu mật độ cao và tính thẩm mỹ thời trang đương đại.
+Được chế tác từ axetat Mazzucchelli và JIMEI & JINYU cao cấp, KAS-105 cân bằng giữa thiết kế unisex táo bạo với chiều sâu màu sắc sống động. Gọng kính được đánh bóng thủ công này phục vụ như một nền tảng linh hoạt cho các thương hiệu ưu tiên chất liệu mật độ cao và tính thẩm mỹ thời trang đương đại.
 
 Việc tích hợp bản lề thùng 3+2 và tròng kính nylon chống va đập cung cấp tính toàn vẹn về cấu trúc và hiệu suất quang học theo yêu cầu của các tiêu chuẩn thị trường xa xỉ.
 

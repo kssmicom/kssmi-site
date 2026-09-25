@@ -5,7 +5,7 @@ slug: "kas-131-acetate-sunglasses"
 itemNo: "KAS-131"
 date: "2026-05-09"
 colors: "Đen & Tím & Đồi mồi & Trắng"
-materials: "Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli cao cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100cái/màu)"
 
@@ -54,7 +54,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, sản xuất kính mắt tùy
 
 ## Đặc điểm
 
-- **Chất liệu gọng cao cấp:** Được chế tác từ axetat Mazzucchelli và JINYU chất lượng cao, mang lại cấu trúc nhẹ nhưng đặc biệt bền bỉ với độ sâu màu sắc rực rỡ và lâu dài.
+- **Chất liệu gọng cao cấp:** Được chế tác từ axetat Mazzucchelli và JIMEI & JINYU chất lượng cao, mang lại cấu trúc nhẹ nhưng đặc biệt bền bỉ với độ sâu màu sắc rực rỡ và lâu dài.
 - **Phần cứng bền bỉ:** Có hệ thống bản lề cấu trúc 4+3 barrel chuyên nghiệp được thiết kế để vận hành trơn tru vượt trội và duy trì tính toàn vẹn cấu trúc lâu dài.
 - **Quang học tiên tiến:** Được trang bị tròng kính nylon bền bỉ có khả năng chống va đập cao và độ rõ nét quang học, có thể tùy chỉnh hoàn toàn theo yêu cầu cụ thể của thương hiệu.
 - **Sự thoải mái tiện dụng:** Được thiết kế với đệm mũi liền khối để đảm bảo sự vừa vặn ổn định, không gây áp lực, phù hợp để đeo hàng ngày trong thời gian dài.
@@ -71,7 +71,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, sản xuất kính mắt tùy
 
 ## Tổng quan
 
-Axetat Mazzucchelli và JINYU tạo nên cốt lõi của những chiếc kính mát này, mang lại độ sâu màu sắc rực rỡ và độ bền nhẹ thu hút thị trường thời trang cao cấp.
+Axetat Mazzucchelli và JIMEI & JINYU tạo nên cốt lõi của những chiếc kính mát này, mang lại độ sâu màu sắc rực rỡ và độ bền nhẹ thu hút thị trường thời trang cao cấp.
 
 Hệ thống bản lề cấu trúc 4+3 barrel đảm bảo độ chính xác vận hành lâu dài, trong khi đệm mũi liền khối mang lại sự ổn định tiện dụng để đeo suốt cả ngày.
 

@@ -5,7 +5,7 @@ slug: "kas-103-acetate-sunglasses"
 itemNo: "KAS-103"
 date: "2026-05-06"
 colors: "Nero & Giallo a Scacchi & Marmo Perlato & Rosso a Scacchi & Blu a Scacchi & Nero a Scacchi"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalizzazione"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -62,7 +62,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali sole OEM personalizz
 
 ## Caratteristiche
 
-- **Materiale Montatura Premium:** Montatura e aste in acetato Mazzucchelli e JINYU di alta qualità che offrono una finitura vibrante e brillantezza profonda con un'eccezionale durata strutturale.
+- **Materiale Montatura Premium:** Montatura e aste in acetato Mazzucchelli e JIMEI & JINYU di alta qualità che offrono una finitura vibrante e brillantezza profonda con un'eccezionale durata strutturale.
 - **Hardware Resistente:** Cerniere con struttura a 3+2 barili progettate con precisione per una fluidità operativa costante e stabilità della montatura a lungo termine.
 - **Ottica Superiore:** Lenti in nylon tenace che offrono un'elevata resistenza agli urti e chiarezza ottica, con personalizzazione scalabile per protezione UV e rivestimenti specializzati.
 - **Vestibilità Ergonomica:** Naselli integrati perfettamente scolpiti nella struttura in acetato per una vestibilità sicura e senza pressione che migliora il comfort per tutto il giorno.
@@ -80,7 +80,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali sole OEM personalizz
 
 ## Panoramica
 
-Il modello KAS-103 utilizza acetato Mazzucchelli e JINYU premium per ottenere una finitura brillante, con sofisticati motivi a scacchi e marmo che risuonano con le tendenze dell'alta moda.
+Il modello KAS-103 utilizza acetato Mazzucchelli e JIMEI & JINYU premium per ottenere una finitura brillante, con sofisticati motivi a scacchi e marmo che risuonano con le tendenze dell'alta moda.
 
 Le cerniere di precisione a 3+2 barili e i naselli integrati offrono la stabilità strutturale e il comfort ergonomico attesi dai consumatori di lusso.
 

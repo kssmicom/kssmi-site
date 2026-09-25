@@ -5,7 +5,7 @@ slug: "kao-336-acetate-optical-frame"
 itemNo: "KAO-336"
 date: "2026-05-10"
 colors: "Ireng, Transparan karo Bulus, Ijo Transparan karo Bulus"
-materials: "Asetat Premium Mazzucchelli & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -41,7 +41,7 @@ seoKeywords: "frame optik asetat kustomisasi, grosir frame optik kustom, produse
 
 ## Fitur
 
-- **Bahan Premium:** Digawe saka asetat premium Mazzucchelli lan JINYU kanggo ngasilake gagang lan bagian ngarep sing enteng lan awet banget kanthi padhang warna sing apik banget.
+- **Bahan Premium:** Digawe saka asetat premium Mazzucchelli lan JIMEI & JINYU kanggo ngasilake gagang lan bagian ngarep sing enteng lan awet banget kanthi padhang warna sing apik banget.
 - **Piranti Presisi:** Dilengkapi sistem engsel struktur paku keling 3+2 barrel sing stabil, dirancang kanggo njaga kelancaran operasional jangka panjang lan ketepatan gagang.
 - **Optik Kuwat:** Dilengkapi lensa nilon sing kuwat sing menehi kekuwatan benturan sing apik banget lan kejelasan optik sing dhuwur, bisa dicocokake karo lapisan khusus lan warna kustom.
 - **Kenyamanan Integrasi:** Digawe nganggo bantalan irung asetat integrasi sing alus digabungake karo profil standar 46-25-145mm kanggo mbagi bobot frame kanthi rata lan nyegah lunyu.
@@ -59,7 +59,7 @@ seoKeywords: "frame optik asetat kustomisasi, grosir frame optik kustom, produse
 
 ## Ringkesan
 
-Digawe kanggo merek sing mbutuhake padhang estetika sing apik banget, model KAO-336 nggabungake asetat premium Mazzucchelli lan JINYU dadi profil unisex sing enteng lan awet banget. Gaya retro lan pilihan warna kustom ndadekake frame klasik iki dadi produk sing misuwur kanggo portofolio optik kelas dhuwur.
+Digawe kanggo merek sing mbutuhake padhang estetika sing apik banget, model KAO-336 nggabungake asetat premium Mazzucchelli lan JIMEI & JINYU dadi profil unisex sing enteng lan awet banget. Gaya retro lan pilihan warna kustom ndadekake frame klasik iki dadi produk sing misuwur kanggo portofolio optik kelas dhuwur.
 
 Sistem engsel struktur paku keling 3+2 barrel sing teliti njaga gagang tetep sejajar kanggo operasional sing lancar, dibarengi bantalan irung asetat integrasi lan ergonomis pas 46-25-145mm.
 

@@ -5,7 +5,7 @@ slug: "kas-301-acetate-sunglasses"
 itemNo: "KAS-301"
 date: "2026-05-11"
 colors: "Đen & Tím & Đồi mồi & Sọc"
-materials: "Mazzucchelli Cao Cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli Cao Cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất OEM (Gia công) & Sản xuất ODM (Thiết kế & Sản xuất) ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -54,7 +54,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Đặc điểm
 
-- **Chất liệu Cao cấp:** Cấu trúc axetat Mazzucchelli và JINYU chính hãng mang lại tính thẩm mỹ nhẹ, bền và sống động cho các bộ sưu tập thời trang cao cấp.
+- **Chất liệu Cao cấp:** Cấu trúc axetat Mazzucchelli và JIMEI & JINYU chính hãng mang lại tính thẩm mỹ nhẹ, bền và sống động cho các bộ sưu tập thời trang cao cấp.
 - **Phụ kiện Bền bỉ:** Bản lề cấu trúc 4+3 barrel chắc chắn được thiết kế để vận hành trơn tru liên tục và độ tin cậy cấu trúc lâu dài.
 - **Quang học Hiệu suất cao:** Tròng kính nylon bền bỉ cung cấp độ trong suốt vượt trội và khả năng chống va đập với các khả năng nhuộm màu và phủ lớp tùy chỉnh linh hoạt.
 - **Thiết kế Công thái học:** Đệm mũi liền khối và kiểu dáng gọng unisex đảm bảo sự vừa vặn an toàn, thoải mái khi đeo hàng ngày trong thời gian dài.
@@ -71,7 +71,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Tổng quan
 
-Axetat Mazzucchelli và JINYU cung cấp một nền tảng tinh tế cho thiết kế unisex táo bạo này. Sự tương tác giữa các họa tiết đồi mồi và sọc sống động tạo ra một bản sắc thị giác khác biệt, phù hợp với thị hiếu thời trang cao cấp.
+Axetat Mazzucchelli và JIMEI & JINYU cung cấp một nền tảng tinh tế cho thiết kế unisex táo bạo này. Sự tương tác giữa các họa tiết đồi mồi và sọc sống động tạo ra một bản sắc thị giác khác biệt, phù hợp với thị hiếu thời trang cao cấp.
 
 Bản lề 4+3 barrel được kỹ thuật chính xác và đệm mũi liền khối đảm bảo rằng tính toàn vẹn cơ học của gọng kính phù hợp với thành phần chất liệu cao cấp của nó.
 

@@ -5,7 +5,7 @@ slug: "kao-501-acetate-optical-frame"
 itemNo: "KAO-501"
 date: "2026-05-10"
 colors: "Đen & Đồi mồi & Sô cô la & Kem"
-materials: "Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli cao cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công & Thiết kế và sản xuất ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -55,7 +55,7 @@ seoKeywords: "nhà sản xuất gọng kính axetat, gọng kính cận OEM tùy
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Được chế tác từ axetat Mazzucchelli và JINYU chính hãng, mang lại bộ khung nhẹ nhưng bền bỉ với lớp hoàn thiện sống động, độ bóng cao.
+- **Chất liệu cao cấp:** Được chế tác từ axetat Mazzucchelli và JIMEI & JINYU chính hãng, mang lại bộ khung nhẹ nhưng bền bỉ với lớp hoàn thiện sống động, độ bóng cao.
 - **Phụ kiện cổ điển:** Bản lề cấu trúc đinh tán 4+3 chắc chắn được thiết kế để có tính toàn vẹn cấu trúc vượt trội và thẩm mỹ thủ công vượt thời gian.
 - **Thiết kế điêu khắc:** Cấu trúc càng kính thanh mảnh với các chi tiết điêu khắc chính xác cho vẻ ngoài tinh tế và tăng cường sự thoải mái về mặt công thái học.
 - **Quang học hiệu suất cao:** Tròng kính nylon bền bỉ mang lại độ rõ nét đặc biệt và khả năng chống va đập với khả năng tùy chỉnh hoàn toàn về màu sắc và lớp phủ.
@@ -73,7 +73,7 @@ seoKeywords: "nhà sản xuất gọng kính axetat, gọng kính cận OEM tùy
 
 ## Tổng quan
 
-Chất liệu axetat Mazzucchelli và JINYU chính hãng mang lại cho KAO-501 lớp hoàn thiện có độ bóng cao đặc trưng và chiều sâu cấu trúc kiên cố.
+Chất liệu axetat Mazzucchelli và JIMEI & JINYU chính hãng mang lại cho KAO-501 lớp hoàn thiện có độ bóng cao đặc trưng và chiều sâu cấu trúc kiên cố.
 
 Gọng kính sử dụng hệ thống bản lề đinh tán 4+3 chắc chắn và càng kính thanh mảnh điêu khắc để cân bằng giữa thẩm mỹ cổ điển với độ tin cậy cơ học hiện đại và sự thoải mái.
 

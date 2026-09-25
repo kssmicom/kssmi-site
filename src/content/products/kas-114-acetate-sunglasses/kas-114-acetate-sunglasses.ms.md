@@ -5,7 +5,7 @@ slug: "kas-114-acetate-sunglasses"
 itemNo: "KAS-114"
 date: "2026-05-09"
 colors: "Hitam & Syampanya & Kuning"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -50,7 +50,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam unisex OEM t
 
 ## Ciri-ciri Teknikal
 
-- **Bahan Premium:** Dibina daripada asetat Mazzucchelli dan JINYU berkualiti tinggi untuk memberikan struktur yang ringan dan tahan lama dengan daya tarikan visual yang bertenaga.
+- **Bahan Premium:** Dibina daripada asetat Mazzucchelli dan JIMEI & JINYU berkualiti tinggi untuk memberikan struktur yang ringan dan tahan lama dengan daya tarikan visual yang bertenaga.
 - **Perkakasan Tahan Lama:** Direka dengan engsel struktur 3+2 yang kukuh yang memastikan kelancaran operasi jangka panjang dan kestabilan struktur.
 - **Optik Ketepatan:** Dilengkapi dengan lensa nilon yang tahan lasak yang menawarkan kejelasan yang unggul dan pilihan penyesuaian yang meluas untuk koleksi premium.
 - **Keselesaan Lancar:** Alas hidung bersepadu direka untuk memberikan kesesuaian yang selamat dan ergonomik untuk pemakaian yang berpanjangan sepanjang hari.
@@ -68,7 +68,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam unisex OEM t
 
 ## Gambaran Keseluruhan
 
-Dicipta untuk pasaran mewah yang menuntut kehadiran estetik dan integriti struktur, KAS-114 menggunakan asetat Mazzucchelli dan JINYU peringkat teratas untuk mencapai binaan yang bertenaga dan ringan.
+Dicipta untuk pasaran mewah yang menuntut kehadiran estetik dan integriti struktur, KAS-114 menggunakan asetat Mazzucchelli dan JIMEI & JINYU peringkat teratas untuk mencapai binaan yang bertenaga dan ringan.
 
 Direka dengan engsel struktur 3+2 yang kukuh dan alas hidung bersepadu, bingkai unisex yang berani ini menjamin kelancaran operasi jangka panjang yang luar biasa serta kesesuaian ergonomik yang selamat.
 

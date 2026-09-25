@@ -5,7 +5,7 @@ slug: "kas-116-acetate-sunglasses"
 itemNo: "KAS-116"
 date: "2026-05-09"
 colors: "Siyah & Yeşil-Mermer & Beyaz & Mermer"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM gözlük fabrikas
 
 ## Teknik Özellikler
 
-- **Premium Asetat Yapısı:** Hafif, dayanıklı ve canlı bir görünüm sunan yüksek kaliteli Mazzucchelli ve JINYU asetat çerçeve ve saplar.
+- **Premium Asetat Yapısı:** Hafif, dayanıklı ve canlı bir görünüm sunan yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat çerçeve ve saplar.
 - **Dayanıklı Donanım:** Uzun vadeli operasyonel pürüzsüzlük ve güvenilirlik için tasarlanmış sağlam 3+2 namlu yapılı menteşeler.
 - **Premium Optik:** Kapsamlı özel renklendirme ve kaplama seçeneklerine sahip dayanıklı naylon lensler.
 - **Kesintisiz Konfor:** Günlük kullanım için güvenli ve rahat bir uyum sağlamak üzere tasarlanmış entegre burun tamponları.
@@ -72,7 +72,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM gözlük fabrikas
 
 ## Genel Bakış
 
-Yüksek kaliteli Mazzucchelli ve JINYU asetattan üretilen KAS-116, herhangi bir premium gözlük koleksiyonunu anında yükselten cesur, unisex bir estetik sunar. Bu şık çerçeve, hafif ve dayanıklı bir yapıyı çarpıcı derecede canlı görsel çekicilikle dengeliyor.
+Yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetattan üretilen KAS-116, herhangi bir premium gözlük koleksiyonunu anında yükselten cesur, unisex bir estetik sunar. Bu şık çerçeve, hafif ve dayanıklı bir yapıyı çarpıcı derecede canlı görsel çekicilikle dengeliyor.
 
 Güvenilir günlük performans için tasarlanmış olup, olağanüstü konfor sağlamak için sağlam 3+2 namlu menteşelere, esnek naylon lenslere ve kusursuz bir şekilde entegre edilmiş burun tamponlarına sahiptir.
 

@@ -5,7 +5,7 @@ slug: "kas-123-acetate-sunglasses"
 itemNo: "KAS-123"
 date: "2026-05-09"
 colors: "Negro & Mostaza & Arce"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalización"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -49,7 +49,7 @@ seoKeywords: "fabricante gafas de sol acetato, gafas OEM personalizadas, gafas d
 ---
 
 ## Características
-- **Acetato Premium:** Construcción de acetato Mazzucchelli y JINYU pulido a mano que ofrece una durabilidad excepcional y una profundidad de color vibrante para el branding de lujo.
+- **Acetato Premium:** Construcción de acetato Mazzucchelli y JIMEI & JINYU pulido a mano que ofrece una durabilidad excepcional y una profundidad de color vibrante para el branding de lujo.
 - **Bisagras de Precisión:** Robustas bisagras de estructura de 3+2 barriles diseñadas para una fluidez operativa constante e integridad estructural a largo plazo.
 - **Óptica de Alto Rendimiento:** Lentes de nylon tenaz que proporcionan una claridad superior y resistencia a los impactos, con opciones de personalización completa para recubrimientos especializados de lentes.
 - **Diseño Ergonómico:** Almohadillas nasales integradas y contornos de varillas refinados que aseguran un ajuste seguro y sin presión para una comodidad durante todo el día.
@@ -66,7 +66,7 @@ seoKeywords: "fabricante gafas de sol acetato, gafas OEM personalizadas, gafas d
 
 ## Descripción General
 
-Al combinar una vibrante profundidad de color con la integridad estructural del acetato Mazzucchelli y JINYU pulido a mano, el modelo KAS-123 representa una base versátil para las colecciones de gafas de lujo.
+Al combinar una vibrante profundidad de color con la integridad estructural del acetato Mazzucchelli y JIMEI & JINYU pulido a mano, el modelo KAS-123 representa una base versátil para las colecciones de gafas de lujo.
 
 Su perfil unisex equilibrado se ve reforzado por bisagras de 3+2 barriles diseñadas con precisión y almohadillas nasales integradas, lo que garantiza un ajuste refinado y duradero para el uso diario.
 

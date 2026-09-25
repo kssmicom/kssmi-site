@@ -5,7 +5,7 @@ slug: "kas-128-acetate-sunglasses"
 itemNo: "KAS-128"
 date: "2026-05-09"
 colors: "Negro & Blanco & Mármol Verde & Mármol Azul & Mármol Negro & Rubí"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalización"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalización"
 serviceMode: "OEM & ODM ( Personalización )"
 moq: "300 uds/modelo (100uds/color)"
 
@@ -62,7 +62,7 @@ seoKeywords: "fabricante gafas acetato premium, gafas OEM personalizadas KAS-128
 
 ## Características
 
-- **Acetato Premium:** Fabricado con el renombrado acetato Mazzucchelli y JINYU, ofreciendo una durabilidad excepcional y un acabado vibrante de alto brillo.
+- **Acetato Premium:** Fabricado con el renombrado acetato Mazzucchelli y JIMEI & JINYU, ofreciendo una durabilidad excepcional y un acabado vibrante de alto brillo.
 - **Bisagras de Precisión:** Robustas bisagras de estructura 4+3 barriles diseñadas para una estabilidad superior y una suavidad operativa a largo plazo.
 - **Óptica de Alto Rendimiento:** Lentes de nylon tenaz que proporcionan excelente claridad y resistencia a los impactos con amplias opciones de personalización.
 - **Confort Integrado:** Almohadillas nasales integradas moldeadas con precisión, diseñadas para un ajuste seguro, hipoalergénico y equilibrado durante el uso prolongado.
@@ -79,7 +79,7 @@ seoKeywords: "fabricante gafas acetato premium, gafas OEM personalizadas KAS-128
 
 ## Resumen
 
-El acetato Mazzucchelli y JINYU se unen en una silueta audaz y de alto brillo que define el lujo moderno a través de su estética unisex única.
+El acetato Mazzucchelli y JIMEI & JINYU se unen en una silueta audaz y de alto brillo que define el lujo moderno a través de su estética unisex única.
 
 Las bisagras de 4+3 barriles de ingeniería de precisión y las almohadillas nasales integradas aseguran una estabilidad excepcional y una comodidad a largo plazo para el usuario.
 

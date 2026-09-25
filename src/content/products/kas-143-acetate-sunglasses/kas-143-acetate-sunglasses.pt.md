@@ -5,7 +5,7 @@ slug: "kas-143-acetate-sunglasses"
 itemNo: "KAS-143"
 date: "2026-05-09"
 colors: "Preto & Champanhe & Tartaruga & Oliva"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM)"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos OEM personalizado
 
 ## Características
 
-- **Material Premium:** Construção em acetato Mazzucchelli e JINYU de alta qualidade, oferecendo uma estética vibrante com durabilidade leve e duradoura para exibições de varejo premium.
+- **Material Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, oferecendo uma estética vibrante com durabilidade leve e duradoura para exibições de varejo premium.
 - **Hardware de Precisão:** Dobradiças robustas com estrutura de 4+3 barris, projetadas para uma fluidez operacional consistente e uma excepcional longevidade da armação.
 - **Óptica Aprimorada:** Lentes de nylon tenaz que proporcionam clareza e resistência ao impacto superiores, com amplas opções de revestimento personalizado para atender aos padrões específicos da marca.
 - **Conforto Integrado:** Ponteiras nasicas integradas moldadas sem costura, projetadas para um ajuste seguro e hipoalergênico que garante a satisfação do usuário a longo prazo.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos OEM personalizado
 
 ## Visão Geral
 
-Fabricado em acetato Mazzucchelli e JINYU de primeira qualidade, o KAS-143 personifica um equilíbrio refinado entre a estética vintage e a durabilidade moderna. A sua vibrante paleta de cores e a sofisticada silhueta unissexo proporcionam uma base intemporal para coleções de moda de gama alta.
+Fabricado em acetato Mazzucchelli e JIMEI & JINYU de primeira qualidade, o KAS-143 personifica um equilíbrio refinado entre a estética vintage e a durabilidade moderna. A sua vibrante paleta de cores e a sofisticada silhueta unissexo proporcionam uma base intemporal para coleções de moda de gama alta.
 
 As dobradiças de 4+3 barris projetadas com precisão e as ponteiras nasicas integradas garantem uma integridade estrutural duradoura e um ajuste seguro e confortável para o utilizador.
 

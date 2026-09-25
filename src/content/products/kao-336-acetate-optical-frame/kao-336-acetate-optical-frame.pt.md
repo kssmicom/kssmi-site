@@ -5,7 +5,7 @@ slug: "kao-336-acetate-optical-frame"
 itemNo: "KAO-336"
 date: "2026-05-10"
 colors: "Preto, Transparente com Tartaruga, Verde Claro com Tartaruga"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda & Design e Fabricação ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -41,7 +41,7 @@ seoKeywords: "armações ópticas de acetato personalizáveis, armações óptic
 
 ## Características
 
-- **Material Premium:** Fabricado a partir de acetato premium Mazzucchelli e JINYU para fornecer frentes e hastes leves e altamente duráveis, com excepcional vivacidade de cor.
+- **Material Premium:** Fabricado a partir de acetato premium Mazzucchelli e JIMEI & JINYU para fornecer frentes e hastes leves e altamente duráveis, com excepcional vivacidade de cor.
 - **Componentes Mecânicos:** Equipado com um sistema estável de dobradiças com estrutura de rebite de 3+2 tambores projetado para manter um alinhamento exato e garantir suavidade operacional a longo prazo.
 - **Óptica Tenaz:** Equipado com lentes de nylon resistentes que oferecem resistência superior ao impacto e alta clareza óptica, personalizáveis com revestimentos especiais e cores sob medida.
 - **Conforto Integrado:** Construído com plaquetas nasais de acetato integradas sem costuras combinadas com um perfil padrão de 46-25-145mm para distribuir uniformemente o peso da armação e evitar o escorregamento.
@@ -59,7 +59,7 @@ seoKeywords: "armações ópticas de acetato personalizáveis, armações óptic
 
 ## Visão Geral
 
-Criado para marcas que exigem uma vivacidade estética excepcional, o modelo KAO-336 combina acetato premium Mazzucchelli e JINYU em um perfil unisex altamente durável e leve. O estilo retro e as opções de cores personalizadas tornam esta armação clássica uma peça de destaque para os portfólios ópticos de alta gama.
+Criado para marcas que exigem uma vivacidade estética excepcional, o modelo KAO-336 combina acetato premium Mazzucchelli e JIMEI & JINYU em um perfil unisex altamente durável e leve. O estilo retro e as opções de cores personalizadas tornam esta armação clássica uma peça de destaque para os portfólios ópticos de alta gama.
 
 Um meticuloso sistema de dobradiças com estrutura de rebite de 3+2 tambores mantém as hastes alinhadas para um funcionamento suave, emparelhado com plaquetas de acetato integradas e um ajuste confortável de 46-25-145mm.
 

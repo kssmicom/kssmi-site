@@ -5,7 +5,7 @@ slug: "kas-142-acetate-sunglasses"
 itemNo: "KAS-142"
 date: "2026-05-09"
 colors: "Negro & Blanco & Rojo & Tortuga"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalización"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM) ( Personalización )"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "gafas de sol de acetato, fabricante de gafas de moda, fábrica de 
 
 ## Características
 
-- **Material Premium:** Construcción de acetato Mazzucchelli y JINYU de alta calidad que ofrece una estética refinada con una durabilidad excepcional y una comodidad ligera.
+- **Material Premium:** Construcción de acetato Mazzucchelli y JIMEI & JINYU de alta calidad que ofrece una estética refinada con una durabilidad excepcional y una comodidad ligera.
 - **Hardware Robusto:** Bisagras con estructura de 4+3 barriles diseñadas con precisión para una estabilidad superior y una suavidad operativa duradera.
 - **Óptica Superior:** Lentes de nylon tenaz de alta claridad que proporcionan una excelente resistencia a los impactos y opciones versátiles para tintes y recubrimientos especializados.
 - **Ergonomía Integrada:** Almohadillas nasales integradas sin costuras y una geometría de montura equilibrada de 57 mm que garantiza un ajuste estable y sin presión para diversos perfiles faciales.
@@ -71,7 +71,7 @@ seoKeywords: "gafas de sol de acetato, fabricante de gafas de moda, fábrica de 
 
 ## Descripción General
 
-Fabricado con acetato Mazzucchelli y JINYU de primera calidad, este modelo combina una vibrante paleta de colores con lentes de nylon de alta claridad para una estética sofisticada de nivel de lujo.
+Fabricado con acetato Mazzucchelli y JIMEI & JINYU de primera calidad, este modelo combina una vibrante paleta de colores con lentes de nylon de alta claridad para una estética sofisticada de nivel de lujo.
 
 Las bisagras con estructura de 4+3 barriles y las almohadillas nasales integradas aseguran una estabilidad estructural duradera y un ajuste ergonómico equilibrado en su geometría de 57 mm.
 

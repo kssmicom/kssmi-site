@@ -5,7 +5,7 @@ slug: "kas-314-acetate-sunglasses"
 itemNo: "KAS-314"
 date: "2026-05-12"
 colors: "Neon-Green & Champagne & Havana & Smoke & Black"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -58,7 +58,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli and JINYU acetate construction offering a lightweight feel with exceptional durability and vibrant color depth.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction offering a lightweight feel with exceptional durability and vibrant color depth.
 - **Robust Hardware:** Precision-engineered 4+3 barrel structure hinges ensuring long-term operational smoothness and structural integrity.
 - **Superior Optics:** High-tenacity nylon lenses providing excellent impact resistance and visual clarity for premium eyewear standards.
 - **Ergonomic Comfort:** Seamlessly integrated nose pads designed for a stable, pressure-free fit suitable for extended daily wear.
@@ -75,7 +75,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Overview
 
-Integrating the refined textures of Mazzucchelli and JINYU acetate, the KAS-314 offers a striking balance of vibrant color depth and lightweight resilience. This unisex silhouette serves as a versatile foundation for brands prioritizing both modern trends and timeless acetate craftsmanship.
+Integrating the refined textures of Mazzucchelli, JIMEI & JINYU acetate, the KAS-314 offers a striking balance of vibrant color depth and lightweight resilience. This unisex silhouette serves as a versatile foundation for brands prioritizing both modern trends and timeless acetate craftsmanship.
 
 The frame is engineered with precision 4+3 barrel hinges and impact-resistant nylon lenses, ensuring high-performance durability alongside a seamless, integrated fit.
 

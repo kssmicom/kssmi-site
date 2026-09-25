@@ -5,7 +5,7 @@ slug: "kas-011-acetate-sunglasses"
 itemNo: "KAS-011"
 date: "2026-05-10"
 colors: "Havana & Nero & Bianco"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalizzazione"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100pz/colore)"
 
@@ -50,7 +50,7 @@ seoKeywords: "produttore occhiali da sole in acetato KAS-011, occhiali di lusso 
 
 ## Caratteristiche
 
-- **Materiale Premium:** Realizzato in acetato Mazzucchelli e JINYU di alta qualità per offrire una finitura leggera, durevole e vibrante che esalta il valore del marchio premium.
+- **Materiale Premium:** Realizzato in acetato Mazzucchelli e JIMEI & JINYU di alta qualità per offrire una finitura leggera, durevole e vibrante che esalta il valore del marchio premium.
 - **Hardware Durevole:** Presenta un robusto sistema di cerniere a 4+3 barili progettato per una fluidità operativa a lungo termine e integrità strutturale.
 - **Ottica ad Alte Prestazioni:** Dotato di lenti in nylon tenace che offrono chiarezza e resistenza agli urti superiori con ampie opzioni di colorazione e rivestimento personalizzate.
 - **Ergonomia Integrata:** Progettato con naselli integrati per fornire un'estetica senza cuciture e un comfort affidabile per diverse strutture facciali.
@@ -68,7 +68,7 @@ seoKeywords: "produttore occhiali da sole in acetato KAS-011, occhiali di lusso 
 
 ## Panoramica
 
-L'acetato Mazzucchelli e JINYU di alta qualità costituisce il cuore del modello KAS-011, creando una montatura vibrante e leggera che risponde alle sofisticate esigenze dei marchi di occhiali di lusso.
+L'acetato Mazzucchelli e JIMEI & JINYU di alta qualità costituisce il cuore del modello KAS-011, creando una montatura vibrante e leggera che risponde alle sofisticate esigenze dei marchi di occhiali di lusso.
 
 L'integrazione di un sistema di cerniere a 4+3 barili e naselli senza cuciture garantisce longevità strutturale e affidabilità ergonomica in diverse serie di produzione.
 

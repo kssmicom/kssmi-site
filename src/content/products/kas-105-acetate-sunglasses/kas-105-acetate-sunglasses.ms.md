@@ -5,7 +5,7 @@ slug: "kas-105-acetate-sunglasses"
 itemNo: "KAS-105"
 date: "2026-05-06"
 colors: "Kelabu & Havana Berkilat & Havana Pudar & Jernih & Hitam"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Bingkai digilap tangan yang diperbuat daripada asetat Mazzucchelli dan JINYU yang terkenal di dunia, menawarkan ketahanan yang luar biasa dan kedalaman warna yang bersemangat.
+- **Bahan Premium:** Bingkai digilap tangan yang diperbuat daripada asetat Mazzucchelli dan JIMEI & JINYU yang terkenal di dunia, menawarkan ketahanan yang luar biasa dan kedalaman warna yang bersemangat.
 - **Perkakasan Tahan Lama:** Engsel tong 3+2 yang direka dengan tepat memastikan kestabilan struktur dan prestasi operasi jangka panjang yang lancar.
 - **Optik Berprestasi Tinggi:** Lensa nilon tahan hentaman yang memberikan kejelasan dan ketahanan unggul untuk standard cermin mata fesyen mewah.
 - **Reka Bentuk Ergonomik:** Alas hidung bersepadu dan geometri bingkai seimbang tepat (51-23-145mm) yang direka untuk keselesaan sepanjang hari dan kesesuaian universal.
@@ -71,7 +71,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Gambaran Keseluruhan
 
-Dihasilkan daripada asetat Mazzucchelli dan JINYU premium, KAS-105 mengimbangi reka bentuk unisex yang berani dengan kedalaman warna yang bersemangat. Bingkai yang digilap tangan ini berfungsi sebagai asas serba boleh bagi jenama yang mengutamakan bahan berketumpatan tinggi dan estetika fesyen kontemporari.
+Dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU premium, KAS-105 mengimbangi reka bentuk unisex yang berani dengan kedalaman warna yang bersemangat. Bingkai yang digilap tangan ini berfungsi sebagai asas serba boleh bagi jenama yang mengutamakan bahan berketumpatan tinggi dan estetika fesyen kontemporari.
 
 Penyepaduan engsel tong 3+2 dan lensa nilon tahan hentaman memberikan integriti struktur dan prestasi optik yang diperlukan oleh standard pasaran mewah.
 

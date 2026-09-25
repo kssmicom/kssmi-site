@@ -5,7 +5,7 @@ slug: "kas-130-acetate-sunglasses"
 itemNo: "KAS-130"
 date: "2026-05-09"
 colors: "Schwarz & Grau & Schildpatt & Pfirsich & Braun"
-materials: "Premium-Mazzucchelli & JINYU-Acetat & Individualisierung"
+materials: "Premium-Mazzucchelli & JIMEI & JINYU-Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) ( Individualisierung )"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -58,7 +58,7 @@ seoKeywords: "Hersteller von Acetat-Sonnenbrillen, maßgeschneiderte OEM-Sonnenb
 
 ## Eigenschaften
 
-- **Premium-Material:** Hochwertige Konstruktion aus Mazzucchelli- und JINYU-Acetat, die außergewöhnliche Haltbarkeit und lebendige Farbtiefe für eine lang anhaltende ästhetische Attraktivität bietet.
+- **Premium-Material:** Hochwertige Konstruktion aus Mazzucchelli- und JIMEI & JINYU-Acetat, die außergewöhnliche Haltbarkeit und lebendige Farbtiefe für eine lang anhaltende ästhetische Attraktivität bietet.
 - **Robuste Hardware:** Präzisionsgefertigte 4+3 Barrel-Scharniere, die für überlegene Stabilität und eine reibungslose, langfristige Betriebsleistung entwickelt wurden.
 - **Hochauflösende Optik:** Widerstandsfähige Nylon-Gläser, die eine kristallklare Sicht und eine hohe Schlagfestigkeit bieten, mit umfangreichen Anpassungsoptionen für Tönungen und Beschichtungen.
 - **Ergonomischer Komfort:** Das integrierte Nasenpad-Design sorgt für einen sicheren, druckfreien Sitz, der für ganztägiges Tragen bei verschiedenen Gesichtsprofilen geeignet ist.
@@ -76,7 +76,7 @@ seoKeywords: "Hersteller von Acetat-Sonnenbrillen, maßgeschneiderte OEM-Sonnenb
 
 ## Übersicht
 
-Gefertigt aus hochwertigem Mazzucchelli- und JINYU-Acetat, weisen diese Rahmen eine kühne, luxusorientierte Designsprache auf, die sowohl die lebendige Farbtiefe als auch die dauerhafte strukturelle Stabilität betont.
+Gefertigt aus hochwertigem Mazzucchelli- und JIMEI & JINYU-Acetat, weisen diese Rahmen eine kühne, luxusorientierte Designsprache auf, die sowohl die lebendige Farbtiefe als auch die dauerhafte strukturelle Stabilität betont.
 
 Die Integration von 4+3-Tonnenscharnieren und ein druckfreies Nasenpad-Design bieten das raffinierte taktile Erlebnis und die langfristige Haltbarkeit, die von High-End-Einzelhandelspublikum erwartet werden.
 

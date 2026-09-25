@@ -5,7 +5,7 @@ slug: "kao-311-acetate-optical-frame"
 itemNo: "KAO-311"
 date: "2026-05-10"
 colors: "Preto & Roxo Esfumaçado & Tartaruga & Marrom"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, óculos OEM personal
 
 ## Características
 
-- **Seleção de Materiais Premium:** Construído com acetato Mazzucchelli e JINYU de alta qualidade, oferecendo cores vibrantes e uma estrutura leve e durável.
+- **Seleção de Materiais Premium:** Construído com acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, oferecendo cores vibrantes e uma estrutura leve e durável.
 - **Hardware Reforçado:** Possui um robusto sistema de dobradiças com estrutura de rebite 4+3 barrel, projetado para estabilidade excepcional e suavidade operacional de longo prazo.
 - **Óptica de Alto Desempenho:** Equipado com lentes de nylon tenaz que oferecem resistência superior ao impacto e clareza, com personalização flexível para tonalidades e revestimentos.
 - **Conforto Ergonomico:** Plaquetas integradas projetadas para um ajuste perfeito e distribuição equilibrada de peso, garantindo uso confortável durante todo o dia.
@@ -72,7 +72,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, óculos OEM personal
 
 ## Visão Geral
 
-As coleções de óculos de luxo beneficiam-se da fusão de acetato Mazzucchelli e JINYU do modelo KAO-311, uma combinação que equilibra estética vibrante polida à mão com excepcional longevidade estrutural.
+As coleções de óculos de luxo beneficiam-se da fusão de acetato Mazzucchelli e JIMEI & JINYU do modelo KAO-311, uma combinação que equilibra estética vibrante polida à mão com excepcional longevidade estrutural.
 
 A integração de dobradiças de rebite 4+3 barrel e um design de ponte ergonômico e contínuo garante que cada armação ofereça conforto consistente e durabilidade de alto desempenho em cada lote de produção.
 

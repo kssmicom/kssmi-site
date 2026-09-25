@@ -5,7 +5,7 @@ slug: "kas-110-acetate-sunglasses"
 itemNo: "KAS-110"
 date: "2026-05-07"
 colors: "Candy-Red & Pink-Tortoise & Cream-White & Hitam"
-materials: "Asetat Premium Mazzucchelli & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengeluar cermin mata asetat, cermin mata hitam OEM tersuai, label
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Binaan asetat Mazzucchelli dan JINYU yang digilap tangan menawarkan estetika yang menyerlah dengan kemasan ringan dan tahan lama.
+- **Bahan Premium:** Binaan asetat Mazzucchelli dan JIMEI & JINYU yang digilap tangan menawarkan estetika yang menyerlah dengan kemasan ringan dan tahan lama.
 - **Kejuruteraan Ketepatan:** Dimensi unisex profesional 53-19-140mm yang direka untuk kesesuaian yang bergaya dan popular bagi pelbagai profil demografi.
 - **Optik Termaju:** Lensa nilon lasak dengan kejelasan tinggi yang memberikan rintangan hentaman unggul dengan penyesuaian meluas untuk salutan khas.
 - **Perkakasan Teguh:** Engsel struktur tong 3+2 yang diperkukuh memastikan kelancaran operasi jangka panjang dan kestabilan bingkai.
@@ -72,7 +72,7 @@ seoKeywords: "pengeluar cermin mata asetat, cermin mata hitam OEM tersuai, label
 
 ## Gambaran Keseluruhan
 
-Asetat Mazzucchelli dan JINYU yang digilap tangan digabungkan dalam KAS-110 untuk mencipta bingkai yang menyerlah dan ringan yang mengutamakan kedalaman estetik dan ketahanan struktur.
+Asetat Mazzucchelli dan JIMEI & JINYU yang digilap tangan digabungkan dalam KAS-110 untuk mencipta bingkai yang menyerlah dan ringan yang mengutamakan kedalaman estetik dan ketahanan struktur.
 
 Setiap unit menampilkan sistem engsel tong 3+2 yang direka dengan ketepatan dan alas hidung bersepadu, memberikan keselesaan konsisten dan kelancaran operasi yang diharapkan oleh jenama kacamata premium.
 

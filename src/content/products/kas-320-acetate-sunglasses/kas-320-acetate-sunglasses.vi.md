@@ -5,7 +5,7 @@ slug: "kas-320-acetate-sunglasses"
 itemNo: "KAS-320"
 date: "2026-05-12"
 colors: "Xanh Neon & Sọc Nâu & Xám Trong Suốt & Đỏ & Havana & Đen"
-materials: "Mazzucchelli Cao Cấp & Axetat JINYU & Tùy Chỉnh Theo Yêu Cầu"
+materials: "Mazzucchelli Cao Cấp & Axetat JIMEI & JINYU & Tùy Chỉnh Theo Yêu Cầu"
 serviceMode: "Sản xuất gia công & Thiết kế và sản xuất ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -62,7 +62,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Gọng và càng kính làm từ axetat Mazzucchelli và JINYU chất lượng cao, mang lại vẻ ngoài rực rỡ, nhẹ và bền bỉ.
+- **Chất liệu cao cấp:** Gọng và càng kính làm từ axetat Mazzucchelli và JIMEI & JINYU chất lượng cao, mang lại vẻ ngoài rực rỡ, nhẹ và bền bỉ.
 - **Phụ kiện chắc chắn:** Bản lề cấu trúc 4+3 chấu chuyên nghiệp được thiết kế để mang lại sự ổn định vượt trội và vận hành trơn tru lâu dài.
 - **Quang học tiên tiến:** Tròng kính nylon bền bỉ hiệu suất cao cung cấp độ rõ nét đặc biệt và khả năng chống va đập với nhiều tùy chọn tùy chỉnh.
 - **Thiết kế công thái học:** Đệm mũi đúc liền được thiết kế để mang lại cảm giác vừa vặn, an toàn và thoải mái, làm nổi bật phong cách unisex.
@@ -80,7 +80,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Tổng quan
 
-Sự hòa quyện giữa kết cấu rực rỡ và tính toàn vẹn về cấu trúc đã tạo nên KAS-320, một mẫu kính được định nghĩa bởi cấu trúc axetat Mazzucchelli và JINYU cao cấp. Những bộ gọng này mang lại vẻ thẩm mỹ nhẹ nhàng nhưng bền bỉ, nắm bắt các xu hướng thời trang hiện đại trong khi vẫn giữ được sức hút vượt thời gian cho các bộ sưu tập thương hiệu đa dạng.
+Sự hòa quyện giữa kết cấu rực rỡ và tính toàn vẹn về cấu trúc đã tạo nên KAS-320, một mẫu kính được định nghĩa bởi cấu trúc axetat Mazzucchelli và JIMEI & JINYU cao cấp. Những bộ gọng này mang lại vẻ thẩm mỹ nhẹ nhàng nhưng bền bỉ, nắm bắt các xu hướng thời trang hiện đại trong khi vẫn giữ được sức hút vượt thời gian cho các bộ sưu tập thương hiệu đa dạng.
 
 Kiến trúc bản lề 4+3 chấu đảm bảo sự ổn định lâu dài và hiệu suất vận hành mượt mà, được bổ sung bởi đệm mũi đúc liền cho sự thoải mái tối đa.
 

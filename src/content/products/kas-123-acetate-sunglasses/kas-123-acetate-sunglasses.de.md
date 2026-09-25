@@ -5,7 +5,7 @@ slug: "kas-123-acetate-sunglasses"
 itemNo: "KAS-123"
 date: "2026-05-09"
 colors: "Schwarz & Senf & Ahorn"
-materials: "Premium Mazzucchelli & JINYU Acetat & Individualisierung"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -49,7 +49,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, Custom OEM Brillen, Luxus-Private
 ---
 
 ## Eigenschaften
-- **Premium-Acetat:** Handpolierte Mazzucchelli- und JINYU-Acetat-Konstruktion, die außergewöhnliche Langlebigkeit und lebhafte Farbtiefe für Luxus-Branding bietet.
+- **Premium-Acetat:** Handpolierte Mazzucchelli- und JIMEI & JINYU-Acetat-Konstruktion, die außergewöhnliche Langlebigkeit und lebhafte Farbtiefe für Luxus-Branding bietet.
 - **Präzisionsscharniere:** Robuste 3+2-Zylinder-Strukturscharniere, die für gleichbleibende Leichtgängigkeit und langfristige strukturelle Integrität entwickelt wurden.
 - **Hochleistungsoptik:** Widerstandsfähige Nylonlinsen bieten überlegene Klarheit und Schlagfestigkeit, mit vollen Individualisierungsoptionen für spezielle Glasbeschichtungen.
 - **Ergonomisches Design:** Integrierte Nasenpads und raffinierte Bügelkonturen gewährleisten einen sicheren, druckfreien Sitz für ganztägigen Komfort.
@@ -66,7 +66,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, Custom OEM Brillen, Luxus-Private
 
 ## Überblick
 
-Durch die Kombination von lebhafter Farbtiefe mit der strukturellen Integrität von handpoliertem Mazzucchelli- und JINYU-Acetat stellt das Modell KAS-123 eine vielseitige Basis für Luxus-Brillenkollektionen dar.
+Durch die Kombination von lebhafter Farbtiefe mit der strukturellen Integrität von handpoliertem Mazzucchelli- und JIMEI & JINYU-Acetat stellt das Modell KAS-123 eine vielseitige Basis für Luxus-Brillenkollektionen dar.
 
 Sein ausgewogenes Unisex-Profil wird durch präzisionsgefertigte 3+2-Zylinderscharniere und integrierte Nasenpads verstärkt, was einen raffinierten, langlebigen Sitz für das tägliche Tragen gewährleistet.
 

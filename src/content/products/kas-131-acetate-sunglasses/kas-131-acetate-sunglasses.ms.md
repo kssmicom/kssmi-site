@@ -5,7 +5,7 @@ slug: "kas-131-acetate-sunglasses"
 itemNo: "KAS-131"
 date: "2026-05-09"
 colors: "Hitam & Ungu & Kura-kura & Putih"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model (100unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, pengeluar kacamata tersuai, ka
 
 ## Ciri-ciri Utama
 
-- **Bahan Bingkai Premium:** Dihasilkan daripada asetat Mazzucchelli dan JINYU gred tinggi, menyediakan struktur yang ringan namun sangat tahan lama dengan kedalaman warna yang bertenaga dan tahan lama.
+- **Bahan Bingkai Premium:** Dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU gred tinggi, menyediakan struktur yang ringan namun sangat tahan lama dengan kedalaman warna yang bertenaga dan tahan lama.
 - **Perkakasan Tahan Lama:** Menampilkan sistem engsel struktur 4+3 barrel profesional yang direka untuk kelancaran operasi yang unggul dan integriti struktur jangka panjang.
 - **Optik Lanjutan:** Dilengkapi dengan kanta nilon tahan lasak yang menawarkan rintangan hentaman tinggi dan kejelasan optik, boleh disesuaikan sepenuhnya mengikut keperluan jenama tertentu.
 - **Keselesaan Ergonomik:** Direka dengan alas hidung bersepadu untuk memastikan kesesuaian yang stabil dan bebas tekanan yang sesuai untuk pemakaian harian yang dilanjutkan.
@@ -71,7 +71,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, pengeluar kacamata tersuai, ka
 
 ## Gambaran Keseluruhan
 
-Asetat Mazzucchelli dan JINYU membentuk teras cermin mata hitam ini, memberikan kedalaman warna yang bertenaga dan ketahanan ringan yang menarik minat pasaran fesyen mewah.
+Asetat Mazzucchelli dan JIMEI & JINYU membentuk teras cermin mata hitam ini, memberikan kedalaman warna yang bertenaga dan ketahanan ringan yang menarik minat pasaran fesyen mewah.
 
 Sistem engsel struktur 4+3 barrel memastikan ketepatan operasi jangka panjang, manakala alas hidung bersepadu menawarkan kestabilan ergonomik untuk pemakaian sepanjang hari.
 

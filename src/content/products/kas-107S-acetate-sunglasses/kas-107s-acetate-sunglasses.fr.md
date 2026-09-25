@@ -5,7 +5,7 @@ slug: "kas-107s-acetate-sunglasses"
 itemNo: "KAS-107S"
 date: "2026-05-09"
 colors: "Noir & Transparent & Havane & Écaille"
-materials: "Acétate Premium Mazzucchelli & JINYU & Personnalisation"
+materials: "Acétate Premium Mazzucchelli & JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication sous Contrat (OEM) & Conception et Fabrication (ODM) ( Personnalisation )"
 moq: "300 pcs/modèle (100pcs/couleur)"
 
@@ -54,7 +54,7 @@ seoKeywords: "lunettes de soleil en acétate Mazzucchelli, lunettes de soleil en
 
 ## Caractéristiques
 
-- **Matériau Premium :** Acétate Mazzucchelli et JINYU sélectionnés à la main offrant une structure légère et durable avec une finition vibrante et brillante.
+- **Matériau Premium :** Acétate Mazzucchelli et JIMEI & JINYU sélectionnés à la main offrant une structure légère et durable avec une finition vibrante et brillante.
 - **Matériel Durable :** Charnières à structure de rivet 4+3 barrel conçues avec précision assurant une intégrité structurelle à long terme et une action d'ouverture/fermeture constante.
 - **Optique Haute Performance :** Verres en nylon tenace offrant une clarté et une résistance aux chocs supérieures, personnalisables pour répondre aux exigences spécifiques de la marque.
 - **Confort Intégré :** Plaquettes de nez lisses et intégrées conçues pour un confort tout au long de la journée et une esthétique sans couture sur le pont.
@@ -71,7 +71,7 @@ seoKeywords: "lunettes de soleil en acétate Mazzucchelli, lunettes de soleil en
 
 ## Aperçu
 
-L'acétate Mazzucchelli et JINYU constitue la base de cette silhouette unisexe audacieuse, d'inspiration vintage, caractérisée par sa finition profonde et brillante.
+L'acétate Mazzucchelli et JIMEI & JINYU constitue la base de cette silhouette unisexe audacieuse, d'inspiration vintage, caractérisée par sa finition profonde et brillante.
 
 L'intégrité structurelle est ancrée par des charnières à structure de rivet 4+3 barrel et des plaquettes de nez intégrées lisses, assurant un ajustement constant et de haute performance pour diverses formes de visage.
 

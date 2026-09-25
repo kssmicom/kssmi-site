@@ -5,7 +5,7 @@ slug: "kas-307-acetate-sunglasses"
 itemNo: "KAS-307"
 date: "2026-05-12"
 colors: "Preto & Listrado & Transparente & Tartaruga"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos personalizados OE
 
 ## Características
 
-- **Material Premium:** Construção em acetato Mazzucchelli e JINYU de alta qualidade que oferece uma armação vibrante, leve e durável para uso prolongado.
+- **Material Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que oferece uma armação vibrante, leve e durável para uso prolongado.
 - **Hardware Durável:** Dobradiças de estrutura de 4+3 barris projetadas para estabilidade superior e suavidade operacional a longo prazo.
 - **Óptica Superior:** Lentes de nylon tenaz que proporcionam clareza excepcional e resistência ao impacto com amplas opções de personalização.
 - **Design Ergonômico:** Ponteiras nasicas integradas e um ajuste unissex versátil garantindo conforto durante todo o dia e uma sensação segura e equilibrada.
@@ -72,7 +72,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos personalizados OE
 
 ## Visão Geral
 
-Fabricado em acetato Mazzucchelli e JINYU de alta qualidade, o KAS-307 oferece uma profundidade de cor vibrante e um toque premium. Esta escolha de material garante uma armação leve mas durável que ressoa com as sensibilidades da moda de alta gama.
+Fabricado em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, o KAS-307 oferece uma profundidade de cor vibrante e um toque premium. Esta escolha de material garante uma armação leve mas durável que ressoa com as sensibilidades da moda de alta gama.
 
 A integração de dobradiças robustas de estrutura de 4+3 barris e lentes de nylon tenaz proporciona suavidade operacional a longo prazo e clareza óptica excepcional.
 

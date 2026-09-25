@@ -5,7 +5,7 @@ slug: "kas-503-acetate-sunglasses"
 itemNo: "KAS-503"
 date: "2026-05-13"
 colors: "Negro, Rojo con Rojo Degradado, Tortuga con Marrón"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalización"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM) ( Personalización )"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -42,7 +42,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Características
 
-- **Material de Acetato Premium:** Acetato Mazzucchelli y JINYU premium que ofrece un acabado ligero, duradero y vibrante para un atractivo estético excepcional.
+- **Material de Acetato Premium:** Acetato Mazzucchelli y JIMEI & JINYU premium que ofrece un acabado ligero, duradero y vibrante para un atractivo estético excepcional.
 - **Hardware Duradero:** Bisagras estables de estructura de 3+2 barriles diseñadas para una suavidad operativa a largo plazo, con actualizaciones opcionales a 5 barriles y bisagras de resorte.
 - **Ópticas Premium:** Lentes de nailon tenaces que proporcionan alta claridad visual y durabilidad, con amplias opciones de tintado personalizado disponibles.
 - **Confort Ergonómico:** Almohadillas nasales integradas de acetato diseñadas para proporcionar un ajuste seguro y cómodo para el uso durante todo el día.
@@ -60,7 +60,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Resumen
 
-Fabricadas con acetato Mazzucchelli y JINYU premium, las gafas de sol KAS-503 aportan una vitalidad y durabilidad excepcionales a las colecciones de gafas modernas.
+Fabricadas con acetato Mazzucchelli y JIMEI & JINYU premium, las gafas de sol KAS-503 aportan una vitalidad y durabilidad excepcionales a las colecciones de gafas modernas.
 
 La integración de bisagras confiables de 3+2 barriles con lentes de nailon tenaces asegura la estabilidad estructural, mientras que las almohadillas nasales de acetato ofrecen comodidad ergonómica duradera.
 

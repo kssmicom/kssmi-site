@@ -5,7 +5,7 @@ slug: "kas-301-acetate-sunglasses"
 itemNo: "KAS-301"
 date: "2026-05-11"
 colors: "Noir & Violet & Écaille & Rayures"
-materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
+materials: "Mazzucchelli Premium & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication sous Contrat (OEM) & Conception et Fabrication (ODM) ( Personnalisation )"
 moq: "300 pcs/modèle (100 pcs/coloris)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, lunettes de soleil OEM sur 
 
 ## Caractéristiques
 
-- **Matériau Premium :** Construction en acétate authentique Mazzucchelli et JINYU offrant une esthétique légère, durable et vibrante pour les collections de mode haut de gamme.
+- **Matériau Premium :** Construction en acétate authentique Mazzucchelli et JIMEI & JINYU offrant une esthétique légère, durable et vibrante pour les collections de mode haut de gamme.
 - **Matériel Durable :** Charnières robustes à structure 4+3 barillets conçues pour une fluidité opérationnelle constante et une fiabilité structurelle à long terme.
 - **Optique Haute Performance :** Verres en nylon tenace offrant une clarté et una résistance aux chocs exceptionnelles avec des possibilités polyvalentes de teinte et de revêtement personnalisés.
 - **Design Ergonomique :** Plaquettes de nez intégrées et profil de monture unisexe assurant un ajustement sûr et confortable pour un port quotidien prolongé.
@@ -71,7 +71,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, lunettes de soleil OEM sur 
 
 ## Aperçu
 
-L'acétate Mazzucchelli et JINYU offre une toile sophistiquée pour ce design audacieux et unisexe. Le jeu de motifs écaille et rayés vibrants crée une identité visuelle distincte qui résonne avec les sensibilités de la mode haut de gamme.
+L'acétate Mazzucchelli et JIMEI & JINYU offre une toile sophistiquée pour ce design audacieux et unisexe. Le jeu de motifs écaille et rayés vibrants crée une identité visuelle distincte qui résonne avec les sensibilités de la mode haut de gamme.
 
 Les charnières à 4+3 barillets conçues avec précision et les plaquettes de nez intégrées garantissent que l'intégrité mécanique de la monture correspond à sa composition matérielle premium.
 

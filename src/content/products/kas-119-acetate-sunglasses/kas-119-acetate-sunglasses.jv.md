@@ -5,7 +5,7 @@ slug: "kas-119-acetate-sunglasses"
 itemNo: "KAS-119"
 date: "2026-05-09"
 colors: "Ireng & Kembang & Biru Mentah & Kuning & Bulus Kutub & Bulus Sian & Bulus Abrit"
-materials: "Asetat Mazzucchelli & JINYU Premium & Kustomisasi"
+materials: "Asetat Mazzucchelli & JIMEI & JINYU Premium & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -66,7 +66,7 @@ seoKeywords: "pabrikan kacamata hitam asetat, kacamata hitam OEM khusus, kacamat
 
 ## Spesifikasi
 
-- **Konstruksi Asetat Premium:** Digawe saka asetat Mazzucchelli lan JINYU kelas donya, nawakake struktur pigura lan candhi sing entheng, awet banget, lan sregep.
+- **Konstruksi Asetat Premium:** Digawe saka asetat Mazzucchelli lan JIMEI & JINYU kelas donya, nawakake struktur pigura lan candhi sing entheng, awet banget, lan sregep.
 - **Perangkat Keras Presisi:** Direkayasa nganggo engsel struktur 4+3 khusus kanggo nyedhiyakake stabilitas sing unggul lan lancar operasional jangka panjang.
 - **Optik Kinerja Dhuwur:** Dilengkapi lensa nilon sing kuat sing menehi kajelasan optik sing apik ing jejere pilihan kustomisasi sing akeh.
 - **Kenyamanan Sedina Uput:** Dirancang nganggo bantalan irung terintegrasi kanthi wicaksana kanggo mesthekake estetika sing mulus lan pas sing aman lan nyaman kanggo panggunaan sing luwih dawa.
@@ -83,7 +83,7 @@ seoKeywords: "pabrikan kacamata hitam asetat, kacamata hitam OEM khusus, kacamat
 
 ## Gambaran Umum
 
-Kemewahan sing wani cocog karo kerajinan sing luar biasa ing KAS-119, nampilake desain unisex sing apik tenan sing diukir saka asetat Mazzucchelli lan JINYU sing misuwur ing saindenging jagad. Konstruksi pigura sing sregep iki ora mung njamin daya tahan sing entheng nanging uga nggawe kehadiran visual kanggo portofolio mode dhuwur.
+Kemewahan sing wani cocog karo kerajinan sing luar biasa ing KAS-119, nampilake desain unisex sing apik tenan sing diukir saka asetat Mazzucchelli lan JIMEI & JINYU sing misuwur ing saindenging jagad. Konstruksi pigura sing sregep iki ora mung njamin daya tahan sing entheng nanging uga nggawe kehadiran visual kanggo portofolio mode dhuwur.
 
 Direkayasa kanggo nyandhang jangka panjang, integrasi engsel laras 4+3 khusus lan bantalan irung sing mulus njamin kenyamanan sing stabil kabeh dina bebarengan karo optik nilon premium.
 

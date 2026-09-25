@@ -5,7 +5,7 @@ slug: "kas-129-acetate-sunglasses"
 itemNo: "KAS-129"
 date: "2026-05-09"
 colors: "Negro & Rubí & Azul Real & Mármol Púrpura & Mármol Perla"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalización"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM) (Personalización)"
 moq: "300 uds/modelo (100uds/color)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Características
 
-- **Acetato Premium:** Montura y varillas de acetato Mazzucchelli y JINYU seleccionados a mano, que proporcionan una experiencia de uso ligera, vibrante e hipoalergénica.
+- **Acetato Premium:** Montura y varillas de acetato Mazzucchelli y JIMEI & JINYU seleccionados a mano, que proporcionan una experiencia de uso ligera, vibrante e hipoalergénica.
 - **Hardware Duradero:** Bisagras con estructura de 4+3 barriles diseñadas con precisión para una estabilidad máxima y una suavidad operativa de por vida.
 - **Lentes de Alto Rendimiento:** Tecnología de lentes de nylon tenaz que ofrece una resistencia al impacto y una claridad óptica superiores con opciones de personalización completas.
 - **Confort Integrado:** Almohadillas nasales integradas de diseño ergonómico que garantizan un ajuste estable y antideslizante para diversos perfiles faciales.
@@ -76,7 +76,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Resumen
 
-Las casas de moda de lujo que buscan una ventaja visual distintiva la encuentran en el KAS-129, que combina acetato Mazzucchelli y JINYU seleccionado a mano con una silueta audaz y unisex.
+Las casas de moda de lujo que buscan una ventaja visual distintiva la encuentran en el KAS-129, que combina acetato Mazzucchelli y JIMEI & JINYU seleccionado a mano con una silueta audaz y unisex.
 
 Este diseño integra un sistema de bisagras de 4+3 barriles duradero y almohadillas nasales ergonómicas para garantizar un rendimiento constante y un confort refinado en un uso de alto volumen.
 

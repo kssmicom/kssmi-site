@@ -5,7 +5,7 @@ slug: "kas-315-acetate-sunglasses"
 itemNo: "KAS-315"
 date: "2026-05-12"
 colors: "Şeffaf & Zeytin Yeşili & Şampanya & Kaplumbağa & Yarı Saydam Gri & Siyah"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM & ODM ( Özelleştirme )"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -62,7 +62,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Özellikler
 
-- **Premium Malzemeler:** Canlı, hafif ve dayanıklı bir çerçeve sunan, birinci sınıf el cilalı kaplamaya sahip yüksek dereceli Mazzucchelli ve JINYU asetat yapı.
+- **Premium Malzemeler:** Canlı, hafif ve dayanıklı bir çerçeve sunan, birinci sınıf el cilalı kaplamaya sahip yüksek dereceli Mazzucchelli ve JIMEI & JINYU asetat yapı.
 - **Dayanıklı Donanım:** Üstün stabilite ve uzun süreli çalışma pürüzsüzlüğü için tasarlanmış sağlam 4+3 menteşe yapısı.
 - **Gelişmiş Optik:** Mükemmel netlik ve dayanıklılık sunan darbeye dayanıklı naylon lensler, kapsamlı özel kaplama seçenekleri mevcuttur.
 - **Ergonomik Tasarım:** Gün boyu konfor ve güvenli bir unisex uyum için hassas bir şekilde tasarlanmış entegre burun tamponları ve 57-14-145 mm uyum.
@@ -80,7 +80,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Genel Bakış
 
-Premium Mazzucchelli ve JINYU asetattan üretilen bu model, çağdaş lüks gözlüklerin özünü yakalayan canlı, elle cilalanmış bir kaplama sunar.
+Premium Mazzucchelli ve JIMEI & JINYU asetattan üretilen bu model, çağdaş lüks gözlüklerin özünü yakalayan canlı, elle cilalanmış bir kaplama sunar.
 
 4+3 menteşelerin entegrasyonu ve ergonomik 57-14-145 mm uyum, uzun vadeli yapısal bütünlük ve olağanüstü kullanım konforu sağlar.
 

@@ -5,7 +5,7 @@ slug: "kas-346-acetate-sunglasses"
 itemNo: "KAS-346"
 date: "2026-05-12"
 colors: "Đen & Đồi mồi & Havana & Olive"
-materials: "Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli cao cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -54,7 +54,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Axetat Mazzucchelli và JINYU cao cấp mang đến một bộ gọng kính sống động, nhẹ và không gây dị ứng cho vẻ đẹp tinh tế và độ bền vượt trội.
+- **Chất liệu cao cấp:** Axetat Mazzucchelli và JIMEI & JINYU cao cấp mang đến một bộ gọng kính sống động, nhẹ và không gây dị ứng cho vẻ đẹp tinh tế và độ bền vượt trội.
 - **Phần cứng chính xác:** Bản lề cấu trúc 2+1 thùng được thiết kế để cung cấp lực căng bản lề ổn định và vận hành trơn tru lâu dài.
 - **Quang học tiên tiến:** Tròng kính nylon bền bỉ mang lại độ rõ nét đặc biệt và khả năng chống va đập cao với các tùy chọn màu sắc và lớp phủ hoàn toàn có thể tùy chỉnh.
 - **Sự thoải mái tối ưu:** Đệm mũi tích hợp liền mạch được thiết kế để mang lại cảm giác vừa vặn an toàn, không gây áp lực và phân bổ trọng lượng tối ưu trong suốt quá trình sử dụng cả ngày.
@@ -71,7 +71,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Tổng quan
 
-Được chế tác từ axetat Mazzucchelli và JINYU cao cấp, KAS-346 cân bằng giữa chiều sâu hình ảnh sống động với cấu trúc nhẹ, không gây dị ứng. Chất liệu cao cấp cung cấp nền tảng cho độ bền lâu dài và độ hoàn thiện tinh xảo phù hợp cho các bộ sưu tập cao cấp.
+Được chế tác từ axetat Mazzucchelli và JIMEI & JINYU cao cấp, KAS-346 cân bằng giữa chiều sâu hình ảnh sống động với cấu trúc nhẹ, không gây dị ứng. Chất liệu cao cấp cung cấp nền tảng cho độ bền lâu dài và độ hoàn thiện tinh xảo phù hợp cho các bộ sưu tập cao cấp.
 
 Được thiết kế với bản lề 2+1 thùng và đệm mũi tích hợp liền mạch, bộ gọng kính đảm bảo chuyển động cơ học chính xác và mang lại cảm giác vừa vặn, không gây áp lực.
 

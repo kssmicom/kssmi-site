@@ -5,7 +5,7 @@ slug: "kao-347-acetate-optical-frame"
 itemNo: "KAO-347"
 date: "2026-05-10"
 colors: "Hitam, Havana, Kelabu Lut Sinar"
-materials: "Asetat Premium Mazzucchelli & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Penyesuaian"
 serviceMode: "OEM & ODM (Penyesuaian)"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -41,7 +41,7 @@ seoKeywords: "pengilang bingkai optik asetat, bingkai optik OEM tersuai, kacamat
 
 ## Ciri-ciri Utama
 
-- **Bahan Asetat Premium:** Pembinaan asetat Mazzucchelli dan JINYU berkualiti tinggi yang menawarkan kedalaman warna yang menyerlah, ketahanan struktur jangka panjang dan pengalaman sentuhan premium yang ringan.
+- **Bahan Asetat Premium:** Pembinaan asetat Mazzucchelli dan JIMEI & JINYU berkualiti tinggi yang menawarkan kedalaman warna yang menyerlah, ketahanan struktur jangka panjang dan pengalaman sentuhan premium yang ringan.
 - **Perkakasan Engsel Teguh:** Engsel struktur spring berketepatan tinggi yang memberikan fleksibiliti luar biasa, keselesaan padanan melaras sendiri, dan keserasian dengan naik taraf engsel 3 barrel atau 5 barrel tersuai.
 - **Lensa Pelindung Premium:** Lensa nilon tahan lasak yang memberikan rintangan impak yang sangat baik, kejelasan optik yang tinggi, dan pilihan warna serta salutan yang boleh disesuaikan sepenuhnya.
 - **Padanan Bersepadu Ergonomik:** Alas hidung bersepadu asetat yang direka untuk mengagihkan tekanan secara sekata untuk padanan yang selamat, selesa dan bebas gelincir.
@@ -58,7 +58,7 @@ seoKeywords: "pengilang bingkai optik asetat, bingkai optik OEM tersuai, kacamat
 
 ## Gambaran Keseluruhan
 
-Dihasikan daripada asetat premium Mazzucchelli dan JINYU, KAO-347 menawarkan kedalaman warna yang luar biasa dan integriti struktur berpanjangan yang dituntut oleh koleksi runcit mewah.
+Dihasikan daripada asetat premium Mazzucchelli dan JIMEI & JINYU, KAO-347 menawarkan kedalaman warna yang luar biasa dan integriti struktur berpanjangan yang dituntut oleh koleksi runcit mewah.
 
 Engsel spring yang direka dengan ketepatan memberikan padanan melaras sendiri yang sangat fleksibel, manakala alas hidung bersepadu asetat memastikan pengedaran berat yang optimum untuk keselesaan sepanjang hari.
 

@@ -5,7 +5,7 @@ slug: "kao-333-acetate-optical-frame"
 itemNo: "KAO-333"
 date: "2026-05-10"
 colors: "Tartaruga, Mel"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda & Design e Fabricação ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -40,7 +40,7 @@ seoKeywords: "armações ópticas de acetato, armações de acetato personalizá
 
 ## Características
 
-- **Material Premium:** Fabricado em acetato Mazzucchelli e JINYU premium, oferecendo uma estrutura ultraleve mas excecionalmente durável com uma estética de cores vibrantes e profundas.
+- **Material Premium:** Fabricado em acetato Mazzucchelli e JIMEI & JINYU premium, oferecendo uma estrutura ultraleve mas excecionalmente durável com uma estética de cores vibrantes e profundas.
 - **Componentes de Engenharia:** Dobradiças com estrutura de rebite de 3+2 tambores de alta confiabilidade que oferecem um movimento de hastes estável e suave, com opções de dobradiças de mola e de 5 tambores disponíveis.
 - **Óptica Tenaz:** Lentes de nylon de alta durabilidade que oferecem uma clareza óptica excepcional e resistência a impactos com serviços completos de revestimento personalizado e personalização.
 - **Conforto Integrado:** Plaquetas de nariz em acetato integradas perfeitamente combinadas com uma geometria sob medida de 51-22-145mm para proporcionar um ajuste equilibrado e livre de pressão.
@@ -58,7 +58,7 @@ seoKeywords: "armações ópticas de acetato, armações de acetato personalizá
 
 ## Visão Geral
 
-O acetato premium Mazzucchelli e JINYU proporciona ao modelo KAO-333 uma rica profundidade de cor de tons intensos e uma notável longevidade estrutural. A sua silhueta de inspiração retrô equilibra um estilo de luxo intemporal com um ajuste confortável e unissexo.
+O acetato premium Mazzucchelli e JIMEI & JINYU proporciona ao modelo KAO-333 uma rica profundidade de cor de tons intensos e uma notável longevidade estrutural. A sua silhueta de inspiração retrô equilibra um estilo de luxo intemporal com um ajuste confortável e unissexo.
 
 As dobradiças de rebite de 3+2 tambores projetadas com precisão e as plaquetas integradas mantêm um alinhamento estável das hastes e uma sensação de leveza durante o uso diário.
 

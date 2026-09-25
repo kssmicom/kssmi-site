@@ -5,7 +5,7 @@ slug: "kas-124-acetate-sunglasses"
 itemNo: "KAS-124"
 date: "2026-05-09"
 colors: "Noir & Corne de Buffle & Écaille"
-materials: "Premium Mazzucchelli & Acétate JINYU & Personnalisation"
+materials: "Premium Mazzucchelli & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100pcs/couleur)"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -46,7 +46,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, usine lunettes soleil OEM c
 
 ## Caractéristiques
 
-- **Matériau Premium :** Construction en acétate Mazzucchelli et JINYU de haute qualité offrant une finition vibrante polie à la main avec une durabilité exceptionnelle.
+- **Matériau Premium :** Construction en acétate Mazzucchelli et JIMEI & JINYU de haute qualité offrant une finition vibrante polie à la main avec une durabilité exceptionnelle.
 - **Matériel Durable :** Charnières robustes à structure en barillet 3+2 conçues avec précision pour une fluidité opérationnelle à long terme et une stabilité de la monture.
 - **Optique Avancée :** Verres en nylon tenace offrant une résistance aux chocs et une clarté optique supérieures avec de vastes options de revêtement personnalisé.
 - **Confort Ergonomique :** Monture légère avec plaquettes de nez intégrées conçue pour un ajustement sûr et sans pression pendant un port quotidien prolongé.
@@ -64,7 +64,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, usine lunettes soleil OEM c
 
 ## Aperçu
 
-Fabriqué à partir d'acétate Mazzucchelli et JINYU de qualité supérieure, ce modèle présente une finition polie à la main qui souligne sa silhouette audacieuse d'inspiration vintage. La monture équilibre une esthétique unisexe de luxe avec les qualités vibrantes et légères essentielles aux lunettes de mode haut de gamme.
+Fabriqué à partir d'acétate Mazzucchelli et JIMEI & JINYU de qualité supérieure, ce modèle présente une finition polie à la main qui souligne sa silhouette audacieuse d'inspiration vintage. La monture équilibre une esthétique unisexe de luxe avec les qualités vibrantes et légères essentielles aux lunettes de mode haut de gamme.
 
 Les charnières en barillet 3+2 conçues avec précision et les verres en nylon tenace assurent un ajustement sûr et des performances optiques exceptionnelles sur tous les lots de production.
 

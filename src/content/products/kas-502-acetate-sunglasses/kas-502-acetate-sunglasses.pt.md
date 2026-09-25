@@ -5,7 +5,7 @@ slug: "kas-502-acetate-sunglasses"
 itemNo: "KAS-502"
 date: "2026-05-12"
 colors: "Preto & Rosa & Tartaruga Vermelha & Havana & Branco"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "OEM & ODM ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos OEM personalizado
 
 ## Características
 
-- **Construção de Acetato Premium:** Fabricados à mão usando acetato Mazzucchelli e JINYU de alta qualidade para durabilidade excepcional e um acabamento vibrante e duradouro.
+- **Construção de Acetato Premium:** Fabricados à mão usando acetato Mazzucchelli e JIMEI & JINYU de alta qualidade para durabilidade excepcional e um acabamento vibrante e duradouro.
 - **Hardware Reforçado:** Dobradiças robustas de estrutura 4+3 barris, proporcionando estabilidade superior e desempenho operacional suave para o uso diário.
 - **Excelência Óptica:** Lentes de nylon tenaz oferecendo alta resistência ao impacto e acuidade visual clara com opções de personalização versáteis.
 - **Design Ergonômico:** Plaquetas de nariz integradas e uma armação de acetato leve projetada para conforto durante todo o dia e um ajuste seguro.
@@ -75,7 +75,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos OEM personalizado
 
 ## Visão Geral
 
-Fabricado a partir de acetato premium Mazzucchelli e JINYU, o KAS-502 oferece um acabamento vibrante polido à mão que ressoa com as sensibilidades da alta moda. A durabilidade inerente do material e seu perfil leve fornecem uma base sofisticada para portfólios de óculos premium.
+Fabricado a partir de acetato premium Mazzucchelli e JIMEI & JINYU, o KAS-502 oferece um acabamento vibrante polido à mão que ressoa com as sensibilidades da alta moda. A durabilidade inerente do material e seu perfil leve fornecem uma base sofisticada para portfólios de óculos premium.
 
 A armação apresenta uma estrutura de dobradiça reforçada de 4+3 barris para estabilidade superior, complementada por lentes de nylon resistentes ao impacto que mantêm a clareza óptica em diversos ambientes.
 

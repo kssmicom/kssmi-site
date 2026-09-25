@@ -5,7 +5,7 @@ slug: "kas-317-acetate-sunglasses"
 itemNo: "KAS-317"
 date: "2026-05-12"
 colors: "Şeffaf & Bal Rengi & Şampanya & Kaplumbağa & Siyah"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
 moq: "300 adet/model (100adet/renk)"
 
@@ -58,7 +58,7 @@ seoKeywords: "Mazzucchelli asetat güneş gözlüğü, özel gözlük üreticisi
 
 ## Özellikler
 
-- **Premium Malzeme:** Uzun süreli kullanım için canlı, hafif ve dayanıklı bir yüzey sunan yüksek dereceli Mazzucchelli ve JINYU asetat yapı.
+- **Premium Malzeme:** Uzun süreli kullanım için canlı, hafif ve dayanıklı bir yüzey sunan yüksek dereceli Mazzucchelli ve JIMEI & JINYU asetat yapı.
 - **Sağlam Donanım:** Sorunsuz çalışma ve uzun süreli dayanıklılık için hassas mühendislikle tasarlanmış 4+3 barrel yapılı menteşeler; 5 barrel ve yaylı menteşe yükseltmeleri mevcuttur.
 - **Yüksek Performanslı Optik:** Çeşitli lens tonları ve kaplamaları için kapsamlı özelleştirme seçenekleriyle üstün netlik ve darbe direnci sağlayan dayanıklı naylon lensler.
 - **Ergonomik Konfor:** Çok çeşitli yüz profilleri için dikişsiz bir uyum ve gün boyu gelişmiş konfor için tasarlanmış entegre burun tamponları.
@@ -76,7 +76,7 @@ seoKeywords: "Mazzucchelli asetat güneş gözlüğü, özel gözlük üreticisi
 
 ## Genel Bakış
 
-Sofistike tasarım bu premium yapıda dayanıklılıkla buluşuyor; burada el cilalı Mazzucchelli ve JINYU asetat, solmaya karşı dirençli zengin, çok katmanlı bir estetik sunar. Çerçevenin hafif bileşimi, cesur ve modaya uygun tasarımın uzun süreli günlük kullanımda bile rahat kalmasını sağlar.
+Sofistike tasarım bu premium yapıda dayanıklılıkla buluşuyor; burada el cilalı Mazzucchelli ve JIMEI & JINYU asetat, solmaya karşı dirençli zengin, çok katmanlı bir estetik sunar. Çerçevenin hafif bileşimi, cesur ve modaya uygun tasarımın uzun süreli günlük kullanımda bile rahat kalmasını sağlar.
 
 Endüstriyel sınıf 4+3 barrel menteşeler sağlam ve güvenilir bir açılma mekanizması sağlarken, dikkatle hesaplanmış 48-22-145mm geometri, çok çeşitli küresel pazar tercihlerine uyum sağlayan çok yönlü bir unisex uyum sunar.
 

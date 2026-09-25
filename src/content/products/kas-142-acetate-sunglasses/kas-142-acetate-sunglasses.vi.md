@@ -5,7 +5,7 @@ slug: "kas-142-acetate-sunglasses"
 itemNo: "KAS-142"
 date: "2026-05-09"
 colors: "Đen & Trắng & Đỏ & Đồi mồi"
-materials: "Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli cao cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -54,7 +54,7 @@ seoKeywords: "kính mát axetat, nhà sản xuất kính thời trang, nhà máy
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Cấu trúc axetat Mazzucchelli và JINYU cấp cao mang lại tính thẩm mỹ tinh tế cùng độ bền vượt trội và sự thoải mái nhẹ nhàng.
+- **Chất liệu cao cấp:** Cấu trúc axetat Mazzucchelli và JIMEI & JINYU cấp cao mang lại tính thẩm mỹ tinh tế cùng độ bền vượt trội và sự thoải mái nhẹ nhàng.
 - **Phần cứng chắc chắn:** Bản lề cấu trúc 4+3 chấu được thiết kế chính xác để mang lại sự ổn định vượt trội và độ trơn tru khi vận hành lâu dài.
 - **Quang học ưu việt:** Tròng kính nylon bền bỉ có độ trong suốt cao, cung cấp khả năng chống va đập tuyệt vời và các lựa chọn linh hoạt cho màu nhuộm và lớp phủ chuyên dụng.
 - **Công thái học tích hợp:** Đệm mũi được tích hợp liền mạch và hình học gọng kính 57mm cân bằng đảm bảo sự vừa vặn ổn định, không gây áp lực cho nhiều kiểu khuôn mặt khác nhau.
@@ -71,7 +71,7 @@ seoKeywords: "kính mát axetat, nhà sản xuất kính thời trang, nhà máy
 
 ## Tổng quan
 
-Được chế tác từ axetat Mazzucchelli và JINYU cao cấp, mẫu kính này kết hợp bảng màu sống động với tròng kính nylon độ trong suốt cao cho tính thẩm mỹ tinh tế, đẳng cấp sang trọng.
+Được chế tác từ axetat Mazzucchelli và JIMEI & JINYU cao cấp, mẫu kính này kết hợp bảng màu sống động với tròng kính nylon độ trong suốt cao cho tính thẩm mỹ tinh tế, đẳng cấp sang trọng.
 
 Bản lề cấu trúc 4+3 chấu và đệm mũi liền khối đảm bảo sự ổn định về cấu trúc lâu dài và sự vừa vặn công thái học cân bằng trong hình học 57mm của nó.
 

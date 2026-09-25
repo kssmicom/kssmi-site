@@ -5,7 +5,7 @@ slug: "kas-015-acetate-sunglasses"
 itemNo: "KAS-015"
 date: "2026-05-10"
 colors: "Tartaruga con Verde, Nero con Nero-Giallo, Nero Tartaruga con Verde, Nero"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100pz/colore)"
 
@@ -43,7 +43,7 @@ seoKeywords: "produttore occhiali da sole lusso acetato, fabbrica occhiali perso
 
 ## Caratteristiche
 
-- **Materiale Premium:** Costruzione in acetato Mazzucchelli e JINYU di alta qualità che offre una finitura leggera, durevole e vibrante per un'estetica di lusso.
+- **Materiale Premium:** Costruzione in acetato Mazzucchelli e JIMEI & JINYU di alta qualità che offre una finitura leggera, durevole e vibrante per un'estetica di lusso.
 - **Integrità Strutturale:** Montatura e aste in acetato premium lavorate con precisione che garantiscono resilienza e mantenimento della forma a lungo termine.
 - **Componenti Durevoli:** Cerniere stabili con struttura a 2+1 barili progettate per una scorrevolezza costante, con opzioni di aggiornamento a 5 barili e cerniere a molla.
 - **Ottica Superiore:** Lenti in nylon tenace che offrono eccellente chiarezza e resistenza agli urti con ampie opzioni di colorazione personalizzata.
@@ -61,7 +61,7 @@ seoKeywords: "produttore occhiali da sole lusso acetato, fabbrica occhiali perso
 
 ## Panoramica
 
-Utilizzando acetato Mazzucchelli e JINYU di alta qualità, questo modello offre una finitura vibrante e leggera, pensata per il mercato premium.
+Utilizzando acetato Mazzucchelli e JIMEI & JINYU di alta qualità, questo modello offre una finitura vibrante e leggera, pensata per il mercato premium.
 
 Le cerniere a 2+1 barili progettate con precisione e i naselli integrati offrono un mix perfetto di stabilità strutturale e comfort per tutto il giorno.
 

@@ -5,7 +5,7 @@ slug: "kas-318-acetate-sunglasses"
 itemNo: "KAS-318"
 date: "2026-05-12"
 colors: "Ireng & Spark & Havana & Madu"
-materials: "Mazzucchelli Premium & Asetat JINYU & Kustomisasi"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak (OEM) & Desain lan Produksi (ODM) (Kustomisasi)"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JINYU sing dipilih kanthi tangan, nyedhiyakake frame sing entheng lan awet kanthi jero werna sing padhang lan tahan suwe.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU sing dipilih kanthi tangan, nyedhiyakake frame sing entheng lan awet kanthi jero werna sing padhang lan tahan suwe.
 - **Hardware Presisi:** Engsel struktur 4+3 barrel kinerja dhuwur sing dirancang kanggo stabilitas unggul lan kelancaran operasional jangka panjang.
 - **Optik Kinerja Dhuwur:** Lensa Nilon Kuat sing tahan benturan nawakake kajelasan sing luar biasa kanthi macem-macem kemungkinan pewarnaan lan lapisan kustom.
 - **Desain Ergonomis:** Struktur bantalan irung integrasi sing dirancang kanthi teliti kanggo pas sing aman, nyaman lan estetika sing rapi lan mulus.
@@ -71,7 +71,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 
 ## Ringkesan
 
-Digawe saka asetat Mazzucchelli lan JINYU sing dipilih kanthi tangan, KAS-318 nyedhiyakake werna sing padhang lan daya tahan struktural sing luar biasa kanggo pasar fashion premium. Komposisi sing entheng njamin kenyamanan sing nganggo jangka panjang tanpa ngrusak pengaruh estetika.
+Digawe saka asetat Mazzucchelli lan JIMEI & JINYU sing dipilih kanthi tangan, KAS-318 nyedhiyakake werna sing padhang lan daya tahan struktural sing luar biasa kanggo pasar fashion premium. Komposisi sing entheng njamin kenyamanan sing nganggo jangka panjang tanpa ngrusak pengaruh estetika.
 
 Engsel 4+3 barrel sing dirancang kanthi presisi lan bantalan irung integrasi nyedhiyakake stabilitas mekanik lan pas ergonomis sing dibutuhake dening merek mewah sing teliti.
 

@@ -5,7 +5,7 @@ slug: "kas-345-acetate-sunglasses"
 itemNo: "KAS-345"
 date: "2026-05-12"
 colors: "Ireng & Bulus & Havana & Ijo"
-materials: "Mazzucchelli Premium & Asetat JINYU & Kustomisasi"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak & Desain lan Produksi ( Kustomisasi )"
 moq: "300 pcs/model ( 100 pcs/warna )"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, eyewear
 
 ## Fitur
 
-- **Bahan Premium:** Asetat Mazzucchelli lan JINYU sing dipoles tangan, menehi hasil pungkasan sing sugih lan sregep kanthi daya tahan lan jero warna sing luar biasa.
+- **Bahan Premium:** Asetat Mazzucchelli lan JIMEI & JINYU sing dipoles tangan, menehi hasil pungkasan sing sugih lan sregep kanthi daya tahan lan jero warna sing luar biasa.
 - **Teknik Presisi:** Engsel struktur 2+1 baril kanthi kualitas dhuwur sing dirancang kanggo ketegangan sing konsisten lan kelancaran operasional jangka panjang.
 - **Optik Canggih:** Lensa nilon sing kuwat menehi ketahanan benturan lan kajelasan sing unggul, kanthi dhukungan lengkap kanggo warna kustom lan lapisan khusus.
 - **Desain Ergonomis:** Bantalan irung integrasi sing dirancang kanggo pas sing mulus lan nyaman, lan distribusi bobot sing seimbang nalika dienggo suwe.
@@ -71,7 +71,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, eyewear
 
 ## Ringkesan
 
-Asetat Mazzucchelli lan JINYU dadi dhasar kanggo model iki, menehi hasil pungkasan sing sregep lan jero warna sing luar biasa. Arsitektur frame sing dipoles tangan iki nggabungake daya tarik estetika klasik kanthi rasa entheng kanggo posisi pasar kelas dhuwur.
+Asetat Mazzucchelli lan JIMEI & JINYU dadi dhasar kanggo model iki, menehi hasil pungkasan sing sregep lan jero warna sing luar biasa. Arsitektur frame sing dipoles tangan iki nggabungake daya tarik estetika klasik kanthi rasa entheng kanggo posisi pasar kelas dhuwur.
 
 Sistem engsel 2+1 baril sing presisi bisa digunakake bebarengan karo bantalan irung integrasi kanggo menehi ketegangan sing konsisten lan pas sing ergonomis lan mulus.
 

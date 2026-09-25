@@ -5,7 +5,7 @@ slug: "kas-104-acetate-sunglasses"
 itemNo: "KAS-104"
 date: "2026-05-06"
 colors: "Havana & Brown & Black & Floral & Purple-Stripe"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -58,7 +58,7 @@ seoKeywords: "Mazzucchelli acetate sunglasses manufacturer, custom OEM acetate s
 
 ## Technical Features
 
-- **Premium Frame Material:** High-grade Mazzucchelli and JINYU acetate construction offering a vibrant, deep-luster finish with exceptional structural durability for high-end fashion lines.
+- **Premium Frame Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction offering a vibrant, deep-luster finish with exceptional structural durability for high-end fashion lines.
 - **Durable Hardware:** Precision-engineered 2+1 barrel structure hinges designed for consistent operational smoothness and long-term frame stability.
 - **Superior Optics:** Tenacious nylon lenses offering high impact resistance and optical clarity, with scalable customization for UV protection and specialized coatings.
 - **Ergonomic Fit:** Integrated nose pads seamlessly carved into the acetate structure for a secure, pressure-free fit that enhances all-day comfort.
@@ -75,7 +75,7 @@ seoKeywords: "Mazzucchelli acetate sunglasses manufacturer, custom OEM acetate s
 
 ## Overview
 
-Crafted from a curated selection of premium Mazzucchelli and JINYU acetate, the KAS-104 balances vibrant depth of color with a high-luster finish that defines contemporary luxury eyewear.
+Crafted from a curated selection of premium Mazzucchelli, JIMEI & JINYU acetate, the KAS-104 balances vibrant depth of color with a high-luster finish that defines contemporary luxury eyewear.
 
 The structural integrity is anchored by a precision-engineered 2+1 barrel hinge system, paired with integrated nose pads to ensure a secure, ergonomic fit for diverse face shapes.
 

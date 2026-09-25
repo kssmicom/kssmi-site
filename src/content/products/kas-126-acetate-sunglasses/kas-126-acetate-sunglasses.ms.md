@@ -5,7 +5,7 @@ slug: "kas-126-acetate-sunglasses"
 itemNo: "KAS-126"
 date: "2026-05-09"
 colors: "Hitam & Marmar & Hijau & Putih"
-materials: "Asetat Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Asetat Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & Pembuatan ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Ciri-ciri Utama
 
-- **Komposisi Asetat Premium:** Bingkai dan tangkai asetat Mazzucchelli dan JINYU berprestasi tinggi memberikan rasa ringan dan kemasan gilapan tangan yang ceria.
+- **Komposisi Asetat Premium:** Bingkai dan tangkai asetat Mazzucchelli dan JIMEI & JINYU berprestasi tinggi memberikan rasa ringan dan kemasan gilapan tangan yang ceria.
 - **Perkakasan Teguh:** Engsel struktur tong 3+2 yang stabil direka untuk ketegangan yang konsisten dan kelancaran operasi jangka panjang.
 - **Teknologi Kanta Termaju:** Kanta nilon tahan impak yang menawarkan kejelasan optik yang luar biasa dengan warna dan salutan boleh suai untuk keperluan pasaran yang pelbagai.
 - **Keselesaan Ergonomik:** Alas hidung bersepadu yang licin direka untuk memberikan kesesuaian yang selamat dan keselesaan yang dipertingkatkan untuk pelbagai struktur muka.

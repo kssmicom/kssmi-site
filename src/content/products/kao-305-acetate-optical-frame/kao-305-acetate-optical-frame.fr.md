@@ -5,7 +5,7 @@ slug: "kao-305-acetate-optical-frame"
 itemNo: "KAO-305"
 date: "2026-05-10"
 colors: "Olive & Noir & Rayures & Havane"
-materials: "Acétate Premium Mazzucchelli & JINYU & Personnalisation"
+materials: "Acétate Premium Mazzucchelli & JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricant montures optiques acétate, usine lunettes OEM personnal
 
 ## Caractéristiques
 
-- **Sélection de Matériaux Premium :** Construction en acétate haut de gamme Mazzucchelli et JINYU offrant une finition légère, durable et vibrante pour une esthétique raffinée.
+- **Sélection de Matériaux Premium :** Construction en acétate haut de gamme Mazzucchelli et JIMEI & JINYU offrant une finition légère, durable et vibrante pour une esthétique raffinée.
 - **Matériel Renforcé :** Charnières robustes à structure à rivets 4+3 barillets conçues pour une fluidité opérationnelle exceptionnelle et une stabilité à long terme.
 - **Ergonomie Intégrée :** Plaquettes de nez intégrées avec précision conçues pour offrir un ajustement sûr et sans pression pour un confort de port tout au long de la journée.
 - **Optique Polyvalente :** Verres en nylon haute ténacité offrant de larges options de personnalisation pour des teintes spécialisées et des revêtements avancés.
@@ -71,7 +71,7 @@ seoKeywords: "fabricant montures optiques acétate, usine lunettes OEM personnal
 
 ## Aperçu
 
-Alliant la profondeur vibrante de l'acétate Mazzucchelli et JINYU, ce cadre optique offre un équilibre sophistiqué entre durabilité et luxe léger. La riche palette — de l'olive profond au havane classique — reflète un langage de design adapté aux esthétiques modernes de la haute couture.
+Alliant la profondeur vibrante de l'acétate Mazzucchelli et JIMEI & JINYU, ce cadre optique offre un équilibre sophistiqué entre durabilité et luxe léger. La riche palette — de l'olive profond au havane classique — reflète un langage de design adapté aux esthétiques modernes de la haute couture.
 
 Conçu pour la longévité, le système de charnière à rivets 4+3 barillets assure des performances mécaniques transparentes, complétées par des plaquettes de nez intégrées pour un confort de port soutenu.
 

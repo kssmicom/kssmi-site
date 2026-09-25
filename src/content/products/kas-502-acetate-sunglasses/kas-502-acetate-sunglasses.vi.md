@@ -5,7 +5,7 @@ slug: "kas-502-acetate-sunglasses"
 itemNo: "KAS-502"
 date: "2026-05-12"
 colors: "Đen & Hồng & Đồi mồi đỏ & Havana & Trắng"
-materials: "Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli cao cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công & Thiết kế và sản xuất ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -58,7 +58,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Đặc điểm
 
-- **Cấu tạo Axetat cao cấp:** Được chế tác thủ công bằng axetat Mazzucchelli và JINYU cao cấp cho độ bền vượt trội và lớp hoàn thiện rực rỡ, lâu dài.
+- **Cấu tạo Axetat cao cấp:** Được chế tác thủ công bằng axetat Mazzucchelli và JIMEI & JINYU cao cấp cho độ bền vượt trội và lớp hoàn thiện rực rỡ, lâu dài.
 - **Phụ kiện gia cố:** Bản lề cấu trúc 4+3 chấu chắc chắn cung cấp độ ổn định vượt trội và hiệu suất vận hành trơn tru cho việc đeo hàng ngày.
 - **Quang học xuất sắc:** Tròng kính nylon bền bỉ mang lại khả năng chống va đập cao và thị lực rõ nét với các tùy chọn tùy chỉnh linh hoạt.
 - **Thiết kế công thái học:** Đệm mũi liền khối và gọng kính axetat nhẹ được thiết kế để mang lại sự thoải mái cả ngày và sự vừa vặn chắc chắn.
@@ -75,7 +75,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Tổng quan
 
-Được chế tác từ axetat Mazzucchelli và JINYU cao cấp, KAS-502 mang đến lớp hoàn thiện rực rỡ được đánh bóng bằng tay, phù hợp với thị hiếu thời trang cao cấp. Độ bền vốn có và trọng lượng nhẹ của vật liệu cung cấp một nền tảng tinh tế cho các danh mục kính mắt cao cấp.
+Được chế tác từ axetat Mazzucchelli và JIMEI & JINYU cao cấp, KAS-502 mang đến lớp hoàn thiện rực rỡ được đánh bóng bằng tay, phù hợp với thị hiếu thời trang cao cấp. Độ bền vốn có và trọng lượng nhẹ của vật liệu cung cấp một nền tảng tinh tế cho các danh mục kính mắt cao cấp.
 
 Gọng kính có cấu trúc bản lề 4+3 chấu được gia cố để có độ ổn định vượt trội, được bổ sung bởi tròng kính nylon chống va đập giúp duy trì độ rõ nét quang học trong các môi trường khác nhau.
 

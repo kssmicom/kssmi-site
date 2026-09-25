@@ -5,7 +5,7 @@ slug: "kao-309-acetate-optical-frame"
 itemNo: "KAO-309"
 date: "2026-05-10"
 colors: "Black & Royal-Blue & Tortoise & Olive"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -53,7 +53,7 @@ seoKeywords: "acetate optical frames manufacturer, custom eyewear OEM, luxury pr
 ---
 
 ## Technical Features
-- **Premium Material:** High-grade Mazzucchelli and JINYU acetate frame and temples providing a vibrant, lightweight, and durable aesthetic.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate frame and temples providing a vibrant, lightweight, and durable aesthetic.
 - **Durable Hardware:** Precision-engineered 4+3 barrel rivet structure hinges ensuring exceptional operational smoothness and structural longevity.
 - **Premium Optics:** Tenacious nylon lenses offering superior impact resistance and versatile customization options for specialized tints and coatings.
 - **Ergonomic Comfort:** Seamlessly integrated nose pads designed to provide a secure, hypoallergenic, and comfortable fit for extended use.
@@ -70,7 +70,7 @@ seoKeywords: "acetate optical frames manufacturer, custom eyewear OEM, luxury pr
 
 ## Overview
 
-Combining premium Mazzucchelli and JINYU acetate, the KAO-309 features a classic retro-inspired profile designed for high-end optical markets. The lightweight frame preserves intense color depth while offering the resilience required for daily wear.
+Combining premium Mazzucchelli, JIMEI & JINYU acetate, the KAO-309 features a classic retro-inspired profile designed for high-end optical markets. The lightweight frame preserves intense color depth while offering the resilience required for daily wear.
 
 Precision-engineered 4+3 barrel rivet hinges and integrated nose pads deliver a refined balance of structural longevity and ergonomic comfort.
 

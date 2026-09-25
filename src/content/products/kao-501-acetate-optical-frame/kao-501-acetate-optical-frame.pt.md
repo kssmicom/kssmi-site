@@ -5,7 +5,7 @@ slug: "kao-501-acetate-optical-frame"
 itemNo: "KAO-501"
 date: "2026-05-10"
 colors: "Preto & Tartaruga & Chocolate & Creme"
-materials: "Premium Mazzucchelli & JINYU Acetato & Personalização"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetato & Personalização"
 serviceMode: "OEM & ODM ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -55,7 +55,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, armações ópticas 
 
 ## Características
 
-- **Materiais Premium:** Fabricada em acetato autêntico Mazzucchelli e JINYU, proporcionando uma armação leve e durável com um acabamento vibrante e de alto brilho.
+- **Materiais Premium:** Fabricada em acetato autêntico Mazzucchelli e JIMEI & JINYU, proporcionando uma armação leve e durável com um acabamento vibrante e de alto brilho.
 - **Hardware Vintage:** Dobradiças robustas com estrutura de 4+3 barris com rebites, projetadas para integridade estrutural superior e uma estética artesanal atemporal.
 - **Design Escultural:** Construção de hastes finas com detalhes esculturais precisos para um perfil refinado e conforto ergonômico aprimorado.
 - **Óptica de Alto Desempenho:** Lentes de nylon tenaz que oferecem clareza excepcional e resistência ao impacto, com personalização completa para cores e revestimentos.
@@ -73,7 +73,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, armações ópticas 
 
 ## Visão Geral
 
-O acetato autêntico Mazzucchelli e JINYU confere à KAO-501 seu acabamento exclusivo de alto brilho e profundidade estrutural resiliente.
+O acetato autêntico Mazzucchelli e JIMEI & JINYU confere à KAO-501 seu acabamento exclusivo de alto brilho e profundidade estrutural resiliente.
 
 A armação utiliza um sistema robusto de dobradiças de 4+3 barris com rebites e hastes finas esculturais para equilibrar a estética vintage com a confiabilidade mecânica moderna e o conforto.
 

@@ -5,7 +5,7 @@ slug: "kas-315-acetate-sunglasses"
 itemNo: "KAS-315"
 date: "2026-05-12"
 colors: "Trong suốt & Xanh ô liu & Sâm panh & Havana & Xám bán trong suốt & Đen"
-materials: "Axetat Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Mazzucchelli cao cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công & Thiết kế và sản xuất ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -62,7 +62,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh T
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Sử dụng axetat Mazzucchelli và JINYU chất lượng cao mang đến gọng kính rực rỡ, nhẹ và bền bỉ với bề mặt được đánh bóng bằng tay cao cấp.
+- **Chất liệu cao cấp:** Sử dụng axetat Mazzucchelli và JIMEI & JINYU chất lượng cao mang đến gọng kính rực rỡ, nhẹ và bền bỉ với bề mặt được đánh bóng bằng tay cao cấp.
 - **Phụ kiện bền bỉ:** Bản lề cấu trúc 4+3 chấu chắc chắn được thiết kế để mang lại sự ổn định vượt trội và vận hành trơn tru lâu dài.
 - **Quang học tiên tiến:** Tròng kính nylon chống va đập mang lại độ rõ nét và độ bền tuyệt vời, với nhiều tùy chọn lớp phủ tùy chỉnh có sẵn.
 - **Thiết kế tiện dụng:** Đệm mũi liền gọng và kích thước 57-14-145mm được thiết kế chính xác mang lại sự thoải mái suốt cả ngày và phù hợp cho cả nam và nữ.
@@ -80,7 +80,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh T
 
 ## Tổng quan
 
-Được chế tác từ axetat Mazzucchelli và JINYU cao cấp, mẫu kính này mang lại bề mặt đánh bóng bằng tay rực rỡ, nắm bắt được tinh hoa của kính mắt xa xỉ đương đại.
+Được chế tác từ axetat Mazzucchelli và JIMEI & JINYU cao cấp, mẫu kính này mang lại bề mặt đánh bóng bằng tay rực rỡ, nắm bắt được tinh hoa của kính mắt xa xỉ đương đại.
 
 Việc tích hợp bản lề 4+3 chấu và thiết kế 57-14-145mm tiện dụng đảm bảo tính toàn vẹn của cấu trúc lâu dài và sự thoải mái đặc biệt khi đeo.
 

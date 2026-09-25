@@ -5,7 +5,7 @@ slug: "kas-114-acetate-sunglasses"
 itemNo: "KAS-114"
 date: "2026-05-09"
 colors: "Siyah & Şampanya & Sarı"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (renk başına 100 adet)"
 
@@ -50,7 +50,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM unisex güneş g�
 
 ## Teknik Özellikler
 
-- **Premium Malzeme:** Canlı bir görsel çekiciliğe sahip hafif, dayanıklı bir yapı sağlamak için yüksek kaliteli Mazzucchelli ve JINYU asetattan üretilmiştir.
+- **Premium Malzeme:** Canlı bir görsel çekiciliğe sahip hafif, dayanıklı bir yapı sağlamak için yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetattan üretilmiştir.
 - **Dayanıklı Donanım:** Uzun vadeli operasyonel pürüzsüzlük ve yapısal stabilite sağlayan sağlam 3+2 yapılı menteşelerle tasarlanmıştır.
 - **Hassas Optik:** Premium koleksiyonlar için üstün netlik ve kapsamlı özelleştirme seçenekleri sunan dayanıklı naylon lenslerle donatılmıştır.
 - **Kusursuz Konfor:** Tüm gün boyunca uzun süreli kullanım için güvenli ve ergonomik bir uyum sağlamak üzere tasarlanmış entegre burun pedleri.
@@ -68,7 +68,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM unisex güneş g�
 
 ## Genel Bakış
 
-Hem estetik duruş hem de yapısal bütünlük talep eden lüks pazarlar için tasarlanan KAS-114, canlı ve hafif bir yapı elde etmek için en üst düzey Mazzucchelli ve JINYU asetatını kullanır.
+Hem estetik duruş hem de yapısal bütünlük talep eden lüks pazarlar için tasarlanan KAS-114, canlı ve hafif bir yapı elde etmek için en üst düzey Mazzucchelli ve JIMEI & JINYU asetatını kullanır.
 
 Sağlam 3+2 yapılı menteşeler ve entegre burun pedleriyle tasarlanan cesur unisex çerçeve, olağanüstü uzun vadeli operasyonel pürüzsüzlük ile güvenli, ergonomik bir uyumu garanti eder.
 

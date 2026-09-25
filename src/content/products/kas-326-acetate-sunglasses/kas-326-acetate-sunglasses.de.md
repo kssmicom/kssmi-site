@@ -5,7 +5,7 @@ slug: "kas-326-acetate-sunglasses"
 itemNo: "KAS-326"
 date: "2026-05-13"
 colors: "Schwarz mit Verlauf-Grau, Schildpatt mit Blau-Braun, Teal Havanna mit Verlauf-Braun"
-materials: "Mazzucchelli & JINYU Premium-Acetat & Individualisierung"
+materials: "Mazzucchelli & JIMEI & JINYU Premium-Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung & Design und Fertigung ( Individualisierung )"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -44,7 +44,7 @@ seoKeywords: "maßgeschneiderte acetat sonnenbrille, acetat brillen großhandel,
 
 ## Eigenschaften
 
-- **Premium-Rahmenmaterial:** Hergestellt aus hochwertigem Mazzucchelli- und JINYU-Acetat, bietet ein leichtes, langlebiges und strukturell stabiles Design mit lebendiger Farbtiefe.
+- **Premium-Rahmenmaterial:** Hergestellt aus hochwertigem Mazzucchelli- und JIMEI & JINYU-Acetat, bietet ein leichtes, langlebiges und strukturell stabiles Design mit lebendiger Farbtiefe.
 - **Premium-Optik:** Zähe Nylongläser mit umfassenden Optionen für kundenspezifische Tönungen und Beschichtungen, um den unterschiedlichen Marktanforderungen gerecht zu werden.
 - **Präzisions-Hardware:** Stabile 3+2-Zylinder-Strukturscharniere, anpassbar mit 5-Zylinder- oder Federkonfigurationen, ausgelegt für langfristige Leichtgängigkeit.
 - **Ganztägiger Komfort:** Integrierte Acetat-Nasenpads, die den Druck gleichmäßig verteilen und einen sicheren, bequemen Sitz gewährleisten.
@@ -61,7 +61,7 @@ seoKeywords: "maßgeschneiderte acetat sonnenbrille, acetat brillen großhandel,
 
 ## Übersicht
 
-Die KAS-326 Sonnenbrille wurde entwickelt, um die ästhetischen Ansprüche des Premium-Boutique-Einzelhandels zu erfüllen. Sie verbindet klassische Nietendetails mit der lebendigen, vielschichtigen Tiefe von speziell beschafftem JINYU- und Mazzucchelli-Acetat.
+Die KAS-326 Sonnenbrille wurde entwickelt, um die ästhetischen Ansprüche des Premium-Boutique-Einzelhandels zu erfüllen. Sie verbindet klassische Nietendetails mit der lebendigen, vielschichtigen Tiefe von speziell beschafftem JIMEI & JINYU- und Mazzucchelli-Acetat.
 
 Grundlage für ihre High-End-Attraktivität sind ein langlebiges 3+2-Zylinderscharnier und integrierte Nasenpads, die für eine präzise Ausrichtung des Rahmens und einen außergewöhnlichen Tragekomfort sorgen.
 

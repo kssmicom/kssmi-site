@@ -5,7 +5,7 @@ slug: "kas-314-acetate-sunglasses"
 itemNo: "KAS-314"
 date: "2026-05-12"
 colors: "Vert Néon & Champagne & Havane & Fumée & Noir"
-materials: "Acétate Mazzucchelli Premium & JINYU & Personnalisation"
+materials: "Acétate Mazzucchelli Premium & JIMEI & JINYU & Personnalisation"
 serviceMode: "OEM & ODM ( Personnalisation )"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil OE
 
 ## Caractéristiques
 
-- **Matériau Premium :** Construction en acétate Mazzucchelli et JINYU de haute qualité offrant une sensation de légèreté avec une durabilité exceptionnelle et une profondeur de couleur vibrante.
+- **Matériau Premium :** Construction en acétate Mazzucchelli et JIMEI & JINYU de haute qualité offrant une sensation de légèreté avec une durabilité exceptionnelle et une profondeur de couleur vibrante.
 - **Matériel Robuste :** Charnières à structure 4+3 barillets conçues avec précision assurant une fluidité opérationnelle à long terme et une intégrité structurelle.
 - **Optique Supérieure :** Verres en nylon haute ténacité offrant une excellente résistance aux chocs et une clarté visuelle pour les normes de lunettes premium.
 - **Confort Ergonomique :** Plaquettes de nez intégrées sans couture conçues pour un ajustement stable et sans pression, adaptées à un port quotidien prolongé.
@@ -76,7 +76,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil OE
 
 ## Aperçu
 
-Intégrant les textures raffinées de l'acétate Mazzucchelli et JINYU, le modèle KAS-314 offre un équilibre saisissant entre profondeur de couleur vibrante et résilience légère. Cette silhouette unisexe sert de base polyvalente pour les marques privilégiant à la fois les tendances modernes et l'artisanat intemporel de l'acétate.
+Intégrant les textures raffinées de l'acétate Mazzucchelli et JIMEI & JINYU, le modèle KAS-314 offre un équilibre saisissant entre profondeur de couleur vibrante et résilience légère. Cette silhouette unisexe sert de base polyvalente pour les marques privilégiant à la fois les tendances modernes et l'artisanat intemporel de l'acétate.
 
 La monture est conçue avec des charnières de précision 4+3 barillets et des verres en nylon résistants aux chocs, assurant une durabilité haute performance ainsi qu'un ajustement intégré et sans couture.
 

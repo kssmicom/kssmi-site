@@ -5,7 +5,7 @@ slug: "kas-107-acetate-sunglasses"
 itemNo: "KAS-107"
 date: "2026-05-06"
 colors: "Black & Clear & Havana & Olive"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Technical Features
 
-- **Premium Material:** Hand-finished using high-grade Mazzucchelli and JINYU acetate to provide a lightweight, hypoallergenic frame with exceptional vibrance and long-term durability.
+- **Premium Material:** Hand-finished using high-grade Mazzucchelli, JIMEI & JINYU acetate to provide a lightweight, hypoallergenic frame with exceptional vibrance and long-term durability.
 - **Precision Engineering:** Features a robust 3+2 barrel structure hinge system designed for superior operational stability and consistent opening/closing tension.
 - **High-Performance Optics:** Equipped with tenacious nylon lenses that offer excellent impact resistance and optical clarity, with full custom tinting and coating options available.
 - **Integrated Comfort:** Ergonomically designed integrated nose pads ensuring a seamless aesthetic and a secure, pressure-free fit for extended daily wear.
@@ -71,7 +71,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Overview
 
-Crafted from premium Mazzucchelli and JINYU acetate, this classic silhouette balances exceptional material vibrance with a lightweight, hypoallergenic finish.
+Crafted from premium Mazzucchelli, JIMEI & JINYU acetate, this classic silhouette balances exceptional material vibrance with a lightweight, hypoallergenic finish.
 
 Precision-milled frames and robust 3+2 barrel hinges provide the structural reliability and smooth tactile operation expected in high-end boutique environments.
 

@@ -5,7 +5,7 @@ slug: "kas-129-acetate-sunglasses"
 itemNo: "KAS-129"
 date: "2026-05-09"
 colors: "Schwarz & Rubinrot & Königsblau & Lila Marmor & Perlmutt Marmor"
-materials: "Premium Mazzucchelli & JINYU Acetat & Individualisierung"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) (Individualisierung)"
 moq: "300 Stk/Modell (100Stk/Farbe)"
 
@@ -58,7 +58,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, Custom OEM Sonnenbrillen, Luxus E
 
 ## Eigenschaften
 
-- **Premium-Acetat:** Handverlesene Mazzucchelli- und JINYU-Acetat-Rahmen und -Bügel, die ein leichtes, lebendiges und hypoallergenes Tragegefühl bieten.
+- **Premium-Acetat:** Handverlesene Mazzucchelli- und JIMEI & JINYU-Acetat-Rahmen und -Bügel, die ein leichtes, lebendiges und hypoallergenes Tragegefühl bieten.
 - **Langlebige Hardware:** Präzisionsgefertigte 4+3 Fass-Struktur Scharniere, entwickelt für maximale Stabilität und lebenslange Leichtgängigkeit.
 - **Hochleistungsgläser:** Robuste Nylon-Glastechnologie mit überlegener Schlagfestigkeit und optischer Klarheit bei voller Individualisierungsfreiheit.
 - **Integrierter Komfort:** Ergonomisch geformte, integrierte Nasenpads, die einen stabilen, rutschfesten Sitz für verschiedene Gesichtsprofile gewährleisten.
@@ -76,7 +76,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, Custom OEM Sonnenbrillen, Luxus E
 
 ## Übersicht
 
-Luxusmodehäuser, die eine unverwechselbare visuelle Note suchen, finden sie im Modell KAS-129, das handverlesenes Mazzucchelli- und JINYU-Acetat mit einer kühnen Unisex-Silhouette kombiniert.
+Luxusmodehäuser, die eine unverwechselbare visuelle Note suchen, finden sie im Modell KAS-129, das handverlesenes Mazzucchelli- und JIMEI & JINYU-Acetat mit einer kühnen Unisex-Silhouette kombiniert.
 
 Dieses Design integriert ein langlebiges 4+3 Fass-Scharniersystem und ergonomische Nasenpads, um konstante Leistung und raffinierten Komfort auch bei intensiver Nutzung zu gewährleisten.
 

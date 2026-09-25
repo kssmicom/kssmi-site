@@ -5,7 +5,7 @@ slug: "kas-308-acetate-sunglasses"
 itemNo: "KAS-308"
 date: "2026-05-12"
 colors: "Đen & Xanh hoàng gia & Nâu & Ô liu"
-materials: "Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli cao cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -54,7 +54,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Cấu tạo từ Axetat Mazzucchelli và JINYU cao cấp mang lại độ bền vượt trội và tính thẩm mỹ sống động, lâu dài.
+- **Chất liệu cao cấp:** Cấu tạo từ Axetat Mazzucchelli và JIMEI & JINYU cao cấp mang lại độ bền vượt trội và tính thẩm mỹ sống động, lâu dài.
 - **Phụ kiện bền bỉ:** Bản lề cấu trúc 4+3 barrel chắc chắn được thiết kế để vận hành trơn tru nhất quán và đảm bảo tính toàn vẹn của cấu trúc.
 - **Quang học vượt trội:** Tròng kính nylon bền bỉ mang lại khả năng chống va đập tuyệt vời với các tùy chọn tùy chỉnh rộng rãi về màu sắc và lớp phủ.
 - **Thiết kế công thái học:** Đệm mũi tích hợp được thiết kế để vừa vặn liền mạch và tăng cường sự thoải mái khi đeo trong thời gian dài.
@@ -72,7 +72,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Tổng quan
 
-Được chế tác tỉ mỉ từ axetat Mazzucchelli và JINYU cao cấp, KAS-308 cung cấp một khung gọng nhẹ nhưng chắc chắn cho kính mắt thời trang cao cấp.
+Được chế tác tỉ mỉ từ axetat Mazzucchelli và JIMEI & JINYU cao cấp, KAS-308 cung cấp một khung gọng nhẹ nhưng chắc chắn cho kính mắt thời trang cao cấp.
 
 Đệm mũi tích hợp và hệ thống bản lề 4+3 barrel được gia cố đảm bảo sự thoải mái lâu dài và hiệu suất đáng tin cậy trong suốt vòng đời của sản phẩm.
 

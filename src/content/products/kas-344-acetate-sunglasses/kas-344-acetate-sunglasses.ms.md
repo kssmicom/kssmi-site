@@ -5,7 +5,7 @@ slug: "kas-344-acetate-sunglasses"
 itemNo: "KAS-344"
 date: "2026-05-12"
 colors: "Hitam Padu & Kura-kura Amber & Kura-kura Gelap & Jingga Kemerahan"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM (Kontrak) & Pembuatan ODM (Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model (100 unit setiap warna)"
 
@@ -53,7 +53,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 ---
 
 ## Ciri-ciri Utama
-- **Bahan Premium:** Asetat Mazzucchelli dan JINYU yang digilap tangan menawarkan kemasan yang kaya dan cemerlang dengan ketahanan serta kedalaman warna yang luar biasa.
+- **Bahan Premium:** Asetat Mazzucchelli dan JIMEI & JINYU yang digilap tangan menawarkan kemasan yang kaya dan cemerlang dengan ketahanan serta kedalaman warna yang luar biasa.
 - **Kejuruteraan Ketepatan:** Engsel struktur 2+1 barrel berkualiti tinggi yang direka untuk ketegangan yang konsisten dan kelancaran operasi jangka panjang.
 - **Keselesaan Dipertingkatkan:** Alas hidung titanium fleksibel boleh laras yang memberikan padanan ringan dan boleh disesuaikan untuk keselesaan sepanjang hari merentasi pelbagai profil wajah.
 - **Optik Termaju:** Lensa nylon teguh yang memberikan kejelasan dan rintangan hentaman yang unggul, dengan sokongan penuh untuk warna tersuai dan salutan khusus.
@@ -70,7 +70,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Gambaran Keseluruhan
 
-Dihasilkan daripada asetat Mazzucchelli dan JINYU yang digilap tangan, reka bentuk ini menawarkan kedalaman warna yang cemerlang dan kemasan premium yang sesuai untuk rumah fesyen mewah. Seni bina bingkainya yang ringan mengimbangi gaya moden dengan integriti struktur yang diharapkan daripada kacamata mewah.
+Dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU yang digilap tangan, reka bentuk ini menawarkan kedalaman warna yang cemerlang dan kemasan premium yang sesuai untuk rumah fesyen mewah. Seni bina bingkainya yang ringan mengimbangi gaya moden dengan integriti struktur yang diharapkan daripada kacamata mewah.
 
 Engsel 2+1 barrel berkualiti tinggi dan alas hidung titanium boleh laras memastikan padanan yang selamat dan boleh disesuaikan serta operasi yang lancar untuk keselesaan jangka panjang.
 

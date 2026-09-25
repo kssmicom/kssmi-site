@@ -5,7 +5,7 @@ slug: "kao-314-acetate-optical-frame"
 itemNo: "KAO-314"
 date: "2026-05-10"
 colors: "Hitam & Hijau Neon & Kura-kura & Syampanya & Asap"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100unit/warna)"
 
@@ -58,7 +58,7 @@ seoKeywords: "bingkai optik asetat, kacamata optik tersuai, pengilang bingkai op
 
 ## Ciri-ciri Utama
 
-- **Pembinaan Bahan Premium:** Depan dan sangkutan asetat Mazzucchelli dan JINYU gred tinggi yang menawarkan rasa ringan dengan ketahanan unggul dan kedalaman warna yang bertenaga.
+- **Pembinaan Bahan Premium:** Depan dan sangkutan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi yang menawarkan rasa ringan dengan ketahanan unggul dan kedalaman warna yang bertenaga.
 - **Perkakasan Teguh:** Engsel struktur rivet 4+3 tong yang direka dengan ketepatan memastikan kelancaran operasi jangka panjang dan kestabilan struktur.
 - **Reka Bentuk Ergonomik:** Alas hidung bersepadu yang lancar dibuat untuk keselesaan sepanjang hari dan padanan yang selamat serta tidak licin merentasi pelbagai profil wajah.
 - **Optik Berprestasi Tinggi:** Kanta nilon kental dengan pilihan penyesuaian yang meluas untuk warna dan salutan agar sejajar dengan estetika jenama tertentu.
@@ -76,7 +76,7 @@ seoKeywords: "bingkai optik asetat, kacamata optik tersuai, pengilang bingkai op
 
 ## Gambaran Keseluruhan
 
-Menggabungkan asetat Mazzucchelli dan JINYU gred tinggi, model ini mencapai keseimbangan canggih antara kedalaman warna yang bertenaga dan ketahanan struktur.
+Menggabungkan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi, model ini mencapai keseimbangan canggih antara kedalaman warna yang bertenaga dan ketahanan struktur.
 
 Engsel rivet 4+3 tong yang direka dengan ketepatan memastikan kelancaran operasi yang berterusan, manakala alas hidung bersepadu memberikan padanan yang selamat dan ergonomik.
 

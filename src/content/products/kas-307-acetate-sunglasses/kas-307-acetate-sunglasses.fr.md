@@ -5,7 +5,7 @@ slug: "kas-307-acetate-sunglasses"
 itemNo: "KAS-307"
 date: "2026-05-12"
 colors: "Noir & Rayures & Transparent & Écaille"
-materials: "Acétate Premium Mazzucchelli & JINYU & Personnalisation"
+materials: "Acétate Premium Mazzucchelli & JIMEI & JINYU & Personnalisation"
 serviceMode: "OEM & ODM ( Personnalisation )"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes personnalis�
 
 ## Caractéristiques
 
-- **Matériau Premium :** Fabrication en acétate Mazzucchelli et JINYU de haute qualité offrant une monture vibrante, légère et durable pour un port de longue durée.
+- **Matériau Premium :** Fabrication en acétate Mazzucchelli et JIMEI & JINYU de haute qualité offrant une monture vibrante, légère et durable pour un port de longue durée.
 - **Quincaillerie Durable :** Charnières robustes à structure de 4+3 barillets conçues pour une stabilité supérieure et une fluidité de fonctionnement à long terme.
 - **Optique Supérieure :** Verres en nylon tenace offrant une clarté exceptionnelle et une résistance aux chocs avec de vastes options de personnalisation.
 - **Conception Ergonomique :** Plaquettes de nez intégrées et coupe unisexe polyvalente assurant un confort tout au long de la journée et une sensation de sécurité et d'équilibre.
@@ -72,7 +72,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes personnalis�
 
 ## Aperçu
 
-Fabriqué à partir d'acétate Mazzucchelli et JINYU de haute qualité, le KAS-307 offre une profondeur de couleur vibrante et un toucher premium. Ce choix de matériau assure une monture légère mais durable qui résonne avec les sensibilités de la mode haut de gamme.
+Fabriqué à partir d'acétate Mazzucchelli et JIMEI & JINYU de haute qualité, le KAS-307 offre une profondeur de couleur vibrante et un toucher premium. Ce choix de matériau assure une monture légère mais durable qui résonne avec les sensibilités de la mode haut de gamme.
 
 L'intégration de charnières robustes à structure de 4+3 barillets et de verres en nylon tenace offre une fluidité de fonctionnement à long terme et une clarté optique exceptionnelle.
 

@@ -5,7 +5,7 @@ slug: "kas-123-acetate-sunglasses"
 itemNo: "KAS-123"
 date: "2026-05-09"
 colors: "Noir & Moutarde & Érable"
-materials: "Acétate Premium Mazzucchelli & JINYU & Personnalisation"
+materials: "Acétate Premium Mazzucchelli & JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -49,7 +49,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, lunettes OEM personnalisée
 ---
 
 ## Caractéristiques
-- **Acétate Premium :** Construction en acétate Mazzucchelli et JINYU poli à la main offrant une durabilité exceptionnelle et une profondeur de couleur vibrante pour le branding de luxe.
+- **Acétate Premium :** Construction en acétate Mazzucchelli et JIMEI & JINYU poli à la main offrant une durabilité exceptionnelle et une profondeur de couleur vibrante pour le branding de luxe.
 - **Charnières de Précision :** Charnières robustes à structure de barillet 3+2 conçues pour une fluidité opérationnelle constante et une intégrité structurelle à long terme.
 - **Optique Haute Performance :** Verres en nylon tenace offrant une clarté supérieure et une résistance aux chocs, avec des options de personnalisation complète pour des revêtements de verres spécialisés.
 - **Design Ergonomique :** Plaquettes de nez intégrées et contours de branches raffinés assurant un ajustement sûr et sans pression pour un confort tout au long de la journée.
@@ -66,7 +66,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, lunettes OEM personnalisée
 
 ## Aperçu
 
-Alliant une profondeur de couleur vibrante à l'intégrité structurelle de l'acétate Mazzucchelli et JINYU poli à la main, le modèle KAS-123 représente une base polyvalente pour les collections de lunettes de luxe.
+Alliant une profondeur de couleur vibrante à l'intégrité structurelle de l'acétate Mazzucchelli et JIMEI & JINYU poli à la main, le modèle KAS-123 représente une base polyvalente pour les collections de lunettes de luxe.
 
 Son profil unisexe équilibré est renforcé par des charnières à 3+2 barillets conçues avec précision et des plaquettes de nez intégrées, garantissant un ajustement raffiné et durable pour un port quotidien.
 

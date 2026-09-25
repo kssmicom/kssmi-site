@@ -5,7 +5,7 @@ slug: "kas-123-acetate-sunglasses"
 itemNo: "KAS-123"
 date: "2026-05-09"
 colors: "Nero & Senape & Acero"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -49,7 +49,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali OEM personalizzati, 
 ---
 
 ## Caratteristiche
-- **Acetato Premium:** Costruzione in acetato Mazzucchelli e JINYU lucidato a mano che offre una durata eccezionale e una profondità di colore vibrante per il branding di lusso.
+- **Acetato Premium:** Costruzione in acetato Mazzucchelli e JIMEI & JINYU lucidato a mano che offre una durata eccezionale e una profondità di colore vibrante per il branding di lusso.
 - **Cerniere di Precisione:** Robuste cerniere con struttura a 3+2 barili progettate per una fluidità operativa costante e un'integrità strutturale a lungo termine.
 - **Ottica ad Alte Prestazioni:** Lenti in nylon tenace che offrono chiarezza superiore e resistenza agli urti, con opzioni di personalizzazione completa per rivestimenti specializzati delle lenti.
 - **Design Ergonomico:** Naselli integrati e contorni delle aste raffinati che assicurano una calzata sicura e senza pressione per un comfort che dura tutto il giorno.
@@ -66,7 +66,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali OEM personalizzati, 
 
 ## Panoramica
 
-Combinando una vibrante profondità di colore con l'integrità strutturale dell'acetato Mazzucchelli e JINYU lucidato a mano, il modello KAS-123 rappresenta una base versatile per le collezioni di occhiali di lusso.
+Combinando una vibrante profondità di colore con l'integrità strutturale dell'acetato Mazzucchelli e JIMEI & JINYU lucidato a mano, il modello KAS-123 rappresenta una base versatile per le collezioni di occhiali di lusso.
 
 Il suo profilo unisex equilibrato è rinforzato da cerniere a 3+2 barili progettate con precisione e naselli integrati, garantendo una calzata raffinata e durevole per tutto il giorno.
 

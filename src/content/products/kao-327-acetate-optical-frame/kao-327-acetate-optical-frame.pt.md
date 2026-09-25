@@ -5,7 +5,7 @@ slug: "kao-327-acetate-optical-frame"
 itemNo: "KAO-327"
 date: "2026-05-10"
 colors: "Transparente, Havana, Preto"
-materials: "Acetato Mazzucchelli & JINYU Premium & Personalização"
+materials: "Acetato Mazzucchelli & JIMEI & JINYU Premium & Personalização"
 serviceMode: "Fabricação por Encomenda & Design e Fabricação (Personalização)"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -50,7 +50,7 @@ seoKeywords: "armações ópticas de acetato elegantes, fabricante de armações
 
 ## Características
 
-- **Material Premium:** Fabricado a partir de acetato premium Mazzucchelli e JINYU, oferecendo uma estrutura leve mas excecionalmente durável com profundidade de cor vibrante e duradora.
+- **Material Premium:** Fabricado a partir de acetato premium Mazzucchelli e JIMEI & JINYU, oferecendo uma estrutura leve mas excecionalmente durável com profundidade de cor vibrante e duradora.
 - **Componentes de Engenharia:** Dobradiças de rebite de 3+2 tambores de alta confiabilidade, proporcionando um movimento estável e suave das hastes com opções de dobradiças de mola personalizadas.
 - **Óptica Tenaz:** Lentes de nylon de alta durabilidade que proporcionam excelente clareza e resistência ao impacto com opções completas de revestimento personalizado.
 - **Conforto Integrado:** Ponteiras nasicas integradas de forma perfeita, combinadas com uma geometria personalizada de 50-22-145 mm para proporcionar um ajuste equilibrado e antiderrapante.
@@ -67,7 +67,7 @@ seoKeywords: "armações ópticas de acetato elegantes, fabricante de armações
 
 ## Visão Geral
 
-O design clássico de óculos encontra a arte de materiais de alta qualidade no KAO-327, uma armação unissexo que destaca a vibrante profundidade do acetato premium Mazzucchelli e JINYU.
+O design clássico de óculos encontra a arte de materiais de alta qualidade no KAO-327, uma armação unissexo que destaca a vibrante profundidade do acetato premium Mazzucchelli e JIMEI & JINYU.
 
 A sua durabilidade estrutural é reforçada pelas dobradiças de engenharia de rebite de 3+2 tambores, enquanto o acabamento polido à mão e as ponteiras nasicas integradas garantem um ajuste equilibrado e antiderrapante para o uso diário.
 

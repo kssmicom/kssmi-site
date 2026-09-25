@@ -5,7 +5,7 @@ slug: "kas-125-acetate-sunglasses"
 itemNo: "KAS-125"
 date: "2026-05-09"
 colors: "Siyah & Açık Kaplumbağa & Koyu Kaplumbağa & Manda Boynuzu & Haki"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) (Özelleştirme)"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -57,7 +57,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel tasarım OEM gözlük
 ---
 ## Özellikler
 
-- **Premium Malzemeler:** Hafif ve canlı Mazzucchelli ve JINYU asetat çerçeve ve saplar, premium bir dokunuş hissi ve uzun ömürlü dayanıklılık sunar.
+- **Premium Malzemeler:** Hafif ve canlı Mazzucchelli ve JIMEI & JINYU asetat çerçeve ve saplar, premium bir dokunuş hissi ve uzun ömürlü dayanıklılık sunar.
 - **Dayanıklı Donanım:** Hassas hizalama ve tutarlı çalışma pürüzsüzlüğü için mühendislik harikası, sağlam 4+3 barrel yapılı menteşeler.
 - **Gelişmiş Optik:** Çok yönlü 53-19-145 mm çerçeve profilinde üstün netlik ve darbe direnci sağlayan dayanıklı naylon lensler.
 - **Entegre Konfor:** Stabil ve hipoalerjenik bir uyum için doğrudan çerçeveye yerleştirilmiş ergonomik tasarımlı burun tamponları.
@@ -74,7 +74,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel tasarım OEM gözlük
 
 ## Genel Bakış
 
-Premium Mazzucchelli ve JINYU asetat yapısı, KAS-125'e küresel lüks portföylerinin standartlarını karşılayan belirgin bir dokunuş hissi ve uzun ömürlü bir canlılık kazandırır.
+Premium Mazzucchelli ve JIMEI & JINYU asetat yapısı, KAS-125'e küresel lüks portföylerinin standartlarını karşılayan belirgin bir dokunuş hissi ve uzun ömürlü bir canlılık kazandırır.
 
 Hassas hizalama için 4+3 barrel yapılı menteşelerle tasarlanan çerçeve, yüksek darbe dirençli naylon lensleri ergonomik, entegre bir köprü ile birleştirerek sürdürülebilir dayanıklılık sağlar.
 

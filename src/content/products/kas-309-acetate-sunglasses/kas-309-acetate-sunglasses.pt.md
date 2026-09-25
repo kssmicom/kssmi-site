@@ -5,7 +5,7 @@ slug: "kas-309-acetate-sunglasses"
 itemNo: "KAS-309"
 date: "2026-05-12"
 colors: "Preto & Azul Royal & Tartaruga & Oliva"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "OEM & ODM ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de óculos de sol em acetato, produção de óculos per
 
 ## Características
 
-- **Material de Acetato Premium:** Construção em acetato Mazzucchelli e JINYU de alta qualidade que garante uma armação durável e leve com uma retenção de cor profunda e vibrante.
+- **Material de Acetato Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que garante uma armação durável e leve com uma retenção de cor profunda e vibrante.
 - **Hardware de Precisão:** Dobradiças de estrutura durável de 4+3 tambores projetadas para uma estabilidade consistente e uma suavidade operacional a longo prazo.
 - **Óptica Superior:** Lentes em nylon tenaz que proporcionam alta resistência ao impacto e clareza excepcional para uma experiência visual premium.
 - **Conforto Ergonômico:** Ponteiras nasicas integradas e um equilíbrio de armação refinado projetado para oferecer um ajuste seguro e hipoalergênico para uso durante todo o dia.
@@ -72,7 +72,7 @@ seoKeywords: "fabricante de óculos de sol em acetato, produção de óculos per
 
 ## Visão Geral
 
-O acetato Mazzucchelli e JINYU fornecem a base para o KAS-309, oferecendo uma interação sofisticada de retenção de cor profunda e integridade estrutural leve.
+O acetato Mazzucchelli e JIMEI & JINYU fornecem a base para o KAS-309, oferecendo uma interação sofisticada de retenção de cor profunda e integridade estrutural leve.
 
 A arquitetura de dobradiça de 4+3 tambores e as ponteiras nasicas integradas são projetadas para estabilidade a longo prazo, garantindo um ajuste seguro e confortável em diversos perfis faciais.
 

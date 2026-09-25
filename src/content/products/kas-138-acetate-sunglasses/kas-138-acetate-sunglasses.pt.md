@@ -5,7 +5,7 @@ slug: "kas-138-acetate-sunglasses"
 itemNo: "KAS-138"
 date: "2026-05-09"
 colors: "Preto & Tartaruga & Cinza-Rosado Pálido & Rosa Mate"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -53,7 +53,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 ---
 
 ## Características
-- **Material Premium:** Construção em acetato Mazzucchelli e JINYU de alta qualidade, oferecendo uma armação vibrante, leve e durável para marcas de moda de luxo.
+- **Material Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, oferecendo uma armação vibrante, leve e durável para marcas de moda de luxo.
 - **Hardware Robusto:** Dobradiças profissionais com estrutura de 3+2 barris, projetadas para uma suavidade operacional consistente e durabilidade a longo prazo.
 - **Ótica Superior:** Lentes de nylon tenaz de alto desempenho com amplas possibilidades de tingimento e revestimento personalizados para designers de óculos premium.
 - **Design Ergonômico:** Ponteiras nãsicas perfeitamente integradas, proporcionando um ajuste seguro e confortável para uso diário prolongado em todos os formatos de rosto.
@@ -69,7 +69,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 - Lojas de Conceito e Multi-Marcas
 
 ## Visão Geral
-Fabricada com precisão a partir de acetato genuíno Mazzucchelli e JINYU, a série KAS-138 enfatiza a profundidade vibrante das cores e a durabilidade de alto padrão para o mercado de luxo.
+Fabricada com precisão a partir de acetato genuíno Mazzucchelli e JIMEI & JINYU, a série KAS-138 enfatiza a profundidade vibrante das cores e a durabilidade de alto padrão para o mercado de luxo.
 
 A integração de dobradiças com estrutura de 3+2 barris e ponteiras nãsicas ergonômicas oferece um equilíbrio perfeito entre confiabilidade mecânica e conforto de uso diário.
 

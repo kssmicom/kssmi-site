@@ -5,7 +5,7 @@ slug: "kas-322-acetate-sunglasses"
 itemNo: "KAS-322"
 date: "2026-05-12"
 colors: "Preto & Champanhe & Tartaruga & Oliva"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) (Personalização)"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "óculos de sol de acetato Mazzucchelli, fabricante de óculos de s
 
 ## Características
 
-- **Material de Acetato Premium:** Construção de acetato Mazzucchelli e JINYU de alta qualidade que oferece uma durabilidade excepcional e um acabamento vibrante e duradouro.
+- **Material de Acetato Premium:** Construção de acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que oferece uma durabilidade excepcional e um acabamento vibrante e duradouro.
 - **Ótica Superior:** Lentes de nylon tenaz que proporcionam excelente resistência ao impacto e clareza com amplas opções de tingimento personalizado.
 - **Hardware de Engenharia:** Dobradiças com estrutura de 4+3 barris de alta precisão projetadas para máxima estabilidade e suavidade operacional a longo prazo.
 - **Design Ergonômico:** Ponteiras nasicas integradas e uma estrutura de armação leve que garante um ajuste seguro e hipoalergênico para conforto durante todo o dia.
@@ -71,7 +71,7 @@ seoKeywords: "óculos de sol de acetato Mazzucchelli, fabricante de óculos de s
 
 ## Visão Geral
 
-Fabricada a partir de uma mistura de acetato Mazzucchelli e JINYU, esta armação alcança um equilíbrio sofisticado de profundidade de cor vibrante e integridade estrutural duradoura. A arquitetura leve e as ponteiras nasicas integradas proporcionam um ajuste contínuo e hipoalergênico para uso durante todo o dia.
+Fabricada a partir de uma mistura de acetato Mazzucchelli e JIMEI & JINYU, esta armação alcança um equilíbrio sofisticado de profundidade de cor vibrante e integridade estrutural duradoura. A arquitetura leve e as ponteiras nasicas integradas proporcionam um ajuste contínuo e hipoalergênico para uso durante todo o dia.
 
 O conjunto de dobradiça de 4+3 barris garante um movimento mecânico confiável, complementado por lentes de nylon de alta tenacidade que oferecem excelente resistência ao impacto.
 

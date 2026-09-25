@@ -5,7 +5,7 @@ slug: "kas-108-acetate-sunglasses"
 itemNo: "KAS-108"
 date: "2026-05-07"
 colors: "Negro & Transparente & Habana & Oliva"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalización"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Características
 
-- **Construcción de Acetato Premium:** Marco y varillas de acetato Mazzucchelli y JINYU de alta calidad que ofrecen un acabado vibrante pulido a mano con una durabilidad excepcional.
+- **Construcción de Acetato Premium:** Marco y varillas de acetato Mazzucchelli y JIMEI & JINYU de alta calidad que ofrecen un acabado vibrante pulido a mano con una durabilidad excepcional.
 - **Óptica de Alto Rendimiento:** Lentes de nylon tenaces que proporcionan una resistencia al impacto y una claridad óptica superiores con amplias opciones de tintado personalizado disponibles.
 - **Hardware de Precisión:** Bisagras estables con estructura de 3+2 barriles diseñadas para una suavidad operativa constante y una alineación del marco a largo plazo.
 - **Comodidad Ergonómica:** Almohadillas nasales integradas y una estructura de marco ligera diseñada para un ajuste seguro y comodidad durante todo el día en diversos perfiles faciales.
@@ -72,7 +72,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Descripción General
 
-El acetato Mazzucchelli y JINYU proporcionan la excelencia fundamental para este modelo, combinando un acabado vibrante pulido a mano con la ligereza y durabilidad esenciales para las gafas premium. Este diseño unisex de inspiración vintage sirve como un elemento versátil para las marcas que buscan un equilibrio entre estética audaz y estilo atemporal.
+El acetato Mazzucchelli y JIMEI & JINYU proporcionan la excelencia fundamental para este modelo, combinando un acabado vibrante pulido a mano con la ligereza y durabilidad esenciales para las gafas premium. Este diseño unisex de inspiración vintage sirve como un elemento versátil para las marcas que buscan un equilibrio entre estética audaz y estilo atemporal.
 
 Un sistema de bisagras de 3+2 barriles y almohadillas nasales integradas garantizan un rendimiento constante y comodidad ergonómica, reflejando un compromiso con la fabricación de precisión y la alineación del marco a largo plazo.
 

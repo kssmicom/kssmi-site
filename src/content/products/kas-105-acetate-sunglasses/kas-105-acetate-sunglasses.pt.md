@@ -5,7 +5,7 @@ slug: "kas-105-acetate-sunglasses"
 itemNo: "KAS-105"
 date: "2026-05-06"
 colors: "Cinza & Havana Brilhante & Havana Fosco & Transparente & Preto"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Características
 
-- **Material Premium:** Armações polidas à mão feitas com os renomados acetatos Mazzucchelli e JINYU, oferecendo durabilidade excepcional e uma profundidade de cor vibrante.
+- **Material Premium:** Armações polidas à mão feitas com os renomados acetatos Mazzucchelli e JIMEI & JINYU, oferecendo durabilidade excepcional e uma profundidade de cor vibrante.
 - **Hardware Durável:** Dobradiças de tambor 3+2 projetadas com precisão, garantindo estabilidade estrutural e desempenho operacional suave e de longo prazo.
 - **Ótica de Alto Desempenho:** Lentes de nylon resistentes a impactos que proporcionam clareza e durabilidade superiores para os padrões de óculos de alta moda.
 - **Design Ergonômico:** Plaquetas nasais integradas e uma geometria de armação balanceada com precisão (51-23-145 mm) projetada para conforto durante todo o dia e um ajuste universal.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Visão Geral
 
-Fabricado em acetato premium Mazzucchelli e JINYU, o KAS-105 equilibra um design unissex ousado com uma profundidade de cor vibrante. Esta armação polida à mão serve como uma base versátil para marcas que priorizam materiais de alta densidade e estética de moda contemporânea.
+Fabricado em acetato premium Mazzucchelli e JIMEI & JINYU, o KAS-105 equilibra um design unissex ousado com uma profundidade de cor vibrante. Esta armação polida à mão serve como uma base versátil para marcas que priorizam materiais de alta densidade e estética de moda contemporânea.
 
 A integração de dobradiças de tambor 3+2 e lentes de nylon resistentes a impactos fornece a integridade estrutural e o desempenho óptico exigidos pelos padrões do mercado de luxo.
 

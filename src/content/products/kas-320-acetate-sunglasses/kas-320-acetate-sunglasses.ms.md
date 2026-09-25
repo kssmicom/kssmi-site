@@ -5,7 +5,7 @@ slug: "kas-320-acetate-sunglasses"
 itemNo: "KAS-320"
 date: "2026-05-12"
 colors: "Hijau Neon & Jalur Coklat & Kelabu Lut Sinar & Merah & Havana & Hitam"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "OEM & ODM ( Penyesuaian )"
 moq: "300 unit/model (100unit/warna)"
 
@@ -62,7 +62,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Bingkai dan tangkai asetat Mazzucchelli dan JINYU berkualiti tinggi yang menawarkan estetika menyerlah, ringan dan tahan lama.
+- **Bahan Premium:** Bingkai dan tangkai asetat Mazzucchelli dan JIMEI & JINYU berkualiti tinggi yang menawarkan estetika menyerlah, ringan dan tahan lama.
 - **Perkakasan Teguh:** Engsel struktur 4+3 barrel profesional yang direka untuk kestabilan unggul dan kelancaran operasi jangka panjang.
 - **Optik Termaju:** Kanta nilon tahan lasak berprestasi tinggi yang memberikan kejelasan luar biasa dan rintangan hentaman dengan pilihan penyesuaian yang meluas.
 - **Reka Bentuk Ergonomik:** Alas hidung bersepadu yang direka untuk kesesuaian yang selamat dan selesa yang meningkatkan gaya unisex.
@@ -80,7 +80,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Gambaran Keseluruhan
 
-Tekstur menyerlah bertemu dengan integriti struktur dalam KAS-320, model yang ditentukan oleh pembinaan asetat Mazzucchelli dan JINYU premiumnya. Bingkai ini menawarkan estetika ringan namun tahan lama yang menangkap trend fesyen moden sambil mengekalkan daya tarikan abadi untuk pelbagai koleksi jenama.
+Tekstur menyerlah bertemu dengan integriti struktur dalam KAS-320, model yang ditentukan oleh pembinaan asetat Mazzucchelli dan JIMEI & JINYU premiumnya. Bingkai ini menawarkan estetika ringan namun tahan lama yang menangkap trend fesyen moden sambil mengekalkan daya tarikan abadi untuk pelbagai koleksi jenama.
 
 Seni bina engsel 4+3 barrel memastikan kestabilan jangka panjang dan prestasi operasi yang lancar, dilengkapi dengan alas hidung bersepadu untuk keselesaan unggul.
 

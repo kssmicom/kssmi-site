@@ -5,7 +5,7 @@ slug: "kas-102-acetate-sunglasses"
 itemNo: "KAS-102"
 date: "2026-05-05"
 colors: "Lut Sinar & Hitam & Hitam Padu & Biru Padu & Kelabu Padu & Ungu Padu & Cyan-Dot Blue-Dot & Madu & Hijau & Merah Gradien & Biru Gelap & Biru Muda & Kelabu Matte & Kura-kura & Kelabu Lut Sinar & Panda"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -102,7 +102,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, kacamata asetat boleh suai, ce
 
 ## Ciri-ciri Utama
 
-- **Bahan Asetat Premium:** Pembinaan asetat Mazzucchelli dan JINYU gred tinggi memberikan rasa ringan dengan ketahanan luar biasa dan kedalaman warna yang cerah.
+- **Bahan Asetat Premium:** Pembinaan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi memberikan rasa ringan dengan ketahanan luar biasa dan kedalaman warna yang cerah.
 - **Perkakasan Ketepatan:** Engsel struktur tong 3+2 yang teguh direka untuk kelancaran operasi jangka panjang dan kestabilan struktur.
 - **Teknologi Lensa Lanjutan:** Lensa AC serba boleh atau nilon lasak tersedia dengan pilihan pewarnaan dan salutan tersuai yang meluas untuk kejelasan visual yang unggul.
 - **Reka Bentuk Ergonomik:** Alas hidung bersepadu dan struktur bingkai yang seimbang dengan tepat memastikan keselesaan sepanjang hari dan padanan yang selamat.

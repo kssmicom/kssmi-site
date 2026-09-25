@@ -5,7 +5,7 @@ slug: "kas-007-acetate-sunglasses"
 itemNo: "KAS-007"
 date: "2026-05-10"
 colors: "Black-Gold & Black-Silver & Crystal & Red"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom luxury eyewear OEM, bold a
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli and JINYU acetate construction offering a vibrant, lightweight, and durable aesthetic.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction offering a vibrant, lightweight, and durable aesthetic.
 - **Reliable Hardware:** Professional 3+2 barrel structure hinges engineered for consistent operational smoothness and long-term durability.
 - **Advanced Optics:** Tenacious nylon lenses providing superior clarity with extensive custom tinting and coating options available.
 - **Ergonomic Design:** Integrated nose pads designed for a seamless fit and enhanced all-day wearing comfort.

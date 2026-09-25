@@ -5,7 +5,7 @@ slug: "kas-309-acetate-sunglasses"
 itemNo: "KAS-309"
 date: "2026-05-12"
 colors: "Đen & Xanh hoàng gia & Đồi mồi & Ô liu"
-materials: "Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli cao cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -54,7 +54,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, sản xuất kính mắt tùy
 
 ## Đặc điểm
 
-- **Chất liệu Axetat cao cấp:** Cấu trúc axetat Mazzucchelli và JINYU chất lượng cao đảm bảo gọng kính bền, nhẹ với khả năng giữ màu sâu và rực rỡ.
+- **Chất liệu Axetat cao cấp:** Cấu trúc axetat Mazzucchelli và JIMEI & JINYU chất lượng cao đảm bảo gọng kính bền, nhẹ với khả năng giữ màu sâu và rực rỡ.
 - **Phụ kiện phần cứng chính xác:** Bản lề cấu trúc 4+3 chấu bền bỉ được thiết kế để mang lại sự ổn định nhất quán và vận hành êm ái lâu dài.
 - **Quang học vượt trội:** Tròng kính nylon bền bỉ mang lại khả năng chống va đập cao và độ rõ nét vượt trội cho trải nghiệm thị giác cao cấp.
 - **Thoải mái theo công thái học:** Đệm mũi liền khối và sự cân bằng gọng kính tinh tế được thiết kế để mang lại cảm giác vừa vặn an toàn, không gây dị ứng khi đeo cả ngày.
@@ -72,7 +72,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, sản xuất kính mắt tùy
 
 ## Tổng quan
 
-Axetat Mazzucchelli và JINYU cung cấp nền tảng cho KAS-309, mang đến sự tương tác tinh tế giữa khả năng giữ màu sâu và tính toàn vẹn cấu trúc nhẹ.
+Axetat Mazzucchelli và JIMEI & JINYU cung cấp nền tảng cho KAS-309, mang đến sự tương tác tinh tế giữa khả năng giữ màu sâu và tính toàn vẹn cấu trúc nhẹ.
 
 Kiến trúc bản lề 4+3 chấu và đệm mũi liền khối được thiết kế để ổn định lâu dài, đảm bảo vừa vặn an toàn và thoải mái trên nhiều khuôn mặt khác nhau.
 

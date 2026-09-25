@@ -5,7 +5,7 @@ slug: "kas-131-acetate-sunglasses"
 itemNo: "KAS-131"
 date: "2026-05-09"
 colors: "Nero & Viola & Tartaruga & Bianco"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalizzazione"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione per Conto Terzi (OEM) & Design e Produzione (ODM) ( Personalizzazione )"
 moq: "300 pz/modello (100pz/colore)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produttore occhiali da sole acetato, produttore occhiali personali
 
 ## Caratteristiche Tecniche
 
-- **Materiale Montatura Premium:** Realizzata in acetato Mazzucchelli e JINYU di alta qualità, offre una struttura leggera ma eccezionalmente durevole con una profondità di colore vibrante e duratura.
+- **Materiale Montatura Premium:** Realizzata in acetato Mazzucchelli e JIMEI & JINYU di alta qualità, offre una struttura leggera ma eccezionalmente durevole con una profondità di colore vibrante e duratura.
 - **Componenti Durevoli:** Dotata di un sistema professionale di cerniere con struttura 4+3 barrel, progettato per una fluidità operativa superiore e un'integrità strutturale a lungo termine.
 - **Ottica Avanzata:** Equipaggiata con lenti in nylon tenace che offrono un'elevata resistenza agli urti e chiarezza ottica, completamente personalizzabili in base alle esigenze specifiche del marchio.
 - **Comfort Ergonomico:** Progettata con naselli integrati per garantire una calzata stabile e senza pressione, adatta per un uso quotidiano prolungato.
@@ -71,7 +71,7 @@ seoKeywords: "produttore occhiali da sole acetato, produttore occhiali personali
 
 ## Panoramica
 
-L'acetato Mazzucchelli e JINYU costituisce l'anima di questi occhiali da sole, garantendo una vibrante profondità di colore e una leggerezza che attira i mercati della moda di alta gamma.
+L'acetato Mazzucchelli e JIMEI & JINYU costituisce l'anima di questi occhiali da sole, garantendo una vibrante profondità di colore e una leggerezza che attira i mercati della moda di alta gamma.
 
 Il sistema di cerniere con struttura 4+3 barrel assicura precisione operativa nel tempo, mentre i naselli integrati offrono stabilità ergonomica per tutto il giorno.
 

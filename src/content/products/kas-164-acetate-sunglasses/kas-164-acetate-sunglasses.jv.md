@@ -5,7 +5,7 @@ slug: "kas-164-acetate-sunglasses"
 itemNo: "KAS-164"
 date: "2026-05-09"
 colors: "Gradient Abu-abu"
-materials: "Asetat Mazzucchelli & JINYU Premium & Kustomisasi"
+materials: "Asetat Mazzucchelli & JIMEI & JINYU Premium & Kustomisasi"
 serviceMode: "Produksi Kontrak & Desain lan Produksi ( Kustomisasi )"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -40,7 +40,7 @@ seoKeywords: "kacamata hitam asetat Mazzucchelli, produsen kacamata asetat kusto
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JINYU berkualitas tinggi sing menehi finishing padhang lan gilap kanti daya tahan sing luar biasa.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU berkualitas tinggi sing menehi finishing padhang lan gilap kanti daya tahan sing luar biasa.
 - **Hardware sing Dikuatake:** Engsel struktur rivet 3+2 barel sing kuwat dirancang kanggo stabilitas sing unggul lan kelancaran operasional jangka panjang.
 - **Optik Performa Tinggi:** Lensa nilon tenacious sing nawakake resistensi impact sing apik banget kanthi macem-macem kemungkinan pewarnaan lan lapisan kustom.
 - **Desain Ergonomis:** Bantalan irung sing terintegrasi kanthi lancar dirancang kanggo pas sing aman, nyaman lan estetika sing halus lan ramping.
@@ -58,7 +58,7 @@ seoKeywords: "kacamata hitam asetat Mazzucchelli, produsen kacamata asetat kusto
 
 ## Ringkesan
 
-Digawe saka asetat Mazzucchelli lan JINYU premium, KAS-164 nampilake estetika sing kendel nanging klasik kanthi finishing sing padhang lan gilap. Desain unisex iki nggabungake gaya mewah karo daya tahan bahan kelas dhuwur sing langgeng.
+Digawe saka asetat Mazzucchelli lan JIMEI & JINYU premium, KAS-164 nampilake estetika sing kendel nanging klasik kanthi finishing sing padhang lan gilap. Desain unisex iki nggabungake gaya mewah karo daya tahan bahan kelas dhuwur sing langgeng.
 
 Engsel rivet 3+2 barel sing dirancang kanthi presisi nyedhiyakake stabilitas sing luar biasa, dene bantalan irung sing terintegrasi lan lensa nilon tenacious njamin kenyamanan jangka panjang lan kejelasan optik.
 

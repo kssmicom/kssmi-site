@@ -5,7 +5,7 @@ slug: "kas-015-acetate-sunglasses"
 itemNo: "KAS-015"
 date: "2026-05-10"
 colors: "Schildpatt mit Grün, Schwarz mit Schwarz-Gelb, Schwarz-Schildpatt mit Grün, Schwarz"
-materials: "Premium-Mazzucchelli- & JINYU-Acetat & Individualisierung"
+materials: "Premium-Mazzucchelli- & JIMEI & JINYU-Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100Stk/Farbe)"
 
@@ -43,7 +43,7 @@ seoKeywords: "Luxus-Acetat-Sonnenbrillen Hersteller, maßgeschneiderte OEM Sonne
 
 ## Eigenschaften
 
-- **Premium-Material:** Konstruktion aus hochwertigem Mazzucchelli- und JINYU-Acetat, die ein leichtes, langlebiges und lebendiges Finish für eine luxuriöse Ästhetik bietet.
+- **Premium-Material:** Konstruktion aus hochwertigem Mazzucchelli- und JIMEI & JINYU-Acetat, die ein leichtes, langlebiges und lebendiges Finish für eine luxuriöse Ästhetik bietet.
 - **Strukturelle Integrität:** Präzisionsgefertigter Rahmen und Bügel aus Premium-Acetat, die eine langfristige Formbeständigkeit und Widerstandsfähigkeit gewährleisten.
 - **Langlebige Hardware:** Stabile 2+1-Fass-Strukturscharniere, die für gleichbleibende Laufruhe entwickelt wurden, mit Upgrades auf 5-Fass- und Federscharniere erhältlich.
 - **Überlegene Optik:** Widerstandsfähige Nylon-Gläser, die eine hervorragende Klarheit und Schlagfestigkeit bei umfangreichen individuellen Tönungsoptionen bieten.
@@ -61,7 +61,7 @@ seoKeywords: "Luxus-Acetat-Sonnenbrillen Hersteller, maßgeschneiderte OEM Sonne
 
 ## Übersicht
 
-Durch die Verwendung von hochwertigem Mazzucchelli- und JINYU-Acetat bietet dieses Modell ein lebendiges und leichtes Finish, das auf den Premiummarkt zugeschnitten ist.
+Durch die Verwendung von hochwertigem Mazzucchelli- und JIMEI & JINYU-Acetat bietet dieses Modell ein lebendiges und leichtes Finish, das auf den Premiummarkt zugeschnitten ist.
 
 Die präzisionsgefertigten 2+1-Fass-Scharniere und die integrierten Nasenpads bieten eine nahtlose Mischung aus struktureller Stabilität und ganztägigem Komfort.
 

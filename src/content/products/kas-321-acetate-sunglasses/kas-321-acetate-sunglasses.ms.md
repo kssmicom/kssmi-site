@@ -5,7 +5,7 @@ slug: "kas-321-acetate-sunglasses"
 itemNo: "KAS-321"
 date: "2026-05-12"
 colors: "Kelabu Lut Sinar & Havana & Hijau Tua & Hitam"
-materials: "Asetat Premium Mazzucchelli & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pengilangan Kontrak (OEM) & Pengilangan Reka Bentuk (ODM) ( Penyesuaian )"
 moq: "300 unit/model (100unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Bahagian depan dan tangkai asetat Mazzucchelli dan JINYU berkualiti tinggi yang menawarkan kedalaman bertenaga dan ketahanan yang berkekalan.
+- **Bahan Premium:** Bahagian depan dan tangkai asetat Mazzucchelli dan JIMEI & JINYU berkualiti tinggi yang menawarkan kedalaman bertenaga dan ketahanan yang berkekalan.
 - **Perkakasan Teguh:** Engsel struktur 4+3 tong yang stabil direka untuk kelancaran operasi jangka panjang dan kestabilan yang boleh diulang.
 - **Optik Unggul:** Lensa nilon kental yang memberikan kejelasan luar biasa dengan penyesuaian menyeluruh untuk warna dan salutan.
 - **Reka Bentuk Ergonomik:** Alas hidung bersepadu yang direka untuk kesesuaian yang selamat, selesa dan estetika yang halus dan lancar.
@@ -72,7 +72,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Gambaran Keseluruhan
 
-Dengan menggunakan asetat premium Mazzucchelli dan JINYU, bingkai ini mencapai keseimbangan yang ketara antara kedalaman yang bertenaga dan ketahanan yang berkekalan. Warna kelabu lut sinar dan havana mencerminkan estetika halus yang diterjemahkan dengan lancar merentasi pelbagai pasaran fesyen global.
+Dengan menggunakan asetat premium Mazzucchelli dan JIMEI & JINYU, bingkai ini mencapai keseimbangan yang ketara antara kedalaman yang bertenaga dan ketahanan yang berkekalan. Warna kelabu lut sinar dan havana mencerminkan estetika halus yang diterjemahkan dengan lancar merentasi pelbagai pasaran fesyen global.
 
 Seni bina dalaman menampilkan engsel 4+3 tong yang teguh dan profil klasik 48-24-145mm, memberikan kesesuaian unisex yang stabil yang dioptimumkan untuk penggunaan harian yang konsisten.
 

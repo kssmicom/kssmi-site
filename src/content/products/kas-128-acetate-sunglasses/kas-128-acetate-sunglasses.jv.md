@@ -5,7 +5,7 @@ slug: "kas-128-acetate-sunglasses"
 itemNo: "KAS-128"
 date: "2026-05-09"
 colors: "Ireng & Putih & Marmer Ijo & Marmer Biru & Marmer Ireng & Ruby"
-materials: "Premium Mazzucchelli & Asetat JINYU & Kustomisasi"
+materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak & Desain lan Produksi ( Kustomisasi )"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -62,7 +62,7 @@ seoKeywords: "produsen kacamata asetat premium, kacamata OEM kustom KAS-128, kac
 
 ## Fitur
 
-- **Asetat Premium:** Digawe saka asetat Mazzucchelli lan JINYU sing misuwur ing donya, nawakake daya tahan sing luar biasa lan lapisan kilap dhuwur sing padhang.
+- **Asetat Premium:** Digawe saka asetat Mazzucchelli lan JIMEI & JINYU sing misuwur ing donya, nawakake daya tahan sing luar biasa lan lapisan kilap dhuwur sing padhang.
 - **Engsel Presisi:** Engsel struktur 4+3 barrel sing kuat dirancang kanggo stabilitas sing unggul lan kelancaran operasional jangka panjang.
 - **Optik Performa Dhuwur:** Lensa nylon kuat sing nyedhiyakake kajelasan sing apik banget lan tahan impact kanthi macem-macem pilihan kustomisasi.
 - **Kenyamanan Integrasi:** Bantalan irung integrasi sing dicetak kanthi presisi dirancang kanggo pas sing aman, hypoallergenic, lan seimbang nalika dienggo suwe.
@@ -79,7 +79,7 @@ seoKeywords: "produsen kacamata asetat premium, kacamata OEM kustom KAS-128, kac
 
 ## Ringkesan
 
-Asetat Mazzucchelli lan JINYU dadi siji ing siluet wani lan kilap dhuwur sing nemtokake kemewahan modern liwat estetika unisex sing unik.
+Asetat Mazzucchelli lan JIMEI & JINYU dadi siji ing siluet wani lan kilap dhuwur sing nemtokake kemewahan modern liwat estetika unisex sing unik.
 
 Engsel 4+3 barrel teknik presisi lan bantalan irung integrasi njamin stabilitas sing luar biasa lan kenyamanan jangka panjang kanggo sing nganggo.
 

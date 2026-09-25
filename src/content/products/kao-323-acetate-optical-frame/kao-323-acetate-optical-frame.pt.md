@@ -5,7 +5,7 @@ slug: "kao-323-acetate-optical-frame"
 itemNo: "KAO-323"
 date: "2026-05-10"
 colors: "Vermelho & Havana & Verde Neon & Preto"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "OEM & ODM (Personalização)"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "armações ópticas de acetato, fabricante de armações de acetat
 
 ## Características
 
-- **Construção em Acetato Premium:** Acetato Mazzucchelli e JINYU de alta qualidade que oferece uma armação vibrante, leve e durável para uma estética sofisticada.
+- **Construção em Acetato Premium:** Acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que oferece uma armação vibrante, leve e durável para uma estética sofisticada.
 - **Engenharia de Precisão:** Dobradiças com estrutura de rebite de 4+3 barris robustas projetadas para estabilidade superior e suavidade operacional duradoura.
 - **Óptica de Alto Desempenho:** Lentes de nylon tenazes com resistência excepcional a impactos e opções de personalização versáteis para marcas premium.
 - **Design Ergonômico:** Ponteiras nasicas integradas projetadas para um ajuste perfeito e sem pressão e uma distribuição equilibrada do peso.
@@ -72,7 +72,7 @@ seoKeywords: "armações ópticas de acetato, fabricante de armações de acetat
 
 ## Visão Geral
 
-O design óptico contemporâneo encontra sua expressão por meio da composição de acetato Mazzucchelli e JINYU de alto brilho, fornecendo uma base leve e vibrante para portfólios de óculos premium.
+O design óptico contemporâneo encontra sua expressão por meio da composição de acetato Mazzucchelli e JIMEI & JINYU de alto brilho, fornecendo uma base leve e vibrante para portfólios de óculos premium.
 
 A integração de um sistema de dobradiça de rebite de 4+3 barris projetado com precisão garante longevidade mecânica e um ajuste seguro e sem pressão.
 

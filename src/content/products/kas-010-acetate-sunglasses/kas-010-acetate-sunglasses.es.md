@@ -5,7 +5,7 @@ slug: "kas-010-acetate-sunglasses"
 itemNo: "KAS-010"
 date: "2026-05-10"
 colors: "Negro & Meteor-Crystal & Tanzanite & Bordeaux"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalización"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100uds/color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Características
 
-- **Material Premium:** Construcción de acetato Mazzucchelli y JINYU de alta calidad que proporciona un acabado vibrante y una durabilidad excepcional para una estética de lujo.
+- **Material Premium:** Construcción de acetato Mazzucchelli y JIMEI & JINYU de alta calidad que proporciona un acabado vibrante y una durabilidad excepcional para una estética de lujo.
 - **Herrajes Duraderos:** Bisagras de estructura robusta de 4+3 barriles diseñadas para una suavidad operativa a largo plazo y estabilidad estructural.
 - **Óptica de Primera Calidad:** Lentes de nylon tenaz que ofrecen una resistencia al impacto y claridad superiores con amplias opciones de tinte personalizado.
 - **Diseño Ergonómico:** Almohadillas nasales integradas y una montura de 52-18-145 mm diseñada con precisión que garantiza un ajuste cómodo y seguro para diversas formas de cara.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Resumen
 
-El vibrante acetato Mazzucchelli y JINYU le otorga a esta montura unisex su distintivo carácter de lujo, ofreciendo un perfil ligero pero duradero que mantiene su acabado con el tiempo.
+El vibrante acetato Mazzucchelli y JIMEI & JINYU le otorga a esta montura unisex su distintivo carácter de lujo, ofreciendo un perfil ligero pero duradero que mantiene su acabado con el tiempo.
 
 La integridad estructural está reforzada por un sistema de bisagras de 4+3 barriles de precisión, lo que garantiza un funcionamiento suave y estabilidad a largo plazo para entornos minoristas de alta gama.
 

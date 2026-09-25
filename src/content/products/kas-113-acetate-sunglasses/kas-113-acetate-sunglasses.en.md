@@ -5,7 +5,7 @@ slug: "kas-113-acetate-sunglasses"
 itemNo: "KAS-113"
 date: "2026-05-09"
 colors: "Black & Tortoise & Cream & Blue"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Technical Features
 
-- **Premium Material Composition:** Handcrafted from high-quality Mazzucchelli and JINYU acetate, delivering a lightweight, durable, and vibrant finish for a luxurious feel.
+- **Premium Material Composition:** Handcrafted from high-quality Mazzucchelli, JIMEI & JINYU acetate, delivering a lightweight, durable, and vibrant finish for a luxurious feel.
 - **Precision Engineering:** Equipped with a robust 3+2 barrel structure hinge designed for long-term operational smoothness and frame stability.
 - **High-Definition Optics:** Features tenacious nylon lenses that provide superior clarity and impact resistance, with extensive customization options for tints and coatings.
 - **Ergonomic Design:** Integrated nose pads and a balanced 51-23-145mm profile ensuring a secure, hypoallergenic fit for diverse face shapes.
@@ -72,7 +72,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Overview
 
-Blending vibrant Mazzucchelli and JINYU acetate, this model delivers a bold, unisex aesthetic that balances timeless classicism with modern fashion sensibilities. Its unique handcrafted finish ensures a premium feel that resonates with luxury fashion houses and boutique labels.
+Blending vibrant Mazzucchelli, JIMEI & JINYU acetate, this model delivers a bold, unisex aesthetic that balances timeless classicism with modern fashion sensibilities. Its unique handcrafted finish ensures a premium feel that resonates with luxury fashion houses and boutique labels.
 
 Precision-engineered 3+2 barrel hinges and an ergonomic 51-23-145mm profile guarantee enduring frame stability and all-day comfort for diverse face shapes.
 

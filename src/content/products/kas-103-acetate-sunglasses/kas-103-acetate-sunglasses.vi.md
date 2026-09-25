@@ -5,7 +5,7 @@ slug: "kas-103-acetate-sunglasses"
 itemNo: "KAS-103"
 date: "2026-05-06"
 colors: "Đen & Caro Vàng & Cẩm Thạch Ngọc Trai & Caro Đỏ & Caro Xanh & Caro Đen"
-materials: "Mazzucchelli Cao Cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli Cao Cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -62,7 +62,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Đặc điểm
 
-- **Chất liệu gọng cao cấp:** Gọng và càng kính bằng axetat Mazzucchelli và JINYU chất lượng cao mang lại màu sắc sống động, độ bóng sâu cùng độ bền cấu trúc vượt trội.
+- **Chất liệu gọng cao cấp:** Gọng và càng kính bằng axetat Mazzucchelli và JIMEI & JINYU chất lượng cao mang lại màu sắc sống động, độ bóng sâu cùng độ bền cấu trúc vượt trội.
 - **Phụ kiện bền bỉ:** Bản lề cấu trúc 3+2 thùng được thiết kế chính xác để đảm bảo vận hành êm ái nhất quán và độ ổn định lâu dài cho gọng kính.
 - **Quang học ưu việt:** Tròng kính nylon bền bỉ mang lại khả năng chống va đập cao và độ trong suốt quang học, cùng khả năng tùy chỉnh linh hoạt cho khả năng bảo vệ UV và các lớp phủ chuyên dụng.
 - **Vừa vặn công thái học:** Đệm mũi tích hợp được chạm khắc liền mạch vào cấu trúc axetat để đảm bảo sự vừa vặn an toàn và không gây áp lực, giúp tăng cường sự thoải mái suốt cả ngày.
@@ -80,7 +80,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Tổng quan
 
-Mẫu KAS-103 sử dụng axetat Mazzucchelli và JINYU cao cấp để đạt được độ bóng sâu, nổi bật với các họa tiết caro và cẩm thạch tinh xảo, phù hợp với các xu hướng thời trang cao cấp.
+Mẫu KAS-103 sử dụng axetat Mazzucchelli và JIMEI & JINYU cao cấp để đạt được độ bóng sâu, nổi bật với các họa tiết caro và cẩm thạch tinh xảo, phù hợp với các xu hướng thời trang cao cấp.
 
 Bản lề 3+2 thùng chính xác và đệm mũi tích hợp mang lại độ ổn định cấu trúc và sự thoải mái công thái học mà khách hàng dòng cao cấp kỳ vọng.
 

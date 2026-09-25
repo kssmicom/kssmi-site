@@ -5,7 +5,7 @@ slug: "kas-112-acetate-sunglasses"
 itemNo: "KAS-112"
 date: "2026-05-09"
 colors: "Negro & Negro Sólido & Habana & Rojo Caramelo & Rosa Tortuga & Blanco Crema"
-materials: "Premium Mazzucchelli & Acetato JINYU & Personalización"
+materials: "Premium Mazzucchelli & Acetato JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante gafas acetato, gafas sol OEM personalizadas, gafas luxu
 
 ## Características
 
-- **Construcción en Acetato Premium:** Marco y varillas de acetato de alta calidad Mazzucchelli y JINYU que proporcionan una sensación de ligereza con una profundidad de color excepcional y una durabilidad prolongada.
+- **Construcción en Acetato Premium:** Marco y varillas de acetato de alta calidad Mazzucchelli y JIMEI & JINYU que proporcionan una sensación de ligereza con una profundidad de color excepcional y una durabilidad prolongada.
 - **Herrajes de Precisión:** Bisagras estables de estructura 3+2 diseñadas para una suavidad operativa constante y una sensación táctil de primera calidad.
 - **Óptica de Alto Rendimiento:** Lentes de nylon tenaces que ofrecen una resistencia superior a los impactos y claridad óptica, totalmente personalizables para cumplir con los requisitos específicos de la marca.
 - **Comodidad Ergonómica:** Plaquetas nasales integradas sin costuras diseñadas para distribuir el peso uniformemente para una comodidad durante todo el día en diversas estructuras faciales.
@@ -76,7 +76,7 @@ seoKeywords: "fabricante gafas acetato, gafas sol OEM personalizadas, gafas luxu
 
 ## Resumen
 
-La estética vintage atrevida se une a la profundidad del material premium en las KAS-112, fabricadas con acetato de alta calidad Mazzucchelli y JINYU para garantizar un acabado vibrante y duradero.
+La estética vintage atrevida se une a la profundidad del material premium en las KAS-112, fabricadas con acetato de alta calidad Mazzucchelli y JIMEI & JINYU para garantizar un acabado vibrante y duradero.
 
 Cada montura cuenta con bisagras 3+2 diseñadas con precisión y plaquetas nasales integradas, ofreciendo un equilibrio perfecto entre estabilidad estructural y comodidad ergonómica.
 

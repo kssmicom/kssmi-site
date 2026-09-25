@@ -5,7 +5,7 @@ slug: "kao-315-acetate-optical-frame"
 itemNo: "KAO-315"
 date: "2026-05-10"
 colors: "Preto & Cinza Translúcido & Havana & Champanhe & Transparente & Oliver"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -62,7 +62,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, óculos OEM personal
 
 ## Características
 
-- **Material de Alto Desempenho:** Construção em acetato premium Mazzucchelli e JINYU, oferecendo uma estética vibrante com excepcional leveza e durabilidade.
+- **Material de Alto Desempenho:** Construção em acetato premium Mazzucchelli e JIMEI & JINYU, oferecendo uma estética vibrante com excepcional leveza e durabilidade.
 - **Hardware de Precisão:** Dobradiças com estrutura de rebite 4+3 barrel de alta estabilidade, projetadas para uma integridade estrutural superior e fluidez operacional a longo prazo.
 - **Ótica Avançada:** Lentes de nylon tenaz com opções de personalização abrangentes para tonalidades especializadas e revestimentos protetores.
 - **Conforto Ergonômico:** Plaquetas nasais integradas, meticulosamente projetadas para proporcionar um ajuste seguro e confortável para uso diário prolongado.
@@ -80,7 +80,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, óculos OEM personal
 
 ## Visão Geral
 
-Uma mistura sofisticada de acetato Mazzucchelli e JINYU define o KAO-315, oferecendo um chassi vibrante e leve para marcas de óculos focadas em uma estética inspirada na herança.
+Uma mistura sofisticada de acetato Mazzucchelli e JIMEI & JINYU define o KAO-315, oferecendo um chassi vibrante e leve para marcas de óculos focadas em uma estética inspirada na herança.
 
 A arquitetura das dobradiças de rebite 4+3 barrel fornece uma base mecânica robusta, combinada com plaquetas nasais integradas para um conforto ergonômico contínuo.
 

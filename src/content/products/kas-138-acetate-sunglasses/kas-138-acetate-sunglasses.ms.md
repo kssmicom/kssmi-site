@@ -5,7 +5,7 @@ slug: "kas-138-acetate-sunglasses"
 itemNo: "KAS-138"
 date: "2026-05-09"
 colors: "Hitam & Kura-kura & Kelabu-Kemerahan Pucat & Merah Jambu Pudar"
-materials: "Asetat Premium Mazzucchelli & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model (100unit/warna)"
 
@@ -53,7 +53,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 ---
 
 ## Ciri-ciri Utama
-- **Bahan Premium:** Pembinaan asetat Mazzucchelli dan JINYU gred tinggi yang menawarkan bingkai yang bertenaga, ringan, dan tahan lama untuk jenama fesyen mewah.
+- **Bahan Premium:** Pembinaan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi yang menawarkan bingkai yang bertenaga, ringan, dan tahan lama untuk jenama fesyen mewah.
 - **Perkakasan Teguh:** Engsel struktur 3+2 tong profesional yang direka untuk kelancaran operasi yang konsisten dan ketahanan jangka panjang.
 - **Optik Unggul:** Lensa nylon kental berprestasi tinggi yang menampilkan kemungkinan pewarnaan dan salutan tersuai yang meluas untuk pereka eyewear premium.
 - **Reka Bentuk Ergonomik:** Alas hidung bersepadu yang lancar memberikan padanan yang selamat dan selesa untuk pemakaian harian yang dilanjutkan merentas semua bentuk wajah.
@@ -69,7 +69,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 - Kedai Konsep & Berbilang Jenama
 
 ## Gambaran Keseluruhan
-Direka dengan tepat daripada asetat Mazzucchelli dan JINYU tulen, siri KAS-138 menekankan kedalaman warna yang bertenaga dan ketahanan mewah untuk pasaran mewah.
+Direka dengan tepat daripada asetat Mazzucchelli dan JIMEI & JINYU tulen, siri KAS-138 menekankan kedalaman warna yang bertenaga dan ketahanan mewah untuk pasaran mewah.
 
 Penyepaduan engsel struktur 3+2 tong dan alas hidung ergonomik memberikan keseimbangan lancar antara kebolehpercayaan mekanikal dan keselesaan pemakaian harian.
 

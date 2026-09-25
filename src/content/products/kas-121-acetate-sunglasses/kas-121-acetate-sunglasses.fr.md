@@ -5,7 +5,7 @@ slug: "kas-121-acetate-sunglasses"
 itemNo: "KAS-121"
 date: "2026-05-09"
 colors: "Noir & Havana & Maple"
-materials: "Acétate Premium Mazzucchelli & JINYU & Personnalisation"
+materials: "Acétate Premium Mazzucchelli & JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100pcs/color)"
 
@@ -50,7 +50,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil OE
 
 ## Caractéristiques
 
-- **Construction en Acétate Premium :** Fabriquées à partir d'acétate Mazzucchelli et JINYU de haute qualité, offrant une monture légère, durable et vibrante pour un port exceptionnel à long terme.
+- **Construction en Acétate Premium :** Fabriquées à partir d'acétate Mazzucchelli et JIMEI & JINYU de haute qualité, offrant une monture légère, durable et vibrante pour un port exceptionnel à long terme.
 - **Matériel Robuste :** Charnières à structure barrel 3+2 conçues avec précision pour assurer un alignement sûr et une fluidité de fonctionnement optimale.
 - **Optique Avancée :** Verres en nylon tenace offrant une clarté visuelle supérieure, avec des options polyvalentes de teinte et de revêtement personnalisées disponibles.
 - **Confort Sans Couture :** Plaquettes de nez intégrées méticuleusement conçues pour répartir le poids uniformément pour un ajustement sûr et confortable.
@@ -68,7 +68,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil OE
 
 ## Présentation
 
-Alliant inspiration vintage classique et luxe moderne, le modèle KAS-121 est magistralement sculpté dans un acétate premium Mazzucchelli et JINYU. Ce matériau d'exception garantit une monture à la fois légère et très durable, dotée d'une finition vibrante et captivante.
+Alliant inspiration vintage classique et luxe moderne, le modèle KAS-121 est magistralement sculpté dans un acétate premium Mazzucchelli et JIMEI & JINYU. Ce matériau d'exception garantit une monture à la fois légère et très durable, dotée d'une finition vibrante et captivante.
 
 L'intégrité structurelle est assurée par des charnières barrel 3+2 conçues avec précision, tandis que les plaquettes de nez méticuleusement intégrées offrent un ajustement parfaitement équilibré et confortable.
 

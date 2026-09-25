@@ -5,7 +5,7 @@ slug: "kao-328-acetate-optical-frame"
 itemNo: "KAO-328"
 date: "2026-05-10"
 colors: "Siyah, Mavi"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (her renk için 100 adet)"
 
@@ -46,7 +46,7 @@ seoKeywords: "asetat optik çerçeve üreticisi, özel OEM gözlük fabrikası, 
 
 ## Özellikler
 
-- **Premium Malzeme:** Hafif ve olağanüstü dayanıklı bir yapı sunan, canlı ve uzun ömürlü renk derinliğine sahip birinci sınıf Mazzucchelli ve JINYU asetattan titizlikle üretilmiştir.
+- **Premium Malzeme:** Hafif ve olağanüstü dayanıklı bir yapı sunan, canlı ve uzun ömürlü renk derinliğine sahip birinci sınıf Mazzucchelli ve JIMEI & JINYU asetattan titizlikle üretilmiştir.
 - **Gelişmiş Donanım:** Özel yaylı menteşe seçenekleriyle dengeli ve pürüzsüz sap hareketi sağlayan yüksek güvenilirlikli 3+2 namlu perçin menteşe yapısı.
 - **Dayanıklı Optikler:** Tamamen isteğe göre uyarlanabilir kaplama seçenekleriyle mükemmel netlik ve darbe direnci sağlayan yüksek dayanıklılığa sahip naylon lensler.
 - **Entegre Konfor:** Dengeli ve kaymayan bir uyum sunmak için özel 53-18-145mm geometrisiyle birleştirilmiş kusursuz bir şekilde entegre edilmiş burun tamponları.
@@ -64,7 +64,7 @@ seoKeywords: "asetat optik çerçeve üreticisi, özel OEM gözlük fabrikası, 
 
 ## Genel Bakış
 
-Zengin malzeme derinliğiyle öne çıkan KAO-328, el yapımı Mazzucchelli ve JINYU asetatı, premium ürün portföyleri için tasarlanmış klasik uniseks bir silüetle bir araya getiriyor.
+Zengin malzeme derinliğiyle öne çıkan KAO-328, el yapımı Mazzucchelli ve JIMEI & JINYU asetatı, premium ürün portföyleri için tasarlanmış klasik uniseks bir silüetle bir araya getiriyor.
 
 Bu model, pürüzsüz yapısal hizalamayı ve kalıcı konforu bir arada sunan sağlam 3+2 namlu perçin menteşeleri ve şekillendirilmiş entegre burun tamponlarını bünyesinde barındırır.
 

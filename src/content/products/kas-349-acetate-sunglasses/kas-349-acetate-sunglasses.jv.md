@@ -5,7 +5,7 @@ slug: "kas-349-acetate-sunglasses"
 itemNo: "KAS-349"
 date: "2026-05-13"
 colors: "Ireng karo Kanthi Abu-abu Gradasi, Putih Bulus karo Ireng"
-materials: "Mazzucchelli Premium & Asetat JINYU & Kustomisasi"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak (OEM) & Desain lan Produksi (ODM) ( Kustomisasi )"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -41,7 +41,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, merek k
 ---
 
 ## Fitur
-- **Bahan Frame Premium:** Konstruksi frame asetat Mazzucchelli lan JINYU premium sing nyedhiyakake daya tahan entheng lan pilihan warna sing padhang.
+- **Bahan Frame Premium:** Konstruksi frame asetat Mazzucchelli lan JIMEI & JINYU premium sing nyedhiyakake daya tahan entheng lan pilihan warna sing padhang.
 - **Gagang Asetat Sing Cocog:** Konstruksi gagang asetat premium sing cocog sing nawarake stabilitas struktural lan estetika sing nyawiji.
 - **Hardware Awet:** Engsel struktur 4+3 tong sing kuat dirancang kanggo alignment sing stabil lan daya tahan operasional jangka panjang.
 - **Teknologi Lensa Premium:** Lensa nilon tahan dampak sing nawarake kajelasan optik sing apik banget kanthi pilihan warna lan lapisan kustom.
@@ -58,7 +58,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, merek k
 
 ## Ringkesan
 
-Label butik busana lan rantai optik kelas dhuwur mbutuhake keseimbangan daya tahan lan warna sing padhang, sing disedhiyakake dening asetat Mazzucchelli lan JINYU premium ing bingkai KAS-349 ini. Siluet unisex klasik minangka kanvas serbaguna kanggo macem-macem identitas merek.
+Label butik busana lan rantai optik kelas dhuwur mbutuhake keseimbangan daya tahan lan warna sing padhang, sing disedhiyakake dening asetat Mazzucchelli lan JIMEI & JINYU premium ing bingkai KAS-349 ini. Siluet unisex klasik minangka kanvas serbaguna kanggo macem-macem identitas merek.
 
 Bantalan irung asetat terintegrasi lan struktur engsel 4+3 tong sing kuat nyedhiyakake kenyamanan lan penyelarasan sing stabil lan tahan suwe kanggo nyandhang setiap dina.
 

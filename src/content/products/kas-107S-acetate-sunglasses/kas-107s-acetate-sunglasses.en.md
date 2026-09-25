@@ -5,7 +5,7 @@ slug: "kas-107s-acetate-sunglasses"
 itemNo: "KAS-107S"
 date: "2026-05-09"
 colors: "Black & Clear & Havana & Tortoise"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "Mazzucchelli acetate sunglasses, custom acetate sunglasses, eyewea
 
 ## Technical Features
 
-- **Premium Material:** Hand-selected Mazzucchelli and JINYU acetate providing a lightweight, durable structure with a vibrant, high-gloss finish.
+- **Premium Material:** Hand-selected Mazzucchelli, JIMEI & JINYU acetate providing a lightweight, durable structure with a vibrant, high-gloss finish.
 - **Durable Hardware:** Precision-engineered 4+3 barrel rivet hinges ensuring long-term structural integrity and consistent opening/closing action.
 - **High-Performance Optics:** Tenacious nylon lenses offering superior clarity and impact resistance, customizable to meet specific brand requirements.
 - **Integrated Comfort:** Smooth, integrated nose pads designed for all-day comfort and a seamless aesthetic across the bridge.
@@ -71,7 +71,7 @@ seoKeywords: "Mazzucchelli acetate sunglasses, custom acetate sunglasses, eyewea
 
 ## Overview
 
-Mazzucchelli and JINYU acetate provide the foundation for this bold, vintage-inspired unisex silhouette, characterized by its deep, high-gloss finish.
+Mazzucchelli, JIMEI & JINYU acetate provide the foundation for this bold, vintage-inspired unisex silhouette, characterized by its deep, high-gloss finish.
 
 Structural integrity is anchored by 4+3 barrel rivet hinges and smooth integrated nose pads, ensuring a consistent, high-performance fit for diverse face shapes.
 

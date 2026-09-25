@@ -5,7 +5,7 @@ slug: "kao-320-acetate-optical-frame"
 itemNo: "KAO-320"
 date: "2026-05-10"
 colors: "Preto & Havana & Vermelho & Cinza Translúcido & Listras Marrons & Verde Neon"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "OEM & ODM ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -62,7 +62,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, armações ópticas 
 
 ## Características
 
-- **Material Premium:** Construção de acetato Mazzucchelli e JINYU de alta qualidade que proporciona uma sensação de leveza e uma durabilidade estética vibrante.
+- **Material Premium:** Construção de acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que proporciona uma sensação de leveza e uma durabilidade estética vibrante.
 - **Hardware Duradero:** Robustas dobradiças com estrutura de rebite de 4+3 barris projetadas para uma suavidade operacional a longo prazo e estabilidade estrutural.
 - **Óptica de Alto Desempenho:** Lentes de nylon tenaz que oferecem uma clareza superior con opções completas de tingimento e revestimento personalizados.
 - **Design Ergonômico:** Plaquetas nasais integradas projetadas para um ajuste perfeito e maior conforto durante todo o dia.
@@ -79,7 +79,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, armações ópticas 
 
 ## Visão Geral
 
-Fabricado em acetato Mazzucchelli e JINYU de alta qualidade, o KAO-320 equilibra uma estética vibrante e multi-tonal com a durabilidade leve necessária para coleções de moda premium.
+Fabricado em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, o KAO-320 equilibra uma estética vibrante e multi-tonal com a durabilidade leve necessária para coleções de moda premium.
 
 A armação incorpora uma estrutura robusta de rebites de 4+3 barris e plaquetas nasais integradas, garantindo estabilidade estrutural duradoura e um ajuste perfeito para uso diário.
 

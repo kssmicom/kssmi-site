@@ -5,7 +5,7 @@ slug: "kao-335-acetate-optical-frame"
 itemNo: "KAO-335"
 date: "2026-05-10"
 colors: "Ireng, Bulus, Ijo Transparan karo Madu"
-materials: "Asetat Premium Mazzucchelli & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -41,7 +41,7 @@ seoKeywords: "frame optik asetat, produsen kacamata OEM China, kacamata label pr
 
 ## Fitur
 
-- **Bahan Premium:** Digawe saka asetat premium Mazzucchelli lan JINYU kanggo nyedhiyakake frame sing entheng nanging awet kanthi warna sing jero lan padhang kanggo penampilan mewah sing tahan suwe.
+- **Bahan Premium:** Digawe saka asetat premium Mazzucchelli lan JIMEI & JINYU kanggo nyedhiyakake frame sing entheng nanging awet kanthi warna sing jero lan padhang kanggo penampilan mewah sing tahan suwe.
 - **Komponen Presisi:** Digawe nganggo engsel struktur keling 3+2 tong sing stabil kanggo njamin batang tetep lurus lan bisa mbukak-tutup kanthi lancar nalika dianggo saben dina.
 - **Optik Kuat:** Dilengkapi lensa nilon sing kuat sing nyedhiyakake ketahanan benturan sing apik banget lan kajelasan optik sing dhuwur, bisa disesuaikan karo lapisan khusus lan warna kustom.
 - **Kenyamanan Integrasi:** Nduwe bantalan irung asetat sing wis terintegrasi karo ukuran klasike 47-24-145mm kanggo mbagi bobot kanthi rata lan nyegah lunyu.
@@ -59,7 +59,7 @@ seoKeywords: "frame optik asetat, produsen kacamata OEM China, kacamata label pr
 
 ## Ringkesan
 
-Warna sing jero lan polesan tangan premium dadi ciri khas asetat premium Mazzucchelli lan JINYU saka KAO-335. Frame unisex kanthi inspirasi retro iki cocog banget kanggo merek kacamata premium sing nggoleki desain klasik sing digabung karo kemewahan kontemporer.
+Warna sing jero lan polesan tangan premium dadi ciri khas asetat premium Mazzucchelli lan JIMEI & JINYU saka KAO-335. Frame unisex kanthi inspirasi retro iki cocog banget kanggo merek kacamata premium sing nggoleki desain klasik sing digabung karo kemewahan kontemporer.
 
 Engsel struktur keling 3+2 tong sing presisi njaga kestabilan batang, didhukung dening bantalan irung integrasi lan ukuran 47-24-145mm sing ergonomis kanggo kenyamanan sedina muput.
 

@@ -5,7 +5,7 @@ slug: "kas-014-acetate-sunglasses"
 itemNo: "KAS-014"
 date: "2026-05-10"
 colors: "Dark-Gray & Sky-Blue & Sunset-Orange & Fantasy-Purple"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom luxury eyewear OEM, Chines
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli and JINYU acetate construction offering a luxurious feel with vibrant, long-lasting color depth.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction offering a luxurious feel with vibrant, long-lasting color depth.
 - **Advanced Lens Technology:** Tenacious nylon lenses providing superior impact resistance and clarity with extensive custom coating options.
 - **Operational Smoothness:** Integrated spring hinges engineered for a flexible, comfortable fit and long-term hardware durability.
 - **Ergonomic Design:** Seamlessly integrated nose pads designed for all-day comfort and a sleek, minimalist aesthetic.
@@ -71,7 +71,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom luxury eyewear OEM, Chines
 
 ## Overview
 
-High-grade Mazzucchelli and JINYU acetate defines the KAS-014, offering a lightweight profile and vibrant color depth that captures a modern, luxury aesthetic. These materials provide the durability and premium feel essential for trend-focused unisex collections.
+High-grade Mazzucchelli, JIMEI & JINYU acetate defines the KAS-014, offering a lightweight profile and vibrant color depth that captures a modern, luxury aesthetic. These materials provide the durability and premium feel essential for trend-focused unisex collections.
 
 The inclusion of precision-engineered spring hinges and integrated nose pads ensures a refined, ergonomic fit that maintains comfort across varied face shapes.
 

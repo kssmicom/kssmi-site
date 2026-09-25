@@ -5,7 +5,7 @@ slug: "kas-132-acetate-sunglasses"
 itemNo: "KAS-132"
 date: "2026-05-09"
 colors: "Preto & Branco & Verde & Tartaruga"
-materials: "Acetato Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Acetato Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "OEM & ODM (Personalização)"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de óculos de sol em acetato, óculos flat-top personal
 
 ## Características
 
-- **Materiais Premium:** Construção em acetato Mazzucchelli e JINYU de alta qualidade que oferece uma estética refinada com uma profundidade de cor vibrante e duradoura.
+- **Materiais Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que oferece uma estética refinada com uma profundidade de cor vibrante e duradoura.
 - **Engenharia de Precisão:** Dobradiças estáveis com estrutura de 3+2 tambores projetadas para durabilidade de nível profissional e desempenho operacional suave.
 - **Óptica Superior:** Lentes de nylon tenaz que proporcionam excepcional resistência ao impacto e clareza visual, com amplas opções de personalização.
 - **Conforto Ergonômico:** Ponteiras nasicas integradas e uma estrutura de armação leve garantindo um ajuste seguro e equilibrado para uso prolongado durante todo o dia.
@@ -72,7 +72,7 @@ seoKeywords: "fabricante de óculos de sol em acetato, óculos flat-top personal
 
 ## Visão Geral
 
-Proporções ousadas e oversize e uma silhueta flat-top distinta definem o modelo KAS-132, fabricado a partir de uma mistura premium de acetato Mazzucchelli e JINYU para profundidade e durabilidade incomparáveis.
+Proporções ousadas e oversize e uma silhueta flat-top distinta definem o modelo KAS-132, fabricado a partir de uma mistura premium de acetato Mazzucchelli e JIMEI & JINYU para profundidade e durabilidade incomparáveis.
 
 Dobradiças de 3+2 tambores projetadas com precisão e lentes de nylon tenaz garantem que essas armações mantenham a integridade estrutural e a clareza visual em uso intensivo.
 

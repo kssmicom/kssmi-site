@@ -5,7 +5,7 @@ slug: "kas-107-acetate-sunglasses"
 itemNo: "KAS-107"
 date: "2026-05-06"
 colors: "Ireng & Bening & Havana & Zaitun"
-materials: "Asetat Premium Mazzucchelli & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, eyewear
 
 ## Fitur
 
-- **Bahan Premium:** Rampung nganggo tangan nggunakake asetat Mazzucchelli lan JINYU kelas dhuwur kanggo nyedhiyakake frame sing entheng lan hipoalergenik kanthi padhang sing luar biasa lan awet jangka panjang.
+- **Bahan Premium:** Rampung nganggo tangan nggunakake asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur kanggo nyedhiyakake frame sing entheng lan hipoalergenik kanthi padhang sing luar biasa lan awet jangka panjang.
 - **Teknik Presisi:** Nduweni sistem engsel struktur tong 3+2 sing kuwat sing dirancang kanggo stabilitas operasional sing unggul lan tegangan buka/tutup sing konsisten.
 - **Optik Performa Dhuwur:** Dilengkapi lensa nilon kuat sing nawakake resistensi impact lan kejelasan optik sing apik, kanthi pilihan pewarnaan lan lapisan kustom lengkap kasedhiya.
 - **Kenyamanan Terintegrasi:** Bantalan irung terintegrasi sing dirancang kanthi ergonomis njamin estetika sing mulus lan pas sing aman lan tanpa tekanan kanggo panggunaan saben dina sing suwe.
@@ -71,7 +71,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, eyewear
 
 ## Ringkesan
 
-Digawe saka asetat premium Mazzucchelli lan JINYU, siluet klasik iki ngimbangi padhang bahan sing luar biasa kanthi rampung sing entheng lan hipoalergenik.
+Digawe saka asetat premium Mazzucchelli lan JIMEI & JINYU, siluet klasik iki ngimbangi padhang bahan sing luar biasa kanthi rampung sing entheng lan hipoalergenik.
 
 Frame sing digiling kanthi presisi lan engsel tong 3+2 sing kuwat nyedhiyakake linuwih struktur lan operasi taktil sing lancar sing dikarepake ing lingkungan butik kelas dhuwur.
 

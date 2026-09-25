@@ -5,7 +5,7 @@ slug: "kas-305-acetate-sunglasses"
 itemNo: "KAS-305"
 date: "2026-05-12"
 colors: "Đen & Kẻ sọc & Havana & Ô liu"
-materials: "Axetat Premium Mazzucchelli & JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Premium Mazzucchelli & JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -54,7 +54,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Đặc điểm
 
-- **Lựa chọn vật liệu cao cấp:** Cấu trúc axetat Mazzucchelli và JINYU cao cấp mang lại cảm giác nhẹ nhàng với độ bền đặc biệt và chiều sâu màu sắc rực rỡ.
+- **Lựa chọn vật liệu cao cấp:** Cấu trúc axetat Mazzucchelli và JIMEI & JINYU cao cấp mang lại cảm giác nhẹ nhàng với độ bền đặc biệt và chiều sâu màu sắc rực rỡ.
 - **Phụ kiện chắc chắn:** Bản lề cấu trúc 4+3 chấu được chế tạo chính xác mang lại khả năng vận hành trơn tru lâu dài và căn chỉnh gọng kính nhất quán.
 - **Quang học hiệu suất cao:** Tròng kính nylon bền bỉ mang lại khả năng chống va đập và độ rõ nét quang học vượt trội với các tùy chọn lớp phủ và tùy chỉnh linh hoạt.
 - **Thoải mái công thái học:** Đệm mũi liền khối và thiết kế cầu kính unisex tinh tế đảm bảo sự vừa vặn an toàn, không gây dị ứng khi đeo hàng ngày trong thời gian dài.
@@ -71,7 +71,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Tổng quan
 
-Axetat Mazzucchelli và JINYU cao cấp định nghĩa sự sang trọng trong cấu trúc của KAS-305, mang lại cảm giác nhẹ nhàng và độ bão hòa màu sâu. Thiết kế unisex cổ điển này kết nối thẩm mỹ retro với nhu cầu thời trang hiện đại.
+Axetat Mazzucchelli và JIMEI & JINYU cao cấp định nghĩa sự sang trọng trong cấu trúc của KAS-305, mang lại cảm giác nhẹ nhàng và độ bão hòa màu sâu. Thiết kế unisex cổ điển này kết nối thẩm mỹ retro với nhu cầu thời trang hiện đại.
 
 Được chế tác với hệ thống bản lề 4+3 chấu chính xác và đệm mũi liền khối, gọng kính duy trì sự căn chỉnh và thoải mái trong suốt quá trình sử dụng hàng ngày.
 

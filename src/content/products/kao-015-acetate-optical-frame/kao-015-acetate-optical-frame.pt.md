@@ -5,7 +5,7 @@ slug: "kao-015-acetate-optical-frame"
 itemNo: "KAO-015"
 date: "2026-05-10"
 colors: "Transparente & Amarelo & Azul & Laranja"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) (Personalização)"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -42,7 +42,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, óculos OEM personal
 
 ## Características
 
-- **Materiais Premium：** Construção em acetato Mazzucchelli e JINYU acabado à mão, oferecendo vibração excepcional, durabilidade e uma sensação de leveza.
+- **Materiais Premium：** Construção em acetato Mazzucchelli e JIMEI & JINYU acabado à mão, oferecendo vibração excepcional, durabilidade e uma sensação de leveza.
 - **Engenharia de Precisão：** Dobradiças robustas de estrutura de rebite 3+2 projetadas para máxima estabilidade e suavidade operacional a longo prazo.
 - **Óptica de Alto Desempenho：** Lentes de nylon tenazes que proporcionam clareza superior e resistência ao impacto, com amplas opções de revestimento personalizado disponíveis.
 - **Design Ergonômico：** Plaquetas integradas perfeitamente, projetadas para um ajuste estável e confortável e uma estética refinada e minimalista.
@@ -60,7 +60,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, óculos OEM personal
 
 ## Visão Geral
 
-Fabricada em acetato premium Mazzucchelli e JINYU, esta armação alcança um equilíbrio sofisticado entre a resiliência leve e a estética ousada e vibrante exigida pelos modernos mercados de luxo.
+Fabricada em acetato premium Mazzucchelli e JIMEI & JINYU, esta armação alcança um equilíbrio sofisticado entre a resiliência leve e a estética ousada e vibrante exigida pelos modernos mercados de luxo.
 
 A robusta arquitetura de dobradiça de rebite 3+2 proporciona durabilidade mecânica excepcional, enquanto o design da plaqueta integrada garante um ajuste perfeito e confortável.
 

@@ -5,7 +5,7 @@ slug: "kao-301-acetate-optical-frame"
 itemNo: "KAO-301"
 date: "2026-05-10"
 colors: "Ireng & Ungu-Keluk & Bulus & Garis"
-materials: "Asetat Mazzucchelli Premium & JINYU & Kustomisasi"
+materials: "Asetat Mazzucchelli Premium & JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen frame optik asetat, frame optik OEM kustom, kacamata labe
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JINYU kelas dhuwur sing nyedhiyakake daya tahan luar biasa lan estetika sing sugih lan urip.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing nyedhiyakake daya tahan luar biasa lan estetika sing sugih lan urip.
 - **Teknik Presisi:** Engsel struktur rivet 4+3 barrel sing kuat njamin stabilitas operasional jangka panjang lan gerakan sing lancar.
 - **Optik Canggih:** Lensa nylon kuat kanthi kejelasan dhuwur lan tahan benturan kanthi pilihan kustomisasi sing fleksibel.
 - **Desain Ergonomis:** Bantalan irung terpadu sing dirancang kanggo pas sing aman, seimbang lan kenyamanan sedina muput sing luwih apik.
@@ -72,7 +72,7 @@ seoKeywords: "produsen frame optik asetat, frame optik OEM kustom, kacamata labe
 
 ## Ringkesan
 
-Asetat Mazzucchelli lan JINYU dadi dhasar KAO-301, nyedhiyakake identitas bahan sing urip sing ngimbangi kenyamanan entheng kanthi daya tahan sing awet. Pilihan bahan kelas dhuwur iki njamin saben frame njaga finish premium lan integritas strukture ing macem-macem pilihan warna.
+Asetat Mazzucchelli lan JIMEI & JINYU dadi dhasar KAO-301, nyedhiyakake identitas bahan sing urip sing ngimbangi kenyamanan entheng kanthi daya tahan sing awet. Pilihan bahan kelas dhuwur iki njamin saben frame njaga finish premium lan integritas strukture ing macem-macem pilihan warna.
 
 Implementasi engsel rivet 4+3 barrel nyedhiyakake struktur mekanik sing dikuatake, njamin gerakan gagang sing lancar lan stabilitas jangka panjang ing lingkungan panggunaan dhuwur.
 

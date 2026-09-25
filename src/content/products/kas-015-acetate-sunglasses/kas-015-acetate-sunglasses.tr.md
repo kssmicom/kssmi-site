@@ -5,7 +5,7 @@ slug: "kas-015-acetate-sunglasses"
 itemNo: "KAS-015"
 date: "2026-05-10"
 colors: "Yeşil ile Kaplumbağa, Siyah-Sarı ile Siyah, Yeşil ile Siyah Kaplumbağa, Siyah"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100adet/renk)"
 
@@ -43,7 +43,7 @@ seoKeywords: "lüks asetat güneş gözlüğü üreticisi, özel OEM güneş gö
 
 ## Özellikler
 
-- **Premium Malzeme:** Lüks bir estetik için hafif, dayanıklı ve canlı bir bitiş sunan yüksek kaliteli Mazzucchelli ve JINYU asetat yapısı.
+- **Premium Malzeme:** Lüks bir estetik için hafif, dayanıklı ve canlı bir bitiş sunan yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat yapısı.
 - **Yapısal Bütünlük:** Uzun süreli form koruma ve direnç sağlayan hassas işlenmiş premium asetat çerçeve ve saplar.
 - **Dayanıklı Donanım:** 5 varil ve yaylı menteşe yükseltmeleri mevcut olan, tutarlı çalışma pürüzsüzlüğü için tasarlanmış sağlam 2+1 varil yapılı menteşeler.
 - **Üstün Optik:** Geniş özel renklendirme seçenekleriyle mükemmel netlik ve darbe direnci sağlayan dayanıklı naylon lensler.
@@ -61,7 +61,7 @@ seoKeywords: "lüks asetat güneş gözlüğü üreticisi, özel OEM güneş gö
 
 ## Genel Bakış
 
-Yüksek kaliteli Mazzucchelli ve JINYU asetat kullanan bu model, premium pazar için hazırlanmış canlı ve hafif bir bitiş sunar.
+Yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat kullanan bu model, premium pazar için hazırlanmış canlı ve hafif bir bitiş sunar.
 
 Hassas mühendislik ürünü 2+1 varil menteşeler ve entegre burun tamponları, yapısal stabilite ve gün boyu konforun kusursuz bir karışımını sağlar.
 

@@ -5,7 +5,7 @@ slug: "kao-334-acetate-optical-frame"
 itemNo: "KAO-334"
 date: "2026-05-10"
 colors: "Black with Honey, Clear Blue with Tortoise, Brown Stripe with Blue"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -41,7 +41,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear China, who
 
 ## Technical Features
 
-- **Premium Material:** Crafted from premium Mazzucchelli and JINYU acetate, offering an ultra-lightweight yet exceptionally durable structure with vibrant, deep-toned color aesthetics.
+- **Premium Material:** Crafted from premium Mazzucchelli, JIMEI & JINYU acetate, offering an ultra-lightweight yet exceptionally durable structure with vibrant, deep-toned color aesthetics.
 - **Engineered Hardware:** High-reliability 3+2 barrel rivet structure hinges offering stable, smooth temple movement, with spring hinge and 5-barrel options available.
 - **Tenacious Optics:** High-durability nylon lenses offering exceptional optical clarity and impact resistance with full bespoke coating and customization services.
 - **Integrated Comfort:** Seamlessly integrated acetate nose pads combined with a tailored 44-23-145mm geometry to deliver a balanced, pressure-free fit.
@@ -58,7 +58,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear China, who
 
 ## Overview
 
-Sophisticated retro-inspired styling meets exceptional material depth in this premium Mazzucchelli and JINYU acetate optical frame. Distinctive colorways, such as Clear Blue with Tortoise and Black with Honey, provide a classic yet trendy allure to premium eyewear portfolios.
+Sophisticated retro-inspired styling meets exceptional material depth in this premium Mazzucchelli, JIMEI & JINYU acetate optical frame. Distinctive colorways, such as Clear Blue with Tortoise and Black with Honey, provide a classic yet trendy allure to premium eyewear portfolios.
 
 A highly engineered 3+2 barrel rivet hinge system combined with integrated nose pads and a tailored 44-23-145mm geometry delivers a pressure-free fit and enduring structural integrity.
 

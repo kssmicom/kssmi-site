@@ -5,7 +5,7 @@ slug: "kas-102-acetate-sunglasses"
 itemNo: "KAS-102"
 date: "2026-05-05"
 colors: "Bening & Ireng & Ireng Padhet & Biru Padhet & Abu-abu Padhet & Ungu Padhet & Cyan-Dot Blue-Dot & Madu & Ijo & Abrit Gradien & Biru Tuwa & Biru Enom & Abu-abu Matte & Bulus & Abu-abu Bening & Panda"
-materials: "Premium Mazzucchelli & Asetat JINYU & Kustomisasi"
+materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -102,7 +102,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata asetat kustom, kacamata h
 
 ## Fitur
 
-- **Bahan Asetat Premium:** Konstruksi asetat Mazzucchelli lan JINYU kelas dhuwur sing menehi rasa entheng kanthi daya tahan luar biasa lan jero warna sing padhang.
+- **Bahan Asetat Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing menehi rasa entheng kanthi daya tahan luar biasa lan jero warna sing padhang.
 - **Hardware Presisi:** Engsel struktur barrel 3+2 sing kuwat dirancang kanggo kelancaran operasional jangka panjang lan stabilitas struktural.
 - **Teknologi Lensa Maju:** Lensa AC sing serbaguna utawa lensa nilon kuat sing kasedhiya kanthi pilihan warna lan lapisan kustom sing jembar kanggo kejelasan visual sing unggul.
 - **Desain Ergonomis:** Bantalan irung integrasi lan struktur frame sing seimbang kanthi presisi njamin kenyamanan sedina muput lan pas sing aman.

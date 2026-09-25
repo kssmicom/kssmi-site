@@ -5,7 +5,7 @@ slug: "kas-124-acetate-sunglasses"
 itemNo: "KAS-124"
 date: "2026-05-09"
 colors: "Nero & Buffalo-Horn & Tartaruga"
-materials: "Premium Mazzucchelli & Acetato JINYU & Personalizzazione"
+materials: "Premium Mazzucchelli & Acetato JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100pz/colore)"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -46,7 +46,7 @@ seoKeywords: "produttore occhiali da sole acetato, fabbrica occhiali sole OEM cu
 
 ## Caratteristiche
 
-- **Materiale Premium:** Costruzione in acetato Mazzucchelli e JINYU di alta qualità che offre una finitura vibrante lucidata a mano con una durata eccezionale.
+- **Materiale Premium:** Costruzione in acetato Mazzucchelli e JIMEI & JINYU di alta qualità che offre una finitura vibrante lucidata a mano con una durata eccezionale.
 - **Hardware Durevole:** Robuste cerniere con struttura a barilotto 3+2 progettate con precisione per una scorrevolezza operativa a lungo termine e stabilità della montatura.
 - **Ottica Avanzata:** Lenti in nylon tenace che offrono una resistenza agli urti e una chiarezza ottica superiori con ampie opzioni di rivestimento personalizzato.
 - **Comfort Ergonomico:** Montatura leggera con naselli integrati progettata per una vestibilità sicura e senza pressione durante l'uso quotidiano prolungato.
@@ -64,7 +64,7 @@ seoKeywords: "produttore occhiali da sole acetato, fabbrica occhiali sole OEM cu
 
 ## Panoramica
 
-Realizzato in acetato Mazzucchelli e JINYU di prima qualità, questo modello presenta una finitura lucidata a mano che esalta la sua silhouette audace d'ispirazione vintage. La montatura bilancia un'estetica unisex di lusso con le qualità vibranti e leggere essenziali per l'occhialeria di alta moda.
+Realizzato in acetato Mazzucchelli e JIMEI & JINYU di prima qualità, questo modello presenta una finitura lucidata a mano che esalta la sua silhouette audace d'ispirazione vintage. La montatura bilancia un'estetica unisex di lusso con le qualità vibranti e leggere essenziali per l'occhialeria di alta moda.
 
 Le cerniere a barilotto 3+2 progettate con precisione e le lenti in nylon tenace assicurano una vestibilità sicura e prestazioni ottiche eccezionali in tutti i lotti di produzione.
 

@@ -5,7 +5,7 @@ slug: "kas-301-acetate-sunglasses"
 itemNo: "KAS-301"
 date: "2026-05-11"
 colors: "Siyah & Mor & Kaplumbağa & Çizgili"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
 moq: "300 adet/model (renk başına 100 adet)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Özellikler
 
-- **Premium Malzeme:** Üst düzey moda koleksiyonları için hafif, dayanıklı ve canlı bir estetik sunan orijinal Mazzucchelli ve JINYU asetat yapısı.
+- **Premium Malzeme:** Üst düzey moda koleksiyonları için hafif, dayanıklı ve canlı bir estetik sunan orijinal Mazzucchelli ve JIMEI & JINYU asetat yapısı.
 - **Dayanıklı Donanım:** Tutarlı çalışma pürüzsüzlüğü ve uzun vadeli yapısal güvenilirlik için tasarlanmış sağlam 4+3 barrel yapılı menteşeler.
 - **Yüksek Performanslı Optikler:** Çok yönlü özel renklendirme ve kaplama olanaklarıyla olağanüstü netlik ve darbe direnci sağlayan dayanıklı naylon lensler.
 - **Ergonomik Tasarım:** Uzun süreli günlük kullanım için güvenli ve rahat bir oturuş sağlayan entegre burun tamponları ve unisex çerçeve profili.
@@ -71,7 +71,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Genel Bakış
 
-Mazzucchelli ve JINYU asetat, bu cesur, unisex tasarım için sofistike bir tuval sunar. Canlı kaplumbağa kabuğu ve çizgili desenlerin etkileşimi, üst düzey moda duyarlılıklarıyla yankılanan farklı bir görsel kimlik yaratır.
+Mazzucchelli ve JIMEI & JINYU asetat, bu cesur, unisex tasarım için sofistike bir tuval sunar. Canlı kaplumbağa kabuğu ve çizgili desenlerin etkileşimi, üst düzey moda duyarlılıklarıyla yankılanan farklı bir görsel kimlik yaratır.
 
 Hassas mühendislikle üretilmiş 4+3 barrel menteşeler ve entegre burun tamponları, çerçevenin mekanik bütünlüğünün premium malzeme bileşimiyle eşleşmesini sağlar.
 

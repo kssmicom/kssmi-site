@@ -5,7 +5,7 @@ slug: "kas-016-acetate-sunglasses"
 itemNo: "KAS-016"
 date: "2026-05-10"
 colors: "Tortoise with Green, Black with Yellow, Black Tortoise with Gradient Grey"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -41,7 +41,7 @@ seoKeywords: "Mazzucchelli acetate sunglasses, custom sunglasses manufacturer, O
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli and JINYU acetate frame and temples providing a luxurious, vibrant aesthetic with exceptional durability.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate frame and temples providing a luxurious, vibrant aesthetic with exceptional durability.
 - **Durable Hardware:** Stable 2+1 barrel structure hinges engineered for consistent operational smoothness and long-term reliability.
 - **Premium Optics:** High-clarity, tenacious nylon lenses offering superior impact resistance with extensive custom tinting and coating options.
 - **Ergonomic Design:** Integrated nose pads designed for a seamless fit and enhanced stability during extended wear.

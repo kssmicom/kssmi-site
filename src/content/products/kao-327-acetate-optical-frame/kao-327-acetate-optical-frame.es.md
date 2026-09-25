@@ -5,7 +5,7 @@ slug: "kao-327-acetate-optical-frame"
 itemNo: "KAO-327"
 date: "2026-05-10"
 colors: "Transparente, Habana, Negro"
-materials: "Acetato Mazzucchelli & JINYU Premium & Personalización"
+materials: "Acetato Mazzucchelli & JIMEI & JINYU Premium & Personalización"
 serviceMode: "Fabricación por Cuenta de Terceros & Diseño y Fabricación (Personalización)"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -50,7 +50,7 @@ seoKeywords: "monturas ópticas de acetato elegantes, fabricante de monturas óp
 
 ## Características
 
-- **Material Premium:** Elaborado con acetato premium Mazzucchelli y JINYU, que ofrece una estructura ligera pero excepcionalmente duradera con una profundidad de color vibrante y duradera.
+- **Material Premium:** Elaborado con acetato premium Mazzucchelli y JIMEI & JINYU, que ofrece una estructura ligera pero excepcionalmente duradera con una profundidad de color vibrante y duradera.
 - **Hardware de Precisión:** Bisagras de remache de 3+2 barriles de alta confiabilidad que proporcionan un movimiento de varillas estable y suave con opciones de bisagras de resorte personalizadas.
 - **Óptica Tenaz:** Lentes de nylon de alta durabilidad que ofrecen excelente claridad y resistencia al impacto con opciones completas de recubrimiento a medida.
 - **Confort Integrado:** Almohadillas nasales integradas sin costuras combinadas con una geometría a medida de 50-22-145 mm para ofrecer un ajuste equilibrado y sin deslizamientos.
@@ -67,7 +67,7 @@ seoKeywords: "monturas ópticas de acetato elegantes, fabricante de monturas óp
 
 ## Resumen
 
-El diseño de gafas clásico se encuentra con el arte de materiales de alta gama en el KAO-327, una montatura unisex que muestra la profundidad vibrante del acetato premium Mazzucchelli y JINYU.
+El diseño de gafas clásico se encuentra con el arte de materiales de alta gama en el KAO-327, una montatura unisex que muestra la profundidad vibrante del acetato premium Mazzucchelli y JIMEI & JINYU.
 
 Su durabilidad estructural está reforzada por bisagras de remache de 3+2 barriles de ingeniería, mientras que el acabado pulido a mano y las almohadillas nasales integradas garantizan un ajuste equilibrado y sin deslizamientos para el uso diario.
 

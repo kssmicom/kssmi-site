@@ -5,7 +5,7 @@ slug: "kao-333-acetate-optical-frame"
 itemNo: "KAO-333"
 date: "2026-05-10"
 colors: "Đồi mồi, Mật ong"
-materials: "Axetat Mazzucchelli & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Mazzucchelli & JIMEI & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -40,7 +40,7 @@ seoKeywords: "gọng kính cận axetat, gọng kính axetat tùy chỉnh, nhà 
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Được chế tác từ chất liệu axetat Mazzucchelli và JINYU cao cấp, mang lại cấu trúc siêu nhẹ nhưng đặc biệt bền bỉ với tính thẩm mỹ màu sắc rực rỡ và có chiều sâu.
+- **Chất liệu cao cấp:** Được chế tác từ chất liệu axetat Mazzucchelli và JIMEI & JINYU cao cấp, mang lại cấu trúc siêu nhẹ nhưng đặc biệt bền bỉ với tính thẩm mỹ màu sắc rực rỡ và có chiều sâu.
 - **Phần cứng kỹ thuật:** Bản lề cấu trúc đinh tán 3+2 chấu có độ tin cậy cao mang lại chuyển động càng kính ổn định, trơn tru, có sẵn các tùy chọn bản lề lò xo và bản lề 5 chấu.
 - **Quang học bền bỉ:** Tròng kính nylon độ bền cao mang lại độ rõ nét quang học vượt trội và khả năng chống va đập tốt cùng các dịch vụ phủ bảo vệ và tùy chỉnh hoàn chỉnh.
 - **Sự thoải mái tối đa:** Đệm mũi liền vành bằng axetat mượt mà kết hợp với thông số hình học 51-22-145mm được đo ni đóng giày để mang lại cảm giác vừa vặn cân bằng, không gây áp lực.
@@ -58,7 +58,7 @@ seoKeywords: "gọng kính cận axetat, gọng kính axetat tùy chỉnh, nhà 
 
 ## Tổng quan
 
-Chất liệu axetat Mazzucchelli và JINYU cao cấp mang lại cho KAO-333 độ sâu màu sắc phong phú, đậm nét và tuổi thọ cấu trúc vượt trội. Kiểu dáng mang cảm hứng retro cân bằng giữa phong cách sang trọng vượt thời gian với cảm giác đeo thoải mái, phù hợp cho cả nam và nữ.
+Chất liệu axetat Mazzucchelli và JIMEI & JINYU cao cấp mang lại cho KAO-333 độ sâu màu sắc phong phú, đậm nét và tuổi thọ cấu trúc vượt trội. Kiểu dáng mang cảm hứng retro cân bằng giữa phong cách sang trọng vượt thời gian với cảm giác đeo thoải mái, phù hợp cho cả nam và nữ.
 
 Bản lề đinh tán 3+2 chấu được chế tác chính xác cùng đệm mũi liền vành giúp duy trì sự cân bằng của càng kính và mang lại cảm giác nhẹ nhàng, không trọng lượng khi đeo hàng ngày.
 

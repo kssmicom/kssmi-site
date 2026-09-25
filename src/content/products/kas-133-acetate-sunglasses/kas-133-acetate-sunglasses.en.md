@@ -5,7 +5,7 @@ slug: "kas-133-acetate-sunglasses"
 itemNo: "KAS-133"
 date: "2026-05-09"
 colors: "Black & Clear & Deep-Pink & Clear-Blue"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli and JINYU acetate construction offering a lightweight feel with vibrant, long-lasting color depth.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction offering a lightweight feel with vibrant, long-lasting color depth.
 - **Reinforced Hardware:** Robust 3+2 barrel structure hinges engineered for precision movement and long-term operational durability.
 - **High-Performance Optics:** Tenacious nylon lenses providing superior clarity and impact resistance with extensive customization options.
 - **Ergonomic Design:** Seamlessly integrated nose pads designed for a secure, hypoallergenic, and comfortable fit for extended wear.
@@ -71,7 +71,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Overview
 
-Mazzucchelli and JINYU acetate provide the foundational excellence for the KAS-133, offering a lightweight yet durable frame with exceptional color vibrancy. Its unisex design serves as a versatile canvas for brands seeking a balance of luxury and trend-forward aesthetics.
+Mazzucchelli, JIMEI & JINYU acetate provide the foundational excellence for the KAS-133, offering a lightweight yet durable frame with exceptional color vibrancy. Its unisex design serves as a versatile canvas for brands seeking a balance of luxury and trend-forward aesthetics.
 
 Operational precision is guaranteed through 3+2 barrel structure hinges and impact-resistant nylon lenses that maintain comfort during extended wear.
 

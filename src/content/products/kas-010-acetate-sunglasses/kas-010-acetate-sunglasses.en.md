@@ -5,7 +5,7 @@ slug: "kas-010-acetate-sunglasses"
 itemNo: "KAS-010"
 date: "2026-05-10"
 colors: "Black & Meteor-Crystal & Tanzanite & Bordeaux"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli and JINYU acetate construction providing a vibrant finish and exceptional durability for a luxury aesthetic.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction providing a vibrant finish and exceptional durability for a luxury aesthetic.
 - **Durable Hardware:** Robust 4+3 barrel structure hinges engineered for long-term operational smoothness and structural stability.
 - **Premium Optics:** Tenacious nylon lenses offering superior impact resistance and clarity with extensive custom tinting options.
 - **Ergonomic Design:** Integrated nose pads and a precision-engineered 52-18-145mm frame ensuring a comfortable, secure fit for diverse face shapes.
@@ -71,7 +71,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Overview
 
-Vibrant Mazzucchelli and JINYU acetate give this unisex frame its distinct luxury character, offering a lightweight yet durable profile that maintains its finish over time.
+Vibrant Mazzucchelli, JIMEI & JINYU acetate give this unisex frame its distinct luxury character, offering a lightweight yet durable profile that maintains its finish over time.
 
 Structural integrity is reinforced by a precision 4+3 barrel hinge system, ensuring smooth operation and long-term stability for high-end retail environments.
 

@@ -5,7 +5,7 @@ slug: "kao-002-acetate-optical-frame"
 itemNo: "KAO-002"
 date: "2026-05-10"
 colors: "Jingga & Kura-kura & Ungu & Hijau"
-materials: "Asetat Premium Mazzucchelli & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "bingkai optik asetat, kacamata optik tersuai, pengeluar kacamata O
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Pembinaan asetat Mazzucchelli dan JINYU gred tinggi memberikan rasa ringan dan tahan lama dengan kedalaman warna yang bertenaga dan tahan lama.
+- **Bahan Premium:** Pembinaan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi memberikan rasa ringan dan tahan lama dengan kedalaman warna yang bertenaga dan tahan lama.
 - **Perkakasan Terkejuruteraan:** Engsel rivet 4+3 barrel berprestasi tinggi yang memberikan kestabilan struktur yang luar biasa dan kelancaran operasi jangka panjang.
 - **Optik Termaju:** Lensa nilon teguh yang menawarkan kejelasan unggul dan rintangan hentaman dengan pilihan penyesuaian dan salutan yang meluas tersedia.
 - **Ergonomik Bersepadu:** Alas hidung bersepadu yang dibentuk dengan tepat direka untuk kesesuaian yang selamat, selesa dan profil estetik mewah yang lancar.
@@ -71,7 +71,7 @@ seoKeywords: "bingkai optik asetat, kacamata optik tersuai, pengeluar kacamata O
 
 ## Gambaran Keseluruhan
 
-Menggunakan asetat Mazzucchelli dan JINYU premium, bingkai optik ini mencapai keseimbangan yang canggih antara pemakaian yang ringan dan kedalaman warna yang kaya dan bertenaga. Komposisi gred tinggi bahan memastikan kemasan yang berdaya tahan dan digilap yang memenuhi piawaian tepat pembangunan kacamata peringkat mewah.
+Menggunakan asetat Mazzucchelli dan JIMEI & JINYU premium, bingkai optik ini mencapai keseimbangan yang canggih antara pemakaian yang ringan dan kedalaman warna yang kaya dan bertenaga. Komposisi gred tinggi bahan memastikan kemasan yang berdaya tahan dan digilap yang memenuhi piawaian tepat pembangunan kacamata peringkat mewah.
 
 Engsel rivet 4+3 barrel bersepadu memberikan integriti struktur yang luar biasa dan operasi mekanikal yang lancar, direka untuk kebolehpercayaan jangka panjang dalam persekitaran runcit yang mencabar.
 

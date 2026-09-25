@@ -5,7 +5,7 @@ slug: "kas-115-acetate-sunglasses"
 itemNo: "KAS-115"
 date: "2026-05-09"
 colors: "Siyah & Mor & Beyaz & Kaplumbağa & Turuncu"
-materials: "Premium Mazzucchelli ve JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli ve JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -58,7 +58,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel oem güneş gözlükl
 
 ## Teknik Özellikler
 
-- **Premium Malzeme:** Yüksek kaliteli Mazzucchelli ve JINYU asetattan üretilmiş olup, canlı yüzeylere sahip hafif ve dayanıklı bir çerçeve sunar.
+- **Premium Malzeme:** Yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetattan üretilmiş olup, canlı yüzeylere sahip hafif ve dayanıklı bir çerçeve sunar.
 - **Dayanıklı Donanım:** Uzun süreli ve stabil operasyonel pürüzsüzlük için tasarlanmış sağlam 3+2 yapı menteşelerine sahiptir.
 - **Premium Optik:** Mükemmel netlik sağlayan dayanıklı naylon lenslerle donatılmış olup, benzersiz renk profilleri için kapsamlı özelleştirme imkanı sunar.
 - **Tüm Gün Konfor:** Uzun süreli kullanımda kusursuz, güvenli ve rahat bir uyum sağlamak için entegre burun tamponları ile tasarlanmıştır.
@@ -76,7 +76,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel oem güneş gözlükl
 
 ## Genel Bakış
 
-Premium Mazzucchelli ve JINYU asetattan üretilen KAS-115, olağanüstü dayanıklılık ve canlı renk profilleri sunarken cesur, vintage bir estetik yansıtır. Bu unisex tasarım, modern ve üst düzey gözlük koleksiyonları için çok yönlü bir temel parça olarak öne çıkmaktadır.
+Premium Mazzucchelli ve JIMEI & JINYU asetattan üretilen KAS-115, olağanüstü dayanıklılık ve canlı renk profilleri sunarken cesur, vintage bir estetik yansıtır. Bu unisex tasarım, modern ve üst düzey gözlük koleksiyonları için çok yönlü bir temel parça olarak öne çıkmaktadır.
 
 Sağlam 3+2 yapı menteşeleri ve entegre burun tamponları, kalıcı stabiliteyi ve tüm gün konforu garanti edecek şekilde mühendislikle tasarlanmıştır.
 

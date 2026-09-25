@@ -5,7 +5,7 @@ slug: "kas-323-acetate-sunglasses"
 itemNo: "KAS-323"
 date: "2026-05-12"
 colors: "Nero & Rosso & Havana & Verde-Neon"
-materials: "Acetato Mazzucchelli Premium & Acetato JINYU & Personalizzazione"
+materials: "Acetato Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione per Conto Terzi (OEM) & Design e Produzione (ODM) (Personalizzazione)"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produttore occhiali acetato premium, fabbrica occhiali OEM persona
 
 ## Caratteristiche
 
-- **Materiali Premium:** Costruzione in acetato Mazzucchelli e JINYU di alta qualità che offre una finitura leggera, durevole e vibrante per un'estetica di alto livello.
+- **Materiali Premium:** Costruzione in acetato Mazzucchelli e JIMEI & JINYU di alta qualità che offre una finitura leggera, durevole e vibrante per un'estetica di alto livello.
 - **Hardware Resistente:** Robuste cerniere con struttura a 4+3 barili progettate per una scorrevolezza operativa costante e un'integrità strutturale a lungo termine.
 - **Ottica ad Alte Prestazioni:** Lenti in nylon tenace che offrono chiarezza superiore e resistenza agli urti con opzioni di personalizzazione complete disponibili.
 - **Design Ergonomico:** Naselli integrati e una struttura bilanciata con precisione che garantisce una vestibilità sicura e ipoallergenica per un comfort che dura tutto il giorno.
@@ -71,7 +71,7 @@ seoKeywords: "produttore occhiali acetato premium, fabbrica occhiali OEM persona
 
 ## Panoramica
 
-Realizzato con precisione in acetato Mazzucchelli e JINYU di prima qualità, il modello KAS-323 offre un'estetica vibrante e durevole che soddisfa le rigorose richieste del mercato globale del lusso.
+Realizzato con precisione in acetato Mazzucchelli e JIMEI & JINYU di prima qualità, il modello KAS-323 offre un'estetica vibrante e durevole che soddisfa le rigorose richieste del mercato globale del lusso.
 
 Ogni montatura presenta una robusta struttura delle cerniere a 4+3 barili e naselli integrati, offrendo una scorrevolezza operativa costante e un maggiore comfort per chi li indossa.
 

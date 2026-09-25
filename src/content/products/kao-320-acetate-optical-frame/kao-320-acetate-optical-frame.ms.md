@@ -5,7 +5,7 @@ slug: "kao-320-acetate-optical-frame"
 itemNo: "KAO-320"
 date: "2026-05-10"
 colors: "Hitam & Havana & Merah & Kelabu Lut Sinar & Jalur Coklat & Hijau Neon"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "OEM & ODM ( Penyesuaian )"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -62,7 +62,7 @@ seoKeywords: "pengeluar bingkai optik asetat, bingkai optik OEM tersuai, kacamat
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Pembinaan asetat Mazzucchelli dan JINYU gred tinggi memberikan rasa ringan dan ketahanan estetik yang ceria.
+- **Bahan Premium:** Pembinaan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi memberikan rasa ringan dan ketahanan estetik yang ceria.
 - **Perkakasan Tahan Lama:** Engsel struktur rivet 4+3 barrel yang teguh direka untuk kelancaran operasi jangka panjang dan kestabilan struktur.
 - **Optik Berprestasi Tinggi:** Lensa nilon tahan lasak yang menawarkan kejelasan unggul dengan pilihan pewarnaan dan salutan tersuai yang komprehensif.
 - **Reka Bentuk Ergonomik:** Alas hidung bersepadu yang direka untuk kesesuaian lancar dan keselesaan pemakaian sepanjang hari yang dipertingkatkan.
@@ -79,7 +79,7 @@ seoKeywords: "pengeluar bingkai optik asetat, bingkai optik OEM tersuai, kacamat
 
 ## Gambaran Keseluruhan
 
-Dihasilkan daripada asetat Mazzucchelli dan JINYU gred tinggi, KAO-320 mengimbangi estetika berbilang tona yang ceria dengan ketahanan ringan yang diperlukan untuk koleksi fesyen premium.
+Dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU gred tinggi, KAO-320 mengimbangi estetika berbilang tona yang ceria dengan ketahanan ringan yang diperlukan untuk koleksi fesyen premium.
 
 Bingkai ini menggabungkan struktur rivet 4+3 barrel yang teguh dan alas hidung bersepadu, memastikan kestabilan struktur yang berkekalan dan kesesuaian yang lancar untuk pemakaian sepanjang hari.
 

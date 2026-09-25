@@ -5,7 +5,7 @@ slug: "kao-325-acetate-optical-frame"
 itemNo: "KAO-325"
 date: "2026-05-10"
 colors: "Đồi mồi viền Đỏ rượu vang, Kaki, Xanh olive đậm"
-materials: "Axetat Mazzucchelli & JINYU Cao cấp & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Mazzucchelli & JIMEI & JINYU Cao cấp & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) (Tùy chỉnh theo yêu cầu)"
 moq: "300 cái/mẫu (100cái/Màu)"
 
@@ -50,7 +50,7 @@ seoKeywords: "nhà sản xuất gọng kính cận axetat, nhà máy kính mắt
 
 ## Đặc điểm
 
-- **Cấu trúc Axetat cao cấp:** Được chế tác từ axetat Mazzucchelli và JINYU cao cấp, mang đến một khung kính nhẹ, bền bỉ với sức hấp dẫn thẩm mỹ sống động.
+- **Cấu trúc Axetat cao cấp:** Được chế tác từ axetat Mazzucchelli và JIMEI & JINYU cao cấp, mang đến một khung kính nhẹ, bền bỉ với sức hấp dẫn thẩm mỹ sống động.
 - **Thiết kế phần cứng chắc chắn:** Được thiết kế với cấu trúc bản lề đinh tán 3+2 ổn định, mang lại sự mượt mà khi hoạt động đáng tin cậy với các tùy chọn cho cơ chế lò xo tùy chỉnh.
 - **Quang học bền bỉ:** Được trang bị tròng kính nylon có độ bền cao mang lại độ bền tuyệt vời cùng với các khả năng tùy chỉnh toàn diện.
 - **Sự thoải mái tích hợp:** Có đệm mũi được tích hợp liền mạch để đảm bảo vừa vặn an toàn, cân bằng thích hợp cho việc đeo liên tục hàng ngày.
@@ -68,7 +68,7 @@ seoKeywords: "nhà sản xuất gọng kính cận axetat, nhà máy kính mắt
 
 ## Tổng quan
 
-Được chế tạo xoay quanh sự sống động và độ bền đặc biệt của axetat Mazzucchelli và JINYU, KAO-325 cung cấp khuôn khổ cơ bản cho các bộ sưu tập kính mắt tinh vi.
+Được chế tạo xoay quanh sự sống động và độ bền đặc biệt của axetat Mazzucchelli và JIMEI & JINYU, KAO-325 cung cấp khuôn khổ cơ bản cho các bộ sưu tập kính mắt tinh vi.
 
 Phần cứng chính xác, nổi bật với cấu trúc bản lề đinh tán 3+2 ổn định và đệm mũi được tích hợp liền mạch, mang lại sự mượt mà khi hoạt động nhất quán và sự thoải mái đáng tin cậy cả ngày.
 

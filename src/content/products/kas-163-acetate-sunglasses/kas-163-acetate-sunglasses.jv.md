@@ -5,7 +5,7 @@ slug: "kas-163-acetate-sunglasses"
 itemNo: "KAS-163"
 date: "2026-05-09"
 colors: "Ireng, Bulus, Coklat Padet"
-materials: "Asetat Premium Mazzucchelli & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) (Kustomisasi)"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -41,7 +41,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata kustom KAS-163, pabrik ka
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JINYU pilihan sing nyedhiyakake daya tahan luar biasa kanthi finishing sing entheng lan padhang.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU pilihan sing nyedhiyakake daya tahan luar biasa kanthi finishing sing entheng lan padhang.
 - **Teknik Presisi:** Engsel struktur rivet barrel 3+2 sing kuwat dirancang kanggo kelancaran operasional sing awet lan integritas struktural.
 - **Optik Performa Dhuwur:** Lensa nilon kuwat sing dirancang kanggo kajelasan unggul kanthi kemampuan lapisan lan pewarnaan kustom sing serbaguna.
 - **Desain Ergonomis:** Bantalan irung integrasi lan profil frame 52-19-145mm dioptimalake kanggo pas sing aman lan kenyamanan nganggo sing halus.
@@ -58,7 +58,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata kustom KAS-163, pabrik ka
 
 ## Ringkesan
 
-Fashion kelas dhuwur ketemu keunggulan bahan ing KAS-163, sing nggabungake asetat premium Mazzucchelli lan JINYU kanggo estetika unisex sing canggih, awet, lan entheng.
+Fashion kelas dhuwur ketemu keunggulan bahan ing KAS-163, sing nggabungake asetat premium Mazzucchelli lan JIMEI & JINYU kanggo estetika unisex sing canggih, awet, lan entheng.
 
 Dilengkapi sistem engsel rivet barrel 3+2 sing kuwat, frame 52mm njamin kelancaran operasional sing konsisten lan pas ergonomis sing halus.
 

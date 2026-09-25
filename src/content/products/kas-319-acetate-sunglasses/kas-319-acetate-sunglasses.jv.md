@@ -5,7 +5,7 @@ slug: "kas-319-acetate-sunglasses"
 itemNo: "KAS-319"
 date: "2026-05-12"
 colors: "Ireng & Jambon & Bulus & Bening"
-materials: "Asetat Premium Mazzucchelli & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak & Desain lan Produksi ( Kustomisasi )"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen kacamata hitam asetat premium, produksi kacamata OEM kust
 
 ## Fitur
 
-- **Bahan Artisan:** Konstruksi asetat premium Mazzucchelli lan JINYU sing nawakake rasa mewah kanthi daya tahan sing unggul lan warna sing awet.
+- **Bahan Artisan:** Konstruksi asetat premium Mazzucchelli lan JIMEI & JINYU sing nawakake rasa mewah kanthi daya tahan sing unggul lan warna sing awet.
 - **Hardware Kuat:** Engsel struktur 4+3 barrel sing dirancang kanthi presisi kanggo kelancaran operasional sing luar biasa lan stabilitas frame.
 - **Optik Canggih:** Lensa nilon kuat sing nyedhiyakake kajelasan definisi dhuwur lan perlindungan dampak sing kuat kanggo keamanan srengenge premium.
 - **Kenyamanan Maksimal:** Bantalan irung integrasi lan dimensi ergonomis 53-19-145mm sing digawe kanggo panggunaan sedina muput lan pas sing aman lan seimbang.
@@ -71,7 +71,7 @@ seoKeywords: "produsen kacamata hitam asetat premium, produksi kacamata OEM kust
 
 ## Ringkesan
 
-Digawe saka campuran refined asetat premium Mazzucchelli lan JINYU, kacamata hitam iki ngutamakake kedalaman struktural lan finish sing gilap banget. Bahan frame sing entheng lan padhang njamin rasa premium sing cocog karo standar fashion tingkat mewah.
+Digawe saka campuran refined asetat premium Mazzucchelli lan JIMEI & JINYU, kacamata hitam iki ngutamakake kedalaman struktural lan finish sing gilap banget. Bahan frame sing entheng lan padhang njamin rasa premium sing cocog karo standar fashion tingkat mewah.
 
 Engsel struktur 4+3 barrel sing dirancang kanthi presisi lan desain bantalan irung integrasi nyedhiyakake pas sing stabil lan seimbang kanggo panggunaan sedina muput.
 

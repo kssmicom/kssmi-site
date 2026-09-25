@@ -5,7 +5,7 @@ slug: "kas-324-acetate-sunglasses"
 itemNo: "KAS-324"
 date: "2026-05-13"
 colors: "Black , Havana, Champagne"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -49,7 +49,7 @@ seoKeywords: "premium acetate sunglasses, fashion acetate eyewear, eyewear OEM m
 ---
 
 ## Technical Features
-- **Premium Acetate Material:** High-grade Mazzucchelli and JINYU acetate construction offering a vibrant finish with exceptional durability and lightweight comfort.
+- **Premium Acetate Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction offering a vibrant finish with exceptional durability and lightweight comfort.
 - **Precision Hardware:** Stable 3+2 barrel structure hinges engineered for consistent operational smoothness and long-term reliability.
 - **Advanced Optics:** Impact-resistant nylon lenses with comprehensive customization options for premium UV protection and clarity.
 - **Integrated Comfort:** Precision-molded nose pads designed for an ergonomic, hypoallergenic fit across diverse facial profiles.
@@ -66,7 +66,7 @@ seoKeywords: "premium acetate sunglasses, fashion acetate eyewear, eyewear OEM m
 
 ## Overview
 
-For eyewear labels prioritizing material excellence, the KAS-324 utilizes premium Mazzucchelli and JINYU acetate to achieve a distinctive, high-vibrancy finish. This selection provides the lightweight durability required for luxury-tier fashion portfolios.
+For eyewear labels prioritizing material excellence, the KAS-324 utilizes premium Mazzucchelli, JIMEI & JINYU acetate to achieve a distinctive, high-vibrancy finish. This selection provides the lightweight durability required for luxury-tier fashion portfolios.
 
 The frame’s 3+2 barrel hinge structure and integrated nose pads are precision-machined to ensure consistent operational reliability and all-day comfort.
 

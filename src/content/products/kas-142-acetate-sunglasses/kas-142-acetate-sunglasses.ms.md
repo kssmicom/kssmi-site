@@ -5,7 +5,7 @@ slug: "kas-142-acetate-sunglasses"
 itemNo: "KAS-142"
 date: "2026-05-09"
 colors: "Hitam & Putih & Merah & Kura-kura"
-materials: "Asetat Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Asetat Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "cermin mata hitam asetat, pengilang fesyen cermin mata, kilang cer
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Pembinaan asetat Mazzucchelli dan JINYU gred tinggi yang menawarkan estetika halus dengan ketahanan luar biasa dan keselesaan ringan.
+- **Bahan Premium:** Pembinaan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi yang menawarkan estetika halus dengan ketahanan luar biasa dan keselesaan ringan.
 - **Perkakasan Teguh:** Engsel struktur 4+3 tong kejuruteraan tepat yang direka untuk kestabilan unggul dan kelancaran operasi yang berkekalan.
 - **Optik Unggul:** Lensa nilon teguh dengan kejelasan tinggi yang memberikan rintangan hentaman yang sangat baik dan pilihan serba boleh untuk warna dan salutan khusus.
 - **Ergonomik Bersepadu:** Alas hidung bersepadu yang lancar dan geometri bingkai 57mm yang seimbang memastikan kesesuaian yang stabil dan bebas tekanan untuk pelbagai profil wajah.
@@ -71,7 +71,7 @@ seoKeywords: "cermin mata hitam asetat, pengilang fesyen cermin mata, kilang cer
 
 ## Gambaran Keseluruhan
 
-Dihasilkan daripada asetat Mazzucchelli dan JINYU premium, model ini menggabungkan palet warna yang bertenaga dengan lensa nilon kejelasan tinggi untuk estetika tahap mewah yang canggih.
+Dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU premium, model ini menggabungkan palet warna yang bertenaga dengan lensa nilon kejelasan tinggi untuk estetika tahap mewah yang canggih.
 
 Engsel struktur 4+3 tong dan alas hidung bersepadu memastikan kestabilan struktur yang berkekalan dan kesesuaian ergonomik yang seimbang merentasi geometri 57mm.
 

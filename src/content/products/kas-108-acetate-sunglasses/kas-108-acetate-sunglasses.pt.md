@@ -5,7 +5,7 @@ slug: "kas-108-acetate-sunglasses"
 itemNo: "KAS-108"
 date: "2026-05-07"
 colors: "Preto & Transparente & Havana & Oliva"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de óculos de sol em acetato, óculos de sol OEM person
 
 ## Características
 
-- **Construção em Acetato Premium:** Armação e hastes em acetato Mazzucchelli e JINYU de alta qualidade que oferecem um acabamento vibrante polido à mão com uma durabilidade excepcional.
+- **Construção em Acetato Premium:** Armação e hastes em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que oferecem um acabamento vibrante polido à mão com uma durabilidade excepcional.
 - **Ótica de Alto Desempenho:** Lentes de nylon tenazes que proporcionam uma resistência ao impacto e uma clareza ótica superiores com amplas opções de coloração personalizada disponíveis.
 - **Hardware de Precisão:** Dobradiças estáveis com estrutura de 3+2 barris projetadas para uma fluidez operacional constante e um alinhamento da armação a longo prazo.
 - **Conforto Ergonômico:** Ponteiras nasicas integradas e uma estrutura de armação leve projetada para um ajuste seguro e conforto durante todo o dia em diversos perfis faciais.
@@ -72,7 +72,7 @@ seoKeywords: "fabricante de óculos de sol em acetato, óculos de sol OEM person
 
 ## Visão Geral
 
-O acetato Mazzucchelli e JINYU proporcionam a excelência fundamental para este modelo, combinando um acabamento vibrante polido à mão com a leveza e a durabilidade essenciais para óculos de qualidade premium. Este design unissex de inspiração vintage serve como um elemento versátil para marcas que buscam um equilíbrio entre estética ousada e estilo atemporal.
+O acetato Mazzucchelli e JIMEI & JINYU proporcionam a excelência fundamental para este modelo, combinando um acabamento vibrante polido à mão com a leveza e a durabilidade essenciais para óculos de qualidade premium. Este design unissex de inspiração vintage serve como um elemento versátil para marcas que buscam um equilíbrio entre estética ousada e estilo atemporal.
 
 Um sistema de dobradiças de 3+2 barris e ponteiras nasicas integradas garantem desempenho consistente e conforto ergonômico, refletindo um compromisso com a fabricação de precisão e o alinhamento da armação a longo prazo.
 

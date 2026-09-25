@@ -5,7 +5,7 @@ slug: "kas-010-acetate-sunglasses"
 itemNo: "KAS-010"
 date: "2026-05-10"
 colors: "Noir & Meteor-Crystal & Tanzanite & Bordeaux"
-materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
+materials: "Mazzucchelli Premium & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100pcs/couleur)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil OE
 
 ## Caractéristiques
 
-- **Matériau Premium :** Construction en acétate Mazzucchelli et JINYU de haute qualité offrant une finition vibrante et une durabilité exceptionnelle pour une esthétique de luxe.
+- **Matériau Premium :** Construction en acétate Mazzucchelli et JIMEI & JINYU de haute qualité offrant une finition vibrante et une durabilité exceptionnelle pour une esthétique de luxe.
 - **Matériel Durable :** Charnières à structure robuste 4+3 barillets conçues pour une fluidité opérationnelle à long terme et une stabilité structurelle.
 - **Optique de Qualité :** Verres en nylon tenace offrant une résistance aux chocs et une clarté supérieures avec de nombreuses options de teintes personnalisées.
 - **Design Ergonomique :** Plaquettes de nez intégrées et monture de 52-18-145 mm conçue avec précision assurant un ajustement confortable et sûr pour diverses formes de visage.
@@ -71,7 +71,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil OE
 
 ## Aperçu
 
-L'acétate vibrant Mazzucchelli et JINYU donne à cette monture unisexe son caractère de luxe distinct, offrant un profil léger mais durable qui conserve son éclat au fil du temps.
+L'acétate vibrant Mazzucchelli et JIMEI & JINYU donne à cette monture unisexe son caractère de luxe distinct, offrant un profil léger mais durable qui conserve son éclat au fil du temps.
 
 L'intégrité structurelle est renforcée par un système de charnières de précision à 4+3 barillets, garantissant un fonctionnement fluide et une stabilité à long terme pour les environnements de vente haut de gamme.
 

@@ -5,7 +5,7 @@ slug: "kao-336-acetate-optical-frame"
 itemNo: "KAO-336"
 date: "2026-05-10"
 colors: "Black, Transparent with Tortoise, Clear Green with Tortoise"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -41,7 +41,7 @@ seoKeywords: "customizable acetate optical frames, wholesale custom optical fram
 
 ## Technical Features
 
-- **Premium Material:** Crafted from premium Mazzucchelli and JINYU acetate to deliver lightweight, highly durable temples and fronts featuring exceptional color vibrancy.
+- **Premium Material:** Crafted from premium Mazzucchelli, JIMEI & JINYU acetate to deliver lightweight, highly durable temples and fronts featuring exceptional color vibrancy.
 - **Engineered Hardware:** Equipped with a stable 3+2 barrel rivet structure hinge system designed to maintain exact alignment and support long-term operational smoothness.
 - **Tenacious Optics:** Fitted with resilient nylon lenses that offer superior impact resistance and high optical clarity, customizable with specialized coatings and bespoke tints.
 - **Integrated Comfort:** Built with seamless, integrated acetate nose pads combined with a standard 46-25-145mm profile to distribute frame weight evenly and prevent slipping.
@@ -58,7 +58,7 @@ seoKeywords: "customizable acetate optical frames, wholesale custom optical fram
 
 ## Overview
 
-Crafted for brands that demand exceptional aesthetic vibrancy, the KAO-336 combines premium Mazzucchelli and JINYU acetate into a highly durable, lightweight unisex profile. Retro styling and custom colorways make this classic frame a standout piece for high-end optical portfolios.
+Crafted for brands that demand exceptional aesthetic vibrancy, the KAO-336 combines premium Mazzucchelli, JIMEI & JINYU acetate into a highly durable, lightweight unisex profile. Retro styling and custom colorways make this classic frame a standout piece for high-end optical portfolios.
 
 A meticulous 3+2 barrel rivet structure hinge system keeps the temples aligned for smooth operation, paired with integrated acetate nose pads and a comfortable 46-25-145mm fit.
 

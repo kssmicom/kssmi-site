@@ -5,7 +5,7 @@ slug: "kas-131-acetate-sunglasses"
 itemNo: "KAS-131"
 date: "2026-05-09"
 colors: "Negro & Púrpura & Tortuga & Blanco"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalización"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM) ( Personalización )"
 moq: "300 uds/modelo (100uds/color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante gafas de sol acetato, fabricante gafas personalizadas, 
 
 ## Características Técnicas
 
-- **Material del Marco Premium:** Fabricado con acetato Mazzucchelli y JINYU de alta calidad, proporcionando una estructura ligera pero excepcionalmente duradera con una profundidad de color vibrante y duradera.
+- **Material del Marco Premium:** Fabricado con acetato Mazzucchelli y JIMEI & JINYU de alta calidad, proporcionando una estructura ligera pero excepcionalmente duradera con una profundidad de color vibrante y duradera.
 - **Hardware Duradero:** Cuenta con un sistema profesional de bisagras de estructura 4+3 barrel diseñado para una suavidad operativa superior e integridad estructural a largo plazo.
 - **Óptica Avanzada:** Equipado con lentes de nylon tenaces que ofrecen una alta resistencia a los impactos y claridad óptica, totalmente personalizables según los requisitos específicos de la marca.
 - **Comodidad Ergonómica:** Diseñado con almohadillas nasales integradas para asegurar un ajuste estable y sin presión, adecuado para un uso diario prolongato.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante gafas de sol acetato, fabricante gafas personalizadas, 
 
 ## Resumen
 
-El acetato Mazzucchelli y JINYU forma el núcleo de estas gafas de sol, proporcionando una vibrante profundidad de color y una durabilidad ligera que atrae a los mercados de moda de alta gama.
+El acetato Mazzucchelli y JIMEI & JINYU forma el núcleo de estas gafas de sol, proporcionando una vibrante profundidad de color y una durabilidad ligera que atrae a los mercados de moda de alta gama.
 
 El sistema de bisagras de estructura 4+3 barrel asegura precisión operativa a largo plazo, mientras que las almohadillas nasales integradas ofrecen estabilidad ergonómica para el uso durante todo el día.
 

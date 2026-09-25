@@ -5,7 +5,7 @@ slug: "kas-154-acetate-sunglasses"
 itemNo: "KAS-154"
 date: "2026-05-09"
 colors: "Noir, Écaille, Gris Transparent, Olive Laiteux"
-materials: "Acétate Mazzucchelli Premium & JINYU & Personnalisation"
+materials: "Acétate Mazzucchelli Premium & JIMEI & JINYU & Personnalisation"
 serviceMode: "OEM & ODM ( Personnalisation )"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -42,7 +42,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil OE
 
 ## Caractéristiques
 
-- **Construction en Acétate Premium :** Conçue à partir d'acétate Mazzucchelli et JINYU de haute qualité pour offrir une monture vibrante, légère et durable, adaptée aux collections de mode haut de gamme.
+- **Construction en Acétate Premium :** Conçue à partir d'acétate Mazzucchelli et JIMEI & JINYU de haute qualité pour offrir une monture vibrante, légère et durable, adaptée aux collections de mode haut de gamme.
 - **Système de Matériel Robuste :** Comprend une charnière à structure de rivet à 4+3 barillets conçue avec précision pour une fluidité opérationnelle exceptionnelle et une intégrité structurelle à long terme.
 - **Clarté Optique Supérieure :** Équipée de verres en nylon tenace offrant une haute résistance aux chocs et de vastes options de personnalisation pour les marques de lunettes premium.
 - **Ergonomie Transparente :** La conception des plaquettes de nez intégrées assure un ajustement confortable et sûr et une esthétique raffinée pour un port quotidien.
@@ -59,7 +59,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil OE
 
 ## Aperçu
 
-Fabriqué à partir d'un mélange exclusif d'acétate Mazzucchelli et JINYU, ce modèle offre un profil vibrant et léger qui répond aux normes exigeantes des maisons de mode de luxe.
+Fabriqué à partir d'un mélange exclusif d'acétate Mazzucchelli et JIMEI & JINYU, ce modèle offre un profil vibrant et léger qui répond aux normes exigeantes des maisons de mode de luxe.
 
 Le système de charnière à rivet à 4+3 barillets renforcé assure une intégrité structurelle à long terme tout en maintenant la sensation de fluidité et de haute précision attendue des lunettes premium.
 

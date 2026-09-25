@@ -5,7 +5,7 @@ slug: "kao-326-acetate-optical-frame"
 itemNo: "KAO-326"
 date: "2026-05-10"
 colors: "Negro, Tortuga, Teal con Habana"
-materials: "Acetato Mazzucchelli & JINYU Premium & Personalización"
+materials: "Acetato Mazzucchelli & JIMEI & JINYU Premium & Personalización"
 serviceMode: "Fabricación por Cuenta de Terceros & Diseño y Fabricación (Personalización)"
 moq: "300 uds/modelo (100uds/Color)"
 
@@ -50,7 +50,7 @@ seoKeywords: "monturas ópticas de acetato retro, fabricante de gafas de acetato
 
 ## Características
 
-- **Material Premium:** Fabricado con acetato premium Mazzucchelli y JINYU, ofreciendo una estructura ligera pero excepcionalmente duradora con una profundidad de color vibrante y duradera.
+- **Material Premium:** Fabricado con acetato premium Mazzucchelli y JIMEI & JINYU, ofreciendo una estructura ligera pero excepcionalmente duradora con una profundidad de color vibrante y duradera.
 - **Componentes Mecánicos Diseñados:** Bisagras de remache de 3+2 barriles de alta confiabilidad que brindan un movimiento de varillas estable y suave con opciones de bisagras de resorte personalizadas.
 - **Óptica Tenaz:** Lentes de nylon de alta durabilidad que ofrecen una excelente claridad y resistencia al impacto con opciones completas de recubrimiento a medida.
 - **Confort Integrado:** Almohadillas nasales integradas sin costuras combinadas con una geometría a medida de 47-20-148mm para brindar un ajuste equilibrado y sin deslizamientos.
@@ -67,7 +67,7 @@ seoKeywords: "monturas ópticas de acetato retro, fabricante de gafas de acetato
 
 ## Resumen
 
-Para las marcas de gafas que priorizan la vibración profunda del color y la durabilidad estructural, esta montura óptica de inspiración retro está esculpida en acetato premium Mazzucchelli y JINYU.
+Para las marcas de gafas que priorizan la vibración profunda del color y la durabilidad estructural, esta montura óptica de inspiración retro está esculpida en acetato premium Mazzucchelli y JIMEI & JINYU.
 
 Diseñada para un uso confiable a largo plazo, integra un robusto sistema de bisagras de remache de 3+2 barriles y almohadillas nasales sin costuras para garantizar un ajuste equilibrado y sin deslizamientos.
 

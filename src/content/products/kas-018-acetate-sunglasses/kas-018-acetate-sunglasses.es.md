@@ -5,7 +5,7 @@ slug: "kas-018-acetate-sunglasses"
 itemNo: "KAS-018"
 date: "2026-05-10"
 colors: "Negro, Rojo Transparente, Azul Transparente"
-materials: "Acetato Premium Mazzucchelli y JINYU y Personalización"
+materials: "Acetato Premium Mazzucchelli y JIMEI & JINYU y Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -41,7 +41,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de marca propia de lu
 
 ## Características
 
-- **Acetato de Alto Rendimiento:** Monturas de acetato premium de Mazzucchelli y JINYU que proporcionan una estructura ligera e hipoalergénica con una profundidad de color vibrante y duradera.
+- **Acetato de Alto Rendimiento:** Monturas de acetato premium de Mazzucchelli y JIMEI & JINYU que proporcionan una estructura ligera e hipoalergénica con una profundidad de color vibrante y duradera.
 - **Herrajes Duraderos:** Bisagras estables con estructura de 3+2 barriletes diseñadas para una suavidad operativa repetible e integridad estructural (personalizables a 5 barriletes o bisagras de resorte).
 - **Óptica Premium:** Lentes de nylon tenaz que ofrecen una alta resistencia a los impactos y claridad óptica con amplias posibilidades de tintado y recubrimiento personalizados.
 - **Comodidad Integrada:** Almohadillas nasales integradas moldeadas con precisión que garantizan un ajuste seguro y equilibrado y una estética limpia y sin costuras.
@@ -59,7 +59,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de marca propia de lu
 
 ## Descripción General
 
-Diseñado con acetato premium de Mazzucchelli y JINYU, el modelo KAS-018 logra una estructura ligera e hipoalergénica que muestra una vitalidad y profundidad de color excepcionales.
+Diseñado con acetato premium de Mazzucchelli y JIMEI & JINYU, el modelo KAS-018 logra una estructura ligera e hipoalergénica que muestra una vitalidad y profundidad de color excepcionales.
 
 La integración de bisagras de 3+2 barriletes y lentes de nylon tenaz garantiza la estabilidad operativa a largo plazo junto con una resistencia al impacto y una claridad óptica superiores.
 

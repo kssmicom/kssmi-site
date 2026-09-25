@@ -5,7 +5,7 @@ slug: "kas-114-acetate-sunglasses"
 itemNo: "KAS-114"
 date: "2026-05-09"
 colors: "Schwarz & Champagner & Gelb"
-materials: "Premium Mazzucchelli & JINYU-Acetat & Individualisierung"
+materials: "Premium Mazzucchelli & JIMEI & JINYU-Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -50,7 +50,7 @@ seoKeywords: "acetat sonnenbrillen hersteller, maßgeschneiderte OEM unisex sonn
 
 ## Technische Eigenschaften
 
-- **Premium-Material:** Hergestellt aus hochwertigem Mazzucchelli- und JINYU-Acetat, um eine leichte, langlebige Struktur mit lebendiger optischer Anziehungskraft zu bieten.
+- **Premium-Material:** Hergestellt aus hochwertigem Mazzucchelli- und JIMEI & JINYU-Acetat, um eine leichte, langlebige Struktur mit lebendiger optischer Anziehungskraft zu bieten.
 - **Langlebige Hardware:** Entwickelt mit robusten 3+2 Struktur-Scharnieren, die eine langfristige Betriebsruhe und strukturelle Stabilität gewährleisten.
 - **Präzisionsoptik:** Ausgestattet mit robusten Nylon-Linsen, die überragende Klarheit und umfangreiche Individualisierungsoptionen für Premium-Kollektionen bieten.
 - **Nahtloser Komfort:** Integrierte Nasenpads für eine sichere und ergonomische Passform für längeres Tragen den ganzen Tag über.
@@ -68,7 +68,7 @@ seoKeywords: "acetat sonnenbrillen hersteller, maßgeschneiderte OEM unisex sonn
 
 ## Übersicht
 
-Die KAS-114 wurde für Luxusmärkte entwickelt, die sowohl ästhetische Präsenz als auch strukturelle Integrität erfordern, und verwendet erstklassiges Mazzucchelli- und JINYU-Acetat, um eine lebendige, leichte Konstruktion zu erzielen.
+Die KAS-114 wurde für Luxusmärkte entwickelt, die sowohl ästhetische Präsenz als auch strukturelle Integrität erfordern, und verwendet erstklassiges Mazzucchelli- und JIMEI & JINYU-Acetat, um eine lebendige, leichte Konstruktion zu erzielen.
 
 Ausgestattet mit robusten 3+2 Struktur-Scharnieren und integrierten Nasenpads garantiert der mutige Unisex-Rahmen eine außergewöhnliche langfristige Betriebsruhe und eine sichere, ergonomische Passform.
 

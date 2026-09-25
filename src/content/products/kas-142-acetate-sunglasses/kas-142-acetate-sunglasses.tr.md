@@ -5,7 +5,7 @@ slug: "kas-142-acetate-sunglasses"
 itemNo: "KAS-142"
 date: "2026-05-09"
 colors: "Siyah & Beyaz & Kırmızı & Kaplumbağa"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
 moq: "300 adet/model (Renk başına 100 adet)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat güneş gözlüğü, moda gözlük üreticisi, Çin gözlü
 
 ## Özellikler
 
-- **Premium Malzeme:** Olağanüstü dayanıklılık ve hafif konfor ile rafine bir estetik sunan yüksek kaliteli Mazzucchelli ve JINYU asetat yapı.
+- **Premium Malzeme:** Olağanüstü dayanıklılık ve hafif konfor ile rafine bir estetik sunan yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat yapı.
 - **Sağlam Donanım:** Üstün stabilite ve kalıcı çalışma pürüzsüzlüğü için tasarlanmış hassas mühendislik ürünü 4+3 varil yapılı menteşeler.
 - **Üstün Optik:** Mükemmel darbe direnci ve özel renklendirmeler ile kaplamalar için çok yönlü seçenekler sunan yüksek netlikte dayanıklı naylon lensler.
 - **Entegre Ergonomi:** Çeşitli yüz profilleri için sabit ve basınçsız bir uyum sağlayan sorunsuz entegre burun tamponları ve dengeli 57 mm çerçeve geometrisi.
@@ -71,7 +71,7 @@ seoKeywords: "asetat güneş gözlüğü, moda gözlük üreticisi, Çin gözlü
 
 ## Genel Bakış
 
-Birinci sınıf Mazzucchelli ve JINYU asetattan üretilen bu model, sofistike ve lüks segment bir estetik için canlı bir renk paletini yüksek netlikte naylon lenslerle birleştiriyor.
+Birinci sınıf Mazzucchelli ve JIMEI & JINYU asetattan üretilen bu model, sofistike ve lüks segment bir estetik için canlı bir renk paletini yüksek netlikte naylon lenslerle birleştiriyor.
 
 4+3 varil yapılı menteşeler ve entegre burun tamponları, 57 mm geometrisi boyunca kalıcı yapısal stabilite ve dengeli, ergonomik bir uyum sağlar.
 

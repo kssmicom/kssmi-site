@@ -5,7 +5,7 @@ slug: "kas-114-acetate-sunglasses"
 itemNo: "KAS-114"
 date: "2026-05-09"
 colors: "Black & Champagne & Yellow"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -50,7 +50,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM unisex sunglasses, lux
 
 ## Technical Features
 
-- **Premium Material:** Constructed from high-quality Mazzucchelli and JINYU acetate to provide a lightweight, durable structure with vibrant visual appeal.
+- **Premium Material:** Constructed from high-quality Mazzucchelli, JIMEI & JINYU acetate to provide a lightweight, durable structure with vibrant visual appeal.
 - **Durable Hardware:** Engineered with robust 3+2 barrel structure hinges ensuring long-term operational smoothness and structural stability.
 - **Precision Optics:** Equipped with tenacious nylon lenses offering superior clarity and extensive customization options for premium collections.
 - **Seamless Comfort:** Integrated nose pads designed to deliver a secure and ergonomic fit for extended, all-day wear.
@@ -68,7 +68,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM unisex sunglasses, lux
 
 ## Overview
 
-Crafted for luxury markets demanding both aesthetic presence and structural integrity, the KAS-114 utilizes top-tier Mazzucchelli and JINYU acetate to achieve a vibrant, lightweight build.
+Crafted for luxury markets demanding both aesthetic presence and structural integrity, the KAS-114 utilizes top-tier Mazzucchelli, JIMEI & JINYU acetate to achieve a vibrant, lightweight build.
 
 Engineered with robust 3+2 barrel structure hinges and integrated nose pads, the bold unisex frame guarantees exceptional long-term operational smoothness and a secure, ergonomic fit.
 

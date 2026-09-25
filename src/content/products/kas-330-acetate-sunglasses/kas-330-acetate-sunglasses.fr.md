@@ -5,7 +5,7 @@ slug: "kas-330-acetate-sunglasses"
 itemNo: "KAS-330"
 date: "2026-05-13"
 colors: "Noir, Rayé, Écaille"
-materials: "Acétate Premium Mazzucchelli & JINYU & Personnalisation"
+materials: "Acétate Premium Mazzucchelli & JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication sous Contrat (OEM) & Conception et Fabrication (ODM) ( Personnalisation )"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -50,7 +50,7 @@ seoKeywords: "fabricant lunettes acétate, lunettes custom OEM, lunettes de luxe
 
 ## Caractéristiques
 
-- **Matériau en Acétate Premium :** Structure en acétate Mazzucchelli et JINYU de haute qualité offrant une durabilité exceptionnelle, une profondeur de couleur vibrante et une sensation de légèreté.
+- **Matériau en Acétate Premium :** Structure en acétate Mazzucchelli et JIMEI & JINYU de haute qualité offrant une durabilité exceptionnelle, une profondeur de couleur vibrante et une sensation de légèreté.
 - **Optique Haute Performance :** Verres en nylon tenace offrant une clarté supérieure et une résistance aux chocs avec des options de personnalisation complète pour les teintes et les revêtements.
 - **Ingénierie de Précision :** Charnières stables à structure 3+2 barillets conçues pour une longue durée de vie opérationnelle et une intégrité structurelle à long terme.
 - **Confort Ergonomique :** Plaquettes de nez intégrées en acétate conçues pour un ajustement sûr et confortable qui maintient l'esthétique audacieuse et épurée de la montura.
@@ -67,7 +67,7 @@ seoKeywords: "fabricant lunettes acétate, lunettes custom OEM, lunettes de luxe
 
 ## Aperçu
 
-La géométrie audacieuse rencontre la texture raffinée de l'acétate Mazzucchelli et JINYU dans un design conçu pour une mode unisexe à fort impact. Ces montures mettent l'accent sur l'intégrité structurelle et la profondeur vibrante des couleurs, offrant une base premium pour toute collection de lunettes.
+La géométrie audacieuse rencontre la texture raffinée de l'acétate Mazzucchelli et JIMEI & JINYU dans un design conçu pour une mode unisexe à fort impact. Ces montures mettent l'accent sur l'intégrité structurelle et la profondeur vibrante des couleurs, offrant une base premium pour toute collection de lunettes.
 
 Les charnières à 3+2 barillets ajustées avec précision et les verres en nylon tenace offrent un équilibre entre un fonctionnement mécanique fluide et des performances optiques supérieures.
 

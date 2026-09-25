@@ -5,7 +5,7 @@ slug: "kas-104-acetate-sunglasses"
 itemNo: "KAS-104"
 date: "2026-05-06"
 colors: "Bulus & Coklat & Ireng & Floral & Purple-Stripe"
-materials: "Premium Mazzucchelli & Asetat JINYU & Kustomisasi"
+materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -58,7 +58,7 @@ seoKeywords: "produsen kacamata asetat Mazzucchelli, kacamata hitam OEM kustom, 
 
 ## Fitur
 
-- **Bahan Frame Premium:** Konstruksi asetat Mazzucchelli lan JINYU kelas dhuwur sing nawakake finish kilap sing jero lan padhang kanthi daya tahan struktural sing luar biasa kanggo lini fashion kelas atas.
+- **Bahan Frame Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing nawakake finish kilap sing jero lan padhang kanthi daya tahan struktural sing luar biasa kanggo lini fashion kelas atas.
 - **Hardware Awet:** Engsel struktur tong 2+1 sing dirancang kanthi presisi kanggo kelancaran operasional sing konsisten lan stabilitas frame jangka panjang.
 - **Optik Unggul:** Lensa nylon kuat sing nawakake resistensi dampak dhuwur lan kejelasan optik, kanthi kustomisasi sing bisa diskalakan kanggo perlindungan UV lan lapisan khusus.
 - **Pas Ergonomis:** Bantalan irung integrasi sing diukir kanthi lancar ing struktur asetat kanggo pas sing aman lan tanpa tekanan sing nambah kenyamanan sedina muput.
@@ -76,7 +76,7 @@ seoKeywords: "produsen kacamata asetat Mazzucchelli, kacamata hitam OEM kustom, 
 
 ## Ringkasan
 
-Digawe saka pilihan asetat Mazzucchelli lan JINYU premium sing dikurasi, KAS-104 ngimbangi kedalaman warna sing padhang kanthi finish kilap dhuwur sing nemtokake kacamata mewah kontemporer.
+Digawe saka pilihan asetat Mazzucchelli lan JIMEI & JINYU premium sing dikurasi, KAS-104 ngimbangi kedalaman warna sing padhang kanthi finish kilap dhuwur sing nemtokake kacamata mewah kontemporer.
 
 Integritas struktural dipasang dening sistem engsel tong 2+1 sing dirancang kanthi presisi, dipasangake karo bantalan irung integrasi kanggo njamin pas sing aman lan ergonomis kanggo macem-macem wangun pasuryan.
 

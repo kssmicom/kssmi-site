@@ -5,7 +5,7 @@ slug: "kas-311-acetate-sunglasses"
 itemNo: "KAS-311"
 date: "2026-05-12"
 colors: "Siyah & Dumanlı-Mor & Kaplumbağa & Kahverengi"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel unisex gözlük, Mazz
 
 ## Özellikler
 
-- **Premium Malzeme:** Canlı bir estetik ve hafif dayanıklılık sunan yüksek kaliteli Mazzucchelli ve JINYU asetat yapı.
+- **Premium Malzeme:** Canlı bir estetik ve hafif dayanıklılık sunan yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat yapı.
 - **Yapısal Bütünlük:** Uzun süreli operasyonel pürüzsüzlük ve çerçeve stabilitesi için tasarlanmış sağlam 4+3 menteşe yapısı.
 - **Optik Mükemmellik:** Üstün netlik ve darbe direnci sağlayan, kapsamlı özel kaplama seçeneklerine sahip dayanıklı naylon lensler.
 - **Ergonomik Tasarım:** Uzun süreli günlük kullanım sırasında kesintisiz ve rahat bir uyum için tasarlanmış entegre burun tamponları.
@@ -72,7 +72,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel unisex gözlük, Mazz
 
 ## Genel Bakış
 
-Mazzucchelli ve JINYU asetatın sofistike bir karışımından üretilen KAS-311, üstün renk canlılığına sahip hafif ama dayanıklı bir çerçeve sunar.
+Mazzucchelli ve JIMEI & JINYU asetatın sofistike bir karışımından üretilen KAS-311, üstün renk canlılığına sahip hafif ama dayanıklı bir çerçeve sunar.
 
 Mimarisi, güçlendirilmiş 4+3 menteşelere ve entegre burun tamponlarına sahiptir ve rafine, ergonomik bir kullanım deneyiminin yanı sıra yüksek performanslı stabilite sunar.
 

@@ -5,7 +5,7 @@ slug: "kas-503-acetate-sunglasses"
 itemNo: "KAS-503"
 date: "2026-05-13"
 colors: "Nero, Rosso con Rosso Sfumato, Tartaruga con Marrone"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione per Conto Terzi (OEM) & Design e Produzione (ODM) ( Personalizzazione )"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -42,7 +42,7 @@ seoKeywords: "produttore occhiali da sole in acetato, occhiali da sole OEM perso
 
 ## Caratteristiche
 
-- **Materiale Acetato Premium:** Acetato Mazzucchelli e JINYU premium che offre una finitura leggera, durevole e vivace per un'eccezionale attrazione estetica.
+- **Materiale Acetato Premium:** Acetato Mazzucchelli e JIMEI & JINYU premium che offre una finitura leggera, durevole e vivace per un'eccezionale attrazione estetica.
 - **Hardware Durevole:** Cerniere stabili con struttura a 3+2 barilotti progettate per una scorrevolezza operativa a lungo termine, con aggiornamenti opzionali a 5 barilotti e cerniere a molla.
 - **Ottiche Premium:** Lenti in nylon tenaci che offrono alta chiarezza visiva e durevolezza, con ampie opzioni di colorazione personalizzata disponibili.
 - **Comfort Ergonomico:** Naselli integrati in acetato progettati per fornire una vestibilità sicura e confortevole per l'uso quotidiano.
@@ -60,7 +60,7 @@ seoKeywords: "produttore occhiali da sole in acetato, occhiali da sole OEM perso
 
 ## Panoramica
 
-Realizzati in acetato Mazzucchelli e JINYU premium, gli occhiali da sole KAS-503 portano eccezionale vivacità e durevolezza alle collezioni di occhiali moderni.
+Realizzati in acetato Mazzucchelli e JIMEI & JINYU premium, gli occhiali da sole KAS-503 portano eccezionale vivacità e durevolezza alle collezioni di occhiali moderni.
 
 L'integrazione di cerniere affidabili a 3+2 barilotti con lenti in nylon tenaci garantisce stabilità strutturale, mentre i naselli in acetato offrono comfort ergonomico duraturo.
 

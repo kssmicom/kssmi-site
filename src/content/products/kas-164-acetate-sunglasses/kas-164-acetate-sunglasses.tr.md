@@ -5,7 +5,7 @@ slug: "kas-164-acetate-sunglasses"
 itemNo: "KAS-164"
 date: "2026-05-09"
 colors: "Gradyan Gri"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM & ODM ( Özelleştirme )"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -40,7 +40,7 @@ seoKeywords: "Mazzucchelli asetat güneş gözlüğü, özel asetat gözlük ür
 
 ## Özellikler
 
-- **Premium Malzemeler:** Olağanüstü dayanıklılıkla birlikte canlı ve yüksek parlaklıkta bir yüzey sağlayan yüksek kaliteli Mazzucchelli ve JINYU asetat yapı.
+- **Premium Malzemeler:** Olağanüstü dayanıklılıkla birlikte canlı ve yüksek parlaklıkta bir yüzey sağlayan yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat yapı.
 - **Güçlendirilmiş Donanım:** Üstün stabilite ve uzun süreli çalışma pürüzsüzlüğü için tasarlanmış sağlam 3+2 barrel perçin yapılı menteşeler.
 - **Yüksek Performanslı Optikler:** Geniş kapsamlı özel renklendirme ve kaplama olanaklarıyla mükemmel darbe direnci sunan dayanıklı naylon lensler.
 - **Ergonomik Tasarım:** Güvenli, rahat bir oturuş ve rafine, aerodinamik bir estetik için tasarlanmış sorunsuz entegre burun tamponları.
@@ -58,7 +58,7 @@ seoKeywords: "Mazzucchelli asetat güneş gözlüğü, özel asetat gözlük ür
 
 ## Genel Bakış
 
-Premium Mazzucchelli ve JINYU asetattan üretilen KAS-164, canlı ve yüksek parlaklıkta bir yüzeyle cesur ama klasik bir estetiği bünyesinde barındırır. Bu unisex tasarım, lüks stili yüksek kaliteli malzemelerin kalıcı dayanıklılığıyla birleştirir.
+Premium Mazzucchelli ve JIMEI & JINYU asetattan üretilen KAS-164, canlı ve yüksek parlaklıkta bir yüzeyle cesur ama klasik bir estetiği bünyesinde barındırır. Bu unisex tasarım, lüks stili yüksek kaliteli malzemelerin kalıcı dayanıklılığıyla birleştirir.
 
 Hassas bir şekilde tasarlanmış 3+2 barrel perçinli menteşeler olağanüstü stabilite sağlarken, entegre burun tamponları ve dayanıklı naylon lensler uzun süreli konfor ve optik netlik sunar.
 

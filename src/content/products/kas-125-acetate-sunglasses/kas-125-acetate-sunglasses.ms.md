@@ -5,7 +5,7 @@ slug: "kas-125-acetate-sunglasses"
 itemNo: "KAS-125"
 date: "2026-05-09"
 colors: "Hitam & Kura-kura Terang & Kura-kura Gelap & Tanduk Kerbau & Khaki"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) (Penyesuaian)"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -57,7 +57,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, kacamata OEM tersuai, cermin m
 ---
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Bingkai dan tangkai asetat Mazzucchelli dan JINYU yang ringan dan menyerlah menawarkan rasa tangan premium dengan ketahanan yang tahan lama.
+- **Bahan Premium:** Bingkai dan tangkai asetat Mazzucchelli dan JIMEI & JINYU yang ringan dan menyerlah menawarkan rasa tangan premium dengan ketahanan yang tahan lama.
 - **Perkakasan Tahan Lama:** Engsel struktur tong 4+3 yang teguh direka untuk penjajaran tepat dan kelancaran operasi yang konsisten.
 - **Optik Termaju:** Kanta nilon teguh yang memberikan kejelasan unggul dan rintangan hentaman dalam profil bingkai 53-19-145mm yang versatil.
 - **Keselesaan Bersepadu:** Alas hidung yang direka secara ergonomik dibina terus ke dalam bingkai untuk padanan yang stabil dan hipoalergenik.
@@ -74,7 +74,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, kacamata OEM tersuai, cermin m
 
 ## Gambaran Keseluruhan
 
-Pembinaan asetat Mazzucchelli dan JINYU premium memberikan KAS-125 rasa tangan yang tersendiri dan kecerahan tahan lama yang memenuhi piawaian portfolio mewah global.
+Pembinaan asetat Mazzucchelli dan JIMEI & JINYU premium memberikan KAS-125 rasa tangan yang tersendiri dan kecerahan tahan lama yang memenuhi piawaian portfolio mewah global.
 
 Direka dengan engsel struktur tong 4+3 untuk penjajaran tepat, bingkai ini menggabungkan kanta nilon berimpak tinggi dengan jambatan bersepadu ergonomik untuk ketahanan yang mampan.
 

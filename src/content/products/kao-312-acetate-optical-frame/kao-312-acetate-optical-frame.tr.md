@@ -5,7 +5,7 @@ slug: "kao-312-acetate-optical-frame"
 itemNo: "KAO-312"
 date: "2026-05-10"
 colors: "Siyah & Neon Yeşil & Spark & Havana & Kırmızı Kaplumbağa"
-materials: "Premium Mazzucchelli Asetat & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli Asetat & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -57,7 +57,7 @@ seoKeywords: "Mazzucchelli asetat, asetat optik çerçeveler, gözlük üreticis
 
 ## Özellikler
 
-- **Havacılık Sınıfı Malzemeler:** Hafif bir his, üstün dayanıklılık ve canlı renk derinliği sunan birinci sınıf Mazzucchelli ve JINYU asetat ön kısım ve saplar.
+- **Havacılık Sınıfı Malzemeler:** Hafif bir his, üstün dayanıklılık ve canlı renk derinliği sunan birinci sınıf Mazzucchelli ve JIMEI & JINYU asetat ön kısım ve saplar.
 - **Sağlam Donanım:** Uzun vadeli operasyonel pürüzsüzlük ve yapısal stabilite sağlayan hassas mühendislik ürünü 4+3 varil perçin yapılı menteşeler.
 - **Ergonomik Tasarım:** Gün boyu konfor ve çeşitli yüz profillerinde güvenli, kaymaz bir oturuş için tasarlanmış sorunsuz entegre burun tamponları.
 - **Yüksek Performanslı Optik:** Belirli marka estetiğiyle uyum sağlamak için tonlar ve kaplamalar için kapsamlı özelleştirme seçeneklerine sahip dayanıklı naylon lensler.
@@ -75,7 +75,7 @@ seoKeywords: "Mazzucchelli asetat, asetat optik çerçeveler, gözlük üreticis
 
 ## Genel Bakış
 
-Canlı Mazzucchelli ve JINYU asetat, KAO-312'ye kendine özgü karakterini verirken, olağanüstü dayanıklılığı koruyan hafif bir profil sunar.
+Canlı Mazzucchelli ve JIMEI & JINYU asetat, KAO-312'ye kendine özgü karakterini verirken, olağanüstü dayanıklılığı koruyan hafif bir profil sunar.
 
 Hassas mühendislik ürünü 4+3 varil perçin menteşeler ve entegre burun tamponları, premium optik koleksiyonlardan beklenen yapısal bütünlüğü ve ergonomik konforu sağlar.
 

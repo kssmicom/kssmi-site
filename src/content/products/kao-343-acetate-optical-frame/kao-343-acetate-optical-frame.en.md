@@ -5,7 +5,7 @@ slug: "kao-343-acetate-optical-frame"
 itemNo: "KAO-343"
 date: "2026-05-10"
 colors: "Black, Khaki, Pink"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -41,7 +41,7 @@ seoKeywords: "acetate optical frames manufacturer, customizable unisex eyewear, 
 
 ## Technical Features
 
-- **Premium Acetate Material:** High-grade Mazzucchelli and JINYU acetate construction offering vibrant color depth, long-term structural durability, and a lightweight, premium tactile experience.
+- **Premium Acetate Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction offering vibrant color depth, long-term structural durability, and a lightweight, premium tactile experience.
 - **Robust Hinge Hardware:** High-precision 3+2 barrel structure hinges providing exceptional mechanical stability, smooth movement, and compatibility with custom 5-barrel or spring hinge upgrades.
 - **Premium Protective Lens:** Tenacious nylon lenses providing excellent impact resistance, high optical clarity, and fully customizable tint and coating options.
 - **Ergonomic Integrated Fit:** Integrated acetate nose pads designed to distribute pressure evenly for a secure, comfortable, and slip-free fit.
@@ -58,7 +58,7 @@ seoKeywords: "acetate optical frames manufacturer, customizable unisex eyewear, 
 
 ## Overview
 
-Vibrant depth and premium material integrity define the KAO-343 unisex frame, sculpted from high-grade Mazzucchelli and JINYU acetate. Its sleek styling offers an upscale, fashionable aesthetic tailored for contemporary eyewear collections.
+Vibrant depth and premium material integrity define the KAO-343 unisex frame, sculpted from high-grade Mazzucchelli, JIMEI & JINYU acetate. Its sleek styling offers an upscale, fashionable aesthetic tailored for contemporary eyewear collections.
 
 Precision-engineered with integrated nose pads and a robust 3+2 barrel hinge structure, this frame ensures an exceptionally balanced, slip-free fit alongside long-term mechanical durability.
 

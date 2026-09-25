@@ -5,7 +5,7 @@ slug: "kao-308-acetate-optical-frame"
 itemNo: "KAO-308"
 date: "2026-05-10"
 colors: "Nero & Blu Reale & Marrone & Oliva"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalizzazione"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100pz/colore)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produttore montature ottiche acetato, occhiali OEM personalizzati 
 
 ## Caratteristiche
 
-- **Costruzione in Acetato Premium:** Acetato Mazzucchelli e JINYU di alta qualità che offre una vibrante profondità di colore e una durata leggera per collezioni di occhiali di fascia alta.
+- **Costruzione in Acetato Premium:** Acetato Mazzucchelli e JIMEI & JINYU di alta qualità che offre una vibrante profondità di colore e una durata leggera per collezioni di occhiali di fascia alta.
 - **Hardware Rinforzato:** Resistenti cerniere con struttura a rivetto 4+3 barili che forniscono un'eccezionale integrità strutturale e un movimento delle aste fluido e costante.
 - **Tecnologia delle Lenti Superiore:** Lenti in nylon resistenti agli urti con ottica ad alta precisione e opzioni di personalizzazione versatili per rivestimenti specializzati.
 - **Ergonomia Integrata:** Naselli integrati scolpiti con precisione che assicurano una calzata equilibrata e priva di pressione per diversi profili facciali.
@@ -72,7 +72,7 @@ seoKeywords: "produttore montature ottiche acetato, occhiali OEM personalizzati 
 
 ## Panoramica
 
-Realizzato in pregiato acetato Mazzucchelli e JINYU, questo modello cattura una sofisticata estetica retrò attraverso i suoi profondi profili di colore e le superfici artigianali lucidate a mano.
+Realizzato in pregiato acetato Mazzucchelli e JIMEI & JINYU, questo modello cattura una sofisticata estetica retrò attraverso i suoi profondi profili di colore e le superfici artigianali lucidate a mano.
 
 L'architettura rinforzata della cerniera a rivetto 4+3 barili fornisce la precisione meccanica e la resilienza strutturale richieste dagli standard degli occhiali di fascia alta.
 

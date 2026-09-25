@@ -5,7 +5,7 @@ slug: "kao-001-acetate-optical-frame"
 itemNo: "KAO-001"
 date: "2026-05-10"
 colors: "Black & Clear & Orange & Tortoise"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate optical frames manufacturer, custom acetate eyewear, luxur
 
 
 ## Technical Features
-- **Premium Acetate Construction:** Built from top-grade Mazzucchelli or JINYU acetate — the premium blocks luxury labels build on — for a deep, layered gloss that resists the warping which sends cheaper injection frames back to the counter.
+- **Premium Acetate Construction:** Built from top-grade Mazzucchelli, JIMEI, or JINYU acetate — the premium blocks luxury labels build on — for a deep, layered gloss that resists the warping which sends cheaper injection frames back to the counter.
 - **Seven-Barrel Hinge:** The 4+3 rivet structure interlocks across seven barrels, more metal contact than the common five-barrel hinge, so temple alignment holds through years of daily flexing and loose-temple claims stay off your warranty desk.
 - **Secure Full-Rim Mounting:** The full-rim groove encloses the lens edge on all sides; your lab seats prescription lenses cleanly and hides thick-edge profiles on stronger scripts.
 - **Universal 55-19-140 Sizing:** The 55mm eye and 19mm bridge sit in the medium range that fits the widest share of adult faces — the safe size to anchor a first order around before committing to wider or narrower variants.

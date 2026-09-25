@@ -5,7 +5,7 @@ slug: "kas-326-acetate-sunglasses"
 itemNo: "KAS-326"
 date: "2026-05-13"
 colors: "Gradyan-Gri ile Siyah, Mavi-Kahverengi ile Kaplumbağa, Gradyan-Kahverengi ile Teal Havana"
-materials: "Mazzucchelli & JINYU Premium Asetat & Özelleştirme"
+materials: "Mazzucchelli & JIMEI & JINYU Premium Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim & Tasarım ve Üretim ( Özelleştirme )"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -44,7 +44,7 @@ seoKeywords: "özel asetat güneş gözlüğü, toptan asetat gözlük, özel ma
 
 ## Özellikler
 
-- **Premium Çerçeve Malzemesi:** Hafif, dayanıklı ve canlı renk derinliğine sahip, yapısal olarak kararlı bir tasarım sunan premium Mazzucchelli & JINYU asetattan üretilmiştir.
+- **Premium Çerçeve Malzemesi:** Hafif, dayanıklı ve canlı renk derinliğine sahip, yapısal olarak kararlı bir tasarım sunan premium Mazzucchelli & JIMEI & JINYU asetattan üretilmiştir.
 - **Premium Optikler:** Çeşitli pazar taleplerini karşılamak için kapsamlı özel renklendirme ve kaplama seçeneklerine sahip dayanıklı naylon lensler.
 - **Hassas Donanım:** Uzun ömürlü çalışma pürüzsüzlüğü için tasarlanmış, 5 barrel veya yaylı konfigürasyonlarla özelleştirilebilen stabil 3+2 barrel yapılı menteşeler.
 - **Tüm Gün Konfor:** Basıncı eşit şekilde dağıtmak ve güvenli, rahat bir oturuş sağlamak için tasarlanmış entegre asetat burun tamponları.
@@ -61,7 +61,7 @@ seoKeywords: "özel asetat güneş gözlüğü, toptan asetat gözlük, özel ma
 
 ## Genel Bakış
 
-Seçkin butik perakende mağazalarının estetik taleplerini karşılamak üzere tasarlanan KAS-326 güneş gözlüğü, klasik perçin ayrıntılarını özel olarak tedarik edilen JINYU ve Mazzucchelli asetatın canlı, çok katmanlı derinliğiyle harmanlıyor.
+Seçkin butik perakende mağazalarının estetik taleplerini karşılamak üzere tasarlanan KAS-326 güneş gözlüğü, klasik perçin ayrıntılarını özel olarak tedarik edilen JIMEI & JINYU ve Mazzucchelli asetatın canlı, çok katmanlı derinliğiyle harmanlıyor.
 
 Üstün çekiciliğini destekleyen unsur, hassas çerçeve hizalamasını ve olağanüstü kullanıcı konforunu korumak için tasarlanmış dayanıklı bir 3+2 barrel menteşe düzeni ve entegre burun tamponlarıdır.
 

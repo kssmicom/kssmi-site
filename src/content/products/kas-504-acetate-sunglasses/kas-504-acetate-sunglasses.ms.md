@@ -5,7 +5,7 @@ slug: "kas-504-acetate-sunglasses"
 itemNo: "KAS-504"
 date: "2026-05-13"
 colors: "Kura-kura dengan Hijau, Hitam dengan Coklat, Zaitun Lutsinar dengan Coklat Gradien"
-materials: "Asetat Premium Mazzucchelli & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Penyesuaian"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -35,13 +35,13 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KAS-504 Cermin Mata Hitam Asetat Unisex | Pembekal Tersuai"
-seoDescription: "Cermin mata hitam asetat premium Mazzucchelli & JINYU untuk penyesuaian OEM/ODM penuh. Siluet unisex untuk jenama fesyen. Dari 300 MOQ."
+seoDescription: "Cermin mata hitam asetat premium Mazzucchelli & JIMEI & JINYU untuk penyesuaian OEM/ODM penuh. Siluet unisex untuk jenama fesyen. Dari 300 MOQ."
 seoKeywords: "pengilang cermin mata hitam asetat tersuai, OEM asetat cermin mata hitam, pembekal label peribadi cermin mata hitam, borong asetat kacamata China, kilang OEM cermin mata hitam fesyen, cermin mata hitam unisex boleh disesuaikan, pengeluaran kacamata asetat bespoke"
 ---
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Diperbuat daripada asetat berkualiti tinggi Mazzucchelli dan JINYU, menawarkan estetika ringan, tahan lama dan bersemangat.
+- **Bahan Premium:** Diperbuat daripada asetat berkualiti tinggi Mazzucchelli dan JIMEI & JINYU, menawarkan estetika ringan, tahan lama dan bersemangat.
 - **Perkakasan Tahan Lama:** Engsel struktur 3+2 tong yang stabil direka untuk kelancaran operasi jangka panjang, dengan pilihan boleh disesuaikan untuk 5 tong atau engsel spring.
 - **Optik Premium:** Lensa nilon teguh memberikan kejernihan visual yang cemerlang, dengan pilihan penyesuaian yang luas tersedia.
 - **Keselesaan Struktur:** Alas hidung asetat bersepadu direka untuk pemasangan yang selamat dan selesa dengan estetika tanpa jahitan.
@@ -59,7 +59,7 @@ seoKeywords: "pengilang cermin mata hitam asetat tersuai, OEM asetat cermin mata
 
 ## Gambaran Keseluruhan
 
-Dihasilkan dengan Mazzucchelli dan JINYU — dua rumah asetat paling dihormati dalam industri — KAS-504 membawa kredibiliti bahan dari pandangan pertama. Tawaran warna tandatangannya, dari Kura-kura dengan Hijau hingga Zaitun Lutsinar dengan Coklat Gradien, mencerminkan palet yang direka untuk pasaran berorientasi fesyen di seluruh dunia.
+Dihasilkan dengan Mazzucchelli, JIMEI & JINYU — tiga rumah asetat paling dihormati dalam industri — KAS-504 membawa kredibiliti bahan dari pandangan pertama. Tawaran warna tandatangannya, dari Kura-kura dengan Hijau hingga Zaitun Lutsinar dengan Coklat Gradien, mencerminkan palet yang direka untuk pasaran berorientasi fesyen di seluruh dunia.
 
 Engsel struktur 3+2 tong yang stabil dan alas hidung asetat bersepadu dengan lancar memenuhi standard ketahanan dan keselesaan pemakaian yang dijangkakan oleh persekitaran runcit premium.
 

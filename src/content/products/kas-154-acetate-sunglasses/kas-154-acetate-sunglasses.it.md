@@ -5,7 +5,7 @@ slug: "kas-154-acetate-sunglasses"
 itemNo: "KAS-154"
 date: "2026-05-09"
 colors: "Nero, Tartaruga, Grigio Trasparente, Oliva Lattescente"
-materials: "Acetato Mazzucchelli Premium & JINYU & Personalizzazione"
+materials: "Acetato Mazzucchelli Premium & JIMEI & JINYU & Personalizzazione"
 serviceMode: "OEM & ODM ( Personalizzazione )"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -42,7 +42,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali da sole OEM personal
 
 ## Caratteristiche
 
-- **Costruzione in Acetato Premium:** Realizzati in acetato Mazzucchelli e JINYU di alta qualità per offrire una montatura vivace, leggera e resistente, adatta alle collezioni di alta moda.
+- **Costruzione in Acetato Premium:** Realizzati in acetato Mazzucchelli e JIMEI & JINYU di alta qualità per offrire una montatura vivace, leggera e resistente, adatta alle collezioni di alta moda.
 - **Sistema Hardware Robusto:** Presenta una cerniera con struttura a 4+3 barilotti e rivetti progettata con precisione per un'eccezionale fluidità operativa e integrità strutturale a lungo termine.
 - **Chiarezza Ottica Superiore:** Dotati di lenti in nylon tenace che offrono un'elevata resistenza agli urti e ampie opzioni di personalizzazione per i marchi di occhiali premium.
 - **Ergonomia Senza Soluzioni di Continuità:** Il design dei naselli integrati assicura una vestibilità comoda e sicura e un'estetica raffinata per tutto il giorno.
@@ -59,7 +59,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali da sole OEM personal
 
 ## Panoramica
 
-Realizzato con una miscela esclusiva di acetato Mazzucchelli e JINYU, questo modello offre un profilo vivace e leggero che soddisfa i rigorosi standard delle case di moda di lusso.
+Realizzato con una miscela esclusiva di acetato Mazzucchelli e JIMEI & JINYU, questo modello offre un profilo vivace e leggero che soddisfa i rigorosi standard delle case di moda di lusso.
 
 Il sistema di cerniere a 4+3 barilotti e rivetti rinforzato assicura un'integrità strutturale a lungo termine, mantenendo la sensazione di fluidità e alta precisione che ci si aspetta dagli occhiali premium.
 

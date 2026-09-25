@@ -5,7 +5,7 @@ slug: "kao-323-acetate-optical-frame"
 itemNo: "KAO-323"
 date: "2026-05-10"
 colors: "Red & Havana & Neon-Green & Black"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate optical frames, custom acetate frames manufacturer, Chines
 
 ## Technical Features
 
-- **Premium Acetate Construction:** High-grade Mazzucchelli and JINYU acetate offering a vibrant, lightweight, and durable frame for a sophisticated aesthetic.
+- **Premium Acetate Construction:** High-grade Mazzucchelli, JIMEI & JINYU acetate offering a vibrant, lightweight, and durable frame for a sophisticated aesthetic.
 - **Precision Engineering:** Robust 4+3 barrel rivet structure hinges designed for superior stability and enduring operational smoothness.
 - **High-Performance Optics:** Tenacious nylon lenses featuring exceptional impact resistance and versatile customization options for premium labels.
 - **Ergonomic Design:** Integrated nose pads engineered for a seamless, pressure-free fit and balanced weight distribution.
@@ -72,7 +72,7 @@ seoKeywords: "acetate optical frames, custom acetate frames manufacturer, Chines
 
 ## Overview
 
-Contemporary optical design finds its expression through the high-luster Mazzucchelli and JINYU acetate composition, providing a lightweight yet vibrant foundation for premium eyewear portfolios.
+Contemporary optical design finds its expression through the high-luster Mazzucchelli, JIMEI & JINYU acetate composition, providing a lightweight yet vibrant foundation for premium eyewear portfolios.
 
 The integration of a precision-engineered 4+3 barrel rivet hinge system guarantees mechanical longevity and a secure, pressure-free fit.
 

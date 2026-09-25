@@ -5,7 +5,7 @@ slug: "kas-132-acetate-sunglasses"
 itemNo: "KAS-132"
 date: "2026-05-09"
 colors: "Noir & Blanc & Vert & Écaille"
-materials: "Acétate Mazzucchelli Premium & Acétate JINYU & Personnalisation"
+materials: "Acétate Mazzucchelli Premium & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "OEM & ODM (Personnalisation)"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, lunettes flat-top personnal
 
 ## Caractéristiques
 
-- **Matériaux Premium :** Construction en acétate Mazzucchelli et JINYU de haute qualité offrant une esthétique raffinée avec une profondeur de couleur vibrante et durable.
+- **Matériaux Premium :** Construction en acétate Mazzucchelli et JIMEI & JINYU de haute qualité offrant une esthétique raffinée avec une profondeur de couleur vibrante et durable.
 - **Ingénierie de Précision :** Charnières stables à structure 3+2 barillets conçues pour une durabilité de niveau professionnel et des performances opérationnelles fluides.
 - **Optique Supérieure :** Verres en nylon tenace offrant une résistance exceptionnelle aux chocs et une clarté visuelle, avec de larges options de personnalisation.
 - **Confort Ergonomique :** Plaquettes de nez intégrées et structure de monture légère assurant un ajustement sûr et équilibré pour un port prolongé tout au long de la journée.
@@ -72,7 +72,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, lunettes flat-top personnal
 
 ## Aperçu
 
-Des proportions audacieuses et oversize et une silhouette flat-top distinctive définissent le modèle KAS-132, fabriqué à partir d'un mélange premium d'acétate Mazzucchelli et JINYU pour une profondeur et une durabilité inégalées.
+Des proportions audacieuses et oversize et une silhouette flat-top distinctive définissent le modèle KAS-132, fabriqué à partir d'un mélange premium d'acétate Mazzucchelli et JIMEI & JINYU pour une profondeur et une durabilité inégalées.
 
 Les charnières à 3+2 barillets conçues avec précision et les verres en nylon tenace garantissent que ces montures conservent leur intégrité structurelle et leur clarté visuelle lors d'une utilisation intensive.
 

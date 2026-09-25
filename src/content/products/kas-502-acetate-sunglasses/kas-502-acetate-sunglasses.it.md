@@ -5,7 +5,7 @@ slug: "kas-502-acetate-sunglasses"
 itemNo: "KAS-502"
 date: "2026-05-12"
 colors: "Nero & Rosa & Tartaruga Rossa & Havana & Bianco"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalizzazione"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
 serviceMode: "OEM & ODM ( Personalizzazione )"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -58,7 +58,7 @@ seoKeywords: "produttore occhiali acetato, occhiali OEM personalizzati, occhiali
 
 ## Caratteristiche
 
-- **Costruzione in Acetato Premium:** Realizzati a mano utilizzando acetato Mazzucchelli e JINYU di alta qualità per una durata eccezionale e una finitura vibrante e duratura.
+- **Costruzione in Acetato Premium:** Realizzati a mano utilizzando acetato Mazzucchelli e JIMEI & JINYU di alta qualità per una durata eccezionale e una finitura vibrante e duratura.
 - **Hardware Rinforzato:** Robuste cerniere con struttura a 4+3 barili che garantiscono stabilità superiore e prestazioni fluide per l'uso quotidiano.
 - **Eccellenza Ottica:** Lenti in nylon tenace che offrono un'elevata resistenza agli urti e una chiara acuità visiva con opzioni di personalizzazione versatili.
 - **Design Ergonomico:** Naselli integrati e una montatura in acetato leggero progettata per il comfort durante tutto il giorno e una vestibilità sicura.
@@ -75,7 +75,7 @@ seoKeywords: "produttore occhiali acetato, occhiali OEM personalizzati, occhiali
 
 ## Panoramica
 
-Realizzato in acetato premium Mazzucchelli e JINYU, il modello KAS-502 offre una finitura vibrante lucidata a mano che risuona con le sensibilità dell'alta moda. La durata intrinseca del materiale e il suo profilo leggero forniscono una base sofisticata per portfolio di occhiali premium.
+Realizzato in acetato premium Mazzucchelli e JIMEI & JINYU, il modello KAS-502 offre una finitura vibrante lucidata a mano che risuona con le sensibilità dell'alta moda. La durata intrinseca del materiale e il suo profilo leggero forniscono una base sofisticata per portfolio di occhiali premium.
 
 La montatura presenta una struttura della cerniera a 4+3 barili rinforzata per una stabilità superiore, completata da lenti in nylon resistenti agli urti che mantengono la chiarezza ottica in diversi ambienti.
 

@@ -5,7 +5,7 @@ slug: "kao-309-acetate-optical-frame"
 itemNo: "KAO-309"
 date: "2026-05-10"
 colors: "Hitam & Biru Diraja & Kura-kura & Zaitun"
-materials: "Asetat Premium Mazzucchelli & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -53,7 +53,7 @@ seoKeywords: "pengilang bingkai optik asetat, kacamata tersuai OEM, kacamata lab
 ---
 
 ## Ciri-ciri Utama
-- **Bahan Premium:** Bingkai dan temple asetat Mazzucchelli dan JINYU gred tinggi yang memberikan estetika yang ceria, ringan dan tahan lama.
+- **Bahan Premium:** Bingkai dan temple asetat Mazzucchelli dan JIMEI & JINYU gred tinggi yang memberikan estetika yang ceria, ringan dan tahan lama.
 - **Perkakasan Tahan Lama:** Engsel struktur rivet 4+3 barrel yang direka dengan ketepatan memastikan kelancaran operasi yang luar biasa dan jangka hayat struktur.
 - **Optik Premium:** Lensa nilon berdaya tahan yang menawarkan rintangan hentaman unggul dan pilihan penyesuaian serba boleh untuk warna dan salutan khusus.
 - **Keselesaan Ergonomik:** Alas hidung bersepadu yang lancar direka untuk memberikan padanan yang selamat, hipoalergenik dan selesa untuk penggunaan yang lama.
@@ -70,7 +70,7 @@ seoKeywords: "pengilang bingkai optik asetat, kacamata tersuai OEM, kacamata lab
 
 ## Gambaran Keseluruhan
 
-Menggabungkan asetat premium Mazzucchelli dan JINYU, KAO-309 menampilkan profil inspirasi retro klasik yang direka untuk pasaran optik mewah. Bingkai ringan mengekalkan kedalaman warna yang sengit sambil menawarkan daya tahan yang diperlukan untuk kegunaan harian.
+Menggabungkan asetat premium Mazzucchelli dan JIMEI & JINYU, KAO-309 menampilkan profil inspirasi retro klasik yang direka untuk pasaran optik mewah. Bingkai ringan mengekalkan kedalaman warna yang sengit sambil menawarkan daya tahan yang diperlukan untuk kegunaan harian.
 
 Engsel rivet 4+3 barrel yang direka dengan ketepatan dan alas hidung bersepadu memberikan keseimbangan halus antara umur panjang struktur dan keselesaan ergonomik.
 

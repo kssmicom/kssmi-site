@@ -5,7 +5,7 @@ slug: "kao-308-acetate-optical-frame"
 itemNo: "KAO-308"
 date: "2026-05-10"
 colors: "Đen & Xanh hoàng gia & Nâu & Xanh ô liu"
-materials: "Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli cao cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -54,7 +54,7 @@ seoKeywords: "nhà sản xuất gọng kính cận axetat, kính mắt OEM tùy 
 
 ## Đặc điểm
 
-- **Cấu trúc Axetat cao cấp:** Sử dụng Axetat Mazzucchelli và JINYU chất lượng cao, mang lại chiều sâu màu sắc rực rỡ và độ bền nhẹ cho các bộ sưu tập kính mắt cao cấp.
+- **Cấu trúc Axetat cao cấp:** Sử dụng Axetat Mazzucchelli và JIMEI & JINYU chất lượng cao, mang lại chiều sâu màu sắc rực rỡ và độ bền nhẹ cho các bộ sưu tập kính mắt cao cấp.
 - **Phụ kiện gia cố:** Bản lề cấu trúc đinh tán 4+3 bền bỉ mang lại tính toàn vẹn cấu trúc đặc biệt và chuyển động càng kính trơn tru, ổn định.
 - **Công nghệ tròng kính vượt trội:** Tròng kính nylon chống va đập với quang học độ chính xác cao và các tùy chọn tùy chỉnh linh hoạt cho các lớp phủ chuyên dụng.
 - **Công thái học tích hợp:** Đệm mũi liền khối được điêu khắc chính xác đảm bảo sự cân bằng, không gây áp lực khi đeo cho nhiều khuôn mặt khác nhau.
@@ -72,7 +72,7 @@ seoKeywords: "nhà sản xuất gọng kính cận axetat, kính mắt OEM tùy 
 
 ## Tổng quan
 
-Được chế tác từ axetat Mazzucchelli và JINYU cao cấp, mẫu kính này thể hiện tính thẩm mỹ retro tinh tế thông qua các dải màu sâu và bề mặt được đánh bóng thủ công tỉ mỉ.
+Được chế tác từ axetat Mazzucchelli và JIMEI & JINYU cao cấp, mẫu kính này thể hiện tính thẩm mỹ retro tinh tế thông qua các dải màu sâu và bề mặt được đánh bóng thủ công tỉ mỉ.
 
 Kiến trúc bản lề đinh tán 4+3 được gia cố mang lại độ chính xác cơ học và khả năng phục hồi cấu trúc theo tiêu chuẩn của kính mắt cao cấp.
 

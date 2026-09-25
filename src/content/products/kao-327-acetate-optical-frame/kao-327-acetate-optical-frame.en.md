@@ -5,7 +5,7 @@ slug: "kao-327-acetate-optical-frame"
 itemNo: "KAO-327"
 date: "2026-05-10"
 colors: "Clear, Havana, Black"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -50,7 +50,7 @@ seoKeywords: "stylish acetate optical frames, custom acetate optical frame manuf
 
 ## Technical Features
 
-- **Premium Material:** Crafted from premium Mazzucchelli and JINYU acetate, offering a lightweight yet exceptionally durable structure with vibrant, long-lasting color depth.
+- **Premium Material:** Crafted from premium Mazzucchelli, JIMEI & JINYU acetate, offering a lightweight yet exceptionally durable structure with vibrant, long-lasting color depth.
 - **Engineered Hardware:** High-reliability 3+2 barrel rivet hinges providing stable, smooth temple movement with custom spring hinge options.
 - **Tenacious Optics:** High-durability nylon lenses providing excellent clarity and impact resistance with full bespoke coating options.
 - **Integrated Comfort:** Seamlessly integrated nose pads combined with a tailored 50-22-145mm geometry to deliver a balanced, slip-free fit.
@@ -67,7 +67,7 @@ seoKeywords: "stylish acetate optical frames, custom acetate optical frame manuf
 
 ## Overview
 
-Classic eyewear design meets high-end material artistry in the KAO-327, a unisex frame that showcases the vibrant depth of premium Mazzucchelli and JINYU acetate.
+Classic eyewear design meets high-end material artistry in the KAO-327, a unisex frame that showcases the vibrant depth of premium Mazzucchelli, JIMEI & JINYU acetate.
 
 Its structural durability is reinforced by engineered 3+2 barrel rivet hinges, while the hand-polished finish and integrated nose pads ensure a balanced, slip-free fit for daily wear.
 

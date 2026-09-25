@@ -5,7 +5,7 @@ slug: "kas-504-acetate-sunglasses"
 itemNo: "KAS-504"
 date: "2026-05-13"
 colors: "Tortuga con Verde, Negro con Marrón, Oliva Transparente con Marrón Degradado"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalización"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM) – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -35,13 +35,13 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KAS-504 Gafas de Sol Unisex de Acetato | Proveedor Custom"
-seoDescription: "Gafas de sol de acetato premium Mazzucchelli & JINYU disponibles para personalización OEM/ODM completa. Siluetas unisex para marcas de moda. Desde 300 MOQ."
+seoDescription: "Gafas de sol de acetato premium Mazzucchelli & JIMEI & JINYU disponibles para personalización OEM/ODM completa. Siluetas unisex para marcas de moda. Desde 300 MOQ."
 seoKeywords: "fabricante gafas sol acetato personalizado, OEM gafas acetato, proveedor private label gafas sol, gafas acetato al por mayor China, fábrica OEM gafas sol moda, gafas unisex personalizables, producción gafas acetato a medida"
 ---
 
 ## Características
 
-- **Material Premium:** Fabricadas en acetato de alta calidad Mazzucchelli y JINYU, que ofrece una estética ligera, duradera y vibrante.
+- **Material Premium:** Fabricadas en acetato de alta calidad Mazzucchelli y JIMEI & JINYU, que ofrece una estética ligera, duradera y vibrante.
 - **Hardware Duradero:** Bisagras estables de estructura 3+2 barril diseñadas para una fluidez operativa a largo plazo, con opciones personalizables de 5 barriles o bisagra de resorte.
 - **Óptica Premium:** Lentes de nylon resistente que proporcionan una excelente claridad visual, con amplias opciones de personalización disponibles.
 - **Comodidad Estructural:** Almohadillas nasales integradas de acetato diseñadas para un ajuste seguro y cómodo con una estética sin costuras.
@@ -59,7 +59,7 @@ seoKeywords: "fabricante gafas sol acetato personalizado, OEM gafas acetato, pro
 
 ## Resumen
 
-Fabricado con Mazzucchelli y JINYU — dos de las casas de acetato más respetadas del sector — el KAS-504 aporta credibilidad material desde el primer vistazo. Sus coloraciones distintivas, desde Tortuga con Verde hasta Oliva Transparente con Marrón Degradado, reflejan una paleta diseñada para los mercados más vanguardistas del mundo.
+Fabricado con Mazzucchelli y JIMEI & JINYU — tres de las casas de acetato más respetadas del sector — el KAS-504 aporta credibilidad material desde el primer vistazo. Sus coloraciones distintivas, desde Tortuga con Verde hasta Oliva Transparente con Marrón Degradado, reflejan una paleta diseñada para los mercados más vanguardistas del mundo.
 
 Las bisagras estables de estructura 3+2 barril y las almohadillas nasales integradas de acetato brindan el mismo estándar de durabilidad y comodidad de uso esperado por los entornos de venta al por menor premium.
 

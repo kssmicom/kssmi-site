@@ -5,7 +5,7 @@ slug: "kas-304-acetate-sunglasses"
 itemNo: "KAS-304"
 date: "2026-05-12"
 colors: "Nero & Striato & Tartaruga & Marrone"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione per Conto Terzi (OEM) & Design e Produzione (ODM) ( Personalizzazione )"
 moq: "300 pz/modello (100pz/colore)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produttore occhiali acetato KAS-304, occhiali acetato personalizza
 
 ## Caratteristiche
 
-- **Materiale Premium:** Costruzione in acetato Mazzucchelli e JINYU di alta qualità che offre una sensazione di leggerezza con una profondità di colore vibrante e duratura.
+- **Materiale Premium:** Costruzione in acetato Mazzucchelli e JIMEI & JINYU di alta qualità che offre una sensazione di leggerezza con una profondità di colore vibrante e duratura.
 - **Hardware Durevole:** Robuste cerniere con struttura a 4+3 barili progettate per una scorrevolezza operativa a lungo termine e prestazioni ripetibili.
 - **Ottica d'Elite:** Lenti in nylon tenace resistenti agli urti con ampie opzioni di colorazione e rivestimento personalizzati disponibili per collezioni versatili.
 - **Design Ergonomico:** Naselli integrati progettati per un'estetica senza cuciture e una vestibilità sicura e confortevole per tutto il giorno.
@@ -71,7 +71,7 @@ seoKeywords: "produttore occhiali acetato KAS-304, occhiali acetato personalizza
 
 ## Panoramica
 
-Realizzato in acetato Mazzucchelli e JINYU di alta qualità, il KAS-304 bilancia un'estetica retro unisex con un'eccezionale profondità di colore e durata.
+Realizzato in acetato Mazzucchelli e JIMEI & JINYU di alta qualità, il KAS-304 bilancia un'estetica retro unisex con un'eccezionale profondità di colore e durata.
 
 I naselli integrati e le cerniere con struttura a 4+3 barili offrono una vestibilità senza cuciture e una scorrevolezza operativa costante per un uso ad alta frequenza.
 

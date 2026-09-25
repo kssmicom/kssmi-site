@@ -5,7 +5,7 @@ slug: "kas-154-acetate-sunglasses"
 itemNo: "KAS-154"
 date: "2026-05-09"
 colors: "Negro, Tortuga, Gris Transparente, Olivo Lácteo"
-materials: "Acetato Mazzucchelli Premium y JINYU y Personalización"
+materials: "Acetato Mazzucchelli Premium y JIMEI & JINYU y Personalización"
 serviceMode: "OEM y ODM ( Personalización )"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -42,7 +42,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Características
 
-- **Construcción de Acetato Premium:** Diseñado a partir de acetato Mazzucchelli y JINYU de alta calidad para proporcionar una montura vibrante, ligera y duradera, adecuada para colecciones de moda de alta gama.
+- **Construcción de Acetato Premium:** Diseñado a partir de acetato Mazzucchelli y JIMEI & JINYU de alta calidad para proporcionar una montura vibrante, ligera y duradera, adecuada para colecciones de moda de alta gama.
 - **Sistema de Hardware Robusto:** Cuenta con una bisagra de estructura de remache de 4+3 barriles diseñada con precisión para una suavidad operativa excepcional e integridad estructural a largo plazo.
 - **Claridad Óptica Superior:** Equipado con lentes de nylon tenaz que ofrecen una alta resistencia al impacto y amplias opciones de personalización para marcas de gafas premium.
 - **Ergonomía Sin Costuras:** El diseño de almohadillas nasales integradas garantiza un ajuste cómodo y seguro y una estética refinada para el uso durante todo el día.
@@ -59,7 +59,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Descripción General
 
-Fabricado a partir de una mezcla exclusiva de acetato Mazzucchelli y JINYU, este modelo ofrece un perfil vibrante y ligero que cumple con los exigentes estándares de las casas de moda de lujo.
+Fabricado a partir de una mezcla exclusiva de acetato Mazzucchelli y JIMEI & JINYU, este modelo ofrece un perfil vibrante y ligero que cumple con los exigentes estándares de las casas de moda de lujo.
 
 El sistema de bisagras de remache de 4+3 barriles reforzado garantiza la integridad estructural a largo plazo mientras mantiene la sensación de suavidad y alta precisión que se espera de las gafas premium.
 

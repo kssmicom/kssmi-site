@@ -5,7 +5,7 @@ slug: "kas-154-acetate-sunglasses"
 itemNo: "KAS-154"
 date: "2026-05-09"
 colors: "Black, Tortoise, Clear Grey, Milky Olive"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -42,7 +42,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Technical Features
 
-- **Premium Acetate Construction:** Engineered from high-grade Mazzucchelli and JINYU acetate to provide a vibrant, lightweight, and durable frame suitable for high-end fashion collections.
+- **Premium Acetate Construction:** Engineered from high-grade Mazzucchelli, JIMEI & JINYU acetate to provide a vibrant, lightweight, and durable frame suitable for high-end fashion collections.
 - **Robust Hardware System:** Features a precision-engineered 4+3 barrel rivet structure hinge for exceptional operational smoothness and long-term structural integrity.
 - **Superior Optical Clarity:** Fitted with tenacious nylon lenses offering high impact resistance and extensive customization options for premium eyewear labels.
 - **Seamless Ergonomics:** Integrated nose pad design ensures a comfortable, secure fit and a refined aesthetic for all-day wear.
@@ -59,7 +59,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Overview
 
-Crafted from a signature blend of Mazzucchelli and JINYU acetate, this model offers a vibrant, lightweight profile that meets the exacting standards of luxury fashion houses.
+Crafted from a signature blend of Mazzucchelli, JIMEI & JINYU acetate, this model offers a vibrant, lightweight profile that meets the exacting standards of luxury fashion houses.
 
 The reinforced 4+3 barrel rivet hinge system ensures long-term structural integrity while maintaining the smooth, high-precision feel expected of premium eyewear.
 

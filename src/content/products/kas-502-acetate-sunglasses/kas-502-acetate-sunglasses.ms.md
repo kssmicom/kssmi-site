@@ -5,7 +5,7 @@ slug: "kas-502-acetate-sunglasses"
 itemNo: "KAS-502"
 date: "2026-05-12"
 colors: "Hitam & Merah Jambu & Kura-kura Merah & Havana & Putih"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "OEM & ODM ( Penyesuaian )"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -58,7 +58,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata OEM tersuai, cermi
 
 ## Ciri-ciri Utama
 
-- **Pembinaan Asetat Premium:** Dihasilkan dengan tangan menggunakan asetat Mazzucchelli dan JINYU gred tinggi untuk ketahanan yang luar biasa dan kemasan yang bertenaga serta tahan lama.
+- **Pembinaan Asetat Premium:** Dihasilkan dengan tangan menggunakan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi untuk ketahanan yang luar biasa dan kemasan yang bertenaga serta tahan lama.
 - **Perkakasan Diperkukuh:** Engsel struktur 4+3 barrel yang teguh memberikan kestabilan unggul dan prestasi operasi yang lancar untuk kegunaan harian.
 - **Kecemerlangan Optik:** Lensa nilon tahan lasak yang menawarkan rintangan hentaman tinggi dan ketajaman visual yang jelas dengan pilihan penyesuaian yang serba boleh.
 - **Reka Bentuk Ergonomik:** Alas hidung bersepadu dan bingkai asetat ringan yang direka untuk keselesaan sepanjang hari dan padanan yang selamat.
@@ -75,7 +75,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata OEM tersuai, cermi
 
 ## Gambaran Keseluruhan
 
-Dihasilkan daripada asetat premium Mazzucchelli dan JINYU, KAS-502 menawarkan kemasan bertenaga yang digilap dengan tangan yang selari dengan cita rasa fesyen mewah. Ketahanan sedia ada material dan profil ringannya menyediakan asas yang canggih untuk portfolio kacamata premium.
+Dihasilkan daripada asetat premium Mazzucchelli dan JIMEI & JINYU, KAS-502 menawarkan kemasan bertenaga yang digilap dengan tangan yang selari dengan cita rasa fesyen mewah. Ketahanan sedia ada material dan profil ringannya menyediakan asas yang canggih untuk portfolio kacamata premium.
 
 Bingkai ini mempunyai struktur engsel 4+3 barrel yang diperkukuh untuk kestabilan unggul, dilengkapi dengan lensa nilon tahan hentaman yang mengekalkan kejelasan optik merentasi pelbagai persekitaran.
 

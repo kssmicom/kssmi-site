@@ -5,7 +5,7 @@ slug: "kas-014-acetate-sunglasses"
 itemNo: "KAS-014"
 date: "2026-05-10"
 colors: "Cinza Escuro & Azul Céu & Laranja Pôr do Sol & Roxo Fantasia"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de óculos de sol em acetato, óculos de luxo personali
 
 ## Características
 
-- **Material Premium:** Construção em acetato Mazzucchelli e JINYU de alta qualidade, oferecendo uma sensação de luxo com profundidade de cor vibrante e duradoura.
+- **Material Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, oferecendo uma sensação de luxo com profundidade de cor vibrante e duradoura.
 - **Tecnologia de Lente Avançada:** Lentes de nylon tenaz que proporcionam resistência ao impacto e clareza superiores, com amplas opções de revestimento personalizado.
 - **Suavidade Operacional:** Dobradiças de mola integradas projetadas para um ajuste flexível e confortável e durabilidade de hardware a longo prazo.
 - **Design Ergonômico:** Ponteiras nasicas integradas sem costuras, projetadas para conforto durante todo o dia e uma estética elegante e minimalista.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante de óculos de sol em acetato, óculos de luxo personali
 
 ## Visão Geral
 
-O acetato Mazzucchelli e JINYU de alta qualidade define o KAS-014, oferecendo um perfil leve e uma profundidade de cor vibrante que captura uma estética de luxo moderna. Esses materiais proporcionam a durabilidade e a sensação premium essenciais para coleções unissex focadas em tendências.
+O acetato Mazzucchelli e JIMEI & JINYU de alta qualidade define o KAS-014, oferecendo um perfil leve e uma profundidade de cor vibrante que captura uma estética de luxo moderna. Esses materiais proporcionam a durabilidade e a sensação premium essenciais para coleções unissex focadas em tendências.
 
 A inclusão de dobradiças de mola projetadas com precisão e ponteiras nasicas integradas garante um ajuste refinado e ergonômico que mantém o conforto em diversos formatos de rosto.
 

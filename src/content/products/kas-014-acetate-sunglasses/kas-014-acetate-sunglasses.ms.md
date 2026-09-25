@@ -5,7 +5,7 @@ slug: "kas-014-acetate-sunglasses"
 itemNo: "KAS-014"
 date: "2026-05-10"
 colors: "Kelabu Gelap & Biru Langit & Jingga Matahari Terbenam & Ungu Fantasi"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, OEM cermin mata mewah tersuai,
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Binaan asetat Mazzucchelli dan JINYU gred tinggi yang menawarkan rasa mewah dengan kedalaman warna yang bertenaga dan tahan lama.
+- **Bahan Premium:** Binaan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi yang menawarkan rasa mewah dengan kedalaman warna yang bertenaga dan tahan lama.
 - **Teknologi Lensa Termaju:** Lensa nilon lasak yang memberikan rintangan hentaman dan kejelasan yang unggul dengan pilihan salutan tersuai yang luas.
 - **Kelicinan Operasi:** Engsel spring bersepadu yang direka untuk kesesuaian yang fleksibel, selesa dan ketahanan perkakasan jangka panjang.
 - **Reka Bentuk Ergonomik:** Alas hidung bersepadu dengan lancar direka untuk keselesaan sepanjang hari dan estetika minimalis yang anggun.
@@ -71,7 +71,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, OEM cermin mata mewah tersuai,
 
 ## Gambaran Keseluruhan
 
-Asetat Mazzucchelli dan JINYU gred tinggi mentakrifkan KAS-014, menawarkan profil ringan dan kedalaman warna bertenaga yang merakam estetika mewah moden. Bahan-bahan ini memberikan ketahanan dan rasa premium yang penting untuk koleksi unisex yang memfokuskan trend.
+Asetat Mazzucchelli dan JIMEI & JINYU gred tinggi mentakrifkan KAS-014, menawarkan profil ringan dan kedalaman warna bertenaga yang merakam estetika mewah moden. Bahan-bahan ini memberikan ketahanan dan rasa premium yang penting untuk koleksi unisex yang memfokuskan trend.
 
 Kemasukan engsel spring kejuruteraan ketepatan dan alas hidung bersepadu memastikan kesesuaian ergonomik yang halus yang mengekalkan keselesaan merentas pelbagai bentuk muka.
 

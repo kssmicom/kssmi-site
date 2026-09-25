@@ -5,7 +5,7 @@ slug: "kas-142-acetate-sunglasses"
 itemNo: "KAS-142"
 date: "2026-05-09"
 colors: "Nero & Bianco & Rosso & Tartaruga"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalizzazione"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione per Conto Terzi (OEM) & Design e Produzione (ODM) ( Personalizzazione )"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -54,7 +54,7 @@ seoKeywords: "occhiali da sole in acetato, produttore di occhiali alla moda, fab
 
 ## Caratteristiche
 
-- **Materiale Premium:** Costruzione in acetato Mazzucchelli e JINYU di alta qualità che offre un'estetica raffinata con una durata eccezionale e un comfort leggero.
+- **Materiale Premium:** Costruzione in acetato Mazzucchelli e JIMEI & JINYU di alta qualità che offre un'estetica raffinata con una durata eccezionale e un comfort leggero.
 - **Hardware Robusto:** Cerniere con struttura a 4+3 barili progettate con precisione per una stabilità superiore e una scorrevolezza operativa duratura.
 - **Ottica Superiore:** Lenti in nylon tenace ad alta nitidezza che forniscono un'eccellente resistenza agli urti e opzioni versatili per tinte e rivestimenti specializzati.
 - **Ergonomia Integrata:** Naselli integrati senza soluzione di continuità e una geometria della montatura bilanciata da 57 mm che garantisce una vestibilità stabile e priva di pressione per diversi profili facciali.
@@ -71,7 +71,7 @@ seoKeywords: "occhiali da sole in acetato, produttore di occhiali alla moda, fab
 
 ## Panoramica
 
-Realizzato in acetato Mazzucchelli e JINYU di prima qualità, questo modello combina una vivace tavolozza di colori con lenti in nylon ad alta nitidezza per un'estetica sofisticata di livello lusso.
+Realizzato in acetato Mazzucchelli e JIMEI & JINYU di prima qualità, questo modello combina una vivace tavolozza di colori con lenti in nylon ad alta nitidezza per un'estetica sofisticata di livello lusso.
 
 Le cerniere con struttura a 4+3 barili e i naselli integrati assicurano una stabilità strutturale duratura e una vestibilità ergonomica e bilanciata attraverso la sua geometria da 57 mm.
 

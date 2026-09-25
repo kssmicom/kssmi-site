@@ -5,7 +5,7 @@ slug: "kao-314-acetate-optical-frame"
 itemNo: "KAO-314"
 date: "2026-05-10"
 colors: "Đen & Xanh Neon & Đồi mồi & Sâm panh & Khói"
-materials: "Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli cao cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -58,7 +58,7 @@ seoKeywords: "gọng kính cận axetat, kính mắt quang học tùy chỉnh, n
 
 ## Đặc điểm
 
-- **Cấu trúc vật liệu cao cấp:** Mặt trước và càng kính được làm từ Axetat Mazzucchelli và JINYU chất lượng cao, mang lại cảm giác nhẹ nhàng cùng độ bền vượt trội và chiều sâu màu sắc rực rỡ.
+- **Cấu trúc vật liệu cao cấp:** Mặt trước và càng kính được làm từ Axetat Mazzucchelli và JIMEI & JINYU chất lượng cao, mang lại cảm giác nhẹ nhàng cùng độ bền vượt trội và chiều sâu màu sắc rực rỡ.
 - **Phụ kiện chắc chắn:** Bản lề cấu trúc đinh tán 4+3 chốt được thiết kế chính xác đảm bảo vận hành trơn tru lâu dài và độ ổn định về cấu trúc.
 - **Thiết kế công thái học:** Đệm mũi liền khối được chế tác tỉ mỉ mang lại sự thoải mái suốt cả ngày và độ bám chắc chắn, chống trượt trên nhiều kiểu khuôn mặt khác nhau.
 - **Tròng kính hiệu suất cao:** Tròng kính Nylon bền bỉ với nhiều tùy chọn tùy chỉnh về màu sắc và lớp phủ để phù hợp với thẩm mỹ đặc trưng của từng thương hiệu.
@@ -76,7 +76,7 @@ seoKeywords: "gọng kính cận axetat, kính mắt quang học tùy chỉnh, n
 
 ## Tổng quan
 
-Kết hợp giữa Axetat Mazzucchelli và JINYU cao cấp, mẫu kính này đạt được sự cân bằng tinh tế giữa chiều sâu màu sắc rực rỡ và độ bền cấu trúc.
+Kết hợp giữa Axetat Mazzucchelli và JIMEI & JINYU cao cấp, mẫu kính này đạt được sự cân bằng tinh tế giữa chiều sâu màu sắc rực rỡ và độ bền cấu trúc.
 
 Bản lề đinh tán 4+3 chốt được thiết kế chính xác đảm bảo hoạt động trơn tru bền bỉ, trong khi đệm mũi liền khối mang lại sự vừa vặn chắc chắn và tiện dụng.
 

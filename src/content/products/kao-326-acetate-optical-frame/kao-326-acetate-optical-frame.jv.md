@@ -5,7 +5,7 @@ slug: "kao-326-acetate-optical-frame"
 itemNo: "KAO-326"
 date: "2026-05-10"
 colors: "Ireng, Penyu, Teal karo Havana"
-materials: "Asetat Mazzucchelli & JINYU Premium & Kustomisasi"
+materials: "Asetat Mazzucchelli & JIMEI & JINYU Premium & Kustomisasi"
 serviceMode: "OEM & ODM (Kustomisasi)"
 moq: "300 pcs/model (100pcs/Werna)"
 
@@ -50,7 +50,7 @@ seoKeywords: "frame optik asetat retro, produsen kacamata asetat kustom, frame o
 
 ## Fitur Utama
 
-- **Bahan Premium:** Digawe saka asetat premium Mazzucchelli lan JINYU, nawakake struktur sing entheng nanging kuwat banget kanthi jero werna sing semringah lan awet.
+- **Bahan Premium:** Digawe saka asetat premium Mazzucchelli lan JIMEI & JINYU, nawakake struktur sing entheng nanging kuwat banget kanthi jero werna sing semringah lan awet.
 - **Hardware Direkayasa:** Engsel keling barrel 3+2 sing dipercaya banget, menehi gerakan gagang sing stabil lan lancar kanthi pilihan engsel spring kustom.
 - **Optik Kuat:** Lensa nilon berkekuatan dhuwur sing menehi kajelasan lan resistensi dampak sing apik kanthi pilihan lapisan pesanan khusus kebak.
 - **Kenyamanan Integrasi:** Nose pad integrasi sing mulus digabungake karo geometri 47-20-148mm kustom kanggo menehi pas sing seimbang lan ora gampang lunyu.
@@ -67,7 +67,7 @@ seoKeywords: "frame optik asetat retro, produsen kacamata asetat kustom, frame o
 
 ## Ringkesan
 
-Kanggo merek kacamata sing ngutamakake jerone werna sing semringah lan kakuwatan struktur, frame optik berinspirasi retro iki diukir saka asetat premium Mazzucchelli lan JINYU.
+Kanggo merek kacamata sing ngutamakake jerone werna sing semringah lan kakuwatan struktur, frame optik berinspirasi retro iki diukir saka asetat premium Mazzucchelli lan JIMEI & JINYU.
 
 Didesain kanggo panggunaan jangka panjang sing bisa dipercaya, iki nyawijikake sistem engsel keling barrel 3+2 sing kokoh lan nose pad sing mulus kanggo mesthekake pas sing seimbang lan ora gampang lunyu.
 

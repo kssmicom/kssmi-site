@@ -5,7 +5,7 @@ slug: "kao-312-acetate-optical-frame"
 itemNo: "KAO-312"
 date: "2026-05-10"
 colors: "Preto & Verde Neon & Spark & Havana & Tartaruga Vermelha"
-materials: "Acetato Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Acetato Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -57,7 +57,7 @@ seoKeywords: "acetato Mazzucchelli, armações ópticas de acetato, fabricante d
 
 ## Características
 
-- **Materiais de Grau Aeroespacial:** Acetato Mazzucchelli e JINYU premium na frente e nas hastes, oferecendo uma sensação leve com durabilidade superior e profundidade de cor vibrante.
+- **Materiais de Grau Aeroespacial:** Acetato Mazzucchelli e JIMEI & JINYU premium na frente e nas hastes, oferecendo uma sensação leve com durabilidade superior e profundidade de cor vibrante.
 - **Hardware Robusto:** Dobradiças de estrutura de rebite 4+3 de engenharia de precisão que garantem suavidade operacional de longo prazo e estabilidade estrutural.
 - **Design Ergonômico:** Ponteiras nasicas integradas sem costura, fabricadas para conforto durante todo o dia e um ajuste seguro e antiderrapante em vários perfis faciais.
 - **Óptica de Alto Desempenho:** Lentes de nylon tenazes com amplas opções de personalização para tonalidades e revestimentos para se alinhar com a estética específica da marca.
@@ -75,7 +75,7 @@ seoKeywords: "acetato Mazzucchelli, armações ópticas de acetato, fabricante d
 
 ## Visão Geral
 
-O acetato vibrante Mazzucchelli e JINYU confere ao KAO-312 o seu caráter distintivo, oferecendo um perfil leve que mantém uma durabilidade excecional.
+O acetato vibrante Mazzucchelli e JIMEI & JINYU confere ao KAO-312 o seu caráter distintivo, oferecendo um perfil leve que mantém uma durabilidade excecional.
 
 As dobradiças de rebite 4+3 de engenharia de precisão e as ponteiras nasicas integradas proporcionam a integridade estrutural e o conforto ergonómico esperados das coleções ópticas premium.
 

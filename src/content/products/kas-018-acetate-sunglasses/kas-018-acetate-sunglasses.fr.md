@@ -5,7 +5,7 @@ slug: "kas-018-acetate-sunglasses"
 itemNo: "KAS-018"
 date: "2026-05-10"
 colors: "Noir, Rouge Transparent, Bleu Transparent"
-materials: "Acétate Premium Mazzucchelli & JINYU & Personnalisation"
+materials: "Acétate Premium Mazzucchelli & JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -41,7 +41,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, lunettes de luxe marque bla
 
 ## Caractéristiques
 
-- **Acétate Haute Performance :** Montures en acétate premium Mazzucchelli et JINYU offrant une structure légère et hypoallergénique avec une profondeur de couleur vibrante et durable.
+- **Acétate Haute Performance :** Montures en acétate premium Mazzucchelli et JIMEI & JINYU offrant une structure légère et hypoallergénique avec une profondeur de couleur vibrante et durable.
 - **Quincaillerie Durable :** Charnières stables à structure 3+2 barillets conçues pour une fluidité opérationnelle répétable et une intégrité structurelle (personnalisables en 5 barillets ou charnières à ressort).
 - **Optique Premium :** Verres en nylon tenace offrant une haute résistance aux chocs et une clarté optique avec de vastes possibilités de teinture et de revêtement personnalisés.
 - **Confort Intégré :** Plaquettes de nez intégrées moulées avec précision assurant un ajustement sûr et équilibré et une esthétique épurée et sans couture.
@@ -59,7 +59,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, lunettes de luxe marque bla
 
 ## Présentation
 
-Conçu avec de l'acétate premium Mazzucchelli et JINYU, le modèle KAS-018 présente une structure légère et hypoallergénique qui affiche une vivacité et une profondeur de couleur exceptionnelles.
+Conçu avec de l'acétate premium Mazzucchelli et JIMEI & JINYU, le modèle KAS-018 présente une structure légère et hypoallergénique qui affiche une vivacité et une profondeur de couleur exceptionnelles.
 
 L'integrazione de charnières à 3+2 barillets et de verres en nylon tenace garantit une stabilité opérationnelle à long terme ainsi qu'une résistance aux chocs et une clarté optique supérieures.
 

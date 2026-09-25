@@ -5,7 +5,7 @@ slug: "kas-510-acetate-sunglasses"
 itemNo: "KAS-510"
 date: "2026-05-13"
 colors: "Nero con Nero, Havana con Marrone, Tartaruga con Nero"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione OEM & ODM (Personalizzazione)"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -35,13 +35,13 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KAS-510 Occhiali da Sole in Acetato alla Moda | Fornitore Personalizzato"
-seoDescription: "Occhiali da sole in acetato premium Mazzucchelli e JINYU disponibili per la completa personalizzazione OEM/ODM. Dimensioni della montatura, colori e opzioni logo su misura. MOQ di 300 per modello."
+seoDescription: "Occhiali da sole in acetato premium Mazzucchelli e JIMEI & JINYU disponibili per la completa personalizzazione OEM/ODM. Dimensioni della montatura, colori e opzioni logo su misura. MOQ di 300 per modello."
 seoKeywords: ""
 ---
 
 ## Caratteristiche
 
-- **Costruzione in Acetato Premium:** Montature e aste realizzate in acetato certificato Mazzucchelli e JINYU, per un risultato leggero, strutturalmente durevole e ricco di colori vivaci.
+- **Costruzione in Acetato Premium:** Montature e aste realizzate in acetato certificato Mazzucchelli e JIMEI & JINYU, per un risultato leggero, strutturalmente durevole e ricco di colori vivaci.
 - **Hardware Versatile:** Cerniere a struttura 2+1 barilotti con possibilità di upgrade a 5 barilotti o cerniere a molla, progettate per un funzionamento fluido e un ciclo di vita del prodotto esteso.
 - **Ottica Premium:** Lenti in nylon resistente con alta resistenza agli urti e ampia compatibilità con tinture e rivestimenti ottici personalizzati.
 - **Design Confort Integrato:** I naselli integrati in acetato offrono un'estetica senza cuciture garantendo al contempo una vestibilità stabile e confortevole per diversi profili facciali.
@@ -50,7 +50,7 @@ seoKeywords: ""
 
 ## Panoramica
 
-Proveniente da stabilimenti certificati Mazzucchelli e JINYU, l'acetato utilizzato nel KAS-510 porta con sé una ricchezza intrinseca — nel colore, nel peso e nella qualità tattile — che posiziona ogni unità come un prodotto premium credibile dal primo contatto.
+Proveniente da stabilimenti certificati Mazzucchelli e JIMEI & JINYU, l'acetato utilizzato nel KAS-510 porta con sé una ricchezza intrinseca — nel colore, nel peso e nella qualità tattile — che posiziona ogni unità come un prodotto premium credibile dal primo contatto.
 
 Progettato con cerniere 2+1 barilotti aggiornabili, ottiche in nylon resistente e naselli perfettamente integrati, ogni montatura è costruita per garantire prestazioni costanti sull'intera produzione.
 

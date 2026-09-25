@@ -5,7 +5,7 @@ slug: "kas-323-acetate-sunglasses"
 itemNo: "KAS-323"
 date: "2026-05-12"
 colors: "Preto & Vermelho & Havana & Verde-Neon"
-materials: "Acetato Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Acetato Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) (Personalização)"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de óculos de sol em acetato premium, fábrica de ócul
 
 ## Características
 
-- **Materiais Premium:** Construção em acetato Mazzucchelli e JINYU de alta qualidade que oferece um acabamento leve, durável e vibrante para uma estética de alto nível.
+- **Materiais Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que oferece um acabamento leve, durável e vibrante para uma estética de alto nível.
 - **Hardware Durável:** Dobradiças robustas com estrutura de 4+3 barris projetadas para uma suavidade operacional constante e integridade estrutural a longo prazo.
 - **Ótica de Alto Desempenho:** Lentes de nylon tenaz que proporcionam clareza superior e resistência ao impacto, com opções de personalização completa disponíveis.
 - **Design Ergonômico:** Ponteiras nasicas integradas e uma estrutura equilibrada com precisão que garante um ajuste seguro e hipoalergênico para conforto durante todo o dia.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante de óculos de sol em acetato premium, fábrica de ócul
 
 ## Visão Geral
 
-Fabricado com precisão a partir de acetato premium Mazzucchelli e JINYU, o modelo KAS-323 oferece uma estética vibrante e durável que atende às rigorosas exigências do mercado global de luxo.
+Fabricado com precisão a partir de acetato premium Mazzucchelli e JIMEI & JINYU, o modelo KAS-323 oferece uma estética vibrante e durável que atende às rigorosas exigências do mercado global de luxo.
 
 Cada armação possui uma estrutura robusta de dobradiças de 4+3 barris e ponteiras nasicas integradas, proporcionando uma suavidade operacional constante e maior conforto para o usuário.
 

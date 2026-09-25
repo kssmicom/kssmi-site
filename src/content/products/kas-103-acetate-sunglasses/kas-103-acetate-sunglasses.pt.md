@@ -5,7 +5,7 @@ slug: "kas-103-acetate-sunglasses"
 itemNo: "KAS-103"
 date: "2026-05-06"
 colors: "Preto & Xadrez Amarelo & Mármore Perolado & Xadrez Vermelho & Xadrez Azul & Xadrez Preto"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -62,7 +62,7 @@ seoKeywords: "fabricante de óculos de sol em acetato, óculos de sol OEM person
 
 ## Características
 
-- **Material da Armação Premium:** Armação e hastes em acetato Mazzucchelli e JINYU de alta qualidade, proporcionando um acabamento vibrante e brilho profundo com excepcional durabilidade estrutural.
+- **Material da Armação Premium:** Armação e hastes em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, proporcionando um acabamento vibrante e brilho profundo com excepcional durabilidade estrutural.
 - **Hardware Durável:** Dobradiças de estrutura de 3+2 barris projetadas com precisão para uma suavidade operacional consistente e estabilidade da armação a longo prazo.
 - **Ótica Superior:** Lentes de nylon tenaz que oferecem alta resistência ao impacto e clareza ótica, com personalização escalável para proteção UV e revestimentos especializados.
 - **Ajuste Ergonômico:** Plaquetas nasais integradas perfeitamente esculpidas na estrutura de acetato para um ajuste seguro e sem pressão que melhora o conforto durante todo o dia.
@@ -80,7 +80,7 @@ seoKeywords: "fabricante de óculos de sol em acetato, óculos de sol OEM person
 
 ## Visão Geral
 
-O modelo KAS-103 utiliza acetato Mazzucchelli e JINYU premium para obter um acabamento de brilho profundo, apresentando padrões sofisticados de xadrez e mármore que ressoam com as tendências da alta moda.
+O modelo KAS-103 utiliza acetato Mazzucchelli e JIMEI & JINYU premium para obter um acabamento de brilho profundo, apresentando padrões sofisticados de xadrez e mármore que ressoam com as tendências da alta moda.
 
 Dobradiças de precisão 3+2 barris e plaquetas nasais integradas proporcionam a estabilidade estrutural e o conforto ergonômico esperados pelos consumidores de luxo.
 

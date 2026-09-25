@@ -5,7 +5,7 @@ slug: "kas-115-acetate-sunglasses"
 itemNo: "KAS-115"
 date: "2026-05-09"
 colors: "Schwarz & Lila & Weiß & Schildpatt & Orange"
-materials: "Premium Mazzucchelli & JINYU-Acetat & Individualisierung"
+materials: "Premium Mazzucchelli & JIMEI & JINYU-Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -58,7 +58,7 @@ seoKeywords: "acetat-sonnenbrillen-hersteller, individuelle oem-sonnenbrillen, l
 
 ## Technische Eigenschaften
 
-- **Premium-Material:** Hergestellt aus hochwertigem Mazzucchelli- und JINYU-Acetat, das einen leichten, langlebigen Rahmen mit lebendigen Oberflächen bietet.
+- **Premium-Material:** Hergestellt aus hochwertigem Mazzucchelli- und JIMEI & JINYU-Acetat, das einen leichten, langlebigen Rahmen mit lebendigen Oberflächen bietet.
 - **Langlebige Hardware:** Verfügt über robuste 3+2 Struktur-Scharniere, die für eine stabile und langfristige reibungslose Funktion entwickelt wurden.
 - **Premium-Optik:** Ausgestattet mit zähen Nylon-Gläsern, die eine hervorragende Klarheit bieten, mit umfangreicher Individualisierung für einzigartige Farbprofile.
 - **Ganztägiger Komfort:** Entwickelt mit integrierten Nasenpads, um eine nahtlose, sichere und bequeme Passform für längeres Tragen zu gewährleisten.
@@ -76,7 +76,7 @@ seoKeywords: "acetat-sonnenbrillen-hersteller, individuelle oem-sonnenbrillen, l
 
 ## Übersicht
 
-Die KAS-115 wird aus hochwertigem Mazzucchelli- und JINYU-Acetat gefertigt und verbindet eine mutige Vintage-Ästhetik mit außergewöhnlicher Haltbarkeit und lebendigen Farbprofilen. Dieses Unisex-Design hebt sich als vielseitiges Must-have für moderne, hochwertige Brillenkollektionen hervor.
+Die KAS-115 wird aus hochwertigem Mazzucchelli- und JIMEI & JINYU-Acetat gefertigt und verbindet eine mutige Vintage-Ästhetik mit außergewöhnlicher Haltbarkeit und lebendigen Farbprofilen. Dieses Unisex-Design hebt sich als vielseitiges Must-have für moderne, hochwertige Brillenkollektionen hervor.
 
 Die robusten 3+2 Struktur-Scharniere und integrierten Nasenpads sind darauf ausgelegt, dauerhafte Stabilität und ganztägigen Komfort zu garantieren.
 

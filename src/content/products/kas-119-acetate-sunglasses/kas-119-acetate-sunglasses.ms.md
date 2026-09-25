@@ -5,7 +5,7 @@ slug: "kas-119-acetate-sunglasses"
 itemNo: "KAS-119"
 date: "2026-05-09"
 colors: "Hitam & Bunga & Biru Mentah & Kuning & Kura-kura Kutub & Kura-kura Sian & Kura-kura Merah"
-materials: "Asetat Mazzucchelli & JINYU Premium & Penyesuaian"
+materials: "Asetat Mazzucchelli & JIMEI & JINYU Premium & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -66,7 +66,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Spesifikasi
 
-- **Pembinaan Asetat Premium:** Dihasilkan daripada asetat Mazzucchelli dan JINYU bertaraf dunia, menawarkan struktur bingkai dan kuil yang ringan, sangat tahan lama dan bertenaga.
+- **Pembinaan Asetat Premium:** Dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU bertaraf dunia, menawarkan struktur bingkai dan kuil yang ringan, sangat tahan lama dan bertenaga.
 - **Perkakasan Ketepatan:** Direka bentuk dengan engsel struktur tong 4+3 tersuai untuk memberikan kestabilan yang unggul dan kelancaran operasi jangka panjang.
 - **Optik Berprestasi Tinggi:** Dilengkapi dengan kanta nilon teguh yang memberikan kejelasan optik yang sangat baik bersama dengan pilihan penyesuaian yang meluas.
 - **Keselesaan Sepanjang Hari:** Direka dengan pad hidung bersepadu yang teliti untuk memastikan estetika yang lancar dan padanan yang selamat serta selesa untuk kegunaan berpanjangan.
@@ -83,7 +83,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Gambaran Keseluruhan
 
-Kemewahan yang berani bertemu ketukangan yang luar biasa dalam KAS-119, menampilkan reka bentuk uniseks yang menonjol yang diukir daripada asetat Mazzucchelli dan JINYU yang terkenal di dunia. Pembinaan bingkai yang bertenaga ini bukan sahaja memastikan ketahanan yang ringan tetapi juga mewujudkan kehadiran visual yang memerintah untuk portfolio fesyen mewah.
+Kemewahan yang berani bertemu ketukangan yang luar biasa dalam KAS-119, menampilkan reka bentuk uniseks yang menonjol yang diukir daripada asetat Mazzucchelli dan JIMEI & JINYU yang terkenal di dunia. Pembinaan bingkai yang bertenaga ini bukan sahaja memastikan ketahanan yang ringan tetapi juga mewujudkan kehadiran visual yang memerintah untuk portfolio fesyen mewah.
 
 Kejuruteraan untuk pemakaian jangka panjang, penyepaduan engsel tong 4+3 tersuai dan pad hidung yang lancar menjamin kestabilan, keselesaan sepanjang hari di samping optik nilon premium.
 

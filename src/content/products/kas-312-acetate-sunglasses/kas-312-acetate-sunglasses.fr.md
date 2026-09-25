@@ -5,7 +5,7 @@ slug: "kas-312-acetate-sunglasses"
 itemNo: "KAS-312"
 date: "2026-05-12"
 colors: "Spark & Havana & Red-Turtle & Noir"
-materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
+materials: "Mazzucchelli Premium & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "OEM & ODM ( Personnalisation )"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricant lunettes acétate, lunettes mode personnalisées, usine 
 
 ## Caractéristiques
 
-- **Matériau en Acétate Premium :** Structure en acétate Mazzucchelli et JINYU de haute qualité offrant une finition légère, durable et éclatante pour les collections de lunettes premium.
+- **Matériau en Acétate Premium :** Structure en acétate Mazzucchelli et JIMEI & JINYU de haute qualité offrant une finition légère, durable et éclatante pour les collections de lunettes premium.
 - **Quincaillerie Durable :** Charnières à structure 4+3 barillets conçues avec précision pour assurer une fluidité opérationnelle à long terme et une intégrité structurelle.
 - **Technologie de Verres Avancée :** Verres en nylon tenace conçus pour la clarté et la résistance aux chocs, avec des options de personnalisation complètes pour répondre aux exigences spécifiques de la marque.
 - **Design Ergonomique :** Plaquettes de nez intégrées et ajustement standard de 53-19-145 mm optimisé pour un confort tout au long de la journée sur divers profils faciaux.
@@ -75,7 +75,7 @@ seoKeywords: "fabricant lunettes acétate, lunettes mode personnalisées, usine 
 
 ## Aperçu
 
-Pour les marques à la recherche de l'équilibre parfait entre la profondeur du matériau et la fiabilité structurelle, le modèle KAS-312 utilise de l'acétate premium Mazzucchelli et JINYU pour offrir une esthétique unisexe sophistiquée. Sa finition éclatante et sa construction légère offrent une expérience sensorielle haut de gamme, essentielle pour les catalogues de lunettes boutique.
+Pour les marques à la recherche de l'équilibre parfait entre la profondeur du matériau et la fiabilité structurelle, le modèle KAS-312 utilise de l'acétate premium Mazzucchelli et JIMEI & JINYU pour offrir une esthétique unisexe sophistiquée. Sa finition éclatante et sa construction légère offrent une expérience sensorielle haut de gamme, essentielle pour les catalogues de lunettes boutique.
 
 Les charnières à structure 4+3 barillets offrent une fluidité opérationnelle exceptionnelle, complétant les plaquettes de nez intégrées conçues pour un ajustement sûr et confortable lors d'un port prolongé.
 

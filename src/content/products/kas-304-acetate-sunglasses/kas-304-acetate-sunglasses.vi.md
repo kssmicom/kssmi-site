@@ -5,7 +5,7 @@ slug: "kas-304-acetate-sunglasses"
 itemNo: "KAS-304"
 date: "2026-05-12"
 colors: "Đen & Kẻ sọc & Đồi mồi & Nâu"
-materials: "Axetat Mazzucchelli & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Mazzucchelli & JIMEI & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100cái/màu)"
 
@@ -54,7 +54,7 @@ seoKeywords: "nhà sản xuất kính mát axetat KAS-304, kính mắt axetat OE
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Cấu tạo từ axetat Mazzucchelli và JINYU chất lượng cao, mang lại cảm giác nhẹ nhàng với độ sâu màu sắc sống động và bền bỉ.
+- **Chất liệu cao cấp:** Cấu tạo từ axetat Mazzucchelli và JIMEI & JINYU chất lượng cao, mang lại cảm giác nhẹ nhàng với độ sâu màu sắc sống động và bền bỉ.
 - **Phụ kiện bền bỉ:** Bản lề cấu trúc 4+3 chốt chắc chắn được thiết kế để vận hành trơn tru lâu dài và hiệu suất ổn định.
 - **Quang học ưu việt:** Tròng kính nylon bền bỉ, chống va đập với các tùy chọn nhuộm màu và phủ lớp bảo vệ tùy chỉnh phong phú, phù hợp cho các bộ sưu tập đa dạng.
 - **Thiết kế công thái học:** Đệm mũi liền khối được thiết kế mang lại vẻ đẹp liền mạch và sự vừa vặn an toàn, thoải mái khi đeo cả ngày.
@@ -71,7 +71,7 @@ seoKeywords: "nhà sản xuất kính mát axetat KAS-304, kính mắt axetat OE
 
 ## Tổng quan
 
-Được chế tác từ axetat Mazzucchelli và JINYU cao cấp, KAS-304 cân bằng giữa thẩm mỹ retro unisex với độ sâu màu sắc và độ bền vượt trội.
+Được chế tác từ axetat Mazzucchelli và JIMEI & JINYU cao cấp, KAS-304 cân bằng giữa thẩm mỹ retro unisex với độ sâu màu sắc và độ bền vượt trội.
 
 Đệm mũi liền khối và bản lề cấu trúc 4+3 chốt mang lại sự vừa vặn liền mạch và vận hành trơn tru nhất quán cho nhu cầu sử dụng tần suất cao.
 

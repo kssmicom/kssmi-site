@@ -5,7 +5,7 @@ slug: "kas-126-acetate-sunglasses"
 itemNo: "KAS-126"
 date: "2026-05-09"
 colors: "Siyah & Mermer & Yeşil & Beyaz"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
 moq: "300 adet/model (her renk için 100 adet)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Özellikler
 
-- **Premium Asetat Bileşimi:** Hafif bir his ve canlı, elle parlatılmış bir yüzey sağlayan yüksek performanslı Mazzucchelli ve JINYU asetat çerçeve ve saplar.
+- **Premium Asetat Bileşimi:** Hafif bir his ve canlı, elle parlatılmış bir yüzey sağlayan yüksek performanslı Mazzucchelli ve JIMEI & JINYU asetat çerçeve ve saplar.
 - **Sağlam Donanım:** Sürekli gerginlik ve uzun süreli çalışma pürüzsüzlüğü için tasarlanmış kararlı 3+2 varil yapılı menteşeler.
 - **Gelişmiş Lens Teknolojisi:** Çeşitli pazar ihtiyaçları için özelleştirilebilir tonlar ve kaplamalarla olağanüstü optik netlik sunan darbe dirençli naylon lensler.
 - **Ergonomik Konfor:** Çeşitli yüz yapıları için güvenli bir uyum ve gelişmiş konfor sağlamak üzere tasarlanmış pürüzsüz entegre burun tamponları.

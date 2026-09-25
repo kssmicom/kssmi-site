@@ -5,7 +5,7 @@ slug: "kao-315-acetate-optical-frame"
 itemNo: "KAO-315"
 date: "2026-05-10"
 colors: "Nero & Grigio Traslucido & Havana & Champagne & Trasparente & Oliver"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -62,7 +62,7 @@ seoKeywords: "produttore montature ottiche acetato, occhiali OEM personalizzati,
 
 ## Caratteristiche
 
-- **Materiale ad Alte Prestazioni:** Costruzione in acetato premium Mazzucchelli e JINYU che offre un'estetica vibrante con un'eccezionale leggerezza e durata.
+- **Materiale ad Alte Prestazioni:** Costruzione in acetato premium Mazzucchelli e JIMEI & JINYU che offre un'estetica vibrante con un'eccezionale leggerezza e durata.
 - **Hardware di Precisione:** Cerniere con struttura a rivetto 4+3 barrel ad alta stabilità, progettate per una superiore integrità strutturale e una fluidità operativa a lungo termine.
 - **Ottica Avanzata:** Lenti in nylon tenace con opzioni di personalizzazione complete per tinte specializzate e rivestimenti protettivi.
 - **Comfort Ergonomico:** Naselli integrati senza cuciture meticolosamente progettati per fornire una vestibilità sicura e confortevole per un uso quotidiano prolungato.
@@ -80,7 +80,7 @@ seoKeywords: "produttore montature ottiche acetato, occhiali OEM personalizzati,
 
 ## Panoramica
 
-Un sofisticato mix di acetato Mazzucchelli e JINYU definisce il modello KAO-315, offrendo uno chassis vibrante ma leggero per i marchi di occhiali focalizzati su un'estetica ispirata alla tradizione.
+Un sofisticato mix di acetato Mazzucchelli e JIMEI & JINYU definisce il modello KAO-315, offrendo uno chassis vibrante ma leggero per i marchi di occhiali focalizzati su un'estetica ispirata alla tradizione.
 
 L'architettura delle cerniere a rivetto 4+3 barrel fornisce una solida base meccanica, abbinata a naselli integrati senza cuciture per un comfort ergonomico prolungato.
 

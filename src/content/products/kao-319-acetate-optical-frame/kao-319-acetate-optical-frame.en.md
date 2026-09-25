@@ -5,7 +5,7 @@ slug: "kao-319-acetate-optical-frame"
 itemNo: "KAO-319"
 date: "2026-05-10"
 colors: "Pink & Havana & Clear & Black"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "Mazzucchelli acetate optical frames, custom eyewear manufacturer, 
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli and JINYU acetate construction providing a lightweight feel with vibrant, long-lasting color depth.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction providing a lightweight feel with vibrant, long-lasting color depth.
 - **Durable Hardware:** Robust 4+3 barrel rivet hinges engineered for exceptional stability and long-term operational smoothness.
 - **Precision Optics:** Tenacious nylon lenses with comprehensive customization options for various tints and coatings.
 - **Enhanced Comfort:** Ergonomically designed integrated nose pads ensuring a secure, pressure-free fit for all-day wear.
@@ -72,7 +72,7 @@ seoKeywords: "Mazzucchelli acetate optical frames, custom eyewear manufacturer, 
 
 ## Overview
 
-Mazzucchelli and JINYU acetate form the vibrant core of the KAO-319, offering a lightweight frame with deep color intensity and enduring resilience. This design bridges classic retro styling with modern trendy aesthetics, providing a versatile foundation for contemporary collections.
+Mazzucchelli, JIMEI & JINYU acetate form the vibrant core of the KAO-319, offering a lightweight frame with deep color intensity and enduring resilience. This design bridges classic retro styling with modern trendy aesthetics, providing a versatile foundation for contemporary collections.
 
 The 4+3 barrel rivet hinge structure ensures long-term stability and fluid movement, while integrated nose pads provide a secure, pressure-free fit for diverse facial profiles.
 

@@ -5,7 +5,7 @@ slug: "kas-114-acetate-sunglasses"
 itemNo: "KAS-114"
 date: "2026-05-09"
 colors: "Đen & Sâm panh & Vàng"
-materials: "Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli cao cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -50,7 +50,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát unisex OEM tùy ch
 
 ## Đặc điểm kỹ thuật
 
-- **Chất liệu cao cấp:** Được chế tác từ axetat Mazzucchelli và JINYU chất lượng cao nhằm mang lại cấu trúc nhẹ, bền bỉ với sức hấp dẫn thị giác rực rỡ.
+- **Chất liệu cao cấp:** Được chế tác từ axetat Mazzucchelli và JIMEI & JINYU chất lượng cao nhằm mang lại cấu trúc nhẹ, bền bỉ với sức hấp dẫn thị giác rực rỡ.
 - **Phụ kiện bền bỉ:** Được thiết kế với bản lề cấu trúc 3+2 chắc chắn đảm bảo sự trơn tru trong quá trình sử dụng lâu dài và độ ổn định của cấu trúc.
 - **Quang học chính xác:** Trang bị tròng kính nylon bền bỉ mang lại độ rõ nét vượt trội và các tùy chọn tùy chỉnh mở rộng cho các bộ sưu tập cao cấp.
 - **Thoải mái liền mạch:** Đệm mũi tích hợp được thiết kế để mang lại sự vừa vặn an toàn và công thái học khi đeo trong thời gian dài cả ngày.
@@ -68,7 +68,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát unisex OEM tùy ch
 
 ## Tổng quan
 
-Được chế tác dành cho các thị trường xa xỉ đòi hỏi cả sự hiện diện thẩm mỹ và tính toàn vẹn về cấu trúc, KAS-114 sử dụng axetat Mazzucchelli và JINYU hàng đầu để đạt được cấu trúc rực rỡ, nhẹ nhàng.
+Được chế tác dành cho các thị trường xa xỉ đòi hỏi cả sự hiện diện thẩm mỹ và tính toàn vẹn về cấu trúc, KAS-114 sử dụng axetat Mazzucchelli và JIMEI & JINYU hàng đầu để đạt được cấu trúc rực rỡ, nhẹ nhàng.
 
 Được thiết kế với bản lề cấu trúc 3+2 chắc chắn và đệm mũi tích hợp, gọng kính unisex táo bạo đảm bảo sự trơn tru đặc biệt trong quá trình sử dụng lâu dài cũng như sự vừa vặn an toàn, công thái học.
 

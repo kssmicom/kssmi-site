@@ -5,7 +5,7 @@ slug: "kas-501-acetate-sunglasses"
 itemNo: "KAS-501"
 date: "2026-05-12"
 colors: "Hitam & Krim & Havana & Coklat"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) (Penyesuaian)"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Pembinaan asetat Mazzucchelli dan JINYU premium yang menawarkan rasa ringan, kedalaman warna yang cerah, dan ketahanan jangka panjang.
+- **Bahan Premium:** Pembinaan asetat Mazzucchelli dan JIMEI & JINYU premium yang menawarkan rasa ringan, kedalaman warna yang cerah, dan ketahanan jangka panjang.
 - **Perkakasan Ketepatan:** Engsel struktur 4+3 barrel yang teguh direka untuk kestabilan operasi yang unggul dan kebolehpercayaan sepanjang hayat.
 - **Optik Berprestasi Tinggi:** Lensa nilon tegar yang memberikan kejelasan luar biasa dan rintangan hentaman dengan penyesuaian luas untuk warna dan salutan.
 - **Reka Bentuk Ergonomik:** Alas hidung bersepadu direka untuk estetika yang lancar dan muat yang selesa serta selamat untuk pelbagai profil wajah.
@@ -72,7 +72,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Gambaran Keseluruhan
 
-Menggabungkan asetat Mazzucchelli dan JINYU premium, KAS-501 menawarkan kedalaman warna yang cerah dan ketahanan ringan yang memenuhi piawaian tepat label fesyen mewah.
+Menggabungkan asetat Mazzucchelli dan JIMEI & JINYU premium, KAS-501 menawarkan kedalaman warna yang cerah dan ketahanan ringan yang memenuhi piawaian tepat label fesyen mewah.
 
 Struktur engsel 4+3 barrel yang tepat memastikan kestabilan operasi jangka panjang, manakala lensa nilon tegar dan alas hidung bersepadu memberikan keseimbangan kejelasan optik dan keselesaan sepanjang hari yang lancar.
 

@@ -5,7 +5,7 @@ slug: "kao-310-acetate-optical-frame"
 itemNo: "KAO-310"
 date: "2026-05-10"
 colors: "Black-Gray & Mate-Clear & Glossy-Gray & Black-Green"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -50,7 +50,7 @@ seoKeywords: "Mazzucchelli acetate frames, acetate optical frames, eyewear OEM O
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli and JINYU acetate construction provides a lightweight, durable frame with vibrant color depth for a luxury aesthetic.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction provides a lightweight, durable frame with vibrant color depth for a luxury aesthetic.
 - **Durable Hardware:** Robust 4+3 barrel rivet structure hinges engineered for superior stability and long-term operational smoothness.
 - **Advanced Optics:** Equipped with tenacious nylon lenses that offer high impact resistance and versatile customization options for specialized brand requirements.
 - **Ergonomic Comfort:** Features integrated nose pads designed for a secure, pressure-free fit and all-day wearability across diverse facial profiles.
@@ -67,7 +67,7 @@ seoKeywords: "Mazzucchelli acetate frames, acetate optical frames, eyewear OEM O
 
 ## Overview
 
-Mazzucchelli and JINYU acetate substrates provide the KAO-310 with a vibrant, high-gloss finish that meets the exacting standards of luxury optical markets.
+Mazzucchelli, JIMEI & JINYU acetate substrates provide the KAO-310 with a vibrant, high-gloss finish that meets the exacting standards of luxury optical markets.
 
 The robust 4+3 barrel rivet hinge architecture and integrated nose pads ensure this frame maintains its structural integrity and wearer comfort throughout its lifecycle.
 

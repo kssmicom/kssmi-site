@@ -5,7 +5,7 @@ slug: "kas-130-acetate-sunglasses"
 itemNo: "KAS-130"
 date: "2026-05-09"
 colors: "Negro & Gris & Tortuga & Melocotón & Marrón"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalización"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalización"
 serviceMode: "OEM & ODM ( Personalización )"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Características
 
-- **Material Premium:** Construcción en acetato Mazzucchelli y JINYU de alta calidad que ofrece una durabilidad excepcional y una profundidad de color vibrante para un atractivo estético duradero.
+- **Material Premium:** Construcción en acetato Mazzucchelli y JIMEI & JINYU de alta calidad que ofrece una durabilidad excepcional y una profundidad de color vibrante para un atractivo estético duradero.
 - **Hardware Robusto:** Bisagras de estructura de barril 4+3 diseñadas con precisión para una estabilidad superior y un rendimiento operativo suave a largo plazo.
 - **Óptica de Alta Definición:** Lentes de nylon tenaz que proporcionan una visión cristalina y una alta resistencia a los impactos, con amplias opciones de personalización para tintes y recubrimientos.
 - **Comodidad Ergonómica:** El diseño de almohadilla nasal integrada asegura un ajuste seguro y sin presión, adecuado para el uso diario en diversos perfiles faciales.
@@ -76,7 +76,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Descripción General
 
-Fabricadas con acetato Mazzucchelli y JINYU de alta calidad, estas monturas presentan un lenguaje de diseño audaz y centrado en el lujo que enfatiza tanto la profundidad del color vibrante como la estabilidad estructural duradera.
+Fabricadas con acetato Mazzucchelli y JIMEI & JINYU de alta calidad, estas monturas presentan un lenguaje de diseño audaz y centrado en el lujo que enfatiza tanto la profundidad del color vibrante como la estabilidad estructural duradera.
 
 La integración de bisagras de barril 4+3 y un diseño de almohadilla nasal sin presión ofrece la experiencia táctil refinada y la durabilidad a largo plazo que esperan las audiencias minoristas de alta gama.
 

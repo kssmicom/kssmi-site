@@ -5,7 +5,7 @@ slug: "kao-014-acetate-optical-frame"
 itemNo: "KAO-014"
 date: "2026-05-10"
 colors: "Red & Orange & Clear & Yellow"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -42,7 +42,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear factory, p
 
 ## Technical Features
 
-- **Premium Material Selection:** Constructed from world-renowned Mazzucchelli and JINYU acetate, offering exceptional durability and vibrant color depth for luxury aesthetics.
+- **Premium Material Selection:** Constructed from world-renowned Mazzucchelli, JIMEI & JINYU acetate, offering exceptional durability and vibrant color depth for luxury aesthetics.
 - **Architectural Precision:** A balanced 53-18-140mm geometry that blends bold, trendy silhouettes with classic luxury appeal, fully customizable to specific brand design requirements.
 - **Robust Hardware:** High-performance 3+2 barrel rivet structure hinges engineered for superior structural integrity and long-term operational smoothness.
 - **Superior Optics:** Equipped with tenacious nylon lenses that provide high impact resistance and crystal-clear visual clarity, with extensive tinting options available.
@@ -59,7 +59,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear factory, p
 
 ## Overview
 
-Crafted from world-renowned Mazzucchelli and JINYU acetate, the KAO-014 translates a vibrant color palette of red and orange tones into a sophisticated, luxury-grade silhouette.
+Crafted from world-renowned Mazzucchelli, JIMEI & JINYU acetate, the KAO-014 translates a vibrant color palette of red and orange tones into a sophisticated, luxury-grade silhouette.
 
 The architectural 53-18-140mm frame utilizes a reinforced 3+2 barrel rivet structure to ensure enduring alignment and smooth operational performance.
 

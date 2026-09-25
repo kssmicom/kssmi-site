@@ -5,7 +5,7 @@ slug: "kao-318-acetate-optical-frame"
 itemNo: "KAO-318"
 date: "2026-05-10"
 colors: "Nero & Havana & Rosso & Grigio Traslucido & Strisce Marroni & Verde Neon"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalizzazione"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
 serviceMode: "OEM & ODM (Personalizzazione)"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produttore montature acetato, montature ottiche personalizzate, de
 
 ## Caratteristiche
 
-- **Montatura in Acetato Premium:** Realizzata in acetato Mazzucchelli e JINYU di alta qualità per una finitura leggera, resistente e vibrante.
+- **Montatura in Acetato Premium:** Realizzata in acetato Mazzucchelli e JIMEI & JINYU di alta qualità per una finitura leggera, resistente e vibrante.
 - **Hardware Rinforzato:** Robustezza delle cerniere a rivetto 4+3 barrel progettate per un'eccezionale integrità strutturale e una scorrevolezza operativa a lungo termine.
 - **Ottica ad Alte Prestazioni:** Lenti in nylon tenace che offrono chiarezza superiore e resistenza agli urti con opzioni di personalizzazione complete.
 - **Design Ergonomico:** Naselli integrati e una dimensione della montatura di 48-20-145mm su misura per garantire una vestibilità sicura e confortevole per tutto il giorno.
@@ -72,7 +72,7 @@ seoKeywords: "produttore montature acetato, montature ottiche personalizzate, de
 
 ## Panoramica
 
-Gli acetati Mazzucchelli e JINYU costituiscono la base del modello KAO-318, offrendo una tavolozza ricca e vibrante e una durata superiore per collezioni ottiche premium. Il profilo retrò-classico della montatura soddisfa gli elevati standard tattili attesi dalle moderne case di moda di lusso.
+Gli acetati Mazzucchelli e JIMEI & JINYU costituiscono la base del modello KAO-318, offrendo una tavolozza ricca e vibrante e una durata superiore per collezioni ottiche premium. Il profilo retrò-classico della montatura soddisfa gli elevati standard tattili attesi dalle moderne case di moda di lusso.
 
 Un sistema di cerniere a rivetto 4+3 barrel rinforzato, combinato con naselli integrati, offre un'eccezionale stabilità meccanica e un comfort duraturo.
 

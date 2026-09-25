@@ -5,7 +5,7 @@ slug: "kas-320-acetate-sunglasses"
 itemNo: "KAS-320"
 date: "2026-05-12"
 colors: "Neon-Green & Brown-Stripe & Translucent-Grey & Red & Havana & Black"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -62,7 +62,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, Mazzucchel
 
 ## Technical Features
 
-- **Premium Materials:** High-quality Mazzucchelli and JINYU acetate frame and temples offering a vibrant, lightweight, and durable aesthetic.
+- **Premium Materials:** High-quality Mazzucchelli, JIMEI & JINYU acetate frame and temples offering a vibrant, lightweight, and durable aesthetic.
 - **Robust Hardware:** Professional 4+3 barrel structure hinges engineered for superior stability and long-term operational smoothness.
 - **Advanced Optics:** High-performance tenacious nylon lenses providing exceptional clarity and impact resistance with extensive customization options.
 - **Ergonomic Design:** Integrated nose pads designed for a secure, comfortable fit that enhances the unisex styling.
@@ -80,7 +80,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, Mazzucchel
 
 ## Overview
 
-Vibrant textures meet structural integrity in the KAS-320, a model defined by its premium Mazzucchelli and JINYU acetate construction. These frames offer a lightweight yet durable aesthetic that captures modern fashion trends while maintaining a timeless appeal for diverse brand collections.
+Vibrant textures meet structural integrity in the KAS-320, a model defined by its premium Mazzucchelli, JIMEI & JINYU acetate construction. These frames offer a lightweight yet durable aesthetic that captures modern fashion trends while maintaining a timeless appeal for diverse brand collections.
 
 The 4+3 barrel hinge architecture ensures long-term stability and smooth operational performance, complemented by integrated nose pads for superior comfort.
 

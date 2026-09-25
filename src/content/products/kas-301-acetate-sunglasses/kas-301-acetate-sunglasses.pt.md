@@ -5,7 +5,7 @@ slug: "kas-301-acetate-sunglasses"
 itemNo: "KAS-301"
 date: "2026-05-11"
 colors: "Preto & Roxo & Tartaruga & Listrado"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Características
 
-- **Material Premium:** Construção em acetato genuíno Mazzucchelli e JINYU que oferece uma estética leve, durável e vibrante para coleções de moda de alto padrão.
+- **Material Premium:** Construção em acetato genuíno Mazzucchelli e JIMEI & JINYU que oferece uma estética leve, durável e vibrante para coleções de moda de alto padrão.
 - **Hardware Durável:** Robustas dobradiças com estrutura de 4+3 barris projetadas para suavidade operacional consistente e confiabilidade estrutural a longo prazo.
 - **Ótica de Alto Desempenho:** Lentes de nylon tenaz que proporcionam clareza excepcional e resistência ao impacto com versáteis possibilidades de tingimento e revestimento personalizados.
 - **Design Ergonômico:** Ponteiras nasicas integradas e um perfil de armação unissex que garantem um ajuste seguro e confortável para uso diário prolongado.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Visão Geral
 
-O acetato Mazzucchelli e JINYU fornece uma tela sofisticada para este design ousado e unissex. O jogo de vibrantes padrões de tartaruga e listras cria uma identidade visual distinta que ressoa com as sensibilidades da moda de alto nível.
+O acetato Mazzucchelli e JIMEI & JINYU fornece uma tela sofisticada para este design ousado e unissex. O jogo de vibrantes padrões de tartaruga e listras cria uma identidade visual distinta que ressoa com as sensibilidades da moda de alto nível.
 
 As dobradiças de 4+3 barris projetadas com precisão e as ponteiras nasicas integradas garantem que a integridade mecânica da armação corresponda à sua composição de material premium.
 

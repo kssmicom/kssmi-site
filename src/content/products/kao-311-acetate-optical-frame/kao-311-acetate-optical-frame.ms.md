@@ -5,7 +5,7 @@ slug: "kao-311-acetate-optical-frame"
 itemNo: "KAO-311"
 date: "2026-05-10"
 colors: "Hitam & Ungu Berasap & Kura-kura & Coklat"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengilang bingkai optik asetat, eyewear OEM tersuai, bingkai label
 
 ## Ciri-ciri Utama
 
-- **Pemilihan Bahan Premium:** Dibina dengan asetat Mazzucchelli dan JINYU gred tinggi, memberikan warna-warna yang menyerlah serta struktur yang ringan dan tahan lama.
+- **Pemilihan Bahan Premium:** Dibina dengan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi, memberikan warna-warna yang menyerlah serta struktur yang ringan dan tahan lama.
 - **Perkakasan Diperkukuh:** Menampilkan sistem engsel struktur rivet 4+3 barrel yang teguh, direka untuk kestabilan luar biasa dan kelancaran operasi jangka panjang.
 - **Optik Berprestasi Tinggi:** Dilengkapi dengan lensa nilon lasak yang menawarkan rintangan hentaman dan kejelasan yang unggul, dengan penyesuaian fleksibel untuk warna dan salutan.
 - **Keselesaan Ergonomik:** Alas hidung bersepadu yang direka untuk padanan yang kemas dan pengagihan berat yang seimbang, memastikan pemakaian yang selesa sepanjang hari.
@@ -72,7 +72,7 @@ seoKeywords: "pengilang bingkai optik asetat, eyewear OEM tersuai, bingkai label
 
 ## Gambaran Keseluruhan
 
-Koleksi eyewear mewah mendapat manfaat daripada gabungan asetat Mazzucchelli dan JINYU pada KAO-311, kombinasi yang mengimbangi estetika digilap tangan yang menyerlah dengan umur panjang struktur yang luar biasa.
+Koleksi eyewear mewah mendapat manfaat daripada gabungan asetat Mazzucchelli dan JIMEI & JINYU pada KAO-311, kombinasi yang mengimbangi estetika digilap tangan yang menyerlah dengan umur panjang struktur yang luar biasa.
 
 Penyepaduan engsel rivet 4+3 barrel dan reka bentuk titi ergonomik yang kemas memastikan setiap bingkai memberikan keselesaan yang konsisten dan ketahanan berprestasi tinggi dalam setiap kelompok pengeluaran.
 

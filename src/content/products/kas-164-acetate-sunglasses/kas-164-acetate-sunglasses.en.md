@@ -5,7 +5,7 @@ slug: "kas-164-acetate-sunglasses"
 itemNo: "KAS-164"
 date: "2026-05-09"
 colors: "Gradient Grey"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -39,7 +39,7 @@ seoKeywords: "Mazzucchelli acetate sunglasses, custom acetate eyewear manufactur
 ---
 
 ## Technical Features
-- **Premium Materials:** High-quality Mazzucchelli and JINYU acetate construction providing a vibrant, high-luster finish with exceptional durability.
+- **Premium Materials:** High-quality Mazzucchelli, JIMEI & JINYU acetate construction providing a vibrant, high-luster finish with exceptional durability.
 - **Reinforced Hardware:** Robust 3+2 barrel rivet structure hinges engineered for superior stability and long-term operational smoothness.
 - **High-Performance Optics:** Tenacious nylon lenses offering excellent impact resistance with extensive custom tinting and coating possibilities.
 - **Ergonomic Design:** Seamlessly integrated nose pads designed for a secure, comfortable fit and a refined, streamlined aesthetic.
@@ -55,7 +55,7 @@ seoKeywords: "Mazzucchelli acetate sunglasses, custom acetate eyewear manufactur
 - Duty-Free & Travel Retail
 
 ## Overview
-Crafted from premium Mazzucchelli and JINYU acetate, the KAS-164 embodies a bold yet classic aesthetic with a vibrant, high-luster finish. This unisex design merges luxury styling with the enduring durability of high-grade materials.
+Crafted from premium Mazzucchelli, JIMEI & JINYU acetate, the KAS-164 embodies a bold yet classic aesthetic with a vibrant, high-luster finish. This unisex design merges luxury styling with the enduring durability of high-grade materials.
 
 Precision-engineered 3+2 barrel rivet hinges provide exceptional stability, while the integrated nose pads and tenacious nylon lenses ensure long-term comfort and optical clarity.
 

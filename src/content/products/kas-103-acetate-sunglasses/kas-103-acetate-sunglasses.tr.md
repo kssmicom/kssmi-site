@@ -5,7 +5,7 @@ slug: "kas-103-acetate-sunglasses"
 itemNo: "KAS-103"
 date: "2026-05-06"
 colors: "Siyah & Sarı Kareli & İnci Mermer & Kırmızı Kareli & Mavi Kareli & Siyah Kareli"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -62,7 +62,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Özellikler
 
-- **Premium Çerçeve Malzemesi:** Yüksek dereceli Mazzucchelli ve JINYU asetat çerçeve ve saplar, olağanüstü yapısal dayanıklılıkla birlikte canlı, derin parlaklıkta bir görünüm sunar.
+- **Premium Çerçeve Malzemesi:** Yüksek dereceli Mazzucchelli ve JIMEI & JINYU asetat çerçeve ve saplar, olağanüstü yapısal dayanıklılıkla birlikte canlı, derin parlaklıkta bir görünüm sunar.
 - **Dayanıklı Donanım:** Tutarlı çalışma pürüzsüzlüğü ve uzun vadeli çerçeve stabilitesi için tasarlanmış hassas mühendislik ürünü 3+2 namlu yapılı menteşeler.
 - **Üstün Optik:** Yüksek darbe direnci ve optik netlik sunan dayanıklı naylon lensler, UV koruması ve özel kaplamalar için ölçeklenebilir özelleştirme ile birlikte.
 - **Ergonomik Uyum:** Gün boyu konforu artıran güvenli, basınçsız bir uyum için asetat yapısına sorunsuz bir şekilde oyulmuş entegre burun yastıkları.
@@ -80,7 +80,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Genel Bakış
 
-KAS-103, yüksek moda trendleriyle yankılanan sofistike kareli ve mermer desenlere sahip, derin parlaklıkta bir görünüm elde etmek için birinci sınıf Mazzucchelli ve JINYU asetat kullanır.
+KAS-103, yüksek moda trendleriyle yankılanan sofistike kareli ve mermer desenlere sahip, derin parlaklıkta bir görünüm elde etmek için birinci sınıf Mazzucchelli ve JIMEI & JINYU asetat kullanır.
 
 Hassas 3+2 namlu menteşeler ve entegre burun yastıkları, lüks tüketicilerin beklediği yapısal stabiliteyi ve ergonomik konforu sağlar.
 

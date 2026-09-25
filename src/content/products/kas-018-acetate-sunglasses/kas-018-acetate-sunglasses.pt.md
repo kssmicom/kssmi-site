@@ -5,7 +5,7 @@ slug: "kas-018-acetate-sunglasses"
 itemNo: "KAS-018"
 date: "2026-05-10"
 colors: "Preto, Vermelho Transparente, Azul Transparente"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -41,7 +41,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de luxo marca pr�
 
 ## Características
 
-- **Acetato de Alto Desempenho:** Armações de acetato premium Mazzucchelli e JINYU que proporcionam uma estrutura leve e hipoalergênica com profundidade de cor vibrante e duradoura.
+- **Acetato de Alto Desempenho:** Armações de acetato premium Mazzucchelli e JIMEI & JINYU que proporcionam uma estrutura leve e hipoalergênica com profundidade de cor vibrante e duradoura.
 - **Ferragens Duráveis:** Dobradiças estáveis com estrutura de 3+2 barris projetadas para suavidade operacional repetível e integridade estrutural (personalizáveis para 5 barris ou dobradiças de mola).
 - **Ótica Premium:** Lentes de nylon tenaz que oferecem alta resistência ao impacto e clareza ótica com amplas possibilidades de tingimento e revestimento personalizados.
 - **Conforto Integrado:** Plaquetas nasais integradas moldadas com precisão que garantem um ajuste seguro e equilibrado e uma estética limpa e sem costuras.
@@ -59,7 +59,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de luxo marca pr�
 
 ## Visão Geral
 
-Projetado com acetato premium Mazzucchelli e JINYU, o modelo KAS-018 alcança uma estrutura leve e hipoalergênica que exibe vibração e profundidade de cor excepcionais.
+Projetado com acetato premium Mazzucchelli e JIMEI & JINYU, o modelo KAS-018 alcança uma estrutura leve e hipoalergênica que exibe vibração e profundidade de cor excepcionais.
 
 A integração de dobradiças de 3+2 barris e lentes de nylon tenaz garante estabilidade operacional de longo prazo juntamente com resistência ao impacto e clareza ótica superiores.
 

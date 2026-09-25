@@ -5,7 +5,7 @@ slug: "kao-015-acetate-optical-frame"
 itemNo: "KAO-015"
 date: "2026-05-10"
 colors: "Transparent & Jaune & Bleu & Orange"
-materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
+materials: "Mazzucchelli Premium & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100pcs/couleur)"
 
@@ -42,7 +42,7 @@ seoKeywords: "fabricant de montures optiques en acétate, lunettes OEM personnal
 
 ## Caractéristiques
 
-- **Matériaux Premium :** Fabrication en acétate Mazzucchelli et JINYU fini à la main, offrant une vivacité exceptionnelle, une durabilité et une sensation de légèreté.
+- **Matériaux Premium :** Fabrication en acétate Mazzucchelli et JIMEI & JINYU fini à la main, offrant une vivacité exceptionnelle, une durabilité et une sensation de légèreté.
 - **Ingénierie de Précision :** Charnières robustes à structure de rivet 3+2 conçues pour une stabilité maximale et une fluidité de fonctionnement à long terme.
 - **Optique Haute Performance :** Verres en nylon tenaces offrant une clarté supérieure et une résistance aux chocs, avec de nombreuses options de revêtement personnalisé disponibles.
 - **Design Ergonomique :** Plaquettes de nez intégrées de manière transparente, conçues pour un ajustement stable et confortable et une esthétique raffinée et minimaliste.
@@ -60,7 +60,7 @@ seoKeywords: "fabricant de montures optiques en acétate, lunettes OEM personnal
 
 ## Aperçu
 
-Fabriquée à partir d'acétate premium Mazzucchelli et JINYU, cette monture atteint un équilibre sophistiqué entre la résilience légère et l'esthétique audacieuse et vibrante requise par les marchés du luxe modernes.
+Fabriquée à partir d'acétate premium Mazzucchelli et JIMEI & JINYU, cette monture atteint un équilibre sophistiqué entre la résilience légère et l'esthétique audacieuse et vibrante requise par les marchés du luxe modernes.
 
 La structure robuste de la charnière à rivet 3+2 offre une durabilité mécanique exceptionnelle, tandis que la conception des plaquettes de nez intégrées assure un ajustement parfait et confortable.
 

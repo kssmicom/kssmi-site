@@ -5,7 +5,7 @@ slug: "kas-108-acetate-sunglasses"
 itemNo: "KAS-108"
 date: "2026-05-07"
 colors: "Schwarz & Transparent & Havana & Olive"
-materials: "Premium Mazzucchelli & JINYU-Acetat & Individualisierung"
+materials: "Premium Mazzucchelli & JIMEI & JINYU-Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -54,7 +54,7 @@ seoKeywords: "Acetat-Sonnenbrillenhersteller, maßgeschneiderte OEM-Sonnenbrille
 
 ## Eigenschaften
 
-- **Premium-Acetat-Konstruktion:** Hochwertiger Rahmen und Bügel aus Mazzucchelli- und JINYU-Acetat mit einem lebendigen, handpolierten Finish und außergewöhnlicher Langlebigkeit.
+- **Premium-Acetat-Konstruktion:** Hochwertiger Rahmen und Bügel aus Mazzucchelli- und JIMEI & JINYU-Acetat mit einem lebendigen, handpolierten Finish und außergewöhnlicher Langlebigkeit.
 - **Hochleistungsoptik:** Widerstandsfähige Nylon-Gläser mit überlegener Stoßfestigkeit und optischer Klarheit sowie umfangreichen Optionen für individuelle Tönungen.
 - **Präzisions-Hardware:** Stabile Scharniere mit 3+2-Fass-Struktur, entwickelt für dauerhafte Laufruhe und langfristige Rahmenausrichtung.
 - **Ergonomischer Komfort:** Integrierte Nasenpads und eine leichte Rahmenstruktur sorgen für einen sicheren Sitz und ganztägigen Komfort bei verschiedenen Gesichtsprofilen.
@@ -72,7 +72,7 @@ seoKeywords: "Acetat-Sonnenbrillenhersteller, maßgeschneiderte OEM-Sonnenbrille
 
 ## Überblick
 
-Mazzucchelli- und JINYU-Acetat bilden die Grundlage für die Exzellenz dieses Modells und kombinieren ein handpoliertes, lebendiges Finish mit der für Premium-Brillen unverzichtbaren Leichtigkeit und Langlebigkeit. Dieses Vintage-inspirierte Unisex-Design dient als vielseitiges Basic für Marken, die eine Balance zwischen kühner Ästhetik und zeitlosem Stil suchen.
+Mazzucchelli- und JIMEI & JINYU-Acetat bilden die Grundlage für die Exzellenz dieses Modells und kombinieren ein handpoliertes, lebendiges Finish mit der für Premium-Brillen unverzichtbaren Leichtigkeit und Langlebigkeit. Dieses Vintage-inspirierte Unisex-Design dient als vielseitiges Basic für Marken, die eine Balance zwischen kühner Ästhetik und zeitlosem Stil suchen.
 
 Ein 3+2-Fass-Scharniersystem und integrierte Nasenpads sorgen für konstante Leistung und ergonomischen Komfort und spiegeln die Verpflichtung zu Präzisionsfertigung und langfristiger Rahmenausrichtung wider.
 

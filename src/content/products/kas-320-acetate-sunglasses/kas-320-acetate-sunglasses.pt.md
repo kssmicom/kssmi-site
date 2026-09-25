@@ -5,7 +5,7 @@ slug: "kas-320-acetate-sunglasses"
 itemNo: "KAS-320"
 date: "2026-05-12"
 colors: "Verde Neon & Listras Marrons & Cinza Translúcido & Vermelho & Havana & Preto"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "OEM & ODM ( Personalização )"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -62,7 +62,7 @@ seoKeywords: "fabricante óculos de sol acetato, óculos de sol OEM personalizad
 
 ## Características
 
-- **Materiais Premium:** Armação e hastes de acetato Mazzucchelli e JINYU de alta qualidade que oferecem uma estética vibrante, leve e durável.
+- **Materiais Premium:** Armação e hastes de acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que oferecem uma estética vibrante, leve e durável.
 - **Hardware Robusto:** Dobradiças profissionais com estrutura de 4+3 barris projetadas para estabilidade superior e suavidade operacional a longo prazo.
 - **Óptica Avançada:** Lentes de nylon tenaz de alto desempenho que proporcionam clareza excepcional e resistência ao impacto com amplas opções de personalização.
 - **Design Ergonômico:** Ponteiras nasicas integradas projetadas para um ajuste seguro e confortável que realça o estilo unissex.
@@ -80,7 +80,7 @@ seoKeywords: "fabricante óculos de sol acetato, óculos de sol OEM personalizad
 
 ## Visão Geral
 
-Texturas vibrantes encontram a integridade estrutural no KAS-320, um modelo definido por sua construção em acetato Mazzucchelli e JINYU premium. Estas armações oferecem uma estética leve, mas durável, que captura as tendências da moda moderna, mantendo um apelo atemporal para diversas coleções de marcas.
+Texturas vibrantes encontram a integridade estrutural no KAS-320, um modelo definido por sua construção em acetato Mazzucchelli e JIMEI & JINYU premium. Estas armações oferecem uma estética leve, mas durável, que captura as tendências da moda moderna, mantendo um apelo atemporal para diversas coleções de marcas.
 
 A arquitetura de dobradiça de 4+3 barris garante estabilidade a longo prazo e desempenho operacional suave, complementada por ponteiras nasicas integradas para conforto superior.
 

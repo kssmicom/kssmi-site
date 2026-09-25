@@ -5,7 +5,7 @@ slug: "kao-310-acetate-optical-frame"
 itemNo: "KAO-310"
 date: "2026-05-10"
 colors: "Ireng-Abu-abu & Mate-Bening & Gilap-Abu-abu & Ireng-Ijo"
-materials: "Mazzucchelli Premium & Asetat JINYU & Kustomisasi"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -50,7 +50,7 @@ seoKeywords: "frame asetat Mazzucchelli, frame optik asetat, produsen kacamata O
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JINYU kelas dhuwur nyedhiyakake frame sing entheng lan awet kanthi kedalaman warna sing padhang kanggo estetika mewah.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur nyedhiyakake frame sing entheng lan awet kanthi kedalaman warna sing padhang kanggo estetika mewah.
 - **Hardware Awet:** Engsel struktur rivet 4+3 tong sing kuwat dirancang kanggo stabilitas sing unggul lan kelancaran operasional jangka panjang.
 - **Optik Canggih:** Dilengkapi lensa nilon kuat sing nawakake resistensi dampak dhuwur lan pilihan kustomisasi serbaguna kanggo syarat merek khusus.
 - **Kenyamanan Ergonomis:** Nampilake bantalan irung terpadu sing dirancang kanggo pas sing aman, tanpa tekanan lan bisa digunakake sedina muat ing macem-macem profil rai.
@@ -67,7 +67,7 @@ seoKeywords: "frame asetat Mazzucchelli, frame optik asetat, produsen kacamata O
 
 ## Ringkesan
 
-Substrat asetat Mazzucchelli lan JINYU nyedhiyakake KAO-310 kanthi finishing sing padhang lan gilap dhuwur sing cocog karo standar ketat pasar optik mewah.
+Substrat asetat Mazzucchelli lan JIMEI & JINYU nyedhiyakake KAO-310 kanthi finishing sing padhang lan gilap dhuwur sing cocog karo standar ketat pasar optik mewah.
 
 Arsitektur engsel rivet 4+3 tong sing kuwat lan bantalan irung terpadu njamin frame iki njaga integritas struktural lan kenyamanan sing nganggo sajrone siklus uripe.
 

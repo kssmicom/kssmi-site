@@ -5,7 +5,7 @@ slug: "kas-305-acetate-sunglasses"
 itemNo: "KAS-305"
 date: "2026-05-12"
 colors: "Siyah & Çizgili & Havana & Zeytin"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
 moq: "300 adet/model (her renk için 100 adet)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel tasarım OEM gözlük
 
 ## Özellikler
 
-- **Premium Malzeme Seçimi:** Hafiflik hissi, olağanüstü dayanıklılık ve canlı renk derinliği sunan yüksek kaliteli Mazzucchelli ve JINYU asetat yapı.
+- **Premium Malzeme Seçimi:** Hafiflik hissi, olağanüstü dayanıklılık ve canlı renk derinliği sunan yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat yapı.
 - **Sağlam Donanım:** Uzun süreli çalışma pürüzsüzlüğü ve tutarlı çerçeve hizalaması sağlayan hassas mühendislik ürünü 4+3 milli menteşeler.
 - **Yüksek Performanslı Optik:** Çok yönlü özelleştirme ve kaplama seçenekleriyle üstün darbe direnci ve optik netlik sunan dayanıklı naylon lensler.
 - **Ergonomik Konfor:** Entegre burun pedleri ve rafine unisex köprü tasarımı, uzun süreli günlük kullanım için güvenli ve hipoalerjenik bir uyum sağlar.
@@ -71,7 +71,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel tasarım OEM gözlük
 
 ## Genel Bakış
 
-Yüksek kaliteli Mazzucchelli ve JINYU asetat, KAS-305'in yapısal zarafetini tanımlayarak hafif bir his ve derin renk doygunluğu sunar. Bu klasik unisex tasarım, retro estetiği modern moda talepleriyle birleştirir.
+Yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat, KAS-305'in yapısal zarafetini tanımlayarak hafif bir his ve derin renk doygunluğu sunar. Bu klasik unisex tasarım, retro estetiği modern moda talepleriyle birleştirir.
 
 Hassas bir 4+3 milli menteşe sistemi ve entegre burun pedleri ile tasarlanan çerçeve, günlük kullanım boyunca tutarlı hizalama ve konfor sağlar.
 

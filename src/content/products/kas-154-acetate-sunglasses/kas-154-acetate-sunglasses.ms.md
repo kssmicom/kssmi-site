@@ -5,7 +5,7 @@ slug: "kas-154-acetate-sunglasses"
 itemNo: "KAS-154"
 date: "2026-05-09"
 colors: "Hitam, Kura-kura, Kelabu Lut Sinar, Zaitun Susu"
-materials: "Asetat Mazzucchelli & JINYU Premium & Penyesuaian"
+materials: "Asetat Mazzucchelli & JIMEI & JINYU Premium & Penyesuaian"
 serviceMode: "OEM & ODM ( Penyesuaian )"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -42,7 +42,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Ciri-ciri Utama
 
-- **Pembinaan Asetat Premium:** Direka daripada asetat Mazzucchelli dan JINYU gred tinggi untuk memberikan bingkai yang menyerlah, ringan dan tahan lama yang sesuai untuk koleksi fesyen mewah.
+- **Pembinaan Asetat Premium:** Direka daripada asetat Mazzucchelli dan JIMEI & JINYU gred tinggi untuk memberikan bingkai yang menyerlah, ringan dan tahan lama yang sesuai untuk koleksi fesyen mewah.
 - **Sistem Perkakasan Teguh:** Mempunyai engsel struktur rivet 4+3 barrel yang direka dengan ketepatan untuk kelancaran operasi yang luar biasa dan integriti struktur jangka panjang.
 - **Kejelasan Optik Unggul:** Dilengkapi dengan kanta nilon lasak yang menawarkan rintangan impak tinggi dan pilihan penyesuaian yang luas untuk label eyewear premium.
 - **Ergonomik Lancar:** Reka bentuk alas hidung bersepadu memastikan pemakaian yang selesa, selamat dan estetik yang halus untuk kegunaan sepanjang hari.
@@ -59,7 +59,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Gambaran Keseluruhan
 
-Dihasilkan daripada campuran istimewa asetat Mazzucchelli dan JINYU, model ini menawarkan profil yang menyerlah dan ringan yang memenuhi piawaian ketat rumah fesyen mewah.
+Dihasilkan daripada campuran istimewa asetat Mazzucchelli dan JIMEI & JINYU, model ini menawarkan profil yang menyerlah dan ringan yang memenuhi piawaian ketat rumah fesyen mewah.
 
 Sistem engsel rivet 4+3 barrel yang diperkukuh memastikan integriti struktur jangka panjang sambil mengekalkan rasa lancar dan berketepatan tinggi yang diharapkan daripada eyewear premium.
 

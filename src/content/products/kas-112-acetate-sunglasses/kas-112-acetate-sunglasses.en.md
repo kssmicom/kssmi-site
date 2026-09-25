@@ -5,7 +5,7 @@ slug: "kas-112-acetate-sunglasses"
 itemNo: "KAS-112"
 date: "2026-05-09"
 colors: "Black & Solid-Black & Havana & Candy-Red & Pink-Tortoise & Cream-White"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -58,7 +58,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Technical Features
 
-- **Premium Acetate Construction:** High-grade Mazzucchelli and JINYU acetate frame and temples providing a lightweight feel with exceptional depth of color and long-lasting durability.
+- **Premium Acetate Construction:** High-grade Mazzucchelli, JIMEI & JINYU acetate frame and temples providing a lightweight feel with exceptional depth of color and long-lasting durability.
 - **Precision Hardware:** Stable 3+2 barrel structure hinges engineered for consistent operational smoothness and a premium tactile feel.
 - **High-Performance Optics:** Tenacious nylon lenses offering superior impact resistance and optical clarity, fully customizable to meet specific brand requirements.
 - **Ergonomic Comfort:** Seamlessly integrated nose pads designed to distribute weight evenly for all-day comfort across various facial structures.
@@ -76,7 +76,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Overview
 
-Bold vintage aesthetics meet premium material depth in the KAS-112, crafted from high-grade Mazzucchelli and JINYU acetate to ensure a vibrant, long-lasting finish.
+Bold vintage aesthetics meet premium material depth in the KAS-112, crafted from high-grade Mazzucchelli, JIMEI & JINYU acetate to ensure a vibrant, long-lasting finish.
 
 Every frame features precision-engineered 3+2 barrel hinges and integrated nose pads, delivering a seamless balance of structural stability and ergonomic comfort.
 

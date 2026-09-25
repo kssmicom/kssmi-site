@@ -5,7 +5,7 @@ slug: "kao-329-acetate-optical-frame"
 itemNo: "KAO-329"
 date: "2026-05-10"
 colors: "Xanh ô liu trơn, Hồng trơn, Đồi mồi"
-materials: "Axetat cao cấp Mazzucchelli & JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Axetat cao cấp Mazzucchelli & JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) (Tùy chỉnh theo yêu cầu)"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -50,7 +50,7 @@ seoKeywords: "gọng kính cận axetat tùy chỉnh, bán sỉ kính axetat, nh
 
 ## Đặc điểm
 
-- **Chất liệu Cao cấp:** Được chế tác từ axetat cao cấp Mazzucchelli và JINYU, mang lại cấu trúc siêu nhẹ nhưng đặc biệt bền bỉ với tính thẩm mỹ màu sắc sống động và sâu sắc.
+- **Chất liệu Cao cấp:** Được chế tác từ axetat cao cấp Mazzucchelli và JIMEI & JINYU, mang lại cấu trúc siêu nhẹ nhưng đặc biệt bền bỉ với tính thẩm mỹ màu sắc sống động và sâu sắc.
 - **Phụ kiện Kỹ thuật:** Bản lề cấu trúc 3+2 chốt có độ tin cậy cao giúp càng kính chuyển động ổn định, mượt mà với các tùy chọn bản lề lò xo và bản lề 5 chốt.
 - **Quang học Siêu bền:** Tròng kính nylon có độ bền cao mang lại độ rõ nét quang học vượt trội và khả năng chống va đập với các dịch vụ phủ và tùy chỉnh hoàn toàn riêng biệt.
 - **Thoải mái Liền gọng:** Đệm mũi axetat tích hợp liền mạch kết hợp với hình học 55-17-145mm được đo ni đóng giày để mang lại cảm giác vừa vặn, cân đối và không trơn trượt.
@@ -68,7 +68,7 @@ seoKeywords: "gọng kính cận axetat tùy chỉnh, bán sỉ kính axetat, nh
 
 ## Tổng quan
 
-Bằng cách kết hợp chất liệu axetat Mazzucchelli và JINYU, gọng kính KAO-329 đạt được chiều sâu màu sắc thanh lịch cùng với khả năng chống chịu vật lý bền bỉ. Kiểu dáng unisex cổ điển retro, được thể hiện bằng tông màu xanh ô liu đậm đà, hồng dịu dàng và đồi mồi cổ điển, tạo nên điểm nhấn cao cấp cho bất kỳ dòng kính mắt sang trọng nào.
+Bằng cách kết hợp chất liệu axetat Mazzucchelli và JIMEI & JINYU, gọng kính KAO-329 đạt được chiều sâu màu sắc thanh lịch cùng với khả năng chống chịu vật lý bền bỉ. Kiểu dáng unisex cổ điển retro, được thể hiện bằng tông màu xanh ô liu đậm đà, hồng dịu dàng và đồi mồi cổ điển, tạo nên điểm nhấn cao cấp cho bất kỳ dòng kính mắt sang trọng nào.
 
 Quy trình sản xuất chính xác đảm bảo hình học 55-17-145mm hoạt động hài hòa với đệm mũi axetat liền gọng và bản lề 3+2 chốt để mang lại chuyển động mượt mà và vừa vặn cân bằng, không gây áp lực.
 

@@ -5,7 +5,7 @@ slug: "kas-020-acetate-sunglasses"
 itemNo: "KAS-020"
 date: "2026-05-10"
 colors: "Nero, Champagne, Tartaruga, Oliva Trasparente"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -41,7 +41,7 @@ seoKeywords: "produttore occhiali da sole acetato, OEM occhiali lusso personaliz
 
 ## Caratteristiche
 
-- **Materiali Premium:** Costruzione in acetato Mazzucchelli e JINYU di alta qualità che offre una durata eccezionale e una profondità di colore vibrante per un'estetica di lusso.
+- **Materiali Premium:** Costruzione in acetato Mazzucchelli e JIMEI & JINYU di alta qualità che offre una durata eccezionale e una profondità di colore vibrante per un'estetica di lusso.
 - **Ingegneria di Precisione:** Cerniere stabili con struttura a barilotto 3+2 progettate per una fluidità operativa a lungo termine e integrità strutturale.
 - **Ottica ad Alte Prestazioni:** Lenti in nylon tenace che offrono una chiarezza superiore e resistenza agli urti con ampie opzioni di rivestimento personalizzato.
 - **Comfort Ergonomico:** Naselli integrati senza soluzione di continuità e design della montatura leggero per garantire una vestibilità sicura e senza affaticamento per un uso prolungato.
@@ -59,7 +59,7 @@ seoKeywords: "produttore occhiali da sole acetato, OEM occhiali lusso personaliz
 
 ## Panoramica
 
-Utilizzando la vibrante profondità del colore e la resilienza strutturale dell'acetato premium Mazzucchelli e JINYU, il modello KAS-020 rappresenta una sofisticata fusione di estetica di lusso e durata quotidiana.
+Utilizzando la vibrante profondità del colore e la resilienza strutturale dell'acetato premium Mazzucchelli e JIMEI & JINYU, il modello KAS-020 rappresenta una sofisticata fusione di estetica di lusso e durata quotidiana.
 
 L'architettura della cerniera a barilotto 3+2 e le lenti in nylon ad alta nitidezza sono progettate per una fluidità operativa a lungo termine e una protezione ottica superiore.
 

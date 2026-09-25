@@ -5,7 +5,7 @@ slug: "kas-010-acetate-sunglasses"
 itemNo: "KAS-010"
 date: "2026-05-10"
 colors: "Schwarz & Meteor-Crystal & Tanzanite & Bordeaux"
-materials: "Premium Mazzucchelli & JINYU-Acetat & Individualisierung"
+materials: "Premium Mazzucchelli & JIMEI & JINYU-Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100Stk/Farbe)"
 
@@ -54,7 +54,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, maßgeschneiderte OEM Sonnenbrill
 
 ## Eigenschaften
 
-- **Premium-Material:** Hochwertige Konstruktion aus Mazzucchelli- und JINYU-Acetat, die ein lebendiges Finish und außergewöhnliche Haltbarkeit für eine luxuriöse Ästhetik bietet.
+- **Premium-Material:** Hochwertige Konstruktion aus Mazzucchelli- und JIMEI & JINYU-Acetat, die ein lebendiges Finish und außergewöhnliche Haltbarkeit für eine luxuriöse Ästhetik bietet.
 - **Langlebige Hardware:** Robuste 4+3-Fass-Strukturscharniere, die für langfristige Leichtgängigkeit und strukturelle Stabilität entwickelt wurden.
 - **Premium-Optik:** Widerstandsfähige Nylon-Gläser mit überlegener Schlagfestigkeit und Klarheit sowie umfangreichen individuellen Tönungsoptionen.
 - **Ergonomisches Design:** Integrierte Nasenpads und ein präzisionsgefertigter 52-18-145mm Rahmen gewährleisten einen bequemen und sicheren Sitz für verschiedene Gesichtsformen.
@@ -71,7 +71,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, maßgeschneiderte OEM Sonnenbrill
 
 ## Übersicht
 
-Lebendiges Mazzucchelli- und JINYU-Acetat verleihen diesem Unisex-Rahmen seinen ausgeprägten Luxuscharakter und bieten ein leichtes und dennoch langlebiges Profil, das sein Finish über die Zeit behält.
+Lebendiges Mazzucchelli- und JIMEI & JINYU-Acetat verleihen diesem Unisex-Rahmen seinen ausgeprägten Luxuscharakter und bieten ein leichtes und dennoch langlebiges Profil, das sein Finish über die Zeit behält.
 
 Die strukturelle Integrität wird durch ein präzises 4+3-Fass-Scharniersystem verstärkt, das einen reibungslosen Betrieb und langfristige Stabilität für High-End-Einzelhandelsumgebungen gewährleistet.
 

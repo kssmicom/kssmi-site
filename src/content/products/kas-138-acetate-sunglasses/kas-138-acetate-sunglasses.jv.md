@@ -5,7 +5,7 @@ slug: "kas-138-acetate-sunglasses"
 itemNo: "KAS-138"
 date: "2026-05-09"
 colors: "Ireng & Bulus & Klabu-Merah Muda Pucat & Jambon Mate"
-materials: "Premium Mazzucchelli & Asetat JINYU & Kustomisasi"
+materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -53,7 +53,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, eyewear
 ---
 
 ## Fitur
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JINYU kelas dhuwur sing nawakake frame sing padhang, entheng, lan awet kanggo merek fashion mewah.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing nawakake frame sing padhang, entheng, lan awet kanggo merek fashion mewah.
 - **Hardware Kuat:** Engsel struktur 3+2 barrel profesional sing dirancang kanggo kelancaran operasional sing konsisten lan daya tahan jangka panjang.
 - **Optik Unggul:** Lensa nylon kuat kinerja dhuwur kanthi macem-macem kemungkinan warna lan lapisan kustom kanggo desainer eyewear premium.
 - **Desain Ergonomis:** Bantalan irung sing nggabung kanthi lancar menehi rasa pas sing aman lan nyaman kanggo panggunaan saben dina sing suwe ing kabeh bentuk wajah.
@@ -69,7 +69,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, eyewear
 - Toko Konsep & Multi-Merek
 
 ## Ringkesan
-Digawe kanthi tliti saka asetat Mazzucchelli lan JINYU asli, seri KAS-138 nandheske jero warna sing padhang lan daya tahan kelas dhuwur kanggo pasar mewah.
+Digawe kanthi tliti saka asetat Mazzucchelli lan JIMEI & JINYU asli, seri KAS-138 nandheske jero warna sing padhang lan daya tahan kelas dhuwur kanggo pasar mewah.
 
 Integrasi engsel struktur 3+2 barrel lan bantalan irung ergonomis menehi keseimbangan sing lancar antarane keandalan mekanik lan kenyamanan panggunaan saben dina.
 

@@ -5,7 +5,7 @@ slug: "kas-304-acetate-sunglasses"
 itemNo: "KAS-304"
 date: "2026-05-12"
 colors: "Black & Stripe & Tortoise & Brown"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "KAS-304 acetate sunglasses manufacturer, custom OEM acetate eyewea
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli and JINYU acetate construction offering a lightweight feel with vibrant, long-lasting color depth.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction offering a lightweight feel with vibrant, long-lasting color depth.
 - **Durable Hardware:** Robust 4+3 barrel structure hinges engineered for long-term operational smoothness and repeatable performance.
 - **Elite Optics:** Impact-resistant tenacious nylon lenses with extensive custom tinting and coating options available for versatile collections.
 - **Ergonomic Design:** Integrated nose pads designed for a seamless aesthetic and a secure, comfortable fit for all-day wear.
@@ -71,7 +71,7 @@ seoKeywords: "KAS-304 acetate sunglasses manufacturer, custom OEM acetate eyewea
 
 ## Overview
 
-Crafted from high-grade Mazzucchelli and JINYU acetate, the KAS-304 balances a retro unisex aesthetic with exceptional color depth and durability.
+Crafted from high-grade Mazzucchelli, JIMEI & JINYU acetate, the KAS-304 balances a retro unisex aesthetic with exceptional color depth and durability.
 
 Integrated nose pads and 4+3 barrel structure hinges provide a seamless fit and consistent operational smoothness for high-frequency use.
 

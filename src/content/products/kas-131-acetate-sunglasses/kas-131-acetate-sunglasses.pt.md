@@ -5,7 +5,7 @@ slug: "kas-131-acetate-sunglasses"
 itemNo: "KAS-131"
 date: "2026-05-09"
 colors: "Preto & Roxo & Tartaruga & Branco"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante óculos de sol acetato, fabricante óculos personalizad
 
 ## Características
 
-- **Material da Armação Premium:** Fabricada em acetato Mazzucchelli e JINYU de alta qualidade, proporcionando uma estrutura leve, mas excepcionalmente durável, com uma profundidade de cor vibrante e duradoura.
+- **Material da Armação Premium:** Fabricada em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, proporcionando uma estrutura leve, mas excepcionalmente durável, com uma profundidade de cor vibrante e duradoura.
 - **Hardware Durável:** Possui um sistema de dobradiças profissional de estrutura 4+3 barrel, projetado para uma suavidade operacional superior e integridade estrutural a longo prazo.
 - **Ótica Avançada:** Equipada com lentes de nylon tenazes que oferecem alta resistência ao impacto e clareza ótica, totalmente personalizáveis de acordo com os requisitos específicos da marca.
 - **Conforto Ergonômico:** Projetada com ponteiras nasicas integradas para garantir um ajuste estável e sem pressão, adequado para uso diário prolongado.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante óculos de sol acetato, fabricante óculos personalizad
 
 ## Visão Geral
 
-O acetato Mazzucchelli e JINYU constitui o núcleo destes óculos de sol, proporcionando uma vibrante profundidade de cor e uma durabilidade leve que atrai os mercados de moda de alta gama.
+O acetato Mazzucchelli e JIMEI & JINYU constitui o núcleo destes óculos de sol, proporcionando uma vibrante profundidade de cor e uma durabilidade leve que atrai os mercados de moda de alta gama.
 
 O sistema de dobradiças de estrutura 4+3 barrel garante precisão operacional a longo prazo, enquanto as ponteiras nasicas integradas oferecem estabilidade ergonômica para uso durante todo o dia.
 

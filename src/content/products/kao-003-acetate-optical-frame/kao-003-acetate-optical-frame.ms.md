@@ -5,7 +5,7 @@ slug: "kao-003-acetate-optical-frame"
 itemNo: "KAO-003"
 date: "2026-05-10"
 colors: "Hitam & Kura-kura & Jingga & Zebra & Keemasan"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100unit/warna)"
 
@@ -43,7 +43,7 @@ seoKeywords: "pengilang bingkai optik asetat, kilang cermin mata OEM tersuai, bi
 
 ## Ciri-ciri Utama
 
-- **Pembinaan Asetat Premium:** Bingkai dan temple asetat Mazzucchelli dan JINYU gred tinggi memberikan kemasan yang ringan, tahan lama, dan vibrant untuk estetika yang halus.
+- **Pembinaan Asetat Premium:** Bingkai dan temple asetat Mazzucchelli dan JIMEI & JINYU gred tinggi memberikan kemasan yang ringan, tahan lama, dan vibrant untuk estetika yang halus.
 - **Perkakasan Diperkukuh:** Engsel struktur rivet 4+3 barrel profesional yang direka untuk kestabilan unggul dan kelancaran operasi jangka panjang.
 - **Optik Berprestasi Tinggi:** Lensa nylon teguh yang menawarkan rintangan hentaman yang luar biasa dengan pilihan penyesuaian penuh untuk warna dan salutan khusus.
 - **Keselesaan Ergonomik:** Alas hidung bersepadu yang direka untuk muat yang selamat, seimbang dan keselesaan pemakaian sepanjang hari merentasi pelbagai profil wajah.
@@ -60,7 +60,7 @@ seoKeywords: "pengilang bingkai optik asetat, kilang cermin mata OEM tersuai, bi
 
 ## Gambaran Keseluruhan
 
-Menghasilkan cermin mata berimpak tinggi bermula dengan tekstur asetat Mazzucchelli dan JINYU yang kaya dan digilap dengan tangan. Model ini mengimbangi dimensi struktur yang berani dengan palet warna yang vibrant dan pelbagai aspek untuk memenuhi tuntutan estetik fesyen mewah.
+Menghasilkan cermin mata berimpak tinggi bermula dengan tekstur asetat Mazzucchelli dan JIMEI & JINYU yang kaya dan digilap dengan tangan. Model ini mengimbangi dimensi struktur yang berani dengan palet warna yang vibrant dan pelbagai aspek untuk memenuhi tuntutan estetik fesyen mewah.
 
 Integrasi engsel struktur rivet 4+3 barrel dan alas hidung ergonomik memastikan muat yang selamat dan ketahanan jangka panjang untuk pemakaian harian.
 

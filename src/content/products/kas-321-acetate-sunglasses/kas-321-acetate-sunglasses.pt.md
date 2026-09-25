@@ -5,7 +5,7 @@ slug: "kas-321-acetate-sunglasses"
 itemNo: "KAS-321"
 date: "2026-05-12"
 colors: "Cinza Translúcido & Havana & Verde Escuro & Preto"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol personaliz
 
 ## Características
 
-- **Material Premium:** Frontal e hastes de acetato Mazzucchelli e JINYU de alta qualidade que oferecem profundidade vibrante e durabilidade duradoura.
+- **Material Premium:** Frontal e hastes de acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que oferecem profundidade vibrante e durabilidade duradoura.
 - **Hardware Robusto:** Dobradiças estáveis de estrutura de 4+3 tambores projetadas para suavidade operacional a longo prazo e estabilidade repetível.
 - **Ótica Superior:** Lentes de nylon tenazes que proporcionam excelente clareza com personalização abrangente de cores e revestimentos.
 - **Design Ergonômico:** Plaquetas nasais integradas projetadas para um ajuste seguro e confortável e uma estética raffinata e perfeita.
@@ -72,7 +72,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol personaliz
 
 ## Visão Geral
 
-Ao utilizar acetato premium Mazzucchelli e JINYU, essas armações alcançam um equilíbrio impressionante entre profundidade vibrante e durabilidade duradoura. As cores cinza translúcido e havana refletem uma estética refinada que se traduz perfeitamente em diversos mercados globais de moda.
+Ao utilizar acetato premium Mazzucchelli e JIMEI & JINYU, essas armações alcançam um equilíbrio impressionante entre profundidade vibrante e durabilidade duradoura. As cores cinza translúcido e havana refletem uma estética refinada que se traduz perfeitamente em diversos mercados globais de moda.
 
 A arquitetura interna apresenta dobradiças robustas de 4+3 tambores e um perfil clássico de 48-24-145 mm, proporcionando um ajuste unissex estável otimizado para o uso diário consistente.
 

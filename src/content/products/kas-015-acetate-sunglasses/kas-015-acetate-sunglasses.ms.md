@@ -5,7 +5,7 @@ slug: "kas-015-acetate-sunglasses"
 itemNo: "KAS-015"
 date: "2026-05-10"
 colors: "Kura-kura dengan Hijau, Hitam dengan Hitam-Kuning, Kura-kura Hitam dengan Hijau, Hitam"
-materials: "Asetat Premium Mazzucchelli & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100unit/warna)"
 
@@ -43,7 +43,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat mewah, kilang cermin mata hitam
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Pembinaan asetat Mazzucchelli dan JINYU gred tinggi yang memberikan kemasan ringan, tahan lama dan bertenaga untuk estetika mewah.
+- **Bahan Premium:** Pembinaan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi yang memberikan kemasan ringan, tahan lama dan bertenaga untuk estetika mewah.
 - **Integriti Struktur:** Bingkai dan temple asetat premium yang dihasilkan dengan ketepatan memastikan pengekalan bentuk và daya tahan jangka panjang.
 - **Perkakasan Tahan Lama:** Engsel struktur 2+1 tong yang stabil direka untuk kelancaran operasi yang konsisten, dengan peningkatan 5-tong dan engsel spring tersedia.
 - **Optik Unggul:** Lensa nylon kental memberikan kejelasan yang sangat baik dan rintangan hentaman dengan pilihan pewarnaan tersuai yang meluas.
@@ -61,7 +61,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat mewah, kilang cermin mata hitam
 
 ## Gambaran Keseluruhan
 
-Menggunakan asetat Mazzucchelli dan JINYU gred tinggi, model ini memberikan kemasan yang bertenaga và ringan yang disesuaikan untuk pasaran premium.
+Menggunakan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi, model ini memberikan kemasan yang bertenaga và ringan yang disesuaikan untuk pasaran premium.
 
 Engsel 2+1 tong yang direka dengan ketepatan và alas hidung bersepadu memberikan gabungan kestabilan struktur và keselesaan sepanjang hari yang lancar.
 

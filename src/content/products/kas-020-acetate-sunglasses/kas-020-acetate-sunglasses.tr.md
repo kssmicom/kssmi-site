@@ -5,7 +5,7 @@ slug: "kas-020-acetate-sunglasses"
 itemNo: "KAS-020"
 date: "2026-05-10"
 colors: "Siyah, Şampanya, Kaplumbağa Kabuğu, Şeffaf Zeytin"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (her renk için 100 adet)"
 
@@ -41,7 +41,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel lüks gözlük OEM, p
 
 ## Özellikler
 
-- **Premium Malzemeler:** Lüks estetik için olağanüstü dayanıklılık ve canlı renk derinliği sunan yüksek kaliteli Mazzucchelli ve JINYU asetat yapı.
+- **Premium Malzemeler:** Lüks estetik için olağanüstü dayanıklılık ve canlı renk derinliği sunan yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat yapı.
 - **Hassas Mühendislik:** Uzun vadeli operasyonel pürüzsüzlük ve yapısal bütünlük için tasarlanmış sağlam 3+2 varil yapılı menteşeler.
 - **Yüksek Performanslı Optik:** Üstün netlik ve darbe direnci sağlayan, kapsamlı özel kaplama seçeneklerine sahip dayanıklı naylon lensler.
 - **Ergonomik Konfor:** Sorunsuz bir şekilde entegre edilmiş burun tamponları ve hafif çerçeve tasarımı, uzun süreli kullanım için güvenli ve yorulmadan oturma sağlar.
@@ -59,7 +59,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel lüks gözlük OEM, p
 
 ## Genel Bakış
 
-Premium Mazzucchelli ve JINYU asetatın canlı renk derinliği ve yapısal direncinden yararlanan KAS-020, lüks estetik ile günlük dayanıklılığın sofistike bir birleşimini temsil eder.
+Premium Mazzucchelli ve JIMEI & JINYU asetatın canlı renk derinliği ve yapısal direncinden yararlanan KAS-020, lüks estetik ile günlük dayanıklılığın sofistike bir birleşimini temsil eder.
 
 3+2 varil menteşe mimarisi ve yüksek netlikteki naylon lensler, uzun vadeli operasyonel pürüzsüzlük ve üstün optik koruma için tasarlanmıştır.
 

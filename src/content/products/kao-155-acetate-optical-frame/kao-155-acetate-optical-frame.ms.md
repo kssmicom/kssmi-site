@@ -5,7 +5,7 @@ slug: "kao-155-acetate-optical-frame"
 itemNo: "KAO-155"
 date: "2026-05-10"
 colors: "Kuning Floral dengan Ungu, Teal Floral dengan Merah Jambu"
-materials: "Asetat Mazzucchelli Premium & JINYU & Penyesuaian"
+materials: "Asetat Mazzucchelli Premium & JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -46,7 +46,7 @@ seoKeywords: "pengilang bingkai optik asetat, kacamata asetat tersuai OEM, boron
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Dibina daripada asetat Mazzucchelli dan JINYU bertaraf dunia, memberikan kedalaman warna yang ceria dan ketahanan jangka panjang yang luar biasa.
+- **Bahan Premium:** Dibina daripada asetat Mazzucchelli dan JIMEI & JINYU bertaraf dunia, memberikan kedalaman warna yang ceria dan ketahanan jangka panjang yang luar biasa.
 - **Kejuruteraan Canggih:** Memaparkan engsel struktur rivet tong 2+1 yang stabil yang direka untuk kelancaran operasi yang konsisten dan integriti struktur.
 - **Optik Berprestasi Tinggi:** Dilengkapi dengan lensa nylon tebal yang menawarkan kejelasan unggul dan rintangan hentaman dengan pilihan penyesuaian penuh.
 - **Keselesaan Ergonomik:** Direka dengan alas hidung bersepadu untuk memastikan kesesuaian yang selamat dan hipoalergenik untuk pelbagai profil wajah semasa pemakaian berpanjangan.
@@ -64,7 +64,7 @@ seoKeywords: "pengilang bingkai optik asetat, kacamata asetat tersuai OEM, boron
 
 ## Gambaran Keseluruhan
 
-Asetat Mazzucchelli dan JINYU bergabung dalam bingkai ini untuk memberikan kedalaman warna yang ceria dan jangka hayat struktur yang dituntut oleh jenama mewah. Siluet unisex yang berani merapatkan reka bentuk klasik dengan estetika moden yang memfokuskan trend.
+Asetat Mazzucchelli dan JIMEI & JINYU bergabung dalam bingkai ini untuk memberikan kedalaman warna yang ceria dan jangka hayat struktur yang dituntut oleh jenama mewah. Siluet unisex yang berani merapatkan reka bentuk klasik dengan estetika moden yang memfokuskan trend.
 
 Engsel struktur rivet tong 2+1 dan alas hidung bersepadu memastikan kelancaran operasi yang konsisten dan kesesuaian yang selamat dan selesa semasa pemakaian berpanjangan.
 

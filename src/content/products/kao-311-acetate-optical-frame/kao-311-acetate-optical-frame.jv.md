@@ -5,7 +5,7 @@ slug: "kao-311-acetate-optical-frame"
 itemNo: "KAO-311"
 date: "2026-05-10"
 colors: "Ireng & Ungu Keluk & Bulus & Coklat"
-materials: "Mazzucchelli Premium & Asetat JINYU & Kustomisasi"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen frame optik asetat, kacamata OEM kustom, frame label prib
 
 ## Fitur
 
-- **Pilihan Bahan Premium:** Digawe nganggo asetat Mazzucchelli lan JINYU kelas dhuwur, menehi warna sing padhang lan struktur sing entheng nanging awet.
+- **Pilihan Bahan Premium:** Digawe nganggo asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur, menehi warna sing padhang lan struktur sing entheng nanging awet.
 - **Hardware sing Kuat:** Nganggo sistem engsel struktur rivet 4+3 barrel sing kokoh, dirancang kanggo stabilitas sing luar biasa lan kelancaran panggunaan jangka panjang.
 - **Optik Performa Dhuwur:** Dilengkapi lensa nilon sing kuat sing menehi ketahanan benturan lan kejelasan sing unggul, kanti kustomisasi warna lan lapisan sing fleksibel.
 - **Kenyamanan Ergonomis:** Bantalan irung integrasi sing dirancang kanggo pas sing pas lan distribusi bobot sing seimbang, njamin kenyamanan sedina muput.
@@ -72,7 +72,7 @@ seoKeywords: "produsen frame optik asetat, kacamata OEM kustom, frame label prib
 
 ## Ringkesan
 
-Koleksi kacamata mewah entuk manfaat saka gabungan asetat Mazzucchelli lan JINYU ing KAO-311, kombinasi sing nyeimbangake estetika polesan tangan sing padhang karo umur dawa struktur sing luar biasa.
+Koleksi kacamata mewah entuk manfaat saka gabungan asetat Mazzucchelli lan JIMEI & JINYU ing KAO-311, kombinasi sing nyeimbangake estetika polesan tangan sing padhang karo umur dawa struktur sing luar biasa.
 
 Integrasi engsel rivet 4+3 barrel lan desain bridge ergonomis sing rapi njamin saben frame menehi kenyamanan sing konsisten lan daya tahan performa dhuwur ing saben batch produksi.
 

@@ -5,7 +5,7 @@ slug: "kao-348-acetate-optical-frame"
 itemNo: "KAO-348"
 date: "2026-05-10"
 colors: "Hitam, Kura-kura"
-materials: "Asetat Mazzucchelli & JINYU Premium & Penyesuaian"
+materials: "Asetat Mazzucchelli & JIMEI & JINYU Premium & Penyesuaian"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -40,7 +40,7 @@ seoKeywords: "pengeluar bingkai optik asetat, cermin mata oem tersuai, cermin ma
 
 ## Ciri-ciri Utama
 
-- **Bahan Asetat Premium:** Binaan asetat Mazzucchelli dan JINYU berkualiti tinggi menawarkan kedalaman warna yang terang, ketahanan struktur jangka panjang dan pengalaman sentuhan premium yang ringan.
+- **Bahan Asetat Premium:** Binaan asetat Mazzucchelli dan JIMEI & JINYU berkualiti tinggi menawarkan kedalaman warna yang terang, ketahanan struktur jangka panjang dan pengalaman sentuhan premium yang ringan.
 - **Perkakasan Engsel Teguh:** Engsel struktur 3+2 tong berketepatan tinggi menawarkan kestabilan penjajaran yang luar biasa, kelancaran operasi jangka panjang dan keserasian dengan peningkatan 5-tong tersuai atau engsel spring.
 - **Kanta Pelindung Premium:** Kanta nilon yang kukuh memberikan rintangan hentaman yang sangat baik, kejelasan optik yang tinggi dan pilihan warna dan salutan yang boleh disesuaikan sepenuhnya.
 - **Kesesuaian Bersepadu Ergonomik:** Alas hidung asetat bersepadu dan saiz bingkai 57-16-145mm yang boleh disesuaikan direka untuk mengagihkan tekanan secara sama rata untuk kesesuaian yang selamat, selesa dan bebas gelincir.
@@ -58,7 +58,7 @@ seoKeywords: "pengeluar bingkai optik asetat, cermin mata oem tersuai, cermin ma
 
 ## Gambaran Keseluruhan
 
-Kemewahan klasik dan kepelbagaian moden bersilang dalam bingkai optik KAO-348, menampilkan warna Hitam pekat dan Kura-kura yang mempamerkan kualiti premium asetat Mazzucchelli dan JINYU.
+Kemewahan klasik dan kepelbagaian moden bersilang dalam bingkai optik KAO-348, menampilkan warna Hitam pekat dan Kura-kura yang mempamerkan kualiti premium asetat Mazzucchelli dan JIMEI & JINYU.
 
 Direka bentuk dengan kesesuaian 57-16-145mm yang selesa dan pad hidung bersepadu, bingkai menggunakan engsel struktur 3+2 tong yang teguh untuk memastikan penjajaran struktur jangka panjang dan operasi yang mudah.
 

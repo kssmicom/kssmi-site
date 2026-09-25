@@ -5,7 +5,7 @@ slug: "kas-501-acetate-sunglasses"
 itemNo: "KAS-501"
 date: "2026-05-12"
 colors: "Black & Cream & Havana & Chocolate"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Technical Features
 
-- **Premium Material:** Premium Mazzucchelli and JINYU acetate construction offering a lightweight feel, vibrant depth of color, and long-term durability.
+- **Premium Material:** Premium Mazzucchelli, JIMEI & JINYU acetate construction offering a lightweight feel, vibrant depth of color, and long-term durability.
 - **Precision Hardware:** Robust 4+3 barrel structure hinges engineered for superior operational stability and lifelong reliability.
 - **High-Performance Optics:** Tenacious nylon lenses providing exceptional clarity and impact resistance with extensive customization for tints and coatings.
 - **Ergonomic Design:** Integrated nose pads designed for a seamless aesthetic and a comfortable, secure fit for diverse facial profiles.
@@ -72,7 +72,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Overview
 
-Blending premium Mazzucchelli and JINYU acetate, the KAS-501 offers a vibrant depth of color and lightweight durability that meets the exacting standards of high-end fashion labels.
+Blending premium Mazzucchelli, JIMEI & JINYU acetate, the KAS-501 offers a vibrant depth of color and lightweight durability that meets the exacting standards of high-end fashion labels.
 
 The precision 4+3 barrel hinge structure ensures long-term operational stability, while tenacious nylon lenses and integrated nose pads provide a seamless balance of optical clarity and all-day comfort.
 

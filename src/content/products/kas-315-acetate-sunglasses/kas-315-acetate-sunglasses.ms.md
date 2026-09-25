@@ -5,7 +5,7 @@ slug: "kas-315-acetate-sunglasses"
 itemNo: "KAS-315"
 date: "2026-05-12"
 colors: "Jernih & Zaitun & Syampanya & Havana & Kelabu Lut Sinar & Hitam"
-materials: "Asetat Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Asetat Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "OEM & ODM ( Penyesuaian )"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -62,7 +62,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai 
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Binaan asetat Mazzucchelli dan JINYU gred tinggi memberikan bingkai yang bertenaga, ringan dan tahan lama dengan kemasan gilapan tangan premium.
+- **Bahan Premium:** Binaan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi memberikan bingkai yang bertenaga, ringan dan tahan lama dengan kemasan gilapan tangan premium.
 - **Perkakasan Tahan Lama:** Engsel struktur 4+3 tong yang teguh direka untuk kestabilan unggul dan kelancaran operasi jangka panjang.
 - **Optik Termaju:** Lensa nilon tahan hentaman yang menawarkan kejelasan dan ketahanan yang sangat baik, dengan pilihan salutan tersuai yang meluas tersedia.
 - **Reka Bentuk Ergonomik:** Alas hidung bersepadu dan padanan 57-14-145mm yang direka dengan ketepatan untuk keselesaan sepanjang hari dan padanan unisex yang selamat.
@@ -80,7 +80,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai 
 
 ## Gambaran Keseluruhan
 
-Dihasilkan daripada asetat Mazzucchelli dan JINYU premium, model ini menawarkan kemasan gilapan tangan yang bertenaga yang menangkap intipati cermin mata mewah kontemporari.
+Dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU premium, model ini menawarkan kemasan gilapan tangan yang bertenaga yang menangkap intipati cermin mata mewah kontemporari.
 
 Penyepaduan engsel 4+3 tong dan padanan 57-14-145mm ergonomik memastikan integriti struktur jangka panjang dan keselesaan pemakaian yang luar biasa.
 

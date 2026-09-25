@@ -5,7 +5,7 @@ slug: "kas-128-acetate-sunglasses"
 itemNo: "KAS-128"
 date: "2026-05-09"
 colors: "Hitam & Putih & Marmar Hijau & Marmar Biru & Marmar Hitam & Delima"
-materials: "Premium Mazzucchelli & Asetat JINYU & Penyesuaian"
+materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "OEM & ODM ( Penyesuaian )"
 moq: "300 unit/model (100unit/warna)"
 
@@ -62,7 +62,7 @@ seoKeywords: "pengilang cermin mata asetat premium, cermin mata OEM tersuai KAS-
 
 ## Ciri-ciri Utama
 
-- **Asetat Premium:** Dihasilkan daripada asetat Mazzucchelli dan JINYU yang terkenal di dunia, menawarkan ketahanan luar biasa dan kemasan berkilat tinggi yang menyerlah.
+- **Asetat Premium:** Dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU yang terkenal di dunia, menawarkan ketahanan luar biasa dan kemasan berkilat tinggi yang menyerlah.
 - **Engsel Ketepatan:** Engsel struktur 4+3 tong yang teguh direka untuk kestabilan unggul dan kelancaran operasi jangka panjang.
 - **Optik Berprestasi Tinggi:** Kanta nilon tahan lasak yang memberikan kejelasan luar biasa dan rintangan hentaman dengan pilihan penyesuaian yang meluas.
 - **Keselesaan Bersepadu:** Alas hidung bersepadu yang dibentuk dengan tepat direka untuk kesesuaian yang selamat, hipoalergenik dan seimbang semasa pemakaian berpanjangan.
@@ -79,7 +79,7 @@ seoKeywords: "pengilang cermin mata asetat premium, cermin mata OEM tersuai KAS-
 
 ## Gambaran Keseluruhan
 
-Asetat Mazzucchelli dan JINYU bersatu dalam siluet berani berkilat tinggi yang mentakrifkan kemewahan moden melalui estetik unisexnya yang unik.
+Asetat Mazzucchelli dan JIMEI & JINYU bersatu dalam siluet berani berkilat tinggi yang mentakrifkan kemewahan moden melalui estetik unisexnya yang unik.
 
 Engsel 4+3 tong kejuruteraan ketepatan dan alas hidung bersepadu memastikan kestabilan luar biasa dan keselesaan jangka panjang untuk si pemakai.
 

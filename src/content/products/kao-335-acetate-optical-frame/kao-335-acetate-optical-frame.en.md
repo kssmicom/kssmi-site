@@ -5,7 +5,7 @@ slug: "kao-335-acetate-optical-frame"
 itemNo: "KAO-335"
 date: "2026-05-10"
 colors: "Black, Tortoise, Clear Green with Honey"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -41,7 +41,7 @@ seoKeywords: "custom acetate optical frames, OEM eyewear manufacturer China, pre
 
 ## Technical Features
 
-- **Premium Material:** Crafted from premium Mazzucchelli and JINYU acetate to provide a lightweight yet durable frame with rich, vibrant color depth for lasting luxury appeal.
+- **Premium Material:** Crafted from premium Mazzucchelli, JIMEI & JINYU acetate to provide a lightweight yet durable frame with rich, vibrant color depth for lasting luxury appeal.
 - **Engineered Hardware:** Built with stable 3+2 barrel rivet structure hinges to ensure long-term alignment and smooth temple operation under daily wear.
 - **Tenacious Optics:** Fitted with resilient nylon lenses providing superior impact resistance and high optical clarity, customizable with specialized coatings and bespoke tints.
 - **Integrated Comfort:** Features integrated acetate nose pads paired with a classic 47-24-145mm sizing configuration to distribute weight evenly and prevent slipping.
@@ -58,7 +58,7 @@ seoKeywords: "custom acetate optical frames, OEM eyewear manufacturer China, pre
 
 ## Overview
 
-Rich color depth and a premium hand-polished finish define the Mazzucchelli and JINYU acetate construction of the KAO-335. This retro-inspired, unisex frame caters to premium eyewear brands seeking classic design coupled with contemporary luxury appeal.
+Rich color depth and a premium hand-polished finish define the Mazzucchelli, JIMEI & JINYU acetate construction of the KAO-335. This retro-inspired, unisex frame caters to premium eyewear brands seeking classic design coupled with contemporary luxury appeal.
 
 Precision-engineered 3+2 barrel rivet structure hinges secure the temples, complemented by integrated nose pads and an ergonomic 47-24-145mm fit that ensures balanced, all-day comfort.
 

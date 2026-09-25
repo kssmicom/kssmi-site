@@ -5,7 +5,7 @@ slug: "kas-308-acetate-sunglasses"
 itemNo: "KAS-308"
 date: "2026-05-12"
 colors: "Ireng & Biru Royal & Coklat & Zaitun"
-materials: "Mazzucchelli Premium & Asetat JINYU & Kustomisasi"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JINYU kelas dhuwur sing nyedhiyakake daya tahan sing luar biasa lan estetika sing semangat lan tahan suwe.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing nyedhiyakake daya tahan sing luar biasa lan estetika sing semangat lan tahan suwe.
 - **Hardware Awet:** Engsel struktur 4+3 barrel sing kuwat dirancang kanggo kelancaran operasional sing konsisten lan integritas struktural.
 - **Optik Unggul:** Lensa nilon sing kuwat nyedhiyakake resistensi impact sing apik banget kanthi pilihan kustomisasi sing akeh kanggo warna lan lapisan.
 - **Desain Ergonomis:** Bantalan irung terintegrasi sing dirancang kanggo pas sing mulus lan kenyamanan sing luwih apik sajrone panggunaan sing suwe.
@@ -72,7 +72,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 
 ## Ringkesan
 
-Diproses kanthi presisi saka asetat Mazzucchelli lan JINYU premium, KAS-308 nyedhiyakake sasis sing entheng nanging kuwat kanggo kacamata fesyen kelas dhuwur.
+Diproses kanthi presisi saka asetat Mazzucchelli lan JIMEI & JINYU premium, KAS-308 nyedhiyakake sasis sing entheng nanging kuwat kanggo kacamata fesyen kelas dhuwur.
 
 Bantalan irung terintegrasi lan sistem engsel 4+3 barrel sing diperkuat njamin kenyamanan sing tahan suwe lan kinerja sing dipercaya sajrone umur produk.
 

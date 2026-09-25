@@ -5,7 +5,7 @@ slug: "kao-343-acetate-optical-frame"
 itemNo: "KAO-343"
 date: "2026-05-10"
 colors: "Hitam, Khaki, Merah jambu"
-materials: "Asetat Mazzucchelli Premium & JINYU & Penyesuaian"
+materials: "Asetat Mazzucchelli Premium & JIMEI & JINYU & Penyesuaian"
 serviceMode: "OEM & ODM (Penyesuaian)"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -41,7 +41,7 @@ seoKeywords: "pengilang bingkai optik asetat, kacamata unisex boleh suai, kacama
 
 ## Ciri-ciri Utama
 
-- **Bahan Asetat Premium:** Pembinaan asetat Mazzucchelli dan JINYU gred tinggi yang menawarkan kedalaman warna yang ceria, ketahanan struktur jangka panjang, serta pengalaman sentuhan premium yang ringan.
+- **Bahan Asetat Premium:** Pembinaan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi yang menawarkan kedalaman warna yang ceria, ketahanan struktur jangka panjang, serta pengalaman sentuhan premium yang ringan.
 - **Perkakasan Engsel Teguh:** Engsel struktur tong 3+2 berketepatan tinggi yang memberikan kestabilan mekanikal yang luar biasa, pergerakan lancar dan keserasian dengan naik taraf 5 tong atau engsel spring tersuai.
 - **Lensa Pelindung Premium:** Lensa nilon lasak yang memberikan rintangan hentaman yang sangat baik, kejelasan optik yang tinggi serta pilihan warna dan salutan yang boleh disesuaikan sepenuhnya.
 - **Padanan Bersepadu Ergonomik:** Alas hidung asetat bersepadu direka untuk mengagihkan tekanan secara merata demi padanan yang selamat, selesa dan tidak mudah gelincir.
@@ -59,7 +59,7 @@ seoKeywords: "pengilang bingkai optik asetat, kacamata unisex boleh suai, kacama
 
 ## Gambaran Keseluruhan
 
-Kedalaman yang ceria dan integriti bahan premium menentukan bingkai uniseks KAO-343, yang diukir daripada asetat Mazzucchelli dan JINYU gred tinggi. Penggayaan anggunnya menawarkan estetika mewah dan bergaya yang disesuaikan untuk koleksi kacamata kontemporari.
+Kedalaman yang ceria dan integriti bahan premium menentukan bingkai uniseks KAO-343, yang diukir daripada asetat Mazzucchelli dan JIMEI & JINYU gred tinggi. Penggayaan anggunnya menawarkan estetika mewah dan bergaya yang disesuaikan untuk koleksi kacamata kontemporari.
 
 Direka secara tepat dengan alas hidung bersepadu dan struktur engsel tong 3+2 yang teguh, bingkai ini memastikan padanan yang seimbang dan tidak gelincir bersama dengan ketahanan mekanikal jangka panjang.
 

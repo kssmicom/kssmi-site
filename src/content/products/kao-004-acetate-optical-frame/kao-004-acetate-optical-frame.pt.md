@@ -5,7 +5,7 @@ slug: "kao-004-acetate-optical-frame"
 itemNo: "KAO-004"
 date: "2026-05-10"
 colors: "Preto & Tartaruga & Laranja & Zebra & Dourado"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -43,7 +43,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, armações ópticas 
 
 ## Características
 
-- **Arquitetura de Material Premium:** Fabricado com acetato Mazzucchelli e JINYU de alta qualidade, proporcionando uma armação leve e durável com perfis de cores vibrantes e duradouros.
+- **Arquitetura de Material Premium:** Fabricado com acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, proporcionando uma armação leve e durável com perfis de cores vibrantes e duradouros.
 - **Hardware de Alta Estabilidade:** Dobradiças com estrutura de rebite de 4+3 barris projetadas com precisão para suavidade operacional superior e alinhamento da armação a longo prazo.
 - **Óptica Avançada:** Equipado com lentes de nylon tenazes que oferecem clareza e resistência ao impacto excepcionais, com opções de personalização completas para tonalidades e revestimentos.
 - **Design Ergonômico:** Sistema de ponteiras nasicas integradas esculpido para um ajuste seguro e hipoalergênico que garante conforto consistente durante o uso prolongado.
@@ -61,7 +61,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, armações ópticas 
 
 ## Visão Geral
 
-O acetato Mazzucchelli e JINYU de alta qualidade confere à KAO-004 seu caráter distinto, combinando perfis de cores vibrantes com um acabamento hipoalergênico que parece natural na pele. A composição do material da armação foi selecionada especificamente para oferecer durabilidade sem comprometer a silhueta elegante e leve favorecida pelas casas de moda modernas.
+O acetato Mazzucchelli e JIMEI & JINYU de alta qualidade confere à KAO-004 seu caráter distinto, combinando perfis de cores vibrantes com um acabamento hipoalergênico que parece natural na pele. A composição do material da armação foi selecionada especificamente para oferecer durabilidade sem comprometer a silhueta elegante e leve favorecida pelas casas de moda modernas.
 
 As ponteiras nasicas integradas e uma estrutura reforçada de rebite de 4+3 barris definem a excelência mecânica da armação, proporcionando um ajuste seguro e um desempenho consistente do hardware.
 

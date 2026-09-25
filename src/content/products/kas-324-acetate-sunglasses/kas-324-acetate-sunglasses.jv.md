@@ -5,7 +5,7 @@ slug: "kas-324-acetate-sunglasses"
 itemNo: "KAS-324"
 date: "2026-05-13"
 colors: "Ireng, Bulus, Shampanye"
-materials: "Asetat Mazzucchelli & JINYU Premium & Kustomisasi"
+materials: "Asetat Mazzucchelli & JIMEI & JINYU Premium & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -49,7 +49,7 @@ seoKeywords: "kacamata hitam asetat premium, gaya kacamata asetat fesyen, produs
 ---
 
 ## Fitur
-- **Bahan Asetat Premium:** Konstruksi asetat Mazzucchelli lan JINYU kelas dhuwur sing nawakake finish warna manteb kanthi daya tahan luar biasa lan kenyamanan entheng.
+- **Bahan Asetat Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing nawakake finish warna manteb kanthi daya tahan luar biasa lan kenyamanan entheng.
 - **Hardware Presisi:** Engsel struktur 3+2 barrel sing stabil dirancang kanggo kelancaran operasional sing konsisten lan linuwih jangka panjang.
 - **Optik Canggih:** Lensa nylon tahan benturan kanthi pilihan kustomisasi lengkap kanggo perlindungan UV premium lan kajelasan.
 - **Kenyamanan Integrasi:** Bantalan irung cetakan presisi yang dirancang kanggo pas ergonomis lan hypoallergenic ing macem-macem profil rai.
@@ -66,7 +66,7 @@ seoKeywords: "kacamata hitam asetat premium, gaya kacamata asetat fesyen, produs
 
 ## Ringkesan
 
-Kanggo label kacamata sing ngutamakake keunggulan bahan, KAS-324 nggunakake asetat Mazzucchelli lan JINYU premium kanggo nggayuh finish sing khas lan warna manteb. Pilihan iki nyedhiyakake daya tahan entheng sing dibutuhake kanggo portofolio fashion tingkat mewah.
+Kanggo label kacamata sing ngutamakake keunggulan bahan, KAS-324 nggunakake asetat Mazzucchelli lan JIMEI & JINYU premium kanggo nggayuh finish sing khas lan warna manteb. Pilihan iki nyedhiyakake daya tahan entheng sing dibutuhake kanggo portofolio fashion tingkat mewah.
 
 Struktur engsel 3+2 barrel frame lan bantalan irung integrasi diproses kanthi presisi kanggo njamin linuwih operasional sing konsisten lan kenyamanan sedina muput.
 

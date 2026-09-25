@@ -5,7 +5,7 @@ slug: "kas-129-acetate-sunglasses"
 itemNo: "KAS-129"
 date: "2026-05-09"
 colors: "Preto & Rubi & Azul Real & Mármore Roxo & Mármore Pérola"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) (Personalização)"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante óculos de sol acetato, óculos de sol OEM personalizad
 
 ## Características
 
-- **Acetato Premium:** Armação e hastes em acetato Mazzucchelli e JINYU selecionados à mão, proporcionando uma experiência de uso leve, vibrante e hipoalergênica.
+- **Acetato Premium:** Armação e hastes em acetato Mazzucchelli e JIMEI & JINYU selecionados à mão, proporcionando uma experiência de uso leve, vibrante e hipoalergênica.
 - **Hardware Durável:** Dobradiças com estrutura de 4+3 barris projetadas com precisão para máxima estabilidade e suavidade operacional vitalícia.
 - **Lentes de Alto Desempenho:** Tecnologia de lentes de nylon tenaz oferecendo resistência superior ao impacto e clareza óptica com opções de personalização completas.
 - **Conforto Integrado:** Plaquetas nasais integradas com design ergonômico garantindo um ajuste estável e antiderrapante para diversos perfis faciais.
@@ -76,7 +76,7 @@ seoKeywords: "fabricante óculos de sol acetato, óculos de sol OEM personalizad
 
 ## Visão Geral
 
-As casas de moda de luxo que buscam uma vantagem visual distinta encontram-na no KAS-129, que combina acetato Mazzucchelli e JINYU selecionado à mão com uma silhueta ousada e unissex.
+As casas de moda de luxo que buscam uma vantagem visual distinta encontram-na no KAS-129, que combina acetato Mazzucchelli e JIMEI & JINYU selecionado à mão com uma silhueta ousada e unissex.
 
 Este design integra um sistema de dobradiças de 4+3 barris durável e plaquetas nasais ergonômicas para garantir um desempenho consistente e um conforto refinado em uso de alto volume.
 

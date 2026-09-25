@@ -5,7 +5,7 @@ slug: "kas-111-acetate-sunglasses"
 itemNo: "KAS-111"
 date: "2026-05-09"
 colors: "Rouge Bonbon & Écaille Rose & Blanc Crème & Noir"
-materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
+materials: "Mazzucchelli Premium & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100pcs/couleur)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, lunettes de soleil OEM pers
 
 ## Caractéristiques
 
-- **Matériau de Monture Premium :** Fabriqué avec expertise en acétate Mazzucchelli et JINYU de haute qualité, offrant une sensation de légèreté avec une durabilité exceptionnelle et une profondeur de couleur vibrante.
+- **Matériau de Monture Premium :** Fabriqué avec expertise en acétate Mazzucchelli et JIMEI & JINYU de haute qualité, offrant une sensation de légèreté avec une durabilité exceptionnelle et une profondeur de couleur vibrante.
 - **Charnières de Précision :** Charnières robustes à structure en barillet 3+2 conçues pour une fluidité opérationnelle à long terme et une stabilité structurelle.
 - **Optique Haute Performance :** Verres en nylon tenaces offrant une clarté et une résistance aux chocs supérieures, avec de nombreuses options de teintes personnalisées disponibles.
 - **Confort Ergonomique :** Plaquettes de nez intégrées conçues pour un ajustement sans couture et hypoallergénique qui assure stabilité et confort tout au long de la journée.
@@ -71,7 +71,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, lunettes de soleil OEM pers
 
 ## Aperçu
 
-La profondeur vibrante des couleurs et l'intégrité structurelle de qualité supérieure se rencontrent dans le KAS-111, un modèle fabriqué à partir d'acétate Mazzucchelli et JINYU de haute qualité pour capturer une esthétique audacieuse et d'inspiration vintage.
+La profondeur vibrante des couleurs et l'intégrité structurelle de qualité supérieure se rencontrent dans le KAS-111, un modèle fabriqué à partir d'acétate Mazzucchelli et JIMEI & JINYU de haute qualité pour capturer une esthétique audacieuse et d'inspiration vintage.
 
 La stabilité structurelle est maintenue grâce à des charnières robustes en barillet 3+2, tandis que les plaquettes de nez intégrées offrent un ajustement ergonomique et sans couture pour différentes formes de visage.
 

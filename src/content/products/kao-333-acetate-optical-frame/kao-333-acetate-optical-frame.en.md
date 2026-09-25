@@ -5,7 +5,7 @@ slug: "kao-333-acetate-optical-frame"
 itemNo: "KAO-333"
 date: "2026-05-10"
 colors: "Tortoise, Honey"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -40,7 +40,7 @@ seoKeywords: "acetate optical frames, customizable acetate frames, China eyewear
 
 ## Technical Features
 
-- **Premium Material:** Crafted from premium Mazzucchelli and JINYU acetate, offering an ultra-lightweight yet exceptionally durable structure with vibrant, deep-toned color aesthetics.
+- **Premium Material:** Crafted from premium Mazzucchelli, JIMEI & JINYU acetate, offering an ultra-lightweight yet exceptionally durable structure with vibrant, deep-toned color aesthetics.
 - **Engineered Hardware:** High-reliability 3+2 barrel rivet structure hinges offering stable, smooth temple movement, with spring hinge and 5-barrel options available.
 - **Tenacious Optics:** High-durability nylon lenses offering exceptional optical clarity and impact resistance with full bespoke coating and customization services.
 - **Integrated Comfort:** Seamlessly integrated acetate nose pads combined with a tailored 51-22-145mm geometry to deliver a balanced, pressure-free fit.
@@ -57,7 +57,7 @@ seoKeywords: "acetate optical frames, customizable acetate frames, China eyewear
 
 ## Overview
 
-Premium Mazzucchelli and JINYU acetate provides the KAO-333 with rich, deep-toned color depth and remarkable structural longevity. Its retro-inspired silhouette balances timeless luxury styling with a comfortable, unisex fit.
+Premium Mazzucchelli, JIMEI & JINYU acetate provides the KAO-333 with rich, deep-toned color depth and remarkable structural longevity. Its retro-inspired silhouette balances timeless luxury styling with a comfortable, unisex fit.
 
 Precision-engineered 3+2 barrel rivet hinges and integrated nose pads maintain stable temple alignment and a weightless feel during daily wear.
 

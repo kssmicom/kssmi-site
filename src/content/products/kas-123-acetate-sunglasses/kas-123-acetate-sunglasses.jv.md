@@ -5,7 +5,7 @@ slug: "kas-123-acetate-sunglasses"
 itemNo: "KAS-123"
 date: "2026-05-09"
 colors: "Ireng & Mustard & Maple"
-materials: "Asetat Premium Mazzucchelli & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -49,7 +49,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata OEM kustom, kacamata hita
 ---
 
 ## Fitur
-- **Asetat Premium:** Konstruksi asetat Mazzucchelli lan JINYU sing dipoles tangan nawakake daya tahan sing luar biasa lan kedalaman warna sing semangat kanggo branding mewah.
+- **Asetat Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU sing dipoles tangan nawakake daya tahan sing luar biasa lan kedalaman warna sing semangat kanggo branding mewah.
 - **Engsel Presisi:** Engsel struktur barel 3+2 sing kuwat dirancang kanggo kelancaran operasional sing konsisten lan integritas struktural jangka panjang.
 - **Optik Performa Dhuwur:** Lensa nilon sing kuat nyedhiyakake kejelasan sing unggul lan tahan benturan, kanthi pilihan kustomisasi lengkap kanggo lapisan lensa khusus.
 - **Desain Ergonomis:** Bantalan irung terintegrasi lan kontur gagang sing apik njamin pas sing aman lan tanpa tekanan kanggo kenyamanan sedina muput.
@@ -66,7 +66,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata OEM kustom, kacamata hita
 
 ## Ringkesan
 
-Nggabungake kedalaman warna sing semangat karo integritas struktural asetat Mazzucchelli lan JINYU sing dipoles tangan, model KAS-123 nggambarake dhasar sing serba guna kanggo koleksi kacamata mewah.
+Nggabungake kedalaman warna sing semangat karo integritas struktural asetat Mazzucchelli lan JIMEI & JINYU sing dipoles tangan, model KAS-123 nggambarake dhasar sing serba guna kanggo koleksi kacamata mewah.
 
 Profil unisex sing seimbang dikuwatake dening engsel barel 3+2 sing dirancang kanthi presisi lan bantalan irung terintegrasi, njamin pas sing apik lan awet kanggo nyandhang sedina muput.
 

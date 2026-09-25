@@ -5,7 +5,7 @@ slug: "kas-130-acetate-sunglasses"
 itemNo: "KAS-130"
 date: "2026-05-09"
 colors: "Preto & Cinzento & Tartaruga & Pêssego & Marrom"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "OEM & ODM ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Características
 
-- **Material Premium:** Construção em acetato Mazzucchelli e JINYU de alta qualidade que oferece uma durabilidade excecional e uma profundidade de cor vibrante para um apelo estético duradouro.
+- **Material Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que oferece uma durabilidade excecional e uma profundidade de cor vibrante para um apelo estético duradouro.
 - **Hardware Robusto:** Dobradiças de estrutura barrel 4+3 projetadas com precisão para uma estabilidade superior e um desempenho operacional suave a longo prazo.
 - **Ótica de Alta Definição:** Lentes de nylon tenaz que proporcionam uma visão cristalina e uma elevada resistência ao impacto, com amplas opções de personalização para matizes e revestimentos.
 - **Conforto Ergonómico:** O design de ponteira nasica integrada assegura um ajuste seguro e sem pressão, adequado para uso durante todo o dia em diversos perfis faciais.
@@ -76,7 +76,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Visão Geral
 
-Fabricadas em acetato Mazzucchelli e JINYU de alta qualidade, estas armações apresentam uma linguagem de design ousada e focada no luxo que enfatiza tanto a profundidade da cor vibrante quanto a estabilidade estrutural duradoura.
+Fabricadas em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, estas armações apresentam uma linguagem de design ousada e focada no luxo que enfatiza tanto a profundidade da cor vibrante quanto a estabilidade estrutural duradoura.
 
 A integração de dobradiças barrel 4+3 e um design de ponteira nasica sem pressão proporciona a experiência tátil refinada e a durabilidade a longo prazo esperadas pelo público de retalho de alta gama.
 

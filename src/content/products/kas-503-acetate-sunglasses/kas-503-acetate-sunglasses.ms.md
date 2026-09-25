@@ -5,7 +5,7 @@ slug: "kas-503-acetate-sunglasses"
 itemNo: "KAS-503"
 date: "2026-05-13"
 colors: "Hitam, Merah dengan Kecerunan Merah, Kura-kura dengan Coklat"
-materials: "Asetat Premium Mazzucchelli & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Penyesuaian"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -42,7 +42,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam oem tersuai,
 
 ## Ciri-ciri Utama
 
-- **Bahan Asetat Premium:** Asetat Mazzucchelli dan JINYU premium menawarkan kemasan yang ringan, tahan lama dan ceria untuk tarikan estetik yang luar biasa.
+- **Bahan Asetat Premium:** Asetat Mazzucchelli dan JIMEI & JINYU premium menawarkan kemasan yang ringan, tahan lama dan ceria untuk tarikan estetik yang luar biasa.
 - **Perkakasan Tahan Lama:** Engsel struktur tong 3+2 yang stabil direka untuk kelancaran operasi jangka panjang, dengan peningkatan engsel 5 tong dan spring pilihan.
 - **Optik Premium:** Lensa nilon yang tahan lasak memberikan kejelasan visual dan ketahanan yang tinggi, dengan pelbagai pilihan pewarnaan tersuai yang ada.
 - **Keselesaan Ergonomik:** Alas hidung asetat bersepadu direka untuk memberikan kesesuaian yang selamat dan selesa untuk pemakaian sepanjang hari.
@@ -60,7 +60,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam oem tersuai,
 
 ## Gambaran Keseluruhan
 
-Dibuat dari asetat Mazzucchelli dan JINYU premium, cermin mata hitam KAS-503 membawa keceriaan dan ketahanan yang luar biasa pada koleksi cermin mata moden.
+Dibuat dari asetat Mazzucchelli dan JIMEI & JINYU premium, cermin mata hitam KAS-503 membawa keceriaan dan ketahanan yang luar biasa pada koleksi cermin mata moden.
 
 Penyepaduan engsel 3+2 tong yang boleh dipercayai dengan lensa nilon yang tahan lasak memastikan kestabilan struktur, sementara alas hidung asetat memberikan keselesaan ergonomik yang tahan lama.
 

@@ -5,7 +5,7 @@ slug: "kas-101-acetate-sunglasses"
 itemNo: "KAS-101"
 date: "2026-05-05"
 colors: "Blanc & Panda & Léopard & Havana & Transparent & Noir"
-materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
+materials: "Mazzucchelli Premium & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -61,7 +61,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, lunettes de soleil OEM pers
 ---
 
 ## Caractéristiques
-- **Matériau Premium :** Fabrication en acétate Mazzucchelli et JINYU de haute qualité offrant une sensation de légèreté avec une profondeur de couleur vibrante et durable.
+- **Matériau Premium :** Fabrication en acétate Mazzucchelli et JIMEI & JINYU de haute qualité offrant une sensation de légèreté avec une profondeur de couleur vibrante et durable.
 - **Construction Renforcée :** Branches en acétate durables intégrées à des charnières à structure 3+2 barillets conçues pour une intégrité structurelle accrue et une fluidité de fonctionnement.
 - **Optique Haute Définition :** Verres en nylon tenace offrant une clarté et une résistance aux chocs supérieures, avec de nombreuses options de personnalisation pour les teintes et les revêtements.
 - **Design Ergonomique :** Plaquettes de nez intégrées et taille sur mesure de 58-17-143mm conçues pour un ajustement sûr et confortable qui maintient le profil esthétique élégant de la monture.
@@ -78,7 +78,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, lunettes de soleil OEM pers
 
 ## Aperçu
 
-L'acétate vibrant de Mazzucchelli et JINYU confère au KAS-101 sa profondeur de couleur saisissante et sa durabilité légère, le positionnant comme un incontournable pour les portefeuilles de lunettes à la pointe de la tendance.
+L'acétate vibrant de Mazzucchelli et JIMEI & JINYU confère au KAS-101 sa profondeur de couleur saisissante et sa durabilité légère, le positionnant comme un incontournable pour les portefeuilles de lunettes à la pointe de la tendance.
 
 Chaque monture intègre des charnières à 3+2 barillets conçues avec précision et un profil ergonomique pour offrir une résistance structurelle constante et un confort de port à long terme.
 

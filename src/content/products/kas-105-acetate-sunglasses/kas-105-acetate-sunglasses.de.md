@@ -5,7 +5,7 @@ slug: "kas-105-acetate-sunglasses"
 itemNo: "KAS-105"
 date: "2026-05-06"
 colors: "Grau & Glänzendes Havanna & Mattes Havanna & Klar & Schwarz"
-materials: "Premium-Mazzucchelli & JINYU-Acetat & Individualisierung"
+materials: "Premium-Mazzucchelli & JIMEI & JINYU-Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -54,7 +54,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, Custom OEM Sonnenbrillen, Premium
 
 ## Eigenschaften
 
-- **Premium-Material:** Handpolierte Rahmen aus den weltbekannten Acetaten Mazzucchelli und JINYU, die eine außergewöhnliche Haltbarkeit und eine lebendige Farbtiefe bieten.
+- **Premium-Material:** Handpolierte Rahmen aus den weltbekannten Acetaten Mazzucchelli und JIMEI & JINYU, die eine außergewöhnliche Haltbarkeit und eine lebendige Farbtiefe bieten.
 - **Langlebige Hardware:** Präzisionsgefertigte 3+2 Barrel-Scharniere sorgen für strukturelle Stabilität und reibungslose, langfristige Leistung.
 - **Hochleistungsoptik:** Schlagfeste Nylon-Gläser bieten überlegene Klarheit und Haltbarkeit für High-End-Modebrillenstandards.
 - **Ergonomisches Design:** Integrierte Nasenpads und eine präzise ausbalancierte Rahmengeometrie (51-23-145 mm), entwickelt für ganztägigen Komfort und eine universelle Passform.
@@ -71,7 +71,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, Custom OEM Sonnenbrillen, Premium
 
 ## Übersicht
 
-Die KAS-105 ist aus hochwertigem Mazzucchelli- und JINYU-Acetat gefertigt und verbindet ein kühnes Unisex-Design mit lebendiger Farbtiefe. Dieser handpolierte Rahmen dient als vielseitige Basis für Marken, die Wert auf hochdichte Materialien und zeitgenössische Modeästhetik legen.
+Die KAS-105 ist aus hochwertigem Mazzucchelli- und JIMEI & JINYU-Acetat gefertigt und verbindet ein kühnes Unisex-Design mit lebendiger Farbtiefe. Dieser handpolierte Rahmen dient als vielseitige Basis für Marken, die Wert auf hochdichte Materialien und zeitgenössische Modeästhetik legen.
 
 Die Integration von 3+2 Barrel-Scharnieren und schlagfesten Nylon-Gläsern bietet die strukturelle Integrität und optische Leistung, die von Luxusmarktstandards gefordert werden.
 

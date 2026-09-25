@@ -5,7 +5,7 @@ slug: "kao-306-acetate-optical-frame"
 itemNo: "KAO-306"
 date: "2026-05-10"
 colors: "Hitam & Kelabu & Coklat & Zaitun"
-materials: "Premium Mazzucchelli & Asetat JINYU & Penyesuaian"
+materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "OEM & ODM ( Penyesuaian )"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -57,7 +57,7 @@ seoKeywords: "pengilang bingkai optik asetat, kacamata asetat tersuai, optik lab
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Pembinaan asetat Mazzucchelli dan JINYU gred tinggi yang menawarkan rasa ringan, ketahanan luar biasa, dan kedalaman warna yang bertenaga.
+- **Bahan Premium:** Pembinaan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi yang menawarkan rasa ringan, ketahanan luar biasa, dan kedalaman warna yang bertenaga.
 - **Perkakasan Ketepatan:** Engsel struktur rivet 4+3 barrel khusus yang direka untuk kestabilan yang dipertingkatkan dan kelancaran operasi jangka panjang.
 - **Optik Termaju:** Lensa nylon teguh yang memberikan kejelasan unggul dengan pilihan penyesuaian penuh untuk warna dan salutan pelindung khusus.
 - **Keselesaan Bersepadu:** Alas hidung bersepadu yang dibentuk secara profesional direka untuk pengagihan berat yang optimum dan padanan yang selamat serta hipoalergenik.
@@ -74,7 +74,7 @@ seoKeywords: "pengilang bingkai optik asetat, kacamata asetat tersuai, optik lab
 
 ## Gambaran Keseluruhan
 
-Asetat Mazzucchelli dan JINYU menyediakan asas untuk bingkai ini, memberikan kemasan premium yang menggabungkan ketepuan warna yang bertenaga dengan ketahanan yang luar biasa. Profil 46-23-145mm yang halus menawarkan kanvas serba boleh untuk identiti jenama mewah.
+Asetat Mazzucchelli dan JIMEI & JINYU menyediakan asas untuk bingkai ini, memberikan kemasan premium yang menggabungkan ketepuan warna yang bertenaga dengan ketahanan yang luar biasa. Profil 46-23-145mm yang halus menawarkan kanvas serba boleh untuk identiti jenama mewah.
 
 Penyepaduan engsel rivet 4+3 barrel dan lensa nylon teguh memastikan produk yang mengimbangi prestasi teknikal dengan keselesaan pemakaian sepanjang hari.
 

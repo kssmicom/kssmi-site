@@ -5,7 +5,7 @@ slug: "kao-326-acetate-optical-frame"
 itemNo: "KAO-326"
 date: "2026-05-10"
 colors: "Preto, Tartaruga, Teal com Havana"
-materials: "Acetato Mazzucchelli & JINYU Premium & Personalização"
+materials: "Acetato Mazzucchelli & JIMEI & JINYU Premium & Personalização"
 serviceMode: "Fabricação por Encomenda & Design e Fabricação (Personalização)"
 moq: "300 pçs/modelo (100pçs/Cor)"
 
@@ -50,7 +50,7 @@ seoKeywords: "armações ópticas de acetato retro, fabricante de óculos de ace
 
 ## Características
 
-- **Material Premium:** Fabricado a partir de acetato premium Mazzucchelli e JINYU, oferecendo uma estrutura leve mas excepcionalmente durável com profundidade de colir vibrante e duradoura.
+- **Material Premium:** Fabricado a partir de acetato premium Mazzucchelli e JIMEI & JINYU, oferecendo uma estrutura leve mas excepcionalmente durável com profundidade de colir vibrante e duradoura.
 - **Componentes Mecânicos Projetados:** Dobradiças de rebite de 3+2 barris de alta confiabilidade que proporcionam um movimento de hastes estável e suave com opções de dobradiças de mola personalizadas.
 - **Óptica Tenaz:** Lentes de nylon de alta durabilidade que fornecem excelente clareza e resistência ao impacto com opções completas de revestimento sob medida.
 - **Conforto Integrado:** Ponteiras nasicas integradas sem costuras combinadas com uma geometria sob medida de 47-20-148mm para proporcionar um ajuste equilibrado e sem deslizamentos.
@@ -67,7 +67,7 @@ seoKeywords: "armações ópticas de acetato retro, fabricante de óculos de ace
 
 ## Visão Geral
 
-Para marcas de óculos que priorizam a vibração profunda da cor e a durabilidade estrutural, esta armação óptica de inspiração retro é esculpida em acetato premium Mazzucchelli e JINYU.
+Para marcas de óculos que priorizam a vibração profunda da cor e a durabilidade estrutural, esta armação óptica de inspiração retro é esculpida em acetato premium Mazzucchelli e JIMEI & JINYU.
 
 Projetada para um uso confiável a largo prazo, integra um robusto sistema de dobradiças de rebite de 3+2 barris e ponteiras nasicas integradas para garantir um ajuste equilibrado e sem deslizamentos.
 

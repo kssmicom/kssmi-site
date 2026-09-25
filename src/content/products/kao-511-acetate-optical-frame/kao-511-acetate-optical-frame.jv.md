@@ -5,7 +5,7 @@ slug: "kao-511-acetate-optical-frame"
 itemNo: "KAO-511"
 date: "2026-05-10"
 colors: "Ireng, Khaki, Jambon Transparan"
-materials: "Mazzucchelli Premium & Asetat JINYU & Kustomisasi"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "Manufaktur Kontrak & Desain lan Manufaktur (Kustomisasi)"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -49,7 +49,7 @@ seoKeywords: "produsen frame optik asetat, frame optik OEM kustom, grosir kacama
 ---
 
 ## Fitur Utama
-- **Bahan Premium:** Frame lan gagang asetat Mazzucchelli lan JINYU sing entheng lan awet, nyedhiyakake stabilitas struktural sing dhuwur lan warna sing padhang.
+- **Bahan Premium:** Frame lan gagang asetat Mazzucchelli lan JIMEI & JINYU sing entheng lan awet, nyedhiyakake stabilitas struktural sing dhuwur lan warna sing padhang.
 - **Hardware Presisi:** Engsel struktur 3+2 tong kanthi presisi dhuwur sing dirancang kanggo umur operasional sing lancar lan awet, kanthi pilihan kustom 5 tong lan engsel spring kasedhiya.
 - **Integrasi Optik:** Lensa nylon kuwat sing nawarake resistensi dampak sing dhuwur lan kejelasan optik sing luar biasa, kanthi dhukungan lengkap kanggo pilihan lensa kustom.
 - **Kenyamanan Ergonomis:** Pad irung integrasi sing mulus, dirancang kanggo nyebarake bobot kanthi rata lan nyegah luncuran kanggo kenyamanan optimal sedina muput.
@@ -66,7 +66,7 @@ seoKeywords: "produsen frame optik asetat, frame optik OEM kustom, grosir kacama
 
 ## Ringkesan
 
-Nggabungake estetika unisex inspirasi retro karo asetat premium Mazzucchelli lan JINYU, frame optik KAO-511 nawarake dhasar sing entheng lan padhang kanggo koleksi kacamata sing ngarepake fashion. Bahan berkualitas tinggi njamin stabilitas struktural sing luar biasa lan kedalaman warna sing sugih ing warna ireng, khaki, utawa jambon transparan.
+Nggabungake estetika unisex inspirasi retro karo asetat premium Mazzucchelli lan JIMEI & JINYU, frame optik KAO-511 nawarake dhasar sing entheng lan padhang kanggo koleksi kacamata sing ngarepake fashion. Bahan berkualitas tinggi njamin stabilitas struktural sing luar biasa lan kedalaman warna sing sugih ing warna ireng, khaki, utawa jambon transparan.
 
 Engsel 3+2 tong presisi lan pad irung integrasi bisa digunakake bebarengan kanggo nyedhiyakake gerakan gagang sing lancar bebarengan karo kenyamanan sing seimbang lan bebas luncur sedina muput.
 

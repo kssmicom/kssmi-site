@@ -5,7 +5,7 @@ slug: "kao-156-acetate-optical-frame"
 itemNo: "KAO-156"
 date: "2026-05-10"
 colors: "Biru Flora dengan Magenta"
-materials: "Asetat Mazzucchelli & JINYU Premium & Penyesuaian"
+materials: "Asetat Mazzucchelli & JIMEI & JINYU Premium & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -42,7 +42,7 @@ seoKeywords: "pengilang bingkai optik asetat, pengeluaran kacamata tersuai, bing
 
 ## Ciri-ciri Utama
 
-- **Komposisi Bahan Premium:** Asetat Mazzucchelli dan JINYU yang digilap tangan menawarkan kemasan yang mendalam, bertenaga dan ketahanan yang luar biasa.
+- **Komposisi Bahan Premium:** Asetat Mazzucchelli dan JIMEI & JINYU yang digilap tangan menawarkan kemasan yang mendalam, bertenaga dan ketahanan yang luar biasa.
 - **Kejuruteraan Bingkai Halus:** Pembinaan bingkai dan tangkai asetat premium yang ringan direka untuk estetik mewah dan pemakaian jangka panjang yang tahan lasak.
 - **Perkakasan Tahan Lama:** Engsel struktur rivet tong 2+1 kejuruteraan jitu memastikan kelancaran operasi yang konsisten dan kestabilan struktur.
 - **Teknologi Lensa Termaju:** Lensa nilon berkekuatan tinggi memberikan kejelasan unggul dengan pilihan salutan dan warna tersuai yang luas.
@@ -59,7 +59,7 @@ seoKeywords: "pengilang bingkai optik asetat, pengeluaran kacamata tersuai, bing
 
 ## Gambaran Keseluruhan
 
-Nada Biru Flora dengan Magenta bertemu dengan kedalaman unggul asetat Mazzucchelli dan JINYU yang digilap tangan, mewujudkan identiti visual bertenaga yang bergema dengan piawaian fesyen mewah.
+Nada Biru Flora dengan Magenta bertemu dengan kedalaman unggul asetat Mazzucchelli dan JIMEI & JINYU yang digilap tangan, mewujudkan identiti visual bertenaga yang bergema dengan piawaian fesyen mewah.
 
 Engsel rivet tong 2+1 yang jitu menetapkan bingkai ringan, memastikan pengalaman sentuhan yang konsisten dan lancar yang melengkapkan alas hidung bersepadu ergonomik.
 

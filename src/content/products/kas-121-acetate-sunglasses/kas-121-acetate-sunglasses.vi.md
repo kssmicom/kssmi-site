@@ -5,7 +5,7 @@ slug: "kas-121-acetate-sunglasses"
 itemNo: "KAS-121"
 date: "2026-05-09"
 colors: "Đen & Havana & Maple"
-materials: "Axetat Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Mazzucchelli cao cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -50,7 +50,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Đặc điểm
 
-- **Cấu trúc Axetat cao cấp:** Được chế tác từ axetat Mazzucchelli và JINYU cấp cao, mang lại gọng kính nhẹ, bền và màu sắc rực rỡ cho khả năng sử dụng lâu dài đặc biệt.
+- **Cấu trúc Axetat cao cấp:** Được chế tác từ axetat Mazzucchelli và JIMEI & JINYU cấp cao, mang lại gọng kính nhẹ, bền và màu sắc rực rỡ cho khả năng sử dụng lâu dài đặc biệt.
 - **Phụ kiện chắc chắn:** Bản lề cấu trúc thùng 3+2 được thiết kế chính xác để đảm bảo sự căn chỉnh an toàn và độ mượt mà tối ưu khi vận hành.
 - **Quang học tiên tiến:** Tròng kính nylon bền bỉ cung cấp độ rõ nét vượt trội, với các tùy chọn nhuộm màu và phủ lớp bảo vệ tùy chỉnh linh hoạt.
 - **Sự thoải mái tối đa:** Đệm mũi liền gọng được thiết kế tỉ mỉ để phân bổ trọng lượng đồng đều, mang lại cảm giác vừa vặn an toàn và thoải mái.
@@ -68,7 +68,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Tổng quan
 
-Kết hợp cảm hứng vintage cổ điển với sự sang trọng hiện đại, KAS-121 được chế tác bậc thầy từ axetat Mazzucchelli và JINYU cao cấp. Nền tảng vật liệu đặc biệt này đảm bảo gọng kính nhẹ nhưng cực kỳ bền với lớp hoàn thiện màu sắc rực rỡ đầy cuốn hút.
+Kết hợp cảm hứng vintage cổ điển với sự sang trọng hiện đại, KAS-121 được chế tác bậc thầy từ axetat Mazzucchelli và JIMEI & JINYU cao cấp. Nền tảng vật liệu đặc biệt này đảm bảo gọng kính nhẹ nhưng cực kỳ bền với lớp hoàn thiện màu sắc rực rỡ đầy cuốn hút.
 
 Tính toàn vẹn của cấu trúc được đảm bảo thông qua bản lề thùng 3+2 được thiết kế chính xác, trong khi đệm mũi được tích hợp tỉ mỉ mang lại sự cân bằng hoàn hảo và thoải mái khi đeo.
 

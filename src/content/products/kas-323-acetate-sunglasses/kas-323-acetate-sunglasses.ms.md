@@ -5,7 +5,7 @@ slug: "kas-323-acetate-sunglasses"
 itemNo: "KAS-323"
 date: "2026-05-12"
 colors: "Hitam & Merah & Havana & Hijau-Neon"
-materials: "Asetat Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Asetat Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & Pembuatan ODM (Pengilangan Reka Bentuk) (Penyesuaian)"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengilang cermin mata hitam asetat premium, kilang cermin mata hit
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Binaan asetat Mazzucchelli dan JINYU berkualiti tinggi yang menawarkan kemasan ringan, tahan lama dan menyerlah untuk estetika mewah.
+- **Bahan Premium:** Binaan asetat Mazzucchelli dan JIMEI & JINYU berkualiti tinggi yang menawarkan kemasan ringan, tahan lama dan menyerlah untuk estetika mewah.
 - **Perkakasan Tahan Lama:** Engsel struktur 4+3 barrel yang teguh direka untuk kelancaran operasi yang konsisten dan integriti struktur jangka panjang.
 - **Optik Berprestasi Tinggi:** Lensa nilon tenacious yang memberikan kejelasan unggul dan rintangan hentaman dengan pilihan penyesuaian penuh tersedia.
 - **Reka Bentuk Ergonomik:** Alas hidung bersepadu dan struktur seimbang ketepatan memastikan kesesuaian yang selamat dan hipoalergenik untuk keselesaan sepanjang hari.
@@ -71,7 +71,7 @@ seoKeywords: "pengilang cermin mata hitam asetat premium, kilang cermin mata hit
 
 ## Gambaran Keseluruhan
 
-Dihasilkan dengan ketepatan daripada asetat Mazzucchelli dan JINYU premium, KAS-323 menawarkan estetika yang menyerlah dan tahan lama yang memenuhi permintaan ketat pasaran mewah global.
+Dihasilkan dengan ketepatan daripada asetat Mazzucchelli dan JIMEI & JINYU premium, KAS-323 menawarkan estetika yang menyerlah dan tahan lama yang memenuhi permintaan ketat pasaran mewah global.
 
 Setiap bingkai mempunyai struktur engsel 4+3 barrel yang teguh dan alas hidung bersepadu, memberikan kelancaran operasi yang konsisten dan keselesaan pemakai yang dipertingkatkan.
 

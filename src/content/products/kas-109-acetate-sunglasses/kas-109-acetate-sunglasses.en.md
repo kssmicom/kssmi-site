@@ -5,7 +5,7 @@ slug: "kas-109-acetate-sunglasses"
 itemNo: "KAS-109"
 date: "2026-05-07"
 colors: "Black & Clear & Havana & Olive"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -58,7 +58,7 @@ seoKeywords: "premium acetate sunglasses manufacturer, custom OEM eyewear factor
 
 ## Technical Features
 
-- **Premium Material:** Constructed from world-class Mazzucchelli and JINYU acetate, delivering exceptional durability and deep, vibrant color depth.
+- **Premium Material:** Constructed from world-class Mazzucchelli, JIMEI & JINYU acetate, delivering exceptional durability and deep, vibrant color depth.
 - **Robust Hardware:** Equipped with 3+2 barrel hinges precision-engineered for long-term operational smoothness and structural stability.
 - **High-Impact Optics:** Features tenacious nylon lenses providing superior clarity and impact resistance, with extensive custom coating options available.
 - **Seamless Comfort:** Designed with integrated nose pads that offer a sleek, minimalist aesthetic while ensuring a stable and comfortable fit.
@@ -76,7 +76,7 @@ seoKeywords: "premium acetate sunglasses manufacturer, custom OEM eyewear factor
 
 ## Overview
 
-Crafted from world-class Mazzucchelli and JINYU acetate, the KAS-109 embodies a bold, vintage-inspired aesthetic that resonates with contemporary fashion trends. The material's deep, vibrant color depth and high-transparency finishes provide a sophisticated foundation for premium eyewear collections.
+Crafted from world-class Mazzucchelli, JIMEI & JINYU acetate, the KAS-109 embodies a bold, vintage-inspired aesthetic that resonates with contemporary fashion trends. The material's deep, vibrant color depth and high-transparency finishes provide a sophisticated foundation for premium eyewear collections.
 
 Integrated nose pads and precision-engineered 3+2 barrel hinges ensure a seamless fit and enduring structural stability, balancing robust performance with a lightweight, unisex silhouette.
 

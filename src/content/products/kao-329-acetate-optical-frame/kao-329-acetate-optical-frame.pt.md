@@ -5,7 +5,7 @@ slug: "kao-329-acetate-optical-frame"
 itemNo: "KAO-329"
 date: "2026-05-10"
 colors: "Verde oliva sólido, Rosa sólido, Tartaruga"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda & Design e Fabricação (Personalização)"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -50,7 +50,7 @@ seoKeywords: "armações ópticas de acetato personalizadas, óculos de acetato 
 
 ## Características
 
-- **Material Premium:** Feito de acetato premium Mazzucchelli e JINYU, oferecendo uma estrutura ultra leve e excepcionalmente durável, com cores vibrantes e de tons profundos.
+- **Material Premium:** Feito de acetato premium Mazzucchelli e JIMEI & JINYU, oferecendo uma estrutura ultra leve e excepcionalmente durável, com cores vibrantes e de tons profundos.
 - **Hardware de Engenharia:** Dobradiças de alta confiabilidade com estrutura de 3+2 tambores que garantem movimentos estáveis e suaves das hastes, com opções de dobradiças de mola e de 5 tambores.
 - **Óptica Tenaz:** Lentes de nylon de alta durabilidade que proporcionam clareza óptica e resistência ao impacto excepcionais, com revestimento sob medida e serviços completos de personalização.
 - **Conforto Integrado:** Plaquetas nasais em acetato integradas perfeitamente e combinadas com uma geometria sob medida de 55-17-145mm para proporcionar um ajuste equilibrado e antiderrapante.
@@ -68,7 +68,7 @@ seoKeywords: "armações ópticas de acetato personalizadas, óculos de acetato 
 
 ## Visão Geral
 
-Ao combinar o acetato Mazzucchelli e JINYU, a armação KAO-329 atinge uma profundidade elegante de cor e uma resistência física duradoura. Sua silhueta unisex retro-clássica, apresentada em verde oliva rico, rosa suave e tartaruga clássico, é um elemento premium para qualquer linha de óculos de alta qualidade.
+Ao combinar o acetato Mazzucchelli e JIMEI & JINYU, a armação KAO-329 atinge uma profundidade elegante de cor e uma resistência física duradoura. Sua silhueta unisex retro-clássica, apresentada em verde oliva rico, rosa suave e tartaruga clássico, é um elemento premium para qualquer linha de óculos de alta qualidade.
 
 A fabricação de precisão garante que a geometria de 55-17-145mm trabalhe em harmonia com as plaquetas nasais de acetato integradas e a dobradiça de 3+2 tambores, proporcionando um movimento suave e um ajuste equilibrado e livre de pontos de pressão.
 

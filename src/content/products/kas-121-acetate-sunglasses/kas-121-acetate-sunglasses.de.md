@@ -5,7 +5,7 @@ slug: "kas-121-acetate-sunglasses"
 itemNo: "KAS-121"
 date: "2026-05-09"
 colors: "Schwarz & Havanna & Ahorn"
-materials: "Premium-Mazzucchelli & JINYU-Acetat & Individualisierung"
+materials: "Premium-Mazzucchelli & JIMEI & JINYU-Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -50,7 +50,7 @@ seoKeywords: "Hersteller von Acetat-Sonnenbrillen, maßgeschneiderte OEM-Sonnenb
 
 ## Eigenschaften
 
-- **Premium-Acetat-Konstruktion:** Hergestellt aus hochwertigem Mazzucchelli- und JINYU-Acetat, bietet einen leichten, langlebigen und lebendigen Rahmen für außergewöhnlich langen Tragekomfort.
+- **Premium-Acetat-Konstruktion:** Hergestellt aus hochwertigem Mazzucchelli- und JIMEI & JINYU-Acetat, bietet einen leichten, langlebigen und lebendigen Rahmen für außergewöhnlich langen Tragekomfort.
 - **Robuste Hardware:** Präzisionsgefertigte 3+2 Barrel-Struktur-Scharniere sorgen für eine sichere Ausrichtung und optimale Leichtgängigkeit.
 - **Fortschrittliche Optik:** Widerstandsfähige Nylon-Gläser bieten überlegene visuelle Klarheit mit vielseitigen Optionen für individuelle Tönungen und Beschichtungen.
 - **Nahtloser Komfort:** Sorgfältig gestaltete integrierte Nasenpads verteilen das Gewicht gleichmäßig und sorgen für einen sicheren und bequemen Sitz.
@@ -68,7 +68,7 @@ seoKeywords: "Hersteller von Acetat-Sonnenbrillen, maßgeschneiderte OEM-Sonnenb
 
 ## Überblick
 
-Die KAS-121 verbindet klassische Vintage-Inspiration mit modernem Luxus und ist meisterhaft aus hochwertigem Mazzucchelli- und JINYU-Acetat gefertigt. Diese außergewöhnliche Materialbasis gewährleistet einen leichten und dennoch hoch belastbaren Rahmen mit einem faszinierenden, lebendigen Finish.
+Die KAS-121 verbindet klassische Vintage-Inspiration mit modernem Luxus und ist meisterhaft aus hochwertigem Mazzucchelli- und JIMEI & JINYU-Acetat gefertigt. Diese außergewöhnliche Materialbasis gewährleistet einen leichten und dennoch hoch belastbaren Rahmen mit einem faszinierenden, lebendigen Finish.
 
 Die strukturelle Integrität wird durch präzisionsgefertigte 3+2 Barrel-Scharniere gesichert, während sorgfältig integrierte Nasenpads für eine perfekt ausgewogene und bequeme Passform sorgen.
 

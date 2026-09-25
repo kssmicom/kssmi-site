@@ -5,7 +5,7 @@ slug: "kao-332-acetate-optical-frame"
 itemNo: "KAO-332"
 date: "2026-05-10"
 colors: "Ireng karo Bening, Biru karo Lurik Coklat, Shampanye karo Coklat"
-materials: "Asetat Premium Mazzucchelli & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) (Kustomisasi)"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -41,7 +41,7 @@ seoKeywords: "frame optik asetat, produsen kacamata kustom, frame optik label pr
 
 ## Fitur
 
-- **Bahan Premium:** Digawe saka asetat premium Mazzucchelli lan JINYU, nyedyakake struktur sing entheng banget nanging awet banget kanthi estetika warna sing asri lan jero.
+- **Bahan Premium:** Digawe saka asetat premium Mazzucchelli lan JIMEI & JINYU, nyedyakake struktur sing entheng banget nanging awet banget kanthi estetika warna sing asri lan jero.
 - **Hardware Rekayasa:** Engsel struktur keling 3+2 barrel sing dipercaya banget, nawakake gerakan temple sing stabil lan lancar, kanthi pilihan engsel pegas lan 5 barrel sing kasedhiya.
 - **Optik Kuat:** Lensa nilon kanthi daya tahan dhuwur sing nawakake kejelasan optik sing luar biasa lan ketahanan benturan kanthi layanan lapisan kustom lan kustomisasi lengkap.
 - **Kenyamanan Integrasi:** Bantalan irung asetat sing diintegrasikan kanthi lancar digabungake karo geometri 46-23-145mm sing dirancang khusus kanggo nyedyakake pas sing seimbang lan bebas tekanan.
@@ -59,7 +59,7 @@ seoKeywords: "frame optik asetat, produsen kacamata kustom, frame optik label pr
 
 ## Ringkesan
 
-Estetika dwi-warna sing asri nemtokake frame optik unisex KAO-332, sing digawe saka asetat premium Mazzucchelli lan JINYU. Kasedhiya in kombinasi warna sing khas kaya Shampanye karo Coklat lan Biru karo Lurik Coklat, frame retro klasik iki dirancang khusus kanggo rumah mode mewah lan chain optik high-end.
+Estetika dwi-warna sing asri nemtokake frame optik unisex KAO-332, sing digawe saka asetat premium Mazzucchelli lan JIMEI & JINYU. Kasedhiya in kombinasi warna sing khas kaya Shampanye karo Coklat lan Biru karo Lurik Coklat, frame retro klasik iki dirancang khusus kanggo rumah mode mewah lan chain optik high-end.
 
 Geometri 46-23-145mm nggabungake bantalan irung sing lancar lan sistem engsel keling 3+2 barrel sing kuwat, njamin alignment temple sing lancar, stabil, lan umur produk sing luar biasa.
 

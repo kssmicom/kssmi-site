@@ -5,7 +5,7 @@ slug: "kao-348-acetate-optical-frame"
 itemNo: "KAO-348"
 date: "2026-05-10"
 colors: "Black, Tortoise"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -40,7 +40,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear, luxury pr
 
 ## Technical Features
 
-- **Premium Acetate Material:** High-grade Mazzucchelli and JINYU acetate construction offering vibrant color depth, long-term structural durability, and a lightweight, premium tactile experience.
+- **Premium Acetate Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction offering vibrant color depth, long-term structural durability, and a lightweight, premium tactile experience.
 - **Robust Hinge Hardware:** High-precision 3+2 barrel structure hinges offering exceptional alignment stability, long-term operational smoothness, and compatibility with custom 5-barrel or spring hinge upgrades.
 - **Premium Protective Lens:** Tenacious nylon lenses providing excellent impact resistance, high optical clarity, and fully customizable tint and coating options.
 - **Ergonomic Integrated Fit:** Integrated acetate nose pads and a customizable 57-16-145mm frame sizing designed to distribute pressure evenly for a secure, comfortable, and slip-free fit.
@@ -57,7 +57,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear, luxury pr
 
 ## Overview
 
-Classic luxury and modern versatility intersect in the KAO-348 optical frame, featuring deep Black and Tortoise colorways that showcase the premium quality of Mazzucchelli and JINYU acetate.
+Classic luxury and modern versatility intersect in the KAO-348 optical frame, featuring deep Black and Tortoise colorways that showcase the premium quality of Mazzucchelli, JIMEI & JINYU acetate.
 
 Engineered with a comfortable 57-16-145mm fit and integrated nose pads, the frame uses robust 3+2 barrel structure hinges to ensure long-term structural alignment and effortless operation.
 

@@ -5,7 +5,7 @@ slug: "kas-346-acetate-sunglasses"
 itemNo: "KAS-346"
 date: "2026-05-12"
 colors: "Negro & Tortuga & Habana & Olivo"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalización"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM) ( Personalización )"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante gafas de sol acetato, gafas sol OEM personalizadas, gaf
 
 ## Características
 
-- **Material Premium:** Acetato Mazzucchelli y JINYU de alta calidad que ofrece una montura vibrante, ligera e hipoalergénica para una estética refinada y una durabilidad superior.
+- **Material Premium:** Acetato Mazzucchelli y JIMEI & JINYU de alta calidad que ofrece una montura vibrante, ligera e hipoalergénica para una estética refinada y una durabilidad superior.
 - **Hardware de Precisión:** Bisagras con estructura de 2+1 barriles diseñadas para proporcionar una tensión estable y una suavidad operativa a largo plazo.
 - **Óptica Avanzada:** Lentes de nylon tenaz que ofrecen una claridad excepcional y una alta resistencia a los impactos con opciones de tinte y recubrimiento totalmente personalizables.
 - **Comodidad Ergonómica:** Almohadillas nasales integradas sin costuras diseñadas para un ajuste seguro y sin presión, optimizando la distribución del peso durante todo el día.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante gafas de sol acetato, gafas sol OEM personalizadas, gaf
 
 ## Resumen
 
-Fabricadas con acetato Mazzucchelli y JINYU de alta calidad, las KAS-346 equilibran una profundidad visual vibrante con una estructura ligera e hipoalergénica. El material premium proporciona una base de durabilidad duradera y un acabado sofisticado adecuado para colecciones de alta gama.
+Fabricadas con acetato Mazzucchelli y JIMEI & JINYU de alta calidad, las KAS-346 equilibran una profundidad visual vibrante con una estructura ligera e hipoalergénica. El material premium proporciona una base de durabilidad duradera y un acabado sofisticado adecuado para colecciones de alta gama.
 
 Diseñada con bisagras de 2+1 barriles y almohadillas nasales integradas sin costuras, la montatura garantiza un movimiento mecánico preciso y un ajuste ergonómico sin presión.
 

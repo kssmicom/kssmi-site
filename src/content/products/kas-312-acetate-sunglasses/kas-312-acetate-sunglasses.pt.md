@@ -5,7 +5,7 @@ slug: "kas-312-acetate-sunglasses"
 itemNo: "KAS-312"
 date: "2026-05-12"
 colors: "Spark & Havana & Red-Turtle & Preto"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "OEM & ODM ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante de óculos de acetato, óculos de moda personalizados, 
 
 ## Características
 
-- **Material em Acetato Premium:** Construção em acetato Mazzucchelli e JINYU de alta qualidade, proporcionando um acabamento leve, durável e vibrante para coleções de óculos premium.
+- **Material em Acetato Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, proporcionando um acabamento leve, durável e vibrante para coleções de óculos premium.
 - **Hardware Durável:** Dobradiças de estrutura 4+3 barris projetadas com precisão, garantindo suavidade operacional a longo prazo e integridade estrutural.
 - **Tecnologia Avançada de Lentes:** Lentes de nylon tenaz projetadas para clareza e resistência ao impacto, com opções completas de personalização para atender aos requisitos específicos da marca.
 - **Design Ergonômico:** Plaquetas nasais integradas e um ajuste padrão de 53-19-145mm otimizado para conforto durante todo o dia em vários perfis faciais.
@@ -75,7 +75,7 @@ seoKeywords: "fabricante de óculos de acetato, óculos de moda personalizados, 
 
 ## Visão Geral
 
-Para marcas que buscam o equilíbrio perfeito entre profundidade de material e confiabilidade estrutural, o modelo KAS-312 utiliza acetato premium Mazzucchelli e JINYU para oferecer uma estética unissex sofisticada. Seu acabamento vibrante e construção leve proporcionam uma experiência sensorial de alto nível, essencial para portfólios de óculos boutique.
+Para marcas que buscam o equilíbrio perfeito entre profundidade de material e confiabilidade estrutural, o modelo KAS-312 utiliza acetato premium Mazzucchelli e JIMEI & JINYU para oferecer uma estética unissex sofisticada. Seu acabamento vibrante e construção leve proporcionam uma experiência sensorial de alto nível, essencial para portfólios de óculos boutique.
 
 As dobradiças de estrutura 4+3 barris oferecem uma suavidade operacional excepcional, complementando as plaquetas nasais integradas projetadas para um ajuste seguro e confortável durante o uso prolongado.
 

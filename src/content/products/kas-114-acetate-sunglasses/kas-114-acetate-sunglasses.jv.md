@@ -5,7 +5,7 @@ slug: "kas-114-acetate-sunglasses"
 itemNo: "KAS-114"
 date: "2026-05-09"
 colors: "Ireng & Shampanye & Kuning"
-materials: "Mazzucchelli Premium & Asetat JINYU & Kustomisasi"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -50,7 +50,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam unisex OEM kustom, 
 
 ## Fitur Teknis
 
-- **Bahan Premium:** Digawe saka asetat Mazzucchelli lan JINYU kanthi kualitas dhuwur kanggo nyedhiyakake struktur sing entheng, awet lan daya tarik visual sing sregep.
+- **Bahan Premium:** Digawe saka asetat Mazzucchelli lan JIMEI & JINYU kanthi kualitas dhuwur kanggo nyedhiyakake struktur sing entheng, awet lan daya tarik visual sing sregep.
 - **Hardware Awet:** Dirancang nganggo engsel struktur 3+2 sing kuat kanggo njamin kelancaran operasi jangka panjang lan stabilitas struktur.
 - **Optik Presisi:** Dilengkapi lensa nilon sing tangguh sing nawakake kejelasan sing unggul lan pilihan kustomisasi sing akeh kanggo koleksi premium.
 - **Kenyamanan Mulus:** Bantalan irung sing terintegrasi dirancang kanggo menehi kenyamanan sing aman lan ergonomis nalika dianggo suwe sedina muput.
@@ -68,7 +68,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam unisex OEM kustom, 
 
 ## Ringkesan
 
-Digawe kanggo pasar mewah sing nuntut anane estetika lan integritas struktur, KAS-114 nggunakake asetat Mazzucchelli lan JINYU kelas siji kanggo entuk bangunan sing sregep lan entheng.
+Digawe kanggo pasar mewah sing nuntut anane estetika lan integritas struktur, KAS-114 nggunakake asetat Mazzucchelli lan JIMEI & JINYU kelas siji kanggo entuk bangunan sing sregep lan entheng.
 
 Dirancang nganggo engsel struktur 3+2 sing kuat lan bantalan irung sing terintegrasi, bingkai unisex sing kandel njamin kelancaran operasi jangka panjang sing luar biasa lan ukuran sing aman lan ergonomis.
 

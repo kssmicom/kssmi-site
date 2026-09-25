@@ -5,7 +5,7 @@ slug: "kas-143-acetate-sunglasses"
 itemNo: "KAS-143"
 date: "2026-05-09"
 colors: "Schwarz & Champagner & Schildpatt & Olive"
-materials: "Premium-Mazzucchelli & JINYU-Acetat & Individualisierung"
+materials: "Premium-Mazzucchelli & JIMEI & JINYU-Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM)"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -54,7 +54,7 @@ seoKeywords: "Acetat-Sonnenbrillen-Hersteller, kundenspezifische OEM-Brillen, Lu
 
 ## Eigenschaften
 
-- **Premium-Material:** Hochwertige Mazzucchelli- und JINYU-Acetat-Konstruktion, die eine lebendige Ästhetik mit geringem Gewicht und langlebiger Haltbarkeit für Premium-Einzelhandelsdisplays bietet.
+- **Premium-Material:** Hochwertige Mazzucchelli- und JIMEI & JINYU-Acetat-Konstruktion, die eine lebendige Ästhetik mit geringem Gewicht und langlebiger Haltbarkeit für Premium-Einzelhandelsdisplays bietet.
 - **Präzisions-Hardware:** Robuste 4+3 Barrel-Scharniere, die für gleichbleibende Laufruhe und außergewöhnliche Langlebigkeit des Rahmens entwickelt wurden.
 - **Verbesserte Optik:** Widerstandsfähige Nylon-Gläser mit überlegener Schlagfestigkeit und Klarheit sowie umfangreichen kundenspezifischen Beschichtungsoptionen, um spezifische Markenstandards zu erfüllen.
 - **Integrierter Komfort:** Nahtlos geformte, integrierte Nasenpads, die für einen sicheren, hypoallergenen Sitz entwickelt wurden und eine langfristige Zufriedenheit des Trägers gewährleisten.
@@ -71,7 +71,7 @@ seoKeywords: "Acetat-Sonnenbrillen-Hersteller, kundenspezifische OEM-Brillen, Lu
 
 ## Übersicht
 
-Die aus hochwertigem Mazzucchelli- und JINYU-Acetat gefertigte KAS-143 verkörpert eine raffinierte Balance zwischen Vintage-Ästhetik und moderner Langlebigkeit. Ihre lebendige Farbpalette und die anspruchsvolle Unisex-Silhouette bieten eine zeitlose Grundlage für High-End-Modekollektionen.
+Die aus hochwertigem Mazzucchelli- und JIMEI & JINYU-Acetat gefertigte KAS-143 verkörpert eine raffinierte Balance zwischen Vintage-Ästhetik und moderner Langlebigkeit. Ihre lebendige Farbpalette und die anspruchsvolle Unisex-Silhouette bieten eine zeitlose Grundlage für High-End-Modekollektionen.
 
 Präzisionsgefertigte 4+3 Barrel-Scharniere und integrierte Nasenpads sorgen für dauerhafte strukturelle Integrität und einen sicheren, bequemen Sitz für den Träger.
 

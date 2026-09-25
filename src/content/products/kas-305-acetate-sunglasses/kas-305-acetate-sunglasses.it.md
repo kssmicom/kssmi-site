@@ -5,7 +5,7 @@ slug: "kas-305-acetate-sunglasses"
 itemNo: "KAS-305"
 date: "2026-05-12"
 colors: "Nero & Righe & Havana & Oliva"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione per Conto Terzi (OEM) & Design e Produzione (ODM) ( Personalizzazione )"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali da sole OEM personal
 
 ## Caratteristiche
 
-- **Selezione di Materiali Premium:** Costruzione in acetato Mazzucchelli e JINYU di alta qualità che offre una sensazione di leggerezza con una durata eccezionale e una vibrante profondità di colore.
+- **Selezione di Materiali Premium:** Costruzione in acetato Mazzucchelli e JIMEI & JINYU di alta qualità che offre una sensazione di leggerezza con una durata eccezionale e una vibrante profondità di colore.
 - **Hardware Robusto:** Cerniere con struttura a 4+3 barilotti progettate con precisione per garantire fluidità operativa a lungo termine e un allineamento costante della montatura.
 - **Ottica ad Alte Prestazioni:** Lenti in nylon tenace che offrono una resistenza agli urti e una chiarezza ottica superiori con versatili opzioni di personalizzazione e rivestimento.
 - **Comfort Ergonomico:** I naselli integrati e il raffinato design del ponte unisex assicurano una vestibilità sicura e ipoallergenica per un uso quotidiano prolungato.
@@ -71,7 +71,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali da sole OEM personal
 
 ## Panoramica
 
-L'acetato Mazzucchelli e JINYU di alta qualità definiscono l'eleganza strutturale del modello KAS-305, offrendo una sensazione di leggerezza e una profonda saturazione del colore. Questo design classico unisex unisce l'estetica retrò con le moderne esigenze della moda.
+L'acetato Mazzucchelli e JIMEI & JINYU di alta qualità definiscono l'eleganza strutturale del modello KAS-305, offrendo una sensazione di leggerezza e una profonda saturazione del colore. Questo design classico unisex unisce l'estetica retrò con le moderne esigenze della moda.
 
 Progettata con un preciso sistema di cerniere a 4+3 barilotti e naselli integrati, la montatura mantiene un allineamento e un comfort costanti durante l'uso quotidiano.
 

@@ -5,7 +5,7 @@ slug: "kmo-233-metal-optical-frames"
 itemNo: "KMO-233"
 date: "2026-05-01"
 colors: "Ireng karo Emas Gilap, Bulus karo Emas Gilap"
-materials: "Asetat Premium lan Logam (Asetat Mazzucchelli & JINYU)"
+materials: "Asetat Premium lan Logam (Asetat Mazzucchelli & JIMEI & JINYU)"
 serviceMode: "OEM & ODM ( Kustomisasi )"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -45,7 +45,7 @@ seoKeywords: "produsen frame optik logam, pabrik kacamata asetat kustom, frame o
 ---
 
 ## Fitur
-- **Bahan Premium:** Frame asetat berkualitas tinggi digabungake karo gagang logam nggunakake asetat Mazzucchelli & JINYU kanggo rampung mewah lan daya tahan sing tahan suwe.
+- **Bahan Premium:** Frame asetat berkualitas tinggi digabungake karo gagang logam nggunakake asetat Mazzucchelli & JIMEI & JINYU kanggo rampung mewah lan daya tahan sing tahan suwe.
 - **Hardware Presisi:** Engsel struktur komposit 2+1 tong sing stabil dirancang kanggo kelancaran operasional jangka panjang kanthi pilihan kustomisasi kanggo 5 tong utawa engsel pegas.
 - **Optik Premium:** Lensa nilon kuat sing nawakake resistensi dampak lan kejelasan sing luar biasa kanthi kustomisasi lengkap kasedhiya kanggo nyukupi spesifikasi merek.
 - **Kenyamanan Ergonomis:** Bantalan irung terintegrasi silikon bening njamin pas sing aman, ora licin lan kenyamanan sedina muput kanggo sing nganggo.

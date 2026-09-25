@@ -5,7 +5,7 @@ slug: "kao-308-acetate-optical-frame"
 itemNo: "KAO-308"
 date: "2026-05-10"
 colors: "Hitam & Biru Diraja & Coklat & Zaitun"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengilang bingkai optik asetat, kacamata OEM tersuai China, bingka
 
 ## Ciri-ciri Utama
 
-- **Pembinaan Asetat Premium:** Asetat Mazzucchelli dan JINYU gred tinggi yang menawarkan kedalaman warna yang cerah dan ketahanan ringan untuk koleksi kacamata mewah.
+- **Pembinaan Asetat Premium:** Asetat Mazzucchelli dan JIMEI & JINYU gred tinggi yang menawarkan kedalaman warna yang cerah dan ketahanan ringan untuk koleksi kacamata mewah.
 - **Perkakasan Diperkukuh:** Engsel rivet 4+3 barrel yang tahan lama memberikan integriti struktur yang luar biasa dan pergerakan gagang yang konsisten dan lancar.
 - **Teknologi Kanta Unggul:** Kanta nilon tahan impak yang menampilkan optik berketepatan tinggi dan pilihan penyesuaian serba boleh untuk salutan khusus.
 - **Ergonomik Bersepadu:** Alas hidung bersepadu yang diukir dengan tepat memastikan kesesuaian yang seimbang dan bebas tekanan untuk pelbagai profil wajah.
@@ -72,7 +72,7 @@ seoKeywords: "pengilang bingkai optik asetat, kacamata OEM tersuai China, bingka
 
 ## Gambaran Keseluruhan
 
-Dihasilkan daripada asetat Mazzucchelli dan JINYU premium, model ini merakam estetika retro yang sofistikated melalui profil warna yang mendalam dan permukaan gilapan tangan artisanal.
+Dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU premium, model ini merakam estetika retro yang sofistikated melalui profil warna yang mendalam dan permukaan gilapan tangan artisanal.
 
 Seni bina engsel rivet 4+3 barrel yang diperkukuh memberikan ketepatan mekanikal dan daya tahan struktur yang diperlukan oleh piawaian kacamata mewah.
 

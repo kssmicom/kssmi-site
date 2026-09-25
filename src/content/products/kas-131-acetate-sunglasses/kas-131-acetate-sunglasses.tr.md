@@ -5,7 +5,7 @@ slug: "kas-131-acetate-sunglasses"
 itemNo: "KAS-131"
 date: "2026-05-09"
 colors: "Siyah & Mor & Kaplumbağa & Beyaz"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
 moq: "300 adet/model (100adet/renk)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel gözlük üreticisi, 
 
 ## Özellikler
 
-- **Premium Çerçeve Malzemesi:** Yüksek kaliteli Mazzucchelli ve JINYU asetattan üretilmiştir, canlı ve uzun ömürlü renk derinliği ile hafif ancak son derece dayanıklı bir yapı sunar.
+- **Premium Çerçeve Malzemesi:** Yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetattan üretilmiştir, canlı ve uzun ömürlü renk derinliği ile hafif ancak son derece dayanıklı bir yapı sunar.
 - **Dayanıklı Donanım:** Üstün çalışma pürüzsüzlüğü ve uzun vadeli yapısal bütünlük için tasarlanmış profesyonel 4+3 barrel menteşe sistemine sahiptir.
 - **Gelişmiş Optik:** Yüksek darbe direnci ve optik netlik sunan, belirli marka gereksinimlerine göre tamamen özelleştirilebilen dayanıklı naylon lenslerle donatılmıştır.
 - **Ergonomik Konfor:** Uzun süreli günlük kullanım için uygun, dengeli ve basınçsız bir oturuş sağlamak üzere entegre burun tamponları ile tasarlanmıştır.
@@ -71,7 +71,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel gözlük üreticisi, 
 
 ## Genel Bakış
 
-Mazzucchelli ve JINYU asetat, bu güneş gözlüklerinin çekirdeğini oluşturarak üst düzey moda pazarlarına hitap eden canlı bir renk derinliği ve hafif dayanıklılık sağlar.
+Mazzucchelli ve JIMEI & JINYU asetat, bu güneş gözlüklerinin çekirdeğini oluşturarak üst düzey moda pazarlarına hitap eden canlı bir renk derinliği ve hafif dayanıklılık sağlar.
 
 4+3 barrel menteşe sistemi uzun vadeli çalışma hassasiyeti sağlarken, entegre burun tamponları gün boyu kullanım için ergonomik stabilite sunar.
 

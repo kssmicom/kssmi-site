@@ -5,7 +5,7 @@ slug: "kas-138-acetate-sunglasses"
 itemNo: "KAS-138"
 date: "2026-05-09"
 colors: "Siyah & Kaplumbağa & Soluk-Pembemsi-Gri & Mat-Pembe"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
 moq: "300 adet/model (Her renk için 100 adet)"
 
@@ -53,7 +53,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 ---
 
 ## Özellikler
-- **Premium Malzeme:** Lüks moda markaları için canlı, hafif ve dayanıklı bir çerçeve sunan yüksek kaliteli Mazzucchelli ve JINYU asetat yapısı.
+- **Premium Malzeme:** Lüks moda markaları için canlı, hafif ve dayanıklı bir çerçeve sunan yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat yapısı.
 - **Sağlam Donanım:** Sürekli çalışma pürüzsüzlüğü ve uzun süreli dayanıklılık için tasarlanmış profesyonel 3+2 varil yapılı menteşeler.
 - **Üstün Optik:** Premium gözlük tasarımcıları için kapsamlı özel renklendirme ve kaplama olanaklarına sahip yüksek performanslı dayanıklı naylon lensler.
 - **Ergonomik Tasarım:** Tüm yüz şekillerinde uzun süreli günlük kullanım için güvenli ve rahat bir uyum sağlayan sorunsuz entegre burun tamponları.
@@ -69,7 +69,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 - Concept ve Çoklu Marka Mağazaları
 
 ## Genel Bakış
-Hakiki Mazzucchelli ve JINYU asetattan hassasiyetle üretilen KAS-138 serisi, lüks pazarı için canlı renk derinliğini ve üst düzey dayanıklılığı vurgular.
+Hakiki Mazzucchelli ve JIMEI & JINYU asetattan hassasiyetle üretilen KAS-138 serisi, lüks pazarı için canlı renk derinliğini ve üst düzey dayanıklılığı vurgular.
 
 3+2 varil yapılı menteşelerin ve ergonomik burun tamponlarının entegrasyonu, mekanik güvenilirlik ve günlük kullanım konforunun kusursuz bir dengesini sunar.
 

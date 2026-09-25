@@ -5,7 +5,7 @@ slug: "kao-327-acetate-optical-frame"
 itemNo: "KAO-327"
 date: "2026-05-10"
 colors: "Lut sinar, Havana, Hitam"
-materials: "Asetat Mazzucchelli & JINYU Premium & Penyesuaian"
+materials: "Asetat Mazzucchelli & JIMEI & JINYU Premium & Penyesuaian"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) (Penyesuaian)"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -50,7 +50,7 @@ seoKeywords: "bingkai optik asetat bergaya, pengilang bingkai optik asetat tersu
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Dibuat daripada asetat Mazzucchelli dan JINYU premium, menawarkan struktur yang ringan namun sangat tahan lasak dengan kedalaman warna yang menarik dan tahan lama.
+- **Bahan Premium:** Dibuat daripada asetat Mazzucchelli dan JIMEI & JINYU premium, menawarkan struktur yang ringan namun sangat tahan lasak dengan kedalaman warna yang menarik dan tahan lama.
 - **Perkakasan Kejuruteraan:** Engsel rivet 3+2 tong yang mempunyai kebolehpercayaan tinggi, memberikan pergerakan kaki bingkai yang stabil dan lancar dengan pilihan engsel spring tersuai.
 - **Optik Tahan Lasak:** Lensa nilon berkualiti tinggi yang memberikan kejelasan luar biasa dan rintangan hentaman yang kuat dengan pilihan salutan tersuai sepenuhnya.
 - **Keselesaan Bersepadu:** Alas hidung bersepadu yang lancar digabungkan dengan geometri 50-22-145mm yang direka khas untuk memberikan muatan yang seimbang dan tidak mudah gelincir.
@@ -67,7 +67,7 @@ seoKeywords: "bingkai optik asetat bergaya, pengilang bingkai optik asetat tersu
 
 ## Gambaran Keseluruhan
 
-Reka bentuk kacamata klasik bertemu dengan seni bahan berkualiti tinggi dalam KAO-327, bingkai unisex yang memaparkan kedalaman warna yang menarik bagi asetat Mazzucchelli dan JINYU premium.
+Reka bentuk kacamata klasik bertemu dengan seni bahan berkualiti tinggi dalam KAO-327, bingkai unisex yang memaparkan kedalaman warna yang menarik bagi asetat Mazzucchelli dan JIMEI & JINYU premium.
 
 Ketahanan strukturnya diperkukuh oleh engsel rivet 3+2 tong yang direka secara kejuruteraan, manakala kemasan digosok dengan tangan dan alas hidung bersepadu memastikan muatan yang seimbang serta tidak mudah gelincir untuk kegunaan harian.
 

@@ -5,7 +5,7 @@ slug: "kao-015-acetate-optical-frame"
 itemNo: "KAO-015"
 date: "2026-05-10"
 colors: "Jelas & Kuning & Biru & Jingga"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100unit/warna)"
 
@@ -42,7 +42,7 @@ seoKeywords: "pengilang bingkai optik asetat, cermin mata OEM tersuai China, bin
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium：** Binaan asetat Mazzucchelli dan JINYU kemasan tangan yang menawarkan kejelasan warna yang luar biasa, ketahanan, dan rasa ringan.
+- **Bahan Premium：** Binaan asetat Mazzucchelli dan JIMEI & JINYU kemasan tangan yang menawarkan kejelasan warna yang luar biasa, ketahanan, dan rasa ringan.
 - **Kejuruteraan Ketepatan：** Engsel struktur rivet 3+2 barel yang teguh direka untuk kestabilan maksimum dan kelancaran operasi jangka panjang.
 - **Optik Berprestasi Tinggi：** Lensa nilon lasak yang memberikan kejelasan unggul dan rintangan hentaman, dengan pilihan salutan tersuai yang luas tersedia.
 - **Reka Bentuk Ergonomik：** Alas hidung bersepadu yang lancar direka untuk kesesuaian yang stabil, selesa dan estetika minimalis yang halus.
@@ -60,7 +60,7 @@ seoKeywords: "pengilang bingkai optik asetat, cermin mata OEM tersuai China, bin
 
 ## Gambaran Keseluruhan
 
-Dihasilkan daripada asetat Mazzucchelli dan JINYU premium, bingkai ini mencapai keseimbangan canggih antara daya tahan ringan dan estetika berani serta bertenaga yang diperlukan oleh pasaran mewah moden.
+Dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU premium, bingkai ini mencapai keseimbangan canggih antara daya tahan ringan dan estetika berani serta bertenaga yang diperlukan oleh pasaran mewah moden.
 
 Seni bina engsel rivet 3+2 barel yang teguh memberikan ketahanan mekanikal yang luar biasa, manakala reka bentuk alas hidung bersepadu memastikan kesesuaian yang lancar dan selesa.
 

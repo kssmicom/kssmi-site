@@ -5,7 +5,7 @@ slug: "kas-111-acetate-sunglasses"
 itemNo: "KAS-111"
 date: "2026-05-09"
 colors: "Vermelho Caramelo & Tartaruga Rosa & Branco Creme & Preto"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante óculos de sol acetato, óculos de sol OEM personalizad
 
 ## Características
 
-- **Material da Armação Premium:** Fabricado habilmente a partir de acetato Mazzucchelli e JINYU de alta qualidade, proporcionando uma sensação leve com durabilidade excepcional e profundidade de cor vibrante.
+- **Material da Armação Premium:** Fabricado habilmente a partir de acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, proporcionando uma sensação leve com durabilidade excepcional e profundidade de cor vibrante.
 - **Dobradiças de Precisão:** Dobradiças robustas de estrutura de barril 3+2 projetadas para suavidade operacional a longo prazo e estabilidade estrutural.
 - **Óptica de Alto Desempenho:** Lentes de nylon tenaz que proporcionam clareza superior e resistência ao impacto, com amplas opções de tingimento personalizado disponíveis.
 - **Conforto Ergonômico:** Ponteiras nasicas integradas projetadas para um ajuste perfeito e hipoalergénico que garante estabilidade e conforto durante todo o dia.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante óculos de sol acetato, óculos de sol OEM personalizad
 
 ## Visão Geral
 
-Profundidade de cor vibrante e integridade estrutural premium encontram-se no KAS-111, um modelo fabricado a partir de acetato Mazzucchelli e JINYU de alta qualidade para capturar uma estética ousada e inspirada no vintage.
+Profundidade de cor vibrante e integridade estrutural premium encontram-se no KAS-111, um modelo fabricado a partir de acetato Mazzucchelli e JIMEI & JINYU de alta qualidade para capturar uma estética ousada e inspirada no vintage.
 
 A estabilidade estrutural é mantida através de dobradiças robustas de barril 3+2, enquanto as ponteiras nasicas integradas oferecem um ajuste ergonómico e perfeito para diversas formas de rosto.
 

@@ -5,7 +5,7 @@ slug: "kas-017-acetate-sunglasses"
 itemNo: "KAS-017"
 date: "2026-05-10"
 colors: "Preto, Vermelho Transparente, Azul Transparente"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -44,7 +44,7 @@ seoKeywords: "óculos de sol de luxo em acetato, fabricante de óculos personali
 
 ## Características
 
-- **Material Premium:** Acetato Mazzucchelli e JINYU selecionado à mão, oferecendo um acabamento de alta densidade com profundidade de cor e durabilidade superiores.
+- **Material Premium:** Acetato Mazzucchelli e JIMEI & JINYU selecionado à mão, oferecendo um acabamento de alta densidade com profundidade de cor e durabilidade superiores.
 - **Engenharia de Precisão:** Dimensões da armação de 49-23-145mm habilmente fabricadas, proporcionando um ajuste equilibrado e elegante com amplas opções de personalização.
 - **Hardware Durável:** Dobradiças robustas de estrutura 3+2 barris com atualizações disponíveis para 5 barris ou dobradiças de mola para suavidade operacional a longo prazo.
 - **Óptica Avançada:** Lentes de nylon tenaz de alta clareza, oferecendo resistência ao impacto com tonalidades e revestimentos personalizáveis para requisitos específicos da marca.
@@ -61,7 +61,7 @@ seoKeywords: "óculos de sol de luxo em acetato, fabricante de óculos personali
 
 ## Visão Geral
 
-O acetato Mazzucchelli e JINYU selecionado à mão confere ao KAS-017 seu acabamento de alta densidade e profundidade de cor superior, atendendo aos rigorosos padrões do mercado de óculos de luxo.
+O acetato Mazzucchelli e JIMEI & JINYU selecionado à mão confere ao KAS-017 seu acabamento de alta densidade e profundidade de cor superior, atendendo aos rigorosos padrões do mercado de óculos de luxo.
 
 A integridade estrutural é mantida através de dobradiças de 3+2 barris projetadas com precisão e lentes de nylon de alta clareza que oferecem durabilidade e excelência óptica.
 

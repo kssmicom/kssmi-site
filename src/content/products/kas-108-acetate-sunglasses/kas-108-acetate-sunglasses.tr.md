@@ -5,7 +5,7 @@ slug: "kas-108-acetate-sunglasses"
 itemNo: "KAS-108"
 date: "2026-05-07"
 colors: "Siyah & Şeffaf & Havana & Zeytin Yeşili"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (renk başına 100 adet)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Özellikler
 
-- **Premium Asetat Yapı:** Yüksek kaliteli Mazzucchelli ve JINYU asetat çerçeve ve saplar, olağanüstü dayanıklılığa sahip canlı, elle parlatılmış bir kaplama sunar.
+- **Premium Asetat Yapı:** Yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat çerçeve ve saplar, olağanüstü dayanıklılığa sahip canlı, elle parlatılmış bir kaplama sunar.
 - **Yüksek Performanslı Optikler:** Üstün darbe direnci ve optik netlik sağlayan dayanıklı naylon lensler, kapsamlı özel renklendirme seçenekleriyle mevcuttur.
 - **Hassas Donanım:** Sürekli çalışma pürüzsüzlüğü ve uzun süreli çerçeve hizalaması için tasarlanmış sağlam 3+2 varil yapılı menteşeler.
 - **Ergonomik Konfor:** Çeşitli yüz profillerinde güvenli bir oturuş ve gün boyu konfor için tasarlanmış entegre burun tamponları ve hafif çerçeve yapısı.
@@ -72,7 +72,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Genel Bakış
 
-Mazzucchelli ve JINYU asetat, el yapımı, canlı bir kaplamayı premium gözlükler için temel olan hafif dayanıklılıkla birleştirerek bu model için temel mükemmelliği sağlar. Bu vintage esintili üniseks tasarım, cesur estetik ve zamansız stil dengesi arayan markalar için çok yönlü bir temel parça işlevi görür.
+Mazzucchelli ve JIMEI & JINYU asetat, el yapımı, canlı bir kaplamayı premium gözlükler için temel olan hafif dayanıklılıkla birleştirerek bu model için temel mükemmelliği sağlar. Bu vintage esintili üniseks tasarım, cesur estetik ve zamansız stil dengesi arayan markalar için çok yönlü bir temel parça işlevi görür.
 
 3+2 varil menteşe sistemi ve entegre burun tamponları, hassas üretime ve uzun vadeli çerçeve hizalamasına olan bağlılığı yansıtarak tutarlı performans ve ergonomik konfor sağlar.
 

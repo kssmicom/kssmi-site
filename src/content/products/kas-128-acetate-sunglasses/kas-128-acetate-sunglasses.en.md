@@ -5,7 +5,7 @@ slug: "kas-128-acetate-sunglasses"
 itemNo: "KAS-128"
 date: "2026-05-09"
 colors: "Black & White & Green-Marble & Blue-Marble & Black-Marble & Ruby"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -62,7 +62,7 @@ seoKeywords: "premium acetate sunglasses manufacturer, KAS-128 custom OEM eyewea
 
 ## Technical Features
 
-- **Premium Acetate:** Crafted from world-renowned Mazzucchelli and JINYU acetate, offering exceptional durability and a vibrant, high-gloss finish.
+- **Premium Acetate:** Crafted from world-renowned Mazzucchelli, JIMEI & JINYU acetate, offering exceptional durability and a vibrant, high-gloss finish.
 - **Precision Hinges:** Robust 4+3 barrel structure hinges engineered for superior stability and long-term operational smoothness.
 - **High-Performance Optics:** Tenacious nylon lenses providing excellent clarity and impact resistance with extensive customization options.
 - **Integrated Comfort:** Precision-molded integrated nose pads designed for a secure, hypoallergenic, and balanced fit during extended wear.
@@ -79,7 +79,7 @@ seoKeywords: "premium acetate sunglasses manufacturer, KAS-128 custom OEM eyewea
 
 ## Overview
 
-Mazzucchelli and JINYU acetate come together in a bold, high-gloss silhouette that defines modern luxury through its unique unisex aesthetic.
+Mazzucchelli, JIMEI & JINYU acetate come together in a bold, high-gloss silhouette that defines modern luxury through its unique unisex aesthetic.
 
 The precision-engineered 4+3 barrel hinges and integrated nose pads ensure exceptional stability and long-term comfort for the wearer.
 

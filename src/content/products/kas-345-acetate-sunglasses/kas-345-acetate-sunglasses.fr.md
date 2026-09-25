@@ -5,7 +5,7 @@ slug: "kas-345-acetate-sunglasses"
 itemNo: "KAS-345"
 date: "2026-05-12"
 colors: "Noir & Écaille & Havane & Olive"
-materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
+materials: "Mazzucchelli Premium & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "OEM & ODM ( Personnalisation )"
 moq: "300 pcs/modèle ( 100 pcs/couleur )"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil OE
 
 ## Caractéristiques
 
-- **Matériau Premium :** Acétate Mazzucchelli et JINYU poli à la main offrant une finition riche et éclatante avec une durabilité et une profondeur de couleur exceptionnelles.
+- **Matériau Premium :** Acétate Mazzucchelli et JIMEI & JINYU poli à la main offrant une finition riche et éclatante avec une durabilité et une profondeur de couleur exceptionnelles.
 - **Ingénierie de Précision :** Charnières à structure 2+1 barillets de haute qualité conçues pour une tension constante et une fluidité opérationnelle à long terme.
 - **Optique Avancée :** Verres en nylon tenace offrant une résistance aux chocs et une clarté supérieures, avec un support complet pour les teintes personnalisées et les traitements spécialisés.
 - **Conception Ergonomique :** Plaquettes de nez intégrées conçues pour un ajustement impeccable et confortable, et une répartition équilibrée du poids lors d'un port prolongé.
@@ -71,7 +71,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil OE
 
 ## Aperçu
 
-L'acétate Mazzucchelli et JINYU constituent la base de ce modèle, offrant une finition éclatante et une profondeur de couleur exceptionnelle. Cette architecture de monture polie à la main combine l'attrait esthétique classique avec une sensation de légèreté pour un positionnement sur le marché haut de gamme.
+L'acétate Mazzucchelli et JIMEI & JINYU constituent la base de ce modèle, offrant une finition éclatante et une profondeur de couleur exceptionnelle. Cette architecture de monture polie à la main combine l'attrait esthétique classique avec une sensation de légèreté pour un positionnement sur le marché haut de gamme.
 
 Un système de charnières de précision à 2+1 barillets travaille en tandem avec des plaquettes de nez intégrées pour offrir une tension constante et un ajustement ergonomique et impeccable.
 

@@ -5,7 +5,7 @@ slug: "kao-347-acetate-optical-frame"
 itemNo: "KAO-347"
 date: "2026-05-10"
 colors: "Black, Havana, Clear Grey"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -41,7 +41,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM optical frames, be
 
 ## Technical Features
 
-- **Premium Acetate Material:** High-grade Mazzucchelli and JINYU acetate construction offering vibrant color depth, long-term structural durability, and a lightweight, premium tactile experience.
+- **Premium Acetate Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction offering vibrant color depth, long-term structural durability, and a lightweight, premium tactile experience.
 - **Robust Hinge Hardware:** High-precision spring structure hinges providing exceptional flexibility, comfortable self-adjusting fit, and compatibility with custom 3-barrel or 5-barrel hinge upgrades.
 - **Premium Protective Lens:** Tenacious nylon lenses providing excellent impact resistance, high optical clarity, and fully customizable tint and coating options.
 - **Ergonomic Integrated Fit:** Integrated acetate nose pads designed to distribute pressure evenly for a secure, comfortable, and slip-free fit.
@@ -58,7 +58,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM optical frames, be
 
 ## Overview
 
-Sourced from premium Mazzucchelli and JINYU acetate, KAO-347 offers the exceptional depth of color and lasting structural integrity demanded by high-end retail collections.
+Sourced from premium Mazzucchelli, JIMEI & JINYU acetate, KAO-347 offers the exceptional depth of color and lasting structural integrity demanded by high-end retail collections.
 
 Precision-engineered spring hinges provide a highly flexible, self-adjusting fit, while integrated acetate nose pads ensure optimal weight distribution for all-day comfort.
 

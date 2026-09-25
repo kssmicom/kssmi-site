@@ -5,7 +5,7 @@ slug: "kas-319-acetate-sunglasses"
 itemNo: "KAS-319"
 date: "2026-05-12"
 colors: "Preto & Rosa & Tartaruga & Transparente"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
 serviceMode: "OEM & ODM ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de óculos de sol em acetato premium, produção de óc
 
 ## Características
 
-- **Material Artesanal:** Construção em acetato premium Mazzucchelli e JINYU que oferece um toque luxuoso com durabilidade superior e retenção de cores vibrantes.
+- **Material Artesanal:** Construção em acetato premium Mazzucchelli e JIMEI & JINYU que oferece um toque luxuoso com durabilidade superior e retenção de cores vibrantes.
 - **Hardware Reforçado:** Dobradiças com estrutura de 4+3 tambores projetadas com precisão para uma fluidez operacional excepcional e estabilidade da armação.
 - **Óptica Avançada:** Lentes de nylon tenaz que proporcionam clareza de alta definição e proteção robusta contra impactos para segurança solar premium.
 - **Conforto Otimizado:** Ponteiras nasicas integradas e dimensões ergonômicas de 53-19-145mm criadas para uso durante todo o dia e um ajuste seguro e equilibrado.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante de óculos de sol em acetato premium, produção de óc
 
 ## Visão Geral
 
-Fabricados a partir de uma mistura refinada de acetato premium Mazzucchelli e JINYU, estes óculos de sol priorizam tanto a profundidade estrutural quanto um acabamento de alto brilho. O material da armação, leve e vibrante, garante um toque premium que ressoa com os padrões da moda de luxo.
+Fabricados a partir de uma mistura refinada de acetato premium Mazzucchelli e JIMEI & JINYU, estes óculos de sol priorizam tanto a profundidade estrutural quanto um acabamento de alto brilho. O material da armação, leve e vibrante, garante um toque premium que ressoa com os padrões da moda de luxo.
 
 As dobradiças com estrutura de 4+3 tambores projetadas com precisão e o design de ponteiras nasicas integradas proporcionam um ajuste estável e equilibrado para uso durante todo o dia.
 

@@ -5,7 +5,7 @@ slug: "kas-306-acetate-sunglasses"
 itemNo: "KAS-306"
 date: "2026-05-12"
 colors: "Đen & Đồi mồi & Xám & Nâu & Ô liu"
-materials: "Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli cao cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM)"
 moq: "300 cái/mẫu (100cái/màu)"
 
@@ -58,7 +58,7 @@ seoKeywords: "nhà sản xuất kính mát axetat cao cấp, xưởng kính mát
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Cấu tạo từ axetat Mazzucchelli và JINYU chất lượng cao, mang lại lớp hoàn thiện nhẹ, bền và rực rỡ cho tính thẩm mỹ sang trọng.
+- **Chất liệu cao cấp:** Cấu tạo từ axetat Mazzucchelli và JIMEI & JINYU chất lượng cao, mang lại lớp hoàn thiện nhẹ, bền và rực rỡ cho tính thẩm mỹ sang trọng.
 - **Phụ kiện bền bỉ:** Bản lề cấu trúc 4+3 chấu chắc chắn được thiết kế để vận hành trơn tru liên tục, với các tùy chọn nâng cấp lên 5 chấu và bản lề lò xo.
 - **Quang học vượt trội:** Tròng kính nylon chống va đập mang lại độ rõ nét đặc biệt, với khả năng tùy chỉnh rộng rãi cho các màu sắc cụ thể và lớp phủ kỹ thuật.
 - **Thoải mái tích hợp:** Đệm mũi liền khối được đúc chính xác được thiết kế để đảm bảo sự vừa vặn an toàn, cân bằng và vẻ ngoài cao cấp không tì vết.
@@ -76,7 +76,7 @@ seoKeywords: "nhà sản xuất kính mát axetat cao cấp, xưởng kính mát
 
 ## Tổng quan
 
-Axetat Mazzucchelli và JINYU tạo nên đẳng cấp cho KAS-306, kết hợp màu sắc đa tầng phong phú với gọng kính hình học vượt thời gian được thiết kế cho cả độ bền và tính linh hoạt thẩm mỹ. Lựa chọn chất liệu này đảm bảo lớp hoàn thiện rực rỡ và luôn giữ được độ bóng qua nhiều năm sử dụng.
+Axetat Mazzucchelli và JIMEI & JINYU tạo nên đẳng cấp cho KAS-306, kết hợp màu sắc đa tầng phong phú với gọng kính hình học vượt thời gian được thiết kế cho cả độ bền và tính linh hoạt thẩm mỹ. Lựa chọn chất liệu này đảm bảo lớp hoàn thiện rực rỡ và luôn giữ được độ bóng qua nhiều năm sử dụng.
 
 Bản lề 4+3 chấu được chế tạo chính xác và đệm mũi liền khối mang lại sự chắc chắn về cấu trúc và sự thoải mái cân bằng theo yêu cầu của thị trường kính mắt cao cấp.
 

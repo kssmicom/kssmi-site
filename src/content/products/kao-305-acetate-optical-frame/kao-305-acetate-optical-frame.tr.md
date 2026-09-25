@@ -5,7 +5,7 @@ slug: "kao-305-acetate-optical-frame"
 itemNo: "KAO-305"
 date: "2026-05-10"
 colors: "Zeytin & Siyah & Çizgili & Havana"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat optik çerçeve üreticisi, özel OEM gözlük fabrikası, 
 
 ## Özellikler
 
-- **Premium Malzeme Seçimi:** Rafine bir estetik için hafif, dayanıklı ve canlı bir görünüm sağlayan yüksek dereceli Mazzucchelli ve JINYU asetat yapısı.
+- **Premium Malzeme Seçimi:** Rafine bir estetik için hafif, dayanıklı ve canlı bir görünüm sağlayan yüksek dereceli Mazzucchelli ve JIMEI & JINYU asetat yapısı.
 - **Güçlendirilmiş Donanım:** Olağanüstü çalışma pürüzsüzlüğü ve uzun vadeli stabilite için tasarlanmış sağlam 4+3 barrel perçin yapılı menteşeler.
 - **Entegre Ergonomi:** Gün boyu kullanım konforu için güvenli ve baskısız bir uyum sunmak üzere tasarlanmış hassas işçilikli entegre burun tamponları.
 - **Çok Yönlü Optikler:** Özel renk tonları ve gelişmiş kaplamalar için kapsamlı özelleştirme seçeneklerine sahip yüksek mukavemetli naylon lensler.
@@ -71,7 +71,7 @@ seoKeywords: "asetat optik çerçeve üreticisi, özel OEM gözlük fabrikası, 
 
 ## Genel Bakış
 
-Mazzucchelli ve JINYU asetatın canlı derinliğini birleştiren bu optik çerçeve, dayanıklılık ve hafif lüksün sofistike bir dengesini sunar. Derin Zeytin yeşilinden klasik Havana'ya kadar uzanan zengin palet, modern, yüksek moda estetiğine göre hazırlanmış bir tasarım dilini yansıtır.
+Mazzucchelli ve JIMEI & JINYU asetatın canlı derinliğini birleştiren bu optik çerçeve, dayanıklılık ve hafif lüksün sofistike bir dengesini sunar. Derin Zeytin yeşilinden klasik Havana'ya kadar uzanan zengin palet, modern, yüksek moda estetiğine göre hazırlanmış bir tasarım dilini yansıtır.
 
 Uzun ömürlülük için tasarlanan 4+3 barrel perçin menteşe sistemi, kesintisiz mekanik performans sağlarken, entegre burun tamponları uzun süreli kullanım konforunu tamamlar.
 

@@ -5,7 +5,7 @@ slug: "kas-017-acetate-sunglasses"
 itemNo: "KAS-017"
 date: "2026-05-10"
 colors: "Ireng, Abrit Tembus Pandang, Biru Tembus Pandang"
-materials: "Asetat Premium Mazzucchelli & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -44,7 +44,7 @@ seoKeywords: "kacamata hitam asetat mewah, produsen kacamata kustom, frame aseta
 
 ## Fitur
 
-- **Bahan Premium:** Asetat Mazzucchelli lan JINYU sing dipilih kanthi tangan menehi finishing kapadhetan dhuwur kanthi jero warna lan daya tahan sing unggul.
+- **Bahan Premium:** Asetat Mazzucchelli lan JIMEI & JINYU sing dipilih kanthi tangan menehi finishing kapadhetan dhuwur kanthi jero warna lan daya tahan sing unggul.
 - **Teknik Presisi:** Dimensi frame 49-23-145mm sing digawe kanthi ahli nyedhiyakake pas sing seimbang lan apik kanthi macem-macem pilihan kustomisasi.
 - **Hardware Awet:** Engsel struktur 3+2 barrel sing kuwat kanthi upgrade menyang 5-barrel utawa engsel pegas kanggo kelancaran operasional jangka panjang.
 - **Optik Canggih:** Lensa nilon sing kuwat kanthi kajelasan dhuwur sing nawakake resistensi impact kanthi warna lan lapisan sing bisa dicocokake kanggo kabutuhan merek tartamtu.
@@ -61,7 +61,7 @@ seoKeywords: "kacamata hitam asetat mewah, produsen kacamata kustom, frame aseta
 
 ## Ringkesan
 
-Asetat Mazzucchelli lan JINYU sing dipilih kanthi tangan menehi KAS-017 finishing kapadhetan dhuwur lan jero warna sing unggul, nyukupi standar sing ketat ing pasar kacamata mewah.
+Asetat Mazzucchelli lan JIMEI & JINYU sing dipilih kanthi tangan menehi KAS-017 finishing kapadhetan dhuwur lan jero warna sing unggul, nyukupi standar sing ketat ing pasar kacamata mewah.
 
 Integritas struktural dijaga liwat engsel 3+2 barrel sing dirancang kanthi presisi lan lensa nilon kajelasan dhuwur sing nawakake daya tahan lan keunggulan optik.
 

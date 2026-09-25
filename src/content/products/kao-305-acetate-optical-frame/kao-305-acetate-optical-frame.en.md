@@ -5,7 +5,7 @@ slug: "kao-305-acetate-optical-frame"
 itemNo: "KAO-305"
 date: "2026-05-10"
 colors: "Olive & Black & Stripe & Havana"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear factory, l
 
 ## Technical Features
 
-- **Premium Material Selection:** High-grade Mazzucchelli and JINYU acetate construction providing a lightweight, durable, and vibrant finish for a refined aesthetic.
+- **Premium Material Selection:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction providing a lightweight, durable, and vibrant finish for a refined aesthetic.
 - **Reinforced Hardware:** Robust 4+3 barrel rivet structure hinges engineered for exceptional operational smoothness and long-term stability.
 - **Integrated Ergonomics:** Precision-crafted integrated nose pads designed to offer a secure and pressure-free fit for all-day wearing comfort.
 - **Versatile Optics:** High-tenacity nylon lenses featuring extensive customization options for specialized tints and advanced coatings.
@@ -71,7 +71,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear factory, l
 
 ## Overview
 
-Combining the vibrant depth of Mazzucchelli and JINYU acetate, this optical frame offers a sophisticated balance of durability and lightweight luxury. The rich palette—from deep Olive to classic Havana—reflects a design language tailored for modern, high-fashion aesthetics.
+Combining the vibrant depth of Mazzucchelli, JIMEI & JINYU acetate, this optical frame offers a sophisticated balance of durability and lightweight luxury. The rich palette—from deep Olive to classic Havana—reflects a design language tailored for modern, high-fashion aesthetics.
 
 Engineered for longevity, the 4+3 barrel rivet hinge system ensures seamless mechanical performance, complemented by integrated nose pads for sustained wearing comfort.
 

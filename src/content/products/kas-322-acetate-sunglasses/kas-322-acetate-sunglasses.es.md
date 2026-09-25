@@ -5,7 +5,7 @@ slug: "kas-322-acetate-sunglasses"
 itemNo: "KAS-322"
 date: "2026-05-12"
 colors: "Negro & Champán & Tortuga & Oliva"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalización"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM) (Personalización)"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "gafas de sol de acetato Mazzucchelli, fabricante de gafas de sol d
 
 ## Características
 
-- **Material de Acetato Premium:** Construcción de acetato Mazzucchelli y JINYU de alta calidad que ofrece una durabilidad excepcional y un acabado vibrante y duradero.
+- **Material de Acetato Premium:** Construcción de acetato Mazzucchelli y JIMEI & JINYU de alta calidad que ofrece una durabilidad excepcional y un acabado vibrante y duradero.
 - **Óptica Superior:** Lentes de nylon tenaz que proporcionan una excelente resistencia a los impactos y claridad con amplias opciones de tinte personalizado.
 - **Hardware de Ingeniería:** Bisagras con estructura de 4+3 barriles de alta precisión diseñadas para la máxima estabilidad y suavidad operativa a largo plazo.
 - **Diseño Ergonómico:** Almohadillas nasales integradas y una estructura de marco ligera que garantiza un ajuste seguro e hipoalergénico para comodidad durante todo el día.
@@ -71,7 +71,7 @@ seoKeywords: "gafas de sol de acetato Mazzucchelli, fabricante de gafas de sol d
 
 ## Resumen
 
-Fabricado a partir de una mezcla de acetato Mazzucchelli y JINYU, este marco logra un equilibrio sofisticado de vibrante profundidad de color y una integridad estructural duradera. La arquitectura ligera y las almohadillas nasales integradas proporcionan un ajuste sin costuras e hipoalergénico para el uso durante todo el día.
+Fabricado a partir de una mezcla de acetato Mazzucchelli y JIMEI & JINYU, este marco logra un equilibrio sofisticado de vibrante profundidad de color y una integridad estructural duradera. La arquitectura ligera y las almohadillas nasales integradas proporcionan un ajuste sin costuras e hipoalergénico para el uso durante todo el día.
 
 El conjunto de bisagra de 4+3 barriles garantiza un movimiento mecánico fiable, complementado por lentes de nylon de alta tenacidad que ofrecen una excelente resistencia al impacto.
 

@@ -5,7 +5,7 @@ slug: "kao-308-acetate-optical-frame"
 itemNo: "KAO-308"
 date: "2026-05-10"
 colors: "Noir & Bleu Royal & Marron & Olive"
-materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
+materials: "Mazzucchelli Premium & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100pcs/couleur)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricant montures optiques acétate, lunettes OEM personnalisées
 
 ## Caractéristiques
 
-- **Construction en Acétate Premium :** Acétate Mazzucchelli et JINYU de haute qualité offrant une profondeur de couleur vibrante et une durabilité légère pour les collections de lunettes haut de gamme.
+- **Construction en Acétate Premium :** Acétate Mazzucchelli et JIMEI & JINYU de haute qualité offrant une profondeur de couleur vibrante et une durabilité légère pour les collections de lunettes haut de gamme.
 - **Matériel Renforcé :** Charnières durables à structure de rivet 4+3 barillets offrant une intégrité structurelle exceptionnelle et un mouvement fluide et constant des branches.
 - **Technologie de Verre Supérieure :** Verres en nylon résistants aux chocs dotés d'optiques de haute précision et d'options de personnalisation polyvalentes pour des revêtements spécialisés.
 - **Ergonomie Intégrée :** Plaquettes de nez intégrées sculptées avec précision assurant un ajustement équilibré et sans pression pour divers profils faciaux.
@@ -72,7 +72,7 @@ seoKeywords: "fabricant montures optiques acétate, lunettes OEM personnalisées
 
 ## Aperçu
 
-Fabriqué à partir d'acétate premium Mazzucchelli et JINYU, ce modèle capture une esthétique rétro sophistiquée grâce à ses profils de couleurs profonds et ses surfaces polies à la main de manière artisanale.
+Fabriqué à partir d'acétate premium Mazzucchelli et JIMEI & JINYU, ce modèle capture une esthétique rétro sophistiquée grâce à ses profils de couleurs profonds et ses surfaces polies à la main de manière artisanale.
 
 L'architecture renforcée de la charnière à rivet 4+3 barillets offre la précision mécanique et la résilience structurelle requises par les normes des lunettes haut de gamme.
 

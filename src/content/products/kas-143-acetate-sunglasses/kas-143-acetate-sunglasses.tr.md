@@ -5,7 +5,7 @@ slug: "kas-143-acetate-sunglasses"
 itemNo: "KAS-143"
 date: "2026-05-09"
 colors: "Siyah & Şampanya & Kaplumbağa & Zeytin"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM)"
 moq: "300 adet/model (her renk 100 adet)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM gözlük, lüks m
 
 ## Özellikler
 
-- **Premium Malzeme:** Premium perakende vitrinleri için hafif, uzun ömürlü dayanıklılık ile canlı bir estetik sunan yüksek kaliteli Mazzucchelli ve JINYU asetat yapı.
+- **Premium Malzeme:** Premium perakende vitrinleri için hafif, uzun ömürlü dayanıklılık ile canlı bir estetik sunan yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat yapı.
 - **Hassas Donanım:** Tutarlı çalışma pürüzsüzlüğü ve olağanüstü çerçeve uzun ömürlülüğü için tasarlanmış sağlam 4+3 barrel yapılı menteşeler.
 - **Gelişmiş Optik:** Belirli marka standartlarını karşılamak için kapsamlı özel kaplama seçenekleriyle üstün darbe direnci ve netlik sağlayan dayanıklı naylon lensler.
 - **Entegre Konfor:** Uzun süreli kullanıcı memnuniyeti sağlayan güvenli, hipoalerjenik bir uyum için tasarlanmış dikişsiz kalıplanmış entegre burun tamponları.
@@ -71,7 +71,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM gözlük, lüks m
 
 ## Genel Bakış
 
-Birinci sınıf Mazzucchelli ve JINYU asetattan üretilen KAS-143, vintage estetik ve modern dayanıklılığın rafine bir dengesini temsil ediyor. Canlı renk paleti ve sofistike unisex silueti, üst düzey moda koleksiyonları için zamansız bir temel sağlar.
+Birinci sınıf Mazzucchelli ve JIMEI & JINYU asetattan üretilen KAS-143, vintage estetik ve modern dayanıklılığın rafine bir dengesini temsil ediyor. Canlı renk paleti ve sofistike unisex silueti, üst düzey moda koleksiyonları için zamansız bir temel sağlar.
 
 Hassas mühendislik ürünü 4+3 barrel menteşeler ve entegre burun tamponları, kalıcı yapısal bütünlük ve kullanıcı için güvenli, rahat bir uyum sağlar.
 

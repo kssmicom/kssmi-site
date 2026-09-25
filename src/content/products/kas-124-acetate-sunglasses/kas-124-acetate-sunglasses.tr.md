@@ -5,7 +5,7 @@ slug: "kas-124-acetate-sunglasses"
 itemNo: "KAS-124"
 date: "2026-05-09"
 colors: "Siyah & Manda Boynuzu & Kaplumbağa"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100adet/renk)"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -46,7 +46,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Özellikler
 
-- **Premium Malzeme:** Olağanüstü dayanıklılık ile canlı, el yapımı cila sunan yüksek kaliteli Mazzucchelli ve JINYU asetat yapı.
+- **Premium Malzeme:** Olağanüstü dayanıklılık ile canlı, el yapımı cila sunan yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat yapı.
 - **Dayanıklı Donanım:** Uzun süreli çalışma pürüzsüzlüğü ve çerçeve stabilitesi için hassas bir şekilde tasarlanmış sağlam 3+2 varil yapılı menteşeler.
 - **Gelişmiş Optik:** Kapsamlı özel kaplama seçenekleriyle üstün darbe direnci ve optik netlik sağlayan dayanıklı naylon lensler.
 - **Ergonomik Konfor:** Uzun süreli günlük kullanım sırasında güvenli, baskısız bir uyum için tasarlanmış entegre burun pedlerine sahip hafif çerçeve.
@@ -64,7 +64,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Genel Bakış
 
-Birinci sınıf Mazzucchelli ve JINYU asetattan üretilen bu model, cesur, vintage esintili siluetini vurgulayan el cilalı bir yüzeye sahiptir. Çerçeve, lüks bir üniseks estetiği, üst düzey moda gözlükleri için gerekli olan canlı, hafif niteliklerle dengeler.
+Birinci sınıf Mazzucchelli ve JIMEI & JINYU asetattan üretilen bu model, cesur, vintage esintili siluetini vurgulayan el cilalı bir yüzeye sahiptir. Çerçeve, lüks bir üniseks estetiği, üst düzey moda gözlükleri için gerekli olan canlı, hafif niteliklerle dengeler.
 
 Hassas bir şekilde tasarlanmış 3+2 varil menteşeler ve dayanıklı naylon lensler, tüm üretim partilerinde güvenli bir uyum ve olağanüstü optik performans sağlar.
 

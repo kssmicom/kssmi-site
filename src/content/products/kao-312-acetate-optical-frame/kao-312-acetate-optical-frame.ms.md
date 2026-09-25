@@ -5,7 +5,7 @@ slug: "kao-312-acetate-optical-frame"
 itemNo: "KAO-312"
 date: "2026-05-10"
 colors: "Hitam & Hijau Neon & Spark & Havana & Kura-kura Merah"
-materials: "Asetat Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Asetat Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -56,7 +56,7 @@ seoKeywords: "asetat Mazzucchelli, bingkai optik asetat, pengeluar kacamata, kil
 
 ## Ciri-ciri Utama
 
-- **Bahan Gred Aeroangkasa:** Asetat Mazzucchelli dan JINYU premium pada bahagian hadapan dan temple menawarkan rasa ringan dengan ketahanan unggul dan kedalaman warna yang ceria.
+- **Bahan Gred Aeroangkasa:** Asetat Mazzucchelli dan JIMEI & JINYU premium pada bahagian hadapan dan temple menawarkan rasa ringan dengan ketahanan unggul dan kedalaman warna yang ceria.
 - **Perkakasan Teguh:** Engsel struktur rivet barrel 4+3 kejuruteraan jitu memastikan kelancaran operasi jangka panjang dan kestabilan struktur.
 - **Reka Bentuk Ergonomik:** Alas hidung bersepadu yang lancar direka untuk keselesaan sepanjang hari dan padanan selamat yang tidak licin pada pelbagai profil wajah.
 - **Optik Berprestasi Tinggi:** Lensa nilon lasak dengan pilihan penyesuaian yang luas untuk warna dan salutan bagi menyelaraskan dengan estetika jenama tertentu.
@@ -74,7 +74,7 @@ seoKeywords: "asetat Mazzucchelli, bingkai optik asetat, pengeluar kacamata, kil
 
 ## Gambaran Keseluruhan
 
-Asetat Mazzucchelli dan JINYU yang ceria memberikan KAO-312 watak tersendiri, menawarkan profil ringan yang mengekalkan ketahanan yang luar biasa.
+Asetat Mazzucchelli dan JIMEI & JINYU yang ceria memberikan KAO-312 watak tersendiri, menawarkan profil ringan yang mengekalkan ketahanan yang luar biasa.
 
 Engsel rivet barrel 4+3 kejuruteraan jitu dan alas hidung bersepadu memberikan integriti struktur dan keselesaan ergonomik yang diharapkan daripada koleksi optik premium.
 

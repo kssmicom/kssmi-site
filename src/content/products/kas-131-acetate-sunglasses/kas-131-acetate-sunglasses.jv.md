@@ -5,7 +5,7 @@ slug: "kas-131-acetate-sunglasses"
 itemNo: "KAS-131"
 date: "2026-05-09"
 colors: "Ireng & Ungu & Bulus & Putih"
-materials: "Premium Mazzucchelli & Asetat JINYU & Kustomisasi"
+materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen kacamata hitam asetat, produsen kacamata kustom, kacamata
 
 ## Fitur
 
-- **Bahan Frame Premium:** Digawe saka asetat Mazzucchelli lan JINYU kualitas dhuwur, nyedhiyakake struktur sing entheng nanging awet banget kanthi werna sing jero lan tahan suwe.
+- **Bahan Frame Premium:** Digawe saka asetat Mazzucchelli lan JIMEI & JINYU kualitas dhuwur, nyedhiyakake struktur sing entheng nanging awet banget kanthi werna sing jero lan tahan suwe.
 - **Hardware Awet:** Nampilake sistem engsel struktur 4+3 barrel profesional sing dirancang kanggo kelancaran operasional sing unggul lan integritas struktural jangka panjang.
 - **Optik Canggih:** Dilengkapi lensa nilon kuwat sing nawakake resistensi dampak dhuwur lan kejelasan optik, bisa dikustomisasi kanthi lengkap miturut syarat merek tartamtu.
 - **Kenyamanan Ergonomis:** Dirancang kanthi bantalan irung terpadu kanggo njamin pas sing stabil lan tanpa tekanan sing cocog kanggo panggunaan saben dina sing suwe.
@@ -71,7 +71,7 @@ seoKeywords: "produsen kacamata hitam asetat, produsen kacamata kustom, kacamata
 
 ## Gambaran Umum
 
-Asetat Mazzucchelli lan JINYU dadi inti saka kacamata hitam iki, nyedhiyakake werna sing jero lan daya tahan entheng sing narik kawigaten pasar fashion kelas dhuwur.
+Asetat Mazzucchelli lan JIMEI & JINYU dadi inti saka kacamata hitam iki, nyedhiyakake werna sing jero lan daya tahan entheng sing narik kawigaten pasar fashion kelas dhuwur.
 
 Sistem engsel struktur 4+3 barrel njamin presisi operasional jangka panjang, dene bantalan irung terpadu nawakake stabilitas ergonomis kanggo panggunaan sedina muput.
 

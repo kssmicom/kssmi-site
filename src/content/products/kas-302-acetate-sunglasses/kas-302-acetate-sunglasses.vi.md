@@ -5,7 +5,7 @@ slug: "kas-302-acetate-sunglasses"
 itemNo: "KAS-302"
 date: "2026-05-12"
 colors: "Đen & Đồi mồi"
-materials: "Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli cao cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) (Tùy chỉnh theo yêu cầu)"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -41,7 +41,7 @@ seoKeywords: "kính mát axetat, kính mát unisex, nhà sản xuất kính mắ
 ---
 
 ## Đặc điểm
-- **Chất liệu cao cấp:** Gọng và càng kính bằng axetat Mazzucchelli và JINYU cao cấp mang lại vẻ thẩm mỹ tinh tế với độ sâu màu sắc sống động, lâu bền.
+- **Chất liệu cao cấp:** Gọng và càng kính bằng axetat Mazzucchelli và JIMEI & JINYU cao cấp mang lại vẻ thẩm mỹ tinh tế với độ sâu màu sắc sống động, lâu bền.
 - **Kỹ thuật chính xác:** Bản lề cấu trúc 4+3 chấu chắc chắn được thiết kế để vận hành ổn định, trơn tru lâu dài và độ bền của phần cứng.
 - **Quang học hiệu suất cao:** Tròng kính nylon bền bỉ mang lại độ rõ nét quang học vượt trội và khả năng chống va đập với các tùy chọn tùy chỉnh phong phú.
 - **Thiết kế công thái học:** Đệm mũi liền khối được thiết kế để mang lại cảm giác vừa vặn an toàn, thoải mái và thẩm mỹ unisex táo bạo, liền mạch.
@@ -57,7 +57,7 @@ seoKeywords: "kính mát axetat, kính mát unisex, nhà sản xuất kính mắ
 - Nhà thời trang xa xỉ
 
 ## Tổng quan
-Được chế tác từ axetat Mazzucchelli và JINYU cao cấp, KAS-302 cân bằng giữa thẩm mỹ unisex táo bạo với độ sâu màu sắc sống động, định nghĩa phong cách kính mắt xa xỉ hiện đại.
+Được chế tác từ axetat Mazzucchelli và JIMEI & JINYU cao cấp, KAS-302 cân bằng giữa thẩm mỹ unisex táo bạo với độ sâu màu sắc sống động, định nghĩa phong cách kính mắt xa xỉ hiện đại.
 
 Bản lề 4+3 chấu được thiết kế chính xác đảm bảo độ bền lâu dài và vận hành trơn tru, trong khi đệm mũi liền khối mang lại sự vừa vặn an toàn, công thái học.
 

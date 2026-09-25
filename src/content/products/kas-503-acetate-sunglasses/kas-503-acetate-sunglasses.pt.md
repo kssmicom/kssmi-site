@@ -5,7 +5,7 @@ slug: "kas-503-acetate-sunglasses"
 itemNo: "KAS-503"
 date: "2026-05-13"
 colors: "Preto, Vermelho com Degradê Vermelho, Tartaruga com Marrom"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -42,7 +42,7 @@ seoKeywords: "fabricante de óculos de sol em acetato, óculos de sol oem person
 
 ## Características
 
-- **Material de Acetato Premium:** Acetato Mazzucchelli e JINYU premium que oferece um acabamento leve, durável e vibrante para um apelo estético excepcional.
+- **Material de Acetato Premium:** Acetato Mazzucchelli e JIMEI & JINYU premium que oferece um acabamento leve, durável e vibrante para um apelo estético excepcional.
 - **Hardware Durável:** Dobradiças estáveis de estrutura de 3+2 barris projetadas para suavidade operacional de longo prazo, com atualizações opcionais de 5 barris e dobradiças de mola.
 - **Ópticas Premium:** Lentes de nylon tenazes que fornecem alta clareza visual e durabilidade, com amplas opções de coloração personalizada disponíveis.
 - **Conforto Ergonômico:** Ponteiras nasicas integradas em acetato projetadas para fornecer um ajuste seguro e confortável para o uso o dia todo.
@@ -60,7 +60,7 @@ seoKeywords: "fabricante de óculos de sol em acetato, óculos de sol oem person
 
 ## Visão Geral
 
-Fabricados em acetato Mazzucchelli e JINYU premium, os óculos de sol KAS-503 trazem vitalidade e durabilidade excepcionais para coleções de óculos modernas.
+Fabricados em acetato Mazzucchelli e JIMEI & JINYU premium, os óculos de sol KAS-503 trazem vitalidade e durabilidade excepcionais para coleções de óculos modernas.
 
 A integração de dobradiças confiáveis de 3+2 barris com lentes de nylon tenazes garante estabilidade estrutural, enquanto as ponteiras nasicas em acetato oferecem conforto ergonômico duradouro.
 

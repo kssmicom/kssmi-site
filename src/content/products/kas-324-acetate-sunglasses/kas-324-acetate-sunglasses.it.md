@@ -5,7 +5,7 @@ slug: "kas-324-acetate-sunglasses"
 itemNo: "KAS-324"
 date: "2026-05-13"
 colors: "Nero, Havana, Champagne"
-materials: "Acetato Premium Mazzucchelli e JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli e JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione per Conto Terzi & Design e Produzione ( Personalizzazione )"
 moq: "300 pz/modello (100pz/colore)"
 
@@ -49,7 +49,7 @@ seoKeywords: "occhiali da sole in acetato premium, occhiali moda in acetato, pro
 ---
 
 ## Caratteristiche
-- **Materiale in Acetato Premium:** Struttura in acetato di alta qualità Mazzucchelli e JINYU che offre una finitura vibrante con eccezionale durata e comfort leggero.
+- **Materiale in Acetato Premium:** Struttura in acetato di alta qualità Mazzucchelli e JIMEI & JINYU che offre una finitura vibrante con eccezionale durata e comfort leggero.
 - **Hardware di Precisione:** Cerniere stabili con struttura a 3+2 barili progettate per una fluidità operativa costante e affidabilità a lungo termine.
 - **Ottica Avanzata:** Lenti in nylon resistenti agli urti con ampie opzioni di personalizzazione per una protezione UV e una chiarezza superiori.
 - **Comfort Integrato:** Naselli stampati di precisione progettati per una vestibilità ergonomica e ipoallergenica su diversi profili facciali.
@@ -66,7 +66,7 @@ seoKeywords: "occhiali da sole in acetato premium, occhiali moda in acetato, pro
 
 ## Panoramica
 
-Per i marchi di occhiali che danno priorità all'eccellenza dei materiali, il modello KAS-324 utilizza acetato premium Mazzucchelli e JINYU per ottenere una finitura distintiva e ad alta vibrazione. Questa selezione offre la durata e la leggerezza richieste per i portfolio di moda di lusso.
+Per i marchi di occhiali che danno priorità all'eccellenza dei materiali, il modello KAS-324 utilizza acetato premium Mazzucchelli e JIMEI & JINYU per ottenere una finitura distintiva e ad alta vibrazione. Questa selezione offre la durata e la leggerezza richieste per i portfolio di moda di lusso.
 
 La struttura della montatura con cerniera a 3+2 barili e i naselli integrati sono lavorati con precisione per garantire un'affidabilità operativa costante e comfort per tutto il giorno.
 

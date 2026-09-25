@@ -5,7 +5,7 @@ slug: "kao-333-acetate-optical-frame"
 itemNo: "KAO-333"
 date: "2026-05-10"
 colors: "Kaplumbağa, Bal Rengi"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim & Tasarım ve Üretim ( Özelleştirme )"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -40,7 +40,7 @@ seoKeywords: "asetat optik çerçeveler, özelleştirilebilir asetat çerçevele
 
 ## Özellikler
 
-- **Premium Malzeme:** Premium Mazzucchelli ve JINYU asetattan üretilmiş olup, canlı ve derin tonlu renk estetiğiyle ultra hafif ama olağanüstü dayanıklı bir yapı sunar.
+- **Premium Malzeme:** Premium Mazzucchelli ve JIMEI & JINYU asetattan üretilmiş olup, canlı ve derin tonlu renk estetiğiyle ultra hafif ama olağanüstü dayanıklı bir yapı sunar.
 - **Mühendislik Harikası Donanım:** Yaylı menteşe ve 5 barrel seçenekleriyle sunulan, stabil ve pürüzsüz sap hareketi sağlayan yüksek güvenilirlikli 3+2 barrel perçin yapılı menteşeler.
 - **Dayanıklı Optikler:** Tamamen ısmarlama kaplama ve özelleştirme hizmetleriyle üstün optik netlik ve darbe direnci sunan yüksek dayanıklılıklı naylon lensler.
 - **Entegre Konfor:** Dengeli ve basınçsız bir oturuş sağlamak için özel 51-22-145 mm geometri ile birleştirilmiş dikişsiz entegre asetat burun tamponları.
@@ -58,7 +58,7 @@ seoKeywords: "asetat optik çerçeveler, özelleştirilebilir asetat çerçevele
 
 ## Genel Bakış
 
-Premium Mazzucchelli ve JINYU asetat, KAO-333 modeline zengin, derin tonlu bir renk derinliği ve dikkat çekici bir yapısal uzun ömürlülük kazandırır. Retro esintili silueti, zamansız lüks stili rahat ve üniseks bir oturuşla dengeler.
+Premium Mazzucchelli ve JIMEI & JINYU asetat, KAO-333 modeline zengin, derin tonlu bir renk derinliği ve dikkat çekici bir yapısal uzun ömürlülük kazandırır. Retro esintili silueti, zamansız lüks stili rahat ve üniseks bir oturuşla dengeler.
 
 Hassas mühendislikle üretilmiş 3+2 perçinli menteşeler ve entegre burun tamponları, günlük kullanım sırasında sapların dengeli bir hizada kalmasını ve ağırlıksız bir his sunmasını sağlar.
 

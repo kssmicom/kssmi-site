@@ -5,7 +5,7 @@ slug: "kao-334-acetate-optical-frame"
 itemNo: "KAO-334"
 date: "2026-05-10"
 colors: "Nero con Miele, Blu Trasparente con Tartaruga, Riga Marrone con Blu"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione per Conto Terzi & Design e Produzione ( Personalizzazione )"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -41,7 +41,7 @@ seoKeywords: "montature ottiche in acetato, montature in acetato personalizzabil
 
 ## Caratteristiche
 
-- **Materiale Premium:** Realizzato in acetato Mazzucchelli e JINYU di alta qualità, offre una struttura ultraleggera ma eccezionalmente durevole con un'estetica dai colori vivaci e intensi.
+- **Materiale Premium:** Realizzato in acetato Mazzucchelli e JIMEI & JINYU di alta qualità, offre una struttura ultraleggera ma eccezionalmente durevole con un'estetica dai colori vivaci e intensi.
 - **Componenti Meccanici:** Cerniere con struttura a rivetto a 3+2 barilotti ad alta affidabilità che offrono un movimento delle aste stabile e fluido, con opzioni di cerniera a molla e a 5 barilotti disponibili.
 - **Ottica Tenace:** Lenti in nylon ad alta durata che offrono un'eccezionale chiarezza ottica e resistenza agli urti con servizi completi di rivestimento personalizzato e personalizzazione.
 - **Comfort Integrato:** Naselli in acetato perfettamente integrati combinati con una geometria su misura di 44-23-145mm per offrire una vestibilità bilanciata e senza punti di pressione.
@@ -59,7 +59,7 @@ seoKeywords: "montature ottiche in acetato, montature in acetato personalizzabil
 
 ## Panoramica
 
-Lo stile raffinato d'ispirazione retrò incontra un'eccezionale profondità materiale in questa montatura ottica in acetato premium Mazzucchelli e JINYU. Combinazioni di colori distintive, come il Blu Trasparente con Tartaruga e il Nero con Miele, offrono un fascino classico ma alla moda per le collezioni di occhiali di alta gamma.
+Lo stile raffinato d'ispirazione retrò incontra un'eccezionale profondità materiale in questa montatura ottica in acetato premium Mazzucchelli e JIMEI & JINYU. Combinazioni di colori distintive, come il Blu Trasparente con Tartaruga e il Nero con Miele, offrono un fascino classico ma alla moda per le collezioni di occhiali di alta gamma.
 
 Il sistema di cerniere a rivetto a 3+2 barilotti ad alta precisione, combinato con i naselli integrati e la geometria su misura di 44-23-145mm, offre una vestibilità leggera e senza punti di pressione, oltre a una stabilità strutturale a lungo termine.
 

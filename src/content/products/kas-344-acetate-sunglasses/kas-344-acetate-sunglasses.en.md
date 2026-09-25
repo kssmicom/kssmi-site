@@ -5,7 +5,7 @@ slug: "kas-344-acetate-sunglasses"
 itemNo: "KAS-344"
 date: "2026-05-12"
 colors: "Solide-Black & Amber-Tortoise & Dark-Tortoise & Reddish-Orange"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -53,7 +53,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 ---
 
 ## Technical Features
-- **Premium Material:** Hand-polished Mazzucchelli and JINYU acetate offering a rich, vibrant finish with exceptional durability and depth of color.
+- **Premium Material:** Hand-polished Mazzucchelli, JIMEI & JINYU acetate offering a rich, vibrant finish with exceptional durability and depth of color.
 - **Precision Engineering:** High-quality 2+1 barrel structure hinges designed for consistent tension and long-term operational smoothness.
 - **Enhanced Comfort:** Adjustable flexible titanium nose pads providing a lightweight, customizable fit for all-day comfort across various facial profiles.
 - **Advanced Optics:** Tenacious nylon lenses providing superior impact resistance and clarity, with full support for custom tints and specialized coatings.
@@ -70,7 +70,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Overview
 
-Crafted from hand-polished Mazzucchelli and JINYU acetate, this design offers a vibrant depth of color and a premium finish suited for luxury fashion houses. Its lightweight frame architecture balances modern styling with the structural integrity expected of high-end eyewear.
+Crafted from hand-polished Mazzucchelli, JIMEI & JINYU acetate, this design offers a vibrant depth of color and a premium finish suited for luxury fashion houses. Its lightweight frame architecture balances modern styling with the structural integrity expected of high-end eyewear.
 
 High-quality 2+1 barrel hinges and adjustable titanium nose pads ensure a secure, customizable fit and smooth operation for long-term comfort.
 

@@ -5,7 +5,7 @@ slug: "kao-310-acetate-optical-frame"
 itemNo: "KAO-310"
 date: "2026-05-10"
 colors: "Preto-Cinza & Fosco-Transparente & Brilhante-Cinza & Preto-Verde"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -50,7 +50,7 @@ seoKeywords: "armações de acetato Mazzucchelli, armações ópticas em acetato
 
 ## Características
 
-- **Material Premium:** A construção em acetato Mazzucchelli e JINYU de alta qualidade oferece uma armação leve e durável com profundidade de cor vibrante para uma estética de luxo.
+- **Material Premium:** A construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade oferece uma armação leve e durável com profundidade de cor vibrante para uma estética de luxo.
 - **Hardware Durável:** Dobradiças robustas com estrutura de rebite de 4+3 tambores projetadas para estabilidade superior e suavidade operacional a longo prazo.
 - **Ótica Avançada:** Equipada com lentes de nylon tenazes que oferecem alta resistência a impactos e opções versáteis de personalização para requisitos específicos de marca.
 - **Conforto Ergonômico:** Apresenta ponteiras nasicas integradas projetadas para um ajuste seguro e sem pressão e usabilidade durante todo o dia em diversos perfis faciais.
@@ -67,7 +67,7 @@ seoKeywords: "armações de acetato Mazzucchelli, armações ópticas em acetato
 
 ## Visão Geral
 
-Os substratos de acetato Mazzucchelli e JINYU proporcionam ao KAO-310 um acabamento vibrante e de alto brilho que atende aos rigorosos padrões dos mercados ópticos de luxo.
+Os substratos de acetato Mazzucchelli e JIMEI & JINYU proporcionam ao KAO-310 um acabamento vibrante e de alto brilho que atende aos rigorosos padrões dos mercados ópticos de luxo.
 
 A robusta arquitetura de dobradiças de rebite 4+3 tambores e as ponteiras nasicas integradas garantem que esta armação mantenha a sua integridade estrutural e o conforto do utilizador ao longo do seu ciclo de vida.
 

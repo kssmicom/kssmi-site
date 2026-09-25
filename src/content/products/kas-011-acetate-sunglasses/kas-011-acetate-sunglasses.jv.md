@@ -5,7 +5,7 @@ slug: "kas-011-acetate-sunglasses"
 itemNo: "KAS-011"
 date: "2026-05-10"
 colors: "Havana & Ireng & Putih"
-materials: "Premium Mazzucchelli & Asetat JINYU & Kustomisasi"
+materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -50,7 +50,7 @@ seoKeywords: "produsen kacamata hitam asetat KAS-011, OEM kacamata mewah kustom,
 
 ## Fitur
 
-- **Bahan Premium:** Digawe saka asetat Mazzucchelli lan JINYU kelas dhuwur kanggo nyedhiyakake tampilan sing entheng, awet, lan padhang sing nambah nilai merek premium.
+- **Bahan Premium:** Digawe saka asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur kanggo nyedhiyakake tampilan sing entheng, awet, lan padhang sing nambah nilai merek premium.
 - **Hardware Awet:** Nduweni sistem engsel struktur 4+3 barrel sing kuwat sing dirancang kanggo kelancaran operasional jangka panjang lan integritas struktural.
 - **Optik Performa Dhuwur:** Dilengkapi lensa nilon sing kuat sing nawakake kajelasan lan resistensi dampak sing unggul kanthi macem-macem pilihan warna lan lapisan kustom.
 - **Ergonomi Integrasi:** Dirancang kanthi bantalan irung integrasi kanggo nyedhiyakake estetika sing mulus lan kenyamanan sing bisa dipercaya kanggo macem-macem struktur pasuryan.
@@ -68,7 +68,7 @@ seoKeywords: "produsen kacamata hitam asetat KAS-011, OEM kacamata mewah kustom,
 
 ## Ringkesan
 
-Asetat Mazzucchelli lan JINYU kelas dhuwur dadi inti saka KAS-011, nggawe frame sing padhang lan entheng sing cocog karo syarat canggih saka merek kacamata mewah.
+Asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur dadi inti saka KAS-011, nggawe frame sing padhang lan entheng sing cocog karo syarat canggih saka merek kacamata mewah.
 
 Integrasi sistem engsel 4+3 barrel lan bantalan irung sing mulus njamin umur dawa struktural lan linuwih ergonomis ing macem-macem proses produksi.
 

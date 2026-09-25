@@ -5,7 +5,7 @@ slug: "kas-017-acetate-sunglasses"
 itemNo: "KAS-017"
 date: "2026-05-10"
 colors: "Schwarz, Transparentes Rot, Transparentes Blau"
-materials: "Premium Mazzucchelli & JINYU Acetat & Individualisierung"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -44,7 +44,7 @@ seoKeywords: "Luxus-Acetat-Sonnenbrillen, Hersteller von individuellen Brillen, 
 
 ## Eigenschaften
 
-- **Premium-Material:** Handverlesenes Mazzucchelli- und JINYU-Acetat bietet ein hochdichtes Finish mit überlegener Farbtiefe und Langlebigkeit.
+- **Premium-Material:** Handverlesenes Mazzucchelli- und JIMEI & JINYU-Acetat bietet ein hochdichtes Finish mit überlegener Farbtiefe und Langlebigkeit.
 - **Präzisionstechnik:** Fachmännisch gefertigte Rahmenmaße von 49-23-145 mm sorgen für eine ausgewogene, stilvolle Passform mit umfangreichen Anpassungsmöglichkeiten.
 - **Langlebige Hardware:** Robuste 3+2 Barrel-Struktur-Scharniere mit verfügbaren Upgrades auf 5-Barrel- oder Federscharniere für langfristige operative Leichtgängigkeit.
 - **Fortschrittliche Optik:** Hochklare, widerstandsfähige Nylon-Gläser bieten Schlagfestigkeit mit anpassbaren Tönungen und Beschichtungen für markenspezifische Anforderungen.
@@ -61,7 +61,7 @@ seoKeywords: "Luxus-Acetat-Sonnenbrillen, Hersteller von individuellen Brillen, 
 
 ## Übersicht
 
-Handverlesenes Mazzucchelli- und JINYU-Acetat verleiht dem Modell KAS-017 sein hochdichtes Finish und seine überlegene Farbtiefe und erfüllt die strengen Standards des Luxusbrillenmarktes.
+Handverlesenes Mazzucchelli- und JIMEI & JINYU-Acetat verleiht dem Modell KAS-017 sein hochdichtes Finish und seine überlegene Farbtiefe und erfüllt die strengen Standards des Luxusbrillenmarktes.
 
 Die strukturelle Integrität wird durch präzisionsgefertigte 3+2 Barrel-Scharniere und hochklare Nylongläser aufrechterhalten, die sowohl Langlebigkeit als auch optische Exzellenz bieten.
 

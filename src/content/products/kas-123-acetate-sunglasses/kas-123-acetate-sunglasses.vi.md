@@ -5,7 +5,7 @@ slug: "kas-123-acetate-sunglasses"
 itemNo: "KAS-123"
 date: "2026-05-09"
 colors: "Đen & Mù tạt & Phong"
-materials: "Axetat Mazzucchelli & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Mazzucchelli & JIMEI & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -49,7 +49,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mắt OEM tùy chỉnh,
 ---
 
 ## Đặc điểm
-- **Axetat cao cấp:** Cấu trúc axetat Mazzucchelli và JINYU được đánh bóng thủ công mang lại độ bền vượt trội và chiều sâu màu sắc rực rỡ cho các thương hiệu xa xỉ.
+- **Axetat cao cấp:** Cấu trúc axetat Mazzucchelli và JIMEI & JINYU được đánh bóng thủ công mang lại độ bền vượt trội và chiều sâu màu sắc rực rỡ cho các thương hiệu xa xỉ.
 - **Bản lề chính xác:** Bản lề cấu trúc thùng 3+2 chắc chắn được thiết kế để vận hành trơn tru nhất quán và đảm bảo tính toàn vẹn cấu trúc lâu dài.
 - **Quang học hiệu suất cao:** Tròng kính nylon bền bỉ cung cấp độ rõ nét vượt trội và khả năng chống va đập, với các tùy chọn tùy chỉnh đầy đủ cho các lớp phủ tròng kính chuyên dụng.
 - **Thiết kế công thái học:** Đệm mũi liền khối và đường cong càng kính tinh tế đảm bảo sự vừa vặn an toàn, không gây áp lực để mang lại sự thoải mái suốt cả ngày.
@@ -66,7 +66,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mắt OEM tùy chỉnh,
 
 ## Tổng quan
 
-Kết hợp chiều sâu màu sắc rực rỡ với tính toàn vẹn cấu trúc của axetat Mazzucchelli và JINYU được đánh bóng thủ công, mẫu KAS-123 đại diện cho một nền tảng linh hoạt cho các bộ sưu tập kính mắt xa xỉ.
+Kết hợp chiều sâu màu sắc rực rỡ với tính toàn vẹn cấu trúc của axetat Mazzucchelli và JIMEI & JINYU được đánh bóng thủ công, mẫu KAS-123 đại diện cho một nền tảng linh hoạt cho các bộ sưu tập kính mắt xa xỉ.
 
 Kiểu dáng unisex cân đối của nó được củng cố bởi bản lề thùng 3+2 được thiết kế chính xác và đệm mũi liền khối, đảm bảo sự vừa vặn tinh tế, bền bỉ khi đeo hàng ngày.
 

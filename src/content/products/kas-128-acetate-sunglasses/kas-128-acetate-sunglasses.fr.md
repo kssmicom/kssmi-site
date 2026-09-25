@@ -5,7 +5,7 @@ slug: "kas-128-acetate-sunglasses"
 itemNo: "KAS-128"
 date: "2026-05-09"
 colors: "Noir & Blanc & Marbre Vert & Marbre Bleu & Marbre Noir & Rubis"
-materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
+materials: "Mazzucchelli Premium & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "OEM & ODM ( Personnalisation )"
 moq: "300 pcs/modèle (100pcs/couleur)"
 
@@ -62,7 +62,7 @@ seoKeywords: "fabricant lunettes acétate premium, lunettes OEM personnalisées 
 
 ## Caractéristiques
 
-- **Acétate Premium :** Fabriqué à partir de l'acétate de renommée mondiale Mazzucchelli et JINYU, offrant une durabilité exceptionnelle et une finition brillante et éclatante.
+- **Acétate Premium :** Fabriqué à partir de l'acétate de renommée mondiale Mazzucchelli et JIMEI & JINYU, offrant une durabilité exceptionnelle et une finition brillante et éclatante.
 - **Charnières de Précision :** Charnières robustes à structure 4+3 barillets conçues pour une stabilité supérieure et une fluidité de fonctionnement à long terme.
 - **Optique Haute Performance :** Verres en nylon tenace offrant une excellente clarté et résistance aux chocs avec de vastes options de personnalisation.
 - **Confort Intégré :** Plaquettes de nez intégrées moulées avec précision, conçues pour un ajustement sûr, hypoallergénique et équilibré lors d'un port prolongé.
@@ -79,7 +79,7 @@ seoKeywords: "fabricant lunettes acétate premium, lunettes OEM personnalisées 
 
 ## Aperçu
 
-L'acétate Mazzucchelli et JINYU se marient dans une silhouette audacieuse et brillante qui définit le luxe moderne à travers son esthétique unisexe unique.
+L'acétate Mazzucchelli et JIMEI & JINYU se marient dans une silhouette audacieuse et brillante qui définit le luxe moderne à travers son esthétique unisexe unique.
 
 Les charnières de précision à 4+3 barillets et les plaquettes de nez intégrées assurent une stabilité exceptionnelle et un confort durable pour l'utilisateur.
 

@@ -5,7 +5,7 @@ slug: "kas-143-acetate-sunglasses"
 itemNo: "KAS-143"
 date: "2026-05-09"
 colors: "Negro & Champán & Tortuga & Oliva"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalización"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM)"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas OEM personalizadas, c
 
 ## Características
 
-- **Material Premium:** Construcción en acetato Mazzucchelli y JINYU de alta calidad que ofrece una estética vibrante con una durabilidad ligera y duradera para exhibiciones minoristas premium.
+- **Material Premium:** Construcción en acetato Mazzucchelli y JIMEI & JINYU de alta calidad que ofrece una estética vibrante con una durabilidad ligera y duradera para exhibiciones minoristas premium.
 - **Hardware de Precisión:** Robustas bisagras con estructura de 4+3 barriles diseñadas para una suavidad operativa constante y una excepcional longevità del marco.
 - **Óptica Mejorada:** Lentes de nylon tenaces que proporcionan una resistencia al impacto y claridad superiores con amplias opciones de recubrimiento personalizado para cumplir con los estándares específicos de la marca.
 - **Confort Integrado:** Almohadillas nasales integradas moldeadas sin costuras diseñadas para un ajuste seguro e hipoalergénico que garantiza la satisfacción del usuario a largo plazo.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas OEM personalizadas, c
 
 ## Resumen
 
-Fabricadas con acetato Mazzucchelli y JINYU de primera calidad, las KAS-143 encarnan un equilibrio refinado de estética vintage y durabilidad moderna. Su vibrante paleta de colores y su sofisticada silueta unisex proporcionan una base atemporal para colecciones de moda de alta gama.
+Fabricadas con acetato Mazzucchelli y JIMEI & JINYU de primera calidad, las KAS-143 encarnan un equilibrio refinado de estética vintage y durabilidad moderna. Su vibrante paleta de colores y su sofisticada silueta unisex proporcionan una base atemporal para colecciones de moda de alta gama.
 
 Las bisagras de 4+3 barriles diseñadas con precisión y las almohadillas nasales integradas aseguran una integridad estructural duradera y un ajuste seguro y cómodo para el usuario.
 

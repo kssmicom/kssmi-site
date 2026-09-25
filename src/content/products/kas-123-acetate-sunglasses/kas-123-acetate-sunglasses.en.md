@@ -5,7 +5,7 @@ slug: "kas-123-acetate-sunglasses"
 itemNo: "KAS-123"
 date: "2026-05-09"
 colors: "Black & Mustard & Maple"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -49,7 +49,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM eyewear, luxury privat
 ---
 
 ## Technical Features
-- **Premium Acetate:** Hand-polished Mazzucchelli and JINYU acetate construction offering exceptional durability and vibrant color depth for luxury branding.
+- **Premium Acetate:** Hand-polished Mazzucchelli, JIMEI & JINYU acetate construction offering exceptional durability and vibrant color depth for luxury branding.
 - **Precision Hinges:** Robust 3+2 barrel structure hinges engineered for consistent operational smoothness and long-term structural integrity.
 - **High-Performance Optics:** Tenacious nylon lenses providing superior clarity and impact resistance, with full customization options for specialized lens coatings.
 - **Ergonomic Design:** Integrated nose pads and refined temple contours ensuring a secure, pressure-free fit for all-day comfort.
@@ -66,7 +66,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM eyewear, luxury privat
 
 ## Overview
 
-Combining vibrant color depth with the structural integrity of hand-polished Mazzucchelli and JINYU acetate, the KAS-123 represents a versatile foundation for luxury eyewear collections.
+Combining vibrant color depth with the structural integrity of hand-polished Mazzucchelli, JIMEI & JINYU acetate, the KAS-123 represents a versatile foundation for luxury eyewear collections.
 
 Its balanced unisex profile is reinforced by precision-engineered 3+2 barrel hinges and integrated nose pads, ensuring a refined, durable fit for all-day wear.
 

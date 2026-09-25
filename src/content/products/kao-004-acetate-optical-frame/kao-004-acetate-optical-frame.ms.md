@@ -5,7 +5,7 @@ slug: "kao-004-acetate-optical-frame"
 itemNo: "KAO-004"
 date: "2026-05-10"
 colors: "Hitam & Kura-kura & Jingga & Zebra & Keemasan"
-materials: "Premium Mazzucchelli & Asetat JINYU & Penyesuaian"
+materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -43,7 +43,7 @@ seoKeywords: "pengilang bingkai optik asetat, bingkai optik OEM tersuai, kacamat
 
 ## Ciri-ciri Utama
 
-- **Seni Bina Bahan Premium:** Dihasilkan daripada asetat Mazzucchelli dan JINYU gred tinggi, menyediakan bingkai yang ringan dan tahan lama dengan profil warna yang rancak dan tahan lama.
+- **Seni Bina Bahan Premium:** Dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU gred tinggi, menyediakan bingkai yang ringan dan tahan lama dengan profil warna yang rancak dan tahan lama.
 - **Perkakasan Kestabilan Tinggi:** Engsel struktur rivet 4+3 barrel kejuruteraan jitu yang direka untuk kelancaran operasi yang unggul dan penjajaran bingkai jangka panjang.
 - **Optik Termaju:** Dilengkapi dengan lensa nilon tahan lasak yang menawarkan kejelasan luar biasa dan rintangan hentaman, dengan pilihan penyesuaian penuh untuk warna dan salutan.
 - **Reka Bentuk Ergonomik:** Sistem alas hidung bersepadu yang diukir untuk kesesuaian yang selamat dan hipoalergenik yang memastikan keselesaan berterusan semasa pemakaian berpanjangan.
@@ -61,7 +61,7 @@ seoKeywords: "pengilang bingkai optik asetat, bingkai optik OEM tersuai, kacamat
 
 ## Gambaran Keseluruhan
 
-Asetat Mazzucchelli dan JINYU gred tinggi memberikan KAO-004 karakter tersendiri, menggabungkan profil warna yang rancak dengan kemasan hipoalergenik yang terasa semula jadi pada kulit. Komposisi bahan bingkai dipilih secara khusus untuk menawarkan ketahanan tanpa menjejaskan siluet elegan dan ringan yang digemari oleh rumah fesyen moden.
+Asetat Mazzucchelli dan JIMEI & JINYU gred tinggi memberikan KAO-004 karakter tersendiri, menggabungkan profil warna yang rancak dengan kemasan hipoalergenik yang terasa semula jadi pada kulit. Komposisi bahan bingkai dipilih secara khusus untuk menawarkan ketahanan tanpa menjejaskan siluet elegan dan ringan yang digemari oleh rumah fesyen moden.
 
 Alas hidung bersepadu dan struktur rivet 4+3 barrel yang diperkukuh menentukan kecemerlangan mekanikal bingkai, memberikan kesesuaian yang selamat dan prestasi perkakasan yang konsisten.
 

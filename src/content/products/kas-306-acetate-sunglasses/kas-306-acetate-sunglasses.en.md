@@ -5,7 +5,7 @@ slug: "kas-306-acetate-sunglasses"
 itemNo: "KAS-306"
 date: "2026-05-12"
 colors: "Black & Tortoise & Grey & Brown & Olive"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -58,7 +58,7 @@ seoKeywords: "premium acetate sunglasses manufacturer, custom OEM sunglasses fac
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli and JINYU acetate construction providing a lightweight, durable, and vibrant finish for a luxury aesthetic.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction providing a lightweight, durable, and vibrant finish for a luxury aesthetic.
 - **Durable Hardware:** Robust 4+3 barrel structure hinges engineered for consistent operational smoothness, with optional 5-barrel and spring hinge upgrades.
 - **Superior Optics:** Impact-resistant nylon lenses offering exceptional clarity, with extensive customization available for specific tints and technical coatings.
 - **Integrated Comfort:** Precision-molded integrated nose pads designed to ensure a secure, balanced fit and a seamless, high-end profile.
@@ -75,7 +75,7 @@ seoKeywords: "premium acetate sunglasses manufacturer, custom OEM sunglasses fac
 
 ## Overview
 
-Mazzucchelli and JINYU acetate define the KAS-306, merging rich, multi-layered colors with a timeless geometric frame designed for both resilience and aesthetic versatility. This material selection ensures a vibrant finish that maintains its polish through years of wear.
+Mazzucchelli, JIMEI & JINYU acetate define the KAS-306, merging rich, multi-layered colors with a timeless geometric frame designed for both resilience and aesthetic versatility. This material selection ensures a vibrant finish that maintains its polish through years of wear.
 
 Precision-engineered 4+3 barrel hinges and integrated nose pads provide the structural integrity and balanced comfort required for high-end eyewear markets.
 

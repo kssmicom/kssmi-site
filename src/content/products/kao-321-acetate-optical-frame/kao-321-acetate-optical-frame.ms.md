@@ -5,7 +5,7 @@ slug: "kao-321-acetate-optical-frame"
 itemNo: "KAO-321"
 date: "2026-05-10"
 colors: "Havana & Hijau Tua & Hitam & Kelabu Lut Sinar"
-materials: "Mazzucchelli Premium & Asetat JINYU & Penyesuaian"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model (100unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengilang bingkai optik asetat, kilang kacamata tersuai China, bor
 
 ## Ciri-ciri Utama
 
-- **Komposisi Asetat Premium:** Dihasilkan daripada asetat Mazzucchelli dan JINYU bertaraf dunia, memberikan rasa ultra ringan dengan ketahanan struktur yang luar biasa dan kecerahan warna yang mendalam.
+- **Komposisi Asetat Premium:** Dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU bertaraf dunia, memberikan rasa ultra ringan dengan ketahanan struktur yang luar biasa dan kecerahan warna yang mendalam.
 - **Perkakasan Teguh:** Mempunyai seni bina engsel rivet 4+3 tong profesional yang direka untuk kestabilan maksimum dan kelancaran operasi jangka panjang.
 - **Asas Optik Canggih:** Dilengkapi dengan lensa nilon teguh yang menawarkan rintangan hentaman dan kejelasan yang unggul, dengan penyesuaian fleksibel untuk salutan dan warna khusus.
 - **Keselesaan Bersepadu:** Alas hidung bersepadu yang direka dengan tepat untuk memberikan padanan yang selamat dan hipoalergenik untuk pemakaian harian yang berpanjangan.
@@ -71,7 +71,7 @@ seoKeywords: "pengilang bingkai optik asetat, kilang kacamata tersuai China, bor
 
 ## Gambaran Keseluruhan
 
-Menggabungkan daya tarikan reka bentuk retro yang abadi dengan kualiti sentuhan unggul asetat Mazzucchelli dan JINYU premium, KAO-321 menawarkan siluet yang canggih untuk koleksi optik moden. Bahan-bahan yang dipilih dengan tangan ini memberikan bingkai dengan kecerahan warna yang mendalam dan kemasan ringan yang menonjolkan profil fesyen mewahnya.
+Menggabungkan daya tarikan reka bentuk retro yang abadi dengan kualiti sentuhan unggul asetat Mazzucchelli dan JIMEI & JINYU premium, KAO-321 menawarkan siluet yang canggih untuk koleksi optik moden. Bahan-bahan yang dipilih dengan tangan ini memberikan bingkai dengan kecerahan warna yang mendalam dan kemasan ringan yang menonjolkan profil fesyen mewahnya.
 
 Seni bina engsel rivet 4+3 tong memastikan kestabilan struktur yang luar biasa, dilengkapi dengan alas hidung bersepadu untuk padanan yang lancar dan selesa.
 

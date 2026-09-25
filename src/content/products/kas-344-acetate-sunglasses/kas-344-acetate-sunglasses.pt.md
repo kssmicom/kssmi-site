@@ -5,7 +5,7 @@ slug: "kas-344-acetate-sunglasses"
 itemNo: "KAS-344"
 date: "2026-05-12"
 colors: "Preto Sólido & Tartaruga Âmbar & Tartaruga Escura & Laranja Avermelhado"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -53,7 +53,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 ---
 
 ## Características
-- **Material Premium:** Acetato Mazzucchelli e JINYU polido à mão, oferecendo um acabamento rico e vibrante com excepcional durabilidade e profundidade de cor.
+- **Material Premium:** Acetato Mazzucchelli e JIMEI & JINYU polido à mão, oferecendo um acabamento rico e vibrante com excepcional durabilidade e profundidade de cor.
 - **Engenharia de Precisão:** Dobradiças de estrutura de 2+1 cilindros de alta qualidade, projetadas para tensão consistente e suavidade operacional de longo prazo.
 - **Conforto Aprimorado:** Ponteiras nasais de titânio flexíveis e ajustáveis, proporcionando um ajuste leve e personalizável para conforto durante todo o dia em vários perfis faciais.
 - **Óptica Avançada:** Lentes de nylon tenaz que proporcionam clareza e resistência ao impacto superiores, com suporte total para colorações personalizadas e revestimentos especializados.
@@ -70,7 +70,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Visão Geral
 
-Fabricado em acetato Mazzucchelli e JINYU polido à mão, este design oferece uma profundidade vibrante de cor e um acabamento premium adequado para casas de moda de luxo. Sua arquitetura de armação leve equilibra o estilo moderno com a integridade estrutural esperada de óculos de alta gama.
+Fabricado em acetato Mazzucchelli e JIMEI & JINYU polido à mão, este design oferece uma profundidade vibrante de cor e um acabamento premium adequado para casas de moda de luxo. Sua arquitetura de armação leve equilibra o estilo moderno com a integridade estrutural esperada de óculos de alta gama.
 
 As dobradiças de 2+1 cilindros de alta qualidade e as plaquetas de titânio ajustáveis garantem um ajuste seguro e personalizável, além de uma operação suave para conforto a longo prazo.
 

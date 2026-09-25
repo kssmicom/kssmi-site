@@ -5,7 +5,7 @@ slug: "kas-121-acetate-sunglasses"
 itemNo: "KAS-121"
 date: "2026-05-09"
 colors: "Negro & Habana & Maple"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalización"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100pcs/color)"
 
@@ -50,7 +50,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Características
 
-- **Construcción de Acetato Premium:** Fabricado con acetato Mazzucchelli y JINYU de alta calidad, ofreciendo un marco ligero, duradero y vibrante para un uso excepcional a largo plazo.
+- **Construcción de Acetato Premium:** Fabricado con acetato Mazzucchelli y JIMEI & JINYU de alta calidad, ofreciendo un marco ligero, duradero y vibrante para un uso excepcional a largo plazo.
 - **Hardware Robusto:** Bisagras de estructura de barril 3+2 diseñadas con precisión para garantizar una alineación segura y una suavidad operativa óptima.
 - **Óptica Avanzada:** Lentes de nylon tenaz que proporcionan una claridad visual superior, con opciones versátiles de tinte y recubrimiento personalizados disponibles.
 - **Comodidad Sin Costuras:** Almohadillas nasales integradas meticulosamente diseñadas para distribuir el peso de manera uniforme para un ajuste seguro y cómodo.
@@ -68,7 +68,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Descripción General
 
-Combinando la inspiración clásica vintage con el lujo moderno, el KAS-121 está magistralmente esculpido en acetato premium Mazzucchelli y JINYU. Esta base de material excepcional garantiza un marco ligero pero altamente duradero con un acabado cautivador y vibrante.
+Combinando la inspiración clásica vintage con el lujo moderno, el KAS-121 está magistralmente esculpido en acetato premium Mazzucchelli y JIMEI & JINYU. Esta base de material excepcional garantiza un marco ligero pero altamente duradero con un acabado cautivador y vibrante.
 
 La integridad estructural está asegurada mediante bisagras de barril 3+2 diseñadas con precisión, mientras que las almohadillas nasales meticulosamente integradas ofrecen un ajuste perfectamente equilibrado y cómodo.
 

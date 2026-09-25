@@ -5,7 +5,7 @@ slug: "kao-315-acetate-optical-frame"
 itemNo: "KAO-315"
 date: "2026-05-10"
 colors: "Ireng & Abu-abu Transparan & Havana & Shampanye & Bening & Oliver"
-materials: "Asetat Premium Mazzucchelli & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -62,7 +62,7 @@ seoKeywords: "produsen frame optik asetat, kacamata OEM kustom, frame label prib
 
 ## Fitur
 
-- **Bahan Kinerja Dhuwur:** Konstruksi asetat premium Mazzucchelli lan JINYU sing nawarake estetika semangat kanthi entheng lan awet sing luar biasa.
+- **Bahan Kinerja Dhuwur:** Konstruksi asetat premium Mazzucchelli lan JIMEI & JINYU sing nawarake estetika semangat kanthi entheng lan awet sing luar biasa.
 - **Hardware Presisi:** Engsel struktur rivet 4+3 barrel stabilitas dhuwur sing dirancang kanggo integritas struktural sing unggul lan kelancaran operasional jangka panjang.
 - **Optik Canggih:** Lensa nilon kuwat sing nampilake pilihan kustomisasi komprehensif kanggo warna khusus lan lapisan pelindung.
 - **Kenyamanan Ergonomis:** Bantalan irung integrasi sing lancar dirancang kanthi teliti kanggo nyedhiyakake pas sing aman lan nyaman kanggo panggunaan saben dina sing suwe.
@@ -80,7 +80,7 @@ seoKeywords: "produsen frame optik asetat, kacamata OEM kustom, frame label prib
 
 ## Ringkesan
 
-Campuran canggih asetat Mazzucchelli lan JINYU nemtokake KAO-315, nawarake sasis sing semangat nanging entheng kanggo merek kacamata sing fokus ing estetika inspirasi warisan.
+Campuran canggih asetat Mazzucchelli lan JIMEI & JINYU nemtokake KAO-315, nawarake sasis sing semangat nanging entheng kanggo merek kacamata sing fokus ing estetika inspirasi warisan.
 
 Arsitektur engsel rivet 4+3 barrel nyedhiyakake dhasar mekanik sing kuwat, dipasangake karo bantalan irung integrasi sing lancar kanggo kenyamanan ergonomis sing terus-menerus.
 

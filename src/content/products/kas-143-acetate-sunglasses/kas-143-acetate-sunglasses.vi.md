@@ -5,7 +5,7 @@ slug: "kas-143-acetate-sunglasses"
 itemNo: "KAS-143"
 date: "2026-05-09"
 colors: "Đen & Sâm panh & Đồi mồi & Ô liu"
-materials: "Mazzucchelli cao cấp & Axetat JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli cao cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM)"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -54,7 +54,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mắt OEM tùy chỉnh,
 
 ## Thông số kỹ thuật
 
-- **Chất liệu cao cấp:** Cấu trúc axetat Mazzucchelli và JINYU cao cấp mang lại tính thẩm mỹ sống động với độ bền nhẹ, lâu dài cho các tủ trưng bày bán lẻ cao cấp.
+- **Chất liệu cao cấp:** Cấu trúc axetat Mazzucchelli và JIMEI & JINYU cao cấp mang lại tính thẩm mỹ sống động với độ bền nhẹ, lâu dài cho các tủ trưng bày bán lẻ cao cấp.
 - **Phụ kiện phần cứng chính xác:** Bản lề cấu trúc 4+3 chấu chắc chắn được thiết kế để vận hành trơn tru nhất quán và tuổi thọ gọng kính đặc biệt.
 - **Quang học nâng cao:** Tròng kính nylon bền bỉ mang lại khả năng chống va đập và độ rõ nét vượt trội với các tùy chọn lớp phủ tùy chỉnh rộng rãi để đáp ứng các tiêu chuẩn thương hiệu cụ thể.
 - **Sự thoải mái tối ưu:** Đệm mũi đúc liền không mối nối được thiết kế để mang lại sự vừa vặn an toàn, không gây dị ứng, đảm bảo sự hài lòng lâu dài cho người đeo.
@@ -71,7 +71,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mắt OEM tùy chỉnh,
 
 ## Tổng quan
 
-Được chế tác từ axetat Mazzucchelli và JINYU cao cấp, KAS-143 thể hiện sự cân bằng tinh tế giữa thẩm mỹ cổ điển và độ bền hiện đại. Bảng màu sống động và kiểu dáng unisex tinh tế mang đến nền tảng vượt thời gian cho các bộ sưu tập thời trang cao cấp.
+Được chế tác từ axetat Mazzucchelli và JIMEI & JINYU cao cấp, KAS-143 thể hiện sự cân bằng tinh tế giữa thẩm mỹ cổ điển và độ bền hiện đại. Bảng màu sống động và kiểu dáng unisex tinh tế mang đến nền tảng vượt thời gian cho các bộ sưu tập thời trang cao cấp.
 
 Bản lề 4+3 chấu được chế tạo chính xác và đệm mũi đúc liền đảm bảo tính toàn vẹn về cấu trúc bền vững và mang lại cảm giác vừa vặn, thoải mái cho người đeo.
 

@@ -5,7 +5,7 @@ slug: "kas-015-acetate-sunglasses"
 itemNo: "KAS-015"
 date: "2026-05-10"
 colors: "Tartaruga com Verde, Preto com Preto-Amarelo, Preto Tartaruga com Verde, Preto"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -43,7 +43,7 @@ seoKeywords: "fabricante óculos de sol luxo acetato, fábrica óculos personali
 
 ## Características
 
-- **Material Premium:** Construção em acetato Mazzucchelli e JINYU de alta qualidade que oferece um acabamento leve, durável e vibrante para uma estética de luxo.
+- **Material Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que oferece um acabamento leve, durável e vibrante para uma estética de luxo.
 - **Integridade Estrutural:** Armação e hastes de acetato premium fabricadas com precisão que garantem a retenção da forma e a resistência a longo prazo.
 - **Componentes Duráveis:** Dobradiças estáveis com estrutura de 2+1 barris projetadas para uma suavidade de operação constante, com opções de atualização para 5 barris e dobradiças de mola.
 - **Ótica Superior:** Lentes de nylon tenaz que proporcionam excelente clareza e resistência ao impacto com amplas opções de tingimento personalizado.
@@ -61,7 +61,7 @@ seoKeywords: "fabricante óculos de sol luxo acetato, fábrica óculos personali
 
 ## Visão Geral
 
-Utilizando acetato Mazzucchelli e JINYU de alta qualidade, este modelo oferece um acabamento vibrante e leve adaptado ao mercado premium.
+Utilizando acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, este modelo oferece um acabamento vibrante e leve adaptado ao mercado premium.
 
 As dobradiças de 2+1 barris projetadas com precisão e as ponteiras násicas integradas proporcionam uma mistura perfeita de estabilidade estrutural e conforto para o dia todo.
 

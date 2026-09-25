@@ -5,7 +5,7 @@ slug: "kas-119-acetate-sunglasses"
 itemNo: "KAS-119"
 date: "2026-05-09"
 colors: "Black & Floral & Raw-Blue & Yellow & Polar-Tortoise & Cyan-Tortoise & Red-Tortoise"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -66,7 +66,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Technical Features
 
-- **Premium Acetate Construction:** Crafted from world-class Mazzucchelli and JINYU acetate, offering a lightweight, exceptionally durable, and vibrant frame and temple structure.
+- **Premium Acetate Construction:** Crafted from world-class Mazzucchelli, JIMEI & JINYU acetate, offering a lightweight, exceptionally durable, and vibrant frame and temple structure.
 - **Precision Hardware:** Engineered with custom 4+3 barrel structure hinges to provide superior stability and long-term operational smoothness.
 - **High-Performance Optics:** Equipped with tenacious nylon lenses delivering excellent optical clarity alongside extensive customization options.
 - **All-Day Comfort:** Designed with thoughtfully integrated nose pads to ensure a seamless aesthetic and a secure, comfortable fit for extended use.
@@ -83,7 +83,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Overview
 
-Bold luxury meets exceptional craftsmanship in the KAS-119, featuring a striking unisex design sculpted from world-renowned Mazzucchelli and JINYU acetate. This vibrant frame construction not only ensures lightweight durability but also establishes a commanding visual presence for high-end fashion portfolios.
+Bold luxury meets exceptional craftsmanship in the KAS-119, featuring a striking unisex design sculpted from world-renowned Mazzucchelli, JIMEI & JINYU acetate. This vibrant frame construction not only ensures lightweight durability but also establishes a commanding visual presence for high-end fashion portfolios.
 
 Engineered for long-term wearability, the integration of custom 4+3 barrel hinges and seamless nose pads guarantees stable, all-day comfort alongside premium nylon optics.
 

@@ -5,7 +5,7 @@ slug: "kas-132-acetate-sunglasses"
 itemNo: "KAS-132"
 date: "2026-05-09"
 colors: "Negro & Blanco & Verde & Tortuga"
-materials: "Acetato Mazzucchelli Premium & Acetato JINYU & Personalización"
+materials: "Acetato Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalización"
 serviceMode: "OEM & ODM (Personalización)"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas flat-top personalizad
 
 ## Características
 
-- **Materiales Premium:** Construcción en acetato Mazzucchelli y JINYU de alta calidad que ofrece una estética refinada con una profundidad de color vibrante y duradera.
+- **Materiales Premium:** Construcción en acetato Mazzucchelli y JIMEI & JINYU de alta calidad que ofrece una estética refinada con una profundidad de color vibrante y duradera.
 - **Ingeniería de Precisión:** Bisagras estables con estructura de 3+2 barriletes diseñadas para una durabilidad de nivel profesional y un rendimiento operativo suave.
 - **Óptica Superior:** Lentes de nylon tenaz que proporcionan una excepcional resistencia a los impactos y claridad visual, con amplias opciones de personalización.
 - **Comodidad Ergonómica:** Almohadillas nasales integradas y una estructura de montura ligera que garantiza un ajuste seguro y equilibrado para un uso prolongado durante todo el día.
@@ -72,7 +72,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas flat-top personalizad
 
 ## Resumen
 
-Proporciones audaces y oversize y una distintiva silueta flat-top definen el modelo KAS-132, fabricado con una mezcla premium de acetato Mazzucchelli y JINYU para una profundidad y durabilidad sin precedentes.
+Proporciones audaces y oversize y una distintiva silueta flat-top definen el modelo KAS-132, fabricado con una mezcla premium de acetato Mazzucchelli y JIMEI & JINYU para una profundidad y durabilidad sin precedentes.
 
 Las bisagras de 3+2 barriletes diseñadas con precisión y las lentes de nylon tenaz aseguran que estas monturas mantengan la integridad estructural y la claridad visual a través de un uso intensivo.
 

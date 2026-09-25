@@ -5,7 +5,7 @@ slug: "kas-128-acetate-sunglasses"
 itemNo: "KAS-128"
 date: "2026-05-09"
 colors: "Preto & Branco & Mármore Verde & Mármore Azul & Mármore Preto & Rubi"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "OEM & ODM ( Personalização )"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -62,7 +62,7 @@ seoKeywords: "fabricante óculos acetato premium, óculos OEM personalizados KAS
 
 ## Características
 
-- **Acetato Premium:** Fabricado a partir do renomado acetato Mazzucchelli e JINYU, oferecendo durabilidade excepcional e um acabamento vibrante de alto brilho.
+- **Acetato Premium:** Fabricado a partir do renomado acetato Mazzucchelli e JIMEI & JINYU, oferecendo durabilidade excepcional e um acabamento vibrante de alto brilho.
 - **Dobradiças de Precisão:** Dobradiças robustas de estrutura 4+3 barris projetadas para estabilidade superior e suavidade operacional a longo prazo.
 - **Óptica de Alto Desempenho:** Lentes de nylon tenaz que proporcionam excelente clareza e resistência ao impacto com amplas opções de personalização.
 - **Conforto Integrado:** Ponteiras nasicas integradas moldadas com precisão, projetadas para um ajuste seguro, hipoalergênico e equilibrado durante o uso prolongado.
@@ -79,7 +79,7 @@ seoKeywords: "fabricante óculos acetato premium, óculos OEM personalizados KAS
 
 ## Visão Geral
 
-O acetato Mazzucchelli e JINYU unem-se numa silhueta ousada e de alto brilho que define o luxo moderno através da sua estética unissex única.
+O acetato Mazzucchelli e JIMEI & JINYU unem-se numa silhueta ousada e de alto brilho que define o luxo moderno através da sua estética unissex única.
 
 As dobradiças de 4+3 barris de engenharia de precisão e as ponteiras nasicas integradas garantem estabilidade excecional e conforto a longo prazo para o utilizador.
 

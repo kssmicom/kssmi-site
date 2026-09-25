@@ -5,7 +5,7 @@ slug: "kao-501-acetate-optical-frame"
 itemNo: "KAO-501"
 date: "2026-05-10"
 colors: "Noir & Écaille & Chocolat & Crème"
-materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
+materials: "Mazzucchelli Premium & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "OEM & ODM ( Personnalisation )"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -55,7 +55,7 @@ seoKeywords: "fabricant montures optiques acétate, montures optiques OEM person
 
 ## Caractéristiques
 
-- **Matériaux Premium :** Fabriquée à partir d'acétate authentique Mazzucchelli et JINYU, offrant une monture légère mais durable avec une finition vibrante et brillante.
+- **Matériaux Premium :** Fabriquée à partir d'acétate authentique Mazzucchelli et JIMEI & JINYU, offrant une monture légère mais durable avec une finition vibrante et brillante.
 - **Quincaillerie Vintage :** Charnières robustes à structure 4+3 barillets avec rivets, conçues pour une intégrité structurelle supérieure et une esthétique artisanale intemporelle.
 - **Design Sculptural :** Construction de branches minces présentant des détails sculpturaux précis pour un profil raffiné et un confort ergonomique accru.
 - **Optique Haute Performance :** Verres en nylon tenace offrant une clarté et une résistance aux chocs exceptionnelles, avec une personnalisation complète pour les teintes et les revêtements.
@@ -73,7 +73,7 @@ seoKeywords: "fabricant montures optiques acétate, montures optiques OEM person
 
 ## Aperçu
 
-L'acétate authentique Mazzucchelli et JINYU confère au modèle KAO-501 sa finition brillante caractéristique et sa profondeur structurelle résiliente.
+L'acétate authentique Mazzucchelli et JIMEI & JINYU confère au modèle KAO-501 sa finition brillante caractéristique et sa profondeur structurelle résiliente.
 
 La monture utilise un système robuste de charnières à 4+3 barillets avec rivets et des branches minces sculpturales pour équilibrer l'esthétique vintage avec la fiabilité mécanique moderne et le confort.
 

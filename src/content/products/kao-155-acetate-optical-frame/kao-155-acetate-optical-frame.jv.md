@@ -5,7 +5,7 @@ slug: "kao-155-acetate-optical-frame"
 itemNo: "KAO-155"
 date: "2026-05-10"
 colors: "Kuning Floral karo Ungu, Teal Floral karo Jambon"
-materials: "Asetat Mazzucchelli Premium & JINYU & Kustomisasi"
+materials: "Asetat Mazzucchelli Premium & JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -46,7 +46,7 @@ seoKeywords: "produsen frame optik asetat, kacamata asetat kustom OEM, grosir fr
 
 ## Fitur
 
-- **Bahan Premium:** Digawe saka asetat Mazzucchelli lan JINYU kelas donya, menehi jero warna sing padhang lan daya tahan jangka panjang sing luar biasa.
+- **Bahan Premium:** Digawe saka asetat Mazzucchelli lan JIMEI & JINYU kelas donya, menehi jero warna sing padhang lan daya tahan jangka panjang sing luar biasa.
 - **Teknik Canggih:** Nampilake engsel struktur rivet tong 2+1 sing stabil sing dirancang kanggo kelancaran operasional sing konsisten lan integritas struktural.
 - **Optik Performa Dhuwur:** Dilengkapi lensa nylon kuat sing menehi kajelasan unggul lan tahan benturan kanti pilihan kustomisasi lengkap.
 - **Kenyamanan Ergonomis:** Dirancang nganggo bantalan irung integrasi kanggo njamin pas sing aman lan hipoalergenik kanggo macem-macem profil wajah nalika digunakake suwe.
@@ -64,7 +64,7 @@ seoKeywords: "produsen frame optik asetat, kacamata asetat kustom OEM, grosir fr
 
 ## Gambaran Umum
 
-Asetat Mazzucchelli lan JINYU gabung ing frame iki kanggo menehi jero warna sing padhang lan umur struktural sing dijaluk dening merek mewah. Siluet unisex sing kendel nggabungake desain klasik kanthi estetika modern sing fokus ing tren.
+Asetat Mazzucchelli lan JIMEI & JINYU gabung ing frame iki kanggo menehi jero warna sing padhang lan umur struktural sing dijaluk dening merek mewah. Siluet unisex sing kendel nggabungake desain klasik kanthi estetika modern sing fokus ing tren.
 
 Engsel struktur rivet tong 2+1 lan bantalan irung integrasi njamin kelancaran operasional sing konsisten lan pas sing aman lan nyaman nalika digunakake suwe.
 

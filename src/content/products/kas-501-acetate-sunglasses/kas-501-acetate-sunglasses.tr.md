@@ -5,7 +5,7 @@ slug: "kas-501-acetate-sunglasses"
 itemNo: "KAS-501"
 date: "2026-05-12"
 colors: "Siyah & Krem & Havana & Çikolata"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "OEM & ODM ( Özelleştirme )"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Özellikler
 
-- **Premium Malzeme:** Hafiflik hissi, canlı renk derinliği ve uzun ömürlü dayanıklılık sunan premium Mazzucchelli ve JINYU asetat yapısı.
+- **Premium Malzeme:** Hafiflik hissi, canlı renk derinliği ve uzun ömürlü dayanıklılık sunan premium Mazzucchelli ve JIMEI & JINYU asetat yapısı.
 - **Hassas Donanım:** Üstün çalışma stabilitesi ve ömür boyu güvenilirlik için tasarlanmış sağlam 4+3 varil yapılı menteşeler.
 - **Yüksek Performanslı Optik:** Olağanüstü netlik ve darbe direnci sağlayan, cam renkleri ve kaplamaları için kapsamlı özelleştirme imkanı sunan dayanıklı naylon lensler.
 - **Ergonomik Tasarım:** Kusursuz bir estetik ve çeşitli yüz profilleri için rahat, güvenli bir uyum sağlamak üzere tasarlanmış entegre burun tamponları.
@@ -72,7 +72,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Genel Bakış
 
-Premium Mazzucchelli ve JINYU asetatını harmanlayan KAS-501 modeli, üst düzey moda markalarının titiz standartlarını karşılayan canlı bir renk derinliği ve hafif dayanıklılık sunar.
+Premium Mazzucchelli ve JIMEI & JINYU asetatını harmanlayan KAS-501 modeli, üst düzey moda markalarının titiz standartlarını karşılayan canlı bir renk derinliği ve hafif dayanıklılık sunar.
 
 Hassas 4+3 varil menteşe yapısı uzun vadeli operasyonel stabilite sağlarken, dayanıklı naylon lensler ve entegre burun tamponları, optik netlik ile gün boyu konfor arasında kusursuz bir denge sunar.
 

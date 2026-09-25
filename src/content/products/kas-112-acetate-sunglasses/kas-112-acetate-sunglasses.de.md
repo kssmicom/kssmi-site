@@ -5,7 +5,7 @@ slug: "kas-112-acetate-sunglasses"
 itemNo: "KAS-112"
 date: "2026-05-09"
 colors: "Schwarz & Tiefschwarz & Havanna & Bonbonrot & Rosa-Schildpatt & Cremeweiß"
-materials: "Premium Mazzucchelli & JINYU-Acetat & Individualisierung"
+materials: "Premium Mazzucchelli & JIMEI & JINYU-Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -58,7 +58,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, individuelle OEM Sonnenbrillen, L
 
 ## Eigenschaften
 
-- **Premium Acetat-Konstruktion:** Hochwertiger Mazzucchelli- und JINYU-Acetat-Rahmen und Bügel, die ein leichtes Tragegefühl mit außergewöhnlicher Farbtiefe und langfristiger Haltbarkeit bieten.
+- **Premium Acetat-Konstruktion:** Hochwertiger Mazzucchelli- und JIMEI & JINYU-Acetat-Rahmen und Bügel, die ein leichtes Tragegefühl mit außergewöhnlicher Farbtiefe und langfristiger Haltbarkeit bieten.
 - **Präzisions-Hardware:** Stabile 3+2 Scharnierstruktur, entwickelt für gleichbleibende Leichtgängigkeit und ein erstklassiges haptisches Erlebnis.
 - **Hochleistungsoptik:** Widerstandsfähige Nylon-Gläser mit überlegener Stoßfestigkeit und optischer Klarheit, vollständig anpassbar an spezifische Markenanforderungen.
 - **Ergonomischer Komfort:** Nahtlos integrierte Nasenpads, die das Gewicht gleichmäßig verteilen und so für ganztägigen Komfort bei verschiedenen Gesichtsstrukturen sorgen.
@@ -76,7 +76,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, individuelle OEM Sonnenbrillen, L
 
 ## Überblick
 
-Kühne Vintage-Ästhetik trifft bei der KAS-112 auf erstklassige Materialtiefe, gefertigt aus hochwertigem Mazzucchelli- und JINYU-Acetat, um ein lebendiges, langlebiges Finish zu gewährleisten.
+Kühne Vintage-Ästhetik trifft bei der KAS-112 auf erstklassige Materialtiefe, gefertigt aus hochwertigem Mazzucchelli- und JIMEI & JINYU-Acetat, um ein lebendiges, langlebiges Finish zu gewährleisten.
 
 Jeder Rahmen verfügt über präzisionsgefertigte 3+2 Scharniere und integrierte Nasenpads, die ein nahtloses Gleichgewicht zwischen struktureller Stabilität und ergonomischem Komfort bieten.
 

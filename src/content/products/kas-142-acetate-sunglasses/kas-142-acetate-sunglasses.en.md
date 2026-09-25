@@ -5,7 +5,7 @@ slug: "kas-142-acetate-sunglasses"
 itemNo: "KAS-142"
 date: "2026-05-09"
 colors: "Black & White & Red & Tortoise"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses, fashion eyewear manufacturer, China eyewear fa
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli and JINYU acetate construction offering a refined aesthetic with exceptional durability and lightweight comfort.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction offering a refined aesthetic with exceptional durability and lightweight comfort.
 - **Robust Hardware:** Precision-engineered 4+3 barrel structure hinges designed for superior stability and enduring operational smoothness.
 - **Superior Optics:** High-clarity tenacious nylon lenses providing excellent impact resistance and versatile options for specialized tints and coatings.
 - **Integrated Ergonomics:** Seamlessly integrated nose pads and a balanced 57mm frame geometry ensuring a stable, pressure-free fit for diverse facial profiles.
@@ -71,7 +71,7 @@ seoKeywords: "acetate sunglasses, fashion eyewear manufacturer, China eyewear fa
 
 ## Overview
 
-Crafted from premium Mazzucchelli and JINYU acetate, this model combines a vibrant color palette with high-clarity nylon lenses for a sophisticated, luxury-tier aesthetic.
+Crafted from premium Mazzucchelli, JIMEI & JINYU acetate, this model combines a vibrant color palette with high-clarity nylon lenses for a sophisticated, luxury-tier aesthetic.
 
 The 4+3 barrel structure hinges and integrated nose pads ensure enduring structural stability and a balanced, ergonomic fit across its 57mm geometry.
 

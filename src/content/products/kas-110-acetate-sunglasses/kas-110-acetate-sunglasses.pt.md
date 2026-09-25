@@ -5,7 +5,7 @@ slug: "kas-110-acetate-sunglasses"
 itemNo: "KAS-110"
 date: "2026-05-07"
 colors: "Vermelho Candy & Tartaruga Rosa & Branco Creme & Preto"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de óculos de acetato, óculos OEM personalizados, ócu
 
 ## Características Técnicas
 
-- **Material Premium:** Construção em acetato Mazzucchelli e JINYU polido à mão, oferecendo uma estética vibrante com acabamento leve e durável.
+- **Material Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU polido à mão, oferecendo uma estética vibrante com acabamento leve e durável.
 - **Engenharia de Precisão:** Dimensões unissex profissionais de 53-19-140 mm criadas para um ajuste elegante e popular em diversos perfis demográficos.
 - **Ótica Avançada:** Lentes de nylon tenaz de alta clareza que proporcionam resistência superior ao impacto com ampla personalização para revestimentos especiais.
 - **Hardware Robusto:** Dobradiças reforçadas com estrutura de barril 3+2, garantindo suavidade operacional de longo prazo e estabilidade da armação.
@@ -72,7 +72,7 @@ seoKeywords: "fabricante de óculos de acetato, óculos OEM personalizados, ócu
 
 ## Visão Geral
 
-O acetato Mazzucchelli e JINYU polido à mão fundem-se no modelo KAS-110 para criar uma armação vibrante e leve que prioriza tanto a profundidade estética quanto a durabilidade estrutural.
+O acetato Mazzucchelli e JIMEI & JINYU polido à mão fundem-se no modelo KAS-110 para criar uma armação vibrante e leve que prioriza tanto a profundidade estética quanto a durabilidade estrutural.
 
 Cada unidade apresenta um sistema de dobradiça de barril 3+2 projetado com precisão e plaquetas nasais integradas, proporcionando o conforto consistente e a suavidade operacional esperados pelas marcas de óculos premium.
 

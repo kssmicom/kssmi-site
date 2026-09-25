@@ -5,7 +5,7 @@ slug: "kas-314-acetate-sunglasses"
 itemNo: "KAS-314"
 date: "2026-05-12"
 colors: "Verde Neon & Champanhe & Havana & Fumo & Preto"
-materials: "Acetato Mazzucchelli Premium & JINYU & Personalização"
+materials: "Acetato Mazzucchelli Premium & JIMEI & JINYU & Personalização"
 serviceMode: "OEM & ODM ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante de óculos de sol em acetato, óculos de sol OEM person
 
 ## Características
 
-- **Material Premium:** Construção em acetato Mazzucchelli e JINYU de alta qualidade que oferece uma sensação de leveza com durabilidade excepcional e profundidade de cor vibrante.
+- **Material Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que oferece uma sensação de leveza com durabilidade excepcional e profundidade de cor vibrante.
 - **Hardware Robusto:** Dobradiças de estrutura 4+3 barris projetadas com precisão que garantem suavidade operacional a longo prazo e integridade estrutural.
 - **Óptica Superior:** Lentes de nylon de alta tenacidade que proporcionam excelente resistência ao impacto e clareza visual para padrões de óculos premium.
 - **Conforto Ergonômico:** Plaquetas de nariz integradas sem costuras, projetadas para um ajuste estável e sem pressão, adequadas para uso diário prolongado.
@@ -76,7 +76,7 @@ seoKeywords: "fabricante de óculos de sol em acetato, óculos de sol OEM person
 
 ## Visão Geral
 
-Integrando as texturas refinadas do acetato Mazzucchelli e JINYU, o modelo KAS-314 oferece um equilíbrio surpreendente entre profundidade de cor vibrante e resiliência leve. Esta silhueta unissex serve como uma base versátil para marcas que priorizam tanto as tendências modernas quanto o artesanato atemporal em acetato.
+Integrando as texturas refinadas do acetato Mazzucchelli e JIMEI & JINYU, o modelo KAS-314 oferece um equilíbrio surpreendente entre profundidade de cor vibrante e resiliência leve. Esta silhueta unissex serve como uma base versátil para marcas que priorizam tanto as tendências modernas quanto o artesanato atemporal em acetato.
 
 A armação é projetada com dobradiças de precisão 4+3 barris e lentes de nylon resistentes ao impacto, garantindo durabilidade de alto desempenho juntamente com um ajuste integrado e perfeito.
 

@@ -5,7 +5,7 @@ slug: "kas-346-acetate-sunglasses"
 itemNo: "KAS-346"
 date: "2026-05-12"
 colors: "Nero & Tartaruga & Havana & Oliva"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalizzazione"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione per Conto Terzi (OEM) & Design e Produzione (ODM) ( Personalizzazione )"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali sole OEM personalizz
 
 ## Caratteristiche
 
-- **Materiale Premium:** Acetato Mazzucchelli e JINYU di alta qualità che offrono una montatura vibrante, leggera e ipoallergenica per un'estetica raffinata e una durata superiore.
+- **Materiale Premium:** Acetato Mazzucchelli e JIMEI & JINYU di alta qualità che offrono una montatura vibrante, leggera e ipoallergenica per un'estetica raffinata e una durata superiore.
 - **Hardware di Precisione:** Cerniere con struttura a 2+1 barili progettate per fornire una tensione stabile e una scorrevolezza operativa a lungo termine.
 - **Ottica Avanzata:** Lenti in nylon tenace che offrono un'eccezionale chiarezza e un'elevata resistenza agli urti con opzioni di colorazione e rivestimento completamente personalizzabili.
 - **Comfort Ergonomico:** Naselli integrati senza cuciture progettati per una vestibilità sicura e senza pressione e una distribuzione del peso ottimizzata per l'uso quotidiano.
@@ -71,7 +71,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali sole OEM personalizz
 
 ## Panoramica
 
-Realizzato in acetato Mazzucchelli e JINYU di alta qualità, il modello KAS-346 bilancia una vibrante profondità visiva con una struttura leggera e ipoallergenica. Il materiale premium fornisce una base di durata duratura e una finitura sofisticata adatta alle collezioni di fascia alta.
+Realizzato in acetato Mazzucchelli e JIMEI & JINYU di alta qualità, il modello KAS-346 bilancia una vibrante profondità visiva con una struttura leggera e ipoallergenica. Il materiale premium fornisce una base di durata duratura e una finitura sofisticata adatta alle collezioni di fascia alta.
 
 Progettata con cerniere a 2+1 barili e naselli integrati senza cuciture, la montatura assicura un movimento meccanico preciso e una vestibilità ergonomica e senza pressione.
 

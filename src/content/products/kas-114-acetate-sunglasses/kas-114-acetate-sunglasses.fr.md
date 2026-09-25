@@ -5,7 +5,7 @@ slug: "kas-114-acetate-sunglasses"
 itemNo: "KAS-114"
 date: "2026-05-09"
 colors: "Noir & Champagne & Jaune"
-materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
+materials: "Mazzucchelli Premium & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -50,7 +50,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil un
 
 ## Caractéristiques Techniques
 
-- **Matériau Premium:** Construit en acétate Mazzucchelli et JINYU de haute qualité pour offrir une structure légère et durable avec un attrait visuel éclatant.
+- **Matériau Premium:** Construit en acétate Mazzucchelli et JIMEI & JINYU de haute qualité pour offrir une structure légère et durable avec un attrait visuel éclatant.
 - **Matériel Durable:** Conçu avec des charnières robustes à structure 3+2 assurant une fluidité de fonctionnement à long terme et une stabilité structurelle.
 - **Optique de Précision:** Équipé de verres en nylon tenaces offrant une clarté supérieure et de vastes options de personnalisation pour les collections premium.
 - **Confort Inégalé:** Plaquettes de nez intégrées conçues pour offrir un ajustement sûr et ergonomique pour un port prolongé tout au long de la journée.
@@ -68,7 +68,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil un
 
 ## Aperçu
 
-Conçu pour les marchés de luxe exigeant à la fois présence esthétique et intégrité structurelle, le KAS-114 utilise l'acétate Mazzucchelli et JINYU de premier ordre pour obtenir une construction éclatante et légère.
+Conçu pour les marchés de luxe exigeant à la fois présence esthétique et intégrité structurelle, le KAS-114 utilise l'acétate Mazzucchelli et JIMEI & JINYU de premier ordre pour obtenir une construction éclatante et légère.
 
 Conçue avec des charnières robustes à structure 3+2 et des plaquettes de nez intégrées, la monture unisexe audacieuse garantit une fluidité de fonctionnement exceptionnelle à long terme et un ajustement sûr et ergonomique.
 

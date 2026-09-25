@@ -5,7 +5,7 @@ slug: "kas-113-acetate-sunglasses"
 itemNo: "KAS-113"
 date: "2026-05-09"
 colors: "Negro & Tortuga & Crema & Azul"
-materials: "Acetato Mazzucchelli Premium & Acetato JINYU & Personalización"
+materials: "Acetato Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100uds/color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Características Técnicas
 
-- **Composición de Material Premium:** Elaborado a mano con acetato Mazzucchelli y JINYU de alta calidad, brindando un acabado ligero, duradero y vibrante para una sensación de lujo.
+- **Composición de Material Premium:** Elaborado a mano con acetato Mazzucchelli y JIMEI & JINYU de alta calidad, brindando un acabado ligero, duradero y vibrante para una sensación de lujo.
 - **Ingeniería de Precisión:** Equipado con una robusta bisagra de estructura de 3+2 barriles diseñada para una suavidad operativa a largo plazo y estabilidad del marco.
 - **Óptica de Alta Definición:** Cuenta con lentes de nylon tenaces que proporcionan una claridad superior y resistencia a los impactos, con amplias opciones de personalización para tintes y recubrimientos.
 - **Diseño Ergonómico:** Almohadillas nasales integradas y un perfil equilibrado de 51-23-145mm que aseguran un ajuste seguro e hipoalergénico para diversas formas de rostro.
@@ -72,7 +72,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Descripción General
 
-Combinando el vibrante acetato Mazzucchelli y JINYU, este modelo ofrece una estética audaz y unisex que equilibra el clasicismo atemporal con la sensibilidad de la moda moderna. Su acabado artesanal único garantiza una sensación premium que resuena con las casas de moda de lujo y las marcas boutique.
+Combinando el vibrante acetato Mazzucchelli y JIMEI & JINYU, este modelo ofrece una estética audaz y unisex que equilibra el clasicismo atemporal con la sensibilidad de la moda moderna. Su acabado artesanal único garantiza una sensación premium que resuena con las casas de moda de lujo y las marcas boutique.
 
 Las bisagras de 3+2 barriles diseñadas con precisión y un perfil ergonómico de 51-23-145mm garantizan la estabilidad del marco a lo largo del tiempo y la comodidad durante todo el día para diversas formas de rostro.
 

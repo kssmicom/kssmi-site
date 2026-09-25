@@ -5,7 +5,7 @@ slug: "kao-312-acetate-optical-frame"
 itemNo: "KAO-312"
 date: "2026-05-10"
 colors: "Noir & Vert Néon & Spark & Havana & Écaille Rouge"
-materials: "Acétate Mazzucchelli Premium & Acétate JINYU & Personnalisation"
+materials: "Acétate Mazzucchelli Premium & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -57,7 +57,7 @@ seoKeywords: "acétate Mazzucchelli, montures optiques en acétate, fabricant de
 
 ## Caractéristiques
 
-- **Matériaux de Qualité Aérospatiale :** Face et branches en acétate Mazzucchelli et JINYU de première qualité offrant une sensation de légèreté avec une durabilité supérieure et une profondeur de couleur vibrante.
+- **Matériaux de Qualité Aérospatiale :** Face et branches en acétate Mazzucchelli et JIMEI & JINYU de première qualité offrant une sensation de légèreté avec une durabilité supérieure et une profondeur de couleur vibrante.
 - **Matériel Robuste :** Charnières à structure de rivet 4+3 conçues avec précision assurant une fluidité opérationnelle à long terme et une stabilité structurelle.
 - **Design Ergonomique :** Plaquettes de nez intégrées sans couture conçues pour un confort tout au long de la journée et un ajustement sûr et antidérapant sur divers profils faciaux.
 - **Optique Haute Performance :** Verres en nylon tenaces avec de larges options de personnalisation pour les teintes et les revêtements afin de s'aligner sur l'esthétique spécifique de la marque.
@@ -75,7 +75,7 @@ seoKeywords: "acétate Mazzucchelli, montures optiques en acétate, fabricant de
 
 ## Aperçu
 
-L'acétate vibrant Mazzucchelli et JINYU donne au KAO-312 son caractère distinctif, offrant un profil léger qui conserve une durabilité exceptionnelle.
+L'acétate vibrant Mazzucchelli et JIMEI & JINYU donne au KAO-312 son caractère distinctif, offrant un profil léger qui conserve une durabilité exceptionnelle.
 
 Les charnières à rivet 4+3 conçues avec précision et les plaquettes de nez intégrées offrent l'intégrité structurelle et le confort ergonomique attendus des collections optiques haut de gamme.
 

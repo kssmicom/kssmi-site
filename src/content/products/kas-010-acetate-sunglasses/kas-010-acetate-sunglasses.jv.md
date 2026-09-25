@@ -5,7 +5,7 @@ slug: "kas-010-acetate-sunglasses"
 itemNo: "KAS-010"
 date: "2026-05-10"
 colors: "Ireng & Meteor-Crystal & Tanzanite & Bordeaux"
-materials: "Mazzucchelli Premium & Asetat JINYU & Kustomisasi"
+materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JINYU kelas dhuwur sing nyedhiyakake finishing padhang lan daya tahan luar biasa kanggo estetika mewah.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing nyedhiyakake finishing padhang lan daya tahan luar biasa kanggo estetika mewah.
 - **Hardware Awet:** Engsel struktur 4+3 barrel sing kuwat dirancang kanggo kelancaran operasional jangka panjang lan stabilitas struktur.
 - **Optik Premium:** Lensa nilon kuat sing nawakake resistensi dampak lan kajelasan unggul kanti pilihan warna kustom sing akeh.
 - **Desain Ergonomis:** Bantalan irung integrasi lan frame 52-18-145mm sing dirancang kanti presisi mesthekake pas sing nyaman lan aman kanggo macem-macem bentuk rai.
@@ -71,7 +71,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 
 ## Ringkesan
 
-Asetat Mazzucchelli lan JINYU sing padhang menehi frame unisex iki karakter mewah sing khas, nawakake profil sing entheng nanging awet sing njaga finishinge saka wektu menyang wektu.
+Asetat Mazzucchelli lan JIMEI & JINYU sing padhang menehi frame unisex iki karakter mewah sing khas, nawakake profil sing entheng nanging awet sing njaga finishinge saka wektu menyang wektu.
 
 Integritas struktural dikuatake dening sistem engsel 4+3 barrel sing presisi, mesthekake operasi lancar lan stabilitas jangka panjang kanggo lingkungan ritel dhuwur.
 

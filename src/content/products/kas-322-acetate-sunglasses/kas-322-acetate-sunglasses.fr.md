@@ -5,7 +5,7 @@ slug: "kas-322-acetate-sunglasses"
 itemNo: "KAS-322"
 date: "2026-05-12"
 colors: "Noir & Champagne & Écaille & Olive"
-materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
+materials: "Mazzucchelli Premium & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication sous Contrat (OEM) & Conception et Fabrication (ODM) (Personnalisation)"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -54,7 +54,7 @@ seoKeywords: "lunettes de soleil en acétate Mazzucchelli, fabricant de lunettes
 
 ## Caractéristiques
 
-- **Matériau en Acétate Premium :** Construction en acétate Mazzucchelli et JINYU de haute qualité offrant une durabilité exceptionnelle et une finition vibrante et durable.
+- **Matériau en Acétate Premium :** Construction en acétate Mazzucchelli et JIMEI & JINYU de haute qualité offrant une durabilité exceptionnelle et une finition vibrante et durable.
 - **Optique Supérieure :** Verres en nylon tenace offrant une excellente résistance aux chocs et une grande clarté avec de vastes options de teinte personnalisée.
 - **Matériel d'Ingénierie :** Charnières à structure 4+3 barillets de haute précision conçues pour une stabilité maximale et une fluidité de fonctionnement à long terme.
 - **Design Ergonomique :** Plaquettes de nez intégrées et structure de monture légère assurant un ajustement sûr et hypoallergénique pour un confort tout au long de la journée.
@@ -71,7 +71,7 @@ seoKeywords: "lunettes de soleil en acétate Mazzucchelli, fabricant de lunettes
 
 ## Aperçu
 
-Fabriquée à partir d'un mélange d'acétate Mazzucchelli et JINYU, cette montature atteint un équilibre sophistiqué entre une profondeur de couleur vibrante et une intégrité structurelle durable. L'architecture légère et les plaquettes de nez intégrées offrent un ajustement sans couture et hypoallergénique pour un port tout au long de la journée.
+Fabriquée à partir d'un mélange d'acétate Mazzucchelli et JIMEI & JINYU, cette montature atteint un équilibre sophistiqué entre une profondeur de couleur vibrante et une intégrité structurelle durable. L'architecture légère et les plaquettes de nez intégrées offrent un ajustement sans couture et hypoallergénique pour un port tout au long de la journée.
 
 L'ensemble de charnière à 4+3 barillets assure un mouvement mécanique fiable, complété par des verres en nylon haute ténacité qui offrent une excellente résistance aux chocs.
 

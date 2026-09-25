@@ -5,7 +5,7 @@ slug: "kao-341-acetate-optical-frame"
 itemNo: "KAO-341"
 date: "2026-05-10"
 colors: "Azul Transparente, Oliva Transparente"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda & Design e Fabricação ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -45,7 +45,7 @@ seoKeywords: "armações ópticas de acetato personalizadas, fabricante de ócul
 ---
 
 ## Características
-- **Materiais Premium:** As armações e hastes de acetato premium Mazzucchelli e JINYU proporcionam uma estrutura leve e durável com excelente clareza de cores vibrantes e duradouras.
+- **Materiais Premium:** As armações e hastes de acetato premium Mazzucchelli e JIMEI & JINYU proporcionam uma estrutura leve e durável com excelente clareza de cores vibrantes e duradouras.
 - **Hardware Robusto:** Dobradiças estáveis com estrutura de rebite de 3+2 tambores garantem suavidade operacional a longo prazo, com opções personalizadas de 5 tambores e dobradiças de mola disponíveis.
 - **Lentes de Alta Tenacidade:** As lentes de nylon tenaz oferecem resistência superior ao impacto e clareza óptica excepcional, com opções personalizadas de tingimento e revestimento disponíveis.
 - **Ajuste Ergonômico:** As ponteiras nasicas integradas de acetato, combinadas com um perfil de armação padrão de 52-18-145mm, garantem uma distribuição de peso equilibrada e conforto durante todo o dia.
@@ -62,7 +62,7 @@ seoKeywords: "armações ópticas de acetato personalizadas, fabricante de ócul
 
 ## Visão Geral
 
-Nitidez excepcional e estilo contemporâneo definem a KAO-341, uma armação óptica premium com belas opções de acetato nas cores Azul Transparente e Oliva Transparente. Este design unissex utiliza acetato de primeira linha Mazzucchelli e JINYU para alcançar uma estrutura altamente durável, leve e com profundidade cativante.
+Nitidez excepcional e estilo contemporâneo definem a KAO-341, uma armação óptica premium com belas opções de acetato nas cores Azul Transparente e Oliva Transparente. Este design unissex utiliza acetato de primeira linha Mazzucchelli e JIMEI & JINYU para alcançar uma estrutura altamente durável, leve e com profundidade cativante.
 
 Construída com um perfil de armação padrão de 52-18-145mm e ponteiras nasicas integradas, la armação oferece um ajuste ergonômico equilibrado, complementado por dobradiças robustas com rebite de 3+2 tambores que garantem um funcionamento suave e confiável.
 

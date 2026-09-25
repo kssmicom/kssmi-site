@@ -5,7 +5,7 @@ slug: "kas-016-acetate-sunglasses"
 itemNo: "KAS-016"
 date: "2026-05-10"
 colors: "Kura-kura dengan Hijau, Hitam dengan Kuning, Kura-kura Hitam dengan Kelabu Gradien"
-materials: "Asetat Mazzucchelli & JINYU Premium & Penyesuaian"
+materials: "Asetat Mazzucchelli & JIMEI & JINYU Premium & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -41,7 +41,7 @@ seoKeywords: "kacamata hitam asetat Mazzucchelli, pengilang kacamata tersuai, ki
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Bingkai dan gagang asetat Mazzucchelli dan JINYU gred tinggi yang memberikan estetika mewah dan bertenaga dengan ketahanan yang luar biasa.
+- **Bahan Premium:** Bingkai dan gagang asetat Mazzucchelli dan JIMEI & JINYU gred tinggi yang memberikan estetika mewah dan bertenaga dengan ketahanan yang luar biasa.
 - **Perkakasan Tahan Lama:** Engsel struktur tong 2+1 yang stabil direka untuk kelancaran operasi yang konsisten dan kebolehpercayaan jangka panjang.
 - **Optik Premium:** Kanta nilon tahan lasak dengan kejelasan tinggi yang menawarkan rintangan hentaman unggul dengan pilihan pewarnaan dan salutan tersuai yang meluas.
 - **Reka Bentuk Ergonomik:** Alas hidung bersepadu yang direka untuk kesesuaian yang lancar dan kestabilan yang dipertingkatkan semasa pemakaian berpanjangan.

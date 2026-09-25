@@ -5,7 +5,7 @@ slug: "kas-163-acetate-sunglasses"
 itemNo: "KAS-163"
 date: "2026-05-09"
 colors: "Preto, Tartaruga, Marrom Sólido"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) (Personalização)"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -41,7 +41,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos personalizados KA
 
 ## Características
 
-- **Material Premium:** Construção em acetato Mazzucchelli e JINYU selecionado à mão, proporcionando durabilidade excepcional com um acabamento leve e vibrante.
+- **Material Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU selecionado à mão, proporcionando durabilidade excepcional com um acabamento leve e vibrante.
 - **Engenharia de Precisão:** Dobradiças robustas com estrutura de rebite 3+2 projetadas para uma suavidade operacional duradoura e integridade estrutural.
 - **Ótica de Alto Desempenho:** Lentes de nylon tenaz projetadas para uma clareza superior com capacidades versáteis de revestimento e tonalidade personalizados.
 - **Design Ergonômico:** Ponteiras nasicas integradas e um perfil de armação de 52-19-145 mm otimizado para um ajuste seguro e conforto refinado.
@@ -58,7 +58,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos personalizados KA
 
 ## Visão Geral
 
-A moda de alto padrão encontra a excelência dos materiais no modelo KAS-163, que integra acetato premium Mazzucchelli e JINYU para uma estética unissex sofisticada, durável e leve.
+A moda de alto padrão encontra a excelência dos materiais no modelo KAS-163, que integra acetato premium Mazzucchelli e JIMEI & JINYU para uma estética unissex sofisticada, durável e leve.
 
 Equipada com um sistema robusto de dobradiças de rebite 3+2, a armação de 52 mm garante uma suavidade operacional constante e um ajuste ergonômico refinado.
 

@@ -5,7 +5,7 @@ slug: "kas-504-acetate-sunglasses"
 itemNo: "KAS-504"
 date: "2026-05-13"
 colors: "Bulus karo Ijo, Ireng karo Coklat, Zaitun Transparan karo Coklat Gradien"
-materials: "Asetat Premium Mazzucchelli & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -35,13 +35,13 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KAS-504 Kacamata Hitam Asetat Unisex Stylish | Supplier Kustom"
-seoDescription: "Kacamata hitam asetat premium Mazzucchelli & JINYU kanggo kustomisasi OEM/ODM lengkap. Siluet unisex kanggo merek fesyen. Wiwit 300 MOQ."
+seoDescription: "Kacamata hitam asetat premium Mazzucchelli & JIMEI & JINYU kanggo kustomisasi OEM/ODM lengkap. Siluet unisex kanggo merek fesyen. Wiwit 300 MOQ."
 seoKeywords: "produsen kacamata hitam asetat kustom, OEM asetat kacamata hitam, supplier merek pribadi kacamata hitam, grosir asetat kacamata China, pabrik OEM kacamata hitam fesyen, kacamata hitam unisex bisa dikustomisasi, produksi kacamata asetat bespoke"
 ---
 
 ## Fitur
 
-- **Bahan Premium:** Digawe saka asetat kualitas dhuwur Mazzucchelli lan JINYU, menehi estetika entheng, kuat, lan cerah.
+- **Bahan Premium:** Digawe saka asetat kualitas dhuwur Mazzucchelli lan JIMEI & JINYU, menehi estetika entheng, kuat, lan cerah.
 - **Hardware Kuat:** Engsel struktur 3+2 barel sing stabil dirancang kanggo kelancaran operasional jangka panjang, kanthi pilihan kustomisasi 5 barel utawa engsel pegas.
 - **Optik Premium:** Lensa nylon kuat sing menehi kejernihan visual sing apik, kanthi pilihan kustomisasi sing akeh.
 - **Kenyamanan Struktural:** Bantalan irung asetat terpadu dirancang kanggo pas sing aman lan nyaman kanthi estetika tanpa jahitan.
@@ -59,7 +59,7 @@ seoKeywords: "produsen kacamata hitam asetat kustom, OEM asetat kacamata hitam, 
 
 ## Ringkesan
 
-Digawe nganggo Mazzucchelli lan JINYU — loro omah asetat sing paling dihormati ing industri — KAS-504 nggawa kredibilitas bahan saka pandangan pertama. Tawaran warna khasnya, saka Bulus karo Ijo nganti Zaitun Transparan karo Coklat Gradien, nggambarake palet sing dirancang kanggo pasar berorientasi fesyen ing saindenging jagad.
+Digawe nganggo Mazzucchelli, JIMEI & JINYU — telu omah asetat sing paling dihormati ing industri — KAS-504 nggawa kredibilitas bahan saka pandangan pertama. Tawaran warna khasnya, saka Bulus karo Ijo nganti Zaitun Transparan karo Coklat Gradien, nggambarake palet sing dirancang kanggo pasar berorientasi fesyen ing saindenging jagad.
 
 Engsel struktur 3+2 barel sing stabil lan bantalan irung asetat sing mulus terpadu nggawa standar daya tahan lan kenyamanan panganggone sing diarepake dening lingkungan ritel premium.
 

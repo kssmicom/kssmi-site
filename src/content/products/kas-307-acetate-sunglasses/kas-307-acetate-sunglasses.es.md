@@ -5,7 +5,7 @@ slug: "kas-307-acetate-sunglasses"
 itemNo: "KAS-307"
 date: "2026-05-12"
 colors: "Negro & Rayas & Transparente & Tortuga"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalización"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalización"
 serviceMode: "OEM & ODM ( Personalización )"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas personalizadas OEM, g
 
 ## Características
 
-- **Material Premium:** Construcción de acetato Mazzucchelli y JINYU de alta calidad que ofrece una montura vibrante, ligera y duradera para un uso prolongado.
+- **Material Premium:** Construcción de acetato Mazzucchelli y JIMEI & JINYU de alta calidad que ofrece una montura vibrante, ligera y duradera para un uso prolongado.
 - **Hardware Duradero:** Bisagras de estructura de 4+3 barriles diseñadas para una estabilidad superior y una suavidad operativa a largo plazo.
 - **Óptica Superior:** Lentes de nylon tenaz que proporcionan una claridad excepcional y resistencia a los impactos con amplias opciones de personalización.
 - **Diseño Ergonómico:** Almohadillas nasales integradas y un ajuste unisex versátil que garantiza comodidad durante todo el día y una sensación segura y equilibrada.
@@ -72,7 +72,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas personalizadas OEM, g
 
 ## Descripción General
 
-Fabricadas con acetato Mazzucchelli y JINYU de alta calidad, las KAS-307 ofrecen una profundidad de color vibrante y un tacto premium. Esta elección de material garantiza una montura ligera pero duradera que resuena con las sensibilidades de la moda de alta gama.
+Fabricadas con acetato Mazzucchelli y JIMEI & JINYU de alta calidad, las KAS-307 ofrecen una profundidad de color vibrante y un tacto premium. Esta elección de material garantiza una montura ligera pero duradera que resuena con las sensibilidades de la moda de alta gama.
 
 La integración de bisagras robustas de estructura de 4+3 barriles y lentes de nylon tenaz proporciona una suavidad operativa a largo plazo y una claridad óptica excepcional.
 

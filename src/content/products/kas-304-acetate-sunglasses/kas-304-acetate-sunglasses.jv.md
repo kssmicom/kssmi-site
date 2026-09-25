@@ -5,7 +5,7 @@ slug: "kas-304-acetate-sunglasses"
 itemNo: "KAS-304"
 date: "2026-05-12"
 colors: "Ireng & Garis-garis & Bulus & Coklat"
-materials: "Asetat Mazzucchelli & JINYU Premium & Kustomisasi"
+materials: "Asetat Mazzucchelli & JIMEI & JINYU Premium & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen kacamata asetat KAS-304, kacamata asetat OEM kustom, pabr
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JINYU berkualitas dhuwur sing menehi rasa entheng kanthi kedalaman warna sing padhang lan awet.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU berkualitas dhuwur sing menehi rasa entheng kanthi kedalaman warna sing padhang lan awet.
 - **Hardware Awet:** Engsel struktur 4+3 barel sing kuat dirancang kanggo kelancaran operasional jangka panjang lan kinerja sing konsisten.
 - **Optik Elit:** Lensa nilon kuwat sing tahan benturan kanthi macem-macem pilihan pewarnaan lan lapisan kustom kasedhiya kanggo koleksi sing serbaguna.
 - **Desain Ergonomis:** Bantalan irung integrasi sing dirancang kanggo estetika sing rapi lan pas sing aman lan nyaman kanggo dienggo sedina muput.
@@ -71,7 +71,7 @@ seoKeywords: "produsen kacamata asetat KAS-304, kacamata asetat OEM kustom, pabr
 
 ## Ringkasan
 
-Digawe saka asetat Mazzucchelli lan JINYU berkualitas dhuwur, KAS-304 nyimbangi estetika retro unisex kanthi kedalaman warna lan daya tahan sing luar biasa.
+Digawe saka asetat Mazzucchelli lan JIMEI & JINYU berkualitas dhuwur, KAS-304 nyimbangi estetika retro unisex kanthi kedalaman warna lan daya tahan sing luar biasa.
 
 Bantalan irung integrasi lan engsel struktur 4+3 barel nyedhiyakake pas sing rapi lan kelancaran operasional sing konsisten kanggo panggunaan frekuensi dhuwur.
 

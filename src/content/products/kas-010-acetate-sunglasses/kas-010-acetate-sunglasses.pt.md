@@ -5,7 +5,7 @@ slug: "kas-010-acetate-sunglasses"
 itemNo: "KAS-010"
 date: "2026-05-10"
 colors: "Preto & Meteor-Crystal & Tanzanite & Bordeaux"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Características
 
-- **Material Premium:** Construção em acetato Mazzucchelli e JINYU de alta qualidade, proporcionando um acabamento vibrante e durabilidade excepcional para uma estética de luxo.
+- **Material Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, proporcionando um acabamento vibrante e durabilidade excepcional para uma estética de luxo.
 - **Hardware Durável:** Dobradiças de estrutura robusta de 4+3 barris projetadas para suavidade operacional a longo prazo e estabilidade estrutural.
 - **Óptica Premium:** Lentes de nylon tenaz que oferecem resistência superior ao impacto e clareza com amplas opções de tingimento personalizado.
 - **Design Ergonômico:** Ponteiras nasicas integradas e uma armação de 52-18-145mm projetada com precisão, garantindo um ajuste confortável e seguro para diversas formas de rosto.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Visão Geral
 
-O vibrante acetato Mazzucchelli e JINYU conferem a esta armação unissex seu distinto caráter de luxo, oferecendo um perfil leve, porém durável, que mantém seu acabamento ao longo do tempo.
+O vibrante acetato Mazzucchelli e JIMEI & JINYU conferem a esta armação unissex seu distinto caráter de luxo, oferecendo um perfil leve, porém durável, que mantém seu acabamento ao longo do tempo.
 
 A integridade estrutural é reforçada por um sistema de dobradiças de precisão de 4+3 barris, garantindo uma operação suave e estabilidade a longo prazo para ambientes de varejo de alto nível.
 

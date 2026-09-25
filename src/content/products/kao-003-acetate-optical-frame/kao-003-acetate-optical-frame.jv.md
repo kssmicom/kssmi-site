@@ -5,7 +5,7 @@ slug: "kao-003-acetate-optical-frame"
 itemNo: "KAO-003"
 date: "2026-05-10"
 colors: "Ireng & Bulus & Oranye & Zebra & Kencana"
-materials: "Premium Mazzucchelli & Asetat JINYU & Kustomisasi"
+materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -43,7 +43,7 @@ seoKeywords: "produsen frame optik asetat, pabrik kacamata OEM kustom, frame ase
 
 ## Fitur
 
-- **Konstruksi Asetat Premium:** Frame lan gagang asetat Mazzucchelli lan JINYU kelas dhuwur nyedhiyakake finish sing entheng, awet, lan vibrant kanggo estetika sing apik.
+- **Konstruksi Asetat Premium:** Frame lan gagang asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur nyedhiyakake finish sing entheng, awet, lan vibrant kanggo estetika sing apik.
 - **Hardware sing Diperkuat:** Engsel struktur rivet 4+3 barrel profesional sing dirancang kanggo stabilitas sing unggul lan kelancaran operasional jangka panjang.
 - **Optik Performa Dhuwur:** Lensa nylon kuwat sing nawakake resistensi dampak sing luar biasa kanthi pilihan kustomisasi lengkap kanggo warna lan lapisan khusus.
 - **Kenyamanan Ergonomis:** Bantalan irung integrasi sing dirancang kanggo pas sing aman, seimbang, lan kenyamanan nganggo sedina muput ing macem-macem profil rai.
@@ -60,7 +60,7 @@ seoKeywords: "produsen frame optik asetat, pabrik kacamata OEM kustom, frame ase
 
 ## Ringkesan
 
-Nggawe kacamata sing duwe dampak dhuwur diwiwiti kanthi tekstur asetat Mazzucchelli lan JINYU sing sugih lan dipoles nganggo tangan. Model iki ngimbangi dimensi struktur sing kendel karo palet warna sing vibrant lan macem-macem kanggo nyukupi panjaluk estetika fashion mewah.
+Nggawe kacamata sing duwe dampak dhuwur diwiwiti kanthi tekstur asetat Mazzucchelli lan JIMEI & JINYU sing sugih lan dipoles nganggo tangan. Model iki ngimbangi dimensi struktur sing kendel karo palet warna sing vibrant lan macem-macem kanggo nyukupi panjaluk estetika fashion mewah.
 
 Integrasi engsel struktur rivet 4+3 barrel lan bantalan irung ergonomis njamin pas sing aman lan daya tahan jangka panjang kanggo panggunaan saben dina.
 

@@ -5,7 +5,7 @@ slug: "kas-306-acetate-sunglasses"
 itemNo: "KAS-306"
 date: "2026-05-12"
 colors: "Noir & Écaille & Gris & Marron & Olive"
-materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
+materials: "Mazzucchelli Premium & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication sous Contrat (OEM) & Conception et Fabrication (ODM)"
 moq: "300 pcs/modèle (100pcs/couleur)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricant lunettes soleil acétate premium, usine lunettes soleil 
 
 ## Caractéristiques
 
-- **Matériau Premium :** Construction en acétate Mazzucchelli et JINYU de haute qualité offrant une finition légère, durable et vibrante pour une esthétique de luxe.
+- **Matériau Premium :** Construction en acétate Mazzucchelli et JIMEI & JINYU de haute qualité offrant une finition légère, durable et vibrante pour une esthétique de luxe.
 - **Quincaillerie Durable :** Charnières robustes à structure 4+3 barillets conçues pour une fluidité opérationnelle constante, avec options de mise à niveau vers 5 barillets et charnières à ressort.
 - **Optique Supérieure :** Verres en nylon résistants aux chocs offrant une clarté exceptionnelle, avec une personnalisation étendue disponible pour des teintes spécifiques et des revêtements techniques.
 - **Confort Intégré :** Plaquettes de nez intégrées moulées avec précision, conçues pour assurer un ajustement sûr et équilibré et un profil haut de gamme sans couture.
@@ -76,7 +76,7 @@ seoKeywords: "fabricant lunettes soleil acétate premium, usine lunettes soleil 
 
 ## Aperçu
 
-L'acétate Mazzucchelli et JINYU définissent la KAS-306, fusionnant des couleurs riches et multicouches avec une monture géométrique intemporelle conçue à la fois pour la résilience et la polyvalence esthétique. Cette sélection de matériaux garantit une finition vibrante qui conserve son éclat au fil des années d'utilisation.
+L'acétate Mazzucchelli et JIMEI & JINYU définissent la KAS-306, fusionnant des couleurs riches et multicouches avec une monture géométrique intemporelle conçue à la fois pour la résilience et la polyvalence esthétique. Cette sélection de matériaux garantit une finition vibrante qui conserve son éclat au fil des années d'utilisation.
 
 Les charnières à 4+3 barillets conçues avec précision et les plaquettes de nez intégrées offrent l'intégrité structurelle et le confort équilibré requis par les marchés de la lunetterie haut de gamme.
 

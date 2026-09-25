@@ -5,7 +5,7 @@ slug: "kao-329-acetate-optical-frame"
 itemNo: "KAO-329"
 date: "2026-05-10"
 colors: "Mat zeytin yeşili, Mat pembe, Kaplumbağa"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim & Tasarım ve Üretim (Özelleştirme)"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -50,7 +50,7 @@ seoKeywords: "özel asetat optik çerçeveler, toptan asetat gözlükler, OEM ö
 
 ## Özellikler
 
-- **Premium Malzeme:** Ultra hafif ama olağanüstü dayanıklı bir yapı sunan premium Mazzucchelli ve JINYU asetattan üretilmiş olup, canlı ve derin tonlu renk estetiğine sahiptir.
+- **Premium Malzeme:** Ultra hafif ama olağanüstü dayanıklı bir yapı sunan premium Mazzucchelli ve JIMEI & JINYU asetattan üretilmiş olup, canlı ve derin tonlu renk estetiğine sahiptir.
 - **Gelişmiş Donanım:** Sapların kararlı ve pürüzsüz hareket etmesini sağlayan, yaylı menteşe ve 5 menteşeli seçeneklerine sahip yüksek güvenilirlikli 3+2 menteşe yapısı.
 - **Güçlü Optik:** Tamamen özel kaplama ve özelleştirme hizmetleriyle birlikte olağanüstü optik netlik ve darbe direnci sunan yüksek dayanıklılıklı naylon lensler.
 - **Entegre Konfor:** Dengeli, kaymayan bir uyum sağlamak için özel olarak tasarlanmış 55-17-145mm geometrisiyle birleştirilmiş kusursuz entegre asetat burun tamponları.
@@ -68,7 +68,7 @@ seoKeywords: "özel asetat optik çerçeveler, toptan asetat gözlükler, OEM ö
 
 ## Genel Bakış
 
-Mazzucchelli ve JINYU asetatı bir araya getiren KAO-329 çerçevesi, kalıcı fiziksel dirençle birleşen zarif bir renk derinliği elde eder. Zengin zeytin yeşili, yumuşak pembe ve klasik kaplumbağa desenleriyle sunulan retro-klasik unisex şekli, her türlü üst düzey gözlük serisine birinci sınıf bir katkı sağlar.
+Mazzucchelli ve JIMEI & JINYU asetatı bir araya getiren KAO-329 çerçevesi, kalıcı fiziksel dirençle birleşen zarif bir renk derinliği elde eder. Zengin zeytin yeşili, yumuşak pembe ve klasik kaplumbağa desenleriyle sunulan retro-klasik unisex şekli, her türlü üst düzey gözlük serisine birinci sınıf bir katkı sağlar.
 
 Hassas üretim, 55-17-145mm geometrisinin entegre asetat burun tamponları ve 3+2 menteşe ile uyum içinde çalışarak pürüzsüz bir hareket ve dengeli, baskısız bir uyum sunmasını sağlar.
 

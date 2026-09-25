@@ -5,7 +5,7 @@ slug: "kas-104-acetate-sunglasses"
 itemNo: "KAS-104"
 date: "2026-05-06"
 colors: "Habana & Marrón & Negro & Floral & Purple-Stripe"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalización"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante de gafas de acetato Mazzucchelli, gafas de sol OEM pers
 
 ## Características
 
-- **Material de Montura Premium:** Construcción de acetato Mazzucchelli y JINYU de alta calidad que ofrece un acabado vibrante y de gran brillo con una durabilidad estructural excepcional para líneas de alta moda.
+- **Material de Montura Premium:** Construcción de acetato Mazzucchelli y JIMEI & JINYU de alta calidad que ofrece un acabado vibrante y de gran brillo con una durabilidad estructural excepcional para líneas de alta moda.
 - **Herrajes Duraderos:** Bisagras de precisión con estructura de 2+1 barril diseñadas para una suavidad operativa constante y estabilidad de la montatura a largo plazo.
 - **Óptica Superior:** Lentes de nylon tenaz que ofrecen alta resistencia a los impactos y claridad óptica, con personalización escalable para protección UV y recubrimientos especializados.
 - **Ajuste Ergonómico:** Almohadillas nasales integradas talladas sin costuras en la estructura de acetato para un ajuste seguro y sin presión que mejora la comodidad durante todo el día.
@@ -76,7 +76,7 @@ seoKeywords: "fabricante de gafas de acetato Mazzucchelli, gafas de sol OEM pers
 
 ## Descripción General
 
-Fabricadas con una selección curada de acetato premium Mazzucchelli y JINYU, las KAS-104 equilibran una vibrante profundidad de color con un acabado de gran brillo que define las gafas de lujo contemporáneas.
+Fabricadas con una selección curada de acetato premium Mazzucchelli y JIMEI & JINYU, las KAS-104 equilibran una vibrante profundidad de color con un acabado de gran brillo que define las gafas de lujo contemporáneas.
 
 La integridad estructural está anclada por un sistema de bisagras de 2+1 barril diseñado con precisión, combinado con almohadillas nasales integradas para asegurar un ajuste ergonómico y seguro para diversas formas de rostro.
 

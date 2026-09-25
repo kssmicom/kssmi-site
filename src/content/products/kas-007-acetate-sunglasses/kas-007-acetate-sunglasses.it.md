@@ -5,7 +5,7 @@ slug: "kas-007-acetate-sunglasses"
 itemNo: "KAS-007"
 date: "2026-05-10"
 colors: "Nero-Oro & Nero-Argento & Cristallo & Rosso"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100pz/colore)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produttore occhiali da sole in acetato, occhiali di lusso personal
 
 ## Caratteristiche
 
-- **Materiale Premium:** Costruzione in acetato Mazzucchelli e JINYU di alta qualità che offre un'estetica vibrante, leggera e durevole.
+- **Materiale Premium:** Costruzione in acetato Mazzucchelli e JIMEI & JINYU di alta qualità che offre un'estetica vibrante, leggera e durevole.
 - **Hardware Affidabile:** Cerniere professionali con struttura a 3+2 barili progettate per una fluidità operativa costante e una lunga durata.
 - **Ottica Avanzata:** Lenti in nylon tenace che offrono una chiarezza superiore con ampie opzioni di colorazione e rivestimento personalizzati disponibili.
 - **Design Ergonomico:** Naselli integrati progettati per una vestibilità senza cuciture e un maggiore comfort durante tutto il giorno.

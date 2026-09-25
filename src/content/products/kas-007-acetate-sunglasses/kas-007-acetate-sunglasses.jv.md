@@ -5,7 +5,7 @@ slug: "kas-007-acetate-sunglasses"
 itemNo: "KAS-007"
 date: "2026-05-10"
 colors: "Ireng-Kencana & Ireng-Selaka & Kristal & Abrit"
-materials: "Premium Mazzucchelli & JINYU Asetat & Kustomisasi"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata mewah kustom OEM, frame a
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JINYU kelas dhuwur sing nawakake estetika padhang, entheng, lan awet.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing nawakake estetika padhang, entheng, lan awet.
 - **Hardware Handal:** Engsel struktur 3+2 barrel profesional sing dirancang kanggo kelancaran operasional sing konsisten lan daya tahan jangka panjang.
 - **Optik Canggih:** Lensa nylon kuat sing nyedhiyakake kajelasan unggul kanthi macem-macem pilihan warna lan lapisan kustom sing kasedhiya.
 - **Desain Ergonomis:** Bantalan irung integrasi sing dirancang kanggo pas sing rapi lan kenyamanan nganggo sedina muput.

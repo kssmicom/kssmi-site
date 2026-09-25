@@ -5,7 +5,7 @@ slug: "kas-344-acetate-sunglasses"
 itemNo: "KAS-344"
 date: "2026-05-12"
 colors: "Solid-Siyah & Kehribar-Kaplumbağa & Koyu-Kaplumbağa & Kırmızımsı-Turuncu"
-materials: "Premium Mazzucchelli & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
 moq: "300 adet/model (her renk için 100 adet)"
 
@@ -53,7 +53,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 ---
 
 ## Özellikler
-- **Premium Malzeme:** Zengin, canlı bir yüzey ile olağanüstü dayanıklılık ve renk derinliği sunan, elde cilalanmış Mazzucchelli ve JINYU asetat.
+- **Premium Malzeme:** Zengin, canlı bir yüzey ile olağanüstü dayanıklılık ve renk derinliği sunan, elde cilalanmış Mazzucchelli ve JIMEI & JINYU asetat.
 - **Hassas Mühendislik:** Tutarlı gerginlik ve uzun süreli çalışma pürüzsüzlüğü için tasarlanmış yüksek kaliteli 2+1 barrel yapılı menteşeler.
 - **Gelişmiş Konfor:** Çeşitli yüz profillerinde gün boyu konfor için hafif ve özelleştirilebilir bir uyum sağlayan ayarlanabilir esnek titanyum burun tamponları.
 - **Gelişmiş Optik:** Özel renk tonları ve uzmanlaşmış kaplamalar için tam desteğe sahip, üstün darbe direnci ve netlik sağlayan dayanıklı naylon lensler.
@@ -70,7 +70,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Genel Bakış
 
-Elde cilalanmış Mazzucchelli ve JINYU asetattan üretilen bu tasarım, lüks moda evlerine uygun canlı bir renk derinliği ve premium bir yüzey sunar. Hafif çerçeve mimarisi, modern stili üst segment gözlüklerden beklenen yapısal bütünlükle dengeler.
+Elde cilalanmış Mazzucchelli ve JIMEI & JINYU asetattan üretilen bu tasarım, lüks moda evlerine uygun canlı bir renk derinliği ve premium bir yüzey sunar. Hafif çerçeve mimarisi, modern stili üst segment gözlüklerden beklenen yapısal bütünlükle dengeler.
 
 Yüksek kaliteli 2+1 barrel menteşeler ve ayarlanabilir titanyum burun tamponları, uzun süreli konfor için güvenli, özelleştirilebilir bir uyum ve pürüzsüz çalışma sağlar.
 

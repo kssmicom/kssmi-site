@@ -5,7 +5,7 @@ slug: "kas-115-acetate-sunglasses"
 itemNo: "KAS-115"
 date: "2026-05-09"
 colors: "Nero & Viola & Bianco & Tartaruga & Arancione"
-materials: "Acetato Mazzucchelli e JINYU Premium & Personalizzazione"
+materials: "Acetato Mazzucchelli e JIMEI & JINYU Premium & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -58,7 +58,7 @@ seoKeywords: "produttore occhiali da sole in acetato, occhiali da sole OEM perso
 
 ## Caratteristiche Tecniche
 
-- **Materiale Premium:** Realizzati in acetato Mazzucchelli e JINYU di alta qualità, offrono una montatura leggera e resistente con finiture vivaci.
+- **Materiale Premium:** Realizzati in acetato Mazzucchelli e JIMEI & JINYU di alta qualità, offrono una montatura leggera e resistente con finiture vivaci.
 - **Hardware Durevole:** Presentano robuste cerniere con struttura 3+2 progettate per garantire fluidità operativa stabile e a lungo termine.
 - **Ottica di Prima Scelta:** Dotati di lenti in nylon tenace che offrono un'eccellente chiarezza, con ampia personalizzazione disponibile per profili colore unici.
 - **Comfort per Tutto il Giorno:** Progettati con naselli integrati per assicurare una vestibilità perfetta, sicura e confortevole anche per un uso prolungato.
@@ -76,7 +76,7 @@ seoKeywords: "produttore occhiali da sole in acetato, occhiali da sole OEM perso
 
 ## Panoramica
 
-Realizzati in acetato premium Mazzucchelli e JINYU, gli occhiali KAS-115 trasmettono un'estetica audace e vintage offrendo al contempo un'eccezionale durata e profili colore vivaci. Questo design unisex si distingue come un capo versatile e fondamentale per le collezioni di occhiali moderni e di fascia alta.
+Realizzati in acetato premium Mazzucchelli e JIMEI & JINYU, gli occhiali KAS-115 trasmettono un'estetica audace e vintage offrendo al contempo un'eccezionale durata e profili colore vivaci. Questo design unisex si distingue come un capo versatile e fondamentale per le collezioni di occhiali moderni e di fascia alta.
 
 Le robuste cerniere con struttura 3+2 e i naselli integrati sono progettati per garantire stabilità duratura e comfort per tutto il giorno.
 

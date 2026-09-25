@@ -5,7 +5,7 @@ slug: "kas-102-acetate-sunglasses"
 itemNo: "KAS-102"
 date: "2026-05-05"
 colors: "Clear & Black & Solid-Black & Solid-Blue & Solid-Gray & Solid-Purple & Cyan-Dot Blue-Dot & Honey & Green & Gradient-Red & Dark-Blue & Light-Blue & Mette-Grey & Havana & Clear-Grey & Panda"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -102,7 +102,7 @@ seoKeywords: "acetate sunglasses manufacturer, customizable acetate eyewear, pri
 
 ## Technical Features
 
-- **Premium Acetate Material:** High-grade Mazzucchelli and JINYU acetate construction providing a lightweight feel with exceptional durability and vibrant color depth.
+- **Premium Acetate Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction providing a lightweight feel with exceptional durability and vibrant color depth.
 - **Precision Hardware:** Robust 3+2 barrel structure hinges engineered for long-term operational smoothness and structural stability.
 - **Advanced Lens Technology:** Versatile AC or tenacious nylon lenses available with extensive custom tinting and coating options for superior visual clarity.
 - **Ergonomic Design:** Integrated nose pads and a precision-balanced frame structure ensuring all-day comfort and a secure fit.

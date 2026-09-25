@@ -5,7 +5,7 @@ slug: "kas-164-acetate-sunglasses"
 itemNo: "KAS-164"
 date: "2026-05-09"
 colors: "Grigio Sfumato"
-materials: "Acetato Premium Mazzucchelli & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalizzazione"
 serviceMode: "OEM & ODM ( Personalizzazione )"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -40,7 +40,7 @@ seoKeywords: "occhiali da sole in acetato Mazzucchelli, produttore occhiali in a
 
 ## Caratteristiche
 
-- **Materiali Premium:** Costruzione in acetato Mazzucchelli e JINYU di alta qualità che offre una finitura vibrante e ultra-lucida con una durata eccezionale.
+- **Materiali Premium:** Costruzione in acetato Mazzucchelli e JIMEI & JINYU di alta qualità che offre una finitura vibrante e ultra-lucida con una durata eccezionale.
 - **Hardware Rinforzato:** Robuste cerniere con struttura a 3+2 barilotti e rivetti progettate per una stabilità superiore e una scorrevolezza operativa a lungo termine.
 - **Ottica ad Alte Prestazioni:** Lenti in nylon tenace che offrono un'eccellente resistenza agli urti con ampie possibilità di colorazione e rivestimento personalizzati.
 - **Design Ergonomico:** Naselli integrati senza soluzione di continuità progettati per una vestibilità sicura e confortevole e un'estetica raffinata e aerodinamica.
@@ -58,7 +58,7 @@ seoKeywords: "occhiali da sole in acetato Mazzucchelli, produttore occhiali in a
 
 ## Panoramica
 
-Realizzato in pregiato acetato Mazzucchelli e JINYU, il modello KAS-164 incarna un'estetica audace ma classica con una finitura vibrante e ultra-lucida. Questo design unisex fonde uno stile lussuoso con la resistenza duratura di materiali di alta qualità.
+Realizzato in pregiato acetato Mazzucchelli e JIMEI & JINYU, il modello KAS-164 incarna un'estetica audace ma classica con una finitura vibrante e ultra-lucida. Questo design unisex fonde uno stile lussuoso con la resistenza duratura di materiali di alta qualità.
 
 Le cerniere a 3+2 barilotti con rivetti, progettate con precisione, offrono un'eccezionale stabilità, mentre i naselli integrati e le lenti in nylon tenace assicurano comfort a lungo termine e chiarezza ottica.
 

@@ -5,7 +5,7 @@ slug: "kas-112-acetate-sunglasses"
 itemNo: "KAS-112"
 date: "2026-05-09"
 colors: "Nero & Nero Solido & Havana & Rosso Caramella & Rosa Tartaruga & Bianco Crema"
-materials: "Premium Mazzucchelli & Acetato JINYU & Personalizzazione"
+materials: "Premium Mazzucchelli & Acetato JIMEI & JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -58,7 +58,7 @@ seoKeywords: "produttore occhiali acetato, occhiali sole OEM personalizzati, occ
 
 ## Caratteristiche
 
-- **Costruzione in Acetato Premium:** Montatura e aste in acetato di alta qualità Mazzucchelli e JINYU, che offrono una sensazione di leggerezza con un'eccezionale profondità di colore e una durata prolungata.
+- **Costruzione in Acetato Premium:** Montatura e aste in acetato di alta qualità Mazzucchelli e JIMEI & JINYU, che offrono una sensazione di leggerezza con un'eccezionale profondità di colore e una durata prolungata.
 - **Hardware di Precisione:** Cerniere stabili con struttura 3+2, progettate per una scorrevolezza operativa costante e una sensazione tattile premium.
 - **Ottica ad Alte Prestazioni:** Lenti in nylon tenace che offrono una resistenza agli urti e una chiarezza ottica superiori, completamente personalizzabili per soddisfare i requisiti specifici del marchio.
 - **Comfort Ergonomico:** Naselli integrati senza soluzione di continuità, progettati per distribuire il peso in modo uniforme per un comfort che dura tutto il giorno su varie strutture facciali.
@@ -76,7 +76,7 @@ seoKeywords: "produttore occhiali acetato, occhiali sole OEM personalizzati, occ
 
 ## Panoramica
 
-L'estetica audace vintage incontra la profondità dei materiali premium nel modello KAS-112, realizzato in acetato di alta qualità Mazzucchelli e JINYU per garantire una finitura vibrante e duratura.
+L'estetica audace vintage incontra la profondità dei materiali premium nel modello KAS-112, realizzato in acetato di alta qualità Mazzucchelli e JIMEI & JINYU per garantire una finitura vibrante e duratura.
 
 Ogni montatura è dotata di cerniere 3+2 progettate con precisione e naselli integrati, offrendo un equilibrio perfetto tra stabilità strutturale e comfort ergonomico.
 

@@ -5,7 +5,7 @@ slug: "kas-105-acetate-sunglasses"
 itemNo: "KAS-105"
 date: "2026-05-06"
 colors: "Gris & Écaille Brillante & Écaille Mate & Transparent & Noir"
-materials: "Mazzucchelli Premium & Acétate JINYU & Personnalisation"
+materials: "Mazzucchelli Premium & Acétate JIMEI & JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil OE
 
 ## Caractéristiques
 
-- **Matériau Premium :** Montures polies à la main fabriquées à partir des acétates de renommée mondiale Mazzucchelli et JINYU, offrant une durabilité exceptionnelle et une profondeur de couleur vibrante.
+- **Matériau Premium :** Montures polies à la main fabriquées à partir des acétates de renommée mondiale Mazzucchelli et JIMEI & JINYU, offrant une durabilité exceptionnelle et une profondeur de couleur vibrante.
 - **Matériel Durable :** Charnières à barillet 3+2 conçues avec précision assurant une stabilité structurelle et des performances opérationnelles fluides à long terme.
 - **Optique Haute Performance :** Verres en nylon résistants aux chocs offrant une clarté et une durabilité supérieures pour les standards de la lunetterie de haute mode.
 - **Design Ergonomique :** Plaquettes de nez intégrées et géométrie de monture équilibrée avec précision (51-23-145 mm) conçues pour un confort tout au long de la journée et un ajustement universel.
@@ -71,7 +71,7 @@ seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes de soleil OE
 
 ## Aperçu
 
-Fabriquées à partir d'acétate premium Mazzucchelli et JINYU, les KAS-105 équilibrent un design unisexe audacieux avec une profondeur de couleur vibrante. Cette monture polie à la main sert de base polyvalente pour les marques privilégiant les matériaux à haute densité et l'esthétique de la mode contemporaine.
+Fabriquées à partir d'acétate premium Mazzucchelli et JIMEI & JINYU, les KAS-105 équilibrent un design unisexe audacieux avec une profondeur de couleur vibrante. Cette monture polie à la main sert de base polyvalente pour les marques privilégiant les matériaux à haute densité et l'esthétique de la mode contemporaine.
 
 L'intégration de charnières à barillet 3+2 et de verres en nylon résistants aux chocs offre l'intégrité structurelle et les performances optiques requises par les standards du marché du luxe.
 

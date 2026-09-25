@@ -5,7 +5,7 @@ slug: "kao-305-acetate-optical-frame"
 itemNo: "KAO-305"
 date: "2026-05-10"
 colors: "Zaitun & Ireng & Garis-garis & Havana"
-materials: "Asetat Mazzucchelli & JINYU Premium & Kustomisasi"
+materials: "Asetat Mazzucchelli & JIMEI & JINYU Premium & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen frame optik asetat, pabrik kacamata OEM kustom, frame opt
 
 ## Fitur
 
-- **Pilihan Bahan Premium:** Konstruksi asetat Mazzucchelli lan JINYU kelas dhuwur sing nyedhiyakake finish entheng, awet, lan padhang kanggo estetika sing apik.
+- **Pilihan Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing nyedhiyakake finish entheng, awet, lan padhang kanggo estetika sing apik.
 - **Hardware sing Dikuatake:** Engsel struktur rivet 4+3 barrel sing kuat dirancang kanggo kelancaran operasional sing luar biasa lan stabilitas jangka panjang.
 - **Ergonomi Terpadu:** Bantalan irung terpadu sing digawe kanthi presisi dirancang kanggo menehi pas sing aman lan tanpa tekanan kanggo kenyamanan nganggo sedina muput.
 - **Optik Serba Guna:** Lensa nilon kakuatan dhuwur sing nampilake pilihan kustomisasi sing jembar kanggo warna khusus lan lapisan canggih.
@@ -71,7 +71,7 @@ seoKeywords: "produsen frame optik asetat, pabrik kacamata OEM kustom, frame opt
 
 ## Ringkasan
 
-Nggabungake kedalaman asetat Mazzucchelli lan JINYU sing padhang, frame optik iki nawakake keseimbangan sing canggih antarane daya tahan lan kemewahan entheng. Palet sing sugih — saka Zaitun jero nganti Havana klasik — nggambarake basa desain sing dicocokake kanggo estetika fashion dhuwur sing modern.
+Nggabungake kedalaman asetat Mazzucchelli lan JIMEI & JINYU sing padhang, frame optik iki nawakake keseimbangan sing canggih antarane daya tahan lan kemewahan entheng. Palet sing sugih — saka Zaitun jero nganti Havana klasik — nggambarake basa desain sing dicocokake kanggo estetika fashion dhuwur sing modern.
 
 Dirancang kanggo umur dawa, sistem engsel rivet 4+3 barrel njamin kinerja mekanik sing mulus, dilengkapi karo bantalan irung terpadu kanggo kenyamanan nganggo sing terus-terusan.
 

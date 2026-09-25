@@ -5,7 +5,7 @@ slug: "kao-317-acetate-optical-frame"
 itemNo: "KAO-317"
 date: "2026-05-10"
 colors: "Preto & Havana & Vermelho & Cinza Translúcido & Listra Marrom & Verde Neon"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalização"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, fornecedor de óculo
 
 ## Características
 
-- **Materiais Premium:** Construção de acetato Mazzucchelli e JINYU de alta qualidade, oferecendo integridade estrutural excepcional e uma estética vibrante e de alto brilho.
+- **Materiais Premium:** Construção de acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, oferecendo integridade estrutural excepcional e uma estética vibrante e de alto brilho.
 - **Hardware de Engenharia:** Arquitetura robusta de dobradiça de rebite 4+3 barrel, fabricada com precisão para estabilidade operacional e suavidade a longo prazo.
 - **Excelência Óptica:** Lentes de nylon tenaz que proporcionam resistência superior a impactos e clareza, com personalização versátil para vários tratamentos de lentes.
 - **Conforto Ergonômico:** Ponteiras nasicas integradas perfeitamente e um peso de armação otimizado para um ajuste seguro e confortável durante todo o dia.
@@ -75,7 +75,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, fornecedor de óculo
 
 ## Visão Geral
 
-Equilibrando a estética heritage e a durabilidade moderna, o KAO-317 utiliza uma mistura premium de acetato Mazzucchelli e JINYU para oferecer um acabamento de alto brilho e estruturalmente superior.
+Equilibrando a estética heritage e a durabilidade moderna, o KAO-317 utiliza uma mistura premium de acetato Mazzucchelli e JIMEI & JINYU para oferecer um acabamento de alto brilho e estruturalmente superior.
 
 As dobradiças de rebite 4+3 barrel projetadas com precisão garantem estabilidade operacional contínua, enquanto as ponteiras nasicas integradas proporcionam um ajuste ergonômico otimizado para o conforto de todo o dia.
 

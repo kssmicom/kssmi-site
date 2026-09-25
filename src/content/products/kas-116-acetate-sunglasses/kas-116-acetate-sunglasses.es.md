@@ -5,7 +5,7 @@ slug: "kas-116-acetate-sunglasses"
 itemNo: "KAS-116"
 date: "2026-05-09"
 colors: "Negro & Verde-Mármol & Blanco & Mármol"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalización"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, fábrica de gafas OEM a med
 
 ## Características Técnicas
 
-- **Construcción de Acetato Premium:** Marco y varillas de acetato Mazzucchelli y JINYU de alta calidad que ofrecen un acabado ligero, duradero y vibrante.
+- **Construcción de Acetato Premium:** Marco y varillas de acetato Mazzucchelli y JIMEI & JINYU de alta calidad que ofrecen un acabado ligero, duradero y vibrante.
 - **Hardware Duradero:** Bisagras estables de estructura de 3+2 barriles diseñadas para una suavidad operativa y confiabilidad a largo plazo.
 - **Óptica Premium:** Lentes de nailon tenaces con amplias opciones de tintado y recubrimiento personalizado disponibles.
 - **Comodidad Continua:** Almohadillas nasales integradas diseñadas para proporcionar un ajuste seguro y cómodo para el uso diario.
@@ -72,7 +72,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, fábrica de gafas OEM a med
 
 ## Descripción General
 
-Elaborado con acetato de alta calidad Mazzucchelli y JINYU, el KAS-116 presenta una estética audaz y unisex que eleva instantáneamente cualquier colección de gafas premium. Este marco elegante equilibra una estructura ligera y duradera con un atractivo visual sorprendentemente vibrante.
+Elaborado con acetato de alta calidad Mazzucchelli y JIMEI & JINYU, el KAS-116 presenta una estética audaz y unisex que eleva instantáneamente cualquier colección de gafas premium. Este marco elegante equilibra una estructura ligera y duradera con un atractivo visual sorprendentemente vibrante.
 
 Diseñado para un rendimiento diario confiable, cuenta con robustas bisagras de 3+2 barriles, lentes de nailon resistentes y almohadillas nasales integradas a la perfección para garantizar una comodidad excepcional.
 

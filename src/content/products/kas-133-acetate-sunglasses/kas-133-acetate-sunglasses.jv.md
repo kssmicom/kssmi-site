@@ -5,7 +5,7 @@ slug: "kas-133-acetate-sunglasses"
 itemNo: "KAS-133"
 date: "2026-05-09"
 colors: "Ireng & Bening & Abrit-Pink & Bening-Biru"
-materials: "Premium Mazzucchelli & Asetat JINYU & Kustomisasi"
+materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak & Desain lan Produksi ( Kustomisasi )"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JINYU kelas dhuwur sing nawakake rasa entheng kanti kedalaman warna sing padhang lan awet.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing nawakake rasa entheng kanti kedalaman warna sing padhang lan awet.
 - **Hardware Kuat:** Engsel struktur 3+2 barel sing kuwat dirancang kanggo gerakan presisi lan daya tahan operasional jangka panjang.
 - **Optik Performa Dhuwur:** Lensa nylon kuat sing nyedhiyakake kajelasan unggul lan resistensi dampak kanthi pilihan kustomisasi sing akeh.
 - **Desain Ergonomis:** Bantalan irung integrasi sing mulus dirancang kanggo pas sing aman, hypoallergenic, lan nyaman kanggo panggunaan suwe.
@@ -71,7 +71,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 
 ## Ringkesan
 
-Asetat Mazzucchelli lan JINYU nyedhiyakake keunggulan dhasar kanggo KAS-133, nawakake frame sing entheng nanging awet kanthi semangat warna sing luar biasa. Desain unisex-e dadi kanvas versatile kanggo merek sing golek keseimbangan kemewahan lan estetika sing tren.
+Asetat Mazzucchelli lan JIMEI & JINYU nyedhiyakake keunggulan dhasar kanggo KAS-133, nawakake frame sing entheng nanging awet kanthi semangat warna sing luar biasa. Desain unisex-e dadi kanvas versatile kanggo merek sing golek keseimbangan kemewahan lan estetika sing tren.
 
 Presisi operasional dijamin liwat engsel struktur 3+2 barel lan lensa nylon tahan dampak sing njaga kenyamanan sajrone panggunaan suwe.
 

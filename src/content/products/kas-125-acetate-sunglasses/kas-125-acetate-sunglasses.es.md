@@ -5,7 +5,7 @@ slug: "kas-125-acetate-sunglasses"
 itemNo: "KAS-125"
 date: "2026-05-09"
 colors: "Negro & Carey Claro & Carey Oscuro & Cuerno de Búfalo & Caqui"
-materials: "Mazzucchelli Premium & Acetato JINYU & Personalización"
+materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalización"
 serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM) (Personalización)"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -57,7 +57,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas personalizadas OEM, g
 ---
 ## Características
 
-- **Materiales Premium:** Montura y varillas de acetato Mazzucchelli y JINYU, ligeras y vibrantes, que ofrecen un tacto premium y una durabilidad duradera.
+- **Materiales Premium:** Montura y varillas de acetato Mazzucchelli y JIMEI & JINYU, ligeras y vibrantes, que ofrecen un tacto premium y una durabilidad duradera.
 - **Hardware Duradero:** Bisagras robustas con estructura 4+3 barrel, diseñadas para una alineación precisa y una suavidad operativa constante.
 - **Óptica Avanzada:** Lentes de nylon tenaz que proporcionan una claridad superior y resistencia a los impactos en un perfil de montura versátil de 53-19-145 mm.
 - **Comodidad Integrada:** Almohadillas nasales ergonómicas integradas directamente en la montatura para un ajuste estable e hipoalergénico.
@@ -74,7 +74,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas personalizadas OEM, g
 
 ## Resumen
 
-La construcción de acetato Mazzucchelli y JINYU de primera calidad otorga al KAS-125 un tacto distintivo y una vibración duradera que cumple con los estándares de los portafolios de lujo globales.
+La construcción de acetato Mazzucchelli y JIMEI & JINYU de primera calidad otorga al KAS-125 un tacto distintivo y una vibración duradera que cumple con los estándares de los portafolios de lujo globales.
 
 Diseñado con bisagras de estructura 4+3 barrel para una alineación precisa, la montatura combina lentes de nylon de alto impacto con un puente ergonómico e integrado para una durabilidad sostenida.
 

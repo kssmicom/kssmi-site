@@ -5,7 +5,7 @@ slug: "kao-311-acetate-optical-frame"
 itemNo: "KAO-311"
 date: "2026-05-10"
 colors: "Black & Smoky-Purple & Totoise & Brown"
-materials: "Premium Mazzucchelli & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear, luxury pr
 
 ## Technical Features
 
-- **Premium Material Selection:** Constructed with high-grade Mazzucchelli and JINYU acetate, delivering vibrant colors and a lightweight, durable structure.
+- **Premium Material Selection:** Constructed with high-grade Mazzucchelli, JIMEI & JINYU acetate, delivering vibrant colors and a lightweight, durable structure.
 - **Reinforced Hardware:** Features a robust 4+3 barrel rivet structure hinge system engineered for exceptional stability and long-term operational smoothness.
 - **High-Performance Optics:** Equipped with tenacious nylon lenses that offer superior impact resistance and clarity, with flexible customization for tints and coatings.
 - **Ergonomic Comfort:** Integrated nose pads designed for a seamless fit and balanced weight distribution, ensuring comfortable all-day wear.
@@ -72,7 +72,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear, luxury pr
 
 ## Overview
 
-Luxury eyewear collections benefit from the KAO-311's fusion of Mazzucchelli and JINYU acetate, a combination that balances vibrant, hand-polished aesthetics with exceptional structural longevity.
+Luxury eyewear collections benefit from the KAO-311's fusion of Mazzucchelli, JIMEI & JINYU acetate, a combination that balances vibrant, hand-polished aesthetics with exceptional structural longevity.
 
 The integration of 4+3 barrel rivet hinges and a seamless, ergonomic bridge design ensures that each frame delivers consistent comfort and high-performance durability across every production batch.
 
