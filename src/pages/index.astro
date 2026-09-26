@@ -11,6 +11,7 @@ import S03_FrameShape from '../components/collection/home/S03_FrameShape.astro';
 import S04_FrameStyle from '../components/collection/home/S04_FrameStyle.astro';
 import S05_FrameColor from '../components/collection/home/S05_Frame_Color.astro';
 import S06_FrameSurfaceFinish from '../components/collection/home/S06_FrameSurfaceFinish.astro';
+import InquiryFormLazy from '../components/InquiryFormLazy.astro';
 
 const lang = 'en';
 const t = await getTranslations(lang);
@@ -37,6 +38,7 @@ const lcpImage = heroEntry?.data?.posterImage;
     <S04_FrameStyle lang="en" />
     <S05_FrameColor lang="en" />
     <S06_FrameSurfaceFinish lang="en" />
+    <InquiryFormLazy lang={lang} source="home_page" />
   </main>
 
   <Footer lang={lang} />
