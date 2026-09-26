@@ -840,6 +840,7 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
 
     $name = kssmi_html_escape($data['name'] ?? '');
     $email = kssmi_html_escape($data['email'] ?? '');
+    $phoneWhatsapp = kssmi_html_escape($data['phone_whatsapp'] ?? '');
     $productName = kssmi_html_escape($data['product_name'] ?? '');
     $productSku = kssmi_html_escape($data['product_sku'] ?? '');
     $details = kssmi_html_escape($data['details'] ?? '');
@@ -850,6 +851,11 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
     $countryHtml = kssmi_html_escape($country);
     $inquiryIdHtml = kssmi_html_escape($inquiryId);
     $headerTitle = $name . ' - Kssmi';
+    $phoneWhatsappField = $phoneWhatsapp !== '' ? "
+                <div class='field'>
+                    <div class='field-label'>Phone &amp; Whatsapp</div>
+                    <div class='field-value'>{$phoneWhatsapp}</div>
+                </div>" : '';
 
     return "
 <!DOCTYPE html>
@@ -893,6 +899,7 @@ function buildHtmlEmail($data, $ip, $country, $inquiryId) {
                     <div class='field-label'>{$t['email']}</div>
                     <div class='field-value'><a href='mailto:{$email}'>{$email}</a></div>
                 </div>
+                {$phoneWhatsappField}
                 <div class='field'>
                     <div class='field-label'>{$t['product']}</div>
                     <div class='field-value'>{$productName}</div>
@@ -931,6 +938,8 @@ function buildTextEmail($data, $ip, $country, $inquiryId) {
     $timestamp = date('Y-m-d H:i:s');
     $source = 'https://kssmi.com' . $data['product_url'];
     $name = $data['name'];
+    $phoneWhatsapp = trim((string)($data['phone_whatsapp'] ?? ''));
+    $phoneWhatsappLine = $phoneWhatsapp !== '' ? "Phone & Whatsapp: {$phoneWhatsapp}\n" : '';
 
     return "
 {$name} - Kssmi
@@ -938,7 +947,7 @@ function buildTextEmail($data, $ip, $country, $inquiryId) {
 
 Name: {$data['name']}
 Email Address: {$data['email']}
-Product Interest: {$data['product_name']}
+{$phoneWhatsappLine}Product Interest: {$data['product_name']}
 SKU: {$data['product_sku']}
 
 PROJECT DETAILS:
@@ -1048,6 +1057,7 @@ function sendInquiryAutoReply($config, $data) {
 $formData = [
     'name' => sanitize($_POST['name'] ?? '', 160),
     'email' => sanitize($_POST['email'] ?? '', 254),
+    'phone_whatsapp' => sanitize($_POST['phone_whatsapp'] ?? '', 160),
     'details' => sanitize($_POST['details'] ?? '', 10000),
     'source' => sanitize($_POST['source'] ?? 'unknown', 128),
     'product_url' => sanitizeLocalPath($_POST['product_url'] ?? ''),

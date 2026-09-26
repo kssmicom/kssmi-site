@@ -25,9 +25,8 @@
 :where(
   a[href],
   button,
-  input:not([type="hidden"]),
+  input:is([type="checkbox"], [type="radio"], [type="range"]),
   select,
-  textarea,
   summary,
   [role="button"],
   [role="link"],
@@ -35,6 +34,29 @@
 ):focus-visible {
   outline: 3px solid var(--color-brand-gold);
   outline-offset: 3px;
+}
+
+/* Text-entry fields (text/search/email/tel/number/password/file/textarea)
+   are deliberately absent from the gold focus rule above: every one of them
+   already turns its own border brown on focus, and a second gold ring
+   outside the border reads as an ugly halo (or, inside overflow-hidden
+   search pills, as a stray vertical bar). Checkboxes, radios and ranges
+   keep the gold ring — they have no border to turn brown. */
+
+/* Remove the engine-drawn search-input chrome (native clear button and its
+   separator line). It renders inconsistently across browsers and cannot be
+   restyled; every search field on the site ships a custom clear button. */
+input[type="search"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
 }
 
 @media (hover: none), (pointer: coarse) {
