@@ -169,34 +169,55 @@ const placeholders = {
 const ph = placeholders[lang as keyof typeof placeholders] || placeholders.en;
 
 const phoneOptionalLabels: Record<string, string> = {
-  en: '(Optional)',
-  it: '(Facoltativo)',
-  es: '(Opcional)',
-  fr: '(Facultatif)',
-  de: '(Optional)',
-  pt: '(Opcional)',
-  ru: '(Необязательно)',
-  ja: '（任意）',
-  tr: '(İsteğe bağlı)',
-  ar: '(اختياري)',
-  ko: '(선택 사항)',
-  zh: '（可选）',
-  hi: '(वैकल्पिक)',
-  vi: '(Tùy chọn)',
-  jv: '(Opsional)',
-  ms: '(Pilihan)',
-  tg: '(Ихтиёрӣ)',
+  en: '(Optional · only for this inquiry, no marketing)',
+  it: '(Facoltativo · solo per questa richiesta, nessuna pubblicità)',
+  es: '(Opcional · solo para esta consulta, sin publicidad)',
+  fr: '(Facultatif · uniquement pour cette demande, sans publicité)',
+  de: '(Optional · nur für diese Anfrage, keine Werbung)',
+  pt: '(Opcional · apenas para esta consulta, sem publicidade)',
+  ru: '(Необязательно · только для этого запроса, без рекламы)',
+  ja: '（任意 · 本件のお問い合わせのみに使用、広告は送信しません）',
+  tr: '(İsteğe bağlı · yalnızca bu talep için, reklam yok)',
+  ar: '(اختياري · يُستخدم لهذا الاستفسار فقط، بدون رسائل ترويجية)',
+  ko: '(선택 사항 · 본 문의에만 사용, 광고 없음)',
+  zh: '（可选 · 仅用于本次询盘，不做营销）',
+  hi: '(वैकल्पिक · केवल इस पूछताछ के लिए, कोई विज्ञापन नहीं)',
+  vi: '(Tùy chọn · chỉ dùng cho yêu cầu này, không quảng cáo)',
+  jv: '(Opsional · mung kanggo pitakon iki, tanpa iklan)',
+  ms: '(Pilihan · untuk pertanyaan ini sahaja, tanpa iklan)',
+  tg: '(Ихтиёрӣ · танҳо барои ин дархост, бе реклама)',
 };
 const phoneOptionalLabel = phoneOptionalLabels[lang] || phoneOptionalLabels.en;
 
+const attachmentOptionalLabels: Record<string, string> = {
+  en: '(Optional · sharper quote, fewer emails)',
+  it: '(Facoltativo · preventivo più accurato, meno email)',
+  es: '(Opcional · cotización más precisa, menos correos)',
+  fr: '(Facultatif · devis plus précis, moins d’e-mails)',
+  de: '(Optional · genaueres Angebot, weniger E-Mails)',
+  pt: '(Opcional · orçamento mais preciso, menos e-mails)',
+  ru: '(Необязательно · точнее расчёт, меньше переписки)',
+  ja: '（任意 · 見積もりがより正確に、やり取りも削減）',
+  tr: '(İsteğe bağlı · daha isabetli teklif, daha az e-posta)',
+  ar: '(اختياري · عرض سعر أدق، ومراسلات أقل)',
+  ko: '(선택 사항 · 더 정확한 견적, 이메일 왕복 감소)',
+  zh: '（可选 · 报价更精准，省去邮件往来）',
+  hi: '(वैकल्पिक · अधिक सटीक कोटेशन, कम ईमेल)',
+  vi: '(Tùy chọn · báo giá chính xác hơn, ít email trao đổi)',
+  jv: '(Opsional · rega luwih pas, email luwih sithik)',
+  ms: '(Pilihan · sebut harga lebih tepat, kurang emel)',
+  tg: '(Ихтиёрӣ · арзиши дақиқтар, камтар мукотива)',
+};
+const attachmentOptionalLabel = attachmentOptionalLabels[lang] || attachmentOptionalLabels.en;
+
 const attachmentCopy = lang === 'zh'
   ? {
-      optional: '（可选）',
+      optional: attachmentOptionalLabel,
       helper: '单个 5 MB、总计 8 MB。支持 PDF、图片及常见 CAD/设计文件；更大或其他文件请邮件发送至',
       dropHint: '可一次选择多个文件，或直接拖入这里。',
     }
   : {
-      optional: '(Optional)',
+      optional: attachmentOptionalLabel,
       helper: '5 MB each and 8 MB in total. PDF, images, and common CAD/design files. For larger or other files, email',
       dropHint: 'Select multiple files at once, or drop them here.',
     };
