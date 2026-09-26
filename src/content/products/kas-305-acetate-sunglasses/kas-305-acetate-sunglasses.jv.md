@@ -5,7 +5,7 @@ slug: "kas-305-acetate-sunglasses"
 itemNo: "KAS-305"
 date: "2026-05-12"
 colors: "Ireng & Loreng & Havana & Zaitun"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Kustomisasi"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, frame a
 
 ## Fitur
 
-- **Pilihan Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing menehi rasa entheng kanthi daya tahan sing luar biasa lan werna sing padhang.
+- **Pilihan Bahan Premium:** Konstruksi asetat Mazzucchelli, JIMEI, JINYU kelas dhuwur sing menehi rasa entheng kanthi daya tahan sing luar biasa lan werna sing padhang.
 - **Hardware Kuat:** Engsel struktur 4+3 barrel sing dirancang kanthi presisi nyedhiyakake kelancaran operasional jangka panjang lan keselarasan frame sing konsisten.
 - **Optik Performa Dhuwur:** Lensa nylon sing kuat nawakake resistensi impact lan kejelasan optik sing unggul kanthi pilihan kustomisasi lan lapisan sing fleksibel.
 - **Kenyamanan Ergonomis:** Bantalan irung integrasi lan desain bridge unisex sing apik njamin pas sing aman lan hypoallergenic kanggo panggunaan saben dina.
@@ -71,7 +71,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, frame a
 
 ## Ringkesan
 
-Asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur nemtokake keanggunan struktural KAS-305, nyedhiyakake rasa entheng lan saturasi werna sing jero. Desain unisex klasik iki nggabungake estetika retro karo panjaluk fashion modern.
+Asetat Mazzucchelli, JIMEI, JINYU kelas dhuwur nemtokake keanggunan struktural KAS-305, nyedhiyakake rasa entheng lan saturasi werna sing jero. Desain unisex klasik iki nggabungake estetika retro karo panjaluk fashion modern.
 
 Dirancang kanthi sistem engsel 4+3 barrel sing presisi lan bantalan irung integrasi, frame iki njaga keselarasan lan kenyamanan sajrone panggunaan saben dina.
 

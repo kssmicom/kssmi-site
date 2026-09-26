@@ -5,7 +5,7 @@ slug: "kas-314-acetate-sunglasses"
 itemNo: "KAS-314"
 date: "2026-05-12"
 colors: "Ijo Neon & Shampanye & Havana & Kukus & Ireng"
-materials: "Asetat Mazzucchelli Premium & JIMEI & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "OEM & ODM ( Kustomisasi )"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -58,7 +58,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing menehi rasa entheng kanthi daya tahan sing luar biasa lan kedalaman warna sing padhang.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli, JIMEI, JINYU kelas dhuwur sing menehi rasa entheng kanthi daya tahan sing luar biasa lan kedalaman warna sing padhang.
 - **Hardware Kuat:** Engsel struktur 4+3 barrel sing dirancang kanthi presisi njamin kelancaran operasional jangka panjang lan integritas struktural.
 - **Optik Unggul:** Lensa nilon kanthi kaku dhuwur sing nyedhiyakake resistensi impact sing apik banget lan kejelasan visual kanggo standar kacamata premium.
 - **Kenyamanan Ergonomis:** Bantalan irung sing terintegrasi kanthi mulus sing dirancang kanggo pas sing stabil lan tanpa tekanan, cocok kanggo panggunaan saben dina sing suwe.
@@ -76,7 +76,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 
 ## Ringkesan
 
-Nggabungake tekstur refined saka asetat Mazzucchelli lan JIMEI & JINYU, KAS-314 nawakake keseimbangan sing nggumunake antarane kedalaman warna sing padhang lan daya tahan sing entheng. Siluet unisex iki dadi dhasar serbaguna kanggo merek sing ngutamakake tren modern lan kerajinan asetat sing langgeng.
+Nggabungake tekstur refined saka asetat Mazzucchelli, JIMEI, JINYU, KAS-314 nawakake keseimbangan sing nggumunake antarane kedalaman warna sing padhang lan daya tahan sing entheng. Siluet unisex iki dadi dhasar serbaguna kanggo merek sing ngutamakake tren modern lan kerajinan asetat sing langgeng.
 
 Frame iki dirancang kanthi engsel 4+3 barrel sing tepat lan lensa nilon tahan impact, njamin daya tahan kinerja dhuwur bebarengan karo pas sing mulus lan terintegrasi.
 

@@ -5,7 +5,7 @@ slug: "kas-108-acetate-sunglasses"
 itemNo: "KAS-108"
 date: "2026-05-07"
 colors: "Black & Clear & Havana & Olive"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, premium pr
 
 ## Technical Features
 
-- **Premium Acetate Construction:** High-quality Mazzucchelli, JIMEI & JINYU acetate frame and temples offering a vibrant, hand-polished finish with exceptional durability.
+- **Premium Acetate Construction:** High-quality Mazzucchelli, JIMEI, JINYU acetate frame and temples offering a vibrant, hand-polished finish with exceptional durability.
 - **High-Performance Optics:** Tenacious nylon lenses providing superior impact resistance and optical clarity with extensive custom tinting options available.
 - **Precision Hardware:** Stable 3+2 barrel structure hinges engineered for consistent operational smoothness and long-term frame alignment.
 - **Ergonomic Comfort:** Integrated nose pads and a lightweight frame structure designed for a secure fit and all-day comfort across diverse facial profiles.
@@ -72,7 +72,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, premium pr
 
 ## Overview
 
-Mazzucchelli, JIMEI & JINYU acetate provide the foundational excellence for this model, combining a hand-polished, vibrant finish with the lightweight durability essential for premium eyewear. This vintage-inspired unisex design serves as a versatile staple for brands seeking a balance of bold aesthetics and timeless style.
+Mazzucchelli, JIMEI, JINYU acetate provide the foundational excellence for this model, combining a hand-polished, vibrant finish with the lightweight durability essential for premium eyewear. This vintage-inspired unisex design serves as a versatile staple for brands seeking a balance of bold aesthetics and timeless style.
 
 A 3+2 barrel hinge system and integrated nose pads ensure consistent performance and ergonomic comfort, reflecting a commitment to precision manufacturing and long-term frame alignment.
 

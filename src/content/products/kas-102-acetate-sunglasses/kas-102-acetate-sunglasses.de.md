@@ -5,7 +5,7 @@ slug: "kas-102-acetate-sunglasses"
 itemNo: "KAS-102"
 date: "2026-05-05"
 colors: "Transparent & Schwarz & Tiefschwarz & Uniblau & Unigrau & Univiolett & Cyan-Punkt Blau-Punkt & Honig & Grün & Rot-Verlauf & Dunkelblau & Hellblau & Mattgrau & Schildpatt & Transparent-Grau & Panda"
-materials: "Premium Mazzucchelli & JIMEI & JINYU-Acetat & Individualisierung"
+materials: "Premium Mazzucchelli, JIMEI, JINYU-Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100Stk/Farbe)"
 
@@ -102,7 +102,7 @@ seoKeywords: "Acetat Sonnenbrillen Hersteller, anpassbare Acetat Brillen, Privat
 
 ## Eigenschaften
 
-- **Premium Acetat-Material:** Hochwertige Mazzucchelli- und JIMEI & JINYU-Acetat-Konstruktion, die ein leichtes Tragegefühl bei außergewöhnlicher Haltbarkeit und lebendiger Farbtiefe bietet.
+- **Premium Acetat-Material:** Hochwertige Mazzucchelli, JIMEI, JINYU-Acetat-Konstruktion, die ein leichtes Tragegefühl bei außergewöhnlicher Haltbarkeit und lebendiger Farbtiefe bietet.
 - **Präzisions-Hardware:** Robuste 3+2 Barrel-Scharniere, die für langfristige Laufruhe und strukturelle Stabilität entwickelt wurden.
 - **Fortschrittliche Glastechnologie:** Vielseitige AC- oder widerstandsfähige Nylongläser mit umfangreichen individuellen Tönungs- und Beschichtungsoptionen für überlegene visuelle Klarheit erhältlich.
 - **Ergonomisches Design:** Integrierte Nasenpads und eine präzise ausbalancierte Rahmenstruktur sorgen für ganztägigen Komfort und einen sicheren Sitz.

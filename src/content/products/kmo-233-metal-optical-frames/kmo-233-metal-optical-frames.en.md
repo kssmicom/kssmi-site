@@ -5,7 +5,7 @@ slug: "kmo-233-metal-optical-frames"
 itemNo: "KMO-233"
 date: "2026-05-01"
 colors: "Black with Glossy Gold, Tortoise with Glossy Gold"
-materials: "Premium Acetate and Metal (Mazzucchelli & JIMEI & JINYU Acetate)"
+materials: "Premium Acetate and Metal (Mazzucchelli, JIMEI, JINYU Acetate)"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -45,7 +45,7 @@ seoKeywords: "metal optical frames manufacturer, custom acetate eyewear factory,
 ---
 
 ## Technical Features
-- **Premium Materials:** High-quality acetate frame combined with metal temples utilizing Mazzucchelli & JIMEI & JINYU acetate for a luxurious finish and lasting durability.
+- **Premium Materials:** High-quality acetate frame combined with metal temples utilizing Mazzucchelli, JIMEI, JINYU acetate for a luxurious finish and lasting durability.
 - **Precision Hardware:** Stable 2+1 barrel composite structure hinges engineered for long-term operational smoothness with customization options for 5 barrels or spring hinges.
 - **Premium Optics:** Tenacious nylon lenses offering exceptional impact resistance and clarity with full customization available to meet brand specifications.
 - **Ergonomic Comfort:** Clear silicone integrated nose pads ensuring a secure, slip-resistant fit and all-day comfort for the wearer.

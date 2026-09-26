@@ -5,7 +5,7 @@ slug: "kas-126-acetate-sunglasses"
 itemNo: "KAS-126"
 date: "2026-05-09"
 colors: "Preto & Mármore & Verde & Branco"
-materials: "Acetato Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
+materials: "Acetato Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Características
 
-- **Composição de Acetato Premium:** Armação e hastes em acetato Mazzucchelli e JIMEI & JINYU de alto desempenho que proporcionam uma sensação de leveza e um acabamento vibrante polido à mão.
+- **Composição de Acetato Premium:** Armação e hastes em acetato Mazzucchelli, JIMEI, JINYU de alto desempenho que proporcionam uma sensação de leveza e um acabamento vibrante polido à mão.
 - **Hardware Robusto:** Dobradiças estáveis com estrutura de 3+2 barris projetadas para tensão constante e suavidade operacional a longo prazo.
 - **Tecnologia de Lentes Avançada:** Lentes de nylon resistentes ao impacto que oferecem clareza óptica excepcional com tons e revestimentos personalizáveis para diversas necessidades do mercado.
 - **Conforto Ergonômico:** Ponteiras nasicas integradas suavemente projetadas para proporcionar um ajuste seguro e conforto superior para várias estruturas faciais.

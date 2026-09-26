@@ -5,7 +5,7 @@ slug: "kas-326-acetate-sunglasses"
 itemNo: "KAS-326"
 date: "2026-05-13"
 colors: "Black with Gradient Grey, Tortoise with Blue-Brown, Teal Havana with Gradient Brown"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -44,7 +44,7 @@ seoKeywords: "custom acetate sunglasses, wholesale acetate eyewear, private labe
 
 ## Technical Features
 
-- **Premium Frame Material:** Crafted from premium Mazzucchelli & JIMEI & JINYU acetate, offering a lightweight, durable, and structurally stable design with vibrant color-depth.
+- **Premium Frame Material:** Crafted from premium Mazzucchelli, JIMEI, JINYU acetate, offering a lightweight, durable, and structurally stable design with vibrant color-depth.
 - **Premium Optics:** Tenacious nylon lenses with extensive custom tinting and coating options to meet diverse market demands.
 - **Precision Hardware:** Stable 3+2 barrel structure hinges, customizable with 5-barrel or spring configurations, engineered for long-term operational smoothness.
 - **All-Day Comfort:** Integrated acetate nose pads designed to distribute pressure evenly and ensure a secure, comfortable fit.
@@ -61,7 +61,7 @@ seoKeywords: "custom acetate sunglasses, wholesale acetate eyewear, private labe
 
 ## Overview
 
-Designed to capture the aesthetic demands of premium boutique retail, the KAS-326 sunglasses blend classic rivet detailing with the vibrant, multi-layered depth of custom-sourced JIMEI & JINYU and Mazzucchelli acetate.
+Designed to capture the aesthetic demands of premium boutique retail, the KAS-326 sunglasses blend classic rivet detailing with the vibrant, multi-layered depth of custom-sourced Mazzucchelli, JIMEI, JINYU acetate.
 
 Underpinning their high-end appeal is a durable 3+2 barrel hinge setup and integrated nose pads, engineered to maintain precise frame alignment and exceptional wearer comfort.
 

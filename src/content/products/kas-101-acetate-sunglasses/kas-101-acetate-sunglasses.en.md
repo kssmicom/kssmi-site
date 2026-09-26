@@ -5,7 +5,7 @@ slug: "kas-101-acetate-sunglasses"
 itemNo: "KAS-101"
 date: "2026-05-05"
 colors: "White & Panda & Leopard & Havana & Clear & Black"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -61,7 +61,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 ---
 
 ## Technical Features
-- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction providing a lightweight feel with vibrant, long-lasting color depth.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI, JINYU acetate construction providing a lightweight feel with vibrant, long-lasting color depth.
 - **Reinforced Construction:** Durable acetate temples integrated with 3+2 barrel structure hinges engineered for enhanced structural integrity and operational smoothness.
 - **High-Definition Optics:** Tenacious nylon lenses offering superior clarity and impact resistance, with extensive customization options for tints and coatings.
 - **Ergonomic Design:** Integrated nose pads and tailored 58-17-143mm sizing designed for a secure, comfortable fit that maintains the frame's sleek aesthetic profile.
@@ -78,7 +78,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Overview
 
-Vibrant Mazzucchelli, JIMEI & JINYU acetate give the KAS-101 its striking color depth and lightweight durability, positioning it as a core staple for trend-forward eyewear portfolios.
+Vibrant Mazzucchelli, JIMEI, JINYU acetate give the KAS-101 its striking color depth and lightweight durability, positioning it as a core staple for trend-forward eyewear portfolios.
 
 Each frame incorporates precision-engineered 3+2 barrel hinges and an ergonomic profile to provide consistent structural strength and long-term wearing comfort.
 

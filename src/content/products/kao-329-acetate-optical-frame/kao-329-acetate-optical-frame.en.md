@@ -5,7 +5,7 @@ slug: "kao-329-acetate-optical-frame"
 itemNo: "KAO-329"
 date: "2026-05-10"
 colors: "Solid Olive, Solid Pink, Tortoise"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -50,7 +50,7 @@ seoKeywords: "custom acetate optical frames, wholesale acetate glasses, OEM cust
 
 ## Technical Features
 
-- **Premium Material:** Crafted from premium Mazzucchelli, JIMEI & JINYU acetate, offering an ultra-lightweight yet exceptionally durable structure with vibrant, deep-toned color aesthetics.
+- **Premium Material:** Crafted from premium Mazzucchelli, JIMEI, JINYU acetate, offering an ultra-lightweight yet exceptionally durable structure with vibrant, deep-toned color aesthetics.
 - **Engineered Hardware:** High-reliability 3+2 barrel structure hinges providing stable, smooth temple movement with options for spring and 5-barrel hinges.
 - **Tenacious Optics:** High-durability nylon lenses offering exceptional optical clarity and impact resistance with full bespoke coating and customization services.
 - **Integrated Comfort:** Seamlessly integrated acetate nose pads combined with a tailored 55-17-145mm geometry to deliver a balanced, slip-free fit.
@@ -67,7 +67,7 @@ seoKeywords: "custom acetate optical frames, wholesale acetate glasses, OEM cust
 
 ## Overview
 
-By pairing Mazzucchelli, JIMEI & JINYU acetate, the KAO-329 frame achieves an elegant depth of color combined with lasting physical resilience. Its retro-classic unisex shape, presented in rich olive, soft pink, and classic tortoise, adds a premium anchor to any high-end eyewear line.
+By pairing Mazzucchelli, JIMEI, JINYU acetate, the KAO-329 frame achieves an elegant depth of color combined with lasting physical resilience. Its retro-classic unisex shape, presented in rich olive, soft pink, and classic tortoise, adds a premium anchor to any high-end eyewear line.
 
 Precision manufacturing ensures the 55-17-145mm geometry works in harmony with integrated acetate nose pads and a 3+2 barrel hinge to deliver smooth movement and a balanced, pressure-free fit.
 

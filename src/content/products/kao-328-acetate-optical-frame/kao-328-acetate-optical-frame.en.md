@@ -5,7 +5,7 @@ slug: "kao-328-acetate-optical-frame"
 itemNo: "KAO-328"
 date: "2026-05-10"
 colors: "Black, Blue"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -46,7 +46,7 @@ seoKeywords: "custom acetate optical frames, wholesale acetate glasses, Chinese 
 
 ## Technical Features
 
-- **Premium Material:** Crafted from premium Mazzucchelli, JIMEI & JINYU acetate, offering a lightweight yet exceptionally durable structure with vibrant, long-lasting color depth.
+- **Premium Material:** Crafted from premium Mazzucchelli, JIMEI, JINYU acetate, offering a lightweight yet exceptionally durable structure with vibrant, long-lasting color depth.
 - **Engineered Hardware:** High-reliability 3+2 barrel rivet hinges providing stable, smooth temple movement with custom spring hinge options.
 - **Tenacious Optics:** High-durability nylon lenses providing excellent clarity and impact resistance with full bespoke coating options.
 - **Integrated Comfort:** Seamlessly integrated nose pads combined with a tailored 53-18-145mm geometry to deliver a balanced, slip-free fit.
@@ -63,7 +63,7 @@ seoKeywords: "custom acetate optical frames, wholesale acetate glasses, Chinese 
 
 ## Overview
 
-A rich material depth defines the KAO-328, pairing hand-polished Mazzucchelli, JIMEI & JINYU acetate with a classic unisex silhouette designed for premium portfolios.
+A rich material depth defines the KAO-328, pairing hand-polished Mazzucchelli, JIMEI, JINYU acetate with a classic unisex silhouette designed for premium portfolios.
 
 This model integrates solid 3+2 barrel rivet hinges and sculpted nose pads, maintaining smooth structural alignment alongside lasting comfort.
 

@@ -5,7 +5,7 @@ slug: "kao-309-acetate-optical-frame"
 itemNo: "KAO-309"
 date: "2026-05-10"
 colors: "Preto & Azul Royal & Tartaruga & Oliva"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -53,7 +53,7 @@ seoKeywords: "fabricante armações ópticas acetato, óculos personalizados OEM
 ---
 
 ## Características
-- **Material Premium:** Armação e hastes de acetato de alta qualidade Mazzucchelli e JIMEI & JINYU, proporcionando uma estética vibrante, leve e durável.
+- **Material Premium:** Armação e hastes de acetato de alta qualidade Mazzucchelli, JIMEI, JINYU, proporcionando uma estética vibrante, leve e durável.
 - **Hardware Durável:** Dobradiças com estrutura de rebite de 4+3 barris projetadas com precisão, garantindo uma fluidez operacional excepcional e longevidade estrutural.
 - **Óptica Premium:** Lentes de nylon tenaz que oferecem resistência superior ao impacto e opções de personalização versáteis para tonalidades e revestimentos especializados.
 - **Conforto Ergonômico:** Ponteiras nasicas integradas de forma contínua, projetadas para proporcionar um ajuste seguro, hipoalergênico e confortável para uso prolongado.
@@ -70,7 +70,7 @@ seoKeywords: "fabricante armações ópticas acetato, óculos personalizados OEM
 
 ## Visão Geral
 
-Combinando o acetato premium Mazzucchelli e JIMEI & JINYU, o KAO-309 apresenta um perfil clássico de inspiração retrô, projetado para mercados ópticos de alto padrão. A armação leve preserva uma profundidade de cor intensa, ao mesmo tempo em que oferece a resiliência necessária para o uso diário.
+Combinando o acetato premium Mazzucchelli, JIMEI, JINYU, o KAO-309 apresenta um perfil clássico de inspiração retrô, projetado para mercados ópticos de alto padrão. A armação leve preserva uma profundidade de cor intensa, ao mesmo tempo em que oferece a resiliência necessária para o uso diário.
 
 As dobradiças de rebite de 4+3 barris projetadas com precisão e as ponteiras nasicas integradas proporcionam um equilíbrio refinado entre longevidade estrutural e conforto ergonômico.
 

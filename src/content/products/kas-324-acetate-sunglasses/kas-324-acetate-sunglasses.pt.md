@@ -5,7 +5,7 @@ slug: "kas-324-acetate-sunglasses"
 itemNo: "KAS-324"
 date: "2026-05-13"
 colors: "Preto, Havana, Champanhe"
-materials: "Acetato Premium Mazzucchelli e JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda & Design e Fabricação ( Personalização )"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -49,7 +49,7 @@ seoKeywords: "óculos de sol em acetato premium, óculos de moda em acetato, fab
 ---
 
 ## Características
-- **Material de Acetato Premium:** Construção em acetato de alta qualidade Mazzucchelli e JIMEI & JINYU, oferecendo um acabamento vibrante com durabilidade excepcional e conforto leve.
+- **Material de Acetato Premium:** Construção em acetato de alta qualidade Mazzucchelli, JIMEI, JINYU, oferecendo um acabamento vibrante com durabilidade excepcional e conforto leve.
 - **Ferragens de Precisão:** Dobradiças estáveis com estrutura de 3+2 barris, projetadas para uma fluidez operacional constante e confiabilidade a longo prazo.
 - **Ótica Avançada:** Lentes de nylon resistentes a impactos con amplas opções de personalização para proteção UV e clareza superiores.
 - **Conforto Integrado:** Ponteiras nasicas moldadas com precisão, projetadas para um ajuste ergonômico e hipoalergênico em diversos perfis faciais.
@@ -66,7 +66,7 @@ seoKeywords: "óculos de sol em acetato premium, óculos de moda em acetato, fab
 
 ## Visão Geral
 
-Para marcas de óculos que priorizam a excelência dos materiais, o modelo KAS-324 utiliza acetato premium Mazzucchelli e JIMEI & JINYU para obter um acabamento distinto e vibrante. Esta seleção oferece a durabilidade leve necessária para portfólios de moda de luxo.
+Para marcas de óculos que priorizam a excelência dos materiais, o modelo KAS-324 utiliza acetato premium Mazzucchelli, JIMEI, JINYU para obter um acabamento distinto e vibrante. Esta seleção oferece a durabilidade leve necessária para portfólios de moda de luxo.
 
 A estrutura de dobradiça de 3+2 barris da armação e as ponteiras nasicas integradas são usinadas com precisão para garantir confiabilidade operacional constante e conforto durante todo o dia.
 

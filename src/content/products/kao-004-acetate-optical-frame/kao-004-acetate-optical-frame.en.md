@@ -5,7 +5,7 @@ slug: "kao-004-acetate-optical-frame"
 itemNo: "KAO-004"
 date: "2026-05-10"
 colors: "Black & Tortoise & Orange & Zebra & Golden"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -43,7 +43,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM optical frames, lu
 
 ## Technical Features
 
-- **Premium Material Architecture:** Crafted from high-grade Mazzucchelli, JIMEI & JINYU acetate, providing a lightweight and durable frame with vibrant, long-lasting color profiles.
+- **Premium Material Architecture:** Crafted from high-grade Mazzucchelli, JIMEI, JINYU acetate, providing a lightweight and durable frame with vibrant, long-lasting color profiles.
 - **High-Stability Hardware:** Precision-engineered 4+3 barrel rivet structure hinges designed for superior operational smoothness and long-term frame alignment.
 - **Advanced Optics:** Equipped with tenacious nylon lenses offering exceptional clarity and impact resistance, with full customization options for tints and coatings.
 - **Ergonomic Design:** Integrated nose pad system sculpted for a secure, hypoallergenic fit that ensures consistent comfort during extended wear.
@@ -61,7 +61,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM optical frames, lu
 
 ## Overview
 
-High-grade Mazzucchelli, JIMEI & JINYU acetate give the KAO-004 its distinctive character, blending vibrant color profiles with a hypoallergenic finish that feels natural against the skin. The frame's material composition is specifically selected to offer durability without compromising the elegant, lightweight silhouette favored by modern fashion houses.
+High-grade Mazzucchelli, JIMEI, JINYU acetate give the KAO-004 its distinctive character, blending vibrant color profiles with a hypoallergenic finish that feels natural against the skin. The frame's material composition is specifically selected to offer durability without compromising the elegant, lightweight silhouette favored by modern fashion houses.
 
 Integrated nose pads and a reinforced 4+3 barrel rivet structure define the frame's mechanical excellence, delivering a secure fit and consistent hardware performance.
 

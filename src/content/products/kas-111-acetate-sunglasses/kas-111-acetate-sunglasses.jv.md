@@ -5,7 +5,7 @@ slug: "kas-111-acetate-sunglasses"
 itemNo: "KAS-111"
 date: "2026-05-09"
 colors: "Abrit Gula & Bulus Jambon & Putih Krim & Ireng"
-materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, grosir 
 
 ## Fitur
 
-- **Bahan Frame Premium:** Digawe kanti ahli saka asetat Mazzucchelli lan JIMEI & JINYU kualitas dhuwur, menehi rasa entheng kanti awet sing luar biasa lan warna sing padhang.
+- **Bahan Frame Premium:** Digawe kanti ahli saka asetat Mazzucchelli, JIMEI, JINYU kualitas dhuwur, menehi rasa entheng kanti awet sing luar biasa lan warna sing padhang.
 - **Engsel Presisi:** Engsel struktur tong 3+2 sing kuwat dirancang kanggo kelancaran operasional jangka panjang lan stabilitas struktur.
 - **Optik Performa Dhuwur:** Lensa nylon kuat sing nyedhiyakake kajelasan unggul lan tahan benturan kanti pilihan warna kustom sing akeh kasedhiya.
 - **Kenyamanan Ergonomis:** Bantalan irung integrasi sing dirancang kanggo pas sing mulus lan hypoallergenic sing njamin stabilitas lan kenyamanan sedina muput.
@@ -71,7 +71,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, grosir 
 
 ## Ringkesan
 
-Warna sing padhang lan integritas struktur premium ketemu ing KAS-111, model sing digawe saka asetat Mazzucchelli lan JIMEI & JINYU kualitas dhuwur kanggo njupuk estetika sing kendel lan inspirasi vintage.
+Warna sing padhang lan integritas struktur premium ketemu ing KAS-111, model sing digawe saka asetat Mazzucchelli, JIMEI, JINYU kualitas dhuwur kanggo njupuk estetika sing kendel lan inspirasi vintage.
 
 Stabilitas struktur dijaga liwat engsel tong 3+2 sing kuwat, dene bantalan irung integrasi nawakake pas sing ergonomis lan mulus kanggo macem-macem bentuk rai.
 

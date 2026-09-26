@@ -5,7 +5,7 @@ slug: "kas-121-acetate-sunglasses"
 itemNo: "KAS-121"
 date: "2026-05-09"
 colors: "Nero & Havana & Maple"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100pz/colore)"
 
@@ -50,7 +50,7 @@ seoKeywords: "produttore di occhiali da sole in acetato, occhiali da sole OEM pe
 
 ## Caratteristiche
 
-- **Costruzione in Acetato Premium:** Realizzati in acetato Mazzucchelli e JIMEI & JINYU di alta qualità, offrendo una montatura leggera, resistente e vivace per un'eccezionale durata nel tempo.
+- **Costruzione in Acetato Premium:** Realizzati in acetato Mazzucchelli, JIMEI, JINYU di alta qualità, offrendo una montatura leggera, resistente e vivace per un'eccezionale durata nel tempo.
 - **Hardware Robusto:** Cerniere a struttura barrel 3+2 progettate con precisione per garantire un allineamento sicuro e una fluidità operativa ottimale.
 - **Ottica Avanzata:** Lenti in nylon tenace che offrono una chiarezza visiva superiore, con opzioni versatili di colorazione e rivestimento personalizzati disponibili.
 - **Comfort Senza Soluzioni di Continuità:** Naselli integrati meticolosamente progettati per distribuire il peso in modo uniforme per una vestibilità sicura e confortevole.
@@ -68,7 +68,7 @@ seoKeywords: "produttore di occhiali da sole in acetato, occhiali da sole OEM pe
 
 ## Panoramica
 
-Unendo la classica ispirazione vintage con il lusso moderno, il modello KAS-121 è magistralmente scolpito in acetato premium Mazzucchelli e JIMEI & JINYU. Questa eccezionale base di materiale garantisce una montatura leggera ma altamente resistente con una finitura affascinante e vivace.
+Unendo la classica ispirazione vintage con il lusso moderno, il modello KAS-121 è magistralmente scolpito in acetato premium Mazzucchelli, JIMEI, JINYU. Questa eccezionale base di materiale garantisce una montatura leggera ma altamente resistente con una finitura affascinante e vivace.
 
 L'integrità strutturale è assicurata dalle cerniere barrel 3+2 progettate con precisione, mentre i naselli meticolosamente integrati offrono una vestibilità perfettamente bilanciata e confortevole.
 

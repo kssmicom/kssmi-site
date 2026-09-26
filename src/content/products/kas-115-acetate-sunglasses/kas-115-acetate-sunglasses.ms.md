@@ -5,7 +5,7 @@ slug: "kas-115-acetate-sunglasses"
 itemNo: "KAS-115"
 date: "2026-05-09"
 colors: "Hitam & Ungu & Putih & Kura-kura & Jingga"
-materials: "Asetat Mazzucchelli dan JIMEI & JINYU Premium & Penyesuaian"
+materials: "Asetat Mazzucchelli, JIMEI, JINYU Premium & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -58,7 +58,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam oem tersuai,
 
 ## Ciri-ciri Teknikal
 
-- **Bahan Premium:** Dibina daripada asetat Mazzucchelli dan JIMEI & JINYU berkualiti tinggi, menawarkan bingkai ringan dan tahan lama dengan kemasan yang terang.
+- **Bahan Premium:** Dibina daripada asetat Mazzucchelli, JIMEI, JINYU berkualiti tinggi, menawarkan bingkai ringan dan tahan lama dengan kemasan yang terang.
 - **Perkakasan Tahan Lama:** Menampilkan engsel struktur 3+2 yang teguh direka untuk kelancaran operasi yang stabil dan jangka panjang.
 - **Optik Premium:** Dilengkapi dengan lensa nilon kuat yang memberikan kejelasan yang sangat baik, dengan penyesuaian meluas tersedia untuk profil warna yang unik.
 - **Keselesaan Sepanjang Hari:** Direka dengan alas hidung bersepadu untuk memastikan padanan yang lancar, selamat dan selesa untuk pemakaian berpanjangan.
@@ -76,7 +76,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam oem tersuai,
 
 ## Gambaran Keseluruhan
 
-Dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU premium, KAS-115 menyalurkan estetika vintaj yang berani sambil memberikan ketahanan yang luar biasa dan profil warna yang terang. Reka bentuk uniseks ini menonjol sebagai ruji serba boleh untuk koleksi cermin mata mewah moden.
+Dihasilkan daripada asetat Mazzucchelli, JIMEI, JINYU premium, KAS-115 menyalurkan estetika vintaj yang berani sambil memberikan ketahanan yang luar biasa dan profil warna yang terang. Reka bentuk uniseks ini menonjol sebagai ruji serba boleh untuk koleksi cermin mata mewah moden.
 
 Engsel struktur 3+2 yang teguh dan alas hidung bersepadu direka untuk menjamin kestabilan yang berkekalan dan keselesaan sepanjang hari.
 

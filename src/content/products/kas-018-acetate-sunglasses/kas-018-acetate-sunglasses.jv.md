@@ -5,7 +5,7 @@ slug: "kas-018-acetate-sunglasses"
 itemNo: "KAS-018"
 date: "2026-05-10"
 colors: "Ireng, Abrit Bening, Biru Bening"
-materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -41,7 +41,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata label pribadi mewah, kaca
 
 ## Fitur
 
-- **Asetat Kinerja Dhuwur:** Frame asetat premium Mazzucchelli lan JIMEI & JINYU nyedhiyakake struktur entheng lan hipoalergenik kanthi jero warna sing cetha lan awet.
+- **Asetat Kinerja Dhuwur:** Frame asetat premium Mazzucchelli, JIMEI, JINYU nyedhiyakake struktur entheng lan hipoalergenik kanthi jero warna sing cetha lan awet.
 - **Hardware Awet:** Engsel struktur 3+2 tong sing stabil dirancang kanggo kelancaran operasional sing bisa dibaleni lan integritas struktur (bisa dikustomisasi dadi 5-tong utawa engsel pegas).
 - **Optik Premium:** Lensa nilon kuat sing nawarake resistensi dampak dhuwur lan kejelasan optik kanthi kemungkinan pewarnaan lan lapisan kustom sing jembar.
 - **Kenyamanan Nyawiji:** Bantalan irung nyawiji yang dicetak kanthi presisi njamin pas sing aman, seimbang lan estetika sing resik lan tanpa sambungan.
@@ -59,7 +59,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata label pribadi mewah, kaca
 
 ## Ringkesan
 
-Dirancang nganggo asetat premium Mazzucchelli lan JIMEI & JINYU, model KAS-018 entuk struktur entheng lan hipoalergenik sing nuduhake semangat lan jero warna sing luar biasa.
+Dirancang nganggo asetat premium Mazzucchelli, JIMEI, JINYU, model KAS-018 entuk struktur entheng lan hipoalergenik sing nuduhake semangat lan jero warna sing luar biasa.
 
 Integrasi engsel 3+2 tong lan lensa nilon kuat njamin stabilitas operasional jangka panjang bebarengan karo resistensi dampak lan kejelasan optik sing unggul.
 

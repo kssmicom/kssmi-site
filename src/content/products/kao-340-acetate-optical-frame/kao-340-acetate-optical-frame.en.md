@@ -5,7 +5,7 @@ slug: "kao-340-acetate-optical-frame"
 itemNo: "KAO-340"
 date: "2026-05-10"
 colors: "Black, Havana"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -45,7 +45,7 @@ seoKeywords: "acetate optical frames, eyewear OEM manufacturer, Chinese eyewear 
 ---
 
 ## Technical Features
-- **Premium Acetate Structure:** Crafted from premium Mazzucchelli, JIMEI & JINYU acetate frames and temples, offering a lightweight, highly durable, and vibrant foundation for luxury eyewear lines.
+- **Premium Acetate Structure:** Crafted from premium Mazzucchelli, JIMEI, JINYU acetate frames and temples, offering a lightweight, highly durable, and vibrant foundation for luxury eyewear lines.
 - **Durable Hardware:** Engineered with 3+2 barrel structure hinges, with custom 5-barrel and spring hinge options, providing exceptional frame stability and long-term operational smoothness.
 - **High-Quality Optics:** Outfitted with tenacious nylon lenses that deliver outstanding optical clarity and superior impact resistance, with full customization options available.
 - **Structural Comfort:** Features acetate integrated nose pads designed for a seamless, ergonomic profile and sustained all-day wearer comfort.
@@ -62,7 +62,7 @@ seoKeywords: "acetate optical frames, eyewear OEM manufacturer, Chinese eyewear 
 
 ## Overview
 
-Merging a versatile unisex silhouette with the brilliant finish of premium Mazzucchelli, JIMEI & JINYU acetate, the KAO-340 optical frame is built for sophisticated daily wear. This design delivers a lightweight, comfortable feel alongside a vibrant depth of color in Black or Havana.
+Merging a versatile unisex silhouette with the brilliant finish of premium Mazzucchelli, JIMEI, JINYU acetate, the KAO-340 optical frame is built for sophisticated daily wear. This design delivers a lightweight, comfortable feel alongside a vibrant depth of color in Black or Havana.
 
 Precision-engineered 3+2 barrel hinges, which can be customized to five-barrel or spring configurations, align perfectly with integrated acetate nose pads to provide an ergonomic fit and exceptional longevity.
 

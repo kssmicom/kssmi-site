@@ -5,7 +5,7 @@ slug: "kas-111-acetate-sunglasses"
 itemNo: "KAS-111"
 date: "2026-05-09"
 colors: "Candy-Red & Pink-Tortoise & Cream-White & Black"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, bold vinta
 
 ## Technical Features
 
-- **Premium Frame Material:** Expertly crafted from high-grade Mazzucchelli, JIMEI & JINYU acetate, delivering a lightweight feel with exceptional durability and vibrant color depth.
+- **Premium Frame Material:** Expertly crafted from high-grade Mazzucchelli, JIMEI, JINYU acetate, delivering a lightweight feel with exceptional durability and vibrant color depth.
 - **Precision Hinges:** Robust 3+2 barrel structure hinges engineered for long-term operational smoothness and structural stability.
 - **High-Performance Optics:** Tenacious nylon lenses providing superior clarity and impact resistance with extensive custom tinting options available.
 - **Ergonomic Comfort:** Integrated nose pads designed for a seamless, hypoallergenic fit that ensures stability and all-day comfort.
@@ -71,7 +71,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, bold vinta
 
 ## Overview
 
-Vibrant color depth and premium structural integrity meet in the KAS-111, a model crafted from high-grade Mazzucchelli, JIMEI & JINYU acetate to capture a bold, vintage-inspired aesthetic.
+Vibrant color depth and premium structural integrity meet in the KAS-111, a model crafted from high-grade Mazzucchelli, JIMEI, JINYU acetate to capture a bold, vintage-inspired aesthetic.
 
 Structural stability is maintained through robust 3+2 barrel hinges, while the integrated nose pads offer a seamless, ergonomic fit for diverse face shapes.
 

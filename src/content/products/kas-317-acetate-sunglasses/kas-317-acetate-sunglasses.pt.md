@@ -5,7 +5,7 @@ slug: "kas-317-acetate-sunglasses"
 itemNo: "KAS-317"
 date: "2026-05-12"
 colors: "Transparente & Mel & Champanhe & Havana & Preto"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -58,7 +58,7 @@ seoKeywords: "óculos de sol em acetato Mazzucchelli, fabricante de óculos pers
 
 ## Características
 
-- **Material Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que oferece um acabamento vibrante, leve e durável para um uso prolongado.
+- **Material Premium:** Construção em acetato Mazzucchelli, JIMEI, JINYU de alta qualidade que oferece um acabamento vibrante, leve e durável para um uso prolongado.
 - **Hardware Robusto:** Dobradiças de estrutura 4+3 tambores projetadas com precisão para uma operação suave e durabilidade a longo prazo, com atualizações para 5 tambores e dobradiças de mola disponíveis.
 - **Óptica de Alto Desempenho:** Lentes de nylon tenaz que proporcionam uma clareza superior e resistência ao impacto com amplas opções de personalização para várias tonalidades e revestimentos de lentes.
 - **Conforto Ergonômico:** Plaquetas nasais integradas projetadas para um ajuste perfeito e maior conforto durante todo o dia para uma ampla gama de perfis faciais.
@@ -76,7 +76,7 @@ seoKeywords: "óculos de sol em acetato Mazzucchelli, fabricante de óculos pers
 
 ## Visão Geral
 
-A sofisticação encontra a durabilidade nesta construção premium, onde o acetato Mazzucchelli e JIMEI & JINYU polido à mão proporciona uma estética rica e de várias camadas que resiste ao desbotamento. A composição leve da armação garante que o design ousado e moderno permaneça confortável para uso diário prolongado.
+A sofisticação encontra a durabilidade nesta construção premium, onde o acetato Mazzucchelli, JIMEI, JINYU polido à mão proporciona uma estética rica e de várias camadas que resiste ao desbotamento. A composição leve da armação garante que o design ousado e moderno permaneça confortável para uso diário prolongado.
 
 As dobradiças de 4+3 tambores de nível industrial fornecem um mecanismo de abertura firme e confiável, enquanto a geometria de 48-22-145mm cuidadosamente calculada oferece um ajuste unissex versátil que acomoda uma ampla gama de preferências do mercado global.
 

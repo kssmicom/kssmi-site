@@ -5,7 +5,7 @@ slug: "kao-501-acetate-optical-frame"
 itemNo: "KAO-501"
 date: "2026-05-10"
 colors: "Nero & Tartaruga & Cioccolato & Crema"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetato & Personalizzazione"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetato & Personalizzazione"
 serviceMode: "OEM & ODM ( Personalizzazione )"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -55,7 +55,7 @@ seoKeywords: "produttore montature ottiche acetato, montature ottiche OEM person
 
 ## Caratteristiche
 
-- **Materiali Premium:** Realizzata in autentico acetato Mazzucchelli e JIMEI & JINYU, offre una montatura leggera ma resistente con una finitura vibrante e lucida.
+- **Materiali Premium:** Realizzata in autentico acetato Mazzucchelli, JIMEI, JINYU, offre una montatura leggera ma resistente con una finitura vibrante e lucida.
 - **Hardware Vintage:** Robuste cerniere con struttura a 4+3 barili con rivetti, progettate per una superiore integrità strutturale e un'estetica artigianale intramontabile.
 - **Design Scolpito:** Costruzione delle aste sottili con precisi dettagli scolpiti per un profilo raffinato e un comfort ergonomico migliorato.
 - **Ottica ad Alte Prestazioni:** Lenti in nylon tenace che offrono eccezionale chiarezza e resistenza agli urti, con personalizzazione completa per tinte e rivestimenti.
@@ -73,7 +73,7 @@ seoKeywords: "produttore montature ottiche acetato, montature ottiche OEM person
 
 ## Panoramica
 
-L'autentico acetato Mazzucchelli e JIMEI & JINYU conferisce al modello KAO-501 la sua caratteristica finitura lucida e una profondità strutturale resiliente.
+L'autentico acetato Mazzucchelli, JIMEI, JINYU conferisce al modello KAO-501 la sua caratteristica finitura lucida e una profondità strutturale resiliente.
 
 La montatura utilizza un robusto sistema di cerniere a 4+3 barili con rivetti e aste sottili scolpite per bilanciare l'estetica vintage con la moderna affidabilità meccanica e il comfort.
 

@@ -5,7 +5,7 @@ slug: "kas-124-acetate-sunglasses"
 itemNo: "KAS-124"
 date: "2026-05-09"
 colors: "Black & Buffalo-Horn & Tortoise"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -46,7 +46,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses factory, lu
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction offering a vibrant, hand-polished finish with exceptional durability.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI, JINYU acetate construction offering a vibrant, hand-polished finish with exceptional durability.
 - **Durable Hardware:** Robust 3+2 barrel structure hinges precision-engineered for long-term operational smoothness and frame stability.
 - **Advanced Optics:** Tenacious nylon lenses providing superior impact resistance and optical clarity with extensive custom coating options.
 - **Ergonomic Comfort:** Lightweight frame with integrated nose pads designed for a secure, pressure-free fit during extended daily wear.
@@ -64,7 +64,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses factory, lu
 
 ## Overview
 
-Crafted from premium Mazzucchelli, JIMEI & JINYU acetate, this model features a hand-polished finish that highlights its bold, vintage-inspired silhouette. The frame balances a luxury unisex aesthetic with the vibrant, lightweight qualities essential for high-end fashion eyewear.
+Crafted from premium Mazzucchelli, JIMEI, JINYU acetate, this model features a hand-polished finish that highlights its bold, vintage-inspired silhouette. The frame balances a luxury unisex aesthetic with the vibrant, lightweight qualities essential for high-end fashion eyewear.
 
 Precision-engineered 3+2 barrel hinges and tenacious nylon lenses ensure a secure fit and exceptional optical performance across all production batches.
 

@@ -5,7 +5,7 @@ slug: "kas-115-acetate-sunglasses"
 itemNo: "KAS-115"
 date: "2026-05-09"
 colors: "Preto & Roxo & Branco & Tartaruga & Laranja"
-materials: "Acetato Mazzucchelli e JIMEI & JINYU Premium & Personalização"
+materials: "Acetato Mazzucchelli, JIMEI, JINYU Premium & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Características Técnicas
 
-- **Material Premium:** Construídos a partir de acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, oferecendo uma armação leve e durável com acabamentos vibrantes.
+- **Material Premium:** Construídos a partir de acetato Mazzucchelli, JIMEI, JINYU de alta qualidade, oferecendo uma armação leve e durável com acabamentos vibrantes.
 - **Hardware Durável:** Apresenta dobradiças robustas de estrutura 3+2 projetadas para uma operação suave e estável a longo prazo.
 - **Ótica Premium:** Equipados com lentes de nylon tenazes que fornecem excelente clareza, com ampla personalização disponível para perfis de cores únicos.
 - **Conforto para o Dia Todo:** Projetados com ponteiras nasais integradas para garantir um ajuste perfeito, seguro e confortável para uso prolongado.
@@ -76,7 +76,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Visão Geral
 
-Trabalhado a partir de acetato premium Mazzucchelli e JIMEI & JINYU, o KAS-115 canaliza uma estética ousada e vintage enquanto oferece excepcional durabilidade e perfis de cores vibrantes. Este design unissex se destaca como um item versátil para coleções modernas de óculos de alta qualidade.
+Trabalhado a partir de acetato premium Mazzucchelli, JIMEI, JINYU, o KAS-115 canaliza uma estética ousada e vintage enquanto oferece excepcional durabilidade e perfis de cores vibrantes. Este design unissex se destaca como um item versátil para coleções modernas de óculos de alta qualidade.
 
 As robustas dobradiças de estrutura 3+2 e as ponteiras nasais integradas são projetadas para garantir estabilidade duradoura e conforto o dia todo.
 

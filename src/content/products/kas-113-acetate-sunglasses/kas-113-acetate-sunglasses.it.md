@@ -5,7 +5,7 @@ slug: "kas-113-acetate-sunglasses"
 itemNo: "KAS-113"
 date: "2026-05-09"
 colors: "Nero & Tartaruga & Crema & Blu"
-materials: "Acetato Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
+materials: "Acetato Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100pz/colore)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produttore di occhiali da sole in acetato, occhiali da sole OEM pe
 
 ## Caratteristiche Tecniche
 
-- **Composizione Materiale Premium:** Realizzato a mano con acetato Mazzucchelli e JIMEI & JINYU di alta qualità, offrendo una finitura leggera, resistente e vibrante per una sensazione di lusso.
+- **Composizione Materiale Premium:** Realizzato a mano con acetato Mazzucchelli, JIMEI, JINYU di alta qualità, offrendo una finitura leggera, resistente e vibrante per una sensazione di lusso.
 - **Ingegneria di Precisione:** Dotato di una robusta cerniera a struttura 3+2 barilotti progettata per fluidità operativa a lungo termine e stabilità della montatura.
 - **Ottica ad Alta Definizione:** Presenta lenti in nylon resistente che offrono chiarezza superiore e resistenza agli urti, con ampie opzioni di personalizzazione per tinte e rivestimenti.
 - **Design Ergonomico:** Naselli integrati e un profilo bilanciato di 51-23-145mm per garantire una vestibilità sicura e ipoallergenica per diverse forme del viso.
@@ -72,7 +72,7 @@ seoKeywords: "produttore di occhiali da sole in acetato, occhiali da sole OEM pe
 
 ## Panoramica
 
-Unendo il vibrante acetato Mazzucchelli e JIMEI & JINYU, questo modello offre un'estetica audace e unisex che bilancia il classicismo senza tempo con la sensibilità della moda moderna. La sua finitura artigianale unica garantisce una sensazione premium che risuona con le case di moda di lusso e i marchi boutique.
+Unendo il vibrante acetato Mazzucchelli, JIMEI, JINYU, questo modello offre un'estetica audace e unisex che bilancia il classicismo senza tempo con la sensibilità della moda moderna. La sua finitura artigianale unica garantisce una sensazione premium che risuona con le case di moda di lusso e i marchi boutique.
 
 Le cerniere a 3+2 barilotti progettate con precisione e un profilo ergonomico di 51-23-145mm garantiscono stabilità della montatura nel tempo e comfort per tutto il giorno per diverse forme del viso.
 

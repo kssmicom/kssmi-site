@@ -5,7 +5,7 @@ slug: "kas-311-acetate-sunglasses"
 itemNo: "KAS-311"
 date: "2026-05-12"
 colors: "Ireng & Ungu-Keluk & Bulus & Coklat"
-materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata unisex kustom, frame aset
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU berkualitas tinggi sing nawakake estetika padhang kanthi daya tahan entheng.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli, JIMEI, JINYU berkualitas tinggi sing nawakake estetika padhang kanthi daya tahan entheng.
 - **Integritas Struktural:** Engsel 4+3 barrel sing kuwat dirancang kanggo kelancaran operasional jangka panjang lan stabilitas frame.
 - **Keunggulan Optik:** Lensa nylon kuat sing nyedhiyakake kejelasan unggul lan tahan benturan kanthi pilihan lapisan kustom sing jembar.
 - **Desain Ergonomis:** Bantalan irung integrasi sing dirancang kanggo pas sing nyaman lan tanpa sambungan nalika dienggo saben dina.
@@ -72,7 +72,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata unisex kustom, frame aset
 
 ## Ringkesan
 
-Digawe saka campuran canggih asetat Mazzucchelli lan JIMEI & JINYU, KAS-311 nawakake frame sing entheng nanging awet kanthi vibrasi warna sing unggul.
+Digawe saka campuran canggih asetat Mazzucchelli, JIMEI, JINYU, KAS-311 nawakake frame sing entheng nanging awet kanthi vibrasi warna sing unggul.
 
 Arsitektur kasebut nampilake engsel 4+3 barrel sing diperkuat lan bantalan irung integrasi, menehi stabilitas kinerja dhuwur bebarengan karo pengalaman nganggo sing alus lan ergonomis.
 

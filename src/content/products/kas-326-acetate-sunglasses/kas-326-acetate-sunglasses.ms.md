@@ -5,7 +5,7 @@ slug: "kas-326-acetate-sunglasses"
 itemNo: "KAS-326"
 date: "2026-05-13"
 colors: "Hitam dengan Kelabu Gradien, Cengkerang Kura-kura dengan Biru-Coklat, Teal Havana dengan Coklat Gradien"
-materials: "Mazzucchelli & JIMEI & JINYU Asetat Premium & Penyesuaian"
+materials: "Mazzucchelli, JIMEI, JINYU Asetat Premium & Penyesuaian"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -44,7 +44,7 @@ seoKeywords: "kacamata hitam asetat tersuai, cermin mata asetat borong, pengelua
 
 ## Ciri-ciri Utama
 
-- **Bahan Bingkai Premium:** Dihasilkan daripada asetat Mazzucchelli & JIMEI & JINYU premium, menawarkan reka bentuk yang ringan, tahan lama dan stabil dari segi struktur dengan kedalaman warna yang cergas.
+- **Bahan Bingkai Premium:** Dihasilkan daripada asetat Mazzucchelli, JIMEI, JINYU premium, menawarkan reka bentuk yang ringan, tahan lama dan stabil dari segi struktur dengan kedalaman warna yang cergas.
 - **Optik Premium:** Kanta nilon tahan lasak dengan pilihan pewarnaan dan salutan tersuai yang meluas untuk memenuhi pelbagai permintaan pasaran.
 - **Perkakasan Ketepatan:** Engsel struktur 3+2 tong yang stabil, boleh disesuaikan dengan konfigurasi 5 tong atau spring, direka untuk kelancaran operasi jangka panjang.
 - **Keselesaan Sepanjang Hari:** Pad hidung bersepadu asetat yang direka untuk mengedarkan tekanan secara sekata dan memastikan kesesuaian yang selamat dan selesa.
@@ -61,7 +61,7 @@ seoKeywords: "kacamata hitam asetat tersuai, cermin mata asetat borong, pengelua
 
 ## Gambaran Keseluruhan
 
-Direka untuk memenuhi permintaan estetik peruncitan butik premium, kacamata hitam KAS-326 menggabungkan perincian rivet klasik dengan kedalaman pelbagai lapisan yang cergas daripada asetat JIMEI & JINYU dan Mazzucchelli yang diperoleh secara tersuai.
+Direka untuk memenuhi permintaan estetik peruncitan butik premium, kacamata hitam KAS-326 menggabungkan perincian rivet klasik dengan kedalaman pelbagai lapisan yang cergas daripada asetat Mazzucchelli, JIMEI, JINYU yang diperoleh secara tersuai.
 
 Menyokong daya tarikan mewahnya ialah susunan engsel 3+2 tong yang tahan lama dan pad hidung bersepadu, direkayasa untuk mengekalkan penjajaran bingkai yang tepat dan keselesaan luar biasa kepada pemakai.
 

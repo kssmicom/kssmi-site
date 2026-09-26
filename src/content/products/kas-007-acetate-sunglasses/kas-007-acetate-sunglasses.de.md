@@ -5,7 +5,7 @@ slug: "kas-007-acetate-sunglasses"
 itemNo: "KAS-007"
 date: "2026-05-10"
 colors: "Schwarz-Gold & Schwarz-Silber & Kristall & Rot"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetat & Individualisierung"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100Stk/Farbe)"
 
@@ -54,7 +54,7 @@ seoKeywords: "Acetat-Sonnenbrillen-Hersteller, maßgeschneiderte Luxusbrillen OE
 
 ## Eigenschaften
 
-- **Premium-Material:** Hochwertige Mazzucchelli- und JIMEI & JINYU-Acetat-Konstruktion, die eine lebendige, leichte und langlebige Ästhetik bietet.
+- **Premium-Material:** Hochwertige Mazzucchelli, JIMEI, JINYU-Acetat-Konstruktion, die eine lebendige, leichte und langlebige Ästhetik bietet.
 - **Zuverlässige Hardware:** Professionelle 3+2-Fass-Strukturscharniere, die für konstante Laufruhe und langfristige Haltbarkeit entwickelt wurden.
 - **Fortschrittliche Optik:** Widerstandsfähige Nylon-Gläser für überragende Klarheit mit umfangreichen individuellen Tönungs- und Beschichtungsoptionen.
 - **Ergonomisches Design:** Integrierte Nasenpads für eine nahtlose Passform und verbesserten Tragekomfort den ganzen Tag über.

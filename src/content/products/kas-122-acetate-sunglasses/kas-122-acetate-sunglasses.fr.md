@@ -5,7 +5,7 @@ slug: "kas-122-acetate-sunglasses"
 itemNo: "KAS-122"
 date: "2026-05-09"
 colors: "Noir & Havana"
-materials: "Acétate Premium Mazzucchelli & JIMEI & JINYU & Personnalisation"
+materials: "Acétate Premium Mazzucchelli, JIMEI, JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -46,7 +46,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, lunettes OEM sur mesure, lu
 
 ## Caractéristiques
 
-- **Matériaux Premium :** Construction en acétate de haute qualité Mazzucchelli et JIMEI & JINYU offrant une sensation de légèreté, une durabilité exceptionnelle et une profondeur de couleur vibrante.
+- **Matériaux Premium :** Construction en acétate de haute qualité Mazzucchelli, JIMEI, JINYU offrant une sensation de légèreté, une durabilité exceptionnelle et une profondeur de couleur vibrante.
 - **Quincaillerie de Précision :** Charnières robustes à structure en barillet 3+2 conçues pour une fluidité opérationnelle constante et une stabilité de la monture à long terme.
 - **Optique Supérieure :** Verres en nylon tenace offrant une excellente résistance aux chocs avec des options de teinte et de revêtement entièrement personnalisables.
 - **Confort Ergonomique :** Plaquettes de nez intégrées sans couture conçues pour un ajustement sûr, sans pression, et un confort accru tout au long de la journée.
@@ -64,7 +64,7 @@ seoKeywords: "fabricant lunettes de soleil acétate, lunettes OEM sur mesure, lu
 
 ## Aperçu
 
-Fabriquée à partir d'acétate premium Mazzucchelli et JIMEI & JINYU, cette monture d'inspiration vintage équilibre une sensation de légèreté et d'ergonomie avec des profils de couleurs profonds et vibrants.
+Fabriquée à partir d'acétate premium Mazzucchelli, JIMEI, JINYU, cette monture d'inspiration vintage équilibre une sensation de légèreté et d'ergonomie avec des profils de couleurs profonds et vibrants.
 
 Un système de charnière à barillet 3+2 robuste fournit la base structurelle pour une fluidité constante et une durabilité à long terme.
 

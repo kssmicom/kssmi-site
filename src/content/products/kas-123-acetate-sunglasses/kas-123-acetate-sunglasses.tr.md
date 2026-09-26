@@ -5,7 +5,7 @@ slug: "kas-123-acetate-sunglasses"
 itemNo: "KAS-123"
 date: "2026-05-09"
 colors: "Siyah & Hardal & Akçaağaç"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (renk başına 100 adet)"
 
@@ -49,7 +49,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM gözlük, lüks �
 ---
 
 ## Özellikler
-- **Premium Asetat:** Lüks markalama için olağanüstü dayanıklılık ve canlı renk derinliği sunan, elle cilalanmış Mazzucchelli ve JIMEI & JINYU asetat yapısı.
+- **Premium Asetat:** Lüks markalama için olağanüstü dayanıklılık ve canlı renk derinliği sunan, elle cilalanmış Mazzucchelli, JIMEI, JINYU asetat yapısı.
 - **Hassas Menteşeler:** Sürekli çalışma pürüzsüzlüğü ve uzun vadeli yapısal bütünlük için tasarlanmış sağlam 3+2 varil yapılı menteşeler.
 - **Yüksek Performanslı Optik:** Üstün netlik ve darbe direnci sağlayan, özel lens kaplamaları için tam özelleştirme seçeneklerine sahip dayanıklı naylon lensler.
 - **Ergonomik Tasarım:** Gün boyu konfor için güvenli, baskısız bir uyum sağlayan entegre burun tamponları ve rafine sap konturları.
@@ -66,7 +66,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM gözlük, lüks �
 
 ## Genel Bakış
 
-Canlı renk derinliğini elle cilalanmış Mazzucchelli ve JIMEI & JINYU asetatın yapısal bütünlüğü ile birleştiren KAS-123, lüks gözlük koleksiyonları için çok yönlü bir temel oluşturur.
+Canlı renk derinliğini elle cilalanmış Mazzucchelli, JIMEI, JINYU asetatın yapısal bütünlüğü ile birleştiren KAS-123, lüks gözlük koleksiyonları için çok yönlü bir temel oluşturur.
 
 Dengeli üniseks profili, hassas mühendislikle üretilmiş 3+2 varil menteşeler ve entegre burun tamponları ile güçlendirilerek tüm gün kullanım için zarif ve dayanıklı bir uyum sağlar.
 

@@ -5,7 +5,7 @@ slug: "kas-124-acetate-sunglasses"
 itemNo: "KAS-124"
 date: "2026-05-09"
 colors: "Đen & Sừng trâu & Đồi mồi"
-materials: "Premium Mazzucchelli & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Premium Axetat Mazzucchelli, JIMEI, JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -46,7 +46,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, xưởng sản xuất kính m
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Kết cấu từ axetat Mazzucchelli và JIMEI & JINYU cao cấp mang lại bề mặt hoàn thiện được đánh bóng bằng tay sống động với độ bền vượt trội.
+- **Chất liệu cao cấp:** Kết cấu từ axetat Mazzucchelli, JIMEI, JINYU cao cấp mang lại bề mặt hoàn thiện được đánh bóng bằng tay sống động với độ bền vượt trội.
 - **Phụ kiện bền bỉ:** Bản lề cấu trúc thùng 3+2 chắc chắn được thiết kế chính xác để đảm bảo hoạt động trơn tru lâu dài và sự ổn định của gọng kính.
 - **Quang học tiên tiến:** Tròng kính nylon bền bỉ cung cấp khả năng chống va đập và độ rõ nét quang học vượt trội với các tùy chọn lớp phủ tùy chỉnh phong phú.
 - **Sự thoải mái tối ưu:** Gọng kính nhẹ với đệm mũi liền khối được thiết kế để mang lại cảm giác vừa vặn an toàn, không gây áp lực khi đeo hàng ngày trong thời gian dài.
@@ -64,7 +64,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, xưởng sản xuất kính m
 
 ## Tổng quan
 
-Được chế tác từ axetat Mazzucchelli và JIMEI & JINYU cao cấp, mẫu kính này có bề mặt hoàn thiện được đánh bóng bằng tay làm nổi bật kiểu dáng táo bạo, mang cảm hứng vintage. Gọng kính cân bằng giữa thẩm mỹ unisex sang trọng với các đặc tính sống động, nhẹ nhàng cần thiết cho kính mắt thời trang cao cấp.
+Được chế tác từ axetat Mazzucchelli, JIMEI, JINYU cao cấp, mẫu kính này có bề mặt hoàn thiện được đánh bóng bằng tay làm nổi bật kiểu dáng táo bạo, mang cảm hứng vintage. Gọng kính cân bằng giữa thẩm mỹ unisex sang trọng với các đặc tính sống động, nhẹ nhàng cần thiết cho kính mắt thời trang cao cấp.
 
 Bản lề thùng 3+2 được thiết kế chính xác và tròng kính nylon bền bỉ đảm bảo sự vừa vặn an toàn và hiệu suất quang học vượt trội trên tất cả các lô sản xuất.
 

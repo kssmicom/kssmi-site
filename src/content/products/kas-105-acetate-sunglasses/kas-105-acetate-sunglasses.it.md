@@ -5,7 +5,7 @@ slug: "kas-105-acetate-sunglasses"
 itemNo: "KAS-105"
 date: "2026-05-06"
 colors: "Grigio & Avana Lucido & Avana Opaco & Trasparente & Nero"
-materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produttore occhiali da sole in acetato, occhiali da sole OEM perso
 
 ## Caratteristiche
 
-- **Materiale Premium:** Montature lucidate a mano realizzate con i rinomati acetati Mazzucchelli e JIMEI & JINYU, che offrono una durata eccezionale e una vibrante profondità di colore.
+- **Materiale Premium:** Montature lucidate a mano realizzate con i rinomati acetati Mazzucchelli, JIMEI, JINYU, che offrono una durata eccezionale e una vibrante profondità di colore.
 - **Hardware Resistente:** Cerniere a barilotto 3+2 progettate con precisione per garantire stabilità strutturale e prestazioni fluide e durature nel tempo.
 - **Ottica ad Alte Prestazioni:** Lenti in nylon resistenti agli urti che offrono chiarezza e durata superiori per gli standard degli occhiali di alta moda.
 - **Design Ergonomico:** Naselli integrati e una geometria della montatura bilanciata con precisione (51-23-145mm) progettata per il comfort quotidiano e una vestibilità universale.
@@ -71,7 +71,7 @@ seoKeywords: "produttore occhiali da sole in acetato, occhiali da sole OEM perso
 
 ## Panoramica
 
-Realizzato in pregiato acetato Mazzucchelli e JIMEI & JINYU, il modello KAS-105 bilancia un audace design unisex con una vibrante profondità di colore. Questa montatura lucidata a mano funge da base versatile per i marchi che privilegiano materiali ad alta densità e l'estetica della moda contemporanea.
+Realizzato in pregiato acetato Mazzucchelli, JIMEI, JINYU, il modello KAS-105 bilancia un audace design unisex con una vibrante profondità di colore. Questa montatura lucidata a mano funge da base versatile per i marchi che privilegiano materiali ad alta densità e l'estetica della moda contemporanea.
 
 L'integrazione di cerniere a barilotto 3+2 e lenti in nylon resistenti agli urti fornisce l'integrità strutturale e le prestazioni ottiche richieste dagli standard del mercato del lusso.
 

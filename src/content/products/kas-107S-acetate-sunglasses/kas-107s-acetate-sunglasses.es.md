@@ -5,7 +5,7 @@ slug: "kas-107s-acetate-sunglasses"
 itemNo: "KAS-107S"
 date: "2026-05-09"
 colors: "Negro & Transparente & Habana & Tortuga"
-materials: "Acetato Premium Mazzucchelli y JIMEI & JINYU y Personalización"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU y Personalización"
 serviceMode: "Fabricación por Cuenta de Terceros (OEM) y Diseño y Fabricación (ODM) ( Personalización )"
 moq: "300 uds/modelo (100uds/color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "gafas de sol de acetato Mazzucchelli, gafas de sol de acetato pers
 
 ## Características
 
-- **Material Premium:** Acetato Mazzucchelli y JIMEI & JINYU seleccionados a mano que proporcionan una estructura ligera y duradera con un acabado vibrante y de alto brillo.
+- **Material Premium:** Acetato Mazzucchelli, JIMEI, JINYU seleccionados a mano que proporcionan una estructura ligera y duradera con un acabado vibrante y de alto brillo.
 - **Herrajes Duraderos:** Bisagras de remache de 4+3 barriles diseñadas con precisión que garantizan la integridad estructural a largo plazo y una acción constante de apertura/cierre.
 - **Óptica de Alto Rendimiento:** Lentes de nylon tenaz que ofrecen una claridad y resistencia al impacto superiores, personalizables para cumplir con los requisitos específicos de la marca.
 - **Confort Integrado:** Almohadillas nasales suaves e integradas diseñadas para la comodidad durante todo el día y una estética impecable en el puente.
@@ -71,7 +71,7 @@ seoKeywords: "gafas de sol de acetato Mazzucchelli, gafas de sol de acetato pers
 
 ## Descripción General
 
-El acetato de Mazzucchelli y JIMEI & JINYU proporciona la base para esta silueta unisex atrevida e inspirada en lo vintage, caracterizada por su acabado profundo y de alto brillo.
+El acetato de Mazzucchelli, JIMEI, JINYU proporciona la base para esta silueta unisex atrevida e inspirada en lo vintage, caracterizada por su acabado profundo y de alto brillo.
 
 La integridad estructural está anclada por bisagras de remache de 4+3 barriles y almohadillas nasales integradas suaves, lo que garantiza un ajuste constante y de alto rendimiento para diversas formas de cara.
 

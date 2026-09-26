@@ -5,7 +5,7 @@ slug: "kao-332-acetate-optical-frame"
 itemNo: "KAO-332"
 date: "2026-05-10"
 colors: "Black with Clear, Blue with Brown Stripe, Champagne with Brown"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -41,7 +41,7 @@ seoKeywords: "acetate optical frames, custom eyewear manufacturer, private label
 
 ## Technical Features
 
-- **Premium Material:** Crafted from premium Mazzucchelli, JIMEI & JINYU acetate, offering an ultra-lightweight yet exceptionally durable structure with vibrant, deep-toned color aesthetics.
+- **Premium Material:** Crafted from premium Mazzucchelli, JIMEI, JINYU acetate, offering an ultra-lightweight yet exceptionally durable structure with vibrant, deep-toned color aesthetics.
 - **Engineered Hardware:** High-reliability 3+2 barrel rivet structure hinges offering stable, smooth temple movement, with spring hinge and 5-barrel options available.
 - **Tenacious Optics:** High-durability nylon lenses offering exceptional optical clarity and impact resistance with full bespoke coating and customization services.
 - **Integrated Comfort:** Seamlessly integrated acetate nose pads combined with a tailored 46-23-145mm geometry to deliver a balanced, pressure-free fit.
@@ -58,7 +58,7 @@ seoKeywords: "acetate optical frames, custom eyewear manufacturer, private label
 
 ## Overview
 
-Vibrant dual-tone aesthetics define the KAO-332 unisex optical frame, crafted from premium Mazzucchelli, JIMEI & JINYU acetate. Available in distinctive color combinations like Champagne with Brown and Blue with a Brown Stripe, this classic retro frame is tailored for luxury fashion houses and high-end optical chains.
+Vibrant dual-tone aesthetics define the KAO-332 unisex optical frame, crafted from premium Mazzucchelli, JIMEI, JINYU acetate. Available in distinctive color combinations like Champagne with Brown and Blue with a Brown Stripe, this classic retro frame is tailored for luxury fashion houses and high-end optical chains.
 
 The 46-23-145mm geometry integrates seamless nose pads and a robust 3+2 barrel rivet hinge system, ensuring smooth, stable temple alignment and exceptional longevity.
 

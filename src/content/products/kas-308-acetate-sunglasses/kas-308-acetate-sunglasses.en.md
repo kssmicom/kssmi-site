@@ -5,7 +5,7 @@ slug: "kas-308-acetate-sunglasses"
 itemNo: "KAS-308"
 date: "2026-05-12"
 colors: "Black & Royal-Blue & Brown & Olive"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction delivering exceptional durability and a vibrant, long-lasting aesthetic.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI, JINYU acetate construction delivering exceptional durability and a vibrant, long-lasting aesthetic.
 - **Durable Hardware:** Robust 4+3 barrel structure hinges engineered for consistent operational smoothness and structural integrity.
 - **Superior Optics:** Tenacious nylon lenses providing excellent impact resistance with extensive customization options for tints and coatings.
 - **Ergonomic Design:** Integrated nose pads designed for a seamless fit and enhanced comfort during extended wear.
@@ -72,7 +72,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Overview
 
-Precision-milled from premium Mazzucchelli, JIMEI & JINYU acetate, the KAS-308 provides a lightweight yet robust chassis for high-end fashion eyewear.
+Precision-milled from premium Mazzucchelli, JIMEI, JINYU acetate, the KAS-308 provides a lightweight yet robust chassis for high-end fashion eyewear.
 
 Integrated nose pads and a reinforced 4+3 barrel hinge system ensure lasting comfort and reliable performance throughout the product's lifespan.
 

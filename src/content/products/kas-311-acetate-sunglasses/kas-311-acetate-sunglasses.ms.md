@@ -5,7 +5,7 @@ slug: "kas-311-acetate-sunglasses"
 itemNo: "KAS-311"
 date: "2026-05-12"
 colors: "Hitam & Ungu-Berasep & Kura-kura & Coklat"
-materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & Pengilangan ODM (Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, kacamata unisex tersuai, bingk
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Pembinaan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi yang menawarkan estetika bertenaga dengan ketahanan ringan.
+- **Bahan Premium:** Pembinaan asetat Mazzucchelli, JIMEI, JINYU gred tinggi yang menawarkan estetika bertenaga dengan ketahanan ringan.
 - **Integriti Struktur:** Engsel 4+3 tong yang teguh direka untuk kelancaran operasi jangka panjang dan kestabilan bingkai.
 - **Kecemerlangan Optik:** Lensa nilon kental yang memberikan kejelasan unggul dan rintangan hentaman dengan pilihan salutan tersuai yang meluas.
 - **Reka Bentuk Ergonomik:** Alas hidung bersepadu yang direka untuk kesesuaian yang lancar dan selesa semasa pemakaian harian yang berpanjangan.
@@ -72,7 +72,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, kacamata unisex tersuai, bingk
 
 ## Gambaran Keseluruhan
 
-Dihasilkan daripada campuran canggih asetat Mazzucchelli dan JIMEI & JINYU, KAS-311 menawarkan bingkai yang ringan namun tahan lama dengan vibrasi warna yang unggul.
+Dihasilkan daripada campuran canggih asetat Mazzucchelli, JIMEI, JINYU, KAS-311 menawarkan bingkai yang ringan namun tahan lama dengan vibrasi warna yang unggul.
 
 Seni binanya menampilkan engsel 4+3 tong yang diperkukuh dan alas hidung bersepadu, memberikan kestabilan berprestasi tinggi di samping pengalaman pemakaian ergonomik yang halus.
 

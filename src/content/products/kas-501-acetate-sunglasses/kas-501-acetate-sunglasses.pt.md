@@ -5,7 +5,7 @@ slug: "kas-501-acetate-sunglasses"
 itemNo: "KAS-501"
 date: "2026-05-12"
 colors: "Preto & Creme & Havana & Chocolate"
-materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "OEM & ODM ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Características
 
-- **Material Premium:** Construção em acetato premium Mazzucchelli e JIMEI & JINYU que oferece uma sensação de leveza, profundidade de cor vibrante e durabilidade a longo prazo.
+- **Material Premium:** Construção em acetato premium Mazzucchelli, JIMEI, JINYU que oferece uma sensação de leveza, profundidade de cor vibrante e durabilidade a longo prazo.
 - **Ferragens de Precisão:** Dobradiças robustas com estrutura de 4+3 barris projetadas para estabilidade operacional superior e confiabilidade vitalícia.
 - **Óptica de Alto Desempenho:** Lentes de nylon tenazes que proporcionam clareza excepcional e resistência ao impacto com ampla personalização para cores e revestimentos.
 - **Design Ergonômico:** Plaquetas nasais integradas projetadas para uma estética perfeita e um ajuste confortável e seguro para diversos perfis faciais.
@@ -72,7 +72,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Visão Geral
 
-Combinando o acetato premium Mazzucchelli e JIMEI & JINYU, o KAS-501 oferece uma profundidade de cor vibrante e durabilidade leve que atende aos padrões exigentes das etiquetas de alta moda.
+Combinando o acetato premium Mazzucchelli, JIMEI, JINYU, o KAS-501 oferece uma profundidade de cor vibrante e durabilidade leve que atende aos padrões exigentes das etiquetas de alta moda.
 
 A estrutura de dobradiça de precisão de 4+3 barris garante estabilidade operacional a longo prazo, enquanto as lentes de nylon tenazes e as plaquetas nasais integradas proporcionam um equilíbrio perfeito entre clareza óptica e conforto durante todo o dia.
 

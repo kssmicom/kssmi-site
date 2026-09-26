@@ -5,7 +5,7 @@ slug: "kao-332-acetate-optical-frame"
 itemNo: "KAO-332"
 date: "2026-05-10"
 colors: "Siyah ile Şeffaf, Kahverengi Çizgili Mavi, Kahverengi ile Şampanya"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) (Özelleştirme)"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -41,7 +41,7 @@ seoKeywords: "asetat optik çerçeveler, özel gözlük üreticisi, özel marka 
 
 ## Özellikler
 
-- **Premium Malzeme:** Canlı, derin tonlu renk estetiğiyle ultra hafif ancak olağanüstü dayanıklı bir yapı sunan birinci sınıf Mazzucchelli ve JIMEI & JINYU asetattan üretilmiştir.
+- **Premium Malzeme:** Canlı, derin tonlu renk estetiğiyle ultra hafif ancak olağanüstü dayanıklı bir yapı sunan birinci sınıf Mazzucchelli, JIMEI, JINYU asetattan üretilmiştir.
 - **Mühendislik Donanımı:** Yaylı menteşe ve 5 barrel seçenekleriyle sunulan, dengeli ve pürüzsüz sap hareketi sağlayan yüksek güvenilirlikli 3+2 barrel perçin yapılı menteşeler.
 - **Dayanıklı Optikler:** Olağanüstü optik netlik ve darbe direnci sunan, tam özel kaplama ve kişiselleştirme hizmetlerine sahip yüksek dayanıklılıkli naylon lensler.
 - **Entegre Konfor:** Dengeli, basınçsız bir oturuş sağlamak için özel olarak uyarlanmış 46-23-145mm geometriyle birleştirilmiş kesintisiz entegre asetat burun tamponları.
@@ -59,7 +59,7 @@ seoKeywords: "asetat optik çerçeveler, özel gözlük üreticisi, özel marka 
 
 ## Genel Bakış
 
-Canlı çift tonlu estetik, birinci sınıf Mazzucchelli ve JIMEI & JINYU asetattan üretilen KAO-332 unisex optik çerçeveyi tanımlar. Kahverengi detaylı Şampanya ve Kahverengi Çizgili Mavi gibi belirgin renk kombinasyonlarıyla sunulan bu klasik retro çerçeve, lüks moda evleri ve yüksek segment optik zincirleri için özel olarak tasarlanmıştır.
+Canlı çift tonlu estetik, birinci sınıf Mazzucchelli, JIMEI, JINYU asetattan üretilen KAO-332 unisex optik çerçeveyi tanımlar. Kahverengi detaylı Şampanya ve Kahverengi Çizgili Mavi gibi belirgin renk kombinasyonlarıyla sunulan bu klasik retro çerçeve, lüks moda evleri ve yüksek segment optik zincirleri için özel olarak tasarlanmıştır.
 
 46-23-145mm boyutlarındaki geometri, kesintisiz burun tamponlarını ve sağlam bir 3+2 perçinli menteşe sistemini entre ederek, pürüzsüz ve kararlı sap hizalaması ile olağanüstü bir kullanım ömrü sağlar.
 

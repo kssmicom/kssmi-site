@@ -5,7 +5,7 @@ slug: "kas-016-acetate-sunglasses"
 itemNo: "KAS-016"
 date: "2026-05-10"
 colors: "Tortuga con Verde, Negro con Amarillo, Tortuga Negra con Gris Degradado"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalización"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -41,7 +41,7 @@ seoKeywords: "gafas de sol de acetato Mazzucchelli, fabricante de gafas personal
 
 ## Características
 
-- **Material Premium:** Montura y varillas de acetato Mazzucchelli y JIMEI & JINYU de alta calidad que proporcionan una estética lujosa y vibrante con una durabilidad excepcional.
+- **Material Premium:** Montura y varillas de acetato Mazzucchelli, JIMEI, JINYU de alta calidad que proporcionan una estética lujosa y vibrante con una durabilidad excepcional.
 - **Hardware Duradero:** Bisagras estables con estructura de 2+1 barriles diseñadas para una suavidad operativa constante y confiabilidad a largo plazo.
 - **Óptica Premium:** Lentes de nylon tenaz de alta claridad que ofrecen una resistencia superior a los impactos con amplias opciones de tinte y recubrimiento personalizados.
 - **Diseño Ergonómico:** Almohadillas nasales integradas diseñadas para un ajuste perfecto y una mayor estabilidad durante el uso prolongado.

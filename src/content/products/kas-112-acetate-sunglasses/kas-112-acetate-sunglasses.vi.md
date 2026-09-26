@@ -5,7 +5,7 @@ slug: "kas-112-acetate-sunglasses"
 itemNo: "KAS-112"
 date: "2026-05-09"
 colors: "Đen & Đen tuyền & Havana & Đỏ kẹo & Đồi mồi hồng & Trắng kem"
-materials: "Premium Mazzucchelli & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Premium Axetat Mazzucchelli, JIMEI, JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -58,7 +58,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Thông số kỹ thuật
 
-- **Cấu trúc Axetat cao cấp:** Gọng và càng kính bằng axetat Mazzucchelli và JIMEI & JINYU chất lượng cao mang lại cảm giác nhẹ nhàng với độ sâu màu sắc đặc biệt và độ bền lâu dài.
+- **Cấu trúc Axetat cao cấp:** Gọng và càng kính bằng axetat Mazzucchelli, JIMEI, JINYU chất lượng cao mang lại cảm giác nhẹ nhàng với độ sâu màu sắc đặc biệt và độ bền lâu dài.
 - **Phần cứng chính xác:** Bản lề cấu trúc 3+2 ổn định được thiết kế để vận hành trơn tru liên tục và mang lại cảm giác cao cấp khi chạm vào.
 - **Quang học hiệu suất cao:** Tròng kính nylon bền bỉ mang lại khả năng chống va đập và độ rõ nét quang học vượt trội, hoàn toàn có thể tùy chỉnh để đáp ứng các yêu cầu cụ thể của thương hiệu.
 - **Sự thoải mái tối ưu:** Đệm mũi tích hợp liền mạch được thiết kế để phân bổ trọng lượng đồng đều, mang lại sự thoải mái cả ngày cho nhiều cấu trúc khuôn mặt khác nhau.
@@ -76,7 +76,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Tổng quan
 
-Thẩm mỹ cổ điển táo bạo kết hợp với chiều sâu của vật liệu cao cấp trong mẫu KAS-112, được chế tác từ axetat Mazzucchelli và JIMEI & JINYU chất lượng cao để đảm bảo lớp hoàn thiện rực rỡ và bền bỉ.
+Thẩm mỹ cổ điển táo bạo kết hợp với chiều sâu của vật liệu cao cấp trong mẫu KAS-112, được chế tác từ axetat Mazzucchelli, JIMEI, JINYU chất lượng cao để đảm bảo lớp hoàn thiện rực rỡ và bền bỉ.
 
 Mỗi chiếc gọng đều có bản lề 3+2 được kỹ thuật chính xác và đệm mũi tích hợp, mang lại sự cân bằng liền mạch giữa tính ổn định cấu trúc và sự thoải mái về mặt công thái học.
 

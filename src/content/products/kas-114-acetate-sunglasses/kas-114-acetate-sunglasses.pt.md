@@ -5,7 +5,7 @@ slug: "kas-114-acetate-sunglasses"
 itemNo: "KAS-114"
 date: "2026-05-09"
 colors: "Preto & Champanhe & Amarelo"
-materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -50,7 +50,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol unissex OE
 
 ## Características Técnicas
 
-- **Material Premium:** Construído com acetato Mazzucchelli e JIMEI & JINYU de alta qualidade para fornecer uma estrutura leve e durável com apelo visual vibrante.
+- **Material Premium:** Construído com acetato Mazzucchelli, JIMEI, JINYU de alta qualidade para fornecer uma estrutura leve e durável com apelo visual vibrante.
 - **Hardware Durável:** Projetado com dobradiças de estrutura 3+2 robustas, garantindo suavidade operacional a longo prazo e estabilidade estrutural.
 - **Óptica de Precisão:** Equipado com lentes de nylon tenazes que oferecem clareza superior e amplas opções de personalização para coleções premium.
 - **Conforto Contínuo:** Plaquetas nasais integradas projetadas para proporcionar um ajuste seguro e ergonômico para uso prolongado o dia todo.
@@ -68,7 +68,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol unissex OE
 
 ## Visão Geral
 
-Criado para mercados de luxo que exigem presença estética e integridade estrutural, o KAS-114 utiliza acetato Mazzucchelli e JIMEI & JINYU de primeira linha para alcançar uma construção vibrante e leve.
+Criado para mercados de luxo que exigem presença estética e integridade estrutural, o KAS-114 utiliza acetato Mazzucchelli, JIMEI, JINYU de primeira linha para alcançar uma construção vibrante e leve.
 
 Projetada com dobradiças robustas de estrutura 3+2 e plaquetas nasais integradas, a ousada armação unissex garante excepcional suavidade operacional a longo prazo e um ajuste seguro e ergonômico.
 

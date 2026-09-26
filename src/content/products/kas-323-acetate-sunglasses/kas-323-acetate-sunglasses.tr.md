@@ -5,7 +5,7 @@ slug: "kas-323-acetate-sunglasses"
 itemNo: "KAS-323"
 date: "2026-05-12"
 colors: "Siyah & Kırmızı & Havana & Neon Yeşil"
-materials: "Premium Mazzucchelli Asetat & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Asetat Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) (Özelleştirme)"
 moq: "300 adet/model (renk başına 100 adet)"
 
@@ -54,7 +54,7 @@ seoKeywords: "premium asetat güneş gözlüğü üreticisi, özel OEM gözlük 
 
 ## Özellikler
 
-- **Premium Malzemeler:** Üst düzey bir estetik için hafif, dayanıklı ve canlı bir yüzey sunan yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat yapısı.
+- **Premium Malzemeler:** Üst düzey bir estetik için hafif, dayanıklı ve canlı bir yüzey sunan yüksek kaliteli Mazzucchelli, JIMEI, JINYU asetat yapısı.
 - **Dayanıklı Donanım:** Sürekli çalışma pürüzsüzlüğü ve uzun vadeli yapısal bütünlük için tasarlanmış sağlam 4+3 menteşe yapısı.
 - **Yüksek Performanslı Optikler:** Üstün netlik ve darbe direnci sağlayan, tam özelleştirme seçenekleri mevcut olan dayanıklı naylon lensler.
 - **Ergonomik Tasarım:** Entegre burun tamponları ve gün boyu konfor için güvenli, hipoalerjenik bir uyum sağlayan hassas dengeli yapı.
@@ -71,7 +71,7 @@ seoKeywords: "premium asetat güneş gözlüğü üreticisi, özel OEM gözlük 
 
 ## Genel Bakış
 
-Premium Mazzucchelli ve JIMEI & JINYU asetattan hassasiyetle üretilen KAS-323, küresel lüks pazarın titiz taleplerini karşılayan canlı ve dayanıklı bir estetik sunar.
+Premium Mazzucchelli, JIMEI, JINYU asetattan hassasiyetle üretilen KAS-323, küresel lüks pazarın titiz taleplerini karşılayan canlı ve dayanıklı bir estetik sunar.
 
 Her çerçeve, sağlam bir 4+3 menteşe yapısına ve entegre burun tamponlarına sahiptir; bu da sürekli çalışma pürüzsüzlüğü ve gelişmiş kullanıcı konforu sağlar.
 

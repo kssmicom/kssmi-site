@@ -5,7 +5,7 @@ slug: "kas-132-acetate-sunglasses"
 itemNo: "KAS-132"
 date: "2026-05-09"
 colors: "Ireng & Putih & Ijo & Bulus"
-materials: "Asetat Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
+materials: "Asetat Asetat Premium Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) (Kustomisasi)"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata flat-top custom, kacamata
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing nyedhiyakake estetika halus kanthi jero warna sing padhang lan tahan lama.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli, JIMEI, JINYU kelas dhuwur sing nyedhiyakake estetika halus kanthi jero warna sing padhang lan tahan lama.
 - **Teknik Presisi:** Engsel struktur 3+2 barel sing stabil dirancang kanggo daya tahan kelas profesional lan kinerja operasional sing lancar.
 - **Optik Unggul:** Lensa nylon kuat sing nyedhiyakake tahan dampak lan kajelasan visual sing luar biasa, kanthi pilihan kustomisasi sing akeh.
 - **Kenyamanan Ergonomis:** Bantalan irung terintegrasi lan struktur frame sing entheng njamin pas sing aman lan seimbang kanggo panggunaan sedina muput.
@@ -72,7 +72,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata flat-top custom, kacamata
 
 ## Ringkesan
 
-Proporsi oversized sing kendel lan siluet flat-top sing khas nemtokake KAS-132, digawe saka campuran premium asetat Mazzucchelli lan JIMEI & JINYU kanggo jero lan daya tahan sing ora ana tandhingane.
+Proporsi oversized sing kendel lan siluet flat-top sing khas nemtokake KAS-132, digawe saka campuran premium asetat Mazzucchelli, JIMEI, JINYU kanggo jero lan daya tahan sing ora ana tandhingane.
 
 Engsel 3+2 barel sing dirancang kanthi presisi lan lensa nylon kuat njamin frame iki tetep njaga integritas struktural lan kajelasan visual liwat panggunaan intensif.
 

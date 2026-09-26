@@ -5,7 +5,7 @@ slug: "kas-102-acetate-sunglasses"
 itemNo: "KAS-102"
 date: "2026-05-05"
 colors: "Şeffaf & Siyah & Mat Siyah & Düz Mavi & Düz Gri & Düz Mor & Cyan-Dot Blue-Dot & Bal & Yeşil & Gradyan Kırmızı & Koyu Mavi & Açık Mavi & Mat Gri & Kaplumbağa & Şeffaf Gri & Panda"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (her renk için 100 adet)"
 
@@ -102,7 +102,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özelleştirilebilir asetat
 
 ## Özellikler
 
-- **Premium Asetat Malzeme:** Hafif bir hisle birlikte olağanüstü dayanıklılık ve canlı renk derinliği sağlayan yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat yapı.
+- **Premium Asetat Malzeme:** Hafif bir hisle birlikte olağanüstü dayanıklılık ve canlı renk derinliği sağlayan yüksek kaliteli Mazzucchelli, JIMEI, JINYU asetat yapı.
 - **Hassas Donanım:** Uzun süreli operasyonel pürüzsüzlük ve yapısal kararlılık için tasarlanmış sağlam 3+2 varil yapılı menteşeler.
 - **Gelişmiş Lens Teknolojisi:** Üstün görsel netlik için kapsamlı özel renklendirme ve kaplama seçenekleriyle sunulan çok yönlü AC veya dayanıklı naylon lensler.
 - **Ergonomik Tasarım:** Gün boyu konfor ve güvenli bir oturuş sağlayan entegre burun tamponları ve hassas dengelenmiş çerçeve yapısı.

@@ -5,7 +5,7 @@ slug: "kas-109-acetate-sunglasses"
 itemNo: "KAS-109"
 date: "2026-05-07"
 colors: "Negro & Transparente & Tortuga & Oliva"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalización"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100uds/color)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante de gafas de sol de acetato premium, fábrica de gafas O
 
 ## Características
 
-- **Material Premium:** Construido a partir de acetato de clase mundial Mazzucchelli y JIMEI & JINYU, ofreciendo una durabilidad excepcional y una profundidad de color profunda y vibrante.
+- **Material Premium:** Construido a partir de acetato de clase mundial Mazzucchelli, JIMEI, JINYU, ofreciendo una durabilidad excepcional y una profundidad de color profunda y vibrante.
 - **Hardware Robusto:** Equipado con bisagras de 3+2 barriles diseñadas con precisión per una suavidad operativa a largo plazo y estabilidad estructural.
 - **Óptica de Alto Impacto:** Cuenta con lentes de nylon tenaces que proporcionan una claridad superior y resistencia a los impactos, con amplias opciones de recubrimiento personalizado disponibles.
 - **Comodidad sin Costuras:** Diseñado con almohadillas nasales integradas que ofrecen una estética elegante y minimalista al tiempo que aseguran un ajuste estable y cómodo.
@@ -76,7 +76,7 @@ seoKeywords: "fabricante de gafas de sol de acetato premium, fábrica de gafas O
 
 ## Descripción General
 
-Fabricado con acetato de clase mundial Mazzucchelli y JIMEI & JINYU, el KAS-109 encarna una estética audaz de inspiración vintage que resuena con las tendencias de moda contemporáneas. La profundidad de color profunda y vibrante del material y los acabados de alta transparencia proporcionan una base sofisticada para colecciones de gafas premium.
+Fabricado con acetato de clase mundial Mazzucchelli, JIMEI, JINYU, el KAS-109 encarna una estética audaz de inspiración vintage que resuena con las tendencias de moda contemporáneas. La profundidad de color profunda y vibrante del material y los acabados de alta transparencia proporcionan una base sofisticada para colecciones de gafas premium.
 
 Las almohadillas nasales integradas y las bisagras de 3+2 barriles diseñadas con precisión aseguran un ajuste perfecto y una estabilidad estructural duradera, equilibrando un rendimiento robusto con una silueta unisex ligera.
 

@@ -5,7 +5,7 @@ slug: "kao-156-acetate-optical-frame"
 itemNo: "KAO-156"
 date: "2026-05-10"
 colors: "Floral Blue with Magenta"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -42,7 +42,7 @@ seoKeywords: "acetate optical frames manufacturer, custom eyewear production, lu
 
 ## Technical Features
 
-- **Premium Material Composition:** Hand-polished Mazzucchelli, JIMEI & JINYU acetate offering a deep, vibrant finish and exceptional durability.
+- **Premium Material Composition:** Hand-polished Mazzucchelli, JIMEI, JINYU acetate offering a deep, vibrant finish and exceptional durability.
 - **Refined Frame Engineering:** Lightweight premium acetate frame and temple construction designed for a high-end aesthetic and resilient long-term wear.
 - **Durable Hardware:** Precision-engineered 2+1 barrel rivet structure hinges ensuring consistent operational smoothness and structural stability.
 - **Advanced Lens Technology:** High-tenacity nylon lenses providing superior clarity with extensive custom coating and tinting options.
@@ -59,7 +59,7 @@ seoKeywords: "acetate optical frames manufacturer, custom eyewear production, lu
 
 ## Overview
 
-Floral Blue with Magenta tones meet the superior depth of hand-polished Mazzucchelli, JIMEI & JINYU acetate, creating a vibrant visual identity that resonates with luxury fashion standards.
+Floral Blue with Magenta tones meet the superior depth of hand-polished Mazzucchelli, JIMEI, JINYU acetate, creating a vibrant visual identity that resonates with luxury fashion standards.
 
 Precision 2+1 barrel rivet hinges anchor the lightweight frame, ensuring a consistent and smooth tactile experience that complements the ergonomic integrated nose pads.
 

@@ -5,7 +5,7 @@ slug: "kas-015-acetate-sunglasses"
 itemNo: "KAS-015"
 date: "2026-05-10"
 colors: "Bulus karo Ijo, Ireng karo Ireng-Kuning, Bulus Ireng karo Ijo, Ireng"
-materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -43,7 +43,7 @@ seoKeywords: "produsen kacamata hitam asetat mewah, pabrik kacamata hitam OEM ku
 
 ## Fitur
 
-- **Bahan Premium :** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing nyedyakake finish sing entheng, awet, lan werna sing padhang kanggo estetika mewah.
+- **Bahan Premium :** Konstruksi asetat Mazzucchelli, JIMEI, JINYU kelas dhuwur sing nyedyakake finish sing entheng, awet, lan werna sing padhang kanggo estetika mewah.
 - **Integritas Struktural :** Frame lan gagang asetat premium yang digawe kanthi presisi njamin bentuk sing awet lan ketahanan jangka panjang.
 - **Hardware Awet :** Engsel struktur 2+1 barrel sing stabil dirancang kanggo kelancaran operasional sing konsisten, kanthi upgrade 5-barrel lan engsel pegas sing kasedhiya.
 - **Optik Unggul :** Lensa nylon sing kuat nyedyakake kejelasan sing apik lan resistensi dampak kanthi pilihan pewarnaan kustom sing akeh.
@@ -61,7 +61,7 @@ seoKeywords: "produsen kacamata hitam asetat mewah, pabrik kacamata hitam OEM ku
 
 ## Ringkesan
 
-Nggunakake asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur, model iki nyedyakake finish sing padhang lan entheng sing dirancang kanggo pasar premium.
+Nggunakake asetat Mazzucchelli, JIMEI, JINYU kelas dhuwur, model iki nyedyakake finish sing padhang lan entheng sing dirancang kanggo pasar premium.
 
 Engsel 2+1 barrel sing dirancang kanthi presisi lan bantalan irung integrasi nyedyakake gabungan stabilitas struktural lan kenyamanan sedina muput sing rapi.
 

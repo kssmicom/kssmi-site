@@ -5,7 +5,7 @@ slug: "kas-326-acetate-sunglasses"
 itemNo: "KAS-326"
 date: "2026-05-13"
 colors: "Noir avec Gris Dégradé, Écaille avec Bleu-Marron, Sarcelle Havane avec Marron Dégradé"
-materials: "Mazzucchelli & JIMEI & JINYU Acétate Premium & Personnalisation"
+materials: "Mazzucchelli, JIMEI, JINYU Acétate Premium & Personnalisation"
 serviceMode: "Fabrication sous Contrat & Conception et Fabrication ( Personnalisation )"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -44,7 +44,7 @@ seoKeywords: "lunettes de soleil en acétate personnalisées, lunettes en acéta
 
 ## Caractéristiques
 
-- **Matériau de la Monture Premium :** Fabriqué en acétate haut de gamme Mazzucchelli & JIMEI & JINYU, offrant une conception légère, durable et structurellement stable avec une profondeur de couleur vibrante.
+- **Matériau de la Monture Premium :** Fabriqué en acétate haut de gamme Mazzucchelli, JIMEI, JINYU, offrant une conception légère, durable et structurellement stable avec une profondeur de couleur vibrante.
 - **Optique Premium :** Verres en nylon tenaces avec de nombreuses options de teinte et de revêtement personnalisées pour répondre aux diverses exigences du marché.
 - **Matériel de Précision :** Charnières stables à structure de 3+2 barillets, personnalisables avec des configurations à 5 barillets ou à ressort, conçues pour une fluidité de fonctionnement à long terme.
 - **Confort Tout au Long de la Journée :** Plaquettes de nez intégrées en acétate conçues pour répartir la pression de manière uniforme et garantir un ajustement sûr et confortable.
@@ -61,7 +61,7 @@ seoKeywords: "lunettes de soleil en acétate personnalisées, lunettes en acéta
 
 ## Aperçu
 
-Conçues pour répondre aux exigences esthétiques des boutiques de luxe, les lunettes de soleil KAS-326 associent des détails de rivets classiques à la profondeur vibrante et multicouche de l'acétate JIMEI & JINYU et Mazzucchelli de source personnalisée.
+Conçues pour répondre aux exigences esthétiques des boutiques de luxe, les lunettes de soleil KAS-326 associent des détails de rivets classiques à la profondeur vibrante et multicouche de l'acétate Mazzucchelli, JIMEI, JINYU de source personnalisée.
 
 Leur attrait haut de gamme repose sur un système robuste de charnières à 3+2 barillets et des plaquettes de nez intégrées, conçus pour maintenir un alignement précis de la monture et un confort exceptionnel pour l'utilisateur.
 

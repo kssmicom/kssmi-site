@@ -5,7 +5,7 @@ slug: "kas-309-acetate-sunglasses"
 itemNo: "KAS-309"
 date: "2026-05-12"
 colors: "Siyah & Kraliyet Mavisi & Kaplumbağa & Zeytin"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "OEM & ODM ( Özelleştirme )"
 moq: "300 adet/model (Renk başına 100 adet)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel gözlük üretimi Çi
 
 ## Özellikler
 
-- **Premium Asetat Malzeme:** Yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat yapısı, derin ve canlı renk tutma özelliğine sahip dayanıklı, hafif bir çerçeve sağlar.
+- **Premium Asetat Malzeme:** Yüksek kaliteli Mazzucchelli, JIMEI, JINYU asetat yapısı, derin ve canlı renk tutma özelliğine sahip dayanıklı, hafif bir çerçeve sağlar.
 - **Hassas Donanım:** Tutarlı stabilite ve uzun süreli çalışma pürüzsüzlüğü için tasarlanmış dayanıklı 4+3 varil yapılı menteşeler.
 - **Üstün Optik:** Yüksek darbe direnci ve premium bir görsel deneyim için olağanüstü netlik sağlayan dayanıklı naylon lensler.
 - **Ergonomik Konfor:** Gün boyu kullanım için güvenli ve hipoalerjenik bir uyum sunmak üzere tasarlanmış entegre burun tamponları ve rafine bir çerçeve dengesi.
@@ -72,7 +72,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel gözlük üretimi Çi
 
 ## Genel Bakış
 
-Mazzucchelli ve JIMEI & JINYU asetat, KAS-309'un temelini oluşturarak derin renk tutma ve hafif yapısal bütünlüğün sofistike bir etkileşimini sunar.
+Mazzucchelli, JIMEI, JINYU asetat, KAS-309'un temelini oluşturarak derin renk tutma ve hafif yapısal bütünlüğün sofistike bir etkileşimini sunar.
 
 4+3 varil menteşe mimarisi ve entegre burun tamponları, uzun süreli stabilite için tasarlanmıştır ve çeşitli yüz profillerinde güvenli ve rahat bir uyum sağlar.
 

@@ -5,7 +5,7 @@ slug: "kas-017-acetate-sunglasses"
 itemNo: "KAS-017"
 date: "2026-05-10"
 colors: "Black, Transparent Red, Transparent Blue"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -44,7 +44,7 @@ seoKeywords: "luxury acetate sunglasses, custom eyewear manufacturer, bespoke ac
 
 ## Technical Features
 
-- **Premium Material:** Hand-selected Mazzucchelli, JIMEI & JINYU acetate offering a high-density finish with superior color depth and durability.
+- **Premium Material:** Hand-selected Mazzucchelli, JIMEI, JINYU acetate offering a high-density finish with superior color depth and durability.
 - **Precision Engineering:** Expertly crafted 49-23-145mm frame dimensions providing a balanced, stylish fit with extensive customization options.
 - **Durable Hardware:** Robust 3+2 barrel structure hinges with available upgrades to 5-barrel or spring hinges for long-term operational smoothness.
 - **Advanced Optics:** High-clarity, tenacious nylon lenses offering impact resistance with customizable tints and coatings for brand-specific requirements.
@@ -61,7 +61,7 @@ seoKeywords: "luxury acetate sunglasses, custom eyewear manufacturer, bespoke ac
 
 ## Overview
 
-Hand-selected Mazzucchelli, JIMEI & JINYU acetate gives the KAS-017 its high-density finish and superior color depth, meeting the rigorous standards of the luxury eyewear market.
+Hand-selected Mazzucchelli, JIMEI, JINYU acetate gives the KAS-017 its high-density finish and superior color depth, meeting the rigorous standards of the luxury eyewear market.
 
 Structural integrity is maintained through precision-engineered 3+2 barrel hinges and high-clarity nylon lenses that offer both durability and optical excellence.
 

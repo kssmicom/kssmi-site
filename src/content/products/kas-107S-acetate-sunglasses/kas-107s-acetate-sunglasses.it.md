@@ -5,7 +5,7 @@ slug: "kas-107s-acetate-sunglasses"
 itemNo: "KAS-107S"
 date: "2026-05-09"
 colors: "Nero & Trasparente & Havana & Tartaruga"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalizzazione"
 serviceMode: "Produzione per Conto Terzi (OEM) & Design e Produzione (ODM) ( Personalizzazione )"
 moq: "300 pz/modello (100pz/colore)"
 
@@ -54,7 +54,7 @@ seoKeywords: "occhiali da sole in acetato Mazzucchelli, occhiali da sole in acet
 
 ## Caratteristiche
 
-- **Materiale Premium:** Acetato Mazzucchelli e JIMEI & JINYU selezionato a mano che offre una struttura leggera e resistente con una finitura vibrante e lucida.
+- **Materiale Premium:** Acetato Mazzucchelli, JIMEI, JINYU selezionato a mano che offre una struttura leggera e resistente con una finitura vibrante e lucida.
 - **Hardware Durevole:** Cerniere a rivetto 4+3 barrel progettate con precisione per garantire l'integrità strutturale a lungo termine e un'azione di apertura/chiusura costante.
 - **Ottica ad Alte Prestazioni:** Lenti in nylon tenace che offrono chiarezza superiore e resistenza agli urti, personalizzabili per soddisfare i requisiti specifici del marchio.
 - **Comfort Integrato:** Naselli lisci e integrati progettati per un comfort che dura tutto il giorno e un'estetica senza cuciture sul ponte.
@@ -71,7 +71,7 @@ seoKeywords: "occhiali da sole in acetato Mazzucchelli, occhiali da sole in acet
 
 ## Panoramica
 
-L'acetato Mazzucchelli e JIMEI & JINYU costituisce la base per questa silhouette unisex audace e d'ispirazione vintage, caratterizzata dalla sua profonda finitura lucida.
+L'acetato Mazzucchelli, JIMEI, JINYU costituisce la base per questa silhouette unisex audace e d'ispirazione vintage, caratterizzata dalla sua profonda finitura lucida.
 
 L'integrità strutturale è ancorata da cerniere a rivetto 4+3 barrel e naselli integrati lisci, garantendo una vestibilità costante e ad alte prestazioni per diverse forme del viso.
 

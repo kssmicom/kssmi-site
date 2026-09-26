@@ -5,7 +5,7 @@ slug: "kas-129-acetate-sunglasses"
 itemNo: "KAS-129"
 date: "2026-05-09"
 colors: "Siyah & Yakut & Kraliyet Mavisi & Mor Mermer & İnci Mermer"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) (Özelleştirme)"
 moq: "300 adet/model (100adet/renk)"
 
@@ -58,7 +58,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Özellikler
 
-- **Premium Asetat:** Hafif, canlı ve hipoalerjenik bir kullanım deneyimi sunan, elle seçilmiş Mazzucchelli ve JIMEI & JINYU asetat çerçeve ve saplar.
+- **Premium Asetat:** Hafif, canlı ve hipoalerjenik bir kullanım deneyimi sunan, elle seçilmiş Mazzucchelli, JIMEI, JINYU asetat çerçeve ve saplar.
 - **Dayanıklı Donanım:** Maksimum stabilite ve ömür boyu çalışma pürüzsüzlüğü için tasarlanmış hassas mühendislik ürünü 4+3 varil yapılı menteşeler.
 - **Yüksek Performanslı Lensler:** Tam özelleştirme seçenekleriyle üstün darbe direnci ve optik netlik sunan dayanıklı naylon lens teknolojisi.
 - **Entegre Konfor:** Çeşitli yüz profilleri için dengeli, kaymaz bir uyum sağlayan ergonomik tasarımlı entegre burun tamponları.
@@ -76,7 +76,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Genel Bakış
 
-Belirgin bir görsel avantaj arayan lüks moda evleri, elle seçilmiş Mazzucchelli ve JIMEI & JINYU asetatı cesur, unisex bir silüetle eşleştiren KAS-129'da bunu buluyor.
+Belirgin bir görsel avantaj arayan lüks moda evleri, elle seçilmiş Mazzucchelli, JIMEI, JINYU asetatı cesur, unisex bir silüetle eşleştiren KAS-129'da bunu buluyor.
 
 Bu tasarım, yüksek hacimli kullanımda tutarlı performans ve rafine konfor sağlamak için dayanıklı bir 4+3 varil menteşe sistemi ve ergonomik burun tamponlarını entegre eder.
 

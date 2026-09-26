@@ -5,7 +5,7 @@ slug: "kas-101-acetate-sunglasses"
 itemNo: "KAS-101"
 date: "2026-05-05"
 colors: "Putih & Panda & Leopard & Havana & Jelas & Hitam"
-materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Penyesuaian"
+materials: "Premium Asetat Mazzucchelli, JIMEI, JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -61,7 +61,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 ---
 
 ## Ciri-ciri Utama
-- **Bahan Premium:** Binaan asetat Mazzucchelli dan JIMEI & JINYU berkualiti tinggi yang memberikan rasa ringan dengan kedalaman warna yang cerah dan tahan lama.
+- **Bahan Premium:** Binaan asetat Mazzucchelli, JIMEI, JINYU berkualiti tinggi yang memberikan rasa ringan dengan kedalaman warna yang cerah dan tahan lama.
 - **Binaan Diperkukuh:** Tangkai asetat tahan lama yang disepadukan dengan engsel struktur tong 3+2 yang direka untuk integriti struktur dan kelancaran operasi yang dipertingkatkan.
 - **Optik Definisi Tinggi:** Kanta nilon tenacious yang menawarkan kejelasan dan rintangan hentaman yang unggul, dengan pilihan penyesuaian yang luas untuk warna dan salutan.
 - **Reka Bentuk Ergonomik:** Alas hidung bersepadu dan saiz 58-17-143mm tersuai yang direka untuk kesesuaian yang selamat dan selesa yang mengekalkan profil estetik bingkai yang anggun.
@@ -78,7 +78,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Gambaran Keseluruhan
 
-Asetat Mazzucchelli dan JIMEI & JINYU yang bertenaga memberikan KAS-101 kedalaman warna yang menarik dan ketahanan ringan, menjadikannya sebagai ruji teras untuk portfolio kacamata yang mengikuti trend.
+Asetat Mazzucchelli, JIMEI, JINYU yang bertenaga memberikan KAS-101 kedalaman warna yang menarik dan ketahanan ringan, menjadikannya sebagai ruji teras untuk portfolio kacamata yang mengikuti trend.
 
 Setiap bingkai menggabungkan engsel tong 3+2 kejuruteraan jitu dan profil ergonomik untuk memberikan kekuatan struktur yang konsisten dan keselesaan pemakaian jangka panjang.
 

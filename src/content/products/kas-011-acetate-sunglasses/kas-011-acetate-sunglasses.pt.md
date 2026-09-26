@@ -5,7 +5,7 @@ slug: "kas-011-acetate-sunglasses"
 itemNo: "KAS-011"
 date: "2026-05-10"
 colors: "Havana & Preto & Branco"
-materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -50,7 +50,7 @@ seoKeywords: "fabricante de óculos de sol de acetato KAS-011, óculos de luxo p
 
 ## Características
 
-- **Material Premium:** Feito de acetato Mazzucchelli e JIMEI & JINYU de alta qualidade para fornecer um acabamento leve, durável e vibrante que aumenta o valor da marca premium.
+- **Material Premium:** Feito de acetato Mazzucchelli, JIMEI, JINYU de alta qualidade para fornecer um acabamento leve, durável e vibrante que aumenta o valor da marca premium.
 - **Hardware Durável:** Apresenta um sistema robusto de dobradiças de estrutura 4+3 barris projetado para suavidade operacional de longo prazo e integridade estrutural.
 - **Ótica de Alto Desempenho:** Equipado com lentes de nylon tenazes que oferecem clareza e resistência ao impacto superiores com amplas opções de tingimento e revestimento personalizadas.
 - **Ergonomia Integrada:** Projetado com ponteiras nasicas integradas para fornecer uma estética perfeita e conforto confiável para diversas estruturas faciais.
@@ -68,7 +68,7 @@ seoKeywords: "fabricante de óculos de sol de acetato KAS-011, óculos de luxo p
 
 ## Visão Geral
 
-O acetato Mazzucchelli e JIMEI & JINYU de alta qualidade formam o núcleo do KAS-011, criando uma armação vibrante e leve que ressoa com os requisitos sofisticados das marcas de óculos de luxo.
+O acetato Mazzucchelli, JIMEI, JINYU de alta qualidade formam o núcleo do KAS-011, criando uma armação vibrante e leve que ressoa com os requisitos sofisticados das marcas de óculos de luxo.
 
 A integração de um sistema de dobradiças de 4+3 barris e ponteiras nasicas sem costura garante longevidade estrutural e confiabilidade ergonômica em diversas tiragens de produção.
 

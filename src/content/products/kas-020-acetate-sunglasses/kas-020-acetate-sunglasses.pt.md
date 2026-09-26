@@ -5,7 +5,7 @@ slug: "kas-020-acetate-sunglasses"
 itemNo: "KAS-020"
 date: "2026-05-10"
 colors: "Preto, Champanhe, Tartaruga, Oliva Transparente"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -41,7 +41,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, OEM de óculos de luxo pe
 
 ## Características
 
-- **Materiais Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que oferece durabilidade excepcional e profundidade de cor vibrante para uma estética de luxo.
+- **Materiais Premium:** Construção em acetato Mazzucchelli, JIMEI, JINYU de alta qualidade que oferece durabilidade excepcional e profundidade de cor vibrante para uma estética de luxo.
 - **Engenharia de Precisão:** Dobradiças de estrutura de barril 3+2 estáveis projetadas para suavidade operacional a longo prazo e integridade estrutural.
 - **Óptica de Alto Desempenho:** Lentes de nylon tenaz que proporcionam clareza superior e resistência ao impacto com amplas opções de revestimento personalizado.
 - **Conforto Ergonômico:** Ponteiras nasicas integradas sem costuras e design de armação leve garantindo um ajuste seguro e sem fadiga para uso prolongado.
@@ -59,7 +59,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, OEM de óculos de luxo pe
 
 ## Visão Geral
 
-Utilizando a profundidade de cor vibrante e a resiliência estrutural do acetato premium Mazzucchelli e JIMEI & JINYU, o modelo KAS-020 representa uma fusão sofisticada de estética de luxo e durabilidade diária.
+Utilizando a profundidade de cor vibrante e a resiliência estrutural do acetato premium Mazzucchelli, JIMEI, JINYU, o modelo KAS-020 representa uma fusão sofisticada de estética de luxo e durabilidade diária.
 
 A arquitetura da dobradiça de barril 3+2 e as lentes de nylon de alta clareza são projetadas para suavidade operacional a longo prazo e proteção óptica superior.
 

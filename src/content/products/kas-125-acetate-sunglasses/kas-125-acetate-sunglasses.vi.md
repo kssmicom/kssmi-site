@@ -5,7 +5,7 @@ slug: "kas-125-acetate-sunglasses"
 itemNo: "KAS-125"
 date: "2026-05-09"
 colors: "Đen & Đồi mồi sáng & Đồi mồi tối & Sừng trâu & Khaki"
-materials: "Mazzucchelli cao cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Mazzucchelli, JIMEI, JINYU cao cấp & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) (Tùy chỉnh theo yêu cầu)"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -57,7 +57,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mắt OEM tùy chỉnh,
 ---
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Gọng và càng kính bằng axetat Mazzucchelli và JIMEI & JINYU nhẹ và rực rỡ mang lại cảm giác tay cao cấp với độ bền lâu dài.
+- **Chất liệu cao cấp:** Gọng và càng kính bằng axetat Mazzucchelli, JIMEI, JINYU nhẹ và rực rỡ mang lại cảm giác tay cao cấp với độ bền lâu dài.
 - **Phụ kiện bền bỉ:** Bản lề cấu trúc 4+3 barrel mạnh mẽ được thiết kế để căn chỉnh chính xác và vận hành êm ái nhất quán.
 - **Quang học tiên tiến:** Tròng kính nylon bền bỉ cung cấp độ rõ nét vượt trội và khả năng chống va đập trong cấu hình gọng 53-19-145mm linh hoạt.
 - **Sự thoải mái tích hợp:** Đệm mũi được thiết kế công thái học đúc trực tiếp vào gọng kính để mang lại sự vừa vặn ổn định, không gây dị ứng.
@@ -74,7 +74,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mắt OEM tùy chỉnh,
 
 ## Tổng quan
 
-Cấu trúc axetat Mazzucchelli và JIMEI & JINYU cao cấp mang đến cho KAS-125 cảm giác tay đặc biệt và độ rực rỡ lâu dài, đáp ứng các tiêu chuẩn của các danh mục sản phẩm xa xỉ toàn cầu.
+Cấu trúc axetat Mazzucchelli, JIMEI, JINYU cao cấp mang đến cho KAS-125 cảm giác tay đặc biệt và độ rực rỡ lâu dài, đáp ứng các tiêu chuẩn của các danh mục sản phẩm xa xỉ toàn cầu.
 
 Được thiết kế với bản lề cấu trúc 4+3 barrel để căn chỉnh chính xác, gọng kính kết hợp tròng kính nylon chịu lực cao với cầu kính liền gọng công thái học để mang lại độ bền bền vững.
 

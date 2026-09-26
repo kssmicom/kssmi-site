@@ -5,7 +5,7 @@ slug: "kas-138-acetate-sunglasses"
 itemNo: "KAS-138"
 date: "2026-05-09"
 colors: "Đen & Đồi mồi & Xám hồng nhạt & Hồng mờ"
-materials: "Axetat Mazzucchelli cao cấp & JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Mazzucchelli, JIMEI, JINYU cao cấp & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -53,7 +53,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 ---
 
 ## Đặc điểm
-- **Chất liệu cao cấp:** Cấu tạo từ Axetat Mazzucchelli và JIMEI & JINYU cao cấp mang lại gọng kính rực rỡ, nhẹ và bền cho các thương hiệu thời trang xa xỉ.
+- **Chất liệu cao cấp:** Cấu tạo từ Axetat Mazzucchelli, JIMEI, JINYU cao cấp mang lại gọng kính rực rỡ, nhẹ và bền cho các thương hiệu thời trang xa xỉ.
 - **Phụ kiện chắc chắn:** Bản lề cấu trúc 3+2 thùng chuyên nghiệp được thiết kế để vận hành trơn tru liên tục và độ bền lâu dài.
 - **Quang học vượt trội:** Tròng kính nylon bền bỉ hiệu suất cao với khả năng nhuộm màu và phủ lớp bảo vệ tùy chỉnh rộng rãi cho các nhà thiết kế kính mắt cao cấp.
 - **Thiết kế công thái học:** Đệm mũi liền khối mượt mà mang lại cảm giác vừa vặn an toàn, thoải mái khi đeo hàng ngày trong thời gian dài trên mọi hình dáng khuôn mặt.
@@ -69,7 +69,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 - Cửa hàng khái niệm & đa nhãn
 
 ## Tổng quan
-Được chế tác tỉ mỉ từ axetat Mazzucchelli và JIMEI & JINYU chính hãng, dòng KAS-138 nhấn mạnh vào độ sâu màu sắc rực rỡ và độ bền cao cấp cho thị trường xa xỉ.
+Được chế tác tỉ mỉ từ axetat Mazzucchelli, JIMEI, JINYU chính hãng, dòng KAS-138 nhấn mạnh vào độ sâu màu sắc rực rỡ và độ bền cao cấp cho thị trường xa xỉ.
 
 Sự kết hợp của bản lề cấu trúc 3+2 thùng và đệm mũi công thái học mang lại sự cân bằng hoàn hảo giữa độ tin cậy cơ học và sự thoải mái khi đeo hàng ngày.
 

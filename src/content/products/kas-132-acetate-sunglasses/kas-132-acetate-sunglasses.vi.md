@@ -5,7 +5,7 @@ slug: "kas-132-acetate-sunglasses"
 itemNo: "KAS-132"
 date: "2026-05-09"
 colors: "Đen & Trắng & Xanh lá & Đồi mồi"
-materials: "Axetat Mazzucchelli cao cấp & Axetat JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Axetat Mazzucchelli, JIMEI, JINYU cao cấp & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) (Tùy chỉnh theo yêu cầu)"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -54,7 +54,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mắt flat-top tùy ch�
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Cấu trúc Axetat Mazzucchelli và JIMEI & JINYU cao cấp mang lại tính thẩm mỹ tinh tế với độ sâu màu sắc rực rỡ, lâu dài.
+- **Chất liệu cao cấp:** Cấu trúc Axetat Mazzucchelli, JIMEI, JINYU cao cấp mang lại tính thẩm mỹ tinh tế với độ sâu màu sắc rực rỡ, lâu dài.
 - **Kỹ thuật chính xác:** Bản lề cấu trúc 3+2 thùng ổn định được thiết kế cho độ bền cấp độ chuyên nghiệp và hiệu suất vận hành trơn tru.
 - **Quang học vượt trội:** Tròng kính nylon bền bỉ cung cấp khả năng chống va đập và độ rõ nét hình ảnh đặc biệt, với các tùy chọn tùy chỉnh rộng rãi.
 - **Sự thoải mái tối ưu:** Đệm mũi liền khối và cấu trúc gọng nhẹ đảm bảo sự vừa vặn an toàn, cân bằng để đeo thoải mái suốt cả ngày.
@@ -72,7 +72,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mắt flat-top tùy ch�
 
 ## Tổng quan
 
-Tỷ lệ oversized táo bạo và kiểu dáng flat-top đặc trưng định hình KAS-132, được chế tác từ sự pha trộn cao cấp giữa axetat Mazzucchelli và JIMEI & JINYU cho độ sâu và độ bền vô song.
+Tỷ lệ oversized táo bạo và kiểu dáng flat-top đặc trưng định hình KAS-132, được chế tác từ sự pha trộn cao cấp giữa axetat Mazzucchelli, JIMEI, JINYU cho độ sâu và độ bền vô song.
 
 Bản lề 3+2 thùng được chế tạo chính xác và tròng kính nylon bền bỉ đảm bảo các gọng kính này duy trì tính toàn vẹn của cấu trúc và độ rõ nét của hình ảnh qua quá trình sử dụng cường độ cao.
 

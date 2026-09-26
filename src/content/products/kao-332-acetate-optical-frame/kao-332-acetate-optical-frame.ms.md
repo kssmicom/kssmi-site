@@ -5,7 +5,7 @@ slug: "kao-332-acetate-optical-frame"
 itemNo: "KAO-332"
 date: "2026-05-10"
 colors: "Hitam dengan Lut Sinar, Biru dengan Jalur Coklat, Syampanya dengan Coklat"
-materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) (Penyesuaian)"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -41,7 +41,7 @@ seoKeywords: "bingkai optik asetat, pengeluar kacamata tersuai, bingkai optik la
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Dibuat daripada asetat premium Mazzucchelli dan JIMEI & JINYU, menawarkan struktur yang ultra ringan tetapi sangat tahan lasak dengan estetika warna yang menarik dan mendalam.
+- **Bahan Premium:** Dibuat daripada asetat premium Mazzucchelli, JIMEI, JINYU, menawarkan struktur yang ultra ringan tetapi sangat tahan lasak dengan estetika warna yang menarik dan mendalam.
 - **Perkakasan Kejuruteraan:** Engsel struktur rivet 3+2 tong yang sangat dipercayai menawarkan pergerakan temple yang stabil dan lancar, dengan pilihan engsel spring dan 5 tong tersedia.
 - **Optik Tahan Lasak:** Lensa nilon tahan lasak tinggi menawarkan kejelasan optik yang luar biasa dan rintangan hentaman dengan perkhidmatan salutan tersuai dan penyesuaian yang lengkap.
 - **Keselesaan Bersepadu:** Alas hidung asetat bersepadu yang lancar digabungkan dengan geometri 46-23-145mm yang disesuaikan khas untuk memberikan padanan yang seimbang dan bebas tekanan.
@@ -59,7 +59,7 @@ seoKeywords: "bingkai optik asetat, pengeluar kacamata tersuai, bingkai optik la
 
 ## Gambaran Keseluruhan
 
-Estetika dwi-warna yang menarik mentakrifkan bingkai optik unisex KAO-332, yang dibuat daripada asetat premium Mazzucchelli dan JIMEI & JINYU. Tersedia dalam kombinasi warna yang tersendiri seperti Syampanya dengan Coklat dan Biru dengan Jalur Coklat, bingkai retro klasik ini disesuaikan khusus untuk rumah fesyen mewah dan rangkaian optik bergengsi.
+Estetika dwi-warna yang menarik mentakrifkan bingkai optik unisex KAO-332, yang dibuat daripada asetat premium Mazzucchelli, JIMEI, JINYU. Tersedia dalam kombinasi warna yang tersendiri seperti Syampanya dengan Coklat dan Biru dengan Jalur Coklat, bingkai retro klasik ini disesuaikan khusus untuk rumah fesyen mewah dan rangkaian optik bergengsi.
 
 Geometri 46-23-145mm menyepadukan alas hidung yang lancar dan sistem engsel rivet 3+2 tong yang teguh, memastikan penjajaran temple yang lancar, stabil dan jangka hayat yang luar biasa.
 

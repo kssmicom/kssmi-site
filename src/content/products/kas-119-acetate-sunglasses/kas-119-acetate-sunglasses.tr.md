@@ -5,7 +5,7 @@ slug: "kas-119-acetate-sunglasses"
 itemNo: "KAS-119"
 date: "2026-05-09"
 colors: "Siyah & Çiçekli & Ham Mavi & Sarı & Kutup Kaplumbağa & Camgöbeği Kaplumbağa & Kırmızı Kaplumbağa"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -66,7 +66,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Özellikler
 
-- **Premium Asetat Yapı:** Birinci sınıf Mazzucchelli ve JIMEI & JINYU asetatından üretilmiş, hafif, olağanüstü dayanıklı ve canlı bir çerçeve ve sap yapısı sunar.
+- **Premium Asetat Yapı:** Birinci sınıf Mazzucchelli, JIMEI, JINYU asetatından üretilmiş, hafif, olağanüstü dayanıklı ve canlı bir çerçeve ve sap yapısı sunar.
 - **Hassas Donanım:** Üstün stabilite ve uzun vadeli operasyonel pürüzsüzlük sağlamak için özel 4+3 namlu yapılı menteşelerle tasarlanmıştır.
 - **Yüksek Performanslı Optik:** Kapsamlı özelleştirme seçeneklerinin yanı sıra mükemmel optik netlik sağlayan dayanıklı naylon lenslerle donatılmıştır.
 - **Tüm Gün Konfor:** Kusursuz bir estetik ve uzun süreli kullanım için güvenli, rahat bir uyum sağlamak üzere özenle entegre edilmiş burun tamponları ile tasarlanmıştır.
@@ -83,7 +83,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Genel Bakış
 
-Cesur lüks, dünyaca ünlü Mazzucchelli ve JIMEI & JINYU asetatından yontulmuş çarpıcı bir unisex tasarıma sahip KAS-119'da olağanüstü işçilikle buluşuyor. Bu canlı çerçeve yapısı sadece hafif dayanıklılık sağlamakla kalmaz, aynı zamanda üst düzey moda portföyleri için etkileyici bir görsel varlık oluşturur.
+Cesur lüks, dünyaca ünlü Mazzucchelli, JIMEI, JINYU asetatından yontulmuş çarpıcı bir unisex tasarıma sahip KAS-119'da olağanüstü işçilikle buluşuyor. Bu canlı çerçeve yapısı sadece hafif dayanıklılık sağlamakla kalmaz, aynı zamanda üst düzey moda portföyleri için etkileyici bir görsel varlık oluşturur.
 
 Uzun vadeli giyilebilirlik için tasarlanan özel 4+3 namlulu menteşelerin ve dikişsiz burun pedlerinin entegrasyonu, birinci sınıf naylon optiklerin yanı sıra tüm gün istikrarlı konforu garanti eder.
 

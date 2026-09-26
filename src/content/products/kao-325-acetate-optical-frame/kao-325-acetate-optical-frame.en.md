@@ -5,7 +5,7 @@ slug: "kao-325-acetate-optical-frame"
 itemNo: "KAO-325"
 date: "2026-05-10"
 colors: "Tortoise with Burgundy, Khaki, Solid Olive"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -50,7 +50,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear factory, l
 
 ## Technical Features
 
-- **Premium Acetate Construction:** Crafted from high-grade Mazzucchelli, JIMEI & JINYU acetate, offering a lightweight, durable framework with vibrant aesthetic appeal.
+- **Premium Acetate Construction:** Crafted from high-grade Mazzucchelli, JIMEI, JINYU acetate, offering a lightweight, durable framework with vibrant aesthetic appeal.
 - **Robust Hardware Design:** Engineered with a stable 3+2 barrel rivet hinge structure, providing reliable operational smoothness with options for custom spring mechanisms.
 - **Tenacious Optics:** Equipped with high-strength nylon lenses that offer excellent durability alongside comprehensive customization possibilities.
 - **Integrated Comfort:** Features seamlessly integrated nose pads to ensure a secure, balanced fit suitable for continuous daily wear.
@@ -68,7 +68,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear factory, l
 
 ## Overview
 
-Built around the exceptional vibrance and durability of Mazzucchelli, JIMEI & JINYU acetate, the KAO-325 provides a foundational framework for sophisticated eyewear collections.
+Built around the exceptional vibrance and durability of Mazzucchelli, JIMEI, JINYU acetate, the KAO-325 provides a foundational framework for sophisticated eyewear collections.
 
 Precision hardware, featuring a stable 3+2 barrel rivet hinge structure and seamless integrated nose pads, delivers consistent operational smoothness and dependable all-day comfort.
 

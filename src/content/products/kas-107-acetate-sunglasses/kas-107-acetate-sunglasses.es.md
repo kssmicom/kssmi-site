@@ -5,7 +5,7 @@ slug: "kas-107-acetate-sunglasses"
 itemNo: "KAS-107"
 date: "2026-05-06"
 colors: "Negro & Transparente & Havana & Oliva"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalización"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100uds/color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Características
 
-- **Material Premium:** Acabado a mano con acetato Mazzucchelli y JIMEI & JINYU de alta calidad para proporcionar un marco ligero e hipoalergénico con una vibración excepcional y durabilidad a largo plazo.
+- **Material Premium:** Acabado a mano con acetato Mazzucchelli, JIMEI, JINYU de alta calidad para proporcionar un marco ligero e hipoalergénico con una vibración excepcional y durabilidad a largo plazo.
 - **Ingeniería de Precisión:** Cuenta con un robusto sistema de bisagras de estructura de barril 3+2 diseñado para una estabilidad operativa superior y una tensión de apertura/cierre constante.
 - **Óptica de Alto Rendimiento:** Equipadas con lentes de nylon tenaces que ofrecen una excelente resistencia a los impactos y claridad óptica, con opciones completas de tinte y recubrimiento personalizados disponibles.
 - **Confort Integrado:** Almohadillas nasales integradas de diseño ergonómico que aseguran una estética impecable y un ajuste seguro y sin presión para un uso diario prolongado.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Descripción General
 
-Fabricada con acetato Mazzucchelli y JIMEI & JINYU de primera calidad, esta silueta clásica equilibra una vibración de material excepcional con un acabado ligero e hipoalergénico.
+Fabricada con acetato Mazzucchelli, JIMEI, JINYU de primera calidad, esta silueta clásica equilibra una vibración de material excepcional con un acabado ligero e hipoalergénico.
 
 Los marcos fresados de precisión y las robustas bisagras de barril 3+2 proporcionan la fiabilidad estructural y la suavidad táctil que se espera en los entornos de las boutiques de alta gama.
 

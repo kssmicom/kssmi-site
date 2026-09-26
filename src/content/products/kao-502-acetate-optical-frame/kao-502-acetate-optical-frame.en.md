@@ -5,7 +5,7 @@ slug: "kao-502-acetate-optical-frame"
 itemNo: "KAO-502"
 date: "2026-05-10"
 colors: "Cream & Havana & Black & White"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -57,7 +57,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear production
 ---
 ## Technical Features
 
-- **Premium Materials:** Hand-crafted from elite Mazzucchelli, JIMEI & JINYU acetate, delivering a lightweight feel paired with long-lasting durability and vibrant color depth.
+- **Premium Materials:** Hand-crafted from elite Mazzucchelli, JIMEI, JINYU acetate, delivering a lightweight feel paired with long-lasting durability and vibrant color depth.
 - **Precision Hardware:** Features a robust 4+3 barrel rivet hinge system designed for superior structural stability and smooth, reliable operation over time.
 - **Superior Optics:** Equipped with high-tenacity nylon lenses that offer exceptional clarity and are fully customizable with various tints and protective coatings.
 - **Seamless Comfort:** Integrated nose pads provide a hypoallergenic and secure fit, ensuring all-day comfort without compromising the frame's sleek aesthetic.
@@ -74,7 +74,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear production
 
 ## Overview
 
-Distinctive in its artisanal depth, the KAO-502 utilizes elite Mazzucchelli, JIMEI & JINYU acetate to achieve a balance of lightweight comfort and enduring color vibrancy.
+Distinctive in its artisanal depth, the KAO-502 utilizes elite Mazzucchelli, JIMEI, JINYU acetate to achieve a balance of lightweight comfort and enduring color vibrancy.
 
 The robust 4+3 barrel rivet hinge architecture provides a foundation of structural integrity, complemented by hand-polished contours that meet the rigorous standards of luxury fashion.
 

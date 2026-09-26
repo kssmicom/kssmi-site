@@ -5,7 +5,7 @@ slug: "kas-322-acetate-sunglasses"
 itemNo: "KAS-322"
 date: "2026-05-12"
 colors: "Black & Champagne & Havana & Oliver"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "Mazzucchelli acetate sunglasses, acetate sunglasses manufacturer, 
 
 ## Technical Features
 
-- **Premium Acetate Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction offering exceptional durability and a vibrant, long-lasting finish.
+- **Premium Acetate Material:** High-grade Mazzucchelli, JIMEI, JINYU acetate construction offering exceptional durability and a vibrant, long-lasting finish.
 - **Superior Optics:** Tenacious nylon lenses providing excellent impact resistance and clarity with extensive custom tinting options.
 - **Engineered Hardware:** High-precision 4+3 barrel structure hinges designed for maximum stability and long-term operational smoothness.
 - **Ergonomic Design:** Integrated nose pads and a lightweight frame structure ensuring a secure, hypoallergenic fit for all-day comfort.
@@ -71,7 +71,7 @@ seoKeywords: "Mazzucchelli acetate sunglasses, acetate sunglasses manufacturer, 
 
 ## Overview
 
-Crafted from a blend of Mazzucchelli, JIMEI & JINYU acetate, this frame achieves a sophisticated balance of vibrant color depth and enduring structural integrity. The lightweight architecture and integrated nose pads provide a seamless, hypoallergenic fit for all-day wear.
+Crafted from a blend of Mazzucchelli, JIMEI, JINYU acetate, this frame achieves a sophisticated balance of vibrant color depth and enduring structural integrity. The lightweight architecture and integrated nose pads provide a seamless, hypoallergenic fit for all-day wear.
 
 The 4+3 barrel hinge assembly ensures reliable mechanical movement, complemented by high-tenacity nylon lenses that offer excellent impact resistance.
 

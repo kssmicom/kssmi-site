@@ -5,7 +5,7 @@ slug: "kao-157-acetate-optical-frame"
 itemNo: "KAO-157"
 date: "2026-05-10"
 colors: "Azul Degradê com Violeta Claro"
-materials: "Acetato Premium Mazzucchelli e JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -42,7 +42,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, óculos ópticos OEM
 
 ## Características
 
-- **Acetato Premium:** Frente e hastes de acetato Mazzucchelli e JIMEI & JINYU polidos à mão, oferecendo uma estética vibrante em Azul Degradê com Violeta Claro e durabilidade superior.
+- **Acetato Premium:** Frente e hastes de acetato Mazzucchelli, JIMEI, JINYU polidos à mão, oferecendo uma estética vibrante em Azul Degradê com Violeta Claro e durabilidade superior.
 - **Ferragens de Precisão:** Dobradiças duráveis com estrutura de rebites 2+1 barril projetadas para suavidade operacional consistente e confiabilidade a longo prazo.
 - **Óptica de Alto Desempenho:** Lentes de nylon tenaz com amplas opções de tingimento e revestimento personalizados para atender aos requisitos específicos da marca.
 - **Design Ergonômico:** Ponteiras nasicas integradas e construção em acetato leve, proporcionando um ajuste seguro e hipoalergênico para uso durante todo o dia.
@@ -60,7 +60,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, óculos ópticos OEM
 
 ## Visão Geral
 
-Fundindo estética vibrante com integridade estrutural, o KAO-157 apresenta acetato Mazzucchelli e JIMEI & JINYU polido à mão em um perfil marcante de Azul Degradê e Violeta Claro.
+Fundindo estética vibrante com integridade estrutural, o KAO-157 apresenta acetato Mazzucchelli, JIMEI, JINYU polido à mão em um perfil marcante de Azul Degradê e Violeta Claro.
 
 Projetado com um sistema de dobradiças de rebite 2+1 barril, a construção leve e as ponteiras nasicas integradas oferecem um ajuste seguro e hipoalergênico projetado para longevidade.
 

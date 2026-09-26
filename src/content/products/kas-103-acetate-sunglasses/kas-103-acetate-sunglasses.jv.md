@@ -5,7 +5,7 @@ slug: "kas-103-acetate-sunglasses"
 itemNo: "KAS-103"
 date: "2026-05-06"
 colors: "Ireng & Kisi-kisi Kuning & Marmer Mutiara & Kisi-kisi Abrit & Kisi-kisi Biru & Kisi-kisi Ireng"
-materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Kustomisasi"
+materials: "Premium Asetat Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -62,7 +62,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, eyewear
 
 ## Fitur
 
-- **Bahan Frame Premium:** Frame lan temple asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing menehi asil pungkasan sing semangat, kilap jero kanthi daya tahan struktural sing luar biasa.
+- **Bahan Frame Premium:** Frame lan temple asetat Mazzucchelli, JIMEI, JINYU kelas dhuwur sing menehi asil pungkasan sing semangat, kilap jero kanthi daya tahan struktural sing luar biasa.
 - **Hardware Awet:** Engsel struktur 3+2 barel sing dirancang kanthi presisi kanggo kelancaran operasional sing konsisten lan stabilitas frame jangka panjang.
 - **Optik Unggul:** Lensa nilon tenacious sing nawakake resistensi impact dhuwur lan kejelasan optik, kanthi kustomisasi sing bisa diskalakan kanggo perlindungan UV lan lapisan khusus.
 - **Pas Ergonomis:** Bantalan irung terintegrasi sing diukir kanthi lancar menyang struktur asetat kanggo pas sing aman lan bebas tekanan sing nambah kenyamanan sedina muput.
@@ -80,7 +80,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, eyewear
 
 ## Ringkesan
 
-KAS-103 nggunakake asetat Mazzucchelli lan JIMEI & JINYU premium kanggo nggayuh asil pungkasan kilap jero, nampilake pola kisi-kisi lan marmer canggih sing cocog karo tren fesyen dhuwur.
+KAS-103 nggunakake asetat Mazzucchelli, JIMEI, JINYU premium kanggo nggayuh asil pungkasan kilap jero, nampilake pola kisi-kisi lan marmer canggih sing cocog karo tren fesyen dhuwur.
 
 Engsel barel 3+2 presisi lan bantalan irung terintegrasi nyedhiyakake stabilitas struktural lan kenyamanan ergonomis sing dikarepake dening konsumen barang mewah.
 

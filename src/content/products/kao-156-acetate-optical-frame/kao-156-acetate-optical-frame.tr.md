@@ -5,7 +5,7 @@ slug: "kao-156-acetate-optical-frame"
 itemNo: "KAO-156"
 date: "2026-05-10"
 colors: "Macenta ile Çiçek Mavisi"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (her renk için 100 adet)"
 
@@ -42,7 +42,7 @@ seoKeywords: "asetat optik çerçeve üreticisi, özel gözlük üretimi, lüks 
 
 ## Özellikler
 
-- **Premium Malzeme Bileşimi:** Derin, canlı bir yüzey ve olağanüstü dayanıklılık sunan el cilalı Mazzucchelli ve JIMEI & JINYU asetat.
+- **Premium Malzeme Bileşimi:** Derin, canlı bir yüzey ve olağanüstü dayanıklılık sunan el cilalı Mazzucchelli, JIMEI, JINYU asetat.
 - **Rafine Çerçeve Mühendisliği:** Üst düzey bir estetik ve dirençli uzun süreli kullanım için tasarlanmış hafif premium asetat çerçeve ve sap yapısı.
 - **Dayanıklı Donanım:** Tutarlı çalışma pürüzsüzlüğü ve yapısal stabilite sağlayan hassas mühendislik ürünü 2+1 namlu perçin yapılı menteşeler.
 - **Gelişmiş Lens Teknolojisi:** Kapsamlı özel kaplama ve renklendirme seçenekleriyle üstün netlik sağlayan yüksek mukavemetli naylon lensler.
@@ -59,7 +59,7 @@ seoKeywords: "asetat optik çerçeve üreticisi, özel gözlük üretimi, lüks 
 
 ## Genel Bakış
 
-Macenta tonlarıyla birleşen Çiçek Mavisi, el cilalı Mazzucchelli ve JIMEI & JINYU asetatın üstün derinliğiyle buluşarak lüks moda standartlarıyla yankılanan canlı bir görsel kimlik oluşturuyor.
+Macenta tonlarıyla birleşen Çiçek Mavisi, el cilalı Mazzucchelli, JIMEI, JINYU asetatın üstün derinliğiyle buluşarak lüks moda standartlarıyla yankılanan canlı bir görsel kimlik oluşturuyor.
 
 Hassas 2+1 namlu perçin menteşeler hafif çerçeveyi sabitlerken, ergonomik entegre burun yastıklarını tamamlayan tutarlı ve pürüzsüz bir dokunsal deneyim sağlar.
 

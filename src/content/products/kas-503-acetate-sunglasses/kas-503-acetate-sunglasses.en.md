@@ -5,7 +5,7 @@ slug: "kas-503-acetate-sunglasses"
 itemNo: "KAS-503"
 date: "2026-05-13"
 colors: "Black, Red with Gradient Red, Tortoise with Brown"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -42,7 +42,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, premium pr
 
 ## Technical Features
 
-- **Premium Acetate Material:** Premium Mazzucchelli, JIMEI & JINYU acetate offering a lightweight, durable, and vibrant finish for exceptional aesthetic appeal.
+- **Premium Acetate Material:** Premium Mazzucchelli, JIMEI, JINYU acetate offering a lightweight, durable, and vibrant finish for exceptional aesthetic appeal.
 - **Durable Hardware:** Stable 3+2 barrel structure hinges engineered for long-term operational smoothness, with optional 5-barrel and spring hinge upgrades.
 - **Premium Optics:** Tenacious nylon lenses providing high visual clarity and durability, with extensive custom tinting options available.
 - **Ergonomic Comfort:** Integrated acetate nose pads designed to provide a secure, comfortable fit for all-day wear.
@@ -60,7 +60,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, premium pr
 
 ## Overview
 
-Crafted from premium Mazzucchelli, JIMEI & JINYU acetate, the KAS-503 sunglasses bring exceptional vibrancy and durability to modern eyewear collections.
+Crafted from premium Mazzucchelli, JIMEI, JINYU acetate, the KAS-503 sunglasses bring exceptional vibrancy and durability to modern eyewear collections.
 
 The integration of reliable 3+2 barrel hinges with tenacious nylon lenses ensures structural stability, while the acetate nose pads deliver long-lasting ergonomic comfort.
 

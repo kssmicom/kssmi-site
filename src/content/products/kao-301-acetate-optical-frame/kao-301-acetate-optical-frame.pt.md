@@ -5,7 +5,7 @@ slug: "kao-301-acetate-optical-frame"
 itemNo: "KAO-301"
 date: "2026-05-10"
 colors: "Preto & Roxo-Esfumaçado & Tartaruga & Listrado"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, armações ópticas 
 
 ## Características
 
-- **Material Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, oferecendo durabilidade excepcional e uma estética rica e vibrante.
+- **Material Premium:** Construção em acetato Mazzucchelli, JIMEI, JINYU de alta qualidade, oferecendo durabilidade excepcional e uma estética rica e vibrante.
 - **Engenharia de Precisão:** Dobradiças robustas com estrutura de rebite de 4+3 barris, garantindo estabilidade operacional a longo prazo e movimento suave.
 - **Ótica Avançada:** Lentes de nylon tenaz com alta clareza e resistência ao impacto, com opções flexíveis de personalização.
 - **Design Ergonômico:** Ponteiras nasicas integradas projetadas para um ajuste seguro e equilibrado e maior conforto durante todo o dia.
@@ -72,7 +72,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, armações ópticas 
 
 ## Visão Geral
 
-O acetato Mazzucchelli e JIMEI & JINYU formam a base do KAO-301, proporcionando uma identidade de material vibrante que equilibra o conforto leve com a durabilidade duradoura. Esta seleção de materiais de alta qualidade garante que cada armação mantenha seu acabamento premium e integridade estrutural em diversas combinações de cores.
+O acetato Mazzucchelli, JIMEI, JINYU formam a base do KAO-301, proporcionando uma identidade de material vibrante que equilibra o conforto leve com a durabilidade duradoura. Esta seleção de materiais de alta qualidade garante que cada armação mantenha seu acabamento premium e integridade estrutural em diversas combinações de cores.
 
 A implementação de dobradiças de rebite de 4+3 barris fornece uma estrutura mecânica reforçada, garantindo o movimento suave das hastes e estabilidade a longo prazo em ambientes de alto uso.
 

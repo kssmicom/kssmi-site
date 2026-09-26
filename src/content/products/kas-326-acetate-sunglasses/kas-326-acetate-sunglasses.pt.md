@@ -5,7 +5,7 @@ slug: "kas-326-acetate-sunglasses"
 itemNo: "KAS-326"
 date: "2026-05-13"
 colors: "Preto com Cinza Degradê, Tartaruga com Azul-Marrom, Teal Havana com Marrom Degradê"
-materials: "Mazzucchelli & JIMEI & JINYU Acetato Premium & Personalização"
+materials: "Mazzucchelli, JIMEI, JINYU Acetato Premium & Personalização"
 serviceMode: "Fabricação por Encomenda & Design e Fabricação ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -44,7 +44,7 @@ seoKeywords: "óculos de sol de acetato personalizados, óculos de acetato por a
 
 ## Características
 
-- **Material de Armação Premium:** Fabricado com acetato premium Mazzucchelli & JIMEI & JINYU, oferecendo um design leve, durável e estruturalmente estável com profundidade de cor vibrante.
+- **Material de Armação Premium:** Fabricado com acetato premium Mazzucchelli, JIMEI, JINYU, oferecendo um design leve, durável e estruturalmente estável com profundidade de cor vibrante.
 - **Óptica Premium:** Lentes de nylon tenazes com amplas opções de tingimento e revestimento personalizados para atender às diversas demandas do mercado.
 - **Hardware de Precisão:** Dobradiças estáveis de estrutura de 3+2 barris, personalizáveis com configurações de 5 barris ou mola, projetadas para suavidade operacional a longo prazo.
 - **Conforto para o Dia Todo:** Ponteiras nasais de acetato integradas projetadas para distribuir a pressão uniformemente e garantir um ajuste seguro e confortável.
@@ -61,7 +61,7 @@ seoKeywords: "óculos de sol de acetato personalizados, óculos de acetato por a
 
 ## Visão Geral
 
-Projetados para atender às demandas estéticas do varejo de butiques premium, os óculos de sol KAS-326 combinam detalhes clássicos de rebites com a vibrante profundidade de várias camadas de acetato JIMEI & JINYU e Mazzucchelli de origem personalizada.
+Projetados para atender às demandas estéticas do varejo de butiques premium, os óculos de sol KAS-326 combinam detalhes clássicos de rebites com a vibrante profundidade de várias camadas de acetato Mazzucchelli, JIMEI, JINYU de origem personalizada.
 
 A base do seu apelo de ponta é a estrutura de dobradiça durável de 3+2 barris e ponteiras nasais integradas, projetadas para manter o alinhamento preciso da armação e conforto excepcional para o usuário.
 

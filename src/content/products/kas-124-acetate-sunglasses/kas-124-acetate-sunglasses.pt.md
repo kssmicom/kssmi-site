@@ -5,7 +5,7 @@ slug: "kas-124-acetate-sunglasses"
 itemNo: "KAS-124"
 date: "2026-05-09"
 colors: "Preto & Chifre de Búfalo & Tartaruga"
-materials: "Premium Mazzucchelli & Acetato JIMEI & JINYU & Personalização"
+materials: "Premium Acetato Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100pçs/cor)"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -46,7 +46,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, fábrica de óculos de so
 
 ## Características
 
-- **Material Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, oferecendo um acabamento vibrante polido à mão com durabilidade excepcional.
+- **Material Premium:** Construção em acetato Mazzucchelli, JIMEI, JINYU de alta qualidade, oferecendo um acabamento vibrante polido à mão com durabilidade excepcional.
 - **Hardware Durável:** Dobradiças robustas com estrutura de barril 3+2, projetadas com precisão para suavidade operacional a longo prazo e estabilidade da armação.
 - **Óptica Avançada:** Lentes de nylon tenaz que proporcionam resistência superior ao impacto e clareza óptica com amplas opções de revestimento personalizado.
 - **Conforto Ergonômico:** Armação leve com ponteiras nasais integradas, projetada para um ajuste seguro e sem pressão durante o uso diário prolongado.
@@ -64,7 +64,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, fábrica de óculos de so
 
 ## Visão Geral
 
-Fabricado em acetato Mazzucchelli e JIMEI & JINYU de primeira qualidade, este modelo apresenta um acabamento polido à mão que destaca sua silhueta ousada de inspiração vintage. A armação equilibra uma estética unissex de luxo com as qualidades vibrantes e leves essenciais para óculos de alta moda.
+Fabricado em acetato Mazzucchelli, JIMEI, JINYU de primeira qualidade, este modelo apresenta um acabamento polido à mão que destaca sua silhueta ousada de inspiração vintage. A armação equilibra uma estética unissex de luxo com as qualidades vibrantes e leves essenciais para óculos de alta moda.
 
 Dobradiças de barril 3+2 projetadas com precisão e lentes de nylon tenaz garantem um ajuste seguro e um desempenho óptico excepcional em todos os lotes de produção.
 

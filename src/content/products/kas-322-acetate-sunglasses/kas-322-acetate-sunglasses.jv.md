@@ -5,7 +5,7 @@ slug: "kas-322-acetate-sunglasses"
 itemNo: "KAS-322"
 date: "2026-05-12"
 colors: "Ireng & Shampanye & Bulus & Zaitun"
-materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) (Kustomisasi)"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "kacamata hitam asetat Mazzucchelli, produsen kacamata hitam asetat
 
 ## Fitur
 
-- **Bahan Asetat Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU berkualitas tinggi sing nawakake daya tahan luar biasa lan finish sing semangat lan tahan suwe.
+- **Bahan Asetat Premium:** Konstruksi asetat Mazzucchelli, JIMEI, JINYU berkualitas tinggi sing nawakake daya tahan luar biasa lan finish sing semangat lan tahan suwe.
 - **Optik Unggul:** Lensa nilon kuat sing nyedhiyakake resistensi dampak lan kajelasan sing apik banget kanthi pilihan warna kustom sing akeh.
 - **Hardware Teknik:** Engsel struktur 4+3 tong kanthi presisi dhuwur sing dirancang kanggo stabilitas maksimal lan kelancaran operasional jangka panjang.
 - **Desain Ergonomis:** Bantalan irung integrasi lan struktur frame sing entheng njamin pas sing aman lan hypoallergenic kanggo kenyamanan sedina muput.
@@ -71,7 +71,7 @@ seoKeywords: "kacamata hitam asetat Mazzucchelli, produsen kacamata hitam asetat
 
 ## Ringkesan
 
-Digawe saka campuran asetat Mazzucchelli lan JIMEI & JINYU, frame iki nggayuh keseimbangan sing canggih antarane kedalaman warna sing semangat lan integritas struktural sing awet. Arsitektur sing entheng lan bantalan irung integrasi nyedhiyakake pas sing mulus lan hypoallergenic kanggo panggunaan sedina muput.
+Digawe saka campuran asetat Mazzucchelli, JIMEI, JINYU, frame iki nggayuh keseimbangan sing canggih antarane kedalaman warna sing semangat lan integritas struktural sing awet. Arsitektur sing entheng lan bantalan irung integrasi nyedhiyakake pas sing mulus lan hypoallergenic kanggo panggunaan sedina muput.
 
 Rakitan engsel 4+3 tong njamin gerakan mekanis sing dipercaya, dilengkapi lensa nilon kanthi kaku dhuwur sing nawakake resistensi dampak sing apik banget.
 

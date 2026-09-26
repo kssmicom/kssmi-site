@@ -5,7 +5,7 @@ slug: "kao-312-acetate-optical-frame"
 itemNo: "KAO-312"
 date: "2026-05-10"
 colors: "Ireng & Ijo Neon & Spark & Havana & Bulus Abrit"
-materials: "Asetat Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
+materials: "Asetat Asetat Premium Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -57,7 +57,7 @@ seoKeywords: "asetat Mazzucchelli, frame optik asetat, produsen kacamata, pabrik
 
 ## Fitur
 
-- **Bahan Kelas Aerospace:** Asetat Mazzucchelli lan JIMEI & JINYU premium ing ngarep lan gagang nyedhiyakake rasa entheng kanti daya tahan sing unggul lan jerone warna sing padhang.
+- **Bahan Kelas Aerospace:** Asetat Mazzucchelli, JIMEI, JINYU premium ing ngarep lan gagang nyedhiyakake rasa entheng kanti daya tahan sing unggul lan jerone warna sing padhang.
 - **Hardware Kuat:** Engsel struktur rivet barrel 4+3 sing dirancang kanti presisi njamin kelancaran operasional jangka panjang lan stabilitas struktur.
 - **Desain Ergonomis:** Bantalan irung sing terintegrasi kanti mulus digawe kanggo kenyamanan sedina muput lan pas sing aman lan ora lunyu ing macem-macem profil rai.
 - **Optik Kinerja Dhuwur:** Lensa nilon sing kuwat kanti pilihan kustomisasi sing jembar kanggo warna lan lapisan supaya selaras kanti estetika merek tartamtu.
@@ -75,7 +75,7 @@ seoKeywords: "asetat Mazzucchelli, frame optik asetat, produsen kacamata, pabrik
 
 ## Ringkesan
 
-Asetat Mazzucchelli lan JIMEI & JINYU sing padhang menehi karakter khas kanggo KAO-312, nyedhiyakake profil entheng sing tetep awet banget.
+Asetat Mazzucchelli, JIMEI, JINYU sing padhang menehi karakter khas kanggo KAO-312, nyedhiyakake profil entheng sing tetep awet banget.
 
 Engsel rivet barrel 4+3 sing dirancang kanti presisi lan bantalan irung sing terintegrasi nyedhiyakake integritas struktur lan kenyamanan ergonomis sing dikarepake saka koleksi optik premium.
 

@@ -5,7 +5,7 @@ slug: "kas-502-acetate-sunglasses"
 itemNo: "KAS-502"
 date: "2026-05-12"
 colors: "Black & Rose & Red-Turtle & Havana & White"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -58,7 +58,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Technical Features
 
-- **Premium Acetate Construction:** Hand-crafted using high-grade Mazzucchelli, JIMEI & JINYU acetate for exceptional durability and a vibrant, long-lasting finish.
+- **Premium Acetate Construction:** Hand-crafted using high-grade Mazzucchelli, JIMEI, JINYU acetate for exceptional durability and a vibrant, long-lasting finish.
 - **Reinforced Hardware:** Robust 4+3 barrel structure hinges providing superior stability and smooth operational performance for daily wear.
 - **Optical Excellence:** Tenacious nylon lenses offering high impact resistance and clear visual acuity with versatile customization options.
 - **Ergonomic Design:** Integrated nose pads and a lightweight acetate frame designed for all-day comfort and a secure fit.
@@ -75,7 +75,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Overview
 
-Crafted from premium Mazzucchelli, JIMEI & JINYU acetate, the KAS-502 offers a vibrant, hand-polished finish that resonates with high-end fashion sensibilities. The material’s inherent durability and lightweight profile provide a sophisticated foundation for premium eyewear portfolios.
+Crafted from premium Mazzucchelli, JIMEI, JINYU acetate, the KAS-502 offers a vibrant, hand-polished finish that resonates with high-end fashion sensibilities. The material’s inherent durability and lightweight profile provide a sophisticated foundation for premium eyewear portfolios.
 
 The frame features a reinforced 4+3 barrel hinge structure for superior stability, complemented by impact-resistant nylon lenses that maintain optical clarity across diverse environments.
 

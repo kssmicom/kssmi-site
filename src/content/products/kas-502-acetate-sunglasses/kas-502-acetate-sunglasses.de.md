@@ -5,7 +5,7 @@ slug: "kas-502-acetate-sunglasses"
 itemNo: "KAS-502"
 date: "2026-05-12"
 colors: "Schwarz & Rosa & Rot-Schildpatt & Havana & Weiß"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetat & Individualisierung"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetat & Individualisierung"
 serviceMode: "OEM & ODM ( Individualisierung )"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -58,7 +58,7 @@ seoKeywords: "Acetat-Sonnenbrillen-Hersteller, Custom OEM Sonnenbrillen, Luxus P
 
 ## Eigenschaften
 
-- **Premium-Acetat-Konstruktion:** Handgefertigt aus hochwertigem Mazzucchelli- und JIMEI & JINYU-Acetat für außergewöhnliche Langlebigkeit und ein lebendiges, langanhaltendes Finish.
+- **Premium-Acetat-Konstruktion:** Handgefertigt aus hochwertigem Mazzucchelli, JIMEI, JINYU-Acetat für außergewöhnliche Langlebigkeit und ein lebendiges, langanhaltendes Finish.
 - **Verstärkte Hardware:** Robuste Scharniere mit 4+3 Barrel-Struktur sorgen für überlegene Stabilität und reibungslose Funktion im täglichen Gebrauch.
 - **Optische Exzellenz:** Widerstandsfähige Nylon-Gläser bieten hohe Stoßfestigkeit und klare Sehschärfe mit vielseitigen Anpassungsmöglichkeiten.
 - **Ergonomisches Design:** Integrierte Nasenpads und ein leichter Acetat-Rahmen, entwickelt für ganztägigen Komfort und einen sicheren Sitz.
@@ -75,7 +75,7 @@ seoKeywords: "Acetat-Sonnenbrillen-Hersteller, Custom OEM Sonnenbrillen, Luxus P
 
 ## Übersicht
 
-Die KAS-502 aus hochwertigem Mazzucchelli- und JIMEI & JINYU-Acetat besticht durch ein lebendiges, handpoliertes Finish, das dem Zeitgeist der High-End-Mode entspricht. Die dem Material innewohnende Langlebigkeit und das leichte Profil bilden eine anspruchsvolle Basis für Premium-Brillenportfolios.
+Die KAS-502 aus hochwertigem Mazzucchelli, JIMEI, JINYU-Acetat besticht durch ein lebendiges, handpoliertes Finish, das dem Zeitgeist der High-End-Mode entspricht. Die dem Material innewohnende Langlebigkeit und das leichte Profil bilden eine anspruchsvolle Basis für Premium-Brillenportfolios.
 
 Der Rahmen verfügt über eine verstärkte 4+3 Barrel-Scharnierstruktur für überlegene Stabilität, ergänzt durch stoßfeste Nylon-Gläser, die in verschiedenen Umgebungen für optische Klarheit sorgen.
 

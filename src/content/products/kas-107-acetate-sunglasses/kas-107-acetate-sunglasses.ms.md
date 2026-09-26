@@ -5,7 +5,7 @@ slug: "kas-107-acetate-sunglasses"
 itemNo: "KAS-107"
 date: "2026-05-06"
 colors: "Hitam & Jelas & Havana & Zaitun"
-materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Disiapkan dengan tangan menggunakan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi untuk menyediakan bingkai yang ringan dan hipoalergenik dengan keceriaan yang luar biasa dan ketahanan jangka panjang.
+- **Bahan Premium:** Disiapkan dengan tangan menggunakan asetat Mazzucchelli, JIMEI, JINYU gred tinggi untuk menyediakan bingkai yang ringan dan hipoalergenik dengan keceriaan yang luar biasa dan ketahanan jangka panjang.
 - **Kejuruteraan Ketepatan:** Menampilkan sistem engsel struktur tong 3+2 yang teguh yang direka untuk kestabilan operasi yang unggul dan ketegangan pembukaan/penutupan yang konsisten.
 - **Optik Berprestasi Tinggi:** Dilengkapi dengan lensa nilon teguh yang menawarkan rintangan hentaman dan kejelasan optik yang sangat baik, dengan pilihan pewarnaan dan salutan tersuai penuh tersedia.
 - **Keselesaan Bersepadu:** Alas hidung bersepadu yang direka secara ergonomik memastikan estetika yang lancar dan kesesuaian yang selamat tanpa tekanan untuk pemakaian harian yang panjang.
@@ -71,7 +71,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Gambaran Keseluruhan
 
-Dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU premium, siluet klasik ini mengimbangi keceriaan bahan yang luar biasa dengan kemasan ringan dan hipoalergenik.
+Dihasilkan daripada asetat Mazzucchelli, JIMEI, JINYU premium, siluet klasik ini mengimbangi keceriaan bahan yang luar biasa dengan kemasan ringan dan hipoalergenik.
 
 Bingkai yang dikisar dengan ketepatan dan engsel tong 3+2 yang teguh memberikan kebolehpercayaan struktur dan operasi sentuhan yang lancar yang diharapkan dalam persekitaran butik mewah.
 

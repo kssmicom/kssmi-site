@@ -5,7 +5,7 @@ slug: "kao-335-acetate-optical-frame"
 itemNo: "KAO-335"
 date: "2026-05-10"
 colors: "Preto, Tartaruga, Verde Transparente com Mel"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda & Design e Fabricação ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -41,7 +41,7 @@ seoKeywords: "armações ópticas de acetato, fabricante de óculos OEM China, �
 
 ## Características
 
-- **Material Premium:** Feito de acetato premium Mazzucchelli e JIMEI & JINYU para fornecer uma armação leve mas durável com profundidade de cor rica e vibrante para um apelo de luxo duradouro.
+- **Material Premium:** Feito de acetato premium Mazzucchelli, JIMEI, JINYU para fornecer uma armação leve mas durável com profundidade de cor rica e vibrante para um apelo de luxo duradouro.
 - **Componentes Mecânicos:** Construído com dobradiças estáveis com estrutura de rebite de 3+2 tambores para garantir um alinhamento de longo prazo e operação suave das hastes sob o uso diário.
 - **Óptica Tenaz:** Equipado com lentes de nylon resistentes que proporcionam resistência superior a impactos e alta clareza óptica, personalizáveis com revestimentos especializados e tonalidades sob medida.
 - **Conforto Integrado:** Possui ponteiras nasicas integradas de acetato combinadas com uma clássica configuração de tamanho 47-24-145 mm para distribuir o peso uniformemente e evitar o deslizamento.
@@ -59,7 +59,7 @@ seoKeywords: "armações ópticas de acetato, fabricante de óculos OEM China, �
 
 ## Visão Geral
 
-A rica profundidade de cor e um acabamento premium polido à mão definem a construção de acetato Mazzucchelli e JIMEI & JINYU do modelo KAO-335. Esta armação unissex de inspiração retrô atende a marcas de óculos premium que buscam um design clássico aliado a um apelo de luxo contemporâneo.
+A rica profundidade de cor e um acabamento premium polido à mão definem a construção de acetato Mazzucchelli, JIMEI, JINYU do modelo KAO-335. Esta armação unissex de inspiração retrô atende a marcas de óculos premium que buscam um design clássico aliado a um apelo de luxo contemporâneo.
 
 As dobradiças com estrutura de rebite de 3+2 tambores projetadas com precisão prendem as hastes, complementadas por ponteiras nasicas integradas e um ajuste ergonômico de 47-24-145 mm que garante um conforto equilibrado durante todo o dia.
 

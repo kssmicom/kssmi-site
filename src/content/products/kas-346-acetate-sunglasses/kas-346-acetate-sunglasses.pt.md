@@ -5,7 +5,7 @@ slug: "kas-346-acetate-sunglasses"
 itemNo: "KAS-346"
 date: "2026-05-12"
 colors: "Preto & Tartaruga & Havana & Oliva"
-materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante óculos de sol acetato, óculos sol OEM personalizado, 
 
 ## Características
 
-- **Material Premium:** Acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que oferece uma armação vibrante, leve e hipoalergênica para uma estética refinada e durabilidade superior.
+- **Material Premium:** Acetato Mazzucchelli, JIMEI, JINYU de alta qualidade que oferece uma armação vibrante, leve e hipoalergênica para uma estética refinada e durabilidade superior.
 - **Hardware de Precisão:** Dobradiças com estrutura de 2+1 tambores projetadas para fornecer uma tensão estável e suavidade operacional a longo prazo.
 - **Óptica Avançada:** Lentes em nylon tenaz que proporcionam clareza excepcional e alta resistência ao impacto com opções de tonalidade e revestimento totalmente personalizáveis.
 - **Conforto Ergonômico:** Plaquetas integradas sem costura projetadas para um ajuste seguro e sem pressão, otimizando a distribuição do peso para uso durante todo o dia.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante óculos de sol acetato, óculos sol OEM personalizado, 
 
 ## Visão Geral
 
-Produzido a partir de acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, o modelo KAS-346 equilibra uma profundidade visual vibrante com uma estrutura leve e hipoalergênica. O material premium oferece uma base de durabilidade duradoura e um acabamento sofisticado adequado para coleções de alto padrão.
+Produzido a partir de acetato Mazzucchelli, JIMEI, JINYU de alta qualidade, o modelo KAS-346 equilibra uma profundidade visual vibrante com uma estrutura leve e hipoalergênica. O material premium oferece uma base de durabilidade duradoura e um acabamento sofisticado adequado para coleções de alto padrão.
 
 Projetada com dobradiças de 2+1 tambores e plaquetas integradas sem costura, a armação garante um movimento mecânico preciso e um ajuste ergonômico e sem pressão.
 

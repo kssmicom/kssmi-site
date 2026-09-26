@@ -5,7 +5,7 @@ slug: "kas-128-acetate-sunglasses"
 itemNo: "KAS-128"
 date: "2026-05-09"
 colors: "Siyah & Beyaz & Yeşil-Mermer & Mavi-Mermer & Siyah-Mermer & Yakut"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "OEM & ODM ( Özelleştirme )"
 moq: "300 adet/model (100adet/renk)"
 
@@ -62,7 +62,7 @@ seoKeywords: "premium asetat güneş gözlüğü üreticisi, KAS-128 özel OEM g
 
 ## Özellikler
 
-- **Premium Asetat:** Olağanüstü dayanıklılık ve canlı, yüksek parlaklıkta bir yüzey sunan, dünyaca ünlü Mazzucchelli ve JIMEI & JINYU asetattan üretilmiştir.
+- **Premium Asetat:** Olağanüstü dayanıklılık ve canlı, yüksek parlaklıkta bir yüzey sunan, dünyaca ünlü Mazzucchelli, JIMEI, JINYU asetattan üretilmiştir.
 - **Hassas Menteşeler:** Üstün stabilite ve uzun süreli çalışma pürüzsüzlüğü için tasarlanmış sağlam 4+3 menteşe yapısı.
 - **Yüksek Performanslı Optikler:** Geniş özelleştirme seçenekleriyle mükemmel netlik ve darbe direnci sağlayan dayanıklı naylon lensler.
 - **Entegre Konfor:** Uzun süreli kullanım sırasında güvenli, hipoalerjenik ve dengeli bir uyum için tasarlanmış hassas kalıplanmış entegre burun tamponları.
@@ -79,7 +79,7 @@ seoKeywords: "premium asetat güneş gözlüğü üreticisi, KAS-128 özel OEM g
 
 ## Genel Bakış
 
-Mazzucchelli ve JIMEI & JINYU asetat, benzersiz uniseks estetiğiyle modern lüksü tanımlayan cesur, yüksek parlaklıkta bir silüette bir araya geliyor.
+Mazzucchelli, JIMEI, JINYU asetat, benzersiz uniseks estetiğiyle modern lüksü tanımlayan cesur, yüksek parlaklıkta bir silüette bir araya geliyor.
 
 Hassas mühendislik ürünü 4+3 menteşeler ve entegre burun tamponları, kullanıcı için olağanüstü stabilite ve uzun süreli konfor sağlar.
 

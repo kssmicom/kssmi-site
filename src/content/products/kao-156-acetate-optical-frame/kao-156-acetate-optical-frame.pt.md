@@ -5,7 +5,7 @@ slug: "kao-156-acetate-optical-frame"
 itemNo: "KAO-156"
 date: "2026-05-10"
 colors: "Azul Floral com Magenta"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -42,7 +42,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, produção de óculo
 
 ## Características
 
-- **Composição de Materiais Premium:** Acetato Mazzucchelli e JIMEI & JINYU polido à mão, oferecendo um acabamento profundo e vibrante e durabilidade excepcional.
+- **Composição de Materiais Premium:** Acetato Mazzucchelli, JIMEI, JINYU polido à mão, oferecendo um acabamento profundo e vibrante e durabilidade excepcional.
 - **Engenharia de Armação Refinada:** Construção da armação e das hastes em acetato premium leve, projetada para uma estética de alto padrão e uso resistente a longo prazo.
 - **Ferragens Duráveis:** Dobradiças com estrutura de rebite de barril 2+1 projetadas com precisão, garantindo suavidade operacional consistente e estabilidade estrutural.
 - **Tecnologia de Lentes Avançada:** Lentes de nylon de alta tenacidade que proporcionam clareza superior com amplas opções de revestimento e tonalidade personalizadas.
@@ -59,7 +59,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, produção de óculo
 
 ## Visão Geral
 
-Tons de Azul Floral com Magenta encontram a profundidade superior do acetato Mazzucchelli e JIMEI & JINYU polido à mão, criando uma identidade visual vibrante que ressoa com os padrões da moda de luxo.
+Tons de Azul Floral com Magenta encontram a profundidade superior do acetato Mazzucchelli, JIMEI, JINYU polido à mão, criando uma identidade visual vibrante que ressoa com os padrões da moda de luxo.
 
 As dobradiças de precisão com rebite de barril 2+1 ancoram a armação leve, garantindo uma experiência tátil consistente e suave que complementa as plaquetas nasais integradas ergonômicas.
 

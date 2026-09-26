@@ -5,7 +5,7 @@ slug: "kas-113-acetate-sunglasses"
 itemNo: "KAS-113"
 date: "2026-05-09"
 colors: "Preto & Tartaruga & Creme & Azul"
-materials: "Acetato Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
+materials: "Acetato Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Características Técnicas
 
-- **Composição de Material Premium:** Feito à mão com acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, proporcionando um acabamento leve, durável e vibrante para uma sensação de luxo.
+- **Composição de Material Premium:** Feito à mão com acetato Mazzucchelli, JIMEI, JINYU de alta qualidade, proporcionando um acabamento leve, durável e vibrante para uma sensação de luxo.
 - **Engenharia de Precisão:** Equipado com uma dobradiça robusta de estrutura de 3+2 tambores projetada para suavidade operacional de longo prazo e estabilidade da armação.
 - **Óptica de Alta Definição:** Possui lentes de nylon tenazes que oferecem clareza superior e resistência a impactos, com amplas opções de personalização para tinturas e revestimentos.
 - **Design Ergonômico:** Plaquetas nasais integradas e um perfil equilibrado de 51-23-145mm garantindo um ajuste seguro e hipoalergênico para diversos formatos de rosto.
@@ -72,7 +72,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Visão Geral
 
-Combinando o vibrante acetato Mazzucchelli e JIMEI & JINYU, este modelo oferece uma estética ousada e unissex que equilibra o classicismo atemporal com a sensibilidade da moda moderna. Seu acabamento artesanal único garante uma sensação premium que ressoa com as casas de moda de luxo e marcas boutique.
+Combinando o vibrante acetato Mazzucchelli, JIMEI, JINYU, este modelo oferece uma estética ousada e unissex que equilibra o classicismo atemporal com a sensibilidade da moda moderna. Seu acabamento artesanal único garante uma sensação premium que ressoa com as casas de moda de luxo e marcas boutique.
 
 As dobradiças de 3+2 tambores projetadas com precisão e um perfil ergonômico de 51-23-145mm garantem a estabilidade da armação ao longo do tempo e o conforto durante todo o dia para diversas formas de rosto.
 

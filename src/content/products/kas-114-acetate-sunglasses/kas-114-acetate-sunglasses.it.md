@@ -5,7 +5,7 @@ slug: "kas-114-acetate-sunglasses"
 itemNo: "KAS-114"
 date: "2026-05-09"
 colors: "Nero & Champagne & Giallo"
-materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -50,7 +50,7 @@ seoKeywords: "produttore occhiali da sole in acetato, occhiali da sole unisex OE
 
 ## Caratteristiche Tecniche
 
-- **Materiale Premium:** Costruito con acetato Mazzucchelli e JIMEI & JINYU di alta qualità per fornire una struttura leggera e resistente con un fascino visivo vibrante.
+- **Materiale Premium:** Costruito con acetato Mazzucchelli, JIMEI, JINYU di alta qualità per fornire una struttura leggera e resistente con un fascino visivo vibrante.
 - **Hardware Durevole:** Progettato con robuste cerniere a struttura 3+2 che garantiscono una fluidità operativa a lungo termine e stabilità strutturale.
 - **Ottica di Precisione:** Dotato di tenaci lenti in nylon che offrono una chiarezza superiore e ampie opzioni di personalizzazione per collezioni premium.
 - **Comfort Senza Soluzione di Continuità:** Naselli integrati progettati per offrire una vestibilità sicura ed ergonomica per un uso prolungato per tutto il giorno.
@@ -68,7 +68,7 @@ seoKeywords: "produttore occhiali da sole in acetato, occhiali da sole unisex OE
 
 ## Panoramica
 
-Realizzato per i mercati del lusso che richiedono sia presenza estetica che integrità strutturale, il modello KAS-114 utilizza acetato Mazzucchelli e JIMEI & JINYU di altissimo livello per ottenere una costruzione vibrante e leggera.
+Realizzato per i mercati del lusso che richiedono sia presenza estetica che integrità strutturale, il modello KAS-114 utilizza acetato Mazzucchelli, JIMEI, JINYU di altissimo livello per ottenere una costruzione vibrante e leggera.
 
 Progettata con robuste cerniere a struttura 3+2 e naselli integrati, l'audace montatura unisex garantisce un'eccezionale fluidità operativa a lungo termine e una vestibilità sicura ed ergonomica.
 

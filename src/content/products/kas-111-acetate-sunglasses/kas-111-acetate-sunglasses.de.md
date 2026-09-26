@@ -5,7 +5,7 @@ slug: "kas-111-acetate-sunglasses"
 itemNo: "KAS-111"
 date: "2026-05-09"
 colors: "Bonbonrot & Rosa Schildpatt & Cremeweiß & Schwarz"
-materials: "Premium Mazzucchelli & JIMEI & JINYU-Acetat & Individualisierung"
+materials: "Premium Mazzucchelli, JIMEI, JINYU-Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100Stk/Farbe)"
 
@@ -54,7 +54,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, individuelle OEM-Sonnenbrillen, k
 
 ## Eigenschaften
 
-- **Premium-Rahmenmaterial:** Fachmännisch gefertigt aus hochwertigem Mazzucchelli- und JIMEI & JINYU-Acetat, bietet ein leichtes Gefühl mit außergewöhnlicher Haltbarkeit und lebendiger Farbtiefe.
+- **Premium-Rahmenmaterial:** Fachmännisch gefertigt aus hochwertigem Mazzucchelli, JIMEI, JINYU-Acetat, bietet ein leichtes Gefühl mit außergewöhnlicher Haltbarkeit und lebendiger Farbtiefe.
 - **Präzisionsscharniere:** Robuste 3+2 Barrel-Scharniere, entwickelt für langfristige Leichtgängigkeit und strukturelle Stabilität.
 - **Hochleistungsoptik:** Widerstandsfähige Nylonlinsen für überlegene Klarheit und Stoßfestigkeit, mit umfangreichen Optionen für individuelle Tönungen.
 - **Ergonomischer Komfort:** Integrierte Nasenpads für eine nahtlose, hypoallergene Passform, die Stabilität und ganztägigen Komfort gewährleistet.
@@ -71,7 +71,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, individuelle OEM-Sonnenbrillen, k
 
 ## Übersicht
 
-Lebendige Farbtiefe und erstklassige strukturelle Integrität treffen beim KAS-111 aufeinander, einem Modell aus hochwertigem Mazzucchelli- und JIMEI & JINYU-Acetat, das eine kühne, Vintage-inspirierte Ästhetik verkörpert.
+Lebendige Farbtiefe und erstklassige strukturelle Integrität treffen beim KAS-111 aufeinander, einem Modell aus hochwertigem Mazzucchelli, JIMEI, JINYU-Acetat, das eine kühne, Vintage-inspirierte Ästhetik verkörpert.
 
 Die strukturelle Stabilität wird durch robuste 3+2 Barrel-Scharniere aufrechterhalten, während die integrierten Nasenpads eine nahtlose, ergonomische Passform für verschiedene Gesichtsformen bieten.
 

@@ -5,7 +5,7 @@ slug: "kas-346-acetate-sunglasses"
 itemNo: "KAS-346"
 date: "2026-05-12"
 colors: "Schwarz & Schildpatt & Havanna & Olive"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetat & Individualisierung"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) ( Individualisierung )"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetat sonnenbrillen hersteller, custom OEM sonnenbrillen, luxus p
 
 ## Eigenschaften
 
-- **Premium-Material:** Hochwertiges Mazzucchelli- und JIMEI & JINYU-Acetat, das einen lebendigen, leichten und hypoallergenen Rahmen für eine raffinierte Ästhetik und überlegene Haltbarkeit bietet.
+- **Premium-Material:** Hochwertiges Mazzucchelli, JIMEI, JINYU-Acetat, das einen lebendigen, leichten und hypoallergenen Rahmen für eine raffinierte Ästhetik und überlegene Haltbarkeit bietet.
 - **Präzisions-Hardware:** Spezielle 2+1 Fass-Struktur Scharniere sorgen für eine stabile Scharnierspannung und langfristige Laufruhe.
 - **Fortschrittliche Optik:** Widerstandsfähige Nylon-Gläser liefern außergewöhnliche Klarheit und hohe Stoßfestigkeit mit vollständig anpassbaren Tönungs- und Beschichtungsoptionen.
 - **Ergonomischer Komfort:** Nahtlos integrierte Nasenpads, die für einen sicheren, druckfreien Sitz und eine optimierte Gewichtsverteilung über den ganzen Tag entwickelt wurden.
@@ -71,7 +71,7 @@ seoKeywords: "acetat sonnenbrillen hersteller, custom OEM sonnenbrillen, luxus p
 
 ## Übersicht
 
-Gefertigt aus hochwertigem Mazzucchelli- und JIMEI & JINYU-Acetat, bietet die KAS-346 eine ausgewogene Kombination aus lebendiger visueller Tiefe und einer leichten, hypoallergenen Struktur. Das Premium-Material bildet die Grundlage für dauerhafte Haltbarkeit und ein anspruchsvolles Finish, das ideal für High-End-Kollektionen ist.
+Gefertigt aus hochwertigem Mazzucchelli, JIMEI, JINYU-Acetat, bietet die KAS-346 eine ausgewogene Kombination aus lebendiger visueller Tiefe und einer leichten, hypoallergenen Struktur. Das Premium-Material bildet die Grundlage für dauerhafte Haltbarkeit und ein anspruchsvolles Finish, das ideal für High-End-Kollektionen ist.
 
 Ausgestattet mit 2+1 Fass-Scharnieren und nahtlos integrierten Nasenpads gewährleistet der Rahmen präzise mechanische Bewegungen und einen ergonomischen, druckfreien Sitz.
 

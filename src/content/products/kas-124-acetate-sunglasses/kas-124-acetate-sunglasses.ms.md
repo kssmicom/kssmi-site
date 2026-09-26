@@ -5,7 +5,7 @@ slug: "kas-124-acetate-sunglasses"
 itemNo: "KAS-124"
 date: "2026-05-09"
 colors: "Hitam & Tanduk Kerbau & Kura-kura"
-materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Penyesuaian"
+materials: "Premium Asetat Mazzucchelli, JIMEI, JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100unit/warna)"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -46,7 +46,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, kilang cermin mata hitam OEM t
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Binaan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi yang menawarkan kemasan gilapan tangan yang menyerlah dengan ketahanan luar biasa.
+- **Bahan Premium:** Binaan asetat Mazzucchelli, JIMEI, JINYU gred tinggi yang menawarkan kemasan gilapan tangan yang menyerlah dengan ketahanan luar biasa.
 - **Perkakasan Tahan Lama:** Engsel struktur tong 3+2 yang teguh, direka dengan ketepatan untuk kelancaran operasi jangka panjang dan kestabilan bingkai.
 - **Optik Canggih:** Lensa nylon tahan lasak yang memberikan rintangan hentaman dan kejelasan optik yang unggul dengan pilihan salutan tersuai yang luas.
 - **Keselesaan Ergonomik:** Bingkai ringan dengan alas hidung bersepadu yang direka untuk pemakaian yang selamat dan bebas tekanan semasa penggunaan harian yang lama.
@@ -64,7 +64,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, kilang cermin mata hitam OEM t
 
 ## Gambaran Keseluruhan
 
-Dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU premium, model ini menampilkan kemasan gilapan tangan yang menonjolkan siluetnya yang berani dan berinspirasikan vintage. Bingkai ini mengimbangi estetika unisex mewah dengan kualiti menyerlah dan ringan yang penting untuk kacamata fesyen mewah.
+Dihasilkan daripada asetat Mazzucchelli, JIMEI, JINYU premium, model ini menampilkan kemasan gilapan tangan yang menonjolkan siluetnya yang berani dan berinspirasikan vintage. Bingkai ini mengimbangi estetika unisex mewah dengan kualiti menyerlah dan ringan yang penting untuk kacamata fesyen mewah.
 
 Engsel tong 3+2 yang direka dengan ketepatan dan lensa nylon tahan lasak memastikan pemakaian yang selamat dan prestasi optik yang luar biasa merentasi semua kelompok pengeluaran.
 

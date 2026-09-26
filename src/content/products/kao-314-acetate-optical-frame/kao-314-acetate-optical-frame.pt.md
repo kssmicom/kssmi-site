@@ -5,7 +5,7 @@ slug: "kao-314-acetate-optical-frame"
 itemNo: "KAO-314"
 date: "2026-05-10"
 colors: "Preto & Verde Neon & Tartaruga & Champanhe & Fumaça"
-materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -58,7 +58,7 @@ seoKeywords: "armações ópticas de acetato, óculos ópticos personalizados, f
 
 ## Características
 
-- **Construção em Material Premium:** Frontal e hastes de acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que oferecem uma sensação de leveza com durabilidade superior e profundidade de cor vibrante.
+- **Construção em Material Premium:** Frontal e hastes de acetato Mazzucchelli, JIMEI, JINYU de alta qualidade que oferecem uma sensação de leveza com durabilidade superior e profundidade de cor vibrante.
 - **Hardware Robusto:** Dobradiças com estrutura de rebite de 4+3 barris projetadas com precisão, garantindo suavidade operacional a longo prazo e estabilidade estrutural.
 - **Design Ergonômico:** Ponteiras nasicas perfeitamente integradas, criadas para conforto durante todo o dia e um ajuste seguro e antiderrapante em vários perfis faciais.
 - **Ótica de Alto Desempenho:** Lentes de nylon tenaz com amplas opções de personalização para tonalidades e revestimentos para se alinhar à estética específica da marca.
@@ -76,7 +76,7 @@ seoKeywords: "armações ópticas de acetato, óculos ópticos personalizados, f
 
 ## Visão Geral
 
-Combinando acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, este modelo alcança um equilíbrio sofisticado entre profundidade de cor vibrante e durabilidade estrutural.
+Combinando acetato Mazzucchelli, JIMEI, JINYU de alta qualidade, este modelo alcança um equilíbrio sofisticado entre profundidade de cor vibrante e durabilidade estrutural.
 
 As dobradiças de rebite de 4+3 barris projetadas com precisão garantem suavidade operacional duradoura, enquanto as ponteiras nasicas integradas proporcionam um ajuste seguro e ergonômico.
 

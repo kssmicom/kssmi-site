@@ -5,7 +5,7 @@ slug: "kas-101-acetate-sunglasses"
 itemNo: "KAS-101"
 date: "2026-05-05"
 colors: "Bianco & Panda & Leopardo & Havana & Trasparente & Nero"
-materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -61,7 +61,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali da sole OEM personal
 ---
 
 ## Caratteristiche
-- **Materiale Premium:** Costruzione in acetato Mazzucchelli e JIMEI & JINYU di alta qualità che offre una sensazione di leggerezza con una profondità di colore vibrante e duratura.
+- **Materiale Premium:** Costruzione in acetato Mazzucchelli, JIMEI, JINYU di alta qualità che offre una sensazione di leggerezza con una profondità di colore vibrante e duratura.
 - **Costruzione Rinforzata:** Aste in acetato resistenti integrate con cerniere a struttura 3+2 barili progettate per una maggiore integrità strutturale e fluidità operativa.
 - **Ottica ad Alta Definizione:** Lenti in nylon tenace che offrono chiarezza e resistenza agli urti superiori, con ampie opzioni di personalizzazione per tinte e rivestimenti.
 - **Design Ergonomico:** Naselli integrati e dimensioni 58-17-143mm su misura progettati per una vestibilità sicura e confortevole che mantiene il profilo estetico elegante della montatura.
@@ -78,7 +78,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali da sole OEM personal
 
 ## Panoramica
 
-I vibranti acetati Mazzucchelli e JIMEI & JINYU conferiscono al KAS-101 la sua sorprendente profondità di colore e la sua durata leggera, posizionandolo come un elemento fondamentale per i portfolio di occhiali all'avanguardia.
+I vibranti acetati Mazzucchelli, JIMEI, JINYU conferiscono al KAS-101 la sua sorprendente profondità di colore e la sua durata leggera, posizionandolo come un elemento fondamentale per i portfolio di occhiali all'avanguardia.
 
 Ogni montatura incorpora cerniere a 3+2 barili progettate con precisione e un profilo ergonomico per fornire una forza strutturale costante e un comfort di utilizzo a lungo termine.
 

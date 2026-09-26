@@ -5,7 +5,7 @@ slug: "kas-143-acetate-sunglasses"
 itemNo: "KAS-143"
 date: "2026-05-09"
 colors: "Ireng & Shampanye & Bulus & Ijo"
-materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi)"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata OEM kustom, rumah mode me
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU berkualitas dhuwur sing nawakake estetika padhang kanti daya tahan entheng lan awet kanggo tampilan ritel premium.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli, JIMEI, JINYU berkualitas dhuwur sing nawakake estetika padhang kanti daya tahan entheng lan awet kanggo tampilan ritel premium.
 - **Hardware Presisi:** Engsel struktur 4+3 barrel sing kuwat dirancang kanggo kelancaran operasional sing konsisten lan umur frame sing luar biasa.
 - **Optik Apik:** Lensa nilon kuat sing nyedhiyakake resistensi dampak lan kajelasan sing unggul kanti pilihan lapisan kustom sing jembar kanggo nyukupi standar merek tartamtu.
 - **Kenyamanan Integrasi:** Bantalan irung integrasi sing dicetak tanpa sambungan dirancang kanggo pas sing aman lan hypoallergenic sing njamin kepuasan sing nganggo jangka panjang.
@@ -71,7 +71,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata OEM kustom, rumah mode me
 
 ## Ringkesan
 
-Digawe saka asetat Mazzucchelli lan JIMEI & JINYU premium, KAS-143 mujudake keseimbangan estetika vintage lan daya tahan modern sing apik. Palet warna sing padhang lan siluet unisex sing canggih nyedhiyakake dhasar sing langgeng kanggo koleksi fashion kelas dhuwur.
+Digawe saka asetat Mazzucchelli, JIMEI, JINYU premium, KAS-143 mujudake keseimbangan estetika vintage lan daya tahan modern sing apik. Palet warna sing padhang lan siluet unisex sing canggih nyedhiyakake dhasar sing langgeng kanggo koleksi fashion kelas dhuwur.
 
 Engsel 4+3 barrel sing dirancang kanthi presisi lan bantalan irung integrasi njamin integritas struktural sing awet lan pas sing aman lan nyaman kanggo sing nganggo.
 

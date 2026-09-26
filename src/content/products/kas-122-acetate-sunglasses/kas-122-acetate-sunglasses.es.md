@@ -5,7 +5,7 @@ slug: "kas-122-acetate-sunglasses"
 itemNo: "KAS-122"
 date: "2026-05-09"
 colors: "Negro & Habana"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalización"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -46,7 +46,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas OEM personalizadas, g
 
 ## Características
 
-- **Materiales Premium:** Construcción en acetato de alta calidad Mazzucchelli y JIMEI & JINYU que ofrece una sensación de ligereza, durabilidad excepcional y una profundidad de color vibrante.
+- **Materiales Premium:** Construcción en acetato de alta calidad Mazzucchelli, JIMEI, JINYU que ofrece una sensación de ligereza, durabilidad excepcional y una profundidad de color vibrante.
 - **Herrajes de Precisión:** Robustas bisagras con estructura de barril 3+2 diseñadas para una suavidad operativa constante y estabilidad del marco a largo plazo.
 - **Óptica Superior:** Lentes de nylon tenaz que proporcionan una excelente resistencia al impacto con opciones de tinte y recubrimiento totalmente personalizables.
 - **Comodidad Ergonómica:** Plaquetas nasales integradas sin costuras diseñadas para un ajuste seguro y sin presión, mejorando la comodidad durante todo el día.
@@ -64,7 +64,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas OEM personalizadas, g
 
 ## Descripción General
 
-Fabricado con acetato premium Mazzucchelli y JIMEI & JINYU, este marco de inspiración vintage equilibra una sensación ligera y ergonómica con perfiles de color profundos y vibrantes.
+Fabricado con acetato premium Mazzucchelli, JIMEI, JINYU, este marco de inspiración vintage equilibra una sensación ligera y ergonómica con perfiles de color profundos y vibrantes.
 
 Un robusto sistema de bisagras de barril 3+2 proporciona la base estructural para una suavidad constante y durabilidad a largo plazo.
 

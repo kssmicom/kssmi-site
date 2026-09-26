@@ -5,7 +5,7 @@ slug: "kas-129-acetate-sunglasses"
 itemNo: "KAS-129"
 date: "2026-05-09"
 colors: "Black & Ruby & Royal-Blue & Purple-Marble & Pearl-Marble"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -58,7 +58,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Technical Features
 
-- **Premium Acetate:** Hand-selected Mazzucchelli, JIMEI & JINYU acetate frame and temples providing a lightweight, vibrant, and hypoallergenic wearing experience.
+- **Premium Acetate:** Hand-selected Mazzucchelli, JIMEI, JINYU acetate frame and temples providing a lightweight, vibrant, and hypoallergenic wearing experience.
 - **Durable Hardware:** Precision-engineered 4+3 barrel structure hinges designed for maximum stability and lifelong operational smoothness.
 - **High-Performance Lenses:** Tenacious nylon lens technology offering superior impact resistance and optical clarity with full customization options.
 - **Integrated Comfort:** Ergonomically designed integrated nose pads ensuring a stable, slip-resistant fit for diverse facial profiles.
@@ -75,7 +75,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Overview
 
-Luxury fashion houses seeking a distinct visual edge find it in the KAS-129, which pairs hand-selected Mazzucchelli, JIMEI & JINYU acetate with a bold, unisex silhouette.
+Luxury fashion houses seeking a distinct visual edge find it in the KAS-129, which pairs hand-selected Mazzucchelli, JIMEI, JINYU acetate with a bold, unisex silhouette.
 
 This design integrates a durable 4+3 barrel hinge system and ergonomic nose pads to ensure consistent performance and refined comfort across high-volume use.
 

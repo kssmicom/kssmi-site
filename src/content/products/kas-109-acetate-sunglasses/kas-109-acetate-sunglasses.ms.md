@@ -5,7 +5,7 @@ slug: "kas-109-acetate-sunglasses"
 itemNo: "KAS-109"
 date: "2026-05-07"
 colors: "Hitam & Lut Sinar & Kura-kura & Zaitun"
-materials: "Asetat Mazzucchelli Premium & JIMEI & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100unit/warna)"
 
@@ -58,7 +58,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat premium, kilang eyewear OEM ter
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Dibina daripada asetat Mazzucchelli dan JIMEI & JINYU bertaraf dunia, memberikan ketahanan luar biasa dan kedalaman warna yang mendalam serta ceria.
+- **Bahan Premium:** Dibina daripada asetat Mazzucchelli, JIMEI, JINYU bertaraf dunia, memberikan ketahanan luar biasa dan kedalaman warna yang mendalam serta ceria.
 - **Perkakasan Teguh:** Dilengkapi dengan engsel 3+2 baril yang direka secara mekanikal untuk kelancaran operasi jangka panjang dan kestabilan struktur.
 - **Optik Berimpak Tinggi:** Menampilkan kanta nilon teguh yang memberikan kejelasan unggul dan rintangan impak, dengan pilihan salutan tersuai yang meluas tersedia.
 - **Keselesaan Lancar:** Direka dengan alas hidung bersepadu yang menawarkan estetika minimalis yang kemas sambil memastikan kesesuaian yang stabil dan selesa.
@@ -76,7 +76,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat premium, kilang eyewear OEM ter
 
 ## Gambaran Keseluruhan
 
-Dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU bertaraf dunia, KAS-109 merangkumi estetika berinspirasikan vintaj yang berani yang bergema dengan trend fesyen kontemporari. Kedalaman warna bahan yang mendalam dan ceria serta kemasan ketelusan tinggi menyediakan asas yang canggih untuk koleksi kacamata premium.
+Dihasilkan daripada asetat Mazzucchelli, JIMEI, JINYU bertaraf dunia, KAS-109 merangkumi estetika berinspirasikan vintaj yang berani yang bergema dengan trend fesyen kontemporari. Kedalaman warna bahan yang mendalam dan ceria serta kemasan ketelusan tinggi menyediakan asas yang canggih untuk koleksi kacamata premium.
 
 Alas hidung bersepadu dan engsel 3+2 baril yang direka secara mekanikal memastikan kesesuaian yang lancar dan kestabilan struktur yang berkekalan, mengimbangi prestasi teguh dengan siluet unisex yang ringan.
 

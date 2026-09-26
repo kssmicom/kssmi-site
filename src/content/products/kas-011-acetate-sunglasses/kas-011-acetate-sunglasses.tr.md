@@ -5,7 +5,7 @@ slug: "kas-011-acetate-sunglasses"
 itemNo: "KAS-011"
 date: "2026-05-10"
 colors: "Havana & Siyah & Beyaz"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (renk başına 100 adet)"
 
@@ -50,7 +50,7 @@ seoKeywords: "KAS-011 asetat güneş gözlüğü üreticisi, özel lüks gözlü
 
 ## Özellikler
 
-- **Premium Malzeme:** Üstün marka değerini artıran hafif, dayanıklı ve canlı bir görünüm sağlamak için yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetattan üretilmiştir.
+- **Premium Malzeme:** Üstün marka değerini artıran hafif, dayanıklı ve canlı bir görünüm sağlamak için yüksek kaliteli Mazzucchelli, JIMEI, JINYU asetattan üretilmiştir.
 - **Dayanıklı Donanım:** Uzun süreli operasyonel pürüzsüzlük ve yapısal bütünlük için tasarlanmış sağlam bir 4+3 barrel yapılı menteşe sistemine sahiptir.
 - **Yüksek Performanslı Optikler:** Kapsamlı özel renklendirme ve kaplama seçenekleriyle üstün netlik ve darbe direnci sunan dayanıklı naylon lenslerle donatılmıştır.
 - **Entegre Ergonomi:** Çeşitli yüz yapıları için kusursuz bir estetik ve güvenilir konfor sağlamak üzere entegre burun tamponları ile tasarlanmıştır.
@@ -68,7 +68,7 @@ seoKeywords: "KAS-011 asetat güneş gözlüğü üreticisi, özel lüks gözlü
 
 ## Genel Bakış
 
-Yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat, KAS-011'in çekirdeğini oluşturarak lüks gözlük markalarının sofistike gereksinimleriyle uyumlu, canlı ve hafif bir çerçeve yaratır.
+Yüksek kaliteli Mazzucchelli, JIMEI, JINYU asetat, KAS-011'in çekirdeğini oluşturarak lüks gözlük markalarının sofistike gereksinimleriyle uyumlu, canlı ve hafif bir çerçeve yaratır.
 
 4+3 barrel menteşe sisteminin ve dikişsiz burun tamponlarının entegrasyonu, çeşitli üretim süreçlerinde yapısal uzun ömür ve ergonomik güvenilirlik sağlar.
 

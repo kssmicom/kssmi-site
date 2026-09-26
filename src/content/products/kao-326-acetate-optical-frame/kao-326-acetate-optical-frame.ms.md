@@ -5,7 +5,7 @@ slug: "kao-326-acetate-optical-frame"
 itemNo: "KAO-326"
 date: "2026-05-10"
 colors: "Hitam, Kura-kura, Teal dengan Havana"
-materials: "Asetat Mazzucchelli & JIMEI & JINYU Premium & Penyesuaian"
+materials: "Asetat Mazzucchelli, JIMEI, JINYU Premium & Penyesuaian"
 serviceMode: "OEM & ODM (Penyesuaian)"
 moq: "300 unit/model (100unit/Warna)"
 
@@ -50,7 +50,7 @@ seoKeywords: "bingkai optik asetat retro, pengeluar kacamata asetat tersuai, bin
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Diperbuat daripada asetat premium Mazzucchelli dan JIMEI & JINYU, menawarkan struktur yang ringan namun sangat tahan lasak dengan kedalaman warna yang menarik dan tahan lama.
+- **Bahan Premium:** Diperbuat daripada asetat premium Mazzucchelli, JIMEI, JINYU, menawarkan struktur yang ringan namun sangat tahan lasak dengan kedalaman warna yang menarik dan tahan lama.
 - **Perkakasan Kejuruteraan:** Engsel rivet barrel 3+2 yang sangat boleh dipercayai, memberikan pergerakan temple yang stabil dan lancar dengan pilihan engsel spring tersuai.
 - **Optik Lasak:** Lensa nilon berkekuatan tinggi yang memberikan kejelasan dan rintangan hentaman yang cemerlang dengan pilihan salutan tempahan khas sepenuhnya.
 - **Keselesaan Bersepadu:** Alas hidung bersepadu yang lancar digabungkan dengan geometri 47-20-148mm tersuai untuk memberikan pemakaian yang seimbang dan bebas gelincir.
@@ -67,7 +67,7 @@ seoKeywords: "bingkai optik asetat retro, pengeluar kacamata asetat tersuai, bin
 
 ## Gambaran Keseluruhan
 
-Bagi jenama kacamata yang mengutamakan kedalaman warna yang menarik dan ketahanan struktur, bingkai optik berinspirasikan retro ini diukir daripada asetat premium Mazzucchelli dan JIMEI & JINYU.
+Bagi jenama kacamata yang mengutamakan kedalaman warna yang menarik dan ketahanan struktur, bingkai optik berinspirasikan retro ini diukir daripada asetat premium Mazzucchelli, JIMEI, JINYU.
 
 Direka untuk pemakaian jangka panjang yang boleh dipercayai, ia menyepadukan sistem engsel rivet barrel 3+2 yang kukuh dan alas hidung yang lancar untuk memastikan pemakaian yang seimbang dan bebas gelincir.
 

@@ -5,7 +5,7 @@ slug: "kas-111-acetate-sunglasses"
 itemNo: "KAS-111"
 date: "2026-05-09"
 colors: "Rojo Caramelo & Tortuga Rosa & Blanco Crema & Negro"
-materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalización"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100uds/color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante gafas de sol acetato, gafas de sol OEM personalizadas, 
 
 ## Características
 
-- **Material del Marco Premium:** Fabricado por expertos con acetato Mazzucchelli y JIMEI & JINYU de alta calidad, proporcionando una sensación ligera con una durabilidad excepcional y una vibrante profundidad de color.
+- **Material del Marco Premium:** Fabricado por expertos con acetato Mazzucchelli, JIMEI, JINYU de alta calidad, proporcionando una sensación ligera con una durabilidad excepcional y una vibrante profundidad de color.
 - **Bisagras de Precisión:** Bisagras robustas de estructura de barril 3+2 diseñadas para una suavidad operativa a largo plazo y estabilidad estructural.
 - **Óptica de Alto Rendimiento:** Lentes de nylon tenaces que proporcionan una claridad y resistencia al impacto superiores con amplias opciones de tintado personalizado disponibles.
 - **Confort Ergonómico:** Almohadillas nasales integradas diseñadas para un ajuste sin costuras e hipoalergénico que garantiza estabilidad y comodidad durante todo el día.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante gafas de sol acetato, gafas de sol OEM personalizadas, 
 
 ## Resumen
 
-La vibrante profundidad del color y la integridad estructural premium se unen en el KAS-111, un modelo fabricado con acetato Mazzucchelli y JIMEI & JINYU de alta calidad para capturar una estética audaz e inspirada en lo vintage.
+La vibrante profundidad del color y la integridad estructural premium se unen en el KAS-111, un modelo fabricado con acetato Mazzucchelli, JIMEI, JINYU de alta calidad para capturar una estética audaz e inspirada en lo vintage.
 
 La estabilidad estructural se mantiene a través de robustas bisagras de barril 3+2, mientras que las almohadillas nasales integradas ofrecen un ajuste ergonómico y sin costuras para diversas formas de cara.
 

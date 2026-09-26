@@ -5,7 +5,7 @@ slug: "kas-122-acetate-sunglasses"
 itemNo: "KAS-122"
 date: "2026-05-09"
 colors: "Preto & Havana"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -46,7 +46,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos OEM personalizado
 
 ## Características
 
-- **Materiais Premium:** Construção em acetato de alta qualidade Mazzucchelli e JIMEI & JINYU que oferece leveza, durabilidade excepcional e uma profundidade de cor vibrante.
+- **Materiais Premium:** Construção em acetato de alta qualidade Mazzucchelli, JIMEI, JINYU que oferece leveza, durabilidade excepcional e uma profundidade de cor vibrante.
 - **Ferragens de Precisão:** Dobradiças com estrutura de barril 3+2 robustas, projetadas para suavidade operacional constante e estabilidade da armação a longo prazo.
 - **Ótica Superior:** Lentes de nylon tenaz proporcionando excelente resistência ao impacto com opções de tonalidade e revestimento totalmente personalizáveis.
 - **Conforto Ergonômico:** Ponteiras nasicas integradas sem costura, projetadas para um ajuste seguro e sem pressão, para maior conforto durante todo o dia.
@@ -64,7 +64,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos OEM personalizado
 
 ## Visão Geral
 
-Produzida a partir de acetato premium Mazzucchelli e JIMEI & JINYU, esta armação de inspiração vintage equilibra uma sensação leve e ergonômica com perfis de cores profundos e vibrantes.
+Produzida a partir de acetato premium Mazzucchelli, JIMEI, JINYU, esta armação de inspiração vintage equilibra uma sensação leve e ergonômica com perfis de cores profundos e vibrantes.
 
 Um robusto sistema de dobradiças de barril 3+2 fornece a base estrutural para uma suavidade constante e durabilidade a longo prazo.
 

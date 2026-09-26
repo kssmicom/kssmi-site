@@ -5,7 +5,7 @@ slug: "kas-504-acetate-sunglasses"
 itemNo: "KAS-504"
 date: "2026-05-13"
 colors: "Tortoise with Green, Black with Brown, Transparent Olive with Gradient Brown"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -35,12 +35,12 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KAS-504 Stylish Unisex Acetate Sunglasses | Custom Supplier"
-seoDescription: "Premium Mazzucchelli & JIMEI & JINYU acetate sunglasses available for full OEM/ODM customization. Stylish, unisex silhouettes for fashion brands. From 300 MOQ."
+seoDescription: "Premium Mazzucchelli, JIMEI, JINYU acetate sunglasses available for full OEM/ODM customization. Stylish, unisex silhouettes for fashion brands. From 300 MOQ."
 seoKeywords: "custom acetate sunglasses manufacturer, OEM acetate sunglasses, private label sunglasses supplier, wholesale acetate eyewear China, fashion sunglasses OEM factory, customizable unisex sunglasses, bespoke acetate eyewear production"
 ---
 
 ## Technical Features
-- **Premium Material:** Crafted from high-quality Mazzucchelli, JIMEI & JINYU acetate, offering a lightweight, durable, and vibrant aesthetic.
+- **Premium Material:** Crafted from high-quality Mazzucchelli, JIMEI, JINYU acetate, offering a lightweight, durable, and vibrant aesthetic.
 - **Durable Hardware:** Stable 3+2 barrel structure hinges engineered for long-term operational smoothness, with customizable options for 5-barrel or spring hinges.
 - **Premium Optics:** Tenacious nylon lenses providing excellent visual clarity, with extensive customization options available.
 - **Structural Comfort:** Acetate integrated nose pads designed for a secure, comfortable fit and a seamless aesthetic.
@@ -57,7 +57,7 @@ seoKeywords: "custom acetate sunglasses manufacturer, OEM acetate sunglasses, pr
 
 ## Overview
 
-Sourced from Mazzucchelli, JIMEI & JINYU — three of the industry's most respected acetate houses — the KAS-504 carries material credibility from the first glance. Its signature color offerings, from Tortoise with Green to Transparent Olive with Gradient Brown, reflect a palette engineered for fashion-forward markets worldwide.
+Sourced from Mazzucchelli, JIMEI, JINYU — three of the industry's most respected acetate houses — the KAS-504 carries material credibility from the first glance. Its signature color offerings, from Tortoise with Green to Transparent Olive with Gradient Brown, reflect a palette engineered for fashion-forward markets worldwide.
 
 Stable 3+2 barrel structure hinges and seamlessly integrated acetate nose pads bring the same standard of durability and wearing comfort expected by premium retail environments.
 

@@ -5,7 +5,7 @@ slug: "kas-103-acetate-sunglasses"
 itemNo: "KAS-103"
 date: "2026-05-06"
 colors: "Schwarz & Gelbes Gitter & Perl-Marmor & Rotes Gitter & Blaues Gitter & Schwarzes Gitter"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetat & Individualisierung"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -62,7 +62,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, Custom OEM Sonnenbrillen, Luxus P
 
 ## Eigenschaften
 
-- **Premium-Rahmenmaterial:** Hochwertiger Mazzucchelli- und JIMEI & JINYU-Acetatrahmen und -bügel, die ein lebendiges, tiefglänzendes Finish mit außergewöhnlicher struktureller Langlebigkeit bieten.
+- **Premium-Rahmenmaterial:** Hochwertiger Mazzucchelli, JIMEI, JINYU-Acetatrahmen und -bügel, die ein lebendiges, tiefglänzendes Finish mit außergewöhnlicher struktureller Langlebigkeit bieten.
 - **Langlebige Hardware:** Präzisionsgefertigte 3+2 Fassstruktur-Scharniere, die für gleichbleibende Laufruhe und langfristige Rahmenstabilität ausgelegt sind.
 - **Überlegene Optik:** Widerstandsfähige Nylon-Gläser mit hoher Schlagfestigkeit und optischer Klarheit, mit skalierbarer Anpassung für UV-Schutz und spezielle Beschichtungen.
 - **Ergonomische Passform:** Integrierte Nasenpads, die nahtlos in die Acetatstruktur eingearbeitet sind, für einen sicheren und druckfreien Sitz, der den ganztägigen Komfort erhöht.
@@ -80,7 +80,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, Custom OEM Sonnenbrillen, Luxus P
 
 ## Übersicht
 
-Die KAS-103 verwendet hochwertiges Mazzucchelli- und JIMEI & JINYU-Acetat, um ein tiefglänzendes Finish zu erzielen, mit anspruchsvollen Gitter- und Marmormustern, die mit aktuellen High-Fashion-Trends harmonieren.
+Die KAS-103 verwendet hochwertiges Mazzucchelli, JIMEI, JINYU-Acetat, um ein tiefglänzendes Finish zu erzielen, mit anspruchsvollen Gitter- und Marmormustern, die mit aktuellen High-Fashion-Trends harmonieren.
 
 Präzisions-3+2-Fassscharniere und integrierte Nasenpads bieten die strukturelle Stabilität und den ergonomischen Komfort, den Luxuskonsumenten erwarten.
 

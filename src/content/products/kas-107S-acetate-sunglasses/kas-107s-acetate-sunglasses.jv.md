@@ -5,7 +5,7 @@ slug: "kas-107s-acetate-sunglasses"
 itemNo: "KAS-107S"
 date: "2026-05-09"
 colors: "Ireng & Bening & Havana & Bulus"
-materials: "Asetat Mazzucchelli & JIMEI & JINYU Premium & Kustomisasi"
+materials: "Asetat Mazzucchelli, JIMEI, JINYU Premium & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "kacamata hitam asetat Mazzucchelli, kacamata hitam asetat kustom, 
 
 ## Fitur
 
-- **Bahan Premium:** Asetat Mazzucchelli lan JIMEI & JINYU pilihan sing nyedhiyakake struktur entheng lan awet kanthi finishing gilap sing padhang.
+- **Bahan Premium:** Asetat Mazzucchelli, JIMEI, JINYU pilihan sing nyedhiyakake struktur entheng lan awet kanthi finishing gilap sing padhang.
 - **Hardware Awet:** Engsel rivet 4+3 barrel sing dirancang kanthi presisi njamin integritas struktural jangka panjang lan gerakan mbukak/nutup sing konsisten.
 - **Optik Performa Dhuwur:** Lensa nilon kuat sing nawakake kajelasan lan resistensi dampak sing unggul, bisa dikustomisasi kanggo nyukupi syarat merek tartamtu.
 - **Kenyamanan Integrasi:** Bantalan irung sing alus lan terintegrasi sing dirancang kanggo kenyamanan sedina muput lan estetika sing mulus ing jembatan irung.
@@ -71,7 +71,7 @@ seoKeywords: "kacamata hitam asetat Mazzucchelli, kacamata hitam asetat kustom, 
 
 ## Ringkasan
 
-Asetat Mazzucchelli lan JIMEI & JINYU nyedhiyakake dhasar kanggo siluet unisex sing wani lan inspirasi vintage iki, sing ditondoi kanthi finishing gilap sing jero.
+Asetat Mazzucchelli, JIMEI, JINYU nyedhiyakake dhasar kanggo siluet unisex sing wani lan inspirasi vintage iki, sing ditondoi kanthi finishing gilap sing jero.
 
 Integritas struktural dipasang dening engsel rivet 4+3 barrel lan bantalan irung integrasi sing alus, njamin kenyamanan sing konsisten lan performa dhuwur kanggo macem-macem bentuk rai.
 

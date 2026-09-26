@@ -5,7 +5,7 @@ slug: "kas-315-acetate-sunglasses"
 itemNo: "KAS-315"
 date: "2026-05-12"
 colors: "Transparente & Oliva & Champanhe & Havana & Cinza Translúcido & Preto"
-materials: "Acetato Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
+materials: "Acetato Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "OEM & ODM ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -62,7 +62,7 @@ seoKeywords: "fabricante de óculos de sol em acetato, óculos de sol OEM person
 
 ## Características
 
-- **Materiais Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que oferece uma armação vibrante, leve e durável com um acabamento premium polido à mão.
+- **Materiais Premium:** Construção em acetato Mazzucchelli, JIMEI, JINYU de alta qualidade que oferece uma armação vibrante, leve e durável com um acabamento premium polido à mão.
 - **Hardware Durável:** Dobradiças robustas com estrutura de 4+3 barris projetadas para estabilidade superior e suavidade operacional a longo prazo.
 - **Óptica Avançada:** Lentes de nylon resistentes a impactos que oferecem excelente clareza e durabilidade, com amplas opções de revestimento personalizado disponíveis.
 - **Design Ergonômico:** Ponteiras nasicas integradas e um ajuste de 57-14-145 mm projetado com precisão para conforto durante todo o dia e um ajuste unissex seguro.
@@ -80,7 +80,7 @@ seoKeywords: "fabricante de óculos de sol em acetato, óculos de sol OEM person
 
 ## Visão Geral
 
-Fabricado em acetato premium Mazzucchelli e JIMEI & JINYU, este modelo oferece um acabamento vibrante e polido à mão que captura a essência da óptica de luxo contemporânea.
+Fabricado em acetato premium Mazzucchelli, JIMEI, JINYU, este modelo oferece um acabamento vibrante e polido à mão que captura a essência da óptica de luxo contemporânea.
 
 A integração de dobradiças de 4+3 barris e um ajuste ergonômico de 57-14-145 mm garante integridade estrutural a longo prazo e excepcional conforto de uso.
 

@@ -5,7 +5,7 @@ slug: "kao-326-acetate-optical-frame"
 itemNo: "KAO-326"
 date: "2026-05-10"
 colors: "Siyah, Kaplumbağa, Havana ile Teal"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim & Tasarım ve Üretim (Özelleştirme)"
 moq: "300 adet/model (100adet/Renk)"
 
@@ -50,7 +50,7 @@ seoKeywords: "retro asetat optik çerçeveler, özel asetat gözlük üreticisi,
 
 ## Özellikler
 
-- **Premium Malzeme:** Hafif ama olağanüstü dayanıklı bir yapı sunan premium Mazzucchelli ve JIMEI & JINYU asetattan üretilmiştir ve canlı, uzun ömürlü bir renk derinliği sağlar.
+- **Premium Malzeme:** Hafif ama olağanüstü dayanıklı bir yapı sunan premium Mazzucchelli, JIMEI, JINYU asetattan üretilmiştir ve canlı, uzun ömürlü bir renk derinliği sağlar.
 - **Mühendislik Harikası Donanım:** Özel yaylı menteşe seçenekleriyle dengeli ve pürüzsüz sap hareketi sağlayan yüksek güvenilirlikli 3+2 barrel perçin yapılı menteşeler.
 - **Dayanıklı Optikler:** Tam özel kaplama seçenekleriyle mükemmel netlik ve darbe direnci sağlayan yüksek dayanıklılıklı naylon lensler.
 - **Entegre Konfor:** Dengeli ve kaymayan bir oturuş sunmak için özel 47-20-148 mm geometriyle birleştirilmiş kesintisiz entegre burun tamponları.
@@ -67,7 +67,7 @@ seoKeywords: "retro asetat optik çerçeveler, özel asetat gözlük üreticisi,
 
 ## Genel Bakış
 
-Derin renk canlılığına ve yapısal dayanıklılığa öncelik veren gözlük markaları için retro esintili bu optik çerçeve, premium Mazzucchelli ve JIMEI & JINYU asetattan yontulmuştur.
+Derin renk canlılığına ve yapısal dayanıklılığa öncelik veren gözlük markaları için retro esintili bu optik çerçeve, premium Mazzucchelli, JIMEI, JINYU asetattan yontulmuştur.
 
 Uzun vadeli güvenilir kullanım için tasarlanan model, dengeli ve kaymayan bir oturuş sağlamak amacıyla sağlam bir 3+2 perçinli menteşe sistemi ve kesintisiz burun tamponlarını entegre eder.
 

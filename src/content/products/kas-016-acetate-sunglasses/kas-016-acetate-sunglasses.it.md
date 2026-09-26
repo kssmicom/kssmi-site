@@ -5,7 +5,7 @@ slug: "kas-016-acetate-sunglasses"
 itemNo: "KAS-016"
 date: "2026-05-10"
 colors: "Tartaruga con Verde, Nero con Giallo, Tartaruga Nera con Grigio Sfumato"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -41,7 +41,7 @@ seoKeywords: "occhiali da sole in acetato Mazzucchelli, produttore di occhiali p
 
 ## Caratteristiche
 
-- **Materiale Premium:** Montatura e aste in acetato Mazzucchelli e JIMEI & JINYU di alta qualità che offrono un'estetica lussuosa e vibrante con una durata eccezionale.
+- **Materiale Premium:** Montatura e aste in acetato Mazzucchelli, JIMEI, JINYU di alta qualità che offrono un'estetica lussuosa e vibrante con una durata eccezionale.
 - **Hardware Resistente:** Cerniere stabili con struttura a 2+1 barili progettate per una fluidità operativa costante e un'affidabilità a lungo termine.
 - **Ottica di Qualità:** Lenti in nylon tenace ad alta nitidezza che offrono una resistenza agli urti superiore con ampie opzioni di colorazione e rivestimento personalizzate.
 - **Design Ergonomico:** Naselli integrati progettati per una vestibilità perfetta e una stabilità migliorata durante l'uso prolungato.

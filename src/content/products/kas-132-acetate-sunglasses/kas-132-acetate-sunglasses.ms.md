@@ -5,7 +5,7 @@ slug: "kas-132-acetate-sunglasses"
 itemNo: "KAS-132"
 date: "2026-05-09"
 colors: "Hitam & Putih & Hijau & Kura-kura"
-materials: "Asetat Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
+materials: "Asetat Asetat Premium Mazzucchelli, JIMEI, JINYU & Penyesuaian"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) (Penyesuaian)"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, kacamata flat-top tersuai, cer
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Pembinaan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi yang memberikan estetika halus dengan kedalaman warna yang cerah dan tahan lama.
+- **Bahan Premium:** Pembinaan asetat Mazzucchelli, JIMEI, JINYU gred tinggi yang memberikan estetika halus dengan kedalaman warna yang cerah dan tahan lama.
 - **Kejuruteraan Ketepatan:** Engsel struktur 3+2 barel yang stabil direka untuk ketahanan gred profesional dan prestasi operasi yang lancar.
 - **Optik Unggul:** Lensa nylon lasak yang memberikan rintangan hentaman dan kejelasan visual yang luar biasa, dengan pilihan penyesuaian yang meluas.
 - **Keselesaan Ergonomik:** Alas hidung bersepadu dan struktur bingkai yang ringan memastikan kesesuaian yang selamat dan seimbang untuk pemakaian sepanjang hari.
@@ -72,7 +72,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, kacamata flat-top tersuai, cer
 
 ## Gambaran Keseluruhan
 
-Perkadaran yang berani, oversized dan siluet flat-top yang tersendiri mentakrifkan KAS-132, dihasilkan daripada campuran premium asetat Mazzucchelli dan JIMEI & JINYU untuk kedalaman dan ketahanan yang tiada tandingan.
+Perkadaran yang berani, oversized dan siluet flat-top yang tersendiri mentakrifkan KAS-132, dihasilkan daripada campuran premium asetat Mazzucchelli, JIMEI, JINYU untuk kedalaman dan ketahanan yang tiada tandingan.
 
 Engsel 3+2 barel yang direka dengan ketepatan dan lensa nylon lasak memastikan bingkai ini mengekalkan integriti struktur dan kejelasan visual melalui penggunaan intensif.
 

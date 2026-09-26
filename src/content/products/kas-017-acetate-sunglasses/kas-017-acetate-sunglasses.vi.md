@@ -5,7 +5,7 @@ slug: "kas-017-acetate-sunglasses"
 itemNo: "KAS-017"
 date: "2026-05-10"
 colors: "Đen, Đỏ trong suốt, Xanh dương trong suốt"
-materials: "Axetat Mazzucchelli & JIMEI & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Mazzucchelli, JIMEI, JINYU cao cấp & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -44,7 +44,7 @@ seoKeywords: "kính mát axetat cao cấp, nhà sản xuất kính mắt tùy ch
 
 ## Thông số kỹ thuật
 
-- **Chất liệu cao cấp:** Axetat Mazzucchelli và JIMEI & JINYU được tuyển chọn kỹ lưỡng, mang lại bề mặt hoàn thiện có độ mật độ cao với chiều sâu màu sắc và độ bền vượt trội.
+- **Chất liệu cao cấp:** Axetat Mazzucchelli, JIMEI, JINYU được tuyển chọn kỹ lưỡng, mang lại bề mặt hoàn thiện có độ mật độ cao với chiều sâu màu sắc và độ bền vượt trội.
 - **Kỹ thuật chính xác:** Kích thước gọng kính 49-23-145mm được chế tác chuyên nghiệp, mang lại sự vừa vặn cân đối, phong cách với nhiều tùy chọn tùy chỉnh.
 - **Phụ kiện bền bỉ:** Bản lề cấu trúc 3+2 chấu chắc chắn với các tùy chọn nâng cấp lên 5 chấu hoặc bản lề lò xo để đảm bảo vận hành trơn tru lâu dài.
 - **Quang học tiên tiến:** Tròng kính nylon bền bỉ với độ rõ nét cao, khả năng chống va đập cùng các tùy chọn màu sắc và lớp phủ tùy chỉnh theo yêu cầu thương hiệu.
@@ -61,7 +61,7 @@ seoKeywords: "kính mát axetat cao cấp, nhà sản xuất kính mắt tùy ch
 
 ## Tổng quan
 
-Axetat Mazzucchelli và JIMEI & JINYU được tuyển chọn thủ công mang lại cho KAS-017 bề mặt hoàn thiện mật độ cao và chiều sâu màu sắc vượt trội, đáp ứng các tiêu chuẩn khắt khe của thị trường kính mắt xa xỉ.
+Axetat Mazzucchelli, JIMEI, JINYU được tuyển chọn thủ công mang lại cho KAS-017 bề mặt hoàn thiện mật độ cao và chiều sâu màu sắc vượt trội, đáp ứng các tiêu chuẩn khắt khe của thị trường kính mắt xa xỉ.
 
 Tính toàn vẹn của cấu trúc được duy trì thông qua các bản lề 3+2 chấu được thiết kế chính xác và tròng kính nylon có độ rõ nét cao, mang lại cả độ bền và chất lượng quang học xuất sắc.
 

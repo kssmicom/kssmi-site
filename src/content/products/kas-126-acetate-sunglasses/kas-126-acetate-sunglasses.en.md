@@ -5,7 +5,7 @@ slug: "kas-126-acetate-sunglasses"
 itemNo: "KAS-126"
 date: "2026-05-09"
 colors: "Black & Marble & Green & White"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Technical Features
 
-- **Premium Acetate Composition:** High-performance Mazzucchelli, JIMEI & JINYU acetate frame and temples providing a lightweight feel and vibrant, hand-polished finish.
+- **Premium Acetate Composition:** High-performance Mazzucchelli, JIMEI, JINYU acetate frame and temples providing a lightweight feel and vibrant, hand-polished finish.
 - **Robust Hardware:** Stable 3+2 barrel structure hinges engineered for consistent tension and long-term operational smoothness.
 - **Advanced Lens Technology:** Impact-resistant nylon lenses offering exceptional optical clarity with customizable tints and coatings for diverse market needs.
 - **Ergonomic Comfort:** Smoothly integrated nose pads designed to provide a secure fit and enhanced comfort for varied facial structures.

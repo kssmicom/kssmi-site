@@ -5,7 +5,7 @@ slug: "kao-337-acetate-optical-frame"
 itemNo: "KAO-337"
 date: "2026-05-10"
 colors: "Black with Honey, Clear Blue with Tortoise, Brown Stripe with Blue, Champagne with Brown"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -42,7 +42,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM optical frames, lu
 
 ## Technical Features
 
-- **Premium Material:** Crafted from premium Mazzucchelli, JIMEI & JINYU acetate to deliver lightweight, highly durable temples and fronts featuring exceptional color vibrancy.
+- **Premium Material:** Crafted from premium Mazzucchelli, JIMEI, JINYU acetate to deliver lightweight, highly durable temples and fronts featuring exceptional color vibrancy.
 - **Engineered Hardware:** Equipped with a stable 3+2 barrel rivet structure hinge system designed to maintain exact alignment and support long-term operational smoothness.
 - **Tenacious Optics:** Fitted with resilient nylon lenses that offer superior impact resistance and high optical clarity, customizable with specialized coatings and bespoke tints.
 - **Integrated Comfort:** Built with seamless, integrated acetate nose pads combined with a standard 48-21-145mm profile to distribute frame weight evenly and prevent slipping.
@@ -59,7 +59,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM optical frames, lu
 
 ## Overview
 
-Merging a bold retro profile with premium Mazzucchelli, JIMEI & JINYU acetate, this unisex frame is engineered for boutique fashion labels and high-end optical portfolios. Distinctive dual-tone and striped colorways—including Champagne with Brown and Brown Stripe with Blue—offer a highly personalized aesthetic statement.
+Merging a bold retro profile with premium Mazzucchelli, JIMEI, JINYU acetate, this unisex frame is engineered for boutique fashion labels and high-end optical portfolios. Distinctive dual-tone and striped colorways—including Champagne with Brown and Brown Stripe with Blue—offer a highly personalized aesthetic statement.
 
 Optimal wearing comfort is achieved through integrated nose pads and a standard 48-21-145mm frame profile, reinforced by a stable 3+2 barrel rivet structure hinge system that maintains structural longevity.
 

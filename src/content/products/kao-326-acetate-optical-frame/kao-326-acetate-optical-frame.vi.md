@@ -5,7 +5,7 @@ slug: "kao-326-acetate-optical-frame"
 itemNo: "KAO-326"
 date: "2026-05-10"
 colors: "Đen, Đồi mồi, Xanh mòng két phối Havana"
-materials: "Axetat Mazzucchelli & JIMEI & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Mazzucchelli, JIMEI, JINYU cao cấp & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công & Thiết kế và sản xuất (Tùy chỉnh theo yêu cầu)"
 moq: "300 cái/mẫu (100cái/Màu)"
 
@@ -50,7 +50,7 @@ seoKeywords: "gọng kính cận Axetat cổ điển, nhà sản xuất kính m�
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Được chế tác từ chất liệu Axetat Mazzucchelli và JIMEI & JINYU cao cấp, mang lại cấu trúc nhẹ nhàng nhưng có độ bền đặc biệt với chiều sâu màu sắc sống động, lâu phai.
+- **Chất liệu cao cấp:** Được chế tác từ chất liệu Axetat Mazzucchelli, JIMEI, JINYU cao cấp, mang lại cấu trúc nhẹ nhàng nhưng có độ bền đặc biệt với chiều sâu màu sắc sống động, lâu phai.
 - **Phần cứng kỹ thuật:** Bản lề đinh tán 3+2 chấu có độ tin cậy cao, đảm bảo chuyển động càng kính ổn định, trơn tru cùng tùy chọn bản lề lò xo tùy chỉnh.
 - **Tròng kính dẻo dai:** Tròng kính nylon độ bền cao cung cấp độ rõ nét vượt trội và khả năng chống va đập tuyệt vời cùng các tùy chọn lớp phủ tùy chỉnh hoàn toàn.
 - **Thoải mái tích hợp:** Đệm mũi liền vành kết hợp hoàn hảo với thông số hình học 47-20-148mm được thiết kế riêng để mang lại sự cân bằng, không bị trượt khi đeo.
@@ -67,7 +67,7 @@ seoKeywords: "gọng kính cận Axetat cổ điển, nhà sản xuất kính m�
 
 ## Tổng quan
 
-Đối với các thương hiệu kính mắt ưu tiên độ sâu màu sắc sống động và cấu trúc bền bỉ, gọng kính cận mang phong cách retro này được chạm khắc tinh tế từ chất liệu Axetat Mazzucchelli và JIMEI & JINYU cao cấp.
+Đối với các thương hiệu kính mắt ưu tiên độ sâu màu sắc sống động và cấu trúc bền bỉ, gọng kính cận mang phong cách retro này được chạm khắc tinh tế từ chất liệu Axetat Mazzucchelli, JIMEI, JINYU cao cấp.
 
 Được thiết kế để đeo lâu dài một cách đáng tin cậy, sản phẩm tích hợp hệ thống bản lề đinh tán 3+2 chấu chắc chắn cùng đệm mũi liền mạch nhằm đảm bảo sự cân bằng, không bị trượt khi sử dụng.
 

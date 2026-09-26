@@ -5,7 +5,7 @@ slug: "kas-315-acetate-sunglasses"
 itemNo: "KAS-315"
 date: "2026-05-12"
 colors: "Clear & Oliver & Champagne & Havana & Translucent Gray & Black"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -61,7 +61,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses China, luxu
 ---
 
 ## Technical Features
-- **Premium Materials:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction delivering a vibrant, lightweight, and durable frame with a premium hand-polished finish.
+- **Premium Materials:** High-grade Mazzucchelli, JIMEI, JINYU acetate construction delivering a vibrant, lightweight, and durable frame with a premium hand-polished finish.
 - **Durable Hardware:** Robust 4+3 barrel structure hinges engineered for superior stability and long-term operational smoothness.
 - **Advanced Optics:** Impact-resistant nylon lenses offering excellent clarity and durability, with extensive custom coating options available.
 - **Ergonomic Design:** Integrated nose pads and a precision-engineered 57-14-145mm fit designed for all-day comfort and a secure unisex fit.
@@ -78,7 +78,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses China, luxu
 
 ## Overview
 
-Crafted from premium Mazzucchelli, JIMEI & JINYU acetate, this model offers a vibrant, hand-polished finish that captures the essence of contemporary luxury eyewear.
+Crafted from premium Mazzucchelli, JIMEI, JINYU acetate, this model offers a vibrant, hand-polished finish that captures the essence of contemporary luxury eyewear.
 
 The integration of 4+3 barrel hinges and an ergonomic 57-14-145mm fit ensures long-term structural integrity and exceptional wearing comfort.
 

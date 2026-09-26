@@ -5,7 +5,7 @@ slug: "kao-322-acetate-optical-frame"
 itemNo: "KAO-322"
 date: "2026-05-10"
 colors: "Hitam & Havana & Oliver & Syampanya"
-materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & Pembuatan ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "bingkai optik asetat, kacamata fesyen, pengeluar kacamata, kilang 
 
 ## Ciri-ciri Utama
 
-- **Komposisi Asetat Premium:** Dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU bertaraf dunia, menawarkan rasa ultra-ringan dengan ketahanan struktur yang luar biasa dan kedalaman warna yang bertenaga.
+- **Komposisi Asetat Premium:** Dihasilkan daripada asetat Mazzucchelli, JIMEI, JINYU bertaraf dunia, menawarkan rasa ultra-ringan dengan ketahanan struktur yang luar biasa dan kedalaman warna yang bertenaga.
 - **Perkakasan Teguh:** Menampilkan seni bina engsel rivet 4+3 barrel profesional yang direka untuk kestabilan maksimum dan kelancaran operasi jangka panjang.
 - **Asas Optik Lanjut:** Dilengkapi dengan kanta nilon lasak yang memberikan rintangan hentaman dan kejelasan yang unggul, dengan pilihan penyesuaian fleksibel untuk salutan khusus.
 - **Keselesaan Bersepadu:** Alas hidung bersepadu yang direka dengan ketepatan untuk memberikan kesesuaian yang selamat dan hipoalergenik untuk pemakaian harian yang berpanjangan.
@@ -72,7 +72,7 @@ seoKeywords: "bingkai optik asetat, kacamata fesyen, pengeluar kacamata, kilang 
 
 ## Gambaran Keseluruhan
 
-Mencipta keseimbangan antara keselesaan ringan dan kedalaman visual yang bertenaga, bingkai ini menggunakan asetat premium Mazzucchelli dan JIMEI & JINYU untuk memenuhi piawaian ketat rumah fesyen moden.
+Mencipta keseimbangan antara keselesaan ringan dan kedalaman visual yang bertenaga, bingkai ini menggunakan asetat premium Mazzucchelli, JIMEI, JINYU untuk memenuhi piawaian ketat rumah fesyen moden.
 
 Seni bina engsel rivet 4+3 barrel yang teguh memastikan integriti struktur jangka panjang, dilengkapi dengan kemasan digilap tangan yang menyerlahkan profil sofistikated bahan tersebut.
 

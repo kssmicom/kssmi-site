@@ -5,7 +5,7 @@ slug: "kao-328-acetate-optical-frame"
 itemNo: "KAO-328"
 date: "2026-05-10"
 colors: "Preto, Azul"
-materials: "Acetato Mazzucchelli & JIMEI & JINYU Premium & Personalização"
+materials: "Acetato Mazzucchelli, JIMEI, JINYU Premium & Personalização"
 serviceMode: "Fabricação OEM & ODM (Personalização)"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -46,7 +46,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, fábrica de óculos 
 
 ## Características
 
-- **Material Premium:** Fabricado com acetato Mazzucchelli e JIMEI & JINYU premium, oferecendo uma estrutura leve, porém excepcionalmente durável, com profundidade de cor vibrante e duradoura.
+- **Material Premium:** Fabricado com acetato Mazzucchelli, JIMEI, JINYU premium, oferecendo uma estrutura leve, porém excepcionalmente durável, com profundidade de cor vibrante e duradoura.
 - **Hardware de Engenharia:** Dobradiças de rebite estáveis de 3+2 tambores de alta confiabilidade, proporcionando movimento de hastes estável e suave, com opções de dobradiça de mola personalizadas.
 - **Óptica Tenaz:** Lentes de nylon de alta durabilidade que oferecem excelente clareza e resistência ao impacto, com opções completas de revestimento sob medida.
 - **Conforto Integrado:** Ponteiras nasicas perfeitamente integradas combinadas com uma geometria sob medida de 53-18-145mm para proporcionar um ajuste equilibrado e antiderrapante.
@@ -64,7 +64,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, fábrica de óculos 
 
 ## Visão Geral
 
-Uma rica profundidade de material define o KAO-328, combinando o acetato Mazzucchelli e JIMEI & JINYU polido à mão com uma silhueta clássica unissex projetada para portfólios premium.
+Uma rica profundidade de material define o KAO-328, combinando o acetato Mazzucchelli, JIMEI, JINYU polido à mão com uma silhueta clássica unissex projetada para portfólios premium.
 
 Este modelo integra dobradiças robustas de rebite de 3+2 tambores e ponteiras nasicas esculpidas, mantendo um alinhamento estrutural suave e um conforto duradouro.
 

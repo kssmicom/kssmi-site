@@ -5,7 +5,7 @@ slug: "kao-332-acetate-optical-frame"
 itemNo: "KAO-332"
 date: "2026-05-10"
 colors: "Preto com transparente, azul com listra marrom, champanhe com marrom"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) (Personalização)"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -41,7 +41,7 @@ seoKeywords: "armações ópticas de acetato, fabricante de óculos personalizad
 
 ## Características
 
-- **Material Premium:** Fabricado com acetato premium Mazzucchelli e JIMEI & JINYU, oferecendo uma estrutura ultraleve, porém excepcionalmente durável, com uma estética de cores vibrantes e profundas.
+- **Material Premium:** Fabricado com acetato premium Mazzucchelli, JIMEI, JINYU, oferecendo uma estrutura ultraleve, porém excepcionalmente durável, com uma estética de cores vibrantes e profundas.
 - **Componentes Injetados:** Dobradiças com estrutura de rebite de 3+2 tambores de alta confiabilidade, proporcionando movimento estável e suave das hastes, com opções de dobradiça de mola e de 5 tambores disponíveis.
 - **Óptica Tenaz:** Lentes de nylon de alta durabilidade, oferecendo clareza óptica excepcional e resistência ao impacto, com serviços completos de revestimento sob medida e personalização.
 - **Conforto Integrado:** Plaquetas de acetato integradas sem emendas, combinadas com uma geometria sob medida de 46-23-145mm para proporcionar um ajuste equilibrado e livre de pressão.
@@ -59,7 +59,7 @@ seoKeywords: "armações ópticas de acetato, fabricante de óculos personalizad
 
 ## Visão Geral
 
-Uma vibrante estética bicolor define a armação óptica unissex KAO-332, fabricada com acetato premium Mazzucchelli e JIMEI & JINYU. Disponível em combinações de cores distintas, como Champanhe com Marrom e Azul com Listra Marrom, esta armação retrô clássica é ideal para casas de moda de luxo e redes ópticas de alto padrão.
+Uma vibrante estética bicolor define a armação óptica unissex KAO-332, fabricada com acetato premium Mazzucchelli, JIMEI, JINYU. Disponível em combinações de cores distintas, como Champanhe com Marrom e Azul com Listra Marrom, esta armação retrô clássica é ideal para casas de moda de luxo e redes ópticas de alto padrão.
 
 A geometria de 46-23-145mm integra plaquetas sem emendas e um robusto sistema de dobradiça de rebite de 3+2 tambores, garantindo alinhamento suave e estável das hastes e durabilidade excepcional.
 

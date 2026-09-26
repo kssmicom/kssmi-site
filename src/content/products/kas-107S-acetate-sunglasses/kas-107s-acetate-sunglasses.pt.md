@@ -5,7 +5,7 @@ slug: "kas-107s-acetate-sunglasses"
 itemNo: "KAS-107S"
 date: "2026-05-09"
 colors: "Preto & Transparente & Havana & Tartaruga"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "óculos de sol em acetato Mazzucchelli, óculos de sol em acetato 
 
 ## Características
 
-- **Material Premium:** Acetato Mazzucchelli e JIMEI & JINYU selecionados à mão, proporcionando uma estrutura leve e durável com um acabamento vibrante e de alto brilho.
+- **Material Premium:** Acetato Mazzucchelli, JIMEI, JINYU selecionados à mão, proporcionando uma estrutura leve e durável com um acabamento vibrante e de alto brilho.
 - **Hardware Durável:** Dobradiças com estrutura de rebite 4+3 barrel projetadas com precisão, garantindo integridade estrutural a longo prazo e uma ação de abertura/fechamento consistente.
 - **Ótica de Alto Desempenho:** Lentes de nylon tenaz que oferecem clareza superior e resistência ao impacto, personalizáveis para atender aos requisitos específicos da marca.
 - **Conforto Integrado:** Ponteiras nasicas lisas e integradas, projetadas para conforto durante todo o dia e uma estética perfeita na ponte.
@@ -71,7 +71,7 @@ seoKeywords: "óculos de sol em acetato Mazzucchelli, óculos de sol em acetato 
 
 ## Visão Geral
 
-O acetato Mazzucchelli e JIMEI & JINYU fornece a base para esta silhueta unissex ousada e de inspiração vintage, caracterizada por seu acabamento profundo e de alto brilho.
+O acetato Mazzucchelli, JIMEI, JINYU fornece a base para esta silhueta unissex ousada e de inspiração vintage, caracterizada por seu acabamento profundo e de alto brilho.
 
 A integridade estrutural é ancorada por dobradiças com estrutura de rebite 4+3 barrel e ponteiras nasicas integradas lisas, garantindo um ajuste consistente e de alto desempenho para diversas formas de rosto.
 

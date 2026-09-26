@@ -5,7 +5,7 @@ slug: "kas-125-acetate-sunglasses"
 itemNo: "KAS-125"
 date: "2026-05-09"
 colors: "Black & Light-Tortoise & Dark-Tortoise & Buffalo-Horn & Khaki"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -57,7 +57,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM eyewear, luxury privat
 ---
 ## Technical Features
 
-- **Premium Materials:** Lightweight and vibrant Mazzucchelli, JIMEI & JINYU acetate frame and temples offering a premium hand-feel with long-lasting durability.
+- **Premium Materials:** Lightweight and vibrant Mazzucchelli, JIMEI, JINYU acetate frame and temples offering a premium hand-feel with long-lasting durability.
 - **Durable Hardware:** Robust 4+3 barrel structure hinges engineered for precision alignment and consistent operational smoothness.
 - **Advanced Optics:** Tenacious nylon lenses providing superior clarity and impact resistance within a versatile 53-19-145mm frame profile.
 - **Integrated Comfort:** Ergonomically designed nose pads built directly into the frame for a stable, hypoallergenic fit.
@@ -74,7 +74,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM eyewear, luxury privat
 
 ## Overview
 
-Premium Mazzucchelli, JIMEI & JINYU acetate construction provides the KAS-125 with a distinctive hand-feel and long-lasting vibrance that meets the standards of global luxury portfolios.
+Premium Mazzucchelli, JIMEI, JINYU acetate construction provides the KAS-125 with a distinctive hand-feel and long-lasting vibrance that meets the standards of global luxury portfolios.
 
 Engineered with 4+3 barrel structure hinges for precise alignment, the frame combines high-impact nylon lenses with an ergonomic, integrated bridge for sustained durability.
 

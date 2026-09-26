@@ -5,7 +5,7 @@ slug: "kas-016-acetate-sunglasses"
 itemNo: "KAS-016"
 date: "2026-05-10"
 colors: "Écaille avec Vert, Noir avec Jaune, Écaille Noire avec Gris Dégradé"
-materials: "Acétate Premium Mazzucchelli & JIMEI & JINYU & Personnalisation"
+materials: "Acétate Premium Mazzucchelli, JIMEI, JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/coloris)"
 
@@ -41,7 +41,7 @@ seoKeywords: "lunettes de soleil en acétate Mazzucchelli, fabricant de lunettes
 
 ## Caractéristiques
 
-- **Matériau Premium :** Monture et branches en acétate Mazzucchelli et JIMEI & JINYU de haute qualité offrant une esthétique luxueuse et vibrante avec une durabilité exceptionnelle.
+- **Matériau Premium :** Monture et branches en acétate Mazzucchelli, JIMEI, JINYU de haute qualité offrant une esthétique luxueuse et vibrante avec une durabilité exceptionnelle.
 - **Matériel Durable :** Charnières stables à structure 2+1 barillets conçues pour une fluidité opérationnelle constante et une fiabilité à long terme.
 - **Optique Premium :** Verres en nylon tenace de haute clarté offrant une résistance supérieure aux chocs avec de nombreuses options de coloration et de revêtement personnalisées.
 - **Design Ergonomique :** Plaquettes de nez intégrées conçues pour un ajustement parfait et une stabilité accrue lors d'un port prolongé.

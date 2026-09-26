@@ -5,7 +5,7 @@ slug: "kas-510-acetate-sunglasses"
 itemNo: "KAS-510"
 date: "2026-05-13"
 colors: "Hitam dengan Hitam, Havana dengan Coklat, Kura-kura dengan Hitam"
-materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Penyesuaian"
 serviceMode: "Pengilangan OEM & ODM (Penyesuaian)"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -35,13 +35,13 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KAS-510 Cermin Mata Hitam Asetat Trendi Fesyen | Pembekal Tersuai"
-seoDescription: "Cermin mata hitam asetat premium Mazzucchelli dan JIMEI & JINYU tersedia untuk penyesuaian OEM/ODM penuh. Saiz bingkai, warna, dan pilihan logo yang ditempah khas. 300 MOQ setiap model."
+seoDescription: "Cermin mata hitam asetat premium Mazzucchelli, JIMEI, JINYU tersedia untuk penyesuaian OEM/ODM penuh. Saiz bingkai, warna, dan pilihan logo yang ditempah khas. 300 MOQ setiap model."
 seoKeywords: ""
 ---
 
 ## Ciri-ciri Utama
 
-- **Pembinaan Asetat Premium:** Bingkai dan gagang diperbuat daripada asetat bertauliah Mazzucchelli dan JIMEI & JINYU, memberikan rasa ringan, ketahanan struktur jangka panjang dan kedalaman warna yang kaya dan cerah.
+- **Pembinaan Asetat Premium:** Bingkai dan gagang diperbuat daripada asetat bertauliah Mazzucchelli, JIMEI, JINYU, memberikan rasa ringan, ketahanan struktur jangka panjang dan kedalaman warna yang kaya dan cerah.
 - **Perkakasan Serba Guna:** Engsel struktur 2+1 barel dengan pilihan naik taraf kepada 5 barel atau engsel spring, direka untuk kelancaran operasi yang konsisten dan kitaran hayat produk yang dipanjangkan.
 - **Optik Premium:** Lensa nilon teguh menawarkan rintangan impak yang boleh dipercayai dan keserasian luas dengan spesifikasi pewarnaan dan salutan optik tersuai.
 - **Reka Bentuk Selesa Bersepadu:** Alas hidung asetat bersepadu menyediakan estetik yang lancar sambil memastikan padanan yang stabil dan selesa merentas pelbagai profil muka.
@@ -50,7 +50,7 @@ seoKeywords: ""
 
 ## Gambaran Keseluruhan
 
-Bersumber daripada kilang bertauliah Mazzucchelli dan JIMEI & JINYU, asetat yang digunakan dalam KAS-510 membawa kekayaan yang wujud — dalam warna, berat dan kualiti sentuhan — yang menempatkan setiap unit sebagai produk premium yang boleh dipercayai dari sentuhan pertama.
+Bersumber daripada kilang bertauliah Mazzucchelli, JIMEI, JINYU, asetat yang digunakan dalam KAS-510 membawa kekayaan yang wujud — dalam warna, berat dan kualiti sentuhan — yang menempatkan setiap unit sebagai produk premium yang boleh dipercayai dari sentuhan pertama.
 
 Direka dengan engsel 2+1 barel yang boleh dinaik taraf, optik nilon teguh dan alas hidung bersepadu dengan lancar, setiap bingkai dibina untuk prestasi yang konsisten merentasi keseluruhan pengeluaran.
 

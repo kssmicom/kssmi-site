@@ -5,7 +5,7 @@ slug: "kas-113-acetate-sunglasses"
 itemNo: "KAS-113"
 date: "2026-05-09"
 colors: "Ireng & Bulus & Krim & Biru"
-materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pabrikan kacamata asetat, kacamata OEM kustom, kacamata label prib
 
 ## Fitur Teknis
 
-- **Komposisi Bahan Premium:** Digawe nganggo tangan saka asetat Mazzucchelli lan JIMEI & JINYU kualitas dhuwur, menehi warna sing entheng, awet, lan urip kanggo rasa mewah.
+- **Komposisi Bahan Premium:** Digawe nganggo tangan saka asetat Mazzucchelli, JIMEI, JINYU kualitas dhuwur, menehi warna sing entheng, awet, lan urip kanggo rasa mewah.
 - **Teknik Presisi:** Dilengkapi engsel struktur 3+2 barel sing kuwat dirancang kanggo operasi sing lancar lan stabilitas pigura ing jangka panjang.
 - **Optik Definisi Dhuwur:** Nduweni lensa nilon sing kuwat sing menehi kajelasan lan tahan benturan sing unggul, kanthi pilihan kustomisasi sing akeh kanggo warna lan lapisan.
 - **Desain Ergonomis:** Bantalan irung sing dipasang lan profil 51-23-145mm sing seimbang njamin pas sing aman lan hipoalergenik kanggo macem-macem bentuk rai.
@@ -72,7 +72,7 @@ seoKeywords: "pabrikan kacamata asetat, kacamata OEM kustom, kacamata label prib
 
 ## Ringkesan
 
-Nyampurake asetat Mazzucchelli lan JIMEI & JINYU sing urip, model iki nawakake estetika unisex sing kandel sing ngimbangi klasikisme tanpa wektu karo sensibilitas fesyen modern. Potongan kerajinan tangan unik kasebut njamin rasa premium sing cocog karo omah mode mewah lan label butik.
+Nyampurake asetat Mazzucchelli, JIMEI, JINYU sing urip, model iki nawakake estetika unisex sing kandel sing ngimbangi klasikisme tanpa wektu karo sensibilitas fesyen modern. Potongan kerajinan tangan unik kasebut njamin rasa premium sing cocog karo omah mode mewah lan label butik.
 
 Engsel 3+2 barel sing dirancang kanthi presisi lan profil 51-23-145mm ergonomis njamin stabilitas pigura sing tahan suwe lan kenyamanan sedina muput kanggo macem-macem bentuk rai.
 

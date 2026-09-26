@@ -5,7 +5,7 @@ slug: "kas-121-acetate-sunglasses"
 itemNo: "KAS-121"
 date: "2026-05-09"
 colors: "Black & Havana & Maple"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -50,7 +50,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Technical Features
 
-- **Premium Acetate Construction:** Crafted from high-grade Mazzucchelli, JIMEI & JINYU acetate, offering a lightweight, durable, and vibrant frame for exceptional long-term wear.
+- **Premium Acetate Construction:** Crafted from high-grade Mazzucchelli, JIMEI, JINYU acetate, offering a lightweight, durable, and vibrant frame for exceptional long-term wear.
 - **Robust Hardware:** Precision-engineered 3+2 barrel structure hinges designed to ensure secure alignment and optimal operational smoothness.
 - **Advanced Optics:** Tenacious nylon lenses providing superior visual clarity, with versatile custom tinting and coating options available.
 - **Seamless Comfort:** Seamlessly integrated nose pads meticulously designed to distribute weight evenly for a secure and comfortable fit.
@@ -68,7 +68,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Overview
 
-Bridging classic vintage inspiration with modern luxury, the KAS-121 is masterfully sculpted from premium Mazzucchelli, JIMEI & JINYU acetate. This exceptional material foundation ensures a lightweight yet highly durable frame with a captivating, vibrant finish.
+Bridging classic vintage inspiration with modern luxury, the KAS-121 is masterfully sculpted from premium Mazzucchelli, JIMEI, JINYU acetate. This exceptional material foundation ensures a lightweight yet highly durable frame with a captivating, vibrant finish.
 
 Structural integrity is secured through precision-engineered 3+2 barrel hinges, while meticulously integrated nose pads deliver a flawlessly balanced and comfortable fit.
 

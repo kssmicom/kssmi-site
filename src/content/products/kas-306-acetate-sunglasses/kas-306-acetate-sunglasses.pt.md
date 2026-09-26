@@ -5,7 +5,7 @@ slug: "kas-306-acetate-sunglasses"
 itemNo: "KAS-306"
 date: "2026-05-12"
 colors: "Preto & Tartaruga & Cinza & Marrom & Oliva"
-materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM)"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante de óculos de sol de acetato premium, fábrica de ócul
 
 ## Características
 
-- **Material Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que proporciona um acabamento leve, durável e vibrante para uma estética de luxo.
+- **Material Premium:** Construção em acetato Mazzucchelli, JIMEI, JINYU de alta qualidade que proporciona um acabamento leve, durável e vibrante para uma estética de luxo.
 - **Hardware Durável:** Dobradiças robustas com estrutura de 4+3 barris projetadas para fluidez operacional consistente, com opções de atualização para 5 barris e dobradiças de mola.
 - **Ótica Superior:** Lentes de nylon resistentes ao impacto que oferecem clareza excepcional, com ampla personalização disponível para tons específicos e revestimentos técnicos.
 - **Conforto Integrado:** Ponteiras nasicas integradas moldadas com precisão, projetadas para garantir um ajuste seguro e equilibrado e um perfil de alto padrão sem emendas.
@@ -76,7 +76,7 @@ seoKeywords: "fabricante de óculos de sol de acetato premium, fábrica de ócul
 
 ## Visão Geral
 
-O acetato Mazzucchelli e JIMEI & JINYU definem o KAS-306, fundindo cores ricas e multicamadas com uma armação geométrica atemporal projetada para resiliência e versatilidade estética. Esta seleção de materiais garante um acabamento vibrante que mantém seu brilho ao longo de anos de uso.
+O acetato Mazzucchelli, JIMEI, JINYU definem o KAS-306, fundindo cores ricas e multicamadas com uma armação geométrica atemporal projetada para resiliência e versatilidade estética. Esta seleção de materiais garante um acabamento vibrante que mantém seu brilho ao longo de anos de uso.
 
 Dobradiças de 4+3 barris projetadas com precisão e ponteiras nasicas integradas fornecem a integridade estrutural e o conforto equilibrado exigidos pelos mercados de óculos de alto padrão.
 

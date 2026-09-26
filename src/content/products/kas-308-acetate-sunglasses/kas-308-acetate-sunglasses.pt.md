@@ -5,7 +5,7 @@ slug: "kas-308-acetate-sunglasses"
 itemNo: "KAS-308"
 date: "2026-05-12"
 colors: "Preto & Azul Royal & Marrom & Oliva"
-materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda & Design e Fabricação ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante óculos acetato, óculos OEM personalizados, óculos pr
 
 ## Características
 
-- **Material Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, proporcionando durabilidade excepcional e uma estética vibrante e duradoura.
+- **Material Premium:** Construção em acetato Mazzucchelli, JIMEI, JINYU de alta qualidade, proporcionando durabilidade excepcional e uma estética vibrante e duradoura.
 - **Ferragens Duráveis:** Dobradiças robustas com estrutura de 4+3 barris, projetadas para suavidade operacional consistente e integridade estrutural.
 - **Ótica Superior:** Lentes de nylon tenaz que oferecem excelente resistência ao impacto com amplas opções de personalização para tonalidades e revestimentos.
 - **Design Ergonômico:** Ponteiras nasicas integradas projetadas para um ajuste perfeito e maior conforto durante o uso prolongado.
@@ -72,7 +72,7 @@ seoKeywords: "fabricante óculos acetato, óculos OEM personalizados, óculos pr
 
 ## Visão Geral
 
-Fresado com precisão a partir de acetato Mazzucchelli e JIMEI & JINYU premium, o KAS-308 oferece um chassi leve, porém robusto, para óculos de moda de alta qualidade.
+Fresado com precisão a partir de acetato Mazzucchelli, JIMEI, JINYU premium, o KAS-308 oferece um chassi leve, porém robusto, para óculos de moda de alta qualidade.
 
 As ponteiras nasicas integradas e um sistema de dobradiças reforçado de 4+3 barris garantem conforto duradouro e desempenho confiável durante toda a vida útil do produto.
 

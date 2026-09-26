@@ -5,7 +5,7 @@ slug: "kas-102-acetate-sunglasses"
 itemNo: "KAS-102"
 date: "2026-05-05"
 colors: "Trasparente & Nero & Nero Solido & Blu Solido & Grigio Solido & Viola Solido & Cyan-Dot Blue-Dot & Miele & Verde & Rosso Sfumato & Blu Scuro & Blu Chiaro & Grigio Opaco & Havana & Grigio Trasparente & Panda"
-materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100pz/colore)"
 
@@ -102,7 +102,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali acetato personalizza
 
 ## Caratteristiche
 
-- **Materiale in Acetato Premium:** Costruzione in acetato Mazzucchelli e JIMEI & JINYU di alta qualità che offre una sensazione di leggerezza con una durata eccezionale e una profondità di colore vibrante.
+- **Materiale in Acetato Premium:** Costruzione in acetato Mazzucchelli, JIMEI, JINYU di alta qualità che offre una sensazione di leggerezza con una durata eccezionale e una profondità di colore vibrante.
 - **Hardware di Precisione:** Robuste cerniere con struttura a botte 3+2 progettate per una fluidità operativa a lungo termine e stabilità strutturale.
 - **Tecnologia Avanzata delle Lenti:** Lenti versatili in AC o nylon tenace disponibili con ampie opzioni di colorazione e rivestimento personalizzati per una chiarezza visiva superiore.
 - **Design Ergonomico:** Naselli integrati e una struttura della montatura bilanciata con precisione che garantisce comfort per tutto il giorno e una vestibilità sicura.

@@ -5,7 +5,7 @@ slug: "kas-302-acetate-sunglasses"
 itemNo: "KAS-302"
 date: "2026-05-12"
 colors: "Siyah & Kaplumbağa"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim & Tasarım ve Üretim (Özelleştirme)"
 moq: "300 adet/model (100adet/renk)"
 
@@ -41,7 +41,7 @@ seoKeywords: "asetat güneş gözlüğü, unisex güneş gözlüğü, gözlük �
 ---
 
 ## Özellikler
-- **Premium Malzeme:** Canlı ve uzun ömürlü renk derinliği ile rafine bir estetik sunan yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat çerçeve ve saplar.
+- **Premium Malzeme:** Canlı ve uzun ömürlü renk derinliği ile rafine bir estetik sunan yüksek kaliteli Mazzucchelli, JIMEI, JINYU asetat çerçeve ve saplar.
 - **Hassas Mühendislik:** Uzun vadeli istikrarlı operasyonel pürüzsüzlük ve donanım dayanıklılığı için tasarlanmış sağlam 4+3 menteşe yapısı.
 - **Yüksek Performanslı Optik:** Kapsamlı özelleştirme seçenekleriyle üstün optik netlik ve darbe direnci sağlayan dayanıklı naylon lensler.
 - **Ergonomik Tasarım:** Güvenli, rahat bir oturuş ve dikişsiz, cesur bir unisex estetik için tasarlanmış entegre burun tamponları.
@@ -57,7 +57,7 @@ seoKeywords: "asetat güneş gözlüğü, unisex güneş gözlüğü, gözlük �
 - Lüks Moda Evleri
 
 ## Genel Bakış
-Birinci sınıf Mazzucchelli ve JIMEI & JINYU asetattan yontulmuş KAS-302, modern lüks gözlükleri tanımlayan cesur, unisex bir estetiği canlı renk derinliğiyle dengeler.
+Birinci sınıf Mazzucchelli, JIMEI, JINYU asetattan yontulmuş KAS-302, modern lüks gözlükleri tanımlayan cesur, unisex bir estetiği canlı renk derinliğiyle dengeler.
 
 Hassas mühendislikle üretilen 4+3 menteşeler uzun vadeli dayanıklılık ve sorunsuz çalışma sağlarken, entegre burun tamponları güvenli ve ergonomik bir oturuş sunar.
 

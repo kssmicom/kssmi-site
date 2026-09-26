@@ -5,7 +5,7 @@ slug: "kas-124-acetate-sunglasses"
 itemNo: "KAS-124"
 date: "2026-05-09"
 colors: "Schwarz & Büffelhorn & Schildpatt"
-materials: "Premium Mazzucchelli & JIMEI & JINYU-Acetat & Individualisierung"
+materials: "Premium Mazzucchelli, JIMEI, JINYU-Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100Stk/Farbe)"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
@@ -46,7 +46,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, kundenspezifische OEM-Sonnenbrill
 
 ## Eigenschaften
 
-- **Premium-Material:** Hochwertige Konstruktion aus Mazzucchelli- und JIMEI & JINYU-Acetat mit einer lebendigen, handpolierten Oberfläche und außergewöhnlicher Haltbarkeit.
+- **Premium-Material:** Hochwertige Konstruktion aus Mazzucchelli, JIMEI, JINYU-Acetat mit einer lebendigen, handpolierten Oberfläche und außergewöhnlicher Haltbarkeit.
 - **Langlebige Hardware:** Robuste Scharniere mit 3+2 Barrel-Struktur, präzisionsgefertigt für langfristige Leichtgängigkeit und Rahmenstabilität.
 - **Fortschrittliche Optik:** Widerstandsfähige Nylon-Gläser mit überlegener Schlagfestigkeit und optischer Klarheit sowie umfangreichen Optionen für kundenspezifische Beschichtungen.
 - **Ergonomischer Komfort:** Leichtes Gestell mit integrierten Nasenpads für einen sicheren, druckfreien Sitz bei längerem täglichen Tragen.
@@ -64,7 +64,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, kundenspezifische OEM-Sonnenbrill
 
 ## Überblick
 
-Dieses Modell wird aus hochwertigem Mazzucchelli- und JIMEI & JINYU-Acetat gefertigt und verfügt über eine handpolierte Oberfläche, die seine mutige, Vintage-inspirierte Silhouette unterstreicht. Der Rahmen verbindet eine luxuriöse Unisex-Ästhetik mit den lebendigen, leichten Qualitäten, die für hochwertige Modebrillen unerlässlich sind.
+Dieses Modell wird aus hochwertigem Mazzucchelli, JIMEI, JINYU-Acetat gefertigt und verfügt über eine handpolierte Oberfläche, die seine mutige, Vintage-inspirierte Silhouette unterstreicht. Der Rahmen verbindet eine luxuriöse Unisex-Ästhetik mit den lebendigen, leichten Qualitäten, die für hochwertige Modebrillen unerlässlich sind.
 
 Präzisionsgefertigte 3+2 Barrel-Scharniere und widerstandsfähige Nylon-Gläser sorgen für einen sicheren Sitz und eine außergewöhnliche optische Leistung über alle Produktionschargen hinweg.
 

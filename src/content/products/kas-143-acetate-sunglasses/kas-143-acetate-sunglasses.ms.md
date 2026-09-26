@@ -5,7 +5,7 @@ slug: "kas-143-acetate-sunglasses"
 itemNo: "KAS-143"
 date: "2026-05-09"
 colors: "Hitam & Syampanya & Kura-kura & Zaitun"
-materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & Pengilangan Reka Bentuk (ODM)"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, kacamata OEM tersuai, rumah fe
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Pembinaan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi yang menawarkan estetik bertenaga dengan ketahanan ringan dan tahan lama untuk paparan runcit premium.
+- **Bahan Premium:** Pembinaan asetat Mazzucchelli, JIMEI, JINYU gred tinggi yang menawarkan estetik bertenaga dengan ketahanan ringan dan tahan lama untuk paparan runcit premium.
 - **Perkakasan Ketepatan:** Engsel struktur 4+3 tong yang teguh direka untuk kelancaran operasi yang konsisten dan jangka hayat bingkai yang luar biasa.
 - **Optik Dipertingkatkan:** Lensa nilon lasak yang memberikan rintangan hentaman dan kejelasan unggul dengan pilihan salutan tersuai yang luas untuk memenuhi piawaian jenama tertentu.
 - **Keselesaan Bersepadu:** Alas hidung bersepadu yang dibentuk dengan lancar direka untuk padanan yang selamat dan hipoalergenik bagi memastikan kepuasan pemakai jangka panjang.
@@ -71,7 +71,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, kacamata OEM tersuai, rumah fe
 
 ## Gambaran Keseluruhan
 
-Dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU premium, KAS-143 merangkumi keseimbangan halus antara estetika vintaj dan ketahanan moden. Palet warnanya yang bertenaga dan siluet unisex yang canggih menyediakan asas yang abadi untuk koleksi fesyen mewah.
+Dihasilkan daripada asetat Mazzucchelli, JIMEI, JINYU premium, KAS-143 merangkumi keseimbangan halus antara estetika vintaj dan ketahanan moden. Palet warnanya yang bertenaga dan siluet unisex yang canggih menyediakan asas yang abadi untuk koleksi fesyen mewah.
 
 Engsel 4+3 tong yang direka dengan ketepatan dan alas hidung bersepadu memastikan integriti struktur yang berkekalan serta padanan yang selamat dan selesa untuk pemakai.
 

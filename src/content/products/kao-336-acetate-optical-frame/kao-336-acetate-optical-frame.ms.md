@@ -5,7 +5,7 @@ slug: "kao-336-acetate-optical-frame"
 itemNo: "KAO-336"
 date: "2026-05-10"
 colors: "Hitam, Lut Sinar dengan Kura-kura, Hijau Jernih dengan Kura-kura"
-materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Penyesuaian"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -41,7 +41,7 @@ seoKeywords: "bingkai optik asetat boleh suai, borong bingkai optik kustom, peng
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Dibuat daripada asetat Mazzucchelli dan JIMEI & JINYU premium untuk menghasilkan bingkai dan temple yang ringan serta tahan lasak dengan keindahan warna yang luar biasa.
+- **Bahan Premium:** Dibuat daripada asetat Mazzucchelli, JIMEI, JINYU premium untuk menghasilkan bingkai dan temple yang ringan serta tahan lasak dengan keindahan warna yang luar biasa.
 - **Perkakasan Terbina:** Dilengkapi dengan sistem engsel struktur rivet 3+2 barrel yang stabil, direka untuk mengekalkan penjajaran yang tepat dan menyokong kelancaran operasi jangka panjang.
 - **Optik Tahan Lasak:** Dilengkapi dengan lensa nilon yang kuat yang menawarkan rintangan hentaman yang unggul dan kejelasan optik yang tinggi, boleh disesuaikan dengan salutan khas dan warna kustom.
 - **Keselesaan Bersepadu:** Dibina dengan alas hidung asetat bersepadu yang lancar digabungkan dengan profil standard 46-25-145mm untuk mengagihkan berat bingkai secara rata dan mencegah gelinciran.
@@ -59,7 +59,7 @@ seoKeywords: "bingkai optik asetat boleh suai, borong bingkai optik kustom, peng
 
 ## Gambaran Keseluruhan
 
-Dicipta untuk jenama yang menuntut keindahan warna yang luar biasa, model KAO-336 menggabungkan asetat premium Mazzucchelli dan JIMEI & JINYU ke dalam profil unisex yang sangat tahan lasak dan ringan. Gaya retro dan pilihan warna kustom menjadikan bingkai klasik ini sebagai produk yang menonjol untuk portfolio optik mewah.
+Dicipta untuk jenama yang menuntut keindahan warna yang luar biasa, model KAO-336 menggabungkan asetat premium Mazzucchelli, JIMEI, JINYU ke dalam profil unisex yang sangat tahan lasak dan ringan. Gaya retro dan pilihan warna kustom menjadikan bingkai klasik ini sebagai produk yang menonjol untuk portfolio optik mewah.
 
 Sistem engsel struktur rivet 3+2 barrel yang teliti memastikan temple sentiasa sejajar untuk operasi yang lancar, digabungkan dengan alas hidung asetat bersepadu dan keselesaan padanan 46-25-145mm.
 

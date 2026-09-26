@@ -5,7 +5,7 @@ slug: "kao-002-acetate-optical-frame"
 itemNo: "KAO-002"
 date: "2026-05-10"
 colors: "Orange & Tortoise & Purple & Green"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate optical frames, custom optical eyewear, OEM eyewear manufa
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction delivering a lightweight, durable feel with vibrant, long-lasting color depth.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI, JINYU acetate construction delivering a lightweight, durable feel with vibrant, long-lasting color depth.
 - **Engineered Hardware:** High-performance 4+3 barrel rivet hinges providing exceptional structural stability and long-term operational smoothness.
 - **Advanced Optics:** Tenacious nylon lenses offering superior clarity and impact resistance with extensive customization and coating options available.
 - **Integrated Ergonomics:** Precision-molded integrated nose pads designed for a secure, comfortable fit and a seamless, high-end aesthetic profile.
@@ -71,7 +71,7 @@ seoKeywords: "acetate optical frames, custom optical eyewear, OEM eyewear manufa
 
 ## Overview
 
-Utilizing premium Mazzucchelli, JIMEI & JINYU acetate, these optical frames achieve a sophisticated balance of lightweight wearability and rich, vibrant depth. The material’s high-grade composition ensures a resilient, polished finish that meets the exacting standards of luxury-tier eyewear development.
+Utilizing premium Mazzucchelli, JIMEI, JINYU acetate, these optical frames achieve a sophisticated balance of lightweight wearability and rich, vibrant depth. The material’s high-grade composition ensures a resilient, polished finish that meets the exacting standards of luxury-tier eyewear development.
 
 Integrated 4+3 barrel rivet hinges provide exceptional structural integrity and smooth mechanical operation, engineered for long-term reliability in demanding retail environments.
 

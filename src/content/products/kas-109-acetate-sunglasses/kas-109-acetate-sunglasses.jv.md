@@ -5,7 +5,7 @@ slug: "kas-109-acetate-sunglasses"
 itemNo: "KAS-109"
 date: "2026-05-07"
 colors: "Ireng & Putih & Bulus & Ijo Zaitun"
-materials: "Asetat Mazzucchelli Premium & JIMEI & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -58,7 +58,7 @@ seoKeywords: "produsen kacamata hitam asetat premium, pabrik eyewear OEM kustom,
 
 ## Fitur
 
-- **Bahan Premium:** Digawe saka asetat Mazzucchelli lan JIMEI & JINYU kelas donya, menehi daya tahan sing luar biasa lan ambane warna sing padhang.
+- **Bahan Premium:** Digawe saka asetat Mazzucchelli, JIMEI, JINYU kelas donya, menehi daya tahan sing luar biasa lan ambane warna sing padhang.
 - **Hardware Kuat:** Dilengkapi engsel 3+2 barrel sing dirancang presisi kanggo kelancaran operasional jangka panjang lan stabilitas struktur.
 - **Optik Tahan Benturan:** Nduweni lensa nylon kuat sing menehi kajelasan unggul lan tahan benturan, kanthi pilihan lapisan kustom sing kasedhiya.
 - **Kenyamanan Mulus:** Dirancang kanthi bantalan irung integrasi sing menehi estetika minimalis sing apik lan njamin pas sing stabil lan nyaman.
@@ -76,7 +76,7 @@ seoKeywords: "produsen kacamata hitam asetat premium, pabrik eyewear OEM kustom,
 
 ## Ringkesan
 
-Digawe saka asetat Mazzucchelli lan JIMEI & JINYU kelas donya, KAS-109 mujudake estetika vintage sing kendel sing cocog karo tren fesyen kontemporer. Ambane warna bahan sing padhang lan finishing transparansi dhuwur nyedhiyakake dhasar sing canggih kanggo koleksi kacamata premium.
+Digawe saka asetat Mazzucchelli, JIMEI, JINYU kelas donya, KAS-109 mujudake estetika vintage sing kendel sing cocog karo tren fesyen kontemporer. Ambane warna bahan sing padhang lan finishing transparansi dhuwur nyedhiyakake dhasar sing canggih kanggo koleksi kacamata premium.
 
 Bantalan irung integrasi lan engsel 3+2 barrel sing dirancang presisi njamin pas sing mulus lan stabilitas struktur sing awet, ngimbangi kinerja sing kuat kanthi siluet unisex sing entheng.
 

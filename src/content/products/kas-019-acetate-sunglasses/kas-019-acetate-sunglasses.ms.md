@@ -5,7 +5,7 @@ slug: "kas-019-acetate-sunglasses"
 itemNo: "KAS-019"
 date: "2026-05-10"
 colors: "Hitam, Hijau Susu, Coklat Lut Sinar"
-materials: "Asetat Mazzucchelli & JIMEI & JINYU Premium & Penyesuaian"
+materials: "Asetat Mazzucchelli, JIMEI, JINYU Premium & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100unit/warna)"
 
@@ -41,7 +41,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Pembinaan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi menyediakan bingkai yang ringan namun tahan lama dengan kedalaman warna yang bertenaga.
+- **Bahan Premium:** Pembinaan asetat Mazzucchelli, JIMEI, JINYU gred tinggi menyediakan bingkai yang ringan namun tahan lama dengan kedalaman warna yang bertenaga.
 - **Kejuruteraan Persis:** Engsel 3+2 barel tersuai (boleh dinaik taraf kepada 5-barel atau engsel spring) direka untuk kelancaran operasi jangka panjang.
 - **Optik Berprestasi Tinggi:** Lensa nilon yang teguh memberikan rintangan hentaman yang unggul dan kejelasan luar biasa untuk piawaian eyewear premium.
 - **Keselesaan Ergonomik:** Alas hidung bersepadu direka untuk kesesuaian yang seimbang dan hipoalergenik semasa penggunaan harian yang berpanjangan.
@@ -59,7 +59,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Gambaran Keseluruhan
 
-Piawaian eyewear mewah dipenuhi melalui penggunaan asetat Mazzucchelli dan JIMEI & JINYU premium, memberikan bingkai ini semangat warna yang mendalam dan kemasan yang ringan.
+Piawaian eyewear mewah dipenuhi melalui penggunaan asetat Mazzucchelli, JIMEI, JINYU premium, memberikan bingkai ini semangat warna yang mendalam dan kemasan yang ringan.
 
 Engsel 3+2 barel yang persis berfungsi seiring dengan alas hidung bersepadu untuk memberikan pengalaman yang stabil dan keselesaan tinggi yang sesuai untuk pemakaian harian yang berpanjangan.
 

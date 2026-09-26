@@ -5,7 +5,7 @@ slug: "kas-122-acetate-sunglasses"
 itemNo: "KAS-122"
 date: "2026-05-09"
 colors: "Ireng & Havana"
-materials: "Asetat Mazzucchelli & JIMEI & JINYU Premium & Kustomisasi"
+materials: "Asetat Mazzucchelli, JIMEI, JINYU Premium & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -46,7 +46,7 @@ seoKeywords: "produsen kacamata hitam asetat, eyewear OEM kustom, kacamata hitam
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing nyedhiyakake rasa entheng, daya tahan sing luar biasa, lan kedalaman warna sing padhang.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli, JIMEI, JINYU kelas dhuwur sing nyedhiyakake rasa entheng, daya tahan sing luar biasa, lan kedalaman warna sing padhang.
 - **Hardware Presisi:** Engsel struktur tong 3+2 sing kuwat dirancang kanggo kelancaran operasional sing konsisten lan stabilitas frame jangka panjang.
 - **Optik Unggul:** Lensa nilon sing kuat nyedhiyakake resistensi dampak sing apik kanthi pilihan warna lan lapisan sing bisa dikustomisasi kanthi lengkap.
 - **Kenyamanan Ergonomis:** Bantalan irung sing terintegrasi kanthi lancar dirancang kanggo pas sing aman, tanpa tekanan, lan kenyamanan sing luwih apik sedina muput.
@@ -64,7 +64,7 @@ seoKeywords: "produsen kacamata hitam asetat, eyewear OEM kustom, kacamata hitam
 
 ## Ringkasan
 
-Digawe saka asetat Mazzucchelli lan JIMEI & JINYU premium, frame sing diilhami vintage iki ngimbangi rasa entheng lan ergonomis karo profil warna sing jero lan padhang.
+Digawe saka asetat Mazzucchelli, JIMEI, JINYU premium, frame sing diilhami vintage iki ngimbangi rasa entheng lan ergonomis karo profil warna sing jero lan padhang.
 
 Sistem engsel tong 3+2 sing kuwat nyedhiyakake dhasar struktural kanggo kelancaran sing konsisten lan daya tahan jangka panjang.
 

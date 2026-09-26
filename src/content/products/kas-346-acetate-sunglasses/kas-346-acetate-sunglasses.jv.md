@@ -5,7 +5,7 @@ slug: "kas-346-acetate-sunglasses"
 itemNo: "KAS-346"
 date: "2026-05-12"
 colors: "Ireng & Bulus & Havana & Zaitun"
-materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, eyewear
 
 ## Fitur
 
-- **Bahan Premium:** Asetat Mazzucchelli lan JIMEI & JINYU kualitas dhuwur sing nawakake frame padhang, entheng, lan hypoallergenic kanggo estetika sing apik lan daya tahan sing unggul.
+- **Bahan Premium:** Asetat Mazzucchelli, JIMEI, JINYU kualitas dhuwur sing nawakake frame padhang, entheng, lan hypoallergenic kanggo estetika sing apik lan daya tahan sing unggul.
 - **Hardware Presisi:** Engsel struktur 2+1 tong sing dirancang kanggo menehi ketegangan engsel sing stabil lan kelancaran operasional jangka panjang.
 - **Optik Canggih:** Lensa nilon kuat sing menehi kejelasan luar biasa lan resistensi dampak dhuwur kanthi pilihan warna lan lapisan sing bisa disesuaikan kanthi lengkap.
 - **Kenyamanan Ergonomis:** Bantalan irung terintegrasi sing mulus dirancang kanggo pas sing aman, tanpa tekanan lan distribusi bobot sing dioptimalake sajrone panggunaan sedina muput.
@@ -71,7 +71,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, eyewear
 
 ## Ringkesan
 
-Digawe saka asetat Mazzucchelli lan JIMEI & JINYU kualitas dhuwur, KAS-346 ngimbangi kedalaman visual sing padhang kanthi struktur sing entheng lan hypoallergenic. Bahan premium nyedhiyakake dhasar daya tahan sing tahan lama lan finish canggih sing cocog kanggo koleksi kelas atas.
+Digawe saka asetat Mazzucchelli, JIMEI, JINYU kualitas dhuwur, KAS-346 ngimbangi kedalaman visual sing padhang kanthi struktur sing entheng lan hypoallergenic. Bahan premium nyedhiyakake dhasar daya tahan sing tahan lama lan finish canggih sing cocog kanggo koleksi kelas atas.
 
 Dirancang kanthi engsel 2+1 tong lan bantalan irung terintegrasi sing mulus, frame iki njamin gerakan mekanik sing tepat lan pas ergonomis tanpa tekanan.
 

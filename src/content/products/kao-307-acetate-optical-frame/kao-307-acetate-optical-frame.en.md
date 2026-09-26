@@ -5,7 +5,7 @@ slug: "kao-307-acetate-optical-frame"
 itemNo: "KAO-307"
 date: "2026-05-10"
 colors: "Black & Clear & Tortoise & Stripe"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear, luxury pr
 
 ## Technical Features
 
-- **Premium Material:** Constructed from world-renowned Mazzucchelli, JIMEI & JINYU acetate, providing vibrant color depth and exceptional durability.
+- **Premium Material:** Constructed from world-renowned Mazzucchelli, JIMEI, JINYU acetate, providing vibrant color depth and exceptional durability.
 - **Reinforced Hardware:** Features a high-precision 4+3 barrel rivet hinge structure for superior stability and smooth operational performance.
 - **Superior Optics:** Outfitted with tenacious nylon lenses that support extensive custom tinting and coating options for diverse market needs.
 - **Ergonomic Design:** Integrated nose pads and hand-polished acetate temples ensuring a comfortable, pressure-free fit for all-day use.
@@ -71,7 +71,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear, luxury pr
 
 ## Overview
 
-Mazzucchelli, JIMEI & JINYU acetate provide the KAO-307 with a foundational depth of color and durability that meets the rigorous standards of global fashion trends.
+Mazzucchelli, JIMEI, JINYU acetate provide the KAO-307 with a foundational depth of color and durability that meets the rigorous standards of global fashion trends.
 
 Each frame is anchored by a high-precision 4+3 barrel rivet hinge system, balancing traditional craftsmanship with the reliable performance required for premium daily use.
 

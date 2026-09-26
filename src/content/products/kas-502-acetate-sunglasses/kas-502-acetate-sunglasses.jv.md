@@ -5,7 +5,7 @@ slug: "kas-502-acetate-sunglasses"
 itemNo: "KAS-502"
 date: "2026-05-12"
 colors: "Ireng & Jambon & Bulus Abrit & Havana & Putih"
-materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Kustomisasi"
+materials: "Premium Asetat Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "OEM & ODM ( Kustomisasi )"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -58,7 +58,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata OEM kustom, kacamata labe
 
 ## Fitur
 
-- **Konstruksi Asetat Premium:** Digawe nganggo tangan nggunakake asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur kanggo kekiatan sing luar biasa lan hasil pungkasan sing padhang lan awet.
+- **Konstruksi Asetat Premium:** Digawe nganggo tangan nggunakake asetat Mazzucchelli, JIMEI, JINYU kelas dhuwur kanggo kekiatan sing luar biasa lan hasil pungkasan sing padhang lan awet.
 - **Hardware sing Diperkuat:** Engsel struktur 4+3 barrel sing kuwat menehi stabilitas unggul lan kinerja operasional sing lancar kanggo panggunaan saben dina.
 - **Keunggulan Optik:** Lensa nylon kuat sing nawakake resistensi dampak dhuwur lan kejelasan visual sing cetha kanthi pilihan kustomisasi sing fleksibel.
 - **Desain Ergonomis:** Bantalan irung integrasi lan frame asetat entheng sing dirancang kanggo kenyamanan sedina muput lan pas sing aman.
@@ -75,7 +75,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata OEM kustom, kacamata labe
 
 ## Ringkesan
 
-Digawe saka asetat premium Mazzucchelli lan JIMEI & JINYU, KAS-502 nawakake hasil pungkasan sing padhang lan dipoles nganggo tangan sing cocog karo sensibilitas fashion kelas dhuwur. Kekiatan material lan profil sing entheng nyedhiyakake dhasar sing canggih kanggo portofolio kacamata premium.
+Digawe saka asetat premium Mazzucchelli, JIMEI, JINYU, KAS-502 nawakake hasil pungkasan sing padhang lan dipoles nganggo tangan sing cocog karo sensibilitas fashion kelas dhuwur. Kekiatan material lan profil sing entheng nyedhiyakake dhasar sing canggih kanggo portofolio kacamata premium.
 
 Frame iki nduweni struktur engsel 4+3 barrel sing diperkuat kanggo stabilitas unggul, dilengkapi lensa nylon tahan dampak sing njaga kejelasan optik ing macem-macem lingkungan.
 

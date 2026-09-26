@@ -5,7 +5,7 @@ slug: "kas-122-acetate-sunglasses"
 itemNo: "KAS-122"
 date: "2026-05-09"
 colors: "Siyah & Havana"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -46,7 +46,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM gözlük, lüks �
 
 ## Özellikler
 
-- **Premium Malzemeler:** Hafif bir his, olağanüstü dayanıklılık ve canlı renk derinliği sağlayan yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat yapısı.
+- **Premium Malzemeler:** Hafif bir his, olağanüstü dayanıklılık ve canlı renk derinliği sağlayan yüksek kaliteli Mazzucchelli, JIMEI, JINYU asetat yapısı.
 - **Hassas Donanım:** Tutarlı operasyonel pürüzsüzlük ve uzun vadeli çerçeve stabilitesi için tasarlanmış sağlam 3+2 varil yapılı menteşeler.
 - **Üstün Optik:** Tamamen özelleştirilebilir renklendirme ve kaplama seçenekleriyle mükemmel darbe direnci sağlayan dayanıklı naylon lensler.
 - **Ergonomik Konfor:** Güvenli, basınçsız bir oturuş ve gün boyu gelişmiş konfor için tasarlanmış, dikişsiz bir şekilde entegre edilmiş burun yastıkları.
@@ -64,7 +64,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM gözlük, lüks �
 
 ## Genel Bakış
 
-Premium Mazzucchelli ve JIMEI & JINYU asetattan üretilen bu vintage esintili çerçeve, hafif, ergonomik bir hissi derin ve canlı renk profilleriyle dengeler.
+Premium Mazzucchelli, JIMEI, JINYU asetattan üretilen bu vintage esintili çerçeve, hafif, ergonomik bir hissi derin ve canlı renk profilleriyle dengeler.
 
 Sağlam bir 3+2 varil menteşe sistemi, tutarlı pürüzsüzlük ve uzun vadeli dayanıklılık için yapısal temel sağlar.
 

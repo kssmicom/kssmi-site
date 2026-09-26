@@ -5,7 +5,7 @@ slug: "kas-122-acetate-sunglasses"
 itemNo: "KAS-122"
 date: "2026-05-09"
 colors: "Nero & Havana"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -46,7 +46,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali OEM su misura, occhi
 
 ## Caratteristiche
 
-- **Materiali Premium:** Costruzione in acetato di alta qualità Mazzucchelli e JIMEI & JINYU che offre leggerezza, eccezionale durata e una profondità di colore vibrante.
+- **Materiali Premium:** Costruzione in acetato di alta qualità Mazzucchelli, JIMEI, JINYU che offre leggerezza, eccezionale durata e una profondità di colore vibrante.
 - **Hardware di Precisione:** Robuste cerniere con struttura a barilotto 3+2 progettate per una fluidità operativa costante e stabilità della montatura a lungo termine.
 - **Ottica Superiore:** Lenti in nylon tenace che offrono un'eccellente resistenza agli urti con opzioni di colorazione e rivestimento completamente personalizzabili.
 - **Comfort Ergonomico:** Naselli integrati senza cuciture progettati per una vestibilità sicura e senza pressione, per un comfort prolungato durante tutto il giorno.
@@ -64,7 +64,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali OEM su misura, occhi
 
 ## Panoramica
 
-Realizzata in acetato premium Mazzucchelli e JIMEI & JINYU, questa montatura d'ispirazione vintage bilancia una sensazione leggera ed ergonomica con profili di colore profondi e vibranti.
+Realizzata in acetato premium Mazzucchelli, JIMEI, JINYU, questa montatura d'ispirazione vintage bilancia una sensazione leggera ed ergonomica con profili di colore profondi e vibranti.
 
 Un robusto sistema di cerniere a barilotto 3+2 fornisce la base strutturale per una scorrevolezza costante e una durata a lungo termine.
 

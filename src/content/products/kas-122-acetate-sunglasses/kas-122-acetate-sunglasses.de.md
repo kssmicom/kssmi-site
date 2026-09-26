@@ -5,7 +5,7 @@ slug: "kas-122-acetate-sunglasses"
 itemNo: "KAS-122"
 date: "2026-05-09"
 colors: "Schwarz & Havana"
-materials: "Premium-Mazzucchelli & JIMEI & JINYU-Acetat & Individualisierung"
+materials: "Premium-Mazzucchelli, JIMEI, JINYU-Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -46,7 +46,7 @@ seoKeywords: "Acetat-Sonnenbrillen-Hersteller, individuelle OEM-Brillen, Luxus-P
 
 ## Eigenschaften
 
-- **Premium-Materialien:** Hochwertige Mazzucchelli- und JIMEI & JINYU-Acetat-Konstruktion für ein leichtes Tragegefühl, außergewöhnliche Haltbarkeit und lebendige Farbtiefe.
+- **Premium-Materialien:** Hochwertige Mazzucchelli, JIMEI, JINYU-Acetat-Konstruktion für ein leichtes Tragegefühl, außergewöhnliche Haltbarkeit und lebendige Farbtiefe.
 - **Präzisionsbeschläge:** Robuste 3+2 Fassstruktur-Scharniere, entwickelt für dauerhafte Geschmeidigkeit und langfristige Rahmenstabilität.
 - **Überlegene Optik:** Widerstandsfähige Nylon-Gläser mit exzellenter Stoßfestigkeit und vollständig anpassbaren Tönungs- und Beschichtungsoptionen.
 - **Ergonomischer Komfort:** Nahtlos integrierte Nasenpads für einen sicheren, druckfreien Sitz und erhöhten ganztägigen Tragekomfort.
@@ -64,7 +64,7 @@ seoKeywords: "Acetat-Sonnenbrillen-Hersteller, individuelle OEM-Brillen, Luxus-P
 
 ## Überblick
 
-Gefertigt aus hochwertigem Mazzucchelli- und JIMEI & JINYU-Acetat, balanciert dieser Vintage-inspirierte Rahmen ein leichtes, ergonomisches Tragegefühl mit tiefen, lebendigen Farbprofilen.
+Gefertigt aus hochwertigem Mazzucchelli, JIMEI, JINYU-Acetat, balanciert dieser Vintage-inspirierte Rahmen ein leichtes, ergonomisches Tragegefühl mit tiefen, lebendigen Farbprofilen.
 
 Ein robustes 3+2 Fassscharniersystem bildet die strukturelle Basis für dauerhafte Geschmeidigkeit und langfristige Haltbarkeit.
 

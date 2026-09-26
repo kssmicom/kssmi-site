@@ -5,7 +5,7 @@ slug: "kas-107-acetate-sunglasses"
 itemNo: "KAS-107"
 date: "2026-05-06"
 colors: "Preto & Transparente & Havana & Oliva"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de óculos de sol em acetato, óculos de sol OEM person
 
 ## Características
 
-- **Material Premium:** Acabado à mão usando acetato Mazzucchelli e JIMEI & JINYU de alta qualidade para fornecer uma armação leve e hipoalergênica com vibração excepcional e durabilidade a longo prazo.
+- **Material Premium:** Acabado à mão usando acetato Mazzucchelli, JIMEI, JINYU de alta qualidade para fornecer uma armação leve e hipoalergênica com vibração excepcional e durabilidade a longo prazo.
 - **Engenharia de Precisão:** Apresenta um sistema robusto de dobradiças com estrutura de cano 3+2 projetado para estabilidade operacional superior e tensão consistente de abertura/fechamento.
 - **Óptica de Alto Desempenho:** Equipado com lentes de nylon tenazes que oferecem excelente resistência ao impacto e clareza óptica, com opções completas de tingimento e revestimento personalizados disponíveis.
 - **Conforto Integrado:** Plaquetas nasais integradas com design ergonômico, garantindo uma estética perfeita e um ajuste seguro e sem pressão para uso diário prolongado.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante de óculos de sol em acetato, óculos de sol OEM person
 
 ## Visão Geral
 
-Fabricada em acetato premium Mazzucchelli e JIMEI & JINYU, esta silhueta clássica equilibra a vibração excepcional do material com um acabamento leve e hipoalergênico.
+Fabricada em acetato premium Mazzucchelli, JIMEI, JINYU, esta silhueta clássica equilibra a vibração excepcional do material com um acabamento leve e hipoalergênico.
 
 Armações fresadas de precisão e dobradiças robustas de cano 3+2 fornecem a confiabilidade estrutural e a operação tátil suave esperada em ambientes de butiques de alta qualidade.
 

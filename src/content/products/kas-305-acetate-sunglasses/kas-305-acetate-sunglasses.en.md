@@ -5,7 +5,7 @@ slug: "kas-305-acetate-sunglasses"
 itemNo: "KAS-305"
 date: "2026-05-12"
 colors: "Black & Stripe & Havana & Olive"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, Mazzucchel
 
 ## Technical Features
 
-- **Premium Material Selection:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction delivering a lightweight feel with exceptional durability and vibrant color depth.
+- **Premium Material Selection:** High-grade Mazzucchelli, JIMEI, JINYU acetate construction delivering a lightweight feel with exceptional durability and vibrant color depth.
 - **Robust Hardware:** Precision-engineered 4+3 barrel structure hinges providing long-term operational smoothness and consistent frame alignment.
 - **High-Performance Optics:** Tenacious nylon lenses offering superior impact resistance and optical clarity with versatile customization and coating options.
 - **Ergonomic Comfort:** Integrated nose pads and a refined unisex bridge design ensure a secure, hypoallergenic fit for extended daily wear.
@@ -71,7 +71,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, Mazzucchel
 
 ## Overview
 
-High-grade Mazzucchelli, JIMEI & JINYU acetate define the structural elegance of the KAS-305, delivering a lightweight feel and deep color saturation. This classic unisex design bridges retro aesthetics with modern fashion demands.
+High-grade Mazzucchelli, JIMEI, JINYU acetate define the structural elegance of the KAS-305, delivering a lightweight feel and deep color saturation. This classic unisex design bridges retro aesthetics with modern fashion demands.
 
 Engineered with a precise 4+3 barrel hinge system and integrated nose pads, the frame maintains consistent alignment and comfort through daily wear.
 

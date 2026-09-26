@@ -5,7 +5,7 @@ slug: "kas-132-acetate-sunglasses"
 itemNo: "KAS-132"
 date: "2026-05-09"
 colors: "Siyah & Beyaz & Yeşil & Kaplumbağa"
-materials: "Premium Mazzucchelli Asetat & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Asetat Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) (Özelleştirme)"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel flat-top gözlük, ov
 
 ## Özellikler
 
-- **Premium Malzemeler:** Canlı, uzun ömürlü renk derinliği ile rafine bir estetik sunan yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat yapısı.
+- **Premium Malzemeler:** Canlı, uzun ömürlü renk derinliği ile rafine bir estetik sunan yüksek kaliteli Mazzucchelli, JIMEI, JINYU asetat yapısı.
 - **Hassas Mühendislik:** Profesyonel düzeyde dayanıklılık ve pürüzsüz çalışma performansı için tasarlanmış sağlam 3+2 namlu yapılı menteşeler.
 - **Üstün Optik:** Kapsamlı özelleştirme seçenekleriyle olağanüstü darbe direnci ve görsel netlik sağlayan dayanıklı naylon lensler.
 - **Ergonomik Konfor:** Gün boyu uzun süreli kullanım için güvenli ve dengeli bir oturuş sağlayan entegre burun tamponları ve hafif çerçeve yapısı.
@@ -72,7 +72,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel flat-top gözlük, ov
 
 ## Genel Bakış
 
-Cesur, oversize oranlar ve belirgin bir flat-top siluet, benzersiz derinlik ve dayanıklılık için Mazzucchelli ve JIMEI & JINYU asetatın premium karışımından hazırlanan KAS-132'yi tanımlar.
+Cesur, oversize oranlar ve belirgin bir flat-top siluet, benzersiz derinlik ve dayanıklılık için Mazzucchelli, JIMEI, JINYU asetatın premium karışımından hazırlanan KAS-132'yi tanımlar.
 
 Hassas mühendislikle üretilen 3+2 namlu menteşeler ve dayanıklı naylon lensler, bu çerçevelerin yoğun kullanımda yapısal bütünlüğünü ve görsel netliğini korumasını sağlar.
 

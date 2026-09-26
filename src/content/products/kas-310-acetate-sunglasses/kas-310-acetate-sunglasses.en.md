@@ -5,7 +5,7 @@ slug: "kas-310-acetate-sunglasses"
 itemNo: "KAS-310"
 date: "2026-05-12"
 colors: "Black-Grey & Matte-Clear & Glossy-Gray & Black-Green"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -53,7 +53,7 @@ seoKeywords: "Mazzucchelli acetate sunglasses, custom acetate sunglasses OEM, Ch
 ---
 
 ## Technical Features
-- **Premium Materials:** High-quality Mazzucchelli, JIMEI & JINYU acetate construction offering a vibrant, lightweight, and durable frame with a premium hand-polished finish.
+- **Premium Materials:** High-quality Mazzucchelli, JIMEI, JINYU acetate construction offering a vibrant, lightweight, and durable frame with a premium hand-polished finish.
 - **Durable Hardware:** Robust 4+3 barrel structure hinges engineered for consistent operational smoothness and long-term structural integrity.
 - **Advanced Optics:** Tenacious nylon lenses providing superior clarity and impact resistance with extensive custom coating and tinting options.
 - **Ergonomic Design:** Seamlessly integrated nose pads designed for a secure, comfortable fit and a refined, minimalist aesthetic.
@@ -70,7 +70,7 @@ seoKeywords: "Mazzucchelli acetate sunglasses, custom acetate sunglasses OEM, Ch
 
 ## Overview
 
-Mazzucchelli, JIMEI & JINYU acetate construction defines the KAS-310, providing a vibrant material depth and lightweight resilience that balances luxury with everyday durability. Hand-polished surfaces deliver the refined tactile quality expected by premium global brands.
+Mazzucchelli, JIMEI, JINYU acetate construction defines the KAS-310, providing a vibrant material depth and lightweight resilience that balances luxury with everyday durability. Hand-polished surfaces deliver the refined tactile quality expected by premium global brands.
 
 Integrated 4+3 barrel hinges ensure smooth, consistent operation, maintaining precise frame alignment across intensive long-term use.
 

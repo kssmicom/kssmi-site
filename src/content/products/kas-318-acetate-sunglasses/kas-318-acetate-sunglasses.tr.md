@@ -5,7 +5,7 @@ slug: "kas-318-acetate-sunglasses"
 itemNo: "KAS-318"
 date: "2026-05-12"
 colors: "Siyah & Spark & Havana & Bal Rengi"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) (Özelleştirme)"
 moq: "300 adet/model (her renk için 100 adet)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Özellikler
 
-- **Premium Malzeme:** Hafif, dayanıklı bir çerçeve ve canlı, uzun ömürlü renk derinliği sağlayan, elle seçilmiş Mazzucchelli ve JIMEI & JINYU asetat yapısı.
+- **Premium Malzeme:** Hafif, dayanıklı bir çerçeve ve canlı, uzun ömürlü renk derinliği sağlayan, elle seçilmiş Mazzucchelli, JIMEI, JINYU asetat yapısı.
 - **Hassas Donanım:** Üstün stabilite ve uzun süreli çalışma pürüzsüzlüğü için tasarlanmış yüksek performanslı 4+3 menteşe yapısı.
 - **Yüksek Performanslı Optikler:** Çok yönlü özel renklendirme ve kaplama olanakları ile olağanüstü netlik sunan darbeye dayanıklı Dayanıklı Naylon lensler.
 - **Ergonomik Tasarım:** Güvenli, rahat bir oturuş ve zarif, kusursuz bir estetik için titizlikle tasarlanmış entegre burun tamponu yapısı.
@@ -71,7 +71,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Genel Bakış
 
-Elle seçilmiş Mazzucchelli ve JIMEI & JINYU asetattan üretilen KAS-318, premium moda pazarı için olağanüstü renk canlılığı ve yapısal dayanıklılık sunar. Hafif bileşimi, estetik etkiden ödün vermeden uzun süreli kullanıcı konforu sağlar.
+Elle seçilmiş Mazzucchelli, JIMEI, JINYU asetattan üretilen KAS-318, premium moda pazarı için olağanüstü renk canlılığı ve yapısal dayanıklılık sunar. Hafif bileşimi, estetik etkiden ödün vermeden uzun süreli kullanıcı konforu sağlar.
 
 Hassas mühendislikle üretilmiş 4+3 menteşeler ve entegre burun tamponları, seçici lüks markaların gerektirdiği mekanik stabiliteyi ve ergonomik uyumu sağlar.
 

@@ -5,7 +5,7 @@ slug: "kas-323-acetate-sunglasses"
 itemNo: "KAS-323"
 date: "2026-05-12"
 colors: "Negro & Rojo & Habana & Verde Neón"
-materials: "Acetato Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalización"
+materials: "Acetato Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalización"
 serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM) (Personalización)"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de gafas de sol de acetato premium, fábrica de gafas O
 
 ## Características
 
-- **Materiales Premium:** Construcción de acetato Mazzucchelli y JIMEI & JINYU de alta calidad que ofrece un acabado ligero, duradero y vibrante para una estética de gama alta.
+- **Materiales Premium:** Construcción de acetato Mazzucchelli, JIMEI, JINYU de alta calidad que ofrece un acabado ligero, duradero y vibrante para una estética de gama alta.
 - **Hardware Duradero:** Bisagras robustas con estructura de 4+3 barriles diseñadas para una suavidad operativa constante e integridad estructural a largo plazo.
 - **Óptica de Alto Rendimiento:** Lentes de nylon tenaz que proporcionan una claridad superior y resistencia a los impactos con opciones de personalización completa disponibles.
 - **Diseño Ergonómico:** Almohadillas nasales integradas y una estructura equilibrada con precisión que garantiza un ajuste seguro e hipoalergénico para comodidad durante todo el día.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante de gafas de sol de acetato premium, fábrica de gafas O
 
 ## Resumen
 
-Fabricado con precisión a partir de acetato premium Mazzucchelli y JIMEI & JINYU, el modelo KAS-323 ofrece una estética vibrante y duradera que cumple con las rigurosas exigencias del mercado global del lujo.
+Fabricado con precisión a partir de acetato premium Mazzucchelli, JIMEI, JINYU, el modelo KAS-323 ofrece una estética vibrante y duradera que cumple con las rigurosas exigencias del mercado global del lujo.
 
 Cada montura cuenta con una robusta estructura de bisagras de 4+3 barriles y almohadillas nasales integradas, lo que ofrece una suavidad operativa constante y una mayor comodidad para el usuario.
 

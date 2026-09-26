@@ -5,7 +5,7 @@ slug: "kas-163-acetate-sunglasses"
 itemNo: "KAS-163"
 date: "2026-05-09"
 colors: "Black, Tortoise, Solid Brown"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -41,7 +41,7 @@ seoKeywords: "acetate sunglasses manufacturer, KAS-163 custom eyewear, Chinese a
 
 ## Technical Features
 
-- **Premium Material:** Hand-selected Mazzucchelli, JIMEI & JINYU acetate construction providing exceptional durability with a lightweight, vibrant finish.
+- **Premium Material:** Hand-selected Mazzucchelli, JIMEI, JINYU acetate construction providing exceptional durability with a lightweight, vibrant finish.
 - **Precision Engineering:** Robust 3+2 barrel rivet structure hinges designed for lasting operational smoothness and structural integrity.
 - **High-Performance Optics:** Tenacious nylon lenses engineered for superior clarity with versatile custom coating and tinting capabilities.
 - **Ergonomic Design:** Integrated nose pads and a 52-19-145mm frame profile optimized for a secure fit and refined wearing comfort.
@@ -58,7 +58,7 @@ seoKeywords: "acetate sunglasses manufacturer, KAS-163 custom eyewear, Chinese a
 
 ## Overview
 
-High-end fashion meets material excellence in the KAS-163, which integrates premium Mazzucchelli, JIMEI & JINYU acetate for a sophisticated, durable, and lightweight unisex aesthetic.
+High-end fashion meets material excellence in the KAS-163, which integrates premium Mazzucchelli, JIMEI, JINYU acetate for a sophisticated, durable, and lightweight unisex aesthetic.
 
 Equipped with a robust 3+2 barrel rivet hinge system, the 52mm frame ensures consistent operational smoothness and a refined ergonomic fit.
 

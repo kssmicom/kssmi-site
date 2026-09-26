@@ -5,7 +5,7 @@ slug: "kas-121-acetate-sunglasses"
 itemNo: "KAS-121"
 date: "2026-05-09"
 colors: "Ireng & Havana & Maple"
-materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -50,7 +50,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 
 ## Fitur
 
-- **Konstruksi Asetat Premium:** Digawe saka asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur, nawakake frame sing entheng, awet, lan warnane padhang kanggo panggunaan jangka panjang sing luar biasa.
+- **Konstruksi Asetat Premium:** Digawe saka asetat Mazzucchelli, JIMEI, JINYU kelas dhuwur, nawakake frame sing entheng, awet, lan warnane padhang kanggo panggunaan jangka panjang sing luar biasa.
 - **Hardware Kuat:** Engsel struktur barrel 3+2 sing dirancang kanthi presisi kanggo njamin keselarasan sing aman lan kelancaran operasional sing optimal.
 - **Optik Canggih:** Lensa nylon sing kuat nyedhiyakake kejelasan visual sing unggul, kanthi pilihan pewarnaan lan lapisan kustom sing kasedhiya.
 - **Kenyamanan Tanpa Batas:** Bantalan irung terintegrasi sing dirancang kanthi teliti kanggo nyebarake bobot kanthi rata supaya pas lan nyaman.
@@ -68,7 +68,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 
 ## Gambaran Umum
 
-Nggabungake inspirasi vintage klasik karo kemewahan modern, KAS-121 digawe kanthi trampil saka asetat premium Mazzucchelli lan JIMEI & JINYU. Pondasi bahan sing luar biasa iki njamin frame sing entheng nanging awet banget kanthi finish warnane padhang sing nengsemake.
+Nggabungake inspirasi vintage klasik karo kemewahan modern, KAS-121 digawe kanthi trampil saka asetat premium Mazzucchelli, JIMEI, JINYU. Pondasi bahan sing luar biasa iki njamin frame sing entheng nanging awet banget kanthi finish warnane padhang sing nengsemake.
 
 Integritas struktur dijamin liwat engsel barrel 3+2 sing dirancang kanthi presisi, dene bantalan irung sing digabungake kanthi teliti nyedhiyakake rasa pas sing seimbang lan nyaman.
 

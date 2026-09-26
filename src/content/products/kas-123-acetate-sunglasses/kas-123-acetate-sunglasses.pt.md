@@ -5,7 +5,7 @@ slug: "kas-123-acetate-sunglasses"
 itemNo: "KAS-123"
 date: "2026-05-09"
 colors: "Preto & Mostarda & Bordo"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -49,7 +49,7 @@ seoKeywords: "fabricante óculos de sol acetato, óculos OEM personalizados, óc
 ---
 
 ## Características
-- **Acetato Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU polido à mão que oferece durabilidade excepcional e profundidade de cor vibrante para branding de luxo.
+- **Acetato Premium:** Construção em acetato Mazzucchelli, JIMEI, JINYU polido à mão que oferece durabilidade excepcional e profundidade de cor vibrante para branding de luxo.
 - **Dobradiças de Precisão:** Dobradiças robustas de estrutura de 3+2 barris projetadas para fluidez operacional constante e integridade estrutural a longo prazo.
 - **Ótica de Alto Desempenho:** Lentes de nylon tenaz proporcionando clareza superior e resistência ao impacto, com opções de personalização completa para revestimentos de lentes especializados.
 - **Design Ergonômico:** Plaquetas nasais integradas e contornos de hastes refinados garantindo um ajuste seguro e sem pressão para conforto durante todo o dia.
@@ -66,7 +66,7 @@ seoKeywords: "fabricante óculos de sol acetato, óculos OEM personalizados, óc
 
 ## Visão Geral
 
-Combinando profundidade de cor vibrante com a integridade estrutural do acetato Mazzucchelli e JIMEI & JINYU polido à mão, o modelo KAS-123 representa uma base versátil para coleções de óculos de luxo.
+Combinando profundidade de cor vibrante com a integridade estrutural do acetato Mazzucchelli, JIMEI, JINYU polido à mão, o modelo KAS-123 representa uma base versátil para coleções de óculos de luxo.
 
 Seu perfil unissex equilibrado é reforçado por dobradiças de 3+2 barris projetadas com precisão e plaquetas nasais integradas, garantindo um ajuste refinado e durável para o uso diário.
 

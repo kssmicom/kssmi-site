@@ -5,7 +5,7 @@ slug: "kas-106-acetate-sunglasses"
 itemNo: "KAS-106"
 date: "2026-05-06"
 colors: "Cinza & Havana Brilhante & Havana Fosco & Transparente & Preto & Marrom & Verde"
-materials: "Acetato Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
+materials: "Acetato Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -62,7 +62,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Características
 
-- **Materiais Artesanais:** Acabamento manual utilizando acetato Mazzucchelli e JIMEI & JINYU de primeira qualidade para oferecer uma armação leve e hipoalergênica com profundidade de cor e durabilidade excepcionais.
+- **Materiais Artesanais:** Acabamento manual utilizando acetato Mazzucchelli, JIMEI, JINYU de primeira qualidade para oferecer uma armação leve e hipoalergênica com profundidade de cor e durabilidade excepcionais.
 - **Engenharia de Precisão:** Equipado com um sistema estável de dobradiças de barril 3+2, garantindo tensão consistente e suavidade operacional a longo prazo.
 - **Óptica de Alto Desempenho:** Apresenta lenti di nylon tenace che proporcionam resistência superior ao impacto e clareza óptica para ambientes de varejo de alto padrão.
 - **Ergonomia Aprimorada:** O design de plaqueta nasal integrada e a geometria equilibrada das hastes proporcionam um ajuste seguro e sem pressão para uso prolongado.
@@ -80,7 +80,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Visão Geral
 
-O acetato Mazzucchelli e JIMEI & JINYU de alta qualidade garante que o KAS-106 ofereça uma vibração de color excepcional junto com durabilidade estrutural. Seu perfil ousado e unissex o torna uma escolha de destaque para portfólios de moda de alto padrão.
+O acetato Mazzucchelli, JIMEI, JINYU de alta qualidade garante que o KAS-106 ofereça uma vibração de color excepcional junto com durabilidade estrutural. Seu perfil ousado e unissex o torna uma escolha de destaque para portfólios de moda de alto padrão.
 
 Um sistema reforçado de dobradiças de barril 3+2 e plaquetas nasais ergonômicas proporcionam a estabilidade mecânica e o conforto necessários para ambientes de varejo premium.
 

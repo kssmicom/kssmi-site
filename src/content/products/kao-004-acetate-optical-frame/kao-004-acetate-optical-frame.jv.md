@@ -5,7 +5,7 @@ slug: "kao-004-acetate-optical-frame"
 itemNo: "KAO-004"
 date: "2026-05-10"
 colors: "Ireng & Bulus & Orange & Zebra & Kencana"
-materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Kustomisasi"
+materials: "Premium Asetat Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -43,7 +43,7 @@ seoKeywords: "produsen frame optik asetat, frame optik OEM kustom, kacamata labe
 
 ## Fitur
 
-- **Arsitektur Bahan Premium:** Digawe saka asetat Mazzucchelli lan JIMEI & JINYU kualitas dhuwur, nyedhiyakake frame sing entheng lan awet kanthi profil warna sing urip lan tahan suwe.
+- **Arsitektur Bahan Premium:** Digawe saka asetat Mazzucchelli, JIMEI, JINYU kualitas dhuwur, nyedhiyakake frame sing entheng lan awet kanthi profil warna sing urip lan tahan suwe.
 - **Hardware Stabilitas Dhuwur:** Engsel struktur rivet 4+3 barrel sing dirancang kanthi presisi kanggo kelancaran operasional sing unggul lan keselarasan frame jangka panjang.
 - **Optik Canggih:** Dilengkapi lensa nylon kuat sing nawakake kejelasan luar biasa lan tahan benturan, kanthi pilihan kustomisasi lengkap kanggo warna lan lapisan.
 - **Desain Ergonomis:** Sistem bantalan irung terpadu sing dirancang kanggo pas sing aman lan hypoallergenic sing njamin kenyamanan konsisten nalika dianggo suwe.
@@ -61,7 +61,7 @@ seoKeywords: "produsen frame optik asetat, frame optik OEM kustom, kacamata labe
 
 ## Ringkesan
 
-Asetat Mazzucchelli lan JIMEI & JINYU kualitas dhuwur menehi karakter khas kanggo KAO-004, nggabungake profil warna sing urip kanthi finishing hypoallergenic sing krasa alami ing kulit. Komposisi bahan frame dipilih khusus kanggo nawakake daya tahan tanpa ngrusak siluet elegan lan entheng sing disenengi dening rumah mode modern.
+Asetat Mazzucchelli, JIMEI, JINYU kualitas dhuwur menehi karakter khas kanggo KAO-004, nggabungake profil warna sing urip kanthi finishing hypoallergenic sing krasa alami ing kulit. Komposisi bahan frame dipilih khusus kanggo nawakake daya tahan tanpa ngrusak siluet elegan lan entheng sing disenengi dening rumah mode modern.
 
 Bantalan irung terpadu lan struktur rivet 4+3 barrel sing dikuatake nemtokake keunggulan mekanik frame, nyedhiyakake pas sing aman lan kinerja hardware sing konsisten.
 

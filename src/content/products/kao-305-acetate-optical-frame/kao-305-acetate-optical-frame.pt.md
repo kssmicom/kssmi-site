@@ -5,7 +5,7 @@ slug: "kao-305-acetate-optical-frame"
 itemNo: "KAO-305"
 date: "2026-05-10"
 colors: "Oliva & Preto & Listrado & Havana"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, fábrica de óculos 
 
 ## Características
 
-- **Seleção de Materiais Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, proporcionando um acabamento leve, durável e vibrante para uma estética refinada.
+- **Seleção de Materiais Premium:** Construção em acetato Mazzucchelli, JIMEI, JINYU de alta qualidade, proporcionando um acabamento leve, durável e vibrante para uma estética refinada.
 - **Hardware Reforçado:** Dobradiças robustas de estrutura de rebite de 4+3 barris projetadas para excepcional suavidade operacional e estabilidade a longo prazo.
 - **Ergonomia Integrada:** Ponteiras nasicas integradas de precisão projetadas para oferecer um ajuste seguro e sem pressão para conforto durante todo o dia.
 - **Ótica Versátil:** Lentes de nylon de alta tenacidade com amplas opções de personalização para matizes especializados e revestimentos avançados.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante de armações ópticas de acetato, fábrica de óculos 
 
 ## Visão Geral
 
-Combinando a profundidade vibrante do acetato Mazzucchelli e JIMEI & JINYU, esta armação óptica oferece um equilíbrio sofisticado de durabilidade e luxo leve. A rica paleta — do verde oliva profundo ao clássico Havana — reflete uma linguagem de design adaptada à estética moderna da alta moda.
+Combinando a profundidade vibrante do acetato Mazzucchelli, JIMEI, JINYU, esta armação óptica oferece um equilíbrio sofisticado de durabilidade e luxo leve. A rica paleta — do verde oliva profundo ao clássico Havana — reflete uma linguagem de design adaptada à estética moderna da alta moda.
 
 Projetado para longevidade, o sistema de dobradiça de rebite de 4+3 barris garante um desempenho mecânico perfeito, complementado por ponteiras nasicas integradas para conforto de uso sustentado.
 

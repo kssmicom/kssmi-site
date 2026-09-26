@@ -5,7 +5,7 @@ slug: "kas-109-acetate-sunglasses"
 itemNo: "KAS-109"
 date: "2026-05-07"
 colors: "Nero & Trasparente & Tartaruga & Oliva"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100pz/colore)"
 
@@ -58,7 +58,7 @@ seoKeywords: "produttore di occhiali da sole in acetato premium, fabbrica di occ
 
 ## Caratteristiche
 
-- **Materiale Premium:** Realizzato in acetato di classe mondiale Mazzucchelli e JIMEI & JINYU, offrendo una durata eccezionale e una profondità di colore profonda e vibrante.
+- **Materiale Premium:** Realizzato in acetato di classe mondiale Mazzucchelli, JIMEI, JINYU, offrendo una durata eccezionale e una profondità di colore profonda e vibrante.
 - **Hardware Robusto:** Dotato di cerniere a 3+2 barilotti progettate con precisione per una scorrevolezza operativa a lungo termine e stabilità strutturale.
 - **Ottica ad Alto Impatto:** Presenta lenti in nylon tenace che offrono chiarezza superiore e resistenza agli urti, con ampie opzioni di rivestimento personalizzato disponibili.
 - **Comfort Senza Soluzioni di Continuità:** Progettato con naselli integrati che offrono un'estetica elegante e minimalista assicurando al contempo una vestibilità stabile e confortevole.
@@ -76,7 +76,7 @@ seoKeywords: "produttore di occhiali da sole in acetato premium, fabbrica di occ
 
 ## Panoramica
 
-Realizzato con acetato di classe mondiale Mazzucchelli e JIMEI & JINYU, il modello KAS-109 incarna un'estetica audace e d'ispirazione vintage che risuona con le tendenze della moda contemporanea. La profondità del colore profonda e vibrante del materiale e le finiture ad alta trasparenza forniscono una base sofisticata per collezioni di occhiali premium.
+Realizzato con acetato di classe mondiale Mazzucchelli, JIMEI, JINYU, il modello KAS-109 incarna un'estetica audace e d'ispirazione vintage che risuona con le tendenze della moda contemporanea. La profondità del colore profonda e vibrante del materiale e le finiture ad alta trasparenza forniscono una base sofisticata per collezioni di occhiali premium.
 
 I naselli integrati e le cerniere a 3+2 barilotti progettate con precisione assicurano una vestibilità senza interruzioni e una stabilità strutturale duratura, bilanciando prestazioni robuste con una silhouette unisex leggera.
 

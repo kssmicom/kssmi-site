@@ -5,7 +5,7 @@ slug: "kas-318-acetate-sunglasses"
 itemNo: "KAS-318"
 date: "2026-05-12"
 colors: "Black & Spark & Havana & Honey"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Technical Features
 
-- **Premium Material:** Hand-selected Mazzucchelli, JIMEI & JINYU acetate construction providing a lightweight, durable frame with vibrant, long-lasting color depth.
+- **Premium Material:** Hand-selected Mazzucchelli, JIMEI, JINYU acetate construction providing a lightweight, durable frame with vibrant, long-lasting color depth.
 - **Precision Hardware:** High-performance 4+3 barrel structure hinges engineered for superior stability and long-term operational smoothness.
 - **High-Performance Optics:** Impact-resistant Tenacious Nylon lenses offering exceptional clarity with versatile custom tinting and coating possibilities.
 - **Ergonomic Design:** Integrated nose pad structure meticulously designed for a secure, comfortable fit and a refined, seamless aesthetic.
@@ -71,7 +71,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Overview
 
-Crafted from hand-selected Mazzucchelli, JIMEI & JINYU acetate, the KAS-318 delivers exceptional color vibrancy and structural durability for the premium fashion market. Its lightweight composition ensures long-term wearer comfort without compromising on aesthetic impact.
+Crafted from hand-selected Mazzucchelli, JIMEI, JINYU acetate, the KAS-318 delivers exceptional color vibrancy and structural durability for the premium fashion market. Its lightweight composition ensures long-term wearer comfort without compromising on aesthetic impact.
 
 Precision-engineered 4+3 barrel hinges and integrated nose pads provide the mechanical stability and ergonomic fit required by discerning luxury brands.
 

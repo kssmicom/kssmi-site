@@ -5,7 +5,7 @@ slug: "kas-107-acetate-sunglasses"
 itemNo: "KAS-107"
 date: "2026-05-06"
 colors: "Siyah & Şeffaf & Havana & Zeytin"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (Renk başına 100 adet)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Özellikler
 
-- **Premium Malzeme:** Hafif, hipoalerjenik bir çerçeve sağlamak için yüksek dereceli Mazzucchelli ve JIMEI & JINYU asetat kullanılarak elle bitirilmiştir, olağanüstü canlılık ve uzun vadeli dayanıklılık sunar.
+- **Premium Malzeme:** Hafif, hipoalerjenik bir çerçeve sağlamak için yüksek dereceli Mazzucchelli, JIMEI, JINYU asetat kullanılarak elle bitirilmiştir, olağanüstü canlılık ve uzun vadeli dayanıklılık sunar.
 - **Hassas Mühendislik:** Üstün operasyonel stabilite ve tutarlı açılma/kapanma gerilimi için tasarlanmış sağlam bir 3+2 varil yapılı menteşe sistemine sahiptir.
 - **Yüksek Performanslı Optikler:** Mükemmel darbe direnci ve optik netlik sunan dayanıklı naylon lenslerle donatılmıştır; tam özel renklendirme ve kaplama seçenekleri mevcuttur.
 - **Entegre Konfor:** Kesintisiz bir estetik ve uzun süreli günlük kullanım için güvenli, basınçsız bir uyum sağlayan ergonomik tasarımlı entegre burun tamponları.
@@ -71,7 +71,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Genel Bakış
 
-Premium Mazzucchelli ve JIMEI & JINYU asetattan üretilen bu klasik siluet, olağanüstü malzeme canlılığını hafif, hipoalerjenik bir kaplama ile dengeler.
+Premium Mazzucchelli, JIMEI, JINYU asetattan üretilen bu klasik siluet, olağanüstü malzeme canlılığını hafif, hipoalerjenik bir kaplama ile dengeler.
 
 Hassas frezelenmiş çerçeveler ve sağlam 3+2 varil menteşeler, üst düzey butik ortamlarında beklenen yapısal güvenilirliği ve pürüzsüz dokunsal çalışmayı sağlar.
 

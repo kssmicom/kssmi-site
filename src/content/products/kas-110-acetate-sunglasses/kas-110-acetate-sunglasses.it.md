@@ -5,7 +5,7 @@ slug: "kas-110-acetate-sunglasses"
 itemNo: "KAS-110"
 date: "2026-05-07"
 colors: "Rosso Candy & Tartaruga Rosa & Bianco Crema & Nero"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produttore occhiali in acetato, occhiali OEM personalizzati, occhi
 
 ## Caratteristiche Tecniche
 
-- **Materiale Premium:** Costruzione in acetato Mazzucchelli e JIMEI & JINYU lucidato a mano che offre un'estetica vibrante con una finitura leggera e durevole.
+- **Materiale Premium:** Costruzione in acetato Mazzucchelli, JIMEI, JINYU lucidato a mano che offre un'estetica vibrante con una finitura leggera e durevole.
 - **Ingegneria di Precisione:** Dimensioni unisex professionali 53-19-140mm create per una vestibilità elegante e popolare tra diversi profili demografici.
 - **Ottica Avanzata:** Lenti in nylon tenace ad alta chiarezza che offrono una resistenza agli urti superiore con ampia personalizzazione per rivestimenti speciali.
 - **Hardware Robusto:** Cerniere con struttura a barilotto 3+2 rinforzate che garantiscono fluidità operativa a lungo termine e stabilità della montatura.
@@ -72,7 +72,7 @@ seoKeywords: "produttore occhiali in acetato, occhiali OEM personalizzati, occhi
 
 ## Panoramica
 
-L'acetato Mazzucchelli e JIMEI & JINYU lucidato a mano si fondono nel modello KAS-110 per creare una montatura vibrante e leggera che privilegia sia la profondità estetica che la durata strutturale.
+L'acetato Mazzucchelli, JIMEI, JINYU lucidato a mano si fondono nel modello KAS-110 per creare una montatura vibrante e leggera che privilegia sia la profondità estetica che la durata strutturale.
 
 Ogni unità è dotata di un sistema di cerniere a barilotto 3+2 progettato con precisione e naselli integrati, offrendo il comfort costante e la fluidità operativa attesi dai marchi di occhiali premium.
 

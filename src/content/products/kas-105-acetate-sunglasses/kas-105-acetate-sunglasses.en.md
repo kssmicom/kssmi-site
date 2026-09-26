@@ -5,7 +5,7 @@ slug: "kas-105-acetate-sunglasses"
 itemNo: "KAS-105"
 date: "2026-05-06"
 colors: "Grey & Glossy-Havana & Matte-Havana & Clear & Black"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, premium Ma
 
 ## Technical Features
 
-- **Premium Material:** Hand-polished frames crafted from world-renowned Mazzucchelli, JIMEI & JINYU acetate, offering exceptional durability and vibrant color depth.
+- **Premium Material:** Hand-polished frames crafted from world-renowned Mazzucchelli, JIMEI, JINYU acetate, offering exceptional durability and vibrant color depth.
 - **Durable Hardware:** Precision-engineered 3+2 barrel hinges ensuring structural stability and smooth, long-term operational performance.
 - **High-Performance Optics:** Impact-resistant nylon lenses providing superior clarity and durability for high-end fashion eyewear standards.
 - **Ergonomic Design:** Integrated nose pads and a precision-balanced frame geometry (51-23-145mm) designed for all-day comfort and a universal fit.
@@ -71,7 +71,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, premium Ma
 
 ## Overview
 
-Crafted from premium Mazzucchelli, JIMEI & JINYU acetate, the KAS-105 balances a bold unisex design with vibrant color depth. This hand-polished frame serves as a versatile foundation for brands prioritizing high-density materials and contemporary fashion aesthetics.
+Crafted from premium Mazzucchelli, JIMEI, JINYU acetate, the KAS-105 balances a bold unisex design with vibrant color depth. This hand-polished frame serves as a versatile foundation for brands prioritizing high-density materials and contemporary fashion aesthetics.
 
 The integration of 3+2 barrel hinges and impact-resistant nylon lenses provides the structural integrity and optical performance required by luxury market standards.
 

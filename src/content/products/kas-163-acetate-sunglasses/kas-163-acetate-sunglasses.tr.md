@@ -5,7 +5,7 @@ slug: "kas-163-acetate-sunglasses"
 itemNo: "KAS-163"
 date: "2026-05-09"
 colors: "Siyah, Kaplumbağa, Düz Kahverengi"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) (Özelleştirme)"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -41,7 +41,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, KAS-163 özel gözlük, Çi
 
 ## Özellikler
 
-- **Premium Malzeme:** Hafif ve canlı bir kaplama ile olağanüstü dayanıklılık sağlayan, elle seçilmiş Mazzucchelli ve JIMEI & JINYU asetat yapısı.
+- **Premium Malzeme:** Hafif ve canlı bir kaplama ile olağanüstü dayanıklılık sağlayan, elle seçilmiş Mazzucchelli, JIMEI, JINYU asetat yapısı.
 - **Hassas Mühendislik:** Kalıcı çalışma pürüzsüzlüğü ve yapısal bütünlük için tasarlanmış sağlam 3+2 namlu perçin yapılı menteşeler.
 - **Yüksek Performanslı Optikler:** Çok yönlü özel kaplama ve renklendirme yeteneklerine sahip, üstün netlik için tasarlanmış dayanıklı naylon lensler.
 - **Ergonomik Tasarım:** Entegre burun tamponları ve 52-19-145 mm çerçeve profili optimize edilmiş bir oturuş ve rafine kullanım konforu sağlar.
@@ -58,7 +58,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, KAS-163 özel gözlük, Çi
 
 ## Genel Bakış
 
-Üst düzey moda, KAS-163 modelinde malzeme mükemmelliğiyle buluşuyor; sofistike, dayanıklı ve hafif bir unisex estetik için premium Mazzucchelli ve JIMEI & JINYU asetatı entegre ediyor.
+Üst düzey moda, KAS-163 modelinde malzeme mükemmelliğiyle buluşuyor; sofistike, dayanıklı ve hafif bir unisex estetik için premium Mazzucchelli, JIMEI, JINYU asetatı entegre ediyor.
 
 Sağlam bir 3+2 namlu perçin menteşe sistemiyle donatılmış 52 mm çerçeve, tutarlı çalışma pürüzsüzlüğü ve rafine bir ergonomik oturuş sağlar.
 

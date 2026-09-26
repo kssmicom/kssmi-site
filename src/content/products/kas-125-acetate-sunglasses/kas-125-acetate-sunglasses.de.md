@@ -5,7 +5,7 @@ slug: "kas-125-acetate-sunglasses"
 itemNo: "KAS-125"
 date: "2026-05-09"
 colors: "Schwarz & Helles Schildpatt & Dunkles Schildpatt & Büffelhorn & Khaki"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetat & Individualisierung"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) (Individualisierung)"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -57,7 +57,7 @@ seoKeywords: "Acetat-Sonnenbrillen-Hersteller, individuelle OEM-Brillen, Luxus-P
 ---
 ## Eigenschaften
 
-- **Premium-Materialien:** Leichter und lebendiger Mazzucchelli- und JIMEI & JINYU-Acetatrahmen und -bügel, die eine hochwertige Haptik und lang anhaltende Haltbarkeit bieten.
+- **Premium-Materialien:** Leichter und lebendiger Mazzucchelli, JIMEI, JINYU-Acetatrahmen und -bügel, die eine hochwertige Haptik und lang anhaltende Haltbarkeit bieten.
 - **Langlebige Hardware:** Robuste 4+3 Fass-Struktur Scharniere, entwickelt für präzise Ausrichtung und dauerhafte Leichtgängigkeit.
 - **Fortschrittliche Optik:** Widerstandsfähige Nylon-Gläser, die überragende Klarheit und Stoßfestigkeit innerhalb eines vielseitigen 53-19-145-mm-Rahmenprofils bieten.
 - **Integrierter Komfort:** Ergonomisch gestaltete Nasenpads, die direkt in den Rahmen eingearbeitet sind, für einen stabilen, hypoallergenen Sitz.
@@ -74,7 +74,7 @@ seoKeywords: "Acetat-Sonnenbrillen-Hersteller, individuelle OEM-Brillen, Luxus-P
 
 ## Übersicht
 
-Die hochwertige Mazzucchelli- und JIMEI & JINYU-Acetat-Konstruktion verleiht der KAS-125 eine unverwechselbare Haptik und lang anhaltende Lebendigkeit, die den Standards globaler Luxus-Portfolios entspricht.
+Die hochwertige Mazzucchelli, JIMEI, JINYU-Acetat-Konstruktion verleiht der KAS-125 eine unverwechselbare Haptik und lang anhaltende Lebendigkeit, die den Standards globaler Luxus-Portfolios entspricht.
 
 Der mit 4+3 Fass-Struktur Scharnieren für präzise Ausrichtung ausgestattete Rahmen kombiniert hochschlagfeste Nylon-Gläser mit einem ergonomischen, integrierten Steg für dauerhafte Stabilität.
 

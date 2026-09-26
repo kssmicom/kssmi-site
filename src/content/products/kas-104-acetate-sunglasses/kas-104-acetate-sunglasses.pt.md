@@ -5,7 +5,7 @@ slug: "kas-104-acetate-sunglasses"
 itemNo: "KAS-104"
 date: "2026-05-06"
 colors: "Havana & Marrom & Preto & Floral & Purple-Stripe"
-materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante de óculos de acetato Mazzucchelli, óculos de sol OEM 
 
 ## Características
 
-- **Material da Armação Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, oferecendo um acabamento vibrante e de alto brilho com durabilidade estrutural excepcional para linhas de alta moda.
+- **Material da Armação Premium:** Construção em acetato Mazzucchelli, JIMEI, JINYU de alta qualidade, oferecendo um acabamento vibrante e de alto brilho com durabilidade estrutural excepcional para linhas de alta moda.
 - **Hardware Durável:** Dobradiças com estrutura de 2+1 barril projetadas com precisão para suavidade operacional consistente e estabilidade da armação a longo prazo.
 - **Ótica Superior:** Lentes de nylon tenaz que oferecem alta resistência ao impacto e clareza óptica, com personalização escalável para proteção UV e revestimentos especializados.
 - **Ajuste Ergonômico:** Ponteiras nasicas integradas esculpidas perfeitamente na estrutura de acetato para um ajuste seguro e sem pressão que aumenta o conforto durante todo o dia.
@@ -76,7 +76,7 @@ seoKeywords: "fabricante de óculos de acetato Mazzucchelli, óculos de sol OEM 
 
 ## Visão Geral
 
-Fabricado a partir de uma seleção criteriosa de acetato Mazzucchelli e JIMEI & JINYU premium, o KAS-104 equilibra uma vibrante profundidade de cor com um acabamento de alto brilho que define os óculos de luxo contemporâneos.
+Fabricado a partir de uma seleção criteriosa de acetato Mazzucchelli, JIMEI, JINYU premium, o KAS-104 equilibra uma vibrante profundidade de cor com um acabamento de alto brilho que define os óculos de luxo contemporâneos.
 
 A integridade estrutural é ancorada por um sistema de dobradiças de 2+1 barril projetado com precisão, combinado com ponteiras nasicas integradas para garantir um ajuste seguro e ergonômico para diversas formas de rosto.
 

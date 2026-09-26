@@ -5,7 +5,7 @@ slug: "kas-110-acetate-sunglasses"
 itemNo: "KAS-110"
 date: "2026-05-07"
 colors: "Rojo Caramelo & Carey Rosa & Blanco Crema & Negro"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalización"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de gafas de acetato, gafas OEM personalizadas, gafas de
 
 ## Características Técnicas
 
-- **Material Premium:** Construcción de acetato Mazzucchelli y JIMEI & JINYU pulido a mano que ofrece una estética vibrante con un acabado ligero y duradero.
+- **Material Premium:** Construcción de acetato Mazzucchelli, JIMEI, JINYU pulido a mano que ofrece una estética vibrante con un acabado ligero y duradero.
 - **Ingeniería de Precisión:** Dimensiones unisex profesionales de 53-19-140 mm creadas para un ajuste elegante y popular en diversos perfiles demográficos.
 - **Óptica Avanzada:** Lentes de nailon tenaz de alta claridad que proporcionan una resistencia superior a los impactos con una amplia personalización para revestimientos especiales.
 - **Herrajes Robustos:** Bisagras de estructura de barril 3+2 reforzadas que garantizan la suavidad operativa a largo plazo y la estabilidad de la montatura.
@@ -72,7 +72,7 @@ seoKeywords: "fabricante de gafas de acetato, gafas OEM personalizadas, gafas de
 
 ## Descripción General
 
-El acetato Mazzucchelli y JIMEI & JINYU pulido a mano se fusionan en el KAS-110 para crear una montura vibrante y ligera que prioriza tanto la profundidad estética como la durabilidad estructural.
+El acetato Mazzucchelli, JIMEI, JINYU pulido a mano se fusionan en el KAS-110 para crear una montura vibrante y ligera que prioriza tanto la profundidad estética como la durabilidad estructural.
 
 Cada unidad cuenta con un sistema de bisagra de barril 3+2 diseñado con precisión y almohadillas nasales integradas, brindando la comodidad constante y la suavidad operativa que esperan las marcas de gafas premium.
 

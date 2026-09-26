@@ -5,7 +5,7 @@ slug: "kas-323-acetate-sunglasses"
 itemNo: "KAS-323"
 date: "2026-05-12"
 colors: "Black & Red & Havana & Neon-Green"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "premium acetate sunglasses manufacturer, custom OEM sunglasses fac
 
 ## Technical Features
 
-- **Premium Materials:** High-quality Mazzucchelli, JIMEI & JINYU acetate construction offering a lightweight, durable, and vibrant finish for a high-end aesthetic.
+- **Premium Materials:** High-quality Mazzucchelli, JIMEI, JINYU acetate construction offering a lightweight, durable, and vibrant finish for a high-end aesthetic.
 - **Durable Hardware:** Robust 4+3 barrel structure hinges engineered for consistent operational smoothness and long-term structural integrity.
 - **High-Performance Optics:** Tenacious nylon lenses providing superior clarity and impact resistance with full customization options available.
 - **Ergonomic Design:** Integrated nose pads and a precision-balanced structure ensuring a secure, hypoallergenic fit for all-day comfort.
@@ -71,7 +71,7 @@ seoKeywords: "premium acetate sunglasses manufacturer, custom OEM sunglasses fac
 
 ## Overview
 
-Precision-crafted from premium Mazzucchelli, JIMEI & JINYU acetate, the KAS-323 offers a vibrant and durable aesthetic that meets the rigorous demands of the global luxury market.
+Precision-crafted from premium Mazzucchelli, JIMEI, JINYU acetate, the KAS-323 offers a vibrant and durable aesthetic that meets the rigorous demands of the global luxury market.
 
 Each frame features a robust 4+3 barrel hinge structure and integrated nose pads, delivering consistent operational smoothness and enhanced wearer comfort.
 

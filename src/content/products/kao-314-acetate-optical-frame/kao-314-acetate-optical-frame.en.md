@@ -5,7 +5,7 @@ slug: "kao-314-acetate-optical-frame"
 itemNo: "KAO-314"
 date: "2026-05-10"
 colors: "Black & Neon-Green & Havana & Champagne & Smoke"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -58,7 +58,7 @@ seoKeywords: "acetate optical frames, custom optical eyewear, OEM optical frame 
 
 ## Technical Features
 
-- **Premium Material Construction:** High-grade Mazzucchelli, JIMEI & JINYU acetate front and temples offering a lightweight feel with superior durability and vibrant color depth.
+- **Premium Material Construction:** High-grade Mazzucchelli, JIMEI, JINYU acetate front and temples offering a lightweight feel with superior durability and vibrant color depth.
 - **Robust Hardware:** Precision-engineered 4+3 barrel rivet structure hinges ensuring long-term operational smoothness and structural stability.
 - **Ergonomic Design:** Seamlessly integrated nose pads crafted for all-day comfort and a secure, non-slip fit across various facial profiles.
 - **High-Performance Optics:** Tenacious nylon lenses with extensive customization options for tints and coatings to align with specific brand aesthetics.
@@ -76,7 +76,7 @@ seoKeywords: "acetate optical frames, custom optical eyewear, OEM optical frame 
 
 ## Overview
 
-Combining high-grade Mazzucchelli, JIMEI & JINYU acetate, this model achieves a sophisticated balance of vibrant color depth and structural durability.
+Combining high-grade Mazzucchelli, JIMEI, JINYU acetate, this model achieves a sophisticated balance of vibrant color depth and structural durability.
 
 The precision-engineered 4+3 barrel rivet hinges ensure lasting operational smoothness, while the integrated nose pads provide a secure, ergonomic fit.
 

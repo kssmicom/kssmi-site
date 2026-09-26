@@ -5,7 +5,7 @@ slug: "kao-501-acetate-optical-frame"
 itemNo: "KAO-501"
 date: "2026-05-10"
 colors: "Black & Havana & Chocolate & Cream"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -55,7 +55,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM optical frames, lu
 
 ## Technical Features
 
-- **Premium Materials:** Crafted from authentic Mazzucchelli, JIMEI & JINYU acetate, providing a lightweight yet durable frame with a vibrant, high-gloss finish.
+- **Premium Materials:** Crafted from authentic Mazzucchelli, JIMEI, JINYU acetate, providing a lightweight yet durable frame with a vibrant, high-gloss finish.
 - **Vintage Hardware:** Robust 4+3 barrel rivet hinges engineered for superior structural integrity and a timeless, hand-crafted aesthetic.
 - **Sculptural Design:** Slim temple construction featuring precise sculptural detailing for a refined profile and enhanced ergonomic comfort.
 - **High-Performance Optics:** Tenacious nylon lenses offering exceptional clarity and impact resistance with full customization for tints and coatings.
@@ -73,7 +73,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM optical frames, lu
 
 ## Overview
 
-Authentic Mazzucchelli, JIMEI & JINYU acetate provide the KAO-501 with its signature high-gloss finish and resilient structural depth.
+Authentic Mazzucchelli, JIMEI, JINYU acetate provide the KAO-501 with its signature high-gloss finish and resilient structural depth.
 
 The frame utilizes a robust 4+3 barrel rivet hinge system and sculptural slim temples to balance vintage aesthetics with modern mechanical reliability and comfort.
 

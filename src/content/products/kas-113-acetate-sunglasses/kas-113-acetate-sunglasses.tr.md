@@ -5,7 +5,7 @@ slug: "kas-113-acetate-sunglasses"
 itemNo: "KAS-113"
 date: "2026-05-09"
 colors: "Siyah & Kaplumbağa & Krem & Mavi"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100adet/renk)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Teknik Özellikler
 
-- **Premium Malzeme Bileşimi:** Lüks bir his için hafif, dayanıklı ve canlı bir yüzey sunan yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetattan el yapımı.
+- **Premium Malzeme Bileşimi:** Lüks bir his için hafif, dayanıklı ve canlı bir yüzey sunan yüksek kaliteli Mazzucchelli, JIMEI, JINYU asetattan el yapımı.
 - **Hassas Mühendislik:** Uzun süreli operasyonel pürüzsüzlük ve çerçeve kararlılığı için tasarlanmış sağlam bir 3+2 varil yapılı menteşe ile donatılmıştır.
 - **Yüksek Çözünürlüklü Optikler:** Renk tonları ve kaplamalar için kapsamlı özelleştirme seçenekleriyle üstün netlik ve darbe direnci sağlayan dayanıklı naylon lenslere sahiptir.
 - **Ergonomik Tasarım:** Farklı yüz şekilleri için güvenli, hipoalerjenik bir uyum sağlayan entegre burun pedleri ve dengeli 51-23-145mm profil.
@@ -72,7 +72,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Genel Bakış
 
-Canlı Mazzucchelli ve JIMEI & JINYU asetatı harmanlayan bu model, zamansız klasisizmi modern moda duyarlılıklarıyla dengeleyen cesur, unisex bir estetik sunar. Eşsiz el yapımı yüzeyi, lüks moda evleri ve butik etiketlerle yankılanan premium bir his garanti eder.
+Canlı Mazzucchelli, JIMEI, JINYU asetatı harmanlayan bu model, zamansız klasisizmi modern moda duyarlılıklarıyla dengeleyen cesur, unisex bir estetik sunar. Eşsiz el yapımı yüzeyi, lüks moda evleri ve butik etiketlerle yankılanan premium bir his garanti eder.
 
 Hassas mühendislik ürünü 3+2 varil menteşeler ve ergonomik 51-23-145mm profil, dayanıklı çerçeve kararlılığını ve çeşitli yüz şekilleri için tüm gün konforu garanti eder.
 

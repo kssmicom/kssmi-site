@@ -5,7 +5,7 @@ slug: "kas-317-acetate-sunglasses"
 itemNo: "KAS-317"
 date: "2026-05-12"
 colors: "Bening & Madu & Shampanye & Bulus & Ireng"
-materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -58,7 +58,7 @@ seoKeywords: "kacamata hitam asetat Mazzucchelli, produsen kacamata kustom, prod
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing nyedhiyakake tampilan sing padhang, entheng, lan awet kanggo panggunaan jangka panjang.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli, JIMEI, JINYU kelas dhuwur sing nyedhiyakake tampilan sing padhang, entheng, lan awet kanggo panggunaan jangka panjang.
 - **Hardware Kuat:** Engsel struktur 4+3 barrel sing dirancang kanthi presisi kanggo operasi sing lancar lan daya tahan jangka panjang, kanthi pilihan upgrade menyang 5 barrel lan engsel pegas.
 - **Optik Performa Dhuwur:** Lensa nylon kuat sing nyedhiyakake kajelasan unggul lan tahan benturan kanthi macem-macem pilihan kustomisasi kanggo warna lan lapisan lensa.
 - **Kenyamanan Ergonomis:** Bantalan irung integrasi sing dirancang kanggo pas sing pas lan kenyamanan sedina muput kanggo macem-macem jinis rai.
@@ -76,7 +76,7 @@ seoKeywords: "kacamata hitam asetat Mazzucchelli, produsen kacamata kustom, prod
 
 ## Ringkesan
 
-Kecanggihan ketemu daya tahan ing konstruksi premium iki, ing ngendi asetat Mazzucchelli lan JIMEI & JINYU polesan tangan nyedhiyakake estetika sing sugih lan berlapis-lapis sing tahan luntur. Komposisi frame sing entheng mesthekake yen desain sing kandel lan trendy tetep nyaman kanggo panggunaan saben dina sing suwe.
+Kecanggihan ketemu daya tahan ing konstruksi premium iki, ing ngendi asetat Mazzucchelli, JIMEI, JINYU polesan tangan nyedhiyakake estetika sing sugih lan berlapis-lapis sing tahan luntur. Komposisi frame sing entheng mesthekake yen desain sing kandel lan trendy tetep nyaman kanggo panggunaan saben dina sing suwe.
 
 Engsel 4+3 barrel kelas industri nyedhiyakake mekanisme pambukaan sing kuat lan dipercaya, dene geometri 48-22-145mm sing diitung kanthi teliti nawakake pas unisex serbaguna sing cocog karo macem-macem pilihan pasar global.
 

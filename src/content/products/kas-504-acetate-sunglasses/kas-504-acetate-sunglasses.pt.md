@@ -5,7 +5,7 @@ slug: "kas-504-acetate-sunglasses"
 itemNo: "KAS-504"
 date: "2026-05-13"
 colors: "Tartaruga com Verde, Preto com Marrom, Oliva Transparente com Marrom Degradê"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) – Personalização"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -35,13 +35,13 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KAS-504 Óculos de Sol Unisex de Acetato | Fornecedor Custom"
-seoDescription: "Óculos de sol de acetato premium Mazzucchelli & JIMEI & JINYU disponíveis para personalização OEM/ODM completa. Silhuetas unisex para marcas de moda. A partir de 300 MOQ."
+seoDescription: "Óculos de sol de acetato premium Mazzucchelli, JIMEI, JINYU disponíveis para personalização OEM/ODM completa. Silhuetas unisex para marcas de moda. A partir de 300 MOQ."
 seoKeywords: "fabricante óculos sol acetato personalizado, OEM óculos acetato, fornecedor marca própria óculos sol, óculos acetato atacado China, fábrica OEM óculos sol moda, óculos unisex personalizáveis, produção óculos acetato sob medida"
 ---
 
 ## Características
 
-- **Material Premium:** Fabricados em acetato de alta qualidade Mazzucchelli e JIMEI & JINYU, oferecendo uma estética leve, durável e vibrante.
+- **Material Premium:** Fabricados em acetato de alta qualidade Mazzucchelli, JIMEI, JINYU, oferecendo uma estética leve, durável e vibrante.
 - **Hardware Duradouro:** Dobradiças estáveis de estrutura 3+2 barril projetadas para fluidez operacional de longo prazo, com opções personalizáveis de 5 barris ou dobradiça de mola.
 - **Ótica Premium:** Lentes de nylon resistente proporcionando excelente clareza visual, com amplas opções de personalização disponíveis.
 - **Conforto Estrutural:** Ponteiras nasais integradas de acetato projetadas para um ajuste seguro e confortável com uma estética sem costura.
@@ -59,7 +59,7 @@ seoKeywords: "fabricante óculos sol acetato personalizado, OEM óculos acetato,
 
 ## Visão Geral
 
-Produzido com Mazzucchelli, JIMEI & JINYU — três das casas de acetato mais respeitadas do setor — o KAS-504 traz credibilidade material ao primeiro olhar. Suas colorações distintivas, de Tartaruga com Verde a Oliva Transparente com Marrom Degradê, refletem uma paleta projetada para mercados de moda de vanguarda em todo o mundo.
+Produzido com Mazzucchelli, JIMEI, JINYU — três das casas de acetato mais respeitadas do setor — o KAS-504 traz credibilidade material ao primeiro olhar. Suas colorações distintivas, de Tartaruga com Verde a Oliva Transparente com Marrom Degradê, refletem uma paleta projetada para mercados de moda de vanguarda em todo o mundo.
 
 Dobradiças estáveis de estrutura 3+2 barril e ponteiras nasais integradas de acetato proporcionam o mesmo padrão de durabilidade e conforto de uso esperado por ambientes de varejo premium.
 

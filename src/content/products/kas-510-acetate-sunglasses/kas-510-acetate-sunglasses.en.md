@@ -5,7 +5,7 @@ slug: "kas-510-acetate-sunglasses"
 itemNo: "KAS-510"
 date: "2026-05-13"
 colors: "Black with Black, Havana with Brown, Tortoise with Black"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -35,13 +35,13 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KAS-510 Fashion Trendy Acetate Sunglasses | Custom Supplier"
-seoDescription: "Premium Mazzucchelli & JIMEI & JINYU acetate sunglasses available for full OEM/ODM customization. Bespoke frame sizes, colorways & logo options. 300 MOQ per model."
+seoDescription: "Premium Mazzucchelli, JIMEI, JINYU acetate sunglasses available for full OEM/ODM customization. Bespoke frame sizes, colorways & logo options. 300 MOQ per model."
 seoKeywords: "acetate sunglasses manufacturer, custom OEM acetate eyewear, private label sunglasses supplier, wholesale acetate frames China, fashion sunglasses ODM factory, bespoke sunglasses customization, Chinese acetate eyewear producer, premium sunglasses for boutique brands"
 ---
 
 ## Technical Features
 
-- **Premium Acetate Construction:** Frames and temples crafted from certified Mazzucchelli, JIMEI & JINYU acetate, delivering a lightweight feel, long-term structural durability, and rich, vibrant color depth.
+- **Premium Acetate Construction:** Frames and temples crafted from certified Mazzucchelli, JIMEI, JINYU acetate, delivering a lightweight feel, long-term structural durability, and rich, vibrant color depth.
 - **Versatile Hardware:** 2+1 barrel structure hinges with optional upgrades to 5-barrel or spring hinges, engineered for consistent operational smoothness and extended product lifecycle.
 - **Premium Optics:** Tenacious nylon lenses offering reliable impact resistance and broad compatibility with custom tinting and optical coating specifications.
 - **Integrated Comfort Design:** Acetate-integrated nose pads provide a seamless aesthetic while ensuring a stable, comfortable fit across diverse facial profiles.
@@ -59,7 +59,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM acetate eyewear, priva
 
 ## Overview
 
-Sourced from certified Mazzucchelli, JIMEI & JINYU mills, the acetate used in the KAS-510 carries an inherent richness — in color, in weight, and in tactile quality — that positions every unit as a credible premium product from the first touch.
+Sourced from certified Mazzucchelli, JIMEI, JINYU mills, the acetate used in the KAS-510 carries an inherent richness — in color, in weight, and in tactile quality — that positions every unit as a credible premium product from the first touch.
 
 Engineered with upgradeable 2+1 barrel hinges, tenacious nylon optics, and seamlessly integrated nose pads, each frame is built for consistent performance across the full production run.
 

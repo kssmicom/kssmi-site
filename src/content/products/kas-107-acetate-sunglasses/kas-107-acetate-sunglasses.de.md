@@ -5,7 +5,7 @@ slug: "kas-107-acetate-sunglasses"
 itemNo: "KAS-107"
 date: "2026-05-06"
 colors: "Schwarz & Transparent & Havana & Oliv"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetat & Individualisierung"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100Stk/Farbe)"
 
@@ -54,7 +54,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, individuelle OEM Sonnenbrillen, L
 
 ## Eigenschaften
 
-- **Premium-Material:** Handgefertigt aus hochwertigem Mazzucchelli- und JIMEI & JINYU-Acetat, um einen leichten, hypoallergenen Rahmen mit außergewöhnlicher Farbtiefe und langfristiger Haltbarkeit zu bieten.
+- **Premium-Material:** Handgefertigt aus hochwertigem Mazzucchelli, JIMEI, JINYU-Acetat, um einen leichten, hypoallergenen Rahmen mit außergewöhnlicher Farbtiefe und langfristiger Haltbarkeit zu bieten.
 - **Präzisionstechnik:** Verfügt über ein robustes 3+2-Barrel-Scharniersystem, das für überlegene Stabilität und gleichmäßige Öffnungs-/Schließspannung entwickelt wurde.
 - **Hochleistungsoptik:** Ausgestattet mit widerstandsfähigen Nylongläsern, die eine hervorragende Stoßfestigkeit und optische Klarheit bieten, wobei vollständige individuelle Tönungs- und Beschichtungsoptionen verfügbar sind.
 - **Integrierter Komfort:** Ergonomisch gestaltete, integrierte Nasenpads, die eine nahtlose Ästhetik und einen sicheren, druckfreien Sitz für langes tägliches Tragen gewährleisten.
@@ -71,7 +71,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, individuelle OEM Sonnenbrillen, L
 
 ## Übersicht
 
-Gefertigt aus Premium-Mazzucchelli- und JIMEI & JINYU-Acetat, verbindet diese klassische Silhouette außergewöhnliche Materiallebendigkeit mit einem leichten, hypoallergenen Finish.
+Gefertigt aus Premium-Mazzucchelli, JIMEI, JINYU-Acetat, verbindet diese klassische Silhouette außergewöhnliche Materiallebendigkeit mit einem leichten, hypoallergenen Finish.
 
 Präzisionsgefräste Rahmen und robuste 3+2 Barrel-Scharniere bieten die strukturelle Zuverlässigkeit und den reibungslosen taktilen Betrieb, die in High-End-Boutique-Umgebungen erwartet werden.
 

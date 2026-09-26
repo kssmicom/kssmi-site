@@ -5,7 +5,7 @@ slug: "kao-003-acetate-optical-frame"
 itemNo: "KAO-003"
 date: "2026-05-10"
 colors: "Preto & Tartaruga & Laranja & Zebra & Dourado"
-materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -43,7 +43,7 @@ seoKeywords: "fabricante armação óptica acetato, fábrica óculos OEM persona
 
 ## Características
 
-- **Construção em Acetato Premium:** Armação e hastes de acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, proporcionando um acabamento leve, durável e vibrante para uma estética refinada.
+- **Construção em Acetato Premium:** Armação e hastes de acetato Mazzucchelli, JIMEI, JINYU de alta qualidade, proporcionando um acabamento leve, durável e vibrante para uma estética refinada.
 - **Hardware Reforçado:** Dobradiças profissionais com estrutura de rebite de 4+3 barris, projetadas para estabilidade superior e suavidade operacional a longo prazo.
 - **Óptica de Alto Desempenho:** Lentes de nylon tenaz que oferecem resistência excepcional a impactos com opções de personalização total para tonalidades e revestimentos especializados.
 - **Conforto Ergonômico:** Plaquetas integradas projetadas para um ajuste seguro e equilibrado, e conforto durante todo o dia em diversos perfis faciais.
@@ -60,7 +60,7 @@ seoKeywords: "fabricante armação óptica acetato, fábrica óculos OEM persona
 
 ## Visão Geral
 
-A criação de óculos de alto impacto começa com as texturas ricas e polidas à mão do acetato Mazzucchelli e JIMEI & JINYU. Este modelo equilibra dimensões estruturais ousadas com uma paleta de cores vibrante e multifacetada para atender às demandas estéticas da moda de luxo.
+A criação de óculos de alto impacto começa com as texturas ricas e polidas à mão do acetato Mazzucchelli, JIMEI, JINYU. Este modelo equilibra dimensões estruturais ousadas com uma paleta de cores vibrante e multifacetada para atender às demandas estéticas da moda de luxo.
 
 A integração de dobradiças com estrutura de rebite de 4+3 barris e plaquetas ergonômicas garante um ajuste seguro e durabilidade a longo prazo para o uso diário.
 

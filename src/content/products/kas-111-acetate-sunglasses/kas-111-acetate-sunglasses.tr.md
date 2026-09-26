@@ -5,7 +5,7 @@ slug: "kas-111-acetate-sunglasses"
 itemNo: "KAS-111"
 date: "2026-05-09"
 colors: "Şeker Kırmızısı & Pembe Kaplumbağa & Krem Beyaz & Siyah"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100adet/renk)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Özellikler
 
-- **Premium Çerçeve Malzemesi:** Yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetattan ustalıkla üretilmiştir, olağanüstü dayanıklılık ve canlı renk derinliği ile hafif bir his sunar.
+- **Premium Çerçeve Malzemesi:** Yüksek kaliteli Mazzucchelli, JIMEI, JINYU asetattan ustalıkla üretilmiştir, olağanüstü dayanıklılık ve canlı renk derinliği ile hafif bir his sunar.
 - **Hassas Menteşeler:** Uzun süreli operasyonel pürüzsüzlük ve yapısal kararlılık için tasarlanmış sağlam 3+2 varil yapılı menteşeler.
 - **Yüksek Performanslı Optikler:** Mevcut kapsamlı özel renklendirme seçenekleriyle üstün netlik ve darbe direnci sağlayan dayanıklı naylon lensler.
 - **Ergonomik Konfor:** Gün boyu denge ve konfor sağlayan dikişsiz, hipoalerjenik bir uyum için tasarlanmış entegre burun tamponları.
@@ -71,7 +71,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Genel Bakış
 
-Canlı renk derinliği ve premium yapısal bütünlük, cesur, vintage esintili bir estetiği yakalamak için yüksek dereceli Mazzucchelli ve JIMEI & JINYU asetattan üretilen bir model olan KAS-111'de buluşuyor.
+Canlı renk derinliği ve premium yapısal bütünlük, cesur, vintage esintili bir estetiği yakalamak için yüksek dereceli Mazzucchelli, JIMEI, JINYU asetattan üretilen bir model olan KAS-111'de buluşuyor.
 
 Yapısal kararlılık, sağlam 3+2 varil menteşelerle korunurken, entegre burun tamponları çeşitli yüz şekilleri için dikişsiz, ergonomik bir uyum sunar.
 

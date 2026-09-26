@@ -5,7 +5,7 @@ slug: "kas-019-acetate-sunglasses"
 itemNo: "KAS-019"
 date: "2026-05-10"
 colors: "Đen, Xanh sữa, Nâu trong suốt"
-materials: "Axetat Mazzucchelli & JIMEI & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Mazzucchelli, JIMEI, JINYU cao cấp & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100cái/màu)"
 
@@ -41,7 +41,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Cấu tạo từ axetat Mazzucchelli và JIMEI & JINYU cấp cao mang lại gọng kính nhẹ nhưng bền bỉ với độ sâu màu sắc rực rỡ.
+- **Chất liệu cao cấp:** Cấu tạo từ axetat Mazzucchelli, JIMEI, JINYU cấp cao mang lại gọng kính nhẹ nhưng bền bỉ với độ sâu màu sắc rực rỡ.
 - **Kỹ thuật chính xác:** Bản lề 3+2 chấu tùy chỉnh (có thể nâng cấp lên 5 chấu hoặc bản lề lò xo) được thiết kế để vận hành êm ái lâu dài.
 - **Quang học hiệu suất cao:** Tròng kính nylon bền bỉ mang lại khả năng chống va đập vượt trội và độ rõ nét đặc biệt cho các tiêu chuẩn kính mắt cao cấp.
 - **Thoải mái công thái học:** Đệm mũi liền khối được thiết kế để mang lại sự cân bằng, không gây dị ứng khi sử dụng hàng ngày trong thời gian dài.
@@ -59,7 +59,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Tổng quan
 
-Các tiêu chuẩn kính mắt sang trọng được đáp ứng thông qua việc sử dụng axetat Mazzucchelli và JIMEI & JINYU cao cấp, mang lại cho gọng kính này sự sống động về màu sắc sâu sắc và lớp hoàn thiện nhẹ nhàng.
+Các tiêu chuẩn kính mắt sang trọng được đáp ứng thông qua việc sử dụng axetat Mazzucchelli, JIMEI, JINYU cao cấp, mang lại cho gọng kính này sự sống động về màu sắc sâu sắc và lớp hoàn thiện nhẹ nhàng.
 
 Bản lề 3+2 chấu chính xác hoạt động cùng với đệm mũi liền khối để mang lại trải nghiệm ổn định, thoải mái cao, phù hợp để đeo hàng ngày trong thời gian dài.
 

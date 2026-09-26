@@ -5,7 +5,7 @@ slug: "kas-153-acetate-sunglasses"
 itemNo: "KAS-153"
 date: "2026-05-09"
 colors: "Đồi mồi, Trong suốt, Đen, Nâu"
-materials: "Axetat Premium Mazzucchelli & JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Premium Mazzucchelli, JIMEI, JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "OEM & ODM (Tùy chỉnh theo yêu cầu)"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -41,7 +41,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Cấu trúc từ axetat Mazzucchelli và JIMEI & JINYU cao cấp mang lại bề mặt hoàn thiện được đánh bóng thủ công rực rỡ với độ bền nhẹ vượt trội.
+- **Chất liệu cao cấp:** Cấu trúc từ axetat Mazzucchelli, JIMEI, JINYU cao cấp mang lại bề mặt hoàn thiện được đánh bóng thủ công rực rỡ với độ bền nhẹ vượt trội.
 - **Kỹ thuật chính xác:** Bản lề cấu trúc đinh tán 3+2 ổn định được thiết kế để vận hành trơn tru ở cấp độ chuyên nghiệp và đảm bảo tính toàn vẹn cấu trúc lâu dài.
 - **Quang học hiệu suất cao:** Tròng kính nylon bền bỉ cung cấp khả năng chống va đập và độ rõ nét vượt trội với các tùy chọn màu sắc và lớp phủ tùy chỉnh phong phú.
 - **Thiết kế công thái học:** Đệm mũi liền khối và càng kính axetat tinh tế được thiết kế để mang lại sự thoải mái cả ngày và sự vừa vặn an toàn, cân bằng.
@@ -58,7 +58,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mát OEM tùy chỉnh, 
 
 ## Tổng quan
 
-Được chế tác với kiểu dáng tinh tế từ axetat Mazzucchelli và JIMEI & JINYU đánh bóng thủ công, mẫu kính này mang lại chiều sâu màu sắc rực rỡ và độ bền nhẹ như kỳ vọng của thị trường xa xỉ.
+Được chế tác với kiểu dáng tinh tế từ axetat Mazzucchelli, JIMEI, JINYU đánh bóng thủ công, mẫu kính này mang lại chiều sâu màu sắc rực rỡ và độ bền nhẹ như kỳ vọng của thị trường xa xỉ.
 
 Việc tích hợp bản lề đinh tán 3+2 và đệm mũi công thái học đảm bảo sự ổn định cấu trúc ở cấp độ chuyên nghiệp mà không làm mất đi sự thoải mái của người dùng.
 

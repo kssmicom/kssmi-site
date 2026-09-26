@@ -5,7 +5,7 @@ slug: "kas-502-acetate-sunglasses"
 itemNo: "KAS-502"
 date: "2026-05-12"
 colors: "Siyah & Pembe & Kırmızı Kaplumbağa & Havana & Beyaz"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "OEM & ODM ( Özelleştirme )"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -58,7 +58,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Özellikler
 
-- **Premium Asetat Yapı:** Olağanüstü dayanıklılık ve canlı, uzun ömürlü bir görünüm için yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat kullanılarak el işçiliği ile üretilmiştir.
+- **Premium Asetat Yapı:** Olağanüstü dayanıklılık ve canlı, uzun ömürlü bir görünüm için yüksek kaliteli Mazzucchelli, JIMEI, JINYU asetat kullanılarak el işçiliği ile üretilmiştir.
 - **Güçlendirilmiş Donanım:** Günlük kullanım için üstün stabilite ve pürüzsüz çalışma performansı sağlayan sağlam 4+3 menteşe yapısı.
 - **Optik Mükemmellik:** Çok yönlü özelleştirme seçenekleriyle yüksek darbe direnci ve net görsel keskinlik sunan dayanıklı naylon lensler.
 - **Ergonomik Tasarım:** Gün boyu konfor ve güvenli bir oturuş için tasarlanmış entegre burun tamponları ve hafif asetat çerçeve.
@@ -75,7 +75,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Genel Bakış
 
-Birinci sınıf Mazzucchelli ve JIMEI & JINYU asetattan üretilen KAS-502, üst düzey moda duyarlılıklarıyla yankılanan canlı, elle parlatılmış bir görünüm sunar. Malzemenin doğal dayanıklılığı ve hafif profili, birinci sınıf gözlük portföyleri için sofistike bir temel sağlar.
+Birinci sınıf Mazzucchelli, JIMEI, JINYU asetattan üretilen KAS-502, üst düzey moda duyarlılıklarıyla yankılanan canlı, elle parlatılmış bir görünüm sunar. Malzemenin doğal dayanıklılığı ve hafif profili, birinci sınıf gözlük portföyleri için sofistike bir temel sağlar.
 
 Çerçeve, üstün stabilite için güçlendirilmiş 4+3 menteşe yapısına sahiptir ve farklı ortamlarda optik netliği koruyan darbeye dayanıklı naylon lenslerle tamamlanmıştır.
 

@@ -5,7 +5,7 @@ slug: "kas-018-acetate-sunglasses"
 itemNo: "KAS-018"
 date: "2026-05-10"
 colors: "Black, Transparent Red , Transparent Blue"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -41,7 +41,7 @@ seoKeywords: "acetate sunglasses manufacturer, luxury private label eyewear, cus
 
 ## Technical Features
 
-- **High-Performance Acetate:** Premium Mazzucchelli, JIMEI & JINYU acetate frames providing a lightweight, hypoallergenic structure with vibrant, long-lasting color depth.
+- **High-Performance Acetate:** Premium Mazzucchelli, JIMEI, JINYU acetate frames providing a lightweight, hypoallergenic structure with vibrant, long-lasting color depth.
 - **Durable Hardware:** Stable 3+2 barrel structure hinges designed for repeatable operational smoothness and structural integrity (customizable to 5-barrel or spring hinges).
 - **Premium Optics:** Tenacious nylon lenses offering high-impact resistance and optical clarity with extensive custom tinting and coating possibilities.
 - **Integrated Comfort:** Precision-molded integrated nose pads ensuring a secure, balanced fit and a clean, seamless aesthetic.
@@ -57,7 +57,7 @@ seoKeywords: "acetate sunglasses manufacturer, luxury private label eyewear, cus
 
 ## Overview
 
-Engineered with premium Mazzucchelli, JIMEI & JINYU acetate, the KAS-018 model achieves a lightweight, hypoallergenic structure that showcases exceptional vibrancy and depth of color.
+Engineered with premium Mazzucchelli, JIMEI, JINYU acetate, the KAS-018 model achieves a lightweight, hypoallergenic structure that showcases exceptional vibrancy and depth of color.
 
 The integration of 3+2 barrel hinges and tenacious nylon lenses ensures long-term operational stability alongside superior impact resistance and optical clarity.
 

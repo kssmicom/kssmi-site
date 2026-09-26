@@ -5,7 +5,7 @@ slug: "kao-155-acetate-optical-frame"
 itemNo: "KAO-155"
 date: "2026-05-10"
 colors: "Floral Yellow with Purple, Floral Teal with Pink"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -46,7 +46,7 @@ seoKeywords: "acetate optical frames manufacturer, custom acetate eyewear OEM, M
 
 ## Technical Features
 
-- **Premium Material:** Constructed from world-class Mazzucchelli, JIMEI & JINYU acetate, providing vibrant color depth and exceptional long-term durability.
+- **Premium Material:** Constructed from world-class Mazzucchelli, JIMEI, JINYU acetate, providing vibrant color depth and exceptional long-term durability.
 - **Sophisticated Engineering:** Features a stable 2+1 barrel rivet structure hinge designed for consistent operational smoothness and structural integrity.
 - **High-Performance Optics:** Equipped with tenacious nylon lenses that offer superior clarity and impact resistance with full customization options.
 - **Ergonomic Comfort:** Designed with integrated nose pads to ensure a secure, hypoallergenic fit for diverse facial profiles during extended wear.
@@ -64,7 +64,7 @@ seoKeywords: "acetate optical frames manufacturer, custom acetate eyewear OEM, M
 
 ## Overview
 
-Mazzucchelli, JIMEI & JINYU acetate merge in this frame to provide the vibrant color depth and structural longevity that luxury brands demand. The bold, unisex silhouette bridges classic design with modern trend-focused aesthetics.
+Mazzucchelli, JIMEI, JINYU acetate merge in this frame to provide the vibrant color depth and structural longevity that luxury brands demand. The bold, unisex silhouette bridges classic design with modern trend-focused aesthetics.
 
 The 2+1 barrel rivet structure hinges and integrated nose pads ensure consistent operational smoothness and a secure, comfortable fit during extended wear.
 

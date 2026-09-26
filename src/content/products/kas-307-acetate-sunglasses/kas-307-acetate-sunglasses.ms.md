@@ -5,7 +5,7 @@ slug: "kas-307-acetate-sunglasses"
 itemNo: "KAS-307"
 date: "2026-05-12"
 colors: "Hitam & Berjalur & Jernih & Kura-kura"
-materials: "Asetat Mazzucchelli Premium & JIMEI & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Penyesuaian"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, kacamata tersuai OEM, borong c
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Binaan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi yang menawarkan bingkai yang bertenaga, ringan dan tahan lama untuk pemakaian jangka masa panjang.
+- **Bahan Premium:** Binaan asetat Mazzucchelli, JIMEI, JINYU gred tinggi yang menawarkan bingkai yang bertenaga, ringan dan tahan lama untuk pemakaian jangka masa panjang.
 - **Perkakasan Tahan Lama:** Engsel struktur 4+3 barrel yang teguh direka untuk kestabilan unggul dan kelancaran operasi jangka panjang.
 - **Optik Unggul:** Lensa nilon kental memberikan kejelasan luar biasa dan rintangan hentaman dengan pilihan penyesuaian yang meluas.
 - **Reka Bentuk Ergonomik:** Alas hidung bersepadu dan padanan unisex serba boleh memastikan keselesaan sepanjang hari dan rasa selamat serta seimbang.
@@ -72,7 +72,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, kacamata tersuai OEM, borong c
 
 ## Gambaran Keseluruhan
 
-Dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU gred tinggi, KAS-307 memberikan kedalaman warna yang bertenaga dan rasa tangan yang premium. Pilihan bahan ini memastikan bingkai yang ringan namun tahan lama yang bergema dengan kepekaan fesyen mewah.
+Dihasilkan daripada asetat Mazzucchelli, JIMEI, JINYU gred tinggi, KAS-307 memberikan kedalaman warna yang bertenaga dan rasa tangan yang premium. Pilihan bahan ini memastikan bingkai yang ringan namun tahan lama yang bergema dengan kepekaan fesyen mewah.
 
 Penyepaduan engsel struktur 4+3 barrel yang teguh dan lensa nilon kental memberikan kelancaran operasi jangka panjang dan kejelasan optik yang luar biasa.
 

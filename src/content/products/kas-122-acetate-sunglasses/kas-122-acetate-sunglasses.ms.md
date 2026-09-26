@@ -5,7 +5,7 @@ slug: "kas-122-acetate-sunglasses"
 itemNo: "KAS-122"
 date: "2026-05-09"
 colors: "Hitam & Havana"
-materials: "Asetat Mazzucchelli & JIMEI & JINYU Premium & Penyesuaian"
+materials: "Asetat Mazzucchelli, JIMEI, JINYU Premium & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -46,7 +46,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, eyewear OEM tersuai, cermin ma
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Pembinaan asetat Mazzucchelli dan JIMEI & JINYU gred tinggi yang memberikan rasa ringan, ketahanan yang luar biasa, dan kedalaman warna yang cerah.
+- **Bahan Premium:** Pembinaan asetat Mazzucchelli, JIMEI, JINYU gred tinggi yang memberikan rasa ringan, ketahanan yang luar biasa, dan kedalaman warna yang cerah.
 - **Perkakasan Ketepatan:** Engsel struktur tong 3+2 yang teguh direka untuk kelancaran operasi yang konsisten dan kestabilan bingkai jangka panjang.
 - **Optik Unggul:** Lensa nilon lasak yang memberikan rintangan hentaman yang sangat baik dengan pilihan pewarnaan dan salutan yang boleh disesuaikan sepenuhnya.
 - **Keselesaan Ergonomik:** Alas hidung bersepadu yang lancar direka untuk muat yang selamat, bebas tekanan dan keselesaan sepanjang hari yang dipertingkatkan.
@@ -64,7 +64,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, eyewear OEM tersuai, cermin ma
 
 ## Gambaran Keseluruhan
 
-Dihasilkan daripada asetat Mazzucchelli and JIMEI & JINYU premium, bingkai berinspirasikan vintaj ini mengimbangi rasa ringan dan ergonomik dengan profil warna yang dalam dan cerah.
+Dihasilkan daripada asetat Mazzucchelli, JIMEI, JINYU premium, bingkai berinspirasikan vintaj ini mengimbangi rasa ringan dan ergonomik dengan profil warna yang dalam dan cerah.
 
 Sistem engsel tong 3+2 yang teguh menyediakan asas struktur untuk kelancaran yang konsisten dan ketahanan jangka panjang.
 

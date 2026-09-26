@@ -5,7 +5,7 @@ slug: "kas-121-acetate-sunglasses"
 itemNo: "KAS-121"
 date: "2026-05-09"
 colors: "Preto & Havana & Maple"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -50,7 +50,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Características
 
-- **Construção em Acetato Premium:** Fabricado em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, oferecendo uma armação leve, durável e vibrante para um uso excepcional a longo prazo.
+- **Construção em Acetato Premium:** Fabricado em acetato Mazzucchelli, JIMEI, JINYU de alta qualidade, oferecendo uma armação leve, durável e vibrante para um uso excepcional a longo prazo.
 - **Hardware Robusto:** Dobradiças de estrutura barrel 3+2 projetadas com precisão para garantir um alinhamento seguro e uma suavidade operacional ideal.
 - **Ótica Avançada:** Lentes de nylon tenaz que proporcionam clareza visual superior, com opções versáteis de tonalidade e revestimento personalizados disponíveis.
 - **Conforto Contínuo:** Ponteiras nasicas integradas meticulosamente projetadas para distribuir o peso uniformemente para um ajuste seguro e confortável.
@@ -68,7 +68,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Visão Geral
 
-Combinando inspiração vintage clássica com luxo moderno, o KAS-121 é magistralmente esculpido em acetato premium Mazzucchelli e JIMEI & JINYU. Esta base de material excepcional garante uma armação leve, porém altamente durável, com um acabamento cativante e vibrante.
+Combinando inspiração vintage clássica com luxo moderno, o KAS-121 é magistralmente esculpido em acetato premium Mazzucchelli, JIMEI, JINYU. Esta base de material excepcional garante uma armação leve, porém altamente durável, com um acabamento cativante e vibrante.
 
 A integridade estrutural é assegurada por dobradiças barrel 3+2 projetadas com precisão, enquanto as ponteiras nasicas meticulosamente integradas oferecem um ajuste perfeitamente equilibrado e confortável.
 

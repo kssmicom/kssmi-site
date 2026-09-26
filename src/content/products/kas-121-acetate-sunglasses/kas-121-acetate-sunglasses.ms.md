@@ -5,7 +5,7 @@ slug: "kas-121-acetate-sunglasses"
 itemNo: "KAS-121"
 date: "2026-05-09"
 colors: "Hitam & Havana & Maple"
-materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -50,7 +50,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Ciri-ciri Utama
 
-- **Pembinaan Asetat Premium:** Diperbuat daripada asetat Mazzucchelli dan JIMEI & JINYU gred tinggi, menawarkan bingkai yang ringan, tahan lama dan berwarna-warni untuk pemakaian jangka panjang yang luar biasa.
+- **Pembinaan Asetat Premium:** Diperbuat daripada asetat Mazzucchelli, JIMEI, JINYU gred tinggi, menawarkan bingkai yang ringan, tahan lama dan berwarna-warni untuk pemakaian jangka panjang yang luar biasa.
 - **Perkakasan Teguh:** Engsel struktur barrel 3+2 kejuruteraan jitu yang direka untuk memastikan penjajaran selamat dan kelancaran operasi yang optimum.
 - **Optik Termaju:** Kanta nilon lasak yang memberikan kejelasan visual yang unggul, dengan pilihan pewarnaan dan salutan tersuai yang serba boleh tersedia.
 - **Keselesaan Lancar:** Alas hidung bersepadu yang direka dengan teliti untuk mengagihkan berat secara sama rata bagi padanan yang selamat dan selesa.
@@ -68,7 +68,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Gambaran Keseluruhan
 
-Menggabungkan inspirasi vintaj klasik dengan kemewahan moden, KAS-121 dihasilkan dengan mahir daripada asetat premium Mazzucchelli dan JIMEI & JINYU. Asas bahan yang luar biasa ini memastikan bingkai yang ringan namun sangat tahan lama dengan kemasan berwarna-warni yang menawan.
+Menggabungkan inspirasi vintaj klasik dengan kemewahan moden, KAS-121 dihasilkan dengan mahir daripada asetat premium Mazzucchelli, JIMEI, JINYU. Asas bahan yang luar biasa ini memastikan bingkai yang ringan namun sangat tahan lama dengan kemasan berwarna-warni yang menawan.
 
 Integriti struktur dijamin melalui engsel barrel 3+2 kejuruteraan jitu, manakala alas hidung bersepadu yang teliti memberikan padanan yang seimbang dan selesa.
 

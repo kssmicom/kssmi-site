@@ -5,7 +5,7 @@ slug: "kao-501-acetate-optical-frame"
 itemNo: "KAO-501"
 date: "2026-05-10"
 colors: "Ireng & Bulus & Coklat & Putih"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Kustomisasi"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Kustomisasi"
 serviceMode: "Produksi Kontrak & Desain lan Produksi ( Kustomisasi )"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -55,7 +55,7 @@ seoKeywords: "produsen frame optik asetat, frame optik OEM kustom, kacamata labe
 
 ## Fitur
 
-- **Bahan Premium:** Digawe saka asetat Mazzucchelli lan JIMEI & JINYU asli, nyedhiyakake frame sing entheng nanging awet kanthi polesan kilap dhuwur sing padhang.
+- **Bahan Premium:** Digawe saka asetat Mazzucchelli, JIMEI, JINYU asli, nyedhiyakake frame sing entheng nanging awet kanthi polesan kilap dhuwur sing padhang.
 - **Hardware Vintage:** Engsel struktur rivet 4+3 barrel sing kuwat dirancang kanggo integritas struktur sing unggul lan estetika buatan tangan sing langgeng.
 - **Desain Ukiran:** Konstruksi gagang tipis sing nampilake rincian ukiran sing tepat kanggo profil sing apik lan kenyamanan ergonomis sing luwih apik.
 - **Optik Performa Dhuwur:** Lensa nylon kuat sing nawakake kajelasan luar biasa lan tahan benturan kanthi kustomisasi lengkap kanggo warna lan lapisan.
@@ -73,7 +73,7 @@ seoKeywords: "produsen frame optik asetat, frame optik OEM kustom, kacamata labe
 
 ## Ringkesan
 
-Asetat Mazzucchelli lan JIMEI & JINYU asli menehi KAO-501 polesan kilap dhuwur sing khas lan kedalaman struktur sing kuat.
+Asetat Mazzucchelli, JIMEI, JINYU asli menehi KAO-501 polesan kilap dhuwur sing khas lan kedalaman struktur sing kuat.
 
 Frame iki nggunakake sistem engsel rivet 4+3 barrel sing kuwat lan gagang tipis ukiran kanggo ngimbangi estetika vintage kanthi linuwih mekanik modern lan kenyamanan.
 

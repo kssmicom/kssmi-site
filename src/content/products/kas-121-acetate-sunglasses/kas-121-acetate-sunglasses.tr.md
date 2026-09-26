@@ -5,7 +5,7 @@ slug: "kas-121-acetate-sunglasses"
 itemNo: "KAS-121"
 date: "2026-05-09"
 colors: "Siyah & Havana & Akçaağaç"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (Renk başına 100 adet)"
 
@@ -50,7 +50,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Özellikler
 
-- **Premium Asetat Yapı:** Yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetattan üretilmiştir; olağanüstü uzun süreli kullanım için hafif, dayanıklı ve canlı bir çerçeve sunar.
+- **Premium Asetat Yapı:** Yüksek kaliteli Mazzucchelli, JIMEI, JINYU asetattan üretilmiştir; olağanüstü uzun süreli kullanım için hafif, dayanıklı ve canlı bir çerçeve sunar.
 - **Sağlam Donanım:** Güvenli hizalama ve optimum çalışma pürüzsüzlüğü sağlamak için tasarlanmış hassas mühendislik ürünü 3+2 barrel yapılı menteşeler.
 - **Gelişmiş Optik:** Üstün görsel netlik sağlayan, çok yönlü özel renklendirme ve kaplama seçenekleri sunan dayanıklı naylon lensler.
 - **Kesintisiz Konfor:** Güvenli ve rahat bir oturuş için ağırlığı eşit şekilde dağıtmak üzere titizlikle tasarlanmış entegre burun tamponları.
@@ -68,7 +68,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Genel Bakış
 
-Klasik vintage ilhamını modern lüksle birleştiren KAS-121, birinci sınıf Mazzucchelli ve JIMEI & JINYU asetattan ustalıkla şekillendirilmiştir. Bu istisnai malzeme temeli, büyüleyici ve canlı bir kaplamaya sahip, hafif ancak oldukça dayanıklı bir çerçeve sağlar.
+Klasik vintage ilhamını modern lüksle birleştiren KAS-121, birinci sınıf Mazzucchelli, JIMEI, JINYU asetattan ustalıkla şekillendirilmiştir. Bu istisnai malzeme temeli, büyüleyici ve canlı bir kaplamaya sahip, hafif ancak oldukça dayanıklı bir çerçeve sağlar.
 
 Yapısal bütünlük, hassas mühendislik ürünü 3+2 barrel menteşelerle güvence altına alınırken, titizlikle entegre edilmiş burun tamponları kusursuz bir şekilde dengelenmiş ve rahat bir oturuş sunar.
 

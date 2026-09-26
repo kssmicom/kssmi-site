@@ -5,7 +5,7 @@ slug: "kao-326-acetate-optical-frame"
 itemNo: "KAO-326"
 date: "2026-05-10"
 colors: "Black, Tortoise, Teal with Havana"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -50,7 +50,7 @@ seoKeywords: "retro acetate optical frames, custom acetate eyewear manufacturer,
 
 ## Technical Features
 
-- **Premium Material:** Crafted from premium Mazzucchelli, JIMEI & JINYU acetate, offering a lightweight yet exceptionally durable structure with vibrant, long-lasting color depth.
+- **Premium Material:** Crafted from premium Mazzucchelli, JIMEI, JINYU acetate, offering a lightweight yet exceptionally durable structure with vibrant, long-lasting color depth.
 - **Engineered Hardware:** High-reliability 3+2 barrel rivet hinges providing stable, smooth temple movement with custom spring hinge options.
 - **Tenacious Optics:** High-durability nylon lenses providing excellent clarity and impact resistance with full bespoke coating options.
 - **Integrated Comfort:** Seamlessly integrated nose pads combined with a tailored 47-20-148mm geometry to deliver a balanced, slip-free fit.
@@ -67,7 +67,7 @@ seoKeywords: "retro acetate optical frames, custom acetate eyewear manufacturer,
 
 ## Overview
 
-For eyewear brands prioritizing deep color vibrancy and structural durability, this retro-inspired optical frame is sculpted from premium Mazzucchelli, JIMEI & JINYU acetate.
+For eyewear brands prioritizing deep color vibrancy and structural durability, this retro-inspired optical frame is sculpted from premium Mazzucchelli, JIMEI, JINYU acetate.
 
 Engineered for reliable long-term wear, it integrates a robust 3+2 barrel rivet hinge system and seamless nose pads to ensure a balanced, slip-free fit.
 

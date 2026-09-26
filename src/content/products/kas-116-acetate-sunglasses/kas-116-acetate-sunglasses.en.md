@@ -5,7 +5,7 @@ slug: "kas-116-acetate-sunglasses"
 itemNo: "KAS-116"
 date: "2026-05-09"
 colors: "Black & Green-Marble & White & Marble"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -53,7 +53,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM eyewear factory, luxur
 ---
 
 ## Technical Features
-- **Premium Acetate Construction:** High-quality Mazzucchelli, JIMEI & JINYU acetate frame and temples offering a lightweight, durable, and vibrant finish.
+- **Premium Acetate Construction:** High-quality Mazzucchelli, JIMEI, JINYU acetate frame and temples offering a lightweight, durable, and vibrant finish.
 - **Durable Hardware:** Stable 3+2 barrel structure hinges engineered for long-term operational smoothness and reliability.
 - **Premium Optics:** Tenacious nylon lenses with extensive custom tinting and coating options available.
 - **Seamless Comfort:** Integrated nose pads designed to provide a secure and comfortable fit for everyday wear.
@@ -70,7 +70,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM eyewear factory, luxur
 
 ## Overview
 
-Crafted from high-grade Mazzucchelli, JIMEI & JINYU acetate, the KAS-116 presents a bold, unisex aesthetic that instantly elevates any premium eyewear collection. This stylish frame balances a lightweight, durable structure with strikingly vibrant visual appeal.
+Crafted from high-grade Mazzucchelli, JIMEI, JINYU acetate, the KAS-116 presents a bold, unisex aesthetic that instantly elevates any premium eyewear collection. This stylish frame balances a lightweight, durable structure with strikingly vibrant visual appeal.
 
 Engineered for reliable daily performance, it features robust 3+2 barrel hinges, resilient nylon lenses, and seamlessly integrated nose pads to ensure exceptional comfort.
 

@@ -5,7 +5,7 @@ slug: "kas-132-acetate-sunglasses"
 itemNo: "KAS-132"
 date: "2026-05-09"
 colors: "Black & White & Green & Havana"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom flat-top eyewear, oversize
 
 ## Technical Features
 
-- **Premium Materials:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction delivering a refined aesthetic with vibrant, long-lasting color depth.
+- **Premium Materials:** High-grade Mazzucchelli, JIMEI, JINYU acetate construction delivering a refined aesthetic with vibrant, long-lasting color depth.
 - **Precision Engineering:** Stable 3+2 barrel structure hinges designed for professional-grade durability and smooth operational performance.
 - **Superior Optics:** Tenacious nylon lenses providing exceptional impact resistance and visual clarity, with extensive customization options.
 - **Ergonomic Comfort:** Integrated nose pads and a lightweight frame structure ensuring a secure, balanced fit for extended all-day wear.
@@ -72,7 +72,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom flat-top eyewear, oversize
 
 ## Overview
 
-Bold, oversized proportions and a distinctive flat-top silhouette define the KAS-132, crafted from a premium blend of Mazzucchelli, JIMEI & JINYU acetate for unparalleled depth and durability.
+Bold, oversized proportions and a distinctive flat-top silhouette define the KAS-132, crafted from a premium blend of Mazzucchelli, JIMEI, JINYU acetate for unparalleled depth and durability.
 
 Precision-engineered 3+2 barrel hinges and tenacious nylon lenses ensure these frames maintain structural integrity and visual clarity across intensive use.
 

@@ -5,7 +5,7 @@ slug: "kas-016-acetate-sunglasses"
 itemNo: "KAS-016"
 date: "2026-05-10"
 colors: "Đồi mồi với Xanh lá, Đen với Vàng, Đồi mồi đen với Xám khói"
-materials: "Axetat Mazzucchelli & JIMEI & JINYU cao cấp & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Mazzucchelli, JIMEI, JINYU cao cấp & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -41,7 +41,7 @@ seoKeywords: "kính mát axetat Mazzucchelli, nhà sản xuất kính mắt tùy
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Gọng và càng kính bằng axetat Mazzucchelli và JIMEI & JINYU chất lượng cao mang lại vẻ thẩm mỹ sang trọng, rực rỡ với độ bền vượt trội.
+- **Chất liệu cao cấp:** Gọng và càng kính bằng axetat Mazzucchelli, JIMEI, JINYU chất lượng cao mang lại vẻ thẩm mỹ sang trọng, rực rỡ với độ bền vượt trội.
 - **Phần cứng bền bỉ:** Bản lề cấu trúc 2+1 chốt ổn định được thiết kế để vận hành trơn tru nhất quán và độ tin cậy lâu dài.
 - **Quang học cao cấp:** Tròng kính nylon bền bỉ, độ rõ nét cao, khả năng chống va đập vượt trội với nhiều tùy chọn màu nhuộm và lớp phủ tùy chỉnh.
 - **Thiết kế công thái học:** Đệm mũi liền khối được thiết kế để mang lại sự vừa vặn liền mạch và tăng cường độ ổn định khi đeo trong thời gian dài.

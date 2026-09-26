@@ -5,7 +5,7 @@ slug: "kao-322-acetate-optical-frame"
 itemNo: "KAO-322"
 date: "2026-05-10"
 colors: "Black & Havana & Oliver & Champagne"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate optical frames, fashion eyewear, eyewear manufacturer, Chi
 
 ## Technical Features
 
-- **Premium Acetate Composition:** Crafted from world-class Mazzucchelli, JIMEI & JINYU acetate, offering an ultra-lightweight feel with exceptional structural durability and vibrant color depth.
+- **Premium Acetate Composition:** Crafted from world-class Mazzucchelli, JIMEI, JINYU acetate, offering an ultra-lightweight feel with exceptional structural durability and vibrant color depth.
 - **Robust Hardware:** Features a professional 4+3 barrel rivet hinge architecture engineered for maximum stability and long-term operational smoothness.
 - **Advanced Optical Base:** Fitted with tenacious nylon lenses that provide superior impact resistance and clarity, with flexible customization options for specialized coatings.
 - **Integrated Comfort:** Precision-engineered integrated nose pads designed to provide a secure, hypoallergenic fit for extended daily wear.
@@ -72,7 +72,7 @@ seoKeywords: "acetate optical frames, fashion eyewear, eyewear manufacturer, Chi
 
 ## Overview
 
-Crafting a balance between lightweight comfort and vibrant visual depth, this frame utilizes premium Mazzucchelli, JIMEI & JINYU acetate to meet the rigorous standards of modern fashion houses.
+Crafting a balance between lightweight comfort and vibrant visual depth, this frame utilizes premium Mazzucchelli, JIMEI, JINYU acetate to meet the rigorous standards of modern fashion houses.
 
 A robust 4+3 barrel rivet hinge architecture ensures long-term structural integrity, complemented by a hand-polished finish that highlights the material's sophisticated profile.
 

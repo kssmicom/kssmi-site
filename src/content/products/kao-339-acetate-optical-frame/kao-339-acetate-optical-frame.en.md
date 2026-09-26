@@ -5,7 +5,7 @@ slug: "kao-339-acetate-optical-frame"
 itemNo: "KAO-339"
 date: "2026-05-10"
 colors: "Black, Havana"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -45,7 +45,7 @@ seoKeywords: "acetate optical frames manufacturer, customizable acetate eyewear,
 ---
 
 ## Technical Features
-- **Premium Acetate Structure:** Crafted from premium Mazzucchelli, JIMEI & JINYU acetate, offering a lightweight, highly durable, and vibrant foundation for luxury eyewear lines.
+- **Premium Acetate Structure:** Crafted from premium Mazzucchelli, JIMEI, JINYU acetate, offering a lightweight, highly durable, and vibrant foundation for luxury eyewear lines.
 - **Durable Hardware:** Engineered with 3+2 barrel structure hinges, with custom 5-barrel and spring hinge options, providing exceptional frame stability and long-term operational smoothness.
 - **High-Quality Optics:** Outfitted with tenacious nylon lenses that deliver outstanding optical clarity and superior impact resistance, with full customization options available.
 - **Structural Comfort:** Features integrated nose pads designed for a seamless, ergonomic profile and sustained all-day wearer comfort.
@@ -61,7 +61,7 @@ seoKeywords: "acetate optical frames manufacturer, customizable acetate eyewear,
 - Eyewear Wholesalers
 
 ## Overview
-For boutique designers seeking to capture the classic retro aesthetic with a luxurious, modern finish, the KAO-339 stands as an exceptional choice. Crafted from premium Mazzucchelli, JIMEI & JINYU acetate, the frame delivers vibrant depth of color and long-lasting durability without compromising on a lightweight feel.
+For boutique designers seeking to capture the classic retro aesthetic with a luxurious, modern finish, the KAO-339 stands as an exceptional choice. Crafted from premium Mazzucchelli, JIMEI, JINYU acetate, the frame delivers vibrant depth of color and long-lasting durability without compromising on a lightweight feel.
 
 Integrated nose pads and a robust 3+2 barrel hinge structure ensure that day-long wearer comfort is matched by structural reliability and smooth, enduring performance.
 

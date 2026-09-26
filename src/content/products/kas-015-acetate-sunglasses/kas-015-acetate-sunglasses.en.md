@@ -5,7 +5,7 @@ slug: "kas-015-acetate-sunglasses"
 itemNo: "KAS-015"
 date: "2026-05-10"
 colors: "Tortoise with Green, Black with Black-Yellow, Black Tortoise with Green, Black"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -43,7 +43,7 @@ seoKeywords: "luxury acetate sunglasses manufacturer, custom OEM sunglasses fact
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction delivering a lightweight, durable, and vibrant finish for a luxury aesthetic.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI, JINYU acetate construction delivering a lightweight, durable, and vibrant finish for a luxury aesthetic.
 - **Structural Integrity:** Precision-crafted premium acetate frame and temples ensuring long-term shape retention and resilience.
 - **Durable Hardware:** Stable 2+1 barrel structure hinges engineered for consistent operational smoothness, with 5-barrel and spring hinge upgrades available.
 - **Superior Optics:** Tenacious nylon lenses providing excellent clarity and impact resistance with extensive custom tinting options.
@@ -60,7 +60,7 @@ seoKeywords: "luxury acetate sunglasses manufacturer, custom OEM sunglasses fact
 
 ## Overview
 
-Utilizing high-grade Mazzucchelli, JIMEI & JINYU acetate, this model delivers a vibrant and lightweight finish tailored for the premium market.
+Utilizing high-grade Mazzucchelli, JIMEI, JINYU acetate, this model delivers a vibrant and lightweight finish tailored for the premium market.
 
 The precision-engineered 2+1 barrel hinges and integrated nose pads provide a seamless blend of structural stability and all-day comfort.
 

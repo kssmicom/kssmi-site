@@ -5,7 +5,7 @@ slug: "kas-107-acetate-sunglasses"
 itemNo: "KAS-107"
 date: "2026-05-06"
 colors: "Nero & Trasparente & Havana & Oliva"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100pz/colore)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali da sole OEM personal
 
 ## Caratteristiche
 
-- **Materiale Premium:** Rifiniti a mano utilizzando acetato Mazzucchelli e JIMEI & JINYU di alta qualità per offrire una montatura leggera e ipoallergenica con un'eccezionale vivacità cromatica e durata a lungo termine.
+- **Materiale Premium:** Rifiniti a mano utilizzando acetato Mazzucchelli, JIMEI, JINYU di alta qualità per offrire una montatura leggera e ipoallergenica con un'eccezionale vivacità cromatica e durata a lungo termine.
 - **Ingegneria di Precisione:** Presenta un robusto sistema di cerniere con struttura a 3+2 barilotti, progettato per una stabilità operativa superiore e una tensione di apertura/chiusura costante.
 - **Ottica ad Alte Prestazioni:** Dotati di lenti in nylon tenace che offrono un'eccellente resistenza agli urti e chiarezza ottica, con opzioni complete di colorazione e rivestimento personalizzati disponibili.
 - **Comfort Integrato:** Naselli integrati dal design ergonomico che assicurano un'estetica senza cuciture e una vestibilità sicura e senza pressione per un uso quotidiano prolungato.
@@ -71,7 +71,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali da sole OEM personal
 
 ## Panoramica
 
-Realizzata in acetato premium Mazzucchelli e JIMEI & JINYU, questa silhouette classica bilancia un'eccezionale vivacità del materiale con una finitura leggera e ipoallergenica.
+Realizzata in acetato premium Mazzucchelli, JIMEI, JINYU, questa silhouette classica bilancia un'eccezionale vivacità del materiale con una finitura leggera e ipoallergenica.
 
 Le montature fresate di precisione e le robuste cerniere a 3+2 barilotti offrono l'affidabilità strutturale e il funzionamento tattile fluido che ci si aspetta negli ambienti delle boutique di alta gamma.
 

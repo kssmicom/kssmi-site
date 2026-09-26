@@ -5,7 +5,7 @@ slug: "kas-119-acetate-sunglasses"
 itemNo: "KAS-119"
 date: "2026-05-09"
 colors: "Negro & Floral & Azul Crudo & Amarillo & Tortuga Polar & Tortuga Cian & Tortuga Roja"
-materials: "Acetato Mazzucchelli & JIMEI & JINYU Premium & Personalización"
+materials: "Acetato Mazzucchelli, JIMEI, JINYU Premium & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -66,7 +66,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Características Técnicas
 
-- **Construcción de Acetato Premium:** Elaborado a partir de acetato Mazzucchelli y JIMEI & JINYU de clase mundial, que ofrece una estructura de marco y varilla ligera, excepcionalmente duradera y vibrante.
+- **Construcción de Acetato Premium:** Elaborado a partir de acetato Mazzucchelli, JIMEI, JINYU de clase mundial, que ofrece una estructura de marco y varilla ligera, excepcionalmente duradera y vibrante.
 - **Hardware de Precisión:** Diseñado con bisagras de estructura personalizada de 4+3 barriles para proporcionar una estabilidad superior y suavidad operativa a largo plazo.
 - **Óptica de Alto Rendimiento:** Equipado con lentes de nylon tenaz que brindan una excelente claridad óptica junto con amplias opciones de personalización.
 - **Comodidad para Todo el Día:** Diseñado con almohadillas nasales cuidadosamente integradas para garantizar una estética perfecta y un ajuste seguro y cómodo para un uso prolongado.
@@ -83,7 +83,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Visión General
 
-El audaz lujo se encuentra con una excepcional artesanía en el KAS-119, con un llamativo diseño unisex esculpido a partir de los renombrados acetatos Mazzucchelli y JIMEI & JINYU. Esta vibrante construcción del marco no solo asegura durabilidad ligera, sino que también establece una imponente presencia visual para carteras de moda de alta gama.
+El audaz lujo se encuentra con una excepcional artesanía en el KAS-119, con un llamativo diseño unisex esculpido a partir de los renombrados acetatos Mazzucchelli, JIMEI, JINYU. Esta vibrante construcción del marco no solo asegura durabilidad ligera, sino que también establece una imponente presencia visual para carteras de moda de alta gama.
 
 Diseñado para una portabilidad a largo plazo, la integración de bisagras de 4+3 barriles personalizadas y almohadillas nasales sin costuras garantiza un confort estable durante todo el día junto con una óptica de nylon premium.
 

@@ -5,7 +5,7 @@ slug: "kas-131-acetate-sunglasses"
 itemNo: "KAS-131"
 date: "2026-05-09"
 colors: "Black & Purple & Havana & White"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom eyewear manufacturer, luxu
 
 ## Technical Features
 
-- **Premium Frame Material:** Crafted from high-grade Mazzucchelli, JIMEI & JINYU acetate, providing a lightweight yet exceptionally durable structure with vibrant, long-lasting color depth.
+- **Premium Frame Material:** Crafted from high-grade Mazzucchelli, JIMEI, JINYU acetate, providing a lightweight yet exceptionally durable structure with vibrant, long-lasting color depth.
 - **Durable Hardware:** Features a professional 4+3 barrel structure hinge system engineered for superior operational smoothness and long-term structural integrity.
 - **Advanced Optics:** Equipped with tenacious nylon lenses offering high-impact resistance and optical clarity, fully customizable to specific brand requirements.
 - **Ergonomic Comfort:** Designed with integrated nose pads to ensure a stable, pressure-free fit suitable for extended daily wear.
@@ -71,7 +71,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom eyewear manufacturer, luxu
 
 ## Overview
 
-Mazzucchelli, JIMEI & JINYU acetate form the core of these sunglasses, providing a vibrant depth of color and lightweight durability that appeals to high-end fashion markets.
+Mazzucchelli, JIMEI, JINYU acetate form the core of these sunglasses, providing a vibrant depth of color and lightweight durability that appeals to high-end fashion markets.
 
 The 4+3 barrel structure hinge system ensures long-term operational precision, while the integrated nose pads offer ergonomic stability for all-day wear.
 

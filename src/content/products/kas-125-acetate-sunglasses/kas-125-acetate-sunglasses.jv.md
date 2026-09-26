@@ -5,7 +5,7 @@ slug: "kas-125-acetate-sunglasses"
 itemNo: "KAS-125"
 date: "2026-05-09"
 colors: "Ireng & Bulus Padhang & Bulus Peteng & Sungu Kebo & Khaki"
-materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Kustomisasi"
+materials: "Premium Asetat Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak (OEM) & Desain lan Produksi (ODM) (Kustomisasi)"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -57,7 +57,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata kustom OEM, kacamata hita
 ---
 ## Fitur
 
-- **Bahan Premium:** Frame lan gagang asetat Mazzucchelli lan JIMEI & JINYU sing entheng lan padhang menehi rasa tangan premium kanti daya tahan sing suwe.
+- **Bahan Premium:** Frame lan gagang asetat Mazzucchelli, JIMEI, JINYU sing entheng lan padhang menehi rasa tangan premium kanti daya tahan sing suwe.
 - **Hardware Awet:** Engsel struktur 4+3 barrel sing kuwat dirancang kanggo keselarasan sing tepat lan kelancaran operasional sing konsisten.
 - **Optik Canggih:** Lensa nilon kuwat sing menehi kejelasan unggul lan tahan benturan ing profil frame 53-19-145mm sing serbaguna.
 - **Kenyamanan Terintegrasi:** Bantalan irung kanthi desain ergonomis sing digawe langsung ing frame kanggo pas sing stabil lan hipoalergenik.
@@ -74,7 +74,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata kustom OEM, kacamata hita
 
 ## Ringkesan
 
-Konstruksi asetat Mazzucchelli lan JIMEI & JINYU premium menehi KAS-125 rasa tangan sing khas lan padhang sing tahan suwe sing memenuhi standar portofolio mewah global.
+Konstruksi asetat Mazzucchelli, JIMEI, JINYU premium menehi KAS-125 rasa tangan sing khas lan padhang sing tahan suwe sing memenuhi standar portofolio mewah global.
 
 Dirancang kanthi engsel struktur 4+3 barrel kanggo keselarasan sing tepat, frame iki nggabungake lensa nilon kanthi dampak dhuwur kanthi jembatan terintegrasi ergonomis kanggo daya tahan sing lestari.
 

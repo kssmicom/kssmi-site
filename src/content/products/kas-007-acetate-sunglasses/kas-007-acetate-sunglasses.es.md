@@ -5,7 +5,7 @@ slug: "kas-007-acetate-sunglasses"
 itemNo: "KAS-007"
 date: "2026-05-10"
 colors: "Negro-Oro & Negro-Plata & Cristal & Rojo"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalización"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100uds/color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de lujo personalizada
 
 ## Características
 
-- **Material Premium:** Construcción en acetato Mazzucchelli y JIMEI & JINYU de alta calidad que ofrece una estética vibrante, ligera y duradera.
+- **Material Premium:** Construcción en acetato Mazzucchelli, JIMEI, JINYU de alta calidad que ofrece una estética vibrante, ligera y duradera.
 - **Hardware Confiable:** Bisagras profesionales con estructura de 3+2 barriles diseñadas para una suavidad operativa constante y durabilidad a largo plazo.
 - **Óptica Avanzada:** Lentes de nylon tenaz que proporcionan una claridad superior con amplias opciones de tintado y recubrimiento personalizados disponibles.
 - **Diseño Ergonómico:** Almohadillas nasales integradas diseñadas para un ajuste sin costuras y una mayor comodidad de uso durante todo el día.

@@ -5,7 +5,7 @@ slug: "kas-020-acetate-sunglasses"
 itemNo: "KAS-020"
 date: "2026-05-10"
 colors: "Black, Champagne, Havana, Transparent Olive"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -41,7 +41,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom luxury eyewear OEM, premiu
 
 ## Technical Features
 
-- **Premium Materials:** High-quality Mazzucchelli, JIMEI & JINYU acetate construction offering exceptional durability and vibrant color depth for luxury aesthetics.
+- **Premium Materials:** High-quality Mazzucchelli, JIMEI, JINYU acetate construction offering exceptional durability and vibrant color depth for luxury aesthetics.
 - **Precision Engineering:** Stable 3+2 barrel structure hinges designed for long-term operational smoothness and structural integrity.
 - **High-Performance Optics:** Tenacious nylon lenses providing superior clarity and impact resistance with extensive custom coating options.
 - **Ergonomic Comfort:** Seamlessly integrated nose pads and lightweight frame design ensuring a secure, fatigue-free fit for extended wear.
@@ -59,7 +59,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom luxury eyewear OEM, premiu
 
 ## Overview
 
-Utilizing the vibrant color depth and structural resilience of premium Mazzucchelli, JIMEI & JINYU acetate, the KAS-020 represents a sophisticated fusion of luxury aesthetics and daily durability.
+Utilizing the vibrant color depth and structural resilience of premium Mazzucchelli, JIMEI, JINYU acetate, the KAS-020 represents a sophisticated fusion of luxury aesthetics and daily durability.
 
 The 3+2 barrel hinge architecture and high-clarity nylon lenses are engineered for long-term operational smoothness and superior optical protection.
 

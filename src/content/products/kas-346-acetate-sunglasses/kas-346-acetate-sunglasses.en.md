@@ -5,7 +5,7 @@ slug: "kas-346-acetate-sunglasses"
 itemNo: "KAS-346"
 date: "2026-05-12"
 colors: "Black & Tortoise & Havana & Olive"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate offering a vibrant, lightweight, and hypoallergenic frame for a refined aesthetic and superior durability.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI, JINYU acetate offering a vibrant, lightweight, and hypoallergenic frame for a refined aesthetic and superior durability.
 - **Precision Hardware:** Engineered 2+1 barrel structure hinges providing stable hinge tension and long-term operational smoothness.
 - **Advanced Optics:** Tenacious nylon lenses delivering exceptional clarity and high impact resistance with fully customizable tinting and coating options.
 - **Ergonomic Comfort:** Seamlessly integrated nose pads designed for a secure, pressure-free fit and optimized weight distribution across all-day use.
@@ -71,7 +71,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Overview
 
-Crafted from high-grade Mazzucchelli, JIMEI & JINYU acetate, the KAS-346 balances vibrant visual depth with a lightweight, hypoallergenic structure. The premium material provides a foundation of lasting durability and a sophisticated finish suitable for high-end collections.
+Crafted from high-grade Mazzucchelli, JIMEI, JINYU acetate, the KAS-346 balances vibrant visual depth with a lightweight, hypoallergenic structure. The premium material provides a foundation of lasting durability and a sophisticated finish suitable for high-end collections.
 
 Engineered with 2+1 barrel hinges and seamless integrated nose pads, the frame ensures precise mechanical movement and an ergonomic, pressure-free fit.
 

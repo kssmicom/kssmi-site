@@ -5,7 +5,7 @@ slug: "kas-111-acetate-sunglasses"
 itemNo: "KAS-111"
 date: "2026-05-09"
 colors: "Merah Gula-gula & Kura-kura Merah Jambu & Putih Krim & Hitam"
-materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Ciri-ciri Utama
 
-- **Bahan Bingkai Premium:** Dibuat dengan mahir daripada asetat Mazzucchelli dan JIMEI & JINYU gred tinggi, memberikan rasa ringan dengan ketahanan yang luar biasa dan kedalaman warna yang bertenaga.
+- **Bahan Bingkai Premium:** Dibuat dengan mahir daripada asetat Mazzucchelli, JIMEI, JINYU gred tinggi, memberikan rasa ringan dengan ketahanan yang luar biasa dan kedalaman warna yang bertenaga.
 - **Engsel Ketepatan:** Engsel struktur tong 3+2 yang teguh direka untuk kelancaran operasi jangka panjang dan kestabilan struktur.
 - **Optik Berprestasi Tinggi:** Lensa nilon tahan lasak yang memberikan kejelasan unggul dan rintangan hentaman dengan pilihan warna tersuai yang meluas tersedia.
 - **Keselesaan Ergonomik:** Alas hidung bersepadu yang direka untuk kesesuaian yang lancar dan hipoalergenik yang memastikan kestabilan dan keselesaan sepanjang hari.
@@ -71,7 +71,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Gambaran Keseluruhan
 
-Kedalaman warna yang bertenaga dan integriti struktur premium bertemu dalam KAS-111, model yang dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU gred tinggi untuk menangkap estetik berinspirasikan vintaj yang berani.
+Kedalaman warna yang bertenaga dan integriti struktur premium bertemu dalam KAS-111, model yang dihasilkan daripada asetat Mazzucchelli, JIMEI, JINYU gred tinggi untuk menangkap estetik berinspirasikan vintaj yang berani.
 
 Kestabilan struktur dikekalkan melalui engsel tong 3+2 yang teguh, manakala alas hidung bersepadu menawarkan kesesuaian ergonomik yang lancar untuk pelbagai bentuk muka.
 

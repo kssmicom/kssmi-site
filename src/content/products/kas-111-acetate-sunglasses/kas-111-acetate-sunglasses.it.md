@@ -5,7 +5,7 @@ slug: "kas-111-acetate-sunglasses"
 itemNo: "KAS-111"
 date: "2026-05-09"
 colors: "Rosso Caramella & Tartaruga Rosa & Bianco Crema & Nero"
-materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100pz/colore)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali da sole OEM personal
 
 ## Caratteristiche
 
-- **Materiale Montatura Premium:** Realizzati sapientemente in acetato Mazzucchelli e JIMEI & JINYU di alta qualità, offrono una sensazione di leggerezza con una durata eccezionale e una vibrante profondità di colore.
+- **Materiale Montatura Premium:** Realizzati sapientemente in acetato Mazzucchelli, JIMEI, JINYU di alta qualità, offrono una sensazione di leggerezza con una durata eccezionale e una vibrante profondità di colore.
 - **Cerniere di Precisione:** Robuste cerniere con struttura a barilotto 3+2 progettate per una fluidità operativa a lungo termine e stabilità strutturale.
 - **Ottica ad Alte Prestazioni:** Lenti in nylon tenace che offrono una chiarezza superiore e resistenza agli urti con ampie opzioni di colorazione personalizzata disponibili.
 - **Comfort Ergonomico:** Naselli integrati progettati per una vestibilità senza cuciture e ipoallergenica che garantisce stabilità e comfort per tutto il giorno.
@@ -71,7 +71,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali da sole OEM personal
 
 ## Panoramica
 
-La vibrante profondità del colore e la qualità dell'integrità strutturale si incontrano nel modello KAS-111, realizzato in acetato Mazzucchelli e JIMEI & JINYU di alta qualità per catturare un'estetica audace e d'ispirazione vintage.
+La vibrante profondità del colore e la qualità dell'integrità strutturale si incontrano nel modello KAS-111, realizzato in acetato Mazzucchelli, JIMEI, JINYU di alta qualità per catturare un'estetica audace e d'ispirazione vintage.
 
 La stabilità strutturale è mantenuta attraverso robuste cerniere a barilotto 3+2, mentre i naselli integrati offrono una vestibilità ergonomica e senza cuciture per diverse forme del viso.
 

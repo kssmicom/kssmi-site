@@ -5,7 +5,7 @@ slug: "kas-104-acetate-sunglasses"
 itemNo: "KAS-104"
 date: "2026-05-06"
 colors: "Havana & Marrone & Nero & Floreale & Purple-Stripe"
-materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -58,7 +58,7 @@ seoKeywords: "produttore occhiali in acetato Mazzucchelli, occhiali da sole OEM 
 
 ## Caratteristiche
 
-- **Materiale Montatura Premium:** Costruzione in acetato Mazzucchelli e JIMEI & JINYU di alta qualità che offre una finitura vibrante e lucida con un'eccezionale durata strutturale per linee di alta moda.
+- **Materiale Montatura Premium:** Costruzione in acetato Mazzucchelli, JIMEI, JINYU di alta qualità che offre una finitura vibrante e lucida con un'eccezionale durata strutturale per linee di alta moda.
 - **Hardware Resistente:** Cerniere con struttura a 2+1 barile progettate con precisione per una scorrevolezza operativa costante e una stabilità della montatura a lungo termine.
 - **Ottica Superiore:** Lenti in nylon tenace che offrono un'elevata resistenza agli urti e chiarezza ottica, con personalizzazione scalabile per la protezione UV e rivestimenti specializzati.
 - **Vestibilità Ergonomica:** Naselli integrati perfettamente scolpiti nella struttura in acetato per una vestibilità sicura e senza pressione che migliora il comfort per tutto il giorno.
@@ -76,7 +76,7 @@ seoKeywords: "produttore occhiali in acetato Mazzucchelli, occhiali da sole OEM 
 
 ## Panoramica
 
-Realizzati con una selezione curata di acetato premium Mazzucchelli e JIMEI & JINYU, il modello KAS-104 bilancia una vibrante profondità di colore con una finitura lucida che definisce gli occhiali di lusso contemporanei.
+Realizzati con una selezione curata di acetato premium Mazzucchelli, JIMEI, JINYU, il modello KAS-104 bilancia una vibrante profondità di colore con una finitura lucida che definisce gli occhiali di lusso contemporanei.
 
 L'integrità strutturale è garantita da un sistema di cerniere a 2+1 barile progettato con precisione, abbinato a naselli integrati per assicurare una vestibilità sicura ed ergonomica per diverse forme del viso.
 

@@ -5,7 +5,7 @@ slug: "kas-115-acetate-sunglasses"
 itemNo: "KAS-115"
 date: "2026-05-09"
 colors: "Negro & Púrpura & Blanco & Tortuga & Naranja"
-materials: "Acetato Premium Mazzucchelli y JIMEI & JINYU & Personalización"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Características Técnicas
 
-- **Material Premium:** Construidas con acetato de alta calidad Mazzucchelli y JIMEI & JINYU, ofreciendo un marco ligero y duradero con acabados vibrantes.
+- **Material Premium:** Construidas con acetato de alta calidad Mazzucchelli, JIMEI, JINYU, ofreciendo un marco ligero y duradero con acabados vibrantes.
 - **Hardware Duradero:** Cuenta con bisagras robustas de estructura 3+2 diseñadas para una suavidad operativa estable a largo plazo.
 - **Óptica Premium:** Equipadas con lentes de nylon tenaces que proporcionan una claridad excelente, con amplia personalización disponible para perfiles de color únicos.
 - **Comodidad Todo el Día:** Diseñadas con almohadillas nasales integradas para asegurar un ajuste perfecto, seguro y cómodo para un uso prolongado.
@@ -76,7 +76,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Visión General
 
-Elaboradas con acetato premium Mazzucchelli y JIMEI & JINYU, el modelo KAS-115 canaliza una estética audaz y vintage mientras ofrece una durabilidad excepcional y perfiles de color vibrantes. Este diseño unisex destaca como un elemento versátil para colecciones de gafas modernas y de alta gama.
+Elaboradas con acetato premium Mazzucchelli, JIMEI, JINYU, el modelo KAS-115 canaliza una estética audaz y vintage mientras ofrece una durabilidad excepcional y perfiles de color vibrantes. Este diseño unisex destaca como un elemento versátil para colecciones de gafas modernas y de alta gama.
 
 Las robustas bisagras de estructura 3+2 y las almohadillas nasales integradas están diseñadas para garantizar una estabilidad duradera y comodidad durante todo el día.
 

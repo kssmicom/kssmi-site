@@ -5,7 +5,7 @@ slug: "kas-115-acetate-sunglasses"
 itemNo: "KAS-115"
 date: "2026-05-09"
 colors: "Ireng & Ungu & Putih & Bulus & Oranye"
-materials: "Asetat Mazzucchelli lan JIMEI & JINYU Premium & Kustomisasi"
+materials: "Asetat Mazzucchelli, JIMEI, JINYU Premium & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -58,7 +58,7 @@ seoKeywords: "pabrik kacamata asetat, kacamata oem kustom, kacamata mewah label 
 
 ## Fitur Teknis
 
-- **Bahan Premium:** Digawe saka asetat Mazzucchelli lan JIMEI & JINYU sing bermutu tinggi, nawakake frame sing entheng lan awet kanthi asil sing padhang.
+- **Bahan Premium:** Digawe saka asetat Mazzucchelli, JIMEI, JINYU sing bermutu tinggi, nawakake frame sing entheng lan awet kanthi asil sing padhang.
 - **Hardware Awet:** Nampilake engsel struktur 3+2 sing kuat sing dirancang kanggo kelancaran operasi sing stabil lan jangka panjang.
 - **Optik Premium:** Dilengkapi karo lensa nilon sing kuat sing nyedhiyakake kajelasan sing luar biasa, kanthi kustomisasi ekstensif kasedhiya kanggo profil warna sing unik.
 - **Kenyamanan Sedina:** Dirancang kanthi bantalan irung terpadu kanggo mesthekake pas sing mulus, aman, lan nyaman kanggo panggunaan sing suwe.
@@ -76,7 +76,7 @@ seoKeywords: "pabrik kacamata asetat, kacamata oem kustom, kacamata mewah label 
 
 ## Ringkesan
 
-Digawe saka asetat Mazzucchelli lan JIMEI & JINYU premium, KAS-115 nyalurake estetika klasik sing kandel nalika menehi daya tahan sing luar biasa lan profil warna sing padhang. Desain uniseks iki misuwur minangka bahan pokok sing serbaguna kanggo koleksi kacamata mewah modern.
+Digawe saka asetat Mazzucchelli, JIMEI, JINYU premium, KAS-115 nyalurake estetika klasik sing kandel nalika menehi daya tahan sing luar biasa lan profil warna sing padhang. Desain uniseks iki misuwur minangka bahan pokok sing serbaguna kanggo koleksi kacamata mewah modern.
 
 Engsel struktur 3+2 sing kuat lan bantalan irung terpadu dirancang kanggo njamin stabilitas sing tahan lama lan kenyamanan sedina.
 

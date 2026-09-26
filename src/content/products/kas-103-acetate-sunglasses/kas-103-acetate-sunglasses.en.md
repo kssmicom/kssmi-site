@@ -5,7 +5,7 @@ slug: "kas-103-acetate-sunglasses"
 itemNo: "KAS-103"
 date: "2026-05-06"
 colors: "Black & Yellow-Lattice & Pearl-Marble & Red-Lattice & Blue-Lattice & Black-Lattice"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -62,7 +62,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Technical Features
 
-- **Premium Frame Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate frame and temples providing a vibrant, deep-luster finish with exceptional structural durability.
+- **Premium Frame Material:** High-grade Mazzucchelli, JIMEI, JINYU acetate frame and temples providing a vibrant, deep-luster finish with exceptional structural durability.
 - **Durable Hardware:** Precision-engineered 3+2 barrel structure hinges designed for consistent operational smoothness and long-term frame stability.
 - **Superior Optics:** Tenacious nylon lenses offering high impact resistance and optical clarity, with scalable customization for UV protection and specialized coatings.
 - **Ergonomic Fit:** Integrated nose pads seamlessly carved into the acetate structure for a secure, pressure-free fit that enhances all-day comfort.
@@ -80,7 +80,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Overview
 
-The KAS-103 utilizes premium Mazzucchelli, JIMEI & JINYU acetate to achieve a deep-luster finish, featuring sophisticated lattice and marble patterns that resonate with high-fashion trends.
+The KAS-103 utilizes premium Mazzucchelli, JIMEI, JINYU acetate to achieve a deep-luster finish, featuring sophisticated lattice and marble patterns that resonate with high-fashion trends.
 
 Precision 3+2 barrel hinges and integrated nose pads provide the structural stability and ergonomic comfort expected by luxury consumers.
 

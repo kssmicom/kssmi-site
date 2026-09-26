@@ -5,7 +5,7 @@ slug: "kas-017-acetate-sunglasses"
 itemNo: "KAS-017"
 date: "2026-05-10"
 colors: "Noir, Rouge Transparent, Bleu Transparent"
-materials: "Acétate Premium Mazzucchelli & JIMEI & JINYU & Personnalisation"
+materials: "Acétate Premium Mazzucchelli, JIMEI, JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -44,7 +44,7 @@ seoKeywords: "lunettes de soleil en acétate de luxe, fabricant de lunettes pers
 
 ## Caractéristiques
 
-- **Matériau Premium :** Acétate Mazzucchelli et JIMEI & JINYU sélectionné à la main offrant une finition haute densité avec une profondeur de couleur et une durabilité supérieures.
+- **Matériau Premium :** Acétate Mazzucchelli, JIMEI, JINYU sélectionné à la main offrant une finition haute densité avec une profondeur de couleur et une durabilité supérieures.
 - **Ingénierie de Précision :** Dimensions de monture 49-23-145mm expertes offrant un ajustement équilibré et élégant avec de nombreuses options de personnalisation.
 - **Matériel Durable :** Charnières robustes à structure 3+2 barillets avec mises à niveau disponibles en 5 barillets ou charnières à ressort pour une fluidité opérationnelle à long terme.
 - **Optique Avancée :** Verres en nylon tenace haute clarté offrant une résistance aux chocs avec des teintes et des revêtements personnalisables pour les exigences spécifiques de la marque.
@@ -61,7 +61,7 @@ seoKeywords: "lunettes de soleil en acétate de luxe, fabricant de lunettes pers
 
 ## Aperçu
 
-L'acétate Mazzucchelli et JIMEI & JINYU sélectionné à la main confère au KAS-017 sa finition haute densité et sa profondeur de couleur supérieure, répondant aux normes rigoureuses du marché des lunettes de luxe.
+L'acétate Mazzucchelli, JIMEI, JINYU sélectionné à la main confère au KAS-017 sa finition haute densité et sa profondeur de couleur supérieure, répondant aux normes rigoureuses du marché des lunettes de luxe.
 
 L'intégrité structurelle est maintenue grâce à des charnières à 3+2 barillets conçues avec précision et à des verres en nylon haute clarté qui offrent à la fois durabilité et excellence optique.
 

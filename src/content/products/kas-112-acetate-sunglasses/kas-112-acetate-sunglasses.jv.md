@@ -5,7 +5,7 @@ slug: "kas-112-acetate-sunglasses"
 itemNo: "KAS-112"
 date: "2026-05-09"
 colors: "Ireng & Ireng Padhet & Havana & Abrit Permen & Bulus Jambon & Putih Krim"
-materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Kustomisasi"
+materials: "Premium Asetat Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -58,7 +58,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM custom, eyewear
 
 ## Fitur
 
-- **Konstruksi Asetat Premium:** Frame lan gagang asetat kelas dhuwur Mazzucchelli lan JIMEI & JINYU sing menehi rasa entheng kanthi jerune warna sing luar biasa lan awet banget.
+- **Konstruksi Asetat Premium:** Frame lan gagang asetat kelas dhuwur Mazzucchelli, JIMEI, JINYU sing menehi rasa entheng kanthi jerune warna sing luar biasa lan awet banget.
 - **Hardware Presisi:** Engsel struktur 3+2 sing stabil, dirancang kanggo gerakan sing lancar lan rasa premium nalika disentuh.
 - **Optik Performa Dhuwur:** Lensa nylon kuat sing nawakake ketahanan benturan lan kajelasan optik sing unggul, bisa dicocokake kanthi lengkap kanggo nyukupi syarat merek tartamtu.
 - **Kenyamanan Ergonomis:** Bantalan irung sing nggabung dadi siji, dirancang kanggo mbagi bobot kanthi rata supaya nyaman sedina muput ing macem-macem struktur praupan.
@@ -76,7 +76,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM custom, eyewear
 
 ## Ringkesan
 
-Estetika vintage sing wani ketemu karo jerune bahan premium ing KAS-112, digawe saka asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur kanggo njamin hasil pungkasan sing padhang lan awet.
+Estetika vintage sing wani ketemu karo jerune bahan premium ing KAS-112, digawe saka asetat Mazzucchelli, JIMEI, JINYU kelas dhuwur kanggo njamin hasil pungkasan sing padhang lan awet.
 
 Saben frame nggunakake engsel 3+2 sing dirancang kanthi presisi lan bantalan irung integrasi, menehi keseimbangan sing lancar antarane stabilitas struktur lan kenyamanan ergonomis.
 

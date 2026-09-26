@@ -5,7 +5,7 @@ slug: "kas-115-acetate-sunglasses"
 itemNo: "KAS-115"
 date: "2026-05-09"
 colors: "Noir & Violet & Blanc & Écaille & Orange"
-materials: "Acétate Premium Mazzucchelli et JIMEI & JINYU & Personnalisation"
+materials: "Acétate Premium Mazzucchelli, JIMEI, JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricant lunettes de soleil en acétate, lunettes de soleil OEM p
 
 ## Caractéristiques Techniques
 
-- **Matériau Premium :** Fabriquées à partir d'acétate Mazzucchelli et JIMEI & JINYU de haute qualité, offrant une monture légère et durable avec des finitions vibrantes.
+- **Matériau Premium :** Fabriquées à partir d'acétate Mazzucchelli, JIMEI, JINYU de haute qualité, offrant une monture légère et durable avec des finitions vibrantes.
 - **Matériel Durable :** Équipées de charnières robustes à structure 3+2 conçues pour une douceur opérationnelle stable et à long terme.
 - **Optique Premium :** Dotées de verres en nylon tenaces offrant une excellente clarté, avec une personnalisation étendue disponible pour des profils de couleurs uniques.
 - **Confort Toute la Journée :** Conçues avec des plaquettes de nez intégrées pour assurer un ajustement parfait, sûr et confortable lors d'un port prolongé.
@@ -76,7 +76,7 @@ seoKeywords: "fabricant lunettes de soleil en acétate, lunettes de soleil OEM p
 
 ## Aperçu
 
-Fabriquées à partir d'acétate premium Mazzucchelli et JIMEI & JINYU, le modèle KAS-115 arbore une esthétique audacieuse et vintage tout en offrant une durabilité exceptionnelle et des profils de couleurs vibrants. Ce design unisexe s'impose comme un élément polyvalent pour les collections de lunettes modernes haut de gamme.
+Fabriquées à partir d'acétate premium Mazzucchelli, JIMEI, JINYU, le modèle KAS-115 arbore une esthétique audacieuse et vintage tout en offrant une durabilité exceptionnelle et des profils de couleurs vibrants. Ce design unisexe s'impose comme un élément polyvalent pour les collections de lunettes modernes haut de gamme.
 
 Les charnières robustes à structure 3+2 et les plaquettes de nez intégrées sont conçues pour garantir une stabilité durable et un confort tout au long de la journée.
 

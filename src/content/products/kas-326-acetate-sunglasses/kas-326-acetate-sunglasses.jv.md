@@ -5,7 +5,7 @@ slug: "kas-326-acetate-sunglasses"
 itemNo: "KAS-326"
 date: "2026-05-13"
 colors: "Ireng karo Klawu Gradasi, Sisik Penyu karo Biru-Coklat, Teal Havana karo Coklat Gradasi"
-materials: "Mazzucchelli & JIMEI & JINYU Asetat Premium & Kustomisasi"
+materials: "Mazzucchelli, JIMEI, JINYU Asetat Premium & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -44,7 +44,7 @@ seoKeywords: "kacamata ireng asetat kustom, kacamata asetat grosir, produsen kac
 
 ## Fitur
 
-- **Bahan Pigura Premium:** Digawe saka asetat Mazzucchelli & JIMEI & JINYU premium, nawakake desain sing entheng, awet, lan stabil kanthi warna sing padhang lan jero.
+- **Bahan Pigura Premium:** Digawe saka asetat Mazzucchelli, JIMEI, JINYU premium, nawakake desain sing entheng, awet, lan stabil kanthi warna sing padhang lan jero.
 - **Optik Premium:** Lensa nylon sing kuwat kanthi pilihan warna lan lapisan kustom sing akeh kanggo nyukupi macem-macem panjaluk pasar.
 - **Hardware Presisi:** Engsel struktur 3+2 tong sing stabil, bisa disesuaikan nganggo konfigurasi 5 tong utawa spring, dirancang kanggo kelancaran panggunaan jangka panjang.
 - **Kenyamanan Sedina Muput:** Pad irung integrasi asetat sing dirancang kanggo mbagi tekanan kanthi rata lan njamin posisi sing pas lan nyaman.
@@ -61,7 +61,7 @@ seoKeywords: "kacamata ireng asetat kustom, kacamata asetat grosir, produsen kac
 
 ## Ringkesan
 
-Dirancang kanggo nyukupi kabutuhan estetika butik ritel premium, kacamata ireng KAS-326 nggabungake rincian keling klasik karo warna asetat JIMEI & JINYU lan Mazzucchelli sing padhang lan multi-lapisan.
+Dirancang kanggo nyukupi kabutuhan estetika butik ritel premium, kacamata ireng KAS-326 nggabungake rincian keling klasik karo warna asetat Mazzucchelli, JIMEI, JINYU sing padhang lan multi-lapisan.
 
 Seng nyengkuyung kemewahan kacamata iki yaiku engsel 3+2 tong sing awet lan pad irung integrasi, sing dirancang khusus kanggo njaga posisi pigura tetep pas lan nyaman kanggo sing nganggo.
 

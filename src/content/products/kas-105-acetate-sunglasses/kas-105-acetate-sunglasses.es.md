@@ -5,7 +5,7 @@ slug: "kas-105-acetate-sunglasses"
 itemNo: "KAS-105"
 date: "2026-05-06"
 colors: "Gris & Habana Brillante & Habana Mate & Transparente & Negro"
-materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalización"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalización"
 serviceMode: "Fabricación OEM / ODM – Personalización"
 moq: "300 uds/modelo (100 uds/color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Características
 
-- **Material Premium:** Monturas pulidas a mano fabricadas con los mundialmente reconocidos acetatos Mazzucchelli y JIMEI & JINYU, que ofrecen una durabilidad excepcional y una vibrante profundidad de color.
+- **Material Premium:** Monturas pulidas a mano fabricadas con los mundialmente reconocidos acetatos Mazzucchelli, JIMEI, JINYU, que ofrecen una durabilidad excepcional y una vibrante profundidad de color.
 - **Herrajes Duraderos:** Bisagras de barril 3+2 diseñadas con precisión que garantizan la estabilidad estructural y un rendimiento operativo suave a largo plazo.
 - **Óptica de Alto Rendimiento:** Lentes de nylon resistentes a los impactos que proporcionan una claridad y durabilidad superiores para los estándares de las gafas de alta moda.
 - **Diseño Ergonómico:** Almohadillas nasales integradas y una geometría de montura equilibrada con precisión (51-23-145 mm) diseñada para la comodidad durante todo el día y un ajuste universal.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante de gafas de sol de acetato, gafas de sol OEM personaliz
 
 ## Resumen
 
-Fabricadas con acetato de primera calidad Mazzucchelli y JIMEI & JINYU, las KAS-105 equilibran un audaz diseño unisex con una vibrante profundidad de color. Esta montura pulida a mano sirve como una base versátil para las marcas que priorizan los materiales de alta densidad y la estética de la moda contemporánea.
+Fabricadas con acetato de primera calidad Mazzucchelli, JIMEI, JINYU, las KAS-105 equilibran un audaz diseño unisex con una vibrante profundidad de color. Esta montura pulida a mano sirve como una base versátil para las marcas que priorizan los materiales de alta densidad y la estética de la moda contemporánea.
 
 La integración de bisagras de barril 3+2 y lentes de nylon resistentes a los impactos proporciona la integridad estructural y el rendimiento óptico requeridos por los estándares del mercado de lujo.
 

@@ -5,7 +5,7 @@ slug: "kas-305-acetate-sunglasses"
 itemNo: "KAS-305"
 date: "2026-05-12"
 colors: "Preto & Listras & Havana & Oliva"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
 moq: "300 pçs/modelo (100 pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Características
 
-- **Seleção de Materiais Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade que oferece uma sensação de leveza com durabilidade excepcional e vibrante profundidade de cor.
+- **Seleção de Materiais Premium:** Construção em acetato Mazzucchelli, JIMEI, JINYU de alta qualidade que oferece uma sensação de leveza com durabilidade excepcional e vibrante profundidade de cor.
 - **Hardware Robusto:** Dobradiças de estrutura 4+3 barris projetadas com precisão que proporcionam suavidade operacional a longo prazo e alinhamento consistente da armação.
 - **Óptica de Alto Desempenho:** Lentes de nylon tenaz que oferecem resistência superior a impactos e clareza óptica com opções versáteis de personalização e revestimento.
 - **Conforto Ergonômico:** Plaquetas nasais integradas e um design de ponte unissex refinado garantem um ajuste seguro e hipoalergênico para uso diário prolongado.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante de óculos de sol de acetato, óculos de sol OEM person
 
 ## Visão Geral
 
-O acetato Mazzucchelli e JIMEI & JINYU de alta qualidade definem a elegância estrutural do KAS-305, proporcionando uma sensação de leveza e profunda saturação de cor. Este design unissex clássico une a estética retrô com as demandas da moda moderna.
+O acetato Mazzucchelli, JIMEI, JINYU de alta qualidade definem a elegância estrutural do KAS-305, proporcionando uma sensação de leveza e profunda saturação de cor. Este design unissex clássico une a estética retrô com as demandas da moda moderna.
 
 Projetada com um sistema preciso de dobradiça de 4+3 barris e plaquetas nasais integradas, a armação mantém alinhamento e conforto consistentes no uso diário.
 

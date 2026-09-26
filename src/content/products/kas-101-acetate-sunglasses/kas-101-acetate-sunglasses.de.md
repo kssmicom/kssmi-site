@@ -5,7 +5,7 @@ slug: "kas-101-acetate-sunglasses"
 itemNo: "KAS-101"
 date: "2026-05-05"
 colors: "Weiß & Panda & Leopard & Havanna & Transparent & Schwarz"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetat & Individualisierung"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -61,7 +61,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, kundenspezifische OEM-Sonnenbrill
 ---
 
 ## Eigenschaften
-- **Premium-Material:** Hochwertige Konstruktion aus Mazzucchelli- und JIMEI & JINYU-Acetat, die ein leichtes Tragegefühl mit lebendiger, langanhaltender Farbtiefe bietet.
+- **Premium-Material:** Hochwertige Konstruktion aus Mazzucchelli, JIMEI, JINYU-Acetat, die ein leichtes Tragegefühl mit lebendiger, langanhaltender Farbtiefe bietet.
 - **Verstärkte Konstruktion:** Langlebige Acetat-Bügel mit integrierten 3+2 Barrel-Struktur-Scharnieren, die für erhöhte strukturelle Integrität und reibungslose Funktion entwickelt wurden.
 - **Hochauflösende Optik:** Widerstandsfähige Nylon-Gläser für überlegene Klarheit und Stoßfestigkeit, mit umfangreichen Anpassungsoptionen für Tönungen und Beschichtungen.
 - **Ergonomisches Design:** Integrierte Nasenpads und maßgeschneiderte Größe von 58-17-143 mm für einen sicheren, bequemen Sitz, der das schlanke ästhetische Profil des Rahmens beibehält.
@@ -78,7 +78,7 @@ seoKeywords: "Acetat-Sonnenbrillen Hersteller, kundenspezifische OEM-Sonnenbrill
 
 ## Überblick
 
-Lebendiges Mazzucchelli- und JIMEI & JINYU-Acetat verleihen der KAS-101 ihre markante Farbtiefe und leichte Haltbarkeit und positionieren sie als Kernstück für trendbewusste Brillenportfolios.
+Lebendiges Mazzucchelli, JIMEI, JINYU-Acetat verleihen der KAS-101 ihre markante Farbtiefe und leichte Haltbarkeit und positionieren sie als Kernstück für trendbewusste Brillenportfolios.
 
 Jeder Rahmen verfügt über präzisionsgefertigte 3+2 Barrel-Scharniere und ein ergonomisches Profil, um eine konsistente strukturelle Festigkeit und langfristigen Tragekomfort zu gewährleisten.
 

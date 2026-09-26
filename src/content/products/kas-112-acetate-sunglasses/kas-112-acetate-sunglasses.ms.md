@@ -5,7 +5,7 @@ slug: "kas-112-acetate-sunglasses"
 itemNo: "KAS-112"
 date: "2026-05-09"
 colors: "Hitam & Hitam Padu & Havana & Merah Gula-gula & Kura-kura Merah Jambu & Putih Krim"
-materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Penyesuaian"
+materials: "Premium Asetat Mazzucchelli, JIMEI, JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM / ODM – Penyesuaian"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -58,7 +58,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Ciri-ciri Utama
 
-- **Pembinaan Asetat Premium:** Bingkai dan gagang asetat Mazzucchelli dan JIMEI & JINYU gred tinggi yang memberikan rasa ringan dengan kedalaman warna yang luar biasa serta ketahanan jangka panjang.
+- **Pembinaan Asetat Premium:** Bingkai dan gagang asetat Mazzucchelli, JIMEI, JINYU gred tinggi yang memberikan rasa ringan dengan kedalaman warna yang luar biasa serta ketahanan jangka panjang.
 - **Perkakasan Ketepatan:** Engsel struktur 3+2 yang stabil, direka untuk kelancaran operasi yang konsisten dan rasa sentuhan premium.
 - **Optik Berprestasi Tinggi:** Lensa nilon lasak yang menawarkan rintangan hentaman dan kejelasan optik yang unggul, boleh disesuaikan sepenuhnya untuk memenuhi keperluan jenama tertentu.
 - **Keselesaan Ergonomik:** Alas hidung bersepadu yang direka untuk mengagihkan berat secara sama rata untuk keselesaan sepanjang hari merentasi pelbagai struktur wajah.
@@ -76,7 +76,7 @@ seoKeywords: "pengeluar cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Gambaran Keseluruhan
 
-Estetika vintaj yang berani bertemu dengan kedalaman bahan premium dalam KAS-112, dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU berkualiti tinggi untuk memastikan kemasan yang menyerlah dan tahan lama.
+Estetika vintaj yang berani bertemu dengan kedalaman bahan premium dalam KAS-112, dihasilkan daripada asetat Mazzucchelli, JIMEI, JINYU berkualiti tinggi untuk memastikan kemasan yang menyerlah dan tahan lama.
 
 Setiap bingkai menampilkan engsel 3+2 yang direka dengan ketepatan dan alas hidung bersepadu, memberikan keseimbangan sempurna antara kestabilan struktur dan keselesaan ergonomik.
 

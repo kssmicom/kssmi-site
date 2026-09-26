@@ -5,7 +5,7 @@ slug: "kas-109-acetate-sunglasses"
 itemNo: "KAS-109"
 date: "2026-05-07"
 colors: "Schwarz & Transparent & Schildpatt & Olive"
-materials: "Premium-Mazzucchelli & JIMEI & JINYU-Acetat & Individualisierung"
+materials: "Premium-Mazzucchelli, JIMEI, JINYU-Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100Stk/Farbe)"
 
@@ -58,7 +58,7 @@ seoKeywords: "Premium Acetat Sonnenbrillen Hersteller, individuelle OEM Brillenf
 
 ## Eigenschaften
 
-- **Premium-Material:** Hergestellt aus weltklasse Mazzucchelli- und JIMEI & JINYU-Acetat, das außergewöhnliche Haltbarkeit und eine tiefe, lebendige Farbtiefe bietet.
+- **Premium-Material:** Hergestellt aus weltklasse Mazzucchelli, JIMEI, JINYU-Acetat, das außergewöhnliche Haltbarkeit und eine tiefe, lebendige Farbtiefe bietet.
 - **Robuste Hardware:** Ausgestattet mit 3+2 Barrel-Scharnieren, die für langfristige Laufruhe und strukturelle Stabilität präzisionsgefertigt sind.
 - **Hochschlagfeste Optik:** Verfügt über widerstandsfähige Nylon-Gläser, die überlegene Klarheit und Schlagfestigkeit bieten, mit umfangreichen Optionen für kundenspezifische Beschichtungen.
 - **Nahtloser Komfort:** Entworfen mit integrierten Nasenpads, die eine schlanke, minimalistische Ästhetik bieten und gleichzeitig einen stabilen und bequemen Sitz gewährleisten.
@@ -76,7 +76,7 @@ seoKeywords: "Premium Acetat Sonnenbrillen Hersteller, individuelle OEM Brillenf
 
 ## Überblick
 
-Die aus weltklasse Mazzucchelli- und JIMEI & JINYU-Acetat gefertigte KAS-109 verkörpert eine kühne, Vintage-inspirierte Ästhetik, die mit zeitgenössischen Modetrends harmoniert. Die tiefe, lebendige Farbtiefe des Materials und die hochtransparenten Oberflächen bieten eine anspruchsvolle Grundlage für Premium-Brillenkollektionen.
+Die aus weltklasse Mazzucchelli, JIMEI, JINYU-Acetat gefertigte KAS-109 verkörpert eine kühne, Vintage-inspirierte Ästhetik, die mit zeitgenössischen Modetrends harmoniert. Die tiefe, lebendige Farbtiefe des Materials und die hochtransparenten Oberflächen bieten eine anspruchsvolle Grundlage für Premium-Brillenkollektionen.
 
 Integrierte Nasenpads und präzisionsgefertigte 3+2 Barrel-Scharniere sorgen für eine nahtlose Passform und dauerhafte strukturelle Stabilität, wobei eine robuste Leistung mit einer leichten Unisex-Silhouette in Einklang gebracht wird.
 

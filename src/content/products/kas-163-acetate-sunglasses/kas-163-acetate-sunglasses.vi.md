@@ -5,7 +5,7 @@ slug: "kas-163-acetate-sunglasses"
 itemNo: "KAS-163"
 date: "2026-05-09"
 colors: "Đen, Đồi mồi, Nâu trơn"
-materials: "Axetat cao cấp Mazzucchelli & JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Axetat cao cấp Mazzucchelli, JIMEI, JINYU & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) (Tùy chỉnh theo yêu cầu)"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -41,7 +41,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mắt tùy chỉnh KAS-
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Cấu trúc Axetat Mazzucchelli và JIMEI & JINYU được lựa chọn thủ công mang lại độ bền vượt trội với lớp hoàn thiện nhẹ, rực rỡ.
+- **Chất liệu cao cấp:** Cấu trúc Axetat Mazzucchelli, JIMEI, JINYU được lựa chọn thủ công mang lại độ bền vượt trội với lớp hoàn thiện nhẹ, rực rỡ.
 - **Kỹ thuật chính xác:** Bản lề cấu trúc đinh tán 3+2 chắc chắn được thiết kế để vận hành trơn tru lâu dài và đảm bảo tính toàn vẹn của cấu trúc.
 - **Quang học hiệu suất cao:** Tròng kính Nylon bền bỉ được thiết kế cho độ rõ nét vượt trội với khả năng phủ và nhuộm màu tùy chỉnh linh hoạt.
 - **Thiết kế công thái học:** Đệm mũi liền khối và cấu hình gọng kính 52-19-145mm được tối ưu hóa để mang lại sự vừa vặn an toàn và cảm giác thoải mái tinh tế khi đeo.
@@ -58,7 +58,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mắt tùy chỉnh KAS-
 
 ## Tổng quan
 
-Thời trang cao cấp kết hợp với chất liệu xuất sắc trong KAS-163, tích hợp Axetat Mazzucchelli và JIMEI & JINYU cao cấp để mang lại thẩm mỹ unisex tinh tế, bền bỉ và nhẹ nhàng.
+Thời trang cao cấp kết hợp với chất liệu xuất sắc trong KAS-163, tích hợp Axetat Mazzucchelli, JIMEI, JINYU cao cấp để mang lại thẩm mỹ unisex tinh tế, bền bỉ và nhẹ nhàng.
 
 Được trang bị hệ thống bản lề đinh tán 3+2 chắc chắn, gọng kính 52mm đảm bảo vận hành trơn tru liên tục và sự vừa vặn công thái học tinh tế.
 

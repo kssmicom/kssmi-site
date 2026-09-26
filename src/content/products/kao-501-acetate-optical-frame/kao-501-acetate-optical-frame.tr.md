@@ -5,7 +5,7 @@ slug: "kao-501-acetate-optical-frame"
 itemNo: "KAO-501"
 date: "2026-05-10"
 colors: "Siyah & Kaplumbağa & Çikolata & Krem"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "OEM & ODM ( Özelleştirme )"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -55,7 +55,7 @@ seoKeywords: "asetat optik çerçeve üreticisi, özel OEM optik çerçeveler, l
 
 ## Özellikler
 
-- **Premium Malzemeler:** Orijinal Mazzucchelli ve JIMEI & JINYU asetattan üretilmiş olup, canlı ve yüksek parlaklıkta bir kaplama ile hafif ancak dayanıklı bir çerçeve sunar.
+- **Premium Malzemeler:** Orijinal Mazzucchelli, JIMEI, JINYU asetattan üretilmiş olup, canlı ve yüksek parlaklıkta bir kaplama ile hafif ancak dayanıklı bir çerçeve sunar.
 - **Vintage Donanım:** Üstün yapısal bütünlük ve zamansız, el yapımı bir estetik için tasarlanmış sağlam 4+3 barrel perçin yapılı menteşeler.
 - **Heykelsi Tasarım:** Rafine bir profil ve gelişmiş ergonomik konfor için hassas heykelsi detaylara sahip ince sap yapısı.
 - **Yüksek Performanslı Optikler:** Renk tonları ve kaplamalar için tam özelleştirme imkanı sunan, olağanüstü netlik ve darbe direnci sağlayan dayanıklı naylon lensler.
@@ -73,7 +73,7 @@ seoKeywords: "asetat optik çerçeve üreticisi, özel OEM optik çerçeveler, l
 
 ## Genel Bakış
 
-Orijinal Mazzucchelli ve JIMEI & JINYU asetat, KAO-501'e imza niteliğindeki yüksek parlaklıkta kaplamasını ve esnek yapısal derinliğini kazandırır.
+Orijinal Mazzucchelli, JIMEI, JINYU asetat, KAO-501'e imza niteliğindeki yüksek parlaklıkta kaplamasını ve esnek yapısal derinliğini kazandırır.
 
 Çerçeve, vintage estetiği modern mekanik güvenilirlik ve konforla dengelemek için sağlam bir 4+3 barrel perçin menteşe sistemi ve heykelsi ince saplar kullanır.
 

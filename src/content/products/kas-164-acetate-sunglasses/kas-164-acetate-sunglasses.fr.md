@@ -5,7 +5,7 @@ slug: "kas-164-acetate-sunglasses"
 itemNo: "KAS-164"
 date: "2026-05-09"
 colors: "Gris Dégradé"
-materials: "Acétate Premium Mazzucchelli & JIMEI & JINYU & Personnalisation"
+materials: "Acétate Premium Mazzucchelli, JIMEI, JINYU & Personnalisation"
 serviceMode: "OEM & ODM ( Personnalisation )"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -40,7 +40,7 @@ seoKeywords: "lunettes de soleil en acétate Mazzucchelli, fabricant de lunettes
 
 ## Caractéristiques
 
-- **Matériaux Premium :** Construction en acétate Mazzucchelli et JIMEI & JINYU de haute qualité offrant une finition vibrante et très brillante avec une durabilité exceptionnelle.
+- **Matériaux Premium :** Construction en acétate Mazzucchelli, JIMEI, JINYU de haute qualité offrant une finition vibrante et très brillante avec une durabilité exceptionnelle.
 - **Matériel Renforcé :** Charnières robustes à structure de rivet à 3+2 barillets conçues pour une stabilité supérieure et une fluidité de fonctionnement à long terme.
 - **Optique Haute Performance :** Verres en nylon tenaces offrant une excellente résistance aux chocs avec de vastes possibilités de teinture et de revêtement personnalisés.
 - **Conception Ergonomique :** Plaquettes de nez parfaitement intégrées conçues pour un ajustement sûr et confortable et une esthétique raffinée et épurée.
@@ -58,7 +58,7 @@ seoKeywords: "lunettes de soleil en acétate Mazzucchelli, fabricant de lunettes
 
 ## Aperçu
 
-Fabriqué à partir d'acétate premium Mazzucchelli et JIMEI & JINYU, le modèle KAS-164 incarne une esthétique audacieuse mais classique avec une finition vibrante et très brillante. Ce design unisexe fusionne un style luxueux avec la durabilité durable des matériaux de haute qualité.
+Fabriqué à partir d'acétate premium Mazzucchelli, JIMEI, JINYU, le modèle KAS-164 incarne une esthétique audacieuse mais classique avec une finition vibrante et très brillante. Ce design unisexe fusionne un style luxueux avec la durabilité durable des matériaux de haute qualité.
 
 Les charnières à rivets à 3+2 barillets, conçues avec précision, offrent une stabilité exceptionnelle, tandis que les plaquettes de nez intégrées et les verres en nylon tenace assurent un confort à long terme et une clarté optique.
 

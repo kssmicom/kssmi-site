@@ -5,7 +5,7 @@ slug: "kas-016-acetate-sunglasses"
 itemNo: "KAS-016"
 date: "2026-05-10"
 colors: "Schildpatt mit Grün, Schwarz mit Gelb, Schwarz-Schildpatt mit Grau-Verlauf"
-materials: "Premium-Mazzucchelli- & JIMEI & JINYU-Acetat & Individualisierung"
+materials: "Premium-Mazzucchelli, JIMEI, JINYU-Acetat & Individualisierung"
 serviceMode: "Auftragsfertigung / Design und Fertigung – Individualisierung"
 moq: "300 Stk/Modell (100 Stk/Farbe)"
 
@@ -41,7 +41,7 @@ seoKeywords: "Mazzucchelli Acetat-Sonnenbrille, spezialisierter Brillenherstelle
 
 ## Eigenschaften
 
-- **Premium-Material:** Hochwertige Mazzucchelli- und JIMEI & JINYU-Acetatrahmen und -bügel für eine luxuriöse, lebendige Ästhetik mit außergewöhnlicher Haltbarkeit.
+- **Premium-Material:** Hochwertige Mazzucchelli, JIMEI, JINYU-Acetatrahmen und -bügel für eine luxuriöse, lebendige Ästhetik mit außergewöhnlicher Haltbarkeit.
 - **Langlebige Hardware:** Stabile 2+1 Fass-Struktur-Scharniere, entwickelt für konsistente Laufruhe und langfristige Zuverlässigkeit.
 - **Premium-Optik:** Hochklare, widerstandsfähige Nylon-Gläser mit überlegener Schlagfestigkeit sowie umfangreichen Optionen für individuelle Tönungen und Beschichtungen.
 - **Ergonomisches Design:** Integrierte Nasenpads für eine nahtlose Passform und verbesserte Stabilität bei längerem Tragen.

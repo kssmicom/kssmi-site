@@ -5,7 +5,7 @@ slug: "kao-329-acetate-optical-frame"
 itemNo: "KAO-329"
 date: "2026-05-10"
 colors: "Hijau zaitun padu, Merah jambu padu, Kura-kura"
-materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Penyesuaian"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) (Penyesuaian)"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -50,7 +50,7 @@ seoKeywords: "bingkai optik asetat kustom, cermin mata asetat borong, pengeluar 
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Diperbuat daripada asetat Mazzucchelli dan JIMEI & JINYU premium, menawarkan struktur ultra-ringan tetapi sangat tahan lama dengan estetika warna yang bertenaga dan mendalam.
+- **Bahan Premium:** Diperbuat daripada asetat Mazzucchelli, JIMEI, JINYU premium, menawarkan struktur ultra-ringan tetapi sangat tahan lama dengan estetika warna yang bertenaga dan mendalam.
 - **Perkakasan Terkejuruteraan:** Engsel struktur 3+2 barrel dengan kebolehpercayaan tinggi yang memberikan pergerakan temple yang stabil dan lancar dengan pilihan untuk engsel spring dan 5 barrel.
 - **Optik Teguh:** Lensa nilon berketahanan tinggi yang menawarkan kejelasan optik dan rintangan hentaman yang luar biasa dengan salutan tersuai dan perkhidmatan penyesuaian penuh.
 - **Keselesaan Bersepadu:** Alas hidung asetat yang disepadukan dengan lancar digabungkan dengan geometri 55-17-145mm yang disesuaikan untuk memberikan kesesuaian yang seimbang dan tidak tergelincir.
@@ -68,7 +68,7 @@ seoKeywords: "bingkai optik asetat kustom, cermin mata asetat borong, pengeluar 
 
 ## Gambaran Keseluruhan
 
-Dengan menggabungkan asetat Mazzucchelli dan JIMEI & JINYU, bingkai KAO-329 mencapai kedalaman warna yang elegan digabungkan dengan ketahanan fizikal yang berkekalan. Bentuk unisex retro-klasiknya, dipersembahkan dalam zaitun yang kaya, merah jambu lembut dan kura-kura klasik, menambah sauh premium kepada mana-mana barisan kacamata mewah.
+Dengan menggabungkan asetat Mazzucchelli, JIMEI, JINYU, bingkai KAO-329 mencapai kedalaman warna yang elegan digabungkan dengan ketahanan fizikal yang berkekalan. Bentuk unisex retro-klasiknya, dipersembahkan dalam zaitun yang kaya, merah jambu lembut dan kura-kura klasik, menambah sauh premium kepada mana-mana barisan kacamata mewah.
 
 Pembuatan ketepatan memastikan geometri 55-17-145mm berfungsi selaras dengan alas hidung asetat bersepadu dan engsel 3+2 barrel untuk memberikan pergerakan yang lancar dan kesesuaian yang seimbang serta bebas tekanan.
 

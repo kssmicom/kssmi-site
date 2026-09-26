@@ -5,7 +5,7 @@ slug: "kas-153-acetate-sunglasses"
 itemNo: "KAS-153"
 date: "2026-05-09"
 colors: "Bulus, Bening, Ireng, Coklat"
-materials: "Asetat Premium Mazzucchelli & JIMEI & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak & Desain lan Produksi (Kustomisasi)"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -41,7 +41,7 @@ seoKeywords: "produsen kacamata ireng asetat, kacamata ireng OEM custom, kacamat
 
 ## Fitur
 
-- **Bahan Premium:** Konstruksi asetat premium Mazzucchelli lan JIMEI & JINYU sing nawakake finish polesan tangan sing padhang kanthi daya tahan entheng sing luar biasa.
+- **Bahan Premium:** Konstruksi asetat premium Mazzucchelli, JIMEI, JINYU sing nawakake finish polesan tangan sing padhang kanthi daya tahan entheng sing luar biasa.
 - **Teknik Presisi:** Engsel struktur rivet barrel 3+2 sing stabil dirancang kanggo kelancaran operasional kelas profesional lan integritas struktural jangka panjang.
 - **Optik Performa Dhuwur:** Lensa nylon kuat sing nyedhiyakake resistensi dampak lan kajelasan sing unggul kanthi macem-macem pilihan warna lan lapisan custom.
 - **Desain Ergonomis:** Bantalan irung integrasi lan gagang asetat sing apik dirancang kanggo kenyamanan sedina muput lan pas sing aman lan seimbang.
@@ -58,7 +58,7 @@ seoKeywords: "produsen kacamata ireng asetat, kacamata ireng OEM custom, kacamat
 
 ## Ringkesan
 
-Nggawe siluet sing canggih saka asetat Mazzucchelli lan JIMEI & JINYU sing dipoles tangan, model iki nyedhiyakake kedalaman warna sing padhang lan daya tahan entheng sing dikarepake dening pasar mewah.
+Nggawe siluet sing canggih saka asetat Mazzucchelli, JIMEI, JINYU sing dipoles tangan, model iki nyedhiyakake kedalaman warna sing padhang lan daya tahan entheng sing dikarepake dening pasar mewah.
 
 Integrasi engsel rivet barrel 3+2 lan bantalan irung ergonomis njamin stabilitas struktural kelas profesional tanpa ngurangi kenyamanan pangguna.
 

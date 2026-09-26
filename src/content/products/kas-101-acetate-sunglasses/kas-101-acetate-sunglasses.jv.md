@@ -5,7 +5,7 @@ slug: "kas-101-acetate-sunglasses"
 itemNo: "KAS-101"
 date: "2026-05-05"
 colors: "Putih & Panda & Leopard & Havana & Jelas & Ireng"
-materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Kustomisasi"
+materials: "Premium Asetat Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -61,7 +61,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 ---
 
 ## Fitur
-- **Bahan Premium:** Konstruksi asetat Mazzucchelli lan JIMEI & JINYU berkualitas tinggi sing menehi rasa entheng kanthi kedalaman warna sing cerah lan awet.
+- **Bahan Premium:** Konstruksi asetat Mazzucchelli, JIMEI, JINYU berkualitas tinggi sing menehi rasa entheng kanthi kedalaman warna sing cerah lan awet.
 - **Konstruksi sing Dikuatake:** Gagang asetat sing awet sing digabungake karo engsel struktur tong 3+2 sing dirancang kanggo integritas struktural lan kelancaran operasional sing luwih apik.
 - **Optik Definisi Tinggi:** Lensa nylon tenacious sing nawakake kajelasan lan resistensi dampak sing unggul, kanthi pilihan kustomisasi sing jembar kanggo warna lan lapisan.
 - **Desain Ergonomis:** Bantalan irung integrasi lan ukuran 58-17-143mm kustom sing dirancang kanggo pas sing aman lan nyaman sing njaga profil estetika bingkai sing apik.
@@ -78,7 +78,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 
 ## Ringkesan
 
-Asetat Mazzucchelli lan JIMEI & JINYU sing bertenaga menehi KAS-101 kedalaman warna sing apik banget lan daya tahan sing entheng, dadi produk inti kanggo portofolio kacamata sing ngetutake tren.
+Asetat Mazzucchelli, JIMEI, JINYU sing bertenaga menehi KAS-101 kedalaman warna sing apik banget lan daya tahan sing entheng, dadi produk inti kanggo portofolio kacamata sing ngetutake tren.
 
 Saben frame nggunakake engsel tong 3+2 sing dirancang kanthi presisi lan profil ergonomis kanggo nyedhiyakake kekuatan struktural sing konsisten lan kenyamanan pemakaian jangka panjang.
 

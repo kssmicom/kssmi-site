@@ -5,7 +5,7 @@ slug: "kas-304-acetate-sunglasses"
 itemNo: "KAS-304"
 date: "2026-05-12"
 colors: "Preto & Listrado & Tartaruga & Marrom"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricante de óculos de acetato KAS-304, óculos de acetato perso
 
 ## Características
 
-- **Material Premium:** Construção em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, oferecendo uma sensação de leveza com uma profundidade de cor vibrante e duradoura.
+- **Material Premium:** Construção em acetato Mazzucchelli, JIMEI, JINYU de alta qualidade, oferecendo uma sensação de leveza com uma profundidade de cor vibrante e duradoura.
 - **Hardware Durável:** Dobradiças robustas com estrutura de 4+3 barris projetadas para suavidade operacional a longo prazo e desempenho repetível.
 - **Ótica de Elite:** Lentes de nylon tenaz resistentes a impactos com amplas opções de tingimento e revestimento personalizados disponíveis para coleções versáteis.
 - **Design Ergonômico:** Ponteiras nasicas integradas projetadas para uma estética perfeita e um ajuste seguro e confortável para uso durante todo o dia.
@@ -71,7 +71,7 @@ seoKeywords: "fabricante de óculos de acetato KAS-304, óculos de acetato perso
 
 ## Visão Geral
 
-Fabricado em acetato Mazzucchelli e JIMEI & JINYU de alta qualidade, o KAS-304 equilibra uma estética retrô unissex com profundidade de cor e durabilidade excepcionais.
+Fabricado em acetato Mazzucchelli, JIMEI, JINYU de alta qualidade, o KAS-304 equilibra uma estética retrô unissex com profundidade de cor e durabilidade excepcionais.
 
 As ponteiras nasicas integradas e as dobradiças com estrutura de 4+3 barris proporcionam um ajuste perfeito e suavidade operacional consistente para uso de alta frequência.
 

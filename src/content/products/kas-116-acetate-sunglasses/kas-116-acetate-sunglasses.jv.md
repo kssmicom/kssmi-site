@@ -5,7 +5,7 @@ slug: "kas-116-acetate-sunglasses"
 itemNo: "KAS-116"
 date: "2026-05-09"
 colors: "Ireng & Ijo-Marmer & Putih & Marmer"
-materials: "Premium Mazzucchelli & Asetat JIMEI & JINYU & Kustomisasi"
+materials: "Premium Asetat Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pabrik kacamata hitam asetat, pabrik kacamata OEM kustom, kacamata
 
 ## Fitur Teknis
 
-- **Konstruksi Asetat Premium:** Frame lan tangkai asetat Mazzucchelli lan JIMEI & JINYU berkualitas dhuwur sing nawakake finish sing entheng, awet, lan sregep.
+- **Konstruksi Asetat Premium:** Frame lan tangkai asetat Mazzucchelli, JIMEI, JINYU berkualitas dhuwur sing nawakake finish sing entheng, awet, lan sregep.
 - **Perangkat Keras Kuat:** Engsel struktur 3+2 stabil dirancang kanggo kelancaran operasi lan keandalan jangka panjang.
 - **Optik Premium:** Lensa nilon kuwat kanthi pilihan warna lan lapisan kustom ekstensif kasedhiya.
 - **Kenyamanan Nyaman:** Bantalan irung terintegrasi dirancang kanggo nyedhiyakake pas aman lan nyaman kanggo digunakake saben dina.
@@ -72,7 +72,7 @@ seoKeywords: "pabrik kacamata hitam asetat, pabrik kacamata OEM kustom, kacamata
 
 ## Ringkesan
 
-Digawe saka asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur, KAS-116 nampilake estetika uniseks sing wani sing langsung ngangkat koleksi kacamata premium apa wae. Bingkai apik gayane iki ngimbangi struktur entheng lan awet kanthi daya tarik visual sing sregep banget.
+Digawe saka asetat Mazzucchelli, JIMEI, JINYU kelas dhuwur, KAS-116 nampilake estetika uniseks sing wani sing langsung ngangkat koleksi kacamata premium apa wae. Bingkai apik gayane iki ngimbangi struktur entheng lan awet kanthi daya tarik visual sing sregep banget.
 
 Dirancang kanggo kinerja saben dina sing bisa diandalkan, kacamata iki nduweni engsel 3+2 laras sing kuat, lensa nilon sing lentur, lan bantalan irung sing terintegrasi kanthi mulus kanggo njamin kenyamanan sing luar biasa.
 

@@ -5,7 +5,7 @@ slug: "kao-318-acetate-optical-frame"
 itemNo: "KAO-318"
 date: "2026-05-10"
 colors: "Black & Havana & Red & Translucent-Grey & Brown-Stripe & Neon-Green"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate frames manufacturer, custom optical frames, boutique eyewe
 
 ## Technical Features
 
-- **Premium Acetate Frame:** Constructed with high-grade Mazzucchelli, JIMEI & JINYU acetate for a lightweight, durable, and vibrant finish.
+- **Premium Acetate Frame:** Constructed with high-grade Mazzucchelli, JIMEI, JINYU acetate for a lightweight, durable, and vibrant finish.
 - **Reinforced Hardware:** Robust 4+3 barrel rivet hinges designed for exceptional structural integrity and long-term operational smoothness.
 - **High-Performance Optics:** Tenacious nylon lenses offering superior clarity and impact resistance with full customization options.
 - **Ergonomic Design:** Integrated nose pads and a tailored 48-20-145mm frame size providing a secure, comfortable fit for all-day wear.
@@ -72,7 +72,7 @@ seoKeywords: "acetate frames manufacturer, custom optical frames, boutique eyewe
 
 ## Overview
 
-Mazzucchelli, JIMEI & JINYU acetates form the bedrock of the KAO-318, providing a rich, vibrant palette and superior durability for premium optical collections. The frame’s retro-classic profile meets the high-tactile standards expected by modern luxury fashion houses.
+Mazzucchelli, JIMEI, JINYU acetates form the bedrock of the KAO-318, providing a rich, vibrant palette and superior durability for premium optical collections. The frame’s retro-classic profile meets the high-tactile standards expected by modern luxury fashion houses.
 
 A reinforced 4+3 barrel rivet hinge system combined with integrated nose pads delivers exceptional mechanical stability and all-day comfort.
 

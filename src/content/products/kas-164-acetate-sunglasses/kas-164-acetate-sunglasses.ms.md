@@ -5,7 +5,7 @@ slug: "kas-164-acetate-sunglasses"
 itemNo: "KAS-164"
 date: "2026-05-09"
 colors: "Kelabu Gradien"
-materials: "Asetat Mazzucchelli & JIMEI & JINYU Premium & Penyesuaian"
+materials: "Asetat Mazzucchelli, JIMEI, JINYU Premium & Penyesuaian"
 serviceMode: "OEM & ODM ( Penyesuaian )"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -40,7 +40,7 @@ seoKeywords: "cermin mata hitam asetat Mazzucchelli, pengeluar kacamata asetat t
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Pembinaan asetat Mazzucchelli dan JIMEI & JINYU berkualiti tinggi yang memberikan kemasan bertenaga, berkilau tinggi dengan ketahanan yang luar biasa.
+- **Bahan Premium:** Pembinaan asetat Mazzucchelli, JIMEI, JINYU berkualiti tinggi yang memberikan kemasan bertenaga, berkilau tinggi dengan ketahanan yang luar biasa.
 - **Perkakasan Diperkukuh:** Engsel struktur rivet 3+2 barel yang teguh direka untuk kestabilan unggul dan kelancaran operasi jangka panjang.
 - **Optik Berprestasi Tinggi:** Lensa nilon tenacious yang menawarkan rintangan hentaman yang sangat baik dengan kemungkinan pewarnaan dan salutan tersuai yang meluas.
 - **Reka Bentuk Ergonomik:** Alas hidung bersepadu yang lancar direka untuk kesesuaian yang selamat, selesa dan estetika yang halus serta diperkemas.
@@ -58,7 +58,7 @@ seoKeywords: "cermin mata hitam asetat Mazzucchelli, pengeluar kacamata asetat t
 
 ## Gambaran Keseluruhan
 
-Dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU premium, KAS-164 merangkumi estetika yang berani namun klasik dengan kemasan bertenaga dan berkilau tinggi. Reka bentuk unisex ini menggabungkan penggayaan mewah dengan ketahanan abadi bahan gred tinggi.
+Dihasilkan daripada asetat Mazzucchelli, JIMEI, JINYU premium, KAS-164 merangkumi estetika yang berani namun klasik dengan kemasan bertenaga dan berkilau tinggi. Reka bentuk unisex ini menggabungkan penggayaan mewah dengan ketahanan abadi bahan gred tinggi.
 
 Engsel rivet 3+2 barel yang direka dengan tepat memberikan kestabilan yang luar biasa, manakala alas hidung bersepadu dan lensa nilon tenacious memastikan keselesaan jangka panjang dan kejelasan optik.
 

@@ -5,7 +5,7 @@ slug: "kao-314-acetate-optical-frame"
 itemNo: "KAO-314"
 date: "2026-05-10"
 colors: "Ireng & Ijo Neon & Bulus & Shampanye & Kukus"
-materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -58,7 +58,7 @@ seoKeywords: "frame optik asetat, kacamata optik kustom, produsen frame optik OE
 
 ## Fitur
 
-- **Konstruksi Bahan Premium:** Ngarep lan gagang asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing menehi rasa entheng kanthi daya tahan unggul lan jero warna sing padhang.
+- **Konstruksi Bahan Premium:** Ngarep lan gagang asetat Mazzucchelli, JIMEI, JINYU kelas dhuwur sing menehi rasa entheng kanthi daya tahan unggul lan jero warna sing padhang.
 - **Hardware Kuat:** Engsel struktur rivet 4+3 barrel sing dirancang kanthi presisi njamin kelancaran operasional jangka panjang lan stabilitas struktural.
 - **Desain Ergonomis:** Bantalan irung sing terintegrasi kanthi mulus digawe kanggo kenyamanan sedina muput lan pas sing aman lan ora lunyu ing macem-macem profil rai.
 - **Optik Performa Dhuwur:** Lensa nylon kuat kanthi pilihan kustomisasi sing akeh kanggo warna lan lapisan supaya selaras karo estetika merek tartamtu.
@@ -76,7 +76,7 @@ seoKeywords: "frame optik asetat, kacamata optik kustom, produsen frame optik OE
 
 ## Ringkesan
 
-Nggabungake asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur, model iki nggayuh keseimbangan sing canggih antarane jero warna sing padhang lan daya tahan struktural.
+Nggabungake asetat Mazzucchelli, JIMEI, JINYU kelas dhuwur, model iki nggayuh keseimbangan sing canggih antarane jero warna sing padhang lan daya tahan struktural.
 
 Engsel rivet 4+3 barrel sing dirancang kanthi presisi njamin kelancaran operasional sing awet, dene bantalan irung sing terintegrasi nyedhiyakake pas sing aman lan ergonomis.
 

@@ -5,7 +5,7 @@ slug: "kas-311-acetate-sunglasses"
 itemNo: "KAS-311"
 date: "2026-05-12"
 colors: "Đen & Tím khói & Đồi mồi & Nâu"
-materials: "Axetat Mazzucchelli cao cấp & JIMEI & JINYU & Tùy chỉnh theo yêu cầu"
+materials: "Axetat Mazzucchelli, JIMEI, JINYU cao cấp & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh )"
 moq: "300 cái/mẫu (100 cái/màu)"
 
@@ -54,7 +54,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mắt unisex tùy chỉ
 
 ## Đặc điểm
 
-- **Chất liệu cao cấp:** Cấu trúc Axetat Mazzucchelli và JIMEI & JINYU cao cấp mang lại tính thẩm mỹ rực rỡ cùng độ bền nhẹ.
+- **Chất liệu cao cấp:** Cấu trúc Axetat Mazzucchelli, JIMEI, JINYU cao cấp mang lại tính thẩm mỹ rực rỡ cùng độ bền nhẹ.
 - **Độ bền cấu trúc:** Bản lề 4+3 chốt chắc chắn được thiết kế để vận hành trơn tru lâu dài và ổn định gọng kính.
 - **Quang học xuất sắc:** Tròng kính nylon bền bỉ cung cấp độ rõ nét vượt trội và khả năng chống va đập với các tùy chọn lớp phủ tùy chỉnh phong phú.
 - **Thiết kế công thái học:** Đệm mũi liền khối được thiết kế để mang lại cảm giác vừa vặn, thoải mái trong suốt thời gian đeo hàng ngày kéo dài.
@@ -72,7 +72,7 @@ seoKeywords: "nhà sản xuất kính mát axetat, kính mắt unisex tùy chỉ
 
 ## Tổng quan
 
-Được chế tác từ sự pha trộn tinh tế giữa axetat Mazzucchelli và JIMEI & JINYU, KAS-311 mang đến một gọng kính nhẹ nhưng bền bỉ với độ rực rỡ của màu sắc vượt trội.
+Được chế tác từ sự pha trộn tinh tế giữa axetat Mazzucchelli, JIMEI, JINYU, KAS-311 mang đến một gọng kính nhẹ nhưng bền bỉ với độ rực rỡ của màu sắc vượt trội.
 
 Kiến trúc kính có các bản lề 4+3 chốt được gia cố và đệm mũi liền khối, mang lại sự ổn định hiệu suất cao cùng trải nghiệm đeo tinh tế, tiện dụng.
 

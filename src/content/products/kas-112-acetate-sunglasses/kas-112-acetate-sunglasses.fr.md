@@ -5,7 +5,7 @@ slug: "kas-112-acetate-sunglasses"
 itemNo: "KAS-112"
 date: "2026-05-09"
 colors: "Noir & Noir Solide & Havane & Rouge Bonbon & Écaille Rose & Blanc Crème"
-materials: "Premium Mazzucchelli & Acétate JIMEI & JINYU & Personnalisation"
+materials: "Premium Acétate Mazzucchelli, JIMEI, JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricant lunettes acétate, lunettes soleil OEM personnalisées, 
 
 ## Caractéristiques
 
-- **Construction en Acétate Premium :** Monture et branches en acétate de haute qualité Mazzucchelli et JIMEI & JINYU offrant une sensation de légèreté avec une profondeur de couleur exceptionnelle et une durabilité à long terme.
+- **Construction en Acétate Premium :** Monture et branches en acétate de haute qualité Mazzucchelli, JIMEI, JINYU offrant une sensation de légèreté avec une profondeur de couleur exceptionnelle et une durabilité à long terme.
 - **Matériel de Précision :** Charnières à structure 3+2 stables, conçues pour une fluidité opérationnelle constante et une sensation tactile haut de gamme.
 - **Optique Haute Performance :** Verres en nylon tenaces offrant une résistance supérieure aux chocs et une clarté optique, entièrement personnalisables pour répondre aux exigences spécifiques de la marque.
 - **Confort Ergonomique :** Plaquettes de nez intégrées de manière fluide conçues pour répartir le poids uniformément pour un confort tout au long de la journée sur diverses structures faciales.
@@ -76,7 +76,7 @@ seoKeywords: "fabricant lunettes acétate, lunettes soleil OEM personnalisées, 
 
 ## Aperçu
 
-L'esthétique vintage audacieuse rencontre la profondeur des matériaux premium dans le modèle KAS-112, fabriqué à partir d'acétate Mazzucchelli et JIMEI & JINYU de haute qualité pour garantir une finition vibrante et durable.
+L'esthétique vintage audacieuse rencontre la profondeur des matériaux premium dans le modèle KAS-112, fabriqué à partir d'acétate Mazzucchelli, JIMEI, JINYU de haute qualité pour garantir une finition vibrante et durable.
 
 Chaque monture est dotée de charnières 3+2 conçues avec précision et de plaquettes de nez intégrées, offrant un équilibre parfait entre stabilité structurelle et confort ergonomique.
 

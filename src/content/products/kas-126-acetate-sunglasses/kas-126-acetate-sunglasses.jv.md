@@ -5,7 +5,7 @@ slug: "kas-126-acetate-sunglasses"
 itemNo: "KAS-126"
 date: "2026-05-09"
 colors: "Ireng & Marmer & Ijo & Putih"
-materials: "Asetat Mazzucchelli Premium & Asetat JIMEI & JINYU & Kustomisasi"
+materials: "Asetat Asetat Premium Mazzucchelli, JIMEI, JINYU & Kustomisasi"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
 moq: "300 pcs/model (100pcs/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produsen kacamata hitam asetat, kacamata hitam OEM kustom, kacamat
 
 ## Fitur
 
-- **Komposisi Asetat Premium:** Frame lan gagang asetat Mazzucchelli lan JIMEI & JINYU kanti performa dhuwur sing menehi rasa entheng lan polesan tangan sing padhang.
+- **Komposisi Asetat Premium:** Frame lan gagang asetat Mazzucchelli, JIMEI, JINYU kanti performa dhuwur sing menehi rasa entheng lan polesan tangan sing padhang.
 - **Hardware Kuat:** Engsel struktur tong 3+2 sing stabil dirancang kanggo tegangan sing konsisten lan kelancaran operasional jangka dawa.
 - **Teknologi Lensa Maju:** Lensa nilon sing tahan benturan menehi kajelasan optik sing luar biasa kanti warna lan lapisan sing bisa dikustomisasi kanggo macem-macem kabutuhan pasar.
 - **Kenyamanan Ergonomis:** Bantalan irung sing nggabung alus dirancang kanggo nyedhiyakake posisi sing pas lan kenyamanan sing luwih apik kanggo macem-macem struktur praupan.

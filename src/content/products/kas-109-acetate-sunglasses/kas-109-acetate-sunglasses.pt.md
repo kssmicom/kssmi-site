@@ -5,7 +5,7 @@ slug: "kas-109-acetate-sunglasses"
 itemNo: "KAS-109"
 date: "2026-05-07"
 colors: "Preto & Transparente & Tartaruga & Oliva"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalização"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalização"
 serviceMode: "Fabricação OEM / ODM – Personalização"
 moq: "300 pçs/modelo (100pçs/cor)"
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante de óculos de sol de acetato premium, fábrica de ócul
 
 ## Características
 
-- **Material Premium:** Construído a partir de acetato de classe mundial Mazzucchelli e JIMEI & JINYU, oferecendo durabilidade excepcional e uma profundidade de cor profunda e vibrante.
+- **Material Premium:** Construído a partir de acetato de classe mundial Mazzucchelli, JIMEI, JINYU, oferecendo durabilidade excepcional e uma profundidade de cor profunda e vibrante.
 - **Hardware Robusto:** Equipado com dobradiças de 3+2 barris projetadas com precisão para suavidade operacional a longo prazo e estabilidade estrutural.
 - **Óptica de Alto Impacto:** Apresenta lentes de nylon tenazes que proporcionam clareza superior e resistência ao impacto, com amplas opções de revestimento personalizado disponíveis.
 - **Conforto Perfeito:** Projetado com ponteiras nasicas integradas que oferecem uma estética elegante e minimalista, garantindo um ajuste estável e confortável.
@@ -76,7 +76,7 @@ seoKeywords: "fabricante de óculos de sol de acetato premium, fábrica de ócul
 
 ## Visão Geral
 
-Fabricado a partir de acetato de classe mundial Mazzucchelli e JIMEI & JINYU, o KAS-109 incorpora uma estética ousada, de inspiração vintage, que ressoa com as tendências da moda contemporânea. A profundidade de cor profunda e vibrante do material e os acabamentos de alta transparência fornecem uma base sofisticada para coleções de óculos premium.
+Fabricado a partir de acetato de classe mundial Mazzucchelli, JIMEI, JINYU, o KAS-109 incorpora uma estética ousada, de inspiração vintage, que ressoa com as tendências da moda contemporânea. A profundidade de cor profunda e vibrante do material e os acabamentos de alta transparência fornecem uma base sofisticada para coleções de óculos premium.
 
 Ponteiras nasicas integradas e dobradiças de 3+2 barris projetadas com precisão garantem um ajuste perfeito e estabilidade estrutural duradoura, equilibrando um desempenho robusto com uma silhueta unissex leve.
 

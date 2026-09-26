@@ -5,7 +5,7 @@ slug: "kas-018-acetate-sunglasses"
 itemNo: "KAS-018"
 date: "2026-05-10"
 colors: "Nero, Rosso Trasparente, Blu Trasparente"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -41,7 +41,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali lusso private label,
 
 ## Caratteristiche
 
-- **Acetato ad Alte Prestazioni:** Montature in acetato premium Mazzucchelli e JIMEI & JINYU che offrono una struttura leggera e ipoallergenica con una profondità di colore vibrante e duratura.
+- **Acetato ad Alte Prestazioni:** Montature in acetato premium Mazzucchelli, JIMEI, JINYU che offrono una struttura leggera e ipoallergenica con una profondità di colore vibrante e duratura.
 - **Hardware Resistente:** Cerniere stabili con struttura a 3+2 barili progettate per una fluidità operativa ripetibile e integrità strutturale (personalizzabili con 5 barili o cerniere a molla).
 - **Ottica Premium:** Lenti in nylon tenace che offrono un'elevata resistenza agli urti e chiarezza ottica con ampie possibilità di colorazione e rivestimento personalizzati.
 - **Comfort Integrato:** Naselli integrati stampati di precisione che assicurano una calzata sicura e bilanciata e un'estetica pulita e senza cuciture.
@@ -59,7 +59,7 @@ seoKeywords: "produttore occhiali da sole acetato, occhiali lusso private label,
 
 ## Panoramica
 
-Progettato con acetato premium Mazzucchelli e JIMEI & JINYU, il modello KAS-018 ottiene una struttura leggera e ipoallergenica che mette in mostra una vivacità e una profondità di colore eccezionali.
+Progettato con acetato premium Mazzucchelli, JIMEI, JINYU, il modello KAS-018 ottiene una struttura leggera e ipoallergenica che mette in mostra una vivacità e una profondità di colore eccezionali.
 
 L'integrazione di cerniere a 3+2 barili e lenti in nylon tenace garantisce stabilità operativa a lungo termine insieme a una resistenza agli urti e una chiarezza ottica superiori.
 

@@ -5,7 +5,7 @@ slug: "kas-019-acetate-sunglasses"
 itemNo: "KAS-019"
 date: "2026-05-10"
 colors: "Black, Milky Green, Transparent Brown"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -41,7 +41,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction provides a lightweight yet durable frame with vibrant color depth.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI, JINYU acetate construction provides a lightweight yet durable frame with vibrant color depth.
 - **Precision Engineering:** Custom 3+2 barrel hinges (upgradeable to 5-barrel or spring hinges) engineered for long-term operational smoothness.
 - **High-Performance Optics:** Tenacious nylon lenses provide superior impact resistance and exceptional clarity for premium eyewear standards.
 - **Ergonomic Comfort:** Integrated nose pads designed for a balanced, hypoallergenic fit during extended daily use.
@@ -59,7 +59,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, luxury pri
 
 ## Overview
 
-Luxury eyewear standards are met through the use of premium Mazzucchelli, JIMEI & JINYU acetate, providing this frame with deep color vibrancy and a lightweight finish.
+Luxury eyewear standards are met through the use of premium Mazzucchelli, JIMEI, JINYU acetate, providing this frame with deep color vibrancy and a lightweight finish.
 
 Precision 3+2 barrel hinges work in tandem with integrated nose pads to deliver a stable, high-comfort experience suitable for extended daily wear.
 

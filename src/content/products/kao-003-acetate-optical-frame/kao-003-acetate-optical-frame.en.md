@@ -5,7 +5,7 @@ slug: "kao-003-acetate-optical-frame"
 itemNo: "KAO-003"
 date: "2026-05-10"
 colors: "Black & Tortoise & Orange & Zebra & Golden"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -43,7 +43,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear factory, l
 
 ## Technical Features
 
-- **Premium Acetate Construction:** High-grade Mazzucchelli, JIMEI & JINYU acetate frame and temples providing a lightweight, durable, and vibrant finish for a refined aesthetic.
+- **Premium Acetate Construction:** High-grade Mazzucchelli, JIMEI, JINYU acetate frame and temples providing a lightweight, durable, and vibrant finish for a refined aesthetic.
 - **Reinforced Hardware:** Professional 4+3 barrel rivet structure hinges engineered for superior stability and long-term operational smoothness.
 - **High-Performance Optics:** Tenacious nylon lenses offering exceptional impact resistance with full customization options for specialized tints and coatings.
 - **Ergonomic Comfort:** Integrated nose pads designed for a secure, balanced fit and all-day wearing comfort across diverse facial profiles.
@@ -60,7 +60,7 @@ seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear factory, l
 
 ## Overview
 
-Crafting high-impact eyewear starts with the rich, hand-polished textures of Mazzucchelli, JIMEI & JINYU acetate. This model balances bold structural dimensions with a vibrant, multifaceted color palette to meet the aesthetic demands of luxury fashion.
+Crafting high-impact eyewear starts with the rich, hand-polished textures of Mazzucchelli, JIMEI, JINYU acetate. This model balances bold structural dimensions with a vibrant, multifaceted color palette to meet the aesthetic demands of luxury fashion.
 
 The integration of 4+3 barrel rivet structure hinges and ergonomic nose pads ensures a secure fit and long-term durability for daily wear.
 

@@ -5,7 +5,7 @@ slug: "kas-019-acetate-sunglasses"
 itemNo: "KAS-019"
 date: "2026-05-10"
 colors: "Siyah, Süt Yeşili, Şeffaf Kahverengi"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100adet/renk)"
 
@@ -41,7 +41,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Özellikler
 
-- **Premium Malzeme:** Yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetat yapısı, canlı renk derinliğine sahip, hafif ancak dayanıklı bir çerçeve sağlar.
+- **Premium Malzeme:** Yüksek kaliteli Mazzucchelli, JIMEI, JINYU asetat yapısı, canlı renk derinliğine sahip, hafif ancak dayanıklı bir çerçeve sağlar.
 - **Hassas Mühendislik:** Uzun süreli operasyonel pürüzsüzlük için tasarlanmış özel 3+2 varil menteşeler (5 varilli veya yaylı menteşelere yükseltilebilir).
 - **Yüksek Performanslı Optikler:** Dayanıklı naylon lensler, premium gözlük standartları için üstün darbe direnci ve olağanüstü netlik sağlar.
 - **Ergonomik Konfor:** Uzun süreli günlük kullanım sırasında dengeli, hipoalerjenik bir uyum için tasarlanmış entegre burun tamponları.
@@ -59,7 +59,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Genel Bakış
 
-Lüks gözlük standartları, bu çerçeveye derin renk canlılığı ve hafif bir kaplama sağlayan premium Mazzucchelli ve JIMEI & JINYU asetat kullanımıyla karşılanmaktadır.
+Lüks gözlük standartları, bu çerçeveye derin renk canlılığı ve hafif bir kaplama sağlayan premium Mazzucchelli, JIMEI, JINYU asetat kullanımıyla karşılanmaktadır.
 
 Hassas 3+2 varil menteşeler, uzun süreli günlük kullanıma uygun, dengeli ve yüksek konforlu bir deneyim sunmak için entegre burun tamponlarıyla birlikte çalışır.
 

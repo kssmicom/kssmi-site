@@ -5,7 +5,7 @@ slug: "kas-311-acetate-sunglasses"
 itemNo: "KAS-311"
 date: "2026-05-12"
 colors: "Black & Smoky-Purple & Tortoise & Brown"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -54,7 +54,7 @@ seoKeywords: "acetate sunglasses manufacturer, customized unisex eyewear, Mazzuc
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction offering a vibrant aesthetic with lightweight durability.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI, JINYU acetate construction offering a vibrant aesthetic with lightweight durability.
 - **Structural Integrity:** Robust 4+3 barrel hinges engineered for long-term operational smoothness and frame stability.
 - **Optical Excellence:** Tenacious nylon lenses providing superior clarity and impact resistance with extensive custom coating options.
 - **Ergonomic Design:** Integrated nose pads designed for a seamless, comfortable fit during extended daily wear.
@@ -72,7 +72,7 @@ seoKeywords: "acetate sunglasses manufacturer, customized unisex eyewear, Mazzuc
 
 ## Overview
 
-Crafted from a sophisticated blend of Mazzucchelli, JIMEI & JINYU acetate, the KAS-311 offers a lightweight yet durable frame with superior color vibrance.
+Crafted from a sophisticated blend of Mazzucchelli, JIMEI, JINYU acetate, the KAS-311 offers a lightweight yet durable frame with superior color vibrance.
 
 The architecture features reinforced 4+3 barrel hinges and integrated nose pads, delivering high-performance stability alongside a refined, ergonomic wearing experience.
 

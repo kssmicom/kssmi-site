@@ -5,7 +5,7 @@ slug: "kas-326-acetate-sunglasses"
 itemNo: "KAS-326"
 date: "2026-05-13"
 colors: "Đen với Xám Khói Gradient, Đồi Mồi với Xanh-Nâu, Xanh Teal Havana với Nâu Gradient"
-materials: "Mazzucchelli & JIMEI & JINYU Axetat Cao Cấp & Tùy chỉnh theo yêu cầu"
+materials: "Mazzucchelli, JIMEI, JINYU Axetat Cao Cấp & Tùy chỉnh theo yêu cầu"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
 moq: "300 chiếc/mẫu (100 chiếc/màu)"
 
@@ -44,7 +44,7 @@ seoKeywords: "kính mát axetat tùy chỉnh, bán sỉ kính mắt axetat, nhà
 
 ## Đặc điểm
 
-- **Chất liệu Gọng Cao Cấp:** Được chế tác tinh xảo từ chất liệu axetat cao cấp Mazzucchelli & JIMEI & JINYU, mang lại thiết kế nhẹ, bền bỉ và ổn định về cấu trúc với độ sâu màu sắc sống động.
+- **Chất liệu Gọng Cao Cấp:** Được chế tác tinh xảo từ chất liệu axetat cao cấp Mazzucchelli, JIMEI, JINYU, mang lại thiết kế nhẹ, bền bỉ và ổn định về cấu trúc với độ sâu màu sắc sống động.
 - **Tròng Kính Quang Học Cao Cấp:** Sử dụng tròng kính nylon có độ bền cao với các tùy chọn nhuộm màu và phủ lớp bảo vệ tùy chỉnh rộng rãi để đáp ứng nhu cầu đa dạng của thị trường.
 - **Phụ Kiện Kim Loại Chính Xác:** Bản lề cấu trúc 3+2 chốt chắc chắn, có thể tùy chỉnh với cấu hình 5 chốt hoặc bản lề lò xo, được thiết kế cho sự vận hành mượt mà lâu dài.
 - **Thoải Mái Cả Ngày:** Thiết kế đệm mũi liền khối bằng axetat giúp phân bổ đều áp lực, đảm bảo sự vừa vặn an toàn và thoải mái khi đeo.
@@ -61,7 +61,7 @@ seoKeywords: "kính mát axetat tùy chỉnh, bán sỉ kính mắt axetat, nhà
 
 ## Tổng quan
 
-Kính mát KAS-326 được thiết kế để đáp ứng các yêu cầu thẩm mỹ của các cửa hàng bán lẻ cao cấp, kết hợp các chi tiết đinh tán cổ điển với độ sâu đa tầng sống động của chất liệu axetat JIMEI & JINYU và Mazzucchelli được lựa chọn riêng.
+Kính mát KAS-326 được thiết kế để đáp ứng các yêu cầu thẩm mỹ của các cửa hàng bán lẻ cao cấp, kết hợp các chi tiết đinh tán cổ điển với độ sâu đa tầng sống động của chất liệu axetat Mazzucchelli, JIMEI, JINYU được lựa chọn riêng.
 
 Nền tảng tạo nên sức hút cao cấp của sản phẩm là hệ thống bản lề 3+2 chốt bền bỉ cùng đệm mũi liền khối, được thiết kế kỹ lưỡng để duy trì sự căn chỉnh chính xác của gọng kính và sự thoải mái vượt trội cho người đeo.
 

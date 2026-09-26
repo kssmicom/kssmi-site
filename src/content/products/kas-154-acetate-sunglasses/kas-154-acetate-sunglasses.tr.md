@@ -5,7 +5,7 @@ slug: "kas-154-acetate-sunglasses"
 itemNo: "KAS-154"
 date: "2026-05-09"
 colors: "Siyah, Kaplumbağa, Şeffaf Gri, Sütlü Zeytin"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "OEM & ODM ( Özelleştirme )"
 moq: "300 adet/model (Renk başına 100 adet)"
 
@@ -42,7 +42,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Özellikler
 
-- **Premium Asetat Yapı:** Üst düzey moda koleksiyonları için uygun, canlı, hafif ve dayanıklı bir çerçeve sağlamak üzere yüksek kaliteli Mazzucchelli ve JIMEI & JINYU asetattan üretilmiştir.
+- **Premium Asetat Yapı:** Üst düzey moda koleksiyonları için uygun, canlı, hafif ve dayanıklı bir çerçeve sağlamak üzere yüksek kaliteli Mazzucchelli, JIMEI, JINYU asetattan üretilmiştir.
 - **Sağlam Donanım Sistemi:** Olağanüstü çalışma pürüzsüzlüğü ve uzun vadeli yapısal bütünlük için hassas mühendislikle üretilmiş 4+3 varil perçin yapılı menteşeye sahiptir.
 - **Üstün Optik Netlik:** Yüksek darbe direnci sunan dayanıklı naylon lensler ve premium gözlük markaları için kapsamlı özelleştirme seçenekleri ile donatılmıştır.
 - **Sorunsuz Ergonomi:** Entegre burun yastığı tasarımı, gün boyu kullanım için rahat, güvenli bir oturuş ve zarif bir estetik sağlar.
@@ -59,7 +59,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Genel Bakış
 
-Mazzucchelli ve JIMEI & JINYU asetatın özel bir karışımından hazırlanan bu model, lüks moda evlerinin titiz standartlarını karşılayan canlı ve hafif bir profil sunar.
+Mazzucchelli, JIMEI, JINYU asetatın özel bir karışımından hazırlanan bu model, lüks moda evlerinin titiz standartlarını karşılayan canlı ve hafif bir profil sunar.
 
 Güçlendirilmiş 4+3 varil perçin menteşe sistemi, premium gözlüklerden beklenen pürüzsüz ve yüksek hassasiyetli hissi korurken uzun vadeli yapısal bütünlük sağlar.
 

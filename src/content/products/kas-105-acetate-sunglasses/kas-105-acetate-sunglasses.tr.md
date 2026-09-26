@@ -5,7 +5,7 @@ slug: "kas-105-acetate-sunglasses"
 itemNo: "KAS-105"
 date: "2026-05-06"
 colors: "Gri & Parlak Havana & Mat Havana & Şeffaf & Siyah"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "OEM / ODM Üretim – Özelleştirme"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -54,7 +54,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Özellikler
 
-- **Premium Malzeme:** Dünyaca ünlü Mazzucchelli ve JIMEI & JINYU asetattan üretilen el cilalı çerçeveler, olağanüstü dayanıklılık ve canlı renk derinliği sunar.
+- **Premium Malzeme:** Dünyaca ünlü Mazzucchelli, JIMEI, JINYU asetattan üretilen el cilalı çerçeveler, olağanüstü dayanıklılık ve canlı renk derinliği sunar.
 - **Dayanıklı Donanım:** Yapısal kararlılık ve pürüzsüz, uzun vadeli operasyonel performans sağlayan hassas mühendislik ürünü 3+2 barrel menteşeler.
 - **Yüksek Performanslı Optikler:** Üst düzey moda gözlük standartları için üstün netlik ve dayanıklılık sağlayan darbe dirençli naylon lensler.
 - **Ergonomik Tasarım:** Gün boyu konfor ve evrensel uyum için tasarlanmış entegre burun tamponları ve hassas dengeli çerçeve geometrisi (51-23-145mm).
@@ -71,7 +71,7 @@ seoKeywords: "asetat güneş gözlüğü üreticisi, özel OEM güneş gözlüğ
 
 ## Genel Bakış
 
-Birinci sınıf Mazzucchelli ve JIMEI & JINYU asetattan üretilen KAS-105, cesur bir unisex tasarımı canlı renk derinliğiyle dengeler. Bu el cilalı çerçeve, yüksek yoğunluklu malzemelere ve çağdaş moda estetiğine öncelik veren markalar için çok yönlü bir temel oluşturur.
+Birinci sınıf Mazzucchelli, JIMEI, JINYU asetattan üretilen KAS-105, cesur bir unisex tasarımı canlı renk derinliğiyle dengeler. Bu el cilalı çerçeve, yüksek yoğunluklu malzemelere ve çağdaş moda estetiğine öncelik veren markalar için çok yönlü bir temel oluşturur.
 
 3+2 barrel menteşelerin ve darbe dirençli naylon lenslerin entegrasyonu, lüks pazar standartlarının gerektirdiği yapısal bütünlüğü ve optik performansı sağlar.
 

@@ -5,7 +5,7 @@ slug: "kas-016-acetate-sunglasses"
 itemNo: "KAS-016"
 date: "2026-05-10"
 colors: "Bulus mawi Ijo, Ireng mawi Kuning, Bulus Ireng mawi Abu-abu Gradien"
-materials: "Asetat Mazzucchelli & JIMEI & JINYU Premium & Kustomisasi"
+materials: "Asetat Mazzucchelli, JIMEI, JINYU Premium & Kustomisasi"
 serviceMode: "Produksi Kontrak / Desain lan Produksi – Kustomisasi"
 moq: "300 pcs/model (100 pcs/warna)"
 
@@ -41,7 +41,7 @@ seoKeywords: "kacamata hitam asetat Mazzucchelli, produsen kacamata kustom, pabr
 
 ## Fitur
 
-- **Bahan Premium:** Frame lan gagang asetat Mazzucchelli lan JIMEI & JINYU kelas dhuwur sing nyedhiyakake estetika mewah lan padhang kanthi daya tahan sing luar biasa.
+- **Bahan Premium:** Frame lan gagang asetat Mazzucchelli, JIMEI, JINYU kelas dhuwur sing nyedhiyakake estetika mewah lan padhang kanthi daya tahan sing luar biasa.
 - **Hardware Awet:** Engsel struktur tong 2+1 sing stabil dirancang kanggo kelancaran operasional sing konsisten lan linuwih jangka panjang.
 - **Optik Premium:** Lensa nilon kuat kanthi kajelasan dhuwur sing nawakake resistensi dampak unggul kanthi macem-macem pilihan warna lan lapisan kustom.
 - **Desain Ergonomis:** Bantalan irung integrasi sing dirancang kanggo pas sing mulus lan stabilitas sing ditingkatake nalika digunakake suwe.

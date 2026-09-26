@@ -5,7 +5,7 @@ slug: "kas-345-acetate-sunglasses"
 itemNo: "KAS-345"
 date: "2026-05-12"
 colors: "Black & Tortoise & Havana & Olive"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -53,7 +53,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, premium un
 ---
 
 ## Technical Features
-- **Premium Material:** Hand-polished Mazzucchelli, JIMEI & JINYU acetate offering a rich, vibrant finish with exceptional durability and depth of color.
+- **Premium Material:** Hand-polished Mazzucchelli, JIMEI, JINYU acetate offering a rich, vibrant finish with exceptional durability and depth of color.
 - **Precision Engineering:** High-quality 2+1 barrel structure hinges designed for consistent tension and long-term operational smoothness.
 - **Advanced Optics:** Tenacious nylon lenses providing superior impact resistance and clarity, with full support for custom tints and specialized coatings.
 - **Ergonomic Design:** Integrated nose pads designed for a seamless, comfortable fit and balanced weight distribution during extended wear.
@@ -62,7 +62,7 @@ seoKeywords: "acetate sunglasses manufacturer, custom OEM sunglasses, premium un
 
 ## Overview
 
-Mazzucchelli, JIMEI & JINYU acetate provide the foundation for this model, delivering a vibrant finish and exceptional depth of color. This hand-polished frame architecture combines classic aesthetic appeal with a lightweight feel for high-end market positioning.
+Mazzucchelli, JIMEI, JINYU acetate provide the foundation for this model, delivering a vibrant finish and exceptional depth of color. This hand-polished frame architecture combines classic aesthetic appeal with a lightweight feel for high-end market positioning.
 
 A precision 2+1 barrel hinge system works in tandem with integrated nose pads to provide consistent tension and a seamless, ergonomic fit.
 

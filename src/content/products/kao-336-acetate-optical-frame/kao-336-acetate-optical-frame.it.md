@@ -5,7 +5,7 @@ slug: "kao-336-acetate-optical-frame"
 itemNo: "KAO-336"
 date: "2026-05-10"
 colors: "Nero, Trasparente con Tartaruga, Verde Chiaro con Tartaruga"
-materials: "Acetato Premium Mazzucchelli & JIMEI & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalizzazione"
 serviceMode: "Produzione per Conto Terzi & Design e Produzione ( Personalizzazione )"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -41,7 +41,7 @@ seoKeywords: "montature ottiche in acetato personalizzabili, montature ottiche i
 
 ## Caratteristiche
 
-- **Materiale Premium:** Realizzato in acetato Mazzucchelli e JIMEI & JINYU di alta qualità, offre una struttura leggera e duratura con un'estetica dai colori vivaci e intensi per un fascino lussuoso duraturo.
+- **Materiale Premium:** Realizzato in acetato Mazzucchelli, JIMEI, JINYU di alta qualità, offre una struttura leggera e duratura con un'estetica dai colori vivaci e intensi per un fascino lussuoso duraturo.
 - **Componenti Meccanici:** Costruito con stabili cerniere con struttura a rivetto a 3+2 barilotti per garantire un allineamento a lungo termine e un movimento fluido delle aste nell'uso quotidiano.
 - **Ottica Tenace:** Dotato di lenti in nylon resistenti che offrono una resistenza agli urti superiore e un'elevata chiarezza ottica, personalizzabili con rivestimenti speciali e tonalità su misura.
 - **Comfort Integrato:** Presenta naselli integrati in acetato abbinati a una classica configurazione di dimensioni 46-25-145mm per distribuire il peso in modo esterno ed evitare scivolamenti.
@@ -59,7 +59,7 @@ seoKeywords: "montature ottiche in acetato personalizzabili, montature ottiche i
 
 ## Panoramica
 
-Creato per i brand che richiedono un'eccezionale vivacità estetica, il modello KAO-336 unisce l'acetato premium Mazzucchelli e JIMEI & JINYU in un profilo unisex leggero e altamente durevole. Lo stile retrò e le varianti di colore personalizzate rendono questa montatura classica un pezzo di spicco per i portfolio ottici di alto livello.
+Creato per i brand che richiedono un'eccezionale vivacità estetica, il modello KAO-336 unisce l'acetato premium Mazzucchelli, JIMEI, JINYU in un profilo unisex leggero e altamente durevole. Lo stile retrò e le varianti di colore personalizzate rendono questa montatura classica un pezzo di spicco per i portfolio ottici di alto livello.
 
 Una meticolosa cerniera con struttura a rivetto a 3+2 barilotti mantiene le aste perfettamente allineate per un movimento fluido, abbinata a naselli integrati in acetato e a una comoda calzata da 46-25-145mm.
 

@@ -5,7 +5,7 @@ slug: "kas-317-acetate-sunglasses"
 itemNo: "KAS-317"
 date: "2026-05-12"
 colors: "Clear & Honey & Champagne & Havana & Black"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Acetate & Customization"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Acetate & Customization"
 serviceMode: "OEM & ODM ( Customization )"
 moq: "300 PCS/Model (100PCS/Color)"
 
@@ -58,7 +58,7 @@ seoKeywords: "Mazzucchelli acetate sunglasses, custom eyewear manufacturer, luxu
 
 ## Technical Features
 
-- **Premium Material:** High-grade Mazzucchelli, JIMEI & JINYU acetate construction offering a vibrant, lightweight, and durable finish for long-lasting wear.
+- **Premium Material:** High-grade Mazzucchelli, JIMEI, JINYU acetate construction offering a vibrant, lightweight, and durable finish for long-lasting wear.
 - **Robust Hardware:** Precision-engineered 4+3 barrel structure hinges designed for smooth operation and long-term durability, with 5-barrel and spring hinge upgrades available.
 - **High-Performance Optics:** Tenacious nylon lenses providing superior clarity and impact resistance with extensive customization options for various lens tints and coatings.
 - **Ergonomic Comfort:** Integrated nose pads designed for a seamless fit and enhanced all-day comfort for a wide range of facial profiles.
@@ -76,7 +76,7 @@ seoKeywords: "Mazzucchelli acetate sunglasses, custom eyewear manufacturer, luxu
 
 ## Overview
 
-Sophistication meets durability in this premium construction, where hand-polished Mazzucchelli, JIMEI & JINYU acetate provide a rich, multi-layered aesthetic that resists fading. The frame's lightweight composition ensures that the bold, trendy design remains comfortable for extended daily use.
+Sophistication meets durability in this premium construction, where hand-polished Mazzucchelli, JIMEI, JINYU acetate provide a rich, multi-layered aesthetic that resists fading. The frame's lightweight composition ensures that the bold, trendy design remains comfortable for extended daily use.
 
 Industrial-grade 4+3 barrel hinges provide a firm, reliable opening mechanism, while the carefully calculated 48-22-145mm geometry offers a versatile unisex fit that accommodates a wide range of global market preferences.
 

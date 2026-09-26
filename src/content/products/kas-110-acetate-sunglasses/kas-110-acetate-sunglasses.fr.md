@@ -5,7 +5,7 @@ slug: "kas-110-acetate-sunglasses"
 itemNo: "KAS-110"
 date: "2026-05-07"
 colors: "Rouge Bonbon & Écaille Rose & Blanc Crème & Noir"
-materials: "Acétate Premium Mazzucchelli & JIMEI & JINYU & Personnalisation"
+materials: "Acétate Premium Mazzucchelli, JIMEI, JINYU & Personnalisation"
 serviceMode: "Fabrication OEM / ODM – Personnalisation"
 moq: "300 pcs/modèle (100 pcs/couleur)"
 
@@ -54,7 +54,7 @@ seoKeywords: "fabricant lunettes acétate, lunettes OEM sur mesure, lunettes lux
 
 ## Caractéristiques Techniques
 
-- **Matériau Premium :** Construction en acétate Mazzucchelli et JIMEI & JINYU poli à la main offrant une esthétique éclatante avec une finition légère et durable.
+- **Matériau Premium :** Construction en acétate Mazzucchelli, JIMEI, JINYU poli à la main offrant une esthétique éclatante avec une finition légère et durable.
 - **Ingénierie de Précision :** Dimensions unisexes professionnelles de 53-19-140 mm conçues pour un ajustement élégant et populaire auprès de divers profils démographiques.
 - **Optique Avancée :** Verres en nylon tenace à haute clarté offrant une résistance supérieure aux chocs avec une personnalisation étendue pour les revêtements spéciaux.
 - **Matériel Robuste :** Charnières à structure en barillet 3+2 renforcées assurant une fluidité opérationnelle à long terme et une stabilité de la monture.
@@ -72,7 +72,7 @@ seoKeywords: "fabricant lunettes acétate, lunettes OEM sur mesure, lunettes lux
 
 ## Aperçu
 
-L'acétate Mazzucchelli et JIMEI & JINYU poli à la main fusionnent dans le modèle KAS-110 pour créer une montura éclatante et légère qui privilégie à la fois la profondeur esthétique et la durabilité structurelle.
+L'acétate Mazzucchelli, JIMEI, JINYU poli à la main fusionnent dans le modèle KAS-110 pour créer une montura éclatante et légère qui privilégie à la fois la profondeur esthétique et la durabilité structurelle.
 
 Chaque unité dispose d'un système de charnière en barillet 3+2 conçu avec précision et de plaquettes de nez intégrées, offrant le confort constant et la fluidité opérationnelle attendus par les marques de lunettes haut de gamme.
 

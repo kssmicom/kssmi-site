@@ -5,7 +5,7 @@ slug: "kao-336-acetate-optical-frame"
 itemNo: "KAO-336"
 date: "2026-05-10"
 colors: "Siyah, Şeffaf Kaplumbağa, Şeffaf Yeşil Kaplumbağa"
-materials: "Premium Mazzucchelli & JIMEI & JINYU Asetat & Özelleştirme"
+materials: "Premium Mazzucchelli, JIMEI, JINYU Asetat & Özelleştirme"
 serviceMode: "Sözleşmeli Üretim & Tasarım ve Üretim ( Özelleştirme )"
 moq: "300 adet/model (100 adet/renk)"
 
@@ -41,7 +41,7 @@ seoKeywords: "özelleştirilebilir asetat optik çerçeveler, toptan özel optik
 
 ## Özellikler
 
-- **Premium Malzeme:** Renk canlılığı ile hafif ve son derece dayanıklı saplar ve ön kısımlar sağlamak için birinci sınıf Mazzucchelli ve JIMEI & JINYU asetattan üretilmiştir.
+- **Premium Malzeme:** Renk canlılığı ile hafif ve son derece dayanıklı saplar ve ön kısımlar sağlamak için birinci sınıf Mazzucchelli, JIMEI, JINYU asetattan üretilmiştir.
 - **Gelişmiş Donanım:** Hassas hizalamayı korumak ve uzun vadeli çalışma pürüzsüzlüğünü desteklemek için tasarlanmış stabil 3+2 delikli perçin yapılı menteşe sistemi ile donatılmıştır.
 - **Güçlü Optik:** Üstün darbe direnci ve yüksek optik netlik sunan dayanıklı naylon lenslerle donatılmıştır; özel kaplamalar ve ısmarlama renk tonlarıyla özelleştirilebilir.
 - **Entegre Konfor:** Çerçeve ağırlığını eşit olarak dağıtmak ve kaymayı önlemek için standart 46-25-145mm profil ile birleştirilmiş dikişsiz, entegre asetat burun tamponları ile üretilmiştir.
@@ -59,7 +59,7 @@ seoKeywords: "özelleştirilebilir asetat optik çerçeveler, toptan özel optik
 
 ## Genel Bakış
 
-Olağanüstü estetik canlılık talep eden markalar için tasarlanan KAO-336, premium Mazzucchelli ve JIMEI & JINYU asetatı son derece dayanıklı, hafif bir unisex profilde birleştirir. Retro stil ve özel renk seçenekleri, bu klasik çerçeveyi üst düzey optik portföyleri için göze çarpan bir parça haline getirir.
+Olağanüstü estetik canlılık talep eden markalar için tasarlanan KAO-336, premium Mazzucchelli, JIMEI, JINYU asetatı son derece dayanıklı, hafif bir unisex profilde birleştirir. Retro stil ve özel renk seçenekleri, bu klasik çerçeveyi üst düzey optik portföyleri için göze çarpan bir parça haline getirir.
 
 Titiz 3+2 delikli perçin yapılı menteşe sistemi, entegre asetat burun tamponları ve rahat 46-25-145mm ergonomik uyum ile eşleştirilerek sapların sorunsuz çalışması için hizalı kalmasını sağlar.
 

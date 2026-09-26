@@ -5,7 +5,7 @@ slug: "kas-318-acetate-sunglasses"
 itemNo: "KAS-318"
 date: "2026-05-12"
 colors: "Hitam & Spark & Havana & Madu"
-materials: "Mazzucchelli Premium & Asetat JIMEI & JINYU & Penyesuaian"
+materials: "Asetat Premium Mazzucchelli, JIMEI, JINYU & Penyesuaian"
 serviceMode: "Pembuatan OEM (Kontrak) & Pembuatan ODM (Reka Bentuk) (Penyesuaian)"
 moq: "300 unit/model (100 unit/warna)"
 
@@ -54,7 +54,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Ciri-ciri Utama
 
-- **Bahan Premium:** Binaan asetat Mazzucchelli dan JIMEI & JINYU yang dipilih khas, menyediakan bingkai yang ringan dan tahan lama dengan kedalaman warna yang menyerlah serta tahan lama.
+- **Bahan Premium:** Binaan asetat Mazzucchelli, JIMEI, JINYU yang dipilih khas, menyediakan bingkai yang ringan dan tahan lama dengan kedalaman warna yang menyerlah serta tahan lama.
 - **Perkakasan Ketepatan:** Engsel struktur 4+3 barrel berprestasi tinggi yang direka untuk kestabilan unggul dan kelancaran operasi jangka panjang.
 - **Optik Berprestasi Tinggi:** Lensa Nilon Tahan Lasak yang tahan hentaman menawarkan kejelasan luar biasa dengan pelbagai kemungkinan pewarnaan dan salutan tersuai.
 - **Reka Bentuk Ergonomik:** Struktur alas hidung bersepadu yang direka dengan teliti untuk padanan yang selamat, selesa dan estetik yang kemas serta lancar.
@@ -71,7 +71,7 @@ seoKeywords: "pengilang cermin mata hitam asetat, cermin mata hitam OEM tersuai,
 
 ## Gambaran Keseluruhan
 
-Dihasilkan daripada asetat Mazzucchelli dan JIMEI & JINYU yang dipilih khas, KAS-318 memberikan kecerahan warna dan ketahanan struktur yang luar biasa untuk pasaran fesyen premium. Komposisinya yang ringan memastikan keselesaan pemakai jangka panjang tanpa menjejaskan impak estetik.
+Dihasilkan daripada asetat Mazzucchelli, JIMEI, JINYU yang dipilih khas, KAS-318 memberikan kecerahan warna dan ketahanan struktur yang luar biasa untuk pasaran fesyen premium. Komposisinya yang ringan memastikan keselesaan pemakai jangka panjang tanpa menjejaskan impak estetik.
 
 Engsel 4+3 barrel yang direka dengan ketepatan dan alas hidung bersepadu memberikan kestabilan mekanikal dan padanan ergonomik yang diperlukan oleh jenama mewah yang mementingkan kualiti.
 

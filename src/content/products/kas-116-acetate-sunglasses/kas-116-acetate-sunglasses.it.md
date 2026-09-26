@@ -5,7 +5,7 @@ slug: "kas-116-acetate-sunglasses"
 itemNo: "KAS-116"
 date: "2026-05-09"
 colors: "Nero & Verde-Marmo & Bianco & Marmo"
-materials: "Mazzucchelli Premium & Acetato JIMEI & JINYU & Personalizzazione"
+materials: "Acetato Premium Mazzucchelli, JIMEI, JINYU & Personalizzazione"
 serviceMode: "Produzione OEM / ODM – Personalizzazione"
 moq: "300 pz/modello (100 pz/colore)"
 
@@ -54,7 +54,7 @@ seoKeywords: "produttore di occhiali da sole in acetato, fabbrica di occhiali OE
 
 ## Caratteristiche Tecniche
 
-- **Costruzione in Acetato Premium:** Montatura e aste in acetato Mazzucchelli e JIMEI & JINYU di alta qualità che offrono una finitura leggera, resistente e vivace.
+- **Costruzione in Acetato Premium:** Montatura e aste in acetato Mazzucchelli, JIMEI, JINYU di alta qualità che offrono una finitura leggera, resistente e vivace.
 - **Hardware Durevole:** Cerniere stabili con struttura a 3+2 barilotti progettate per scorrevolezza e affidabilità a lungo termine.
 - **Ottica Premium:** Lenti in nylon tenaci con ampie opzioni di colorazione e rivestimento personalizzate disponibili.
 - **Comfort Senza Soluzioni di Continuità:** Naselli integrati progettati per fornire una vestibilità sicura e confortevole per l'uso quotidiano.
@@ -72,7 +72,7 @@ seoKeywords: "produttore di occhiali da sole in acetato, fabbrica di occhiali OE
 
 ## Panoramica
 
-Realizzato in acetato Mazzucchelli e JIMEI & JINYU di alta qualità, il modello KAS-116 presenta un'audace estetica unisex che eleva istantaneamente qualsiasi collezione di occhiali premium. Questa montatura elegante bilancia una struttura leggera e resistente con un fascino visivo straordinariamente vivace.
+Realizzato in acetato Mazzucchelli, JIMEI, JINYU di alta qualità, il modello KAS-116 presenta un'audace estetica unisex che eleva istantaneamente qualsiasi collezione di occhiali premium. Questa montatura elegante bilancia una struttura leggera e resistente con un fascino visivo straordinariamente vivace.
 
 Progettato per prestazioni quotidiane affidabili, è dotato di robuste cerniere a 3+2 barilotti, lenti in nylon resilienti e naselli perfettamente integrati per garantire un comfort eccezionale.
 
