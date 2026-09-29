@@ -137,3 +137,24 @@ input[type="search"]::-webkit-search-cancel-button {
 input[type="search"]::-moz-search-clear-button {
   display: none;
 }
+
+/* Cookie banner fallback: its DOM is injected by a public JavaScript file.
+   Keep these class rules alongside the inline styles so the consent UI remains
+   usable in environments that sanitise dynamically-added style attributes. */
+.cookie-banner-main { position: fixed; inset: auto 0 0; z-index: 9999; background: rgb(255 255 255 / 97%); border-top: 1px solid #e5e7eb; box-shadow: 0 -2px 12px rgb(0 0 0 / 6%); backdrop-filter: blur(6px); }
+.cookie-banner-inner { max-width: 1860px; margin: 0 auto; padding: 12px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; }
+.cookie-banner-message { margin: 0; color: #4b5563; font-size: 13px; line-height: 1.5; }
+.cookie-banner-actions, .cookie-modal-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; }
+.cookie-banner-btn { padding: 7px 14px; color: #374151; font-size: 13px; font-weight: 500; line-height: 1; white-space: nowrap; cursor: pointer; background: #fff; border: 1px solid #d1d5db; border-radius: 8px; }
+.cookie-banner-btn--primary { padding-inline: 18px; color: #fff; background: #5d4e37; border-color: #5d4e37; }
+.cookie-modal-overlay { position: fixed; inset: 0; z-index: 10000; display: none; align-items: center; justify-content: center; padding: 16px; background: rgb(0 0 0 / 50%); }
+.cookie-modal { width: 100%; max-width: 520px; max-height: 85vh; padding: 24px; overflow: auto; background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 10px 40px rgb(0 0 0 / 20%); }
+.cookie-modal-title { margin: 0; color: #111827; font-size: 18px; font-weight: 600; }
+.cookie-modal-message { margin: 8px 0 0; color: #6b7280; font-size: 13px; line-height: 1.5; }
+.cookie-modal-options { display: flex; flex-direction: column; gap: 10px; margin-top: 18px; }
+.cookie-option { display: flex; align-items: flex-start; gap: 10px; padding: 10px; cursor: pointer; border: 1px solid #e5e7eb; border-radius: 8px; }
+.cookie-option--disabled { cursor: not-allowed; background: #f9fafb; }
+.cookie-check { flex: 0 0 auto; width: 16px; height: 16px; margin-top: 2px; accent-color: #8b7355; }
+.cookie-option-title { color: #111827; font-size: 13px; font-weight: 500; }
+.cookie-option-description { margin: 2px 0 0; color: #6b7280; font-size: 12px; line-height: 1.4; }
+.cookie-modal-actions { justify-content: flex-end; margin-top: 20px; }
