@@ -83,6 +83,9 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 
       function ensureApi() {
         if (window.turnstile && typeof window.turnstile.render === 'function') return Promise.resolve(window.turnstile);
+        // Layout's shared loader keeps one API request per document and
+        // retries after a failure; the widget and proof queue stay local.
+        if (typeof window.__kssmiTurnstileApi === 'function') return window.__kssmiTurnstileApi();
         if (apiPromise) return apiPromise;
         apiPromise = new Promise(function(resolve, reject) {
           var script = document.createElement('script');
@@ -93,7 +96,10 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
             if (window.turnstile && typeof window.turnstile.render === 'function') resolve(window.turnstile);
             else reject(new Error('Turnstile API unavailable'));
           };
-          script.onerror = function() { reject(new Error('Turnstile API failed to load')); };
+          script.onerror = function() {
+            apiPromise = null;
+            reject(new Error('Turnstile API failed to load'));
+          };
           document.head.appendChild(script);
         });
         return apiPromise;

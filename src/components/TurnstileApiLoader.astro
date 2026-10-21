@@ -1,0 +1,55 @@
+---
+// TurnstileApiLoader.astro - one shared, retryable loader for the Cloudflare
+// Turnstile API. Both the VJT capability widget and the inquiry/404 form
+// widgets use it, so the API is requested once per document, and a failed or
+// timed-out load is retried by the next caller instead of being cached forever.
+// Include it before any Turnstile consumer (Layout.astro does this in <head>).
+const isDev = import.meta.env.DEV;
+---
+
+{!isDev && (
+  <script is:inline>
+    (function() {
+      if (typeof window.__kssmiTurnstileApi === 'function') return;
+      var API_SRC = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+      var pending = null;
+
+      function apiReady() {
+        return !!(window.turnstile && typeof window.turnstile.render === 'function');
+      }
+
+      window.__kssmiTurnstileApi = function(timeoutMs) {
+        if (apiReady()) return Promise.resolve(window.turnstile);
+        if (pending) return pending;
+        pending = new Promise(function(resolve, reject) {
+          var settled = false;
+          var script = document.createElement('script');
+          var timer = window.setTimeout(function() {
+            finish(new Error('Turnstile API load timed out'));
+          }, timeoutMs || 15000);
+
+          function finish(error) {
+            if (settled) return;
+            settled = true;
+            window.clearTimeout(timer);
+            if (!error && apiReady()) {
+              resolve(window.turnstile);
+              return;
+            }
+            // Forget the failed attempt so the next caller (retry button,
+            // next page, capability refresh) requests the API again.
+            pending = null;
+            reject(error || new Error('Turnstile API unavailable'));
+          }
+
+          script.src = API_SRC;
+          script.async = true;
+          script.onload = function() { finish(null); };
+          script.onerror = function() { finish(new Error('Turnstile API failed to load')); };
+          document.head.appendChild(script);
+        });
+        return pending;
+      };
+    })();
+  </script>
+)}

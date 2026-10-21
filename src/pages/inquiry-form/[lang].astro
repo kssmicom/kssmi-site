@@ -1,5 +1,6 @@
 ---
 import InquiryForm from '../../components/InquiryForm.astro';
+import TurnstileApiLoader from '../../components/TurnstileApiLoader.astro';
 
 export async function getStaticPaths() {
   const languages = ['en','it','es','fr','de','pt','ru','ja','tr','ar','ko','zh','hi','vi','jv','ms','tg'];
@@ -10,4 +11,6 @@ const { lang } = Astro.params;
 ---
 
 <!-- Product context is injected by InquiryFormLazy in the browser. This route is static. -->
+<!-- This fragment has no Layout, so it brings its own Turnstile API loader. -->
+<TurnstileApiLoader />
 <InquiryForm lang={lang} source="inquiry_fragment" />

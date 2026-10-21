@@ -168,8 +168,53 @@ Located in `src/components/`:
 - **ProductCard.astro** - Product grid card
 - **Search.astro** - Fuse.js search component
 - **InquiryForm.astro** - Contact form with Turnstile
+- **FormTurnstile.astro** - Turnstile widget + page-lifecycle controller for the inquiry and 404 forms
+- **TurnstileApiLoader.astro** - Shared, retryable Turnstile API loader (in Layout `<head>`)
 - **LanguagePicker.astro** - Language switcher
 - **TechnicalSpecs.astro** - Product specifications display
+
+## ClientRouter Scripts & Turnstile (CRITICAL)
+
+`Layout.astro` enables Astro's `<ClientRouter />`, so most link clicks swap the
+page body without a full reload (language switches and links to missing pages
+included — the router swaps 404 responses too).
+
+### How inline scripts behave on soft navigation
+- Astro remembers every executed script by its **text** (inline) or **src** and
+  skips it on later pages unless it has `data-astro-rerun`.
+- `define:vars` puts the values into the script text, so a script with
+  per-language vars runs once **per language** and each run's
+  `astro:page-load` listener stays registered forever. With N languages
+  visited, N listeners act on every page — the last one wins.
+- Rule: a script that must (re)initialize each page keeps **identical text on
+  every page**, reads per-page/per-language data from the DOM (e.g. a
+  `data-i18n` JSON attribute), and binds via `astro:page-load` with a
+  per-element guard (`el.dataset.submitBound`). Never clone/replace a form to
+  drop listeners — it also replaces any widget inside it.
+- Window `load` fires the first `astro:page-load`; `astro:before-swap` is the
+  place to clean up the old page.
+
+### Turnstile
+- Load the API only through `window.__kssmiTurnstileApi()` (TurnstileApiLoader).
+  It requests the API once per document and retries after a failure/timeout.
+- Form widgets only via `<FormTurnstile lang={lang} />`. It keeps
+  `window.turnstileToken` / `window.turnstileWidgetId` pointed at the current
+  page's widget, shows a localized retry button if the API cannot load, and
+  ignores stale render attempts. Do not add `onTurnstileLoad` or a second
+  `api.js` `<script>`.
+- VisitorTracker's invisible `vjt_capability` widget is separate (own instance
+  and proof queue) and only shares the loader.
+- `astro dev` disables Turnstile entirely; verify with a build. Use Cloudflare
+  test sitekeys (`1x00000000000000000000AA` always passes) on localhost — the
+  production key fails there with error 110200.
+- Pre-build policy scripts check form source text (`newForm`,
+  `window.turnstile.reset(window.turnstileWidgetId);`, `const result = await
+  response.json();`). Keep those names when editing the forms.
+
+### Build side effects
+- A full `npm run build` takes 30+ minutes and recreates `dist/`.
+- The prebuild step rewrites `<lastmod>` in `public/**/sitemap*.xml`; restore
+  those files before committing unrelated changes.
 
 ## Pre-Build Validation
 

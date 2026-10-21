@@ -8,6 +8,7 @@
  */
 
 import { getTranslations } from '../translations';
+import FormTurnstile from './FormTurnstile.astro';
 
 interface Props {
   lang?: string;
@@ -403,8 +404,14 @@ const formMessages: Record<string, Record<string, string>> = {
 
 const fm = formMessages[lang] || formMessages.en;
 
-// Cloudflare Turnstile Site Key
-const TURNSTILE_SITE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+// Client-side copy travels with the form element. The submit script is then
+// identical in every language, so ClientRouter runs it once and each page's
+// handler reads its own language from the DOM.
+const clientMessages = {
+  ...fm,
+  submitRequest: pt.submitRequest || 'Get My Project Review',
+  turnstileError: turnstileErrorMsg,
+};
 
 // Check if we're in development (localhost) - Turnstile doesn't work on localhost
 const isDev = import.meta.env.DEV;
@@ -434,7 +441,7 @@ const isDev = import.meta.env.DEV;
       </div>
 
       <!-- Form -->
-      <form id="inquiry-form" method="post" action="/send-mail.php" enctype="multipart/form-data" class="space-y-6">
+      <form id="inquiry-form" method="post" action="/send-mail.php" enctype="multipart/form-data" data-i18n={JSON.stringify(clientMessages)} class="space-y-6">
         <!-- Hidden Fields for Context -->
         <input type="hidden" name="source" value={source} />
         <input type="hidden" name="product_url" value={productUrl} />
@@ -556,7 +563,7 @@ const isDev = import.meta.env.DEV;
         </div>
 
         <!-- Cloudflare Turnstile Widget (only in production) -->
-        <div id="turnstile-container" class={`flex justify-center ${isDev ? 'hidden' : ''}`} data-sitekey={TURNSTILE_SITE_KEY || ''}></div>
+        <FormTurnstile lang={lang} />
 
         <!-- Turnstile Error Message (hidden by default) - shown right below Turnstile -->
         <div id="turnstile-error" class="hidden text-center py-3 px-4 bg-red-50 rounded-lg">
@@ -655,84 +662,19 @@ const isDev = import.meta.env.DEV;
   </div>
 </section>
 
-<!-- Define Turnstile callback BEFORE loading script (production only) -->
-{!isDev && (
-  <script is:inline>
-    // Turnstile configuration
-    var tc = document.getElementById('turnstile-container');
-    window.TURNSTILE_SITE_KEY = tc ? tc.getAttribute('data-sitekey') : '';
-    window.turnstileToken = null;
+<!-- Turnstile is mounted by FormTurnstile. This script must stay identical in
+     every language (no per-language define:vars): ClientRouter runs it once per
+     document, and its single astro:page-load listener binds each new form. -->
+<script define:vars={{ isDev }}>
+  // Per-language copy rendered on the form element (data-i18n)
+  function getMessages(form) {
+    try {
+      return JSON.parse((form && form.dataset.i18n) || '{}');
+    } catch (_) {
+      return {};
+    }
+  }
 
-    // Called when Turnstile script loads
-    window.onTurnstileLoad = function() {
-      var container = document.getElementById('turnstile-container');
-      if (!container) return;
-
-      // Clear existing widget
-      container.innerHTML = '';
-
-      // Create widget div
-      var widgetDiv = document.createElement('div');
-      container.appendChild(widgetDiv);
-
-      // Render Turnstile widget
-      try {
-        window.turnstileWidgetId = window.turnstile.render(widgetDiv, {
-          sitekey: window.TURNSTILE_SITE_KEY,
-          action: 'contact_form',
-          theme: 'light',
-          callback: function(token) {
-            window.turnstileToken = token;
-            var errorEl = document.getElementById('turnstile-error');
-            if (errorEl) errorEl.classList.add('hidden');
-          },
-          'expired-callback': function() {
-            window.turnstileToken = null;
-          }
-        });
-      } catch (e) { /* silent */ }
-    };
-
-    // Re-render after View Transitions
-    document.addEventListener('astro:page-load', function() {
-      window.turnstileToken = null;
-      setTimeout(function() {
-        if (typeof window.turnstile !== 'undefined') {
-          window.onTurnstileLoad();
-        }
-      }, 100);
-    });
-  </script>
-)}
-
-<!-- Lazy-load Turnstile Script only when form approaches viewport (production only) -->
-{!isDev && (
-  <script is:inline>
-    (function() {
-      var turnstileStarted = false;
-      var observer = new IntersectionObserver(function(entries) {
-        if (entries[0].isIntersecting && !turnstileStarted) {
-          turnstileStarted = true;
-          observer.disconnect();
-          // Already loaded from a previous View Transition? Render immediately
-          if (typeof window.turnstile !== 'undefined' && window.turnstile.render) {
-            window.onTurnstileLoad();
-          } else {
-            var script = document.createElement('script');
-            script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileLoad';
-            script.async = true;
-            script.defer = true;
-            document.head.appendChild(script);
-          }
-        }
-      }, { rootMargin: '300px' });
-      var formSection = document.getElementById('inquiry-form-section');
-      if (formSection) observer.observe(formSection);
-    })();
-  </script>
-)}
-
-<script define:vars={{ isDev, pt, turnstileErrorMsg, fm }}>
   // Form elements helper
   function getFormElements() {
     return {
@@ -750,7 +692,8 @@ const isDev = import.meta.env.DEV;
 
   // Loading state
   function setLoading(loading) {
-    const { submitBtn, btnText, btnArrow, btnSpinner } = getFormElements();
+    const { form, submitBtn, btnText, btnArrow, btnSpinner } = getFormElements();
+    const fm = getMessages(form);
     if (loading) {
       if (submitBtn) submitBtn.disabled = true;
       if (btnText) btnText.textContent = fm.submitting;
@@ -758,7 +701,7 @@ const isDev = import.meta.env.DEV;
       if (btnSpinner) btnSpinner.classList.remove('hidden');
     } else {
       if (submitBtn) submitBtn.disabled = false;
-      if (btnText) btnText.textContent = pt.submitRequest || 'Get My Project Review';
+      if (btnText) btnText.textContent = fm.submitRequest || 'Get My Project Review';
       if (btnArrow) btnArrow.classList.remove('hidden');
       if (btnSpinner) btnSpinner.classList.add('hidden');
     }
@@ -834,12 +777,13 @@ const isDev = import.meta.env.DEV;
 
   // Form submission setup
   function setupFormSubmission() {
-    const { form } = getFormElements();
-    if (!form) return;
-
-    // Clone and replace to remove old listeners
-    const newForm = form.cloneNode(true);
-    form.parentNode.replaceChild(newForm, form);
+    // Bind each form element once. Listeners live on the element itself, so a
+    // ClientRouter swap discards them with the old page; the form is never
+    // cloned, which would also replace the Turnstile widget inside it.
+    const { form: newForm } = getFormElements();
+    if (!newForm || newForm.dataset.submitBound === '1') return;
+    newForm.dataset.submitBound = '1';
+    const fm = getMessages(newForm);
 
     const attachmentInput = newForm.querySelector('input[name="attachments[]"]');
     const attachmentList = document.getElementById('attachment-list');
@@ -911,7 +855,7 @@ const isDev = import.meta.env.DEV;
       // Check Turnstile (skip in dev) - use global token
       const token = window.turnstileToken;
       if (!isDev && !token) {
-        showTurnstileError(turnstileErrorMsg);
+        showTurnstileError(fm.turnstileError);
         return;
       }
 
@@ -1044,5 +988,15 @@ const isDev = import.meta.env.DEV;
   // Re-setup after View Transitions
   document.addEventListener('astro:page-load', function() {
     setupFormSubmission();
+  });
+
+  // Back/forward cache restore (e.g. Back from the thank-you page): the page
+  // keeps the in-flight state from the submission that already succeeded.
+  window.addEventListener('pageshow', function(event) {
+    if (!event.persisted) return;
+    const { form } = getFormElements();
+    if (!form) return;
+    delete form.dataset.vjtSubmitting;
+    setLoading(false);
   });
 </script>

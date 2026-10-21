@@ -8,6 +8,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import FormTurnstile from '../../components/FormTurnstile.astro';
 
 export async function getStaticPaths() {
   const languages = ['it', 'es', 'fr', 'de', 'pt', 'ru', 'ja', 'tr', 'ar', 'ko', 'zh', 'hi', 'vi', 'jv', 'ms', 'tg'];
@@ -19,7 +20,6 @@ export async function getStaticPaths() {
 
 const { lang } = Astro.props;
 const isDev = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.0.0.1';
-const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 const isRTL = lang === 'ar';
 const currentPath = lang === 'en' ? '' : lang + '/';
 
@@ -588,6 +588,16 @@ const i18n: Record<string, any> = {
 };
 
 const t = i18n[lang] || i18n.en;
+
+// Client-side copy travels with the form so the rescue script is identical in
+// every language and re-binds each time ClientRouter swaps in a 404 page.
+const rescueMessages = {
+  sending: t.sending,
+  submitBtn: t.submitBtn,
+  errorFallback: t.errorFallback,
+  generalError: t.generalError,
+  detailsPlaceholder: t.detailsPlaceholder,
+};
 ---
 
 <Layout title={t.title} lang={lang} noindex={true}>
@@ -707,7 +717,7 @@ const t = i18n[lang] || i18n.en;
               <span id="error-message" class="text-xs text-red-600"></span>
             </div>
 
-            <form id="rescue-form" method="post" action="/send-mail.php" class="space-y-3">
+            <form id="rescue-form" method="post" action="/send-mail.php" data-i18n={JSON.stringify(rescueMessages)} class="space-y-3">
               <label for="rescue-email" class="sr-only">{t.emailPlaceholder}</label>
               <input
                 type="email"
@@ -732,7 +742,7 @@ const t = i18n[lang] || i18n.en;
               <input type="hidden" name="source" value="404 Page" />
               <input type="hidden" name="language" value={lang} />
 
-              <div id="turnstile-container" class={`flex justify-center ${isDev ? 'hidden' : ''}`}></div>
+              <FormTurnstile lang={lang} />
               <div id="turnstile-error" class="hidden text-center py-2 px-3 bg-red-50 rounded-lg">
                 <span id="turnstile-error-message" class="text-xs text-red-600">{t.turnstileError}</span>
               </div>
@@ -834,51 +844,17 @@ const t = i18n[lang] || i18n.en;
 </Layout>
 
 
-<!-- Turnstile: define callback BEFORE loading script (production only) -->
-{!isDev && (
-  <script define:vars={{ turnstileSiteKey }}>
-    window.TURNSTILE_SITE_KEY = turnstileSiteKey;
-    window.turnstileToken = null;
-
-    window.onTurnstileLoad = function() {
-      var container = document.getElementById('turnstile-container');
-      if (!container) return;
-      container.innerHTML = '';
-      var widgetDiv = document.createElement('div');
-      container.appendChild(widgetDiv);
-      try {
-        window.turnstileWidgetId = window.turnstile.render(widgetDiv, {
-          sitekey: window.TURNSTILE_SITE_KEY,
-          action: 'contact_form',
-          theme: 'light',
-          callback: function(token) {
-            window.turnstileToken = token;
-            var errorEl = document.getElementById('turnstile-error');
-            if (errorEl) errorEl.classList.add('hidden');
-          },
-          'expired-callback': function() {
-            window.turnstileToken = null;
-          }
-        });
-      } catch (e) {
-        /* silent */
-      }
-    };
-  </script>
-)}
-
-{!isDev && (
-  <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileLoad" async defer></script>
-)}
-
-<script define:vars={{ isDev, lang, sending: t.sending, submitBtn: t.submitBtn, errorFallback: t.errorFallback, generalError: t.generalError, detailsPlaceholder: t.detailsPlaceholder, emailUser: 'sales', emailDomain: 'kssmi.com' }}>
-  // --- Set 2-line textarea placeholder (JS handles \n correctly for multiline placeholders) ---
-  var detailsTextarea = document.getElementById('rescue-message');
-  if (detailsTextarea) detailsTextarea.placeholder = detailsPlaceholder;
-
-  // --- Set page URL in hidden field ---
-  var pageField = document.getElementById('field-page');
-  if (pageField) pageField.value = window.location.pathname;
+<!-- Turnstile is mounted by FormTurnstile. This script must stay identical in
+     every language: ClientRouter runs it once per document, and its
+     astro:page-load listener prepares every 404 page swapped in later. -->
+<script define:vars={{ isDev, emailUser: 'sales', emailDomain: 'kssmi.com' }}>
+  function getMessages(form) {
+    try {
+      return JSON.parse((form && form.dataset.i18n) || '{}');
+    } catch (_) {
+      return {};
+    }
+  }
 
   // --- Form elements ---
   function getEls() {
@@ -897,20 +873,28 @@ const t = i18n[lang] || i18n.en;
 
   function setLoading(loading) {
     var els = getEls();
+    var messages = getMessages(els.form);
     if (els.submitBtn) els.submitBtn.disabled = loading;
-    els.btnText.textContent = loading ? sending : submitBtn;
+    els.btnText.textContent = loading ? messages.sending : messages.submitBtn;
     if (loading) { els.btnIcon.classList.add('hidden'); els.btnSpinner.classList.remove('hidden'); }
     else { els.btnIcon.classList.remove('hidden'); els.btnSpinner.classList.add('hidden'); }
   }
 
   // --- Form submission ---
   function setupForm() {
-    var els = getEls();
-    var form = els.form;
-    if (!form) return;
+    var newForm = getEls().form;
+    if (!newForm || newForm.dataset.submitBound === '1') return;
+    newForm.dataset.submitBound = '1';
+    var messages = getMessages(newForm);
+    var lang = (newForm.querySelector('input[name="language"]') || {}).value || 'en';
 
-    var newForm = form.cloneNode(true);
-    form.parentNode.replaceChild(newForm, form);
+    // Set 2-line textarea placeholder (JS handles \n correctly for multiline placeholders)
+    var detailsTextarea = document.getElementById('rescue-message');
+    if (detailsTextarea) detailsTextarea.placeholder = messages.detailsPlaceholder || '';
+
+    // Set page URL in hidden field
+    var pageField = document.getElementById('field-page');
+    if (pageField) pageField.value = window.location.pathname;
 
     newForm.addEventListener('submit', async function(e) {
       e.preventDefault();
@@ -943,7 +927,7 @@ const t = i18n[lang] || i18n.en;
         if (!response.ok) {
           els2.errorMessage.textContent = result.errors
             ? result.errors.join('. ')
-            : (result.message || generalError);
+            : (result.message || messages.generalError);
           els2.errorContainer.classList.remove('hidden');
           if (window.turnstile && window.turnstileWidgetId !== undefined) {
             window.turnstile.reset(window.turnstileWidgetId);
@@ -956,13 +940,13 @@ const t = i18n[lang] || i18n.en;
         if (result.success) {
           window.location.href = (lang === 'en' ? '/thank-you/' : '/' + lang + '/thank-you/');
         } else {
-          els2.errorMessage.textContent = result.message || generalError;
+          els2.errorMessage.textContent = result.message || messages.generalError;
           els2.errorContainer.classList.remove('hidden');
           setLoading(false);
         }
       } catch (err) {
 
-        els2.errorMessage.textContent = errorFallback.replace('{email}', emailUser + '@' + emailDomain);
+        els2.errorMessage.textContent = messages.errorFallback.replace('{email}', emailUser + '@' + emailDomain);
         els2.errorContainer.classList.remove('hidden');
         if (window.turnstile && window.turnstileWidgetId !== undefined) {
           window.turnstile.reset(window.turnstileWidgetId);
@@ -974,4 +958,10 @@ const t = i18n[lang] || i18n.en;
   }
 
   setupForm();
+  // A broken internal link reaches this page through ClientRouter; a repeat
+  // visit then skips this already-run script, so bind the new form here.
+  document.addEventListener('astro:page-load', setupForm);
+  window.addEventListener('pageshow', function(event) {
+    if (event.persisted && getEls().form) setLoading(false);
+  });
 </script>

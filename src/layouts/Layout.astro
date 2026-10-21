@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 import { getTranslations, type Translations } from '../translations';
 import VisitorTracker from '../components/VisitorTracker.astro';
+import TurnstileApiLoader from '../components/TurnstileApiLoader.astro';
 import { runtimeAssetUrl } from '../config/runtimeAssets.mjs';
 
 // Props
@@ -279,6 +280,9 @@ const websiteSchema = {
 
   <!-- View Transitions for SPA-like speed -->
   <ClientRouter />
+
+  <!-- Shared Turnstile API loader: must precede VisitorTracker and form widgets. -->
+  <TurnstileApiLoader />
 
   <!-- Anonymous page-view counter (anonymous aggregate, consent-independent).
        Sends only the root-relative path; never reads/writes localStorage or cookies,
