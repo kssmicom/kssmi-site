@@ -106,7 +106,14 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
       }
 
       function ensureWidget(api) {
-        if (widgetId !== null) return widgetId;
+        var existing = document.getElementById('kssmi-vjt-capability-turnstile');
+        if (widgetId !== null && existing && existing.isConnected) return widgetId;
+        // ClientRouter swaps <body> on soft navigation and takes the container
+        // with it; drop the orphaned widget and render into the current body.
+        if (widgetId !== null) {
+          try { api.remove(widgetId); } catch (_) {}
+          widgetId = null;
+        }
         var container = document.createElement('div');
         container.id = 'kssmi-vjt-capability-turnstile';
         container.setAttribute('aria-label', 'Security verification');
@@ -139,6 +146,18 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         });
         return widgetId;
       }
+
+      // Remove the widget while its container is still attached; once the
+      // swap detaches it, Turnstile warns "Cannot find Widget" on its own.
+      document.addEventListener('astro:before-swap', function() {
+        if (widgetId === null || !window.turnstile) return;
+        try { window.turnstile.remove(widgetId); } catch (_) {}
+        widgetId = null;
+        if (!resolveProof) return;
+        var resolve = resolveProof;
+        resolveProof = null;
+        resolve('');
+      });
 
       function obtainSingleProof() {
         return ensureApi().then(function(api) {
@@ -190,6 +209,12 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     var capabilityRequest = null;
     var capabilityRefreshTimer = null;
     var capabilitiesLoadedAt = 0;
+    // A failed refill (e.g. a proof cut short by a soft navigation) is retried
+    // a bounded number of times per document; success resets the budget.
+    var capabilityRetryDelays = [15 * 1000, 60 * 1000, 5 * 60 * 1000];
+    var capabilityFailures = 0;
+    var capabilityRetryTimer = null;
+    var capabilityRetryDue = false;
     var contactEndpoint = contactIntentUrl;
     var capabilityEndpoint = capabilityUrl;
     if (isDev) {
@@ -219,8 +244,36 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
       capabilityRefreshTimer = setTimeout(loadContactCapabilities, 7 * 60 * 1000);
     }
 
+    function clearCapabilityRetry() {
+      if (capabilityRetryTimer) clearTimeout(capabilityRetryTimer);
+      capabilityRetryTimer = null;
+      capabilityRetryDue = false;
+    }
+
+    function scheduleCapabilityRetry() {
+      capabilityFailures++;
+      // One pending retry at a time; navigations never refill the budget.
+      if (capabilityRetryTimer || capabilityRetryDue
+          || capabilityFailures > capabilityRetryDelays.length) return;
+      capabilityRetryTimer = setTimeout(function() {
+        capabilityRetryTimer = null;
+        // A background tab waits for visibilitychange instead of spending a proof.
+        if (document.visibilityState === 'hidden') {
+          capabilityRetryDue = true;
+          return;
+        }
+        loadContactCapabilities();
+      }, capabilityRetryDelays[capabilityFailures - 1]);
+    }
+
+    function freshCapabilityCount() {
+      return contactCapabilities.filter(capabilityIsFresh).length;
+    }
+
     function loadContactCapabilities() {
       if (capabilityRequest) return capabilityRequest;
+      capabilityRetryDue = false;
+      var refilled = false;
       var proof = typeof window.KSSMI_VJT_CAPABILITY_PROOF === 'function'
         ? window.KSSMI_VJT_CAPABILITY_PROOF() : Promise.resolve('');
       capabilityRequest = proof.then(function(token) {
@@ -240,6 +293,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
           contactCapabilities = issued.filter(function(token) {
             return typeof token === 'string' && capabilityIsFresh(token);
           }).slice(0, 16);
+          refilled = contactCapabilities.length > 0;
           capabilitiesLoadedAt = Date.now();
           scheduleCapabilityRefresh();
         }
@@ -248,6 +302,12 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         return false;
       }).then(function(ok) {
         capabilityRequest = null;
+        if (refilled) {
+          capabilityFailures = 0;
+          clearCapabilityRetry();
+        } else {
+          scheduleCapabilityRetry();
+        }
         return ok;
       });
       return capabilityRequest;
@@ -421,9 +481,17 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     }, true);
     document.addEventListener('visibilitychange', function() {
       if (document.visibilityState === 'visible'
-          && Date.now() - capabilitiesLoadedAt >= 7 * 60 * 1000) {
+          && (capabilityRetryDue || Date.now() - capabilitiesLoadedAt >= 7 * 60 * 1000)) {
         loadContactCapabilities();
       }
+    });
+    // Soft navigations are a recovery point, but never stack a request or
+    // timer on one already pending, nor run past the retry budget.
+    document.addEventListener('astro:page-load', function() {
+      if (capabilityRequest || capabilityRetryTimer || capabilityRetryDue) return;
+      if (capabilityFailures > capabilityRetryDelays.length) return;
+      if (freshCapabilityCount() >= 3) return;
+      loadContactCapabilities();
     });
   })();
 </script>
