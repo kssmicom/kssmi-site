@@ -6,6 +6,8 @@
 # escalation, the site-account switch, PHP worker restarts, the network
 # cutover proof and sleeps are replaced. Failures are injected by redefining a
 # function in this test, never through a switch in the production script.
+# S7, S7b and S8 also run a copy of the pre-fix credential code, which S0
+# first proves against its source commit.
 
 set -Eeuo pipefail
 
@@ -19,6 +21,9 @@ esac
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 release_script="$repo_root/scripts/deploy-release.sh"
 policy_script="$repo_root/scripts/permission-policy.sh"
+# The admin credential functions of the pre-fix code (f9214312), to make
+# writes that are in flight when the release root is frozen.
+prefix_fixture="$repo_root/scripts/fixtures/prefix-admin-credentials-f9214312.php"
 
 transition_fail() {
   echo "Deploy credential transition test failed: $*" >&2
@@ -29,6 +34,7 @@ transition_fail() {
 # real server layout.
 [ "$(id -u)" != 0 ] || transition_fail "run this test as an unprivileged user"
 command -v flock >/dev/null 2>&1 || transition_fail "flock (util-linux) is required"
+command -v php >/dev/null 2>&1 || transition_fail "php is required to run the pre-fix code copy"
 
 test_root="$(mktemp -d)"
 cleanup() {
@@ -45,7 +51,8 @@ site_uid="$(id -u)"
 site_gid="$(id -g)"
 outgoing_id=1111111111111111111111111111111111111111-1-1
 # A reset token in the pre-fix format: an integer version and no generation.
-prefix_token='{"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa":{"created":1,"expires":4102444800,"credential_version":1}}'
+prefix_token_key=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+prefix_token="{\"$prefix_token_key\":{\"created\":1,\"expires\":4102444800,\"credential_version\":1}}"
 scenario=''
 log=''
 last_status=0
@@ -276,6 +283,25 @@ wait_until_locked() {
   return 1
 }
 
+# Returns once the file exists (10 s at most).
+wait_for_file() {
+  local attempt
+  for attempt in $(seq 1 100); do
+    [ -e "$1" ] && return 0
+    command sleep 0.1
+  done
+  return 1
+}
+
+# Names, types, link targets and file digests of a release root's entries.
+release_root_snapshot() {
+  (
+    cd "$1"
+    find . -mindepth 1 -maxdepth 1 ! -type f -printf '%f %y %l\n'
+    find . -mindepth 1 -maxdepth 1 -type f -exec sha256sum {} +
+  ) | LC_ALL=C sort
+}
+
 wait_for_background() {
   local pid="$1" attempt
   for attempt in $(seq 1 100); do
@@ -292,6 +318,26 @@ wait_for_background() {
   last_status=$?
   set -e
 }
+
+scenario='S0 pre-fix code copy matches f9214312'
+recorded_source_sha="$(sed -n 's#^// KS05-SOURCE-SHA256: \([0-9a-f]\{64\}\)$#\1#p' "$prefix_fixture")"
+[ -n "$recorded_source_sha" ] || scenario_fail "the copy does not record its source hash"
+[ "$(grep -c 'KS05-PAUSE-BEGIN' "$prefix_fixture")" = 1 ] &&
+  [ "$(grep -c 'KS05-PAUSE-END' "$prefix_fixture")" = 1 ] ||
+  scenario_fail "the copy must contain exactly one pause block"
+# With the rename reverted and the pause block removed, the copied blocks must
+# be the original lines byte for byte. CI clones shallowly, so the reference is
+# the hash recorded from git history, not one computed here.
+copied_source_sha="$(
+  sed -n '/^\/\/ KS05-COPY-BEGIN /,/^\/\/ KS05-COPY-END$/p' "$prefix_fixture" |
+    sed '/^\/\/ KS05-COPY-/d' |
+    sed '/KS05-PAUSE-BEGIN/,/KS05-PAUSE-END/d' |
+    sed 's/kssmi_prefix_admin_/kssmi_admin_/g' |
+    sha256sum | cut -d' ' -f1
+)"
+[ "$copied_source_sha" = "$recorded_source_sha" ] ||
+  scenario_fail "the copied pre-fix code differs from f9214312 beyond the rename and the pause block"
+echo "ok: $scenario"
 
 scenario='S1 pre-fix layout'
 home="$test_root/s1/kssmi.com"
@@ -512,18 +558,55 @@ assert_fresh_generation
   scenario_fail "an existing lock file was replaced"
 echo "ok: $scenario"
 
-scenario='S4b retry after the password difference was resolved'
+scenario='S4b retry after keeping the password changed through the pre-fix code'
 load_release "$s2_home" "$(release_id 4)"
 outgoing="$RELEASES_DIR/$outgoing_id"
-# Manual recovery: the administrator keeps the password from the outgoing
-# release and copies it to the persistent file.
-cp -p -- "$outgoing/.email_logs_password" "$PASSWORD_FILE"
+# Manual recovery as documented: the changed password stays and is copied to
+# the persistent file.
+recovery_temp="$(umask 077 && mktemp "$PASSWORD_FILE.manual-XXXXXXXXXX")"
+cat "$outgoing/.email_logs_password" > "$recovery_temp"
+mv -Tf "$recovery_temp" "$PASSWORD_FILE"
 run_logged s4b run_transition
 expect_success
 expect_logged 'identical to'
 assert_state admin_credential_layout prefix
 assert_state admin_credential_generation_action rotated
 assert_mode "$outgoing" 551
+[ "$(digest "$PASSWORD_FILE")" = "$(digest "$outgoing/.email_logs_password")" ] ||
+  scenario_fail "the persistent password is not the one that was kept"
+assert_fresh_generation
+assert_tokens_cleared
+echo "ok: $scenario"
+
+scenario='S4c retry after keeping the persistent password'
+home="$test_root/s4c/kssmi.com"
+make_home "$home" prefix
+load_release "$home" "$(release_id 2)"
+outgoing="$RELEASES_DIR/$outgoing_id"
+password_digest="$(digest "$PASSWORD_FILE")"
+# The pre-fix code replaced the password link with a changed hash, and the
+# first deployment stopped at the check.
+rm -- "$outgoing/.email_logs_password"
+printf '%s' 'fixture-changed-password-hash' > "$outgoing/.email_logs_password"
+chmod 600 "$outgoing/.email_logs_password"
+run_logged s4c-stopped run_transition
+expect_failure_status "a password copy that differs from the persistent file was accepted"
+assert_mode "$outgoing" 751
+# Manual recovery as documented: the persistent password stays, and the exact
+# link replaces the outgoing copy.
+[ -f "$outgoing/.email_logs_password" ] && [ ! -L "$outgoing/.email_logs_password" ] ||
+  scenario_fail "the stopped deployment did not leave the outgoing copy in place"
+ln -s "$PASSWORD_FILE" "$outgoing/.email_logs_password.relink"
+mv -Tf "$outgoing/.email_logs_password.relink" "$outgoing/.email_logs_password"
+load_release "$home" "$(release_id 4)"
+run_logged s4c run_transition
+expect_success
+assert_state admin_credential_layout prefix
+assert_state admin_credential_generation_action rotated
+assert_mode "$outgoing" 551
+[ "$(readlink -- "$outgoing/.email_logs_password")" = "$PASSWORD_FILE" ] ||
+  scenario_fail "the outgoing password path is not the exact link"
+[ "$(digest "$PASSWORD_FILE")" = "$password_digest" ] || scenario_fail "the persistent password hash changed"
 assert_fresh_generation
 assert_tokens_cleared
 echo "ok: $scenario"
@@ -573,6 +656,101 @@ assert_state_exists rolled_back_at
 run_logged s6-again run_rollback
 expect_success
 expect_logged 'Release was already rolled back'
+echo "ok: $scenario"
+
+scenario='S7 pre-fix password change in flight during the freeze'
+home="$test_root/s7/kssmi.com"
+make_home "$home" prefix
+load_release "$home" "$(release_id 2)"
+outgoing="$RELEASES_DIR/$outgoing_id"
+password_digest="$(digest "$PASSWORD_FILE")"
+# The pre-fix code writes the new hash to a temporary file in the release
+# root and pauses before rename(); the transition freezes the root meanwhile.
+pause="$test_root/s7.pause"
+printf '%s' .email_logs_password > "$pause"
+(
+  export KSSMI_PREFIX_PAUSE_FILE="$pause"
+  exec php "$prefix_fixture" change "$outgoing" fixture-new-password-1 > "$test_root/s7.json" 2>&1
+) &
+prefix_pid=$!
+wait_for_file "$pause.paused" || scenario_fail "the pre-fix password change never reached its pause point"
+[ -f "$(cat "$pause.paused")" ] || scenario_fail "the paused write has no temporary file"
+[ -L "$outgoing/.email_logs_password" ] || scenario_fail "the password link was replaced before the freeze"
+run_logged s7 run_transition
+expect_success
+assert_mode "$outgoing" 551
+assert_state admin_credential_layout prefix
+assert_state admin_credential_generation_action rotated
+touch "$pause.continue"
+wait_for_background "$prefix_pid"
+[ "$last_status" = 0 ] || scenario_fail "the pre-fix code exited with status $last_status"
+grep -Fq '"ok":false,"changed":false' "$test_root/s7.json" &&
+  grep -Fq '"error":"password_write_failed"' "$test_root/s7.json" ||
+  scenario_fail "the in-flight pre-fix change did not fail closed: $(cat "$test_root/s7.json")"
+[ -L "$outgoing/.email_logs_password" ] &&
+  [ "$(readlink -- "$outgoing/.email_logs_password")" = "$PASSWORD_FILE" ] ||
+  scenario_fail "the outgoing password path is no longer the link to the persistent file"
+[ "$(digest "$PASSWORD_FILE")" = "$password_digest" ] || scenario_fail "the persistent password hash changed"
+echo "ok: $scenario"
+
+scenario='S7b pre-fix password change completed before the freeze'
+home="$test_root/s7b/kssmi.com"
+make_home "$home" prefix
+load_release "$home" "$(release_id 2)"
+outgoing="$RELEASES_DIR/$outgoing_id"
+password_digest="$(digest "$PASSWORD_FILE")"
+pause="$test_root/s7b.pause"
+printf '%s' .email_logs_password > "$pause"
+(
+  export KSSMI_PREFIX_PAUSE_FILE="$pause"
+  exec php "$prefix_fixture" change "$outgoing" fixture-new-password-2 > "$test_root/s7b.json" 2>&1
+) &
+prefix_pid=$!
+wait_for_file "$pause.paused" || scenario_fail "the pre-fix password change never reached its pause point"
+# Released before the freeze, the pre-fix change completes and replaces the
+# link in the release root with the new hash.
+touch "$pause.continue"
+wait_for_background "$prefix_pid"
+[ "$last_status" = 0 ] || scenario_fail "the pre-fix code exited with status $last_status"
+grep -Fq '"ok":true,"changed":true' "$test_root/s7b.json" ||
+  scenario_fail "the pre-fix change did not complete: $(cat "$test_root/s7b.json")"
+[ -f "$outgoing/.email_logs_password" ] && [ ! -L "$outgoing/.email_logs_password" ] ||
+  scenario_fail "the pre-fix change did not replace the link"
+changed_digest="$(digest "$outgoing/.email_logs_password")"
+run_logged s7b run_transition
+expect_failure_status "a password changed through the pre-fix code was not detected"
+expect_logged 'does not match'
+assert_no_state admin_credential_generation_action
+assert_state_exists rolled_back_at
+assert_mode "$outgoing" 751
+[ "$(digest "$outgoing/.email_logs_password")" = "$changed_digest" ] ||
+  scenario_fail "the changed password was not left in place for manual recovery"
+[ "$(digest "$PASSWORD_FILE")" = "$password_digest" ] || scenario_fail "the persistent password hash changed"
+[ ! -e "$CREDENTIAL_GENERATION_FILE" ] || scenario_fail "a generation was written"
+echo "ok: $scenario"
+
+scenario='S8 pre-fix code started after the freeze'
+home="$test_root/s8/kssmi.com"
+make_home "$home" prefix
+load_release "$home" "$(release_id 2)"
+outgoing="$RELEASES_DIR/$outgoing_id"
+run_logged s8 run_transition
+expect_success
+assert_mode "$outgoing" 551
+credentials_before="$(digest "$PASSWORD_FILE") $(digest "$RESET_TOKENS_FILE") $(digest "$CREDENTIAL_GENERATION_FILE")"
+outgoing_before="$(release_root_snapshot "$outgoing")"
+php "$prefix_fixture" change "$outgoing" fixture-new-password-3 > "$test_root/s8-change.json" 2>&1 ||
+  scenario_fail "the pre-fix change exited abnormally: $(cat "$test_root/s8-change.json")"
+php "$prefix_fixture" reset "$outgoing" fixture-new-password-4 "$prefix_token_key" > "$test_root/s8-reset.json" 2>&1 ||
+  scenario_fail "the pre-fix reset exited abnormally: $(cat "$test_root/s8-reset.json")"
+for prefix_result in "$test_root/s8-change.json" "$test_root/s8-reset.json"; do
+  grep -Fq '"ok":false,"changed":false' "$prefix_result" ||
+    scenario_fail "the pre-fix code reported success after the freeze: $(cat "$prefix_result")"
+done
+[ "$(digest "$PASSWORD_FILE") $(digest "$RESET_TOKENS_FILE") $(digest "$CREDENTIAL_GENERATION_FILE")" = "$credentials_before" ] ||
+  scenario_fail "a persistent credential changed"
+[ "$(release_root_snapshot "$outgoing")" = "$outgoing_before" ] ||
+  scenario_fail "the frozen release root changed"
 echo "ok: $scenario"
 
 scenario='S9 migrated layout'

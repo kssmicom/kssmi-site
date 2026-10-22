@@ -9,6 +9,7 @@ const policy = read('scripts/permission-policy.sh');
 const release = read('scripts/deploy-release.sh');
 const tests = read('scripts/test-permission-policy.sh');
 const transitionTests = read('scripts/test-deploy-credential-transition.sh');
+const prefixFixture = read('scripts/fixtures/prefix-admin-credentials-f9214312.php');
 const workflow = read('.github/workflows/deploy.yml');
 const environmentAction = read('.github/actions/deploy-environment/action.yml');
 const phpCi = read('.github/workflows/php-ci.yml');
@@ -415,14 +416,78 @@ for (const marker of [
   "scenario='S3c lock order'",
   "scenario='S3d lock file created at the same moment'",
   "scenario='S4 retry after a failed migration'",
-  "scenario='S4b retry after the password difference was resolved'",
+  "scenario='S4b retry after keeping the password changed through the pre-fix code'",
+  "scenario='S4c retry after keeping the persistent password'",
   "scenario='S5 failure while recording the rollback target'",
   "scenario='S6 rollback after activation'",
   "scenario='S9 migrated layout'",
   "scenario='S10 restore failure'",
   "scenario='S11 later state without a rollback target'",
+  "scenario='S0 pre-fix code copy matches f9214312'",
+  "scenario='S7 pre-fix password change in flight during the freeze'",
+  "scenario='S7b pre-fix password change completed before the freeze'",
+  "scenario='S8 pre-fix code started after the freeze'",
+  'export KSSMI_PREFIX_PAUSE_FILE="$pause"',
+  '"error":"password_write_failed"',
+  "sed 's/kssmi_prefix_admin_/kssmi_admin_/g'",
 ]) {
   assert.ok(transitionTests.includes(marker), `Credential transition tests missing: ${marker}`);
+}
+
+// The pre-fix code copy: the source hash is recorded once from git history,
+// because CI clones shallowly; the test proves the copy against it.
+assert.ok(
+  prefixFixture.startsWith('<?php\ndeclare(strict_types=1);\n'),
+  'The pre-fix code copy must keep strict types, as its source file does.',
+);
+assert.ok(
+  prefixFixture.includes('// KS05-SOURCE-SHA256: 38c4759e434f1ec9b85d5b4422aa0bb19b69abd45ebc2dcc471681295806c045\n'),
+  'The pre-fix code copy must record the hash of f9214312:private/http-security.php lines 211-344 and 570-831.',
+);
+assert.deepEqual(
+  [...prefixFixture.matchAll(/^\/\/ KS05-COPY-BEGIN (\S+)$/gm)].map((match) => match[1]),
+  ['f9214312:private/http-security.php:211-344', 'f9214312:private/http-security.php:570-831'],
+  'The pre-fix code copy must name its two source fragments.',
+);
+assert.equal((prefixFixture.match(/^\/\/ KS05-COPY-END$/gm) || []).length, 2, 'Each copied fragment must be closed.');
+assert.equal((prefixFixture.match(/KS05-PAUSE-BEGIN/g) || []).length, 1, 'The copy may add exactly one pause block.');
+assert.equal((prefixFixture.match(/KS05-PAUSE-END/g) || []).length, 1, 'The pause block must be closed.');
+assert.doesNotMatch(
+  prefixFixture,
+  /\bkssmi_admin_[a-z_]+\s*\(/,
+  'Every copied function must be renamed, so the copy never calls the current code.',
+);
+assert.ok(!environmentAction.includes('fixtures'), 'The pre-fix code copy must never be uploaded with a release.');
+const sealStart = workflow.indexOf('tar -cf kssmi-release.tar');
+const sealEnd = workflow.indexOf('sha256sum kssmi-release.tar', sealStart);
+assert.ok(sealStart >= 0 && sealEnd > sealStart, 'The release seal step is missing.');
+assert.ok(
+  !workflow.slice(sealStart, sealEnd).includes('fixtures'),
+  'The pre-fix code copy must never be sealed into a release.',
+);
+for (const ciSource of [workflow, phpCi]) {
+  assert.ok(
+    ciSource.includes("find public private scripts -name '*.php'"),
+    'CI must lint every PHP file under scripts, the pre-fix code copy included.',
+  );
+}
+
+for (const marker of [
+  '`0551`',
+  '.admin_credential_generation',
+  'link(2)',
+  'Manual recovery',
+  'flock -x 7',
+  'flock -x 6',
+  'SMOKE_ADMIN_PASSWORD',
+  'prefix-admin-credentials-f9214312.php',
+  // Both outcomes of a password difference: keeping the changed hash copies it
+  // to the persistent file; keeping the persistent one restores the link.
+  'cat "$outgoing/.email_logs_password" > "$temp"',
+  'ln -s /home/kssmi.com/.email_logs_password .email_logs_password.relink',
+  'mv -Tf .email_logs_password.relink .email_logs_password',
+]) {
+  assert.ok(docs.includes(marker), `Permission documentation missing the KS-05 rule: ${marker}`);
 }
 assert.deepEqual(
   [...functionBody(transitionTests, 'load_release').matchAll(/^ {2}([a-z_]+)\(\) \{/gm)].map((match) => match[1]),

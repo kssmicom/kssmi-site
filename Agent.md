@@ -303,6 +303,28 @@ The Vite plugin in `astro.config.mjs` watches `src/content/products/` for new fo
 - **Auto-deploy:** Push to `main` → GitHub Actions → Live site
 - **Status URL:** https://kssmi.com/php-status.php
 
+### Admin credentials (KS-05) (CRITICAL)
+- The admin password hash, reset tokens and credential generation live only
+  in `/home/kssmi.com` (`.email_logs_password`, `.email_reset_tokens.json`,
+  `.admin_credential_generation`), each `0600` with a `<file>.lock` beside it.
+  A release holds exact links to them, and its root is `0551`.
+- In PHP, write or lock a credential only through `kssmi_admin_atomic_write()`
+  and `kssmi_admin_file_lock()`, which resolve the link first
+  (`kssmi_admin_storage_path()`). Never `rename()` onto a credential path or
+  create files in the release root.
+- Sessions and reset tokens are bound to the random credential generation; a
+  password change or reset writes a new one. There is no integer version.
+- `deploy-release.sh` records its rollback target before it changes anything,
+  then freezes the outgoing release root, checks it and migrates the
+  generation (`prepare_admin_credential_transition`). Rollback never writes a
+  credential. Never run credential functions or these steps as root.
+- After an admin password change, update the `SMOKE_ADMIN_PASSWORD` secret at
+  once: the deployment smoke logs in with it. Manual recovery when a
+  deployment stops is in `docs/permission-policy.md` and needs an explicit
+  decision.
+- Tests: `npm run test:permissions`, `npm run test:credential-persistence`,
+  `npm run test:deploy-credential-transition` (Linux only).
+
 ## Layout Width Standards (CRITICAL — DO NOT DEVIATE)
 
 All pages and components use a unified responsive width system:
