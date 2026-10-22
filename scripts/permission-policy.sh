@@ -5,11 +5,15 @@
 # test-permission-policy.sh. It intentionally uses GNU stat/find semantics,
 # matching the Ubuntu production host and GitHub Actions runners.
 
-KSSMI_PERMISSION_POLICY_VERSION=1
+KSSMI_PERMISSION_POLICY_VERSION=2
 
 kssmi_policy_error() {
   printf 'PERMISSION POLICY: %s\n' "$*" >&2
   return 1
+}
+
+kssmi_policy_warn() {
+  printf 'PERMISSION POLICY WARNING: %s\n' "$*" >&2
 }
 
 kssmi_policy_assert_path() {
@@ -171,4 +175,171 @@ kssmi_policy_assert_sensitive_file() {
   local expected_gid="$3"
   [ -e "$path" ] || return 0
   kssmi_policy_assert_path "$path" file 600 "$expected_uid" "$expected_gid"
+}
+
+# ── Admin credential state (KS-05) ──────────────────────────────────────────
+# The password hash, the reset tokens and the credential generation exist only
+# as persistent files; a release holds exact links to them. Some checks below
+# read file contents, so the deployment runs them as the site account that
+# owns the files. Messages name paths and reasons, never contents.
+
+kssmi_policy_assert_credential_link() {
+  local link_path="$1"
+  local expected_target="$2"
+  local expected_uid="$3"
+  local expected_gid="$4"
+  local actual_target
+
+  kssmi_policy_assert_path "$link_path" symlink any "$expected_uid" "$expected_gid" || return 1
+  actual_target="$(readlink -- "$link_path")" || return 1
+  [ "$actual_target" = "$expected_target" ] || {
+    kssmi_policy_error "$link_path points to $actual_target; expected $expected_target"
+    return 1
+  }
+  kssmi_policy_assert_path "$expected_target" file 600 "$expected_uid" "$expected_gid"
+}
+
+# True only when the file holds exactly 32 lowercase hex characters, with no
+# newline or other byte, which is what PHP and the deployment write.
+kssmi_policy_credential_generation_valid() {
+  local path="$1"
+  local size
+  [ -f "$path" ] || return 1
+  size="$(wc -c < "$path")" || return 1
+  [ "$size" -eq 32 ] || return 1
+  LC_ALL=C grep -Eq '^[a-f0-9]{32}$' -- "$path"
+}
+
+kssmi_policy_credential_generation_state() {
+  local path="$1"
+  if [ ! -e "$path" ] && [ ! -L "$path" ]; then
+    printf 'missing\n'
+  elif [ ! -L "$path" ] && kssmi_policy_credential_generation_valid "$path"; then
+    printf 'valid\n'
+  else
+    printf 'invalid\n'
+  fi
+}
+
+# Classifies the credential paths in the outgoing release root: "migrated"
+# when it links the persistent generation, "prefix" when it predates the
+# generation. Every state that needs a person to decide fails.
+kssmi_policy_outgoing_credential_layout() {
+  local release="$1"
+  local password_file="$2"
+  local tokens_file="$3"
+  local generation_file="$4"
+  local expected_uid="$5"
+  local expected_gid="$6"
+  local path
+
+  path="$release/.email_logs_password"
+  if [ -L "$path" ]; then
+    kssmi_policy_assert_credential_link "$path" "$password_file" "$expected_uid" "$expected_gid" || return 1
+  elif [ -f "$path" ]; then
+    # The pre-fix code replaced the link when the password was changed.
+    cmp -s -- "$path" "$password_file" || {
+      kssmi_policy_error "$path is a regular file that does not match $password_file; decide which password to keep"
+      return 1
+    }
+    kssmi_policy_warn "$path is a regular file identical to $password_file"
+  elif [ -e "$path" ]; then
+    kssmi_policy_error "$path is neither a link nor a regular file"
+    return 1
+  else
+    kssmi_policy_error "$path is missing"
+    return 1
+  fi
+
+  path="$release/.email_reset_tokens.json"
+  if [ -L "$path" ]; then
+    kssmi_policy_assert_credential_link "$path" "$tokens_file" "$expected_uid" "$expected_gid" || return 1
+  elif [ -f "$path" ]; then
+    kssmi_policy_warn "$path is a regular file; its unused reset links do not carry over"
+  elif [ -e "$path" ]; then
+    kssmi_policy_error "$path is neither a link nor a regular file"
+    return 1
+  else
+    kssmi_policy_error "$path is missing"
+    return 1
+  fi
+
+  path="$release/.admin_credential_generation"
+  if [ -L "$path" ]; then
+    kssmi_policy_assert_credential_link "$path" "$generation_file" "$expected_uid" "$expected_gid" || return 1
+    kssmi_policy_credential_generation_valid "$generation_file" || {
+      kssmi_policy_error "$generation_file does not hold a valid credential generation"
+      return 1
+    }
+    printf 'migrated\n'
+    return 0
+  elif [ -f "$path" ]; then
+    # The fixed code writes the generation only through the link.
+    kssmi_policy_error "$path is a regular file in the release root"
+    return 1
+  elif [ -e "$path" ]; then
+    kssmi_policy_error "$path is neither a link nor a regular file"
+    return 1
+  fi
+
+  # The pre-fix code kept its version counter in the release root and never
+  # linked it; a missing counter only means nobody logged in.
+  path="$release/.admin_credential_version"
+  if [ -L "$path" ]; then
+    kssmi_policy_error "$path is a link"
+    return 1
+  elif [ -e "$path" ] && [ ! -f "$path" ]; then
+    kssmi_policy_error "$path is neither a link nor a regular file"
+    return 1
+  fi
+  printf 'prefix\n'
+}
+
+# A migrated layout keeps a valid persistent generation and stops on a lost
+# or damaged one. A pre-fix or first layout always gets a fresh generation,
+# retries included, so no session or reset link issued before survives.
+kssmi_policy_generation_action() {
+  local layout="$1"
+  local generation_state="$2"
+
+  case "$generation_state" in
+    valid|invalid|missing) ;;
+    *) kssmi_policy_error "unknown credential generation state '$generation_state'"; return 1 ;;
+  esac
+  case "$layout" in
+    migrated)
+      [ "$generation_state" = valid ] || {
+        kssmi_policy_error "the persistent credential generation is $generation_state in a migrated layout; restore it manually"
+        return 1
+      }
+      printf 'keep\n'
+      ;;
+    prefix|initial) printf 'rotate\n' ;;
+    *) kssmi_policy_error "unknown credential layout '$layout'"; return 1 ;;
+  esac
+}
+
+# The pre-fix code creates temporary and lock files beside each credential in
+# the release root, so it fails closed once its owner cannot write there.
+kssmi_policy_freeze_directory() {
+  local directory="$1"
+  [ -d "$directory" ] && [ ! -L "$directory" ] || {
+    kssmi_policy_error "expected directory: $directory"
+    return 1
+  }
+  chmod -- u-w "$directory"
+}
+
+kssmi_policy_restore_directory_mode() {
+  local directory="$1"
+  local mode="$2"
+  case "$mode" in
+    [01234567][01234567][01234567]|[01234567][01234567][01234567][01234567]) ;;
+    *) kssmi_policy_error "invalid recorded mode '$mode' for $directory"; return 1 ;;
+  esac
+  [ -d "$directory" ] && [ ! -L "$directory" ] || {
+    kssmi_policy_error "expected directory: $directory"
+    return 1
+  }
+  chmod -- "$mode" "$directory"
 }

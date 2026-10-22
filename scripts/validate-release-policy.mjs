@@ -130,6 +130,26 @@ assert.match(
   'Cutover barrier proof must retry long enough for PHP OPcache revalidation.'
 );
 
+// ── Release manager: the bundle carries no credential state (KS-05) ──
+const bundleStart = release.indexOf('validate_release_bundle() {');
+const bundleEnd = release.indexOf('\nprepare_persistent_storage() {', bundleStart);
+assert.ok(bundleStart >= 0 && bundleEnd > bundleStart, 'validate_release_bundle function is missing.');
+const bundleBody = release.slice(bundleStart, bundleEnd);
+for (const sensitivePath of [
+  '"$NEW_WEBROOT/.email_logs_password"',
+  '"$NEW_WEBROOT/.email_reset_tokens.json"',
+  '"$NEW_WEBROOT/.admin_credential_generation"',
+  '"$NEW_WEBROOT/.admin_credential_version"',
+  '"$RELEASE_DIR/.admin_credential_generation"',
+  '"$RELEASE_DIR/.admin_credential_version"',
+]) {
+  assert.ok(bundleBody.includes(sensitivePath), `The immutable release must reject bundled credential state: ${sensitivePath}`);
+}
+assert.ok(
+  bundleBody.includes('fail "Sensitive path exists in the immutable release: $sensitive_path"'),
+  'Bundled credential state must fail the deployment.'
+);
+
 // ── Release manager: ordered activation ──
 const rollbackStart = release.indexOf('rollback_release() {');
 const rollbackEnd = release.indexOf('\nactivate_release() {', rollbackStart);

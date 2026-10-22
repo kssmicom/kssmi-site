@@ -68,7 +68,8 @@ printf '%s\n' "$output" | grep -Fq 'PRIVATE_ROOT must be one direct child of /ho
   # shellcheck source=deploy-release.sh
   . "$release_script"
   for function_name in main activate_release rollback_release rollback_on_failure \
-      finalize_release emit_release_evidence prepare_release_layout rollback_webroot; do
+      finalize_release emit_release_evidence prepare_release_layout rollback_webroot \
+      prepare_admin_credential_transition restore_outgoing_release; do
     declare -F "$function_name" >/dev/null ||
       entry_fail "$function_name is not defined after sourcing"
   done
