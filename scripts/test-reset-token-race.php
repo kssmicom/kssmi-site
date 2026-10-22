@@ -62,6 +62,7 @@ kssmi_reset_race_assert(mkdir($testDirectory, 0700, true), 'create race-test dir
 
 $tokensPath = $testDirectory . DIRECTORY_SEPARATOR . '.email_reset_tokens.json';
 $passwordPath = $testDirectory . DIRECTORY_SEPARATOR . '.email_logs_password';
+$generationPath = kssmi_admin_credential_generation_path($passwordPath);
 $barrierPath = $testDirectory . DIRECTORY_SEPARATOR . '.start';
 $token = str_repeat('f', 64);
 $now = time();
@@ -70,7 +71,7 @@ $processes = [];
 
 try {
     kssmi_reset_race_assert(
-        kssmi_admin_reset_token_add($tokensPath, $token, $now + 3600, $now),
+        kssmi_admin_reset_token_add($tokensPath, $token, $now + 3600, $generationPath, $now),
         'seed one reset token for concurrent workers'
     );
 
@@ -147,7 +148,7 @@ try {
         'stored password belongs to the sole token-consumption winner'
     );
     kssmi_reset_race_assert(
-        kssmi_admin_reset_token_valid($tokensPath, $token, $now) === false,
+        kssmi_admin_reset_token_valid($tokensPath, $token, $generationPath, $now) === false,
         'concurrently consumed token is no longer valid'
     );
 

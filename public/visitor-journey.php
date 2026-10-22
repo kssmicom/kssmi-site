@@ -85,7 +85,7 @@ define('PASSWORD_FILE_OLD', __DIR__ . '/.email_logs_password');
 define('PASSWORD_FILE', dirname(__DIR__) . '/.email_logs_password');
 define('RESET_TOKENS_FILE_OLD', __DIR__ . '/.email_reset_tokens.json');
 define('RESET_TOKENS_FILE', dirname(__DIR__) . '/.email_reset_tokens.json');
-define('CREDENTIAL_VERSION_FILE', kssmi_admin_credential_version_path(PASSWORD_FILE));
+define('CREDENTIAL_GENERATION_FILE', kssmi_admin_credential_generation_path(PASSWORD_FILE));
 define('ADMIN_EMAIL', 'sales@kssmi.com');
 
 // Migrate password file if it still lives inside public_html
@@ -123,10 +123,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
         if (kssmi_admin_authenticate_and_establish(
             file_exists(PASSWORD_FILE) ? PASSWORD_FILE : PASSWORD_FILE_OLD,
             RESET_TOKENS_FILE,
-            CREDENTIAL_VERSION_FILE,
+            CREDENTIAL_GENERATION_FILE,
             $submitted
         )) {
-            if (!kssmi_admin_session_authenticated(CREDENTIAL_VERSION_FILE)) {
+            if (!kssmi_admin_session_authenticated(CREDENTIAL_GENERATION_FILE)) {
                 $error = 'Unable to establish a secure admin session. Please try again.';
             } else {
                 kssmi_admin_set_marker_cookie(true);
@@ -139,7 +139,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
 
 // Handle logout — POST + CSRF only (a GET logout can be triggered by an
 // <img>/prefetch and would silently end an admin session).
-if ($isAuthenticated = kssmi_admin_session_authenticated(CREDENTIAL_VERSION_FILE)) {
+if ($isAuthenticated = kssmi_admin_session_authenticated(CREDENTIAL_GENERATION_FILE)) {
     if (isset($_POST['logout'])) {
         if (!kssmi_admin_csrf_valid($_POST['csrf_token'] ?? null)) {
             http_response_code(403);
@@ -153,7 +153,7 @@ if ($isAuthenticated = kssmi_admin_session_authenticated(CREDENTIAL_VERSION_FILE
     }
 }
 
-$isAuthenticated = kssmi_admin_session_authenticated(CREDENTIAL_VERSION_FILE);
+$isAuthenticated = kssmi_admin_session_authenticated(CREDENTIAL_GENERATION_FILE);
 
 // Keep admin marker cookie alive so the tracker skips admin visits
 if ($isAuthenticated) {

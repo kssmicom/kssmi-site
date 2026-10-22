@@ -105,6 +105,7 @@ jobs:
           php scripts/test-http-security.php
           php scripts/test-reset-token-race.php
           php scripts/test-admin-session.php
+          php scripts/test-credential-persistence.php
           php scripts/test-short-links.php
 
       - name: Validate frontend policies

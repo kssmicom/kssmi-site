@@ -59,43 +59,50 @@ try {
     kssmi_admin_session_bootstrap();
     kssmi_session_assert(session_id() === $establishedId, 'bootstrap is idempotent for an active session');
 
-    // Credential-version sessions are accepted by both admin entrypoints only
-    // while the version, absolute lifetime, and inactivity lifetime remain valid.
-    $credentialVersionPath = $testDirectory . DIRECTORY_SEPARATOR . '.admin_credential_version';
+    // Credential-generation sessions are accepted by both admin entrypoints
+    // only while the generation, absolute lifetime, and inactivity lifetime
+    // remain valid.
+    $credentialGenerationPath = $testDirectory . DIRECTORY_SEPARATOR . '.admin_credential_generation';
     $now = time();
-    kssmi_session_assert(kssmi_admin_session_establish($credentialVersionPath, $now), 'establish versioned session');
-    kssmi_session_assert(kssmi_admin_session_authenticated($credentialVersionPath, $now + 60), 'fresh versioned session is accepted');
+    kssmi_session_assert(kssmi_admin_session_establish($credentialGenerationPath, $now), 'establish generation-bound session');
+    kssmi_session_assert(kssmi_admin_session_authenticated($credentialGenerationPath, $now + 60), 'fresh generation-bound session is accepted');
     kssmi_session_assert(
-        !kssmi_admin_session_authenticated($credentialVersionPath, $now + 60 + kssmi_admin_session_inactivity_ttl() + 1),
+        !kssmi_admin_session_authenticated($credentialGenerationPath, $now + 60 + kssmi_admin_session_inactivity_ttl() + 1),
         'inactive admin session is revoked'
     );
-    kssmi_session_assert(kssmi_admin_session_establish($credentialVersionPath, $now), 're-establish after inactivity revocation');
+    kssmi_session_assert(kssmi_admin_session_establish($credentialGenerationPath, $now), 're-establish after inactivity revocation');
     kssmi_session_assert(
-        !kssmi_admin_session_authenticated($credentialVersionPath, $now + kssmi_admin_session_absolute_ttl() + 1),
+        !kssmi_admin_session_authenticated($credentialGenerationPath, $now + kssmi_admin_session_absolute_ttl() + 1),
         'absolute-lifetime-expired session is revoked'
     );
-    kssmi_session_assert(kssmi_admin_session_establish($credentialVersionPath, $now), 're-establish before version revoke');
-    kssmi_session_assert(kssmi_admin_secret_write($credentialVersionPath, '2'), 'advance credential version');
-    kssmi_session_assert(!kssmi_admin_session_authenticated($credentialVersionPath, $now + 1), 'pre-change session is revoked by version mismatch');
-    kssmi_session_assert(kssmi_admin_session_establish($credentialVersionPath, $now + 2), 'new-version login establishes session');
-    kssmi_session_assert(kssmi_admin_session_authenticated($credentialVersionPath, $now + 3), 'new-version session remains authenticated');
+    kssmi_session_assert(kssmi_admin_session_establish($credentialGenerationPath, $now), 're-establish before generation replacement');
+    $issuedGeneration = kssmi_admin_credential_generation_read($credentialGenerationPath);
+    $replacementGeneration = kssmi_admin_credential_generation_new();
+    kssmi_session_assert(
+        $issuedGeneration !== null && $replacementGeneration !== null && $replacementGeneration !== $issuedGeneration,
+        'prepare a replacement credential generation'
+    );
+    kssmi_session_assert(kssmi_admin_secret_write($credentialGenerationPath, $replacementGeneration), 'replace credential generation');
+    kssmi_session_assert(!kssmi_admin_session_authenticated($credentialGenerationPath, $now + 1), 'pre-change session is revoked by generation mismatch');
+    kssmi_session_assert(kssmi_admin_session_establish($credentialGenerationPath, $now + 2), 'new-generation login establishes session');
+    kssmi_session_assert(kssmi_admin_session_authenticated($credentialGenerationPath, $now + 3), 'new-generation session remains authenticated');
 
     $passwordPath = $testDirectory . DIRECTORY_SEPARATOR . '.email_logs_password';
     $resetTokensPath = $testDirectory . DIRECTORY_SEPARATOR . '.email_reset_tokens.json';
     $oldPassword = 'Old password for race test';
     kssmi_session_assert(kssmi_admin_secret_write($passwordPath, password_hash($oldPassword, PASSWORD_BCRYPT)), 'write password hash');
     kssmi_session_assert(
-        kssmi_admin_authenticate_and_establish($passwordPath, $resetTokensPath, $credentialVersionPath, $oldPassword, $now + 4),
-        'login binds a verified password to the current credential version'
+        kssmi_admin_authenticate_and_establish($passwordPath, $resetTokensPath, $credentialGenerationPath, $oldPassword, $now + 4),
+        'login binds a verified password to the current credential generation'
     );
-    kssmi_session_assert(kssmi_admin_session_authenticated($credentialVersionPath, $now + 5), 'bound login session is accepted');
+    kssmi_session_assert(kssmi_admin_session_authenticated($credentialGenerationPath, $now + 5), 'bound login session is accepted');
     kssmi_session_assert(
-        !kssmi_admin_authenticate_and_establish($passwordPath, $resetTokensPath, $credentialVersionPath, 'incorrect password', $now + 6),
+        !kssmi_admin_authenticate_and_establish($passwordPath, $resetTokensPath, $credentialGenerationPath, 'incorrect password', $now + 6),
         'invalid password does not establish a session'
     );
     kssmi_session_assert(
-        !kssmi_admin_session_establish($credentialVersionPath, $now + 6, 1),
-        'a session cannot be issued with a version other than the verified credential generation'
+        !kssmi_admin_session_establish($credentialGenerationPath, $now + 6, $issuedGeneration),
+        'a session cannot be issued for a generation other than the verified credential generation'
     );
 
     $securitySource = file_get_contents(dirname(__DIR__) . '/private/http-security.php');
@@ -110,8 +117,8 @@ try {
         kssmi_session_assert(is_string($source), "read {$relativePath}");
         kssmi_session_assert(
             strpos($source, 'kssmi_admin_authenticate_and_establish(') !== false
-                && strpos($source, 'kssmi_admin_session_authenticated(CREDENTIAL_VERSION_FILE)') !== false,
-            "{$relativePath} uses the shared versioned admin session boundary"
+                && strpos($source, 'kssmi_admin_session_authenticated(CREDENTIAL_GENERATION_FILE)') !== false,
+            "{$relativePath} uses the shared generation-bound admin session boundary"
         );
     }
 

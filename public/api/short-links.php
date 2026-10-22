@@ -5,7 +5,7 @@ kssmi_admin_require_trusted_proxy(); kssmi_admin_session_bootstrap();
 require_once dirname(__DIR__, 2) . '/private/short-link-store.php';
 require_once dirname(__DIR__) . '/api/vjt-helpers.php';
 header('Content-Type: application/json; charset=UTF-8'); header('Cache-Control: no-store, private'); header('X-Robots-Tag: noindex, nofollow');
-if (!kssmi_admin_session_authenticated(kssmi_admin_credential_version_path(dirname(__DIR__, 2) . '/.email_logs_password'))) { http_response_code(401); echo '{"error":"Authentication required."}'; exit; }
+if (!kssmi_admin_session_authenticated(kssmi_admin_credential_generation_path(dirname(__DIR__, 2) . '/.email_logs_password'))) { http_response_code(401); echo '{"error":"Authentication required."}'; exit; }
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') { http_response_code(405); header('Allow: POST'); echo '{"error":"POST required."}'; exit; }
 $origin = (string)($_SERVER['HTTP_ORIGIN'] ?? '');
 $fetchSite = strtolower((string)($_SERVER['HTTP_SEC_FETCH_SITE'] ?? ''));
