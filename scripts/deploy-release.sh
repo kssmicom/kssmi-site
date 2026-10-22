@@ -110,16 +110,9 @@ validate_deployment_config() {
   [ "$SITE_GROUP" = kssmi4374 ] || fail "Production SITE_GROUP must be kssmi4374."
 }
 
-validate_deployment_config
-
-[ -f "$PERMISSION_POLICY" ] || fail "Permission policy is missing: $PERMISSION_POLICY"
-# shellcheck source=permission-policy.sh
-. "$PERMISSION_POLICY"
-
 report_failure() {
   echo "ERROR: deploy-release.sh $COMMAND failed at line $1: $2" >&2
 }
-trap 'report_failure "$LINENO" "$BASH_COMMAND"' ERR
 
 run_root() {
   if [ "$(id -u)" = 0 ]; then
@@ -943,6 +936,18 @@ rollback_release() {
   echo "Release rollback completed: $RELEASE_ID"
 }
 
+# Activation failure handler. It lives at top level rather than inside
+# activate_release so the deployment tests can install the exact same trap.
+rollback_on_failure() {
+  status=$?
+  trap - EXIT HUP INT TERM
+  cleanup_runtime_capability_probe
+  if [ "$status" -ne 0 ]; then
+    rollback_release || true
+  fi
+  exit "$status"
+}
+
 activate_release() {
   check_disk_space
   validate_release_bundle
@@ -950,15 +955,6 @@ activate_release() {
   [ ! -e "$STATE_DIR" ] || fail "Release state already exists: $STATE_DIR"
   run_root install -d -o "$SITE_USER" -g "$SITE_GROUP" -m 750 "$STATE_DIR"
 
-  rollback_on_failure() {
-    status=$?
-    trap - EXIT HUP INT TERM
-    cleanup_runtime_capability_probe
-    if [ "$status" -ne 0 ]; then
-      rollback_release || true
-    fi
-    exit "$status"
-  }
   trap rollback_on_failure EXIT
   trap 'exit 129' HUP
   trap 'exit 130' INT
@@ -1072,18 +1068,35 @@ emit_release_evidence() {
   echo 'final_health=PASS'
 }
 
-validate_release_id
-prepare_control_paths
-run_root touch "$DEPLOY_LOCK"
-run_root chown "$SITE_USER:$SITE_GROUP" "$DEPLOY_LOCK"
-run_root chmod 640 "$DEPLOY_LOCK"
-exec 9>"$DEPLOY_LOCK"
-flock -x 9
+# Executed directly, the release manager validates its production contract,
+# takes the deploy lock and runs one command. Sourced by the deployment tests,
+# it only defines the functions above and touches nothing.
+main() {
+  validate_deployment_config
 
-case "$COMMAND" in
-  activate) activate_release ;;
-  rollback) rollback_release ;;
-  finalize) finalize_release ;;
-  evidence) emit_release_evidence ;;
-  *) fail "Usage: deploy-release.sh {activate|rollback|finalize|evidence}" ;;
-esac
+  [ -f "$PERMISSION_POLICY" ] || fail "Permission policy is missing: $PERMISSION_POLICY"
+  # shellcheck source=permission-policy.sh
+  . "$PERMISSION_POLICY"
+
+  trap 'report_failure "$LINENO" "$BASH_COMMAND"' ERR
+
+  validate_release_id
+  prepare_control_paths
+  run_root touch "$DEPLOY_LOCK"
+  run_root chown "$SITE_USER:$SITE_GROUP" "$DEPLOY_LOCK"
+  run_root chmod 640 "$DEPLOY_LOCK"
+  exec 9>"$DEPLOY_LOCK"
+  flock -x 9
+
+  case "$COMMAND" in
+    activate) activate_release ;;
+    rollback) rollback_release ;;
+    finalize) finalize_release ;;
+    evidence) emit_release_evidence ;;
+    *) fail "Usage: deploy-release.sh {activate|rollback|finalize|evidence}" ;;
+  esac
+}
+
+if [ "${BASH_SOURCE[0]}" = "$0" ]; then
+  main "$@"
+fi

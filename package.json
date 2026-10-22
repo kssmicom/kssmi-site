@@ -39,6 +39,7 @@
     "test:static-csp": "node scripts/test-static-csp.mjs",
     "test:runtime-assets": "node scripts/test-runtime-assets.mjs",
     "test:permissions": "bash scripts/test-permission-policy.sh",
+    "test:deploy-entry": "bash scripts/test-deploy-release-entry.sh",
     "test:runtime-identity": "php scripts/runtime-capability-probe.php --identity-self-test",
     "smoke:deployment": "node scripts/smoke-deployment.mjs",
     "test:smoke": "node scripts/test-smoke-deployment.mjs",

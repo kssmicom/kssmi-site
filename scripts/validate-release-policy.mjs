@@ -189,6 +189,37 @@ for (const [first, second, message] of [
   requireBefore(activationBody, first, second, message);
 }
 
+// ── Release manager: executed entry point, side-effect-free when sourced ──
+const mainStart = release.indexOf('\nmain() {');
+assert.ok(mainStart >= 0, 'Release manager must define its main() entry point.');
+assert.ok(
+  release.trimEnd().endsWith('if [ "${BASH_SOURCE[0]}" = "$0" ]; then\n  main "$@"\nfi'),
+  'Release manager must run main() only when executed directly.'
+);
+for (const statement of [
+  '\n  validate_deployment_config\n',
+  '. "$PERMISSION_POLICY"',
+  "trap 'report_failure",
+  '\n  prepare_control_paths\n',
+  'exec 9>"$DEPLOY_LOCK"',
+  'case "$COMMAND" in',
+]) {
+  assert.ok(
+    release.indexOf(statement) > mainStart,
+    `Release manager must run this only from main(): ${statement.trim()}`
+  );
+}
+const failureTrapIndex = release.indexOf('\nrollback_on_failure() {');
+assert.ok(
+  failureTrapIndex >= 0 && failureTrapIndex < release.indexOf('\nactivate_release() {'),
+  'The activation failure trap must be a top-level function that tests can install.'
+);
+assert.equal(packageJson.scripts?.['test:deploy-entry'], 'bash scripts/test-deploy-release-entry.sh');
+for (const ciSource of [workflow, phpCi]) {
+  assert.ok(ciSource.includes('bash -n scripts/test-deploy-release-entry.sh'), 'CI must syntax-check the release-manager entry test.');
+  assert.ok(ciSource.includes('npm run test:deploy-entry'), 'CI must run the release-manager entry test.');
+}
+
 // ── Tooling: CI must gate the release policy itself ──
 assert.equal(packageJson.scripts?.['validate:release'], 'node scripts/validate-release-policy.mjs');
 assert.ok(workflow.includes('npm run validate:release'), 'Deploy must validate the release policy before build.');
