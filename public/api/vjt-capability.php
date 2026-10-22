@@ -88,7 +88,10 @@ if ($mode === 'analytics') {
 if (!kssmi_vjt_is_local_development_request()) {
     $_privateConfigPath = dirname(__DIR__, 2) . '/private_config.php';
     $_privateCfg = is_file($_privateConfigPath) ? require $_privateConfigPath : [];
-    $turnstileSecret = is_array($_privateCfg) ? ($_privateCfg['turnstile_secret'] ?? '') : '';
+    // VJT proofs come from their own Invisible widget, so they are verified
+    // with that widget's secret. There is deliberately no fallback to the
+    // inquiry form's secret: a missing value only disables statistics (503).
+    $turnstileSecret = is_array($_privateCfg) ? ($_privateCfg['vjt_turnstile_secret'] ?? '') : '';
     $turnstileToken = is_scalar($data['turnstile_token'] ?? null)
         ? (string)$data['turnstile_token'] : '';
     $turnstile = kssmi_vjt_verify_capability_turnstile($turnstileToken, $turnstileSecret);

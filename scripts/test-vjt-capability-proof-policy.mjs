@@ -6,12 +6,14 @@ import { fileURLToPath } from 'node:url';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const readText = (relativePath) => readFile(resolve(root, relativePath), 'utf8');
 
-const [issuer, auth, tracker, visitorTracker, packageJson] = await Promise.all([
+const [issuer, auth, tracker, visitorTracker, packageJson, deployWorkflow, formTurnstile] = await Promise.all([
   readText('public/api/vjt-capability.php'),
   readText('private/vjt-event-auth.php'),
   readText('public/js/vjt-tracker.js'),
   readText('src/components/VisitorTracker.astro'),
   readText('package.json'),
+  readText('.github/workflows/deploy.yml'),
+  readText('src/components/FormTurnstile.astro'),
 ]);
 
 const proofCheck = issuer.indexOf('kssmi_vjt_verify_capability_turnstile(');
@@ -38,6 +40,23 @@ assert.match(visitorTracker, /var next = proofQueue\.then\(obtainSingleProof\)/,
 assert.match(visitorTracker, /turnstile_token: token/, 'Contact Core capability issuance must submit the fresh proof.');
 assert.match(tracker, /function requestCapabilityProof\(/, 'Analytics tracker must require the browser proof.');
 assert.match(tracker, /turnstile_token: turnstileToken/, 'Analytics capability issuance must submit the fresh proof.');
+
+// VJT proofs use their own Invisible widget: separate site key and secret,
+// never the inquiry form's Managed pair (which can show a checkbox).
+assert.ok(visitorTracker.includes('import.meta.env.PUBLIC_VJT_TURNSTILE_SITE_KEY'), 'VJT proof widget must use the dedicated VJT site key.');
+assert.ok(!visitorTracker.includes('PUBLIC_TURNSTILE_SITE_KEY'), 'VJT proof widget must not fall back to the form site key.');
+assert.ok(issuer.includes("['vjt_turnstile_secret']"), 'Capability issuer must verify with the dedicated VJT secret.');
+assert.ok(!issuer.includes("['turnstile_secret']"), 'Capability issuer must not fall back to the form secret.');
+assert.ok(deployWorkflow.includes('PUBLIC_VJT_TURNSTILE_SITE_KEY: ${{ secrets.PUBLIC_VJT_TURNSTILE_SITE_KEY }}'), 'Deploy build must pass the VJT site key.');
+assert.ok(formTurnstile.includes('import.meta.env.PUBLIC_TURNSTILE_SITE_KEY'), 'Forms keep their own site key.');
+
+// A statistics proof must never wait on visitor interaction.
+for (const callback of ['before-interactive-callback', 'error-callback', 'unsupported-callback', 'timeout-callback']) {
+  assert.ok(visitorTracker.includes("'" + callback + "'"), 'VJT proof widget must end the attempt on ' + callback + '.');
+}
+assert.match(visitorTracker, /function destroyAttemptWidget\(proofAttempt\)[\s\S]*?turnstile\.remove\(proofAttempt\.widgetId\)/, 'Ending an attempt must remove its own widget, not just hide it.');
+assert.ok(visitorTracker.includes('navGeneration += 1;'), 'Navigation must void attempts from the previous page.');
+assert.ok(visitorTracker.includes('COOLDOWN_MS = 30 * 60 * 1000'), 'A failed proof must start the 30-minute cooldown.');
 
 const packageData = JSON.parse(packageJson);
 assert.equal(packageData.scripts?.['test:vjt-capability-proof'], 'node scripts/test-vjt-capability-proof-policy.mjs', 'Package must expose the VJT proof regression check.');

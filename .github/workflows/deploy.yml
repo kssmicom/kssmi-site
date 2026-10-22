@@ -117,6 +117,8 @@ jobs:
         run: npm run build
         env:
           PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.PUBLIC_TURNSTILE_SITE_KEY }}
+          # Separate Invisible widget for VJT capability proofs (forms keep the key above).
+          PUBLIC_VJT_TURNSTILE_SITE_KEY: ${{ secrets.PUBLIC_VJT_TURNSTILE_SITE_KEY }}
 
       - name: Verify built runtime asset manifest
         run: |

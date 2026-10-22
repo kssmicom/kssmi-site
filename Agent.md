@@ -202,8 +202,17 @@ included — the router swaps 404 responses too).
   page's widget, shows a localized retry button if the API cannot load, and
   ignores stale render attempts. Do not add `onTurnstileLoad` or a second
   `api.js` `<script>`.
-- VisitorTracker's invisible `vjt_capability` widget is separate (own instance
-  and proof queue) and only shares the loader.
+- VisitorTracker's `vjt_capability` widget is separate (own instance and proof
+  queue) and only shares the loader. It uses its **own Invisible-mode key
+  pair**: `PUBLIC_VJT_TURNSTILE_SITE_KEY` (GitHub secret → build) and
+  `vjt_turnstile_secret` (server `private_config.php`). Forms keep
+  `PUBLIC_TURNSTILE_SITE_KEY` / `turnstile_secret`. Never fall back from one
+  pair to the other; a missing VJT key or secret only disables statistics.
+- A VJT proof must never ask the visitor to interact. On
+  `before-interactive-callback`, error, unsupported, timeout callbacks or the
+  15 s timeout the attempt is ended (widget removed, late callbacks ignored)
+  and the tab stops requesting proofs for 30 minutes (sessionStorage
+  `kssmi_vjt_proof_cooldown_until`).
 - `astro dev` disables Turnstile entirely; verify with a build. Use Cloudflare
   test sitekeys (`1x00000000000000000000AA` always passes) on localhost — the
   production key fails there with error 110200.
