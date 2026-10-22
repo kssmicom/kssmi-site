@@ -736,11 +736,14 @@ const isDev = import.meta.env.DEV;
     if (turnstileErrorContainer) turnstileErrorContainer.classList.add('hidden');
   }
 
-  function removeVjtContextWithoutCurrentConsent(formData) {
+  function removeVjtContextWithoutCurrentConsent(formData, form) {
+    // Attribution is kept only if the form was patched under the consent
+    // cycle that is still current. Otherwise only the vjt_* fields are
+    // dropped; the inquiry itself is always sent.
     let analyticsAllowed = false;
     try {
-      const consent = JSON.parse(localStorage.getItem('cookie-consent'));
-      analyticsAllowed = !!(consent && consent.analytics === true);
+      const cycle = window.__kssmiConsent && window.__kssmiConsent.trackingCycle();
+      analyticsAllowed = !!cycle && !!form && form.dataset.vjtCycle === cycle;
     } catch (_) {}
     if (analyticsAllowed) return;
     [
@@ -886,7 +889,7 @@ const isDev = import.meta.env.DEV;
       if (submissionEventId) formData.set('vjt_submission_event_id', submissionEventId);
       // A form may have been patched while consent was granted and submitted
       // after withdrawal. Re-check live consent at the final request boundary.
-      removeVjtContextWithoutCurrentConsent(formData);
+      removeVjtContextWithoutCurrentConsent(formData, newForm);
       if (!isDev && token) {
         formData.append('cf-turnstile-response', token);
       }

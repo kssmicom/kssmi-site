@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
@@ -86,6 +86,44 @@ assert(
 assert(
   !inquiryFormLoader.includes('fetch(') && !inquiryFormLoader.includes('innerHTML'),
   'Inquiry form loader must not use a second request or dynamic HTML injection.',
+);
+
+// The consent record is changed only by ConsentController's locked write
+// protocol. A direct write elsewhere could revive a withdrawn consent cycle or
+// overwrite another tab's newer choice.
+const consentWriter = 'src/components/ConsentController.astro';
+const directConsentWrite = /setItem\(\s*['"]cookie-consent['"]|setItem\(\s*(?:KEY|STORAGE_KEY)\b/;
+const scanned = [];
+(function scan(relativeDir) {
+  for (const name of readdirSync(path.join(root, relativeDir))) {
+    const relativePath = path.posix.join(relativeDir, name);
+    if (statSync(path.join(root, relativePath)).isDirectory()) {
+      if (!['node_modules', 'media', 'pagefind'].includes(name)) scan(relativePath);
+    } else if (/\.(astro|js|mjs|ts)$/.test(name)) {
+      scanned.push(relativePath);
+    }
+  }
+})('src');
+(function scanPublic(relativeDir) {
+  for (const name of readdirSync(path.join(root, relativeDir))) {
+    const relativePath = path.posix.join(relativeDir, name);
+    if (statSync(path.join(root, relativePath)).isDirectory()) {
+      if (!['media', 'pagefind', 'assets'].includes(name)) scanPublic(relativePath);
+    } else if (/\.js$/.test(name)) {
+      scanned.push(relativePath);
+    }
+  }
+})('public');
+for (const relativePath of scanned) {
+  if (relativePath === consentWriter) continue;
+  assert(
+    !directConsentWrite.test(read(relativePath)),
+    `${relativePath} writes the consent record directly; use window.__kssmiConsent.set() (ConsentController).`,
+  );
+}
+assert(
+  read(consentWriter).includes("locks.request(LOCK_STATE, { mode: 'exclusive' }"),
+  'ConsentController must write the consent record inside the exclusive state lock.',
 );
 
 if (failures.length) {

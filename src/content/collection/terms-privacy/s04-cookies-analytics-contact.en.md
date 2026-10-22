@@ -42,7 +42,7 @@ With analytics consent, VJT may use a first-party visitor identifier and a short
 - scroll and engagement measurements; and
 - inquiry or contact-event attribution.
 
-The analytics journey must remain disabled until the visitor grants analytics consent. If consent is withdrawn, subsequent analytics collection must stop and VJT identifiers stored in the browser must be removed in accordance with the implemented withdrawal process.
+The analytics journey must remain disabled until the visitor grants analytics consent. Each grant starts a new consent cycle, and VJT identifiers are not continued from one cycle to the next. When consent is withdrawn, the website stops new analytics collection and identifier issuance in the browser, removes VJT values from browser storage, and asks the server to expire the HttpOnly identity cookie. That deletion is retried a limited number of times and can fail, for example when the browser is offline or the request is blocked; an identity cookie that remains is not used to continue the earlier journey and is replaced if consent is granted again. Data already sent before the withdrawal may still be received. Identifiers created before consent cycles were introduced are replaced once. Browsers that lack the features needed to coordinate consent across tabs do not use VJT.
 
 ### 3. Advertising and third-party analytics
 
@@ -57,13 +57,15 @@ The principal browser-storage items used by the website are listed below. Third-
 | `cookie-consent` | Kssmi | Remember the visitor's necessary, analytics and advertising choices | Necessary | Until the choice is changed or browser storage is cleared | Local storage |
 | `vjt_visitor_id` | Kssmi | Associate consented visits with a visitor journey | Analytics | Cookie: up to approximately 365 days; local storage: until consent is withdrawn or browser storage is cleared | Cookie and local storage |
 | `vjt_session_id` | Kssmi | Associate consented page events within a session | Analytics | Approximately 30 minutes | Cookie |
+| `KSSMI_VJT_IDENTITY` | Kssmi | Signed server identity that links consented visits within one consent cycle; not readable by page scripts | Analytics | Up to approximately 365 days; expired after withdrawal where the browser allows | Cookie (HttpOnly) |
+| `KSSMI_VJT_CONTACT` | Kssmi | Short-lived signed session that protects contact-event statistics against forged events; contains a random value, not a VJT identifier, and is set without analytics consent | Contact-event security | Approximately 30 minutes, renewed while the visitor browses | Cookie (HttpOnly) |
 | Google or other configured third-party identifiers | Relevant provider | Consent-based analytics, measurement or advertising | Analytics or advertising | Varies by provider and configuration; see the relevant provider's information | Cookie or similar technology |
 
 The cookie inventory, consent banner and live implementation must agree. Renaming a tracker or moving an identifier from a cookie to local storage does not by itself make the technology consent-exempt.
 
 ### 5. Changing consent choices
 
-Visitors must be able to reopen Cookie Settings and change or withdraw analytics and advertising consent as easily as it was given. Withdrawal does not affect processing that was lawful before withdrawal.
+Visitors must be able to reopen Cookie Settings and change or withdraw analytics and advertising consent as easily as it was given. Withdrawal does not affect processing that was lawful before withdrawal. After a choice has been made, a Cookie Settings button remains available on every page.
 
 ### 6. Anonymous page-view counting
 Separately from the consent-based analytics described above, the website counts page views in an aggregated form: for each calendar day (Beijing time) and page path it stores only the total number of views. This count table uses no cookies, no browser storage and no visitor or session identifiers, and it does not contain IP addresses, user agents, referrers or individual visit timestamps. Rate limiting, bot filtering and server logs are separate security operations described in their own sections; they are not part of this aggregate table. The server may separately read a signed administrator-exclusion marker to avoid counting admin traffic; that marker is not stored in the anonymous aggregate table.

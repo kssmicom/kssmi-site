@@ -151,6 +151,67 @@ try {
     kssmi_vjt_auth_assert($rotated['visitor_id'] === $identity['visitor_id'], 'session rotation preserves visitor ID');
     kssmi_vjt_auth_assert($rotated['session_id'] !== $identity['session_id'], 'session rotation issues a new session ID');
 
+    // ── Consent cycles: identities never continue across cycles ──
+    $cookieBeforeCycles = $_COOKIE[KSSMI_VJT_IDENTITY_COOKIE];
+    $cycleA = str_repeat('A', 22);
+    $cycleB = str_repeat('B', 22);
+    kssmi_vjt_auth_assert(kssmi_vjt_is_consent_cycle($cycleA), '22-char base64url consent cycle is valid');
+    foreach (['', str_repeat('A', 21), str_repeat('A', 23), str_repeat('A', 21) . '+', null, 123] as $badCycle) {
+        kssmi_vjt_auth_assert(!kssmi_vjt_is_consent_cycle($badCycle), 'malformed consent cycle is rejected');
+    }
+    $threw = false;
+    try {
+        kssmi_vjt_bootstrap_identity(false, 1800, $now + 3, false, 'short');
+    } catch (InvalidArgumentException $e) {
+        $threw = true;
+    }
+    kssmi_vjt_auth_assert($threw, 'bootstrap refuses a malformed consent cycle');
+
+    // A legacy identity (no cyc claim) is replaced once a cycle is supplied.
+    $inCycleA = kssmi_vjt_bootstrap_identity(false, 1800, $now + 3, false, $cycleA);
+    kssmi_vjt_auth_assert($inCycleA['visitor_id'] !== $rotated['visitor_id'], 'legacy identity is not continued into a consent cycle');
+    kssmi_vjt_auth_assert($inCycleA['session_id'] !== $rotated['session_id'], 'legacy identity session is replaced');
+    kssmi_vjt_auth_assert(($inCycleA['cyc'] ?? null) === $cycleA, 'cycle-bound identity carries its cycle');
+
+    $_COOKIE[KSSMI_VJT_IDENTITY_COOKIE] = $inCycleA['token'];
+    $sameCycle = kssmi_vjt_bootstrap_identity(false, 1800, $now + 4, false, $cycleA);
+    kssmi_vjt_auth_assert($sameCycle['visitor_id'] === $inCycleA['visitor_id'], 'same consent cycle preserves visitor ID');
+    kssmi_vjt_auth_assert($sameCycle['session_id'] === $inCycleA['session_id'], 'same consent cycle preserves active session');
+
+    $_COOKIE[KSSMI_VJT_IDENTITY_COOKIE] = $sameCycle['token'];
+    $inCycleB = kssmi_vjt_bootstrap_identity(false, 1800, $now + 5, false, $cycleB);
+    kssmi_vjt_auth_assert($inCycleB['visitor_id'] !== $inCycleA['visitor_id'], 'new consent cycle issues a new visitor ID');
+    kssmi_vjt_auth_assert($inCycleB['session_id'] !== $inCycleA['session_id'], 'new consent cycle issues a new session ID');
+    kssmi_vjt_auth_assert(($inCycleB['cyc'] ?? null) === $cycleB, 'new identity is bound to the new cycle');
+
+    // A revived cycle-A cookie (late response) must not be reused by cycle B.
+    $_COOKIE[KSSMI_VJT_IDENTITY_COOKIE] = $sameCycle['token'];
+    $afterRevival = kssmi_vjt_bootstrap_identity(false, 1800, $now + 6, false, $cycleB);
+    kssmi_vjt_auth_assert($afterRevival['visitor_id'] !== $inCycleA['visitor_id'], 'revived old-cycle cookie is never continued');
+
+    // Without a cycle argument, existing callers keep their behavior.
+    $_COOKIE[KSSMI_VJT_IDENTITY_COOKIE] = $inCycleB['token'];
+    $noCycleArg = kssmi_vjt_bootstrap_identity(false, 1800, $now + 7, false);
+    kssmi_vjt_auth_assert($noCycleArg['visitor_id'] === $inCycleB['visitor_id'], 'cycle-less call keeps the existing visitor');
+    $_COOKIE[KSSMI_VJT_IDENTITY_COOKIE] = $cookieBeforeCycles;
+
+    $capabilityIssuer = kssmi_vjt_auth_source('public/api/vjt-capability.php');
+    kssmi_vjt_auth_assert_order($capabilityIssuer, [
+        "kssmi_vjt_is_consent_cycle(\$consentCycle)",
+        'kssmi_vjt_verify_capability_turnstile(',
+        'consentCycle: $consentCycle',
+        "'consent_cycle' => \$consentCycle",
+    ], 'Capability issuer');
+
+    $forgetSource = kssmi_vjt_auth_source('public/api/vjt-forget.php');
+    kssmi_vjt_auth_assert_order($forgetSource, [
+        "header('Cache-Control: no-store, private', true);",
+        'kssmi_vjt_same_site_issuance_request()',
+        "checkRateLimit('vjt-forget'",
+        'kssmi_vjt_clear_private_cookie(KSSMI_VJT_IDENTITY_COOKIE);',
+    ], 'Forget endpoint');
+    kssmi_vjt_auth_assert(strpos($forgetSource, 'kssmi_vjt_bootstrap') === false, 'forget endpoint never issues an identity');
+
     $binding = [
         'visitor_id' => $rotated['visitor_id'],
         'session_id' => $rotated['session_id'],

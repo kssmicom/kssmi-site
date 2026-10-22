@@ -43,6 +43,11 @@
   var identityReady = false;
   var initPromise = null;
   var initPromiseUrl = '';
+  // Consent cycle (see ConsentController.astro) under which serverIdentity was
+  // adopted. Identity, capabilities and stored session context are only used
+  // while it still equals the persisted current cycle.
+  var adoptedCycle = null;
+  var IDENTITY_REQUEST_TIMEOUT_MS = 30000;
 
   function newTrackingId(prefix) {
     try {
@@ -148,6 +153,46 @@
     try { writeStorage(key, JSON.stringify(val)); } catch (e) {}
   }
 
+  function removeStorage(key) {
+    try { window.localStorage.removeItem(key); } catch (e) {}
+  }
+
+  function currentCycle() {
+    var api = window.__kssmiConsent;
+    return api && typeof api.trackingCycle === 'function' ? api.trackingCycle() : null;
+  }
+
+  function scopeCycle() {
+    return adoptedCycle || currentCycle();
+  }
+
+  function cycleIsCurrent() {
+    return !!adoptedCycle && adoptedCycle === currentCycle();
+  }
+
+  // VJT storage keys hold {c: cycle, v: value}. Values from before consent
+  // cycles existed, or from another cycle, read as absent: they never carry
+  // attribution into a new cycle. Only data that is stale relative to the
+  // persisted current cycle is deleted, so another tab's newer cycle survives.
+  function readScoped(key) {
+    var raw = readJson(key);
+    if (raw === null) {
+      if (readStorage(key) !== null) removeStorage(key); // legacy plain string
+      return null;
+    }
+    var valid = !!raw && typeof raw === 'object' && !Array.isArray(raw) &&
+      typeof raw.c === 'string' && Object.prototype.hasOwnProperty.call(raw, 'v');
+    if (valid && raw.c === scopeCycle()) return raw.v;
+    if (!valid || raw.c !== currentCycle()) removeStorage(key);
+    return null;
+  }
+
+  function writeScoped(key, value) {
+    var cycle = scopeCycle();
+    if (!cycle) return;
+    writeJson(key, { c: cycle, v: value });
+  }
+
   function setCookie(name, val, seconds) {
     document.cookie =
       name + '=' + encodeURIComponent(val) +
@@ -244,22 +289,22 @@
     // the signed HttpOnly identity cookie and matching capability bundle.
     if (!identityReady || !serverIdentity) return '';
     var id = serverIdentity.visitorId;
-    writeStorage(VISITOR_KEY, id);
+    writeScoped(VISITOR_KEY, id);
     setCookie('vjt_visitor_id', id, cfg.cookieExpires || 31536000);
     return id;
   }
 
   function readPath() {
-    var p = readJson(PATH_KEY);
+    var p = readScoped(PATH_KEY);
     return Array.isArray(p) ? p : [];
   }
 
   function writePath(p) {
-    try { writeJson(PATH_KEY, Array.isArray(p) ? p.slice(-20) : []); } catch (e) {}
+    try { writeScoped(PATH_KEY, Array.isArray(p) ? p.slice(-20) : []); } catch (e) {}
   }
 
   function sessionNeedsRotation() {
-    var session    = readJson(SESSION_KEY);
+    var session    = readScoped(SESSION_KEY);
     var now        = Date.now();
     var timeoutMs  = (cfg.sessionTimeout || 30) * 60 * 1000;
     var expired    = !session || !session.lastActivity || (now - session.lastActivity > timeoutMs);
@@ -275,7 +320,7 @@
 
   function getSession(deviceInfo, forceNewMetadata) {
     if (!identityReady || !serverIdentity) return null;
-    var session    = readJson(SESSION_KEY);
+    var session    = readScoped(SESSION_KEY);
     var previous   = session;
     var now        = Date.now();
     var utm        = extractUtm();
@@ -321,7 +366,7 @@
     session.id = serverIdentity.sessionId;
     session.lastActivity = now;
 
-    writeJson(SESSION_KEY, session);
+    writeScoped(SESSION_KEY, session);
     setCookie('vjt_session_id', session.id, (cfg.sessionTimeout || 30) * 60);
     return session;
   }
@@ -330,7 +375,7 @@
     if (!identityReady || !serverIdentity || !session) return;
     session.id = serverIdentity.sessionId;
     session.lastActivity = Date.now();
-    writeJson(SESSION_KEY, session);
+    writeScoped(SESSION_KEY, session);
     setCookie('vjt_session_id', session.id, (cfg.sessionTimeout || 30) * 60);
   }
 
@@ -346,6 +391,7 @@
     clearCapabilityPools();
     serverIdentity = null;
     identityReady = false;
+    adoptedCycle = null;
     if (heartbeatTimer) clearInterval(heartbeatTimer);
     heartbeatTimer = null;
     window.__vjtInitializedUrl = '';
@@ -381,16 +427,16 @@
   }
 
   function persistServerIdentity(visitorId, sessionId) {
-    writeStorage(VISITOR_KEY, visitorId);
+    writeScoped(VISITOR_KEY, visitorId);
     setCookie('vjt_visitor_id', visitorId, cfg.cookieExpires || 31536000);
     setCookie('vjt_session_id', sessionId, (cfg.sessionTimeout || 30) * 60);
 
     // Overwrite an old client-generated session ID immediately. getSession()
     // will rebuild attribution metadata before anything is patched or sent.
-    var storedSession = readJson(SESSION_KEY);
+    var storedSession = readScoped(SESSION_KEY);
     if (storedSession) {
       storedSession.id = sessionId;
-      writeJson(SESSION_KEY, storedSession);
+      writeScoped(SESSION_KEY, storedSession);
     }
   }
 
@@ -412,25 +458,54 @@
     }
 
     var requestEpoch = capabilityEpoch;
+    var requestCycle = currentCycle();
+    var api = window.__kssmiConsent;
+    function superseded() {
+      var supersededError = new Error('VJT capability request superseded');
+      supersededError.vjtSuperseded = true;
+      return supersededError;
+    }
+    function stillCurrent() {
+      return cfg.enabled && requestEpoch === capabilityEpoch && !!requestCycle &&
+        currentCycle() === requestCycle;
+    }
+    if (!requestCycle || !api || typeof api.withIdentityLock !== 'function') {
+      return Promise.reject(superseded());
+    }
     return requestCapabilityProof().then(function (turnstileToken) {
-      return fetch(cfg.routes.capability, {
-        method      : 'POST',
-        credentials : 'include',
-        headers     : { 'Content-Type': 'application/json' },
-        body        : JSON.stringify({
-          mode: 'analytics',
-          rotate_session: !!rotateSession,
-          turnstile_token: turnstileToken
-        })
+      // The identity lock keeps issuance and withdrawal cleanup (forget) from
+      // overlapping in this browser: the whole request, including the
+      // Set-Cookie and body, completes before a queued forget may run.
+      return api.withIdentityLock(function () {
+        if (!stillCurrent()) throw superseded();
+        var controller = typeof AbortController === 'function' ? new AbortController() : null;
+        var timer = controller ? setTimeout(function () { controller.abort(); }, IDENTITY_REQUEST_TIMEOUT_MS) : 0;
+        return fetch(cfg.routes.capability, {
+          method      : 'POST',
+          credentials : 'include',
+          headers     : { 'Content-Type': 'application/json' },
+          signal      : controller ? controller.signal : undefined,
+          body        : JSON.stringify({
+            mode: 'analytics',
+            consent_cycle: requestCycle,
+            rotate_session: !!rotateSession,
+            turnstile_token: turnstileToken
+          })
+        }).then(function (response) {
+          if (!response.ok) throw new Error('VJT capability request failed');
+          return response.json();
+        }).then(function (data) {
+          if (timer) clearTimeout(timer);
+          return data;
+        }, function (error) {
+          if (timer) clearTimeout(timer);
+          throw error;
+        });
       });
-    }).then(function (response) {
-      if (!response.ok) throw new Error('VJT capability request failed');
-      return response.json();
     }).then(function (data) {
-      if (!cfg.enabled || requestEpoch !== capabilityEpoch) {
-        var supersededError = new Error('VJT capability request superseded');
-        supersededError.vjtSuperseded = true;
-        throw supersededError;
+      // Adopt only a response for the cycle that is still current.
+      if (!stillCurrent() || !data || data.consent_cycle !== requestCycle) {
+        throw superseded();
       }
       var capabilities = data && data.capabilities;
       var visitorId = data && data.visitor_id;
@@ -447,12 +522,14 @@
       }
 
       var identityChanged = !!serverIdentity &&
-        (serverIdentity.visitorId !== visitorId || serverIdentity.sessionId !== sessionId);
+        (adoptedCycle !== requestCycle ||
+         serverIdentity.visitorId !== visitorId || serverIdentity.sessionId !== sessionId);
       var refillIdentityChanged = identityChanged && !allowIdentityChange;
 
-      var storedSession = readJson(SESSION_KEY);
-      var localSessionChanged = !storedSession || storedSession.id !== sessionId;
       if (!serverIdentity || identityChanged) clearCapabilityPools();
+      adoptedCycle = requestCycle;
+      var storedSession = readScoped(SESSION_KEY);
+      var localSessionChanged = !storedSession || storedSession.id !== sessionId;
       serverIdentity = { visitorId: visitorId, sessionId: sessionId };
       identityReady = true;
       persistServerIdentity(visitorId, sessionId);
@@ -552,7 +629,7 @@
   }
 
   function sendPageviewWithToken(url, payload, token, useBeacon) {
-    if (!payloadMatchesServerIdentity(payload)) return false;
+    if (!cycleIsCurrent() || !payloadMatchesServerIdentity(payload)) return false;
     var securedPayload = payloadWithCapability(payload, token);
     if (useBeacon && navigator.sendBeacon) {
       try {
@@ -575,6 +652,12 @@
     // registered. Re-check at the single network boundary so no later
     // heartbeat, leave event or conversion intent can escape after withdrawal.
     if (!cfg.enabled || !identityReady || !url) return false;
+    // Re-read the persisted consent cycle: another tab may have withdrawn and
+    // granted again (new cycle) without this tab seeing a storage event yet.
+    if (!cycleIsCurrent()) {
+      invalidateServerIdentity();
+      return false;
+    }
 
     // Unload paths cannot wait for the network. They use one already-issued
     // token and fail closed when the pageview pool is empty.
@@ -592,7 +675,7 @@
   // after a WhatsApp/mail click, so keeping the event ID locally makes a later
   // retry safe without recording the same click twice.
   function pendingConversions() {
-    var items = readJson(CONVERSION_QUEUE_KEY);
+    var items = readScoped(CONVERSION_QUEUE_KEY);
     if (!Array.isArray(items)) return [];
     var cutoff = Date.now() - PENDING_CONVERSION_TTL_MS;
     return items.filter(function (item) {
@@ -601,7 +684,7 @@
   }
 
   function savePendingConversions(items) {
-    writeJson(CONVERSION_QUEUE_KEY, Array.isArray(items) ? items.slice(-MAX_PENDING_CONVERSIONS) : []);
+    writeScoped(CONVERSION_QUEUE_KEY, Array.isArray(items) ? items.slice(-MAX_PENDING_CONVERSIONS) : []);
   }
 
   function queueConversion(payload) {
@@ -621,11 +704,15 @@
 
   function deliverConversion(payload) {
     if (!cfg.enabled || !identityReady || !cfg.routes || !cfg.routes.submission) return Promise.resolve('retry');
+    // Queued events belong to the cycle that created them; the queue itself is
+    // cycle-scoped, so a mismatch here means the event is from an old cycle.
+    if (!cycleIsCurrent()) return Promise.resolve('drop');
     try {
       // Acquire inside every delivery attempt: queued payloads never contain a
       // token, and each retry consumes a newly issued submission capability.
       return acquireCapability('submission').then(function (token) {
         if (!token || !identityReady || !serverIdentity) return 'retry';
+        if (!cycleIsCurrent()) return 'drop';
         // A refill may rotate an expired server session. Never relabel a queued
         // browser event as belonging to that new identity: the form fields and
         // canonical mail outcome still describe the identity captured when the
@@ -718,16 +805,19 @@
   }
 
   function patchForms(visitorId, session) {
-    if (!identityReady || !visitorId || !session) return;
+    if (!identityReady || !visitorId || !session || !cycleIsCurrent()) return;
     var forms = document.querySelectorAll('form');
     if (!forms.length) return; // nothing to patch — skip the localStorage/JSON work
-    var pageview = readJson(PAGE_KEY);
+    var pageview = readScoped(PAGE_KEY);
     var snapshot = JSON.stringify(buildPathSnapshot(pageview));
     var attrReferrer = session.originalReferrer || session.referrer || '';
     var pageUrl = cleanUrl(cfg.page.url); // hoisted: same for every form
     forms.forEach(function (form) {
       // Skip GET forms — hidden fields would pollute the URL
       if ((form.method || '').toUpperCase() === 'GET') return;
+      // Marks which consent cycle these fields belong to; ConsentController
+      // and InquiryForm strip fields from any other cycle.
+      form.dataset.vjtCycle = adoptedCycle;
       ensureHidden(form, hiddenNames[0], visitorId);
       ensureHidden(form, hiddenNames[1], session.id);
       ensureHidden(form, hiddenNames[2], pageUrl);
@@ -775,7 +865,7 @@
       created_at_ms     : Date.now()
     };
 
-    writeJson(PAGE_KEY, pv);
+    writeScoped(PAGE_KEY, pv);
     var path = readPath();
     path.push(pv);
     writePath(path);
@@ -817,7 +907,7 @@
   }
 
   function flushPageview(reason) {
-    var pageview = readJson(PAGE_KEY);
+    var pageview = readScoped(PAGE_KEY);
     if (!pageview) return;
 
     var leaveMs = Date.now();
@@ -826,7 +916,7 @@
     maxScrollDepth             = Math.max(maxScrollDepth, calcScrollDepth());
     updateActivityMetrics(pageview, leaveMs, false);
 
-    writeJson(PAGE_KEY, pageview);
+    writeScoped(PAGE_KEY, pageview);
 
     var path = readPath().map(function (item) {
       if (item.session_id === pageview.session_id &&
@@ -849,11 +939,11 @@
   }
 
   function sendHeartbeat() {
-    var pageview = readJson(PAGE_KEY);
+    var pageview = readScoped(PAGE_KEY);
     if (!pageview || document.visibilityState !== 'visible' || !lastActivityAtMs || (Date.now() - lastActivityAtMs) > ACTIVE_WINDOW_MS) return;
     maxScrollDepth = Math.max(maxScrollDepth, calcScrollDepth());
     updateActivityMetrics(pageview, Date.now(), true);
-    writeJson(PAGE_KEY, pageview);
+    writeScoped(PAGE_KEY, pageview);
     var payload = {};
     Object.keys(pageview).forEach(function (key) { payload[key] = pageview[key]; });
     payload.leave_at = '';
@@ -902,11 +992,12 @@
 
   function trackSubmissionAttempt(form, requestedEventId) {
     if (!cfg.enabled || !identityReady || !serverIdentity || !form || form.tagName.toLowerCase() !== 'form' || isSearchForm(form)) return '';
+    if (!cycleIsCurrent()) return '';
 
     var visitorId = getVisitorId();
     var session  = getSession(_deviceInfo);
     if (!visitorId || !session) return '';
-    var pageview = readJson(PAGE_KEY);
+    var pageview = readScoped(PAGE_KEY);
     var snapshot = buildPathSnapshot(pageview);
     patchForms(visitorId, session);
 
@@ -1245,12 +1336,19 @@
     return trackSubmissionAttempt(form, '');
   };
 
-  window.addEventListener('vjt:consent-withdrawn', function () {
+  function stopForConsentChange() {
     invalidateServerIdentity();
     initPromise = null;
     initPromiseUrl = '';
     flushed = true;
     window.__vjtInitializedUrl = '';
+  }
+
+  window.addEventListener('vjt:consent-withdrawn', stopForConsentChange);
+  // Another tab changed the record (e.g. withdrew and granted again): an
+  // identity from an older cycle must not be used for the new one.
+  window.addEventListener('kssmi:consent-changed', function () {
+    if (adoptedCycle && adoptedCycle !== currentCycle()) stopForConsentChange();
   });
 
   // Bootstrap — first load

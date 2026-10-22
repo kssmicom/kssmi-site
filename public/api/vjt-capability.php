@@ -69,6 +69,18 @@ if (!in_array($mode, ['analytics', 'contact'], true)) {
     exit;
 }
 
+// Analytics identities belong to the browser's current consent cycle. A
+// request without one cannot be bound to a cycle and is refused outright.
+$consentCycle = null;
+if ($mode === 'analytics') {
+    $consentCycle = $data['consent_cycle'] ?? null;
+    if (!kssmi_vjt_is_consent_cycle($consentCycle)) {
+        http_response_code(400);
+        echo json_encode(['success' => false, 'error' => 'Invalid consent cycle']);
+        exit;
+    }
+}
+
 // CORS and Fetch Metadata only constrain cooperative browsers. Every public
 // caller must also present a fresh, server-verified Turnstile proof before we
 // mint a signed cookie or a capability; localhost development is the sole
@@ -108,9 +120,14 @@ try {
     $settings = vjt_get_settings();
     $sessionLifetime = min(120, max(5, (int)($settings['session_timeout'] ?? 30))) * 60;
     $rotateSession = ($data['rotate_session'] ?? false) === true;
-    $identity = kssmi_vjt_bootstrap_identity($rotateSession, $sessionLifetime);
+    $identity = kssmi_vjt_bootstrap_identity(
+        $rotateSession,
+        $sessionLifetime,
+        consentCycle: $consentCycle
+    );
     echo json_encode([
         'success' => true,
+        'consent_cycle' => $consentCycle,
         'visitor_id' => $identity['visitor_id'],
         'session_id' => $identity['session_id'],
         'heartbeat_seconds' => min(120, max(30, (int)($settings['heartbeat_seconds'] ?? 45))),

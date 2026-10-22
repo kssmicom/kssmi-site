@@ -4,6 +4,7 @@ import { ClientRouter } from 'astro:transitions';
 import { getTranslations, type Translations } from '../translations';
 import VisitorTracker from '../components/VisitorTracker.astro';
 import TurnstileApiLoader from '../components/TurnstileApiLoader.astro';
+import ConsentController from '../components/ConsentController.astro';
 import { runtimeAssetUrl } from '../config/runtimeAssets.mjs';
 
 // Props
@@ -151,6 +152,10 @@ const websiteSchema = {
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="apple-touch-icon" href="/favicon.svg" />
   <link rel="manifest" href="/manifest.json" />
+
+  <!-- Single owner of the consent record (write protocol, VJT consent cycles,
+       withdrawal cleanup, settings button). Must run before VisitorTracker. -->
+  <ConsentController />
 
   <!-- Google Tag Manager (loads on user interaction — never blocks critical path) -->
   <!-- Google Consent Mode v2 — default: denied (no ads yet). When Google Ads enabled, update via cookie banner. -->

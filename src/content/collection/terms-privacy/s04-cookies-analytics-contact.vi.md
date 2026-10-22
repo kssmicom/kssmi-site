@@ -42,7 +42,7 @@ Với sự đồng ý về phân tích, VJT có thể sử dụng mã định da
 - các số đo về thao tác cuộn và mức độ tương tác; và
 - phân bổ yêu cầu hoặc sự kiện liên hệ.
 
-Hành trình phân tích phải luôn bị tắt cho đến khi khách truy cập cấp quyền đồng ý phân tích. Nếu rút lại sự đồng ý, việc thu thập số liệu phân tích sau đó phải dừng lại và các mã định danh VJT được lưu trữ trong trình duyệt phải bị xóa theo quy trình rút lại đã được thực hiện.
+Hành trình phân tích phải luôn bị tắt cho đến khi khách truy cập đồng ý cho phân tích. Mỗi lần đồng ý bắt đầu một chu kỳ đồng ý mới, và mã định danh VJT không được chuyển từ chu kỳ này sang chu kỳ sau. Khi rút lại sự đồng ý, trang web dừng việc thu thập phân tích mới và cấp mã định danh trong trình duyệt, xóa các giá trị VJT khỏi bộ nhớ trình duyệt và yêu cầu máy chủ cho cookie danh tính HttpOnly hết hạn. Việc xóa này được thử lại một số lần giới hạn và có thể thất bại, chẳng hạn khi trình duyệt ngoại tuyến hoặc yêu cầu bị chặn; cookie danh tính còn sót lại không được dùng để tiếp tục hành trình trước đó và sẽ được thay thế nếu đồng ý lại. Dữ liệu đã gửi trước khi rút lại vẫn có thể được nhận. Các mã định danh được tạo trước khi áp dụng chu kỳ đồng ý sẽ được thay thế một lần. Các trình duyệt không có tính năng cần thiết để phối hợp sự đồng ý giữa các thẻ sẽ không sử dụng VJT.
 
 ### 3. Quảng cáo và phân tích của bên thứ ba
 
@@ -57,13 +57,15 @@ Các thời hạn và tiêu chí sau áp dụng cho những hệ thống trang w
 | `cookie-consent` | Kssmi | Ghi nhớ các lựa chọn quảng cáo và phân tích của khách truy cập | Cần thiết | Cho đến khi lựa chọn được thay đổi hoặc bộ nhớ trình duyệt bị xóa | Local storage |
 | `vjt_visitor_id` | Kssmi | Liên kết các lượt truy cập đã được đồng ý với hành trình của khách truy cập | Phân tích | Cookie: up to about 365 days; local copy: Cho đến khi rút lại sự đồng ý phân tích hoặc xóa bộ nhớ trình duyệt | Cookie và bộ nhớ cục bộ |
 | `vjt_session_id` | Kssmi | Liên kết các sự kiện trang đã được đồng ý trong một phiên | Phân tích | About 30 minutes | Cookie |
+| `KSSMI_VJT_IDENTITY` | Kssmi | Danh tính máy chủ có chữ ký, liên kết các lượt truy cập đã đồng ý trong một chu kỳ đồng ý; tập lệnh của trang không đọc được | Phân tích | Tối đa khoảng 365 ngày; hết hạn sau khi rút lại nếu trình duyệt cho phép | Cookie (HttpOnly) |
+| `KSSMI_VJT_CONTACT` | Kssmi | Phiên có chữ ký ngắn hạn, bảo vệ thống kê sự kiện liên hệ khỏi sự kiện giả mạo; chứa giá trị ngẫu nhiên, không phải mã định danh VJT, và được đặt khi chưa có sự đồng ý phân tích | Bảo mật sự kiện liên hệ | Khoảng 30 phút, gia hạn trong khi duyệt | Cookie (HttpOnly) |
 | Các mã định danh của Google/bên thứ ba khác | Google / relevant third party | Phân tích hoặc quảng cáo | Phân tích/quảng cáo | Thay đổi tùy theo nhà cung cấp và cấu hình | Cookie hoặc công nghệ tương tự |
 
 Hệ thống lưu trữ cookie, biểu ngữ đồng ý và quá trình triển khai trực tiếp phải thống nhất với nhau. Việc đổi tên trình theo dõi hoặc di chuyển mã định danh từ cookie sang bộ nhớ cục bộ không có nghĩa là công nghệ đó được miễn trừ việc cần sự đồng ý.
 
 ### 5. Thay đổi các lựa chọn đồng ý
 
-Khách truy cập phải có thể mở lại Cài đặt Cookie và thay đổi hoặc rút lại sự đồng ý về quảng cáo và phân tích một cách dễ dàng như khi họ đã cấp quyền đó. Việc rút lại không ảnh hưởng đến quá trình xử lý hợp pháp trước khi rút lại.
+Khách truy cập phải có thể mở lại Cài đặt Cookie và thay đổi hoặc rút lại sự đồng ý về quảng cáo và phân tích một cách dễ dàng như khi họ đã cấp quyền đó. Việc rút lại không ảnh hưởng đến quá trình xử lý hợp pháp trước khi rút lại. Sau khi đã chọn, nút Cài đặt Cookie vẫn có sẵn trên mọi trang.
 
 ### 6. Đếm lượt xem trang ẩn danh
 Tách biệt với phân tích dựa trên sự đồng ý được mô tả ở trên, trang web đếm lượt xem trang dưới dạng tổng hợp: với mỗi ngày dương lịch (theo giờ Bắc Kinh) và đường dẫn trang, chỉ lưu tổng số lượt xem. Bảng đếm này không sử dụng cookie, bộ nhớ trình duyệt hoặc mã định danh khách truy cập/phiên và không bao gồm địa chỉ IP, chuỗi tác nhân người dùng, người giới thiệu hoặc dấu thời gian của từng lượt truy cập. Giới hạn tốc độ, lọc bot và nhật ký máy chủ là các hoạt động bảo mật riêng biệt được mô tả trong các mục tương ứng; chúng không thuộc bảng tổng hợp này. Máy chủ có thể đọc riêng một dấu hiệu loại trừ quản trị viên đã ký để tránh đếm lưu lượng quản trị; dấu hiệu đó không được lưu trong bảng tổng hợp ẩn danh.

@@ -42,7 +42,7 @@ Analitik onayı ile VJT, sayfa ziyaretlerini ve iletişim etkinliklerini onaylan
 - kaydırma ve etkileşim ölçümleri; ve
 - sorgu veya iletişim etkinliği ilişkilendirmesi.
 
-Ziyaretçi analitik onayı verene kadar analitik yolculuğu devre dışı kalmalıdır. Onay geri çekilirse, sonraki analitik toplama durdurulmalı ve tarayıcıda depolanan VJT tanımlayıcıları uygulanan geri çekme sürecine uygun olarak kaldırılmalıdır.
+Ziyaretçi analitik onayı verene kadar analitik yolculuk devre dışı kalmalıdır. Her onay yeni bir onay döngüsü başlatır ve VJT tanımlayıcıları bir döngüden diğerine taşınmaz. Onay geri çekildiğinde web sitesi tarayıcıda yeni analitik toplamayı ve tanımlayıcı düzenlemeyi durdurur, VJT değerlerini tarayıcı depolamasından siler ve sunucudan HttpOnly kimlik çerezinin süresini sona erdirmesini ister. Bu silme işlemi sınırlı sayıda yeniden denenir ve örneğin tarayıcı çevrimdışıysa veya istek engellenirse başarısız olabilir; kalan bir kimlik çerezi önceki yolculuğu sürdürmek için kullanılmaz ve onay yeniden verilirse değiştirilir. Geri çekmeden önce gönderilmiş veriler yine de alınabilir. Onay döngüleri kullanılmaya başlanmadan önce oluşturulan tanımlayıcılar bir kez değiştirilir. Onayı sekmeler arasında koordine etmek için gereken özelliklere sahip olmayan tarayıcılar VJT kullanmaz.
 
 ### 3. Reklam ve üçüncü taraf analitiği
 
@@ -57,13 +57,15 @@ Bu bildirimde açıklanan web sitesi sistemleri için aşağıdaki süreler ve �
 | `cookie-consent` | Kssmi | Ziyaretçinin analitik ve reklam tercihlerini hatırlamak | Gerekli | Seçim değiştirilene veya tarayıcı depolaması temizlenene kadar | Local storage |
 | `vjt_visitor_id` | Kssmi | Onaylanmış ziyaretleri bir ziyaretçi yolculuğu ile ilişkilendirmek | Analitik | Cookie: up to about 365 days; local copy: Analiz izni geri çekilene veya tarayıcı depolaması temizlenene kadar | Çerez ve yerel depolama |
 | `vjt_session_id` | Kssmi | Bir oturum içindeki onaylanmış sayfa etkinliklerini ilişkilendirmek | Analitik | About 30 minutes | Çerez |
+| `KSSMI_VJT_IDENTITY` | Kssmi | Onaylanmış ziyaretleri tek bir onay döngüsü içinde ilişkilendiren imzalı sunucu kimliği; sayfa betikleri tarafından okunamaz | Analitik | Yaklaşık 365 güne kadar; geri çekmeden sonra tarayıcının izin verdiği ölçüde süresi sona erdirilir | Çerez (HttpOnly) |
+| `KSSMI_VJT_CONTACT` | Kssmi | İletişim olayı istatistiklerini sahte olaylara karşı koruyan kısa ömürlü imzalı oturum; VJT tanımlayıcısı değil rastgele bir değer içerir ve analitik onayı olmadan ayarlanır | İletişim olayı güvenliği | Yaklaşık 30 dakika, gezinme sırasında yenilenir | Çerez (HttpOnly) |
 | Diğer Google/üçüncü taraf tanımlayıcıları | Google / relevant third party | Analitik veya reklam | Analitik/reklam | Sağlayıcıya ve yapılandırmaya göre değişir | Çerez veya benzer teknoloji |
 
 Çerez envanteri, onay başlığı ve canlı uygulama uyuşmalıdır. Bir izleyiciyi yeniden adlandırmak veya bir tanımlayıcıyı bir çerezden yerel depolamaya taşımak, teknolojiyi tek başına onaydan muaf kılmaz.
 
 ### 5. Onay seçimlerini değiştirme
 
-Ziyaretçiler Çerez Ayarları'nı yeniden açabilmeli ve analitik ve reklam onaylarını, verdikleri zamanki kadar kolay bir şekilde değiştirebilmeli veya geri çekebilmelidir. Geri çekme, geri çekilmeden önce yasal olan işlemeyi etkilemez.
+Ziyaretçiler Çerez Ayarları'nı yeniden açabilmeli ve analitik ve reklam onaylarını, verdikleri zamanki kadar kolay bir şekilde değiştirebilmeli veya geri çekebilmelidir. Geri çekme, geri çekilmeden önce yasal olan işlemeyi etkilemez. Bir seçim yapıldıktan sonra her sayfada bir Çerez Ayarları düğmesi kullanılabilir olmaya devam eder.
 
 ### 6. Anonim sayfa görüntüleme sayımı
 Yukarıda açıklanan izne dayalı analizden ayrı olarak, web sitesi sayfa görüntülemelerini toplu biçimde sayar: her takvim günü (Pekin saatine göre) ve sayfa yolu için yalnızca toplam görüntüleme sayısını saklar. Bu sayım tablosu çerez, tarayıcı deposu veya ziyaretçi/oturum tanımlayıcısı kullanmaz ve IP adresleri, kullanıcı aracıları, yönlendirenler veya tek tek ziyaret zaman damgaları içermez. Hız sınırlama, bot filtreleme ve sunucu günlükleri kendi bölümlerinde açıklanan ayrı güvenlik işlemleridir; bu toplu tablonun parçası değildir. Sunucu, yönetici trafiğini saymamak için imzalı bir yönetici hariç tutma işaretini ayrıca okuyabilir; bu işaret anonim toplu tabloda saklanmaz.

@@ -99,6 +99,7 @@ assert.equal(snapshot.length, 2, 'valid stored and current path entries must sur
 const currentIdentity = { visitorId: 'vjtv_current', sessionId: 'vjts_current' };
 let submissionFetches = 0;
 let submissionBody = null;
+let consentCycleCurrent = true;
 const deliverConversion = Function(
   'cfg',
   'identityReady',
@@ -107,6 +108,7 @@ const deliverConversion = Function(
   'payloadMatchesServerIdentity',
   'fetch',
   'payloadWithCapability',
+  'cycleIsCurrent',
   `'use strict'; ${extractNamedFunction(vjtTrackerSource, 'deliverConversion')}; return deliverConversion;`
 )(
   { enabled: true, routes: { submission: '/api/track-submission.php' } },
@@ -121,7 +123,8 @@ const deliverConversion = Function(
     submissionBody = JSON.parse(options.body);
     return { ok: true, json: async () => ({ success: true, result: 'stored' }) };
   },
-  (payload, token) => ({ ...payload, capability_token: token })
+  (payload, token) => ({ ...payload, capability_token: token }),
+  () => consentCycleCurrent
 );
 const stalePayload = {
   event_id: 'vjtev_stale',
@@ -162,6 +165,12 @@ assert.deepEqual(
   },
   'matching conversion keeps its captured identity and receives only the fresh capability'
 );
+
+// A conversion queued under an older consent cycle is dropped, never sent.
+consentCycleCurrent = false;
+assert.equal(await deliverConversion({ ...validPayload, event_id: 'vjtev_old_cycle' }), 'drop', 'old consent cycle conversion must be dropped');
+assert.equal(submissionFetches, 1, 'old consent cycle conversion must not reach the submission endpoint');
+consentCycleCurrent = true;
 
 const trackerCall = inquiryFormSource.indexOf('window.VJT_beginInquirySubmission(newForm)');
 const formDataCreation = inquiryFormSource.indexOf('new FormData(newForm)', trackerCall);

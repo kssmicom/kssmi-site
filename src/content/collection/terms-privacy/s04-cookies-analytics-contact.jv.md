@@ -42,7 +42,7 @@ Kanthi idin analitik, VJT bisa nggunakake pengenal pengunjung pihak pertama lan 
 - pangukuran nggulung lan keterlibatan; lan
 - atribusi pitakon utawa acara kontak.
 
-Perjalanan analitik kudu tetep dipateni nganti pengunjung menehi idin analitik. Yen idin ditarik maneh, koleksi analitik sakteruse kudu mandheg lan pengenal VJT sing disimpen ing browser kudu dibusak sesuai karo proses penarikan sing dileksanakake.
+Perjalanan analitik kudu tetep dipateni nganti pengunjung menehi idin analitik. Saben idin miwiti siklus idin anyar, lan pengenal VJT ora digawa saka siji siklus menyang siklus sabanjure. Nalika idin ditarik, situs mandhegake pangumpulan analitik anyar lan penerbitan pengenal ing browser, mbusak nilai VJT saka panyimpenan browser, lan njaluk server supaya cookie identitas HttpOnly kadaluwarsa. Pambusakan iki dicoba maneh kanthi jumlah winates lan bisa gagal, umpamane yen browser offline utawa panjaluk diblokir; cookie identitas sing isih ana ora digunakake kanggo nerusake perjalanan sadurunge lan diganti yen idin diwenehake maneh. Data sing wis dikirim sadurunge penarikan isih bisa ditampa. Pengenal sing digawe sadurunge siklus idin diwiwiti bakal diganti sapisan. Browser sing ora nduweni fitur sing dibutuhake kanggo ngoordinasi idin antarane tab ora nggunakake VJT.
 
 ### 3. Iklan lan analitik pihak katelu
 
@@ -57,13 +57,15 @@ Wektu lan kritéria ing ngisor iki ditrapake kanggo sistem situs web sing ditera
 | `cookie-consent` | Kssmi | Ngelingi pilihan analitik lan iklan saka pengunjung | Perlu | Nganti pilihan diganti utawa panyimpenan browser dibusak | Local storage |
 | `vjt_visitor_id` | Kssmi | Nggandhengake kunjungan sing disetujoni menyang perjalanan pengunjung | Analitik | Cookie: up to about 365 days; local copy: Nganti idin analitik ditarik utawa panyimpenan browser dibusak | Cookie lan panyimpenan lokal |
 | `vjt_session_id` | Kssmi | Nggandhengake acara kaca sing disetujoni sajrone siji sesi | Analitik | About 30 minutes | Cookie |
+| `KSSMI_VJT_IDENTITY` | Kssmi | Identitas server sing ditandatangani kanggo nggandhengake kunjungan sing disetujoni sajrone siji siklus idin; ora bisa diwaca skrip kaca | Analitik | Nganti kira-kira 365 dina; kadaluwarsa sawise penarikan yen browser ngidini | Cookie (HttpOnly) |
+| `KSSMI_VJT_CONTACT` | Kssmi | Sesi sing ditandatangani lan cendhak umure kanggo nglindhungi statistik acara kontak saka acara palsu; isine nilai acak, dudu pengenal VJT, lan dipasang tanpa idin analitik | Keamanan acara kontak | Kira-kira 30 menit, dianyari nalika browsing | Cookie (HttpOnly) |
 | Pengenal Google/pihak katelu liyane | Google / relevant third party | Analitik utawa iklan | Analitik/iklan | Beda-beda miturut panyedhiya lan konfigurasi | Cookie utawa teknologi sing padha |
 
 Inventaris cookie, spanduk idin lan implementasi langsung kudu padha. Ngganti jeneng pelacak utawa mindhah pengenal saka cookie menyang panyimpenan lokal kanthi sendirine ora nggawe teknologi kasebut dibebasake saka idin.
 
 ### 5. Ngganti pilihan idin
 
-Pengunjung kudu bisa mbukak maneh Pengaturan Cookie lan ngganti utawa narik idin analitik lan iklan kanthi gampang kaya nalika diwenehake. Penarikan ora mengaruhi pangolahan sing sah sadurunge ditarik maneh.
+Pengunjung kudu bisa mbukak maneh Pengaturan Cookie lan ngganti utawa narik idin analitik lan iklan kanthi gampang kaya nalika diwenehake. Penarikan ora mengaruhi pangolahan sing sah sadurunge ditarik maneh. Sawise milih, tombol Pengaturan Cookie tetep kasedhiya ing saben kaca.
 
 ### 6. Etungan tampilan kaca tanpa jeneng (anonim)
 Kajaba saka analitik adhedhasar idin sing diterangake ing ndhuwur, situs web ngetung tampilan kaca kanthi wujud gabungan: kanggo saben dina tanggalan (wektu Beijing) lan path kaca, mung nyimpen gunggunge tampilan. Tabel etungan iki ora nganggo cookie, panyimpenan browser, utawa pengenal pengunjung/sesi, lan ora ngemot alamat IP, agen pangguna, referrer, utawa stempel wektu kunjungan individu. Watesan tingkat, panyaring bot, lan log server minangka operasi keamanan sing kapisah sing diterangake ing bagean dhewe-dhewe; iku dudu bagean saka tabel gabungan iki. Server bisa maca penanda pengecualian admin sing ditandatangani kanthi kapisah supaya ora ngetung lalu lintas admin; penanda kasebut ora disimpen ing tabel gabungan anonim.

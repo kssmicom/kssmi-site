@@ -211,6 +211,30 @@ included — the router swaps 404 responses too).
   `window.turnstile.reset(window.turnstileWidgetId);`, `const result = await
   response.json();`). Keep those names when editing the forms.
 
+### Consent record and VJT consent cycles (ConsentController)
+- `src/components/ConsentController.astro` (in Layout `<head>`, before
+  VisitorTracker) is the **only writer** of `localStorage['cookie-consent']`.
+  Every write goes through `mutateConsent()`, which reads, computes and writes
+  inside the Web Lock `kssmi-consent-state`. Never call
+  `localStorage.setItem('cookie-consent', …)` elsewhere; `validate:dom` fails
+  the build if you do. UI code calls `window.__kssmiConsent.set({analytics, ads})`.
+- Record: `{v:2, analytics, ads, rev, cycle?, cleanup?}`. Each analytics grant
+  gets a new random `cycle`; `vjt-capability.php` requires `consent_cycle` and
+  only continues an identity whose signed `cyc` claim matches. Withdrawal
+  creates `cleanup {id, attempts, status}` and calls `/api/vjt-forget.php` to
+  expire the HttpOnly `KSSMI_VJT_IDENTITY` (max 5 attempts, at most one per
+  page load, generation-checked).
+- `vjt-tracker.js` stores its keys as `{c: cycle, v: value}` and checks
+  `cycleIsCurrent()` before every send. `VJTTracker.enabled` is derived from
+  `__kssmiConsent.trackingCycle()`.
+- Lock order is `kssmi-vjt-identity` then `kssmi-consent-state`; never await
+  the network while holding the state lock. Browsers without Web Locks do not
+  run VJT at all.
+- The "Cookie Settings" button belongs to the controller; `cookie-banner.js` is
+  UI only and is loaded on demand (`window.__kssmiCookieBanner.openPreferences`).
+- Local tests: `Kssmi/fixing/tools/r6-test/` (isolated tree, PHP workers behind
+  a proxy on 4325, headless Edge scenarios V1–V23).
+
 ### Build side effects
 - A full `npm run build` takes 30+ minutes and recreates `dist/`.
 - The prebuild step rewrites `<lastmod>` in `public/**/sitemap*.xml`; restore

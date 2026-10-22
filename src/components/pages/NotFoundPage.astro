@@ -848,6 +848,19 @@ const rescueMessages = {
      every language: ClientRouter runs it once per document, and its
      astro:page-load listener prepares every 404 page swapped in later. -->
 <script define:vars={{ isDev, emailUser: 'sales', emailDomain: 'kssmi.com' }}>
+  // Attribution is kept only if the form was patched under the consent cycle
+  // that is still current (another tab may have withdrawn consent before this
+  // tab processed the change). Only vjt_* fields are dropped; the message is
+  // always sent.
+  function removeStaleVjtContext(formData, form) {
+    var cycle = null;
+    try { cycle = window.__kssmiConsent && window.__kssmiConsent.trackingCycle(); } catch (_) {}
+    if (cycle && form && form.dataset.vjtCycle === cycle) return;
+    Array.from(formData.keys()).forEach(function(name) {
+      if (name.indexOf('vjt_') === 0) formData.delete(name);
+    });
+  }
+
   function getMessages(form) {
     try {
       return JSON.parse((form && form.dataset.i18n) || '{}');
@@ -910,6 +923,7 @@ const rescueMessages = {
       }
 
       var formData = new FormData(newForm);
+      removeStaleVjtContext(formData, newForm);
       if (!isDev && token) {
         formData.append('cf-turnstile-response', token);
       }

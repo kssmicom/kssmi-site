@@ -1,0 +1,426 @@
+---
+/**
+ * ConsentController.astro - the single owner of the visitor's consent record.
+ *
+ * Runs on every page (in <head>, before VisitorTracker) and once per document
+ * under ClientRouter. Responsibilities that must work even when the cookie
+ * banner script is not loaded:
+ *
+ * - Write protocol: every change to localStorage['cookie-consent'] goes
+ *   through mutateConsent(), which reads, computes and writes inside one Web
+ *   Lock. Concurrent tabs are therefore serialized; a stale read can never be
+ *   written back and a withdrawn consent cycle can never be revived.
+ * - Consent cycles: each grant of analytics consent gets a fresh random cycle
+ *   ID. The server only continues a VJT identity inside its own cycle.
+ * - Withdrawal cleanup: the HttpOnly identity cookie is expired through
+ *   /api/vjt-forget.php (bounded retries, generation-checked).
+ * - Startup migration of records written before cycles existed.
+ * - Cross-tab sync and the persistent "Cookie Settings" button.
+ *
+ * Browsers without Web Locks never run VJT (trackingCycle() is null); their
+ * choices are still saved and the settings button still works.
+ * Keep this script's text identical on every page (no define:vars).
+ */
+---
+
+<script is:inline>
+  (function () {
+    if (window.__kssmiConsent) return;
+
+    var KEY = 'cookie-consent';
+    var LOCK_STATE = 'kssmi-consent-state';
+    var LOCK_IDENTITY = 'kssmi-vjt-identity';
+    var MAX_CLEANUP_ATTEMPTS = 5;
+    var FORGET_TIMEOUT_MS = 30000;
+    var VJT_STORAGE_KEYS = ['vjt_visitor_id', 'vjt_session_meta', 'vjt_current_pageview', 'vjt_session_path', 'vjt_pending_conversions'];
+    var LABELS = {
+      en: 'Preferences', it: 'Preferenze', es: 'Preferencias', fr: 'Préférences', de: 'Einstellungen',
+      pt: 'Preferências', ru: 'Настройки', ja: '設定', tr: 'Tercihler', ar: 'التفضيلات', ko: '환경 설정',
+      zh: '偏好设置', hi: 'प्राथमिकताएं', vi: 'Tùy Chọn', jv: 'Preferensi', ms: 'Keutamaan', tg: 'Танзимот'
+    };
+
+    var locks = null;
+    try {
+      if (navigator.locks && typeof navigator.locks.request === 'function') locks = navigator.locks;
+    } catch (_) {}
+
+    // A refusal stops this tab at once, before its write reaches the shared
+    // record. It stays stopped until that refusal (or a later choice made in
+    // this tab) has committed; other tabs' writes never lift it.
+    var choiceSeq = 0;
+    var stopUntilSeq = 0;
+    var processedRev = null;     // last record revision this tab has acted on
+    var cleanupTriedThisPage = false;
+    var bannerLoading = false;
+    var resolveReady;
+    var ready = new Promise(function (resolve) { resolveReady = resolve; });
+
+    // ── Record helpers ────────────────────────────────────────────────────
+    function randomId() {
+      var bytes = new Uint8Array(16);
+      window.crypto.getRandomValues(bytes);
+      var binary = '';
+      for (var i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+      return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+    }
+    function isId(value) {
+      return typeof value === 'string' && /^[A-Za-z0-9_-]{22}$/.test(value);
+    }
+    function state() {
+      try {
+        var raw = localStorage.getItem(KEY);
+        var parsed = raw ? JSON.parse(raw) : null;
+        return parsed && typeof parsed === 'object' && !Array.isArray(parsed) ? parsed : null;
+      } catch (_) {
+        return null;
+      }
+    }
+    function isGranted(record) {
+      return !!(record && record.v === 2 && record.analytics === true && isId(record.cycle));
+    }
+    function copy(value) {
+      return value ? JSON.parse(JSON.stringify(value)) : value;
+    }
+    function trackingCycle() {
+      if (!locks || stopUntilSeq) return null;
+      var record = state();
+      return isGranted(record) ? record.cycle : null;
+    }
+
+    // The only writer of the consent record. The mutator is synchronous and
+    // must compute from `current` (read inside the lock), never from values
+    // the caller read earlier. Resolves to the committed record, or null when
+    // the mutator decided nothing needed to change.
+    function mutateConsent(mutator) {
+      if (!locks) return Promise.reject(new Error('Web Locks unavailable'));
+      return locks.request(LOCK_STATE, { mode: 'exclusive' }, function () {
+        var next = mutator(state());
+        if (!next) return null;
+        next.v = 2;
+        next.rev = randomId();
+        if (next.cleanup && next.cleanup.id === '@rev') next.cleanup.id = next.rev;
+        localStorage.setItem(KEY, JSON.stringify(next));
+        processedRev = next.rev;
+        return next;
+      });
+    }
+
+    function withIdentityLock(task) {
+      if (!locks) return Promise.reject(new Error('Web Locks unavailable'));
+      return locks.request(LOCK_IDENTITY, { mode: 'exclusive' }, task);
+    }
+
+    // ── Local effects ─────────────────────────────────────────────────────
+    function gtagUpdate(analytics, ads) {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+      window.gtag('consent', 'update', {
+        ad_storage: ads ? 'granted' : 'denied',
+        ad_user_data: ads ? 'granted' : 'denied',
+        ad_personalization: ads ? 'granted' : 'denied',
+        analytics_storage: analytics ? 'granted' : 'denied',
+      });
+    }
+
+    // Remove VJT attribution fields from forms that were not patched under
+    // the current consent cycle. The forms themselves keep working.
+    function stripStaleForms() {
+      var cycle = trackingCycle();
+      document.querySelectorAll('form').forEach(function (form) {
+        if (cycle && form.dataset.vjtCycle === cycle) return;
+        form.querySelectorAll('input[name^="vjt_"]').forEach(function (input) { input.remove(); });
+        delete form.dataset.vjtCycle;
+      });
+    }
+
+    function clearVjtLocalState() {
+      VJT_STORAGE_KEYS.forEach(function (key) {
+        try { localStorage.removeItem(key); } catch (_) {}
+      });
+      ['vjt_visitor_id', 'vjt_session_id'].forEach(function (name) {
+        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax';
+      });
+      stripStaleForms();
+      window.dispatchEvent(new Event('vjt:consent-withdrawn'));
+    }
+
+    function notify() {
+      window.dispatchEvent(new Event('kssmi:consent-changed'));
+    }
+
+    // ── Withdrawal cleanup (expires the HttpOnly identity cookie) ─────────
+    function forgetUrl() {
+      var routes = window.VJTTracker && window.VJTTracker.routes;
+      return (routes && routes.forget) || '/api/vjt-forget.php';
+    }
+
+    function postForget() {
+      var controller = typeof AbortController === 'function' ? new AbortController() : null;
+      var timer = controller ? setTimeout(function () { controller.abort(); }, FORGET_TIMEOUT_MS) : 0;
+      return fetch(forgetUrl(), {
+        method: 'POST',
+        credentials: 'include',
+        keepalive: true,
+        headers: { 'Content-Type': 'application/json' },
+        body: '{}',
+        signal: controller ? controller.signal : undefined
+      }).then(function (response) {
+        return !!(response && response.ok);
+      }, function () {
+        return false;
+      }).then(function (ok) {
+        if (timer) clearTimeout(timer);
+        return ok;
+      });
+    }
+
+    function cleanupIsCurrent(record, taskId) {
+      return !!(record && record.analytics !== true && record.cleanup
+        && record.cleanup.id === taskId && record.cleanup.status === 'pending');
+    }
+
+    function runCleanup(taskId) {
+      if (!locks || !isId(taskId)) return Promise.resolve();
+      cleanupTriedThisPage = true;
+      // Lock order: identity, then state. The state lock is never held while
+      // waiting on the network.
+      return withIdentityLock(function () {
+        return mutateConsent(function (current) {
+          if (!cleanupIsCurrent(current, taskId)) return null;
+          var next = copy(current);
+          if (next.cleanup.attempts >= MAX_CLEANUP_ATTEMPTS) next.cleanup.status = 'exhausted';
+          else next.cleanup.attempts += 1;
+          return next;
+        }).then(function (claimed) {
+          if (!cleanupIsCurrent(claimed, taskId)) return null;
+          return postForget().then(function (ok) {
+            if (!ok) return null;
+            return mutateConsent(function (current) {
+              if (!cleanupIsCurrent(current, taskId)) return null;
+              var next = copy(current);
+              next.cleanup.status = 'done';
+              return next;
+            });
+          });
+        });
+      }).catch(function () {});
+    }
+
+    function resumeCleanup() {
+      if (cleanupTriedThisPage) return;
+      var record = state();
+      if (record && record.v === 2 && record.analytics !== true && record.cleanup
+          && record.cleanup.status === 'pending') {
+        runCleanup(record.cleanup.id);
+      }
+    }
+
+    // ── Commits ───────────────────────────────────────────────────────────
+    function afterCommit(record) {
+      notify();
+      refreshButton();
+      if (isGranted(record)) {
+        window.dispatchEvent(new Event('vjt:consent-granted'));
+        if (typeof window.VJT_init === 'function') {
+          try { window.VJT_init(); } catch (_) {}
+        }
+      }
+      // A new withdrawal (attempts 0) is cleaned up immediately; an existing
+      // pending cleanup is retried at most once per page load.
+      if (record && record.cleanup && record.cleanup.status === 'pending'
+          && (record.cleanup.attempts === 0 || !cleanupTriedThisPage)) {
+        runCleanup(record.cleanup.id);
+      }
+    }
+
+    function choiceMutator(choice) {
+      return function (current) {
+        var wasGranted = isGranted(current);
+        if (choice.analytics) {
+          return {
+            analytics: true,
+            ads: choice.ads,
+            cycle: wasGranted ? current.cycle : randomId(),
+            cleanup: null
+          };
+        }
+        return {
+          analytics: false,
+          ads: choice.ads,
+          // true -> false starts a new withdrawal; otherwise keep any cleanup
+          // that is still in progress.
+          cleanup: wasGranted
+            ? { id: '@rev', attempts: 0, status: 'pending' }
+            : (current && current.v === 2 && current.cleanup ? copy(current.cleanup) : null)
+        };
+      };
+    }
+
+    // Called by the cookie banner. Stops this tab's tracking immediately on a
+    // refusal; the shared record is committed under the state lock.
+    function set(choice) {
+      var next = { analytics: !!(choice && choice.analytics), ads: !!(choice && choice.ads) };
+      var seq = ++choiceSeq;
+      gtagUpdate(next.analytics, next.ads);
+      if (!next.analytics) {
+        stopUntilSeq = seq;
+        clearVjtLocalState();
+      }
+      if (!locks) {
+        try {
+          localStorage.setItem(KEY, JSON.stringify({ v: 2, analytics: next.analytics, ads: next.ads, rev: randomId() }));
+        } catch (_) {}
+        notify();
+        refreshButton();
+        return Promise.resolve(state());
+      }
+      refreshButton();
+      return mutateConsent(choiceMutator(next)).then(function (record) {
+        // Only the pending refusal itself, or a newer choice from this tab,
+        // makes the shared record authoritative for this tab again.
+        if (stopUntilSeq && seq >= stopUntilSeq) stopUntilSeq = 0;
+        afterCommit(record);
+        return record;
+      }, function () {
+        refreshButton();
+        return state();
+      });
+    }
+
+    // ── Startup migration ─────────────────────────────────────────────────
+    function startup() {
+      if (!locks) {
+        resolveReady();
+        return;
+      }
+      var migratedGrant = false;
+      mutateConsent(function (current) {
+        if (!current) return null;
+        if (current.v === 2 && (current.analytics !== true || isId(current.cycle))) return null;
+        if (current.analytics === true) {
+          // Granted before cycles existed: start a new cycle. The server sees
+          // an identity without a cycle and issues a new one.
+          migratedGrant = true;
+          return { analytics: true, ads: !!current.ads, cycle: randomId(), cleanup: null };
+        }
+        // Refused before this fix: an old identity cookie may still exist
+        // (the original R6 defect), so schedule one bounded cleanup.
+        return {
+          analytics: false,
+          ads: !!current.ads,
+          cleanup: { id: '@rev', attempts: 0, status: 'pending' }
+        };
+      }).then(function (record) {
+        if (migratedGrant) {
+          VJT_STORAGE_KEYS.forEach(function (key) {
+            try { localStorage.removeItem(key); } catch (_) {}
+          });
+        }
+        if (!processedRev) {
+          var latest = state();
+          processedRev = latest && latest.rev || null;
+        }
+        resolveReady();
+        if (record && isGranted(record)) {
+          notify();
+          window.dispatchEvent(new Event('vjt:consent-granted'));
+        }
+        resumeCleanup();
+      }, function () {
+        resolveReady();
+      });
+    }
+
+    // ── Cross-tab ─────────────────────────────────────────────────────────
+    window.addEventListener('storage', function (event) {
+      if (event.key !== null && event.key !== KEY) return;
+      var record = state();
+      var rev = record && record.rev || null;
+      if (rev && rev === processedRev) return;
+      processedRev = rev;
+      if (!trackingCycle()) {
+        window.dispatchEvent(new Event('vjt:consent-withdrawn'));
+      }
+      stripStaleForms();
+      notify();
+      refreshButton();
+    });
+
+    // ── "Cookie Settings" button (R6-0) ───────────────────────────────────
+    function language() {
+      var lang = (document.documentElement.lang || 'en').toLowerCase();
+      if (LABELS[lang]) return lang;
+      lang = lang.split('-')[0];
+      return LABELS[lang] ? lang : 'en';
+    }
+
+    function openPreferences(opener) {
+      var banner = window.__kssmiCookieBanner;
+      if (banner && typeof banner.openPreferences === 'function') {
+        banner.openPreferences(opener);
+        return;
+      }
+      if (bannerLoading || !document.body) return;
+      bannerLoading = true;
+      opener.setAttribute('aria-busy', 'true');
+      var script = document.createElement('script');
+      script.src = document.body.dataset.cookieBannerUrl || '/cookie-banner.js';
+      script.async = true;
+      script.onload = function () {
+        bannerLoading = false;
+        opener.removeAttribute('aria-busy');
+        var loaded = window.__kssmiCookieBanner;
+        if (loaded && typeof loaded.openPreferences === 'function') loaded.openPreferences(opener);
+      };
+      script.onerror = function () {
+        // The button stays usable; the next click tries again.
+        bannerLoading = false;
+        opener.removeAttribute('aria-busy');
+        if (script.parentNode) script.parentNode.removeChild(script);
+      };
+      document.body.appendChild(script);
+    }
+
+    function refreshButton() {
+      if (!document.body) return;
+      var existing = document.getElementById('cookie-settings-btn');
+      if (!state()) {
+        if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+        return;
+      }
+      if (existing) return;
+      var lang = language();
+      var rtl = lang === 'ar';
+      var btn = document.createElement('button');
+      btn.id = 'cookie-settings-btn';
+      btn.type = 'button';
+      btn.setAttribute('aria-label', LABELS[lang]);
+      btn.title = LABELS[lang];
+      btn.style.cssText = 'position:fixed;bottom:16px;' + (rtl ? 'right' : 'left') + ':16px;z-index:9998;width:32px;height:32px;border-radius:50%;background:#5D4E37;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;box-shadow:0 3px 10px rgba(0,0,0,0.18);transition:transform .2s,background .2s;';
+      btn.onmouseenter = function () { btn.style.transform = 'scale(1.08)'; btn.style.background = '#4a3d2a'; };
+      btn.onmouseleave = function () { btn.style.transform = 'scale(1)'; btn.style.background = '#5D4E37'; };
+      btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="9" cy="6" r="2.2" fill="#5D4E37"/><circle cx="15" cy="12" r="2.2" fill="#5D4E37"/><circle cx="8" cy="18" r="2.2" fill="#5D4E37"/></svg>';
+      btn.addEventListener('click', function () { openPreferences(btn); });
+      document.body.appendChild(btn);
+    }
+
+    window.__kssmiConsent = {
+      state: state,
+      set: set,
+      trackingCycle: trackingCycle,
+      withIdentityLock: withIdentityLock,
+      refreshButton: refreshButton,
+      ready: ready,
+      locksSupported: !!locks
+    };
+
+    startup();
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () { refreshButton(); stripStaleForms(); });
+    } else {
+      refreshButton();
+    }
+    // ClientRouter swaps <body>, which removes the button; put it back.
+    document.addEventListener('astro:page-load', function () { refreshButton(); stripStaleForms(); });
+  })();
+</script>

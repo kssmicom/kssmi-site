@@ -42,7 +42,7 @@ Con el consentimiento de análisis, VJT puede utilizar un identificador de visit
 - medidas de desplazamiento y participación; y
 - atribución de consultas o eventos de contacto.
 
-El recorrido de análisis debe permanecer deshabilitado hasta que el visitante otorgue el consentimiento para el análisis. Si se retira el consentimiento, la posterior recopilación de análisis debe detenerse y los identificadores de VJT almacenados en el navegador deben eliminarse de acuerdo con el proceso de retiro implementado.
+El recorrido de análisis debe permanecer desactivado hasta que el visitante otorgue su consentimiento para análisis. Cada consentimiento inicia un nuevo ciclo de consentimiento y los identificadores VJT no se trasladan de un ciclo al siguiente. Cuando se retira el consentimiento, el sitio detiene en el navegador la nueva recopilación de análisis y la emisión de identificadores, elimina los valores VJT del almacenamiento del navegador y solicita al servidor que haga caducar la cookie de identidad HttpOnly. Esa eliminación se reintenta un número limitado de veces y puede fallar, por ejemplo, si el navegador está sin conexión o la solicitud se bloquea; una cookie de identidad que quede no se usa para continuar el recorrido anterior y se sustituye si se vuelve a otorgar el consentimiento. Los datos ya enviados antes de la retirada aún pueden recibirse. Los identificadores creados antes de la introducción de los ciclos de consentimiento se sustituyen una vez. Los navegadores que no disponen de las funciones necesarias para coordinar el consentimiento entre pestañas no utilizan VJT.
 
 ### 3. Publicidad y análisis de terceros
 
@@ -57,13 +57,15 @@ Los siguientes períodos y criterios se aplican a los sistemas del sitio descrit
 | `cookie-consent` | Kssmi | Recordar las opciones de análisis y publicidad del visitante | Necesario | Hasta que se cambie la elección o se borre el almacenamiento del navegador | Local storage |
 | `vjt_visitor_id` | Kssmi | Asociar las visitas consentidas con el recorrido de un visitante | Análisis | Cookie: up to about 365 days; local copy: Hasta que se retire el consentimiento de análisis o se borre el almacenamiento del navegador | Cookie y almacenamiento local |
 | `vjt_session_id` | Kssmi | Asociar eventos de página consentidos dentro de una sesión | Análisis | About 30 minutes | Cookie |
+| `KSSMI_VJT_IDENTITY` | Kssmi | Identidad de servidor firmada que vincula las visitas consentidas dentro de un ciclo de consentimiento; los scripts de la página no pueden leerla | Análisis | Hasta aproximadamente 365 días; caduca tras la retirada cuando el navegador lo permite | Cookie (HttpOnly) |
+| `KSSMI_VJT_CONTACT` | Kssmi | Sesión firmada de corta duración que protege las estadísticas de eventos de contacto frente a eventos falsificados; contiene un valor aleatorio, no un identificador VJT, y se establece sin consentimiento para análisis | Seguridad de eventos de contacto | Aproximadamente 30 minutos, renovada mientras se navega | Cookie (HttpOnly) |
 | Otros identificadores de Google o terceros | Google / relevant third party | Análisis o publicidad | Análisis/publicidad | Varía según el proveedor y la configuración | Cookie o tecnología similar |
 
 El inventario de cookies, el banner de consentimiento y la implementación en vivo deben coincidir. Cambiar el nombre de un rastreador o mover un identificador de una cookie al almacenamiento local no exime por sí solo a la tecnología del consentimiento.
 
 ### 5. Modificación de las opciones de consentimiento
 
-Los visitantes deben poder volver a abrir la Configuración de cookies y cambiar o retirar su consentimiento para publicidad y análisis con la misma facilidad con la que lo dieron. La retirada no afecta al procesamiento que era legal antes de la misma.
+Los visitantes deben poder volver a abrir la Configuración de cookies y cambiar o retirar su consentimiento para publicidad y análisis con la misma facilidad con la que lo dieron. La retirada no afecta al procesamiento que era legal antes de la misma. Una vez realizada una elección, en cada página sigue disponible un botón de Configuración de cookies.
 
 ### 6. Recuento anónimo de visitas a páginas
 Independientemente del análisis basado en consentimiento descrito anteriormente, el sitio web cuenta las visitas a páginas de forma agregada: para cada día natural (hora de Pekín) y ruta de página, solo almacena el número total de visitas. Esta tabla de recuento no utiliza cookies, ni almacenamiento del navegador, ni identificadores de visitante o sesión, y no incluye direcciones IP, agentes de usuario, referentes ni marcas de tiempo de visitas individuales. La limitación de velocidad, el filtrado de bots y los registros del servidor son operaciones de seguridad independientes descritas en sus propias secciones; no forman parte de esta tabla agregada. El servidor puede leer por separado una marca firmada de exclusión de administradores para evitar contar el tráfico de administración; esa marca no se almacena en la tabla agregada anónima.

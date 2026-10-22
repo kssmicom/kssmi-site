@@ -1,6 +1,7 @@
 /**
  * Cookie Banner — Deferred loader
- * Loaded via bootstrap script only when consent not yet given.
+ * Loaded via bootstrap script only when consent not yet given, or on demand by
+ * ConsentController's "Cookie Settings" button (window.__kssmiCookieBanner).
  */
 (function () {
   var STORAGE_KEY = 'cookie-consent';
@@ -167,48 +168,24 @@
   function getConsent() {
     try { return JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch (_) { return null; }
   }
-  function setConsent(value) { localStorage.setItem(STORAGE_KEY, JSON.stringify(value)); }
-  function clearVjtAnalyticsState() {
-    var keys = [
-      'vjt_visitor_id',
-      'vjt_session_meta',
-      'vjt_current_pageview',
-      'vjt_session_path',
-      'vjt_pending_conversions'
-    ];
-    keys.forEach(function (key) {
-      try { localStorage.removeItem(key); } catch (_) {}
-    });
-    ['vjt_visitor_id', 'vjt_session_id'].forEach(function (name) {
-      document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax';
-    });
-    document.querySelectorAll('input[name^="vjt_"]').forEach(function (input) {
-      input.remove();
-    });
-    window.dispatchEvent(new Event('vjt:consent-withdrawn'));
+  // ConsentController (Layout <head>) owns the consent record, Google consent
+  // updates, VJT start/stop, withdrawal cleanup and the settings button. This
+  // file is only the banner and preferences UI.
+  function commitChoice(analytics, ads) {
+    var api = window.__kssmiConsent;
+    if (api && typeof api.set === 'function') api.set({ analytics: !!analytics, ads: !!ads });
   }
-  function gtagConsentUpdate(analytics, ads) {
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = window.gtag || function () { dataLayer.push(arguments); };
-    gtag('consent', 'update', {
-      ad_storage: ads ? 'granted' : 'denied',
-      ad_user_data: ads ? 'granted' : 'denied',
-      ad_personalization: ads ? 'granted' : 'denied',
-      analytics_storage: analytics ? 'granted' : 'denied',
-    });
+  function refreshSettingsButton() {
+    var api = window.__kssmiConsent;
+    if (api && typeof api.refreshButton === 'function') api.refreshButton();
   }
-  function vjtConsentUpdate(analytics) {
-    if (window.VJTTracker) { window.VJTTracker.enabled = !!analytics; }
-    if (analytics) {
-      window.dispatchEvent(new Event('vjt:consent-granted'));
-    } else {
-      clearVjtAnalyticsState();
-    }
-    // When consent is granted, start tracking the current page right away
-    // (the tracker skips init while disabled, so it needs a kick on opt-in).
-    if (analytics && typeof window.VJT_init === 'function') {
-      try { window.VJT_init(); } catch (e) {}
-    }
+  var lastOpener = null;
+  function restoreFocus() {
+    var target = lastOpener && document.contains(lastOpener)
+      ? lastOpener
+      : document.getElementById('cookie-settings-btn');
+    lastOpener = null;
+    if (target && typeof target.focus === 'function') target.focus();
   }
 
   // Build (or rebuild) the banner DOM in the CURRENT language. Astro View
@@ -265,20 +242,16 @@
     var overlay = document.getElementById('cookie-modal-overlay');
     var checkAnalytics = document.getElementById('cookie-check-analytics');
     var checkAds = document.getElementById('cookie-check-ads');
-    function closeModal() { overlay.style.display = 'none'; }
+    function closeModal() { overlay.style.display = 'none'; restoreFocus(); }
     document.getElementById('cookie-btn-accept').addEventListener('click', function () {
-      setConsent({ analytics: true, ads: true });
-      gtagConsentUpdate(true, true);
-      vjtConsentUpdate(true);
-      showSettingsButton(); // persistent affordance after accepting
+      commitChoice(true, true);
       removeBanner();
+      refreshSettingsButton(); // persistent affordance after accepting
     });
     document.getElementById('cookie-btn-reject').addEventListener('click', function () {
-      setConsent({ analytics: false, ads: false });
-      gtagConsentUpdate(false, false);
-      vjtConsentUpdate(false);
-      showSettingsButton(); // persistent affordance after rejecting too
+      commitChoice(false, false);
       removeBanner();
+      refreshSettingsButton(); // persistent affordance after rejecting too
     });
     document.getElementById('cookie-btn-preferences').addEventListener('click', function () { overlay.style.display = 'flex'; });
     document.getElementById('cookie-modal-cancel').addEventListener('click', closeModal);
@@ -287,11 +260,9 @@
     document.getElementById('cookie-modal-save').addEventListener('click', function () {
       var a = checkAnalytics.checked;
       var d = checkAds.checked;
-      setConsent({ analytics: a, ads: d });
-      gtagConsentUpdate(a, d);
-      vjtConsentUpdate(a);
-      showSettingsButton(); // idempotent — button stays visible after save
+      commitChoice(a, d);
       removeBanner(); // drops the main banner; settings button persists
+      refreshSettingsButton();
       closeModal();
     });
   }
@@ -301,79 +272,47 @@
     if (old && old.parentNode) old.parentNode.removeChild(old);
   }
 
-  // === Persistent "Cookie Settings" button (GDPR Art. 7(3) — withdrawal of consent).
-  // Shown at bottom-left (or bottom-right in RTL) AFTER the user accepts/rejects/saves.
-  // Click it to re-open the preferences modal without clearing localStorage. ===
-  function removeSettingsButton() {
-    var old = document.getElementById('cookie-settings-btn');
-    if (old && old.parentNode) old.parentNode.removeChild(old);
+  // === Preferences panel (GDPR Art. 7(3) — withdrawal of consent) ===
+  // The persistent "Cookie Settings" button belongs to ConsentController and
+  // works on every page; it loads this file on demand and calls this entry.
+  function openPreferences(opener) {
+    lastOpener = opener || null;
+    var overlay = document.getElementById('cookie-modal-overlay');
+    if (!overlay) {
+      // After SPA navigation, body was swapped so the previous overlay is gone.
+      // Build the full banner DOM, hide the bottom strip, then show the overlay.
+      buildBannerDom();
+      var main = document.getElementById('cookie-banner-main');
+      if (main) main.style.display = 'none';
+      overlay = document.getElementById('cookie-modal-overlay');
+    }
+    // Pre-fill checkboxes with current consent so the user sees what they
+    // previously chose (otherwise they default to checked even after Reject All).
+    var existing = getConsent();
+    if (existing) {
+      var a = document.getElementById('cookie-check-analytics');
+      var d = document.getElementById('cookie-check-ads');
+      if (a) a.checked = !!existing.analytics;
+      if (d) d.checked = !!existing.ads;
+    }
+    if (overlay) {
+      overlay.style.display = 'flex';
+      var first = document.getElementById('cookie-check-analytics');
+      if (first) first.focus();
+    }
   }
-  function showSettingsButton() {
-    if (document.getElementById('cookie-settings-btn')) return; // idempotent
-    if (!document.body) return;
-    var rtl = isRTL();
-    var btn = document.createElement('button');
-    btn.id = 'cookie-settings-btn';
-    btn.type = 'button';
-    btn.setAttribute('aria-label', t().preferences);
-    btn.title = t().preferences;
-    btn.style.cssText = 'position:fixed;bottom:16px;' + (rtl ? 'right' : 'left') + ':16px;z-index:9998;width:32px;height:32px;border-radius:50%;background:#5D4E37;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;box-shadow:0 3px 10px rgba(0,0,0,0.18);transition:transform .2s,background .2s;';
-    btn.onmouseenter = function () { btn.style.transform = 'scale(1.08)'; btn.style.background = '#4a3d2a'; };
-    btn.onmouseleave = function () { btn.style.transform = 'scale(1)'; btn.style.background = '#5D4E37'; };
-    btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="9" cy="6" r="2.2" fill="#5D4E37"/><circle cx="15" cy="12" r="2.2" fill="#5D4E37"/><circle cx="8" cy="18" r="2.2" fill="#5D4E37"/></svg>';
-    btn.onclick = function () {
-      var overlay = document.getElementById('cookie-modal-overlay');
-      if (!overlay) {
-        // After SPA navigation, body was swapped so the previous overlay is gone.
-        // Build the full banner DOM, hide the bottom strip, then show the overlay.
-        buildBannerDom();
-        var main = document.getElementById('cookie-banner-main');
-        if (main) main.style.display = 'none';
-        overlay = document.getElementById('cookie-modal-overlay');
-      }
-      // Pre-fill checkboxes with current consent so the user sees what they
-      // previously chose (otherwise they default to checked even after Reject All).
-      var existing = getConsent();
-      if (existing) {
-        var a = document.getElementById('cookie-check-analytics');
-        var d = document.getElementById('cookie-check-ads');
-        if (a) a.checked = !!existing.analytics;
-        if (d) d.checked = !!existing.ads;
-      }
-      if (overlay) overlay.style.display = 'flex';
-    };
-    document.body.appendChild(btn);
-  }
+  window.__kssmiCookieBanner = { openPreferences: openPreferences };
 
   // Build a fresh banner (current language) and wire up its buttons.
   function showBanner() {
-    if (getConsent()) { removeBanner(); showSettingsButton(); return; } // already chose
+    if (getConsent()) { removeBanner(); refreshSettingsButton(); return; } // already chose
     if (!document.body) return;
-    removeSettingsButton(); // hide persistent button while full banner shows
     buildBannerDom();
   }
 
-  function applyExistingConsent() {
-    var existing = getConsent();
-    if (existing) {
-      gtagConsentUpdate(existing.analytics || false, existing.ads || false);
-      vjtConsentUpdate(existing.analytics || false);
-      showSettingsButton(); // persistent button after prior consent
-      return true;
-    }
-    return false;
-  }
-
-  // Initial load: apply stored consent, otherwise show the banner.
-  if (!applyExistingConsent()) showBanner();
-
-  // Every SPA navigation / language switch: re-apply consent if chosen, else
-  // re-inject the banner in the new page's language so it persists until clicked.
-  document.addEventListener('astro:page-load', function () {
-    // Body was swapped — defensively remove any leftover settings button so we
-    // don't double-stack it across view transitions.
-    removeSettingsButton();
-    if (applyExistingConsent()) { removeBanner(); return; }
-    showBanner();
-  });
+  // Initial load and every SPA navigation / language switch: a visitor who
+  // has chosen sees only the settings button; otherwise the banner is
+  // re-injected in the new page's language until a choice is made.
+  showBanner();
+  document.addEventListener('astro:page-load', showBanner);
 })();

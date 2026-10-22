@@ -42,7 +42,7 @@ Dengan kebenaran analitis, VJT mungkin menggunakan pengecam pelawat pihak pertam
 - ukuran tatal dan penglibatan; dan
 - kaitan acara pertanyaan atau kenalan.
 
-Perjalanan analitis mesti kekal dilumpuhkan sehingga pelawat memberikan kebenaran analitis. Jika persetujuan ditarik balik, pengumpulan analitis seterusnya mesti dihentikan dan pengecam VJT yang disimpan dalam penyemak imbas mesti dialih keluar mengikut proses pengeluaran yang dilaksanakan.
+Perjalanan analitis mesti kekal dilumpuhkan sehingga pelawat memberikan persetujuan analitis. Setiap persetujuan memulakan kitaran persetujuan baharu, dan pengecam VJT tidak dibawa dari satu kitaran ke kitaran seterusnya. Apabila persetujuan ditarik balik, laman web menghentikan pengumpulan analitis baharu dan pengeluaran pengecam dalam pelayar, memadam nilai VJT daripada storan pelayar dan meminta pelayan supaya kuki identiti HttpOnly tamat tempoh. Pemadaman ini dicuba semula untuk bilangan kali yang terhad dan mungkin gagal, contohnya apabila pelayar luar talian atau permintaan disekat; kuki identiti yang masih tinggal tidak digunakan untuk meneruskan perjalanan sebelumnya dan akan diganti jika persetujuan diberikan semula. Data yang telah dihantar sebelum penarikan balik masih boleh diterima. Pengecam yang dicipta sebelum kitaran persetujuan diperkenalkan akan diganti sekali. Pelayar yang tidak mempunyai ciri yang diperlukan untuk menyelaraskan persetujuan merentas tab tidak menggunakan VJT.
 
 ### 3. Pengiklanan dan analisis pihak ketiga
 
@@ -57,13 +57,15 @@ Tempoh dan kriteria berikut terpakai pada sistem laman web yang diterangkan dala
 | `cookie-consent` | Kssmi | Ingat pilihan analitis dan pengiklanan pelawat | Perlu | Sehingga pilihan diubah atau storan pelayar dikosongkan | Local storage |
 | `vjt_visitor_id` | Kssmi | Mengaitkan lawatan yang dipersetujui dengan perjalanan pelawat | Analitis | Cookie: up to about 365 days; local copy: Sehingga persetujuan analitik ditarik balik atau storan pelayar dikosongkan | Kuki dan storan tempatan |
 | `vjt_session_id` | Kssmi | Mengaitkan acara halaman yang dipersetujui dalam satu sesi | Analitis | About 30 minutes | Kuki |
+| `KSSMI_VJT_IDENTITY` | Kssmi | Identiti pelayan bertandatangan yang mengaitkan lawatan yang dipersetujui dalam satu kitaran persetujuan; tidak boleh dibaca oleh skrip halaman | Analitis | Sehingga kira-kira 365 hari; tamat tempoh selepas penarikan balik jika pelayar membenarkan | Kuki (HttpOnly) |
+| `KSSMI_VJT_CONTACT` | Kssmi | Sesi bertandatangan jangka pendek yang melindungi statistik acara hubungan daripada acara palsu; mengandungi nilai rawak, bukan pengecam VJT, dan ditetapkan tanpa persetujuan analitis | Keselamatan acara hubungan | Kira-kira 30 minit, diperbaharui semasa menyemak imbas | Kuki (HttpOnly) |
 | Pengecam Google/pihak ketiga lain | Google / relevant third party | Analitis atau pengiklanan | Analitis/pengiklanan | Berbeza mengikut penyedia dan konfigurasi | Kuki atau teknologi yang serupa |
 
 Inventori kuki, sepanduk persetujuan dan pelaksanaan langsung mesti bersetuju. Menamakan semula penjejak atau mengalihkan pengecam daripada kuki ke storan tempatan tidak semestinya menjadikan teknologi itu dikecualikan dengan sendirinya.
 
 ### 5. Menukar pilihan kebenaran
 
-Pelawat mesti boleh membuka semula Tetapan Kuki dan menukar atau menarik balik persetujuan analitis dan pengiklanan semudah yang diberikan. Penarikan balik tidak menjejaskan pemprosesan yang sah sebelum penarikan balik.
+Pelawat mesti boleh membuka semula Tetapan Kuki dan menukar atau menarik balik persetujuan analitis dan pengiklanan semudah yang diberikan. Penarikan balik tidak menjejaskan pemprosesan yang sah sebelum penarikan balik. Selepas pilihan dibuat, butang Tetapan Kuki kekal tersedia pada setiap halaman.
 
 ### 6. Pengiraan paparan halaman tanpa nama
 Berasingan daripada analitik berasaskan persetujuan yang diterangkan di atas, laman web mengira paparan halaman dalam bentuk agregat: bagi setiap hari kalendar (waktu Beijing) dan laluan halaman, ia hanya menyimpan jumlah paparan. Jadual pengiraan ini tidak menggunakan kuki, storan penyemak imbas atau pengecam pelawat/sesi, dan tidak mengandungi alamat IP, agen pengguna, perujuk atau cap masa lawatan individu. Had kadar, penapisan bot dan log pelayan ialah operasi keselamatan berasingan yang diterangkan dalam bahagian masing-masing; ia bukan sebahagian daripada jadual agregat ini. Pelayan boleh membaca secara berasingan penanda pengecualian pentadbir yang ditandatangani untuk mengelak daripada mengira trafik pentadbir; penanda itu tidak disimpan dalam jadual agregat tanpa nama.

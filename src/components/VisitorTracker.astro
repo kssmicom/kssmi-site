@@ -24,9 +24,9 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
       : ((window.location.hostname === '::1' || window.location.hostname === '[::1]') ? '[::1]' : 'localhost');
     var vjtDevApiOrigin = 'http://' + vjtDevHostname + ':4325';
     window.VJTTracker = {
-      // Consent-gated: only enabled once the visitor grants analytics consent.
-      // The cookie banner flips this on (and calls VJT_init) when consent is given.
-      get enabled() { try { var c = JSON.parse(localStorage.getItem('cookie-consent')); return c ? !!c.analytics : false; } catch(e) { return false; } }, set enabled(v) {},
+      // Consent-gated: enabled only while ConsentController reports a current
+      // analytics consent cycle (it also calls VJT_init when consent is given).
+      get enabled() { try { return !!(window.__kssmiConsent && window.__kssmiConsent.trackingCycle()); } catch(e) { return false; } }, set enabled(v) {},
       page: {
         url: window.location.href,
         title: document.title || ''
@@ -35,7 +35,8 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         pageview: vjtDevApiOrigin + '/api/track-pageview.php',
         submission: vjtDevApiOrigin + '/api/track-submission.php',
         config: vjtDevApiOrigin + '/api/vjt-config.php',
-        capability: vjtDevApiOrigin + '/api/vjt-capability.php'
+        capability: vjtDevApiOrigin + '/api/vjt-capability.php',
+        forget: vjtDevApiOrigin + '/api/vjt-forget.php'
       },
       sessionTimeout: 30,
       cookieExpires: 31536000
@@ -46,9 +47,9 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 {!isDev && (
   <script is:inline>
     window.VJTTracker = {
-      // Consent-gated: only enabled once the visitor grants analytics consent.
-      // The cookie banner flips this on (and calls VJT_init) when consent is given.
-      get enabled() { try { var c = JSON.parse(localStorage.getItem('cookie-consent')); return c ? !!c.analytics : false; } catch(e) { return false; } }, set enabled(v) {},
+      // Consent-gated: enabled only while ConsentController reports a current
+      // analytics consent cycle (it also calls VJT_init when consent is given).
+      get enabled() { try { return !!(window.__kssmiConsent && window.__kssmiConsent.trackingCycle()); } catch(e) { return false; } }, set enabled(v) {},
       page: {
         url: window.location.href,
         title: document.title || ''
@@ -57,7 +58,8 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         pageview: '/api/track-pageview.php',
         submission: '/api/track-submission.php',
         config: '/api/vjt-config.php',
-        capability: '/api/vjt-capability.php'
+        capability: '/api/vjt-capability.php',
+        forget: '/api/vjt-forget.php'
       },
       sessionTimeout: 30,
       cookieExpires: 31536000
@@ -334,16 +336,6 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
       }
     }
 
-    function readCookie(name) {
-      var prefix = name + '=';
-      var parts = document.cookie ? document.cookie.split(';') : [];
-      for (var i = 0; i < parts.length; i++) {
-        var part = parts[i].trim();
-        if (part.indexOf(prefix) === 0) return decodeURIComponent(part.slice(prefix.length));
-      }
-      return '';
-    }
-
     function newCoreEventId() {
       try {
         if (window.crypto && typeof window.crypto.randomUUID === 'function') {
@@ -362,18 +354,23 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
       return null;
     }
 
+    // vjt-tracker.js stores VJT values as {c: consent cycle, v: value}.
+    function readCycleValue(key, cycle) {
+      var raw = readJson(key);
+      return raw && typeof raw === 'object' && !Array.isArray(raw) && raw.c === cycle ? raw.v : null;
+    }
+
     function addAnalyticsLinkage(payload) {
-      var consent = readJson('cookie-consent');
-      if (!consent || consent.analytics !== true) return;
+      // Linkage requires the current consent cycle and identity values the
+      // tracker stored under that same cycle; nothing from an older cycle.
+      var cycle = window.__kssmiConsent && window.__kssmiConsent.trackingCycle();
+      if (!cycle) return;
 
-      // These analytics values are read only after current analytics consent.
-      var visitorId = '';
-      try { visitorId = localStorage.getItem('vjt_visitor_id') || ''; } catch (_) {}
-      if (!visitorId) visitorId = readCookie('vjt_visitor_id');
-
-      var session = readJson('vjt_session_meta');
-      var pageview = readJson('vjt_current_pageview');
-      var sessionId = session && typeof session.id === 'string' ? session.id : readCookie('vjt_session_id');
+      var visitorId = readCycleValue('vjt_visitor_id', cycle);
+      if (typeof visitorId !== 'string') visitorId = '';
+      var session = readCycleValue('vjt_session_meta', cycle);
+      var pageview = readCycleValue('vjt_current_pageview', cycle);
+      var sessionId = session && typeof session.id === 'string' ? session.id : '';
       if (!/^vjtv_[A-Za-z0-9_-]{8,60}$/.test(visitorId)
           || !/^vjts_[A-Za-z0-9_-]{8,60}$/.test(sessionId)) return;
 

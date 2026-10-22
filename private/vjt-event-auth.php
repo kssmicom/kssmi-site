@@ -141,6 +141,29 @@ function kssmi_vjt_set_private_cookie(string $name, string $value, int $expiresA
     ]);
 }
 
+/**
+ * Expire a cookie written by kssmi_vjt_set_private_cookie(). The attributes
+ * must match the original write exactly or the browser keeps the old cookie.
+ */
+function kssmi_vjt_clear_private_cookie(string $name): void {
+    setcookie($name, '', [
+        'expires' => 1,
+        'path' => '/',
+        'secure' => kssmi_vjt_request_cookie_secure(),
+        'httponly' => true,
+        'samesite' => 'Strict',
+    ]);
+}
+
+/**
+ * A consent cycle is a random ID the browser creates each time analytics
+ * consent starts. Identities are only reused within the cycle that minted
+ * them, so a withdrawal followed by a new grant always yields a new visitor.
+ */
+function kssmi_vjt_is_consent_cycle($value): bool {
+    return is_string($value) && preg_match('/^[A-Za-z0-9_-]{22}$/D', $value) === 1;
+}
+
 function kssmi_vjt_identity_from_token($token, ?int $now = null): ?array {
     $now = $now ?? time();
     $claims = kssmi_vjt_verify_claims($token, 'identity-v1');
@@ -163,11 +186,21 @@ function kssmi_vjt_bootstrap_identity(
     bool $rotateSession,
     int $sessionLifetime,
     ?int $now = null,
-    bool $emitCookie = true
+    bool $emitCookie = true,
+    ?string $consentCycle = null
 ): array {
     $now = $now ?? time();
     $sessionLifetime = min(7200, max(300, $sessionLifetime));
+    if ($consentCycle !== null && !kssmi_vjt_is_consent_cycle($consentCycle)) {
+        throw new InvalidArgumentException('Invalid VJT consent cycle');
+    }
     $existing = kssmi_vjt_identity_from_request($now);
+    // An identity from another consent cycle (or from before cycles existed)
+    // is never continued: both visitor and session are replaced.
+    if ($consentCycle !== null && $existing !== null
+        && !hash_equals($consentCycle, (string)($existing['cyc'] ?? ''))) {
+        $existing = null;
+    }
     $visitorId = $existing['visitor_id'] ?? kssmi_vjt_random_tracking_id('vjtv_');
     $sessionExpired = $existing === null || (int)($existing['session_exp'] ?? 0) < $now;
     $sessionId = (!$rotateSession && !$sessionExpired)
@@ -181,6 +214,7 @@ function kssmi_vjt_bootstrap_identity(
         'iat' => $now,
         'exp' => $now + KSSMI_VJT_IDENTITY_TTL,
     ];
+    if ($consentCycle !== null) $claims['cyc'] = $consentCycle;
     $token = kssmi_vjt_sign_claims($claims, 'identity-v1');
     if ($emitCookie) kssmi_vjt_set_private_cookie(KSSMI_VJT_IDENTITY_COOKIE, $token, $claims['exp']);
     $claims['token'] = $token;
