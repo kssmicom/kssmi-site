@@ -11,7 +11,12 @@
  * - Email logging to JSON file (like WordPress SMTP plugins)
  * - Debug mode for testing
  * - CORS support for local development
+ * - Accepted inquiries are stored in a durable outbox and sent after the
+ *   response (private/inquiry-outbox.php)
  */
+
+// private/inquiry-outbox-worker.php loads this file only for its functions.
+if (defined('KSSMI_SEND_MAIL_LIBRARY')) return;
 
 header('X-Robots-Tag: noindex, nofollow');
 header('Cache-Control: no-store, private', true);
@@ -33,6 +38,7 @@ if (file_exists($_privateConfigPath)) {
 require_once dirname(__DIR__) . '/private/email-log-store.php';
 require_once dirname(__DIR__) . '/private/inquiry-attachments.php';
 require_once dirname(__DIR__) . '/private/inquiry-autoreply.php';
+require_once dirname(__DIR__) . '/private/inquiry-outbox.php';
 
 // CORS Headers for local development
 $allowedOrigins = [
@@ -119,33 +125,37 @@ if (!checkRateLimit('send-mail', 2, 60)) {
 // CONFIGURATION
 // ============================================
 
-$config = [
-    // Email Settings
-    'to_email' => 'sales@kssmi.com',
-    'to_name' => 'KSSMI Sales Team',
-    'from_email' => 'sales@kssmi.com',
-    'from_name' => 'Kssmi Eyewear',
+$config = kssmi_inquiry_config($_privateCfg, $emailLogPath);
 
-    // Gmail Workspace SMTP Settings
-    'smtp' => [
-        'host' => 'smtp.gmail.com',
-        'port' => 587,
-        'user' => 'sales@kssmi.com',
-        'pass' => $_privateCfg['smtp_pass'],
-        'secure' => 'tls',
-    ],
+function kssmi_inquiry_config(array $privateCfg, string $emailLogPath): array {
+    return [
+        // Email Settings
+        'to_email' => 'sales@kssmi.com',
+        'to_name' => 'KSSMI Sales Team',
+        'from_email' => 'sales@kssmi.com',
+        'from_name' => 'Kssmi Eyewear',
 
-    // Cloudflare Turnstile
-    'turnstile_secret' => $_privateCfg['turnstile_secret'],
+        // Gmail Workspace SMTP Settings
+        'smtp' => [
+            'host' => 'smtp.gmail.com',
+            'port' => 587,
+            'user' => 'sales@kssmi.com',
+            'pass' => (string)($privateCfg['smtp_pass'] ?? ''),
+            'secure' => 'tls',
+        ],
 
-    // Debug Mode - Set to true to skip Turnstile (for localhost testing)
-    'debug_mode' => false,  // Set to true only for local testing
+        // Cloudflare Turnstile
+        'turnstile_secret' => (string)($privateCfg['turnstile_secret'] ?? ''),
 
-    // Email Logging
-    'log_enabled' => true,
-    'log_file' => $emailLogPath,
+        // Debug Mode - Set to true to skip Turnstile (for localhost testing)
+        'debug_mode' => false,  // Set to true only for local testing
 
-];
+        // Email Logging
+        'log_enabled' => true,
+        'log_file' => $emailLogPath,
+
+    ];;
+}
 
 // ============================================
 // EMAIL LOGGING FUNCTIONS
@@ -214,7 +224,7 @@ function logEmail(
         'delivery_outcome' => $deliveryOutcome,
         'ip_address' => $ipToLog,
         'country' => $visitorCountry ?? 'Unknown',
-        'user_agent' => vjt_clip((string)($_SERVER['HTTP_USER_AGENT'] ?? 'Unknown'), 512),
+        'user_agent' => vjt_clip((string)($data['user_agent'] ?? $_SERVER['HTTP_USER_AGENT'] ?? 'Unknown'), 512),
     ];
 
     $result = kssmi_email_logs_mutate($config['log_file'], function($logs) use ($logEntry) {
@@ -1119,7 +1129,7 @@ debugIPLog('Country-source', ['source' => 'server-detected', 'country' => $visit
 $inquiryId = generateInquiryId();
 
 // ============================================
-// SEND EMAIL VIA PHPMAILER
+// ACCEPT, ANSWER, THEN SEND (private/inquiry-outbox.php)
 // ============================================
 
 // Check if PHPMailer is installed
@@ -1155,167 +1165,167 @@ require_once $phpmailerPath . 'Exception.php';
 require_once $phpmailerPath . 'PHPMailer.php';
 require_once $phpmailerPath . 'SMTP.php';
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception as PHPMailerException;
-
-$smtpSendStarted = false;
-
+// Both messages are rendered now, while the request (VJT identity, language,
+// attachments) is still available, and stored with the attachments. The
+// inquiry counts as accepted only once that is durably on disk.
+$vjtSummary = '';
 try {
-    $mail = new PHPMailer(true);
+    $vjtSummary = vjt_build_email_summary($vjtData['vjt_visitor_id'], $vjtData['vjt_session_id']);
+} catch (Throwable $e) {
+    // Attribution must never interfere with a real inquiry email.
+    error_log('VJT email summary error: ' . $e->getMessage());
+}
+$htmlBody = buildHtmlEmail($formData, $visitorIP, $visitorCountry, $inquiryId);
+if ($vjtSummary !== '') {
+    $safeSummary = nl2br(htmlspecialchars($vjtSummary, ENT_QUOTES, 'UTF-8'));
+    $summaryHtml = "<div style='margin:20px 30px;padding:14px;border:1px solid #ded6ca;background:#faf8f5;font:12px/1.6 Arial;color:#4a4137'><strong>Visitor Journey</strong><br>{$safeSummary}</div>";
+    $htmlBody = str_replace('</body>', $summaryHtml . '</body>', $htmlBody);
+}
+$messages = [
+    'sales' => [
+        'to' => ['email' => $config['to_email'], 'name' => $config['to_name']],
+        'reply_to' => ['email' => $formData['email'], 'name' => $formData['name']],
+        'subject' => "{$formData['name']} - Kssmi Eyewear - {$inquiryId}",
+        'html' => $htmlBody,
+        'text' => buildTextEmail($formData, $visitorIP, $visitorCountry, $inquiryId) . ($vjtSummary !== '' ? "\n\n" . $vjtSummary : ''),
+    ],
+    'autoreply' => kssmi_inquiry_autoreply_build($formData),
+];
+$record = [
+    'inquiry_id' => $inquiryId,
+    'form' => $formData,
+    'ip' => $visitorIP,
+    'country' => $visitorCountry,
+    'security_state' => $securityState,
+    'user_agent' => vjt_clip((string)($_SERVER['HTTP_USER_AGENT'] ?? 'Unknown'), 512),
+];
+foreach ($attachments as $index => $attachment) {
+    $attachments[$index]['size'] = $attachment['size'] ?? (int)@filesize($attachment['path']);
+}
+$accepted = kssmi_outbox_enqueue($messages, $record, $attachments, kssmi_outbox_fingerprint($formData, $attachments));
+if (!$accepted['ok']) {
+    kssmi_bump_submission_counter('failed');
+    error_log('KSSMI Form Error: inquiry ' . $inquiryId . ' could not be stored in the outbox');
+    http_response_code(503);
+    header('Retry-After: 60');
+    echo json_encode([
+        'success' => false,
+        'message' => 'Sorry, we could not record your inquiry. Please try again in a minute or email us directly at sales@kssmi.com',
+    ]);
+    exit;
+}
 
-    // Enable verbose debug output (disable in production)
-    if ($config['debug_mode']) {
-        $mail->SMTPDebug = 2;
-        $mail->Debugoutput = function($str, $level) {
-            error_log("PHPMailer [$level]: $str");
-        };
-    }
-
-    // SMTP Configuration
-    $mail->isSMTP();
-    $mail->Host = $config['smtp']['host'];
-    $mail->SMTPAuth = true;
-    $mail->Username = $config['smtp']['user'];
-    $mail->Password = $config['smtp']['pass'];
-    $mail->SMTPSecure = $config['smtp']['secure'];
-    $mail->Port = $config['smtp']['port'];
-    $mail->CharSet = 'UTF-8';
-
-    // Sender & Recipient
-    $mail->setFrom($config['from_email'], $config['from_name']);
-    $mail->addAddress($config['to_email'], $config['to_name']);
-    $mail->addReplyTo($formData['email'], $formData['name']);
-
-    // Email Content
-    $mail->isHTML(true);
-    $mail->Subject = "{$formData['name']} - Kssmi Eyewear - {$inquiryId}";
-    $vjtSummary = '';
-    try {
-        $vjtSummary = vjt_build_email_summary($vjtData['vjt_visitor_id'], $vjtData['vjt_session_id']);
-    } catch (Throwable $e) {
-        // Attribution must never interfere with a real inquiry email.
-        error_log('VJT email summary error: ' . $e->getMessage());
-    }
-    $htmlBody = buildHtmlEmail($formData, $visitorIP, $visitorCountry, $inquiryId);
-    if ($vjtSummary !== '') {
-        $safeSummary = nl2br(htmlspecialchars($vjtSummary, ENT_QUOTES, 'UTF-8'));
-        $summaryHtml = "<div style='margin:20px 30px;padding:14px;border:1px solid #ded6ca;background:#faf8f5;font:12px/1.6 Arial;color:#4a4137'><strong>Visitor Journey</strong><br>{$safeSummary}</div>";
-        $htmlBody = str_replace('</body>', $summaryHtml . '</body>', $htmlBody);
-    }
-    $mail->Body = $htmlBody;
-    $mail->AltBody = buildTextEmail($formData, $visitorIP, $visitorCountry, $inquiryId) . ($vjtSummary !== '' ? "\n\n" . $vjtSummary : '');
-    foreach ($attachments as $attachment) {
-        $mail->addAttachment($attachment['path'], $attachment['name']);
-    }
-
-    // Set higher timeout for slow connections
-    $mail->Timeout = 30;
-
-    // Any exception after this point has an ambiguous delivery outcome: the
-    // SMTP server may have accepted DATA before the acknowledgement was lost.
-    $smtpSendStarted = true;
-    if (!$mail->send()) {
-        throw new PHPMailerException('SMTP send returned false');
-    }
-
-    // Log success
-    kssmi_bump_submission_counter('success');
-    logEmail(
-        $config,
-        $formData,
-        'success',
-        'Email sent successfully',
-        '',
-        $visitorIP,
-        $visitorCountry,
-        $securityState,
-        null
-    );
-
-    // Record to VJT database
+// VJT reads the visitor identity from this request, so the inquiry is recorded
+// here as accepted. Delivery is tracked by Email Logs and the outbox.
+if (!$accepted['duplicate']) {
     recordInquiryOutcome($config, array_merge($formData, $vjtData), 'success', $visitorIP, $visitorCountry);
+}
+$requestStarted = (float)($_SERVER['REQUEST_TIME_FLOAT'] ?? microtime(true));
+error_log(sprintf(
+    'KSSMI inquiry %s accepted in %d ms%s',
+    $accepted['inquiry_id'] ?: $inquiryId,
+    (int)round((microtime(true) - $requestStarted) * 1000),
+    $accepted['duplicate'] ? ' (repeat of a submission from the last 2 minutes; not queued again)' : ''
+));
 
-    // The confirmation is intentionally best-effort: an SMTP issue here must
-    // never turn a delivered inquiry into a failed form submission. An
-    // exhausted budget skips only the confirmation (KS-04).
-    try {
-        $autoReplyBudget = kssmi_inquiry_autoreply_budget($formData['email']);
-        if ($autoReplyBudget === null) {
-            kssmi_inquiry_autoreply_send($config, $formData);
-        } else {
-            error_log('KSSMI inquiry auto-reply skipped: ' . $autoReplyBudget . ' budget exhausted');
+$lang = $formData['language'] ?? 'en';
+$thankYouUrl = ($lang === 'en') ? '/thank-you/' : "/{$lang}/thank-you/";
+echo json_encode([
+    'success' => true,
+    'message' => 'Thank you! Your inquiry has been received. We will contact you within 24 hours.',
+    'redirect' => $thankYouUrl,
+    'inquiry_id' => $accepted['inquiry_id'] ?: $inquiryId,
+]);
+
+// The visitor is redirected now. This process goes on to send the mail; any
+// job it cannot finish stays on disk for the next request or the worker.
+kssmi_outbox_finish_response();
+if (kssmi_email_logs_cutover_is_active($emailLogPath)) exit;
+$outboxSend = kssmi_inquiry_outbox_sender($config);
+$outboxFinal = kssmi_inquiry_outbox_final($config);
+if (!$accepted['duplicate'] && is_string($accepted['id'])) {
+    kssmi_outbox_process($accepted['id'], $outboxSend, $outboxFinal);
+}
+kssmi_outbox_drain($outboxSend, $outboxFinal, 5, 45, $accepted['id']);
+exit;
+
+/**
+ * Send one stored outbox message. A failure before or during the SMTP
+ * handshake is definite; anything later may have been delivered and is
+ * reported as uncertain (it is still retried).
+ */
+function kssmi_inquiry_outbox_sender(array $config): callable {
+    return static function (string $step, array $message, string $jobDir, array $job) use ($config): array {
+        $started = microtime(true);
+        $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
+        $smtpSendStarted = false;
+        try {
+            $mail->isSMTP();
+            $mail->Host = $config['smtp']['host'];
+            $mail->SMTPAuth = true;
+            $mail->Username = $config['smtp']['user'];
+            $mail->Password = $config['smtp']['pass'];
+            $mail->SMTPSecure = $config['smtp']['secure'];
+            $mail->Port = $config['smtp']['port'];
+            $mail->CharSet = 'UTF-8';
+            $mail->Timeout = 30;
+            $mail->setFrom($config['from_email'], $config['from_name']);
+            if ($step === 'sales') {
+                $mail->addAddress($message['to']['email'], $message['to']['name']);
+                $mail->addReplyTo($message['reply_to']['email'], $message['reply_to']['name']);
+                $mail->isHTML(true);
+                $mail->Subject = $message['subject'];
+                $mail->Body = $message['html'];
+                $mail->AltBody = $message['text'];
+                foreach ($message['attachments'] ?? [] as $file) {
+                    $mail->addAttachment($jobDir . '/' . $file['file'], $file['name']);
+                }
+            } else {
+                $mail->addAddress($message['to'], $message['recipient_name']);
+                $mail->addCC('sales@kssmi.com', 'Kssmi Eyewear Team');
+                $mail->addReplyTo('sales@kssmi.com', 'Kssmi Eyewear Team');
+                $mail->addCustomHeader('Auto-Submitted', 'auto-replied');
+                $mail->addCustomHeader('X-Auto-Response-Suppress', 'All');
+                $mail->isHTML(false);
+                $mail->Subject = $message['subject'];
+                $mail->Body = $message['body'];
+            }
+            // From here the server may have accepted the message even if an
+            // error follows, so a failure is uncertain unless it is clearly a
+            // connection or authentication failure.
+            $smtpSendStarted = true;
+            if (!$mail->send()) throw new \RuntimeException('SMTP send returned false');
+            return ['state' => 'sent', 'error' => null, 'ms' => (int)round((microtime(true) - $started) * 1000)];
+        } catch (\Throwable $e) {
+            $definite = !$smtpSendStarted || preg_match('/connect\(\) failed|Could not authenticate|Could not instantiate|Invalid address|Could not access file/i', $e->getMessage()) === 1;
+            return ['state' => $definite ? 'failed' : 'uncertain', 'error' => $e->getMessage(), 'ms' => (int)round((microtime(true) - $started) * 1000)];
         }
-    } catch (Throwable $autoReplyError) {
-        error_log('KSSMI inquiry auto-reply failed: ' . $autoReplyError->getMessage());
-    }
+    };
+}
 
-    // Determine redirect URL based on language
-    $lang = $formData['language'] ?? 'en';
-    $thankYouUrl = ($lang === 'en') ? '/thank-you/' : "/{$lang}/thank-you/";
-
-    echo json_encode([
-        'success' => true,
-        'message' => 'Thank you! Your inquiry has been sent successfully. We will contact you within 24 hours.',
-        'redirect' => $thankYouUrl,
-        'inquiry_id' => $inquiryId
-    ]);
-
-} catch (PHPMailerException $e) {
-    $errorMsg = $e->getMessage();
-    $failureType = $smtpSendStarted ? 'delivery_uncertain' : 'delivery';
-    $failureMessage = $smtpSendStarted
-        ? 'PHPMailer delivery outcome uncertain'
-        : 'PHPMailer definite failure';
-    kssmi_bump_submission_counter('failed');
-    logEmail(
-        $config,
-        $formData,
-        'failed',
-        $failureMessage,
-        $errorMsg,
-        $visitorIP,
-        $visitorCountry,
-        $securityState,
-        $failureType
-    );
-    recordInquiryOutcome($config, array_merge($formData, $vjtData), 'error', $visitorIP, $visitorCountry);
-    error_log("KSSMI Form Error (PHPMailer): " . $errorMsg);
-
-    http_response_code(500);
-    echo json_encode([
-        'success' => false,
-        'message' => $smtpSendStarted
-            ? 'We could not confirm the delivery result. Please do not submit again; our team will check the mailbox.'
-            : 'Sorry, there was an error sending your message. Please email us directly at sales@kssmi.com',
-        'debug' => $config['debug_mode'] ? $errorMsg : null
-    ]);
-} catch (Exception $e) {
-    $errorMsg = $e->getMessage();
-    $failureType = $smtpSendStarted ? 'delivery_uncertain' : 'delivery';
-    $failureMessage = $smtpSendStarted
-        ? 'General delivery outcome uncertain'
-        : 'General definite failure';
-    kssmi_bump_submission_counter('failed');
-    logEmail(
-        $config,
-        $formData,
-        'failed',
-        $failureMessage,
-        $errorMsg,
-        $visitorIP,
-        $visitorCountry,
-        $securityState,
-        $failureType
-    );
-    recordInquiryOutcome($config, array_merge($formData, $vjtData), 'error', $visitorIP, $visitorCountry);
-    error_log("KSSMI Form Error: " . $errorMsg);
-
-    http_response_code(500);
-    echo json_encode([
-        'success' => false,
-        'message' => $smtpSendStarted
-            ? 'We could not confirm the delivery result. Please do not submit again; our team will check the mailbox.'
-            : 'Sorry, there was an error sending your message. Please email us directly at sales@kssmi.com',
-        'debug' => $config['debug_mode'] ? $errorMsg : null
-    ]);
+/** Record a sales notification in Email Logs once it is sent or given up. */
+function kssmi_inquiry_outbox_final(array $config): callable {
+    return static function (string $step, string $state, array $job) use ($config): void {
+        if ($step !== 'sales') return;
+        $record = $job['record'];
+        $data = $record['form'] + ['user_agent' => $record['user_agent'] ?? 'Unknown'];
+        if ($state === 'sent') {
+            kssmi_bump_submission_counter('success');
+            logEmail($config, $data, 'success', 'Email sent successfully', '', $record['ip'], $record['country'], $record['security_state'], null);
+            return;
+        }
+        $uncertain = (bool)($job['steps']['sales']['uncertain'] ?? false);
+        kssmi_bump_submission_counter('failed');
+        logEmail(
+            $config,
+            $data,
+            'failed',
+            'Not delivered after 72 hours of retries',
+            (string)($job['steps']['sales']['last_error'] ?? ''),
+            $record['ip'],
+            $record['country'],
+            $record['security_state'],
+            $uncertain ? 'delivery_uncertain' : 'delivery'
+        );
+    };
 }

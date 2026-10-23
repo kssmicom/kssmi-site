@@ -4,67 +4,15 @@ declare(strict_types=1);
 /**
  * Inquiry auto-reply (KS-04).
  *
- * The confirmation goes to whatever address the visitor typed, from sales@
- * and through the same Gmail quota as the sales notification. It must not
- * become a way to mail anyone: budgets cap how often one mailbox, one client
- * and the whole site can trigger it, and the greeting carries the submitted
- * name only when it looks like a name. A skipped confirmation never affects
- * the inquiry or its notification to sales@.
+ * Every accepted inquiry gets this confirmation, including repeated inquiries
+ * from the same mailbox: abuse is stopped before acceptance (origin, size,
+ * per-IP rate, Turnstile, attachments, fields in send-mail.php), never by
+ * skipping the reply afterwards. The message is rendered at acceptance and
+ * sent through the durable outbox (private/inquiry-outbox.php). The greeting
+ * carries the submitted name only when it looks like a name.
  */
 
-require_once __DIR__ . '/rate-limit.php';
-
-// About 1 inquiry a day reaches production (at most 4 in a day over 34 days
-// to 2026-10-23); the global caps leave ample room for real customers.
-const KSSMI_INQUIRY_AUTOREPLY_PER_RECIPIENT_DAY = 1;
-const KSSMI_INQUIRY_AUTOREPLY_PER_CLIENT_DAY = 5;
-const KSSMI_INQUIRY_AUTOREPLY_GLOBAL_HOUR = 20;
-const KSSMI_INQUIRY_AUTOREPLY_GLOBAL_DAY = 100;
 const KSSMI_INQUIRY_AUTOREPLY_NAME_MAX = 60;
-
-/**
- * One budget identity per mailbox: lower case, without a +tag, and without
- * dots for Gmail, which ignores them.
- */
-function kssmi_inquiry_autoreply_recipient_key(string $email): string {
-    $email = strtolower(trim($email));
-    $at = strrpos($email, '@');
-    if ($at === false) return $email;
-    $local = substr($email, 0, $at);
-    $domain = substr($email, $at + 1);
-    $tag = strpos($local, '+');
-    if ($tag !== false) $local = substr($local, 0, $tag);
-    if ($domain === 'gmail.com' || $domain === 'googlemail.com') {
-        $local = str_replace('.', '', $local);
-        $domain = 'gmail.com';
-    }
-    return $local . '@' . $domain;
-}
-
-/**
- * Charge the auto-reply budgets: one mailbox, then the client IP, then the
- * whole site. Returns null when the confirmation may be sent, otherwise the
- * exhausted budget, for the server log only.
- */
-function kssmi_inquiry_autoreply_budget(string $email): ?string {
-    if (!kssmi_check_rate_limit_identity(
-        'inquiry-autoreply-recipient',
-        kssmi_inquiry_autoreply_recipient_key($email),
-        KSSMI_INQUIRY_AUTOREPLY_PER_RECIPIENT_DAY,
-        86400,
-        1
-    )) {
-        return 'recipient';
-    }
-    if (!checkRateLimit('inquiry-autoreply-client', KSSMI_INQUIRY_AUTOREPLY_PER_CLIENT_DAY, 86400)) {
-        return 'client';
-    }
-    if (!checkRateLimitGlobal('inquiry-autoreply-day', KSSMI_INQUIRY_AUTOREPLY_GLOBAL_DAY, 86400)
-        || !checkRateLimitGlobal('inquiry-autoreply', KSSMI_INQUIRY_AUTOREPLY_GLOBAL_HOUR, 3600)) {
-        return 'global';
-    }
-    return null;
-}
 
 /**
  * The submitted name as plain text when it is fit for a greeting, else ''.
@@ -130,34 +78,7 @@ function kssmi_inquiry_autoreply_build(array $data): array {
             $copy['team'],
             'sales@kssmi.com',
         ]),
+        'to' => (string)($data['email'] ?? ''),
         'recipient_name' => $name,
     ];
-}
-
-/** Send a best-effort plain-text confirmation without affecting the inquiry outcome. */
-function kssmi_inquiry_autoreply_send(array $config, array $data): void {
-    $reply = kssmi_inquiry_autoreply_build($data);
-    $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
-    $mail->isSMTP();
-    $mail->Host = $config['smtp']['host'];
-    $mail->SMTPAuth = true;
-    $mail->Username = $config['smtp']['user'];
-    $mail->Password = $config['smtp']['pass'];
-    $mail->SMTPSecure = $config['smtp']['secure'];
-    $mail->Port = $config['smtp']['port'];
-    $mail->CharSet = 'UTF-8';
-    $mail->Timeout = 15;
-    $mail->setFrom($config['from_email'], $config['from_name']);
-    $mail->addAddress($data['email'], $reply['recipient_name']);
-    $mail->addCC('sales@kssmi.com', 'Kssmi Eyewear Team');
-    $mail->addReplyTo('sales@kssmi.com', 'Kssmi Eyewear Team');
-    $mail->addCustomHeader('Auto-Submitted', 'auto-replied');
-    $mail->addCustomHeader('X-Auto-Response-Suppress', 'All');
-    $mail->isHTML(false);
-    $mail->Subject = $reply['subject'];
-    $mail->Body = $reply['body'];
-
-    if (!$mail->send()) {
-        throw new \RuntimeException('SMTP auto-reply send returned false');
-    }
 }

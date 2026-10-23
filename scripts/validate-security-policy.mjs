@@ -68,27 +68,56 @@ assert.match(sendMail, /\$countryHtml = kssmi_html_escape\(\$country\)/, 'Countr
 assert.match(sendMail, /\$ipHtml = kssmi_html_escape\(\$ip\)/, 'IP must be encoded at the HTML mail sink.');
 assert.match(rateLimitTest, /direct caller supplied a trusted Cloudflare country header/, 'PHP tests must cover forged country headers.');
 
-// KS-04: the inquiry auto-reply goes to an address the visitor chose, so it is
-// budgeted and greets with the submitted name only when that looks like a name.
-const [autoReply, autoReplyTest] = await Promise.all([
+// KS-04 (revised): every accepted inquiry is stored durably, answered at
+// once, and gets its sales notification and automatic reply through the
+// outbox. Abuse is stopped before acceptance; no budget may skip a reply.
+const [autoReply, autoReplyTest, outbox, outboxTest, sendMailHttpTest, outboxWorker] = await Promise.all([
   readText('private/inquiry-autoreply.php'),
   readText('scripts/test-inquiry-autoreply.php'),
+  readText('private/inquiry-outbox.php'),
+  readText('scripts/test-inquiry-outbox.php'),
+  readText('scripts/test-send-mail-outbox-http.php'),
+  readText('private/inquiry-outbox-worker.php'),
 ]);
-assert.match(sendMail, /require_once dirname\(__DIR__\) \. '\/private\/inquiry-autoreply\.php';/, 'send-mail.php must load the auto-reply module.');
-assert.doesNotMatch(sendMail, /function (buildInquiryAutoReply|sendInquiryAutoReply)\(/, 'The auto-reply must live in private/inquiry-autoreply.php.');
-assert.match(
-  sendMail,
-  /\$autoReplyBudget = kssmi_inquiry_autoreply_budget\(\$formData\['email'\]\);\s*if \(\$autoReplyBudget === null\) \{\s*kssmi_inquiry_autoreply_send\(\$config, \$formData\);/,
-  'The auto-reply must be sent only within its budgets.'
+assert.ok(sendMail.includes("require_once dirname(__DIR__) . '/private/inquiry-outbox.php';"), 'send-mail.php must load the outbox.');
+for (const forbidden of ['autoreply_budget', 'inquiry-autoreply-recipient', 'inquiry-autoreply-client']) {
+  assert.ok(!sendMail.includes(forbidden) && !autoReply.includes(forbidden), `No budget may skip the reply of an accepted inquiry: ${forbidden}`);
+}
+assert.ok(sendMail.includes("'autoreply' => kssmi_inquiry_autoreply_build($formData)"), 'Every accepted inquiry must queue its automatic reply.');
+assert.ok(autoReply.includes("$name = kssmi_inquiry_autoreply_name($data['name'] ?? '');"), 'The greeting must use only an accepted name.');
+assert.ok(sendMail.includes("checkRateLimit('send-mail', 2, 60)"), 'The per-IP limit must stay in front of acceptance.');
+const enqueueAt = sendMail.indexOf('$accepted = kssmi_outbox_enqueue(');
+const successAt = sendMail.indexOf("'success' => true");
+const finishAt = sendMail.indexOf('kssmi_outbox_finish_response();');
+const processAt = sendMail.indexOf('kssmi_outbox_process($accepted');
+assert.ok(
+  enqueueAt > sendMail.indexOf('verifyTurnstileDetailed($turnstileToken') && enqueueAt > sendMail.indexOf('kssmi_inquiry_validate_attachments('),
+  'Turnstile and attachments must be checked before acceptance.'
 );
-assert.match(autoReply, /kssmi_check_rate_limit_identity\(\s*'inquiry-autoreply-recipient',\s*kssmi_inquiry_autoreply_recipient_key\(\$email\),/, 'The auto-reply must be budgeted per mailbox, independent of the IP.');
-assert.match(autoReply, /checkRateLimitGlobal\('inquiry-autoreply',/, 'The auto-reply must have a site-wide budget.');
-assert.match(autoReply, /\$name = kssmi_inquiry_autoreply_name\(\$data\['name'\] \?\? ''\);/, 'The greeting must use only an accepted name.');
-assert.match(autoReplyTest, /Concurrent submissions must yield one confirmation/, 'PHP tests must cover concurrent auto-reply budgets.');
-const autoReplyScripts = JSON.parse(packageJson).scripts ?? {};
-assert.equal(autoReplyScripts['test:inquiry-autoreply'], 'php scripts/test-inquiry-autoreply.php', 'package.json must expose the auto-reply test.');
-assert.match(autoReplyScripts['test:php'] ?? '', /npm run test:inquiry-autoreply(?:\s|$)/, 'The full PHP suite must include the auto-reply test.');
-assert.ok(deploy.includes('php scripts/test-inquiry-autoreply.php'), 'Deploy must run the auto-reply test before release.');
+assert.ok(enqueueAt > 0 && enqueueAt < successAt && successAt < finishAt && finishAt < processAt, 'Success may be answered only after the inquiry is stored, and mail is sent after the response.');
+const notStored = sendMail.indexOf("if (!$accepted['ok']) {");
+assert.ok(notStored > enqueueAt && sendMail.indexOf('http_response_code(503);', notStored) - notStored < 250, 'An inquiry that cannot be stored must not be reported as accepted.');
+assert.ok(outbox.includes('fsync'), 'Outbox writes must be flushed to disk before acceptance.');
+assert.ok(outbox.includes('KSSMI_OUTBOX_GIVE_UP_AFTER = 72 * 3600'), 'Failed mail must be retried for 72 hours.');
+assert.ok(outbox.includes('KSSMI outbox ALERT'), 'Undeliverable mail must raise an alert.');
+assert.ok(outboxWorker.includes("PHP_SAPI !== 'cli'"), 'The outbox worker must only run from the command line.');
+for (const marker of ['A worker dying between the two messages', 'An uncertain send must be retried', 'Steps must be given up after 72 hours', 'A locked job must be skipped']) {
+  assert.ok(outboxTest.includes(marker), `Outbox tests must cover: ${marker}`);
+}
+for (const marker of ['A second inquiry from the same mailbox must get its own notification and reply', 'An identical submission within two minutes must not send again', 'The worker must deliver the waiting job']) {
+  assert.ok(sendMailHttpTest.includes(marker), `Send-mail HTTP tests must cover: ${marker}`);
+}
+assert.ok(autoReplyTest.includes('No auto-reply budget may exist after acceptance.'), 'Auto-reply tests must prove there is no post-acceptance budget.');
+const inquiryScripts = JSON.parse(packageJson).scripts ?? {};
+for (const [script, file] of [
+  ['test:inquiry-autoreply', 'test-inquiry-autoreply.php'],
+  ['test:inquiry-outbox', 'test-inquiry-outbox.php'],
+  ['test:send-mail-outbox-http', 'test-send-mail-outbox-http.php'],
+]) {
+  assert.equal(inquiryScripts[script], `php scripts/${file}`, `package.json must expose ${script}.`);
+  assert.ok((inquiryScripts['test:php'] ?? '').split(' && ').includes(`npm run ${script}`), `The full PHP suite must include ${script}.`);
+  assert.ok(deploy.includes(`php scripts/${file}`), `Deploy must run ${file} before release.`);
+}
 
 const packageData = JSON.parse(packageJson);
 const [shortLinkStore, shortLinkRedirect, shortLinkDashboard, shortLinkTest] = await Promise.all([
