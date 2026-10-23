@@ -325,6 +325,25 @@ The Vite plugin in `astro.config.mjs` watches `src/content/products/` for new fo
 - Tests: `npm run test:permissions`, `npm run test:credential-persistence`,
   `npm run test:deploy-credential-transition` (Linux only).
 
+### Short-links sign-in and reset (KS-03) (CRITICAL)
+- `/short-links` and `/api/short-links-reset.php` are outside Cloudflare
+  Access by design. An anonymous caller must get the same answer whether or
+  not an address has an account: one sign-in error ("Invalid email or
+  password."), a dummy bcrypt check for unknown addresses, and every reset
+  request answered `{"ok":true}` before the address is examined
+  (`kssmi_short_links_finish_response()`). Budget, token and SMTP failures go
+  to `error_log` only.
+- Budgets live in `private/short-links-tool.php`. Sign-in: 30/15 min per IP,
+  and per submitted address (no IP in the identity) 10/15 min and 40/day. A
+  browser with a device cookie for the account (`__Secure-kssmi_sl_device`,
+  HMAC keyed by the account's bcrypt hash, 30 days, `Path=/short-links`) uses
+  its own 10/15 min instead, so a flood cannot lock a colleague out of a known
+  device. Reset: 10/h per IP; 3/h and 6/day per address; 20/h and 50/day for
+  all reset mail (it shares the sales@ Gmail quota with inquiries).
+- A colleague throttled on a new device uses "Forgot password?": completing
+  the reset marks that browser as known. Budgets expire on their own.
+- Tests: `npm run test:short-links-auth`, `npm run test:short-links-http`.
+
 ## Layout Width Standards (CRITICAL — DO NOT DEVIATE)
 
 All pages and components use a unified responsive width system:

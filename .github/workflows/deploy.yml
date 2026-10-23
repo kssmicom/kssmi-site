@@ -116,6 +116,9 @@ jobs:
           php scripts/test-admin-session.php
           php scripts/test-credential-persistence.php
           php scripts/test-short-links.php
+          php scripts/test-short-links-session.php
+          php scripts/test-short-links-auth.php
+          php scripts/test-short-links-http.php
 
       - name: Validate frontend policies
         run: |

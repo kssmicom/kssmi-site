@@ -43,4 +43,14 @@ jobs:
           git add private/cloudflare-ip-ranges.json
           git commit -m 'chore: refresh Cloudflare origin ranges'
           git push --force-with-lease origin "$branch"
-          gh pr create --base main --head "$branch" --title 'chore: refresh Cloudflare origin ranges' --body 'Automated monthly snapshot refresh. Review the range diff, then merge normally; deployment remains protected by the regular release workflow.' || true
+          if [ "$(gh pr list --head "$branch" --state open --json number --jq length)" != 0 ]; then
+            echo "Snapshot PR for $branch is already open." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          # The PHP consumer rejects a snapshot older than 45 days, so a refresh
+          # that never reaches main must fail this run instead of passing silently.
+          if ! gh pr create --base main --head "$branch" --title 'chore: refresh Cloudflare origin ranges' --body 'Automated monthly snapshot refresh. Review the range diff, then merge normally; deployment remains protected by the regular release workflow.'; then
+            echo "::error::Could not open the snapshot PR. Open a PR from $branch manually and deploy it before the live snapshot is 45 days old."
+            echo "Snapshot PR could not be opened; $branch was pushed and needs a manual PR." >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
