@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 require_once dirname(__DIR__, 2) . '/private/http-security.php';
-kssmi_admin_require_trusted_proxy(); kssmi_admin_session_bootstrap();
+kssmi_admin_require_trusted_proxy(); kssmi_admin_require_access(true); kssmi_admin_session_bootstrap();
 require_once dirname(__DIR__, 2) . '/private/short-link-store.php';
 require_once dirname(__DIR__) . '/api/vjt-helpers.php';
 header('Content-Type: application/json; charset=UTF-8'); header('Cache-Control: no-store, private'); header('X-Robots-Tag: noindex, nofollow');
