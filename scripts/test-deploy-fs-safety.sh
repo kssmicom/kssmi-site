@@ -43,6 +43,17 @@ if [ "$(id -u)" = 0 ]; then
   site_atomic_write "$test_root/home/ordinary" 640 LEGITIMATE
   [ "$(stat -c %u "$test_root/home/ordinary")" = "$(id -u "$SITE_USER")" ]
   [ "$(cat "$test_root/home/ordinary")" = LEGITIMATE ]
+  # Production SSH starts in a root-only directory. find saves/restores its
+  # initial directory, so an absolute target alone does not avoid EACCES.
+  mkdir "$test_root/root-cwd"
+  chmod 700 "$test_root/root-cwd"
+  (
+    cd "$test_root/root-cwd"
+    run_as_site find "$test_root/home" -maxdepth 1 -type f -exec chmod 600 {} \;
+    site_atomic_write "$test_root/home/from-root-cwd" 640 LEGITIMATE
+  )
+  [ "$(stat -c %a "$test_root/home/ordinary")" = 600 ]
+  [ "$(cat "$test_root/home/from-root-cwd")" = LEGITIMATE ]
   echo 'Deploy filesystem safety dual-UID tests passed.'
   exit 0
 fi

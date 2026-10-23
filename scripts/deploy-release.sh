@@ -144,7 +144,10 @@ run_as_site() {
   if [ "$(id -un)" = "$SITE_USER" ]; then
     "$@"
   else
-    sudo -u "$SITE_USER" "$@"
+    # SSH commonly starts in /root. GNU find must be able to reopen its
+    # initial working directory even when every target path is absolute.
+    # All deployment paths passed to this helper are absolute.
+    ( cd / && sudo -u "$SITE_USER" "$@" )
   fi
 }
 
