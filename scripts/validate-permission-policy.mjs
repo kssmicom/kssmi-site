@@ -60,7 +60,7 @@ assert.ok(
 
 for (const marker of [
   'PERMISSION_POLICY="$RELEASE_DIR/scripts/permission-policy.sh"',
-  '. "$PERMISSION_POLICY"',
+  '. "$trusted_bundle/scripts/permission-policy.sh"',
   'verify_release_permission_policy',
   'verify_persistent_permission_policy',
   'kssmi_policy_assert_tree "$NEW_WEBROOT" 755 644',
@@ -73,8 +73,8 @@ for (const marker of [
   'kssmi_policy_assert_sensitive_file "$PRIVATE_CONFIG"',
   'create_release_link "$RELEASE_DIR/private_config.php" "$PRIVATE_CONFIG"',
   'kssmi_policy_assert_symlink_allowlist "$RELEASE_DIR"',
-  'install -d -o "$SITE_USER" -g "$SITE_GROUP" -m 751 "$RELEASES_DIR"',
-  'install -d -o "$SITE_USER" -g "$SITE_GROUP" -m 750 "$STATE_ROOT"',
+  'prepare_site_directory "$RELEASES_DIR" 751',
+  'prepare_site_directory "$STATE_ROOT" 750',
 ]) {
   assert.ok(release.includes(marker), `Release permission enforcement missing: ${marker}`);
 }
@@ -278,7 +278,7 @@ assert.ok(
   'Every release must link the persistent credential generation.',
 );
 assert.ok(
-  layout.trimEnd().endsWith('run_root chmod 551 "$RELEASE_DIR"\n}'),
+  layout.trimEnd().endsWith('run_as_site chmod 551 "$RELEASE_DIR"\n}'),
   'The release root becomes 0551 only after its links and marker exist.',
 );
 assert.doesNotMatch(release, /chmod 751 "\$RELEASE_DIR"/, 'The release root must not stay writable for the site account.');

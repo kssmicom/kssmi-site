@@ -1,5 +1,8 @@
 # Kssmi permission and ownership policy
 
+Deployment privilege separation and protected entry points are documented in [deploy-fs-safety.md](deploy-fs-safety.md).
+
+
 This contract is enforced twice: statically in CI and against the actual
 filesystem during release activation. A failed check aborts activation before
 the live `public_html` pointer changes.

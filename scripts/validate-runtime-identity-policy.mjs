@@ -33,7 +33,7 @@ for (const marker of [
   assert.ok(release.includes(marker), `Release runtime-identity gate missing: ${marker}`);
 }
 assert.ok(
-  release.includes('run_root install -o "$SITE_USER" -g "$SITE_GROUP" -m 644'),
+  release.includes('atomic_install_file "$RUNTIME_PROBE_SOURCE" "$RUNTIME_PROBE_PATH" 644'),
   'The temporary LSAPI probe must be installed non-executable.',
 );
 assert.doesNotMatch(

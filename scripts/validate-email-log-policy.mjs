@@ -250,7 +250,7 @@ requireText(
   'EMAIL_LOCK="$EMAIL_LOG.lock"',
   'Stable lock-file permissions',
 );
-requireText(deploySource, 'exec 8>"$EMAIL_LOCK"', 'Cutover new-lock serialization');
+requireText(deploySource, 'exec 8<"$EMAIL_LOCK"', 'Cutover new-lock serialization');
 requireText(
   deploySource,
   'ln -s "$EMAIL_LOG" "$LEGACY_EMAIL_LOG"',
@@ -258,7 +258,7 @@ requireText(
 );
 requireText(
   deploySource,
-  'run_root chown "$SITE_USER:$SITE_GROUP" "$EMAIL_LOCK" "$LEGACY_EMAIL_LOCK"',
+  'prepare_site_file "$LEGACY_EMAIL_LOCK" 640',
   'Legacy lock compatibility permissions',
 );
 requireText(

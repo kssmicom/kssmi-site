@@ -36,7 +36,7 @@ for (const marker of [
   'Check production disk space before upload',
   'source: "dist,private,scripts/deploy-release.sh,scripts/permission-policy.sh,scripts/runtime-capability-probe.php,scripts/prune-old-releases.sh"',
   'release-id:',
-  'target: "${{ inputs.private-root }}/releases/${{ inputs.release-id }}"',
+  'target: "/var/lib/kssmi-deploy/${{ inputs.release-id }}"',
   'Activate versioned release atomically',
   'Verify deployed security controls',
   'Run authenticated deployment smoke',
@@ -79,7 +79,7 @@ for (const marker of [
   'write_cutover_markers',
   'prove_cutover_barriers',
   'Cache-Control: no-cache',
-  'run_root mv -Tf "$next_link" "$LIVE_WEBROOT"',
+  'run_as_site mv -Tf "$next_link" "$LIVE_WEBROOT"',
   'rollback_webroot',
   'state_write private_installed_at',
   'state_write activated_at',
@@ -218,10 +218,10 @@ assert.ok(
 );
 for (const statement of [
   '\n  validate_deployment_config\n',
-  '. "$PERMISSION_POLICY"',
+  '. "$trusted_bundle/scripts/permission-policy.sh"',
   "trap 'report_failure",
   '\n  prepare_control_paths\n',
-  'exec 9>"$DEPLOY_LOCK"',
+  'exec 9<"$DEPLOY_LOCK"',
   'case "$COMMAND" in',
 ]) {
   assert.ok(
