@@ -5,8 +5,9 @@ declare(strict_types=1);
  * Password reset endpoint for the /short-links tool.
  *
  * action "request": emails a single-use reset link (60 min) to an authorized
- *                   @kssmi.com address. The response is deliberately
- *                   identical whether or not the address is registered.
+ *                   @kssmi.com address. Every request that passes the IP
+ *                   budget gets the same response before the address is
+ *                   examined; budgets, the token and SMTP run afterwards.
  * action "confirm": exchanges the token for a new password, updating the
  *                   account's bcrypt hash in the shared short-links users file.
  *
@@ -110,29 +111,35 @@ try {
         if (!checkRateLimit('short-links-reset-request', 10, 3600)) {
             http_response_code(429);
             header('Retry-After: 3600');
-            echo '{"ok":true}';
+            echo '{"error":"Too many requests. Please try again later."}';
             exit;
         }
-        $email = strtolower(kssmi_scalar_text($input['email'] ?? null, 254));
-        $users = kssmi_short_links_users();
-        if (
-            filter_var($email, FILTER_VALIDATE_EMAIL) &&
-            str_ends_with($email, KSSMI_SHORT_LINK_EMAIL_DOMAIN) &&
-            isset($users[$email]) &&
-            checkRateLimit('short-links-reset-mail:' . $email, 3, 3600)
-        ) {
-            $token = bin2hex(random_bytes(32));
-            sl_reset_tokens_mutate(
-                static function (array &$tokens) use ($token, $email): void {
-                    $tokens[$token] = ['email' => $email, 'expires' => time() + SL_RESET_TOKEN_TTL];
+        $email = kssmi_short_links_login_email($input['email'] ?? null);
+        // Whether the address has an account, is over a budget, or its mail
+        // fails is visible only in the server log.
+        echo '{"ok":true}';
+        kssmi_short_links_finish_response();
+        try {
+            $outcome = kssmi_short_links_reset_request(
+                $email,
+                kssmi_short_links_users(),
+                static function (string $email): void {
+                    $token = bin2hex(random_bytes(32));
+                    sl_reset_tokens_mutate(
+                        static function (array &$tokens) use ($token, $email): void {
+                            $tokens[$token] = ['email' => $email, 'expires' => time() + SL_RESET_TOKEN_TTL];
+                        }
+                    );
+                    kssmi_short_links_send_reset($email, $token);
                 }
             );
-            // Throws RuntimeException (surfaced as 500) when the mailer is
-            // unavailable or the send fails.
-            kssmi_short_links_send_reset($email, $token);
+            if ($outcome === 'account_budget' || $outcome === 'global_budget') {
+                error_log('KSSMI short-links reset mail skipped: ' . $outcome);
+            }
+        } catch (Throwable $error) {
+            // Never reaches the caller: the response is already complete.
+            error_log('KSSMI short-links reset failure: ' . $error->getMessage());
         }
-        // Identical response whether or not the address is registered.
-        echo '{"ok":true}';
         exit;
     }
     if ($action === 'confirm') {
@@ -164,7 +171,11 @@ try {
         ) {
             throw new InvalidArgumentException('Reset link is invalid or has expired.');
         }
-        kssmi_short_links_update_user_password($entry['email'], password_hash($new, PASSWORD_DEFAULT));
+        $newHash = password_hash($new, PASSWORD_DEFAULT);
+        kssmi_short_links_update_user_password($entry['email'], $newHash);
+        // The link came from the account's mailbox, so this browser may skip
+        // the account-wide sign-in budget from now on.
+        kssmi_short_links_issue_device_cookie($entry['email'], $newHash);
         echo '{"ok":true}';
         exit;
     }
@@ -173,12 +184,9 @@ try {
 } catch (InvalidArgumentException $error) {
     http_response_code(422);
     echo json_encode(['error' => $error->getMessage()]);
-} catch (RuntimeException $error) {
-    error_log('KSSMI short-links reset failure: ' . $error->getMessage());
-    http_response_code(500);
-    echo json_encode(['error' => $error->getMessage()]);
 } catch (Throwable $error) {
+    // Details stay in the server log; callers are anonymous.
     error_log('KSSMI short-links reset failure: ' . $error->getMessage());
     http_response_code(500);
-    echo '{"error":"Unable to process the request."}';
+    echo '{"error":"Unable to process the request. Please try again later."}';
 }
