@@ -65,6 +65,7 @@ define('RESET_TOKENS_FILE', dirname(__DIR__) . '/.email_reset_tokens.json');
 define('CREDENTIAL_GENERATION_FILE', kssmi_admin_credential_generation_path(PASSWORD_FILE));
 define('ADMIN_EMAIL', 'sales@kssmi.com');
 require_once dirname(__DIR__) . '/private/email-log-store.php';
+require_once dirname(__DIR__) . '/private/inquiry-outbox.php';
 
 // Migrate sensitive files from public_html to the safe directory above it
 foreach ([
@@ -1086,6 +1087,14 @@ function resendEmail($log) {
 
             <?php if ($message): ?>
                 <p class="success"><?php echo htmlspecialchars($message); ?></p>
+            <?php endif; ?>
+
+            <?php $outboxSummary = kssmi_outbox_summary(); ?>
+            <?php if ($outboxSummary['pending'] > 0 || $outboxSummary['dead'] > 0): ?>
+                <p class="<?php echo $outboxSummary['dead'] > 0 ? 'error' : 'success'; ?>">
+                    Mail outbox: <?php echo (int)$outboxSummary['pending']; ?> inquiry mail job(s) waiting to be sent<?php if ($outboxSummary['oldest'] !== null): ?> (oldest since <?php echo htmlspecialchars(gmdate('Y-m-d H:i', (int)$outboxSummary['oldest'])); ?> UTC)<?php endif; ?>,
+                    <?php echo (int)$outboxSummary['dead']; ?> not delivered after 72 hours.<?php if ($outboxSummary['dead'] > 0): ?> Their messages and attachments are kept on the server; check the server error log for "KSSMI outbox ALERT".<?php endif; ?>
+                </p>
             <?php endif; ?>
 
             <div class="stats">
