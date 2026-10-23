@@ -47,6 +47,7 @@
     "test:runtime-identity": "php scripts/runtime-capability-probe.php --identity-self-test",
     "smoke:deployment": "node scripts/smoke-deployment.mjs",
     "test:smoke": "node scripts/test-smoke-deployment.mjs",
+    "test:required-jobs": "node scripts/test-required-jobs.mjs",
     "test:backend": "php scripts/verify-php-runtime.php",
     "test:email-log": "php scripts/test-email-log-store.php",
     "test:rate-limit": "php scripts/test-rate-limit.php",
