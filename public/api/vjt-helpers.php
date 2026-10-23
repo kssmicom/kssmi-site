@@ -853,7 +853,7 @@ function vjt_auto_cleanup() {
         $db->prepare('DELETE FROM used_event_capabilities WHERE expires_at < ?')->execute([$now]);
         vjt_meta_set('last_cleanup', $now);
         // Reclaim space periodically (cheap on a bounded DB). Best-effort:
-        // a busy WAL is logged, never fatal (see vjt_checkpoint_wal).
+        // a busy WAL is deferred, never fatal (see vjt_checkpoint_wal).
         vjt_checkpoint_wal();
     } catch (Exception $e) {
         error_log('VJT cleanup error: ' . $e->getMessage());
@@ -878,56 +878,45 @@ function vjt_detach_expired_contact_links($cutoff) {
 }
 
 /**
- * Best-effort WAL checkpoint used after cleanup/wipe operations.
- *
- * PRAGMA wal_checkpoint(TRUNCATE) needs exclusive access and throws
- * "database table is locked" when a prepared statement is still open on the
- * connection or another reader holds the WAL. A busy WAL must never turn a
- * cleanup into a request-fatal, so this guard logs and falls back to the
- * non-blocking PASSIVE checkpoint instead of rethrowing.
- *
- * Safety boundary: all cleanup DELETEs in vjt_auto_cleanup() /
- * vjt_cleanup_old_data() / vjt_wipe_all_data() are chained
- * $db->prepare(...)->execute(...) calls whose temporary PDOStatement is
- * destroyed at the end of the full expression, so no statement is left open
- * on this connection when the checkpoint runs (verified: completed
- * statements release their read lock at SQLITE_DONE). The residual contention
- * is a concurrent reader on ANOTHER connection, which is what the bounded
- * retry below absorbs.
- *
- * The TRUNCATE attempt is bounded: cleanup runs from public tracking
- * endpoints (once per day via vjt_auto_cleanup), and with the default 5s
- * busy_timeout a contended WAL would stall that request ~5s. busy_timeout is
- * lowered for the attempt and restored afterwards, and TRUNCATE gets up to 3
- * short attempts (transient readers usually release within a few hundred ms,
- * so TRUNCATE genuinely reclaims WAL space) before degrading to the
- * non-blocking PASSIVE — worst case ~400ms, never a request-fatal.
+ * Best-effort WAL maintenance, isolated from business cursors/transactions.
+ * TRUNCATE waits at most three short busy periods; a concurrent reader/writer
+ * then permits only a non-blocking PASSIVE attempt. "deferred" means the WAL
+ * could not yet be truncated, not that cleanup or this test was skipped.
+ * Callers may ignore the outcome; unexpected errors remain logged/non-fatal.
  */
 function vjt_checkpoint_wal() {
-    $db = vjt_db();
-    $savedBusyTimeout = 5000;
     try {
-        $savedBusyTimeout = (int)$db->query('PRAGMA busy_timeout')->fetchColumn();
-        // Bounded retry: a transient reader on another connection typically
-        // releases the WAL within a few hundred ms. 3 attempts with a short
-        // busy_timeout let TRUNCATE succeed (and truncate the WAL file) when
-        // contention is brief; a long-held reader still degrades to PASSIVE.
-        $db->exec('PRAGMA busy_timeout = 100');
-        $busy = 1;
+        // Preserve lazy initialization, but never checkpoint on the shared
+        // connection: an active PDO cursor there causes SQLITE_LOCKED even
+        // for PASSIVE. A separate connection leaves that cursor untouched.
+        vjt_db();
+        $checkpointDb = new PDO('sqlite:' . VJT_DB_PATH);
+        $checkpointDb->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $checkpointDb->exec('PRAGMA busy_timeout = 100');
         for ($attempt = 0; $attempt < 3; $attempt++) {
-            $row = $db->query('PRAGMA wal_checkpoint(TRUNCATE)')->fetch(PDO::FETCH_ASSOC);
-            $busy = is_array($row) ? (int)($row['busy'] ?? 0) : 1;
-            if ($busy === 0) break;
-            if ($attempt < 2) usleep(50000); // 50ms between attempts
+            $statement = $checkpointDb->query('PRAGMA wal_checkpoint(TRUNCATE)');
+            $row = $statement->fetch(PDO::FETCH_NUM);
+            $statement->closeCursor();
+            if (!is_array($row) || count($row) !== 3 || (int)$row[1] < 0) {
+                throw new RuntimeException('Invalid WAL checkpoint result or WAL mode unavailable');
+            }
+            if ((int)$row[0] === 0) {
+                return ['status' => 'complete', 'mode' => 'TRUNCATE',
+                    'log_frames' => (int)$row[1], 'checkpointed_frames' => (int)$row[2]];
+            }
+            if ($attempt < 2) usleep(50000);
         }
-        if ($busy !== 0) {
-            $db->exec('PRAGMA wal_checkpoint(PASSIVE)');
-            error_log('VJT checkpoint: TRUNCATE busy, fell back to PASSIVE (busy=' . $busy . ')');
+        $statement = $checkpointDb->query('PRAGMA wal_checkpoint(PASSIVE)');
+        $row = $statement->fetch(PDO::FETCH_NUM);
+        $statement->closeCursor();
+        if (!is_array($row) || count($row) !== 3 || (int)$row[1] < 0) {
+            throw new RuntimeException('Invalid passive WAL checkpoint result');
         }
+        return ['status' => 'deferred', 'mode' => 'PASSIVE',
+            'log_frames' => (int)$row[1], 'checkpointed_frames' => (int)$row[2]];
     } catch (Exception $e) {
-        error_log('VJT checkpoint skipped (non-fatal): ' . $e->getMessage());
-    } finally {
-        try { $db->exec('PRAGMA busy_timeout = ' . (int)$savedBusyTimeout); } catch (Exception $e) {}
+        error_log('VJT checkpoint failed (non-fatal): ' . $e->getMessage());
+        return ['status' => 'failed', 'mode' => null];
     }
 }
 
@@ -3049,7 +3038,7 @@ function vjt_cleanup_old_data($days) {
     // replace those independently configured periods.
     $geoCutoff = gmdate('Y-m-d H:i:s', time() - (7 * 86400));
     $db->prepare("DELETE FROM geo_cache WHERE cached_at < ?")->execute([$geoCutoff]);
-    // Best-effort WAL checkpoint; a locked/busy WAL is logged, never fatal.
+    // Best-effort WAL checkpoint; a locked/busy WAL is deferred, never fatal.
     vjt_checkpoint_wal();
 }
 
@@ -3060,7 +3049,7 @@ function vjt_wipe_all_data() {
     foreach (['visitors','sessions','pageviews','submissions','contact_events','geo_cache','geo_queue','anon_views'] as $t) {
         $db->exec("DELETE FROM $t");
     }
-    // Best-effort WAL checkpoint; a locked/busy WAL is logged, never fatal.
+    // Best-effort WAL checkpoint; a locked/busy WAL is deferred, never fatal.
     vjt_checkpoint_wal();
 }
 

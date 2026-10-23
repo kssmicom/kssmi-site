@@ -71,6 +71,12 @@ jobs:
           npm run test:runtime-identity
           npm run validate:promotion
           npm run validate:rollback-safety
+          bash -n scripts/test-deploy-rollback-failures.sh
+          npm run test:deploy-rollback-failures
+          bash -n scripts/test-deploy-fs-safety.sh
+          npm run validate:fs-safety
+          npm run test:deploy-fs-safety
+          sudo env F2_ROOT_TEST=1 bash scripts/test-deploy-fs-safety.sh
           npm run validate:release-evidence
           npm run validate:cloudflare-ranges
           npm run test:cloudflare-ranges

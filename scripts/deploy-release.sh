@@ -2,8 +2,9 @@
 #
 # Versioned Kssmi release activation and rollback.
 #
-# The workflow uploads an immutable bundle to:
-#   <PRIVATE_ROOT>/releases/<commit>-<run-id>-<run-attempt>/{dist,private,scripts}
+# The workflow uploads a root-protected bundle to:
+#   /var/lib/kssmi-deploy/<commit>-<run-id>-<run-attempt>/{dist,private,scripts}
+# Only the site account materializes its release under PRIVATE_ROOT.
 #
 # This script keeps runtime data under the selected environment's private root,
 # activates the public
@@ -126,6 +127,12 @@ report_failure() {
 }
 
 run_root() {
+  # No privileged filesystem operations on site-controlled paths. The entry
+  # point and this definition come from the protected upload, never a release.
+  case "$*" in
+    "pkill -u $SITE_USER -f lsphp"|"/usr/local/lsws/bin/lswsctrl restart") ;;
+    *) echo "Refusing privileged deployment command: $1" >&2; return 1 ;;
+  esac
   if [ "$(id -u)" = 0 ]; then
     "$@"
   else
@@ -193,15 +200,69 @@ resolve_php_sqlite() {
 }
 
 state_write() {
-  name="$1"
-  value="$2"
-  run_root sh -c "umask 0027; printf '%s\n' \"\$1\" > \"\$2.tmp\"; chown '$SITE_USER:$SITE_GROUP' \"\$2.tmp\"; chmod 640 \"\$2.tmp\"; mv -f \"\$2.tmp\" \"\$2\"" sh "$value" "$STATE_DIR/$name"
+  site_atomic_write "$STATE_DIR/$1" 640 "$2"$'\n'
+}
+
+# All pathname mutation below runs without root privileges, including both
+# opening a temporary file and publishing it. -T applies only to the final
+# component; dropping privileges also covers replaced ancestor directories.
+site_atomic_write() {
+  run_as_site sh -c '
+    set -eu
+    umask 077
+    temp="$(mktemp "$(dirname "$1")/.deploy-XXXXXXXXXX")"
+    trap '\''rm -f -- "$temp"'\'' EXIT
+    printf "%s" "$3" > "$temp"
+    chmod "$2" "$temp"
+    mv -Tf -- "$temp" "$1"
+  ' sh "$1" "$2" "$3"
+}
+
+# Locks retain their inode for existing PHP/deployment users. Publish missing
+# files with link(2), never replace an existing lock, and reject unsafe state.
+prepare_site_file() {
+  run_as_site sh -c '
+    set -eu
+    umask 077
+    if [ ! -e "$1" ] && [ ! -L "$1" ]; then
+      temp="$(mktemp "$(dirname "$1")/.deploy-XXXXXXXXXX")"
+      trap '\''rm -f -- "$temp"'\'' EXIT
+      chmod "$2" "$temp"
+      ln -T -- "$temp" "$1" 2>/dev/null || [ -e "$1" ] || [ -L "$1" ]
+    fi
+    [ -f "$1" ] && [ ! -L "$1" ] || exit 1
+    chmod "$2" "$1"
+  ' sh "$1" "$2"
+}
+
+prepare_site_directory() {
+  run_as_site sh -c '
+    set -eu
+    [ ! -L "$1" ] || exit 1
+    mkdir -p -- "$1"
+    [ -d "$1" ] && [ ! -L "$1" ] || exit 1
+    chmod "$2" "$1"
+  ' sh "$1" "$2"
+}
+
+# The workflow uploads into /var/lib/kssmi-deploy/<id>, whose complete
+# ancestor chain is root-owned and not group/other writable. No root process
+# loads code from the writable releases tree. Only the site account copies
+# the readable, protected upload into its own tree.
+materialize_release() {
+  run_as_site sh -c '
+    set -eu
+    [ ! -e "$2" ] && [ ! -L "$2" ] || exit 1
+    umask 027
+    mkdir -- "$2"
+    cp -R -- "$1/dist" "$1/private" "$1/scripts" "$2/"
+  ' sh "$1" "$RELEASE_DIR"
 }
 
 state_read() {
   name="$1"
   [ -f "$STATE_DIR/$name" ] || return 1
-  cat "$STATE_DIR/$name"
+  run_as_site cat "$STATE_DIR/$name"
 }
 
 is_supported_release_id() {
@@ -251,24 +312,23 @@ prepare_persistent_storage() {
   # RELEASES_DIR is the sole 0751 exception: the LiteSpeed worker needs only
   # execute/traverse access to reach the public 0755 release webroot. Runtime
   # data and deployment state do not need world traverse and remain 0750.
-  run_root install -d -o "$SITE_USER" -g "$SITE_GROUP" -m 751 "$RELEASES_DIR"
-  run_root install -d -o "$SITE_USER" -g "$SITE_GROUP" -m 750 \
-    "$STATE_ROOT" "$SHARED_PRIVATE" "$SHORT_LINK_PRIVATE_DIR" "$EMAIL_DATA_DIR" \
-    "$RATE_LIMIT_DIR" "$VJT_DATA_DIR"
-  run_root chown -R "$SITE_USER:$SITE_GROUP" "$SHARED_PRIVATE"
-  run_root find "$SHARED_PRIVATE" -type d -exec chmod 750 {} \;
-  run_root find "$SHARED_PRIVATE" -type f -exec chmod 640 {} \;
-  run_root chown -R "$SITE_USER:$SITE_GROUP" "$RATE_LIMIT_DIR"
-  run_root find "$RATE_LIMIT_DIR" -type d -exec chmod 750 {} \;
-  run_root find "$RATE_LIMIT_DIR" -type f -exec chmod 600 {} \;
-  run_root touch "$PASSWORD_FILE" "$RESET_TOKENS_FILE" "$EMAIL_LOCK" "$LEGACY_EMAIL_LOCK"
-  run_root chown "$SITE_USER:$SITE_GROUP" \
-    "$PASSWORD_FILE" "$RESET_TOKENS_FILE" "$EMAIL_LOCK" "$LEGACY_EMAIL_LOCK"
+  prepare_site_directory "$RELEASES_DIR" 751
+  for directory in "$STATE_ROOT" "$SHARED_PRIVATE" "$SHORT_LINK_PRIVATE_DIR" \
+      "$EMAIL_DATA_DIR" "$RATE_LIMIT_DIR" "$VJT_DATA_DIR"; do
+    prepare_site_directory "$directory" 750 || return 1
+  done
+  run_as_site find "$SHARED_PRIVATE" -type d -exec chmod 750 {} \;
+  run_as_site find "$SHARED_PRIVATE" -type f -exec chmod 640 {} \;
+  run_as_site find "$RATE_LIMIT_DIR" -type d -exec chmod 750 {} \;
+  run_as_site find "$RATE_LIMIT_DIR" -type f -exec chmod 600 {} \;
+  prepare_site_file "$PASSWORD_FILE" 600
+  prepare_site_file "$RESET_TOKENS_FILE" 600
+  prepare_site_file "$EMAIL_LOCK" 640
+  prepare_site_file "$LEGACY_EMAIL_LOCK" 640
   # Stable lock-file permissions / Legacy lock compatibility permissions:
   # both locks must be owned by the site account and group-readable only.
-  run_root chown "$SITE_USER:$SITE_GROUP" "$EMAIL_LOCK" "$LEGACY_EMAIL_LOCK"
-  run_root chmod 600 "$PASSWORD_FILE" "$RESET_TOKENS_FILE"
-  run_root chmod 640 "$EMAIL_LOCK" "$LEGACY_EMAIL_LOCK"
+  run_as_site chmod 600 "$PASSWORD_FILE" "$RESET_TOKENS_FILE"
+  run_as_site chmod 640 "$EMAIL_LOCK" "$LEGACY_EMAIL_LOCK"
   # PHP holds its admin credential locks on these inodes, so an existing lock
   # file is only checked: replacing it would let two writers in. A missing
   # one is prepared under a temporary name and published by the site account
@@ -296,15 +356,13 @@ prepare_persistent_storage() {
   # must never be bundled into a release or replaced with an empty file.
   [ -f "$PRIVATE_CONFIG" ] && [ ! -L "$PRIVATE_CONFIG" ] ||
     fail "Persistent private_config.php is missing or is not a regular file: $PRIVATE_CONFIG"
-  run_root chown "$SITE_USER:$SITE_GROUP" "$PRIVATE_CONFIG"
-  run_root chmod 600 "$PRIVATE_CONFIG"
+  run_as_site chmod 600 "$PRIVATE_CONFIG"
   run_as_site test -r "$PRIVATE_CONFIG"
   # Manual GSC credential: if present, enforce the exact permission contract
   # (readable by the real site account, never world-readable).
   if [ -f "$GSC_JSON" ]; then
-    run_root chown -R "$SITE_USER:$SITE_GROUP" "$SHARED_PRIVATE/gsc"
-    run_root chmod 700 "$SHARED_PRIVATE/gsc"
-    run_root chmod 600 "$GSC_JSON"
+    run_as_site chmod 700 "$SHARED_PRIVATE/gsc"
+    run_as_site chmod 600 "$GSC_JSON"
     run_as_site test -r "$GSC_JSON"
     echo "GSC JSON readable by $SITE_USER: OK"
   fi
@@ -313,8 +371,8 @@ prepare_persistent_storage() {
 prepare_control_paths() {
   # Only RELEASES_DIR is traversed by the web worker. STATE_ROOT is private
   # deployment control data and must not be world-traversable.
-  run_root install -d -o "$SITE_USER" -g "$SITE_GROUP" -m 751 "$RELEASES_DIR"
-  run_root install -d -o "$SITE_USER" -g "$SITE_GROUP" -m 750 "$STATE_ROOT"
+  prepare_site_directory "$RELEASES_DIR" 751
+  prepare_site_directory "$STATE_ROOT" 750
 }
 
 create_release_link() {
@@ -322,19 +380,17 @@ create_release_link() {
   target_path="$2"
   [ ! -e "$link_path" ] && [ ! -L "$link_path" ] ||
     fail "Release compatibility path already exists: $link_path"
-  run_root ln -s "$target_path" "$link_path"
-  run_root chown -h "$SITE_USER:$SITE_GROUP" "$link_path"
+  run_as_site ln -sT -- "$target_path" "$link_path"
 }
 
 prepare_release_layout() {
-  run_root chown -R "$SITE_USER:$SITE_GROUP" "$RELEASE_DIR"
-  run_root find "$NEW_WEBROOT" -type d -exec chmod 755 {} \;
-  run_root find "$NEW_WEBROOT" -type f -exec chmod 644 {} \;
-  run_root find "$RELEASE_DIR/private" -type d -exec chmod 750 {} \;
-  run_root find "$RELEASE_DIR/private" -type f -exec chmod 640 {} \;
-  run_root find "$RELEASE_DIR/scripts" -type d -exec chmod 750 {} \;
-  run_root find "$RELEASE_DIR/scripts" -type f -exec chmod 640 {} \;
-  run_root find "$RELEASE_DIR/scripts" -type f -name '*.sh' -exec chmod 750 {} \;
+  run_as_site find "$NEW_WEBROOT" -type d -exec chmod 755 {} \;
+  run_as_site find "$NEW_WEBROOT" -type f -exec chmod 644 {} \;
+  run_as_site find "$RELEASE_DIR/private" -type d -exec chmod 750 {} \;
+  run_as_site find "$RELEASE_DIR/private" -type f -exec chmod 640 {} \;
+  run_as_site find "$RELEASE_DIR/scripts" -type d -exec chmod 750 {} \;
+  run_as_site find "$RELEASE_DIR/scripts" -type f -exec chmod 640 {} \;
+  run_as_site find "$RELEASE_DIR/scripts" -type f -name '*.sh' -exec chmod 750 {} \;
 
   create_release_link "$RELEASE_DIR/public_html" "$NEW_WEBROOT"
   create_release_link "$RELEASE_DIR/email_data" "$EMAIL_DATA_DIR"
@@ -347,12 +403,12 @@ prepare_release_layout() {
   create_release_link "$RELEASE_DIR/short-links-users.txt" "$SHORT_LINK_USERS_FILE"
 
   state_write release_webroot "$NEW_WEBROOT"
-  run_root sh -c "umask 0027; printf '%s\n' '$RELEASE_ID' > '$RELEASE_DIR/.kssmi-release'; chown '$SITE_USER:$SITE_GROUP' '$RELEASE_DIR/.kssmi-release'; chmod 640 '$RELEASE_DIR/.kssmi-release'"
+  site_atomic_write "$RELEASE_DIR/.kssmi-release" 640 "$RELEASE_ID"$'\n'
   # With its links and marker in place, the release root becomes read-only
   # for the site account: PHP writes credentials only through the links, and
   # a credential written beside them would be lost on the next deploy (KS-05).
   # Other-execute stays for the web worker that traverses to dist.
-  run_root chmod 551 "$RELEASE_DIR"
+  run_as_site chmod 551 "$RELEASE_DIR"
 }
 
 verify_release_permission_policy() {
@@ -434,15 +490,14 @@ cleanup_runtime_capability_probe() {
   # The name is derived only from the validated release id. Remove the exact
   # path from both possible webroots so an interrupted activation cannot leave
   # a diagnostic endpoint behind.
-  run_root rm -f -- "$RUNTIME_PROBE_PATH" "$NEW_WEBROOT/$RUNTIME_PROBE_NAME" 2>/dev/null || true
+  run_as_site rm -f -- "$RUNTIME_PROBE_PATH" "$NEW_WEBROOT/$RUNTIME_PROBE_NAME" 2>/dev/null || true
 }
 
 probe_real_runtime_capabilities() {
   expected_uid="$(id -u "$SITE_USER")"
   expected_gid="$(id -g "$SITE_USER")"
   cleanup_runtime_capability_probe
-  run_root install -o "$SITE_USER" -g "$SITE_GROUP" -m 644 \
-    "$RUNTIME_PROBE_SOURCE" "$RUNTIME_PROBE_PATH"
+  atomic_install_file "$RUNTIME_PROBE_SOURCE" "$RUNTIME_PROBE_PATH" 644
 
   response=""
   # The origin host may provide an older curl without newer failure options.
@@ -519,30 +574,32 @@ PHP
 }
 
 backup_shared_private() {
-  run_root install -d -o "$SITE_USER" -g "$SITE_GROUP" -m 750 "$PRIVATE_BACKUP"
+  prepare_site_directory "$PRIVATE_BACKUP" 750
   for module in $PRIVATE_MODULES; do
     source_path="$SHARED_PRIVATE/$module"
     if [ -f "$source_path" ]; then
-      run_root cp -p "$source_path" "$PRIVATE_BACKUP/$module"
+      run_as_site cp -p "$source_path" "$PRIVATE_BACKUP/$module"
     else
-      run_root touch "$PRIVATE_BACKUP/$module.missing"
-      run_root chown "$SITE_USER:$SITE_GROUP" "$PRIVATE_BACKUP/$module.missing"
-      run_root chmod 640 "$PRIVATE_BACKUP/$module.missing"
+      run_as_site touch "$PRIVATE_BACKUP/$module.missing"
+      run_as_site chmod 640 "$PRIVATE_BACKUP/$module.missing"
     fi
   done
 }
 
 atomic_install_file() {
-  source_path="$1"
-  destination_path="$2"
-  mode="$3"
-  temp_path="$destination_path.deploy-$RELEASE_ID"
-  run_root install -o "$SITE_USER" -g "$SITE_GROUP" -m "$mode" "$source_path" "$temp_path"
-  run_root mv -f "$temp_path" "$destination_path"
+  run_as_site sh -c '
+    set -eu
+    umask 077
+    temp="$(mktemp "$(dirname "$2")/.deploy-XXXXXXXXXX")"
+    trap '\''rm -f -- "$temp"'\'' EXIT
+    cat -- "$1" > "$temp"
+    chmod "$3" "$temp"
+    mv -Tf -- "$temp" "$2"
+  ' sh "$1" "$2" "$3"
 }
 
 install_shared_private() {
-  run_root chmod 750 "$SHARED_PRIVATE"
+  run_as_site chmod 750 "$SHARED_PRIVATE"
   for module in $PRIVATE_MODULES; do
     atomic_install_file \
       "$RELEASE_DIR/private/$module" \
@@ -569,16 +626,19 @@ restore_shared_private() {
       atomic_install_file \
         "$PRIVATE_BACKUP/$module" \
         "$SHARED_PRIVATE/$module" \
-        640
+        640 || return 1
     elif [ -f "$PRIVATE_BACKUP/$module.missing" ]; then
-      run_root rm -f "$SHARED_PRIVATE/$module"
+      run_as_site rm -f "$SHARED_PRIVATE/$module" || return 1
+    else
+      echo "ERROR: Rollback snapshot is missing the module or its absence record: $module" >&2
+      return 1
     fi
   done
   if [ -f "$RATE_LIMIT_MODULE" ] && [ -f "$CLOUDFLARE_RANGES" ]; then
     validate_cloudflare_snapshot_pair \
       "$RATE_LIMIT_MODULE" \
       "$CLOUDFLARE_RANGES" \
-      "Restored"
+      "Restored" || return 1
   elif [ -f "$PRIVATE_BACKUP/cloudflare-ip-ranges.json.missing" ]; then
     # Compatibility with the one-time rollback to a pre-4.2 release whose
     # rate-limit.php still carried its own ranges and required no JSON file.
@@ -590,11 +650,11 @@ restore_shared_private() {
 
 write_cutover_markers() {
   cutover_until="$(($(date +%s) + 1800))"
-  run_root sh -c "umask 0027; printf '%s' '$cutover_until' > '$EMAIL_CUTOVER_MARKER.tmp'; chown '$SITE_USER:$SITE_GROUP' '$EMAIL_CUTOVER_MARKER.tmp'; chmod 640 '$EMAIL_CUTOVER_MARKER.tmp'; mv -f '$EMAIL_CUTOVER_MARKER.tmp' '$EMAIL_CUTOVER_MARKER'"
+  site_atomic_write "$EMAIL_CUTOVER_MARKER" 640 "$cutover_until"
 }
 
 clear_cutover_markers() {
-  run_root rm -f "$EMAIL_CUTOVER_MARKER"
+  run_as_site rm -f "$EMAIL_CUTOVER_MARKER"
 }
 
 restart_live_php_workers() {
@@ -608,7 +668,10 @@ restart_live_php_workers() {
   # to lswsctrl restart when workers exist but pkill is denied.
   if pgrep -u "$SITE_USER" -f lsphp >/dev/null 2>&1; then
     run_root pkill -u "$SITE_USER" -f lsphp 2>/dev/null ||
-      run_root /usr/local/lsws/bin/lswsctrl restart 2>/dev/null || true
+      run_root /usr/local/lsws/bin/lswsctrl restart 2>/dev/null || {
+        echo "ERROR: Could not restart PHP workers; cutover is not proved." >&2
+        return 1
+      }
   fi
 }
 
@@ -699,13 +762,6 @@ prove_cutover_barriers() {
     fi
   done
 
-  if [ -n "${1:-}" ]; then
-    # Rollback path: the markers already block writes, so a barrier-proof
-    # failure (e.g. the PHP worker did not respawn) must not abort the
-    # restoration and leave a half-rolled-back release.
-    echo "WARN: cutover barrier proof did not complete after $attempts attempts ($failures); continuing because the cutover markers block writes." >&2
-    return 1
-  fi
   fail "Application cutover barrier did not become active after $attempts attempts: $failures"
 }
 
@@ -733,7 +789,7 @@ $data = json_decode($raw, true);
 if (!is_array($data) || json_last_error() !== JSON_ERROR_NONE || !array_is_list($data)) exit(1);
 foreach ($data as $row) if (!is_array($row) || array_is_list($row)) exit(1);
 PHP
-  run_root env \
+  run_as_site env \
     LEGACY_EMAIL_LOG="$LEGACY_EMAIL_LOG" \
     EMAIL_LOG="$EMAIL_LOG" \
     EMAIL_LOCK="$EMAIL_LOCK" \
@@ -741,9 +797,9 @@ PHP
     VALIDATE_PROBE="$json_probe" \
     sh -c '
       set -eu
-      exec 8>"$EMAIL_LOCK"
+      exec 8<"$EMAIL_LOCK"
       flock -x 8
-      exec 9>"$LEGACY_EMAIL_LOG.lock"
+      exec 9<"$LEGACY_EMAIL_LOG.lock"
       flock -x 9
 
       if [ -L "$LEGACY_EMAIL_LOG" ]; then
@@ -772,10 +828,8 @@ PHP
     '
   rm -f "$json_probe"
 
-  run_root chown "$SITE_USER:$SITE_GROUP" "$EMAIL_LOG" "$EMAIL_LOCK" "$EMAIL_DATA_DIR"
-  run_root chown -h "$SITE_USER:$SITE_GROUP" "$LEGACY_EMAIL_LOG"
-  run_root chmod 640 "$EMAIL_LOG" "$EMAIL_LOCK"
-  run_root chmod 750 "$EMAIL_DATA_DIR"
+  run_as_site chmod 640 "$EMAIL_LOG" "$EMAIL_LOCK"
+  run_as_site chmod 750 "$EMAIL_DATA_DIR"
   run_as_site sh -c '
     set -eu
     probe="$1/.email-log-probe-$$"
@@ -812,9 +866,8 @@ probe_vjt_integrity() {
   # no cutover barrier for it. Before switching the webroot, prove the SQLite
   # store is healthy so a corrupt database can never ship behind a "clean"
   # deployment.
-  run_root chown -R "$SITE_USER:$SITE_GROUP" "$VJT_DATA_DIR"
-  run_root chmod 750 "$VJT_DATA_DIR"
-  run_root find "$VJT_DATA_DIR" -maxdepth 1 -type f -exec chmod 600 {} \;
+  run_as_site chmod 750 "$VJT_DATA_DIR"
+  run_as_site find "$VJT_DATA_DIR" -maxdepth 1 -type f -exec chmod 600 {} \;
   for sqlite_file in "$VJT_DATA_DIR/vjt.sqlite" "$VJT_DATA_DIR/shortlinks.sqlite"; do
   if [ -f "$sqlite_file" ]; then
     php_sqlite_bin="$(resolve_php_sqlite)"
@@ -860,7 +913,7 @@ $data = json_decode($raw, true);
 if (!is_array($data) || json_last_error() !== JSON_ERROR_NONE || !array_is_list($data)) exit(1);
 foreach ($data as $row) if (!is_array($row) || array_is_list($row)) exit(1);
 PHP
-  if ! run_root env \
+  if ! run_as_site env \
     EMAIL_LOCK="$EMAIL_LOCK" \
     EMAIL_LOG="$EMAIL_LOG" \
     VALIDATE_PHP="$php_sqlite_bin" \
@@ -868,9 +921,9 @@ PHP
     SITE_USER="$SITE_USER" \
     sh -c '
       set -eu
-      exec 8>"$EMAIL_LOCK"
+      exec 8<"$EMAIL_LOCK"
       flock -x 8
-      sudo -u "$SITE_USER" "$VALIDATE_PHP" "$VALIDATE_PROBE" "$EMAIL_LOG"
+      "$VALIDATE_PHP" "$VALIDATE_PROBE" "$EMAIL_LOG"
     '
   then
     rm -f "$json_probe"
@@ -1066,20 +1119,20 @@ prepare_admin_credential_transition() {
 
 activate_webroot() {
   next_link="$PRIVATE_ROOT/.public_html.next-$RELEASE_ID"
-  run_root rm -f "$next_link"
-  run_root ln -s "$NEW_WEBROOT" "$next_link"
+  run_as_site rm -f "$next_link"
+  run_as_site ln -sT -- "$NEW_WEBROOT" "$next_link"
   previous_kind="$(state_read previous_kind)"
 
   if [ "$previous_kind" = symlink ]; then
-    run_root mv -Tf "$next_link" "$LIVE_WEBROOT"
+    run_as_site mv -Tf "$next_link" "$LIVE_WEBROOT"
   else
     bootstrap_parent="$RELEASES_DIR/bootstrap-$(date +%Y%m%d%H%M%S)-$RELEASE_ID"
     bootstrap_webroot="$bootstrap_parent/dist"
-    run_root install -d -o "$SITE_USER" -g "$SITE_GROUP" -m 750 "$bootstrap_parent"
-    run_root mv "$LIVE_WEBROOT" "$bootstrap_webroot"
+    prepare_site_directory "$bootstrap_parent" 750
+    run_as_site mv "$LIVE_WEBROOT" "$bootstrap_webroot"
     state_write previous_target "$bootstrap_webroot"
-    if ! run_root mv -T "$next_link" "$LIVE_WEBROOT"; then
-      run_root mv "$bootstrap_webroot" "$LIVE_WEBROOT"
+    if ! run_as_site mv -T "$next_link" "$LIVE_WEBROOT"; then
+      run_as_site mv "$bootstrap_webroot" "$LIVE_WEBROOT"
       fail "Initial public_html release-pointer bootstrap failed and was restored."
     fi
   fi
@@ -1087,9 +1140,8 @@ activate_webroot() {
   active_target="$(readlink -f "$LIVE_WEBROOT")"
   [ "$active_target" = "$NEW_WEBROOT" ] ||
     fail "Atomic activation target mismatch: $active_target"
-  # The live webroot is now a root-owned symlink. chown -h it so LiteSpeed's
-  # suEXEC docroot-ownership check sees the site user as owner.
-  run_root chown -h "$SITE_USER:$SITE_GROUP" "$LIVE_WEBROOT"
+  # The site account created the pointer, so its ownership already satisfies
+  # LiteSpeed suEXEC without a privileged chown.
   state_write activated_at "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 }
 
@@ -1118,10 +1170,9 @@ rollback_webroot() {
       fail "Previous webroot target is missing (release was pruned?): $previous_target — refusing to declare rollback complete."
     if [ "$current_target" != "$previous_target" ]; then
       rollback_link="$PRIVATE_ROOT/.public_html.rollback-$RELEASE_ID"
-      run_root rm -f "$rollback_link"
-      run_root ln -s "$previous_target" "$rollback_link"
-      run_root mv -Tf "$rollback_link" "$LIVE_WEBROOT"
-      run_root chown -h "$SITE_USER:$SITE_GROUP" "$LIVE_WEBROOT"
+      run_as_site rm -f "$rollback_link" || return 1
+      run_as_site ln -sT -- "$previous_target" "$rollback_link" || return 1
+      run_as_site mv -Tf "$rollback_link" "$LIVE_WEBROOT" || return 1
     fi
   elif [ "$previous_kind" = directory ]; then
     [ -d "$previous_target" ] ||
@@ -1131,10 +1182,14 @@ rollback_webroot() {
       *) fail "Refusing unsafe bootstrap rollback target: $previous_target" ;;
     esac
     if [ -L "$LIVE_WEBROOT" ]; then
-      run_root rm "$LIVE_WEBROOT"
-      run_root mv "$previous_target" "$LIVE_WEBROOT"
+      run_as_site rm "$LIVE_WEBROOT" || return 1
+      run_as_site mv "$previous_target" "$LIVE_WEBROOT" || return 1
     fi
   fi
+  [ "$(readlink -f "$LIVE_WEBROOT")" = "$(readlink -f "$previous_target")" ] || {
+    echo "ERROR: Rollback webroot target verification failed." >&2
+    return 1
+  }
 }
 
 # Restores the outgoing release root to the mode recorded before the freeze.
@@ -1179,7 +1234,7 @@ rollback_release() {
     return 0
   }
   if [ -f "$STATE_DIR/rolled_back_at" ]; then
-    clear_cutover_markers
+    clear_cutover_markers || return 1
     echo "Release was already rolled back: $RELEASE_ID"
     return 0
   fi
@@ -1207,15 +1262,15 @@ rollback_release() {
     changed_runtime=yes
   fi
   if [ "$changed_runtime" = yes ]; then
-    write_cutover_markers
-    restart_live_php_workers
-    prove_cutover_barriers non-fatal || true
-    sleep 35
+    write_cutover_markers || return 1
+    restart_live_php_workers || return 1
+    prove_cutover_barriers || return 1
+    sleep 35 || return 1
   fi
-  rollback_webroot
-  restore_shared_private
-  clear_cutover_markers
-  state_write rolled_back_at "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+  rollback_webroot || return 1
+  restore_shared_private || return 1
+  clear_cutover_markers || return 1
+  state_write rolled_back_at "$(date -u +%Y-%m-%dT%H:%M:%SZ)" || return 1
   echo "Release rollback completed: $RELEASE_ID"
 }
 
@@ -1226,7 +1281,7 @@ rollback_on_failure() {
   trap - EXIT HUP INT TERM
   cleanup_runtime_capability_probe
   if [ "$status" -ne 0 ]; then
-    rollback_release || true
+    rollback_release || echo "ERROR: Automatic rollback is incomplete; retain cutover state and inspect before retry." >&2
   fi
   exit "$status"
 }
@@ -1236,7 +1291,7 @@ activate_release() {
   validate_release_bundle
   prepare_persistent_storage
   [ ! -e "$STATE_DIR" ] || fail "Release state already exists: $STATE_DIR"
-  run_root install -d -o "$SITE_USER" -g "$SITE_GROUP" -m 750 "$STATE_DIR"
+  prepare_site_directory "$STATE_DIR" 750
 
   trap rollback_on_failure EXIT
   trap 'exit 129' HUP
@@ -1294,7 +1349,7 @@ finalize_release() {
   echo "Email log cutover barrier released: OK"
   state_write authenticated_admin_smoke PASS
   state_write finalized_at "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-  run_root sh -c "umask 0027; printf '%s\n' '$RELEASE_ID' > '$CURRENT_RELEASE_MARKER.tmp'; chown '$SITE_USER:$SITE_GROUP' '$CURRENT_RELEASE_MARKER.tmp'; chmod 640 '$CURRENT_RELEASE_MARKER.tmp'; mv -f '$CURRENT_RELEASE_MARKER.tmp' '$CURRENT_RELEASE_MARKER'"
+  site_atomic_write "$CURRENT_RELEASE_MARKER" 640 "$RELEASE_ID"$'\n'
   echo "Release finalized after $DEPLOY_ENVIRONMENT smoke: $RELEASE_ID"
   # Old releases are pruned by scripts/prune-old-releases.sh (invoked by the
   # deploy action after finalize, keeping the newest release only). The
@@ -1356,23 +1411,29 @@ emit_release_evidence() {
 # it only defines the functions above and touches nothing.
 main() {
   validate_deployment_config
+  validate_release_id
 
-  [ -f "$PERMISSION_POLICY" ] || fail "Permission policy is missing: $PERMISSION_POLICY"
   # shellcheck source=permission-policy.sh
-  . "$PERMISSION_POLICY"
+  trusted_bundle="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)"
+  [ "$trusted_bundle" = "/var/lib/kssmi-deploy/$RELEASE_ID" ] ||
+    fail "Run the protected upload entry point, never a site-owned release script."
+  for directory in / /var /var/lib /var/lib/kssmi-deploy "$trusted_bundle" "$trusted_bundle/scripts"; do
+    [ -d "$directory" ] && [ ! -L "$directory" ] || fail "Unsafe controller directory: $directory"
+    [ "$(stat -c %u -- "$directory")" = 0 ] || fail "Controller directory is not root-owned: $directory"
+    mode="$(stat -c %a -- "$directory")"
+    [ "$(( 0$mode & 022 ))" = 0 ] || fail "Controller directory is writable by another account: $directory"
+  done
+  . "$trusted_bundle/scripts/permission-policy.sh"
 
   trap 'report_failure "$LINENO" "$BASH_COMMAND"' ERR
 
-  validate_release_id
   prepare_control_paths
-  run_root touch "$DEPLOY_LOCK"
-  run_root chown "$SITE_USER:$SITE_GROUP" "$DEPLOY_LOCK"
-  run_root chmod 640 "$DEPLOY_LOCK"
-  exec 9>"$DEPLOY_LOCK"
+  prepare_site_file "$DEPLOY_LOCK" 640
+  exec 9<"$DEPLOY_LOCK"
   flock -x 9
 
   case "$COMMAND" in
-    activate) activate_release ;;
+    activate) materialize_release "$trusted_bundle"; activate_release ;;
     rollback) rollback_release ;;
     finalize) finalize_release ;;
     evidence) emit_release_evidence ;;

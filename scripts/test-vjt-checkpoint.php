@@ -9,7 +9,8 @@ declare(strict_types=1);
  * vjt_wipe_all_data() run, so PRAGMA wal_checkpoint(TRUNCATE) faces active
  * statements on the same connection. Before the Phase 0 fix this produced a
  * fatal "database table is locked"; after the fix the checkpoint is
- * best-effort (logged, never fatal) and this suite must stay green.
+ * best-effort. This suite asserts real completion and bounded deferral,
+ * rather than accepting a non-fatal error as proof that maintenance worked.
  *
  * Asserts:
  *   1. No fatal under the VJT-008 open-statement scenario (5 iterations).
@@ -53,6 +54,8 @@ $testDirectory = sys_get_temp_dir() . DIRECTORY_SEPARATOR .
     'kssmi-vjt-checkpoint-' . bin2hex(random_bytes(6));
 kssmi_vjt_assert(mkdir($testDirectory, 0700, true), 'create test directory');
 putenv('KSSMI_VJT_DATA_DIR=' . $testDirectory);
+$previousErrorLog = ini_get('error_log');
+ini_set('error_log', $testDirectory . '/checkpoint-errors.log');
 
 try {
     require_once dirname(__DIR__) . '/public/api/vjt-helpers.php';
@@ -123,14 +126,21 @@ try {
     // The INSERTs above run to completion (SQLITE_DONE), which releases their
     // read lock — they never actually blocked TRUNCATE. The lock VJT-008 hit
     // comes from a SELECT cursor that has been stepped but not fully consumed.
-    // Hold one in scope across a cleanup so the guard's exception path is
-    // genuinely exercised (old code fatals here with 'database table is
-    // locked').
+    // Hold one in scope across cleanup. The dedicated checkpoint connection
+    // must report bounded contention without invalidating this cursor (the
+    // original unguarded code fatals here with 'database table is locked').
     $activeCursor = $db->query("SELECT visitor_id FROM visitors WHERE visitor_id = 'vjtv_kssmi_old'");
     kssmi_vjt_assert(is_array($activeCursor->fetch()), 'active cursor returns a row before cleanup');
     vjt_cleanup_old_data(90); // cursor still open: TRUNCATE must not fatal
+    $outcome = vjt_checkpoint_wal();
+    kssmi_vjt_assert($outcome['status'] === 'deferred' && $outcome['mode'] === 'PASSIVE', 'active business cursor causes bounded PASSIVE deferral, not a skipped/failed checkpoint');
+    kssmi_vjt_assert($outcome['log_frames'] >= $outcome['checkpointed_frames'], 'deferral reports actual WAL frame progress');
     kssmi_vjt_assert($db->query('PRAGMA integrity_check')->fetchColumn() === 'ok', 'integrity_check ok with active cursor in scope');
     $activeCursor->closeCursor();
+    $outcome = vjt_checkpoint_wal();
+    kssmi_vjt_assert($outcome['status'] === 'complete' && $outcome['mode'] === 'TRUNCATE', 'checkpoint completes once the business cursor closes');
+    kssmi_vjt_assert($outcome['log_frames'] === 0 && $outcome['checkpointed_frames'] === 0, 'TRUNCATE really empties the WAL');
+    fwrite(STDOUT, "ok: active cursor deferred; released cursor completed TRUNCATE\n");
 
     // ── vjt_auto_cleanup() with a 0-day last_cleanup gap ──
     vjt_meta_set('last_cleanup', 0);
@@ -143,19 +153,28 @@ try {
     // ── Concurrent reader must not stall the request-path checkpoint ──
     // vjt_auto_cleanup() runs from public tracking endpoints; with the default
     // 5s busy_timeout a reader on another connection made TRUNCATE block ~5s
-    // before the PASSIVE fallback. The guard now bounds that wait.
+    // before the PASSIVE fallback. The dedicated connection bounds that wait
+    // without changing the shared business connection's timeout.
     $reader = new PDO('sqlite:' . VJT_DB_PATH);
     $reader->exec('PRAGMA journal_mode = WAL');
     $reader->beginTransaction();
     $reader->query('SELECT COUNT(*) FROM visitors')->fetchAll(); // hold read txn
+    // Add a WAL frame AFTER the reader establishes its snapshot. Without a
+    // new write, a zero-length WAL can truncate successfully despite a reader,
+    // so the old test did not reliably create the contention it claimed.
+    $insertVisitor->execute(['vjtv_checkpoint_concurrent', $now, $now]);
     $t0 = microtime(true);
     vjt_cleanup_old_data(90);
+    $outcome = vjt_checkpoint_wal();
     $elapsedMs = (microtime(true) - $t0) * 1000;
+    kssmi_vjt_assert($outcome['status'] === 'deferred' && $outcome['mode'] === 'PASSIVE', 'concurrent reader gives an explicit bounded deferral');
     $reader->rollBack();
     $reader = null; // release the second connection so Windows can clean the temp dir
     kssmi_vjt_assert($elapsedMs < 2000, 'cleanup with concurrent reader completes quickly (' . round($elapsedMs) . 'ms, not ~5s)');
     kssmi_vjt_assert((int)$db->query('PRAGMA busy_timeout')->fetchColumn() === 5000, 'busy_timeout restored to 5000 after guarded checkpoint');
     kssmi_vjt_assert($db->query('PRAGMA integrity_check')->fetchColumn() === 'ok', 'integrity_check ok after concurrent-reader cleanup');
+    kssmi_vjt_assert(vjt_checkpoint_wal()['status'] === 'complete', 'checkpoint completes after concurrent reader releases');
+    fwrite(STDOUT, "ok: concurrent reader deferred within budget; released reader completed\n");
 
     // ── vjt_wipe_all_data() (admin destructive) must not fatal on checkpoint ──
     vjt_wipe_all_data();
@@ -163,7 +182,19 @@ try {
     kssmi_vjt_assert((int)$db->query('SELECT COUNT(*) FROM visitors')->fetchColumn() === 0, 'wipe empties visitors');
     kssmi_vjt_assert((int)$db->query('SELECT COUNT(*) FROM contact_events')->fetchColumn() === 0, 'wipe empties contact_events');
 
+    $errorLog = $testDirectory . '/checkpoint-errors.log';
+    kssmi_vjt_assert(!is_file($errorLog) || file_get_contents($errorLog) === '', 'normal and busy checkpoint paths do not silently log errors');
+    // A non-WAL database is a genuine maintenance/configuration failure,
+    // distinguishable from normal contention and still non-fatal to callers.
+    $db->exec('PRAGMA journal_mode = DELETE');
+    kssmi_vjt_assert(vjt_checkpoint_wal()['status'] === 'failed', 'unexpected checkpoint failure is reported, not called a deferral');
+    kssmi_vjt_assert(is_file($errorLog) && str_contains(file_get_contents($errorLog), 'VJT checkpoint failed (non-fatal)'), 'unexpected failure is still logged');
+    $db->exec('PRAGMA journal_mode = WAL');
+    kssmi_vjt_assert(vjt_checkpoint_wal()['status'] === 'complete', 'normal checkpoint recovers after WAL mode is restored');
+    fwrite(STDOUT, "ok: unexpected maintenance failure reported and logged; recovery completed\n");
+
     fwrite(STDOUT, "VJT checkpoint regression tests passed.\n");
 } finally {
+    ini_set('error_log', (string)$previousErrorLog);
     kssmi_vjt_remove_tree($testDirectory);
 }

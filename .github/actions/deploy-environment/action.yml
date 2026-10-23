@@ -104,7 +104,7 @@ runs:
         script: |
           set -eu
           PRIVATE_ROOT='${{ inputs.private-root }}'
-          MIN_FREE_GB=6
+          MIN_FREE_GB=12
           avail_mb="$(df -P -B 1M -- "$PRIVATE_ROOT" | awk 'NR==2 {print $4}')"
           avail_gb="$(( avail_mb / 1024 ))"
           echo "Free disk on ${PRIVATE_ROOT}: ${avail_gb}G (minimum required: ${MIN_FREE_GB}G)"
@@ -113,6 +113,32 @@ runs:
             exit 1
           }
 
+    # The root controller must never be uploaded into the site-owned tree.
+    - name: Prepare protected upload directory
+      id: protected-upload
+      uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b
+      with:
+        host: ${{ inputs.remote-host }}
+        username: ${{ inputs.remote-user }}
+        key: ${{ inputs.ssh-private-key }}
+        command_timeout: 60s
+        script: |
+          set -eu
+          [ "$(id -u)" = 0 ] || { echo 'Protected deployment requires the root SSH account.' >&2; exit 1; }
+          RELEASE_ID='${{ inputs.release-id }}'
+          printf '%s' "$RELEASE_ID" | grep -Eq '^[0-9a-f]{40}-[1-9][0-9]*(-[1-9][0-9]*)?$'
+          for directory in / /var /var/lib /var/lib/kssmi-deploy; do
+            if [ "$directory" = /var/lib/kssmi-deploy ] && [ ! -e "$directory" ] && [ ! -L "$directory" ]; then
+              mkdir -m 755 -- "$directory"
+            fi
+            [ -d "$directory" ] && [ ! -L "$directory" ]
+            [ "$(stat -c %u -- "$directory")" = 0 ]
+            mode="$(stat -c %a -- "$directory")"
+            [ "$(( 0$mode & 022 ))" = 0 ]
+          done
+          # Fail on an existing directory, including incomplete earlier uploads.
+          mkdir -m 700 -- "/var/lib/kssmi-deploy/$RELEASE_ID"
+
     - name: Upload immutable release bundle
       uses: appleboy/scp-action@ff85246acaad7bdce478db94a363cd2bf7c90345  # v1.0.0 pinned 2026-07-08
       with:
@@ -120,11 +146,34 @@ runs:
         username: ${{ inputs.remote-user }}
         key: ${{ inputs.ssh-private-key }}
         source: "dist,private,scripts/deploy-release.sh,scripts/permission-policy.sh,scripts/runtime-capability-probe.php,scripts/prune-old-releases.sh"
-        target: "${{ inputs.private-root }}/releases/${{ inputs.release-id }}"
+        target: "/var/lib/kssmi-deploy/${{ inputs.release-id }}"
+        tar_tmp_path: "/var/lib/kssmi-deploy"
+
+    - name: Verify protected upload
+      id: verified-upload
+      uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b  # v1.2.5+ pinned 2026-07-06
+      with:
+        host: ${{ inputs.remote-host }}
+        username: ${{ inputs.remote-user }}
+        key: ${{ inputs.ssh-private-key }}
+        command_timeout: 120s
+        script: |
+          set -eu
+          RELEASE_ID='${{ inputs.release-id }}'
+          BUNDLE_ROOT="/var/lib/kssmi-deploy/$RELEASE_ID"
+          test -f "$BUNDLE_ROOT/scripts/deploy-release.sh"
+          test -f "$BUNDLE_ROOT/scripts/permission-policy.sh"
+          test -f "$BUNDLE_ROOT/scripts/prune-old-releases.sh"
+          [ -z "$(find "$BUNDLE_ROOT" -type l -print -quit)" ]
+          # The site account copies the upload but can never modify its source.
+          # Extraction may preserve runner UIDs. Keep the enclosing directory
+          # 0700 until every object is root-owned, then expose read-only access.
+          chown -R root:root -- "$BUNDLE_ROOT"
+          chmod -R u+rwX,go+rX,go-w -- "$BUNDLE_ROOT"
 
     - name: Activate versioned release atomically
       id: activate
-      uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b  # v1.2.5+ pinned 2026-07-06
+      uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b
       with:
         host: ${{ inputs.remote-host }}
         username: ${{ inputs.remote-user }}
@@ -134,9 +183,8 @@ runs:
           set -eu
           RELEASE_ID='${{ inputs.release-id }}'
           PRIVATE_ROOT='${{ inputs.private-root }}'
-          RELEASE_SCRIPT="$PRIVATE_ROOT/releases/$RELEASE_ID/scripts/deploy-release.sh"
+          RELEASE_SCRIPT="/var/lib/kssmi-deploy/$RELEASE_ID/scripts/deploy-release.sh"
           test -f "$RELEASE_SCRIPT"
-          chmod 750 "$RELEASE_SCRIPT"
           DEPLOY_ENVIRONMENT='${{ inputs.environment-name }}' \
           SITE_URL='${{ inputs.site-url }}' \
           SITE_HOST='${{ inputs.site-host }}' \
@@ -255,7 +303,7 @@ runs:
           set -eu
           RELEASE_ID='${{ inputs.release-id }}'
           PRIVATE_ROOT='${{ inputs.private-root }}'
-          RELEASE_SCRIPT="$PRIVATE_ROOT/releases/$RELEASE_ID/scripts/deploy-release.sh"
+          RELEASE_SCRIPT="/var/lib/kssmi-deploy/$RELEASE_ID/scripts/deploy-release.sh"
           test -f "$RELEASE_SCRIPT"
           DEPLOY_ENVIRONMENT='${{ inputs.environment-name }}' \
           SITE_URL='${{ inputs.site-url }}' \
@@ -280,13 +328,15 @@ runs:
           set -eu
           RELEASE_ID='${{ inputs.release-id }}'
           PRIVATE_ROOT='${{ inputs.private-root }}'
-          PRUNE_SCRIPT="$PRIVATE_ROOT/releases/$RELEASE_ID/scripts/prune-old-releases.sh"
+          PRUNE_SCRIPT="/var/lib/kssmi-deploy/$RELEASE_ID/scripts/prune-old-releases.sh"
           test -f "$PRUNE_SCRIPT"
-          PRIVATE_ROOT="$PRIVATE_ROOT" RELEASE_ID="$RELEASE_ID" bash "$PRUNE_SCRIPT"
+          sudo -u '${{ inputs.site-user }}' env PRIVATE_ROOT="$PRIVATE_ROOT" RELEASE_ID="$RELEASE_ID" SITE_USER='${{ inputs.site-user }}' bash "$PRUNE_SCRIPT"
 
     - name: Rollback on failure
       id: rollback
-      if: failure()
+      # Finalization ends the rollback window: pruning may have removed the
+      # previous release and its module snapshot. Later failures need review.
+      if: failure() && steps.verified-upload.outcome == 'success' && steps.finalize.outcome != 'success'
       uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b  # v1.2.5+ pinned 2026-07-06
       with:
         host: ${{ inputs.remote-host }}
@@ -297,7 +347,7 @@ runs:
           set -eu
           RELEASE_ID='${{ inputs.release-id }}'
           PRIVATE_ROOT='${{ inputs.private-root }}'
-          RELEASE_SCRIPT="$PRIVATE_ROOT/releases/$RELEASE_ID/scripts/deploy-release.sh"
+          RELEASE_SCRIPT="/var/lib/kssmi-deploy/$RELEASE_ID/scripts/deploy-release.sh"
           if [ -f "$RELEASE_SCRIPT" ]; then
             DEPLOY_ENVIRONMENT='${{ inputs.environment-name }}' \
             SITE_URL='${{ inputs.site-url }}' \
@@ -325,7 +375,7 @@ runs:
           set -eu
           RELEASE_ID='${{ inputs.release-id }}'
           PRIVATE_ROOT='${{ inputs.private-root }}'
-          RELEASE_SCRIPT="$PRIVATE_ROOT/releases/$RELEASE_ID/scripts/deploy-release.sh"
+          RELEASE_SCRIPT="/var/lib/kssmi-deploy/$RELEASE_ID/scripts/deploy-release.sh"
           test -f "$RELEASE_SCRIPT"
           DEPLOY_ENVIRONMENT='${{ inputs.environment-name }}' \
           SITE_URL='${{ inputs.site-url }}' \
@@ -363,6 +413,23 @@ runs:
       if: always()
       shell: bash
       run: node scripts/enforce-release-evidence.mjs "release-evidence/${{ inputs.environment-name }}/${{ inputs.environment-name }}.json"
+
+    - name: Remove successful protected upload
+      if: steps.finalize.outcome == 'success' && steps.deployment-proof.outcome == 'success'
+      uses: appleboy/ssh-action@068c0c7a4e59a5ae12fb7cb454b05735d830c82b
+      with:
+        host: ${{ inputs.remote-host }}
+        username: ${{ inputs.remote-user }}
+        key: ${{ inputs.ssh-private-key }}
+        command_timeout: 120s
+        script: |
+          set -eu
+          [ "$(id -u)" = 0 ]
+          RELEASE_ID='${{ inputs.release-id }}'
+          printf '%s' "$RELEASE_ID" | grep -Eq '^[0-9a-f]{40}-[1-9][0-9]*(-[1-9][0-9]*)?$'
+          # Protected parents were checked before upload. Keep failed uploads
+          # for diagnosis/recovery; never recursively remove a site-owned path.
+          rm -rf -- "/var/lib/kssmi-deploy/$RELEASE_ID"
 
     - name: Environment deployment complete
       shell: bash

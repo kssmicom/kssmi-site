@@ -19,6 +19,20 @@
 # Usage:
 #   PRIVATE_ROOT=/home/kssmi.com RELEASE_ID=<id> bash scripts/prune-old-releases.sh
 
+prune_directory() {
+  # KS-05 freezes release roots to 0551. Their owner must restore write
+  # permission before unlinking the entries inside; root is never needed.
+  [ -d "$1" ] && [ ! -L "$1" ] || return 1
+  chmod u+w -- "$1" || return 1
+  rm -rf -- "$1"
+}
+
+# Allow isolated tests to exercise the deletion boundary without evaluating
+# production-only configuration or starting the housekeeping loop.
+if [ "${BASH_SOURCE[0]}" != "$0" ]; then
+  return 0
+fi
+
 set -Eeuo pipefail
 
 PRIVATE_ROOT="${PRIVATE_ROOT:-}"
@@ -43,13 +57,12 @@ printf '%s' "$RELEASE_ID" | grep -Eq '^[0-9a-f]{40}-[1-9][0-9]*(-[1-9][0-9]*)?$'
 
 RELEASE_NAME_RE='^[0-9a-f]{40}-[1-9][0-9]*(-[1-9][0-9]*)?$|^bootstrap-[0-9]{14}-[0-9a-f]{40}(-[1-9][0-9]*)?$'
 
-run_root() {
-  if [ "$(id -u)" = 0 ]; then
-    "$@"
-  else
-    sudo "$@"
-  fi
-}
+# Never let privileged rm resolve any site-controlled path component.
+SITE_USER="${SITE_USER:-kssmi4374}"
+if [ "$(id -u)" = 0 ]; then
+  exec sudo -u "$SITE_USER" env PRIVATE_ROOT="$PRIVATE_ROOT" RELEASE_ID="$RELEASE_ID" SITE_USER="$SITE_USER" bash "$0"
+fi
+[ "$(id -un)" = "$SITE_USER" ] || fail "Run pruning as the site account."
 
 RELEASES_DIR="$PRIVATE_ROOT/releases"
 STATE_ROOT="$PRIVATE_ROOT/deploy_state"
@@ -64,7 +77,7 @@ for entry in "$RELEASES_DIR"/*; do
   if [ "$name" = "$RELEASE_ID" ]; then
     kept=$((kept+1))
   elif printf '%s' "$name" | grep -Eq "$RELEASE_NAME_RE"; then
-    if run_root rm -rf -- "$entry" 2>/dev/null; then
+    if prune_directory "$entry" 2>/dev/null; then
       removed=$((removed+1))
       echo "pruned release: $name"
     else
@@ -85,7 +98,7 @@ if [ -d "$STATE_ROOT" ]; then
     if [ "$name" = "$RELEASE_ID" ] || [ "$name" = deploy.lock ]; then
       kept=$((kept+1))
     elif printf '%s' "$name" | grep -Eq "$RELEASE_NAME_RE"; then
-      if run_root rm -rf -- "$entry" 2>/dev/null; then
+      if prune_directory "$entry" 2>/dev/null; then
         removed=$((removed+1))
         echo "pruned state: $name"
       else
@@ -103,7 +116,7 @@ fi
 # backup, whereas the remaining state files are only small deployment proof.
 current_private_backup="$STATE_ROOT/$RELEASE_ID/private-before"
 if [ -d "$current_private_backup" ]; then
-  if run_root rm -rf -- "$current_private_backup"; then
+  if prune_directory "$current_private_backup"; then
     removed=$((removed+1))
     echo "pruned finalized private snapshot: $RELEASE_ID/private-before"
   else
