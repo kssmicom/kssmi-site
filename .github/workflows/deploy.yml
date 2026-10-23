@@ -115,6 +115,7 @@ jobs:
           php scripts/test-vjt-data-quality.php
           php scripts/test-anon-page-path.php
           php scripts/test-http-security.php
+          php scripts/test-access-jwt.php
           php scripts/test-reset-token-race.php
           php scripts/test-admin-session.php
           php scripts/test-credential-persistence.php

@@ -8,6 +8,8 @@
  *
  * Storage:
  *   - Preferred: APCu (in-memory, fast). Check `apcu_fetch` exists.
+ *     Only for windows up to 5 minutes: APCu is lost when LiteSpeed stops an
+ *     idle lsphp process, so longer windows always use the file store.
  *   - Fallback:  File-based, stored in a fixed set of hash buckets at
  *                /home/kssmi.com/rate_limit/ (outside the webroot)
  *
@@ -363,6 +365,13 @@ function checkRateLimitGlobal(string $key, int $maxRequests, int $windowSeconds)
     return kssmi_check_rate_limit_identity($key, 'global', $maxRequests, $windowSeconds, 1);
 }
 
+/** Windows longer than this outlive an idle lsphp process and its APCu. */
+const KSSMI_RATE_LIMIT_DURABLE_WINDOW = 300;
+
+function kssmi_rate_limit_needs_durable_store(int $windowSeconds): bool {
+    return $windowSeconds > KSSMI_RATE_LIMIT_DURABLE_WINDOW;
+}
+
 /**
  * Consume a quota for a supplied server-derived identity. The public helpers
  * select either the trusted client IP or the fixed global identity above.
@@ -380,10 +389,13 @@ function kssmi_check_rate_limit_identity(
 
     $cacheKey = "rl:{$key}:" . md5($identity);
 
-    // Preferred: APCu in-memory cache (very fast, shared across PHP-FPM workers)
+    // Preferred: APCu in-memory cache (very fast, shared across PHP-FPM workers).
+    // LiteSpeed stops idle lsphp processes, which empties APCu, so a long
+    // window would silently restart at low traffic (F-6). Those use the
+    // durable file store instead.
     $forceFileFallback =
-        PHP_SAPI === 'cli' &&
-        getenv('KSSMI_FORCE_FILE_RATE_LIMIT') === '1';
+        kssmi_rate_limit_needs_durable_store($windowSeconds) ||
+        (PHP_SAPI === 'cli' && getenv('KSSMI_FORCE_FILE_RATE_LIMIT') === '1');
     $apcuAvailable =
         function_exists('apcu_add') &&
         function_exists('apcu_inc') &&

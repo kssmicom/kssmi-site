@@ -76,6 +76,179 @@ function kssmi_admin_require_trusted_proxy(): void {
     exit;
 }
 
+/*
+ * Cloudflare Access proof (KS-02). The trusted-proxy gate only proves that a
+ * request came through *some* Cloudflare edge; another Cloudflare account can
+ * proxy to this origin with our Host header and skip our Access policy. Pages
+ * behind Access therefore also require the Access JWT that Cloudflare signs
+ * for our team and application (users and service tokens alike).
+ */
+const KSSMI_ACCESS_TEAM_DOMAIN = 'https://kssmi.cloudflareaccess.com';
+const KSSMI_ACCESS_AUD = '79e1eeeb1fe317952ec328b0360bc9205c8ff2c72e91461057ae36b302373648';
+const KSSMI_ACCESS_CLOCK_SKEW = 60;
+const KSSMI_ACCESS_CERTS_FRESH = 6 * 3600;
+const KSSMI_ACCESS_CERTS_STALE_LIMIT = 7 * 86400;
+const KSSMI_ACCESS_CERTS_RETRY = 60;
+
+function kssmi_access_b64url_decode(string $value): ?string {
+    if ($value === '' || preg_match('/^[A-Za-z0-9_-]+$/D', $value) !== 1) return null;
+    $decoded = base64_decode(strtr($value, '-_', '+/') . str_repeat('=', (4 - strlen($value) % 4) % 4), true);
+    return $decoded === false ? null : $decoded;
+}
+
+/** Decode the JWT header without trusting it; returns null when malformed. */
+function kssmi_access_jwt_header(string $jwt): ?array {
+    $parts = explode('.', $jwt);
+    if (count($parts) !== 3) return null;
+    $raw = kssmi_access_b64url_decode($parts[0]);
+    $header = $raw === null ? null : json_decode($raw, true);
+    return is_array($header) ? $header : null;
+}
+
+/**
+ * Verify an Access JWT against PEM certificates or public keys keyed by kid.
+ * Returns the claims, or null for any failure.
+ */
+function kssmi_access_jwt_claims(string $jwt, array $certsByKid, ?int $now = null): ?array {
+    if (strlen($jwt) > 8192) return null;
+    $parts = explode('.', $jwt);
+    if (count($parts) !== 3) return null;
+
+    $header = kssmi_access_jwt_header($jwt);
+    if ($header === null || ($header['alg'] ?? null) !== 'RS256') return null;
+    $kid = $header['kid'] ?? null;
+    if (!is_string($kid) || !isset($certsByKid[$kid]) || !is_string($certsByKid[$kid])) return null;
+
+    $signature = kssmi_access_b64url_decode($parts[2]);
+    $payloadRaw = kssmi_access_b64url_decode($parts[1]);
+    if ($signature === null || $payloadRaw === null) return null;
+
+    $key = @openssl_pkey_get_public($certsByKid[$kid]);
+    if ($key === false) return null;
+    if (openssl_verify($parts[0] . '.' . $parts[1], $signature, $key, OPENSSL_ALGO_SHA256) !== 1) return null;
+
+    $claims = json_decode($payloadRaw, true);
+    if (!is_array($claims)) return null;
+
+    $now ??= time();
+    if (($claims['iss'] ?? null) !== KSSMI_ACCESS_TEAM_DOMAIN) return null;
+    $audience = $claims['aud'] ?? null;
+    $audiences = is_string($audience) ? [$audience] : (is_array($audience) ? $audience : []);
+    if (!in_array(KSSMI_ACCESS_AUD, $audiences, true)) return null;
+    if (!is_int($claims['exp'] ?? null) || $claims['exp'] <= $now - KSSMI_ACCESS_CLOCK_SKEW) return null;
+    foreach (['nbf', 'iat'] as $claim) {
+        if (!array_key_exists($claim, $claims)) continue;
+        if (!is_int($claims[$claim]) || $claims[$claim] > $now + KSSMI_ACCESS_CLOCK_SKEW) return null;
+    }
+    return $claims;
+}
+
+function kssmi_access_certs_cache_path(): string {
+    return dirname(__DIR__) . '/rate_limit/cloudflare-access-certs.json';
+}
+
+/** Fetch the team's signing certificates; returns [kid => PEM] or null. */
+function kssmi_access_fetch_certs(): ?array {
+    $url = KSSMI_ACCESS_TEAM_DOMAIN . '/cdn-cgi/access/certs';
+    $body = null;
+    if (function_exists('curl_init')) {
+        $curl = curl_init($url);
+        curl_setopt_array($curl, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => false,
+            CURLOPT_CONNECTTIMEOUT => 3,
+            CURLOPT_TIMEOUT => 5,
+            CURLOPT_PROTOCOLS => CURLPROTO_HTTPS,
+            CURLOPT_SSL_VERIFYPEER => true,
+            CURLOPT_SSL_VERIFYHOST => 2,
+        ]);
+        $result = curl_exec($curl);
+        if (is_string($result) && curl_getinfo($curl, CURLINFO_RESPONSE_CODE) === 200) $body = $result;
+        curl_close($curl);
+    }
+    if (!is_string($body) || strlen($body) > 65536) return null;
+
+    $decoded = json_decode($body, true);
+    $certs = [];
+    foreach ((array)($decoded['public_certs'] ?? []) as $entry) {
+        $kid = $entry['kid'] ?? null;
+        $cert = $entry['cert'] ?? null;
+        if (!is_string($kid) || preg_match('/^[A-Za-z0-9_-]{8,128}$/D', $kid) !== 1) continue;
+        if (!is_string($cert) || @openssl_pkey_get_public($cert) === false) continue;
+        $certs[$kid] = $cert;
+    }
+    return $certs === [] ? null : $certs;
+}
+
+/**
+ * Return [kid => PEM] that can verify $kid. Certificates are cached on disk;
+ * an unknown kid or an old cache triggers at most one fetch per minute, and an
+ * unreachable endpoint falls back to a cache younger than seven days.
+ */
+function kssmi_access_certs_for(string $kid, ?int $now = null): array {
+    if (PHP_SAPI === 'cli' || PHP_SAPI === 'cli-server') {
+        $override = getenv('KSSMI_ACCESS_CERTS_FILE');
+        if (is_string($override) && $override !== '') {
+            $certs = json_decode((string)@file_get_contents($override), true);
+            return is_array($certs) ? $certs : [];
+        }
+    }
+
+    $now ??= time();
+    $path = kssmi_access_certs_cache_path();
+    $cache = json_decode((string)@file_get_contents($path), true);
+    if (!is_array($cache) || !is_array($cache['certs'] ?? null)) $cache = ['certs' => [], 'fetched_at' => 0, 'attempted_at' => 0];
+    $fetchedAt = (int)($cache['fetched_at'] ?? 0);
+    $known = isset($cache['certs'][$kid]);
+
+    if ($known && $now - $fetchedAt < KSSMI_ACCESS_CERTS_FRESH) return $cache['certs'];
+
+    if ($now - (int)($cache['attempted_at'] ?? 0) >= KSSMI_ACCESS_CERTS_RETRY) {
+        $fresh = kssmi_access_fetch_certs();
+        $cache['attempted_at'] = $now;
+        if ($fresh !== null) {
+            $cache['certs'] = $fresh;
+            $cache['fetched_at'] = $now;
+        }
+        kssmi_admin_atomic_write($path, (string)json_encode($cache), 0600);
+        if ($fresh !== null) return $fresh;
+    }
+
+    return ($known && $now - $fetchedAt < KSSMI_ACCESS_CERTS_STALE_LIMIT) ? $cache['certs'] : [];
+}
+
+/**
+ * True when the request carries a valid Access JWT for this application.
+ * Cloudflare sends it as Cf-Access-Jwt-Assertion on paths the Access app
+ * covers; $allowCookie also accepts the browser's CF_Authorization cookie for
+ * same-origin APIs that the admin pages call.
+ */
+function kssmi_admin_access_jwt_valid(bool $allowCookie = false, ?int $now = null): bool {
+    $token = $_SERVER['HTTP_CF_ACCESS_JWT_ASSERTION'] ?? null;
+    if ((!is_string($token) || $token === '') && $allowCookie) $token = $_COOKIE['CF_Authorization'] ?? null;
+    if (!is_string($token) || $token === '' || strlen($token) > 8192) return false;
+
+    $header = kssmi_access_jwt_header($token);
+    $kid = $header['kid'] ?? null;
+    if (!is_string($kid) || preg_match('/^[A-Za-z0-9_-]{8,128}$/D', $kid) !== 1) return false;
+
+    return kssmi_access_jwt_claims($token, kssmi_access_certs_for($kid, $now), $now) !== null;
+}
+
+/**
+ * Fail closed unless Cloudflare Access authenticated this request. Call right
+ * after kssmi_admin_require_trusted_proxy() on every page behind Access.
+ */
+function kssmi_admin_require_access(bool $allowCookie = false): void {
+    if (kssmi_admin_access_jwt_valid($allowCookie)) return;
+
+    http_response_code(403);
+    header('Content-Type: text/plain; charset=UTF-8');
+    kssmi_admin_security_headers("default-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'");
+    echo 'Forbidden';
+    exit;
+}
+
 /**
  * Emit the security headers every Kssmi admin page must send.
  *

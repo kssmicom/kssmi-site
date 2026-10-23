@@ -8,6 +8,7 @@ declare(strict_types=1);
  */
 require_once dirname(__DIR__) . '/private/short-links-tool.php';
 kssmi_admin_require_trusted_proxy();
+kssmi_admin_require_access();
 kssmi_short_links_session();
 kssmi_admin_security_headers("default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'");
 

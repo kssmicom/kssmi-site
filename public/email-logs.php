@@ -15,6 +15,7 @@
 require_once dirname(__DIR__) . '/private/http-security.php';
 require_once dirname(__DIR__) . '/private/rate-limit.php';
 kssmi_admin_require_trusted_proxy();
+kssmi_admin_require_access();
 
 // Reject array-shaped/unknown request fields and bound every accepted value
 // before it can reach password, token, file, or mail operations.

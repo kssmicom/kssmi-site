@@ -383,4 +383,17 @@ try {
     @rmdir($testRoot);
 }
 
+// F-6: APCu is emptied whenever LiteSpeed stops an idle lsphp process, so
+// windows longer than five minutes must be kept in the durable file store.
+rate_limit_assert(kssmi_rate_limit_needs_durable_store(301), 'A window over five minutes must use the durable store');
+rate_limit_assert(kssmi_rate_limit_needs_durable_store(86400), 'A daily window must use the durable store');
+rate_limit_assert(!kssmi_rate_limit_needs_durable_store(300), 'A five-minute window may use APCu');
+rate_limit_assert(!kssmi_rate_limit_needs_durable_store(60), 'A one-minute window may use APCu');
+$rateLimitSource = (string)file_get_contents(dirname(__DIR__) . '/private/rate-limit.php');
+rate_limit_assert(
+    strpos($rateLimitSource, 'kssmi_rate_limit_needs_durable_store($windowSeconds) ||') !== false
+        && strpos($rateLimitSource, 'kssmi_rate_limit_needs_durable_store($windowSeconds) ||') < strpos($rateLimitSource, 'if (!$forceFileFallback && $apcuAvailable)'),
+    'Long windows must bypass APCu before it is consulted'
+);
+
 echo "Rate limit tests passed.\n";

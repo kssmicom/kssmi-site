@@ -9,6 +9,7 @@
 // session/application initialization and never trusts client-supplied CF-* headers.
 require_once dirname(__DIR__) . '/private/http-security.php';
 kssmi_admin_require_trusted_proxy();
+kssmi_admin_require_access();
 
 // Normalize the complete dashboard input surface before password checks,
 // exports, filters, pagination, settings, or destructive actions use it.
