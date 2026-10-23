@@ -1277,13 +1277,15 @@ rollback_release() {
 # Activation failure handler. It lives at top level rather than inside
 # activate_release so the deployment tests can install the exact same trap.
 rollback_on_failure() {
-  status=$?
+  # Barrier probes use a variable named status for HTTP codes. Preserve the
+  # activation exit code under a distinct local name across the whole rollback.
+  local activation_failure_status=$?
   trap - EXIT HUP INT TERM
   cleanup_runtime_capability_probe
-  if [ "$status" -ne 0 ]; then
+  if [ "$activation_failure_status" -ne 0 ]; then
     rollback_release || echo "ERROR: Automatic rollback is incomplete; retain cutover state and inspect before retry." >&2
   fi
-  exit "$status"
+  exit "$activation_failure_status"
 }
 
 activate_release() {

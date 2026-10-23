@@ -79,4 +79,16 @@ for fault in outgoing marker restart barrier wait webroot private clear state; d
   [ -f "$STATE_DIR/rolled_back_at" ] && [ ! -e "$EMAIL_CUTOVER_MARKER" ] || die "$failed_step retry failed"
   echo "ok: $failed_step failure stopped rollback; corrected retry completed"
 done
+# A nested rollback/probe can assign the generic global name "status". That
+# must never turn an activation failure into a successful process exit.
+set +e
+(
+  rollback_release() { status=0; return 1; }
+  trap rollback_on_failure EXIT
+  exit 37
+) > "$test_root/trap.log" 2>&1
+trap_status=$?
+set -e
+[ "$trap_status" = 37 ] || die "failure trap lost activation status: $trap_status"
+echo 'ok: failure trap preserves the activation exit code'
 echo 'Rollback failure propagation tests passed.'
