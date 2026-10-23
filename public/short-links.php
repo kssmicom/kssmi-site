@@ -16,6 +16,9 @@ declare(strict_types=1);
  *    php -r "echo password_hash('YOUR PASSWORD', PASSWORD_DEFAULT);"
  *  - Signed-in users can change their own password (API action change-password).
  *    Forgotten passwords are recovered through /api/short-links-reset.php.
+ *  - Every failed sign-in gets the same message. Attempts are limited per IP
+ *    and per submitted address; a browser holding a device cookie for the
+ *    account uses its own budget instead (private/short-links-tool.php).
  */
 
 require_once dirname(__DIR__) . '/private/short-links-tool.php';
@@ -45,22 +48,31 @@ if (isset($_SESSION['short_links_tool_auth']) && $_SESSION['short_links_tool_aut
 
 // Handle login.
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'], $_POST['password'])) {
+    $throttled = 'Too many sign-in attempts. Please try again later, or use "Forgot password?".';
     if (!checkRateLimit('short-links-tool-login', 30, 900)) {
         http_response_code(429);
         header('Retry-After: 900');
-        $error = 'Too many login attempts. Please try again in 15 minutes.';
+        $error = $throttled;
     } elseif (!kssmi_admin_csrf_valid($_POST['csrf_token'] ?? null, SL_TOOL_CSRF_KEY)) {
         $error = 'Security check failed. Please try again.';
     } else {
-        $email = strtolower(kssmi_scalar_text($_POST['email'] ?? null, 254));
+        $email = kssmi_short_links_login_email($_POST['email'] ?? null);
         $submitted = kssmi_scalar_text($_POST['password'] ?? null, 4096, false);
         $users = kssmi_short_links_users();
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL) || !str_ends_with($email, KSSMI_SHORT_LINK_EMAIL_DOMAIN)) {
-            $error = 'Only @kssmi.com email addresses can sign in.';
-        } elseif (!isset($users[$email])) {
-            $error = 'This email is not authorized for the short-links tool.';
-        } elseif (!password_verify($submitted, $users[$email]['hash'])) {
-            $error = 'Invalid password.';
+        $attempt = kssmi_short_links_authenticate(
+            $users,
+            $email,
+            $submitted,
+            $_COOKIE[KSSMI_SHORT_LINKS_DEVICE_COOKIE] ?? null
+        );
+        if ($attempt['result'] === 'throttled') {
+            http_response_code(429);
+            header('Retry-After: 900');
+            $error = $throttled;
+        } elseif ($attempt['result'] !== 'ok') {
+            // One answer for an unknown address, another domain and a wrong
+            // password, so the form cannot be used to find accounts.
+            $error = 'Invalid email or password.';
         } else {
             // Deliberately does NOT touch any shared admin session: this tool
             // must never unlock the VJT dashboard or email logs.
@@ -68,8 +80,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'], $_POST['pass
             // surviving the authentication boundary (fixation defense).
             if (!session_regenerate_id(true)) {
                 $error = 'Sign-in failed. Please try again.';
-            } elseif (!kssmi_short_links_session_establish($email, $users[$email])) {
+            } elseif (!kssmi_short_links_session_establish($email, $attempt['entry'])) {
                 $error = 'Sign-in failed. Please try again.';
+            } else {
+                kssmi_short_links_issue_device_cookie($email, $attempt['entry']['hash']);
             }
         }
     }

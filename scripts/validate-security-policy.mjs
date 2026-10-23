@@ -83,6 +83,44 @@ assert.match(shortLinkStore, /total_opens = total_opens \+ excluded\.total_opens
 assert.match(shortLinkStore, /short_link_begin_immediate\(\$db\)/, 'Short-link prune and insert decisions must be transactional.');
 assert.match(shortLinkDashboard, /Older event details are automatically pruned/, 'The short-link dashboard must disclose automatic detail cleanup.');
 assert.match(shortLinkTest, /sl_record_concurrently/, 'Short-link tests must exercise concurrent automatic cleanup.');
+
+// KS-03: anonymous short-links sign-in and reset requests must not reveal
+// accounts, and their budgets must not depend on the source IP alone.
+const [shortLinksPage, shortLinksReset, shortLinksTool, shortLinksAuthTest, shortLinksHttpTest] = await Promise.all([
+  readText('public/short-links.php'),
+  readText('public/api/short-links-reset.php'),
+  readText('private/short-links-tool.php'),
+  readText('scripts/test-short-links-auth.php'),
+  readText('scripts/test-short-links-http.php'),
+]);
+for (const message of ['This email is not authorized', 'Only @kssmi.com email addresses can sign in', "'Invalid password.'"]) {
+  assert.ok(!shortLinksPage.includes(message), `Short-links sign-in must not reveal accounts: ${message}`);
+}
+assert.match(shortLinksPage, /kssmi_short_links_authenticate\(/, 'Short-links sign-in must use the budgeted, uniform check.');
+assert.match(shortLinksTool, /password_verify\(\$password, \$known \? \$entry\['hash'\] : KSSMI_SHORT_LINKS_DUMMY_HASH\)/, 'Unknown addresses must run the same bcrypt check as accounts.');
+assert.match(shortLinksTool, /kssmi_check_rate_limit_identity\('short-links-login-account', \$email,/, 'Sign-in must be budgeted per address without the IP.');
+assert.match(shortLinksTool, /kssmi_check_rate_limit_identity\('short-links-reset-account', \$email,/, 'Reset mail must be budgeted per address without the IP.');
+assert.match(shortLinksTool, /checkRateLimitGlobal\('short-links-reset-mail',/, 'Reset mail must have a global budget.');
+assert.doesNotMatch(shortLinksTool, /Reset email failed: ' \. \$e->getMessage\(\)/, 'SMTP errors must not reach callers.');
+assert.match(shortLinksReset, /kssmi_short_links_finish_response\(\)/, 'Reset requests must complete the response before account-dependent work.');
+assert.ok(
+  shortLinksReset.indexOf(`echo '{"ok":true}';`) < shortLinksReset.indexOf('kssmi_short_links_reset_request('),
+  'Reset requests must be answered before the address is examined.'
+);
+assert.equal(
+  shortLinksReset.split("json_encode(['error' => $error->getMessage()])").length - 1,
+  1,
+  'Only validation messages may be returned by the reset API.'
+);
+assert.match(shortLinksReset, /catch \(InvalidArgumentException \$error\) \{\s*http_response_code\(422\);\s*echo json_encode\(\['error' => \$error->getMessage\(\)\]\);/, 'Only validation messages may be returned by the reset API.');
+assert.match(shortLinksHttpTest, /Failed sign-ins must produce identical pages/, 'HTTP tests must compare failed sign-in pages.');
+assert.match(shortLinksHttpTest, /An address may receive at most 3 reset mails per hour/, 'HTTP tests must cover the per-address reset budget across IPs.');
+assert.match(shortLinksAuthTest, /Concurrent reset requests exceeded the per-address budget/, 'PHP tests must cover concurrent reset budgets.');
+for (const script of ['test:short-links-auth', 'test:short-links-http']) {
+  assert.equal(packageData.scripts?.[script], `php scripts/${script.replace('test:', 'test-')}.php`, `package.json must expose ${script}.`);
+  assert.match(packageData.scripts?.['test:php'] ?? '', new RegExp(`npm run ${script}(?:\\s|$)`), `The full PHP suite must include ${script}.`);
+  assert.ok(deploy.includes(`php scripts/${script.replace('test:', 'test-')}.php`), `Deploy must run ${script} before release.`);
+}
 assert.equal(packageData.scripts?.['test:smoke'], 'node scripts/test-smoke-deployment.mjs', 'package.json must expose smoke self-tests.');
 assert.equal(packageData.scripts?.['validate:security'], 'node scripts/validate-security-policy.mjs', 'package.json must expose the security policy validator.');
 

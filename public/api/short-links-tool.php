@@ -155,10 +155,13 @@ try {
         if (strlen($new) < 10 || strlen($new) > 128) {
             throw new InvalidArgumentException('New password must be 10-128 characters.');
         }
-        kssmi_short_links_update_user_password($admin, password_hash($new, PASSWORD_DEFAULT));
-        // The new bcrypt hash invalidates every existing session fingerprint,
-        // including this browser. Require a fresh sign-in immediately.
+        $newHash = password_hash($new, PASSWORD_DEFAULT);
+        kssmi_short_links_update_user_password($admin, $newHash);
+        // The new bcrypt hash invalidates every existing session fingerprint
+        // and device cookie, including this browser's. Require a fresh
+        // sign-in immediately, but keep this browser a known device.
         kssmi_short_links_session_revoke();
+        kssmi_short_links_issue_device_cookie($admin, $newHash);
         echo '{"ok":true}';
         exit;
     }
