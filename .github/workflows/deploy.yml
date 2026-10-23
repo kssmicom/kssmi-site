@@ -106,6 +106,7 @@ jobs:
           php scripts/test-vjt-write-budget.php
           php scripts/test-vjt-checkpoint.php
           php scripts/test-contact-core.php
+          php scripts/test-inquiry-autoreply.php
           php scripts/test-vjt-event-state.php
           php scripts/test-vjt-heartbeat.php
           php scripts/test-vjt-data-quality.php

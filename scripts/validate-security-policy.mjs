@@ -68,6 +68,28 @@ assert.match(sendMail, /\$countryHtml = kssmi_html_escape\(\$country\)/, 'Countr
 assert.match(sendMail, /\$ipHtml = kssmi_html_escape\(\$ip\)/, 'IP must be encoded at the HTML mail sink.');
 assert.match(rateLimitTest, /direct caller supplied a trusted Cloudflare country header/, 'PHP tests must cover forged country headers.');
 
+// KS-04: the inquiry auto-reply goes to an address the visitor chose, so it is
+// budgeted and greets with the submitted name only when that looks like a name.
+const [autoReply, autoReplyTest] = await Promise.all([
+  readText('private/inquiry-autoreply.php'),
+  readText('scripts/test-inquiry-autoreply.php'),
+]);
+assert.match(sendMail, /require_once dirname\(__DIR__\) \. '\/private\/inquiry-autoreply\.php';/, 'send-mail.php must load the auto-reply module.');
+assert.doesNotMatch(sendMail, /function (buildInquiryAutoReply|sendInquiryAutoReply)\(/, 'The auto-reply must live in private/inquiry-autoreply.php.');
+assert.match(
+  sendMail,
+  /\$autoReplyBudget = kssmi_inquiry_autoreply_budget\(\$formData\['email'\]\);\s*if \(\$autoReplyBudget === null\) \{\s*kssmi_inquiry_autoreply_send\(\$config, \$formData\);/,
+  'The auto-reply must be sent only within its budgets.'
+);
+assert.match(autoReply, /kssmi_check_rate_limit_identity\(\s*'inquiry-autoreply-recipient',\s*kssmi_inquiry_autoreply_recipient_key\(\$email\),/, 'The auto-reply must be budgeted per mailbox, independent of the IP.');
+assert.match(autoReply, /checkRateLimitGlobal\('inquiry-autoreply',/, 'The auto-reply must have a site-wide budget.');
+assert.match(autoReply, /\$name = kssmi_inquiry_autoreply_name\(\$data\['name'\] \?\? ''\);/, 'The greeting must use only an accepted name.');
+assert.match(autoReplyTest, /Concurrent submissions must yield one confirmation/, 'PHP tests must cover concurrent auto-reply budgets.');
+const autoReplyScripts = JSON.parse(packageJson).scripts ?? {};
+assert.equal(autoReplyScripts['test:inquiry-autoreply'], 'php scripts/test-inquiry-autoreply.php', 'package.json must expose the auto-reply test.');
+assert.match(autoReplyScripts['test:php'] ?? '', /npm run test:inquiry-autoreply(?:\s|$)/, 'The full PHP suite must include the auto-reply test.');
+assert.ok(deploy.includes('php scripts/test-inquiry-autoreply.php'), 'Deploy must run the auto-reply test before release.');
+
 const packageData = JSON.parse(packageJson);
 const [shortLinkStore, shortLinkRedirect, shortLinkDashboard, shortLinkTest] = await Promise.all([
   readText('private/short-link-store.php'),
