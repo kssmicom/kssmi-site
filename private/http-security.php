@@ -223,16 +223,34 @@ function kssmi_admin_write_all($handle, string $contents): bool {
 }
 
 /**
+ * Resolve where a credential file actually lives. A release holds only links
+ * to the persistent credential files, and renaming onto or locking beside the
+ * link itself would put the credential in the release, where the next deploy
+ * discards it. A link must resolve to an existing regular file; a dangling
+ * link, or one that ends in a directory, returns null so that callers fail
+ * closed instead of creating state beside it. Any other path is returned
+ * unchanged.
+ */
+function kssmi_admin_storage_path(string $path): ?string {
+    if (!is_link($path)) return $path;
+    $target = realpath($path);
+    return (is_string($target) && is_file($target)) ? $target : null;
+}
+
+/**
  * Atomic file write: temp file in the same directory, chmod before any
  * content is written, fsync, then rename into place. Never leaves a partial
- * destination file.
+ * destination file. A link is resolved first, so the file it points to is
+ * replaced and the link itself stays in place.
  */
 function kssmi_admin_atomic_write(string $path, string $contents, int $mode = 0600): bool {
-    $parent = dirname($path);
+    $target = kssmi_admin_storage_path($path);
+    if ($target === null) return false;
+    $parent = dirname($target);
     if (!is_dir($parent) || !is_writable($parent)) return false;
 
     try {
-        $tempPath = $path . '.tmp-' . bin2hex(random_bytes(8));
+        $tempPath = $target . '.tmp-' . bin2hex(random_bytes(8));
     } catch (Throwable $e) {
         return false;
     }
@@ -248,27 +266,31 @@ function kssmi_admin_atomic_write(string $path, string $contents, int $mode = 06
     $written = kssmi_admin_write_all($handle, $contents);
     if ($written && function_exists('fsync')) $written = @fsync($handle);
     fclose($handle);
-    if (!$written || !@rename($tempPath, $path)) {
+    if (!$written || !@rename($tempPath, $target)) {
         @unlink($tempPath);
         return false;
     }
-    @chmod($path, $mode);
+    @chmod($target, $mode);
     return true;
 }
 
 /**
  * Acquire an exclusive (LOCK_EX) or shared (LOCK_SH) flock on a stable
- * sidecar lock file. Returns ['ok' => bool, 'handle' => resource|null,
- * 'error' => string|null].
+ * sidecar lock file beside the resolved storage path, so every release locks
+ * the same persistent lock file. Returns ['ok' => bool,
+ * 'handle' => resource|null, 'error' => string|null].
  */
 function kssmi_admin_file_lock(string $path, int $operation): array {
-    $parent = dirname($path);
+    $target = kssmi_admin_storage_path($path);
+    if ($target === null) return ['ok' => false, 'error' => 'storage_path_invalid'];
+    $parent = dirname($target);
     if (!is_dir($parent) || !is_writable($parent)) {
         return ['ok' => false, 'error' => 'parent_not_writable'];
     }
-    $handle = @fopen($path . '.lock', 'c+b');
+    $lockPath = $target . '.lock';
+    $handle = @fopen($lockPath, 'c+b');
     if ($handle === false) return ['ok' => false, 'error' => 'lock_open_failed'];
-    @chmod($path . '.lock', 0600);
+    @chmod($lockPath, 0600);
     if (!flock($handle, $operation)) {
         fclose($handle);
         return ['ok' => false, 'error' => 'lock_failed'];
@@ -320,27 +342,74 @@ function kssmi_admin_secret_write(string $path, string $contents): bool {
     }
 }
 
-// ── Credential versioned admin sessions ─────────────────────────────────────
-// A password change advances this server-owned value. Every pre-change
-// session then fails closed, even though PHP's file-backed sessions cannot be
-// enumerated and deleted individually.
+// ── Credential generation admin sessions ────────────────────────────────────
+// A password change or reset replaces this server-owned random value. Every
+// session and reset token issued before then fails closed, even though PHP's
+// file-backed sessions cannot be enumerated and deleted individually. The
+// value is random rather than a counter, so the deploy can replace it during
+// migration or recovery without knowing which values were ever issued.
 
-function kssmi_admin_credential_version_path(string $passwordPath): string {
-    return dirname($passwordPath) . '/.admin_credential_version';
+function kssmi_admin_credential_generation_path(string $passwordPath): string {
+    return dirname($passwordPath) . '/.admin_credential_generation';
 }
 
-function kssmi_admin_credential_version_read(string $path): ?int {
+function kssmi_admin_credential_generation_valid($value): bool {
+    return is_string($value) && preg_match('/^[a-f0-9]{32}$/D', $value) === 1;
+}
+
+function kssmi_admin_credential_generation_read(string $path): ?string {
     $value = kssmi_admin_secret_read($path);
-    if (!is_string($value) || preg_match('/^[1-9][0-9]{0,9}$/D', $value) !== 1) return null;
-    $version = (int)$value;
-    return $version > 0 ? $version : null;
+    return kssmi_admin_credential_generation_valid($value) ? $value : null;
 }
 
-function kssmi_admin_credential_version_ensure(string $path): ?int {
-    $version = kssmi_admin_credential_version_read($path);
-    if ($version !== null) return $version;
-    if (file_exists($path) || !kssmi_admin_secret_write($path, '1')) return null;
-    return kssmi_admin_credential_version_read($path);
+/**
+ * A fresh 128-bit generation, or null when no secure random source is
+ * available. The shape is checked here, so an empty or partial value can
+ * never reach a writer.
+ */
+function kssmi_admin_credential_generation_new(): ?string {
+    try {
+        $generation = bin2hex(random_bytes(16));
+    } catch (Throwable $e) {
+        return null;
+    }
+    return kssmi_admin_credential_generation_valid($generation) ? $generation : null;
+}
+
+/**
+ * Return the current generation. One is created only for a development or CI
+ * store: a plain path with no file yet. A link, dangling or not, and an
+ * existing file with invalid contents fail closed and are never overwritten;
+ * in production the deploy owns this state.
+ */
+function kssmi_admin_credential_generation_ensure(string $path): ?string {
+    $generation = kssmi_admin_credential_generation_read($path);
+    if ($generation !== null) return $generation;
+    if (is_link($path) || file_exists($path)) return null;
+    $generation = kssmi_admin_credential_generation_new();
+    if ($generation === null || !kssmi_admin_secret_write($path, $generation)) return null;
+    return kssmi_admin_credential_generation_read($path);
+}
+
+/**
+ * Credential operations nest the reset-token, generation and password locks
+ * in that order. A process's flock() locks on separate handles still exclude
+ * each other, so two of these paths resolving to one file would block forever
+ * on the inner lock. Callers check this before taking any lock and fail closed
+ * on such a misconfigured link. A path that cannot be resolved is skipped: it
+ * can never be locked, so the operation that needs it fails on its own.
+ */
+function kssmi_admin_credential_paths_distinct(string ...$paths): bool {
+    $seen = [];
+    foreach ($paths as $path) {
+        $target = kssmi_admin_storage_path($path);
+        if ($target === null) continue;
+        $parent = realpath(dirname($target));
+        $key = $parent === false ? $target : $parent . DIRECTORY_SEPARATOR . basename($target);
+        if (isset($seen[$key])) return false;
+        $seen[$key] = true;
+    }
+    return true;
 }
 
 function kssmi_admin_session_absolute_ttl(): int {
@@ -354,6 +423,8 @@ function kssmi_admin_session_inactivity_ttl(): int {
 function kssmi_admin_session_revoke_local(): void {
     unset(
         $_SESSION['email_logs_auth'],
+        $_SESSION['credential_generation'],
+        // Sessions issued before credential generations carry this key.
         $_SESSION['credential_version'],
         $_SESSION['admin_authenticated_at'],
         $_SESSION['admin_last_seen_at'],
@@ -362,19 +433,20 @@ function kssmi_admin_session_revoke_local(): void {
 }
 
 function kssmi_admin_session_establish(
-    string $credentialVersionPath,
+    string $credentialGenerationPath,
     ?int $now = null,
-    ?int $expectedCredentialVersion = null
+    ?string $expectedCredentialGeneration = null
 ): bool {
-    $version = kssmi_admin_credential_version_ensure($credentialVersionPath);
-    if ($version === null
-        || ($expectedCredentialVersion !== null && $version !== $expectedCredentialVersion)) {
+    $generation = kssmi_admin_credential_generation_ensure($credentialGenerationPath);
+    if ($generation === null
+        || ($expectedCredentialGeneration !== null
+            && !hash_equals($generation, $expectedCredentialGeneration))) {
         return false;
     }
     $current = $now ?? time();
     if (!session_regenerate_id(true)) return false;
     $_SESSION['email_logs_auth'] = true;
-    $_SESSION['credential_version'] = $version;
+    $_SESSION['credential_generation'] = $generation;
     $_SESSION['admin_authenticated_at'] = $current;
     $_SESSION['admin_last_seen_at'] = $current;
     kssmi_admin_csrf_rotate();
@@ -382,19 +454,22 @@ function kssmi_admin_session_establish(
 }
 
 /**
- * Authenticate and create a versioned admin session while holding the same
- * lock used by password rotation.  The password hash and credential version
- * must come from one credential generation: accepting an old hash and then
- * issuing a session with a newly-read version would defeat revocation.
+ * Authenticate and create an admin session while holding the same lock used
+ * by password rotation. The password hash and the credential generation must
+ * come from one rotation: accepting an old hash and then issuing a session
+ * with a newly-read generation would defeat revocation.
  */
 function kssmi_admin_authenticate_and_establish(
     string $passwordPath,
     string $rotationLockPath,
-    string $credentialVersionPath,
+    string $credentialGenerationPath,
     $submittedPassword,
     ?int $now = null
 ): bool {
     if (!is_string($submittedPassword) || $submittedPassword === '') return false;
+    if (!kssmi_admin_credential_paths_distinct($rotationLockPath, $credentialGenerationPath, $passwordPath)) {
+        return false;
+    }
 
     $lock = kssmi_admin_file_lock($rotationLockPath, LOCK_EX);
     if (!$lock['ok']) return false;
@@ -402,25 +477,25 @@ function kssmi_admin_authenticate_and_establish(
     try {
         $storedHash = @file_get_contents($passwordPath);
         if (!is_string($storedHash) || trim($storedHash) === '') return false;
-        $version = kssmi_admin_credential_version_ensure($credentialVersionPath);
-        if ($version === null || !password_verify($submittedPassword, trim($storedHash))) return false;
+        $generation = kssmi_admin_credential_generation_ensure($credentialGenerationPath);
+        if ($generation === null || !password_verify($submittedPassword, trim($storedHash))) return false;
 
-        return kssmi_admin_session_establish($credentialVersionPath, $now, $version);
+        return kssmi_admin_session_establish($credentialGenerationPath, $now, $generation);
     } finally {
         kssmi_admin_file_unlock($lock);
     }
 }
 
-function kssmi_admin_session_authenticated(string $credentialVersionPath, ?int $now = null): bool {
+function kssmi_admin_session_authenticated(string $credentialGenerationPath, ?int $now = null): bool {
     $current = $now ?? time();
-    $storedVersion = kssmi_admin_credential_version_read($credentialVersionPath);
-    $sessionVersion = $_SESSION['credential_version'] ?? null;
+    $storedGeneration = kssmi_admin_credential_generation_read($credentialGenerationPath);
+    $sessionGeneration = $_SESSION['credential_generation'] ?? null;
     $issuedAt = $_SESSION['admin_authenticated_at'] ?? null;
     $lastSeenAt = $_SESSION['admin_last_seen_at'] ?? null;
     $valid = ($_SESSION['email_logs_auth'] ?? false) === true
-        && is_int($sessionVersion)
-        && $storedVersion !== null
-        && hash_equals((string)$storedVersion, (string)$sessionVersion)
+        && $storedGeneration !== null
+        && kssmi_admin_credential_generation_valid($sessionGeneration)
+        && hash_equals($storedGeneration, $sessionGeneration)
         && is_int($issuedAt) && $issuedAt > 0 && $issuedAt <= $current
         && is_int($lastSeenAt) && $lastSeenAt > 0 && $lastSeenAt <= $current
         && $current - $issuedAt <= kssmi_admin_session_absolute_ttl()
@@ -571,7 +646,9 @@ function kssmi_admin_csrf_rotate(string $key = 'csrf_token'): string {
 // The reset-token store (.email_reset_tokens.json) must be read-modified-
 // written under an exclusive lock so concurrent clicks on the emailed reset
 // link can only ever consume the token once (replay protection). The token
-// file shape is { "<64-hex>": { "created": int, "expires": int }, ... }.
+// file shape is { "<64-hex>": { "created": int, "expires": int,
+// "credential_generation": "<32-hex>" }, ... }. A token is valid only while
+// the generation it was issued under is still current.
 
 function kssmi_admin_reset_tokens_decode($raw, &$error): ?array {
     $error = null;
@@ -591,8 +668,7 @@ function kssmi_admin_reset_tokens_decode($raw, &$error): ?array {
             preg_match('/^[a-f0-9]{64}$/D', $token) !== 1 ||
             !is_array($data) ||
             !is_numeric($data['expires'] ?? null) ||
-            (array_key_exists('credential_version', $data)
-                && (!is_int($data['credential_version']) || $data['credential_version'] < 1))
+            !kssmi_admin_credential_generation_valid($data['credential_generation'] ?? null)
         ) {
             $error = 'invalid_schema';
             return null;
@@ -654,18 +730,15 @@ function kssmi_admin_reset_tokens_mutate(string $path, callable $mutator): array
     }
 }
 
-function kssmi_admin_reset_token_add(string $path, string $token, int $expires, ?int $now = null, ?string $credentialVersionPath = null): bool {
+function kssmi_admin_reset_token_add(string $path, string $token, int $expires, string $credentialGenerationPath, ?int $now = null): bool {
     if (preg_match('/^[a-f0-9]{64}$/D', $token) !== 1) return false;
     $current = $now ?? time();
     if ($expires <= $current) return false;
-    $credentialVersion = 1;
-    if ($credentialVersionPath !== null) {
-        $credentialVersion = kssmi_admin_credential_version_ensure($credentialVersionPath);
-        if ($credentialVersion === null) return false;
-    }
+    $generation = kssmi_admin_credential_generation_ensure($credentialGenerationPath);
+    if ($generation === null) return false;
     $result = kssmi_admin_reset_tokens_mutate(
         $path,
-        function(array $tokens) use ($token, $expires, $current, $credentialVersion): array {
+        function(array $tokens) use ($token, $expires, $current, $generation): array {
             // A reset email is a credential issuance event, not a collection
             // of parallel credentials. Replacing the complete set while the
             // store lock is held atomically revokes any previous active link.
@@ -673,7 +746,7 @@ function kssmi_admin_reset_token_add(string $path, string $token, int $expires, 
                 $token => [
                     'created' => $current,
                     'expires' => $expires,
-                    'credential_version' => $credentialVersion,
+                    'credential_generation' => $generation,
                 ],
             ];
         }
@@ -681,14 +754,13 @@ function kssmi_admin_reset_token_add(string $path, string $token, int $expires, 
     return $result['ok'];
 }
 
-function kssmi_admin_reset_token_valid(string $path, string $token, ?int $now = null, ?string $credentialVersionPath = null): bool {
+function kssmi_admin_reset_token_valid(string $path, string $token, string $credentialGenerationPath, ?int $now = null): bool {
     if (preg_match('/^[a-f0-9]{64}$/D', $token) !== 1) return false;
     $result = kssmi_admin_reset_tokens_read($path, $now);
     if (!$result['ok'] || !isset($result['tokens'][$token])) return false;
-    if ($credentialVersionPath === null) return true;
-    $credentialVersion = kssmi_admin_credential_version_read($credentialVersionPath);
-    $tokenVersion = (int)($result['tokens'][$token]['credential_version'] ?? 1);
-    return $credentialVersion !== null && $tokenVersion === $credentialVersion;
+    $generation = kssmi_admin_credential_generation_read($credentialGenerationPath);
+    return $generation !== null
+        && hash_equals($generation, $result['tokens'][$token]['credential_generation']);
 }
 
 /**
@@ -725,11 +797,13 @@ function kssmi_admin_reset_token_consume(string $path, string $token, ?int $now 
 }
 
 /**
- * Rotate password, reset credentials, and the session-revocation version
- * under the reset-token store's exclusive lock. The security-safe order is
- * token revocation, version advance, then password replacement: a filesystem
+ * Rotate password, reset credentials, and the credential generation under
+ * the reset-token store's exclusive lock. The security-safe order is token
+ * revocation, generation replacement, then password replacement: a filesystem
  * failure can require a new reset, but cannot leave a sibling reset token or
- * old authenticated session usable after a successful password change.
+ * old authenticated session usable after a successful password change. The
+ * locks nest as reset tokens, then generation, then password, and the three
+ * paths must resolve to different files, so no lock is ever taken twice.
  *
  * Returns ['ok' => bool, 'changed' => bool, 'consumed' => bool,
  *          'error' => ?string]. A replay is ok=true/changed=false.
@@ -739,7 +813,7 @@ function kssmi_admin_rotate_credentials(
     string $passwordPath,
     string $newPassword,
     ?string $token = null,
-    ?string $credentialVersionPath = null,
+    ?string $credentialGenerationPath = null,
     ?int $now = null
 ): array {
     if ($newPassword === '') {
@@ -747,6 +821,10 @@ function kssmi_admin_rotate_credentials(
     }
     if ($token !== null && preg_match('/^[a-f0-9]{64}$/D', $token) !== 1) {
         return ['ok' => true, 'changed' => false, 'consumed' => false, 'error' => null];
+    }
+    $generationPath = $credentialGenerationPath ?? kssmi_admin_credential_generation_path($passwordPath);
+    if (!kssmi_admin_credential_paths_distinct($tokensPath, $generationPath, $passwordPath)) {
+        return ['ok' => false, 'changed' => false, 'consumed' => false, 'error' => 'credential_paths_not_distinct'];
     }
     $lock = kssmi_admin_file_lock($tokensPath, LOCK_EX);
     if (!$lock['ok']) return ['ok' => false, 'changed' => false, 'consumed' => false, 'error' => $lock['error']];
@@ -759,23 +837,22 @@ function kssmi_admin_rotate_credentials(
         foreach ($tokens as $storedToken => $data) {
             if ((int)($data['expires'] ?? 0) <= $current) unset($tokens[$storedToken]);
         }
-        $versionPath = $credentialVersionPath ?? kssmi_admin_credential_version_path($passwordPath);
-        $version = kssmi_admin_credential_version_ensure($versionPath);
-        if ($version === null) {
-            // The credential version store is unavailable (for example when
-            // the password file's parent directory is missing). Fail closed:
-            // a presented token is burned so the failed attempt can never be
-            // replayed, and no password change is ever reported.
+        $generation = kssmi_admin_credential_generation_ensure($generationPath);
+        if ($generation === null) {
+            // The credential generation is unavailable or invalid (for
+            // example a dangling link, or a missing parent directory). Fail
+            // closed: a presented token is burned so the failed attempt can
+            // never be replayed, and no password change is ever reported.
             if ($token !== null && isset($tokens[$token])) {
                 if (!kssmi_admin_atomic_write($tokensPath, '[]', 0600)) {
                     return ['ok' => false, 'changed' => false, 'consumed' => false, 'error' => 'token_revoke_failed'];
                 }
-                return ['ok' => false, 'changed' => false, 'consumed' => true, 'error' => 'version_read_failed'];
+                return ['ok' => false, 'changed' => false, 'consumed' => true, 'error' => 'generation_read_failed'];
             }
-            return ['ok' => false, 'changed' => false, 'consumed' => false, 'error' => 'version_read_failed'];
+            return ['ok' => false, 'changed' => false, 'consumed' => false, 'error' => 'generation_read_failed'];
         }
         if ($token !== null && (!isset($tokens[$token])
-            || (int)($tokens[$token]['credential_version'] ?? 1) !== $version)) {
+            || !hash_equals($generation, $tokens[$token]['credential_generation']))) {
             return ['ok' => true, 'changed' => false, 'consumed' => false, 'error' => null];
         }
 
@@ -792,9 +869,10 @@ function kssmi_admin_rotate_credentials(
         if (!is_string($passwordHash) || $passwordHash === '') {
             return ['ok' => false, 'changed' => false, 'consumed' => $token !== null, 'error' => 'password_hash_failed'];
         }
-        if ($version >= 2147483647
-            || !kssmi_admin_secret_write($versionPath, (string)($version + 1))) {
-            return ['ok' => false, 'changed' => false, 'consumed' => $token !== null, 'error' => 'version_write_failed'];
+        $nextGeneration = kssmi_admin_credential_generation_new();
+        if ($nextGeneration === null
+            || !kssmi_admin_secret_write($generationPath, $nextGeneration)) {
+            return ['ok' => false, 'changed' => false, 'consumed' => $token !== null, 'error' => 'generation_write_failed'];
         }
         if (!kssmi_admin_secret_write($passwordPath, $passwordHash)) {
             return ['ok' => false, 'changed' => false, 'consumed' => $token !== null, 'error' => 'password_write_failed'];
@@ -809,11 +887,11 @@ function kssmi_admin_change_password(
     string $tokensPath,
     string $passwordPath,
     string $newPassword,
-    ?string $credentialVersionPath = null,
+    ?string $credentialGenerationPath = null,
     ?int $now = null
 ): array {
     return kssmi_admin_rotate_credentials(
-        $tokensPath, $passwordPath, $newPassword, null, $credentialVersionPath, $now
+        $tokensPath, $passwordPath, $newPassword, null, $credentialGenerationPath, $now
     );
 }
 
@@ -823,9 +901,9 @@ function kssmi_admin_reset_password(
     string $token,
     string $newPassword,
     ?int $now = null,
-    ?string $credentialVersionPath = null
+    ?string $credentialGenerationPath = null
 ): array {
     return kssmi_admin_rotate_credentials(
-        $tokensPath, $passwordPath, $newPassword, $token, $credentialVersionPath, $now
+        $tokensPath, $passwordPath, $newPassword, $token, $credentialGenerationPath, $now
     );
 }

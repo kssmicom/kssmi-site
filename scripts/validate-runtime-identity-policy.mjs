@@ -68,7 +68,14 @@ requireBefore(
   'The real LSAPI identity/capability gate must pass before public_html switches.',
 );
 assert.ok(
-  activation.includes('cleanup_runtime_capability_probe'),
+  activation.includes('trap rollback_on_failure EXIT'),
+  'Activation must install the shared failure trap.',
+);
+const failureTrapStart = release.indexOf('\nrollback_on_failure() {');
+const failureTrapEnd = release.indexOf('\n}\n', failureTrapStart);
+assert.ok(failureTrapStart >= 0 && failureTrapEnd > failureTrapStart, 'rollback_on_failure is missing.');
+assert.ok(
+  release.slice(failureTrapStart, failureTrapEnd).includes('cleanup_runtime_capability_probe'),
   'The activation failure trap must remove the temporary runtime probe.',
 );
 

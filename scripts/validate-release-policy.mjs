@@ -130,6 +130,26 @@ assert.match(
   'Cutover barrier proof must retry long enough for PHP OPcache revalidation.'
 );
 
+// ── Release manager: the bundle carries no credential state (KS-05) ──
+const bundleStart = release.indexOf('validate_release_bundle() {');
+const bundleEnd = release.indexOf('\nprepare_persistent_storage() {', bundleStart);
+assert.ok(bundleStart >= 0 && bundleEnd > bundleStart, 'validate_release_bundle function is missing.');
+const bundleBody = release.slice(bundleStart, bundleEnd);
+for (const sensitivePath of [
+  '"$NEW_WEBROOT/.email_logs_password"',
+  '"$NEW_WEBROOT/.email_reset_tokens.json"',
+  '"$NEW_WEBROOT/.admin_credential_generation"',
+  '"$NEW_WEBROOT/.admin_credential_version"',
+  '"$RELEASE_DIR/.admin_credential_generation"',
+  '"$RELEASE_DIR/.admin_credential_version"',
+]) {
+  assert.ok(bundleBody.includes(sensitivePath), `The immutable release must reject bundled credential state: ${sensitivePath}`);
+}
+assert.ok(
+  bundleBody.includes('fail "Sensitive path exists in the immutable release: $sensitive_path"'),
+  'Bundled credential state must fail the deployment.'
+);
+
 // ── Release manager: ordered activation ──
 const rollbackStart = release.indexOf('rollback_release() {');
 const rollbackEnd = release.indexOf('\nactivate_release() {', rollbackStart);
@@ -187,6 +207,37 @@ for (const [first, second, message] of [
   ['activate_webroot', 'clear_cutover_markers', 'Endpoints must remain blocked until activation completes.'],
 ]) {
   requireBefore(activationBody, first, second, message);
+}
+
+// ── Release manager: executed entry point, side-effect-free when sourced ──
+const mainStart = release.indexOf('\nmain() {');
+assert.ok(mainStart >= 0, 'Release manager must define its main() entry point.');
+assert.ok(
+  release.trimEnd().endsWith('if [ "${BASH_SOURCE[0]}" = "$0" ]; then\n  main "$@"\nfi'),
+  'Release manager must run main() only when executed directly.'
+);
+for (const statement of [
+  '\n  validate_deployment_config\n',
+  '. "$PERMISSION_POLICY"',
+  "trap 'report_failure",
+  '\n  prepare_control_paths\n',
+  'exec 9>"$DEPLOY_LOCK"',
+  'case "$COMMAND" in',
+]) {
+  assert.ok(
+    release.indexOf(statement) > mainStart,
+    `Release manager must run this only from main(): ${statement.trim()}`
+  );
+}
+const failureTrapIndex = release.indexOf('\nrollback_on_failure() {');
+assert.ok(
+  failureTrapIndex >= 0 && failureTrapIndex < release.indexOf('\nactivate_release() {'),
+  'The activation failure trap must be a top-level function that tests can install.'
+);
+assert.equal(packageJson.scripts?.['test:deploy-entry'], 'bash scripts/test-deploy-release-entry.sh');
+for (const ciSource of [workflow, phpCi]) {
+  assert.ok(ciSource.includes('bash -n scripts/test-deploy-release-entry.sh'), 'CI must syntax-check the release-manager entry test.');
+  assert.ok(ciSource.includes('npm run test:deploy-entry'), 'CI must run the release-manager entry test.');
 }
 
 // ── Tooling: CI must gate the release policy itself ──

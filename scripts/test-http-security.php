@@ -231,7 +231,7 @@ try {
 
     // ── reset token atomic consumption ──
     $tokensPath = $testDirectory . DIRECTORY_SEPARATOR . '.email_reset_tokens.json';
-    $credentialVersionPath = kssmi_admin_credential_version_path(
+    $credentialGenerationPath = kssmi_admin_credential_generation_path(
         $testDirectory . DIRECTORY_SEPARATOR . '.reset_password_hash'
     );
     $now = time();
@@ -242,25 +242,27 @@ try {
     file_put_contents($tokensPath, '');
     kssmi_sec_assert(kssmi_admin_reset_tokens_read($tokensPath, $now)['ok'] === true, 'empty token store reads as ok');
     kssmi_sec_assert(count(kssmi_admin_reset_tokens_read($tokensPath, $now)['tokens']) === 0, 'empty token store has no tokens');
-    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, $tokenA, $now) === false, 'empty store: no token valid');
-    kssmi_sec_assert(kssmi_admin_reset_token_add($tokensPath, $tokenA, $now + 3600) === true, 'token A added to empty store');
+    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, $tokenA, $credentialGenerationPath, $now) === false, 'empty store: no token valid');
+    kssmi_sec_assert(kssmi_admin_reset_token_add($tokensPath, $tokenA, $now + 3600, $credentialGenerationPath) === true, 'token A added to empty store');
 
-    kssmi_sec_assert(kssmi_admin_reset_token_add($tokensPath, $tokenB, $now + 3600) === true, 'reset token B added');
-    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, $tokenA, $now) === false, 'new token atomically revokes token A');
-    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, $tokenB, $now) === true, 'token B is the single active token');
-    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, str_repeat('c', 64), $now) === false, 'unknown token invalid');
+    kssmi_sec_assert(kssmi_admin_reset_token_add($tokensPath, $tokenB, $now + 3600, $credentialGenerationPath) === true, 'reset token B added');
+    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, $tokenA, $credentialGenerationPath, $now) === false, 'new token atomically revokes token A');
+    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, $tokenB, $credentialGenerationPath, $now) === true, 'token B is the single active token');
+    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, str_repeat('c', 64), $credentialGenerationPath, $now) === false, 'unknown token invalid');
 
     $consume = kssmi_admin_reset_token_consume($tokensPath, $tokenA, $now);
     kssmi_sec_assert($consume['ok'] === true && $consume['consumed'] === false, 'superseded token A cannot be consumed');
-    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, $tokenA, $now) === false, 'superseded token A is invalid');
+    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, $tokenA, $credentialGenerationPath, $now) === false, 'superseded token A is invalid');
     $replay = kssmi_admin_reset_token_consume($tokensPath, $tokenA, $now);
     kssmi_sec_assert($replay['ok'] === true && $replay['consumed'] === false, 'replay of superseded token A reports not-consumed');
-    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, $tokenB, $now) === true, 'active token B survives rejected predecessor consumption');
+    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, $tokenB, $credentialGenerationPath, $now) === true, 'active token B survives rejected predecessor consumption');
 
     // The complete password-reset operation must consume first and let only
     // the winning request write the password file.
     $resetPasswordPath = $testDirectory . DIRECTORY_SEPARATOR . '.reset_password_hash';
     $resetPassword = 'correct horse battery staple 2026';
+    $generationBeforeReset = kssmi_admin_credential_generation_read($credentialGenerationPath);
+    kssmi_sec_assert($generationBeforeReset !== null, 'issuing a reset token creates the development credential generation');
     $passwordReset = kssmi_admin_reset_password(
         $tokensPath,
         $resetPasswordPath,
@@ -281,15 +283,28 @@ try {
         count(kssmi_admin_reset_tokens_read($tokensPath, $now)['tokens']) === 0,
         'password reset revokes the active reset token'
     );
+    $generationAfterReset = kssmi_admin_credential_generation_read($credentialGenerationPath);
     kssmi_sec_assert(
-        kssmi_admin_credential_version_read($credentialVersionPath) === 2,
-        'password reset advances the credential version'
+        $generationAfterReset !== null && $generationAfterReset !== $generationBeforeReset,
+        'password reset replaces the credential generation'
     );
-    $staleVersionToken = str_repeat('8', 64);
-    kssmi_sec_assert(kssmi_admin_reset_token_add($tokensPath, $staleVersionToken, $now + 3600), 'seed stale-version reset token');
+    // add() always stamps the current generation, so a token from the
+    // superseded generation is written to the store directly.
+    $staleGenerationToken = str_repeat('8', 64);
+    $staleSeed = kssmi_admin_reset_tokens_mutate(
+        $tokensPath,
+        fn(array $tokens): array => [
+            $staleGenerationToken => [
+                'created' => $now,
+                'expires' => $now + 3600,
+                'credential_generation' => $generationBeforeReset,
+            ],
+        ]
+    );
+    kssmi_sec_assert($staleSeed['ok'] === true, 'seed a reset token from the superseded generation');
     kssmi_sec_assert(
-        kssmi_admin_reset_token_valid($tokensPath, $staleVersionToken, $now, $credentialVersionPath) === false,
-        'reset token from an older credential version is rejected'
+        kssmi_admin_reset_token_valid($tokensPath, $staleGenerationToken, $credentialGenerationPath, $now) === false,
+        'reset token from an older credential generation is rejected'
     );
     $storedHashBeforeReplay = file_get_contents($resetPasswordPath);
     $passwordReplay = kssmi_admin_reset_password(
@@ -303,38 +318,50 @@ try {
         $passwordReplay['ok'] === true && $passwordReplay['changed'] === false && $passwordReplay['consumed'] === false,
         'replayed token cannot change the password'
     );
+    $staleReset = kssmi_admin_reset_password(
+        $tokensPath,
+        $resetPasswordPath,
+        $staleGenerationToken,
+        'a superseded generation must never become the password',
+        $now
+    );
+    kssmi_sec_assert(
+        $staleReset['ok'] === true && $staleReset['changed'] === false && $staleReset['consumed'] === false,
+        'a token from an older credential generation cannot change the password'
+    );
     kssmi_sec_assert(
         file_get_contents($resetPasswordPath) === $storedHashBeforeReplay,
         'replay leaves the password file byte-for-byte unchanged'
     );
 
     $normalChangeToken = str_repeat('9', 64);
-    kssmi_sec_assert(kssmi_admin_reset_token_add($tokensPath, $normalChangeToken, $now + 3600), 'normal-change sibling token added');
+    kssmi_sec_assert(kssmi_admin_reset_token_add($tokensPath, $normalChangeToken, $now + 3600, $credentialGenerationPath), 'normal-change sibling token added');
     $normalChangePassword = 'normal password rotation 2026!';
     $normalChange = kssmi_admin_change_password(
-        $tokensPath, $resetPasswordPath, $normalChangePassword, $credentialVersionPath, $now
+        $tokensPath, $resetPasswordPath, $normalChangePassword, $credentialGenerationPath, $now
     );
     kssmi_sec_assert(
         $normalChange['ok'] === true && $normalChange['changed'] === true,
         'normal password change rotates credentials'
     );
     kssmi_sec_assert(
-        kssmi_admin_reset_token_valid($tokensPath, $normalChangeToken, $now) === false,
+        kssmi_admin_reset_token_valid($tokensPath, $normalChangeToken, $credentialGenerationPath, $now) === false,
         'normal password change revokes every active reset token'
     );
+    $generationAfterChange = kssmi_admin_credential_generation_read($credentialGenerationPath);
     kssmi_sec_assert(
-        kssmi_admin_credential_version_read($credentialVersionPath) === 3,
-        'normal password change advances the credential version'
+        $generationAfterChange !== null && $generationAfterChange !== $generationAfterReset,
+        'normal password change replaces the credential generation'
     );
 
     $tokenD = str_repeat('d', 64);
-    kssmi_sec_assert(kssmi_admin_reset_token_add($tokensPath, $tokenD, $now + 3600), 'token D added');
+    kssmi_sec_assert(kssmi_admin_reset_token_add($tokensPath, $tokenD, $now + 3600, $credentialGenerationPath), 'token D added');
     $emptyPassword = kssmi_admin_reset_password($tokensPath, $resetPasswordPath, $tokenD, '', $now);
     kssmi_sec_assert($emptyPassword['ok'] === false && $emptyPassword['consumed'] === false, 'invalid password does not consume token');
-    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, $tokenD, $now), 'token D remains valid after pre-consume failure');
+    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, $tokenD, $credentialGenerationPath, $now), 'token D remains valid after pre-consume failure');
 
     $tokenE = str_repeat('e', 64);
-    kssmi_sec_assert(kssmi_admin_reset_token_add($tokensPath, $tokenE, $now + 3600), 'token E added');
+    kssmi_sec_assert(kssmi_admin_reset_token_add($tokensPath, $tokenE, $now + 3600, $credentialGenerationPath), 'token E added');
     $writeFailure = kssmi_admin_reset_password(
         $tokensPath,
         $testDirectory . DIRECTORY_SEPARATOR . 'missing' . DIRECTORY_SEPARATOR . 'password',
@@ -347,14 +374,14 @@ try {
         'password write failure remains fail-closed after consumption'
     );
     kssmi_sec_assert(
-        kssmi_admin_reset_token_valid($tokensPath, $tokenE, $now) === false,
+        kssmi_admin_reset_token_valid($tokensPath, $tokenE, $credentialGenerationPath, $now) === false,
         'write failure never restores a consumed token'
     );
 
     // Expired tokens are dropped on read/add.
     $tokenC = str_repeat('c', 64);
-    kssmi_sec_assert(kssmi_admin_reset_token_add($tokensPath, $tokenC, $now - 10) === false, 'already-expired token rejected at add');
-    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, $tokenC, $now) === false, 'expired token invalid');
+    kssmi_sec_assert(kssmi_admin_reset_token_add($tokensPath, $tokenC, $now - 10, $credentialGenerationPath) === false, 'already-expired token rejected at add');
+    kssmi_sec_assert(kssmi_admin_reset_token_valid($tokensPath, $tokenC, $credentialGenerationPath, $now) === false, 'expired token invalid');
 
     // Malformed token shapes never crash and never consume.
     $malformed = kssmi_admin_reset_token_consume($tokensPath, 'not-64-hex', $now);

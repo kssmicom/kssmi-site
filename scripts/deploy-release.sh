@@ -19,6 +19,11 @@
 #     SQLite integrity probe before activation.
 #   - The email cutover barrier (send-mail.php / email-log-store.php) is the
 #     only application-level write barrier needed.
+#   - Admin credentials (password hash, reset tokens, credential generation)
+#     live only in PRIVATE_ROOT; every release links them and has a 0551
+#     root. Activation first records the rollback target, then freezes the
+#     outgoing release root so the pre-fix code cannot write a credential
+#     beside its links, and migrates the generation (KS-05).
 
 set -Eeuo pipefail
 
@@ -56,6 +61,12 @@ RATE_LIMIT_DIR="$PRIVATE_ROOT/rate_limit"
 VJT_DATA_DIR="$PRIVATE_ROOT/vjt_data"
 PASSWORD_FILE="$PRIVATE_ROOT/.email_logs_password"
 RESET_TOKENS_FILE="$PRIVATE_ROOT/.email_reset_tokens.json"
+CREDENTIAL_GENERATION_FILE="$PRIVATE_ROOT/.admin_credential_generation"
+# PHP locks each admin credential beside its persistent file
+# (kssmi_admin_file_lock), so every release locks the same three inodes.
+PASSWORD_LOCK="$PASSWORD_FILE.lock"
+RESET_TOKENS_LOCK="$RESET_TOKENS_FILE.lock"
+CREDENTIAL_GENERATION_LOCK="$CREDENTIAL_GENERATION_FILE.lock"
 PRIVATE_CONFIG="$PRIVATE_ROOT/private_config.php"
 CURRENT_RELEASE_MARKER="$PRIVATE_ROOT/.kssmi-current-release"
 GSC_JSON="$SHARED_PRIVATE/gsc/google-service-account.json"
@@ -110,16 +121,9 @@ validate_deployment_config() {
   [ "$SITE_GROUP" = kssmi4374 ] || fail "Production SITE_GROUP must be kssmi4374."
 }
 
-validate_deployment_config
-
-[ -f "$PERMISSION_POLICY" ] || fail "Permission policy is missing: $PERMISSION_POLICY"
-# shellcheck source=permission-policy.sh
-. "$PERMISSION_POLICY"
-
 report_failure() {
   echo "ERROR: deploy-release.sh $COMMAND failed at line $1: $2" >&2
 }
-trap 'report_failure "$LINENO" "$BASH_COMMAND"' ERR
 
 run_root() {
   if [ "$(id -u)" = 0 ]; then
@@ -135,6 +139,15 @@ run_as_site() {
   else
     sudo -u "$SITE_USER" "$@"
   fi
+}
+
+# Credential checks read files that only the site account can read, so the
+# permission-policy functions run as that account. They are passed by
+# definition: this never depends on the modes of a not yet normalized bundle.
+run_policy_as_site() {
+  policy_functions="$(declare -f $(compgen -A function kssmi_policy_))"
+  run_as_site bash -c "$policy_functions"'
+"$@"' bash "$@"
 }
 
 resolve_php_sqlite() {
@@ -217,10 +230,15 @@ validate_release_bundle() {
   done
   # The release must not carry runtime-only credentials or data. GSC JSON is
   # a manual, server-side credential kept in SHARED_PRIVATE/gsc — never in the
-  # uploaded bundle.
+  # uploaded bundle. The credential generation is persistent server state, and
+  # the version counter belongs to the pre-fix code (KS-05).
   for sensitive_path in \
     "$NEW_WEBROOT/.email_logs_password" \
     "$NEW_WEBROOT/.email_reset_tokens.json" \
+    "$NEW_WEBROOT/.admin_credential_generation" \
+    "$NEW_WEBROOT/.admin_credential_version" \
+    "$RELEASE_DIR/.admin_credential_generation" \
+    "$RELEASE_DIR/.admin_credential_version" \
     "$NEW_WEBROOT/api/vjt_data" \
     "$RELEASE_DIR/private_config.php" \
     "$RELEASE_DIR/private/gsc"; do
@@ -251,6 +269,29 @@ prepare_persistent_storage() {
   run_root chown "$SITE_USER:$SITE_GROUP" "$EMAIL_LOCK" "$LEGACY_EMAIL_LOCK"
   run_root chmod 600 "$PASSWORD_FILE" "$RESET_TOKENS_FILE"
   run_root chmod 640 "$EMAIL_LOCK" "$LEGACY_EMAIL_LOCK"
+  # PHP holds its admin credential locks on these inodes, so an existing lock
+  # file is only checked: replacing it would let two writers in. A missing
+  # one is prepared under a temporary name and published by the site account
+  # with link(2), which fails instead of replacing a lock file that PHP
+  # created in the meantime; that file is then checked like any other. The
+  # generation itself is written only by the credential transition.
+  site_uid="$(id -u "$SITE_USER")"
+  site_gid="$(id -g "$SITE_USER")"
+  for credential_lock in "$PASSWORD_LOCK" "$RESET_TOKENS_LOCK" "$CREDENTIAL_GENERATION_LOCK"; do
+    if [ ! -e "$credential_lock" ] && [ ! -L "$credential_lock" ]; then
+      run_as_site env SITE_GROUP="$SITE_GROUP" sh -c '
+        set -eu
+        umask 077
+        lock_temp="$(mktemp "$1.deploy-XXXXXXXXXX")"
+        trap "rm -f \"\$lock_temp\"" EXIT
+        chgrp "$SITE_GROUP" "$lock_temp"
+        chmod 600 "$lock_temp"
+        ln -T "$lock_temp" "$1" 2>/dev/null || [ -e "$1" ] || [ -L "$1" ]
+      ' sh "$credential_lock" ||
+        fail "The credential lock file could not be created: $credential_lock"
+    fi
+    kssmi_policy_assert_path "$credential_lock" file 600 "$site_uid" "$site_gid"
+  done
   # SMTP and Turnstile credentials are provisioned once on the server. They
   # must never be bundled into a release or replaced with an empty file.
   [ -f "$PRIVATE_CONFIG" ] && [ ! -L "$PRIVATE_CONFIG" ] ||
@@ -287,7 +328,6 @@ create_release_link() {
 
 prepare_release_layout() {
   run_root chown -R "$SITE_USER:$SITE_GROUP" "$RELEASE_DIR"
-  run_root chmod 751 "$RELEASE_DIR"
   run_root find "$NEW_WEBROOT" -type d -exec chmod 755 {} \;
   run_root find "$NEW_WEBROOT" -type f -exec chmod 644 {} \;
   run_root find "$RELEASE_DIR/private" -type d -exec chmod 750 {} \;
@@ -302,11 +342,17 @@ prepare_release_layout() {
   create_release_link "$RELEASE_DIR/rate_limit" "$RATE_LIMIT_DIR"
   create_release_link "$RELEASE_DIR/.email_logs_password" "$PASSWORD_FILE"
   create_release_link "$RELEASE_DIR/.email_reset_tokens.json" "$RESET_TOKENS_FILE"
+  create_release_link "$RELEASE_DIR/.admin_credential_generation" "$CREDENTIAL_GENERATION_FILE"
   create_release_link "$RELEASE_DIR/private_config.php" "$PRIVATE_CONFIG"
   create_release_link "$RELEASE_DIR/short-links-users.txt" "$SHORT_LINK_USERS_FILE"
 
   state_write release_webroot "$NEW_WEBROOT"
   run_root sh -c "umask 0027; printf '%s\n' '$RELEASE_ID' > '$RELEASE_DIR/.kssmi-release'; chown '$SITE_USER:$SITE_GROUP' '$RELEASE_DIR/.kssmi-release'; chmod 640 '$RELEASE_DIR/.kssmi-release'"
+  # With its links and marker in place, the release root becomes read-only
+  # for the site account: PHP writes credentials only through the links, and
+  # a credential written beside them would be lost on the next deploy (KS-05).
+  # Other-execute stays for the web worker that traverses to dist.
+  run_root chmod 551 "$RELEASE_DIR"
 }
 
 verify_release_permission_policy() {
@@ -314,7 +360,7 @@ verify_release_permission_policy() {
   site_gid="$(id -g "$SITE_USER")"
 
   kssmi_policy_assert_path "$RELEASES_DIR" directory 751 "$site_uid" "$site_gid"
-  kssmi_policy_assert_path "$RELEASE_DIR" directory 751 "$site_uid" "$site_gid"
+  kssmi_policy_assert_path "$RELEASE_DIR" directory 551 "$site_uid" "$site_gid"
   kssmi_policy_assert_tree "$NEW_WEBROOT" 755 644 "$site_uid" "$site_gid" public
   kssmi_policy_assert_tree "$RELEASE_DIR/private" 750 640 "$site_uid" "$site_gid" private
   kssmi_policy_assert_path "$RELEASE_DIR/scripts" directory 750 "$site_uid" "$site_gid"
@@ -332,8 +378,14 @@ verify_release_permission_policy() {
     "$RELEASE_DIR/rate_limit" "$RATE_LIMIT_DIR" \
     "$RELEASE_DIR/.email_logs_password" "$PASSWORD_FILE" \
     "$RELEASE_DIR/.email_reset_tokens.json" "$RESET_TOKENS_FILE" \
+    "$RELEASE_DIR/.admin_credential_generation" "$CREDENTIAL_GENERATION_FILE" \
     "$RELEASE_DIR/private_config.php" "$PRIVATE_CONFIG" \
     "$RELEASE_DIR/short-links-users.txt" "$SHORT_LINK_USERS_FILE"
+  # PHP resolves these links before every credential write and lock; each
+  # must name its persistent file exactly, and that file must be 0600.
+  kssmi_policy_assert_credential_link "$RELEASE_DIR/.email_logs_password" "$PASSWORD_FILE" "$site_uid" "$site_gid"
+  kssmi_policy_assert_credential_link "$RELEASE_DIR/.email_reset_tokens.json" "$RESET_TOKENS_FILE" "$site_uid" "$site_gid"
+  kssmi_policy_assert_credential_link "$RELEASE_DIR/.admin_credential_generation" "$CREDENTIAL_GENERATION_FILE" "$site_uid" "$site_gid"
   echo "Immutable release permission policy v$KSSMI_PERMISSION_POLICY_VERSION: OK"
 }
 
@@ -353,8 +405,16 @@ verify_persistent_permission_policy() {
   kssmi_policy_assert_path "$EMAIL_DATA_DIR" directory 750 "$site_uid" "$site_gid"
   kssmi_policy_assert_path "$EMAIL_LOG" file 640 "$site_uid" "$site_gid"
   kssmi_policy_assert_path "$EMAIL_LOCK" file 640 "$site_uid" "$site_gid"
-  kssmi_policy_assert_sensitive_file "$PASSWORD_FILE" "$site_uid" "$site_gid"
-  kssmi_policy_assert_sensitive_file "$RESET_TOKENS_FILE" "$site_uid" "$site_gid"
+  # The admin credentials and their locks must exist: the release links
+  # would otherwise dangle, and PHP fails closed on a dangling link.
+  kssmi_policy_assert_path "$PASSWORD_FILE" file 600 "$site_uid" "$site_gid"
+  kssmi_policy_assert_path "$RESET_TOKENS_FILE" file 600 "$site_uid" "$site_gid"
+  kssmi_policy_assert_path "$CREDENTIAL_GENERATION_FILE" file 600 "$site_uid" "$site_gid"
+  kssmi_policy_assert_path "$PASSWORD_LOCK" file 600 "$site_uid" "$site_gid"
+  kssmi_policy_assert_path "$RESET_TOKENS_LOCK" file 600 "$site_uid" "$site_gid"
+  kssmi_policy_assert_path "$CREDENTIAL_GENERATION_LOCK" file 600 "$site_uid" "$site_gid"
+  run_policy_as_site kssmi_policy_credential_generation_valid "$CREDENTIAL_GENERATION_FILE" ||
+    fail "The persistent admin credential generation is not 32 lowercase hex characters."
   kssmi_policy_assert_sensitive_file "$PRIVATE_CONFIG" "$site_uid" "$site_gid"
   kssmi_policy_assert_symlink "$LEGACY_EMAIL_LOG" "$EMAIL_LOG" "$site_uid" "$site_gid"
 
@@ -842,6 +902,168 @@ record_previous_webroot() {
   fi
 }
 
+# ── Admin credential transition (KS-05) ─────────────────────────────────────
+# activate_release() runs this first, right after it installs the failure
+# trap. The rollback target is recorded completely and then marked; only after
+# the mark is the outgoing release root frozen, its credential layout checked
+# and the persistent credential generation migrated. rollback_release() relies
+# on rollback_target_recorded being that boundary. Logs and state name paths,
+# modes, layouts and actions, never a credential value.
+
+record_outgoing_release() {
+  previous_kind="$(state_read previous_kind)"
+  case "$previous_kind" in
+    # First bootstrap: public_html is still the original directory, and no
+    # outgoing release root exists to freeze or restore.
+    directory) return 0 ;;
+    symlink) ;;
+    *) fail "Unknown previous webroot kind: $previous_kind" ;;
+  esac
+  previous_target="$(state_read previous_target)"
+  outgoing_release_dir="$(dirname -- "$previous_target")"
+  outgoing_release_name="${outgoing_release_dir#"$RELEASES_DIR"/}"
+  case "$outgoing_release_name" in
+    ''|.|..|*/*) fail "The live webroot is not a release webroot: $previous_target" ;;
+  esac
+  [ "$previous_target" = "$RELEASES_DIR/$outgoing_release_name/dist" ] ||
+    fail "The live webroot is not a release webroot: $previous_target"
+  [ "$outgoing_release_dir" != "$RELEASE_DIR" ] ||
+    fail "The live webroot already belongs to this release: $RELEASE_ID"
+  [ -d "$outgoing_release_dir" ] && [ ! -L "$outgoing_release_dir" ] ||
+    fail "The outgoing release root is not a directory: $outgoing_release_dir"
+  outgoing_release_mode="$(stat -c '%a' -- "$outgoing_release_dir")"
+  case "$outgoing_release_mode" in
+    [01234567][01234567][01234567]|[01234567][01234567][01234567][01234567]) ;;
+    *) fail "The outgoing release root has an unexpected mode: $outgoing_release_mode" ;;
+  esac
+  state_write outgoing_release_dir "$outgoing_release_dir"
+  state_write outgoing_release_mode "$outgoing_release_mode"
+}
+
+freeze_outgoing_release() {
+  previous_kind="$(state_read previous_kind)"
+  if [ "$previous_kind" = directory ]; then
+    echo "First bootstrap: there is no outgoing release root to freeze."
+    return 0
+  fi
+  outgoing_release_dir="$(state_read outgoing_release_dir)"
+  run_policy_as_site kssmi_policy_freeze_directory "$outgoing_release_dir"
+  if run_as_site test -w "$outgoing_release_dir"; then
+    fail "The site account can still write the outgoing release root: $outgoing_release_dir"
+  fi
+  state_write outgoing_release_frozen 1
+  echo "Outgoing release root frozen for the credential transition: $outgoing_release_dir"
+}
+
+verify_outgoing_admin_credentials() {
+  previous_kind="$(state_read previous_kind)"
+  if [ "$previous_kind" = directory ]; then
+    admin_credential_layout=initial
+  else
+    outgoing_release_dir="$(state_read outgoing_release_dir)"
+    site_uid="$(id -u "$SITE_USER")"
+    site_gid="$(id -g "$SITE_USER")"
+    admin_credential_layout="$(run_policy_as_site kssmi_policy_outgoing_credential_layout \
+      "$outgoing_release_dir" "$PASSWORD_FILE" "$RESET_TOKENS_FILE" \
+      "$CREDENTIAL_GENERATION_FILE" "$site_uid" "$site_gid")" ||
+      fail "The outgoing release's admin credentials need a manual decision before this deployment (KS-05)."
+    case "$admin_credential_layout" in
+      migrated|prefix) ;;
+      *) fail "Unexpected admin credential layout: $admin_credential_layout" ;;
+    esac
+  fi
+  state_write admin_credential_layout "$admin_credential_layout"
+  echo "Outgoing admin credential layout: $admin_credential_layout"
+}
+
+rotate_admin_credential_generation() {
+  # One site-account process takes the reset-token lock (FD 7), then the
+  # generation lock (FD 6): the order PHP nests them in. It opens the lock
+  # files read-only, so it never creates or truncates them, and it leaves
+  # FD 9 (deploy lock) and FD 8 (email-log migration) alone. Tokens are
+  # cleared first, as in PHP's rotation; the strict PHP token decoder rejects
+  # every entry written by the pre-fix code. The new value is checked before
+  # it is written and is never printed.
+  run_as_site env \
+    SITE_GROUP="$SITE_GROUP" \
+    RESET_TOKENS_FILE="$RESET_TOKENS_FILE" \
+    RESET_TOKENS_LOCK="$RESET_TOKENS_LOCK" \
+    CREDENTIAL_GENERATION_FILE="$CREDENTIAL_GENERATION_FILE" \
+    CREDENTIAL_GENERATION_LOCK="$CREDENTIAL_GENERATION_LOCK" \
+    sh -c '
+      set -eu
+      umask 077
+      tokens_temp=""
+      generation_temp=""
+      cleanup() {
+        [ -z "$tokens_temp" ] || rm -f "$tokens_temp"
+        [ -z "$generation_temp" ] || rm -f "$generation_temp"
+      }
+      trap cleanup EXIT
+      exec 7<"$RESET_TOKENS_LOCK"
+      flock -x 7
+      exec 6<"$CREDENTIAL_GENERATION_LOCK"
+      flock -x 6
+
+      generation="$(head -c 16 /dev/urandom | od -An -tx1 | tr -d " \n")"
+      case "$generation" in
+        *[!0123456789abcdef]*)
+          echo "The new credential generation is not lowercase hex; nothing was written." >&2
+          exit 1
+          ;;
+      esac
+      [ "${#generation}" -eq 32 ] || {
+        echo "The new credential generation is not 32 characters; nothing was written." >&2
+        exit 1
+      }
+
+      tokens_temp="$(mktemp "$RESET_TOKENS_FILE.deploy-XXXXXXXXXX")"
+      printf "[]" > "$tokens_temp"
+      chgrp "$SITE_GROUP" "$tokens_temp"
+      chmod 600 "$tokens_temp"
+      mv -Tf "$tokens_temp" "$RESET_TOKENS_FILE"
+      tokens_temp=""
+
+      generation_temp="$(mktemp "$CREDENTIAL_GENERATION_FILE.deploy-XXXXXXXXXX")"
+      printf "%s" "$generation" > "$generation_temp"
+      chgrp "$SITE_GROUP" "$generation_temp"
+      chmod 600 "$generation_temp"
+      mv -Tf "$generation_temp" "$CREDENTIAL_GENERATION_FILE"
+      generation_temp=""
+      [ "$(cat "$CREDENTIAL_GENERATION_FILE")" = "$generation" ]
+    ' || fail "The admin credential generation could not be replaced."
+}
+
+migrate_admin_credential_generation() {
+  admin_credential_layout="$(state_read admin_credential_layout)"
+  generation_state="$(run_policy_as_site kssmi_policy_credential_generation_state "$CREDENTIAL_GENERATION_FILE")"
+  generation_action="$(kssmi_policy_generation_action "$admin_credential_layout" "$generation_state")" ||
+    fail "The persistent admin credential generation is $generation_state; recover it manually before deploying (KS-05)."
+  case "$generation_action" in
+    keep)
+      state_write admin_credential_generation_action kept
+      echo "Admin credential generation: kept"
+      ;;
+    rotate)
+      rotate_admin_credential_generation
+      run_policy_as_site kssmi_policy_credential_generation_valid "$CREDENTIAL_GENERATION_FILE" ||
+        fail "The new admin credential generation did not verify."
+      state_write admin_credential_generation_action rotated
+      echo "Admin credential generation: rotated; admin sessions and reset links issued before are revoked"
+      ;;
+    *) fail "Unexpected admin credential generation action: $generation_action" ;;
+  esac
+}
+
+prepare_admin_credential_transition() {
+  record_previous_webroot
+  record_outgoing_release
+  state_write rollback_target_recorded 1
+  freeze_outgoing_release
+  verify_outgoing_admin_credentials
+  migrate_admin_credential_generation
+}
+
 activate_webroot() {
   next_link="$PRIVATE_ROOT/.public_html.next-$RELEASE_ID"
   run_root rm -f "$next_link"
@@ -915,6 +1137,41 @@ rollback_webroot() {
   fi
 }
 
+# Restores the outgoing release root to the mode recorded before the freeze.
+# It is idempotent and returns every failure instead of exiting, because the
+# activation trap calls rollback_release() where errexit does not apply.
+restore_outgoing_release() {
+  previous_kind="$(state_read previous_kind)" || {
+    echo "ERROR: The rollback target has no previous webroot kind: $STATE_DIR" >&2
+    return 1
+  }
+  case "$previous_kind" in
+    directory) return 0 ;;
+    symlink) ;;
+    *)
+      echo "ERROR: Unknown previous webroot kind: $previous_kind" >&2
+      return 1
+      ;;
+  esac
+  outgoing_release_dir="$(state_read outgoing_release_dir)" || {
+    echo "ERROR: The rollback target has no outgoing release root: $STATE_DIR" >&2
+    return 1
+  }
+  outgoing_release_mode="$(state_read outgoing_release_mode)" || {
+    echo "ERROR: The rollback target has no outgoing release mode: $STATE_DIR" >&2
+    return 1
+  }
+  if [ ! -e "$outgoing_release_dir" ] && [ ! -L "$outgoing_release_dir" ]; then
+    echo "WARN: The outgoing release root no longer exists; there is no mode to restore: $outgoing_release_dir" >&2
+    return 0
+  fi
+  if ! run_policy_as_site kssmi_policy_restore_directory_mode "$outgoing_release_dir" "$outgoing_release_mode"; then
+    echo "ERROR: Could not restore mode $outgoing_release_mode on the outgoing release root: $outgoing_release_dir" >&2
+    return 1
+  fi
+  echo "Outgoing release root mode restored to $outgoing_release_mode: $outgoing_release_dir"
+}
+
 rollback_release() {
   cleanup_runtime_capability_probe
   [ -d "$STATE_DIR" ] || {
@@ -926,6 +1183,25 @@ rollback_release() {
     echo "Release was already rolled back: $RELEASE_ID"
     return 0
   fi
+  # The activation trap calls this as `rollback_release || true`, where
+  # errexit does not apply, so each KS-05 step checks its own status. A
+  # failure returns before rolled_back_at is written, so the workflow's
+  # separate rollback command tries again instead of reporting it done.
+  if [ ! -f "$STATE_DIR/rollback_target_recorded" ]; then
+    # Activation changes nothing before the rollback target is recorded.
+    # Later state without that record means something did change.
+    for later_state in outgoing_release_frozen admin_credential_generation_action \
+        private_installed_at activated_at; do
+      if [ -e "$STATE_DIR/$later_state" ]; then
+        echo "ERROR: Release state has $later_state but no recorded rollback target; refusing to declare rollback complete: $RELEASE_ID" >&2
+        return 1
+      fi
+    done
+    state_write rolled_back_at "$(date -u +%Y-%m-%dT%H:%M:%SZ)" || return 1
+    echo "Release rollback completed; nothing had changed before the rollback target was recorded: $RELEASE_ID"
+    return 0
+  fi
+  restore_outgoing_release || return 1
   changed_runtime=no
   if [ -f "$STATE_DIR/private_installed_at" ] || [ -f "$STATE_DIR/activated_at" ]; then
     changed_runtime=yes
@@ -943,6 +1219,18 @@ rollback_release() {
   echo "Release rollback completed: $RELEASE_ID"
 }
 
+# Activation failure handler. It lives at top level rather than inside
+# activate_release so the deployment tests can install the exact same trap.
+rollback_on_failure() {
+  status=$?
+  trap - EXIT HUP INT TERM
+  cleanup_runtime_capability_probe
+  if [ "$status" -ne 0 ]; then
+    rollback_release || true
+  fi
+  exit "$status"
+}
+
 activate_release() {
   check_disk_space
   validate_release_bundle
@@ -950,27 +1238,18 @@ activate_release() {
   [ ! -e "$STATE_DIR" ] || fail "Release state already exists: $STATE_DIR"
   run_root install -d -o "$SITE_USER" -g "$SITE_GROUP" -m 750 "$STATE_DIR"
 
-  rollback_on_failure() {
-    status=$?
-    trap - EXIT HUP INT TERM
-    cleanup_runtime_capability_probe
-    if [ "$status" -ne 0 ]; then
-      rollback_release || true
-    fi
-    exit "$status"
-  }
   trap rollback_on_failure EXIT
   trap 'exit 129' HUP
   trap 'exit 130' INT
   trap 'exit 143' TERM
 
+  prepare_admin_credential_transition
   prepare_release_layout
   verify_release_permission_policy
   validate_cloudflare_snapshot_pair \
     "$RELEASE_DIR/private/rate-limit.php" \
     "$RELEASE_DIR/private/cloudflare-ip-ranges.json" \
     "Release"
-  record_previous_webroot
   backup_shared_private
   record_cutover_baseline
   write_cutover_markers
@@ -1072,18 +1351,35 @@ emit_release_evidence() {
   echo 'final_health=PASS'
 }
 
-validate_release_id
-prepare_control_paths
-run_root touch "$DEPLOY_LOCK"
-run_root chown "$SITE_USER:$SITE_GROUP" "$DEPLOY_LOCK"
-run_root chmod 640 "$DEPLOY_LOCK"
-exec 9>"$DEPLOY_LOCK"
-flock -x 9
+# Executed directly, the release manager validates its production contract,
+# takes the deploy lock and runs one command. Sourced by the deployment tests,
+# it only defines the functions above and touches nothing.
+main() {
+  validate_deployment_config
 
-case "$COMMAND" in
-  activate) activate_release ;;
-  rollback) rollback_release ;;
-  finalize) finalize_release ;;
-  evidence) emit_release_evidence ;;
-  *) fail "Usage: deploy-release.sh {activate|rollback|finalize|evidence}" ;;
-esac
+  [ -f "$PERMISSION_POLICY" ] || fail "Permission policy is missing: $PERMISSION_POLICY"
+  # shellcheck source=permission-policy.sh
+  . "$PERMISSION_POLICY"
+
+  trap 'report_failure "$LINENO" "$BASH_COMMAND"' ERR
+
+  validate_release_id
+  prepare_control_paths
+  run_root touch "$DEPLOY_LOCK"
+  run_root chown "$SITE_USER:$SITE_GROUP" "$DEPLOY_LOCK"
+  run_root chmod 640 "$DEPLOY_LOCK"
+  exec 9>"$DEPLOY_LOCK"
+  flock -x 9
+
+  case "$COMMAND" in
+    activate) activate_release ;;
+    rollback) rollback_release ;;
+    finalize) finalize_release ;;
+    evidence) emit_release_evidence ;;
+    *) fail "Usage: deploy-release.sh {activate|rollback|finalize|evidence}" ;;
+  esac
+}
+
+if [ "${BASH_SOURCE[0]}" = "$0" ]; then
+  main "$@"
+fi

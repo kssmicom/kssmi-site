@@ -62,7 +62,7 @@ define('PASSWORD_FILE', dirname(__DIR__) . '/.email_logs_password');
 define('LOGS_FILE', dirname(dirname(__FILE__)) . '/email_data/email-logs.json');
 define('RESET_TOKENS_FILE_OLD', dirname(__FILE__) . '/.email_reset_tokens.json');
 define('RESET_TOKENS_FILE', dirname(__DIR__) . '/.email_reset_tokens.json');
-define('CREDENTIAL_VERSION_FILE', kssmi_admin_credential_version_path(PASSWORD_FILE));
+define('CREDENTIAL_GENERATION_FILE', kssmi_admin_credential_generation_path(PASSWORD_FILE));
 define('ADMIN_EMAIL', 'sales@kssmi.com');
 require_once dirname(__DIR__) . '/private/email-log-store.php';
 
@@ -272,7 +272,7 @@ if (isset($_POST['request_reset'])) {
             // Generate token and store it atomically (expires in 1 hour).
             // Adding a token revokes the previous active link under one lock.
             $token = generateResetToken();
-            if (kssmi_admin_reset_token_add(RESET_TOKENS_FILE, $token, $now + 3600, $now, CREDENTIAL_VERSION_FILE)) {
+            if (kssmi_admin_reset_token_add(RESET_TOKENS_FILE, $token, $now + 3600, CREDENTIAL_GENERATION_FILE, $now)) {
                 $result = sendResetEmail($token);
                 if ($result['success']) {
                     $message = 'If a reset is available, a message will be sent shortly.';
@@ -303,7 +303,7 @@ if (isset($_GET['reset'])) {
     // email recipient knows. Its unguessability is the CSRF protection, so no
     // session-bound csrf parameter is needed in the link (the old &csrf=
     // parameter could never match a fresh session, breaking every reset link).
-    if (kssmi_admin_reset_token_valid(RESET_TOKENS_FILE, $token, null, CREDENTIAL_VERSION_FILE)) {
+    if (kssmi_admin_reset_token_valid(RESET_TOKENS_FILE, $token, CREDENTIAL_GENERATION_FILE)) {
         $resetMode = true;
 
         // Handle new password submission
@@ -328,7 +328,7 @@ if (isset($_GET['reset'])) {
                         $token,
                         $newPass,
                         null,
-                        CREDENTIAL_VERSION_FILE
+                        CREDENTIAL_GENERATION_FILE
                     );
                     if ($resetResult['ok'] && $resetResult['changed']) {
                         $message = 'Password reset successfully! You can now login with your new password.';
@@ -363,10 +363,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password']) && !isset
         if (kssmi_admin_authenticate_and_establish(
             file_exists(PASSWORD_FILE) ? PASSWORD_FILE : PASSWORD_FILE_OLD,
             RESET_TOKENS_FILE,
-            CREDENTIAL_VERSION_FILE,
+            CREDENTIAL_GENERATION_FILE,
             $submittedPassword
         )) {
-            if (!kssmi_admin_session_authenticated(CREDENTIAL_VERSION_FILE)) {
+            if (!kssmi_admin_session_authenticated(CREDENTIAL_GENERATION_FILE)) {
                 $error = 'Unable to establish a secure admin session. Please try again.';
             } else {
                 kssmi_admin_set_marker_cookie(true);
@@ -392,7 +392,7 @@ if (isset($_POST['logout'])) {
 }
 
 // Check auth
-$isAuthenticated = kssmi_admin_session_authenticated(CREDENTIAL_VERSION_FILE);
+$isAuthenticated = kssmi_admin_session_authenticated(CREDENTIAL_GENERATION_FILE);
 if ($isAuthenticated) {
     kssmi_admin_set_marker_cookie(true);
 } else {
@@ -412,7 +412,7 @@ if ($isAuthenticated && isset($_POST['change_password'])) {
                 RESET_TOKENS_FILE,
                 PASSWORD_FILE,
                 $newPass,
-                CREDENTIAL_VERSION_FILE
+                CREDENTIAL_GENERATION_FILE
             );
             if ($changeResult['ok'] && $changeResult['changed']) {
                 $PASSWORD_HASH = getPasswordHash();

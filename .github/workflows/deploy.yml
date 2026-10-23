@@ -60,9 +60,13 @@ jobs:
           bash -n scripts/permission-policy.sh
           bash -n scripts/test-permission-policy.sh
           bash -n scripts/prune-old-releases.sh
+          bash -n scripts/test-deploy-release-entry.sh
+          bash -n scripts/test-deploy-credential-transition.sh
           npm run validate:release
           npm run validate:permissions
           npm run test:permissions
+          npm run test:deploy-entry
+          npm run test:deploy-credential-transition
           npm run validate:runtime-identity
           npm run test:runtime-identity
           npm run validate:promotion
@@ -103,6 +107,7 @@ jobs:
           php scripts/test-http-security.php
           php scripts/test-reset-token-race.php
           php scripts/test-admin-session.php
+          php scripts/test-credential-persistence.php
           php scripts/test-short-links.php
 
       - name: Validate frontend policies
