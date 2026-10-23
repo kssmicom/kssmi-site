@@ -1,5 +1,6 @@
 import { readFile, readdir, mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { resolveRequiredJobs } from './lib/required-jobs.mjs';
 
 const inputRoot = path.resolve(process.argv[2] ?? 'evidence-input');
 const outputRoot = path.resolve(process.argv[3] ?? 'release-evidence/final');
@@ -96,18 +97,14 @@ const record = async (label, operation) => {
 const build = await loadEvidence('build', 'build.json');
 const production = await loadEvidence('production', 'production.json');
 
-const currentJobs = await record('current workflow jobs', async () => {
-  const response = await requestJson(`/actions/runs/${runId}/jobs?per_page=100`);
-  const requiredNames = [
+const currentJobs = await record('current workflow jobs', () => resolveRequiredJobs({
+  fetchJobs: async () => (await requestJson(`/actions/runs/${runId}/jobs?per_page=100`)).jobs,
+  requiredNames: [
     'Build and seal release artifact',
     'Deploy and verify production',
-  ];
-  return Object.fromEntries(requiredNames.map((name) => {
-    const job = response.jobs.find((candidate) => candidate.name === name);
-    if (!job) throw new Error(`Mandatory job is missing: ${name}`);
-    return [name, { url: job.html_url, conclusion: job.conclusion, completed_at: job.completed_at }];
-  }));
-});
+  ],
+  log: (message) => console.log(message),
+}));
 
 const phpCi = await record('PHP CI', () => findWorkflowJob(
   'php-ci.yml', 'PHP 8.3 full backend suite', { headSha: commitSha, requireSuccess: true },

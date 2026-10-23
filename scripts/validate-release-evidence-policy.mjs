@@ -85,6 +85,18 @@ assert.doesNotMatch(collector, /rollbackDrill|staging_evidence|environments:\s*\
 assert.doesNotMatch(`${buildGenerator}\n${environmentGenerator}\n${collector}`, /SMOKE_(?:ACCESS_CLIENT_SECRET|ADMIN_PASSWORD)|SSH_PRIVATE_KEY/, 'Evidence scripts must not read deployment secrets.');
 
 assert.equal(packageJson.scripts?.['validate:release-evidence'], 'node scripts/validate-release-evidence-policy.mjs');
+// The signoff job can start before the jobs API reports the deploy job as
+// finished (run 39914881002). Only that transient state may be retried.
+const requiredJobs = read('scripts/lib/required-jobs.mjs');
+assert.ok(collector.includes('resolveRequiredJobs({'), 'The collector must read mandatory jobs through the bounded resolver.');
+assert.ok(!collector.includes('{ url: job.html_url, conclusion: job.conclusion'), 'The collector must not copy an unfinished job conclusion.');
+assert.ok(collector.includes("Object.values(currentJobs).every((job) => job.conclusion === 'success')"), 'Only success may satisfy the mandatory-job check.');
+assert.ok(requiredJobs.includes("job.status !== 'completed'"), 'Unfinished jobs must be recognised by status.');
+assert.ok(requiredJobs.includes('Mandatory job(s) not completed after'), 'A job that never completes must raise an error.');
+assert.equal(packageJson.scripts?.['test:required-jobs'], 'node scripts/test-required-jobs.mjs');
+for (const [label, text] of [['PHP CI', read('.github/workflows/php-ci.yml')], ['Deploy', workflow]]) {
+  assert.match(text, /npm run test:required-jobs/, label + ' must run the required-job tests.');
+}
 for (const marker of ['APPROVED', 'BLOCKED', 'P1', 'Cloudflare', '自动回滚', '90', 'JSON', 'Markdown', 'production']) {
   assert.ok(docs.includes(marker), `Release evidence documentation missing: ${marker}`);
 }

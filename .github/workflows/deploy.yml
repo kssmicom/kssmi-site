@@ -89,6 +89,7 @@ jobs:
           npm run validate:admin-input-session
           npm run validate:security
           npm run test:smoke
+          npm run test:required-jobs
 
       - name: Require current official Cloudflare ranges
         run: npm run validate:cloudflare-ranges -- --check-remote

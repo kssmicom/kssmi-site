@@ -23,3 +23,15 @@ symlink target、真实 OpenLiteSpeed/LSAPI UID/GID、权限 policy-as-code、�
 全部满足时 `signoff.status` 才是 `APPROVED`；否则为 `BLOCKED`。即使 BLOCKED，
 JSON 和 Markdown 证据包也会先上传，随后最终门禁失败，便于诊断。production-only
 模式不要求 staging 或故障注入演练证据。
+
+## Mandatory job conclusions
+
+The signoff job starts as soon as the deploy job ends, and the GitHub jobs API
+can still report that job without a conclusion for a few seconds (run
+39914881002 recorded `conclusion: null` three seconds after a successful
+deploy and was BLOCKED). `scripts/lib/required-jobs.mjs` rereads the jobs, up to
+18 checks five seconds apart, only while a mandatory job is not completed or has
+no conclusion. A completed job keeps its conclusion immediately, so a real
+failure is never retried, and a job that never completes ends in a collection
+error: the signoff stays BLOCKED. Only `success` satisfies the check.
+`npm run test:required-jobs` covers these cases.
