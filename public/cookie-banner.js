@@ -197,40 +197,33 @@
     var div = document.createElement('div');
     div.id = 'cookie-banner';
     div.setAttribute('dir', isRTL() ? 'rtl' : 'ltr');
-    // Self-contained INLINE styles only — this file lives in /public and is NOT
-    // processed by Tailwind, so utility classes would not be generated (that was
-    // the cause of the broken full-width / tall layout). Compact bar: text left,
-    // buttons right; wraps gracefully on small screens.
-    var BTN_SEC = 'padding:7px 14px;font-size:13px;font-weight:500;line-height:1;border:1px solid #d1d5db;border-radius:8px;background:#fff;color:#374151;cursor:pointer;white-space:nowrap;';
-    var BTN_PRI = 'padding:7px 18px;font-size:13px;font-weight:500;line-height:1;border:1px solid #5D4E37;border-radius:8px;background:#5D4E37;color:#fff;cursor:pointer;white-space:nowrap;';
-    var LBL_ROW = 'display:flex;align-items:flex-start;gap:10px;border:1px solid #e5e7eb;border-radius:8px;padding:10px;cursor:pointer;';
-    var LBL_OFF = 'display:flex;align-items:flex-start;gap:10px;border:1px solid #e5e7eb;border-radius:8px;padding:10px;background:#f9fafb;cursor:not-allowed;';
-    var CHK = 'margin-top:2px;width:16px;height:16px;accent-color:#8B7355;flex:0 0 auto;';
-    var LT = 'font-size:13px;font-weight:500;color:#111827;';
-    var LD = 'margin:2px 0 0;font-size:12px;line-height:1.4;color:#6b7280;';
+    // No inline style attributes: the static CSP (style-src without
+    // 'unsafe-hashes') blocks them and logs a violation for each one. The .cookie-* rules in
+    // src/styles/global.css style this markup. Compact bar: text left, buttons
+    // right; wraps gracefully on small screens.
     div.innerHTML =
-      '<div id="cookie-banner-main" class="cookie-banner-main" style="position:fixed;left:0;right:0;bottom:0;z-index:9999;background:rgba(255,255,255,0.97);border-top:1px solid #e5e7eb;box-shadow:0 -2px 12px rgba(0,0,0,0.06);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);">'
-        + '<div class="cookie-banner-inner" style="max-width:1860px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;padding:12px 20px;">'
-          + '<p class="cookie-banner-message" style="margin:0;font-size:13px;line-height:1.5;color:#4b5563;">' + t().message + '</p>'
-          + '<div class="cookie-banner-actions" style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;">'
-            + '<button id="cookie-btn-preferences" class="cookie-banner-btn" style="' + BTN_SEC + '">' + t().preferences + '</button>'
-            + '<button id="cookie-btn-reject" class="cookie-banner-btn" style="' + BTN_SEC + '">' + t().reject + '</button>'
-            + '<button id="cookie-btn-accept" class="cookie-banner-btn cookie-banner-btn--primary" style="' + BTN_PRI + '">' + t().accept + '</button>'
+      '<div id="cookie-banner-main" class="cookie-banner-main">'
+        + '<div class="cookie-banner-inner">'
+          + '<p class="cookie-banner-message">' + t().message + '</p>'
+          + '<div class="cookie-banner-actions">'
+            + '<button id="cookie-btn-preferences" class="cookie-banner-btn">' + t().preferences + '</button>'
+            + '<button id="cookie-btn-reject" class="cookie-banner-btn">' + t().reject + '</button>'
+            + '<button id="cookie-btn-accept" class="cookie-banner-btn cookie-banner-btn--primary">' + t().accept + '</button>'
           + '</div>'
         + '</div>'
       + '</div>'
-      + '<div id="cookie-modal-overlay" class="cookie-modal-overlay" style="position:fixed;inset:0;z-index:10000;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.5);padding:16px;">'
-        + '<div id="cookie-modal" class="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title" dir="' + (isRTL() ? 'rtl' : 'ltr') + '" style="width:100%;max-width:520px;background:#fff;border:1px solid #e5e7eb;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,0.2);padding:24px;max-height:85vh;overflow:auto;">'
-          + '<h3 id="cookie-modal-title" class="cookie-modal-title" style="margin:0;font-size:18px;font-weight:600;color:#111827;">' + t().title + '</h3>'
-          + '<p class="cookie-modal-message" style="margin:8px 0 0;font-size:13px;line-height:1.5;color:#6b7280;">' + t().message + '</p>'
-          + '<div class="cookie-modal-options" style="margin-top:18px;display:flex;flex-direction:column;gap:10px;">'
-            + '<label class="cookie-option cookie-option--disabled" style="' + LBL_OFF + '"><input class="cookie-check" type="checkbox" checked disabled style="' + CHK + '" /><div><span class="cookie-option-title" style="' + LT + '">' + t().essentialLabel + '</span><p class="cookie-option-description" style="' + LD + '">' + t().essentialDesc + '</p></div></label>'
-            + '<label class="cookie-option" style="' + LBL_ROW + '"><input id="cookie-check-analytics" class="cookie-check" type="checkbox" checked style="' + CHK + '" /><div><span class="cookie-option-title" style="' + LT + '">' + t().analyticsLabel + '</span><p class="cookie-option-description" style="' + LD + '">' + t().analyticsDesc + '</p></div></label>'
-            + '<label class="cookie-option" style="' + LBL_ROW + '"><input id="cookie-check-ads" class="cookie-check" type="checkbox" checked style="' + CHK + '" /><div><span class="cookie-option-title" style="' + LT + '">' + t().adsLabel + '</span><p class="cookie-option-description" style="' + LD + '">' + t().adsDesc + '</p></div></label>'
+      + '<div id="cookie-modal-overlay" class="cookie-modal-overlay">'
+        + '<div id="cookie-modal" class="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title" dir="' + (isRTL() ? 'rtl' : 'ltr') + '">'
+          + '<h3 id="cookie-modal-title" class="cookie-modal-title">' + t().title + '</h3>'
+          + '<p class="cookie-modal-message">' + t().message + '</p>'
+          + '<div class="cookie-modal-options">'
+            + '<label class="cookie-option cookie-option--disabled"><input class="cookie-check" type="checkbox" checked disabled /><div><span class="cookie-option-title">' + t().essentialLabel + '</span><p class="cookie-option-description">' + t().essentialDesc + '</p></div></label>'
+            + '<label class="cookie-option"><input id="cookie-check-analytics" class="cookie-check" type="checkbox" checked /><div><span class="cookie-option-title">' + t().analyticsLabel + '</span><p class="cookie-option-description">' + t().analyticsDesc + '</p></div></label>'
+            + '<label class="cookie-option"><input id="cookie-check-ads" class="cookie-check" type="checkbox" checked /><div><span class="cookie-option-title">' + t().adsLabel + '</span><p class="cookie-option-description">' + t().adsDesc + '</p></div></label>'
           + '</div>'
-          + '<div class="cookie-modal-actions" style="margin-top:20px;display:flex;justify-content:flex-end;gap:10px;">'
-            + '<button id="cookie-modal-cancel" class="cookie-banner-btn" style="' + BTN_SEC + '">' + t().cancel + '</button>'
-            + '<button id="cookie-modal-save" class="cookie-banner-btn cookie-banner-btn--primary" style="' + BTN_PRI + '">' + t().save + '</button>'
+          + '<div class="cookie-modal-actions">'
+            + '<button id="cookie-modal-cancel" class="cookie-banner-btn">' + t().cancel + '</button>'
+            + '<button id="cookie-modal-save" class="cookie-banner-btn cookie-banner-btn--primary">' + t().save + '</button>'
           + '</div>'
         + '</div>'
       + '</div>';
