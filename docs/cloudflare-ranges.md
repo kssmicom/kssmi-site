@@ -17,7 +17,8 @@ Both snapshots below must be younger than 45 days, but no date-only PR is
 needed:
 
 - **Server (weekly):** the site account runs
-  `scripts/refresh-cloudflare-ranges.php` from cron. It downloads both official
+  `private/cloudflare-ranges-refresh.php` (shipped with every release, like the
+  inquiry outbox worker) from cron. It downloads both official
   lists, proves the result with the site's own strict PHP loader, and
   atomically writes `rate_limit/cloudflare-ip-ranges.live.json` (0600, survives
   deploys). PHP prefers this live file and falls back to the bundled
