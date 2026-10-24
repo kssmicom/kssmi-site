@@ -9,6 +9,29 @@ const { lang } = Astro.props;
 const t = await getTranslations(lang);
 const isRTL = lang === 'ar';
 
+// Localized page metadata and heading. The question/answer bodies below are
+// still English on every language route.
+const pageCopy: Record<string, { title: string; description: string; heading: string; subtitle: string }> = {
+  en: { title: 'FAQ — Kssmi Eyewear | Frequently Asked Questions', description: 'Frequently asked questions about Kssmi eyewear manufacturing: MOQ, OEM/ODM, lead time, materials, certifications, shipping, and more.', heading: 'Frequently Asked Questions', subtitle: 'Everything you need to know about working with Kssmi Eyewear' },
+  it: { title: 'FAQ — Kssmi Eyewear | Domande frequenti', description: 'Domande frequenti sulla produzione di occhiali Kssmi: MOQ, OEM/ODM, tempi di produzione, materiali, certificazioni, spedizioni e altro.', heading: 'Domande frequenti', subtitle: 'Tutto quello che c’è da sapere per lavorare con Kssmi Eyewear' },
+  es: { title: 'FAQ — Kssmi Eyewear | Preguntas frecuentes', description: 'Preguntas frecuentes sobre la fabricación de gafas Kssmi: MOQ, OEM/ODM, plazos de producción, materiales, certificaciones, envíos y más.', heading: 'Preguntas frecuentes', subtitle: 'Todo lo que necesita saber para trabajar con Kssmi Eyewear' },
+  fr: { title: 'FAQ — Kssmi Eyewear | Questions fréquentes', description: 'Questions fréquentes sur la fabrication de lunettes Kssmi : MOQ, OEM/ODM, délais de production, matériaux, certifications, expédition et plus.', heading: 'Questions fréquentes', subtitle: 'Tout ce qu’il faut savoir pour travailler avec Kssmi Eyewear' },
+  de: { title: 'FAQ — Kssmi Eyewear | Häufig gestellte Fragen', description: 'Häufige Fragen zur Brillenherstellung bei Kssmi: MOQ, OEM/ODM, Lieferzeit, Materialien, Zertifizierungen, Versand und mehr.', heading: 'Häufig gestellte Fragen', subtitle: 'Alles, was Sie über die Zusammenarbeit mit Kssmi Eyewear wissen müssen' },
+  pt: { title: 'FAQ — Kssmi Eyewear | Perguntas frequentes', description: 'Perguntas frequentes sobre a fabricação de óculos Kssmi: MOQ, OEM/ODM, prazo de produção, materiais, certificações, envio e mais.', heading: 'Perguntas frequentes', subtitle: 'Tudo o que você precisa saber para trabalhar com a Kssmi Eyewear' },
+  ru: { title: 'FAQ — Kssmi Eyewear | Часто задаваемые вопросы', description: 'Часто задаваемые вопросы о производстве очков Kssmi: MOQ, OEM/ODM, сроки производства, материалы, сертификаты, доставка и многое другое.', heading: 'Часто задаваемые вопросы', subtitle: 'Всё, что нужно знать о сотрудничестве с Kssmi Eyewear' },
+  ja: { title: 'FAQ — Kssmi Eyewear | よくある質問', description: 'Kssmi のアイウェア製造に関するよくある質問：最小発注数量（MOQ）、OEM/ODM、納期、素材、認証、配送など。', heading: 'よくある質問', subtitle: 'Kssmi Eyewear とのお取引について知っておきたいこと' },
+  tr: { title: 'SSS — Kssmi Eyewear | Sıkça Sorulan Sorular', description: 'Kssmi gözlük üretimi hakkında sıkça sorulan sorular: MOQ, OEM/ODM, üretim süresi, malzemeler, sertifikalar, sevkiyat ve daha fazlası.', heading: 'Sıkça Sorulan Sorular', subtitle: 'Kssmi Eyewear ile çalışmak hakkında bilmeniz gereken her şey' },
+  ar: { title: 'الأسئلة الشائعة — Kssmi Eyewear', description: 'الأسئلة الشائعة حول تصنيع النظارات لدى Kssmi: الحد الأدنى للطلب، OEM/ODM، مدة الإنتاج، المواد، الشهادات، الشحن والمزيد.', heading: 'الأسئلة الشائعة', subtitle: 'كل ما تحتاج معرفته عن العمل مع Kssmi Eyewear' },
+  ko: { title: 'FAQ — Kssmi Eyewear | 자주 묻는 질문', description: 'Kssmi 안경 제조에 관한 자주 묻는 질문: MOQ, OEM/ODM, 생산 기간, 소재, 인증, 배송 등.', heading: '자주 묻는 질문', subtitle: 'Kssmi Eyewear와 함께 일하기 위해 알아야 할 모든 것' },
+  zh: { title: '常见问题 — Kssmi 眼镜 | FAQ', description: '关于 Kssmi 眼镜生产的常见问题：起订量（MOQ）、OEM/ODM、生产周期、材料、认证、运输等。', heading: '常见问题', subtitle: '与 Kssmi 眼镜合作前需要了解的一切' },
+  hi: { title: 'FAQ — Kssmi Eyewear | अक्सर पूछे जाने वाले प्रश्न', description: 'Kssmi आईवियर निर्माण के बारे में अक्सर पूछे जाने वाले प्रश्न: MOQ, OEM/ODM, उत्पादन समय, सामग्री, प्रमाणन, शिपिंग और बहुत कुछ।', heading: 'अक्सर पूछे जाने वाले प्रश्न', subtitle: 'Kssmi Eyewear के साथ काम करने के बारे में वह सब कुछ जो आपको जानना चाहिए' },
+  vi: { title: 'FAQ — Kssmi Eyewear | Câu hỏi thường gặp', description: 'Câu hỏi thường gặp về sản xuất kính mắt Kssmi: MOQ, OEM/ODM, thời gian sản xuất, vật liệu, chứng nhận, vận chuyển và hơn thế nữa.', heading: 'Câu hỏi thường gặp', subtitle: 'Mọi điều bạn cần biết khi hợp tác với Kssmi Eyewear' },
+  jv: { title: 'FAQ — Kssmi Eyewear | Pitakonan sing Kerep Ditakoni', description: 'Pitakonan sing kerep ditakoni babagan produksi kacamata Kssmi: MOQ, OEM/ODM, wektu produksi, bahan, sertifikasi, pangiriman lan liyane.', heading: 'Pitakonan sing Kerep Ditakoni', subtitle: 'Kabeh sing perlu sampeyan ngerteni babagan kerja sama karo Kssmi Eyewear' },
+  ms: { title: 'Soalan Lazim — Kssmi Eyewear | FAQ', description: 'Soalan lazim tentang pembuatan cermin mata Kssmi: MOQ, OEM/ODM, tempoh pengeluaran, bahan, pensijilan, penghantaran dan banyak lagi.', heading: 'Soalan Lazim', subtitle: 'Semua yang anda perlu tahu tentang bekerjasama dengan Kssmi Eyewear' },
+  tg: { title: 'Саволҳои маъмул — Kssmi Eyewear | FAQ', description: 'Саволҳои маъмул дар бораи истеҳсоли айнакҳои Kssmi: MOQ, OEM/ODM, мӯҳлати истеҳсол, маводҳо, сертификатҳо, интиқол ва ғайра.', heading: 'Саволҳои маъмул', subtitle: 'Ҳама чизе, ки барои ҳамкорӣ бо Kssmi Eyewear бояд донед' },
+};
+const copy = pageCopy[lang] ?? pageCopy.en;
+
 const faqItems = [
   { question: "What is your Minimum Order Quantity (MOQ)?", answer: "Our standard MOQ is 300 pieces per style per color. For custom designs, the MOQ may vary depending on material and complexity. Contact our sales team for specific requirements — we're flexible for long-term partners." },
   { question: "Do you offer OEM and ODM services?", answer: "Yes! Kssmi specializes in both OEM (Original Equipment Manufacturing) and ODM (Original Design Manufacturing). OEM: we produce eyewear to your exact specifications and designs. ODM: our in-house design team creates exclusive collections for your brand based on your target market and preferences. Both services include full customization of materials, colors, logos, and packaging." },
@@ -25,7 +48,7 @@ const faqItems = [
 ];
 ---
 
-<Layout title="FAQ — Kssmi Eyewear | Frequently Asked Questions" lang={lang} description="Frequently asked questions about Kssmi eyewear manufacturing: MOQ, OEM/ODM, lead time, materials, certifications, shipping, and more." type="website">
+<Layout title={copy.title} lang={lang} description={copy.description} type="website">
   <Header lang={lang} />
   <main class="w-full min-h-[70vh] bg-stone-50 pt-12 pb-24 flex items-center" dir={isRTL ? 'rtl' : 'ltr'}>
     <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[820px] mx-auto px-4 text-center">
@@ -34,8 +57,8 @@ const faqItems = [
         <span class="h-[1px] w-8 bg-[#503629] mt-1.5"></span>
         <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#503629] mt-1.5">Eyewear Mfg.</span>
       </div>
-      <h1 class="text-3xl md:text-4xl font-bold text-[#5D4E37] mb-3 tracking-tight">Frequently Asked Questions</h1>
-      <p class="text-lg text-stone-500 mb-10 max-w-xl mx-auto">Everything you need to know about working with Kssmi Eyewear</p>
+      <h1 class="text-3xl md:text-4xl font-bold text-[#5D4E37] mb-3 tracking-tight">{copy.heading}</h1>
+      <p class="text-lg text-stone-500 mb-10 max-w-xl mx-auto">{copy.subtitle}</p>
     </div>
   </main>
   <section class="w-full py-12 lg:py-20 bg-white">

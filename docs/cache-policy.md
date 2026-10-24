@@ -69,7 +69,9 @@ context in production, so the working regex form is intentional. Run
 Upload `scripts/ols-add-headers.py` to `/home/kssmi.com/ols-add-headers.py`, then
 review and run it as root. It creates a timestamped vhost backup, replaces only
 its marker-delimited cache contexts, removes a legacy `expires { ... }` block if
-present, and installs only the exact homepage and runtime asset contexts. Validate the configuration
+present, turns off the inherited server-level `expiresByType` policy for this
+vhost (`expires { enableExpires 0 }` inside the managed block), and installs
+only the exact homepage and runtime asset contexts. Validate the configuration
 before restarting OpenLiteSpeed:
 
 ```sh
@@ -95,6 +97,35 @@ Cloudflare should cache, not author, the browser policy:
    `s-maxage=600` then controls the edge TTL.
 6. The API token only needs Zone / Cache Purge permission for the production
    zone. Do not use the Global API Key.
+
+### Measured state (2026-10-24) and the required change
+
+A direct-origin request (`curl --resolve kssmi.com:443:127.0.0.1`) compared with
+the public response showed three sources of static `Cache-Control`:
+
+| Path | Origin (OLS) | Added by Cloudflare | Public result |
+|---|---|---|---|
+| `/_astro/*.css`, `/media/*.webp`, `/favicon.svg` | `public, max-age=604800` (server-level `expiresByType`) | `public, max-age=31536000, immutable` | two conflicting headers |
+| `/js/vjt-tracker.js` (stable legacy name) | none | `immutable` **and** `max-age=3600, must-revalidate` | two conflicting headers |
+| `/pagefind/pagefind.js` (stable name) | none | `immutable` | one-year immutable on a stable name |
+| `/assets/runtime/*.js` | `immutable` (managed context) | none | correct |
+
+The server-level `expiresByType` duplicate is removed by re-running the OLS
+helper. The Cloudflare rules are not in this repository and must be changed in
+the dashboard. Do that **first**: if the origin duplicate disappears while the
+Cloudflare rule still adds `immutable` everywhere, `/media/*` keeps only the
+one-year immutable policy.
+
+1. Scope the rule that adds `max-age=31536000, immutable` to fingerprinted
+   paths only: `/_astro/*` and `/assets/runtime/*`. Make it a "set" (replace)
+   operation, not "add".
+2. For the remaining static paths (`/media/*`, `/pagefind/*`, `/js/*`,
+   `/favicon.*`, `/manifest.json`): `public, max-age=604800` without
+   `immutable`, because these file names do not change when their content does.
+3. Delete the second rule that adds `max-age=3600, must-revalidate` to
+   `/js/vjt-tracker.js`, or make it the only rule for that path.
+4. Re-run `ols-add-headers.py` on the server (see above) and check that each
+   path in the table returns exactly one `Cache-Control` header.
 
 The deploy workflow purges Cloudflare only when both secrets exist, then warms
 all 17 language homepages. Without those secrets it prints a warning and skips

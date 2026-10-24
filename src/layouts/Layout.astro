@@ -463,8 +463,9 @@ const websiteSchema = {
     {t.nav?.skipToContent || 'Skip to content'}
   </a>
   <style define:vars={{
-    '--font-sans': 'system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-    '--font-arabic': 'Tahoma, Arial, sans-serif'
+    // define:vars adds the leading "--" itself.
+    'font-sans': 'system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+    'font-arabic': 'Tahoma, Arial, sans-serif'
   }}>
     /* Base styles */
     html {

@@ -10,6 +10,11 @@ export async function getStaticPaths() {
 const { lang } = Astro.params;
 ---
 
+<!-- Legacy standalone fragment: pages now render the form inline, so nothing
+     fetches this route. It must never be indexed. OpenLiteSpeed ignores the
+     conditional X-Robots-Tag in .htaccess, so the meta tag is the control.
+     It comes before any content, so parsers place it in the implied <head>. -->
+<meta name="robots" content="noindex, nofollow" />
 <!-- Product context is injected by InquiryFormLazy in the browser. This route is static. -->
 <!-- This fragment has no Layout, so it brings its own Turnstile API loader. -->
 <TurnstileApiLoader />
