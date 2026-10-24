@@ -25,6 +25,7 @@ try {
     assert.match(matches[0], /http-equiv="Content-Security-Policy"/);
     assert.match(matches[0], /default-src 'self'/);
     assert.doesNotMatch(matches[0], /unsafe-inline/);
+    assert.doesNotMatch(matches[0], /frame-ancestors/, 'Browsers ignore frame-ancestors in a meta policy and log an error.');
     const policyValue = /content="([^"]*)"/.exec(matches[0])?.[1] ?? '';
     for (const token of policyValue.split(/\s+/)) {
       if (token.includes('sha256-')) {
@@ -39,6 +40,7 @@ try {
   assert.doesNotMatch(redirect, /data-kssmi-static-csp="1"/, 'Headless redirect must remain valid minimal HTML.');
   const htaccess = await readFile(path.join(dir, '.htaccess'), 'utf8');
   assert.doesNotMatch(htaccess, /Static HTML CSP BEGIN[\s\S]*unsafe-inline[\s\S]*Static HTML CSP END/);
+  assert.match(htaccess, /Static HTML CSP BEGIN[\s\S]*frame-ancestors 'self'[\s\S]*Static HTML CSP END/, 'The header policy keeps frame-ancestors.');
   console.log('Static CSP generation tests passed.');
 } finally {
   await rm(dir, { recursive: true, force: true });
