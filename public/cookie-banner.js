@@ -249,7 +249,6 @@
     document.getElementById('cookie-btn-preferences').addEventListener('click', function () { overlay.style.display = 'flex'; });
     document.getElementById('cookie-modal-cancel').addEventListener('click', closeModal);
     overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && overlay.style.display !== 'none') closeModal(); });
     document.getElementById('cookie-modal-save').addEventListener('click', function () {
       var a = checkAnalytics.checked;
       var d = checkAds.checked;
@@ -300,8 +299,23 @@
   function showBanner() {
     if (getConsent()) { removeBanner(); refreshSettingsButton(); return; } // already chose
     if (!document.body) return;
+    // astro:page-load also fires on the initial load, right after the direct
+    // call below; a navigation swaps <body> and removes the old banner.
+    if (document.getElementById('cookie-banner')) return;
     buildBannerDom();
   }
+
+  // One Escape handler for the whole page lifetime (the document survives SPA
+  // navigations). It acts only while the current preferences modal is open, so
+  // Escape elsewhere on the page never moves focus.
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    var overlay = document.getElementById('cookie-modal-overlay');
+    if (overlay && overlay.style.display === 'flex') {
+      overlay.style.display = 'none';
+      restoreFocus();
+    }
+  });
 
   // Initial load and every SPA navigation / language switch: a visitor who
   // has chosen sees only the settings button; otherwise the banner is
