@@ -138,9 +138,9 @@ input[type="search"]::-moz-search-clear-button {
   display: none;
 }
 
-/* Cookie banner fallback: its DOM is injected by a public JavaScript file.
-   Keep these class rules alongside the inline styles so the consent UI remains
-   usable in environments that sanitise dynamically-added style attributes. */
+/* Cookie banner: its DOM is injected by public/cookie-banner.js, which carries
+   no inline styles (the static CSP blocks style attributes). These class rules
+   are the banner's only styling. */
 .cookie-banner-main { position: fixed; inset: auto 0 0; z-index: 9999; background: rgb(255 255 255 / 97%); border-top: 1px solid #e5e7eb; box-shadow: 0 -2px 12px rgb(0 0 0 / 6%); backdrop-filter: blur(6px); }
 .cookie-banner-inner { max-width: 1860px; margin: 0 auto; padding: 12px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; }
 .cookie-banner-message { margin: 0; color: #4b5563; font-size: 13px; line-height: 1.5; }
