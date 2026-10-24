@@ -42,9 +42,9 @@ jobs:
         run: php scripts/verify-php-runtime.php
 
       - name: Check Cloudflare ranges and stamp this checkout
-        # Same ranges as cloudflare.com: verified_at becomes now in this
-        # checkout only (never committed), so checks never fail on the age
-        # of the repository copy. Changed ranges stop the run for review.
+        # Align this checkout (never committed) with cloudflare.com: same
+        # ranges get verified_at = now; up to 5 changes per family are adopted
+        # with a warning; a larger change stops the run for review.
         run: npm run stamp:cloudflare-ranges
 
       - name: Validate deployment release policy

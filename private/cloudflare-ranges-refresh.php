@@ -13,8 +13,13 @@ declare(strict_types=1);
  *
  *   php "$(dirname "$(readlink -f /home/kssmi.com/public_html)")/private/cloudflare-ranges-refresh.php"
  *
- * Prints one summary line; a change in the ranges is reported on stderr so it
- * reaches the cron log, and the monthly workflow opens a PR for the repo copy.
+ * Prints one summary line. A small change (at most 5 additions plus removals
+ * per family, compared with the current live file or, without one, the
+ * bundled snapshot) is applied and reported on stderr so it reaches the cron
+ * log. A larger change looks like a broken or tampered list: nothing is
+ * written and the run fails, keeping the current file. The deploy build
+ * (scripts/stamp-cloudflare-ranges.mjs) applies the same limit, so no PR is
+ * needed for a normal Cloudflare range change.
  *
  * Tests: KSSMI_CLOUDFLARE_SOURCE_DIR (files ips-v4, ips-v6) replaces the
  * download, and KSSMI_CLOUDFLARE_LIVE_RANGES_FILE / KSSMI_CLOUDFLARE_RANGES_FILE
@@ -27,6 +32,8 @@ if (PHP_SAPI !== 'cli') {
 }
 
 require_once __DIR__ . '/rate-limit.php';
+
+const KSSMI_REFRESH_MAX_CHANGES_PER_FAMILY = 5;
 
 const KSSMI_CLOUDFLARE_SOURCES = [
     'ipv4' => 'https://www.cloudflare.com/ips-v4/',
@@ -92,6 +99,30 @@ foreach (['ipv4', 'ipv6'] as $family) {
     $ranges[$family] = $parsed;
 }
 
+$livePath = kssmi_cloudflare_live_snapshot_path();
+if ($livePath === null) kssmi_refresh_fail('no live snapshot path is configured');
+
+// Compare with what the site trusts now: the live file, else the bundled one.
+$baseline = kssmi_refresh_read_ranges($livePath) ?? kssmi_refresh_read_ranges(kssmi_cloudflare_snapshot_path());
+$changes = [];
+foreach (['ipv4', 'ipv6'] as $family) {
+    $before = $baseline[$family] ?? [];
+    $familyChanges = [];
+    foreach (array_diff($ranges[$family], $before) as $cidr) $familyChanges[] = "+{$cidr}";
+    foreach (array_diff($before, $ranges[$family]) as $cidr) $familyChanges[] = "-{$cidr}";
+    if ($baseline !== null && count($familyChanges) > KSSMI_REFRESH_MAX_CHANGES_PER_FAMILY) {
+        kssmi_refresh_fail(sprintf(
+            'refusing %d %s changes at once (limit %d); the current file is kept. Check https://www.cloudflare.com/ips-v%s by hand: %s',
+            count($familyChanges),
+            $family,
+            KSSMI_REFRESH_MAX_CHANGES_PER_FAMILY,
+            $family === 'ipv4' ? '4' : '6',
+            implode(' ', $familyChanges)
+        ));
+    }
+    array_push($changes, ...$familyChanges);
+}
+
 $snapshot = [
     'schema_version' => 1,
     'verified_at' => gmdate('Y-m-d\TH:i:s\Z'),
@@ -101,8 +132,6 @@ $snapshot = [
 ];
 $encoded = json_encode($snapshot, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . "\n";
 
-$livePath = kssmi_cloudflare_live_snapshot_path();
-if ($livePath === null) kssmi_refresh_fail('no live snapshot path is configured');
 $directory = dirname($livePath);
 if (!is_dir($directory) || !is_writable($directory)) kssmi_refresh_fail("{$directory} is not writable");
 
@@ -124,21 +153,13 @@ if (!@rename($temporary, $livePath)) {
 }
 @chmod($livePath, 0600);
 
-$bundled = kssmi_refresh_read_ranges(kssmi_cloudflare_snapshot_path());
-$changes = [];
-foreach (['ipv4', 'ipv6'] as $family) {
-    $now = $ranges[$family];
-    $before = $bundled[$family] ?? [];
-    foreach (array_diff($now, $before) as $cidr) $changes[] = "+{$cidr}";
-    foreach (array_diff($before, $now) as $cidr) $changes[] = "-{$cidr}";
-}
 if ($changes !== []) {
-    fwrite(STDERR, '[' . gmdate('c') . '] Cloudflare ranges differ from the bundled snapshot: ' . implode(' ', $changes) . "\n");
+    fwrite(STDERR, '[' . gmdate('c') . '] Cloudflare changed its ranges; applied: ' . implode(' ', $changes) . "\n");
 }
 echo sprintf(
     "Live Cloudflare snapshot refreshed: %d IPv4, %d IPv6, verified %s, %s\n",
     count($ranges['ipv4']),
     count($ranges['ipv6']),
     $snapshot['verified_at'],
-    $changes === [] ? 'same ranges as the bundled snapshot' : 'ranges changed'
+    $changes === [] ? 'same ranges as before' : 'ranges changed'
 );

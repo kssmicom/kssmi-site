@@ -5,8 +5,9 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-// stamp-cloudflare-ranges.mjs: same ranges -> stamp verified_at (exit 0),
-// changed ranges -> exit 3 without writing, --check-only never writes.
+// stamp-cloudflare-ranges.mjs: same ranges -> stamp verified_at (exit 0), small
+// change -> adopt (exit 0), large change -> exit 3 without writing,
+// --check-only never writes.
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const script = path.join(root, 'scripts', 'stamp-cloudflare-ranges.mjs');
@@ -39,15 +40,36 @@ try {
   assert.ok(Math.abs(Date.parse(stamped.verified_at) - Date.now()) < 120_000, 'verified_at must become now');
   assert.deepEqual([stamped.ipv4, stamped.ipv6], [repoSnapshot.ipv4, repoSnapshot.ipv6], 'stamping must not change the ranges');
 
+  // A small change (here 1 IPv4 added, 1 IPv6 removed) is adopted.
+  const smallV4 = [...repoSnapshot.ipv4, '198.51.100.0/24'];
+  const smallV6 = repoSnapshot.ipv6.slice(1);
   writeSnapshot(stale);
-  writeOfficial([...repoSnapshot.ipv4, '198.51.100.0/24'], repoSnapshot.ipv6.slice(1));
-  for (const args of [[], ['--check-only']]) {
-    result = run(...args);
-    assert.equal(result.status, 3, 'changed ranges must exit 3 ' + JSON.stringify(args));
-    assert.match(result.stderr, /ipv4 added: 198\.51\.100\.0\/24/);
-    assert.match(result.stderr, /ipv6 removed: /);
-    assert.equal(JSON.parse(fs.readFileSync(snapshotPath, 'utf8')).verified_at, stale, 'changed ranges must never be stamped');
-  }
+  writeOfficial(smallV4, smallV6);
+  result = run('--check-only');
+  assert.equal(result.status, 3, '--check-only must report any change');
+  assert.match(result.stderr, /ipv4 added: 198\.51\.100\.0\/24/);
+  assert.equal(JSON.parse(fs.readFileSync(snapshotPath, 'utf8')).verified_at, stale, '--check-only must not write');
+  result = run();
+  assert.equal(result.status, 0, 'a small change must be adopted: ' + result.stderr);
+  assert.match(result.stdout, /::warning::Cloudflare changed its ranges; adopted in this checkout only: .*ipv4 added: 198\.51\.100\.0\/24/);
+  const adopted = JSON.parse(fs.readFileSync(snapshotPath, 'utf8'));
+  assert.deepEqual([adopted.ipv4, adopted.ipv6], [smallV4, smallV6], 'the official ranges must be adopted');
+  assert.ok(Math.abs(Date.parse(adopted.verified_at) - Date.now()) < 120_000, 'an adopted snapshot is verified now');
+
+  // Five changes in one family is still small; six is not.
+  const extra = ['198.51.100.0/24', '203.0.113.0/24', '192.0.2.0/24', '198.18.0.0/24', '198.18.1.0/24', '198.18.2.0/24'];
+  writeSnapshot(stale);
+  writeOfficial([...repoSnapshot.ipv4, ...extra.slice(0, 5)], repoSnapshot.ipv6);
+  assert.equal(run().status, 0, 'five changes in one family must be adopted');
+  writeSnapshot(stale);
+  writeOfficial([...repoSnapshot.ipv4, ...extra], repoSnapshot.ipv6);
+  result = run();
+  assert.equal(result.status, 3, 'six changes in one family must stop the build');
+  assert.match(result.stderr, /not adopted automatically/);
+  assert.equal(JSON.parse(fs.readFileSync(snapshotPath, 'utf8')).verified_at, stale, 'a large change must never be written');
+  writeSnapshot(stale);
+  writeOfficial(repoSnapshot.ipv4.slice(6), repoSnapshot.ipv6);
+  assert.equal(run().status, 3, 'six removals in one family must stop the build');
 
   fs.writeFileSync(snapshotPath, '{"schema_version": 1}');
   assert.equal(run().status, 1, 'an invalid snapshot must fail');

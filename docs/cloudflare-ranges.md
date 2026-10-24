@@ -11,27 +11,32 @@ CIDRs, duplicates, family, list size, future timestamps, and a maximum age of
 45 days. Remote retrieval additionally requires TLS verification, `text/plain`,
 a bounded response, and a final URL that remains the exact official endpoint.
 
-## Keeping the snapshot fresh without a monthly PR
+## Keeping the ranges current without any PR
 
-Both snapshots below must be younger than 45 days, but no date-only PR is
-needed:
+Both snapshots below must be younger than 45 days. No PR is needed, neither
+for the date nor for a normal Cloudflare range change:
 
 - **Server (weekly):** the site account runs
   `private/cloudflare-ranges-refresh.php` (shipped with every release, like the
-  inquiry outbox worker) from cron. It downloads both official
-  lists, proves the result with the site's own strict PHP loader, and
-  atomically writes `rate_limit/cloudflare-ip-ranges.live.json` (0600, survives
-  deploys). PHP prefers this live file and falls back to the bundled
+  inquiry outbox worker) from cron. It downloads both official lists, proves
+  the result with the site's own strict PHP loader, and atomically writes
+  `rate_limit/cloudflare-ip-ranges.live.json` (0600, survives deploys). PHP
+  prefers this live file and falls back to the bundled
   `private/cloudflare-ip-ranges.json` when it is missing, invalid or stale. A
-  failed download leaves the previous live file in place. A range change is
-  applied (like the host firewall's weekly list) and reported on stderr.
-- **CI and deploy (`npm run stamp:cloudflare-ranges`):** compares the
-  repository ranges with the official lists. Same ranges: `verified_at` is set
-  to the build time in the CI checkout only (never committed), so every release
-  ships a freshly verified fallback. Changed ranges: the run stops (exit 3) for
-  review.
-- **Monthly workflow:** `stamp:cloudflare-ranges -- --check-only`; it opens the
-  reviewable update PR only when Cloudflare actually changed its ranges.
+  failed download leaves the previous live file in place.
+- **CI, deploy and the weekly audit (`npm run stamp:cloudflare-ranges`):**
+  compare the repository ranges with the official lists in the CI checkout
+  only (never committed). Same ranges: `verified_at` becomes the build time.
+  A small change is adopted and shown as a GitHub warning, so every release
+  ships the current official ranges, freshly verified.
+- **Change limit (both places):** at most 5 additions plus removals per
+  family are applied automatically. Cloudflare changes a few ranges at a time;
+  a larger difference looks like a broken or tampered list, so the server keeps
+  its current file (the cron log shows the refused change) and the build stops
+  with exit 3. Only then does a person check both official lists and, if they
+  are genuine, run `npm run update:cloudflare-ranges` and commit.
+- The repository copy is a record of the last reviewed list; it may be older
+  than 45 days and may lag small changes.
 
 ## Runtime boundary
 
