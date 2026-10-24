@@ -5,7 +5,7 @@ declare(strict_types=1);
  * Live Cloudflare snapshot tests.
  *
  * The site prefers rate_limit/cloudflare-ip-ranges.live.json, refreshed weekly
- * on the server by scripts/refresh-cloudflare-ranges.php, and falls back to the
+ * on the server by private/cloudflare-ranges-refresh.php, and falls back to the
  * bundled snapshot. Both pass the same strict loader and the 45-day limit.
  *
  * Run: php scripts/test-cloudflare-live-ranges.php
@@ -86,7 +86,7 @@ try {
             $command[] = '-d'; $command[] = 'extension_dir=' . (string)ini_get('extension_dir');
             $command[] = '-d'; $command[] = 'extension=curl';
         }
-        $command[] = $repo . '/scripts/refresh-cloudflare-ranges.php';
+        $command[] = $repo . '/private/cloudflare-ranges-refresh.php';
         $environment = getenv();
         $environment['KSSMI_CLOUDFLARE_SOURCE_DIR'] = $tree . '/sources';
         $process = proc_open($command, [1 => ['pipe', 'w'], 2 => ['pipe', 'w']], $pipes, $tree, $environment);

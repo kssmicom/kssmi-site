@@ -11,7 +11,7 @@ declare(strict_types=1);
  * list leaves the previous live file untouched (the bundled snapshot remains
  * the fallback). Run it as the site account, never root, e.g. weekly:
  *
- *   php "$(dirname "$(readlink -f /home/kssmi.com/public_html)")/scripts/refresh-cloudflare-ranges.php"
+ *   php "$(dirname "$(readlink -f /home/kssmi.com/public_html)")/private/cloudflare-ranges-refresh.php"
  *
  * Prints one summary line; a change in the ranges is reported on stderr so it
  * reaches the cron log, and the monthly workflow opens a PR for the repo copy.
@@ -26,7 +26,7 @@ if (PHP_SAPI !== 'cli') {
     exit;
 }
 
-require_once dirname(__DIR__) . '/private/rate-limit.php';
+require_once __DIR__ . '/rate-limit.php';
 
 const KSSMI_CLOUDFLARE_SOURCES = [
     'ipv4' => 'https://www.cloudflare.com/ips-v4/',

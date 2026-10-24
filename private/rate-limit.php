@@ -128,7 +128,7 @@ function kssmi_cloudflare_snapshot_path(): string {
 }
 
 /**
- * Snapshot the server refreshes weekly (scripts/refresh-cloudflare-ranges.php,
+ * Snapshot the server refreshes weekly (private/cloudflare-ranges-refresh.php,
  * run by the site account). It lives in the persistent rate_limit directory,
  * so it survives deploys; the bundled snapshot above is the fallback. Null
  * disables it (CLI tests that pin KSSMI_CLOUDFLARE_RANGES_FILE).

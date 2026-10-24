@@ -86,7 +86,7 @@ for (const [label, workflow] of [
 const [monthlyWorkflow, rateLimit, refreshScript] = await Promise.all([
   readText('.github/workflows/monthly-cloudflare-snapshot.yml'),
   readText('private/rate-limit.php'),
-  readText('scripts/refresh-cloudflare-ranges.php'),
+  readText('private/cloudflare-ranges-refresh.php'),
 ]);
 for (const [label, workflow] of [
   ['deployment', deployWorkflow],
@@ -110,6 +110,8 @@ assert.match(
   'The live snapshot must be preferred and pass the same strict loader as the bundled one.'
 );
 assert.match(refreshScript, /PHP_SAPI !== 'cli'/, 'The refresh script must only run from the command line.');
+// The release artifact ships all of private/ but only named files from scripts/.
+assert.match(deployWorkflow, /tar -cf kssmi-release\.tar[\s\S]*?\bdist private\b/, 'The release artifact must ship private/, where the refresh script lives.');
 assert.match(refreshScript, /kssmi_cloudflare_snapshot_load\(\$temporary\) === null/, 'The refresh script must prove the new snapshot before it goes live.');
 
 for (const requiredProcedure of [
