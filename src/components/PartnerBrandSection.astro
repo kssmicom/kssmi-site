@@ -11,14 +11,8 @@ const pt = t.product || {};
 const isRTL = lang === 'ar';
 const benefits = [pt.benefit1, pt.benefit2, pt.benefit3, pt.benefit4, pt.benefit5, pt.benefit6]
   .filter((benefit): benefit is string => Boolean(benefit));
-const accents = [
-  { color: '#9B694E', soft: '#F3E9E3' },
-  { color: '#63796B', soft: '#E7EFEA' },
-  { color: '#63778B', soft: '#E8EDF2' },
-  { color: '#806A7D', soft: '#EEE8ED' },
-  { color: '#967B51', soft: '#F2ECE2' },
-  { color: '#706A63', soft: '#ECEAE7' },
-];
+// Number of .benefit-tone-N accent classes defined in the <style> below.
+const ACCENT_TONES = 6;
 ---
 
 <section
@@ -38,8 +32,7 @@ const accents = [
     <ul class="mx-auto grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5" aria-label={pt.partnerTitle}>
       {benefits.map((benefit, index) => (
         <li
-          class="partner-benefit group/benefit kx-partnerbrandsection-2"
-          style={`--benefit-accent:${accents[index % accents.length].color};--benefit-soft:${accents[index % accents.length].soft};`}
+          class:list={['partner-benefit group/benefit kx-partnerbrandsection-2', `benefit-tone-${index % ACCENT_TONES}`]}
         >
           <span class="benefit-icon kx-partnerbrandsection-1">
             <svg class="kx-partnerbrandsection-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
@@ -56,6 +49,15 @@ const accents = [
 </section>
 
 <style>
+  /* Per-card accent colors (were inline style attributes, which the CSP
+     blocks). ACCENT_TONES above must match the number of tones. */
+  .benefit-tone-0 { --benefit-accent: #9B694E; --benefit-soft: #F3E9E3; }
+  .benefit-tone-1 { --benefit-accent: #63796B; --benefit-soft: #E7EFEA; }
+  .benefit-tone-2 { --benefit-accent: #63778B; --benefit-soft: #E8EDF2; }
+  .benefit-tone-3 { --benefit-accent: #806A7D; --benefit-soft: #EEE8ED; }
+  .benefit-tone-4 { --benefit-accent: #967B51; --benefit-soft: #F2ECE2; }
+  .benefit-tone-5 { --benefit-accent: #706A63; --benefit-soft: #ECEAE7; }
+
   .partner-benefit::before {
     content: '';
     position: absolute;

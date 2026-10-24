@@ -384,10 +384,10 @@ const websiteSchema = {
 >
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TSW9LBMG"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  height="0" width="0" class="hidden invisible"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <!-- Page Transition Loader -->
-  <div id="page-loader" class="fixed top-0 left-0 w-full h-[3px] bg-[#8B7355] z-[99999] origin-left scale-x-0 transition-transform duration-300 pointer-events-none" style="transform:translateZ(0)"></div>
+  <div id="page-loader" class="fixed top-0 left-0 w-full h-[3px] bg-[#8B7355] z-[99999] origin-left scale-x-0 transition-transform duration-300 pointer-events-none"></div>
   <script is:inline>
     (() => {
     const lifecycleKey = '__kssmiClientRouterLifecycle';
@@ -462,15 +462,19 @@ const websiteSchema = {
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[9999] bg-[#5D4E37] text-white px-4 py-2 font-bold rounded-md shadow-lg outline-hidden focus:ring-4 focus:ring-[#8B7355]/50">
     {t.nav?.skipToContent || 'Skip to content'}
   </a>
-  <style define:vars={{
-    // define:vars adds the leading "--" itself.
-    'font-sans': 'system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-    'font-arabic': 'Tahoma, Arial, sans-serif'
-  }}>
+  {/* --font-sans and --font-arabic come from @theme in global.css. No
+      define:vars here: it renders as style="" attributes, which the static
+      CSP blocks (style-src has no 'unsafe-hashes'). */}
+  <style>
     /* Base styles */
     html {
       scroll-behavior: smooth;
       overflow-x: hidden;
+    }
+
+    /* Own compositing layer for the page loader (was an inline style) */
+    #page-loader {
+      transform: translateZ(0);
     }
 
     /* Default Latin Font */

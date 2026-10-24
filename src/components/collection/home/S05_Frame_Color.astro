@@ -56,8 +56,7 @@ const materials = entry?.data?.materials || [];
     <div class="flex flex-wrap justify-center gap-5 md:gap-6">
       {materials.map((m: any, i: number) => (
         <div
-          class="mat-card group flex flex-col w-[calc(50%-0.625rem)] sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(25%-1.125rem)] bg-white rounded-2xl overflow-hidden shadow-xs ring-1 ring-stone-200/70 hover:shadow-xl active:shadow-xl focus-visible:shadow-xl focus-within:shadow-xl hover:shadow-stone-200/60 active:shadow-stone-200/60 focus-visible:shadow-stone-200/60 focus-within:shadow-stone-200/60 hover:ring-stone-300 active:ring-stone-300 focus-visible:ring-stone-300 focus-within:ring-stone-300 transition-all duration-500 cursor-pointer motion-safe:animate-[matFadeInUp_0.5s_ease-out_both]"
-          style={`animation-delay: ${0.1 + i * 0.05}s`}
+          class:list={["mat-card group flex flex-col w-[calc(50%-0.625rem)] sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(25%-1.125rem)] bg-white rounded-2xl overflow-hidden shadow-xs ring-1 ring-stone-200/70 hover:shadow-xl active:shadow-xl focus-visible:shadow-xl focus-within:shadow-xl hover:shadow-stone-200/60 active:shadow-stone-200/60 focus-visible:shadow-stone-200/60 focus-within:shadow-stone-200/60 hover:ring-stone-300 active:ring-stone-300 focus-visible:ring-stone-300 focus-within:ring-stone-300 transition-all duration-500 cursor-pointer motion-safe:animate-[matFadeInUp_0.5s_ease-out_both]", `kx-stagger-5-${i}`]}
         >
           <a href={`${prefix}/product/?color=${m.slug}`} class="relative aspect-[4/3] overflow-hidden bg-stone-100 block">
             <img

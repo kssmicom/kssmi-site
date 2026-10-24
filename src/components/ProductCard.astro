@@ -43,7 +43,7 @@ const coverSrc = cardSrc(cover);
 ---
 
 <a href={`/${currentPath}product/${productSlug}`} class="group block" dir={isRTL ? 'rtl' : 'ltr'}>
-  <div class="kx-productcard-3" style={belowFold ? "content-visibility:auto;contain-intrinsic-size:auto 360px" : ""}>
+  <div class:list={['kx-productcard-3', belowFold && 'kx-below-fold']}>
     <!-- Product Image with Hover Overlay -->
     <div class="relative aspect-[4/3] overflow-hidden bg-gray-100" data-product-cover>
       {cover ? (
