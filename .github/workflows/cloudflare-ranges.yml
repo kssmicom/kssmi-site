@@ -37,5 +37,6 @@ jobs:
 
       - name: Validate snapshot and compare official ranges
         run: |
+          npm run stamp:cloudflare-ranges
           npm run test:cloudflare-ranges
           npm run validate:cloudflare-ranges -- --check-remote

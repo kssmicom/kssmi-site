@@ -54,6 +54,12 @@ jobs:
       - name: Verify PHP runtime and required extensions
         run: php scripts/verify-php-runtime.php
 
+      - name: Check Cloudflare ranges and stamp this checkout
+        # Same ranges as cloudflare.com: verified_at becomes now in this
+        # checkout only (never committed), so checks never fail on the age
+        # of the repository copy. Changed ranges stop the run for review.
+        run: npm run stamp:cloudflare-ranges
+
       - name: Validate deployment and promotion policies
         run: |
           bash -n scripts/deploy-release.sh
@@ -103,6 +109,7 @@ jobs:
           npm run test:vjt-capability-proof
           php scripts/test-email-log-store.php
           php scripts/test-rate-limit.php
+          php scripts/test-cloudflare-live-ranges.php
           php scripts/test-vjt-event-authenticity.php
           php scripts/test-vjt-write-budget.php
           php scripts/test-vjt-checkpoint.php

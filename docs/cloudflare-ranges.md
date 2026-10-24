@@ -11,6 +11,27 @@ CIDRs, duplicates, family, list size, future timestamps, and a maximum age of
 45 days. Remote retrieval additionally requires TLS verification, `text/plain`,
 a bounded response, and a final URL that remains the exact official endpoint.
 
+## Keeping the snapshot fresh without a monthly PR
+
+Both snapshots below must be younger than 45 days, but no date-only PR is
+needed:
+
+- **Server (weekly):** the site account runs
+  `scripts/refresh-cloudflare-ranges.php` from cron. It downloads both official
+  lists, proves the result with the site's own strict PHP loader, and
+  atomically writes `rate_limit/cloudflare-ip-ranges.live.json` (0600, survives
+  deploys). PHP prefers this live file and falls back to the bundled
+  `private/cloudflare-ip-ranges.json` when it is missing, invalid or stale. A
+  failed download leaves the previous live file in place. A range change is
+  applied (like the host firewall's weekly list) and reported on stderr.
+- **CI and deploy (`npm run stamp:cloudflare-ranges`):** compares the
+  repository ranges with the official lists. Same ranges: `verified_at` is set
+  to the build time in the CI checkout only (never committed), so every release
+  ships a freshly verified fallback. Changed ranges: the run stops (exit 3) for
+  review.
+- **Monthly workflow:** `stamp:cloudflare-ranges -- --check-only`; it opens the
+  reviewable update PR only when Cloudflare actually changed its ranges.
+
 ## Runtime boundary
 
 The deployed PHP consumer reads the private snapshot and trusts forwarded

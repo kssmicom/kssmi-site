@@ -37,8 +37,10 @@
     "validate:rollback-safety": "node scripts/validate-rollback-safety-policy.mjs",
     "validate:release-evidence": "node scripts/validate-release-evidence-policy.mjs",
     "update:cloudflare-ranges": "node scripts/update-cloudflare-ranges.mjs",
+    "stamp:cloudflare-ranges": "node scripts/stamp-cloudflare-ranges.mjs",
     "fix:interactions": "node scripts/fix-interaction-policy.mjs",
-    "test:cloudflare-ranges": "node scripts/test-cloudflare-ranges.mjs",
+    "test:cloudflare-ranges": "node scripts/test-cloudflare-ranges.mjs && node scripts/test-cloudflare-stamp.mjs",
+    "test:cloudflare-live-ranges": "php scripts/test-cloudflare-live-ranges.php",
     "test:static-csp": "node scripts/test-static-csp.mjs",
     "test:runtime-assets": "node scripts/test-runtime-assets.mjs",
     "test:permissions": "bash scripts/test-permission-policy.sh",
@@ -72,7 +74,7 @@
     "test:short-links-session": "php scripts/test-short-links-session.php",
     "test:short-links-auth": "php scripts/test-short-links-auth.php",
     "test:short-links-http": "php scripts/test-short-links-http.php",
-    "test:php": "npm run test:vjt-capability-proof && npm run test:backend && npm run test:email-log && npm run test:rate-limit && npm run test:vjt-authenticity && npm run test:vjt-write-budget && npm run test:vjt-checkpoint && npm run test:contact-core && npm run test:inquiry-autoreply && npm run test:inquiry-outbox && npm run test:send-mail-outbox-http && npm run test:vjt-event-state && npm run test:vjt-heartbeat && npm run test:vjt-data-quality && npm run test:anon-page-path && npm run test:http-security && npm run test:access-jwt && npm run test:reset-race && npm run test:admin-session && npm run test:credential-persistence && npm run test:short-links && npm run test:short-links-session && npm run test:short-links-auth && npm run test:short-links-http"
+    "test:php": "npm run test:vjt-capability-proof && npm run test:backend && npm run test:email-log && npm run test:rate-limit && npm run test:cloudflare-live-ranges && npm run test:vjt-authenticity && npm run test:vjt-write-budget && npm run test:vjt-checkpoint && npm run test:contact-core && npm run test:inquiry-autoreply && npm run test:inquiry-outbox && npm run test:send-mail-outbox-http && npm run test:vjt-event-state && npm run test:vjt-heartbeat && npm run test:vjt-data-quality && npm run test:anon-page-path && npm run test:http-security && npm run test:access-jwt && npm run test:reset-race && npm run test:admin-session && npm run test:credential-persistence && npm run test:short-links && npm run test:short-links-session && npm run test:short-links-auth && npm run test:short-links-http"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
