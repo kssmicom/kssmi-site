@@ -159,6 +159,16 @@ if (categorySeoEntry) {
     .replace('{category}', categoryTitle)
     .replace('{count}', String(categoryMatchedCount));
 }
+
+// Paginated pages 2+ get the localized page number, so each page in the series
+// has a distinguishable title and description in search results. Same rule as
+// the template's currentPg: a trailing numeric path segment is the page number.
+const seoPageNum = (() => { const segs = Astro.url.pathname.split('/').filter(Boolean); const n = parseInt(segs[segs.length - 1], 10); return Number.isNaN(n) ? 1 : n; })();
+if (seoPageNum > 1) {
+  const pageLabel = (t.pagination?.page || 'Page {n}').replace('{n}', String(seoPageNum));
+  pageTitle = `${pageTitle} – ${pageLabel}`;
+  pageDescription = `${pageLabel}: ${pageDescription}`;
+}
 ---
 
 <Layout title={pageTitle} description={pageDescription} lang={lang} lcpImage={lcpImage}>

@@ -73,6 +73,14 @@ if (productSeoEntry) {
   pageTitle = title;
   pageDescription = (pt.listingSeoDescription || '').replace('{count}', String(allProducts.length));
 }
+
+// Paginated pages 2+ get the localized page number, so each page in the series
+// has a distinguishable title and description in search results.
+if (currentPage > 1) {
+  const pageLabel = (t.pagination?.page || 'Page {n}').replace('{n}', String(currentPage));
+  pageTitle = `${pageTitle} – ${pageLabel}`;
+  pageDescription = `${pageLabel}: ${pageDescription}`;
+}
 ---
 
 <Layout title={pageTitle} description={pageDescription} lang={lang} lcpImage={lcpImage} noindex={noindex}>
