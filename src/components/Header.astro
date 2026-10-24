@@ -359,7 +359,7 @@ const languageNames = {
         <div class="flex items-center justify-between w-full pr-4">
           {item.hasDropdown ? (
             <>
-              <a href={item.href} class="mobile-menu-link block py-3 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] transition-colors grow flex items-center font-Manrope font-bold text-lg">
+              <a href={item.href} class="mobile-menu-link kx-header-1">
                 {item.label}
               </a>
               <button class="mobile-toggle-btn w-11 h-11 flex items-center justify-center text-[#5D4E37] rounded-full active:bg-stone-100 transition-all z-20 cursor-pointer" aria-label={t.nav?.ariaToggleSubmenu || 'Toggle submenu'} aria-expanded="false">
@@ -367,7 +367,7 @@ const languageNames = {
               </button>
             </>
           ) : (
-            <a href={item.href} class="mobile-menu-link block py-3 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] transition-colors grow flex items-center font-Manrope font-bold text-lg">
+            <a href={item.href} class="mobile-menu-link kx-header-1">
               {item.label}
             </a>
           )}

@@ -302,12 +302,9 @@ for (const k of orderedKeys) {
     <!-- Certifications Grid — 3 / 5 / 6 / 7 cols -->
     <div class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 gap-3 md:gap-4">
       {certifications.map((cert) => (
-        <div class="group min-w-0 flex flex-col items-center bg-stone-50 border border-stone-100 rounded-lg p-2.5 sm:p-3 md:p-4
-                    hover:border-amber-700/40 active:border-amber-700/40 focus-visible:border-amber-700/40 focus-within:border-amber-700/40 hover:bg-white active:bg-white focus-visible:bg-white focus-within:bg-white hover:shadow-md active:shadow-md focus-visible:shadow-md focus-within:shadow-md hover:shadow-stone-200/60 active:shadow-stone-200/60 focus-visible:shadow-stone-200/60 focus-within:shadow-stone-200/60
-                    transition-all duration-300 cursor-default">
+        <div class="group kx-technicalspecs-1">
           <!-- Fluid image size prevents fixed-width badges from overflowing narrow columns -->
-          <div class="aspect-square w-full max-w-[58px] sm:max-w-[68px] md:max-w-20 lg:max-w-24
-                      mb-2.5 overflow-hidden rounded-lg shrink-0 border border-stone-100">
+          <div class="kx-technicalspecs-3">
             <img
               src={cert.image}
               alt={cert.label}
@@ -319,8 +316,7 @@ for (const k of orderedKeys) {
             />
           </div>
           <!-- Label -->
-          <span class="text-[10px] sm:text-[11px] text-stone-600 text-center font-semibold leading-snug
-                       group-hover:text-amber-700 group-active:text-amber-700 group-focus-visible:text-amber-700 group-focus-within:text-amber-700 transition-colors duration-300 line-clamp-2">
+          <span class="kx-technicalspecs-2">
             {cert.label}
           </span>
         </div>
