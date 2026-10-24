@@ -108,7 +108,7 @@ const secondaryHref = toHref(secondaryCtaUrl);
 
       <!-- Emphasized subheading lines -->
       {(subheadingLine1 || subheadingLine2) && (
-        <p class="hero-fade text-lg sm:text-xl lg:text-2xl font-semibold leading-snug mb-5" style="animation-delay:0.16s">
+        <p class="hero-fade text-lg sm:text-xl lg:text-2xl font-semibold leading-snug mb-5 kx-delay-16">
           {subheadingLine1 && (
             <span class="block bg-linear-to-r from-[#F5D08A] via-[#F0B85A] to-[#E0A23C] bg-clip-text text-transparent">
               {subheadingLine1}
@@ -120,14 +120,14 @@ const secondaryHref = toHref(secondaryCtaUrl);
 
       <!-- Description -->
       {description && (
-        <p class="hero-fade text-sm sm:text-base lg:text-lg text-stone-200/90 leading-relaxed max-w-xl lg:max-w-2xl mb-8" style="animation-delay:0.24s">
+        <p class="hero-fade text-sm sm:text-base lg:text-lg text-stone-200/90 leading-relaxed max-w-xl lg:max-w-2xl mb-8 kx-delay-24">
           {description}
         </p>
       )}
 
       <!-- CTAs -->
       {(primaryCta || secondaryCta) && (
-        <div class="hero-fade flex flex-col sm:flex-row sm:flex-wrap gap-3.5 sm:gap-4 mb-9" style="animation-delay:0.32s">
+        <div class="hero-fade flex flex-col sm:flex-row sm:flex-wrap gap-3.5 sm:gap-4 mb-9 kx-delay-32">
           {primaryCta && (
             <a
               href={primaryHref}
@@ -155,7 +155,7 @@ const secondaryHref = toHref(secondaryCtaUrl);
 
       <!-- SEO / category tags (smaller bullet row) -->
       {tags.length > 0 && (
-        <ul class="hero-fade flex flex-wrap items-center gap-x-5 gap-y-2.5 text-xs sm:text-sm text-stone-200/85" style="animation-delay:0.40s">
+        <ul class="hero-fade flex flex-wrap items-center gap-x-5 gap-y-2.5 text-xs sm:text-sm text-stone-200/85 kx-delay-40">
           {tags.map((tag) => (
             <li class="inline-flex items-center gap-1.5">
               <span class="w-1.5 h-1.5 rounded-full bg-amber-400/80" aria-hidden="true"></span>
@@ -167,7 +167,7 @@ const secondaryHref = toHref(secondaryCtaUrl);
 
       <!-- Process feature tags (third visual row of hero — pill chips) -->
       {featureTags.length > 0 && (
-        <ul class="hero-fade flex flex-wrap items-center gap-2.5 text-xs sm:text-sm mt-3.5" style="animation-delay:0.48s">
+        <ul class="hero-fade flex flex-wrap items-center gap-2.5 text-xs sm:text-sm mt-3.5 kx-delay-48">
           {featureTags.map((tag) => (
             <li class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-xs border border-white/25 text-stone-100/90 hover:bg-white/15 active:bg-white/15 focus-visible:bg-white/15 focus-within:bg-white/15 hover:border-white/40 active:border-white/40 focus-visible:border-white/40 focus-within:border-white/40 transition-colors duration-200">
               {tag}

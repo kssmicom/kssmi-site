@@ -594,6 +594,19 @@ const searchKeywords = {
     border-color: #8B7355;
     color: #5D4E37;
   }
+
+  /* Former inline style="" attributes of the result markup (blocked by the
+     static CSP, which has no 'unsafe-hashes'). Values are the inline ones. */
+  .src-placeholder-icon { width: 3rem; height: 3rem; color: #6b7280; }
+  .src-arrow-icon { width: 1rem; height: 1rem; }
+  .src-img-placeholder--logo { background: #faf8f5; }
+  .src-logo { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 1rem; }
+  .src-logo-word { font-size: 1.6rem; font-weight: 800; color: #503629; letter-spacing: 0.15em; text-transform: uppercase; line-height: 1; }
+  .src-logo-rule { height: 2px; width: 2.5rem; background: #503629; display: block; }
+  .src-logo-kind { font-size: 0.5rem; font-weight: 700; color: #503629; letter-spacing: 0.25em; text-transform: uppercase; margin-top: 2px; }
+  .src-title--1line { -webkit-line-clamp: 1; }
+  .src-desc-1line { font-size: 0.72rem; color: #6b7280; margin-top: 0.2rem; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+  .src-nav-disabled { cursor: not-allowed; opacity: 0.5; }
 </style>
 
 <script>
@@ -828,7 +841,7 @@ const searchKeywords = {
       const imageContent = image
         ? `<img src="${image}" alt="${title}" width="400" height="300" ${imgAttrs} class="src-img" />`
         : `<div class="src-img-placeholder">
-             <svg style="width:3rem;height:3rem;color:#6b7280" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+             <svg class="src-placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
              </svg>
@@ -841,7 +854,7 @@ const searchKeywords = {
               <div class="src-overlay">
                 <span class="src-overlay-pill">
                   ${viewDetails}
-                  <svg class="src-arrow" style="width:1rem;height:1rem" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="src-arrow src-arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                   </svg>
                 </span>
@@ -863,24 +876,15 @@ const searchKeywords = {
       ? `loading="eager" fetchpriority="high" decoding="sync"`
       : `loading="lazy" decoding="async"`;
     const kssmiLogo = `
-      <div style="
-        display:flex;flex-direction:column;align-items:center;justify-content:center;
-        gap:4px;padding:1rem;
-      ">
-        <span style="
-          font-size:1.6rem;font-weight:800;color:#503629;
-          letter-spacing:0.15em;text-transform:uppercase;line-height:1;
-        ">KSSMI</span>
-        <span style="height:2px;width:2.5rem;background:#503629;display:block;"></span>
-        <span style="
-          font-size:0.5rem;font-weight:700;color:#503629;
-          letter-spacing:0.25em;text-transform:uppercase;margin-top:2px;
-        ">${isPage ? 'PAGE' : 'ARTICLE'}</span>
+      <div class="src-logo">
+        <span class="src-logo-word">KSSMI</span>
+        <span class="src-logo-rule"></span>
+        <span class="src-logo-kind">${isPage ? 'PAGE' : 'ARTICLE'}</span>
       </div>
     `;
     const imageContent = image
       ? `<img src="${image}" alt="${title}" width="400" height="300" ${imgAttrs} class="src-img" />`
-      : `<div class="src-img-placeholder" style="background:#faf8f5;">${kssmiLogo}</div>`;
+      : `<div class="src-img-placeholder src-img-placeholder--logo">${kssmiLogo}</div>`;
     return `
       <a href="${url}" class="src-card">
         <div class="src-card-inner">
@@ -889,15 +893,15 @@ const searchKeywords = {
             <div class="src-overlay">
               <span class="src-overlay-pill">
                 ${viewDetails}
-                <svg class="src-arrow" style="width:1rem;height:1rem" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="src-arrow src-arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                 </svg>
               </span>
             </div>
           </div>
           <div class="src-info">
-            <h3 class="src-title" style="-webkit-line-clamp:1">${title}</h3>
-            ${desc ? `<p style="font-size:0.72rem;color:#6b7280;margin-top:0.2rem;line-height:1.3;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden">${desc}</p>` : ''}
+            <h3 class="src-title src-title--1line">${title}</h3>
+            ${desc ? `<p class="src-desc-1line">${desc}</p>` : ''}
           </div>
         </div>
       </a>`;
@@ -939,7 +943,7 @@ const searchKeywords = {
         <span class="hidden sm:inline">Previous</span>
       </button>`;
     } else {
-      html += `<span class="${navBtnClass}" style="cursor:not-allowed;opacity:0.5">
+      html += `<span class="${navBtnClass} src-nav-disabled">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
         <span class="hidden sm:inline">Previous</span>
       </span>`;
@@ -992,7 +996,7 @@ const searchKeywords = {
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
       </button>`;
     } else {
-      html += `<span class="${navBtnClass}" style="cursor:not-allowed;opacity:0.5">
+      html += `<span class="${navBtnClass} src-nav-disabled">
         <span class="hidden sm:inline">Next</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
       </span>`;

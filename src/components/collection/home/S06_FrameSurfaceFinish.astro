@@ -39,8 +39,7 @@ const materials = entry?.data?.materials || [];
       <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-[1px]">
         {materials.map((m: any, i: number) => (
           <div
-            class="con-cell group relative bg-white/90 backdrop-blur-md cursor-pointer transition-all duration-500 ease-out motion-safe:animate-[conCellIn_0.6s_cubic-bezier(0.22,1,0.36,1)_both] flex flex-col"
-            style={`animation-delay: ${0.1 + i * 0.07}s`}
+            class:list={["con-cell group relative bg-white/90 backdrop-blur-md cursor-pointer transition-all duration-500 ease-out motion-safe:animate-[conCellIn_0.6s_cubic-bezier(0.22,1,0.36,1)_both] flex flex-col", `kx-stagger-7-${i}`]}
           >
             <!-- Image -->
             <a href={`${prefix}/product/?surface-finish=${m.slug}`} class="relative aspect-[4/3] overflow-hidden bg-gray-200 block">
