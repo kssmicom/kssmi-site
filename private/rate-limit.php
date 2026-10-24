@@ -127,6 +127,22 @@ function kssmi_cloudflare_snapshot_path(): string {
     return __DIR__ . '/cloudflare-ip-ranges.json';
 }
 
+/**
+ * Snapshot the server refreshes weekly (scripts/refresh-cloudflare-ranges.php,
+ * run by the site account). It lives in the persistent rate_limit directory,
+ * so it survives deploys; the bundled snapshot above is the fallback. Null
+ * disables it (CLI tests that pin KSSMI_CLOUDFLARE_RANGES_FILE).
+ */
+function kssmi_cloudflare_live_snapshot_path(): ?string {
+    if (PHP_SAPI === 'cli') {
+        $override = getenv('KSSMI_CLOUDFLARE_LIVE_RANGES_FILE');
+        if (is_string($override) && $override !== '') return $override;
+        $pinned = getenv('KSSMI_CLOUDFLARE_RANGES_FILE');
+        if (is_string($pinned) && $pinned !== '') return null;
+    }
+    return dirname(__DIR__) . '/rate_limit/cloudflare-ip-ranges.live.json';
+}
+
 function kssmi_cloudflare_snapshot_max_age_seconds(): int {
     return 45 * 86400;
 }
@@ -237,16 +253,25 @@ function kssmi_cloudflare_ranges(): ?array {
     static $cachedRanges = null;
     static $loggedFailures = [];
 
-    $path = kssmi_cloudflare_snapshot_path();
-    clearstatcache(true, $path);
-    $mtime = @filemtime($path);
-    $size = @filesize($path);
-    $inode = @fileinode($path);
-    $cacheKey = $path . '|' . (string)$inode . '|' . (string)$mtime . '|' .
-        (string)$size . '|' . intdiv(time(), 3600);
+    // The weekly live snapshot wins when it is valid and fresh; otherwise the
+    // bundled snapshot is used. Both pass the same strict loader.
+    $paths = array_values(array_filter(
+        [kssmi_cloudflare_live_snapshot_path(), kssmi_cloudflare_snapshot_path()],
+        'is_string'
+    ));
+    $cacheKey = (string)intdiv(time(), 3600);
+    foreach ($paths as $path) {
+        clearstatcache(true, $path);
+        $cacheKey .= '|' . $path . '|' . (string)@fileinode($path) . '|' .
+            (string)@filemtime($path) . '|' . (string)@filesize($path);
+    }
     if ($cachedKey !== $cacheKey) {
         $cachedKey = $cacheKey;
-        $cachedRanges = kssmi_cloudflare_snapshot_load($path);
+        $cachedRanges = null;
+        foreach ($paths as $path) {
+            $cachedRanges = kssmi_cloudflare_snapshot_load($path);
+            if ($cachedRanges !== null) break;
+        }
     }
     if ($cachedRanges === null && !isset($loggedFailures[$cacheKey])) {
         if (count($loggedFailures) >= 32) $loggedFailures = [];

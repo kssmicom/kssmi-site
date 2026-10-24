@@ -26,9 +26,30 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci --legacy-peer-deps
-      - run: npm run update:cloudflare-ranges
-      - run: npm run test:cloudflare-ranges && npm run validate:cloudflare-ranges -- --check-remote
+      # The server refreshes its live snapshot weekly and CI stamps the
+      # repository copy, so a PR is only needed when Cloudflare actually
+      # changes its ranges.
+      - name: Compare repository ranges with Cloudflare
+        id: compare
+        run: |
+          set +e
+          npm run -s stamp:cloudflare-ranges -- --check-only
+          code=$?
+          set -e
+          if [ "$code" = 0 ]; then
+            echo 'Cloudflare ranges unchanged; no PR needed.' >> "$GITHUB_STEP_SUMMARY"
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+          elif [ "$code" = 3 ]; then
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          else
+            exit "$code"
+          fi
+      - if: steps.compare.outputs.changed == 'true'
+        run: npm run update:cloudflare-ranges
+      - if: steps.compare.outputs.changed == 'true'
+        run: npm run test:cloudflare-ranges && npm run validate:cloudflare-ranges -- --check-remote
       - name: Create reviewable update PR
+        if: steps.compare.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |

@@ -82,6 +82,36 @@ for (const [label, workflow] of [
   );
 }
 
+// Weekly server refresh + build-time stamp replace the monthly date-only PR.
+const [monthlyWorkflow, rateLimit, refreshScript] = await Promise.all([
+  readText('.github/workflows/monthly-cloudflare-snapshot.yml'),
+  readText('private/rate-limit.php'),
+  readText('scripts/refresh-cloudflare-ranges.php'),
+]);
+for (const [label, workflow] of [
+  ['deployment', deployWorkflow],
+  ['PHP CI', phpWorkflow],
+  ['weekly audit', auditWorkflow],
+]) {
+  const stampAt = workflow.indexOf('npm run stamp:cloudflare-ranges');
+  const validateAt = workflow.indexOf('npm run validate:cloudflare-ranges');
+  assert.ok(stampAt >= 0 && (validateAt < 0 || stampAt < validateAt), label + ' must compare and stamp the snapshot before validating it.');
+}
+assert.equal(packageScripts['stamp:cloudflare-ranges'], 'node scripts/stamp-cloudflare-ranges.mjs', 'package.json must expose the stamp command.');
+assert.match(
+  monthlyWorkflow,
+  /stamp:cloudflare-ranges -- --check-only[\s\S]*Create reviewable update PR\s*\n\s*if: steps\.compare\.outputs\.changed == 'true'/,
+  'The monthly workflow may open a PR only when Cloudflare changed its ranges.'
+);
+assert.match(rateLimit, /function kssmi_cloudflare_live_snapshot_path\(\)/, 'PHP must read the weekly live snapshot.');
+assert.match(
+  rateLimit,
+  /\[kssmi_cloudflare_live_snapshot_path\(\), kssmi_cloudflare_snapshot_path\(\)\][\s\S]*kssmi_cloudflare_snapshot_load\(\$path\)/,
+  'The live snapshot must be preferred and pass the same strict loader as the bundled one.'
+);
+assert.match(refreshScript, /PHP_SAPI !== 'cli'/, 'The refresh script must only run from the command line.');
+assert.match(refreshScript, /kssmi_cloudflare_snapshot_load\(\$temporary\) === null/, 'The refresh script must prove the new snapshot before it goes live.');
+
 for (const requiredProcedure of [
   'Add new Cloudflare CIDRs to the origin allowlist',
   'Deploy the reviewed repository snapshot',
