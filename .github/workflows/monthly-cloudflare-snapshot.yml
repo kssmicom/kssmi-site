@@ -37,12 +37,17 @@ jobs:
             exit 0
           fi
           branch="automation/cloudflare-snapshot-$(date -u +%Y-%m)"
+          # A rerun in the same month finds the branch already on GitHub. The
+          # checkout tracks only main, so name the expected remote commit
+          # (empty = must not exist); a bare --force-with-lease is rejected as
+          # "stale info", and a concurrent change is still refused.
+          remote_sha="$(git ls-remote origin "refs/heads/$branch" | cut -f1)"
           git checkout -B "$branch"
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add private/cloudflare-ip-ranges.json
           git commit -m 'chore: refresh Cloudflare origin ranges'
-          git push --force-with-lease origin "$branch"
+          git push --force-with-lease="refs/heads/$branch:$remote_sha" origin "$branch"
           if [ "$(gh pr list --head "$branch" --state open --json number --jq length)" != 0 ]; then
             echo "Snapshot PR for $branch is already open." >> "$GITHUB_STEP_SUMMARY"
             exit 0
