@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -82,11 +83,11 @@ for (const [label, workflow] of [
   );
 }
 
-// Weekly server refresh + build-time stamp replace the monthly date-only PR.
-const [monthlyWorkflow, rateLimit, refreshScript] = await Promise.all([
-  readText('.github/workflows/monthly-cloudflare-snapshot.yml'),
+// Weekly server refresh + build-time stamp keep the ranges current with no PR.
+const [rateLimit, refreshScript, stampScript] = await Promise.all([
   readText('private/rate-limit.php'),
   readText('private/cloudflare-ranges-refresh.php'),
+  readText('scripts/stamp-cloudflare-ranges.mjs'),
 ]);
 for (const [label, workflow] of [
   ['deployment', deployWorkflow],
@@ -98,10 +99,17 @@ for (const [label, workflow] of [
   assert.ok(stampAt >= 0 && (validateAt < 0 || stampAt < validateAt), label + ' must compare and stamp the snapshot before validating it.');
 }
 assert.equal(packageScripts['stamp:cloudflare-ranges'], 'node scripts/stamp-cloudflare-ranges.mjs', 'package.json must expose the stamp command.');
-assert.match(
-  monthlyWorkflow,
-  /stamp:cloudflare-ranges -- --check-only[\s\S]*Create reviewable update PR\s*\n\s*if: steps\.compare\.outputs\.changed == 'true'/,
-  'The monthly workflow may open a PR only when Cloudflare changed its ranges.'
+assert.ok(
+  !existsSync(resolve(root, '.github/workflows/monthly-cloudflare-snapshot.yml')),
+  'No workflow may open Cloudflare snapshot PRs; small range changes are adopted automatically.'
+);
+assert.match(stampScript, /export const MAX_AUTO_CHANGES_PER_FAMILY = 5;/, 'The build may adopt at most five range changes per family.');
+assert.match(stampScript, /if \(checkOnly \|\| large\)[\s\S]*process\.exit\(3\)/, 'A large range change must stop the build.');
+assert.match(refreshScript, /const KSSMI_REFRESH_MAX_CHANGES_PER_FAMILY = 5;/, 'The server refresh must apply the same five-change limit.');
+assert.ok(
+  refreshScript.indexOf('count($familyChanges) > KSSMI_REFRESH_MAX_CHANGES_PER_FAMILY') > 0 &&
+    refreshScript.indexOf('count($familyChanges) > KSSMI_REFRESH_MAX_CHANGES_PER_FAMILY') < refreshScript.indexOf('@fopen($temporary'),
+  'The server refresh must check the change limit before writing anything.'
 );
 assert.match(rateLimit, /function kssmi_cloudflare_live_snapshot_path\(\)/, 'PHP must read the weekly live snapshot.');
 assert.match(

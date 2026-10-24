@@ -106,7 +106,7 @@ try {
     $writeSources($official['ipv4'], $official['ipv6']);
     [$code, $out, $err] = $runRefresh();
     kssmi_live_assert($code === 0, "refresh must succeed: {$err}");
-    kssmi_live_assert(str_contains($out, 'same ranges as the bundled snapshot') && $err === '', 'unchanged ranges must be reported as unchanged');
+    kssmi_live_assert(str_contains($out, 'same ranges as before') && $err === '', 'unchanged ranges must be reported as unchanged');
     $live = json_decode((string)file_get_contents($livePath), true);
     kssmi_live_assert(
         $live['ipv4'] === $official['ipv4'] && $live['ipv6'] === $official['ipv6']
@@ -122,6 +122,15 @@ try {
     [$code, $out, $err] = $runRefresh();
     kssmi_live_assert($code === 0 && str_contains($err, '+' . $marker) && str_contains($out, 'ranges changed'), 'a range change must be applied and reported on stderr');
 
+    $before = (string)file_get_contents($livePath);
+    $extra = ['203.0.113.0/24', '192.0.2.0/24', '198.18.0.0/24', '198.18.1.0/24', '198.18.2.0/24', '198.18.3.0/24'];
+    $writeSources(array_merge($official['ipv4'], [$marker], $extra), $official['ipv6']);
+    [$code, , $err] = $runRefresh();
+    kssmi_live_assert($code === 1 && str_contains($err, 'refusing 6 ipv4 changes'), 'more than five changes in one family must be refused');
+    kssmi_live_assert((string)file_get_contents($livePath) === $before, 'a refused change must leave the live snapshot in place');
+    $writeSources(array_merge($official['ipv4'], [$marker], array_slice($extra, 0, 5)), $official['ipv6']);
+    [$code, , $err] = $runRefresh();
+    kssmi_live_assert($code === 0 && str_contains($err, '+198.18.2.0/24'), 'five changes in one family must be applied');
     $before = (string)file_get_contents($livePath);
     foreach ([
         'an HTML error page' => ["<html><body>error</body></html>", implode("\n", $official['ipv6'])],
