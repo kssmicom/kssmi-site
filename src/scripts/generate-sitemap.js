@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { execFileSync } from 'child_process';
 
 const publicDir = path.join(process.cwd(), 'public');
 const contentDir = path.join(process.cwd(), 'src/content');
@@ -15,30 +16,56 @@ const locales = [
   'ja', 'jv', 'ko', 'ms', 'pt', 'ru', 'tg', 'tr', 'vi'
 ];
 
-// Standard XML dates (YYYY-MM-DD)
-const currentDate = new Date().toISOString().split('T')[0];
-
-// Helper: get file modification date as YYYY-MM-DD
-const fileDate = (filePath) => {
+// lastmod must describe the content, not the build. File mtimes in a CI
+// checkout are all the checkout time, so dates come from Git history: one
+// `git log` pass maps each source file to its latest commit date. Without
+// history (shallow clone, no Git) lastmod is omitted rather than invented.
+const gitDates = (() => {
+  const dates = new Map();
   try {
-    const mtime = fs.statSync(filePath).mtime;
-    return mtime.toISOString().split('T')[0];
-  } catch { return currentDate; }
+    const shallow = execFileSync('git', ['rev-parse', '--is-shallow-repository'], { encoding: 'utf8' }).trim();
+    if (shallow !== 'false') return dates;
+    const log = execFileSync(
+      'git',
+      ['log', '--format=@%cs', '--name-only', '--no-renames', '--', 'src/content', 'src/pages'],
+      { encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 },
+    );
+    let current = null;
+    for (const line of log.split('\n')) {
+      if (line.startsWith('@')) current = line.slice(1);
+      else if (line && current && !dates.has(line)) dates.set(line, current);
+    }
+  } catch {
+    // No Git available: leave every lastmod out.
+  }
+  return dates;
+})();
+
+// Helper: latest commit date (YYYY-MM-DD) of a source file, or null
+const fileDate = (filePath) => {
+  const relative = path.relative(process.cwd(), filePath).split(path.sep).join('/');
+  return gitDates.get(relative) || null;
 };
+
+// Newest lastmod of a list of entries, or null when none has one
+const newestDate = (items) => items.reduce((newest, item) => (
+  item.lastmod && (!newest || item.lastmod > newest) ? item.lastmod : newest
+), null);
+
+const lastmodTag = (date, indent) => (date ? `${indent}<lastmod>${date}</lastmod>\n` : '');
 
 // Map core page slugs to their source .astro files
 const coreSourceMap = {
   '':            'index.astro',
-  'about-us':    'about-us.astro',
-  'contact':     'contact.astro',
   'faq':         'faq.astro',
   'quote':       'quote.astro',
-  'search':      'search.astro',
   'terms-privacy': 'terms-privacy.astro',
   'product':     'product/index.astro',
-  'blog':        'blog/index.astro',
-  'eyewear':     'eyewear/index.astro',
 };
+// about-us, contact, search, blog and eyewear render with noindex, so they are
+// not listed: a sitemap must only contain canonical, indexable URLs. Add a page
+// back here when its noindex is removed (scripts/validate-seo-output.mjs fails
+// the build if a listed page is noindex).
 
 let rootSitemapIndexEntries = '';
 
@@ -63,7 +90,7 @@ const generateUrlset = (items) => {
     }
     xml += `  <url>\n`;
     xml += `    <loc>${url}</loc>\n`;
-    xml += `    <lastmod>${item.lastmod || currentDate}</lastmod>\n`;
+    xml += lastmodTag(item.lastmod, '    ');
     xml += `    <changefreq>weekly</changefreq>\n`;
     xml += `    <priority>${priority}</priority>\n`;
     if (cover) {
@@ -92,15 +119,10 @@ locales.forEach(lang => {
   // 1. Core Pages
   const coreUrlDefs = [
     { slug: '', route: '' },
-    { slug: 'about-us', route: 'about-us' },
-    { slug: 'contact', route: 'contact' },
     { slug: 'faq', route: 'faq' },
     { slug: 'quote', route: 'quote' },
-    { slug: 'search', route: 'search' },
     { slug: 'terms-privacy', route: 'terms-privacy' },
     { slug: 'product', route: 'product' },
-    { slug: 'blog', route: 'blog' },
-    { slug: 'eyewear', route: 'eyewear' },
   ];
   const coreUrls = coreUrlDefs.map(d => {
     const astroFile = coreSourceMap[d.slug];
@@ -150,13 +172,21 @@ locales.forEach(lang => {
             const titleMatch = content.match(/title:\s*(.*?)\r?\n/);
             if (titleMatch) title = titleMatch[1].replace(/['"]/g, '').trim();
 
-            const publicDir = path.join(process.cwd(), 'public', 'media', 'products', slug);
-            if (fs.existsSync(publicDir)) {
-                const allImages = fs.readdirSync(publicDir)
-                    .filter(f => f.endsWith('.webp') || f.endsWith('.jpg') || f.endsWith('.png'))
-                    .sort();
-                if (allImages.length > 0) {
-                    cover = `${SITE_URL}/media/products/${slug}/${allImages[0]}`;
+            // The frontmatter cover is the full-size main image. Sorting the
+            // media folder used to pick the 120 px "-1-120w" thumbnail.
+            const coverMatch = content.match(/^cover:\s*["']?([^"'\r\n]+)["']?\s*$/m);
+            const coverPath = coverMatch ? coverMatch[1].trim() : '';
+            if (coverPath.startsWith('/media/') && fs.existsSync(path.join(process.cwd(), 'public', coverPath))) {
+                cover = `${SITE_URL}${coverPath}`;
+            } else {
+                const mediaDir = path.join(process.cwd(), 'public', 'media', 'products', slug);
+                if (fs.existsSync(mediaDir)) {
+                    const fullSize = fs.readdirSync(mediaDir)
+                        .filter(f => /-\d+\.(webp|jpg|png)$/.test(f))
+                        .sort((a, b) => Number(a.match(/-(\d+)\.\w+$/)[1]) - Number(b.match(/-(\d+)\.\w+$/)[1]));
+                    if (fullSize.length > 0) {
+                        cover = `${SITE_URL}/media/products/${slug}/${fullSize[0]}`;
+                    }
                 }
             }
           }
@@ -192,26 +222,18 @@ locales.forEach(lang => {
   let langSitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>\n`;
   langSitemapIndex += `<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>\n`;
   langSitemapIndex += `<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
-  ['core', 'products'].forEach(cat => {
+  const childSitemaps = [
+    { cat: 'core', urls: coreUrls },
+    { cat: 'products', urls: productUrls },
+    ...(blogUrls.length > 0 ? [{ cat: 'blogs', urls: blogUrls }] : []),
+    ...(featureUrls.length > 0 ? [{ cat: 'features', urls: featureUrls }] : []),
+  ];
+  childSitemaps.forEach(({ cat, urls }) => {
     langSitemapIndex += `  <sitemap>\n`;
     langSitemapIndex += `    <loc>${sitemapBaseUrl}/sitemap-${cat}.xml</loc>\n`;
-    langSitemapIndex += `    <lastmod>${currentDate}</lastmod>\n`;
+    langSitemapIndex += lastmodTag(newestDate(urls), '    ');
     langSitemapIndex += `  </sitemap>\n`;
   });
-  if (blogUrls.length > 0) {
-    langSitemapIndex += `  <sitemap>
-    <loc>${sitemapBaseUrl}/sitemap-blogs.xml</loc>
-    <lastmod>${currentDate}</lastmod>
-  </sitemap>
-`;
-  }
-  if (featureUrls.length > 0) {
-    langSitemapIndex += `  <sitemap>
-    <loc>${sitemapBaseUrl}/sitemap-features.xml</loc>
-    <lastmod>${currentDate}</lastmod>
-  </sitemap>
-`;
-  }
   langSitemapIndex += `</sitemapindex>`;
 
   fs.writeFileSync(path.join(langDir, 'sitemap.xml'), langSitemapIndex, 'utf-8');
@@ -219,7 +241,7 @@ locales.forEach(lang => {
   // Add exactly this language index to the root sitemap
   rootSitemapIndexEntries += `  <sitemap>\n`;
   rootSitemapIndexEntries += `    <loc>${sitemapBaseUrl}/sitemap.xml</loc>\n`;
-  rootSitemapIndexEntries += `    <lastmod>${currentDate}</lastmod>\n`;
+  rootSitemapIndexEntries += lastmodTag(newestDate(childSitemaps.flatMap(({ urls }) => urls)), '    ');
   rootSitemapIndexEntries += `  </sitemap>\n`;
 });
 

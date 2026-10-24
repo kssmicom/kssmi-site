@@ -32,6 +32,13 @@ END_MARKER = "# KSSMI MANAGED CACHE CONTEXTS END"
 # over .htaccess rewrite denials. Broad extension contexts (especially JSON)
 # can therefore expose files that security rewrites are meant to forbid.
 INSERTION = r"""# KSSMI MANAGED CACHE CONTEXTS BEGIN
+# The inherited server-level MIME expiry (image/css/js A604800) would otherwise add a
+# second Cache-Control to every static file, next to the Cloudflare static
+# asset rule. Keep one policy source per response.
+expires  {
+  enableExpires           0
+}
+
 context exp:^/$ {
   location                $DOC_ROOT/index.html
   allowBrowse             1

@@ -36,6 +36,7 @@ assert(htaccess.includes('KSSMI RUNTIME ASSET REWRITES END'), 'source .htaccess 
 assert(!/^ExpiresByType\b/m.test(htaccess), 'public/.htaccess must not define ExpiresByType');
 assert(!/^\s*Header\s+(?:always\s+)?(?:set|unset|append|merge)\s+Cache-Control\b/im.test(htaccess), 'public/.htaccess must not use unsupported OLS Cache-Control Header directives');
 assert(!olsHelper.includes('expiresByType'), 'OLS helper must not install a second MIME cache policy');
+assert(/KSSMI MANAGED CACHE CONTEXTS BEGIN[\s\S]*?expires\s+\{\s*enableExpires\s+0\s*\}[\s\S]*?KSSMI MANAGED CACHE CONTEXTS END/.test(olsHelper), 'OLS helper must disable the inherited server-level expiresByType policy inside its managed block');
 assert(olsHelper.includes('KSSMI MANAGED CACHE CONTEXTS BEGIN'), 'OLS helper must install a marker-delimited native cache context block');
 assert(olsHelper.includes('s-maxage=600'), 'OLS helper must define the HTML shared-cache policy');
 assert(olsHelper.includes('max-age=31536000, immutable'), 'OLS helper must define an immutable asset policy');
