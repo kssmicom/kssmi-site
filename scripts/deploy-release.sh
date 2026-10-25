@@ -389,13 +389,15 @@ create_release_link() {
 prepare_release_layout() {
   # "+" batches paths into a few chmod processes; "\;" started one per path
   # (~25k in a release). Same files, same modes, same order of the commands.
-  run_as_site find "$NEW_WEBROOT" -type d -exec chmod 755 {} +
-  run_as_site find "$NEW_WEBROOT" -type f -exec chmod 644 {} +
-  run_as_site find "$RELEASE_DIR/private" -type d -exec chmod 750 {} +
-  run_as_site find "$RELEASE_DIR/private" -type f -exec chmod 640 {} +
-  run_as_site find "$RELEASE_DIR/scripts" -type d -exec chmod 750 {} +
-  run_as_site find "$RELEASE_DIR/scripts" -type f -exec chmod 640 {} +
-  run_as_site find "$RELEASE_DIR/scripts" -type f -name '*.sh' -exec chmod 750 {} +
+  # With "+", find exits non-zero when a walk or a chmod fails; fail
+  # explicitly rather than relying on errexit in every calling context.
+  run_as_site find "$NEW_WEBROOT" -type d -exec chmod 755 {} + || fail "Could not set public release directory modes"
+  run_as_site find "$NEW_WEBROOT" -type f -exec chmod 644 {} + || fail "Could not set public release file modes"
+  run_as_site find "$RELEASE_DIR/private" -type d -exec chmod 750 {} + || fail "Could not set private release directory modes"
+  run_as_site find "$RELEASE_DIR/private" -type f -exec chmod 640 {} + || fail "Could not set private release file modes"
+  run_as_site find "$RELEASE_DIR/scripts" -type d -exec chmod 750 {} + || fail "Could not set release script directory modes"
+  run_as_site find "$RELEASE_DIR/scripts" -type f -exec chmod 640 {} + || fail "Could not set release script file modes"
+  run_as_site find "$RELEASE_DIR/scripts" -type f -name '*.sh' -exec chmod 750 {} + || fail "Could not set release shell script modes"
 
   create_release_link "$RELEASE_DIR/public_html" "$NEW_WEBROOT"
   create_release_link "$RELEASE_DIR/email_data" "$EMAIL_DATA_DIR"

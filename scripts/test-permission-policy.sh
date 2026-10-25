@@ -174,6 +174,43 @@ kssmi_policy_assert_tree "$release/dist" 755 644 "$uid" "$gid" public
 expect_failure 'non-octal tree mode' kssmi_policy_assert_tree "$release/dist" 755 64x "$uid" "$gid" public
 rm -r "$release/dist/deep"
 
+# Tree modes must be written as stat %a prints them: 000-777 or 1000-7777.
+for mode in 000 644 755 777 1777 2755 7777; do
+  kssmi_policy_valid_mode "$mode" || { printf 'Valid mode rejected: %s\n' "$mode" >&2; exit 1; }
+done
+for mode in '' 0 7 75 0755 0644 00755 77777 8 888 9999 8000 1800 any -755 +755 ' 755' '755 ' $'755\n' 7a5; do
+  expect_failure "out-of-range tree mode '${mode//$'\n'/\\n}'" kssmi_policy_valid_mode "$mode"
+done
+expect_failure 'tree check with a leading-zero directory mode' kssmi_policy_assert_tree "$release/dist" 0755 644 "$uid" "$gid" public
+expect_failure 'tree check with a five-digit file mode' kssmi_policy_assert_tree "$release/dist" 755 10644 "$uid" "$gid" public
+expect_failure 'tree check with an empty file mode' kssmi_policy_assert_tree "$release/dist" 755 '' "$uid" "$gid" public
+
+# A find that fails (unreadable directory, I/O error) must fail the tree
+# check, never let it pass on a partial walk. The wrapper runs the real find
+# and then reports failure when its arguments contain the given marker.
+assert_tree_with_failing_find() {
+  local marker="$1"
+  shift
+  (
+    find() {
+      local status=0
+      command find "$@" || status=$?
+      case " $* " in *" $marker "*) return 2 ;; esac
+      return "$status"
+    }
+    kssmi_policy_assert_tree "$@"
+  )
+}
+assert_tree_with_failing_find 'no-such-marker' "$release/dist" 755 644 "$uid" "$gid" public
+expect_failure 'find failure while selecting directories' \
+  assert_tree_with_failing_find '-mindepth 1 -type d' "$release/dist" 755 644 "$uid" "$gid" public
+expect_failure 'find failure while selecting files' \
+  assert_tree_with_failing_find '-type f (' "$release/dist" 755 644 "$uid" "$gid" public
+expect_failure 'find failure while scanning for symlinks' \
+  assert_tree_with_failing_find '-type l -print' "$release/dist" 755 644 "$uid" "$gid" public
+expect_failure 'find failure while scanning for special files' \
+  assert_tree_with_failing_find '! -type f' "$release/dist" 755 644 "$uid" "$gid" public
+
 expect_failure 'wrong owner contract' kssmi_policy_assert_path \
   "$release/dist/app.css" file 644 "$((uid + 1))" "$gid"
 
