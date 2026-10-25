@@ -145,6 +145,33 @@ expect_failure 'world-readable private file' kssmi_policy_reject_world_readable_
 expect_failure 'wrong private file mode' kssmi_policy_assert_tree "$release/private" 750 640 "$uid" "$gid" private
 chmod 640 "$release/private/http-security.php"
 
+# The tree check selects mismatches with find predicates instead of stat per
+# path; it must still catch every kind of mismatch anywhere in the tree.
+mkdir -p "$release/dist/deep/er"
+printf 'x' > "$release/dist/deep/er/page.html"
+chmod 755 "$release/dist/deep" "$release/dist/deep/er"
+chmod 644 "$release/dist/deep/er/page.html"
+kssmi_policy_assert_tree "$release/dist" 755 644 "$uid" "$gid" public
+chmod 640 "$release/dist/deep/er/page.html"
+expect_failure 'wrong mode on a deeply nested file' kssmi_policy_assert_tree "$release/dist" 755 644 "$uid" "$gid" public
+chmod 644 "$release/dist/deep/er/page.html"
+chmod 750 "$release/dist/deep/er"
+expect_failure 'wrong mode on a nested directory' kssmi_policy_assert_tree "$release/dist" 755 644 "$uid" "$gid" public
+chmod 755 "$release/dist/deep/er"
+if chmod 2755 "$release/dist/deep" 2>/dev/null && [ "$(stat -c '%a' -- "$release/dist/deep")" = 2755 ]; then
+  expect_failure 'setgid bit on a directory (exact mode, as stat %a)' kssmi_policy_assert_tree "$release/dist" 755 644 "$uid" "$gid" public
+fi
+chmod 755 "$release/dist/deep"
+odd_name="$release/dist/deep/odd name
+line.html"
+printf 'x' > "$odd_name"
+chmod 600 "$odd_name"
+expect_failure 'wrong mode on a file whose name has a space and a newline' kssmi_policy_assert_tree "$release/dist" 755 644 "$uid" "$gid" public
+chmod 644 "$odd_name"
+kssmi_policy_assert_tree "$release/dist" 755 644 "$uid" "$gid" public
+expect_failure 'non-octal tree mode' kssmi_policy_assert_tree "$release/dist" 755 64x "$uid" "$gid" public
+rm -r "$release/dist/deep"
+
 expect_failure 'wrong owner contract' kssmi_policy_assert_path \
   "$release/dist/app.css" file 644 "$((uid + 1))" "$gid"
 

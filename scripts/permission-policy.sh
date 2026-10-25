@@ -59,13 +59,29 @@ kssmi_policy_assert_tree() {
 
   kssmi_policy_assert_path "$root" directory "$directory_mode" "$expected_uid" "$expected_gid" || return 1
 
-  while IFS= read -r -d '' path; do
+  # One find pass per type selects the first entry whose mode, owner or group
+  # differs, instead of three stat processes per path (a release has ~25k
+  # paths). -perm with a bare octal mode compares all mode bits exactly, as
+  # stat %a does. The per-path check then reports that entry with its usual
+  # message; if it unexpectedly passes, the tree still fails closed.
+  case "$directory_mode$file_mode" in
+    *[!0-7]*) kssmi_policy_error "$label tree modes must be octal: $directory_mode $file_mode"; return 1 ;;
+  esac
+  path=''
+  IFS= read -r -d '' path < <(find -P "$root" -mindepth 1 -type d \
+    \( ! -perm "$directory_mode" -o ! -uid "$expected_uid" -o ! -gid "$expected_gid" \) -print0 -quit) || true
+  if [ -n "$path" ]; then
     kssmi_policy_assert_path "$path" directory "$directory_mode" "$expected_uid" "$expected_gid" || return 1
-  done < <(find -P "$root" -mindepth 1 -type d -print0)
-
-  while IFS= read -r -d '' path; do
+    kssmi_policy_error "$label directory does not match its policy: $path"
+    return 1
+  fi
+  IFS= read -r -d '' path < <(find -P "$root" -type f \
+    \( ! -perm "$file_mode" -o ! -uid "$expected_uid" -o ! -gid "$expected_gid" \) -print0 -quit) || true
+  if [ -n "$path" ]; then
     kssmi_policy_assert_path "$path" file "$file_mode" "$expected_uid" "$expected_gid" || return 1
-  done < <(find -P "$root" -type f -print0)
+    kssmi_policy_error "$label file does not match its policy: $path"
+    return 1
+  fi
 
   unexpected_link="$(find -P "$root" -type l -print -quit)"
   [ -z "$unexpected_link" ] || {

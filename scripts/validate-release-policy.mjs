@@ -104,24 +104,26 @@ assert.doesNotMatch(
   /find[^\n]*-name\s+["']?\*\.php["']?[^\n]*chmod\s+755/,
   'Deploy workflow must not make PHP source files executable.'
 );
+// The release tree is chmod-ed in batches ('{} +'); '{} \;' started one
+// process per path. The line anchor also rejects the '{} \;' form.
 assert.match(
   release,
-  /find "\$NEW_WEBROOT" -type d -exec chmod 755 \{\} \\;/,
+  /find "\$NEW_WEBROOT" -type d -exec chmod 755 \{\} \+$/m,
   'Public release directories must use mode 0755.'
 );
 assert.match(
   release,
-  /find "\$NEW_WEBROOT" -type f -exec chmod 644 \{\} \\;/,
+  /find "\$NEW_WEBROOT" -type f -exec chmod 644 \{\} \+$/m,
   'Public release files, including PHP source, must use mode 0644.'
 );
 assert.match(
   release,
-  /find "\$RELEASE_DIR\/private" -type f -exec chmod 640 \{\} \\;/,
+  /find "\$RELEASE_DIR\/private" -type f -exec chmod 640 \{\} \+$/m,
   'Private release source files must use mode 0640.'
 );
 assert.match(
   release,
-  /find "\$RELEASE_DIR\/scripts" -type f -name '\*\.sh' -exec chmod 750 \{\} \\;/,
+  /find "\$RELEASE_DIR\/scripts" -type f -name '\*\.sh' -exec chmod 750 \{\} \+$/m,
   'Release and permission-policy shell scripts must use mode 0750.'
 );
 assert.match(
