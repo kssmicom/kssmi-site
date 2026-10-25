@@ -4,8 +4,10 @@
 // attributes instead of define:vars, which keeps this file identical on every
 // page and cacheable as a fingerprinted runtime asset.
 //
-// Astro's ClientRouter re-executes body scripts after a soft navigation;
-// window.__vjtLoaderBound keeps one persistent loader/listener.
+// Astro's ClientRouter does not run a script again on a soft navigation when a
+// script with the same src has already run. A different src (a new fingerprint
+// after a deploy, in a tab that stayed open) does run; window.__vjtLoaderBound
+// keeps one persistent loader/listener in that case.
 (function() {
   var config = (document.currentScript && document.currentScript.dataset) || {};
   var trackerScriptUrl = config.trackerUrl || '';

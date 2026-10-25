@@ -1,7 +1,9 @@
 // Header lifecycle (mega menu, mobile menu, language dropdown, transparent
 // header on the hero). Loaded by Header.astro as a deferred external script
-// with the same text on every page, so ClientRouter runs it once per
-// document; astro:before-swap / astro:page-load then rebind each new page.
+// with the same text on every page, so ClientRouter does not run it again on a
+// soft navigation; astro:before-swap / astro:page-load rebind each new page. A
+// new fingerprint after a deploy does run in a tab that stayed open; the
+// lifecycle key below then tears the previous instance down first.
 (() => {
   // Keep exactly one Header lifecycle alive and tear down any previous one first.
   const lifecycleKey = '__kssmiHeaderLifecycle';

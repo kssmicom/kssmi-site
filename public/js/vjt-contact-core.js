@@ -2,8 +2,9 @@
 // contact capabilities they carry. Independent of analytics consent and never
 // owns navigation. Loaded by VisitorTracker.astro as a classic external script
 // at the end of <body>; endpoint URLs and the dev switch come from its data-*
-// attributes, so the file is identical on every page and ClientRouter runs it
-// once per document.
+// attributes, so the file is identical on every page and ClientRouter does not
+// run it again on a soft navigation. A new fingerprint after a deploy does run
+// in a tab that stayed open; window.__vjtContactCoreBound returns early then.
 (function() {
   if (window.__vjtContactCoreBound) return;
   window.__vjtContactCoreBound = true;
