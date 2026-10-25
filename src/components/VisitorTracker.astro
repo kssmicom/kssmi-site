@@ -133,11 +133,13 @@ const turnstileSiteKey = import.meta.env.PUBLIC_VJT_TURNSTILE_SITE_KEY;
       function destroyAttemptWidget(proofAttempt) {
         var container = proofAttempt.container;
         proofAttempt.container = null;
-        if (container && container.parentNode) container.parentNode.removeChild(container);
+        // Remove the widget while its container is still attached, so Turnstile
+        // can find and clean it up; detach the container afterwards.
         if (proofAttempt.widgetId !== null && window.turnstile) {
           try { window.turnstile.remove(proofAttempt.widgetId); } catch (_) {}
         }
         proofAttempt.widgetId = null;
+        if (container && container.parentNode) container.parentNode.removeChild(container);
       }
 
       // Ends one attempt exactly once. A failure starts the cooldown only if
