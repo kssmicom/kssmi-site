@@ -11,11 +11,12 @@ function assert(condition, message) {
 }
 
 const header = read('src/components/Header.astro');
+const headerScript = read('public/js/header.js');
 const languageTrees = header.match(/class="lang-dropdown-container\b/g) ?? [];
 
 assert(languageTrees.length === 1, `Header must contain exactly one language tree; found ${languageTrees.length}.`);
 assert(header.includes('id="header-menu-data"'), 'Header must keep one serialized secondary-menu data source.');
-assert(header.includes('function renderMenuContent('), 'Header secondary menus must remain interaction-rendered.');
+assert(headerScript.includes('function renderMenuContent(') && header.includes("runtimeAssetUrl('header')"), 'Header secondary menus must remain interaction-rendered.');
 assert(!header.includes('productsMenu?.children'), 'Products mega-menu tree must not be server-rendered.');
 assert(!header.includes('eyewearMenu?.children'), 'Eyewear mega-menu tree must not be server-rendered.');
 assert(!header.includes('blogMenu?.children'), 'Blog mega-menu tree must not be server-rendered.');
@@ -63,7 +64,7 @@ assert(
 // search GET requests never leak analytics context into their URLs. These two
 // AJAX inquiry forms must therefore declare their real transport explicitly;
 // an omitted method defaults to GET in the DOM and silently drops attribution.
-const inquiryForm = read('src/components/InquiryForm.astro');
+const inquiryForm = read('src/components/InquiryForm.astro') + '\n' + read('public/js/inquiry-form.js');
 const inquiryFormLoader = read('src/components/InquiryFormLazy.astro');
 const notFoundPage = read('src/components/pages/NotFoundPage.astro');
 assert(

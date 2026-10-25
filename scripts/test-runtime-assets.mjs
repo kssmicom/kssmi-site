@@ -22,11 +22,16 @@ import {
 } from './lib/runtime-assets.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const [vjtTrackerSource, inquiryFormSource, visitorTrackerSource, vjtLoaderSource] = await Promise.all([
+const [vjtTrackerSource, inquiryFormSource, visitorTrackerSource, vjtLoaderSource, contactCoreSource] = await Promise.all([
   readFile(resolve(root, 'public/js/vjt-tracker.js'), 'utf8'),
-  readFile(resolve(root, 'src/components/InquiryForm.astro'), 'utf8'),
+  // The form markup and its submission script (a runtime asset) together.
+  Promise.all([
+    readFile(resolve(root, 'src/components/InquiryForm.astro'), 'utf8'),
+    readFile(resolve(root, 'public/js/inquiry-form.js'), 'utf8'),
+  ]).then((parts) => parts.join('\n')),
   readFile(resolve(root, 'src/components/VisitorTracker.astro'), 'utf8'),
   readFile(resolve(root, 'public/js/vjt-loader.js'), 'utf8'),
+  readFile(resolve(root, 'public/js/vjt-contact-core.js'), 'utf8'),
 ]);
 
 function extractNamedFunction(source, name) {
@@ -188,7 +193,7 @@ assert.match(
 );
 
 const hostnameMappings = [
-  ...(visitorTrackerSource + '\n' + vjtLoaderSource).matchAll(/var\s+(?:vjtDevHostname|devHostname)\s*=\s*window\.location\.hostname[\s\S]*?;/g),
+  ...[visitorTrackerSource, vjtLoaderSource, contactCoreSource].join('\n').matchAll(/var\s+(?:vjtDevHostname|devHostname)\s*=\s*window\.location\.hostname[\s\S]*?;/g),
   ...inquiryFormSource.matchAll(/const\s+devHostname\s*=\s*window\.location\.hostname[\s\S]*?;/g),
 ].map((match) => match[0]);
 assert.ok(hostnameMappings.length >= 4, 'development hostname mappings are missing');
@@ -209,7 +214,7 @@ assert.ok(
 const manifest = await createRuntimeAssetManifest(root);
 assert.deepEqual(
   Object.keys(manifest.assets).sort(),
-  ['cookie-banner', 'vjt-loader', 'vjt-tracker'],
+  ['cookie-banner', 'header', 'inquiry-form', 'vjt-contact-core', 'vjt-loader', 'vjt-tracker'],
   'runtime manifest logical assets changed unexpectedly'
 );
 
