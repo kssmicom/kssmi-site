@@ -161,6 +161,8 @@ chmod 755 "$release/dist/deep/er"
 if chmod 2755 "$release/dist/deep" 2>/dev/null && [ "$(stat -c '%a' -- "$release/dist/deep")" = 2755 ]; then
   expect_failure 'setgid bit on a directory (exact mode, as stat %a)' kssmi_policy_assert_tree "$release/dist" 755 644 "$uid" "$gid" public
 fi
+# A numeric chmod keeps a directory's setgid bit on Linux; clear it explicitly.
+chmod g-s "$release/dist/deep"
 chmod 755 "$release/dist/deep"
 odd_name="$release/dist/deep/odd name
 line.html"
