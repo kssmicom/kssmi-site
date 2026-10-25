@@ -21,7 +21,7 @@ const environmentAction = read('.github/actions/deploy-environment/action.yml');
 // are checked against the union so the contract survives the relocation.
 const deployReleaseScript = read('scripts/deploy-release.sh');
 const deploySource = deployWorkflow + '\n' + environmentAction + '\n' + deployReleaseScript;
-const inquiryForm = read('src/components/InquiryForm.astro');
+const inquiryForm = read('src/components/InquiryForm.astro') + '\n' + read('public/js/inquiry-form.js');
 const notFoundPage = read('src/components/pages/NotFoundPage.astro');
 
 const failures = [];

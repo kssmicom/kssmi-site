@@ -10,7 +10,8 @@ const [issuer, auth, tracker, visitorTracker, packageJson, deployWorkflow, formT
   readText('public/api/vjt-capability.php'),
   readText('private/vjt-event-auth.php'),
   readText('public/js/vjt-tracker.js'),
-  readText('src/components/VisitorTracker.astro'),
+  // Contact Core (capability issuance) lives in its own runtime asset.
+  Promise.all([readText('src/components/VisitorTracker.astro'), readText('public/js/vjt-contact-core.js')]).then((parts) => parts.join('\n')),
   readText('package.json'),
   readText('.github/workflows/deploy.yml'),
   readText('src/components/FormTurnstile.astro'),

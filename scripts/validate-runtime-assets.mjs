@@ -9,6 +9,7 @@ const readText = (relativePath) => readFile(resolve(root, relativePath), 'utf8')
 const [
   layout,
   tracker,
+  header,
   htaccess,
   materializer,
   runtimeConfig,
@@ -21,6 +22,7 @@ const [
 ] = await Promise.all([
   readText('src/layouts/Layout.astro'),
   readText('src/components/VisitorTracker.astro'),
+  readText('src/components/Header.astro'),
   readText('public/.htaccess'),
   readText('scripts/materialize-runtime-assets.mjs'),
   readText('src/config/runtimeAssets.mjs'),
@@ -47,6 +49,11 @@ for (const [label, source] of [
 
 assert.match(layout, /runtimeAssetUrl\(['"]cookie-banner['"]\)/, 'Layout must resolve the cookie banner by logical name.');
 assert.match(tracker, /runtimeAssetUrl\(['"]vjt-tracker['"]\)/, 'VisitorTracker must resolve the tracker by logical name.');
+assert.match(tracker, /runtimeAssetUrl\(['"]vjt-loader['"]\)/, 'VisitorTracker must resolve the tracker bootstrap by logical name.');
+assert.doesNotMatch(tracker, /define:vars=\{\{\s*trackerScriptUrl/, 'The tracker bootstrap must stay external, configured by data-* attributes.');
+assert.match(header, /runtimeAssetUrl\(['"]header['"]\)/, 'Header must resolve its lifecycle script by logical name.');
+assert.match(tracker, /runtimeAssetUrl\(['"]vjt-contact-core['"]\)/, 'VisitorTracker must resolve Contact Core by logical name.');
+assert.doesNotMatch(tracker, /define:vars=\{\{\s*contactIntentUrl/, 'Contact Core must stay external, configured by data-* attributes.');
 assert.match(runtimeConfig, /createRuntimeAssetManifest\(root\)/, 'Astro runtime config must use the shared manifest generator.');
 assert.match(runtimeConfig, /resolve\(process\.cwd\(\)\)/, 'Astro runtime asset lookup must remain anchored to the project cwd after prerender bundling.');
 assert.doesNotMatch(runtimeConfig, /fileURLToPath\(import\.meta\.url\)/, 'Astro runtime asset lookup must not resolve from the copied prerender module URL.');

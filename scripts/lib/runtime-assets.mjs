@@ -16,6 +16,30 @@ export const RUNTIME_ASSET_DEFINITIONS = Object.freeze([
     publicName: 'vjt-tracker',
     rewriteTarget: 'js/vjt-tracker.js',
   }),
+  Object.freeze({
+    logicalName: 'vjt-loader',
+    source: 'public/js/vjt-loader.js',
+    publicName: 'vjt-loader',
+    rewriteTarget: 'js/vjt-loader.js',
+  }),
+  Object.freeze({
+    logicalName: 'header',
+    source: 'public/js/header.js',
+    publicName: 'header',
+    rewriteTarget: 'js/header.js',
+  }),
+  Object.freeze({
+    logicalName: 'vjt-contact-core',
+    source: 'public/js/vjt-contact-core.js',
+    publicName: 'vjt-contact-core',
+    rewriteTarget: 'js/vjt-contact-core.js',
+  }),
+  Object.freeze({
+    logicalName: 'inquiry-form',
+    source: 'public/js/inquiry-form.js',
+    publicName: 'inquiry-form',
+    rewriteTarget: 'js/inquiry-form.js',
+  }),
 ]);
 
 const MANIFEST_KEYS = ['assets', 'schema_version'];
