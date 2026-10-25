@@ -3,7 +3,9 @@
 // its own widget and VJT site key. Loaded by VisitorTracker.astro as a classic
 // external script at the same position the inline copy had; the site key
 // comes from its data-sitekey attribute, so the file is identical on every
-// page and ClientRouter runs it once per document.
+// page and ClientRouter does not run it again on a soft navigation. A new
+// fingerprint after a deploy does run in a tab that stayed open;
+// window.KSSMI_VJT_CAPABILITY_PROOF returns early then.
 (function() {
   if (window.KSSMI_VJT_CAPABILITY_PROOF) return;
   var siteKey = String((document.currentScript && document.currentScript.dataset.sitekey) || '');
@@ -97,6 +99,11 @@
       action: 'vjt_capability',
       execution: 'execute',
       appearance: 'interaction-only',
+      // Every end of an attempt removes this widget, and failures are retried
+      // by the cooldown and the callers' own retry. Turnstile's default
+      // automatic retry would reset the removed widget about 8 s after a
+      // failure ("Nothing to reset found", R-08), so it is turned off here.
+      retry: 'never',
       callback: function(token) {
         var proof = typeof token === 'string' ? token : '';
         endAttempt(proofAttempt, proof, !proof);
