@@ -39,6 +39,7 @@ require_once dirname(__DIR__) . '/private/email-log-store.php';
 require_once dirname(__DIR__) . '/private/inquiry-attachments.php';
 require_once dirname(__DIR__) . '/private/inquiry-autoreply.php';
 require_once dirname(__DIR__) . '/private/inquiry-outbox.php';
+require_once dirname(__DIR__) . '/private/sender-blocklist.php';
 
 // CORS Headers for local development
 $allowedOrigins = [
@@ -1085,6 +1086,43 @@ if (!$config['debug_mode']) {
 } else {
     // Log that we're in debug mode
     error_log("KSSMI Form: Debug mode enabled - Turnstile verification skipped");
+}
+
+// Sender blocklist (managed in Email Logs). Checked after Turnstile so bot
+// traffic cannot fill the hit record, and before attachments are processed.
+// A blocked sender gets the normal success answer, so there is no signal to
+// retry from another address; nothing is queued, mailed or logged as an
+// inquiry. An unreadable blocklist fails open (logged and counted).
+if (filter_var($formData['email'], FILTER_VALIDATE_EMAIL) !== false) {
+    $blocklistCheck = kssmi_sender_blocklist_check($formData['email']);
+    if ($blocklistCheck['state'] === 'unavailable') {
+        kssmi_bump_submission_counter('blocklist_error');
+    } elseif ($blocklistCheck['state'] === 'blocked') {
+        $blockedIP = getRealIP();
+        $uploads = kssmi_inquiry_normalize_attachments($_FILES['attachments'] ?? null) ?? [];
+        // sanitize() HTML-encoded the form values; store plain text, the
+        // admin page encodes it once on output.
+        $plain = static fn($value) => html_entity_decode((string)$value, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        kssmi_sender_blocklist_record_hit($blocklistCheck['rule'], [
+            'email' => $plain($formData['email']),
+            'name' => $plain($formData['name']),
+            'ip' => $blockedIP,
+            'country' => getCountryFromIP($blockedIP),
+            'page' => $plain($formData['product_url']),
+            'details' => $plain($formData['details']),
+            // Count only; blocked uploads are never stored.
+            'attachments' => count(array_filter($uploads, static fn($file) => ($file['error'] ?? null) !== UPLOAD_ERR_NO_FILE)),
+        ]);
+        kssmi_bump_submission_counter('blocked');
+        $lang = $formData['language'] ?? 'en';
+        echo json_encode([
+            'success' => true,
+            'message' => 'Thank you! Your inquiry has been received. We will contact you within 24 hours.',
+            'redirect' => ($lang === 'en') ? '/thank-you/' : "/{$lang}/thank-you/",
+            'inquiry_id' => generateInquiryId(),
+        ]);
+        exit;
+    }
 }
 
 // Browser-side checks are only for usability. Validate every optional upload

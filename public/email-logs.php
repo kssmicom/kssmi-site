@@ -37,6 +37,15 @@ $_POST = kssmi_admin_normalize_request($_POST, [
     'confirm_mailbox_checked' => 8,
     'delete_id' => 256,
     'bulk_delete' => 8,
+    'block_add' => 8,
+    'block_value' => 320,
+    'block_note' => 800,
+    'block_include_subdomains' => 8,
+    'block_confirm_public' => 8,
+    'block_log_id' => 256,
+    'unblock_id' => 64,
+    'block_edit_id' => 64,
+    'block_edit_subdomains' => 8,
 ], [
     'selected_ids' => [500, 256],
 ]);
@@ -67,6 +76,7 @@ define('CREDENTIAL_GENERATION_FILE', kssmi_admin_credential_generation_path(PASS
 define('ADMIN_EMAIL', 'sales@kssmi.com');
 require_once dirname(__DIR__) . '/private/email-log-store.php';
 require_once dirname(__DIR__) . '/private/inquiry-outbox.php';
+require_once dirname(__DIR__) . '/private/sender-blocklist.php';
 
 // Migrate sensitive files from public_html to the safe directory above it
 foreach ([
@@ -575,19 +585,70 @@ if ($isAuthenticated && isset($_POST['bulk_delete']) && isset($_POST['selected_i
     } // end CSRF check
 }
 
+// Sender blocklist. Each action changes the rules file under its own lock and
+// refuses to touch a file it cannot read (see private/sender-blocklist.php).
+$blocklistMessage = '';
+$blocklistOk = true;
+if ($isAuthenticated && (isset($_POST['block_add']) || isset($_POST['block_log_id']) || isset($_POST['unblock_id']) || isset($_POST['block_edit_id']))) {
+    if (!validateCSRF()) {
+        $blocklistMessage = 'Security check failed. Please try again.';
+        $blocklistOk = false;
+    } elseif (isset($_POST['block_edit_id'])) {
+        $outcome = kssmi_sender_blocklist_set_subdomains($_POST['block_edit_id'], ($_POST['block_edit_subdomains'] ?? '') === '1');
+        $blocklistMessage = $outcome['message'];
+        $blocklistOk = $outcome['status'] === 'updated';
+    } elseif (isset($_POST['unblock_id'])) {
+        $outcome = kssmi_sender_blocklist_remove($_POST['unblock_id']);
+        $blocklistMessage = $outcome['message'];
+        $blocklistOk = $outcome['status'] === 'removed';
+    } else {
+        $blockValue = $_POST['block_value'] ?? '';
+        if (isset($_POST['block_log_id'])) {
+            // Block from a log row: take the address from the stored entry,
+            // not from the request.
+            $blockValue = '';
+            $logRead = kssmi_email_logs_read(LOGS_FILE);
+            foreach ($logRead['ok'] ? $logRead['logs'] : [] as $entry) {
+                if (isset($entry['id']) && (string)$entry['id'] === $_POST['block_log_id']) {
+                    $blockValue = is_string($entry['form_data']['email'] ?? null) ? $entry['form_data']['email'] : '';
+                    break;
+                }
+            }
+        }
+        if ($blockValue === '' && isset($_POST['block_log_id'])) {
+            $blocklistMessage = 'That log entry has no email address to block.';
+            $blocklistOk = false;
+        } else {
+            $outcome = kssmi_sender_blocklist_add(
+                $blockValue,
+                ($_POST['block_include_subdomains'] ?? '') === '1',
+                $_POST['block_note'] ?? '',
+                ($_POST['block_confirm_public'] ?? '') === '1'
+            );
+            $blocklistMessage = $outcome['message'];
+            $blocklistOk = in_array($outcome['status'], ['added', 'updated', 'exists'], true);
+        }
+    }
+}
+
 $logs = [];
 $acceptedCount = 0;
 $successCount = 0;
 $failedCount = 0;
 $uncertainCount = 0;
 $recent24h = 0;
-$todayCounters = ['success' => 0, 'failed' => 0, 'rejected' => 0];
+$todayCounters = ['success' => 0, 'failed' => 0, 'rejected' => 0, 'blocked' => 0, 'blocklist_error' => 0];
+$blocklist = ['ok' => true, 'rules' => [], 'error' => null];
+$blocklistHits = ['ok' => true, 'hits' => [], 'rule_stats' => [], 'error' => null, 'recovered' => false];
 
 // The login and reset views need no inquiry data. Keep the locked read,
 // decoding, and aggregate work behind the authenticated session boundary.
 if ($isAuthenticated) {
     $loadResult = kssmi_email_logs_read(LOGS_FILE);
     $todayCounters = kssmi_read_submission_counter(date('Y-m-d'));
+    $blocklist = kssmi_sender_blocklist_load();
+    kssmi_sender_blocklist_purge_expired();   // the worker cron does this too
+    $blocklistHits = kssmi_sender_blocklist_read_hits();
     $logs = $loadResult['ok'] ? $loadResult['logs'] : [];
     if (!$loadResult['ok']) {
         $error = 'Email Logs could not be read safely. No data was overwritten; check the server error log.';
@@ -964,6 +1025,14 @@ function resendEmail($log) {
         .country-badge { background: #e8e4df; padding: 2px 8px; border-radius: 3px; font-size: 11px; }
 
         /* Bulk actions */
+        .blocklist { background: white; border-radius: 8px; padding: 14px 18px; margin-bottom: 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+        .blocklist summary { cursor: pointer; font-weight: 600; color: #5D4E37; }
+        .blocklist h4 { margin: 18px 0 8px; }
+        .blocklist-help { font-size: 13px; color: #777; margin: 10px 0; }
+        .blocklist-form { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 10px 0 14px; font-size: 13px; }
+        .blocklist-form input[type=text] { padding: 6px 10px; border: 1px solid #ddd; border-radius: 4px; min-width: 220px; }
+        .blocklist-table { font-size: 13px; }
+        .blocklist-details { max-width: 360px; white-space: pre-wrap; word-break: break-word; }
         .bulk-actions { background: #5D4E37; color: white; padding: 10px 16px; border-radius: 8px; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 13px; }
         .bulk-actions .btn-danger { background: #c0392b; }
         .bulk-actions .btn-danger:is(:hover, :active, :focus-visible, :focus-within) { background: #a93226; }
@@ -1067,6 +1136,7 @@ function resendEmail($log) {
                 <div class="header-right">
                     <a href="/visitor-journey.php" class="btn btn-secondary">Visitor Journey</a>
                     <button class="btn btn-secondary" onclick="document.getElementById('passwordModal').classList.add('show')">Change Password</button>
+                    <a href="#blocklist" class="btn btn-secondary" onclick="return openBlocklist();">Blocklist</a>
                     <form method="post" action="email-logs.php" style="display:inline;">
                         <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
                         <button type="submit" name="logout" value="1" class="btn btn-secondary">Logout</button>
@@ -1120,12 +1190,104 @@ function resendEmail($log) {
                     <div class="value"><?php echo $recent24h; ?></div>
                 </div>
                 <div class="stat-card">
-                    <h3>Today Sent / Failed / Rejected</h3>
+                    <h3>Today Sent / Failed / Rejected / Blocked</h3>
                     <div class="value"><?php
-                        echo htmlspecialchars($todayCounters['success'] . ' / ' . $todayCounters['failed'] . ' / ' . $todayCounters['rejected']);
+                        echo htmlspecialchars($todayCounters['success'] . ' / ' . $todayCounters['failed'] . ' / ' . $todayCounters['rejected'] . ' / ' . $todayCounters['blocked']);
                     ?></div>
                 </div>
             </div>
+
+            <?php if ($blocklistMessage): ?>
+                <p class="<?php echo $blocklistOk ? 'success' : 'error'; ?>"><?php echo htmlspecialchars($blocklistMessage); ?></p>
+            <?php endif; ?>
+            <?php if (!$blocklist['ok']): ?>
+                <p class="error">The sender blocklist file could not be read (<?php echo htmlspecialchars((string)$blocklist['error']); ?>). Blocking is NOT in effect: inquiries are accepted normally. Adding and removing rules is disabled until email_data/sender-blocklist.json is repaired on the server.</p>
+            <?php elseif ($todayCounters['blocklist_error'] > 0): ?>
+                <p class="error">The sender blocklist could not be read <?php echo (int)$todayCounters['blocklist_error']; ?> time(s) today; those inquiries were accepted without the check. Search the server error log for "KSSMI sender blocklist UNAVAILABLE".</p>
+            <?php endif; ?>
+            <?php if (!$blocklistHits['ok']): ?>
+                <p class="error">The blocked-submission record could not be read (<?php echo htmlspecialchars((string)$blocklistHits['error']); ?>). Blocking still works; the next blocked submission keeps a copy of the damaged file and starts a new record.</p>
+            <?php elseif ($blocklistHits['recovered']): ?>
+                <p class="error">A damaged blocked-submission record was kept aside on the server (email_data/sender-blocklist-hits.json.corrupt-*). Delete it there once reviewed.</p>
+            <?php endif; ?>
+
+            <details class="blocklist" id="blocklist"<?php echo ($blocklistMessage !== '' || !$blocklist['ok']) ? ' open' : ''; ?>>
+                <summary>Sender Blocklist — <?php echo count($blocklist['rules']); ?> rule(s), <?php echo count($blocklistHits['hits']); ?> recent blocked submission(s)</summary>
+                <p class="blocklist-help">Inquiries from a blocked address or domain get the normal "thank you" page, but nothing is emailed, auto-replied or added to these logs. Gmail addresses match regardless of dots and "+tags". To change whether a domain rule covers its subdomains, use the button in its row (or add the domain again with the new setting). Blocked-submission records are deleted after <?php echo KSSMI_SENDER_BLOCKLIST_HIT_DAYS; ?> days. Only website form submissions are blocked; mail sent straight to sales@kssmi.com needs a mailbox filter.</p>
+
+                <?php if ($blocklist['ok']): ?>
+                <form method="POST" class="blocklist-form">
+                    <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
+                    <input type="text" name="block_value" placeholder="name@example.com or @example.com" required maxlength="254">
+                    <input type="text" name="block_note" placeholder="Note (optional)" maxlength="<?php echo KSSMI_SENDER_BLOCKLIST_NOTE_MAX; ?>">
+                    <label><input type="checkbox" name="block_include_subdomains" value="1"> Domain: include subdomains</label>
+                    <label><input type="checkbox" name="block_confirm_public" value="1"> Yes, block even a public mail domain (gmail.com, outlook.com…)</label>
+                    <button type="submit" name="block_add" value="1" class="btn btn-danger btn-small">Block</button>
+                </form>
+                <?php endif; ?>
+
+                <?php if ($blocklist['rules']): ?>
+                <div class="table-wrapper">
+                    <table class="blocklist-table">
+                        <thead><tr><th>Rule</th><th>Type</th><th>Note</th><th>Added</th><th>Blocked</th><th>Last blocked</th><th></th></tr></thead>
+                        <tbody>
+                        <?php foreach (array_reverse($blocklist['rules']) as $rule):
+                            $ruleStats = is_array($blocklistHits['rule_stats'][$rule['id']] ?? null) ? $blocklistHits['rule_stats'][$rule['id']] : [];
+                        ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($rule['label']); ?><?php if ($rule['type'] === 'email' && $rule['label'] !== $rule['value']): ?><br><small>matches <?php echo htmlspecialchars($rule['value']); ?></small><?php endif; ?></td>
+                                <td>
+                                    <?php echo $rule['type'] === 'email' ? 'Address' : ($rule['include_subdomains'] ? 'Domain + subdomains' : 'Domain only'); ?>
+                                    <?php if ($rule['type'] === 'domain'): ?>
+                                    <form method="POST" style="display:inline;">
+                                        <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
+                                        <input type="hidden" name="block_edit_id" value="<?php echo htmlspecialchars($rule['id']); ?>">
+                                        <input type="hidden" name="block_edit_subdomains" value="<?php echo $rule['include_subdomains'] ? '0' : '1'; ?>">
+                                        <br><button type="submit" class="btn btn-secondary btn-small"><?php echo $rule['include_subdomains'] ? 'Exclude subdomains' : 'Include subdomains'; ?></button>
+                                    </form>
+                                    <?php endif; ?>
+                                </td>
+                                <td><?php echo htmlspecialchars($rule['note']); ?></td>
+                                <td class="time"><?php echo htmlspecialchars($rule['created_at']); ?></td>
+                                <td><?php echo (int)($ruleStats['count'] ?? 0); ?></td>
+                                <td class="time"><?php echo htmlspecialchars((string)($ruleStats['last_at'] ?? '-')); ?></td>
+                                <td>
+                                    <form method="POST" style="display:inline;" onsubmit="return confirm('Unblock this rule?');">
+                                        <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
+                                        <input type="hidden" name="unblock_id" value="<?php echo htmlspecialchars($rule['id']); ?>">
+                                        <button type="submit" class="btn btn-secondary btn-small">Unblock</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+                <?php endif; ?>
+
+                <h4>Recently blocked (newest <?php echo KSSMI_SENDER_BLOCKLIST_MAX_HITS; ?>, last <?php echo KSSMI_SENDER_BLOCKLIST_HIT_DAYS; ?> days)</h4>
+                <?php if (!$blocklistHits['hits']): ?>
+                    <p class="blocklist-help">No blocked submissions.</p>
+                <?php else: ?>
+                <div class="table-wrapper">
+                    <table class="blocklist-table">
+                        <thead><tr><th>Time</th><th>Rule</th><th>From</th><th>IP / Country</th><th>Page</th><th>Message (start)</th></tr></thead>
+                        <tbody>
+                        <?php foreach ($blocklistHits['hits'] as $hit): ?>
+                            <tr>
+                                <td class="time"><?php echo htmlspecialchars((string)($hit['time'] ?? '')); ?></td>
+                                <td><?php echo htmlspecialchars((string)($hit['rule'] ?? '')); ?></td>
+                                <td><?php echo htmlspecialchars((string)($hit['name'] ?? '')); ?><br><small><?php echo htmlspecialchars((string)($hit['email'] ?? '')); ?></small></td>
+                                <td><?php echo htmlspecialchars((string)($hit['ip'] ?? '')); ?><?php if (!empty($hit['country'])): ?><br><span class="country-badge"><?php echo htmlspecialchars(getCountryName((string)$hit['country'])); ?></span><?php endif; ?></td>
+                                <td><?php echo htmlspecialchars((string)($hit['page'] ?? '')); ?></td>
+                                <td class="blocklist-details"><?php echo htmlspecialchars((string)($hit['details'] ?? '')); ?><?php if (!empty($hit['attachments'])): ?><br><small><?php echo (int)$hit['attachments']; ?> attachment(s), not stored</small><?php endif; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+                <?php endif; ?>
+            </details>
 
             <?php if (empty($logs)): ?>
                 <div style="text-align:center;padding:60px;background:white;border-radius:8px;">
@@ -1231,6 +1393,13 @@ function resendEmail($log) {
                                         <?php endif; ?>
                                     </td>
                                     <td onclick="event.stopPropagation();">
+                                        <?php if ($blocklist['ok'] && filter_var($email, FILTER_VALIDATE_EMAIL) !== false): ?>
+                                        <form method="POST" style="display:inline;" onsubmit="return confirm('Block this sender? Future inquiries from it will be silently dropped.');">
+                                            <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
+                                            <input type="hidden" name="block_log_id" value="<?php echo htmlspecialchars($logId); ?>">
+                                            <button type="submit" class="btn btn-secondary btn-small">Block</button>
+                                        </form>
+                                        <?php endif; ?>
                                         <form method="POST" style="display:inline;" onsubmit="return confirm('Delete this log entry?');">
                                             <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
                                             <input type="hidden" name="delete_id" value="<?php echo htmlspecialchars($logId); ?>">
@@ -1362,6 +1531,17 @@ function resendEmail($log) {
     </div>
 
     <script>
+        // Header "Blocklist" link: open the collapsed section and bring it into view.
+        function openBlocklist() {
+            var section = document.getElementById('blocklist');
+            if (!section) return true;
+            section.open = true;
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (history.replaceState) history.replaceState(null, '', '#blocklist');
+            return false;
+        }
+        if (location.hash === '#blocklist') openBlocklist();
+
         var currentOpenIndex = null;
 
         function toggleDetail(index) {
