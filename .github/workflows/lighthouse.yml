@@ -3,7 +3,7 @@ name: Weekly Lighthouse
 on:
   schedule:
     # Mondays 04:41 UTC. Lab measurements only; the run is a report and fails
-    # only when Lighthouse itself cannot audit a page.
+    # only when a page gets no valid Lighthouse run at all.
     - cron: '41 4 * * 1'
   workflow_dispatch:
   pull_request:
@@ -36,7 +36,6 @@ jobs:
       - name: Run Lighthouse
         run: |
           mkdir -p lighthouse-reports
-          status=0
           for page in home:/ category:/product/acetate-optical-frames/ product:/product/kao-001-acetate-optical-frame/; do
             name="${page%%:*}"
             path="${page#*:}"
@@ -44,6 +43,8 @@ jobs:
               preset_flag=""
               if [ "$preset" = desktop ]; then preset_flag="--preset=desktop"; fi
               # Three runs per page and form factor; the summary takes the median.
+              # A single failed run (Lighthouse occasionally reports NO_NAVSTART)
+              # is listed in the summary, which fails only if all three fail.
               for run in 1 2 3; do
                 npx --yes lighthouse@13.5.0 "https://kssmi.com${path}" $preset_flag \
                   --quiet \
@@ -51,15 +52,17 @@ jobs:
                   --only-categories=performance,accessibility,best-practices,seo \
                   --output=json --output=html \
                   --output-path="lighthouse-reports/${name}-${preset}-${run}" \
-                  || status=1
+                  || echo "::warning::Lighthouse run failed: ${name} ${preset} run ${run}"
               done
             done
           done
-          exit $status
 
       - name: Summarize
         if: always()
-        run: node scripts/lighthouse-summary.mjs lighthouse-reports >> "$GITHUB_STEP_SUMMARY"
+        # 3 pages x 2 form factors. `shell: bash` adds pipefail, so the
+        # script's exit status is not lost in the pipe to tee.
+        shell: bash
+        run: node scripts/lighthouse-summary.mjs lighthouse-reports 6 | tee -a "$GITHUB_STEP_SUMMARY"
 
       - name: Upload reports
         if: always()
