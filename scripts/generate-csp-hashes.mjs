@@ -62,6 +62,11 @@ const policy = [
   'upgrade-insecure-requests',
 ].join('; ');
 
+// Browsers ignore frame-ancestors in a <meta> policy and log an error on every
+// page load, so the meta copy leaves it out. The .htaccess header copy keeps it,
+// and X-Frame-Options: SAMEORIGIN still blocks framing either way.
+const metaPolicy = policy.split('; ').filter((directive) => !directive.startsWith('frame-ancestors')).join('; ');
+
 const updateFile = async (file) => {
   let text = await readFile(file, 'utf8');
   const marker = /(Static HTML CSP BEGIN[\s\S]*?Header always set Content-Security-Policy\s+")[^"]*(")/m;
@@ -82,7 +87,7 @@ async function updateHtmlPolicy(file) {
   // inside head, so leave those redirects unchanged rather than failing a
   // release that otherwise built successfully.
   if (!/<\/head\s*>/i.test(html)) return;
-  html = html.replace(/<\/head\s*>/i, `  ${cspMeta(policy)}\n</head>`);
+  html = html.replace(/<\/head\s*>/i, `  ${cspMeta(metaPolicy)}\n</head>`);
   await writeFile(file, html, 'utf8');
 }
 

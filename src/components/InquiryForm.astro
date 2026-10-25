@@ -211,6 +211,28 @@ const attachmentOptionalLabels: Record<string, string> = {
 };
 const attachmentOptionalLabel = attachmentOptionalLabels[lang] || attachmentOptionalLabels.en;
 
+// Accessible name for the file input (it has no visible <label>).
+const attachmentInputLabels: Record<string, string> = {
+  en: 'Attach reference files',
+  it: 'Allega file di riferimento',
+  es: 'Adjuntar archivos de referencia',
+  fr: 'Joindre des fichiers de référence',
+  de: 'Referenzdateien anhängen',
+  pt: 'Anexar arquivos de referência',
+  ru: 'Прикрепить справочные файлы',
+  ja: '参考ファイルを添付',
+  tr: 'Referans dosyaları ekle',
+  ar: 'إرفاق ملفات مرجعية',
+  ko: '참고 파일 첨부',
+  zh: '上传参考文件',
+  hi: 'संदर्भ फ़ाइलें संलग्न करें',
+  vi: 'Đính kèm tệp tham khảo',
+  jv: 'Lampirake berkas referensi',
+  ms: 'Lampirkan fail rujukan',
+  tg: 'Замима кардани файлҳои намунавӣ',
+};
+const attachmentInputLabel = attachmentInputLabels[lang] || attachmentInputLabels.en;
+
 const attachmentCopy = lang === 'zh'
   ? {
       optional: attachmentOptionalLabel,
@@ -482,6 +504,7 @@ const isDev = import.meta.env.DEV;
               multiple
               accept=".pdf,.jpg,.jpeg,.png,.webp,.docx,.xlsx,.dwg,.dxf,.stp,.step,.igs,.iges,.stl,.ai,.eps,.psd,.cdr,.3dm,.sldprt,.sldasm,.ipt,.iam,.x_t,application/pdf,image/jpeg,image/png,image/webp,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
               class="block min-w-0 flex-1 text-sm text-gray-700 file:me-4 file:rounded-lg file:border-0 file:bg-[#5D4E37] file:px-4 file:py-2.5 file:font-semibold file:text-white hover:file:bg-[#4A3D2E] active:file:bg-[#4A3D2E] focus-visible:file:bg-[#4A3D2E] focus-within:file:bg-[#4A3D2E] focus:outline-hidden"
+              aria-label={attachmentInputLabel}
               aria-describedby="attachment-help attachment-list"
             />
             <span class="shrink-0 text-sm text-gray-500">{attachmentCopy.optional}</span>
