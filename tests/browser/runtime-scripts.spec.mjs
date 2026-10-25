@@ -104,6 +104,13 @@ test('runtime scripts: external, consent-gated tracker, one run across navigatio
   await expect(languageMenu).toHaveClass(/is-open/);
   await page.locator('footer').first().click({ position: { x: 5, y: 5 } });
   await expect(languageMenu).not.toHaveClass(/is-open/);
+  // Escape closes it too and leaves focus on the button (R-30).
+  await languageMenu.locator('.lang-btn').click();
+  await expect(languageMenu).toHaveClass(/is-open/);
+  await page.keyboard.press('Escape');
+  await expect(languageMenu).not.toHaveClass(/is-open/);
+  await expect(languageMenu.locator('.lang-btn')).toHaveAttribute('aria-expanded', 'false');
+  await expect(languageMenu.locator('.lang-btn')).toBeFocused();
 
   await expectCleanPage(page, testInfo);
 });

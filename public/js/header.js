@@ -435,6 +435,19 @@
       }
     });
 
+    // Escape closes an open language dropdown and returns focus to its button.
+    setListener(document, 'keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      document.querySelectorAll('.lang-dropdown-container.is-open').forEach(container => {
+        const btn = container.querySelector('.lang-btn');
+        container.classList.remove('is-open');
+        if (btn) {
+          btn.setAttribute('aria-expanded', 'false');
+          if (container.contains(document.activeElement)) btn.focus();
+        }
+      });
+    });
+
     // Deferred, so the document is normally parsed by now; keep the fallback
     // for a call made while the parser is still running.
     if (document.readyState === 'loading') {
