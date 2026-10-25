@@ -106,3 +106,7 @@ public/pagefind/
 /public/llms.txt
 /public/*/sitemap*.xml
 /public/*/llms*.txt
+
+# Playwright browser smoke test output
+test-results/
+playwright-report/
