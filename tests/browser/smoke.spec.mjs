@@ -117,6 +117,21 @@ test('ClientRouter: navigations rebuild one banner in the page language', async 
   await expectCleanPage(page, testInfo);
 });
 
+// R-31: arriving on a page whose last new script was an inline module made
+// ClientRouter append a data: module, which the CSP blocks.
+test('ClientRouter: quote, home and product navigations raise no CSP violations', async ({ page }, testInfo) => {
+  await page.goto('/quote/');
+  await page.locator('#cookie-btn-reject').click();
+  for (const href of ['/', '/quote', '/product', '/']) {
+    await page.locator(`a[href="${href}"]:visible`).first().click();
+    await page.waitForURL((url) => url.pathname.replace(/\/$/, '') === href.replace(/\/$/, ''));
+    await page.waitForLoadState('load');
+  }
+  await page.waitForTimeout(500);
+  expect(await page.evaluate(() => [...document.scripts].filter((s) => s.type === 'module' && !s.src).length), 'inline module scripts').toBe(0);
+  await expectCleanPage(page, testInfo);
+});
+
 test('RTL: Arabic product page does not scroll sideways at 375px', async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 812 });
   await page.goto('/ar/product/krs-210-rimless-sunglasses/');
