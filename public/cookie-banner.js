@@ -218,8 +218,8 @@
           + '<p class="cookie-modal-message">' + t().message + '</p>'
           + '<div class="cookie-modal-options">'
             + '<label class="cookie-option cookie-option--disabled"><input class="cookie-check" type="checkbox" checked disabled /><div><span class="cookie-option-title">' + t().essentialLabel + '</span><p class="cookie-option-description">' + t().essentialDesc + '</p></div></label>'
-            + '<label class="cookie-option"><input id="cookie-check-analytics" class="cookie-check" type="checkbox" checked /><div><span class="cookie-option-title">' + t().analyticsLabel + '</span><p class="cookie-option-description">' + t().analyticsDesc + '</p></div></label>'
-            + '<label class="cookie-option"><input id="cookie-check-ads" class="cookie-check" type="checkbox" checked /><div><span class="cookie-option-title">' + t().adsLabel + '</span><p class="cookie-option-description">' + t().adsDesc + '</p></div></label>'
+            + '<label class="cookie-option"><input id="cookie-check-analytics" class="cookie-check" type="checkbox" /><div><span class="cookie-option-title">' + t().analyticsLabel + '</span><p class="cookie-option-description">' + t().analyticsDesc + '</p></div></label>'
+            + '<label class="cookie-option"><input id="cookie-check-ads" class="cookie-check" type="checkbox" /><div><span class="cookie-option-title">' + t().adsLabel + '</span><p class="cookie-option-description">' + t().adsDesc + '</p></div></label>'
           + '</div>'
           + '<div class="cookie-modal-actions">'
             + '<button id="cookie-modal-cancel" class="cookie-banner-btn">' + t().cancel + '</button>'
@@ -279,7 +279,8 @@
       overlay = document.getElementById('cookie-modal-overlay');
     }
     // Pre-fill checkboxes with current consent so the user sees what they
-    // previously chose (otherwise they default to checked even after Reject All).
+    // previously chose; with no choice yet both stay unchecked (no pre-ticked
+    // consent, GDPR Recital 32). "Accept all" still grants both.
     var existing = getConsent();
     if (existing) {
       var a = document.getElementById('cookie-check-analytics');
