@@ -96,6 +96,7 @@
     "world-atlas": "^2.0.2"
   },
   "devDependencies": {
+    "@playwright/test": "1.64.0",
     "pagefind": "^1.4.0"
   }
 }
