@@ -40,6 +40,18 @@ export const RUNTIME_ASSET_DEFINITIONS = Object.freeze([
     publicName: 'inquiry-form',
     rewriteTarget: 'js/inquiry-form.js',
   }),
+  Object.freeze({
+    logicalName: 'vjt-capability-proof',
+    source: 'public/js/vjt-capability-proof.js',
+    publicName: 'vjt-capability-proof',
+    rewriteTarget: 'js/vjt-capability-proof.js',
+  }),
+  Object.freeze({
+    logicalName: 'form-turnstile',
+    source: 'public/js/form-turnstile.js',
+    publicName: 'form-turnstile',
+    rewriteTarget: 'js/form-turnstile.js',
+  }),
 ]);
 
 const MANIFEST_KEYS = ['assets', 'schema_version'];
