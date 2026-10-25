@@ -664,5 +664,7 @@ function kssmi_read_submission_counter($date) {
         'success' => (int)($day['success'] ?? 0),
         'failed' => (int)($day['failed'] ?? 0),
         'rejected' => (int)($day['rejected'] ?? 0),
+        'blocked' => (int)($day['blocked'] ?? 0),
+        'blocklist_error' => (int)($day['blocklist_error'] ?? 0),
     ];
 }

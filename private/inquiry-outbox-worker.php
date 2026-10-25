@@ -25,6 +25,7 @@ $webroot = is_file($release . '/dist/send-mail.php') ? $release . '/dist' : $rel
 
 require_once $release . '/private/email-log-store.php';
 require_once $release . '/private/inquiry-outbox.php';
+require_once $release . '/private/sender-blocklist.php';
 require_once $webroot . '/api/vjt-helpers.php';
 define('KSSMI_SEND_MAIL_LIBRARY', true);
 require_once $webroot . '/send-mail.php';
@@ -35,6 +36,17 @@ foreach (['Exception', 'PHPMailer', 'SMTP'] as $class) {
 $privateConfigPath = $release . '/private_config.php';
 $privateConfig = is_file($privateConfigPath) ? (array)require $privateConfigPath : [];
 $config = kssmi_inquiry_config($privateConfig, $release . '/email_data/email-logs.json');
+
+// Blocked-submission retention (30 days) is enforced here, independent of
+// mail sending and of the email-log cutover; it must never stop the drain.
+try {
+    $purge = kssmi_sender_blocklist_purge_expired();
+    if ($purge['removed_hits'] > 0 || $purge['removed_backups'] > 0 || $purge['removed_damaged']) {
+        echo 'blocklist retention ', json_encode($purge), "\n";
+    }
+} catch (Throwable $purgeError) {
+    error_log('KSSMI sender blocklist: retention purge failed: ' . $purgeError->getMessage());
+}
 
 if (kssmi_email_logs_cutover_is_active($config['log_file'])) {
     echo "email log cutover active; nothing sent\n";

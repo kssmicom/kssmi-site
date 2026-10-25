@@ -87,7 +87,17 @@ assert.ok(sendMail.includes("'autoreply' => kssmi_inquiry_autoreply_build($formD
 assert.ok(autoReply.includes("$name = kssmi_inquiry_autoreply_name($data['name'] ?? '');"), 'The greeting must use only an accepted name.');
 assert.ok(sendMail.includes("checkRateLimit('send-mail', 2, 60)"), 'The per-IP limit must stay in front of acceptance.');
 const enqueueAt = sendMail.indexOf('$accepted = kssmi_outbox_enqueue(');
-const successAt = sendMail.indexOf("'success' => true");
+// The only success answer before acceptance is the blocked-sender branch: it
+// runs after Turnstile, exits before attachments, and queues nothing.
+const blocklistAt = sendMail.indexOf("$blocklistCheck = kssmi_sender_blocklist_check($formData['email']);");
+const blocklistExitAt = sendMail.indexOf('exit;', blocklistAt);
+const earlySuccessAt = sendMail.indexOf("'success' => true");
+assert.ok(sendMail.includes("require_once dirname(__DIR__) . '/private/sender-blocklist.php';"), 'send-mail.php must load the sender blocklist.');
+assert.ok(blocklistAt > sendMail.indexOf('verifyTurnstileDetailed($turnstileToken') && blocklistExitAt < sendMail.indexOf('kssmi_inquiry_validate_attachments('), 'The blocklist must be checked after Turnstile and before attachments.');
+assert.ok(earlySuccessAt > blocklistAt && earlySuccessAt < blocklistExitAt, 'Only the blocked-sender branch may answer success before acceptance.');
+assert.ok(!/kssmi_outbox_|logEmail\(|recordInquiryOutcome\(/.test(sendMail.slice(blocklistAt, blocklistExitAt)), 'A blocked sender must not be queued, logged or recorded as an inquiry.');
+assert.ok(sendMail.slice(blocklistAt, blocklistExitAt).includes("kssmi_bump_submission_counter('blocklist_error')"), 'An unreadable blocklist must be counted.');
+const successAt = sendMail.indexOf("'success' => true", blocklistExitAt);
 const finishAt = sendMail.indexOf('kssmi_outbox_finish_response();');
 const processAt = sendMail.indexOf('kssmi_outbox_process($accepted');
 assert.ok(
@@ -104,7 +114,7 @@ assert.ok(outboxWorker.includes("PHP_SAPI !== 'cli'"), 'The outbox worker must o
 for (const marker of ['A worker dying between the two messages', 'An uncertain send must be retried', 'Steps must be given up after 72 hours', 'A locked job must be skipped']) {
   assert.ok(outboxTest.includes(marker), `Outbox tests must cover: ${marker}`);
 }
-for (const marker of ['A second inquiry from the same mailbox must get its own notification and reply', 'An identical submission within two minutes must not send again', 'The worker must deliver the waiting job']) {
+for (const marker of ['A second inquiry from the same mailbox must get its own notification and reply', 'An identical submission within two minutes must not send again', 'The worker must deliver the waiting job', 'A blocked sender must not cause any mail.', 'A damaged blocklist must not stop inquiries.']) {
   assert.ok(sendMailHttpTest.includes(marker), `Send-mail HTTP tests must cover: ${marker}`);
 }
 assert.ok(autoReplyTest.includes('No auto-reply budget may exist after acceptance.'), 'Auto-reply tests must prove there is no post-acceptance budget.');
@@ -113,6 +123,7 @@ for (const [script, file] of [
   ['test:inquiry-autoreply', 'test-inquiry-autoreply.php'],
   ['test:inquiry-outbox', 'test-inquiry-outbox.php'],
   ['test:send-mail-outbox-http', 'test-send-mail-outbox-http.php'],
+  ['test:sender-blocklist', 'test-sender-blocklist.php'],
 ]) {
   assert.equal(inquiryScripts[script], `php scripts/${file}`, `package.json must expose ${script}.`);
   assert.ok((inquiryScripts['test:php'] ?? '').split(' && ').includes(`npm run ${script}`), `The full PHP suite must include ${script}.`);

@@ -214,6 +214,51 @@ PHP);
     sm_assert(preg_match_all('/KSSMI inquiry \S+ accepted in (\d+) ms/', $log, $timings) === 5, 'Every request must log its acceptance time.');
     sm_assert(str_contains($log, 'repeat of a submission from the last 2 minutes'), 'The retry must be logged as a repeat.');
     sm_assert(preg_match('/PHP (Warning|Notice|Deprecated|Fatal error|Parse error)/', $log . $workerErr) !== 1, "PHP reported problems:\n" . $log . $workerErr);
+
+    // 7. Sender blocklist: a blocked sender (Gmail dot/+tag variant) gets the
+    // normal success answer, but nothing is queued, mailed or logged.
+    require_once "{$tree}/private/sender-blocklist.php";
+    $rulesPath = "{$tree}/email_data/sender-blocklist.json";
+    $hitsPath = "{$tree}/email_data/sender-blocklist-hits.json";
+    sm_assert(kssmi_sender_blocklist_add('patelamisha2706@gmail.com', false, 'spam', false, $rulesPath)['status'] === 'added', 'The test rule must be added.');
+    $mailBefore = count(sm_mail($tree));
+    $logsBefore = count(json_decode((string)file_get_contents("{$tree}/email_data/email-logs.json"), true));
+    $blocked = sm_post($port, '198.51.100.7', sm_inquiry('Patel.Amisha2706+promo@googlemail.com', str_repeat('Spam offer. ', 100), "Amisha O'Neil & Co"), [['attachments[]', 'offer.pdf', 'application/pdf', $pdf]]);
+    sm_assert($blocked['status'] === 200 && ($blocked['json']['success'] ?? false) === true && ($blocked['json']['redirect'] ?? '') === '/thank-you/' && preg_match('/^#[0-9A-F]{4}$/', (string)($blocked['json']['inquiry_id'] ?? '')) === 1, 'A blocked sender must get the normal success answer: ' . $blocked['body']);
+    sm_assert(count(sm_mail($tree)) === $mailBefore, 'A blocked sender must not cause any mail.');
+    sm_assert(count(json_decode((string)file_get_contents("{$tree}/email_data/email-logs.json"), true)) === $logsBefore, 'A blocked sender must not appear in Email Logs.');
+    sm_assert(glob("{$tree}/email_data/outbox/[0-9]*") === [], 'A blocked sender must not be queued.');
+    $hits = kssmi_sender_blocklist_read_hits($hitsPath);
+    $hit = $hits['hits'][0] ?? [];
+    sm_assert($hits['ok'] && count($hits['hits']) === 1 && ($hit['email'] ?? '') === 'Patel.Amisha2706+promo@googlemail.com' && ($hit['ip'] ?? '') === '198.51.100.7' && ($hit['country'] ?? '') === 'US', 'The blocked submission must be recorded.');
+    sm_assert(mb_strlen($hit['details'], 'UTF-8') === KSSMI_SENDER_BLOCKLIST_DETAILS_MAX && ($hit['attachments'] ?? null) === 1 && !isset($hit['files']), 'The record must clip the message and keep only the attachment count.');
+    sm_assert(($hit['name'] ?? '') === "Amisha O'Neil & Co", 'The record must store plain text, not HTML-encoded form values: ' . ($hit['name'] ?? ''));
+    $counters = json_decode((string)file_get_contents("{$tree}/email_data/submission-counters.json"), true);
+    sm_assert((int)($counters[date('Y-m-d')]['blocked'] ?? 0) === 1, 'The blocked submission must be counted.');
+
+    // 8. An unreadable blocklist fails open: the inquiry is accepted and
+    // mailed, the failure is logged and counted, and the file is untouched.
+    $corrupt = '{"version":1,"rules":[{"id":"broken"';
+    file_put_contents($rulesPath, $corrupt);
+    $failOpen = sm_post($port, '198.51.100.8', sm_inquiry('patelamisha2706@gmail.com', 'Sent while the blocklist is damaged'));
+    sm_assert(($failOpen['json']['success'] ?? false) === true && count(sm_mail($tree)) === $mailBefore + 2, 'A damaged blocklist must not stop inquiries.');
+    sm_assert(file_get_contents($rulesPath) === $corrupt, 'A damaged blocklist must be left untouched.');
+    sm_assert(str_contains((string)file_get_contents("{$tree}/server.log"), 'KSSMI sender blocklist UNAVAILABLE: invalid_json'), 'A damaged blocklist must be logged.');
+    $counters = json_decode((string)file_get_contents("{$tree}/email_data/submission-counters.json"), true);
+    sm_assert((int)($counters[date('Y-m-d')]['blocklist_error'] ?? 0) === 1, 'A damaged blocklist must be counted.');
+    sm_assert(preg_match('/PHP (Warning|Notice|Deprecated|Fatal error|Parse error)/', (string)file_get_contents("{$tree}/server.log")) !== 1, 'The blocklist paths must not raise PHP warnings.');
+
+    // 9. The outbox worker (cron) enforces the 30-day retention on disk.
+    $hitsData = json_decode((string)file_get_contents($hitsPath), true);
+    $hitsData['hits'][] = ['unix' => time() - 31 * 86400, 'time' => 'old', 'email' => 'expired@example.com'];
+    file_put_contents($hitsPath, json_encode($hitsData));
+    $worker = proc_open([...array_slice($command, 0, array_search('-d', $command, true) ?: 1), "{$tree}/private/inquiry-outbox-worker.php"], [1 => ['pipe', 'w'], 2 => ['pipe', 'w']], $workerPipes, $tree, $environment);
+    $workerOut = (string)stream_get_contents($workerPipes[1]);
+    $workerErr = (string)stream_get_contents($workerPipes[2]);
+    sm_assert(proc_close($worker) === 0 && str_contains($workerOut, 'blocklist retention {"ok":true,"removed_hits":1'), "The worker must purge expired blocked submissions: {$workerOut} {$workerErr}");
+    $hitsData = json_decode((string)file_get_contents($hitsPath), true);
+    sm_assert(count($hitsData['hits']) === 1 && !str_contains((string)file_get_contents($hitsPath), 'expired@example.com'), 'The expired record must be gone from the file.');
+
     echo 'Send-mail outbox HTTP tests passed (server-side acceptance ' . implode(', ', $timings[1]) . " ms).\n";
 } finally {
     if (is_resource($server)) {

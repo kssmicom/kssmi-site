@@ -628,7 +628,7 @@ try {
     );
     assert_true(
         kssmi_read_submission_counter($incidentDayKey) ===
-            ['success' => 1, 'failed' => 0, 'rejected' => 0],
+            ['success' => 1, 'failed' => 0, 'rejected' => 0, 'blocked' => 0, 'blocklist_error' => 0],
         'submission counters did not round-trip on the Beijing day key'
     );
     if ($counterBackup === false) {
