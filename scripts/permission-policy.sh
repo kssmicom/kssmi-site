@@ -48,6 +48,38 @@ kssmi_policy_assert_path() {
   }
 }
 
+# A permission mode for a tree check, written as stat %a prints it: three
+# octal digits (000-777), or four with a non-zero special-bit digit
+# (1000-7777). A leading 0 is rejected because stat never prints one, so
+# find -perm and the per-path stat comparison always agree. Empty strings,
+# "any", 8 or 9, and more than four digits are rejected.
+kssmi_policy_valid_mode() {
+  [[ "$1" =~ ^([0-7]{3}|[1-7][0-7]{3})$ ]]
+}
+
+# Sets KSSMI_POLICY_MISMATCH to the first entry of type $2 (d or f) under $1
+# whose exact mode, uid or gid differs, or to '' when there is none. Any find
+# failure (unreadable directory, I/O error, missing root) makes it return 1,
+# so a tree is never reported as compliant from a partial walk.
+kssmi_policy_first_mismatch() {
+  local root="$1" type="$2" mode="$3" uid="$4" gid="$5" label="$6"
+  local result status depth=()
+  KSSMI_POLICY_MISMATCH=''
+  [ "$type" = d ] && depth=(-mindepth 1)
+  result="$(mktemp)" || { kssmi_policy_error "$label: cannot create a temporary file"; return 1; }
+  status=0
+  find -P "$root" ${depth[@]+"${depth[@]}"} -type "$type" \
+    \( ! -perm "$mode" -o ! -uid "$uid" -o ! -gid "$gid" \) -print0 -quit >"$result" || status=$?
+  if [ "$status" -ne 0 ]; then
+    rm -f -- "$result"
+    kssmi_policy_error "$label: find failed (status $status) while checking $root"
+    return 1
+  fi
+  IFS= read -r -d '' KSSMI_POLICY_MISMATCH <"$result" || true
+  rm -f -- "$result"
+  return 0
+}
+
 kssmi_policy_assert_tree() {
   local root="$1"
   local directory_mode="$2"
@@ -55,24 +87,48 @@ kssmi_policy_assert_tree() {
   local expected_uid="$4"
   local expected_gid="$5"
   local label="$6"
-  local path unexpected_link unexpected_special
+  local unexpected_link unexpected_special
 
+  kssmi_policy_valid_mode "$directory_mode" || {
+    kssmi_policy_error "$label directory mode must be 000-777 or 1000-7777 (as stat %a prints it): '$directory_mode'"
+    return 1
+  }
+  kssmi_policy_valid_mode "$file_mode" || {
+    kssmi_policy_error "$label file mode must be 000-777 or 1000-7777 (as stat %a prints it): '$file_mode'"
+    return 1
+  }
   kssmi_policy_assert_path "$root" directory "$directory_mode" "$expected_uid" "$expected_gid" || return 1
 
-  while IFS= read -r -d '' path; do
-    kssmi_policy_assert_path "$path" directory "$directory_mode" "$expected_uid" "$expected_gid" || return 1
-  done < <(find -P "$root" -mindepth 1 -type d -print0)
+  # One find pass per type selects the first entry whose mode, owner or group
+  # differs, instead of three stat processes per path (a release has ~25k
+  # paths). -perm with a bare octal mode compares all mode bits exactly, as
+  # stat %a does. The per-path check then reports that entry with its usual
+  # message; if it unexpectedly passes, the tree still fails closed.
+  kssmi_policy_first_mismatch "$root" d "$directory_mode" "$expected_uid" "$expected_gid" "$label" || return 1
+  if [ -n "$KSSMI_POLICY_MISMATCH" ]; then
+    kssmi_policy_assert_path "$KSSMI_POLICY_MISMATCH" directory "$directory_mode" "$expected_uid" "$expected_gid" || return 1
+    kssmi_policy_error "$label directory does not match its policy: $KSSMI_POLICY_MISMATCH"
+    return 1
+  fi
+  kssmi_policy_first_mismatch "$root" f "$file_mode" "$expected_uid" "$expected_gid" "$label" || return 1
+  if [ -n "$KSSMI_POLICY_MISMATCH" ]; then
+    kssmi_policy_assert_path "$KSSMI_POLICY_MISMATCH" file "$file_mode" "$expected_uid" "$expected_gid" || return 1
+    kssmi_policy_error "$label file does not match its policy: $KSSMI_POLICY_MISMATCH"
+    return 1
+  fi
 
-  while IFS= read -r -d '' path; do
-    kssmi_policy_assert_path "$path" file "$file_mode" "$expected_uid" "$expected_gid" || return 1
-  done < <(find -P "$root" -type f -print0)
-
-  unexpected_link="$(find -P "$root" -type l -print -quit)"
+  unexpected_link="$(find -P "$root" -type l -print -quit)" || {
+    kssmi_policy_error "$label: find failed while checking $root for symlinks"
+    return 1
+  }
   [ -z "$unexpected_link" ] || {
     kssmi_policy_error "$label contains a symlink: $unexpected_link"
     return 1
   }
-  unexpected_special="$(find -P "$root" -mindepth 1 ! -type d ! -type f ! -type l -print -quit)"
+  unexpected_special="$(find -P "$root" -mindepth 1 ! -type d ! -type f ! -type l -print -quit)" || {
+    kssmi_policy_error "$label: find failed while checking $root for special files"
+    return 1
+  }
   [ -z "$unexpected_special" ] || {
     kssmi_policy_error "$label contains an unsupported special file: $unexpected_special"
     return 1

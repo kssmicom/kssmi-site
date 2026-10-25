@@ -145,6 +145,72 @@ expect_failure 'world-readable private file' kssmi_policy_reject_world_readable_
 expect_failure 'wrong private file mode' kssmi_policy_assert_tree "$release/private" 750 640 "$uid" "$gid" private
 chmod 640 "$release/private/http-security.php"
 
+# The tree check selects mismatches with find predicates instead of stat per
+# path; it must still catch every kind of mismatch anywhere in the tree.
+mkdir -p "$release/dist/deep/er"
+printf 'x' > "$release/dist/deep/er/page.html"
+chmod 755 "$release/dist/deep" "$release/dist/deep/er"
+chmod 644 "$release/dist/deep/er/page.html"
+kssmi_policy_assert_tree "$release/dist" 755 644 "$uid" "$gid" public
+chmod 640 "$release/dist/deep/er/page.html"
+expect_failure 'wrong mode on a deeply nested file' kssmi_policy_assert_tree "$release/dist" 755 644 "$uid" "$gid" public
+chmod 644 "$release/dist/deep/er/page.html"
+chmod 750 "$release/dist/deep/er"
+expect_failure 'wrong mode on a nested directory' kssmi_policy_assert_tree "$release/dist" 755 644 "$uid" "$gid" public
+chmod 755 "$release/dist/deep/er"
+if chmod 2755 "$release/dist/deep" 2>/dev/null && [ "$(stat -c '%a' -- "$release/dist/deep")" = 2755 ]; then
+  expect_failure 'setgid bit on a directory (exact mode, as stat %a)' kssmi_policy_assert_tree "$release/dist" 755 644 "$uid" "$gid" public
+fi
+# A numeric chmod keeps a directory's setgid bit on Linux; clear it explicitly.
+chmod g-s "$release/dist/deep"
+chmod 755 "$release/dist/deep"
+odd_name="$release/dist/deep/odd name
+line.html"
+printf 'x' > "$odd_name"
+chmod 600 "$odd_name"
+expect_failure 'wrong mode on a file whose name has a space and a newline' kssmi_policy_assert_tree "$release/dist" 755 644 "$uid" "$gid" public
+chmod 644 "$odd_name"
+kssmi_policy_assert_tree "$release/dist" 755 644 "$uid" "$gid" public
+expect_failure 'non-octal tree mode' kssmi_policy_assert_tree "$release/dist" 755 64x "$uid" "$gid" public
+rm -r "$release/dist/deep"
+
+# Tree modes must be written as stat %a prints them: 000-777 or 1000-7777.
+for mode in 000 644 755 777 1777 2755 7777; do
+  kssmi_policy_valid_mode "$mode" || { printf 'Valid mode rejected: %s\n' "$mode" >&2; exit 1; }
+done
+for mode in '' 0 7 75 0755 0644 00755 77777 8 888 9999 8000 1800 any -755 +755 ' 755' '755 ' $'755\n' 7a5; do
+  expect_failure "out-of-range tree mode '${mode//$'\n'/\\n}'" kssmi_policy_valid_mode "$mode"
+done
+expect_failure 'tree check with a leading-zero directory mode' kssmi_policy_assert_tree "$release/dist" 0755 644 "$uid" "$gid" public
+expect_failure 'tree check with a five-digit file mode' kssmi_policy_assert_tree "$release/dist" 755 10644 "$uid" "$gid" public
+expect_failure 'tree check with an empty file mode' kssmi_policy_assert_tree "$release/dist" 755 '' "$uid" "$gid" public
+
+# A find that fails (unreadable directory, I/O error) must fail the tree
+# check, never let it pass on a partial walk. The wrapper runs the real find
+# and then reports failure when its arguments contain the given marker.
+assert_tree_with_failing_find() {
+  local marker="$1"
+  shift
+  (
+    find() {
+      local status=0
+      command find "$@" || status=$?
+      case " $* " in *" $marker "*) return 2 ;; esac
+      return "$status"
+    }
+    kssmi_policy_assert_tree "$@"
+  )
+}
+assert_tree_with_failing_find 'no-such-marker' "$release/dist" 755 644 "$uid" "$gid" public
+expect_failure 'find failure while selecting directories' \
+  assert_tree_with_failing_find '-mindepth 1 -type d' "$release/dist" 755 644 "$uid" "$gid" public
+expect_failure 'find failure while selecting files' \
+  assert_tree_with_failing_find '-type f (' "$release/dist" 755 644 "$uid" "$gid" public
+expect_failure 'find failure while scanning for symlinks' \
+  assert_tree_with_failing_find '-type l -print' "$release/dist" 755 644 "$uid" "$gid" public
+expect_failure 'find failure while scanning for special files' \
+  assert_tree_with_failing_find '! -type f' "$release/dist" 755 644 "$uid" "$gid" public
+
 expect_failure 'wrong owner contract' kssmi_policy_assert_path \
   "$release/dist/app.css" file 644 "$((uid + 1))" "$gid"
 
