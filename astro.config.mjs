@@ -34,6 +34,14 @@ export default defineConfig({
     inlineStylesheets: 'auto'
   },
   vite: {
+    build: {
+      // Keep bundled <script> modules external. Astro inlines small ones as
+      // <script type="module">, and after a ClientRouter navigation that ends
+      // with an inline module it appends a data: module to wait for it, which
+      // the strict static CSP (script-src without data:) blocks (R-31).
+      // Returning undefined keeps Vite's default for every other asset type.
+      assetsInlineLimit: (filePath) => (filePath.endsWith('.js') ? false : undefined),
+    },
     plugins: [
       tailwindcss(),
       {
