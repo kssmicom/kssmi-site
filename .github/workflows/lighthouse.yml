@@ -1,0 +1,70 @@
+name: Weekly Lighthouse
+
+on:
+  schedule:
+    # Mondays 04:41 UTC. Lab measurements only; the run is a report and fails
+    # only when Lighthouse itself cannot audit a page.
+    - cron: '41 4 * * 1'
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/lighthouse.yml'
+      - 'scripts/lighthouse-summary.mjs'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lighthouse
+  cancel-in-progress: false
+
+jobs:
+  lighthouse:
+    name: Lighthouse lab audit (mobile and desktop)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2 pinned 2026-08-02
+
+      - name: Setup Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e  # v6.4.0 pinned 2026-08-02
+        with:
+          node-version: '24'
+
+      - name: Run Lighthouse
+        run: |
+          mkdir -p lighthouse-reports
+          status=0
+          for page in home:/ category:/product/acetate-optical-frames/ product:/product/kao-001-acetate-optical-frame/; do
+            name="${page%%:*}"
+            path="${page#*:}"
+            for preset in mobile desktop; do
+              preset_flag=""
+              if [ "$preset" = desktop ]; then preset_flag="--preset=desktop"; fi
+              # Three runs per page and form factor; the summary takes the median.
+              for run in 1 2 3; do
+                npx --yes lighthouse@13.5.0 "https://kssmi.com${path}" $preset_flag \
+                  --quiet \
+                  --chrome-flags="--headless=new --no-sandbox" \
+                  --only-categories=performance,accessibility,best-practices,seo \
+                  --output=json --output=html \
+                  --output-path="lighthouse-reports/${name}-${preset}-${run}" \
+                  || status=1
+              done
+            done
+          done
+          exit $status
+
+      - name: Summarize
+        if: always()
+        run: node scripts/lighthouse-summary.mjs lighthouse-reports >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1, Node.js 24
+        with:
+          name: lighthouse-reports
+          path: lighthouse-reports/
+          retention-days: 30
