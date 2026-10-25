@@ -1,8 +1,10 @@
 // Inquiry form submission (validation messages, Turnstile token check, POST to
 // /send-mail.php, VJT submission hook). Loaded by InquiryForm.astro as a classic
 // external script after the form; the dev switch comes from its data-dev
-// attribute, so the file is identical in every language and ClientRouter runs
-// it once per document. Its astro:page-load listener binds each new form.
+// attribute, so the file is identical in every language and ClientRouter does
+// not run it again on a soft navigation. Its astro:page-load listener binds each
+// new form. If a new fingerprint runs in a tab that stayed open across a deploy,
+// data-submitBound still binds each form element only once.
 (function() {
   const isDev = (document.currentScript && document.currentScript.dataset.dev) === 'true';
 
