@@ -89,6 +89,18 @@ test('consent: reject, save, withdraw and accept update storage and Consent Mode
   expect(await lastConsentUpdate(page)).toMatchObject({ analytics_storage: 'granted', ad_storage: 'granted' });
 });
 
+test('consent: first-visit preferences start unchecked and saving them grants nothing', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('#cookie-btn-preferences').click();
+  await expect(page.locator('#cookie-modal-overlay')).toBeVisible();
+  await expect(page.locator('#cookie-check-analytics')).not.toBeChecked();
+  await expect(page.locator('#cookie-check-ads')).not.toBeChecked();
+  await page.locator('#cookie-modal-save').click();
+  expect(await consentRecord(page)).toMatchObject({ analytics: false, ads: false });
+  expect(await lastConsentUpdate(page)).toMatchObject({ analytics_storage: 'denied', ad_storage: 'denied' });
+  await expect(page.locator('#cookie-banner-main')).toHaveCount(0);
+});
+
 test('consent: Escape only acts while the preferences modal is open', async ({ page }) => {
   await page.goto('/');
   await page.locator('#cookie-btn-accept').click();
