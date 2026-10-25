@@ -24,13 +24,14 @@ const TIMEOUT_MS = 20000;
 const CERT_MIN_DAYS = 14;
 
 // Known answers of the sites on the server (baseline 2026-10-24).
-// smallnm.com has answered 500 for months; it is listed as a known issue so the
-// monitor still notices if it changes or stops answering at all.
+// smallnm.com has answered 500 for months; it is listed as a known issue (500,
+// or 200 once someone fixes it) so the monitor still notices if it stops
+// answering at all or starts answering something else.
 const SITES = [
   ['aiidii.com', 200], ['crm.kssmi.com', 200], ['cweup.com', 301], ['definjector.com', 200],
   ['goboll.com', 200], ['hxhconnector.com', 200], ['jade-shipping.com', 200], ['jinriea.com', 301],
   ['kssmi.com', 200], ['ledconnectors.com', 200], ['moldpartsglobal.com', 200],
-  ['pangaeacargoline.com', 200], ['smallnm.com', 500, 'known issue: answers 500'],
+  ['pangaeacargoline.com', 200], ['smallnm.com', [500, 200], 'known issue: answers 500'],
   ['switchgearmfg.com', 200], ['wise-shipping.cn', 200], ['xxoptics.com', 200], ['yeetian.com', 200],
 ];
 
@@ -65,18 +66,36 @@ async function request(url) {
   throw lastError;
 }
 
-async function checkStatus(group, url, expected, locationPrefix, note) {
+// One answer for the URL: { status, location } or { error }.
+async function answer(url) {
   try {
     const response = await request(url);
     const location = response.headers.get('location') || '';
-    let ok = response.status === expected;
-    if (ok && locationPrefix) ok = location.startsWith(locationPrefix);
-    const where = locationPrefix ? ` → ${location.split('?')[0] || '(none)'}` : '';
-    record(group, url.replace('https://', ''), ok, `${response.status} (expected ${expected}${locationPrefix ? ' to Access' : ''})${where}${note ? ` — ${note}` : ''}`);
     await response.body?.cancel();
+    return { status: response.status, location };
   } catch (error) {
-    record(group, url.replace('https://', ''), false, `no answer: ${error.cause?.code || error.name}`);
+    return { error: error.cause?.code || error.name };
   }
+}
+
+async function checkStatus(group, url, expected, locationPrefix, note) {
+  const allowed = Array.isArray(expected) ? expected : [expected];
+  const matches = (result) => !result.error && allowed.includes(result.status)
+    && (!locationPrefix || result.location.startsWith(locationPrefix));
+  let result = await answer(url);
+  let rechecked = false;
+  if (!matches(result)) {
+    // One more look after a pause before reporting, so a single transient edge
+    // response (challenge page, 5xx blip) does not send a failure email.
+    await new Promise((resolve) => setTimeout(resolve, 10000));
+    result = await answer(url);
+    rechecked = true;
+  }
+  const ok = matches(result);
+  const shown = result.error ? `no answer: ${result.error}` : String(result.status);
+  const where = locationPrefix && !result.error ? ` → ${result.location.split('?')[0] || '(none)'}` : '';
+  record(group, url.replace('https://', ''), ok,
+    `${shown} (expected ${allowed.join(' or ')}${locationPrefix ? ' to Access' : ''})${where}${note ? ` — ${note}` : ''}${rechecked ? ' [rechecked]' : ''}`);
 }
 
 async function checkRuntimeAssets() {
@@ -85,7 +104,7 @@ async function checkRuntimeAssets() {
     const manifest = await response.json();
     const assets = Object.entries(manifest.assets || {});
     if (assets.length === 0) return record('kssmi', 'runtime manifest', false, 'no assets listed');
-    for (const [name, asset] of assets) await checkStatus('kssmi', `https://kssmi.com${asset.url}`, 200, null, `runtime asset ${name}`);
+    await Promise.all(assets.map(([name, asset]) => checkStatus('kssmi', `https://kssmi.com${asset.url}`, 200, null, `runtime asset ${name}`)));
   } catch (error) {
     record('kssmi', 'runtime manifest', false, `unreadable: ${error.cause?.code || error.name}`);
   }
@@ -115,7 +134,7 @@ function probe(host, port) {
 }
 
 await Promise.all(SITES.map(([host, status, note]) => checkStatus('sites', `https://${host}/`, status, null, note)));
-for (const [url, status, prefix] of KSSMI_ENDPOINTS) await checkStatus('kssmi', url, status, prefix);
+await Promise.all(KSSMI_ENDPOINTS.map(([url, status, prefix]) => checkStatus('kssmi', url, status, prefix)));
 await checkRuntimeAssets();
 
 const certificateHosts = [...new Set([...SITES.map(([host]) => host), 'panel.kssmi.com'])];

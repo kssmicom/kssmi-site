@@ -22,7 +22,7 @@ jobs:
   monitor:
     name: Check sites, endpoints, certificates and origin exposure
     runs-on: ubuntu-24.04
-    timeout-minutes: 5
+    timeout-minutes: 10
 
     steps:
       - name: Checkout code
