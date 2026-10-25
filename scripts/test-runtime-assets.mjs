@@ -214,7 +214,7 @@ assert.ok(
 const manifest = await createRuntimeAssetManifest(root);
 assert.deepEqual(
   Object.keys(manifest.assets).sort(),
-  ['cookie-banner', 'header', 'inquiry-form', 'vjt-contact-core', 'vjt-loader', 'vjt-tracker'],
+  ['cookie-banner', 'form-turnstile', 'header', 'inquiry-form', 'vjt-capability-proof', 'vjt-contact-core', 'vjt-loader', 'vjt-tracker'],
   'runtime manifest logical assets changed unexpectedly'
 );
 

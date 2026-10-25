@@ -4,7 +4,9 @@ name: Browser smoke tests
 # (tests/browser). The PHP CI does not build the frontend, so this is the PR
 # check for CSP, cookie banner and consent paths, ClientRouter navigations,
 # RTL layout, search and the 404 page. No secrets are used, and every request
-# that is not for the local test server is aborted by the tests.
+# that is not for the local test server is aborted by the tests, except the
+# real Turnstile API (challenges.cloudflare.com) used with Cloudflare's test
+# site keys in turnstile-real.spec.mjs.
 on:
   pull_request:
   workflow_dispatch:

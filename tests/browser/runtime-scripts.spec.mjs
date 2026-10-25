@@ -1,6 +1,7 @@
 // Browser tests for the scripts moved out of inline <script> into
 // fingerprinted runtime assets (R-14): Header lifecycle, VJT Contact Core,
-// VJT tracker bootstrap and the inquiry form. Each must run once per document,
+// VJT capability proof, VJT tracker bootstrap, the inquiry form and the form
+// Turnstile controller. Each must run once per document,
 // survive ClientRouter navigations and keep its consent and form behaviour.
 //
 // The tracker bootstrap skips localhost / 127.0.0.1 / ::1 on purpose, so these
@@ -72,9 +73,10 @@ test('runtime scripts: external, consent-gated tracker, one run across navigatio
   const inlineGuards = await page.evaluate(() => [...document.scripts]
     .filter((script) => !script.src)
     .map((script) => script.textContent)
-    .filter((text) => /__kssmiHeaderLifecycle|__vjtLoaderBound|__vjtContactCoreBound/.test(text)).length);
+    .filter((text) => /__kssmiHeaderLifecycle|__vjtLoaderBound|__vjtContactCoreBound|KSSMI_VJT_CAPABILITY_PROOF|__kssmiFormTurnstile/.test(text)).length);
   expect(inlineGuards, 'inline copies of the moved scripts').toBe(0);
-  await page.waitForFunction(() => window.__kssmiHeaderLifecycle && window.__vjtLoaderBound && window.__vjtContactCoreBound);
+  await page.waitForFunction(() => window.__kssmiHeaderLifecycle && window.__vjtLoaderBound && window.__vjtContactCoreBound
+    && typeof window.KSSMI_VJT_CAPABILITY_PROOF === 'function');
 
   // No tracker before consent.
   await page.waitForTimeout(500);
@@ -92,7 +94,7 @@ test('runtime scripts: external, consent-gated tracker, one run across navigatio
     await navigateWithin(page, href);
     await expect.poll(() => page.evaluate(() => window.VJTTracker && window.VJTTracker.page.url)).toBe(page.url());
   }
-  for (const name of ['header', 'vjt-loader', 'vjt-contact-core', 'vjt-tracker']) {
+  for (const name of ['header', 'vjt-capability-proof', 'vjt-loader', 'vjt-contact-core', 'vjt-tracker']) {
     expect(countOf(testInfo, name), `${name} requests`).toBe(1);
   }
 
@@ -102,6 +104,13 @@ test('runtime scripts: external, consent-gated tracker, one run across navigatio
   await expect(languageMenu).toHaveClass(/is-open/);
   await page.locator('footer').first().click({ position: { x: 5, y: 5 } });
   await expect(languageMenu).not.toHaveClass(/is-open/);
+  // Escape closes it too and leaves focus on the button (R-30).
+  await languageMenu.locator('.lang-btn').click();
+  await expect(languageMenu).toHaveClass(/is-open/);
+  await page.keyboard.press('Escape');
+  await expect(languageMenu).not.toHaveClass(/is-open/);
+  await expect(languageMenu.locator('.lang-btn')).toHaveAttribute('aria-expanded', 'false');
+  await expect(languageMenu.locator('.lang-btn')).toBeFocused();
 
   await expectCleanPage(page, testInfo);
 });
@@ -135,6 +144,12 @@ for (const route of ['direct', 'soft navigation']) {
     expect(testInfo.sendMailRequests, 'requests to send-mail.php').toBe(0);
     expect(new URL(page.url()).pathname.replace(/\/$/, '')).toBe('/quote');
     expect(countOf(testInfo, 'inquiry-form'), 'inquiry-form requests').toBe(1);
+
+    // The form Turnstile controller mounted this page's container. The API is
+    // blocked here, so it ends in its load-failure state with a retry button.
+    await expect(page.locator('#turnstile-container')).toHaveAttribute('data-turnstile-state', 'failed');
+    await expect(page.locator('#turnstile-container button')).toBeVisible();
+    expect(countOf(testInfo, 'form-turnstile'), 'form-turnstile requests').toBe(1);
     await expectCleanPage(page, testInfo);
   });
 }
