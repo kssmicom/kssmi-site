@@ -1,8 +1,0 @@
-# /en/<path> → /<path> (301). English is the default locale and lives at the
-# site root. OpenLiteSpeed applies the .htaccess of the directory a request maps
-# to and does not inherit the site-root rules into it, so the root .htaccess
-# /en rule only covers /en and /en/; requests below this directory need their
-# own rule. Real files here (sitemaps, llms*.txt) still pass through (!-f).
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ /$1 [R=301,L]
