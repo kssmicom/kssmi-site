@@ -27,13 +27,21 @@ if (preg_match('#^/([A-Z][A-Za-z0-9]{5})/?$#D', $requestPath, $shortLinkMatch) =
 // Real files under /en/ (sitemaps, llms*.txt) are served directly and never
 // reach this router. A redirect only goes to an existing file or page, which is
 // served directly, so this cannot loop.
-if (preg_match('#^/en/(.+)$#D', $requestPath, $enMatch) === 1) {
+//
+// The target must be a canonical site path: one or more segments of
+// [A-Za-z0-9._~-] separated by single slashes, optional trailing slash, and no
+// "." or ".." segment. Anything else (//, backslash, dot segments, percent
+// encoding) gets the normal 404, so the Location header can never become a
+// protocol-relative or off-site URL such as //faq/.
+if (preg_match('#^/en/([A-Za-z0-9._~-]+(?:/[A-Za-z0-9._~-]+)*/?)$#D', $requestPath, $enMatch) === 1
+    && preg_match('#(?:^|/)\.{1,2}(?:/|$)#', $enMatch[1]) !== 1) {
     $target = '/' . $enMatch[1];
     $root = realpath(__DIR__);
     $resolved = realpath(__DIR__ . $target);
     $insideRoot = $root !== false && $resolved !== false
         && ($resolved === $root || strncmp($resolved, $root . DIRECTORY_SEPARATOR, strlen($root) + 1) === 0);
-    if ($insideRoot && (is_file($resolved) || is_file($resolved . DIRECTORY_SEPARATOR . 'index.html'))) {
+    $sitePath = strlen($target) > 1 && $target[0] === '/' && $target[1] !== '/' && strpos($target, '\\') === false;
+    if ($sitePath && $insideRoot && (is_file($resolved) || is_file($resolved . DIRECTORY_SEPARATOR . 'index.html'))) {
         $query = (string)(parse_url($uri, PHP_URL_QUERY) ?? '');
         header('Location: ' . $target . ($query !== '' ? '?' . $query : ''), true, 301);
         header('Cache-Control: no-store, private', true);

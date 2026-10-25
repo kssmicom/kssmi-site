@@ -51,8 +51,15 @@ r404_write("{$tree}/en/llms.txt", 'llms');
 // Stand-in for the web server: real files directly, everything else to the router.
 r404_write("{$tree}/server-router.php", <<<'PHP'
 <?php
-$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$path = (string)parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $file = __DIR__ . $path;
+// Only canonical paths map to files; //, backslashes and dot segments go to
+// the router, as they would on the real server.
+$canonical = preg_match('#//|\\\\|(^|/)\.{1,2}(/|$)#', $path) !== 1;
+if (!$canonical) {
+    require __DIR__ . '/404-router.php';
+    return true;
+}
 if ($path !== '/' && is_file($file)) {
     return false;
 }
@@ -105,11 +112,36 @@ try {
         ['/en/en/sitemap.xml', 301, '/en/sitemap.xml'],
         ['/faq/', 200, ''],
         ['/zh/missing/', 404, ''],
+        // Non-canonical targets must never redirect (no protocol-relative //faq/).
+        ['/en//faq/', 404, ''],
+        ['/en//faq', 404, ''],
+        ['/en/faq//', 404, ''],
+        ['/en/%2Ffaq/', 404, ''],
+        ['/en/%5Cfaq/', 404, ''],
+        ['/en/%2E%2E/faq/', 404, ''],
+        ['/en/faq/%2E%2E/', 404, ''],
     ];
     foreach ($cases as [$path, $status, $location]) {
         [$gotStatus, $gotLocation] = r404_get($port, $path);
         if ($gotStatus !== $status || $gotLocation !== $location) {
             r404_fail("{$path}: expected {$status} {$location}, got {$gotStatus} {$gotLocation}");
+        }
+    }
+    // Dot segments and raw backslashes: a server may normalize or reject them,
+    // so accept 404 (or 400) or a redirect to exactly /faq/, never anything else.
+    foreach (['/en/./faq/', '/en/../faq/', '/en/x/../faq/', '/en/\faq/', '/en/faq\x/', '/en/\\evil.example/'] as $path) {
+        [$gotStatus, $gotLocation] = r404_get($port, $path);
+        $acceptable = in_array($gotStatus, [400, 404], true) || ($gotStatus === 301 && $gotLocation === '/faq/');
+        if (!$acceptable) {
+            r404_fail("{$path}: got {$gotStatus} {$gotLocation}");
+        }
+    }
+    // Invariant for every request above: a Location is a same-site absolute
+    // path, never protocol-relative and never containing a backslash.
+    foreach (array_merge(array_column($cases, 0), ['/en//faq/', '/en/\\evil.example/', '/en/\/evil.example/']) as $path) {
+        [, $gotLocation] = r404_get($port, $path);
+        if ($gotLocation !== '' && preg_match('#^/(?!/)[^\\\\]*$#D', $gotLocation) !== 1) {
+            r404_fail("{$path}: unsafe Location {$gotLocation}");
         }
     }
     // Following the chain from any /en/ path must end without a loop.
