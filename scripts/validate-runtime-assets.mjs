@@ -47,6 +47,8 @@ for (const [label, source] of [
 
 assert.match(layout, /runtimeAssetUrl\(['"]cookie-banner['"]\)/, 'Layout must resolve the cookie banner by logical name.');
 assert.match(tracker, /runtimeAssetUrl\(['"]vjt-tracker['"]\)/, 'VisitorTracker must resolve the tracker by logical name.');
+assert.match(tracker, /runtimeAssetUrl\(['"]vjt-loader['"]\)/, 'VisitorTracker must resolve the tracker bootstrap by logical name.');
+assert.doesNotMatch(tracker, /define:vars=\{\{\s*trackerScriptUrl/, 'The tracker bootstrap must stay external, configured by data-* attributes.');
 assert.match(runtimeConfig, /createRuntimeAssetManifest\(root\)/, 'Astro runtime config must use the shared manifest generator.');
 assert.match(runtimeConfig, /resolve\(process\.cwd\(\)\)/, 'Astro runtime asset lookup must remain anchored to the project cwd after prerender bundling.');
 assert.doesNotMatch(runtimeConfig, /fileURLToPath\(import\.meta\.url\)/, 'Astro runtime asset lookup must not resolve from the copied prerender module URL.');

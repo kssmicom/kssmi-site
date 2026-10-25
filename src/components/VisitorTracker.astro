@@ -8,6 +8,7 @@ const allowLocalVjt = import.meta.env.PUBLIC_ENABLE_LOCAL_VJT === 'true';
 const trackerScriptUrl = isDev
   ? 'http://localhost:4325/js/vjt-tracker.js'
   : runtimeAssetUrl('vjt-tracker');
+const vjtLoaderUrl = isDev ? '/js/vjt-loader.js' : runtimeAssetUrl('vjt-loader');
 const contactIntentUrl = isDev
   ? 'http://localhost:4325/api/track-contact-intent.php'
   : '/api/track-contact-intent.php';
@@ -554,63 +555,13 @@ const turnstileSiteKey = import.meta.env.PUBLIC_VJT_TURNSTILE_SITE_KEY;
 </script>
 
 <!-- Tracker remains analytics-consent gated, but starts immediately once allowed
-     so a visitor cannot click WhatsApp/Email before its listener is bound. -->
-<script is:inline define:vars={{ trackerScriptUrl, allowLocalVjt, isDev }}>
-  (function() {
-    // Inline scripts run again after Astro view transitions. Keep one persistent
-    // loader/listener so a navigation cannot start the same pageview twice.
-    if (window.__vjtLoaderBound) return;
-    window.__vjtLoaderBound = true;
-    var loading = false;
-    var loaded = false;
-    function injectTracker() {
-      if (loading || loaded || window.VJT_init) return;
-      loading = true;
-      var s = document.createElement('script');
-      if (isDev) {
-        var devHostname = window.location.hostname === '127.0.0.1'
-          ? '127.0.0.1'
-          : ((window.location.hostname === '::1' || window.location.hostname === '[::1]') ? '[::1]' : 'localhost');
-        s.src = 'http://' + devHostname + ':4325/js/vjt-tracker.js';
-      } else {
-        s.src = trackerScriptUrl;
-      }
-      s.async = true;
-      s.onload = function() {
-        loading = false;
-        loaded = true;
-        if (window.VJT_init) window.VJT_init();
-      };
-      s.onerror = function() {
-        loading = false;
-        loaded = false;
-      };
-      document.head.appendChild(s);
-    }
-    function scheduleInject() {
-      var hostname = window.location.hostname;
-      var isLocalHost = hostname === 'localhost' || hostname === '127.0.0.1'
-        || hostname === '::1' || hostname === '[::1]';
-      if (isLocalHost && !allowLocalVjt) return;
-      if (!window.VJTTracker || !window.VJTTracker.enabled) return;
-      injectTracker();
-    }
-    // Existing consent may be available on the first load.
-    scheduleInject();
-    // The cookie banner dispatches this after the visitor grants analytics consent.
-    window.addEventListener('vjt:consent-granted', scheduleInject);
-    // On SPA navigations, call init directly instead of re-downloading the script
-    document.addEventListener('astro:page-load', function() {
-      if (window.VJT_init) {
-        // Already loaded — just re-init with updated config and URL (I1 fix)
-        window.VJTTracker.page.url = window.location.href;
-        window.VJTTracker.page.title = document.title || '';
-        window.VJT_init();
-      } else {
-        // First load has not completed yet. injectTracker() keeps the in-flight
-        // script unique; never clear its guard from astro:page-load.
-        scheduleInject();
-      }
-    });
-  })();
-</script>
+     so a visitor cannot click WhatsApp/Email before its listener is bound.
+     The bootstrap is a classic external script (public/js/vjt-loader.js) at the
+     same position the inline copy had; it reads these data-* values itself. -->
+<script
+  is:inline
+  src={vjtLoaderUrl}
+  data-tracker-url={trackerScriptUrl}
+  data-allow-local-vjt={allowLocalVjt ? 'true' : 'false'}
+  data-dev={isDev ? 'true' : 'false'}
+></script>

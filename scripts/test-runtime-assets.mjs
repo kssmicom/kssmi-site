@@ -22,10 +22,11 @@ import {
 } from './lib/runtime-assets.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const [vjtTrackerSource, inquiryFormSource, visitorTrackerSource] = await Promise.all([
+const [vjtTrackerSource, inquiryFormSource, visitorTrackerSource, vjtLoaderSource] = await Promise.all([
   readFile(resolve(root, 'public/js/vjt-tracker.js'), 'utf8'),
   readFile(resolve(root, 'src/components/InquiryForm.astro'), 'utf8'),
   readFile(resolve(root, 'src/components/VisitorTracker.astro'), 'utf8'),
+  readFile(resolve(root, 'public/js/vjt-loader.js'), 'utf8'),
 ]);
 
 function extractNamedFunction(source, name) {
@@ -187,7 +188,7 @@ assert.match(
 );
 
 const hostnameMappings = [
-  ...visitorTrackerSource.matchAll(/var\s+(?:vjtDevHostname|devHostname)\s*=\s*window\.location\.hostname[\s\S]*?;/g),
+  ...(visitorTrackerSource + '\n' + vjtLoaderSource).matchAll(/var\s+(?:vjtDevHostname|devHostname)\s*=\s*window\.location\.hostname[\s\S]*?;/g),
   ...inquiryFormSource.matchAll(/const\s+devHostname\s*=\s*window\.location\.hostname[\s\S]*?;/g),
 ].map((match) => match[0]);
 assert.ok(hostnameMappings.length >= 4, 'development hostname mappings are missing');
@@ -198,7 +199,7 @@ for (const mapping of hostnameMappings) {
     'every development API hostname mapping must recognize bracketed and unbracketed IPv6 loopback'
   );
 }
-const localHostBoundary = visitorTrackerSource.match(/var\s+isLocalHost\s*=[\s\S]*?;/)?.[0] || '';
+const localHostBoundary = vjtLoaderSource.match(/var\s+isLocalHost\s*=[\s\S]*?;/)?.[0] || '';
 assert.ok(
   /hostname\s*===\s*['"]::1['"]/.test(localHostBoundary)
     && /hostname\s*===\s*['"]\[::1\]['"]/.test(localHostBoundary),
@@ -208,7 +209,7 @@ assert.ok(
 const manifest = await createRuntimeAssetManifest(root);
 assert.deepEqual(
   Object.keys(manifest.assets).sort(),
-  ['cookie-banner', 'vjt-tracker'],
+  ['cookie-banner', 'vjt-loader', 'vjt-tracker'],
   'runtime manifest logical assets changed unexpectedly'
 );
 
