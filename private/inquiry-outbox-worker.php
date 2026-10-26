@@ -26,6 +26,8 @@ $webroot = is_file($release . '/dist/send-mail.php') ? $release . '/dist' : $rel
 require_once $release . '/private/email-log-store.php';
 require_once $release . '/private/inquiry-outbox.php';
 require_once $release . '/private/sender-blocklist.php';
+require_once $release . '/private/inquiry-privacy.php';
+require_once $release . '/private/privacy-maintenance.php';
 require_once $webroot . '/api/vjt-helpers.php';
 define('KSSMI_SEND_MAIL_LIBRARY', true);
 require_once $webroot . '/send-mail.php';
@@ -53,6 +55,12 @@ if (kssmi_email_logs_cutover_is_active($config['log_file'])) {
     exit(0);
 }
 
+try {
+    echo 'retention ', json_encode(kssmi_privacy_maintenance($config['log_file'])), "\n";
+} catch (Throwable $error) {
+    error_log('KSSMI retention failed: ' . $error->getMessage());
+    fwrite(STDERR, "Retention failed; operator review required; mail drain continues.\n");
+}
 $results = kssmi_outbox_drain(kssmi_inquiry_outbox_sender($config), kssmi_inquiry_outbox_final($config), 20, 50);
 foreach ($results as $id => $result) echo $id, ' ', $result, "\n";
 echo 'outbox ', json_encode(kssmi_outbox_summary()), "\n";

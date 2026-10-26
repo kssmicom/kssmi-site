@@ -27,7 +27,7 @@ Hak ini tertakluk kepada syarat dan pengecualian undang-undang. Kami mungkin mem
 
 ### Melaksanakan hak anda
 
-Hantar permintaan ke **privacy [at] kssmi [dot] com** dan terangkan hak yang anda ingin gunakan. Kssmi harus mengakui dan membalas dalam masa yang ditetapkan oleh undang-undang yang terpakai.
+Hantar permintaan kepada **privacy [at] kssmi [dot] com** dengan menyatakan hak yang ingin digunakan. Kssmi menjawab dalam tempoh undang-undang. Maklumat munasabah perlu boleh diminta untuk mengesahkan identiti, menjelaskan permintaan atau melindungi hak orang lain.
 
 ### Aduan
 
@@ -45,6 +45,4 @@ Kami mungkin mengemas kini notis ini apabila tapak web, aktiviti pemprosesan, pe
 
 Pengawal data: **Shenzhen Kssmi Technology Co., Ltd.**  
 Hubungan privasi: **privacy [at] kssmi [dot] com**  
-Alamat pos: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**  
-Wakil EU: **Kssmi Eyewear, Montagnola, Via Nicola Spedalieri, 7, 00142 Roma RM, Italy**  
-Hubungan privasi wakil EU: **privacy [at] kssmi [dot] com**
+Alamat pos: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

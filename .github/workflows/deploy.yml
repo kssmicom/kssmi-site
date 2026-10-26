@@ -122,6 +122,9 @@ jobs:
           php scripts/test-inquiry-outbox.php
           php scripts/test-send-mail-outbox-http.php
           php scripts/test-sender-blocklist.php
+          php scripts/test-inquiry-privacy.php
+          node scripts/test-contact-consent.mjs
+          php scripts/test-contact-consent-http.php
           php scripts/test-vjt-event-state.php
           php scripts/test-vjt-heartbeat.php
           php scripts/test-vjt-data-quality.php

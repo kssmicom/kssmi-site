@@ -4,7 +4,7 @@
  *
  * Contact links navigate directly to WhatsApp/mailto. This endpoint receives a
  * best-effort POST in parallel and never participates in the navigation path.
- * Without analytics consent it stores only the minimal Contact Core fields.
+ * Without current analytics consent and its cycle it stores no contact event.
  */
 
 header('X-Robots-Tag: noindex, nofollow');
@@ -83,7 +83,10 @@ if (!preg_match('/^vjtce_[A-Za-z0-9_-]{8,80}$/', $eventId)) {
     exit;
 }
 
-$contactSession = kssmi_vjt_contact_session_from_request();
+$cycle = $data['consent_cycle'] ?? null;
+$hasConsent = ($data['analytics'] ?? null) === true && kssmi_vjt_is_consent_cycle($cycle);
+$contactSession = $hasConsent ? kssmi_vjt_contact_session_from_request() : null;
+if ($contactSession !== null && !hash_equals((string)$cycle, (string)($contactSession['cyc'] ?? ''))) $contactSession = null;
 $capabilityToken = is_scalar($data['capability_token'] ?? null)
     ? (string)$data['capability_token'] : '';
 $capability = $contactSession === null ? null : kssmi_vjt_validate_capability(

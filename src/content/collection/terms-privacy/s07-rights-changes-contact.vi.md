@@ -27,7 +27,7 @@ Những quyền này phải tuân theo các điều kiện và ngoại lệ phá
 
 ### Thực hiện quyền của bạn
 
-Gửi yêu cầu tới **privacy [at] kssmi [dot] com** và mô tả quyền mà bạn muốn thực hiện. Kssmi phải xác nhận và phản hồi trong thời gian luật hiện hành yêu cầu.
+Gửi yêu cầu đến **privacy [at] kssmi [dot] com** và nêu quyền muốn thực hiện. Kssmi trả lời trong thời hạn luật định. Chúng tôi có thể yêu cầu thông tin cần thiết hợp lý để xác minh danh tính, làm rõ yêu cầu hoặc bảo vệ quyền người khác.
 
 ### Khiếu nại
 
@@ -45,6 +45,4 @@ Chúng tôi có thể cập nhật thông báo này khi trang web, hoạt độn
 
 Bên kiểm soát dữ liệu: **Shenzhen Kssmi Technology Co., Ltd.**  
 Liên hệ bảo mật: **privacy [at] kssmi [dot] com**  
-Địa chỉ bưu điện: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**  
-Đại diện tại EU: **Kssmi Eyewear, Montagnola, Via Nicola Spedalieri, 7, 00142 Roma RM, Italy**  
-Liên hệ bảo mật của đại diện tại EU: **privacy [at] kssmi [dot] com**
+Địa chỉ bưu điện: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

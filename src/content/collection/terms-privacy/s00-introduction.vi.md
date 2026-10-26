@@ -16,9 +16,8 @@ Trang này chứa hai tài liệu:
 
 Trang web chủ yếu dành cho khách hàng doanh nghiệp, nhà phân phối, thương hiệu và các bên khác quan tâm đến việc sản xuất kính mắt OEM hoặc ODM. Các tham chiếu đến "Kssmi", "chúng tôi" hoặc "của chúng tôi" có nghĩa là **Shenzhen Kssmi Technology Co., Ltd.**, trừ khi ngữ cảnh có chỉ định khác.
 
-**Ngày có hiệu lực:** 2026-07-19  
-**Cập nhật lần cuối:** 2026-07-19  
-**Phiên bản tài liệu:** 1.0
+**Ngày có hiệu lực:** 2026-10-26\
+**Cập nhật lần cuối:** 2026-10-26\
+**Phiên bản tài liệu:** 1.1
 
 Nếu một báo giá, đơn đặt hàng, hóa đơn chiếu lệ, thỏa thuận sản xuất hoặc hợp đồng bằng văn bản cụ thể nào khác xung đột với các điều khoản của trang web này, thì thỏa thuận bằng văn bản cụ thể đó sẽ chi phối giao dịch thương mại có liên quan.
-

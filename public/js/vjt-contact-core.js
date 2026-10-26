@@ -1,10 +1,5 @@
-// VJT Contact Core: contact-intent events (WhatsApp/Email/phone clicks) and the
-// contact capabilities they carry. Independent of analytics consent and never
-// owns navigation. Loaded by VisitorTracker.astro as a classic external script
-// at the end of <body>; endpoint URLs and the dev switch come from its data-*
-// attributes, so the file is identical on every page and ClientRouter does not
-// run it again on a soft navigation. A new fingerprint after a deploy does run
-// in a tab that stayed open; window.__vjtContactCoreBound returns early then.
+// Contact measurement requires the current analytics consent cycle.
+// Native contact navigation remains available without statistics.
 (function() {
   if (window.__vjtContactCoreBound) return;
   window.__vjtContactCoreBound = true;
@@ -24,6 +19,23 @@
   var capabilityRetryDue = false;
   var contactEndpoint = contactIntentUrl;
   var capabilityEndpoint = capabilityUrl;
+  var contactEpoch = 0;
+  var contactCycle = null;
+
+  function currentContactCycle() {
+    return window.__kssmiConsent && window.__kssmiConsent.trackingCycle() || null;
+  }
+
+  function resetContactMeasurement() {
+    contactEpoch++;
+    contactCycle = null;
+    contactCapabilities = [];
+    capabilityRequest = null;
+    if (capabilityRefreshTimer) clearTimeout(capabilityRefreshTimer);
+    capabilityRefreshTimer = null;
+    clearCapabilityRetry();
+    capabilityFailures = 0;
+  }
   if (isDev) {
     var devHostname = window.location.hostname === '127.0.0.1'
       ? '127.0.0.1'
@@ -78,23 +90,46 @@
   }
 
   function loadContactCapabilities() {
+    var cycle = currentContactCycle();
+    if (!cycle) return Promise.resolve(false);
+    if (contactCycle !== cycle) {
+      resetContactMeasurement();
+      contactCycle = cycle;
+    }
     if (capabilityRequest) return capabilityRequest;
+    var epoch = contactEpoch;
     capabilityRetryDue = false;
     var refilled = false;
     var proof = typeof window.KSSMI_VJT_CAPABILITY_PROOF === 'function'
       ? window.KSSMI_VJT_CAPABILITY_PROOF() : Promise.resolve('');
     capabilityRequest = proof.then(function(token) {
+      if (epoch !== contactEpoch || currentContactCycle() !== cycle) return null;
       if (!token && !isDev) return null;
-      return fetch(capabilityEndpoint, {
-        method: 'POST',
-        credentials: 'include',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ mode: 'contact', turnstile_token: token })
+      var api = window.__kssmiConsent;
+      if (!api || typeof api.withIdentityLock !== 'function') return null;
+      // Serialize the entire cookie response with the controller's withdrawal
+      // cleanup across tabs, just as analytics identity issuance already does.
+      return api.withIdentityLock(function() {
+        if (epoch !== contactEpoch || currentContactCycle() !== cycle) return null;
+        var controller = typeof AbortController === 'function' ? new AbortController() : null;
+        var timer = controller ? setTimeout(function() { controller.abort(); }, 30000) : null;
+        return fetch(capabilityEndpoint, {
+          method: 'POST', credentials: 'include',
+          signal: controller ? controller.signal : undefined,
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ mode: 'contact', turnstile_token: token, analytics: true, consent_cycle: cycle })
+        }).then(function(response) {
+          return response.ok ? response.json() : null;
+        }).then(function(data) {
+          if (timer) clearTimeout(timer);
+          return data;
+        }, function(error) {
+          if (timer) clearTimeout(timer);
+          throw error;
+        });
       });
-    }).then(function(response) {
-      if (!response) return null;
-      return response.ok ? response.json() : null;
     }).then(function(data) {
+      if (epoch !== contactEpoch || currentContactCycle() !== cycle) return false;
       var issued = data && data.capabilities && data.capabilities.contact_intent;
       if (Array.isArray(issued)) {
         contactCapabilities = issued.filter(function(token) {
@@ -108,6 +143,7 @@
     }).catch(function() {
       return false;
     }).then(function(ok) {
+      if (epoch !== contactEpoch || currentContactCycle() !== cycle) return false;
       capabilityRequest = null;
       if (refilled) {
         capabilityFailures = 0;
@@ -121,6 +157,7 @@
   }
 
   function takeContactCapability() {
+    if (!currentContactCycle() || currentContactCycle() !== contactCycle) return '';
     var token = '';
     while (contactCapabilities.length && !token) {
       var candidate = contactCapabilities.shift() || '';
@@ -131,6 +168,11 @@
   }
 
   loadContactCapabilities();
+  window.addEventListener('vjt:consent-withdrawn', resetContactMeasurement);
+  window.addEventListener('kssmi:consent-changed', function() {
+    if (!currentContactCycle()) resetContactMeasurement();
+    else loadContactCapabilities();
+  });
 
   function readJson(key) {
     try {
@@ -189,6 +231,8 @@
   }
 
   function sendIntent(payload) {
+    if (!currentContactCycle()) return;
+    payload.consent_cycle = currentContactCycle();
     var capability = takeContactCapability();
     if (!capability) return;
     payload.capability_token = capability;
@@ -210,6 +254,7 @@
   }
 
   function recordContactIntent(event) {
+    if (!currentContactCycle()) return;
     var anchor = resolveAnchor(event.target);
     if (!anchor) return;
 
@@ -228,6 +273,8 @@
         var capability = takeContactCapability();
         if (!capability) return;
         coreUrl.searchParams.set('capability_token', capability);
+        coreUrl.searchParams.set('consent_cycle', currentContactCycle());
+        coreUrl.searchParams.set('analytics', '1');
 
         var analyticsLink = {};
         addAnalyticsLinkage(analyticsLink);
@@ -239,7 +286,6 @@
             coreUrl.searchParams.delete('step');
           }
         } else {
-          coreUrl.searchParams.delete('analytics');
           coreUrl.searchParams.delete('step');
         }
 
@@ -271,7 +317,7 @@
       page_path: window.location.pathname || '/',
       placement: anchor.getAttribute('data-vjt-placement') || '',
       site_language: (document.documentElement.lang || 'en').slice(0, 3).toUpperCase(),
-      analytics: false
+      analytics: true
     };
     addAnalyticsLinkage(payload);
     sendIntent(payload);
@@ -295,4 +341,4 @@
     if (freshCapabilityCount() >= 3) return;
     loadContactCapabilities();
   });
-})();
+  })();

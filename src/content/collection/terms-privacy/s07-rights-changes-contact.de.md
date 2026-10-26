@@ -45,6 +45,4 @@ Wir können diesen Hinweis aktualisieren, wenn sich unsere Website, Verarbeitung
 
 Datenverantwortlicher: **Shenzhen Kssmi Technology Co., Ltd.**  
 Datenschutz-Kontakt: **privacy [at] kssmi [dot] com**  
-Postanschrift: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**  
-EU-Vertreter: **Kssmi Eyewear, Montagnola, Via Nicola Spedalieri, 7, 00142 Roma RM, Italy**  
-Datenschutz-Kontakt des EU-Vertreters: **privacy [at] kssmi [dot] com**
+Postanschrift: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

@@ -1,6 +1,6 @@
 <?php
 /**
- * Consent-independent Contact Core entry point.
+ * Contact navigation stays available without consent; measurement requires it.
  *
  * Records only the minimum contact intent, then immediately redirects to the
  * fixed WhatsApp or email destination. It never creates analytics identifiers,
@@ -59,7 +59,10 @@ if (!in_array($fetchSite, ['same-origin', 'same-site'], true)
 try {
     require_once __DIR__ . '/vjt-helpers.php';
     require_once dirname(__DIR__, 2) . '/private/vjt-event-auth.php';
-    $contactSession = kssmi_vjt_contact_session_from_request();
+    $cycle = $_GET['consent_cycle'] ?? null;
+    $hasConsent = ($_GET['analytics'] ?? null) === '1' && kssmi_vjt_is_consent_cycle($cycle);
+    $contactSession = $hasConsent ? kssmi_vjt_contact_session_from_request() : null;
+    if ($contactSession !== null && !hash_equals((string)$cycle, (string)($contactSession['cyc'] ?? ''))) $contactSession = null;
     $capabilityToken = is_scalar($_GET['capability_token'] ?? null)
         ? (string)$_GET['capability_token'] : '';
     $capability = $contactSession === null ? null : kssmi_vjt_validate_capability(

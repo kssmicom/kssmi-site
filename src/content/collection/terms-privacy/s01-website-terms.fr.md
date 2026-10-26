@@ -11,7 +11,9 @@ title: "Conditions d'utilisation du site web"
 
 ### 1. Opérateur du site web
 
-Ce site web est exploité sous le nom Kssmi par **Shenzhen Kssmi Technology Co., Ltd.**, dont l'adresse enregistrée est située à **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, Chine, Code postal : 518000**.
+**Shenzhen Kssmi Technology Co., Ltd.** (深圳柯视觅科技有限责任公司)
+
+Adresse de contact commercial et de l'usine: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, Chine, Code postal : 518000**
 
 ### 2. Acceptation de ces conditions
 
@@ -41,9 +43,9 @@ Les noms, marques et matériels de tiers restent la propriété de leurs propri�
 
 ### 6. Informations soumises par les utilisateurs
 
-Vous êtes responsable de veiller à ce que les informations que vous soumettez soient exactes, légales et que vous avez l'autorité pour les fournir. Ne soumettez pas de fichiers de conception confidentiels, de données personnelles de catégories particulières ou de données personnelles de tiers à moins que cela ne soit nécessaire pour la demande et que vous y soyez autorisé.
+Fournissez uniquement les informations nécessaires que vous êtes autorisé à partager. Pour une première demande, envoyez un aperçu du projet et des références adaptées à une discussion préliminaire. Avant de communiquer des conceptions confidentielles complètes, contactez le service commercial pour convenir d'un NDA, le signer et définir le canal d'envoi. N'envoyez pas de données personnelles sensibles ni d'informations inutiles sur autrui. L'envoi ne transfère aucun droit de propriété et n'accorde que les droits nécessaires à votre demande et au projet convenu.
 
-La propriété et l'utilisation permise des conceptions de projets, des échantillons, de l'outillage, des spécifications et d'autres matériels commerciaux doivent être régies par le devis applicable, l'accord de confidentialité ou le contrat de fabrication.
+Le NDA signé par les deux parties régit la confidentialité, l'utilisation des documents et les recours, y compris son droit applicable et ses clauses de règlement des différends. Ces conditions ne modifient ni ne limitent ce NDA ; un accord ultérieur ne prévaut que dans les limites qu'il autorise. Propriété, outillage, exclusivité et remise des fichiers suivent les accords du projet. Une demande en ligne ou de NDA n'autorise aucun développement, échantillonnage, outillage ou fabrication payant : l'acceptation écrite des deux parties du devis, de la commande ou de l'accord et toute confirmation de paiement applicable sont requises. L'acceptation peut se faire par courriel via des contacts autorisés, sous réserve des exigences de signature convenues.
 
 ### 7. Services et liens tiers
 
@@ -55,7 +57,7 @@ Nous visons à maintenir le site web disponible et exact, mais nous ne garantiss
 
 ### 9. Responsabilité
 
-Rien dans ces conditions n'exclut ni ne limite la responsabilité qui ne peut être légalement exclue.
+Aucune disposition n'exclut ni ne limite une responsabilité qui ne peut l'être légalement. Dans la mesure permise par le droit applicable, Kssmi ne répond pas des pertes indirectes, accessoires, spéciales ou consécutives résultant uniquement de l'utilisation ou de l'impossibilité d'utiliser ce site informatif. La responsabilité relative aux devis, commandes, échantillons, produits ou projets de fabrication relève de l'accord commercial écrit applicable.
 
 ### 10. Droit applicable et litiges
 

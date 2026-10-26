@@ -30,6 +30,7 @@ function short_link_db(): PDO {
     $db->exec('PRAGMA journal_mode = WAL');
     $db->exec('PRAGMA synchronous = NORMAL');
     short_link_migrate($db);
+    short_link_prune_expired($db);
     @chmod($dir . '/shortlinks.sqlite', 0600);
     return $db;
 }
@@ -93,6 +94,31 @@ function short_link_add_event_count_column(PDO $db, string $name, string $defini
     $columns = $db->query('PRAGMA table_info(short_link_event_counts)')->fetchAll();
     foreach ($columns as $column) if (($column['name'] ?? '') === $name) return;
     $db->exec('ALTER TABLE short_link_event_counts ADD COLUMN ' . $name . ' ' . $definition);
+}
+
+/** Fixed 90-day per-open retention. Daily lazy cleanup and an explicit worker share this path. */
+function short_link_prune_expired(PDO $db, ?int $now = null, bool $force = false): int {
+    $now ??= time();
+    $db->exec('CREATE TABLE IF NOT EXISTS short_link_maintenance (name TEXT PRIMARY KEY, ran_at INTEGER NOT NULL)');
+    $last = (int)$db->query("SELECT ran_at FROM short_link_maintenance WHERE name = 'retention'")->fetchColumn();
+    if (!$force && $last > $now - 86400) return 0;
+    short_link_begin_immediate($db);
+    try {
+        $cutoff = gmdate('Y-m-d\TH:i:s\Z', $now - 90 * 86400);
+        // Parse ISO timestamps rather than assume legacy textual formats sort alike.
+        $delete = $db->prepare('DELETE FROM short_link_events WHERE julianday(opened_at) < julianday(?)');
+        $delete->execute([$cutoff]);
+        $removed = $delete->rowCount();
+        $db->exec('UPDATE short_link_event_counts SET
+            pruned_events = pruned_events + MAX(0, event_count - (SELECT COUNT(*) FROM short_link_events e WHERE e.short_link_id = short_link_event_counts.short_link_id)),
+            event_count = (SELECT COUNT(*) FROM short_link_events e WHERE e.short_link_id = short_link_event_counts.short_link_id)');
+        $db->prepare("INSERT INTO short_link_maintenance(name,ran_at) VALUES('retention',?) ON CONFLICT(name) DO UPDATE SET ran_at=excluded.ran_at")->execute([$now]);
+        short_link_commit($db);
+        return $removed;
+    } catch (Throwable $error) {
+        short_link_rollback($db);
+        throw $error;
+    }
 }
 
 function short_link_now(): string { return gmdate('Y-m-d H:i:s'); }

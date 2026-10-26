@@ -136,6 +136,7 @@ for (const route of ['direct', 'soft navigation']) {
     await page.locator('#name').fill('Browser test');
     await page.locator('#email').fill('browser-test@example.invalid');
     await page.locator('#details').fill('Runtime script binding test; never sent.');
+    await page.locator('#inquiry-privacy-consent').check();
     await page.locator('#inquiry-form button[type="submit"]').click();
 
     // Turnstile is blocked in the test, so the bound handler must stop the

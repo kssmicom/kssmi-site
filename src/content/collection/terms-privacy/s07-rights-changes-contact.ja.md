@@ -27,7 +27,7 @@ title: "お客様の権利、苦情、変更、連絡先"
 
 ### 権利の行使
 
-**privacy [at] kssmi [dot] com** にリクエストを送信し、行使したい権利を記載してください。Kssmiは、適用法で定められた期間内に回答します。本人確認、リクエスト内容の明確化、または他者の権利保護のために合理的に必要な情報を求める場合があります。
+**privacy [at] kssmi [dot] com** に行使したい権利を明記してご連絡ください。Kssmiは法定期間内に回答します。本人確認、請求の明確化または他者の権利保護に合理的に必要な情報を求める場合があります。
 
 ### 苦情
 
@@ -45,6 +45,4 @@ title: "お客様の権利、苦情、変更、連絡先"
 
 データ管理者：**Shenzhen Kssmi Technology Co., Ltd.**  
 プライバシーに関する連絡先：**privacy [at] kssmi [dot] com**  
-郵便宛先：**905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**  
-EUの代理人：**Kssmi Eyewear, Montagnola, Via Nicola Spedalieri, 7, 00142 Roma RM, Italy**  
-EU代理人のプライバシーに関する連絡先：**privacy [at] kssmi [dot] com**
+郵便宛先：**905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

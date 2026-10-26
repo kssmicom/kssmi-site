@@ -32,3 +32,7 @@ Possiamo inoltre condividere informazioni pertinenti con consulenti professionis
 Kssmi ha sede in Cina. Le informazioni inviate direttamente dagli utenti tramite il sito o un canale di comunicazione scelto consapevolmente possono pertanto essere trattate in Cina.
 
 Alcuni fornitori di servizi possono inoltre trattare informazioni al di fuori del paese dell’utente o dello Spazio economico europeo. Quando il capo V del GDPR si applica a un trasferimento effettuato da un titolare o responsabile del trattamento, il trasferimento deve utilizzare un meccanismo lecito adeguato alle circostanze, come una decisione di adeguatezza, le clausole contrattuali standard applicabili della Commissione europea o un’altra garanzia o deroga consentita dalla legge.
+
+Ove opportuno si applicano misure tecniche e organizzative supplementari. Per informazioni sulle garanzie relative ai propri dati è possibile scrivere a **privacy [at] kssmi [dot] com**, fatti salvi i legittimi vincoli di riservatezza.
+
+Le categorie sopra elencate non escludono le responsabilità di Kssmi per i fornitori incaricati. Per comunicazioni o trasferimenti all'estero soggetti alla legge cinese, le informazioni sui destinatari, le garanzie e l'eventuale consenso separato richiesto devono precedere il trattamento; questa informativa non costituisce tale consenso. Il contatto privacy fornisce informazioni sui destinatari e sulle garanzie pertinenti. La raccolta diretta e la successiva comunicazione ad altre organizzazioni sono valutate separatamente.

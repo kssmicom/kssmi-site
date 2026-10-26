@@ -23,19 +23,10 @@ El controlador responsable del procesamiento descrito en este aviso es:
 905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China  
 Código postal: 518000  
 Contacto de privacidad: **privacy [at] kssmi [dot] com**
-### 3. Representante en la UE
+### 3. Menores de edad
 
+El sitio está destinado a usuarios empresariales y no a menores. Si sabemos que un menor ha facilitado datos personales sin autorización adecuada, adoptaremos medidas razonables para eliminarlos.
 
-Representante en la UE en virtud del artículo 27 del RGPD:  
-**Kssmi Eyewear**  
-Montagnola, Via Nicola Spedalieri, 7  
-00142 Roma RM, Italia  
-Contacto de privacidad: **privacy [at] kssmi [dot] com**
+### 4. Decisiones automatizadas
 
-### 4. Menores de edad
-
-El sitio web está diseñado para usuarios comerciales y no está dirigido a niños.
-
-### 5. Decisiones automatizadas
-
-Kssmi no toma decisiones que produzcan efectos legales o de importancia similar basándose únicamente en el procesamiento automatizado de los datos de los visitantes del sitio web.
+Kssmi no toma decisiones con efectos jurídicos o de importancia similar basadas únicamente en el tratamiento automatizado de datos de visitantes. Los análisis con consentimiento pueden medir interacciones y participación para el rendimiento y la atribución del sitio, pero esas medidas no se usan para tomar tales decisiones sobre una persona.

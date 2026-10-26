@@ -40,6 +40,7 @@ require_once dirname(__DIR__) . '/private/inquiry-attachments.php';
 require_once dirname(__DIR__) . '/private/inquiry-autoreply.php';
 require_once dirname(__DIR__) . '/private/inquiry-outbox.php';
 require_once dirname(__DIR__) . '/private/sender-blocklist.php';
+require_once dirname(__DIR__) . '/private/inquiry-privacy.php';
 
 // CORS Headers for local development
 $allowedOrigins = [
@@ -217,6 +218,7 @@ function logEmail(
             'language' => $data['language'] ?? '',
             'product_url' => $data['product_url'] ?? '',
         ],
+        'inquiry_consent' => $data['inquiry_consent'] ?? null,
         'message' => $message,
         'error' => $error,
         'security_state' => $securityState,
@@ -230,7 +232,7 @@ function logEmail(
 
     $result = kssmi_email_logs_mutate($config['log_file'], function($logs) use ($logEntry) {
         array_unshift($logs, $logEntry);
-        return array_slice($logs, 0, 1000);
+        return array_slice(kssmi_email_logs_within_retention($logs), 0, 1000);
     });
     if (!$result['ok']) {
         error_log('KSSMI Email Logs: unable to append log entry; reason=' . ($result['error'] ?? 'unknown'));
@@ -1002,6 +1004,25 @@ $formData = [
 ];
 $allowedLanguages = ['en','it','es','fr','de','pt','ru','ja','tr','ar','ko','zh','hi','vi','jv','ms','tg'];
 if (!in_array($formData['language'], $allowedLanguages, true)) $formData['language'] = 'en';
+
+// Reject missing/stale consent before uploads, business records or geo lookups.
+// This is separate from optional analytics/advertising consent.
+try {
+    $inquiryConsent = kssmi_inquiry_consent_record($_POST, $formData['language']);
+} catch (Throwable $error) {
+    error_log('KSSMI inquiry privacy notice unavailable; inquiry not accepted.');
+    http_response_code(503);
+    header('Content-Type: application/json');
+    echo json_encode(['success' => false, 'errors' => ['Privacy information is temporarily unavailable. Please try again later.']]);
+    exit;
+}
+if ($inquiryConsent === null) {
+    http_response_code(422);
+    header('Content-Type: application/json');
+    echo json_encode(['success' => false, 'errors' => ['Please review the current privacy notice and agree to inquiry processing. Refresh this page if it was opened before the notice changed.']]);
+    exit;
+}
+$formData['inquiry_consent'] = $inquiryConsent;
 
 // VJT context is intentionally separate from business form fields. These are
 // client hints only: IP/country remain server-derived, and IDs/URLs are

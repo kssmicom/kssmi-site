@@ -11,7 +11,9 @@ title: "Terma penggunaan tapak web"
 
 ### 1. Pengendali tapak web
 
-Tapak web ini dikendalikan di bawah nama Kssmi oleh **Shenzhen Kssmi Technology Co., Ltd.**, dengan alamat berdaftarnya di **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Poskod: 518000**.
+**Shenzhen Kssmi Technology Co., Ltd.** (深圳柯视觅科技有限责任公司)
+
+Alamat hubungan perniagaan dan kilang: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Poskod: 518000**
 
 ### 2. Penerimaan terma ini
 
@@ -41,9 +43,9 @@ Nama, tanda dan bahan pihak ketiga kekal sebagai hak milik pemilik masing-masing
 
 ### 6. Maklumat yang dikemukakan oleh pengguna
 
-Anda bertanggungjawab untuk memastikan bahawa maklumat yang anda serahkan adalah tepat, sah dan anda mempunyai kuasa untuk memberikannya. Jangan serahkan fail reka bentuk sulit, data peribadi kategori khas atau data peribadi pihak ketiga melainkan ia perlu untuk pertanyaan tersebut dan anda diberi kuasa untuk berbuat demikian.
+Berikan hanya maklumat perlu yang anda berhak kongsi. Untuk pertanyaan awal, hantar ringkasan projek dan rujukan sesuai bagi perbincangan awal. Sebelum berkongsi reka bentuk sulit lengkap, hubungi jualan untuk bersetuju dan menandatangani NDA serta menentukan saluran penghantaran. Jangan hantar data peribadi sensitif atau maklumat orang lain yang tidak perlu. Penghantaran tidak memindahkan pemilikan atau memberi hak melebihi pengendalian permintaan dan projek dipersetujui.
 
-Pemilikan dan penggunaan reka bentuk projek, sampel, alatan, spesifikasi dan bahan komersial lain yang dibenarkan harus dikawal oleh sebut harga yang berkenaan, perjanjian ketidakdedahan atau kontrak pembuatan.
+NDA yang ditandatangani kedua-dua pihak mengawal kerahsiaan, penggunaan bahan dan remedi, termasuk undang-undang serta pertikaian. Terma laman tidak meminda atau mengehadkan NDA; perjanjian kemudian mengatasi hanya setakat yang dibenarkan NDA. Pemilikan, perkakasan, eksklusiviti dan serahan fail mengikut perjanjian projek. Pertanyaan laman atau permintaan NDA tidak membenarkan pembangunan, sampel, perkakasan atau pengeluaran berbayar. Penerimaan bertulis kedua-dua pihak bagi sebut harga, pesanan atau perjanjian dan pengesahan bayaran yang berkenaan diperlukan. Penerimaan boleh melalui e-mel wakil berkuasa, tertakluk kepada syarat tandatangan dipersetujui.
 
 ### 7. Perkhidmatan dan pautan pihak ketiga
 
@@ -55,7 +57,7 @@ Kami menyasarkan untuk memastikan tapak web tersedia dan tepat tetapi tidak menj
 
 ### 9. Liabiliti
 
-Tiada apa-apa dalam terma ini yang mengecualikan atau mengehadkan liabiliti yang tidak boleh dikecualikan secara sah.
+Terma ini tidak mengecualikan atau mengehadkan liabiliti yang tidak boleh dikecualikan oleh undang-undang. Setakat dibenarkan undang-undang, Kssmi tidak bertanggungjawab atas kerugian tidak langsung, sampingan, khas atau berbangkit yang timbul semata-mata daripada penggunaan atau ketidakupayaan menggunakan laman maklumat ini. Liabiliti berkaitan sebut harga, pesanan, sampel, produk atau projek pembuatan tertakluk kepada perjanjian komersial bertulis yang berkenaan.
 
 ### 10. Undang-undang yang mentadbir dan pertikaian
 

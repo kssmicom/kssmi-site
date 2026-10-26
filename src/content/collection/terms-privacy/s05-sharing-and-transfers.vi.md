@@ -32,3 +32,7 @@ Chúng tôi cũng có thể chia sẻ thông tin liên quan với các cố vấ
 Kssmi được thành lập tại Trung Quốc. Do đó, thông tin người dùng gửi trực tiếp qua trang web hoặc kênh liên lạc do họ chủ động lựa chọn có thể được xử lý tại Trung Quốc.
 
 Một số nhà cung cấp dịch vụ cũng có thể xử lý thông tin bên ngoài quốc gia của người dùng hoặc Khu vực Kinh tế Châu Âu. Khi Chương V của GDPR áp dụng cho việc chuyển dữ liệu do bên kiểm soát hoặc bên xử lý thực hiện, việc chuyển dữ liệu phải sử dụng cơ chế hợp pháp phù hợp với hoàn cảnh, chẳng hạn quyết định công nhận mức độ bảo vệ đầy đủ, các điều khoản hợp đồng tiêu chuẩn hiện hành của Ủy ban Châu Âu hoặc biện pháp bảo vệ hay ngoại lệ khác được pháp luật cho phép.
+
+Biện pháp kỹ thuật và tổ chức bổ sung được áp dụng khi phù hợp. Có thể hỏi về bảo đảm liên quan dữ liệu của bạn tại **privacy [at] kssmi [dot] com**, tùy theo hạn chế bảo mật hợp pháp.
+
+Các nhóm trên không miễn trách nhiệm của Kssmi khi thuê nhà cung cấp. Việc cung cấp hoặc chuyển ra nước ngoài theo luật Trung Quốc phải có thông tin bên nhận, biện pháp bảo vệ và sự đồng ý riêng cần thiết trước xử lý; thông báo này không phải sự đồng ý riêng. Có thể hỏi liên hệ quyền riêng tư về bên nhận và bảo đảm liên quan. Thu thập trực tiếp và cung cấp tiếp cho tổ chức khác được đánh giá riêng.

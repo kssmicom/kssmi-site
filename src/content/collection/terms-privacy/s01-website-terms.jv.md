@@ -11,7 +11,9 @@ title: "Syarat panggunaan situs web"
 
 ### 1. Operator situs web
 
-Situs web iki dilakokno miturut jeneng Kssmi dening **Shenzhen Kssmi Technology Co., Ltd.**, kanthi alamat sing kadhaptar ing **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Kode pos: 518000**.
+**Shenzhen Kssmi Technology Co., Ltd.** (深圳柯视觅科技有限责任公司)
+
+Alamat kontak bisnis lan pabrik: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Kode pos: 518000**
 
 ### 2. Penerimaan syarat kasebut
 
@@ -41,9 +43,9 @@ Jeneng, tandha lan materi pihak katelu tetep dadi duweke pemilike dhewe-dhewe.
 
 ### 6. Informasi sing diajukake dening pangguna
 
-Sampeyan tanggung jawab kanggo mesthekake yen informasi sing dikirim akurat, sah lan sampeyan duwe wewenang kanggo menehi. Aja ngirim file desain rahasia, data pribadhi kategori khusus utawa data pribadhi pihak katelu kajaba sing dibutuhake kanggo priksaan lan sampeyan duwe wewenang kanggo nindakake.
+Kirim mung informasi sing perlu lan sing sampeyan duwe hak kanggo nuduhake. Kanggo pitakon awal, kirim ringkesan proyek lan referensi kanggo rembugan pambuka. Sadurunge nuduhake desain rahasia kanthi lengkap, hubungi sales kanggo nyepakati lan nandhatangani NDA sarta cara ngirim. Aja ngirim data pribadi sensitif utawa informasi wong liya sing ora perlu. Pangiriman ora mindhah hak milik utawa menehi hak ngluwihi kabutuhan panjaluk lan proyek sing disepakati.
 
-Kepemilikan lan panggunaan desain proyek, sampel, piranti, spesifikasi lan materi komersial liyane kudu diatur dening penawaran, perjanjian non-pambocoran utawa kontrak manufaktur sing ditrapake.
+NDA sing ditandhatangani loro pihak ngatur kerahasiaan, panggunaan materi lan upaya hukum, kalebu hukum lan aturan sengketa. Ketentuan situs ora ngganti utawa matesi NDA; persetujuan sabanjure mung luwih utama yen diidini NDA. Hak milik, perkakas, eksklusivitas lan serah file manut persetujuan proyek. Pitakon situs utawa panjaluk NDA ora menehi wewenang kanggo pangembangan, sampel, perkakas utawa produksi mbayar. Perlu panriman tinulis loro pihak marang penawaran, pesenan utawa persetujuan lan konfirmasi pembayaran sing ditrapake. Panriman bisa liwat email kontak sing duwe wewenang, manut syarat tandha tangan sing disepakati.
 
 ### 7. Layanan lan tautan pihak katelu
 
@@ -55,7 +57,7 @@ Tujuan kita supaya situs web tetep kasedhiya lan akurat nanging ora njamin akses
 
 ### 9. Tanggung jawab
 
-Ora ana apa-apa ing syarat-syarat kasebut sing ora kalebu utawa matesi tanggung jawab sing ora bisa diilangi kanthi sah.
+Syarat iki ora ngilangi utawa matesi tanggung jawab sing ora bisa diilangi miturut hukum. Ing wates sing diidini hukum, Kssmi ora tanggung jawab kanggo kerugian ora langsung, insidental, khusus utawa akibat sing mung saka nggunakake utawa ora bisa nggunakake situs informasi iki. Tanggung jawab kanggo penawaran, pesenan, sampel, produk utawa proyek produksi manut persetujuan komersial tinulis sing ditrapake.
 
 ### 10. Hukum lan perselisihan
 

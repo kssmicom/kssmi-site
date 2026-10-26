@@ -9,11 +9,11 @@ navLabel: "Cookies and contact events"
 title: "Cookies, analytics and contact interactions"
 ---
 
-Kssmi separates a minimal contact-event function from the consent-based visitor-journey analytics function. They serve different purposes and must not be described as one system with one legal basis.
+Contact measurement and visitor-journey analytics both require analytics consent. Opening WhatsApp or email remains available without optional tracking.
 
 ### 1. Contact events
 
-When a visitor deliberately selects a WhatsApp or email link, the website may record a minimal event showing that the contact entry point was opened. Without analytics consent, this event is designed to contain only:
+Only with analytics consent, selecting a WhatsApp or email link may record a contact-opening event containing:
 
 - the selected channel;
 - an `open_intent` event type;
@@ -24,11 +24,11 @@ When a visitor deliberately selects a WhatsApp or email link, the website may re
 - site language; and
 - an `intent` status.
 
-Without analytics consent, this record must not create or read a VJT visitor/session identifier and must not contain a reconstructed browsing journey, full referrer URL, campaign parameters, IP address, user agent or geolocation. Separate short-lived security processing may occur for rate limiting.
+Without analytics consent, contact measurement does not request capabilities, set its measurement cookie or record opening statistics. With consent, an event may be linked to the consented journey described below. Separate security processing can protect a requested contact operation.
 
 An `open_intent` record means only that the website contact link was triggered. It does not prove that a device successfully opened WhatsApp or an email client, that the visitor sent a message, or that Kssmi received one.
 
-For an inquiry form, a `submission_success` event means that the website's configured sending process reported success. It does not prove that a recipient read or replied to the email.
+A `submission_success` event means that the website accepted the inquiry into its delivery process, which may include a queue. It does not establish successful email delivery, receipt by a particular person, or that anyone read or replied to it.
 
 ### 2. Visitor journey tracking (VJT)
 
@@ -58,7 +58,7 @@ The principal browser-storage items used by the website are listed below. Third-
 | `vjt_visitor_id` | Kssmi | Associate consented visits with a visitor journey | Analytics | Cookie: up to approximately 365 days; local storage: until consent is withdrawn or browser storage is cleared | Cookie and local storage |
 | `vjt_session_id` | Kssmi | Associate consented page events within a session | Analytics | Approximately 30 minutes | Cookie |
 | `KSSMI_VJT_IDENTITY` | Kssmi | Signed server identity that links consented visits within one consent cycle; not readable by page scripts | Analytics | Up to approximately 365 days; expired after withdrawal where the browser allows | Cookie (HttpOnly) |
-| `KSSMI_VJT_CONTACT` | Kssmi | Short-lived signed session that protects contact-event statistics against forged events; contains a random value, not a VJT identifier, and is set without analytics consent | Contact-event security | Approximately 30 minutes, renewed while the visitor browses | Cookie (HttpOnly) |
+| `KSSMI_VJT_CONTACT` | Kssmi | Signed session protecting consent-based contact statistics, bound to the current consent cycle; issued only with analytics consent | Analytics | Approximately 30 minutes, renewed while the visitor browses | Cookie (HttpOnly) |
 | Google or other configured third-party identifiers | Relevant provider | Consent-based analytics, measurement or advertising | Analytics or advertising | Varies by provider and configuration; see the relevant provider's information | Cookie or similar technology |
 
 The cookie inventory, consent banner and live implementation must agree. Renaming a tracker or moving an identifier from a cookie to local storage does not by itself make the technology consent-exempt.

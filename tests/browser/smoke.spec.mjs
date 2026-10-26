@@ -177,3 +177,22 @@ test('quote form: fields have accessible names and no request leaves the site', 
   // Third-party hosts may be attempted (they are aborted), but none may be reached.
   for (const host of testInfo.blockedHosts) expect(host).not.toContain('127.0.0.1');
 });
+
+for (const language of ['en', 'zh', 'ar']) {
+  test(`inquiry privacy: required separate consent in ${language}`, async ({ page }, testInfo) => {
+    const prefix = language === 'en' ? '' : `/${language}`;
+    await page.goto(`${prefix}/quote/`);
+    await page.locator('#cookie-btn-reject').click();
+    const consent = page.locator('#inquiry-privacy-consent');
+    await expect(consent).toBeVisible();
+    await expect(consent).not.toBeChecked();
+    await expect(consent).toHaveAttribute('required', '');
+    expect(await consent.evaluate((input) => input.validity.valueMissing)).toBe(true);
+    await expect(page.locator('input[name="inquiry_notice_id"]')).toHaveValue(/inquiry-privacy-/);
+    await consent.check();
+    expect(await consent.evaluate((input) => input.checkValidity())).toBe(true);
+    expect(await consentRecord(page)).toMatchObject({ analytics: false, ads: false });
+    await expect(page.locator('footer')).toContainText('Shenzhen Kssmi Technology Co., Ltd.');
+    await expectCleanPage(page, testInfo);
+  });
+}

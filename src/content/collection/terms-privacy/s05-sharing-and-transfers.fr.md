@@ -32,3 +32,7 @@ Nous pouvons également partager des informations pertinentes avec des conseille
 Kssmi est établie en Chine. Les informations envoyées directement par les utilisateurs via le site ou un canal de communication délibérément choisi peuvent donc être traitées en Chine.
 
 Certains prestataires peuvent également traiter des informations en dehors du pays de l’utilisateur ou de l’Espace économique européen. Lorsque le chapitre V du RGPD s’applique à un transfert effectué par un responsable du traitement ou un sous-traitant, le transfert doit reposer sur un mécanisme licite adapté aux circonstances, tel qu’une décision d’adéquation, les clauses contractuelles types applicables de la Commission européenne ou une autre garantie ou dérogation autorisée par la loi.
+
+Des mesures techniques et organisationnelles supplémentaires sont appliquées lorsque cela est approprié. Les informations sur les garanties pertinentes peuvent être demandées à **privacy [at] kssmi [dot] com**, sous réserve des restrictions légales de confidentialité.
+
+Ces catégories n'écartent pas les responsabilités de Kssmi envers ses prestataires. Pour les communications ou transferts à l'étranger soumis au droit chinois, les informations sur les destinataires, les garanties et tout consentement distinct requis doivent précéder le traitement ; cet avis ne constitue pas ce consentement. Le contact confidentialité renseigne sur les destinataires et garanties pertinents. La collecte directe et la communication ultérieure à un autre organisme sont évaluées séparément.

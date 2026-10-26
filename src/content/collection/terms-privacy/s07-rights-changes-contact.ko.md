@@ -27,7 +27,7 @@ title: "귀하의 권리, 불만 제기, 변경 및 연락처"
 
 ### 권리 행사
 
-**privacy [at] kssmi [dot] com**으로 요청을 보내고 행사하고자 하는 권리를 설명하십시오. Kssmi는 적용 법률에서 정한 기간 내에 답변합니다. 신원 확인, 요청 내용의 명확화 또는 타인의 권리 보호를 위해 합리적으로 필요한 정보를 요청할 수 있습니다.
+행사할 권리를 명시하여 **privacy [at] kssmi [dot] com**에 요청하십시오. Kssmi는 법정 기간 내 답변합니다. 신원 확인, 요청 명확화 또는 타인의 권리 보호를 위해 합리적으로 필요한 정보를 요구할 수 있습니다.
 
 ### 불만 제기
 
@@ -45,6 +45,4 @@ title: "귀하의 권리, 불만 제기, 변경 및 연락처"
 
 데이터 컨트롤러: **Shenzhen Kssmi Technology Co., Ltd.**  
 개인정보 보호 연락처: **privacy [at] kssmi [dot] com**  
-우편 주소: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**  
-EU 대리인: **Kssmi Eyewear, Montagnola, Via Nicola Spedalieri, 7, 00142 Roma RM, Italy**  
-EU 대리인 개인정보 보호 연락처: **privacy [at] kssmi [dot] com**
+우편 주소: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

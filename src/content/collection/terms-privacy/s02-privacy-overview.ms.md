@@ -23,19 +23,10 @@ Pengawal yang bertanggungjawab untuk pemprosesan yang diterangkan dalam notis in
 905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China  
 Poskod: 518000  
 Kenalan privasi: **privacy [at] kssmi [dot] com**
-### 3. Wakil EU
+### 3. Kanak-kanak
 
+Laman ini untuk pengguna perniagaan dan bukan ditujukan kepada kanak-kanak. Jika kami mengetahui kanak-kanak memberi data peribadi tanpa kebenaran sesuai, langkah munasabah akan diambil untuk memadamkannya.
 
-Wakil EU di bawah Perkara 27 GDPR:  
-**Kssmi Eyewear**  
-Montagnola, Via Nicola Spedalieri, 7  
-00142 Roma RM, Italy  
-Kenalan privasi: **privacy [at] kssmi [dot] com**
+### 4. Keputusan automatik
 
-### 4. Kanak-kanak
-
-Tapak web ini direka untuk pengguna perniagaan dan tidak ditujukan kepada kanak-kanak.
-
-### 5. Keputusan automatik
-
-Kssmi tidak membuat keputusan yang menghasilkan kesan undang-undang atau yang serupa dengan ketara semata-mata melalui pemprosesan automatik data pelawat tapak web.
+Kssmi tidak membuat keputusan berkesan undang-undang atau kepentingan serupa hanya berdasarkan pemprosesan automatik data pelawat. Analisis berasaskan persetujuan boleh mengukur interaksi untuk prestasi dan atribusi laman, tetapi ukuran itu tidak digunakan untuk keputusan sedemikian tentang individu.

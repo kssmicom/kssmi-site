@@ -9,11 +9,11 @@ navLabel: "Cookie lan acara kontak"
 title: "Cookie, analitik lan interaksi kontak"
 ---
 
-Kssmi misahake fungsi acara kontak minimal saka fungsi analitik perjalanan pengunjung adhedhasar idin. Kabeh kasebut nduweni tujuan sing beda-beda lan ora kudu diterangake minangka siji sistem kanthi siji dhasar hukum.
+Pangukuran kontak lan analisis perjalanan pengunjung loro-lorone mbutuhake idin analisis. WhatsApp lan email tetep bisa tanpa pelacakan opsional.
 
 ### 1. Acara kontak
 
-Yen pengunjung kanthi sengaja milih tautan WhatsApp utawa email, situs web bisa nyathet acara minimal sing nuduhake yen titik entri kontak wis dibukak. Tanpa idin analitik, acara iki dirancang supaya mung ngemot:
+Mung kanthi idin analisis, milih pranala WhatsApp utawa email bisa nyathet acara sing ngemot:
 
 - saluran sing dipilih;
 - jinis acara `open_intent`;
@@ -24,11 +24,11 @@ Yen pengunjung kanthi sengaja milih tautan WhatsApp utawa email, situs web bisa 
 - basa situs; lan
 - status "niat" (`intent`).
 
-Tanpa idin analitik, rekaman iki ora kudu nggawe utawa maca pengenal pengunjung/sesi VJT lan ora kudu ngemot perjalanan telusuran sing direkonstruksi, URL perujuk lengkap, parameter kampanye, alamat IP, agen pangguna utawa geolokasi. Pangolahan keamanan sing beda lan jangka pendek bisa kedadeyan kanggo mbatesi tarif.
+Tanpa idin analisis, pangukuran kontak ora njaluk wewenang, nyetel cookie pangukuran utawa nyathet pambukaan. Kanthi idin, acara bisa digandhengake karo perjalanan ing ngisor. Pangolahan keamanan kapisah bisa nglindhungi kontak sing dijaluk.
 
 Rekaman `open_intent` mung ateges manawa tautan kontak situs web wis dipicu. Iku ora mbuktekake manawa piranti wis kasil mbukak WhatsApp utawa klien email, yen pengunjung ngirim pesen, utawa yen Kssmi nampa pesen kasebut.
 
-Kanggo formulir pitakon, acara `submission_success` tegese proses pangiriman sing dikonfigurasi dening situs web nglaporake sukses. Iku ora mbuktekake manawa sing nampa pesen maca utawa mangsuli email kasebut.
+Acara `submission_success` ateges situs wis nampa pitakon ing proses pangiriman, sing bisa kalebu antrean. Iki ora mbuktekake email tekan, ditampa wong tartamtu, diwaca utawa diwales.
 
 ### 2. Pelacakan perjalanan pengunjung (VJT)
 
@@ -46,20 +46,20 @@ Perjalanan analitik kudu tetep dipateni nganti pengunjung menehi idin analitik. 
 
 ### 3. Iklan lan analitik pihak katelu
 
-Google Analytics, Google Ads, Google Tag Manager utawa teknologi pangukuran sing bisa dibandhingake kudu digunakake miturut kategori idin sing dipilih pengunjung lan konfigurasi situs sing bener. Kabar pungkasan mung kudu nerangake produk lan fitur sing bener-bener diaktifake.
+Google Analytics, Google Ads, Google Tag Manager utawa teknologi padha mlaku manut kategori idin sing dipilih lan konfigurasi aktif. Panyimpenan analisis lan iklan tetep ditolak nganti idin sing cocog diwenehake.
 
 ### 4. Cookie lan panyimpenan browser
 
-Wektu lan kritéria ing ngisor iki ditrapake kanggo sistem situs web sing diterangake ing kabar iki:
+Barang panyimpenan browser utama ana ing ngisor iki. Identifikasi pihak katelu bisa beda manut panyedhiya, browser, pilihan idin lan konfigurasi aktif.
 
 | Jeneng | Panyedhiya | Tujuan | Kategori | Durasi | Jinis panyimpenan |
 | --- | --- | --- | --- | --- | --- |
-| `cookie-consent` | Kssmi | Ngelingi pilihan analitik lan iklan saka pengunjung | Perlu | Nganti pilihan diganti utawa panyimpenan browser dibusak | Local storage |
-| `vjt_visitor_id` | Kssmi | Nggandhengake kunjungan sing disetujoni menyang perjalanan pengunjung | Analitik | Cookie: up to about 365 days; local copy: Nganti idin analitik ditarik utawa panyimpenan browser dibusak | Cookie lan panyimpenan lokal |
-| `vjt_session_id` | Kssmi | Nggandhengake acara kaca sing disetujoni sajrone siji sesi | Analitik | About 30 minutes | Cookie |
+| `cookie-consent` | Kssmi | Ngelingi pilihan analitik lan iklan saka pengunjung | Perlu | Nganti pilihan diganti utawa panyimpenan browser dibusak | Panyimpenan lokal |
+| `vjt_visitor_id` | Kssmi | Nggandhengake kunjungan sing disetujoni menyang perjalanan pengunjung | Analitik | Cookie: nganti udakara 365 dina; salinan lokal: Nganti idin analitik ditarik utawa panyimpenan browser dibusak | Cookie lan panyimpenan lokal |
+| `vjt_session_id` | Kssmi | Nggandhengake acara kaca sing disetujoni sajrone siji sesi | Analitik | Udakara 30 menit | Cookie |
 | `KSSMI_VJT_IDENTITY` | Kssmi | Identitas server sing ditandatangani kanggo nggandhengake kunjungan sing disetujoni sajrone siji siklus idin; ora bisa diwaca skrip kaca | Analitik | Nganti kira-kira 365 dina; kadaluwarsa sawise penarikan yen browser ngidini | Cookie (HttpOnly) |
-| `KSSMI_VJT_CONTACT` | Kssmi | Sesi sing ditandatangani lan cendhak umure kanggo nglindhungi statistik acara kontak saka acara palsu; isine nilai acak, dudu pengenal VJT, lan dipasang tanpa idin analitik | Keamanan acara kontak | Kira-kira 30 menit, dianyari nalika browsing | Cookie (HttpOnly) |
-| Pengenal Google/pihak katelu liyane | Google / relevant third party | Analitik utawa iklan | Analitik/iklan | Beda-beda miturut panyedhiya lan konfigurasi | Cookie utawa teknologi sing padha |
+| `KSSMI_VJT_CONTACT` | Kssmi | Sesi ditandhatangani kanggo nglindhungi statistik kontak sing diidini, kaiket siklus saiki; mung diterbitake kanthi idin analisis | Analitik | Kira-kira 30 menit, dianyari nalika browsing | Cookie (HttpOnly) |
+| Pengenal Google/pihak katelu liyane | Google / pihak katelu sing cocog | Analitik utawa iklan | Analitik/iklan | Beda-beda miturut panyedhiya lan konfigurasi | Cookie utawa teknologi sing padha |
 
 Inventaris cookie, spanduk idin lan implementasi langsung kudu padha. Ngganti jeneng pelacak utawa mindhah pengenal saka cookie menyang panyimpenan lokal kanthi sendirine ora nggawe teknologi kasebut dibebasake saka idin.
 

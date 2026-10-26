@@ -87,9 +87,8 @@ const turnstileSiteKey = import.meta.env.PUBLIC_VJT_TURNSTILE_SITE_KEY;
   </script>
 )}
 
-<!-- Contact Core is independent of analytics consent and never owns navigation.
-     It submits only a minimal event unless current analytics consent allows the
-     server to validate and attach an existing Journey. -->
+<!-- Contact measurement requires current analytics consent. Native navigation
+     continues without statistics or contact capabilities when it is denied. -->
 <script
   is:inline
   src={contactCoreUrl}

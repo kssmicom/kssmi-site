@@ -237,15 +237,17 @@ function kssmi_vjt_contact_session_from_request(?int $now = null): ?array {
     return kssmi_vjt_contact_session_from_token($_COOKIE[KSSMI_VJT_CONTACT_COOKIE] ?? null, $now);
 }
 
-function kssmi_vjt_bootstrap_contact_session(?int $now = null, bool $emitCookie = true): array {
+function kssmi_vjt_bootstrap_contact_session(?int $now = null, bool $emitCookie = true, ?string $consentCycle = null): array {
     $now = $now ?? time();
     $existing = kssmi_vjt_contact_session_from_request($now);
+    if ($consentCycle !== null && !hash_equals($consentCycle, (string)($existing['cyc'] ?? ''))) $existing = null;
     $claims = [
         'v' => 1,
         'contact_id' => $existing['contact_id'] ?? kssmi_vjt_base64url_encode(random_bytes(18)),
         'iat' => $now,
         'exp' => $now + KSSMI_VJT_CONTACT_TTL,
     ];
+    if ($consentCycle !== null) $claims['cyc'] = $consentCycle;
     $token = kssmi_vjt_sign_claims($claims, 'contact-session-v1');
     if ($emitCookie) kssmi_vjt_set_private_cookie(KSSMI_VJT_CONTACT_COOKIE, $token, $claims['exp']);
     $claims['token'] = $token;
@@ -269,6 +271,7 @@ function kssmi_vjt_issue_capabilities(string $purpose, array $binding, int $coun
         ];
         if ($purpose === 'contact_intent') {
             $claims['contact_id'] = (string)($binding['contact_id'] ?? '');
+            if (isset($binding['cyc'])) $claims['cyc'] = $binding['cyc'];
         } else {
             $claims['visitor_id'] = (string)($binding['visitor_id'] ?? '');
             $claims['session_id'] = (string)($binding['session_id'] ?? '');
@@ -300,6 +303,7 @@ function kssmi_vjt_validate_capability(
     if ($purpose === 'contact_intent') {
         $expected = (string)($binding['contact_id'] ?? '');
         if ($expected === '' || !hash_equals($expected, (string)($claims['contact_id'] ?? ''))) return null;
+        if (isset($binding['cyc']) && !hash_equals((string)$binding['cyc'], (string)($claims['cyc'] ?? ''))) return null;
     } else {
         $visitorId = (string)($binding['visitor_id'] ?? '');
         $sessionId = (string)($binding['session_id'] ?? '');

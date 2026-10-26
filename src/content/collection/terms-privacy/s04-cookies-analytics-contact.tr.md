@@ -9,11 +9,11 @@ navLabel: "Çerezler ve iletişim etkinlikleri"
 title: "Çerezler, analitik ve iletişim etkileşimleri"
 ---
 
-Kssmi, asgari bir iletişim etkinliği işlevini onaya dayalı ziyaretçi yolculuğu analitiği işlevinden ayırır. Bunlar farklı amaçlara hizmet eder ve tek bir yasal dayanağa sahip tek bir sistem olarak tanımlanmamalıdır.
+İletişim ölçümü ve ziyaretçi yolculuğu analizi, analiz rızası gerektirir. WhatsApp ve e-posta isteğe bağlı takip olmadan kullanılabilir.
 
 ### 1. İletişim etkinlikleri
 
-Bir ziyaretçi kasıtlı olarak bir WhatsApp veya e-posta bağlantısı seçtiğinde, web sitesi iletişim giriş noktasının açıldığını gösteren asgari bir olay kaydedebilir. Analitik onayı olmadan bu olay yalnızca şunları içerecek şekilde tasarlanmıştır:
+Yalnızca analiz rızasıyla WhatsApp veya e-posta bağlantısı seçimi şu verilerle olay kaydedebilir:
 
 - seçilen kanal;
 - bir `open_intent` olay türü;
@@ -24,11 +24,11 @@ Bir ziyaretçi kasıtlı olarak bir WhatsApp veya e-posta bağlantısı seçtiğ
 - site dili; ve
 - bir niyet (`intent`) durumu.
 
-Analitik onayı olmadan bu kayıt, bir VJT ziyaretçi/oturum tanımlayıcısı oluşturmamalı veya okumamalı ve yeniden yapılandırılmış bir gezinme yolculuğu, tam yönlendiren URL'si, kampanya parametreleri, IP adresi, kullanıcı aracısı veya coğrafi konum içermemelidir. Hız sınırlaması için ayrı, kısa ömürlü bir güvenlik işlemi gerçekleşebilir.
+Analiz rızası olmadan iletişim ölçümü yetki istemez, ölçüm çerezi ayarlamaz veya açılış istatistiği kaydetmez. Rızayla olay aşağıdaki yolculuğa bağlanabilir. Ayrı güvenlik işlemesi istenen iletişimi koruyabilir.
 
 Bir `open_intent` kaydı, yalnızca web sitesi iletişim bağlantısının tetiklendiği anlamına gelir. Bir cihazın WhatsApp'ı veya bir e-posta istemcisini başarıyla açtığını, ziyaretçinin bir mesaj gönderdiğini veya Kssmi'nin bir mesaj aldığını kanıtlamaz.
 
-Bir sorgu formu için, `submission_success` olayı, web sitesinin yapılandırılmış gönderme sürecinin başarılı olduğunu bildirdiği anlamına gelir. Alıcının e-postayı okuduğunu veya yanıtladığını kanıtlamaz.
+`submission_success`, sitenin başvuruyu kuyruk içerebilen gönderim sürecine kabul ettiğini belirtir. E-postanın teslim edildiğini, belirli kişiye ulaştığını, okunduğunu veya yanıtlandığını göstermez.
 
 ### 2. Ziyaretçi yolculuğu izleme (VJT)
 
@@ -46,20 +46,20 @@ Ziyaretçi analitik onayı verene kadar analitik yolculuk devre dışı kalmalı
 
 ### 3. Reklam ve üçüncü taraf analitiği
 
-Google Analytics, Google Ads, Google Etiket Yöneticisi veya karşılaştırılabilir ölçüm teknolojisi, ziyaretçinin seçtiği onay kategorilerine ve sitenin gerçek yapılandırmasına göre çalışmalıdır. Nihai bildirim, yalnızca gerçekten etkinleştirilmiş olan ürünleri ve özellikleri açıklamalıdır.
+Google Analytics, Google Ads, Google Tag Manager veya benzer teknolojiler seçilen rıza kategorileri ve sitenin etkin yapılandırmasına göre çalışır. Analiz ve reklam depolaması ilgili rıza verilene kadar reddedilmiş kalır.
 
 ### 4. Çerezler ve tarayıcı depolama
 
-Bu bildirimde açıklanan web sitesi sistemleri için aşağıdaki süreler ve ölçütler geçerlidir:
+Başlıca tarayıcı depolama öğeleri aşağıdadır. Üçüncü taraf tanımlayıcıları sağlayıcıya, tarayıcıya, rıza seçimine ve etkin yapılandırmaya göre değişir.
 
 | Ad | Sağlayıcı | Amaç | Kategori | Süre | Depolama türü |
 | --- | --- | --- | --- | --- | --- |
-| `cookie-consent` | Kssmi | Ziyaretçinin analitik ve reklam tercihlerini hatırlamak | Gerekli | Seçim değiştirilene veya tarayıcı depolaması temizlenene kadar | Local storage |
-| `vjt_visitor_id` | Kssmi | Onaylanmış ziyaretleri bir ziyaretçi yolculuğu ile ilişkilendirmek | Analitik | Cookie: up to about 365 days; local copy: Analiz izni geri çekilene veya tarayıcı depolaması temizlenene kadar | Çerez ve yerel depolama |
-| `vjt_session_id` | Kssmi | Bir oturum içindeki onaylanmış sayfa etkinliklerini ilişkilendirmek | Analitik | About 30 minutes | Çerez |
+| `cookie-consent` | Kssmi | Ziyaretçinin analitik ve reklam tercihlerini hatırlamak | Gerekli | Seçim değiştirilene veya tarayıcı depolaması temizlenene kadar | Yerel depolama |
+| `vjt_visitor_id` | Kssmi | Onaylanmış ziyaretleri bir ziyaretçi yolculuğu ile ilişkilendirmek | Analitik | Çerez: yaklaşık 365 güne kadar; yerel kopya: Analiz izni geri çekilene veya tarayıcı depolaması temizlenene kadar | Çerez ve yerel depolama |
+| `vjt_session_id` | Kssmi | Bir oturum içindeki onaylanmış sayfa etkinliklerini ilişkilendirmek | Analitik | Yaklaşık 30 dakika | Çerez |
 | `KSSMI_VJT_IDENTITY` | Kssmi | Onaylanmış ziyaretleri tek bir onay döngüsü içinde ilişkilendiren imzalı sunucu kimliği; sayfa betikleri tarafından okunamaz | Analitik | Yaklaşık 365 güne kadar; geri çekmeden sonra tarayıcının izin verdiği ölçüde süresi sona erdirilir | Çerez (HttpOnly) |
-| `KSSMI_VJT_CONTACT` | Kssmi | İletişim olayı istatistiklerini sahte olaylara karşı koruyan kısa ömürlü imzalı oturum; VJT tanımlayıcısı değil rastgele bir değer içerir ve analitik onayı olmadan ayarlanır | İletişim olayı güvenliği | Yaklaşık 30 dakika, gezinme sırasında yenilenir | Çerez (HttpOnly) |
-| Diğer Google/üçüncü taraf tanımlayıcıları | Google / relevant third party | Analitik veya reklam | Analitik/reklam | Sağlayıcıya ve yapılandırmaya göre değişir | Çerez veya benzer teknoloji |
+| `KSSMI_VJT_CONTACT` | Kssmi | Rızalı iletişim istatistiklerini koruyan, mevcut rıza döngüsüne bağlı imzalı oturum; yalnızca analiz rızasıyla verilir | Analitik | Yaklaşık 30 dakika, gezinme sırasında yenilenir | Çerez (HttpOnly) |
+| Diğer Google/üçüncü taraf tanımlayıcıları | Google / ilgili üçüncü taraf | Analitik veya reklam | Analitik/reklam | Sağlayıcıya ve yapılandırmaya göre değişir | Çerez veya benzer teknoloji |
 
 Çerez envanteri, onay başlığı ve canlı uygulama uyuşmalıdır. Bir izleyiciyi yeniden adlandırmak veya bir tanımlayıcıyı bir çerezden yerel depolamaya taşımak, teknolojiyi tek başına onaydan muaf kılmaz.
 

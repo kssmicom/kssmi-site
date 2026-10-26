@@ -23,19 +23,10 @@ Bu bildirimde açıklanan işlemeden sorumlu veri sorumlusu şudur:
 905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, Çin  
 Posta kodu: 518000  
 Gizlilik iletişimi: **privacy [at] kssmi [dot] com**
-### 3. AB temsilcisi
+### 3. Çocuklar
 
+Site iş kullanıcıları içindir ve çocuklara yönelik değildir. Bir çocuğun uygun izin olmadan kişisel veri verdiğini öğrenirsek silmek için makul adımlar atarız.
 
-GDPR Madde 27 uyarınca AB temsilcisi:  
-**Kssmi Eyewear**  
-Montagnola, Via Nicola Spedalieri, 7  
-00142 Roma RM, İtalya  
-Gizlilik iletişimi: **privacy [at] kssmi [dot] com**
+### 4. Otomatik kararlar
 
-### 4. Çocuklar
-
-Web sitesi kurumsal kullanıcılar için tasarlanmıştır ve çocuklara yönelik değildir.
-
-### 5. Otomatik kararlar
-
-Kssmi'nin yalnızca web sitesi ziyaretçi verilerinin otomatik olarak işlenmesi yoluyla yasal veya benzer şekilde önemli etkiler doğuran kararlar almadığını varsaymaktadır.
+Kssmi yalnızca ziyaretçi verilerinin otomatik işlenmesine dayalı hukuki veya benzer önemde sonuçlar doğuran kararlar almaz. Rızaya dayalı analizler site performansı ve ilişkilendirme için etkileşim ölçebilir, ancak bu ölçümler kişiler hakkında böyle kararlar almakta kullanılmaz.

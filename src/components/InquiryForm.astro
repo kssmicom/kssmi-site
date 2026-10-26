@@ -10,6 +10,7 @@
 import { getTranslations } from '../translations';
 import FormTurnstile from './FormTurnstile.astro';
 import { runtimeAssetUrl } from '../config/runtimeAssets.mjs';
+import inquiryPrivacyNotice from '../../private/inquiry-privacy-notice.json';
 
 interface Props {
   lang?: string;
@@ -233,6 +234,47 @@ const attachmentInputLabels: Record<string, string> = {
   tg: 'Замима кардани файлҳои намунавӣ',
 };
 const attachmentInputLabel = attachmentInputLabels[lang] || attachmentInputLabels.en;
+const designTermsLinkLabels: Record<string, string> = {
+  "en": "Terms and privacy",
+  "zh": "条款与隐私",
+  "it": "Condizioni e privacy",
+  "es": "Condiciones y privacidad",
+  "fr": "Conditions et confidentialité",
+  "de": "Bedingungen und Datenschutz",
+  "pt": "Termos e privacidade",
+  "ru": "Условия и конфиденциальность",
+  "ja": "利用規約とプライバシー",
+  "tr": "Koşullar ve gizlilik",
+  "ar": "الشروط والخصوصية",
+  "ko": "약관 및 개인정보",
+  "hi": "शर्तें और गोपनीयता",
+  "vi": "Điều khoản và quyền riêng tư",
+  "jv": "Ketentuan lan privasi",
+  "ms": "Terma dan privasi",
+  "tg": "Шартҳо ва махфият"
+};
+
+const designSubmissionNotice: Record<string, string> = {
+  "en": "For initial inquiries, send an outline and reference materials. Before sending complete confidential designs, contact us to sign an NDA and agree how to share them.",
+  "zh": "初始询盘请提供项目概述及参考资料。发送完整机密设计前，请先联系我们签署 NDA，并约定资料提供方式。",
+  "it": "Per il primo contatto, inviare una descrizione e riferimenti. Prima di inviare progetti riservati completi, contattarci per firmare un NDA e concordare come condividerli.",
+  "es": "Para la primera consulta, envíe un resumen y referencias. Antes de enviar diseños confidenciales completos, contáctenos para firmar un NDA y acordar cómo compartirlos.",
+  "fr": "Pour une première demande, envoyez un aperçu et des références. Avant d'envoyer des conceptions confidentielles complètes, contactez-nous pour signer un NDA et convenir du mode de partage.",
+  "de": "Senden Sie zunächst eine Übersicht und Referenzen. Kontaktieren Sie uns vor vollständigen vertraulichen Entwürfen, um eine NDA zu unterzeichnen und den Übermittlungsweg abzustimmen.",
+  "pt": "No primeiro contacto, envie um resumo e referências. Antes de enviar desenhos confidenciais completos, contacte-nos para assinar um NDA e acordar a partilha.",
+  "ru": "Для первого запроса пришлите описание и примеры. Перед отправкой полных конфиденциальных разработок свяжитесь с нами для подписания NDA и согласования передачи.",
+  "ja": "初回は概要と参考資料をお送りください。機密設計の全詳細を送る前に、NDA締結と共有方法の相談のためご連絡ください。",
+  "tr": "İlk başvuruda özet ve referanslar gönderin. Eksiksiz gizli tasarımlardan önce NDA imzalamak ve paylaşım yolunu belirlemek için bize ulaşın.",
+  "ar": "أرسل ملخصاً ومراجع للاستفسار الأولي. قبل إرسال التصاميم السرية كاملة، تواصل معنا لتوقيع NDA والاتفاق على طريقة المشاركة.",
+  "ko": "최초 문의에는 개요와 참고 자료를 보내십시오. 완전한 기밀 설계를 보내기 전에 NDA 서명 및 공유 방식 협의를 위해 연락하십시오.",
+  "hi": "प्रारंभिक पूछताछ में सार और संदर्भ भेजें। पूरे गोपनीय डिज़ाइन भेजने से पहले NDA पर हस्ताक्षर और साझा करने का तरीका तय करने हेतु संपर्क करें।",
+  "vi": "Yêu cầu đầu tiên nên gồm tóm tắt và tham khảo. Trước khi gửi thiết kế mật đầy đủ, hãy liên hệ để ký NDA và thống nhất cách chia sẻ.",
+  "jv": "Kanggo pitakon awal, kirim ringkesan lan referensi. Sadurunge ngirim desain rahasia lengkap, hubungi kita kanggo nandhatangani NDA lan nyepakati cara nuduhake.",
+  "ms": "Untuk pertanyaan awal, hantar ringkasan dan rujukan. Sebelum menghantar reka bentuk sulit lengkap, hubungi kami untuk menandatangani NDA dan bersetuju cara perkongsian.",
+  "tg": "Барои дархости аввал шарҳ ва маводи намунавӣ фиристед. Пеш аз тарҳҳои пурраи махфӣ барои имзои NDA ва мувофиқаи роҳи мубодила тамос гиред."
+};
+
+const inquiryConsentText: Record<string, string> = inquiryPrivacyNotice.consent;
 
 const attachmentCopy = lang === 'zh'
   ? {
@@ -470,6 +512,7 @@ const inquiryFormScriptUrl = isDev ? '/js/inquiry-form.js' : runtimeAssetUrl('in
         <input type="hidden" name="source" value={source} />
         <input type="hidden" name="product_url" value={productUrl} />
         <input type="hidden" name="language" value={lang} />
+        <input type="hidden" name="inquiry_notice_id" value={inquiryPrivacyNotice.id} />
         <input type="hidden" name="product_name" value={productName} />
         <input type="hidden" name="product_sku" value={productSku} />
 
@@ -507,7 +550,7 @@ const inquiryFormScriptUrl = isDev ? '/js/inquiry-form.js' : runtimeAssetUrl('in
               accept=".pdf,.jpg,.jpeg,.png,.webp,.docx,.xlsx,.dwg,.dxf,.stp,.step,.igs,.iges,.stl,.ai,.eps,.psd,.cdr,.3dm,.sldprt,.sldasm,.ipt,.iam,.x_t,application/pdf,image/jpeg,image/png,image/webp,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
               class="block min-w-0 flex-1 text-sm text-gray-700 file:me-4 file:rounded-lg file:border-0 file:bg-[#5D4E37] file:px-4 file:py-2.5 file:font-semibold file:text-white hover:file:bg-[#4A3D2E] active:file:bg-[#4A3D2E] focus-visible:file:bg-[#4A3D2E] focus-within:file:bg-[#4A3D2E] focus:outline-hidden"
               aria-label={attachmentInputLabel}
-              aria-describedby="attachment-help attachment-list"
+              aria-describedby="attachment-help attachment-nda-notice attachment-list"
             />
             <span class="shrink-0 text-sm text-gray-500">{attachmentCopy.optional}</span>
             </div>
@@ -517,6 +560,10 @@ const inquiryFormScriptUrl = isDev ? '/js/inquiry-form.js' : runtimeAssetUrl('in
               <a href="mailto:sales@kssmi.com" data-vjt-contact="mailto" data-vjt-placement="inquiry-attachment-email" class="text-[#5D4E37] underline decoration-[#8B7355]/50 underline-offset-2 hover:text-[#4A3D2E] active:text-[#4A3D2E] focus-visible:text-[#4A3D2E] focus-within:text-[#4A3D2E]">sales#kssmi.com</a>.
             </p>
           </div>
+          <p id="attachment-nda-notice" class="mt-2 text-sm leading-relaxed text-gray-700">
+            {designSubmissionNotice[lang] || designSubmissionNotice.en}{' '}
+            <a href={lang === 'en' ? '/terms-privacy/#website-terms' : `/${lang}/terms-privacy/#website-terms`} class="underline decoration-[#8B7355]/50 underline-offset-2">{designTermsLinkLabels[lang] || designTermsLinkLabels.en}</a>
+          </p>
           <ul id="attachment-list" class="hidden mt-2 space-y-1 text-sm text-gray-600" aria-live="polite"></ul>
         </div>
 
@@ -584,6 +631,19 @@ const inquiryFormScriptUrl = isDev ? '/js/inquiry-form.js' : runtimeAssetUrl('in
           ></textarea>
           <p class="mt-2 text-center sm:text-start text-sm leading-relaxed text-gray-500">
             {ph.detailsHelper}
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <div class="flex items-start gap-3">
+            <input id="inquiry-privacy-consent" name="inquiry_privacy_consent" type="checkbox" value="1" required
+              aria-describedby="inquiry-privacy-link" class="mt-1 h-4 w-4 shrink-0 accent-[#5D4E37]" />
+            <label for="inquiry-privacy-consent" class="text-sm leading-relaxed text-gray-700">
+              {inquiryConsentText[lang] || inquiryConsentText.en}
+            </label>
+          </div>
+          <p id="inquiry-privacy-link" class="text-sm text-gray-700">
+            <a href={lang === 'en' ? '/terms-privacy/#data-and-purposes' : `/${lang}/terms-privacy/#data-and-purposes`} class="underline decoration-[#8B7355]/50 underline-offset-2">{designTermsLinkLabels[lang] || designTermsLinkLabels.en}</a>
           </p>
         </div>
 

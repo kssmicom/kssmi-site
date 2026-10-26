@@ -9,11 +9,11 @@ navLabel: "Cookie ed eventi di contatto"
 title: "Cookie, analisi e interazioni di contatto"
 ---
 
-Kssmi separa una funzione minima per gli eventi di contatto dalla funzione di analisi del percorso del visitatore basata sul consenso. Servono a scopi diversi e non devono essere descritte come un unico sistema con un'unica base giuridica.
+Le statistiche dei contatti e le analisi del percorso richiedono entrambe il consenso all'analisi. WhatsApp e l'e-mail restano disponibili senza tracciamento facoltativo.
 
 ### 1. Eventi di contatto
 
-Quando un visitatore seleziona deliberatamente un link WhatsApp o un'e-mail, il sito web può registrare un evento minimo che indica l'apertura del punto di accesso del contatto. Senza il consenso per l'analisi, questo evento è progettato per contenere solo:
+Solo con il consenso all'analisi, la selezione di un link WhatsApp o e-mail può registrare un evento contenente:
 
 - il canale selezionato;
 - un tipo di evento `open_intent`;
@@ -24,11 +24,11 @@ Quando un visitatore seleziona deliberatamente un link WhatsApp o un'e-mail, il 
 - la lingua del sito; e
 - uno stato di "intento" (`intent`).
 
-Senza il consenso per l'analisi, questo record non deve creare o leggere un identificatore del visitatore/della sessione VJT e non deve contenere un percorso di navigazione ricostruito, l'URL completo del referrer, i parametri della campagna, l'indirizzo IP, lo user agent o la geolocalizzazione. Un trattamento di sicurezza separato e di breve durata può verificarsi per la limitazione della frequenza (rate limiting).
+Senza consenso all'analisi, le statistiche dei contatti non richiedono credenziali, non impostano il relativo cookie e non registrano aperture. Con il consenso, l'evento può essere collegato al percorso descritto sotto. Un trattamento di sicurezza separato può proteggere il contatto richiesto.
 
 Un record `open_intent` significa solo che il link di contatto del sito web è stato attivato. Non dimostra che un dispositivo abbia aperto con successo WhatsApp o un client e-mail, che il visitatore abbia inviato un messaggio o che Kssmi ne abbia ricevuto uno.
 
-Per un modulo di richiesta, un evento `submission_success` significa che il processo di invio configurato dal sito web ha segnalato l'esito positivo. Non dimostra che un destinatario abbia letto o risposto all'e-mail.
+Un evento `submission_success` indica l'accettazione della richiesta nel processo di invio, che può includere una coda. Non prova la consegna dell'e-mail, la ricezione da parte di una persona specifica, la lettura o una risposta.
 
 ### 2. Tracciamento del percorso del visitatore (VJT)
 
@@ -46,20 +46,20 @@ Il percorso di analisi deve rimanere disattivato finché il visitatore non conce
 
 ### 3. Pubblicità e analisi di terze parti
 
-Google Analytics, Google Ads, Google Tag Manager o tecnologie di misurazione comparabili devono funzionare in base alle categorie di consenso selezionate dal visitatore e alla configurazione effettiva del sito. L'informativa finale deve descrivere solo i prodotti e le funzionalità che sono effettivamente abilitati.
+Google Analytics, Google Ads, Google Tag Manager o tecnologie comparabili operano secondo le categorie di consenso scelte dal visitatore e la configurazione attiva del sito. L'archiviazione per analisi e pubblicità resta negata finché non viene concesso il relativo consenso.
 
 ### 4. Cookie e archiviazione nel browser
 
-Ai sistemi del sito descritti nella presente informativa si applicano i seguenti periodi e criteri:
+Di seguito sono elencate le principali voci di archiviazione nel browser. Gli identificatori di terzi possono variare secondo fornitore, browser, consenso e configurazione attiva.
 
 | Nome | Fornitore | Finalità | Categoria | Durata | Tipo di archiviazione |
 | --- | --- | --- | --- | --- | --- |
-| `cookie-consent` | Kssmi | Ricordare le scelte del visitatore relative ad analisi e pubblicità | Necessario | Finché la scelta non viene modificata o la memoria del browser viene cancellata | Local storage |
-| `vjt_visitor_id` | Kssmi | Associare le visite acconsentite a un percorso del visitatore | Analisi | Cookie: up to about 365 days; local copy: Fino alla revoca del consenso alle analisi o alla cancellazione della memoria del browser | Cookie e archiviazione locale |
-| `vjt_session_id` | Kssmi | Associare gli eventi della pagina acconsentita all'interno di una sessione | Analisi | About 30 minutes | Cookie |
+| `cookie-consent` | Kssmi | Ricordare le scelte del visitatore relative ad analisi e pubblicità | Necessario | Finché la scelta non viene modificata o la memoria del browser viene cancellata | Archiviazione locale |
+| `vjt_visitor_id` | Kssmi | Associare le visite acconsentite a un percorso del visitatore | Analisi | Cookie: fino a circa 365 giorni; copia locale: Fino alla revoca del consenso alle analisi o alla cancellazione della memoria del browser | Cookie e archiviazione locale |
+| `vjt_session_id` | Kssmi | Associare gli eventi della pagina acconsentita all'interno di una sessione | Analisi | Circa 30 minuti | Cookie |
 | `KSSMI_VJT_IDENTITY` | Kssmi | Identità server firmata che collega le visite acconsentite all'interno di un ciclo di consenso; non leggibile dagli script della pagina | Analisi | Fino a circa 365 giorni; fatto scadere dopo la revoca quando il browser lo consente | Cookie (HttpOnly) |
-| `KSSMI_VJT_CONTACT` | Kssmi | Sessione firmata di breve durata che protegge le statistiche degli eventi di contatto da eventi falsificati; contiene un valore casuale, non un identificatore VJT, ed è impostata senza consenso all'analisi | Sicurezza degli eventi di contatto | Circa 30 minuti, rinnovata durante la navigazione | Cookie (HttpOnly) |
-| Altri identificatori Google/di terze parti | Google / relevant third party | Analisi o pubblicità | Analisi/pubblicità | Varia in base al fornitore e alla configurazione | Cookie o tecnologia simile |
+| `KSSMI_VJT_CONTACT` | Kssmi | Sessione firmata per proteggere statistiche dei contatti consentite, legata al ciclo di consenso attuale; emessa solo con consenso all'analisi | Analisi | Circa 30 minuti, rinnovata durante la navigazione | Cookie (HttpOnly) |
+| Altri identificatori Google/di terze parti | Google / terza parte pertinente | Analisi o pubblicità | Analisi/pubblicità | Varia in base al fornitore e alla configurazione | Cookie o tecnologia simile |
 
 L'inventario dei cookie, il banner di consenso e l'implementazione live devono concordare. Rinominare un tracker o spostare un identificatore da un cookie all'archiviazione locale non rende di per sé la tecnologia esente dal consenso.
 

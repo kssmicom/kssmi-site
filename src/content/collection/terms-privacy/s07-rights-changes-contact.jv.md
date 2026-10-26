@@ -27,7 +27,7 @@ Hak-hak kasebut tundhuk karo kahanan lan pangecualian hukum. Kita bisa uga njalu
 
 ### Nggunakake hak sampeyan
 
-Kirim panyuwunan menyang **privacy [at] kssmi [dot] com** lan terangkan hak sing pengin sampeyan gunakake. Kssmi bakal mangsuli sajrone wektu sing ditemtokake hukum sing ditrapake.
+Kirim panjaluk menyang **privacy [at] kssmi [dot] com** lan sebutake hak sing arep digunakake. Kssmi mangsuli ing wektu hukum. Kita bisa njaluk informasi sing wajar perlu kanggo mriksa identitas, njlentrehake panjaluk utawa nglindhungi hak wong liya.
 
 ### Keluhan
 
@@ -45,6 +45,4 @@ Kita bisa nganyari kabar iki nalika situs web, aktivitas pangolahan, panyedhiya 
 
 Pengontrol data: **Shenzhen Kssmi Technology Co., Ltd.**  
 Kontak privasi: **privacy [at] kssmi [dot] com**  
-Alamat pos: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**  
-Wakil EU: **Kssmi Eyewear, Montagnola, Via Nicola Spedalieri, 7, 00142 Roma RM, Italy**  
-Kontak privasi wakil EU: **privacy [at] kssmi [dot] com**
+Alamat pos: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

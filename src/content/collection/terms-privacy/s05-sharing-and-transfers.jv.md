@@ -32,3 +32,7 @@ Kita uga bisa nuduhake informasi sing cocog karo penasihat profesional, regulato
 Kssmi didegake ing China. Informasi sing dikirim langsung dening pangguna liwat situs utawa saluran komunikasi sing dipilih kanthi sengaja bisa diproses ing China.
 
 Sawetara panyedhiya layanan uga bisa ngolah informasi ing njaba negara pangguna utawa Area Ekonomi Eropa. Yen Bab V GDPR ditrapake kanggo transfer dening pengendali utawa pemroses, transfer kasebut kudu nggunakake mekanisme sah sing cocog karo kahanan, kayata keputusan kecukupan, klausa kontrak standar Komisi Eropa sing ditrapake, utawa perlindungan utawa pangecualian liyane sing diidini hukum.
+
+Langkah teknis lan organisasi tambahan ditrapake yen cocog. Informasi pangayoman kanggo data sampeyan bisa dijaluk liwat **privacy [at] kssmi [dot] com**, tundhuk wates kerahasiaan sing sah.
+
+Kategori iki ora mbusak tanggung jawab Kssmi nalika milih panyedhiya layanan. Kanggo pambocoran utawa pangiriman menyang njaba China sing tundhuk hukum China, informasi panampa, pangayoman lan idin kapisah sing dibutuhake kudu sadurunge pangolahan; kabar iki dudu idin kapisah. Takon kontak privasi babagan panampa lan pangayoman. Pangumpulan langsung lan pambocoran sabanjure menyang organisasi liya ditaksir kapisah.

@@ -27,7 +27,7 @@ title: "Ҳуқуқҳои шумо, шикоятҳо, тағйирот ва та�
 
 ### Амалӣ кардани ҳуқуқҳои шумо
 
-Дархостро ба **privacy [at] kssmi [dot] com** фиристед ва ҳуқуқеро, ки мехоҳед амалӣ кунед, тавсиф кунед. Kssmi бояд қабули онро тасдиқ кунад ва дар доираи вақте, ки қонуни амалкунанда талаб мекунад, ҷавоб диҳад. Соҳиби амалиётӣ ва тартиби дархости дохилӣ бояд пеш аз нашр тасдиқ карда шаванд.
+Дархостро бо нишон додани ҳуқуқи дилхоҳ ба **privacy [at] kssmi [dot] com** фиристед. Kssmi дар муҳлати қонунӣ ҷавоб медиҳад. Барои санҷиши шахсият, равшан кардани дархост ё ҳифзи ҳуқуқи дигарон маълумоти оқилона зарурӣ талаб шуда метавонад.
 
 ### Шикоятҳо
 
@@ -45,6 +45,4 @@ title: "Ҳуқуқҳои шумо, шикоятҳо, тағйирот ва та�
 
 Назоратчии маълумот: **Shenzhen Kssmi Technology Co., Ltd.**  
 Тамос оид ба махфият: **privacy [at] kssmi [dot] com**  
-Суроғаи почта: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**  
-Намояндаи ИА: **Kssmi Eyewear, Montagnola, Via Nicola Spedalieri, 7, 00142 Roma RM, Italy**  
-Тамос оид ба махфияти намояндаи ИА: **privacy [at] kssmi [dot] com**
+Суроғаи почта: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

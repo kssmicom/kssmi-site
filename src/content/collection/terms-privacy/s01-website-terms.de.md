@@ -11,7 +11,9 @@ title: "Nutzungsbedingungen der Website"
 
 ### 1. Website-Betreiber
 
-Diese Website wird unter dem Namen Kssmi von **Shenzhen Kssmi Technology Co., Ltd.** mit Sitz in **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postleitzahl: 518000** betrieben.
+**Shenzhen Kssmi Technology Co., Ltd.** (深圳柯视觅科技有限责任公司)
+
+Geschäftliche Kontakt- und Fabrikanschrift: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postleitzahl: 518000**
 
 ### 2. Akzeptanz dieser Bedingungen
 
@@ -41,9 +43,9 @@ Namen, Marken und Materialien Dritter bleiben Eigentum ihrer jeweiligen Inhaber.
 
 ### 6. Von Benutzern übermittelte Informationen
 
-Sie sind dafür verantwortlich, dass die von Ihnen übermittelten Informationen korrekt und rechtmäßig sind und dass Sie berechtigt sind, sie bereitzustellen. Übermitteln Sie keine vertraulichen Designdateien, personenbezogenen Daten besonderer Kategorien oder personenbezogenen Daten Dritter, es sei denn, dies ist für die Anfrage erforderlich und Sie sind dazu berechtigt.
+Übermitteln Sie nur erforderliche Informationen, die Sie weitergeben dürfen. Senden Sie für eine erste Anfrage eine Projektübersicht und für Vorgespräche geeignete Referenzen. Kontaktieren Sie vor der Übermittlung vollständiger vertraulicher Entwürfe den Vertrieb, um eine NDA zu vereinbaren und zu unterzeichnen und den Übermittlungsweg festzulegen. Senden Sie keine sensiblen personenbezogenen Daten oder unnötigen Angaben über Dritte. Die Übermittlung überträgt kein Eigentum und gewährt nur die für Anfrage und vereinbartes Projekt erforderlichen Nutzungsrechte.
 
-Eigentum und zulässige Nutzung von Projektdesigns, Mustern, Werkzeugen, Spezifikationen und anderen kommerziellen Materialien sollten durch das entsprechende Angebot, die Vertraulichkeitsvereinbarung oder den Herstellungsvertrag geregelt werden.
+Die von beiden Parteien unterzeichnete NDA regelt Vertraulichkeit, zulässige Materialnutzung und Rechtsbehelfe einschließlich Rechtswahl und Streitbeilegung. Diese Website-Bedingungen ändern oder beschränken die NDA nicht; spätere Vereinbarungen gehen nur im von ihr erlaubten Umfang vor. Eigentum, Werkzeuge, Exklusivität und Dateiübergabe richten sich nach den Projektvereinbarungen. Eine Website-Anfrage oder NDA-Anforderung beauftragt keine kostenpflichtige Entwicklung, Muster-, Werkzeug- oder Serienfertigung. Dafür sind die schriftliche Annahme von Angebot, Bestellung oder Vereinbarung durch beide Parteien sowie gegebenenfalls eine Zahlungsbestätigung nötig. Die Annahme kann über autorisierte Kontakte per E-Mail erfolgen, vorbehaltlich vereinbarter Unterschriftserfordernisse.
 
 ### 7. Dienste und Links von Drittanbietern
 

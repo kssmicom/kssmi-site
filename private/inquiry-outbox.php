@@ -26,6 +26,8 @@ const KSSMI_OUTBOX_STEPS = ['sales', 'autoreply'];
 const KSSMI_OUTBOX_RETRY_DELAYS = [60, 300, 900, 1800, 3600];
 const KSSMI_OUTBOX_GIVE_UP_AFTER = 72 * 3600;
 const KSSMI_OUTBOX_DUPLICATE_WINDOW = 120;
+// Recovery window for failed/pending delivery copies, not for contract records.
+const KSSMI_OUTBOX_RETENTION_SECONDS = 30 * 86400;
 
 function kssmi_outbox_dir(): string {
     if (PHP_SAPI === 'cli' || PHP_SAPI === 'cli-server') {
@@ -94,6 +96,72 @@ function kssmi_outbox_remove_tree(string $path): void {
     @rmdir($path);
 }
 
+/** Delete expired valid jobs under the enqueue and job locks, never follow links. */
+function kssmi_outbox_prune(?int $now = null): array {
+    $now ??= time();
+    $result = ['deleted' => 0, 'busy' => 0, 'invalid' => 0];
+    $dir = kssmi_outbox_dir();
+    if (!is_dir($dir) || is_link($dir)) return $result;
+    $root = realpath($dir);
+    if ($root === false) return $result;
+    $rootLock = @fopen($root . '/.lock', 'c');
+    if ($rootLock === false || !flock($rootLock, LOCK_EX | LOCK_NB)) {
+        if (is_resource($rootLock)) fclose($rootLock);
+        $result['busy']++;
+        return $result;
+    }
+    try {
+        foreach (kssmi_outbox_job_ids() as $id) {
+            $path = $root . DIRECTORY_SEPARATOR . $id;
+            if (is_link($path) || realpath(dirname($path)) !== $root) continue;
+            $resolved = realpath($path);
+            if ($resolved === false || dirname($resolved) !== $root || !is_dir($path)) continue;
+            $jobLock = @fopen($path . '/.lock', 'c');
+            if ($jobLock === false || !flock($jobLock, LOCK_EX | LOCK_NB)) {
+                if (is_resource($jobLock)) fclose($jobLock);
+                $result['busy']++;
+                continue;
+            }
+            $remove = false;
+            try {
+                $job = kssmi_outbox_load_job($path);
+                $created = $job['created_at'] ?? null;
+                if (!is_int($created) || $created <= 0 || $created > $now) {
+                    $result['invalid']++;
+                    continue;
+                }
+                if ($created >= $now - KSSMI_OUTBOX_RETENTION_SECONDS) continue;
+                // Jobs contain only flat files. Unknown subdirectories or links
+                // need manual investigation, not recursive automatic deletion.
+                foreach (scandir($path) ?: [] as $name) {
+                    if ($name === '.' || $name === '..') continue;
+                    if (is_link($path . '/' . $name) || !is_file($path . '/' . $name)) {
+                        $result['invalid']++;
+                        continue 2;
+                    }
+                }
+                foreach (scandir($path) ?: [] as $name) {
+                    if ($name === '.' || $name === '..' || $name === '.lock') continue;
+                    if (!@unlink($path . '/' . $name)) continue 2;
+                }
+                $remove = true;
+            } finally {
+                flock($jobLock, LOCK_UN);
+                fclose($jobLock);
+            }
+            if ($remove) {
+                @unlink($path . '/.lock');
+                if (@rmdir($path)) $result['deleted']++;
+            }
+        }
+    } finally {
+        flock($rootLock, LOCK_UN);
+        fclose($rootLock);
+    }
+    if ($result['invalid'] > 0) error_log('KSSMI retention: invalid outbox entries require manual review: ' . $result['invalid']);
+    return $result;
+}
+
 function kssmi_outbox_fingerprint(array $form, array $attachments): string {
     $files = array_map(static fn(array $file): string => ($file['name'] ?? '') . ':' . (int)($file['size'] ?? 0), $attachments);
     sort($files, SORT_STRING);
@@ -119,6 +187,7 @@ function kssmi_outbox_enqueue(array $messages, array $record, array $attachments
     $failed = ['ok' => false, 'duplicate' => false, 'id' => null, 'inquiry_id' => null];
     $dir = kssmi_outbox_dir();
     if (!kssmi_outbox_ensure_dir($dir) || !kssmi_outbox_ensure_dir($dir . '/.keys')) return $failed;
+    kssmi_outbox_prune($now);
 
     $lock = @fopen($dir . '/.lock', 'c');
     if ($lock === false || !flock($lock, LOCK_EX)) return $failed;
@@ -136,6 +205,11 @@ function kssmi_outbox_enqueue(array $messages, array $record, array $attachments
         }
 
         $id = gmdate('YmdHis', $now) . '-' . bin2hex(random_bytes(8));
+        if (isset($record['form']['inquiry_consent'])) {
+            require_once __DIR__ . '/inquiry-privacy.php';
+            kssmi_inquiry_prune_consent_receipts($dir, $now);
+            if (!kssmi_inquiry_persist_consent_receipt($dir, $id, $record, $now)) return $failed;
+        }
         $temp = $dir . '/.tmp-' . $id;
         if (!@mkdir($temp, 0700)) return $failed;
         $files = [];
