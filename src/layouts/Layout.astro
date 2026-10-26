@@ -93,12 +93,15 @@ const localeMap: Record<string, string> = {
   "tg": "tg_TJ",
 };
 
-// Organization Schema (Google Knowledge Graph)
+
+// Localized brand name: zh pages present the brand in Chinese.
+const brandName = lang === 'zh' ? '可米科技' : 'Kssmi Eyewear';
+
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": "https://kssmi.com/#organization",
-  "name": "Kssmi Eyewear",
+  "name": brandName,
   "url": "https://kssmi.com",
   "logo": "https://kssmi.com/favicon.svg",
   "image": "https://kssmi.com/media/global/404-team.webp",
@@ -130,7 +133,7 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": "https://kssmi.com/#website",
-  "name": "Kssmi Eyewear",
+  "name": brandName,
   "url": "https://kssmi.com",
   "potentialAction": {
     "@type": "SearchAction",
@@ -252,7 +255,7 @@ const websiteSchema = {
   <meta property="og:url" content={canonical || selfCanonical} />
   <meta property="og:type" content={type} />
 	<meta property="og:locale" content={localeMap[lang] || "en_US"} />
-  <meta property="og:site_name" content="Kssmi Eyewear" />
+  <meta property="og:site_name" content={brandName} />
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
