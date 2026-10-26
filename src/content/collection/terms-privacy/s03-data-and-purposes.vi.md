@@ -44,4 +44,4 @@ Người dùng chỉ nên cung cấp những thông tin cần thiết một các
 
 Biểu mẫu yêu cầu đồng ý riêng để xử lý và trả lời yêu cầu:
 
-> Tôi đồng ý để Shenzhen Kssmi Technology Co., Ltd. dùng thông tin liên hệ, tin nhắn và tệp đính kèm để xem xét, trả lời yêu cầu này và quản lý trao đổi dự án liên quan. Tôi có thể rút lại tại privacy@kssmi.com. Điều này không bật phân tích hay quảng cáo.
+> Tôi đồng ý để Kssmi dùng thông tin liên hệ, tin nhắn và tệp đính kèm của tôi để trả lời yêu cầu này.

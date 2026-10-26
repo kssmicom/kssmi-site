@@ -69,7 +69,7 @@ function sm_mail(string $tree): array {
 }
 
 function sm_inquiry(string $email, string $details, string $name = 'Test Verify'): array {
-    return ['name' => $name, 'email' => $email, 'details' => $details, 'language' => 'en', 'source' => 'quote-page', 'cf-turnstile-response' => 'test-token', 'inquiry_privacy_consent' => '1', 'inquiry_notice_id' => 'inquiry-privacy-2026-10-26-v3'];
+    return ['name' => $name, 'email' => $email, 'details' => $details, 'language' => 'en', 'source' => 'quote-page', 'cf-turnstile-response' => 'test-token', 'inquiry_privacy_consent' => '1', 'inquiry_notice_id' => 'inquiry-privacy-2026-10-26-v4'];
 }
 
 $server = null;

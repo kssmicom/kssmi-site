@@ -11,7 +11,7 @@ title: "شروط استخدام الموقع الإلكتروني"
 
 ### 1. مشغل الموقع الإلكتروني
 
-**Shenzhen Kssmi Technology Co., Ltd.** (深圳柯视觅科技有限责任公司)
+**Kssmi Technology Co., Ltd.** (可米科技有限公司)
 
 عنوان التواصل التجاري والمصنع: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, الرمز البريدي: 518000**
 

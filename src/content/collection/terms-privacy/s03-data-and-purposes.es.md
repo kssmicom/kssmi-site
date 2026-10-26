@@ -44,4 +44,4 @@ Los usuarios deben proporcionar solo la información razonablemente necesaria pa
 
 El formulario solicita un consentimiento separado para tratar y responder a su consulta:
 
-> Consiento que Shenzhen Kssmi Technology Co., Ltd. use mis datos de contacto, mensaje y adjuntos para revisar y responder a esta consulta y gestionar la correspondencia del proyecto relacionado. Puedo retirar el consentimiento en privacy@kssmi.com. Esto no activa análisis ni publicidad.
+> Consiento que Kssmi utilice mis datos de contacto, mi mensaje y mis adjuntos para responder a esta consulta.

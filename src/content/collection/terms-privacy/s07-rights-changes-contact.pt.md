@@ -43,6 +43,6 @@ Podemos atualizar este aviso quando nosso site, atividades de processamento, for
 
 ### Contato
 
-Controlador de dados: **Shenzhen Kssmi Technology Co., Ltd.**  
+Controlador de dados: **Kssmi Technology Co., Ltd.**  
 Contato de privacidade: **privacy [at] kssmi [dot] com**  
 Endereço postal: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

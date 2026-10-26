@@ -44,4 +44,4 @@ Gli utenti dovrebbero fornire solo le informazioni ragionevolmente necessarie pe
 
 Il modulo richiede un consenso distinto per trattare e rispondere alla richiesta:
 
-> Acconsento all'uso dei miei contatti, messaggi e allegati da parte di Shenzhen Kssmi Technology Co., Ltd. per esaminare e rispondere alla richiesta e gestire la relativa corrispondenza di progetto. Posso revocare il consenso scrivendo a privacy@kssmi.com. Non si attivano analisi o pubblicità.
+> Acconsento che Kssmi utilizzi i miei contatti, i miei messaggi e i miei allegati per rispondere a questa richiesta.

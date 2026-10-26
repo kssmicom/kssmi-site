@@ -44,4 +44,4 @@ Nutzer sollten nur die Informationen angeben, die für ihre geschäftliche Anfra
 
 Das Formular fragt gesondert nach der Einwilligung zur Verarbeitung und Beantwortung Ihrer Anfrage:
 
-> Ich stimme zu, dass Shenzhen Kssmi Technology Co., Ltd. meine Kontaktdaten, Nachricht und Anhänge zur Prüfung und Beantwortung dieser Anfrage und zur zugehörigen Projektkorrespondenz verwendet. Ich kann unter privacy@kssmi.com widerrufen. Dies aktiviert weder Analysen noch Werbung.
+> Ich stimme zu, dass Kssmi meine Kontaktdaten, meine Nachricht und meine Anhänge zur Beantwortung dieser Anfrage verwendet.

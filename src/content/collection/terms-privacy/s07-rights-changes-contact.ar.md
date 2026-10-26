@@ -43,6 +43,6 @@ title: "حقوقك والشكاوى والتغييرات والاتصال"
 
 ### الاتصال
 
-مراقب البيانات: **Shenzhen Kssmi Technology Co., Ltd.**  
+مراقب البيانات: **Kssmi Technology Co., Ltd.**  
 جهة اتصال الخصوصية: **privacy [at] kssmi [dot] com**  
 العنوان البريدي: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

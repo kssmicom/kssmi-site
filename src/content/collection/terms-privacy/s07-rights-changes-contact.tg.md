@@ -43,6 +43,6 @@ title: "Ҳуқуқҳои шумо, шикоятҳо, тағйирот ва та�
 
 ### Тамос
 
-Назоратчии маълумот: **Shenzhen Kssmi Technology Co., Ltd.**  
+Назоратчии маълумот: **Kssmi Technology Co., Ltd.**  
 Тамос оид ба махфият: **privacy [at] kssmi [dot] com**  
 Суроғаи почта: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

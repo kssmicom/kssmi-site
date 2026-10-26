@@ -13,7 +13,7 @@ effectiveDate: "2026-10-26"
 lastUpdated: "2026-10-26"
 intro: "Ин саҳифа шартҳоеро, ки истифодаи вебсайти Kssmi-ро танзим мекунанд ва чӣ гуна мо ҳангоми дида баромадани сайт ё тамос бо мо маълумоти шахсиро ҷамъ меорем, истифода мебарем, мубодила мекунем ва муҳофизат мекунем, фаҳмонда медиҳад."
 controller:
-  legalName: "Shenzhen Kssmi Technology Co., Ltd."
+  legalName: "Kssmi Technology Co., Ltd."
   shortName: "Kssmi"
   address: "905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China"
   postcode: "518000"

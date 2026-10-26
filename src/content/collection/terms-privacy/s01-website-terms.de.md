@@ -11,7 +11,7 @@ title: "Nutzungsbedingungen der Website"
 
 ### 1. Website-Betreiber
 
-**Shenzhen Kssmi Technology Co., Ltd.** (深圳柯视觅科技有限责任公司)
+**Kssmi Technology Co., Ltd.** (可米科技有限公司)
 
 Geschäftliche Kontakt- und Fabrikanschrift: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postleitzahl: 518000**
 

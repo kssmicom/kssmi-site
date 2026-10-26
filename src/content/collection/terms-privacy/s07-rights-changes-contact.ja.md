@@ -43,6 +43,6 @@ title: "お客様の権利、苦情、変更、連絡先"
 
 ### 連絡先
 
-データ管理者：**Shenzhen Kssmi Technology Co., Ltd.**  
+データ管理者：**Kssmi Technology Co., Ltd.**  
 プライバシーに関する連絡先：**privacy [at] kssmi [dot] com**  
 郵便宛先：**905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

@@ -19,7 +19,7 @@ Sie ersetzen nicht die Datenschutzhinweise einer Drittanbieter-Plattform, die ei
 
 Der für die in diesen Hinweisen beschriebene Verarbeitung Verantwortliche ist:
 
-**Shenzhen Kssmi Technology Co., Ltd.**  
+**Kssmi Technology Co., Ltd.**  
 905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China  
 Postleitzahl: 518000  
 Datenschutzkontakt: **privacy [at] kssmi [dot] com**

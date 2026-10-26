@@ -19,7 +19,7 @@ title: "プライバシー概要と管理者"
 
 本通知に記載されている処理について責任を負う管理者は以下のとおりです。
 
-**Shenzhen Kssmi Technology Co., Ltd.**  
+**Kssmi Technology Co., Ltd.**  
 905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China  
 郵便番号: 518000  
 プライバシー連絡先: **privacy [at] kssmi [dot] com**

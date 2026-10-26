@@ -14,7 +14,7 @@ Esta página contém dois documentos:
 1. os **Termos de uso do site**, que regem o acesso e uso do site da Kssmi; e
 2. o **Aviso de privacidade**, que explica como os dados pessoais são tratados quando uma pessoa navega no site, envia uma consulta ou opta por entrar em contato com a Kssmi por e-mail ou WhatsApp.
 
-O site é destinado principalmente a clientes corporativos, distribuidores, marcas e outras partes interessadas na fabricação de óculos OEM ou ODM. As referências a "Kssmi", "nós" ou "nosso" referem-se à **Shenzhen Kssmi Technology Co., Ltd.**, a menos que o contexto indique o contrário.
+O site é destinado principalmente a clientes corporativos, distribuidores, marcas e outras partes interessadas na fabricação de óculos OEM ou ODM. As referências a "Kssmi", "nós" ou "nosso" referem-se à **Kssmi Technology Co., Ltd.**, a menos que o contexto indique o contrário.
 
 **Data de vigência:** 2026-10-26\
 **Última atualização:** 2026-10-26\

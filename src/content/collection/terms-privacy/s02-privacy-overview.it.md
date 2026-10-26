@@ -19,7 +19,7 @@ Non sostituisce l'informativa sulla privacy di una piattaforma di terze parti ch
 
 Il titolare del trattamento responsabile del trattamento descritto nella presente informativa è:
 
-**Shenzhen Kssmi Technology Co., Ltd.**  
+**Kssmi Technology Co., Ltd.**  
 905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, Cina  
 Codice postale: 518000  
 Contatto privacy: **privacy [at] kssmi [dot] com**

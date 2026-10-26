@@ -11,7 +11,7 @@ title: "Terma penggunaan tapak web"
 
 ### 1. Pengendali tapak web
 
-**Shenzhen Kssmi Technology Co., Ltd.** (深圳柯视觅科技有限责任公司)
+**Kssmi Technology Co., Ltd.** (可米科技有限公司)
 
 Alamat hubungan perniagaan dan kilang: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Poskod: 518000**
 

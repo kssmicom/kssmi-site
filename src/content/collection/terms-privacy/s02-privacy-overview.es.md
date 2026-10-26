@@ -19,7 +19,7 @@ No reemplaza el aviso de privacidad de una plataforma de terceros que un usuario
 
 El controlador responsable del procesamiento descrito en este aviso es:
 
-**Shenzhen Kssmi Technology Co., Ltd.**  
+**Kssmi Technology Co., Ltd.**  
 905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China  
 Código postal: 518000  
 Contacto de privacidad: **privacy [at] kssmi [dot] com**

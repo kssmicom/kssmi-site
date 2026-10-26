@@ -11,7 +11,7 @@ title: "Termos de uso do site"
 
 ### 1. Operador do site
 
-**Shenzhen Kssmi Technology Co., Ltd.** (深圳柯视觅科技有限责任公司)
+**Kssmi Technology Co., Ltd.** (可米科技有限公司)
 
 Endereço de contacto comercial e da fábrica: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Código postal: 518000**
 

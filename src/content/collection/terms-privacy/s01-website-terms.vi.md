@@ -11,7 +11,7 @@ title: "Điều khoản sử dụng trang web"
 
 ### 1. Nhà điều hành trang web
 
-**Shenzhen Kssmi Technology Co., Ltd.** (深圳柯视觅科技有限责任公司)
+**Kssmi Technology Co., Ltd.** (可米科技有限公司)
 
 Địa chỉ liên hệ kinh doanh và nhà máy: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Mã bưu chính: 518000**
 

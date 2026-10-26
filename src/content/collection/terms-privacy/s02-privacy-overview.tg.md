@@ -19,7 +19,7 @@ title: "Шарҳи махфият ва назоратчӣ"
 
 Назоратчии масъул барои коркарде, ки дар ин огоҳинома тавсиф шудааст, ин аст:
 
-**Shenzhen Kssmi Technology Co., Ltd.**  
+**Kssmi Technology Co., Ltd.**  
 905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China  
 Индекси почта: 518000  
 Тамос оид ба махфият: **privacy [at] kssmi [dot] com**

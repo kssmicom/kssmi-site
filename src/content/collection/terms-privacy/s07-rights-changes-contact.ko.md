@@ -43,6 +43,6 @@ title: "귀하의 권리, 불만 제기, 변경 및 연락처"
 
 ### 연락처
 
-데이터 컨트롤러: **Shenzhen Kssmi Technology Co., Ltd.**  
+데이터 컨트롤러: **Kssmi Technology Co., Ltd.**  
 개인정보 보호 연락처: **privacy [at] kssmi [dot] com**  
 우편 주소: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

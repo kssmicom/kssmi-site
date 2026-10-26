@@ -19,7 +19,7 @@ title: "隐私概览与控制者"
 
 负责本声明中所述处理的数据控制者是：
 
-**深圳柯视觅科技有限责任公司** (Shenzhen Kssmi Technology Co., Ltd.)\
+**可米科技有限公司** (Kssmi Technology Co., Ltd.)\
 中国广东省深圳市龙岗区园山街道百旺达健康科技产业园1栋905  
 邮编：518000  
 隐私联系方式：**privacy [at] kssmi [dot] com**

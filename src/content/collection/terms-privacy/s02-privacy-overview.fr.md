@@ -19,7 +19,7 @@ Il ne remplace pas l'avis de confidentialité d'une plateforme tierce qu'un util
 
 Le responsable du traitement décrit dans le présent avis est :
 
-**Shenzhen Kssmi Technology Co., Ltd.**  
+**Kssmi Technology Co., Ltd.**  
 905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, Chine  
 Code postal : 518000  
 Contact confidentialité : **privacy [at] kssmi [dot] com**

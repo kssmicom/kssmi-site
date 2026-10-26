@@ -13,7 +13,7 @@ effectiveDate: "2026-10-26"
 lastUpdated: "2026-10-26"
 intro: "本页面解释了有关使用 Kssmi 网站的条款，以及当您浏览本网站或联系我们时，我们如何收集、使用、共享和保护个人数据。"
 controller:
-  legalName: "深圳柯视觅科技有限责任公司"
+  legalName: "可米科技有限公司"
   shortName: "Kssmi"
   address: "中国广东省深圳市龙岗区园山街道百旺达健康科技产业园1栋905"
   postcode: "518000"

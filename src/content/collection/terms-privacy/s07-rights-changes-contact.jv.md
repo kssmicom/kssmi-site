@@ -43,6 +43,6 @@ Kita bisa nganyari kabar iki nalika situs web, aktivitas pangolahan, panyedhiya 
 
 ### Kontak
 
-Pengontrol data: **Shenzhen Kssmi Technology Co., Ltd.**  
+Pengontrol data: **Kssmi Technology Co., Ltd.**  
 Kontak privasi: **privacy [at] kssmi [dot] com**  
 Alamat pos: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

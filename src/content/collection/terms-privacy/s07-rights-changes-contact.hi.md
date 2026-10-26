@@ -43,6 +43,6 @@ title: "आपके अधिकार, शिकायतें, परिव�
 
 ### संपर्क
 
-डेटा नियंत्रक: **Shenzhen Kssmi Technology Co., Ltd.**  
+डेटा नियंत्रक: **Kssmi Technology Co., Ltd.**  
 गोपनीयता संपर्क: **privacy [at] kssmi [dot] com**  
 डाक का पता: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

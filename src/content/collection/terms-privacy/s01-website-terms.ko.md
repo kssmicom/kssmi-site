@@ -11,7 +11,7 @@ title: "웹사이트 이용 약관"
 
 ### 1. 웹사이트 운영자
 
-**Shenzhen Kssmi Technology Co., Ltd.** (深圳柯视觅科技有限责任公司)
+**Kssmi Technology Co., Ltd.** (可米科技有限公司)
 
 업무 연락처 및 공장 주소: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, 우편번호: 518000**
 

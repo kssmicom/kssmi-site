@@ -11,7 +11,7 @@ title: "वेबसाइट उपयोग की शर्तें"
 
 ### 1. वेबसाइट ऑपरेटर
 
-**Shenzhen Kssmi Technology Co., Ltd.** (深圳柯视觅科技有限责任公司)
+**Kssmi Technology Co., Ltd.** (可米科技有限公司)
 
 व्यावसायिक संपर्क और कारखाने का पता: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, पिन कोड: 518000**
 

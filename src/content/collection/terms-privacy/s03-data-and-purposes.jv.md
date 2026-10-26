@@ -44,4 +44,4 @@ Pangguna mung kudu menehi informasi sing cukup dibutuhake kanggo panyuwunan bisn
 
 Formulir njaluk idin kapisah kanggo ngolah lan mangsuli panjaluk:
 
-> Aku setuju Shenzhen Kssmi Technology Co., Ltd. nggunakake kontak, pesen lan lampiranku kanggo mriksa lan mangsuli pitakon iki sarta komunikasi proyek sing gegandhengan. Idin bisa dakcabut liwat privacy@kssmi.com. Iki ora ngaktifake analisis utawa iklan.
+> Aku setuju Kssmi nggunakake kontak, pesen lan lampiranku kanggo mangsuli pitakon iki.

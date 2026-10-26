@@ -44,4 +44,4 @@ Kullanıcılar yalnızca iş talepleri için makul ölçüde gerekli olan bilgil
 
 Form, başvurunuzu işlemek ve yanıtlamak için ayrı rıza ister:
 
-> Shenzhen Kssmi Technology Co., Ltd.'nin iletişim bilgilerimi, mesajımı ve eklerimi bu başvuruyu incelemek, yanıtlamak ve ilgili proje yazışmalarını yürütmek için kullanmasına rıza veriyorum. Rızamı privacy@kssmi.com üzerinden geri alabilirim. Analiz veya reklam etkinleşmez.
+> Kssmi'nin bu başvuruyu yanıtlamak için iletişim bilgilerimi, mesajımı ve eklerimi kullanmasına rıza veriyorum.
