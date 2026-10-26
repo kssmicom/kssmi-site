@@ -234,26 +234,6 @@ const attachmentInputLabels: Record<string, string> = {
   tg: 'Замима кардани файлҳои намунавӣ',
 };
 const attachmentInputLabel = attachmentInputLabels[lang] || attachmentInputLabels.en;
-const designTermsLinkLabels: Record<string, string> = {
-  "en": "Terms and privacy",
-  "zh": "条款与隐私",
-  "it": "Condizioni e privacy",
-  "es": "Condiciones y privacidad",
-  "fr": "Conditions et confidentialité",
-  "de": "Bedingungen und Datenschutz",
-  "pt": "Termos e privacidade",
-  "ru": "Условия и конфиденциальность",
-  "ja": "利用規約とプライバシー",
-  "tr": "Koşullar ve gizlilik",
-  "ar": "الشروط والخصوصية",
-  "ko": "약관 및 개인정보",
-  "hi": "शर्तें और गोपनीयता",
-  "vi": "Điều khoản và quyền riêng tư",
-  "jv": "Ketentuan lan privasi",
-  "ms": "Terma dan privasi",
-  "tg": "Шартҳо ва махфият"
-};
-
 const inquiryConsentText: Record<string, string> = inquiryPrivacyNotice.consent;
 
 const attachmentCopy = lang === 'zh'
@@ -615,8 +595,7 @@ const inquiryFormScriptUrl = isDev ? '/js/inquiry-form.js' : runtimeAssetUrl('in
             <input id="inquiry-privacy-consent" name="inquiry_privacy_consent" type="checkbox" value="1" required
               class="mt-1 h-4 w-4 shrink-0 accent-[#5D4E37]" />
             <label for="inquiry-privacy-consent" class="text-sm leading-relaxed text-gray-700">
-              {inquiryConsentText[lang] || inquiryConsentText.en}{' '}
-              <a href={lang === 'en' ? '/terms-privacy/#data-and-purposes' : `/${lang}/terms-privacy/#data-and-purposes`} class="text-[#5D4E37] underline decoration-[#8B7355]/50 underline-offset-2 hover:text-[#4A3D2E] active:text-[#4A3D2E] focus-visible:text-[#4A3D2E] focus-within:text-[#4A3D2E]">{designTermsLinkLabels[lang] || designTermsLinkLabels.en}</a>
+              {inquiryConsentText[lang] || inquiryConsentText.en}
             </label>
           </div>
         </div>
