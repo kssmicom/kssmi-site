@@ -148,8 +148,10 @@ for (const pathname of ['/', '/zh/', '/es/']) {
   await runCheck(`page ${pathname}`, async () => {
     const response = await getResponse(pathname);
     assertStatus(response, [200]);
-    if (!/<title>[^<]*kssmi/i.test(response.body)) {
-      throw new Error(`${response.url.href} does not contain the expected Kssmi page title.`);
+    // zh pages present the brand as 可米; every other language keeps Kssmi.
+    const brandPattern = pathname === '/zh/' ? /<title>[^<]*可米/ : /<title>[^<]*kssmi/i;
+    if (!brandPattern.test(response.body)) {
+      throw new Error(`${response.url.href} does not contain the expected ${pathname === '/zh/' ? '可米' : 'Kssmi'} page title.`);
     }
   });
 }
