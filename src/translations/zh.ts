@@ -60,7 +60,7 @@ export default {
     },
     footer: {
       tagline: "光学眼镜及太阳镜",
-      brandName: "Kssmi Eyewear",
+      brandName: "可米科技",
       brandDesc: "高端眼镜制造 — OEM 与 ODM 始于 2003 年",
       quickLinksTitle: "快速链接",
       about: "关于我们",
@@ -212,7 +212,7 @@ export default {
     },
     layout: {
       description: "来自中国的高端B2B眼镜制造。为全球零售商和品牌提供OEM/ODM定制眼镜框。",
-      schemaDescription: "Kssmi Eyewear (叶田眼镜) 是一家专业的B2B眼镜制造商，自2003年起，专注从中国工厂直供高品质的OEM/ODM光学镜架和太阳镜。",
+      schemaDescription: "可米科技（Kssmi Technology）是一家专业的B2B眼镜制造商，自2003年起，专注从中国工厂直供高品质的OEM/ODM光学镜架和太阳镜。",
     },
     sidebar: {
       // Primary Categories
