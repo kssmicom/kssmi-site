@@ -220,7 +220,7 @@ PHP);
     require_once "{$tree}/private/sender-blocklist.php";
     $rulesPath = "{$tree}/email_data/sender-blocklist.json";
     $hitsPath = "{$tree}/email_data/sender-blocklist-hits.json";
-    sm_assert(kssmi_sender_blocklist_add('patelamisha2706@gmail.com', false, 'spam', false, $rulesPath)['status'] === 'added', 'The test rule must be added.');
+    sm_assert(kssmi_sender_blocklist_add('patelamisha2706@gmail.com', false, 'spam', $rulesPath)['status'] === 'added', 'The test rule must be added.');
     $mailBefore = count(sm_mail($tree));
     $logsBefore = count(json_decode((string)file_get_contents("{$tree}/email_data/email-logs.json"), true));
     $blocked = sm_post($port, '198.51.100.7', sm_inquiry('Patel.Amisha2706+promo@googlemail.com', str_repeat('Spam offer. ', 100), "Amisha O'Neil & Co"), [['attachments[]', 'offer.pdf', 'application/pdf', $pdf]]);

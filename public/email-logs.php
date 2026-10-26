@@ -42,7 +42,6 @@ $_POST = kssmi_admin_normalize_request($_POST, [
     'block_value' => 320,
     'block_note' => 800,
     'block_include_subdomains' => 8,
-    'block_confirm_public' => 8,
     'block_log_id' => 256,
     'unblock_id' => 64,
     'block_edit_id' => 64,
@@ -629,8 +628,7 @@ if ($isAuthenticated && (isset($_POST['block_add']) || isset($_POST['block_log_i
             $outcome = kssmi_sender_blocklist_add(
                 $blockValue,
                 ($_POST['block_include_subdomains'] ?? '') === '1',
-                $_POST['block_note'] ?? '',
-                ($_POST['block_confirm_public'] ?? '') === '1'
+                $_POST['block_note'] ?? ''
             );
             $blocklistMessage = $outcome['message'];
             $blocklistOk = in_array($outcome['status'], ['added', 'updated', 'exists'], true);
@@ -1209,14 +1207,13 @@ function resendEmail($log) {
 
             <section class="blocklist">
                 <h2>Add a rule</h2>
-                <p class="blocklist-help">Inquiries from a blocked address or domain get the normal "thank you" page, but nothing is emailed, auto-replied or added to Email Logs. Gmail addresses match regardless of dots and "+tags". Only website form submissions are blocked; mail sent straight to sales@kssmi.com needs a mailbox filter.</p>
+                <p class="blocklist-help">Enter an email address or @domain.</p>
                 <?php if ($blocklist['ok']): ?>
                 <form method="POST" class="blocklist-form">
                     <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
                     <input type="text" name="block_value" placeholder="name@example.com or @example.com" required maxlength="254">
                     <input type="text" name="block_note" placeholder="Note (optional)" maxlength="<?php echo KSSMI_SENDER_BLOCKLIST_NOTE_MAX; ?>">
                     <label><input type="checkbox" name="block_include_subdomains" value="1"> Domain: include subdomains</label>
-                    <label><input type="checkbox" name="block_confirm_public" value="1"> Yes, block even a public mail domain (gmail.com, outlook.com…)</label>
                     <button type="submit" name="block_add" value="1" class="btn btn-danger btn-small">Block</button>
                 </form>
                 <?php endif; ?>
@@ -1227,7 +1224,6 @@ function resendEmail($log) {
                 <?php if (!$blocklist['rules']): ?>
                     <p class="blocklist-help">No rules yet. Add one above, or use the Block button next to an inquiry in Email Logs.</p>
                 <?php else: ?>
-                <p class="blocklist-help">To change whether a domain rule covers its subdomains, use the button in its row (or add the domain again with the new setting).</p>
                 <div class="table-wrapper">
                     <table class="blocklist-table">
                         <thead><tr><th>Rule</th><th>Type</th><th>Note</th><th>Added</th><th>Blocked</th><th>Last blocked</th><th></th></tr></thead>
@@ -1269,7 +1265,7 @@ function resendEmail($log) {
 
             <section class="blocklist">
                 <h2>Recently blocked</h2>
-                <p class="blocklist-help">Newest <?php echo KSSMI_SENDER_BLOCKLIST_MAX_HITS; ?>, kept for <?php echo KSSMI_SENDER_BLOCKLIST_HIT_DAYS; ?> days and then deleted. Attachments are never stored.</p>
+                <p class="blocklist-help">Blocked inquiries from the last <?php echo KSSMI_SENDER_BLOCKLIST_HIT_DAYS; ?> days.</p>
                 <?php if (!$blocklistHits['hits']): ?>
                     <p class="blocklist-help">No blocked submissions.</p>
                 <?php else: ?>

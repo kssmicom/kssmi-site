@@ -25,8 +25,8 @@ const KSSMI_SENDER_BLOCKLIST_HIT_DAYS = 30;
 const KSSMI_SENDER_BLOCKLIST_NOTE_MAX = 200;
 const KSSMI_SENDER_BLOCKLIST_DETAILS_MAX = 500;
 
-// Adding one of these as a domain rule would block every customer using that
-// provider, so it needs an explicit confirmation.
+// A domain rule for one of these would block every customer using that
+// provider (or our own domain), so they can only be blocked address by address.
 const KSSMI_SENDER_BLOCKLIST_PUBLIC_DOMAINS = [
     'gmail.com', 'googlemail.com', 'outlook.com', 'hotmail.com', 'live.com', 'msn.com',
     'yahoo.com', 'ymail.com', 'aol.com', 'icloud.com', 'me.com', 'mac.com',
@@ -225,17 +225,17 @@ function kssmi_sender_blocklist_mutate(string $path, callable $mutator): array {
 }
 
 /**
- * Status: added | updated | exists | invalid | needs_confirm | full | unavailable.
+ * Status: added | updated | exists | invalid | public_domain | full | unavailable.
  * Adding a domain that is already listed with the other subdomain setting
  * changes that setting ("updated") instead of reporting a duplicate.
  */
-function kssmi_sender_blocklist_add($input, bool $includeSubdomains, $note, bool $confirmPublic, ?string $path = null, ?int $now = null): array {
+function kssmi_sender_blocklist_add($input, bool $includeSubdomains, $note, ?string $path = null, ?int $now = null): array {
     $parsed = kssmi_sender_blocklist_parse_input($input, $includeSubdomains);
     if (!$parsed['ok']) return ['status' => 'invalid', 'message' => $parsed['error']];
-    if ($parsed['type'] === 'domain' && kssmi_sender_blocklist_is_public_domain($parsed['value']) && !$confirmPublic) {
+    if ($parsed['type'] === 'domain' && kssmi_sender_blocklist_is_public_domain($parsed['value'])) {
         return [
-            'status' => 'needs_confirm',
-            'message' => $parsed['label'] . ' is a public or own mail domain: blocking it stops every customer who uses it. Tick the confirmation box to block it anyway.',
+            'status' => 'public_domain',
+            'message' => $parsed['label'] . ' is shared by many customers and cannot be blocked as a whole. Enter the full email address instead.',
         ];
     }
 
