@@ -27,8 +27,8 @@ const gitDates = (() => {
     if (shallow !== 'false') return dates;
     const log = execFileSync(
       'git',
-      ['log', '--format=@%cs', '--name-only', '--no-renames', '--', 'src/content', 'src/pages'],
-      { encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 },
+      ['log', '--format=@%cs', '--name-only', '--no-renames', '--', 'src/content', 'src/pages', 'src/components'],
+      { encoding: 'utf-8', maxBuffer: 256 * 1024 * 1024 },
     );
     let current = null;
     for (const line of log.split('\n')) {
@@ -51,6 +51,25 @@ const fileDate = (filePath) => {
 const newestDate = (items) => items.reduce((newest, item) => (
   item.lastmod && (!newest || item.lastmod > newest) ? item.lastmod : newest
 ), null);
+
+// Newest of plain YYYY-MM-DD date strings, ignoring nulls
+const newestDateString = (dates) => dates.reduce((newest, date) => (
+  date && (!newest || date > newest) ? date : newest
+), null);
+
+// Newest commit date among a content collection's files for one language
+// (collections name files <slug>.<lang>.md), or null. Core pages that render
+// a collection must take the collection's date into account: a content-only
+// change leaves the route file untouched and must still bump lastmod.
+const langContentDate = (dir, lang) => {
+  const prefix = `${dir}/`;
+  const suffix = `.${lang}.md`;
+  let newest = null;
+  for (const [file, date] of gitDates) {
+    if (file.startsWith(prefix) && file.endsWith(suffix) && (!newest || date > newest)) newest = date;
+  }
+  return newest;
+};
 
 const lastmodTag = (date, indent) => (date ? `${indent}<lastmod>${date}</lastmod>\n` : '');
 
@@ -129,9 +148,18 @@ locales.forEach(lang => {
     const srcPath = lang === 'en'
       ? path.join(process.cwd(), 'src', 'pages', astroFile)
       : path.join(process.cwd(), 'src', 'pages', '[lang]', astroFile);
+    // Content the page renders from outside its route file: the terms
+    // collection for terms-privacy, the form for quote.
+    const extraDates = [];
+    if (d.slug === 'terms-privacy') {
+      extraDates.push(langContentDate('src/content/collection/terms-privacy', lang));
+    }
+    if (d.slug === 'quote') {
+      extraDates.push(fileDate(path.join(process.cwd(), 'src', 'components', 'InquiryForm.astro')));
+    }
     return {
       url: `${baseUrl}${d.route ? '/' + d.route : ''}/`,
-      lastmod: fileDate(srcPath)
+      lastmod: newestDateString([fileDate(srcPath), ...extraDates])
     };
   });
   fs.writeFileSync(path.join(langDir, 'sitemap-core.xml'), generateUrlset(coreUrls), 'utf-8');
