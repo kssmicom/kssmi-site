@@ -21,6 +21,7 @@ kssmi_admin_require_access();
 // before it can reach password, token, file, or mail operations.
 $_GET = kssmi_admin_normalize_request($_GET, [
     'reset' => 128,
+    'view' => 16,
 ]);
 $_POST = kssmi_admin_normalize_request($_POST, [
     'csrf_token' => 128,
@@ -51,6 +52,12 @@ $_POST = kssmi_admin_normalize_request($_POST, [
 ]);
 
 kssmi_admin_session_bootstrap();
+
+// Two pages share this file, and with it the Cloudflare Access path, the
+// admin session and CSRF: the inquiry list (default) and the sender
+// blocklist manager (?view=blocklist). Forms post back to the page they are
+// on, so an action keeps the admin on that page.
+$adminView = ($_GET['view'] ?? '') === 'blocklist' ? 'blocklist' : 'logs';
 
 // Shared admin security headers (CSP matches this page's existing policy:
 // Turnstile + GTM + Google Fonts are allowed inline for the admin UI).
@@ -644,11 +651,13 @@ $blocklistHits = ['ok' => true, 'hits' => [], 'rule_stats' => [], 'error' => nul
 // The login and reset views need no inquiry data. Keep the locked read,
 // decoding, and aggregate work behind the authenticated session boundary.
 if ($isAuthenticated) {
-    $loadResult = kssmi_email_logs_read(LOGS_FILE);
+    $loadResult = $adminView === 'logs'
+        ? kssmi_email_logs_read(LOGS_FILE)
+        : ['ok' => true, 'logs' => []];
     $todayCounters = kssmi_read_submission_counter(date('Y-m-d'));
     $blocklist = kssmi_sender_blocklist_load();
     kssmi_sender_blocklist_purge_expired();   // the worker cron does this too
-    $blocklistHits = kssmi_sender_blocklist_read_hits();
+    if ($adminView === 'blocklist') $blocklistHits = kssmi_sender_blocklist_read_hits();
     $logs = $loadResult['ok'] ? $loadResult['logs'] : [];
     if (!$loadResult['ok']) {
         $error = 'Email Logs could not be read safely. No data was overwritten; check the server error log.';
@@ -914,7 +923,7 @@ function resendEmail($log) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Logs - KSSMI</title>
+    <title><?php echo $adminView === 'blocklist' ? 'Blocklist' : 'Email Logs'; ?> - KSSMI</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scrollbar-gutter: stable; }
@@ -1025,9 +1034,9 @@ function resendEmail($log) {
         .country-badge { background: #e8e4df; padding: 2px 8px; border-radius: 3px; font-size: 11px; }
 
         /* Bulk actions */
-        .blocklist { background: white; border-radius: 8px; padding: 14px 18px; margin-bottom: 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-        .blocklist summary { cursor: pointer; font-weight: 600; color: #5D4E37; }
-        .blocklist h4 { margin: 18px 0 8px; }
+        .btn-current, .btn-current:is(:hover, :active, :focus-visible, :focus-within) { background: #8B7355; color: white; box-shadow: inset 0 -2px 0 rgba(0,0,0,0.25); }
+        .blocklist { background: white; border-radius: 8px; padding: 16px 20px; margin-bottom: 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+        .blocklist h2 { font-size: 16px; color: #5D4E37; margin: 0 0 6px; }
         .blocklist-help { font-size: 13px; color: #777; margin: 10px 0; }
         .blocklist-form { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 10px 0 14px; font-size: 13px; }
         .blocklist-form input[type=text] { padding: 6px 10px; border: 1px solid #ddd; border-radius: 4px; min-width: 220px; }
@@ -1130,13 +1139,19 @@ function resendEmail($log) {
             <!-- Main Dashboard -->
             <div class="header">
                 <div class="header-left">
+                    <?php if ($adminView === 'blocklist'): ?>
+                    <h1>Blocklist</h1>
+                    <p class="subtitle">Senders whose website inquiries are silently dropped</p>
+                    <?php else: ?>
                     <h1>Email Logs</h1>
                     <p class="subtitle">Track and manage all email inquiries from kssmi.com</p>
+                    <?php endif; ?>
                 </div>
                 <div class="header-right">
+                    <a href="email-logs.php" class="btn btn-secondary<?php echo $adminView === 'logs' ? ' btn-current' : ''; ?>"<?php echo $adminView === 'logs' ? ' aria-current="page"' : ''; ?>>Email Logs</a>
                     <a href="/visitor-journey.php" class="btn btn-secondary">Visitor Journey</a>
                     <button class="btn btn-secondary" onclick="document.getElementById('passwordModal').classList.add('show')">Change Password</button>
-                    <a href="#blocklist" class="btn btn-secondary" onclick="return openBlocklist();">Blocklist</a>
+                    <a href="email-logs.php?view=blocklist" class="btn btn-secondary<?php echo $adminView === 'blocklist' ? ' btn-current' : ''; ?>"<?php echo $adminView === 'blocklist' ? ' aria-current="page"' : ''; ?>>Blocklist</a>
                     <form method="post" action="email-logs.php" style="display:inline;">
                         <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
                         <button type="submit" name="logout" value="1" class="btn btn-secondary">Logout</button>
@@ -1160,46 +1175,27 @@ function resendEmail($log) {
                 <p class="success"><?php echo htmlspecialchars($message); ?></p>
             <?php endif; ?>
 
-            <?php $outboxSummary = kssmi_outbox_summary(); ?>
-            <?php if ($outboxSummary['pending'] > 0 || $outboxSummary['dead'] > 0): ?>
-                <p class="<?php echo $outboxSummary['dead'] > 0 ? 'error' : 'success'; ?>">
-                    Mail outbox: <?php echo (int)$outboxSummary['pending']; ?> inquiry mail job(s) waiting to be sent<?php if ($outboxSummary['oldest'] !== null): ?> (oldest since <?php echo htmlspecialchars(gmdate('Y-m-d H:i', (int)$outboxSummary['oldest'])); ?> UTC)<?php endif; ?>,
-                    <?php echo (int)$outboxSummary['dead']; ?> not delivered after 72 hours.<?php if ($outboxSummary['dead'] > 0): ?> Their messages and attachments are kept on the server; check the server error log for "KSSMI outbox ALERT".<?php endif; ?>
-                </p>
-            <?php endif; ?>
-
-            <div class="stats">
-                <div class="stat-card">
-                    <h3>Accepted Inquiries</h3>
-                    <div class="value"><?php echo $acceptedCount; ?></div>
-                </div>
-                <div class="stat-card success">
-                    <h3>Sent</h3>
-                    <div class="value"><?php echo $successCount; ?></div>
-                </div>
-                <div class="stat-card failed">
-                    <h3>Delivery Failed</h3>
-                    <div class="value"><?php echo $failedCount; ?></div>
-                </div>
-                <div class="stat-card">
-                    <h3>Delivery Uncertain</h3>
-                    <div class="value"><?php echo $uncertainCount; ?></div>
-                </div>
-                <div class="stat-card">
-                    <h3>Accepted in Last 24 Hours</h3>
-                    <div class="value"><?php echo $recent24h; ?></div>
-                </div>
-                <div class="stat-card">
-                    <h3>Today Sent / Failed / Rejected / Blocked</h3>
-                    <div class="value"><?php
-                        echo htmlspecialchars($todayCounters['success'] . ' / ' . $todayCounters['failed'] . ' / ' . $todayCounters['rejected'] . ' / ' . $todayCounters['blocked']);
-                    ?></div>
-                </div>
-            </div>
-
             <?php if ($blocklistMessage): ?>
                 <p class="<?php echo $blocklistOk ? 'success' : 'error'; ?>"><?php echo htmlspecialchars($blocklistMessage); ?></p>
             <?php endif; ?>
+
+            <?php if ($adminView === 'blocklist'): ?>
+            <!-- Blocklist page -->
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>Rules</h3>
+                    <div class="value"><?php echo count($blocklist['rules']); ?></div>
+                </div>
+                <div class="stat-card failed">
+                    <h3>Blocked Today</h3>
+                    <div class="value"><?php echo (int)$todayCounters['blocked']; ?></div>
+                </div>
+                <div class="stat-card">
+                    <h3>Recently Blocked (<?php echo KSSMI_SENDER_BLOCKLIST_HIT_DAYS; ?> days)</h3>
+                    <div class="value"><?php echo count($blocklistHits['hits']); ?></div>
+                </div>
+            </div>
+
             <?php if (!$blocklist['ok']): ?>
                 <p class="error">The sender blocklist file could not be read (<?php echo htmlspecialchars((string)$blocklist['error']); ?>). Blocking is NOT in effect: inquiries are accepted normally. Adding and removing rules is disabled until email_data/sender-blocklist.json is repaired on the server.</p>
             <?php elseif ($todayCounters['blocklist_error'] > 0): ?>
@@ -1211,10 +1207,9 @@ function resendEmail($log) {
                 <p class="error">A damaged blocked-submission record was kept aside on the server (email_data/sender-blocklist-hits.json.corrupt-*). Delete it there once reviewed.</p>
             <?php endif; ?>
 
-            <details class="blocklist" id="blocklist"<?php echo ($blocklistMessage !== '' || !$blocklist['ok']) ? ' open' : ''; ?>>
-                <summary>Sender Blocklist — <?php echo count($blocklist['rules']); ?> rule(s), <?php echo count($blocklistHits['hits']); ?> recent blocked submission(s)</summary>
-                <p class="blocklist-help">Inquiries from a blocked address or domain get the normal "thank you" page, but nothing is emailed, auto-replied or added to these logs. Gmail addresses match regardless of dots and "+tags". To change whether a domain rule covers its subdomains, use the button in its row (or add the domain again with the new setting). Blocked-submission records are deleted after <?php echo KSSMI_SENDER_BLOCKLIST_HIT_DAYS; ?> days. Only website form submissions are blocked; mail sent straight to sales@kssmi.com needs a mailbox filter.</p>
-
+            <section class="blocklist">
+                <h2>Add a rule</h2>
+                <p class="blocklist-help">Inquiries from a blocked address or domain get the normal "thank you" page, but nothing is emailed, auto-replied or added to Email Logs. Gmail addresses match regardless of dots and "+tags". Only website form submissions are blocked; mail sent straight to sales@kssmi.com needs a mailbox filter.</p>
                 <?php if ($blocklist['ok']): ?>
                 <form method="POST" class="blocklist-form">
                     <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
@@ -1225,8 +1220,14 @@ function resendEmail($log) {
                     <button type="submit" name="block_add" value="1" class="btn btn-danger btn-small">Block</button>
                 </form>
                 <?php endif; ?>
+            </section>
 
-                <?php if ($blocklist['rules']): ?>
+            <section class="blocklist">
+                <h2>Rules</h2>
+                <?php if (!$blocklist['rules']): ?>
+                    <p class="blocklist-help">No rules yet. Add one above, or use the Block button next to an inquiry in Email Logs.</p>
+                <?php else: ?>
+                <p class="blocklist-help">To change whether a domain rule covers its subdomains, use the button in its row (or add the domain again with the new setting).</p>
                 <div class="table-wrapper">
                     <table class="blocklist-table">
                         <thead><tr><th>Rule</th><th>Type</th><th>Note</th><th>Added</th><th>Blocked</th><th>Last blocked</th><th></th></tr></thead>
@@ -1264,8 +1265,11 @@ function resendEmail($log) {
                     </table>
                 </div>
                 <?php endif; ?>
+            </section>
 
-                <h4>Recently blocked (newest <?php echo KSSMI_SENDER_BLOCKLIST_MAX_HITS; ?>, last <?php echo KSSMI_SENDER_BLOCKLIST_HIT_DAYS; ?> days)</h4>
+            <section class="blocklist">
+                <h2>Recently blocked</h2>
+                <p class="blocklist-help">Newest <?php echo KSSMI_SENDER_BLOCKLIST_MAX_HITS; ?>, kept for <?php echo KSSMI_SENDER_BLOCKLIST_HIT_DAYS; ?> days and then deleted. Attachments are never stored.</p>
                 <?php if (!$blocklistHits['hits']): ?>
                     <p class="blocklist-help">No blocked submissions.</p>
                 <?php else: ?>
@@ -1287,7 +1291,52 @@ function resendEmail($log) {
                     </table>
                 </div>
                 <?php endif; ?>
-            </details>
+            </section>
+            <?php else: ?>
+            <!-- Email Logs page -->
+            <?php $outboxSummary = kssmi_outbox_summary(); ?>
+            <?php if ($outboxSummary['pending'] > 0 || $outboxSummary['dead'] > 0): ?>
+                <p class="<?php echo $outboxSummary['dead'] > 0 ? 'error' : 'success'; ?>">
+                    Mail outbox: <?php echo (int)$outboxSummary['pending']; ?> inquiry mail job(s) waiting to be sent<?php if ($outboxSummary['oldest'] !== null): ?> (oldest since <?php echo htmlspecialchars(gmdate('Y-m-d H:i', (int)$outboxSummary['oldest'])); ?> UTC)<?php endif; ?>,
+                    <?php echo (int)$outboxSummary['dead']; ?> not delivered after 72 hours.<?php if ($outboxSummary['dead'] > 0): ?> Their messages and attachments are kept on the server; check the server error log for "KSSMI outbox ALERT".<?php endif; ?>
+                </p>
+            <?php endif; ?>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>Accepted Inquiries</h3>
+                    <div class="value"><?php echo $acceptedCount; ?></div>
+                </div>
+                <div class="stat-card success">
+                    <h3>Sent</h3>
+                    <div class="value"><?php echo $successCount; ?></div>
+                </div>
+                <div class="stat-card failed">
+                    <h3>Delivery Failed</h3>
+                    <div class="value"><?php echo $failedCount; ?></div>
+                </div>
+                <div class="stat-card">
+                    <h3>Delivery Uncertain</h3>
+                    <div class="value"><?php echo $uncertainCount; ?></div>
+                </div>
+                <div class="stat-card">
+                    <h3>Accepted in Last 24 Hours</h3>
+                    <div class="value"><?php echo $recent24h; ?></div>
+                </div>
+                <div class="stat-card">
+                    <h3>Today Sent / Failed / Rejected / Blocked</h3>
+                    <div class="value"><?php
+                        echo htmlspecialchars($todayCounters['success'] . ' / ' . $todayCounters['failed'] . ' / ' . $todayCounters['rejected'] . ' / ' . $todayCounters['blocked']);
+                    ?></div>
+                </div>
+            </div>
+
+            <?php if (!$blocklist['ok']): ?>
+                <p class="error">The sender blocklist file could not be read, so blocking is NOT in effect. See <a href="email-logs.php?view=blocklist">Blocklist</a>.</p>
+            <?php elseif ($todayCounters['blocklist_error'] > 0): ?>
+                <p class="error">The sender blocklist could not be read <?php echo (int)$todayCounters['blocklist_error']; ?> time(s) today; those inquiries were accepted without the check. See <a href="email-logs.php?view=blocklist">Blocklist</a>.</p>
+            <?php endif; ?>
+
 
             <?php if (empty($logs)): ?>
                 <div style="text-align:center;padding:60px;background:white;border-radius:8px;">
@@ -1510,6 +1559,7 @@ function resendEmail($log) {
                     </form>
                 </div>
             <?php endif; ?>
+            <?php endif; /* view */ ?>
         <?php endif; ?>
     </div>
 
@@ -1531,17 +1581,6 @@ function resendEmail($log) {
     </div>
 
     <script>
-        // Header "Blocklist" link: open the collapsed section and bring it into view.
-        function openBlocklist() {
-            var section = document.getElementById('blocklist');
-            if (!section) return true;
-            section.open = true;
-            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            if (history.replaceState) history.replaceState(null, '', '#blocklist');
-            return false;
-        }
-        if (location.hash === '#blocklist') openBlocklist();
-
         var currentOpenIndex = null;
 
         function toggleDetail(index) {
