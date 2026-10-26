@@ -99,12 +99,12 @@ export const orderProductionCopy: Record<string, OrderProductionCopy> = {
     reply: 'We normally reply within one business day.',
   },
   zh: {
-    eyebrow: '自有品牌项目指南', title: '从样品到批量生产', intro: '您可以从 Kssmi 现有型号开始，也可以用自己的创意开发眼镜。这里说明可定制范围、确认流程以及项目启动所需资料。',
+    eyebrow: '自有品牌项目指南', title: '从样品到批量生产', intro: '您可以从可米现有型号开始，也可以用自己的创意开发眼镜。这里说明可定制范围、确认流程以及项目启动所需资料。',
     routesTitle: '两种启动方式', readyTitle: '现货样品', readyBody: '按现有材料、颜色、镜片和规格提供。每个型号可加标准 Logo，费用为 {logoFee}；现货样品的其他内容不能修改。', customTitle: '全定制开发', customBody: '可以修改现有型号，也可以根据草图、照片、AI 概念图、实物样品或完整技术图纸重新开发。',
     optionsTitle: '哪些内容可以定制？', optionsBody: '镜框材料、颜色和尺寸；镜片材料、颜色、镀膜和功能；Logo 工艺和位置；铰链、五金、鼻托、脚套、结构细节以及模具和工装。', packaging: '我们专注于眼镜制造，不生产零售包装。',
     processTitle: '全定制开发流程', processSteps: ['提交创意或设计', '工程评估与报价', '2D 效果图与确认', '制作实物样品', '确认样品', '批量生产与质量检验', '发货前审核与确认', '门到门运输'], processNote: '包含最多 {revisions} 轮 2D 效果图修改。实物样品完成后提出的修改，可能产生额外开发费或模具费。',
     moqTimingTitle: 'MOQ 与参考交期', standardMoq: '大多数材料：每款 {standardMoq} PCS', colorSplit: '最多 {colors} 个颜色，每色至少 {perColor} PCS', tr90Moq: 'TR90：每款 {tr90Moq} PCS', leadTimesTitle: '参考交期', readyLabel: '现货样品', readyLogoLabel: '加 Logo 的现货样品', renderingLabel: '2D 效果图', customSampleLabel: '全定制样品', bulkLabel: '批量生产', workingDays: '个工作日', timingNote: '全定制样品交期从 2D 效果图确认后开始；大货交期从样品确认且收到 {deposit}% 定金后开始。实际时间可能因材料、复杂度、定制部件和产能而变化。',
-    termsTitle: '商务条款与全球交付', paymentTitle: '付款方式', paymentBody: '样品须 {samplePayment}% 预付。大货采用 T/T 支付 {deposit}% 定金，余款在发货前付清。', samplesToolingTitle: '样品与模具', creditBody: '{readyPrice} 现货样品费和 {customMin}–{customMax} 全定制样品费，在同款大货达到 MOQ 时可全额抵扣；{logoFee} Logo 费、运费和税费不参与抵扣。', toolingBody: '由客户付费制作的模具和工装归客户所有。设计变更需要重新制作模具时另行报价。', deliveryTitle: '交付方式', deliveryBody: '我们全球发货，可使用 DHL 或配合客户指定货代。运费、关税和税费另行报价。', quoteTitle: '准备好讨论您的眼镜项目了吗？', quoteBody: '请发送首选材料、设计图或参考图片以及定制要求。修改 Kssmi 现有型号时，请同时提供产品 SKU。', reply: '我们通常会在一个工作日内回复。',
+    termsTitle: '商务条款与全球交付', paymentTitle: '付款方式', paymentBody: '样品须 {samplePayment}% 预付。大货采用 T/T 支付 {deposit}% 定金，余款在发货前付清。', samplesToolingTitle: '样品与模具', creditBody: '{readyPrice} 现货样品费和 {customMin}–{customMax} 全定制样品费，在同款大货达到 MOQ 时可全额抵扣；{logoFee} Logo 费、运费和税费不参与抵扣。', toolingBody: '由客户付费制作的模具和工装归客户所有。设计变更需要重新制作模具时另行报价。', deliveryTitle: '交付方式', deliveryBody: '我们全球发货，可使用 DHL 或配合客户指定货代。运费、关税和税费另行报价。', quoteTitle: '准备好讨论您的眼镜项目了吗？', quoteBody: '请发送首选材料、设计图或参考图片以及定制要求。修改 可米 现有型号时，请同时提供产品 SKU。', reply: '我们通常会在一个工作日内回复。',
   },
   it: {
     eyebrow: 'Guida al progetto private label', title: 'Dal campione alla produzione', intro: 'Parti da un modello Kssmi esistente oppure sviluppa un occhiale dalla tua idea. Qui trovi personalizzazioni, approvazioni e dati necessari per iniziare.',

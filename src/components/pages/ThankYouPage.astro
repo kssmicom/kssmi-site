@@ -22,7 +22,7 @@ const fl = t.floating || {};
 const isRTL = lang === 'ar';
 ---
 
-<Layout title={`${ty.title} - Kssmi`} lang={lang} noindex={true}>
+<Layout title={`${ty.title} - ${lang === 'zh' ? '可米' : 'Kssmi'}`} lang={lang} noindex={true}>
   <Header lang={lang} />
 
   <main class="min-h-[35vh] flex items-center justify-center pt-4 pb-8 lg:pt-6 lg:pb-12 bg-linear-to-b from-stone-50 to-white" dir={isRTL ? 'rtl' : 'ltr'}>

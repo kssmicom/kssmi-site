@@ -49,7 +49,7 @@ seoDescription:
   tr: "Kssmi'nin birinci sınıf OEM güneş gözlüklerini keşfedin. 2003'ten beri moda markaları için 300 MOQ, İtalyan asetatı ve 45 günlük teslim süresi sunuyoruz."
   ar: "استكشف مجموعة نظارات Kssmi الشمسية المخصصة للماركات العالمية. منذ 2003، نقدم أسيتات إيطالي فاخر، وموك مرن يبدأ من 300 قطعة، ومهلة إنتاج تبلغ 45 يومًا فقط."
   ko: "글로벌 패션 브랜드를 위해 디자인된 Kssmi의 프리미엄 OEM 맞춤형 선글라스를 만나보세요. 최고급 이탈리아 아세테이트 사용, 300 MOQ, 45일의 빠른 리드 타임을 보장합니다 direct from factory.."
-  zh: "探索Kssmi为全球时尚品牌精心定制的顶级OEM太阳镜。我们承诺提供300 MOQ的灵活起订量、进口意大利醋酸纤维板材，以及45天准时交付的专业标准，助力您的品牌发展。 direct from factory.."
+  zh: "探索可米为全球时尚品牌精心定制的顶级OEM太阳镜。我们承诺提供300 MOQ的灵活起订量、进口意大利醋酸纤维板材，以及45天准时交付的专业标准，助力您的品牌发展。 direct from factory.."
   hi: "वैश्विक फैशन ब्रांडों के लिए कस्समी के प्रीमियम कस्टम ओईएम धूप का चश्मा खोजें। हम एक लचीला 300 MOQ, इतालवी एसीटेट, और 45-दिन का लीड समय प्रदान करते हैं।."
   vi: "Khám phá kính râm OEM tùy chỉnh cao cấp của Kssmi. Từ năm 2003, chúng tôi cung cấp MOQ 300 linh hoạt, axetat Ý và thời gian giao hàng 45 ngày cho các hãng."
   jv: "Jelajahi kacamata ireng OEM khusus Kssmi sing dirancang kanggo merek global. Kita nawakake 300 pesenan MOQ fleksibel, asetat Italia, lan wektu timbal 45 dina."

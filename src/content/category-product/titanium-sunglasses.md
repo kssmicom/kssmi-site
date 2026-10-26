@@ -49,7 +49,7 @@ seoDescription:
   tr: "Kssmi'nin titanyum güneş gözlükleriyle markanızı yükseltin. Ultra hafif 8-15g beta titanyum, korozyona dayanıklı, lüks kaplama ve esnek 300 MOQ sunarız now."
   ar: "ارتقِ بمستوى علامتك التجارية مع نظارات Kssmi الشمسية المصنوعة من التيتانيوم الفاخر. تيتانيوم بيتا خفيف جدا 8-15 جرام، مقاوم للتآكل، تشطيب فاخر، مع موك 300."
   ko: "Kssmi의 프리미엄 티타늄 선글라스로 브랜드 가치를 높이세요. 8-15g 초경량 베타 티타늄, 뛰어난 내식성, 최고급 마감 처리 및 300 MOQ를 제공합니다 direct from factory.."
-  zh: "使用Kssmi的高级钛金属太阳镜提升您的品牌形象。精选8-15克超轻β钛材质，卓越的耐腐蚀性，纯手工奢华抛光，灵活的300 MOQ起订量，完美契合高端市场定位。 direct from factory.."
+  zh: "使用可米的高级钛金属太阳镜提升您的品牌形象。精选8-15克超轻β钛材质，卓越的耐腐蚀性，纯手工奢华抛光，灵活的300 MOQ起订量，完美契合高端市场定位。 direct from factory.."
   hi: "कस्समी के प्रीमियम टाइटेनियम धूप के चश्मे के साथ अपने ब्रांड की प्रतिष्ठा बढ़ाएं। 8-15g बीटा टाइटेनियम, संक्षारण प्रतिरोधी, लक्जरी खत्म, और लचीला 300 MOQ।."
   vi: "Nâng tầm thương hiệu của bạn với kính râm titan cao cấp Kssmi. Sử dụng titan beta 8-15g siêu nhẹ, chúng tôi cung cấp lớp hoàn thiện sang trọng và MOQ 300."
   jv: "Tingkatake gengsi merek sampeyan nganggo kacamata titanium Kssmi. Kanthi titanium beta 8-15g sing entheng banget, kita menehi finish mewah lan 300 MOQ now."

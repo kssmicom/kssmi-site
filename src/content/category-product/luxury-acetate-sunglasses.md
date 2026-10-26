@@ -49,7 +49,7 @@ seoDescription:
   tr: "Kssmi lüks asetat güneş gözlükleriyle özel markanızı hemen yükseltin. El yapımı 10 katmanlı asetat yapısı, birinci sınıf donanım ve esnek 300 MOQ sunarız."
   ar: "ارتقِ بعلامتك التجارية مع نظارات Kssmi الشمسية الفاخرة من الأسيتات. نحن نوفر إطارات بـ 10 طبقات مصقولة يدويا، وأكسسوارات ممتازة، وموك تصنيع يبدأ من 300 now."
   ko: "Kssmi 럭셔리 아세테이트 선글라스로 브랜드 가치를 적극적으로 높이세요. 수작업 10겹 아세테이트, 최고급 하드웨어, 유연한 300 MOQ를 제공하여 브랜드 성공을 돕습니다 direct from factory.."
-  zh: "使用Kssmi奢华醋酸纤维太阳镜全面提升您的品牌价值。我们采用纯手工抛光的10层压合板材结构，搭配顶级专属五金配件，并提供灵活的300 MOQ起订量，全面助力您的奢华品牌惊艳上市。 direct from factory.."
+  zh: "使用可米奢华醋酸纤维太阳镜全面提升您的品牌价值。我们采用纯手工抛光的10层压合板材结构，搭配顶级专属五金配件，并提供灵活的300 MOQ起订量，全面助力您的奢华品牌惊艳上市。 direct from factory.."
   hi: "कस्समी के लक्जरी एसीटेट धूप के चश्मे के साथ अपने ब्रांड को बढ़ाएं। हम हाथ से पॉलिश 10-परत एसीटेट निर्माण, प्रीमियम हार्डवेयर, और 300 MOQ प्रदान करते हैं।."
   vi: "Hãy nâng tầm thương hiệu của bạn với kính râm axetat sang trọng của Kssmi. Cung cấp gọng axetat 10 lớp đánh bóng thủ công, phần cứng cao cấp, MOQ 300 now."
   jv: "Tingkatake merek sampeyan nganggo kacamata mewah asetat saka Kssmi. Kita nyedhiyakake asetat 10 lapisan polesan tangan, hardware premium, lan 300 MOQ now."

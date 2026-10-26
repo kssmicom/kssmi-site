@@ -49,7 +49,7 @@ seoDescription:
   tr: "Trend belirleyen özel tasarım moda gözlükler mi arıyorsunuz? Hızlı moda markalarına karışık malzemeler, en hızlı üretim süreleri ve esnek 300 MOQ sunarız."
   ar: "هل تبحث عن نظارات الموضة المخصصة والعصرية؟ نحن نورد لعلامات الموضة السريعة نظارات بمواد مختلطة، وفترات إنتاج سريعة، وموك مرن يبدأ من 300 لعلامتك التجارية."
   ko: "트렌드 주도 맞춤형 패션 안경을 찾으시나요? Kssmi는 패스트 패션 브랜드에 혼합 소재, 빠른 생산 주기, 300 MOQ를 통해 글로벌 브랜드 성공을 돕습니다 direct from factory.."
-  zh: "正在寻找引领潮流的定制时尚眼镜？Kssmi专为全球快时尚品牌提供多种材质拼接的设计方案、极速的生产交付周期以及灵活的300 MOQ起订量，全面助力您的品牌快速抢占终端市场。 direct from factory.."
+  zh: "正在寻找引领潮流的定制时尚眼镜？可米专为全球快时尚品牌提供多种材质拼接的设计方案、极速的生产交付周期以及灵活的300 MOQ起订量，全面助力您的品牌快速抢占终端市场。 direct from factory.."
   hi: "क्या आप ट्रेंड-संचालित कस्टम फैशन आईवियर खोज रहे हैं? हम फास्ट-फैशन ब्रांडों को मिश्रित सामग्री, तेज उत्पादन टर्नअराउंड, और एक लचीला 300 MOQ देते हैं। now."
   vi: "Đang tìm kiếm kính thời trang tùy chỉnh theo xu hướng? Chúng tôi cung cấp cho các thương hiệu thời trang nhanh vật liệu hỗn hợp, sản xuất nhanh, MOQ 300."
   jv: "Apa nggoleki kacamata fashion khusus sing didorong tren? Kita nyedhiyakake merek fashion cepet kanthi bahan campuran, wektu produksi cepet, lan 300 MOQ now."

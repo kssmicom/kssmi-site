@@ -49,7 +49,7 @@ seoDescription:
   tr: "Lüks titanyum optik çerçeveler için Kssmi ile işbirliği yapın. Tüy kadar hafif %100 saf titanyum, kusursuz premium IP kaplama ve markanız için 300 MOQ now."
   ar: "تعاون مع Kssmi لإنتاج إطارات طبية فاخرة من التيتانيوم. نحن نوفر تيتانيوم نقي 100% خفيف كالريشة، وطلاء IP ممتازا، وموك تصنيع يبدأ من 300 لعلامتك التجارية."
   ko: "럭셔리 티타늄 안경테를 위해 Kssmi와 협력하세요. 가벼운 100% 순수 티타늄, 최고급 IP 도금, 유연한 300 MOQ를 제공하여 프리미엄 브랜드의 성공을 확실히 돕습니다 direct from factory.."
-  zh: "与Kssmi携手打造奢华钛金属光学眼镜架。甄选轻如羽毛的100%高品质纯钛材质，搭配最顶级的IP真空电镀工艺，同时支持灵活的300 MOQ起订，全方位赋能顶尖品牌抢占全球高端眼镜市场。 direct from factory.."
+  zh: "与可米携手打造奢华钛金属光学眼镜架。甄选轻如羽毛的100%高品质纯钛材质，搭配最顶级的IP真空电镀工艺，同时支持灵活的300 MOQ起订，全方位赋能顶尖品牌抢占全球高端眼镜市场。 direct from factory.."
   hi: "लक्जरी टाइटेनियम ऑप्टिकल फ्रेम के लिए कस्समी के साथ सहयोग करें। हम हल्के 100% शुद्ध टाइटेनियम, प्रीमियम आईपी चढ़ाना, और आपके ब्रांड के लिए 300 MOQ देते हैं।."
   vi: "Hợp tác với Kssmi cho gọng kính quang học titan sang trọng. Chúng tôi cung cấp 100% titan nguyên chất nhẹ, mạ IP cao cấp, MOQ 300 cho thương hiệu của bạn."
   jv: "Ayo kolaborasi karo Kssmi kanggo pigura optik mewah titanium. Kita nyedhiyakake titanium murni 100% entheng, plating IP premium, lan pesenan 300 MOQ fast."

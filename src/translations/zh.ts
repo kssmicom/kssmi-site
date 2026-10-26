@@ -2,7 +2,7 @@ export default {
     thankyou: {
       title: "谢谢！",
       subtitle: "询盘已收到，点击上方 WhatsApp 立即沟通。",
-      message: "感谢您对 Kssmi 的关注。我们的团队将评估您的项目细节，并在 24 小时内与您联系。",
+      message: "感谢您对 可米 的关注。我们的团队将评估您的项目细节，并在 24 小时内与您联系。",
       inquiryId: "您的询价编号",
       nextSteps: "下一步是什么？",
       step1Title: "评估",
@@ -119,7 +119,7 @@ export default {
       serviceMode: "服务模式",
       moq: "起订量",
       backToCatalog: "返回目录",
-      kssmiCollection: "Kssmi 眼镜 定制服务 制造商 系列",
+      kssmiCollection: "可米 眼镜 定制服务 制造商 系列",
       customizationPositioning: "本款为您的自有品牌项目参考款，并非零售产品。您可从此款开始，按目标市场定制材料、颜色、镜片、Logo 和指定规格。",
       customizeModel: "为您的品牌定制",
       browseReferenceModels: "浏览更多款式",
@@ -152,7 +152,7 @@ export default {
       oem: "代工生产",
       odm: "设计制造",
       systemGenerated: "系统生成",
-      securedBy: "受 Kssmi 质量控制保障",
+      securedBy: "受 可米 质量控制保障",
       // Product Highlights Section
       highlightsLabel: "产品亮点",
       highlightsTitle: "特点与应用",
@@ -193,7 +193,7 @@ export default {
       returnHome: "返回首页",
       loadMore: "加载更多产品",
       // Search page
-      searchTitle: "搜索 Kssmi",
+      searchTitle: "搜索 可米",
       searchDesc: "查找产品、文章等。在上方输入搜索词。",
       recommendedSearches: "推荐搜索",
       noMatches: "未找到结果",
@@ -207,8 +207,8 @@ export default {
         customizableBadge: "适用于自有品牌",
       previousPage: "上一页",
       nextPage: "下一页",
-      listingSeoDescription: "浏览 Kssmi 的 {count} 款优质眼镜产品 — 为全球品牌和零售商提供 OEM/ODM 定制制造。",
-      categorySeoDescription: "探索 {category} 系列 — 共 {count} 款款式可选。Kssmi OEM/ODM 眼镜定制制造。",
+      listingSeoDescription: "浏览 可米 的 {count} 款优质眼镜产品 — 为全球品牌和零售商提供 OEM/ODM 定制制造。",
+      categorySeoDescription: "探索 {category} 系列 — 共 {count} 款款式可选。可米 OEM/ODM 眼镜定制制造。",
     },
     layout: {
       description: "来自中国的高端B2B眼镜制造。为全球零售商和品牌提供OEM/ODM定制眼镜框。",

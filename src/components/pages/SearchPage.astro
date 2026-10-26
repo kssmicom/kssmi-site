@@ -137,7 +137,7 @@ const eyewearLabels = {
   en: 'Eyewear Mfg.', it: 'Manifattura Occhiali', es: 'Fabricante de Gafas', fr: 'Fabricant de Lunettes',
   de: 'Brillenmanufaktur', pt: 'Fabricante de Óculos', ru: 'Производство очков', ja: '眼鏡製造',
   tr: 'Gözlük Üreticisi', ar: 'تصنيع النظارات',
-  ko: '안경 제조업체', zh: '眼镜制造商', hi: 'चश्मा निर्माता', vi: 'Nhà Sản Xuất Kính',
+  ko: '안경 제조업체', zh: '眼镜工厂', hi: 'चश्मा निर्माता', vi: 'Nhà Sản Xuất Kính',
   jv: 'Pabrik Kacamata', ms: 'Pengilang Cermin Mata', tg: 'Истеҳсоли Айнак'
 };
 
@@ -225,7 +225,7 @@ const searchKeywords = {
 
 ---
 
-<Layout title={`${(searchResultsText as any)[lang]} | Kssmi`} lang={lang} noindex={true}>
+<Layout title={`${(searchResultsText as any)[lang]} | ${lang === 'zh' ? '可米' : 'Kssmi'}`} lang={lang} noindex={true}>
   <Header lang={lang} />
 
   <div id="search-page" data-lang={lang} data-view-details={JSON.stringify(viewDetailsText)} dir={isRTL ? 'rtl' : 'ltr'}>
@@ -234,9 +234,9 @@ const searchKeywords = {
 
       <!-- Search Header Block -->
       <div class="text-center mb-6 relative max-w-4xl mx-auto">
-        <!-- Kssmi Text Logo -->
+        <!-- Brand text logo -->
         <div class="inline-flex flex-col items-center justify-center w-20 h-20 rounded-full bg-white border border-stone-300 hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355] hover:shadow-lg active:shadow-lg focus-visible:shadow-lg focus-within:shadow-lg transition-all duration-700 ease-out mb-4 shadow-xs">
-          <span class="text-sm font-bold text-[#503629] tracking-tight leading-none uppercase">KSSMI</span>
+          <span class="text-sm font-bold text-[#503629] tracking-tight leading-none uppercase">{lang === 'zh' ? '可米' : 'KSSMI'}</span>
           <span class="h-[1px] w-4 bg-stone-400 mt-[2px]"></span>
           <span class="text-[7px] font-bold uppercase tracking-[0.15em] text-stone-500 mt-[2px]">{eyewearText}</span>
         </div>
@@ -311,7 +311,7 @@ const searchKeywords = {
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
           </svg>
         </div>
-        <h2 class="text-3xl font-bold text-[#5D4E37] mb-4">{(searchText as any)[lang]} Kssmi</h2>
+        <h2 class="text-3xl font-bold text-[#5D4E37] mb-4">{(searchText as any)[lang]} {lang === 'zh' ? '可米' : 'Kssmi'}</h2>
         <p class="text-base text-stone-600 mb-10 max-w-md mx-auto">{(searchPlaceholder as any)[lang]}</p>
 
         <!-- Suggestions -->
@@ -877,7 +877,7 @@ const searchKeywords = {
       : `loading="lazy" decoding="async"`;
     const kssmiLogo = `
       <div class="src-logo">
-        <span class="src-logo-word">KSSMI</span>
+        <span class="src-logo-word">${lang === 'zh' ? '可米' : 'KSSMI'}</span>
         <span class="src-logo-rule"></span>
         <span class="src-logo-kind">${isPage ? 'PAGE' : 'ARTICLE'}</span>
       </div>

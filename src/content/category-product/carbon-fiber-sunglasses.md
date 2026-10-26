@@ -49,7 +49,7 @@ seoDescription:
   tr: "Kssmi ile spor gözlük serinizi hemen oluşturun. Gerçek karbon fiber güneş gözlükleri, ultra hafif 5-9g çerçeveler, olağanüstü CNC hassasiyeti ve 300 MOQ."
   ar: "قم ببناء خط نظاراتك الرياضية الفاخرة مع مصنع Kssmi. نحن ننتج نظارات من ألياف الكربون الحقيقية، إطارات 5-9 جرام، دقة تصنيع CNC مذهلة، وموك يبدأ من 300 now."
   ko: "Kssmi와 함께 스포츠 안경 라인을 구축하세요. 진짜 탄소 섬유 선글라스, 5-9g 초경량 프레임, 뛰어난 CNC 정밀 가공 및 300 MOQ를 제공하여 브랜드를 지원합니다 direct from factory.."
-  zh: "携手Kssmi打造科技运动眼镜系列。我们生产真正的碳纤维太阳镜（非贴纸），配备5-9克超轻镜架与高精度CNC切割工艺，提供300 MOQ灵活起订量，完美契合高端运动品牌的市场定位需求。 direct from factory.."
+  zh: "携手可米打造科技运动眼镜系列。我们生产真正的碳纤维太阳镜（非贴纸），配备5-9克超轻镜架与高精度CNC切割工艺，提供300 MOQ灵活起订量，完美契合高端运动品牌的市场定位需求。 direct from factory.."
   hi: "कस्समी के साथ अपनी स्पोर्ट्स चश्मा लाइन बनाएं। हम असली कार्बन फाइबर धूप का चश्मा (कोई स्टिकर नहीं), 5-9g अल्ट्रा-लाइट फ्रेम, सीएनसी परिशुद्धता, 300 MOQ।."
   vi: "Xây dựng dòng kính thể thao của bạn với Kssmi. Chúng tôi sản xuất kính râm sợi carbon thật, gọng siêu nhẹ 5-9g, cắt CNC chính xác và MOQ 300 tuyệt vời now."
   jv: "Gawe baris kacamata olahraga karo Kssmi. Kita mrodhuksi kacamata ireng serat karbon nyata, pigura 5-9g ultra-ringan, presisi CNC, lan 300 pesenan MOQ now."

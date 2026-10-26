@@ -49,7 +49,7 @@ seoDescription:
   tr: "Kssmi'nin trend moda metal güneş gözlükleriyle harika koleksiyonunuzu başlatın. Benzersiz şekiller, canlı renk kaplama çeşitleri ve 300 MOQ sunuyoruz now."
   ar: "أطلق مجموعتك التالية مع نظارات Kssmi الشمسية العصرية من المعدن. نحن نقدم أشكالا مخصصة فريدة، وتشكيلة واسعة من الطلاء الملون، وموك تصنيع يبدأ من 300 fast."
   ko: "Kssmi 패션 메탈 선글라스로 새로운 시즌 컬렉션을 론칭하세요. 독창적인 맞춤형 디자인, 생동감 넘치는 다채로운 컬러 도금, 300 MOQ를 바탕으로 성공을 돕습니다 direct from factory.."
-  zh: "使用Kssmi时尚金属太阳镜推出您的下一季新系列。我们致力于打造引领潮流的独特镜框造型，提供丰富多样的绚丽色彩电镀选择，搭配灵活的300 MOQ，全面赋能快时尚品牌的全球化布局。 direct from factory.."
+  zh: "使用可米时尚金属太阳镜推出您的下一季新系列。我们致力于打造引领潮流的独特镜框造型，提供丰富多样的绚丽色彩电镀选择，搭配灵活的300 MOQ，全面赋能快时尚品牌的全球化布局。 direct from factory.."
   hi: "कस्समी के फैशन धातु धूप के चश्मे के साथ अपना अगला संग्रह लॉन्च करें। हम अद्वितीय कस्टम आकार, जीवंत रंग चढ़ाना विविधता, और एक लचीला 300 MOQ देते हैं। fast."
   vi: "Ra mắt bộ sưu tập tiếp theo với kính râm thời trang kim loại Kssmi. Cung cấp hình dạng độc đáo, nhiều loại mạ màu rực rỡ và MOQ 300 cực kỳ linh hoạt fast."
   jv: "Bukak kabeh koleksi kacamata sabanjure karo kacamata fashion logam Kssmi. Kita nawakake bentuk unik, macem-macem warna sing sregep, lan pesenan 300 MOQ now."

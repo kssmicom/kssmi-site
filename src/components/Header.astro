@@ -44,7 +44,7 @@ for (const l of languages) {
 const eyewearLabels = {
   en: 'Eyewear Mfg.', it: 'Manifattura Occhiali', es: 'Fabricante de Gafas', fr: 'Fabricant de Lunettes',
   de: 'Brillenmanufaktur', pt: 'Fabricante de Óculos', ru: 'Производство очков', ja: '眼鏡製造',
-  tr: 'Gözlük Üreticisi', ar: 'تصنيع النظارات', ko: '안경 제조업체', zh: '眼镜制造商', hi: 'चश्मा निर्माता', vi: 'Nhà Sản Xuất Kính',
+  tr: 'Gözlük Üreticisi', ar: 'تصنيع النظارات', ko: '안경 제조업체', zh: '眼镜工厂', hi: 'चश्मा निर्माता', vi: 'Nhà Sản Xuất Kính',
   jv: 'Pabrik Kacamata', ms: 'Pengilang Cermin Mata', tg: 'Истеҳсоли Айнак'
 };
 
@@ -196,7 +196,7 @@ const languageNames = {
               : 'bg-linear-to-r from-[#32170D] via-[#B85C27] to-[#32170D]',
           ]}
         >
-          KSSMI
+          {lang === 'zh' ? '可米' : 'KSSMI'}
         </span>
         <div class="flex items-center gap-2 mt-2 ml-1">
           <div class="w-6 flex items-center h-full">

@@ -49,7 +49,7 @@ seoDescription:
   tr: "Kssmi'nin titanyum optik çerçeveleriyle birinci sınıf markanızı yaratın. Ultra hafif beta titanyum, minimalist tasarım, IP kaplama ve 300 MOQ sunuyoruz now."
   ar: "أطلق مجموعتك الفاخرة مع إطارات Kssmi الطبية من التيتانيوم. تتميز بتيتانيوم بيتا خفيف جدا، وتصميم بسيط وأنيق، وطلاء IP عالي الجودة، مع موك يبدأ من 300 now."
   ko: "Kssmi 티타늄 안경테로 프리미엄 컬렉션을 만드세요. 초경량 베타 티타늄, 미니멀리스트 디자인, 우수한 IP 도금 및 300 MOQ를 바탕으로 성공적인 론칭을 돕습니다 direct from factory.."
-  zh: "携手Kssmi打造您的顶级钛金属光学眼镜系列。我们采用超轻β钛材质，融合极简主义设计与卓越的IP真空电镀工艺，并提供灵活的300 MOQ起订量，完美契合高端视光品牌的严苛需求。 direct from factory.."
+  zh: "携手可米打造您的顶级钛金属光学眼镜系列。我们采用超轻β钛材质，融合极简主义设计与卓越的IP真空电镀工艺，并提供灵活的300 MOQ起订量，完美契合高端视光品牌的严苛需求。 direct from factory.."
   hi: "कस्समी के टाइटेनियम ऑप्टिकल फ्रेम के साथ अपनी प्रीमियम लाइन बनाएं। इसमें अल्ट्रा-लाइट बीटा टाइटेनियम, न्यूनतम डिजाइन, आईपी चढ़ाना, और 300 MOQ शामिल हैं।."
   vi: "Tạo dòng sản phẩm kính cao cấp của bạn với gọng kính quang học titan Kssmi. Sở hữu titan beta siêu nhẹ, thiết kế tối giản, lớp mạ IP và MOQ 300 tốt fast."
   jv: "Gawe baris premium kanthi pigura optik titanium Kssmi. Nampilake titanium beta ultra-ringan, desain minimalis, plating IP kualitas, lan pesenan 300 MOQ now."

@@ -49,7 +49,7 @@ seoDescription:
   tr: "Kssmi'nin birinci sınıf çerçevesiz güneş gözlüklerini hemen keşfedin. Ultra hafif drill-mount donanım, özel lens şekilleri ve küresel markalar için 300 MOQ."
   ar: "استكشف نظارات Kssmi الشمسية الفاخرة بدون إطار. نوفر أدوات تثبيت خفيفة جدا، وتصميمات عدسات مخصصة، وموك تصنيع يبدأ من 300 قطعة للعلامات التجارية العالمية now."
   ko: "Kssmi의 프리미엄 무테 선글라스를 살펴보세요. 초경량 드릴 마운트 하드웨어, 맞춤형 렌즈 디자인 및 유연한 300 MOQ를 제공하여 글로벌 패션 브랜드를 지원합니다 direct from factory.."
-  zh: "探索Kssmi高端无框太阳镜系列。我们提供超轻的打孔和按钉式五金配件，支持完全定制化的镜片形状，300 MOQ起订，满足全球时尚品牌对极简美学与卓越轻盈感的极致追求。 direct from factory.."
+  zh: "探索可米高端无框太阳镜系列。我们提供超轻的打孔和按钉式五金配件，支持完全定制化的镜片形状，300 MOQ起订，满足全球时尚品牌对极简美学与卓越轻盈感的极致追求。 direct from factory.."
   hi: "कस्समी के प्रीमियम रिमलेस धूप के चश्मे का अन्वेषण करें। हम अल्ट्रा-लाइट ड्रिल-माउंट हार्डवेयर, कस्टम लेंस आकार, और वैश्विक ब्रांडों के लिए 300 MOQ देते हैं।."
   vi: "Khám phá kính râm không gọng cao cấp Kssmi. Cung cấp phần cứng siêu nhẹ, hình dạng ống kính tùy chỉnh và MOQ 300 linh hoạt cho các thương hiệu toàn cầu now."
   jv: "Jelajahi kacamata ireng tanpa bingkai premium Kssmi. Nawakake hardware ngebur sing entheng banget, bentuk lensa khusus, lan 300 MOQ kanggo merek global now."

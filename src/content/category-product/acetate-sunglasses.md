@@ -49,7 +49,7 @@ seoDescription:
   tr: "Asetat gözlükleriniz için Kssmi fabrikasıyla ortak olun. 8 katmanlı İtalyan Mazzucchelli asetatı kullanarak, 300 MOQ ve 45 günlük teslim süresi sunarız now."
   ar: "تعاون مع مصنع Kssmi لإنتاج نظاراتك الشمسية. بالاعتماد على أسيتات مازوتشيلي الإيطالي الفاخر بـ 8 طبقات، نوفر لك موك 300 قطعة وفترة إنتاج تبلغ 45 يومًا فقط."
   ko: "프리미엄 아세테이트 선글라스 제작을 위해 Kssmi 공장과 파트너십을 맺으세요. 최고급 8겹 마추켈리 아세테이트를 사용하며, 300 MOQ 및 45일 리드 타임을 제공합니다 direct from factory.."
-  zh: "与Kssmi源头工厂建立合作，打造高端醋酸纤维太阳镜。我们采用优质的8层意大利Mazzucchelli板材，为您提供300 MOQ的灵活起订量与45天的标准交货期。 direct from factory.."
+  zh: "与可米源头工厂建立合作，打造高端醋酸纤维太阳镜。我们采用优质的8层意大利Mazzucchelli板材，为您提供300 MOQ的灵活起订量与45天的标准交货期。 direct from factory.."
   hi: "प्रीमियम एसीटेट धूप के चश्मे के लिए कस्समी कारखाने के साथ भागीदार बनें। हम 8-परत इतालवी माज़ुचेली एसीटेट, 300 MOQ, और 45-दिन का लीड समय उपयोग करते हैं। now."
   vi: "Hợp tác với nhà máy của Kssmi cho kính râm axetat cao cấp. Sử dụng axetat Mazzucchelli Ý 8 lớp, chúng tôi có MOQ linh hoạt là 300 chiếc trong 45 ngày now."
   jv: "Gabung karo pabrik Kssmi kanggo kacamata asetat premium. Kanthi asetat Mazzucchelli Italia 8 lapisan, kita nawakake 300 pesenan MOQ lan 45 dina wektu now."

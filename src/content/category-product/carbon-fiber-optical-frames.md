@@ -49,7 +49,7 @@ seoDescription:
   tr: "Kssmi'nin karbon fiber optik çerçevelerini keşfedin. Gerçek karbon fiberle ultra hafif, modern ve sportif tasarımlar ile 300 MOQ esnek sipariş sunuyoruz."
   ar: "استكشف إطارات Kssmi الطبية من ألياف الكربون. باستخدام ألياف كربون حقيقية، نقدم لك جمالية عصرية خفيفة جدا وتصميمًا رياضيًا أنيقًا، مع موك مرن يبدأ من 300."
   ko: "Kssmi 탄소 섬유 안경테를 만나보세요. 진짜 탄소 섬유 소재로 만들어져 초경량의 현대적인 스포츠 미학을 자랑하며, 300 MOQ를 통해 글로벌 브랜드 성공을 지원합니다 direct from factory.."
-  zh: "探索Kssmi高端碳纤维光学眼镜架。我们坚持采用真正的碳纤维材质，为您带来超轻盈的现代运动美学设计。灵活的300 MOQ起订量，完美满足全球各大眼镜连锁店及知名视光品牌的严苛需求。 direct from factory.."
+  zh: "探索可米高端碳纤维光学眼镜架。我们坚持采用真正的碳纤维材质，为您带来超轻盈的现代运动美学设计。灵活的300 MOQ起订量，完美满足全球各大眼镜连锁店及知名视光品牌的严苛需求。 direct from factory.."
   hi: "कस्समी के कार्बन फाइबर ऑप्टिकल फ्रेम की खोज करें। असली कार्बन फाइबर के साथ, हम अल्ट्रा-लाइट आधुनिक सौंदर्य, स्पोर्टी डिज़ाइन, और एक लचीला 300 MOQ देते हैं।."
   vi: "Khám phá gọng kính quang học sợi carbon của Kssmi. Với sợi carbon thật, chúng tôi mang đến tính thẩm mỹ hiện đại siêu nhẹ, kiểu dáng thể thao và MOQ 300."
   jv: "Temokake pigura optik serat karbon saka Kssmi. Kanthi serat karbon nyata, kita nawakake estetika modern, desain olahraga ultra-ringan, lan pesenan 300 MOQ."
