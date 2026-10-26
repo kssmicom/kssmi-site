@@ -10,7 +10,7 @@ if (in_array($argv[1] ?? '', ['--add-worker', '--hit-worker'], true)) {
     while (!file_exists($gate) && microtime(true) < $deadline) usleep(1000);
     if (!file_exists($gate)) exit(2);
     if ($mode === '--add-worker') {
-        $outcome = kssmi_sender_blocklist_add("worker{$index}@example.com", false, '', false, $target);
+        $outcome = kssmi_sender_blocklist_add("worker{$index}@example.com", false, '', $target);
         exit($outcome['status'] === 'added' ? 0 : 3);
     }
     $rule = ['id' => str_repeat('a', 16), 'label' => 'x@example.com'];
@@ -71,16 +71,19 @@ try {
         sb_assert(!kssmi_sender_blocklist_parse_input($bad, false)['ok'], 'Invalid input must be refused: ' . $bad);
     }
 
-    // Add: validation, public-domain confirmation, duplicates, note clipping.
-    sb_assert(kssmi_sender_blocklist_add('nope', false, '', false, $rules)['status'] === 'invalid', 'Invalid input must not be added.');
+    // Add: validation, public domains refused, duplicates, note clipping.
+    sb_assert(kssmi_sender_blocklist_add('nope', false, '', $rules)['status'] === 'invalid', 'Invalid input must not be added.');
     sb_assert(!file_exists($rules), 'A refused add must not create the file.');
-    sb_assert(kssmi_sender_blocklist_add('@gmail.com', false, '', false, $rules)['status'] === 'needs_confirm', 'A public mail domain needs confirmation.');
-    sb_assert(kssmi_sender_blocklist_add('@kssmi.com', false, '', false, $rules)['status'] === 'needs_confirm', 'The own domain needs confirmation.');
-    $added = kssmi_sender_blocklist_add('patelamisha2706@gmail.com', false, str_repeat('é', 300), false, $rules);
+    foreach (['@gmail.com', '@GoogleMail.com', 'outlook.com', '@kssmi.com'] as $public) {
+        $refused = kssmi_sender_blocklist_add($public, true, '', $rules);
+        sb_assert($refused['status'] === 'public_domain' && str_contains($refused['message'], 'full email address') && !file_exists($rules), 'A public or own mail domain must be refused as a whole: ' . $public);
+    }
+    $added = kssmi_sender_blocklist_add('patelamisha2706@gmail.com', false, str_repeat('é', 300), $rules);
     sb_assert($added['status'] === 'added' && mb_strlen($added['rule']['note'], 'UTF-8') === KSSMI_SENDER_BLOCKLIST_NOTE_MAX, 'The address must be added with a clipped note.');
-    sb_assert(kssmi_sender_blocklist_add('Patel.Amisha2706@gmail.com', false, '', false, $rules)['status'] === 'exists', 'A Gmail variant of an existing rule must be reported as existing.');
-    sb_assert(kssmi_sender_blocklist_add('@spam.example', true, 'whole domain', false, $rules)['status'] === 'added', 'A domain rule must be added.');
-    sb_assert(kssmi_sender_blocklist_add('@outlook.com', false, '', true, $rules)['status'] === 'added', 'A confirmed public domain must be added.');
+    sb_assert(kssmi_sender_blocklist_add('Patel.Amisha2706@gmail.com', false, '', $rules)['status'] === 'exists', 'A Gmail variant of an existing rule must be reported as existing.');
+    sb_assert(kssmi_sender_blocklist_add('@spam.example', true, 'whole domain', $rules)['status'] === 'added', 'A domain rule must be added.');
+    sb_assert(kssmi_sender_blocklist_add('@exact.example', false, '', $rules)['status'] === 'added', 'An exact domain rule must be added.');
+    sb_assert(kssmi_sender_blocklist_add('someone@outlook.com', false, '', $rules)['status'] === 'added' && kssmi_sender_blocklist_remove(kssmi_sender_blocklist_load($rules)['rules'][3]['id'], $rules)['status'] === 'removed', 'A single address at a public domain can still be blocked.');
     $stat = stat($rules);
     sb_assert(DIRECTORY_SEPARATOR === '\\' || ($stat['mode'] & 0777) === 0640, 'The rules file must be 0640.');
 
@@ -91,7 +94,7 @@ try {
     sb_assert(kssmi_sender_blocklist_match($loaded['rules'], 'someone@SPAM.example')['type'] === 'domain', 'The domain must match case-insensitively.');
     sb_assert(kssmi_sender_blocklist_match($loaded['rules'], 'someone@mx.spam.example') !== null, 'Subdomains must match when included.');
     sb_assert(kssmi_sender_blocklist_match($loaded['rules'], 'someone@notspam.example') === null, 'A domain suffix that is not a subdomain must not match.');
-    sb_assert(kssmi_sender_blocklist_match($loaded['rules'], 'someone@mail.outlook.com') === null, 'Subdomains must not match unless included.');
+    sb_assert(kssmi_sender_blocklist_match($loaded['rules'], 'someone@mx.exact.example') === null, 'Subdomains must not match unless included.');
     sb_assert(kssmi_sender_blocklist_match($loaded['rules'], 'customer@gmail.com') === null, 'Other Gmail users must not match.');
     sb_assert(kssmi_sender_blocklist_check('customer@example.net', $rules)['state'] === 'clear', 'An unlisted sender must be clear.');
     sb_assert(kssmi_sender_blocklist_check('patelamisha2706@gmail.com', $rules)['state'] === 'blocked', 'A listed sender must be blocked.');
@@ -109,7 +112,7 @@ try {
         file_put_contents($rules, $damaged);
         $check = kssmi_sender_blocklist_check('patelamisha2706@gmail.com', $rules);
         sb_assert($check['state'] === 'unavailable' && $check['error'] !== null, 'A damaged rules file must be reported unavailable: ' . $damaged);
-        sb_assert(kssmi_sender_blocklist_add('new@example.com', false, '', false, $rules)['status'] === 'unavailable', 'Add must refuse a damaged file.');
+        sb_assert(kssmi_sender_blocklist_add('new@example.com', false, '', $rules)['status'] === 'unavailable', 'Add must refuse a damaged file.');
         sb_assert(kssmi_sender_blocklist_remove(str_repeat('a', 16), $rules)['status'] === 'unavailable', 'Remove must refuse a damaged file.');
         sb_assert(file_get_contents($rules) === $damaged, 'A damaged rules file must not be overwritten.');
     }
@@ -142,21 +145,21 @@ try {
         file_put_contents($rules, $raw);
         $check = kssmi_sender_blocklist_check('spam@example.com', $rules);
         sb_assert($check['state'] === 'unavailable' && $check['error'] === ($expectedErrors[$case] ?? 'invalid_rule'), "Rules file must be rejected ({$case}): " . json_encode($check));
-        sb_assert(kssmi_sender_blocklist_add('new@example.com', false, '', false, $rules)['status'] === 'unavailable' && file_get_contents($rules) === $raw, "A rejected rules file must not be rewritten ({$case}).");
+        sb_assert(kssmi_sender_blocklist_add('new@example.com', false, '', $rules)['status'] === 'unavailable' && file_get_contents($rules) === $raw, "A rejected rules file must not be rewritten ({$case}).");
     }
     file_put_contents($rules, kssmi_sender_blocklist_encode([$good]));
     sb_assert(kssmi_sender_blocklist_check('spam@example.com', $rules)['state'] === 'blocked', 'A well-formed single rule must load.');
     unlink($rules);
 
     // Changing a domain rule's subdomain setting: by adding again or by edit.
-    $domain = kssmi_sender_blocklist_add('@edit.example', false, '', false, $rules);
+    $domain = kssmi_sender_blocklist_add('@edit.example', false, '', $rules);
     sb_assert(kssmi_sender_blocklist_check('a@mx.edit.example', $rules)['state'] === 'clear', 'An exact domain rule must not match subdomains.');
-    $again = kssmi_sender_blocklist_add('@edit.example', true, '', false, $rules);
+    $again = kssmi_sender_blocklist_add('@edit.example', true, '', $rules);
     sb_assert($again['status'] === 'updated' && str_contains($again['message'], 'subdomains') && count(kssmi_sender_blocklist_load($rules)['rules']) === 1, 'Adding the domain with subdomains must update the rule, not duplicate it.');
     sb_assert(kssmi_sender_blocklist_check('a@mx.edit.example', $rules)['state'] === 'blocked', 'The updated rule must match subdomains.');
-    sb_assert(kssmi_sender_blocklist_add('@edit.example', true, '', false, $rules)['status'] === 'exists', 'The same setting again must report exists.');
+    sb_assert(kssmi_sender_blocklist_add('@edit.example', true, '', $rules)['status'] === 'exists', 'The same setting again must report exists.');
     sb_assert(kssmi_sender_blocklist_set_subdomains($domain['rule']['id'], false, $rules)['status'] === 'updated' && kssmi_sender_blocklist_check('a@mx.edit.example', $rules)['state'] === 'clear', 'The edit must switch subdomains off.');
-    $address = kssmi_sender_blocklist_add('only@edit.example', false, '', false, $rules);
+    $address = kssmi_sender_blocklist_add('only@edit.example', false, '', $rules);
     sb_assert(kssmi_sender_blocklist_set_subdomains($address['rule']['id'], true, $rules)['status'] === 'not_found', 'Address rules have no subdomain setting.');
     sb_assert(kssmi_sender_blocklist_set_subdomains(str_repeat('f', 16), true, $rules)['status'] === 'not_found', 'Editing a missing rule must report not found.');
     unlink($rules);
@@ -167,7 +170,7 @@ try {
         $many[] = ['id' => sprintf('%016x', $i), 'type' => 'email', 'value' => "u{$i}@example.com", 'label' => "u{$i}@example.com", 'include_subdomains' => false, 'note' => '', 'created_at' => ''];
     }
     file_put_contents($rules, kssmi_sender_blocklist_encode($many));
-    sb_assert(kssmi_sender_blocklist_add('one-more@example.com', false, '', false, $rules)['status'] === 'full', 'The rule cap must be enforced.');
+    sb_assert(kssmi_sender_blocklist_add('one-more@example.com', false, '', $rules)['status'] === 'full', 'The rule cap must be enforced.');
     unlink($rules);
 
     // Hits: clipping, count only for attachments, per-rule stats.
