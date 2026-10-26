@@ -1034,7 +1034,7 @@ function resendEmail($log) {
         .country-badge { background: #e8e4df; padding: 2px 8px; border-radius: 3px; font-size: 11px; }
 
         /* Bulk actions */
-        .btn-current, .btn-current:is(:hover, :active, :focus-visible) { background: #8B7355; color: white; box-shadow: inset 0 -2px 0 rgba(0,0,0,0.25); }
+        .btn-current, .btn-current:is(:hover, :active, :focus-visible, :focus-within) { background: #8B7355; color: white; box-shadow: inset 0 -2px 0 rgba(0,0,0,0.25); }
         .blocklist { background: white; border-radius: 8px; padding: 16px 20px; margin-bottom: 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
         .blocklist h2 { font-size: 16px; color: #5D4E37; margin: 0 0 6px; }
         .blocklist-help { font-size: 13px; color: #777; margin: 10px 0; }

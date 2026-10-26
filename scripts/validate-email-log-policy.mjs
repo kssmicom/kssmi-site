@@ -135,7 +135,8 @@ forbidText(emailLogs, 'file_get_contents(LOGS_FILE)', 'Unlocked email log read')
 forbidText(emailLogs, 'file_put_contents(LOGS_FILE', 'Unlocked email log write');
 requireText(
   emailLogs,
-  "if ($isAuthenticated) {\n    $loadResult = kssmi_email_logs_read(LOGS_FILE);",
+  // The Blocklist page (?view=blocklist) skips the inquiry log entirely.
+  "if ($isAuthenticated) {\n    $loadResult = $adminView === 'logs'\n        ? kssmi_email_logs_read(LOGS_FILE)",
   'Authenticated-only email log read',
 );
 
