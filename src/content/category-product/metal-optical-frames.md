@@ -49,7 +49,7 @@ seoDescription:
   tr: "Kssmi metal optik çerçeveleriyle harika gözlük koleksiyonunuzu geliştirin. Hafif paslanmaz çelik, esnek menteşeler, ayarlanabilir saplar ve 300 MOQ sunarız."
   ar: "ارتقِ بمجموعتك مع إطارات Kssmi الطبية المعدنية. نحن نقدم لك فولاذًا مقاومًا للصدأ خفيف الوزن، ومفصلات مرنة، وأذرع قابلة للتعديل، مع موك تصنيع يبدأ من 300."
   ko: "Kssmi 메탈 안경테로 아이웨어 컬렉션의 품격을 높이세요. 가벼운 스테인리스 스틸, 플렉스 힌지, 조절 가능한 템플 및 300 MOQ를 바탕으로 글로벌 브랜드를 지원합니다 direct from factory.."
-  zh: "使用Kssmi金属光学眼镜架提升您的眼镜系列品质。我们采用轻盈的不锈钢材质，配备灵活的弹簧铰链和可调节镜腿，并提供灵活的300 MOQ起订量，完美契合高端视光品牌的需求。 direct from factory.."
+  zh: "使用可米金属光学眼镜架提升您的眼镜系列品质。我们采用轻盈的不锈钢材质，配备灵活的弹簧铰链和可调节镜腿，并提供灵活的300 MOQ起订量，完美契合高端视光品牌的需求。 direct from factory.."
   hi: "कस्समी धातु ऑप्टिकल फ्रेम के साथ अपने चश्मे के संग्रह को बढ़ाएं। हम हल्के स्टेनलेस स्टील, लचीले टिका, समायोज्य मंदिरों, और एक 300 MOQ नीति प्रदान करते हैं।."
   vi: "Nâng tầm bộ sưu tập kính với gọng kính quang học kim loại Kssmi. Chúng tôi cung cấp thép không gỉ nhẹ, bản lề linh hoạt, càng kính chỉnh và MOQ 300 chiếc."
   jv: "Tingkatake koleksi kacamata kabeh kanthi pigura optik logam Kssmi. Kita nawakake baja tahan karat sing entheng, engsel sing fleksibel, lan pesenan 300 MOQ."

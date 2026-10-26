@@ -388,7 +388,7 @@ const i18n: Record<string, any> = {
     imageAlt: 'Kssmi 제조 팀',
   },
   zh: {
-    title: '页面未找到 | Kssmi Eyewear',
+    title: '页面未找到 | 可米科技',
     heading1: '这个页面暂时离开了 —',
     heading2: '但我们还在这里，继续制造眼镜。',
     description: '您点击的链接可能已过期，或该页面已移动。别担心——我们制造的一切都还在这里。',
@@ -415,10 +415,10 @@ const i18n: Record<string, any> = {
     searchPlaceholder: '搜索产品、材质、款式……',
     searchBtn: '搜索',
     backHome: '返回首页',
-    companyName: 'Kssmi 眼镜制造商',
+    companyName: '可米眼镜工厂',
     since: '自2003年起制造精密镜架',
-    eyewear: '眼镜制造商',
-    imageAlt: 'Kssmi 制造团队',
+    eyewear: '眼镜工厂',
+    imageAlt: '可米制造团队',
   },
   hi: {
     title: 'पृष्ठ नहीं मिला | Kssmi Eyewear',
@@ -629,9 +629,9 @@ const rescueMessages = {
 
         <!-- RIGHT: Content -->
         <div class={`text-center ${isRTL ? 'lg:text-right' : 'lg:text-left'}`}>
-          <!-- Kssmi Logo (mobile only) -->
+          <!-- Brand logo (mobile only) -->
           <div class="inline-flex flex-col items-center justify-center mb-6 lg:hidden">
-            <span class="text-xl font-bold text-[#503629] tracking-tight leading-none uppercase">KSSMI</span>
+            <span class="text-xl font-bold text-[#503629] tracking-tight leading-none uppercase">{lang === 'zh' ? '可米' : 'KSSMI'}</span>
             <span class="h-[2px] w-5 bg-[#503629] mt-1"></span>
             <span class="text-[8px] font-bold uppercase tracking-[0.2em] text-[#503629] mt-1">{t.eyewear}</span>
           </div>

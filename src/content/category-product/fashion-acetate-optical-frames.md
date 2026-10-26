@@ -49,7 +49,7 @@ seoDescription:
   tr: "Harika markanız için Kssmi özel moda asetat optik çerçeveleri hemen tedarik edin. Zengin renkli moda stilleri, hızlı üretim ve esnek 300 MOQ sunarız fast."
   ar: "احصل على إطارات Kssmi الطبية العصرية من الأسيتات لعلامتك التجارية. نحن نوفر تصميمات غنية بالألوان الجذابة، وإنتاجا سريعا جدا، وموك تصنيع مرن يبدأ من 300."
   ko: "브랜드를 위해 Kssmi 패션 아세테이트 안경테를 소싱하세요. 다채로운 색상의 트렌디한 디자인, 빠른 생산, 유연한 300 MOQ를 제공하여 브랜드의 성공을 지원합니다 direct from factory.."
-  zh: "为您的品牌寻找Kssmi专属定制的时尚醋酸纤维光学眼镜架。我们提供色彩饱满且引领潮流的设计款式、极速的生产交付周期与灵活的300 MOQ起订量，全面赋能您的全球市场布局。 direct from factory.."
+  zh: "为您的品牌寻找可米专属定制的时尚醋酸纤维光学眼镜架。我们提供色彩饱满且引领潮流的设计款式、极速的生产交付周期与灵活的300 MOQ起订量，全面赋能您的全球市场布局。 direct from factory.."
   hi: "अपने ब्रांड के लिए कस्समी कस्टम फैशन एसीटेट ऑप्टिकल फ्रेम स्रोत करें। हम रंग-समृद्ध फैशन शैली, बेहद तेज उत्पादन, और लचीला 300 MOQ नीति प्रदान करते हैं। now."
   vi: "Tìm nguồn gọng kính quang học thời trang axetat Kssmi cho thương hiệu của bạn. Chúng tôi cung cấp kiểu dáng màu sắc, sản xuất nhanh và MOQ 300 tuyệt vời."
   jv: "Golek kabeh pigura optik fashion asetat Kssmi khusus kanggo merek sampeyan. Kita nyedhiyakake gaya sing sugih werna, produksi cepet, lan pesenan 300 MOQ."

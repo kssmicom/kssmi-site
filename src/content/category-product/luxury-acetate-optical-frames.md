@@ -49,7 +49,7 @@ seoDescription:
   tr: "Kssmi'nin el yapımı lüks asetat optik çerçevelerini keşfedin. Markanız için özel detaylar, birinci sınıf el cilalı mükemmel yüzeyler ve 300 MOQ sunarız now."
   ar: "استكشف إطارات Kssmi الطبية الفاخرة من الأسيتات المصنوعة يدويا. نحن نوفر تفاصيل مخصصة، وتشطيبات ممتازة مصقولة يدويا، وموك تصنيع يبدأ من 300 لعلامتك التجارية."
   ko: "Kssmi 수제 럭셔리 아세테이트 안경테를 만나보세요. 수작업 폴리싱 마감, 정교한 비스포크 디테일, 300 MOQ를 통해 프리미엄 브랜드 성공을 적극 돕습니다 direct from factory.."
-  zh: "探索Kssmi纯手工打造的奢华醋酸纤维光学眼镜架。提供极具个性化的高端定制细节、卓越的纯手工抛光饰面，以及灵活的300 MOQ起订量，全方位助力您的奢华眼镜品牌惊艳全球高端眼镜市场。 direct from factory.."
+  zh: "探索可米纯手工打造的奢华醋酸纤维光学眼镜架。提供极具个性化的高端定制细节、卓越的纯手工抛光饰面，以及灵活的300 MOQ起订量，全方位助力您的奢华眼镜品牌惊艳全球高端眼镜市场。 direct from factory.."
   hi: "कस्समी के दस्तकारी लक्जरी एसीटेट ऑप्टिकल फ्रेम का अन्वेषण करें। हम ब्रांड के लिए बीस्पोक विवरण, प्रीमियम हाथ से पॉलिश खत्म, और लचीला 300 MOQ प्रदान करते हैं।."
   vi: "Khám phá gọng kính quang học axetat sang trọng thủ công của Kssmi. Cung cấp chi tiết đặt riêng, lớp hoàn thiện đánh bóng cao cấp, MOQ 300 cho thương hiệu."
   jv: "Jelajahi pigura optik asetat mewah gawenan tangan Kssmi. Kita nawakake rincian khusus, finish polesan tangan sing apik, lan 300 MOQ kanggo merek sampeyan."

@@ -49,7 +49,7 @@ seoDescription:
   tr: "Kssmi'nin kapsamlı özel gözlük yelpazesini keşfedin. Premium güneş gözlüğü ve optik çerçeveler için OEM fabrikamızla ortak olun. Tam ısmarlama hizmet."
   ar: "اكتشف مجموعة Kssmi الشاملة من النظارات المخصصة. اشترك مع مصنع المعدات الأصلية الرائد لدينا للحصول على نظارات شمسية وإطارات طبية فاخرة. خدمة تفصيل كاملة."
   ko: "Kssmi의 포괄적인 맞춤형 안경 라인을 만나보세요. 프리미엄 선글라스 및 광학 프레임을 위해 최고의 OEM 공장과 협력하십시오. 완벽한 맞춤형 서비스 제공."
-  zh: "探索 Kssmi 完整的定制眼镜系列。与我们首屈一指的 OEM 工厂合作，打造优质的太阳镜和光学镜架。提供全面的定制服务和解决方案。"
+  zh: "探索 可米 完整的定制眼镜系列。与我们首屈一指的 OEM 工厂合作，打造优质的太阳镜和光学镜架。提供全面的定制服务和解决方案。"
   hi: "Kssmi की कस्टम आईवियर की विस्तृत श्रृंखला खोजें। प्रीमियम धूप के चश्मे और ऑप्टिकल फ्रेम के लिए हमारे OEM कारखाने के साथ भागीदार बनें। पूरी तरह से अनुकूलित सेवा।"
   vi: "Khám phá toàn bộ phạm vi kính mắt tùy chỉnh của Kssmi. Hợp tác với nhà máy OEM của chúng tôi cho kính râm và gọng kính quang học cao cấp. Dịch vụ đặt làm."
   jv: "Temokake macem-macem kacamata khusus Kssmi. Makarya karo pabrik OEM kita kanggo kacamata hitam lan bingkai optik premium. Layanan premium kustom lengkap."

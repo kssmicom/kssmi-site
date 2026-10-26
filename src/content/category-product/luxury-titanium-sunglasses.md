@@ -49,7 +49,7 @@ seoDescription:
   tr: "Kssmi lüks titanyum güneş gözlükleriyle zamansız bir koleksiyon oluşturun. %100 saf titanyum, kusursuz IP kaplama, karmaşık detaylar ve 300 MOQ sunarız now."
   ar: "ابتكر مجموعة خالدة مع نظارات Kssmi الشمسية الفاخرة من التيتانيوم. نحن نتميز بالتيتانيوم النقي 100%، وطلاء IP، وتفاصيل دقيقة معقدة، وموك تصنيع يبدأ من 300."
   ko: "Kssmi 럭셔리 티타늄 선글라스로 타임리스 컬렉션을 제작하세요. 100% 순수 티타늄, IP 도금, 정교한 디테일, 300 MOQ를 통해 브랜드 성공을 지원합니다 direct from factory.."
-  zh: "使用Kssmi奢华钛金属太阳镜打造经典系列。甄选100%高品质纯钛材质，结合IP真空电镀工艺与精细的细节雕琢，并支持灵活的300 MOQ起订，赋能奢侈品牌抢占全球高端眼镜市场。 direct from factory.."
+  zh: "使用可米奢华钛金属太阳镜打造经典系列。甄选100%高品质纯钛材质，结合IP真空电镀工艺与精细的细节雕琢，并支持灵活的300 MOQ起订，赋能奢侈品牌抢占全球高端眼镜市场。 direct from factory.."
   hi: "कस्समी के लक्जरी टाइटेनियम धूप के चश्मे के साथ एक कालातीत संग्रह बनाएं। हम 100% शुद्ध टाइटेनियम, आईपी चढ़ाना, जटिल विवरण, और एक 300 MOQ नीति देते हैं। now."
   vi: "Hãy tạo một bộ sưu tập vượt thời gian tuyệt đẹp với kính râm titan sang trọng Kssmi. Đặc trưng 100% titan nguyên chất, mạ IP, chi tiết tinh xảo, MOQ 300."
   jv: "Ayo gawe koleksi sing langgeng karo kacamata mewah titanium Kssmi. Nampilake titanium murni 100%, lapisan IP, rincian sing rumit, lan pesenan 300 MOQ now."

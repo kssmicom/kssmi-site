@@ -49,7 +49,7 @@ seoDescription:
   tr: "Özel optik çerçeveleriniz için Kssmi ile ortaklık kurun. Küresel optometri zincirlerine premium tasarımlar, 300 MOQ ve 45 günlük hızlı teslimat sunarız now."
   ar: "عزز شراكتك مع Kssmi لإنتاج إطارات النظارات الطبية. نحن نورد لسلاسل البصريات تصاميم فاخرة، مع موك مرن يبدأ من 300، وفترة إنتاج تبلغ 45 يومًا فقط لعلامتك now."
   ko: "맞춤형 안경테 제작을 위해 Kssmi와 파트너십을 맺으세요. 글로벌 안경원 및 브랜드에 프리미엄 디자인, 300 MOQ, 45일의 빠른 납기를 안정적으로 제공합니다 direct from factory.."
-  zh: "与Kssmi建立合作，定制高品质的光学眼镜架。我们长期为全球知名眼镜零售商及视光连锁店提供卓越的设计方案、灵活的300 MOQ起订量以及45天的标准交货期。 direct from factory.."
+  zh: "与可米建立合作，定制高品质的光学眼镜架。我们长期为全球知名眼镜零售商及视光连锁店提供卓越的设计方案、灵活的300 MOQ起订量以及45天的标准交货期。 direct from factory.."
   hi: "कस्टम ऑप्टिकल फ्रेम के लिए कस्समी के साथ भागीदार बनें। वैश्विक ऑप्टोमेट्री श्रृंखलाओं को प्रीमियम डिज़ाइन, लचीला 300 MOQ, और 45-दिन का लीड समय की आपूर्ति।."
   vi: "Hợp tác với Kssmi cho các gọng kính quang học. Cung cấp cho các chuỗi đo thị lực toàn cầu thiết kế cao cấp, MOQ 300 linh hoạt và thời gian giao hàng 45 ngày."
   jv: "Mitra karo Kssmi kanggo pigura optik khusus. Nyedhiyakake rantai optometri global kanthi desain premium, pesenan 300 MOQ, lan wektu pangiriman 45 dina now."

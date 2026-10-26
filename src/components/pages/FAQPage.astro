@@ -23,7 +23,7 @@ const pageCopy: Record<string, { title: string; description: string; heading: st
   tr: { title: 'SSS — Kssmi Eyewear | Sıkça Sorulan Sorular', description: 'Kssmi gözlük üretimi hakkında sıkça sorulan sorular: MOQ, OEM/ODM, üretim süresi, malzemeler, sertifikalar, sevkiyat ve daha fazlası.', heading: 'Sıkça Sorulan Sorular', subtitle: 'Kssmi Eyewear ile çalışmak hakkında bilmeniz gereken her şey' },
   ar: { title: 'الأسئلة الشائعة — Kssmi Eyewear', description: 'الأسئلة الشائعة حول تصنيع النظارات لدى Kssmi: الحد الأدنى للطلب، OEM/ODM، مدة الإنتاج، المواد، الشهادات، الشحن والمزيد.', heading: 'الأسئلة الشائعة', subtitle: 'كل ما تحتاج معرفته عن العمل مع Kssmi Eyewear' },
   ko: { title: 'FAQ — Kssmi Eyewear | 자주 묻는 질문', description: 'Kssmi 안경 제조에 관한 자주 묻는 질문: MOQ, OEM/ODM, 생산 기간, 소재, 인증, 배송 등.', heading: '자주 묻는 질문', subtitle: 'Kssmi Eyewear와 함께 일하기 위해 알아야 할 모든 것' },
-  zh: { title: '常见问题 — Kssmi 眼镜 | FAQ', description: '关于 Kssmi 眼镜生产的常见问题：起订量（MOQ）、OEM/ODM、生产周期、材料、认证、运输等。', heading: '常见问题', subtitle: '与 Kssmi 眼镜合作前需要了解的一切' },
+  zh: { title: '常见问题 — 可米眼镜 | FAQ', description: '关于 可米眼镜生产的常见问题：起订量（MOQ）、OEM/ODM、生产周期、材料、认证、运输等。', heading: '常见问题', subtitle: '与 可米眼镜合作前需要了解的一切' },
   hi: { title: 'FAQ — Kssmi Eyewear | अक्सर पूछे जाने वाले प्रश्न', description: 'Kssmi आईवियर निर्माण के बारे में अक्सर पूछे जाने वाले प्रश्न: MOQ, OEM/ODM, उत्पादन समय, सामग्री, प्रमाणन, शिपिंग और बहुत कुछ।', heading: 'अक्सर पूछे जाने वाले प्रश्न', subtitle: 'Kssmi Eyewear के साथ काम करने के बारे में वह सब कुछ जो आपको जानना चाहिए' },
   vi: { title: 'FAQ — Kssmi Eyewear | Câu hỏi thường gặp', description: 'Câu hỏi thường gặp về sản xuất kính mắt Kssmi: MOQ, OEM/ODM, thời gian sản xuất, vật liệu, chứng nhận, vận chuyển và hơn thế nữa.', heading: 'Câu hỏi thường gặp', subtitle: 'Mọi điều bạn cần biết khi hợp tác với Kssmi Eyewear' },
   jv: { title: 'FAQ — Kssmi Eyewear | Pitakonan sing Kerep Ditakoni', description: 'Pitakonan sing kerep ditakoni babagan produksi kacamata Kssmi: MOQ, OEM/ODM, wektu produksi, bahan, sertifikasi, pangiriman lan liyane.', heading: 'Pitakonan sing Kerep Ditakoni', subtitle: 'Kabeh sing perlu sampeyan ngerteni babagan kerja sama karo Kssmi Eyewear' },
@@ -53,9 +53,9 @@ const faqItems = [
   <main class="w-full min-h-[70vh] bg-stone-50 pt-12 pb-24 flex items-center" dir={isRTL ? 'rtl' : 'ltr'}>
     <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[820px] mx-auto px-4 text-center">
       <div class="inline-flex flex-col items-center justify-center mb-8">
-        <span class="text-3xl font-bold text-[#503629] tracking-tight leading-none uppercase">KSSMI</span>
+        <span class="text-3xl font-bold text-[#503629] tracking-tight leading-none uppercase">{lang === 'zh' ? '可米' : 'KSSMI'}</span>
         <span class="h-[1px] w-8 bg-[#503629] mt-1.5"></span>
-        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#503629] mt-1.5">Eyewear Mfg.</span>
+        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#503629] mt-1.5">{lang === 'zh' ? '眼镜工厂' : 'Eyewear Mfg.'}</span>
       </div>
       <h1 class="text-3xl md:text-4xl font-bold text-[#5D4E37] mb-3 tracking-tight">{copy.heading}</h1>
       <p class="text-lg text-stone-500 mb-10 max-w-xl mx-auto">{copy.subtitle}</p>

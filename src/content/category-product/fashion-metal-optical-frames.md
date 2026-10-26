@@ -49,7 +49,7 @@ seoDescription:
   tr: "Özel moda metal optik çerçeveler için Kssmi ile ortak olun. Trend odaklı metal şekiller, yenilikçi karışık malzemeler ve esnek bir 300 MOQ sunuyoruz fast."
   ar: "عزز شراكتك مع Kssmi لإنتاج إطارات طبية معدنية عصرية. نحن نقدم أشكالا معدنية تواكب الموضة، ومواد مختلطة مبتكرة وعالية الجودة، وموك تصنيع مرن يبدأ من 300 now."
   ko: "패션 메탈 안경테 제작을 위해 Kssmi와 즉시 파트너십을 맺으세요. 트렌디한 메탈 프레임, 혁신적 혼합 소재, 300 MOQ를 통해 브랜드 성공을 지원합니다 direct from factory.."
-  zh: "选择Kssmi作为您的定制时尚金属光学眼镜架合作伙伴。我们提供引领潮流的前沿金属框型设计、创新的混合材质拼接工艺，以及灵活的300 MOQ起订量，全面赋能快时尚品牌的全球布局。 direct from factory.."
+  zh: "选择可米作为您的定制时尚金属光学眼镜架合作伙伴。我们提供引领潮流的前沿金属框型设计、创新的混合材质拼接工艺，以及灵活的300 MOQ起订量，全面赋能快时尚品牌的全球布局。 direct from factory.."
   hi: "कस्टम फैशन धातु ऑप्टिकल फ्रेम के लिए कस्समी के साथ भागीदार बनें। हम ट्रेंड-संचालित धातु के आकार, मिश्रित सामग्री, और एक लचीला 300 MOQ प्रदान करते हैं। now."
   vi: "Hãy hợp tác với Kssmi cho gọng kính quang học thời trang kim loại. Chúng tôi cung cấp kiểu dáng kim loại mới, vật liệu hỗn hợp sáng tạo, MOQ 300 tuyệt vời."
   jv: "Mitra karo Kssmi kanggo pigura optik fashion logam khusus. Kita nawakake bentuk logam sing didorong tren, bahan campuran inovatif, lan pesenan 300 MOQ now."

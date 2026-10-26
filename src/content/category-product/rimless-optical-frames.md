@@ -49,7 +49,7 @@ seoDescription:
   tr: "Özel çerçevesiz optik çerçeveler için Kssmi ile işbirliği yapın. Ultra hafif drill-mount donanım, özel lens şekilleri ve esnek bir 300 MOQ sunuyoruz fast."
   ar: "تعاون مع مصنع Kssmi لإنتاج إطارات طبية بدون إطار مخصصة. نحن نقدم أدوات حفر خفيفة جدا للعدسات، وأشكالا مخصصة، وموك تصنيع مرن يبدأ من 300 لعلامتك التجارية."
   ko: "무테 안경테 제작을 위해 Kssmi와 협력하세요. 초경량 드릴 마운트, 맞춤형 렌즈 디자인 및 300 MOQ를 제공하여 프리미엄 브랜드의 완벽한 론칭을 돕습니다 direct from factory.."
-  zh: "与Kssmi合作定制顶级无框光学眼镜架。我们提供超轻盈的打孔五金配件，支持个性化的定制镜片形状，300 MOQ灵活起订，完美满足全球知名眼镜品牌对极致轻量化和高端品质的严苛追求。 direct from factory.."
+  zh: "与可米合作定制顶级无框光学眼镜架。我们提供超轻盈的打孔五金配件，支持个性化的定制镜片形状，300 MOQ灵活起订，完美满足全球知名眼镜品牌对极致轻量化和高端品质的严苛追求。 direct from factory.."
   hi: "कस्टम रिमलेस ऑप्टिकल फ्रेम के लिए कस्समी के साथ सहयोग करें। हम अल्ट्रा-लाइटवेट ड्रिल-माउंट हार्डवेयर, कस्टम लेंस आकार, और एक लचीला 300 MOQ देते हैं। fast."
   vi: "Hãy hợp tác với Kssmi cho gọng kính quang học không gọng. Cung cấp phần cứng drill-mount siêu nhẹ, hình dạng ống kính tuyệt vời và MOQ 300 linh hoạt fast."
   jv: "Kolaborasi karo Kssmi kanggo pigura optik tanpa bingkai khusus. Kita nawakake hardware drill-mount sing entheng banget, bentuk lensa khusus, lan 300 MOQ."

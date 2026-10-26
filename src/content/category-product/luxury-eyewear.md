@@ -49,7 +49,7 @@ seoDescription:
   tr: "Gerçekten zarif özel lüks gözlükler mi arıyorsunuz? Küresel lüks markalara el yapımı birinci sınıf malzemeler, çok özel tasarımlar ve esnek 300 MOQ sunarız."
   ar: "هل تبحث عن نظارات فاخرة مخصصة ورائعة؟ نحن نقدم للعلامات التجارية العالمية الفاخرة مواد ممتازة ومصقولة يدويا، وتصميمات حصرية، وموك تصنيع مرن يبدأ من 300 now."
   ko: "정교한 럭셔리 안경을 찾으시나요? Kssmi는 프리미엄 브랜드에 수작업으로 완성된 최고급 소재, 독점적 디자인, 300 MOQ를 제공하여 브랜드의 성공을 완벽히 돕습니다 direct from factory.."
-  zh: "正在寻找精美的奢华定制眼镜？Kssmi专为全球奢侈品牌提供纯手工打磨的顶级材质与独家定制的设计款式，同时支持灵活的300 MOQ起订量，助您轻松打造卓越非凡的高端奢华眼镜系列。 direct from factory.."
+  zh: "正在寻找精美的奢华定制眼镜？可米专为全球奢侈品牌提供纯手工打磨的顶级材质与独家定制的设计款式，同时支持灵活的300 MOQ起订量，助您轻松打造卓越非凡的高端奢华眼镜系列。 direct from factory.."
   hi: "क्या आप उत्तम कस्टम लक्जरी आईवियर खोज रहे हैं? हम वैश्विक लक्जरी ब्रांडों को हाथ से तैयार प्रीमियम सामग्री, विशेष डिजाइन, और लचीला 300 MOQ नीति देते हैं।."
   vi: "Tìm kiếm kính mắt sang trọng tùy chỉnh tinh tế? Chúng tôi cung cấp cho các thương hiệu vật liệu cao cấp hoàn thiện thủ công, thiết kế độc quyền và MOQ 300."
   jv: "Nggoleki kacamata mewah khusus sing apik banget? Kita nyedhiyakake merek mewah global kanthi bahan premium gawean tangan, desain eksklusif, lan 300 MOQ now."

@@ -49,7 +49,7 @@ seoDescription:
   tr: "Sezonluk tüm koleksiyonlarınızı trend Kssmi moda asetat güneş gözlükleriyle hemen yenileyin. Özel renkler, hızlı üretim süreleri ve esnek 300 MOQ sunarız."
   ar: "قم بترقية مجموعاتك الموسمية باستخدام نظارات Kssmi الشمسية العصرية من الأسيتات. نحن نوفر لك ألوانا مخصصة، وفترات إنتاج سريعة، وموك تصنيع مرن يبدأ من 300 now."
   ko: "Kssmi 패션 아세테이트 선글라스로 시즌 컬렉션을 업그레이드하세요. 맞춤형 색상, 빠른 생산 및 300 MOQ를 바탕으로 패스트 패션 브랜드의 성공을 지원합니다 direct from factory.."
-  zh: "使用Kssmi时尚醋酸纤维太阳镜全面升级您的季节性新系列。我们提供丰富的定制专属色彩、极速的生产交付周期以及灵活的300 MOQ起订量，强势赋能全球快时尚品牌的市场扩张。 direct from factory.."
+  zh: "使用可米时尚醋酸纤维太阳镜全面升级您的季节性新系列。我们提供丰富的定制专属色彩、极速的生产交付周期以及灵活的300 MOQ起订量，强势赋能全球快时尚品牌的市场扩张。 direct from factory.."
   hi: "कस्समी के फैशन एसीटेट धूप के चश्मे के साथ अपने मौसमी संग्रह को अपग्रेड करें। हम कस्टम रंग, तेज टर्नअराउंड समय, और एक लचीला 300 MOQ नीति प्रदान करते हैं।."
   vi: "Nâng cấp tất cả bộ sưu tập theo mùa của bạn với kính râm thời trang axetat từ Kssmi. Cung cấp màu sắc tùy chỉnh, thời gian cực nhanh chóng và MOQ 300 now."
   jv: "Nanyarke kabeh koleksi musiman sampeyan kanthi kacamata fashion asetat sing didorong tren Kssmi. Nawakake warna khusus, wektu cepet, lan pesenan 300 MOQ."

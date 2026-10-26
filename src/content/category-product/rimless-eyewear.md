@@ -49,7 +49,7 @@ seoDescription:
   tr: "Kssmi özel çerçevesiz gözlüklerle koleksiyonunuzu yükseltin. Ultra hafif drill-mount donanım, ısmarlama lens şekilleri ve esnek bir 300 MOQ sunuyoruz now."
   ar: "ارتقِ بمجموعتك مع النظارات الرائعة بدون إطار المخصصة من Kssmi. نحن نوفر أدوات حفر خفيفة جدا للعدسات، وأشكالا مخصصة للعدسات، وموك تصنيع مرن يبدأ من 300 now."
   ko: "Kssmi 맞춤형 무테 안경으로 컬렉션을 업그레이드하세요. 초경량 드릴 마운트, 놀라운 비스포크 렌즈 디자인, 300 MOQ를 제공하여 브랜드 성공을 적극 돕습니다 direct from factory.."
-  zh: "使用Kssmi定制无框眼镜全面提升您的眼镜系列。提供轻盈的打孔五金配件、满足个性化需求的高端定制镜片形状，以及灵活的300 MOQ起订量，强势赋能知名品牌全面抢占全球高端眼镜市场。 direct from factory.."
+  zh: "使用可米定制无框眼镜全面提升您的眼镜系列。提供轻盈的打孔五金配件、满足个性化需求的高端定制镜片形状，以及灵活的300 MOQ起订量，强势赋能知名品牌全面抢占全球高端眼镜市场。 direct from factory.."
   hi: "कस्समी के कस्टम रिमलेस आईवियर के साथ अपने संग्रह को बढ़ाएं। हम अल्ट्रा-लाइट ड्रिल-माउंट हार्डवेयर, बीस्पोक लेंस आकार, और एक लचीला 300 MOQ प्रदान करते हैं।."
   vi: "Hãy nâng tầm bộ sưu tập của bạn với kính mắt không gọng tùy chỉnh Kssmi. Cung cấp phần cứng drill-mount siêu nhẹ, hình dạng ống kính đặt riêng, MOQ 300 now."
   jv: "Tingkatake koleksi sampeyan nganggo kacamata tanpa bingkai khusus Kssmi. Kita nyedhiyakake hardware drill-mount ultra-ringan, bentuk lensa khusus, 300 MOQ."
