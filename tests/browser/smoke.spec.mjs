@@ -192,7 +192,7 @@ for (const language of ['en', 'zh', 'ar']) {
     await consent.check();
     expect(await consent.evaluate((input) => input.checkValidity())).toBe(true);
     expect(await consentRecord(page)).toMatchObject({ analytics: false, ads: false });
-    await expect(page.locator('footer')).toContainText('Shenzhen Kssmi Technology Co., Ltd.');
+    await expect(page.locator('footer')).toContainText(language === 'zh' ? '可米科技有限公司' : 'Kssmi Technology Co., Ltd.');
     await expectCleanPage(page, testInfo);
   });
 }

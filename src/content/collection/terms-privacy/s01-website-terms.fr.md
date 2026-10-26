@@ -11,7 +11,7 @@ title: "Conditions d'utilisation du site web"
 
 ### 1. Opérateur du site web
 
-**Shenzhen Kssmi Technology Co., Ltd.** (深圳柯视觅科技有限责任公司)
+**Kssmi Technology Co., Ltd.** (可米科技有限公司)
 
 Adresse de contact commercial et de l'usine: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, Chine, Code postal : 518000**
 

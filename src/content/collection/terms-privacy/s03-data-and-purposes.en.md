@@ -44,4 +44,4 @@ Users should provide only the information reasonably needed for their business r
 
 The inquiry form asks for separate consent to process and respond to your request:
 
-> I agree that Shenzhen Kssmi Technology Co., Ltd. may use my contact details, message and attachments to review and respond to this inquiry and manage related project correspondence. I can withdraw this consent at privacy@kssmi.com. This does not enable analytics or advertising.
+> I agree that Kssmi may use my contact details, message and attachments to respond to this inquiry.

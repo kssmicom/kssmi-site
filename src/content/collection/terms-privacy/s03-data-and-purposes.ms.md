@@ -44,4 +44,4 @@ Pengguna harus memberikan maklumat yang semunasabahnya diperlukan untuk perminta
 
 Borang meminta persetujuan berasingan untuk memproses dan menjawab permintaan:
 
-> Saya bersetuju Shenzhen Kssmi Technology Co., Ltd. menggunakan butiran hubungan, mesej dan lampiran saya untuk menyemak dan menjawab pertanyaan ini serta mengurus komunikasi projek berkaitan. Saya boleh menarik balik melalui privacy@kssmi.com. Ini tidak mengaktifkan analisis atau iklan.
+> Saya bersetuju Kssmi menggunakan butiran hubungan, mesej dan lampiran saya untuk menjawab pertanyaan ini.

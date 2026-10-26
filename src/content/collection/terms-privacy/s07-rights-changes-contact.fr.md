@@ -43,6 +43,6 @@ Nous pouvons mettre à jour cet avis lorsque notre site web, nos activités de t
 
 ### Contact
 
-Responsable du traitement des données : **Shenzhen Kssmi Technology Co., Ltd.**  
+Responsable du traitement des données : **Kssmi Technology Co., Ltd.**  
 Contact confidentialité : **privacy [at] kssmi [dot] com**  
 Adresse postale : **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

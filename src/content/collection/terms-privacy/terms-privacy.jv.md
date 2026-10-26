@@ -13,7 +13,7 @@ effectiveDate: "2026-10-26"
 lastUpdated: "2026-10-26"
 intro: "Kaca iki nerangake syarat-syarat sing ngatur panggunaan situs web Kssmi lan kepiye carane ngumpulake, nggunakake, nuduhake lan nglindhungi data pribadhi nalika sampeyan njelajah situs utawa ngubungi kita."
 controller:
-  legalName: "Shenzhen Kssmi Technology Co., Ltd."
+  legalName: "Kssmi Technology Co., Ltd."
   shortName: "Kssmi"
   address: "905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China"
   postcode: "518000"

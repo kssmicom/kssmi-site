@@ -43,6 +43,6 @@ title: "Ваши права, жалобы, изменения и контакт�
 
 ### Контакты
 
-Контролер данных: **Shenzhen Kssmi Technology Co., Ltd.**  
+Контролер данных: **Kssmi Technology Co., Ltd.**  
 Контактное лицо по вопросам конфиденциальности: **privacy [at] kssmi [dot] com**  
 Почтовый адрес: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

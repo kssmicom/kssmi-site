@@ -44,4 +44,4 @@ Les utilisateurs ne doivent fournir que les informations raisonnablement nécess
 
 Le formulaire demande un consentement distinct pour traiter votre demande et y répondre :
 
-> J'accepte que Shenzhen Kssmi Technology Co., Ltd. utilise mes coordonnées, mon message et mes pièces jointes pour examiner et répondre à cette demande et gérer la correspondance du projet associé. Je peux retirer mon consentement à privacy@kssmi.com. Cela n'active ni analyses ni publicité.
+> J'accepte que Kssmi utilise mes coordonnées, mon message et mes pièces jointes pour répondre à cette demande.

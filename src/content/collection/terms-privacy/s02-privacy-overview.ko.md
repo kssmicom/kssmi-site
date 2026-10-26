@@ -19,7 +19,7 @@ title: "개인정보 개요 및 컨트롤러"
 
 본 방침에 설명된 처리를 담당하는 컨트롤러는 다음과 같습니다.
 
-**Shenzhen Kssmi Technology Co., Ltd.**  
+**Kssmi Technology Co., Ltd.**  
 905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China  
 우편번호: 518000  
 개인정보 연락처: **privacy [at] kssmi [dot] com**

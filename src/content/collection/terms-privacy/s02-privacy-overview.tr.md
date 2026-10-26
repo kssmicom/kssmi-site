@@ -19,7 +19,7 @@ Kullanıcının açmayı seçtiği üçüncü taraf bir platformun gizlilik bild
 
 Bu bildirimde açıklanan işlemeden sorumlu veri sorumlusu şudur:
 
-**Shenzhen Kssmi Technology Co., Ltd.**  
+**Kssmi Technology Co., Ltd.**  
 905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, Çin  
 Posta kodu: 518000  
 Gizlilik iletişimi: **privacy [at] kssmi [dot] com**

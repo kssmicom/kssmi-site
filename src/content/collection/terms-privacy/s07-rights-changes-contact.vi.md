@@ -43,6 +43,6 @@ Chúng tôi có thể cập nhật thông báo này khi trang web, hoạt độn
 
 ### Liên hệ
 
-Bên kiểm soát dữ liệu: **Shenzhen Kssmi Technology Co., Ltd.**  
+Bên kiểm soát dữ liệu: **Kssmi Technology Co., Ltd.**  
 Liên hệ bảo mật: **privacy [at] kssmi [dot] com**  
 Địa chỉ bưu điện: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

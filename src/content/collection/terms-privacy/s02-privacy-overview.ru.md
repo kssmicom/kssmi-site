@@ -19,7 +19,7 @@ title: "Обзор конфиденциальности и контролер"
 
 Контролером, ответственным за обработку, описанную в настоящем уведомлении, является:
 
-**Shenzhen Kssmi Technology Co., Ltd.**  
+**Kssmi Technology Co., Ltd.**  
 905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China  
 Почтовый индекс: 518000  
 Контакт по вопросам конфиденциальности: **privacy [at] kssmi [dot] com**

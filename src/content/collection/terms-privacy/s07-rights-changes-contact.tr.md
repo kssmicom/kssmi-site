@@ -43,6 +43,6 @@ Web sitemiz, işleme faaliyetlerimiz, tedarikçilerimiz veya yasal yükümlülü
 
 ### İletişim
 
-Veri sorumlusu: **Shenzhen Kssmi Technology Co., Ltd.**  
+Veri sorumlusu: **Kssmi Technology Co., Ltd.**  
 Gizlilik iletişimi: **privacy [at] kssmi [dot] com**  
 Posta adresi: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

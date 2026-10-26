@@ -19,7 +19,7 @@ title: "गोपनीयता अवलोकन और नियंत्र
 
 इस नोटिस में वर्णित प्रसंस्करण के लिए जिम्मेदार नियंत्रक है:
 
-**Shenzhen Kssmi Technology Co., Ltd.**  
+**Kssmi Technology Co., Ltd.**  
 905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China  
 पिन कोड: 518000  
 गोपनीयता संपर्क: **privacy [at] kssmi [dot] com**

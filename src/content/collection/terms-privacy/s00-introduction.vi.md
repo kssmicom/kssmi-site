@@ -14,7 +14,7 @@ Trang này chứa hai tài liệu:
 1. **Điều khoản sử dụng trang web**, quy định việc truy cập và sử dụng trang web Kssmi; và
 2. **Thông báo quyền riêng tư**, giải thích cách dữ liệu cá nhân được xử lý khi một người duyệt trang web, gửi yêu cầu hoặc chọn liên hệ với Kssmi qua email hoặc WhatsApp.
 
-Trang web chủ yếu dành cho khách hàng doanh nghiệp, nhà phân phối, thương hiệu và các bên khác quan tâm đến việc sản xuất kính mắt OEM hoặc ODM. Các tham chiếu đến "Kssmi", "chúng tôi" hoặc "của chúng tôi" có nghĩa là **Shenzhen Kssmi Technology Co., Ltd.**, trừ khi ngữ cảnh có chỉ định khác.
+Trang web chủ yếu dành cho khách hàng doanh nghiệp, nhà phân phối, thương hiệu và các bên khác quan tâm đến việc sản xuất kính mắt OEM hoặc ODM. Các tham chiếu đến "Kssmi", "chúng tôi" hoặc "của chúng tôi" có nghĩa là **Kssmi Technology Co., Ltd.**, trừ khi ngữ cảnh có chỉ định khác.
 
 **Ngày có hiệu lực:** 2026-10-26\
 **Cập nhật lần cuối:** 2026-10-26\

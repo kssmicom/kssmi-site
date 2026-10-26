@@ -43,6 +43,6 @@ Kami mungkin mengemas kini notis ini apabila tapak web, aktiviti pemprosesan, pe
 
 ### Kenalan
 
-Pengawal data: **Shenzhen Kssmi Technology Co., Ltd.**  
+Pengawal data: **Kssmi Technology Co., Ltd.**  
 Hubungan privasi: **privacy [at] kssmi [dot] com**  
 Alamat pos: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

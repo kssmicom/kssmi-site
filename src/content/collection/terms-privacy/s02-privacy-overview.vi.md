@@ -19,7 +19,7 @@ Nó không thay thế thông báo quyền riêng tư của nền tảng của b�
 
 Bộ điều khiển chịu trách nhiệm về quá trình xử lý được mô tả trong thông báo này là:
 
-**Shenzhen Kssmi Technology Co., Ltd.**  
+**Kssmi Technology Co., Ltd.**  
 905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China  
 Mã bưu chính: 518000  
 Liên hệ quyền riêng tư: **privacy [at] kssmi [dot] com**

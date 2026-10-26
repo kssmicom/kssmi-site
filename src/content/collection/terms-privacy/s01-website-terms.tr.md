@@ -11,7 +11,7 @@ title: "Web sitesi kullanım şartları"
 
 ### 1. Web sitesi operatörü
 
-**Shenzhen Kssmi Technology Co., Ltd.** (深圳柯视觅科技有限责任公司)
+**Kssmi Technology Co., Ltd.** (可米科技有限公司)
 
 Ticari iletişim ve fabrika adresi: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, Çin, Posta kodu: 518000**
 

@@ -14,7 +14,7 @@ Cette page contient deux documents :
 1. les **Conditions d'utilisation du site web**, qui régissent l'accès et l'utilisation du site web de Kssmi ; et
 2. l'**Avis de confidentialité**, qui explique comment les données personnelles sont traitées lorsqu'une personne navigue sur le site web, soumet une demande ou choisit de contacter Kssmi par e-mail ou WhatsApp.
 
-Le site web est principalement destiné aux clients professionnels, distributeurs, marques et autres parties intéressées par la fabrication de lunettes OEM ou ODM. Les références à « Kssmi », « nous », « notre » ou « nos » désignent **Shenzhen Kssmi Technology Co., Ltd.**, sauf indication contraire du contexte.
+Le site web est principalement destiné aux clients professionnels, distributeurs, marques et autres parties intéressées par la fabrication de lunettes OEM ou ODM. Les références à « Kssmi », « nous », « notre » ou « nos » désignent **Kssmi Technology Co., Ltd.**, sauf indication contraire du contexte.
 
 **Date d'entrée en vigueur :** 2026-10-26\
 **Dernière mise à jour :** 2026-10-26\

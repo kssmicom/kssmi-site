@@ -19,7 +19,7 @@ title: "نظرة عامة على الخصوصية ومراقب البيانات"
 
 مراقب البيانات المسؤول عن المعالجة الموضحة في هذا الإشعار هو:
 
-**Shenzhen Kssmi Technology Co., Ltd.**  
+**Kssmi Technology Co., Ltd.**  
 905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China  
 الرمز البريدي: 518000  
 جهة اتصال الخصوصية: **privacy [at] kssmi [dot] com**

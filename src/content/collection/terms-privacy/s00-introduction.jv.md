@@ -14,7 +14,7 @@ Kaca iki ngemot rong dokumen:
 1. **Syarat panggunaan situs web**, sing ngatur akses menyang lan panggunaan situs web Kssmi; lan
 2. **Kabar privasi**, sing nerangake kepiye data pribadhi ditangani nalika ana wong browsing situs web, ngirim pitakon, utawa milih ngubungi Kssmi liwat email utawa WhatsApp.
 
-Situs web iki ditujokake utamane kanggo pelanggan bisnis, distributor, merek lan pihak liyane sing kasengsem ing manufaktur kacamata OEM utawa ODM. Referensi kanggo "Kssmi", "kita", utawa "duweke kita" tegese **Shenzhen Kssmi Technology Co., Ltd.**, kajaba konteks nuduhake liya.
+Situs web iki ditujokake utamane kanggo pelanggan bisnis, distributor, merek lan pihak liyane sing kasengsem ing manufaktur kacamata OEM utawa ODM. Referensi kanggo "Kssmi", "kita", utawa "duweke kita" tegese **Kssmi Technology Co., Ltd.**, kajaba konteks nuduhake liya.
 
 **Tanggal efektif:** 2026-10-26\
 **Dianyari pungkasan:** 2026-10-26\

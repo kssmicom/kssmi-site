@@ -19,7 +19,7 @@ Ia tidak menggantikan notis privasi platform pihak ketiga yang dipilih oleh peng
 
 Pengawal yang bertanggungjawab untuk pemprosesan yang diterangkan dalam notis ini ialah:
 
-**Shenzhen Kssmi Technology Co., Ltd.**  
+**Kssmi Technology Co., Ltd.**  
 905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China  
 Poskod: 518000  
 Kenalan privasi: **privacy [at] kssmi [dot] com**

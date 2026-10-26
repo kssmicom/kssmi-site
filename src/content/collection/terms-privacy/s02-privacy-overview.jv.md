@@ -19,7 +19,7 @@ Iku ora ngganti kabar privasi platform pihak katelu sing dipilih pangguna kanggo
 
 Pengontrol sing tanggung jawab kanggo pamrosesan sing diterangake ing kabar iki yaiku:
 
-**Shenzhen Kssmi Technology Co., Ltd.**  
+**Kssmi Technology Co., Ltd.**  
 905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China  
 Kode pos: 518000  
 Kontak privasi: **privacy [at] kssmi [dot] com**
