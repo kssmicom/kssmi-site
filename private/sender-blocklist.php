@@ -272,6 +272,101 @@ function kssmi_sender_blocklist_add($input, bool $includeSubdomains, $note, ?str
     return ['status' => $mutation['result'], 'message' => $messages[$mutation['result']], 'rule' => $rule];
 }
 
+const KSSMI_SENDER_BLOCKLIST_BATCH_MAX_ITEMS = 200;
+const KSSMI_SENDER_BLOCKLIST_BATCH_MAX_BYTES = 10000;
+
+/** Split admin input on English commas, Chinese commas (，) and line breaks. */
+function kssmi_sender_blocklist_split_input($input): array {
+    $parts = preg_split('/[,\x{FF0C}\r\n]+/u', is_string($input) ? $input : '') ?: [];
+    return array_values(array_filter(array_map('trim', $parts), static fn(string $part): bool => $part !== ''));
+}
+
+/**
+ * Add several addresses / @domains in one locked write. Each entry is
+ * validated on its own: valid entries are added even when others fail.
+ * $includeSubdomains applies only to the domain entries of this input.
+ *
+ * Returns status ok | empty | too_long | too_many | unavailable, plus
+ * added / updated / exists (labels), failed ([entry, reason]) and the number
+ * of duplicate entries merged within the input.
+ */
+function kssmi_sender_blocklist_add_many($input, bool $includeSubdomains, $note, ?string $path = null, ?int $now = null): array {
+    $result = ['status' => 'ok', 'added' => [], 'updated' => [], 'exists' => [], 'failed' => [], 'duplicates' => 0];
+    if (is_string($input) && strlen($input) > KSSMI_SENDER_BLOCKLIST_BATCH_MAX_BYTES) return array_merge($result, ['status' => 'too_long']);
+    $entries = kssmi_sender_blocklist_split_input($input);
+    if (!$entries) return array_merge($result, ['status' => 'empty']);
+    if (count($entries) > KSSMI_SENDER_BLOCKLIST_BATCH_MAX_ITEMS) return array_merge($result, ['status' => 'too_many']);
+
+    $candidates = [];
+    foreach ($entries as $entry) {
+        $shown = kssmi_sender_blocklist_clip($entry, 100);
+        $parsed = kssmi_sender_blocklist_parse_input($entry, $includeSubdomains);
+        if (!$parsed['ok']) {
+            $reason = str_contains($parsed['error'], 'too long') ? 'too long'
+                : (str_contains($parsed['error'], 'domain') ? 'not a valid domain' : 'not a valid email address');
+            $result['failed'][] = [$shown, $reason];
+            continue;
+        }
+        if ($parsed['type'] === 'domain' && kssmi_sender_blocklist_is_public_domain($parsed['value'])) {
+            $result['failed'][] = [$shown, 'public mail domain, cannot be blocked as a whole; enter the full address'];
+            continue;
+        }
+        $key = $parsed['type'] . ':' . $parsed['value'];
+        if (isset($candidates[$key])) {
+            $result['duplicates']++;
+            continue;
+        }
+        $candidates[$key] = $parsed;
+    }
+    if (!$candidates) return $result;
+
+    $createdAt = date('Y-m-d H:i:s', $now ?? time());
+    $noteText = kssmi_sender_blocklist_clip($note, KSSMI_SENDER_BLOCKLIST_NOTE_MAX);
+    $mutation = kssmi_sender_blocklist_mutate($path ?? kssmi_sender_blocklist_path(), function (array $rules) use ($candidates, $createdAt, $noteText) {
+        $outcome = ['added' => [], 'updated' => [], 'exists' => [], 'full' => []];
+        $index = [];
+        foreach ($rules as $position => $rule) $index[$rule['type'] . ':' . $rule['value']] = $position;
+        foreach ($candidates as $key => $parsed) {
+            if (isset($index[$key])) {
+                $position = $index[$key];
+                if ($rules[$position]['include_subdomains'] === $parsed['include_subdomains']) {
+                    $outcome['exists'][] = $parsed['label'];
+                } else {
+                    $rules[$position]['include_subdomains'] = $parsed['include_subdomains'];
+                    $outcome['updated'][] = $parsed['label'];
+                }
+                continue;
+            }
+            if (count($rules) >= KSSMI_SENDER_BLOCKLIST_MAX_RULES) {
+                $outcome['full'][] = $parsed['label'];
+                continue;
+            }
+            $rules[] = [
+                'id' => bin2hex(random_bytes(8)),
+                'type' => $parsed['type'],
+                'value' => $parsed['value'],
+                'label' => $parsed['label'],
+                'include_subdomains' => $parsed['include_subdomains'],
+                'note' => $noteText,
+                'created_at' => $createdAt,
+            ];
+            $index[$key] = count($rules) - 1;
+            $outcome['added'][] = $parsed['label'];
+        }
+        $changed = $outcome['added'] || $outcome['updated'];
+        return [$changed ? $rules : null, $outcome];
+    });
+    if (!$mutation['ok']) {
+        error_log('KSSMI sender blocklist: batch add refused, rules file unavailable: ' . $mutation['error']);
+        return array_merge($result, ['status' => 'unavailable']);
+    }
+    foreach (['added', 'updated', 'exists'] as $kind) $result[$kind] = $mutation['result'][$kind];
+    foreach ($mutation['result']['full'] as $label) {
+        $result['failed'][] = [$label, 'the blocklist is full (' . KSSMI_SENDER_BLOCKLIST_MAX_RULES . ' rules)'];
+    }
+    return $result;
+}
+
 /** Status: removed | not_found | unavailable. */
 function kssmi_sender_blocklist_remove($id, ?string $path = null): array {
     $id = is_string($id) ? $id : '';

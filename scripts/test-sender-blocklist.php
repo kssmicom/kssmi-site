@@ -164,6 +164,53 @@ try {
     sb_assert(kssmi_sender_blocklist_set_subdomains(str_repeat('f', 16), true, $rules)['status'] === 'not_found', 'Editing a missing rule must report not found.');
     unlink($rules);
 
+    // Batch add: commas (, and ，) and new lines; each entry on its own.
+    sb_assert(kssmi_sender_blocklist_split_input(" a@x.com, b@y.com，@z.com\n\n c@w.com \r\n,，") === ['a@x.com', 'b@y.com', '@z.com', 'c@w.com'], 'Input must split on , ， and new lines, dropping blanks.');
+    kssmi_sender_blocklist_add('existing@batch.example', false, '', $rules);
+    kssmi_sender_blocklist_add('@flag.example', false, '', $rules);
+    $batch = kssmi_sender_blocklist_add_many(implode("\n", [
+        'new1@batch.example, New2@Batch.example',   // two valid addresses on one line
+        '@sub.example',                              // domain: gets include_subdomains
+        'p.atel.x+promo@gmail.com，patelx@googlemail.com', // Gmail duplicates of each other
+        'existing@batch.example',                    // already listed
+        '@flag.example',                             // listed without subdomains -> updated
+        '@gmail.com',                                // public domain
+        'not-an-email@',                             // invalid
+        '@-bad-.example',                            // invalid domain
+        'NEW1@batch.example',                        // duplicate within the input
+    ]), true, 'batch note', $rules, 1_800_000_000);
+    sb_assert($batch['status'] === 'ok', 'A mixed batch must be processed: ' . json_encode($batch));
+    sb_assert($batch['added'] === ['new1@batch.example', 'new2@batch.example', '@sub.example', 'p.atel.x+promo@gmail.com'], 'Valid new entries must be added once each: ' . json_encode($batch['added']));
+    sb_assert($batch['exists'] === ['existing@batch.example'] && $batch['updated'] === ['@flag.example'] && $batch['duplicates'] === 2, 'Existing, updated and in-input duplicates must be reported.');
+    $reasons = array_column($batch['failed'], 1, 0);
+    sb_assert(count($batch['failed']) === 3 && str_contains($reasons['@gmail.com'], 'public mail domain') && $reasons['not-an-email@'] === 'not a valid email address' && $reasons['@-bad-.example'] === 'not a valid domain', 'Each failed entry must carry its reason: ' . json_encode($batch['failed']));
+    $byValue = array_column(kssmi_sender_blocklist_load($rules)['rules'], null, 'value');
+    sb_assert($byValue['sub.example']['include_subdomains'] === true && $byValue['flag.example']['include_subdomains'] === true, 'Include-subdomains must apply to the domain entries of this input.');
+    sb_assert($byValue['new1@batch.example']['include_subdomains'] === false && $byValue['patelx@gmail.com']['note'] === 'batch note' && $byValue['patelx@gmail.com']['created_at'] === date('Y-m-d H:i:s', 1_800_000_000), 'Address rules never get the subdomain flag; the note and time apply to new rules.');
+    sb_assert(kssmi_sender_blocklist_check('Patel.X@gmail.com', $rules)['state'] === 'blocked' && kssmi_sender_blocklist_check('a@mx.sub.example', $rules)['state'] === 'blocked', 'Batch-added rules must take effect.');
+    $again = kssmi_sender_blocklist_add_many("new1@batch.example\n@gmail.com", false, '', $rules);
+    sb_assert($again['added'] === [] && $again['exists'] === ['new1@batch.example'] && count($again['failed']) === 1, 'Re-submitting must add nothing new.');
+    sb_assert(kssmi_sender_blocklist_add_many(" ,，\n ", false, '', $rules)['status'] === 'empty', 'Blank input must be reported as empty.');
+    sb_assert(kssmi_sender_blocklist_add_many(implode("\n", array_map(fn($i) => "m{$i}@many.example", range(1, KSSMI_SENDER_BLOCKLIST_BATCH_MAX_ITEMS + 1))), false, '', $rules)['status'] === 'too_many', 'More than the per-submission limit must be refused as a whole.');
+    sb_assert(kssmi_sender_blocklist_add_many(str_repeat('a', KSSMI_SENDER_BLOCKLIST_BATCH_MAX_BYTES + 1), false, '', $rules)['status'] === 'too_long', 'Oversized input must be refused as a whole.');
+    $countBefore = count(kssmi_sender_blocklist_load($rules)['rules']);
+    $raw = file_get_contents($rules);
+    file_put_contents($rules, '{"version":1,"rules":[');
+    sb_assert(kssmi_sender_blocklist_add_many('x@batch.example', false, '', $rules)['status'] === 'unavailable' && file_get_contents($rules) === '{"version":1,"rules":[', 'A damaged file must refuse a batch and stay untouched.');
+    file_put_contents($rules, $raw);
+    sb_assert(count(kssmi_sender_blocklist_load($rules)['rules']) === $countBefore, 'The refused batches must not have changed the rules.');
+    unlink($rules);
+
+    // Batch add stops at the rule cap and reports the rest as failed.
+    $nearlyFull = [];
+    for ($i = 0; $i < KSSMI_SENDER_BLOCKLIST_MAX_RULES - 1; $i++) {
+        $nearlyFull[] = ['id' => sprintf('%016x', $i), 'type' => 'email', 'value' => "f{$i}@example.com", 'label' => "f{$i}@example.com", 'include_subdomains' => false, 'note' => '', 'created_at' => ''];
+    }
+    file_put_contents($rules, kssmi_sender_blocklist_encode($nearlyFull));
+    $capped = kssmi_sender_blocklist_add_many("last1@example.com\nlast2@example.com", false, '', $rules);
+    sb_assert($capped['added'] === ['last1@example.com'] && count($capped['failed']) === 1 && str_contains($capped['failed'][0][1], 'full'), 'A batch must fill up to the cap and report the rest.');
+    unlink($rules);
+
     // Rule cap.
     $many = [];
     for ($i = 0; $i < KSSMI_SENDER_BLOCKLIST_MAX_RULES; $i++) {
