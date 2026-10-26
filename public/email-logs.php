@@ -39,7 +39,7 @@ $_POST = kssmi_admin_normalize_request($_POST, [
     'delete_id' => 256,
     'bulk_delete' => 8,
     'block_add' => 8,
-    'block_value' => 320,
+    'block_value' => 20000,
     'block_note' => 800,
     'block_include_subdomains' => 8,
     'block_log_id' => 256,
@@ -595,6 +595,7 @@ if ($isAuthenticated && isset($_POST['bulk_delete']) && isset($_POST['selected_i
 // refuses to touch a file it cannot read (see private/sender-blocklist.php).
 $blocklistMessage = '';
 $blocklistOk = true;
+$blocklistBatch = null;   // per-entry result of a multi-entry add, shown as a summary
 if ($isAuthenticated && (isset($_POST['block_add']) || isset($_POST['block_log_id']) || isset($_POST['unblock_id']) || isset($_POST['block_edit_id']))) {
     if (!validateCSRF()) {
         $blocklistMessage = 'Security check failed. Please try again.';
@@ -624,6 +625,26 @@ if ($isAuthenticated && (isset($_POST['block_add']) || isset($_POST['block_log_i
         if ($blockValue === '' && isset($_POST['block_log_id'])) {
             $blocklistMessage = 'That log entry has no email address to block.';
             $blocklistOk = false;
+        } elseif (!isset($_POST['block_log_id'])) {
+            // Manual add: one or more entries separated by commas (, or ，) or new lines.
+            $blocklistBatch = kssmi_sender_blocklist_add_many(
+                $blockValue,
+                ($_POST['block_include_subdomains'] ?? '') === '1',
+                $_POST['block_note'] ?? ''
+            );
+            $batchErrors = [
+                'empty' => 'Enter at least one email address or @domain.',
+                'too_long' => 'The input is too long (' . KSSMI_SENDER_BLOCKLIST_BATCH_MAX_BYTES . ' characters at most). Nothing was changed.',
+                'too_many' => 'Too many entries (' . KSSMI_SENDER_BLOCKLIST_BATCH_MAX_ITEMS . ' at most per submission). Nothing was changed.',
+                'unavailable' => 'The blocklist file could not be read or written safely, so nothing was changed. Check the server error log.',
+            ];
+            if (isset($batchErrors[$blocklistBatch['status']])) {
+                $blocklistMessage = $batchErrors[$blocklistBatch['status']];
+                $blocklistOk = false;
+                $blocklistBatch = null;
+            } else {
+                $blocklistOk = !$blocklistBatch['failed'];
+            }
         } else {
             $outcome = kssmi_sender_blocklist_add(
                 $blockValue,
@@ -1038,6 +1059,8 @@ function resendEmail($log) {
         .blocklist-help { font-size: 13px; color: #777; margin: 10px 0; }
         .blocklist-form { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 10px 0 14px; font-size: 13px; }
         .blocklist-form input[type=text] { padding: 6px 10px; border: 1px solid #ddd; border-radius: 4px; min-width: 220px; }
+        .blocklist-form textarea { flex: 1 1 100%; min-height: 84px; padding: 8px 10px; border: 1px solid #ddd; border-radius: 4px; font: inherit; font-size: 13px; resize: vertical; box-sizing: border-box; }
+        .blocklist-result ul { margin: 6px 0 0 18px; padding: 0; }
         .blocklist-table { font-size: 13px; }
         .blocklist-details { max-width: 360px; white-space: pre-wrap; word-break: break-word; }
         .bulk-actions { background: #5D4E37; color: white; padding: 10px 16px; border-radius: 8px; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 13px; }
@@ -1176,6 +1199,20 @@ function resendEmail($log) {
             <?php if ($blocklistMessage): ?>
                 <p class="<?php echo $blocklistOk ? 'success' : 'error'; ?>"><?php echo htmlspecialchars($blocklistMessage); ?></p>
             <?php endif; ?>
+            <?php if ($blocklistBatch !== null): ?>
+                <div class="<?php echo $blocklistBatch['failed'] ? 'error' : 'success'; ?> blocklist-result">
+                    <strong>Added <?php echo count($blocklistBatch['added']); ?> · Already listed <?php echo count($blocklistBatch['exists']); ?> · Failed <?php echo count($blocklistBatch['failed']); ?></strong>
+                    <?php if ($blocklistBatch['updated']): ?><br>Subdomain setting changed: <?php echo htmlspecialchars(implode(', ', $blocklistBatch['updated'])); ?><?php endif; ?>
+                    <?php if ($blocklistBatch['duplicates'] > 0): ?><br><?php echo (int)$blocklistBatch['duplicates']; ?> duplicate entr<?php echo $blocklistBatch['duplicates'] === 1 ? 'y' : 'ies'; ?> in the input counted once.<?php endif; ?>
+                    <?php if ($blocklistBatch['failed']): ?>
+                    <ul>
+                        <?php foreach ($blocklistBatch['failed'] as [$entry, $reason]): ?>
+                        <li><?php echo htmlspecialchars($entry); ?> — <?php echo htmlspecialchars($reason); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
 
             <?php if ($adminView === 'blocklist'): ?>
             <!-- Blocklist page -->
@@ -1207,11 +1244,11 @@ function resendEmail($log) {
 
             <section class="blocklist">
                 <h2>Add a rule</h2>
-                <p class="blocklist-help">Enter an email address or @domain.</p>
+                <p class="blocklist-help">Enter one or more email addresses or @domains, one per line or separated by commas.</p>
                 <?php if ($blocklist['ok']): ?>
                 <form method="POST" class="blocklist-form">
                     <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(kssmi_admin_csrf_token()); ?>">
-                    <input type="text" name="block_value" placeholder="name@example.com or @example.com" required maxlength="254">
+                    <textarea name="block_value" rows="4" required maxlength="<?php echo KSSMI_SENDER_BLOCKLIST_BATCH_MAX_BYTES; ?>" placeholder="name@example.com&#10;@example.com&#10;One per line, or separated by commas"></textarea>
                     <input type="text" name="block_note" placeholder="Note (optional)" maxlength="<?php echo KSSMI_SENDER_BLOCKLIST_NOTE_MAX; ?>">
                     <label><input type="checkbox" name="block_include_subdomains" value="1"> Domain: include subdomains</label>
                     <button type="submit" name="block_add" value="1" class="btn btn-danger btn-small">Block</button>
