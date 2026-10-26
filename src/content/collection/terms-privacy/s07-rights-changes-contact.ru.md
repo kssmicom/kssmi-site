@@ -27,7 +27,7 @@ title: "Ваши права, жалобы, изменения и контакт�
 
 ### Осуществление ваших прав
 
-Отправьте запрос по адресу **privacy [at] kssmi [dot] com** и опишите право, которым вы хотите воспользоваться. Kssmi должна подтвердить получение и ответить в сроки, установленные применимым законодательством.
+Направьте запрос на **privacy [at] kssmi [dot] com**, указав нужное право. Kssmi ответит в установленный законом срок. Мы можем запросить разумно необходимые сведения для проверки личности, уточнения запроса или защиты прав других лиц.
 
 ### Жалобы
 
@@ -45,6 +45,4 @@ title: "Ваши права, жалобы, изменения и контакт�
 
 Контролер данных: **Shenzhen Kssmi Technology Co., Ltd.**  
 Контактное лицо по вопросам конфиденциальности: **privacy [at] kssmi [dot] com**  
-Почтовый адрес: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**  
-Представитель в ЕС: **Kssmi Eyewear, Montagnola, Via Nicola Spedalieri, 7, 00142 Roma RM, Italy**  
-Контактное лицо представителя в ЕС по вопросам конфиденциальности: **privacy [at] kssmi [dot] com**
+Почтовый адрес: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

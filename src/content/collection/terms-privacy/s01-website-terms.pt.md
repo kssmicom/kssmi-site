@@ -11,7 +11,9 @@ title: "Termos de uso do site"
 
 ### 1. Operador do site
 
-Este site é operado sob o nome Kssmi pela **Shenzhen Kssmi Technology Co., Ltd.**, com endereço registrado em **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Código postal: 518000**.
+**Shenzhen Kssmi Technology Co., Ltd.** (深圳柯视觅科技有限责任公司)
+
+Endereço de contacto comercial e da fábrica: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Código postal: 518000**
 
 ### 2. Aceitação destes termos
 
@@ -41,9 +43,9 @@ Nomes, marcas e materiais de terceiros permanecem sendo propriedade de seus resp
 
 ### 6. Informações enviadas pelos usuários
 
-Você é responsável por garantir que as informações enviadas sejam precisas, legais e que você tenha autoridade para fornecê-las. Não envie arquivos de design confidenciais, dados pessoais de categorias especiais ou dados pessoais de terceiros, a menos que seja necessário para a consulta e você esteja autorizado a fazê-lo.
+Envie apenas informações necessárias que esteja autorizado a partilhar. No primeiro contacto, forneça um resumo do projeto e referências adequadas à discussão inicial. Antes de partilhar desenhos confidenciais completos, contacte vendas para acordar e assinar um NDA e definir o canal de envio. Não envie dados pessoais sensíveis nem informações desnecessárias sobre terceiros. O envio não transfere a propriedade nem concede direitos além dos necessários para o pedido e o projeto acordado.
 
-A propriedade e o uso permitido de designs de projetos, amostras, ferramentas, especificações e outros materiais comerciais devem ser regidos pela cotação, acordo de não divulgação ou contrato de fabricação aplicáveis.
+O NDA assinado por ambas as partes rege a confidencialidade, os usos permitidos dos materiais e as medidas de proteção, incluindo a lei e a resolução de litígios. Estes termos não alteram nem limitam o NDA; um acordo posterior prevalece apenas nos limites por ele permitidos. Propriedade, ferramentas, exclusividade e entrega de ficheiros seguem os acordos do projeto. Um pedido no site ou de NDA não autoriza desenvolvimento, amostras, ferramentas ou produção pagos. São necessárias a aceitação escrita por ambas as partes do orçamento, encomenda ou acordo e a confirmação de pagamento aplicável. A aceitação pode ocorrer por e-mail através de contactos autorizados, respeitando os requisitos de assinatura acordados.
 
 ### 7. Serviços e links de terceiros
 
@@ -55,7 +57,7 @@ Temos o objetivo de manter o site disponível e preciso, mas não garantimos ace
 
 ### 9. Responsabilidade
 
-Nada nestes termos exclui ou limita a responsabilidade que legalmente não pode ser excluída.
+Nada nestes termos exclui ou limita responsabilidades que não possam ser excluídas por lei. Na medida permitida pela lei, Kssmi não responde por perdas indiretas, incidentais, especiais ou consequenciais resultantes apenas do uso ou impossibilidade de uso deste site informativo. A responsabilidade relativa a propostas, encomendas, amostras, produtos ou projetos de fabrico é regida pelo acordo comercial escrito aplicável.
 
 ### 10. Lei aplicável e disputas
 

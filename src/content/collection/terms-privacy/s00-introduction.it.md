@@ -16,9 +16,8 @@ Questa pagina contiene due documenti:
 
 Il sito web è destinato principalmente a clienti aziendali, distributori, marchi e altre parti interessate alla produzione di occhiali OEM o ODM. I riferimenti a "Kssmi", "noi", "ci" o "nostro" indicano **Shenzhen Kssmi Technology Co., Ltd.**, se non diversamente specificato dal contesto.
 
-**Data di entrata in vigore:** 2026-07-19  
-**Ultimo aggiornamento:** 2026-07-19  
-**Versione del documento:** 1.0
+**Data di entrata in vigore:** 2026-10-26\
+**Ultimo aggiornamento:** 2026-10-26\
+**Versione del documento:** 1.1
 
 Se uno specifico preventivo, ordine di acquisto, fattura proforma, accordo di produzione o altro contratto scritto è in conflitto con le presenti condizioni del sito web, il contratto scritto specifico prevarrà sulla relativa transazione commerciale.
-

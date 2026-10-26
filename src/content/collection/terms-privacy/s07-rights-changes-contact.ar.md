@@ -45,6 +45,4 @@ title: "حقوقك والشكاوى والتغييرات والاتصال"
 
 مراقب البيانات: **Shenzhen Kssmi Technology Co., Ltd.**  
 جهة اتصال الخصوصية: **privacy [at] kssmi [dot] com**  
-العنوان البريدي: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**  
-ممثل الاتحاد الأوروبي: **Kssmi Eyewear, Montagnola, Via Nicola Spedalieri, 7, 00142 Roma RM, Italy**  
-جهة اتصال الخصوصية لممثل الاتحاد الأوروبي: **privacy [at] kssmi [dot] com**
+العنوان البريدي: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

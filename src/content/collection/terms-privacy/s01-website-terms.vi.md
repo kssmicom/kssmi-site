@@ -11,7 +11,9 @@ title: "Điều khoản sử dụng trang web"
 
 ### 1. Nhà điều hành trang web
 
-Trang web này được điều hành dưới tên Kssmi bởi **Shenzhen Kssmi Technology Co., Ltd.**, có địa chỉ đăng ký tại **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Mã bưu chính: 518000**.
+**Shenzhen Kssmi Technology Co., Ltd.** (深圳柯视觅科技有限责任公司)
+
+Địa chỉ liên hệ kinh doanh và nhà máy: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Mã bưu chính: 518000**
 
 ### 2. Chấp nhận các điều khoản này
 
@@ -41,9 +43,9 @@ Tên, nhãn hiệu và tài liệu của bên thứ ba vẫn là tài sản củ
 
 ### 6. Thông tin do người dùng gửi
 
-Bạn có trách nhiệm đảm bảo rằng thông tin bạn gửi là chính xác, hợp pháp và bạn có thẩm quyền cung cấp thông tin đó. Không gửi các tệp thiết kế bí mật, dữ liệu cá nhân thuộc danh mục đặc biệt hoặc dữ liệu cá nhân của bên thứ ba trừ khi điều đó là cần thiết cho cuộc điều tra và bạn được ủy quyền làm như vậy.
+Chỉ cung cấp thông tin cần thiết mà bạn có quyền chia sẻ. Với yêu cầu ban đầu, hãy gửi tóm tắt dự án và tài liệu tham khảo phù hợp cho trao đổi sơ bộ. Trước khi chia sẻ thiết kế mật đầy đủ, liên hệ bộ phận bán hàng để thống nhất, ký NDA và chọn kênh gửi. Không gửi dữ liệu cá nhân nhạy cảm hoặc thông tin không cần thiết về người khác. Việc gửi không chuyển quyền sở hữu hay cấp quyền vượt quá xử lý yêu cầu và dự án đã thống nhất.
 
-Quyền sở hữu và việc sử dụng được phép đối với các thiết kế dự án, mẫu, dụng cụ, thông số kỹ thuật và các tài liệu thương mại khác phải được điều chỉnh bởi báo giá, thỏa thuận không tiết lộ hoặc hợp đồng sản xuất hiện hành.
+NDA do hai bên ký điều chỉnh bảo mật, việc sử dụng tài liệu và biện pháp bảo vệ, gồm luật áp dụng và giải quyết tranh chấp. Điều khoản website không sửa đổi hay hạn chế NDA; thỏa thuận sau chỉ ưu tiên trong phạm vi NDA cho phép. Quyền sở hữu, khuôn, độc quyền và bàn giao tệp theo thỏa thuận dự án. Yêu cầu trên website hoặc xin NDA không cho phép triển khai phát triển, mẫu, khuôn hay sản xuất có phí. Cần hai bên chấp thuận bằng văn bản báo giá, đơn hàng hoặc thỏa thuận và xác nhận thanh toán áp dụng. Chấp thuận có thể qua email của người được ủy quyền, tuân thủ yêu cầu chữ ký đã thỏa thuận.
 
 ### 7. Dịch vụ và liên kết của bên thứ ba
 
@@ -55,7 +57,7 @@ Chúng tôi mong muốn giữ cho trang web luôn sẵn sàng và chính xác nh
 
 ### 9. Trách nhiệm pháp lý
 
-Không có nội dung nào trong các điều khoản này loại trừ hoặc giới hạn trách nhiệm pháp lý không thể loại trừ một cách hợp pháp.
+Các điều khoản này không loại trừ hoặc giới hạn trách nhiệm mà pháp luật không cho phép loại trừ. Trong phạm vi luật cho phép, Kssmi không chịu trách nhiệm về tổn thất gián tiếp, ngẫu nhiên, đặc biệt hoặc hệ quả chỉ do sử dụng hoặc không thể sử dụng website thông tin này. Trách nhiệm liên quan báo giá, đơn hàng, mẫu, sản phẩm hoặc dự án sản xuất được điều chỉnh bởi thỏa thuận thương mại bằng văn bản áp dụng.
 
 ### 10. Luật điều chỉnh và tranh chấp
 

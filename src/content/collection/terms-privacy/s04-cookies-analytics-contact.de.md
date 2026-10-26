@@ -9,11 +9,11 @@ navLabel: "Cookies und Kontaktereignisse"
 title: "Cookies, Analytik und Kontaktinteraktionen"
 ---
 
-Kssmi trennt eine minimale Kontaktereignisfunktion von der einwilligungsbasierten Analytikfunktion für die Besucher-Journey. Sie dienen unterschiedlichen Zwecken und dürfen nicht als ein System mit einer einzigen Rechtsgrundlage beschrieben werden.
+Kontaktmessung und Besucheranalyse benötigen beide die Analyse-Einwilligung. WhatsApp und E-Mail bleiben ohne optionales Tracking nutzbar.
 
 ### 1. Kontaktereignisse
 
-Wenn ein Besucher bewusst einen WhatsApp- oder E-Mail-Link auswählt, kann die Website ein minimales Ereignis aufzeichnen, das zeigt, dass der Kontakt-Einstiegspunkt geöffnet wurde. Ohne Einwilligung zur Analyse ist dieses Ereignis so konzipiert, dass es nur Folgendes enthält:
+Nur mit Analyse-Einwilligung kann die Auswahl eines WhatsApp- oder E-Mail-Links ein Ereignis mit folgenden Daten erfassen:
 
 - den ausgewählten Kanal;
 - einen Ereignistyp `open_intent`;
@@ -24,11 +24,11 @@ Wenn ein Besucher bewusst einen WhatsApp- oder E-Mail-Link auswählt, kann die W
 - die Site-Sprache; und
 - einen „Absichts“-Status (`intent`).
 
-Ohne Analyse-Einwilligung darf dieser Datensatz keine VJT-Besucher-/Sitzungskennung (Visitor Journey Tracking) erstellen oder lesen und keinen rekonstruierten Browserverlauf, keine vollständige Referrer-URL, keine Kampagnenparameter, keine IP-Adresse, keinen User-Agent oder keine Geolokalisierung enthalten. Eine separate, kurzlebige Sicherheitsverarbeitung kann zur Ratenbegrenzung erfolgen.
+Ohne Analyse-Einwilligung fordert die Kontaktmessung keine Berechtigungen an, setzt kein Mess-Cookie und erfasst keine Öffnungsstatistik. Mit Einwilligung kann das Ereignis der unten beschriebenen Besuchsfolge zugeordnet werden. Eine getrennte Sicherheitsverarbeitung kann den angeforderten Kontakt schützen.
 
 Ein `open_intent`-Datensatz bedeutet nur, dass der Website-Kontaktlink ausgelöst wurde. Er beweist nicht, dass ein Gerät WhatsApp oder einen E-Mail-Client erfolgreich geöffnet hat, dass der Besucher eine Nachricht gesendet hat oder dass Kssmi eine erhalten hat.
 
-Bei einem Anfrageformular bedeutet ein `submission_success`-Ereignis, dass der konfigurierte Sendevorgang der Website erfolgreich gemeldet wurde. Dies ist kein Beweis dafür, dass ein Empfänger die E-Mail gelesen oder beantwortet hat.
+Ein `submission_success`-Ereignis bedeutet, dass die Website die Anfrage in ihren Versandprozess einschließlich einer möglichen Warteschlange aufgenommen hat. Es bestätigt weder die E-Mail-Zustellung noch den Empfang durch eine bestimmte Person, das Lesen oder eine Antwort.
 
 ### 2. Visitor Journey Tracking (VJT)
 
@@ -58,7 +58,7 @@ Die wichtigsten von der Website verwendeten Browser-Speicherelemente sind nachst
 | `vjt_visitor_id` | Kssmi | Verknüpfung der Besuche, denen zugestimmt wurde, mit einer Besucher-Journey | Analyse | Cookie bis zu ca. 365 Tage; lokale Kopie bis zum Widerruf der Analyse-Einwilligung oder Löschen des Browser-Speichers | Cookie und lokaler Speicher |
 | `vjt_session_id` | Kssmi | Verknüpfung der Seitenereignisse, denen zugestimmt wurde, innerhalb einer Sitzung | Analyse | Ca. 30 Minuten | Cookie |
 | `KSSMI_VJT_IDENTITY` | Kssmi | Signierte Server-Identität, die Besuche mit Einwilligung innerhalb eines Einwilligungszyklus verknüpft; für Seitenskripte nicht lesbar | Analyse | Bis zu ca. 365 Tage; läuft nach einem Widerruf ab, soweit der Browser dies zulässt | Cookie (HttpOnly) |
-| `KSSMI_VJT_CONTACT` | Kssmi | Kurzlebige signierte Sitzung, die die Statistik der Kontaktereignisse vor gefälschten Ereignissen schützt; enthält einen Zufallswert, keine VJT-Kennung, und wird ohne Analyse-Einwilligung gesetzt | Sicherheit der Kontaktereignisse | Ca. 30 Minuten, wird während des Besuchs verlängert | Cookie (HttpOnly) |
+| `KSSMI_VJT_CONTACT` | Kssmi | Signierte Sitzung zum Schutz eingewilligter Kontaktstatistiken, an den aktuellen Einwilligungszyklus gebunden; nur mit Analyse-Einwilligung ausgestellt | Analyse | Ca. 30 Minuten, wird während des Besuchs verlängert | Cookie (HttpOnly) |
 | Google- oder andere konfigurierte Drittanbieter-Kennungen | Jeweiliger Anbieter | Einwilligungsbasierte Analyse, Messung oder Werbung | Analyse oder Werbung | Variiert je nach Anbieter und Konfiguration; siehe Angaben des jeweiligen Anbieters | Cookie oder ähnliche Technologie |
 
 Das Cookie-Inventar, das Einwilligungs-Banner und die Live-Implementierung müssen übereinstimmen. Das Umbenennen eines Trackers oder das Verschieben einer Kennung von einem Cookie in den lokalen Speicher macht die Technologie an sich nicht von der Einwilligung befreit.

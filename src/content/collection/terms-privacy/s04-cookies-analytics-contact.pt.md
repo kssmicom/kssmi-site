@@ -9,11 +9,11 @@ navLabel: "Cookies e eventos de contato"
 title: "Cookies, análise e interações de contato"
 ---
 
-A Kssmi separa uma função mínima de evento de contato da função de análise da jornada do visitante baseada em consentimento. Elas atendem a propósitos diferentes e não devem ser descritas como um sistema único com uma única base legal.
+A medição de contactos e a análise do percurso exigem consentimento de análise. WhatsApp e e-mail continuam disponíveis sem rastreio opcional.
 
 ### 1. Eventos de contato
 
-Quando um visitante seleciona deliberadamente um link do WhatsApp ou e-mail, o site pode registrar um evento mínimo mostrando que o ponto de entrada de contato foi aberto. Sem o consentimento para análise, esse evento foi projetado para conter apenas:
+Só com consentimento de análise, selecionar um link WhatsApp ou e-mail pode registar um evento contendo:
 
 - o canal selecionado;
 - um tipo de evento `open_intent`;
@@ -24,11 +24,11 @@ Quando um visitante seleciona deliberadamente um link do WhatsApp ou e-mail, o s
 - idioma do site; e
 - um status de "intenção" (`intent`).
 
-Sem o consentimento para análise, esse registro não deve criar ou ler um identificador de visitante/sessão VJT e não deve conter um histórico de navegação reconstruído, URL de referência completa, parâmetros de campanha, endereço IP, agente do usuário ou geolocalização. O processamento de segurança autônomo e de curta duração pode ocorrer para limitação de taxa.
+Sem consentimento de análise não são pedidos tokens, definido o cookie de medição de contactos ou registadas aberturas. Com consentimento, o evento pode ligar-se ao percurso descrito abaixo. Um tratamento de segurança separado pode proteger o contacto solicitado.
 
 Um registro `open_intent` significa apenas que o link de contato do site foi acionado. Não prova que um dispositivo abriu o WhatsApp ou um cliente de e-mail com sucesso, que o visitante enviou uma mensagem ou que a Kssmi recebeu uma.
 
-Para um formulário de consulta, um evento `submission_success` significa que o processo de envio configurado no site relatou sucesso. Isso não prova que um destinatário leu ou respondeu ao e-mail.
+Um evento `submission_success` significa que o site aceitou o pedido no processo de envio, que pode incluir uma fila. Não comprova a entrega do e-mail, a receção por uma pessoa específica, a leitura ou uma resposta.
 
 ### 2. Rastreamento da Jornada do Visitante (VJT)
 
@@ -46,20 +46,20 @@ A jornada de análise deve permanecer desativada até que o visitante conceda o 
 
 ### 3. Publicidade e análises de terceiros
 
-Google Analytics, Google Ads, Google Tag Manager ou tecnologia de medição comparável devem operar de acordo com as categorias de consentimento selecionadas pelo visitante e a configuração real do site. O aviso final deve descrever apenas produtos e recursos que estejam genuinamente ativados.
+Google Analytics, Google Ads, Google Tag Manager ou tecnologias comparáveis funcionam segundo as categorias de consentimento escolhidas e a configuração ativa do site. O armazenamento para análise e publicidade permanece recusado até ao consentimento correspondente.
 
 ### 4. Cookies e armazenamento do navegador
 
-Os seguintes períodos e critérios aplicam-se aos sistemas do site descritos neste aviso:
+Os principais elementos de armazenamento do navegador são listados abaixo. Os identificadores de terceiros variam conforme fornecedor, navegador, consentimento e configuração ativa.
 
 | Nome | Provedor | Finalidade | Categoria | Duração | Tipo de armazenamento |
 | --- | --- | --- | --- | --- | --- |
-| `cookie-consent` | Kssmi | Lembrar as escolhas do visitante quanto a análises e publicidade | Necessário | Até que a escolha seja alterada ou o armazenamento do navegador seja limpo | Local storage |
-| `vjt_visitor_id` | Kssmi | Associar visitas consentidas com uma jornada de visitante | Análise | Cookie: up to about 365 days; local copy: Até que o consentimento para análise seja retirado ou o armazenamento do navegador seja limpo | Cookie e armazenamento local |
-| `vjt_session_id` | Kssmi | Associar eventos de página consentidos dentro de uma sessão | Análise | About 30 minutes | Cookie |
+| `cookie-consent` | Kssmi | Lembrar as escolhas do visitante quanto a análises e publicidade | Necessário | Até que a escolha seja alterada ou o armazenamento do navegador seja limpo | Armazenamento local |
+| `vjt_visitor_id` | Kssmi | Associar visitas consentidas com uma jornada de visitante | Análise | Cookie: até cerca de 365 dias; cópia local: Até que o consentimento para análise seja retirado ou o armazenamento do navegador seja limpo | Cookie e armazenamento local |
+| `vjt_session_id` | Kssmi | Associar eventos de página consentidos dentro de uma sessão | Análise | Cerca de 30 minutos | Cookie |
 | `KSSMI_VJT_IDENTITY` | Kssmi | Identidade de servidor assinada que associa as visitas consentidas dentro de um ciclo de consentimento; não pode ser lida pelos scripts da página | Análise | Até aproximadamente 365 dias; expirado após a retirada quando o navegador o permite | Cookie (HttpOnly) |
-| `KSSMI_VJT_CONTACT` | Kssmi | Sessão assinada de curta duração que protege as estatísticas de eventos de contacto contra eventos falsificados; contém um valor aleatório, não um identificador VJT, e é definida sem consentimento para análises | Segurança dos eventos de contacto | Aproximadamente 30 minutos, renovada durante a navegação | Cookie (HttpOnly) |
-| Outros identificadores do Google/terceiros | Google / relevant third party | Análise ou publicidade | Análise/publicidade | Varia conforme o fornecedor e a configuração | Cookie ou tecnologia similar |
+| `KSSMI_VJT_CONTACT` | Kssmi | Sessão assinada que protege estatísticas de contactos consentidas, ligada ao ciclo atual; emitida apenas com consentimento de análise | Análise | Aproximadamente 30 minutos, renovada durante a navegação | Cookie (HttpOnly) |
+| Outros identificadores do Google/terceiros | Google / terceiro relevante | Análise ou publicidade | Análise/publicidade | Varia conforme o fornecedor e a configuração | Cookie ou tecnologia similar |
 
 O inventário de cookies, o banner de consentimento e a implementação ao vivo devem estar de acordo. Renomear um rastreador ou mover um identificador de um cookie para armazenamento local não isenta a tecnologia da necessidade de consentimento por si só.
 

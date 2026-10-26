@@ -24,18 +24,10 @@ Der für die in diesen Hinweisen beschriebene Verarbeitung Verantwortliche ist:
 Postleitzahl: 518000  
 Datenschutzkontakt: **privacy [at] kssmi [dot] com**
 
-### 3. EU-Vertreter
-
-EU-Vertreter gemäß Artikel 27 DSGVO:  
-**Kssmi Eyewear**  
-Montagnola, Via Nicola Spedalieri, 7  
-00142 Roma RM, Italien  
-Datenschutzkontakt: **privacy [at] kssmi [dot] com**
-
-### 4. Kinder
+### 3. Kinder
 
 Die Website richtet sich an Geschäftskunden und nicht an Kinder. Wenn wir erfahren, dass ein Kind ohne angemessene Erlaubnis personenbezogene Daten bereitgestellt hat, ergreifen wir angemessene Schritte, um diese zu löschen.
 
-### 5. Automatisierte Entscheidungen
+### 4. Automatisierte Entscheidungen
 
 Kssmi trifft keine Entscheidungen mit rechtlicher oder ähnlich erheblicher Wirkung ausschließlich auf der Grundlage einer automatisierten Verarbeitung von Website-Besucherdaten. Einwilligungsbasierte Analysen können Interaktions- oder Engagement-Messwerte für Website-Leistung und Zuordnung berechnen; diese Messwerte werden jedoch nicht für solche Entscheidungen über eine Person verwendet.

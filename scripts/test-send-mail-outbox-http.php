@@ -69,7 +69,7 @@ function sm_mail(string $tree): array {
 }
 
 function sm_inquiry(string $email, string $details, string $name = 'Test Verify'): array {
-    return ['name' => $name, 'email' => $email, 'details' => $details, 'language' => 'en', 'source' => 'quote-page', 'cf-turnstile-response' => 'test-token'];
+    return ['name' => $name, 'email' => $email, 'details' => $details, 'language' => 'en', 'source' => 'quote-page', 'cf-turnstile-response' => 'test-token', 'inquiry_privacy_consent' => '1', 'inquiry_notice_id' => 'inquiry-privacy-2026-10-23-v1'];
 }
 
 $server = null;
@@ -81,6 +81,7 @@ try {
     foreach (glob("{$repo}/private/*.php") ?: [] as $file) {
         sm_write("{$tree}/private/" . basename($file), (string)file_get_contents($file));
     }
+    sm_write("{$tree}/private/inquiry-privacy-notice.json", (string)file_get_contents("{$repo}/private/inquiry-privacy-notice.json"));
     $sendMail = (string)file_get_contents("{$tree}/public/send-mail.php");
     $call = "\$turnstileResult = verifyTurnstileDetailed(\$turnstileToken, \$config['turnstile_secret']);";
     sm_assert(substr_count($sendMail, $call) === 1, 'The Turnstile call to replace was not found exactly once.');
@@ -148,6 +149,7 @@ PHP);
     $environment = getenv();
     if (!is_array($environment)) $environment = [];
     $environment['KSSMI_VJT_DATA_DIR'] = "{$tree}/vjt";
+    $environment['KSSMI_SHORTLINK_DATA_DIR'] = "{$tree}/shortlinks";
     $environment['KSSMI_VJT_EVENT_AUTH_SECRET'] = str_repeat('a', 64);
     $pipes = [];
     $server = proc_open($command, [0 => ['pipe', 'r'], 1 => ['file', "{$tree}/server.out", 'a'], 2 => ['file', "{$tree}/server.log", 'a']], $pipes, $tree, $environment);
@@ -161,6 +163,14 @@ PHP);
     sm_assert($socket !== false, 'The PHP built-in server did not start.');
 
     $pdf = "%PDF-1.4\n1 0 obj << /Type /Catalog >> endobj\ntrailer << /Root 1 0 R >>\n%%EOF\n";
+
+    $missingConsent = sm_inquiry('consent@example.com', 'No consent');
+    unset($missingConsent['inquiry_privacy_consent']);
+    $rejected = sm_post($port, '198.51.100.30', $missingConsent);
+    sm_assert($rejected['status'] === 422 && sm_mail($tree) === [], 'Missing inquiry consent must not send mail.');
+    $staleNotice = sm_inquiry('consent@example.com', 'Stale notice');
+    $staleNotice['inquiry_notice_id'] = 'old-notice';
+    sm_assert(sm_post($port, '198.51.100.31', $staleNotice)['status'] === 422, 'Stale notice must be rejected.');
 
     // 1. A normal inquiry with an attachment: accepted, both messages sent.
     $first = sm_post($port, '198.51.100.1', sm_inquiry('jack@kssmi.com', 'Acceptance test one'), [['attachments[]', 'drawing.pdf', 'application/pdf', $pdf]]);
@@ -197,6 +207,9 @@ PHP);
     $jobs = glob("{$tree}/email_data/outbox/[0-9]*") ?: [];
     sm_assert(count($jobs) === 1, 'The undelivered inquiry must stay in the outbox.');
     $job = json_decode((string)file_get_contents($jobs[0] . '/job.json'), true);
+    $consent = $job['record']['form']['inquiry_consent'] ?? [];
+    sm_assert(($consent['granted'] ?? false) === true && ($consent['policy_version'] ?? '') === '1.1'
+        && strlen($consent['notice_sha256'] ?? '') === 64 && ($consent['received_at'] ?? '') !== '', 'Server-side consent evidence must survive queueing.');
     sm_assert($job['steps']['sales']['state'] === 'pending' && $job['steps']['autoreply']['state'] === 'pending' && $job['next_attempt_at'] > time(), 'Both steps must be pending with a backoff.');
     unlink("{$tree}/smtp-down");
     $job['next_attempt_at'] = time() - 1;   // as if the minute had passed
@@ -208,6 +221,20 @@ PHP);
     $mail = sm_mail($tree);
     sm_assert(count($mail) === 8 && $mail[6]['to'][0][0] === 'sales@kssmi.com' && $mail[7]['to'][0][0] === 'buyer@example.com', 'The worker must send the notification and the reply.');
     sm_assert(glob("{$tree}/email_data/outbox/[0-9]*") === [] && str_contains($workerOut, '"pending":0'), 'The outbox must be empty afterwards.');
+    $receipts = glob("{$tree}/email_data/inquiry-consents/*.json") ?: [];
+    sm_assert(count($receipts) === 4, 'Each distinct accepted inquiry must retain independent consent evidence after queue deletion.');
+    $receipt = json_decode((string)file_get_contents($receipts[0]), true);
+    sm_assert(($receipt['consent']['granted'] ?? false) === true && strlen($receipt['subject_sha256'] ?? '') === 64
+        && !isset($receipt['email']) && !isset($receipt['message']), 'Receipt must retain minimal evidence, without raw email or message.');
+
+    // Configuration failure must fail closed before mail or queue acceptance.
+    $noticePath = "{$tree}/private/inquiry-privacy-notice.json";
+    $noticeBytes = (string)file_get_contents($noticePath);
+    file_put_contents($noticePath, '{"id":"broken"}');
+    $brokenNotice = sm_post($port, '198.51.100.32', sm_inquiry('config@example.com', 'Broken notice'));
+    file_put_contents($noticePath, $noticeBytes);
+    sm_assert($brokenNotice['status'] === 503 && count(sm_mail($tree)) === 8
+        && glob("{$tree}/email_data/outbox/[0-9]*") === [], 'Invalid server notice must return 503 without accepting or mailing an inquiry.');
 
     // 6. Acceptance time is logged and excludes SMTP; no PHP warnings anywhere.
     $log = (string)file_get_contents("{$tree}/server.log");
@@ -258,6 +285,26 @@ PHP);
     sm_assert(proc_close($worker) === 0 && str_contains($workerOut, 'blocklist retention {"ok":true,"removed_hits":1'), "The worker must purge expired blocked submissions: {$workerOut} {$workerErr}");
     $hitsData = json_decode((string)file_get_contents($hitsPath), true);
     sm_assert(count($hitsData['hits']) === 1 && !str_contains((string)file_get_contents($hitsPath), 'expired@example.com'), 'The expired record must be gone from the file.');
+
+    // A broken statistics store must report maintenance failure without
+    // preventing delivery of an already accepted inquiry.
+    file_put_contents($rulesPath, json_encode(['version' => 1, 'rules' => []]));
+    file_put_contents("{$tree}/smtp-down", 'synthetic failure');
+    $beforeFault = count(sm_mail($tree));
+    $queuedFault = sm_post($port, '198.51.100.40', sm_inquiry('maintenance@example.com', 'Drain despite retention failure'));
+    sm_assert(($queuedFault['json']['success'] ?? false) === true, 'The fault fixture must be accepted.');
+    unlink("{$tree}/smtp-down");
+    foreach (glob("{$tree}/email_data/outbox/[0-9]*") ?: [] as $jobPath) {
+        $pending = json_decode((string)file_get_contents($jobPath . '/job.json'), true);
+        $pending['next_attempt_at'] = time() - 1;
+        file_put_contents($jobPath . '/job.json', json_encode($pending));
+    }
+    sm_write("{$tree}/shortlinks/shortlinks.sqlite", 'not a SQLite database');
+    $worker = proc_open([...array_slice($command, 0, array_search('-d', $command, true) ?: 1), "{$tree}/private/inquiry-outbox-worker.php"], [1 => ['pipe', 'w'], 2 => ['pipe', 'w']], $workerPipes, $tree, $environment);
+    $faultOut = (string)stream_get_contents($workerPipes[1]);
+    $faultErr = (string)stream_get_contents($workerPipes[2]);
+    sm_assert(proc_close($worker) === 0 && str_contains($faultErr, 'mail drain continues'), 'The worker must report retention failure and continue: ' . $faultOut . $faultErr);
+    sm_assert(count(sm_mail($tree)) === $beforeFault + 2 && glob("{$tree}/email_data/outbox/[0-9]*") === [], 'Maintenance failure must not strand accepted mail.');
 
     echo 'Send-mail outbox HTTP tests passed (server-side acceptance ' . implode(', ', $timings[1]) . " ms).\n";
 } finally {

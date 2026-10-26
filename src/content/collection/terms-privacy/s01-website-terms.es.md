@@ -11,7 +11,9 @@ title: "Términos de uso del sitio web"
 
 ### 1. Operador del sitio web
 
-Este sitio web es operado bajo el nombre Kssmi por **Shenzhen Kssmi Technology Co., Ltd.**, con domicilio registrado en **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Código postal: 518000**.
+**Shenzhen Kssmi Technology Co., Ltd.** (深圳柯视觅科技有限责任公司)
+
+Dirección de contacto comercial y de la fábrica: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Código postal: 518000**
 
 ### 2. Aceptación de estos términos
 
@@ -41,9 +43,9 @@ Los nombres, las marcas y los materiales de terceros siguen siendo propiedad de 
 
 ### 6. Información enviada por los usuarios
 
-Usted es responsable de garantizar que la información que envíe sea precisa, lícita y que tenga la autoridad para proporcionarla. No envíe archivos de diseño confidenciales, datos personales de categorías especiales o datos personales de terceros, a menos que sea necesario para la consulta y esté autorizado para hacerlo.
+Facilite solo información necesaria que esté autorizado a compartir. Para la consulta inicial, envíe un resumen del proyecto y referencias aptas para una conversación preliminar. Antes de compartir diseños confidenciales completos, contacte con ventas para acordar y firmar un NDA y definir el canal de envío. No envíe datos personales sensibles ni información innecesaria sobre terceros. El envío no transfiere la propiedad ni concede derechos más allá de atender la solicitud y el proyecto acordado.
 
-La propiedad y el uso permitido de los diseños del proyecto, muestras, herramientas, especificaciones y otros materiales comerciales deben regirse por la cotización aplicable, el acuerdo de confidencialidad o el contrato de fabricación.
+El NDA firmado por ambas partes regula la confidencialidad, el uso permitido de los materiales y los remedios correspondientes, incluida la ley aplicable y la resolución de controversias. Estas condiciones no modifican ni limitan el NDA; un acuerdo posterior prevalece solo en la medida permitida por él. La propiedad, los moldes, la exclusividad y la entrega de archivos siguen los acuerdos del proyecto. Una consulta web o solicitud de NDA no autoriza desarrollo, muestras, moldes o producción de pago: se requiere la aceptación escrita de ambas partes del presupuesto, pedido o acuerdo y la confirmación de pago aplicable. Puede aceptarse por correo mediante contactos autorizados, respetando los requisitos de firma pactados.
 
 ### 7. Servicios de terceros y enlaces
 
@@ -55,7 +57,7 @@ Nuestro objetivo es mantener el sitio web disponible y preciso, pero no garantiz
 
 ### 9. Responsabilidad
 
-Nada en estos términos excluye o limita la responsabilidad que legalmente no puede ser excluida.
+Nada en estas condiciones excluye o limita responsabilidades que no puedan excluirse legalmente. En la medida permitida por la ley, Kssmi no responde de pérdidas indirectas, incidentales, especiales o consecuentes derivadas únicamente del uso o de la imposibilidad de usar este sitio informativo. La responsabilidad relativa a presupuestos, pedidos, muestras, productos o proyectos de fabricación se rige por el acuerdo comercial escrito aplicable.
 
 ### 10. Ley aplicable y disputas
 

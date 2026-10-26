@@ -11,7 +11,9 @@ title: "Terms of website use"
 
 ### 1. Website operator
 
-This website is operated under the Kssmi name by **Shenzhen Kssmi Technology Co., Ltd.**, with its registered address at **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**.
+**Shenzhen Kssmi Technology Co., Ltd.** (深圳柯视觅科技有限责任公司)
+
+Business contact and factory address: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**
 
 ### 2. Acceptance of these terms
 
@@ -41,9 +43,9 @@ Third-party names, marks and materials remain the property of their respective o
 
 ### 6. Information submitted by users
 
-You are responsible for ensuring that information you submit is accurate, lawful and that you have authority to provide it. Do not submit confidential design files, special-category personal data or third-party personal data unless it is necessary for the inquiry and you are authorised to do so.
+Provide only information you are entitled to share and that is needed for your request. For an initial inquiry, send a project outline and reference materials suitable for preliminary discussion. Before sharing complete confidential designs, contact sales to arrange and sign an NDA and agree the submission channel. Do not send sensitive personal data or unnecessary information about others. Submission does not transfer ownership or grant rights beyond handling your request and the agreed project.
 
-Ownership and permitted use of project designs, samples, tooling, specifications and other commercial materials should be governed by the applicable quotation, non-disclosure agreement or manufacturing contract.
+An NDA signed by both parties governs confidentiality, permitted use of project materials and related remedies, including its governing-law and dispute provisions. These website terms do not amend or limit that NDA; a later agreement overrides it only as the NDA permits. Ownership, tooling, exclusivity and file handover follow the applicable project agreements. A website inquiry or request for an NDA does not authorise paid development, sampling, tooling or production. Such work requires both parties' written acceptance of the relevant quotation, order or agreement and any applicable payment confirmation. Written acceptance may include email through authorised contacts, subject to any agreed signature requirements.
 
 ### 7. Third-party services and links
 

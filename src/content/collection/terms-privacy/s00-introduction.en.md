@@ -16,8 +16,8 @@ This page contains two documents:
 
 The website is intended primarily for business customers, distributors, brands and other parties interested in OEM or ODM eyewear manufacturing. References to “Kssmi”, “we”, “us” or “our” mean **Shenzhen Kssmi Technology Co., Ltd.**, unless the context indicates otherwise.
 
-**Effective date:** 2026-07-19  
-**Last updated:** 2026-07-19  
-**Document version:** 1.0
+**Effective date:** 2026-10-26\
+**Last updated:** 2026-10-26\
+**Document version:** 1.1
 
 If a specific quotation, purchase order, proforma invoice, manufacturing agreement or other written contract conflicts with these website terms, the specific written agreement will govern the relevant commercial transaction.

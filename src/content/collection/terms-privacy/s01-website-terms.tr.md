@@ -11,7 +11,9 @@ title: "Web sitesi kullanım şartları"
 
 ### 1. Web sitesi operatörü
 
-Bu web sitesi, Kssmi adı altında **Shenzhen Kssmi Technology Co., Ltd.** tarafından işletilmektedir, kayıtlı adresi **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, Çin, Posta kodu: 518000**'dir.
+**Shenzhen Kssmi Technology Co., Ltd.** (深圳柯视觅科技有限责任公司)
+
+Ticari iletişim ve fabrika adresi: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, Çin, Posta kodu: 518000**
 
 ### 2. Bu şartların kabulü
 
@@ -41,9 +43,9 @@ Aksi belirtilmedikçe, web sitesi tasarımı, metinleri, resimleri, grafikleri, 
 
 ### 6. Kullanıcılar tarafından gönderilen bilgiler
 
-Gönderdiğiniz bilgilerin doğru, yasal olduğundan ve bunları sağlama yetkisine sahip olduğunuzdan emin olmak sizin sorumluluğunuzdadır. Soruşturma için gerekli olmadıkça ve yetkiniz olmadıkça gizli tasarım dosyaları, özel kategori kişisel veriler veya üçüncü taraf kişisel verileri göndermeyin.
+Yalnızca paylaşmaya yetkili olduğunuz ve talep için gerekli bilgileri verin. İlk başvuruda proje özeti ve ön görüşmeye uygun referanslar gönderin. Eksiksiz gizli tasarımları paylaşmadan önce NDA üzerinde anlaşmak, imzalamak ve gönderim kanalını belirlemek için satışla iletişime geçin. Hassas kişisel veri veya başkaları hakkında gereksiz bilgi göndermeyin. Gönderim mülkiyeti devretmez; talep ve kararlaştırılan proje için gerekenin ötesinde hak tanımaz.
 
-Proje tasarımlarının, numunelerin, araçların, spesifikasyonların ve diğer ticari materyallerin mülkiyeti ve izin verilen kullanımı, geçerli fiyat teklifi, gizlilik anlaşması veya üretim sözleşmesi tarafından yönetilmelidir.
+İki tarafın imzaladığı NDA; gizliliği, proje materyallerinin izin verilen kullanımını ve hukuki yolları, uygulanacak hukuk ve uyuşmazlık hükümleriyle birlikte düzenler. Site koşulları NDA'yı değiştirmez veya sınırlamaz; sonraki anlaşma yalnızca NDA'nın izin verdiği ölçüde önceliklidir. Mülkiyet, kalıp, münhasırlık ve dosya teslimi proje anlaşmalarına tabidir. Site başvurusu veya NDA talebi ücretli geliştirme, numune, kalıp ya da üretime izin vermez. İlgili teklif, sipariş veya anlaşmanın iki tarafça yazılı kabulü ve gerekli ödeme teyidi gerekir. Yazılı kabul, kararlaştırılan imza şartlarına bağlı olarak yetkili kişiler üzerinden e-postayı içerebilir.
 
 ### 7. Üçüncü taraf hizmetleri ve bağlantılar
 
@@ -55,7 +57,7 @@ Web sitesini kullanılabilir ve doğru tutmayı hedefliyoruz, ancak kesintisiz e
 
 ### 9. Sorumluluk
 
-Bu şartlardaki hiçbir şey, yasal olarak hariç tutulamayacak olan sorumluluğu hariç tutmaz veya sınırlamaz.
+Bu koşullar kanunen dışlanamayan sorumluluğu dışlamaz veya sınırlamaz. Hukukun izin verdiği ölçüde Kssmi, yalnızca bu bilgilendirme sitesinin kullanılması veya kullanılamamasından doğan dolaylı, arızi, özel ya da sonuçsal kayıplardan sorumlu değildir. Teklif, sipariş, numune, ürün veya üretim projesiyle ilgili sorumluluk ilgili yazılı ticari anlaşmaya tabidir.
 
 ### 10. Geçerli yasa ve uyuşmazlıklar
 

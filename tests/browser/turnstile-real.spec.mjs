@@ -117,12 +117,28 @@ async function clickContact(page) {
   await page.locator('a[data-vjt-contact="mailto"]:visible').first().click();
 }
 
-test('proof success (official pass key): capability minted, widget removed, contact click authenticated', async ({ page }, testInfo) => {
+test('no capability without consent: rejected analytics keeps contact navigation silent', async ({ page }, testInfo) => {
   await setup(page, testInfo, { proofKey: KEYS.invisiblePass });
   await page.goto('/');
   await page.locator('#cookie-btn-reject').click();
+  await clickContact(page);
+  await page.waitForTimeout(1000);
+  // No proof widget, no capability request, no contact event: contact
+  // navigation stays available but nothing is measured without consent.
+  expect(await proofWidgets(page)).toBe(0);
+  expect(testInfo.rec.capabilityPosts).toEqual([]);
+  expect(testInfo.rec.intents).toEqual([]);
+  await expectNoTurnstileErrors(page, testInfo, 2000);
+});
+
+test('proof success (official pass key): capability minted, widget removed, contact click authenticated', async ({ page }, testInfo) => {
+  await setup(page, testInfo, { proofKey: KEYS.invisiblePass });
+  await page.goto('/');
+  // Contact measurement follows analytics consent, so grant it first.
+  await page.locator('#cookie-btn-accept').click();
   await expect.poll(() => testInfo.rec.capabilityPosts.length, { timeout: 30000 }).toBe(1);
-  expect(testInfo.rec.capabilityPosts[0]).toEqual({ mode: 'contact', turnstile_token: DUMMY_TOKEN });
+  expect(testInfo.rec.capabilityPosts[0]).toMatchObject({ mode: 'contact', turnstile_token: DUMMY_TOKEN, analytics: true });
+  expect(testInfo.rec.capabilityPosts[0].consent_cycle, 'capability bound to the consent cycle').toBeTruthy();
   await expect(page.locator('#kssmi-vjt-capability-turnstile')).toHaveCount(0);
   expect(await cooldownUntil(page)).toBe(0);
   await clickContact(page);
@@ -134,7 +150,7 @@ test('proof success (official pass key): capability minted, widget removed, cont
 test('proof failure (official fail key): cooldown starts, no Turnstile error, no new widget while cooling down', async ({ page }, testInfo) => {
   await setup(page, testInfo, { proofKey: KEYS.invisibleFail });
   await page.goto('/');
-  await page.locator('#cookie-btn-reject').click();
+  await page.locator('#cookie-btn-accept').click();
   await expect.poll(() => cooldownUntil(page), { timeout: 30000 }).toBeGreaterThan(Date.now());
   await expect(page.locator('#kssmi-vjt-capability-turnstile')).toHaveCount(0);
   expect(testInfo.rec.capabilityPosts, 'a failed proof requests no capability').toEqual([]);
@@ -154,7 +170,7 @@ test('proof failure (official fail key): cooldown starts, no Turnstile error, no
 test('proof recovery: a failed API load cools down, then the next retry succeeds after the cooldown', async ({ page }, testInfo) => {
   await setup(page, testInfo, { proofKey: KEYS.invisiblePass, abortFirstApi: true });
   await page.goto('/');
-  await page.locator('#cookie-btn-reject').click();
+  await page.locator('#cookie-btn-accept').click();
   await expect.poll(() => cooldownUntil(page), { timeout: 30000 }).toBeGreaterThan(Date.now());
   expect(testInfo.rec.capabilityPosts).toEqual([]);
   // Simulate the 30-minute cooldown having passed. Contact Core's own retry
@@ -171,7 +187,7 @@ for (const phase of ['api', 'challenge']) {
   test(`proof abort: soft navigation while waiting for the ${phase} ends the attempt without a cooldown`, async ({ page }, testInfo) => {
     await setup(page, testInfo, { proofKey: KEYS.invisiblePass, delay: { [phase]: 6000 } });
     await page.goto('/');
-    await page.locator('#cookie-btn-reject').click();
+    await page.locator('#cookie-btn-accept').click();
     if (phase === 'challenge') {
       await expect(page.locator('#kssmi-vjt-capability-turnstile')).toHaveCount(1, { timeout: 20000 });
     } else {
@@ -196,6 +212,7 @@ test('form (official pass key): token, local rejection resets the widget, soft n
   await page.locator('#name').fill('Turnstile test');
   await page.locator('#email').fill('turnstile-test@example.invalid');
   await page.locator('#details').fill('Real Turnstile test key; answered locally, never sent.');
+  await page.locator('#inquiry-privacy-consent').check();
   await page.locator('#inquiry-form button[type="submit"]').click();
   await expect(page.locator('#form-error')).toBeVisible();
   expect(testInfo.rec.sendMail).toBe(1);

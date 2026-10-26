@@ -23,19 +23,10 @@ Il titolare del trattamento responsabile del trattamento descritto nella present
 905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, Cina  
 Codice postale: 518000  
 Contatto privacy: **privacy [at] kssmi [dot] com**
-### 3. Rappresentante nell’UE
+### 3. Minori
 
+Il sito è destinato a utenti aziendali e non ai minori. Se apprendiamo che un minore ha fornito dati personali senza l'autorizzazione appropriata, adottiamo misure ragionevoli per cancellarli.
 
-Rappresentante nell'UE ai sensi dell'Articolo 27 del GDPR:  
-**Kssmi Eyewear**  
-Montagnola, Via Nicola Spedalieri, 7  
-00142 Roma RM, Italia  
-Contatto privacy: **privacy [at] kssmi [dot] com**
+### 4. Decisioni automatizzate
 
-### 4. Minori
-
-Il sito web è progettato per utenti aziendali e non è diretto ai minori.
-
-### 5. Decisioni automatizzate
-
-Kssmi non prenda decisioni che producono effetti legali o analogamente significativi unicamente attraverso il trattamento automatizzato dei dati dei visitatori del sito web.
+Kssmi non adotta decisioni con effetti giuridici o analogamente significativi basate esclusivamente sul trattamento automatizzato dei dati dei visitatori. Le analisi basate sul consenso possono misurare interazioni e coinvolgimento per le prestazioni del sito e l'attribuzione, ma tali misure non vengono usate per adottare queste decisioni su una persona.

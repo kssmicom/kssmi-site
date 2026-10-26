@@ -23,19 +23,10 @@ Pengontrol sing tanggung jawab kanggo pamrosesan sing diterangake ing kabar iki 
 905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China  
 Kode pos: 518000  
 Kontak privasi: **privacy [at] kssmi [dot] com**
-### 3. Wakil EU
+### 3. Bocah-bocah
 
+Situs iki kanggo pangguna bisnis, dudu bocah. Yen ngerti bocah menehi data pribadi tanpa idin sing cocog, kita njupuk langkah sing wajar kanggo mbusake.
 
-Perwakilan EU miturut Pasal 27 GDPR:  
-**Kssmi Eyewear**  
-Montagnola, Via Nicola Spedalieri, 7  
-00142 Roma RM, Italy  
-Kontak privasi: **privacy [at] kssmi [dot] com**
+### 4. Keputusan otomatis
 
-### 4. Bocah-bocah
-
-Situs web kasebut dirancang kanggo pangguna bisnis lan ora ditujokake kanggo bocah-bocah.
-
-### 5. Keputusan otomatis
-
-Kssmi ora nggawe keputusan sing ngasilake efek hukum utawa sing padha sacara signifikan mung liwat pangolahan otomatis data pengunjung situs web.
+Kssmi ora nggawe keputusan sing duwe akibat hukum utawa pengaruh penting sing padha mung saka pangolahan otomatis data pengunjung. Analisis kanthi idin bisa ngukur interaksi kanggo kinerja lan atribusi situs, nanging ukuran kasebut ora kanggo keputusan kaya mangkono tumrap wong.

@@ -32,3 +32,7 @@ Kami juga mungkin berkongsi maklumat yang berkaitan dengan penasihat profesional
 Kssmi ditubuhkan di China. Maklumat yang dihantar terus oleh pengguna melalui laman atau saluran komunikasi yang dipilih dengan sengaja boleh diproses di China.
 
 Sesetengah penyedia perkhidmatan juga boleh memproses maklumat di luar negara pengguna atau Kawasan Ekonomi Eropah. Jika Bab V GDPR terpakai pada pemindahan oleh pengawal atau pemproses, pemindahan itu mesti menggunakan mekanisme sah yang sesuai dengan keadaan, seperti keputusan kecukupan, klausa kontrak standard Suruhanjaya Eropah yang terpakai, atau perlindungan atau pengecualian lain yang dibenarkan oleh undang-undang.
+
+Langkah teknikal dan organisasi tambahan digunakan apabila sesuai. Maklumat perlindungan data anda boleh diminta melalui **privacy [at] kssmi [dot] com**, tertakluk kepada sekatan kerahsiaan yang sah.
+
+Kategori ini tidak menghapuskan tanggungjawab Kssmi apabila melantik penyedia. Bagi pendedahan atau pemberian ke luar negara tertakluk undang-undang China, maklumat penerima, perlindungan dan persetujuan berasingan yang diperlukan mesti disediakan sebelum pemprosesan; notis ini bukan persetujuan berasingan. Hubungan privasi boleh memberi maklumat penerima dan perlindungan berkaitan. Kutipan langsung dan pendedahan kemudian kepada organisasi lain dinilai berasingan.

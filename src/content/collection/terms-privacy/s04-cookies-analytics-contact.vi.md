@@ -9,11 +9,11 @@ navLabel: "Cookie và sự kiện liên hệ"
 title: "Cookie, phân tích và tương tác liên hệ"
 ---
 
-Kssmi tách biệt chức năng sự kiện liên hệ tối thiểu khỏi chức năng phân tích hành trình của khách truy cập dựa trên sự đồng ý. Chúng phục vụ các mục đích khác nhau và không được mô tả như một hệ thống duy nhất có một cơ sở pháp lý duy nhất.
+Đo lường liên hệ và phân tích hành trình đều cần đồng ý phân tích. WhatsApp và email vẫn dùng được khi từ chối theo dõi tùy chọn.
 
 ### 1. Sự kiện liên hệ
 
-Khi khách truy cập cố ý chọn liên kết WhatsApp hoặc email, trang web có thể ghi lại một sự kiện tối thiểu cho thấy điểm truy cập liên hệ đã được mở. Nếu không có sự đồng ý về phân tích, sự kiện này được thiết kế để chỉ chứa:
+Chỉ khi đồng ý phân tích, việc chọn liên kết WhatsApp hoặc email mới có thể ghi sự kiện gồm:
 
 - kênh đã chọn;
 - loại sự kiện `open_intent`;
@@ -24,11 +24,11 @@ Khi khách truy cập cố ý chọn liên kết WhatsApp hoặc email, trang we
 - ngôn ngữ trang web; và
 - trạng thái "ý định" (`intent`).
 
-Nếu không có sự đồng ý phân tích, hồ sơ này không được tạo hoặc đọc mã định danh phiên bản/khách truy cập VJT và không được chứa hành trình duyệt được định tuyến lại, URL liên kết giới thiệu đầy đủ, thông số chiến dịch, địa chỉ IP, tác nhân người dùng hoặc vị trí địa lý. Quá trình xử lý bảo mật ngắn hạn, riêng biệt có thể xảy ra để giới hạn tỷ lệ.
+Không đồng ý phân tích thì đo lường liên hệ không xin quyền, đặt cookie đo lường hay ghi thống kê mở. Khi đồng ý, sự kiện có thể gắn hành trình bên dưới. Xử lý bảo mật riêng có thể bảo vệ liên hệ được yêu cầu.
 
 Hồ sơ `open_intent` chỉ có nghĩa là liên kết liên hệ của trang web đã được kích hoạt. Nó không chứng minh rằng một thiết bị đã mở thành công WhatsApp hoặc ứng dụng email khách, rằng khách truy cập đã gửi tin nhắn hay Kssmi đã nhận được một tin nhắn.
 
-Đối với biểu mẫu yêu cầu, sự kiện `submission_success` có nghĩa là quá trình gửi được định cấu hình của trang web đã báo cáo thành công. Nó không chứng minh rằng người nhận đã đọc hoặc trả lời email.
+Sự kiện `submission_success` nghĩa là website đã nhận yêu cầu vào quy trình gửi, có thể gồm hàng đợi. Không chứng minh email đã giao, một người cụ thể đã nhận, đọc hay trả lời.
 
 ### 2. Theo dõi hành trình của khách truy cập (VJT)
 
@@ -46,20 +46,20 @@ Hành trình phân tích phải luôn bị tắt cho đến khi khách truy cậ
 
 ### 3. Quảng cáo và phân tích của bên thứ ba
 
-Google Analytics, Google Ads, Google Tag Manager hoặc công nghệ đo lường có thể so sánh được phải hoạt động theo các danh mục đồng ý mà khách truy cập đã chọn và cấu hình thực tế của trang web. Thông báo cuối cùng chỉ được mô tả các sản phẩm và tính năng được bật thực sự.
+Google Analytics, Google Ads, Google Tag Manager hoặc công nghệ tương đương hoạt động theo nhóm đồng ý được chọn và cấu hình đang bật. Lưu trữ phân tích và quảng cáo vẫn bị từ chối đến khi có đồng ý tương ứng.
 
 ### 4. Cookie và bộ lưu trữ của trình duyệt
 
-Các thời hạn và tiêu chí sau áp dụng cho những hệ thống trang web được mô tả trong thông báo này:
+Các mục lưu trữ trình duyệt chính được liệt kê bên dưới. Định danh bên thứ ba có thể thay đổi theo nhà cung cấp, trình duyệt, lựa chọn đồng ý và cấu hình đang bật.
 
 | Tên | Nhà cung cấp | Mục đích | Danh mục | Thời lượng | Loại bộ lưu trữ |
 | --- | --- | --- | --- | --- | --- |
-| `cookie-consent` | Kssmi | Ghi nhớ các lựa chọn quảng cáo và phân tích của khách truy cập | Cần thiết | Cho đến khi lựa chọn được thay đổi hoặc bộ nhớ trình duyệt bị xóa | Local storage |
-| `vjt_visitor_id` | Kssmi | Liên kết các lượt truy cập đã được đồng ý với hành trình của khách truy cập | Phân tích | Cookie: up to about 365 days; local copy: Cho đến khi rút lại sự đồng ý phân tích hoặc xóa bộ nhớ trình duyệt | Cookie và bộ nhớ cục bộ |
-| `vjt_session_id` | Kssmi | Liên kết các sự kiện trang đã được đồng ý trong một phiên | Phân tích | About 30 minutes | Cookie |
+| `cookie-consent` | Kssmi | Ghi nhớ các lựa chọn quảng cáo và phân tích của khách truy cập | Cần thiết | Cho đến khi lựa chọn được thay đổi hoặc bộ nhớ trình duyệt bị xóa | Bộ nhớ cục bộ |
+| `vjt_visitor_id` | Kssmi | Liên kết các lượt truy cập đã được đồng ý với hành trình của khách truy cập | Phân tích | Cookie: tối đa khoảng 365 ngày; bản sao cục bộ: Cho đến khi rút lại sự đồng ý phân tích hoặc xóa bộ nhớ trình duyệt | Cookie và bộ nhớ cục bộ |
+| `vjt_session_id` | Kssmi | Liên kết các sự kiện trang đã được đồng ý trong một phiên | Phân tích | Khoảng 30 phút | Cookie |
 | `KSSMI_VJT_IDENTITY` | Kssmi | Danh tính máy chủ có chữ ký, liên kết các lượt truy cập đã đồng ý trong một chu kỳ đồng ý; tập lệnh của trang không đọc được | Phân tích | Tối đa khoảng 365 ngày; hết hạn sau khi rút lại nếu trình duyệt cho phép | Cookie (HttpOnly) |
-| `KSSMI_VJT_CONTACT` | Kssmi | Phiên có chữ ký ngắn hạn, bảo vệ thống kê sự kiện liên hệ khỏi sự kiện giả mạo; chứa giá trị ngẫu nhiên, không phải mã định danh VJT, và được đặt khi chưa có sự đồng ý phân tích | Bảo mật sự kiện liên hệ | Khoảng 30 phút, gia hạn trong khi duyệt | Cookie (HttpOnly) |
-| Các mã định danh của Google/bên thứ ba khác | Google / relevant third party | Phân tích hoặc quảng cáo | Phân tích/quảng cáo | Thay đổi tùy theo nhà cung cấp và cấu hình | Cookie hoặc công nghệ tương tự |
+| `KSSMI_VJT_CONTACT` | Kssmi | Phiên ký số bảo vệ thống kê liên hệ được đồng ý, gắn chu kỳ hiện tại; chỉ cấp khi đồng ý phân tích | Phân tích | Khoảng 30 phút, gia hạn trong khi duyệt | Cookie (HttpOnly) |
+| Các mã định danh của Google/bên thứ ba khác | Google / bên thứ ba liên quan | Phân tích hoặc quảng cáo | Phân tích/quảng cáo | Thay đổi tùy theo nhà cung cấp và cấu hình | Cookie hoặc công nghệ tương tự |
 
 Hệ thống lưu trữ cookie, biểu ngữ đồng ý và quá trình triển khai trực tiếp phải thống nhất với nhau. Việc đổi tên trình theo dõi hoặc di chuyển mã định danh từ cookie sang bộ nhớ cục bộ không có nghĩa là công nghệ đó được miễn trừ việc cần sự đồng ý.
 

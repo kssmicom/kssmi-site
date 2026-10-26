@@ -9,11 +9,11 @@ navLabel: "Kuki dan acara kenalan"
 title: "Kuki, analitis dan interaksi kenalan"
 ---
 
-Kssmi memisahkan fungsi acara kenalan yang minimum daripada fungsi analitik perjalanan pelawat berasaskan persetujuan. Mereka mempunyai tujuan yang berbeza dan tidak boleh digambarkan sebagai satu sistem dengan satu asas undang-undang.
+Pengukuran hubungan dan analisis perjalanan kedua-duanya memerlukan persetujuan analisis. WhatsApp dan e-mel kekal tersedia tanpa penjejakan pilihan.
 
 ### 1. Acara kenalan
 
-Apabila pelawat sengaja memilih pautan WhatsApp atau e-mel, tapak web mungkin merekodkan peristiwa minimum yang menunjukkan bahawa titik kemasukan kenalan dibuka. Tanpa persetujuan analitis, acara ini direka bentuk untuk mengandungi sahaja:
+Hanya dengan persetujuan analisis, memilih pautan WhatsApp atau e-mel boleh merekod peristiwa yang mengandungi:
 
 - saluran yang dipilih;
 - jenis acara `open_intent`;
@@ -24,11 +24,11 @@ Apabila pelawat sengaja memilih pautan WhatsApp atau e-mel, tapak web mungkin me
 - bahasa tapak; dan
 - status "niat" (`intent`).
 
-Tanpa kebenaran analitik, rekod ini tidak boleh membuat atau membaca pengecam pelawat/sesi VJT dan tidak boleh mengandungi perjalanan penyemakan imbas yang dibina semula, URL perujuk penuh, parameter kempen, alamat IP, ejen pengguna atau geolokasi. Pemprosesan keselamatan jangka pendek yang berasingan mungkin berlaku untuk pengehadan kadar.
+Tanpa persetujuan analisis, pengukuran hubungan tidak meminta token, menetapkan kuki ukuran atau merekod statistik buka. Dengan persetujuan, peristiwa boleh dikaitkan dengan perjalanan di bawah. Pemprosesan keselamatan berasingan boleh melindungi hubungan diminta.
 
 Rekod `open_intent` hanya bermakna pautan kenalan tapak web telah dicetuskan. Ia tidak membuktikan peranti berjaya membuka WhatsApp atau pelanggan e-mel, pelawat menghantar mesej, atau Kssmi menerimanya.
 
-Untuk borang pertanyaan, peristiwa `submission_success` bermakna proses penghantaran yang dikonfigurasikan oleh tapak web melaporkan kejayaan. Ia tidak membuktikan bahawa penerima membaca atau membalas e-mel tersebut.
+Peristiwa `submission_success` bermaksud laman menerima pertanyaan ke proses penghantaran yang mungkin termasuk baris gilir. Ia tidak membuktikan e-mel dihantar, diterima individu tertentu, dibaca atau dibalas.
 
 ### 2. Penjejakan perjalanan pelawat (VJT)
 
@@ -46,20 +46,20 @@ Perjalanan analitis mesti kekal dilumpuhkan sehingga pelawat memberikan persetuj
 
 ### 3. Pengiklanan dan analisis pihak ketiga
 
-Analitis Google, Iklan Google, Pengurus Teg Google atau teknologi pengukuran setanding mesti beroperasi mengikut kategori persetujuan pilihan pelawat dan konfigurasi sebenar tapak. Notis akhir mesti menerangkan hanya produk dan ciri yang benar-benar didayakan.
+Google Analytics, Google Ads, Google Tag Manager atau teknologi setanding beroperasi mengikut kategori persetujuan dipilih dan konfigurasi aktif. Penyimpanan analisis dan pengiklanan kekal ditolak sehingga persetujuan berkaitan diberikan.
 
 ### 4. Kuki dan storan penyemak imbas
 
-Tempoh dan kriteria berikut terpakai pada sistem laman web yang diterangkan dalam notis ini:
+Item penyimpanan pelayar utama disenaraikan di bawah. Pengecam pihak ketiga mungkin berbeza mengikut penyedia, pelayar, persetujuan dan konfigurasi aktif.
 
 | Nama | Penyedia | Tujuan | Kategori | Tempoh | Jenis storan |
 | --- | --- | --- | --- | --- | --- |
-| `cookie-consent` | Kssmi | Ingat pilihan analitis dan pengiklanan pelawat | Perlu | Sehingga pilihan diubah atau storan pelayar dikosongkan | Local storage |
-| `vjt_visitor_id` | Kssmi | Mengaitkan lawatan yang dipersetujui dengan perjalanan pelawat | Analitis | Cookie: up to about 365 days; local copy: Sehingga persetujuan analitik ditarik balik atau storan pelayar dikosongkan | Kuki dan storan tempatan |
-| `vjt_session_id` | Kssmi | Mengaitkan acara halaman yang dipersetujui dalam satu sesi | Analitis | About 30 minutes | Kuki |
+| `cookie-consent` | Kssmi | Ingat pilihan analitis dan pengiklanan pelawat | Perlu | Sehingga pilihan diubah atau storan pelayar dikosongkan | Penyimpanan tempatan |
+| `vjt_visitor_id` | Kssmi | Mengaitkan lawatan yang dipersetujui dengan perjalanan pelawat | Analitis | Kuki: sehingga kira-kira 365 hari; salinan tempatan: Sehingga persetujuan analitik ditarik balik atau storan pelayar dikosongkan | Kuki dan storan tempatan |
+| `vjt_session_id` | Kssmi | Mengaitkan acara halaman yang dipersetujui dalam satu sesi | Analitis | Kira-kira 30 minit | Kuki |
 | `KSSMI_VJT_IDENTITY` | Kssmi | Identiti pelayan bertandatangan yang mengaitkan lawatan yang dipersetujui dalam satu kitaran persetujuan; tidak boleh dibaca oleh skrip halaman | Analitis | Sehingga kira-kira 365 hari; tamat tempoh selepas penarikan balik jika pelayar membenarkan | Kuki (HttpOnly) |
-| `KSSMI_VJT_CONTACT` | Kssmi | Sesi bertandatangan jangka pendek yang melindungi statistik acara hubungan daripada acara palsu; mengandungi nilai rawak, bukan pengecam VJT, dan ditetapkan tanpa persetujuan analitis | Keselamatan acara hubungan | Kira-kira 30 minit, diperbaharui semasa menyemak imbas | Kuki (HttpOnly) |
-| Pengecam Google/pihak ketiga lain | Google / relevant third party | Analitis atau pengiklanan | Analitis/pengiklanan | Berbeza mengikut penyedia dan konfigurasi | Kuki atau teknologi yang serupa |
+| `KSSMI_VJT_CONTACT` | Kssmi | Sesi bertandatangan melindungi statistik hubungan dipersetujui, terikat kitaran semasa; dikeluarkan hanya dengan persetujuan analisis | Analitis | Kira-kira 30 minit, diperbaharui semasa menyemak imbas | Kuki (HttpOnly) |
+| Pengecam Google/pihak ketiga lain | Google / pihak ketiga berkaitan | Analitis atau pengiklanan | Analitis/pengiklanan | Berbeza mengikut penyedia dan konfigurasi | Kuki atau teknologi yang serupa |
 
 Inventori kuki, sepanduk persetujuan dan pelaksanaan langsung mesti bersetuju. Menamakan semula penjejak atau mengalihkan pengecam daripada kuki ke storan tempatan tidak semestinya menjadikan teknologi itu dikecualikan dengan sendirinya.
 

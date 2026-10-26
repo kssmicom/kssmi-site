@@ -16,9 +16,8 @@ Esta página contiene dos documentos:
 
 El sitio web está destinado principalmente a clientes comerciales, distribuidores, marcas y otras partes interesadas en la fabricación de gafas OEM u ODM. Las referencias a "Kssmi", "nosotros", "nos" o "nuestro" se refieren a **Shenzhen Kssmi Technology Co., Ltd.**, a menos que el contexto indique lo contrario.
 
-**Fecha de vigencia:** 2026-07-19  
-**Última actualización:** 2026-07-19  
-**Versión del documento:** 1.0
+**Fecha de vigencia:** 2026-10-26\
+**Última actualización:** 2026-10-26\
+**Versión del documento:** 1.1
 
 Si una cotización específica, orden de compra, factura proforma, acuerdo de fabricación u otro contrato escrito entra en conflicto con estos términos del sitio web, el acuerdo escrito específico regirá la transacción comercial pertinente.
-

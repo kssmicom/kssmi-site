@@ -27,7 +27,7 @@ Esses direitos estão sujeitos a condições e exceções legais. Podemos solici
 
 ### Exercício de seus direitos
 
-Envie uma solicitação para **privacy [at] kssmi [dot] com** e descreva o direito que deseja exercer. A Kssmi deverá acusar o recebimento e responder dentro do prazo exigido pela lei aplicável.
+Envie o pedido a **privacy [at] kssmi [dot] com** indicando o direito a exercer. Kssmi responderá no prazo legal. Podemos pedir informações razoavelmente necessárias para verificar a identidade, esclarecer o pedido ou proteger direitos de terceiros.
 
 ### Reclamações
 
@@ -45,6 +45,4 @@ Podemos atualizar este aviso quando nosso site, atividades de processamento, for
 
 Controlador de dados: **Shenzhen Kssmi Technology Co., Ltd.**  
 Contato de privacidade: **privacy [at] kssmi [dot] com**  
-Endereço postal: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**  
-Representante na UE: **Kssmi Eyewear, Montagnola, Via Nicola Spedalieri, 7, 00142 Roma RM, Italy**  
-Contato de privacidade do representante na UE: **privacy [at] kssmi [dot] com**
+Endereço postal: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

@@ -23,19 +23,10 @@ Bộ điều khiển chịu trách nhiệm về quá trình xử lý được m�
 905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China  
 Mã bưu chính: 518000  
 Liên hệ quyền riêng tư: **privacy [at] kssmi [dot] com**
-### 3. Đại diện tại EU
+### 3. Trẻ em
 
+Website dành cho người dùng doanh nghiệp, không hướng đến trẻ em. Nếu biết trẻ em cung cấp dữ liệu cá nhân không có sự cho phép thích hợp, chúng tôi sẽ thực hiện biện pháp hợp lý để xóa.
 
-Đại diện EU theo Điều 27 GDPR:  
-**Kssmi Eyewear**  
-Montagnola, Via Nicola Spedalieri, 7  
-00142 Roma RM, Italy  
-Liên hệ quyền riêng tư: **privacy [at] kssmi [dot] com**
+### 4. Quyết định tự động
 
-### 4. Trẻ em
-
-Trang web được thiết kế cho người dùng doanh nghiệp và không hướng đến trẻ em.
-
-### 5. Quyết định tự động
-
-Kssmi không đưa ra các quyết định tạo ra các hiệu ứng pháp lý hoặc quan trọng tương tự chỉ thông qua việc xử lý tự động dữ liệu của khách truy cập trang web.
+Kssmi không đưa ra quyết định có hiệu lực pháp lý hoặc tác động quan trọng tương tự chỉ dựa trên xử lý tự động dữ liệu khách truy cập. Phân tích có đồng ý có thể đo tương tác và mức tham gia cho hiệu suất và phân bổ nguồn, nhưng không dùng các chỉ số đó để đưa ra quyết định như vậy về cá nhân.

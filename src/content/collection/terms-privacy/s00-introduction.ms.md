@@ -16,9 +16,8 @@ Halaman ini mengandungi dua dokumen:
 
 Tapak web ini ditujukan terutamanya untuk pelanggan perniagaan, pengedar, jenama dan pihak lain yang berminat dalam pembuatan cermin mata OEM atau ODM. Rujukan kepada "Kssmi", "kita", "kami" atau "kepunyaan kami" bermaksud **Shenzhen Kssmi Technology Co., Ltd.**, melainkan jika konteks menyatakan sebaliknya.
 
-**Tarikh berkuat kuasa:** 2026-07-19  
-**Kemas kini terakhir:** 2026-07-19  
-**Versi dokumen:** 1.0
+**Tarikh berkuat kuasa:** 2026-10-26\
+**Kemas kini terakhir:** 2026-10-26\
+**Versi dokumen:** 1.1
 
 Jika sebut harga khusus, pesanan pembelian, invois proforma, perjanjian pembuatan atau kontrak bertulis lain bercanggah dengan terma tapak web ini, perjanjian bertulis khusus tersebut akan mengawal urus niaga komersial yang berkaitan.
-

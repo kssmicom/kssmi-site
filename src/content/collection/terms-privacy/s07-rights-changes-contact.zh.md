@@ -43,8 +43,6 @@ title: "您的权利、投诉、变更和联系方式"
 
 ### 联系方式
 
-数据控制者：**深圳市柯视觅科技有限公司** (Shenzhen Kssmi Technology Co., Ltd.)  
+数据控制者：**深圳柯视觅科技有限责任公司** (Shenzhen Kssmi Technology Co., Ltd.)\
 隐私联系人：**privacy [at] kssmi [dot] com**  
-邮政地址：**中国广东省深圳市龙岗区园山街道百旺达健康科技产业园1栋905，邮编：518000**  
-欧盟代表：**Kssmi Eyewear, Montagnola, Via Nicola Spedalieri, 7, 00142 Roma RM, Italy**  
-欧盟代表隐私联系人：**privacy [at] kssmi [dot] com**
+邮政地址：**中国广东省深圳市龙岗区园山街道百旺达健康科技产业园1栋905，邮编：518000**

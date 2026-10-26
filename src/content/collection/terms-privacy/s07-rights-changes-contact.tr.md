@@ -27,7 +27,7 @@ Bu haklar yasal koşullara ve istisnalara tabidir. Kimliği doğrulamak ve kişi
 
 ### Haklarınızı kullanma
 
-**privacy [at] kssmi [dot] com** adresine bir istek gönderin ve kullanmak istediğiniz hakkı açıklayın. Kssmi, geçerli yasaların gerektirdiği süre içinde alındığını onaylamalı ve yanıt vermelidir. Operasyonel sahip ve dahili talep prosedürü yayınlanmadan önce onaylanmalıdır.
+Talebinizi kullanmak istediğiniz hakkı belirterek **privacy [at] kssmi [dot] com** adresine gönderin. Kssmi yasal sürede yanıtlar. Kimliği doğrulamak, talebi açıklığa kavuşturmak veya başkalarının haklarını korumak için makul biçimde gerekli bilgi istenebilir.
 
 ### Şikayetler
 
@@ -45,6 +45,4 @@ Web sitemiz, işleme faaliyetlerimiz, tedarikçilerimiz veya yasal yükümlülü
 
 Veri sorumlusu: **Shenzhen Kssmi Technology Co., Ltd.**  
 Gizlilik iletişimi: **privacy [at] kssmi [dot] com**  
-Posta adresi: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**  
-AB temsilcisi: **Kssmi Eyewear, Montagnola, Via Nicola Spedalieri, 7, 00142 Roma RM, Italy**  
-AB temsilcisi gizlilik iletişimi: **privacy [at] kssmi [dot] com**
+Posta adresi: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

@@ -52,4 +52,5 @@ if ($contentLength > 256) {
 
 // Idempotent: expiring an absent cookie is harmless.
 kssmi_vjt_clear_private_cookie(KSSMI_VJT_IDENTITY_COOKIE);
+kssmi_vjt_clear_private_cookie(KSSMI_VJT_CONTACT_COOKIE);
 http_response_code(204);

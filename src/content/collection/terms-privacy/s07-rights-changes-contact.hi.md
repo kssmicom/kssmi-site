@@ -27,7 +27,7 @@ title: "आपके अधिकार, शिकायतें, परिव�
 
 ### अपने अधिकारों का प्रयोग
 
-**privacy [at] kssmi [dot] com** पर एक अनुरोध भेजें और उस अधिकार का वर्णन करें जिसका आप प्रयोग करना चाहते हैं। Kssmi को लागू कानून द्वारा आवश्यक समय के भीतर पावती और प्रतिक्रिया देनी चाहिए। प्रकाशन से पहले परिचालन स्वामी और आंतरिक अनुरोध प्रक्रिया की पुष्टि की जानी चाहिए।
+**privacy [at] kssmi [dot] com** पर अनुरोध भेजकर इच्छित अधिकार बताएँ। Kssmi कानूनी समय-सीमा में उत्तर देगा। पहचान सत्यापन, अनुरोध स्पष्ट करने या दूसरों के अधिकार बचाने के लिए उचित रूप से आवश्यक जानकारी माँगी जा सकती है।
 
 ### शिकायतें
 
@@ -45,6 +45,4 @@ title: "आपके अधिकार, शिकायतें, परिव�
 
 डेटा नियंत्रक: **Shenzhen Kssmi Technology Co., Ltd.**  
 गोपनीयता संपर्क: **privacy [at] kssmi [dot] com**  
-डाक का पता: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**  
-EU प्रतिनिधि: **Kssmi Eyewear, Montagnola, Via Nicola Spedalieri, 7, 00142 Roma RM, Italy**  
-EU प्रतिनिधि गोपनीयता संपर्क: **privacy [at] kssmi [dot] com**
+डाक का पता: **905, Bldg. 1, Baiwangda Health Tech Park, Yuanshan St., Longgang Dist., Shenzhen, Guangdong, China, Postcode: 518000**

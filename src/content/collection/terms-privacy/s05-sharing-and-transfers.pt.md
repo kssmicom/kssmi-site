@@ -32,3 +32,7 @@ Também podemos compartilhar informações relevantes com consultores profission
 A Kssmi está estabelecida na China. As informações enviadas diretamente pelos usuários pelo site ou por um canal de comunicação escolhido deliberadamente podem, portanto, ser tratadas na China.
 
 Alguns provedores de serviços também podem tratar informações fora do país do usuário ou do Espaço Econômico Europeu. Quando o Capítulo V do RGPD se aplicar a uma transferência realizada por um controlador ou operador, a transferência deverá usar um mecanismo legal adequado às circunstâncias, como uma decisão de adequação, cláusulas contratuais-tipo aplicáveis da Comissão Europeia ou outra garantia ou derrogação permitida por lei.
+
+São aplicadas medidas técnicas e organizativas suplementares quando adequado. Pode pedir informações sobre as garantias pertinentes a **privacy [at] kssmi [dot] com**, sujeitas às restrições legais de confidencialidade.
+
+Estas categorias não eliminam as responsabilidades de Kssmi na contratação de prestadores. Em comunicações ou transferências internacionais sujeitas à lei chinesa, as informações sobre destinatários, garantias e qualquer consentimento separado exigido devem preceder o tratamento; este aviso não constitui tal consentimento. O contacto de privacidade fornece informações sobre destinatários e garantias relevantes. A recolha direta e a comunicação posterior a outra organização são avaliadas separadamente.

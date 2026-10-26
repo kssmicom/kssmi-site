@@ -24,18 +24,10 @@ The controller responsible for the processing described in this notice is:
 Postcode: 518000  
 Privacy contact: **privacy [at] kssmi [dot] com**
 
-### 3. EU representative
-
-EU representative under Article 27 GDPR:  
-**Kssmi Eyewear**  
-Montagnola, Via Nicola Spedalieri, 7  
-00142 Roma RM, Italy  
-Privacy contact: **privacy [at] kssmi [dot] com**
-
-### 4. Children
+### 3. Children
 
 The website is designed for business users and is not directed to children. If we learn that a child has provided personal data without appropriate authorisation, we will take reasonable steps to delete it.
 
-### 5. Automated decisions
+### 4. Automated decisions
 
 Kssmi does not make decisions that produce legal or similarly significant effects solely through automated processing of website visitor data. Consent-based analytics may calculate interaction or engagement measurements for website performance and attribution, but those measurements are not used to make such decisions about an individual.

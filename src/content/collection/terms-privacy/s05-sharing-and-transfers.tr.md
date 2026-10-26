@@ -32,3 +32,7 @@ Ayrıca, uygun bir yasal dayanağın ve güvencelerin mevcut olduğu durumlarda,
 Kssmi Çin’de kuruludur. Kullanıcıların site veya bilinçli olarak seçtikleri bir iletişim kanalı üzerinden doğrudan gönderdiği bilgiler bu nedenle Çin’de işlenebilir.
 
 Bazı hizmet sağlayıcılar da bilgileri kullanıcının ülkesinin veya Avrupa Ekonomik Alanı’nın dışında işleyebilir. GDPR’ın V. Bölümü bir veri sorumlusu veya işleyen tarafından yapılan aktarıma uygulanıyorsa aktarım; yeterlilik kararı, uygulanabilir Avrupa Komisyonu standart sözleşme maddeleri veya kanunun izin verdiği başka bir güvence ya da istisna gibi koşullara uygun hukuka dayalı bir mekanizma kullanmalıdır.
+
+Gerektiğinde tamamlayıcı teknik ve örgütsel önlemler uygulanır. Verilerinize ilişkin güvenceler, hukuka uygun gizlilik kısıtları saklı kalmak üzere **privacy [at] kssmi [dot] com** adresinden sorulabilir.
+
+Bu kategoriler hizmet sağlayıcı görevlendiren Kssmi'nin sorumluluklarını kaldırmaz. Çin hukukuna tabi açıklama veya yurt dışına sunumda gerekli alıcı bilgileri, güvenceler ve ayrı rıza işlem öncesinde sağlanmalıdır; bu bildirim ayrı rıza değildir. İlgili alıcılar ve güvenceler gizlilik irtibatından öğrenilebilir. Doğrudan toplama ile başka kuruluşa sonraki aktarım ayrı değerlendirilir.
