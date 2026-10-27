@@ -175,6 +175,7 @@ const collection = defineCollection({
     seoKeywords: z.string().optional(),
     // New architecture fields
     fileType: z.enum(['meta', 'top', 'bottom', 'page']).optional(),
+    items: FAQBlock.shape.items.optional(),
   }).catchall(z.any()),
 });
 

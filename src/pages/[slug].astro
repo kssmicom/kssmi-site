@@ -26,7 +26,7 @@ export async function getStaticPaths() {
 
       // Skip pages with dedicated routes. In particular, "home" belongs at /
       // and must not also create a duplicate /home/ document.
-      if (slug === 'about-us' || slug === 'contact' || slug === 'home') return false;
+      if (slug === 'about-us' || slug === 'contact' || slug === 'home' || slug === 'faq') return false;
 
       return true;
     })

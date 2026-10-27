@@ -27,7 +27,7 @@ export async function getStaticPaths() {
 
       // Skip pages with dedicated routes. Localized home content belongs at
       // /{lang}/ and must not also create duplicate /{lang}/home/ documents.
-      if (slug === 'about-us' || slug === 'contact' || slug === 'home') return false;
+      if (slug === 'about-us' || slug === 'contact' || slug === 'home' || slug === 'faq') return false;
 
       return true;
     })
