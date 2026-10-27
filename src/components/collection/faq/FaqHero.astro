@@ -1,0 +1,212 @@
+---
+/**
+ * FAQ Hero — compact header shared by the FAQ hub and sub-FAQ pages.
+ * Hub: centered, with the question search box. Sub-FAQ: left-aligned, with a breadcrumb back to the hub.
+ * Colours come from faq-theme.css (.faq-page).
+ */
+
+interface Crumb {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  lang: string;
+  heading: string;
+  subtitle?: string;
+  crumbs: Crumb[];
+  searchPlaceholder?: string;
+  clearLabel?: string;
+  centered?: boolean;
+}
+
+const { lang, heading, subtitle, crumbs, searchPlaceholder, clearLabel = 'Clear search', centered = false } = Astro.props;
+const isRTL = lang === 'ar';
+---
+
+<header class:list={['faq-hero', { 'faq-hero--center': centered }]} dir={isRTL ? 'rtl' : 'ltr'}>
+  <div class="faq-shell">
+    <nav class="faq-crumbs" aria-label="Breadcrumb">
+      {crumbs.map((crumb, index) => (
+        <>
+          {index > 0 && <span aria-hidden="true">/</span>}
+          {crumb.href
+            ? <a href={crumb.href}>{crumb.label}</a>
+            : <span aria-current="page">{crumb.label}</span>}
+        </>
+      ))}
+    </nav>
+
+    <p class="faq-eyebrow">FAQ</p>
+    <h1>{heading}</h1>
+    {subtitle && <p class="faq-subtitle">{subtitle}</p>}
+
+    {searchPlaceholder && (
+      <div class="faq-search">
+        <input type="search" placeholder={searchPlaceholder} aria-label={searchPlaceholder} autocomplete="off" data-faq-search />
+        <!-- Same order as the header search: input, clear button (hidden until there is text), search icon -->
+        <button type="button" class="faq-search__clear" aria-label={clearLabel} hidden data-faq-search-clear>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6l12 12" /></svg>
+        </button>
+        <svg class="faq-search__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+      </div>
+    )}
+  </div>
+</header>
+
+<style>
+  .faq-shell {
+    width: var(--faq-width);
+    margin: 0 auto;
+    padding: clamp(1.25rem, 3vw, 2rem) 0 clamp(2rem, 4vw, 3rem);
+  }
+
+  .faq-crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
+    color: var(--faq-faint);
+    font-size: 0.8rem;
+  }
+
+  .faq-crumbs a {
+    color: var(--faq-muted);
+    text-decoration: none;
+    transition: color 160ms ease;
+  }
+
+  .faq-crumbs a:is(:hover, :active, :focus-visible, :focus-within) {
+    color: var(--faq-accent-strong);
+  }
+
+  .faq-crumbs [aria-current] {
+    color: var(--faq-ink);
+    font-weight: 600;
+  }
+
+  .faq-eyebrow {
+    display: inline-block;
+    margin: 0 0 1rem;
+    padding: 0.25rem 0.8rem;
+    border: 1px solid var(--faq-line);
+    border-radius: 999px;
+    color: var(--faq-body);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+
+  .faq-hero h1 {
+    margin: 0;
+    color: var(--faq-ink);
+    font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  .faq-subtitle {
+    max-width: 620px;
+    margin: 0.85rem 0 0;
+    color: var(--faq-muted);
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    line-height: 1.65;
+  }
+
+  .faq-search {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    max-width: 560px;
+    margin-top: 2rem;
+    padding-block: 0;
+    padding-inline: 1.35rem 1.15rem;
+    border: 1px solid var(--faq-line);
+    border-radius: 999px;
+    background: #fff;
+    transition: border-color 160ms ease;
+  }
+
+  .faq-search:is(:hover, :active, :focus-visible, :focus-within) {
+    border-color: var(--faq-accent);
+  }
+
+  .faq-search__icon {
+    width: 1.15rem;
+    height: 1.15rem;
+    flex: none;
+    fill: none;
+    stroke: var(--faq-muted);
+    stroke-width: 2;
+    stroke-linecap: round;
+    transition: stroke 160ms ease;
+  }
+
+  .faq-search:focus-within .faq-search__icon {
+    stroke: var(--faq-accent);
+  }
+
+  .faq-search input {
+    width: 100%;
+    min-width: 0;
+    padding: 0.9rem 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--faq-ink);
+    font-size: 1rem;
+  }
+
+  .faq-search input::placeholder {
+    color: var(--faq-faint);
+  }
+
+  .faq-search input::-webkit-search-cancel-button,
+  .faq-search input::-webkit-search-decoration {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .faq-search__clear {
+    display: grid;
+    place-items: center;
+    flex: none;
+    padding: 0.4rem;
+    border: 0;
+    background: none;
+    color: var(--faq-faint);
+    cursor: pointer;
+    transition: color 160ms ease;
+  }
+
+  .faq-search__clear[hidden] {
+    display: none;
+  }
+
+  .faq-search__clear:is(:hover, :active, :focus-visible, :focus-within) {
+    color: var(--faq-ink);
+  }
+
+  .faq-search__clear svg {
+    width: 1rem;
+    height: 1rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+  }
+
+  .faq-hero--center .faq-shell {
+    text-align: center;
+  }
+
+  .faq-hero--center .faq-crumbs {
+    justify-content: center;
+  }
+
+  .faq-hero--center .faq-subtitle,
+  .faq-hero--center .faq-search {
+    margin-inline: auto;
+  }
+</style>

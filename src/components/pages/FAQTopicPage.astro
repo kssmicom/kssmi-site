@@ -1,0 +1,51 @@
+---
+/**
+ * Sub-FAQ page (/faq/<topic>/) — breadcrumb back to the hub, its questions, other topics.
+ * Content: src/content/collection/faq/<topic>/<topic>.{lang}.md with `faqTopic: <topic>`.
+ * A language without its own file renders the English entry (hreflang needs every language).
+ */
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FaqHero from '../collection/faq/FaqHero.astro';
+import FaqTopicGrid from '../collection/faq/FaqTopicGrid.astro';
+import FaqQuestionList from '../collection/faq/FaqQuestionList.astro';
+import { buildTopicCards, faqPath, getFaqHub, getFaqTopicEntries, getFaqTopicKeys, type FaqItem } from '../collection/faq/faqData';
+import '../collection/faq/faq-theme.css';
+import { getTranslations } from '../../translations';
+
+const { lang, topic } = Astro.props as { lang: string; topic: string };
+const t = await getTranslations(lang);
+const hub = await getFaqHub(lang);
+const entries = (await getFaqTopicEntries()).filter(e => e.data.faqTopic === topic);
+const entry = entries.find(e => e.data.lang === lang) ?? entries.find(e => e.data.lang === 'en');
+if (!entry?.data.items) {
+  throw new Error(`Missing sub-FAQ content for topic: ${topic}`);
+}
+const { seoTitle, seoDescription, heading, subtitle } = entry.data;
+const items = entry.data.items as FaqItem[];
+const otherTopics = buildTopicCards(lang, (hub.topics ?? []).filter(x => x.key !== topic), hub.items, await getFaqTopicKeys());
+---
+
+<Layout title={seoTitle} lang={lang} description={seoDescription} type="website">
+  <Header lang={lang} />
+  <main class="faq-page">
+    <FaqHero
+      lang={lang}
+      heading={heading}
+      subtitle={subtitle}
+      crumbs={[
+        { label: t.nav.home, href: `${lang === 'en' ? '' : `/${lang}`}/` },
+        { label: 'FAQ', href: faqPath(lang) },
+        { label: heading },
+      ]}
+    />
+    <FaqQuestionList
+      items={items}
+      lang={lang}
+      backLink={{ label: hub.ui.backToFaq, href: faqPath(lang) }}
+    />
+    <FaqTopicGrid lang={lang} title={hub.ui.otherTopics} topics={otherTopics} />
+  </main>
+  <Footer lang={lang} />
+</Layout>

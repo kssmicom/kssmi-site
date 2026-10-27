@@ -1,0 +1,323 @@
+---
+/**
+ * FAQ Question List — numbered Q&A accordion + FAQPage JSON-LD
+ * High-yield format for AI citation (ChatGPT/Perplexity/Google AI Overviews)
+ *
+ * Hub: questions grouped by topic (#topic-<key> anchors), filtered by the hero search box.
+ * Sub-FAQ: one ungrouped list plus a link back to the hub.
+ * One answer open at a time. Colours come from faq-theme.css (.faq-page).
+ */
+import type { FaqItem, FaqTopic } from './faqData';
+
+interface Props {
+  items: FaqItem[];
+  lang?: string;
+  topics?: FaqTopic[];
+  title?: string;
+  noResults?: string;
+  backLink?: { label: string; href: string };
+}
+
+const { items, lang = 'en', topics = [], title, noResults, backLink } = Astro.props;
+const isRTL = lang === 'ar';
+const num = (index: number) => String(index + 1).padStart(2, '0');
+
+const grouped = topics.length > 0
+  ? [
+      ...topics.map(topic => ({ key: topic.key, title: topic.title, items: items.filter(item => item.topic === topic.key) })),
+      { key: 'more', title: '', items: items.filter(item => !topics.some(topic => topic.key === item.topic)) },
+    ].filter(group => group.items.length > 0)
+  : [{ key: '', title: '', items }];
+
+// Number questions in display order so each group reads 01, 02, 03… down the page.
+let position = 0;
+const groups = grouped.map(group => ({
+  ...group,
+  items: group.items.map(item => {
+    const n = num(position++);
+    return { ...item, id: `q-${n}`, n };
+  }),
+}));
+
+// Heading outline: hub = H1 › H2 "All questions" › H3 topic › H4 question;
+// sub-FAQ = H1 topic › H2 question (› H3 if a list title is given).
+const QuestionHeading = topics.length > 0 ? 'h4' : title ? 'h3' : 'h2';
+
+const faqSchema = items.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": items.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+} : null;
+---
+
+{faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+
+<section class="faq-body" dir={isRTL ? 'rtl' : 'ltr'}>
+  <div class="faq-shell" data-faq-list>
+    {title && <h2 class="faq-body__title">{title}</h2>}
+
+    {groups.map((group, groupIndex) => (
+      <div class="faq-group" id={group.key ? `topic-${group.key}` : undefined} data-faq-group>
+        {group.title && <h3 class="faq-group__title">{group.title}</h3>}
+        {group.items.map(item => (
+          <details id={item.id} class="faq-item" name="faq" open={groupIndex === 0 && item === group.items[0]} data-faq-item>
+            <summary>
+              <span class="faq-item__num" aria-hidden="true">{item.n}</span>
+              <QuestionHeading class="faq-item__q">{item.question}</QuestionHeading>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </summary>
+            <p class="faq-item__a">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    ))}
+
+    {noResults && <p class="faq-empty" hidden data-faq-empty>{noResults}</p>}
+
+    {backLink && (
+      <a class="faq-back" href={backLink.href}>
+        <span aria-hidden="true">{isRTL ? '→' : '←'}</span> {backLink.label}
+      </a>
+    )}
+  </div>
+</section>
+
+<script>
+  // Keep a single answer open (fallback for browsers without <details name>),
+  // filter questions from the hero search box, and open the question targeted by #q-XX.
+  // Runs on astro:page-load so it also binds after ClientRouter navigations.
+  const openFromHash = () => {
+    const target = location.hash ? document.getElementById(location.hash.slice(1)) : null;
+    if (target instanceof HTMLDetailsElement && target.matches('[data-faq-item]')) target.open = true;
+  };
+
+  const initFaqList = () => {
+    document.querySelectorAll<HTMLElement>('[data-faq-list]').forEach((list) => {
+      if (list.dataset.faqBound) return;
+      list.dataset.faqBound = '1';
+
+      const items = Array.from(list.querySelectorAll<HTMLDetailsElement>('[data-faq-item]'));
+      items.forEach((item) => {
+        item.addEventListener('toggle', () => {
+          if (!item.open) return;
+          items.forEach((other) => {
+            if (other !== item) other.open = false;
+          });
+        });
+      });
+
+      const search = document.querySelector<HTMLInputElement>('[data-faq-search]');
+      const clear = document.querySelector<HTMLButtonElement>('[data-faq-search-clear]');
+      const empty = list.querySelector<HTMLElement>('[data-faq-empty]');
+      if (!search) return;
+
+      const applyFilter = () => {
+        const query = search.value.trim().toLowerCase();
+        if (clear) clear.hidden = search.value.length === 0;
+        let visible = 0;
+        items.forEach((item) => {
+          const match = !query || (item.textContent ?? '').toLowerCase().includes(query);
+          item.hidden = !match;
+          if (match) visible += 1;
+        });
+        list.querySelectorAll<HTMLElement>('[data-faq-group]').forEach((group) => {
+          group.hidden = !group.querySelector('[data-faq-item]:not([hidden])');
+        });
+        if (empty) empty.hidden = visible > 0;
+      };
+
+      search.addEventListener('input', applyFilter);
+      clear?.addEventListener('click', () => {
+        search.value = '';
+        applyFilter();
+        search.focus();
+      });
+      // A restored page (back/forward) can keep the typed query.
+      if (search.value) applyFilter();
+    });
+    openFromHash();
+  };
+
+  window.addEventListener('hashchange', openFromHash);
+  document.addEventListener('astro:page-load', initFaqList);
+  initFaqList();
+</script>
+
+<style>
+  .faq-shell {
+    width: var(--faq-width);
+    margin: 0 auto;
+    padding: 0 0 clamp(2.5rem, 5vw, 3.5rem);
+  }
+
+  .faq-body:last-child .faq-shell {
+    padding-bottom: clamp(4rem, 7vw, 6rem);
+  }
+
+  .faq-body__title {
+    margin: 0 0 0.25rem;
+    color: var(--faq-ink);
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+
+  .faq-group {
+    scroll-margin-top: calc(5rem + 1rem);
+  }
+
+  .faq-group + .faq-group {
+    margin-top: 1.75rem;
+  }
+
+  .faq-group__title {
+    margin: 1.25rem 0 0;
+    padding-bottom: 0.65rem;
+    border-bottom: 2px solid var(--faq-ink);
+    color: var(--faq-ink);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .faq-item {
+    scroll-margin-top: calc(5rem + 1rem);
+    border-bottom: 1px solid var(--faq-line-soft);
+  }
+
+  .faq-group:not(:has(.faq-group__title)) .faq-item:first-child {
+    border-top: 1px solid var(--faq-line-soft);
+  }
+
+  .faq-item summary {
+    display: grid;
+    grid-template-columns: 2.5rem minmax(0, 1fr) 1.5rem;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 1.2rem 0;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary:focus-visible {
+    outline: 2px solid var(--faq-accent);
+    outline-offset: 4px;
+    border-radius: 0.25rem;
+  }
+
+  .faq-item__num {
+    color: var(--faq-faint);
+    font-size: 0.85rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .faq-item__q {
+    margin: 0;
+    color: var(--faq-ink);
+    font-size: clamp(1rem, 1.4vw, 1.075rem);
+    font-weight: 600;
+    line-height: 1.45;
+    transition: color 160ms ease;
+  }
+
+  .faq-item summary:is(:hover, :active, :focus-visible, :focus-within) .faq-item__q {
+    color: var(--faq-accent-strong);
+  }
+
+  .faq-item summary:is(:hover, :active, :focus-visible, :focus-within) .faq-item__icon::before,
+  .faq-item summary:is(:hover, :active, :focus-visible, :focus-within) .faq-item__icon::after,
+  .faq-item[open] .faq-item__icon::before,
+  .faq-item[open] .faq-item__icon::after {
+    background: var(--faq-accent);
+  }
+
+  .faq-item__icon {
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .faq-item__icon::before,
+  .faq-item__icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.85rem;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--faq-muted);
+    transform: translate(-50%, -50%);
+    transition: transform 200ms ease, background-color 160ms ease;
+  }
+
+  .faq-item__icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  .faq-item[open] .faq-item__q,
+  .faq-item[open] .faq-item__num {
+    color: var(--faq-accent-strong);
+  }
+
+  .faq-item[open] .faq-item__icon::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  .faq-item__a {
+    max-width: 68ch;
+    margin: 0;
+    padding: 0 0 1.4rem;
+    padding-inline-start: calc(2.5rem + 0.75rem);
+    color: var(--faq-body);
+    font-size: 0.975rem;
+    line-height: 1.8;
+  }
+
+  .faq-empty {
+    margin: 1.5rem 0 0;
+    padding: 1.25rem;
+    border: 1px dashed var(--faq-line);
+    border-radius: 0.75rem;
+    color: var(--faq-muted);
+    text-align: center;
+  }
+
+  .faq-back {
+    display: inline-flex;
+    gap: 0.4rem;
+    margin-top: 2rem;
+    color: var(--faq-ink);
+    font-size: 0.9rem;
+    font-weight: 650;
+    text-decoration: none;
+    transition: color 160ms ease;
+  }
+
+  .faq-back:is(:hover, :active, :focus-visible, :focus-within) {
+    color: var(--faq-accent-strong);
+  }
+
+  @media (max-width: 639px) {
+    .faq-item summary {
+      grid-template-columns: 1.75rem minmax(0, 1fr) 1.5rem;
+      gap: 0.5rem;
+    }
+
+    .faq-item__a {
+      padding-inline-start: 0;
+    }
+  }
+</style>

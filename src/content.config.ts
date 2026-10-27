@@ -48,6 +48,7 @@ export const FAQBlock = z.object({
   items: z.array(z.object({
     question: z.string(),
     answer: z.string(),
+    topic: z.string().optional(),
   })),
 });
 

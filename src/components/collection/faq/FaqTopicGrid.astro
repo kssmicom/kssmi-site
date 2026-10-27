@@ -1,0 +1,179 @@
+---
+/**
+ * FAQ Topic Grid — topic cards on the hub ("Browse by topic") and on sub-FAQ pages ("Other topics").
+ * Each card links to its sub-FAQ page when one exists, otherwise to the topic group on the hub.
+ */
+import type { FaqTopicCard } from './faqData';
+
+interface Props {
+  lang: string;
+  title: string;
+  topics: FaqTopicCard[];
+}
+
+const { lang, title, topics } = Astro.props;
+const isRTL = lang === 'ar';
+
+// Stroke icons per topic key; topics without one use the question mark.
+const icons: Record<string, string> = {
+  moq: 'M21 8 12 3 3 8l9 5 9-5ZM3 8v8l9 5 9-5V8M12 13v8',
+  'oem-odm': 'M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z',
+  production: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18ZM12 7v5l3 2',
+  materials: 'm12 3 9 5-9 5-9-5 9-5ZM3 13l9 5 9-5',
+  quality: 'M12 3 20 6v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3ZM9 12l2 2 4-4',
+  shipping: 'M3 6h11v10H3zM14 10h4l3 3v3h-7M7 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM17 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z',
+};
+const fallbackIcon = 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18ZM9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17.5v.01';
+---
+
+{topics.length > 0 && (
+  <section class="faq-topics" dir={isRTL ? 'rtl' : 'ltr'}>
+    <div class="faq-topics__shell">
+      <h2>{title}</h2>
+      <ul>
+        {topics.map(topic => (
+          <li>
+            <a href={topic.href}>
+              <span class="faq-topics__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d={icons[topic.key] ?? fallbackIcon} /></svg>
+              </span>
+              <span class="faq-topics__title">{topic.title}</span>
+              {topic.count > 0 && <span class="faq-topics__count">{topic.count}</span>}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+
+<style>
+  .faq-topics__shell {
+    width: var(--faq-width);
+    margin: 0 auto;
+    padding: 0 0 clamp(2rem, 4vw, 3rem);
+  }
+
+  .faq-topics:last-child .faq-topics__shell {
+    padding-top: clamp(1rem, 3vw, 2rem);
+    padding-bottom: clamp(3.5rem, 7vw, 5.5rem);
+  }
+
+  .faq-topics h2 {
+    margin: 0 0 1rem;
+    color: var(--faq-ink);
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+
+  .faq-topics ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .faq-topics a {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    height: 100%;
+    padding: 1.1rem;
+    border: 1px solid var(--faq-line);
+    border-radius: 1rem;
+    background: #fff;
+    color: var(--faq-ink);
+    text-decoration: none;
+    transition: border-color 160ms ease, color 160ms ease;
+  }
+
+  /* Neutral at rest; sage green only on hover / press / keyboard focus. */
+  .faq-topics a:is(:hover, :active, :focus-visible, :focus-within) {
+    border-color: var(--faq-accent);
+    color: var(--faq-accent-strong);
+  }
+
+  .faq-topics a:is(:hover, :active, :focus-visible, :focus-within) .faq-topics__icon {
+    border-color: var(--faq-accent-soft);
+    background: var(--faq-accent-soft);
+  }
+
+  .faq-topics a:is(:hover, :active, :focus-visible, :focus-within) .faq-topics__icon svg {
+    stroke: var(--faq-accent-strong);
+  }
+
+  .faq-topics__icon {
+    display: grid;
+    place-items: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    flex: none;
+    border: 1px solid var(--faq-line);
+    border-radius: 0.75rem;
+    background: #fff;
+    transition: background-color 160ms ease, border-color 160ms ease;
+  }
+
+  .faq-topics__icon svg {
+    width: 1.3rem;
+    height: 1.3rem;
+    fill: none;
+    stroke: var(--faq-ink);
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .faq-topics__title {
+    flex: 1;
+    min-width: 0;
+    font-size: 0.95rem;
+    font-weight: 650;
+    line-height: 1.35;
+  }
+
+  .faq-topics__count {
+    color: var(--faq-faint);
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (max-width: 639px) {
+    .faq-topics ul {
+      gap: 0.6rem;
+    }
+
+    .faq-topics a {
+      position: relative;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.6rem;
+      padding: 0.9rem;
+    }
+
+    .faq-topics__icon {
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+
+    .faq-topics__title {
+      font-size: 0.875rem;
+    }
+
+    .faq-topics__count {
+      position: absolute;
+      top: 0.9rem;
+      inset-inline-end: 0.9rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .faq-topics ul {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+  }
+</style>

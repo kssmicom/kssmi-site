@@ -1,0 +1,11 @@
+---
+import FAQTopicPage from '../../components/pages/FAQTopicPage.astro';
+import { getFaqTopicKeys } from '../../components/collection/faq/faqData';
+
+export async function getStaticPaths() {
+  return (await getFaqTopicKeys()).map(topic => ({ params: { topic } }));
+}
+
+const { topic } = Astro.params;
+---
+<FAQTopicPage lang="en" topic={topic} />

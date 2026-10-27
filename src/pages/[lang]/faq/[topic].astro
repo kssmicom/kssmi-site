@@ -1,0 +1,13 @@
+---
+import FAQTopicPage from '../../../components/pages/FAQTopicPage.astro';
+import { getFaqTopicKeys } from '../../../components/collection/faq/faqData';
+import { LANGUAGES } from '../../../translations';
+
+export async function getStaticPaths() {
+  const topics = await getFaqTopicKeys();
+  return LANGUAGES.filter(l => l !== 'en').flatMap(lang => topics.map(topic => ({ params: { lang, topic } })));
+}
+
+const { lang, topic } = Astro.params;
+---
+<FAQTopicPage lang={lang} topic={topic} />
