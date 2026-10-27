@@ -151,6 +151,9 @@ locales.forEach(lang => {
     // Content the page renders from outside its route file: the terms
     // collection for terms-privacy, the form for quote.
     const extraDates = [];
+    if (d.slug === 'faq') {
+      extraDates.push(langContentDate('src/content/collection/faq', lang));
+    }
     if (d.slug === 'terms-privacy') {
       extraDates.push(langContentDate('src/content/collection/terms-privacy', lang));
     }

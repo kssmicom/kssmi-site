@@ -1,7 +1,8 @@
-import { readFileSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import ts from 'typescript';
+import yaml from 'js-yaml';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (relativePath) => readFileSync(path.join(root, relativePath), 'utf8');
@@ -138,6 +139,54 @@ assert(
   `${indexPath} is missing loaders for: ${missingLoaders.join(', ')}.`,
 );
 
+// FAQ content is authored in one frontmatter-only Markdown file per language.
+const faqDirectory = 'src/content/collection/faq';
+const expectedFaqFiles = languages.map((lang) => `faq.${lang}.md`).sort();
+const faqFiles = readdirSync(path.join(root, faqDirectory)).sort();
+assert(
+  JSON.stringify(faqFiles) === JSON.stringify(expectedFaqFiles),
+  `${faqDirectory} must contain exactly one faq.<lang>.md file for every declared language.`,
+);
+const faqByLanguage = new Map();
+for (const lang of languages) {
+  const file = `${faqDirectory}/faq.${lang}.md`;
+  try {
+    const source = read(file);
+    const match = source.match(/^---\n([\s\S]*?)\n---\s*$/);
+    assert(Boolean(match), `${file} must have frontmatter and an empty Markdown body.`);
+    if (!match) continue;
+    const data = yaml.load(match[1]);
+    assert(data?.lang === lang && data?.slug === 'faq', `${file} must match its language and FAQ slug.`);
+    for (const field of ['seoTitle', 'seoDescription', 'heading', 'subtitle']) {
+      assert(typeof data?.[field] === 'string' && data[field].trim().length > 0, `${file} requires ${field}.`);
+    }
+    assert(Array.isArray(data?.items) && data.items.length === 12, `${file} must contain 12 FAQ items.`);
+    if (!Array.isArray(data?.items)) continue;
+    for (const [index, item] of data.items.entries()) {
+      for (const field of ['question', 'answer']) {
+        assert(typeof item?.[field] === 'string' && item[field].trim().length > 0, `${file} item ${index + 1} requires ${field}.`);
+      }
+    }
+    const text = JSON.stringify(data);
+    assert(lang === 'zh' ? !/Kssmi|KSSMI|柯视觅/.test(text) && text.includes('可米') : text.includes('Kssmi'), `${file} must preserve the localized brand.`);
+    const quotePath = lang === 'en' ? '/quote/' : `/${lang}/quote/`;
+    assert(data.items[9]?.answer?.includes(quotePath), `${file} must use its localized quote path.`);
+    faqByLanguage.set(lang, data.items);
+  } catch (error) {
+    failures.push(`${file}: ${error.message}`);
+  }
+}
+const englishFaq = faqByLanguage.get('en');
+for (const [lang, items] of faqByLanguage) {
+  if (lang === 'en' || !englishFaq) continue;
+  for (const [index, item] of items.entries()) {
+    const english = englishFaq[index];
+    assert(item.question !== english?.question && item.answer !== english?.answer, `${lang} FAQ item ${index + 1} must be translated.`);
+    const numbers = (text) => JSON.stringify(typeof text === 'string' ? text.match(/\d+(?:-\d+)?/g) : null);
+    assert(numbers(item.answer) === numbers(english?.answer), `${lang} FAQ item ${index + 1} must preserve numeric facts.`);
+  }
+}
+
 if (failures.length) {
   console.error('Translation regression validation failed:');
   failures.forEach((failure) => console.error(`- ${failure}`));
@@ -150,3 +199,4 @@ console.log('- Pagination loads labels for the requested language.');
 console.log('- Shared pagination callers forward language and text direction.');
 console.log('- English remains a type-only/dynamic dependency.');
 console.log('- Every declared language has a dynamic loader.');
+console.log(`- All ${faqByLanguage.size} FAQ Markdown files have localized metadata, 12 translated items, unchanged numeric facts and an empty body.`);
