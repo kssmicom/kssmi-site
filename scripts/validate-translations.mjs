@@ -139,8 +139,9 @@ assert(
   `${indexPath} is missing loaders for: ${missingLoaders.join(', ')}.`,
 );
 
-// FAQ content is authored in one frontmatter-only Markdown file per language.
-const faqDirectory = 'src/content/collection/faq';
+// FAQ hub content (/faq/) is authored in one frontmatter-only Markdown file per
+// language under faq/index/; sub-FAQ pages live in sibling folders (faq/<topic>/).
+const faqDirectory = 'src/content/collection/faq/index';
 const expectedFaqFiles = languages.map((lang) => `faq.${lang}.md`).sort();
 const faqFiles = readdirSync(path.join(root, faqDirectory)).sort();
 assert(
@@ -162,10 +163,16 @@ for (const lang of languages) {
     }
     assert(Array.isArray(data?.items) && data.items.length === 12, `${file} must contain 12 FAQ items.`);
     if (!Array.isArray(data?.items)) continue;
+    for (const field of ['searchPlaceholder', 'topicsTitle', 'questionsTitle', 'noResults', 'backToFaq', 'otherTopics']) {
+      assert(typeof data?.ui?.[field] === 'string' && data.ui[field].trim().length > 0, `${file} requires ui.${field}.`);
+    }
+    const topicKeys = Array.isArray(data?.topics) ? data.topics.map((topic) => topic?.key) : [];
+    assert(topicKeys.length > 0 && topicKeys.every((key) => /^[a-z0-9-]+$/.test(key ?? '')), `${file} requires topics with URL-safe keys.`);
     for (const [index, item] of data.items.entries()) {
       for (const field of ['question', 'answer']) {
         assert(typeof item?.[field] === 'string' && item[field].trim().length > 0, `${file} item ${index + 1} requires ${field}.`);
       }
+      assert(topicKeys.includes(item?.topic), `${file} item ${index + 1} must reference a declared topic.`);
     }
     const text = JSON.stringify(data);
     assert(lang === 'zh' ? !/Kssmi|KSSMI|柯视觅/.test(text) && text.includes('可米') : text.includes('Kssmi'), `${file} must preserve the localized brand.`);

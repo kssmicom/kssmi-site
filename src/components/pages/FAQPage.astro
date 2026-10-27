@@ -1,38 +1,45 @@
 ---
-import { getCollection } from 'astro:content';
+/**
+ * FAQ hub (/faq/) — search, topic cards, all questions grouped by topic.
+ * Content: src/content/collection/faq/index/faq.{lang}.md
+ */
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import FAQ from '../../components/FAQ.astro';
+import FaqHero from '../collection/faq/FaqHero.astro';
+import FaqTopicGrid from '../collection/faq/FaqTopicGrid.astro';
+import FaqQuestionList from '../collection/faq/FaqQuestionList.astro';
+import { buildTopicCards, getFaqHub, getFaqTopicKeys } from '../collection/faq/faqData';
+import '../collection/faq/faq-theme.css';
+import { getTranslations } from '../../translations';
 
 const { lang } = Astro.props;
-const isRTL = lang === 'ar';
-const [entry] = await getCollection('collection', ({ data }) =>
-  data.lang === lang && data.slug === 'faq'
-);
-if (!entry?.data.items) {
-  throw new Error(`Missing FAQ content for language: ${lang}`);
-}
-const { seoTitle, seoDescription, heading, subtitle, items } = entry.data;
+const t = await getTranslations(lang);
+const hub = await getFaqHub(lang);
+const { seoTitle, seoDescription, heading, subtitle, items, topics = [], ui } = hub;
+const topicCards = buildTopicCards(lang, topics, items, await getFaqTopicKeys());
 ---
 
 <Layout title={seoTitle} lang={lang} description={seoDescription} type="website">
   <Header lang={lang} />
-  <main class="w-full min-h-[70vh] bg-stone-50 pt-12 pb-24 flex items-center" dir={isRTL ? 'rtl' : 'ltr'}>
-    <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[820px] mx-auto px-4 text-center">
-      <div class="inline-flex flex-col items-center justify-center mb-8">
-        <span class="text-3xl font-bold text-[#503629] tracking-tight leading-none uppercase">{lang === 'zh' ? '可米' : 'KSSMI'}</span>
-        <span class="h-[1px] w-8 bg-[#503629] mt-1.5"></span>
-        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#503629] mt-1.5">{lang === 'zh' ? '眼镜工厂' : 'Eyewear Mfg.'}</span>
-      </div>
-      <h1 class="text-3xl md:text-4xl font-bold text-[#5D4E37] mb-3 tracking-tight">{heading}</h1>
-      <p class="text-lg text-stone-500 mb-10 max-w-xl mx-auto">{subtitle}</p>
-    </div>
+  <main class="faq-page">
+    <FaqHero
+      lang={lang}
+      heading={heading}
+      subtitle={subtitle}
+      crumbs={[{ label: t.nav.home, href: `${lang === 'en' ? '' : `/${lang}`}/` }, { label: 'FAQ' }]}
+      searchPlaceholder={ui.searchPlaceholder}
+      clearLabel={t.nav?.ariaClearSearch}
+      centered
+    />
+    <FaqTopicGrid lang={lang} title={ui.topicsTitle} topics={topicCards} />
+    <FaqQuestionList
+      items={items}
+      lang={lang}
+      topics={topics}
+      title={ui.questionsTitle}
+      noResults={ui.noResults}
+    />
   </main>
-  <section class="w-full py-12 lg:py-20 bg-white">
-    <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1240px] mx-auto px-4">
-      <FAQ items={items} lang={lang} />
-    </div>
-  </section>
   <Footer lang={lang} />
 </Layout>

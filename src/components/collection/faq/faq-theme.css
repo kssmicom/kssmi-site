@@ -1,0 +1,25 @@
+/*
+ * FAQ hub + sub-FAQ colour tokens. White page, sage-green accent.
+ * Swap the accent values here to restyle every FAQ component at once.
+ */
+.faq-page {
+  --faq-ink: #1f2328;
+  --faq-body: #4b5563;
+  --faq-muted: #6b7280;
+  --faq-faint: #9ca3af;
+  --faq-line: #e5e7eb;
+  --faq-line-soft: #f0f1f3;
+  --faq-accent: #3c8a68;
+  --faq-accent-strong: #2f6b52;
+  --faq-accent-soft: #eaf5ef;
+  --faq-accent-line: #cfe3d8;
+  --faq-width: min(92%, 920px);
+
+  background: #fff;
+  color: var(--faq-ink);
+}
+
+/* Long words or URLs in edited copy wrap instead of widening the page on phones. */
+.faq-page :is(h1, h2, h3, h4, p, a) {
+  overflow-wrap: break-word;
+}

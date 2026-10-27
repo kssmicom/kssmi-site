@@ -152,7 +152,7 @@ locales.forEach(lang => {
     // collection for terms-privacy, the form for quote.
     const extraDates = [];
     if (d.slug === 'faq') {
-      extraDates.push(langContentDate('src/content/collection/faq', lang));
+      extraDates.push(langContentDate('src/content/collection/faq/index', lang));
     }
     if (d.slug === 'terms-privacy') {
       extraDates.push(langContentDate('src/content/collection/terms-privacy', lang));
@@ -165,6 +165,19 @@ locales.forEach(lang => {
       lastmod: newestDateString([fileDate(srcPath), ...extraDates])
     };
   });
+  // Sub-FAQ pages: src/content/collection/faq/<topic>/<topic>.{lang}.md → /faq/<topic>/.
+  // Every language gets the page once the English file exists (missing translations fall back to English).
+  const faqContentDir = path.join(contentDir, 'collection', 'faq');
+  if (fs.existsSync(faqContentDir)) {
+    for (const topic of fs.readdirSync(faqContentDir)) {
+      if (topic === 'index' || !fs.existsSync(path.join(faqContentDir, topic, `${topic}.en.md`))) continue;
+      const topicDir = `src/content/collection/faq/${topic}`;
+      coreUrls.push({
+        url: `${baseUrl}/faq/${topic}/`,
+        lastmod: newestDateString([langContentDate(topicDir, lang), langContentDate(topicDir, 'en')]),
+      });
+    }
+  }
   fs.writeFileSync(path.join(langDir, 'sitemap-core.xml'), generateUrlset(coreUrls), 'utf-8');
 
   // Dynamically retrieve collections
