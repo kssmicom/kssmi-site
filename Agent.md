@@ -2,37 +2,43 @@
 
 This file provides guidance to coding agents when working with code in this repository.
 
+## Scope and workspace rules
+
+Read [the workspace guide](../Agent.md) and [the workspace rules](../../AGENTS.md) first. This is the independent website Git repository; the outer repository's website pointer is not the website working-tree status.
+
+All local temporary documents, test scripts, fixtures, test databases, results, logs, screenshots, downloads, build output and caches belong under `D:\Desk\Desk\Tools\KS\Kssmi\tep\<task>\`. Inspect tool output paths before running commands; use output options, process-local temporary directories or an isolated copy under `tep` as necessary. Existing commands below are entry-point references, not permission to write to their default locations. Formal source, maintained tests and project configuration stay in the repository.
+
+Use current source and configuration as the authority. Historical reports and deleted `fixing/tools/` utilities are not current validation instructions. This guide does not authorize commits, pushes, merges, deployments or production changes beyond the current conversation's authorization.
+
 ## Project Overview
 
-**Kssmi** is a high-performance B2B eyewear manufacturing website built with Astro 5.x. It targets global optical retailers, boutique eyewear shops, and high-end fashion brands.
+**Kssmi** is a multilingual B2B eyewear manufacturing website with an Astro static frontend and PHP services. It targets optical retailers, boutique shops and eyewear brands. Dependency versions and runtime requirements are defined by the repository configuration below.
 
 **Website:** https://kssmi.com
 **Repository:** https://github.com/kssmicom/kssmi-site
 
 ## Tech Stack
 
-- **Astro 5.17+** - Static site generator with content collections
-- **Tailwind CSS 3.4+** - Utility-first styling
+- **Astro 7** - Static site generator with content loaders
+- **Tailwind CSS 4** - Utility-first styling through the Vite plugin
 - **TypeScript** - Full type safety
 - **Fuse.js** - Client-side fuzzy search
 - **Pagefind** - Static site search (via astro-pagefind)
 - **17 Languages** - EN, IT, ES, FR, DE, PT, RU, JA, TR, AR, KO, ZH, HI, VI, JV, MS, TG
 - **Cloudflare Turnstile** - Anti-spam protection for forms
+- **Node.js 24+** - See `package.json`, `package-lock.json` and `.nvmrc` for exact requirements
+- **PHP backend** - Inquiry delivery, short links and visitor analytics; static Astro output does not replace the PHP runtime
 
 ## Build Commands
 
-All commands run from `kssmi-site/` directory:
+Commands are defined in `package.json`. When running locally, arrange a compliant workspace and output paths under `tep` first; default dev/build/test commands can write outside it.
 
 ```bash
 # Development
 npm run dev                 # Start dev server at localhost:4321
 
-# Production
-npm run build              # Full build with validation → outputs to dist/
-# After significant route changes, clean caches first:
-# rm -rf .astro dist && npm run build
-# After significant route changes, clean caches first:
-# rm -rf .astro dist && npm run build
+# Production build entry point (default output is dist/; isolate/redirect before local use)
+npm run build              # Full build with validation
 npm run preview            # Preview production build locally
 
 # Utilities
@@ -42,9 +48,9 @@ npm run prebuild           # Run all pre-build scripts (validation, llms.txt, si
 
 ## Architecture Overview
 
-### Content Collections (Astro 5)
+### Content Collections
 
-Defined in `src/content/config.ts` with three collections:
+Defined in `src/content.config.ts` using content loaders:
 
 | Collection | Location | Purpose |
 |------------|----------|---------|
@@ -52,20 +58,22 @@ Defined in `src/content/config.ts` with three collections:
 | `collection` | `src/content/collection/` | Landing pages, about, contact |
 | `blog` | `src/content/blog/` | Blog posts |
 | `feature` | `src/content/feature/` | Eyewear landing/feature pages |
+| `category-product` | `src/content/category-product/` | One Markdown file per category with multilingual SEO fields |
 
 ### Hybrid Content Architecture
 
-**Products** use flat markdown files per language:
+**Products** use product folders containing one Markdown file per language:
 ```
 src/content/products/
-├── yto-001.en.md
-├── yto-001.it.md
-└── yto-001.{lang}.md
+└── kao-001-acetate-optical-frame/
+    ├── kao-001-acetate-optical-frame.en.md
+    ├── kao-001-acetate-optical-frame.it.md
+    └── ...
 ```
 
-**Landing Pages** (about-us, contact, quote) use a split architecture:
-- **English**: 3-file split (`{page}.en.md`, `top.en.md`, `bottom.en.md`)
-- **Other languages**: Single file (`{page}.{lang}.md`)
+**Landing pages** have page-specific metadata and section files under `src/content/collection/{page}/`. Inspect the existing page and schema instead of assuming an English-only three-file split.
+
+**FAQ** is a hub with optional topic pages. Hub content lives at `src/content/collection/faq/index/faq.{lang}.md`; topic content uses `faq/{topic}/{topic}.{lang}.md`. See `src/components/collection/faq/faqData.ts`, `src/components/pages/FAQPage.astro` and `FAQTopicPage.astro`. Maintain translated content in Markdown, not a hardcoded Q&A array in a component.
 
 ### Internationalization (i18n)
 
@@ -103,8 +111,10 @@ All images are stored in `public/media/` for stable SEO URLs:
 ```
 public/media/
 ├── products/{sku}/          # Product images
-├── blog/                    # Blog covers
-├── pages/                   # Landing page images
+├── blogs/                   # Blog covers
+├── collection/              # Landing page images
+├── certifications/          # Certification assets
+├── icon/                    # Shared icon assets
 └── global/                  # Logos, icons, banners
 ```
 
@@ -116,6 +126,10 @@ gallery:
 ```
 
 ### Product Naming Convention
+
+The following are existing naming families, not an exhaustive SKU schema.
+Current folders also include names such as `kao-001-acetate-optical-frame`;
+inspect the actual product before choosing a slug or moving assets.
 
 | Type | Prefix | Example |
 |------|--------|---------|
@@ -132,7 +146,7 @@ gallery:
 | Page Type | Pattern | Example |
 |-----------|---------|---------|
 | Product List | `/product/` or `/{lang}/product/` | `/product/`, `/it/product/` |
-| Product Detail | `/product/{slug}` or `/{lang}/product/{slug}` | `/product/yto-001/` |
+| Product Detail | `/product/{slug}` or `/{lang}/product/{slug}` | Preserve the current product slug |
 | Category | `/product/{category}` | `/product/optical-frames/` |
 | Blog List | `/blog/` or `/{lang}/blog/` | `/blog/`, `/zh/blog/` |
 | Blog Detail | `/blog/{slug}` or `/{lang}/blog/{slug}` | `/blog/manufacturing-tips/` |
@@ -151,7 +165,7 @@ const allProducts = await getCollection('blog');
 if (allProducts.length === 0) return [];  // generates 0 pages
 ```
 
-This prevents ~800+ empty category pages when `src/content/blog/` or `src/content/feature/` have no `.md` files.
+This prevents empty category pages when `src/content/blog/` or `src/content/feature/` have no matching content.
 When content is added, the guard is skipped automatically — no code change needed.
 
 Affected files: `blog/[category]/[...page].astro`, `blog/[page].astro`,
@@ -172,6 +186,7 @@ Located in `src/components/`:
 - **TurnstileApiLoader.astro** - Shared, retryable Turnstile API loader (in Layout `<head>`)
 - **LanguagePicker.astro** - Language switcher
 - **TechnicalSpecs.astro** - Product specifications display
+- **FAQPage.astro / FAQTopicPage.astro** - FAQ hub and topic pages in `src/components/pages/`
 
 ## ClientRouter Scripts & Turnstile (CRITICAL)
 
@@ -231,8 +246,8 @@ included — the router swaps 404 responses too).
   gets a new random `cycle`; `vjt-capability.php` requires `consent_cycle` and
   only continues an identity whose signed `cyc` claim matches. Withdrawal
   creates `cleanup {id, attempts, status}` and calls `/api/vjt-forget.php` to
-  expire the HttpOnly `KSSMI_VJT_IDENTITY` (max 5 attempts, at most one per
-  page load, generation-checked).
+  expire both identity and contact HttpOnly cookies (max 5 attempts, at most
+  one per page load, generation-checked).
 - `vjt-tracker.js` stores its keys as `{c: cycle, v: value}` and checks
   `cycleIsCurrent()` before every send. `VJTTracker.enabled` is derived from
   `__kssmiConsent.trackingCycle()`.
@@ -241,13 +256,32 @@ included — the router swaps 404 responses too).
   run VJT at all.
 - The "Cookie Settings" button belongs to the controller; `cookie-banner.js` is
   UI only and is loaded on demand (`window.__kssmiCookieBanner.openPreferences`).
-- Local tests: `Kssmi/fixing/tools/r6-test/` (isolated tree, PHP workers behind
-  a proxy on 4325, headless Edge scenarios V1–V23).
+- Contact navigation remains usable when analytics is refused, but contact
+  credentials and events must follow the current analytics consent cycle.
+  Preserve the identity lock and in-flight request protections in
+  `public/js/vjt-contact-core.js`.
+- Inquiry privacy consent is separate from optional analytics/marketing
+  consent. Preserve server-side notice-version checks and consent receipts;
+  a required front-end checkbox alone is not sufficient.
+- Current regression coverage lives in `scripts/test-contact-consent.mjs`,
+  `scripts/test-contact-consent-http.php`, `scripts/test-inquiry-privacy.php`
+  and `tests/browser/`. The old `fixing/tools/r6-test/` tree has been removed.
 
-### Build side effects
-- A full `npm run build` takes 30+ minutes and recreates `dist/`.
-- The prebuild step rewrites `<lastmod>` in `public/**/sitemap*.xml`; restore
-  those files before committing unrelated changes.
+### Build and test side effects
+- Build and dev commands normally write `dist/`, `.astro/`, generated public
+  resources and other caches. Prebuild also generates sitemap and llms files.
+  Check all outputs before local execution and isolate or redirect them to
+  the task directory under `tep` as required by the workspace rules.
+- Do not blindly restore generated files: compare before/after state and
+  preserve existing user changes. `Build-Site.bat` has an automatic sitemap
+  restore step, so it is not a safe shortcut around this review.
+- PHP tests, Playwright and browsers can write databases, results, traces and
+  caches outside their working directory. Inspect the relevant scripts and
+  configure output and process-local temporary paths; setting TEMP alone
+  does not redirect every tool.
+- Do not freeze a historical build duration into the work plan. Choose
+  validation appropriate to the actual change; documentation-only edits do
+  not require a full build.
 
 ## Pre-Build Validation
 
@@ -263,9 +297,9 @@ Run manually: `npm run validate`
 ## Dynamic Search (Fuse.js)
 
 Search uses lazy-loading from pre-built JSON endpoint:
-- Search index served via  (static, rebuilt on each deploy)
+- Search index served via `/api/search-index/{lang}.json` (static, rebuilt on each deploy)
 - Fuse.js loaded on first search input focus (lazy import)
-- No inline JSON in page HTML — reduces page weight ~50KB
+- Do not reintroduce the full search index as inline JSON in page HTML
 - Rebuild required after product changes
 
 ## Development Server Features
@@ -276,32 +310,40 @@ The Vite plugin in `astro.config.mjs` watches `src/content/products/` for new fo
 
 ### Adding a Product
 
-1. Create folder: `public/media/products/{sku}/`
-2. Add images with SEO-friendly names
-3. Copy existing product markdown files: `yto-001.{lang}.md`
-4. Rename to `{sku}.{lang}.md` and edit content
-5. Refresh browser to see in search
+1. Inspect a current product folder and the schema in `src/content.config.ts`.
+2. Add stable image assets under `public/media/products/`, following the
+   current product's naming and URL conventions.
+3. Create the matching content folder under `src/content/products/` and
+   maintain all 17 language entries, product facts and SEO metadata.
+4. Validate content, language routing, image URLs and search output in the
+   compliant local workspace; a dev-server refresh alone is not acceptance.
 
-### Adding a Landing Page (English)
+### Adding a Landing Page or FAQ Topic
 
-1. Create `src/content/collection/{page}/`
-2. Create `meta.en.md` (SEO metadata)
-3. Create `top.en.md` (sections S01-S10)
-4. Create `bottom.en.md` (sections S11-S20)
-5. Create page component in `src/pages/`
-
-### Adding a Landing Page (Other Languages)
-
-1. Create single file: `{page}.{lang}.md` in `src/content/collection/{page}/`
-2. Include all content sections in one file
+1. Inspect the same type of existing page, its schema, loader and components.
+2. Follow its current metadata/section layout under `src/content/collection/`
+   rather than imposing an English/other-language split.
+3. For FAQ topics, follow `faqData.ts`: the hub declares topics and UI labels;
+   existing topic pages receive links and other topics use hub anchors.
+4. Preserve language routes, stable slugs, canonical/hreflang relationships
+   and shared components. Do not hardcode product facts or translated Q&A
+   into layouts to bypass the content system.
 
 ## Deployment
 
 - **Server:** Hetzner VPS
 - **Panel:** CyberPanel
 - **Path:** `/home/kssmi.com/public_html`
-- **Auto-deploy:** Push to `main` → GitHub Actions → Live site
-- **Status URL:** https://kssmi.com/php-status.php
+- **Auto-deploy:** Push to `main` or manual dispatch starts `.github/workflows/deploy.yml`:
+  sealed build artifact → production deployment and verification → release
+  evidence and enforced final signoff.
+- A successful build is not proof of a successful production release. Match
+  the commit SHA to its run and final signoff. Read-only status checks must
+  not dispatch/rerun workflows or execute production smoke tests.
+- Deployment details and recovery policy live in `docs/permission-policy.md`,
+  `docs/promotion-policy.md`, `docs/deploy-fs-safety.md`,
+  `docs/runtime-identity.md`, `docs/release-evidence.md` and
+  `docs/rollback-drill.md`. Historical server backups are not live evidence.
 
 ### Admin credentials (KS-05) (CRITICAL)
 - The admin password hash, reset tokens and credential generation live only
@@ -323,7 +365,9 @@ The Vite plugin in `astro.config.mjs` watches `src/content/products/` for new fo
   deployment stops is in `docs/permission-policy.md` and needs an explicit
   decision.
 - Tests: `npm run test:permissions`, `npm run test:credential-persistence`,
-  `npm run test:deploy-credential-transition` (Linux only).
+  `npm run test:deploy-credential-transition`. Shell deployment/permission
+  tests require a suitable Linux environment; inspect each test's runtime
+  requirements rather than treating all PHP tests as Linux-only.
 
 ### Short-links sign-in and reset (KS-03) (CRITICAL)
 - `/short-links` and `/api/short-links-reset.php` are outside Cloudflare
@@ -381,3 +425,8 @@ All pages and components use a unified responsive width system:
 4. **All products need** 17 language versions for full coverage
 5. **Run validate** before committing to catch YAML errors
 6. **Layout widths** MUST follow the unified standards above — never use old patterns
+7. **Icons and text**: use the existing SVG icon system rather than emoji icons;
+   check meaningful text contrast against its actual background (at least 4.5:1).
+8. **GTM and consent**: preserve the current delayed GTM loading and Consent Mode
+   initialization in `Layout.astro`; do not move third-party analytics ahead
+   of its consent defaults or replace the current interaction/timer policy.
