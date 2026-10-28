@@ -1,28 +1,7 @@
 @echo off
-chcp 65001 >nul
+setlocal EnableExtensions
 cd /d "%~dp0"
-
-:: Kill existing Astro processes
-taskkill /F /IM node.exe >nul 2>&1
-timeout /t 1 /nobreak >nul
-
-:: Clear Astro cache for fresh build
-echo Clearing Astro cache for fresh build...
-if exist ".astro" (
-    rmdir /s /q ".astro" 2>nul
-    timeout /t 1 /nobreak >nul
-    rmdir /s /q ".astro" 2>nul
-)
-
-:: Start Astro dev server
-:: Use "npm run dev" (reads from node_modules/.bin/astro directly - no npx registry check)
-start "Astro Dev Server" cmd /c "cd /d %~dp0 && npm run dev"
-
-:: Poll port 4321 every 2 seconds until the server responds, then open browser
-:wait_loop
-timeout /t 2 /nobreak >nul
-curl -s --max-time 1 http://localhost:4321 >nul 2>&1
-if %errorlevel% neq 0 goto wait_loop
-start http://localhost:4321
-
-exit 0
+node "%~dp0scripts\local-dev.mjs" start --fresh
+set "RESULT=%ERRORLEVEL%"
+if not "%RESULT%"=="0" pause
+exit /b %RESULT%

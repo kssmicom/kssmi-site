@@ -15,12 +15,15 @@ pnpm-debug.log*
 *.log
 build*.log
 check*.log
-build-output.txt   # Build script stdout (P3-3: avoid commit — regenerated each build)
-_build.log          # Astro build log (P3-3: avoid commit)
+# Generated build logs (inline comments are not supported in ignore patterns).
+/build-output.txt
+/_build.log
 
 # environment variables
 .env
 .env.production
+.env.*
+!.env.example
 
 # macOS-specific files
 .DS_Store

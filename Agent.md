@@ -6,7 +6,7 @@ This file provides guidance to coding agents when working with code in this repo
 
 Read [the workspace guide](../Agent.md) and [the workspace rules](../../AGENTS.md) first. This is the independent website Git repository; the outer repository's website pointer is not the website working-tree status.
 
-All local temporary documents, test scripts, fixtures, test databases, results, logs, screenshots, downloads, build output and caches belong under `D:\Desk\Desk\Tools\KS\Kssmi\tep\<task>\`. Inspect tool output paths before running commands; use output options, process-local temporary directories or an isolated copy under `tep` as necessary. Existing commands below are entry-point references, not permission to write to their default locations. Formal source, maintained tests and project configuration stay in the repository.
+Only genuinely temporary documents, one-off scripts, fixtures, test databases, reports, auxiliary logs, screenshots and downloads belong under `D:\Desk\Desk\Tools\KS\Kssmi\tep\<task>\`. Formal source, dependencies, configuration, maintained tests and persistent data stay in their normal project locations. Native development/build output (`.astro`, `dist`, dependency/tool caches and standard test output) also stays in the project. Do not copy the entire project into `tep` just to relocate standard outputs. Inspect each tool's actual paths and redirect incidental temporary materials when needed.
 
 Use current source and configuration as the authority. Historical reports and deleted `fixing/tools/` utilities are not current validation instructions. This guide does not authorize commits, pushes, merges, deployments or production changes beyond the current conversation's authorization.
 
@@ -29,15 +29,64 @@ Use current source and configuration as the authority. Historical reports and de
 - **Node.js 24+** - See `package.json`, `package-lock.json` and `.nvmrc` for exact requirements
 - **PHP backend** - Inquiry delivery, short links and visitor analytics; static Astro output does not replace the PHP runtime
 
-## Build Commands
+## Local Preview, Production Build and Publication
 
-Commands are defined in `package.json`. When running locally, arrange a compliant workspace and output paths under `tep` first; default dev/build/test commands can write outside it.
+The user's usual double-click entry for opening the local website is
+`Local-Start.vbs`. Do not confuse local development preview with generating
+a production artifact or publishing the site.
+
+| Entry | Actual behavior |
+|---|---|
+| `Local-Start.vbs` | Starts Astro directly in the original project, watches source edits, waits for `/product`, then opens `http://127.0.0.1:4321` |
+| `Local-Start.bat` | Same managed preview with console feedback |
+| `Local-Start-Fresh.bat` | Stops only this project's managed preview, archives known untracked caches to `tep`, then restarts in the original project; preserves `dist` and source |
+| `Local-Stop.bat` | Stops only the authenticated managed preview for this source directory; never kills processes by executable name |
+| `start-servers.bat` | Managed preview on 4321 plus loopback PHP on 4325, both using the original project; no automatic dependency installation |
+| `Build-Site.bat` | Calls `scripts/build-local.ps1` to run npm build in the original project; output is `dist`, standard caches stay in the project, auxiliary logs/temp stay in `tep`; no Git restoration, commit or push |
+| `Cleanup-Logs.bat` | Reviews allowlisted untracked logs and this project's completed temporary tasks; standard build/cache directories are preserved; selected candidates go to the Recycle Bin; tracked files, credentials, data, links and other tasks are preserved |
+| `push-main.bat` | Checks repository, main branch, origin and remote tip; lets the user choose eligible files, review them and confirm PUSH; commits only the selection and verifies the remote after push |
+
+Preview state, control files, PHP configuration/router and auxiliary logs
+are under `tep`; Astro caches and build output stay in the original project. The manager refuses to take over an unmanaged occupied port.
+Fresh preserves previous task records; cleanup is a separate reviewed
+action. Do not run any launcher as part of a read-only check.
+
+Port checks cover both IPv4 and IPv6 loopback. The browser opens the explicit
+IPv4 loopback address to avoid selecting a different IPv6-only service.
+The PHP entry locates the installed runtime (PATH, the workspace tools PHP
+folder, or KSSMI_PHP_BINARY), writes its ini/upload/session/error paths under
+the task directory, checks required extensions and verifies the running PHP
+server with a one-time response from a router stored under `tep`. Fresh preserves PHP mode
+when it was enabled. It does not change system PATH or global php.ini.
+
+The push helper refuses an already-staged index, unfinished Git operations,
+unexpected remotes, generated/private files and changes made during review.
+An explicitly reviewed deletion of the legacy tracked root build log is
+allowed; its contents and new log files remain excluded.
+Selections must include new or locally changed supporting scripts required
+by a chosen launcher/helper; incomplete launcher sets are refused before
+staging rather than expanded silently.
+It never pulls, merges, switches branches, resets or force-pushes. A failed
+push leaves its local commit intact; a later run can review/retry existing
+unpushed commits without creating another commit. It does not itself run
+tests or wait for deployment signoff, and never labels a successful push as
+a successful deployment. Do not run it to test its implementation: use only
+the isolated local bare-repository regression tests.
+
+Windows launcher regression coverage is in `tests/local-tooling.test.mjs`
+(`node --test --test-concurrency=1 tests/local-tooling.test.mjs`). It creates
+disposable source fixtures and local bare remotes under `tep`; those test
+commits/pushes never target the real website repository or GitHub. It also
+checks native source serving, cache refresh, owned-process shutdown, PHP configuration,
+port conflicts and reviewed cleanup. Real mail delivery is not part of it.
+
+Commands are defined in `package.json`. Run standard dev/build/test commands in the original project. Only incidental one-off materials and auxiliary logs need task paths under `tep`.
 
 ```bash
 # Development
 npm run dev                 # Start dev server at localhost:4321
 
-# Production build entry point (default output is dist/; isolate/redirect before local use)
+# Production build entry point (normal output is project dist/)
 npm run build              # Full build with validation
 npm run preview            # Preview production build locally
 
@@ -270,11 +319,12 @@ included — the router swaps 404 responses too).
 ### Build and test side effects
 - Build and dev commands normally write `dist/`, `.astro/`, generated public
   resources and other caches. Prebuild also generates sitemap and llms files.
-  Check all outputs before local execution and isolate or redirect them to
-  the task directory under `tep` as required by the workspace rules.
+  These standard outputs stay in their normal project locations.
 - Do not blindly restore generated files: compare before/after state and
-  preserve existing user changes. `Build-Site.bat` has an automatic sitemap
-  restore step, so it is not a safe shortcut around this review.
+  preserve user changes. `Build-Site.bat` calls `scripts/build-local.ps1`
+  in the original project; prebuild may update generated public resources.
+  Only auxiliary logs and process temporary directories are placed in `tep`.
+  The helper reports the real exit code and never performs Git restoration.
 - PHP tests, Playwright and browsers can write databases, results, traces and
   caches outside their working directory. Inspect the relevant scripts and
   configure output and process-local temporary paths; setting TEMP alone
