@@ -141,6 +141,7 @@ jobs:
 
       - name: Validate frontend policies
         run: |
+          node --test tests/hero-video.test.mjs
           npm run validate:cache
           npm run validate:dom
           npm run validate:lcp

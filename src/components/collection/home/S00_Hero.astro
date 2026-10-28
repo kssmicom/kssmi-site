@@ -229,6 +229,7 @@ const secondaryHref = toHref(secondaryCtaUrl);
   let touchStartY: number | null = null;
   const pendingPlays = new WeakSet<HTMLVideoElement>();
   const fadeListeners = new WeakSet<HTMLVideoElement>();
+  const playbackListeners = new WeakSet<HTMLVideoElement>();
 
   function currentHeroVideos() {
     return Array.from(document.querySelectorAll<HTMLVideoElement>('.hero-video'));
@@ -404,6 +405,15 @@ const secondaryHref = toHref(secondaryCtaUrl);
 
   function syncInteractionGate() {
     const videos = currentHeroVideos();
+    videos.forEach((v) => {
+      if (playbackListeners.has(v)) return;
+      playbackListeners.add(v);
+      // Media events do not bubble. Re-arm gestures if playback is interrupted,
+      // including on the persisted video after a language switch.
+      v.addEventListener('pause', syncInteractionGate);
+      v.addEventListener('error', syncInteractionGate);
+      v.addEventListener('playing', syncInteractionGate);
+    });
     interactionSeen = videos.some((v) => v.dataset.userStarted === '1');
 
     if (videos.length === 0 || videos.every((v) => v.dataset.loaded && !v.paused && !v.error)) {
@@ -424,6 +434,14 @@ const secondaryHref = toHref(secondaryCtaUrl);
   }
 
   syncInteractionGate();
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState !== 'visible') return;
+    syncInteractionGate();
+    // Returning to the page may resume an already-started video, but must not
+    // download or start a hero that the visitor has never activated.
+    resumeStartedHeroVideos();
+  });
 
   if (!pageLoaded) {
     window.addEventListener('load', () => {
