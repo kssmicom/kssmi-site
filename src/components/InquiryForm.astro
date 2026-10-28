@@ -501,18 +501,18 @@ const inquiryFormScriptUrl = isDev ? '/js/inquiry-form.js' : runtimeAssetUrl('in
         <!-- Optional reference files. Server-side validation is authoritative. -->
         <div>
           <div id="attachment-dropzone" class="rounded-lg border border-dashed border-gray-300 p-3 transition-colors hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355]">
-            <div class="flex items-center gap-3">
+            <div class="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-3">
             <input
               type="file"
               id="attachments"
               name="attachments[]"
               multiple
               accept=".pdf,.jpg,.jpeg,.png,.webp,.docx,.xlsx,.dwg,.dxf,.stp,.step,.igs,.iges,.stl,.ai,.eps,.psd,.cdr,.3dm,.sldprt,.sldasm,.ipt,.iam,.x_t,application/pdf,image/jpeg,image/png,image/webp,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-              class="block min-w-0 flex-1 text-sm text-gray-700 file:me-4 file:rounded-lg file:border-0 file:bg-[#5D4E37] file:px-4 file:py-2.5 file:font-semibold file:text-white hover:file:bg-[#4A3D2E] active:file:bg-[#4A3D2E] focus-visible:file:bg-[#4A3D2E] focus-within:file:bg-[#4A3D2E] focus:outline-hidden"
+              class="block w-full min-w-0 sm:w-56 sm:flex-none text-sm text-gray-700 file:me-4 file:rounded-lg file:border-0 file:bg-[#5D4E37] file:px-4 file:py-2.5 file:font-semibold file:text-white hover:file:bg-[#4A3D2E] active:file:bg-[#4A3D2E] focus-visible:file:bg-[#4A3D2E] focus-within:file:bg-[#4A3D2E] focus:outline-hidden"
               aria-label={attachmentInputLabel}
               aria-describedby="attachment-help attachment-list"
             />
-            <span class="shrink-0 text-sm text-gray-500">{attachmentCopy.optional}</span>
+            <span class="min-w-0 text-sm text-gray-500 sm:flex-1">{attachmentCopy.optional}</span>
             </div>
             <p class="mt-2 text-xs text-gray-500">{attachmentCopy.dropHint}</p>
             <p id="attachment-help" class="mt-2 text-sm leading-relaxed text-gray-500">

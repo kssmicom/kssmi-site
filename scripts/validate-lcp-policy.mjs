@@ -65,7 +65,7 @@ for (const file of ['src/pages/product/[slug].astro', 'src/pages/[lang]/product/
 const hero = read('src/components/collection/home/S00_Hero.astro');
 assert(hero.includes('loading="eager"') && hero.includes('fetchpriority="high"'), 'Home poster must remain the LCP image.');
 assert(hero.includes('preload="none"') && hero.includes('data-src={videoUrl}'), 'Home video URL must stay outside the initial media request.');
-assert(hero.includes('pageLoaded') && hero.includes('interactionSeen'), 'Home video must wait for both load and trusted interaction.');
+assert(hero.includes('pageLoaded') && hero.includes('interactionSeen') && hero.includes('markCurrentHeroStarted(true)'), 'Home video must require trusted interaction, allow direct activation and defer pre-load scroll.');
 assert(!hero.includes('<h1 class="hero-fade'), 'Home LCP heading must be visible on the first frame, without the entrance fade.');
 assert(!hero.includes('navigator.userActivation'), 'Home video must not inherit sticky activation from an earlier page or lifecycle event.');
 assert(!hero.includes("addEventListener('scroll'"), 'Home video must not treat generic scroll events as proof of user interaction.');

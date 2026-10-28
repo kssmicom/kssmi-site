@@ -55,7 +55,7 @@ const secondaryHref = toHref(secondaryCtaUrl);
   )}
 
   <!-- Background video: the poster is the default experience. The URL is assigned only
-       after window.load and a trusted click, keyboard input or real scroll on the current home page, so
+       after a trusted click/keyboard input, or window.load plus real scroll on the current home page, so
        this element cannot compete with the poster for the initial connection. object-cover
        fills the hero.
 
@@ -215,8 +215,9 @@ const secondaryHref = toHref(secondaryCtaUrl);
 
 <script>
   // Policy: every device can play the full-bleed hero video, but the MP4 URL is not assigned
-  // until the page has fully loaded AND the visitor clicks, uses the keyboard or genuinely scrolls on the
-  // current home page. Generic scroll events and sticky browser userActivation are
+  // until a trusted click/keyboard input, or a real scroll after page load. Explicit
+  // activation attempts playback synchronously so mobile browsers retain the gesture.
+  // Generic scroll events and sticky browser userActivation are
   // intentionally excluded because restoration, browser chrome and earlier pages can
   // trigger them without a current-page gesture.
   const TOUCH_SCROLL_THRESHOLD = 12;
@@ -226,18 +227,37 @@ const secondaryHref = toHref(secondaryCtaUrl);
   let loadCallbackPending = false;
   let interactionListenersAttached = false;
   let touchStartY: number | null = null;
+  const pendingPlays = new WeakSet<HTMLVideoElement>();
+  const fadeListeners = new WeakSet<HTMLVideoElement>();
 
   function currentHeroVideos() {
     return Array.from(document.querySelectorAll<HTMLVideoElement>('.hero-video'));
   }
 
+  function playHeroVideo(v: HTMLVideoElement) {
+    if (pendingPlays.has(v)) return;
+    pendingPlays.add(v);
+    v.play().then(() => {
+      pendingPlays.delete(v);
+      delete v.dataset.playError;
+      syncInteractionGate();
+    }).catch((error: unknown) => {
+      pendingPlays.delete(v);
+      v.dataset.playError = error instanceof Error ? error.name : 'PlaybackError';
+      // A rejected attempt must leave the next trusted gesture available to retry.
+      syncInteractionGate();
+    });
+  }
+
   function loadHeroVideo() {
     currentHeroVideos().forEach((v) => {
-      if (!v.isConnected || v.dataset.userStarted !== '1' || v.dataset.loaded || !v.dataset.src) return;
-      v.dataset.loaded = '1';
-      v.src = v.dataset.src;
-      v.load();
-      v.play().catch(() => {});
+      if (!v.isConnected || v.dataset.userStarted !== '1' || !v.dataset.src) return;
+      if (!v.dataset.loaded || v.error) {
+        v.dataset.loaded = '1';
+        v.src = v.dataset.src;
+        v.load();
+      }
+      if (v.paused) playHeroVideo(v);
     });
   }
 
@@ -245,22 +265,18 @@ const secondaryHref = toHref(secondaryCtaUrl);
     currentHeroVideos().forEach((v) => {
       if (v.dataset.userStarted !== '1' || v.dataset.fadedIn || !v.dataset.loaded) return;
       const show = () => {
-        if (!v.isConnected || v.dataset.userStarted !== '1' || v.dataset.fadedIn || !v.dataset.loaded) return;
+        if (!v.isConnected || v.dataset.userStarted !== '1' || v.dataset.fadedIn || !v.dataset.loaded || v.paused) return;
         v.dataset.fadedIn = '1';
         requestAnimationFrame(() => {
           if (!v.isConnected || v.dataset.userStarted !== '1') return;
           v.style.opacity = '1';
-          // Belt-and-suspenders: if the browser ever paused playback across a view
-          // transition (e.g., a browser/UA that doesn't honor transition:persist),
-          // resume it. play() is a no-op when the element is already playing, so this
-          // costs nothing on the normal path.
-          if (v.paused) v.play().catch(() => {});
         });
       };
-      if (v.readyState >= 2 /* HAVE_CURRENT_DATA */) {
+      if (v.readyState >= 2 /* HAVE_CURRENT_DATA */ && !v.paused) {
         show();
-      } else {
-        v.addEventListener('loadeddata', show, { once: true });
+      } else if (!fadeListeners.has(v)) {
+        fadeListeners.add(v);
+        v.addEventListener('playing', show, { once: true });
       }
     });
   }
@@ -316,15 +332,21 @@ const secondaryHref = toHref(secondaryCtaUrl);
     interactionListenersAttached = true;
   }
 
-  function markCurrentHeroStarted() {
+  function markCurrentHeroStarted(immediate = false) {
     const videos = currentHeroVideos();
-    if (interactionSeen || videos.length === 0) return;
+    if (videos.length === 0) return;
     interactionSeen = true;
     videos.forEach((v) => {
       v.dataset.userStarted = '1';
     });
-    removeInteractionListeners();
-    scheduleVideoAfterPolicyGate();
+    if (immediate) {
+      runVideoLoad();
+    } else if (pageLoaded) {
+      // Scroll is a loading signal; browsers may still require a later tap to play.
+      runVideoLoad();
+    } else {
+      scheduleVideoAfterPolicyGate();
+    }
   }
 
   function interactionLeavesCurrentPage(event: Event) {
@@ -345,18 +367,18 @@ const secondaryHref = toHref(secondaryCtaUrl);
 
   function markClickInteraction(event: MouseEvent) {
     if (!event.isTrusted || interactionLeavesCurrentPage(event)) return;
-    markCurrentHeroStarted();
+    markCurrentHeroStarted(true);
   }
 
   function markKeyboardInteraction(event: KeyboardEvent) {
     if (!event.isTrusted || event.repeat) return;
     if (['Alt', 'Control', 'Meta', 'Shift'].includes(event.key)) return;
     if ((event.key === 'Enter' || event.key === ' ') && interactionLeavesCurrentPage(event)) return;
-    markCurrentHeroStarted();
+    markCurrentHeroStarted(true);
   }
 
   function recordTouchStart(event: TouchEvent) {
-    if (!event.isTrusted || interactionSeen || currentHeroVideos().length === 0) {
+    if (!event.isTrusted || currentHeroVideos().length === 0) {
       touchStartY = null;
       return;
     }
@@ -384,7 +406,7 @@ const secondaryHref = toHref(secondaryCtaUrl);
     const videos = currentHeroVideos();
     interactionSeen = videos.some((v) => v.dataset.userStarted === '1');
 
-    if (videos.length === 0 || interactionSeen) {
+    if (videos.length === 0 || videos.every((v) => v.dataset.loaded && !v.paused && !v.error)) {
       removeInteractionListeners();
     } else {
       addInteractionListeners();
@@ -396,7 +418,7 @@ const secondaryHref = toHref(secondaryCtaUrl);
   function resumeStartedHeroVideos() {
     currentHeroVideos().forEach((v) => {
       if (v.dataset.userStarted === '1' && v.dataset.loaded && v.paused) {
-        v.play().catch(() => {});
+        playHeroVideo(v);
       }
     });
   }
