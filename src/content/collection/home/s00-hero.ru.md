@@ -8,7 +8,7 @@ description: 'Kssmi — это производитель очков OEM и ODM 
 primaryCta: 'Запросить Расчет'
 primaryCtaUrl: '/quote'
 secondaryCta: 'Смотреть Материалы Оправ'
-secondaryCtaUrl: '/materials'
+secondaryCtaUrl: '/#materials'
 tags:
   - 'Производитель Очков на Заказ'
   - 'Титановые Оправы на Заказ'

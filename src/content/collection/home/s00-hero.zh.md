@@ -8,7 +8,7 @@ description: '可米是一家位于深圳的OEM和ODM眼镜制造商，服务于
 primaryCta: '获取报价'
 primaryCtaUrl: '/quote'
 secondaryCta: '查看镜架材质'
-secondaryCtaUrl: '/materials'
+secondaryCtaUrl: '/#materials'
 tags:
   - '定制眼镜制造商'
   - '定制钛金属光学镜架'

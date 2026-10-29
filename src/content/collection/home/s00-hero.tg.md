@@ -8,7 +8,7 @@ description: 'Kssmi як истеҳсолкунандаи айнакҳои OEM �
 primaryCta: 'Дархости Нархнома'
 primaryCtaUrl: '/quote'
 secondaryCta: 'Дидани Маводҳои Чорчӯба'
-secondaryCtaUrl: '/materials'
+secondaryCtaUrl: '/#materials'
 tags:
   - 'Истеҳсолкунандаи Айнакҳои Фармоишӣ'
   - 'Чорчӯбаҳои Оптикии Титани Фармоишӣ'

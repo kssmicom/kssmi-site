@@ -262,10 +262,9 @@ locales.forEach(lang => {
     fs.writeFileSync(path.join(langDir, 'sitemap-features.xml'), generateUrlset(featureUrls), 'utf-8');
   }
 
-  // Language specific sitemap.xml (index for this language)
-  let langSitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>\n`;
-  langSitemapIndex += `<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>\n`;
-  langSitemapIndex += `<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+  // This language's child sitemaps are listed directly in the root index:
+  // the sitemap protocol forbids an index referencing another index, so no
+  // per-language sitemap.xml indirection is generated.
   const childSitemaps = [
     { cat: 'core', urls: coreUrls },
     { cat: 'products', urls: productUrls },
@@ -273,20 +272,19 @@ locales.forEach(lang => {
     ...(featureUrls.length > 0 ? [{ cat: 'features', urls: featureUrls }] : []),
   ];
   childSitemaps.forEach(({ cat, urls }) => {
-    langSitemapIndex += `  <sitemap>\n`;
-    langSitemapIndex += `    <loc>${sitemapBaseUrl}/sitemap-${cat}.xml</loc>\n`;
-    langSitemapIndex += lastmodTag(newestDate(urls), '    ');
-    langSitemapIndex += `  </sitemap>\n`;
+    rootSitemapIndexEntries += `  <sitemap>\n`;
+    rootSitemapIndexEntries += `    <loc>${sitemapBaseUrl}/sitemap-${cat}.xml</loc>\n`;
+    rootSitemapIndexEntries += lastmodTag(newestDate(urls), '    ');
+    rootSitemapIndexEntries += `  </sitemap>\n`;
   });
-  langSitemapIndex += `</sitemapindex>`;
 
-  fs.writeFileSync(path.join(langDir, 'sitemap.xml'), langSitemapIndex, 'utf-8');
-
-  // Add exactly this language index to the root sitemap
-  rootSitemapIndexEntries += `  <sitemap>\n`;
-  rootSitemapIndexEntries += `    <loc>${sitemapBaseUrl}/sitemap.xml</loc>\n`;
-  rootSitemapIndexEntries += lastmodTag(newestDate(childSitemaps.flatMap(({ urls }) => urls)), '    ');
-  rootSitemapIndexEntries += `  </sitemap>\n`;
+  // Sweep stale files from earlier builds: the old per-language index and any
+  // category sitemap not regenerated this run (collections can become empty).
+  // astro copies public/ verbatim into dist, so leftovers would ship.
+  for (const file of ['sitemap.xml', 'sitemap-core.xml', 'sitemap-products.xml', 'sitemap-blogs.xml', 'sitemap-features.xml']) {
+    const isGenerated = file !== 'sitemap.xml' && childSitemaps.some(({ cat }) => file === `sitemap-${cat}.xml`);
+    if (!isGenerated) fs.rmSync(path.join(langDir, file), { force: true });
+  }
 });
 
 // Generate the global `sitemap.xml` replacing the generic astrojs `sitemap-index.xml`
@@ -295,7 +293,7 @@ const globalSitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<?xml-styleshe
 // Save the root sitemap
 fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), globalSitemapXml, 'utf-8');
 
-console.log('✅ Generated split custom XML sitemap tree architecture inside public/ directory successfully!');
+console.log('✅ Generated flat custom XML sitemap index (root index → per-language urlset files) inside public/ directory successfully!');
 
 // Generate the XSL stylesheet to render the XML strictly as HTML in the browser to prevent extension-injection bugs
 const xslContent = `<?xml version="1.0" encoding="UTF-8"?>

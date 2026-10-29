@@ -8,7 +8,7 @@ description: "Kssmi est un fabricant de lunettes OEM et ODM basé à Shenzhen, d
 primaryCta: 'Demander un Devis'
 primaryCtaUrl: '/quote'
 secondaryCta: 'Voir les Matériaux des Montures'
-secondaryCtaUrl: '/materials'
+secondaryCtaUrl: '/#materials'
 tags:
   - 'Fabricant de Lunettes Sur Mesure'
   - 'Montures Optiques Sur Mesure en Titane'

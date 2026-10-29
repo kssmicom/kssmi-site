@@ -8,7 +8,7 @@ description: 'Kssmi는 프리미엄 브랜드, 독립 디자이너 및 자체 �
 primaryCta: '견적 요청'
 primaryCtaUrl: '/quote'
 secondaryCta: '프레임 소재 보기'
-secondaryCtaUrl: '/materials'
+secondaryCtaUrl: '/#materials'
 tags:
   - '맞춤형 아이웨어 제조업체'
   - '맞춤형 티타늄 광학 프레임'

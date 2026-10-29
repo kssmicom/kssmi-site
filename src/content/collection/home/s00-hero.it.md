@@ -8,7 +8,7 @@ description: "Kssmi è un produttore di occhiali OEM e ODM con sede a Shenzhen, 
 primaryCta: 'Richiedi un Preventivo'
 primaryCtaUrl: '/quote'
 secondaryCta: 'Vedi i Materiali delle Montature'
-secondaryCtaUrl: '/materials'
+secondaryCtaUrl: '/#materials'
 tags:
   - 'Produttore di Occhiali Personalizzati'
   - 'Montature da Vista Personalizzate in Titanio'

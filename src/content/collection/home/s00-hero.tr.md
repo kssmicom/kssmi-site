@@ -8,7 +8,7 @@ description: "Kssmi, premium markalara, bağımsız tasarımcılara ve özel eti
 primaryCta: 'Fiyat Teklifi Al'
 primaryCtaUrl: '/quote'
 secondaryCta: 'Çerçeve Malzemelerini Gör'
-secondaryCtaUrl: '/materials'
+secondaryCtaUrl: '/#materials'
 tags:
   - 'Özel Gözlük Üreticisi'
   - 'Özel Titanyum Optik Çerçeveler'

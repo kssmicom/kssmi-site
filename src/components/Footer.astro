@@ -1,6 +1,7 @@
 ---
 // Language-aware Footer with Floating Actions (WordPress-style)
 import { getTranslations } from '../translations';
+import { getCollection } from 'astro:content';
 
 interface Props {
   lang?: string;
@@ -18,6 +19,12 @@ const currentPath = lang === 'en' ? '' : `${lang}/`;
 // About and Contact URLs: Using flat URLs
 const aboutUrl = lang === 'en' ? '/about-us' : `/${lang}/about-us`;
 const contactUrl = lang === 'en' ? '/contact' : `/${lang}/contact`;
+
+// Blog footer link renders only when this language has blog content: the
+// listing route 404s (or serves a noindex placeholder) on an empty
+// collection, so an unconditional link would ship a dead footer link.
+const blogEntries = await getCollection('blog');
+const showBlogNav = blogEntries.some((entry) => (entry.data?.lang ?? 'en') === lang);
 
 // Compact footer-specific labels not in translations index
 // "Eyewear" translations for all 17 languages
@@ -148,12 +155,14 @@ const currentYear = new Date().getFullYear();
               </a>
             </li>
           ))}
-          <li>
-            <a href={`/${currentPath}blog`} class="group kx-footer-2">
-              <span class="kx-footer-1"></span>
-              <span>{blogText}</span>
-            </a>
-          </li>
+          {showBlogNav && (
+            <li>
+              <a href={`/${currentPath}blog`} class="group kx-footer-2">
+                <span class="kx-footer-1"></span>
+                <span>{blogText}</span>
+              </a>
+            </li>
+          )}
         </ul>
       </div>
 

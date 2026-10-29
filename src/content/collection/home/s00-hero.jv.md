@@ -8,7 +8,7 @@ description: 'Kssmi minangka pabrik kacamata OEM lan ODM sing berbasis ing Shenz
 primaryCta: 'Njaluk Kutipan'
 primaryCtaUrl: '/quote'
 secondaryCta: 'Ndeleng Bahan Bingkai'
-secondaryCtaUrl: '/materials'
+secondaryCtaUrl: '/#materials'
 tags:
   - 'Pabrik Kacamata Kustom'
   - 'Bingkai Optik Titanium Kustom'

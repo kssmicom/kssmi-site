@@ -8,7 +8,7 @@ description: 'Kssmi शेनझेन स्थित एक OEM और ODM आ
 primaryCta: 'कोटेशन प्राप्त करें'
 primaryCtaUrl: '/quote'
 secondaryCta: 'फ्रेम सामग्री देखें'
-secondaryCtaUrl: '/materials'
+secondaryCtaUrl: '/#materials'
 tags:
   - 'कस्टम आईवियर निर्माता'
   - 'कस्टम टाइटेनियम ऑप्टिकल फ्रेम'

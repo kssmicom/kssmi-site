@@ -8,7 +8,7 @@ description: 'Kssmi is a Shenzhen-based OEM and ODM eyewear manufacturer serving
 primaryCta: 'Request a Quote'
 primaryCtaUrl: '/quote'
 secondaryCta: 'See Frame Materials'
-secondaryCtaUrl: '/materials'
+secondaryCtaUrl: '/#materials'
 tags:
   - 'Custom Eyewear Manufacturer'
   - 'Custom Titanium Optical Frames'

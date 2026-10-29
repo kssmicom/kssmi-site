@@ -8,7 +8,7 @@ description: 'Kssmi هي شركة تصنيع نظارات OEM و ODM مقرها 
 primaryCta: 'طلب عرض أسعار'
 primaryCtaUrl: '/quote'
 secondaryCta: 'رؤية مواد الإطارات'
-secondaryCtaUrl: '/materials'
+secondaryCtaUrl: '/#materials'
 tags:
   - 'الشركة المصنعة للنظارات المخصصة'
   - 'إطارات بصرية من التيتانيوم مخصصة'

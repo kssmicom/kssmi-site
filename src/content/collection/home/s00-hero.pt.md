@@ -8,7 +8,7 @@ description: 'A Kssmi é uma fabricante de óculos OEM e ODM com sede em Shenzhe
 primaryCta: 'Solicitar Orçamento'
 primaryCtaUrl: '/quote'
 secondaryCta: 'Ver Materiais das Armações'
-secondaryCtaUrl: '/materials'
+secondaryCtaUrl: '/#materials'
 tags:
   - 'Fabricante de Óculos Personalizados'
   - 'Armações de Grau Personalizadas em Titânio'

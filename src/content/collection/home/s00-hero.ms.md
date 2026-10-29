@@ -8,7 +8,7 @@ description: 'Kssmi ialah pengeluar kaca mata OEM dan ODM yang berpangkalan di S
 primaryCta: 'Dapatkan Sebut Harga'
 primaryCtaUrl: '/quote'
 secondaryCta: 'Lihat Bahan Bingkai'
-secondaryCtaUrl: '/materials'
+secondaryCtaUrl: '/#materials'
 tags:
   - 'Pengeluar Kaca Mata Tersuai'
   - 'Bingkai Optik Titanium Tersuai'

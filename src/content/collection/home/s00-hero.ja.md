@@ -8,7 +8,7 @@ description: 'Kssmiは深センを拠点とするOEMおよびODMアイウェア�
 primaryCta: '見積もりを依頼する'
 primaryCtaUrl: '/quote'
 secondaryCta: 'フレーム素材を見る'
-secondaryCtaUrl: '/materials'
+secondaryCtaUrl: '/#materials'
 tags:
   - 'カスタムアイウェアメーカー'
   - 'カスタムチタン光学フレーム'

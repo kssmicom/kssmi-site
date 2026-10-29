@@ -8,7 +8,7 @@ description: 'Kssmi là nhà sản xuất kính mắt OEM và ODM có trụ sở
 primaryCta: 'Yêu cầu Báo giá'
 primaryCtaUrl: '/quote'
 secondaryCta: 'Xem Vật liệu Gọng kính'
-secondaryCtaUrl: '/materials'
+secondaryCtaUrl: '/#materials'
 tags:
   - 'Nhà sản xuất Kính mắt Tùy chỉnh'
   - 'Gọng kính Quang học Titanium Tùy chỉnh'

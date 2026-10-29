@@ -8,7 +8,7 @@ description: 'Kssmi es un fabricante OEM y ODM de gafas con sede en Shenzhen, qu
 primaryCta: 'Solicitar un Presupuesto'
 primaryCtaUrl: '/quote'
 secondaryCta: 'Ver Materiales de Monturas'
-secondaryCtaUrl: '/materials'
+secondaryCtaUrl: '/#materials'
 tags:
   - 'Fabricante de Gafas Personalizadas'
   - 'Monturas Ópticas Personalizadas de Titanio'

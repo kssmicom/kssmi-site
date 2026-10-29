@@ -8,7 +8,7 @@ description: 'Kssmi ist ein OEM- und ODM-Brillenhersteller mit Sitz in Shenzhen,
 primaryCta: 'Angebot Anfordern'
 primaryCtaUrl: '/quote'
 secondaryCta: 'Fassungsmaterialien Ansehen'
-secondaryCtaUrl: '/materials'
+secondaryCtaUrl: '/#materials'
 tags:
   - 'Hersteller für Maßgeschneiderte Brillen'
   - 'Maßgeschneiderte Optische Titanfassungen'
