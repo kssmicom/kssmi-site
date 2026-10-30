@@ -1,8 +1,25 @@
 ---
+// Unified eyewear listing route: /eyewear/ (rest param undefined) + /eyewear/2..N.
+// Empty EN collection generates no routes at all — /eyewear/ responds 404 like
+// the [lang] tree, instead of a link-bearing noindex shell page.
 import ProductListingPage from '../../components/pages/ProductListingPage.astro';
 import { getCollection } from 'astro:content';
 import { getTranslations } from '../../translations';
 import { cardSrc } from '../../utils/image';
+import { PAGE_SIZE, sortEyewearItems } from '../../utils/listingSort.js';
+
+export async function getStaticPaths() {
+  const all = await getCollection('feature');
+  const en = all.filter((p: any) => p.data.lang === 'en');
+  const sorted = sortEyewearItems(en);
+  if (sorted.length === 0) return [];
+  const totalPages = Math.ceil(sorted.length / PAGE_SIZE);
+  const paths = [{ params: { page: undefined }, props: { sorted, pageNum: 1 } }];
+  for (let p = 2; p <= totalPages; p++) {
+    paths.push({ params: { page: String(p) }, props: { sorted, pageNum: p } });
+  }
+  return paths;
+}
 
 let lang = 'en';
 // Detect locale from URL — Astro may route prefixed URLs to English route tree
@@ -15,40 +32,31 @@ for (const l of LANGUAGES) {
   }
 }
 const currentPath = lang === 'en' ? '' : lang + '/';
-const PAGE_SIZE = 12;
 
-const allItems = await getCollection('blog');
-const langItems = allItems.filter((item: any) => item.data.lang === lang);
-
-const sortedItems = langItems.sort((a: any, b: any) => {
-  const dateA = a.data.published ? new Date(a.data.published).getTime() : 0;
-  const dateB = b.data.published ? new Date(b.data.published).getTime() : 0;
-  if (dateA !== dateB) return dateB - dateA;
-  return b.id.localeCompare(a.id);
-});
-
-const items = sortedItems.slice(0, PAGE_SIZE);
+const { sorted: sortedItems, pageNum: currentPage } = Astro.props;
 const totalPages = Math.ceil(sortedItems.length / PAGE_SIZE);
+const items = sortedItems.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+
 const t = await getTranslations(lang);
 const lcpImage = items[0]?.data?.image ? cardSrc(items[0].data.image) : undefined;
 
 const breadcrumbItems = [
   { label: t.nav.home, href: '/' },
-  { label: t.nav.blog || 'Blog', href: '#' },
+  { label: t.nav.feature || 'Eyewear', href: '/' + currentPath + 'eyewear' },
 ];
 ---
 
 <ProductListingPage
   lang={lang}
   currentPath={currentPath}
-  baseSegment="blog"
+  baseSegment="eyewear"
   products={items}
   allProducts={sortedItems}
-  currentPage={1}
+  currentPage={currentPage}
   totalPages={totalPages}
-  basePath={'/' + currentPath + 'blog'}
+  basePath={'/' + currentPath + 'eyewear'}
   breadcrumbItems={breadcrumbItems}
-  title={t.nav.blog || 'Blog'}
+  title={t.nav.feature || 'Eyewear'}
   lcpImage={lcpImage}
   noindex={sortedItems.length === 0}
 >
@@ -56,8 +64,8 @@ const breadcrumbItems = [
     {items.map((item: any, index: number) => {
       const img = cardSrc(item.data.image || '/media/global/placeholder.webp');
       const isLcpCandidate = index === 0;
-      const itemSlug = item.data.slug || item.id.split('/').pop()?.replace(/\.[a-z]{2}$/, '') || '';
-      const href = `/${currentPath}blog/${itemSlug}/`;
+      const slug = item.data.slug || item.id.split('/').pop()?.replace(/\.[a-z]{2}$/, '') || '';
+      const href = `/${currentPath}eyewear/${slug}/`;
       return (
         <a href={href} class="group bg-white rounded-xl shadow-xs border border-stone-200/50 overflow-hidden hover:shadow-md active:shadow-md focus-visible:shadow-md focus-within:shadow-md transition-all duration-300">
           <div class="aspect-[4/3] overflow-hidden bg-stone-100">
@@ -68,9 +76,6 @@ const breadcrumbItems = [
               <span class="text-[10px] font-bold text-[#8B7355] uppercase tracking-wider">{item.data.category}</span>
             )}
             <h3 class="text-sm font-bold text-stone-900 mt-1 line-clamp-2 group-hover:text-[#5D4E37] group-active:text-[#5D4E37] group-focus-visible:text-[#5D4E37] group-focus-within:text-[#5D4E37] transition-colors">{item.data.title}</h3>
-            {item.data.excerpt && (
-              <p class="text-xs text-stone-600 mt-2 line-clamp-2">{item.data.excerpt}</p>
-            )}
           </div>
         </a>
       );

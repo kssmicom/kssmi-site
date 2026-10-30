@@ -217,8 +217,14 @@ if (allProducts.length === 0) return [];  // generates 0 pages
 This prevents empty category pages when `src/content/blog/` or `src/content/feature/` have no matching content.
 When content is added, the guard is skipped automatically — no code change needed.
 
-Affected files: `blog/[category]/[...page].astro`, `blog/[page].astro`,
-`eyewear/[category]/[...page].astro`, `eyewear/[page].astro`, and their `[lang]` counterparts.
+Affected files: `blog/[category]/[...page].astro`,
+`eyewear/[category]/[...page].astro`, and their `[lang]` counterparts.
+The English listing routes `blog/[...page].astro` and `eyewear/[...page].astro`
+also carry the guard: an empty collection generates no routes at all, so
+`/blog/` and `/eyewear/` respond 404 instead of a link-bearing noindex shell
+page. Their comparators and `PAGE_SIZE` come from the shared
+`src/utils/listingSort.js` module (getStaticPaths is hoisted out of the
+component scope and cannot see page-level consts).
 
 Also applied in `scripts/generate-sitemap.js` to skip empty blog/feature sitemaps.
 

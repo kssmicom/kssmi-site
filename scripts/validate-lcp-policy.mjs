@@ -23,11 +23,9 @@ assert(productCard.includes('loading={loadingStrategy}'), 'ProductCard must keep
 assert(productCard.includes('fetchpriority={isLcpCandidate ? "high" : "auto"}'), 'ProductCard first image must retain high fetch priority.');
 
 const directListingPages = [
-  'src/pages/blog/index.astro',
-  'src/pages/blog/[page].astro',
+  'src/pages/blog/[...page].astro',
   'src/pages/blog/[category]/[...page].astro',
-  'src/pages/eyewear/index.astro',
-  'src/pages/eyewear/[page].astro',
+  'src/pages/eyewear/[...page].astro',
   'src/pages/eyewear/[category]/[...page].astro',
   'src/pages/[lang]/blog/index.astro',
   'src/pages/[lang]/blog/[page].astro',
