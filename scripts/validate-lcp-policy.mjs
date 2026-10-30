@@ -27,11 +27,9 @@ const directListingPages = [
   'src/pages/blog/[category]/[...page].astro',
   'src/pages/eyewear/[...page].astro',
   'src/pages/eyewear/[category]/[...page].astro',
-  'src/pages/[lang]/blog/index.astro',
-  'src/pages/[lang]/blog/[page].astro',
+  'src/pages/[lang]/blog/[...page].astro',
   'src/pages/[lang]/blog/[category]/[...page].astro',
-  'src/pages/[lang]/eyewear/index.astro',
-  'src/pages/[lang]/eyewear/[page].astro',
+  'src/pages/[lang]/eyewear/[...page].astro',
   'src/pages/[lang]/eyewear/[category]/[...page].astro',
 ];
 

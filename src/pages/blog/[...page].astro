@@ -1,8 +1,10 @@
 ---
 // Unified blog listing route: /blog/ (rest param undefined) + /blog/2..N.
-// Empty EN collection generates no routes at all — /blog/ responds 404 like
-// the [lang] tree, instead of a link-bearing noindex shell page.
+// With an empty EN collection the base path renders a noindex "under
+// construction" placeholder (nav stays usable, nothing indexable), and the
+// page automatically becomes the real listing once content is added.
 import ProductListingPage from '../../components/pages/ProductListingPage.astro';
+import SectionPlaceholder from '../../components/pages/SectionPlaceholder.astro';
 import { getCollection } from 'astro:content';
 import { cardSrc } from '../../utils/image';
 import { getTranslations } from '../../translations';
@@ -10,9 +12,7 @@ import { PAGE_SIZE, sortBlogPosts } from '../../utils/listingSort.js';
 
 export async function getStaticPaths() {
   const all = await getCollection('blog');
-  const en = all.filter((p: any) => p.data.lang === 'en');
-  const sorted = sortBlogPosts(en);
-  if (sorted.length === 0) return [];
+  const sorted = sortBlogPosts(all.filter((p: any) => p.data.lang === 'en'));
   const totalPages = Math.ceil(sorted.length / PAGE_SIZE);
   const paths = [{ params: { page: undefined }, props: { sorted, pageNum: 1 } }];
   for (let p = 2; p <= totalPages; p++) {
@@ -34,6 +34,7 @@ for (const l of LANGUAGES) {
 const currentPath = lang === 'en' ? '' : lang + '/';
 
 const { sorted: sortedItems, pageNum: currentPage } = Astro.props;
+const empty = sortedItems.length === 0;
 const totalPages = Math.ceil(sortedItems.length / PAGE_SIZE);
 const items = sortedItems.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
 
@@ -46,7 +47,9 @@ const breadcrumbItems = [
 ];
 ---
 
-<ProductListingPage
+{empty && <SectionPlaceholder lang={lang} sectionLabel={t.nav.blog || 'Blog'} />}
+
+{!empty && <ProductListingPage
   lang={lang}
   currentPath={currentPath}
   baseSegment="blog"
@@ -58,7 +61,6 @@ const breadcrumbItems = [
   breadcrumbItems={breadcrumbItems}
   title={t.nav.blog || 'Blog'}
   lcpImage={lcpImage}
-  noindex={sortedItems.length === 0}
 >
   <Fragment slot="cards">
     {items.map((item: any, index: number) => {
@@ -84,4 +86,4 @@ const breadcrumbItems = [
       );
     })}
   </Fragment>
-</ProductListingPage>
+</ProductListingPage>}

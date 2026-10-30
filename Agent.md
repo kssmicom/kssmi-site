@@ -220,11 +220,14 @@ When content is added, the guard is skipped automatically — no code change nee
 Affected files: `blog/[category]/[...page].astro`,
 `eyewear/[category]/[...page].astro`, and their `[lang]` counterparts.
 The English listing routes `blog/[...page].astro` and `eyewear/[...page].astro`
-also carry the guard: an empty collection generates no routes at all, so
-`/blog/` and `/eyewear/` respond 404 instead of a link-bearing noindex shell
-page. Their comparators and `PAGE_SIZE` come from the shared
-`src/utils/listingSort.js` module (getStaticPaths is hoisted out of the
-component scope and cannot see page-level consts).
+plus their `[lang]` counterparts ([lang]/blog/[...page].astro,
+[lang]/eyewear/[...page].astro) ALWAYS generate the base path: with content
+they render the real listing; with an empty collection they render a noindex
+"under construction" placeholder (`SectionPlaceholder.astro`, reuse of the
+translated About copy) so nav entries resolve for every language without
+shipping dead links or indexable empty pages. Comparators and `PAGE_SIZE`
+come from the shared `src/utils/listingSort.js` module (getStaticPaths is
+hoisted out of the component scope and cannot see page-level consts).
 
 Also applied in `scripts/generate-sitemap.js` to skip empty blog/feature sitemaps.
 

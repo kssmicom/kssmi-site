@@ -28,16 +28,17 @@ const currentPath = lang === 'en' ? '' : `${lang}/`;
 const aboutUrl = lang === 'en' ? '/about-us' : `/${lang}/about-us`;
 const contactUrl = lang === 'en' ? '/contact' : `/${lang}/contact`;
 
-// Blog/Eyewear nav entries render only when this language has content for
-// them: with an empty collection the listing routes 404 (or serve a noindex
-// placeholder), so unconditional links would ship dead nav. Entries come
-// back automatically once .{lang} content is added to the collection.
-const hasLangContent = async (collectionName: 'blog' | 'feature') => {
+// Blog/Eyewear nav entries stay visible for every language (each resolves to
+// a real page: listing or placeholder). The category DROPDOWN, however, only
+// renders when this language actually has content — header.js builds the
+// expanded panel from the shared category list on hover, and with an empty
+// collection those category targets would all be 404s.
+const hasLangItems = async (collectionName: 'blog' | 'feature') => {
   const entries = await getCollection(collectionName);
   return entries.some((entry) => (entry.data?.lang ?? 'en') === lang);
 };
-const showEyewearNav = await hasLangContent('feature');
-const showBlogNav = await hasLangContent('blog');
+const blogHasItems = await hasLangItems('blog');
+const eyewearHasItems = await hasLangItems('feature');
 
 // Get the page path WITHOUT language prefix for language switcher
 const urlPath = Astro.url.pathname;
@@ -158,30 +159,22 @@ const menuStructure: MenuItem[] = [
     menuBase: 'product',
     hasDropdown: true,
   },
-  ...(showEyewearNav
-    ? [
-        {
-          label: t.nav.feature,
-          href: `/${currentPath}eyewear`,
-          menuKey: 'eyewear',
-          menuBase: 'eyewear',
-          hasDropdown: true,
-        },
-      ]
-    : []),
+  {
+    label: t.nav.feature,
+    href: `/${currentPath}eyewear`,
+    menuKey: 'eyewear',
+    menuBase: 'eyewear',
+    hasDropdown: eyewearHasItems,
+  },
   { label: t.nav.about, href: aboutUrl },
   { label: t.nav.contact, href: contactUrl },
-  ...(showBlogNav
-    ? [
-        {
-          label: t.nav.blog,
-          href: `/${currentPath}blog`,
-          menuKey: 'blog',
-          menuBase: 'blog',
-          hasDropdown: true,
-        },
-      ]
-    : []),
+  {
+    label: t.nav.blog,
+    href: `/${currentPath}blog`,
+    menuKey: 'blog',
+    menuBase: 'blog',
+    hasDropdown: blogHasItems,
+  },
 ];
 
 // Language names for dropdown

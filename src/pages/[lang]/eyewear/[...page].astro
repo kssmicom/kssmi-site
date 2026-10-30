@@ -1,0 +1,79 @@
+---
+// Unified per-language eyewear listing route: /{lang}/eyewear/ (rest param
+// undefined) + /{lang}/eyewear/2..N. The base path is ALWAYS generated so nav
+// entries resolve for every language: with no items for that language it
+// renders a noindex placeholder; with items it renders the real listing.
+import ProductListingPage from '../../../components/pages/ProductListingPage.astro';
+import SectionPlaceholder from '../../../components/pages/SectionPlaceholder.astro';
+import { getCollection } from 'astro:content';
+import { getTranslations, LANGUAGES } from '../../../translations';
+import { cardSrc } from '../../../utils/image';
+import { PAGE_SIZE, sortEyewearItems } from '../../../utils/listingSort.js';
+
+export async function getStaticPaths() {
+  const all = await getCollection('feature');
+  const sorted = sortEyewearItems(all);
+  const paths = [];
+  for (const lang of LANGUAGES.filter((l) => l !== 'en')) {
+    const langItems = sorted.filter((item: any) => item.data.lang === lang);
+    paths.push({ params: { lang, page: undefined }, props: { sorted: langItems, lang, pageNum: 1 } });
+    const totalPages = Math.ceil(langItems.length / PAGE_SIZE);
+    for (let p = 2; p <= totalPages; p++) {
+      paths.push({ params: { lang, page: String(p) }, props: { sorted: langItems, lang, pageNum: p } });
+    }
+  }
+  return paths;
+}
+
+const { sorted: sortedItems, lang, pageNum: currentPage } = Astro.props;
+const empty = sortedItems.length === 0;
+const currentPath = lang + '/';
+const totalPages = Math.ceil(sortedItems.length / PAGE_SIZE);
+const items = sortedItems.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+
+const t = await getTranslations(lang);
+const lcpImage = items[0]?.data?.image ? cardSrc(items[0].data.image) : undefined;
+
+const breadcrumbItems = [
+  { label: t.nav.home, href: '/' + lang },
+  { label: t.nav.feature || 'Eyewear', href: '/' + currentPath + 'eyewear' },
+];
+---
+
+{empty && <SectionPlaceholder lang={lang} sectionLabel={t.nav.feature || 'Eyewear'} />}
+
+{!empty && <ProductListingPage
+    lang={lang}
+    currentPath={currentPath}
+    baseSegment="eyewear"
+    products={items}
+    allProducts={sortedItems}
+    currentPage={currentPage}
+    totalPages={totalPages}
+    basePath={'/' + currentPath + 'eyewear'}
+    breadcrumbItems={breadcrumbItems}
+    title={t.nav.feature || 'Eyewear'}
+    lcpImage={lcpImage}
+  >
+    <Fragment slot="cards">
+      {items.map((item: any, index: number) => {
+        const img = cardSrc(item.data.image || '/media/global/placeholder.webp');
+        const isLcpCandidate = index === 0;
+        const slug = item.data.slug || item.id.split('/').pop()?.replace(/\.[a-z]{2}$/, '') || '';
+        const href = `/${currentPath}eyewear/${slug}/`;
+        return (
+          <a href={href} class="group bg-white rounded-xl shadow-xs border border-stone-200/50 overflow-hidden hover:shadow-md active:shadow-md focus-visible:shadow-md focus-within:shadow-md transition-all duration-300">
+            <div class="aspect-[4/3] overflow-hidden bg-stone-100">
+              <img src={img} alt={item.data.title || ''} class="w-full h-full object-cover group-hover:scale-105 group-active:scale-105 group-focus-visible:scale-105 group-focus-within:scale-105 transition-transform duration-500" width="400" height="300" loading={isLcpCandidate ? 'eager' : 'lazy'} decoding={isLcpCandidate ? 'sync' : 'async'} fetchpriority={isLcpCandidate ? 'high' : 'auto'} />
+            </div>
+            <div class="p-4">
+              {item.data.category && (
+                <span class="text-[10px] font-bold text-[#8B7355] uppercase tracking-wider">{item.data.category}</span>
+              )}
+              <h3 class="text-sm font-bold text-stone-900 mt-1 line-clamp-2 group-hover:text-[#5D4E37] group-active:text-[#5D4E37] group-focus-visible:text-[#5D4E37] group-focus-within:text-[#5D4E37] transition-colors">{item.data.title}</h3>
+            </div>
+          </a>
+        );
+      })}
+    </Fragment>
+  </ProductListingPage>}
