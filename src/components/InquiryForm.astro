@@ -467,7 +467,7 @@ const inquiryFormScriptUrl = isDev ? '/js/inquiry-form.js' : runtimeAssetUrl('in
       </div>
 
       <!-- Form -->
-      <form id="inquiry-form" data-astro-reload method="post" action="/send-mail.php" enctype="multipart/form-data" data-i18n={JSON.stringify(clientMessages)} class="space-y-6">
+      <form id="inquiry-form" method="post" action="/send-mail.php" data-astro-reload enctype="multipart/form-data" data-i18n={JSON.stringify(clientMessages)} class="space-y-6">
         <!-- Hidden Fields for Context -->
         <input type="hidden" name="source" value={source} />
         <input type="hidden" name="product_url" value={productUrl} />

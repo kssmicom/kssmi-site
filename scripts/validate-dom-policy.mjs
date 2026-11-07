@@ -68,12 +68,12 @@ const inquiryForm = read('src/components/InquiryForm.astro') + '\n' + read('publ
 const inquiryFormLoader = read('src/components/InquiryFormLazy.astro');
 const notFoundPage = read('src/components/pages/NotFoundPage.astro');
 assert(
-  /<form\s+id="inquiry-form"\s+method="post"\s+action="\/send-mail\.php"/.test(inquiryForm),
-  'Inquiry form must explicitly POST to /send-mail.php so VJT context reaches the successful Core outcome.',
+  /<form\s+id="inquiry-form"\s+method="post"\s+action="\/send-mail\.php"\s+data-astro-reload\b/.test(inquiryForm),
+  'Inquiry form must explicitly POST to /send-mail.php so VJT context reaches the successful Core outcome, and keep data-astro-reload so ClientRouter never intercepts a native fallback POST.',
 );
 assert(
-  /<form\s+id="rescue-form"\s+method="post"\s+action="\/send-mail\.php"/.test(notFoundPage),
-  '404 rescue form must explicitly POST to /send-mail.php so VJT context reaches the successful Core outcome.',
+  /<form\s+id="rescue-form"\s+method="post"\s+action="\/send-mail\.php"\s+data-astro-reload\b/.test(notFoundPage),
+  '404 rescue form must explicitly POST to /send-mail.php so VJT context reaches the successful Core outcome, and keep data-astro-reload so ClientRouter never intercepts a native fallback POST.',
 );
 assert(
   inquiryForm.includes("'vjt_utm_content', 'vjt_utm_term', 'vjt_journey_step'"),
