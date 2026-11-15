@@ -113,3 +113,8 @@ public/pagefind/
 # Playwright browser smoke test output
 test-results/
 playwright-report/
+
+# Machine-specific local launchers (paths differ per computer)
+Local-Start.command
+Local-Stop.command
+Local-Start-Fresh.command

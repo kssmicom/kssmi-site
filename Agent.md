@@ -97,6 +97,29 @@ npm run prebuild           # Run all pre-build scripts (validation, llms.txt, si
 
 ## Architecture Overview
 
+### Preserve the structure for future content
+
+The owner explicitly confirmed on 2026-11-15 that existing site structure is
+being retained for future content. Empty collections, placeholder pages,
+`noindex`, low traffic or current 404 reports do not authorize retiring a
+section or language.
+
+- Preserve existing routes, content collections, templates, navigation and
+  language structure, including the blog and eyewear sections. Do not remove
+  these merely to reduce SEO errors or avoid a redirect in navigation.
+- The owner permits 301 redirects while the underlying structure remains.
+  A redirect does not mean that the section is permanently retired, and must
+  not be used as justification to delete its route, template or navigation.
+- Before publishing content at a previously redirected URL, check both exact
+  and prefix redirects in Cloudflare and the origin. Remove or narrow matching
+  redirects so that the new page is reachable; a rebuild alone does not remove
+  Cloudflare redirects. Review the applicable `noindex` and sitemap policies
+  when the content is ready for indexing.
+- Keep current redirects and structural edits separate: the confirmation to
+  preserve structure does not itself request reverting all redirects or adding
+  new broad redirects. Any proposal to retire a section requires a new,
+  explicit owner decision.
+
 ### Content Collections
 
 Defined in `src/content.config.ts` using content loaders:
