@@ -23,13 +23,10 @@ const UA = 'Mozilla/5.0 (compatible; kssmi-site-monitor/1.0; +https://github.com
 const TIMEOUT_MS = 20000;
 const CERT_MIN_DAYS = 14;
 
-// Known answers of the sites on the server (baseline 2026-10-24).
+// Explicit monitoring scope: only these four sites are monitored.
+// Removing a site here also removes its edge certificate check.
 const SITES = [
-  ['aiidii.com', 200], ['crm.kssmi.com', 200], ['cweup.com', 301], ['definjector.com', 200],
-  ['goboll.com', 200], ['hxhconnector.com', 200], ['jade-shipping.com', 200], ['jinriea.com', 301],
-  ['kssmi.com', 200], ['ledconnectors.com', 200], ['moldpartsglobal.com', 200],
-  ['pangaeacargoline.com', 200],
-  ['switchgearmfg.com', 200], ['wise-shipping.cn', 200], ['xxoptics.com', 200], ['yeetian.com', 200],
+  ['kssmi.com', 200], ['yeetian.com', 200], ['xxoptics.com', 200], ['jinriea.com', 301],
 ];
 
 const ACCESS_LOGIN = 'https://kssmi.cloudflareaccess.com/';
