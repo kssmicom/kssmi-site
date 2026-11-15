@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "astro dev",
     "prebuild": "node scripts/validate-content.mjs && node scripts/validate-email-log-policy.mjs && node scripts/validate-interaction-policy.mjs && node src/scripts/generate-llms.js && node src/scripts/generate-sitemap.js",
-    "build": "node scripts/prepare-short-link-map-assets.mjs && astro build && node scripts/materialize-runtime-assets.mjs dist && node scripts/generate-csp-hashes.mjs dist && node scripts/validate-hreflang.mjs dist && node scripts/validate-seo-output.mjs dist && node scripts/validate-no-inline-style.mjs dist",
+    "build": "node scripts/prepare-short-link-map-assets.mjs && astro build && node scripts/normalize-internal-links.mjs dist && node scripts/materialize-runtime-assets.mjs dist && node scripts/generate-csp-hashes.mjs dist && node scripts/validate-hreflang.mjs dist && node scripts/validate-seo-output.mjs dist && node scripts/validate-no-inline-style.mjs dist && node scripts/prune-languages.mjs dist --apply",
     "preview": "astro preview",
     "astro": "astro",
     "validate": "node scripts/validate-content.mjs",
