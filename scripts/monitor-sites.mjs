@@ -18,6 +18,7 @@
 import { appendFileSync } from 'node:fs';
 import net from 'node:net';
 import tls from 'node:tls';
+import { partitionSites } from './monitor-site-policy.mjs';
 
 const UA = 'Mozilla/5.0 (compatible; kssmi-site-monitor/1.0; +https://github.com/kssmicom/kssmi-site)';
 const TIMEOUT_MS = 20000;
@@ -133,11 +134,18 @@ function probe(host, port) {
   });
 }
 
-await Promise.all(SITES.map(([host, status, note]) => checkStatus('sites', `https://${host}/`, status, null, note)));
+const { active: activeSites, parked } = await partitionSites(SITES);
+for (const { host, target } of parked) {
+  const detail = `domain expired: DNS points to ${target}; HTTPS and certificate checks paused; renew the domain to resume automatically`;
+  record('sites', host, null, detail);
+  console.log(`::warning title=Expired domain::${host}: ${detail}`);
+}
+
+await Promise.all(activeSites.map(([host, status, note]) => checkStatus('sites', `https://${host}/`, status, null, note)));
 await Promise.all(KSSMI_ENDPOINTS.map(([url, status, prefix]) => checkStatus('kssmi', url, status, prefix)));
 await checkRuntimeAssets();
 
-const certificateHosts = [...new Set([...SITES.map(([host]) => host), 'panel.kssmi.com'])];
+const certificateHosts = [...new Set([...activeSites.map(([host]) => host), 'panel.kssmi.com'])];
 await Promise.all(certificateHosts.map(async (host) => {
   try {
     const days = await certificateDays(host);
@@ -164,11 +172,12 @@ if (process.env.MONITOR_SKIP_ORIGIN === '1') {
   }
 }
 
-const failed = results.filter((result) => !result.ok);
-const lines = [`# Site monitor: ${failed.length ? `${failed.length} FAILED` : 'all checks passed'} (${results.length} checks)`, ''];
+const failed = results.filter((result) => result.ok === false);
+const warnings = results.filter((result) => result.ok === null);
+const lines = [`# Site monitor: ${failed.length ? `${failed.length} FAILED` : warnings.length ? `no failures, ${warnings.length} WARNING` : 'all checks passed'} (${results.length} checks)`, ''];
 for (const group of ['sites', 'kssmi', 'certificates', 'origin']) {
   lines.push(`## ${group}`, '', '| | Check | Result |', '|---|---|---|');
-  for (const result of results.filter((item) => item.group === group)) lines.push(`| ${result.ok ? '✅' : '❌'} | ${result.name} | ${result.detail} |`);
+  for (const result of results.filter((item) => item.group === group)) lines.push(`| ${result.ok === null ? '⚠️' : result.ok ? '✅' : '❌'} | ${result.name} | ${result.detail} |`);
   lines.push('');
 }
 const report = lines.join('\n');
