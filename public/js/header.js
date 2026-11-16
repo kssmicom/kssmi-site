@@ -103,7 +103,7 @@
   }
 
   function buildMenuHref(menuBase, slug) {
-    return `${headerMenuData.basePath}${menuBase}/${slug}`;
+    return `${headerMenuData.basePath}${menuBase}/${slug}/`;
   }
 
   function renderMenuContent(container, menuBase, mode) {

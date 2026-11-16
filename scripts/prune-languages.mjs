@@ -1,9 +1,7 @@
 #!/usr/bin/env node
 /**
- * 外语语种收缩：给暂不做的语言目录加 noindex,follow，并从 sitemap 里摘掉。
- *
- * 依据（2026-11-15 诊断）：17 种语言里 16 种外语合计 498 曝光 / 8 点击，
- * 却产生 1,639 个「抓了不收」+ 524 个 Soft 404，白吃抓取预算。
+ * 语言收录策略：2026-11-16 按站主要求撤销整批语种收缩，保留全部 17 语种。
+ * 正常构建重新生成 HTML、sitemap 和 hreflang；不移除页面原有的独立 noindex。
  *
  * 用法：node scripts/prune-languages.mjs dist [--apply]
  * 默认 dry-run，只统计。
@@ -11,8 +9,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const KEEP = new Set(['en', 'ru', 'de']);
 const ALL = ['en','it','es','fr','de','pt','ru','ja','tr','ar','ko','zh','hi','vi','jv','ms','tg'];
+const KEEP = new Set(ALL);
 const PRUNED = ALL.filter(l => !KEEP.has(l));
 
 const dist = path.resolve(process.argv[2] || 'dist');
