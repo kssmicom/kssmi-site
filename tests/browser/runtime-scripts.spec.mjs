@@ -58,9 +58,15 @@ function countOf(testInfo, name) {
   return testInfo.runtimeRequests.filter((entry) => entry === name).length;
 }
 
+function directoryHref(href) {
+  const url = new URL(href, ORIGIN);
+  if (!url.pathname.endsWith('/')) url.pathname += '/';
+  return url.pathname + url.search + url.hash;
+}
+
 async function navigateWithin(page, href) {
   await page.evaluate(() => { window.__sameDocument = true; });
-  await page.locator(`a[href="${href}"]:visible`).first().click();
+  await page.locator(`a[href="${directoryHref(href)}"]:visible`).first().click();
   await page.waitForURL((url) => url.pathname.replace(/\/$/, '') === href.replace(/\/$/, ''));
   await page.waitForLoadState('load');
   expect(await page.evaluate(() => window.__sameDocument), 'navigation stayed in the same document').toBe(true);

@@ -57,7 +57,7 @@ const isRTL = lang === 'ar';
 <Layout title={title || ''} lang={lang} image={image} lcpImage={image}>
   <Header lang={lang} />
 
-  <main class="w-full min-h-screen" dir={isRTL ? 'rtl' : 'ltr'}>
+  <main id="main-content" tabindex="-1" class="w-full min-h-screen" dir={isRTL ? 'rtl' : 'ltr'}>
     {/* 3rd SECTION: Main Content Area (Only if hasContent) */}
     {hasContent && (
       layout === 'full-width' ? (

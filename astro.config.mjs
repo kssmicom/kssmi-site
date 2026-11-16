@@ -9,6 +9,11 @@ import path from 'node:path';
 export default defineConfig({
   site: 'https://kssmi.com',
   output: 'static',
+  // Preserve legacy misspellings while product tags use the canonical slug.
+  redirects: {
+    '/product/fashion-eyवear/': '/product/fashion-eyewear/',
+    '/hi/product/fashion-eyवear/': '/hi/product/fashion-eyewear/',
+  },
   // Preserve Astro 6's HTML-aware whitespace behavior after upgrading to
   // Astro 7, whose new default uses JSX-style whitespace compression.
   compressHTML: true,

@@ -63,7 +63,7 @@ const hasContent = entry.body && entry.body.trim().length > 0;
 <Layout title={title || ''} lang={lang} image={image} lcpImage={image}>
   <Header lang={lang} />
 
-  <main class="w-full min-h-screen">
+  <main id="main-content" tabindex="-1" class="w-full min-h-screen">
     {/* 3rd SECTION: Main Content Area (Only if hasContent or specific criteria) */}
     {hasContent && (
       layout === 'full-width' ? (

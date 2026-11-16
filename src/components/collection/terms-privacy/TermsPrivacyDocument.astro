@@ -62,7 +62,7 @@ const lastUpdated = meta.lastUpdated || '';
 const tocItems = sections.map(({ anchor, navLabel }) => ({ anchor, navLabel }));
 ---
 
-<main class="legal-page" dir={isRTL ? 'rtl' : 'ltr'} lang={contentLang}>
+<main id="main-content" tabindex="-1" class="legal-page" dir={isRTL ? 'rtl' : 'ltr'} lang={contentLang}>
   <header class="legal-hero">
     <div class="legal-shell">
       <p class="legal-eyebrow">{ui.legal}</p>

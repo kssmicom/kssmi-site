@@ -38,7 +38,7 @@ if (!seoTitle || !seoDescription || !productName) {
 <Layout title={seoTitle} description={seoDescription} lang={lang}>
   <Header lang={lang} />
 
-  <main dir={isRTL ? 'rtl' : 'ltr'}>
+  <main id="main-content" tabindex="-1" dir={isRTL ? 'rtl' : 'ltr'}>
     <!-- Section 002: Key Benefits (3 cards) -->
     <S002_Benefits lang={lang} />
 

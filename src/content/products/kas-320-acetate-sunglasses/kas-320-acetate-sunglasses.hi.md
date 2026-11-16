@@ -12,7 +12,7 @@ moq: "300 पीस/मॉडल (100पीस/रंग)"
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
 material: "Acetate Sunglasses"
-series: "sunglasses, acetate-sunglasses, fashion-eyवear, fashion-acetate-sunglasses"
+series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sunglasses"
 
 # ─────────────────────────────────────────────────────
 size: "53-19-145mm & कस्टमाइज़ेशन"

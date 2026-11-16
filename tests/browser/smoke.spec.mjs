@@ -42,9 +42,15 @@ async function lastConsentUpdate(page) {
 }
 
 // Waits for a ClientRouter navigation: same document, new path.
+function directoryHref(href) {
+  const url = new URL(href, ORIGIN);
+  if (!url.pathname.endsWith('/')) url.pathname += '/';
+  return url.pathname + url.search + url.hash;
+}
+
 async function navigateWithin(page, href) {
   await page.evaluate(() => { window.__sameDocument = true; });
-  await page.locator(`a[href="${href}"]`).first().click();
+  await page.locator(`a[href="${directoryHref(href)}"]`).first().click();
   await page.waitForURL((url) => url.pathname.replace(/\/$/, '') === href.replace(/\/$/, ''));
   await page.waitForFunction(() => document.querySelectorAll('#cookie-banner').length >= 1 || localStorage.getItem('cookie-consent'));
   expect(await page.evaluate(() => window.__sameDocument), 'navigation stayed in the same document').toBe(true);
@@ -59,10 +65,47 @@ test('home: banner built once, no CSP violations or page errors', async ({ page 
   await expectCleanPage(page, testInfo);
 });
 
+test('landmarks: skip navigation focuses one main outside the site header', async ({ page }) => {
+  for (const href of ['/', '/product/', '/quote/', '/search/?q=titanium', '/missing-landmark-check/']) {
+    await page.goto(href);
+    await expect(page.getByRole('main')).toHaveCount(1);
+    const main = page.locator('main#main-content');
+    await expect(main).toHaveAttribute('tabindex', '-1');
+    await expect(main.locator('#site-header')).toHaveCount(0);
+    await page.locator('a[href="#main-content"]').focus();
+    await page.keyboard.press('Enter');
+    await expect(main).toBeFocused();
+  }
+});
+
+test('legacy category spelling reaches the real category instead of itself', async ({ page }) => {
+  for (const prefix of ['', '/hi']) {
+    await page.goto(`${prefix}/product/fashion-eyवear/`);
+    await page.waitForURL(url => url.pathname === `${prefix}/product/fashion-eyewear/`);
+    await expect(page.getByRole('main')).toHaveCount(1);
+  }
+});
+
+test('product pagination ends on a real page without an extra redirect page', async ({ page }) => {
+  for (const prefix of ['', '/zh']) {
+    const base = `${prefix}/product/`;
+    await page.goto(base);
+    const pageNumbers = await page.locator('a[href]').evaluateAll((links, base) => links
+      .map(link => new URL(link.href).pathname)
+      .filter(path => path.startsWith(base) && /^\d+\/$/.test(path.slice(base.length)))
+      .map(path => Number(path.slice(base.length).replace('/', ''))), base);
+    expect(pageNumbers.length).toBeGreaterThan(0);
+    const last = Math.max(...pageNumbers);
+    expect((await page.goto(`${base}${last}/`)).status()).toBe(200);
+    await expect(page.getByRole('main')).toHaveCount(1);
+    expect((await page.goto(`${base}${last + 1}/`)).status()).toBe(404);
+  }
+});
+
 test('consent: reject, save, withdraw and accept update storage and Consent Mode', async ({ page }) => {
   await page.goto('/');
   await page.locator('#cookie-btn-reject').click();
-  expect(await consentRecord(page)).toMatchObject({ analytics: false, ads: false });
+  await expect.poll(() => consentRecord(page)).toMatchObject({ analytics: false, ads: false });
   expect(await lastConsentUpdate(page)).toMatchObject({ analytics_storage: 'denied', ad_storage: 'denied' });
   await expect(page.locator('#cookie-banner')).toHaveCount(0);
   await expect(page.locator('#cookie-settings-btn')).toBeVisible();
@@ -72,20 +115,20 @@ test('consent: reject, save, withdraw and accept update storage and Consent Mode
   await expect(page.locator('#cookie-check-analytics')).not.toBeChecked();
   await page.locator('#cookie-check-analytics').check();
   await page.locator('#cookie-modal-save').click();
-  expect(await consentRecord(page)).toMatchObject({ analytics: true, ads: false });
+  await expect.poll(() => consentRecord(page)).toMatchObject({ analytics: true, ads: false });
   expect(await lastConsentUpdate(page)).toMatchObject({ analytics_storage: 'granted', ad_storage: 'denied' });
 
   await page.locator('#cookie-settings-btn').click();
   await expect(page.locator('#cookie-check-analytics')).toBeChecked();
   await page.locator('#cookie-check-analytics').uncheck();
   await page.locator('#cookie-modal-save').click();
-  expect(await consentRecord(page)).toMatchObject({ analytics: false, ads: false });
+  await expect.poll(() => consentRecord(page)).toMatchObject({ analytics: false, ads: false });
   expect(await lastConsentUpdate(page)).toMatchObject({ analytics_storage: 'denied' });
 
   await page.evaluate(() => localStorage.removeItem('cookie-consent'));
   await page.reload();
   await page.locator('#cookie-btn-accept').click();
-  expect(await consentRecord(page)).toMatchObject({ analytics: true, ads: true });
+  await expect.poll(() => consentRecord(page)).toMatchObject({ analytics: true, ads: true });
   expect(await lastConsentUpdate(page)).toMatchObject({ analytics_storage: 'granted', ad_storage: 'granted' });
 });
 
@@ -96,7 +139,7 @@ test('consent: first-visit preferences start unchecked and saving them grants no
   await expect(page.locator('#cookie-check-analytics')).not.toBeChecked();
   await expect(page.locator('#cookie-check-ads')).not.toBeChecked();
   await page.locator('#cookie-modal-save').click();
-  expect(await consentRecord(page)).toMatchObject({ analytics: false, ads: false });
+  await expect.poll(() => consentRecord(page)).toMatchObject({ analytics: false, ads: false });
   expect(await lastConsentUpdate(page)).toMatchObject({ analytics_storage: 'denied', ad_storage: 'denied' });
   await expect(page.locator('#cookie-banner-main')).toHaveCount(0);
 });
@@ -114,7 +157,7 @@ test('consent: Escape only acts while the preferences modal is open', async ({ p
   await page.keyboard.press('Escape');
   await expect(page.locator('#cookie-modal-overlay')).toBeHidden();
   await expect(page.locator('#cookie-settings-btn')).toBeFocused();
-  expect(await consentRecord(page)).toMatchObject({ analytics: true, ads: true });
+  await expect.poll(() => consentRecord(page)).toMatchObject({ analytics: true, ads: true });
 });
 
 test('ClientRouter: navigations rebuild one banner in the page language', async ({ page }, testInfo) => {
@@ -135,7 +178,7 @@ test('ClientRouter: quote, home and product navigations raise no CSP violations'
   await page.goto('/quote/');
   await page.locator('#cookie-btn-reject').click();
   for (const href of ['/', '/quote', '/product', '/']) {
-    await page.locator(`a[href="${href}"]:visible`).first().click();
+    await page.locator(`a[href="${directoryHref(href)}"]:visible`).first().click();
     await page.waitForURL((url) => url.pathname.replace(/\/$/, '') === href.replace(/\/$/, ''));
     await page.waitForLoadState('load');
   }
@@ -191,7 +234,7 @@ for (const language of ['en', 'zh', 'ar']) {
     await expect(page.locator('input[name="inquiry_notice_id"]')).toHaveValue(/inquiry-privacy-/);
     await consent.check();
     expect(await consent.evaluate((input) => input.checkValidity())).toBe(true);
-    expect(await consentRecord(page)).toMatchObject({ analytics: false, ads: false });
+    await expect.poll(() => consentRecord(page)).toMatchObject({ analytics: false, ads: false });
     await expect(page.locator('footer')).toContainText(language === 'zh' ? '可米科技有限公司' : 'Kssmi Technology Co., Ltd.');
     await expectCleanPage(page, testInfo);
   });

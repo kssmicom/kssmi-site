@@ -22,7 +22,7 @@ const topicCards = buildTopicCards(lang, topics, items, await getFaqTopicKeys())
 
 <Layout title={seoTitle} lang={lang} description={seoDescription} type="website">
   <Header lang={lang} />
-  <main class="faq-page">
+  <main id="main-content" tabindex="-1" class="faq-page">
     <FaqHero
       lang={lang}
       heading={heading}

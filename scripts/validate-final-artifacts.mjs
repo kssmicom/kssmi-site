@@ -72,9 +72,48 @@ for (const lang of KEEP) {
   }
 }
 
+// Full documents expose one main landmark and one keyboard-focusable skip
+// target. HTML fragments and Astro redirect stubs are not full documents.
+let landmarkPages = 0;
+function verifyLandmarks(dir) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const file = path.join(dir, entry.name);
+    if (entry.isDirectory()) { verifyLandmarks(file); continue; }
+    if (!entry.name.endsWith('.html')) continue;
+    const html = fs.readFileSync(file, 'utf8');
+    if (!/<html\b/i.test(html)) {
+      const rel = path.relative(dist, file).replaceAll('\\', '/');
+      if (/^(?:[a-z]{2}\/)?product\/\d+\/index\.html$/.test(rel)) {
+        fail(`${rel} 是越界分页跳转页，不应生成`);
+      }
+      const refresh = html.match(/<meta\s+http-equiv="refresh"\s+content="\d+;url=([^"]+)"/i);
+      if (refresh) {
+        const target = new URL(refresh[1], 'https://kssmi.com');
+        if (target.origin === 'https://kssmi.com') {
+          const targetPath = path.resolve(dist, decodeURIComponent(target.pathname).replace(/^\//, ''), 'index.html');
+          if (targetPath === file) fail(`${rel} 发生自跳转`);
+          if (!fs.existsSync(targetPath)) fail(`${rel} 的跳转目标不存在：${target.pathname}`);
+        }
+      }
+      continue;
+    }
+    landmarkPages++;
+    const mains = [...html.matchAll(/<main\b[^>]*>/gi)].map(m => m[0]);
+    const targets = [...html.matchAll(/\sid=(['"])main-content\1/g)];
+    const rel = path.relative(dist, file);
+    if (mains.length !== 1) fail(`${rel} 应只有一个 main，实际 ${mains.length}`);
+    if (targets.length !== 1) fail(`${rel} 应只有一个 main-content 跳转目标，实际 ${targets.length}`);
+    if (mains.length === 1 && (!/\sid="main-content"/.test(mains[0]) || !/\stabindex="-1"/.test(mains[0]))) {
+      fail(`${rel} 的正文 main 必须是可聚焦的跳转目标`);
+    }
+  }
+}
+verifyLandmarks(dist);
+
 if (errors.length) {
   console.error('最终产物校验失败：');
   for (const e of errors.slice(0, 20)) console.error('  ✗ ' + e);
   process.exit(1);
 }
 console.log('最终产物校验通过：sitemap XML 合法、34 个子 sitemap、17 语种核心页面可索引');
+console.log(`正文结构校验通过：${landmarkPages} 个完整页面的 main 与跳转目标唯一`);

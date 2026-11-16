@@ -21,7 +21,7 @@ export async function getStaticPaths() {
       return b.id.localeCompare(a.id);
     });
     const total = Math.ceil(sortedProducts.length / PAGE_SIZE);
-    return Array.from({ length: total }, (_, i) => ({
+    return Array.from({ length: Math.max(total - 1, 0) }, (_, i) => ({
       params: { lang, page: String(i + 2) },
     }));
   });
@@ -47,7 +47,7 @@ const totalPages = Math.ceil(sortedProducts.length / PAGE_SIZE);
 const pageNum = parseInt(page, 10);
 
 if (pageNum < 2 || pageNum > totalPages) {
-  return Astro.redirect('/' + lang + '/product');
+  return Astro.redirect('/' + lang + '/product/');
 }
 
 const start = (pageNum - 1) * PAGE_SIZE;
