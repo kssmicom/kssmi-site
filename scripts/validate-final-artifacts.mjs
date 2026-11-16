@@ -62,6 +62,16 @@ for (const rel of KEEP.flatMap(lang => {
   if (fs.readFileSync(f, 'utf8').includes('content="noindex')) fail(`${rel} 不该有 noindex`);
 }
 
+// Retained sections must remain reachable in every language, including the
+// collection placeholder linked by its own language selector.
+for (const lang of KEEP) {
+  const prefix = lang === 'en' ? '' : `${lang}/`;
+  for (const section of ['collection', 'blog', 'eyewear']) {
+    const rel = `${prefix}${section}/index.html`;
+    if (!fs.existsSync(path.join(dist, rel))) fail(`缺少保留栏目：${rel}`);
+  }
+}
+
 if (errors.length) {
   console.error('最终产物校验失败：');
   for (const e of errors.slice(0, 20)) console.error('  ✗ ' + e);
