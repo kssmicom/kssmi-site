@@ -1,5 +1,6 @@
 ---
 import { productGalleryCopy } from '../content/productGalleryCopy';
+import { thumbSrc } from '../utils/image';
 
 interface Props {
   cover?: string;
@@ -30,13 +31,6 @@ const imageAlt = (index: number) => index === 0
 const imageCount = (current: number) => copy.imageOf
   .replace('{current}', String(current))
   .replace('{total}', String(images.length));
-
-function thumbSrc(originalPath: string): string {
-  const lastDot = originalPath.lastIndexOf('.');
-  return lastDot > -1
-    ? originalPath.slice(0, lastDot) + '-120w' + originalPath.slice(lastDot)
-    : originalPath;
-}
 ---
 
 <div class="product-gallery space-y-4 flex flex-col items-center" data-product-gallery dir={isRTL ? 'rtl' : 'ltr'}>
