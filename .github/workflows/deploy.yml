@@ -43,7 +43,9 @@ jobs:
         run: npm ci --legacy-peer-deps
 
       - name: Audit npm dependencies
-        run: npm audit --audit-level=high
+        run: |
+          node --test tests/dependency-audit.test.mjs
+          node scripts/audit-dependencies.mjs
 
       - name: Setup PHP 8.3
         uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240  # 2.37.2 pinned

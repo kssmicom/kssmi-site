@@ -87,7 +87,7 @@
     "@astrojs/check": "^0.9.12",
     "@astrojs/compiler": "^2.13.1",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.3.8",
+    "astro": "^7.4.12",
     "astro-pagefind": "^2.0.1",
     "baseline-browser-mapping": "^2.11.32",
     "caniuse-lite": "^1.0.30001819",

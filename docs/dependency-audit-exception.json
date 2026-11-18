@@ -1,0 +1,13 @@
+{
+  "advisory": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf",
+  "approved": true,
+  "reviewedAt": "2026-11-18T00:00:00+08:00",
+  "expiresAt": "2026-12-02T00:00:00+08:00",
+  "decision": "Repository owner explicitly authorized the single-advisory temporary exception and production release in the Codex chat on 2026-11-18, superseding the earlier refusal. Other high/critical advisories must remain blocked.",
+  "evidenceSha256": {
+    "package-lock.json": "4aa145988647a61a5f2ce3bd3a4a6b2220485c701fa0a70a3a79d48cce164499",
+    "astro.config.mjs": "1d0f1e1b9e0e044ec2832ce2ee7ee2ca5d7ed1c48c4bc05df2c27b7e78975c9b",
+    "src/content.config.ts": "0e1dba8bcfe4ca59bf1c47f90fe0a6c588d07928e3dfeff9ede9aff0acb4c934",
+    ".github/workflows/deploy.yml": "748fe9310540cf7d738f1ca680f3e68348d00fecd4595b6b8143f858dd3afb51"
+  }
+}
