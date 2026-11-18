@@ -30,7 +30,7 @@ export function cardSrc(imagePath: string | undefined): string {
 }
 
 /**
- * Returns the -120w (thumbnail) variant of an image if it exists,
+ * Returns the -240w (thumbnail) variant of an image if it exists,
  * otherwise returns the original path.
  *
  * Usage:
@@ -38,5 +38,5 @@ export function cardSrc(imagePath: string | undefined): string {
  *   <img src={thumbSrc(image)} ... />
  */
 export function thumbSrc(imagePath: string | undefined): string {
-  return variantSrc(imagePath, '-120w');
+  return variantSrc(imagePath, '-240w');
 }

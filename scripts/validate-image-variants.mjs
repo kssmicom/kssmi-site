@@ -4,7 +4,7 @@
  *
  * Read-only scan of public/media/products: every original product image
  * must sit next to its pre-generated derivatives <name>-400.webp (card)
- * and <name>-120w.webp (thumbnail), as produced by
+ * and <name>-240w.webp (thumbnail), as produced by
  * scripts/optimize-images.mjs. Missing variants fail the build instead of
  * silently degrading to the heavy originals (src/utils/image.ts keeps a
  * build-time existence fallback, but this gate is what enforces the
@@ -23,10 +23,11 @@ import { join } from 'node:path';
 
 const DEFAULT_ROOT = 'public/media/products';
 const IMAGE_EXTENSION = /\.(webp|jpe?g|png)$/i;
-// Pre-generated derivatives and poster assets are never treated as originals.
-const DERIVED_NAME = /-(400|120w)\.(webp|jpe?g|png)$/i;
+// Pre-generated derivatives (-120w legacy and -240w current thumbnails, card
+// variants) and poster assets are never treated as originals.
+const DERIVED_NAME = /-(400|120w|240w)\.(webp|jpe?g|png)$/i;
 const POSTER_NAME = /-poster\./i;
-const REQUIRED_VARIANTS = ['-400', '-120w'];
+const REQUIRED_VARIANTS = ['-400', '-240w'];
 
 const scanRoot = process.argv[2] ?? DEFAULT_ROOT;
 
@@ -106,5 +107,5 @@ if (missing.length > 0) {
 
 console.log(
   `✅ ${originals.length} product original(s) checked under ${scanRoot}; ` +
-  `all ${originals.length * REQUIRED_VARIANTS.length} required -400/-120w variants present.`
+  `all ${originals.length * REQUIRED_VARIANTS.length} required -400/-240w variants present.`
 );

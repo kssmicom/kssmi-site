@@ -197,6 +197,30 @@ gallery:
   - "/media/products/kso-005/OEM-ODM-Customize-Luxury-Optical-Glasses-KSO-005-2.webp"
 ```
 
+**Product image derivatives:** every original must have a same-basename
+`-400.webp` card variant (400×300 bounding box, WebP quality 85) and
+`-240w.webp` gallery thumbnail (240×240 bounding box, WebP quality 80).
+The optimizer uses `fit: 'inside'`, `withoutEnlargement: true` and WebP
+`effort: 5`; these are maximum dimensions, not a requirement to crop or
+stretch every source into a rectangle. Generate derivatives from originals,
+never enlarge an old thumbnail. The gallery displays thumbnails at 64×64
+CSS pixels; the larger asset supports high-density screens.
+
+- Keep frontmatter, main gallery images and sitemap image URLs pointed at
+  originals. Use `cardSrc` / `thumbSrc` from `src/utils/image.ts` for their
+  respective display contexts; these helpers fall back to the original when
+  a derivative is absent at render time.
+- Exclude `-400`, legacy `-120w` and current `-240w` derivatives from original
+  discovery and original-image recompression. Preserve these exclusions even
+  if legacy files are later removed. Do not use derived suffixes in original
+  image names or product directory names.
+- Legacy `-120w.webp` assets are retained but no longer generated or required.
+  Removing them is a separate reviewed change.
+- `npm run validate:image-variants` is a read-only existence/file-type gate
+  required by `prebuild`; it requires `-400` and `-240w`, but does not verify
+  dimensions, encoding quality or visual appearance. Check those when
+  generating or replacing assets. A fallback is not permission to omit them.
+
 ### Product Naming Convention
 
 The following are existing naming families, not an exhaustive SKU schema.
@@ -395,10 +419,28 @@ The Vite plugin in `astro.config.mjs` watches `src/content/products/` for new fo
 1. Inspect a current product folder and the schema in `src/content.config.ts`.
 2. Add stable image assets under `public/media/products/`, following the
    current product's naming and URL conventions.
-3. Create the matching content folder under `src/content/products/` and
+3. Generate the required derivatives with `node scripts/optimize-images.mjs`
+   from the website repository root, after inspecting the script and manifest
+   state. This is a write operation scanning all of `public/media`, not just
+   the new SKU: it can recompress unrecorded originals and convert JPG/PNG
+   originals to WebP. Review the resulting file list and use final `.webp`
+   URLs in content. Do not run it as part of a read-only check, and never
+   clear `scripts/.optimize-manifest.json` to force regeneration. Existing
+   manifest entries can prevent a missing derivative from being regenerated;
+   restore a lost file or regenerate that derivative from its original with
+   the documented settings. Replacing an original also requires deliberately
+   regenerating its derivatives; the manifest does not detect changed bytes.
+4. Create the matching content folder under `src/content/products/` and
    maintain all 17 language entries, product facts and SEO metadata.
-4. Validate content, language routing, image URLs and search output in the
-   compliant local workspace; a dev-server refresh alone is not acceptance.
+5. Run `npm run validate` and `npm run validate:image-variants`. Check new
+   assets decode, have the expected dimensions/aspect ratio and look correct.
+   Review the diff to confirm unrelated originals and variants were preserved;
+   include the required new originals, `-400` and `-240w` files together in
+   any authorized commit. Temporary test materials stay under `tep`.
+6. Validate language routing, image URLs and search output in the compliant
+   local workspace; a dev-server refresh alone is not acceptance. A full
+   build runs the variant gate but does not generate missing image variants.
+   Commit, push and production deployment still need session authorization.
 
 ### Adding a Landing Page or FAQ Topic
 

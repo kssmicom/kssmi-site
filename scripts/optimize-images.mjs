@@ -4,7 +4,7 @@
  * Generates optimized WebP images with size variants for different contexts.
  *
  * IMAGE STRATEGY:
- *   - products/:  original + -400 (card) + -120w (thumbnail)
+ *   - products/:  original + -400 (card) + -240w (thumbnail)
  *   - collection/, blogs/, feature/: original + -400 (card)
  *   - certifications/: original only (high quality, may need for printing)
  *   - icon/: original only (small UI icons, displayed at ~60-100px)
@@ -12,8 +12,13 @@
  * HOW IT WORKS:
  *   - The first time you run this, ALL images are compressed + variants created.
  *   - A record of every processed file is saved to .optimize-manifest.json.
- *   - On future runs, files already in the manifest are SKIPPED automatically.
- *   - Only NEW images get processed.
+ *   - Derived -400/-120w/-240w files are never processed as originals.
+ *   - Recorded originals are not recompressed; missing variants are generated
+ *     only when neither the output file nor its manifest record exists.
+ *   - The manifest does not detect changed source bytes. Replacing an original
+ *     requires deliberate derivative regeneration; never clear the manifest
+ *     as a general repair. Restore lost variants or regenerate them directly.
+ *   - This scans ALL public/media and can rewrite unrecorded originals.
  *
  * Quality settings (WebP):
  *   - Product cover ("-1."):    max 800x600,   quality 92
@@ -24,13 +29,16 @@
  *
  * Variants:
  *   - Card (-400): 400x300, quality 85 — for cards/featured sections
- *   - Thumb (-120w): 120x120, quality 80 — for product listing grids
+ *   - Thumb (-240w): 240x240, quality 80 — for product gallery thumbnails
+ *     (legacy -120w thumbnails are kept on disk but no longer generated)
+ *   - Dimensions are bounding boxes (fit inside, no enlargement), effort 5.
  *
  * Usage:
  *   node scripts/optimize-images.mjs
  *
- * Then rebuild and deploy:
- *   npm run build
+ * Then validate:
+ *   npm run validate:image-variants
+ * Build/publication are separate steps requiring session authorization.
  */
 
 import { readdir, stat, unlink, readFile, writeFile } from 'node:fs/promises';
@@ -84,8 +92,8 @@ const CARD_W          = 400;
 const CARD_H          = 300;
 const CARD_QUALITY    = 85;
 
-const THUMB_W         = 120;
-const THUMB_H         = 120;
+const THUMB_W         = 240;
+const THUMB_H         = 240;
 const THUMB_QUALITY   = 80;
 
 // ── Detect image type from path ───────────────────────────────────────────────
@@ -189,12 +197,12 @@ async function generateCardVariant(filePath) {
   }
 }
 
-// ── Generate thumbnail variant (-120w) ─────────────────────────────────────
+// ── Generate thumbnail variant (-240w) ─────────────────────────────────────
 async function generateThumbVariant(filePath) {
   const outPath = filePath
     .replace(/\.(jpg|jpeg|png)$/i, '.webp')
-    .replace(/\.webp$/, '-120w.webp')
-    .replace(/-120w\.webp$/, '-120w.webp'); // avoid double
+    .replace(/\.webp$/, '-240w.webp')
+    .replace(/-240w\.webp$/, '-240w.webp'); // avoid double
 
   try {
     const inputBuffer = await readFile(filePath);
@@ -234,6 +242,16 @@ async function main() {
   for (const filePath of images) {
     const normalized = filePath.replace(/\\/g, '/');
     const key = normalized.split('public/')[1];
+
+    // Derived variants are never re-compressed as originals, regardless of
+    // manifest state: a manifest record is bookkeeping, not a substitute
+    // for this exclusion. Without it, a variant missing from the manifest
+    // (e.g. a newly introduced suffix) would be re-encoded by optimizeImage().
+    if (key.includes('-400') || key.includes('-120w') || key.includes('-240w')) {
+      skippedCount++;
+      continue;
+    }
+
     totalOriginalBytes += (await stat(filePath)).size;
 
     // ── Determine folder type ───────────────────────────────────────────────
@@ -245,8 +263,9 @@ async function main() {
 
     // ── Generate variants (check manifest to skip if exists) ───────────────
 
-    // Card variant (-400) — for products AND collection/blogs/feature
-    if (isCardFolder && !key.includes('-400') && !key.includes('-120w')) {
+    // Card variant (-400) — for products AND collection/blogs/feature.
+    // -120w (legacy) and -240w (current) thumbnails are derived assets too.
+    if (isCardFolder && !key.includes('-400') && !key.includes('-120w') && !key.includes('-240w')) {
       const cardPath = filePath
         .replace(/\.(jpg|jpeg|png)$/i, '.webp')
         .replace(/\.webp$/, '-400.webp')
@@ -265,20 +284,20 @@ async function main() {
       }
     }
 
-    // Thumbnail variant (-120w) — ONLY for products
-    if (isProducts && !key.includes('-400') && !key.includes('-120w')) {
+    // Thumbnail variant (-240w) — ONLY for products
+    if (isProducts && !key.includes('-400') && !key.includes('-120w') && !key.includes('-240w')) {
       const thumbPath = filePath
         .replace(/\.(jpg|jpeg|png)$/i, '.webp')
-        .replace(/\.webp$/, '-120w.webp')
-        .replace(/-120w\.webp$/, '-120w.webp');
-      const thumbKey = key.replace(/\.(jpg|jpeg|png)$/i, '.webp').replace(/\.webp$/, '-120w.webp').replace(/-120w\.webp$/, '-120w.webp');
+        .replace(/\.webp$/, '-240w.webp')
+        .replace(/-240w\.webp$/, '-240w.webp');
+      const thumbKey = key.replace(/\.(jpg|jpeg|png)$/i, '.webp').replace(/\.webp$/, '-240w.webp').replace(/-240w\.webp$/, '-240w.webp');
 
       if (!manifest[thumbKey] && !existsSync(thumbPath)) {
         const thumbResult = await generateThumbVariant(filePath);
         if (thumbResult.status === 'thumb_created') {
           thumbGenCount++;
           manifest[thumbKey] = { size: thumbResult.size, date: new Date().toISOString() };
-          console.log(`  🖼️   ${thumbKey}  → ${formatKB(thumbResult.size)} (thumb -120w)`);
+          console.log(`  🖼️   ${thumbKey}  → ${formatKB(thumbResult.size)} (thumb -240w)`);
         } else {
           console.error(`  ❌  ${thumbKey}  THUMB ERROR: ${thumbResult.error}`);
         }
@@ -319,7 +338,7 @@ async function main() {
   console.log(`  Total images scanned   : ${images.length}`);
   console.log(`  Newly optimised        : ${optimisedCount}`);
   console.log(`  Card variants (-400)   : ${cardGenCount}`);
-  console.log(`  Thumb variants (-120w) : ${thumbGenCount}`);
+  console.log(`  Thumb variants (-240w) : ${thumbGenCount}`);
   console.log(`  Already done, skipped  : ${skippedCount}`);
   console.log(`  Errors                 : ${errorCount}`);
   console.log(`  Total saved this run   : ${totalSavedMB} MB`);

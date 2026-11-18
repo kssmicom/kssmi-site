@@ -59,7 +59,7 @@ for (const loc of rootLocs) {
     if (isNoindex(read(page))) fail(`${child}: ${url} is noindex`);
   }
   for (const [, image] of xml.matchAll(/<image:loc>([^<]+)<\/image:loc>/g)) {
-    if (/-(120w|400)\.\w+$/.test(image)) fail(`${child}: image ${image} is a thumbnail, not the main image`);
+    if (/-(120w|240w|400)\.\w+$/.test(image)) fail(`${child}: image ${image} is a thumbnail, not the main image`);
     if (!existsSync(join(distDir, new URL(image).pathname))) fail(`${child}: image ${image} does not exist`);
   }
 }
