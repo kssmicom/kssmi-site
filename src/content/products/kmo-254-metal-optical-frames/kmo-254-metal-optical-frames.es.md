@@ -13,7 +13,6 @@ moq: "300 uds/modelo"
 productType: "Optical Frames"
 material: "Metal Optical Frames"
 series: "optical-frames, fashion-eyewear, metal-optical-frames, fashion-metal-optical-frames"
-categories: "Optical Frames, Metal Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "46-22-145mm & Personalización"

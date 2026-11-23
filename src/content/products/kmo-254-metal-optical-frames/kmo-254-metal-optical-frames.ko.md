@@ -13,7 +13,6 @@ moq: "300 개/모델"
 productType: "Optical Frames"
 material: "Metal Optical Frames"
 series: "optical-frames, fashion-eyewear, metal-optical-frames, fashion-metal-optical-frames"
-categories: "Optical Frames, Metal Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "46-22-145mm & 맞춤 서비스"

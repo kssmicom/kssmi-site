@@ -13,7 +13,6 @@ moq: "300 付/款"
 productType: "Optical Frames"
 material: "Metal Optical Frames"
 series: "optical-frames, fashion-eyewear, metal-optical-frames, fashion-metal-optical-frames"
-categories: "Optical Frames, Metal Optical Frames"
 
 # ─────────────────────────────────────────────────────
 size: "46-22-145mm & 定制服务"

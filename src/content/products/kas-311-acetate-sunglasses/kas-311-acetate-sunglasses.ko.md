@@ -7,7 +7,7 @@ date: "2026-05-12"
 colors: "블랙 & 스모키 퍼플 & 거북이 등껍질 & 브라운"
 materials: "프리미엄 Mazzucchelli, JIMEI, JINYU 아세테이트 & 맞춤 서비스"
 serviceMode: "OEM (위탁 생산) & ODM (디자인 생산) ( 맞춤 )"
-moq: "30 개/모델 (컬러당 100개)"
+moq: "300 개/모델 (컬러당 100개)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"

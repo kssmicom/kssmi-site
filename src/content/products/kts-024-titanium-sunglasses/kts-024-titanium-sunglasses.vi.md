@@ -20,7 +20,7 @@ frameMaterial: "Gọng và càng kính Titan cao cấp"
 lensMaterial: "Tròng kính Nylon bền bỉ & Tùy chỉnh theo yêu cầu"
 designStyle: "Độc đáo, Thời trang, Phong cách, Hợp thời đại, Sang trọng, Unisex"
 nosePads: "Đệm mũi đúc liền"
-brace: "Bản lề cấu trúc thùng 2+1 & Tùy chỉnh theo yêu cầu"
+hinge: "Bản lề cấu trúc thùng 2+1 & Tùy chỉnh theo yêu cầu"
 logo: "In, Laser, Laser đổ dầu, Ép kim, Huy hiệu kim loại, Dập nổi, Đính đá, Nhãn dán 3D"
 service: "Sản xuất OEM / ODM – Tùy chỉnh theo yêu cầu"
 

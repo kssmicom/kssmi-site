@@ -36,7 +36,7 @@ featured: true
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KAS-510 Modische Acetat-Sonnenbrillen | Maßgeschneiderter Lieferant"
 seoDescription: "Premium Mazzucchelli, JIMEI, JINYU Acetat-Sonnenbrillen für vollständige OEM/ODM-Anpassung. Maßgeschneiderte Rahmengrößen, Farben und Logo-Optionen. 300 MOQ pro Modell."
-seoKeywords: ""
+seoKeywords: "Acetat-Sonnenbrillen-Hersteller, maßgeschneiderte OEM-Acetatbrillen, Private-Label-Sonnenbrillen-Lieferant, Großhandel Acetatfassungen China, Mode-Sonnenbrillen-ODM-Fabrik, maßgeschneiderte Sonnenbrillen-Individualisierung, chinesischer Acetatbrillen-Produzent, Premium-Sonnenbrillen für Boutique-Marken"
 ---
 
 ## Eigenschaften

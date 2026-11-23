@@ -36,7 +36,7 @@ featured: true
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KAS-510 Kính râm Axetat Thời trang | Nhà cung cấp Tùy chỉnh"
 seoDescription: "Kính râm axetat cao cấp Mazzucchelli, JIMEI, JINYU có sẵn cho tùy chỉnh OEM/ODM toàn diện. Kích thước gọng, màu sắc và tùy chọn logo theo yêu cầu. MOQ 300 cho mỗi mẫu."
-seoKeywords: ""
+seoKeywords: "nhà sản xuất kính mát axetat, kính mắt axetat OEM tùy chỉnh, nhà cung cấp kính mát nhãn hiệu riêng, gọng kính axetat bán sỉ Trung Quốc, nhà máy ODM kính mát thời trang, tùy chỉnh kính mát đặt riêng, nhà sản xuất kính mắt axetat Trung Quốc, kính mát cao cấp cho thương hiệu boutique"
 ---
 
 ## Đặc điểm

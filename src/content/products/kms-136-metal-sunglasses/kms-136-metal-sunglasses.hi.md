@@ -1,6 +1,6 @@
 ---
 # ─────────────────────────────────────────────────────
-title: "Custom Metal Sunglasses"
+title: "कस्टम मेटल सनग्लासेस"
 slug: "kms-136-metal-sunglasses"
 itemNo: "KMS-136"
 date: "2026-04-06"

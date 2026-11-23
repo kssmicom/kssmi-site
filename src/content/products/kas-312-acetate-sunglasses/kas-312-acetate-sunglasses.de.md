@@ -7,7 +7,7 @@ date: "2026-05-12"
 colors: "Spark & Havana & Red-Turtle & Schwarz"
 materials: "Premium-Mazzucchelli, JIMEI, JINYU-Acetat & Individualisierung"
 serviceMode: "OEM & ODM ( Individualisierung )"
-moq: "30 Stk/Modell (100 Stk/Farbe)"
+moq: "300 Stk/Modell (100 Stk/Farbe)"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"

@@ -22,6 +22,7 @@ designStyle: "Unik, Klasik, Retro, Bergaya, Trend, Fesyen, Mewah, Unisex"
 nosePads: "Alas Hidung Bersepadu"
 hinge: "Engsel Struktur Rivet Barrel 4+3 & Penyesuaian (5 Barrel & Engsel Spring)"
 logo: "Cetak, Laser, Laser Dengan Minyak, Setem Panas, Lencana Logam, Timbulan, Kristal, Pelekat"
+service: "Pembuatan OEM / ODM – Penyesuaian"
 acetateFeature: "Ringan & Tahan Lama & Ceria"
 
 # ─────────────────────────────────────────────────────
@@ -45,6 +46,7 @@ gallery:
   - "/media/products/kao-312-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-312-17.webp"
   - "/media/products/kao-312-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-312-18.webp"
   - "/media/products/kao-312-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-312-19.webp"
+  - "/media/products/kao-312-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-312-20.webp"
 customizable: true
 featured: true
 

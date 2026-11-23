@@ -46,6 +46,7 @@ gallery:
   - "/media/products/kao-306-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-306-17.webp"
   - "/media/products/kao-306-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-306-18.webp"
   - "/media/products/kao-306-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-306-19.webp"
+  - "/media/products/kao-306-acetate-optical-frame/oem-odm-customized-acetate-optical-frame-kao-306-20.webp"
 customizable: true
 featured: true
 

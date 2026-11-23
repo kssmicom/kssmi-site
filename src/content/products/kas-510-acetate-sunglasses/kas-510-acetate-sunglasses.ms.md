@@ -36,7 +36,7 @@ featured: true
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KAS-510 Cermin Mata Hitam Asetat Trendi Fesyen | Pembekal Tersuai"
 seoDescription: "Cermin mata hitam asetat premium Mazzucchelli, JIMEI, JINYU tersedia untuk penyesuaian OEM/ODM penuh. Saiz bingkai, warna, dan pilihan logo yang ditempah khas. 300 MOQ setiap model."
-seoKeywords: ""
+seoKeywords: "pengeluar cermin mata hitam asetat, kacamata asetat OEM tersuai, pembekal cermin mata hitam label peribadi, borong bingkai asetat China, kilang ODM cermin mata hitam fesyen, penyesuaian cermin mata hitam tempahan, pengeluar kacamata asetat China, cermin mata hitam premium untuk jenama butik"
 ---
 
 ## Ciri-ciri Utama
