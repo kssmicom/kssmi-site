@@ -58,6 +58,8 @@ const dependencies = {
   'Local-Start.bat': previewDependencies,
   'Local-Start-Fresh.bat': previewDependencies,
   'Local-Stop.bat': previewDependencies,
+  'Local-Start.command': previewDependencies,
+  'Local-Stop.command': previewDependencies,
   'start-servers.bat': previewDependencies,
   'push-main.bat': ['scripts/push-main.mjs', 'scripts/local-tools.mjs'],
   'scripts/local-dev.mjs': ['scripts/local-tools.mjs', 'scripts/local-php.mjs'],

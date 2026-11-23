@@ -8,11 +8,48 @@ import { spawn } from 'node:child_process';
 import { projectRoot, temporaryRoot, ensureTemporaryRoot, assertSafePath, createTask, taskEnvironment, archiveProjectCaches, writeJson } from './local-tools.mjs';
 import { findPhp, preparePhp } from './local-php.mjs';
 
+export const DEFAULT_ASTRO_PORT = 4322;
+export const DEFAULT_PHP_PORT = 4325;
+
 const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
+function parsePort(raw, fallback, label) {
+  if (raw === undefined) return fallback;
+  if (!/^\d+$/.test(raw)) throw new Error('Invalid ' + label + ': ' + raw);
+  const port = Number(raw);
+  if (!Number.isInteger(port) || port < 1024 || port > 65535) throw new Error('Invalid ' + label + ': ' + raw);
+  return port;
+}
 function options(args) {
-  const value = name => args.includes(name) ? args[args.indexOf(name) + 1] : undefined;
+  const value = name => {
+    const idx = args.indexOf(name);
+    if (idx === -1) return undefined;
+    const next = args[idx + 1];
+    if (next === undefined || next.startsWith('--')) throw new Error('Missing value for ' + name + '.');
+    return next;
+  };
   const source = fs.realpathSync(value('--source') || projectRoot);
-  return { source, port: Number(value('--port') || 4321), php: args.includes('--php'), noBrowser: args.includes('--no-browser'), fresh: args.includes('--fresh'), task: value('--task') };
+  return {
+    source,
+    port: parsePort(value('--port'), DEFAULT_ASTRO_PORT, 'local preview port'),
+    php: args.includes('--php'),
+    phpPort: parsePort(value('--php-port'), DEFAULT_PHP_PORT, 'local PHP port'),
+    phpPortProvided: args.includes('--php-port'),
+    noBrowser: args.includes('--no-browser'),
+    fresh: args.includes('--fresh'),
+    task: value('--task')
+  };
+}
+function statePhpPort(state) {
+  return state?.php ? (Number.isInteger(state.phpPort) ? state.phpPort : DEFAULT_PHP_PORT) : null;
+}
+function isPidAlive(pid) {
+  if (!Number.isInteger(pid) || pid <= 0) return false;
+  try { process.kill(pid, 0); return true; } catch { return false; }
+}
+function unmanagedPortError(port) {
+  return new Error(
+    `Port ${port} is occupied by an unmanaged server. No process was stopped. Legacy shell-started servers are not adopted automatically; verify the owning PID and command manually before stopping it (macOS: lsof -nP -iTCP:${port} -sTCP:LISTEN && ps -p <PID> -o pid,lstart,command; Windows: netstat -ano | findstr :${port}).`
+  );
 }
 function statePaths(source) {
   ensureTemporaryRoot();
@@ -30,14 +67,45 @@ function readState(source) {
 }
 async function control(state, action) {
   if (!state || state.status === 'stopped') return null;
-  try {
-    const response = await fetch('http://127.0.0.1:' + state.controlPort + '/' + action, {
-      method: 'POST', headers: { 'x-kssmi-session': state.token }, signal: AbortSignal.timeout(5000)
+  return new Promise(resolve => {
+    let settled = false;
+    const done = value => {
+      if (!settled) {
+        settled = true;
+        resolve(value);
+      }
+    };
+    const req = http.request({
+      host: '127.0.0.1',
+      port: state.controlPort,
+      path: '/' + action,
+      method: 'POST',
+      agent: false,
+      headers: { 'x-kssmi-session': state.token, connection: 'close' },
+      timeout: 5000
+    }, res => {
+      if ((res.statusCode || 0) < 200 || res.statusCode >= 300) {
+        res.resume();
+        done(null);
+        return;
+      }
+      let body = '';
+      res.setEncoding('utf8');
+      res.on('data', chunk => { body += chunk; });
+      res.on('error', () => done(null));
+      res.on('end', () => {
+        try {
+          const result = JSON.parse(body);
+          done(result.source === state.source && result.session === state.session ? result : null);
+        } catch {
+          done(null);
+        }
+      });
     });
-    if (!response.ok) return null;
-    const result = await response.json();
-    return result.source === state.source && result.session === state.session ? result : null;
-  } catch { return null; }
+    req.on('timeout', () => { req.destroy(); done(null); });
+    req.on('error', () => done(null));
+    req.end();
+  });
 }
 async function available(port) {
   for (const host of ['127.0.0.1', '::1']) {
@@ -51,7 +119,12 @@ async function available(port) {
   return true;
 }
 function openBrowser(url) {
-  const p = spawn('explorer.exe', [url], { detached: true, windowsHide: true, stdio: 'ignore' });
+  const command = process.platform === 'win32'
+    ? ['explorer.exe', [url], { detached: true, windowsHide: true, stdio: 'ignore' }]
+    : process.platform === 'darwin'
+      ? ['open', [url], { detached: true, stdio: 'ignore' }]
+      : ['xdg-open', [url], { detached: true, stdio: 'ignore' }];
+  const p = spawn(command[0], command[1], command[2]);
   p.on('error', () => console.log('Open manually: ' + url));
   p.unref();
 }
@@ -60,9 +133,7 @@ async function stopOwned(source) {
   const live = await control(state, 'status');
   if (!live) {
     if (state && !['stopped', 'failed'].includes(state.status)) {
-      let exists = false;
-      try { process.kill(state.pid, 0); exists = true; } catch {}
-      if (exists) throw new Error('This project preview is not responding yet. No process was killed. Retry after startup or inspect ' + path.join(state.task, 'server.log'));
+      if (isPidAlive(state.pid)) throw new Error('This project preview is not responding yet. No process was killed. Retry after startup or inspect ' + path.join(state.task, 'server.log'));
     }
     return false;
   }
@@ -79,17 +150,19 @@ async function start(opts) {
   const current = readState(opts.source);
   const live = await control(current, 'status');
   if (current?.status === 'preparing') {
-    let running = Boolean(live);
-    if (!running) { try { process.kill(current.pid, 0); running = true; } catch {} }
+    const running = Boolean(live) || isPidAlive(current.pid);
     if (running) {
-      if (opts.fresh || current.port !== opts.port || (opts.php && !current.php)) throw new Error('This preview is still preparing. Wait for it to finish or stop it before changing its mode.');
+      const phpPortMismatch = opts.php && current.php && statePhpPort(current) !== opts.phpPort;
+      if (opts.fresh || current.port !== opts.port || (opts.php && !current.php) || phpPortMismatch) {
+        throw new Error('This preview is still preparing. Wait for it to finish or stop it before changing its mode.');
+      }
       console.log('The project preview is already preparing; waiting for readiness.');
       const deadline = Date.now() + 300000;
       while (Date.now() < deadline) {
         const latest = readState(opts.source);
         if (!latest || latest.task !== current.task || ['failed', 'stopped'].includes(latest.status)) throw new Error('The pending preview stopped or changed. See ' + path.join(current.task, 'server.log'));
         if ((await control(latest, 'status'))?.status === 'ready') {
-          console.log('Ready: http://127.0.0.1:' + latest.port);
+          console.log('Ready: http://127.0.0.1:' + latest.port + (latest.php ? ' (PHP: ' + statePhpPort(latest) + ')' : ''));
           if (!opts.noBrowser) openBrowser('http://127.0.0.1:' + latest.port);
           return;
         }
@@ -98,25 +171,32 @@ async function start(opts) {
       throw new Error('The existing preview is still preparing. See ' + path.join(current.task, 'server.log'));
     }
   }
-  if (live?.status === 'ready' && current.port === opts.port && !opts.fresh && (!opts.php || current.php)) {
-    console.log('Existing project preview: http://127.0.0.1:' + current.port);
+  const phpMatches = !opts.php || (Boolean(current?.php) && statePhpPort(current) === opts.phpPort);
+  if (live?.status === 'ready' && current?.port === opts.port && !opts.fresh && phpMatches) {
+    console.log('Existing project preview: http://127.0.0.1:' + current.port + (current.php ? ' (PHP: ' + statePhpPort(current) + ')' : ''));
     if (!opts.noBrowser) openBrowser('http://127.0.0.1:' + current.port);
     return;
   }
-  if (live && current.php) opts.php = true;
+  if (live && current?.php) {
+    opts.php = true;
+    if (!opts.phpPortProvided) opts.phpPort = statePhpPort(current);
+  }
+  if (opts.php && opts.port === opts.phpPort) throw new Error('Astro port and PHP port must be different.');
   if (opts.php) {
     findPhp();
     if (!fs.existsSync(path.join(opts.source, 'public/vendor/phpmailer/phpmailer/src/PHPMailer.php'))) throw new Error('PHPMailer is missing. No dependencies were installed and the existing preview was left alone.');
   }
-  if (live) await stopOwned(opts.source);
-  if (!(await available(opts.port)) || (opts.php && !(await available(4325)))) {
-    throw new Error('A required port is occupied by an unmanaged server. No process was stopped. Close the old server first.');
+  if (live) {
+    if (opts.port !== current.port && !(await available(opts.port))) throw unmanagedPortError(opts.port);
+    if (opts.php && (!current?.php || opts.phpPort !== statePhpPort(current)) && !(await available(opts.phpPort))) throw unmanagedPortError(opts.phpPort);
+    await stopOwned(opts.source);
   }
+  if (!(await available(opts.port))) throw unmanagedPortError(opts.port);
+  if (opts.php && !(await available(opts.phpPort))) throw unmanagedPortError(opts.phpPort);
   if (fs.existsSync(paths.lock)) {
-    const previous = JSON.parse(fs.readFileSync(paths.lock, 'utf8'));
-    let running = false;
-    try { process.kill(previous.pid, 0); running = true; } catch {}
-    if (running) throw new Error('Another launcher is preparing this project. Please wait.');
+    let previous = null;
+    try { previous = JSON.parse(fs.readFileSync(paths.lock, 'utf8')); } catch {}
+    if (previous && isPidAlive(previous.pid)) throw new Error('Another launcher is preparing this project. Please wait.');
     fs.renameSync(paths.lock, paths.lock + '.stale-' + Date.now());
   }
   const lock = fs.openSync(paths.lock, 'wx');
@@ -126,7 +206,7 @@ async function start(opts) {
     const task = createTask('preview', opts.source);
     const fd = fs.openSync(path.join(task, 'server.log'), 'a');
     const args = [path.join(projectRoot, 'scripts/local-dev.mjs'), 'run', '--source', opts.source, '--port', String(opts.port), '--task', task];
-    if (opts.php) args.push('--php');
+    if (opts.php) args.push('--php', '--php-port', String(opts.phpPort));
     if (opts.fresh) args.push('--fresh');
     const child = spawn(process.execPath, args, { detached: true, windowsHide: true, stdio: ['ignore', fd, fd], env: taskEnvironment(task) });
     let spawnError;
@@ -142,7 +222,7 @@ async function start(opts) {
       if (state?.task === task) {
         const status = await control(state, 'status');
         if (status?.status === 'ready') {
-          console.log('Ready: http://127.0.0.1:' + opts.port + (opts.php ? ' (PHP: 4325)' : ''));
+          console.log('Ready: http://127.0.0.1:' + opts.port + (opts.php ? ' (PHP: ' + opts.phpPort + ')' : ''));
           if (!opts.noBrowser) openBrowser('http://127.0.0.1:' + opts.port);
           return;
         }
@@ -154,7 +234,9 @@ async function start(opts) {
     throw new Error('Preview did not become ready in time. See ' + path.join(task, 'server.log'));
   } finally {
     // Only the launch lock owned by this process is removed.
-    if (fs.existsSync(paths.lock) && JSON.parse(fs.readFileSync(paths.lock, 'utf8')).pid === process.pid) fs.unlinkSync(paths.lock);
+    try {
+      if (fs.existsSync(paths.lock) && JSON.parse(fs.readFileSync(paths.lock, 'utf8')).pid === process.pid) fs.unlinkSync(paths.lock);
+    } catch {}
   }
 }
 async function run(opts) {
@@ -162,7 +244,7 @@ async function run(opts) {
   const owner = JSON.parse(fs.readFileSync(path.join(task, '.kssmi-local-task.json'), 'utf8'));
   if (owner.schema !== 1 || owner.kind !== 'preview' || owner.source !== opts.source || owner.state !== 'preparing') throw new Error('The task directory does not belong to this preview launch.');
   const paths = statePaths(opts.source);
-  const state = { schema: 1, source: opts.source, task, pid: process.pid, session: randomBytes(16).toString('hex'), token: randomBytes(32).toString('hex'), status: 'preparing', port: opts.port, php: opts.php, controlPort: 0 };
+  const state = { schema: 1, source: opts.source, task, pid: process.pid, session: randomBytes(16).toString('hex'), token: randomBytes(32).toString('hex'), status: 'preparing', port: opts.port, php: opts.php, phpPort: opts.php ? opts.phpPort : null, controlPort: 0 };
   let astro, php, ending = false;
   function save(status) {
     state.status = status;
@@ -173,9 +255,16 @@ async function run(opts) {
     if (ending) return;
     ending = true;
     try { await astro?.stop(); } catch (error) { console.error('Preview shutdown:', error.message); }
-    if (php && php.exitCode === null) php.kill();
+    if (php && php.exitCode === null) {
+      await new Promise(resolve => {
+        const timer = setTimeout(resolve, 2000);
+        php.once('exit', () => { clearTimeout(timer); resolve(); });
+        try { php.kill(); } catch { clearTimeout(timer); resolve(); }
+      });
+    }
     save(status);
     server.close(() => process.exit(status === 'failed' ? 1 : 0));
+    server.closeAllConnections?.();
     setTimeout(() => process.exit(status === 'failed' ? 1 : 0), 3000).unref();
   }
   const server = http.createServer((req, res) => {
@@ -185,13 +274,15 @@ async function run(opts) {
       res.writeHead(403).end(); return;
     }
     if (!['/status', '/stop'].includes(req.url)) { res.writeHead(404).end(); return; }
+    res.setHeader('connection', 'close');
     res.setHeader('content-type', 'application/json');
-    res.end(JSON.stringify({ source: state.source, session: state.session, status: state.status }));
+    res.end(JSON.stringify({ source: state.source, session: state.session, status: state.status, port: state.port, php: state.php, phpPort: state.phpPort }));
     if (req.url === '/stop') setImmediate(() => shutdown());
   });
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   state.controlPort = server.address().port;
   save('preparing');
+  if (process.platform !== 'win32') process.on('SIGHUP', () => {});
   process.on('SIGINT', () => shutdown());
   process.on('SIGTERM', () => shutdown());
   try {
@@ -213,18 +304,18 @@ async function run(opts) {
       const probeName = '.kssmi-php-ready-' + randomBytes(8).toString('hex');
       const router = path.join(task, 'php-router.php');
       fs.writeFileSync(router, '<?php if (parse_url($_SERVER["REQUEST_URI"] ?? "", PHP_URL_PATH) === "/' + probeName + '") { header("Cache-Control: no-store"); echo "' + proof + '"; return true; } return false;');
-      php = spawn(runtime.binary, ['-c', runtime.ini, '-S', '127.0.0.1:4325', '-t', path.join(workspace, 'public'), router], { cwd: workspace, windowsHide: true, stdio: 'inherit', env: runtime.env });
+      php = spawn(runtime.binary, ['-c', runtime.ini, '-S', '127.0.0.1:' + opts.phpPort, '-t', path.join(workspace, 'public'), router], { cwd: workspace, windowsHide: true, stdio: 'inherit', env: runtime.env });
       php.on('error', e => { console.error(e); shutdown('failed'); });
       php.on('exit', () => { if (!ending) shutdown('failed'); });
       let ready = false;
       for (let i = 0; i < 100 && !ending && php.exitCode === null; i++) {
         try {
-          const response = await fetch('http://127.0.0.1:4325/' + probeName, { redirect: 'error', signal: AbortSignal.timeout(500) });
+          const response = await fetch('http://127.0.0.1:' + opts.phpPort + '/' + probeName, { redirect: 'error', signal: AbortSignal.timeout(500) });
           if (response.ok && await response.text() === proof) { ready = true; break; }
         } catch {}
         await pause(200);
       }
-      if (!ready) throw new Error('PHP did not confirm readiness on port 4325.');
+      if (!ready) throw new Error('PHP did not confirm readiness on port ' + opts.phpPort + '.');
     }
     const response = await fetch('http://127.0.0.1:' + opts.port + '/product', { signal: AbortSignal.timeout(180000) });
     if (!response.ok) throw new Error('Preview readiness check failed: HTTP ' + response.status);
@@ -238,9 +329,12 @@ async function run(opts) {
 async function main() {
   const [command = 'start', ...args] = process.argv.slice(2);
   const opts = options(args);
-  if (!Number.isInteger(opts.port) || opts.port < 1024 || opts.port > 65535) throw new Error('Invalid local preview port.');
+  if (opts.php && opts.port === opts.phpPort) throw new Error('Astro port and PHP port must be different.');
   if (command === 'stop') {
-    console.log(await stopOwned(opts.source) ? 'This project preview was stopped.' : 'No managed preview for this project was found. Other processes were left alone.');
+    const stopped = await stopOwned(opts.source);
+    console.log(stopped
+      ? 'This project preview was stopped.'
+      : 'No managed preview for this project was found. Other processes were left alone.\nNote: legacy servers started outside scripts/local-dev.mjs are not adopted or stopped automatically; inspect PID and command manually before stopping any unmanaged listener.');
   } else if (command === 'run') await run(opts);
   else if (command === 'start') await start(opts);
   else throw new Error('Unknown local preview command.');
