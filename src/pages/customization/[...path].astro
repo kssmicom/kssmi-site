@@ -1,0 +1,53 @@
+---
+/**
+ * English Customization Catalog routes (V1 preview).
+ *   /customization/                      -> all components
+ *   /customization/<n>/                  -> all components, page n
+ *   /customization/<group>/              -> one component group
+ *   /customization/<group>/<n>/          -> group, page n
+ *   /customization/<group>/<sub>/        -> one subcategory
+ *   /customization/<group>/<sub>/<n>/    -> subcategory, page n
+ * Pages are noindex during the English style-review phase; localized routes,
+ * hreflang and sitemap entries are added once the layout is approved.
+ */
+import CustomizationCatalogPage from '../../components/pages/CustomizationCatalogPage.astro';
+import {
+  CUSTOMIZATION_GROUPS,
+  CUSTOMIZATION_PAGE_SIZE,
+  getAllCustomizationItems,
+  getGroupItems,
+} from '../../data/customizationCatalog';
+
+export function getStaticPaths() {
+  const paths: any[] = [];
+  const addPaged = (segments: string[], items: any[], groupSlug: string | null, subSlug: string | null) => {
+    const totalPages = Math.max(1, Math.ceil(items.length / CUSTOMIZATION_PAGE_SIZE));
+    for (let page = 1; page <= totalPages; page++) {
+      const segs = page === 1 ? segments : [...segments, String(page)];
+      paths.push({
+        params: { path: segs.length ? segs.join('/') : undefined },
+        props: {
+          activeGroupSlug: groupSlug,
+          activeSubSlug: subSlug,
+          items: items.slice((page - 1) * CUSTOMIZATION_PAGE_SIZE, page * CUSTOMIZATION_PAGE_SIZE),
+          totalItems: items.length,
+          currentPage: page,
+          totalPages,
+        },
+      });
+    }
+  };
+
+  addPaged([], getAllCustomizationItems(), null, null);
+  for (const group of CUSTOMIZATION_GROUPS) {
+    addPaged([group.slug], getGroupItems(group), group.slug, null);
+    for (const sub of group.subcategories) {
+      addPaged([group.slug, sub.slug], sub.items, group.slug, sub.slug);
+    }
+  }
+  return paths;
+}
+
+const props = Astro.props as any;
+---
+<CustomizationCatalogPage lang="en" noindex={true} {...props} />

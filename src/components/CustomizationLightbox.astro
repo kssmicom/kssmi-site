@@ -1,0 +1,276 @@
+---
+/**
+ * Customization Lightbox — CSP-safe original-image viewer with 2.5× hover/touch magnifying loupe.
+ * Mirrors Yeetian's smooth circular loupe UX while using zero inline style="" attributes
+ * (passes validate-no-inline-style.mjs and static CSP hashes).
+ * ClientRouter-safe: bundled once and uses document event delegation.
+ */
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'en' } = Astro.props;
+const isRTL = lang === 'ar';
+---
+
+<dialog
+  data-custom-lightbox
+  dir={isRTL ? 'rtl' : 'ltr'}
+  aria-label="Component original image preview"
+  class="custom-lightbox m-auto p-0 rounded-2xl bg-white text-stone-900 shadow-2xl max-w-[min(94vw,920px)] max-h-[94dvh] w-fit overflow-hidden border border-stone-200"
+>
+  <div class="flex items-center justify-between gap-4 px-5 py-3.5 border-b border-stone-200 bg-[#FCFAF8]">
+    <div class="min-w-0 flex items-center gap-2.5">
+      <span data-lb-code class="px-2 py-0.5 rounded-xs bg-[#5D4E37] text-white text-xs font-mono font-bold tracking-wider shrink-0"></span>
+      <span data-lb-title class="text-sm font-bold text-stone-900 truncate"></span>
+    </div>
+    <button
+      type="button"
+      data-lb-close
+      aria-label="Close image preview"
+      autofocus
+      class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-stone-200/80 text-stone-800 hover:bg-stone-300 active:bg-stone-300 focus-visible:bg-stone-300 focus-within:bg-stone-300 text-xs font-Manrope font-bold transition-colors cursor-pointer shrink-0"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+      <span>Close</span>
+    </button>
+  </div>
+
+  <!-- No src until the visitor opens an image: originals are never preloaded. -->
+  <div
+    data-lb-stage
+    role="region"
+    tabindex="0"
+    aria-label="Hover or drag to magnify image details"
+    class="custom-lightbox__stage relative bg-stone-100 select-none"
+  >
+    <img data-lb-img alt="" draggable="false" class="custom-lightbox__img" />
+    <div data-lb-loupe aria-hidden="true" hidden class="custom-lightbox__loupe"></div>
+  </div>
+
+  <div class="px-5 py-3 border-t border-stone-200 bg-white flex flex-wrap items-center justify-between gap-3 text-xs text-stone-600">
+    <span data-lb-note></span>
+    <span class="font-mono text-[11px] text-stone-500 shrink-0">Hover over image for 2.5× magnifier · Esc to close</span>
+  </div>
+</dialog>
+
+<style>
+  .custom-lightbox::backdrop {
+    background: rgb(28 25 23 / 0.8);
+    backdrop-filter: blur(2px);
+  }
+
+  .custom-lightbox__stage {
+    touch-action: none;
+    width: min(820px, calc(100vw - 48px), 68dvh);
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    direction: ltr;
+    cursor: zoom-in;
+    margin: 0 auto;
+  }
+
+  .custom-lightbox__stage:focus-visible {
+    outline: 2px solid #5d4e37;
+    outline-offset: -2px;
+  }
+
+  .custom-lightbox__img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    user-select: none;
+  }
+
+  .custom-lightbox__loupe {
+    position: absolute;
+    pointer-events: none;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #5d4e37, 0 6px 22px rgb(0 0 0 / 0.28);
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+  }
+</style>
+
+<script>
+  let openerEl: HTMLElement | null = null;
+  const getDialog = () => document.querySelector<HTMLDialogElement>('[data-custom-lightbox]');
+
+  const hideLoupe = (stage: HTMLElement | null) => {
+    if (!stage) return;
+    const loupe = stage.querySelector<HTMLElement>('[data-lb-loupe]');
+    if (!loupe) return;
+    loupe.hidden = true;
+    loupe.style.removeProperty('background-image');
+    delete stage.dataset.loupeX;
+    delete stage.dataset.loupeY;
+  };
+
+  const magnify = (stage: HTMLElement, clientX: number, clientY: number) => {
+    const image = stage.querySelector<HTMLImageElement>('[data-lb-img]');
+    const loupe = stage.querySelector<HTMLElement>('[data-lb-loupe]');
+    if (!image || !loupe || !image.complete || !image.naturalWidth) return;
+
+    const bounds = image.getBoundingClientRect();
+    const stageBounds = stage.getBoundingClientRect();
+    const x = clientX - bounds.left;
+    const y = clientY - bounds.top;
+
+    if (x < 0 || y < 0 || x > bounds.width || y > bounds.height) {
+      hideLoupe(stage);
+      return;
+    }
+
+    const diameter = Math.min(240, stage.clientWidth * 0.6);
+    const radius = diameter / 2;
+    const border = 3;
+    const zoom = 2.5;
+
+    const left = Math.max(0, Math.min(clientX - stageBounds.left - radius, stage.clientWidth - diameter));
+    const top = Math.max(0, Math.min(clientY - stageBounds.top - radius, stage.clientHeight - diameter));
+
+    loupe.style.width = `${diameter}px`;
+    loupe.style.height = `${diameter}px`;
+    loupe.style.left = `${left}px`;
+    loupe.style.top = `${top}px`;
+    loupe.style.backgroundImage = `url("${image.currentSrc}")`;
+    loupe.style.backgroundSize = `${bounds.width * zoom}px ${bounds.height * zoom}px`;
+    loupe.style.backgroundPosition = `${radius - border - x * zoom}px ${radius - border - y * zoom}px`;
+
+    stage.dataset.loupeX = String(clientX);
+    stage.dataset.loupeY = String(clientY);
+    loupe.hidden = false;
+  };
+
+  const releaseDialog = (dialog: HTMLDialogElement) => {
+    hideLoupe(dialog.querySelector<HTMLElement>('[data-lb-stage]'));
+    dialog.querySelector<HTMLImageElement>('[data-lb-img]')?.removeAttribute('src');
+    openerEl?.focus({ preventScroll: true });
+    openerEl = null;
+  };
+
+  document.addEventListener('click', (event) => {
+    const target = event.target instanceof Element ? event.target : null;
+    const trigger = target?.closest<HTMLAnchorElement>('a[data-custom-zoom-link]');
+    if (
+      trigger &&
+      !event.defaultPrevented &&
+      event.button === 0 &&
+      !event.ctrlKey &&
+      !event.metaKey &&
+      !event.shiftKey &&
+      !event.altKey
+    ) {
+      const dialog = getDialog();
+      if (!dialog || typeof dialog.showModal !== 'function') return;
+      event.preventDefault();
+      openerEl = trigger;
+      hideLoupe(dialog.querySelector<HTMLElement>('[data-lb-stage]'));
+
+      const img = dialog.querySelector<HTMLImageElement>('[data-lb-img]');
+      const codeEl = dialog.querySelector<HTMLElement>('[data-lb-code]');
+      const titleEl = dialog.querySelector<HTMLElement>('[data-lb-title]');
+      const noteEl = dialog.querySelector<HTMLElement>('[data-lb-note]');
+
+      const code = trigger.dataset.specCode || '';
+      const title = trigger.dataset.specTitle || '';
+      const note = trigger.dataset.specNote || '';
+
+      if (img) {
+        img.alt = `${code} ${title}`.trim();
+        img.src = trigger.href;
+      }
+      if (codeEl) codeEl.textContent = code;
+      if (titleEl) titleEl.textContent = title;
+      if (noteEl) noteEl.textContent = note;
+
+      dialog.showModal();
+      dialog.addEventListener('close', () => releaseDialog(dialog), { once: true });
+      return;
+    }
+
+    const dialog = getDialog();
+    if (dialog?.open && (target === dialog || target?.closest('[data-lb-close]'))) {
+      dialog.close();
+    }
+  });
+
+  document.addEventListener('pointermove', (event) => {
+    const stage = event.target instanceof Element ? event.target.closest<HTMLElement>('[data-lb-stage]') : null;
+    if (stage && getDialog()?.open) magnify(stage, event.clientX, event.clientY);
+  });
+
+  document.addEventListener('pointerout', (event) => {
+    const stage = event.target instanceof Element ? event.target.closest<HTMLElement>('[data-lb-stage]') : null;
+    if (stage && (!(event.relatedTarget instanceof Node) || !stage.contains(event.relatedTarget))) {
+      hideLoupe(stage);
+    }
+  });
+
+  document.addEventListener('pointerdown', (event) => {
+    if (event.pointerType === 'mouse') return;
+    const stage = event.target instanceof Element ? event.target.closest<HTMLElement>('[data-lb-stage]') : null;
+    if (!stage || !getDialog()?.open) return;
+    event.preventDefault();
+    stage.setPointerCapture(event.pointerId);
+    magnify(stage, event.clientX, event.clientY);
+  });
+
+  const endTouch = (event: PointerEvent) => {
+    if (event.pointerType === 'mouse') return;
+    const stage = event.target instanceof Element ? event.target.closest<HTMLElement>('[data-lb-stage]') : null;
+    if (stage) hideLoupe(stage);
+  };
+  document.addEventListener('pointerup', endTouch);
+  document.addEventListener('pointercancel', endTouch);
+
+  document.addEventListener('focusin', (event) => {
+    if (event.target instanceof HTMLElement && event.target.matches('[data-lb-stage]:focus-visible')) {
+      const img = event.target.querySelector('img');
+      if (!img) return;
+      const bounds = img.getBoundingClientRect();
+      magnify(event.target, bounds.left + bounds.width / 2, bounds.top + bounds.height / 2);
+    }
+  });
+
+  document.addEventListener('focusout', (event) => {
+    if (event.target instanceof HTMLElement && event.target.matches('[data-lb-stage]')) {
+      hideLoupe(event.target);
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    const stage = event.target instanceof HTMLElement && event.target.matches('[data-lb-stage]') ? event.target : null;
+    if (!stage || !['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(event.key)) return;
+    const img = stage.querySelector('img');
+    if (!img) return;
+    event.preventDefault();
+    const bounds = img.getBoundingClientRect();
+    const x =
+      Number(stage.dataset.loupeX || bounds.left + bounds.width / 2) +
+      (event.key === 'ArrowRight' ? 20 : event.key === 'ArrowLeft' ? -20 : 0);
+    const y =
+      Number(stage.dataset.loupeY || bounds.top + bounds.height / 2) +
+      (event.key === 'ArrowDown' ? 20 : event.key === 'ArrowUp' ? -20 : 0);
+    magnify(stage, Math.max(bounds.left, Math.min(x, bounds.right)), Math.max(bounds.top, Math.min(y, bounds.bottom)));
+  });
+
+  window.addEventListener('resize', () => {
+    hideLoupe(getDialog()?.querySelector<HTMLElement>('[data-lb-stage]') ?? null);
+  });
+
+  document.addEventListener('astro:before-swap', () => {
+    const dialog = getDialog();
+    if (dialog?.open) dialog.close();
+    openerEl = null;
+  });
+</script>
