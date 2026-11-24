@@ -72,6 +72,10 @@ test('single valid component selection flows from customization page into /quote
   await page.goto('/customization/');
   await dismissCookieBannerIfPresent(page);
 
+  await expect(page.locator('meta[name="robots"][content*="noindex"]')).toHaveCount(0);
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://kssmi.com/customization/');
+  await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(0);
+
   const firstToggle = page.locator('[data-spec-toggle][data-spec-code="KS-LN-001"]').first();
   await expect(firstToggle).toHaveAttribute('aria-pressed', 'false');
   await firstToggle.click();

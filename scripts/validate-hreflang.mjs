@@ -13,7 +13,9 @@
  *     `og:url` matching canonical.
  *   - Enforces full indexable pages: exact 1 self-pointing canonical, exact 1 `og:url`
  *     matching canonical, valid KS `og:image`/`twitter:image`, matching `<html lang>`,
- *     and complete 17-language + `x-default` reciprocal hreflang matrix.
+ *     and complete 17-language + `x-default` reciprocal hreflang matrix (except
+ *     explicit English-only indexable routes such as `/customization/`, which must
+ *     enforce `<html lang="en">`, self-canonical, and zero hreflang alternates).
  */
 
 import fs from 'node:fs';
@@ -62,6 +64,10 @@ const VOID_HTML_TAGS = new Set([
 
 function isInternalHtmlFragment(relativeFile) {
   return /^inquiry-form\/[^/]+\/index\.html$/.test(relativeFile);
+}
+
+export function isEnglishOnlyIndexableRoute(relativeFile) {
+  return relativeFile === 'customization/index.html' || relativeFile.startsWith('customization/');
 }
 
 function decodeHtmlEntities(str) {
@@ -856,6 +862,17 @@ export function validateHreflangAndIdentity({
           message: `${relativeFile}: <html lang="${doc.sourceLang}"> disagrees with route locale '${expectedLang}'`,
         });
       }
+    }
+
+    if (isEnglishOnlyIndexableRoute(relativeFile)) {
+      if (doc.alternates.length > 0) {
+        issues.push({
+          code: 'ENGLISH_ONLY_HAS_HREFLANG',
+          file: relativeFile,
+          message: `${relativeFile}: English-only indexable page must not emit hreflang alternates`,
+        });
+      }
+      continue;
     }
 
     const seen = new Map();

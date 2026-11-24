@@ -406,3 +406,56 @@ test('redirect stub, fragment, malformed HTML, empty dist, and CLI edge cases fa
   assert.equal(badFlagRes.status, 1);
   assert.match(badFlagRes.stderr, /Unknown option/);
 });
+
+test('English-only indexable /customization/ routes pass without hreflang and reject stray alternates', () => {
+  const fxPass = createDistDir();
+  seedCluster(fxPass.distDir, '/');
+  writeFile(
+    path.join(fxPass.distDir, 'customization/index.html'),
+    buildIndexableHtml({
+      lang: 'en',
+      canonical: `${ORIGIN}/customization/`,
+      alternates: [],
+    })
+  );
+  writeFile(
+    path.join(fxPass.distDir, 'customization/plating/index.html'),
+    buildIndexableHtml({
+      lang: 'en',
+      canonical: `${ORIGIN}/customization/plating/`,
+      alternates: [],
+    })
+  );
+  const resPass = runValidator(fxPass.distDir);
+  assert.equal(resPass.status, 0, resPass.stderr);
+
+  // Stray hreflang alternates on English-only route must fail
+  const fxStrayAlt = createDistDir();
+  seedCluster(fxStrayAlt.distDir, '/');
+  writeFile(
+    path.join(fxStrayAlt.distDir, 'customization/index.html'),
+    buildIndexableHtml({
+      lang: 'en',
+      canonical: `${ORIGIN}/customization/`,
+      alternates: [{ hreflang: 'en', href: `${ORIGIN}/customization/` }],
+    })
+  );
+  const resStrayAlt = runValidator(fxStrayAlt.distDir);
+  assert.equal(resStrayAlt.status, 1);
+  assert.match(resStrayAlt.stderr, /ENGLISH_ONLY_HAS_HREFLANG/);
+
+  // Non-allowlisted route with zero hreflang must still fail with MISSING_HREFLANG
+  const fxMissingHreflang = createDistDir();
+  seedCluster(fxMissingHreflang.distDir, '/');
+  writeFile(
+    path.join(fxMissingHreflang.distDir, 'about-us/index.html'),
+    buildIndexableHtml({
+      lang: 'en',
+      canonical: `${ORIGIN}/about-us/`,
+      alternates: [],
+    })
+  );
+  const resMissingHreflang = runValidator(fxMissingHreflang.distDir);
+  assert.equal(resMissingHreflang.status, 1);
+  assert.match(resMissingHreflang.stderr, /MISSING_HREFLANG/);
+});

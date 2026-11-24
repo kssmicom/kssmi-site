@@ -34,11 +34,13 @@ interface Props {
   currentPage: number;
   totalPages: number;
   noindex?: boolean;
+  noHreflang?: boolean;
 }
 
 const {
   lang = 'en',
   noindex = false,
+  noHreflang = false,
   activeGroupSlug,
   activeSubSlug,
   items,
@@ -119,7 +121,7 @@ const faqSchema = currentPage === 1 && copy.faqs.length > 0 ? {
 } : null;
 ---
 
-<Layout title={pageTitle} description={pageDescription} lang={lang} lcpImage={lcpImage} noindex={noindex}>
+<Layout title={pageTitle} description={pageDescription} lang={lang} lcpImage={lcpImage} noindex={noindex} noHreflang={noHreflang}>
   {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 
   <Header lang={lang} />
