@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
+import yaml from 'js-yaml';
 import { projectRoot, ensureTemporaryRoot, createTask } from '../scripts/local-tools.mjs';
 import {
   collectKeyPaths,
@@ -127,6 +128,10 @@ function makeProductMd(slug, lang, overrides = {}) {
       yamlLines.push(`${k}: ${JSON.stringify(v)}`);
     }
   }
+  // Nested structures (objects inside arrays, nested arrays) as block YAML.
+  if (overrides.extraFrontmatter) {
+    yamlLines.push(...yaml.dump(overrides.extraFrontmatter, { lineWidth: -1 }).trimEnd().split('\n'));
+  }
 
   return `---\n${yamlLines.join('\n')}\n---\n\n${body}\n`;
 }
@@ -146,6 +151,48 @@ function runValidator(productsDir, args) {
   });
 }
 
+// Arrays of objects, nested objects and nested arrays. Their values may be
+// translated; key names and the item that carries each key must match `en`.
+function objectArraysFixture() {
+  return {
+    reviewSpecs: [
+      { label: 'MOQ', value: '300 PCS/Model' },
+      { label: 'Hinge', value: '3+2 Barrel Hinge', unit: 'mm' },
+    ],
+    specGroups: [
+      { name: 'Frame', rows: [{ label: 'Width', value: '52 mm' }, { label: 'Hinge', value: '18 mm' }] },
+      { name: 'Lens', rows: [] },
+    ],
+    matrix: [[{ axis: 'A', value: '1' }], [{ axis: 'B', value: '2' }, { axis: 'C', value: '3' }]],
+    tags: ['Beta Titanium', 'Laser Logo'],
+  };
+}
+
+// A clean translation: values and scalar strings localized, key names and positions untouched.
+function localizedObjectArrays(locInfo) {
+  const data = objectArraysFixture();
+  data.reviewSpecs[0].value = `${locInfo.prefix} 300`;
+  data.reviewSpecs[1].value = `${locInfo.prefix} 3+2`;
+  data.specGroups[0].name = locInfo.prefix;
+  data.specGroups[0].rows[0].value = `${locInfo.prefix} 52 mm`;
+  data.matrix[1][1].value = locInfo.prefix;
+  data.tags = [locInfo.prefix, 'OEM ODM', 'B2B'];
+  return data;
+}
+
+function seedSkuWithObjectArrays(productsDir, slug, defects = {}) {
+  const perLang = {};
+  for (const lang of LANGUAGES) {
+    if (lang === 'en') {
+      perLang.en = { extraFrontmatter: objectArraysFixture() };
+      continue;
+    }
+    const data = localizedObjectArrays(SAMPLE_LOCALE_TEXT[lang]);
+    perLang[lang] = { extraFrontmatter: defects[lang] ? defects[lang](data) : data };
+  }
+  seedSku(productsDir, slug, perLang);
+}
+
 test('collectKeyPaths extracts flat and nested object key paths accurately', () => {
   const keys = collectKeyPaths({
     title: 'A',
@@ -153,6 +200,38 @@ test('collectKeyPaths extracts flat and nested object key paths accurately', () 
     gallery: ['/a.webp'],
   });
   assert.deepEqual([...keys].sort(), ['gallery', 'nested', 'nested.bridge', 'nested.depth', 'nested.depth.temple', 'title']);
+});
+
+test('collectKeyPaths addresses object keys inside arrays by position and skips scalar array items', () => {
+  const keys = collectKeyPaths({
+    reviewSpecs: [{ label: 'MOQ', value: '300' }, { label: 'Hinge' }],
+    specGroups: [{ name: 'Frame', rows: [{ label: 'Width' }] }, { name: 'Lens', rows: [] }],
+    matrix: [[{ axis: 'A' }], [{ axis: 'B' }, { axis: 'C', note: 'x' }]],
+    tags: ['Beta Titanium', 'Laser Logo'],
+    gallery: ['/a.webp', '/b.webp'],
+  });
+  assert.deepEqual([...keys].sort(), [
+    'gallery',
+    'matrix',
+    'matrix[0][0].axis',
+    'matrix[1][0].axis',
+    'matrix[1][1].axis',
+    'matrix[1][1].note',
+    'reviewSpecs',
+    'reviewSpecs[0].label',
+    'reviewSpecs[0].value',
+    'reviewSpecs[1].label',
+    'specGroups',
+    'specGroups[0].name',
+    'specGroups[0].rows',
+    'specGroups[0].rows[0].label',
+    'specGroups[1].name',
+    'specGroups[1].rows',
+    'tags',
+  ]);
+  // Scalar arrays of any length own no key, so localized `tags` cannot raise a key error.
+  assert.deepEqual([...collectKeyPaths({ tags: ['a'] })], ['tags']);
+  assert.deepEqual([...collectKeyPaths({ tags: ['a', 'b', 'c'] })], ['tags']);
 });
 
 test('valid single SKU and --all catalog pass with localized categories, Latin short coincidences, Spanish "todo", and report JSON', () => {
@@ -218,6 +297,95 @@ test('missing keys, translated top-level keys, and nested object key mismatches 
   assert.match(res.stderr, /EXTRA_KEY/);
   assert.match(res.stderr, /안경테 소재/);
   assert.match(res.stderr, /specs\.bridge/);
+});
+
+test('values inside arrays of objects and localized string arrays pass; key order inside a mapping is not structure', () => {
+  const { productsDir } = createProductsRoot();
+  seedSkuWithObjectArrays(productsDir, 'kto-arrays', {
+    de: data => {
+      data.reviewSpecs[0] = { value: data.reviewSpecs[0].value, label: data.reviewSpecs[0].label };
+      return data;
+    },
+  });
+
+  const res = runValidator(productsDir, ['kto-arrays']);
+  assert.equal(res.status, 0, res.stderr + res.stdout);
+  assert.match(res.stdout, /0 hard errors/);
+  assert.doesNotMatch(res.stdout + res.stderr, /MISSING_KEY|EXTRA_KEY/);
+});
+
+test('translated, missing and extra keys inside arrays fail at their exact position (nested objects and arrays included)', () => {
+  const { productsDir } = createProductsRoot();
+  seedSkuWithObjectArrays(productsDir, 'kto-array-defects', {
+    // Translated key name in an array item
+    de: data => {
+      data.reviewSpecs[0] = { Etikett: 'MOQ', value: data.reviewSpecs[0].value };
+      return data;
+    },
+    // Missing key in another item
+    fr: data => {
+      delete data.reviewSpecs[1].unit;
+      return data;
+    },
+    // Extra key
+    es: data => {
+      data.reviewSpecs[0].unit = 'PCS';
+      return data;
+    },
+    // Nested object inside an array inside an object
+    ko: data => {
+      data.specGroups[0].rows[1] = { 라벨: 'Hinge', value: '18 mm' };
+      return data;
+    },
+    // Nested arrays
+    ja: data => {
+      delete data.matrix[1][0].value;
+      return data;
+    },
+    vi: data => {
+      data.matrix[0][0].note = 'x';
+      return data;
+    },
+    // Same key names in another item: `unit` moved from item 1 to item 0
+    ru: data => {
+      delete data.reviewSpecs[1].unit;
+      data.reviewSpecs[0].unit = 'mm';
+      return data;
+    },
+  });
+
+  const res = runValidator(productsDir, ['kto-array-defects']);
+  assert.equal(res.status, 1);
+  assert.match(res.stderr, /\[ERROR MISSING_KEY\] 5/);
+  assert.match(res.stderr, /\[ERROR EXTRA_KEY\] 5/);
+  for (const [code, lang, key] of [
+    ['MISSING_KEY', 'de', 'reviewSpecs[0].label'],
+    ['EXTRA_KEY', 'de', 'reviewSpecs[0].Etikett'],
+    ['MISSING_KEY', 'fr', 'reviewSpecs[1].unit'],
+    ['EXTRA_KEY', 'es', 'reviewSpecs[0].unit'],
+    ['MISSING_KEY', 'ko', 'specGroups[0].rows[1].label'],
+    ['EXTRA_KEY', 'ko', 'specGroups[0].rows[1].라벨'],
+    ['MISSING_KEY', 'ja', 'matrix[1][0].value'],
+    ['EXTRA_KEY', 'vi', 'matrix[0][0].note'],
+    ['MISSING_KEY', 'ru', 'reviewSpecs[1].unit'],
+    ['EXTRA_KEY', 'ru', 'reviewSpecs[0].unit'],
+  ]) {
+    const literalKey = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    assert.match(res.stderr, new RegExp(`\\[${code}\\] .*\\.${lang}\\.md: .*'${literalKey}'`), `${code} ${key} (${lang})`);
+  }
+});
+
+test('media arrays keep the exact-order check and never raise a key error', () => {
+  const { productsDir } = createProductsRoot();
+  const image = n => `/media/products/kto-media-order/kto-media-order-${n}.webp`;
+  seedSku(productsDir, 'kto-media-order', {
+    ar: { gallery: [image(3), image(2)] },
+  });
+
+  const res = runValidator(productsDir, ['kto-media-order']);
+  assert.equal(res.status, 1);
+  assert.match(res.stderr, /MEDIA_SEQUENCE_MISMATCH/);
+  assert.doesNotMatch(res.stderr, /MISSING_KEY|EXTRA_KEY/);
 });
 
 test('machine field drift, media sequence mismatch, and derived cover ref fail with exit 1', () => {
@@ -316,4 +484,35 @@ test('fail-closed CLI usage errors, unknown SKU, UTF-8 BOM, malformed YAML, and 
   const missingDir = runValidator(path.join(fx.base, 'no-products'), ['--all']);
   assert.equal(missingDir.status, 1);
   assert.match(missingDir.stderr, /PRODUCTS_DIR_ERROR/);
+});
+
+const LOCALIZATION_GATE = 'node scripts/validate-product-localizations.mjs --all';
+const REGRESSION_SUITES = Object.freeze([
+  'tests/content-validation.test.mjs',
+  'tests/image-pipeline.test.mjs',
+  'tests/rendered-product-media.test.mjs',
+  'tests/seo-identity.test.mjs',
+  'tests/product-localizations.test.mjs',
+]);
+
+test('the full-catalog localization gate runs in prebuild and the regression suites run in CI', () => {
+  const read = relative => fs.readFileSync(path.join(projectRoot, relative), 'utf8');
+
+  // `npm run build` always runs `prebuild` first, so every build entry (deploy.yml,
+  // browser-smoke.yml, Build-Site.bat) reaches the gate before anything is generated.
+  const scripts = JSON.parse(read('package.json')).scripts;
+  const prebuild = scripts.prebuild.split('&&').map(step => step.trim());
+  const gateAt = prebuild.indexOf(LOCALIZATION_GATE);
+  assert.ok(gateAt > prebuild.indexOf('node scripts/validate-content.mjs'), 'prebuild must run the localization gate after the YAML check');
+  assert.ok(gateAt < prebuild.indexOf('node src/scripts/generate-llms.js'), 'prebuild must run the localization gate before resources are generated');
+  assert.equal(scripts['validate:product-localizations'], LOCALIZATION_GATE);
+  assert.match(read('.github/workflows/deploy.yml'), /run: npm run build\n/);
+
+  // The regression suites run for pull requests and pushes to main; a failure fails the job.
+  const phpCi = read('.github/workflows/php-ci.yml');
+  assert.match(phpCi, /pull_request:/);
+  assert.doesNotMatch(phpCi, /continue-on-error/);
+  for (const suite of REGRESSION_SUITES) {
+    assert.ok(phpCi.includes(suite), `php-ci.yml must run ${suite}`);
+  }
 });

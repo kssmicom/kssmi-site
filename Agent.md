@@ -98,6 +98,7 @@ npm run preview            # Preview production build locally
 
 # Utilities
 npm run validate           # Run content validation script only
+npm run validate:product-localizations  # Full-catalog multilingual product structure check (also a prebuild gate)
 npm run prebuild           # Run all pre-build scripts (validation, llms.txt, sitemap)
 ```
 
@@ -476,7 +477,8 @@ The Vite plugin in `astro.config.mjs` watches `src/content/products/` for new fo
    any authorized commit. Temporary test materials stay under `tep`.
 6. Validate language routing, image URLs and search output in the compliant
    local workspace; a dev-server refresh alone is not acceptance. A full
-   build runs the variant gate but does not generate missing image variants.
+   build runs the variant gate and the full-catalog localization gate (both
+   in `prebuild`) but does not generate missing image variants.
    Commit, push and production deployment still need session authorization.
 
 ### Adding a Landing Page or FAQ Topic
@@ -498,6 +500,11 @@ The Vite plugin in `astro.config.mjs` watches `src/content/products/` for new fo
 - **Auto-deploy:** Push to `main` or manual dispatch starts `.github/workflows/deploy.yml`:
   sealed build artifact → production deployment and verification → release
   evidence and enforced final signoff.
+- **CI coverage:** `deploy.yml` builds with `npm run build`, so the `prebuild`
+  gates (image variants, content, product localizations) block a release.
+  `.github/workflows/php-ci.yml` also runs the content, image, media, SEO and
+  localization regression suites in `tests/` for pull requests and pushes to
+  `main`; `browser-smoke.yml` is the pull-request build check.
 - A successful build is not proof of a successful production release. Match
   the commit SHA to its run and final signoff. Read-only status checks must
   not dispatch/rerun workflows or execute production smoke tests.

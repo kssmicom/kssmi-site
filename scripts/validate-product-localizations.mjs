@@ -15,8 +15,9 @@
  *       serviceMode, moq, size, frameMaterial, lensMaterial, designStyle,
  *       nosePads, hinge, logo, service, acetateFeature, electroplating,
  *       carbonFiberFeature, centerBeam, temple, specService, price, categories
- *       (key-path parity enforced against `en`; values may localize cleanly,
- *        including legacy `categories`, without locking to English)
+ *       (key-path parity enforced against `en` for every object key, nested
+ *        objects and objects inside arrays included; values may localize
+ *        cleanly, including legacy `categories`, without locking to English)
  *   - Review advisories (non-blocking warnings for human QA):
  *       directory vs slug case drift, numeric/unit drift in size/moq/hinge,
  *       body length ratio outliers, heading count drift, bullet count drift.
@@ -116,17 +117,34 @@ function isPlainObject(val) {
   return Boolean(val && typeof val === 'object' && !Array.isArray(val) && !(val instanceof Date));
 }
 
+/**
+ * Positional key paths of every mapping key in `value`. Object keys join with
+ * ".", array items are addressed by index:
+ *   reviewSpecs[0].label        object inside an array
+ *   specGroups[0].rows[1].label object inside an array inside an object ...
+ *   matrix[1][0].axis           nested arrays
+ * The index keeps same-named keys at different positions apart, so a translated
+ * key name is reported against the exact item that carries it instead of being
+ * cancelled by an identical key name elsewhere. Scalar array items (strings
+ * such as `gallery` or `colors`) own no keys and add no path; their values may
+ * be localized freely.
+ */
 export function collectKeyPaths(value, prefix = '') {
   const paths = new Set();
+  if (Array.isArray(value)) {
+    value.forEach((item, idx) => {
+      for (const sub of collectKeyPaths(item, `${prefix}[${idx}]`)) {
+        paths.add(sub);
+      }
+    });
+    return paths;
+  }
   if (!isPlainObject(value)) return paths;
   for (const key of Object.keys(value)) {
     const fullKey = prefix ? `${prefix}.${key}` : key;
     paths.add(fullKey);
-    const child = value[key];
-    if (isPlainObject(child)) {
-      for (const sub of collectKeyPaths(child, fullKey)) {
-        paths.add(sub);
-      }
+    for (const sub of collectKeyPaths(value[key], fullKey)) {
+      paths.add(sub);
     }
   }
   return paths;

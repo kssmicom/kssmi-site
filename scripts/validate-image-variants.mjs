@@ -20,8 +20,8 @@ import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
 import { lstat, mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
-import { basename, dirname, isAbsolute, join, relative, resolve, sep } from 'node:path';
-import { pathToFileURL } from 'node:url';
+import path, { basename, dirname, isAbsolute, join, relative, resolve, sep } from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import yaml from 'js-yaml';
 import {
   assertFixedPolicy,
@@ -35,16 +35,36 @@ import {
   VARIANT_SPECS,
 } from '../src/config/image-variants.mjs';
 
-const __dirname = dirname(fileURLToPathSafe(import.meta.url));
-const DEFAULT_SCAN_ROOT = resolve(__dirname, '../public/media/products');
-const DEFAULT_MEDIA_ROOT = resolve(__dirname, '../public/media');
-const DEFAULT_MANIFEST_PATH = resolve(__dirname, '.optimize-manifest.json');
-const DEFAULT_PRODUCTS_CONTENT_DIR = resolve(__dirname, '../src/content/products');
-const DEFAULT_CONCURRENCY = 8;
-
-function fileURLToPathSafe(url) {
-  return decodeURIComponent(new URL(url).pathname);
+/**
+ * Directory of a module file URL. Only `fileURLToPath` applies the host's path
+ * rules: on Windows `file:///D:/x/y.mjs` is `D:\x\y.mjs`, whereas decoding
+ * the URL pathname by hand leaves a drive-less `/D:/x/y.mjs` that resolves
+ * outside the repository.
+ */
+export function moduleDirectory(moduleUrl) {
+  return dirname(fileURLToPath(moduleUrl));
 }
+
+/**
+ * Repository-relative defaults for a script directory. `pathApi` is replaced
+ * only by tests that exercise the Windows path rules on another host.
+ */
+export function defaultValidatorPaths(scriptDir, pathApi = path) {
+  return {
+    scanRoot: pathApi.resolve(scriptDir, '../public/media/products'),
+    mediaRoot: pathApi.resolve(scriptDir, '../public/media'),
+    manifestPath: pathApi.resolve(scriptDir, '.optimize-manifest.json'),
+    productsContentDir: pathApi.resolve(scriptDir, '../src/content/products'),
+  };
+}
+
+const __dirname = moduleDirectory(import.meta.url);
+export const DEFAULT_PATHS = Object.freeze(defaultValidatorPaths(__dirname));
+const DEFAULT_SCAN_ROOT = DEFAULT_PATHS.scanRoot;
+const DEFAULT_MEDIA_ROOT = DEFAULT_PATHS.mediaRoot;
+const DEFAULT_MANIFEST_PATH = DEFAULT_PATHS.manifestPath;
+const DEFAULT_PRODUCTS_CONTENT_DIR = DEFAULT_PATHS.productsContentDir;
+const DEFAULT_CONCURRENCY = 8;
 
 let cachedSharp = null;
 function loadSharp() {

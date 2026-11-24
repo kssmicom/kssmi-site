@@ -5,8 +5,14 @@ import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { createRequire } from 'node:module';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { projectRoot, ensureTemporaryRoot, createTask } from '../scripts/local-tools.mjs';
 import { cardSrc, thumbSrc } from '../src/utils/image.ts';
+import {
+  DEFAULT_PATHS,
+  defaultValidatorPaths,
+  moduleDirectory,
+} from '../scripts/validate-image-variants.mjs';
 import {
   assertFixedPolicy,
   DIMENSION_TOLERANCE_PX,
@@ -666,4 +672,81 @@ test('exact case-sensitive disk path and product Markdown reference checks + inv
   ]);
   assert.equal(mdDerivedFail.status, 1);
   assert.match(mdDerivedFail.stderr, /DERIVED_REF_IN_CONTENT/);
+});
+
+test('validator locates itself through fileURLToPath and defaults to this repository', () => {
+  const scriptPath = fileURLToPath(new URL('../scripts/validate-image-variants.mjs', import.meta.url));
+  assert.equal(moduleDirectory(pathToFileURL(scriptPath).href), path.dirname(scriptPath));
+
+  assert.deepEqual(DEFAULT_PATHS, {
+    scanRoot: path.join(projectRoot, 'public/media/products'),
+    mediaRoot: path.join(projectRoot, 'public/media'),
+    manifestPath: path.join(projectRoot, 'scripts/.optimize-manifest.json'),
+    productsContentDir: path.join(projectRoot, 'src/content/products'),
+  });
+  for (const target of Object.values(DEFAULT_PATHS)) {
+    assert.equal(fs.existsSync(target), true, `default path does not exist: ${target}`);
+  }
+
+  // The drive-letter bug only shows on Windows, so on POSIX hosts the module
+  // wiring is guarded statically: the module URL must be converted by
+  // fileURLToPath and never by reading the URL pathname.
+  const source = fs.readFileSync(validatorScript, 'utf8');
+  assert.match(source, /export function moduleDirectory\(moduleUrl\) \{\s*return dirname\(fileURLToPath\(moduleUrl\)\);\s*\}/);
+  assert.match(source, /moduleDirectory\(import\.meta\.url\)/);
+  assert.doesNotMatch(source, /\.pathname|decodeURIComponent/);
+});
+
+test('module URLs with spaces and reserved characters resolve to the real directory', () => {
+  const { base } = createFixtureDirs();
+  const scriptDir = path.join(base, 'KS site 100% #1', 'scripts');
+  const scriptPath = path.join(scriptDir, 'validate-image-variants.mjs');
+  fs.mkdirSync(scriptDir, { recursive: true });
+  fs.writeFileSync(scriptPath, '// path fixture only\n', 'utf8');
+
+  // pathToFileURL percent-encodes the name, so the conversion has to decode it back.
+  const moduleUrl = pathToFileURL(scriptPath).href;
+  assert.match(moduleUrl, /KS%20site%20100%25%20%231\/scripts\/validate-image-variants\.mjs$/);
+
+  const resolvedDir = moduleDirectory(moduleUrl);
+  assert.equal(resolvedDir, scriptDir);
+  assert.equal(fs.statSync(path.join(resolvedDir, 'validate-image-variants.mjs')).isFile(), true);
+
+  assert.deepEqual(defaultValidatorPaths(resolvedDir), {
+    scanRoot: path.resolve(scriptDir, '../public/media/products'),
+    mediaRoot: path.resolve(scriptDir, '../public/media'),
+    manifestPath: path.resolve(scriptDir, '.optimize-manifest.json'),
+    productsContentDir: path.resolve(scriptDir, '../src/content/products'),
+  });
+});
+
+test('Windows drive-letter path logic, simulated with path.win32 (not a Windows build)', () => {
+  // fileURLToPath picks its rules from the host platform, so the URL-to-path
+  // half of the Windows conversion cannot run here. Only the path arithmetic
+  // that follows it is simulated, starting from the directory fileURLToPath
+  // returns on Windows for file:///D:/.../validate-image-variants.mjs.
+  const repository = 'D:\\Desk\\Desk\\Tools\\KS\\Kssmi\\kssmi-site';
+  const windowsDefaults = defaultValidatorPaths(`${repository}\\scripts`, path.win32);
+  assert.deepEqual(windowsDefaults, {
+    scanRoot: `${repository}\\public\\media\\products`,
+    mediaRoot: `${repository}\\public\\media`,
+    manifestPath: `${repository}\\scripts\\.optimize-manifest.json`,
+    productsContentDir: `${repository}\\src\\content\\products`,
+  });
+
+  // The pathname of a drive-letter file URL keeps a leading slash before "D:".
+  const fileUrl = 'file:///D:/Desk/Desk/Tools/KS/Kssmi/kssmi-site/scripts/validate-image-variants.mjs';
+  assert.equal(new URL(fileUrl).pathname, '/D:/Desk/Desk/Tools/KS/Kssmi/kssmi-site/scripts/validate-image-variants.mjs');
+
+  // Decoding that pathname by hand (the removed conversion) hands the validator
+  // a directory without the D: drive, and under the Windows path rules its
+  // defaults no longer lead into the repository.
+  const driveLessDir = path.win32.dirname(decodeURIComponent(new URL(fileUrl).pathname));
+  const driveLessDefaults = defaultValidatorPaths(driveLessDir, path.win32);
+  assert.equal(windowsDefaults.scanRoot.startsWith(`${repository}\\`), true);
+  assert.equal(
+    driveLessDefaults.scanRoot.startsWith(`${repository}\\`),
+    false,
+    `drive-less scan root must not lead into the repository, got ${driveLessDefaults.scanRoot}`
+  );
 });
