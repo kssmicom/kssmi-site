@@ -170,7 +170,7 @@ test('unreadable markdown file fails with exit code 1 instead of being marked va
 });
 
 test('missing required directories and non-directory paths fail with exit code 1', () => {
-  for (const missingDir of ['products', 'blog', 'feature', 'category-product']) {
+  for (const missingDir of ['products', 'collection', 'category-product']) {
     const root = createValidContentRoot();
     fs.rmSync(path.join(root, missingDir), { recursive: true, force: true });
     const res = runCli(['--content-root', root]);
@@ -184,6 +184,30 @@ test('missing required directories and non-directory paths fail with exit code 1
   const filePathRes = runCli(['--content-root', fileInsteadOfDirRoot]);
   assert.equal(filePathRes.status, 1);
   assert.match(filePathRes.stderr, /Content path is not a directory/);
+});
+
+test('absent optional empty directories (blog/feature) pass clean Git checkout validation while unreadable/invalid ones still fail', () => {
+  const root = createValidContentRoot();
+  fs.rmSync(path.join(root, 'blog'), { recursive: true, force: true });
+  fs.rmSync(path.join(root, 'feature'), { recursive: true, force: true });
+
+  const cleanCheckoutRes = runCli(['--content-root', root]);
+  assert.equal(cleanCheckoutRes.status, 0, cleanCheckoutRes.stderr + cleanCheckoutRes.stdout);
+  assert.match(cleanCheckoutRes.stdout, /optional empty directory absent/);
+  assert.match(cleanCheckoutRes.stdout, /All 3 files validated successfully\./);
+
+  if (isPosixNonRoot) {
+    const lockedBlog = path.join(root, 'blog');
+    fs.mkdirSync(lockedBlog, { recursive: true });
+    fs.chmodSync(lockedBlog, 0o000);
+    try {
+      const lockedRes = runCli(['--content-root', root]);
+      assert.equal(lockedRes.status, 1);
+      assert.match(lockedRes.stderr, /Failed to (read|access content) directory/);
+    } finally {
+      fs.chmodSync(lockedBlog, 0o755);
+    }
+  }
 });
 
 test('unreadable collection directory and unreadable nested subdirectory fail with exit code 1', t => {

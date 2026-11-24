@@ -24,8 +24,9 @@ export function getDefaultCollections(contentRoot = DEFAULT_CONTENT_ROOT) {
   return [
     { name: 'products', dir: path.join(contentRoot, 'products'), recursive: true, required: true, allowEmpty: false },
     { name: 'collection', dir: path.join(contentRoot, 'collection'), recursive: true, required: true, allowEmpty: false },
-    { name: 'blog', dir: path.join(contentRoot, 'blog'), recursive: true, required: true, allowEmpty: true },
-    { name: 'feature', dir: path.join(contentRoot, 'feature'), recursive: true, required: true, allowEmpty: true },
+    // Git does not track empty directories, so optional empty collections may be absent on clean CI checkouts.
+    { name: 'blog', dir: path.join(contentRoot, 'blog'), recursive: true, required: false, allowEmpty: true },
+    { name: 'feature', dir: path.join(contentRoot, 'feature'), recursive: true, required: false, allowEmpty: true },
     { name: 'category-product', dir: path.join(contentRoot, 'category-product'), recursive: false, required: true, allowEmpty: false },
   ];
 }
@@ -202,7 +203,7 @@ export function validateFrontmatter(content, filePath, { baseDir = process.cwd()
 /**
  * Find markdown files under a directory without swallowing access or read errors.
  */
-export function findMarkdownFiles(dir, { recursive = true, baseDir = process.cwd() } = {}) {
+export function findMarkdownFiles(dir, { recursive = true, required = true, baseDir = process.cwd() } = {}) {
   const files = [];
   const errors = [];
   const displayDir = path.relative(baseDir, dir) || dir;
@@ -212,16 +213,19 @@ export function findMarkdownFiles(dir, { recursive = true, baseDir = process.cwd
     stat = fs.statSync(dir);
   } catch (err) {
     if (err && err.code === 'ENOENT') {
+      if (!required) {
+        return { files, errors, missingAllowed: true };
+      }
       errors.push(`Required content directory not found: ${displayDir}`);
     } else {
       errors.push(`Failed to access content directory ${displayDir}: ${formatFsError(err)}`);
     }
-    return { files, errors };
+    return { files, errors, missingAllowed: false };
   }
 
   if (!stat.isDirectory()) {
     errors.push(`Content path is not a directory: ${displayDir}`);
-    return { files, errors };
+    return { files, errors, missingAllowed: false };
   }
 
   function walk(currentDir) {
@@ -249,15 +253,16 @@ export function findMarkdownFiles(dir, { recursive = true, baseDir = process.cwd
   }
 
   walk(dir);
-  return { files, errors };
+  return { files, errors, missingAllowed: false };
 }
 
 /**
  * Validate all files in a single collection without masking read or directory errors.
  */
 export function validateCollection(collection, { baseDir = process.cwd() } = {}) {
-  const { files, errors: directoryErrors } = findMarkdownFiles(collection.dir, {
+  const { files, errors: directoryErrors, missingAllowed } = findMarkdownFiles(collection.dir, {
     recursive: collection.recursive !== false,
+    required: collection.required !== false,
     baseDir
   });
   const displayDir = path.relative(baseDir, collection.dir) || collection.dir;
@@ -285,6 +290,7 @@ export function validateCollection(collection, { baseDir = process.cwd() } = {})
     name: collection.name,
     dir: collection.dir,
     allowEmpty: Boolean(collection.allowEmpty),
+    missingAllowed: Boolean(missingAllowed),
     fileCount: files.length,
     results,
     directoryErrors
@@ -318,6 +324,8 @@ export function validateAllFiles({ contentRoot = DEFAULT_CONTENT_ROOT, collectio
 
     if (colResult.directoryErrors.length > 0) {
       log(`  \x1b[31m${colResult.directoryErrors.length} directory/collection error(s)\x1b[0m\n`);
+    } else if (colResult.missingAllowed) {
+      log('  0 file(s) found (optional empty directory absent)\n');
     } else if (colResult.fileCount === 0 && colResult.allowEmpty) {
       log('  0 file(s) found (empty collection allowed)\n');
     } else {
