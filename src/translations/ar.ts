@@ -17,6 +17,7 @@ export default {
     nav: {
       home: "الرئيسية",
       products: "المنتجات",
+      customization: "التخصيص",
       collection: "المجموعة",
       feature: "حلول",
       about: "حول",

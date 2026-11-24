@@ -17,6 +17,7 @@ export default {
     nav: {
       home: "Laman Utama",
       products: "Produk",
+      customization: "Penyesuaian",
       collection: "Koleksi",
       feature: "Solusi",
       about: "Perihal",

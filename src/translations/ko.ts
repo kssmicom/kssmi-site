@@ -17,6 +17,7 @@ export default {
     nav: {
       home: "홈",
       products: "제품",
+      customization: "맞춤 제작",
       collection: "컬렉션",
       feature: "솔루션",
       about: "소개",

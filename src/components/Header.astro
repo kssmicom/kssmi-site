@@ -159,8 +159,7 @@ const menuStructure: MenuItem[] = [
     menuBase: 'product',
     hasDropdown: true,
   },
-  // English-only during the Customization style-review phase.
-  ...(lang === 'en' ? [{ label: 'Customization', href: '/customization/' }] : []),
+  { label: t.nav.customization || 'Customization', href: `/${currentPath}customization/` },
   {
     label: t.nav.feature,
     href: `/${currentPath}eyewear`,

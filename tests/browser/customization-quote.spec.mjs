@@ -74,7 +74,7 @@ test('single valid component selection flows from customization page into /quote
 
   await expect(page.locator('meta[name="robots"][content*="noindex"]')).toHaveCount(0);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://kssmi.com/customization/');
-  await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(0);
+  await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(18);
 
   const firstToggle = page.locator('[data-spec-toggle][data-spec-code="KS-LN-001"]').first();
   await expect(firstToggle).toHaveAttribute('aria-pressed', 'false');
@@ -306,6 +306,48 @@ test('entity-encoded onerror handler on product page executes in browser without
     const main = document.querySelector('img[data-gallery-main-image]');
     return Boolean(main && main.dataset.retried === 'true' && main.complete && main.naturalWidth > 0);
   })).toBe(true);
+
+  await expectCleanPage(page, testInfo);
+});
+
+test('multilingual and Arabic RTL customization pages preserve specs across language switch and fit viewports', async ({ page }, testInfo) => {
+  await page.setViewportSize({ width: 1280, height: 800 });
+  await page.goto('/customization/');
+  await dismissCookieBannerIfPresent(page);
+
+  await expect(page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).resolves.toBe(true);
+  await page.locator('[data-spec-toggle][data-spec-code="KS-LN-001"]').first().click();
+
+  // Switch to Chinese via language switcher link (no 404, keeps sessionStorage specs with localized label)
+  await page.locator('.lang-dropdown-menu a[href="/zh/customization/"]').evaluate((el) => el.click());
+  await page.waitForURL('**/zh/customization/');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'zh');
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://kssmi.com/zh/customization/');
+  await expect(page.locator('[data-spec-tray] [data-spec-count]')).toHaveText('1');
+  await expect(page.locator('[data-spec-toggle][data-spec-code="KS-LN-001"]').first()).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('h1')).not.toHaveText('Eyewear Customization Components');
+
+  // Switch to German (longer nav labels) and check 1280px desktop header & page do not overflow horizontally
+  await page.locator('.lang-dropdown-menu a[href="/de/customization/"]').evaluate((el) => el.click());
+  await page.waitForURL('**/de/customization/');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'de');
+  await expect(page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).resolves.toBe(true);
+
+  // Switch to Arabic RTL and check mobile 375px + localized /ar/quote/?specs= handoff
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.locator('.lang-dropdown-menu a[href="/ar/customization/"]').evaluate((el) => el.click());
+  await page.waitForURL('**/ar/customization/');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'ar');
+  await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+  await expect(page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).resolves.toBe(true);
+
+  const arTrayLink = page.locator('[data-spec-quote-link]');
+  await expect(arTrayLink).toHaveAttribute('href', /\/ar\/quote\/\?specs=KS-LN-001$/);
+  await arTrayLink.click();
+  await page.waitForURL('**/ar/quote/?specs=KS-LN-001');
+  await expect(page.locator('#selected-specs-panel')).toBeVisible();
+  await expect(page.locator('#selected-specs-count')).toHaveText('1');
+  await expect(page.locator('#details')).toHaveValue(/KS-LN-001/);
 
   await expectCleanPage(page, testInfo);
 });

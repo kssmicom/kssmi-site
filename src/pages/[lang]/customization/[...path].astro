@@ -1,0 +1,62 @@
+---
+/**
+ * Localized Customization Catalog routes (16 non-English languages).
+ * Matches /customization/... URL tree under /<lang>/customization/...
+ */
+import CustomizationCatalogPage from '../../../components/pages/CustomizationCatalogPage.astro';
+import {
+  CUSTOMIZATION_GROUPS,
+  CUSTOMIZATION_PAGE_SIZE,
+  getAllCustomizationItems,
+  getGroupItems,
+} from '../../../data/customizationCatalog';
+import { CUSTOMIZATION_LANGUAGES } from '../../../data/customization-i18n';
+
+export function getStaticPaths() {
+  const nonEnglishLocales = CUSTOMIZATION_LANGUAGES.filter((l) => l !== 'en');
+  const paths: any[] = [];
+
+  const addPaged = (
+    lang: string,
+    segments: string[],
+    items: any[],
+    groupSlug: string | null,
+    subSlug: string | null,
+  ) => {
+    const totalPages = Math.max(1, Math.ceil(items.length / CUSTOMIZATION_PAGE_SIZE));
+    for (let page = 1; page <= totalPages; page++) {
+      const segs = page === 1 ? segments : [...segments, String(page)];
+      paths.push({
+        params: {
+          lang,
+          path: segs.length ? segs.join('/') : undefined,
+        },
+        props: {
+          lang,
+          activeGroupSlug: groupSlug,
+          activeSubSlug: subSlug,
+          items: items.slice((page - 1) * CUSTOMIZATION_PAGE_SIZE, page * CUSTOMIZATION_PAGE_SIZE),
+          totalItems: items.length,
+          currentPage: page,
+          totalPages,
+        },
+      });
+    }
+  };
+
+  for (const lang of nonEnglishLocales) {
+    addPaged(lang, [], getAllCustomizationItems(), null, null);
+    for (const group of CUSTOMIZATION_GROUPS) {
+      addPaged(lang, [group.slug], getGroupItems(group), group.slug, null);
+      for (const sub of group.subcategories) {
+        addPaged(lang, [group.slug, sub.slug], sub.items, group.slug, sub.slug);
+      }
+    }
+  }
+
+  return paths;
+}
+
+const { lang, ...props } = Astro.props as any;
+---
+<CustomizationCatalogPage lang={lang} noindex={false} {...props} />

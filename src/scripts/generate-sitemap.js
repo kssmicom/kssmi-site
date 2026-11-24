@@ -86,7 +86,7 @@ const coreSourceMap = {
 // back here when its noindex is removed (scripts/validate-seo-output.mjs fails
 // the build if a listed page is noindex).
 
-// Canonical English-only customization landing pages (excluding pagination /2/, /3/).
+// Canonical customization landing pages across all 17 languages (excluding pagination /2/, /3/).
 const getCustomizationRoutes = () => {
   const catalogPath = path.join(process.cwd(), 'src', 'data', 'customizationCatalog.ts');
   const source = fs.readFileSync(catalogPath, 'utf-8');
@@ -198,19 +198,21 @@ locales.forEach(lang => {
       });
     }
   }
-  if (lang === 'en') {
-    const customLastmod = newestDateString([
-      fileDate(path.join(process.cwd(), 'src', 'pages', 'customization', '[...path].astro')),
-      fileDate(path.join(process.cwd(), 'src', 'components', 'pages', 'CustomizationCatalogPage.astro')),
-      fileDate(path.join(process.cwd(), 'src', 'data', 'customizationCatalog.ts')),
-      fileDate(path.join(process.cwd(), 'src', 'data', 'customizationCopy.en.ts')),
-    ]);
-    for (const route of customizationRoutes) {
-      coreUrls.push({
-        url: `${SITE_URL}${route}`,
-        lastmod: customLastmod,
-      });
-    }
+  const customRouteFile = lang === 'en'
+    ? path.join(process.cwd(), 'src', 'pages', 'customization', '[...path].astro')
+    : path.join(process.cwd(), 'src', 'pages', '[lang]', 'customization', '[...path].astro');
+  const customI18nFile = path.join(process.cwd(), 'src', 'data', 'customization-i18n', `${lang}.ts`);
+  const customLastmod = newestDateString([
+    fileDate(customRouteFile),
+    fileDate(path.join(process.cwd(), 'src', 'components', 'pages', 'CustomizationCatalogPage.astro')),
+    fileDate(path.join(process.cwd(), 'src', 'data', 'customizationCatalog.ts')),
+    fileDate(customI18nFile),
+  ]);
+  for (const route of customizationRoutes) {
+    coreUrls.push({
+      url: `${baseUrl}${route}`,
+      lastmod: customLastmod,
+    });
   }
   fs.writeFileSync(path.join(langDir, 'sitemap-core.xml'), generateUrlset(coreUrls), 'utf-8');
 

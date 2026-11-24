@@ -7,7 +7,7 @@
  */
 import InquiryForm from './InquiryForm.astro';
 import { CUSTOMIZATION_GROUPS } from '../data/customizationCatalog';
-import { buildCatalogSpecMap } from '../utils/customizationSpecs.mjs';
+import { buildLocalizedCatalogSpecMap, getCustomizationLocale } from '../data/customization-i18n';
 
 interface Props {
   lang?: string;
@@ -26,7 +26,9 @@ const {
 } = Astro.props;
 const resolvedProductUrl = productUrl || Astro.url.pathname;
 const includeSpecCatalog = source === 'quote_page';
-const catalogSpecMap = includeSpecCatalog ? buildCatalogSpecMap(CUSTOMIZATION_GROUPS) : null;
+const catalogSpecMap = includeSpecCatalog
+  ? buildLocalizedCatalogSpecMap(CUSTOMIZATION_GROUPS, await getCustomizationLocale(lang))
+  : null;
 ---
 
 <div
@@ -169,13 +171,15 @@ const catalogSpecMap = includeSpecCatalog ? buildCatalogSpecMap(CUSTOMIZATION_GR
       if (countEl) countEl.textContent = String(activeSpecs.length);
 
       if (chipsEl) {
+        const removeTitleTpl = panel?.dataset.labelRemoveTitle || 'Remove {code} ({title})';
+        const removeAriaTpl = panel?.dataset.labelRemoveAria || 'Remove {code}';
         const frag = document.createDocumentFragment();
         activeSpecs.forEach((item) => {
           const chip = document.createElement('button');
           chip.type = 'button';
           chip.dataset.quoteSpecRemove = item.code;
-          chip.title = `Remove ${item.code} (${item.title})`;
-          chip.setAttribute('aria-label', `Remove ${item.code}`);
+          chip.title = removeTitleTpl.replace('{code}', item.code).replace('{title}', item.title);
+          chip.setAttribute('aria-label', removeAriaTpl.replace('{code}', item.code));
           chip.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-[#8B7355]/30 bg-white text-xs font-mono font-semibold text-[#5D4E37] hover:bg-stone-100 active:bg-stone-100 focus-visible:bg-stone-100 focus-within:bg-stone-100 transition-colors cursor-pointer';
 
           const codeSpan = document.createElement('span');

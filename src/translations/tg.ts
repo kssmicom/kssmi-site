@@ -17,6 +17,7 @@ export default {
     nav: {
       home: "Асосӣ",
       products: "Маҳсулот",
+      customization: "Фармоишӣ",
       collection: "Коллексия",
       feature: "Ҳалли",
       about: "Дар бора",

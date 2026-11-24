@@ -21,7 +21,12 @@ import {
   getAllCustomizationItems,
   type CustomizationItem,
 } from '../../data/customizationCatalog';
-import { CUSTOMIZATION_COPY_EN } from '../../data/customizationCopy.en';
+import {
+  formatCustomTemplate,
+  getCustomizationLocale,
+  localizeCustomizationGroups,
+  localizeCustomizationItem,
+} from '../../data/customization-i18n';
 
 interface Props {
   lang?: string;
@@ -50,21 +55,24 @@ const {
 } = Astro.props;
 
 const t = await getTranslations(lang);
+const cl = await getCustomizationLocale(lang);
 const pt = t.product || {};
 const isRTL = lang === 'ar';
 const currentPath = lang === 'en' ? '' : `${lang}/`;
 const rootPath = `/${currentPath}customization`;
 
+const localizedGroups = localizeCustomizationGroups(CUSTOMIZATION_GROUPS, cl);
+const localizedItems = items.map((item) => localizeCustomizationItem(item, cl));
 const allCount = getAllCustomizationItems().length;
-const groupNameBySlug = new Map(CUSTOMIZATION_GROUPS.map((g) => [g.slug, g.name]));
+const groupNameBySlug = new Map(localizedGroups.map((g) => [g.slug, g.name]));
 const activeGroup = activeGroupSlug
-  ? CUSTOMIZATION_GROUPS.find((g) => g.slug === activeGroupSlug)
+  ? localizedGroups.find((g) => g.slug === activeGroupSlug)
   : undefined;
 const activeSub = activeGroup && activeSubSlug
   ? activeGroup.subcategories.find((s) => s.slug === activeSubSlug)
   : undefined;
 
-const copy = CUSTOMIZATION_COPY_EN[activeGroupSlug || 'all'] || CUSTOMIZATION_COPY_EN.all;
+const copy = cl.copy[activeGroupSlug || 'all'] || cl.copy.all;
 
 const heading = activeSub
   ? `${activeGroup?.name}: ${activeSub.name}`
@@ -84,7 +92,7 @@ if (currentPage > 1) {
 // Breadcrumb matching /product/ hierarchy
 const breadcrumbItems: Array<{ label: string; href: string }> = [
   { label: t.nav.home, href: currentPath ? `/${currentPath.replace(/\/$/, '')}` : '/' },
-  { label: 'Customization', href: activeGroup ? rootPath : '#' },
+  { label: cl.ui.breadcrumbLabel, href: activeGroup ? rootPath : '#' },
 ];
 if (activeGroup) {
   breadcrumbItems.push({
@@ -148,14 +156,14 @@ const faqSchema = currentPage === 1 && copy.faqs.length > 0 ? {
                     : 'text-[#5D4E37] hover:bg-stone-50 active:bg-stone-50 focus-visible:bg-stone-50 focus-within:bg-stone-50',
                 ]}
               >
-                <span>All Customization</span>
+                <span>{cl.ui.allCustomization}</span>
                 <span class:list={['text-xs font-normal', activeGroupSlug === null ? 'text-white/80' : 'text-gray-500']}>
                   {allCount}
                 </span>
               </a>
 
               <div class="space-y-3">
-                {CUSTOMIZATION_GROUPS.map((group) => {
+                {localizedGroups.map((group) => {
                   const groupCount = group.subcategories.reduce((n, s) => n + s.items.length, 0);
                   const isGroupActive = group.slug === activeGroupSlug;
                   const isGroupExact = isGroupActive && activeSubSlug === null;
@@ -236,7 +244,7 @@ const faqSchema = currentPage === 1 && copy.faqs.length > 0 ? {
           </h1>
 
           <!-- Mobile Category Chips (sidebar hidden below lg) -->
-          <div class="lg:hidden mb-4 -mx-4 px-4 overflow-x-auto" role="navigation" aria-label="Customization categories">
+          <div class="lg:hidden mb-4 -mx-4 px-4 overflow-x-auto" role="navigation" aria-label={cl.ui.categoriesAria}>
             <div class="flex gap-2 w-max pb-1">
               <a
                 href={rootPath}
@@ -247,10 +255,10 @@ const faqSchema = currentPage === 1 && copy.faqs.length > 0 ? {
                     : 'bg-white text-[#5D4E37] border-stone-200 hover:bg-stone-50 active:bg-stone-50 focus-visible:bg-stone-50 focus-within:bg-stone-50',
                 ]}
               >
-                <span>All</span>
+                <span>{cl.ui.allShort}</span>
                 <span class:list={['text-[11px]', activeGroupSlug === null ? 'text-white/80' : 'text-stone-500']}>{allCount}</span>
               </a>
-              {CUSTOMIZATION_GROUPS.map((g) => {
+              {localizedGroups.map((g) => {
                 const count = g.subcategories.reduce((n, s) => n + s.items.length, 0);
                 const active = g.slug === activeGroupSlug;
                 return (
@@ -272,7 +280,7 @@ const faqSchema = currentPage === 1 && copy.faqs.length > 0 ? {
           </div>
 
           {activeGroup && (
-            <div class="lg:hidden mb-4 -mx-4 px-4 overflow-x-auto" role="navigation" aria-label={`${activeGroup.name} subcategories`}>
+            <div class="lg:hidden mb-4 -mx-4 px-4 overflow-x-auto" role="navigation" aria-label={formatCustomTemplate(cl.ui.subcategoriesAria, { group: activeGroup.name })}>
               <div class="flex gap-1.5 w-max pb-1">
                 {activeGroup.subcategories.map((sub) => {
                   const active = sub.slug === activeSubSlug;
@@ -311,19 +319,20 @@ const faqSchema = currentPage === 1 && copy.faqs.length > 0 ? {
           <!-- Results Counter -->
           <div class="flex flex-wrap justify-between items-center gap-2 mb-3 text-xs sm:text-sm text-stone-600">
             <span>
-              Showing {start}-{end} of {totalItems} customization options
+              {formatCustomTemplate(cl.ui.showingCounter, { start, end, total: totalItems })}
             </span>
             <span class="text-xs text-stone-500">
-              Click image to zoom · Click <strong class="text-stone-700">Select for Quote</strong> to build your spec list
+              {cl.ui.zoomHint}
             </span>
           </div>
 
           <!-- 3-Column Selectable Component Grid (mirrors /product/ grid density) -->
           <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-6 xl:gap-x-6 xl:gap-y-8">
-            {items.map((item, idx) => {
+            {localizedItems.map((item, idx) => {
               const cardImg = customizationCardSrc(item);
               const origImg = customizationOriginalSrc(item);
               const isFirst = idx === 0;
+              const groupLabel = groupNameBySlug.get(item.group) || cl.ui.fallbackGroupAlt;
               return (
                 <article class="group bg-white rounded-xl shadow-xs border border-stone-200/70 overflow-hidden hover:shadow-md active:shadow-md focus-visible:shadow-md focus-within:shadow-md hover:border-stone-300 active:border-stone-300 focus-visible:border-stone-300 focus-within:border-stone-300 transition-all duration-300 flex flex-col">
                   <a
@@ -334,12 +343,12 @@ const faqSchema = currentPage === 1 && copy.faqs.length > 0 ? {
                     data-spec-note={item.note}
                     data-astro-prefetch="false"
                     data-astro-reload
-                    aria-label={`Inspect ${item.code} ${item.title}`}
+                    aria-label={formatCustomTemplate(cl.ui.inspectAria, { code: item.code, title: item.title })}
                     class="relative block aspect-square overflow-hidden bg-stone-100 cursor-zoom-in focus-visible:outline-2 focus-visible:outline-[#5D4E37]"
                   >
                     <img
                       src={cardImg}
-                      alt={`${item.title} (${item.code}) — Kssmi ${groupNameBySlug.get(item.group) || 'Eyewear Customization'}`}
+                      alt={formatCustomTemplate(cl.ui.altTemplate, { title: item.title, code: item.code, group: groupLabel })}
                       width="400"
                       height="400"
                       loading={isFirst ? 'eager' : 'lazy'}
@@ -360,7 +369,7 @@ const faqSchema = currentPage === 1 && copy.faqs.length > 0 ? {
                         <span
                           class:list={[
                             'text-[10px] font-bold uppercase tracking-wider rounded px-1.5 py-0.5',
-                            badge.startsWith('Blue Block')
+                            (badge.startsWith('Blue Block') || badge.startsWith(cl.blueBlockPrefix))
                               ? 'bg-blue-50 text-blue-800 border border-blue-200/60'
                               : 'bg-stone-100 text-[#6B5340]',
                           ]}
@@ -391,7 +400,7 @@ const faqSchema = currentPage === 1 && copy.faqs.length > 0 ? {
                       <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                       </svg>
-                      <span data-spec-btn-label>Select for Quote</span>
+                      <span data-spec-btn-label>{cl.ui.selectForQuote}</span>
                     </button>
                   </div>
                 </article>
@@ -419,7 +428,7 @@ const faqSchema = currentPage === 1 && copy.faqs.length > 0 ? {
                 <div class="w-full h-1 bg-amber-700" aria-hidden="true"></div>
                 <div class="p-5 sm:p-7">
                   <p class="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-amber-800 mb-1.5">
-                    Engineering Selection Guide
+                    {cl.ui.engineeringGuideEyebrow}
                   </p>
                   <h2 class="font-Playfair font-bold text-xl sm:text-2xl text-stone-900 mb-2">
                     {copy.guideTitle}
@@ -462,7 +471,7 @@ const faqSchema = currentPage === 1 && copy.faqs.length > 0 ? {
                   {copy.engineeringTips.length > 0 && (
                     <div class="mt-6 pt-5 border-t border-stone-200/80">
                       <h3 class="text-xs font-mono font-bold uppercase tracking-[0.16em] text-stone-800 mb-3">
-                        Factory Sourcing Notes
+                        {cl.ui.factoryNotesHeading}
                       </h3>
                       <ul class="space-y-2">
                         {copy.engineeringTips.map((tip) => (
@@ -482,7 +491,7 @@ const faqSchema = currentPage === 1 && copy.faqs.length > 0 ? {
               {copy.faqs.length > 0 && (
                 <div class="bg-white rounded-xl border border-stone-200 shadow-2xs p-5 sm:p-7">
                   <p class="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-amber-800 mb-1.5">
-                    Technical Q&amp;A
+                    {cl.ui.technicalQaEyebrow}
                   </p>
                   <h2 class="font-Playfair font-bold text-xl text-stone-900 mb-4">
                     {copy.faqTitle}

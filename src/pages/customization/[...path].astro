@@ -1,14 +1,12 @@
 ---
 /**
- * English Customization Catalog routes (indexable English-only catalog).
+ * English Customization Catalog routes (all 17 languages share full hreflang & sitemaps).
  *   /customization/                      -> all components
  *   /customization/<n>/                  -> all components, page n
  *   /customization/<group>/              -> one component group
  *   /customization/<group>/<n>/          -> group, page n
  *   /customization/<group>/<sub>/        -> one subcategory
  *   /customization/<group>/<sub>/<n>/    -> subcategory, page n
- * Published as indexable English-only routes (`noindex={false}`, `noHreflang={true}`);
- * localized routes and reciprocal hreflang entries are added once translations are ready.
  */
 import CustomizationCatalogPage from '../../components/pages/CustomizationCatalogPage.astro';
 import {
@@ -50,4 +48,4 @@ export function getStaticPaths() {
 
 const props = Astro.props as any;
 ---
-<CustomizationCatalogPage lang="en" noindex={false} noHreflang={true} {...props} />
+<CustomizationCatalogPage lang="en" noindex={false} {...props} />

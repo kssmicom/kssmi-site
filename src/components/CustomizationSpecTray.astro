@@ -10,19 +10,26 @@ interface Props {
 }
 
 import { CUSTOMIZATION_GROUPS } from '../data/customizationCatalog';
-import { buildCatalogSpecMap } from '../utils/customizationSpecs.mjs';
+import { buildLocalizedCatalogSpecMap, getCustomizationLocale } from '../data/customization-i18n';
 
 const { lang = 'en' } = Astro.props;
+const cl = await getCustomizationLocale(lang);
 const isRTL = lang === 'ar';
 const quoteHref = lang === 'en' ? '/quote/' : `/${lang}/quote/`;
-const catalogSpecMap = buildCatalogSpecMap(CUSTOMIZATION_GROUPS);
+const catalogSpecMap = buildLocalizedCatalogSpecMap(CUSTOMIZATION_GROUPS, cl);
 ---
 
 <aside
   data-spec-tray
   data-quote-base={quoteHref}
+  data-label-select={cl.ui.selectForQuote}
+  data-label-selected={cl.ui.selectedRemove}
+  data-label-copy={cl.ui.copyCodes}
+  data-label-copied={cl.ui.copied}
+  data-label-remove-title={cl.ui.removeCodeTitle}
+  data-label-remove-aria={cl.ui.removeCodeAria}
   dir={isRTL ? 'rtl' : 'ltr'}
-  aria-label="Selected customization specifications"
+  aria-label={cl.ui.trayAria}
   class="hidden fixed bottom-4 inset-x-0 z-[70] px-4 pointer-events-none"
 >
   <script id="customization-spec-catalog" type="application/json" set:html={JSON.stringify(catalogSpecMap)}></script>
@@ -31,7 +38,7 @@ const catalogSpecMap = buildCatalogSpecMap(CUSTOMIZATION_GROUPS);
       <div class="flex items-center gap-2 mb-1.5">
         <span class="inline-flex items-center justify-center min-w-[22px] h-[22px] px-1.5 rounded-full bg-amber-600 text-white text-[11px] font-mono font-bold" data-spec-count>0</span>
         <span class="text-xs font-Manrope font-bold uppercase tracking-[0.14em] text-amber-200">
-          Selected Specs for Quote
+          {cl.ui.trayHeading}
         </span>
       </div>
       <div data-spec-chips class="flex flex-wrap gap-1.5 max-h-20 overflow-y-auto"></div>
@@ -43,14 +50,14 @@ const catalogSpecMap = buildCatalogSpecMap(CUSTOMIZATION_GROUPS);
         data-spec-copy
         class="px-3.5 py-2 rounded-lg border border-white/25 bg-white/10 text-xs font-Manrope font-bold text-white hover:bg-white/20 active:bg-white/20 focus-visible:bg-white/20 focus-within:bg-white/20 transition-colors cursor-pointer"
       >
-        Copy Codes
+        {cl.ui.copyCodes}
       </button>
       <a
         href={quoteHref}
         data-spec-quote-link
         class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white text-[#2F221B] text-xs font-Manrope font-bold uppercase tracking-wider hover:bg-amber-50 active:bg-amber-50 focus-visible:bg-amber-50 focus-within:bg-amber-50 transition-colors"
       >
-        <span>Request Quote</span>
+        <span>{cl.ui.requestQuote}</span>
         <svg class={`w-3.5 h-3.5 ${isRTL ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
         </svg>
@@ -58,8 +65,8 @@ const catalogSpecMap = buildCatalogSpecMap(CUSTOMIZATION_GROUPS);
       <button
         type="button"
         data-spec-clear
-        title="Clear all and close"
-        aria-label="Clear all selected specs and close"
+        title={cl.ui.clearAllTitle}
+        aria-label={cl.ui.clearAllAria}
         class="w-8 h-8 rounded-full bg-white/10 text-stone-200 hover:bg-white/20 active:bg-white/20 focus-visible:bg-white/20 focus-within:bg-white/20 hover:text-white active:text-white focus-visible:text-white focus-within:text-white flex items-center justify-center transition-colors cursor-pointer"
       >
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -125,6 +132,12 @@ const catalogSpecMap = buildCatalogSpecMap(CUSTOMIZATION_GROUPS);
   };
 
   const syncSpecUI = () => {
+    const tray = document.querySelector<HTMLElement>('[data-spec-tray]');
+    const labelSelect = tray?.dataset.labelSelect || 'Select for Quote';
+    const labelSelected = tray?.dataset.labelSelected || 'Selected ✓ (Remove)';
+    const removeTitleTpl = tray?.dataset.labelRemoveTitle || 'Remove {code} ({title})';
+    const removeAriaTpl = tray?.dataset.labelRemoveAria || 'Remove {code}';
+
     const list = readSpecs();
     const codeSet = new Set(list.map((s) => s.code));
 
@@ -140,11 +153,10 @@ const catalogSpecMap = buildCatalogSpecMap(CUSTOMIZATION_GROUPS);
       btn.classList.toggle('text-[#5D4E37]', !active);
       btn.classList.toggle('border-stone-200', !active);
       const label = btn.querySelector<HTMLElement>('[data-spec-btn-label]');
-      if (label) label.textContent = active ? 'Selected ✓ (Remove)' : 'Select for Quote';
+      if (label) label.textContent = active ? labelSelected : labelSelect;
     });
 
     // Sync floating tray
-    const tray = document.querySelector<HTMLElement>('[data-spec-tray]');
     if (!tray) return;
 
     tray.classList.toggle('hidden', list.length === 0);
@@ -158,8 +170,8 @@ const catalogSpecMap = buildCatalogSpecMap(CUSTOMIZATION_GROUPS);
         const chip = document.createElement('button');
         chip.type = 'button';
         chip.dataset.specRemove = item.code;
-        chip.title = `Remove ${item.code} (${item.title})`;
-        chip.ariaLabel = `Remove ${item.code}`;
+        chip.title = removeTitleTpl.replace('{code}', item.code).replace('{title}', item.title);
+        chip.ariaLabel = removeAriaTpl.replace('{code}', item.code);
         chip.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/15 hover:bg-white/25 active:bg-white/25 focus-visible:bg-white/25 focus-within:bg-white/25 text-[11px] font-mono font-bold text-white transition-colors cursor-pointer';
 
         const codeSpan = document.createElement('span');
@@ -225,10 +237,12 @@ const catalogSpecMap = buildCatalogSpecMap(CUSTOMIZATION_GROUPS);
     if (copyBtn) {
       const text = readSpecs().map((s) => `${s.code} (${s.title})`).join(', ');
       if (text && navigator.clipboard?.writeText) {
+        const tray = document.querySelector<HTMLElement>('[data-spec-tray]');
+        const copiedLabel = tray?.dataset.labelCopied || 'Copied!';
+        const copyLabel = tray?.dataset.labelCopy || 'Copy Codes';
         navigator.clipboard.writeText(text).then(() => {
-          const prev = copyBtn.textContent;
-          copyBtn.textContent = 'Copied!';
-          setTimeout(() => { copyBtn.textContent = prev || 'Copy Codes'; }, 1600);
+          copyBtn.textContent = copiedLabel;
+          setTimeout(() => { copyBtn.textContent = copyLabel; }, 1600);
         }).catch(() => {});
       }
     }

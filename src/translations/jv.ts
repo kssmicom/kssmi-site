@@ -17,6 +17,7 @@ export default {
     nav: {
       home: "Omah",
       products: "Produk",
+      customization: "Kustomisasi",
       collection: "Koleksi",
       feature: "Solusi",
       about: "Babagan",

@@ -179,7 +179,12 @@
 
   function obtainProof() {
     if (siteKey === '' || coolingDown()) return Promise.resolve('');
-    var next = proofQueue.then(obtainSingleProof);
+    var callerGeneration = navGeneration;
+    var next = proofQueue.then(function() {
+      // Abort queued calls from a page the visitor already navigated away from.
+      if (callerGeneration !== navGeneration || coolingDown()) return '';
+      return obtainSingleProof();
+    });
     // Keep the queue alive after a network or widget failure while each
     // caller receives its own result.
     proofQueue = next.catch(function() { return ''; });
