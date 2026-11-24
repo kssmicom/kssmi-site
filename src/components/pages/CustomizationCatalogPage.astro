@@ -54,6 +54,7 @@ const currentPath = lang === 'en' ? '' : `${lang}/`;
 const rootPath = `/${currentPath}customization`;
 
 const allCount = getAllCustomizationItems().length;
+const groupNameBySlug = new Map(CUSTOMIZATION_GROUPS.map((g) => [g.slug, g.name]));
 const activeGroup = activeGroupSlug
   ? CUSTOMIZATION_GROUPS.find((g) => g.slug === activeGroupSlug)
   : undefined;
@@ -336,7 +337,7 @@ const faqSchema = currentPage === 1 && copy.faqs.length > 0 ? {
                   >
                     <img
                       src={cardImg}
-                      alt={`${item.code} ${item.title}`}
+                      alt={`${item.title} (${item.code}) — Kssmi ${groupNameBySlug.get(item.group) || 'Eyewear Customization'}`}
                       width="400"
                       height="400"
                       loading={isFirst ? 'eager' : 'lazy'}
