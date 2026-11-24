@@ -132,6 +132,73 @@ test('UTF-8 BOM fails with exit code 1 and still reports accompanying syntax err
   assert.match(bomAndYaml.stderr, /YAML syntax error/);
 });
 
+test('accepts valid YAML multiline block scalars, nested multiline text, colons/dashes, and quoted/plain continuations while failing bad indentation', () => {
+  const validMultilineCases = [
+    [
+      'literal-pipe.md',
+      '---\ntitle: "Literal Pipe"\nseoDescription: |\n  First line without colon\n\n  Second line after blank\n---\n',
+    ],
+    [
+      'literal-strip-and-keep.md',
+      '---\ntitle: "Strip and Keep"\nsummary: |-\n  Single block without trailing newline\ndetails: |+\n  Keep trailing lines\n\n\n  Explicit: true\n---\n',
+    ],
+    [
+      'literal-explicit-indent.md',
+      '---\ntitle: "Explicit Indent"\nnotes: |2\n    More indented first line\n  Minimum explicit indent line\n    - Not an array item\n---\n',
+    ],
+    [
+      'folded-scalars.md',
+      '---\ntitle: "Folded"\ndescription: >\n  Folded paragraph line one\n  folded paragraph line two\nshortNote: >-\n  KeyLike: colon in folded text\n  - dash lookalike in folded text\n---\n',
+    ],
+    [
+      'nested-multiline.md',
+      '---\ntitle: "Nested"\nseo:\n  description: |\n    Note: contains colon inside nested scalar\n    - contains dash lookalike inside nested scalar\nsections:\n  - title: "Section 1"\n    body: >-\n      Array object multiline prose: still valid\n      - also not a standalone array\n---\n',
+    ],
+    [
+      'quoted-and-plain-continuations.md',
+      '---\ntitle: "Quoted and Plain"\ndoubleQuoted: "Double quoted first line\n  continuation line with Key: value lookalike\ndoubleQuoted: still valid at indent 0 inside quotes"\nsingleQuoted: \'Single quoted first line\n  continuation without colon\'\nplainText: First plain line\n  indented plain continuation without colon\n---\n',
+    ],
+  ];
+
+  for (const [name, content] of validMultilineCases) {
+    const root = createValidContentRoot();
+    writeFixtureFile(root, `products/kso-001/${name}`, content);
+    const res = runCli(['--content-root', root]);
+    assert.equal(res.status, 0, `expected ${name} to pass, got: ${res.stderr}\n${res.stdout}`);
+  }
+
+  // Ensure indentation errors, duplicates, and orphan arrays still fail cleanly
+  const badIndentAfterRoot = createValidContentRoot();
+  writeFixtureFile(
+    badIndentAfterRoot,
+    'products/kso-001/bad-indent.md',
+    '---\ntitle: "Ok"\n  badKey: "oops"\n---\n',
+  );
+  const badIndentRes = runCli(['--content-root', badIndentAfterRoot]);
+  assert.equal(badIndentRes.status, 1);
+  assert.match(badIndentRes.stderr, /YAML syntax error/);
+
+  const topLevelIndented = createValidContentRoot();
+  writeFixtureFile(
+    topLevelIndented,
+    'products/kso-001/top-indented.md',
+    '---\n  title: "Indented top key"\n---\n',
+  );
+  const topIndentedRes = runCli(['--content-root', topLevelIndented]);
+  assert.equal(topIndentedRes.status, 1);
+  assert.match(topIndentedRes.stderr, /Leading space on key "title"/);
+
+  const dupAfterBlock = createValidContentRoot();
+  writeFixtureFile(
+    dupAfterBlock,
+    'products/kso-001/dup-after-block.md',
+    '---\ntitle: "Ok"\nnotes: |\n  Inside block\n  title: not a key\ntitle: "Real Duplicate"\n---\n',
+  );
+  const dupAfterBlockRes = runCli(['--content-root', dupAfterBlock]);
+  assert.equal(dupAfterBlockRes.status, 1);
+  assert.match(dupAfterBlockRes.stderr, /Duplicate key "title"/);
+});
+
 test('structural frontmatter and schema guard violations fail with exit code 1', () => {
   const badCases = [
     ['missing-delimiters.md', 'title: "No frontmatter"\n', /No valid frontmatter found/],

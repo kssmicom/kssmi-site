@@ -35,22 +35,121 @@ function formatFsError(err) {
   return err && err.code ? `${err.code}: ${err.message}` : (err?.message || String(err));
 }
 
+const BLOCK_SCALAR_HEADER_RE = /^(?:[^:#\n]+?:\s*|-\s+)([|>](?:[+-]?\d|\d[+-]|[+-])?)\s*(?:#.*)?$/;
+
+function getLineIndent(line) {
+  return line.length - line.trimStart().length;
+}
+
+function extractTopLevelLeadingSpaceError(lines) {
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const trimmed = line.trim();
+    if (trimmed === '' || trimmed.startsWith('#')) continue;
+    if (getLineIndent(line) > 0 && !trimmed.startsWith('-')) {
+      const keyMatch = line.match(/^\s+([a-zA-Z0-9_-]+)/);
+      if (keyMatch) {
+        return `Line ${i + 2}: Leading space on key "${keyMatch[1]}" - keys should not be indented`;
+      }
+    }
+    break;
+  }
+  return null;
+}
+
 /**
- * Look backward from currentIndex to find a valid parent line at lower indentation.
- * A valid parent is a line ending with ":" (YAML mapping) or an array item (starts with "- ").
- * Used to validate nested YAML structures in collection landing pages.
+ * Scan frontmatter lines when YAML parsing fails, skipping YAML block scalar bodies
+ * (`|`, `>`, `|-`, `|+`, `>-`, etc.) so multiline prose lines containing colons,
+ * dashes, or leading spaces are not misclassified.
  */
-function hasValidParent(lines, currentIndex, currentIndent) {
-  for (let j = currentIndex - 1; j >= 0; j--) {
-    const prev = lines[j];
-    const prevTrimmed = prev.trim();
-    if (prevTrimmed === '' || prevTrimmed.startsWith('#')) continue;
-    const prevIndent = prev.length - prev.trimStart().length;
-    if (prevIndent < currentIndent) {
-      return prevTrimmed.endsWith(':') || prevTrimmed.startsWith('- ');
+function collectStructuralDiagnostics(lines) {
+  const diagnostics = [];
+  const seenRootKeys = new Map();
+  let blockScalar = null;
+
+  const leadingError = extractTopLevelLeadingSpaceError(lines);
+  if (leadingError) diagnostics.push(leadingError);
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const lineNum = i + 2; // +2 because frontmatter starts after opening --- on line 1
+    const trimmedLine = line.trim();
+    const indent = getLineIndent(line);
+
+    if (blockScalar) {
+      if (trimmedLine === '') {
+        continue;
+      }
+      if (blockScalar.contentIndent === null) {
+        if (indent > blockScalar.parentIndent) {
+          blockScalar.contentIndent = indent;
+          continue;
+        }
+        blockScalar = null;
+      } else if (indent >= blockScalar.contentIndent) {
+        continue;
+      } else {
+        blockScalar = null;
+      }
+    }
+
+    if (trimmedLine === '' || trimmedLine.startsWith('#')) {
+      continue;
+    }
+
+    const headerMatch = trimmedLine.match(BLOCK_SCALAR_HEADER_RE);
+    if (headerMatch) {
+      if (indent === 0 && !trimmedLine.startsWith('- ')) {
+        const colonIdx = trimmedLine.indexOf(':');
+        const key = trimmedLine.slice(0, colonIdx).trim();
+        if (key) {
+          if (seenRootKeys.has(key)) {
+            diagnostics.push(`Line ${lineNum}: Duplicate key "${key}" (first defined at line ${seenRootKeys.get(key)})`);
+          } else {
+            seenRootKeys.set(key, lineNum);
+          }
+        }
+      }
+      const digitMatch = headerMatch[1].match(/\d/);
+      const explicitIndent = digitMatch ? indent + Number(digitMatch[0]) : null;
+      blockScalar = { parentIndent: indent, contentIndent: explicitIndent };
+      continue;
+    }
+
+    if (trimmedLine.startsWith('- ')) {
+      if (indent === 0) {
+        let hasSequenceParent = false;
+        for (let j = i - 1; j >= 0; j--) {
+          const prev = lines[j];
+          const prevTrimmed = prev.trim();
+          if (prevTrimmed === '' || prevTrimmed.startsWith('#')) continue;
+          const prevIndent = getLineIndent(prev);
+          if (prevIndent === 0 && (prevTrimmed.endsWith(':') || prevTrimmed.startsWith('- '))) {
+            hasSequenceParent = true;
+          }
+          break;
+        }
+        if (!hasSequenceParent) {
+          diagnostics.push(`Line ${lineNum}: Array item "- ${trimmedLine.slice(2).substring(0, 60)}" not under a valid key`);
+        }
+      }
+      continue;
+    }
+
+    const colonIndex = line.indexOf(':');
+    if (colonIndex !== -1 && indent === 0) {
+      const key = line.slice(0, colonIndex).trim();
+      if (key && !key.startsWith('"') && !key.startsWith("'")) {
+        if (seenRootKeys.has(key)) {
+          diagnostics.push(`Line ${lineNum}: Duplicate key "${key}" (first defined at line ${seenRootKeys.get(key)})`);
+        } else {
+          seenRootKeys.set(key, lineNum);
+        }
+      }
     }
   }
-  return false;
+
+  return diagnostics;
 }
 
 /**
@@ -83,78 +182,17 @@ export function validateFrontmatter(content, filePath, { baseDir = process.cwd()
   const frontmatter = frontmatterMatch[1];
   const lines = frontmatter.split(/\r?\n/);
 
-  // Track seen keys for duplicate detection
-  const seenKeys = new Map();
-
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    const lineNum = i + 2; // +2 because frontmatter starts after --- (line 1)
-    const trimmedLine = line.trim();
-    const indent = line.length - line.trimStart().length;
-
-    // Skip comments and empty lines
-    if (trimmedLine.startsWith('#') || trimmedLine === '') {
-      continue;
-    }
-
-    // Check for array items
-    if (trimmedLine.startsWith('- ')) {
-      const prevLine = i > 0 ? lines[i - 1].trim() : '';
-      const prevEndsWithColon = prevLine.endsWith(':');
-      const prevIsArrayItem = prevLine.startsWith('- ');
-      const hasParent = indent > 0 && hasValidParent(lines, i, indent);
-      if (!prevEndsWithColon && !prevIsArrayItem && !hasParent) {
-        errors.push(`Line ${lineNum}: Array item "- ${trimmedLine.slice(2).substring(0, 60)}" not under a valid key`);
-      }
-      continue;
-    }
-
-    // Check for leading spaces on key lines (only error if no valid nesting parent exists)
-    if (line.match(/^\s+[a-zA-Z]/)) {
-      const keyMatch = line.match(/^\s+([a-zA-Z][a-zA-Z0-9_]*)/);
-      if (keyMatch && !hasValidParent(lines, i, indent)) {
-        errors.push(`Line ${lineNum}: Leading space on key "${keyMatch[1]}" - keys should not be indented`);
-      }
-    }
-
-    // Check for key: value format
-    const colonIndex = line.indexOf(':');
-    if (colonIndex === -1) {
-      if (trimmedLine !== '') {
-        errors.push(`Line ${lineNum}: Invalid line "${trimmedLine}" - expected "key: value" format`);
-      }
-      continue;
-    }
-
-    const key = line.slice(0, colonIndex).trim();
-
-    // Check for empty key
-    if (key === '') {
-      errors.push(`Line ${lineNum}: Empty key before colon`);
-      continue;
-    }
-
-    // Check for invalid key characters (any non-empty key except colon and newlines)
-    if (/[\n\r:]/.test(key) || key.trim() === '') {
-      warnings.push(`Line ${lineNum}: Invalid key name "${key}"`);
-    }
-
-    // Check for duplicate keys (root-level only — nested YAML sections can reuse keys like "image", "description")
-    if (indent === 0) {
-      if (seenKeys.has(key)) {
-        errors.push(`Line ${lineNum}: Duplicate key "${key}" (first defined at line ${seenKeys.get(key)})`);
-      } else {
-        seenKeys.set(key, lineNum);
-      }
-    }
-  }
-
-  // === YAML parse validation ===
-  // Catch syntax errors that structural checks miss (e.g., stray | pipes, bad indentation, nested duplicates)
+  // === Primary YAML parse validation ===
+  // Uses js-yaml as the authoritative parser so valid YAML multiline scalars
+  // (|, |-, |+, >, >-, nested multiline fields, multiline quoted/plain text)
+  // are accepted while invalid indentation, nested duplicates, and syntax errors fail closed.
   let parsed;
   try {
     parsed = yaml.load(frontmatter);
   } catch (e) {
+    for (const diagnostic of collectStructuralDiagnostics(lines)) {
+      errors.push(diagnostic);
+    }
     errors.push(`YAML syntax error: ${e.message}`);
     return {
       file: relativePath,
@@ -166,6 +204,18 @@ export function validateFrontmatter(content, filePath, { baseDir = process.cwd()
 
   if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
     errors.push('Frontmatter must parse to a YAML mapping object');
+    return {
+      file: relativePath,
+      valid: false,
+      errors,
+      warnings
+    };
+  }
+
+  // Reject globally indented top-level frontmatter mappings (js-yaml tolerates uniform indent).
+  const leadingError = extractTopLevelLeadingSpaceError(lines);
+  if (leadingError) {
+    errors.push(leadingError);
     return {
       file: relativePath,
       valid: false,

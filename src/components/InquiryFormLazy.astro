@@ -6,6 +6,8 @@
  * Astro normally and there is no second-request failure state.
  */
 import InquiryForm from './InquiryForm.astro';
+import { CUSTOMIZATION_GROUPS } from '../data/customizationCatalog';
+import { buildCatalogSpecMap } from '../utils/customizationSpecs.mjs';
 
 interface Props {
   lang?: string;
@@ -23,6 +25,8 @@ const {
   source = 'general_inquiry',
 } = Astro.props;
 const resolvedProductUrl = productUrl || Astro.url.pathname;
+const includeSpecCatalog = source === 'quote_page';
+const catalogSpecMap = includeSpecCatalog ? buildCatalogSpecMap(CUSTOMIZATION_GROUPS) : null;
 ---
 
 <div
@@ -33,6 +37,9 @@ const resolvedProductUrl = productUrl || Astro.url.pathname;
   data-product-url={resolvedProductUrl}
   class="scroll-mt-[80px]"
 >
+  {catalogSpecMap && (
+    <script id="customization-spec-catalog" type="application/json" set:html={JSON.stringify(catalogSpecMap)}></script>
+  )}
   <InquiryForm
     lang={lang}
     productName={productName}
@@ -43,6 +50,14 @@ const resolvedProductUrl = productUrl || Astro.url.pathname;
 </div>
 
 <script>
+  import {
+    CUSTOMIZATION_INQUIRY_PRODUCT_NAME,
+    SPEC_STORAGE_KEY,
+    parseAndValidateSpecCodes,
+    syncSpecsIntoDetails,
+    validateStoredSpecs,
+  } from '../utils/customizationSpecs.mjs';
+
   // Preserve product context supplied in legacy campaign links without making
   // the form depend on a second HTTP request. Product-page context always comes
   // from the generated page and must not be replaced by query-string values.
@@ -67,6 +82,45 @@ const resolvedProductUrl = productUrl || Astro.url.pathname;
     if (input) input.value = value;
   }
 
+  function readSpecCatalogMap(container: HTMLElement): Record<string, string> | null {
+    const el = container.querySelector('#customization-spec-catalog');
+    if (!el || !el.textContent) return null;
+    try {
+      const parsed = JSON.parse(el.textContent);
+      return parsed && typeof parsed === 'object' ? (parsed as Record<string, string>) : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function syncQuoteSpecsUrl(nextSpecs: Array<{ code: string; title: string }>): void {
+    try {
+      const url = new URL(window.location.href);
+      if (nextSpecs.length > 0) {
+        url.searchParams.set('specs', nextSpecs.map((item) => item.code).join(','));
+      } else {
+        url.searchParams.delete('specs');
+      }
+      window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`);
+    } catch {
+      // Ignore history errors in constrained environments
+    }
+  }
+
+  function pruneStoredSpecs(codesToRemove: string[], catalogMap: Record<string, string>): void {
+    if (!codesToRemove.length) return;
+    try {
+      const raw = sessionStorage.getItem(SPEC_STORAGE_KEY);
+      if (!raw) return;
+      const removeSet = new Set(codesToRemove);
+      const { specs } = validateStoredSpecs(raw, catalogMap);
+      const remaining = specs.filter((item) => !removeSet.has(item.code));
+      sessionStorage.setItem(SPEC_STORAGE_KEY, JSON.stringify(remaining));
+    } catch {
+      // Ignore private-mode storage errors
+    }
+  }
+
   function applyInquiryContext(): void {
     const container = document.getElementById('inquiry-form-lazy');
     const form = container?.querySelector('form') as HTMLFormElement | null;
@@ -76,10 +130,12 @@ const resolvedProductUrl = productUrl || Astro.url.pathname;
     if (container.dataset.source === 'product_page') return;
 
     const params = new URLSearchParams(window.location.search);
-    const productName = cleanText(
-      params.get('product_name') || params.get('product') || container.dataset.product || '',
+    const explicitProductParam = cleanText(
+      params.get('product_name') || params.get('product') || '',
       256,
     );
+    const defaultProductName = cleanText(container.dataset.product || '', 256) || 'General Inquiry';
+    const productName = explicitProductParam || defaultProductName;
     const productSku = cleanText(
       params.get('sku') || container.dataset.productSku || '',
       80,
@@ -88,9 +144,98 @@ const resolvedProductUrl = productUrl || Astro.url.pathname;
       params.get('product_url') || container.dataset.productUrl || window.location.pathname,
     ) || window.location.pathname;
 
-    setHidden(form, 'product_name', productName || 'General Inquiry');
+    setHidden(form, 'product_name', productName);
     setHidden(form, 'product_sku', productSku);
     setHidden(form, 'product_url', productUrl);
+
+    const catalogMap = readSpecCatalogMap(container);
+    const rawSpecs = params.get('specs');
+    if (!catalogMap || !rawSpecs) return;
+
+    const { specs } = parseAndValidateSpecCodes(rawSpecs, catalogMap);
+    if (specs.length === 0) return;
+
+    const panel = form.querySelector('#selected-specs-panel') as HTMLElement | null;
+    const countEl = form.querySelector('#selected-specs-count') as HTMLElement | null;
+    const chipsEl = form.querySelector('#selected-specs-chips') as HTMLElement | null;
+    const clearBtn = form.querySelector('#selected-specs-clear') as HTMLButtonElement | null;
+    const detailsEl = form.querySelector('#details') as HTMLTextAreaElement | null;
+
+    let activeSpecs = specs;
+    let currentAutoBlock = '';
+
+    const renderSelectedSpecs = () => {
+      if (panel) panel.classList.toggle('hidden', activeSpecs.length === 0);
+      if (countEl) countEl.textContent = String(activeSpecs.length);
+
+      if (chipsEl) {
+        const frag = document.createDocumentFragment();
+        activeSpecs.forEach((item) => {
+          const chip = document.createElement('button');
+          chip.type = 'button';
+          chip.dataset.quoteSpecRemove = item.code;
+          chip.title = `Remove ${item.code} (${item.title})`;
+          chip.setAttribute('aria-label', `Remove ${item.code}`);
+          chip.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-[#8B7355]/30 bg-white text-xs font-mono font-semibold text-[#5D4E37] hover:bg-stone-100 active:bg-stone-100 focus-visible:bg-stone-100 focus-within:bg-stone-100 transition-colors cursor-pointer';
+
+          const codeSpan = document.createElement('span');
+          codeSpan.textContent = item.code;
+          const titleSpan = document.createElement('span');
+          titleSpan.className = 'font-sans font-normal text-stone-600';
+          titleSpan.textContent = `· ${item.title}`;
+          const closeSpan = document.createElement('span');
+          closeSpan.className = 'font-bold text-[#8B7355] leading-none';
+          closeSpan.textContent = '×';
+          closeSpan.setAttribute('aria-hidden', 'true');
+
+          chip.append(codeSpan, titleSpan, closeSpan);
+          frag.appendChild(chip);
+        });
+        chipsEl.replaceChildren(frag);
+      }
+
+      if (detailsEl) {
+        const synced = syncSpecsIntoDetails(detailsEl.value, currentAutoBlock, activeSpecs);
+        if (detailsEl.value !== synced.value) {
+          detailsEl.value = synced.value;
+        }
+        currentAutoBlock = synced.autoBlock;
+      }
+
+      if (!explicitProductParam) {
+        setHidden(
+          form,
+          'product_name',
+          activeSpecs.length > 0 ? CUSTOMIZATION_INQUIRY_PRODUCT_NAME : defaultProductName,
+        );
+      }
+    };
+
+    renderSelectedSpecs();
+
+    if (panel && panel.dataset.specsBound !== '1') {
+      panel.dataset.specsBound = '1';
+      panel.addEventListener('click', (event) => {
+        const target = event.target instanceof Element ? event.target : null;
+        const removeBtn = target?.closest('[data-quote-spec-remove]') as HTMLButtonElement | null;
+        if (removeBtn) {
+          const code = (removeBtn.dataset.quoteSpecRemove || '').trim().toUpperCase();
+          if (!code) return;
+          activeSpecs = activeSpecs.filter((item) => item.code !== code);
+          renderSelectedSpecs();
+          syncQuoteSpecsUrl(activeSpecs);
+          pruneStoredSpecs([code], catalogMap);
+          return;
+        }
+        if (clearBtn && target?.closest('#selected-specs-clear')) {
+          const clearedCodes = activeSpecs.map((item) => item.code);
+          activeSpecs = [];
+          renderSelectedSpecs();
+          syncQuoteSpecsUrl(activeSpecs);
+          pruneStoredSpecs(clearedCodes, catalogMap);
+        }
+      });
+    }
   }
 
   applyInquiryContext();
