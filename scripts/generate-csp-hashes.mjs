@@ -1,13 +1,83 @@
 import { createHash } from 'node:crypto';
 import { readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const distDir = path.resolve(projectRoot, process.argv[2] || 'dist');
 const writeSource = process.argv.includes('--write-source');
 
 const sha256 = (value) => `sha256-${createHash('sha256').update(value, 'utf8').digest('base64')}`;
+
+// Named character references that commonly appear inside serialized HTML event-handler attributes.
+const NAMED_HTML_ENTITIES = new Map([
+  ['amp', '&'],
+  ['AMP', '&'],
+  ['lt', '<'],
+  ['LT', '<'],
+  ['gt', '>'],
+  ['GT', '>'],
+  ['quot', '"'],
+  ['QUOT', '"'],
+  ['apos', "'"],
+  ['nbsp', '\u00a0'],
+  ['sol', '/'],
+  ['bsol', '\\'],
+  ['colon', ':'],
+  ['semi', ';'],
+  ['equals', '='],
+  ['lpar', '('],
+  ['rpar', ')'],
+  ['lsqb', '['],
+  ['rsqb', ']'],
+  ['lcub', '{'],
+  ['rcub', '}'],
+  ['comma', ','],
+  ['period', '.'],
+  ['excl', '!'],
+  ['quest', '?'],
+  ['plus', '+'],
+  ['num', '#'],
+  ['percnt', '%'],
+  ['ast', '*'],
+  ['vert', '|'],
+  ['Hat', '^'],
+  ['tilde', '~'],
+  ['grave', '`'],
+  ['dollar', '$'],
+  ['commat', '@'],
+  ['lowbar', '_'],
+  ['Tab', '\t'],
+  ['tab', '\t'],
+  ['NewLine', '\n'],
+  ['newline', '\n'],
+]);
+
+function decodeCodePoint(codePoint) {
+  if (!Number.isFinite(codePoint) || codePoint <= 0 || codePoint > 0x10ffff) {
+    return '\uFFFD';
+  }
+  if (codePoint >= 0xd800 && codePoint <= 0xdfff) {
+    return '\uFFFD';
+  }
+  return String.fromCodePoint(codePoint);
+}
+
+/**
+ * Decode HTML character references inside an attribute value in a single pass,
+ * matching how HTML5 tokenization exposes `on*` event handler code to CSP hashing.
+ */
+export function decodeHtmlAttributeValue(rawValue) {
+  if (typeof rawValue !== 'string' || !rawValue.includes('&')) return rawValue;
+  return rawValue.replace(/&(?:#x([0-9a-fA-F]+)|#([0-9]+)|([a-zA-Z][a-zA-Z0-9]*));/g, (full, hex, dec, name) => {
+    if (hex !== undefined) return decodeCodePoint(Number.parseInt(hex, 16));
+    if (dec !== undefined) return decodeCodePoint(Number.parseInt(dec, 10));
+    if (name !== undefined && NAMED_HTML_ENTITIES.has(name)) {
+      return NAMED_HTML_ENTITIES.get(name);
+    }
+    return full;
+  });
+}
 
 async function htmlFiles(dir) {
   const entries = await readdir(dir, { withFileTypes: true });
@@ -20,79 +90,89 @@ async function htmlFiles(dir) {
   return files;
 }
 
-const scriptHashes = new Set();
-const styleHashes = new Set();
+export async function generateStaticCsp({
+  distDir: targetDistDir = path.resolve(projectRoot, 'dist'),
+  writeSource: shouldWriteSource = false,
+} = {}) {
+  const scriptHashes = new Set();
+  const styleHashes = new Set();
 
-for (const file of await htmlFiles(distDir)) {
-  const html = await readFile(file, 'utf8');
+  for (const file of await htmlFiles(targetDistDir)) {
+    const html = await readFile(file, 'utf8');
 
-  for (const match of html.matchAll(/<script(?![^>]*\bsrc\s*=)([^>]*)>([\s\S]*?)<\/script>/gi)) {
-    // JSON-LD is structured data, not executable JavaScript. Hashing every
-    // product's dynamic JSON-LD would create thousands of needless CSP hashes
-    // and can exceed web-server response-header limits.
-    if (/\btype\s*=\s*["']application\/(?:ld\+json|json)["']/i.test(match[1])) continue;
-    scriptHashes.add(sha256(match[2]));
+    for (const match of html.matchAll(/<script(?![^>]*\bsrc\s*=)([^>]*)>([\s\S]*?)<\/script>/gi)) {
+      // JSON-LD is structured data, not executable JavaScript. Hashing every
+      // product's dynamic JSON-LD would create thousands of needless CSP hashes
+      // and can exceed web-server response-header limits.
+      if (/\btype\s*=\s*["']application\/(?:ld\+json|json)["']/i.test(match[1])) continue;
+      scriptHashes.add(sha256(match[2]));
+    }
+    for (const match of html.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/gi)) {
+      styleHashes.add(sha256(match[1]));
+    }
+    for (const match of html.matchAll(/\s+on[a-z]+\s*=\s*(["'])([\s\S]*?)\1/gi)) {
+      scriptHashes.add(sha256(decodeHtmlAttributeValue(match[2])));
+    }
   }
-  for (const match of html.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/gi)) {
-    styleHashes.add(sha256(match[1]));
+
+  const policy = [
+    "default-src 'self'",
+    "base-uri 'self'",
+    "object-src 'none'",
+    // CSP grammar requires every hash source to be single-quoted ('sha256-…=');
+    // unquoted hashes are reported as invalid sources and silently ignored, which
+    // blocks every inline script and style on the page.
+    ["script-src 'self' 'unsafe-hashes'", ...[...scriptHashes].sort().map((hash) => `'${hash}'`),
+      'https://static.cloudflareinsights.com', 'https://challenges.cloudflare.com',
+      'https://www.googletagmanager.com', 'https://www.google-analytics.com'].join(' '),
+    ["style-src 'self'", ...[...styleHashes].sort().map((hash) => `'${hash}'`), 'https://fonts.googleapis.com'].join(' '),
+    "font-src 'self' https://fonts.gstatic.com",
+    "img-src 'self' data: https:",
+    "media-src 'self' blob: https://video.gumlet.io https://*.gumlet.io",
+    "connect-src 'self' https://ipapi.co https://cloudflareinsights.com https://www.google-analytics.com https://video.gumlet.io https://*.gumlet.io",
+    "frame-src 'self' https://challenges.cloudflare.com https://www.googletagmanager.com",
+    "frame-ancestors 'self'",
+    "form-action 'self'",
+    'upgrade-insecure-requests',
+  ].join('; ');
+
+  // Browsers ignore frame-ancestors in a <meta> policy and log an error on every
+  // page load, so the meta copy leaves it out. The .htaccess header copy keeps it,
+  // and X-Frame-Options: SAMEORIGIN still blocks framing either way.
+  const metaPolicy = policy.split('; ').filter((directive) => !directive.startsWith('frame-ancestors')).join('; ');
+
+  const updateFile = async (file) => {
+    let text = await readFile(file, 'utf8');
+    const marker = /(Static HTML CSP BEGIN[\s\S]*?Header always set Content-Security-Policy\s+")[^"]*(")/m;
+    if (!marker.test(text)) throw new Error(`CSP marker not found in ${file}`);
+    text = text.replace(marker, `$1${policy}$2`);
+    await writeFile(file, text, 'utf8');
+  };
+
+  const cspMeta = (value) => `<meta data-kssmi-static-csp="1" http-equiv="Content-Security-Policy" content="${value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')}">`;
+
+  async function updateHtmlPolicy(file) {
+    let html = await readFile(file, 'utf8');
+    // This marker makes regeneration idempotent and avoids accepting a stale
+    // policy when OpenLiteSpeed ignores Apache Header directives in .htaccess.
+    html = html.replace(/\s*<meta\s+data-kssmi-static-csp\s*=\s*(["'])1\1[^>]*>\s*/gi, '\n');
+    // Astro emits minimal noindex redirect documents without html/head elements.
+    // They contain no executable inline content, and a CSP meta is only valid
+    // inside head, so leave those redirects unchanged rather than failing a
+    // release that otherwise built successfully.
+    if (!/<\/head\s*>/i.test(html)) return;
+    html = html.replace(/<\/head\s*>/i, `  ${cspMeta(metaPolicy)}\n</head>`);
+    await writeFile(file, html, 'utf8');
   }
-  for (const match of html.matchAll(/\s+on[a-z]+\s*=\s*(["'])([\s\S]*?)\1/gi)) {
-    scriptHashes.add(sha256(match[2]));
-  }
+
+  await updateFile(path.join(targetDistDir, '.htaccess'));
+  if (shouldWriteSource) await updateFile(path.join(projectRoot, 'public', '.htaccess'));
+  await Promise.all((await htmlFiles(targetDistDir)).map(updateHtmlPolicy));
+
+  return { scriptHashCount: scriptHashes.size, styleHashCount: styleHashes.size, policy, metaPolicy };
 }
 
-const policy = [
-  "default-src 'self'",
-  "base-uri 'self'",
-  "object-src 'none'",
-  // CSP grammar requires every hash source to be single-quoted ('sha256-…=');
-  // unquoted hashes are reported as invalid sources and silently ignored, which
-  // blocks every inline script and style on the page.
-  ["script-src 'self' 'unsafe-hashes'", ...[...scriptHashes].sort().map((hash) => `'${hash}'`),
-    'https://static.cloudflareinsights.com', 'https://challenges.cloudflare.com',
-    'https://www.googletagmanager.com', 'https://www.google-analytics.com'].join(' '),
-  ["style-src 'self'", ...[...styleHashes].sort().map((hash) => `'${hash}'`), 'https://fonts.googleapis.com'].join(' '),
-  "font-src 'self' https://fonts.gstatic.com",
-  "img-src 'self' data: https:",
-  "media-src 'self' blob: https://video.gumlet.io https://*.gumlet.io",
-  "connect-src 'self' https://ipapi.co https://cloudflareinsights.com https://www.google-analytics.com https://video.gumlet.io https://*.gumlet.io",
-  "frame-src 'self' https://challenges.cloudflare.com https://www.googletagmanager.com",
-  "frame-ancestors 'self'",
-  "form-action 'self'",
-  'upgrade-insecure-requests',
-].join('; ');
-
-// Browsers ignore frame-ancestors in a <meta> policy and log an error on every
-// page load, so the meta copy leaves it out. The .htaccess header copy keeps it,
-// and X-Frame-Options: SAMEORIGIN still blocks framing either way.
-const metaPolicy = policy.split('; ').filter((directive) => !directive.startsWith('frame-ancestors')).join('; ');
-
-const updateFile = async (file) => {
-  let text = await readFile(file, 'utf8');
-  const marker = /(Static HTML CSP BEGIN[\s\S]*?Header always set Content-Security-Policy\s+")[^"]*(")/m;
-  if (!marker.test(text)) throw new Error(`CSP marker not found in ${file}`);
-  text = text.replace(marker, `$1${policy}$2`);
-  await writeFile(file, text, 'utf8');
-};
-
-const cspMeta = (value) => `<meta data-kssmi-static-csp="1" http-equiv="Content-Security-Policy" content="${value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')}">`;
-
-async function updateHtmlPolicy(file) {
-  let html = await readFile(file, 'utf8');
-  // This marker makes regeneration idempotent and avoids accepting a stale
-  // policy when OpenLiteSpeed ignores Apache Header directives in .htaccess.
-  html = html.replace(/\s*<meta\s+data-kssmi-static-csp\s*=\s*(["'])1\1[^>]*>\s*/gi, '\n');
-  // Astro emits minimal noindex redirect documents without html/head elements.
-  // They contain no executable inline content, and a CSP meta is only valid
-  // inside head, so leave those redirects unchanged rather than failing a
-  // release that otherwise built successfully.
-  if (!/<\/head\s*>/i.test(html)) return;
-  html = html.replace(/<\/head\s*>/i, `  ${cspMeta(metaPolicy)}\n</head>`);
-  await writeFile(file, html, 'utf8');
+if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
+  const { scriptHashCount, styleHashCount } = await generateStaticCsp({ distDir, writeSource });
+  console.log(`Generated static CSP: ${scriptHashCount} script/event hashes, ${styleHashCount} style hashes.`);
 }
-
-await updateFile(path.join(distDir, '.htaccess'));
-if (writeSource) await updateFile(path.join(projectRoot, 'public', '.htaccess'));
-await Promise.all((await htmlFiles(distDir)).map(updateHtmlPolicy));
-
-console.log(`Generated static CSP: ${scriptHashes.size} script/event hashes, ${styleHashes.size} style hashes.`);

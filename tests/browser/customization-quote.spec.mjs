@@ -258,14 +258,6 @@ test('normal product inquiry page ignores ?specs= and keeps product attribution 
   await expect(form.locator('input[name="product_sku"]')).toHaveValue('KRS-210');
   await expect(form.locator('input[name="product_name"]')).toHaveValue('KRS-210 Custom Rimless Sunglasses');
 
-  // Product pages carry pre-existing `onerror="...&gt;..."` handlers that emit
-  // `script-src-attr inline` in generate-csp-hashes.mjs; verify zero other CSP issues here.
-  const productViolations = await page.evaluate(() => window.__cspViolations);
-  expect(
-    productViolations.filter((entry) => !entry.startsWith('script-src-attr ')),
-    'non-onerror CSP violations on product page',
-  ).toEqual([]);
-
   await page.fill('#name', 'Product Buyer');
   await page.fill('#email', 'product-buyer@example.com');
   await page.fill('#details', 'Interested in KRS-210 standard samples.');
@@ -281,6 +273,35 @@ test('normal product inquiry page ignores ?specs= and keeps product attribution 
   expect(fields.product_name).toBe('KRS-210 Custom Rimless Sunglasses');
   expect(fields.details).toBe('Interested in KRS-210 standard samples.');
   expect(fields.details).not.toContain('KS-LN-001');
+
+  await expectCleanPage(page, testInfo);
+});
+
+test('entity-encoded onerror handler on product page executes in browser without CSP violations', async ({ page, baseURL }, testInfo) => {
+  const origin = baseURL || 'http://127.0.0.1:4321';
+  let failedOnce = false;
+  let sawRetryRequest = false;
+
+  await page.route('**/media/products/krs-210-rimless-sunglasses/oem-odm-customized-rimless-sunglasses-krs-210-1.webp*', async (route) => {
+    const reqUrl = route.request().url();
+    if (!reqUrl.startsWith(origin)) return route.abort();
+    if (!failedOnce && !reqUrl.includes('retry=1')) {
+      failedOnce = true;
+      return route.fulfill({ status: 404, body: 'simulated missing image' });
+    }
+    if (reqUrl.includes('retry=1')) {
+      sawRetryRequest = true;
+    }
+    return route.continue();
+  });
+
+  await page.goto('/product/krs-210-rimless-sunglasses/');
+  await expect.poll(() => failedOnce).toBe(true);
+  await expect.poll(() => sawRetryRequest).toBe(true);
+  await expect.poll(async () => page.evaluate(() => {
+    const main = document.querySelector('img[data-gallery-main-image]');
+    return Boolean(main && main.dataset.retried === 'true' && main.complete && main.naturalWidth > 0);
+  })).toBe(true);
 
   await expectCleanPage(page, testInfo);
 });

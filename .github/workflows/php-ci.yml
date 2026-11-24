@@ -114,4 +114,4 @@ jobs:
         run: npm ci --legacy-peer-deps
 
       - name: Run content, media and SEO regression suites
-        run: node --test tests/content-validation.test.mjs tests/image-pipeline.test.mjs tests/rendered-product-media.test.mjs tests/seo-identity.test.mjs tests/product-localizations.test.mjs
+        run: node --test tests/content-validation.test.mjs tests/image-pipeline.test.mjs tests/rendered-product-media.test.mjs tests/seo-identity.test.mjs tests/product-localizations.test.mjs tests/customization-specs.test.mjs tests/external-workflow-run.test.mjs
