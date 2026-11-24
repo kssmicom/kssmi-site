@@ -51,6 +51,7 @@
   var API_LOAD_TIMEOUT_MS = 30000;
   var navGeneration = 0;
   var activeAttempt = null;
+  var queuedGenerations = [];
 
   function coolingDown() {
     try { return Number(sessionStorage.getItem(COOLDOWN_KEY) || 0) > Date.now(); } catch (_) { return false; }
@@ -141,7 +142,11 @@
   });
 
   function obtainSingleProof() {
-    if (coolingDown()) return Promise.resolve('');
+    var callerGeneration = queuedGenerations.shift();
+    // Abort queued calls from a page the visitor already navigated away from.
+    if ((callerGeneration !== undefined && callerGeneration !== navGeneration) || coolingDown()) {
+      return Promise.resolve('');
+    }
     return new Promise(function(resolve) {
       var proofAttempt = {
         navGeneration: navGeneration,
@@ -179,12 +184,8 @@
 
   function obtainProof() {
     if (siteKey === '' || coolingDown()) return Promise.resolve('');
-    var callerGeneration = navGeneration;
-    var next = proofQueue.then(function() {
-      // Abort queued calls from a page the visitor already navigated away from.
-      if (callerGeneration !== navGeneration || coolingDown()) return '';
-      return obtainSingleProof();
-    });
+    queuedGenerations.push(navGeneration);
+    var next = proofQueue.then(obtainSingleProof);
     // Keep the queue alive after a network or widget failure while each
     // caller receives its own result.
     proofQueue = next.catch(function() { return ''; });
