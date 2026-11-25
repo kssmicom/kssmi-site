@@ -23,6 +23,7 @@
 import { getEntry } from 'astro:content';
 import { getTranslations, type Translations } from '../../../translations';
 import { cardSrc } from '../../../utils/image';
+import { resolveHomeCardHref } from '../../../utils/homeCardLinks';
 
 const { lang = 'en' } = Astro.props as { lang?: string };
 const isRTL = lang === 'ar';
@@ -58,7 +59,7 @@ const materials = entry?.data?.materials || [];
         <div
           class:list={["mat-card group flex flex-col w-[calc(50%-0.625rem)] sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(25%-1.125rem)] bg-white rounded-2xl overflow-hidden shadow-xs ring-1 ring-stone-200/70 hover:shadow-xl active:shadow-xl focus-visible:shadow-xl focus-within:shadow-xl hover:shadow-stone-200/60 active:shadow-stone-200/60 focus-visible:shadow-stone-200/60 focus-within:shadow-stone-200/60 hover:ring-stone-300 active:ring-stone-300 focus-visible:ring-stone-300 focus-within:ring-stone-300 transition-all duration-500 cursor-pointer motion-safe:animate-[matFadeInUp_0.5s_ease-out_both]", `kx-stagger-5-${i}`]}
         >
-          <a href={`${prefix}/product/?color=${m.slug}`} class="relative aspect-[4/3] overflow-hidden bg-stone-100 block">
+          <a href={resolveHomeCardHref(prefix, m.slug)} class="relative aspect-[4/3] overflow-hidden bg-stone-100 block">
             <img
               src={cardSrc(m.image)}
               alt={m.name}
@@ -72,7 +73,7 @@ const materials = entry?.data?.materials || [];
           </a>
 
           <div class="p-5 md:p-6 flex flex-col flex-1">
-            <a href={`${prefix}/product/?color=${m.slug}`} class="block text-center">
+            <a href={resolveHomeCardHref(prefix, m.slug)} class="block text-center">
               <h3 class="text-sm md:text-base font-bold text-stone-800 group-hover:text-amber-700 group-active:text-amber-700 group-focus-visible:text-amber-700 group-focus-within:text-amber-700 transition-colors duration-300 mb-1.5">
                 {m.name}
               </h3>
