@@ -36,7 +36,7 @@ featured: true
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KAS-510 Kacamata Ireng Asetat Trendi | Supplier Kustom"
 seoDescription: "Kacamata ireng asetat premium Mazzucchelli, JIMEI, JINYU kasedhiya kanggo kustomisasi OEM/ODM lengkap. Ukuran frame, warna, lan opsi logo khusus. 300 MOQ saben model."
-seoKeywords: ""
+seoKeywords: "produsen kacamata hitam asetat, kacamata asetat OEM kustom, pemasok kacamata hitam label pribadi, grosir bingkai asetat China, pabrik ODM kacamata hitam fashion, kustomisasi kacamata hitam pesenan, produsen kacamata asetat China, kacamata hitam premium kanggo merek butik"
 ---
 
 ## Fitur

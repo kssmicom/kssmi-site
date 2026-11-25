@@ -36,7 +36,7 @@ featured: true
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KAS-510 Gafas de Sol de Acetato de Moda | Proveedor Personalizado"
 seoDescription: "Gafas de sol de acetato premium Mazzucchelli, JIMEI, JINYU disponibles para personalización completa OEM/ODM. Tamaños de montura, colores y opciones de logotipo a medida. MOQ de 300 por modelo."
-seoKeywords: ""
+seoKeywords: "fabricante de gafas de sol de acetato, gafas de acetato OEM personalizadas, proveedor de gafas de sol de marca propia, monturas de acetato al por mayor China, fábrica ODM de gafas de sol de moda, personalización de gafas de sol a medida, productor chino de gafas de acetato, gafas de sol premium para marcas boutique"
 ---
 
 ## Características

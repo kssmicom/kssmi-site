@@ -37,17 +37,23 @@ a production artifact or publishing the site.
 
 | Entry | Actual behavior |
 |---|---|
-| `Local-Start.vbs` | Starts Astro directly in the original project, watches source edits, waits for `/product`, then opens `http://127.0.0.1:4321` |
-| `Local-Start.bat` | Same managed preview with console feedback |
+| `Local-Start.vbs` | Starts Astro directly in the original project, watches source edits, waits for `/product`, then opens `http://127.0.0.1:4322` |
+| `Local-Start.bat` | Same managed preview on `127.0.0.1:4322` with console feedback |
 | `Local-Start-Fresh.bat` | Stops only this project's managed preview, archives known untracked caches to `tep`, then restarts in the original project; preserves `dist` and source |
 | `Local-Stop.bat` | Stops only the authenticated managed preview for this source directory; never kills processes by executable name |
-| `start-servers.bat` | Managed preview on 4321 plus loopback PHP on 4325, both using the original project; no automatic dependency installation |
+| `Local-Start.command` | macOS entry delegating to `scripts/local-dev.mjs` on `127.0.0.1:4322` (`--strictPort`); never adopts or kills unmanaged port occupants |
+| `Local-Stop.command` | macOS entry delegating to `scripts/local-dev.mjs stop`; stops only the authenticated managed session and leaves legacy or foreign listeners untouched |
+| `start-servers.bat` | Managed preview on `127.0.0.1:4322` plus loopback PHP on `127.0.0.1:4325` (`--php-port` configurable), both using the original project; no automatic dependency installation |
 | `Build-Site.bat` | Calls `scripts/build-local.ps1` to run npm build in the original project; output is `dist`, standard caches stay in the project, auxiliary logs/temp stay in `tep`; no Git restoration, commit or push |
 | `Cleanup-Logs.bat` | Reviews allowlisted untracked logs and this project's completed temporary tasks; standard build/cache directories are preserved; selected candidates go to the Recycle Bin; tracked files, credentials, data, links and other tasks are preserved |
 | `push-main.bat` | Checks repository, main branch, origin and remote tip; lets the user choose eligible files, review them and confirm PUSH; commits only the selection and verifies the remote after push |
 
 Preview state, control files, PHP configuration/router and auxiliary logs
-are under `tep`; Astro caches and build output stay in the original project. The manager refuses to take over an unmanaged occupied port.
+are under `tep`; Astro caches and build output stay in the original project. Both
+Windows and macOS managed launchers bind `127.0.0.1` (`4322` default for Astro,
+`4325` default or `--php-port` for PHP), refuse to take over or kill an unmanaged
+occupied port, and do not adopt legacy shell-started servers (stop any legacy
+server manually after verifying its PID and command).
 Fresh preserves previous task records; cleanup is a separate reviewed
 action. Do not run any launcher as part of a read-only check.
 
@@ -92,6 +98,7 @@ npm run preview            # Preview production build locally
 
 # Utilities
 npm run validate           # Run content validation script only
+npm run validate:product-localizations  # Full-catalog multilingual product structure check (also a prebuild gate)
 npm run prebuild           # Run all pre-build scripts (validation, llms.txt, sitemap)
 ```
 
@@ -197,29 +204,55 @@ gallery:
   - "/media/products/kso-005/OEM-ODM-Customize-Luxury-Optical-Glasses-KSO-005-2.webp"
 ```
 
-**Product image derivatives:** every original must have a same-basename
-`-400.webp` card variant (400×300 bounding box, WebP quality 85) and
-`-240w.webp` gallery thumbnail (240×240 bounding box, WebP quality 80).
-The optimizer uses `fit: 'inside'`, `withoutEnlargement: true` and WebP
-`effort: 5`; these are maximum dimensions, not a requirement to crop or
-stretch every source into a rectangle. Generate derivatives from originals,
-never enlarge an old thumbnail. The gallery displays thumbnails at 64×64
-CSS pixels; the larger asset supports high-density screens.
+**Product image derivatives:** policy is fixed and centralized in
+`src/config/image-variants.mjs` (frozen `VARIANT_SPECS`, EXIF-aware dimension
+math, and manifest provenance helpers). Every original under `products/` must
+have a same-basename `-400.webp` card variant (400×300 bounding box, WebP
+quality 85, `recipe: kssmi-v1:card:400x300:inside:noenlarge:rotate:webp:q85:e5`)
+and `-240w.webp` gallery thumbnail (240×240 bounding box, WebP quality 80,
+`recipe: kssmi-v1:thumb:240x240:inside:noenlarge:rotate:webp:q80:e5`).
+The optimizer uses EXIF `.rotate()`, `fit: 'inside'`, `withoutEnlargement: true`
+and WebP `effort: 5`; these are maximum dimensions, not a requirement to crop
+or stretch every source into a rectangle. Generate derivatives from originals,
+never enlarge an old thumbnail. The gallery displays thumbnails at 64×64 CSS
+pixels; the larger asset supports high-density screens.
 
 - Keep frontmatter, main gallery images and sitemap image URLs pointed at
-  originals. Use `cardSrc` / `thumbSrc` from `src/utils/image.ts` for their
-  respective display contexts; these helpers fall back to the original when
-  a derivative is absent at render time.
-- Exclude `-400`, legacy `-120w` and current `-240w` derivatives from original
-  discovery and original-image recompression. Preserve these exclusions even
-  if legacy files are later removed. Do not use derived suffixes in original
-  image names or product directory names.
+  originals. Use `cardSrc` / `thumbSrc` from `src/utils/image.ts` (and
+  `src/pages/api/search-index/[lang].json.ts` via `cardSrc`) for their
+  respective display contexts; these helpers resolve `-400.webp` and
+  `-240w.webp` sidecars for `.webp`, `.jpg`, `.jpeg` and `.png` originals and
+  fall back to the original path when a derivative is absent at render time.
+- Exclude `-400`, legacy `-120w` and current `-240w` derivatives as well as
+  `-poster` assets from original discovery; `scripts/optimize-images.mjs` is
+  sidecar-only and never re-encodes or deletes originals. Preserve these
+  exclusions even if legacy `-120w` files are later removed. Do not use derived
+  suffixes in original image names or product directory names, and do not keep
+  multiple extensions (e.g. `.jpg` + `.png`) for the same basename.
+- `scripts/optimize-images.mjs` writes `{ sourceHash, outputHash, recipe, size, date }`
+  provenance into `scripts/.optimize-manifest.json`. It automatically skips
+  derivatives whose `sourceHash`/`outputHash`/`recipe` match and regenerates
+  provenance-tracked derivatives whose original, output, or recipe changed, but
+  never silently overwrites or forges hashes for unverified existing files
+  without explicit `--target <relPath> --force`.
 - Legacy `-120w.webp` assets are retained but no longer generated or required.
   Removing them is a separate reviewed change.
-- `npm run validate:image-variants` is a read-only existence/file-type gate
-  required by `prebuild`; it requires `-400` and `-240w`, but does not verify
-  dimensions, encoding quality or visual appearance. Check those when
-  generating or replacing assets. A fallback is not permission to omit them.
+- `npm run validate:image-variants` (`scripts/validate-image-variants.mjs`) is a
+  strict read-only gate required by `prebuild`. It verifies manifest validity,
+  exact disk filename casing, real decoded WebP format, post-EXIF dimensions
+  within bounding boxes (`±1px` rounding tolerance), `sourceHash`/`outputHash`/
+  `recipe` provenance, same-basename collisions, and product Markdown
+  `cover`/`gallery` `/media/products/...` refs (exact disk casing, originals
+  only). Still verify visual appearance when replacing assets; a render-time
+  fallback is not permission to omit verified derivatives.
+- `npm run validate:rendered-product-media` (`scripts/validate-product-rendered-media.mjs dist`)
+  is a read-only post-build gate at the end of `build` (after language pruning
+  and final-artifact checks). It reconciles every multilingual built product page
+  against Markdown `cover`/`gallery`, KS gallery markup (`[data-product-gallery]`,
+  `[data-gallery-main-image]`, `[data-gallery-dialog-image]`,
+  `[data-gallery-index]` / `data-full` order), thumbnail `-240w.webp` targets,
+  legal empty-media placeholders, and exact-case `dist/media` files, while
+  accounting for non-product catalog/category/pagination/redirect routes.
 
 ### Product Naming Convention
 
@@ -391,13 +424,17 @@ included — the router swaps 404 responses too).
 
 ## Pre-Build Validation
 
-The `scripts/validate-content.mjs` script runs before build to check:
+The `scripts/validate-content.mjs` script runs before build across all 5
+collections defined in `src/content.config.ts` (`products`, `collection`,
+`blog`, `feature`, `category-product`) to check:
 - UTF-8 BOM markers
-- YAML frontmatter syntax
+- YAML frontmatter syntax and mapping structure
 - Duplicate keys
-- Required fields (title)
-- Array formatting
+- Array formatting and `gallery: null`
+- File readability and required collection directories (`blog` and `feature` allow legitimate empty collections)
 
+Hard errors, unreadable files, and missing directories exit non-zero; warnings
+(such as CRLF line endings or `gallery` duplicating `cover`) remain non-blocking.
 Run manually: `npm run validate`
 
 ## Dynamic Search (Fuse.js)
@@ -419,27 +456,29 @@ The Vite plugin in `astro.config.mjs` watches `src/content/products/` for new fo
 1. Inspect a current product folder and the schema in `src/content.config.ts`.
 2. Add stable image assets under `public/media/products/`, following the
    current product's naming and URL conventions.
-3. Generate the required derivatives with `node scripts/optimize-images.mjs`
-   from the website repository root, after inspecting the script and manifest
-   state. This is a write operation scanning all of `public/media`, not just
-   the new SKU: it can recompress unrecorded originals and convert JPG/PNG
-   originals to WebP. Review the resulting file list and use final `.webp`
-   URLs in content. Do not run it as part of a read-only check, and never
-   clear `scripts/.optimize-manifest.json` to force regeneration. Existing
-   manifest entries can prevent a missing derivative from being regenerated;
-   restore a lost file or regenerate that derivative from its original with
-   the documented settings. Replacing an original also requires deliberately
-   regenerating its derivatives; the manifest does not detect changed bytes.
+3. Generate the required sidecar derivatives with
+   `node scripts/optimize-images.mjs --target products/<sku>` after previewing
+   with `--dry-run`. The script keeps `.webp`/`.jpg`/`.jpeg`/`.png` originals
+   strictly read-only (never re-encoded or deleted), rejects corrupt manifests
+   and same-basename/output collisions before any write, and writes
+   `-400.webp` / `-240w.webp` variants plus `scripts/.optimize-manifest.json`
+   atomically. Do not run it as part of a read-only check, never clear
+   `scripts/.optimize-manifest.json`, and use `--force` only with `--target`
+   when deliberately regenerating a replaced original's sidecars.
 4. Create the matching content folder under `src/content/products/` and
    maintain all 17 language entries, product facts and SEO metadata.
-5. Run `npm run validate` and `npm run validate:image-variants`. Check new
+5. Run `npm run validate`, `npm run validate:image-variants`, and
+   `node scripts/validate-product-localizations.mjs <sku>` (or
+   `npm run validate:product-localizations` for all SKUs, plus
+   `npm run validate:translations` when UI/FAQ copy changes). Check new
    assets decode, have the expected dimensions/aspect ratio and look correct.
    Review the diff to confirm unrelated originals and variants were preserved;
    include the required new originals, `-400` and `-240w` files together in
    any authorized commit. Temporary test materials stay under `tep`.
 6. Validate language routing, image URLs and search output in the compliant
    local workspace; a dev-server refresh alone is not acceptance. A full
-   build runs the variant gate but does not generate missing image variants.
+   build runs the variant gate and the full-catalog localization gate (both
+   in `prebuild`) but does not generate missing image variants.
    Commit, push and production deployment still need session authorization.
 
 ### Adding a Landing Page or FAQ Topic
@@ -461,6 +500,11 @@ The Vite plugin in `astro.config.mjs` watches `src/content/products/` for new fo
 - **Auto-deploy:** Push to `main` or manual dispatch starts `.github/workflows/deploy.yml`:
   sealed build artifact → production deployment and verification → release
   evidence and enforced final signoff.
+- **CI coverage:** `deploy.yml` builds with `npm run build`, so the `prebuild`
+  gates (image variants, content, product localizations) block a release.
+  `.github/workflows/php-ci.yml` also runs the content, image, media, SEO and
+  localization regression suites in `tests/` for pull requests and pushes to
+  `main`; `browser-smoke.yml` is the pull-request build check.
 - A successful build is not proof of a successful production release. Match
   the commit SHA to its run and final signoff. Read-only status checks must
   not dispatch/rerun workflows or execute production smoke tests.

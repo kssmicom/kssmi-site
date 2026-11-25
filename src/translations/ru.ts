@@ -17,6 +17,7 @@ export default {
     nav: {
       home: "Главная",
       products: "Продукты",
+      customization: "Кастомизация",
       collection: "Коллекция",
       feature: "Решения",
       about: "О нас",

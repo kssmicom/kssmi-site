@@ -36,7 +36,7 @@ featured: true
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KAS-510 Lunettes de Soleil en Acétate Tendance | Fournisseur Personnalisé"
 seoDescription: "Lunettes de soleil en acétate premium Mazzucchelli, JIMEI, JINYU disponibles pour une personnalisation OEM/ODM complète. Tailles de montures, coloris et options de logo sur mesure. MOQ de 300 par modèle."
-seoKeywords: ""
+seoKeywords: "fabricant de lunettes de soleil en acétate, lunettes en acétate OEM personnalisées, fournisseur de lunettes de soleil marque de distributeur, montures en acétate en gros Chine, usine ODM lunettes de soleil de mode, personnalisation de lunettes de soleil sur mesure, producteur chinois de lunettes en acétate, lunettes de soleil premium pour marques boutique"
 ---
 
 ## Caractéristiques

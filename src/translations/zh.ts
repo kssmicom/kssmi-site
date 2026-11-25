@@ -17,6 +17,7 @@ export default {
     nav: {
       home: "首页",
       products: "产品",
+      customization: "定制选项",
       collection: "系列",
       feature: "方案",
       about: "关于",

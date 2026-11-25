@@ -1,0 +1,253 @@
+---
+/**
+ * Customization Spec Tray — persistent floating bottom bar collecting selected component codes
+ * across customization pages/categories so B2B buyers can remove individual items, clear/close,
+ * copy codes, or jump straight to /quote/.
+ * CSP-safe (zero inline style="") and ClientRouter-safe (astro:page-load).
+ */
+interface Props {
+  lang?: string;
+}
+
+import { CUSTOMIZATION_GROUPS } from '../data/customizationCatalog';
+import { buildLocalizedCatalogSpecMap, getCustomizationLocale } from '../data/customization-i18n';
+
+const { lang = 'en' } = Astro.props;
+const cl = await getCustomizationLocale(lang);
+const isRTL = lang === 'ar';
+const quoteHref = lang === 'en' ? '/quote/' : `/${lang}/quote/`;
+const catalogSpecMap = buildLocalizedCatalogSpecMap(CUSTOMIZATION_GROUPS, cl);
+---
+
+<aside
+  data-spec-tray
+  data-quote-base={quoteHref}
+  data-label-select={cl.ui.selectForQuote}
+  data-label-selected={cl.ui.selectedRemove}
+  data-label-copy={cl.ui.copyCodes}
+  data-label-copied={cl.ui.copied}
+  data-label-remove-title={cl.ui.removeCodeTitle}
+  data-label-remove-aria={cl.ui.removeCodeAria}
+  dir={isRTL ? 'rtl' : 'ltr'}
+  aria-label={cl.ui.trayAria}
+  class="hidden fixed bottom-4 inset-x-0 z-[70] px-4 pointer-events-none"
+>
+  <script id="customization-spec-catalog" type="application/json" set:html={JSON.stringify(catalogSpecMap)}></script>
+  <div class="pointer-events-auto w-full max-w-[1040px] mx-auto rounded-2xl bg-[#2F221B] text-white border border-[#5D4E37] shadow-2xl px-4 py-3.5 sm:px-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+    <div class="min-w-0 flex-1">
+      <div class="flex items-center gap-2 mb-1.5">
+        <span class="inline-flex items-center justify-center min-w-[22px] h-[22px] px-1.5 rounded-full bg-amber-600 text-white text-[11px] font-mono font-bold" data-spec-count>0</span>
+        <span class="text-xs font-Manrope font-bold uppercase tracking-[0.14em] text-amber-200">
+          {cl.ui.trayHeading}
+        </span>
+      </div>
+      <div data-spec-chips class="flex flex-wrap gap-1.5 max-h-20 overflow-y-auto"></div>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-2 shrink-0">
+      <button
+        type="button"
+        data-spec-copy
+        class="px-3.5 py-2 rounded-lg border border-white/25 bg-white/10 text-xs font-Manrope font-bold text-white hover:bg-white/20 active:bg-white/20 focus-visible:bg-white/20 focus-within:bg-white/20 transition-colors cursor-pointer"
+      >
+        {cl.ui.copyCodes}
+      </button>
+      <a
+        href={quoteHref}
+        data-spec-quote-link
+        class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white text-[#2F221B] text-xs font-Manrope font-bold uppercase tracking-wider hover:bg-amber-50 active:bg-amber-50 focus-visible:bg-amber-50 focus-within:bg-amber-50 transition-colors"
+      >
+        <span>{cl.ui.requestQuote}</span>
+        <svg class={`w-3.5 h-3.5 ${isRTL ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </a>
+      <button
+        type="button"
+        data-spec-clear
+        title={cl.ui.clearAllTitle}
+        aria-label={cl.ui.clearAllAria}
+        class="w-8 h-8 rounded-full bg-white/10 text-stone-200 hover:bg-white/20 active:bg-white/20 focus-visible:bg-white/20 focus-within:bg-white/20 hover:text-white active:text-white focus-visible:text-white focus-within:text-white flex items-center justify-center transition-colors cursor-pointer"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</aside>
+
+<script>
+  import {
+    SPEC_STORAGE_KEY,
+    MAX_SELECTED_SPECS,
+    validateStoredSpecs,
+  } from '../utils/customizationSpecs.mjs';
+
+  interface SelectedSpec {
+    code: string;
+    title: string;
+  }
+
+  let cachedCatalogRaw = '';
+  let cachedCatalogMap: Record<string, string> | null = null;
+
+  const readCatalogMap = (): Record<string, string> | null => {
+    const el = document.getElementById('customization-spec-catalog');
+    if (!el || !el.textContent) return null;
+    if (el.textContent === cachedCatalogRaw && cachedCatalogMap) return cachedCatalogMap;
+    try {
+      const parsed = JSON.parse(el.textContent);
+      if (parsed && typeof parsed === 'object') {
+        cachedCatalogRaw = el.textContent;
+        cachedCatalogMap = parsed as Record<string, string>;
+        return cachedCatalogMap;
+      }
+    } catch {
+      // Fail closed when embedded catalog JSON is unreadable.
+    }
+    return null;
+  };
+
+  const writeSpecs = (list: SelectedSpec[]) => {
+    try {
+      sessionStorage.setItem(SPEC_STORAGE_KEY, JSON.stringify(list));
+    } catch {
+      // Ignore private-mode storage errors
+    }
+  };
+
+  const readSpecs = (): SelectedSpec[] => {
+    try {
+      const catalogMap = readCatalogMap();
+      if (!catalogMap) return [];
+      const raw = sessionStorage.getItem(SPEC_STORAGE_KEY);
+      if (!raw) return [];
+      const { specs, sanitized } = validateStoredSpecs(raw, catalogMap);
+      if (sanitized) writeSpecs(specs);
+      return specs;
+    } catch {
+      return [];
+    }
+  };
+
+  const syncSpecUI = () => {
+    const tray = document.querySelector<HTMLElement>('[data-spec-tray]');
+    const labelSelect = tray?.dataset.labelSelect || 'Select for Quote';
+    const labelSelected = tray?.dataset.labelSelected || 'Selected ✓ (Remove)';
+    const removeTitleTpl = tray?.dataset.labelRemoveTitle || 'Remove {code} ({title})';
+    const removeAriaTpl = tray?.dataset.labelRemoveAria || 'Remove {code}';
+
+    const list = readSpecs();
+    const codeSet = new Set(list.map((s) => s.code));
+
+    // Sync card buttons
+    document.querySelectorAll<HTMLButtonElement>('[data-spec-toggle]').forEach((btn) => {
+      const code = (btn.dataset.specCode || '').trim().toUpperCase();
+      const active = codeSet.has(code);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      btn.classList.toggle('bg-[#5D4E37]', active);
+      btn.classList.toggle('text-white', active);
+      btn.classList.toggle('border-[#5D4E37]', active);
+      btn.classList.toggle('bg-stone-50', !active);
+      btn.classList.toggle('text-[#5D4E37]', !active);
+      btn.classList.toggle('border-stone-200', !active);
+      const label = btn.querySelector<HTMLElement>('[data-spec-btn-label]');
+      if (label) label.textContent = active ? labelSelected : labelSelect;
+    });
+
+    // Sync floating tray
+    if (!tray) return;
+
+    tray.classList.toggle('hidden', list.length === 0);
+    const countEl = tray.querySelector<HTMLElement>('[data-spec-count]');
+    if (countEl) countEl.textContent = String(list.length);
+
+    const chipsEl = tray.querySelector<HTMLElement>('[data-spec-chips]');
+    if (chipsEl) {
+      const frag = document.createDocumentFragment();
+      list.forEach((item) => {
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.dataset.specRemove = item.code;
+        chip.title = removeTitleTpl.replace('{code}', item.code).replace('{title}', item.title);
+        chip.ariaLabel = removeAriaTpl.replace('{code}', item.code);
+        chip.className = 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/15 hover:bg-white/25 active:bg-white/25 focus-visible:bg-white/25 focus-within:bg-white/25 text-[11px] font-mono font-bold text-white transition-colors cursor-pointer';
+
+        const codeSpan = document.createElement('span');
+        codeSpan.textContent = item.code;
+        const closeSpan = document.createElement('span');
+        closeSpan.className = 'text-amber-300 font-bold leading-none';
+        closeSpan.textContent = '×';
+        closeSpan.setAttribute('aria-hidden', 'true');
+
+        chip.appendChild(codeSpan);
+        chip.appendChild(closeSpan);
+        frag.appendChild(chip);
+      });
+      chipsEl.replaceChildren(frag);
+    }
+
+    const quoteLink = tray.querySelector<HTMLAnchorElement>('[data-spec-quote-link]');
+    if (quoteLink) {
+      const base = tray.dataset.quoteBase || '/quote/';
+      const codes = list.map((s) => s.code).join(',');
+      quoteLink.href = codes ? `${base}?specs=${encodeURIComponent(codes)}` : base;
+    }
+  };
+
+  document.addEventListener('click', (event) => {
+    const target = event.target instanceof Element ? event.target : null;
+
+    const toggleBtn = target?.closest<HTMLButtonElement>('[data-spec-toggle]');
+    if (toggleBtn) {
+      const catalogMap = readCatalogMap();
+      const code = (toggleBtn.dataset.specCode || '').trim().toUpperCase();
+      if (!catalogMap || !code || !Object.prototype.hasOwnProperty.call(catalogMap, code)) return;
+      const list = readSpecs();
+      const exists = list.some((s) => s.code === code);
+      if (exists) {
+        writeSpecs(list.filter((s) => s.code !== code));
+      } else if (list.length < MAX_SELECTED_SPECS) {
+        const { specs } = validateStoredSpecs(
+          JSON.stringify([...list, { code, title: catalogMap[code] }]),
+          catalogMap,
+        );
+        writeSpecs(specs);
+      }
+      syncSpecUI();
+      return;
+    }
+
+    const removeChip = target?.closest<HTMLButtonElement>('[data-spec-remove]');
+    if (removeChip) {
+      const code = (removeChip.dataset.specRemove || '').trim().toUpperCase();
+      writeSpecs(readSpecs().filter((s) => s.code !== code));
+      syncSpecUI();
+      return;
+    }
+
+    if (target?.closest('[data-spec-clear]')) {
+      writeSpecs([]);
+      syncSpecUI();
+      return;
+    }
+
+    const copyBtn = target?.closest<HTMLButtonElement>('[data-spec-copy]');
+    if (copyBtn) {
+      const text = readSpecs().map((s) => `${s.code} (${s.title})`).join(', ');
+      if (text && navigator.clipboard?.writeText) {
+        const tray = document.querySelector<HTMLElement>('[data-spec-tray]');
+        const copiedLabel = tray?.dataset.labelCopied || 'Copied!';
+        const copyLabel = tray?.dataset.labelCopy || 'Copy Codes';
+        navigator.clipboard.writeText(text).then(() => {
+          copyBtn.textContent = copiedLabel;
+          setTimeout(() => { copyBtn.textContent = copyLabel; }, 1600);
+        }).catch(() => {});
+      }
+    }
+  });
+
+  document.addEventListener('astro:page-load', syncSpecUI);
+  syncSpecUI();
+</script>

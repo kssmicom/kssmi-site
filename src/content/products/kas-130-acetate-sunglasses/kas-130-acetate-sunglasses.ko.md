@@ -16,8 +16,8 @@ series: "sunglasses, acetate-sunglasses, fashion-eyewear, fashion-acetate-sungla
 
 # ─────────────────────────────────────────────────────
 size: "46-24-145mm & 맞춤 서비스"
-안경테 소재: "프리미엄 아세테이트 프레임 및 템플"
-렌즈 소재: "강인한 나일론 렌즈 & 맞춤 서비스"
+frameMaterial: "프리미엄 아세테이트 프레임 및 템플"
+lensMaterial: "강인한 나일론 렌즈 & 맞춤 서비스"
 designStyle: "유니크, 볼드, 스타일리시, 트렌디, 패션, 럭셔리, 공용"
 nosePads: "일체형 코받침"
 hinge: "4+3 배럴 구조 경첩 & 맞춤 서비스"

@@ -7,8 +7,8 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "node scripts/validate-image-variants.mjs && node --test tests/middleware-url.test.mjs && node scripts/validate-content.mjs && node scripts/validate-email-log-policy.mjs && node scripts/validate-interaction-policy.mjs && node src/scripts/generate-llms.js && node src/scripts/generate-sitemap.js",
-    "build": "node scripts/prepare-short-link-map-assets.mjs && astro build && node scripts/normalize-internal-links.mjs dist && node scripts/materialize-runtime-assets.mjs dist && node scripts/generate-csp-hashes.mjs dist && node scripts/validate-hreflang.mjs dist && node scripts/validate-seo-output.mjs dist && node scripts/validate-no-inline-style.mjs dist && node scripts/prune-languages.mjs dist --apply && node scripts/validate-final-artifacts.mjs dist",
+    "prebuild": "node scripts/validate-image-variants.mjs && node --test tests/middleware-url.test.mjs && node scripts/validate-content.mjs && node scripts/validate-product-localizations.mjs --all && node scripts/validate-email-log-policy.mjs && node scripts/validate-interaction-policy.mjs && node src/scripts/generate-llms.js && node src/scripts/generate-sitemap.js",
+    "build": "node scripts/prepare-short-link-map-assets.mjs && astro build && node scripts/normalize-internal-links.mjs dist && node scripts/materialize-runtime-assets.mjs dist && node scripts/generate-csp-hashes.mjs dist && node scripts/validate-hreflang.mjs dist && node scripts/validate-seo-output.mjs dist && node scripts/validate-no-inline-style.mjs dist && node scripts/prune-languages.mjs dist --apply && node scripts/validate-final-artifacts.mjs dist && node scripts/validate-product-rendered-media.mjs dist",
     "preview": "astro preview",
     "astro": "astro",
     "validate": "node scripts/validate-content.mjs",
@@ -19,6 +19,7 @@
     "validate:email-logs": "node scripts/validate-email-log-policy.mjs",
     "validate:astro-syntax": "node scripts/validate-astro-syntax.mjs",
     "validate:translations": "node scripts/validate-translations.mjs",
+    "validate:product-localizations": "node scripts/validate-product-localizations.mjs --all",
     "validate:release": "node scripts/validate-release-policy.mjs",
     "validate:admin-origin": "node scripts/validate-admin-origin-policy.mjs",
     "validate:password-reset": "node scripts/validate-password-reset-policy.mjs",
@@ -79,6 +80,7 @@
     "test:404-router-en": "php scripts/test-404-router-en.php",
     "test:php": "npm run test:inquiry-privacy && npm run test:contact-consent && npm run test:vjt-capability-proof && npm run test:backend && npm run test:email-log && npm run test:rate-limit && npm run test:cloudflare-live-ranges && npm run test:vjt-authenticity && npm run test:vjt-write-budget && npm run test:vjt-checkpoint && npm run test:contact-core && npm run test:inquiry-autoreply && npm run test:inquiry-outbox && npm run test:send-mail-outbox-http && npm run test:sender-blocklist && npm run test:vjt-event-state && npm run test:vjt-heartbeat && npm run test:vjt-data-quality && npm run test:anon-page-path && npm run test:http-security && npm run test:access-jwt && npm run test:reset-race && npm run test:admin-session && npm run test:credential-persistence && npm run test:short-links && npm run test:short-links-session && npm run test:short-links-auth && npm run test:short-links-http && npm run test:404-router-en",
     "validate:seo-output": "node scripts/validate-seo-output.mjs dist",
+    "validate:rendered-product-media": "node scripts/validate-product-rendered-media.mjs dist",
     "validate:no-inline-style": "node scripts/validate-no-inline-style.mjs dist",
     "test:inquiry-privacy": "php scripts/test-inquiry-privacy.php",
     "test:contact-consent": "node scripts/test-contact-consent.mjs && php scripts/test-contact-consent-http.php"

@@ -17,6 +17,7 @@ export default {
     nav: {
       home: "ホーム",
       products: "製品",
+      customization: "カスタム",
       collection: "コレクション",
       feature: "ソリューション",
       about: "概要",

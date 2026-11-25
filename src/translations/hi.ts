@@ -17,6 +17,7 @@ export default {
     nav: {
       home: "मुख पृष्ठ",
       products: "उत्पाद",
+      customization: "कस्टमाइज़",
       collection: "संग्रह",
       feature: "समाधान",
       about: "परिचय",

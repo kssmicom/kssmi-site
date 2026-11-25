@@ -8,6 +8,7 @@
  */
 
 import { getTranslations } from '../translations';
+import { getCustomizationLocale } from '../data/customization-i18n';
 import FormTurnstile from './FormTurnstile.astro';
 import { runtimeAssetUrl } from '../config/runtimeAssets.mjs';
 import inquiryPrivacyNotice from '../../private/inquiry-privacy-notice.json';
@@ -28,6 +29,7 @@ const {
   source = 'general_inquiry',
 } = Astro.props;
 const t = await getTranslations(lang);
+const cl = await getCustomizationLocale(lang);
 const isRTL = lang === 'ar';
 
 // Get product-specific translations (fallback to English)
@@ -564,6 +566,32 @@ const inquiryFormScriptUrl = isDev ? '/js/inquiry-form.js' : runtimeAssetUrl('in
                    placeholder:text-gray-400"
             placeholder={ph.email}
           />
+        </div>
+
+        <!-- Selected Customization Components (revealed only when valid ?specs= are present on /quote/) -->
+        <div
+          id="selected-specs-panel"
+          data-label-remove-title={cl.ui.removeCodeTitle}
+          data-label-remove-aria={cl.ui.removeCodeAria}
+          class="hidden rounded-lg border border-[#8B7355]/30 bg-stone-50 p-4"
+          aria-live="polite"
+        >
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <p class="text-sm font-semibold text-[#5D4E37]">
+              {cl.ui.quotePanelLabel} (<span id="selected-specs-count">0</span>)
+            </p>
+            <button
+              type="button"
+              id="selected-specs-clear"
+              class="text-xs font-medium text-[#5D4E37] underline hover:text-[#4A3D2E] active:text-[#4A3D2E] focus-visible:text-[#4A3D2E] focus-within:text-[#4A3D2E] cursor-pointer"
+            >
+              {cl.ui.quoteClearSelection}
+            </button>
+          </div>
+          <div id="selected-specs-chips" class="flex flex-wrap gap-1.5 mb-2"></div>
+          <p class="text-xs leading-relaxed text-stone-600">
+            {cl.ui.quotePanelHelper}
+          </p>
         </div>
 
         <!-- Project Details Field -->

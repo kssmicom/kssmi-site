@@ -1,6 +1,7 @@
 import { readFile, readdir, mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { resolveRequiredJobs } from './lib/required-jobs.mjs';
+import { resolveExternalWorkflowJob, isFreshAuditTimestamp } from './lib/external-workflow-run.mjs';
 
 const inputRoot = path.resolve(process.argv[2] ?? 'evidence-input');
 const outputRoot = path.resolve(process.argv[3] ?? 'release-evidence/final');
@@ -9,6 +10,7 @@ const token = process.env.GITHUB_TOKEN;
 const commitSha = process.env.GITHUB_SHA;
 const runId = process.env.GITHUB_RUN_ID;
 const runAttempt = process.env.GITHUB_RUN_ATTEMPT;
+const targetBranch = process.env.GITHUB_REF_NAME || 'main';
 const releaseId = `${commitSha}-${runId}-${runAttempt}`;
 const supportedReleaseId = /^[0-9a-f]{40}-[1-9][0-9]*(-[1-9][0-9]*)?$/;
 if (!/^[0-9a-f]{40}-[1-9][0-9]*-[1-9][0-9]*$/.test(releaseId)) {
@@ -67,26 +69,19 @@ const loadEvidence = async (name, fileName) => {
 };
 
 const findWorkflowJob = async (workflowFile, expectedName, options = {}) => {
-  const query = new URLSearchParams({ per_page: '30', ...(options.headSha ? { head_sha: options.headSha } : {}) });
-  const runs = await requestJson(`/actions/workflows/${encodeURIComponent(workflowFile)}/runs?${query}`);
-  const run = runs.workflow_runs.find((candidate) => candidate.status === 'completed');
-  if (!run) throw new Error(`${workflowFile} has no matching completed run`);
-  if (options.requireSuccess && run.conclusion !== 'success') {
-    throw new Error(`Latest matching ${workflowFile} run concluded ${run.conclusion}`);
-  }
-  const jobs = await requestJson(`/actions/runs/${run.id}/jobs?per_page=100`);
-  const job = jobs.jobs.find((candidate) => candidate.name === expectedName);
-  if (!job) throw new Error(`${expectedName} was not found in ${workflowFile} run ${run.id}`);
-  return {
-    workflow_run_id: run.id,
-    workflow_url: run.html_url,
-    workflow_conclusion: run.conclusion,
-    job_name: job.name,
-    job_url: job.html_url,
-    job_conclusion: job.conclusion,
-    completed_at: job.completed_at,
-    head_sha: run.head_sha,
-  };
+  const headSha = options.headSha || commitSha;
+  const query = new URLSearchParams({ per_page: '100', ...(headSha ? { head_sha: headSha } : {}) });
+  return resolveExternalWorkflowJob({
+    workflowFile,
+    expectedJobName: expectedName,
+    headSha,
+    allowedEvents: options.allowedEvents ?? null,
+    allowedBranches: options.allowedBranches ?? null,
+    requireSuccess: Boolean(options.requireSuccess),
+    fetchRuns: async () => (await requestJson(`/actions/workflows/${encodeURIComponent(workflowFile)}/runs?${query}`)).workflow_runs ?? [],
+    fetchJobs: async (targetRunId) => (await requestJson(`/actions/runs/${targetRunId}/jobs?per_page=100`)).jobs ?? [],
+    log: (message) => console.log(message),
+  });
 };
 
 const record = async (label, operation) => {
@@ -106,12 +101,28 @@ const currentJobs = await record('current workflow jobs', () => resolveRequiredJ
   log: (message) => console.log(message),
 }));
 
-const phpCi = await record('PHP CI', () => findWorkflowJob(
-  'php-ci.yml', 'PHP 8.3 full backend suite', { headSha: commitSha, requireSuccess: true },
-));
-const cloudflareAudit = await record('Cloudflare audit', () => findWorkflowJob(
-  'cloudflare-ranges.yml', 'Compare repository snapshot with Cloudflare', { headSha: commitSha, requireSuccess: true },
-));
+const [phpCi, cloudflareAudit] = await Promise.all([
+  record('PHP CI', () => findWorkflowJob(
+    'php-ci.yml',
+    'PHP 8.3 full backend suite',
+    {
+      headSha: commitSha,
+      requireSuccess: true,
+      allowedEvents: ['push', 'workflow_dispatch'],
+      allowedBranches: [targetBranch],
+    },
+  )),
+  record('Cloudflare audit', () => findWorkflowJob(
+    'cloudflare-ranges.yml',
+    'Compare repository snapshot with Cloudflare',
+    {
+      headSha: commitSha,
+      requireSuccess: true,
+      allowedEvents: ['push', 'workflow_dispatch', 'schedule'],
+      allowedBranches: [targetBranch],
+    },
+  )),
+]);
 
 const unresolvedP1 = await record('P1 issue audit', async () => {
   const response = await requestPages('/issues?state=open');
@@ -120,13 +131,12 @@ const unresolvedP1 = await record('P1 issue audit', async () => {
     .map((issue) => ({ number: issue.number, title: issue.title, url: issue.html_url }));
 });
 
-const ageDays = (date) => date ? (Date.now() - Date.parse(date)) / 86_400_000 : Number.POSITIVE_INFINITY;
 const checks = {
   build_evidence_pass: build?.status === 'PASS' && build?.release_id === releaseId,
   production_evidence_pass: production?.status === 'PASS' && production?.release_id === releaseId,
   all_mandatory_deploy_jobs_green: currentJobs !== null && Object.values(currentJobs).every((job) => job.conclusion === 'success'),
   php_ci_same_commit_green: phpCi?.job_conclusion === 'success' && phpCi?.head_sha === commitSha,
-  cloudflare_audit_same_commit_green_and_recent: cloudflareAudit?.job_conclusion === 'success' && cloudflareAudit?.head_sha === commitSha && ageDays(cloudflareAudit?.completed_at) <= 8,
+  cloudflare_audit_same_commit_green_and_recent: cloudflareAudit?.job_conclusion === 'success' && cloudflareAudit?.head_sha === commitSha && isFreshAuditTimestamp(cloudflareAudit?.completed_at),
   production_authenticated_admin_smoke: production?.authenticated_admin_smoke === 'PASS',
   production_permission_and_runtime_identity_proved: Boolean(production?.checks?.permission_policy && production?.checks?.runtime_identity && production?.checks?.runtime_capabilities),
   production_before_release_available: supportedReleaseId.test(production?.deployment?.previous_release_id ?? ''),

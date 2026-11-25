@@ -30,6 +30,8 @@ cover: "/media/products/kas-020-acetate-sunglasses/oem-odm-customized-acetate-su
 gallery:
   - "/media/products/kas-020-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-020-2.webp"
   - "/media/products/kas-020-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-020-3.webp"
+  - "/media/products/kas-020-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-020-4.webp"
+  - "/media/products/kas-020-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-020-5.webp"
 customizable: true
 featured: true
 

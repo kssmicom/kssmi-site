@@ -36,7 +36,7 @@ featured: true
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KAS-510 Occhiali da Sole in Acetato alla Moda | Fornitore Personalizzato"
 seoDescription: "Occhiali da sole in acetato premium Mazzucchelli, JIMEI, JINYU disponibili per la completa personalizzazione OEM/ODM. Dimensioni della montatura, colori e opzioni logo su misura. MOQ di 300 per modello."
-seoKeywords: ""
+seoKeywords: "produttore occhiali da sole in acetato, occhiali in acetato OEM personalizzati, fornitore occhiali da sole private label, montature in acetato all'ingrosso Cina, fabbrica ODM occhiali da sole moda, personalizzazione occhiali da sole su misura, produttore cinese occhiali in acetato, occhiali da sole premium per brand boutique"
 ---
 
 ## Caratteristiche

@@ -17,6 +17,7 @@ export default {
     nav: {
       home: "Trang chủ",
       products: "Sản phẩm",
+      customization: "Tùy chỉnh",
       collection: "Bộ sưu tập",
       feature: "Giải pháp",
       about: "Giới thiệu",

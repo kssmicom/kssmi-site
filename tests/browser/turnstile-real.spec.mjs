@@ -85,8 +85,8 @@ async function setup(page, testInfo, { proofKey = null, formKey = null, abortFir
       const response = await route.fetch({ url: request.url().replace(ORIGIN, `http://127.0.0.1:${PORT}`) });
       if (!(response.headers()['content-type'] || '').includes('text/html')) return route.fulfill({ response });
       let html = await response.text();
-      if (proofKey) html = html.replace(/(<script src="\/assets\/runtime\/vjt-capability-proof\.[0-9a-f]{12}\.js") data-sitekey>/, `$1 data-sitekey="${proofKey}">`);
-      if (formKey) html = html.replaceAll('data-sitekey data-load-failed', `data-sitekey="${formKey}" data-load-failed`);
+      if (proofKey) html = html.replace(/(<script\b[^>]*\/vjt-capability-proof\.[0-9a-f]{12}\.js[^>]*?\bdata-sitekey)(?:="[^"]*")?/, `$1="${proofKey}"`);
+      if (formKey) html = html.replace(/(<div\b[^>]*\bid="turnstile-container"[^>]*?\bdata-sitekey)(?:="[^"]*")?/, `$1="${formKey}"`);
       return route.fulfill({ response, body: html });
     }
     return route.continue();
@@ -97,9 +97,10 @@ const cooldownUntil = (page) => page.evaluate((key) => Number(sessionStorage.get
 const proofWidgets = (page) => page.evaluate(() => window.__proofWidgets);
 
 async function softNavigate(page, href) {
+  const normalizedHref = href === '/' ? '/' : `${href.replace(/\/$/, '')}/`;
   await page.evaluate(() => { window.__sameDocument = true; });
-  await page.locator(`a[href="${href}"]:visible`).first().click();
-  await page.waitForURL((url) => url.pathname.replace(/\/$/, '') === href.replace(/\/$/, ''));
+  await page.locator(`a[href="${normalizedHref}"]:visible`).first().click();
+  await page.waitForURL((url) => url.pathname.replace(/\/$/, '') === normalizedHref.replace(/\/$/, ''));
   await page.waitForLoadState('load');
   expect(await page.evaluate(() => window.__sameDocument), 'same document').toBe(true);
 }
@@ -158,7 +159,7 @@ test('proof failure (official fail key): cooldown starts, no Turnstile error, no
   expect(widgetsAfterFailure).toBe(1);
   // While cooling down, a new request returns at once and renders nothing.
   expect(await page.evaluate(() => window.KSSMI_VJT_CAPABILITY_PROOF())).toBe('');
-  await softNavigate(page, '/product');
+  await softNavigate(page, '/product/');
   expect(await proofWidgets(page)).toBe(widgetsAfterFailure);
   // Without a capability, a contact click sends no event.
   await clickContact(page);
@@ -193,7 +194,7 @@ for (const phase of ['api', 'challenge']) {
     } else {
       await expect.poll(() => testInfo.rec.apiLoads, { timeout: 20000 }).toBe(1);
     }
-    await softNavigate(page, '/product');
+    await softNavigate(page, '/product/');
     await expect(page.locator('#kssmi-vjt-capability-turnstile')).toHaveCount(0);
     expect(await cooldownUntil(page), 'navigation never starts a cooldown').toBe(0);
     // The provider works on the new page.
@@ -221,7 +222,7 @@ test('form (official pass key): token, local rejection resets the widget, soft n
   const firstWidget = await page.evaluate(() => window.turnstileWidgetId);
   await softNavigate(page, '/');
   expect(await page.evaluate(() => window.turnstileWidgetId)).toBeUndefined();
-  await softNavigate(page, '/quote');
+  await softNavigate(page, '/quote/');
   await page.locator('#inquiry-form').scrollIntoViewIfNeeded();
   await expect.poll(() => page.evaluate(() => window.turnstileToken), { timeout: 30000 }).toBe(DUMMY_TOKEN);
   expect(await page.evaluate(() => window.turnstileWidgetId)).not.toBe(firstWidget);

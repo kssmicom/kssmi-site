@@ -17,6 +17,7 @@ export default {
     nav: {
       home: "Início",
       products: "Produtos",
+      customization: "Sob medida",
       collection: "Coleção",
       feature: "Soluções",
       about: "Sobre",

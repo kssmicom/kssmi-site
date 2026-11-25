@@ -17,6 +17,7 @@ export default {
     nav: {
       home: "Anasayfa",
       products: "Ürünler",
+      customization: "Özelleştirme",
       collection: "Koleksiyon",
       feature: "Çözümler",
       about: "Hakkımızda",

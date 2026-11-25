@@ -17,6 +17,7 @@ export default {
     nav: {
       home: "Home",
       products: "Products",
+      customization: "Customization",
       collection: "Collection",
       feature: "Solutions",
       about: "About",

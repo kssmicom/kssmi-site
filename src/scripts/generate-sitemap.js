@@ -27,7 +27,7 @@ const gitDates = (() => {
     if (shallow !== 'false') return dates;
     const log = execFileSync(
       'git',
-      ['log', '--format=@%cs', '--name-only', '--no-renames', '--', 'src/content', 'src/pages', 'src/components'],
+      ['log', '--format=@%cs', '--name-only', '--no-renames', '--', 'src/content', 'src/pages', 'src/components', 'src/data'],
       { encoding: 'utf-8', maxBuffer: 256 * 1024 * 1024 },
     );
     let current = null;
@@ -85,6 +85,26 @@ const coreSourceMap = {
 // not listed: a sitemap must only contain canonical, indexable URLs. Add a page
 // back here when its noindex is removed (scripts/validate-seo-output.mjs fails
 // the build if a listed page is noindex).
+
+// Canonical customization landing pages across all 17 languages (excluding pagination /2/, /3/).
+const getCustomizationRoutes = () => {
+  const catalogPath = path.join(process.cwd(), 'src', 'data', 'customizationCatalog.ts');
+  const source = fs.readFileSync(catalogPath, 'utf-8');
+  const match = source.match(/export const CUSTOMIZATION_GROUPS:\s*CustomizationGroup\[\]\s*=\s*(\[[\s\S]*?\n\]);/);
+  if (!match) {
+    throw new Error(`generate-sitemap: failed to parse CUSTOMIZATION_GROUPS from ${catalogPath}`);
+  }
+  const groups = JSON.parse(match[1]);
+  const routes = ['/customization/'];
+  for (const group of groups) {
+    routes.push(`/customization/${group.slug}/`);
+    for (const sub of group.subcategories || []) {
+      routes.push(`/customization/${group.slug}/${sub.slug}/`);
+    }
+  }
+  return routes;
+};
+const customizationRoutes = getCustomizationRoutes();
 
 let rootSitemapIndexEntries = '';
 
@@ -177,6 +197,22 @@ locales.forEach(lang => {
         lastmod: newestDateString([langContentDate(topicDir, lang), langContentDate(topicDir, 'en')]),
       });
     }
+  }
+  const customRouteFile = lang === 'en'
+    ? path.join(process.cwd(), 'src', 'pages', 'customization', '[...path].astro')
+    : path.join(process.cwd(), 'src', 'pages', '[lang]', 'customization', '[...path].astro');
+  const customI18nFile = path.join(process.cwd(), 'src', 'data', 'customization-i18n', `${lang}.ts`);
+  const customLastmod = newestDateString([
+    fileDate(customRouteFile),
+    fileDate(path.join(process.cwd(), 'src', 'components', 'pages', 'CustomizationCatalogPage.astro')),
+    fileDate(path.join(process.cwd(), 'src', 'data', 'customizationCatalog.ts')),
+    fileDate(customI18nFile),
+  ]);
+  for (const route of customizationRoutes) {
+    coreUrls.push({
+      url: `${baseUrl}${route}`,
+      lastmod: customLastmod,
+    });
   }
   fs.writeFileSync(path.join(langDir, 'sitemap-core.xml'), generateUrlset(coreUrls), 'utf-8');
 

@@ -1,0 +1,600 @@
+---
+/**
+ * Customization Catalog Page — mirrors Kssmi's /product/ listing & category layout
+ * (left sticky nested category sidebar + right 3-column selectable component grid + pagination),
+ * differentiated from Yeetian with unified hierarchy, Kssmi KS-* codes, compact top intro,
+ * selectable spec tray, and bottom engineering comparison + FAQ text.
+ */
+import Layout from '../../layouts/Layout.astro';
+import Header from '../Header.astro';
+import Footer from '../Footer.astro';
+import Breadcrumb from '../Breadcrumb.astro';
+import Pagination from '../Pagination.astro';
+import CustomizationLightbox from '../CustomizationLightbox.astro';
+import CustomizationSpecTray from '../CustomizationSpecTray.astro';
+import { getTranslations } from '../../translations';
+import {
+  CUSTOMIZATION_GROUPS,
+  CUSTOMIZATION_PAGE_SIZE,
+  customizationCardSrc,
+  customizationOriginalSrc,
+  getAllCustomizationItems,
+  type CustomizationItem,
+} from '../../data/customizationCatalog';
+import {
+  formatCustomTemplate,
+  getCustomizationLocale,
+  localizeCustomizationGroups,
+  localizeCustomizationItem,
+} from '../../data/customization-i18n';
+
+interface Props {
+  lang?: string;
+  /** null = All Customization Options */
+  activeGroupSlug: string | null;
+  /** null = All items within activeGroupSlug (or all groups) */
+  activeSubSlug: string | null;
+  items: CustomizationItem[];
+  totalItems: number;
+  currentPage: number;
+  totalPages: number;
+  noindex?: boolean;
+  noHreflang?: boolean;
+}
+
+const {
+  lang = 'en',
+  noindex = false,
+  noHreflang = false,
+  activeGroupSlug,
+  activeSubSlug,
+  items,
+  totalItems,
+  currentPage,
+  totalPages,
+} = Astro.props;
+
+const t = await getTranslations(lang);
+const cl = await getCustomizationLocale(lang);
+const pt = t.product || {};
+const isRTL = lang === 'ar';
+const currentPath = lang === 'en' ? '' : `${lang}/`;
+const rootPath = `/${currentPath}customization`;
+
+const localizedGroups = localizeCustomizationGroups(CUSTOMIZATION_GROUPS, cl);
+const localizedItems = items.map((item) => localizeCustomizationItem(item, cl));
+const allCount = getAllCustomizationItems().length;
+const groupNameBySlug = new Map(localizedGroups.map((g) => [g.slug, g.name]));
+const activeGroup = activeGroupSlug
+  ? localizedGroups.find((g) => g.slug === activeGroupSlug)
+  : undefined;
+const activeSub = activeGroup && activeSubSlug
+  ? activeGroup.subcategories.find((s) => s.slug === activeSubSlug)
+  : undefined;
+
+const copy = cl.copy[activeGroupSlug || 'all'] || cl.copy.all;
+
+const heading = activeSub
+  ? `${activeGroup?.name}: ${activeSub.name}`
+  : copy.heading;
+
+let pageTitle = activeSub
+  ? `${activeSub.name} — ${copy.seoTitle}`
+  : copy.seoTitle;
+let pageDescription = copy.seoDescription;
+
+if (currentPage > 1) {
+  const pageLabel = (t.pagination?.page || 'Page {n}').replace('{n}', String(currentPage));
+  pageTitle = `${pageTitle} – ${pageLabel}`;
+  pageDescription = `${pageLabel}: ${pageDescription}`;
+}
+
+// Breadcrumb matching /product/ hierarchy
+const breadcrumbItems: Array<{ label: string; href: string }> = [
+  { label: t.nav.home, href: currentPath ? `/${currentPath.replace(/\/$/, '')}` : '/' },
+  { label: cl.ui.breadcrumbLabel, href: activeGroup ? rootPath : '#' },
+];
+if (activeGroup) {
+  breadcrumbItems.push({
+    label: activeGroup.name,
+    href: activeSub ? `${rootPath}/${activeGroup.slug}` : '#',
+  });
+}
+if (activeSub) {
+  breadcrumbItems.push({ label: activeSub.name, href: '#' });
+}
+
+// Pagination basePath / categorySlug mapping matching Pagination.astro
+const paginationBasePath = activeSub && activeGroup
+  ? `${rootPath}/${activeGroup.slug}`
+  : rootPath;
+const paginationCategorySlug = activeSub
+  ? activeSub.slug
+  : activeGroup
+    ? activeGroup.slug
+    : undefined;
+
+const start = totalItems > 0 ? (currentPage - 1) * CUSTOMIZATION_PAGE_SIZE + 1 : 0;
+const end = Math.min(currentPage * CUSTOMIZATION_PAGE_SIZE, totalItems);
+const lcpImage = items[0] ? customizationCardSrc(items[0]) : undefined;
+
+const faqSchema = currentPage === 1 && copy.faqs.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: copy.faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: { '@type': 'Answer', text: f.answer },
+  })),
+} : null;
+---
+
+<Layout title={pageTitle} description={pageDescription} lang={lang} lcpImage={lcpImage} noindex={noindex} noHreflang={noHreflang}>
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+
+  <Header lang={lang} />
+  <Breadcrumb items={breadcrumbItems} lang={lang} />
+
+  <main id="main-content" tabindex="-1" class="w-full min-h-screen py-6 lg:py-8 bg-stone-50" dir={isRTL ? 'rtl' : 'ltr'}>
+    <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Left Sticky Sidebar (mirrors ProductListingPage / ProductCategoryPage) -->
+        <aside class="hidden lg:block lg:col-span-1">
+          <div
+            data-custom-sidebar-scroll
+            class="custom-sidebar-scroll sticky top-24 overflow-y-auto overscroll-contain space-y-6 pe-1.5"
+          >
+            <div class="bg-linear-to-br from-white to-[#faf8f5] rounded-xl shadow-xs p-6 border border-stone-200/50">
+              <!-- All Customization Options -->
+              <a
+                href={rootPath}
+                data-sidebar-active={activeGroupSlug === null ? 'true' : undefined}
+                class:list={[
+                  'flex items-center justify-between py-1.5 px-2 text-sm lg:text-base font-bold rounded-lg transition-colors mb-3',
+                  activeGroupSlug === null
+                    ? 'bg-[#5D4E37] text-white'
+                    : 'text-[#5D4E37] hover:bg-stone-50 active:bg-stone-50 focus-visible:bg-stone-50 focus-within:bg-stone-50',
+                ]}
+              >
+                <span>{cl.ui.allCustomization}</span>
+                <span class:list={['text-xs font-normal', activeGroupSlug === null ? 'text-white/80' : 'text-gray-500']}>
+                  {allCount}
+                </span>
+              </a>
+
+              <div class="space-y-3">
+                {localizedGroups.map((group) => {
+                  const groupCount = group.subcategories.reduce((n, s) => n + s.items.length, 0);
+                  const isGroupActive = group.slug === activeGroupSlug;
+                  const isGroupExact = isGroupActive && activeSubSlug === null;
+                  return (
+                    <div class="border-b border-gray-100 pb-3 last:border-0 last:pb-0">
+                      <a
+                        href={`${rootPath}/${group.slug}`}
+                        data-sidebar-active={isGroupExact ? 'true' : undefined}
+                        class:list={[
+                          'flex items-center justify-between py-2 px-2 text-sm font-bold rounded-lg transition-colors',
+                          isGroupExact
+                            ? 'bg-[#5D4E37] text-white'
+                            : 'text-[#5D4E37] hover:bg-stone-50 active:bg-stone-50 focus-visible:bg-stone-50 focus-within:bg-stone-50',
+                        ]}
+                      >
+                        <span>{group.name}</span>
+                        <span class:list={['text-xs', isGroupExact ? 'text-white/80' : 'text-gray-500']}>
+                          {groupCount}
+                        </span>
+                      </a>
+
+                      {/* Show nested subcategories cleanly (matches /product/ sidebar) */}
+                      <ul class="ms-3 mt-1 space-y-1">
+                        {group.subcategories.map((sub) => {
+                          const isSubActive = isGroupActive && sub.slug === activeSubSlug;
+                          return (
+                            <li>
+                              <a
+                                href={`${rootPath}/${group.slug}/${sub.slug}`}
+                                data-sidebar-active={isSubActive ? 'true' : undefined}
+                                class:list={[
+                                  'flex items-center justify-between py-1.5 px-2 text-sm rounded-sm transition-colors',
+                                  isSubActive
+                                    ? 'bg-[#5D4E37] text-white font-medium'
+                                    : 'text-gray-600 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] hover:bg-stone-50 active:bg-stone-50 focus-visible:bg-stone-50 focus-within:bg-stone-50',
+                                ]}
+                              >
+                                <span>{sub.name}</span>
+                                <span class:list={['text-xs', isSubActive ? 'text-white/90' : 'text-gray-500']}>
+                                  {sub.items.length}
+                                </span>
+                              </a>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            <!-- Sidebar OEM/ODM CTA Card (exact match to ProductListingPage) -->
+            <div class="bg-[#5D4E37] rounded-xl p-6 text-white">
+              <p class="font-bold mb-2">{pt.needCustomSolutions || 'Need Custom Eyewear?'}</p>
+              <p class="text-sm text-white/95 mb-4 leading-relaxed">
+                {pt.oemServices || 'Select your preferred component codes and share your sketch or reference model for an itemized OEM/ODM quotation.'}
+              </p>
+              <a
+                href={`/${currentPath}quote`}
+                class="inline-block bg-white text-[#5D4E37] px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:scale-105 active:scale-105 focus-visible:scale-105 focus-within:scale-105 hover:shadow-lg active:shadow-lg focus-visible:shadow-lg focus-within:shadow-lg"
+              >
+                {t.cta.quote || 'Get Quote'}
+              </a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Right Main Catalog Column -->
+        <div class="col-span-1 lg:col-span-3">
+          <h1 class="text-base lg:text-xl font-bold text-stone-900 mb-2">
+            {heading}
+            {totalPages > 1 && (
+              <span class="text-xs lg:text-sm font-medium text-stone-500">
+                {' — '}{(t.pagination?.page || 'Page {n}').replace('{n}', String(currentPage))}
+              </span>
+            )}
+          </h1>
+
+          <!-- Mobile Category Chips (sidebar hidden below lg) -->
+          <div class="lg:hidden mb-4 -mx-4 px-4 overflow-x-auto" role="navigation" aria-label={cl.ui.categoriesAria}>
+            <div class="flex gap-2 w-max pb-1">
+              <a
+                href={rootPath}
+                class:list={[
+                  'flex items-center gap-1.5 whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-bold border transition-colors',
+                  activeGroupSlug === null
+                    ? 'bg-[#5D4E37] text-white border-[#5D4E37]'
+                    : 'bg-white text-[#5D4E37] border-stone-200 hover:bg-stone-50 active:bg-stone-50 focus-visible:bg-stone-50 focus-within:bg-stone-50',
+                ]}
+              >
+                <span>{cl.ui.allShort}</span>
+                <span class:list={['text-[11px]', activeGroupSlug === null ? 'text-white/80' : 'text-stone-500']}>{allCount}</span>
+              </a>
+              {localizedGroups.map((g) => {
+                const count = g.subcategories.reduce((n, s) => n + s.items.length, 0);
+                const active = g.slug === activeGroupSlug;
+                return (
+                  <a
+                    href={`${rootPath}/${g.slug}`}
+                    class:list={[
+                      'flex items-center gap-1.5 whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-bold border transition-colors',
+                      active
+                        ? 'bg-[#5D4E37] text-white border-[#5D4E37]'
+                        : 'bg-white text-[#5D4E37] border-stone-200 hover:bg-stone-50 active:bg-stone-50 focus-visible:bg-stone-50 focus-within:bg-stone-50',
+                    ]}
+                  >
+                    <span>{g.shortName}</span>
+                    <span class:list={['text-[11px]', active ? 'text-white/80' : 'text-stone-500']}>{count}</span>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+
+          {activeGroup && (
+            <div class="lg:hidden mb-4 -mx-4 px-4 overflow-x-auto" role="navigation" aria-label={formatCustomTemplate(cl.ui.subcategoriesAria, { group: activeGroup.name })}>
+              <div class="flex gap-1.5 w-max pb-1">
+                {activeGroup.subcategories.map((sub) => {
+                  const active = sub.slug === activeSubSlug;
+                  return (
+                    <a
+                      href={`${rootPath}/${activeGroup.slug}/${sub.slug}`}
+                      class:list={[
+                        'whitespace-nowrap px-2.5 py-1 rounded-md text-xs font-medium border transition-colors',
+                        active
+                          ? 'bg-amber-800 text-white border-amber-800'
+                          : 'bg-white text-stone-700 border-stone-200 hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355]',
+                      ]}
+                    >
+                      {sub.name} ({sub.items.length})
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          <!-- Compact Top Intro Text Bar (keeps first row of cards visible above the fold) -->
+          <div class="bg-white rounded-xl border border-stone-200/80 border-s-4 border-s-amber-700 px-4 py-3.5 mb-4 shadow-2xs">
+            <p class="text-sm text-stone-700 leading-relaxed mb-2.5">
+              {copy.intro}
+            </p>
+            <div class="flex flex-wrap items-center gap-2">
+              {copy.quickPills.map((pill) => (
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-stone-100 border border-stone-200/80 text-[11px] font-medium text-stone-700">
+                  {pill}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <!-- Results Counter -->
+          <div class="flex flex-wrap justify-between items-center gap-2 mb-3 text-xs sm:text-sm text-stone-600">
+            <span>
+              {formatCustomTemplate(cl.ui.showingCounter, { start, end, total: totalItems })}
+            </span>
+            <span class="text-xs text-stone-500">
+              {cl.ui.zoomHint}
+            </span>
+          </div>
+
+          <!-- 3-Column Selectable Component Grid (mirrors /product/ grid density) -->
+          <div class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-6 xl:gap-x-6 xl:gap-y-8">
+            {localizedItems.map((item, idx) => {
+              const cardImg = customizationCardSrc(item);
+              const origImg = customizationOriginalSrc(item);
+              const isFirst = idx === 0;
+              const groupLabel = groupNameBySlug.get(item.group) || cl.ui.fallbackGroupAlt;
+              return (
+                <article class="group bg-white rounded-xl shadow-xs border border-stone-200/70 overflow-hidden hover:shadow-md active:shadow-md focus-visible:shadow-md focus-within:shadow-md hover:border-stone-300 active:border-stone-300 focus-visible:border-stone-300 focus-within:border-stone-300 transition-all duration-300 flex flex-col">
+                  <a
+                    href={origImg}
+                    data-custom-zoom-link
+                    data-spec-code={item.code}
+                    data-spec-title={item.title}
+                    data-spec-note={item.note}
+                    data-astro-prefetch="false"
+                    data-astro-reload
+                    aria-label={formatCustomTemplate(cl.ui.inspectAria, { code: item.code, title: item.title })}
+                    class="relative block aspect-square overflow-hidden bg-stone-100 cursor-zoom-in focus-visible:outline-2 focus-visible:outline-[#5D4E37]"
+                  >
+                    <img
+                      src={cardImg}
+                      alt={formatCustomTemplate(cl.ui.altTemplate, { title: item.title, code: item.code, group: groupLabel })}
+                      width="400"
+                      height="400"
+                      loading={isFirst ? 'eager' : 'lazy'}
+                      fetchpriority={isFirst ? 'high' : 'auto'}
+                      decoding={isFirst ? 'sync' : 'async'}
+                      class="w-full h-full object-contain transition-transform duration-500 motion-safe:group-hover:scale-105 motion-safe:group-active:scale-105 motion-safe:group-focus-visible:scale-105 motion-safe:group-focus-within:scale-105"
+                    />
+                    <span class="absolute top-2.5 end-2.5 w-7 h-7 rounded-full bg-white/90 border border-stone-200/80 text-stone-700 flex items-center justify-center opacity-80 group-hover:opacity-100 group-active:opacity-100 group-focus-visible:opacity-100 group-focus-within:opacity-100 transition-opacity" aria-hidden="true">
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16zm0-11v6m-3-3h6" />
+                      </svg>
+                    </span>
+                  </a>
+
+                  <div class="p-3.5 sm:p-4 flex-1 flex flex-col">
+                    <div class="flex flex-wrap items-center gap-1 mb-1.5">
+                      {item.badges.map((badge) => (
+                        <span
+                          class:list={[
+                            'text-[10px] font-bold uppercase tracking-wider rounded px-1.5 py-0.5',
+                            (badge.startsWith('Blue Block') || badge.startsWith(cl.blueBlockPrefix))
+                              ? 'bg-blue-50 text-blue-800 border border-blue-200/60'
+                              : 'bg-stone-100 text-[#6B5340]',
+                          ]}
+                        >
+                          {badge}
+                        </span>
+                      ))}
+                    </div>
+
+                    <p class="text-xs font-mono font-bold text-[#5D4E37] tracking-wide">
+                      {item.code}
+                    </p>
+                    <h2 class="text-sm font-bold text-stone-900 leading-snug mt-0.5">
+                      {item.title}
+                    </h2>
+                    <p class="text-xs text-stone-600 leading-relaxed mt-1.5 mb-3 flex-1 line-clamp-2">
+                      {item.note}
+                    </p>
+
+                    <button
+                      type="button"
+                      data-spec-toggle
+                      data-spec-code={item.code}
+                      data-spec-title={item.title}
+                      aria-pressed="false"
+                      class="w-full py-2 px-3 rounded-lg border border-stone-200 bg-stone-50 text-[#5D4E37] text-xs font-Manrope font-bold tracking-wide flex items-center justify-center gap-1.5 hover:border-[#5D4E37] active:border-[#5D4E37] focus-visible:border-[#5D4E37] focus-within:border-[#5D4E37] transition-colors cursor-pointer"
+                    >
+                      <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                      </svg>
+                      <span data-spec-btn-label>{cl.ui.selectForQuote}</span>
+                    </button>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+
+          {totalPages > 1 && (
+            <Pagination
+              currentPage={currentPage}
+              lastPage={totalPages}
+              basePath={paginationBasePath}
+              categorySlug={paginationCategorySlug}
+              lang={lang}
+              dir={isRTL ? 'rtl' : 'ltr'}
+              prevLabel={pt.previousPage || 'Previous'}
+              nextLabel={pt.nextPage || 'Next'}
+            />
+          )}
+
+          <!-- Bottom Engineering Guide & FAQ Text (keeps catalog screen clean while adding rich SEO/B2B depth) -->
+          {currentPage === 1 && (
+            <section class="mt-12 space-y-8" aria-label={copy.guideTitle}>
+              <div class="bg-white rounded-xl border border-stone-200 shadow-2xs overflow-hidden">
+                <div class="w-full h-1 bg-amber-700" aria-hidden="true"></div>
+                <div class="p-5 sm:p-7">
+                  <p class="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-amber-800 mb-1.5">
+                    {cl.ui.engineeringGuideEyebrow}
+                  </p>
+                  <h2 class="font-Playfair font-bold text-xl sm:text-2xl text-stone-900 mb-2">
+                    {copy.guideTitle}
+                  </h2>
+                  <p class="text-sm text-stone-600 leading-relaxed mb-5">
+                    {copy.guideSubtitle}
+                  </p>
+
+                  <div class="overflow-x-auto -mx-5 sm:mx-0">
+                    <table class="w-full border-collapse min-w-[600px] text-start">
+                      <thead>
+                        <tr class="border-y border-stone-200 bg-stone-50">
+                          {copy.tableHeaders.map((h) => (
+                            <th scope="col" class="py-3 px-4 text-start text-[11px] font-mono font-bold uppercase tracking-wider text-stone-700">
+                              {h}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody class="divide-y divide-stone-200/80">
+                        {copy.tableRows.map((row) => (
+                          <tr>
+                            {row.map((cell, ci) =>
+                              ci === 0 ? (
+                                <th scope="row" class="py-3 px-4 text-start align-top text-xs sm:text-sm font-bold text-stone-900">
+                                  {cell}
+                                </th>
+                              ) : (
+                                <td class="py-3 px-4 align-top text-xs sm:text-sm text-stone-700 leading-relaxed">
+                                  {cell}
+                                </td>
+                              ),
+                            )}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  {copy.engineeringTips.length > 0 && (
+                    <div class="mt-6 pt-5 border-t border-stone-200/80">
+                      <h3 class="text-xs font-mono font-bold uppercase tracking-[0.16em] text-stone-800 mb-3">
+                        {cl.ui.factoryNotesHeading}
+                      </h3>
+                      <ul class="space-y-2">
+                        {copy.engineeringTips.map((tip) => (
+                          <li class="flex items-start gap-2.5 text-sm text-stone-700 leading-relaxed">
+                            <svg class="w-4 h-4 text-amber-700 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>{tip}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {copy.faqs.length > 0 && (
+                <div class="bg-white rounded-xl border border-stone-200 shadow-2xs p-5 sm:p-7">
+                  <p class="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-amber-800 mb-1.5">
+                    {cl.ui.technicalQaEyebrow}
+                  </p>
+                  <h2 class="font-Playfair font-bold text-xl text-stone-900 mb-4">
+                    {copy.faqTitle}
+                  </h2>
+                  <div class="divide-y divide-stone-200 border-t border-stone-200">
+                    {copy.faqs.map((faq, fIdx) => (
+                      <details class="py-4 group" name="custom-cat-faq" open={fIdx === 0}>
+                        <summary class="flex items-start justify-between gap-3 cursor-pointer list-none text-start focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700 rounded-xs">
+                          <span class="text-sm sm:text-base font-bold text-stone-900 group-hover:text-[#5D4E37] group-active:text-[#5D4E37] group-focus-visible:text-[#5D4E37] group-focus-within:text-[#5D4E37] transition-colors">
+                            {faq.question}
+                          </span>
+                          <span class="w-5 h-5 rounded-full border border-stone-300 flex items-center justify-center text-stone-600 shrink-0 mt-0.5 transition-transform duration-200 group-open:rotate-45" aria-hidden="true">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14M5 12h14" />
+                            </svg>
+                          </span>
+                        </summary>
+                        <p class="mt-2.5 text-sm text-stone-600 leading-relaxed pe-6">
+                          {faq.answer}
+                        </p>
+                      </details>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </section>
+          )}
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <CustomizationLightbox lang={lang} />
+  <CustomizationSpecTray lang={lang} />
+  <Footer lang={lang} />
+</Layout>
+
+<style>
+  .custom-sidebar-scroll {
+    max-height: calc(100vh - 7rem);
+    max-height: calc(100dvh - 7rem);
+    scrollbar-width: thin;
+    scrollbar-color: #d6d3d1 transparent;
+  }
+
+  .custom-sidebar-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-sidebar-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-sidebar-scroll::-webkit-scrollbar-thumb {
+    background-color: #d6d3d1;
+    border-radius: 9999px;
+  }
+</style>
+
+<script>
+  const SIDEBAR_SCROLL_STORE = 'kssmi-custom-sidebar-scroll';
+
+  const syncSidebarScroll = () => {
+    const sidebar = document.querySelector<HTMLElement>('[data-custom-sidebar-scroll]');
+    if (!sidebar) return;
+
+    if (!sidebar.dataset.scrollBound) {
+      sidebar.dataset.scrollBound = '1';
+      sidebar.addEventListener(
+        'scroll',
+        () => {
+          try {
+            sessionStorage.setItem(SIDEBAR_SCROLL_STORE, String(sidebar.scrollTop));
+          } catch {
+            // Ignore private-mode storage errors
+          }
+        },
+        { passive: true },
+      );
+    }
+
+    try {
+      const saved = sessionStorage.getItem(SIDEBAR_SCROLL_STORE);
+      if (saved !== null) {
+        const y = Number(saved);
+        if (Number.isFinite(y) && y >= 0) sidebar.scrollTop = y;
+      }
+    } catch {
+      // Ignore private-mode storage errors
+    }
+
+    const activeLink = sidebar.querySelector<HTMLElement>('[data-sidebar-active="true"]');
+    if (activeLink) {
+      const boxRect = sidebar.getBoundingClientRect();
+      const linkRect = activeLink.getBoundingClientRect();
+      if (linkRect.top < boxRect.top + 8 || linkRect.bottom > boxRect.bottom - 8) {
+        const offset =
+          linkRect.top - boxRect.top + sidebar.scrollTop - sidebar.clientHeight / 2 + linkRect.height / 2;
+        sidebar.scrollTop = Math.max(0, offset);
+      }
+    }
+  };
+
+  document.addEventListener('astro:page-load', syncSidebarScroll);
+  syncSidebarScroll();
+</script>

@@ -36,7 +36,7 @@ featured: true
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KAS-510 Óculos de Sol de Acetato Modernos | Fornecedor Personalizado"
 seoDescription: "Óculos de sol de acetato premium Mazzucchelli, JIMEI, JINYU disponíveis para personalização total OEM/ODM. Tamanhos de armação, cores e opções de logotipo sob medida. MOQ de 300 por modelo."
-seoKeywords: ""
+seoKeywords: "fabricante de óculos de sol de acetato, óculos de acetato OEM personalizados, fornecedor de óculos de sol marca própria, armações de acetato no atacado China, fábrica ODM de óculos de sol fashion, personalização de óculos de sol sob medida, produtor chinês de óculos de acetato, óculos de sol premium para marcas boutique"
 ---
 
 ## Características

@@ -159,6 +159,7 @@ const menuStructure: MenuItem[] = [
     menuBase: 'product',
     hasDropdown: true,
   },
+  { label: t.nav.customization || 'Customization', href: `/${currentPath}customization/` },
   {
     label: t.nav.feature,
     href: `/${currentPath}eyewear`,
@@ -197,7 +198,7 @@ const languageNames = {
   data-transparent={transparent ? 'true' : 'false'}
   dir={isRTL ? 'rtl' : 'ltr'}
 >
-  <div class="w-full max-w-[1860px] mx-auto px-4 sm:px-6 lg:px-8 relative">
+  <div class="w-full max-w-[1860px] mx-auto px-4 sm:px-6 lg:px-5 xl:px-6 2xl:px-8 relative">
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
       <a href={`/${currentPath}`} class="flex flex-col group min-w-max z-50 relative shrink-0 py-1">
@@ -236,13 +237,13 @@ const languageNames = {
       </a>
 
       <!-- Navigation - Left aligned after logo -->
-      <nav class="hidden lg:block h-full ms-8 xl:ms-12 z-30" aria-label="Main navigation">
-        <ul class="flex items-center h-full m-0 p-0 list-none gap-4 xl:gap-6">
+      <nav class="hidden lg:block h-full ms-4 xl:ms-6 2xl:ms-12 z-30" aria-label="Main navigation">
+        <ul class="flex items-center h-full m-0 p-0 list-none gap-2 xl:gap-3 2xl:gap-6">
           {menuStructure.map((item) => (
             <li class="h-full flex items-center">
               <a href={item.href}
                  class:list={[
-                   'nav-link relative inline-block font-Manrope font-bold text-xs md:text-sm uppercase tracking-wider transition-colors duration-300 px-2 xl:px-3 py-2',
+                   'nav-link relative inline-block whitespace-nowrap font-Manrope font-bold text-xs xl:text-[13px] 2xl:text-sm uppercase tracking-wide 2xl:tracking-wider transition-colors duration-300 px-1.5 xl:px-2 2xl:px-3 py-2',
                    transparent
                      ? 'text-white/90 hover:text-amber-300 active:text-amber-300 focus-visible:text-amber-300 focus-within:text-amber-300'
                      : 'text-gray-700 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37]',
@@ -260,8 +261,8 @@ const languageNames = {
       <div class="grow min-w-0"></div>
 
       <!-- Right Actions -->
-      <div class="flex items-center gap-3 xl:gap-4 shrink-0">
-        <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2 xl:gap-3 2xl:gap-4 shrink-0">
+        <div class="flex items-center gap-2 xl:gap-3">
           <!-- Search with icon buttons -->
           <form id="header-search" action={lang === 'en' ? '/search' : `/${lang}/search`} method="GET" class="relative hidden sm:block">
             <div class:list={[
@@ -271,7 +272,7 @@ const languageNames = {
                 : 'border-stone-200 bg-stone-50 focus-within:border-[#8B7355] focus-within:bg-white',
             ]}>
               <input type="search" id="header-search-input" name="q" placeholder={searchText} aria-label={searchText} class:list={[
-                'w-28 xl:w-40 py-2 px-3 bg-transparent border-none outline-hidden text-sm md:text-base font-bold focus:ring-0',
+                'w-20 xl:w-28 2xl:w-40 py-2 px-2.5 xl:px-3 bg-transparent border-none outline-hidden text-sm 2xl:text-base font-bold focus:ring-0',
                 transparent ? 'text-white placeholder:text-white/60' : 'text-stone-900 placeholder:text-stone-400',
               ]} />
               <!-- Clear button (hidden by default) -->
@@ -320,7 +321,7 @@ const languageNames = {
           </div>
         </div>
         <a href={`/${currentPath}quote`} class:list={[
-          'hidden sm:block px-5 xl:px-6 py-2.5 text-xs xl:text-sm font-Manrope font-bold uppercase tracking-[0.15em] active:scale-95 transition-all duration-300 rounded-xs hover:-translate-y-0.5 active:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-within:-translate-y-0.5',
+          'hidden sm:block whitespace-nowrap px-3.5 xl:px-4 2xl:px-6 py-2 xl:py-2.5 text-xs 2xl:text-sm font-Manrope font-bold uppercase tracking-[0.1em] 2xl:tracking-[0.15em] active:scale-95 transition-all duration-300 rounded-xs hover:-translate-y-0.5 active:-translate-y-0.5 focus-visible:-translate-y-0.5 focus-within:-translate-y-0.5',
           transparent
             ? 'bg-white/15 backdrop-blur-md text-white border border-white/40 hover:bg-white active:bg-white focus-visible:bg-white focus-within:bg-white hover:text-slate-900 active:text-slate-900 focus-visible:text-slate-900 focus-within:text-slate-900 shadow-lg hover:shadow-xl active:shadow-xl focus-visible:shadow-xl focus-within:shadow-xl'
             : 'bg-[#5D4E37] text-white hover:bg-[#4A3D2E] active:bg-[#4A3D2E] focus-visible:bg-[#4A3D2E] focus-within:bg-[#4A3D2E] shadow-lg',
