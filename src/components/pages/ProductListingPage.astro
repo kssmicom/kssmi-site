@@ -113,10 +113,18 @@ const collectionSchema = !noindex ? buildCollectionPageSchema({
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
         <!-- Sidebar -->
         <aside class="hidden lg:block lg:col-span-1">
-          <div class="sticky top-24 space-y-6">
+          <div
+            data-product-sidebar-scroll
+            data-sidebar-scroll-key={`kssmi-${baseSegment}-sidebar-scroll`}
+            class="product-sidebar-scroll sticky top-24 overflow-y-auto overscroll-contain space-y-6 pe-1.5"
+          >
             <div class="bg-linear-to-br from-white to-[#faf8f5] rounded-xl shadow-xs p-6 border border-stone-200/50">
               <!-- All Products Link - Page Title (Active) -->
-              <a href={`/${currentPath}${baseSegment}`} class="flex items-center justify-between py-1.5 px-2 text-sm lg:text-base font-bold bg-[#5D4E37] text-white rounded-lg mb-3">
+              <a
+                href={`/${currentPath}${baseSegment}`}
+                data-sidebar-active="true"
+                class="flex items-center justify-between py-1.5 px-2 text-sm lg:text-base font-bold bg-[#5D4E37] text-white rounded-lg mb-3"
+              >
                 <span>{baseSegment === 'blog' ? t.sidebar.all_posts : baseSegment === 'eyewear' ? t.sidebar.all_features : t.sidebar.all_products}</span>
                 <span class="text-xs font-normal text-white/70">{allProducts.length}</span>
               </a>
@@ -230,3 +238,31 @@ const collectionSchema = !noindex ? buildCollectionPageSchema({
 
   <Footer lang={lang} />
 </Layout>
+
+<style>
+  .product-sidebar-scroll {
+    max-height: calc(100vh - 7rem);
+    max-height: calc(100dvh - 7rem);
+    scrollbar-width: thin;
+    scrollbar-color: #d6d3d1 transparent;
+  }
+
+  .product-sidebar-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .product-sidebar-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .product-sidebar-scroll::-webkit-scrollbar-thumb {
+    background-color: #d6d3d1;
+    border-radius: 9999px;
+  }
+</style>
+
+<script>
+  import { initProductSidebarScroll } from '../../utils/catalogSidebarScroll';
+
+  initProductSidebarScroll();
+</script>

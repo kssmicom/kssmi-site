@@ -202,7 +202,11 @@ const collectionSchema = buildCollectionPageSchema({
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
         <!-- Sidebar -->
         <aside class="hidden lg:block lg:col-span-1">
-          <div class="sticky top-24 space-y-6">
+          <div
+            data-product-sidebar-scroll
+            data-sidebar-scroll-key={`kssmi-${baseSegment}-sidebar-scroll`}
+            class="product-sidebar-scroll sticky top-24 overflow-y-auto overscroll-contain space-y-6 pe-1.5"
+          >
             <div class="bg-linear-to-br from-white to-[#faf8f5] rounded-xl shadow-xs p-6 border border-stone-200/50">
               <!-- All Products Link -->
               <a href={`/${currentPath}${baseSegment}`} class="flex items-center justify-between py-1.5 px-2 text-sm lg:text-base font-bold text-[#5D4E37] hover:bg-stone-50 active:bg-stone-50 focus-visible:bg-stone-50 focus-within:bg-stone-50 rounded-lg transition-colors mb-3">
@@ -215,6 +219,7 @@ const collectionSchema = buildCollectionPageSchema({
                   <div class="border-b border-gray-100 pb-3 last:border-0 last:pb-0">
                     <a
                       href={cat.href}
+                      data-sidebar-active={isActiveCategory(cat.href) ? 'true' : undefined}
                       class={`flex items-center justify-between py-2 px-2 text-sm font-bold rounded-lg transition-colors ${
                         isActiveCategory(cat.href)
                           ? 'bg-[#5D4E37] text-white'
@@ -231,6 +236,7 @@ const collectionSchema = buildCollectionPageSchema({
                         <li>
                           <a
                             href={sub.href}
+                            data-sidebar-active={isActiveCategory(sub.href) ? 'true' : undefined}
                             class={`flex items-center justify-between py-1.5 px-2 text-sm rounded-sm transition-colors ${
                               isActiveCategory(sub.href)
                                 ? 'bg-[#5D4E37] text-white'
@@ -254,7 +260,11 @@ const collectionSchema = buildCollectionPageSchema({
                 <div class="space-y-6">
                   {sidebarTags.map((group) => (
                     <div>
-                      <a href={group.href} class="text-sm font-bold text-gray-900 mb-2.5 flex items-center hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] transition-colors">
+                      <a
+                        href={group.href}
+                        data-sidebar-active={isActiveCategory(group.href) ? 'true' : undefined}
+                        class="text-sm font-bold text-gray-900 mb-2.5 flex items-center hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] transition-colors"
+                      >
                         <span class="text-[#5D4E37] mr-1">#</span> {group.label}
                       </a>
                       <div class="flex flex-col gap-1.5">
@@ -263,6 +273,7 @@ const collectionSchema = buildCollectionPageSchema({
                           return (
                             <a
                               href={tag.href}
+                              data-sidebar-active={isActive ? 'true' : undefined}
                               class={`px-3 py-1.5 text-[11px] font-bold rounded-md border transition-all duration-200 w-full ${
                                 isActive
                                   ? 'bg-[#5D4E37] text-white border-[#8B7355] shadow-md'
@@ -377,3 +388,31 @@ const currentPg = (() => { const segs = Astro.url.pathname.split('/').filter(Boo
 
   <Footer lang={lang} />
 </Layout>
+
+<style>
+  .product-sidebar-scroll {
+    max-height: calc(100vh - 7rem);
+    max-height: calc(100dvh - 7rem);
+    scrollbar-width: thin;
+    scrollbar-color: #d6d3d1 transparent;
+  }
+
+  .product-sidebar-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .product-sidebar-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .product-sidebar-scroll::-webkit-scrollbar-thumb {
+    background-color: #d6d3d1;
+    border-radius: 9999px;
+  }
+</style>
+
+<script>
+  import { initProductSidebarScroll } from '../../utils/catalogSidebarScroll';
+
+  initProductSidebarScroll();
+</script>
