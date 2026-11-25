@@ -2,7 +2,7 @@
 section: 's00-hero'
 lang: 'fr'
 heading: 'Fabricant OEM/ODM de Lunettes — 300 Pièces/Modèle pour Montures Sur Mesure en Acétate, Titane et Fibre de Carbone'
-subheadingLine1: 'Usine à Shenzhen. Échantillonnage en 30 Jours. Production en 60 Jours.'
+subheadingLine1: 'Usine à Shenzhen. Échantillonnage en 60 Jours. Production en 60 Jours.'
 subheadingLine2: 'Lunettes de Soleil et Montures Optiques Sur Mesure'
 description: "Kssmi est un fabricant de lunettes OEM et ODM basé à Shenzhen, desservant des marques haut de gamme, des designers indépendants et des acheteurs de marques de distributeur. Nos matériaux incluent l'acétate, le titane, la fibre de carbone, le métal, le TR90 et les montures hybrides. L'acétate de qualité supérieure provient de Mazzucchelli et JINYU, et les matériaux en titane proviennent de Kobe Steel et Baoji Titanium."
 primaryCta: 'Demander un Devis'

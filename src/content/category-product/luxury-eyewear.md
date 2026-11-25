@@ -38,7 +38,7 @@ seoTitle:
   ms: "Pengeluar Cermin Mata Mewah Tersuai | Kilang Borong OEM"
   tg: "Истеҳсолкунандаи айнакҳои боҳашамат | Заводи OEM яклухт"
 seoDescription:
-  en: "Discover Kssmi's hand-finished luxury eyewear collection. Premium materials, exclusive designs, 300 MOQ, and 45-day lead time for high-end global brands."
+  en: "Discover Kssmi's hand-finished luxury eyewear collection. Premium materials, exclusive designs, 300 MOQ, and 60-day lead time for high-end global brands."
   it: "Cerchi occhiali di lusso su misura e raffinati? Forniamo ai brand globali materiali premium rifiniti a mano, design esclusivi e un MOQ flessibile di 300."
   es: "¿Busca exquisitas gafas de lujo personalizadas? Proveemos a las marcas globales materiales premium acabados a mano, diseños exclusivos y MOQ de 300 piezas."
   fr: "Vous cherchez des lunettes de luxe exquises ? Nous offrons aux marques mondiales des matériaux premium finis à la main, un design exclusif et MOQ de 300."

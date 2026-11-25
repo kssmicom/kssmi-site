@@ -2,7 +2,7 @@
 section: 's00-hero'
 lang: 'es'
 heading: 'Fabricante OEM/ODM de Gafas — 300 Uds/Modelo para Monturas Personalizadas de Acetato, Titanio y Fibra de Carbono'
-subheadingLine1: 'Fábrica en Shenzhen. Muestras en 30 Días. Producción en 60 Días.'
+subheadingLine1: 'Fábrica en Shenzhen. Muestras en 60 Días. Producción en 60 Días.'
 subheadingLine2: 'Gafas de Sol y Monturas Ópticas Personalizadas'
 description: 'Kssmi es un fabricante OEM y ODM de gafas con sede en Shenzhen, que presta servicios a marcas premium, diseñadores independientes y compradores de marcas privadas. Nuestros materiales incluyen acetato, titanio, fibra de carbono, metal, TR90 y monturas híbridas. El acetato premium proviene de Mazzucchelli y JINYU, y los materiales de titanio provienen de Kobe Steel y Baoji Titanium.'
 primaryCta: 'Solicitar un Presupuesto'

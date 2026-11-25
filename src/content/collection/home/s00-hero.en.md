@@ -2,7 +2,7 @@
 section: 's00-hero'
 lang: 'en'
 heading: 'Eyewear OEM/ODM Manufacturer — 300 PCS/Model for Custom Acetate, Titanium & Carbon Fiber Frames'
-subheadingLine1: 'Shenzhen Factory. 30-Day Sampling. 60-Day Production.'
+subheadingLine1: 'Shenzhen Factory. 60-Day Custom Sampling. 60-Day Production.'
 subheadingLine2: 'Custom Sunglasses & Optical Frames'
 description: 'Kssmi is a Shenzhen-based OEM and ODM eyewear manufacturer serving premium brands, independent designers, and private label buyers. Our materials include acetate, titanium, carbon fiber, metal, TR90, and hybrid frames. Premium acetate comes from Mazzucchelli and JINYU, and titanium materials come from Kobe Steel and Baoji Titanium.'
 primaryCta: 'Request a Quote'

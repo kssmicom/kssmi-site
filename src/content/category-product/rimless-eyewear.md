@@ -38,7 +38,7 @@ seoTitle:
   ms: "Pengeluar Cermin Mata Tanpa Bingkai Tersuai | Kilang OEM"
   tg: "Айнаки бе чаҳорчӯбаи фармоишӣ | Заводи OEM-и яклухт B2B"
 seoDescription:
-  en: "Custom rimless eyewear tailor-made by Kssmi. Ultra-light drill-mount hardware, bespoke lens shapes, 300 MOQ, and 45-day lead time for B2B brands worldwide."
+  en: "Custom rimless eyewear tailor-made by Kssmi. Ultra-light drill-mount hardware, bespoke lens shapes, 300 MOQ, and 60-day lead time for B2B brands worldwide."
   it: "Eleva la tua collezione con occhiali a giorno su misura Kssmi. Offriamo hardware drill-mount ultraleggero, forme di lenti uniche e un MOQ 300 flessibile."
   es: "Eleve su colección con gafas sin montura personalizadas de Kssmi. Proveemos los mejores herrajes drill-mount ultraligeros, formas a medida y MOQ de 300 now."
   fr: "Élevez votre collection avec les belles lunettes sans monture sur mesure Kssmi. Matériel drill-mount ultraléger, formes de verres uniques et MOQ de 300 now."

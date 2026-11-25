@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import yaml from 'js-yaml';
 
 const publicDir = path.join(process.cwd(), 'public');
 const SITE_URL = 'https://kssmi.com';
@@ -105,9 +106,85 @@ const processCollection = (collectionName, titlePathPattern) => {
     });
 };
 
-processCollection('landing', 'landing');
 processCollection('products', 'product');
 processCollection('blog', 'blog');
+
+// Populate localized landing pages (24 product categories + 28 customization catalog routes)
+const categoryProductDir = path.join(process.cwd(), 'src/content/category-product');
+const productCategories = fs.existsSync(categoryProductDir)
+    ? fs.readdirSync(categoryProductDir)
+        .filter((name) => name.endsWith('.md') && name !== 'product.md')
+        .sort()
+        .map((name) => {
+            const raw = fs.readFileSync(path.join(categoryProductDir, name), 'utf-8');
+            const fmMatch = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+            const doc = fmMatch ? (yaml.load(fmMatch[1]) || {}) : {};
+            return {
+                slug: doc.slug || name.replace(/\.md$/, ''),
+                displayName: doc.displayName || {},
+                seoDescription: doc.seoDescription || {},
+            };
+        })
+    : [];
+
+const getCustomizationGroups = () => {
+    const catalogPath = path.join(process.cwd(), 'src', 'data', 'customizationCatalog.ts');
+    const source = fs.readFileSync(catalogPath, 'utf-8');
+    const match = source.match(/export const CUSTOMIZATION_GROUPS:\s*CustomizationGroup\[\]\s*=\s*(\[[\s\S]*?\n\]);/);
+    if (!match) {
+        throw new Error(`generate-llms: failed to parse CUSTOMIZATION_GROUPS from ${catalogPath}`);
+    }
+    return JSON.parse(match[1]);
+};
+const customizationGroups = getCustomizationGroups();
+
+const loadCustomizationBundle = (lang) => {
+    const filePath = path.join(process.cwd(), 'src', 'data', 'customization-i18n', `${lang}.ts`);
+    if (!fs.existsSync(filePath)) return null;
+    const raw = fs.readFileSync(filePath, 'utf-8');
+    const match = raw.match(/export const CUSTOMIZATION_[A-Z0-9_]+:\s*CustomizationLocaleBundle\s*=\s*(\{[\s\S]*?\n\});/);
+    if (!match) {
+        throw new Error(`generate-llms: failed to parse ${filePath}`);
+    }
+    return JSON.parse(match[1]);
+};
+const enCustomBundle = loadCustomizationBundle('en');
+const customBundles = {};
+
+for (const lang of Object.keys(langData)) {
+    const urlPrefix = lang === 'en' ? '' : `/${lang}`;
+    const bundle = loadCustomizationBundle(lang) || enCustomBundle;
+    customBundles[lang] = bundle;
+
+    for (const cat of productCategories) {
+        const title = cat.displayName[lang] || cat.displayName.en || cat.slug;
+        const desc = cat.seoDescription[lang] || cat.seoDescription.en || '';
+        const url = `${SITE_URL}${urlPrefix}/product/${cat.slug}/`;
+        let entry = `- [${title}](${url})\n`;
+        if (desc) entry += `  > ${desc}\n`;
+        entry += `\n`;
+        langData[lang].landing.push(entry);
+    }
+
+    const allCopy = bundle?.copy?.all || enCustomBundle?.copy?.all;
+    const allTitle = allCopy?.heading || 'Eyewear Customization Components';
+    const allDesc = allCopy?.seoDescription || '';
+    langData[lang].landing.push(`- [${allTitle}](${SITE_URL}${urlPrefix}/customization/)\n${allDesc ? `  > ${allDesc}\n` : ''}\n`);
+
+    for (const group of customizationGroups) {
+        const groupCopy = bundle?.copy?.[group.slug] || enCustomBundle?.copy?.[group.slug];
+        const groupName = bundle?.groups?.[group.slug]?.name || enCustomBundle?.groups?.[group.slug]?.name || group.name;
+        const groupHeading = groupCopy?.heading || groupName;
+        const groupDesc = groupCopy?.seoDescription || '';
+        langData[lang].landing.push(`- [${groupHeading}](${SITE_URL}${urlPrefix}/customization/${group.slug}/)\n${groupDesc ? `  > ${groupDesc}\n` : ''}\n`);
+
+        for (const sub of group.subcategories || []) {
+            const subKey = `${group.slug}/${sub.slug}`;
+            const subName = bundle?.subcategories?.[subKey] || enCustomBundle?.subcategories?.[subKey] || sub.name;
+            langData[lang].landing.push(`- [${groupName} — ${subName}](${SITE_URL}${urlPrefix}/customization/${group.slug}/${sub.slug}/)\n${groupDesc ? `  > ${groupDesc}\n` : ''}\n`);
+        }
+    }
+}
 
 const translations = {
     en: {
@@ -304,7 +381,8 @@ Object.keys(langData).forEach(lang => {
     const llmsBaseUrl = `${SITE_URL}/${lang}`;
 
     // 1. llms-core.txt
-    const coreContent = `# Kssmi - ${t.core} (${localLangName})\n\n> ${t.coreDesc}\n\n- [${t.home}](${baseUrl}/)\n- [${t.about}](${baseUrl}/about-us/)\n- [${t.contact}](${baseUrl}/contact/)\n`;
+    const customLabel = customBundles[lang]?.ui?.breadcrumbLabel || 'Customization';
+    const coreContent = `# Kssmi - ${t.core} (${localLangName})\n\n> ${t.coreDesc}\n\n- [${t.home}](${baseUrl}/)\n- [${t.products}](${baseUrl}/product/)\n- [${customLabel}](${baseUrl}/customization/)\n- [FAQ](${baseUrl}/faq/)\n- [${t.contact}](${baseUrl}/quote/)\n`;
     fs.writeFileSync(path.join(langDir, 'llms-core.txt'), coreContent, 'utf-8');
 
     // 2. llms-products.txt
@@ -345,19 +423,20 @@ Object.keys(langData).forEach(lang => {
 // Finally, generate the Global Router at public/llms.txt
 let globalContent = `# Kssmi Eyewear — B2B Eyewear Manufacturing
 
-> Kssmi is a B2B handmade eyewear and sunglasses manufacturer (OEM/ODM) based in Guangdong, China since 2003, serving global optical retailers, boutique shops, and fashion brands.
+> Kssmi is a B2B handmade eyewear and sunglasses manufacturer (OEM/ODM) based in Shenzhen, China since 2003, serving global optical retailers, boutique shops, and fashion brands.
 
 ## About
-Kssmi is a leading B2B handmade eyewear and sunglasses manufacturer based in Guangdong, China, operational since 2003. We produce high-quality, ethically handcrafted eyewear for global optical retailers, boutique shops, and fashion brands.
+Kssmi is a leading B2B handmade eyewear and sunglasses manufacturer based in Shenzhen, China, operational since 2003. We produce high-quality, ethically handcrafted eyewear for global optical retailers, boutique shops, and fashion brands.
 
 ## Capabilities
 - OEM: produce eyewear to your exact specifications and designs
 - ODM: our in-house design team creates exclusive collections for your brand
 - Full customization: materials (acetate, titanium, metal, TR90, carbon fiber), colors, logos, packaging
-- MOQ: typically 300 pieces per style per color (flexible for partners)
-- Lead time: 25-35 days after sample confirmation
-- Sampling: 7-10 days development, fee credited toward bulk order
-- Worldwide shipping via air (5-7 days) or sea (25-35 days)
+- MOQ: 300 pairs per model (100 pairs/color) for acetate, metal, and titanium; 200 pairs/model for carbon fiber; 1,200 pairs/style for standard TR90 (600 pairs/color for custom sport TR90)
+- Technical drawings: 3-10 working days after design confirmation
+- Fully custom sampling: ~60 days after design approval (eligible fees credited toward qualifying bulk orders)
+- Bulk production: ~45 days for injection-moulded frames; ~60 days for acetate, titanium, metal, carbon fiber, and other frames after sample confirmation
+- Worldwide shipping via air courier (DHL or customer-designated forwarder) or sea freight
 
 ## Key Product Lines
 - Optical Frames (acetate, metal, titanium, rimless)

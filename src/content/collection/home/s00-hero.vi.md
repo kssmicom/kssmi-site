@@ -2,7 +2,7 @@
 section: 's00-hero'
 lang: 'vi'
 heading: 'Nhà sản xuất Kính mắt OEM/ODM — 300 Chiếc/Mẫu cho Gọng kính Acetate, Titanium & Sợi Carbon Tùy chỉnh'
-subheadingLine1: 'Nhà máy Thâm Quyến. 30 Ngày Làm Mẫu. 60 Ngày Sản Xuất.'
+subheadingLine1: 'Nhà máy Thâm Quyến. 60 Ngày Làm Mẫu. 60 Ngày Sản Xuất.'
 subheadingLine2: 'Kính Râm & Gọng Kính Quang Học Tùy Chỉnh'
 description: 'Kssmi là nhà sản xuất kính mắt OEM và ODM có trụ sở tại Thâm Quyến, phục vụ các thương hiệu cao cấp, nhà thiết kế độc lập và người mua nhãn hiệu riêng. Vật liệu của chúng tôi bao gồm acetate, titanium, sợi carbon, kim loại, TR90 và gọng kính lai. Acetate cao cấp có nguồn gốc từ Mazzucchelli và JINYU, và vật liệu titanium có nguồn gốc từ Kobe Steel và Baoji Titanium.'
 primaryCta: 'Yêu cầu Báo giá'

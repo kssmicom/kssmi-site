@@ -2,7 +2,7 @@
 section: 's00-hero'
 lang: 'jv'
 heading: 'Pabrik Kacamata OEM/ODM — 300 PCS/Model kanggo Bingkai Asetat, Titanium & Serat Karbon Kustom'
-subheadingLine1: 'Pabrik Shenzhen. Pembuatan Sampel 30 Dina. Produksi 60 Dina.'
+subheadingLine1: 'Pabrik Shenzhen. Pembuatan Sampel 60 Dina. Produksi 60 Dina.'
 subheadingLine2: 'Kacamata Ireng & Bingkai Optik Kustom'
 description: 'Kssmi minangka pabrik kacamata OEM lan ODM sing berbasis ing Shenzhen, nglayani merek premium, desainer independen, lan panuku label pribadi. Bahan kita kalebu asetat, titanium, serat karbon, logam, TR90, lan bingkai hibrida. Asetat premium teka saka Mazzucchelli lan JINYU, lan bahan titanium teka saka Kobe Steel lan Baoji Titanium.'
 primaryCta: 'Njaluk Kutipan'

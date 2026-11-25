@@ -2,7 +2,7 @@
 section: 's00-hero'
 lang: 'ms'
 heading: 'Pengeluar Kaca Mata OEM/ODM — 300 PCS/Model untuk Bingkai Asetat, Titanium & Gentian Karbon Tersuai'
-subheadingLine1: 'Kilang Shenzhen. Persampelan 30 Hari. Pengeluaran 60 Hari.'
+subheadingLine1: 'Kilang Shenzhen. Persampelan 60 Hari. Pengeluaran 60 Hari.'
 subheadingLine2: 'Cermin Mata Hitam & Bingkai Optik Tersuai'
 description: 'Kssmi ialah pengeluar kaca mata OEM dan ODM yang berpangkalan di Shenzhen yang menyediakan perkhidmatan kepada jenama premium, pereka bebas dan pembeli label peribadi. Bahan kami termasuk asetat, titanium, gentian karbon, logam, TR90 dan bingkai hibrid. Asetat premium berasal dari Mazzucchelli dan JINYU, dan bahan titanium berasal dari Kobe Steel dan Baoji Titanium.'
 primaryCta: 'Dapatkan Sebut Harga'

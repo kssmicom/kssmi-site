@@ -2,7 +2,7 @@
 section: 's00-hero'
 lang: 'pt'
 heading: 'Fabricante OEM/ODM de Óculos — 300 Peças/Modelo para Armações Personalizadas de Acetato, Titânio e Fibra de Carbono'
-subheadingLine1: 'Fábrica em Shenzhen. Amostragem em 30 Dias. Produção em 60 Dias.'
+subheadingLine1: 'Fábrica em Shenzhen. Amostragem em 60 Dias. Produção em 60 Dias.'
 subheadingLine2: 'Óculos de Sol e Armações de Grau Personalizados'
 description: 'A Kssmi é uma fabricante de óculos OEM e ODM com sede em Shenzhen, atendendo a marcas premium, designers independentes e compradores de marcas próprias. Nossos materiais incluem acetato, titânio, fibra de carbono, metal, TR90 e armações híbridas. O acetato premium vem da Mazzucchelli e JINYU, e os materiais de titânio vêm da Kobe Steel e Baoji Titanium.'
 primaryCta: 'Solicitar Orçamento'

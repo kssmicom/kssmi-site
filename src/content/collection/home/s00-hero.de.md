@@ -2,7 +2,7 @@
 section: 's00-hero'
 lang: 'de'
 heading: 'OEM/ODM Brillenhersteller — 300 Stk/Modell für Maßgeschneiderte Acetat-, Titan- und Kohlefaserfassungen'
-subheadingLine1: 'Fabrik in Shenzhen. 30 Tage Mustererstellung. 60 Tage Produktion.'
+subheadingLine1: 'Fabrik in Shenzhen. 60 Tage Mustererstellung. 60 Tage Produktion.'
 subheadingLine2: 'Maßgeschneiderte Sonnenbrillen und Optische Fassungen'
 description: 'Kssmi ist ein OEM- und ODM-Brillenhersteller mit Sitz in Shenzhen, der Premium-Marken, unabhängige Designer und Private-Label-Käufer bedient. Unsere Materialien umfassen Acetat, Titan, Kohlefaser, Metall, TR90 und Hybridfassungen. Premium-Acetat stammt von Mazzucchelli und JINYU, und Titanmaterialien stammen von Kobe Steel und Baoji Titanium.'
 primaryCta: 'Angebot Anfordern'

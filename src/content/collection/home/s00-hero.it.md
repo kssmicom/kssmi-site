@@ -2,7 +2,7 @@
 section: 's00-hero'
 lang: 'it'
 heading: 'Produttore OEM/ODM di Occhiali — 300 Pz/Modello per Montature Personalizzate in Acetato, Titanio e Fibra di Carbonio'
-subheadingLine1: 'Fabbrica a Shenzhen. Campionatura in 30 Giorni. Produzione in 60 Giorni.'
+subheadingLine1: 'Fabbrica a Shenzhen. Campionatura in 60 Giorni. Produzione in 60 Giorni.'
 subheadingLine2: 'Occhiali da Sole e Montature da Vista Personalizzati'
 description: "Kssmi è un produttore di occhiali OEM e ODM con sede a Shenzhen, al servizio di marchi premium, designer indipendenti e acquirenti di marchi privati. I nostri materiali includono acetato, titanio, fibra di carbonio, metallo, TR90 e montature ibride. L'acetato premium proviene da Mazzucchelli e JINYU, mentre i materiali in titanio provengono da Kobe Steel e Baoji Titanium."
 primaryCta: 'Richiedi un Preventivo'

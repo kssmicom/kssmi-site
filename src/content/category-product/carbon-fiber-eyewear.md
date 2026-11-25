@@ -38,7 +38,7 @@ seoTitle:
   ms: "Pengeluar Cermin Mata Gentian Karbon Tersuai | Kilang OEM"
   tg: "Истеҳсолкунандаи айнаки нахи карбон | Заводи OEM яклухт"
 seoDescription:
-  en: "Elevate your performance eyewear line with Kssmi's real carbon fiber. Ultra-light designs, sport and tech-ready construction, 300 MOQ, and 45-day lead time."
+  en: "Elevate your performance eyewear line with Kssmi's real carbon fiber. Ultra-light designs, sport and tech-ready construction, 300 MOQ, and 60-day lead time."
   it: "Cerchi occhiali ad alte prestazioni? Forniamo vera fibra di carbonio per i marchi sportivi e tech. Design ultraleggeri e MOQ 300 per la tua nuova azienda."
   es: "¿Busca gafas de alto rendimiento? Suministramos auténtica fibra de carbono para las grandes marcas deportivas y tecnológicas, diseños ligeros y MOQ de 300."
   fr: "Vous cherchez des lunettes performantes ? Nous offrons de la vraie fibre de carbone pour les marques sport et tech, des designs ultralégers et un MOQ 300."
