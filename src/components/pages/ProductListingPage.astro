@@ -168,7 +168,7 @@ if (currentPage > 1) {
 
         <!-- Product Grid -->
         <div class="col-span-1 lg:col-span-3">
-          <h1 class="text-base lg:text-lg font-bold text-stone-900 mb-3">{title} — <span class="text-xs lg:text-sm font-medium text-stone-500">{(t.pagination?.page || 'Page {n}').replace('{n}', String(currentPage))}</span></h1>
+          <h1 class="text-base lg:text-lg font-bold text-stone-900 mb-3">{title}{currentPage > 1 && <span class="text-xs lg:text-sm font-medium text-stone-500"> — {(t.pagination?.page || 'Page {n}').replace('{n}', String(currentPage))}</span>}</h1>
           <div class="flex justify-between items-center mb-3 text-sm text-gray-500">
             <span>
               {(baseSegment === 'blog' ? ((t as any).blog?.showingResults || 'Showing {start}-{end} of {total} posts') : baseSegment === 'eyewear' ? ((t as any).feature?.showingResults || 'Showing {start}-{end} of {total} features') : (pt.showingResults || 'Showing {start}-{end} of {total} products')).replace('{start}', String(allProducts.length > 0 ? start + 1 : 0)).replace('{end}', String(end)).replace('{total}', String(allProducts.length))}

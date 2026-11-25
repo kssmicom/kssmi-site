@@ -236,7 +236,7 @@ const faqSchema = currentPage === 1 && copy.faqs.length > 0 ? {
         <div class="col-span-1 lg:col-span-3">
           <h1 class="text-base lg:text-xl font-bold text-stone-900 mb-2">
             {heading}
-            {totalPages > 1 && (
+            {currentPage > 1 && (
               <span class="text-xs lg:text-sm font-medium text-stone-500">
                 {' — '}{(t.pagination?.page || 'Page {n}').replace('{n}', String(currentPage))}
               </span>
