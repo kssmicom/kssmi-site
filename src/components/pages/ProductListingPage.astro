@@ -11,6 +11,7 @@ import { isCategoryMatch } from '../../utils/categoryMatching';
 import Pagination from '../../components/Pagination.astro';
 import { buildPrimaryCategories, buildSidebarTags } from '../../utils/sidebar';
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import { buildCollectionPageSchema } from '../../utils/collectionSchema';
 
 interface Props {
   lang: string;
@@ -81,9 +82,29 @@ if (currentPage > 1) {
   pageTitle = `${pageTitle} – ${pageLabel}`;
   pageDescription = `${pageLabel}: ${pageDescription}`;
 }
+
+const siteOrigin = Astro.site ?? 'https://kssmi.com';
+const pagePath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const pageUrl = new URL(pagePath, siteOrigin).href;
+const collectionSchema = !noindex ? buildCollectionPageSchema({
+  name: pageTitle,
+  description: pageDescription,
+  url: pageUrl,
+  lang,
+  totalItems: allProducts.length,
+  startPosition: start + 1,
+  items: products.map((p: any) => {
+    const itemSlug = p.data?.slug || p.id.split('/').pop()?.replace(/\.[a-z]{2}$/, '') || '';
+    return {
+      name: p.data?.title || itemSlug,
+      url: itemSlug ? new URL(`/${currentPath}${baseSegment}/${itemSlug}/`, siteOrigin).href : undefined,
+    };
+  }),
+}) : null;
 ---
 
 <Layout title={pageTitle} description={pageDescription} lang={lang} lcpImage={lcpImage} noindex={noindex}>
+  {collectionSchema && <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />}
   <Header lang={lang} />
   <Breadcrumb items={breadcrumbItems} lang={lang} />
 

@@ -13,6 +13,7 @@ import Pagination from '../Pagination.astro';
 import CustomizationLightbox from '../CustomizationLightbox.astro';
 import CustomizationSpecTray from '../CustomizationSpecTray.astro';
 import { getTranslations } from '../../translations';
+import { buildCollectionPageSchema } from '../../utils/collectionSchema';
 import {
   CUSTOMIZATION_GROUPS,
   CUSTOMIZATION_PAGE_SIZE,
@@ -127,10 +128,26 @@ const faqSchema = currentPage === 1 && copy.faqs.length > 0 ? {
     acceptedAnswer: { '@type': 'Answer', text: f.answer },
   })),
 } : null;
+
+const siteOrigin = Astro.site ?? 'https://kssmi.com';
+const pagePath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const pageUrl = new URL(pagePath, siteOrigin).href;
+const collectionSchema = !noindex ? buildCollectionPageSchema({
+  name: pageTitle,
+  description: pageDescription,
+  url: pageUrl,
+  lang,
+  totalItems,
+  startPosition: (currentPage - 1) * CUSTOMIZATION_PAGE_SIZE + 1,
+  items: localizedItems.map((item) => ({
+    name: `${item.code} ${item.name}`,
+  })),
+}) : null;
 ---
 
 <Layout title={pageTitle} description={pageDescription} lang={lang} lcpImage={lcpImage} noindex={noindex} noHreflang={noHreflang}>
   {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+  {collectionSchema && <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />}
 
   <Header lang={lang} />
   <Breadcrumb items={breadcrumbItems} lang={lang} />

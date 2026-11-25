@@ -22,8 +22,25 @@ interface Props {
 
 const { lang, heading, subtitle, crumbs, searchPlaceholder, clearLabel = 'Clear search', centered = false } = Astro.props;
 const isRTL = lang === 'ar';
+const siteOrigin = Astro.site ?? 'https://kssmi.com';
+const currentPagePath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const breadcrumbSchema = crumbs.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((crumb, index) => {
+    const rawPath = crumb.href || currentPagePath;
+    const normalized = rawPath.endsWith('/') ? rawPath : `${rawPath}/`;
+    return {
+      '@type': 'ListItem',
+      position: index + 1,
+      name: crumb.label,
+      item: new URL(normalized, siteOrigin).href,
+    };
+  }),
+} : null;
 ---
 
+{breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
 <header class:list={['faq-hero', { 'faq-hero--center': centered }]} dir={isRTL ? 'rtl' : 'ltr'}>
   <div class="faq-shell">
     <nav class="faq-crumbs" aria-label="Breadcrumb">

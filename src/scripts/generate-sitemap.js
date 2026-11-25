@@ -106,6 +106,14 @@ const getCustomizationRoutes = () => {
 };
 const customizationRoutes = getCustomizationRoutes();
 
+const categoryProductDir = path.join(contentDir, 'category-product');
+const productCategorySlugs = fs.existsSync(categoryProductDir)
+  ? fs.readdirSync(categoryProductDir)
+      .filter((name) => name.endsWith('.md') && name !== 'product.md')
+      .map((name) => name.replace(/\.md$/, ''))
+      .sort()
+  : [];
+
 let rootSitemapIndexEntries = '';
 
 // Helper to generate a urlset XML from a list of urls
@@ -212,6 +220,17 @@ locales.forEach(lang => {
     coreUrls.push({
       url: `${baseUrl}${route}`,
       lastmod: customLastmod,
+    });
+  }
+  const categoryRouteFile = lang === 'en'
+    ? path.join(process.cwd(), 'src', 'pages', 'product', '[category]', '[...page].astro')
+    : path.join(process.cwd(), 'src', 'pages', '[lang]', 'product', '[category]', '[...page].astro');
+  const categoryComponentFile = path.join(process.cwd(), 'src', 'components', 'pages', 'ProductCategoryPage.astro');
+  const categoryTemplateDate = newestDateString([fileDate(categoryRouteFile), fileDate(categoryComponentFile)]);
+  for (const slug of productCategorySlugs) {
+    coreUrls.push({
+      url: `${baseUrl}/product/${slug}/`,
+      lastmod: newestDateString([fileDate(path.join(categoryProductDir, `${slug}.md`)), categoryTemplateDate]),
     });
   }
   fs.writeFileSync(path.join(langDir, 'sitemap-core.xml'), generateUrlset(coreUrls), 'utf-8');
