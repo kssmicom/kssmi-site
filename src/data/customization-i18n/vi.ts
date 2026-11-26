@@ -120,7 +120,7 @@ export const CUSTOMIZATION_VI: CustomizationLocaleBundle = {
       "quickPills": [
         "MOQ: 300 chiếc / mẫu (200 chiếc với Sợi carbon)",
         "Thời gian lên bản vẽ: 3–10 ngày làm việc",
-        "Làm mẫu tùy chỉnh: 50–60 ngày",
+        "Làm mẫu tùy chỉnh: 60 ngày làm việc",
         "Kiểm tra chất lượng 100% trước khi xuất hàng"
       ],
       "guideTitle": "Cách chỉ định linh kiện tùy chỉnh cùng Kssmi",
@@ -187,7 +187,7 @@ export const CUSTOMIZATION_VI: CustomizationLocaleBundle = {
         },
         {
           "question": "Có thể làm mẫu kiểm tra linh kiện trước khi sản xuất hàng loạt không?",
-          "answer": "Có. Sau khi bản vẽ kỹ thuật và bộ mã linh kiện được xác nhận, chúng tôi tiến hành chế tạo mẫu tùy chỉnh hoàn chỉnh (50–60 ngày bao gồm làm khuôn nếu cần) để bạn kiểm chứng thực tế màu sắc, trọng lượng, độ căng bản lề và độ trong quang học trước khi sản xuất đại trà."
+          "answer": "Mẫu tùy chỉnh hoàn toàn, gồm cả làm khuôn khi cần, mất 60 ngày làm việc kể từ khi duyệt bản vẽ và thanh toán đầy đủ các khoản phí liên quan."
         }
       ]
     },

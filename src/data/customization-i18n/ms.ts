@@ -120,7 +120,7 @@ export const CUSTOMIZATION_MS: CustomizationLocaleBundle = {
       "quickPills": [
         "MOQ: 300 Pasang / Model (200 Gentian Karbon)",
         "Masa Lukisan Teknikal: 3–10 Hari Bekerja",
-        "Sampel Tersuai: 50–60 Hari",
+        "Sampel Tersuai: 60 hari bekerja",
         "100% Pemeriksaan Pra-Penghantaran"
       ],
       "guideTitle": "Cara Menentukan Komponen Tersuai dengan Kssmi",
@@ -187,7 +187,7 @@ export const CUSTOMIZATION_MS: CustomizationLocaleBundle = {
         },
         {
           "question": "Adakah sampel komponen tersedia sebelum pengeluaran pukal?",
-          "answer": "Ya. Sebaik sahaja lukisan kejuruteraan dan kod komponen anda disahkan, kami menghasilkan sampel tersuai berfungsi (50–60 hari termasuk perkakasan acuan jika diperlukan) supaya anda dapat menilai warna sebenar, berat, ketegangan engsel dan kejelasan optik sebelum pengeluaran pukal."
+          "answer": "Sampel tersuai sepenuhnya, termasuk acuan jika diperlukan, mengambil masa 60 hari bekerja selepas kelulusan lukisan dan bayaran penuh yuran berkaitan."
         }
       ]
     },

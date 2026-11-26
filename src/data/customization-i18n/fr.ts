@@ -120,7 +120,7 @@ export const CUSTOMIZATION_FR: CustomizationLocaleBundle = {
       "quickPills": [
         "MOQ : 300 paires / modèle (200 Fibre de Carbone)",
         "Délai plans techniques : 3–10 jours ouvrés",
-        "Échantillon personnalisé : 50–60 jours",
+        "Échantillon personnalisé : 60 jours ouvrés",
         "Contrôle 100 % avant expédition"
       ],
       "guideTitle": "Comment Spécifier vos Composants Sur Mesure avec Kssmi",
@@ -187,7 +187,7 @@ export const CUSTOMIZATION_FR: CustomizationLocaleBundle = {
         },
         {
           "question": "Des échantillons de composants sont-ils disponibles avant la production en série ?",
-          "answer": "Oui. Une fois vos plans techniques et codes composants validés, nous réalisons des prototypes fonctionnels sur mesure (50–60 jours incluant l'outillage le cas échéant) afin que vous puissiez évaluer la couleur réelle, le poids, la tension des charnières et la clarté optique avant la série."
+          "answer": "Un échantillon entièrement personnalisé, outillage nécessaire compris, nécessite 60 jours ouvrés après validation des plans et paiement intégral des frais correspondants."
         }
       ]
     },

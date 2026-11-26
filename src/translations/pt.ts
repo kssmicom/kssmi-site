@@ -116,8 +116,8 @@ export default {
         additionalDescription: "Mesmo design e especificações, encomendada com a primeira amostra personalizada.",
         piece: "un.",
         priceContext: "Taxas de amostra para validar o seu projeto personalizado — não são preços de retalho ou produção em série.",
-        creditNote: "Ambas as taxas de amostra são integralmente creditadas no seu pedido em quantidade do mesmo modelo.",
-        creditEmphasis: "integralmente creditadas",
+        creditNote: "Nos pedidos que não sejam TR-90, todos os custos, incluindo desenvolvimento, design, ferramental, amostras e logotipo, são integralmente creditados nos pagamentos de produção quando o mesmo modelo acumula 1000 pares em 12 meses; apenas o frete é excluído. Os custos de ferramental de injeção e amostras TR-90 são integralmente creditados quando o mesmo modelo acumula 30000 pares em 24 meses; frete e impostos são excluídos.",
+        creditEmphasis: "1000",
         disclaimer: "Frete e impostos são cotados separadamente. O preço da produção em escala é cotado separadamente."
       },
         goToPage: 'Ir para página',

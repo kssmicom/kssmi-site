@@ -120,7 +120,7 @@ export const CUSTOMIZATION_ZH: CustomizationLocaleBundle = {
       "quickPills": [
         "起订量：300 副/款（碳纤维款 200 副/款）",
         "工程出图周期：3–10 个工作日",
-        "定制打样周期：50–60 天",
+        "定制打样周期：60 个工作日",
         "100% 出货前全检"
       ],
       "guideTitle": "如何通过 Kssmi 可米 指定定制组件",
@@ -187,7 +187,7 @@ export const CUSTOMIZATION_ZH: CustomizationLocaleBundle = {
         },
         {
           "question": "大货生产前可以提供组件及整架样品确认吗？",
-          "answer": "可以。在工程图纸与组件编码确认后，我们将为您制作功能完整的定制样品（含必要模具开发共计 50–60 天），以便您在大货投产前实地评估色泽、克重、铰链松紧度与光学清晰度。"
+          "answer": "全定制样品（含所需模具开发）从图纸确认且相关费用付清后起算，需要 60 个工作日。"
         }
       ]
     },

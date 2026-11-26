@@ -120,7 +120,7 @@ export const CUSTOMIZATION_ES: CustomizationLocaleBundle = {
       "quickPills": [
         "MOQ: 300 Pares / Modelo (200 Fibra de Carbono)",
         "Plazo de Plano Técnico: 3–10 Días Laborables",
-        "Muestra Personalizada: 50–60 Días",
+        "Muestra Personalizada: 60 días laborables",
         "Inspección Pre-Embarque al 100%"
       ],
       "guideTitle": "Cómo Especificar Componentes Personalizados con Kssmi",
@@ -187,7 +187,7 @@ export const CUSTOMIZATION_ES: CustomizationLocaleBundle = {
         },
         {
           "question": "¿Hay muestras de componentes disponibles antes de la producción en serie?",
-          "answer": "Sí. Una vez confirmados los planos técnicos y los códigos de componentes, fabricamos muestras funcionales personalizadas (50–60 días incluyendo utillaje cuando sea necesario) para que evalúes color real, peso, tensión de bisagra y claridad óptica antes del pedido al por mayor."
+          "answer": "Una muestra totalmente personalizada, incluido el utillaje necesario, requiere 60 días laborables desde la aprobación de los planos y el pago íntegro de los costes correspondientes."
         }
       ]
     },

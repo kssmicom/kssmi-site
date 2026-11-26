@@ -124,8 +124,8 @@ export default {
         additionalDescription: "Same design and specifications, ordered with the first custom sample.",
         piece: "PCS",
         priceContext: "Sample fees for validating your custom project — not retail or bulk product prices.",
-        creditNote: "Both sample fees are fully credited toward your bulk order for the same model.",
-        creditEmphasis: "fully credited",
+        creditNote: "For non-TR-90 orders, all fees, including development, design, tooling, samples and logo fees, are fully credited toward bulk payments once the same model reaches a cumulative 1000 pairs within 12 months; only freight is excluded. TR-90 injection tooling and sample fees are fully credited once the same model reaches a cumulative 30000 pairs within 24 months; freight and taxes are excluded.",
+        creditEmphasis: "1000",
         disclaimer: "Shipping and taxes are quoted separately. Bulk production pricing is quoted separately."
       },
         goToPage: 'Go to page',

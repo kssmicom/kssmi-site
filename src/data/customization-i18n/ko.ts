@@ -120,7 +120,7 @@ export const CUSTOMIZATION_KO: CustomizationLocaleBundle = {
       "quickPills": [
         "MOQ: 모델당 300개 (카본 파이버 200개)",
         "도면 작업: 영업일 기준 3–10일",
-        "맞춤 샘플: 50–60일",
+        "맞춤 샘플: 60 영업일",
         "출고 전 100% 전수 검사"
       ],
       "guideTitle": "Kssmi 맞춤형 부품 사양 지정 방법",
@@ -187,7 +187,7 @@ export const CUSTOMIZATION_KO: CustomizationLocaleBundle = {
         },
         {
           "question": "대량 생산 전에 맞춤 부품이 적용된 샘플을 받아볼 수 있나요?",
-          "answer": "네. 엔지니어링 도면과 부품 코드가 확정되면 실제 양산품과 동일한 기능의 맞춤 샘플(금형 제작 포함 시 50–60일 소요)을 제작해 드립니다. 양산 전 실물 컬러, 무게, 힌지 장력 및 광학 품질을 직접 검증하실 수 있습니다."
+          "answer": "완전 맞춤 샘플은 필요한 금형 제작을 포함하여 도면 승인 및 관련 비용 전액 결제 후 60영업일이 소요됩니다."
         }
       ]
     },

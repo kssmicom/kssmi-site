@@ -189,7 +189,11 @@ for (const [lang, items] of faqByLanguage) {
   for (const [index, item] of items.entries()) {
     const english = englishFaq[index];
     assert(item.question !== english?.question && item.answer !== english?.answer, `${lang} FAQ item ${index + 1} must be translated.`);
-    const numbers = (text) => JSON.stringify(typeof text === 'string' ? text.match(/\d+(?:-\d+)?/g) : null);
+    // Natural translations can reorder quantities and periods. Compare the
+    // full numeric multiset (including repeated values), retaining ranges.
+    const numbers = (text) => JSON.stringify(typeof text === 'string'
+      ? (text.match(/\d+(?:[-–]\d+)?/g) ?? []).map((value) => value.replace('–', '-')).sort()
+      : null);
     assert(numbers(item.answer) === numbers(english?.answer), `${lang} FAQ item ${index + 1} must preserve numeric facts.`);
   }
 }

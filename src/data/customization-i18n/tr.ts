@@ -120,7 +120,7 @@ export const CUSTOMIZATION_TR: CustomizationLocaleBundle = {
       "quickPills": [
         "MOQ: 300 Çift / Model (200 Karbon Elyaf)",
         "Teknik Çizim Süresi: 3–10 İş Günü",
-        "Özel Numune: 50–60 Gün",
+        "Özel Numune: 60 iş günü",
         "Sevkiyat Öncesi %100 Kontrol"
       ],
       "guideTitle": "Kssmi ile Özel Bileşenler Nasıl Belirlenir?",
@@ -187,7 +187,7 @@ export const CUSTOMIZATION_TR: CustomizationLocaleBundle = {
         },
         {
           "question": "Seri üretim öncesinde bileşen numuneleri temin edilebilir mi?",
-          "answer": "Evet. Teknik çizimleriniz ve bileşen kodlarınız onaylandıktan sonra seri üretim öncesinde gerçek rengi, ağırlığı, menteşe sertliğini ve optik netliği değerlendirebilmeniz için işlevsel özel numuneler (gerektiğinde kalıp dahil 50–60 gün) üretiyoruz."
+          "answer": "Gerekli kalıp hazırlığı dahil tamamen özel numune, çizim onayı ve ilgili ücretlerin tamamının ödenmesinden itibaren 60 iş günü sürer."
         }
       ]
     },

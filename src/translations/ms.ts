@@ -109,8 +109,8 @@ export default {
         additionalDescription: "Reka bentuk dan spesifikasi yang sama, ditempah bersama sampel tersuai pertama.",
         piece: "unit",
         priceContext: "Yuran sampel untuk mengesahkan projek tersuai anda, bukan harga runcit atau pengeluaran pukal.",
-        creditNote: "Kedua-dua yuran sampel akan dikreditkan sepenuhnya kepada pesanan pukal anda untuk model yang sama.",
-        creditEmphasis: "dikreditkan sepenuhnya",
+        creditNote: "Bagi pesanan bukan TR-90, semua yuran termasuk pembangunan, reka bentuk, acuan, sampel dan logo dikreditkan sepenuhnya kepada bayaran pukal apabila model yang sama mencapai jumlah terkumpul 1000 pasang dalam 12 bulan; hanya penghantaran dikecualikan. Yuran acuan suntikan dan sampel TR-90 dikreditkan sepenuhnya apabila model yang sama mencapai jumlah terkumpul 30000 pasang dalam 24 bulan; penghantaran dan cukai dikecualikan.",
+        creditEmphasis: "1000",
         disclaimer: "Penghantaran dan cukai disebut secara berasingan. Harga pengeluaran pukal disebut secara berasingan."
       },
         goToPage: 'Ke halaman',

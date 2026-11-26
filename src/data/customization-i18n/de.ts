@@ -120,7 +120,7 @@ export const CUSTOMIZATION_DE: CustomizationLocaleBundle = {
       "quickPills": [
         "MOQ: 300 Stk. / Modell (200 Kohlefaser)",
         "Zeichnungszeit: 3–10 Werktage",
-        "Sondermuster: 50–60 Tage",
+        "Sondermuster: 60 Arbeitstage",
         "100 % Endkontrolle vor Versand"
       ],
       "guideTitle": "So spezifizieren Sie individuelle Komponenten bei Kssmi",
@@ -187,7 +187,7 @@ export const CUSTOMIZATION_DE: CustomizationLocaleBundle = {
         },
         {
           "question": "Stehen vor der Serienproduktion Komponentenmuster zur Verfügung?",
-          "answer": "Ja. Nach Freigabe Ihrer technischen Zeichnungen und Komponentencodes fertigen wir funktionale Sondermuster (50–60 Tage inklusive etwaigem Werkzeugbau), damit Sie reale Farbe, Gewicht, Scharnierspannung und optische Klarheit vor der Großserie prüfen können."
+          "answer": "Ein vollständig individuelles Muster einschließlich erforderlichem Werkzeugbau benötigt 60 Arbeitstage nach Zeichnungsfreigabe und vollständiger Zahlung der zugehörigen Gebühren."
         }
       ]
     },

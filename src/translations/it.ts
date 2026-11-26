@@ -109,8 +109,8 @@ export default {
         additionalDescription: "Stesso design e specifiche, ordinato insieme al primo campione personalizzato.",
         piece: "pz",
         priceContext: "Costi del campione per validare il vostro progetto personalizzato — non prezzi al dettaglio o di produzione in serie.",
-        creditNote: "Entrambi i costi dei campioni vengono interamente accreditati sul suo ordine all’ingrosso dello stesso modello.",
-        creditEmphasis: "interamente accreditati",
+        creditNote: "Per gli ordini non TR-90, tutti i costi, inclusi sviluppo, design, stampi, campioni e logo, vengono interamente accreditati sui pagamenti della produzione quando lo stesso modello raggiunge un totale di 1000 paia entro 12 mesi; è escluso solo il trasporto. I costi di stampi a iniezione e campioni TR-90 vengono interamente accreditati quando lo stesso modello raggiunge un totale di 30000 paia entro 24 mesi; trasporto e imposte sono esclusi.",
+        creditEmphasis: "1000",
         disclaimer: "Spedizione e tasse sono quotate separatamente. Il prezzo della produzione in serie è quotato separatamente."
       },
         goToPage: 'Vai alla pagina',

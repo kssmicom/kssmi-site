@@ -120,7 +120,7 @@ export const CUSTOMIZATION_IT: CustomizationLocaleBundle = {
       "quickPills": [
         "MOQ: 300 Paia / Modello (200 Fibra di Carbonio)",
         "Tempi Disegno Tecnico: 3–10 Giorni Lavorativi",
-        "Campione Personalizzato: 50–60 Giorni",
+        "Campione Personalizzato: 60 giorni lavorativi",
         "Ispezione Pre-Spedizione al 100%"
       ],
       "guideTitle": "Come Specificare i Componenti Personalizzati con Kssmi",
@@ -187,7 +187,7 @@ export const CUSTOMIZATION_IT: CustomizationLocaleBundle = {
         },
         {
           "question": "Sono disponibili campioni dei componenti prima della produzione in serie?",
-          "answer": "Sì. Confermati i disegni tecnici e i codici dei componenti, realizziamo campioni funzionali personalizzati (50–60 giorni inclusi eventuali stampi/attrezzature) per permetterti di valutare colore reale, peso, tensione delle cerniere e qualità ottica prima della produzione di massa."
+          "answer": "Un campione interamente personalizzato, inclusi gli eventuali stampi, richiede 60 giorni lavorativi dall’approvazione dei disegni e dal pagamento integrale dei relativi costi."
         }
       ]
     },

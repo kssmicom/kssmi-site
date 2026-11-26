@@ -116,8 +116,8 @@ export default {
         additionalDescription: "İlk özel numuneyle aynı tasarım ve özelliklerde birlikte sipariş edilir.",
         piece: "adet",
         priceContext: "Özel projenizi doğrulamak için numune ücretleridir; perakende veya seri üretim fiyatları değildir.",
-        creditNote: "Her iki numune ücreti, aynı model için vereceğiniz toplu siparişten tamamen düşülür.",
-        creditEmphasis: "tamamen düşülür",
+        creditNote: "TR-90 dışındaki siparişlerde aynı modelin toplamı 12 ay içinde 1000 adede ulaştığında geliştirme, tasarım, kalıp, numune ve logo dahil tüm ücretler seri üretim ödemelerinden tamamen düşülür; yalnızca nakliye hariçtir. TR-90 enjeksiyon kalıbı ve numune ücretleri aynı modelin toplamı 24 ay içinde 30000 adede ulaştığında tamamen düşülür; nakliye ve vergiler hariçtir.",
+        creditEmphasis: "1000",
         disclaimer: "Nakliye ve vergiler ayrıca fiyatlandırılır. Seri üretim fiyatı ayrıca teklif edilir."
       },
         goToPage: 'Sayfaya git',

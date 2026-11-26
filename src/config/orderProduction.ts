@@ -9,11 +9,11 @@ export const orderProduction = Object.freeze({
   readyStockMinDays: 2,
   readyStockMaxDays: 5,
   readyStockWithLogoDays: 10,
-  renderingMinDays: 5,
+  renderingMinDays: 3,
   renderingMaxDays: 10,
-  customSampleMinDays: 45,
+  customSampleMinDays: 60,
   customSampleMaxDays: 60,
-  bulkProductionMinDays: 50,
+  bulkProductionMinDays: 60,
   bulkProductionMaxDays: 60,
   renderingRevisionRounds: 3,
   standardMoq: 300,
@@ -25,4 +25,4 @@ export const orderProduction = Object.freeze({
 });
 
 export const formatUsd = (amount: number) => `US$${amount}`;
-export const formatDayRange = (min: number, max: number) => `${min}–${max}`;
+export const formatDayRange = (min: number, max: number) => min === max ? String(min) : `${min}–${max}`;

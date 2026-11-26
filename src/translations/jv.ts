@@ -109,8 +109,8 @@ export default {
         additionalDescription: "Desain lan spesifikasi padha, dipesen bebarengan karo sampel kustom pisanan.",
         piece: "pcs",
         priceContext: "Ragad sampel kanggo validasi proyek kustom sampeyan, dudu rega eceran utawa produksi massal.",
-        creditNote: "Ragad kanggo loro sampel bakal dikreditake kanthi lengkap ing pesenan grosir kanggo model sing padha.",
-        creditEmphasis: "dikreditake kanthi lengkap",
+        creditNote: "Kanggo pesenan non-TR-90, kabeh biaya kalebu pangembangan, desain, cetakan, sampel lan logo dikreditake kanthi lengkap menyang pembayaran massal nalika model sing padha tekan akumulasi 1000 pasang sajrone 12 sasi; mung ongkir sing ora kalebu. Biaya cetakan injeksi lan sampel TR-90 dikreditake kanthi lengkap nalika model sing padha tekan akumulasi 30000 pasang sajrone 24 sasi; ongkir lan pajeg ora kalebu.",
+        creditEmphasis: "1000",
         disclaimer: "Pangiriman lan pajak diitung kapisah. Rega produksi massal ditawakake kapisah."
       },
         goToPage: 'Menyang kaca',

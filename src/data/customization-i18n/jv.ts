@@ -120,7 +120,7 @@ export const CUSTOMIZATION_JV: CustomizationLocaleBundle = {
       "quickPills": [
         "MOQ: 300 Pasang / Model (200 Serat Karbon)",
         "Wektu Gambar Teknis: 3–10 Dina Kerja",
-        "Sampel Kustom: 50–60 Dina",
+        "Sampel Kustom: 60 dina kerja",
         "100% Inspeksi Sadurunge Pangiriman"
       ],
       "guideTitle": "Cara Nemtokake Komponen Kustom karo Kssmi",
@@ -187,7 +187,7 @@ export const CUSTOMIZATION_JV: CustomizationLocaleBundle = {
         },
         {
           "question": "Apa sampel komponen kasedhiya sadurunge produksi massal?",
-          "answer": "Ya. Sawise gambar teknis lan kode komponen sampeyan dikonfirmasi, kita nggawe sampel kustom fungsional (50–60 dina kalebu perkakas yen dibutuhake) supaya sampeyan bisa ngevaluasi warna asli, bobot, ketegangan engsel, lan kejernihan optik sadurunge produksi massal."
+          "answer": "Sampel khusus sakabehe, kalebu nggawe cetakan yen perlu, mbutuhake 60 dina kerja sawise gambar disetujoni lan biaya sing gegandhengan dibayar lunas."
         }
       ]
     },

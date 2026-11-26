@@ -120,7 +120,7 @@ export const CUSTOMIZATION_PT: CustomizationLocaleBundle = {
       "quickPills": [
         "MOQ: 300 Pares / Modelo (200 Fibra de Carbono)",
         "Prazo de Desenho Técnico: 3–10 Dias Úteis",
-        "Amostra Personalizada: 50–60 Dias",
+        "Amostra Personalizada: 60 dias úteis",
         "100% Inspeção Pré-Embarque"
       ],
       "guideTitle": "Como Especificar Componentes Personalizados com a Kssmi",
@@ -187,7 +187,7 @@ export const CUSTOMIZATION_PT: CustomizationLocaleBundle = {
         },
         {
           "question": "Há amostras de componentes disponíveis antes da produção em escala?",
-          "answer": "Sim. Após a confirmação dos desenhos técnicos e códigos dos componentes, produzimos amostras personalizadas funcionais (50–60 dias, incluindo ferramental quando necessário) para que você avalie cor real, peso, tensão da dobradiça e nitidez óptica antes da produção em série."
+          "answer": "Uma amostra totalmente personalizada, incluindo o ferramental necessário, exige 60 dias úteis após a aprovação dos desenhos e o pagamento integral dos custos correspondentes."
         }
       ]
     },

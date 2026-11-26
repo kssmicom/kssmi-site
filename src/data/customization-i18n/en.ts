@@ -120,7 +120,7 @@ export const CUSTOMIZATION_EN: CustomizationLocaleBundle = {
       "quickPills": [
         "MOQ: 300 Pairs / Model (200 Carbon Fiber)",
         "Drawing Time: 3–10 Working Days",
-        "Custom Sample: 50–60 Days",
+        "Custom Sample: 60 working days",
         "100% Pre-Shipment Inspection"
       ],
       "guideTitle": "How to Specify Custom Components with Kssmi",
@@ -187,7 +187,7 @@ export const CUSTOMIZATION_EN: CustomizationLocaleBundle = {
         },
         {
           "question": "Are component samples available before bulk production?",
-          "answer": "Yes. Once your engineering drawings and component codes are confirmed, we craft functional custom samples (50–60 days including tooling where required) so you can evaluate real-world color, weight, hinge tension, and optical clarity prior to bulk production."
+          "answer": "A fully custom sample, including tooling where required, takes 60 working days after drawing approval and full payment of the relevant fees."
         }
       ]
     },

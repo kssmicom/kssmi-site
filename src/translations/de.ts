@@ -116,8 +116,8 @@ export default {
         additionalDescription: "Gleiches Design und gleiche Spezifikationen, zusammen mit dem ersten Sondermuster bestellt.",
         piece: "Stk.",
         priceContext: "Mustergebühren zur Validierung Ihres individuellen Projekts — keine Einzelhandels- oder Serienpreise.",
-        creditNote: "Beide Mustergebühren werden bei Ihrer Großbestellung desselben Modells vollständig angerechnet.",
-        creditEmphasis: "vollständig angerechnet",
+        creditNote: "Bei Aufträgen ohne TR-90 werden sämtliche Gebühren einschließlich Entwicklung, Design, Werkzeugbau, Muster und Logo vollständig auf Serienzahlungen angerechnet, sobald dasselbe Modell innerhalb von 12 Monaten insgesamt 1000 Stück erreicht; nur Fracht ist ausgeschlossen. TR-90-Spritzgusswerkzeug- und Mustergebühren werden vollständig angerechnet, sobald dasselbe Modell innerhalb von 24 Monaten insgesamt 30000 Stück erreicht; Fracht und Steuern sind ausgeschlossen.",
+        creditEmphasis: "1000",
         disclaimer: "Versand und Steuern werden separat berechnet. Preise für die Serienproduktion werden separat angeboten."
       },
         goToPage: 'Zur Seite',

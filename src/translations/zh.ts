@@ -109,8 +109,8 @@ export default {
         additionalDescription: "与首件定制样品采用相同设计和规格。",
         piece: "件",
         priceContext: "用于确认定制项目的样品费，并非零售或大货产品价格。",
-        creditNote: "两种样品费均可在同款产品的大货订单中全额抵扣。",
-        creditEmphasis: "全额抵扣",
+        creditNote: "非 TR-90 订单：同款在 12 个月内累计达到 1000 副，开发费、设计费、模具费、样品费、Logo 费等全部费用均可从大货货款中全额抵扣，仅运费除外。TR-90 注塑模具费及样品费：同款在 24 个月内累计达到 30000 副后全额抵扣，不包括运费、税费。",
+        creditEmphasis: "1000",
         disclaimer: "运费和税费另行核算；大货生产价格另行报价。"
       },
         goToPage: '跳转到页面',

@@ -116,8 +116,8 @@ export default {
         additionalDescription: "Même design et mêmes spécifications, commandé avec le premier échantillon personnalisé.",
         piece: "pièce",
         priceContext: "Frais d’échantillon pour valider votre projet sur mesure, et non prix de détail ou de production en série.",
-        creditNote: "Les deux frais d’échantillon sont intégralement déduits de votre commande en gros du même modèle.",
-        creditEmphasis: "intégralement déduits",
+        creditNote: "Pour les commandes hors TR-90, tous les frais, dont développement, conception, outillage, échantillons et logo, sont intégralement déduits des paiements de série lorsque le même modèle atteint un cumul de 1000 paires en 12 mois ; seul le transport est exclu. Les frais d’outillage d’injection et d’échantillons TR-90 sont intégralement déduits lorsque le même modèle atteint un cumul de 30000 paires en 24 mois ; transport et taxes sont exclus.",
+        creditEmphasis: "1000",
         disclaimer: "L’expédition et les taxes sont calculées séparément. Le prix de la production en série est établi séparément."
       },
         goToPage: 'Aller à la page',

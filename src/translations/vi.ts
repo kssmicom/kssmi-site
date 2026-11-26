@@ -109,8 +109,8 @@ export default {
         additionalDescription: "Cùng thiết kế và thông số, đặt cùng với mẫu tùy chỉnh đầu tiên.",
         piece: "cái",
         priceContext: "Phí mẫu để xác nhận dự án tùy chỉnh của bạn, không phải giá bán lẻ hoặc giá sản xuất hàng loạt.",
-        creditNote: "Cả hai khoản phí mẫu đều được khấu trừ toàn bộ vào đơn hàng số lượng lớn của cùng mẫu.",
-        creditEmphasis: "được khấu trừ toàn bộ",
+        creditNote: "Với đơn hàng không phải TR-90, tất cả chi phí gồm phát triển, thiết kế, khuôn, mẫu và logo đều được khấu trừ toàn bộ vào tiền hàng khi cùng một mẫu đạt cộng dồn 1000 cặp trong 12 tháng; chỉ loại trừ phí vận chuyển. Phí khuôn ép phun và mẫu TR-90 được khấu trừ toàn bộ khi cùng một mẫu đạt cộng dồn 30000 cặp trong 24 tháng; không bao gồm vận chuyển và thuế.",
+        creditEmphasis: "1000",
         disclaimer: "Phí vận chuyển và thuế được báo riêng. Giá sản xuất số lượng lớn được báo riêng."
       },
         goToPage: 'Đến trang',

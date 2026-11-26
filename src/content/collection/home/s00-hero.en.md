@@ -2,7 +2,7 @@
 section: 's00-hero'
 lang: 'en'
 heading: "Eyewear OEM/ODM Manufacturer — Custom Acetate, Titanium, Carbon Fiber & TR-90 Frames"
-subheadingLine1: 'Shenzhen Factory. 5–10 Day 2D Rendering. 60-Day Custom Sampling. 60-Day Production.'
+subheadingLine1: "Shenzhen Factory. 3–10 Day 2D Rendering. 60-Day Custom Sampling. 60-Day Production."
 subheadingLine2: 'Custom Sunglasses & Optical Frames'
 description: "Kssmi is a Shenzhen-based OEM and ODM eyewear manufacturer serving premium brands, independent designers, and private label buyers. Our materials include acetate, titanium, carbon fiber, metal, TR-90, and hybrid frames. Premium acetate comes from Mazzucchelli, JIMEI and JINYU, and titanium materials come from Kobe Steel and Baoji Titanium. MOQ starts at 300 Pair/Model (100 Pair/Color) for acetate, metal & titanium, 200 Pair/Model for carbon fiber, and 1200 Pair/Model (600 Pair/Color) for TR-90."
 primaryCta: 'Request a Quote'

@@ -116,8 +116,8 @@ export default {
         additionalDescription: "Mismo diseño y especificaciones, solicitada junto con la primera muestra personalizada.",
         piece: "ud.",
         priceContext: "Tarifas de muestra para validar su proyecto personalizado, no precios de venta al público ni de producción en serie.",
-        creditNote: "Ambas tarifas de muestra se acreditan íntegramente en su pedido al por mayor del mismo modelo.",
-        creditEmphasis: "se acreditan íntegramente",
+        creditNote: "En pedidos que no sean TR-90, todos los costes, incluidos desarrollo, diseño, utillaje, muestras y logotipo, se acreditan íntegramente en los pagos de producción cuando el mismo modelo acumula 1000 pares en 12 meses; solo se excluye el transporte. Los costes de utillaje de inyección y muestras TR-90 se acreditan íntegramente cuando el mismo modelo acumula 30000 pares en 24 meses; se excluyen transporte e impuestos.",
+        creditEmphasis: "1000",
         disclaimer: "El envío y los impuestos se cotizan por separado. La producción en serie se cotiza por separado."
       },
         goToPage: 'Ir a la página',
