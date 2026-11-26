@@ -1,10 +1,10 @@
 ---
 section: 's00-hero'
 lang: 'ko'
-heading: '아이웨어 OEM/ODM 제조업체 — 맞춤형 아세테이트, 티타늄 및 탄소 섬유 프레임 모델당 300개'
+heading: "아이웨어 OEM/ODM 제조업체 — 맞춤형 아세테이트, 티타늄 및 탄소 섬유 프레임"
 subheadingLine1: '선전 공장. 60일 샘플링. 60일 생산.'
 subheadingLine2: '맞춤형 선글라스 및 광학 프레임'
-description: 'Kssmi는 프리미엄 브랜드, 독립 디자이너 및 자체 브랜드 구매자에게 서비스를 제공하는 선전 기반의 OEM 및 ODM 아이웨어 제조업체입니다. 저희 재료에는 아세테이트, 티타늄, 탄소 섬유, 금속, TR90 및 하이브리드 프레임이 포함됩니다. 프리미엄 아세테이트는 Mazzucchelli와 JINYU에서 공급되며, 티타늄 재료는 Kobe Steel과 Baoji Titanium에서 공급됩니다.'
+description: "Kssmi는 프리미엄 브랜드, 독립 디자이너 및 자체 브랜드 구매자에게 서비스를 제공하는 선전 기반의 OEM 및 ODM 아이웨어 제조업체입니다. 저희 재료에는 아세테이트, 티타늄, 탄소 섬유, 금속, TR90 및 하이브리드 프레임이 포함됩니다. 프리미엄 아세테이트는 Mazzucchelli와 JINYU에서 공급되며, 티타늄 재료는 Kobe Steel과 Baoji Titanium에서 공급됩니다. 최소 주문 수량(MOQ)은 아세테이트, 메탈 및 티타늄 모델당 300개(색상당 100개), 탄소 섬유 모델당 200개부터 시작합니다."
 primaryCta: '견적 요청'
 primaryCtaUrl: '/quote'
 secondaryCta: '프레임 소재 보기'
