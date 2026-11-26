@@ -20,6 +20,7 @@ export default {
       customization: "定制选项",
       collection: "系列",
       feature: "方案",
+      faq: "常见问题",
       about: "关于",
       contact: "联系",
       blog: "博客",

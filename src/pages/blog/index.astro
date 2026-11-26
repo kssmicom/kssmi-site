@@ -1,0 +1,16 @@
+---
+import BlogListingPage from '../../components/pages/BlogListingPage.astro';
+import SectionPlaceholder from '../../components/pages/SectionPlaceholder.astro';
+import { getBlogSlugs } from '../../components/blog/blogData';
+import { getTranslations } from '../../translations';
+
+const slugs = await getBlogSlugs();
+const empty = slugs.length === 0;
+const t = await getTranslations('en');
+---
+
+{empty ? (
+  <SectionPlaceholder lang="en" sectionLabel={t.nav.blog || 'Blog'} />
+) : (
+  <BlogListingPage lang="en" />
+)}

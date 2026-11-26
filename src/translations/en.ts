@@ -20,6 +20,7 @@ export default {
       customization: "Customization",
       collection: "Collection",
       feature: "Solutions",
+      faq: "FAQ",
       about: "About",
       contact: "Contact",
       blog: "Blog",

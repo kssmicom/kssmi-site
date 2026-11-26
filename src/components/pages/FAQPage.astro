@@ -1,45 +1,243 @@
 ---
 /**
- * FAQ hub (/faq/) — search, topic cards, all questions grouped by topic.
- * Content: src/content/collection/faq/index/faq.{lang}.md
+ * FAQ Listing Page (/faq/, /faq/<topic>/, /faq/<topic>/<subtopic>/)
+ * Mirrors ProductListingPage.astro: left sticky expanded topic sidebar + right FAQ card grid.
  */
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import FaqHero from '../collection/faq/FaqHero.astro';
-import FaqTopicGrid from '../collection/faq/FaqTopicGrid.astro';
-import FaqQuestionList from '../collection/faq/FaqQuestionList.astro';
-import { buildTopicCards, getFaqHub, getFaqTopicKeys } from '../collection/faq/faqData';
-import '../collection/faq/faq-theme.css';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import FaqSidebar from '../faq/FaqSidebar.astro';
+import FaqCard from '../faq/FaqCard.astro';
+import {
+  buildTopicCards,
+  faqPath,
+  getFaqArticles,
+  getFaqHub,
+} from '../faq/faqData';
+import '../faq/faq-theme.css';
 import { getTranslations } from '../../translations';
 
-const { lang } = Astro.props;
+interface Props {
+  lang?: string;
+  activeTopic?: string | null;
+  activeSubtopic?: string | null;
+}
+
+const { lang = 'en', activeTopic = null, activeSubtopic = null } = Astro.props;
+const isRTL = lang === 'ar';
+const currentPath = lang === 'en' ? '' : `${lang}/`;
 const t = await getTranslations(lang);
 const hub = await getFaqHub(lang);
-const { seoTitle, seoDescription, heading, subtitle, items, topics = [], ui } = hub;
-const topicCards = buildTopicCards(lang, topics, items, await getFaqTopicKeys());
+const allArticles = await getFaqArticles(lang);
+const topicCards = buildTopicCards(lang, hub.topics ?? [], allArticles);
+
+const visibleArticles = allArticles.filter((article) => {
+  if (activeTopic && article.faqTopic !== activeTopic) return false;
+  if (activeSubtopic && article.faqSubtopic !== activeSubtopic) return false;
+  return true;
+});
+
+const topicMap = new Map(topicCards.map((tc) => [tc.key, tc]));
+const activeTopicObj = activeTopic ? topicMap.get(activeTopic) : undefined;
+const activeSubtopicObj = activeTopicObj && activeSubtopic
+  ? activeTopicObj.subtopics.find((sub) => sub.key === activeSubtopic)
+  : undefined;
+
+const hubUrl = faqPath(lang);
+const faqLabel = t.nav?.faq || 'FAQ';
+const viewDetailsLabel = t.product?.viewDetails || 'View Details';
+
+const pageHeading = activeSubtopicObj
+  ? activeSubtopicObj.title
+  : activeTopicObj
+    ? activeTopicObj.title
+    : hub.heading;
+
+const pageTitle = activeSubtopicObj || activeTopicObj
+  ? `${pageHeading} — ${hub.seoTitle}`
+  : hub.seoTitle;
+
+const pageDescription = hub.seoDescription;
+
+const breadcrumbItems: Array<{ label: string; href: string }> = [
+  { label: t.nav.home, href: currentPath ? `/${currentPath.replace(/\/$/, '')}` : '/' },
+  { label: faqLabel, href: activeTopicObj ? hubUrl : '#' },
+];
+if (activeTopicObj) {
+  breadcrumbItems.push({
+    label: activeTopicObj.title,
+    href: activeSubtopicObj && activeTopicObj.href ? activeTopicObj.href : '#',
+  });
+}
+if (activeSubtopicObj) {
+  breadcrumbItems.push({ label: activeSubtopicObj.title, href: '#' });
+}
 ---
 
-<Layout title={seoTitle} lang={lang} description={seoDescription} type="website">
+<Layout title={pageTitle} lang={lang} description={pageDescription} type="website">
   <Header lang={lang} />
-  <main id="main-content" tabindex="-1" class="faq-page">
-    <FaqHero
-      lang={lang}
-      heading={heading}
-      subtitle={subtitle}
-      crumbs={[{ label: t.nav.home, href: `${lang === 'en' ? '' : `/${lang}`}/` }, { label: 'FAQ' }]}
-      searchPlaceholder={ui.searchPlaceholder}
-      clearLabel={t.nav?.ariaClearSearch}
-      centered
-    />
-    <FaqTopicGrid lang={lang} title={ui.topicsTitle} topics={topicCards} />
-    <FaqQuestionList
-      items={items}
-      lang={lang}
-      topics={topics}
-      title={ui.questionsTitle}
-      noResults={ui.noResults}
-    />
+  <Breadcrumb items={breadcrumbItems} lang={lang} />
+
+  <main id="main-content" tabindex="-1" class="w-full min-h-screen py-6 lg:py-8 bg-stone-50 faq-page" dir={isRTL ? 'rtl' : 'ltr'}>
+    <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <FaqSidebar
+          lang={lang}
+          currentPath={currentPath}
+          allLabel={hub.ui.questionsTitle}
+          allHref={hubUrl}
+          totalCount={allArticles.length}
+          topics={topicCards}
+          activeTopic={activeTopic}
+          activeSubtopic={activeSubtopic}
+          t={t}
+        />
+
+        <div class="col-span-1 lg:col-span-3 min-w-0">
+          <!-- Mobile Topic Chips (sidebar hidden below lg) -->
+          <div class="lg:hidden mb-4 -mx-4 px-4 overflow-x-auto" role="navigation" aria-label={hub.ui.topicsTitle}>
+            <div class="flex gap-2 w-max pb-1">
+              <a
+                href={hubUrl}
+                class:list={[
+                  'flex items-center gap-1.5 whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-bold border transition-colors',
+                  !activeTopic
+                    ? 'bg-[#5D4E37] text-white border-[#5D4E37]'
+                    : 'bg-white text-[#5D4E37] border-stone-200 hover:bg-stone-50 active:bg-stone-50 focus-visible:bg-stone-50 focus-within:bg-stone-50',
+                ]}
+              >
+                <span>{hub.ui.questionsTitle}</span>
+                <span class:list={['text-[11px]', !activeTopic ? 'text-white/80' : 'text-stone-500']}>
+                  {allArticles.length}
+                </span>
+              </a>
+              {topicCards.filter((tc) => Boolean(tc.href)).map((topic) => {
+                const isActive = topic.key === activeTopic;
+                return (
+                  <a
+                    href={topic.href}
+                    class:list={[
+                      'flex items-center gap-1.5 whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-bold border transition-colors',
+                      isActive
+                        ? 'bg-[#5D4E37] text-white border-[#5D4E37]'
+                        : 'bg-white text-[#5D4E37] border-stone-200 hover:bg-stone-50 active:bg-stone-50 focus-visible:bg-stone-50 focus-within:bg-stone-50',
+                    ]}
+                  >
+                    <span>{topic.title}</span>
+                    <span class:list={['text-[11px]', isActive ? 'text-white/80' : 'text-stone-500']}>
+                      {topic.count}
+                    </span>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+
+          <!-- Header & Card Search (matches ProductListingPage.astro) -->
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
+            <h1 class="text-base lg:text-lg font-bold text-stone-900">
+              {pageHeading}
+            </h1>
+
+            <div class="w-full sm:w-72 flex items-center gap-2 border border-stone-200 bg-white rounded-lg px-3 transition-colors hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355] shrink-0">
+              <input
+                type="search"
+                placeholder={hub.ui.searchPlaceholder}
+                aria-label={hub.ui.searchPlaceholder}
+                autocomplete="off"
+                data-faq-card-search
+                class="w-full min-w-0 py-2 bg-transparent border-none outline-hidden text-sm text-stone-900 placeholder:text-stone-400 focus:ring-0"
+              />
+              <button
+                type="button"
+                class="faq-search-clear flex items-center justify-center p-1 text-stone-400 hover:text-stone-700 active:text-stone-700 focus-visible:text-stone-700 focus-within:text-stone-700 transition-colors cursor-pointer"
+                aria-label={t.nav?.ariaClearSearch || 'Clear search'}
+                hidden
+                data-faq-card-search-clear
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              <svg class="w-4 h-4 text-stone-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- FAQ Article Card Grid (matches ProductListingPage.astro) -->
+          <div data-faq-card-grid class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-6 xl:gap-x-6 xl:gap-y-10">
+            {visibleArticles.map((article) => {
+              const tObj = topicMap.get(article.faqTopic);
+              const sObj = tObj && article.faqSubtopic
+                ? tObj.subtopics.find((s) => s.key === article.faqSubtopic)
+                : undefined;
+              return (
+                <FaqCard
+                  article={article}
+                  lang={lang}
+                  topicTitle={tObj?.title}
+                  subtopicTitle={sObj?.title}
+                  viewDetailsLabel={viewDetailsLabel}
+                />
+              );
+            })}
+          </div>
+
+          <p
+            hidden
+            data-faq-card-empty
+            class="mt-6 rounded-xl border border-dashed border-stone-300 bg-white p-8 text-center text-sm text-stone-600"
+          >
+            {hub.ui.noResults}
+          </p>
+        </div>
+      </div>
+    </div>
   </main>
+
   <Footer lang={lang} />
 </Layout>
+
+<script>
+  const initFaqCardSearch = () => {
+    const input = document.querySelector<HTMLInputElement>('[data-faq-card-search]');
+    const clear = document.querySelector<HTMLButtonElement>('[data-faq-card-search-clear]');
+    const grid = document.querySelector<HTMLElement>('[data-faq-card-grid]');
+    const empty = document.querySelector<HTMLElement>('[data-faq-card-empty]');
+    if (!input || !grid || input.dataset.faqCardSearchBound) return;
+    input.dataset.faqCardSearchBound = '1';
+
+    const cards = Array.from(grid.querySelectorAll<HTMLElement>('[data-faq-card]'));
+    const applyFilter = () => {
+      const query = input.value.trim().toLowerCase();
+      if (clear) clear.hidden = input.value.length === 0;
+      let visible = 0;
+      cards.forEach((card) => {
+        const text = card.dataset.faqSearchText || '';
+        const match = !query || text.includes(query);
+        card.hidden = !match;
+        if (match) visible += 1;
+      });
+      if (empty) empty.hidden = visible > 0;
+    };
+
+    input.addEventListener('input', applyFilter);
+    clear?.addEventListener('click', () => {
+      input.value = '';
+      applyFilter();
+      input.focus();
+    });
+    if (input.value) applyFilter();
+  };
+
+  document.addEventListener('astro:page-load', initFaqCardSearch);
+  initFaqCardSearch();
+</script>
+
+<style>
+  .faq-search-clear[hidden] {
+    display: none;
+  }
+</style>

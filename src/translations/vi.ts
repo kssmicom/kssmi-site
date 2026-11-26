@@ -20,6 +20,7 @@ export default {
       customization: "Tùy chỉnh",
       collection: "Bộ sưu tập",
       feature: "Giải pháp",
+      faq: "FAQ",
       about: "Giới thiệu",
       contact: "Liên hệ",
       blog: "Blog",

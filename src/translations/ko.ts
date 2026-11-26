@@ -20,6 +20,7 @@ export default {
       customization: "맞춤 제작",
       collection: "컬렉션",
       feature: "솔루션",
+      faq: "FAQ",
       about: "소개",
       contact: "문의",
       blog: "블로그",

@@ -22,7 +22,7 @@ function writeFixtureFile(root, relPath, content) {
 
 function createValidContentRoot() {
   const root = path.join(taskRoot, `case-${++sequence}`);
-  for (const dir of ['products', 'collection', 'blog', 'feature', 'category-product']) {
+  for (const dir of ['products', 'collection', 'faq', 'blog', 'feature', 'category-product']) {
     fs.mkdirSync(path.join(root, dir), { recursive: true });
   }
   writeFixtureFile(
@@ -34,6 +34,11 @@ function createValidContentRoot() {
     root,
     'collection/about/about.en.md',
     '---\ntitle: "About Kssmi"\nsections:\n  - title: "Section One"\n    description: "Text"\n---\nAbout body\n'
+  );
+  writeFixtureFile(
+    root,
+    'faq/index/faq.en.md',
+    '---\nlang: "en"\nslug: "faq"\nheading: "FAQ"\n---\n'
   );
   writeFixtureFile(
     root,
@@ -51,7 +56,7 @@ function runCli(args) {
   });
 }
 
-test('validates all 5 collections, allows empty blog/feature, and keeps category-product non-recursive', () => {
+test('validates all 6 collections, allows empty blog/feature, and keeps category-product non-recursive', () => {
   const root = createValidContentRoot();
   // Nested markdown inside category-product is outside Astro's pattern: '*.md'
   writeFixtureFile(root, 'category-product/nested/ignored.md', 'no frontmatter here');
@@ -59,7 +64,7 @@ test('validates all 5 collections, allows empty blog/feature, and keeps category
   const res = runCli(['--content-root', root]);
   assert.equal(res.status, 0, res.stderr + res.stdout);
   assert.match(res.stdout, /0 file\(s\) found \(empty collection allowed\)/);
-  assert.match(res.stdout, /All 3 files validated successfully\./);
+  assert.match(res.stdout, /All 4 files validated successfully\./);
 
   // Top-level category-product file IS scanned and fails on invalid frontmatter
   writeFixtureFile(root, 'category-product/broken.md', '---\ntitle: "unclosed\n---\n');
@@ -237,7 +242,7 @@ test('unreadable markdown file fails with exit code 1 instead of being marked va
 });
 
 test('missing required directories and non-directory paths fail with exit code 1', () => {
-  for (const missingDir of ['products', 'collection', 'category-product']) {
+  for (const missingDir of ['products', 'collection', 'faq', 'category-product']) {
     const root = createValidContentRoot();
     fs.rmSync(path.join(root, missingDir), { recursive: true, force: true });
     const res = runCli(['--content-root', root]);
@@ -261,7 +266,7 @@ test('absent optional empty directories (blog/feature) pass clean Git checkout v
   const cleanCheckoutRes = runCli(['--content-root', root]);
   assert.equal(cleanCheckoutRes.status, 0, cleanCheckoutRes.stderr + cleanCheckoutRes.stdout);
   assert.match(cleanCheckoutRes.stdout, /optional empty directory absent/);
-  assert.match(cleanCheckoutRes.stdout, /All 3 files validated successfully\./);
+  assert.match(cleanCheckoutRes.stdout, /All 4 files validated successfully\./);
 
   if (isPosixNonRoot) {
     const lockedBlog = path.join(root, 'blog');

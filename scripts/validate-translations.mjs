@@ -139,16 +139,16 @@ assert(
   `${indexPath} is missing loaders for: ${missingLoaders.join(', ')}.`,
 );
 
-// FAQ hub content (/faq/) is authored in one frontmatter-only Markdown file per
-// language under faq/index/; sub-FAQ pages live in sibling folders (faq/<topic>/).
-const faqDirectory = 'src/content/collection/faq/index';
+// FAQ hub (/faq/) lives under src/content/faq/index/; FAQ articles live in sibling folders (src/content/faq/<slug>/).
+const faqDirectory = 'src/content/faq/index';
 const expectedFaqFiles = languages.map((lang) => `faq.${lang}.md`).sort();
-const faqFiles = readdirSync(path.join(root, faqDirectory)).sort();
+const faqFiles = readdirSync(path.join(root, faqDirectory))
+  .filter((name) => name !== '.DS_Store')
+  .sort();
 assert(
   JSON.stringify(faqFiles) === JSON.stringify(expectedFaqFiles),
   `${faqDirectory} must contain exactly one faq.<lang>.md file for every declared language.`,
 );
-const faqByLanguage = new Map();
 for (const lang of languages) {
   const file = `${faqDirectory}/faq.${lang}.md`;
   try {
@@ -161,18 +161,48 @@ for (const lang of languages) {
     for (const field of ['seoTitle', 'seoDescription', 'heading', 'subtitle']) {
       assert(typeof data?.[field] === 'string' && data[field].trim().length > 0, `${file} requires ${field}.`);
     }
-    assert(Array.isArray(data?.items) && data.items.length === 12, `${file} must contain 12 FAQ items.`);
-    if (!Array.isArray(data?.items)) continue;
     for (const field of ['searchPlaceholder', 'topicsTitle', 'questionsTitle', 'noResults', 'backToFaq', 'otherTopics']) {
       assert(typeof data?.ui?.[field] === 'string' && data.ui[field].trim().length > 0, `${file} requires ui.${field}.`);
     }
     const topicKeys = Array.isArray(data?.topics) ? data.topics.map((topic) => topic?.key) : [];
     assert(topicKeys.length > 0 && topicKeys.every((key) => /^[a-z0-9-]+$/.test(key ?? '')), `${file} requires topics with URL-safe keys.`);
+    const text = JSON.stringify(data);
+    assert(lang === 'zh' ? !/Kssmi|KSSMI|柯视觅/.test(text) && text.includes('可米') : text.includes('Kssmi'), `${file} must preserve the localized brand.`);
+  } catch (error) {
+    failures.push(`${file}: ${error.message}`);
+  }
+}
+
+const faqArticleSlug = 'eyewear-factory-faq';
+const faqArticleDir = `src/content/faq/${faqArticleSlug}`;
+const expectedArticleFiles = languages.map((lang) => `${faqArticleSlug}.${lang}.md`).sort();
+const articleFiles = readdirSync(path.join(root, faqArticleDir))
+  .filter((name) => name !== '.DS_Store')
+  .sort();
+assert(
+  JSON.stringify(articleFiles) === JSON.stringify(expectedArticleFiles),
+  `${faqArticleDir} must contain exactly one ${faqArticleSlug}.<lang>.md file for every declared language.`,
+);
+const faqByLanguage = new Map();
+for (const lang of languages) {
+  const file = `${faqArticleDir}/${faqArticleSlug}.${lang}.md`;
+  try {
+    const source = read(file);
+    const match = source.match(/^---\n([\s\S]*?)\n---\s*$/);
+    assert(Boolean(match), `${file} must have frontmatter and an empty Markdown body.`);
+    if (!match) continue;
+    const data = yaml.load(match[1]);
+    assert(data?.lang === lang && data?.slug === faqArticleSlug, `${file} must match its language and article slug.`);
+    assert(typeof data?.faqTopic === 'string' && data.faqTopic.trim().length > 0, `${file} requires faqTopic.`);
+    for (const field of ['seoTitle', 'seoDescription', 'heading', 'subtitle']) {
+      assert(typeof data?.[field] === 'string' && data[field].trim().length > 0, `${file} requires ${field}.`);
+    }
+    assert(Array.isArray(data?.items) && data.items.length === 12, `${file} must contain 12 FAQ items.`);
+    if (!Array.isArray(data?.items)) continue;
     for (const [index, item] of data.items.entries()) {
       for (const field of ['question', 'answer']) {
         assert(typeof item?.[field] === 'string' && item[field].trim().length > 0, `${file} item ${index + 1} requires ${field}.`);
       }
-      assert(topicKeys.includes(item?.topic), `${file} item ${index + 1} must reference a declared topic.`);
     }
     const text = JSON.stringify(data);
     assert(lang === 'zh' ? !/Kssmi|KSSMI|柯视觅/.test(text) && text.includes('可米') : text.includes('Kssmi'), `${file} must preserve the localized brand.`);

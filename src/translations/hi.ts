@@ -20,6 +20,7 @@ export default {
       customization: "कस्टमाइज़",
       collection: "संग्रह",
       feature: "समाधान",
+      faq: "FAQ",
       about: "परिचय",
       contact: "संपर्क",
       blog: "ब्लॉग",

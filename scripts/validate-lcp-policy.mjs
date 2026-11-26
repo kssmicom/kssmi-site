@@ -23,12 +23,8 @@ assert(productCard.includes('loading={loadingStrategy}'), 'ProductCard must keep
 assert(productCard.includes('fetchpriority={isLcpCandidate ? "high" : "auto"}'), 'ProductCard first image must retain high fetch priority.');
 
 const directListingPages = [
-  'src/pages/blog/[...page].astro',
-  'src/pages/blog/[category]/[...page].astro',
   'src/pages/eyewear/[...page].astro',
   'src/pages/eyewear/[category]/[...page].astro',
-  'src/pages/[lang]/blog/[...page].astro',
-  'src/pages/[lang]/blog/[category]/[...page].astro',
   'src/pages/[lang]/eyewear/[...page].astro',
   'src/pages/[lang]/eyewear/[category]/[...page].astro',
 ];
@@ -40,6 +36,12 @@ for (const file of directListingPages) {
   assert(source.includes("loading={isLcpCandidate ? 'eager' : 'lazy'}"), `${file} must eagerly load only its first card image.`);
   assert(source.includes("fetchpriority={isLcpCandidate ? 'high' : 'auto'}"), `${file} must prioritize only its first card image.`);
 }
+
+const blogListing = read('src/components/pages/BlogListingPage.astro');
+const blogCard = read('src/components/blog/BlogCard.astro');
+assert(blogListing.includes('lcpImage={lcpImage}'), 'BlogListingPage must preload the first card LCP image.');
+assert(blogCard.includes("loading={isLcpCandidate ? 'eager' : 'lazy'}"), 'BlogCard must eagerly load only its first card image.');
+assert(blogCard.includes("fetchpriority={isLcpCandidate ? 'high' : 'auto'}"), 'BlogCard first image must retain high fetch priority.');
 
 const categoryPage = read('src/components/pages/ProductCategoryPage.astro');
 assert(categoryPage.includes("baseSegment === 'product'"), 'Category LCP selection must support product cover and blog/eyewear image fields.');

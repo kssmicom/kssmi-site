@@ -33,11 +33,10 @@ const contactUrl = lang === 'en' ? '/contact' : `/${lang}/contact`;
 // renders when this language actually has content — header.js builds the
 // expanded panel from the shared category list on hover, and with an empty
 // collection those category targets would all be 404s.
-const hasLangItems = async (collectionName: 'blog' | 'feature') => {
+const hasLangItems = async (collectionName: 'feature') => {
   const entries = await getCollection(collectionName);
   return entries.some((entry) => (entry.data?.lang ?? 'en') === lang);
 };
-const blogHasItems = await hasLangItems('blog');
 const eyewearHasItems = await hasLangItems('feature');
 
 // Get the page path WITHOUT language prefix for language switcher
@@ -167,15 +166,10 @@ const menuStructure: MenuItem[] = [
     menuBase: 'eyewear',
     hasDropdown: eyewearHasItems,
   },
+  { label: t.nav.faq || 'FAQ', href: `/${currentPath}faq/` },
   { label: t.nav.about, href: aboutUrl },
   { label: t.nav.contact, href: contactUrl },
-  {
-    label: t.nav.blog,
-    href: `/${currentPath}blog`,
-    menuKey: 'blog',
-    menuBase: 'blog',
-    hasDropdown: blogHasItems,
-  },
+  { label: t.nav.blog, href: `/${currentPath}blog/` },
 ];
 
 // Language names for dropdown
@@ -237,13 +231,13 @@ const languageNames = {
       </a>
 
       <!-- Navigation - Left aligned after logo -->
-      <nav class="hidden lg:block h-full ms-4 xl:ms-6 2xl:ms-12 z-30" aria-label="Main navigation">
-        <ul class="flex items-center h-full m-0 p-0 list-none gap-2 xl:gap-3 2xl:gap-6">
+      <nav class="hidden lg:block h-full ms-3 xl:ms-6 2xl:ms-12 z-30" aria-label="Main navigation">
+        <ul class="flex items-center h-full m-0 p-0 list-none gap-1 xl:gap-2.5 2xl:gap-6">
           {menuStructure.map((item) => (
             <li class="h-full flex items-center">
               <a href={item.href}
                  class:list={[
-                   'nav-link relative inline-block whitespace-nowrap font-Manrope font-bold text-xs xl:text-[13px] 2xl:text-sm uppercase tracking-wide 2xl:tracking-wider transition-colors duration-300 px-1.5 xl:px-2 2xl:px-3 py-2',
+                   'nav-link relative inline-block whitespace-nowrap font-Manrope font-bold text-xs xl:text-[13px] 2xl:text-sm uppercase tracking-wide 2xl:tracking-wider transition-colors duration-300 px-1 xl:px-2 2xl:px-3 py-2',
                    transparent
                      ? 'text-white/90 hover:text-amber-300 active:text-amber-300 focus-visible:text-amber-300 focus-within:text-amber-300'
                      : 'text-gray-700 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37]',

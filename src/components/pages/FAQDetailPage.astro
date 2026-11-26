@@ -1,0 +1,195 @@
+---
+/**
+ * FAQ Article Detail Page (/faq/<slug>/)
+ * Blog-variant FAQ article layout: left sticky FAQ sidebar + single right <article> card
+ * with one specific H1 title, in-article question search, and H2→H3 Q&A accordion + FAQPage JSON-LD.
+ */
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import FaqSidebar from '../faq/FaqSidebar.astro';
+import FaqQuestionList from '../faq/FaqQuestionList.astro';
+import InquiryFormLazy from '../InquiryFormLazy.astro';
+import {
+  buildTopicCards,
+  faqPath,
+  getFaqArticles,
+  getFaqHub,
+} from '../faq/faqData';
+import '../faq/faq-theme.css';
+import { getTranslations } from '../../translations';
+
+interface Props {
+  lang?: string;
+  slug: string;
+}
+
+const { lang = 'en', slug } = Astro.props;
+const isRTL = lang === 'ar';
+const currentPath = lang === 'en' ? '' : `${lang}/`;
+const t = await getTranslations(lang);
+const hub = await getFaqHub(lang);
+const allArticles = await getFaqArticles(lang);
+const article = allArticles.find((a) => a.slug === slug);
+if (!article) {
+  throw new Error(`Missing FAQ article content for slug: ${slug}`);
+}
+
+const topicCards = buildTopicCards(lang, hub.topics ?? [], allArticles);
+const topicObj = topicCards.find((tc) => tc.key === article.faqTopic);
+const subtopicObj = topicObj && article.faqSubtopic
+  ? topicObj.subtopics.find((s) => s.key === article.faqSubtopic)
+  : undefined;
+
+const hubUrl = faqPath(lang);
+const faqLabel = t.nav?.faq || 'FAQ';
+
+const breadcrumbItems: Array<{ label: string; href: string }> = [
+  { label: t.nav.home, href: currentPath ? `/${currentPath.replace(/\/$/, '')}` : '/' },
+  { label: faqLabel, href: hubUrl },
+];
+if (topicObj?.href) {
+  breadcrumbItems.push({ label: topicObj.title, href: topicObj.href });
+}
+if (subtopicObj?.href) {
+  breadcrumbItems.push({ label: subtopicObj.title, href: subtopicObj.href });
+}
+breadcrumbItems.push({ label: article.heading, href: '#' });
+---
+
+<Layout title={article.seoTitle} lang={lang} description={article.seoDescription} image={article.cover} type="article">
+  <Header lang={lang} />
+  <Breadcrumb items={breadcrumbItems} lang={lang} />
+
+  <main id="main-content" tabindex="-1" data-pagefind-body="true" class="w-full min-h-screen py-6 lg:py-8 bg-stone-50 faq-page" dir={isRTL ? 'rtl' : 'ltr'}>
+    <div class="sr-only" data-pagefind-meta="title">{article.heading}</div>
+    {article.cover && <meta data-pagefind-meta="image[content]" content={article.cover} />}
+    <div class="w-[95%] lg:w-[92%] 2xl:w-[87%] max-w-[1860px] mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div class="contents" data-pagefind-ignore>
+          <FaqSidebar
+            lang={lang}
+            currentPath={currentPath}
+            allLabel={hub.ui.questionsTitle}
+            allHref={hubUrl}
+            totalCount={allArticles.length}
+            topics={topicCards}
+            activeTopic={article.faqTopic}
+            activeSubtopic={article.faqSubtopic ?? null}
+            t={t}
+          />
+        </div>
+
+        <div class="col-span-1 lg:col-span-3 min-w-0">
+          <!-- Mobile Topic Chips (sidebar hidden below lg) -->
+          <div class="lg:hidden mb-4 -mx-4 px-4 overflow-x-auto" data-pagefind-ignore role="navigation" aria-label={hub.ui.topicsTitle}>
+            <div class="flex gap-2 w-max pb-1">
+              <a
+                href={hubUrl}
+                class="flex items-center gap-1.5 whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-bold border bg-white text-[#5D4E37] border-stone-200 hover:bg-stone-50 active:bg-stone-50 focus-visible:bg-stone-50 focus-within:bg-stone-50 transition-colors"
+              >
+                <span>{hub.ui.questionsTitle}</span>
+                <span class="text-[11px] text-stone-500">{allArticles.length}</span>
+              </a>
+              {topicCards.filter((tc) => Boolean(tc.href)).map((tc) => {
+                const active = tc.key === article.faqTopic;
+                return (
+                  <a
+                    href={tc.href}
+                    class:list={[
+                      'flex items-center gap-1.5 whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-bold border transition-colors',
+                      active
+                        ? 'bg-[#5D4E37] text-white border-[#5D4E37]'
+                        : 'bg-white text-[#5D4E37] border-stone-200 hover:bg-stone-50 active:bg-stone-50 focus-visible:bg-stone-50 focus-within:bg-stone-50',
+                    ]}
+                  >
+                    <span>{tc.title}</span>
+                    <span class:list={['text-[11px]', active ? 'text-white/80' : 'text-stone-500']}>
+                      {tc.count}
+                    </span>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+
+          <!-- Single Blog-Style FAQ Article Card -->
+          <article class="bg-white rounded-xl shadow-xs border border-stone-200/50 p-6 xl:p-10">
+            <header class="pb-6 mb-2 border-b border-stone-200/70">
+              <h1 class="text-2xl lg:text-3xl font-bold text-stone-900 tracking-tight leading-tight">
+                {article.heading}
+              </h1>
+
+              <div class="mt-5 max-w-xl flex items-center gap-2 border border-stone-200 bg-stone-50 rounded-lg px-3 transition-colors hover:border-[#8B7355] active:border-[#8B7355] focus-visible:border-[#8B7355] focus-within:border-[#8B7355] focus-within:bg-white">
+                <input
+                  type="search"
+                  placeholder={hub.ui.searchPlaceholder}
+                  aria-label={hub.ui.searchPlaceholder}
+                  autocomplete="off"
+                  data-faq-search
+                  class="w-full min-w-0 py-2 bg-transparent border-none outline-hidden text-sm text-stone-900 placeholder:text-stone-400 focus:ring-0"
+                />
+                <button
+                  type="button"
+                  class="faq-search-clear flex items-center justify-center p-1 text-stone-400 hover:text-stone-700 active:text-stone-700 focus-visible:text-stone-700 focus-within:text-stone-700 transition-colors cursor-pointer"
+                  aria-label={t.nav?.ariaClearSearch || 'Clear search'}
+                  hidden
+                  data-faq-search-clear
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+                <svg class="w-4 h-4 text-stone-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+            </header>
+
+            <FaqQuestionList
+              items={article.items}
+              lang={lang}
+              topics={hub.topics}
+              noResults={hub.ui.noResults}
+              backLink={{ label: hub.ui.backToFaq, href: hubUrl }}
+            />
+          </article>
+
+          <div class="mt-8 faq-detail-inquiry" data-pagefind-ignore>
+            <InquiryFormLazy
+              lang={lang}
+              productName={article.heading}
+              productUrl={Astro.url.pathname}
+              source="faq_page"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>
+
+<style>
+  .faq-search-clear[hidden] {
+    display: none;
+  }
+
+  .faq-detail-inquiry :global(#inquiry-form-section) {
+    padding-top: 1.5rem;
+    padding-bottom: 0;
+    background-color: transparent;
+  }
+
+  .faq-detail-inquiry :global(#inquiry-form-section > div) {
+    width: 100%;
+    max-width: none;
+    padding-inline: 0;
+  }
+
+  .faq-detail-inquiry :global(#inquiry-form-section > div > div:last-child) {
+    max-width: none;
+  }
+</style>

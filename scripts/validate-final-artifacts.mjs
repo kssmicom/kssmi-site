@@ -38,10 +38,12 @@ if (!fs.existsSync(smPath)) {
   }
   if (stack.length) fail(`sitemap.xml 有未闭合标签：${stack.join(',')}`);
 
+  const hasBlogs = KEEP.some((lang) => fs.existsSync(path.join(dist, lang, 'sitemap-blogs.xml')));
+  const expectedKinds = hasBlogs ? ['core', 'products', 'blogs'] : ['core', 'products'];
   const entries = [...xml.matchAll(/<sitemap>\s*<loc>([^<]+)<\/loc>/g)].map(x => x[1].trim());
-  if (entries.length !== KEEP.length * 2) fail(`sitemap 索引应为 ${KEEP.length * 2} 条（17 语种 × core/products），实际 ${entries.length}`);
+  if (entries.length !== KEEP.length * expectedKinds.length) fail(`sitemap 索引应为 ${KEEP.length * expectedKinds.length} 条（17 语种 × ${expectedKinds.join('/')}），实际 ${entries.length}`);
   for (const lang of KEEP) {
-    for (const kind of ['core', 'products']) {
+    for (const kind of expectedKinds) {
       const expected = `/${lang}/sitemap-${kind}.xml`;
       if (!entries.some(u => new URL(u).pathname === expected)) fail(`sitemap 缺少语种文件：${expected}`);
     }

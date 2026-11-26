@@ -20,6 +20,7 @@ export default {
       customization: "Özelleştirme",
       collection: "Koleksiyon",
       feature: "Çözümler",
+      faq: "FAQ",
       about: "Hakkımızda",
       contact: "İletişim",
       blog: "Blog",

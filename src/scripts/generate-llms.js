@@ -35,16 +35,28 @@ const parseFrontmatter = (fileContent) => {
         ? overviewMatch[1].replace(/\n/g, ' ').replace(/[<>]/g, '').substring(0, 300).trim() + '...' 
         : null;
 
+    const fm = (() => {
+        try {
+            return yaml.load(frontmatter) || {};
+        } catch {
+            return {};
+        }
+    })();
+
+    const cleanStr = (val) => (typeof val === 'string' ? val.replace(/\s+/g, ' ').trim() : null);
+
     return {
-        title: getValue('title'),
-        description: getValue('description') || getValue('seoDescription'),
-        slug: getValue('slug'),
-        itemNo: getValue('itemNo'),
-        categories: getArray('categories'),
-        materials: getArray('materials'),
-        serviceMode: getArray('serviceMode'),
-        moq: getValue('moq'),
-        pubDate: getValue('pubDate'),
+        title: cleanStr(fm.title) || getValue('title'),
+        description: cleanStr(fm.excerpt) || cleanStr(fm.seoDescription) || cleanStr(fm.description) || getValue('description') || getValue('seoDescription') || getValue('excerpt'),
+        slug: cleanStr(fm.slug) || getValue('slug'),
+        itemNo: cleanStr(fm.itemNo) || getValue('itemNo'),
+        categories: Array.isArray(fm.categories) ? fm.categories : getArray('categories'),
+        materials: Array.isArray(fm.materials) ? fm.materials : getArray('materials'),
+        serviceMode: Array.isArray(fm.serviceMode) ? fm.serviceMode : getArray('serviceMode'),
+        moq: cleanStr(fm.moq) || getValue('moq'),
+        pubDate: fm.published instanceof Date
+            ? fm.published.toISOString().split('T')[0]
+            : (cleanStr(fm.pubDate) || cleanStr(fm.published) || getValue('pubDate') || getValue('published')),
         snippet: textSnippet
     };
 };
@@ -80,13 +92,14 @@ const processCollection = (collectionName, titlePathPattern) => {
             const lang = langMatch ? langMatch[1] : 'en';
 
             if (!langData[lang]) {
-                langData[lang] = { products: [], landing: [], blog: [] };
+                langData[lang] = { products: [], landing: [], blog: [], faq: [] };
             }
 
             const urlPrefix = lang === 'en' ? '' : `/${lang}`;
             const slugPart = data.slug ? data.slug.replace(/\/$/, '') : file.replace(/\.[a-z]{2}\.mdx?$/, '').replace(/\.md$/, '');
             const urlPathParams = titlePathPattern ? `${titlePathPattern}/` : '';
-            const url = `${SITE_URL}${urlPrefix}/${urlPathParams}${slugPart}`;
+            const trailing = collectionName === 'blog' ? '/' : '';
+            const url = `${SITE_URL}${urlPrefix}/${urlPathParams}${slugPart}${trailing}`;
 
             const label = data.itemNo ? `${data.title} (${data.itemNo})` : `${data.title}`;
 
@@ -96,7 +109,8 @@ const processCollection = (collectionName, titlePathPattern) => {
             if (data.serviceMode) entry += `  > Service Modes: ${data.serviceMode.join(', ')}\n`;
             if (data.moq) entry += `  > MOQ: ${data.moq}\n`;
             if (data.pubDate) entry += `  > Published: ${data.pubDate}\n`;
-            if (data.snippet) entry += `  > Summary: ${data.snippet}\n`;
+            const summaryText = collectionName === 'blog' ? (data.description || data.snippet) : data.snippet;
+            if (summaryText) entry += `  > Summary: ${summaryText}\n`;
             entry += `\n`;
 
             if (langData[lang][collectionName] !== undefined) {
@@ -108,6 +122,51 @@ const processCollection = (collectionName, titlePathPattern) => {
 
 processCollection('products', 'product');
 processCollection('blog', 'blog');
+
+const faqRootDir = path.join(process.cwd(), 'src/content/faq');
+if (fs.existsSync(faqRootDir)) {
+    const slugs = fs.readdirSync(faqRootDir)
+        .filter((name) => name !== 'index' && !name.startsWith('.'))
+        .filter((name) => fs.statSync(path.join(faqRootDir, name)).isDirectory())
+        .sort();
+
+    for (const slug of slugs) {
+        const slugDir = path.join(faqRootDir, slug);
+        for (const file of fs.readdirSync(slugDir).sort()) {
+            if (!file.endsWith('.md') || file.startsWith('.')) continue;
+            const langMatch = file.match(/\.([a-z]{2})\.md$/);
+            const lang = langMatch ? langMatch[1] : 'en';
+            const raw = fs.readFileSync(path.join(slugDir, file), 'utf-8');
+            const fmMatch = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+            if (!fmMatch) continue;
+            const fm = yaml.load(fmMatch[1]) || {};
+
+            if (!langData[lang]) {
+                langData[lang] = { products: [], landing: [], blog: [], faq: [] };
+            }
+
+            const urlPrefix = lang === 'en' ? '' : `/${lang}`;
+            const articleSlug = (typeof fm.slug === 'string' && fm.slug) ? fm.slug.replace(/\/$/, '') : slug;
+            const url = `${SITE_URL}${urlPrefix}/faq/${articleSlug}/`;
+            const title = fm.heading || fm.seoTitle || articleSlug;
+
+            let entry = `- [${title}](${url})\n`;
+            if (fm.seoDescription) {
+                entry += `  > ${String(fm.seoDescription).replace(/\s+/g, ' ').trim()}\n`;
+            }
+            if (Array.isArray(fm.items) && fm.items.length > 0) {
+                const questions = fm.items
+                    .map((it) => (it && typeof (it.question || it.q) === 'string' ? (it.question || it.q).trim() : ''))
+                    .filter(Boolean);
+                if (questions.length > 0) {
+                    entry += `  > Questions: ${questions.join('; ')}\n`;
+                }
+            }
+            entry += `\n`;
+            langData[lang].faq.push(entry);
+        }
+    }
+}
 
 // Populate localized landing pages (24 product categories + 28 customization catalog routes)
 const categoryProductDir = path.join(process.cwd(), 'src/content/category-product');
@@ -192,6 +251,7 @@ const translations = {
         core: "Core Pages", coreDesc: "Primary navigation and company information.",
         products: "Products", productsDesc: "Catalog of our premium B2B sunglasses and eyewear frames.",
         landing: "Landing Pages", landingDesc: "Product collections, material guides, and marketing pages.",
+        faq: "FAQ", faqDesc: "Manufacturing FAQ guides covering MOQ, OEM/ODM, materials, samples, QC, and shipping.",
         blog: "Blogs", blogDesc: "Industry insights, news, and editorial articles.",
         explore: "To explore our %LANG% content, please follow the specialized directories below:",
         generated: "Generated by Kssmi Eyewear",
@@ -202,9 +262,10 @@ const translations = {
         core: "核心页面", coreDesc: "主要导航和公司信息。",
         products: "产品", productsDesc: "我们的优质 B2B 太阳镜和眼镜架目录。",
         landing: "着陆页", landingDesc: "产品系列、材料指南和营销页面。",
+        faq: "常见问题", faqDesc: "涵盖起订量、OEM/ODM、材质、打样、品控与物流的眼镜工厂常见问题指南。",
         blog: "博客", blogDesc: "行业洞察、新闻和社论文章。",
         explore: "要探索我们的 %LANG% 内容，请按照以下专门的目录进行：",
-        generated: "由 Kssmi Eyewear 生成",
+        generated: "由 可米科技 生成",
         home: "主页", about: "关于我们", contact: "联系我们"
     },
     de: {
@@ -212,6 +273,7 @@ const translations = {
         core: "Kernseiten", coreDesc: "Primäre Navigation und Unternehmensinformationen.",
         products: "Produkte", productsDesc: "Katalog unserer Premium-B2B-Sonnenbrillen und Brillenfassungen.",
         landing: "Zielseiten", landingDesc: "Produktkollektionen, Materialleitfäden und Marketingseiten.",
+        faq: "FAQ", faqDesc: "Häufig gestellte Fragen zu MOQ, OEM/ODM, Materialien, Mustern, QC und Versand.",
         blog: "Blogs", blogDesc: "Branchenerkenntnisse, Neuigkeiten und redaktionelle Artikel.",
         explore: "Um unsere %LANG%-Inhalte zu erkunden, folgen Sie bitte den unten stehenden speziellen Verzeichnissen:",
         generated: "Erstellt von Kssmi Eyewear",
@@ -222,6 +284,7 @@ const translations = {
         core: "Páginas principales", coreDesc: "Navegación principal e información de la empresa.",
         products: "Productos", productsDesc: "Catálogo de nuestras gafas de sol B2B premium y monturas.",
         landing: "Páginas de aterrizaje", landingDesc: "Colecciones de productos, guías de materiales y páginas de marketing.",
+        faq: "Preguntas frecuentes", faqDesc: "Guías de preguntas frecuentes sobre MOQ, OEM/ODM, materiales, muestras, control de calidad y envíos.",
         blog: "Blogs", blogDesc: "Perspectivas de la industria, noticias y artículos editoriales.",
         explore: "Para explorar nuestro contenido en %LANG%, siga los directorios especializados a continuación:",
         generated: "Generado por Kssmi Eyewear",
@@ -232,6 +295,7 @@ const translations = {
         core: "Pages principales", coreDesc: "Navigation principale et informations sur l'entreprise.",
         products: "Produits", productsDesc: "Catalogue de nos lunettes de soleil B2B haut de gamme et montures.",
         landing: "Pages de destination", landingDesc: "Collections de produits, guides des matériaux et pages marketing.",
+        faq: "FAQ", faqDesc: "Guides FAQ couvrant le MOQ, l'OEM/ODM, les matériaux, les échantillons, le contrôle qualité et l'expédition.",
         blog: "Blogs", blogDesc: "Aperçus de l'industrie, actualités et articles éditoriaux.",
         explore: "Pour explorer notre contenu en %LANG%, veuillez suivre les répertoires spécialisés ci-dessous :",
         generated: "Généré par Kssmi Eyewear",
@@ -242,6 +306,7 @@ const translations = {
         core: "الصفحات الأساسية", coreDesc: "التنقل الأساسي ومعلومات الشركة.",
         products: "المنتجات", productsDesc: "كتالوج نظاراتنا الشمسية B2B وإطارات النظارات الفاخرة.",
         landing: "الصفحات المقصودة", landingDesc: "مجموعات المنتجات وأدلة المواد وصفحات التسويق.",
+        faq: "الأسئلة الشائعة", faqDesc: "أدلة الأسئلة الشائعة حول الحد الأدنى للطلب وOEM/ODM والمواد والعينات وفحص الجودة والشحن.",
         blog: "المدونات", blogDesc: "رؤى الصناعة والأخبار والمقالات التحريرية.",
         explore: "لاستكشاف محتوانا بـ %LANG%، يرجى اتباع الأدلة المتخصصة أدناه:",
         generated: "تم الإنشاء بواسطة Kssmi Eyewear",
@@ -252,6 +317,7 @@ const translations = {
         core: "मुख्य पृष्ठ", coreDesc: "प्राथमिक नेविगेशन और कंपनी की जानकारी।",
         products: "उत्पाद", productsDesc: "हमारे प्रीमियम B2B धूप का चश्मा और चश्मा फ्रेम की सूची।",
         landing: "लैंडिंग पृष्ठ", landingDesc: "उत्पाद संग्रह, सामग्री गाइड और विपणन पृष्ठ।",
+        faq: "सामान्य प्रश्न (FAQ)", faqDesc: "MOQ, OEM/ODM, सामग्री, सैंपल, गुणवत्ता नियंत्रण और शिपिंग पर फैक्ट्री FAQ गाइड।",
         blog: "ब्लॉग", blogDesc: "उद्योग अंतर्दृष्टि, समाचार और संपादकीय लेख।",
         explore: "हमारी %LANG% सामग्री का पता लगाने के लिए, कृपया नीचे दी गई विशेष निर्देशिकाओं का पालन करें:",
         generated: "Kssmi Eyewear द्वारा निर्मित",
@@ -262,6 +328,7 @@ const translations = {
         core: "Pagine principali", coreDesc: "Navigazione primaria e informazioni aziendali.",
         products: "Prodotti", productsDesc: "Catalogo dei nostri occhiali da sole e montature B2B premium.",
         landing: "Pagine di atterraggio", landingDesc: "Collezioni di prodotti, guide ai materiali e pagine di marketing.",
+        faq: "FAQ", faqDesc: "Guide FAQ di produzione su MOQ, OEM/ODM, materiali, campioni, controllo qualità e spedizioni.",
         blog: "Blog", blogDesc: "Approfondimenti del settore, notizie e articoli editoriali.",
         explore: "Per esplorare i nostri contenuti in %LANG%, segui le directory specializzate di seguito:",
         generated: "Generato da Kssmi Eyewear",
@@ -272,6 +339,7 @@ const translations = {
         core: "コアページ", coreDesc: "主要なナビゲーションと企業情報。",
         products: "製品", productsDesc: "当社のプレミアムB2Bサングラスとメガネフレームのカタログ。",
         landing: "ランディングページ", landingDesc: "製品コレクション、素材ガイド、マーケティングページ。",
+        faq: "よくある質問（FAQ）", faqDesc: "MOQ、OEM/ODM、素材、サンプル、品質管理、配送に関する製造FAQガイド。",
         blog: "ブログ", blogDesc: "業界の洞察、ニュース、編集記事。",
         explore: "当社の %LANG% コンテンツを検索するには、以下の専門ディレクトリに従ってください：",
         generated: "Kssmi Eyewear によって生成",
@@ -282,6 +350,7 @@ const translations = {
         core: "Kaca Utama", coreDesc: "Pandhu arah utama lan informasi perusahaan.",
         products: "Produk", productsDesc: "Katalog kacamata ireng B2B premium lan bingkai kacamata.",
         landing: "Kaca kebangkrutan", landingDesc: "Koleksi produk, pandhuan materi, lan kaca pemasaran.",
+        faq: "FAQ", faqDesc: "Pandhuan pitakon sing kerep ditakokake babagan MOQ, OEM/ODM, bahan, sampel, QC, lan pangiriman.",
         blog: "Blog", blogDesc: "Wawasan industri, warta, lan artikel editorial.",
         explore: "Kanggo njelajah konten %LANG% kita, tututi direktori khusus ing ngisor iki:",
         generated: "Digawe dening Kssmi Eyewear",
@@ -292,6 +361,7 @@ const translations = {
         core: "핵심 페이지", coreDesc: "기본 탐색 및 회사 정보.",
         products: "제품", productsDesc: "프리미엄 B2B 선글라스 및 안경테 카탈로그.",
         landing: "랜딩 페이지", landingDesc: "제품 컬렉션, 소재 가이드 및 마케팅 페이지.",
+        faq: "자주 묻는 질문(FAQ)", faqDesc: "MOQ, OEM/ODM, 소재, 샘플, 품질 관리 및 배송에 관한 제조 FAQ 가이드.",
         blog: "블로그", blogDesc: "산업 통찰력, 뉴스 및 편집 기사.",
         explore: "%LANG% 콘텐츠를 탐색하려면 아래의 전문 디렉토리를 따르십시오.",
         generated: "Kssmi Eyewear 제작",
@@ -302,6 +372,7 @@ const translations = {
         core: "Halaman Utama", coreDesc: "Navigasi utama dan maklumat syarikat.",
         products: "Produk", productsDesc: "Katalog cermin mata hitam B2B premium dan bingkai cermin mata kami.",
         landing: "Halaman Pendaratan", landingDesc: "Koleksi produk, panduan bahan dan halaman pemasaran.",
+        faq: "Soalan Lazim (FAQ)", faqDesc: "Panduan FAQ pembuatan meliputi MOQ, OEM/ODM, bahan, sampel, QC dan penghantaran.",
         blog: "Blog", blogDesc: "Wawasan industri, berita dan artikel editorial.",
         explore: "Untuk meneroka kandungan %LANG% kami, sila ikuti direktori khusus di bawah:",
         generated: "Dihasilkan oleh Kssmi Eyewear",
@@ -312,6 +383,7 @@ const translations = {
         core: "Páginas Principais", coreDesc: "Navegação primária e informações da empresa.",
         products: "Produtos", productsDesc: "Catálogo de nossos óculos de sol e armações B2B premium.",
         landing: "Páginas de Destino", landingDesc: "Coleções de produtos, guias de materiais e páginas de marketing.",
+        faq: "Perguntas Frequentes (FAQ)", faqDesc: "Guias de FAQ de fabricação sobre MOQ, OEM/ODM, materiais, amostras, controle de qualidade e envio.",
         blog: "Blogs", blogDesc: "Insights do setor, notícias e artigos editoriais.",
         explore: "Para explorar nosso conteúdo em %LANG%, siga os diretórios especializados abaixo:",
         generated: "Gerado por Kssmi Eyewear",
@@ -322,6 +394,7 @@ const translations = {
         core: "Основные страницы", coreDesc: "Основная навигация и информация о компании.",
         products: "Продукты", productsDesc: "Каталог наших премиальных B2B солнцезащитных очков и оправ.",
         landing: "Целевые страницы", landingDesc: "Коллекции продуктов, руководства по материалам и маркетинговые страницы.",
+        faq: "Частые вопросы (FAQ)", faqDesc: "Справочные материалы по производству: MOQ, OEM/ODM, материалы, образцы, контроль качества и доставка.",
         blog: "Блоги", blogDesc: "Отраслевые идеи, новости и редакционные статьи.",
         explore: "Чтобы изучить наш контент на %LANG%, пожалуйста, следуйте специализированным каталогам ниже:",
         generated: "Создано Kssmi Eyewear",
@@ -332,6 +405,7 @@ const translations = {
         core: "Саҳифаҳои асосӣ", coreDesc: "Навигатсияи ибтидоӣ ва маълумоти ширкат.",
         products: "Маҳсулот", productsDesc: "Каталоги айнакҳои офтобии премиум B2B ва чорчӯбаи айнакҳои мо.",
         landing: "Саҳифаҳои фуруд", landingDesc: "Маҷмӯаҳои маҳсулот, дастурҳои мавод ва саҳифаҳои маркетингӣ.",
+        faq: "Саволҳои маъмул (FAQ)", faqDesc: "Дастурҳои FAQ-и истеҳсолӣ оид ба MOQ, OEM/ODM, мавод, намунаҳо, назорати сифат ва интиқол.",
         blog: "Блогҳо", blogDesc: "Фаҳмишҳои соҳа, ахбор ва мақолаҳои таҳрирӣ.",
         explore: "Барои омӯхтани мундариҷаи %LANG%-и мо, лутфан ба директорияҳои махсуси зерин пайравӣ кунед:",
         generated: "Аз ҷониби Kssmi Eyewear тавлид шудааст",
@@ -342,6 +416,7 @@ const translations = {
         core: "Ana Sayfalar", coreDesc: "Birincil gezinme ve şirket bilgileri.",
         products: "Ürünler", productsDesc: "Premium B2B güneş gözlüklerimiz ve gözlük çerçevelerimiz kataloğu.",
         landing: "Açılış Sayfaları", landingDesc: "Ürün koleksiyonları, malzeme kılavuzları ve pazarlama sayfaları.",
+        faq: "Sıkça Sorulan Sorular (FAQ)", faqDesc: "MOQ, OEM/ODM, malzemeler, numuneler, kalite kontrol ve sevkiyat hakkında üretim SSS kılavuzları.",
         blog: "Bloglar", blogDesc: "Sektörel içgörüler, haberler ve editoryal makaleler.",
         explore: "%LANG% İçeriğimizi keşfetmek için lütfen aşağıdaki özel dizinleri takip edin:",
         generated: "Kssmi Eyewear tarafından oluşturuldu",
@@ -352,6 +427,7 @@ const translations = {
         core: "Trang Cốt Lõi", coreDesc: "Điều hướng chính và thông tin công ty.",
         products: "Sản phẩm", productsDesc: "Danh mục kính râm B2B cao cấp và gọng kính của chúng tôi.",
         landing: "Trang Đích", landingDesc: "Bộ sưu tập sản phẩm, hướng dẫn chất liệu và trang tiếp thị.",
+        faq: "Câu hỏi thường gặp (FAQ)", faqDesc: "Hướng dẫn FAQ sản xuất về MOQ, OEM/ODM, chất liệu, mẫu, kiểm soát chất lượng và vận chuyển.",
         blog: "Blog", blogDesc: "Sự hiểu biết sâu sắc về ngành, tin tức và bài báo biên tập.",
         explore: "Để khám phá nội dung %LANG% của chúng tôi, vui lòng theo các thư mục chuyên dụng dưới đây:",
         generated: "Được tạo bởi Kssmi Eyewear",
@@ -380,9 +456,12 @@ Object.keys(langData).forEach(lang => {
     const baseUrl = `${SITE_URL}${langUrlPrefix}`;
     const llmsBaseUrl = `${SITE_URL}/${lang}`;
 
+    const hasBlogs = langData[lang].blog.length > 0;
+
     // 1. llms-core.txt
     const customLabel = customBundles[lang]?.ui?.breadcrumbLabel || 'Customization';
-    const coreContent = `# Kssmi - ${t.core} (${localLangName})\n\n> ${t.coreDesc}\n\n- [${t.home}](${baseUrl}/)\n- [${t.products}](${baseUrl}/product/)\n- [${customLabel}](${baseUrl}/customization/)\n- [FAQ](${baseUrl}/faq/)\n- [${t.contact}](${baseUrl}/quote/)\n`;
+    const blogCoreLine = hasBlogs ? `- [${t.blog}](${baseUrl}/blog/)\n` : '';
+    const coreContent = `# Kssmi - ${t.core} (${localLangName})\n\n> ${t.coreDesc}\n\n- [${t.home}](${baseUrl}/)\n- [${t.products}](${baseUrl}/product/)\n- [${customLabel}](${baseUrl}/customization/)\n- [FAQ](${baseUrl}/faq/)\n${blogCoreLine}- [${t.contact}](${baseUrl}/quote/)\n`;
     fs.writeFileSync(path.join(langDir, 'llms-core.txt'), coreContent, 'utf-8');
 
     // 2. llms-products.txt
@@ -393,9 +472,19 @@ Object.keys(langData).forEach(lang => {
     const landingContent = `# Kssmi - ${t.landing} (${localLangName})\n\n> ${t.landingDesc}\n\n${langData[lang].landing.join('')}`;
     fs.writeFileSync(path.join(langDir, 'llms-landing.txt'), landingContent, 'utf-8');
 
-    // 4. llms-blogs.txt (only emit when there are published blog posts)
+    // 4. llms-faq.txt (emit whenever FAQ articles exist)
+    const faqPath = path.join(langDir, 'llms-faq.txt');
+    const faqEntries = langData[lang].faq || [];
+    const hasFaq = faqEntries.length > 0;
+    if (hasFaq) {
+        const faqContent = `# Kssmi - ${t.faq} (${localLangName})\n\n> ${t.faqDesc}\n\n${faqEntries.join('')}`;
+        fs.writeFileSync(faqPath, faqContent, 'utf-8');
+    } else {
+        fs.rmSync(faqPath, { force: true });
+    }
+
+    // 5. llms-blogs.txt (only emit when there are published blog posts)
     const blogPath = path.join(langDir, 'llms-blogs.txt');
-    const hasBlogs = langData[lang].blog.length > 0;
     if (hasBlogs) {
         const blogContent = `# Kssmi - ${t.blog} (${localLangName})\n\n> ${t.blogDesc}\n\n${langData[lang].blog.join('')}`;
         fs.writeFileSync(blogPath, blogContent, 'utf-8');
@@ -403,7 +492,8 @@ Object.keys(langData).forEach(lang => {
         fs.rmSync(blogPath, { force: true });
     }
 
-    // 5. Language Index (llms.txt) for this specific language
+    // 6. Language Index (llms.txt) for this specific language
+    const faqSection = hasFaq ? `\n## ${t.faq} (${t.faqDesc})\n- [${t.faq}](${llmsBaseUrl}/llms-faq.txt)\n` : '';
     const blogSection = hasBlogs ? `\n## ${t.blog} (${t.blogDesc})\n- [${t.blog}](${llmsBaseUrl}/llms-blogs.txt)\n` : '';
     const langIndexContent = `# Kssmi ${t.guide} - ${localLangName}
 
@@ -417,7 +507,7 @@ Object.keys(langData).forEach(lang => {
 
 ## ${t.landing} (${t.landingDesc})
 - [${t.landing}](${llmsBaseUrl}/llms-landing.txt)
-${blogSection}
+${faqSection}${blogSection}
 *${t.generated}*
 `;
 
@@ -425,6 +515,10 @@ ${blogSection}
 });
 
 // Finally, generate the Global Router at public/llms.txt
+const hasEnBlogs = (langData.en?.blog?.length || 0) > 0;
+const globalBlogLinks = hasEnBlogs
+    ? `- [Blog](https://kssmi.com/blog/)\n- [Blog Directory (EN)](https://kssmi.com/en/llms-blogs.txt)\n`
+    : '';
 let globalContent = `# Kssmi Eyewear — B2B Eyewear Manufacturing
 
 > Kssmi is a B2B handmade eyewear and sunglasses manufacturer (OEM/ODM) based in Shenzhen, China since 2003, serving global optical retailers, boutique shops, and fashion brands.
@@ -455,7 +549,8 @@ FDA (US), CE (EU), RoHS, California Proposition 65 compliant.
 - [Website](https://kssmi.com/)
 - [Request a Quote](https://kssmi.com/quote/)
 - [FAQ](https://kssmi.com/faq/)
-- Email: sales@kssmi.com
+- [FAQ Directory (EN)](https://kssmi.com/en/llms-faq.txt)
+${globalBlogLinks}- Email: sales@kssmi.com
 - WhatsApp: +86-135-1053-2553
 
 ## Language Index

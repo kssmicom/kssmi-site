@@ -149,6 +149,12 @@ const currentYear = new Date().getFullYear();
             </li>
           ))}
           <li>
+            <a href={`/${currentPath}faq/`} class="group kx-footer-2">
+              <span class="kx-footer-1"></span>
+              <span>{t.nav.faq || 'FAQ'}</span>
+            </a>
+          </li>
+          <li>
             <a href={`/${currentPath}blog`} class="group kx-footer-2">
               <span class="kx-footer-1"></span>
               <span>{blogText}</span>

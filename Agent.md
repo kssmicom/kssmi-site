@@ -135,6 +135,7 @@ Defined in `src/content.config.ts` using content loaders:
 |------------|----------|---------|
 | `products` | `src/content/products/` | Product markdown files |
 | `collection` | `src/content/collection/` | Landing pages, about, contact |
+| `faq` | `src/content/faq/` | FAQ hub and topic pages |
 | `blog` | `src/content/blog/` | Blog posts |
 | `feature` | `src/content/feature/` | Eyewear landing/feature pages |
 | `category-product` | `src/content/category-product/` | One Markdown file per category with multilingual SEO fields |
@@ -152,7 +153,7 @@ src/content/products/
 
 **Landing pages** have page-specific metadata and section files under `src/content/collection/{page}/`. Inspect the existing page and schema instead of assuming an English-only three-file split.
 
-**FAQ** is a hub with optional topic pages. Hub content lives at `src/content/collection/faq/index/faq.{lang}.md`; topic content uses `faq/{topic}/{topic}.{lang}.md`. See `src/components/collection/faq/faqData.ts`, `src/components/pages/FAQPage.astro` and `FAQTopicPage.astro`. Maintain translated content in Markdown, not a hardcoded Q&A array in a component.
+**FAQ** mirrors the Product listing architecture (left sticky topic/subtopic sidebar + right FAQ card grid). Hub metadata and sidebar taxonomy live at `src/content/faq/index/faq.{lang}.md`; individual FAQ articles live in article folders `src/content/faq/<slug>/<slug>.{lang}.md` with `faqTopic` and `faqSubtopic`. See `src/components/faq/faqData.ts`, `FaqSidebar.astro`, `FaqCard.astro`, `src/components/pages/FAQPage.astro` and `FAQDetailPage.astro`. Maintain translated content in Markdown, not a hardcoded Q&A array in a component.
 
 ### Internationalization (i18n)
 
@@ -190,6 +191,7 @@ All images are stored in `public/media/` for stable SEO URLs:
 ```
 public/media/
 ├── products/{sku}/          # Product images
+├── faq/{slug}/              # FAQ article cover and Q&A illustrations
 ├── blogs/                   # Blog covers
 ├── collection/              # Landing page images
 ├── certifications/          # Certification assets
@@ -324,7 +326,7 @@ Located in `src/components/`:
 - **TurnstileApiLoader.astro** - Shared, retryable Turnstile API loader (in Layout `<head>`)
 - **LanguagePicker.astro** - Language switcher
 - **TechnicalSpecs.astro** - Product specifications display
-- **FAQPage.astro / FAQTopicPage.astro** - FAQ hub and topic pages in `src/components/pages/`
+- **FAQPage.astro / FAQDetailPage.astro** - FAQ card listing hub and article detail pages in `src/components/pages/`
 
 ## ClientRouter Scripts & Turnstile (CRITICAL)
 
@@ -424,8 +426,8 @@ included — the router swaps 404 responses too).
 
 ## Pre-Build Validation
 
-The `scripts/validate-content.mjs` script runs before build across all 5
-collections defined in `src/content.config.ts` (`products`, `collection`,
+The `scripts/validate-content.mjs` script runs before build across all 6
+collections defined in `src/content.config.ts` (`products`, `collection`, `faq`,
 `blog`, `feature`, `category-product`) to check:
 - UTF-8 BOM markers
 - YAML frontmatter syntax and mapping structure
@@ -447,7 +449,7 @@ Search uses lazy-loading from pre-built JSON endpoint:
 
 ## Development Server Features
 
-The Vite plugin in `astro.config.mjs` watches `src/content/products/` for new folders and auto-restarts the server when new products are added.
+Astro's built-in `glob` content loader watches `src/content/` (with Vite polling enabled in `astro.config.mjs`) and incrementally reloads added, updated, or removed content entries without clearing `.astro/data-store.json` or restarting the server.
 
 ## Content Workflow
 
@@ -481,13 +483,14 @@ The Vite plugin in `astro.config.mjs` watches `src/content/products/` for new fo
    in `prebuild`) but does not generate missing image variants.
    Commit, push and production deployment still need session authorization.
 
-### Adding a Landing Page or FAQ Topic
+### Adding a Landing Page or FAQ Article
 
 1. Inspect the same type of existing page, its schema, loader and components.
 2. Follow its current metadata/section layout under `src/content/collection/`
    rather than imposing an English/other-language split.
-3. For FAQ topics, follow `faqData.ts`: the hub declares topics and UI labels;
-   existing topic pages receive links and other topics use hub anchors.
+3. For FAQ articles, follow `faqData.ts`: create `src/content/faq/<slug>/<slug>.{lang}.md`
+   with `faqTopic`, `faqSubtopic`, and `items`; the hub renders it as a card on `/faq/`
+   and generates `/faq/<slug>/` plus active `/faq/<topic>/` filter pages automatically.
 4. Preserve language routes, stable slugs, canonical/hreflang relationships
    and shared components. Do not hardcode product facts or translated Q&A
    into layouts to bypass the content system.

@@ -20,6 +20,7 @@ export default {
       customization: "التخصيص",
       collection: "المجموعة",
       feature: "حلول",
+      faq: "الأسئلة",
       about: "حول",
       contact: "اتصل",
       blog: "مدونة",

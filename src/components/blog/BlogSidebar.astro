@@ -1,0 +1,165 @@
+---
+/**
+ * Blog Left Sticky Sidebar — mirrors FaqSidebar.astro & ProductListingPage.astro.
+ */
+import type { BlogTopicNode } from './blogData';
+
+interface Props {
+  lang: string;
+  currentPath: string;
+  allLabel: string;
+  allHref: string;
+  totalCount: number;
+  topics: BlogTopicNode[];
+  activeTopic?: string | null;
+  activeSubtopic?: string | null;
+  t: any;
+}
+
+const {
+  currentPath,
+  allLabel,
+  allHref,
+  totalCount,
+  topics,
+  activeTopic = null,
+  activeSubtopic = null,
+  t,
+} = Astro.props;
+
+const pt = t.product || {};
+const isAllActive = !activeTopic && !activeSubtopic;
+---
+
+<aside class="hidden lg:block lg:col-span-1">
+  <div
+    data-product-sidebar-scroll
+    data-sidebar-scroll-key="kssmi-blog-sidebar-scroll"
+    class="product-sidebar-scroll sticky top-24 overflow-y-auto overscroll-contain space-y-6 pe-1.5"
+  >
+    <div class="bg-linear-to-br from-white to-[#faf8f5] rounded-xl shadow-xs p-6 border border-stone-200/50">
+      <a
+        href={allHref}
+        data-sidebar-active={isAllActive ? 'true' : undefined}
+        class:list={[
+          'flex items-center justify-between py-1.5 px-2 text-sm lg:text-base font-bold rounded-lg transition-colors mb-3',
+          isAllActive
+            ? 'bg-[#5D4E37] text-white'
+            : 'text-[#5D4E37] hover:bg-stone-50 active:bg-stone-50 focus-visible:bg-stone-50 focus-within:bg-stone-50',
+        ]}
+      >
+        <span>{allLabel}</span>
+        <span class:list={['text-xs font-normal', isAllActive ? 'text-white/70' : 'text-gray-500']}>
+          {totalCount}
+        </span>
+      </a>
+
+      <div class="space-y-3">
+        {topics.map((topic) => {
+          const isTopicExact = topic.key === activeTopic && !activeSubtopic;
+          return (
+            <div class="border-b border-gray-100 pb-3 last:border-0 last:pb-0">
+              {topic.href ? (
+                <a
+                  href={topic.href}
+                  data-sidebar-active={isTopicExact ? 'true' : undefined}
+                  class:list={[
+                    'flex items-center justify-between gap-2 py-2 px-2 text-sm font-bold rounded-lg transition-colors',
+                    isTopicExact
+                      ? 'bg-[#5D4E37] text-white'
+                      : 'text-[#5D4E37] hover:bg-stone-50 active:bg-stone-50 focus-visible:bg-stone-50 focus-within:bg-stone-50',
+                  ]}
+                >
+                  <span>{topic.title}</span>
+                  <span class:list={['text-xs shrink-0', isTopicExact ? 'text-white/70' : 'text-gray-500']}>
+                    {topic.count}
+                  </span>
+                </a>
+              ) : (
+                <div class="flex items-center justify-between gap-2 py-2 px-2 text-sm font-bold text-[#5D4E37] rounded-lg">
+                  <span>{topic.title}</span>
+                  <span class="text-xs shrink-0 text-gray-500">{topic.count}</span>
+                </div>
+              )}
+
+              {topic.subtopics.length > 0 && (
+                <ul class="ms-3 mt-1 space-y-1">
+                  {topic.subtopics.map((sub) => {
+                    const isSubActive = topic.key === activeTopic && sub.key === activeSubtopic;
+                    return (
+                      <li>
+                        {sub.href ? (
+                          <a
+                            href={sub.href}
+                            data-sidebar-active={isSubActive ? 'true' : undefined}
+                            class:list={[
+                              'flex items-center justify-between gap-2 py-1.5 px-2 text-sm rounded-sm transition-colors leading-snug',
+                              isSubActive
+                                ? 'bg-[#5D4E37] text-white font-medium'
+                                : 'text-gray-600 hover:text-[#5D4E37] active:text-[#5D4E37] focus-visible:text-[#5D4E37] focus-within:text-[#5D4E37] hover:bg-stone-50 active:bg-stone-50 focus-visible:bg-stone-50 focus-within:bg-stone-50',
+                            ]}
+                          >
+                            <span>{sub.title}</span>
+                            <span class:list={['text-xs shrink-0', isSubActive ? 'text-white/80' : 'text-gray-500']}>
+                              {sub.count}
+                            </span>
+                          </a>
+                        ) : (
+                          <span class="flex items-center justify-between gap-2 py-1.5 px-2 text-sm text-gray-600 rounded-sm leading-snug">
+                            <span>{sub.title}</span>
+                            <span class="text-xs shrink-0 text-gray-500">{sub.count}</span>
+                          </span>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+
+    <div class="bg-[#5D4E37] rounded-xl p-6 text-white">
+      <p class="font-bold mb-2">{pt.needCustomSolutions || 'Need Custom Eyewear?'}</p>
+      <p class="text-sm text-white mb-4">
+        {pt.oemServices || 'We offer full Contract Manufacturing & Design Manufacturing services for your brand.'}
+      </p>
+      <a
+        href={`/${currentPath}quote`}
+        class="inline-block bg-white text-[#5D4E37] px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:scale-105 active:scale-105 focus-visible:scale-105 focus-within:scale-105 hover:shadow-lg active:shadow-lg focus-visible:shadow-lg focus-within:shadow-lg"
+      >
+        {t.cta.quote || 'Get Quote'}
+      </a>
+    </div>
+  </div>
+</aside>
+
+<style>
+  .product-sidebar-scroll {
+    max-height: calc(100vh - 7rem);
+    max-height: calc(100dvh - 7rem);
+    scrollbar-width: thin;
+    scrollbar-color: #d6d3d1 transparent;
+  }
+
+  .product-sidebar-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .product-sidebar-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .product-sidebar-scroll::-webkit-scrollbar-thumb {
+    background-color: #d6d3d1;
+    border-radius: 9999px;
+  }
+</style>
+
+<script>
+  import { initProductSidebarScroll } from '../../utils/catalogSidebarScroll';
+
+  initProductSidebarScroll();
+</script>

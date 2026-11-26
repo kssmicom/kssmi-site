@@ -1,0 +1,29 @@
+---
+import FAQPage from '../../../components/pages/FAQPage.astro';
+import FAQDetailPage from '../../../components/pages/FAQDetailPage.astro';
+import { getActiveFaqFilterPaths, getFaqArticleSlugs } from '../../../components/faq/faqData';
+import { LANGUAGES } from '../../../translations';
+
+export async function getStaticPaths() {
+  const [slugs, filters] = await Promise.all([getFaqArticleSlugs(), getActiveFaqFilterPaths()]);
+  const nonEnLangs = LANGUAGES.filter((l) => l !== 'en');
+  return nonEnLangs.flatMap((lang) => [
+    ...slugs.map((slug) => ({
+      params: { lang, path: slug },
+      props: { kind: 'article' as const, slug },
+    })),
+    ...filters.map((filter) => ({
+      params: { lang, path: filter.path },
+      props: { kind: 'filter' as const, topic: filter.topic, subtopic: filter.subtopic },
+    })),
+  ]);
+}
+
+const { lang } = Astro.params;
+const props = Astro.props;
+---
+{props.kind === 'article' ? (
+  <FAQDetailPage lang={lang} slug={props.slug} />
+) : (
+  <FAQPage lang={lang} activeTopic={props.topic} activeSubtopic={props.subtopic ?? null} />
+)}

@@ -1,21 +1,20 @@
 /*
- * FAQ hub + sub-FAQ colour tokens. White page, sage-green accent.
+ * FAQ hub + sub-FAQ colour tokens. Stone-50 shell + warm brown accents matching /product/ and /customization/.
  * Swap the accent values here to restyle every FAQ component at once.
  */
 .faq-page {
-  --faq-ink: #1f2328;
-  --faq-body: #4b5563;
-  --faq-muted: #6b7280;
-  --faq-faint: #9ca3af;
-  --faq-line: #e5e7eb;
-  --faq-line-soft: #f0f1f3;
-  --faq-accent: #3c8a68;
-  --faq-accent-strong: #2f6b52;
-  --faq-accent-soft: #eaf5ef;
-  --faq-accent-line: #cfe3d8;
-  --faq-width: min(92%, 920px);
+  --faq-ink: #1c1917;
+  --faq-body: #44403c;
+  --faq-muted: #78716c;
+  --faq-faint: #a8a29e;
+  --faq-line: #e7e5e4;
+  --faq-line-soft: #f5f5f4;
+  --faq-accent: #8B7355;
+  --faq-accent-strong: #5D4E37;
+  --faq-accent-soft: #f5f1eb;
+  --faq-accent-line: #e7dfd5;
+  --faq-width: 100%;
 
-  background: #fff;
   color: var(--faq-ink);
 }
 

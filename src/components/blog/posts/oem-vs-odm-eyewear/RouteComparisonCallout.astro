@@ -1,0 +1,78 @@
+---
+/**
+ * Article-specific visual summary block for /blog/oem-vs-odm-eyewear/.
+ * Shows the 3 core manufacturing routes at a glance (OEM vs ODM vs Catalogue Private Label).
+ */
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'en' } = Astro.props;
+
+const COPY: Record<string, { heading: string; cards: Array<{ label: string; title: string; summary: string; timeline: string }> }> = {
+  en: {
+    heading: 'Three Paths at a Glance',
+    cards: [
+      {
+        label: 'OEM',
+        title: 'Your Confirmed Design',
+        summary: 'You provide finished specs or 2D/3D files; we engineer tooling, sample, and produce exclusively for your brand.',
+        timeline: 'Custom sample: 60 working days',
+      },
+      {
+        label: 'ODM',
+        title: 'Concept to 2D & Sample',
+        summary: 'Start from a sketch, photo, or mood board without CAD. Our team draws the 2D spec in 3–10 working days.',
+        timeline: '2D drawing: 3–10 working days',
+      },
+      {
+        label: 'Private Label',
+        title: 'Catalogue Construction',
+        summary: 'Your branding on an existing factory construction — saves new mold costs, same per-model production MOQ.',
+        timeline: 'Logo sample: ~10 working days',
+      },
+    ],
+  },
+  zh: {
+    heading: '三种开发路线一眼对比',
+    cards: [
+      {
+        label: 'OEM 代工',
+        title: '来图 / 确定规格生产',
+        summary: '提供完整尺寸与工程规格，可米负责模具、打样与大货品控，专属模具仅限您的项目使用。',
+        timeline: '全定制打样：60 个工作日',
+      },
+      {
+        label: 'ODM 开发',
+        title: '创意草图转工程图',
+        summary: '只需参考图、手绘或情绪板即可启动，无需先备 CAD，工程团队先出 2D 工程图确认再打样。',
+        timeline: '2D 工程图：3–10 个工作日',
+      },
+      {
+        label: '目录贴牌',
+        title: '复用现有款加 Logo',
+        summary: '基于现有结构加印/雕刻品牌标识，省去新开模具费用与周期，同样按单款起订量现做非现货。',
+        timeline: '带标样品：约 10 个工作日',
+      },
+    ],
+  },
+};
+
+const active = COPY[lang] || COPY.en;
+---
+
+<aside class="my-6 rounded-xl border border-stone-200/80 bg-[#faf8f5] p-5" aria-label={active.heading}>
+  <p class="text-xs font-bold uppercase tracking-wider text-[#8B7355] mb-3">{active.heading}</p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+    {active.cards.map((card) => (
+      <div class="rounded-lg bg-white p-4 shadow-xs border border-stone-200/60">
+        <span class="inline-block rounded-full bg-stone-100 px-2.5 py-0.5 text-[11px] font-bold text-[#5D4E37]">
+          {card.label}
+        </span>
+        <p class="mt-2 text-sm font-bold text-stone-900">{card.title}</p>
+        <p class="mt-1.5 text-xs text-stone-600 leading-relaxed">{card.summary}</p>
+        <p class="mt-2.5 text-[11px] font-semibold text-[#8B7355]">{card.timeline}</p>
+      </div>
+    ))}
+  </div>
+</aside>

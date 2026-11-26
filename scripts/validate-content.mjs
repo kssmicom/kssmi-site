@@ -4,9 +4,10 @@
  * Checks all markdown files for common YAML frontmatter and filesystem issues.
  * This runs before dev/build to catch errors early and exits non-zero on hard errors.
  *
- * Validates all five collections defined in src/content.config.ts:
+ * Validates all six collections defined in src/content.config.ts:
  *   - src/content/products/          (product markdown, recursive)
  *   - src/content/collection/        (landing pages, about, contact, recursive)
+ *   - src/content/faq/               (FAQ hub and topic pages, recursive)
  *   - src/content/blog/              (blog posts, recursive; empty allowed)
  *   - src/content/feature/           (eyewear feature pages, recursive; empty allowed)
  *   - src/content/category-product/  (category SEO metadata, top-level *.md)
@@ -24,6 +25,7 @@ export function getDefaultCollections(contentRoot = DEFAULT_CONTENT_ROOT) {
   return [
     { name: 'products', dir: path.join(contentRoot, 'products'), recursive: true, required: true, allowEmpty: false },
     { name: 'collection', dir: path.join(contentRoot, 'collection'), recursive: true, required: true, allowEmpty: false },
+    { name: 'faq', dir: path.join(contentRoot, 'faq'), recursive: true, required: true, allowEmpty: false },
     // Git does not track empty directories, so optional empty collections may be absent on clean CI checkouts.
     { name: 'blog', dir: path.join(contentRoot, 'blog'), recursive: true, required: false, allowEmpty: true },
     { name: 'feature', dir: path.join(contentRoot, 'feature'), recursive: true, required: false, allowEmpty: true },

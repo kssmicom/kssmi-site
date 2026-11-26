@@ -1,0 +1,26 @@
+---
+import BlogListingPage from '../../components/pages/BlogListingPage.astro';
+import BlogDetailPage from '../../components/pages/BlogDetailPage.astro';
+import { getActiveBlogFilterPaths, getBlogSlugs } from '../../components/blog/blogData';
+
+export async function getStaticPaths() {
+  const [slugs, filters] = await Promise.all([getBlogSlugs(), getActiveBlogFilterPaths()]);
+  return [
+    ...slugs.map((slug) => ({
+      params: { path: slug },
+      props: { kind: 'article' as const, slug },
+    })),
+    ...filters.map((filter) => ({
+      params: { path: filter.path },
+      props: { kind: 'filter' as const, topic: filter.topic, subtopic: filter.subtopic },
+    })),
+  ];
+}
+
+const props = Astro.props;
+---
+{props.kind === 'article' ? (
+  <BlogDetailPage lang="en" slug={props.slug} />
+) : (
+  <BlogListingPage lang="en" activeTopic={props.topic} activeSubtopic={props.subtopic ?? null} />
+)}

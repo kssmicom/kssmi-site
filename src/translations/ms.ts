@@ -20,6 +20,7 @@ export default {
       customization: "Penyesuaian",
       collection: "Koleksi",
       feature: "Solusi",
+      faq: "FAQ",
       about: "Perihal",
       contact: "Hubungi",
       blog: "Blog",

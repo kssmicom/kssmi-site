@@ -1,0 +1,74 @@
+---
+/**
+ * Build-time transformer that turns standalone Markdown image paragraphs (<p><img ...></p>)
+ * inside `<Content />` into alternating left/right Z-pattern editorial rows paired with the
+ * immediately preceding paragraph or list block. Zero runtime JS, zero CLS.
+ */
+const rawHtml = await Astro.slots.render('default');
+
+function extractTrailingBlock(htmlBefore: string): { prefix: string; block: string } | null {
+  const trimmed = htmlBefore.replace(/\s+$/, '');
+  const endMatch = trimmed.match(/<\/(p|ul|ol)>$/i);
+  if (!endMatch) return null;
+  const tag = endMatch[1].toLowerCase();
+  const tokenRe = new RegExp(`<(\\/?)${tag}\\b[^>]*>`, 'gi');
+  const matches = [...trimmed.matchAll(tokenRe)];
+  let depth = 0;
+
+  for (let i = matches.length - 1; i >= 0; i -= 1) {
+    const m = matches[i];
+    depth += m[1] === '/' ? 1 : -1;
+    if (depth === 0 && typeof m.index === 'number') {
+      const block = trimmed.slice(m.index);
+      if (/^<p[^>]*>\s*<img\b/i.test(block)) return null;
+      return { prefix: trimmed.slice(0, m.index), block };
+    }
+  }
+  return null;
+}
+
+function normalizeLazyImg(imgTag: string): string {
+  let out = imgTag;
+  if (!/\bloading=/.test(out)) out = out.replace(/<img\b/i, '<img loading="lazy"');
+  if (!/\bdecoding=/.test(out)) out = out.replace(/<img\b/i, '<img decoding="async"');
+  if (!/\bwidth=/.test(out)) out = out.replace(/<img\b/i, '<img width="800"');
+  if (!/\bheight=/.test(out)) out = out.replace(/<img\b/i, '<img height="600"');
+  return out;
+}
+
+function transformBlogProse(html: string): string {
+  const imgParaRe = /<p>\s*(<img\b[^>]*>)\s*<\/p>/gi;
+  let result = '';
+  let lastIndex = 0;
+  let zCount = 0;
+
+  for (const match of html.matchAll(imgParaRe)) {
+    const idx = match.index ?? 0;
+    result += html.slice(lastIndex, idx);
+    lastIndex = idx + match[0].length;
+
+    const imgHtml = normalizeLazyImg(match[1]);
+    const extracted = extractTrailingBlock(result);
+    if (extracted) {
+      zCount += 1;
+      // Cover image sits on the right; first inline image starts on the left, then alternates.
+      const sideClass = zCount % 2 === 1 ? 'blog-z-row--media-left' : 'blog-z-row--media-right';
+      result =
+        extracted.prefix +
+        `<div class="blog-z-row ${sideClass}">` +
+        `<div class="blog-z-row__text">${extracted.block}</div>` +
+        `<figure class="blog-z-row__media">${imgHtml}</figure>` +
+        `</div>`;
+    } else {
+      result += `<figure class="blog-z-standalone">${imgHtml}</figure>`;
+    }
+  }
+
+  result += html.slice(lastIndex);
+  return result;
+}
+
+const transformedHtml = transformBlogProse(rawHtml);
+---
+
+<div class="blog-prose" set:html={transformedHtml} />

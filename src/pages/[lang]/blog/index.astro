@@ -1,0 +1,24 @@
+---
+import BlogListingPage from '../../../components/pages/BlogListingPage.astro';
+import SectionPlaceholder from '../../../components/pages/SectionPlaceholder.astro';
+import { getBlogSlugs } from '../../../components/blog/blogData';
+import { getTranslations, LANGUAGES } from '../../../translations';
+
+export async function getStaticPaths() {
+  return LANGUAGES.filter((l) => l !== 'en').map((lang) => ({
+    params: { lang },
+    props: { lang },
+  }));
+}
+
+const { lang } = Astro.props;
+const slugs = await getBlogSlugs();
+const empty = slugs.length === 0;
+const t = await getTranslations(lang);
+---
+
+{empty ? (
+  <SectionPlaceholder lang={lang} sectionLabel={t.nav.blog || 'Blog'} />
+) : (
+  <BlogListingPage lang={lang} />
+)}

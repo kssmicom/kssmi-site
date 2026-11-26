@@ -1,0 +1,26 @@
+---
+import FAQPage from '../../components/pages/FAQPage.astro';
+import FAQDetailPage from '../../components/pages/FAQDetailPage.astro';
+import { getActiveFaqFilterPaths, getFaqArticleSlugs } from '../../components/faq/faqData';
+
+export async function getStaticPaths() {
+  const [slugs, filters] = await Promise.all([getFaqArticleSlugs(), getActiveFaqFilterPaths()]);
+  return [
+    ...slugs.map((slug) => ({
+      params: { path: slug },
+      props: { kind: 'article' as const, slug },
+    })),
+    ...filters.map((filter) => ({
+      params: { path: filter.path },
+      props: { kind: 'filter' as const, topic: filter.topic, subtopic: filter.subtopic },
+    })),
+  ];
+}
+
+const props = Astro.props;
+---
+{props.kind === 'article' ? (
+  <FAQDetailPage lang="en" slug={props.slug} />
+) : (
+  <FAQPage lang="en" activeTopic={props.topic} activeSubtopic={props.subtopic ?? null} />
+)}

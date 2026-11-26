@@ -49,6 +49,8 @@ export const FAQBlock = z.object({
     question: z.string(),
     answer: z.string(),
     topic: z.string().optional(),
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
   })),
 });
 
@@ -180,6 +182,45 @@ const collection = defineCollection({
   }).catchall(z.any()),
 });
 
+// ── FAQ (Hub + Topic Pages) ───────────────────────────────────────────────────
+const faq = defineCollection({
+  loader: glob({
+    pattern: '**/*.md',
+    base: './src/content/faq',
+    generateId: generateFullPathId,
+  }),
+  schema: z.object({
+    lang: LangEnum.default('en'),
+    slug: z.string().optional(),
+    cover: z.string().optional(),
+    faqTopic: z.string().optional(),
+    faqSubtopic: z.string().optional(),
+    seoTitle: z.string().optional(),
+    seoDescription: z.string().optional(),
+    seoKeywords: z.string().optional(),
+    heading: z.string().optional(),
+    subtitle: z.string().optional(),
+    ui: z.object({
+      searchPlaceholder: z.string(),
+      topicsTitle: z.string(),
+      questionsTitle: z.string(),
+      noResults: z.string(),
+      backToFaq: z.string(),
+      otherTopics: z.string(),
+    }).optional(),
+    topics: z.array(z.object({
+      key: z.string(),
+      title: z.string(),
+      subtopics: z.array(z.object({
+        key: z.string(),
+        title: z.string(),
+        anchor: z.string().optional(),
+      })).optional(),
+    })).optional(),
+    items: FAQBlock.shape.items.optional(),
+  }).catchall(z.any()),
+});
+
 // ── Feature (Eyewear Landing Pages) ────────────────────────────────────────────
 const feature = defineCollection({
   loader: glob({
@@ -225,7 +266,10 @@ const blog = defineCollection({
     lang: LangEnum.default('en'),
     title: z.string(),
     slug: z.string().optional(),
+    cover: z.string().optional(),
     image: z.string().optional(),
+    blogTopic: z.string().optional(),
+    blogSubtopic: z.string().optional(),
     category: z.enum([
       'Material Science',
       'Manufacturing Engineering',
@@ -267,4 +311,4 @@ const categoryProduct = defineCollection({
   }),
 });
 
-export const collections = { products, collection, feature, blog, 'category-product': categoryProduct };
+export const collections = { products, collection, faq, feature, blog, 'category-product': categoryProduct };

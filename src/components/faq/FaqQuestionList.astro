@@ -1,13 +1,13 @@
 ---
 /**
- * FAQ Question List — numbered Q&A accordion + FAQPage JSON-LD
- * High-yield format for AI citation (ChatGPT/Perplexity/Google AI Overviews)
+ * FAQ Question List — scannable always-expanded Q&A layout + FAQPage JSON-LD
+ * High-yield format for B2B buyers and AI citation (ChatGPT/Perplexity/Google AI Overviews).
  *
- * Hub: questions grouped by topic (#topic-<key> anchors), filtered by the hero search box.
- * Sub-FAQ: one ungrouped list plus a link back to the hub.
- * One answer open at a time. Colours come from faq-theme.css (.faq-page).
+ * Groups questions by topic (#topic-<key> anchors), numbers sequentially (#q-XX),
+ * supports optional right-side illustrations (`image` / `imageAlt`), and filters
+ * live from the article search box without collapsing answers.
  */
-import type { FaqItem, FaqTopic } from './faqData';
+import { groupFaqItems, type FaqItem, type FaqTopic } from './faqData';
 
 interface Props {
   items: FaqItem[];
@@ -20,28 +20,13 @@ interface Props {
 
 const { items, lang = 'en', topics = [], title, noResults, backLink } = Astro.props;
 const isRTL = lang === 'ar';
-const num = (index: number) => String(index + 1).padStart(2, '0');
+const groups = groupFaqItems(topics, items);
 
-const grouped = topics.length > 0
-  ? [
-      ...topics.map(topic => ({ key: topic.key, title: topic.title, items: items.filter(item => item.topic === topic.key) })),
-      { key: 'more', title: '', items: items.filter(item => !topics.some(topic => topic.key === item.topic)) },
-    ].filter(group => group.items.length > 0)
-  : [{ key: '', title: '', items }];
-
-// Number questions in display order so each group reads 01, 02, 03… down the page.
-let position = 0;
-const groups = grouped.map(group => ({
-  ...group,
-  items: group.items.map(item => {
-    const n = num(position++);
-    return { ...item, id: `q-${n}`, n };
-  }),
-}));
-
-// Heading outline: hub = H1 › H2 "All questions" › H3 topic › H4 question;
-// sub-FAQ = H1 topic › H2 question (› H3 if a list title is given).
-const QuestionHeading = topics.length > 0 ? 'h4' : title ? 'h3' : 'h2';
+// Heading outline:
+//   - With no `title` prop (e.g. FAQ article page): H1 article › H2 topic › H3 question
+//   - With `title` prop: H1 › H2 list title › H3 topic › H4 question
+const GroupHeading = title ? 'h3' : 'h2';
+const QuestionHeading = topics.length > 0 ? (title ? 'h4' : 'h3') : title ? 'h3' : 'h2';
 
 const faqSchema = items.length > 0 ? {
   "@context": "https://schema.org",
@@ -63,18 +48,41 @@ const faqSchema = items.length > 0 ? {
   <div class="faq-shell" data-faq-list>
     {title && <h2 class="faq-body__title">{title}</h2>}
 
-    {groups.map((group, groupIndex) => (
+    {groups.map((group) => (
       <div class="faq-group" id={group.key ? `topic-${group.key}` : undefined} data-faq-group>
-        {group.title && <h3 class="faq-group__title">{group.title}</h3>}
+        {group.title && <GroupHeading class="faq-group__title">{group.title}</GroupHeading>}
         {group.items.map(item => (
-          <details id={item.id} class="faq-item" name="faq" open={groupIndex === 0 && item === group.items[0]} data-faq-item>
-            <summary>
-              <span class="faq-item__num" aria-hidden="true">{item.n}</span>
-              <QuestionHeading class="faq-item__q">{item.question}</QuestionHeading>
-              <span class="faq-item__icon" aria-hidden="true"></span>
-            </summary>
-            <p class="faq-item__a">{item.answer}</p>
-          </details>
+          <div
+            id={item.id}
+            class:list={[
+              'faq-item',
+              {
+                'faq-item--has-media': Boolean(item.image),
+                'faq-item--media-left': Boolean(item.image) && Number(item.n) % 2 === 0,
+              },
+            ]}
+            data-faq-item
+          >
+            <div class="faq-item__content">
+              <div class="faq-item__head">
+                <span class="faq-item__num" aria-hidden="true">{item.n}</span>
+                <QuestionHeading class="faq-item__q">{item.question}</QuestionHeading>
+              </div>
+              <p class="faq-item__a">{item.answer}</p>
+            </div>
+            {item.image && (
+              <figure class="faq-item__media">
+                <img
+                  src={item.image}
+                  alt={item.imageAlt || item.question}
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            )}
+          </div>
         ))}
       </div>
     ))}
@@ -90,29 +98,14 @@ const faqSchema = items.length > 0 ? {
 </section>
 
 <script>
-  // Keep a single answer open (fallback for browsers without <details name>),
-  // filter questions from the hero search box, and open the question targeted by #q-XX.
+  // Filter always-expanded questions from the search box.
   // Runs on astro:page-load so it also binds after ClientRouter navigations.
-  const openFromHash = () => {
-    const target = location.hash ? document.getElementById(location.hash.slice(1)) : null;
-    if (target instanceof HTMLDetailsElement && target.matches('[data-faq-item]')) target.open = true;
-  };
-
   const initFaqList = () => {
     document.querySelectorAll<HTMLElement>('[data-faq-list]').forEach((list) => {
       if (list.dataset.faqBound) return;
       list.dataset.faqBound = '1';
 
-      const items = Array.from(list.querySelectorAll<HTMLDetailsElement>('[data-faq-item]'));
-      items.forEach((item) => {
-        item.addEventListener('toggle', () => {
-          if (!item.open) return;
-          items.forEach((other) => {
-            if (other !== item) other.open = false;
-          });
-        });
-      });
-
+      const items = Array.from(list.querySelectorAll<HTMLElement>('[data-faq-item]'));
       const search = document.querySelector<HTMLInputElement>('[data-faq-search]');
       const clear = document.querySelector<HTMLButtonElement>('[data-faq-search-clear]');
       const empty = list.querySelector<HTMLElement>('[data-faq-empty]');
@@ -142,23 +135,21 @@ const faqSchema = items.length > 0 ? {
       // A restored page (back/forward) can keep the typed query.
       if (search.value) applyFilter();
     });
-    openFromHash();
   };
 
-  window.addEventListener('hashchange', openFromHash);
   document.addEventListener('astro:page-load', initFaqList);
   initFaqList();
 </script>
 
 <style>
   .faq-shell {
-    width: var(--faq-width);
-    margin: 0 auto;
-    padding: 0 0 clamp(2.5rem, 5vw, 3.5rem);
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   .faq-body:last-child .faq-shell {
-    padding-bottom: clamp(4rem, 7vw, 6rem);
+    padding-bottom: 0;
   }
 
   .faq-body__title {
@@ -173,22 +164,23 @@ const faqSchema = items.length > 0 ? {
   }
 
   .faq-group + .faq-group {
-    margin-top: 1.75rem;
+    margin-top: 2rem;
   }
 
   .faq-group__title {
-    margin: 1.25rem 0 0;
+    margin: 1.5rem 0 0;
     padding-bottom: 0.65rem;
     border-bottom: 2px solid var(--faq-ink);
     color: var(--faq-ink);
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+    font-weight: 750;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
   }
 
   .faq-item {
     scroll-margin-top: calc(5rem + 1rem);
+    padding: 1.5rem 0;
     border-bottom: 1px solid var(--faq-line-soft);
   }
 
@@ -196,28 +188,16 @@ const faqSchema = items.length > 0 ? {
     border-top: 1px solid var(--faq-line-soft);
   }
 
-  .faq-item summary {
+  .faq-item__head {
     display: grid;
-    grid-template-columns: 2.5rem minmax(0, 1fr) 1.5rem;
+    grid-template-columns: 2.25rem minmax(0, 1fr);
     gap: 0.75rem;
-    align-items: center;
-    padding: 1.2rem 0;
-    cursor: pointer;
-    list-style: none;
-  }
-
-  .faq-item summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .faq-item summary:focus-visible {
-    outline: 2px solid var(--faq-accent);
-    outline-offset: 4px;
-    border-radius: 0.25rem;
+    align-items: baseline;
+    margin-bottom: 0.55rem;
   }
 
   .faq-item__num {
-    color: var(--faq-faint);
+    color: var(--faq-accent);
     font-size: 0.85rem;
     font-weight: 700;
     font-variant-numeric: tabular-nums;
@@ -226,64 +206,178 @@ const faqSchema = items.length > 0 ? {
   .faq-item__q {
     margin: 0;
     color: var(--faq-ink);
-    font-size: clamp(1rem, 1.4vw, 1.075rem);
-    font-weight: 600;
+    font-size: clamp(1.02rem, 1.4vw, 1.125rem);
+    font-weight: 700;
     line-height: 1.45;
-    transition: color 160ms ease;
-  }
-
-  .faq-item summary:is(:hover, :active, :focus-visible, :focus-within) .faq-item__q {
-    color: var(--faq-accent-strong);
-  }
-
-  .faq-item summary:is(:hover, :active, :focus-visible, :focus-within) .faq-item__icon::before,
-  .faq-item summary:is(:hover, :active, :focus-visible, :focus-within) .faq-item__icon::after,
-  .faq-item[open] .faq-item__icon::before,
-  .faq-item[open] .faq-item__icon::after {
-    background: var(--faq-accent);
-  }
-
-  .faq-item__icon {
-    position: relative;
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  .faq-item__icon::before,
-  .faq-item__icon::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0.85rem;
-    height: 2px;
-    border-radius: 2px;
-    background: var(--faq-muted);
-    transform: translate(-50%, -50%);
-    transition: transform 200ms ease, background-color 160ms ease;
-  }
-
-  .faq-item__icon::after {
-    transform: translate(-50%, -50%) rotate(90deg);
-  }
-
-  .faq-item[open] .faq-item__q,
-  .faq-item[open] .faq-item__num {
-    color: var(--faq-accent-strong);
-  }
-
-  .faq-item[open] .faq-item__icon::after {
-    transform: translate(-50%, -50%) rotate(0deg);
   }
 
   .faq-item__a {
-    max-width: 68ch;
+    max-width: 72ch;
     margin: 0;
-    padding: 0 0 1.4rem;
-    padding-inline-start: calc(2.5rem + 0.75rem);
+    padding-inline-start: calc(2.25rem + 0.75rem);
     color: var(--faq-body);
     font-size: 0.975rem;
     line-height: 1.8;
+  }
+
+  .faq-item__media {
+    position: relative;
+    margin: 1rem 0 0;
+    border-radius: 1.125rem;
+    overflow: hidden;
+    background: #f5f5f4;
+    aspect-ratio: 4 / 3;
+    transform: translate3d(0, 0, 0);
+    transform-style: preserve-3d;
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 8px 24px -12px rgba(15, 23, 42, 0.12);
+    transition:
+      transform 650ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 650ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .faq-item__media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.055);
+    z-index: 2;
+  }
+
+  .faq-item__media::before {
+    content: '';
+    position: absolute;
+    inset: -10%;
+    pointer-events: none;
+    z-index: 1;
+    background: linear-gradient(
+      115deg,
+      transparent 22%,
+      rgba(255, 255, 255, 0.32) 48%,
+      rgba(255, 255, 255, 0.08) 56%,
+      transparent 72%
+    );
+    transform: translateX(-125%) skewX(-12deg);
+    opacity: 0;
+    transition:
+      transform 950ms cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 350ms ease;
+  }
+
+  .faq-item__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.001);
+    transition:
+      transform 850ms cubic-bezier(0.16, 1, 0.3, 1),
+      filter 650ms ease;
+  }
+
+  .faq-item__media:is(:hover, :active, :focus-visible, :focus-within) {
+    transform: translate3d(0, -6px, 0) rotateY(-2.5deg) rotateX(1.5deg);
+    box-shadow:
+      0 4px 12px rgba(15, 23, 42, 0.06),
+      0 26px 52px -18px rgba(15, 23, 42, 0.24);
+  }
+
+  .faq-item--media-left .faq-item__media:is(:hover, :active, :focus-visible, :focus-within) {
+    transform: translate3d(0, -6px, 0) rotateY(2.5deg) rotateX(1.5deg);
+  }
+
+  .faq-item__media:is(:hover, :active, :focus-visible, :focus-within) img {
+    transform: scale(1.075);
+    filter: saturate(1.05) contrast(1.02);
+  }
+
+  .faq-item__media:is(:hover, :active, :focus-visible, :focus-within)::before {
+    opacity: 1;
+    transform: translateX(125%) skewX(-12deg);
+  }
+
+  @media (min-width: 768px) {
+    .faq-item--has-media {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 230px;
+      gap: 1.5rem;
+      align-items: start;
+      perspective: 1100px;
+    }
+
+    .faq-item--has-media.faq-item--media-left {
+      grid-template-columns: 230px minmax(0, 1fr);
+    }
+
+    .faq-item--has-media.faq-item--media-left .faq-item__media {
+      order: -1;
+    }
+
+    .faq-item--has-media .faq-item__media {
+      margin-top: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .faq-item--has-media {
+      grid-template-columns: minmax(0, 1fr) 210px;
+      gap: 1.5rem;
+    }
+
+    .faq-item--has-media.faq-item--media-left {
+      grid-template-columns: 210px minmax(0, 1fr);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .faq-item--has-media {
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 2rem;
+    }
+
+    .faq-item--has-media.faq-item--media-left {
+      grid-template-columns: 300px minmax(0, 1fr);
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .faq-item--has-media {
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 2.5rem;
+    }
+
+    .faq-item--has-media.faq-item--media-left {
+      grid-template-columns: 360px minmax(0, 1fr);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .faq-item__media,
+    .faq-item__media::before,
+    .faq-item__media img {
+      transition: none;
+    }
+
+    .faq-item__media:is(:hover, :active, :focus-visible, :focus-within),
+    .faq-item--media-left .faq-item__media:is(:hover, :active, :focus-visible, :focus-within),
+    .faq-item__media:is(:hover, :active, :focus-visible, :focus-within) img {
+      transform: none;
+    }
+
+    .faq-item__media:is(:hover, :active, :focus-visible, :focus-within)::before {
+      opacity: 0;
+      transform: none;
+    }
+  }
+
+  /* Kept after media queries so search filtering hides grid items cleanly. */
+  .faq-group[hidden],
+  .faq-item[hidden],
+  .faq-item--has-media[hidden] {
+    display: none;
   }
 
   .faq-empty {
@@ -311,8 +405,8 @@ const faqSchema = items.length > 0 ? {
   }
 
   @media (max-width: 639px) {
-    .faq-item summary {
-      grid-template-columns: 1.75rem minmax(0, 1fr) 1.5rem;
+    .faq-item__head {
+      grid-template-columns: 1.75rem minmax(0, 1fr);
       gap: 0.5rem;
     }
 

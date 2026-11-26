@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { execFileSync } from 'child_process';
+import yaml from 'js-yaml';
 
 const publicDir = path.join(process.cwd(), 'public');
 const contentDir = path.join(process.cwd(), 'src/content');
@@ -180,7 +181,7 @@ locales.forEach(lang => {
     // collection for terms-privacy, the form for quote.
     const extraDates = [];
     if (d.slug === 'faq') {
-      extraDates.push(langContentDate('src/content/collection/faq/index', lang));
+      extraDates.push(langContentDate('src/content/faq/index', lang));
     }
     if (d.slug === 'terms-privacy') {
       extraDates.push(langContentDate('src/content/collection/terms-privacy', lang));
@@ -193,16 +194,55 @@ locales.forEach(lang => {
       lastmod: newestDateString([fileDate(srcPath), ...extraDates])
     };
   });
-  // Sub-FAQ pages: src/content/collection/faq/<topic>/<topic>.{lang}.md → /faq/<topic>/.
-  // Every language gets the page once the English file exists (missing translations fall back to English).
-  const faqContentDir = path.join(contentDir, 'collection', 'faq');
+  // FAQ articles & active filter pages:
+  //   src/content/faq/<slug>/<slug>.{lang}.md → /faq/<slug>/ (with cover <image:image>)
+  //   active faqTopic / faqSubtopic filters   → /faq/<topic>/ and /faq/<topic>/<subtopic>/
+  const faqContentDir = path.join(contentDir, 'faq');
   if (fs.existsSync(faqContentDir)) {
-    for (const topic of fs.readdirSync(faqContentDir)) {
-      if (topic === 'index' || !fs.existsSync(path.join(faqContentDir, topic, `${topic}.en.md`))) continue;
-      const topicDir = `src/content/collection/faq/${topic}`;
+    const activeFilters = new Map();
+    for (const slug of fs.readdirSync(faqContentDir).sort()) {
+      if (slug === 'index' || slug.startsWith('.')) continue;
+      const enFile = path.join(faqContentDir, slug, `${slug}.en.md`);
+      if (!fs.existsSync(enFile)) continue;
+      const localizedFile = path.join(faqContentDir, slug, `${slug}.${lang}.md`);
+      const targetFile = fs.existsSync(localizedFile) ? localizedFile : enFile;
+      const articleDir = `src/content/faq/${slug}`;
+      const articleLastmod = newestDateString([langContentDate(articleDir, lang), langContentDate(articleDir, 'en')]);
+
+      const fmMatch = fs.readFileSync(targetFile, 'utf8').match(/^---\r?\n([\s\S]*?)\r?\n---/);
+      const fm = fmMatch ? (yaml.load(fmMatch[1]) || {}) : {};
+      const enFmMatch = targetFile === enFile ? fmMatch : fs.readFileSync(enFile, 'utf8').match(/^---\r?\n([\s\S]*?)\r?\n---/);
+      const enFm = enFmMatch ? (yaml.load(enFmMatch[1]) || {}) : {};
+
+      const rawCover = typeof fm.cover === 'string' ? fm.cover.trim() : '';
+      const coverRel = rawCover.startsWith('/') ? rawCover.replace(/^\/+/, '') : '';
+      const hasValidCover = Boolean(
+        rawCover.startsWith('/') &&
+        !/-(120w|240w|400)\.\w+$/.test(rawCover) &&
+        fs.existsSync(path.join(publicDir, coverRel))
+      );
+      const title = (typeof fm.heading === 'string' && fm.heading.trim()) ||
+        (typeof fm.seoTitle === 'string' && fm.seoTitle.trim()) ||
+        slug;
+
       coreUrls.push({
-        url: `${baseUrl}/faq/${topic}/`,
-        lastmod: newestDateString([langContentDate(topicDir, lang), langContentDate(topicDir, 'en')]),
+        url: `${baseUrl}/faq/${slug}/`,
+        lastmod: articleLastmod,
+        ...(hasValidCover ? { cover: `${SITE_URL}${rawCover}`, title } : {}),
+      });
+
+      if (typeof enFm.faqTopic === 'string' && enFm.faqTopic) {
+        activeFilters.set(enFm.faqTopic, newestDateString([activeFilters.get(enFm.faqTopic), articleLastmod]));
+        if (typeof enFm.faqSubtopic === 'string' && enFm.faqSubtopic) {
+          const subPath = `${enFm.faqTopic}/${enFm.faqSubtopic}`;
+          activeFilters.set(subPath, newestDateString([activeFilters.get(subPath), articleLastmod]));
+        }
+      }
+    }
+    for (const [filterPath, filterLastmod] of activeFilters) {
+      coreUrls.push({
+        url: `${baseUrl}/faq/${filterPath}/`,
+        lastmod: filterLastmod,
       });
     }
   }
@@ -305,10 +345,80 @@ locales.forEach(lang => {
   const productUrls = getCollectionUrls('products', 'product');
   fs.writeFileSync(path.join(langDir, 'sitemap-products.xml'), generateUrlset(productUrls), 'utf-8');
 
-  // 3. Blogs (skip if empty)
-  const blogUrls = getCollectionUrls('blog', 'blog');
-  if (blogUrls.length > 0) {
-    fs.writeFileSync(path.join(langDir, 'sitemap-blogs.xml'), generateUrlset(blogUrls), 'utf-8');
+  // 3. Blogs (/blog/, active /blog/<topic>/ & /blog/<topic>/<subtopic>/, and articles with <image:image>)
+  const blogContentDir = path.join(contentDir, 'blog');
+  const blogUrls = [];
+  if (fs.existsSync(blogContentDir)) {
+    const blogCategoryMap = new Map([
+      ['supply chain & sourcing', 'supply-chain-sourcing'],
+      ['material science', 'material-science'],
+      ['manufacturing engineering', 'manufacturing-engineering'],
+      ['quality & compliance', 'quality-compliance'],
+      ['market & design trends', 'market-design-trends'],
+    ]);
+    const activeBlogFilters = new Map();
+    const articleDates = [];
+
+    for (const slug of fs.readdirSync(blogContentDir).sort()) {
+      if (slug.startsWith('.')) continue;
+      const slugDir = path.join(blogContentDir, slug);
+      if (!fs.statSync(slugDir).isDirectory()) continue;
+      const enFile = path.join(slugDir, `${slug}.en.md`);
+      if (!fs.existsSync(enFile)) continue;
+
+      const localizedFile = path.join(slugDir, `${slug}.${lang}.md`);
+      const targetFile = fs.existsSync(localizedFile) ? localizedFile : enFile;
+      const articleDir = `src/content/blog/${slug}`;
+      const articleLastmod = newestDateString([langContentDate(articleDir, lang), langContentDate(articleDir, 'en')]);
+      if (articleLastmod) articleDates.push(articleLastmod);
+
+      const fmMatch = fs.readFileSync(targetFile, 'utf8').match(/^---\r?\n([\s\S]*?)\r?\n---/);
+      const fm = fmMatch ? (yaml.load(fmMatch[1]) || {}) : {};
+      const enFmMatch = targetFile === enFile ? fmMatch : fs.readFileSync(enFile, 'utf8').match(/^---\r?\n([\s\S]*?)\r?\n---/);
+      const enFm = enFmMatch ? (yaml.load(enFmMatch[1]) || {}) : {};
+
+      const rawCover = (typeof fm.cover === 'string' && fm.cover.trim()) ||
+        (typeof fm.image === 'string' && fm.image.trim()) ||
+        '';
+      const coverRel = rawCover.startsWith('/') ? rawCover.replace(/^\/+/, '') : '';
+      const hasValidCover = Boolean(
+        rawCover.startsWith('/') &&
+        !/-(120w|240w|400)\.\w+$/.test(rawCover) &&
+        fs.existsSync(path.join(publicDir, coverRel))
+      );
+      const title = (typeof fm.title === 'string' && fm.title.trim()) ||
+        (typeof fm.seoTitle === 'string' && fm.seoTitle.trim()) ||
+        slug;
+
+      blogUrls.push({
+        url: `${baseUrl}/blog/${slug}/`,
+        lastmod: articleLastmod,
+        ...(hasValidCover ? { cover: `${SITE_URL}${rawCover}`, title } : {}),
+      });
+
+      const resolvedTopic = (typeof enFm.blogTopic === 'string' && enFm.blogTopic.trim())
+        || blogCategoryMap.get(String(enFm.category || '').trim().toLowerCase())
+        || 'supply-chain-sourcing';
+      activeBlogFilters.set(resolvedTopic, newestDateString([activeBlogFilters.get(resolvedTopic), articleLastmod]));
+      if (typeof enFm.blogSubtopic === 'string' && enFm.blogSubtopic.trim()) {
+        const subPath = `${resolvedTopic}/${enFm.blogSubtopic.trim()}`;
+        activeBlogFilters.set(subPath, newestDateString([activeBlogFilters.get(subPath), articleLastmod]));
+      }
+    }
+
+    if (blogUrls.length > 0) {
+      blogUrls.unshift({
+        url: `${baseUrl}/blog/`,
+        lastmod: newestDateString(articleDates),
+      });
+      for (const [filterPath, filterLastmod] of activeBlogFilters) {
+        blogUrls.push({
+          url: `${baseUrl}/blog/${filterPath}/`,
+          lastmod: filterLastmod,
+        });
+      }
+      fs.writeFileSync(path.join(langDir, 'sitemap-blogs.xml'), generateUrlset(blogUrls), 'utf-8');
+    }
   }
 
   // 4. Features / Eyewear (skip if empty)

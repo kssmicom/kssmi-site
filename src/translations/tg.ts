@@ -20,6 +20,7 @@ export default {
       customization: "Фармоишӣ",
       collection: "Коллексия",
       feature: "Ҳалли",
+      faq: "FAQ",
       about: "Дар бора",
       contact: "Тамос",
       blog: "Блог",

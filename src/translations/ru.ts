@@ -20,6 +20,7 @@ export default {
       customization: "Кастомизация",
       collection: "Коллекция",
       feature: "Решения",
+      faq: "FAQ",
       about: "О нас",
       contact: "Контакты",
       blog: "Блог",

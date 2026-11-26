@@ -20,6 +20,7 @@ export default {
       customization: "Kustomisasi",
       collection: "Koleksi",
       feature: "Solusi",
+      faq: "FAQ",
       about: "Babagan",
       contact: "Hubungi",
       blog: "Blog",

@@ -20,6 +20,7 @@ export default {
       customization: "カスタム",
       collection: "コレクション",
       feature: "ソリューション",
+      faq: "FAQ",
       about: "概要",
       contact: "連絡",
       blog: "ブログ",
