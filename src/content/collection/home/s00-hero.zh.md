@@ -4,7 +4,7 @@ lang: 'zh'
 heading: "眼镜OEM/ODM制造商 — 定制板材、钛金属和碳纤维镜架"
 subheadingLine1: '深圳工厂。60天全定制打样。60天生产。'
 subheadingLine2: '定制太阳镜与光学镜架'
-description: "可米是一家位于深圳的OEM和ODM眼镜制造商，服务于高端品牌、独立设计师及自有品牌买家。我们的材质涵盖板材、钛金属、碳纤维、金属、TR90及混合材质镜架。高端板材均来自Mazzucchelli和JINYU，钛金属材料来自Kobe Steel与Baoji Titanium。板材、金属及钛架起订量300付/款（100付/色），碳纤维200付/款。"
+description: "可米是一家位于深圳的OEM和ODM眼镜制造商，服务于高端品牌、独立设计师及自有品牌买家。我们的材质涵盖板材、钛金属、碳纤维、金属、TR90及混合材质镜架。高端板材均来自华意（Mazzucchelli）、集美（JIMEI）和金余（JINYU），钛金属材料来自Kobe Steel与Baoji Titanium。板材、金属及钛架起订量300付/款（100付/色），碳纤维200付/款。"
 primaryCta: '获取报价'
 primaryCtaUrl: '/quote'
 secondaryCta: '查看镜架材质'
