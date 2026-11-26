@@ -96,6 +96,49 @@ const articleSchema = {
     '@id': canonicalUrl,
   },
 };
+
+function stripInlineMarkdown(text: string): string {
+  return text
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/[*_`~]+/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function extractFaqItemsFromMarkdown(body?: string): Array<{ question: string; answer: string }> {
+  if (!body) return [];
+  const sepIdx = body.lastIndexOf('\n---\n');
+  const beforeFooter = sepIdx === -1 ? body : body.slice(0, sepIdx);
+  const lastH2Idx = beforeFooter.lastIndexOf('\n## ');
+  const faqSection = lastH2Idx === -1 ? beforeFooter : beforeFooter.slice(lastH2Idx);
+
+  const items: Array<{ question: string; answer: string }> = [];
+  const blockRe = /^###\s+\d+\.\s+([^\n]+)\r?\n+([\s\S]*?)(?=\r?\n###\s+\d+\.|\s*$)/gm;
+  for (const match of faqSection.matchAll(blockRe)) {
+    const question = stripInlineMarkdown(match[1]);
+    const answer = stripInlineMarkdown(match[2]);
+    if (question && answer) {
+      items.push({ question, answer });
+    }
+  }
+  return items;
+}
+
+const faqItems = extractFaqItemsFromMarkdown(post.entry.body);
+const faqSchema = faqItems.length > 0
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqItems.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer,
+        },
+      })),
+    }
+  : null;
 ---
 
 <Layout
@@ -107,6 +150,7 @@ const articleSchema = {
   type="article"
 >
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 
   <Header lang={lang} />
   <Breadcrumb items={breadcrumbItems} lang={lang} />
