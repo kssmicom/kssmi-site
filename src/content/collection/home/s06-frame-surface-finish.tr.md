@@ -17,7 +17,7 @@ materials:
     points:
       - 'Düz, hafifletilmiş ve buzlu doku.'
       - 'Parmak izlerini ve küçük çizikleri gizler, dokunsal bir tutuş sağlar.'
-      - 'Endüstriyel tasarım metal çerçeveler, modern TR90 veya asetat spor modelleri için mükemmeldir.'
+      - 'Endüstriyel tasarım metal çerçeveler, modern TR-90 veya asetat spor modelleri için mükemmeldir.'
     slug: 'matte-sandblasted'
     image: '/media/products/kmo-234-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-234-1.webp'
   - name: 'Fırçalanmış'
@@ -73,7 +73,7 @@ materials:
     points:
       - 'Ultra mat, düz, yansıtıcı olmayan yüzey.'
       - 'Cilt benzeri, kaymaz bir tutuş sağlar ve tere karşı dayanıklıdır.'
-      - 'Spor güneş gözlükleri, TR90 spor çerçeveleri için mükemmeldir.'
+      - 'Spor güneş gözlükleri, TR-90 spor çerçeveleri için mükemmeldir.'
     slug: 'rubberized'
     image: '/media/products/kmo-256-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-256-1.webp'
   - name: 'Eloksal'

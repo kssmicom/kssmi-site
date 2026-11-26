@@ -58,7 +58,7 @@ materials:
     slug: 'nylon-eyewear'
     image: '/media/products/kas-311-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-311-1.webp'
 
-  - name: 'Gafas de TR90'
+  - name: 'Gafas de TR-90'
     subtitle: 'Un material de memoria ultraligero con flexibilidad y comodidad durante todo el día.'
     points:
       - 'Monturas ligeras deportivas y para el día a día'

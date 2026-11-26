@@ -17,7 +17,7 @@ materials:
     points:
       - 'Texture plate, discrète et givrée.'
       - 'Masque les empreintes digitales et les rayures mineures, offrant une prise en main tactile.'
-      - 'Idéal pour les montures en métal au design industriel, les modèles sportifs modernes en TR90 ou acétate.'
+      - 'Idéal pour les montures en métal au design industriel, les modèles sportifs modernes en TR-90 ou acétate.'
     slug: 'matte-sandblasted'
     image: '/media/products/kmo-234-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-234-1.webp'
   - name: 'Brossé'
@@ -73,7 +73,7 @@ materials:
     points:
       - 'Surface ultra-mate, plate et non réfléchissante.'
       - 'Offre une adhérence antidérapante semblable à la peau et résiste à la transpiration.'
-      - 'Idéal pour les lunettes de soleil de sport, les montures de sport en TR90.'
+      - 'Idéal pour les lunettes de soleil de sport, les montures de sport en TR-90.'
     slug: 'rubberized'
     image: '/media/products/kmo-256-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-256-1.webp'
   - name: 'Anodisation'

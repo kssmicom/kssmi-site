@@ -1,8 +1,8 @@
 ---
 lang: "de"
 slug: "faq"
-seoTitle: "Brillenfabrik FAQ: Sonnenbrillen aus Acetat, Metall & TR90 | Kssmi"
-seoDescription: "FAQ von Kssmi, Brillenfabrik in Shenzhen seit 2003: MOQ, OEM/ODM, Muster, Lieferzeit, Sonnenbrillen und Korrekturfassungen aus Acetat, Metall & TR90, QC und Versand."
+seoTitle: "Brillenfabrik FAQ: Sonnenbrillen aus Acetat, Metall & TR-90 | Kssmi"
+seoDescription: "FAQ von Kssmi, Brillenfabrik in Shenzhen seit 2003: MOQ, OEM/ODM, Muster, Lieferzeit, Sonnenbrillen und Korrekturfassungen aus Acetat, Metall & TR-90, QC und Versand."
 heading: "Häufig gestellte Fragen"
 subtitle: "Alles, was Sie über die Zusammenarbeit mit Kssmi Eyewear wissen müssen"
 ui:
@@ -27,7 +27,7 @@ topics:
     title: "Zahlung & Versand"
 items:
   - question: "Wie hoch ist die Mindestbestellmenge pro Modell und Farbe?"
-    answer: "Für die meisten individuellen Acetat-, Metall- und Titanmodelle gelten 300 Brillen pro Modell, meist verteilt auf bis zu 3 Farben mit je 100 Stück. Kohlefasermodelle beginnen bei 200 Stück pro Modell. Für reguläre TR90-Modelle sind üblicherweise 1200 Stück pro Modell nötig; für vollständig individuell entwickelte Sportfassungen aus TR90 gelten 600 Stück pro Farbe. Besondere Materialien und Glasfarben können eigene Mindestmengen haben. Mengen verschiedener Modelle lassen sich nicht zusammenrechnen; die Mindestmenge wird in einem Produktionslauf gefertigt."
+    answer: "Für die meisten individuellen Acetat-, Metall- und Titanmodelle gelten 300 Brillen pro Modell, meist verteilt auf bis zu 3 Farben mit je 100 Stück. Kohlefasermodelle beginnen bei 200 Stück pro Modell. Für TR-90-Modelle sind 1200 Stück pro Modell nötig, mindestens jedoch 600 Stück pro Farbe. Besondere Materialien und Glasfarben können eigene Mindestmengen haben. Mengen verschiedener Modelle lassen sich nicht zusammenrechnen; die Mindestmenge wird in einem Produktionslauf gefertigt."
     topic: "moq"
   - question: "Bieten Sie OEM, ODM und Eigenmarkenentwicklung an?"
     answer: "Ja. Kssmi fertigt nach Ihrem freigegebenen Entwurf, entwickelt aus Ihrem Konzept eigenständige Designs und versieht ausgewählte Katalogmodelle mit Ihrer Marke. Vor kostenpflichtigen Arbeiten prüfen wir die Machbarkeit und bieten den Leistungsumfang an. Üblich sind Zeichnungsfreigabe, gegebenenfalls Werkzeugbau, Musterfreigabe und anschließend Serienproduktion. Referenzbilder dienen als Orientierung für ein eigenständiges Design. Bitte stellen Sie nur Designs und Logos bereit, zu deren Nutzung Sie berechtigt sind."
@@ -36,10 +36,10 @@ items:
     answer: "Nach den jeweiligen Bestätigungen und Zahlungen benötigen technische Zeichnungen typischerweise 3-10 Arbeitstage. Werkzeugbau und ein vollständig individuelles Muster dauern nach Designfreigabe etwa 50-60 Tage. Nach Musterfreigabe und Auftragsbestätigung dauert die Serienproduktion etwa 45 Tage für Spritzgussfassungen und etwa 60 Tage für Acetatfassungen. Die Schritte erfolgen nacheinander; planen Sie für eine erste vollständig individuelle Kollektion rund 5 Monate ein. Endgültiger Zeitplan und Transport werden projektbezogen bestätigt."
     topic: "production"
   - question: "Kann ich Muster prüfen, und werden Entwicklungskosten angerechnet?"
-    answer: "Ja. Katalogmuster zur Qualitätsbewertung und individuelle Entwicklungsmuster folgen unterschiedlichen Abläufen; Verfügbarkeit, Gebühren und Kurierkosten werden vorab bestätigt. Freigegebenes Muster und Spezifikationen bilden die Serienreferenz. Anrechenbare Entwicklungs-, Muster-, Werkzeug- und Designkosten können von Serienzahlungen abgezogen werden, sobald dasselbe Modell 1000 Stück innerhalb von 12 Monaten erreicht; bei TR90-Spritzgusswerkzeugen und Mustern gilt eine Schwelle von 12000 Stück. Frachtkosten sind ausgeschlossen. Die geltenden Bedingungen stehen im Angebot."
+    answer: "Ja. Katalogmuster zur Qualitätsbewertung und individuelle Entwicklungsmuster folgen unterschiedlichen Abläufen; Verfügbarkeit, Gebühren und Kurierkosten werden vorab bestätigt. Freigegebenes Muster und Spezifikationen bilden die Serienreferenz. Anrechenbare Entwicklungs-, Muster-, Werkzeug- und Designkosten können von Serienzahlungen abgezogen werden, sobald dasselbe Modell 1000 Stück innerhalb von 12 Monaten erreicht; bei TR-90-Spritzgusswerkzeugen und Mustern gilt eine Schwelle von 12000 Stück. Frachtkosten sind ausgeschlossen. Die geltenden Bedingungen stehen im Angebot."
     topic: "production"
   - question: "Welche Fassungsmaterialien und Glasoptionen gibt es?"
-    answer: "Wir verarbeiten Acetat, Rein- und Beta-Titan, Edelstahl, Kupfer-Nickel-Legierung, Kohlefaser und TR90. Glasoptionen sind TAC, CR-39, PC und Nylon, mit UV400-Sonnenschutz sowie polarisierenden, verlaufgetönten, verspiegelten, selbsttönenden oder blaulichtfilternden Varianten. Materialien, Gläser und Beschläge stimmen wir auf Design und Zielmarkt ab. Optische Fassungen werden mit Demogläsern geliefert; wir fertigen keine Korrektionsgläser."
+    answer: "Wir verarbeiten Acetat, Rein- und Beta-Titan, Edelstahl, Kupfer-Nickel-Legierung, Kohlefaser und TR-90. Glasoptionen sind TAC, CR-39, PC und Nylon, mit UV400-Sonnenschutz sowie polarisierenden, verlaufgetönten, verspiegelten, selbsttönenden oder blaulichtfilternden Varianten. Materialien, Gläser und Beschläge stimmen wir auf Design und Zielmarkt ab. Optische Fassungen werden mit Demogläsern geliefert; wir fertigen keine Korrektionsgläser."
     topic: "materials"
   - question: "Welche Qualitäts- und Konformitätsunterlagen können Sie bereitstellen?"
     answer: "Unser Qualitätsmanagementsystem ist nach ISO 9001 zertifiziert; eine Zertifikatskopie ist nach Auftragserteilung erhältlich. Produktbezogene Konformitätsunterlagen werden für Zielmarkt und endgültige Spezifikation gesondert bestätigt. Werksprüfberichte ersetzen weder marktspezifische Dokumente noch unabhängige Prüfungen. Soweit anwendbar, können wir externe Prüfungen zu tatsächlichen Kosten koordinieren. Berichte anderer Modelle zertifizieren keinen neuen Entwurf."

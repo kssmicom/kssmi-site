@@ -1,10 +1,10 @@
 ---
 section: 's00-hero'
 lang: 'it'
-heading: "Produttore OEM/ODM di Occhiali — Montature Personalizzate in Acetato, Titanio e Fibra di Carbonio"
+heading: "Produttore OEM/ODM di Occhiali — Montature Personalizzate in Acetato, Titanio, Fibra di Carbonio e TR-90"
 subheadingLine1: 'Fabbrica a Shenzhen. Rendering 2D in 5–10 Giorni. Campionatura in 60 Giorni. Produzione in 60 Giorni.'
 subheadingLine2: 'Occhiali da Sole e Montature da Vista Personalizzati'
-description: "Kssmi è un produttore di occhiali OEM e ODM con sede a Shenzhen, al servizio di marchi premium, designer indipendenti e acquirenti di marchi privati. I nostri materiali includono acetato, titanio, fibra di carbonio, metallo, TR90 e montature ibride. L'acetato premium proviene da Mazzucchelli, JIMEI e JINYU, mentre i materiali in titanio provengono da Kobe Steel e Baoji Titanium. Il MOQ parte da 300 paia/modello (100 paia/colore) per acetato, metallo e titanio e 200 paia/modello per la fibra di carbonio."
+description: "Kssmi è un produttore di occhiali OEM e ODM con sede a Shenzhen, al servizio di marchi premium, designer indipendenti e acquirenti di marchi privati. I nostri materiali includono acetato, titanio, fibra di carbonio, metallo, TR-90 e montature ibride. L'acetato premium proviene da Mazzucchelli, JIMEI e JINYU, mentre i materiali in titanio provengono da Kobe Steel e Baoji Titanium. Il MOQ parte da 300 paia/modello (100 paia/colore) per acetato, metallo e titanio, 200 paia/modello per la fibra di carbonio e 1200 paia/modello (600 paia/colore) per il TR-90."
 primaryCta: 'Richiedi un Preventivo'
 primaryCtaUrl: '/quote'
 secondaryCta: 'Vedi i Materiali delle Montature'

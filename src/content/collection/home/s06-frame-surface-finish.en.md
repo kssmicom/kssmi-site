@@ -17,7 +17,7 @@ materials:
     points:
       - 'Flat, muted, frosted texture.'
       - 'Hides fingerprints and minor scratches, provides a tactile grip.'
-      - 'Ideal for industrial design metal frames, modern TR90 or acetate sports models.'
+      - 'Ideal for industrial design metal frames, modern TR-90 or acetate sports models.'
     slug: 'matte-sandblasted'
     image: '/media/products/kmo-234-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-234-1.webp'
   - name: 'Brushed'
@@ -73,7 +73,7 @@ materials:
     points:
       - 'Ultra-matte, flat, non-reflective surface.'
       - 'Offers a skin-like, anti-slip grip and resists sweat.'
-      - 'Ideal for sport sunglasses, TR90 activewear frames.'
+      - 'Ideal for sport sunglasses, TR-90 activewear frames.'
     slug: 'rubberized'
     image: '/media/products/kmo-256-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-256-1.webp'
   - name: 'Anodizing'

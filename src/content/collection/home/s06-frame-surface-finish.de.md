@@ -17,7 +17,7 @@ materials:
     points:
       - 'Flache, gedämpfte und mattierte Textur.'
       - 'Verbirgt Fingerabdrücke und kleinere Kratzer, bietet einen griffigen Halt.'
-      - 'Ideal für Metallfassungen im Industriedesign, moderne TR90- oder Acetat-Sportmodelle.'
+      - 'Ideal für Metallfassungen im Industriedesign, moderne TR-90- oder Acetat-Sportmodelle.'
     slug: 'matte-sandblasted'
     image: '/media/products/kmo-234-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-234-1.webp'
   - name: 'Gebürstet'
@@ -73,7 +73,7 @@ materials:
     points:
       - 'Ultramatte, flache, nicht reflektierende Oberfläche.'
       - 'Bietet einen hautähnlichen, rutschfesten Griff und ist schweißbeständig.'
-      - 'Ideal für Sportsonnenbrillen, TR90-Sportfassungen.'
+      - 'Ideal für Sportsonnenbrillen, TR-90-Sportfassungen.'
     slug: 'rubberized'
     image: '/media/products/kmo-256-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-256-1.webp'
   - name: 'Eloxieren'

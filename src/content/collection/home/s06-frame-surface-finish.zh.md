@@ -17,7 +17,7 @@ materials:
     points:
       - '平整、内敛的漫反射磨砂质感。'
       - '隐藏指纹与细微划痕，提供微涩的触感阻尼。'
-      - '适用于工业风金属镜框，现代TR90或板材运动款式。'
+      - '适用于工业风金属镜框，现代TR-90或板材运动款式。'
     slug: 'matte-sandblasted'
     image: '/media/products/kmo-234-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-234-1.webp'
   - name: '拉丝'
@@ -73,7 +73,7 @@ materials:
     points:
       - '极致哑光、平整、完全无反光的表面。'
       - '提供类肤的防滑握感并具备基础抗汗性能。'
-      - '适用于运动太阳镜，TR90户外运动镜架。'
+      - '适用于运动太阳镜，TR-90户外运动镜架。'
     slug: 'rubberized'
     image: '/media/products/kmo-256-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-256-1.webp'
   - name: '阳极氧化'

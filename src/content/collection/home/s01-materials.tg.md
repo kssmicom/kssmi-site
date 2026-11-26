@@ -58,7 +58,7 @@ materials:
     slug: 'nylon-eyewear'
     image: '/media/products/kas-311-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-311-1.webp'
 
-  - name: 'Айнаки TR90'
+  - name: 'Айнаки TR-90'
     subtitle: 'Маводи хотираи ултра сабук бо чандирӣ ва бароҳатии тамоми рӯз.'
     points:
       - 'Чорчӯбаҳои сабуки варзишӣ ва ҳаррӯза'

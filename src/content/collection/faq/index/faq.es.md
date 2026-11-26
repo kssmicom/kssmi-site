@@ -1,8 +1,8 @@
 ---
 lang: "es"
 slug: "faq"
-seoTitle: "FAQ fábrica de gafas: gafas de sol de acetato, metal y TR90 | Kssmi"
-seoDescription: "Preguntas frecuentes de Kssmi, fábrica de gafas en Shenzhen desde 2003: MOQ, OEM/ODM, muestras, plazos, gafas de sol y monturas de acetato, metal y TR90, calidad y envío."
+seoTitle: "FAQ fábrica de gafas: gafas de sol de acetato, metal y TR-90 | Kssmi"
+seoDescription: "Preguntas frecuentes de Kssmi, fábrica de gafas en Shenzhen desde 2003: MOQ, OEM/ODM, muestras, plazos, gafas de sol y monturas de acetato, metal y TR-90, calidad y envío."
 heading: "Preguntas frecuentes"
 subtitle: "Todo lo que necesita saber para trabajar con Kssmi Eyewear"
 ui:
@@ -27,7 +27,7 @@ topics:
     title: "Pago y envío"
 items:
   - question: "¿Cuál es el pedido mínimo por modelo y color?"
-    answer: "La mayoría de los modelos personalizados de acetato, metal y titanio parten de 300 pares por modelo, normalmente en hasta 3 colores de 100 pares cada uno. Los modelos de fibra de carbono parten de 200 pares por modelo. Los modelos TR90 estándar suelen requerir 1200 pares por modelo; las monturas deportivas TR90 totalmente personalizadas, 600 pares por color. Los materiales especiales y colores de lentes pueden tener mínimos propios. No se suman modelos distintos y el mínimo se fabrica en una sola tirada."
+    answer: "La mayoría de los modelos personalizados de acetato, metal y titanio parten de 300 pares por modelo, normalmente en hasta 3 colores de 100 pares cada uno. Los modelos de fibra de carbono parten de 200 pares por modelo. Los modelos TR-90 requieren 1200 pares por modelo, con un mínimo de 600 pares por color. Los materiales especiales y colores de lentes pueden tener mínimos propios. No se suman modelos distintos y el mínimo se fabrica en una sola tirada."
     topic: "moq"
   - question: "¿Ofrecen desarrollo OEM, ODM y de marca propia?"
     answer: "Sí. Kssmi fabrica según su diseño aprobado, desarrolla diseños originales a partir de su concepto y aplica su marca a modelos seleccionados del catálogo. Revisamos la viabilidad y presupuestamos el alcance antes de iniciar trabajos de pago. La secuencia habitual es aprobación de planos, utillaje cuando sea necesario, aprobación de muestras y producción en serie. Las referencias orientan un diseño original; aporte únicamente diseños y logotipos que tenga derecho a utilizar."
@@ -36,10 +36,10 @@ items:
     answer: "Tras las confirmaciones y pagos correspondientes, los planos técnicos suelen requerir 3-10 días laborables; el utillaje y una muestra totalmente personalizada, 50-60 días después de aprobar el diseño. Tras aprobar la muestra y confirmar el pedido, la producción tarda unos 45 días para monturas inyectadas y unos 60 días para acetato. Las etapas son sucesivas; prevea unos 5 meses para una primera colección totalmente personalizada. El calendario final y el transporte se confirman por proyecto."
     topic: "production"
   - question: "¿Puedo evaluar muestras y descontar los gastos de desarrollo?"
-    answer: "Sí. Las muestras de catálogo para evaluar calidad y las de desarrollo personalizado siguen procesos distintos; primero confirmamos disponibilidad, costes y mensajería. La muestra aprobada y las especificaciones guían la producción. Los gastos elegibles de desarrollo, muestras, utillaje y diseño pueden descontarse de los pagos de producción cuando el mismo modelo alcance 1000 pares en 12 meses; el utillaje y las muestras de inyección TR90 requieren 12000 pares. El transporte queda excluido. El presupuesto detalla las condiciones aplicables."
+    answer: "Sí. Las muestras de catálogo para evaluar calidad y las de desarrollo personalizado siguen procesos distintos; primero confirmamos disponibilidad, costes y mensajería. La muestra aprobada y las especificaciones guían la producción. Los gastos elegibles de desarrollo, muestras, utillaje y diseño pueden descontarse de los pagos de producción cuando el mismo modelo alcance 1000 pares en 12 meses; el utillaje y las muestras de inyección TR-90 requieren 12000 pares. El transporte queda excluido. El presupuesto detalla las condiciones aplicables."
     topic: "production"
   - question: "¿Qué materiales de montura y opciones de lentes ofrecen?"
-    answer: "Trabajamos con acetato, titanio puro y beta, acero inoxidable, cuproníquel, fibra de carbono y TR90. Las lentes incluyen TAC, CR-39, PC y nailon, con protección solar UV400 y opciones polarizadas, degradadas, espejadas, fotocromáticas o con filtro de luz azul. Materiales, lentes y herrajes se adaptan al diseño y mercado. Las monturas ópticas se entregan con lentes de demostración; no fabricamos lentes graduadas."
+    answer: "Trabajamos con acetato, titanio puro y beta, acero inoxidable, cuproníquel, fibra de carbono y TR-90. Las lentes incluyen TAC, CR-39, PC y nailon, con protección solar UV400 y opciones polarizadas, degradadas, espejadas, fotocromáticas o con filtro de luz azul. Materiales, lentes y herrajes se adaptan al diseño y mercado. Las monturas ópticas se entregan con lentes de demostración; no fabricamos lentes graduadas."
     topic: "materials"
   - question: "¿Qué documentación de calidad y conformidad pueden proporcionar?"
     answer: "Nuestro sistema de gestión de calidad está certificado según ISO 9001; la copia del certificado está disponible tras realizar un pedido. La documentación de conformidad del producto se confirma aparte para el mercado de destino y la especificación final. Los informes de fábrica no sustituyen la documentación local ni los ensayos independientes. Cuando proceda, podemos coordinar ensayos externos a coste real. Los informes de otros modelos no certifican un diseño nuevo."

@@ -1,8 +1,8 @@
 ---
 lang: "fr"
 slug: "faq"
-seoTitle: "FAQ usine de lunettes : solaires acétate, métal et TR90 | Kssmi"
-seoDescription: "FAQ de Kssmi, usine de lunettes à Shenzhen depuis 2003 : MOQ, OEM/ODM, échantillons, délais, lunettes de soleil et montures en acétate, métal et TR90, qualité et expédition."
+seoTitle: "FAQ usine de lunettes : solaires acétate, métal et TR-90 | Kssmi"
+seoDescription: "FAQ de Kssmi, usine de lunettes à Shenzhen depuis 2003 : MOQ, OEM/ODM, échantillons, délais, lunettes de soleil et montures en acétate, métal et TR-90, qualité et expédition."
 heading: "Questions fréquentes"
 subtitle: "Tout ce qu’il faut savoir pour travailler avec Kssmi Eyewear"
 ui:
@@ -27,7 +27,7 @@ topics:
     title: "Paiement et expédition"
 items:
   - question: "Quel est le minimum de commande par modèle et par couleur ?"
-    answer: "La plupart des modèles personnalisés en acétate, métal et titane commencent à 300 paires par modèle, généralement jusqu’à 3 couleurs de 100 paires chacune. Les modèles en fibre de carbone commencent à 200 paires par modèle. Les modèles TR90 standard nécessitent généralement 1200 paires par modèle ; les montures sport TR90 entièrement personnalisées, 600 paires par couleur. Les matériaux spéciaux et couleurs de verres peuvent avoir leurs propres minimums. Les modèles ne se cumulent pas et le minimum est fabriqué en une seule série."
+    answer: "La plupart des modèles personnalisés en acétate, métal et titane commencent à 300 paires par modèle, généralement jusqu’à 3 couleurs de 100 paires chacune. Les modèles en fibre de carbone commencent à 200 paires par modèle. Les modèles TR-90 nécessitent 1200 paires par modèle, avec au moins 600 paires par couleur. Les matériaux spéciaux et couleurs de verres peuvent avoir leurs propres minimums. Les modèles ne se cumulent pas et le minimum est fabriqué en une seule série."
     topic: "moq"
   - question: "Proposez-vous le développement OEM, ODM et en marque propre ?"
     answer: "Oui. Kssmi fabrique selon votre dessin approuvé, développe des créations originales à partir de votre concept et appose votre marque sur certains modèles du catalogue. Nous vérifions la faisabilité et chiffrons le périmètre avant tout travail payant. Le processus habituel comprend l’approbation des plans, l’outillage si nécessaire, l’approbation de l’échantillon, puis la série. Les références orientent une création originale ; fournissez uniquement des dessins et logos que vous êtes autorisé à utiliser."
@@ -36,10 +36,10 @@ items:
     answer: "Après les confirmations et paiements correspondants, les plans techniques prennent généralement 3-10 jours ouvrés ; l’outillage et un échantillon entièrement personnalisé, 50-60 jours après validation du dessin. Après approbation de l’échantillon et confirmation de commande, la série prend environ 45 jours pour les montures injectées et 60 jours pour l’acétate. Les étapes se suivent ; prévoyez environ 5 mois pour une première collection entièrement personnalisée. Le calendrier définitif et le transport sont confirmés par projet."
     topic: "production"
   - question: "Puis-je évaluer des échantillons et déduire les frais de développement ?"
-    answer: "Oui. Les échantillons du catalogue pour évaluation et les échantillons de développement suivent des parcours différents ; disponibilité, frais et transport express sont confirmés au préalable. L’échantillon et les spécifications approuvés guident la série. Les frais admissibles de développement, échantillons, outillage et conception peuvent être déduits des paiements de série lorsque le même modèle atteint 1000 paires en 12 mois ; l’outillage et les échantillons d’injection TR90 nécessitent 12000 paires. Le transport est exclu. Le devis précise les conditions applicables."
+    answer: "Oui. Les échantillons du catalogue pour évaluation et les échantillons de développement suivent des parcours différents ; disponibilité, frais et transport express sont confirmés au préalable. L’échantillon et les spécifications approuvés guident la série. Les frais admissibles de développement, échantillons, outillage et conception peuvent être déduits des paiements de série lorsque le même modèle atteint 1000 paires en 12 mois ; l’outillage et les échantillons d’injection TR-90 nécessitent 12000 paires. Le transport est exclu. Le devis précise les conditions applicables."
     topic: "production"
   - question: "Quels matériaux de montures et quelles options de verres proposez-vous ?"
-    answer: "Nous travaillons l’acétate, le titane pur et bêta, l’acier inoxydable, le cupronickel, la fibre de carbone et le TR90. Les verres comprennent TAC, CR-39, PC et nylon, avec protection solaire UV400 et options polarisantes, dégradées, miroir, photochromiques ou filtrant la lumière bleue. Matériaux, verres et composants sont adaptés au dessin et au marché. Les montures optiques sont livrées avec des verres de démonstration ; nous ne fabriquons pas de verres correcteurs."
+    answer: "Nous travaillons l’acétate, le titane pur et bêta, l’acier inoxydable, le cupronickel, la fibre de carbone et le TR-90. Les verres comprennent TAC, CR-39, PC et nylon, avec protection solaire UV400 et options polarisantes, dégradées, miroir, photochromiques ou filtrant la lumière bleue. Matériaux, verres et composants sont adaptés au dessin et au marché. Les montures optiques sont livrées avec des verres de démonstration ; nous ne fabriquons pas de verres correcteurs."
     topic: "materials"
   - question: "Quels documents de qualité et de conformité pouvez-vous fournir ?"
     answer: "Notre système de management de la qualité est certifié ISO 9001 ; une copie du certificat est disponible après commande. Les documents de conformité produit sont confirmés séparément selon le marché et la spécification finale. Les rapports de contrôle d’usine ne remplacent ni les documents locaux ni les essais indépendants. Selon le cas, nous pouvons coordonner des essais tiers facturés au coût réel. Les rapports d’autres modèles ne certifient pas une nouvelle création."

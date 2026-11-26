@@ -17,7 +17,7 @@ materials:
     points:
       - '평면적이고 부드러운 무광 텍스처.'
       - '지문과 미세한 흠집을 숨기고 촉각적인 그립감을 제공합니다.'
-      - '인더스트리얼 디자인 메탈 프레임, 모던 TR90 또는 아세테이트 스포츠 모델에 이상적입니다.'
+      - '인더스트리얼 디자인 메탈 프레임, 모던 TR-90 또는 아세테이트 스포츠 모델에 이상적입니다.'
     slug: 'matte-sandblasted'
     image: '/media/products/kmo-234-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-234-1.webp'
   - name: '브러시드'
@@ -73,7 +73,7 @@ materials:
     points:
       - '초무광의 평평하고 빛 반사가 없는 표면.'
       - '피부 같은 미끄럼 방지 그립을 제공하며 땀에 강합니다.'
-      - '스포츠 선글라스, TR90 액티브웨어 프레임에 이상적입니다.'
+      - '스포츠 선글라스, TR-90 액티브웨어 프레임에 이상적입니다.'
     slug: 'rubberized'
     image: '/media/products/kmo-256-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-256-1.webp'
   - name: '아노다이징'

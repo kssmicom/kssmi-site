@@ -58,7 +58,7 @@ materials:
     slug: 'nylon-eyewear'
     image: '/media/products/kas-311-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-311-1.webp'
 
-  - name: 'TR90製アイウェア'
+  - name: 'TR-90製アイウェア'
     subtitle: '柔軟性と一日中続く快適さを備えた超軽量の記憶素材。'
     points:
       - 'スポーツや日常使いの軽量フレーム'

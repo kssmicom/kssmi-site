@@ -1,8 +1,8 @@
 ---
 lang: "ms"
 slug: "faq"
-seoTitle: "FAQ Kilang Cermin Mata: Cermin Mata Hitam Asetat, Logam & TR90 | Kssmi"
-seoDescription: "Soalan lazim daripada Kssmi, kilang cermin mata di Shenzhen sejak 2003: MOQ, OEM/ODM, sampel, tempoh pengeluaran, cermin mata hitam dan bingkai optik asetat, logam & TR90, QC dan penghantaran."
+seoTitle: "FAQ Kilang Cermin Mata: Cermin Mata Hitam Asetat, Logam & TR-90 | Kssmi"
+seoDescription: "Soalan lazim daripada Kssmi, kilang cermin mata di Shenzhen sejak 2003: MOQ, OEM/ODM, sampel, tempoh pengeluaran, cermin mata hitam dan bingkai optik asetat, logam & TR-90, QC dan penghantaran."
 heading: "Soalan Lazim"
 subtitle: "Semua yang anda perlu tahu tentang bekerjasama dengan Kssmi Eyewear"
 ui:
@@ -27,7 +27,7 @@ topics:
     title: "Pembayaran dan penghantaran"
 items:
   - question: "Berapakah pesanan minimum bagi setiap model dan warna?"
-    answer: "Kebanyakan model asetat, logam dan titanium tersuai bermula pada 300 pasang bagi setiap model, biasanya sehingga 3 warna dengan 100 pasang setiap warna. Model gentian karbon bermula pada 200 pasang setiap model. Model TR90 standard biasanya memerlukan 1200 pasang setiap model; bingkai sukan TR90 tersuai sepenuhnya memerlukan 600 pasang setiap warna. Bahan khas dan warna kanta mungkin mempunyai minimum berasingan. Kuantiti model berlainan tidak boleh digabungkan, dan minimum dihasilkan dalam satu kelompok pengeluaran."
+    answer: "Kebanyakan model asetat, logam dan titanium tersuai bermula pada 300 pasang bagi setiap model, biasanya sehingga 3 warna dengan 100 pasang setiap warna. Model gentian karbon bermula pada 200 pasang setiap model. Model TR-90 memerlukan 1200 pasang setiap model, dengan minimum 600 pasang setiap warna. Bahan khas dan warna kanta mungkin mempunyai minimum berasingan. Kuantiti model berlainan tidak boleh digabungkan, dan minimum dihasilkan dalam satu kelompok pengeluaran."
     topic: "moq"
   - question: "Adakah anda menawarkan pembangunan OEM, ODM dan jenama persendirian?"
     answer: "Ya. Kssmi menghasilkan mengikut reka bentuk yang anda luluskan, membangunkan reka bentuk asli daripada konsep anda dan meletakkan jenama anda pada model katalog terpilih. Kami menilai kebolehlaksanaan dan memberikan sebut harga skop sebelum kerja berbayar bermula. Urutan biasa ialah kelulusan lukisan, acuan jika perlu, kelulusan sampel dan pengeluaran pukal. Imej rujukan membimbing reka bentuk asli; berikan hanya reka bentuk dan logo yang anda berhak gunakan."
@@ -36,10 +36,10 @@ items:
     answer: "Selepas pengesahan dan pembayaran berkaitan, lukisan teknikal biasanya mengambil 3-10 hari bekerja; acuan dan sampel tersuai sepenuhnya mengambil 50-60 hari selepas kelulusan reka bentuk. Selepas kelulusan sampel dan pengesahan pesanan, pengeluaran pukal sekitar 45 hari untuk bingkai acuan suntikan dan 60 hari untuk asetat. Peringkat berjalan berurutan; peruntukkan sekitar 5 bulan untuk koleksi tersuai penuh pertama. Jadual akhir dan penghantaran disahkan bagi projek anda."
     topic: "production"
   - question: "Bolehkah saya menilai sampel dan menolak kos pembangunan?"
-    answer: "Ya. Sampel katalog untuk penilaian kualiti dan sampel pembangunan tersuai melalui laluan berlainan; ketersediaan, fi dan kurier disahkan dahulu. Sampel dan spesifikasi yang diluluskan menjadi rujukan pengeluaran pukal. Fi pembangunan, sampel, acuan dan reka bentuk yang layak boleh ditolak daripada bayaran pukal apabila model sama mencapai 1000 pasang dalam 12 bulan; acuan suntikan dan sampel TR90 memerlukan 12000 pasang. Kos penghantaran dikecualikan. Sebut harga menyatakan syarat potongan yang terpakai."
+    answer: "Ya. Sampel katalog untuk penilaian kualiti dan sampel pembangunan tersuai melalui laluan berlainan; ketersediaan, fi dan kurier disahkan dahulu. Sampel dan spesifikasi yang diluluskan menjadi rujukan pengeluaran pukal. Fi pembangunan, sampel, acuan dan reka bentuk yang layak boleh ditolak daripada bayaran pukal apabila model sama mencapai 1000 pasang dalam 12 bulan; acuan suntikan dan sampel TR-90 memerlukan 12000 pasang. Kos penghantaran dikecualikan. Sebut harga menyatakan syarat potongan yang terpakai."
     topic: "production"
   - question: "Apakah bahan bingkai dan pilihan kanta yang tersedia?"
-    answer: "Kami menggunakan asetat, titanium tulen dan beta, keluli tahan karat, aloi kuprum-nikel, gentian karbon dan TR90. Pilihan kanta termasuk TAC, CR-39, PC dan nilon, dengan kanta suria UV400 serta pilihan berpolarisasi, gradien, cermin, fotokromik atau penapis cahaya biru. Bahan, kanta dan perkakasan dipadankan dengan reka bentuk dan pasaran. Bingkai optik dibekalkan dengan kanta demonstrasi; kami tidak menghasilkan kanta preskripsi."
+    answer: "Kami menggunakan asetat, titanium tulen dan beta, keluli tahan karat, aloi kuprum-nikel, gentian karbon dan TR-90. Pilihan kanta termasuk TAC, CR-39, PC dan nilon, dengan kanta suria UV400 serta pilihan berpolarisasi, gradien, cermin, fotokromik atau penapis cahaya biru. Bahan, kanta dan perkakasan dipadankan dengan reka bentuk dan pasaran. Bingkai optik dibekalkan dengan kanta demonstrasi; kami tidak menghasilkan kanta preskripsi."
     topic: "materials"
   - question: "Apakah dokumen kualiti dan pematuhan yang boleh diberikan?"
     answer: "Sistem pengurusan kualiti kami diperakui ISO 9001; salinan sijil tersedia selepas pesanan dibuat. Dokumen pematuhan produk disahkan berasingan mengikut pasaran destinasi dan spesifikasi akhir. Laporan kualiti kilang tidak menggantikan dokumen pasaran atau ujian bebas. Jika berkenaan, ujian pihak ketiga boleh diselaraskan pada kos sebenar. Laporan bagi model lain tidak memperakui reka bentuk baharu."

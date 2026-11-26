@@ -1,8 +1,8 @@
 ---
 lang: "tr"
 slug: "faq"
-seoTitle: "Gözlük Fabrikası SSS: Asetat, Metal ve TR90 Güneş Gözlükleri | Kssmi"
-seoDescription: "2003'ten beri Shenzhen'de gözlük fabrikası olan Kssmi'den SSS: MOQ, OEM/ODM, numune, üretim süresi, asetat, metal ve TR90 güneş gözlükleri ile optik çerçeveler, kalite kontrol ve sevkiyat."
+seoTitle: "Gözlük Fabrikası SSS: Asetat, Metal ve TR-90 Güneş Gözlükleri | Kssmi"
+seoDescription: "2003'ten beri Shenzhen'de gözlük fabrikası olan Kssmi'den SSS: MOQ, OEM/ODM, numune, üretim süresi, asetat, metal ve TR-90 güneş gözlükleri ile optik çerçeveler, kalite kontrol ve sevkiyat."
 heading: "Sıkça Sorulan Sorular"
 subtitle: "Kssmi Eyewear ile çalışmak hakkında bilmeniz gereken her şey"
 ui:
@@ -27,7 +27,7 @@ topics:
     title: "Ödeme ve sevkiyat"
 items:
   - question: "Model ve renk başına minimum sipariş miktarı nedir?"
-    answer: "Çoğu özel asetat, metal ve titanyum modelde minimum model başına 300 adettir; genellikle en fazla 3 renk ve renk başına 100 adet olarak bölünebilir. Karbon fiber modeller model başına 200 adetten başlar. Standart TR90 modeller genellikle model başına 1200 adet; tamamen özel spor TR90 çerçeveler renk başına 600 adet gerektirir. Özel malzeme ve lens renklerinin ayrı minimumları olabilir. Farklı modellerin miktarları birleştirilemez ve minimum miktar tek üretim partisinde tamamlanır."
+    answer: "Çoğu özel asetat, metal ve titanyum modelde minimum model başına 300 adettir; genellikle en fazla 3 renk ve renk başına 100 adet olarak bölünebilir. Karbon fiber modeller model başına 200 adetten başlar. TR-90 modeller model başına 1200 adet ve renk başına en az 600 adet gerektirir. Özel malzeme ve lens renklerinin ayrı minimumları olabilir. Farklı modellerin miktarları birleştirilemez ve minimum miktar tek üretim partisinde tamamlanır."
     topic: "moq"
   - question: "OEM, ODM ve özel marka geliştirme sunuyor musunuz?"
     answer: "Evet. Kssmi onayladığınız tasarıma göre üretim yapar, konseptinizden özgün tasarım geliştirir ve seçili katalog modellerine markanızı uygular. Ücretli işe başlamadan önce yapılabilirliği değerlendirir ve kapsamı fiyatlandırırız. Normal sıra çizim onayı, gerektiğinde kalıp, numune onayı ve seri üretimdir. Referans görseller özgün tasarıma yön verir; yalnızca kullanma hakkına sahip olduğunuz tasarım ve logoları sağlayın."
@@ -36,10 +36,10 @@ items:
     answer: "İlgili onay ve ödemelerden sonra teknik çizimler genellikle 3-10 iş günü, tasarım onayından sonra kalıp ve tamamen özel numune 50-60 gün sürer. Numune onayı ve sipariş teyidinden sonra seri üretim enjeksiyon çerçevelerde yaklaşık 45 gün, asetatta 60 gündür. Aşamalar sırayla ilerler; ilk tamamen özel koleksiyon için yaklaşık 5 ay planlayın. Kesin takvim ve nakliye proje için teyit edilir."
     topic: "production"
   - question: "Numune değerlendirebilir miyim ve geliştirme ücretleri mahsup edilir mi?"
-    answer: "Evet. Katalog kalite numuneleri ile özel geliştirme numuneleri farklı süreçler izler; uygunluk, ücret ve kurye maliyeti önce teyit edilir. Onaylı numune ve şartname seri üretime esas olur. Aynı model 1000 adede, 12 ay içinde ulaştığında uygun geliştirme, numune, kalıp ve tasarım ücretleri seri üretim ödemelerinden düşülebilir; TR90 enjeksiyon kalıbı ve numune ücretleri için 12000 adet gerekir. Nakliye hariçtir. Geçerli mahsup koşulları teklifte belirtilir."
+    answer: "Evet. Katalog kalite numuneleri ile özel geliştirme numuneleri farklı süreçler izler; uygunluk, ücret ve kurye maliyeti önce teyit edilir. Onaylı numune ve şartname seri üretime esas olur. Aynı model 1000 adede, 12 ay içinde ulaştığında uygun geliştirme, numune, kalıp ve tasarım ücretleri seri üretim ödemelerinden düşülebilir; TR-90 enjeksiyon kalıbı ve numune ücretleri için 12000 adet gerekir. Nakliye hariçtir. Geçerli mahsup koşulları teklifte belirtilir."
     topic: "production"
   - question: "Hangi çerçeve malzemeleri ve lens seçenekleri mevcut?"
-    answer: "Asetat, saf ve beta titanyum, paslanmaz çelik, bakır-nikel alaşımı, karbon fiber ve TR90 ile çalışıyoruz. Lens seçenekleri TAC, CR-39, PC ve naylon; UV400 güneş lensleri ile polarize, degrade, aynalı, fotokromik veya mavi ışık filtreli seçenekleri kapsar. Malzeme, lens ve donanım tasarıma ve pazara göre eşleştirilir. Optik çerçeveler demo lenslerle gelir; numaralı lens üretmiyoruz."
+    answer: "Asetat, saf ve beta titanyum, paslanmaz çelik, bakır-nikel alaşımı, karbon fiber ve TR-90 ile çalışıyoruz. Lens seçenekleri TAC, CR-39, PC ve naylon; UV400 güneş lensleri ile polarize, degrade, aynalı, fotokromik veya mavi ışık filtreli seçenekleri kapsar. Malzeme, lens ve donanım tasarıma ve pazara göre eşleştirilir. Optik çerçeveler demo lenslerle gelir; numaralı lens üretmiyoruz."
     topic: "materials"
   - question: "Hangi kalite ve uygunluk belgelerini sunabilirsiniz?"
     answer: "Kalite yönetim sistemimiz ISO 9001 sertifikalıdır; sertifika kopyası sipariş verildikten sonra sunulur. Ürün uygunluk belgeleri hedef pazara ve nihai şartnameye göre ayrıca teyit edilir. Fabrika kalite raporları pazara özel belgelerin veya bağımsız testlerin yerini tutmaz. Uygun olduğunda üçüncü taraf testleri gerçek maliyet üzerinden koordine edilebilir. Başka modellerin raporları yeni bir tasarımı sertifikalandırmaz."

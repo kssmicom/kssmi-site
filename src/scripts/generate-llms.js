@@ -435,8 +435,8 @@ Kssmi is a leading B2B handmade eyewear and sunglasses manufacturer based in She
 ## Capabilities
 - OEM: produce eyewear to your exact specifications and designs
 - ODM: our in-house design team creates exclusive collections for your brand
-- Full customization: materials (acetate from Mazzucchelli, JIMEI, and JINYU; titanium from Kobe Steel and Baoji Titanium; metal, TR90, carbon fiber), colors, logos, packaging
-- MOQ: 300 pairs per model (100 pairs/color) for acetate, metal, and titanium; 200 pairs/model for carbon fiber; 1,200 pairs/style for standard TR90 (600 pairs/color for custom sport TR90)
+- Full customization: materials (acetate from Mazzucchelli, JIMEI, and JINYU; titanium from Kobe Steel and Baoji Titanium; metal, TR-90, carbon fiber), colors, logos, packaging
+- MOQ: 300 pairs per model (100 pairs/color) for acetate, metal, and titanium; 200 pairs/model for carbon fiber; 1,200 pairs/model for TR-90 (600 pairs/color)
 - Technical drawings (2D rendering): 5-10 working days after design confirmation
 - Fully custom sampling: ~60 days after design approval (eligible fees credited toward qualifying bulk orders)
 - Bulk production: ~45 days for injection-moulded frames; ~60 days for acetate, titanium, metal, carbon fiber, and other frames after sample confirmation

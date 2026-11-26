@@ -17,7 +17,7 @@ materials:
     points:
       - '平坦で落ち着いた、つや消しのテクスチャー。'
       - '指紋や小さな傷を隠し、触覚的なグリップを提供します。'
-      - 'インダストリアルデザインのメタルフレーム、モダンなTR90またはアセテートのスポーツモデルに最適。'
+      - 'インダストリアルデザインのメタルフレーム、モダンなTR-90またはアセテートのスポーツモデルに最適。'
     slug: 'matte-sandblasted'
     image: '/media/products/kmo-234-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-234-1.webp'
   - name: 'ブラッシュド'
@@ -73,7 +73,7 @@ materials:
     points:
       - '超マットで平坦な非反射性の表面。'
       - '肌のような滑り止めのグリップを提供し、汗に強いです。'
-      - 'スポーツサングラス、TR90スポーツウェアフレームに最適。'
+      - 'スポーツサングラス、TR-90スポーツウェアフレームに最適。'
     slug: 'rubberized'
     image: '/media/products/kmo-256-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-256-1.webp'
   - name: 'アルマイト（陽極酸化）'

@@ -58,7 +58,7 @@ materials:
     slug: 'nylon-eyewear'
     image: '/media/products/kas-311-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-311-1.webp'
 
-  - name: 'TR90 Gözlükler'
+  - name: 'TR-90 Gözlükler'
     subtitle: 'Esneklik ve tüm gün konfor sunan ultra hafif bir hafızalı malzeme.'
     points:
       - 'Spor ve günlük hafif çerçeveler'

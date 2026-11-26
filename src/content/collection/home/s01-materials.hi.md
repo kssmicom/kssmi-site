@@ -58,7 +58,7 @@ materials:
     slug: 'nylon-eyewear'
     image: '/media/products/kas-311-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-311-1.webp'
 
-  - name: 'TR90 आईवियर'
+  - name: 'TR-90 आईवियर'
     subtitle: 'लचीलेपन और पूरे दिन के आराम के साथ एक अल्ट्रा-लाइट मेमोरी सामग्री।'
     points:
       - 'खेल और रोज़ाना इस्तेमाल वाले हल्के फ्रेम'

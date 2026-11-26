@@ -58,7 +58,7 @@ materials:
     slug: 'nylon-eyewear'
     image: '/media/products/kas-311-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-311-1.webp'
 
-  - name: 'Kính TR90'
+  - name: 'Kính TR-90'
     subtitle: 'Chất liệu nhớ hình siêu nhẹ với sự linh hoạt và thoải mái cả ngày.'
     points:
       - 'Gọng kính nhẹ thể thao và sử dụng hàng ngày'

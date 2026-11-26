@@ -17,7 +17,7 @@ materials:
     points:
       - 'Textura plana, suave e fosca.'
       - 'Oculta impressões digitais e riscos menores, proporcionando uma aderência tátil.'
-      - 'Ideal para armações de metal com design industrial, modelos desportivos modernos em TR90 ou acetato.'
+      - 'Ideal para armações de metal com design industrial, modelos desportivos modernos em TR-90 ou acetato.'
     slug: 'matte-sandblasted'
     image: '/media/products/kmo-234-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-234-1.webp'
   - name: 'Escovado'
@@ -73,7 +73,7 @@ materials:
     points:
       - 'Superfície ultramate, plana e não refletora.'
       - 'Oferece uma aderência antiderrapante semelhante à pele e resiste ao suor.'
-      - 'Ideal para óculos de sol desportivos, armações de desporto TR90.'
+      - 'Ideal para óculos de sol desportivos, armações de desporto TR-90.'
     slug: 'rubberized'
     image: '/media/products/kmo-256-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-256-1.webp'
   - name: 'Anodização'

@@ -1,8 +1,8 @@
 ---
 lang: "jv"
 slug: "faq"
-seoTitle: "FAQ Pabrik Kacamata: Kacamata Ireng Asetat, Logam & TR90 | Kssmi"
-seoDescription: "FAQ saka Kssmi, pabrik kacamata ing Shenzhen wiwit 2003: MOQ, OEM/ODM, sampel, wektu produksi, kacamata ireng lan frame optik asetat, logam & TR90, QC lan pengiriman."
+seoTitle: "FAQ Pabrik Kacamata: Kacamata Ireng Asetat, Logam & TR-90 | Kssmi"
+seoDescription: "FAQ saka Kssmi, pabrik kacamata ing Shenzhen wiwit 2003: MOQ, OEM/ODM, sampel, wektu produksi, kacamata ireng lan frame optik asetat, logam & TR-90, QC lan pengiriman."
 heading: "Pitakonan sing Kerep Ditakoni"
 subtitle: "Kabeh sing perlu sampeyan ngerteni babagan kerja sama karo Kssmi Eyewear"
 ui:
@@ -27,7 +27,7 @@ topics:
     title: "Pembayaran lan pengiriman"
 items:
   - question: "Pira pesenan minimal saben model lan warna?"
-    answer: "Umume model asetat, logam lan titanium khusus diwiwiti saka 300 pasang saben model, biasane nganti 3 warna kanthi 100 pasang saben warna. Model serat karbon diwiwiti saka 200 pasang saben model. Model TR90 standar biasane mbutuhake 1200 pasang saben model; bingkai olahraga TR90 sing dirancang khusus sakabehe mbutuhake 600 pasang saben warna. Bahan khusus lan warna lensa bisa duwe minimum dhewe. Model beda ora bisa digabung kanggo nyukupi MOQ, lan minimum digawe ing siji puteran produksi."
+    answer: "Umume model asetat, logam lan titanium khusus diwiwiti saka 300 pasang saben model, biasane nganti 3 warna kanthi 100 pasang saben warna. Model serat karbon diwiwiti saka 200 pasang saben model. Model TR-90 mbutuhake 1200 pasang saben model, minimal 600 pasang saben warna. Bahan khusus lan warna lensa bisa duwe minimum dhewe. Model beda ora bisa digabung kanggo nyukupi MOQ, lan minimum digawe ing siji puteran produksi."
     topic: "moq"
   - question: "Apa sampeyan nawakake pangembangan OEM, ODM lan merek pribadi?"
     answer: "Ya. Kssmi nggawe miturut desain sing sampeyan setujoni, ngembangake desain asli saka konsep sampeyan lan masang merek ing model katalog sing dipilih. Kita mriksa kelayakan lan menehi penawaran ruang lingkup sadurunge karya mbayar diwiwiti. Urutan lumrah yaiku persetujuan gambar, cetakan yen perlu, persetujuan sampel banjur produksi massal. Gambar referensi dadi arah desain asli; wenehana mung desain lan logo sing sampeyan duwe hak nggunakake."
@@ -36,10 +36,10 @@ items:
     answer: "Sawise konfirmasi lan pembayaran sing cocog, gambar teknis biasane butuh 3-10 dina kerja; cetakan lan sampel khusus sakabehe butuh 50-60 dina sawise desain disetujoni. Sawise sampel disetujoni lan pesenan dikonfirmasi, produksi butuh kira-kira 45 dina kanggo bingkai cetak injeksi lan 60 dina kanggo asetat. Tahap ditindakake urut; wenehana wektu udakara 5 sasi kanggo koleksi khusus sakabehe sing kapisan. Jadwal pungkasan lan pangiriman dikonfirmasi saben proyek."
     topic: "production"
   - question: "Apa aku bisa ngevaluasi sampel lan nyuda biaya pangembangan?"
-    answer: "Ya. Sampel katalog kanggo evaluasi kualitas lan sampel pangembangan khusus duwe jalur beda; kasedhiyan, biaya lan kurir dikonfirmasi dhisik. Sampel lan spesifikasi sing disetujoni dadi patokan produksi. Biaya pangembangan, sampel, cetakan lan desain sing layak bisa dikurangi saka pembayaran massal nalika model sing padha tekan 1000 pasang sajrone 12 sasi; cetakan lan sampel injeksi TR90 mbutuhake 12000 pasang. Ongkir ora kalebu. Syarat potongan ditulis ing penawaran."
+    answer: "Ya. Sampel katalog kanggo evaluasi kualitas lan sampel pangembangan khusus duwe jalur beda; kasedhiyan, biaya lan kurir dikonfirmasi dhisik. Sampel lan spesifikasi sing disetujoni dadi patokan produksi. Biaya pangembangan, sampel, cetakan lan desain sing layak bisa dikurangi saka pembayaran massal nalika model sing padha tekan 1000 pasang sajrone 12 sasi; cetakan lan sampel injeksi TR-90 mbutuhake 12000 pasang. Ongkir ora kalebu. Syarat potongan ditulis ing penawaran."
     topic: "production"
   - question: "Bahan bingkai lan pilihan lensa apa sing kasedhiya?"
-    answer: "Kita nggunakake asetat, titanium murni lan beta, baja tahan karat, paduan tembaga-nikel, serat karbon lan TR90. Lensa kalebu TAC, CR-39, PC lan nilon, kanthi lensa surya UV400 lan pilihan polarisasi, gradien, pangilon, fotokromik utawa saringan cahya biru. Bahan, lensa lan komponen dicocogake karo desain lan pasar. Bingkai optik dilengkapi lensa demo; kita ora nggawe lensa resep."
+    answer: "Kita nggunakake asetat, titanium murni lan beta, baja tahan karat, paduan tembaga-nikel, serat karbon lan TR-90. Lensa kalebu TAC, CR-39, PC lan nilon, kanthi lensa surya UV400 lan pilihan polarisasi, gradien, pangilon, fotokromik utawa saringan cahya biru. Bahan, lensa lan komponen dicocogake karo desain lan pasar. Bingkai optik dilengkapi lensa demo; kita ora nggawe lensa resep."
     topic: "materials"
   - question: "Dokumen kualitas lan kepatuhan apa sing bisa diwenehake?"
     answer: "Sistem manajemen kualitas kita disertifikasi ISO 9001; salinan sertifikat kasedhiya sawise pesenan digawe. Dokumen kesesuaian produk dikonfirmasi dhewe miturut pasar tujuan lan spesifikasi pungkasan. Laporan kualitas pabrik ora ngganti dokumen pasar utawa tes independen. Yen cocog, tes pihak katelu bisa dikoordinasi kanthi biaya nyata. Laporan model liyane ora nyertifikasi desain anyar."

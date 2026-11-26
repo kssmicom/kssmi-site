@@ -17,7 +17,7 @@ materials:
     points:
       - 'ملمس مسطح وخافت ومصنفر.'
       - 'يخفي بصمات الأصابع والخدوش الطفيفة، ويوفر قبضة ملموسة.'
-      - 'مثالي للإطارات المعدنية ذات التصميم الصناعي والموديلات الرياضية الحديثة من TR90 أو الأسيتات.'
+      - 'مثالي للإطارات المعدنية ذات التصميم الصناعي والموديلات الرياضية الحديثة من TR-90 أو الأسيتات.'
     slug: 'matte-sandblasted'
     image: '/media/products/kmo-234-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-234-1.webp'
   - name: 'مموج / مسحوب'
@@ -73,7 +73,7 @@ materials:
     points:
       - 'سطح غير لامع تماماً ومسطح وغير عاكس.'
       - 'يوفر قبضة مقاومة للانزلاق تشبه الجلد ويقاوم العرق.'
-      - 'مثالي للنظارات الشمسية الرياضية والإطارات الرياضية المصنوعة من TR90.'
+      - 'مثالي للنظارات الشمسية الرياضية والإطارات الرياضية المصنوعة من TR-90.'
     slug: 'rubberized'
     image: '/media/products/kmo-256-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-256-1.webp'
   - name: 'أنودة'

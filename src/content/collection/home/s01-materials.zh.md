@@ -58,7 +58,7 @@ materials:
     slug: 'nylon-eyewear'
     image: '/media/products/kas-311-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-311-1.webp'
 
-  - name: 'TR90 眼镜'
+  - name: 'TR-90 眼镜'
     subtitle: '兼具柔韧性与全天候舒适度的超轻记忆材质。'
     points:
       - '运动与日常轻便镜架'

@@ -1,8 +1,8 @@
 ---
 lang: "vi"
 slug: "faq"
-seoTitle: "FAQ nhà máy kính mắt: kính râm acetate, kim loại và TR90 | Kssmi"
-seoDescription: "Câu hỏi thường gặp từ Kssmi, nhà máy kính mắt tại Thâm Quyến từ năm 2003: MOQ, OEM/ODM, mẫu, thời gian sản xuất, kính râm và gọng kính acetate, kim loại và TR90, QC và vận chuyển."
+seoTitle: "FAQ nhà máy kính mắt: kính râm acetate, kim loại và TR-90 | Kssmi"
+seoDescription: "Câu hỏi thường gặp từ Kssmi, nhà máy kính mắt tại Thâm Quyến từ năm 2003: MOQ, OEM/ODM, mẫu, thời gian sản xuất, kính râm và gọng kính acetate, kim loại và TR-90, QC và vận chuyển."
 heading: "Câu hỏi thường gặp"
 subtitle: "Mọi điều bạn cần biết khi hợp tác với Kssmi Eyewear"
 ui:
@@ -27,7 +27,7 @@ topics:
     title: "Thanh toán và vận chuyển"
 items:
   - question: "Số lượng tối thiểu cho mỗi mẫu và màu là bao nhiêu?"
-    answer: "Phần lớn mẫu acetate, kim loại và titan tùy chỉnh bắt đầu từ 300 chiếc mỗi mẫu, thường tối đa 3 màu với 100 chiếc mỗi màu. Mẫu sợi carbon bắt đầu từ 200 chiếc mỗi mẫu. Mẫu TR90 tiêu chuẩn thường yêu cầu 1200 chiếc mỗi mẫu; gọng thể thao TR90 thiết kế hoàn toàn riêng yêu cầu 600 chiếc mỗi màu. Vật liệu đặc biệt và màu tròng có thể có mức tối thiểu riêng. Không cộng gộp các mẫu khác nhau và số lượng tối thiểu được sản xuất trong cùng một đợt."
+    answer: "Phần lớn mẫu acetate, kim loại và titan tùy chỉnh bắt đầu từ 300 chiếc mỗi mẫu, thường tối đa 3 màu với 100 chiếc mỗi màu. Mẫu sợi carbon bắt đầu từ 200 chiếc mỗi mẫu. Mẫu TR-90 yêu cầu 1200 chiếc mỗi mẫu, tối thiểu 600 chiếc mỗi màu. Vật liệu đặc biệt và màu tròng có thể có mức tối thiểu riêng. Không cộng gộp các mẫu khác nhau và số lượng tối thiểu được sản xuất trong cùng một đợt."
     topic: "moq"
   - question: "Các bạn có phát triển OEM, ODM và thương hiệu riêng không?"
     answer: "Có. Kssmi sản xuất theo thiết kế đã duyệt, phát triển thiết kế nguyên bản từ ý tưởng của bạn và gắn thương hiệu lên mẫu danh mục được chọn. Chúng tôi đánh giá tính khả thi và báo giá phạm vi trước khi bắt đầu công việc có phí. Trình tự thông thường là duyệt bản vẽ, làm khuôn nếu cần, duyệt mẫu rồi sản xuất hàng loạt. Hình tham khảo định hướng thiết kế nguyên bản; chỉ cung cấp thiết kế và logo bạn có quyền sử dụng."
@@ -36,10 +36,10 @@ items:
     answer: "Sau các xác nhận và thanh toán tương ứng, bản vẽ kỹ thuật thường cần 3-10 ngày làm việc; khuôn và mẫu hoàn toàn tùy chỉnh cần 50-60 ngày sau khi duyệt thiết kế. Sau duyệt mẫu và xác nhận đơn, sản xuất mất khoảng 45 ngày với gọng ép phun và 60 ngày với acetate. Các giai đoạn nối tiếp nhau; nên dự trù khoảng 5 tháng cho bộ sưu tập hoàn toàn riêng đầu tiên. Lịch cuối cùng và vận chuyển được xác nhận theo dự án."
     topic: "production"
   - question: "Tôi có thể đánh giá mẫu và khấu trừ phí phát triển không?"
-    answer: "Có. Mẫu danh mục để đánh giá chất lượng và mẫu phát triển tùy chỉnh theo quy trình khác nhau; tình trạng sẵn có, phí và chuyển phát được xác nhận trước. Mẫu cùng thông số đã duyệt là chuẩn sản xuất. Phí phát triển, mẫu, khuôn và thiết kế đủ điều kiện có thể khấu trừ vào tiền hàng khi cùng mẫu đạt 1000 chiếc trong 12 tháng; khuôn và mẫu ép phun TR90 yêu cầu 12000 chiếc. Không gồm cước vận chuyển. Báo giá nêu rõ điều kiện khấu trừ."
+    answer: "Có. Mẫu danh mục để đánh giá chất lượng và mẫu phát triển tùy chỉnh theo quy trình khác nhau; tình trạng sẵn có, phí và chuyển phát được xác nhận trước. Mẫu cùng thông số đã duyệt là chuẩn sản xuất. Phí phát triển, mẫu, khuôn và thiết kế đủ điều kiện có thể khấu trừ vào tiền hàng khi cùng mẫu đạt 1000 chiếc trong 12 tháng; khuôn và mẫu ép phun TR-90 yêu cầu 12000 chiếc. Không gồm cước vận chuyển. Báo giá nêu rõ điều kiện khấu trừ."
     topic: "production"
   - question: "Có những vật liệu gọng và tùy chọn tròng kính nào?"
-    answer: "Chúng tôi sử dụng acetate, titan nguyên chất và beta, thép không gỉ, hợp kim đồng-niken, sợi carbon và TR90. Tròng gồm TAC, CR-39, PC và nylon, với tròng chống nắng UV400 cùng tùy chọn phân cực, chuyển màu đậm nhạt, tráng gương, đổi màu theo ánh sáng hoặc lọc ánh sáng xanh. Vật liệu, tròng và phụ kiện được phối hợp theo thiết kế và thị trường. Gọng quang học kèm tròng demo; chúng tôi không sản xuất tròng theo đơn kính."
+    answer: "Chúng tôi sử dụng acetate, titan nguyên chất và beta, thép không gỉ, hợp kim đồng-niken, sợi carbon và TR-90. Tròng gồm TAC, CR-39, PC và nylon, với tròng chống nắng UV400 cùng tùy chọn phân cực, chuyển màu đậm nhạt, tráng gương, đổi màu theo ánh sáng hoặc lọc ánh sáng xanh. Vật liệu, tròng và phụ kiện được phối hợp theo thiết kế và thị trường. Gọng quang học kèm tròng demo; chúng tôi không sản xuất tròng theo đơn kính."
     topic: "materials"
   - question: "Các bạn cung cấp tài liệu chất lượng và tuân thủ nào?"
     answer: "Hệ thống quản lý chất lượng của chúng tôi được chứng nhận ISO 9001; bản sao chứng chỉ có sau khi đặt hàng. Tài liệu phù hợp sản phẩm được xác nhận riêng theo thị trường và thông số thành phẩm. Báo cáo chất lượng nhà máy không thay thế tài liệu theo thị trường hoặc thử nghiệm độc lập. Khi phù hợp, chúng tôi phối hợp thử nghiệm bên thứ ba theo chi phí thực tế. Báo cáo của mẫu khác không chứng nhận thiết kế mới."

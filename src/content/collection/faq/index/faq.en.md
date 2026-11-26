@@ -1,8 +1,8 @@
 ---
 lang: "en"
 slug: "faq"
-seoTitle: "Eyewear Factory FAQ: Acetate, Metal & TR90 Sunglasses | Kssmi"
-seoDescription: "FAQ from Kssmi, a Shenzhen eyewear factory since 2003: MOQ, OEM/ODM, samples, lead time, acetate, metal & TR90 sunglasses and optical frames, QC and shipping."
+seoTitle: "Eyewear Factory FAQ: Acetate, Metal & TR-90 Sunglasses | Kssmi"
+seoDescription: "FAQ from Kssmi, a Shenzhen eyewear factory since 2003: MOQ, OEM/ODM, samples, lead time, acetate, metal & TR-90 sunglasses and optical frames, QC and shipping."
 heading: "Frequently Asked Questions"
 subtitle: "Everything you need to know about working with Kssmi Eyewear"
 ui:
@@ -27,7 +27,7 @@ topics:
     title: "Payment & shipping"
 items:
   - question: "What is the minimum order per model and colour?"
-    answer: "Most custom acetate, metal and titanium models start at 300 pairs per model, normally up to 3 colours at 100 pairs per colour. Carbon-fibre models start at 200 pairs per model. Standard TR90 models normally require 1200 pairs per style; fully custom sport TR90 frames require 600 pairs per colour. Special materials and lens colours may have separate minimums. Different models cannot share a MOQ, and the minimum is made in a single production run."
+    answer: "Most custom acetate, metal and titanium models start at 300 pairs per model, normally up to 3 colours at 100 pairs per colour. Carbon-fibre models start at 200 pairs per model. TR-90 models require 1200 pairs per style, with at least 600 pairs per colour. Special materials and lens colours may have separate minimums. Different models cannot share a MOQ, and the minimum is made in a single production run."
     topic: "moq"
   - question: "Do you offer OEM, ODM and private-label development?"
     answer: "Yes. Kssmi manufactures to your approved design, develops original designs from your concept, and applies private-label branding to selected catalogue models. We review feasibility and quote the scope before paid work starts. The usual sequence is drawing approval, tooling where needed, sample approval, then bulk production. Reference images guide an original design; please supply only designs and logos you are entitled to use."
@@ -36,10 +36,10 @@ items:
     answer: "Typical timings after the relevant confirmations and payments are 3-10 working days for technical drawings and 50-60 days for tooling and a fully custom sample after design approval. After sample approval and order confirmation, bulk production is about 45 days for injection-moulded frames and about 60 days for acetate. The stages are sequential; allow around 5 months for a first fully custom collection. Final timing and shipping are confirmed for your project."
     topic: "production"
   - question: "Can I evaluate samples, and are development fees credited?"
-    answer: "Yes. Catalogue evaluation samples and custom development samples follow different routes; availability, fees and courier costs are confirmed first. The approved sample and specifications guide bulk production. Eligible development, sample, tooling and design fees may be deducted from bulk payments when the same style reaches 1000 pairs within 12 months; TR90 injection tooling and sample fees require 12000 pairs. Freight is excluded. Your quotation specifies the applicable credit terms."
+    answer: "Yes. Catalogue evaluation samples and custom development samples follow different routes; availability, fees and courier costs are confirmed first. The approved sample and specifications guide bulk production. Eligible development, sample, tooling and design fees may be deducted from bulk payments when the same style reaches 1000 pairs within 12 months; TR-90 injection tooling and sample fees require 12000 pairs. Freight is excluded. Your quotation specifies the applicable credit terms."
     topic: "production"
   - question: "Which frame materials and lens options are available?"
-    answer: "We work with acetate, pure and beta titanium, stainless steel, cupronickel, carbon fibre and TR90. Lens options include TAC, CR-39, PC and nylon, with UV400 sun lenses and polarized, gradient, mirrored, photochromic or blue-light-filtering options. Materials, lenses and hardware are matched to your design and market. Optical frames come with demo lenses; we do not produce prescription lenses."
+    answer: "We work with acetate, pure and beta titanium, stainless steel, cupronickel, carbon fibre and TR-90. Lens options include TAC, CR-39, PC and nylon, with UV400 sun lenses and polarized, gradient, mirrored, photochromic or blue-light-filtering options. Materials, lenses and hardware are matched to your design and market. Optical frames come with demo lenses; we do not produce prescription lenses."
     topic: "materials"
   - question: "What quality and compliance documents can you provide?"
     answer: "Our quality management system is ISO 9001 certified; a certificate copy is available once an order is placed. Product conformity documents are confirmed separately for the destination market and finished specification. Factory quality reports do not replace market-specific documents or independent testing. Where applicable, third-party testing can be coordinated at actual cost. Reports for other styles do not certify a new design."

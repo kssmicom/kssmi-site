@@ -17,7 +17,7 @@ materials:
     points:
       - 'Textura plana, tenue y esmerilada.'
       - 'Oculta huellas dactilares y arañazos menores, proporcionando un agarre táctil.'
-      - 'Ideal para monturas de metal de diseño industrial, modelos deportivos modernos de TR90 o acetato.'
+      - 'Ideal para monturas de metal de diseño industrial, modelos deportivos modernos de TR-90 o acetato.'
     slug: 'matte-sandblasted'
     image: '/media/products/kmo-234-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-234-1.webp'
   - name: 'Cepillado'
@@ -73,7 +73,7 @@ materials:
     points:
       - 'Superficie ultra mate, plana y no reflectante.'
       - 'Ofrece un agarre antideslizante similar al de la piel y resiste el sudor.'
-      - 'Ideal para gafas de sol deportivas, monturas de ropa activa TR90.'
+      - 'Ideal para gafas de sol deportivas, monturas de ropa activa TR-90.'
     slug: 'rubberized'
     image: '/media/products/kmo-256-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-256-1.webp'
   - name: 'Anodizado'

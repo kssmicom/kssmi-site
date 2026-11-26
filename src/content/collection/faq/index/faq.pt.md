@@ -1,8 +1,8 @@
 ---
 lang: "pt"
 slug: "faq"
-seoTitle: "FAQ fábrica de óculos: óculos de sol de acetato, metal e TR90 | Kssmi"
-seoDescription: "Perguntas frequentes da Kssmi, fábrica de óculos em Shenzhen desde 2003: MOQ, OEM/ODM, amostras, prazos, óculos de sol e armações de acetato, metal e TR90, qualidade e envio."
+seoTitle: "FAQ fábrica de óculos: óculos de sol de acetato, metal e TR-90 | Kssmi"
+seoDescription: "Perguntas frequentes da Kssmi, fábrica de óculos em Shenzhen desde 2003: MOQ, OEM/ODM, amostras, prazos, óculos de sol e armações de acetato, metal e TR-90, qualidade e envio."
 heading: "Perguntas frequentes"
 subtitle: "Tudo o que você precisa saber para trabalhar com a Kssmi Eyewear"
 ui:
@@ -27,7 +27,7 @@ topics:
     title: "Pagamento e envio"
 items:
   - question: "Qual é o pedido mínimo por modelo e cor?"
-    answer: "A maioria dos modelos personalizados de acetato, metal e titânio começa em 300 pares por modelo, normalmente em até 3 cores de 100 pares cada. Modelos de fibra de carbono começam em 200 pares por modelo. Modelos TR90 padrão normalmente exigem 1200 pares por modelo; armações esportivas TR90 totalmente personalizadas exigem 600 pares por cor. Materiais especiais e cores de lentes podem ter mínimos próprios. Modelos diferentes não compartilham o MOQ, e o mínimo é produzido em uma única tiragem."
+    answer: "A maioria dos modelos personalizados de acetato, metal e titânio começa em 300 pares por modelo, normalmente em até 3 cores de 100 pares cada. Modelos de fibra de carbono começam em 200 pares por modelo. Modelos TR-90 exigem 1200 pares por modelo, com no mínimo 600 pares por cor. Materiais especiais e cores de lentes podem ter mínimos próprios. Modelos diferentes não compartilham o MOQ, e o mínimo é produzido em uma única tiragem."
     topic: "moq"
   - question: "Vocês oferecem desenvolvimento OEM, ODM e de marca própria?"
     answer: "Sim. A Kssmi fabrica conforme seu projeto aprovado, desenvolve designs originais a partir do seu conceito e aplica sua marca a modelos selecionados do catálogo. Avaliamos a viabilidade e orçamos o escopo antes de iniciar serviços pagos. O processo habitual é aprovação dos desenhos, ferramental quando necessário, aprovação da amostra e produção em escala. Referências orientam um design original; forneça apenas projetos e logotipos que você tenha direito de usar."
@@ -36,10 +36,10 @@ items:
     answer: "Após as confirmações e pagamentos correspondentes, os desenhos técnicos costumam levar 3-10 dias úteis; o ferramental e uma amostra totalmente personalizada, 50-60 dias após aprovação do design. Após aprovar a amostra e confirmar o pedido, a produção leva cerca de 45 dias para armações injetadas e 60 dias para acetato. As etapas são sequenciais; reserve aproximadamente 5 meses para uma primeira coleção totalmente personalizada. Cronograma final e transporte são confirmados por projeto."
     topic: "production"
   - question: "Posso avaliar amostras e abater os custos de desenvolvimento?"
-    answer: "Sim. Amostras de catálogo para avaliação e amostras de desenvolvimento seguem caminhos diferentes; disponibilidade, custos e courier são confirmados antes. A amostra e as especificações aprovadas orientam a produção. Custos elegíveis de desenvolvimento, amostras, ferramental e design podem ser abatidos dos pagamentos de produção quando o mesmo modelo alcançar 1000 pares em 12 meses; ferramental e amostras de injeção TR90 exigem 12000 pares. Frete não entra no abatimento. O orçamento define as condições aplicáveis."
+    answer: "Sim. Amostras de catálogo para avaliação e amostras de desenvolvimento seguem caminhos diferentes; disponibilidade, custos e courier são confirmados antes. A amostra e as especificações aprovadas orientam a produção. Custos elegíveis de desenvolvimento, amostras, ferramental e design podem ser abatidos dos pagamentos de produção quando o mesmo modelo alcançar 1000 pares em 12 meses; ferramental e amostras de injeção TR-90 exigem 12000 pares. Frete não entra no abatimento. O orçamento define as condições aplicáveis."
     topic: "production"
   - question: "Quais materiais de armação e opções de lentes estão disponíveis?"
-    answer: "Trabalhamos com acetato, titânio puro e beta, aço inoxidável, cuproníquel, fibra de carbono e TR90. As lentes incluem TAC, CR-39, PC e nylon, com proteção solar UV400 e opções polarizadas, degradê, espelhadas, fotocromáticas ou com filtro de luz azul. Materiais, lentes e ferragens são compatibilizados com design e mercado. Armações ópticas vêm com lentes de demonstração; não produzimos lentes de grau."
+    answer: "Trabalhamos com acetato, titânio puro e beta, aço inoxidável, cuproníquel, fibra de carbono e TR-90. As lentes incluem TAC, CR-39, PC e nylon, com proteção solar UV400 e opções polarizadas, degradê, espelhadas, fotocromáticas ou com filtro de luz azul. Materiais, lentes e ferragens são compatibilizados com design e mercado. Armações ópticas vêm com lentes de demonstração; não produzimos lentes de grau."
     topic: "materials"
   - question: "Quais documentos de qualidade e conformidade vocês fornecem?"
     answer: "Nosso sistema de gestão da qualidade é certificado ISO 9001; uma cópia do certificado está disponível após o pedido. Documentos de conformidade do produto são confirmados separadamente conforme mercado e especificação final. Relatórios da fábrica não substituem documentos exigidos pelo mercado nem ensaios independentes. Quando aplicável, podemos coordenar ensaios externos pelo custo real. Relatórios de outros modelos não certificam um novo design."

@@ -58,7 +58,7 @@ materials:
     slug: 'nylon-eyewear'
     image: '/media/products/kas-311-acetate-sunglasses/oem-odm-customized-acetate-sunglasses-kas-311-1.webp'
 
-  - name: 'Kacamata TR90'
+  - name: 'Kacamata TR-90'
     subtitle: 'Bahan ingatan ultra-ringan dengan fleksibiliti dan keselesaan sepanjang hari.'
     points:
       - 'Bingkai ringan sukan dan harian'

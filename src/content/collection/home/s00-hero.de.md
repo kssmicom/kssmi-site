@@ -1,10 +1,10 @@
 ---
 section: 's00-hero'
 lang: 'de'
-heading: "OEM/ODM Brillenhersteller — Maßgeschneiderte Acetat-, Titan- und Kohlefaserfassungen"
+heading: "OEM/ODM Brillenhersteller — Maßgeschneiderte Acetat-, Titan-, Kohlefaser- und TR-90-Fassungen"
 subheadingLine1: 'Fabrik in Shenzhen. 5–10 Tage 2D-Rendering. 60 Tage Mustererstellung. 60 Tage Produktion.'
 subheadingLine2: 'Maßgeschneiderte Sonnenbrillen und Optische Fassungen'
-description: "Kssmi ist ein OEM- und ODM-Brillenhersteller mit Sitz in Shenzhen, der Premium-Marken, unabhängige Designer und Private-Label-Käufer bedient. Unsere Materialien umfassen Acetat, Titan, Kohlefaser, Metall, TR90 und Hybridfassungen. Premium-Acetat stammt von Mazzucchelli, JIMEI und JINYU, und Titanmaterialien stammen von Kobe Steel und Baoji Titanium. Die Mindestbestellmenge beginnt bei 300 Paar/Modell (100 Paar/Farbe) für Acetat, Metall und Titan sowie 200 Paar/Modell für Kohlefaser."
+description: "Kssmi ist ein OEM- und ODM-Brillenhersteller mit Sitz in Shenzhen, der Premium-Marken, unabhängige Designer und Private-Label-Käufer bedient. Unsere Materialien umfassen Acetat, Titan, Kohlefaser, Metall, TR-90 und Hybridfassungen. Premium-Acetat stammt von Mazzucchelli, JIMEI und JINYU, und Titanmaterialien stammen von Kobe Steel und Baoji Titanium. Die Mindestbestellmenge beginnt bei 300 Paar/Modell (100 Paar/Farbe) für Acetat, Metall und Titan, 200 Paar/Modell für Kohlefaser und 1200 Paar/Modell (600 Paar/Farbe) für TR-90."
 primaryCta: 'Angebot Anfordern'
 primaryCtaUrl: '/quote'
 secondaryCta: 'Fassungsmaterialien Ansehen'

@@ -17,7 +17,7 @@ materials:
     points:
       - 'Kết cấu phẳng, dịu và mờ.'
       - 'Che giấu dấu vân tay và các vết xước nhỏ, mang lại cảm giác cầm nắm chắc chắn.'
-      - 'Lý tưởng cho gọng kim loại thiết kế công nghiệp, các mẫu thể thao TR90 hoặc axetat hiện đại.'
+      - 'Lý tưởng cho gọng kim loại thiết kế công nghiệp, các mẫu thể thao TR-90 hoặc axetat hiện đại.'
     slug: 'matte-sandblasted'
     image: '/media/products/kmo-234-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-234-1.webp'
   - name: 'Xước'
@@ -73,7 +73,7 @@ materials:
     points:
       - 'Bề mặt siêu mờ, phẳng, không phản chiếu.'
       - 'Cung cấp độ bám chống trượt giống như da thật và chống mồ hôi.'
-      - 'Lý tưởng cho kính râm thể thao, gọng kính thể thao TR90.'
+      - 'Lý tưởng cho kính râm thể thao, gọng kính thể thao TR-90.'
     slug: 'rubberized'
     image: '/media/products/kmo-256-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-256-1.webp'
   - name: 'Anodizing'

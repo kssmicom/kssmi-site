@@ -1,8 +1,8 @@
 ---
 lang: "it"
 slug: "faq"
-seoTitle: "FAQ fabbrica occhiali: occhiali da sole acetato, metallo, TR90 | Kssmi"
-seoDescription: "FAQ di Kssmi, fabbrica di occhiali a Shenzhen dal 2003: MOQ, OEM/ODM, campioni, tempi di produzione, occhiali da sole e montature in acetato, metallo e TR90, qualità e spedizioni."
+seoTitle: "FAQ fabbrica occhiali: occhiali da sole acetato, metallo, TR-90 | Kssmi"
+seoDescription: "FAQ di Kssmi, fabbrica di occhiali a Shenzhen dal 2003: MOQ, OEM/ODM, campioni, tempi di produzione, occhiali da sole e montature in acetato, metallo e TR-90, qualità e spedizioni."
 heading: "Domande frequenti"
 subtitle: "Tutto quello che c’è da sapere per lavorare con Kssmi Eyewear"
 ui:
@@ -27,7 +27,7 @@ topics:
     title: "Pagamento e spedizione"
 items:
   - question: "Qual è il minimo d’ordine per modello e colore?"
-    answer: "La maggior parte dei modelli personalizzati in acetato, metallo e titanio parte da 300 paia per modello, normalmente fino a 3 colori da 100 paia ciascuno. I modelli in fibra di carbonio partono da 200 paia per modello. I modelli TR90 standard richiedono normalmente 1200 paia per modello; le montature sportive TR90 interamente personalizzate, 600 paia per colore. Materiali speciali e colori delle lenti possono avere minimi propri. Modelli diversi non si sommano e il minimo viene prodotto in un’unica lavorazione in serie."
+    answer: "La maggior parte dei modelli personalizzati in acetato, metallo e titanio parte da 300 paia per modello, normalmente fino a 3 colori da 100 paia ciascuno. I modelli in fibra di carbonio partono da 200 paia per modello. I modelli TR-90 richiedono 1200 paia per modello, con almeno 600 paia per colore. Materiali speciali e colori delle lenti possono avere minimi propri. Modelli diversi non si sommano e il minimo viene prodotto in un’unica lavorazione in serie."
     topic: "moq"
   - question: "Offrite sviluppo OEM, ODM e a marchio privato?"
     answer: "Sì. Kssmi produce secondo il vostro progetto approvato, sviluppa design originali dal vostro concept e applica il vostro marchio a modelli selezionati del catalogo. Verifichiamo la fattibilità e preventiviamo l’ambito prima di iniziare lavori a pagamento. Il percorso abituale è approvazione dei disegni, attrezzature se necessarie, approvazione del campione e produzione in serie. Le immagini di riferimento guidano un progetto originale; fornite solo design e loghi che avete diritto di utilizzare."
@@ -36,10 +36,10 @@ items:
     answer: "Dopo le relative conferme e i pagamenti, i disegni tecnici richiedono generalmente 3-10 giorni lavorativi; attrezzature e campione interamente personalizzato, 50-60 giorni dall’approvazione del design. Dopo l’approvazione del campione e la conferma dell’ordine, la produzione richiede circa 45 giorni per montature a iniezione e 60 giorni per acetato. Le fasi sono consecutive: prevedete circa 5 mesi per una prima collezione interamente personalizzata. Tempi definitivi e trasporto vengono confermati per il progetto."
     topic: "production"
   - question: "Posso valutare campioni e recuperare i costi di sviluppo?"
-    answer: "Sì. I campioni di catalogo per valutare la qualità e quelli di sviluppo seguono percorsi diversi; disponibilità, costi e corriere vengono confermati prima. Campione e specifiche approvati guidano la serie. I costi ammissibili di sviluppo, campioni, attrezzature e design possono essere detratti dai pagamenti della produzione quando lo stesso modello raggiunge 1000 paia entro 12 mesi; attrezzature e campioni per iniezione TR90 richiedono 12000 paia. Il trasporto è escluso. Il preventivo specifica le condizioni applicabili."
+    answer: "Sì. I campioni di catalogo per valutare la qualità e quelli di sviluppo seguono percorsi diversi; disponibilità, costi e corriere vengono confermati prima. Campione e specifiche approvati guidano la serie. I costi ammissibili di sviluppo, campioni, attrezzature e design possono essere detratti dai pagamenti della produzione quando lo stesso modello raggiunge 1000 paia entro 12 mesi; attrezzature e campioni per iniezione TR-90 richiedono 12000 paia. Il trasporto è escluso. Il preventivo specifica le condizioni applicabili."
     topic: "production"
   - question: "Quali materiali per montature e opzioni per lenti sono disponibili?"
-    answer: "Lavoriamo acetato, titanio puro e beta, acciaio inossidabile, cupronichel, fibra di carbonio e TR90. Le lenti includono TAC, CR-39, PC e nylon, con protezione solare UV400 e opzioni polarizzate, sfumate, specchiate, fotocromatiche o filtranti la luce blu. Materiali, lenti e componenti vengono abbinati al design e al mercato. Le montature ottiche sono fornite con lenti dimostrative; non produciamo lenti graduate."
+    answer: "Lavoriamo acetato, titanio puro e beta, acciaio inossidabile, cupronichel, fibra di carbonio e TR-90. Le lenti includono TAC, CR-39, PC e nylon, con protezione solare UV400 e opzioni polarizzate, sfumate, specchiate, fotocromatiche o filtranti la luce blu. Materiali, lenti e componenti vengono abbinati al design e al mercato. Le montature ottiche sono fornite con lenti dimostrative; non produciamo lenti graduate."
     topic: "materials"
   - question: "Quali documenti di qualità e conformità potete fornire?"
     answer: "Il nostro sistema di gestione della qualità è certificato ISO 9001; la copia del certificato è disponibile dopo l’ordine. I documenti di conformità del prodotto si confermano separatamente per mercato e specifica finale. I rapporti di controllo di fabbrica non sostituiscono i documenti richiesti dal mercato o le prove indipendenti. Dove applicabile, coordiniamo prove esterne al costo effettivo. Rapporti relativi ad altri modelli non certificano un nuovo design."

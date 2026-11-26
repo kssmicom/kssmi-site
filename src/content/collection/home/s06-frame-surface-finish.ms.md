@@ -17,7 +17,7 @@ materials:
     points:
       - 'Tekstur rata, pudar dan beku.'
       - 'Menyembunyikan cap jari dan calar kecil, memberikan cengkaman sentuhan.'
-      - 'Sesuai untuk bingkai logam reka bentuk industri, model sukan TR90 atau asetat moden.'
+      - 'Sesuai untuk bingkai logam reka bentuk industri, model sukan TR-90 atau asetat moden.'
     slug: 'matte-sandblasted'
     image: '/media/products/kmo-234-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-234-1.webp'
   - name: 'Diberus'
@@ -73,7 +73,7 @@ materials:
     points:
       - 'Permukaan ultra-mat, rata, dan tanpa pantulan.'
       - 'Menawarkan cengkaman anti-gelincir seperti kulit dan tahan peluh.'
-      - 'Sesuai untuk cermin mata hitam sukan, bingkai pakaian aktif TR90.'
+      - 'Sesuai untuk cermin mata hitam sukan, bingkai pakaian aktif TR-90.'
     slug: 'rubberized'
     image: '/media/products/kmo-256-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-256-1.webp'
   - name: 'Penganodan'

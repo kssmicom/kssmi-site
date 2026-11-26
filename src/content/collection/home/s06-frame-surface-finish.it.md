@@ -17,7 +17,7 @@ materials:
     points:
       - 'Struttura opaca, sobria e satinata.'
       - 'Nasconde impronte digitali e graffi minori, fornendo una presa tattile.'
-      - 'Ideale per montature in metallo dal design industriale, moderni modelli sportivi in TR90 o acetato.'
+      - 'Ideale per montature in metallo dal design industriale, moderni modelli sportivi in TR-90 o acetato.'
     slug: 'matte-sandblasted'
     image: '/media/products/kmo-234-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-234-1.webp'
   - name: 'Spazzolato'
@@ -73,7 +73,7 @@ materials:
     points:
       - 'Superficie ultra opaca, liscia e non riflettente.'
       - 'Offre una presa antiscivolo simile alla pelle e resiste al sudore.'
-      - 'Ideale per occhiali da sole sportivi, montature activewear in TR90.'
+      - 'Ideale per occhiali da sole sportivi, montature activewear in TR-90.'
     slug: 'rubberized'
     image: '/media/products/kmo-256-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-256-1.webp'
   - name: 'Anodizzazione'

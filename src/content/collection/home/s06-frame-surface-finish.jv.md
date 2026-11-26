@@ -17,7 +17,7 @@ materials:
     points:
       - 'Tekstur warata, alus, lan buram.'
       - 'Ndidhelikake sidik jari lan goresan cilik, nyedhiyakake genggeman taktil.'
-      - 'Cocog kanggo pigura logam desain industri, model olahraga TR90 utawa asetat modern.'
+      - 'Cocog kanggo pigura logam desain industri, model olahraga TR-90 utawa asetat modern.'
     slug: 'matte-sandblasted'
     image: '/media/products/kmo-234-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-234-1.webp'
   - name: 'Sikatan'
@@ -73,7 +73,7 @@ materials:
     points:
       - 'Lumah sing ultra-matte, warata, lan ora mantulake cahya.'
       - 'Nawakake genggeman anti-selip kaya kulit lan tahan kringet.'
-      - 'Cocog kanggo kacamata ireng olahraga, pigura olahraga TR90.'
+      - 'Cocog kanggo kacamata ireng olahraga, pigura olahraga TR-90.'
     slug: 'rubberized'
     image: '/media/products/kmo-256-metal-optical-frames/oem-odm-customized-metal-optical-frames-kmo-256-1.webp'
   - name: 'Anodisasi'
