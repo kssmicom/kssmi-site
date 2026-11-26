@@ -67,6 +67,12 @@ RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# ─── Legacy root llms-*.txt → /en/llms-*.txt (301) ─────────────────────────
+# English llms sub-indexes live under /en/. Redirect legacy root-level requests
+# cleanly without looping against the /en/ !-f rule above.
+RewriteRule ^llms-(core|products|landing)\.txt$ /en/llms-$1.txt [R=301,L]
+RewriteRule ^llms-blogs\.txt$ /en/llms.txt [R=301,L]
+
 # Public short links use six characters with an uppercase first character.
 # This precedes Astro clean URLs, but only after HTTPS enforcement. The exact
 # six-character namespace cannot overlap a normal site route. In particular,

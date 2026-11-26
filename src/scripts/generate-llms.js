@@ -393,11 +393,18 @@ Object.keys(langData).forEach(lang => {
     const landingContent = `# Kssmi - ${t.landing} (${localLangName})\n\n> ${t.landingDesc}\n\n${langData[lang].landing.join('')}`;
     fs.writeFileSync(path.join(langDir, 'llms-landing.txt'), landingContent, 'utf-8');
 
-    // 4. llms-blogs.txt
-    const blogContent = `# Kssmi - ${t.blog} (${localLangName})\n\n> ${t.blogDesc}\n\n${langData[lang].blog.join('')}`;
-    fs.writeFileSync(path.join(langDir, 'llms-blogs.txt'), blogContent, 'utf-8');
+    // 4. llms-blogs.txt (only emit when there are published blog posts)
+    const blogPath = path.join(langDir, 'llms-blogs.txt');
+    const hasBlogs = langData[lang].blog.length > 0;
+    if (hasBlogs) {
+        const blogContent = `# Kssmi - ${t.blog} (${localLangName})\n\n> ${t.blogDesc}\n\n${langData[lang].blog.join('')}`;
+        fs.writeFileSync(blogPath, blogContent, 'utf-8');
+    } else {
+        fs.rmSync(blogPath, { force: true });
+    }
 
     // 5. Language Index (llms.txt) for this specific language
+    const blogSection = hasBlogs ? `\n## ${t.blog} (${t.blogDesc})\n- [${t.blog}](${llmsBaseUrl}/llms-blogs.txt)\n` : '';
     const langIndexContent = `# Kssmi ${t.guide} - ${localLangName}
 
 > ${exploreText}
@@ -410,10 +417,7 @@ Object.keys(langData).forEach(lang => {
 
 ## ${t.landing} (${t.landingDesc})
 - [${t.landing}](${llmsBaseUrl}/llms-landing.txt)
-
-## ${t.blog} (${t.blogDesc})
-- [${t.blog}](${llmsBaseUrl}/llms-blogs.txt)
-
+${blogSection}
 *${t.generated}*
 `;
 
@@ -431,9 +435,9 @@ Kssmi is a leading B2B handmade eyewear and sunglasses manufacturer based in She
 ## Capabilities
 - OEM: produce eyewear to your exact specifications and designs
 - ODM: our in-house design team creates exclusive collections for your brand
-- Full customization: materials (acetate, titanium, metal, TR90, carbon fiber), colors, logos, packaging
+- Full customization: materials (acetate from Mazzucchelli, JIMEI, and JINYU; titanium from Kobe Steel and Baoji Titanium; metal, TR90, carbon fiber), colors, logos, packaging
 - MOQ: 300 pairs per model (100 pairs/color) for acetate, metal, and titanium; 200 pairs/model for carbon fiber; 1,200 pairs/style for standard TR90 (600 pairs/color for custom sport TR90)
-- Technical drawings: 3-10 working days after design confirmation
+- Technical drawings (2D rendering): 5-10 working days after design confirmation
 - Fully custom sampling: ~60 days after design approval (eligible fees credited toward qualifying bulk orders)
 - Bulk production: ~45 days for injection-moulded frames; ~60 days for acetate, titanium, metal, carbon fiber, and other frames after sample confirmation
 - Worldwide shipping via air courier (DHL or customer-designated forwarder) or sea freight
@@ -447,9 +451,9 @@ Kssmi is a leading B2B handmade eyewear and sunglasses manufacturer based in She
 FDA (US), CE (EU), RoHS, California Proposition 65 compliant.
 
 ## Contact
-- [Website](https://kssmi.com)
-- [Request a Quote](https://kssmi.com/quote)
-- [FAQ](https://kssmi.com/faq)
+- [Website](https://kssmi.com/)
+- [Request a Quote](https://kssmi.com/quote/)
+- [FAQ](https://kssmi.com/faq/)
 - Email: sales@kssmi.com
 - WhatsApp: +86-135-1053-2553
 
