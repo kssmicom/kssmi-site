@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Mahogani (Indian Rosewood — Serat Gunung)"
 materials: "Serat Karbon Premium lan Titanium"
 serviceMode: "Produksi Kontrak & Desain lan Produksi ( Kustomisasi )"
-moq: "300 pcs/model"
+moq: "200 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Frame Optik Serat Karbon Mewah KSO-224 | Produsen OEM"
-seoDescription: "KSO-224: Frame optik serat karbon mewah kanthi gagang titanium lan finishing mahogani unik. MOQ 300. Kustomisasi OEM/ODM premium kanggo merek kacamata global."
+seoDescription: "KSO-224: Frame optik serat karbon mewah kanthi gagang titanium lan finishing mahogani unik. MOQ 200. Kustomisasi OEM/ODM premium kanggo merek kacamata global."
 seoKeywords: "frame optik serat karbon, kacamata titanium kustom, produsen kacamata mewah China, grosir frame karbon, pabrik kacamata OEM"
 ---
 
@@ -64,4 +64,4 @@ Nggabungake serat karbon kelas aerospace kanthi finishing serat gunung mahogani,
 
 Gagang titanium sing entheng lan engsel 2+1 tong nyedhiyakake integritas struktural jangka panjang kanthi tetep njaga profil alus sing diarepake saka kacamata mewah.
 
-Kanthi ndukung kustomisasi lengkap ing pesenan minimal 300 pcs, frame iki nyedhiyakake kabutuhan rumah mode premium lan merek butik kanggo ngembangake koleksi kelas dhuwur.
+Kanthi ndukung kustomisasi lengkap ing pesenan minimal 200 pcs, frame iki nyedhiyakake kabutuhan rumah mode premium lan merek butik kanggo ngembangake koleksi kelas dhuwur.

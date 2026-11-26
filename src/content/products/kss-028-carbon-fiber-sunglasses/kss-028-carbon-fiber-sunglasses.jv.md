@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Warna Serat Karbon Asli (Ireng Mat, Ireng Gilap, Anyaman Warna, Karbon Tempa)"
 materials: "Serat Karbon Premium"
 serviceMode: "OEM & ODM ( Kustomisasi )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -38,7 +38,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-028 Kacamata Hitam Klasik Mewah Serat Karbon | Produsen OEM"
-seoDescription: "Partner karo produsen ekspor China sing misuwur kanggo kacamata hitam serat karbon kelas aeroangkasa KSS-028. Spesialisasi ing OEM/ODM kanggo skala merek label pribadi. MOQ 300."
+seoDescription: "Partner karo produsen ekspor China sing misuwur kanggo kacamata hitam serat karbon kelas aeroangkasa KSS-028. Spesialisasi ing OEM/ODM kanggo skala merek label pribadi. MOQ 200."
 seoKeywords: "produsen kacamata hitam serat karbon, kacamata hitam OEM kustom, kacamata label pribadi China, bingkai serat karbon grosir, pemasok kacamata hitam mewah, kacamata hitam kualitas ekspor, kustomisasi kacamata hitam OEM ODM, pabrik kacamata KSS-028"
 ---
 
@@ -49,7 +49,7 @@ seoKeywords: "produsen kacamata hitam serat karbon, kacamata hitam OEM kustom, k
 - **Optik Premium:** Lensa nilon kuwat kanthi resistensi dampak sing unggul kanthi kustomisasi ekstensif kanggo warna lan lapisan.
 - **Kenyamanan & Keamanan:** Bantalan irung silikon hypoallergenic sing dirancang kanggo nyedhiyakake pas sing aman lan nyaman kanggo dienggo sedina muput.
 - **Tekstur Unik:** Pola anyaman serat karbon sing khas kasedhiya ing finishing ireng mat, gilap, utawa tempa kanggo estetika mewah sing mewah.
-- **Kustomisasi Skalabel:** Layanan OEM & ODM lengkap kalebu macem-macem teknik aplikasi logo lan MOQ rendah 300 pcs.
+- **Kustomisasi Skalabel:** Layanan OEM & ODM lengkap kalebu macem-macem teknik aplikasi logo lan MOQ rendah 200 pcs.
 
 ## Cocok kanggo
 - Merek Kacamata Premium
@@ -65,4 +65,4 @@ Digawe saka serat karbon kelas aeroangkasa, KSS-028 nggawa estetika sing canggih
 
 Engsel tong 2+1 sing presisi lan lensa nilon tahan banting njamin umur dawa struktur lan kejelasan optik kanggo panggunaan kinerja dhuwur.
 
-Kita nyedhiyakake dhukungan ODM lan OEM sing lengkap—saka tekstur tempa kustom nganti macem-macem aplikasi logo—kanthi pesenan minimal 300 unit kanggo mbantu merek premium ngembangake portofolio kacamata eksklusif.
+Kita nyedhiyakake dhukungan ODM lan OEM sing lengkap—saka tekstur tempa kustom nganti macem-macem aplikasi logo—kanthi pesenan minimal 200 unit kanggo mbantu merek premium ngembangake portofolio kacamata eksklusif.

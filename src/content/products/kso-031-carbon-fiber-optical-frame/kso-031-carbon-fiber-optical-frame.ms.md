@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Wood Golden & Gentian Karbon Hijau Ururat Twill & Gentian Karbon Ururat Plain Gun Matte & Gentian Karbon Ururat Plain Kayu Perak Matte"
 materials: "Gentian Karbon Premium dan Titanium"
 serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & Pengilangan Reka Bentuk (ODM) ( Penyesuaian )"
-moq: "300 unit/model"
+moq: "200 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Pengeluar Bingkai Optik Gentian Karbon & Titanium Mewah KSO-031"
-seoDescription: "KSO-031: Bingkai optik gentian karbon & titanium mewah tempahan khas untuk B2B. Bahan gred aeroangkasa premium dengan 300 MOQ. Pakar perkhidmatan OEM/ODM untuk jenama label peribadi."
+seoDescription: "KSO-031: Bingkai optik gentian karbon & titanium mewah tempahan khas untuk B2B. Bahan gred aeroangkasa premium dengan 200 MOQ. Pakar perkhidmatan OEM/ODM untuk jenama label peribadi."
 seoKeywords: "bingkai optik gentian karbon, bingkai optik mewah, pengeluar cermin mata China, cermin mata label peribadi tersuai, borong bingkai gentian karbon, perkhidmatan OEM ODM cermin mata, pembekal cermin mata gentian karbon, kilang cermin mata China premium"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "bingkai optik gentian karbon, bingkai optik mewah, pengeluar cermi
 - **Optik Premium:** Kanta nilon yang tabah memberikan rintangan hentaman yang unggul dengan pilihan penyesuaian yang meluas untuk pasaran global.
 - **Keselesaan Sepanjang Hari:** Alas hidung getah ergonomik yang direka untuk muat yang selamat dan hipoalergenik untuk pemakaian harian yang berpanjangan.
 - **Tekstur Eksklusif:** Tenunan gentian karbon yang unik dalam corak ira kayu dan twill, memberikan estetika mewah kelas atasan untuk jenama yang mementingkan kualiti.
-- **Fleksibiliti Pembuatan:** Perkhidmatan OEM & ODM profesional dengan MOQ rendah sebanyak 300 unit, menyokong pengedaran global yang boleh diskala.
+- **Fleksibiliti Pembuatan:** Perkhidmatan OEM & ODM profesional dengan MOQ rendah sebanyak 200 unit, menyokong pengedaran global yang boleh diskala.
 
 ## Sesuai Untuk
 - Jenama Kacamata Premium
@@ -74,4 +74,4 @@ Model KSO-031 mewakili gabungan canggih antara gentian karbon gred aeroangkasa d
 
 Direka untuk kelancaran operasi jangka panjang, engsel struktur tong 2+1 dan alas hidung getah hipoalergenik memastikan kestabilan yang luar biasa dan keselesaan sepanjang hari bagi pemakainya.
 
-Menyokong penyesuaian OEM dan ODM yang komprehensif bermula pada minimum 300 unit, Kssmi memperkasakan pereka bebas dan pengedar label peribadi untuk membina portfolio kacamata tersuai dengan komponen kejuruteraan ketepatan.
+Menyokong penyesuaian OEM dan ODM yang komprehensif bermula pada minimum 200 unit, Kssmi memperkasakan pereka bebas dan pengedar label peribadi untuk membina portfolio kacamata tersuai dengan komponen kejuruteraan ketepatan.

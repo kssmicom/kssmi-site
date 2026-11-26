@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Kayu Kencana & Serat Karbon Ijo Corak Twill & Serat Karbon Corak Polos Gun Matt & Kayu Serat Karbon Corak Polos Selaka Matt"
 materials: "Serat Karbon Premium lan Titanium"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
-moq: "300 pcs/model"
+moq: "200 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Frame Optik Serat Karbon Mewah KSO-032 | Produsen OEM"
-seoDescription: "Mitra karo produsen Cina sing misuwur kanggo frame optik serat karbon & titanium mewah KSO-032. Layanan OEM/ODM lengkap kanthi 300 MOQ kanggo label pribadi."
+seoDescription: "Mitra karo produsen Cina sing misuwur kanggo frame optik serat karbon & titanium mewah KSO-032. Layanan OEM/ODM lengkap kanthi 200 MOQ kanggo label pribadi."
 seoKeywords: "produsen frame optik serat karbon, kacamata kustom OEM Cina, frame serat karbon label pribadi, grosir kacamata optik mewah, pabrik kacamata titanium serat karbon, pemasok grosir kacamata ODM, frame optik kualitas ekspor, kacamata serat karbon B2B Cina"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "produsen frame optik serat karbon, kacamata kustom OEM Cina, frame
 - **Optik Premium:** Lensa nylon kuat sing nyedhiyakake resistensi impact sing unggul kanthi pilihan kustomisasi sing jembar kanggo pelanggan B2B global.
 - **Kenyamanan Sedina Muput:** Bantalan irung karet ergonomis sing dirancang kanggo pas sing aman lan hipoalergenik sajrone panggunaan saben dina sing suwe.
 - **Tekstur Eksklusif:** Finishing serat karbon unik kalebu pola serat kayu lan twill, nyedhiyakake estetika mewah sing dhuwur.
-- **Produksi Bisa Diatur:** Kemampuan kustomisasi OEM & ODM profesional kanthi MOQ rendah 300 pcs kanggo distribusi saindenging jagad.
+- **Produksi Bisa Diatur:** Kemampuan kustomisasi OEM & ODM profesional kanthi MOQ rendah 200 pcs kanggo distribusi saindenging jagad.
 
 ## Cocok kanggo
 - Merek Kacamata Premium
@@ -74,4 +74,4 @@ Dirancang nganggo gabungan serat karbon premium lan titanium entheng sing nduwen
 
 Sistem engsel tong 2+1 sing digawe kanthi presisi njamin stabilitas mekanik sing konsisten, dene bantalan irung karet ergonomis nyedhiyakake kenyamanan hipoalergenik sedina muput.
 
-Nawakake ruang lingkup kustomisasi ODM lan OEM sing lengkap kanthi jumlah pesanan minimal 300 unit sing rendah, model iki ngidini desainer independen lan pengecer kelas dhuwur kanggo nambah koleksi mewah kustom kanthi presisi manufaktur.
+Nawakake ruang lingkup kustomisasi ODM lan OEM sing lengkap kanthi jumlah pesanan minimal 200 unit sing rendah, model iki ngidini desainer independen lan pengecer kelas dhuwur kanggo nambah koleksi mewah kustom kanthi presisi manufaktur.

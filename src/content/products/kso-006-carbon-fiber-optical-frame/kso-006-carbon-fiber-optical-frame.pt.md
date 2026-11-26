@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Carbono-Ébano & Carvalho Branco & Sapele & Ébano"
 materials: "Fibra de Carbono Premium"
 serviceMode: "OEM & ODM ( Personalização )"
-moq: "300 pçs/modelo"
+moq: "200 pçs/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Armação Óptica de Luxo em Fibra de Carbono KSO-006 | Fabricante OEM & ODM"
-seoDescription: "Armação óptica de luxo KSO-006 em fibra de carbono com hastes de metal premium. Fabricante líder chinês de óculos OEM/ODM para pedidos globais com 300 MOQ."
+seoDescription: "Armação óptica de luxo KSO-006 em fibra de carbono com hastes de metal premium. Fabricante líder chinês de óculos OEM/ODM para pedidos globais com 200 MOQ."
 seoKeywords: "fabricante armações ópticas fibra de carbono, óculos personalizados OEM China, armações fibra de carbono marca própria, fábrica armações ópticas luxo, atacado óculos fibra de carbono, armações ópticas qualidade exportação, serviço óculos OEM ODM China, fornecedor B2B armações ópticas"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante armações ópticas fibra de carbono, óculos personali
 - **Engenharia Flexível:** Dobradiças de mola de alto desempenho que proporcionam um ajuste autoajustável e confortável para várias formas e tamanhos de rosto.
 - **Ótica Premium:** Lentes de nylon tenaz com amplas opções de tingimento e revestimento personalizados disponíveis para atender às especificações da marca.
 - **Conforto Sofisticado:** Ponteiras násicas de metal integradas projetadas para durabilidade e um ajuste estável e personalizado durante o uso prolongado.
-- **Produção Escalável:** Capacidades completas de personalização OEM e ODM com uma quantidade mínima de pedido de 300 peças para atacadistas globais.
+- **Produção Escalável:** Capacidades completas de personalização OEM e ODM com uma quantidade mínima de pedido de 200 peças para atacadistas globais.
 
 ## Perfeito Para
 - Marcas de Óculos Premium
@@ -74,4 +74,4 @@ Projetada para ambientes profissionais, esta armação combina uma frente de fib
 
 As dobradiças de mola de alto desempenho e as ponteiras násicas de metal ajustáveis trabalham em conjunto para proporcionar um ajuste leve e autoajustável que mantém o conforto durante o uso diário prolongado.
 
-Disponível para desenvolvimento ODM completo com uma quantidade mínima de pedido acessível de 300 peças, este modelo permite que designers independentes e boutiques premium expandam seus portfólios de óculos de luxo personalizados.
+Disponível para desenvolvimento ODM completo com uma quantidade mínima de pedido acessível de 200 peças, este modelo permite que designers independentes e boutiques premium expandam seus portfólios de óculos de luxo personalizados.

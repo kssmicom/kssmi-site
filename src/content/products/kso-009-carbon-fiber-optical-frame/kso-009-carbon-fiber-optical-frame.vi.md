@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Sợi carbon & Gỗ mun Ceylon & Gỗ sồi trắng & Gỗ Sapele"
 materials: "Sợi carbon cao cấp và Titan"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM)"
-moq: "300 cái/mẫu"
+moq: "200 cái/mẫu"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-009 Gọng kính cận sợi carbon sang trọng | Nhà sản xuất OEM"
-seoDescription: "Nhà sản xuất gọng kính sợi carbon và titan cao cấp KSO-009. Cung cấp dịch vụ tùy chỉnh OEM/ODM cao cấp cho các thương hiệu kính mắt toàn cầu. Liên hệ cho MOQ 300."
+seoDescription: "Nhà sản xuất gọng kính sợi carbon và titan cao cấp KSO-009. Cung cấp dịch vụ tùy chỉnh OEM/ODM cao cấp cho các thương hiệu kính mắt toàn cầu. Liên hệ cho MOQ 200."
 seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính titan tùy chỉnh Trung Quốc, gọng sợi carbon nhãn hiệu riêng, nhà cung cấp gọng kính OEM, bán sỉ gọng kính sang trọng, xưởng kính mắt cao cấp, gọng kính đệm mũi điều chỉnh, ODM kính sợi carbon"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính titan tùy ch�
 - **Quang học cao cấp:** Tròng kính nylon bền bỉ cung cấp khả năng chống va đập vượt trội và độ rõ nét quang học cho các tiêu chuẩn kính mắt cao cấp.
 - **Thoải mái cả ngày:** Đệm mũi kim loại không gây dị ứng được thiết kế để mang lại cảm giác ổn định và thoải mái trong suốt quá trình sử dụng hàng ngày.
 - **Thẩm mỹ sang trọng:** Vân dệt sợi carbon độc đáo kết hợp với lớp hoàn thiện cao cấp tạo nên sức hút thời trang tinh tế và đẳng cấp.
-- **Sản xuất linh hoạt:** Hỗ trợ tùy chỉnh OEM và ODM toàn diện với số lượng đặt hàng tối thiểu chiến lược là 300 chiếc cho các nhà bán sỉ toàn cầu.
+- **Sản xuất linh hoạt:** Hỗ trợ tùy chỉnh OEM và ODM toàn diện với số lượng đặt hàng tối thiểu chiến lược là 200 chiếc cho các nhà bán sỉ toàn cầu.
 
 ## Phù hợp cho
 - Thương hiệu kính mắt cao cấp
@@ -74,4 +74,4 @@ Kết hợp sợi carbon hiệu suất cao với càng kính titan thanh lịch,
 
 Việc tích hợp hệ thống bản lề cấu trúc thùng 2+1 được chế tác chính xác và đệm mũi kim loại không gây dị ứng đảm bảo sự vận hành mượt mà nhất quán cùng cảm giác đeo ổn định, thoải mái suốt cả ngày.
 
-Với số lượng đặt hàng tối thiểu linh hoạt là 300 chiếc cho mỗi mẫu, chúng tôi cung cấp hỗ trợ ODM và OEM toàn diện để giúp các nhà thiết kế độc lập và các nhà bán lẻ cao cấp dễ dàng mở rộng bộ sưu tập kính mắt thiết kế riêng của họ.
+Với số lượng đặt hàng tối thiểu linh hoạt là 200 chiếc cho mỗi mẫu, chúng tôi cung cấp hỗ trợ ODM và OEM toàn diện để giúp các nhà thiết kế độc lập và các nhà bán lẻ cao cấp dễ dàng mở rộng bộ sưu tập kính mắt thiết kế riêng của họ.

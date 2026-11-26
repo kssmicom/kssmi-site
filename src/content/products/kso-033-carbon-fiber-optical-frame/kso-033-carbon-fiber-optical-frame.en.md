@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Wood Golden & Twill Grain Green Carbon Fiber & Plain Grain Carbon Fiber Matt Gun & Wood Plain Grain Carbon Fiber Matt Silver"
 materials: "Premium Carbon Fiber and Titanium"
 serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -52,7 +52,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-033 Luxury Carbon Fiber Optical Frames | Wholesale Supplier"
-seoDescription: "KSO-033 luxury carbon fiber optical frames with titanium temples for eyewear brands. High-performance OEM/ODM manufacturing with 300 MOQ and CNC precision."
+seoDescription: "KSO-033 luxury carbon fiber optical frames with titanium temples for eyewear brands. High-performance OEM/ODM manufacturing with 200 MOQ and CNC precision."
 seoKeywords: "carbon fiber optical frames manufacturer, custom titanium eyewear China, wholesale luxury optical frames, private label carbon fiber frames, OEM glasses factory, CNC optical frame manufacturer, export-quality eyewear supplier, professional eyewear OEM"
 ---
 
@@ -63,7 +63,7 @@ seoKeywords: "carbon fiber optical frames manufacturer, custom titanium eyewear 
 - **Durable Hardware:** Stable 2+1 barrel structure hinges engineered for consistent operational smoothness throughout the product lifecycle.
 - **Premium Optics:** Tenacious nylon lenses with extensive custom tinting and coating options available for high-end optical solutions.
 - **All-Day Comfort:** Hypoallergenic rubber nose pads designed for a secure, comfortable fit and weightless daily wear.
-- **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 300 pieces for global B2B export.
+- **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 200 pieces for global B2B export.
 
 ## Perfect For
 - Premium Eyewear Brands
@@ -79,4 +79,4 @@ Combining aerospace-grade carbon fiber with premium titanium, the KSO-033 offers
 
 CNC-machined precision and a stable 2+1 barrel hinge system ensure consistent manufacturing quality and long-term operational smoothness.
 
-With full ODM scope and a low 300-piece minimum order quantity, this frame empowers independent designers and luxury fashion houses to develop bespoke private-label collections.
+With full ODM scope and a low 200-piece minimum order quantity, this frame empowers independent designers and luxury fashion houses to develop bespoke private-label collections.

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Carbon-Ebony & White-Oak & Sapele & Ebony"
 materials: "Sợi carbon cao cấp"
 serviceMode: "Sản xuất OEM & ODM ( Tùy chỉnh theo yêu cầu )"
-moq: "300 cái/mẫu"
+moq: "200 cái/mẫu"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Gọng kính cận sợi carbon xa xỉ KSO-006 | Nhà sản xuất OEM & ODM"
-seoDescription: "Gọng kính cận sợi carbon xa xỉ KSO-006 với càng kính kim loại cao cấp. Nhà sản xuất kính mắt OEM/ODM hàng đầu Trung Quốc cho các đơn hàng 300 MOQ toàn cầu."
+seoDescription: "Gọng kính cận sợi carbon xa xỉ KSO-006 với càng kính kim loại cao cấp. Nhà sản xuất kính mắt OEM/ODM hàng đầu Trung Quốc cho các đơn hàng 200 MOQ toàn cầu."
 seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính mắt tùy chỉnh OEM Trung Quốc, gọng kính sợi carbon nhãn hiệu riêng, nhà máy gọng kính xa xỉ, bán buôn kính sợi carbon, gọng kính chất lượng xuất khẩu, dịch vụ kính mắt OEM ODM Trung Quốc, nhà cung cấp gọng kính B2B"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính mắt tùy ch�
 - **Kỹ thuật linh hoạt:** Bản lề lò xo hiệu suất cao mang lại sự vừa vặn tự điều chỉnh, thoải mái cho nhiều hình dạng và kích cỡ khuôn mặt khác phục.
 - **Quang học cao cấp:** Tròng kính nylon bền bỉ với các tùy chọn nhuộm màu và lớp phủ tùy chỉnh rộng rãi có sẵn để đáp ứng các thông số kỹ thuật của thương hiệu.
 - **Sự thoải mái tinh tế:** Đệm mũi kim loại tích hợp được thiết kế để tăng độ bền và sự vừa vặn cá nhân ổn định trong thời gian đeo dài.
-- **Sản xuất linh hoạt:** Khả năng tùy chỉnh OEM & ODM toàn diện với số lượng đặt hàng tối thiểu thấp 300 chiếc cho các nhà bán buôn toàn cầu.
+- **Sản xuất linh hoạt:** Khả năng tùy chỉnh OEM & ODM toàn diện với số lượng đặt hàng tối thiểu thấp 200 chiếc cho các nhà bán buôn toàn cầu.
 
 ## Phù hợp cho
 - Thương hiệu kính mắt cao cấp
@@ -74,4 +74,4 @@ seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính mắt tùy ch�
 
 Bản lề lò xo hiệu suất cao và đệm mũi kim loại có thể điều chỉnh hoạt động song song để mang lại sự vừa vặn siêu nhẹ, tự điều chỉnh, giúp duy trì sự thoải mái trong suốt quá trình sử dụng hàng ngày kéo dài.
 
-Sẵn sàng cho quy trình phát triển ODM toàn diện với số lượng đặt hàng tối thiểu chỉ 300 chiếc, mẫu kính này giúp các nhà thiết kế độc lập và các thương hiệu cao cấp mở rộng danh mục kính mắt xa xỉ tùy chỉnh của họ.
+Sẵn sàng cho quy trình phát triển ODM toàn diện với số lượng đặt hàng tối thiểu chỉ 200 chiếc, mẫu kính này giúp các nhà thiết kế độc lập và các thương hiệu cao cấp mở rộng danh mục kính mắt xa xỉ tùy chỉnh của họ.

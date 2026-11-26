@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Carbon-Ebenholz & Weißeiche & Sapele & Ebenholz"
 materials: "Premium-Kohlefaser"
 serviceMode: "OEM & ODM ( Individualisierung )"
-moq: "300 Stk/Modell"
+moq: "200 Stk/Modell"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-006 Luxus-Kohlefaser-Brillenfassung | OEM & ODM Hersteller"
-seoDescription: "KSO-006 Luxus-Kohlefaser-Brillenfassung mit Premium-Metallbügeln. Führender chinesischer Brillendesigner und -hersteller für globale OEM/ODM-Aufträge ab 300 Stk."
+seoDescription: "KSO-006 Luxus-Kohlefaser-Brillenfassung mit Premium-Metallbügeln. Führender chinesischer Brillendesigner und -hersteller für globale OEM/ODM-Aufträge ab 200 Stk."
 seoKeywords: "kohlefaser brillenfassungen hersteller, individuelle brillen OEM china, eigenmarken kohlefaser fassungen, luxus brillenfassungen fabrik, großhandel kohlefaser brillen, exportqualität brillenfassungen, brillen OEM ODM service china, B2B brillenfassungen lieferant"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "kohlefaser brillenfassungen hersteller, individuelle brillen OEM c
 - **Flexible Technik:** Hochleistungs-Federscharniere sorgen für eine selbstanpassende, bequeme Passform für verschiedene Gesichtsformen und -größen.
 - **Premium-Optik:** Widerstandsfähige Nylon-Gläser mit umfangreichen individuellen Tönungs- und Beschichtungsoptionen, um Markenspezifikationen zu erfüllen.
 - **Anspruchsvoller Komfort:** Integrierte Metall-Nasenpads, die auf Langlebigkeit und einen stabilen, personalisierten Sitz bei längerem Tragen ausgelegt sind.
-- **Skalierbare Produktion:** Umfassende OEM- und ODM-Anpassungsmöglichkeiten mit einer niedrigen Mindestbestellmenge von 300 Stück für globale Großhändler.
+- **Skalierbare Produktion:** Umfassende OEM- und ODM-Anpassungsmöglichkeiten mit einer niedrigen Mindestbestellmenge von 200 Stück für globale Großhändler.
 
 ## Perfekt Für
 - Premium Brillenmarken
@@ -74,4 +74,4 @@ Diese Fassung wurde für professionelle Umgebungen entwickelt und kombiniert ein
 
 Hochleistungs-Federscharniere und verstellbare Metall-Nasenpads arbeiten zusammen, um eine leichte, selbstanpassende Passform zu bieten, die den Komfort auch bei längerem täglichem Tragen aufrechterhält.
 
-Dieses Modell ist für die vollständige ODM-Entwicklung mit einer zugänglichen Mindestbestellmenge von 300 Stück erhältlich und ermöglicht es unabhängigen Designern und Premium-Boutiquen, ihre Portfolios an individuellen Luxusbrillen zu erweitern.
+Dieses Modell ist für die vollständige ODM-Entwicklung mit einer zugänglichen Mindestbestellmenge von 200 Stück erhältlich und ermöglicht es unabhängigen Designern und Premium-Boutiquen, ihre Portfolios an individuellen Luxusbrillen zu erweitern.

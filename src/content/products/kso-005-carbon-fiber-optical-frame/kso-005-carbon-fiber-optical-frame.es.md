@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Fibra de Carbono & Roble Blanco & Sapelly & Ébano"
 materials: "Fibra de Carbono Premium"
 serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM) ( Personalización )"
-moq: "300 uds/modelo"
+moq: "200 uds/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-005 Montura Óptica de Fibra de Carbono de Lujo | Fabricante OEM"
-seoDescription: "Monturas ópticas de fibra de carbono premium KSO-005 para marcas globales de gafas. Construcción híbrida de alta resistencia con varillas de metal. 300 MOQ para personalización OEM/ODM."
+seoDescription: "Monturas ópticas de fibra de carbono premium KSO-005 para marcas globales de gafas. Construcción híbrida de alta resistencia con varillas de metal. 200 MOQ para personalización OEM/ODM."
 seoKeywords: "fabricante monturas ópticas fibra de carbono, monturas ópticas OEM personalizadas, gafas marca propia China, monturas fibra de carbono al por mayor, fábrica monturas ópticas lujo, gafas gama alta OEM, monturas ópticas calidad exportación, proveedor gafas fibra de carbono"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante monturas ópticas fibra de carbono, monturas ópticas O
 - **Herrajes Flexibles:** Bisagras de estructura de resorte diseñadas con precisión que proporcionan comodidad adaptativa y fiabilidad operativa a largo plazo.
 - **Óptica de Alta Gama:** Equipadas con lentes de nylon tenaz con amplias opciones de personalización para una claridad óptica de primera calidad.
 - **Comodidad Refinada:** Almohadillas nasales de metal duraderas diseñadas para un ajuste seguro y ajustable y una usabilidad duradera.
-- **Producción Personalizable:** Servicios OEM y ODM escalables con un MOQ bajo de 300 piezas para apoyar la expansión de marcas globales.
+- **Producción Personalizable:** Servicios OEM y ODM escalables con un MOQ bajo de 200 piezas para apoyar la expansión de marcas globales.
 
 ## Perfecto Para
 - Marcas de Gafas Premium
@@ -74,4 +74,4 @@ Estableciendo un nuevo estándar en gafas de alta gama, este modelo integra fibr
 
 Las bisagras de resorte diseñadas con precisión y las almohadillas nasales de metal duraderas ofrecen una comodidad adaptativa, mientras que las lentes de nylon tenaz garantizan la claridad óptica para los usuarios más exigentes.
 
-Respaldando el alcance total de OEM/ODM con una cantidad mínima de pedido de solo 300 unidades, Kssmi empodera a las marcas de lujo y a los diseñadores independientes para entregar colecciones personalizadas fabricadas con precisión a nivel mundial.
+Respaldando el alcance total de OEM/ODM con una cantidad mínima de pedido de solo 200 unidades, Kssmi empodera a las marcas de lujo y a los diseñadores independientes para entregar colecciones personalizadas fabricadas con precisión a nivel mundial.

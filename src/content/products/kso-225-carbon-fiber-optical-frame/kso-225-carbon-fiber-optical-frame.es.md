@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Caoba (Palisandro de la India — Veta de Montaña)"
 materials: "Fibra de Carbono Premium y Titanio"
 serviceMode: "OEM & ODM ( Personalización )"
-moq: "300 uds/modelo"
+moq: "200 uds/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-225 Montura Óptica de Fibra de Carbono Caoba | OEM"
-seoDescription: "Asóciese con un fabricante chino líder para monturas ópticas KSO-225 de fibra de carbono con veta de caoba. Servicios profesionales OEM/ODM con MOQ de 300."
+seoDescription: "Asóciese con un fabricante chino líder para monturas ópticas KSO-225 de fibra de carbono con veta de caoba. Servicios profesionales OEM/ODM con MOQ de 200."
 seoKeywords: "fabricante de monturas ópticas de fibra de carbono, gafas personalizadas de caoba, fábrica de monturas ópticas OEM China, venta al por mayor de monturas de fibra de carbono de lujo"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "fabricante de monturas ópticas de fibra de carbono, gafas persona
 - **Óptica Premium:** Lentes de nylon tenaz con amplias opciones de tinte y recubrimiento personalizados disponibles.
 - **Comodidad Todo el Día:** Almohadillas nasales de goma suave diseñadas para un ajuste seguro e hipoalergénico y un uso prolongado.
 - **Estética Única:** Exquisito acabado de veta de madera de caoba sobre fibra de carbono, que combina la estética natural con la integridad estructural de alta tecnología.
-- **Producción Escalable:** Capacidades completas de personalización OEM y ODM con una cantidad mínima de pedido de 300 piezas para exportación global.
+- **Producción Escalable:** Capacidades completas de personalización OEM y ODM con una cantidad mínima de pedido de 200 piezas para exportación global.
 
 ## Perfecto Para
 
@@ -64,4 +64,4 @@ La fibra de carbono de alta tecnología se une a la calidez de la veta de madera
 
 La integración de bisagras de barril 2+1 estables y almohadillas nasales de goma hipoalergénicas proporciona una experiencia táctil refinada y una comodidad superior durante todo el día para un uso prolongado.
 
-Diseñado para diseñadores independientes y grupos minoristas de alta gama, este modelo está disponible para una amplia personalización OEM/ODM. Empoderamos a las marcas para escalar su visión con una cantidad mínima de pedido baja de 300 piezas y soporte completo para detalles de marca personalizados.
+Diseñado para diseñadores independientes y grupos minoristas de alta gama, este modelo está disponible para una amplia personalización OEM/ODM. Empoderamos a las marcas para escalar su visión con una cantidad mínima de pedido baja de 200 piezas y soporte completo para detalles de marca personalizados.

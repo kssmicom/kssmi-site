@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Original Carbon Fiber Color (Matte Black, Glossy Black, Colored Weave, Forged Carbon)"
 materials: "Premium Carbon Fiber"
 serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-044 Luxury Carbon Fiber Sunglasses | Custom OEM Manufacturer"
-seoDescription: "Source premium KSS-044 carbon fiber sunglasses from a leading Chinese OEM manufacturer. We offer full ODM customization for luxury brands with a 300 unit MOQ."
+seoDescription: "Source premium KSS-044 carbon fiber sunglasses from a leading Chinese OEM manufacturer. We offer full ODM customization for luxury brands with a 200 unit MOQ."
 seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses, private label eyewear China, wholesale carbon fiber frames, luxury sunglasses supplier, customized carbon fiber eyewear, B2B sunglasses manufacturer, export-quality eyewear China"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses, priva
 - **Durable Hardware:** Stable 2+1 barrel structure hinges engineered for long-term operational smoothness and structural integrity.
 - **Enhanced Comfort:** Hypoallergenic silicone nose pads designed to ensure a secure and comfortable fit during extended wear.
 - **Precision Engineering:** Unique carbon fiber weave texture offering a high-tech, luxury aesthetic with superior material durability.
-- **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 300 pieces for global B2B export.
+- **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 200 pieces for global B2B export.
 
 ## Perfect For
 - Premium Eyewear Brands
@@ -63,4 +63,4 @@ For the KSS-044, material innovation meets timeless aesthetics. The aerospace-gr
 
 Precision-engineered hardware and hypoallergenic silicone nose pads guarantee all-day comfort and long-term mechanical reliability.
 
-Providing full ODM support from bespoke logos to custom lens tints, we empower luxury lifestyle labels and independent designers to expand their portfolios with a low 300-piece minimum order quantity.
+Providing full ODM support from bespoke logos to custom lens tints, we empower luxury lifestyle labels and independent designers to expand their portfolios with a low 200-piece minimum order quantity.

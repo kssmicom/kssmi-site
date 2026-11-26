@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Bois Doré & Fibre de Carbone Verte à Grain Sergé & Fibre de Carbone à Grain Lisse Gris Fusil Mat & Fibre de Carbone à Grain Lisse Effet Bois Argent Mat"
 materials: "Fibre de Carbone Premium et Titane"
 serviceMode: "Fabrication sous Contrat (OEM) & Conception et Fabrication (ODM) ( Personnalisation )"
-moq: "300 pcs/modèle"
+moq: "200 pcs/modèle"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Fabricant de Montures Optiques de Luxe en Fibre de Carbone et Titane KSO-031"
-seoDescription: "KSO-031 : Montures optiques de luxe personnalisées en fibre de carbone et titane pour le B2B. Matériau de qualité aérospatiale premium avec un MOQ de 300. Service expert OEM/ODM pour les marques privées."
+seoDescription: "KSO-031 : Montures optiques de luxe personnalisées en fibre de carbone et titane pour le B2B. Matériau de qualité aérospatiale premium avec un MOQ de 200. Service expert OEM/ODM pour les marques privées."
 seoKeywords: "montures optiques en fibre de carbone, montures optiques de luxe, fabricant de lunettes Chine, lunettes personnalisées marque propre, vente en gros montures en fibre de carbone, service OEM ODM lunettes, fournisseur de lunettes en fibre de carbone, usine de lunettes chinoise premium"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "montures optiques en fibre de carbone, montures optiques de luxe, 
 - **Optique Premium :** Verres en nylon tenace offrant une résistance aux chocs supérieure avec de vastes options de personnalisation pour les marchés mondiaux.
 - **Confort Toute la Journée :** Plaquettes de nez ergonomiques en caoutchouc conçues pour un ajustement sûr et hypoallergénique lors d'un port quotidien prolongé.
 - **Textures Exclusives :** Tissages uniques en fibre de carbone avec des motifs de grain de bois et de sergé, offrant une esthétique de luxe haut de gamme pour les marques exigeantes.
-- **Flexibilité de Fabrication :** Services professionnels OEM et ODM avec un faible MOQ de 300 pièces, soutenant une distribution mondiale évolutive.
+- **Flexibilité de Fabrication :** Services professionnels OEM et ODM avec un faible MOQ de 200 pièces, soutenant une distribution mondiale évolutive.
 
 ## Parfait Pour
 - Marques de Lunettes Premium
@@ -74,4 +74,4 @@ Le modèle KSO-031 représente une fusion sophistiquée de fibre de carbone de q
 
 Conçues pour une fluidité opérationnelle à long terme, les charnières à structure en barillet 2+1 et les plaquettes de nez en caoutchouc hypoallergénique assurent une stabilité exceptionnelle et un confort durable pour l'utilisateur tout au long de la journée.
 
-Soutenant une personnalisation complète OEM et ODM à partir d'un minimum de 300 pièces, Kssmi permet aux designers indépendants et aux distributeurs de marques de distributeur de développer des lignes de lunettes sur mesure avec des composants conçus avec précision.
+Soutenant une personnalisation complète OEM et ODM à partir d'un minimum de 200 pièces, Kssmi permet aux designers indépendants et aux distributeurs de marques de distributeur de développer des lignes de lunettes sur mesure avec des composants conçus avec précision.

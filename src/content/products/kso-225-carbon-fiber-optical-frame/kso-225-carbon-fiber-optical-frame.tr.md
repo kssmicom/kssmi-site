@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Maun (Hint Gülü — Dağ Deseni)"
 materials: "Premium Karbon Fiber ve Titanyum"
 serviceMode: "OEM & ODM ( Özelleştirme )"
-moq: "300 adet/model"
+moq: "200 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-225 Lüks Maun Desenli Karbon Fiber Optik Çerçeve | OEM"
-seoDescription: "KSO-225 maun desenli karbon fiber optik çerçeveler için önde gelen Çinli üreticiyle ortaklık kurun. 300 MOQ ile uzman OEM/ODM hizmetleri."
+seoDescription: "KSO-225 maun desenli karbon fiber optik çerçeveler için önde gelen Çinli üreticiyle ortaklık kurun. 200 MOQ ile uzman OEM/ODM hizmetleri."
 seoKeywords: "karbon fiber optik çerçeve üreticisi, özel maun desenli gözlük, OEM optik çerçeve fabrikası Çin, toptan lüks karbon fiber çerçeveler"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "karbon fiber optik çerçeve üreticisi, özel maun desenli gözl�
 - **Premium Optik:** Kapsamlı özel renklendirme ve kaplama seçenekleri mevcut olan dayanıklı naylon lensler.
 - **Tüm Gün Konfor:** Güvenli, hipoalerjenik bir uyum ve uzun süreli kullanım için tasarlanmış yumuşak kauçuk burun tamponları.
 - **Benzersiz Estetik:** Karbon fiber üzerinde doğal estetiği yüksek teknolojili yapısal bütünlükle birleştiren zarif maun ahşap desenli kaplama.
-- **Ölçeklenebilir Üretim:** Küresel ihracat için 300 adetlik düşük minimum sipariş miktarı ile tam OEM ve ODM özelleştirme yetenekleri.
+- **Ölçeklenebilir Üretim:** Küresel ihracat için 200 adetlik düşük minimum sipariş miktarı ile tam OEM ve ODM özelleştirme yetenekleri.
 
 ## İçin Mükemmel
 
@@ -64,4 +64,4 @@ Yüksek teknolojili karbon fiber, KSO-225'te maun ahşap deseninin sıcaklığı
 
 Stabil 2+1 varil menteşelerin ve hipoalerjenik kauçuk burun tamponlarının entegrasyonu, rafine bir dokunsal deneyim ve uzun süreli kullanım için üstün gün boyu konfor sağlar.
 
-Bağımsız tasarımcılar ve üst düzey perakende grupları için tasarlanan bu model, kapsamlı OEM/ODM özelleştirmesi için mevcuttur. Markaların vizyonlarını 300 adetlik düşük minimum sipariş miktarı ve ısmarlama markalama detayları için tam destekle ölçeklendirmelerine olanak tanıyoruz.
+Bağımsız tasarımcılar ve üst düzey perakende grupları için tasarlanan bu model, kapsamlı OEM/ODM özelleştirmesi için mevcuttur. Markaların vizyonlarını 200 adetlik düşük minimum sipariş miktarı ve ısmarlama markalama detayları için tam destekle ölçeklendirmelerine olanak tanıyoruz.

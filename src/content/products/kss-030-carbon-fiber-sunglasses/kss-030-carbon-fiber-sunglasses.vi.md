@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Màu sợi carbon nguyên bản (Đen mờ, Đen bóng, Dệt màu, Carbon rèn)"
 materials: "Sợi Carbon Cao Cấp"
 serviceMode: "OEM & ODM ( Tùy chỉnh theo yêu cầu )"
-moq: "300 cái/mẫu"
+moq: "200 cái/mẫu"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-030 Kính Mát Sợi Carbon Xa Xỉ | Nhà sản xuất OEM & ODM"
-seoDescription: "KSS-030 là gọng kính sợi carbon cao cấp cho các thương hiệu kính mắt xa xỉ. Tùy chỉnh OEM & ODM đầy đủ với MOQ 300. Đối tác với nhà máy xuất khẩu hàng đầu Trung Quốc."
+seoDescription: "KSS-030 là gọng kính sợi carbon cao cấp cho các thương hiệu kính mắt xa xỉ. Tùy chỉnh OEM & ODM đầy đủ với MOQ 200. Đối tác với nhà máy xuất khẩu hàng đầu Trung Quốc."
 seoKeywords: "nhà sản xuất kính mát sợi carbon, kính mát OEM tùy chỉnh, kính mắt nhãn hiệu riêng Trung Quốc, bán buôn gọng kính sợi carbon, nhà cung cấp kính mát xa xỉ"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "nhà sản xuất kính mát sợi carbon, kính mát OEM tùy ch�
 - **Phần cứng Bền bỉ:** Bản lề cấu trúc thùng 2+1 ổn định được thiết kế để vận hành trơn tru lâu dài và hiệu suất nhất quán.
 - **Quang học Cao cấp:** Tròng kính nylon bền bỉ mang lại độ rõ nét vượt trội với các tùy chọn nhuộm màu và phủ lớp bảo vệ tùy chỉnh rộng rãi.
 - **Thoải mái & An toàn:** Đệm mũi silicone không gây dị ứng được thiết kế để mang lại sự thoải mái cả ngày và sự vừa vặn an toàn.
-- **Sản xuất Có thể Mở rộng:** Khả năng tùy chỉnh OEM & ODM đầy đủ với số lượng đặt hàng tối thiểu thấp 300 chiếc để xuất khẩu thương hiệu toàn cầu.
+- **Sản xuất Có thể Mở rộng:** Khả năng tùy chỉnh OEM & ODM đầy đủ với số lượng đặt hàng tối thiểu thấp 200 chiếc để xuất khẩu thương hiệu toàn cầu.
 
 ## Phù hợp cho
 - Thương hiệu kính mắt cao cấp
@@ -62,4 +62,4 @@ KSS-030 thể hiện vẻ đẹp kỹ thuật thuần túy của sợi carbon ca
 
 Được thiết kế với bản lề cấu trúc thùng 2+1 ổn định và đệm mũi silicone không gây dị ứng, gọng kính này đảm bảo tính toàn vẹn về cấu trúc lâu dài và sự thoải mái cho người dùng.
 
-Khả năng tùy chỉnh OEM/ODM linh hoạt và MOQ thấp 300 chiếc khiến mẫu kính này trở thành nền tảng lý tưởng cho các thương hiệu muốn mở rộng sang phân khúc kính mắt hiệu suất sang trọng.
+Khả năng tùy chỉnh OEM/ODM linh hoạt và MOQ thấp 200 chiếc khiến mẫu kính này trở thành nền tảng lý tưởng cho các thương hiệu muốn mở rộng sang phân khúc kính mắt hiệu suất sang trọng.

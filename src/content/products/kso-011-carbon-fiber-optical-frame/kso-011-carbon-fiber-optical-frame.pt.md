@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Fibra de Carbono & Ébano do Ceilão & Carvalho Branco & Sapele"
 materials: "Fibra de Carbono Premium e Titânio"
 serviceMode: "OEM & ODM ( Personalização )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Armação Óptica de Luxo em Fibra de Carbono KSO-011 | Fornecedor Atacadista"
-seoDescription: "Parceria com um fabricante chinês líder para armações ópticas de luxo KSO-011 em fibra de carbono com hastes de titânio. OEM/ODM para marcas próprias com 300 MOQ."
+seoDescription: "Parceria com um fabricante chinês líder para armações ópticas de luxo KSO-011 em fibra de carbono com hastes de titânio. OEM/ODM para marcas próprias com 200 MOQ."
 seoKeywords: "fabricante de armações ópticas de fibra de carbono, óculos de titânio personalizados China, armações de fibra de carbono marca própria, óculos ópticos de luxo atacado, fábrica de óculos de fibra de carbono OEM, fornecedor B2B de armações ópticas, OEM de óculos de fibra de carbono de alta gama, armações ópticas de qualidade de exportação"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante de armações ópticas de fibra de carbono, óculos de 
 - **Conforto Avançado:** Ponteiras nasicas de titânio integradas que oferecem um ajuste hipoalergênico e resistente à corrosão para o conforto do usuário a longo prazo.
 - **Óptica Premium:** Lentes de nylon multifuncionais projetadas para alta resistência ao impacto com amplas possibilidades de tingimento e revestimento personalizados.
 - **Acabamento Requintado:** Textura única de fibra de carbono e um design de luxo unissex que atende às exigências estéticas dos varejistas de óculos premium.
-- **Personalização Completa:** Serviços profissionais de OEM e ODM, incluindo aplicação de logotipo personalizado e modificações de hardware a partir de um MOQ de 300 peças.
+- **Personalização Completa:** Serviços profissionais de OEM e ODM, incluindo aplicação de logotipo personalizado e modificações de hardware a partir de um MOQ de 200 peças.
 
 ## Perfeito Para
 - Marcas de Óculos Premium
@@ -74,4 +74,4 @@ Projetado para o exigente mercado de luxo, o KSO-011 funde fibra de carbono de a
 
 As dobradiças de 2+1 barris e as ponteiras nasicas de titânio, fabricadas com precisão, proporcionam um ajuste sem esforço e integridade estrutural a longo prazo.
 
-Disponível para ampla personalização OEM e ODM a partir de um MOQ de 300 unidades, este modelo permite que marcas próprias integrem tecnologia avançada de materiais compósitos em suas coleções exclusivas.
+Disponível para ampla personalização OEM e ODM a partir de um MOQ de 200 unidades, este modelo permite que marcas próprias integrem tecnologia avançada de materiais compósitos em suas coleções exclusivas.

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Warna Serat Karbon Asli (Matte Black, Glossy Black, Anyaman Berwarna, Forged Carbon)"
 materials: "Premium Carbon Fiber"
 serviceMode: "OEM & ODM ( Kustomisasi )"
-moq: "300 pcs/model"
+moq: "200 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-033 Kacamata Hitam Serat Karbon Klasik Mewah | Produsen OEM"
-seoDescription: "Partner karo produsen China sing misuwur kanggo kacamata hitam serat karbon mewah KSS-033. Frame aeroangkasa kanthi kekuatan dhuwur kanthi 300 MOQ lan layanan OEM/ODM global sing lengkap."
+seoDescription: "Partner karo produsen China sing misuwur kanggo kacamata hitam serat karbon mewah KSS-033. Frame aeroangkasa kanthi kekuatan dhuwur kanthi 200 MOQ lan layanan OEM/ODM global sing lengkap."
 seoKeywords: "produsen kacamata hitam serat karbon, kacamata hitam OEM kustom, kacamata label pribadi China, frame serat karbon grosir, pemasok kacamata hitam mewah"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "produsen kacamata hitam serat karbon, kacamata hitam OEM kustom, k
 - **Optik Premium:** Lensa nylong sing kuat sing nyedhiyakake kajelasan kinerja dhuwur kanthi pilihan warna lan lapisan kustom sing jembar.
 - **Kenyamanan Sedina Muput:** Bantalan irung silicone hypoallergenic sing dirancang kanggo pas sing aman lan tanpa tekanan sajrone panggunaan profesional sing suwe.
 - **Versatilitas Estetika:** Macem-macem finishing serat karbon kalebu Matte Black, Glossy Black, lan Forged Carbon kanggo cocog karo macem-macem identitas merek.
-- **Produksi Scalable:** Layanan kustomisasi OEM lan ODM sing komprehensif kanthi MOQ 300 unit sing kompetitif kanggo distribusi grosir global.
+- **Produksi Scalable:** Layanan kustomisasi OEM lan ODM sing komprehensif kanthi MOQ 200 unit sing kompetitif kanggo distribusi grosir global.
 
 ## Cocok kanggo
 
@@ -64,4 +64,4 @@ Digawe kanggo merek sing teliti, KSS-033 nggabungake keunggulan teknis serat kar
 
 Integrasi engsel tong 2+1 sing dirancang kanthi presisi lan bantalan irung silicone hypoallergenic njamin kenyamanan sedina muput lan kekiatan jangka panjang ing macem-macem profil pangguna.
 
-Kanthi ndukung ruang lingkup OEM lan ODM lengkap kanthi jumlah pesenan minimal 300 unit sing sithik, model iki ngidini label mewah lan desainer independen kanthi gampang nggabungake inovasi bahan canggih menyang koleksi label pribadi.
+Kanthi ndukung ruang lingkup OEM lan ODM lengkap kanthi jumlah pesenan minimal 200 unit sing sithik, model iki ngidini label mewah lan desainer independen kanthi gampang nggabungake inovasi bahan canggih menyang koleksi label pribadi.

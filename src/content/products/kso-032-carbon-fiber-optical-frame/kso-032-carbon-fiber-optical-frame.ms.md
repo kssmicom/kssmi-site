@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Kayu Keemasan & Gentian Karbon Hijau Corak Twill & Gentian Karbon Corak Kosong Gun Matt & Kayu Gentian Karbon Corak Kosong Perak Matt"
 materials: "Gentian Karbon Premium dan Titanium"
 serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & Pembuatan ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
-moq: "300 unit/model"
+moq: "200 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Bingkai Optik Gentian Karbon Mewah KSO-032 | Pengilang OEM"
-seoDescription: "Bekerjasama dengan pengilang terkemuka China untuk bingkai optik gentian karbon & titanium mewah KSO-032. Perkhidmatan OEM/ODM penuh dengan 300 MOQ untuk label peribadi."
+seoDescription: "Bekerjasama dengan pengilang terkemuka China untuk bingkai optik gentian karbon & titanium mewah KSO-032. Perkhidmatan OEM/ODM penuh dengan 200 MOQ untuk label peribadi."
 seoKeywords: "pengilang bingkai optik gentian karbon, kacamata tersuai OEM China, bingkai gentian karbon label peribadi, borong kacamata optik mewah, kilang kacamata titanium gentian karbon, pembekal borong kacamata ODM, bingkai optik kualiti eksport, kacamata gentian karbon B2B China"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "pengilang bingkai optik gentian karbon, kacamata tersuai OEM China
 - **Optik Premium:** Kanta nilon teguh memberikan rintangan hentaman yang unggul dengan pilihan penyesuaian yang meluas untuk pelanggan B2B global.
 - **Keselesaan Sepanjang Hari:** Alas hidung getah ergonomik direka untuk muat yang selamat dan hipoalergenik semasa pemakaian harian yang berpanjangan.
 - **Tekstur Eksklusif:** Kemasan gentian karbon unik termasuk corak urat kayu dan twill, memberikan estetika mewah yang tinggi.
-- **Pembuatan Boleh Skala:** Keupayaan penyesuaian OEM & ODM profesional dengan MOQ rendah 300 unit untuk pengedaran seluruh dunia.
+- **Pembuatan Boleh Skala:** Keupayaan penyesuaian OEM & ODM profesional dengan MOQ rendah 200 unit untuk pengedaran seluruh dunia.
 
 ## Sesuai Untuk
 - Merek Kacamata Premium
@@ -74,5 +74,5 @@ Direka dengan gabungan berprestasi tinggi gentian karbon premium dan titanium ri
 
 Sistem engsel tong 2+1 yang dibina dengan ketepatan memastikan kestabilan mekanikal yang konsisten, manakala alas hidung getah ergonomik memberikan keselesaan hipoalergenik sepanjang hari.
 
-Menawarkan skop penyesuaian ODM dan OEM yang lengkap dengan kuantiti pesanan minimum 300 unit yang rendah, model ini membolehkan pereka bebas dan peruncit mewah untuk meningkatkan koleksi mewah tersuai dengan ketepatan pembuatan.
+Menawarkan skop penyesuaian ODM dan OEM yang lengkap dengan kuantiti pesanan minimum 200 unit yang rendah, model ini membolehkan pereka bebas dan peruncit mewah untuk meningkatkan koleksi mewah tersuai dengan ketepatan pembuatan.
 

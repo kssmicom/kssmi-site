@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Mogno (Jacarandá Indiano — Grão de Montanha)"
 materials: "Fibra de Carbono Premium e Titânio"
 serviceMode: "OEM & ODM ( Personalização )"
-moq: "300 pçs/modelo"
+moq: "200 pçs/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-225 Armação Óptica Fibra de Carbono Mogno Luxo | OEM"
-seoDescription: "Parceria com um fabricante chinês líder para armações ópticas KSO-225 de fibra de carbono com grão de mogno. Serviços OEM/ODM especialistas com MOQ 300."
+seoDescription: "Parceria com um fabricante chinês líder para armações ópticas KSO-225 de fibra de carbono com grão de mogno. Serviços OEM/ODM especialistas com MOQ 200."
 seoKeywords: "fabricante de armações ópticas de fibra de carbono, óculos de mogno personalizados, fábrica de armações ópticas OEM China, atacado de armações de luxo"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "fabricante de armações ópticas de fibra de carbono, óculos de 
 - **Ótica Premium:** Lentes de nylon tenaz com amplas opções de tingimento e revestimento personalizados disponíveis.
 - **Conforto Durante Todo o Dia:** Plaquetas de borracha macia projetadas para um ajuste seguro e hipoalergênico e uso prolongado.
 - **Estética Única:** Acabamento requintado de grão de madeira de mogno sobre fibra de carbono, combinando estética natural com integridade estrutural de alta tecnologia.
-- **Produção Escalável:** Capacidades completas de personalização OEM e ODM com uma quantidade mínima de pedido de 300 peças para exportação global.
+- **Produção Escalável:** Capacidades completas de personalização OEM e ODM com uma quantidade mínima de pedido de 200 peças para exportação global.
 
 ## Perfeito Para
 
@@ -64,4 +64,4 @@ A fibra de carbono de alta tecnologia encontra o calor do grão da madeira de mo
 
 A integração de dobradiças de barril 2+1 estáveis e plaquetas de borracha hipoalergênicas proporciona uma experiência tátil refinada e conforto superior durante todo o dia para uso prolongado.
 
-Projetado para designers independentes e grupos de varejo de alto luxo, este modelo está disponível para ampla personalização OEM/ODM. Capacitamos as marcas a escalar sua visão com uma baixa quantidade mínima de pedido de 300 peças e suporte total para detalhes de branding sob medida.
+Projetado para designers independentes e grupos de varejo de alto luxo, este modelo está disponível para ampla personalização OEM/ODM. Capacitamos as marcas a escalar sua visão com uma baixa quantidade mínima de pedido de 200 peças e suporte total para detalhes de branding sob medida.

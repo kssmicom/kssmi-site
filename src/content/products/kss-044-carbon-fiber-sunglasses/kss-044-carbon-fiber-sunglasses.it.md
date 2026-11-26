@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Colore Fibra di Carbonio Originale (Nero Opaco, Nero Lucido, Trama Colorata, Carbonio Forgiato)"
 materials: "Fibra di Carbonio Premium"
 serviceMode: "Produzione per Conto Terzi & Design e Produzione"
-moq: "300 pz/modello"
+moq: "200 pz/modello"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Occhiali da Sole di Lusso KSS-044 in Fibra di Carbonio | Produttore OEM"
-seoDescription: "Acquista occhiali da sole premium KSS-044 in fibra di carbonio da un produttore OEM leader in Cina. Offriamo personalizzazione ODM completa per marchi di lusso con un MOQ di 300 unità."
+seoDescription: "Acquista occhiali da sole premium KSS-044 in fibra di carbonio da un produttore OEM leader in Cina. Offriamo personalizzazione ODM completa per marchi di lusso con un MOQ di 200 unità."
 seoKeywords: "produttore occhiali da sole fibra di carbonio, occhiali da sole OEM personalizzati, occhiali private label Cina, montature in fibra di carbonio all'ingrosso, fornitore occhiali da sole di lusso, occhiali in fibra di carbonio personalizzati, produttore occhiali da sole B2B, occhiali di qualità per l'esportazione Cina"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "produttore occhiali da sole fibra di carbonio, occhiali da sole OE
 - **Hardware Resistente:** Cerniere stabili con struttura a barilotto 2+1 progettate per una fluidità operativa a lungo termine e integrità strutturale.
 - **Comfort Migliorato:** Naselli in silicone ipoallergenico progettati per garantire una vestibilità sicura e confortevole durante l'uso prolungato.
 - **Ingegneria di Precisione:** Trama unica in fibra di carbonio che offre un'estetica di lusso high-tech con una durabilità del materiale superiore.
-- **Produzione Scalabile:** Capacità complete di personalizzazione OEM e ODM con un ordine minimo di soli 300 pezzi per l'esportazione B2B globale.
+- **Produzione Scalabile:** Capacità complete di personalizzazione OEM e ODM con un ordine minimo di soli 200 pezzi per l'esportazione B2B globale.
 
 ## Perfetto Per
 - Marche di Occhiali Premium
@@ -63,4 +63,4 @@ Per il modello KSS-044, l'innovazione dei materiali incontra un'estetica senza t
 
 L'hardware progettato con precisione e i naselli in silicone ipoallergenico garantiscono comfort per tutto il giorno e affidabilità meccanica a lungo termine.
 
-Fornendo un supporto ODM completo, dai loghi su misura alle tinte personalizzate delle lenti, consentiamo ai marchi lifestyle di lusso e ai designer indipendenti di espandere i propri portafogli con un ordine minimo contenuto di 300 pezzi.
+Fornendo un supporto ODM completo, dai loghi su misura alle tinte personalizzate delle lenti, consentiamo ai marchi lifestyle di lusso e ai designer indipendenti di espandere i propri portafogli con un ordine minimo contenuto di 200 pezzi.

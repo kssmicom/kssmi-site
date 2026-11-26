@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Cor de Fibra de Carbono Original (Preto Fosco, Preto Brilhante, Trama Colorida, Carbono Forjado)"
 materials: "Fibra de Carbono Premium"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
-moq: "300 pçs/modelo"
+moq: "200 pçs/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -37,7 +37,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Óculos de Sol Luxury KSS-032 em Fibra de Carbono | Fábrica OEM"
-seoDescription: "Parceria com um fabricante líder de exportação da China para óculos de sol de luxo KSS-032 em fibra de carbono. Oferecemos personalização OEM/ODM completa com MOQ de 300 para marcas globais."
+seoDescription: "Parceria com um fabricante líder de exportação da China para óculos de sol de luxo KSS-032 em fibra de carbono. Oferecemos personalização OEM/ODM completa com MOQ de 200 para marcas globais."
 seoKeywords: "fabricante de óculos de sol de fibra de carbono, óculos de sol OEM personalizados, óculos de marca própria China, armações de fibra de carbono no atacado, fornecedor de óculos de luxo, fábrica de óculos CNC, óculos de qualidade de exportação, personalização de óculos B2B"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "fabricante de óculos de sol de fibra de carbono, óculos de sol O
 - **Hardware Durável:** Dobradiças de estrutura de barril 2+1 estáveis, projetadas para suavidade operacional de longo prazo.
 - **Ótica Premium:** Lentes de nylon tenaz com amplas opções de cores e revestimentos personalizados disponíveis.
 - **Conforto e Segurança:** Ponteiras nasicas de silicone hipoalergênicas projetadas para conforto durante todo o dia e um ajuste seguro.
-- **Produção Escalonável:** Capacidades completas de personalização OEM e ODM com uma quantidade mínima de pedido baixa de 300 peças para exportação global.
+- **Produção Escalonável:** Capacidades completas de personalização OEM e ODM com uma quantidade mínima de pedido baixa de 200 peças para exportação global.
 
 ## Perfeito Para
 - Marcas de Óculos Premium
@@ -63,4 +63,4 @@ Projetado para marcas que priorizam a superioridade técnica, o KSS-032 utiliza 
 
 Cada componente é meticulosamente usinado em CNC para garantir tolerâncias precisas, enquanto as dobradiças de barril 2+1 e as plaquetas de silicone hipoalergênicas proporcionam uma mistura perfeita de durabilidade mecânica e conforto personalizado.
 
-A Kssmi fornece suporte abrangente de OEM e ODM com uma quantidade mínima de pedido flexível de 300 peças, permitindo que varejistas globais lancem coleções de fibra de carbono sob medida com cores de lentes personalizadas e branding especializado.
+A Kssmi fornece suporte abrangente de OEM e ODM com uma quantidade mínima de pedido flexível de 200 peças, permitindo que varejistas globais lancem coleções de fibra de carbono sob medida com cores de lentes personalizadas e branding especializado.

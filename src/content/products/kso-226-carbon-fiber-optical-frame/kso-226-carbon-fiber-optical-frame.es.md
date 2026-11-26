@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Caoba (Palisandro de la India — Veta de Montaña)"
 materials: "Fibra de Carbono Premium y Titanio"
 serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM) ( Personalización )"
-moq: "300 uds/modelo"
+moq: "200 uds/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Montura Óptica de Fibra de Carbono de Lujo KSO-226 | Fabricante OEM"
-seoDescription: "Adquiera monturas ópticas de lujo en fibra de carbono KSO-226 con veta de caoba única de un fabricante líder en China. Personalización OEM/ODM escalable con MOQ de 300."
+seoDescription: "Adquiera monturas ópticas de lujo en fibra de carbono KSO-226 con veta de caoba única de un fabricante líder en China. Personalización OEM/ODM escalable con MOQ de 200."
 seoKeywords: "fabricante de monturas ópticas de fibra de carbono, gafas de fibra de carbono personalizadas KSO-226, venta al por mayor de monturas ópticas China, gafas de fibra de carbono marca propia, proveedor OEM de gafas de lujo, monturas de fibra de carbono veta caoba, fábrica de monturas ópticas B2B, gafas de fibra de carbono ODM"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "fabricante de monturas ópticas de fibra de carbono, gafas de fibr
 - **Herrajes Duraderos:** Bisagras estables con estructura de barril 2+1 diseñadas con precisión para una suavidad operativa a largo plazo e integridad estructural.
 - **Óptica Premium:** Lentes de nylon tenaz con amplias opciones de tintado personalizado y recubrimiento multicapa disponibles para satisfacer las diversas necesidades del mercado.
 - **Comodidad Ergonómica:** Plaquetas nasales de goma suave que proporcionan un ajuste seguro, hipoalergénico y cómodo para el uso profesional durante todo el día.
-- **Fabricación Escalable:** Servicios integrales de personalización OEM y ODM con una cantidad mínima de pedido baja de 300 piezas para mayoristas globales.
+- **Fabricación Escalable:** Servicios integrales de personalización OEM y ODM con una cantidad mínima de pedido baja de 200 piezas para mayoristas globales.
 
 ## Perfecto Para
 
@@ -64,4 +64,4 @@ El modelo KSO-226 combina la fuerza industrial de la fibra de carbono de grado a
 
 Diseñada con precisión con varillas de titanio resistente y bisagras de barril 2+1 estables, la montura garantiza durabilidad a largo plazo y comodidad hipoalergénica.
 
-Respaldando el alcance completo de OEM/ODM con un bajo MOQ de 300 piezas, empoderamos a las marcas premium para escalar colecciones de gafas a medida con un enfoque en la excelencia técnica y la diferenciación del mercado.
+Respaldando el alcance completo de OEM/ODM con un bajo MOQ de 200 piezas, empoderamos a las marcas premium para escalar colecciones de gafas a medida con un enfoque en la excelencia técnica y la diferenciación del mercado.

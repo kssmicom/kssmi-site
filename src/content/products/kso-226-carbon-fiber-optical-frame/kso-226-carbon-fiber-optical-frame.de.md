@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Mahagoni (Indischer Palisander — Bergmaserung)"
 materials: "Premium-Kohlefaser und Titan"
 serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) ( Individualisierung )"
-moq: "300 Stk/Modell"
+moq: "200 Stk/Modell"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-226 Luxus-Kohlefaser-Brillenfassung | OEM-Hersteller"
-seoDescription: "Beziehen Sie KSO-226 Luxus-Kohlefaser-Brillenfassungen mit einzigartiger Mahagoni-Maserung von einem führenden chinesischen Hersteller. Skalierbare OEM/ODM-Anpassung mit 300 MOQ."
+seoDescription: "Beziehen Sie KSO-226 Luxus-Kohlefaser-Brillenfassungen mit einzigartiger Mahagoni-Maserung von einem führenden chinesischen Hersteller. Skalierbare OEM/ODM-Anpassung mit 200 MOQ."
 seoKeywords: "Kohlefaser-Brillenfassungen Hersteller, KSO-226 maßgeschneiderte Kohlefaser-Brillen, Großhandel Brillenfassungen China, Eigenmarken Kohlefaser-Brillen, Luxusbrillen OEM-Lieferant, Mahagoni-Maserung Kohlefaser-Fassungen, B2B Brillenfassungs-Fabrik, maßgeschneiderte Kohlefaser-Brillen ODM"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "Kohlefaser-Brillenfassungen Hersteller, KSO-226 maßgeschneiderte 
 - **Langlebige Hardware:** Stabile 2+1 Fassstruktur-Scharniere, präzisionsgefertigt für langfristige Laufruhe und strukturelle Integrität.
 - **Premium-Optik:** Widerstandsfähige Nylon-Gläser mit umfangreichen individuellen Tönungs- und Mehrschichtbeschichtungsoptionen, um vielfältige Marktanforderungen zu erfüllen.
 - **Ergonomischer Komfort:** Weiche Gummi-Nasenpads, die einen sicheren, hypoallergenen und bequemen Sitz für ganztägiges professionelles Tragen bieten.
-- **Skalierbare Fertigung:** Umfassende OEM- und ODM-Anpassungsdienste mit einer niedrigen Mindestbestellmenge von 300 Stück für globale Großhändler.
+- **Skalierbare Fertigung:** Umfassende OEM- und ODM-Anpassungsdienste mit einer niedrigen Mindestbestellmenge von 200 Stück für globale Großhändler.
 
 ## Perfekt Für
 
@@ -64,4 +64,4 @@ Die KSO-226 verbindet die industrielle Stärke von Kohlefaser in Luftfahrtqualit
 
 Präzisionsgefertigt mit elastischen Titanbügeln und stabilen 2+1 Fassscharnieren, gewährleistet die Fassung langfristige Haltbarkeit und hypoallergenen Komfort.
 
-Durch die Unterstützung des vollen OEM/ODM-Umfangs mit einer niedrigen MOQ von 300 Stück ermöglichen wir es Premiummarken, maßgeschneiderte Brillenkollektionen mit Fokus auf technischer Exzellenz und Marktdifferenzierung zu skalieren.
+Durch die Unterstützung des vollen OEM/ODM-Umfangs mit einer niedrigen MOQ von 200 Stück ermöglichen wir es Premiummarken, maßgeschneiderte Brillenkollektionen mit Fokus auf technischer Exzellenz und Marktdifferenzierung zu skalieren.

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Warna Gentian Karbon Asal (Hitam Pusam, Hitam Berkilat, Tenunan Berwarna, Karbon Tempa)"
 materials: "Gentian Karbon Premium"
 serviceMode: "OEM & ODM ( Penyesuaian )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -38,7 +38,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-028 Cermin Mata Hitam Gentian Karbon Klasik Mewah | Pengilang OEM"
-seoDescription: "Bekerjasama dengan pengilang eksport China yang terkemuka untuk cermin mata hitam gentian karbon gred aeroangkasa KSS-028. Pakar dalam OEM/ODM untuk penskalaan jenama label peribadi. MOQ 300."
+seoDescription: "Bekerjasama dengan pengilang eksport China yang terkemuka untuk cermin mata hitam gentian karbon gred aeroangkasa KSS-028. Pakar dalam OEM/ODM untuk penskalaan jenama label peribadi. MOQ 200."
 seoKeywords: "pengilang cermin mata hitam gentian karbon, cermin mata hitam OEM tersuai, cermin mata label peribadi China, bingkai gentian karbon borong, pembekal cermin mata hitam mewah, cermin mata hitam kualiti eksport, penyesuaian cermin mata hitam OEM ODM, kilang cermin mata KSS-028"
 ---
 
@@ -49,7 +49,7 @@ seoKeywords: "pengilang cermin mata hitam gentian karbon, cermin mata hitam OEM 
 - **Optik Premium:** Lensa nilon tahan lasak yang menampilkan rintangan hentaman unggul dengan penyesuaian meluas untuk warna dan salutan.
 - **Keselesaan & Keselamatan:** Alas hidung silikon hipoalergenik yang direka untuk memberikan kesesuaian yang selamat dan selesa untuk dipakai sepanjang hari.
 - **Tekstur Unik:** Corak tenunan gentian karbon yang tersendiri tersedia dalam kemasan pusam, berkilat atau tempa untuk estetika mewah yang mewah.
-- **Penyesuaian Boleh Skala:** Perkhidmatan OEM & ODM yang komprehensif termasuk pelbagai teknik aplikasi logo dan MOQ rendah sebanyak 300 unit.
+- **Penyesuaian Boleh Skala:** Perkhidmatan OEM & ODM yang komprehensif termasuk pelbagai teknik aplikasi logo dan MOQ rendah sebanyak 200 unit.
 
 ## Sesuai Untuk
 - Merek Kacamata Premium
@@ -65,4 +65,4 @@ Dihasilkan daripada gentian karbon gred aeroangkasa, KSS-028 membawakan estetika
 
 Engsel tong 2+1 yang tepat dan lensa nilon tahan hentaman memastikan umur panjang struktur dan kejelasan optik untuk kegunaan berprestasi tinggi.
 
-Kami menyediakan sokongan ODM dan OEM yang lengkap—daripada tekstur tempa buatan khas kepada pelbagai aplikasi logo—dengan pesanan minimum 300 unit untuk membantu jenama premium mengembangkan portfolio cermin mata eksklusif mereka.
+Kami menyediakan sokongan ODM dan OEM yang lengkap—daripada tekstur tempa buatan khas kepada pelbagai aplikasi logo—dengan pesanan minimum 200 unit untuk membantu jenama premium mengembangkan portfolio cermin mata eksklusif mereka.

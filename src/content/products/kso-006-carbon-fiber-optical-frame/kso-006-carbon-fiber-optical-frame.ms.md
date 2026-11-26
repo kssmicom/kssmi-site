@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Karbon-Ebony & Putih-Oak & Sapele & Ebony"
 materials: "Gentian Karbon Premium"
 serviceMode: "OEM & ODM ( Penyesuaian )"
-moq: "300 unit/model"
+moq: "200 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Bingkai Optik Gentian Karbon Mewah KSO-006 | Pengilang OEM & ODM"
-seoDescription: "Bingkai optik gentian karbon mewah KSO-006 menampilkan kuil logam premium. Pengilang kacamata OEM/ODM China terkemuka untuk pesanan 300 MOQ sedia eksport global."
+seoDescription: "Bingkai optik gentian karbon mewah KSO-006 menampilkan kuil logam premium. Pengilang kacamata OEM/ODM China terkemuka untuk pesanan 200 MOQ sedia eksport global."
 seoKeywords: "pengilang bingkai optik gentian karbon, kacamata tersuai OEM China, bingkai gentian karbon label peribadi, kilang bingkai optik mewah, borong kacamata gentian karbon, bingkai optik kualiti eksport, perkhidmatan kacamata OEM ODM China, pembekal bingkai optik B2B"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "pengilang bingkai optik gentian karbon, kacamata tersuai OEM China
 - **Kejuruteraan Fleksibel:** Engsel spring berprestasi tinggi memberikan kesesuaian yang selesa dan boleh laras sendiri untuk pelbagai bentuk dan saiz wajah.
 - **Optik Premium:** Lensa nilon yang kuat dengan pilihan pewarnaan dan salutan tersuai yang luas tersedia untuk memenuhi spesifikasi jenama.
 - **Keselesaan Canggih:** Alas hidung logam bersepadu yang direka untuk ketahanan dan kesesuaian peribadi yang stabil semasa pemakaian berpanjangan.
-- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM yang komprehensif dengan kuantiti pesanan minimum rendah 300 unit untuk pemborong global.
+- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM yang komprehensif dengan kuantiti pesanan minimum rendah 200 unit untuk pemborong global.
 
 ## Sesuai Untuk
 - Jenama Kacamata Premium
@@ -74,4 +74,4 @@ Dibina untuk persekitaran profesional, bingkai ini menggabungkan bahagian hadapa
 
 Engsel spring berprestasi tinggi dan alas hidung logam boleh laras bekerjasama untuk memberikan kesesuaian ringan dan boleh laras sendiri yang mengekalkan keselesaan sepanjang penggunaan harian yang berpanjangan.
 
-Tersedia untuk pembangunan ODM sepenuhnya dengan kuantiti pesanan minimum 300 unit yang mudah diakses, model ini memperkasakan pereka bebas dan butik premium untuk mengembangkan portfolio kacamata mewah tersuai mereka.
+Tersedia untuk pembangunan ODM sepenuhnya dengan kuantiti pesanan minimum 200 unit yang mudah diakses, model ini memperkasakan pereka bebas dan butik premium untuk mengembangkan portfolio kacamata mewah tersuai mereka.

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Color Original de Fibra de Carbono (Negro Mate, Negro Brillante, Tejido de Color, Carbono Forjado)"
 materials: "Fibra de Carbono Premium"
 serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM) ( Personalización )"
-moq: "300 uds/modelo"
+moq: "200 uds/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -37,7 +37,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Gafas de Sol de Lujo KSS-032 de Fibra de Carbono | Fábrica OEM"
-seoDescription: "Asóciese con un fabricante líder en exportación de China para las gafas de sol de lujo KSS-032 de fibra de carbono. Ofrecemos personalización OEM/ODM completa con 300 MOQ para marcas globales."
+seoDescription: "Asóciese con un fabricante líder en exportación de China para las gafas de sol de lujo KSS-032 de fibra de carbono. Ofrecemos personalización OEM/ODM completa con 200 MOQ para marcas globales."
 seoKeywords: "fabricante de gafas de sol de fibra de carbono, gafas de sol OEM personalizadas, gafas de marca propia China, monturas de fibra de carbono al por mayor, proveedor de gafas de lujo, fábrica de gafas CNC, gafas de calidad de exportación, personalización de gafas B2B"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "fabricante de gafas de sol de fibra de carbono, gafas de sol OEM p
 - **Hardware Duradero:** Bisagras estables de estructura de barril 2+1 diseñadas para una suavidad operativa a largo plazo.
 - **Óptica Premium:** Lentes de nylon tenaz con amplias opciones de tinte y recubrimiento personalizados disponibles.
 - **Comodidad y Seguridad:** Almohadillas nasales de silicona hipoalergénicas diseñadas para la comodidad durante todo el día y un ajuste seguro.
-- **Producción Escalable:** Capacidades completas de personalización OEM y ODM con una cantidad mínima de pedido baja de 300 piezas para exportación global.
+- **Producción Escalable:** Capacidades completas de personalización OEM y ODM con una cantidad mínima de pedido baja de 200 piezas para exportación global.
 
 ## Perfecto Para
 - Marcas de Gafas Premium
@@ -63,4 +63,4 @@ Diseñado para marcas que priorizan la superioridad técnica, el KSS-032 utiliza
 
 Cada componente está meticulosamente mecanizado por CNC para garantizar tolerancias precisas, mientras que las bisagras de barril 2+1 y las almohadillas nasales de silicona hipoalergénicas proporcionan una combinación perfecta de durabilidad mecánica y comodidad personalizada.
 
-Kssmi brinda soporte integral de OEM y ODM con una cantidad mínima de pedido flexible de 300 piezas, lo que permite a los minoristas globales lanzar colecciones de fibra de carbono a medida con tintes de lentes personalizados y marcas especializadas.
+Kssmi brinda soporte integral de OEM y ODM con una cantidad mínima de pedido flexible de 200 piezas, lo que permite a los minoristas globales lanzar colecciones de fibra de carbono a medida con tintes de lentes personalizados y marcas especializadas.

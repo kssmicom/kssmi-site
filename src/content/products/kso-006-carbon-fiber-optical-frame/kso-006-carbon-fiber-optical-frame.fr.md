@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Carbone-Ébène & Chêne Blanc & Sapele & Ébène"
 materials: "Fibre de Carbone Premium"
 serviceMode: "OEM & ODM ( Personnalisation )"
-moq: "300 pcs/modèle"
+moq: "200 pcs/modèle"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Monture Optique de Luxe en Fibre de Carbone KSO-006 | Fabricant OEM & ODM"
-seoDescription: "Monture optique de luxe KSO-006 en fibre de carbone avec branches en métal premium. Premier fabricant chinois de lunettes OEM/ODM pour commandes mondiales 300 MOQ."
+seoDescription: "Monture optique de luxe KSO-006 en fibre de carbone avec branches en métal premium. Premier fabricant chinois de lunettes OEM/ODM pour commandes mondiales 200 MOQ."
 seoKeywords: "fabricant montures optiques fibre de carbone, lunettes personnalisées OEM Chine, montures fibre de carbone marque propre, usine monture optique luxe, grossiste lunettes fibre de carbone, montures optiques qualité export, service lunettes OEM ODM Chine, fournisseur B2B montures optiques"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricant montures optiques fibre de carbone, lunettes personnalis
 - **Ingénierie Flexible :** Charnières à ressort haute performance offrant un ajustement auto-adaptable et confortable pour diverses formes et tailles de visage.
 - **Optique Premium :** Verres en nylon tenace avec de nombreuses options de teinte et de revêtement personnalisées disponibles pour répondre aux spécifications de la marque.
 - **Confort Sophistiqué :** Plaquettes de nez en métal intégrées conçues pour la durabilité et un ajustement stable et personnalisé lors d'un port prolongé.
-- **Production Évolutive :** Capacités complètes de personnalisation OEM et ODM avec une quantité minimale de commande de 300 pièces pour les grossistes mondiaux.
+- **Production Évolutive :** Capacités complètes de personnalisation OEM et ODM avec une quantité minimale de commande de 200 pièces pour les grossistes mondiaux.
 
 ## Parfait Pour
 - Marques de Lunettes Premium
@@ -74,4 +74,4 @@ Conçue pour les environnements professionnels, cette monture combine une face e
 
 Les charnières à ressort haute performance et les plaquettes de nez en métal réglables travaillent en tandem pour offrir un ajustement léger et auto-adaptable qui maintient le confort tout au long d'un port quotidien prolongé.
 
-Disponible pour un développement ODM complet avec une quantité minimale de commande accessible de 300 pièces, ce modèle permet aux designers indépendants et aux boutiques premium d'élargir leurs portefeuilles de lunettes de luxe personnalisées.
+Disponible pour un développement ODM complet avec une quantité minimale de commande accessible de 200 pièces, ce modèle permet aux designers indépendants et aux boutiques premium d'élargir leurs portefeuilles de lunettes de luxe personnalisées.

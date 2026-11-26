@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Gold-Holzmaserung & Grüne Kohlefaser mit Köperbindung & Kohlefaser mit Leinwandbindung Matt Gunmetal & Kohlefaser mit Leinwandbindung Holzoptik Matt Silber"
 materials: "Premium-Kohlefaser und Titan"
 serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) ( Individualisierung )"
-moq: "300 Stk/Modell"
+moq: "200 Stk/Modell"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-031 Luxus-Brillenfassung aus Kohlefaser und Titan Hersteller"
-seoDescription: "KSO-031: Maßgeschneiderte Luxus-Brillenfassungen aus Kohlefaser und Titan für B2B. Premium-Material aus der Luft- und Raumfahrt mit 300 Mindestbestellmenge. Erfahrene OEM/ODM-Dienste für Eigenmarken."
+seoDescription: "KSO-031: Maßgeschneiderte Luxus-Brillenfassungen aus Kohlefaser und Titan für B2B. Premium-Material aus der Luft- und Raumfahrt mit 200 Mindestbestellmenge. Erfahrene OEM/ODM-Dienste für Eigenmarken."
 seoKeywords: "Kohlefaser-Brillenfassungen, Luxus-Brillenfassungen, Brillenhersteller China, maßgeschneiderte Eigenmarkenbrillen, Großhandel Kohlefaserfassungen, Brillen OEM ODM Service, Kohlefaserbrillen-Lieferant, Premium-Brillenfabrik China"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "Kohlefaser-Brillenfassungen, Luxus-Brillenfassungen, Brillenherste
 - **Premium-Optik:** Widerstandsfähige Nylon-Gläser mit überlegener Schlagfestigkeit und umfangreichen Anpassungsoptionen für globale Märkte.
 - **Ganztägiger Komfort:** Ergonomische Nasenpads aus Gummi, entwickelt für einen sicheren und hypoallergenen Sitz bei längerem täglichem Tragen.
 - **Exklusive Texturen:** Einzigartige Kohlefasergewebe in Holzmaserungs- und Köpermustern, die eine hochwertige Luxusästhetik für anspruchsvolle Marken bieten.
-- **Flexibilität in der Fertigung:** Professionelle OEM- und ODM-Dienste mit einer niedrigen Mindestbestellmenge von 300 Stück, die einen skalierbaren globalen Vertrieb unterstützen.
+- **Flexibilität in der Fertigung:** Professionelle OEM- und ODM-Dienste mit einer niedrigen Mindestbestellmenge von 200 Stück, die einen skalierbaren globalen Vertrieb unterstützen.
 
 ## Perfekt Für
 - Premium-Brillenmarken
@@ -74,4 +74,4 @@ Die KSO-031 stellt eine anspruchsvolle Verschmelzung von Kohlefaser aus der Luft
 
 Die für langfristige Leichtgängigkeit entwickelten Scharniere mit 2+1 Fassstruktur und die hypoallergenen Nasenpads aus Gummi gewährleisten eine außergewöhnliche Stabilität und ganztägigen Komfort für den Träger.
 
-Durch die Unterstützung umfassender OEM- und ODM-Anpassungen ab einer Mindestbestellmenge von 300 Stück ermöglicht Kssmi unabhängigen Designern und Eigenmarken-Distributoren, maßgeschneiderte Brillenportfolios mit präzisionsgefertigten Komponenten aufzubauen.
+Durch die Unterstützung umfassender OEM- und ODM-Anpassungen ab einer Mindestbestellmenge von 200 Stück ermöglicht Kssmi unabhängigen Designern und Eigenmarken-Distributoren, maßgeschneiderte Brillenportfolios mit präzisionsgefertigten Komponenten aufzubauen.

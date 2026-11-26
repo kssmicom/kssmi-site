@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Legno Dorato & Fibra di Carbonio Verde Twill & Fibra di Carbonio Canna di Fucile Opaca Grana Liscia & Fibra di Carbonio Argento Opaco Legno Grana Liscia"
 materials: "Fibra di Carbonio Premium e Titanio"
 serviceMode: "OEM & ODM ( Personalizzazione )"
-moq: "300 pz/modello"
+moq: "200 pz/modello"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -52,7 +52,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Montature Ottiche di Lusso in Fibra di Carbonio KSO-033 | Fornitore all'ingrosso"
-seoDescription: "Montature ottiche di lusso KSO-033 in fibra di carbonio con aste in titanio per marchi di occhiali. Produzione OEM/ODM ad alte prestazioni con MOQ 300 e precisione CNC."
+seoDescription: "Montature ottiche di lusso KSO-033 in fibra di carbonio con aste in titanio per marchi di occhiali. Produzione OEM/ODM ad alte prestazioni con MOQ 200 e precisione CNC."
 seoKeywords: "produttore montature ottiche in fibra di carbonio, occhiali in titanio personalizzati Cina, commercio all'ingrosso montature ottiche di lusso, montature in fibra di carbonio private label, fabbrica occhiali OEM, produttore montature ottiche CNC, fornitore occhiali qualità export, OEM occhiali professionale"
 ---
 
@@ -63,7 +63,7 @@ seoKeywords: "produttore montature ottiche in fibra di carbonio, occhiali in tit
 - **Hardware Resistente:** Cerniere stabili con struttura a barilotto 2+1 progettate per una scorrevolezza operativa costante durante tutto il ciclo di vita del prodotto.
 - **Ottica Premium:** Lenti in nylon tenace con ampie opzioni di colorazione e rivestimento personalizzate disponibili per soluzioni ottiche di fascia alta.
 - **Comfort per Tutto il Giorno:** Naselli in gomma ipoallergenica progettati per una vestibilità sicura e confortevole e un uso quotidiano senza peso.
-- **Produzione Scalabile:** Capacità di personalizzazione OEM e ODM complete con una quantità minima d'ordine bassa di 300 pezzi per l'esportazione B2B globale.
+- **Produzione Scalabile:** Capacità di personalizzazione OEM e ODM complete con una quantità minima d'ordine bassa di 200 pezzi per l'esportazione B2B globale.
 
 ## Perfetto Per
 - Marche di Occhiali Premium
@@ -79,4 +79,4 @@ Combinando la fibra di carbonio di grado aerospaziale con il titanio premium, il
 
 La precisione della lavorazione CNC e un sistema stabile di cerniere a barilotto 2+1 assicurano una qualità di produzione costante e una scorrevolezza operativa a lungo termine.
 
-Con una portata ODM completa e un basso quantitativo minimo d'ordine di 300 pezzi, questa montatura consente ai designer indipendenti e alle case di moda di lusso di sviluppare collezioni bespoke private-label.
+Con una portata ODM completa e un basso quantitativo minimo d'ordine di 200 pezzi, questa montatura consente ai designer indipendenti e alle case di moda di lusso di sviluppare collezioni bespoke private-label.

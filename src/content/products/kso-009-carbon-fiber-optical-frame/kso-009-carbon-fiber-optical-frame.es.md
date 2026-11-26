@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Fibra de Carbono & Ébano de Ceilán & Roble Blanco & Sapelly"
 materials: "Fibra de Carbono Premium y Titanio"
 serviceMode: "OEM & ODM"
-moq: "300 uds/modelo"
+moq: "200 uds/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-009 Montura Óptica de Lujo en Fibra de Carbonio | Fabricante OEM"
-seoDescription: "Fabricante de monturas ópticas premium en fibra de carbono y titanio KSO-009. Ofrecemos personalización OEM/ODM de alto nivel para marcas globales. Contactar para MOQ 300."
+seoDescription: "Fabricante de monturas ópticas premium en fibra de carbono y titanio KSO-009. Ofrecemos personalización OEM/ODM de alto nivel para marcas globales. Contactar para MOQ 200."
 seoKeywords: "fabricante monturas ópticas fibra de carbono, gafas de titanio personalizadas China, monturas fibra de carbono marca propia, proveedor monturas ópticas OEM, venta al por mayor monturas lujo, fábrica gafas gama alta, monturas con almohadillas ajustables, ODM gafas fibra de carbono"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante monturas ópticas fibra de carbono, gafas de titanio pe
 - **Óptica Premium:** Lentes de nylon tenaz que ofrecen una resistencia superior a los impactos y claridad óptica para los estándares de gafas de alta gama.
 - **Comodidad para Todo el Día:** Almohadillas nasales de metal hipoalergénicas diseñadas para un ajuste estable y cómodo durante el uso diario prolongado.
 - **Estética de Lujo:** Texturas únicas de tejido de fibra de carbono combinadas con acabados premium para un atractivo de moda sofisticado y de alta gama.
-- **Producción Escalable:** Soporte completo de personalización OEM y ODM con una cantidad mínima de pedido estratégica de 300 piezas para mayoristas globales.
+- **Producción Escalable:** Soporte completo de personalización OEM y ODM con una cantidad mínima de pedido estratégica de 200 piezas para mayoristas globales.
 
 ## Perfecto Para
 - Marcas de Gafas Premium
@@ -74,4 +74,4 @@ Al combinar fibra de carbono de alto rendimiento con elegantes varillas de titan
 
 La integración de un sistema de bisagras de barril 2+1 de ingeniería de precisión y almohadillas nasales metálicas hipoalergénicas garantiza una suavidad operativa constante y un ajuste estable y cómodo.
 
-Con una cantidad mínima de pedido flexible de 300 piezas por modelo, brindamos soporte completo de ODM y OEM para ayudar a los diseñadores independientes y minoristas premium a escalar sus colecciones de gafas a medida con facilidad.
+Con una cantidad mínima de pedido flexible de 200 piezas por modelo, brindamos soporte completo de ODM y OEM para ayudar a los diseñadores independientes y minoristas premium a escalar sus colecciones de gafas a medida con facilidad.

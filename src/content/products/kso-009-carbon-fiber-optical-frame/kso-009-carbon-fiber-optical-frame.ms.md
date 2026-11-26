@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Gentian Karbon & Ceylon Ebony & White Oak & Sapele"
 materials: "Gentian Karbon Premium dan Titanium"
 serviceMode: "OEM & ODM"
-moq: "300 unit/model"
+moq: "200 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-009 Bingkai Optik Gentian Karbon Mewah | Pengeluar OEM"
-seoDescription: "Pengeluar Bingkai Optik Gentian Karbon dan Titanium Premium KSO-009. Menawarkan penyesuaian OEM/ODM kelas atasan untuk jenama kacamata global. Hubungi untuk MOQ 300."
+seoDescription: "Pengeluar Bingkai Optik Gentian Karbon dan Titanium Premium KSO-009. Menawarkan penyesuaian OEM/ODM kelas atasan untuk jenama kacamata global. Hubungi untuk MOQ 200."
 seoKeywords: "pengeluar bingkai optik gentian karbon, kacamata titanium tersuai China, bingkai gentian karbon label peribadi, pembekal bingkai optik OEM, borong bingkai mewah, kilang kacamata mewah, bingkai dengan alas hidung boleh laras, ODM kacamata gentian karbon"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "pengeluar bingkai optik gentian karbon, kacamata titanium tersuai 
 - **Optik Premium:** Lensa nilon tahan lasak yang menawarkan rintangan hentaman unggul dan kejelasan optik untuk piawaian kacamata kelas atasan.
 - **Keselesaan Sepanjang Hari:** Alas hidung logam hipolergenik yang direka untuk pemakaian yang stabil dan selesa semasa penggunaan harian yang berpanjangan.
 - **Estetika Mewah:** Tekstur tenunan gentian karbon yang unik digabungkan dengan kemasan premium untuk daya tarikan fesyen yang sofistikik dan mewah.
-- **Pengeluaran Boleh Skala:** Sokongan penyesuaian OEM dan ODM yang komprehensif dengan kuantiti pesanan minimum strategik 300 unit untuk pemborong global.
+- **Pengeluaran Boleh Skala:** Sokongan penyesuaian OEM dan ODM yang komprehensif dengan kuantiti pesanan minimum strategik 200 unit untuk pemborong global.
 
 ## Sesuai Untuk
 - Jenama Kacamata Premium
@@ -74,4 +74,4 @@ Menggabungkan gentian karbon berprestasi tinggi dengan tangkai titanium yang kem
 
 Integrasi sistem engsel tong 2+1 yang direka dengan ketepatan dan alas hidung logam hipolergenik memastikan kelancaran operasi yang konsisten serta pemakaian yang stabil dan selesa.
 
-Dengan kuantiti pesanan minimum yang fleksibel sebanyak 300 unit bagi setiap model, kami menyediakan sokongan penuh ODM dan OEM untuk membantu pereka bebas dan peruncit premium mengembangkan koleksi kacamata tempahan khas mereka dengan mudah.
+Dengan kuantiti pesanan minimum yang fleksibel sebanyak 200 unit bagi setiap model, kami menyediakan sokongan penuh ODM dan OEM untuk membantu pereka bebas dan peruncit premium mengembangkan koleksi kacamata tempahan khas mereka dengan mudah.

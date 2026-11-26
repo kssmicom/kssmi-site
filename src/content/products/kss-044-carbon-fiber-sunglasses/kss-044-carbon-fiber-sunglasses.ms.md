@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Warna Gentian Karbon Asal (Hitam Pusam, Hitam Kilat, Tenunan Berwarna, Karbon Tempa)"
 materials: "Gentian Karbon Premium"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk)"
-moq: "300 unit/model"
+moq: "200 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Cermin Mata Hitam Gentian Karbon Mewah KSS-044 | Pengilang OEM Tersuai"
-seoDescription: "Dapatkan cermin mata hitam gentian karbon KSS-044 premium daripada pengilang OEM terkemuka di China. Kami menawarkan penyesuaian ODM penuh untuk jenama mewah dengan MOQ 300 unit."
+seoDescription: "Dapatkan cermin mata hitam gentian karbon KSS-044 premium daripada pengilang OEM terkemuka di China. Kami menawarkan penyesuaian ODM penuh untuk jenama mewah dengan MOQ 200 unit."
 seoKeywords: "pengilang cermin mata hitam gentian karbon, cermin mata hitam OEM tersuai, cermin mata label peribadi China, bingkai gentian karbon borong, pembekal cermin mata hitam mewah, cermin mata gentian karbon tersuai, pengilang cermin mata hitam B2B, cermin mata kualiti eksport China"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "pengilang cermin mata hitam gentian karbon, cermin mata hitam OEM 
 - **Perkakasan Tahan Lama:** Engsel struktur tong 2+1 yang stabil direka untuk kelancaran operasi jangka panjang dan integriti struktur.
 - **Keselesaan Dipertingkatkan:** Alas hidung silikon hipoalergenik yang direka untuk memastikan kesesuaian yang selamat dan selesa semasa pemakaian berpanjangan.
 - **Kejuruteraan Ketepatan:** Tekstur tenunan gentian karbon yang unik menawarkan estetika mewah berteknologi tinggi dengan ketahanan bahan yang unggul.
-- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum rendah sebanyak 300 unit untuk eksport B2B global.
+- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum rendah sebanyak 200 unit untuk eksport B2B global.
 
 ## Sesuai Untuk
 - Merek Kacamata Premium
@@ -63,4 +63,4 @@ Untuk KSS-044, inovasi bahan bertemu dengan estetika yang abadi. Pembinaan genti
 
 Perkakasan yang direka dengan ketepatan dan alas hidung silikon hipoalergenik menjamin keselesaan sepanjang hari dan kebolehpercayaan mekanikal jangka panjang.
 
-Menyediakan sokongan ODM penuh daripada logo tempahan khas hingga warna kanta tersuai, kami memperkasakan label gaya hidup mewah dan pereka bebas untuk mengembangkan portfolio mereka dengan kuantiti pesanan minimum rendah sebanyak 300 unit.
+Menyediakan sokongan ODM penuh daripada logo tempahan khas hingga warna kanta tersuai, kami memperkasakan label gaya hidup mewah dan pereka bebas untuk mengembangkan portfolio mereka dengan kuantiti pesanan minimum rendah sebanyak 200 unit.

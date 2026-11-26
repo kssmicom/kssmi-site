@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Color de Fibra de Carbono Original (Negro Mate, Negro Brillante, Tejido de Color, Carbono Forjado)"
 materials: "Fibra de Carbono Premium"
 serviceMode: "OEM & ODM ( Personalización )"
-moq: "300 uds/modelo"
+moq: "200 uds/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -37,7 +37,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-031 Gafas de Sol de Lujo en Fibra de Carbono | Fábrica OEM Mayorista"
-seoDescription: "KSS-031: Gafas de sol premium de fibra de carbono de grado aeroespacial con precisión CNC y bisagras de 2+1 barril. Servicios expertos OEM/ODM para marcas globales. 300 MOQ."
+seoDescription: "KSS-031: Gafas de sol premium de fibra de carbono de grado aeroespacial con precisión CNC y bisagras de 2+1 barril. Servicios expertos OEM/ODM para marcas globales. 200 MOQ."
 seoKeywords: "fabricante de gafas de sol de fibra de carbono, gafas de sol OEM personalizadas China, monturas de fibra de carbono al por mayor, proveedor de gafas de marca propia, fábrica de gafas de sol de lujo, gafas de fibra de carbono CNC, fabricante de gafas B2B, exportación de gafas OEM"
 ---
 
@@ -48,7 +48,7 @@ seoKeywords: "fabricante de gafas de sol de fibra de carbono, gafas de sol OEM p
 - **Hardware Duradero:** Bisagras estables con estructura de 2+1 barril diseñadas para una suavidad operativa a largo plazo.
 - **Óptica Premium:** Lentes de nylon tenaz con amplias opciones de tinte y recubrimiento personalizados disponibles.
 - **Comodidad y Ajuste:** Almohadillas nasales de silicona hipoalergénicas que proporcionan un ajuste seguro y cómodo para un uso prolongado.
-- **Producción Escalable:** Capacidades completas de personalización OEM y ODM con una cantidad mínima de pedido baja de 300 piezas para exportación global.
+- **Producción Escalable:** Capacidades completas de personalización OEM y ODM con una cantidad mínima de pedido baja de 200 piezas para exportación global.
 
 ## Perfecto Para
 
@@ -65,4 +65,4 @@ Combinando un rendimiento ligero con una sofisticada estética unisex, las KSS-0
 
 Cada montura cuenta con precisión mecanizada por CNC y bisagras de 2+1 barril per garantir un acabado impecable y una fiabilidad operativa duradera.
 
-Al ofrecer una personalización completa de OEM y ODM a partir de un mínimo de 300 unidades, este modelo permite a las marcas de lujo y a los diseñadores independientes elevar sus carteras de gafas premium.
+Al ofrecer una personalización completa de OEM y ODM a partir de un mínimo de 200 unidades, este modelo permite a las marcas de lujo y a los diseñadores independientes elevar sus carteras de gafas premium.

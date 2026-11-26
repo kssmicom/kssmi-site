@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Mogano (Palissandro Indiano — Venatura di Montagna)"
 materials: "Fibra di Carbonio Premium e Titanio"
 serviceMode: "OEM & ODM ( Personalizzazione )"
-moq: "300 pz/modello"
+moq: "200 pz/modello"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Montatura Ottica di Lusso KSO-224 | Produttore OEM"
-seoDescription: "KSO-224: montatura ottica in fibra di carbonio di lusso con aste in titanio e finitura mogano. MOQ 300 pz. Personalizzazione OEM/ODM premium per brand globali."
+seoDescription: "KSO-224: montatura ottica in fibra di carbonio di lusso con aste in titanio e finitura mogano. MOQ 200 pz. Personalizzazione OEM/ODM premium per brand globali."
 seoKeywords: "montature ottiche fibra carbonio, occhiali titanio su misura, produttore occhiali lusso Cina, ingrosso montature carbonio, fabbrica occhiali OEM, montature brand privato"
 ---
 
@@ -64,4 +64,4 @@ Combinando la fibra di carbonio di grado aerospaziale con una finitura in mogano
 
 Le leggere aste in titanio e le cerniere a 2+1 barili garantiscono l'integrità strutturale a lungo termine, mantenendo il profilo raffinato che ci si aspetta dagli occhiali di lusso.
 
-Supportando la personalizzazione completa su misura con un minimo d'ordine di 300 pezzi, questa montatura permette alle case di moda premium e ai marchi boutique di ampliare i propri portfolio di alta gamma.
+Supportando la personalizzazione completa su misura con un minimo d'ordine di 200 pezzi, questa montatura permette alle case di moda premium e ai marchi boutique di ampliare i propri portfolio di alta gamma.

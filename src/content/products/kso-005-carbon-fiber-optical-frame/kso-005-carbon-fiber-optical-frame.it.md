@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Fibra di Carbonio & Quercia Bianca & Sapele & Ebano"
 materials: "Fibra di Carbonio Premium"
 serviceMode: "Produzione per Conto Terzi (OEM) & Design e Produzione (ODM) ( Personalizzazione )"
-moq: "300 pz/modello"
+moq: "200 pz/modello"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-005 Montatura Ottica in Fibra di Carbonio di Lusso | Produttore OEM"
-seoDescription: "Montature ottiche in fibra di carbonio premium KSO-005 per marchi globali di occhiali. Costruzione ibrida ad alta resistenza con aste in metallo. MOQ 300 per personalizzazione OEM/ODM."
+seoDescription: "Montature ottiche in fibra di carbonio premium KSO-005 per marchi globali di occhiali. Costruzione ibrida ad alta resistenza con aste in metallo. MOQ 200 per personalizzazione OEM/ODM."
 seoKeywords: "produttore montature ottiche fibra di carbonio, montature ottiche OEM personalizzate, occhiali private label Cina, montature in fibra di carbonio all'ingrosso, fabbrica montature ottiche di lusso, OEM occhiali di alta gamma, montature ottiche qualità export, fornitore occhiali in fibra di carbonio"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "produttore montature ottiche fibra di carbonio, montature ottiche 
 - **Hardware Flessibile:** Cerniere con struttura a molla progettate con precisione per offrire comfort adattivo e affidabilità operativa a lungo termine.
 - **Ottica di Alta Gamma:** Dotata di lenti in nylon tenace con ampie opzioni di personalizzazione per una chiarezza ottica superiore.
 - **Comfort Raffinato:** Naselli in metallo durevoli progettati per una calzata sicura e regolabile e una vestibilità duratura.
-- **Produzione Personalizzabile:** Servizi OEM e ODM scalabili con un MOQ ridotto di 300 pezzi per supportare l'espansione del marchio globale.
+- **Produzione Personalizzabile:** Servizi OEM e ODM scalabili con un MOQ ridotto di 200 pezzi per supportare l'espansione del marchio globale.
 
 ## Perfetto Per
 - Marche di Occhiali Premium
@@ -74,4 +74,4 @@ Definendo un nuovo standard nell'occhialeria di alto livello, questo modello int
 
 Le cerniere a molla progettate con precisione e i durevoli naselli in metallo offrono un comfort adattivo, mentre le lenti in nylon tenace garantiscono chiarezza ottica per gli utenti più esigenti.
 
-Supportando l'intera gamma OEM/ODM con un ordine minimo ridotto di 300 pezzi, Kssmi consente ai marchi di lusso e ai designer indipendenti di consegnare collezioni su misura prodotte con precisione a livello globale.
+Supportando l'intera gamma OEM/ODM con un ordine minimo ridotto di 200 pezzi, Kssmi consente ai marchi di lusso e ai designer indipendenti di consegnare collezioni su misura prodotte con precisione a livello globale.

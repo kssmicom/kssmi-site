@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Wood Golden & Serat Karbon Hijau Urut Twill & Serat Karbon Urut Polos Gun Matte & Serat Karbon Urut Polos Kayu Perak Matte"
 materials: "Serat Karbon Premium lan Titanium"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
-moq: "300 pcs/model"
+moq: "200 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Produsen Frame Optik Serat Karbon & Titanium Mewah KSO-031"
-seoDescription: "KSO-031: Frame optik serat karbon & titanium mewah kustom kanggo B2B. Bahan kelas aeroangkasa premium kanthi 300 MOQ. Layanan OEM/ODM pakar kanggo merek label pribadi."
+seoDescription: "KSO-031: Frame optik serat karbon & titanium mewah kustom kanggo B2B. Bahan kelas aeroangkasa premium kanthi 200 MOQ. Layanan OEM/ODM pakar kanggo merek label pribadi."
 seoKeywords: "frame optik serat karbon, frame optik mewah, produsen kacamata China, kacamata label pribadi kustom, grosir frame serat karbon, layanan OEM ODM kacamata, supplier kacamata serat karbon, pabrik kacamata China premium"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "frame optik serat karbon, frame optik mewah, produsen kacamata Chi
 - **Optik Premium:** Lensa nilon sing kuwat nyedhiyakake resistensi dampak sing unggul kanthi pilihan kustomisasi sing akeh kanggo pasar global.
 - **Kenyamanan Sedina Muput:** Bantalan irung karet ergonomis sing dirancang kanggo pas sing aman lan hypoallergenic kanggo panggunaan saben dina sing suwe.
 - **Tekstur Eksklusif:** Tenunan serat karbon sing unik ing pola serat kayu lan twill, menehi estetika mewah kelas dhuwur kanggo merek sing teliti.
-- **Fleksibilitas Produksi:** Layanan OEM & ODM profesional kanthi MOQ murah 300 pcs, ndukung distribusi global sing bisa dikembangake.
+- **Fleksibilitas Produksi:** Layanan OEM & ODM profesional kanthi MOQ murah 200 pcs, ndukung distribusi global sing bisa dikembangake.
 
 ## Cocok kanggo
 - Merek Kacamata Premium
@@ -74,4 +74,4 @@ Model KSO-031 makili gabungan canggih antarane serat karbon kelas aeroangkasa la
 
 Dirancang kanggo kelancaran operasional jangka panjang, engsel struktur tong 2+1 lan bantalan irung karet hypoallergenic njamin stabilitas sing luar biasa lan kenyamanan sedina muput kanggo sing nganggo.
 
-Kanthi ndukung kustomisasi OEM lan ODM sing komprehensif wiwit saka minimal 300 unit, Kssmi menehi kekuwatan marang desainer independen lan distributor label pribadi kanggo mbangun portofolio kacamata khusus kanthi komponen sing dirancang kanthi presisi.
+Kanthi ndukung kustomisasi OEM lan ODM sing komprehensif wiwit saka minimal 200 unit, Kssmi menehi kekuwatan marang desainer independen lan distributor label pribadi kanggo mbangun portofolio kacamata khusus kanthi komponen sing dirancang kanthi presisi.

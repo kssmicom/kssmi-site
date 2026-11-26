@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Original Carbon Fiber Color (Matte Black, Glossy Black, Colored Weave, Forged Carbon)"
 materials: "Premium Carbon Fiber"
 serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -37,7 +37,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-032 Luxury Classic Carbon Fiber Sunglasses | OEM Factory"
-seoDescription: "Partner with a premier Chinese export manufacturer for KSS-032 luxury carbon fiber sunglasses. Offering full OEM/ODM customization with 300 MOQ for global brands."
+seoDescription: "Partner with a premier Chinese export manufacturer for KSS-032 luxury carbon fiber sunglasses. Offering full OEM/ODM customization with 200 MOQ for global brands."
 seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses, private label eyewear China, wholesale carbon fiber frames, luxury sunglasses supplier, CNC eyewear factory, export-quality sunglasses, B2B eyewear customization"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses, priva
 - **Durable Hardware:** Stable 2+1 barrel structure hinges engineered for long-term operational smoothness.
 - **Premium Optics:** Tenacious nylon lenses with extensive custom tinting and coating options available.
 - **Comfort & Safety:** Hypoallergenic silicone nose pads designed for all-day comfort and a secure fit.
-- **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 300 pieces for global export.
+- **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 200 pieces for global export.
 
 ## Perfect For
 - Premium Eyewear Brands
@@ -63,4 +63,4 @@ Engineered for brands that prioritize technical superiority, the KSS-032 utilize
 
 Each component is meticulously CNC-machined to ensure precise tolerances, while the 2+1 barrel hinges and hypoallergenic silicone nose pads provide a seamless blend of mechanical durability and personalized comfort.
 
-Kssmi provides comprehensive OEM and ODM support with a flexible 300-piece minimum order quantity, enabling global retailers to launch bespoke carbon fiber collections featuring custom lens tints and specialized branding.
+Kssmi provides comprehensive OEM and ODM support with a flexible 200-piece minimum order quantity, enabling global retailers to launch bespoke carbon fiber collections featuring custom lens tints and specialized branding.

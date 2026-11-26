@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Mahagoni (Indischer Palisander — Bergmaserung)"
 materials: "Premium-Kohlefaser und Titan"
 serviceMode: "Auftragsfertigung & Design und Fertigung ( Individualisierung )"
-moq: "300 Stk/Modell"
+moq: "200 Stk/Modell"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-224 Luxus-Carbonfaser-Brillenfassung | OEM-Hersteller"
-seoDescription: "KSO-224: Luxuriöse Carbonfaser-Brillenfassung mit Titanbügeln und einzigartigem Mahagoni-Finish. 300 MOQ. Premium-OEM/ODM-Anpassung für globale Brillenmarken."
+seoDescription: "KSO-224: Luxuriöse Carbonfaser-Brillenfassung mit Titanbügeln und einzigartigem Mahagoni-Finish. 200 MOQ. Premium-OEM/ODM-Anpassung für globale Brillenmarken."
 seoKeywords: "Carbonfaser-Brillenfassungen, maßgeschneiderte Titanbrillen, Luxusbrillenhersteller China, Großhandel Carbonrahmen, OEM Brillenfabrik"
 ---
 
@@ -64,4 +64,4 @@ Durch die Kombination von Kohlefaser in Luft- und Raumfahrtqualität mit einem M
 
 Leichte Titanbügel und 2+1-Fass-Scharniere sorgen für langfristige strukturelle Integrität, während das raffinierte Profil erhalten bleibt, das von Luxusbrillen erwartet wird.
 
-Diese Fassung unterstützt die vollständige maßgeschneiderte Anpassung bei einer Mindestbestellmenge von 300 Stück und ermöglicht es Premium-Modehäusern und Boutique-Marken, ihre High-End-Portfolios zu erweitern.
+Diese Fassung unterstützt die vollständige maßgeschneiderte Anpassung bei einer Mindestbestellmenge von 200 Stück und ermöglicht es Premium-Modehäusern und Boutique-Marken, ihre High-End-Portfolios zu erweitern.

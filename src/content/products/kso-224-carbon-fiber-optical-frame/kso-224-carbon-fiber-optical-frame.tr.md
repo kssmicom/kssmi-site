@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Maun (Hindistan Pelesenk Ağacı — Dağ Deseni)"
 materials: "Premium Karbon Elyaf ve Titanyum"
 serviceMode: "OEM & ODM ( Özelleştirme )"
-moq: "300 adet/model"
+moq: "200 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-224 Lüks Karbon Elyaf Optik Çerçeve | OEM Üretici"
-seoDescription: "KSO-224: Titanyum saplara ve benzersiz maun kaplamaya sahip lüks karbon elyaf optik çerçeve. 300 MOQ. Küresel gözlük markaları için premium OEM/ODM özelleştirme."
+seoDescription: "KSO-224: Titanyum saplara ve benzersiz maun kaplamaya sahip lüks karbon elyaf optik çerçeve. 200 MOQ. Küresel gözlük markaları için premium OEM/ODM özelleştirme."
 seoKeywords: "karbon elyaf optik çerçeveler, özel titanyum gözlükler, lüks gözlük üreticisi Çin, toptan karbon çerçeveler, OEM gözlük fabrikası"
 ---
 
@@ -64,4 +64,4 @@ Havacılık sınıfı karbon elyafı maun dağ deseni kaplamasıyla birleştiren
 
 Hafif titanyum saplar ve 2+1 namlu menteşeler, lüks gözlüklerden beklenen zarif profili korurken uzun vadeli yapısal bütünlük sağlar.
 
-300 adetlik minimum sipariş miktarında tam ısmarlama özelleştirmeyi destekleyen bu çerçeve, premium moda evlerinin ve butik markaların üst düzey portföylerini genişletmelerine olanak tanır.
+200 adetlik minimum sipariş miktarında tam ısmarlama özelleştirmeyi destekleyen bu çerçeve, premium moda evlerinin ve butik markaların üst düzey portföylerini genişletmelerine olanak tanır.

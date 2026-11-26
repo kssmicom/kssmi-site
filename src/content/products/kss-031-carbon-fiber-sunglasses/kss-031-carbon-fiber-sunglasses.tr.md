@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Orijinal Karbon Fiber Rengi (Mat Siyah, Parlak Siyah, Renkli Dokuma, Dövme Karbon)"
 materials: "Premium Karbon Fiber"
 serviceMode: "OEM & ODM ( Özelleştirme )"
-moq: "300 adet/model"
+moq: "200 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -37,7 +37,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-031 Lüks Karbon Fiber Güneş Gözlüğü | Toptan OEM Fabrikası"
-seoDescription: "KSS-031: CNC hassasiyeti ve 2+1 varil menteşelere sahip premium havacılık sınıfı karbon fiber güneş gözlüğü. Küresel markalar için uzman OEM/ODM hizmetleri. 300 MOQ."
+seoDescription: "KSS-031: CNC hassasiyeti ve 2+1 varil menteşelere sahip premium havacılık sınıfı karbon fiber güneş gözlüğü. Küresel markalar için uzman OEM/ODM hizmetleri. 200 MOQ."
 seoKeywords: "karbon fiber güneş gözlüğü üreticisi, özel OEM güneş gözlüğü Çin, toptan karbon fiber çerçeveler, özel marka gözlük tedarikçisi, lüks güneş gözlüğü fabrikası, CNC karbon fiber gözlük, B2B güneş gözlüğü üreticisi, ihracat kalitesinde güneş gözlüğü OEM"
 ---
 
@@ -48,7 +48,7 @@ seoKeywords: "karbon fiber güneş gözlüğü üreticisi, özel OEM güneş gö
 - **Dayanıklı Donanım:** Uzun süreli operasyonel pürüzsüzlük için tasarlanmış stabil 2+1 varil yapılı menteşeler.
 - **Premium Optik:** Kapsamlı özel renklendirme ve kaplama seçenekleri sunan dayanıklı naylon lensler.
 - **Konfor ve Uyum:** Uzun süreli kullanım için güvenli ve rahat bir uyum sağlayan hipoalerjenik silikon burun tamponları.
-- **Ölçeklenebilir Üretim:** Küresel ihracat için 300 adetlik düşük minimum sipariş miktarı ile tam OEM ve ODM özelleştirme yetenekleri.
+- **Ölçeklenebilir Üretim:** Küresel ihracat için 200 adetlik düşük minimum sipariş miktarı ile tam OEM ve ODM özelleştirme yetenekleri.
 
 ## İçin Mükemmel
 
@@ -65,4 +65,4 @@ Hafif performansı sofistike bir unisex estetikle harmanlayan KSS-031, maksimum 
 
 Her çerçeve, kusursuz bir görünüm ve kalıcı operasyonel güvenilirlik sağlamak için CNC ile işlenmiş hassasiyete ve 2+1 varil menteşelere sahiptir.
 
-Minimum 300 adetlik siparişten itibaren tam OEM ve ODM özelleştirme imkanı sunan bu model, premium markaların ve bağımsız tasarımcıların lüks gözlük portföylerini genişletmelerine olanak tanır.
+Minimum 200 adetlik siparişten itibaren tam OEM ve ODM özelleştirme imkanı sunan bu model, premium markaların ve bağımsız tasarımcıların lüks gözlük portföylerini genişletmelerine olanak tanır.

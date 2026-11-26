@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Wood Golden & Twill Grain Green Carbon Fiber & Plain Grain Carbon Fiber Matt Gun & Wood Plain Grain Carbon Fiber Matt Silver"
 materials: "Premium Carbon Fiber and Titanium"
 serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-030 Luxury Carbon Fiber Optical Frame | OEM Manufacturer"
-seoDescription: "Order custom KSO-030 carbon fiber optical frames from a leading factory. Aerospace-grade strength with wood grain textures, 300 MOQ for private label OEM/ODM."
+seoDescription: "Order custom KSO-030 carbon fiber optical frames from a leading factory. Aerospace-grade strength with wood grain textures, 200 MOQ for private label OEM/ODM."
 seoKeywords: "carbon fiber optical frame manufacturer, custom carbon fiber eyewear China, private label optical frames OEM, wholesale luxury carbon fiber frames, KSO-030 carbon fiber frame factory, titanium carbon fiber eyewear supplier, premium optical frames ODM customization, export quality carbon fiber eyewear"
 ---
 
@@ -59,7 +59,7 @@ seoKeywords: "carbon fiber optical frame manufacturer, custom carbon fiber eyewe
 - **Durable Hardware:** Stable 2+1 barrel structure hinges engineered for consistent operational smoothness and long-term reliability.
 - **Premium Optics:** Equipped with tenacious nylon lenses that support extensive custom tinting and coating options for diverse market needs.
 - **All-Day Comfort:** Integrated rubber nose pads and hypoallergenic materials designed for a secure, comfortable fit during extended wear.
-- **Scalable Production:** Comprehensive OEM and ODM customization services with a 300-piece MOQ, optimized for global B2B export standards.
+- **Scalable Production:** Comprehensive OEM and ODM customization services with a 200-piece MOQ, optimized for global B2B export standards.
 
 ## Perfect For
 - Premium Eyewear Brands
@@ -75,4 +75,4 @@ Engineering excellence is at the core of the KSO-030, which combines aerospace-g
 
 Every unit features precision-machined textures—including wood and twill grains—supported by high-performance 2+1 barrel hinges that ensure mechanical reliability.
 
-Optimized for luxury fashion houses and premium eyewear brands, our manufacturing facility supports full OEM/ODM customization with a 300-piece minimum order quantity.
+Optimized for luxury fashion houses and premium eyewear brands, our manufacturing facility supports full OEM/ODM customization with a 200-piece minimum order quantity.

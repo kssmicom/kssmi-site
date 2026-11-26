@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Gỗ gụ (Indian Rosewood — Vân núi)"
 materials: "Sợi carbon cao cấp và Titan"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
-moq: "300 cái/mẫu"
+moq: "200 cái/mẫu"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Gọng kính cận sợi carbon xa xỉ KSO-226 | Nhà sản xuất OEM"
-seoDescription: "Nhập khẩu gọng kính cận sợi carbon xa xỉ KSO-226 với vân gỗ gụ độc đáo từ nhà sản xuất hàng đầu Trung Quốc. Tùy chỉnh OEM/ODM linh hoạt với MOQ 300."
+seoDescription: "Nhập khẩu gọng kính cận sợi carbon xa xỉ KSO-226 với vân gỗ gụ độc đáo từ nhà sản xuất hàng đầu Trung Quốc. Tùy chỉnh OEM/ODM linh hoạt với MOQ 200."
 seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính sợi carbon tùy chỉnh KSO-226, bán sỉ gọng kính cận Trung Quốc, kính sợi carbon nhãn hiệu riêng, nhà cung cấp OEM kính mắt xa xỉ, gọng kính sợi carbon vân gỗ gụ, nhà máy gọng kính cận B2B, kính sợi carbon ODM"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính sợi carbon t�
 - **Phụ kiện bền bỉ:** Bản lề cấu trúc thùng 2+1 ổn định được thiết kế chính xác để vận hành trơn tru lâu dài và đảm bảo tính toàn vẹn của cấu trúc.
 - **Quang học cao cấp:** Tròng kính nylon bền bỉ với các tùy chọn nhuộm màu tùy chỉnh rộng rãi và lớp phủ đa lớp có sẵn để đáp ứng nhu cầu thị trường đa dạng.
 - **Sự thoải mái tối ưu:** Đệm mũi cao su mềm mang lại sự chắc chắn, không gây dị ứng và thoải mái khi đeo chuyên nghiệp cả ngày.
-- **Sản xuất linh hoạt:** Dịch vụ tùy chỉnh OEM & ODM toàn diện với số lượng đặt hàng tối thiểu thấp chỉ 300 chiếc cho các nhà bán sỉ toàn cầu.
+- **Sản xuất linh hoạt:** Dịch vụ tùy chỉnh OEM & ODM toàn diện với số lượng đặt hàng tối thiểu thấp chỉ 200 chiếc cho các nhà bán sỉ toàn cầu.
 
 ## Phù hợp cho
 
@@ -64,4 +64,4 @@ KSO-226 kết hợp sức mạnh công nghiệp của sợi carbon cấp hàng k
 
 Được thiết kế chính xác với càng kính titan đàn hồi và bản lề thùng 2+1 ổn định, gọng kính đảm bảo độ bền lâu dài và sự thoải mái không gây dị ứng.
 
-Hỗ trợ toàn diện phạm vi OEM/ODM với MOQ thấp chỉ 300 chiếc, chúng tôi trao quyền cho các thương hiệu cao cấp mở rộng bộ sưu tập kính mắt thiết kế riêng với trọng tâm là sự xuất sắc về kỹ thuật và sự khác biệt trên thị trường.
+Hỗ trợ toàn diện phạm vi OEM/ODM với MOQ thấp chỉ 200 chiếc, chúng tôi trao quyền cho các thương hiệu cao cấp mở rộng bộ sưu tập kính mắt thiết kế riêng với trọng tâm là sự xuất sắc về kỹ thuật và sự khác biệt trên thị trường.

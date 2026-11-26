@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Fibra di Carbonio & Ebano di Ceylon & Quercia Bianca & Sapele"
 materials: "Fibra di Carbonio Premium e Titanio"
 serviceMode: "OEM & ODM ( Personalizzazione )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Montatura Ottica in Fibra di Carbonio di Lusso KSO-011 | Fornitore all'Ingrosso"
-seoDescription: "Collabora con un produttore cinese leader per montature ottiche di lusso KSO-011 in fibra di carbonio con aste in titanio. OEM/ODM per marchi privati con MOQ di 300."
+seoDescription: "Collabora con un produttore cinese leader per montature ottiche di lusso KSO-011 in fibra di carbonio con aste in titanio. OEM/ODM per marchi privati con MOQ di 200."
 seoKeywords: "produttore montature ottiche fibra di carbonio, occhiali titanio personalizzati Cina, montature fibra di carbonio private label, occhiali ottici di lusso all'ingrosso, fabbrica occhiali fibra di carbonio OEM, fornitore B2B montature ottiche, OEM occhiali fibra di carbonio alta gamma, montature ottiche qualità export"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "produttore montature ottiche fibra di carbonio, occhiali titanio p
 - **Comfort Avanzato:** Naselli in titanio integrati che offrono una vestibilità ipoallergenica e resistente alla corrosione per un comfort prolungato.
 - **Ottica Premium:** Lenti in nylon multifunzionali progettate per un'elevata resistenza agli urti con ampie possibilità di colorazione e rivestimento personalizzati.
 - **Finitura Squisita:** Esclusiva texture in fibra di carbonio e un design di lusso unisex che soddisfa le esigenze estetiche dei rivenditori di occhiali premium.
-- **Personalizzazione Completa:** Servizi professionali OEM e ODM che includono l'applicazione di loghi personalizzati e modifiche all'hardware a partire da un MOQ di 300 pezzi.
+- **Personalizzazione Completa:** Servizi professionali OEM e ODM che includono l'applicazione di loghi personalizzati e modifiche all'hardware a partire da un MOQ di 200 pezzi.
 
 ## Perfetto Per
 - Marche di Occhiali Premium
@@ -74,4 +74,4 @@ Progettato per l'esigente mercato del lusso, il modello KSO-011 fonde fibra di c
 
 Le cerniere a 2+1 barili e i naselli in titanio, realizzati con precisione, offrono una regolazione agevole e un'integrità strutturale a lungo termine.
 
-Disponibile per un'ampia personalizzazione OEM e ODM a partire da un MOQ di 300 pezzi, questo modello consente ai marchi privati di integrare la tecnologia avanzata dei materiali compositi nelle loro collezioni esclusive.
+Disponibile per un'ampia personalizzazione OEM e ODM a partire da un MOQ di 200 pezzi, questo modello consente ai marchi privati di integrare la tecnologia avanzata dei materiali compositi nelle loro collezioni esclusive.

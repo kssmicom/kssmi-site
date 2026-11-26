@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Couleur Fibre de Carbone d'Origine (Noir Mat, Noir Brillant, Tissage Coloré, Carbone Forgé)"
 materials: "Fibre de Carbone Premium"
 serviceMode: "OEM & ODM ( Personnalisation )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -38,7 +38,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-028 Lunettes de Soleil Classiques de Luxe en Fibre de Carbone | Fabricant OEM"
-seoDescription: "Associez-vous à un de premier plan fabricant chinois pour l'exportation de lunettes de soleil KSS-028 en fibre de carbone de qualité aérospatiale. Spécialisé en OEM/ODM pour le développement de marques de distributeur. MOQ 300."
+seoDescription: "Associez-vous à un de premier plan fabricant chinois pour l'exportation de lunettes de soleil KSS-028 en fibre de carbone de qualité aérospatiale. Spécialisé en OEM/ODM pour le développement de marques de distributeur. MOQ 200."
 seoKeywords: "fabricant de lunettes de soleil en fibre de carbone, lunettes de soleil OEM personnalisées, lunettes de marque de distributeur Chine, montures en fibre de carbone en gros, fournisseur de lunettes de soleil de luxe, lunettes de soleil de qualité export, personnalisation de lunettes de soleil OEM ODM, usine de lunettes KSS-028"
 ---
 
@@ -49,7 +49,7 @@ seoKeywords: "fabricant de lunettes de soleil en fibre de carbone, lunettes de s
 - **Optique Premium :** Verres en nylon tenace offrant une résistance supérieure aux chocs avec une personnalisation étendue pour les teintes et les revêtements.
 - **Confort et Sécurité :** Plaquettes de nez en silicone hypoallergénique conçues pour offrir un ajustement sûr et confortable tout au long de la journée.
 - **Texture Unique :** Motifs de tissage en fibre de carbone distinctifs disponibles en finitions mates, brillantes ou forgées pour une esthétique de luxe haut de gamme.
-- **Personnalisation Évolutive :** Services OEM et ODM complets incluant de multiples techniques d'application de logo et un faible MOQ de 300 pièces.
+- **Personnalisation Évolutive :** Services OEM et ODM complets incluant de multiples techniques d'application de logo et un faible MOQ de 200 pièces.
 
 ## Parfait Pour
 - Marques de Lunettes Premium
@@ -65,4 +65,4 @@ Fabriquées à partir de fibre de carbone de qualité aérospatiale, les KSS-028
 
 Les charnières à barillet 2+1 de précision et les verres en nylon résistants aux chocs garantissent une longévité structurelle et une clarté optique pour une utilisation haute performance.
 
-Nous offrons un support ODM et OEM complet—des textures forgées sur mesure aux diverses applications de logos—avec un minimum de 300 pièces pour aider les marques premium à développer leurs portefeuilles de lunettes exclusifs.
+Nous offrons un support ODM et OEM complet—des textures forgées sur mesure aux diverses applications de logos—avec un minimum de 200 pièces pour aider les marques premium à développer leurs portefeuilles de lunettes exclusifs.

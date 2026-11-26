@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Bois Doré & Fibre de Carbone Vert à Grain de Sergé & Fibre de Carbone Gris Fusil Mat à Grain Plat & Fibre de Carbone Argent Mat à Grain Plat de Bois"
 materials: "Fibre de Carbone Premium et Titane"
 serviceMode: "Fabrication sous Contrat (OEM) & Conception et Fabrication (ODM) ( Personnalisation )"
-moq: "300 pcs/modèle"
+moq: "200 pcs/modèle"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Monture Optique de Luxe en Fibre de Carbone KSO-030 | Fabricant OEM"
-seoDescription: "Commandez des montures optiques personnalisées en fibre de carbone KSO-030 auprès d'une usine de premier plan. Résistance de qualité aérospatiale avec textures de grain de bois, MOQ 300 pour OEM/ODM de marque privée."
+seoDescription: "Commandez des montures optiques personnalisées en fibre de carbone KSO-030 auprès d'une usine de premier plan. Résistance de qualité aérospatiale avec textures de grain de bois, MOQ 200 pour OEM/ODM de marque privée."
 seoKeywords: "fabricant de montures optiques en fibre de carbone, lunettes personnalisées en fibre de carbone Chine, montures optiques de marque privée OEM, vente en gros de montures de luxe en fibre de carbone, usine de montures en fibre de carbone KSO-030, fournisseur de lunettes en titane et fibre de carbone, personnalisation ODM de montures optiques premium, lunettes en fibre de carbone qualité export"
 ---
 
@@ -59,7 +59,7 @@ seoKeywords: "fabricant de montures optiques en fibre de carbone, lunettes perso
 - **Matériel Durable :** Charnières stables à structure en tonneau 2+1 conçues pour une fluidité de fonctionnement constante et une fiabilité à long terme.
 - **Optique Premium :** Équipée de verres en nylon tenaces qui prennent en charge de nombreuses options de teinture et de revêtement personnalisées pour les divers besoins du marché.
 - **Confort Toute la Journée :** Plaquettes de nez en caoutchouc intégrées et matériaux hypoallergéniques conçus pour un ajustement sûr et confortable pendant un port prolongé.
-- **Production Évolutive :** Services complets de personnalisation OEM et ODM avec un MOQ de 300 pièces, optimisés pour les normes d'exportation B2B mondiales.
+- **Production Évolutive :** Services complets de personnalisation OEM et ODM avec un MOQ de 200 pièces, optimisés pour les normes d'exportation B2B mondiales.
 
 ## Parfait Pour
 - Marques de Lunettes Premium
@@ -75,4 +75,4 @@ L'excellence de l'ingénierie est au cœur du KSO-030, qui associe la fibre de c
 
 Chaque unité présente des textures usinées avec précision, notamment des grains de bois et de sergé, soutenues par des charnières à barillet 2+1 haute performance qui garantissent la fiabilité mécanique.
 
-Optimisée pour les maisons de mode de luxe et les marques de lunettes haut de gamme, notre usine de fabrication prend en charge une personnalisation OEM/ODM complète avec une quantité minimale de commande de 300 pièces.
+Optimisée pour les maisons de mode de luxe et les marques de lunettes haut de gamme, notre usine de fabrication prend en charge une personnalisation OEM/ODM complète avec une quantité minimale de commande de 200 pièces.

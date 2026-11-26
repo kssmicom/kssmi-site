@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Colore Originale Fibra di Carbonio (Nero Opaco, Nero Lucido, Trama Colorata, Carbonio Forgiato)"
 materials: "Fibra di Carbonio Premium"
 serviceMode: "Produzione per Conto Terzi (OEM) & Design e Produzione (ODM) ( Personalizzazione )"
-moq: "300 pz/modello"
+moq: "200 pz/modello"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -37,7 +37,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Occhiali da Sole Luxury KSS-032 in Fibra di Carbonio | Fabbrica OEM"
-seoDescription: "Collabora con un primario produttore cinese per gli occhiali da sole di lusso KSS-032 in fibra di carbonio. Offriamo personalizzazione OEM/ODM completa con MOQ 300 per brand globali."
+seoDescription: "Collabora con un primario produttore cinese per gli occhiali da sole di lusso KSS-032 in fibra di carbonio. Offriamo personalizzazione OEM/ODM completa con MOQ 200 per brand globali."
 seoKeywords: "produttore occhiali da sole fibra di carbonio, occhiali da sole OEM personalizzati, occhiali private label Cina, montature fibra di carbonio all'ingrosso, fornitore occhiali lusso, fabbrica occhiali CNC, occhiali qualità export, personalizzazione occhiali B2B"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "produttore occhiali da sole fibra di carbonio, occhiali da sole OE
 - **Hardware Durevole:** Cerniere stabili con struttura a barile 2+1 progettate per una scorrevolezza operativa a lungo termine.
 - **Ottica Premium:** Lenti in nylon tenace con ampie opzioni di colorazione e rivestimento personalizzate disponibili.
 - **Comfort e Sicurezza:** Naselli in silicone ipoallergenico progettati per il comfort quotidiano e una vestibilità sicura.
-- **Produzione Scalabile:** Capacità complete di personalizzazione OEM e ODM con un basso quantitativo minimo d'ordine di 300 pezzi per l'esportazione globale.
+- **Produzione Scalabile:** Capacità complete di personalizzazione OEM e ODM con un basso quantitativo minimo d'ordine di 200 pezzi per l'esportazione globale.
 
 ## Perfetto Per
 - Marche di Occhiali Premium
@@ -63,4 +63,4 @@ Progettato per i marchi che danno priorità alla superiorità tecnica, il modell
 
 Ogni componente è meticolosamente lavorato tramite CNC per garantire tolleranze precise, mentre le cerniere a barile 2+1 e i naselli in silicone ipoallergenico offrono una miscela perfetta di durata meccanica e comfort personalizzato.
 
-Kssmi fornisce un supporto completo OEM e ODM con un quantitativo minimo d'ordine flessibile di 300 pezzi, consentendo ai rivenditori globali di lanciare collezioni su misura in fibra di carbonio con tinte delle lenti personalizzate e branding specializzato.
+Kssmi fornisce un supporto completo OEM e ODM con un quantitativo minimo d'ordine flessibile di 200 pezzi, consentendo ai rivenditori globali di lanciare collezioni su misura in fibra di carbonio con tinte delle lenti personalizzate e branding specializzato.

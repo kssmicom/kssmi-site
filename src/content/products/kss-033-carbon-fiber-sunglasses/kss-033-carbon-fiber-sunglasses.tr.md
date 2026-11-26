@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Orijinal Karbon Fiber Rengi (Mat Siyah, Parlak Siyah, Renkli Örgü, Dövme Karbon)"
 materials: "Premium Karbon Fiber"
 serviceMode: "OEM & ODM ( Özelleştirme )"
-moq: "300 adet/model"
+moq: "200 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-033 Lüks Klasik Karbon Fiber Güneş Gözlüğü | OEM Üreticisi"
-seoDescription: "KSS-033 lüks karbon fiber güneş gözlükleri için lider bir Çinli üretici ile ortaklık kurun. 300 MOQ ve tam küresel OEM/ODM hizmetleri ile yüksek mukavemetli havacılık çerçeveleri."
+seoDescription: "KSS-033 lüks karbon fiber güneş gözlükleri için lider bir Çinli üretici ile ortaklık kurun. 200 MOQ ve tam küresel OEM/ODM hizmetleri ile yüksek mukavemetli havacılık çerçeveleri."
 seoKeywords: "karbon fiber güneş gözlüğü üreticisi, özel OEM güneş gözlüğü, özel marka gözlük Çin, toptan karbon fiber çerçeveler, lüks güneş gözlüğü tedarikçisi"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "karbon fiber güneş gözlüğü üreticisi, özel OEM güneş gö
 - **Premium Optik:** Kapsamlı özel renklendirme ve kaplama seçenekleri ile yüksek performanslı netlik sağlayan dayanıklı naylon lensler.
 - **Gün Boyu Konfor:** Uzun süreli profesyonel kullanım sırasında güvenli, basınçsız bir uyum için tasarlanmış hipoalerjenik silikon burun tamponları.
 - **Estetik Çok Yönlülük:** Farklı marka kimliklerine uyması için Mat Siyah, Parlak Siyah ve Dövme Karbon dahil olmak üzere çoklu karbon fiber kaplamalar.
-- **Ölçeklenebilir Üretim:** Küresel toptan dağıtım için rekabetçi 300 adetlik MOQ ile kapsamlı OEM ve ODM özelleştirme hizmetleri.
+- **Ölçeklenebilir Üretim:** Küresel toptan dağıtım için rekabetçi 200 adetlik MOQ ile kapsamlı OEM ve ODM özelleştirme hizmetleri.
 
 ## İçin Mükemmel
 
@@ -64,4 +64,4 @@ Seçici markalar için hazırlanan KSS-033, havacılık sınıfı karbon fiberin
 
 Hassas mühendislik ürünü 2+1 varil menteşelerin ve hipoalerjenik silikon burun tamponlarının entegrasyonu, çeşitli kullanıcı profillerinde gün boyu konfor ve uzun vadeli dayanıklılık sağlar.
 
-Düşük 300 adetlik minimum sipariş miktarı ile tam OEM ve ODM kapsamını destekleyen bu model, lüks markaların ve bağımsız tasarımcıların gelişmiş malzeme inovasyonunu özel marka koleksiyonlarına kolayca entegre etmelerini sağlar.
+Düşük 200 adetlik minimum sipariş miktarı ile tam OEM ve ODM kapsamını destekleyen bu model, lüks markaların ve bağımsız tasarımcıların gelişmiş malzeme inovasyonunu özel marka koleksiyonlarına kolayca entegre etmelerini sağlar.

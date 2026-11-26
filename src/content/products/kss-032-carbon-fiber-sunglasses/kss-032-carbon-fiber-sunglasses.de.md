@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Original Carbonfaser-Farbe (Mattschwarz, Glänzendes Schwarz, Farbiges Gewebe, Geschmiedetes Carbon)"
 materials: "Premium Carbonfaser"
 serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) ( Individualisierung )"
-moq: "300 Stk/Modell"
+moq: "200 Stk/Modell"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -37,7 +37,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-032 Luxus-Carbonfaser-Sonnenbrille | OEM-Fabrik"
-seoDescription: "Partner mit einem führenden chinesischen Export-Hersteller für KSS-032 Luxus-Carbonfaser-Sonnenbrillen. Wir bieten volle OEM/ODM-Individualisierung mit 300 MOQ für globale Marken."
+seoDescription: "Partner mit einem führenden chinesischen Export-Hersteller für KSS-032 Luxus-Carbonfaser-Sonnenbrillen. Wir bieten volle OEM/ODM-Individualisierung mit 200 MOQ für globale Marken."
 seoKeywords: "Carbonfaser-Sonnenbrille Hersteller, maßgeschneiderte OEM-Sonnenbrillen, Eigenmarken-Brillen China, Carbonfaser-Rahmen Großhandel, Luxus-Sonnenbrillen-Lieferant, CNC-Brillenfabrik, Export-Qualität, B2B-Brillenindividualisierung"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "Carbonfaser-Sonnenbrille Hersteller, maßgeschneiderte OEM-Sonnenb
 - **Langlebige Hardware:** Stabile 2+1 Fassstruktur-Scharniere, entwickelt für langfristige Laufruhe.
 - **Premium-Optik:** Widerstandsfähige Nylon-Gläser mit umfangreichen Optionen für individuelle Tönungen und Beschichtungen.
 - **Komfort & Sicherheit:** Hypoallergene Silikon-Nasenpads für ganztägigen Komfort und sicheren Sitz.
-- **Skalierbare Produktion:** Volle OEM- & ODM-Individualisierungsmöglichkeiten mit einer niedrigen Mindestbestellmenge von 300 Stück für den weltweiten Export.
+- **Skalierbare Produktion:** Volle OEM- & ODM-Individualisierungsmöglichkeiten mit einer niedrigen Mindestbestellmenge von 200 Stück für den weltweiten Export.
 
 ## Perfekt Für
 - Premium Brillenmarken
@@ -63,4 +63,4 @@ Die KSS-032 wurde für Marken entwickelt, die technischen Vorsprung priorisieren
 
 Jede Komponente wird akribisch CNC-gefräst, um präzise Toleranzen zu gewährleisten, während die 2+1 Fassscharniere und die hypoallergenen Silikon-Nasenpads eine nahtlose Mischung aus mechanischer Langlebigkeit und individuellem Komfort bieten.
 
-Kssmi bietet umfassende OEM- und ODM-Unterstützung mit einer flexiblen Mindestbestellmenge von 300 Stück an. Dies ermöglicht es globalen Einzelhändlern, maßgeschneiderte Carbonfaser-Kollektionen mit individuellen Glastönungen und spezialisiertem Branding auf den Markt zu bringen.
+Kssmi bietet umfassende OEM- und ODM-Unterstützung mit einer flexiblen Mindestbestellmenge von 200 Stück an. Dies ermöglicht es globalen Einzelhändlern, maßgeschneiderte Carbonfaser-Kollektionen mit individuellen Glastönungen und spezialisiertem Branding auf den Markt zu bringen.

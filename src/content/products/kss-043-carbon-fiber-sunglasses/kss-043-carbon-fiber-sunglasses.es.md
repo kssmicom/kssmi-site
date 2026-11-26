@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Color de Fibra de Carbono Original (Negro Mate, Negro Brillante, Tejido de Color, Carbono Forjado)"
 materials: "Fibra de Carbono Premium"
 serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM) ( Personalización )"
-moq: "300 uds/modelo"
+moq: "200 uds/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -40,7 +40,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Gafas de Sol de Lujo de Fibra de Carbono KSS-043 | Fábrica OEM"
-seoDescription: "Asóciese con una fábrica china líder en gafas de sol de lujo de fibra de carbono KSS-043. Monturas ligeras de alta resistencia con MOQ 300. Experto OEM/ODM para marcas."
+seoDescription: "Asóciese con una fábrica china líder en gafas de sol de lujo de fibra de carbono KSS-043. Monturas ligeras de alta resistencia con MOQ 200. Experto OEM/ODM para marcas."
 seoKeywords: "fabricante de gafas de sol de fibra de carbono, venta al por mayor de gafas de sol KSS-043, gafas de fibra de carbono personalizadas China, fábrica de gafas de marca propia, monturas de carbono de lujo OEM, proveedor de gafas de alta gama, gafas de grado aeroespacial ODM, gafas de carbono calidad de exportación"
 ---
 
@@ -51,7 +51,7 @@ seoKeywords: "fabricante de gafas de sol de fibra de carbono, venta al por mayor
 - **Óptica Premium:** Lentes de nylon tenaces que proporcionan claridad de alto rendimiento con amplias opciones de tintado y recubrimiento personalizados disponibles.
 - **Comodidad Optimizada:** Almohadillas nasales de silicona hipoalergénicas y estructura flexible que garantizan un ajuste seguro y sin presión para un uso profesional prolongado.
 - **Estética Personalizada:** Múltiples opciones de acabado que incluyen Negro Mate, Negro Brillante y Carbono Forjado para que coincidan con identidades específicas de marcas de lujo.
-- **Producción Escalable:** Servicios completos de personalización OEM y ODM con un MOQ competitivo de 300 piezas adaptado a los mercados de exportación globales.
+- **Producción Escalable:** Servicios completos de personalización OEM y ODM con un MOQ competitivo de 200 piezas adaptado a los mercados de exportación globales.
 
 ## Perfecto Para
 
@@ -68,4 +68,4 @@ Combinando durabilidad de grado aeroespacial con un perfil ultra ligero, el mode
 
 La montatura cuenta con un sistema de bisagras de barril 2+1 calibrado con precisión y lentes de nylon tenaces, lo que garantiza la estabilidad estructural y la claridad óptica en un diseño elegante e hipoalergénico.
 
-Con soporte para acabados Mate, Brillante o Carbono Forjado y un bajo MOQ de 300 piezas, nuestro alcance total de OEM/ODM permite a los diseñadores integrar gafas de fibra de carbono personalizadas, directamente del fabricante, en carteras de lujo.
+Con soporte para acabados Mate, Brillante o Carbono Forjado y un bajo MOQ de 200 piezas, nuestro alcance total de OEM/ODM permite a los diseñadores integrar gafas de fibra de carbono personalizadas, directamente del fabricante, en carteras de lujo.

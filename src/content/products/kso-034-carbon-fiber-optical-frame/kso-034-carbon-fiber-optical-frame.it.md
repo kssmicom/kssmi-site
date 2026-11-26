@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Nero"
 materials: "Fibra di Carbonio Premium e Titanio"
 serviceMode: "OEM e ODM ( Personalizzazione )"
-moq: "300 pz/modello"
+moq: "200 pz/modello"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Produttore di Montature Ottiche in Fibra di Carbonio KSO-034 | OEM"
-seoDescription: "Collabora con una fabbrica cinese leader in montature ottiche in fibra di carbonio per il modello KSO-034. Materiale aerospaziale con aste in titanio. MOQ 300."
+seoDescription: "Collabora con una fabbrica cinese leader in montature ottiche in fibra di carbonio per il modello KSO-034. Materiale aerospaziale con aste in titanio. MOQ 200."
 seoKeywords: "produttore montature ottiche fibra di carbonio, occhiali personalizzati in fibra di carbonio Cina, montature in fibra di carbonio all'ingrosso, occhiali titanio fibra di carbonio OEM, fabbrica montature ottiche lusso, occhiali fibra di carbonio private label, fornitore ODM occhiali alta gamma"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "produttore montature ottiche fibra di carbonio, occhiali personali
 - **Hardware di Precisione:** Cerniere stabili con struttura a barilotto 2+1 progettate per una fluidità operativa costante e stabilità della montatura.
 - **Ottica Premium:** Lenti in nylon tenace con ampie opzioni di colorazione e rivestimento personalizzate disponibili per soddisfare le diverse richieste del mercato.
 - **Eccellenza Manifatturiera:** Componenti realizzati con precisione che mettono in risalto una trama unica in fibra di carbonio con proprietà ipoallergeniche per un appeal retail di alto livello.
-- **Personalizzazione B2B:** Produzione OEM e ODM scalabile che supporta loghi, dimensioni e colori personalizzati con un MOQ basso di 300 pezzi.
+- **Personalizzazione B2B:** Produzione OEM e ODM scalabile che supporta loghi, dimensioni e colori personalizzati con un MOQ basso di 200 pezzi.
 
 ## Perfetto Per
 - Marche di Occhiali Premium
@@ -62,4 +62,4 @@ Il modello KSO-034 rappresenta l'apice dell'ingegneria dei materiali ibridi, fon
 
 Le cerniere a barilotto 2+1 progettate con precisione lavorano in tandem con i naselli in gomma integrati per fornire una calzata stabile e antiscivolo per un uso professionale durante tutto il giorno. Ogni montatura mette in mostra la trama distinta e high-tech della fibra di carbonio, mantenendo al contempo la sicurezza ipoallergenica per gli utenti finali più esigenti.
 
-Disponibile per uno sviluppo completo OEM e ODM con un minimo d'ordine flessibile di 300 pezzi, questo modello consente alle etichette indipendenti e alle case di moda affermate di lanciare linee di occhiali su misura con standard manifatturieri di livello mondiale.
+Disponibile per uno sviluppo completo OEM e ODM con un minimo d'ordine flessibile di 200 pezzi, questo modello consente alle etichette indipendenti e alle case di moda affermate di lanciare linee di occhiali su misura con standard manifatturieri di livello mondiale.

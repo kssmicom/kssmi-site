@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Gỗ Vàng & Sợi Carbon Xanh Vân Chéo & Sợi Carbon Màu Súng Mờ Vân Trơn & Sợi Carbon Bạc Mờ Gỗ Vân Trơn"
 materials: "Sợi Carbon Cao Cấp và Titan"
 serviceMode: "OEM & ODM ( Tùy chỉnh theo yêu cầu )"
-moq: "300 cái/mẫu"
+moq: "200 cái/mẫu"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -52,7 +52,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Gọng Kính Cận Sợi Carbon Xa Xỉ KSO-033 | Nhà Cung Cấp Bán Buôn"
-seoDescription: "Gọng kính cận sợi carbon xa xỉ KSO-033 với càng kính titan cho các thương hiệu kính mắt. Sản xuất OEM/ODM hiệu suất cao với MOQ 300 và độ chính xác CNC."
+seoDescription: "Gọng kính cận sợi carbon xa xỉ KSO-033 với càng kính titan cho các thương hiệu kính mắt. Sản xuất OEM/ODM hiệu suất cao với MOQ 200 và độ chính xác CNC."
 seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính titan tùy chỉnh Trung Quốc, bán buôn gọng kính xa xỉ, gọng kính sợi carbon nhãn hiệu riêng, nhà máy kính OEM, nhà sản xuất gọng kính CNC, nhà cung cấp kính mắt chất lượng xuất khẩu, OEM kính mắt chuyên nghiệp"
 ---
 
@@ -63,7 +63,7 @@ seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính titan tùy ch�
 - **Phụ kiện bền bỉ:** Bản lề cấu trúc thùng 2+1 ổn định được thiết kế để vận hành trơn tru nhất quán trong suốt vòng đời của sản phẩm.
 - **Quang học cao cấp:** Tròng kính nylon bền bỉ với các tùy chọn nhuộm màu và phủ lớp bảo vệ tùy chỉnh rộng rãi có sẵn cho các giải pháp quang học cao cấp.
 - **Thoải mái cả ngày:** Đệm mũi cao su không gây dị ứng được thiết kế để mang lại sự vừa vặn an toàn, thoải mái và cảm giác đeo nhẹ nhàng như không hàng ngày.
-- **Sản xuất linh hoạt:** Khả năng tùy chỉnh OEM & ODM đầy đủ với số lượng đặt hàng tối thiểu thấp 300 chiếc cho xuất khẩu B2B toàn cầu.
+- **Sản xuất linh hoạt:** Khả năng tùy chỉnh OEM & ODM đầy đủ với số lượng đặt hàng tối thiểu thấp 200 chiếc cho xuất khẩu B2B toàn cầu.
 
 ## Phù hợp cho
 - Thương hiệu kính mắt cao cấp
@@ -79,4 +79,4 @@ Kết hợp sợi carbon cấp hàng không vũ trụ với titan cao cấp, KSO
 
 Độ chính xác được gia công bằng máy CNC và hệ thống bản lề thùng 2+1 ổn định đảm bảo chất lượng sản xuất nhất quán và vận hành mượt mà lâu dài.
 
-Với phạm vi ODM đầy đủ và số lượng đặt hàng tối thiểu thấp chỉ 300 chiếc, gọng kính này tạo điều kiện cho các nhà thiết kế độc lập và các hãng thời trang xa xỉ phát triển các bộ sưu tập nhãn hiệu riêng được tùy chỉnh theo yêu cầu.
+Với phạm vi ODM đầy đủ và số lượng đặt hàng tối thiểu thấp chỉ 200 chiếc, gọng kính này tạo điều kiện cho các nhà thiết kế độc lập và các hãng thời trang xa xỉ phát triển các bộ sưu tập nhãn hiệu riêng được tùy chỉnh theo yêu cầu.

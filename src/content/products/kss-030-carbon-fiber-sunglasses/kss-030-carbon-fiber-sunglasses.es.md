@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Color Original Fibra de Carbono (Negro Mate, Negro Brillante, Tejido de Color, Carbono Forjado)"
 materials: "Fibra de Carbono Premium"
 serviceMode: "OEM & ODM ( Personalización )"
-moq: "300 uds/modelo"
+moq: "200 uds/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-030 Gafas de Sol de Lujo en Fibra de Carbono | Fabricante OEM & ODM"
-seoDescription: "El KSS-030 es un marco de fibra de carbono premium para marcas de gafas de lujo. Personalización OEM & ODM completa con 300 MOQ. Socio de una fábrica de exportación china líder."
+seoDescription: "El KSS-030 es un marco de fibra de carbono premium para marcas de gafas de lujo. Personalización OEM & ODM completa con 200 MOQ. Socio de una fábrica de exportación china líder."
 seoKeywords: "fabricante de gafas de sol de fibra de carbono, gafas de sol OEM personalizadas, gafas de marca propia China, marcos de fibra de carbono al por mayor, proveedor de gafas de sol de lujo"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "fabricante de gafas de sol de fibra de carbono, gafas de sol OEM p
 - **Hardware Duradero:** Bisagras estables de estructura de barril 2+1 diseñadas para una suavidad operativa a largo plazo y un rendimiento constante.
 - **Óptica Premium:** Lentes de nylon tenaz que proporcionan una claridad superior con amplias opciones de tintado y recubrimiento personalizadas.
 - **Confort y Seguridad:** Almohadillas nasales de silicona hipoalergénica diseñadas para la comodidad durante todo el día y un ajuste seguro.
-- **Producción Escalable:** Capacidades completas de personalización OEM & ODM con una cantidad mínima de pedido baja de 300 piezas para la exportación global de marcas.
+- **Producción Escalable:** Capacidades completas de personalización OEM & ODM con una cantidad mínima de pedido baja de 200 piezas para la exportación global de marcas.
 
 ## Perfecto Para
 - Marcas de Gafas Premium
@@ -62,4 +62,4 @@ El KSS-030 muestra la belleza técnica bruta de la fibra de carbono de primera c
 
 Diseñada con bisagras de barril 2+1 estables y almohadillas nasales de silicona hipoalergénica, esta montatura ofrece integridad estructural a largo plazo y comodidad para el usuario.
 
-La personalización flexible OEM/ODM y un MOQ bajo de 300 piezas hacen de este modelo una base ideal para las marcas que buscan expandirse en el sector de las gafas de lujo de alto rendimiento.
+La personalización flexible OEM/ODM y un MOQ bajo de 200 piezas hacen de este modelo una base ideal para las marcas que buscan expandirse en el sector de las gafas de lujo de alto rendimiento.

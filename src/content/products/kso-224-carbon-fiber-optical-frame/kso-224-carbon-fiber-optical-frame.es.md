@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Caoba (Palisandro de la India — Veta de Montaña)"
 materials: "Fibra de Carbono Premium y Titanio"
 serviceMode: "OEM & ODM ( Personalización )"
-moq: "300 uds/modelo"
+moq: "200 uds/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Montura Óptica de Lujo KSO-224 | Fabricante OEM"
-seoDescription: "KSO-224: Montura óptica de lujo en fibra de carbono con varillas de titanio y acabado caoba. 300 MOQ. Personalización OEM/ODM premium para marcas globales."
+seoDescription: "KSO-224: Montura óptica de lujo en fibra de carbono con varillas de titanio y acabado caoba. 200 MOQ. Personalización OEM/ODM premium para marcas globales."
 seoKeywords: "monturas ópticas fibra carbono, gafas titanio a medida, fabricante gafas lujo China, venta al por mayor monturas carbono, fábrica gafas OEM"
 ---
 
@@ -64,4 +64,4 @@ Combinando fibra de carbono de grado aeroespacial con un acabado en caoba de vet
 
 Las varillas de titanio ligeras y las bisagras de 2+1 barriles proporcionan integridad estructural a largo plazo mientras mantienen el perfil refinado que se espera de las gafas de lujo.
 
-Al admitir una personalización completa a medida con un pedido mínimo de 300 piezas, esta montura permite a las casas de moda premium y a las marcas boutique expandir sus carteras de alta gama.
+Al admitir una personalización completa a medida con un pedido mínimo de 200 piezas, esta montura permite a las casas de moda premium y a las marcas boutique expandir sus carteras de alta gama.

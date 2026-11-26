@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Sợi Carbon & Gỗ Mun Ceylon & Gỗ Sồi Trắng & Gỗ Sapele"
 materials: "Sợi Carbon Cao Cấp và Titan"
 serviceMode: "Sản xuất gia công & Thiết kế sản xuất ( Tùy chỉnh theo yêu cầu )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Gọng Kính Cận Sợi Carbon Sang Trọng KSO-011 | Nhà Cung Cấp Bán Sỉ"
-seoDescription: "Hợp tác với nhà sản xuất hàng đầu Trung Quốc cho gọng kính cận sợi carbon sang trọng KSO-011 với càng kính titan. OEM/ODM cho các nhãn hiệu riêng với MOQ 300."
+seoDescription: "Hợp tác với nhà sản xuất hàng đầu Trung Quốc cho gọng kính cận sợi carbon sang trọng KSO-011 với càng kính titan. OEM/ODM cho các nhãn hiệu riêng với MOQ 200."
 seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính titan tùy chỉnh Trung Quốc, gọng kính sợi carbon nhãn hiệu riêng, bán sỉ kính mắt sang trọng, nhà máy kính sợi carbon OEM, nhà cung cấp gọng kính B2B, OEM kính sợi carbon cao cấp, gọng kính chất lượng xuất khẩu"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính titan tùy ch�
 - **Sự thoải mái tiên tiến:** Đệm mũi titan tích hợp mang lại sự vừa vặn không gây dị ứng và chống ăn mòn, tạo sự thoải mái lâu dài cho người đeo.
 - **Quang học cao cấp:** Tròng kính nylon đa năng được thiết kế cho khả năng chống va đập cao với nhiều khả năng nhuộm màu và phủ lớp tùy chỉnh.
 - **Hoàn thiện tinh tế:** Kết cấu sợi carbon độc đáo và thiết kế unisex sang trọng đáp ứng nhu cầu thẩm mỹ của các nhà bán lẻ kính mắt cao cấp.
-- **Tùy chỉnh toàn diện:** Dịch vụ OEM & ODM chuyên nghiệp bao gồm ứng dụng logo tùy chỉnh và sửa đổi phụ kiện bắt đầu từ MOQ 300 chiếc.
+- **Tùy chỉnh toàn diện:** Dịch vụ OEM & ODM chuyên nghiệp bao gồm ứng dụng logo tùy chỉnh và sửa đổi phụ kiện bắt đầu từ MOQ 200 chiếc.
 
 ## Phù hợp cho
 - Thương hiệu kính mắt cao cấp
@@ -74,4 +74,4 @@ seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính titan tùy ch�
 
 Bản lề 2+1 thùng và đệm mũi titan được chế tác chính xác mang lại khả năng điều chỉnh dễ dàng và tính toàn vẹn cấu trúc lâu dài.
 
-Sẵn sàng cho việc tùy chỉnh OEM và ODM rộng rãi bắt đầu từ MOQ 300 chiếc, mẫu kính này cho phép các nhãn hiệu riêng tích hợp công nghệ vật liệu composite tiên tiến vào các bộ sưu tập đặc trưng của họ.
+Sẵn sàng cho việc tùy chỉnh OEM và ODM rộng rãi bắt đầu từ MOQ 200 chiếc, mẫu kính này cho phép các nhãn hiệu riêng tích hợp công nghệ vật liệu composite tiên tiến vào các bộ sưu tập đặc trưng của họ.

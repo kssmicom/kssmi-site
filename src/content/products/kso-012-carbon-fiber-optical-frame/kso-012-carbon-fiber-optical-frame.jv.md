@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Serat Karbon & Kayu Hitam Ceylon & Kayu Oak Putih & Sapele"
 materials: "Serat Karbon Premium lan Titanium"
 serviceMode: "OEM & ODM ( Kustomisasi )"
-moq: "300 pcs/model"
+moq: "200 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -47,7 +47,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-012 Frame Optik Serat Karbon Mewah | Supplier Grosir"
-seoDescription: "Sumber frame optik serat karbon KSO-012 sing entheng banget kanthi gagang titanium saka pabrik ekspor utama China. Kustomisasi OEM/ODM lengkap kanthi MOQ 300 pcs."
+seoDescription: "Sumber frame optik serat karbon KSO-012 sing entheng banget kanthi gagang titanium saka pabrik ekspor utama China. Kustomisasi OEM/ODM lengkap kanthi MOQ 200 pcs."
 seoKeywords: "frame optik serat karbon, produsen kacamata kustom, kacamata titanium serat karbon, grosir frame optik China, pabrik kacamata label pribadi, frame serat karbon mewah OEM, supplier kacamata mesin CNC, produsen ekspor frame optik"
 ---
 
@@ -57,7 +57,7 @@ seoKeywords: "frame optik serat karbon, produsen kacamata kustom, kacamata titan
 - **Hardware Awet:** Engsel struktur tong 2+1 sing stabil dirancang kanggo operasi sing lancar sajrone wektu sing suwe lan gampang dirawat.
 - **Optik Premium:** Lensa nilon kuat kanthi pilihan warna lan lapisan kustom kasedhiya kanggo branding sing serba guna.
 - **Kenyamanan Ergonomis:** Bantalan irung silikon hipoalergenik sing dirancang kanggo kenyamanan sedina muput.
-- **Produksi Skalabel:** Kapasitas kustomisasi OEM & ODM lengkap kanthi jumlah pesenan minimal mung 300 pcs kanggo ekspor global.
+- **Produksi Skalabel:** Kapasitas kustomisasi OEM & ODM lengkap kanthi jumlah pesenan minimal mung 200 pcs kanggo ekspor global.
 
 ## Cocok kanggo
 - Merek Kacamata Premium
@@ -73,4 +73,4 @@ Dirancang kanggo merek elit, model KSO-012 nggabungake serat karbon kelas aeroan
 
 Integrasi sistem engsel tong 2+1 lan bantalan irung silikon hypoallergenic njamin kelancaran operasional sing alus lan pas sing aman lan nyaman kanggo panggunaan sedina muput.
 
-Nyediakake kustomisasi OEM lan ODM sing jembar kanthi jumlah pesenan minimal 300 unit sing sithik, Kssmi mbisakake desainer independen lan merek mewah kanggo nggedhekake koleksi kanthi kacamata teknis buatan presisi.
+Nyediakake kustomisasi OEM lan ODM sing jembar kanthi jumlah pesenan minimal 200 unit sing sithik, Kssmi mbisakake desainer independen lan merek mewah kanggo nggedhekake koleksi kanthi kacamata teknis buatan presisi.

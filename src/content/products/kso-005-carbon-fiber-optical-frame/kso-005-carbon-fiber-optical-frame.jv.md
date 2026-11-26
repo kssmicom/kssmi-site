@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Serat Karbon & Kayu Oak Putih & Sapele & Kayu Ebony"
 materials: "Serat Karbon Premium"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
-moq: "300 pcs/model"
+moq: "200 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-005 Frame Optik Serat Karbon Mewah | Produsen OEM"
-seoDescription: "Frame optik serat karbon premium KSO-005 kanggo merek kacamata global. Konstruksi hibrida kekuatan dhuwur kanthi gagang logam. MOQ 300 kanggo kustomisasi OEM/ODM."
+seoDescription: "Frame optik serat karbon premium KSO-005 kanggo merek kacamata global. Konstruksi hibrida kekuatan dhuwur kanthi gagang logam. MOQ 200 kanggo kustomisasi OEM/ODM."
 seoKeywords: "produsen frame optik serat karbon, frame optik OEM kustom, kacamata label pribadi China, grosir frame serat karbon, pabrik frame optik mewah, OEM kacamata high-end, frame optik kualitas ekspor, supplier kacamata serat karbon"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "produsen frame optik serat karbon, frame optik OEM kustom, kacamat
 - **Hardware Fleksibel:** Engsel struktur pegas sing dirancang kanthi presisi nyedhiyakake kenyamanan adaptif lan linuwih operasional jangka panjang.
 - **Optik Kelas Dhuwur:** Dilengkapi lensa nylon kuat sing nampilake pilihan kustomisasi sing jembar kanggo kajelasan optik premium.
 - **Kenyamanan Halus:** Bantalan irung logam tahan lama sing dirancang kanggo pas sing aman, bisa diatur lan kenyamanan nganggo sing tahan suwe.
-- **Produksi Kustom:** Layanan OEM lan ODM sing bisa diskalakan kanthi MOQ murah 300 pcs kanggo ndukung ekspansi merek global.
+- **Produksi Kustom:** Layanan OEM lan ODM sing bisa diskalakan kanthi MOQ murah 200 pcs kanggo ndukung ekspansi merek global.
 
 ## Cocok kanggo
 - Merek Kacamata Premium
@@ -74,4 +74,4 @@ Nggawe standar anyar ing kacamata kelas dhuwur, model iki nggabungake serat karb
 
 Engsel pegas sing dirancang kanthi presisi lan bantalan irung logam tahan lama nyedhiyakake kenyamanan adaptif, dene lensa nylon kuat mesthekake kajelasan optik kanggo pangguna sing paling nuntut.
 
-Ndhukung ruang lingkup OEM/ODM lengkap kanthi jumlah pesenan minimal 300 unit sing murah, Kssmi nguatake merek mewah lan desainer independen kanggo ngirim koleksi kustom sing diproduksi kanthi presisi ing saindenging jagad.
+Ndhukung ruang lingkup OEM/ODM lengkap kanthi jumlah pesenan minimal 200 unit sing murah, Kssmi nguatake merek mewah lan desainer independen kanggo ngirim koleksi kustom sing diproduksi kanthi presisi ing saindenging jagad.

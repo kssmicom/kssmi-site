@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Madeira Dourada & Fibra de Carbono Verde Sarja & Fibra de Carbono Grafite Fosco Grão Simples & Fibra de Carbono Prata Fosca Madeira Grão Simples"
 materials: "Fibra de Carbono Premium e Titânio"
 serviceMode: "OEM & ODM ( Personalização )"
-moq: "300 pçs/modelo"
+moq: "200 pçs/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -52,7 +52,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Armações Ópticas de Luxo em Fibra de Carbono KSO-033 | Fornecedor Atacadista"
-seoDescription: "Armações ópticas de luxo KSO-033 em fibra de carbono com hastes de titânio para marcas de óculos. Fabricação OEM/ODM de alto desempenho com 300 moq e precisão CNC."
+seoDescription: "Armações ópticas de luxo KSO-033 em fibra de carbono com hastes de titânio para marcas de óculos. Fabricação OEM/ODM de alto desempenho com 200 moq e precisão CNC."
 seoKeywords: "fabricante de armações ópticas em fibra de carbono, óculos de titânio personalizados China, atacado de armações ópticas de luxo, armações em fibra de carbono marca própria, fábrica de óculos OEM, fabricante de armações ópticas CNC, fornecedor de óculos qualidade exportação, OEM óculos profissional"
 ---
 
@@ -63,7 +63,7 @@ seoKeywords: "fabricante de armações ópticas em fibra de carbono, óculos de 
 - **Hardware Durável:** Dobradiças de estrutura de barril 2+1 estáveis, projetadas para uma suavidade operacional constante durante todo o ciclo de vida do produto.
 - **Ótica Premium:** Lentes de nylon tenaz com amplas opções de tingimento e revestimento personalizadas disponíveis para soluções ópticas de ponta.
 - **Conforto Durante Todo o Dia:** Ponteiras nasais de borracha hipoalergênica projetadas para um ajuste seguro e confortável e uso diário sem peso.
-- **Produção Escalável:** Capacidades completas de personalização OEM e ODM com um baixo pedido mínimo de 300 peças para exportação B2B global.
+- **Produção Escalável:** Capacidades completas de personalização OEM e ODM com um baixo pedido mínimo de 200 peças para exportação B2B global.
 
 ## Perfeito Para
 - Marcas de Óculos Premium
@@ -79,5 +79,5 @@ Combinando fibra de carbono de grau aeroespacial com titânio premium, o KSO-033
 
 A precisão da usinagem CNC e um sistema estável de dobradiças de barril 2+1 garantem uma qualidade de fabricação consistente e suavidade operacional a longo prazo.
 
-Com alcance total de ODM e uma baixa quantidade mínima de pedido de 300 peças, esta armação capacita designers independentes e casas de moda de luxo a desenvolver coleções personalizadas de marca própria.
+Com alcance total de ODM e uma baixa quantidade mínima de pedido de 200 peças, esta armação capacita designers independentes e casas de moda de luxo a desenvolver coleções personalizadas de marca própria.
 

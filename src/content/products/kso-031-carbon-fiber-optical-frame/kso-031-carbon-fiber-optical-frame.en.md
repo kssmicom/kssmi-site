@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Wood Golden & Twill Grain Green Carbon Fiber & Plain Grain Carbon Fiber Matt Gun & Wood Plain Grain Carbon Fiber Matt Silver"
 materials: "Premium Carbon Fiber and Titanium"
 serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-031 Luxury Carbon Fiber & Titanium Optical Frame Manufacturer"
-seoDescription: "KSO-031: Bespoke luxury carbon fiber & titanium optical frames for B2B. Premium aerospace-grade material with 300 MOQ. Expert OEM/ODM for private label brands."
+seoDescription: "KSO-031: Bespoke luxury carbon fiber & titanium optical frames for B2B. Premium aerospace-grade material with 200 MOQ. Expert OEM/ODM for private label brands."
 seoKeywords: "carbon fiber optical frames, luxury optical frames, eyewear manufacturer China, custom private label eyewear, wholesale carbon fiber frames, eyewear OEM ODM service, carbon fiber glasses supplier, premium Chinese eyewear factory"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "carbon fiber optical frames, luxury optical frames, eyewear manufa
 - **Premium Optics:** Tenacious nylon lenses providing superior impact resistance with extensive customization options for global markets.
 - **All-Day Comfort:** Ergonomic rubber nose pads designed for a secure, hypoallergenic fit for extended daily wear.
 - **Exclusive Textures:** Unique carbon fiber weaves in wood-grain and twill patterns, delivering a high-end, luxury aesthetic for discerning brands.
-- **Manufacturing Flexibility:** Professional OEM & ODM services with a low MOQ of 300 pieces, supporting scalable global distribution.
+- **Manufacturing Flexibility:** Professional OEM & ODM services with a low MOQ of 200 pieces, supporting scalable global distribution.
 
 ## Perfect For
 - Premium Eyewear Brands
@@ -74,4 +74,4 @@ The KSO-031 represents a sophisticated fusion of aerospace-grade carbon fiber an
 
 Engineered for long-term operational smoothness, the 2+1 barrel structure hinges and hypoallergenic rubber nose pads ensure exceptional stability and all-day comfort for the wearer.
 
-Supporting comprehensive OEM and ODM customization starting at a 300-piece minimum, Kssmi empowers independent designers and private label distributors to build bespoke eyewear portfolios with precision-engineered components.
+Supporting comprehensive OEM and ODM customization starting at a 200-piece minimum, Kssmi empowers independent designers and private label distributors to build bespoke eyewear portfolios with precision-engineered components.

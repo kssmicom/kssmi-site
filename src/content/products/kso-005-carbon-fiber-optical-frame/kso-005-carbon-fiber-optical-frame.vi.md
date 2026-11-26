@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Sợi carbon & Gỗ sồi trắng & Sapele & Gỗ mun"
 materials: "Sợi Carbon Cao Cấp"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
-moq: "300 cái/mẫu"
+moq: "200 cái/mẫu"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Gọng Kính Cận Sợi Carbon Xa Xỉ KSO-005 | Nhà sản xuất OEM"
-seoDescription: "Gọng kính cận sợi carbon cao cấp KSO-005 cho các thương hiệu kính mắt toàn cầu. Cấu trúc hỗn hợp cường độ cao với càng kính kim loại. MOQ 300 cho tùy chỉnh OEM/ODM."
+seoDescription: "Gọng kính cận sợi carbon cao cấp KSO-005 cho các thương hiệu kính mắt toàn cầu. Cấu trúc hỗn hợp cường độ cao với càng kính kim loại. MOQ 200 cho tùy chỉnh OEM/ODM."
 seoKeywords: "nhà sản xuất gọng kính cận sợi carbon, gọng kính cận OEM tùy chỉnh, kính mắt nhãn hiệu riêng Trung Quốc, bán sỉ gọng sợi carbon, nhà máy gọng kính cận xa xỉ, OEM kính mắt cao cấp, gọng kính cận chất lượng xuất khẩu, nhà cung cấp kính mắt sợi carbon"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "nhà sản xuất gọng kính cận sợi carbon, gọng kính c�
 - **Phần cứng linh hoạt:** Bản lề cấu trúc lò xo được thiết kế chính xác mang lại sự thoải mái thích ứng và độ tin cậy vận hành lâu dài.
 - **Quang học cao cấp:** Được trang bị tròng kính nylon bền bỉ với các tùy chọn tùy chỉnh phong phú cho độ rõ nét quang học cao cấp.
 - **Sự thoải mái tinh tế:** Đệm mũi kim loại bền bỉ được thiết kế để vừa vặn an toàn, có thể điều chỉnh và khả năng đeo lâu dài.
-- **Sản xuất tùy chỉnh:** Dịch vụ OEM và ODM có thể mở rộng với MOQ thấp chỉ 300 chiếc để hỗ trợ mở rộng thương hiệu toàn cầu.
+- **Sản xuất tùy chỉnh:** Dịch vụ OEM và ODM có thể mở rộng với MOQ thấp chỉ 200 chiếc để hỗ trợ mở rộng thương hiệu toàn cầu.
 
 ## Phù hợp cho
 - Thương hiệu kính mắt cao cấp
@@ -74,4 +74,4 @@ Thiết lập một tiêu chuẩn mới trong kính mắt cao cấp, mẫu kính
 
 Bản lề lò xo được thiết kế chính xác và đệm mũi kim loại bền bỉ mang lại sự thoải mái thích ứng, trong khi tròng kính nylon bền bỉ đảm bảo độ rõ nét quang học cho những người dùng khắt khe nhất.
 
-Hỗ trợ đầy đủ phạm vi dịch vụ OEM/ODM với số lượng đặt hàng tối thiểu thấp chỉ 300 chiếc, Kssmi trao quyền cho các thương hiệu xa xỉ và các nhà thiết kế độc lập để cung cấp các bộ sưu tập tùy chỉnh, được sản xuất chính xác trên toàn cầu.
+Hỗ trợ đầy đủ phạm vi dịch vụ OEM/ODM với số lượng đặt hàng tối thiểu thấp chỉ 200 chiếc, Kssmi trao quyền cho các thương hiệu xa xỉ và các nhà thiết kế độc lập để cung cấp các bộ sưu tập tùy chỉnh, được sản xuất chính xác trên toàn cầu.

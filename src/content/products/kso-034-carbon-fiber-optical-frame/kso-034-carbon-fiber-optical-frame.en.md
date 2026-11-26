@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Black"
 materials: "Premium Carbon Fiber and Titanium"
 serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-034 Luxury Carbon Fiber Optical Frame Manufacturer | OEM"
-seoDescription: "Partner with a leading Chinese carbon fiber optical frame factory for KSO-034. Aerospace-grade material with titanium temples. 300 MOQ for full OEM/ODM orders."
+seoDescription: "Partner with a leading Chinese carbon fiber optical frame factory for KSO-034. Aerospace-grade material with titanium temples. 200 MOQ for full OEM/ODM orders."
 seoKeywords: "carbon fiber optical frame manufacturer, custom carbon fiber eyewear China, wholesale carbon fiber frames, titanium carbon fiber glasses OEM, luxury optical frame factory, private label carbon fiber eyewear, high-end eyewear ODM supplier, export-quality optical frames"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "carbon fiber optical frame manufacturer, custom carbon fiber eyewe
 - **Precision Hardware:** Stable 2+1 barrel structure hinges engineered for consistent operational smoothness and frame stability.
 - **Premium Optics:** Tenacious nylon lenses with extensive custom tinting and coating options available to meet diverse market demands.
 - **Manufacturing Excellence:** Precision-crafted components showcasing a unique carbon fiber texture with hypoallergenic properties for high-end retail appeal.
-- **B2B Customization:** Scalable OEM and ODM manufacturing supporting custom logos, sizes, and colors with a low MOQ of 300 pieces.
+- **B2B Customization:** Scalable OEM and ODM manufacturing supporting custom logos, sizes, and colors with a low MOQ of 200 pieces.
 
 ## Perfect For
 - Premium Eyewear Brands
@@ -62,4 +62,4 @@ The KSO-034 represents the pinnacle of hybrid material engineering, merging aero
 
 Precision-engineered 2+1 barrel hinges work in tandem with integrated rubber nose pads to provide a stable, non-slip fit for all-day professional wear. Every frame showcases the distinct, high-tech texture of carbon fiber while maintaining hypoallergenic safety for discerning end-users.
 
-Available for comprehensive OEM and ODM development with a flexible 300-piece minimum order quantity, this model enables independent labels and established fashion houses to launch bespoke eyewear lines with world-class manufacturing standards.
+Available for comprehensive OEM and ODM development with a flexible 200-piece minimum order quantity, this model enables independent labels and established fashion houses to launch bespoke eyewear lines with world-class manufacturing standards.

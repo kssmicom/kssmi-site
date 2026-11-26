@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Carbon-Fiber & Ceylon-Ebony & White-Oak & Sapele"
 materials: "Premium Carbon Fiber and Titanium"
 serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-011 Luxury Carbon Fiber Optical Frame | Wholesale Supplier"
-seoDescription: "Partner with a premier Chinese manufacturer for KSO-011 luxury carbon fiber optical frames with titanium temples. OEM/ODM for private labels with 300 MOQ."
+seoDescription: "Partner with a premier Chinese manufacturer for KSO-011 luxury carbon fiber optical frames with titanium temples. OEM/ODM for private labels with 200 MOQ."
 seoKeywords: "carbon fiber optical frames manufacturer, custom titanium eyewear China, private label carbon fiber frames, wholesale luxury optical eyewear, OEM carbon fiber glasses factory, B2B optical frame supplier, high-end carbon fiber eyewear OEM, export quality optical frames"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "carbon fiber optical frames manufacturer, custom titanium eyewear 
 - **Advanced Comfort:** Integrated titanium nose pads offering a hypoallergenic and corrosion-resistant fit for long-term wearer comfort.
 - **Premium Optics:** Multi-functional nylon lenses engineered for high impact resistance with extensive custom tinting and coating possibilities.
 - **Exquisite Finish:** Unique carbon fiber texture and a luxury unisex design that meets the aesthetic demands of premium eyewear retailers.
-- **Full Customization:** Professional OEM & ODM services including custom logo application and hardware modifications starting at a 300-piece MOQ.
+- **Full Customization:** Professional OEM & ODM services including custom logo application and hardware modifications starting at a 200-piece MOQ.
 
 ## Perfect For
 - Premium Eyewear Brands
@@ -74,4 +74,4 @@ Engineered for the discerning luxury market, the KSO-011 merges high-performance
 
 The precision-crafted 2+1 barrel hinges and titanium nose pads provide effortless adjustment and long-term structural integrity.
 
-Available for extensive OEM and ODM customization starting at a 300-piece MOQ, this model empowers private labels to integrate advanced composite technology into their signature collections.
+Available for extensive OEM and ODM customization starting at a 200-piece MOQ, this model empowers private labels to integrate advanced composite technology into their signature collections.

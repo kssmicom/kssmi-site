@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Bois Doré & Fibre de Carbone Vert Twill & Fibre de Carbone Grain Lisse Gun Mat & Bois Fibre de Carbone Grain Lisse Argent Mat"
 materials: "Fibre de Carbone Premium et Titane"
 serviceMode: "Fabrication sous Contrat (OEM) & Conception et Fabrication (ODM) ( Personnalisation )"
-moq: "300 pcs/modèle"
+moq: "200 pcs/modèle"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Monture Optique de Luxe KSO-032 en Fibre de Carbone | Fabricant OEM"
-seoDescription: "Associez-vous à un premier fabricant chinois pour les montures optiques de luxe KSO-032 en fibre de carbone et titane. Services OEM/ODM complets avec 300 MOQ pour marques de distributeur."
+seoDescription: "Associez-vous à un premier fabricant chinois pour les montures optiques de luxe KSO-032 en fibre de carbone et titane. Services OEM/ODM complets avec 200 MOQ pour marques de distributeur."
 seoKeywords: "fabricant monture optique fibre de carbone, lunettes personnalisées OEM Chine, montures fibre de carbone marque propre, vente en gros lunettes optiques luxe, usine lunettes titane fibre de carbone, fournisseur en gros lunettes ODM, montures optiques qualité export, lunettes fibre de carbone B2B Chine"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricant monture optique fibre de carbone, lunettes personnalisé
 - **Optique Premium :** Verres en nylon tenace offrant une résistance supérieure aux chocs avec de larges options de personnalisation pour les clients B2B mondiaux.
 - **Confort Toute la Journée :** Plaquettes de nez ergonomiques en caoutchouc conçues pour un ajustement sûr et hypoallergénique lors d'un port quotidien prolongé.
 - **Textures Exclusives :** Finitions uniques en fibre de carbone, y compris des motifs de grain de bois et de sergé, offrant une esthétique de luxe haut de gamme.
-- **Fabrication Évolutive :** Capacités professionnelles de personnalisation OEM et ODM avec un faible MOQ de 300 pièces pour une distribution mondiale.
+- **Fabrication Évolutive :** Capacités professionnelles de personnalisation OEM et ODM avec un faible MOQ de 200 pièces pour une distribution mondiale.
 
 ## Parfait Pour
 - Marques de Lunettes Premium
@@ -74,5 +74,5 @@ Conçue avec une fusion haute performance de fibre de carbone de qualité supér
 
 Un système de charnières à barillet 2+1 construit avec précision assure une stabilité mécanique constante, tandis que les plaquettes de nez ergonomiques en caoutchouc offrent un confort hypoallergénique tout au long de la journée.
 
-Offrant une portée complète de personnalisation ODM et OEM avec une faible quantité minimale de commande de 300 pièces, ce modèle permet aux designers indépendants et aux détaillants haut de gamme de développer des collections de luxe sur mesure avec une précision de fabrication.
+Offrant une portée complète de personnalisation ODM et OEM avec une faible quantité minimale de commande de 200 pièces, ce modèle permet aux designers indépendants et aux détaillants haut de gamme de développer des collections de luxe sur mesure avec une précision de fabrication.
 

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Original Carbon Fiber Color (Matte Black, Glossy Black, Colored Weave, Forged Carbon)"
 materials: "Premium Carbon Fiber"
 serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -37,7 +37,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-031 Luxury Carbon Fiber Sunglasses | Wholesale OEM Factory"
-seoDescription: "KSS-031: Premium aerospace-grade carbon fiber sunglasses featuring CNC precision & 2+1 barrel hinges. Expert OEM/ODM services for global eyewear brands. 300 MOQ."
+seoDescription: "KSS-031: Premium aerospace-grade carbon fiber sunglasses featuring CNC precision & 2+1 barrel hinges. Expert OEM/ODM services for global eyewear brands. 200 MOQ."
 seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses China, wholesale carbon fiber frames, private label eyewear supplier, luxury sunglasses wholesale factory, CNC carbon fiber eyewear, B2B sunglasses manufacturer, export quality sunglasses OEM"
 ---
 
@@ -48,7 +48,7 @@ seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses China,
 - **Durable Hardware:** Stable 2+1 barrel structure hinges engineered for long-term operational smoothness.
 - **Premium Optics:** Tenacious nylon lenses with extensive custom tinting and coating options available.
 - **Comfort & Fit:** Hypoallergenic silicone nose pads providing a secure and comfortable fit for extended use.
-- **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 300 pieces for global export.
+- **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 200 pieces for global export.
 
 ## Perfect For
 
@@ -65,4 +65,4 @@ Fusing lightweight performance with a sophisticated unisex aesthetic, the KSS-03
 
 Each frame features CNC-machined precision and 2+1 barrel hinges to ensure a flawless finish and lasting operational reliability.
 
-Offering full OEM and ODM customization from a 300-piece minimum, this model empowers premium brands and independent designers to expand their luxury eyewear portfolios.
+Offering full OEM and ODM customization from a 200-piece minimum, this model empowers premium brands and independent designers to expand their luxury eyewear portfolios.

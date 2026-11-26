@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Màu sợi carbon nguyên bản (Đen mờ, Đen bóng, Vân màu, Carbon rèn)"
 materials: "Sợi carbon cao cấp"
 serviceMode: "OEM & ODM ( Tùy chỉnh theo yêu cầu )"
-moq: "300 cái/mẫu"
+moq: "200 cái/mẫu"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Kính mát sợi carbon cổ điển sang trọng KSS-033 | Nhà sản xuất OEM"
-seoDescription: "Hợp tác với nhà sản xuất hàng đầu Trung Quốc cho kính mát sợi carbon sang trọng KSS-033. Gọng kính hàng không độ bền cao với MOQ 300 và dịch vụ OEM/ODM toàn cầu đầy đủ."
+seoDescription: "Hợp tác với nhà sản xuất hàng đầu Trung Quốc cho kính mát sợi carbon sang trọng KSS-033. Gọng kính hàng không độ bền cao với MOQ 200 và dịch vụ OEM/ODM toàn cầu đầy đủ."
 seoKeywords: "nhà sản xuất kính mát sợi carbon, kính mát OEM tùy chỉnh, kính mắt nhãn hiệu riêng Trung Quốc, gọng kính sợi carbon bán sỉ, nhà cung cấp kính mát sang trọng"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "nhà sản xuất kính mát sợi carbon, kính mát OEM tùy ch�
 - **Quang học cao cấp:** Tròng kính nylon bền bỉ cung cấp độ rõ nét hiệu suất cao với nhiều tùy chọn nhuộm màu và phủ lớp bảo vệ tùy chỉnh.
 - **Thoải mái cả ngày:** Đệm mũi silicone không gây dị ứng được thiết kế để vừa vặn an toàn, không gây áp lực trong quá trình sử dụng chuyên nghiệp kéo dài.
 - **Tính thẩm mỹ đa dạng:** Nhiều lớp hoàn thiện sợi carbon bao gồm Đen mờ, Đen bóng và Carbon rèn để phù hợp với các bản sắc thương hiệu khác nhau.
-- **Sản xuất linh hoạt:** Dịch vụ tùy chỉnh OEM và ODM toàn diện với MOQ 300 chiếc cạnh tranh cho phân phối bán sỉ toàn cầu.
+- **Sản xuất linh hoạt:** Dịch vụ tùy chỉnh OEM và ODM toàn diện với MOQ 200 chiếc cạnh tranh cho phân phối bán sỉ toàn cầu.
 
 ## Phù hợp cho
 
@@ -64,4 +64,4 @@ seoKeywords: "nhà sản xuất kính mát sợi carbon, kính mát OEM tùy ch�
 
 Sự tích hợp của bản lề thùng 2+1 được kỹ thuật chính xác và đệm mũi silicone không gây dị ứng đảm bảo sự thoải mái cả ngày và độ bền lâu dài cho nhiều đối tượng người dùng khác nhau.
 
-Hỗ trợ đầy đủ phạm vi OEM và ODM với số lượng đặt hàng tối thiểu thấp 300 chiếc, mẫu kính này cho phép các nhãn hiệu xa xỉ và nhà thiết kế độc lập dễ dàng tích hợp cải tiến vật liệu tiên tiến vào bộ sưu tập nhãn hiệu riêng của họ.
+Hỗ trợ đầy đủ phạm vi OEM và ODM với số lượng đặt hàng tối thiểu thấp 200 chiếc, mẫu kính này cho phép các nhãn hiệu xa xỉ và nhà thiết kế độc lập dễ dàng tích hợp cải tiến vật liệu tiên tiến vào bộ sưu tập nhãn hiệu riêng của họ.

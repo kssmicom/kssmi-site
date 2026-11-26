@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Orijinal Karbon Fiber Rengi (Mat Siyah, Parlak Siyah, Renkli Dokuma, Dövme Karbon)"
 materials: "Premium Karbon Fiber"
 serviceMode: "OEM ve ODM ( Özelleştirme )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -38,7 +38,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-028 Lüks Klasik Karbon Fiber Güneş Gözlüğü | OEM Üreticisi"
-seoDescription: "KSS-028 havacılık sınıfı karbon fiber güneş gözlükleri için önde gelen bir Çinli ihracat üreticisi ile ortaklık kurun. Özel markalı marka ölçeklendirmesi için OEM/ODM konusunda uzmanlaşmıştır. 300 MOQ."
+seoDescription: "KSS-028 havacılık sınıfı karbon fiber güneş gözlükleri için önde gelen bir Çinli ihracat üreticisi ile ortaklık kurun. Özel markalı marka ölçeklendirmesi için OEM/ODM konusunda uzmanlaşmıştır. 200 MOQ."
 seoKeywords: "karbon fiber güneş gözlüğü üreticisi, özel OEM güneş gözlüğü, özel markalı gözlük Çin, toptan karbon fiber çerçeveler, lüks güneş gözlüğü tedarikçisi, ihracat kalitesinde güneş gözlüğü, OEM ODM güneş gözlüğü özelleştirme, KSS-028 gözlük fabrikası"
 ---
 
@@ -49,7 +49,7 @@ seoKeywords: "karbon fiber güneş gözlüğü üreticisi, özel OEM güneş gö
 - **Birinci Sınıf Optik:** Üstün darbe direnci ile tonlar ve kaplamalar için kapsamlı özelleştirme sunan dayanıklı naylon lensler.
 - **Konfor ve Güvenlik:** Gün boyu güvenli ve rahat bir uyum sağlamak üzere tasarlanmış hipoalerjenik silikon burun tamponları.
 - **Benzersiz Doku:** Üst düzey bir lüks estetiği için mat, parlak veya dövme yüzeylerde sunulan ayırt edici karbon fiber dokuma desenleri.
-- **Ölçeklenebilir Özelleştirme:** Çoklu logo uygulama teknikleri ve 300 adetlik düşük MOQ dahil kapsamlı OEM ve ODM hizmetleri.
+- **Ölçeklenebilir Özelleştirme:** Çoklu logo uygulama teknikleri ve 200 adetlik düşük MOQ dahil kapsamlı OEM ve ODM hizmetleri.
 
 ## İçin Mükemmel
 - Premium Gözlük Markaları
@@ -65,4 +65,4 @@ Havacılık ve uzay kalitesinde karbon fiberden üretilen KSS-028, modern gözl�
 
 Hassas 2+1 varil menteşeler ve darbeye dayanıklı naylon lensler, yüksek performanslı kullanım için yapısal uzun ömür ve optik netlik sağlıyor.
 
-Premium markaların özel gözlük portföylerini ölçeklendirmelerine yardımcı olmak için, ısmarlama dövme dokulardan çeşitli logo uygulamalarına kadar tam ODM ve OEM desteği sunuyoruz (300 adet minimum sipariş miktarı ile).
+Premium markaların özel gözlük portföylerini ölçeklendirmelerine yardımcı olmak için, ısmarlama dövme dokulardan çeşitli logo uygulamalarına kadar tam ODM ve OEM desteği sunuyoruz (200 adet minimum sipariş miktarı ile).

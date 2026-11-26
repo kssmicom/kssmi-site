@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Madeira Dourado & Fibra de Carbono Verde Twill & Fibra de Carbono Trama Simples Gun Mate & Madeira Fibra de Carbono Trama Simples Prata Mate"
 materials: "Fibra de Carbono Premium e Titânio"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
-moq: "300 pçs/modelo"
+moq: "200 pçs/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Armação Óptica de Luxo KSO-032 em Fibra de Carbono | Fabricante OEM"
-seoDescription: "Parceria com um principal fabricante chinês para armações ópticas de luxo KSO-032 em fibra de carbono e titânio. Serviços OEM/ODM completos com MOQ de 300 para marcas próprias."
+seoDescription: "Parceria com um principal fabricante chinês para armações ópticas de luxo KSO-032 em fibra de carbono e titânio. Serviços OEM/ODM completos com MOQ de 200 para marcas próprias."
 seoKeywords: "fabricante armação óptica fibra de carbono, óculos personalizados OEM China, armações fibra de carbono marca própria, atacado óculos ópticos luxo, fábrica óculos titânio fibra de carbono, fornecedor atacado óculos ODM, armações ópticas qualidade exportação, óculos fibra de carbono B2B China"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante armação óptica fibra de carbono, óculos personaliza
 - **Óptica Premium:** Lentes de nylon tenaz que proporcionam resistência superior ao impacto com amplas opções de personalização para clientes B2B globais.
 - **Conforto Todo o Dia:** Ponteiras nasicas de borracha ergonômicas projetadas para um ajuste seguro e hipoalergênico durante o uso diário prolongado.
 - **Texturas Exclusivas:** Acabamentos únicos de fibra de carbono, incluindo padrões de grão de madeira e sarja, proporcionando uma estética de luxo de alto nível.
-- **Fabricação Escalonável:** Capacidades profissionais de personalização OEM e ODM com um baixo MOQ de 300 peças para distribuição mundial.
+- **Fabricação Escalonável:** Capacidades profissionais de personalização OEM e ODM com um baixo MOQ de 200 peças para distribuição mundial.
 
 ## Perfeito Para
 - Marcas de Óculos Premium
@@ -74,4 +74,4 @@ Projetada com uma fusão de alto desempenho de fibra de carbono premium e titân
 
 Um sistema de dobradiças de barril 2+1 construído com precisão garante estabilidade mecânica consistente, enquanto as plaquetas nasais ergonômicas de borracha oferecem conforto hipoalergênico durante todo o dia.
 
-Oferecendo um escopo completo de personalização ODM e OEM com uma baixa quantidade mínima de pedido de 300 peças, este modelo permite que designers independentes e varejistas de alto nível escalem coleções de luxo sob medida com precisão de fabricação.
+Oferecendo um escopo completo de personalização ODM e OEM com uma baixa quantidade mínima de pedido de 200 peças, este modelo permite que designers independentes e varejistas de alto nível escalem coleções de luxo sob medida com precisão de fabricação.

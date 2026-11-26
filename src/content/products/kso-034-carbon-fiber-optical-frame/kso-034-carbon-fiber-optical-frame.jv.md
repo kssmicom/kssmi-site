@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Ireng"
 materials: "Serat Karbon Premium lan Titanium"
 serviceMode: "Produksi Kontrak / Desain lan Produksi ( Kustomisasi )"
-moq: "300 pcs/model"
+moq: "200 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Produsen Frame Optik Serat Karbon Mewah KSO-034 | OEM"
-seoDescription: "Partneran karo pabrik frame optik serat karbon China sing utama kanggo KSO-034. Bahan kelas aerospace nganggo gagang titanium. 300 MOQ kanggo pesenan OEM/ODM."
+seoDescription: "Partneran karo pabrik frame optik serat karbon China sing utama kanggo KSO-034. Bahan kelas aerospace nganggo gagang titanium. 200 MOQ kanggo pesenan OEM/ODM."
 seoKeywords: "produsen frame optik serat karbon, kacamata serat karbon kustom China, grosir frame serat karbon, kacamata titanium serat karbon OEM, pabrik frame optik mewah, kacamata serat karbon label pribadi, supplier ODM kacamata high-end"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "produsen frame optik serat karbon, kacamata serat karbon kustom Ch
 - **Hardware Presisi:** Engsel struktur tong 2+1 sing stabil dirancang kanggo kelancaran operasional sing konsisten lan stabilitas frame.
 - **Optik Premium:** Lensa nylon kuat kanthi pilihan warna lan lapisan kustom sing jembar kasedhiya kanggo nyukupi macem-macem panjaluk pasar.
 - **Keunggulan Manufaktur:** Komponen sing digawe kanthi presisi nuduhake tekstur serat karbon sing unik kanthi sifat hipoalergenik kanggo daya tarik ritel kelas atas.
-- **Kustomisasi B2B:** Manufaktur OEM lan ODM sing bisa dikembangake nyengkuyung logo, ukuran, lan warna kustom kanthi MOQ murah 300 pcs.
+- **Kustomisasi B2B:** Manufaktur OEM lan ODM sing bisa dikembangake nyengkuyung logo, ukuran, lan warna kustom kanthi MOQ murah 200 pcs.
 
 ## Cocok kanggo
 - Merek Kacamata Premium
@@ -62,4 +62,4 @@ KSO-034 nggambarake puncak teknik bahan hibrida, nggabungake serat karbon kelas 
 
 Engsel tong 2+1 sing dirancang kanthi presisi kerjo bareng karo bantalan irung karet terintegrasi kanggo nyedhiyakake pas sing stabil lan ora lunyu kanggo panggunaan profesional sedina muput. Saben frame nuduhake tekstur serat karbon teknologi dhuwur sing khas nalika njaga keamanan hipoalergenik kanggo pangguna pungkasan sing teliti.
 
-Kasedhiya kanggo pangembangan OEM lan ODM sing komprehensif kanthi jumlah pesenan minimal 300 pcs sing fleksibel, model iki ngidini label independen lan rumah mode sing mapan kanggo ngluncurake barisan kacamata kustom kanthi standar manufaktur kelas donya.
+Kasedhiya kanggo pangembangan OEM lan ODM sing komprehensif kanthi jumlah pesenan minimal 200 pcs sing fleksibel, model iki ngidini label independen lan rumah mode sing mapan kanggo ngluncurake barisan kacamata kustom kanthi standar manufaktur kelas donya.

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Altın Ahşap & Fitilli Dokuma Yeşil Karbon Elyaf & Düz Dokuma Mat Füme Karbon Elyaf & Ahşap Düz Dokuma Mat Gümüş Karbon Elyaf"
 materials: "Premium Karbon Elyaf ve Titanyum"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
-moq: "300 adet/model"
+moq: "200 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-030 Lüks Karbon Elyaf Optik Çerçeve | OEM Üreticisi"
-seoDescription: "Lider bir fabrikadan özel KSO-030 karbon elyaf optik çerçeveler sipariş edin. Ahşap dokularla havacılık ve uzay sınıfı güç, özel markalı OEM/ODM için 300 MOQ."
+seoDescription: "Lider bir fabrikadan özel KSO-030 karbon elyaf optik çerçeveler sipariş edin. Ahşap dokularla havacılık ve uzay sınıfı güç, özel markalı OEM/ODM için 200 MOQ."
 seoKeywords: "karbon elyaf optik çerçeve üreticisi, özel karbon elyaf gözlük Çin, özel markalı optik çerçeveler OEM, toptan lüks karbon elyaf çerçeveler, KSO-030 karbon elyaf çerçeve fabrikası, titanyum karbon elyaf gözlük tedarikçisi, premium optik çerçeveler ODM özelleştirme, ihracat kalitesinde karbon elyaf gözlük"
 ---
 
@@ -59,7 +59,7 @@ seoKeywords: "karbon elyaf optik çerçeve üreticisi, özel karbon elyaf gözl�
 - **Dayanıklı Donanım:** Sürekli çalışma pürüzsüzlüğü ve uzun vadeli güvenilirlik için tasarlanmış sağlam 2+1 namlu yapılı menteşeler.
 - **Premium Optik:** Çeşitli pazar ihtiyaçları için kapsamlı özel renklendirme ve kaplama seçeneklerini destekleyen dayanıklı naylon lenslerle donatılmıştır.
 - **Tüm Gün Konfor:** Uzun süreli kullanım sırasında güvenli ve rahat bir uyum için tasarlanmış entegre kauçuk burun tamponları ve hipoalerjenik malzemeler.
-- **Ölçeklenebilir Üretim:** Küresel B2B ihracat standartları için optimize edilmiş, 300 adet MOQ ile kapsamlı OEM ve ODM özelleştirme hizmetleri.
+- **Ölçeklenebilir Üretim:** Küresel B2B ihracat standartları için optimize edilmiş, 200 adet MOQ ile kapsamlı OEM ve ODM özelleştirme hizmetleri.
 
 ## İçin Mükemmel
 - Premium Gözlük Markaları
@@ -75,4 +75,4 @@ Mühendislik mükemmelliği, havacılık sınıfı karbon elyafı titanyumla bir
 
 Her bir ünite, mekanik güvenilirliği garanti eden yüksek performanslı 2+1 namlu menteşelerle desteklenen, ahşap ve fitilli desenler dahil olmak üzere hassas işlenmiş dokulara sahiptir.
 
-Lüks moda evleri ve premium gözlük markaları için optimize edilen üretim tesisimiz, 300 adetlik minimum sipariş miktarı ile tam OEM/ODM özelleştirmesini desteklemektedir.
+Lüks moda evleri ve premium gözlük markaları için optimize edilen üretim tesisimiz, 200 adetlik minimum sipariş miktarı ile tam OEM/ODM özelleştirmesini desteklemektedir.

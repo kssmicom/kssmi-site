@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Gỗ gụ (Gỗ hồng đào Ấn Độ — Vân núi)"
 materials: "Sợi Carbon cao cấp và Titan"
 serviceMode: "Sản xuất gia công & Thiết kế sản xuất ( Tùy chỉnh theo yêu cầu )"
-moq: "300 cái/mẫu"
+moq: "200 cái/mẫu"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Gọng kính cận sợi carbon cao cấp KSO-224 | Nhà sản xuất OEM"
-seoDescription: "KSO-224: Gọng kính cận sợi carbon sang trọng với càng kính titan và lớp hoàn thiện gỗ gụ độc đáo. MOQ 300 cái. Tùy chỉnh OEM/ODM cao cấp cho các thương hiệu kính mắt toàn cầu."
+seoDescription: "KSO-224: Gọng kính cận sợi carbon sang trọng với càng kính titan và lớp hoàn thiện gỗ gụ độc đáo. MOQ 200 cái. Tùy chỉnh OEM/ODM cao cấp cho các thương hiệu kính mắt toàn cầu."
 seoKeywords: "gọng kính sợi carbon, kính titan tùy chỉnh, nhà sản xuất kính cao cấp Trung Quốc, bán buôn gọng kính carbon, xưởng kính OEM"
 ---
 
@@ -64,4 +64,4 @@ Kết hợp sợi carbon cấp hàng không vũ trụ với lớp hoàn thiện 
 
 Càng kính titan nhẹ và bản lề 2+1 thùng mang lại sự ổn định về cấu trúc lâu dài trong khi vẫn duy trì kiểu dáng tinh tế được mong đợi từ các sản phẩm kính mắt cao cấp.
 
-Hỗ trợ tùy chỉnh hoàn toàn theo yêu cầu với số lượng đặt hàng tối thiểu 300 chiếc, mẫu gọng này giúp các nhà mốt cao cấp và các thương hiệu boutique mở rộng danh mục sản phẩm cao cấp của họ.
+Hỗ trợ tùy chỉnh hoàn toàn theo yêu cầu với số lượng đặt hàng tối thiểu 200 chiếc, mẫu gọng này giúp các nhà mốt cao cấp và các thương hiệu boutique mở rộng danh mục sản phẩm cao cấp của họ.

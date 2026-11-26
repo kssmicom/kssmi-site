@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Couleur Fibre de Carbone Originale (Noir Mat, Noir Brillant, Tissage Coloré, Carbone Forgé)"
 materials: "Fibre de Carbone Premium"
 serviceMode: "OEM & ODM ( Personnalisation )"
-moq: "300 pcs/modèle"
+moq: "200 pcs/modèle"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Lunettes de Soleil de Luxe en Fibre de Carbone KSS-012 | Fabricant OEM"
-seoDescription: "Associez-vous à un fabricant chinois de premier plan pour les lunettes de soleil de luxe en fibre de carbone KSS-012. Lunettes en carbone de qualité aérospatiale CNC avec services OEM/ODM et MOQ de 300."
+seoDescription: "Associez-vous à un fabricant chinois de premier plan pour les lunettes de soleil de luxe en fibre de carbone KSS-012. Lunettes en carbone de qualité aérospatiale CNC avec services OEM/ODM et MOQ de 200."
 seoKeywords: "fabricant lunettes de soleil fibre de carbone, montures carbone personnalisées, OEM lunettes luxe Chine, vente en gros lunettes soleil fibre de carbone, lunettes carbone usinées CNC, lunettes soleil luxe marque de distributeur, montures rapport résistance/poids élevé, lunettes carbone aérospatiale premium"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "fabricant lunettes de soleil fibre de carbone, montures carbone pe
 - **Matériel Durable :** Charnières stables à structure en barillet 2+1 conçues pour une fluidité opérationnelle et une fiabilité à long terme.
 - **Optique Premium :** Verres en nylon tenaces offrant une clarté supérieure avec de larges options de teinture et de revêtement personnalisées disponibles.
 - **Confort et Sécurité :** Plaquettes de nez en silicone hypoallergénique conçues pour un confort tout au long de la journée et un ajustement sûr.
-- **Production Évolutive :** Capacités complètes de personnalisation OEM et ODM avec un faible minimum de commande de 300 pièces pour l'exportation mondiale.
+- **Production Évolutive :** Capacités complètes de personnalisation OEM et ODM avec un faible minimum de commande de 200 pièces pour l'exportation mondiale.
 
 ## Parfait Pour
 
@@ -64,4 +64,4 @@ Conçue à partir de fibre de carbone de qualité aérospatiale, la KSS-012 fusi
 
 L'usinage CNC de précision offre des tolérances impeccables sur l'ensemble de la monture, complété par un système de charnière à barillet 2+1 qui maintient une fiabilité opérationnelle fluide. Les plaquettes de nez en silicone hypoallergénique offrent un ajustement sûr et confortable, adapté à un port quotidien.
 
-Nous offrons un support OEM et ODM complet pour ce modèle, permettant aux marques de mode boutique et aux designers indépendants de personnaliser tout, des teintes de verres au marquage gravé au laser. Un faible minimum de commande de 300 pièces offre la flexibilité de fabrication nécessaire pour faire évoluer efficacement les collections premium.
+Nous offrons un support OEM et ODM complet pour ce modèle, permettant aux marques de mode boutique et aux designers indépendants de personnaliser tout, des teintes de verres au marquage gravé au laser. Un faible minimum de commande de 200 pièces offre la flexibilité de fabrication nécessaire pour faire évoluer efficacement les collections premium.

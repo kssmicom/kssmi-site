@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Original Carbon Fiber Color (Matte Black, Glossy Black, Colored Weave, Forged Carbon)"
 materials: "Premium Carbon Fiber"
 serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -38,7 +38,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-028 Luxury Classic Carbon Fiber Sunglasses | OEM Manufacturer"
-seoDescription: "Partner with a premier Chinese export manufacturer for KSS-028 aerospace-grade carbon fiber sunglasses. Specializing in OEM/ODM for private-label brand scaling. 300 MOQ."
+seoDescription: "Partner with a premier Chinese export manufacturer for KSS-028 aerospace-grade carbon fiber sunglasses. Specializing in OEM/ODM for private-label brand scaling. 200 MOQ."
 seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses, private label eyewear China, wholesale carbon fiber frames, luxury sunglasses supplier, export-quality sunglasses, OEM ODM sunglasses customization, KSS-028 sunglasses factory"
 ---
 
@@ -49,7 +49,7 @@ seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses, priva
 - **Premium Optics:** Tenacious nylon lenses featuring superior impact resistance with extensive customization for tints and coatings.
 - **Comfort & Safety:** Hypoallergenic silicone nose pads designed to provide a secure and comfortable fit for all-day wear.
 - **Unique Texture:** Distinctive carbon fiber weave patterns available in matte, glossy, or forged finishes for a high-end luxury aesthetic.
-- **Scalable Customization:** Comprehensive OEM & ODM services including multi-logo application techniques and a low MOQ of 300 pieces.
+- **Scalable Customization:** Comprehensive OEM & ODM services including multi-logo application techniques and a low MOQ of 200 pieces.
 
 ## Perfect For
 - Premium Eyewear Brands
@@ -65,6 +65,6 @@ Crafted from aerospace-grade carbon fiber, the KSS-028 brings a sophisticated, h
 
 Precision 2+1 barrel hinges and impact-resistant nylon lenses ensure structural longevity and optical clarity for high-performance use.
 
-We provide full ODM and OEM support—from bespoke forged textures to diverse logo applications—with a 300-piece minimum to help premium brands scale their exclusive eyewear portfolios.
+We provide full ODM and OEM support—from bespoke forged textures to diverse logo applications—with a 200-piece minimum to help premium brands scale their exclusive eyewear portfolios.
 
 

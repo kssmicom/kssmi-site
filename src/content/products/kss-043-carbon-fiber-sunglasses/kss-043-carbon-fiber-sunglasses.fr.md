@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Couleur Originale de la Fibre de Carbone (Noir Mat, Noir Brillant, Tissage Coloré, Carbone Forgé)"
 materials: "Fibre de Carbone Premium"
 serviceMode: "Fabrication sous Contrat (OEM) & Conception et Fabrication (ODM) ( Personnalisation )"
-moq: "300 pcs/modèle"
+moq: "200 pcs/modèle"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -40,7 +40,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Lunettes de Soleil de Luxe en Fibre de Carbone KSS-043 | Usine OEM"
-seoDescription: "Associez-vous à une usine chinoise de premier plan pour les lunettes de soleil de luxe en fibre de carbone KSS-043. Montures légères à haute résistance avec un MOQ de 300. Expert OEM/ODM pour les marques."
+seoDescription: "Associez-vous à une usine chinoise de premier plan pour les lunettes de soleil de luxe en fibre de carbone KSS-043. Montures légères à haute résistance avec un MOQ de 200. Expert OEM/ODM pour les marques."
 seoKeywords: "fabricant de lunettes de soleil en fibre de carbone, vente en gros de lunettes de soleil KSS-043, lunettes en fibre de carbone personnalisées Chine, usine de lunettes de marque privée, montures en carbone de luxe OEM, fournisseur de lunettes haut de gamme, lunettes de qualité aérospatiale ODM, lunettes en carbone qualité export"
 ---
 
@@ -51,7 +51,7 @@ seoKeywords: "fabricant de lunettes de soleil en fibre de carbone, vente en gros
 - **Optique Premium :** Verres en nylon robustes offrant une clarté haute performance avec de nombreuses options de teinte et de revêtement personnalisées disponibles.
 - **Confort Optimisé :** Plaquettes de nez en silicone hypoallergénique et structure flexible assurant un ajustement sûr et sans pression pour une utilisation professionnelle prolongée.
 - **Esthétique Personnalisée :** Plusieurs options de finition, notamment Noir Mat, Noir Brillant et Carbone Forgé, pour correspondre aux identités spécifiques des marques de luxe.
-- **Production Évolutive :** Services de personnalisation OEM et ODM complets avec un MOQ compétitif de 300 pièces adapté aux marchés d'exportation mondiaux.
+- **Production Évolutive :** Services de personnalisation OEM et ODM complets avec un MOQ compétitif de 200 pièces adapté aux marchés d'exportation mondiaux.
 
 ## Parfait Pour
 
@@ -68,4 +68,4 @@ Alliant durabilité de qualité aérospatiale et profil ultra-léger, le modèle
 
 La montature est dotée d'un système de charnières à barillet 2+1 calibré avec précision et de verres en nylon robustes, garantissant stabilité structurelle et clarté optique dans un design élégant et hypoallergénique.
 
-Avec la prise en charge des finitions mates, brillantes ou en carbone forgé et un faible MOQ de 300 pièces, notre offre complète OEM/ODM permet aux designers d'intégrer des lunettes en fibre de carbone sur mesure, en direct du fabricant, dans leurs collections de luxe.
+Avec la prise en charge des finitions mates, brillantes ou en carbone forgé et un faible MOQ de 200 pièces, notre offre complète OEM/ODM permet aux designers d'intégrer des lunettes en fibre de carbone sur mesure, en direct du fabricant, dans leurs collections de luxe.

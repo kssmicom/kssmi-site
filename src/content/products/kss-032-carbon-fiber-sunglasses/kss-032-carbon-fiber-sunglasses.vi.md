@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Màu sợi carbon nguyên bản (Đen mờ, Đen bóng, Dệt màu, Carbon rèn)"
 materials: "Sợi carbon cao cấp"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
-moq: "300 cái/mẫu"
+moq: "200 cái/mẫu"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -37,7 +37,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Kính mát sợi carbon cổ điển sang trọng KSS-032 | Nhà máy OEM"
-seoDescription: "Hợp tác với nhà sản xuất xuất khẩu hàng đầu Trung Quốc cho kính mát sợi carbon sang trọng KSS-032. Cung cấp tùy chỉnh OEM/ODM đầy đủ với MOQ 300 cho các thương hiệu toàn cầu."
+seoDescription: "Hợp tác với nhà sản xuất xuất khẩu hàng đầu Trung Quốc cho kính mát sợi carbon sang trọng KSS-032. Cung cấp tùy chỉnh OEM/ODM đầy đủ với MOQ 200 cho các thương hiệu toàn cầu."
 seoKeywords: "nhà sản xuất kính mát sợi carbon, kính mát OEM tùy chỉnh, kính mắt nhãn hiệu riêng Trung Quốc, bán buôn gọng sợi carbon, nhà cung cấp kính mát sang trọng, nhà máy kính mắt CNC, kính mát chất lượng xuất khẩu, tùy chỉnh kính mắt B2B"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "nhà sản xuất kính mát sợi carbon, kính mát OEM tùy ch�
 - **Phụ kiện bền bỉ:** Bản lề cấu trúc thùng 2+1 ổn định được thiết kế để vận hành trơn tru lâu dài.
 - **Quang học cao cấp:** Tròng kính nylon bền bỉ với nhiều tùy chọn màu sắc và lớp phủ tùy chỉnh.
 - **Thoải mái và An toàn:** Đệm mũi silicone không gây dị ứng được thiết kế để mang lại sự thoải mái cả ngày và vừa vặn an toàn.
-- **Sản xuất linh hoạt:** Khả năng tùy chỉnh OEM và ODM đầy đủ với số lượng đặt hàng tối thiểu thấp 300 cái để xuất khẩu toàn cầu.
+- **Sản xuất linh hoạt:** Khả năng tùy chỉnh OEM và ODM đầy đủ với số lượng đặt hàng tối thiểu thấp 200 cái để xuất khẩu toàn cầu.
 
 ## Phù hợp cho
 - Thương hiệu kính mắt cao cấp
@@ -63,4 +63,4 @@ seoKeywords: "nhà sản xuất kính mát sợi carbon, kính mát OEM tùy ch�
 
 Mỗi thành phần đều được gia công CNC tỉ mỉ để đảm bảo dung sai chính xác, trong khi bản lề thùng 2+1 và đệm mũi silicone không gây dị ứng mang lại sự kết hợp liền mạch giữa độ bền cơ học và sự thoải mái cá nhân.
 
-Kssmi cung cấp hỗ trợ OEM và ODM toàn diện với số lượng đặt hàng tối thiểu linh hoạt là 300 chiếc, cho phép các nhà bán lẻ toàn cầu tung ra các bộ sưu tập sợi carbon được thiết kế riêng với màu tròng kính tùy chỉnh và thương hiệu chuyên dụng.
+Kssmi cung cấp hỗ trợ OEM và ODM toàn diện với số lượng đặt hàng tối thiểu linh hoạt là 200 chiếc, cho phép các nhà bán lẻ toàn cầu tung ra các bộ sưu tập sợi carbon được thiết kế riêng với màu tròng kính tùy chỉnh và thương hiệu chuyên dụng.

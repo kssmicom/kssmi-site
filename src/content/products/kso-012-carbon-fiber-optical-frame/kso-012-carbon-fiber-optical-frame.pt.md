@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Fibra de Carbono & Ébano do Ceilão & Carvalho Branco & Sapele"
 materials: "Fibra de Carbono Premium e Titânio"
 serviceMode: "OEM & ODM ( Personalização )"
-moq: "300 pçs/modelo"
+moq: "200 pçs/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -47,7 +47,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-012 Armação Óptica de Fibra de Carbono de Luxo | Fornecedor Atacadista"
-seoDescription: "Adquira armações ópticas KSO-012 de fibra de carbono ultraleves com hastes de titânio de uma das principais fábricas de exportação chinesas. Personalização OEM/ODM completa com MOQ de 300 peças."
+seoDescription: "Adquira armações ópticas KSO-012 de fibra de carbono ultraleves com hastes de titânio de uma das principais fábricas de exportação chinesas. Personalização OEM/ODM completa com MOQ de 200 peças."
 seoKeywords: "armações ópticas de fibra de carbono, fabricante de óculos personalizados, óculos de titânio e fibra de carbono, atacado de armações ópticas China, fábrica de óculos private label, armações de fibra de carbono de luxo OEM, fornecedor de óculos usinados em CNC, fabricante de exportação de armações ópticas"
 ---
 
@@ -57,7 +57,7 @@ seoKeywords: "armações ópticas de fibra de carbono, fabricante de óculos per
 - **Ferragens Duráveis:** Dobradiças estáveis com estrutura de barril 2+1 projetadas para suavidade operacional a longo prazo e manutenção fácil.
 - **Óptica Premium:** Lentes de nylon tenaz com amplas opções de tintagem e revestimento personalizados disponíveis para um branding versátil.
 - **Conforto Ergonômico:** Ponteiras nasicas de silicone hipoalergênico projetadas para um ajuste seguro e confortável durante todo o dia.
-- **Produção Escalável:** Capacidades completas de personalização OEM e ODM com uma quantidade mínima de pedido de apenas 300 peças para exportação global.
+- **Produção Escalável:** Capacidades completas de personalização OEM e ODM com uma quantidade mínima de pedido de apenas 200 peças para exportação global.
 
 ## Perfeito Para
 - Marcas de Óculos Premium
@@ -73,4 +73,4 @@ Projetado para marcas de elite, o modelo KSO-012 funde fibra de carbono de grau 
 
 A integração de dobradiças de barril 2+1 e ponteiras nasicas de silicone hipoalergênicas garante uma suavidade operacional refinada e um ajuste seguro e confortável para uso durante todo o dia.
 
-Oferecendo ampla personalização OEM e ODM com uma quantidade mínima de pedido de 300 peças, a Kssmi permite que designers independentes e marcas de luxo ampliem suas colecciones com óculos técnicos fabricados com precisão.
+Oferecendo ampla personalização OEM e ODM com uma quantidade mínima de pedido de 200 peças, a Kssmi permite que designers independentes e marcas de luxo ampliem suas colecciones com óculos técnicos fabricados com precisão.

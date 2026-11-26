@@ -7,7 +7,7 @@ date: "2026-04-01"
 colors: "Warna Serat Karbon Asli (Ireng Mate, Ireng Mengkilap, Anyaman Berwarna, Karbon Tempa)"
 materials: "Serat Karbon Premium"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
-moq: "300 pcs/model"
+moq: "200 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-011 Kacamata Serat Karbon Kustom | Supplier OEM"
-seoDescription: "Kacamata serat karbon kelas aeroangkasa premium saka produsen ekspor China kanthi kustomisasi OEM/ODM lengkap lan label pribadi wiwit 300 MOQ."
+seoDescription: "Kacamata serat karbon kelas aeroangkasa premium saka produsen ekspor China kanthi kustomisasi OEM/ODM lengkap lan label pribadi wiwit 200 MOQ."
 seoKeywords: "produsen kacamata serat karbon, kacamata OEM kustom, kacamata label pribadi China, bingkai serat karbon grosir, pabrik kacamata CNC, kacamata olahraga OEM, supplier kacamata mewah, kacamata kualitas ekspor"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "produsen kacamata serat karbon, kacamata OEM kustom, kacamata labe
 - **Optik Premium:** Lensa nilon sing kuwat kanthi pilihan warna lan lapisan kustom sing jembar kanggo ngebaki panjaluk pasar sing beda-beda.
 - **Hardware Presisi:** Engsel struktur tong 2+1 sing stabil dirancang kanggo operasi sing lancar jangka panjang lan kinerja sing ajeg.
 - **Kanyamanan Sedina Muput:** Bantalan irung silikon hipoalergenik sing dirancang kanggo pas sing aman lan nyaman sajrone nggunakake suwe.
-- **Produksi Bisa Diatur:** Kapabilitas kustomisasi OEM lan ODM lengkap kalebu aplikasi logo (cetak, laser, cap panas, logam, timbulan), kanthi jumlah pesenan minimal 300 pcs saben model.
+- **Produksi Bisa Diatur:** Kapabilitas kustomisasi OEM lan ODM lengkap kalebu aplikasi logo (cetak, laser, cap panas, logam, timbulan), kanthi jumlah pesenan minimal 200 pcs saben model.
 - **Fleksibilitas Ukuran:** Kasedhiya ing ukuran standar 49-19-145mm kanthi pilihan kustomisasi lengkap kanggo ndukung syarat label pribadi lan merek tartamtu.
 
 ## Cocok kanggo
@@ -64,4 +64,4 @@ Dirancang kanggo daya tahan tanpa beban sing abot, KSS-011 nggunakake serat karb
 
 Arsitektur engsel tong 2+1 sing stabil lan bantalan irung silikon hipoalergenik njamin kenyamanan jangka panjang lan operasi yang bisa dipercaya sajrone pirang-pirang taun panggunaan saben dina.
 
-Nyedyakake kustomisasi OEM lan ODM lengkap wiwit saka jumlah pesenan minimal 300 pcs, model iki nawakake dhasar sing bisa dikembangake kanggo omah mode mewah lan label gaya urip olahraga sing golek kaluwihan pasar sing beda.
+Nyedyakake kustomisasi OEM lan ODM lengkap wiwit saka jumlah pesenan minimal 200 pcs, model iki nawakake dhasar sing bisa dikembangake kanggo omah mode mewah lan label gaya urip olahraga sing golek kaluwihan pasar sing beda.

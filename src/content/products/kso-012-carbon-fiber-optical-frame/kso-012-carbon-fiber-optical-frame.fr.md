@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Fibre de Carbone & Ébène de Ceylan & Chêne Blanc & Sapele"
 materials: "Fibre de Carbone Premium et Titane"
 serviceMode: "OEM & ODM ( Personnalisation )"
-moq: "300 pcs/modèle"
+moq: "200 pcs/modèle"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -47,7 +47,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-012 Monture Optique en Fibre de Carbone de Luxe | Fournisseur en Gros"
-seoDescription: "Achetez des montures optiques KSO-012 en fibre de carbone ultra-légères avec branches en titane auprès d'une usine d'exportation chinoise de premier plan. Personnalisation OEM/ODM complète avec MOQ de 300 pièces."
+seoDescription: "Achetez des montures optiques KSO-012 en fibre de carbone ultra-légères avec branches en titane auprès d'une usine d'exportation chinoise de premier plan. Personnalisation OEM/ODM complète avec MOQ de 200 pièces."
 seoKeywords: "montures optiques en fibre de carbone, fabricant de lunettes personnalisées, lunettes en titane et fibre de carbone, vente en gros de montures optiques Chine, usine de lunettes sous marque de distributeur, montures en fibre de carbone de luxe OEM, fournisseur de lunettes usinées CNC, fabricant d'exportation de montures optiques"
 ---
 
@@ -57,7 +57,7 @@ seoKeywords: "montures optiques en fibre de carbone, fabricant de lunettes perso
 - **Matériel Durable :** Charnières stables à structure en barillet 2+1 conçues pour une fluidité opérationnelle à long terme et un entretien facile.
 - **Optique Premium :** Verres en nylon tenace avec de nombreuses options de teinte et de revêtement personnalisées disponibles pour un branding polyvalent.
 - **Confort Ergonomique :** Plaquettes de nez en silicone hypoallergénique conçues pour un ajustement sûr et confortable toute la journée.
-- **Production Évolutive :** Capacités complètes de personnalisation OEM & ODM avec une quantité minimale de commande de seulement 300 pièces pour l'exportation mondiale.
+- **Production Évolutive :** Capacités complètes de personnalisation OEM & ODM avec une quantité minimale de commande de seulement 200 pièces pour l'exportation mondiale.
 
 ## Parfait Pour
 - Marques de Lunettes Premium
@@ -73,4 +73,4 @@ Conçu pour les marques d'élite, le modèle KSO-012 fusionne la fibre de carbon
 
 L'intégration de charnières à barillet 2+1 et de plaquettes de nez en silicone hypoallergénique assure une fluidité opérationnelle raffinée et un ajustement sûr et confortable pour un port tout au long de la journée.
 
-Offrant une personnalisation OEM et ODM étendue avec une quantité minimale de commande de 300 pièces, Kssmi permet aux designers indépendants et aux marques de luxe d'élargir leurs collections avec des lunettes techniques fabriquées avec précision.
+Offrant une personnalisation OEM et ODM étendue avec une quantité minimale de commande de 200 pièces, Kssmi permet aux designers indépendants et aux marques de luxe d'élargir leurs collections avec des lunettes techniques fabriquées avec précision.

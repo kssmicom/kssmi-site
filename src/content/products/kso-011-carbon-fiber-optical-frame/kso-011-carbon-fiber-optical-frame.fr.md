@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Fibre de Carbone & Ébène de Ceylan & Chêne Blanc & Sapele"
 materials: "Fibre de Carbone Premium et Titane"
 serviceMode: "OEM & ODM ( Personnalisation )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Monture Optique Luxe en Fibre de Carbone KSO-011 | Fournisseur en Gros"
-seoDescription: "Associez-vous à un fabricant chinois de premier plan pour les montures optiques de luxe KSO-011 en fibre de carbone avec branches en titane. OEM/ODM pour marques privées avec MOQ 300."
+seoDescription: "Associez-vous à un fabricant chinois de premier plan pour les montures optiques de luxe KSO-011 en fibre de carbone avec branches en titane. OEM/ODM pour marques privées avec MOQ 200."
 seoKeywords: "fabricant montures optiques fibre de carbone, lunettes titane personnalisées Chine, montures fibre de carbone marque propre, lunettes optiques luxe en gros, usine lunettes fibre de carbone OEM, fournisseur B2B montures optiques, OEM lunettes fibre de carbone haut de gamme, montures optiques qualité export"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricant montures optiques fibre de carbone, lunettes titane pers
 - **Confort Avancé :** Plaquettes de nez en titane intégrées offrant un ajustement hypoallergénique et résistant à la corrosion pour le confort de l'utilisateur à long terme.
 - **Optique Premium :** Verres en nylon multifonctionnels conçus pour une haute résistance aux chocs avec de vastes possibilités de teinte et de revêtement personnalisés.
 - **Finition Exquise :** Texture unique en fibre de carbone et design de luxe unisexe répondant aux exigences esthétiques des détaillants de lunettes haut de gamme.
-- **Personnalizzazione Completa :** Services professionnels OEM et ODM incluant l'application de logos personnalisés et des modifications de matériel à partir d'un MOQ de 300 pièces.
+- **Personnalizzazione Completa :** Services professionnels OEM et ODM incluant l'application de logos personnalisés et des modifications de matériel à partir d'un MOQ de 200 pièces.
 
 ## Parfait Pour
 - Marques de Lunettes Premium
@@ -74,4 +74,4 @@ Conçu pour le marché exigeant du luxe, le modèle KSO-011 fusionne la fibre de
 
 Les charnières à 2+1 barillets et les plaquettes de nez en titane, fabriquées avec précision, offrent un ajustement sans effort et une intégrité structurelle à long terme.
 
-Disponible pour une personnalisation OEM et ODM étendue à partir d'un MOQ de 300 pièces, ce modèle permet aux marques propres d'intégrer une technologie de pointe en matériaux composites dans leurs collections signatures.
+Disponible pour une personnalisation OEM et ODM étendue à partir d'un MOQ de 200 pièces, ce modèle permet aux marques propres d'intégrer une technologie de pointe en matériaux composites dans leurs collections signatures.

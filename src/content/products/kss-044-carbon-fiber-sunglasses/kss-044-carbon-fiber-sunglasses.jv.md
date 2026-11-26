@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Warna Serat Karbon Asli (Ireng Matte, Ireng Kinclong, Tenunan Warna, Karbon Tempa)"
 materials: "Serat Karbon Premium"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi)"
-moq: "300 pcs/model"
+moq: "200 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-044 Kacamata Hitam Serat Karbon Mewah | Produsen OEM Kustom"
-seoDescription: "Pesen kacamata hitam serat karbon KSS-044 premium saka produsen OEM terkemuka ing China. Kita nawakake kustomisasi ODM lengkap kanggo merek mewah kanthi MOQ 300 unit."
+seoDescription: "Pesen kacamata hitam serat karbon KSS-044 premium saka produsen OEM terkemuka ing China. Kita nawakake kustomisasi ODM lengkap kanggo merek mewah kanthi MOQ 200 unit."
 seoKeywords: "produsen kacamata hitam serat karbon, kacamata hitam OEM kustom, kacamata label pribadi China, grosir frame serat karbon, supplier kacamata hitam mewah, kacamata serat karbon kustom, produsen kacamata hitam B2B, kacamata kualitas ekspor China"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "produsen kacamata hitam serat karbon, kacamata hitam OEM kustom, k
 - **Hardware Awet:** Engsel struktur tong 2+1 sing stabil dirancang kanggo kelancaran operasional jangka panjang lan integritas struktural.
 - **Kenyamanan Luwih:** Bantalan irung silikon hypoallergenic sing dirancang kanggo mesthekake pas sing aman lan nyaman nalika dienggo suwe.
 - **Teknik Presisi:** Tekstur tenunan serat karbon sing unik nawakake estetika mewah berteknologi tinggi kanthi daya tahan bahan sing unggul.
-- **Produksi Scalable:** Kapasitas kustomisasi OEM & ODM lengkap kanthi jumlah pesenan minimal 300 pcs kanggo ekspor B2B global.
+- **Produksi Scalable:** Kapasitas kustomisasi OEM & ODM lengkap kanthi jumlah pesenan minimal 200 pcs kanggo ekspor B2B global.
 
 ## Cocok kanggo
 - Merek Kacamata Premium
@@ -63,4 +63,4 @@ Kanggo KSS-044, inovasi bahan ketemu karo estetika sing langgeng. Konstruksi ser
 
 Hardware sing dirancang kanthi presisi lan bantalan irung silikon hypoallergenic njamin kenyamanan sedina muput lan linuwih mekanik jangka panjang.
 
-Kanthi nyedhiyakake dhukungan ODM lengkap saka logo khusus nganti warna lensa kustom, kita menehi kekuwatan marang merek gaya urip mewah lan desainer independen kanggo nggedhekake portofolio kanthi jumlah pesenan minimal 300 pcs.
+Kanthi nyedhiyakake dhukungan ODM lengkap saka logo khusus nganti warna lensa kustom, kita menehi kekuwatan marang merek gaya urip mewah lan desainer independen kanggo nggedhekake portofolio kanthi jumlah pesenan minimal 200 pcs.

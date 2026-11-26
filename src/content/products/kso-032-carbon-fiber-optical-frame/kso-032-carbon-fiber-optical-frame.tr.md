@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Altın Meşesi & Dimi Desenli Yeşil Karbon Fiber & Düz Desenli Karbon Fiber Mat Tabanca & Ahşap Düz Desenli Karbon Fiber Mat Gümüş"
 materials: "Premium Karbon Fiber ve Titanyum"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
-moq: "300 adet/model"
+moq: "200 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-032 Lüks Karbon Fiber Optik Çerçeve | OEM Üreticisi"
-seoDescription: "KSO-032 lüks karbon fiber ve titanyum optik çerçeveler için önde gelen bir Çinli üreticiyle ortaklık yapın. Özel markalar için 300 MOQ ile tam OEM/ODM hizmetleri."
+seoDescription: "KSO-032 lüks karbon fiber ve titanyum optik çerçeveler için önde gelen bir Çinli üreticiyle ortaklık yapın. Özel markalar için 200 MOQ ile tam OEM/ODM hizmetleri."
 seoKeywords: "karbon fiber optik çerçeve üreticisi, özel OEM gözlük Çin, özel marka karbon fiber çerçeveler, toptan lüks optik gözlük, titanyum karbon fiber gözlük fabrikası, ODM gözlük toptan tedarikçisi, ihracat kalitesinde optik çerçeveler, B2B karbon fiber gözlük Çin"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "karbon fiber optik çerçeve üreticisi, özel OEM gözlük Çin, 
 - **Premium Optik:** Küresel B2B müşterileri için kapsamlı özelleştirme seçenekleriyle üstün darbe direnci sağlayan dayanıklı naylon lensler.
 - **Tüm Gün Konfor:** Uzun süreli günlük kullanım sırasında güvenli ve hipoalerjenik bir uyum için tasarlanmış ergonomik kauçuk burun tamponları.
 - **Özel Dokular:** Yüksek kaliteli, lüks bir estetik sunan ahşap desenli ve dimi desenli benzersiz karbon fiber kaplamalar.
-- **Ölçeklenebilir Üretim:** Dünya çapında dağıtım için 300 adetlik düşük MOQ ile profesyonel OEM ve ODM özelleştirme yetenekleri.
+- **Ölçeklenebilir Üretim:** Dünya çapında dağıtım için 200 adetlik düşük MOQ ile profesyonel OEM ve ODM özelleştirme yetenekleri.
 
 ## İçin Mükemmel
 - Premium Gözlük Markaları
@@ -74,4 +74,4 @@ Birinci sınıf karbon fiber ve hafif titanyumun yüksek performanslı birleşim
 
 Hassas bir şekilde inşa edilen 2+1 namlu menteşe sistemi tutarlı bir mekanik stabilite sağlarken, ergonomik kauçuk burun tamponları gün boyu hipoalerjenik konfor sunar.
 
-300 adetlik düşük minimum sipariş miktarı ile tam ODM ve OEM özelleştirme kapsamı sunan bu model, bağımsız tasarımcıların ve üst düzey perakendecilerin ısmarlama lüks koleksiyonlarını üretim hassasiyetiyle ölçeklendirmelerine olanak tanır.
+200 adetlik düşük minimum sipariş miktarı ile tam ODM ve OEM özelleştirme kapsamı sunan bu model, bağımsız tasarımcıların ve üst düzey perakendecilerin ısmarlama lüks koleksiyonlarını üretim hassasiyetiyle ölçeklendirmelerine olanak tanır.

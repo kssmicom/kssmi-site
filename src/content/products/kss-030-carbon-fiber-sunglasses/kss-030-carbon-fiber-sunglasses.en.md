@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Original Carbon Fiber Color (Matte Black, Glossy Black, Colored Weave, Forged Carbon)"
 materials: "Premium Carbon Fiber"
 serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -35,7 +35,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-030 Luxury Carbon Fiber Sunglasses | OEM & ODM Manufacturer"
-seoDescription: "KSS-030 is a premium carbon fiber frame for luxury eyewear brands. Full OEM & ODM customization with 300 MOQ. Partner with a leading Chinese export factory."
+seoDescription: "KSS-030 is a premium carbon fiber frame for luxury eyewear brands. Full OEM & ODM customization with 200 MOQ. Partner with a leading Chinese export factory."
 seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses, private label eyewear China, wholesale carbon fiber frames, luxury sunglasses supplier, export-quality sunglasses, carbon fiber frames factory, Chinese eyewear manufacturer"
 ---
 
@@ -45,7 +45,7 @@ seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses, priva
 - **Durable Hardware:** Stable 2+1 barrel structure hinges engineered for long-term operational smoothness and consistent performance.
 - **Premium Optics:** Tenacious nylon lenses providing superior clarity with extensive custom tinting and coating options.
 - **Comfort & Safety:** Hypoallergenic silicone nose pads designed for all-day comfort and a secure fit.
-- **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 300 pieces for global brand export.
+- **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 200 pieces for global brand export.
 
 ## Perfect For
 - Premium Eyewear Brands
@@ -61,5 +61,5 @@ The KSS-030 showcases the raw technical beauty of premium carbon fiber, offering
 
 Engineered with stable 2+1 barrel hinges and hypoallergenic silicone nose pads, this frame delivers long-term structural integrity and user comfort.
 
-Flexible OEM/ODM customization and a low 300-piece MOQ make this model an ideal foundation for brands looking to expand into luxury performance eyewear.
+Flexible OEM/ODM customization and a low 200-piece MOQ make this model an ideal foundation for brands looking to expand into luxury performance eyewear.
 

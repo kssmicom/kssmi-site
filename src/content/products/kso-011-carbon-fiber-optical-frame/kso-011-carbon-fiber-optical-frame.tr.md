@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Karbon Elyaf & Seylan Abanozu & Beyaz Meşe & Sapele"
 materials: "Premium Karbon Elyaf ve Titanyum"
 serviceMode: "OEM & ODM ( Özelleştirme )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-011 Lüks Karbon Fiber Optik Çerçeve | Toptan Satış Tedarikçisi"
-seoDescription: "Titanyum saplı KSO-011 lüks karbon fiber optik çerçeveler için lider bir Çinli üreticiyle ortak olun. 300 MOQ ile özel markalar için OEM/ODM."
+seoDescription: "Titanyum saplı KSO-011 lüks karbon fiber optik çerçeveler için lider bir Çinli üreticiyle ortak olun. 200 MOQ ile özel markalar için OEM/ODM."
 seoKeywords: "karbon fiber optik çerçeve üreticisi, özel titanyum gözlük Çin, özel marka karbon fiber çerçeveler, toptan lüks optik gözlükler, OEM karbon fiber gözlük fabrikası, B2B optik çerçeve tedarikçisi, yüksek segment karbon fiber gözlük OEM, ihracat kalitesinde optik çerçeveler"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "karbon fiber optik çerçeve üreticisi, özel titanyum gözlük �
 - **Gelişmiş Konfor:** Uzun süreli kullanıcı konforu için hipoalerjenik ve korozyona dayanıklı bir uyum sunan entegre titanyum burun tamponları.
 - **Premium Optik:** Geniş özel renklendirme ve kaplama olanaklarına sahip, yüksek darbe direnci için tasarlanmış çok işlevli naylon lensler.
 - **Zarif Kaplama:** Benzersiz karbon fiber dokusu ve premium gözlük perakendecilerinin estetik taleplerini karşılayan lüks unisex tasarım.
-- **Tam Özelleştirme:** 300 adetlik MOQ'dan başlayan özel logo uygulaması ve donanım modifikasyonlarını içeren profesyonel OEM ve ODM hizmetleri.
+- **Tam Özelleştirme:** 200 adetlik MOQ'dan başlayan özel logo uygulaması ve donanım modifikasyonlarını içeren profesyonel OEM ve ODM hizmetleri.
 
 ## İçin Mükemmel
 - Premium Gözlük Markaları
@@ -74,4 +74,4 @@ Zorlu lüks pazarı için tasarlanan KSO-011, yüksek performanslı karbon fiber
 
 Hassas bir şekilde hazırlanmış 2+1 namlu menteşeler ve titanyum burun tamponları, zahmetsiz ayarlama ve uzun vadeli yapısal bütünlük sağlar.
 
-300 adetlik MOQ'dan başlayan kapsamlı OEM ve ODM özelleştirmesi için mevcut olan bu model, özel markaların gelişmiş kompozit teknolojisini imza koleksiyonlarına entrege etmelerini sağlar.
+200 adetlik MOQ'dan başlayan kapsamlı OEM ve ODM özelleştirmesi için mevcut olan bu model, özel markaların gelişmiş kompozit teknolojisini imza koleksiyonlarına entrege etmelerini sağlar.

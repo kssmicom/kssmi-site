@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Carbon-Fiber & Ceylon-Ebony & White-Oak & Sapele"
 materials: "Premium Carbon Fiber and Titanium"
 serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-010 Luxury Carbon Fiber Optical Frame | OEM Manufacturer"
-seoDescription: "Source high-end KSO-010 luxury carbon fiber optical frames with titanium temples and wood accents from a top Chinese OEM factory. 300 MOQ. Inquire today!"
+seoDescription: "Source high-end KSO-010 luxury carbon fiber optical frames with titanium temples and wood accents from a top Chinese OEM factory. 200 MOQ. Inquire today!"
 seoKeywords: "carbon fiber optical frames manufacturer, custom titanium carbon fiber eyewear, luxury optical frames OEM China, wholesale wood accent eyewear, private label carbon fiber frames, eyewear factory Shenzhen, high-end optical frames supplier, export-quality carbon fiber eyewear"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "carbon fiber optical frames manufacturer, custom titanium carbon f
 - **Durable Hardware:** Stable 2+1 barrel structure hinges engineered for long-term operational smoothness and structural integrity.
 - **Premium Optics:** Tenacious nylon lenses providing superior clarity with extensive custom tinting and coating options available.
 - **Ergonomic Comfort:** Professional metal nose pads and a precision-balanced frame structure ensuring a secure and comfortable fit.
-- **Scalable Production:** Comprehensive OEM & ODM customization capabilities with a low minimum order quantity of 300 pieces for global export.
+- **Scalable Production:** Comprehensive OEM & ODM customization capabilities with a low minimum order quantity of 200 pieces for global export.
 
 ## Perfect For
 - Premium Eyewear Brands
@@ -74,4 +74,4 @@ Engineered for the high-end luxury segment, the KSO-010 merges aerospace-grade c
 
 The precision-engineered 2+1 barrel structure hinges ensure long-term mechanical stability and a refined, secure fit.
 
-Supporting comprehensive OEM and ODM development with a 300-piece minimum order, this model empowers independent designers and premium labels to integrate high-tech material innovation into their bespoke collections.
+Supporting comprehensive OEM and ODM development with a 200-piece minimum order, this model empowers independent designers and premium labels to integrate high-tech material innovation into their bespoke collections.

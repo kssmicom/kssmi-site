@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Preto"
 materials: "Fibra de Carbono Premium e Titânio"
 serviceMode: "OEM & ODM ( Personalização )"
-moq: "300 pçs/modelo"
+moq: "200 pçs/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Fabricante de Armações Ópticas de Fibra de Carbono KSO-034 | OEM"
-seoDescription: "Parceria com uma fábrica líder na China de armações ópticas de fibra de carbono para o KSO-034. Material de grau aeroespacial com hastes de titânio. MOQ 300."
+seoDescription: "Parceria com uma fábrica líder na China de armações ópticas de fibra de carbono para o KSO-034. Material de grau aeroespacial com hastes de titânio. MOQ 200."
 seoKeywords: "fabricante de armação óptica de fibra de carbono, óculos personalizados de fibra de carbono China, armações de fibra de carbono atacado, óculos de titânio e fibra de carbono OEM, fábrica de armação óptica de luxo, óculos de fibra de carbono marca própria, fornecedor ODM de óculos de alta gama"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "fabricante de armação óptica de fibra de carbono, óculos perso
 - **Ferragens de Precisão:** Dobradiças estáveis de estrutura de barril 2+1 projetadas para uma suavidade operacional consistente e estabilidade da armação.
 - **Ótica Premium:** Lentes de nylon tenaz com amplas opções de tingimento e revestimento personalizadas disponíveis para atender às diversas demandas do mercado.
 - **Excelência na Fabricação:** Componentes fabricados com precisão que exibem uma textura única de fibra de carbono com propriedades hipoalergênicas para um apelo de varejo de alto nível.
-- **Personalização B2B:** Fabricação OEM e ODM escalável que suporta logotipos, tamanhos e cores personalizados com um MOQ baixo de 300 peças.
+- **Personalização B2B:** Fabricação OEM e ODM escalável que suporta logotipos, tamanhos e cores personalizados com um MOQ baixo de 200 peças.
 
 ## Perfeito Para
 - Marcas de Óculos Premium
@@ -62,4 +62,4 @@ O KSO-034 representa o ápice da engenharia de materiais híbridos, fundindo fib
 
 As dobradiças de barril 2+1 projetadas com precisão trabalham em conjunto com as ponteiras nasais de borracha integradas para fornecer um ajuste estável e antiderrapante para uso profissional durante todo o dia. Cada armação exibe a textura distinta e de alta tecnologia della fibra de carbono, mantendo ao mesmo tempo a segurança hipoalergênica para utilizadores finais exigentes.
 
-Disponível para um desenvolvimento abrangente OEM e ODM com uma quantidade mínima de pedido flexível de 300 peças, este modelo permite que etiquetas independentes e casas de moda estabelecidas lancem linhas de óculos sob medida com padrões de fabricação de classe mundial.
+Disponível para um desenvolvimento abrangente OEM e ODM com uma quantidade mínima de pedido flexível de 200 peças, este modelo permite que etiquetas independentes e casas de moda estabelecidas lancem linhas de óculos sob medida com padrões de fabricação de classe mundial.

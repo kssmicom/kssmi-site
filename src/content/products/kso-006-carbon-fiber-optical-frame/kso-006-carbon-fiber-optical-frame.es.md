@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Carbono-Ébano & Roble Blanco & Sapele & Ébano"
 materials: "Fibra de Carbono Premium"
 serviceMode: "OEM & ODM ( Personalización )"
-moq: "300 uds/modelo"
+moq: "200 uds/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Montura Óptica de Fibra de Carbono de Lujo KSO-006 | Fabricante OEM & ODM"
-seoDescription: "Montura óptica de lujo KSO-006 en fibra de carbono con varillas de metal premium. Fabricante líder chino de gafas OEM/ODM para pedidos globales con 300 MOQ."
+seoDescription: "Montura óptica de lujo KSO-006 en fibra de carbono con varillas de metal premium. Fabricante líder chino de gafas OEM/ODM para pedidos globales con 200 MOQ."
 seoKeywords: "fabricante monturas ópticas fibra carbono, gafas personalizadas OEM China, monturas fibra carbono marca propia, fábrica monturas ópticas lujo, mayorista gafas fibra carbono, monturas ópticas calidad exportación, servicio OEM ODM gafas China, proveedor B2B monturas ópticas"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante monturas ópticas fibra carbono, gafas personalizadas O
 - **Ingeniería Flexible:** Bisagras de resorte de alto rendimiento que proporcionan un ajuste cómodo y autoadaptable para diversas formas y tamaños de rostro.
 - **Óptica Premium:** Lentes de nylon tenaz con amplias opciones de tinte y recubrimiento personalizados disponibles para cumplir con las especificaciones de la marca.
 - **Confort Sofisticado:** Almohadillas nasales de metal integradas diseñadas para la durabilidad y un ajuste estable y personalizado durante el uso prolongado.
-- **Producción Escalable:** Capacidades completas de personalización OEM y ODM con una cantidad mínima de pedido de 300 unidades para mayoristas globales.
+- **Producción Escalable:** Capacidades completas de personalización OEM y ODM con una cantidad mínima de pedido de 200 unidades para mayoristas globales.
 
 ## Perfecto Para
 - Marcas de Gafas Premium
@@ -74,4 +74,4 @@ Diseñada para entornos profesionales, esta montura combina un frente de fibra d
 
 Las bisagras de resorte de alto rendimiento y las almohadillas nasales de metal ajustables trabajan en conjunto para proporcionar un ajuste ligero y autoadaptable que mantiene la comodidad durante el uso diario prolongado.
 
-Disponible para el desarrollo ODM completo con una cantidad mínima de pedido accesible de 300 piezas, este modelo permite a los diseñadores independientes y a las boutiques premium ampliar sus carteras de gafas de lujo personalizadas.
+Disponible para el desarrollo ODM completo con una cantidad mínima de pedido accesible de 200 piezas, este modelo permite a los diseñadores independientes y a las boutiques premium ampliar sus carteras de gafas de lujo personalizadas.

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Original Kohlefaserfarbe (Mattschwarz, Glänzend Schwarz, Farbiges Gewebe, Geschmiedetes Carbon)"
 materials: "Premium-Kohlefaser"
 serviceMode: "OEM & ODM ( Individualisierung )"
-moq: "300 Stk/Modell"
+moq: "200 Stk/Modell"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-030 Luxus-Kohlefaser-Sonnenbrille | OEM & ODM Hersteller"
-seoDescription: "Die KSS-030 ist ein Premium-Kohlefaserrahmen für Luxusbrillenmarken. Volle OEM & ODM Anpassung mit 300 MOQ. Partner einer führenden chinesischen Exportfabrik."
+seoDescription: "Die KSS-030 ist ein Premium-Kohlefaserrahmen für Luxusbrillenmarken. Volle OEM & ODM Anpassung mit 200 MOQ. Partner einer führenden chinesischen Exportfabrik."
 seoKeywords: "Kohlefaser Sonnenbrille Hersteller, maßgeschneiderte OEM Sonnenbrille, Private Label Brillen China, Großhandel Kohlefaserrahmen, Luxus Sonnenbrille Lieferant"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "Kohlefaser Sonnenbrille Hersteller, maßgeschneiderte OEM Sonnenbr
 - **Langlebige Hardware:** Stabile 2+1-Zylinderscharniere, entwickelt für langfristige reibungslose Funktion und gleichbleibende Leistung.
 - **Premium-Optik:** Widerstandsfähige Nylon-Gläser für überragende Klarheit mit umfangreichen individuellen Tönungs- und Beschichtungsoptionen.
 - **Komfort & Sicherheit:** Hypoallergene Silikon-Nasenpads, entwickelt für ganztägigen Komfort und sicheren Sitz.
-- **Skalierbare Produktion:** Volle OEM- und ODM-Anpassungsmöglichkeiten mit einer niedrigen Mindestbestellmenge von 300 Stück für den weltweiten Markenexport.
+- **Skalierbare Produktion:** Volle OEM- und ODM-Anpassungsmöglichkeiten mit einer niedrigen Mindestbestellmenge von 200 Stück für den weltweiten Markenexport.
 
 ## Perfekt Für
 - Premium Brillenmarken
@@ -62,4 +62,4 @@ Die KSS-030 präsentiert die rohe technische Schönheit von Premium-Kohlefaser u
 
 Ausgestattet mit stabilen 2+1-Zylinderscharnieren und hypoallergenen Silikon-Nasenpads bietet dieser Rahmen langfristige strukturelle Integrität und Benutzerkomfort.
 
-Flexible OEM/ODM-Anpassungen und eine niedrige Mindestbestellmenge von 300 Stück machen dieses Modell zur idealen Basis für Marken, die in den Bereich der Luxus-Performance-Brillen expandieren möchten.
+Flexible OEM/ODM-Anpassungen und eine niedrige Mindestbestellmenge von 200 Stück machen dieses Modell zur idealen Basis für Marken, die in den Bereich der Luxus-Performance-Brillen expandieren möchten.

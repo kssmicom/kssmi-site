@@ -177,8 +177,8 @@ export default {
       // CTA Section
       startJourney: "Start Your Journey",
       partnerTitle: "Partner to Build Your Private-Label Luxury Eyewear Brand",
-      partnerDesc: "Collaborate with a manufacturer trusted by industry leaders for over a century. Fully customize every aspect—materials, shapes, colors, and technical specifications—delivering exceptional craftsmanship and premium quality at scale.",
-      benefit1: "Decades of expertise in luxury eyewear manufacturing.",
+      partnerDesc: "Collaborate with a manufacturer trusted by industry leaders since 2003. Fully customize every aspect—materials, shapes, colors, and technical specifications—delivering exceptional craftsmanship and premium quality at scale.",
+      benefit1: "Over 20 years of expertise in luxury eyewear manufacturing.",
       benefit2: "Precision customization of materials, design, and technical specs.",
       benefit3: "Exceptional quality control ensuring flawless finishes.",
       benefit4: "Advanced scalable production with consistent accuracy.",

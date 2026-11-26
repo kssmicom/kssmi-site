@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Couleur d'Origine de la Fibre de Carbone (Noir Mat, Noir Brillant, Tissage Coloré, Carbone Forgé)"
 materials: "Fibre de Carbone Premium"
 serviceMode: "Fabrication sous Contrat (OEM) & Conception et Fabrication (ODM)"
-moq: "300 pcs/modèle"
+moq: "200 pcs/modèle"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-029 Lunettes de Soleil de Luxe en Fibre de Carbone | Fabricant OEM"
-seoDescription: "Commandez des lunettes de soleil premium KSS-029 en fibre de carbone auprès d'un fabricant OEM leader en Chine. Montures légères et durables avec charnières 2+1 et MOQ de 300 unités."
+seoDescription: "Commandez des lunettes de soleil premium KSS-029 en fibre de carbone auprès d'un fabricant OEM leader en Chine. Montures légères et durables avec charnières 2+1 et MOQ de 200 unités."
 seoKeywords: "fabricant lunettes de soleil fibre de carbone, OEM lunettes de luxe, lunettes de soleil marque de distributeur Chine, montures fibre de carbone en gros, lunettes fibre de carbone personnalisées, lunettes qualité export, fournisseur lunettes OEM ODM, lunettes de soleil légères fibre de carbone"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "fabricant lunettes de soleil fibre de carbone, OEM lunettes de lux
 - **Matériel Durable :** Charnières stables à structure à barillet 2+1 conçues pour une fluidité de fonctionnement à long terme.
 - **Optique Premium :** Verres en nylon tenace avec de nombreuses options de teinture et de revêtement personnalisées disponibles.
 - **Confort et Sécurité :** Plaquettes de nez en silicone hypoallergénique conçues pour un confort tout au long de la journée et un ajustement sûr.
-- **Production Évolutive :** Capacités complètes de personnalisation OEM et ODM avec une quantité minimale de commande de 300 pièces pour l'exportation mondiale.
+- **Production Évolutive :** Capacités complètes de personnalisation OEM et ODM avec une quantité minimale de commande de 200 pièces pour l'exportation mondiale.
 
 ## Parfait Pour
 - Marques de Lunettes Premium
@@ -61,4 +61,4 @@ La fibre de carbone de qualité aérospatiale définit la KSS-029, offrant une m
 
 Les composants conçus avec précision, notamment un système de charnières à barillet 2+1 durable et des plaquettes de nez en silicone hypoallergénique, garantissent une stabilité à long terme et un confort de port tout au long de la journée.
 
-Avec un support OEM/ODM complet et une quantité minimale de commande de 300 pièces, nous fournissons l'échelle de fabrication et les options de personnalisation sur mesure nécessaires aux marques pour développer des collections de lunettes de marque propre uniques.
+Avec un support OEM/ODM complet et une quantité minimale de commande de 200 pièces, nous fournissons l'échelle de fabrication et les options de personnalisation sur mesure nécessaires aux marques pour développer des collections de lunettes de marque propre uniques.

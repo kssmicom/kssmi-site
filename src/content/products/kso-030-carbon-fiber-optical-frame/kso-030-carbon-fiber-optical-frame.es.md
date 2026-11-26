@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Madera Dorada & Fibra de Carbono Verde con Trama de Sarga & Fibra de Carbono Gris Humo Mate con Trama Plana & Fibra de Carbono Plateada Mate con Trama Plana de Madera"
 materials: "Fibra de Carbono Premium y Titanio"
 serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM) ( Personalización )"
-moq: "300 uds/modelo"
+moq: "200 uds/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-030 Montura Óptica de Fibra de Carbono de Lujo | Fabricante OEM"
-seoDescription: "Pida monturas ópticas de fibra de carbono KSO-030 personalizadas de una fábrica líder. Resistencia de grado aeroespacial con texturas de madera, MOQ 300 para OEM/ODM de marca propia."
+seoDescription: "Pida monturas ópticas de fibra de carbono KSO-030 personalizadas de una fábrica líder. Resistencia de grado aeroespacial con texturas de madera, MOQ 200 para OEM/ODM de marca propia."
 seoKeywords: "fabricante de monturas ópticas de fibra de carbono, gafas de fibra de carbono personalizadas China, monturas ópticas de marca propia OEM, venta al por mayor de monturas de fibra de carbono de lujo, fábrica de monturas de fibra de carbono KSO-030, proveedor de gafas de titanio y fibra de carbono, personalización ODM de monturas ópticas premium, gafas de fibra de carbono calidad de exportación"
 ---
 
@@ -59,7 +59,7 @@ seoKeywords: "fabricante de monturas ópticas de fibra de carbono, gafas de fibr
 - **Herrajes Duraderos:** Bisagras estables con estructura de barril 2+1 diseñadas para una suavidad operativa constante y confiabilidad a largo plazo.
 - **Óptica Premium:** Equipadas con lentes de nylon tenaces que admiten amplias opciones de tintado y recubrimiento personalizados para diversas necesidades del mercado.
 - **Comodidad Todo el Día:** Almohadillas nasales de goma integradas y materiales hipoalergénicos diseñados para un ajuste seguro y cómodo durante el uso prolongado.
-- **Producción Escalable:** Servicios integrales de personalización OEM y ODM con un MOQ de 300 piezas, optimizados para los estándares globales de exportación B2B.
+- **Producción Escalable:** Servicios integrales de personalización OEM y ODM con un MOQ de 200 piezas, optimizados para los estándares globales de exportación B2B.
 
 ## Perfecto Para
 - Marcas de Gafas Premium
@@ -75,4 +75,4 @@ La excelencia en ingeniería es el núcleo del KSO-030, que combina fibra de car
 
 Cada unidad presenta texturas mecanizadas con precisión, incluyendo granos de madera y sarga, respaldadas por bisagras de barril 2+1 de alto rendimiento que garantizan la fiabilidad mecánica.
 
-Optimizada para casas de moda de lujo y marcas de gafas premium, nuestra planta de fabricación admite una personalización OEM/ODM completa con una cantidad mínima de pedido de 300 piezas.
+Optimizada para casas de moda de lujo y marcas de gafas premium, nuestra planta de fabricación admite una personalización OEM/ODM completa con una cantidad mínima de pedido de 200 piezas.

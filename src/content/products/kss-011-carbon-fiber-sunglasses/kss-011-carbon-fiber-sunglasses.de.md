@@ -7,7 +7,7 @@ date: "2026-04-01"
 colors: "Original Kohlefaser-Farben (Mattschwarz, Glänzendes Schwarz, Farbiges Gewebe, Geschmiedetes Carbon)"
 materials: "Premium-Kohlefaser"
 serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) ( Individualisierung )"
-moq: "300 Stk/Modell"
+moq: "200 Stk/Modell"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-011 Individuelle Kohlefaser-Sonnenbrillen | OEM-Lieferant"
-seoDescription: "Hochwertige Kohlefaser-Sonnenbrillen in Luftfahrtqualität von einem chinesischen Export-Hersteller mit voller OEM/ODM- und Eigenmarken-Anpassung ab 300 MOQ."
+seoDescription: "Hochwertige Kohlefaser-Sonnenbrillen in Luftfahrtqualität von einem chinesischen Export-Hersteller mit voller OEM/ODM- und Eigenmarken-Anpassung ab 200 MOQ."
 seoKeywords: "Kohlefaser-Brillenhersteller, individuelle OEM-Sonnenbrille, Eigenmarkenbrillen China, Großhandel Kohlefaserrahmen, CNC-Brillenfabrik, Sportsonnenbrillen OEM, Luxussonnenbrillen-Lieferant, Exportqualität Sonnenbrillen"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "Kohlefaser-Brillenhersteller, individuelle OEM-Sonnenbrille, Eigen
 - **Premium-Optik:** Widerstandsfähige Nylon-Gläser mit umfangreichen individuellen Tönungs- und Beschichtungsoptionen für vielfältige Marktanforderungen.
 - **Präzisions-Hardware:** Stabile 2+1 Fassstruktur-Scharniere für langfristige Laufruhe und wiederholbare Leistung.
 - **Ganztägiger Komfort:** Hypoallergene Silikon-Nasenpads für einen sicheren und bequemen Sitz über längere Zeiträume.
-- **Skalierbare Produktion:** Volle OEM- und ODM-Anpassungsmöglichkeiten einschließlich Logo-Applikation (Druck, Laser, Heißprägung, Metall, Prägung), mit einer geringen Mindestbestellmenge von 300 Stück pro Modell.
+- **Skalierbare Produktion:** Volle OEM- und ODM-Anpassungsmöglichkeiten einschließlich Logo-Applikation (Druck, Laser, Heißprägung, Metall, Prägung), mit einer geringen Mindestbestellmenge von 200 Stück pro Modell.
 - **Dimensionale Flexibilität:** Erhältlich in Standardgröße 49-19-145mm mit vollen Anpassungsoptionen zur Unterstützung von Eigenmarken- und markenspezifischen Anforderungen.
 
 ## Perfekt Für
@@ -64,4 +64,4 @@ Die KSS-011 wurde für Langlebigkeit ohne unnötiges Gewicht entwickelt und nutz
 
 Die stabile 2+1-Fass-Scharnierarchitektur und die hypoallergenen Silikon-Nasenpads gewährleisten langfristigen Komfort und zuverlässigen Betrieb über Jahre des täglichen Gebrauchs.
 
-Dieses Modell bietet umfassende OEM- und ODM-Anpassungen ab einer Mindestbestellmenge von 300 Stück und stellt eine skalierbare Grundlage für Luxusmodehäuser und Sport-Lifestyle-Marken dar, die einen markanten Marktvorteil suchen.
+Dieses Modell bietet umfassende OEM- und ODM-Anpassungen ab einer Mindestbestellmenge von 200 Stück und stellt eine skalierbare Grundlage für Luxusmodehäuser und Sport-Lifestyle-Marken dar, die einen markanten Marktvorteil suchen.

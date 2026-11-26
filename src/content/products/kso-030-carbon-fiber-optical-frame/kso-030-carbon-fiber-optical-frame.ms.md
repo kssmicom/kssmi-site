@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Kayu Keemasan & Gentian Karbon Hijau Corak Twill & Gentian Karbon Gun Matt Corak Plain & Gentian Karbon Perak Matt Corak Plain Kayu"
 materials: "Gentian Karbon Premium dan Titanium"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
-moq: "300 unit/model"
+moq: "200 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-030 Bingkai Optik Gentian Karbon Mewah | Pengilang OEM"
-seoDescription: "Pesan bingkai optik gentian karbon KSO-030 tersuai daripada kilang terkemuka. Kekuatan gred aeroangkasa dengan tekstur corak kayu, 300 MOQ untuk OEM/ODM label peribadi."
+seoDescription: "Pesan bingkai optik gentian karbon KSO-030 tersuai daripada kilang terkemuka. Kekuatan gred aeroangkasa dengan tekstur corak kayu, 200 MOQ untuk OEM/ODM label peribadi."
 seoKeywords: "pengilang bingkai optik gentian karbon, kacamata gentian karbon tersuai China, bingkai optik label peribadi OEM, borong bingkai gentian karbon mewah, kilang bingkai gentian karbon KSO-030, pembekal kacamata gentian karbon titanium, penyesuaian ODM bingkai optik premium, kacamata gentian karbon kualiti eksport"
 ---
 
@@ -59,7 +59,7 @@ seoKeywords: "pengilang bingkai optik gentian karbon, kacamata gentian karbon te
 - **Perkakasan Tahan Lama:** Engsel struktur tong 2+1 yang stabil direka untuk kelancaran operasi yang konsisten dan kebolehpercayaan jangka panjang.
 - **Optik Premium:** Dilengkapi dengan kanta nilon tahan lasak yang menyokong pilihan pewarnaan dan salutan tersuai yang meluas untuk pelbagai keperluan pasaran.
 - **Keselesaan Sepanjang Hari:** Alas hidung getah bersepadu dan bahan hipoalergenik yang direka untuk padanan yang selamat dan selamat semasa pemakaian berpanjangan.
-- **Pengeluaran Boleh Skala:** Perkhidmatan penyesuaian OEM dan ODM yang komprehensif dengan MOQ 300 unit, dioptimumkan untuk piawaian eksport B2B global.
+- **Pengeluaran Boleh Skala:** Perkhidmatan penyesuaian OEM dan ODM yang komprehensif dengan MOQ 200 unit, dioptimumkan untuk piawaian eksport B2B global.
 
 ## Sesuai Untuk
 - Merek Kacamata Premium
@@ -75,4 +75,4 @@ Kecemerlangan kejuruteraan adalah teras kepada KSO-030, yang menggabungkan genti
 
 Setiap unit menampilkan tekstur yang dimesin dengan ketepatan—termasuk corak kayu dan twill—disokong oleh engsel tong 2+1 berprestasi tinggi yang menjamin kebolehpercayaan mekanikal.
 
-Dioptimumkan untuk rumah fesyen mewah dan jenama kacamata premium, kemudahan pembuatan kami menyokong penyesuaian OEM/ODM penuh dengan kuantiti pesanan minimum 300 unit.
+Dioptimumkan untuk rumah fesyen mewah dan jenama kacamata premium, kemudahan pembuatan kami menyokong penyesuaian OEM/ODM penuh dengan kuantiti pesanan minimum 200 unit.

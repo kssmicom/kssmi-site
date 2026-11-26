@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Sợi carbon & Gỗ mun Ceylon & Gỗ sồi trắng & Sapele"
 materials: "Sợi Carbon cao cấp và Titan"
 serviceMode: "OEM & ODM ( Tùy chỉnh theo yêu cầu )"
-moq: "300 cái/mẫu"
+moq: "200 cái/mẫu"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -47,7 +47,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Gọng kính cận sợi carbon xa xỉ KSO-012 | Nhà cung cấp bán sỉ"
-seoDescription: "Nhập khẩu gọng kính cận sợi carbon KSO-012 siêu nhẹ với càng kính titan từ nhà máy xuất khẩu hàng đầu Trung Quốc. Tùy chỉnh OEM/ODM trọn gói với MOQ 300 cái."
+seoDescription: "Nhập khẩu gọng kính cận sợi carbon KSO-012 siêu nhẹ với càng kính titan từ nhà máy xuất khẩu hàng đầu Trung Quốc. Tùy chỉnh OEM/ODM trọn gói với MOQ 200 cái."
 seoKeywords: "gọng kính sợi carbon, nhà sản xuất kính mắt tùy chỉnh, kính titan sợi carbon, bán sỉ gọng kính cận Trung Quốc, nhà máy kính mắt nhãn hiệu riêng, gọng sợi carbon xa xỉ OEM, nhà cung cấp kính mắt gia công CNC, nhà sản xuất xuất khẩu gọng kính"
 ---
 
@@ -57,7 +57,7 @@ seoKeywords: "gọng kính sợi carbon, nhà sản xuất kính mắt tùy ch�
 - **Phụ kiện bền bỉ:** Bản lề cấu trúc thùng 2+1 ổn định được thiết kế để vận hành trơn tru lâu dài và bảo trì dễ dàng.
 - **Quang học cao cấp:** Tròng kính nylon bền bỉ với các tùy chọn nhuộm màu và lớp phủ tùy chỉnh phong phú phục vụ cho việc xây dựng thương hiệu linh hoạt.
 - **Thoải mái công thái học:** Đệm mũi silicone không gây dị ứng được thiết kế để mang lại sự vừa vặn an toàn và thoải mái suốt cả ngày.
-- **Sản xuất linh hoạt:** Khả năng tùy chỉnh OEM & ODM trọn gói với số lượng đặt hàng tối thiểu thấp chỉ 300 cái để xuất khẩu toàn cầu.
+- **Sản xuất linh hoạt:** Khả năng tùy chỉnh OEM & ODM trọn gói với số lượng đặt hàng tối thiểu thấp chỉ 200 cái để xuất khẩu toàn cầu.
 
 ## Phù hợp cho
 - Thương hiệu kính mắt cao cấp
@@ -73,4 +73,4 @@ seoKeywords: "gọng kính sợi carbon, nhà sản xuất kính mắt tùy ch�
 
 Việc tích hợp hệ thống bản lề thùng 2+1 và đệm mũi silicone không gây dị ứng đảm bảo sự vận hành mượt mà tinh tế cùng cảm giác vừa vặn, an toàn và thoải mái suốt cả ngày.
 
-Cung cấp khả năng tùy chỉnh OEM và ODM sâu rộng với số lượng đặt hàng tối thiểu thấp chỉ 300 chiếc, Kssmi cho phép các nhà thiết kế độc lập và các thương hiệu xa xỉ mở rộng bộ sưu tập của họ với các sản phẩm kính mắt kỹ thuật được sản xuất chính xác.
+Cung cấp khả năng tùy chỉnh OEM và ODM sâu rộng với số lượng đặt hàng tối thiểu thấp chỉ 200 chiếc, Kssmi cho phép các nhà thiết kế độc lập và các thương hiệu xa xỉ mở rộng bộ sưu tập của họ với các sản phẩm kính mắt kỹ thuật được sản xuất chính xác.

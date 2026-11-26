@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Karbon Elyaf & Seylan Abanozu & Beyaz Meşe & Sapele"
 materials: "Premium Karbon Elyaf ve Titanyum"
 serviceMode: "OEM & ODM"
-moq: "300 adet/model"
+moq: "200 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-009 Lüks Karbon Elyaf Optik Çerçeve | OEM Üretici"
-seoDescription: "KSO-009 Premium Karbon Elyaf ve Titanyum Optik Çerçeve Üreticisi. Küresel gözlük markaları için üst düzey OEM/ODM özelleştirme sunuyoruz. 300 MOQ için iletişime geçin."
+seoDescription: "KSO-009 Premium Karbon Elyaf ve Titanyum Optik Çerçeve Üreticisi. Küresel gözlük markaları için üst düzey OEM/ODM özelleştirme sunuyoruz. 200 MOQ için iletişime geçin."
 seoKeywords: "karbon elyaf optik çerçeve üreticisi, özel titanyum gözlük Çin, özel marka karbon çerçeveler, OEM optik çerçeve tedarikçisi, toptan lüks optik çerçeveler, üst segment gözlük fabrikası, ayarlanabilir metal burun pedi çerçeveler, karbon elyaf gözlük ODM"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "karbon elyaf optik çerçeve üreticisi, özel titanyum gözlük �
 - **Premium Optik:** Üst düzey gözlük standartları için üstün darbe direnci ve optik netlik sunan dayanıklı naylon lensler.
 - **Tüm Gün Konfor:** Uzun süreli günlük kullanım boyunca dengeli ve konforlu bir uyum için tasarlanmış hipoalerjenik metal burun pedleri.
 - **Lüks Estetik:** Sofistike, üst düzey bir moda çekiciliği için premium kaplamalarla birleştirilmiş benzersiz karbon elyaf dokuma dokuları.
-- **Ölçeklenebilir Üretim:** Küresel toptancılar için stratejik 300 adetlik minimum sipariş miktarı ile kapsamlı OEM ve ODM özelleştirme desteği.
+- **Ölçeklenebilir Üretim:** Küresel toptancılar için stratejik 200 adetlik minimum sipariş miktarı ile kapsamlı OEM ve ODM özelleştirme desteği.
 
 ## İçin Mükemmel
 - Premium Gözlük Markaları
@@ -74,4 +74,4 @@ Yüksek performanslı karbon elyafı şık titanyum saplarla birleştiren KSO-00
 
 Hassas mühendislikle üretilmiş 2+1 varil menteşe sistemi ve hipoalerjenik metal burun pedlerinin entegrasyonu, tutarlı bir çalışma pürüzsüzlüğü ve dengeli, konforlu bir uyum sağlar.
 
-Model başına 300 adetlik esnek minimum sipariş miktarı ile, bağımsız tasarımcıların ve premium perakendecilerin ısmarlama gözlük koleksiyonlarını kolaylıkla büyütmelerine yardımcı olmak için tam ODM ve OEM desteği sağlıyoruz.
+Model başına 200 adetlik esnek minimum sipariş miktarı ile, bağımsız tasarımcıların ve premium perakendecilerin ısmarlama gözlük koleksiyonlarını kolaylıkla büyütmelerine yardımcı olmak için tam ODM ve OEM desteği sağlıyoruz.

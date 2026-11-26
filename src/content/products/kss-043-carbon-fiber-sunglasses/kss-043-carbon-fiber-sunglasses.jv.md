@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Warna Serat Karbon Asli (Matte Black, Glossy Black, Anyaman Warna, Forged Carbon)"
 materials: "Serat Karbon Premium"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
-moq: "300 pcs/model"
+moq: "200 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -40,7 +40,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-043 Kacamata Hitam Serat Karbon Mewah Klasik | Pabrik OEM"
-seoDescription: "Partner karo pabrik China sing unggul kanggo kacamata hitam serat karbon mewah KSS-043. Bingkai entheng kanthi kekuatan dhuwur kanthi 300 MOQ. Pakar OEM / ODM kanggo merek."
+seoDescription: "Partner karo pabrik China sing unggul kanggo kacamata hitam serat karbon mewah KSS-043. Bingkai entheng kanthi kekuatan dhuwur kanthi 200 MOQ. Pakar OEM / ODM kanggo merek."
 seoKeywords: "produsen kacamata hitam serat karbon, grosir kacamata hitam KSS-043, kacamata serat karbon kustom China, pabrik kacamata hitam label pribadi, bingkai karbon mewah OEM, supplier kacamata hitam kelas atas, kacamata kelas aeroangkasa ODM, kacamata karbon kualitas ekspor"
 ---
 
@@ -51,7 +51,7 @@ seoKeywords: "produsen kacamata hitam serat karbon, grosir kacamata hitam KSS-04
 - **Optik Premium:** Lensa nilon sing kuat nyedhiyakake kajelasan kinerja dhuwur kanthi macem-macem pilihan warna lan lapisan kustom sing kasedhiya.
 - **Kenyamanan Dioptimalake:** Bantalan irung silikon hipoalergenik lan struktur fleksibel njamin pas sing aman lan tanpa tekanan kanggo panggunaan profesional sing suwe.
 - **Estetika Kustom:** Sawetara pilihan finish kalebu Matte Black, Glossy Black, lan Forged Carbon supaya cocog karo identitas merek mewah tartamtu.
-- **Produksi Skalabel:** Layanan kustomisasi OEM lan ODM lengkap kanthi MOQ 300 pcs sing kompetitif sing dirancang kanggo pasar ekspor global.
+- **Produksi Skalabel:** Layanan kustomisasi OEM lan ODM lengkap kanthi MOQ 200 pcs sing kompetitif sing dirancang kanggo pasar ekspor global.
 
 ## Cocok kanggo
 
@@ -68,4 +68,4 @@ Nggabungake daya tahan kelas aeroangkasa kanthi profil ultra-entheng, KSS-043 di
 
 Frame iki nduweni sistem engsel barel 2+1 sing dikalibrasi kanthi presisi lan lensa nilon sing kuat, njamin stabilitas struktur lan kajelasan optik ing desain sing apik lan hipoalergenik.
 
-Kanthi dhukungan kanggo finish Matte, Glossy utawa Forged Carbon lan MOQ rendah 300 pcs, ruang lingkup OEM/ODM lengkap kita ngidini desainer nggabungake kacamata serat karbon kustom langsung saka pabrikan menyang portofolio mewah.
+Kanthi dhukungan kanggo finish Matte, Glossy utawa Forged Carbon lan MOQ rendah 200 pcs, ruang lingkup OEM/ODM lengkap kita ngidini desainer nggabungake kacamata serat karbon kustom langsung saka pabrikan menyang portofolio mewah.

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Colore Originale Fibra di Carbonio (Nero Opaco, Nero Lucido, Trama Colorata, Carbonio Forgiato)"
 materials: "Fibra di Carbonio Premium"
 serviceMode: "OEM & ODM ( Personalizzazione )"
-moq: "300 pz/modello"
+moq: "200 pz/modello"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-033 Occhiali da Sole Lusso in Fibra di Carbonio | Produttore OEM"
-seoDescription: "Collabora con un produttore cinese leader per gli occhiali da sole di lusso KSS-033 in fibra di carbonio. Montature aerospaziali ad alta resistenza con MOQ 300 e servizi OEM/ODM completi."
+seoDescription: "Collabora con un produttore cinese leader per gli occhiali da sole di lusso KSS-033 in fibra di carbonio. Montature aerospaziali ad alta resistenza con MOQ 200 e servizi OEM/ODM completi."
 seoKeywords: "produttore occhiali da sole fibra di carbonio, occhiali da sole OEM personalizzati, occhiali private label Cina, montature fibra di carbonio all'ingrosso, fornitore occhiali da sole lusso, fabbrica occhiali alta resistenza, occhiali qualità export"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "produttore occhiali da sole fibra di carbonio, occhiali da sole OE
 - **Ottica Premium:** Lenti in nylon tenace che forniscono chiarezza ad alte prestazioni con ampie opzioni di colorazione e rivestimento personalizzati.
 - **Comfort per Tutto il Giorno:** Naselli in silicone ipoallergenico progettati per una vestibilità sicura e senza pressione durante l'uso professionale prolungato.
 - **Versatilità Estetica:** Molteplici finiture in fibra di carbonio, tra cui Nero Opaco, Nero Lucido e Carbonio Forgiato, per adattarsi a diverse identità di marca.
-- **Produzione Scalabile:** Servizi completi di personalizzazione OEM e ODM con un MOQ competitivo di 300 pezzi per la distribuzione all'ingrosso globale.
+- **Produzione Scalabile:** Servizi completi di personalizzazione OEM e ODM con un MOQ competitivo di 200 pezzi per la distribuzione all'ingrosso globale.
 
 ## Perfetto Per
 
@@ -64,4 +64,4 @@ Creato per marchi esigenti, il modello KSS-033 combina la superiorità tecnica d
 
 L'integrazione di cerniere a barile 2+1 progettate con precisione e naselli in silicone ipoallergenico garantisce comfort per tutto il giorno e durata a lungo termine per diversi profili di utenza.
 
-Supportando l'intera gamma OEM e ODM con un basso quantitativo minimo d'ordine di 300 pezzi, questo modello consente alle etichette di lusso e ai designer indipendenti di integrare facilmente l'innovazione dei materiali avanzati nelle loro collezioni private label.
+Supportando l'intera gamma OEM e ODM con un basso quantitativo minimo d'ordine di 200 pezzi, questo modello consente alle etichette di lusso e ai designer indipendenti di integrare facilmente l'innovazione dei materiali avanzati nelle loro collezioni private label.

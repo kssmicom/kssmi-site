@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Kohlefaser & Ceylon-Ebenholz & Weißeiche & Sapele"
 materials: "Premium-Kohlefaser und Titan"
 serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) ( Individualisierung )"
-moq: "300 Stk/Modell"
+moq: "200 Stk/Modell"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-010 Luxus-Kohlefaser-Optikbrille | OEM-Hersteller"
-seoDescription: "Beziehen Sie hochwertige KSO-010 Luxus-Kohlefaser-Brillenfassungen mit Titanbügeln und Holzakzenten von einer führenden chinesischen OEM-Fabrik. 300 MOQ. Fragen Sie noch heute an!"
+seoDescription: "Beziehen Sie hochwertige KSO-010 Luxus-Kohlefaser-Brillenfassungen mit Titanbügeln und Holzakzenten von einer führenden chinesischen OEM-Fabrik. 200 MOQ. Fragen Sie noch heute an!"
 seoKeywords: "Kohlefaser-Optikbrillen Hersteller, kundenspezifische Titan-Kohlefaser-Brillen, Luxus-Optikbrillen OEM China, Großhandel Brillen Holzakzente, Eigenmarken-Kohlefaser-Brillen, Brillenfabrik Shenzhen"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "Kohlefaser-Optikbrillen Hersteller, kundenspezifische Titan-Kohlef
 - **Langlebige Hardware:** Stabile 2+1-Zylinderstruktur-Scharniere, die für langfristige Laufruhe und strukturelle Integrität entwickelt wurden.
 - **Premium-Optik:** Widerstandsfähige Nylon-Gläser, die überlegene Klarheit bieten, mit umfangreichen benutzerdefinierten Tönungs- und Beschichtungsoptionen.
 - **Ergonomischer Komfort:** Professionelle Metall-Nasenpads und eine präzise ausbalancierte Rahmenstruktur sorgen für einen sicheren und bequemen Sitz.
-- **Skalierbare Produktion:** Umfassende OEM- und ODM-Anpassungsfunktionen mit einer niedrigen Mindestbestellmenge von 300 Stück für den weltweiten Export.
+- **Skalierbare Produktion:** Umfassende OEM- und ODM-Anpassungsfunktionen mit einer niedrigen Mindestbestellmenge von 200 Stück für den weltweiten Export.
 
 ## Perfekt Für
 - Premium Brillenmarken
@@ -74,4 +74,4 @@ Die KSO-010 wurde für das High-End-Luxussegment entwickelt und kombiniert Kohle
 
 Die präzisionsgefertigten 2+1-Fassstruktur-Scharniere gewährleisten langfristige mechanische Stabilität und eine raffinierte, sichere Passform.
 
-Dieses Modell unterstützt die umfassende OEM- und ODM-Entwicklung mit einer Mindestbestellmenge von 300 Stück und ermöglicht es unabhängigen Designern und Premiummarken, Hightech-Materialinnovationen in ihre maßgeschneiderten Kollektionen zu integrieren.
+Dieses Modell unterstützt die umfassende OEM- und ODM-Entwicklung mit einer Mindestbestellmenge von 200 Stück und ermöglicht es unabhängigen Designern und Premiummarken, Hightech-Materialinnovationen in ihre maßgeschneiderten Kollektionen zu integrieren.

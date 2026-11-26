@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Kayu Keemasan & Gentian Karbon Hijau Twill & Gentian Karbon Gunmetal Mat Kosong & Gentian Karbon Perak Mat Kayu Kosong"
 materials: "Gentian Karbon Premium dan Titanium"
 serviceMode: "OEM & ODM ( Penyesuaian )"
-moq: "300 unit/model"
+moq: "200 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -52,7 +52,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Bingkai Optik Gentian Karbon Mewah KSO-033 | Pembekal Borong"
-seoDescription: "Bingkai optik gentian karbon mewah KSO-033 dengan batang titanium untuk jenama kacamata. Pengilangan OEM/ODM berprestasi tinggi dengan 300 MOQ dan ketepatan CNC."
+seoDescription: "Bingkai optik gentian karbon mewah KSO-033 dengan batang titanium untuk jenama kacamata. Pengilangan OEM/ODM berprestasi tinggi dengan 200 MOQ dan ketepatan CNC."
 seoKeywords: "pengeluar bingkai optik gentian karbon, kacamata titanium tersuai China, borong bingkai optik mewah, bingkai gentian karbon label peribadi, kilang kacamata OEM, pengeluar bingkai optik CNC, pembekal kacamata kualiti eksport, OEM kacamata profesional"
 ---
 
@@ -63,7 +63,7 @@ seoKeywords: "pengeluar bingkai optik gentian karbon, kacamata titanium tersuai 
 - **Perkakasan Tahan Lama:** Engsel struktur tong 2+1 yang stabil direka untuk kelancaran operasi yang konsisten sepanjang kitaran hayat produk.
 - **Optik Premium:** Lensa nilon tahan lasak dengan pilihan pewarnaan dan salutan tersuai yang luas tersedia untuk penyelesaian optik mewah.
 - **Keselesaan Sepanjang Hari:** Alas hidung getah hipolergenik direka untuk padanan yang selamat, selesa dan pemakaian harian tanpa beban.
-- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum yang rendah iaitu 300 unit untuk eksport B2B global.
+- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum yang rendah iaitu 200 unit untuk eksport B2B global.
 
 ## Sesuai Untuk
 - Merek Kacamata Premium
@@ -79,4 +79,4 @@ Menggabungkan gentian karbon gred aeroangkasa dengan titanium premium, KSO-033 m
 
 Ketepatan mesin CNC dan sistem engsel tong 2+1 yang stabil memastikan kualiti pembuatan yang konsisten dan kelancaran operasi jangka panjang.
 
-Dengan skop ODM penuh dan kuantiti pesanan minimum 300 unit yang rendah, bingkai ini memperkasakan pereka bebas dan rumah fesyen mewah untuk membangunkan koleksi label peribadi yang ditempah khas.
+Dengan skop ODM penuh dan kuantiti pesanan minimum 200 unit yang rendah, bingkai ini memperkasakan pereka bebas dan rumah fesyen mewah untuk membangunkan koleksi label peribadi yang ditempah khas.

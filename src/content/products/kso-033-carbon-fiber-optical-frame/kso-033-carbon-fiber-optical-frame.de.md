@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Holz Golden & Köper-Grün Carbonfaser & Glatt-Gun Matt Carbonfaser & Holz-Glatt-Silber Matt Carbonfaser"
 materials: "Premium-Kohlefaser und Titan"
 serviceMode: "OEM & ODM ( Individualisierung )"
-moq: "300 Stk/Modell"
+moq: "200 Stk/Modell"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -52,7 +52,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-033 Luxus-Carbon-Brillengestelle | Großhandel Lieferant"
-seoDescription: "KSO-033 Luxus-Carbonfaser-Brillengestelle mit Titanbügeln für Brillenmarken. Hochleistungs-OEM/ODM-Fertigung mit 300 MOQ und CNC-Präzision."
+seoDescription: "KSO-033 Luxus-Carbonfaser-Brillengestelle mit Titanbügeln für Brillenmarken. Hochleistungs-OEM/ODM-Fertigung mit 200 MOQ und CNC-Präzision."
 seoKeywords: "Kohlefaser Brillengestelle Hersteller, maßgeschneiderte Titanbrillen China, Großhandel Luxus-Brillengestelle, Eigenmarken Carbon-Brillen, OEM Brillenfabrik, CNC Brillengestell Hersteller, Exportqualität Brillenlieferant, professioneller Brillen OEM"
 ---
 
@@ -63,7 +63,7 @@ seoKeywords: "Kohlefaser Brillengestelle Hersteller, maßgeschneiderte Titanbril
 - **Langlebige Hardware:** Stabile 2+1 Fassstruktur-Scharniere, die für eine gleichbleibend reibungslose Funktion während des gesamten Produktlebenszyklus entwickelt wurden.
 - **Premium-Optik:** Widerstandsfähige Nylon-Gläser mit umfangreichen individuellen Tönungs- und Beschichtungsoptionen für High-End-Optiklösungen.
 - **Ganztägiger Komfort:** Hypoallergene Gumminasenpads für einen sicheren, bequemen Sitz und schwereloses tägliches Tragen.
-- **Skalierbare Produktion:** Volle OEM- und ODM-Anpassungsfähigkeiten mit einer niedrigen Mindestbestellmenge von 300 Stück für den weltweiten B2B-Export.
+- **Skalierbare Produktion:** Volle OEM- und ODM-Anpassungsfähigkeiten mit einer niedrigen Mindestbestellmenge von 200 Stück für den weltweiten B2B-Export.
 
 ## Perfekt Für
 - Premium Brillenmarken
@@ -79,4 +79,4 @@ Durch die Kombination von Kohlefaser in Luft- und Raumfahrtqualität mit hochwer
 
 CNC-gefräste Präzision und ein stabiles 2+1 Fassstruktur-Scharniersystem gewährleisten eine gleichbleibende Fertigungsqualität und langfristige Laufruhe.
 
-Mit vollem ODM-Umfang und einer niedrigen Mindestbestellmenge von 300 Stück ermöglicht dieses Gestell unabhängigen Designern und Luxusmodehäusern die Entwicklung maßgeschneiderter Eigenmarken-Kollektionen.
+Mit vollem ODM-Umfang und einer niedrigen Mindestbestellmenge von 200 Stück ermöglicht dieses Gestell unabhängigen Designern und Luxusmodehäusern die Entwicklung maßgeschneiderter Eigenmarken-Kollektionen.

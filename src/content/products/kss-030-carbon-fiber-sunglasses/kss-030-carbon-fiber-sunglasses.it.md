@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Colore Originale Fibra di Carbonio (Nero Opaco, Nero Lucido, Trama Colorata, Carbonio Forgiato)"
 materials: "Fibra di Carbonio Premium"
 serviceMode: "OEM & ODM ( Personalizzazione )"
-moq: "300 pz/modello"
+moq: "200 pz/modello"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-030 Occhiali da Sole di Lusso in Fibra di Carbonio | Produttore OEM & ODM"
-seoDescription: "Il KSS-030 è una montatura in fibra di carbonio premium per marchi di occhiali di lusso. Personalizzazione OEM & ODM completa con 300 MOQ. Partner di una delle principali fabbriche di esportazione cinesi."
+seoDescription: "Il KSS-030 è una montatura in fibra di carbonio premium per marchi di occhiali di lusso. Personalizzazione OEM & ODM completa con 200 MOQ. Partner di una delle principali fabbriche di esportazione cinesi."
 seoKeywords: "produttore occhiali da sole in fibra di carbonio, occhiali da sole OEM personalizzati, occhiali private label Cina, montature in fibra di carbonio all'ingrosso, fornitore occhiali da sole di lusso, fabbrica montature in fibra di carbonio"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "produttore occhiali da sole in fibra di carbonio, occhiali da sole
 - **Hardware Durevole:** Cerniere stabili con struttura a barilotto 2+1 progettate per una fluidità operativa a lungo termine e prestazioni costanti.
 - **Ottica Premium:** Lenti in nylon tenace che offrono una chiarezza superiore con ampie opzioni di colorazione e rivestimento personalizzate.
 - **Comfort e Sicurezza:** Naselli in silicone ipoallergenico progettati per il comfort quotidiano e una vestibilità sicura.
-- **Produzione Scalabile:** Capacità di personalizzazione OEM & ODM completa con una quantità minima d'ordine ridotta di 300 pezzi per l'esportazione globale del marchio.
+- **Produzione Scalabile:** Capacità di personalizzazione OEM & ODM completa con una quantità minima d'ordine ridotta di 200 pezzi per l'esportazione globale del marchio.
 
 ## Perfetto Per
 - Marche di Occhiali Premium
@@ -62,4 +62,4 @@ Il modello KSS-030 mette in mostra la bellezza tecnica pura della fibra di carbo
 
 Progettata con cerniere a barilotto 2+1 stabili e naselli in silicone ipoallergenico, questa montatura garantisce integrità strutturale a lungo termine e comfort per l'utente.
 
-La personalizzazione flessibile OEM/ODM e un MOQ ridotto di 300 pezzi rendono questo modello una base ideale per i marchi che desiderano espandersi nel settore dell'eyewear di lusso ad alte prestazioni.
+La personalizzazione flessibile OEM/ODM e un MOQ ridotto di 200 pezzi rendono questo modello una base ideale per i marchi che desiderano espandersi nel settore dell'eyewear di lusso ad alte prestazioni.

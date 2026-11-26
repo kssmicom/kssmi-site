@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Karbon Elyaf & Seylan Abanozu & Beyaz Meşe & Sapele"
 materials: "Premium Karbon Elyaf ve Titanyum"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
-moq: "300 adet/model"
+moq: "200 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-010 Lüks Karbon Elyaf Optik Çerçeve | OEM Üreticisi"
-seoDescription: "Titanyum saplara ve ahşap detaylara sahip yüksek kaliteli KSO-010 lüks karbon elyaf optik çerçeveleri doğrudan Çin'in önde gelen OEM fabrikasından tedarik edin. 300 MOQ."
+seoDescription: "Titanyum saplara ve ahşap detaylara sahip yüksek kaliteli KSO-010 lüks karbon elyaf optik çerçeveleri doğrudan Çin'in önde gelen OEM fabrikasından tedarik edin. 200 MOQ."
 seoKeywords: "karbon elyaf optik çerçeve üreticisi, özel titanyum karbon elyaf gözlük, lüks optik çerçeve OEM Çin, toptan ahşap detaylı gözlük, özel markalı karbon çerçeve, gözlük fabrikası Shenzhen"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "karbon elyaf optik çerçeve üreticisi, özel titanyum karbon ely
 - **Dayanıklı Donanım:** Uzun süreli çalışma pürüzsüzlüğü ve yapısal bütünlük için tasarlanmış stabil 2+1 varil yapılı menteşeler.
 - **Premium Optikler:** Kapsamlı özel renklendirme ve kaplama seçenekleriyle üstün netlik sağlayan dayanıklı naylon lensler.
 - **Ergonomik Konfor:** Güvenli ve rahat bir oturuş sağlayan profesyonel metal burun tamponları ve hassas dengelenmiş çerçeve yapısı.
-- **Ölçeklenebilir Üretim:** Küresel ihracat için 300 parçalık düşük minimum sipariş miktarı ile kapsamlı OEM ve ODM özelleştirme yetenekleri.
+- **Ölçeklenebilir Üretim:** Küresel ihracat için 200 parçalık düşük minimum sipariş miktarı ile kapsamlı OEM ve ODM özelleştirme yetenekleri.
 
 ## İçin Mükemmel
 - Premium Gözlük Markaları
@@ -74,4 +74,4 @@ seoKeywords: "karbon elyaf optik çerçeve üreticisi, özel titanyum karbon ely
 
 Hassas mühendislikle üretilen 2+1 namlu yapılı menteşeler, uzun süreli mekanik stabilite ve rafine, güvenli bir oturuş sağlar.
 
-300 adetlik düşük minimum sipariş miktarı ile kapsamlı OEM ve ODM geliştirmeyi destekleyen bu model, bağımsız tasarımcıların ve premium markaların yüksek teknoloji materyal inovasyonunu ısmarlama koleksiyonlarına entegre etmelerine olanak tanır.
+200 adetlik düşük minimum sipariş miktarı ile kapsamlı OEM ve ODM geliştirmeyi destekleyen bu model, bağımsız tasarımcıların ve premium markaların yüksek teknoloji materyal inovasyonunu ısmarlama koleksiyonlarına entegre etmelerine olanak tanır.

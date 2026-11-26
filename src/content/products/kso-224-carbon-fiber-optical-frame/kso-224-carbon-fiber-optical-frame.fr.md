@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Acajou (Palissandre des Indes — Veinage Montagne)"
 materials: "Fibre de Carbone Premium et Titane"
 serviceMode: "OEM & ODM ( Personnalisation )"
-moq: "300 pcs/modèle"
+moq: "200 pcs/modèle"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Monture Optique de Luxe KSO-224 | Fabricant OEM"
-seoDescription: "KSO-224 : Monture optique de luxe en fibre de carbone avec branches en titane et finition acajou. MOQ 300. Personnalisation OEM/ODM premium pour marques mondiales."
+seoDescription: "KSO-224 : Monture optique de luxe en fibre de carbone avec branches en titane et finition acajou. MOQ 200. Personnalisation OEM/ODM premium pour marques mondiales."
 seoKeywords: "montures optiques fibre de carbone, lunettes titane sur mesure, fabricant lunettes luxe Chine, vente en gros montures carbone, usine lunettes OEM"
 ---
 
@@ -64,4 +64,4 @@ Alliant la fibre de carbone de qualité aérospatiale à une finition en acajou 
 
 Les branches légères en titane et les charnières à 2+1 barillets assurent une intégrité structurelle à long terme tout en conservant le profil raffiné attendu des lunettes de luxe.
 
-Soutenant une personnalisation complète sur mesure avec un minimum de commande de 300 pièces, cette monture permet aux maisons de haute couture et aux marques boutique d'élargir leurs portefeuilles haut de gamme.
+Soutenant une personnalisation complète sur mesure avec un minimum de commande de 200 pièces, cette monture permet aux maisons de haute couture et aux marques boutique d'élargir leurs portefeuilles haut de gamme.

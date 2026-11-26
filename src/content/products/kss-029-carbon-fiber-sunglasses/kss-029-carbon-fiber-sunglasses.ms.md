@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Warna Gentian Karbon Asal (Hitam Pudar, Hitam Berkilat, Tenunan Berwarna, Karbon Tempa)"
 materials: "Gentian Karbon Premium"
 serviceMode: "Pembuatan OEM (Kontrak) & Pembuatan ODM (Reka Bentuk)"
-moq: "300 unit/model"
+moq: "200 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-029 Cermin Mata Hitam Gentian Karbon Mewah Klasik | Pengilang OEM"
-seoDescription: "Dapatkan cermin mata hitam gentian karbon KSS-029 premium daripada pengilang OEM terkemuka China. Bingkai ringan dan tahan lama dengan engsel tong 2+1 dan MOQ 300 unit."
+seoDescription: "Dapatkan cermin mata hitam gentian karbon KSS-029 premium daripada pengilang OEM terkemuka China. Bingkai ringan dan tahan lama dengan engsel tong 2+1 dan MOQ 200 unit."
 seoKeywords: "pengilang cermin mata hitam gentian karbon, OEM eyewear mewah, cermin mata hitam label peribadi China, bingkai gentian karbon borong, eyewear gentian karbon tersuai, cermin mata hitam kualiti eksport, pembekal eyewear OEM ODM, cermin mata hitam gentian karbon ringan"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "pengilang cermin mata hitam gentian karbon, OEM eyewear mewah, cer
 - **Perkakasan Tahan Lama:** Engsel struktur tong 2+1 yang stabil direka untuk kelancaran operasi jangka panjang.
 - **Optik Premium:** Kanta nilon tahan lasak dengan pilihan pewarnaan dan salutan tersuai yang meluas tersedia.
 - **Keselesaan & Keselamatan:** Alas hidung silikon hipoalergenik yang direka untuk keselesaan sepanjang hari dan padanan yang selamat.
-- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum rendah iaitu 300 unit untuk eksport global.
+- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum rendah iaitu 200 unit untuk eksport global.
 
 ## Sesuai Untuk
 - Merek Kacamata Premium
@@ -61,4 +61,4 @@ Gentian karbon gred aeroangkasa mentakrifkan KSS-029, menawarkan bingkai berpres
 
 Komponen kejuruteraan ketepatan, termasuk sistem engsel tong 2+1 yang tahan lama dan alas hidung silikon hipoalergenik, memastikan kestabilan jangka panjang dan keselesaan pemakai sepanjang hari.
 
-Dengan sokongan penuh OEM/ODM dan kuantiti pesanan minimum 300 unit, kami menyediakan skala pembuatan dan pilihan penyesuaian tempahan yang diperlukan untuk jenama membangunkan koleksi kacamata label peribadi yang unik.
+Dengan sokongan penuh OEM/ODM dan kuantiti pesanan minimum 200 unit, kami menyediakan skala pembuatan dan pilihan penyesuaian tempahan yang diperlukan untuk jenama membangunkan koleksi kacamata label peribadi yang unik.

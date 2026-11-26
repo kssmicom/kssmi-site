@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Fibra de Carbono & Ébano de Ceilán & Roble Blanco & Sapelli"
 materials: "Fibra de Carbono Premium y Titanio"
 serviceMode: "OEM & ODM ( Personalización )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Montura Óptica de Fibra de Carbono de Lujo KSO-011 | Proveedor Mayorista"
-seoDescription: "Asóciese con un fabricante chino líder para monturas ópticas de lujo KSO-011 de fibra de carbono con varillas de titanio. OEM/ODM para marcas privadas con 300 MOQ."
+seoDescription: "Asóciese con un fabricante chino líder para monturas ópticas de lujo KSO-011 de fibra de carbono con varillas de titanio. OEM/ODM para marcas privadas con 200 MOQ."
 seoKeywords: "fabricante monturas ópticas fibra de carbono, gafas titanio personalizadas China, monturas fibra de carbono marca propia, gafas ópticas de lujo al por mayor, fábrica gafas fibra de carbono OEM, proveedor B2B monturas ópticas, OEM gafas fibra de carbono alta gama, monturas ópticas calidad export"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante monturas ópticas fibra de carbono, gafas titanio perso
 - **Confort Avanzado:** Almohadillas nasales de titanio integradas que ofrecen un ajuste hipoalergénico y resistente a la corrosión para la comodidad del usuario a largo plazo.
 - **Óptica Premium:** Lentes de nylon multifuncionales diseñadas para una alta resistencia al impacto con amplias posibilidades de tinte y recubrimiento personalizados.
 - **Acabado Exquisito:** Textura única de fibra de carbono y un diseño de lujo unisex que cumple con las demandas estéticas de los minoristas de gafas premium.
-- **Personalización Completa:** Servicios profesionales de OEM y ODM que incluyen la aplicación de logotipos personalizados y modificaciones de herrajes a partir de un MOQ de 300 piezas.
+- **Personalización Completa:** Servicios profesionales de OEM y ODM que incluyen la aplicación de logotipos personalizados y modificaciones de herrajes a partir de un MOQ de 200 piezas.
 
 ## Perfecto Para
 - Marcas de Gafas Premium
@@ -74,4 +74,4 @@ Diseñado para el exigente mercado del lujo, el KSO-011 fusiona fibra de carbono
 
 Las bisagras de 2+1 barriles y las almohadillas nasales de titanio, fabricadas con precisión, proporcionan un ajuste sin esfuerzo y una integridad estructural a largo plazo.
 
-Disponible para una amplia personalización OEM y ODM a partir de un MOQ de 300 unidades, este modelo permite a las marcas privadas integrar tecnología avanzada de materiales compuestos en sus colecciones exclusivas.
+Disponible para una amplia personalización OEM y ODM a partir de un MOQ de 200 unidades, este modelo permite a las marcas privadas integrar tecnología avanzada de materiales compuestos en sus colecciones exclusivas.

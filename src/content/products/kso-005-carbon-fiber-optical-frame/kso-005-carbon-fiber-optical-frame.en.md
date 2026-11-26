@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Carbon-Fiber & White-Oak & Sapele & Ebony"
 materials: "Premium Carbon Fiber"
 serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-005 Luxury Carbon Fiber Optical Frame | OEM Manufacturer"
-seoDescription: "Premium KSO-005 carbon fiber optical frames for global eyewear brands. High-strength hybrid construction with metal temples. 300 MOQ for OEM/ODM customization."
+seoDescription: "Premium KSO-005 carbon fiber optical frames for global eyewear brands. High-strength hybrid construction with metal temples. 200 MOQ for OEM/ODM customization."
 seoKeywords: "carbon fiber optical frame manufacturer, custom OEM optical frames, private label eyewear China, wholesale carbon fiber frames, luxury optical frame factory, high-end eyewear OEM, export-quality optical frames, carbon fiber eyewear supplier"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "carbon fiber optical frame manufacturer, custom OEM optical frames
 - **Flexible Hardware:** Precision-engineered spring structure hinges providing adaptive comfort and long-term operational reliability.
 - **High-End Optics:** Equipped with tenacious nylon lenses featuring extensive customization options for premium optical clarity.
 - **Refined Comfort:** Durable metal nose pads designed for a secure, adjustable fit and lasting wearability.
-- **Customizable Production:** Scalable OEM and ODM services with a low MOQ of 300 pieces to support global brand expansion.
+- **Customizable Production:** Scalable OEM and ODM services with a low MOQ of 200 pieces to support global brand expansion.
 
 ## Perfect For
 - Premium Eyewear Brands
@@ -74,4 +74,4 @@ Crafting a new standard in high-end eyewear, this model integrates premium carbo
 
 Precision-engineered spring hinges and durable metal nose pads deliver adaptive comfort, while tenacious nylon lenses ensure optical clarity for the most demanding users.
 
-Supporting full OEM/ODM scope with a low 300-piece minimum order quantity, Kssmi empowers luxury brands and independent designers to deliver bespoke, precision-manufactured collections globally.
+Supporting full OEM/ODM scope with a low 200-piece minimum order quantity, Kssmi empowers luxury brands and independent designers to deliver bespoke, precision-manufactured collections globally.

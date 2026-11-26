@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Fibra de Carbono & Ébano de Ceilán & Roble Blanco & Sapeli"
 materials: "Fibra de Carbono Premium y Titanio"
 serviceMode: "OEM & ODM ( Personalización )"
-moq: "300 uds/modelo"
+moq: "200 uds/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Montura Óptica Lujo KSO-010 Fibra de Carbono | Fabricante OEM"
-seoDescription: "Adquiera monturas ópticas de lujo KSO-010 en fibra de carbono con varillas de titanio y detalles en madera de una prestigiosa fábrica OEM en China. MOQ 300 uds. ¡Contáctenos!"
+seoDescription: "Adquiera monturas ópticas de lujo KSO-010 en fibra de carbono con varillas de titanio y detalles en madera de una prestigiosa fábrica OEM en China. MOQ 200 uds. ¡Contáctenos!"
 seoKeywords: "fabricante monturas ópticas fibra de carbono, gafas personalizadas titanio fibra de carbono, monturas ópticas lujo OEM China, mayorista gafas detalles madera, monturas fibra carbono marca propia, fábrica gafas Shenzhen"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante monturas ópticas fibra de carbono, gafas personalizada
 - **Herrajes Duraderos:** Bisagras estables con estructura de barril 2+1 diseñadas para una suavidad operativa a largo plazo e integridad estructural.
 - **Óptica Premium:** Lentes de nylon tenaz que proporcionan una claridad superior con amplias opciones de coloración y revestimientos personalizados.
 - **Confort Ergonomico:** Almohadillas nasales metálicas profesionales y una estructura de marco equilibrada con precisión que garantiza un ajuste seguro y cómodo.
-- **Producción Escalable:** Capacidades integrales de personalización OEM y ODM con un pedido mínimo de 300 piezas para exportación global.
+- **Producción Escalable:** Capacidades integrales de personalización OEM y ODM con un pedido mínimo de 200 piezas para exportación global.
 
 ## Perfecto Para
 - Marcas de Gafas Premium
@@ -74,4 +74,4 @@ Diseñada para el segmento de lujo de alta gama, la KSO-010 combina fibra de car
 
 Las bisagras con estructura de barril 2+1, diseñadas con precisión, garantizan la estabilidad mecánica a largo plazo y un ajuste refinado y seguro.
 
-Al admitir el desarrollo completo de OEM y ODM con un pedido mínimo de 300 piezas, este modelo permite a los diseñadores independientes y a las marcas premium integrar la innovación de materiales de alta tecnología en sus colecciones personalizadas.
+Al admitir el desarrollo completo de OEM y ODM con un pedido mínimo de 200 piezas, este modelo permite a los diseñadores independientes y a las marcas premium integrar la innovación de materiales de alta tecnología en sus colecciones personalizadas.

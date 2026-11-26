@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Màu sợi carbon nguyên bản (Đen mờ, Đen bóng, Vân màu, Carbon rèn)"
 materials: "Sợi carbon cao cấp"
 serviceMode: "Sản xuất OEM & thiết kế và sản xuất ( Tùy chỉnh theo yêu cầu )"
-moq: "300 cái/mẫu"
+moq: "200 cái/mẫu"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -37,7 +37,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Kính mát sợi carbon xa xỉ KSS-031 | Xưởng sản xuất OEM bán sỉ"
-seoDescription: "KSS-031: Kính mát sợi carbon cao cấp cấp độ hàng không vũ trụ với độ chính xác CNC & bản lề 2+1 thùng. Dịch vụ OEM/ODM chuyên nghiệp cho các thương hiệu toàn cầu. MOQ 300."
+seoDescription: "KSS-031: Kính mát sợi carbon cao cấp cấp độ hàng không vũ trụ với độ chính xác CNC & bản lề 2+1 thùng. Dịch vụ OEM/ODM chuyên nghiệp cho các thương hiệu toàn cầu. MOQ 200."
 seoKeywords: "nhà sản xuất kính mát sợi carbon, kính mát OEM tùy chỉnh Trung Quốc, gọng kính sợi carbon bán sỉ, nhà cung cấp kính mắt nhãn hiệu riêng, xưởng sản xuất kính mát xa xỉ, kính mắt sợi carbon CNC, nhà sản xuất kính mát B2B, OEM kính mắt chất lượng xuất khẩu"
 ---
 
@@ -48,7 +48,7 @@ seoKeywords: "nhà sản xuất kính mát sợi carbon, kính mát OEM tùy ch�
 - **Phần cứng bền bỉ:** Bản lề cấu trúc 2+1 thùng ổn định được thiết kế để vận hành trơn tru lâu dài.
 - **Quang học cao cấp:** Tròng kính nylon bền bỉ với nhiều tùy chọn màu sắc và lớp phủ tùy chỉnh có sẵn.
 - **Thoải mái & Vừa vặn:** Đệm mũi silicone không gây dị ứng mang lại sự vừa vặn an toàn và thoải mái khi sử dụng trong thời gian dài.
-- **Sản xuất có thể mở rộng:** Khả năng tùy chỉnh OEM & ODM đầy đủ với số lượng đặt hàng tối thiểu thấp 300 chiếc để xuất khẩu toàn cầu.
+- **Sản xuất có thể mở rộng:** Khả năng tùy chỉnh OEM & ODM đầy đủ với số lượng đặt hàng tối thiểu thấp 200 chiếc để xuất khẩu toàn cầu.
 
 ## Phù hợp cho
 
@@ -65,4 +65,4 @@ Kết hợp hiệu suất siêu nhẹ với tính thẩm mỹ unisex tinh tế, 
 
 Mỗi gọng kính đều có độ chính xác được gia công bằng máy CNC và bản lề 2+1 thùng để đảm bảo độ hoàn thiện hoàn hảo và độ tin cậy vận hành lâu dài.
 
-Cung cấp khả năng tùy chỉnh OEM và ODM đầy đủ từ mức tối thiểu 300 chiếc, mẫu kính này trao quyền cho các thương hiệu cao cấp và các nhà thiết kế độc lập để nâng cao danh mục kính mắt xa xỉ của họ.
+Cung cấp khả năng tùy chỉnh OEM và ODM đầy đủ từ mức tối thiểu 200 chiếc, mẫu kính này trao quyền cho các thương hiệu cao cấp và các nhà thiết kế độc lập để nâng cao danh mục kính mắt xa xỉ của họ.

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Fibre de Carbone & Chêne Blanc & Sapele & Ébène"
 materials: "Fibre de Carbone Premium"
 serviceMode: "Fabrication sous Contrat (OEM) & Conception et Fabrication (ODM) ( Personnalisation )"
-moq: "300 pcs/modèle"
+moq: "200 pcs/modèle"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-005 Monture Optique de Luxe en Fibre de Carbone | Fabricant OEM"
-seoDescription: "Montures optiques premium en fibre de carbone KSO-005 pour les marques mondiales de lunettes. Construction hybride haute résistance avec branches en métal. MOQ 300 pour personnalisation OEM/ODM."
+seoDescription: "Montures optiques premium en fibre de carbone KSO-005 pour les marques mondiales de lunettes. Construction hybride haute résistance avec branches en métal. MOQ 200 pour personnalisation OEM/ODM."
 seoKeywords: "fabricant monture optique fibre de carbone, montures optiques OEM personnalisées, lunettes marque propre Chine, vente en gros montures fibre de carbone, usine monture optique luxe, OEM lunettes haut de gamme, montures optiques qualité export, fournisseur lunettes fibre de carbone"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricant monture optique fibre de carbone, montures optiques OEM 
 - **Matériel Flexible :** Charnières à ressort de précision offrant un confort adaptatif et une fiabilité opérationnelle à long terme.
 - **Optique Haut de Gamme :** Équipé de verres en nylon tenace avec de vastes options de personnalisation pour une clarté optique de premier ordre.
 - **Confort Raffiné :** Plaquettes de nez en métal durables conçues pour un ajustement sûr et réglable et une portabilité durable.
-- **Production Personnalisable :** Services OEM et ODM évolutifs avec un MOQ faible de 300 pièces pour soutenir l'expansion des marques mondiales.
+- **Production Personnalisable :** Services OEM et ODM évolutifs avec un MOQ faible de 200 pièces pour soutenir l'expansion des marques mondiales.
 
 ## Parfait Pour
 - Marques de Lunettes Premium
@@ -74,4 +74,4 @@ Créant un nouveau standard dans la lunetterie haut de gamme, ce modèle intègr
 
 Les charnières à ressort de précision et les plaquettes de nez métalliques durables offrent un confort adaptatif, tandis que les verres en nylon tenaces garantissent une clarté optique pour les utilisateurs les plus exigeants.
 
-Soutenant l'intégralité des services OEM/ODM avec une quantité minimale de commande de seulement 300 pièces, Kssmi permet aux marques de luxe et aux designers indépendants de proposer des collections sur mesure fabriquées avec précision dans le monde entier.
+Soutenant l'intégralité des services OEM/ODM avec une quantité minimale de commande de seulement 200 pièces, Kssmi permet aux marques de luxe et aux designers indépendants de proposer des collections sur mesure fabriquées avec précision dans le monde entier.

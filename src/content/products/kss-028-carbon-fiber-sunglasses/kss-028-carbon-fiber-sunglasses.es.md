@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Color de Fibra de Carbono Original (Negro Mate, Negro Brillante, Tejido de Color, Carbono Forjado)"
 materials: "Fibra de Carbono Premium"
 serviceMode: "OEM y ODM ( Personalización )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -38,7 +38,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-028 Gafas de Sol Clásicas de Lujo en Fibra de Carbonio | Fabricante OEM"
-seoDescription: "Asóciese con un fabricante de exportación chino líder para las gafas de sol KSS-028 de fibra de carbono de grado aeroespacial. Especializado en OEM/ODM para el crecimiento de marcas de marca propia. MOQ 300."
+seoDescription: "Asóciese con un fabricante de exportación chino líder para las gafas de sol KSS-028 de fibra de carbono de grado aeroespacial. Especializado en OEM/ODM para el crecimiento de marcas de marca propia. MOQ 200."
 seoKeywords: "fabricante de gafas de sol de fibra de carbono, gafas de sol OEM personalizadas, gafas de marca propia China, monturas de fibra de carbono al por mayor, proveedor de gafas de sol de lujo, gafas de sol de calidad de exportación, personalización de gafas de sol OEM ODM, fábrica de gafas de sol KSS-028"
 ---
 
@@ -49,7 +49,7 @@ seoKeywords: "fabricante de gafas de sol de fibra de carbono, gafas de sol OEM p
 - **Óptica Premium:** Lentes de nailon tenaz con una resistencia superior a los impactos y una amplia personalización de tintes y revestimientos.
 - **Comodidad y Seguridad:** Almohadillas nasales de silicona hipoalergénica diseñadas para proporcionar un ajuste seguro y cómodo durante todo el día.
 - **Textura Única:** Patrones distintivos de tejido de fibra de carbono disponibles en acabados mate, brillantes o forjados para una estética de lujo de alta gama.
-- **Personalización Escalable:** Servicios integrales de OEM y ODM que incluyen múltiples técnicas de aplicación de logotipos y un bajo MOQ de 300 piezas.
+- **Personalización Escalable:** Servicios integrales de OEM y ODM que incluyen múltiples técnicas de aplicación de logotipos y un bajo MOQ de 200 piezas.
 
 ## Perfecto Para
 - Marcas de Gafas Premium
@@ -65,4 +65,4 @@ Fabricadas con fibra de carbono de grado aeroespacial, las KSS-028 aportan una e
 
 Las bisagras de barril 2+1 de precisión y las lentes de nailon resistentes a los impactos garantizan la longevidad estructural y la claridad óptica para un uso de alto rendimiento.
 
-Ofrecemos soporte completo de ODM y OEM, desde texturas forjadas a medida hasta diversas aplicaciones de logotipos, con un mínimo de 300 piezas para ayudar a las marcas premium a escalar sus carteras de gafas exclusivas.
+Ofrecemos soporte completo de ODM y OEM, desde texturas forjadas a medida hasta diversas aplicaciones de logotipos, con un mínimo de 200 piezas para ayudar a las marcas premium a escalar sus carteras de gafas exclusivas.

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Cor de Fibra de Carbono Original (Preto Fosco, Preto Brilhante, Trama Colorida, Carbono Forjado)"
 materials: "Fibra de Carbono Premium"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
-moq: "300 pçs/modelo"
+moq: "200 pçs/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -40,7 +40,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Óculos de Sol de Luxo de Fibra de Carbono KSS-043 | Fábrica OEM"
-seoDescription: "Parceria com uma fábrica chinesa líder para óculos de sol de luxo em fibra de carbono KSS-043. Armações leves de alta resistência com 300 MOQ. Especialista em OEM/ODM para marcas."
+seoDescription: "Parceria com uma fábrica chinesa líder para óculos de sol de luxo em fibra de carbono KSS-043. Armações leves de alta resistência com 200 MOQ. Especialista em OEM/ODM para marcas."
 seoKeywords: "fabricante de óculos de sol de fibra de carbono, atacado de óculos de sol KSS-043, óculos de fibra de carbono personalizados China, fábrica de óculos de marca própria, armações de carbono de luxo OEM, fornecedor de óculos de alta gama, óculos de qualidade aeroespacial ODM, óculos de carbono qualidade de exportação"
 ---
 
@@ -51,7 +51,7 @@ seoKeywords: "fabricante de óculos de sol de fibra de carbono, atacado de ócul
 - **Óptica Premium:** Lentes de nylon tenazes que proporcionam clareza de alto desempenho com amplas opções de tingimento e revestimento personalizados disponíveis.
 - **Conforto Otimizado:** Ponteiras nasicas de silicone hipoalergênico e estrutura flexível garantindo um ajuste seguro e sem pressão para uso profissional prolongado.
 - **Estética Personalizada:** Múltiplas opções de acabamento, incluindo Preto Fosco, Preto Brilhante e Carbono Forjado para combinar com identidades específicas de marcas de luxo.
-- **Produção Escalonável:** Serviços completos de personalização OEM e ODM com um MOQ competitivo de 300 peças adaptado aos mercados de exportação globais.
+- **Produção Escalonável:** Serviços completos de personalização OEM e ODM com um MOQ competitivo de 200 peças adaptado aos mercados de exportação globais.
 
 ## Perfeito Para
 
@@ -68,4 +68,4 @@ Combinando durabilidade de grau aeroespacial com um perfil ultra-leve, o KSS-043
 
 A armação apresenta um sistema de dobradiças de tambor 2+1 calibrado com precisão e lentes de nylon tenazes, garantindo estabilidade estrutural e clareza ótica num design elegante e hipoalergénico.
 
-Com suporte para acabamentos Mate, Brilhante ou Carbono Forjado e um baixo MOQ de 300 peças, o nosso âmbito total de OEM/ODM permite aos designers integrar óculos de fibra de carbono personalizados, direto do fabricante, em portfólios de luxo.
+Com suporte para acabamentos Mate, Brilhante ou Carbono Forjado e um baixo MOQ de 200 peças, o nosso âmbito total de OEM/ODM permite aos designers integrar óculos de fibra de carbono personalizados, direto do fabricante, em portfólios de luxo.

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Wood Golden & Twill Grain Green Carbon Fiber & Plain Grain Carbon Fiber Matt Gun & Wood Plain Grain Carbon Fiber Matt Silver"
 materials: "Premium Carbon Fiber and Titanium"
 serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-032 Luxury Carbon Fiber Optical Frame | OEM Manufacturer"
-seoDescription: "Partner with a premier Chinese manufacturer for KSO-032 luxury carbon fiber & titanium optical frames. Full OEM/ODM services with 300 MOQ for private labels."
+seoDescription: "Partner with a premier Chinese manufacturer for KSO-032 luxury carbon fiber & titanium optical frames. Full OEM/ODM services with 200 MOQ for private labels."
 seoKeywords: "carbon fiber optical frame manufacturer, custom OEM eyewear China, private label carbon fiber frames, wholesale luxury optical eyewear, titanium carbon fiber glasses factory, ODM eyewear wholesale supplier, export-quality optical frames, B2B carbon fiber eyewear China"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "carbon fiber optical frame manufacturer, custom OEM eyewear China,
 - **Premium Optics:** Tenacious nylon lenses providing superior impact resistance with extensive customization options for global B2B clients.
 - **All-Day Comfort:** Ergonomic rubber nose pads designed for a secure, hypoallergenic fit during extended daily wear.
 - **Exclusive Textures:** Unique carbon fiber finishes including wood grain and twill patterns, delivering a high-end, luxury aesthetic.
-- **Scalable Manufacturing:** Professional OEM & ODM customization capabilities with a low MOQ of 300 pieces for worldwide distribution.
+- **Scalable Manufacturing:** Professional OEM & ODM customization capabilities with a low MOQ of 200 pieces for worldwide distribution.
 
 ## Perfect For
 - Premium Eyewear Brands
@@ -74,4 +74,4 @@ Engineered with a high-performance fusion of premium carbon fiber and lightweigh
 
 A precision-built 2+1 barrel hinge system ensures consistent mechanical stability, while the ergonomic rubber nose pads deliver all-day hypoallergenic comfort.
 
-Offering full ODM and OEM customization scope with a low 300-piece minimum order quantity, this model enables independent designers and high-end retailers to scale bespoke luxury collections with manufacturing precision.
+Offering full ODM and OEM customization scope with a low 200-piece minimum order quantity, this model enables independent designers and high-end retailers to scale bespoke luxury collections with manufacturing precision.

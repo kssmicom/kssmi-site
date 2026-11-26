@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Carbon-Fiber & Ceylon-Ebony & White-Oak & Sapele"
 materials: "Premium Carbon Fiber and Titanium"
 serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-009 Luxury Carbon Fiber Optical Frame | OEM Manufacturer"
-seoDescription: "KSO-009 Premium Carbon Fiber and Titanium Optical Frame Manufacturer. Offering high-end OEM/ODM customization for global eyewear brands. Contact for 300 MOQ."
+seoDescription: "KSO-009 Premium Carbon Fiber and Titanium Optical Frame Manufacturer. Offering high-end OEM/ODM customization for global eyewear brands. Contact for 200 MOQ."
 seoKeywords: "carbon fiber optical frames manufacturer, custom titanium eyewear China, private label carbon fiber frames, OEM optical frame supplier, wholesale luxury optical frames, high-end eyewear factory, adjustable metal nose pads frames, carbon fiber eyewear ODM"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "carbon fiber optical frames manufacturer, custom titanium eyewear 
 - **Premium Optics:** Tenacious nylon lenses offering superior impact resistance and optical clarity for high-end eyewear standards.
 - **All-Day Comfort:** Hypoallergenic metal nose pads designed for a stable and comfortable fit throughout extended daily use.
 - **Luxury Aesthetics:** Unique carbon fiber weave textures combined with premium finishes for a sophisticated, high-end fashion appeal.
-- **Scalable Production:** Comprehensive OEM and ODM customization support with a strategic 300-piece minimum order quantity for global wholesalers.
+- **Scalable Production:** Comprehensive OEM and ODM customization support with a strategic 200-piece minimum order quantity for global wholesalers.
 
 ## Perfect For
 - Premium Eyewear Brands
@@ -74,4 +74,4 @@ Merging high-performance carbon fiber with sleek titanium temples, the KSO-009 r
 
 The integration of a precision-engineered 2+1 barrel hinge system and hypoallergenic metal nose pads ensures consistent operational smoothness and a stable, comfortable fit.
 
-With a flexible 300-piece minimum order quantity, we provide full ODM and OEM support to help independent designers and premium retailers scale their bespoke eyewear collections with ease.
+With a flexible 200-piece minimum order quantity, we provide full ODM and OEM support to help independent designers and premium retailers scale their bespoke eyewear collections with ease.

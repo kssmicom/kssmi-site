@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Mahogany (Indian Rosewood — Mountain Grain)"
 materials: "Premium Carbon Fiber and Titanium"
 serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-224 Luxury Carbon Fiber Optical Frame | OEM Manufacturer"
-seoDescription: "KSO-224: A luxury carbon fiber optical frame with titanium temples and a unique mahogany finish. 300 MOQ. Premium OEM/ODM customization for global eyewear brands."
+seoDescription: "KSO-224: A luxury carbon fiber optical frame with titanium temples and a unique mahogany finish. 200 MOQ. Premium OEM/ODM customization for global eyewear brands."
 seoKeywords: "carbon fiber optical frames, custom titanium eyewear, luxury glasses manufacturer China, wholesale carbon fiber frames, OEM eyewear factory, private label optical frames, carbon fiber eyewear supplier, bespoke luxury frames"
 ---
 
@@ -64,4 +64,4 @@ Combining aerospace-grade carbon fiber with a mahogany mountain grain finish, th
 
 Lightweight titanium temples and 2+1 barrel hinges provide long-term structural integrity while maintaining the refined profile expected of luxury eyewear.
 
-Supporting full bespoke customization at a 300-piece minimum, this frame equips premium fashion houses and boutique labels to expand their high-end portfolios.
+Supporting full bespoke customization at a 200-piece minimum, this frame equips premium fashion houses and boutique labels to expand their high-end portfolios.

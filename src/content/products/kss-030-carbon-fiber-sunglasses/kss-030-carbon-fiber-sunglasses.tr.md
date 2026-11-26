@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Orijinal Karbon Elyaf Rengi (Mat Siyah, Parlak Siyah, Renkli Örgü, Dövme Karbon)"
 materials: "Premium Karbon Elyaf"
 serviceMode: "OEM & ODM ( Özelleştirme )"
-moq: "300 adet/model"
+moq: "200 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-030 Lüks Karbon Elyaf Güneş Gözlüğü | OEM & ODM Üreticisi"
-seoDescription: "KSS-030, lüks gözlük markaları için birinci sınıf bir karbon elyaf çerçevedir. 300 MOQ ile tam OEM & ODM özelleştirme. Önde gelen bir Çinli ihracat fabrikasıyla ortaklık kurun."
+seoDescription: "KSS-030, lüks gözlük markaları için birinci sınıf bir karbon elyaf çerçevedir. 200 MOQ ile tam OEM & ODM özelleştirme. Önde gelen bir Çinli ihracat fabrikasıyla ortaklık kurun."
 seoKeywords: "karbon elyaf güneş gözlüğü üreticisi, özel OEM güneş gözlüğü, özel marka gözlük Çin, toptan karbon elyaf çerçeveler, lüks güneş gözlüğü tedarikçisi"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "karbon elyaf güneş gözlüğü üreticisi, özel OEM güneş gö
 - **Dayanıklı Donanım:** Uzun vadeli operasyonel pürüzsüzlük ve tutarlı performans için tasarlanmış sabit 2+1 varil yapılı menteşeler.
 - **Premium Optik:** Kapsamlı özel renklendirme ve kaplama seçenekleriyle üstün netlik sağlayan dayanıklı naylon lensler.
 - **Konfor ve Güvenlik:** Gün boyu konfor ve güvenli bir oturuş için tasarlanmış hipoalerjenik silikon burun pedleri.
-- **Ölçeklenebilir Üretim:** Küresel marka ihracatı için 300 adetlik düşük minimum sipariş miktarı ile tam OEM ve ODM özelleştirme yetenekleri.
+- **Ölçeklenebilir Üretim:** Küresel marka ihracatı için 200 adetlik düşük minimum sipariş miktarı ile tam OEM ve ODM özelleştirme yetenekleri.
 
 ## İçin Mükemmel
 - Premium Gözlük Markaları
@@ -62,4 +62,4 @@ KSS-030, birinci sınıf karbon elyafın ham teknik güzelliğini sergileyerek �
 
 Sabit 2+1 varil yapılı menteşeler ve hipoalerjenik silikon burun pedleri ile tasarlanan bu çerçeve, uzun vadeli yapısal bütünlük ve kullanıcı konforu sağlar.
 
-Esnek OEM/ODM özelleştirmesi ve 300 adetlik düşük MOQ, bu modeli lüks performans gözlüğü alanında genişlemek isteyen markalar için ideal bir temel haline getirir.
+Esnek OEM/ODM özelleştirmesi ve 200 adetlik düşük MOQ, bu modeli lüks performans gözlüğü alanında genişlemek isteyen markalar için ideal bir temel haline getirir.

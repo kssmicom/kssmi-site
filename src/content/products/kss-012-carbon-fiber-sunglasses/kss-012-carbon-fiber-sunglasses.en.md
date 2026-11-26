@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Original Carbon Fiber Color (Matte Black, Glossy Black, Colored Weave, Forged Carbon)"
 materials: "Premium Carbon Fiber"
 serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-012 Classic Luxury Carbon Fiber Sunglasses | OEM Manufacturer"
-seoDescription: "Partner with a premier Chinese manufacturer for KSS-012 luxury carbon fiber sunglasses. Custom CNC aerospace-grade eyewear with OEM/ODM services and 300 MOQ."
+seoDescription: "Partner with a premier Chinese manufacturer for KSS-012 luxury carbon fiber sunglasses. Custom CNC aerospace-grade eyewear with OEM/ODM services and 200 MOQ."
 seoKeywords: "carbon fiber sunglasses manufacturer, custom carbon fiber frames, luxury eyewear OEM China, wholesale carbon fiber sunglasses, CNC machined carbon fiber eyewear, private label luxury sunglasses, high strength-to-weight ratio frames, premium aerospace carbon fiber eyewear"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "carbon fiber sunglasses manufacturer, custom carbon fiber frames, 
 - **Durable Hardware:** Stable 2+1 barrel structure hinges engineered for long-term operational smoothness and reliability.
 - **Premium Optics:** Tenacious nylon lenses providing superior clarity with extensive custom tinting and coating options available.
 - **Comfort & Safety:** Hypoallergenic silicone nose pads designed for all-day comfort and a secure fit.
-- **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 300 pieces for global export.
+- **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 200 pieces for global export.
 
 ## Perfect For
 
@@ -64,5 +64,5 @@ Engineered from aerospace-grade carbon fiber, the KSS-012 merges technical resil
 
 Precision CNC machining delivers flawless tolerances across the frame, complemented by a 2+1 barrel hinge system that maintains smooth operational reliability. Hypoallergenic silicone nose pads provide a secure, comfortable fit tailored for all-day wear.
 
-We offer comprehensive OEM and ODM support for this model, enabling boutique fashion labels and independent designers to customize everything from lens tints to laser-etched branding. A low 300-piece minimum order quantity provides the manufacturing flexibility needed to scale premium collections efficiently.
+We offer comprehensive OEM and ODM support for this model, enabling boutique fashion labels and independent designers to customize everything from lens tints to laser-etched branding. A low 200-piece minimum order quantity provides the manufacturing flexibility needed to scale premium collections efficiently.
 

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Orijinal Karbon Fiber Rengi (Mat Siyah, Parlak Siyah, Renkli Örgü, Dövme Karbon)"
 materials: "Premium Karbon Fiber"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
-moq: "300 adet/model"
+moq: "200 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -37,7 +37,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-032 Lüks Klasik Karbon Fiber Güneş Gözlüğü | OEM Fabrikası"
-seoDescription: "KSS-032 lüks karbon fiber güneş gözlükleri için Çin'in önde gelen ihracat üreticisi ile ortaklık kurun. Küresel markalar için 300 MOQ ile tam OEM/ODM özelleştirme sunuyoruz."
+seoDescription: "KSS-032 lüks karbon fiber güneş gözlükleri için Çin'in önde gelen ihracat üreticisi ile ortaklık kurun. Küresel markalar için 200 MOQ ile tam OEM/ODM özelleştirme sunuyoruz."
 seoKeywords: "karbon fiber güneş gözlüğü üreticisi, özel OEM güneş gözlüğü, özel markalı gözlük Çin, toptan karbon fiber çerçeveler, lüks güneş gözlüğü tedarikçisi, CNC gözlük fabrikası, ihracat kalitesinde güneş gözlüğü, B2B gözlük özelleştirme"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "karbon fiber güneş gözlüğü üreticisi, özel OEM güneş gö
 - **Dayanıklı Donanım:** Uzun süreli operasyonel pürüzsüzlük için tasarlanmış sağlam 2+1 varil yapılı menteşeler.
 - **Premium Optik:** Kapsamlı özel renklendirme ve kaplama seçenekleri sunan dayanıklı naylon lensler.
 - **Konfor ve Güvenlik:** Tüm gün konfor ve güvenli bir oturuş için tasarlanmış hipoalerjenik silikon burun tamponları.
-- **Ölçeklenebilir Üretim:** Küresel ihracat için 300 adetlik düşük minimum sipariş miktarı ile tam OEM ve ODM özelleştirme yetenekleri.
+- **Ölçeklenebilir Üretim:** Küresel ihracat için 200 adetlik düşük minimum sipariş miktarı ile tam OEM ve ODM özelleştirme yetenekleri.
 
 ## İçin Mükemmel
 - Premium Gözlük Markaları
@@ -63,4 +63,4 @@ Teknik üstünlüğe öncelik veren markalar için tasarlanan KSS-032, hem dayan
 
 Her bir bileşen, hassas toleranslar sağlamak için titizlikle CNC'de işlenirken, 2+1 varil menteşeler ve hipoalerjenik silikon burun tamponları, mekanik dayanıklılık ve kişiselleştirilmiş konforun kusursuz bir karışımını sağlar.
 
-Kssmi, esnek 300 adetlik minimum sipariş miktarı ile kapsamlı OEM ve ODM desteği sunarak küresel perakendecilerin özel lens renkleri ve uzman markalama içeren ısmarlama karbon fiber koleksiyonlarını piyasaya sürmelerini sağlar.
+Kssmi, esnek 200 adetlik minimum sipariş miktarı ile kapsamlı OEM ve ODM desteği sunarak küresel perakendecilerin özel lens renkleri ve uzman markalama içeren ısmarlama karbon fiber koleksiyonlarını piyasaya sürmelerini sağlar.

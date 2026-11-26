@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Legno Dorato & Fibra di Carbonio Verde con Trama a Spina di Pesce & Fibra di Carbonio a Trama Piana Canna di Fucile Opaco & Fibra di Carbonio a Trama Piana Effetto Legno Argento Opaco"
 materials: "Fibra di Carbonio Premium e Titanio"
 serviceMode: "Produzione per Conto Terzi (OEM) & Design e Produzione (ODM) ( Personalizzazione )"
-moq: "300 pz/modello"
+moq: "200 pz/modello"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Produttore di Montature Ottiche di Lusso in Fibra di Carbonio e Titanio KSO-031"
-seoDescription: "KSO-031: Montature ottiche di lusso su misura in fibra di carbonio e titanio per il mercato B2B. Materiale di grado aerospaziale premium con MOQ di 300 pezzi. Servizio esperto OEM/ODM per marchi private label."
+seoDescription: "KSO-031: Montature ottiche di lusso su misura in fibra di carbonio e titanio per il mercato B2B. Materiale di grado aerospaziale premium con MOQ di 200 pezzi. Servizio esperto OEM/ODM per marchi private label."
 seoKeywords: "montature ottiche in fibra di carbonio, montature ottiche di lusso, produttore di occhiali Cina, occhiali personalizzati private label, vendita all'ingrosso montature in fibra di carbonio, servizio OEM ODM occhiali, fornitore occhiali in fibra di carbonio, fabbrica occhiali cinesi premium"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "montature ottiche in fibra di carbonio, montature ottiche di lusso
 - **Ottica Premium:** Lenti in nylon tenace che offrono una resistenza agli urti superiore con ampie opzioni di personalizzazione per i mercati globali.
 - **Comfort per Tutto il Giorno:** Naselli ergonomici in gomma progettati per una vestibilità sicura e ipoallergenica per un uso quotidiano prolungato.
 - **Trame Esclusive:** Intrecci unici in fibra di carbonio con motivi effetto legno e a spina di pesce, che offrono un'estetica di lusso di alto livello per marchi esigenti.
-- **Flessibilità Produttiva:** Servizi professionali OEM e ODM con un basso MOQ di 300 pezzi, supportando una distribuzione globale scalabile.
+- **Flessibilità Produttiva:** Servizi professionali OEM e ODM con un basso MOQ di 200 pezzi, supportando una distribuzione globale scalabile.
 
 ## Perfetto Per
 - Marche di Occhiali Premium
@@ -74,4 +74,4 @@ Il modello KSO-031 rappresenta una sofisticata fusione di fibra di carbonio di g
 
 Progettate per una scorrevolezza operativa a lungo termine, le cerniere con struttura a barilotto 2+1 e i naselli in gomma ipoallergenici assicurano una stabilità eccezionale e un comfort duraturo per chi le indossa.
 
-Supportando una personalizzazione completa OEM e ODM a partire da un minimo di 300 pezzi, Kssmi consente ai designer indipendenti e ai distributori private label di sviluppare linee di occhiali su misura con componenti progettati con precisione.
+Supportando una personalizzazione completa OEM e ODM a partire da un minimo di 200 pezzi, Kssmi consente ai designer indipendenti e ai distributori private label di sviluppare linee di occhiali su misura con componenti progettati con precisione.

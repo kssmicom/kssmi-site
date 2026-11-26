@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Color de Fibra de Carbono Original (Negro Mate, Negro Brillante, Tejido de Color, Carbono Forjado)"
 materials: "Fibra de Carbono Premium"
 serviceMode: "Fabricación por Cuenta de Terceros & Diseño y Fabricación"
-moq: "300 uds/modelo"
+moq: "200 uds/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Gafas de Sol de Lujo KSS-044 de Fibra de Carbono | Fabricante OEM"
-seoDescription: "Adquiera gafas de sol premium KSS-044 de fibra de carbono de un fabricante OEM líder en China. Ofrecemos personalización ODM completa para marcas de lujo con un MOQ de 300 unidades."
+seoDescription: "Adquiera gafas de sol premium KSS-044 de fibra de carbono de un fabricante OEM líder en China. Ofrecemos personalización ODM completa para marcas de lujo con un MOQ de 200 unidades."
 seoKeywords: "fabricante de gafas de sol de fibra de carbono, gafas de sol OEM personalizadas, gafas de marca propia China, monturas de fibra de carbono al por mayor, proveedor de gafas de sol de lujo, gafas de fibra de carbono personalizadas, fabricante de gafas de sol B2B, gafas de calidad de exportación China"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "fabricante de gafas de sol de fibra de carbono, gafas de sol OEM p
 - **Hardware Durable:** Bisagras estables con estructura de barril 2+1 diseñadas para una suavidad operativa a largo plazo e integridad estructural.
 - **Comodidad Mejorada:** Almohadillas nasales de silicona hipoalergénicas diseñadas para asegurar un ajuste seguro y cómodo durante el uso prolongado.
 - **Ingeniería de Precisión:** Textura única de tejido de fibra de carbono que ofrece una estética de lujo de alta tecnología con una durabilidad de material superior.
-- **Producción Escalable:** Capacidades completas de personalización OEM y ODM con un pedido mínimo bajo de 300 piezas para la exportación B2B global.
+- **Producción Escalable:** Capacidades completas de personalización OEM y ODM con un pedido mínimo bajo de 200 piezas para la exportación B2B global.
 
 ## Perfecto Para
 - Marcas de Gafas Premium
@@ -63,4 +63,4 @@ Para el KSS-044, la innovación en materiales se une a una estética atemporal. 
 
 Los componentes de precisión y las almohadillas nasales de silicona hipoalergénicas garantizan comodidad durante todo el día y fiabilidad mecánica a largo plazo.
 
-Al proporcionar un soporte ODM completo, desde logotipos a medida hasta tintes de lentes personalizados, empoderamos a las marcas de estilo de vida de lujo y a los diseñadores independientes para expandir sus carteras con una cantidad mínima de pedido de 300 piezas.
+Al proporcionar un soporte ODM completo, desde logotipos a medida hasta tintes de lentes personalizados, empoderamos a las marcas de estilo de vida de lujo y a los diseñadores independientes para expandir sus carteras con una cantidad mínima de pedido de 200 piezas.

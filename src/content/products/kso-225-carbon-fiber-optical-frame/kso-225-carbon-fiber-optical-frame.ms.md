@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Mahogani (Indian Rosewood — Mountain Grain)"
 materials: "Gentian Karbon Premium dan Titanium"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
-moq: "300 unit/model"
+moq: "200 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-225 Bingkai Optik Gentian Karbon Bijian Mahogani Mewah | OEM"
-seoDescription: "Rakan kongsi dengan pengeluar terkemuka China untuk bingkai optik gentian karbon bijian mahogani KSO-225. Perkhidmatan OEM/ODM pakar dengan 300 MOQ."
+seoDescription: "Rakan kongsi dengan pengeluar terkemuka China untuk bingkai optik gentian karbon bijian mahogani KSO-225. Perkhidmatan OEM/ODM pakar dengan 200 MOQ."
 seoKeywords: "pengeluar bingkai optik gentian karbon, kacamata bijian mahogani tersuai, kilang bingkai optik OEM China, bingkai gentian karbon mewah borong"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "pengeluar bingkai optik gentian karbon, kacamata bijian mahogani t
 - **Optik Premium:** Lensa nylon tenacious dengan pilihan pewarnaan dan salutan tersuai yang meluas tersedia.
 - **Keselesaan Sepanjang Hari:** Alas hidung getah lembut yang direka untuk kesesuaian yang selamat, hipoalergenik dan pemakaian berpanjangan.
 - **Estetik Unik:** Kemasan bijian kayu mahogani yang indah pada gentian karbon, menggabungkan estetik semula jadi dengan integriti struktur berteknologi tinggi.
-- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum rendah sebanyak 300 unit untuk eksport global.
+- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum rendah sebanyak 200 unit untuk eksport global.
 
 ## Sesuai Untuk
 
@@ -64,4 +64,4 @@ Gentian karbon berteknologi tinggi bertemu dengan kehangatan bijian kayu mahogan
 
 Penyepaduan engsel tong 2+1 yang stabil dan alas hidung getah hipoalergenik memberikan pengalaman sentuhan yang halus dan keselesaan sepanjang hari yang unggul untuk pemakaian berpanjangan.
 
-Direka untuk pereka bebas dan kumpulan runcit mewah, model ini tersedia untuk penyesuaian OEM/ODM yang meluas. Kami memperkasakan jenama untuk menskalakan visi mereka dengan kuantiti pesanan minimum rendah sebanyak 300 unit dan sokongan penuh untuk butiran penjenamaan tersuai.
+Direka untuk pereka bebas dan kumpulan runcit mewah, model ini tersedia untuk penyesuaian OEM/ODM yang meluas. Kami memperkasakan jenama untuk menskalakan visi mereka dengan kuantiti pesanan minimum rendah sebanyak 200 unit dan sokongan penuh untuk butiran penjenamaan tersuai.

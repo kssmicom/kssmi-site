@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Mogno (Jacarandá Indiano — Grão de Montanha)"
 materials: "Fibra de Carbono Premium e Titânio"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
-moq: "300 pçs/modelo"
+moq: "200 pçs/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Armação Óptica de Luxo em Fibra de Carbono KSO-226 | Fabricante OEM"
-seoDescription: "Adquira armações ópticas de luxo em fibra de carbono KSO-226 com grão de mogno exclusivo de um fabricante líder na China. Personalização OEM/ODM escalável com MOQ de 300."
+seoDescription: "Adquira armações ópticas de luxo em fibra de carbono KSO-226 com grão de mogno exclusivo de um fabricante líder na China. Personalização OEM/ODM escalável com MOQ de 200."
 seoKeywords: "fabricante de armações ópticas de fibra de carbono, óculos de fibra de carbono personalizados KSO-226, atacado de armações ópticas China, óculos de fibra de carbono marca própria, fornecedor OEM de óculos de luxo, armações de fibra de carbono grão mogno, fábrica de armações ópticas B2B, óculos de fibra de carbono ODM"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "fabricante de armações ópticas de fibra de carbono, óculos de 
 - **Hardware Durável:** Dobradiças estáveis de estrutura de barril 2+1 projetadas com precisão para suavidade operacional a longo prazo e integridade estrutural.
 - **Óptica Premium:** Lentes de nylon tenaz com amplas opções de tingimento personalizado e revestimento multicamada disponíveis para atender às diversas necessidades do mercado.
 - **Conforto Ergonômico:** Plaquetas nasais de borracha macia que proporcionam um ajuste seguro, hipoalergênico e confortável para uso profissional durante todo o dia.
-- **Fabricação Escalável:** Serviços abrangentes de personalização OEM e ODM com uma quantidade mínima de pedido baixa de 300 peças para atacadistas globais.
+- **Fabricação Escalável:** Serviços abrangentes de personalização OEM e ODM com uma quantidade mínima de pedido baixa de 200 peças para atacadistas globais.
 
 ## Perfeito Para
 
@@ -64,4 +64,4 @@ O KSO-226 combina a força industrial da fibra de carbono de grau aeroespacial c
 
 Projetada com precisão com hastes de titânio resiliente e dobradiças de barril 2+1 estáveis, a armação garante durabilidade a longo prazo e conforto hipoalergênico.
 
-Apoiando o escopo completo de OEM/ODM com um baixo MOQ de 300 peças, capacitamos as marcas premium a expandir coleções de óculos sob medida com foco na excelência técnica e diferenciação de mercado.
+Apoiando o escopo completo de OEM/ODM com um baixo MOQ de 200 peças, capacitamos as marcas premium a expandir coleções de óculos sob medida com foco na excelência técnica e diferenciação de mercado.

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Kohlefaser & Ceylon-Ebenholz & Weißeiche & Sapele"
 materials: "Premium-Kohlefaser und Titan"
 serviceMode: "OEM & ODM"
-moq: "300 Stk/Modell"
+moq: "200 Stk/Modell"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-009 Luxus-Carbonfaser-Brillenfassung | OEM-Hersteller"
-seoDescription: "Hersteller von Premium-Brillenfassungen aus Kohlefaser und Titan KSO-009. Bietet High-End OEM/ODM-Anpassung für globale Brillenmarken. Kontakt für 300er MOQ."
+seoDescription: "Hersteller von Premium-Brillenfassungen aus Kohlefaser und Titan KSO-009. Bietet High-End OEM/ODM-Anpassung für globale Brillenmarken. Kontakt für 200er MOQ."
 seoKeywords: "Hersteller Carbonfaser Brillenfassungen, maßgeschneiderte Titanbrillen China, Eigenmarken Carbonfassungen, OEM Brillenfassungs-Lieferant, Großhandel Luxusbrillen, High-End Brillenfabrik, verstellbare Metallnasenpads Fassungen, Carbonfaser Brillen ODM"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "Hersteller Carbonfaser Brillenfassungen, maßgeschneiderte Titanbr
 - **Premium-Optik:** Zähe Nylon-Gläser bieten überlegene Schlagfestigkeit und optische Klarheit für High-End-Brillenstandards.
 - **Ganztägiger Komfort:** Hypoallergene Metall-Nasenpads für einen stabilen und bequemen Sitz bei längerem täglichem Gebrauch.
 - **Luxuriöse Ästhetik:** Einzigartige Carbonfaser-Webstrukturen kombiniert mit Premium-Finishes für einen anspruchsvollen, hochwertigen modischen Look.
-- **Skalierbare Produktion:** Umfassende OEM- und ODM-Anpassungsunterstützung mit einer strategischen Mindestbestellmenge von 300 Stück für globale Großhändler.
+- **Skalierbare Produktion:** Umfassende OEM- und ODM-Anpassungsunterstützung mit einer strategischen Mindestbestellmenge von 200 Stück für globale Großhändler.
 
 ## Perfekt Für
 - Premium Brillenmarken
@@ -74,4 +74,4 @@ Durch die Kombination von Hochleistungs-Kohlefaser mit eleganten Titanbügeln is
 
 Die Integration eines präzisionsgefertigten 2+1-Fass-Scharniersystems und hypoallergener Metall-Nasenpads sorgt für eine gleichbleibend reibungslose Funktion und eine stabile, bequeme Passform.
 
-Mit einer flexiblen Mindestbestellmenge von 300 Stück pro Modell bieten wir umfassende ODM- und OEM-Unterstützung, um unabhängige Designer und Premium-Einzelhändler bei der mühelosen Erweiterung ihrer maßgeschneiderten Brillenkollektionen zu unterstützen.
+Mit einer flexiblen Mindestbestellmenge von 200 Stück pro Modell bieten wir umfassende ODM- und OEM-Unterstützung, um unabhängige Designer und Premium-Einzelhändler bei der mühelosen Erweiterung ihrer maßgeschneiderten Brillenkollektionen zu unterstützen.

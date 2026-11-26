@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Kayu Kencana & Serat Karbon Ijo Twill & Serat Karbon Gunmetal Mat Polos & Serat Karbon Selaka Mat Kayu Polos"
 materials: "Serat Karbon Premium lan Titanium"
 serviceMode: "OEM & ODM ( Kustomisasi )"
-moq: "300 pcs/model"
+moq: "200 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -52,7 +52,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Frame Optik Serat Karbon Mewah KSO-033 | Supplier Grosir"
-seoDescription: "Frame optik serat karbon mewah KSO-033 kanthi temple titanium kanggo merek kacamata. Produksi OEM/ODM kinerja dhuwur kanthi 300 MOQ lan presisi CNC."
+seoDescription: "Frame optik serat karbon mewah KSO-033 kanthi temple titanium kanggo merek kacamata. Produksi OEM/ODM kinerja dhuwur kanthi 200 MOQ lan presisi CNC."
 seoKeywords: "produsen frame optik serat karbon, kacamata titanium kustom China, grosir frame optik mewah, frame serat karbon label pribadi, pabrik kacamata OEM, produsen frame optik CNC, supplier kacamata kualitas ekspor, OEM kacamata profesional"
 ---
 
@@ -63,7 +63,7 @@ seoKeywords: "produsen frame optik serat karbon, kacamata titanium kustom China,
 - **Hardware Awet:** Engsel struktur barel 2+1 sing stabil dirancang kanggo kelancaran operasional sing konsisten ing saindhenging siklus urip produk.
 - **Optik Premium:** Lensa nilon kuat kanthi macem-macem pilihan pewarnaan lan lapisan kustom sing kasedhiya kanggo solusi optik kelas dhuwur.
 - **Kenyamanan Sedina Muput:** Bantalan irung karet hipolergenik dirancang kanggo pas sing aman, nyaman lan panggunaan saben dina sing tanpa beban.
-- **Produksi Scalable:** Kapasitas kustomisasi OEM & ODM lengkap kanthi jumlah pesenan minimal 300 pcs kanggo ekspor B2B global.
+- **Produksi Scalable:** Kapasitas kustomisasi OEM & ODM lengkap kanthi jumlah pesenan minimal 200 pcs kanggo ekspor B2B global.
 
 ## Cocok kanggo
 - Merek Kacamata Premium
@@ -79,4 +79,4 @@ Nggabungake serat karbon kelas aeroangkasa karo titanium premium, KSO-033 nawaka
 
 Presisi mesin CNC lan sistem engsel tong 2+1 sing stabil njamin kualitas manufaktur sing konsisten lan kelancaran operasional jangka panjang.
 
-Kanthi cakupan ODM lengkap lan jumlah pesenan minimal 300 pcs sing sithik, bingkai iki menehi kesempatan kanggo desainer independen lan omah mode mewah kanggo ngembangake koleksi label pribadi sing kustom.
+Kanthi cakupan ODM lengkap lan jumlah pesenan minimal 200 pcs sing sithik, bingkai iki menehi kesempatan kanggo desainer independen lan omah mode mewah kanggo ngembangake koleksi label pribadi sing kustom.

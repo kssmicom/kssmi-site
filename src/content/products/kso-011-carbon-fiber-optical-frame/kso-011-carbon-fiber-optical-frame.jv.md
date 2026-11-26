@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Serat Karbon & Ceylon Ebony & White Oak & Sapele"
 materials: "Serat Karbon Premium lan Titanium"
 serviceMode: "Produksi Kontrak & Desain lan Produksi ( Kustomisasi )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Frame Optik Serat Karbon Mewah KSO-011 | Supplier Grosir"
-seoDescription: "Mitra karo produsen Cina sing misuwur kanggo frame optik serat karbon mewah KSO-011 kanthi gagang titanium. OEM/ODM kanggo label pribadi kanthi 300 MOQ."
+seoDescription: "Mitra karo produsen Cina sing misuwur kanggo frame optik serat karbon mewah KSO-011 kanthi gagang titanium. OEM/ODM kanggo label pribadi kanthi 200 MOQ."
 seoKeywords: "produsen frame optik serat karbon, kacamata titanium kustom Cina, frame serat karbon label pribadi, grosir kacamata optik mewah, pabrik kacamata serat karbon OEM, supplier frame optik B2B, OEM kacamata serat karbon high-end, frame optik kualitas ekspor"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "produsen frame optik serat karbon, kacamata titanium kustom Cina, 
 - **Kenyamanan Tingkat Lanjut:** Bantalan irung titanium terintegrasi sing nawakake pas hypoallergenic lan tahan korosi kanggo kenyamanan pangguna jangka panjang.
 - **Optik Premium:** Lensa nilon multifungsi sing dirancang kanggo tahan dampak dhuwur kanthi macem-macem kemungkinan pewarnaan lan lapisan kustom.
 - **Finishing Elok:** Tekstur serat karbon sing unik lan desain mewah unisex sing nyukupi panjaluk estetika pengecer kacamata premium.
-- **Kustomisasi Lengkap:** Layanan OEM & ODM profesional kalebu aplikasi logo kustom lan modifikasi hardware wiwit saka MOQ 300 unit.
+- **Kustomisasi Lengkap:** Layanan OEM & ODM profesional kalebu aplikasi logo kustom lan modifikasi hardware wiwit saka MOQ 200 unit.
 
 ## Cocok kanggo
 - Merek Kacamata Premium
@@ -74,4 +74,4 @@ Dirancang kanggo pasar mewah sing selektif, KSO-011 nggabungake serat karbon per
 
 Engsel 2+1 tong lan bantalan irung titanium sing digawe kanthi presisi nyedhiyakake pangaturan sing gampang lan integritas struktural jangka panjang.
 
-Kasedhiya kanggo kustomisasi OEM lan ODM sing jembar wiwit saka MOQ 300 unit, model iki menehi kekuwatan kanggo label pribadi kanggo nggabungake teknologi komposit canggih menyang koleksi khas dheweke.
+Kasedhiya kanggo kustomisasi OEM lan ODM sing jembar wiwit saka MOQ 200 unit, model iki menehi kekuwatan kanggo label pribadi kanggo nggabungake teknologi komposit canggih menyang koleksi khas dheweke.

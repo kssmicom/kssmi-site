@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Madera Dorada y Fibra de Carbono Verde de Grano de Sarga y Fibra de Carbono Gris Plomo Mate de Grano Liso y Fibra de Carbono Plateada Mate de Madera de Grano Liso"
 materials: "Fibra de Carbono Premium y Titanio"
 serviceMode: "OEM y ODM ( Personalización )"
-moq: "300 uds/modelo"
+moq: "200 uds/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -52,7 +52,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Monturas Ópticas de Lujo en Fibra de Carbonio KSO-033 | Proveedor Mayorista"
-seoDescription: "Monturas ópticas de lujo KSO-033 de fibra de carbono con varillas de titanio para marcas de gafas. Fabricación OEM/ODM de alto rendimiento con MOQ de 300 y precisión CNC."
+seoDescription: "Monturas ópticas de lujo KSO-033 de fibra de carbono con varillas de titanio para marcas de gafas. Fabricación OEM/ODM de alto rendimiento con MOQ de 200 y precisión CNC."
 seoKeywords: "fabricante de monturas ópticas de fibra de carbono, gafas de titanio personalizadas China, venta al por mayor de monturas ópticas de lujo, monturas de fibra de carbono de marca blanca, fábrica de gafas OEM, fabricante de monturas ópticas CNC, proveedor de gafas de calidad de exportación, OEM de gafas profesional"
 ---
 
@@ -63,7 +63,7 @@ seoKeywords: "fabricante de monturas ópticas de fibra de carbono, gafas de tita
 - **Herrajes duraderos:** Bisagras estables con estructura de barril 2+1 diseñadas para una suavidad operativa constante durante todo el ciclo de vida del producto.
 - **Óptica premium:** Lentes de nailon tenaz con amplias opciones de tintado y recubrimiento personalizados disponibles para soluciones ópticas de alta gama.
 - **Comodidad durante todo el día:** Almohadillas nasales de goma hipoalergénicas diseñadas para un ajuste seguro y cómodo y un uso diario sin peso.
-- **Producción escalable:** Capacidades completas de personalización OEM y ODM con una cantidad mínima de pedido baja de 300 piezas para la exportación B2B global.
+- **Producción escalable:** Capacidades completas de personalización OEM y ODM con una cantidad mínima de pedido baja de 200 piezas para la exportación B2B global.
 
 ## Perfecto Para
 - Marcas de Gafas Premium
@@ -79,4 +79,4 @@ Combinando fibra de carbono de grado aeroespacial con titanio de primera calidad
 
 La precisión del mecanizado CNC y un sistema estable de bisagras de barril 2+1 garantizan una calidad de fabricación constante y una suavidad operativa a largo plazo.
 
-Con un alcance de ODM completo y una cantidad mínima de pedido baja de 300 piezas, esta montatura empodera a los diseñadores independientes y a las casas de moda de lujo para desarrollar colecciones personalizadas de marca propia.
+Con un alcance de ODM completo y una cantidad mínima de pedido baja de 200 piezas, esta montatura empodera a los diseñadores independientes y a las casas de moda de lujo para desarrollar colecciones personalizadas de marca propia.

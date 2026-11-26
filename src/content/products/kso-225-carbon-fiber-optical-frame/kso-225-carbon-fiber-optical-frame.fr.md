@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Acajou (Palissandre des Indes — Veinage Montagne)"
 materials: "Fibre de Carbone Premium et Titane"
 serviceMode: "OEM & ODM ( Personnalisation )"
-moq: "300 pcs/modèle"
+moq: "200 pcs/modèle"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-225 Monture Optique Luxe Fibre Carbone Acajou | OEM"
-seoDescription: "Partenaire fabricant chinois de premier plan pour les montures optiques KSO-225 en fibre de carbone grain acajou. Services OEM/ODM experts avec MOQ 300."
+seoDescription: "Partenaire fabricant chinois de premier plan pour les montures optiques KSO-225 en fibre de carbone grain acajou. Services OEM/ODM experts avec MOQ 200."
 seoKeywords: "fabricant montures optiques fibre de carbone, lunettes grain acajou personnalisées, usine montures optiques OEM Chine, montures luxe fibre de carbone en gros"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "fabricant montures optiques fibre de carbone, lunettes grain acajo
 - **Optique Premium :** Verres en nylon tenace avec de vastes options de teinte et de revêtement personnalisés disponibles.
 - **Confort Toute la Journée :** Plaquettes de nez en caoutchouc souple conçues pour un ajustement sûr et hypoallergénique et un port prolongé.
 - **Esthétique Unique :** Finition exquise en grain de bois d'acajou sur fibre de carbone, combinant l'esthétique naturelle avec l'intégrité structurelle de haute technologie.
-- **Production Évolutive :** Capacités complètes de personnalisation OEM & ODM avec une quantité minimale de commande de 300 pièces pour l'exportation mondiale.
+- **Production Évolutive :** Capacités complètes de personnalisation OEM & ODM avec une quantité minimale de commande de 200 pièces pour l'exportation mondiale.
 
 ## Parfait Pour
 
@@ -64,4 +64,4 @@ La fibre de carbone de haute technologie rencontre la chaleur du grain de bois d
 
 L'intégration de charnières à barillet 2+1 stables et de plaquettes de nez en caoutchouc hypoallergénique offre une expérience tactile raffinée et un confort supérieur tout au long de la journée pour un port prolongé.
 
-Conçu pour les designers indépendants et les groupes de vente au détail de luxe, ce modèle est disponible pour une personnalisation OEM/ODM étendue. Nous permettons aux marques de développer leur vision avec une faible quantité minimale de commande de 300 pièces et un support complet pour les détails de marque sur mesure.
+Conçu pour les designers indépendants et les groupes de vente au détail de luxe, ce modèle est disponible pour une personnalisation OEM/ODM étendue. Nous permettons aux marques de développer leur vision avec une faible quantité minimale de commande de 200 pièces et un support complet pour les détails de marque sur mesure.

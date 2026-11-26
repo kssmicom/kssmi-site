@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Kayu Kencana & Serat Karbon Ijo Corak Twill & Serat Karbon Gun Matt Corak Plain & Serat Karbon Selaka Matt Corak Plain Kayu"
 materials: "Serat Karbon Premium lan Titanium"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
-moq: "300 pcs/model"
+moq: "200 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-030 Frame Optik Serat Karbon Mewah | Produsen OEM"
-seoDescription: "Pesen frame optik serat karbon KSO-030 kustom saka pabrik terkemuka. Kekuatan kelas aerospace kanthi tekstur serat kayu, MOQ 300 kanggo OEM/ODM label pribadi."
+seoDescription: "Pesen frame optik serat karbon KSO-030 kustom saka pabrik terkemuka. Kekuatan kelas aerospace kanthi tekstur serat kayu, MOQ 200 kanggo OEM/ODM label pribadi."
 seoKeywords: "produsen frame optik serat karbon, kacamata serat karbon kustom China, frame optik label pribadi OEM, grosir frame serat karbon mewah, pabrik frame serat karbon KSO-030, supplier kacamata titanium serat karbon, kustomisasi ODM frame optik premium, kacamata serat karbon kualitas ekspor"
 ---
 
@@ -59,7 +59,7 @@ seoKeywords: "produsen frame optik serat karbon, kacamata serat karbon kustom Ch
 - **Hardware Awet:** Engsel struktur tong 2+1 sing stabil sing dirancang kanggo kelancaran operasional sing konsisten lan linuwih jangka panjang.
 - **Optik Premium:** Dilengkapi lensa nylon kuat sing ndukung macem-macem pilihan pewarnaan lan lapisan kustom kanggo macem-macem kabutuhan pasar.
 - **Kenyamanan Sedina Muput:** Bantalan irung karet terpadu lan bahan hypoallergenic sing dirancang kanggo pas sing aman lan nyaman nalika dienggo suwe.
-- **Produksi Skalabel:** Layanan kustomisasi OEM lan ODM sing komprehensif kanthi MOQ 300 unit, dioptimalake kanggo standar ekspor B2B global.
+- **Produksi Skalabel:** Layanan kustomisasi OEM lan ODM sing komprehensif kanthi MOQ 200 unit, dioptimalake kanggo standar ekspor B2B global.
 
 ## Cocok kanggo
 - Merek Kacamata Premium
@@ -75,4 +75,4 @@ Keunggulan rekayasa dadi inti saka KSO-030, sing nggabungake serat karbon kelas 
 
 Saben unit nduweni tekstur sing diproses kanthi presisi—kalebu corak kayu lan twill—disengkuyung dening engsel tong 2+1 kinerja dhuwur sing njamin linuwih mekanik.
 
-Dioptimalake kanggo rumah mode mewah lan merek kacamata premium, fasilitas manufaktur kita ndukung kustomisasi OEM/ODM lengkap kanthi jumlah pesanan minimal 300 unit.
+Dioptimalake kanggo rumah mode mewah lan merek kacamata premium, fasilitas manufaktur kita ndukung kustomisasi OEM/ODM lengkap kanthi jumlah pesanan minimal 200 unit.

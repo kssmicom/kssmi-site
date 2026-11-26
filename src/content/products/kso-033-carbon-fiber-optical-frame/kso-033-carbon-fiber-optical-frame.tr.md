@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Ahşap Altın & Dimi Desen Yeşil Karbon Elyaf & Düz Desen Mat Füme Karbon Elyaf & Ahşap Düz Desen Mat Gümüş Karbon Elyaf"
 materials: "Premium Karbon Elyaf ve Titanyum"
 serviceMode: "OEM & ODM ( Özelleştirme )"
-moq: "300 adet/model"
+moq: "200 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -52,7 +52,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-033 Lüks Karbon Elyaf Optik Çerçeveler | Toptan Satış Tedarikçisi"
-seoDescription: "Gözlük markaları için titanyum saplı KSO-033 lüks karbon elyaf optik çerçeveler. 300 MOQ ve CNC hassasiyeti ile yüksek performanslı OEM/ODM üretimi."
+seoDescription: "Gözlük markaları için titanyum saplı KSO-033 lüks karbon elyaf optik çerçeveler. 200 MOQ ve CNC hassasiyeti ile yüksek performanslı OEM/ODM üretimi."
 seoKeywords: "karbon elyaf optik çerçeve üreticisi, özel titanyum gözlük Çin, toptan lüks optik çerçeveler, özel markalı karbon elyaf çerçeveler, OEM gözlük fabrikası, CNC optik çerçeve üreticisi, ihracat kalitesinde gözlük tedarikçisi, profesyonel gözlük OEM"
 ---
 
@@ -63,7 +63,7 @@ seoKeywords: "karbon elyaf optik çerçeve üreticisi, özel titanyum gözlük �
 - **Dayanıklı Donanım:** Ürün ömrü boyunca tutarlı çalışma pürüzsüzlüğü için tasarlanmış sağlam 2+1 varil yapılı menteşeler.
 - **Premium Optik:** Üst düzey optik çözümler için sunulan kapsamlı özel renklendirme ve kaplama seçeneklerine sahip dayanıklı naylon lensler.
 - **Tüm Gün Konfor:** Güvenli, rahat bir oturuş ve ağırlıksız günlük kullanım için tasarlanmış hipoalerjenik kauçuk burun tamponları.
-- **Ölçeklenebilir Üretim:** Küresel B2B ihracatı için 300 adetlik düşük minimum sipariş miktarı ile tam OEM ve ODM özelleştirme yetenekleri.
+- **Ölçeklenebilir Üretim:** Küresel B2B ihracatı için 200 adetlik düşük minimum sipariş miktarı ile tam OEM ve ODM özelleştirme yetenekleri.
 
 ## İçin Mükemmel
 - Premium Gözlük Markaları
@@ -79,4 +79,4 @@ Havacılık sınıfı karbon fiberi premium titanyumla birleştiren KSO-033, yü
 
 CNC ile işlenmiş hassasiyet ve dengeli 2+1 varil menteşe sistemi, tutarlı üretim kalitesi ve uzun vadeli çalışma pürüzsüzlüğü sağlar.
 
-Tam ODM kapsamı ve 300 adetlik düşük minimum sipariş miktarı ile bu çerçeve, bağımsız tasarımcıların ve lüks moda evlerinin ısmarlama özel markalı koleksiyonlar geliştirmesini sağlar.
+Tam ODM kapsamı ve 200 adetlik düşük minimum sipariş miktarı ile bu çerçeve, bağımsız tasarımcıların ve lüks moda evlerinin ısmarlama özel markalı koleksiyonlar geliştirmesini sağlar.

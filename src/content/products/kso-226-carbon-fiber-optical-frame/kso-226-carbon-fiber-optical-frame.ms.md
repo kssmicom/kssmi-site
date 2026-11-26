@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Mahogani (Indian Rosewood — Urat Gunung)"
 materials: "Gentian Karbon Premium dan Titanium"
 serviceMode: "Pembuatan OEM (OEM) & Pembuatan Reka Bentuk (ODM) ( Penyesuaian )"
-moq: "300 unit/model"
+moq: "200 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Bingkai Optik Gentian Karbon Mewah KSO-226 | Pengilang OEM"
-seoDescription: "Dapatkan bingkai optik gentian karbon mewah KSO-226 dengan urat mahogani unik daripada pengilang terkemuka China. Penyesuaian OEM/ODM yang boleh diperluas dengan 300 MOQ."
+seoDescription: "Dapatkan bingkai optik gentian karbon mewah KSO-226 dengan urat mahogani unik daripada pengilang terkemuka China. Penyesuaian OEM/ODM yang boleh diperluas dengan 200 MOQ."
 seoKeywords: "pengilang bingkai optik gentian karbon, kacamata gentian karbon tersuai KSO-226, borong bingkai optik China, kacamata gentian karbon label peribadi, pembekal OEM kacamata mewah, bingkai gentian karbon urat mahogani, kilang bingkai optik B2B, kacamata gentian karbon ODM"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "pengilang bingkai optik gentian karbon, kacamata gentian karbon te
 - **Perkakasan Tahan Lama:** Engsel struktur tong 2+1 yang stabil direka dengan tepat untuk kelancaran operasi jangka panjang dan integriti struktur.
 - **Optik Premium:** Kanta nilon kental dengan pilihan pewarnaan tersuai yang luas dan salutan berbilang lapisan tersedia untuk memenuhi pelbagai keperluan pasaran.
 - **Keselesaan Ergonomik:** Alas hidung getah lembut yang memberikan padanan yang selamat, hipoalergenik dan selesa untuk pemakaian profesional sepanjang hari.
-- **Pembuatan Boleh Diperluas:** Perkhidmatan penyesuaian OEM & ODM yang komprehensif dengan kuantiti pesanan minimum rendah sebanyak 300 unit untuk pemborong global.
+- **Pembuatan Boleh Diperluas:** Perkhidmatan penyesuaian OEM & ODM yang komprehensif dengan kuantiti pesanan minimum rendah sebanyak 200 unit untuk pemborong global.
 
 ## Sesuai Untuk
 
@@ -64,4 +64,4 @@ KSO-226 menggabungkan kekuatan industri gentian karbon gred aeroangkasa dengan k
 
 Direka dengan tepat dengan tangkai titanium yang kenyal dan engsel tong 2+1 yang stabil, bingkai ini menjamin ketahanan jangka panjang dan keselesaan hipoalergenik.
 
-Menyokong skop penuh OEM/ODM dengan MOQ 300 unit yang rendah, kami memperkasakan jenama premium untuk mengembangkan koleksi kacamata tempahan dengan fokus pada kecemerlangan teknikal dan perbezaan pasaran.
+Menyokong skop penuh OEM/ODM dengan MOQ 200 unit yang rendah, kami memperkasakan jenama premium untuk mengembangkan koleksi kacamata tempahan dengan fokus pada kecemerlangan teknikal dan perbezaan pasaran.

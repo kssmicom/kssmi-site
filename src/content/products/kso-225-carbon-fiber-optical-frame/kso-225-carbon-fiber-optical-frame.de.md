@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Mahagoni (Indischer Palisander — Bergmaserung)"
 materials: "Premium-Kohlefaser und Titan"
 serviceMode: "OEM & ODM ( Individualisierung )"
-moq: "300 Stk/Modell"
+moq: "200 Stk/Modell"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-225 Luxus Mahagoni Maserung Kohlefaser Brille | OEM"
-seoDescription: "Partner eines führenden chinesischen Herstellers für KSO-225 Mahagoni-Maserung Kohlefaser-Brillenfassungen. Kompetente OEM/ODM-Services mit 300 MOQ."
+seoDescription: "Partner eines führenden chinesischen Herstellers für KSO-225 Mahagoni-Maserung Kohlefaser-Brillenfassungen. Kompetente OEM/ODM-Services mit 200 MOQ."
 seoKeywords: "Kohlefaser-Brillenfassungen Hersteller, maßgeschneiderte Mahagoni Maserung Brillen, OEM Brillenfabrik China, Großhandel Luxus Kohlefaser Rahmen"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "Kohlefaser-Brillenfassungen Hersteller, maßgeschneiderte Mahagoni
 - **Premium-Optik:** Widerstandsfähige Nylon-Gläser mit umfangreichen individuellen Tönungs- und Beschichtungsoptionen erhältlich.
 - **Ganztägiger Komfort:** Weiche Gummi-Nasenpads für einen sicheren, hypoallergenen Sitz und langes Tragen.
 - **Einzigartige Ästhetik:** Exquisites Mahagoni-Holzmaserungs-Finish auf Kohlefaser, das natürliche Ästhetik mit technischer struktureller Integrität verbindet.
-- **Skalierbare Produktion:** Volle OEM- und ODM-Anpassungsmöglichkeiten mit einer Mindestbestellmenge von 300 Stück für den weltweiten Export.
+- **Skalierbare Produktion:** Volle OEM- und ODM-Anpassungsmöglichkeiten mit einer Mindestbestellmenge von 200 Stück für den weltweiten Export.
 
 ## Perfekt Für
 
@@ -64,4 +64,4 @@ High-Tech-Kohlefaser trifft im KSO-225 auf die Wärme der Mahagoni-Holzmaserung 
 
 Die Integration stabiler 2+1-Fassscharniere und hypoallergener Gummi-Nasenpads sorgt für ein raffiniertes haptisches Erlebnis und überlegenen ganztägigen Komfort bei längerem Tragen.
 
-Dieses Modell wurde für unabhängige Designer und High-End-Einzelhandelsgruppen entwickelt und ist für eine umfassende OEM/ODM-Anpassung erhältlich. Wir ermöglichen es Marken, ihre Vision mit einer niedrigen Mindestbestellmenge von 300 Stück und voller Unterstützung für maßgeschneiderte Branding-Details zu skalieren.
+Dieses Modell wurde für unabhängige Designer und High-End-Einzelhandelsgruppen entwickelt und ist für eine umfassende OEM/ODM-Anpassung erhältlich. Wir ermöglichen es Marken, ihre Vision mit einer niedrigen Mindestbestellmenge von 200 Stück und voller Unterstützung für maßgeschneiderte Branding-Details zu skalieren.

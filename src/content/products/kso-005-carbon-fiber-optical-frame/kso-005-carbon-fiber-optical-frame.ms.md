@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Gentian Karbon & Oak Putih & Sapele & Ebony"
 materials: "Gentian Karbon Premium"
 serviceMode: "OEM (Pengilangan Kontrak) & ODM (Pengilangan Reka Bentuk) ( Penyesuaian )"
-moq: "300 unit/model"
+moq: "200 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Bingkai Optik Gentian Karbon Mewah KSO-005 | Pengilang OEM"
-seoDescription: "Bingkai optik gentian karbon premium KSO-005 untuk jenama kacamata global. Pembinaan hibrid kekuatan tinggi dengan kuil logam. MOQ 300 untuk penyesuaian OEM/ODM."
+seoDescription: "Bingkai optik gentian karbon premium KSO-005 untuk jenama kacamata global. Pembinaan hibrid kekuatan tinggi dengan kuil logam. MOQ 200 untuk penyesuaian OEM/ODM."
 seoKeywords: "pengilang bingkai optik gentian karbon, bingkai optik OEM tersuai, kacamata label peribadi China, borong bingkai gentian karbon, kilang bingkai optik mewah, OEM kacamata mewah, bingkai optik kualiti eksport, pembekal kacamata gentian karbon"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "pengilang bingkai optik gentian karbon, bingkai optik OEM tersuai,
 - **Perkakasan Fleksibel:** Engsel struktur spring yang direka dengan ketepatan memberikan keselesaan adaptif dan kebolehpercayaan operasi jangka panjang.
 - **Optik Gred Tinggi:** Dilengkapi dengan lensa nilon lasak yang menampilkan pilihan penyesuaian yang meluas untuk kejelasan optik premium.
 - **Keselesaan Halus:** Alas hidung logam tahan lama yang direka untuk kesesuaian yang selamat, boleh laras dan kebolehpercayaan jangka panjang.
-- **Pengeluaran Boleh Suai:** Perkhidmatan OEM dan ODM yang boleh diskalakan dengan MOQ rendah sebanyak 300 unit untuk menyokong pengembangan jenama global.
+- **Pengeluaran Boleh Suai:** Perkhidmatan OEM dan ODM yang boleh diskalakan dengan MOQ rendah sebanyak 200 unit untuk menyokong pengembangan jenama global.
 
 ## Sesuai Untuk
 - Merek Kacamata Premium
@@ -74,4 +74,4 @@ Mencipta standard baharu dalam kacamata mewah, model ini menyepadukan gentian ka
 
 Engsel spring yang direka dengan ketepatan dan alas hidung logam yang tahan lama memberikan keselesaan adaptif, manakala lensa nilon lasak memastikan kejelasan optik untuk pengguna yang paling menuntut.
 
-Menyokong skop OEM/ODM penuh dengan kuantiti pesanan minimum 300 unit yang rendah, Kssmi memperkasakan jenama mewah dan pereka bebas untuk menyampaikan koleksi tersuai yang dikeluarkan dengan ketepatan di peringkat global.
+Menyokong skop OEM/ODM penuh dengan kuantiti pesanan minimum 200 unit yang rendah, Kssmi memperkasakan jenama mewah dan pereka bebas untuk menyampaikan koleksi tersuai yang dikeluarkan dengan ketepatan di peringkat global.

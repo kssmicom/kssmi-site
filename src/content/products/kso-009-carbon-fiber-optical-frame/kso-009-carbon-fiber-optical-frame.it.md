@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Fibra di Carbonio & Ebano di Ceylon & Quercia Bianca & Sapele"
 materials: "Fibra di Carbonio Premium e Titanio"
 serviceMode: "OEM & ODM"
-moq: "300 pz/modello"
+moq: "200 pz/modello"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-009 Montatura Ottica di Lusso in Fibra di Carbonio | Produttore OEM"
-seoDescription: "Produttore di montature ottiche premium in fibra di carbonio e titanio KSO-009. Offriamo personalizzazione OEM/ODM di alto livello per brand globali. Contattaci per MOQ 300."
+seoDescription: "Produttore di montature ottiche premium in fibra di carbonio e titanio KSO-009. Offriamo personalizzazione OEM/ODM di alto livello per brand globali. Contattaci per MOQ 200."
 seoKeywords: "produttore montature ottiche fibra di carbonio, occhiali in titanio personalizzati Cina, montature fibra di carbonio private label, fornitore montature ottiche OEM, ingrosso montature lusso, fabbrica occhiali alta gamma, montature con naselli regolabili, ODM occhiali fibra di carbonio"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "produttore montature ottiche fibra di carbonio, occhiali in titani
 - **Ottica Premium:** Lenti in nylon tenace che offrono una resistenza agli urti superiore e chiarezza ottica per gli standard degli occhiali di alta gamma.
 - **Comfort per Tutto il Giorno:** Naselli in metallo ipoallergenici progettati per una vestibilità stabile e confortevole durante l'uso quotidiano prolungato.
 - **Estetica di Lusso:** Trame uniche in fibra di carbonio combinate con finiture premium per un fascino fashion sofisticato e di alto livello.
-- **Produzione Scalabile:** Supporto completo per la personalizzazione OEM e ODM con un quantitativo minimo d'ordine strategico di 300 pezzi per i grossisti globali.
+- **Produzione Scalabile:** Supporto completo per la personalizzazione OEM e ODM con un quantitativo minimo d'ordine strategico di 200 pezzi per i grossisti globali.
 
 ## Perfetto Per
 - Marche di Occhiali Premium
@@ -74,4 +74,4 @@ Combinando fibra di carbonio ad alte prestazioni con eleganti aste in titanio, i
 
 L'integrazione di un sistema di cerniere a barilotto 2+1 progettato con precisione e di naselli in metallo ipoallergenici assicura una fluidità operativa costante e una vestibilità stabile e confortevole.
 
-Con un quantitativo minimo d'ordine flessibile di 300 pezzi per modello, forniamo pieno supporto ODM e OEM per aiutare i designer indipendenti e i rivenditori premium a scalare con facilità le proprie collezioni di occhiali su misura.
+Con un quantitativo minimo d'ordine flessibile di 200 pezzi per modello, forniamo pieno supporto ODM e OEM per aiutare i designer indipendenti e i rivenditori premium a scalare con facilità le proprie collezioni di occhiali su misura.

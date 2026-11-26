@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Original Carbon Fiber Color (Matte Black, Glossy Black, Colored Weave, Forged Carbon)"
 materials: "Premium Carbon Fiber"
 serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-029 Classic Luxury Carbon Fiber Sunglasses | OEM Manufacturer"
-seoDescription: "Source premium KSS-029 carbon fiber sunglasses from a leading Chinese OEM manufacturer. Lightweight, durable frames with 2+1 barrel hinges and 300 unit MOQ."
+seoDescription: "Source premium KSS-029 carbon fiber sunglasses from a leading Chinese OEM manufacturer. Lightweight, durable frames with 2+1 barrel hinges and 200 unit MOQ."
 seoKeywords: "carbon fiber sunglasses manufacturer, luxury eyewear OEM, private label sunglasses China, wholesale carbon fiber frames, customized carbon fiber eyewear, export-quality sunglasses, OEM ODM sunglasses supplier, lightweight carbon fiber sunglasses"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "carbon fiber sunglasses manufacturer, luxury eyewear OEM, private 
 - **Durable Hardware:** Stable 2+1 barrel structure hinges engineered for long-term operational smoothness.
 - **Premium Optics:** Tenacious nylon lenses with extensive custom tinting and coating options available.
 - **Comfort & Safety:** Hypoallergenic silicone nose pads designed for all-day comfort and a secure fit.
-- **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 300 pieces for global export.
+- **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 200 pieces for global export.
 
 ## Perfect For
 - Premium Eyewear Brands
@@ -61,4 +61,4 @@ Aerospace-grade carbon fiber defines the KSS-029, offering a high-performance fr
 
 Precision-engineered components, including a durable 2+1 barrel hinge system and hypoallergenic silicone nose pads, ensure long-term stability and all-day wearer comfort.
 
-With full OEM/ODM support and a 300-piece minimum order quantity, we provide the manufacturing scale and bespoke customization options required for brands to develop unique, private-label eyewear collections.
+With full OEM/ODM support and a 200-piece minimum order quantity, we provide the manufacturing scale and bespoke customization options required for brands to develop unique, private-label eyewear collections.

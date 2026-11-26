@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Karbon Fiber & Beyaz Meşe & Sapele & Abanoz"
 materials: "Premium Karbon Fiber"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
-moq: "300 adet/model"
+moq: "200 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-005 Lüks Karbon Fiber Optik Çerçeve | OEM Üreticisi"
-seoDescription: "Küresel gözlük markaları için premium KSO-005 karbon fiber optik çerçeveler. Metal saplı yüksek mukavemetli hibrit yapı. OEM/ODM özelleştirmesi için 300 MOQ."
+seoDescription: "Küresel gözlük markaları için premium KSO-005 karbon fiber optik çerçeveler. Metal saplı yüksek mukavemetli hibrit yapı. OEM/ODM özelleştirmesi için 200 MOQ."
 seoKeywords: "karbon fiber optik çerçeve üreticisi, özel OEM optik çerçeveler, özel markalı gözlük Çin, toptan karbon fiber çerçeveler, lüks optik çerçeve fabrikası, üst düzey gözlük OEM, ihracat kalitesinde optik çerçeveler, karbon fiber gözlük tedarikçisi"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "karbon fiber optik çerçeve üreticisi, özel OEM optik çerçeve
 - **Esnek Donanım:** Adaptif konfor ve uzun vadeli operasyonel güvenilirlik sağlayan hassas mühendislik ürünü yaylı menteşeler.
 - **Üst Düzey Optik:** Üstün optik netlik için kapsamlı özelleştirme seçeneklerine sahip dayanıklı naylon lenslerle donatılmıştır.
 - **Rafine Konfor:** Güvenli, ayarlanabilir bir oturuş ve kalıcı giyilebilirlik için tasarlanmış dayanıklı metal burun pedleri.
-- **Özelleştirilebilir Üretim:** Küresel marka genişlemesini desteklemek için 300 parçalık düşük MOQ ile ölçeklenebilir OEM ve ODM hizmetleri.
+- **Özelleştirilebilir Üretim:** Küresel marka genişlemesini desteklemek için 200 parçalık düşük MOQ ile ölçeklenebilir OEM ve ODM hizmetleri.
 
 ## İçin Mükemmel
 - Premium Gözlük Markaları
@@ -74,4 +74,4 @@ seoKeywords: "karbon fiber optik çerçeve üreticisi, özel OEM optik çerçeve
 
 Hassas mühendislik ürünü yaylı menteşeler ve dayanıklı metal burun pedleri adaptif konfor sunarken, dayanıklı naylon lensler en titiz kullanıcılar için optik netlik sağlar.
 
-300 adetlik düşük minimum sipariş miktarı ile tam OEM/ODM kapsamını destekleyen Kssmi, lüks markaların ve bağımsız tasarımcıların dünya çapında hassas üretilmiş özel koleksiyonlar sunmalarını sağlar.
+200 adetlik düşük minimum sipariş miktarı ile tam OEM/ODM kapsamını destekleyen Kssmi, lüks markaların ve bağımsız tasarımcıların dünya çapında hassas üretilmiş özel koleksiyonlar sunmalarını sağlar.

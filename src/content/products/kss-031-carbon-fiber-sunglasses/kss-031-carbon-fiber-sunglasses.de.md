@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Original Kohlefaserfarbe (Mattschwarz, Glänzendes Schwarz, Farbiges Gewebe, Geschmiedetes Carbon)"
 materials: "Premium-Kohlefaser"
 serviceMode: "OEM & ODM ( Individualisierung )"
-moq: "300 Stk/Modell"
+moq: "200 Stk/Modell"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -37,7 +37,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-031 Luxus-Kohlefaser-Sonnenbrille | Großhandel OEM-Fabrik"
-seoDescription: "KSS-031: Premium-Kohlefaser-Sonnenbrille in Luftfahrtqualität mit CNC-Präzision und 2+1 Fass-Scharnieren. Experten-OEM/ODM-Service. 300 MOQ."
+seoDescription: "KSS-031: Premium-Kohlefaser-Sonnenbrille in Luftfahrtqualität mit CNC-Präzision und 2+1 Fass-Scharnieren. Experten-OEM/ODM-Service. 200 MOQ."
 seoKeywords: "Kohlefaser Sonnenbrille Hersteller, kundenspezifische OEM Sonnenbrillen China, Großhandel Kohlefaser Rahmen, Eigenmarken Brillen Lieferant, Luxus Sonnenbrille Fabrik, CNC Kohlefaser Brillen, B2B Sonnenbrillen Hersteller, Exportqualität Sonnenbrillen OEM"
 ---
 
@@ -48,7 +48,7 @@ seoKeywords: "Kohlefaser Sonnenbrille Hersteller, kundenspezifische OEM Sonnenbr
 - **Langlebige Hardware:** Stabile 2+1 Fass-Struktur Scharniere, entwickelt für langfristige Laufruhe.
 - **Premium-Optik:** Widerstandsfähige Nylon-Gläser mit umfangreichen kundenspezifischen Tönungs- und Beschichtungsoptionen erhältlich.
 - **Komfort & Passform:** Hypoallergene Silikon-Nasenpads sorgen für einen sicheren und bequemen Sitz bei längerem Gebrauch.
-- **Skalierbare Produktion:** Volle OEM- und ODM-Anpassungsmöglichkeiten mit einer niedrigen Mindestbestellmenge von 300 Stück für den weltweiten Export.
+- **Skalierbare Produktion:** Volle OEM- und ODM-Anpassungsmöglichkeiten mit einer niedrigen Mindestbestellmenge von 200 Stück für den weltweiten Export.
 
 ## Perfekt Für
 
@@ -65,4 +65,4 @@ Die KSS-031 vereint Leichtbau-Performance mit einer anspruchsvollen Unisex-Ästh
 
 Jeder Rahmen zeichnet sich durch CNC-gefräste Präzision und 2+1 Fass-Scharniere aus, um ein makelloses Finish und dauerhafte Funktionszuverlässigkeit zu gewährleisten.
 
-Dieses Modell bietet volle OEM- und ODM-Individualisierung ab einer Mindestmenge von 300 Stück und ermöglicht es Premiummarken und unabhängigen Designern, ihr Portfolio an Luxusbrillen zu erweitern.
+Dieses Modell bietet volle OEM- und ODM-Individualisierung ab einer Mindestmenge von 200 Stück und ermöglicht es Premiummarken und unabhängigen Designern, ihr Portfolio an Luxusbrillen zu erweitern.

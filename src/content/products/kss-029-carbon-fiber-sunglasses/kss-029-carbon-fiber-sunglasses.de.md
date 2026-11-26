@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Original Kohlefaserfarbe (Mattschwarz, Glänzend Schwarz, Farbiges Gewebe, Geschmiedetes Carbon)"
 materials: "Premium-Kohlefaser"
 serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM)"
-moq: "300 Stk/Modell"
+moq: "200 Stk/Modell"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-029 Klassische Luxus-Kohlefaser-Sonnenbrille | OEM-Hersteller"
-seoDescription: "Beziehen Sie hochwertige KSS-029 Kohlefaser-Sonnenbrillen von einem führenden chinesischen OEM-Hersteller. Leichte, langlebige Rahmen mit 2+1 Fassscharnieren und 300 Einheiten MOQ."
+seoDescription: "Beziehen Sie hochwertige KSS-029 Kohlefaser-Sonnenbrillen von einem führenden chinesischen OEM-Hersteller. Leichte, langlebige Rahmen mit 2+1 Fassscharnieren und 200 Einheiten MOQ."
 seoKeywords: "Kohlefaser-Sonnenbrillen Hersteller, Luxusbrillen OEM, Private Label Sonnenbrillen China, Großhandel Kohlefaserrrahmen, maßgeschneiderte Kohlefaserbrillen, Brillen in Exportqualität, OEM ODM Brillenlieferant, leichte Kohlefaser-Sonnenbrillen"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "Kohlefaser-Sonnenbrillen Hersteller, Luxusbrillen OEM, Private Lab
 - **Langlebige Hardware:** Stabile 2+1 Fassstruktur-Scharniere, die für langfristige Laufruhe ausgelegt sind.
 - **Premium-Optik:** Widerstandsfähige Nylongläser mit umfangreichen individuellen Tönungs- und Beschichtungsoptionen erhältlich.
 - **Komfort & Sicherheit:** Hypoallergene Silikon-Nasenpads für ganztägigen Komfort und sicheren Sitz.
-- **Skalierbare Produktion:** Volle OEM- und ODM-Anpassungsmöglichkeiten mit einer niedrigen Mindestbestellmenge von 300 Stück für den weltweiten Export.
+- **Skalierbare Produktion:** Volle OEM- und ODM-Anpassungsmöglichkeiten mit einer niedrigen Mindestbestellmenge von 200 Stück für den weltweiten Export.
 
 ## Perfekt Für
 - Premium-Brillenmarken
@@ -61,4 +61,4 @@ Kohlefaser in Luft- und Raumfahrtqualität definiert die KSS-029 und bietet eine
 
 Präzisionsgefertigte Komponenten, darunter ein langlebiges 2+1 Fassscharniersystem und hypoallergene Silikon-Nasenpads, gewährleisten langfristige Stabilität und ganztägigen Tragekomfort.
 
-Mit vollem OEM/ODM-Support und einer Mindestbestellmenge von 300 Stück bieten wir den Fertigungsmaßstab und die maßgeschneiderten Individualisierungsmöglichkeiten, die Marken benötigen, um einzigartige Eigenmarken-Brillenkollektionen zu entwickeln.
+Mit vollem OEM/ODM-Support und einer Mindestbestellmenge von 200 Stück bieten wir den Fertigungsmaßstab und die maßgeschneiderten Individualisierungsmöglichkeiten, die Marken benötigen, um einzigartige Eigenmarken-Brillenkollektionen zu entwickeln.

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Cor Original da Fibra de Carbono (Preto Fosco, Preto Brilhante, Trama Colorida, Carbono Forjado)"
 materials: "Fibra de Carbono Premium"
 serviceMode: "OEM & ODM ( Personalização )"
-moq: "300 pçs/modelo"
+moq: "200 pçs/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-033 Óculos de Sol de Luxo em Fibra de Carbono | Fabricante OEM"
-seoDescription: "Faça uma parceria com um fabricante chinês líder para os óculos de sol de luxo KSS-033 em fibra de carbono. Armações aeroespaciais de alta resistência com 300 MOQ e serviços OEM/ODM globais completos."
+seoDescription: "Faça uma parceria com um fabricante chinês líder para os óculos de sol de luxo KSS-033 em fibra de carbono. Armações aeroespaciais de alta resistência com 200 MOQ e serviços OEM/ODM globais completos."
 seoKeywords: "fabricante de óculos de sol de fibra de carbono, óculos de sol OEM personalizados, óculos de marca própria China, armações de fibra de carbono no atacado, fornecedor de óculos de sol de luxo, fábrica de óculos de alta resistência"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "fabricante de óculos de sol de fibra de carbono, óculos de sol O
 - **Óptica Premium:** Lentes de nylon tenaz que proporcionam clareza de alto desempenho com amplas opções de tonalidade e revestimento personalizados.
 - **Conforto Durante Todo o Dia:** Plaquetas de silicone hipoalergênicas projetadas para um ajuste seguro e sem pressão durante o uso profissional prolongado.
 - **Versatilidade Estética:** Múltiplos acabamentos em fibra de carbono, incluindo Preto Fosco, Preto Brilhante e Carbono Forjado, para se adequar a diversas identidades de marca.
-- **Produção Escalável:** Serviços abrangentes de personalização OEM e ODM com um MOQ competitivo de 300 peças para distribuição global no atacado.
+- **Produção Escalável:** Serviços abrangentes de personalização OEM e ODM com um MOQ competitivo de 200 peças para distribuição global no atacado.
 
 ## Perfeito Para
 
@@ -64,4 +64,4 @@ Criado para marcas exigentes, o modelo KSS-033 combina a superioridade técnica 
 
 A integração de dobradiças de barril 2+1 projetadas com precisão e plaquetas de silicone hipoalergênicas garante conforto durante todo o dia e durabilidade a longo prazo para diversos perfis de usuário.
 
-Suportando todo o escopo de OEM e ODM com uma quantidade mínima de pedido baixa de 300 peças, este modelo permite que etiquetas de luxo e designers independentes integrem facilmente a inovação de materiais avançados em suas coleções de marca própria.
+Suportando todo o escopo de OEM e ODM com uma quantidade mínima de pedido baixa de 200 peças, este modelo permite que etiquetas de luxo e designers independentes integrem facilmente a inovação de materiais avançados em suas coleções de marca própria.

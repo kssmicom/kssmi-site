@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Noir"
 materials: "Fibre de Carbone Premium et Titane"
 serviceMode: "OEM et ODM ( Personnalisation )"
-moq: "300 pcs/modèle"
+moq: "200 pcs/modèle"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Fabricant de Montures Optiques en Fibre de Carbone KSO-034 | OEM"
-seoDescription: "Associez-vous à une usine chinoise leader de montures optiques en fibre de carbone pour le KSO-034. Matériau de qualité aérospatiale avec branches en titane. MOQ 300."
+seoDescription: "Associez-vous à une usine chinoise leader de montures optiques en fibre de carbone pour le KSO-034. Matériau de qualité aérospatiale avec branches en titane. MOQ 200."
 seoKeywords: "fabricant montures optiques fibre de carbone, lunettes personnalisées fibre de carbone Chine, montures fibre de carbone en gros, lunettes titane fibre de carbone OEM, usine montures optiques luxe, lunettes fibre de carbone marque propre, fournisseur ODM lunettes haut de gamme"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "fabricant montures optiques fibre de carbone, lunettes personnalis
 - **Matériel de Haute Précision :** Charnières stables à structure en barillet 2+1 conçues pour une fluidité opérationnelle constante et une stabilité de la monture.
 - **Optique Premium :** Verres en nylon tenace avec de vastes options de teinte et de revêtement personnalisées disponibles pour répondre aux diverses demandes du marché.
 - **Excellence de Fabrication :** Composants conçus avec précision mettant en valeur une texture de fibre de carbone unique avec des propriétés hypoallergéniques pour un attrait haut de gamme.
-- **Personnalisation B2B :** Fabrication OEM et ODM évolutive prenant en charge les logos, les tailles et les couleurs personnalisés avec un faible MOQ di 300 pièces.
+- **Personnalisation B2B :** Fabrication OEM et ODM évolutive prenant en charge les logos, les tailles et les couleurs personnalisés avec un faible MOQ di 200 pièces.
 
 ## Parfait Pour
 - Marques de Lunettes Premium
@@ -62,4 +62,4 @@ Le KSO-034 représente le summum de l'ingénierie des matériaux hybrides, fusio
 
 Les charnières en barillet 2+1 conçues avec précision fonctionnent en tandem avec les plaquettes de nez en caoutchouc intégrées pour offrir un ajustement stable et antidérapant pour un usage professionnel tout au long de la journée. Chaque monture met en valeur la texture high-tech distincte della fibre de carbone tout en maintenant la sécurité hypoallergénique pour les utilisateurs finaux exigeants.
 
-Disponible pour un développement complet OEM et ODM avec une quantité minimale de commande flexible de 300 pièces, ce modèle permet aux labels indépendants et aux maisons de mode établies de lancer des lignes de lunettes sur mesure avec des normes de fabrication de classe mondiale.
+Disponible pour un développement complet OEM et ODM avec une quantité minimale de commande flexible de 200 pièces, ce modèle permet aux labels indépendants et aux maisons de mode établies de lancer des lignes de lunettes sur mesure avec des normes de fabrication de classe mondiale.

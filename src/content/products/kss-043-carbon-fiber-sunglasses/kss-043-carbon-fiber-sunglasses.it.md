@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Colore Originale Fibra di Carbonio (Nero Opaco, Nero Lucido, Trama Colorata, Carbonio Forgiato)"
 materials: "Fibra di Carbonio Premium"
 serviceMode: "Produzione per Conto Terzi (OEM) & Design e Produzione (ODM) ( Personalizzazione )"
-moq: "300 pz/modello"
+moq: "200 pz/modello"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -40,7 +40,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-043 Occhiali da Sole di Lusso in Fibra di Carbonio | Fabbrica OEM"
-seoDescription: "Collabora con una fabbrica cinese leader per gli occhiali da sole di lusso in fibra di carbonio KSS-043. Montature leggere ad alta resistenza con MOQ 300. Esperto OEM/ODM per marchi."
+seoDescription: "Collabora con una fabbrica cinese leader per gli occhiali da sole di lusso in fibra di carbonio KSS-043. Montature leggere ad alta resistenza con MOQ 200. Esperto OEM/ODM per marchi."
 seoKeywords: "produttore occhiali da sole in fibra di carbonio, vendita all'ingrosso occhiali KSS-043, occhiali personalizzati in fibra di carbonio Cina, fabbrica occhiali private label, montature lusso carbonio OEM, fornitore occhiali alta gamma, occhiali grado aerospaziale ODM, occhiali carbonio qualità esportazione"
 ---
 
@@ -51,7 +51,7 @@ seoKeywords: "produttore occhiali da sole in fibra di carbonio, vendita all'ingr
 - **Ottica Premium:** Lenti in nylon tenaci che offrono una nitidezza ad alte prestazioni con ampie opzioni di colorazione e rivestimento personalizzate disponibili.
 - **Comfort Ottimizzato:** Naselli in silicone ipoallergenici e struttura flessibile che garantiscono una vestibilità sicura e senza pressione per un uso professionale prolungato.
 - **Estetica Personalizzata:** Molteplici opzioni di finitura tra cui Nero Opaco, Nero Lucido e Carbonio Forgiato per abbinarsi a specifiche identità di marchi di lusso.
-- **Produzione Scalabile:** Servizi di personalizzazione OEM e ODM completi con un MOQ competitivo di 300 pezzi su misura per i mercati di esportazione globali.
+- **Produzione Scalabile:** Servizi di personalizzazione OEM e ODM completi con un MOQ competitivo di 200 pezzi su misura per i mercati di esportazione globali.
 
 ## Perfetto Per
 
@@ -68,4 +68,4 @@ KSS-043 è realizzato in fibra di carbonio premium, combinando una durata di gra
 
 La montatura presenta un sistema di cerniere a botte 2+1 calibrato con precisione e lenti in nylon tenaci, garantendo stabilità strutturale e chiarezza ottica in un design elegante e ipoallergenico.
 
-Con supporto per finiture Opache, Lucide o in Carbonio Forgiato e un basso MOQ di 300 pezzi, il nostro ambito OEM/ODM completo consente ai designer di integrare occhiali in fibra di carbonio su misura, direttamente dal produttore, nei portafogli di lusso.
+Con supporto per finiture Opache, Lucide o in Carbonio Forgiato e un basso MOQ di 200 pezzi, il nostro ambito OEM/ODM completo consente ai designer di integrare occhiali in fibra di carbonio su misura, direttamente dal produttore, nei portafogli di lusso.

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Warna Gentian Karbon Asal (Hitam Matte, Hitam Berkilat, Tenunan Berwarna, Karbon Tempa)"
 materials: "Gentian Karbon Premium"
 serviceMode: "OEM & ODM ( Penyesuaian )"
-moq: "300 unit/model"
+moq: "200 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Cermin Mata Hitam Gentian Karbon Klasik Mewah KSS-033 | Pengilang OEM"
-seoDescription: "Bekerjasama dengan pengilang China terkemuka untuk cermin mata hitam gentian karbon mewah KSS-033. Bingkai aeroangkasa berkekuatan tinggi dengan 300 MOQ dan perkhidmatan OEM/ODM global yang lengkap."
+seoDescription: "Bekerjasama dengan pengilang China terkemuka untuk cermin mata hitam gentian karbon mewah KSS-033. Bingkai aeroangkasa berkekuatan tinggi dengan 200 MOQ dan perkhidmatan OEM/ODM global yang lengkap."
 seoKeywords: "pengilang cermin mata hitam gentian karbon, cermin mata hitam OEM tersuai, cermin mata label peribadi China, bingkai gentian karbon borong, pembekal cermin mata hitam mewah"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "pengilang cermin mata hitam gentian karbon, cermin mata hitam OEM 
 - **Optik Premium:** Lensa nilon tahan lasak yang memberikan kejelasan prestasi tinggi dengan pilihan pewarnaan dan salutan tersuai yang meluas.
 - **Keselesaan Sepanjang Hari:** Alas hidung silikon hipoalergenik yang direka untuk muat yang selamat dan bebas tekanan semasa penggunaan profesional yang berpanjangan.
 - **Kepelbagaian Estetik:** Pelbagai kemasan gentian karbon termasuk Hitam Matte, Hitam Berkilat, dan Karbon Tempa untuk memenuhi pelbagai identiti jenama.
-- **Pengeluaran Boleh Skala:** Perkhidmatan penyesuaian OEM dan ODM yang komprehensif dengan MOQ 300 unit yang kompetitif untuk pengedaran borong global.
+- **Pengeluaran Boleh Skala:** Perkhidmatan penyesuaian OEM dan ODM yang komprehensif dengan MOQ 200 unit yang kompetitif untuk pengedaran borong global.
 
 ## Sesuai Untuk
 
@@ -64,4 +64,4 @@ Dihasilkan untuk jenama yang mementingkan kualiti, KSS-033 menggabungkan keunggu
 
 Integrasi engsel tong 2+1 yang dijurutera dengan tepat dan alas hidung silikon hipoalergenik memastikan keselesaan sepanjang hari dan ketahanan jangka panjang merentasi pelbagai profil pengguna.
 
-Menyokong skop OEM dan ODM sepenuhnya dengan kuantiti pesanan minimum 300 unit yang rendah, model ini membolehkan label mewah dan pereka bebas untuk mengintegrasikan inovasi bahan termaju ke dalam koleksi label peribadi mereka dengan mudah.
+Menyokong skop OEM dan ODM sepenuhnya dengan kuantiti pesanan minimum 200 unit yang rendah, model ini membolehkan label mewah dan pereka bebas untuk mengintegrasikan inovasi bahan termaju ke dalam koleksi label peribadi mereka dengan mudah.

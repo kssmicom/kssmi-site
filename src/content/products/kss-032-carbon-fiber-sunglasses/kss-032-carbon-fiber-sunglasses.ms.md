@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Warna Gentian Karbon Asal (Hitam Pudar, Hitam Berkilat, Tenunan Berwarna, Karbon Tempa)"
 materials: "Gentian Karbon Premium"
 serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & Pengilangan Reka Bentuk (ODM) ( Penyesuaian )"
-moq: "300 unit/model"
+moq: "200 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -37,7 +37,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Cermin Mata Hitam Gentian Karbon Mewah KSS-032 | Kilang OEM"
-seoDescription: "Bekerjasama dengan pengeluar eksport terkemuka China untuk cermin mata hitam gentian karbon mewah KSS-032. Menawarkan penyesuaian OEM/ODM penuh dengan 300 MOQ untuk jenama global."
+seoDescription: "Bekerjasama dengan pengeluar eksport terkemuka China untuk cermin mata hitam gentian karbon mewah KSS-032. Menawarkan penyesuaian OEM/ODM penuh dengan 200 MOQ untuk jenama global."
 seoKeywords: "pengeluar cermin mata hitam gentian karbon, cermin mata hitam OEM tersuai, label peribadi eyewear China, bingkai gentian karbon borong, pembekal cermin mata hitam mewah, kilang eyewear CNC, cermin mata hitam kualiti eksport, penyesuaian eyewear B2B"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "pengeluar cermin mata hitam gentian karbon, cermin mata hitam OEM 
 - **Perkakasan Tahan Lama:** Engsel struktur tong 2+1 yang stabil direka untuk kelancaran operasi jangka panjang.
 - **Optik Premium:** Lensa nilon kental dengan pilihan warna dan salutan tersuai yang meluas tersedia.
 - **Keselesaan & Keselamatan:** Alas hidung silikon hipoyalergenik direka untuk keselesaan sepanjang hari dan padanan yang selamat.
-- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum yang rendah sebanyak 300 unit untuk eksport global.
+- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum yang rendah sebanyak 200 unit untuk eksport global.
 
 ## Sesuai Untuk
 - Merek Kacamata Premium
@@ -63,4 +63,4 @@ Direka untuk jenama yang mengutamakan keunggulan teknikal, KSS-032 menggunakan g
 
 Setiap komponen dimesin secara CNC dengan teliti untuk memastikan toleransi yang tepat, manakala engsel tong 2+1 dan alas hidung silikon hipoyalergenik menyediakan gabungan ketahanan mekanikal dan keselesaan peribadi yang lancar.
 
-Kssmi menyediakan sokongan OEM dan ODM yang komprehensif dengan kuantiti pesanan minimum 300 unit yang fleksibel, membolehkan peruncit global melancarkan koleksi gentian karbon khas yang menampilkan warna kanta tersuai dan penjenamaan khusus.
+Kssmi menyediakan sokongan OEM dan ODM yang komprehensif dengan kuantiti pesanan minimum 200 unit yang fleksibel, membolehkan peruncit global melancarkan koleksi gentian karbon khas yang menampilkan warna kanta tersuai dan penjenamaan khusus.

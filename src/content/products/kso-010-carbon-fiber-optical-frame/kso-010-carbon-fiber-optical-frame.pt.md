@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Fibra de Carbono & Ébano do Ceilão & Carvalho Branco & Sapele"
 materials: "Fibra de Carbono Premium e Titânio"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
-moq: "300 pçs/modelo"
+moq: "200 pçs/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Armação Óptica Luxo KSO-010 Fibra de Carbono | Fabricante OEM"
-seoDescription: "Adquira armações ópticas luxo KSO-010 em fibra de carbono com hastes de titânio e detalhes em madeira de uma prestigiada fábrica OEM chinesa. MOQ 300 pçs. Contacte-nos!"
+seoDescription: "Adquira armações ópticas luxo KSO-010 em fibra de carbono com hastes de titânio e detalhes em madeira de uma prestigiada fábrica OEM chinesa. MOQ 200 pçs. Contacte-nos!"
 seoKeywords: "fabricante armações ópticas fibra de carbono, óculos personalizados titânio fibra de carbono, armações ópticas luxo OEM China, atacadista óculos detalhes madeira, armações fibra de carbono marca própria, fábrica óculos Shenzhen"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante armações ópticas fibra de carbono, óculos personali
 - **Hardware Durável:** Dobradiças estáveis com estrutura de barril 2+1 projetadas para fluidez operacional a longo prazo e integridade estrutural.
 - **Óptica Premium:** Lentes de nylon tenaz proporcionam clareza superior com amplas opções de cores e revestimentos personalizados.
 - **Conforto Ergonômico:** Plaquetas nasais metálicas profissionais e estrutura de armação equilibrada que garante ajuste seguro e confortável.
-- **Produção Escalável:** Sólidas capacidades de personalização OEM e ODM com um pedido mínimo de 300 peças para exportação global.
+- **Produção Escalável:** Sólidas capacidades de personalização OEM e ODM com um pedido mínimo de 200 peças para exportação global.
 
 ## Perfeito Para
 - Marcas de Óculos Premium
@@ -74,4 +74,4 @@ Projetada para o segmento de luxo de alto padrão, a KSO-010 funde fibra de carb
 
 As dobradiças com estrutura de barril 2+1, projetadas com precisão, garantem estabilidade mecânica a longo prazo e um ajuste refinado e seguro.
 
-Apoiando o desenvolvimento completo de OEM e ODM com um pedido mínimo de 300 peças, este modelo capacita designers independentes e marcas premium a integrar a inovação de materiais de alta tecnologia em suas coleções sob medida.
+Apoiando o desenvolvimento completo de OEM e ODM com um pedido mínimo de 200 peças, este modelo capacita designers independentes e marcas premium a integrar a inovação de materiais de alta tecnologia em suas coleções sob medida.

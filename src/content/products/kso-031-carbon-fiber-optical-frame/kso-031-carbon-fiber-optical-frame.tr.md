@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Altın Ahşap & Dimi Desenli Yeşil Karbon Elyaf & Düz Desenli Karbon Elyaf Mat Füme & Ahşap Düz Desenli Karbon Elyaf Mat Gümüş"
 materials: "Premium Karbon Elyaf ve Titanyum"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
-moq: "300 adet/model"
+moq: "200 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-031 Lüks Karbon Elyaf ve Titanyum Optik Çerçeve Üreticisi"
-seoDescription: "KSO-031: B2B için özel tasarım lüks karbon elyaf ve titanyum optik çerçeveler. 300 MOQ ile premium havacılık sınıfı malzeme. Özel markalar için uzman OEM/ODM hizmeti."
+seoDescription: "KSO-031: B2B için özel tasarım lüks karbon elyaf ve titanyum optik çerçeveler. 200 MOQ ile premium havacılık sınıfı malzeme. Özel markalar için uzman OEM/ODM hizmeti."
 seoKeywords: "karbon elyaf optik çerçeveler, lüks optik çerçeveler, gözlük üreticisi Çin, özel marka gözlük, toptan karbon elyaf çerçeveler, gözlük OEM ODM hizmeti, karbon elyaf gözlük tedarikçisi, premium Çin gözlük fabrikası"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "karbon elyaf optik çerçeveler, lüks optik çerçeveler, gözlü
 - **Premium Optik:** Küresel pazarlar için kapsamlı özelleştirme seçenekleri ile üstün darbe direnci sağlayan dayanıklı naylon lensler.
 - **Tüm Gün Konfor:** Uzun süreli günlük kullanım için güvenli ve hipoalerjenik bir uyum sağlamak üzere tasarlanmış ergonomik kauçuk burun tamponları.
 - **Özel Dokular:** Titiz markalar için üst düzey, lüks bir estetik sunan ahşap desenli ve dimi desenli benzersiz karbon elyaf dokumalar.
-- **Üretim Esnekliği:** Ölçeklenebilir küresel dağıtımı destekleyen, 300 adetlik düşük MOQ ile profesyonel OEM ve ODM hizmetleri.
+- **Üretim Esnekliği:** Ölçeklenebilir küresel dağıtımı destekleyen, 200 adetlik düşük MOQ ile profesyonel OEM ve ODM hizmetleri.
 
 ## İçin Mükemmel
 - Premium Gözlük Markaları
@@ -74,4 +74,4 @@ KSO-031, havacılık sınıfı karbon elyafı ile rafine titanyumun sofistike bi
 
 Uzun süreli kullanımda pürüzsüz çalışma için tasarlanan 2+1 varil menteşeler ve hipoalerjenik kauçuk burun tamponları, kullanıcı için olağanüstü denge ve tüm gün konfor sağlar.
 
-300 parçalık minimum sipariş miktarından başlayan kapsamlı OEM ve ODM özelleştirmesini destekleyen Kssmi, bağımsız tasarımcıların ve özel marka dağıtımcılarının hassas mühendislik bileşenleriyle ısmarlama gözlük portföyleri oluşturmasına olanak tanır.
+200 parçalık minimum sipariş miktarından başlayan kapsamlı OEM ve ODM özelleştirmesini destekleyen Kssmi, bağımsız tasarımcıların ve özel marka dağıtımcılarının hassas mühendislik bileşenleriyle ısmarlama gözlük portföyleri oluşturmasına olanak tanır.

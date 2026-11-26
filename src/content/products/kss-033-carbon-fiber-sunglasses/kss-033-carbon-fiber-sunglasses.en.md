@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Original Carbon Fiber Color (Matte Black, Glossy Black, Colored Weave, Forged Carbon)"
 materials: "Premium Carbon Fiber"
 serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-033 Luxury Classic Carbon Fiber Sunglasses | OEM Manufacturer"
-seoDescription: "Partner with a premier Chinese manufacturer for KSS-033 luxury carbon fiber sunglasses. High-strength aerospace frames with 300 MOQ and full global OEM/ODM services."
+seoDescription: "Partner with a premier Chinese manufacturer for KSS-033 luxury carbon fiber sunglasses. High-strength aerospace frames with 200 MOQ and full global OEM/ODM services."
 seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses, private label eyewear China, wholesale carbon fiber frames, luxury sunglasses supplier, high-strength eyewear factory, export-quality sunglasses, premium carbon fiber glasses"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses, priva
 - **Premium Optics:** Tenacious nylon lenses providing high-performance clarity with extensive custom tinting and coating options.
 - **All-Day Comfort:** Hypoallergenic silicone nose pads designed for a secure, pressure-free fit during extended professional use.
 - **Aesthetic Versatility:** Multiple carbon fiber finishes including Matte Black, Glossy Black, and Forged Carbon to suit diverse brand identities.
-- **Scalable Production:** Comprehensive OEM & ODM customization services with a competitive 300-piece MOQ for global wholesale distribution.
+- **Scalable Production:** Comprehensive OEM & ODM customization services with a competitive 200-piece MOQ for global wholesale distribution.
 
 ## Perfect For
 
@@ -64,4 +64,4 @@ Crafted for discerning brands, the KSS-033 combines the technical superiority of
 
 The integration of precision-engineered 2+1 barrel hinges and hypoallergenic silicone nose pads ensures all-day comfort and long-term durability across diverse user profiles.
 
-Supporting full OEM and ODM scope with a low 300-piece minimum order quantity, this model allows luxury labels and independent designers to easily integrate advanced material innovation into their private label collections.
+Supporting full OEM and ODM scope with a low 200-piece minimum order quantity, this model allows luxury labels and independent designers to easily integrate advanced material innovation into their private label collections.

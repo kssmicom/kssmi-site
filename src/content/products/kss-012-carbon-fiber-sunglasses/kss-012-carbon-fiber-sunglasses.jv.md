@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Warna Serat Karbon Asli (Ireng Matte, Ireng Mengkilap, Anyaman Warna, Karbon Tempa)"
 materials: "Serat Karbon Premium"
 serviceMode: "OEM & ODM ( Kustomisasi )"
-moq: "300 pcs/model"
+moq: "200 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Kacamata Hitam Serat Karbon Mewah Klasik KSS-012 | Produsen OEM"
-seoDescription: "Mitra karo produsen Cina sing unggul kanggo kacamata hitam serat karbon mewah KSS-012. Kacamata karbon kelas dirgantara CNC kanthi layanan OEM/ODM lan MOQ 300."
+seoDescription: "Mitra karo produsen Cina sing unggul kanggo kacamata hitam serat karbon mewah KSS-012. Kacamata karbon kelas dirgantara CNC kanthi layanan OEM/ODM lan MOQ 200."
 seoKeywords: "produsen kacamata hitam serat karbon, bingkai karbon kustom, OEM kacamata mewah Cina, grosir kacamata hitam serat karbon, kacamata karbon mesin CNC, kacamata hitam mewah label pribadi, bingkai rasio kekuatan-kanggo-bobot dhuwur, kacamata karbon dirgantara premium"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "produsen kacamata hitam serat karbon, bingkai karbon kustom, OEM k
 - **Hardware Awet :** Engsel struktur tong 2+1 sing stabil dirancang kanggo kelancaran operasional lan linuwih jangka panjang.
 - **Optik Premium :** Lensa nilon kuat sing nyedhiyakake kejelasan unggul kanthi pilihan pewarnaan lan lapisan kustom sing akeh.
 - **Kenyamanan & Keamanan :** Bantalan irung silikon hiporalergenik sing dirancang kanggo kenyamanan sedina muput lan pas sing aman.
-- **Produksi Skalabel :** Kapasitas kustomisasi OEM & ODM lengkap kanthi jumlah pesenan minimal sing sithik yaiku 300 unit kanggo ekspor global.
+- **Produksi Skalabel :** Kapasitas kustomisasi OEM & ODM lengkap kanthi jumlah pesenan minimal sing sithik yaiku 200 unit kanggo ekspor global.
 
 ## Cocok kanggo
 
@@ -64,4 +64,4 @@ Dirancang saka serat karbon kelas dirgantara, KSS-012 nggabungake daya tahan tek
 
 Pemesinan CNC presisi menehi toleransi sing sampurna ing kabeh bingkai, dilengkapi sistem engsel tong 2+1 sing njaga linuwih operasional sing lancar. Bantalan irung silikon hipoalergenik menehi pas sing aman lan nyaman, dirancang kanggo panggunaan sedina muput.
 
-Kita nawakake dhukungan OEM lan ODM sing komprehensif kanggo model ini, sing ngidini label busana butik lan desainer independen kustomisasi kabeh saka warna lensa nganti branding ukiran laser. Jumlah pesenan minimal 300 unit sing sithik menehi fleksibilitas manufaktur sing dibutuhake kanggo nambah koleksi premium kanthi efisien.
+Kita nawakake dhukungan OEM lan ODM sing komprehensif kanggo model ini, sing ngidini label busana butik lan desainer independen kustomisasi kabeh saka warna lensa nganti branding ukiran laser. Jumlah pesenan minimal 200 unit sing sithik menehi fleksibilitas manufaktur sing dibutuhake kanggo nambah koleksi premium kanthi efisien.

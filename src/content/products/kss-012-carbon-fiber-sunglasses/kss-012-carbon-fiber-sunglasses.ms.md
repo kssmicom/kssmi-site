@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Warna Gentian Karbon Asal (Hitam Matte, Hitam Berkilat, Tenunan Berwarna, Karbon Tempa)"
 materials: "Gentian Karbon Premium"
 serviceMode: "OEM & ODM ( Penyesuaian )"
-moq: "300 unit/model"
+moq: "200 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Cermin Mata Hitam Gentian Karbon Mewah Klasik KSS-012 | Pengilang OEM"
-seoDescription: "Bekerjasama dengan pengilang terkemuka China untuk cermin mata hitam gentian karbon mewah KSS-012. Cermin mata karbon gred aeroangkasa CNC dengan perkhidmatan OEM/ODM dan 300 MOQ."
+seoDescription: "Bekerjasama dengan pengilang terkemuka China untuk cermin mata hitam gentian karbon mewah KSS-012. Cermin mata karbon gred aeroangkasa CNC dengan perkhidmatan OEM/ODM dan 200 MOQ."
 seoKeywords: "pengilang cermin mata hitam gentian karbon, bingkai karbon tersuai, OEM cermin mata mewah China, borong cermin mata hitam gentian karbon, cermin mata karbon mesin CNC, cermin mata hitam mewah label peribadi, bingkai nisbah kekuatan-ke-berat tinggi, cermin mata karbon aeroangkasa premium"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "pengilang cermin mata hitam gentian karbon, bingkai karbon tersuai
 - **Perkakasan Tahan Lama:** Engsel struktur tong 2+1 yang stabil direka untuk kelancaran operasi dan kebolehpercayaan jangka panjang.
 - **Optik Premium:** Kanta nilon teguh yang memberikan kejelasan unggul dengan pilihan pewarnaan dan salutan tersuai yang meluas.
 - **Keselesaan & Keselamatan:** Alas hidung silikon hiporalergenik yang direka untuk keselesaan sepanjang hari dan padanan yang selamat.
-- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum yang rendah iaitu 300 unit untuk eksport global.
+- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum yang rendah iaitu 200 unit untuk eksport global.
 
 ## Sesuai Untuk
 
@@ -64,4 +64,4 @@ Direka daripada gentian karbon gred aeroangkasa, KSS-012 menggabungkan daya taha
 
 Pemesinan CNC ketepatan memberikan toleransi yang sempurna pada seluruh bingkai, dilengkapi dengan sistem engsel tong 2+1 yang mengekalkan kebolehpercayaan operasi yang lancar. Alas hidung silikon hipoalergenik memberikan padanan yang selamat dan selesa, disesuaikan untuk pemakaian sepanjang hari.
 
-Kami menawarkan sokongan OEM dan ODM yang komprehensif untuk model ini, membolehkan label fesyen butik dan pereka bebas untuk menyesuaikan segala-galanya daripada warna kanta hingga penjenamaan terukir laser. Kuantiti pesanan minimum 300 unit yang rendah memberikan fleksibiliti pembuatan yang diperlukan untuk meningkatkan koleksi premium dengan cekap.
+Kami menawarkan sokongan OEM dan ODM yang komprehensif untuk model ini, membolehkan label fesyen butik dan pereka bebas untuk menyesuaikan segala-galanya daripada warna kanta hingga penjenamaan terukir laser. Kuantiti pesanan minimum 200 unit yang rendah memberikan fleksibiliti pembuatan yang diperlukan untuk meningkatkan koleksi premium dengan cekap.

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Werna Serat Karbon Asli (Ireng Matte, Ireng Glossy, Anyaman Berwarna, Karbon Tempa)"
 materials: "Serat Karbon Premium"
 serviceMode: "Produksi Kontrak (OEM) & Desain lan Produksi (ODM)"
-moq: "300 pcs/model"
+moq: "200 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-029 Kacamata Ireng Serat Karbon Mewah Klasik | Produsen OEM"
-seoDescription: "Pesen kacamata ireng serat karbon KSS-029 premium saka produsen OEM terkemuka ing China. Frame entheng lan kuwat kanti engsel tong 2+1 lan MOQ 300 unit."
+seoDescription: "Pesen kacamata ireng serat karbon KSS-029 premium saka produsen OEM terkemuka ing China. Frame entheng lan kuwat kanti engsel tong 2+1 lan MOQ 200 unit."
 seoKeywords: "produsen kacamata ireng serat karbon, OEM eyewear mewah, kacamata ireng label pribadi China, grosir frame serat karbon, eyewear serat karbon kustom, kacamata kualitas ekspor, pemasok eyewear OEM ODM, kacamata ireng serat karbon entheng"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "produsen kacamata ireng serat karbon, OEM eyewear mewah, kacamata 
 - **Hardware Awet:** Engsel struktur tong 2+1 sing stabil dirancang kanggo kelancaran operasional jangka panjang.
 - **Optik Premium:** Lensa nilon kuat kanthi pilihan warna lan lapisan kustom sing jembar kasedhiya.
 - **Kenyamanan & Keamanan:** Bantalan irung silikon hypoallergenic sing dirancang kanggo kenyamanan sedina muput lan pas sing aman.
-- **Produksi Scalable:** Kapasitas kustomisasi OEM & ODM lengkap kanthi jumlah pesenan minimal 300 unit kanggo ekspor global.
+- **Produksi Scalable:** Kapasitas kustomisasi OEM & ODM lengkap kanthi jumlah pesenan minimal 200 unit kanggo ekspor global.
 
 ## Cocok kanggo
 - Merek Kacamata Premium
@@ -61,4 +61,4 @@ Serat karbon kelas aerospace nemtokake KSS-029, nawakake frame kinerja dhuwur si
 
 Komponen sing direkayasa kanthi presisi, kalebu sistem engsel tong 2+1 sing awet lan bantalan irung silikon hypoallergenic, njamin stabilitas jangka panjang lan kenyamanan sing nganggo sedina muput.
 
-Kanthi dhukungan OEM/ODM lengkap lan jumlah pesenan minimal 300 unit, kita nyedhiyakake skala manufaktur lan pilihan kustomisasi sing dibutuhake kanggo merek ngembangake koleksi kacamata label pribadi sing unik.
+Kanthi dhukungan OEM/ODM lengkap lan jumlah pesenan minimal 200 unit, kita nyedhiyakake skala manufaktur lan pilihan kustomisasi sing dibutuhake kanggo merek ngembangake koleksi kacamata label pribadi sing unik.

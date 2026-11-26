@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Serat Karbon & Ceylon Ebony & White Oak & Sapele"
 materials: "Serat Karbon Premium lan Titanium"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
-moq: "300 pcs/model"
+moq: "200 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Frame Optik Serat Karbon Mewah KSO-010 | Produsen OEM"
-seoDescription: "Pesen frame optik serat karbon mewah KSO-010 kualitas dhuwur karo temple titanium lan aksen kayu saka pabrik OEM terkemuka China. 300 MOQ."
+seoDescription: "Pesen frame optik serat karbon mewah KSO-010 kualitas dhuwur karo temple titanium lan aksen kayu saka pabrik OEM terkemuka China. 200 MOQ."
 seoKeywords: "produsen frame optik serat karbon, kacamata kustom titanium serat karbon, frame optik mewah OEM China, grosir kacamata aksen kayu, frame karbon label pribadi, pabrik kacamata Shenzhen"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "produsen frame optik serat karbon, kacamata kustom titanium serat 
 - **Hardware Awet:** Engsel struktur barrel 2+1 sing stabil, dirancang kanggo kelancaran operasi jangka panjang lan integritas struktural.
 - **Optik Premium:** Lensa nilon sing kuat menehi kejelasan sing unggul kanthi macem-macem pilihan pewarnaan lan lapisan kustom sing kasedhiya.
 - **Kenyamanan Ergonomis:** Bantalan irung logam profesional lan struktur frame sing imbang kanthi tepat njamin pas sing aman lan nyaman.
-- **Produksi Scalable:** Kapabilitas kustomisasi OEM & ODM sing lengkap kanthi jumlah pesanan minimal sethithik 300 iji kanggo ekspor global.
+- **Produksi Scalable:** Kapabilitas kustomisasi OEM & ODM sing lengkap kanthi jumlah pesanan minimal sethithik 200 iji kanggo ekspor global.
 
 ## Cocok kanggo
 - Merek Kacamata Premium
@@ -74,4 +74,4 @@ Dirancang kanggo segmen kemewahan dhuwur, KSO-010 nggabungake serat karbon kelas
 
 Engsel struktur tong 2+1 sing dirancang kanthi presisi njamin stabilitas mekanik jangka panjang lan pas sing apik lan aman.
 
-Ndhukung pangembangan OEM lan ODM sing komprehensif kanthi pesanan minimal 300 unit sing fleksibel, model iki ngidini para desainer independen lan merek premium nggabungake inovasi bahan teknologi tinggi menyang koleksi bespoke.
+Ndhukung pangembangan OEM lan ODM sing komprehensif kanthi pesanan minimal 200 unit sing fleksibel, model iki ngidini para desainer independen lan merek premium nggabungake inovasi bahan teknologi tinggi menyang koleksi bespoke.

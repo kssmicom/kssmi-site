@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Gentian Karbon & Ceylon Ebony & White Oak & Sapele"
 materials: "Gentian Karbon Premium dan Titanium"
 serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & Pengilangan Reka Bentuk (ODM) ( Penyesuaian )"
-moq: "300 unit/model"
+moq: "200 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Bingkai Optik Gentian Karbon Mewah KSO-010 | Pengilang OEM"
-seoDescription: "Dapatkan bingkai optik gentian karbon mewah KSO-010 berkualiti tinggi dengan temple titanium dan elemen kayu dari kilang OEM terkemuka China. 300 MOQ. Tanya hari ini!"
+seoDescription: "Dapatkan bingkai optik gentian karbon mewah KSO-010 berkualiti tinggi dengan temple titanium dan elemen kayu dari kilang OEM terkemuka China. 200 MOQ. Tanya hari ini!"
 seoKeywords: "pengilang bingkai optik gentian karbon, kacamata tersuai titanium gentian karbon, bingkai optik mewah OEM China, borong kacamata elemen kayu, bingkai karbon label peribadi, kilang kacamata Shenzhen"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "pengilang bingkai optik gentian karbon, kacamata tersuai titanium 
 - **Perkakasan Tahan Lama:** Engsel struktur barrel 2+1 yang stabil, direka untuk kelancaran operasi jangka panjang dan integriti struktur.
 - **Optik Premium:** Lensa nilon yang kukuh memberikan kejelasan unggul dengan pelbagai pilihan warna dan salutan tersuai yang tersedia.
 - **Keselesaan Ergonomik:** Alas hidung logam profesional dan struktur bingkai yang seimbang dengan tepat memastikan keselesaan dan kedudukan yang selamat.
-- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM yang komprehensif dengan kuantiti pesanan minimum rendah sebanyak 300 unit untuk eksport global.
+- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM yang komprehensif dengan kuantiti pesanan minimum rendah sebanyak 200 unit untuk eksport global.
 
 ## Sesuai Untuk
 - Merek Kacamata Premium
@@ -74,4 +74,4 @@ Direka untuk segmen mewah mewah, KSO-010 menggabungkan gentian karbon gred aeroa
 
 Engsel struktur tong 2+1 yang direka dengan tepat memastikan kestabilan mekanikal jangka panjang dan padanan yang halus serta selamat.
 
-Menyokong pembangunan OEM dan ODM yang komprehensif dengan pesanan minimum 300 unit yang fleksibel, model ini memperkasakan pereka bebas dan jenama premium untuk menyepadukan inovasi bahan berteknologi tinggi ke dalam koleksi tempahan mereka.
+Menyokong pembangunan OEM dan ODM yang komprehensif dengan pesanan minimum 200 unit yang fleksibel, model ini memperkasakan pereka bebas dan jenama premium untuk menyepadukan inovasi bahan berteknologi tinggi ke dalam koleksi tempahan mereka.

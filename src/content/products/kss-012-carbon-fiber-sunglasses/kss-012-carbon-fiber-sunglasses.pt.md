@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Cor Original da Fibra de Carbono (Preto Fosco, Preto Brilhante, Trama Colorida, Carbono Forjado)"
 materials: "Fibra de Carbono Premium"
 serviceMode: "OEM & ODM ( Personalização )"
-moq: "300 pçs/modelo"
+moq: "200 pçs/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Óculos de Sol de Luxo em Fibra de Carbono KSS-012 | Fabricante OEM"
-seoDescription: "Seja parceiro de um fabricante chinês líder para os óculos de sol de luxo em fibra de carbono KSS-012. Óculos em carbono de grau aeroespacial CNC com serviços OEM/ODM e MOQ de 300."
+seoDescription: "Seja parceiro de um fabricante chinês líder para os óculos de sol de luxo em fibra de carbono KSS-012. Óculos em carbono de grau aeroespacial CNC com serviços OEM/ODM e MOQ de 200."
 seoKeywords: "fabricante de óculos de sol de fibra de carbono, armações de carbono personalizadas, OEM de óculos de luxo China, óculos de sol de fibra de carbono no atacado, óculos de carbonos usinados em CNC, óculos de sol de luxo de marca própria, armações de alta relação resistência-peso, óculos de carbono aeroespacial premium"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "fabricante de óculos de sol de fibra de carbono, armações de ca
 - **Hardware Durável:** Dobradiças estáveis com estrutura em barril 2+1 projetadas para suavidade operacional e confiabilidade a longo prazo.
 - **Óptica Premium:** Lentes de nylon tenazes que proporcionam clareza superior com amplas opções de tonalidade e revestimento personalizados disponíveis.
 - **Conforto e Segurança:** Ponteiras Nasicas em silicone hipoalergénico concebidas para o conforto durante todo o dia e um ajuste seguro.
-- **Produção Escalável:** Capacidades completas de personalização OEM e ODM com uma quantidade mínima de pedido baixa de 300 peças para exportação global.
+- **Produção Escalável:** Capacidades completas de personalização OEM e ODM com uma quantidade mínima de pedido baixa de 200 peças para exportação global.
 
 ## Perfeito Para
 
@@ -64,4 +64,4 @@ Concebido a partir de fibra de carbono de grau aeroespacial, o KSS-012 funde a r
 
 A usinagem CNC de precisão proporciona tolerâncias impecáveis em toda a armação, complementada por um sistema de dobradiças em barril 2+1 que mantém uma fiabilidade operacional suave. As ponteiras nasicas em silicone hipoalergénico proporcionam um ajuste seguro e confortável, concebido para uma utilização diária.
 
-Offerecemos suporte OEM e ODM abrangente para este modelo, permitindo que marcas de moda boutique e designers independentes personalizem tudo, desde as tonalidades das lentes ao branding gravado a laser. Uma quantidade mínima de pedido baixa de 300 peças proporciona a flexibilidade de fabricação necessária para expandir coleções premium de forma eficiente.
+Offerecemos suporte OEM e ODM abrangente para este modelo, permitindo que marcas de moda boutique e designers independentes personalizem tudo, desde as tonalidades das lentes ao branding gravado a laser. Uma quantidade mínima de pedido baixa de 200 peças proporciona a flexibilidade de fabricação necessária para expandir coleções premium de forma eficiente.

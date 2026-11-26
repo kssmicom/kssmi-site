@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Đen"
 materials: "Sợi Carbon Cao Cấp và Titan"
 serviceMode: "Sản xuất OEM / ODM ( Tùy chỉnh theo yêu cầu )"
-moq: "300 cái/mẫu"
+moq: "200 cái/mẫu"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Nhà sản xuất gọng kính cận sợi carbon xa xỉ KSO-034 | OEM"
-seoDescription: "Hợp tác với nhà máy gọng kính sợi carbon hàng đầu Trung Quốc cho mẫu KSO-034. Vật liệu cấp hàng không với càng kính titan. MOQ 300 cho đơn hàng OEM/ODM."
+seoDescription: "Hợp tác với nhà máy gọng kính sợi carbon hàng đầu Trung Quốc cho mẫu KSO-034. Vật liệu cấp hàng không với càng kính titan. MOQ 200 cho đơn hàng OEM/ODM."
 seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính sợi carbon tùy chỉnh Trung Quốc, bán buôn gọng sợi carbon, kính titan sợi carbon OEM, nhà máy gọng kính xa xỉ, kính sợi carbon nhãn hiệu riêng, nhà cung cấp kính mắt cao cấp ODM"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính sợi carbon t�
 - **Phần cứng chính xác:** Bản lề cấu trúc thùng 2+1 ổn định được thiết kế để vận hành trơn tru nhất quán và ổn định gọng kính.
 - **Quang học cao cấp:** Tròng kính nylon bền bỉ với các tùy chọn nhuộm màu và lớp phủ tùy chỉnh phong phú để đáp ứng các nhu cầu đa dạng của thị trường.
 - **Sản xuất xuất sắc:** Các thành phần được chế tạo chính xác thể hiện vân sợi carbon độc đáo với đặc tính không gây dị ứng, thu hút thị trường bán lẻ cao cấp.
-- **Tùy chỉnh B2B:** Sản xuất OEM và ODM có thể mở rộng, hỗ trợ logo, kích thước và màu sắc tùy chỉnh với MOQ thấp chỉ 300 cái.
+- **Tùy chỉnh B2B:** Sản xuất OEM và ODM có thể mở rộng, hỗ trợ logo, kích thước và màu sắc tùy chỉnh với MOQ thấp chỉ 200 cái.
 
 ## Phù hợp cho
 - Thương hiệu kính mắt cao cấp
@@ -62,4 +62,4 @@ KSO-034 đại diện cho đỉnh cao của kỹ thuật vật liệu hỗn hợ
 
 Bản lề thùng 2+1 được thiết kế chính xác hoạt động song song với đệm mũi cao su tích hợp để mang lại sự vừa vặn ổn định, chống trượt cho việc đeo chuyên nghiệp cả ngày. Mỗi chiếc gọng đều thể hiện vân sợi carbon công nghệ cao đặc biệt trong khi vẫn duy trì sự an toàn không gây dị ứng cho những người dùng cuối khó tính.
 
-Có sẵn cho quy trình phát triển OEM và ODM toàn diện với số lượng đặt hàng tối thiểu linh hoạt là 300 cái, mẫu kính này cho phép các nhãn hiệu độc lập và các nhà thời trang đã thành danh ra mắt các dòng kính mắt tùy chỉnh với tiêu chuẩn sản xuất đẳng cấp thế giới.
+Có sẵn cho quy trình phát triển OEM và ODM toàn diện với số lượng đặt hàng tối thiểu linh hoạt là 200 cái, mẫu kính này cho phép các nhãn hiệu độc lập và các nhà thời trang đã thành danh ra mắt các dòng kính mắt tùy chỉnh với tiêu chuẩn sản xuất đẳng cấp thế giới.

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Màu sợi carbon nguyên bản (Đen mờ, Đen bóng, Vân màu, Carbon rèn)"
 materials: "Sợi carbon cao cấp"
 serviceMode: "OEM & ODM ( Tùy chỉnh theo yêu cầu )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -38,7 +38,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-028 Kính mát sợi carbon cổ điển sang trọng | Nhà sản xuất OEM"
-seoDescription: "Hợp tác với nhà sản xuất xuất khẩu hàng đầu Trung Quốc cho kính mát sợi carbon cấp hàng không vũ trụ KSS-028. Chuyên về OEM/ODM để mở rộng thương hiệu nhãn hiệu riêng. MOQ 300."
+seoDescription: "Hợp tác với nhà sản xuất xuất khẩu hàng đầu Trung Quốc cho kính mát sợi carbon cấp hàng không vũ trụ KSS-028. Chuyên về OEM/ODM để mở rộng thương hiệu nhãn hiệu riêng. MOQ 200."
 seoKeywords: "nhà sản xuất kính mát sợi carbon, kính mát OEM tùy chỉnh, kính mắt nhãn hiệu riêng Trung Quốc, bán buôn gọng kính sợi carbon, nhà cung cấp kính mát sang trọng, kính mát chất lượng xuất khẩu, tùy chỉnh kính mát OEM ODM, nhà máy kính mắt KSS-028"
 ---
 
@@ -49,7 +49,7 @@ seoKeywords: "nhà sản xuất kính mát sợi carbon, kính mát OEM tùy ch�
 - **Quang học cao cấp:** Tròng kính nylon bền bỉ có khả năng chống va đập vượt trội với khả năng tùy chỉnh rộng rãi cho màu sắc và lớp phủ.
 - **Thoải mái & An toàn:** Đệm mũi silicone không gây dị ứng được thiết kế để mang lại sự vừa vặn an toàn và thoải mái suốt cả ngày.
 - **Kết cấu độc đáo:** Các mẫu dệt sợi carbon đặc biệt có sẵn ở các dạng hoàn thiện mờ, bóng hoặc rèn cho tính thẩm mỹ xa xỉ cao cấp.
-- **Tùy chỉnh có thể mở rộng:** Các dịch vụ OEM & ODM toàn diện bao gồm nhiều kỹ thuật ứng dụng logo và MOQ thấp chỉ 300 chiếc.
+- **Tùy chỉnh có thể mở rộng:** Các dịch vụ OEM & ODM toàn diện bao gồm nhiều kỹ thuật ứng dụng logo và MOQ thấp chỉ 200 chiếc.
 
 ## Phù hợp cho
 - Thương hiệu kính mắt cao cấp
@@ -65,4 +65,4 @@ seoKeywords: "nhà sản xuất kính mát sợi carbon, kính mát OEM tùy ch�
 
 Bản lề thùng 2+1 chính xác và tròng kính nylon chống va đập đảm bảo tuổi thọ cấu trúc và độ rõ nét của hình ảnh cho mục đích sử dụng hiệu suất cao.
 
-Chúng tôi cung cấp hỗ trợ ODM và OEM toàn diện—từ các kết cấu rèn riêng biệt đến các ứng dụng logo đa dạng—với số lượng đặt hàng tối thiểu 300 chiếc để giúp các thương hiệu cao cấp mở rộng danh mục kính mắt độc quyền của họ.
+Chúng tôi cung cấp hỗ trợ ODM và OEM toàn diện—từ các kết cấu rèn riêng biệt đến các ứng dụng logo đa dạng—với số lượng đặt hàng tối thiểu 200 chiếc để giúp các thương hiệu cao cấp mở rộng danh mục kính mắt độc quyền của họ.

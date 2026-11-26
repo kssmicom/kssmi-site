@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Fibra de Carbono & Carvalho Branco & Sapele & Ébano"
 materials: "Fibra de Carbono Premium"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
-moq: "300 pçs/modelo"
+moq: "200 pçs/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-005 Armação Óptica de Luxo em Fibra de Carbono | Fabricante OEM"
-seoDescription: "Armações ópticas de fibra de carbono premium KSO-005 para marcas globais de óculos. Construção híbrida de alta resistência com hastes de metal. MOQ 300 para personalização OEM/ODM."
+seoDescription: "Armações ópticas de fibra de carbono premium KSO-005 para marcas globais de óculos. Construção híbrida de alta resistência com hastes de metal. MOQ 200 para personalização OEM/ODM."
 seoKeywords: "fabricante armação óptica fibra de carbono, armações ópticas OEM personalizadas, óculos marca própria China, atacado armações fibra de carbono, fábrica armação óptica luxo, óculos gama alta OEM, armações ópticas qualidade exportação, fornecedor óculos fibra de carbono"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante armação óptica fibra de carbono, armações ópticas
 - **Hardware Flexível:** Dobradiças com estrutura de mola projetadas com precisão, proporcionando conforto adaptável e confiabilidade operacional a longo prazo.
 - **Óptica de Alta Gama:** Equipada com lentes de nylon tenaz con amplas opções de personalização para clareza óptica premium.
 - **Conforto Refinado:** Plaquetas de metal duráveis projetadas para um ajuste seguro e ajustável e usabilidade duradoura.
-- **Produção Personalizável:** Serviços OEM e ODM escaláveis com um MOQ baixo de 300 peças para apoiar a expansão de marcas globais.
+- **Produção Personalizável:** Serviços OEM e ODM escaláveis com um MOQ baixo de 200 peças para apoiar a expansão de marcas globais.
 
 ## Perfeito Para
 - Marcas de Óculos Premium
@@ -74,4 +74,4 @@ Estabelecendo um novo padrão em óculos de alta gama, este modelo integra fibra
 
 Dobradiças de mola projetadas com precisão e plaquetas de metal duráveis oferecem conforto adaptável, enquanto as lentes de nylon tenaz garantem clareza óptica para os usuários mais exigentes.
 
-Suportando o escopo completo de OEM/ODM com uma quantidade mínima de pedido de apenas 300 peças, a Kssmi capacita marcas de luxo e designers independentes a entregar colecciones personalizadas fabricadas com precisão globalmente.
+Suportando o escopo completo de OEM/ODM com uma quantidade mínima de pedido de apenas 200 peças, a Kssmi capacita marcas de luxo e designers independentes a entregar colecciones personalizadas fabricadas com precisão globalmente.

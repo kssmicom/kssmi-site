@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Goldenes Holz & Grün-meliertes Kohlefaser & Matt-kanonengraues Kohlefaser mit Flachgewebe & Matt-silbernes Kohlefaser mit Holz-Flachgewebe"
 materials: "Premium-Kohlefaser und Titan"
 serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) ( Individualisierung )"
-moq: "300 Stk/Modell"
+moq: "200 Stk/Modell"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-030 Luxus-Kohlefaser-Brillenrahmen | OEM-Hersteller"
-seoDescription: "Bestellen Sie individuelle KSO-030 Kohlefaser-Brillenrahmen bei einem führenden Hersteller. Luft- und Raumfahrtqualität mit Holzmaserungstexturen, 300 Mindestbestellmenge für Eigenmarken-OEM/ODM."
+seoDescription: "Bestellen Sie individuelle KSO-030 Kohlefaser-Brillenrahmen bei einem führenden Hersteller. Luft- und Raumfahrtqualität mit Holzmaserungstexturen, 200 Mindestbestellmenge für Eigenmarken-OEM/ODM."
 seoKeywords: "Hersteller von Kohlefaser-Brillenrahmen, individuelle Kohlefaser-Brillen China, Eigenmarken-Brillenrahmen OEM, Großhandel für Luxus-Kohlefaserrrahmen, KSO-030 Kohlefaserrahmen-Fabrik, Anbieter von Titan-Kohlefaser-Brillen, Premium-Brillenrahmen ODM-Individualisierung, Exportqualität Kohlefaser-Brillen"
 ---
 
@@ -59,7 +59,7 @@ seoKeywords: "Hersteller von Kohlefaser-Brillenrahmen, individuelle Kohlefaser-B
 - **Langlebige Hardware:** Stabile Scharniere mit 2+1 Fassstruktur, entwickelt für gleichbleibende Laufruhe und langfristige Zuverlässigkeit.
 - **Premium-Optik:** Ausgestattet mit widerstandsfähigen Nylonlinsen, die umfangreiche individuelle Tönungs- und Beschichtungsoptionen für unterschiedliche Marktanforderungen unterstützen.
 - **Ganztägiger Komfort:** Integrierte Nasenpads aus Gummi und hypoallergene Materialien, entwickelt für einen sicheren, bequemen Sitz bei längerem Tragen.
-- **Skalierbare Produktion:** Umfassende OEM- und ODM-Anpassungsdienste mit einer Mindestbestellmenge von 300 Stück, optimiert für globale B2B-Exportstandards.
+- **Skalierbare Produktion:** Umfassende OEM- und ODM-Anpassungsdienste mit einer Mindestbestellmenge von 200 Stück, optimiert für globale B2B-Exportstandards.
 
 ## Perfekt Für
 - Premium Brillenmarken
@@ -75,4 +75,4 @@ Herausragende Ingenieurskunst bildet das Herzstück des KSO-030, bei dem Kohlefa
 
 Jede Einheit verfügt über präzisionsgefertigte Texturen – einschließlich Holz- und Köpermaserungen –, unterstützt durch leistungsstarke 2+1 Fass-Scharniere, die mechanische Zuverlässigkeit garantieren.
 
-Optimiert für Luxusmodehäuser und Premium-Brillenmarken, unterstützt unsere Produktionsstätte die vollständige OEM/ODM-Individualisierung ab einer Mindestbestellmenge von 300 Stück.
+Optimiert für Luxusmodehäuser und Premium-Brillenmarken, unterstützt unsere Produktionsstätte die vollständige OEM/ODM-Individualisierung ab einer Mindestbestellmenge von 200 Stück.

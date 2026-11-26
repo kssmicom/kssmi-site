@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Carbonfaser & Ceylon-Ebenholz & Weißeiche & Sapele"
 materials: "Premium-Carbonfaser und Titan"
 serviceMode: "OEM & ODM ( Individualisierung )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-011 Luxus-Carbonfaser-Brillengestell | Großhandelslieferant"
-seoDescription: "Partner mit einem führenden chinesischen Hersteller für KSO-011 Luxus-Carbonfaser-Brillengestelle mit Titanbügeln. OEM/ODM für Eigenmarken mit 300 MOQ."
+seoDescription: "Partner mit einem führenden chinesischen Hersteller für KSO-011 Luxus-Carbonfaser-Brillengestelle mit Titanbügeln. OEM/ODM für Eigenmarken mit 200 MOQ."
 seoKeywords: "Carbonfaser Brillengestell Hersteller, maßgeschneiderte Titanbrillen China, Eigenmarken Carbonfasergestelle, Großhandel Luxusbrillen, OEM Carbonfaserbrillen Fabrik, B2B Brillengestell Lieferant, High-End Carbonfaserbrillen OEM, Exportqualität Brillengestelle"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "Carbonfaser Brillengestell Hersteller, maßgeschneiderte Titanbril
 - **Fortschrittlicher Komfort:** Integrierte Titan-Nasenpads bieten eine hypoallergene und korrosionsbeständige Passform für langfristigen Tragekomfort.
 - **Premium-Optik:** Multifunktionale Nylon-Gläser, entwickelt für hohe Stoßfestigkeit mit umfangreichen Möglichkeiten für individuelle Tönungen und Beschichtungen.
 - **Exquisites Finish:** Einzigartige Carbonfaser-Textur und ein luxuriöses Unisex-Design, das den ästhetischen Ansprüchen von Premium-Brillenhändlern gerecht wird.
-- **Vollständige Individualisierung:** Professionelle OEM- und ODM-Dienstleistungen einschließlich individueller Logo-Anbringung und Hardware-Modifikationen ab einer Mindestbestellmenge (MOQ) von 300 Stück.
+- **Vollständige Individualisierung:** Professionelle OEM- und ODM-Dienstleistungen einschließlich individueller Logo-Anbringung und Hardware-Modifikationen ab einer Mindestbestellmenge (MOQ) von 200 Stück.
 
 ## Perfekt Für
 - Premium Brillenmarken
@@ -74,4 +74,4 @@ Das für den anspruchsvollen Luxusmarkt entwickelte Modell KSO-011 vereint Hochl
 
 Die präzisionsgefertigten 2+1 Fass-Scharniere und Titan-Nasenpads ermöglichen eine mühelose Anpassung und langfristige strukturelle Integrität.
 
-Dieses Modell ist für umfangreiche OEM- und ODM-Individualisierungen ab einer Mindestbestellmenge von 300 Stück erhältlich und ermöglicht es Eigenmarken, fortschrittliche Verbundwerkstofftechnologie in ihre exklusiven Kollektionen zu integrieren.
+Dieses Modell ist für umfangreiche OEM- und ODM-Individualisierungen ab einer Mindestbestellmenge von 200 Stück erhältlich und ermöglicht es Eigenmarken, fortschrittliche Verbundwerkstofftechnologie in ihre exklusiven Kollektionen zu integrieren.

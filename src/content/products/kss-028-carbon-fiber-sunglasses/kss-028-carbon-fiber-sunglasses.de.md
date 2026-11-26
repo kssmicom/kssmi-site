@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Original Kohlefaser-Farbe (Mattschwarz, Glänzendes Schwarz, Farbiges Gewebe, Geschmiedetes Carbon)"
 materials: "Premium-Kohlefaser"
 serviceMode: "OEM & ODM ( Individualisierung )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -38,7 +38,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-028 Luxus Klassik Kohlefaser-Sonnenbrille | OEM-Hersteller"
-seoDescription: "Partner mit einem führenden chinesischen Export-Hersteller für KSS-028 Kohlefaser-Sonnenbrillen in Luft- und Raumfahrtqualität. Spezialisiert auf OEM/ODM für den Aufbau von Eigenmarken. 300er MOQ."
+seoDescription: "Partner mit einem führenden chinesischen Export-Hersteller für KSS-028 Kohlefaser-Sonnenbrillen in Luft- und Raumfahrtqualität. Spezialisiert auf OEM/ODM für den Aufbau von Eigenmarken. 200er MOQ."
 seoKeywords: "Kohlefaser-Sonnenbrillen Hersteller, individuelle OEM-Sonnenbrillen, Eigenmarken-Brillen China, Kohlefaser-Rahmen Großhandel, Luxus-Sonnenbrillen Lieferant, Export-Qualitätsbrillen, OEM ODM Sonnenbrillen-Individualisierung, KSS-028 Brillenfabrik"
 ---
 
@@ -49,7 +49,7 @@ seoKeywords: "Kohlefaser-Sonnenbrillen Hersteller, individuelle OEM-Sonnenbrille
 - **Premium-Optik:** Robuste Nylon-Gläser mit überlegener Schlagfestigkeit und umfangreichen Individualisierungsmöglichkeiten für Tönungen und Beschichtungen.
 - **Komfort & Sicherheit:** Hypoallergene Silikon-Nasenpads für einen sicheren und bequemen Sitz den ganzen Tag über.
 - **Einzigartige Textur:** Markante Kohlefaser-Webmuster in matten, glänzenden oder geschmiedeten Oberflächen für eine hochwertige Luxusästhetik.
-- **Skalierbare Individualisierung:** Umfassende OEM- und ODM-Dienstleistungen, einschließlich verschiedener Logo-Applikationstechniken und einer niedrigen Mindestbestellmenge von 300 Stück.
+- **Skalierbare Individualisierung:** Umfassende OEM- und ODM-Dienstleistungen, einschließlich verschiedener Logo-Applikationstechniken und einer niedrigen Mindestbestellmenge von 200 Stück.
 
 ## Perfekt Für
 - Premium Brillenmarken
@@ -65,4 +65,4 @@ Gefertigt aus Kohlefaser in Luft- und Raumfahrtqualität verleiht die KSS-028 mo
 
 Präzise 2+1-Tonnen-Scharniere und schlagfeste Nylongläser garantieren strukturelle Langlebigkeit und optische Klarheit für den Hochleistungsbereich.
 
-Wir bieten volle ODM- und OEM-Unterstützung – von maßgeschneiderten geschmiedeten Texturen bis hin zu vielfältigen Logo-Applikationen – mit einer Mindestbestellmenge von 300 Stück, um Premiummarken beim Ausbau ihrer exklusiven Brillenportfolios zu unterstützen.
+Wir bieten volle ODM- und OEM-Unterstützung – von maßgeschneiderten geschmiedeten Texturen bis hin zu vielfältigen Logo-Applikationen – mit einer Mindestbestellmenge von 200 Stück, um Premiummarken beim Ausbau ihrer exklusiven Brillenportfolios zu unterstützen.

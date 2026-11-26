@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Maun (Hindistan Gülağacı — Dağ Deseni)"
 materials: "Premium Karbon Elyaf ve Titanyum"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
-moq: "300 adet/model"
+moq: "200 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-226 Lüks Karbon Elyaf Optik Çerçeve | OEM Üreticisi"
-seoDescription: "Lider bir Çinli üreticiden benzersiz maun desenli KSO-226 lüks karbon elyaf optik çerçeveleri tedarik edin. 300 MOQ ile ölçeklenebilir OEM/ODM özelleştirme."
+seoDescription: "Lider bir Çinli üreticiden benzersiz maun desenli KSO-226 lüks karbon elyaf optik çerçeveleri tedarik edin. 200 MOQ ile ölçeklenebilir OEM/ODM özelleştirme."
 seoKeywords: "karbon elyaf optik çerçeve üreticisi, KSO-226 özel karbon elyaf gözlük, toptan optik çerçeve Çin, özel marka karbon elyaf gözlük, lüks gözlük OEM tedarikçisi, maun desenli karbon elyaf çerçeveler, B2B optik çerçeve fabrikası, özel karbon elyaf gözlük ODM"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "karbon elyaf optik çerçeve üreticisi, KSO-226 özel karbon elya
 - **Dayanıklı Donanım:** Uzun vadeli operasyonel pürüzsüzlük ve yapısal bütünlük için hassas bir şekilde tasarlanmış sağlam 2+1 varil yapılı menteşeler.
 - **Premium Optik:** Çeşitli pazar ihtiyaçlarını karşılamak için kapsamlı özel renklendirme ve çok katmanlı kaplama seçenekleri sunan dayanıklı naylon lensler.
 - **Ergonomik Konfor:** Gün boyu profesyonel kullanım için güvenli, hipoalerjenik ve rahat bir uyum sağlayan yumuşak kauçuk burun tamponları.
-- **Ölçeklenebilir Üretim:** Küresel toptancılar için 300 adetlik düşük minimum sipariş miktarı ile kapsamlı OEM ve ODM özelleştirme hizmetleri.
+- **Ölçeklenebilir Üretim:** Küresel toptancılar için 200 adetlik düşük minimum sipariş miktarı ile kapsamlı OEM ve ODM özelleştirme hizmetleri.
 
 ## İçin Mükemmel
 
@@ -64,4 +64,4 @@ KSO-226, havacılık sınıfı karbon elyafın endüstriyel gücünü elle işle
 
 Esnek titanyum saplar ve sağlam 2+1 varil menteşelerle hassas bir şekilde tasarlanan çerçeve, uzun vadeli dayanıklılık ve hipoalerjenik konfor sağlıyor.
 
-Düşük 300 adet MOQ ile tam kapsamlı OEM/ODM kapsamını destekleyerek, premium markaların teknik mükemmellik ve pazar farklılaşmasına odaklanan ısmarlama gözlük koleksiyonlarını ölçeklendirmelerini sağlıyoruz.
+Düşük 200 adet MOQ ile tam kapsamlı OEM/ODM kapsamını destekleyerek, premium markaların teknik mükemmellik ve pazar farklılaşmasına odaklanan ısmarlama gözlük koleksiyonlarını ölçeklendirmelerini sağlıyoruz.

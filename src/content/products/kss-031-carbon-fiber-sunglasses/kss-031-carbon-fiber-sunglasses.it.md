@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Colore Fibra di Carbonio Originale (Nero Opaco, Nero Lucido, Trama Colorata, Carbonio Forgiato)"
 materials: "Fibra di Carbonio Premium"
 serviceMode: "OEM & ODM ( Personalizzazione )"
-moq: "300 pz/modello"
+moq: "200 pz/modello"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -37,7 +37,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-031 Occhiali da Sole di Lusso in Fibra di Carbonio | Fabbrica OEM all'Ingrosso"
-seoDescription: "KSS-031: Occhiali da sole in fibra di carbonio di grado aerospaziale con precisione CNC e cerniere a 2+1 barile. Servizi OEM/ODM per marchi globali. MOQ 300."
+seoDescription: "KSS-031: Occhiali da sole in fibra di carbonio di grado aerospaziale con precisione CNC e cerniere a 2+1 barile. Servizi OEM/ODM per marchi globali. MOQ 200."
 seoKeywords: "produttore occhiali da sole fibra di carbonio, occhiali da sole personalizzati OEM Cina, montature in fibra di carbonio all'ingrosso, fornitore occhiali private label, fabbrica occhiali da sole lusso, occhiali CNC fibra di carbonio, produttore occhiali B2B, esportazione occhiali OEM"
 ---
 
@@ -48,7 +48,7 @@ seoKeywords: "produttore occhiali da sole fibra di carbonio, occhiali da sole pe
 - **Hardware Durevole:** Cerniere stabili con struttura a 2+1 barile progettate per una scorrevolezza operativa a lungo termine.
 - **Ottica Premium:** Lenti in nylon tenace con ampie opzioni di colorazione e rivestimento personalizzate disponibili.
 - **Comfort e Vestibilità:** Naselli in silicone ipoallergenico che offrono una vestibilità sicura e confortevole per un uso prolungato.
-- **Produzione Scalabile:** Capacità di personalizzazione OEM e ODM complete con un ordine minimo basso di 300 pezzi per l'esportazione globale.
+- **Produzione Scalabile:** Capacità di personalizzazione OEM e ODM complete con un ordine minimo basso di 200 pezzi per l'esportazione globale.
 
 ## Perfetto Per
 
@@ -65,4 +65,4 @@ Fondendo prestazioni leggere con un'estetica unisex sofisticata, il modello KSS-
 
 Ogni montatura presenta una precisione lavorata a CNC e cerniere a 2+1 barile per garantire una finitura impeccabile e una duratura affidabilità operativa.
 
-Offrendo una personalizzazione OEM e ODM completa a partire da un minimo di 300 pezzi, questo modello consente ai marchi premium e ai designer indipendenti di ampliare i propri portafogli di occhiali di lusso.
+Offrendo una personalizzazione OEM e ODM completa a partire da un minimo di 200 pezzi, questo modello consente ai marchi premium e ai designer indipendenti di ampliare i propri portafogli di occhiali di lusso.

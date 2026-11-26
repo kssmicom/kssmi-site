@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Colore Fibra di Carbonio Originale (Nero Opaco, Nero Lucido, Trama Colorata, Carbonio Forgiato)"
 materials: "Fibra di Carbonio Premium"
 serviceMode: "OEM & ODM ( Personalizzazione )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -38,7 +38,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-028 Occhiali da Sole Classici di Lusso in Fibra di Carbonio | Produttore OEM"
-seoDescription: "Collabora con un primario produttore cinese per l'esportazione di occhiali da sole KSS-028 in fibra di carbonio di grado aerospaziale. Specializzato in OEM/ODM per la crescita di marchi private label. MOQ 300."
+seoDescription: "Collabora con un primario produttore cinese per l'esportazione di occhiali da sole KSS-028 in fibra di carbonio di grado aerospaziale. Specializzato in OEM/ODM per la crescita di marchi private label. MOQ 200."
 seoKeywords: "produttore occhiali da sole fibra di carbonio, occhiali da sole OEM personalizzati, occhiali private label Cina, montature in fibra di carbonio all'ingrosso, fornitore occhiali da sole lusso, occhiali da sole qualità export, personalizzazione occhiali da sole OEM ODM, fabbrica occhiali KSS-028"
 ---
 
@@ -49,7 +49,7 @@ seoKeywords: "produttore occhiali da sole fibra di carbonio, occhiali da sole OE
 - **Ottica Premium:** Lenti in nylon tenace con superiore resistenza agli urti e ampie possibilità di personalizzazione per tinte e rivestimenti.
 - **Comfort e Sicurezza:** Naselli in silicone ipoallergenico progettati per offrire una vestibilità sicura e confortevole per tutto il giorno.
 - **Trama Unica:** Distintivi motivi di intreccio in fibra di carbonio disponibili in finiture opache, lucide o forgiate per un'estetica di lusso di fascia alta.
-- **Personalizzazione Scalabile:** Servizi completi OEM e ODM che includono molteplici tecniche di applicazione del logo e un basso MOQ di 300 pezzi.
+- **Personalizzazione Scalabile:** Servizi completi OEM e ODM che includono molteplici tecniche di applicazione del logo e un basso MOQ di 200 pezzi.
 
 ## Perfetto Per
 - Marche di Occhiali Premium
@@ -65,4 +65,4 @@ Realizzato in fibra di carbonio di grado aerospaziale, il modello KSS-028 apport
 
 Le cerniere di precisione a barilotto 2+1 e le lenti in nylon resistenti agli urti garantiscono longevità strutturale e chiarezza ottica per un uso ad alte prestazioni.
 
-Offriamo supporto completo ODM e OEM—dalle texture forgiate su misura alle diverse applicazioni di loghi—con un minimo di 300 pezzi per aiutare i marchi premium a scalare i loro portafogli di occhiali esclusivi.
+Offriamo supporto completo ODM e OEM—dalle texture forgiate su misura alle diverse applicazioni di loghi—con un minimo di 200 pezzi per aiutare i marchi premium a scalare i loro portafogli di occhiali esclusivi.

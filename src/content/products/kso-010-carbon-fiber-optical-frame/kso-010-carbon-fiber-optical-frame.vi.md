@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Sợi Carbon & Gỗ Mun Ceylon & Gỗ Sồi Trắng & Sapele"
 materials: "Sợi Carbon Cao Cấp và Titan"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
-moq: "300 cái/mẫu"
+moq: "200 cái/mẫu"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Gọng Kính Cận Sợi Carbon Sang Trọng KSO-010 | Nhà Sản Xuất OEM"
-seoDescription: "Đặt mua gọng kính cận sợi carbon sang trọng KSO-010 cao cấp với càng kính titan và chi tiết gỗ từ nhà máy OEM hàng đầu Trung Quốc. MOQ 300 cái. Liên hệ ngay!"
+seoDescription: "Đặt mua gọng kính cận sợi carbon sang trọng KSO-010 cao cấp với càng kính titan và chi tiết gỗ từ nhà máy OEM hàng đầu Trung Quốc. MOQ 200 cái. Liên hệ ngay!"
 seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính mắt titan sợi carbon tùy chỉnh, gọng kính cận sang trọng OEM Trung Quốc, bán sỉ kính mắt chi tiết gỗ, gọng kính sợi carbon nhãn hiệu riêng, xưởng kính mắt Thâm Quyến"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính mắt titan s�
 - **Phụ kiện bền bỉ:** Bản lề cấu trúc thùng 2+1 ổn định được thiết kế để vận hành trơn tru lâu dài và duy trì tính toàn vẹn của cấu trúc.
 - **Quang học cao cấp:** Tròng kính nylon bền bỉ mang lại độ rõ nét vượt trội với các tùy chọn thay đổi màu sắc và lớp phủ tùy chỉnh phong phú.
 - **Sự thoải mái tối đa:** Đệm mũi kim loại chuyên nghiệp và cấu trúc gọng cân bằng chính xác đảm bảo độ vừa vặn an toàn và thoải mái.
-- **Sản xuất linh hoạt:** Khả năng tùy chỉnh OEM & ODM toàn diện với số lượng đặt hàng tối thiểu thấp chỉ 300 cái cho xuất khẩu toàn cầu.
+- **Sản xuất linh hoạt:** Khả năng tùy chỉnh OEM & ODM toàn diện với số lượng đặt hàng tối thiểu thấp chỉ 200 cái cho xuất khẩu toàn cầu.
 
 ## Phù hợp cho
 - Thương hiệu kính mắt cao cấp
@@ -74,4 +74,4 @@ seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính mắt titan s�
 
 Các bản lề cấu trúc thùng 2+1 được thiết kế chính xác đảm bảo tính ổn định cơ học lâu dài và sự vừa vặn tinh tế, chắc chắn.
 
-Hỗ trợ phát triển OEM và ODM toàn diện với số lượng đặt hàng tối thiểu linh hoạt là 300 chiếc, mẫu này cho phép các nhà thiết kế độc lập và các thương hiệu cao cấp tích hợp sự đổi mới vật liệu công nghệ cao vào các bộ sưu tập đặt riêng của họ.
+Hỗ trợ phát triển OEM và ODM toàn diện với số lượng đặt hàng tối thiểu linh hoạt là 200 chiếc, mẫu này cho phép các nhà thiết kế độc lập và các thương hiệu cao cấp tích hợp sự đổi mới vật liệu công nghệ cao vào các bộ sưu tập đặt riêng của họ.

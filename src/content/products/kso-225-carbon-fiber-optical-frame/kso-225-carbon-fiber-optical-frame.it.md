@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Mogano (Palissandro Indiano — Venatura di Montagna)"
 materials: "Fibra di Carbonio Premium e Titanio"
 serviceMode: "OEM & ODM ( Personalizzazione )"
-moq: "300 pz/modello"
+moq: "200 pz/modello"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-225 Montatura Ottica in Fibra di Carbonio Mogano | OEM"
-seoDescription: "Collabora con un produttore cinese leader per montature ottiche KSO-225 in fibra di carbonio con venature mogano. Servizi OEM/ODM professionali con MOQ 300."
+seoDescription: "Collabora con un produttore cinese leader per montature ottiche KSO-225 in fibra di carbonio con venature mogano. Servizi OEM/ODM professionali con MOQ 200."
 seoKeywords: "produttore montature ottiche in fibra di carbonio, occhiali personalizzati in mogano, fabbrica montature ottiche OEM Cina, montature di lusso in fibra di carbonio all'ingrosso, occhiali in titanio private label, fornitore B2B montature ottiche"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "produttore montature ottiche in fibra di carbonio, occhiali person
 - **Ottica Premium:** Lenti in nylon tenace con ampie opzioni di colorazione e rivestimento personalizzati disponibili.
 - **Comfort per Tutto il Giorno:** Naselli in gomma morbida progettati per una vestibilità sicura e ipoallergenica anche per un uso prolungato.
 - **Estetica Unica:** Squisita finitura con venature in legno di mogano su fibra di carbonio, che combina estetica naturale e integrità strutturale high-tech.
-- **Produzione Scalabile:** Capacità di personalizzazione OEM e ODM complete con una quantità minima d'ordine di 300 pezzi per l'esportazione globale.
+- **Produzione Scalabile:** Capacità di personalizzazione OEM e ODM complete con una quantità minima d'ordine di 200 pezzi per l'esportazione globale.
 
 ## Perfetto Per
 
@@ -64,4 +64,4 @@ La fibra di carbonio high-tech incontra il calore delle venature del legno di mo
 
 L'integrazione di stabili cerniere a barilotto 2+1 e naselli in gomma ipoallergenica offre un'esperienza tattile raffinata e un comfort superiore per tutto il giorno per un uso prolungato.
 
-Progettato per designer indipendenti e gruppi di vendita al dettaglio di lusso, questo modello è disponibile per un'ampia personalizzazione OEM/ODM. Permettiamo ai marchi di scalare la loro visione con un basso ordine minimo di 300 pezzi e un supporto completo per i dettagli del branding su misura.
+Progettato per designer indipendenti e gruppi di vendita al dettaglio di lusso, questo modello è disponibile per un'ampia personalizzazione OEM/ODM. Permettiamo ai marchi di scalare la loro visione con un basso ordine minimo di 200 pezzi e un supporto completo per i dettagli del branding su misura.

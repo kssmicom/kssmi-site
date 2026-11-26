@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Warna Serat Karbon Asli (Ireng Matte, Ireng Mengkilap, Anyaman Warna, Karbon Tempa)"
 materials: "Serat Karbon Premium"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
-moq: "300 pcs/model"
+moq: "200 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -37,7 +37,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Kacamata Hitam Karbon Fiber Mewah KSS-032 | Pabrik OEM"
-seoDescription: "Partner karo produsen ekspor terkemuka China kanggo kacamata hitam serat karbon mewah KSS-032. Nawakake kustomisasi OEM / ODM lengkap kanthi 300 MOQ kanggo merek global."
+seoDescription: "Partner karo produsen ekspor terkemuka China kanggo kacamata hitam serat karbon mewah KSS-032. Nawakake kustomisasi OEM / ODM lengkap kanthi 200 MOQ kanggo merek global."
 seoKeywords: "produsen kacamata hitam serat karbon, kacamata hitam OEM kustom, kacamata label pribadi China, grosir frame serat karbon, pemasok kacamata hitam mewah, pabrik kacamata CNC, kacamata hitam kualitas ekspor, kustomisasi kacamata B2B"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "produsen kacamata hitam serat karbon, kacamata hitam OEM kustom, k
 - **Hardware Awet:** Engsel struktur tong 2+1 sing stabil dirancang kanggo kelancaran operasional jangka panjang.
 - **Optik Premium:** Lensa nilon kuat kanthi macem-macem pilihan warna lan lapisan kustom sing kasedhiya.
 - **Kenyamanan & Keamanan:** Bantalan irung silikon hypoallergenic sing dirancang kanggo kenyamanan sedina muput lan pas sing aman.
-- **Produksi Scalable:** Kapasitas kustomisasi OEM & ODM lengkap kanthi jumlah pesenan minimal 300 pcs kanggo ekspor global.
+- **Produksi Scalable:** Kapasitas kustomisasi OEM & ODM lengkap kanthi jumlah pesenan minimal 200 pcs kanggo ekspor global.
 
 ## Cocok kanggo
 - Merek Kacamata Premium
@@ -63,4 +63,4 @@ Dirancang kanggo merek sing ngutamakake keunggulan teknis, KSS-032 nggunakake se
 
 Saben komponen diproses nganggo mesin CNC kanti teliti kanggo njamin toleransi sing tepat, dene engsel tong 2+1 lan bantalan irung silikon hypoallergenic nyedhiyakake gabungan kekuatan mekanik lan kenyamanan pribadi sing lancar.
 
-Kssmi nyedhiyakake dhukungan OEM lan ODM sing lengkap kanthi jumlah pesenan minimal 300 unit sing fleksibel, ngidini pengecer global ngluncurake koleksi serat karbon khusus sing nampilake warna lensa kustom lan branding khusus.
+Kssmi nyedhiyakake dhukungan OEM lan ODM sing lengkap kanthi jumlah pesenan minimal 200 unit sing fleksibel, ngidini pengecer global ngluncurake koleksi serat karbon khusus sing nampilake warna lensa kustom lan branding khusus.

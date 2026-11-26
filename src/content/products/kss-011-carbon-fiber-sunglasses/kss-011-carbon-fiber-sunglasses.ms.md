@@ -7,7 +7,7 @@ date: "2026-04-01"
 colors: "Warna Gentian Karbon Asal (Hitam Pudar, Hitam Berkilat, Tenunan Berwarna, Karbon Tempa)"
 materials: "Gentian Karbon Premium"
 serviceMode: "Pembuatan OEM (Pengilangan Kontrak) & Pengilangan Reka Bentuk (ODM) ( Penyesuaian )"
-moq: "300 unit/model"
+moq: "200 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-011 Cermin Mata Hitam Gentian Karbon Tersuai | Pembekal OEM"
-seoDescription: "Cermin mata hitam gentian karbon gred aeroangkasa premium daripada pengilang eksport China dengan penyesuaian OEM/ODM penuh dan label peribadi bermula dari 300 MOQ."
+seoDescription: "Cermin mata hitam gentian karbon gred aeroangkasa premium daripada pengilang eksport China dengan penyesuaian OEM/ODM penuh dan label peribadi bermula dari 200 MOQ."
 seoKeywords: "pengilang cermin mata hitam gentian karbon, cermin mata hitam OEM tersuai, cermin mata label peribadi China, bingkai gentian karbon borong, kilang cermin mata CNC, cermin mata hitam sukan OEM, pembekal cermin mata mewah, cermin mata kualiti eksport"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "pengilang cermin mata hitam gentian karbon, cermin mata hitam OEM 
 - **Optik Premium:** Kanta nilon yang teguh dengan pilihan pewarnaan dan salutan tersuai yang meluas untuk memenuhi pelbagai permintaan pasaran.
 - **Perkakasan Tepat:** Engsel struktur tong 2+1 yang stabil direka untuk kelancaran operasi jangka panjang dan prestasi yang boleh diulang.
 - **Keselesaan Sepanjang Hari:** Alas hidung silikon hipoalergenik yang direka untuk pemasangan yang selamat dan selesa dalam tempoh pemakaian yang lama.
-- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM dan ODM penuh termasuk aplikasi logo (cetak, laser, setem panas, logam, timbulan), dengan kuantiti pesanan minimum yang rendah iaitu 300 unit setiap model.
+- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM dan ODM penuh termasuk aplikasi logo (cetak, laser, setem panas, logam, timbulan), dengan kuantiti pesanan minimum yang rendah iaitu 200 unit setiap model.
 - **Fleksibiliti Dimensi:** Tersedia dalam saiz standard 49-19-145mm dengan pilihan penyesuaian penuh untuk menyokong keperluan label peribadi dan jenama yang khusus.
 
 ## Sesuai Untuk
@@ -64,4 +64,4 @@ Direka untuk ketahanan tanpa beban berat, KSS-011 menggunakan gentian karbon gre
 
 Seni bina engsel tong 2+1 yang stabil dan alas hidung silikon hipoalergenik memastikan keselesaan jangka panjang dan operasi yang boleh dipercayai sepanjang bertahun-tahun penggunaan harian.
 
-Menyediakan penyesuaian OEM dan ODM sepenuhnya bermula pada kuantiti pesanan minimum 300 unit, model ini menawarkan asas yang boleh diperluas untuk rumah fesyen mewah dan label gaya hidup sukan yang mencari kelebihan pasaran yang tersendiri.
+Menyediakan penyesuaian OEM dan ODM sepenuhnya bermula pada kuantiti pesanan minimum 200 unit, model ini menawarkan asas yang boleh diperluas untuk rumah fesyen mewah dan label gaya hidup sukan yang mencari kelebihan pasaran yang tersendiri.

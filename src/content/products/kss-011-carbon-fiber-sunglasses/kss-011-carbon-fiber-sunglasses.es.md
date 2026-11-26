@@ -7,7 +7,7 @@ date: "2026-04-01"
 colors: "Color Original de Fibra de Carbono (Negro Mate, Negro Brillante, Tejido de Color, Carbono Forjado)"
 materials: "Fibra de Carbono Premium"
 serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM) ( Personalización )"
-moq: "300 uds/modelo"
+moq: "200 uds/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-011 Gafas de Sol de Fibra de Carbono Personalizadas | Proveedor OEM"
-seoDescription: "Gafas de sol de fibra de carbono de grado aeroespacial de un fabricante de exportación chino con personalización completa OEM/ODM y marca privada a partir de 300 unidades."
+seoDescription: "Gafas de sol de fibra de carbono de grado aeroespacial de un fabricante de exportación chino con personalización completa OEM/ODM y marca privada a partir de 200 unidades."
 seoKeywords: "fabricante de gafas de fibra de carbono, gafas OEM personalizadas, marca privada de gafas China, monturas de fibra de carbono al por mayor, fábrica de gafas CNC, gafas de sol OEM, proveedor de gafas de lujo, gafas de calidad de exportación"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "fabricante de gafas de fibra de carbono, gafas OEM personalizadas,
 - **Óptica Premium:** Lentes de nylon tenaces con amplias opciones de coloración y revestimiento personalizados para satisfacer las demandas de los diversos mercados.
 - **Hardware de Precisión:** Bisagras estables con estructura de barril 2+1 diseñadas para una suavidad operativa a largo plazo y un rendimiento constante.
 - **Comodidad para Todo el Día:** Almohadillas nasales de silicona hipoalergénica diseñadas para un ajuste seguro y cómodo durante largos periodos de uso.
-- **Producción Escalable:** Capacidades completas de personalización OEM y ODM, incluyendo la aplicación del logotipo (impresión, láser, estampado en caliente, metal, relieve), con una cantidad mínima de pedido baja de 300 piezas por modelo.
+- **Producción Escalable:** Capacidades completas de personalización OEM y ODM, incluyendo la aplicación del logotipo (impresión, láser, estampado en caliente, metal, relieve), con una cantidad mínima de pedido baja de 200 piezas por modelo.
 - **Flexibilidad Dimensional:** Disponible en tamaño estándar 49-19-145mm con opciones de personalización completas para apoyar los requisitos de la marca privada y específicos de la marca.
 
 ## Perfecto Para
@@ -64,4 +64,4 @@ Diseñado para ofrecer durabilidad sin volumen, el KSS-011 utiliza fibra de carb
 
 La arquitectura estable de la bisagra de barril 2+1 y las almohadillas nasales de silicona hipoalergénica garantizan una comodidad a largo plazo y un funcionamiento fiable durante años de uso diario.
 
-Al ofrecer una personalización completa de OEM y ODM a partir de una cantidad mínima de pedido de 300 unidades, este modelo proporciona una base scalables para casas de moda de lujo y marcas de estilo de vida deportivo que buscan una ventaja distintiva en el mercado.
+Al ofrecer una personalización completa de OEM y ODM a partir de una cantidad mínima de pedido de 200 unidades, este modelo proporciona una base scalables para casas de moda de lujo y marcas de estilo de vida deportivo que buscan una ventaja distintiva en el mercado.

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Madeira Dourada & Fibra de Carbono Verde com Trama de Sarja & Fibra de Carbono Grafite Fosco com Trama Plana & Fibra de Carbono Prata Fosca com Trama Plana de Madeira"
 materials: "Fibra de Carbono Premium e Titânio"
 serviceMode: "Fabricação por Encomenda (OEM) & Design e Fabricação (ODM) ( Personalização )"
-moq: "300 pçs/modelo"
+moq: "200 pçs/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-030 Armação Óptica de Luxo em Fibra de Carbono | Fabricante OEM"
-seoDescription: "Encomende armações ópticas em fibra de carbono KSO-030 personalizadas de uma fábrica líder. Resistência de grau aeroespacial com texturas de madeira, MOQ 300 para OEM/ODM de marca própria."
+seoDescription: "Encomende armações ópticas em fibra de carbono KSO-030 personalizadas de uma fábrica líder. Resistência de grau aeroespacial com texturas de madeira, MOQ 200 para OEM/ODM de marca própria."
 seoKeywords: "fabricante de armações ópticas em fibra de carbono, óculos em fibra de carbono personalizados China, armações ópticas de marca própria OEM, atacado de armações em fibra de carbono de luxo, fábrica de armações em fibra de carbono KSO-030, fornecedor de óculos em titânio e fibra de carbono, personalização ODM de armações ópticas premium, óculos em fibra de carbono qualidade exportação"
 ---
 
@@ -59,7 +59,7 @@ seoKeywords: "fabricante de armações ópticas em fibra de carbono, óculos em 
 - **Hardware Durável:** Dobradiças estáveis com estrutura de barril 2+1 projetadas para uma suavidade operacional consistente e confiabilidade a longo prazo.
 - **Ótica Premium:** Equipada com lentes de nylon tenazes que suportam amplas opções de tingimento e revestimento personalizados para diversas necessidades do mercado.
 - **Conforto Durante Todo o Dia:** Ponteiras nasicas de borracha integradas e materiais hipoalergénicos projetados para um ajuste seguro e confortável durante o uso prolongado.
-- **Produção Escalável:** Serviços abrangentes de personalização OEM e ODM com um MOQ de 300 peças, otimizados para os padrões globais de exportação B2B.
+- **Produção Escalável:** Serviços abrangentes de personalização OEM e ODM com um MOQ de 200 peças, otimizados para os padrões globais de exportação B2B.
 
 ## Perfeito Para
 - Marcas de Óculos Premium
@@ -75,4 +75,4 @@ A excelência em engenharia está no cerne do KSO-030, que combina fibra de carb
 
 Cada unidade apresenta texturas maquinadas com precisão – incluindo padrões de madeira e sarja – apoiadas por dobradiças de barril 2+1 de alto desempenho que garantem a fiabilidade mecânica.
 
-Otimizada para casas de moda de luxo e marcas de óculos premium, a nossa unidade de fabrico suporta a personalização total OEM/ODM com uma quantidade mínima de encomenda de 300 peças.
+Otimizada para casas de moda de luxo e marcas de óculos premium, a nossa unidade de fabrico suporta a personalização total OEM/ODM com uma quantidade mínima de encomenda de 200 peças.

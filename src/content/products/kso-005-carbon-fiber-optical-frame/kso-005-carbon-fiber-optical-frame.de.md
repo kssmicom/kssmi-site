@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Kohlefaser & Weißeiche & Sapele & Ebenholz"
 materials: "Premium-Kohlefaser"
 serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) ( Individualisierung )"
-moq: "300 Stk/Modell"
+moq: "200 Stk/Modell"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-005 Luxus-Carbon-Optikfassung | OEM-Hersteller"
-seoDescription: "Premium KSO-005 Carbon-Optikfassungen für globale Brillenmarken. Hochfeste Hybridkonstruktion mit Metallbügeln. 300 MOQ für OEM/ODM-Anpassung."
+seoDescription: "Premium KSO-005 Carbon-Optikfassungen für globale Brillenmarken. Hochfeste Hybridkonstruktion mit Metallbügeln. 200 MOQ für OEM/ODM-Anpassung."
 seoKeywords: "Hersteller Carbon-Optikfassung, kundenspezifische OEM-Optikfassungen, Eigenmarken-Brillen China, Großhandel Carbonfassungen, Luxus-Optikfassungsfabrik, High-End-Brillen-OEM, Exportqualität Optikfassungen, Anbieter Carbonbrillen"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "Hersteller Carbon-Optikfassung, kundenspezifische OEM-Optikfassung
 - **Flexible Hardware:** Präzisionsgefertigte Federscharniere sorgen für adaptiven Komfort und langfristige Betriebssicherheit.
 - **High-End-Optik:** Ausgestattet mit widerstandsfähigen Nylon-Gläsern, die umfangreiche Anpassungsoptionen für erstklassige optische Klarheit bieten.
 - **Raffinierter Komfort:** Langlebige Metall-Nasenpads, die für einen sicheren, verstellbaren Sitz und dauerhafte Tragbarkeit entwickelt wurden.
-- **Anpassbare Produktion:** Skalierbare OEM- und ODM-Dienstleistungen mit einer niedrigen Mindestbestellmenge von 300 Stück zur Unterstützung der globalen Markenexpansion.
+- **Anpassbare Produktion:** Skalierbare OEM- und ODM-Dienstleistungen mit einer niedrigen Mindestbestellmenge von 200 Stück zur Unterstützung der globalen Markenexpansion.
 
 ## Perfekt Für
 - Premium Brillenmarken
@@ -74,4 +74,4 @@ Dieses Modell setzt einen neuen Standard für High-End-Brillen und kombiniert Pr
 
 Präzisionsgefertigte Federscharniere und langlebige Metall-Nasenpads sorgen für adaptiven Komfort, während widerstandsfähige Nylon-Gläser optische Klarheit für anspruchsvollste Benutzer garantieren.
 
-Mit umfassenden OEM/ODM-Leistungen und einer niedrigen Mindestbestellmenge von 300 Stück unterstützt Kssmi Luxusmarken und unabhängige Designer dabei, maßgeschneiderte, präzisionsgefertigte Kollektionen weltweit anzubieten.
+Mit umfassenden OEM/ODM-Leistungen und einer niedrigen Mindestbestellmenge von 200 Stück unterstützt Kssmi Luxusmarken und unabhängige Designer dabei, maßgeschneiderte, präzisionsgefertigte Kollektionen weltweit anzubieten.

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Siyah"
 materials: "Premium Karbon Fiber ve Titanyum"
 serviceMode: "OEM ve ODM ( Özelleştirme )"
-moq: "300 adet/model"
+moq: "200 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-034 Lüks Karbon Fiber Optik Çerçeve Üreticisi | OEM"
-seoDescription: "KSO-034 için önde gelen bir Çinli karbon fiber optik çerçeve fabrikasıyla ortaklık kurun. Titanyum saplı havacılık sınıfı malzeme. OEM/ODM siparişleri için 300 MOQ."
+seoDescription: "KSO-034 için önde gelen bir Çinli karbon fiber optik çerçeve fabrikasıyla ortaklık kurun. Titanyum saplı havacılık sınıfı malzeme. OEM/ODM siparişleri için 200 MOQ."
 seoKeywords: "karbon fiber optik çerçeve üreticisi, özel karbon fiber gözlük Çin, toptan karbon fiber çerçeveler, titanyum karbon fiber gözlük OEM, lüks optik çerçeve fabrikası, özel marka karbon fiber gözlük, üst düzey gözlük ODM tedarikçisi"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "karbon fiber optik çerçeve üreticisi, özel karbon fiber gözl�
 - **Hassas Donanım:** Tutarlı çalışma pürüzsüzlüğü ve çerçeve stabilitesi için tasarlanmış sağlam 2+1 varil yapılı menteşeler.
 - **Premium Optik:** Çeşitli pazar taleplerini karşılamak için kapsamlı özel renklendirme ve kaplama seçenekleri sunan dayanıklı naylon lensler.
 - **Üretim Mükemmelliği:** Üst düzey perakende çekiciliği için hipoalerjenik özelliklere sahip benzersiz bir karbon fiber dokusu sergileyen hassas işlenmiş bileşenler.
-- **B2B Özelleştirme:** 300 adetlik düşük MOQ ile özel logoları, boyutları ve renkleri destekleyen ölçeklenebilir OEM ve ODM üretimi.
+- **B2B Özelleştirme:** 200 adetlik düşük MOQ ile özel logoları, boyutları ve renkleri destekleyen ölçeklenebilir OEM ve ODM üretimi.
 
 ## İçin Mükemmel
 - Premium Gözlük Markaları
@@ -62,4 +62,4 @@ KSO-034, havacılık sınıfı karbon fiberi şık titanyum saplarla birleştire
 
 Hassas mühendislikle üretilen 2+1 varil menteşeler, gün boyu profesyonel kullanım için sabit ve kaymaz bir uyum sağlamak üzere entegre kauçuk burun tamponlarıyla birlikte çalışır. Her çerçeve, karbon fiberin belirgin, yüksek teknolojili dokusunu sergilerken, titiz son kullanıcılar için hipoalerjenik güvenliği korur.
 
-300 adetlik esnek minimum sipariş miktarı ile kapsamlı OEM ve ODM geliştirme için uygun olan bu model, bağımsız markaların ve yerleşik moda evlerinin dünya standartlarında üretim standartlarıyla ısmarlama gözlük serileri başlatmasını sağlar.
+200 adetlik esnek minimum sipariş miktarı ile kapsamlı OEM ve ODM geliştirme için uygun olan bu model, bağımsız markaların ve yerleşik moda evlerinin dünya standartlarında üretim standartlarıyla ısmarlama gözlük serileri başlatmasını sağlar.

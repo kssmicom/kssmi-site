@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Warna Serat Karbon Asli (Ireng Matte, Ireng Mengkilap, Anyaman Berwarna, Karbon Tempa)"
 materials: "Serat Karbon Premium"
 serviceMode: "Produksi Kontrak & Desain lan Produksi ( Kustomisasi )"
-moq: "300 pcs/model"
+moq: "200 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -37,7 +37,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-031 Kacamata Hitam Serat Karbon Mewah | Pabrik OEM Grosir"
-seoDescription: "KSS-031: Kacamata hitam serat karbon kelas aerospace premium kanthi presisi CNC & engsel 2+1 baril. Layanan OEM/ODM ahli kanggo merek kacamata global. MOQ 300."
+seoDescription: "KSS-031: Kacamata hitam serat karbon kelas aerospace premium kanthi presisi CNC & engsel 2+1 baril. Layanan OEM/ODM ahli kanggo merek kacamata global. MOQ 200."
 seoKeywords: "produsen kacamata hitam serat karbon, kacamata hitam OEM kustom China, frame serat karbon grosir, pemasok kacamata label pribadi, pabrik kacamata hitam mewah grosir, kacamata serat karbon CNC, produsen kacamata hitam B2B, OEM kacamata kualitas ekspor"
 ---
 
@@ -48,7 +48,7 @@ seoKeywords: "produsen kacamata hitam serat karbon, kacamata hitam OEM kustom Ch
 - **Hardware Awet:** Engsel struktur 2+1 baril sing stabil dirancang kanggo kelancaran operasional jangka panjang.
 - **Optik Premium:** Lensa nylon sing kuwat kanthi macem-macem pilihan warna lan lapisan kustom sing kasedhiya.
 - **Kenyamanan & Kecocokan:** Bantalan irung silikon hypoallergenic nyedhiyakake kecocokan sing aman lan nyaman kanggo panggunaan sing suwe.
-- **Produksi Scalable:** Kapasitas kustomisasi OEM & ODM lengkap kanthi jumlah pesanan minimal 300 pcs kanggo ekspor global.
+- **Produksi Scalable:** Kapasitas kustomisasi OEM & ODM lengkap kanthi jumlah pesanan minimal 200 pcs kanggo ekspor global.
 
 ## Cocok kanggo
 
@@ -65,4 +65,4 @@ Nggabungake performa entheng karo estetika unisex sing canggih, KSS-031 digawe k
 
 Saben frame nduweni presisi mesin CNC lan engsel 2+1 baril kanggo njamin hasil pungkasan sing sampurna lan linuwih operasional sing tahan suwe.
 
-Kanthi nawakake kustomisasi OEM lan ODM lengkap saka minimal 300 unit, model iki menehi kekuwatan marang merek premium lan desainer independen kanggo nambah portofolio kacamata mewah.
+Kanthi nawakake kustomisasi OEM lan ODM lengkap saka minimal 200 unit, model iki menehi kekuwatan marang merek premium lan desainer independen kanggo nambah portofolio kacamata mewah.

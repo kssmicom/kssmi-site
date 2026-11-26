@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Màu sợi carbon nguyên bản (Đen mờ, Đen bóng, Vân màu, Carbon đúc)"
 materials: "Sợi Carbon cao cấp"
 serviceMode: "Sản xuất OEM & ODM ( Tùy chỉnh theo yêu cầu )"
-moq: "300 cái/mẫu"
+moq: "200 cái/mẫu"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Kính mát sợi carbon xa xỉ cổ điển KSS-012 | Nhà sản xuất OEM"
-seoDescription: "Hợp tác với nhà sản xuất hàng đầu Trung Quốc cho kính mát sợi carbon xa xỉ KSS-012. Kính mắt sợi carbon cấp hàng không CNC với dịch vụ OEM/ODM và MOQ 300."
+seoDescription: "Hợp tác với nhà sản xuất hàng đầu Trung Quốc cho kính mát sợi carbon xa xỉ KSS-012. Kính mắt sợi carbon cấp hàng không CNC với dịch vụ OEM/ODM và MOQ 200."
 seoKeywords: "nhà sản xuất kính mát sợi carbon, gọng carbon tùy chỉnh, OEM kính mắt xa xỉ Trung Quốc, bán sỉ kính mát sợi carbon, kính mắt carbon gia công CNC, kính mát xa xỉ nhãn hiệu riêng, gọng kính tỷ lệ độ bền trên trọng lượng cao, kính mắt carbon hàng không cao cấp"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "nhà sản xuất kính mát sợi carbon, gọng carbon tùy ch�
 - **Phụ kiện bền bỉ :** Bản lề cấu trúc thùng 2+1 ổn định được thiết kế để vận hành trơn tru và tin cậy trong thời gian dài.
 - **Quang học cao cấp :** Tròng kính nylon bền bỉ mang lại độ trong suốt vượt trội với các tùy chọn màu và lớp phủ tùy chỉnh phong phú.
 - **Thoải mái & An toàn :** Đệm mũi silicone không gây dị ứng được thiết kế để mang lại sự thoải mái cả ngày và vừa vặn an toàn.
-- **Sản xuất linh hoạt :** Khả năng tùy chỉnh OEM & ODM toàn diện với số lượng đặt hàng tối thiểu thấp 300 chiếc cho xuất khẩu toàn cầu.
+- **Sản xuất linh hoạt :** Khả năng tùy chỉnh OEM & ODM toàn diện với số lượng đặt hàng tối thiểu thấp 200 chiếc cho xuất khẩu toàn cầu.
 
 ## Phù hợp cho
 
@@ -64,4 +64,4 @@ seoKeywords: "nhà sản xuất kính mát sợi carbon, gọng carbon tùy ch�
 
 Gia công CNC chính xác mang lại dung sai hoàn hảo trên toàn bộ gọng kính, được bổ sung bởi hệ thống bản lề thùng 2+1 duy trì độ tin cậy vận hành trơn tru. Đệm mũi silicone không gây dị ứng mang lại sự vừa vặn an toàn, thoải mái, được thiết kế riêng để đeo cả ngày.
 
-Chúng tôi cung cấp hỗ trợ OEM và ODM toàn diện cho mẫu kính này, cho phép các nhãn hiệu thời trang boutique và các nhà thiết kế độc lập tùy chỉnh mọi thứ từ màu tròng kính đến thương hiệu khắc laser. Số lượng đặt hàng tối thiểu thấp 300 chiếc cung cấp sự linh hoạt trong sản xuất cần thiết để mở rộng các bộ sưu tập cao cấp một cách hiệu quả.
+Chúng tôi cung cấp hỗ trợ OEM và ODM toàn diện cho mẫu kính này, cho phép các nhãn hiệu thời trang boutique và các nhà thiết kế độc lập tùy chỉnh mọi thứ từ màu tròng kính đến thương hiệu khắc laser. Số lượng đặt hàng tối thiểu thấp 200 chiếc cung cấp sự linh hoạt trong sản xuất cần thiết để mở rộng các bộ sưu tập cao cấp một cách hiệu quả.

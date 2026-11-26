@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Warna Gentian Karbon Asal (Hitam Matte, Hitam Berkilat, Tenunan Berwarna, Karbon Tempa)"
 materials: "Gentian Karbon Premium"
 serviceMode: "OEM & ODM ( Penyesuaian )"
-moq: "300 unit/model"
+moq: "200 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-030 Cermin Mata Hitam Gentian Karbon Mewah | Pengilang OEM & ODM"
-seoDescription: "KSS-030 ialah bingkai gentian karbon premium untuk jenama kacamata mewah. Penyesuaian OEM & ODM penuh dengan 300 MOQ. Rakan kongsi dengan kilang eksport China yang terkemuka."
+seoDescription: "KSS-030 ialah bingkai gentian karbon premium untuk jenama kacamata mewah. Penyesuaian OEM & ODM penuh dengan 200 MOQ. Rakan kongsi dengan kilang eksport China yang terkemuka."
 seoKeywords: "pengilang cermin mata hitam gentian karbon, cermin mata hitam OEM tersuai, kacamata label peribadi China, bingkai gentian karbon borong, pembekal cermin mata hitam mewah"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "pengilang cermin mata hitam gentian karbon, cermin mata hitam OEM 
 - **Perkakasan Tahan Lama:** Engsel struktur tong 2+1 yang stabil direka untuk kelancaran operasi jangka panjang dan prestasi yang konsisten.
 - **Optik Premium:** Kanta nilon kental memberikan kejelasan unggul dengan pilihan pewarnaan dan salutan tersuai yang luas.
 - **Keselesaan & Keselamatan:** Alas hidung silikon hipoalergenik direka untuk keselesaan sepanjang hari dan padanan yang selamat.
-- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum yang rendah iaitu 300 unit untuk eksport jenama global.
+- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum yang rendah iaitu 200 unit untuk eksport jenama global.
 
 ## Sesuai Untuk
 - Jenama Kacamata Premium
@@ -62,4 +62,4 @@ KSS-030 menampilkan keindahan teknikal mentah gentian karbon premium, menawarkan
 
 Direka dengan engsel struktur tong 2+1 yang stabil dan alas hidung silikon hipoalergenik, bingkai ini memberikan integriti struktur jangka panjang dan keselesaan pengguna.
 
-Penyesuaian OEM/ODM yang fleksibel dan MOQ rendah sebanyak 300 unit menjadikan model ini asas yang ideal untuk jenama yang ingin berkembang ke dalam segmen kacamata prestasi mewah.
+Penyesuaian OEM/ODM yang fleksibel dan MOQ rendah sebanyak 200 unit menjadikan model ini asas yang ideal untuk jenama yang ingin berkembang ke dalam segmen kacamata prestasi mewah.

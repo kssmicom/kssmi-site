@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Acajou (Palissandre des Indes — Grain de Montagne)"
 materials: "Fibre de Carbone Premium et Titane"
 serviceMode: "Fabrication sous Contrat (OEM) & Conception et Fabrication (ODM) ( Personnalisation )"
-moq: "300 pcs/modèle"
+moq: "200 pcs/modèle"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Monture Optique de Luxe en Fibre de Carbone KSO-226 | Fabricant OEM"
-seoDescription: "Sourcez des montures optiques de luxe en fibre de carbone KSO-226 avec un grain d'acajou unique auprès d'un fabricant chinois de premier plan. Personnalisation OEM/ODM évolutive avec un MOQ de 300."
+seoDescription: "Sourcez des montures optiques de luxe en fibre de carbone KSO-226 avec un grain d'acajou unique auprès d'un fabricant chinois de premier plan. Personnalisation OEM/ODM évolutive avec un MOQ de 200."
 seoKeywords: "fabricant de montures optiques en fibre de carbone, lunettes en fibre de carbone personnalisées KSO-226, vente en gros de montures optiques Chine, lunettes en fibre de carbone marque de distributeur, fournisseur OEM de lunettes de luxe, montures en fibre de carbone grain acajou, usine de montures optiques B2B, lunettes en fibre de carbone ODM"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "fabricant de montures optiques en fibre de carbone, lunettes en fi
 - **Matériel Durable :** Charnières stables à structure de barillet 2+1 conçues avec précision pour une fluidité opérationnelle à long terme et une intégrité structurelle.
 - **Optique Premium :** Verres en nylon tenace avec de vastes options de teinte personnalisée et de revêtement multicouche disponibles pour répondre aux divers besoins du marché.
 - **Confort Ergonomique :** Plaquettes de nez en caoutchouc souple offrant un ajustement sûr, hypoallergénique et confortable pour un port professionnel toute la journée.
-- **Fabrication Évolutive :** Services complets de personnalisation OEM & ODM avec une quantité minimale de commande de 300 pièces pour les grossistes mondiaux.
+- **Fabrication Évolutive :** Services complets de personnalisation OEM & ODM avec une quantité minimale de commande de 200 pièces pour les grossistes mondiaux.
 
 ## Parfait Pour
 
@@ -64,4 +64,4 @@ Le KSO-226 allie la force industrielle de la fibre de carbone de qualité aéros
 
 Conçue avec précision avec des branches en titane résilient et des charnières à barillet 2+1 stables, la monture garantisce une durabilité à long terme et un confort hypoallergénique.
 
-Soutenant l'ensemble de la portée OEM/ODM avec un faible MOQ de 300 pièces, nous permettons aux marques premium de développer des collections de lunettes sur mesure en mettant l'accent sur l'excellence technique et la différenciation du marché.
+Soutenant l'ensemble de la portée OEM/ODM avec un faible MOQ de 200 pièces, nous permettons aux marques premium de développer des collections de lunettes sur mesure en mettant l'accent sur l'excellence technique et la différenciation du marché.

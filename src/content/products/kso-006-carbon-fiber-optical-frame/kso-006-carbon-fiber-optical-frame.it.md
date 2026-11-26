@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Carbonio-Ebano & Rovere Bianco & Sapele & Ebano"
 materials: "Fibra di Carbonio Premium"
 serviceMode: "OEM & ODM ( Personalizzazione )"
-moq: "300 pz/modello"
+moq: "200 pz/modello"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-006 Montatura Ottica in Fibra di Carbonio di Lusso | Produttore OEM & ODM"
-seoDescription: "Montatura ottica di lusso KSO-006 in fibra di carbonio con aste in metallo premium. Produttore cinese leader di occhiali OEM/ODM con MOQ di 300 pezzi."
+seoDescription: "Montatura ottica di lusso KSO-006 in fibra di carbonio con aste in metallo premium. Produttore cinese leader di occhiali OEM/ODM con MOQ di 200 pezzi."
 seoKeywords: "produttore montature ottiche fibra di carbonio, occhiali personalizzati OEM Cina, montature fibra di carbonio private label, fabbrica montature ottiche lusso, ingrosso occhiali fibra di carbonio, montature ottiche qualità export, servizio eyewear OEM ODM Cina, fornitore B2B montature ottiche"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "produttore montature ottiche fibra di carbonio, occhiali personali
 - **Ingegneria Flessibile:** Cerniere a molla ad alte prestazioni che offrono una vestibilità auto-regolante e confortevole per varie forme e dimensioni del viso.
 - **Ottica Premium:** Lenti in nylon tenace con ampie opzioni di colorazione e rivestimento personalizzate disponibili per soddisfare le specifiche del marchio.
 - **Comfort Sofisticato:** Naselli in metallo integrati progettati per durare nel tempo e offrire una vestibilità stabile e personalizzata durante l'uso prolungato.
-- **Produzione Scalabile:** Capacità di personalizzazione OEM e ODM complete con un ordine minimo di 300 pezzi per grossisti globali.
+- **Produzione Scalabile:** Capacità di personalizzazione OEM e ODM complete con un ordine minimo di 200 pezzi per grossisti globali.
 
 ## Perfetto Per
 - Marche di Occhiali Premium
@@ -74,4 +74,4 @@ Progettata per ambienti professionali, questa montatura combina un frontale in f
 
 Le cerniere a molla ad alte prestazioni e i naselli in metallo regolabili lavorano in tandem per fornire una vestibilità leggera e auto-regolante che mantiene il comfort durante l'uso quotidiano prolungato.
 
-Disponibile per lo sviluppo ODM completo con un minimo d'ordine accessibile di 300 pezzi, questo modello consente ai designer indipendenti e alle boutique premium di espandere i propri portafogli di occhiali di lusso personalizzati.
+Disponibile per lo sviluppo ODM completo con un minimo d'ordine accessibile di 200 pezzi, questo modello consente ai designer indipendenti e alle boutique premium di espandere i propri portafogli di occhiali di lusso personalizzati.

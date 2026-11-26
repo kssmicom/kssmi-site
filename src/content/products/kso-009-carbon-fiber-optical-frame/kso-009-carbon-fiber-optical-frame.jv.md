@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Serat Karbon & Ceylon Ebony & White Oak & Sapele"
 materials: "Serat Karbon Premium lan Titanium"
 serviceMode: "Produksi Kontrak (OEM) & Desain lan Produksi (ODM)"
-moq: "300 pcs/model"
+moq: "200 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-009 Frame Optik Serat Karbon Mewah | Produsen OEM"
-seoDescription: "Produsen frame optik serat karbon lan titanium premium KSO-009. Nawakake kustomisasi OEM/ODM kelas dhuwur kanggo merek kacamata global. Hubungi kanggo MOQ 300."
+seoDescription: "Produsen frame optik serat karbon lan titanium premium KSO-009. Nawakake kustomisasi OEM/ODM kelas dhuwur kanggo merek kacamata global. Hubungi kanggo MOQ 200."
 seoKeywords: "produsen frame optik serat karbon, kacamata titanium kustom China, frame serat karbon label pribadi, pemasok frame optik OEM, grosir frame mewah, pabrik kacamata kelas dhuwur, frame kanthi bantalan irung sing bisa diatur, ODM kacamata serat karbon"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "produsen frame optik serat karbon, kacamata titanium kustom China,
 - **Optik Premium:** Lensa nilon kuat sing nawakake resistensi benturan unggul lan kejelasan optik kanggo standar kacamata kelas dhuwur.
 - **Kenyamanan Sedina Muput:** Bantalan irung logam hypoallergenic sing dirancang kanggo pas sing stabil lan nyaman nalika digunakake sedina muput.
 - **Estetika Mewah:** Tekstur tenunan serat karbon sing unik digabungake karo finishing premium kanggo daya tarik fesyen sing canggih lan kelas dhuwur.
-- **Produksi Bisa Diatur:** Dhukungan kustomisasi OEM lan ODM sing lengkap kanthi jumlah pesenan minimal strategis 300 pcs kanggo grosir global.
+- **Produksi Bisa Diatur:** Dhukungan kustomisasi OEM lan ODM sing lengkap kanthi jumlah pesenan minimal strategis 200 pcs kanggo grosir global.
 
 ## Cocok kanggo
 - Merek Kacamata Premium
@@ -74,4 +74,4 @@ Nggabungake serat karbon performa dhuwur karo gagang titanium sing apik, KSO-009
 
 Integrasi sistem engsel tong 2+1 sing dirancang kanthi presisi lan bantalan irung logam hypoallergenic njamin operasi sing lancar lan rasa nyaman nalika dienggo sedina muput.
 
-Kanthi jumlah pesenan minimal 300 pcs saben model, kita nyedhiyakake dhukungan ODM lan OEM sing lengkap kanggo mbantu desainer independen lan pengecer premium ngembangake koleksi kacamata kustom kanthi gampang.
+Kanthi jumlah pesenan minimal 200 pcs saben model, kita nyedhiyakake dhukungan ODM lan OEM sing lengkap kanggo mbantu desainer independen lan pengecer premium ngembangake koleksi kacamata kustom kanthi gampang.

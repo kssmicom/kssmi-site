@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Mahoni (Indian Rosewood — Serat Gunung)"
 materials: "Serat Karbon Premium lan Titanium"
 serviceMode: "Produksi Kontrak (OEM) & Desain lan Produksi (ODM) ( Kustomisasi )"
-moq: "300 pcs/model"
+moq: "200 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Frame Optik Serat Karbon Mewah KSO-226 | Produsen OEM"
-seoDescription: "Source frame optik serat karbon mewah KSO-226 kanthi serat mahoni unik saka produsen terkemuka China. Kustomisasi OEM/ODM sing bisa diukur kanthi 300 MOQ."
+seoDescription: "Source frame optik serat karbon mewah KSO-226 kanthi serat mahoni unik saka produsen terkemuka China. Kustomisasi OEM/ODM sing bisa diukur kanthi 200 MOQ."
 seoKeywords: "produsen frame optik serat karbon, kacamata serat karbon kustom KSO-226, grosir frame optik China, kacamata serat karbon label pribadi, pemasok OEM kacamata mewah, frame serat karbon serat mahoni, pabrik frame optik B2B, kacamata serat karbon ODM"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "produsen frame optik serat karbon, kacamata serat karbon kustom KS
 - **Hardware Awet:** Engsel struktur tong 2+1 sing stabil dirancang kanthi presisi kanggo kelancaran operasional jangka panjang lan integritas struktural.
 - **Optik Premium:** Lensa nilon tenacious kanthi pilihan tinting kustom sing akeh lan lapisan multi-layer kasedhiya kanggo nyukupi macem-macem kabutuhan pasar.
 - **Kenyamanan Ergonomis:** Bantalan irung karet alus sing nyedhiyakake pas sing aman, hypoallergenic, lan nyaman kanggo panggunaan profesional sedina muput.
-- **Manufaktur Scalable:** Layanan kustomisasi OEM & ODM lengkap kanthi jumlah pesanan minimum sing sithik 300 potongan kanggo grosir global.
+- **Manufaktur Scalable:** Layanan kustomisasi OEM & ODM lengkap kanthi jumlah pesanan minimum sing sithik 200 potongan kanggo grosir global.
 
 ## Cocok kanggo
 
@@ -64,4 +64,4 @@ KSO-226 nggabungake kekuatan industri serat karbon kelas dirgantara karo keanggu
 
 Dirancang kanthi presisi nganggo gagang titanium sing kenyal lan engsel tong 2+1 sing stabil, frame iki njamin daya tahan jangka panjang lan kenyamanan hypoallergenic.
 
-Ndukung ruang lingkup OEM/ODM lengkap kanthi MOQ 300 pcs sing sithik, kita nguatake merek premium kanggo nggedhekake koleksi kacamata pesenan kanthi fokus ing keunggulan teknis lan diferensiasi pasar.
+Ndukung ruang lingkup OEM/ODM lengkap kanthi MOQ 200 pcs sing sithik, kita nguatake merek premium kanggo nggedhekake koleksi kacamata pesenan kanthi fokus ing keunggulan teknis lan diferensiasi pasar.

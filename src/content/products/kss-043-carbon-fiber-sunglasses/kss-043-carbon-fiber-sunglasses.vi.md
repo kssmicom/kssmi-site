@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Màu sợi carbon nguyên bản (Đen mờ, Đen bóng, Vân màu, Carbon rèn)"
 materials: "Sợi carbon cao cấp"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
-moq: "300 cái/mẫu"
+moq: "200 cái/mẫu"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -40,7 +40,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Kính mát sợi carbon cổ điển xa xỉ KSS-043 | Nhà máy OEM"
-seoDescription: "Hợp tác với nhà máy hàng đầu Trung Quốc cho kính mát sợi carbon xa xỉ KSS-043. Gọng kính siêu bền, siêu nhẹ với MOQ 300. Chuyên gia OEM/ODM cho các thương hiệu."
+seoDescription: "Hợp tác với nhà máy hàng đầu Trung Quốc cho kính mát sợi carbon xa xỉ KSS-043. Gọng kính siêu bền, siêu nhẹ với MOQ 200. Chuyên gia OEM/ODM cho các thương hiệu."
 seoKeywords: "nhà sản xuất kính mát sợi carbon, bán sỉ kính mát KSS-043, kính mắt sợi carbon tùy chỉnh Trung Quốc, nhà máy kính mát nhãn hiệu riêng, gọng kính carbon xa xỉ OEM, nhà cung cấp kính mát cao cấp, kính mắt cấp hàng không vũ trụ ODM, kính carbon chất lượng xuất khẩu"
 ---
 
@@ -51,7 +51,7 @@ seoKeywords: "nhà sản xuất kính mát sợi carbon, bán sỉ kính mát KS
 - **Quang học cao cấp:** Tròng kính nylon bền bỉ cung cấp độ rõ nét hiệu suất cao với các tùy chọn nhuộm màu và lớp phủ tùy chỉnh phong phú.
 - **Sự thoải mái tối ưu:** Đệm mũi silicone không gây dị ứng và cấu trúc linh hoạt đảm bảo vừa vặn an toàn, không gây áp lực khi sử dụng chuyên nghiệp trong thời gian dài.
 - **Tính thẩm mỹ tùy chỉnh:** Nhiều tùy chọn hoàn thiện bao gồm Đen mờ, Đen bóng và Carbon rèn để phù hợp với bản sắc riêng của các thương hiệu xa xỉ.
-- **Sản xuất linh hoạt:** Dịch vụ tùy chỉnh OEM & ODM đầy đủ với MOQ 300 chiếc cạnh tranh được thiết kế cho thị trường xuất khẩu toàn cầu.
+- **Sản xuất linh hoạt:** Dịch vụ tùy chỉnh OEM & ODM đầy đủ với MOQ 200 chiếc cạnh tranh được thiết kế cho thị trường xuất khẩu toàn cầu.
 
 ## Phù hợp cho
 
@@ -68,4 +68,4 @@ Kết hợp độ bền cấp hàng không vũ trụ với kiểu dáng siêu nh
 
 Gọng kính có hệ thống bản lề thùng 2+1 được hiệu chuẩn chính xác và tròng kính nylon bền bỉ, đảm bảo sự ổn định về cấu trúc và độ rõ nét của quang học trong một thiết kế bóng bẩy và không gây dị ứng.
 
-Với sự hỗ trợ cho các lớp hoàn thiện mờ, bóng hoặc carbon rèn và MOQ thấp 300 chiếc, phạm vi OEM/ODM đầy đủ của chúng tôi cho phép các nhà thiết kế tích hợp kính mắt sợi carbon tùy chỉnh trực tiếp từ nhà sản xuất vào các bộ sưu tập xa xỉ.
+Với sự hỗ trợ cho các lớp hoàn thiện mờ, bóng hoặc carbon rèn và MOQ thấp 200 chiếc, phạm vi OEM/ODM đầy đủ của chúng tôi cho phép các nhà thiết kế tích hợp kính mắt sợi carbon tùy chỉnh trực tiếp từ nhà sản xuất vào các bộ sưu tập xa xỉ.

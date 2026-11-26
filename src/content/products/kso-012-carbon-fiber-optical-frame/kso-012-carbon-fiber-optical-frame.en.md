@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Carbon-Fiber & Ceylon-Ebony & White-Oak & Sapele"
 materials: "Premium Carbon Fiber and Titanium"
 serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -47,7 +47,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-012 Luxury Carbon Fiber Optical Frame | Wholesale Supplier"
-seoDescription: "Source ultra-lightweight KSO-012 carbon fiber optical frames with titanium temples from a top Chinese export factory. Full OEM/ODM customization with 300 PCS MOQ."
+seoDescription: "Source ultra-lightweight KSO-012 carbon fiber optical frames with titanium temples from a top Chinese export factory. Full OEM/ODM customization with 200 PCS MOQ."
 seoKeywords: "carbon fiber optical frames, custom eyewear manufacturer, titanium carbon fiber glasses, wholesale optical frames China, private label eyewear factory, luxury carbon fiber frames OEM, CNC machined eyewear supplier, optical frame export manufacturer"
 ---
 
@@ -57,7 +57,7 @@ seoKeywords: "carbon fiber optical frames, custom eyewear manufacturer, titanium
 - **Durable Hardware:** Stable 2+1 barrel structure hinges engineered for long-term operational smoothness and easy maintenance.
 - **Premium Optics:** Tenacious nylon lenses with extensive custom tinting and coating options available for versatile branding.
 - **Ergonomic Comfort:** Hypoallergenic silicone nose pads designed for a secure, all-day comfortable fit.
-- **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 300 pieces for global export.
+- **Scalable Production:** Full OEM & ODM customization capabilities with a low minimum order quantity of 200 pieces for global export.
 
 ## Perfect For
 - Premium Eyewear Brands
@@ -73,4 +73,4 @@ Engineered for elite brands, the KSO-012 fuses aerospace-grade carbon fiber with
 
 The integration of 2+1 barrel hinges and hypoallergenic silicone nose pads ensures refined operational smoothness and a secure, comfortable fit for all-day wear.
 
-Providing extensive OEM and ODM customization with a low 300-piece minimum order quantity, Kssmi enables independent designers and luxury labels to scale their collections with precision-manufactured technical eyewear.
+Providing extensive OEM and ODM customization with a low 200-piece minimum order quantity, Kssmi enables independent designers and luxury labels to scale their collections with precision-manufactured technical eyewear.

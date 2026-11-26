@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Couleur Fibre de Carbone Originale (Noir Mat, Noir Brillant, Tissage Coloré, Carbone Forgé)"
 materials: "Fibre de Carbone Premium"
 serviceMode: "Fabrication sous Contrat & Conception et Fabrication"
-moq: "300 pcs/modèle"
+moq: "200 pcs/modèle"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Lunettes de Soleil de Luxe KSS-044 en Fibre de Carbone | Fabricant OEM"
-seoDescription: "Commandez des lunettes de soleil premium KSS-044 en fibre de carbone auprès d'un fabricant OEM leader en Chine. Nous offrons une personnalisation ODM complète pour les marques de luxe avec un MOQ de 300 unités."
+seoDescription: "Commandez des lunettes de soleil premium KSS-044 en fibre de carbone auprès d'un fabricant OEM leader en Chine. Nous offrons une personnalisation ODM complète pour les marques de luxe avec un MOQ de 200 unités."
 seoKeywords: "fabricant de lunettes de soleil en fibre de carbone, lunettes de soleil OEM personnalisées, lunettes de marque privée Chine, montures en fibre de carbone en gros, fournisseur de lunettes de soleil de luxe, lunettes en fibre de carbone personnalisées, fabricant de lunettes de soleil B2B, lunettes de qualité export Chine"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "fabricant de lunettes de soleil en fibre de carbone, lunettes de s
 - **Quincaillerie Durable :** Charnières stables à structure de barillet 2+1 conçues pour une fluidité opérationnelle à long terme et une intégrité structurelle.
 - **Confort Accru :** Plaquettes de nez en silicone hypoallergénique conçues pour assurer un ajustement sûr et confortable pendant un port prolongé.
 - **Ingénierie de Précision :** Texture de tissage de fibre de carbone unique offrant une esthétique de luxe high-tech avec une durabilité supérieure du matériau.
-- **Production Évolutive :** Capacités complètes de personnalisation OEM et ODM avec une quantité minimale de commande de seulement 300 pièces pour l'exportation B2B mondiale.
+- **Production Évolutive :** Capacités complètes de personnalisation OEM et ODM avec une quantité minimale de commande de seulement 200 pièces pour l'exportation B2B mondiale.
 
 ## Parfait Pour
 - Marques de Lunettes Premium
@@ -63,4 +63,4 @@ Pour le KSS-044, l'innovation des matériaux rencontre une esthétique intempore
 
 La quincaillerie conçue avec précision et les plaquettes de nez en silicone hypoallergénique garantissent un confort tout au long de la journée et une fiabilité mécanique à long terme.
 
-En offrant un support ODM complet, des logos sur mesure aux teintes de verres personnalisées, nous permettons aux marques de style de vie de luxe et aux designers indépendants d'élargir leurs portefeuilles avec une quantité minimale de commande de 300 pièces.
+En offrant un support ODM complet, des logos sur mesure aux teintes de verres personnalisées, nous permettons aux marques de style de vie de luxe et aux designers indépendants d'élargir leurs portefeuilles avec une quantité minimale de commande de 200 pièces.

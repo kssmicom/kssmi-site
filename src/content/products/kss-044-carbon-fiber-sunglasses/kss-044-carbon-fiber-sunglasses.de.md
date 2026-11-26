@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Original-Kohlefaserfarbe (Mattschwarz, Glanzschwarz, Farbiges Gewebe, Geschmiedetes Carbon)"
 materials: "Premium-Kohlefaser"
 serviceMode: "Auftragsfertigung & Design und Fertigung"
-moq: "300 Stk/Modell"
+moq: "200 Stk/Modell"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-044 Luxus-Kohlefaser-Sonnenbrille | Custom OEM Hersteller"
-seoDescription: "Beziehen Sie hochwertige KSS-044 Kohlefaser-Sonnenbrillen von einem führenden chinesischen OEM-Hersteller. Wir bieten volle ODM-Individualisierung für Luxusmarken mit einer Mindestbestellmenge von 300 Einheiten."
+seoDescription: "Beziehen Sie hochwertige KSS-044 Kohlefaser-Sonnenbrillen von einem führenden chinesischen OEM-Hersteller. Wir bieten volle ODM-Individualisierung für Luxusmarken mit einer Mindestbestellmenge von 200 Einheiten."
 seoKeywords: "Kohlefaser-Sonnenbrillen Hersteller, kundenspezifische OEM-Sonnenbrillen, Eigenmarken-Brillen China, Großhandel Kohlefaser-Rahmen, Luxus-Sonnenbrillen-Lieferant, maßgeschneiderte Kohlefaser-Brillen, B2B-Sonnenbrillen-Hersteller, Exportqualität Brillen China"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "Kohlefaser-Sonnenbrillen Hersteller, kundenspezifische OEM-Sonnenb
 - **Langlebige Hardware:** Stabile Scharniere mit 2+1-Zylinderstruktur, entwickelt für langfristige Laufruhe und strukturelle Integrität.
 - **Erhöhter Komfort:** Hypoallergene Silikon-Nasenpads sorgen für einen sicheren und bequemen Sitz bei längerem Tragen.
 - **Präzisionstechnik:** Die einzigartige Kohlefaser-Gewebetextur bietet eine High-Tech-Luxusästhetik bei überlegener Materialhaltbarkeit.
-- **Skalierbare Produktion:** Volle OEM- und ODM-Anpassungsmöglichkeiten mit einer niedrigen Mindestbestellmenge von 300 Stück für den globalen B2B-Export.
+- **Skalierbare Produktion:** Volle OEM- und ODM-Anpassungsmöglichkeiten mit einer niedrigen Mindestbestellmenge von 200 Stück für den globalen B2B-Export.
 
 ## Perfekt Für
 - Premium Brillenmarken
@@ -63,4 +63,4 @@ Beim KSS-044 trifft Materialinnovation auf zeitlose Ästhetik. Die Kohlefaserkon
 
 Präzisionsgefertigte Hardware und hypoallergene Silikon-Nasenpads garantieren ganztägigen Komfort und langfristige mechanische Zuverlässigkeit.
 
-Durch die volle ODM-Unterstützung – von maßgeschneiderten Logos bis hin zu individuellen Glastönungen – ermöglichen wir Luxus-Lifestyle-Marken und unabhängigen Designern, ihre Portfolios mit einer niedrigen Mindestbestellmenge von 300 Stück zu erweitern.
+Durch die volle ODM-Unterstützung – von maßgeschneiderten Logos bis hin zu individuellen Glastönungen – ermöglichen wir Luxus-Lifestyle-Marken und unabhängigen Designern, ihre Portfolios mit einer niedrigen Mindestbestellmenge von 200 Stück zu erweitern.

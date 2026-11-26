@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Fibra de Carbono & Ébano do Ceilão & Carvalho Branco & Sapele"
 materials: "Fibra de Carbono Premium e Titânio"
 serviceMode: "OEM & ODM"
-moq: "300 pçs/modelo"
+moq: "200 pçs/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-009 Armação Óptica de Luxo em Fibra de Carbono | Fabricante OEM"
-seoDescription: "Fabricante de armações ópticas premium em fibra de carbono e titânio KSO-009. Oferecemos personalização OEM/ODM de alto nível para marcas globais. Contato para MOQ 300."
+seoDescription: "Fabricante de armações ópticas premium em fibra de carbono e titânio KSO-009. Oferecemos personalização OEM/ODM de alto nível para marcas globais. Contato para MOQ 200."
 seoKeywords: "fabricante armações ópticas fibra de carbono, óculos de titânio personalizados China, armações fibra de carbono marca própria, fornecedor armações ópticas OEM, atacado armações luxo, fábrica óculos alta gama, armações com ponteiras ajustáveis, ODM óculos fibra de carbono"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "fabricante armações ópticas fibra de carbono, óculos de titân
 - **Óptica Premium:** Lentes de nylon tenaz que oferecem uma resistência superior aos impactos e clareza óptica para os padrões de óculos de alta gama.
 - **Conforto para Todo o Dia:** Ponteiras nasais de metal hipoalergênicas projetadas para um ajuste estável e confortável durante o uso diário prolongado.
 - **Estética de Lusso:** Texturas únicas de trama de fibra de carbono combinadas com acabamentos premium para um apelo de moda sofisticado e de alto nível.
-- **Produção Escalável:** Suporte completo para personalização OEM e ODM com uma quantidade mínima de pedido estratégica de 300 peças para atacadistas globais.
+- **Produção Escalável:** Suporte completo para personalização OEM e ODM com uma quantidade mínima de pedido estratégica de 200 peças para atacadistas globais.
 
 ## Perfeito Para
 - Marcas de Óculos Premium
@@ -74,4 +74,4 @@ Combinando fibra de carbono de alto desempenho com hastes de titânio elegantes,
 
 A integração de um sistema de dobradiças de barril 2+1 projetado com precisão e ponteiras nasais de metal hipoalergênicas garante suavidade operacional consistente e um ajuste estável e confortável.
 
-Com uma quantidade mínima de pedido flexível de 300 peças por modelo, oferecemos suporte completo de ODM e OEM para ajudar designers independentes e varejistas premium a expandir suas coleções de óculos personalizadas com facilidade.
+Com uma quantidade mínima de pedido flexível de 200 peças por modelo, oferecemos suporte completo de ODM e OEM para ajudar designers independentes e varejistas premium a expandir suas coleções de óculos personalizadas com facilidade.

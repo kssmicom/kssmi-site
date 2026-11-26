@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Orijinal Karbon Fiber Rengi (Mat Siyah, Parlak Siyah, Renkli Dokuma, Dövme Karbon)"
 materials: "Premium Karbon Fiber"
 serviceMode: "Sözleşmeli Üretim & Tasarım ve Üretim"
-moq: "300 adet/model"
+moq: "200 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-044 Lüks Karbon Fiber Güneş Gözlüğü | Özel OEM Üreticisi"
-seoDescription: "Lider bir Çinli OEM üreticisinden premium KSS-044 karbon fiber güneş gözlüğü temin edin. Lüks markalar için 300 adet MOQ ile tam ODM özelleştirme sunuyoruz."
+seoDescription: "Lider bir Çinli OEM üreticisinden premium KSS-044 karbon fiber güneş gözlüğü temin edin. Lüks markalar için 200 adet MOQ ile tam ODM özelleştirme sunuyoruz."
 seoKeywords: "karbon fiber güneş gözlüğü üreticisi, özel OEM güneş gözlüğü, özel marka gözlük Çin, toptan karbon fiber çerçeveler, lüks güneş gözlüğü tedarikçisi, özelleştirilmiş karbon fiber gözlük, B2B güneş gözlüğü üreticisi, ihracat kalitesinde gözlük Çin"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "karbon fiber güneş gözlüğü üreticisi, özel OEM güneş gö
 - **Dayanıklı Donanım:** Uzun süreli operasyonel pürüzsüzlük ve yapısal bütünlük için tasarlanmış stabil 2+1 varil yapılı menteşeler.
 - **Gelişmiş Konfor:** Uzun süreli kullanım sırasında güvenli ve rahat bir oturuş sağlamak için tasarlanmış hipoalerjenik silikon burun tamponları.
 - **Hassas Mühendislik:** Üstün malzeme dayanıklılığı ile yüksek teknoloji ürünü lüks bir estetik sunan benzersiz karbon fiber dokuma dokusu.
-- **Ölçeklenebilir Üretim:** Küresel B2B ihracatı için 300 parçalık düşük minimum sipariş miktarı ile tam OEM ve ODM özelleştirme yetenekleri.
+- **Ölçeklenebilir Üretim:** Küresel B2B ihracatı için 200 parçalık düşük minimum sipariş miktarı ile tam OEM ve ODM özelleştirme yetenekleri.
 
 ## İçin Mükemmel
 - Premium Gözlük Markaları
@@ -63,4 +63,4 @@ KSS-044 için malzeme inovasyonu zamansız estetikle buluşuyor. Havacılık sı
 
 Hassas mühendislikle üretilen donanım ve hipoalerjenik silikon burun tamponları, gün boyu konfor ve uzun vadeli mekanik güvenilirlik garanti eder.
 
-Ismarlama logolardan özel lens renklerine kadar tam ODM desteği sağlayarak, lüks yaşam tarzı markalarının ve bağımsız tasarımcıların portföylerini 300 parçalık düşük bir minimum sipariş miktarıyla genişletmelerini sağlıyoruz.
+Ismarlama logolardan özel lens renklerine kadar tam ODM desteği sağlayarak, lüks yaşam tarzı markalarının ve bağımsız tasarımcıların portföylerini 200 parçalık düşük bir minimum sipariş miktarıyla genişletmelerini sağlıyoruz.

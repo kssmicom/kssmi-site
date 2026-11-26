@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Legno Dorato & Fibra di Carbonio Verde con Trama Twill & Fibra di Carbonio Canna di Fucile Opaca con Trama Piana & Fibra di Carbonio Argento Opaco con Trama Piana in Legno"
 materials: "Fibra di Carbonio Premium e Titanio"
 serviceMode: "Produzione per Conto Terzi (OEM) & Design e Produzione (ODM) ( Personalizzazione )"
-moq: "300 pz/modello"
+moq: "200 pz/modello"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-030 Montatura Ottica in Fibra di Carbonio di Lusso | Produttore OEM"
-seoDescription: "Ordina montature ottiche in fibra di carbonio KSO-030 personalizzate da una fabbrica leader. Resistenza di grado aerospaziale con trame effetto legno, MOQ 300 per OEM/ODM private label."
+seoDescription: "Ordina montature ottiche in fibra di carbonio KSO-030 personalizzate da una fabbrica leader. Resistenza di grado aerospaziale con trame effetto legno, MOQ 200 per OEM/ODM private label."
 seoKeywords: "produttore montature ottiche in fibra di carbonio, occhiali in fibra di carbonio personalizzati Cina, montature ottiche private label OEM, montature in fibra di carbonio di lusso all'ingrosso, fabbrica montature in fibra di carbonio KSO-030, fornitore occhiali in titanio e fibra di carbonio, personalizzazione ODM montature ottiche premium, occhiali in fibra di carbonio qualità export"
 ---
 
@@ -59,7 +59,7 @@ seoKeywords: "produttore montature ottiche in fibra di carbonio, occhiali in fib
 - **Hardware Resistente:** Cerniere stabili con struttura a barilotto 2+1 progettate per una fluidità operativa costante e affidabilità a lungo termine.
 - **Ottica Premium:** Dotata di lenti in nylon tenaci che supportano ampie opzioni di colorazione e rivestimento personalizzati per le diverse esigenze del mercato.
 - **Comfort per Tutto il Giorno:** Naselli in gomma integrati e materiali ipoallergenici progettati per una vestibilità sicura e confortevole durante l'uso prolungato.
-- **Produzione Scalabile:** Servizi completi di personalizzazione OEM e ODM con un MOQ di 300 pezzi, ottimizzati per gli standard globali di esportazione B2B.
+- **Produzione Scalabile:** Servizi completi di personalizzazione OEM e ODM con un MOQ di 200 pezzi, ottimizzati per gli standard globali di esportazione B2B.
 
 ## Perfetto Per
 - Marche di Occhiali Premium
@@ -75,4 +75,4 @@ L'eccellenza ingegneristica è al cuore del modello KSO-030, che combina la fibr
 
 Ogni unità presenta trame lavorate con precisione, inclusi gli effetti legno e twill, supportate da cerniere a barilotto 2+1 ad alte prestazioni che garantiscono l'affidabilità meccanica.
 
-Ottimizzata per le case di moda di lusso e i marchi di occhiali premium, la nostra struttura produttiva supporta la completa personalizzazione OEM/ODM con una quantità minima d'ordine di 300 pezzi.
+Ottimizzata per le case di moda di lusso e i marchi di occhiali premium, la nostra struttura produttiva supporta la completa personalizzazione OEM/ODM con una quantità minima d'ordine di 200 pezzi.

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Holz Golden & Twill Grain Grünes Kohlefaser & Plain Grain Kohlefaser Matt Gun & Holz Plain Grain Kohlefaser Matt Silber"
 materials: "Premium-Kohlefaser und Titan"
 serviceMode: "Auftragsfertigung (OEM) & Design und Fertigung (ODM) ( Individualisierung )"
-moq: "300 Stk/Modell"
+moq: "200 Stk/Modell"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-032 Luxus-Kohlefaser-Brillenrahmen | OEM-Hersteller"
-seoDescription: "Partner mit einem führenden chinesischen Hersteller für KSO-032 Luxus-Kohlefaser- und Titan-Brillenrahmen. Vollständige OEM/ODM-Dienste mit 300er MOQ für Eigenmarken."
+seoDescription: "Partner mit einem führenden chinesischen Hersteller für KSO-032 Luxus-Kohlefaser- und Titan-Brillenrahmen. Vollständige OEM/ODM-Dienste mit 200er MOQ für Eigenmarken."
 seoKeywords: "kohlefaser brillenrahmen hersteller, individuelle OEM brille China, eigenmarken kohlefaser rahmen, großhandel luxus optische brillen, titan kohlefaser brillen fabrik, ODM brillen großhandel lieferant, export-qualität optische rahmen, B2B kohlefaser brille China"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "kohlefaser brillenrahmen hersteller, individuelle OEM brille China
 - **Premium-Optik:** Widerstandsfähige Nylon-Gläser bieten überlegene Stoßfestigkeit mit umfangreichen Anpassungsoptionen für globale B2B-Kunden.
 - **Ganztägiger Komfort:** Ergonomische Nasenpads aus Gummi für einen sicheren, hypoallergenen Sitz bei längerem täglichen Tragen.
 - **Exklusive Texturen:** Einzigartige Kohlefaser-Oberflächen, einschließlich Holzmaserung und Twill-Muster, die eine hochwertige Luxus-Ästhetik vermitteln.
-- **Skalierbare Fertigung:** Professionelle OEM- & ODM-Anpassungsfähigkeiten mit einer niedrigen Mindestbestellmenge von 300 Stück für den weltweiten Vertrieb.
+- **Skalierbare Fertigung:** Professionelle OEM- & ODM-Anpassungsfähigkeiten mit einer niedrigen Mindestbestellmenge von 200 Stück für den weltweiten Vertrieb.
 
 ## Perfekt Für
 - Premium Brillenmarken
@@ -74,4 +74,4 @@ Entwickelt mit einer Hochleistungsfusion aus Premium-Kohlefaser und leichtem Tit
 
 Ein präzisionsgefertigtes 2+1-Fassscharniersystem gewährleistet eine konstante mechanische Stabilität, während die ergonomischen Nasenpads aus Gummi den ganzen Tag über hypoallergenen Komfort bieten.
 
-Mit einem umfassenden ODM- und OEM-Anpassungsumfang bei einer niedrigen Mindestbestellmenge von 300 Stück ermöglicht dieses Modell unabhängigen Designern und gehobenen Einzelhändlern, maßgeschneiderte Luxuskollektionen mit fertigungstechnischer Präzision zu skalieren.
+Mit einem umfassenden ODM- und OEM-Anpassungsumfang bei einer niedrigen Mindestbestellmenge von 200 Stück ermöglicht dieses Modell unabhängigen Designern und gehobenen Einzelhändlern, maßgeschneiderte Luxuskollektionen mit fertigungstechnischer Präzision zu skalieren.

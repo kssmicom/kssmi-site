@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Gentian Karbon & Ceylon Ebony & White Oak & Sapele"
 materials: "Gentian Karbon Premium dan Titanium"
 serviceMode: "OEM & ODM ( Penyesuaian )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Bingkai Optik Gentian Karbon Mewah KSO-011 | Pembekal Borong"
-seoDescription: "Rakan kongsi dengan pengeluar terkemuka China untuk bingkai optik gentian karbon mewah KSO-011 dengan tangkai titanium. OEM/ODM untuk label peribadi dengan 300 MOQ."
+seoDescription: "Rakan kongsi dengan pengeluar terkemuka China untuk bingkai optik gentian karbon mewah KSO-011 dengan tangkai titanium. OEM/ODM untuk label peribadi dengan 200 MOQ."
 seoKeywords: "pengeluar bingkai optik gentian karbon, cermin mata titanium tersuai China, bingkai gentian karbon label peribadi, borong cermin mata optik mewah, kilang cermin mata gentian karbon OEM, pembekal bingkai optik B2B, OEM cermin mata gentian karbon mewah, bingkai optik kualiti eksport"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "pengeluar bingkai optik gentian karbon, cermin mata titanium tersu
 - **Keselesaan Termaju:** Alas hidung titanium bersepadu yang menawarkan padanan hipoalergenik dan tahan kakisan untuk keselesaan pemakai jangka panjang.
 - **Optik Premium:** Kanta nilon pelbagai fungsi yang direka untuk rintangan impak tinggi dengan kemungkinan pewarnaan dan salutan tersuai yang meluas.
 - **Kemasan Halus:** Tekstur gentian karbon yang unik dan reka bentuk unisex mewah yang memenuhi permintaan estetik peruncit cermin mata premium.
-- **Penyesuaian Penuh:** Perkhidmatan OEM & ODM profesional termasuk aplikasi logo tersuai dan pengubahsuaian perkakasan bermula pada MOQ 300 unit.
+- **Penyesuaian Penuh:** Perkhidmatan OEM & ODM profesional termasuk aplikasi logo tersuai dan pengubahsuaian perkakasan bermula pada MOQ 200 unit.
 
 ## Sesuai Untuk
 - Merek Kacamata Premium
@@ -74,4 +74,4 @@ Direka untuk pasaran mewah yang arif, KSO-011 menggabungkan gentian karbon berpr
 
 Engsel 2+1 tong dan alas hidung titanium yang dihasilkan dengan ketepatan memberikan pelarasan yang mudah dan integriti struktur jangka panjang.
 
-Tersedia untuk penyesuaian OEM dan ODM yang meluas bermula pada MOQ 300 unit, model ini memperkasakan label peribadi untuk menyepadukan teknologi komposit termaju ke dalam koleksi tandatangan mereka.
+Tersedia untuk penyesuaian OEM dan ODM yang meluas bermula pada MOQ 200 unit, model ini memperkasakan label peribadi untuk menyepadukan teknologi komposit termaju ke dalam koleksi tandatangan mereka.

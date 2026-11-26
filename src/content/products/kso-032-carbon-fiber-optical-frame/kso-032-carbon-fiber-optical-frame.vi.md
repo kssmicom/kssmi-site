@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Gỗ Vàng & Sợi Carbon Xanh Vân Chéo & Sợi Carbon Vân Phẳng Súng Mờ & Gỗ Sợi Carbon Vân Phẳng Bạc Mờ"
 materials: "Sợi Carbon Cao Cấp và Titan"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
-moq: "300 cái/mẫu"
+moq: "200 cái/mẫu"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Gọng Kính Cận Sợi Carbon Xa Xỉ KSO-032 | Nhà Sản Xuất OEM"
-seoDescription: "Hợp tác với nhà sản xuất Trung Quốc hàng đầu cho gọng kính cận sợi carbon & titan xa xỉ KSO-032. Dịch vụ OEM/ODM đầy đủ với MOQ 300 cho các nhãn hiệu riêng."
+seoDescription: "Hợp tác với nhà sản xuất Trung Quốc hàng đầu cho gọng kính cận sợi carbon & titan xa xỉ KSO-032. Dịch vụ OEM/ODM đầy đủ với MOQ 200 cho các nhãn hiệu riêng."
 seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính mắt tùy chỉnh OEM Trung Quốc, gọng kính sợi carbon nhãn hiệu riêng, bán buôn kính mắt quang học xa xỉ, nhà máy kính sợi carbon titan, nhà cung cấp bán buôn kính mắt ODM, gọng kính chất lượng xuất khẩu, kính sợi carbon B2B Trung Quốc"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính mắt tùy ch�
 - **Quang học cao cấp:** Tròng kính nylon bền bỉ cung cấp khả năng chống va đập vượt trội với các tùy chọn tùy chỉnh rộng rãi cho khách hàng B2B toàn cầu.
 - **Thoải mái cả ngày:** Đệm mũi cao su tiện dụng được thiết kế để mang lại sự vừa vặn an toàn và không gây dị ứng trong suốt thời gian đeo hàng ngày.
 - **Kết cấu độc quyền:** Các lớp hoàn thiện sợi carbon độc đáo bao gồm vân gỗ và hoa văn chéo, mang lại thẩm mỹ xa xỉ, cao cấp.
-- **Sản xuất có thể mở rộng:** Khả năng tùy chỉnh OEM & ODM chuyên nghiệp với MOQ thấp 300 cái để phân phối toàn thế giới.
+- **Sản xuất có thể mở rộng:** Khả năng tùy chỉnh OEM & ODM chuyên nghiệp với MOQ thấp 200 cái để phân phối toàn thế giới.
 
 ## Phù hợp cho
 - Thương hiệu kính mắt cao cấp
@@ -74,4 +74,4 @@ seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính mắt tùy ch�
 
 Hệ thống bản lề thùng 2+1 được chế tạo chính xác đảm bảo độ ổn định cơ học nhất quán, trong khi đệm mũi cao su tiện dụng mang lại sự thoải mái không gây dị ứng suốt cả ngày.
 
-Cung cấp phạm vi tùy chỉnh ODM và OEM toàn diện với số lượng đặt hàng tối thiểu thấp chỉ 300 chiếc, mẫu kính này cho phép các nhà thiết kế độc lập và các nhà bán lẻ cao cấp mở rộng các bộ sưu tập xa xỉ đặt riêng với độ chính xác trong sản xuất.
+Cung cấp phạm vi tùy chỉnh ODM và OEM toàn diện với số lượng đặt hàng tối thiểu thấp chỉ 200 chiếc, mẫu kính này cho phép các nhà thiết kế độc lập và các nhà bán lẻ cao cấp mở rộng các bộ sưu tập xa xỉ đặt riêng với độ chính xác trong sản xuất.

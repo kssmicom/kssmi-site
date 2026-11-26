@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Hitam"
 materials: "Gentian Karbon Premium dan Titanium"
 serviceMode: "Pembuatan OEM / ODM ( Penyesuaian )"
-moq: "300 unit/model"
+moq: "200 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Pengilang Bingkai Optik Gentian Karbon Mewah KSO-034 | OEM"
-seoDescription: "Bekerjasama dengan kilang bingkai optik gentian karbon China yang terkemuka untuk KSO-034. Bahan gred aeroangkasa dengan tangkai titanium. 300 MOQ untuk pesanan OEM/ODM."
+seoDescription: "Bekerjasama dengan kilang bingkai optik gentian karbon China yang terkemuka untuk KSO-034. Bahan gred aeroangkasa dengan tangkai titanium. 200 MOQ untuk pesanan OEM/ODM."
 seoKeywords: "pengilang bingkai optik gentian karbon, kacamata gentian karbon tersuai China, bingkai gentian karbon borong, cermin mata titanium gentian karbon OEM, kilang bingkai optik mewah, kacamata gentian karbon label peribadi, pembekal ODM kacamata mewah"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "pengilang bingkai optik gentian karbon, kacamata gentian karbon te
 - **Perkakasan Ketepatan:** Engsel struktur tong 2+1 yang stabil direka untuk kelancaran operasi yang konsisten dan kestabilan bingkai.
 - **Optik Premium:** Lensa nilon teguh dengan pilihan warna dan salutan tersuai yang luas tersedia untuk memenuhi pelbagai permintaan pasaran.
 - **Kecemerlangan Pembuatan:** Komponen buatan ketepatan yang mempamerkan tekstur gentian karbon yang unik dengan ciri hipoalergenik untuk tarikan runcit mewah.
-- **Penyesuaian B2B:** Pembuatan OEM dan ODM berskala yang menyokong logo, saiz dan warna tersuai dengan MOQ rendah sebanyak 300 unit.
+- **Penyesuaian B2B:** Pembuatan OEM dan ODM berskala yang menyokong logo, saiz dan warna tersuai dengan MOQ rendah sebanyak 200 unit.
 
 ## Sesuai Untuk
 - Merek Kacamata Premium
@@ -62,4 +62,4 @@ KSO-034 mewakili kemuncak kejuruteraan bahan hibrid, menggabungkan gentian karbo
 
 Engsel tong 2+1 yang direka dengan ketepatan berfungsi seiring dengan alas hidung getah bersepadu untuk menyediakan padanan yang stabil dan tidak licin untuk pemakaian profesional sepanjang hari. Setiap bingkai mempamerkan tekstur gentian karbon berteknologi tinggi yang tersendiri sambil mengekalkan keselamatan hipoalergenik untuk pengguna akhir yang arif.
 
-Tersedia untuk pembangunan OEM dan ODM yang komprehensif dengan kuantiti pesanan minimum 300 unit yang fleksibel, model ini membolehkan label bebas dan rumah fesyen yang mapan untuk melancarkan barisan kacamata tersuai dengan piawaian pembuatan bertaraf dunia.
+Tersedia untuk pembangunan OEM dan ODM yang komprehensif dengan kuantiti pesanan minimum 200 unit yang fleksibel, model ini membolehkan label bebas dan rumah fesyen yang mapan untuk melancarkan barisan kacamata tersuai dengan piawaian pembuatan bertaraf dunia.

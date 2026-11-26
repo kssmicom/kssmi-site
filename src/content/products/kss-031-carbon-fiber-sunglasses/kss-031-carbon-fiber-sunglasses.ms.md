@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Warna Gentian Karbon Asal (Hitam Matte, Hitam Berkilat, Tenunan Berwarna, Karbon Tempa)"
 materials: "Gentian Karbon Premium"
 serviceMode: "OEM & ODM ( Penyesuaian )"
-moq: "300 unit/model"
+moq: "200 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -37,7 +37,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Cermin Mata Hitam Gentian Karbon Mewah KSS-031 | Kilang OEM Borong"
-seoDescription: "KSS-031: Cermin mata hitam gentian karbon gred aeroangkasa premium yang menampilkan ketepatan CNC & engsel 2+1 tong. Perkhidmatan pakar OEM/ODM. MOQ 300."
+seoDescription: "KSS-031: Cermin mata hitam gentian karbon gred aeroangkasa premium yang menampilkan ketepatan CNC & engsel 2+1 tong. Perkhidmatan pakar OEM/ODM. MOQ 200."
 seoKeywords: "pengilang cermin mata hitam gentian karbon, cermin mata hitam OEM tersuai China, bingkai gentian karbon borong, pembekal kacamata label peribadi, kilang borong cermin mata hitam mewah, kacamata gentian karbon CNC, pengilang cermin mata hitam B2B, OEM kacamata kualiti eksport"
 ---
 
@@ -48,7 +48,7 @@ seoKeywords: "pengilang cermin mata hitam gentian karbon, cermin mata hitam OEM 
 - **Perkakasan Tahan Lama:** Engsel struktur 2+1 tong yang stabil direka untuk kelancaran operasi jangka panjang.
 - **Optik Premium:** Kanta nilon tahan lasak dengan pilihan warna dan salutan tersuai yang meluas tersedia.
 - **Keselesaan & Padanan:** Alas hidung silikon hipoalergenik yang memberikan padanan yang selamat dan selesa untuk kegunaan berpanjangan.
-- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum rendah 300 unit untuk eksport global.
+- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum rendah 200 unit untuk eksport global.
 
 ## Sesuai Untuk
 
@@ -65,4 +65,4 @@ Menggabungkan prestasi ringan dengan estetika unisex yang sofistikated, KSS-031 
 
 Setiap bingkai menampilkan ketepatan mesin CNC dan engsel 2+1 tong untuk memastikan kemasan yang sempurna dan kebolehpercayaan operasi yang berkekalan.
 
-Menawarkan penyesuaian OEM dan ODM sepenuhnya daripada minimum 300 unit, model ini memperkasakan jenama premium dan pereka bebas untuk meningkatkan portfolio kacamata mewah mereka.
+Menawarkan penyesuaian OEM dan ODM sepenuhnya daripada minimum 200 unit, model ini memperkasakan jenama premium dan pereka bebas untuk meningkatkan portfolio kacamata mewah mereka.

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Color Original de Fibra de Carbono (Negro Mate, Negro Brillante, Tejido de Color, Carbono Forjado)"
 materials: "Fibra de Carbono Premium"
 serviceMode: "Fabricación por Cuenta de Terceros (OEM) & Diseño y Fabricación (ODM)"
-moq: "300 uds/modelo"
+moq: "200 uds/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-029 Gafas de Sol de Lujo en Fibra de Carbono | Fabricante OEM"
-seoDescription: "Adquiera gafas de sol premium KSS-029 de fibra de carbono de un fabricante OEM líder en China. Monturas ligeras y duraderas con bisagras 2+1 y MOQ de 300 unidades."
+seoDescription: "Adquiera gafas de sol premium KSS-029 de fibra de carbono de un fabricante OEM líder en China. Monturas ligeras y duraderas con bisagras 2+1 y MOQ de 200 unidades."
 seoKeywords: "fabricante gafas de sol fibra de carbono, OEM gafas lujo, gafas de sol marca privada China, monturas fibra de carbono al por mayor, gafas fibra de carbono personalizadas, gafas calidad exportación, proveedor gafas OEM ODM, gafas de sol ligeras fibra de carbono"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "fabricante gafas de sol fibra de carbono, OEM gafas lujo, gafas de
 - **Herrajes Duraderos:** Bisagras estables con estructura de barril 2+1 diseñadas para una suavidad operativa a largo plazo.
 - **Óptica Premium:** Lentes de nylon tenaz con amplias opciones de tintado y recubrimiento personalizadas disponibles.
 - **Comodidad y Seguridad:** Almohadillas nasales de silicona hipoalergénicas diseñadas para la comodidad durante todo el día y un ajuste seguro.
-- **Producción Escalable:** Capacidades completas de personalización OEM y ODM con una cantidad mínima de pedido de 300 unidades para exportación global.
+- **Producción Escalable:** Capacidades completas de personalización OEM y ODM con una cantidad mínima de pedido de 200 unidades para exportación global.
 
 ## Perfecto Para
 - Marcas de Gafas Premium
@@ -61,4 +61,4 @@ La fibra de carbono de grado aeroespacial define las KSS-029, ofreciendo una mon
 
 Los componentes diseñados con precisión, que incluyen un sistema duradero de bisagras de barril 2+1 y almohadillas nasales de silicona hipoalergénicas, garantizan la estabilidad a largo plazo y la comodidad del usuario durante todo el día.
 
-Con el soporte completo de OEM/ODM y una cantidad mínima de pedido de 300 piezas, proporcionamos la escala de fabricación y las opciones de personalización a medida necesarias para que las marcas desarrollen colecciones de gafas de marca privada únicas.
+Con el soporte completo de OEM/ODM y una cantidad mínima de pedido de 200 piezas, proporcionamos la escala de fabricación y las opciones de personalización a medida necesarias para que las marcas desarrollen colecciones de gafas de marca privada únicas.

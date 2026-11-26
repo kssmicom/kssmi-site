@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Karbon Elyaf & Seylan Abanozu & Beyaz Meşe & Sapele"
 materials: "Premium Karbon Elyaf ve Titanyum"
 serviceMode: "OEM & ODM ( Özelleştirme )"
-moq: "300 adet/model"
+moq: "200 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -47,7 +47,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-012 Lüks Karbon Fiber Optik Çerçeve | Toptan Tedarikçi"
-seoDescription: "Titanyum saplı ultra hafif KSO-012 karbon fiber optik çerçeveleri doğrudan Çin'in önde gelen ihracat fabrikasından tedarik edin. 300 adet MOQ ile tam OEM/ODM özelleştirme."
+seoDescription: "Titanyum saplı ultra hafif KSO-012 karbon fiber optik çerçeveleri doğrudan Çin'in önde gelen ihracat fabrikasından tedarik edin. 200 adet MOQ ile tam OEM/ODM özelleştirme."
 seoKeywords: "karbon fiber optik çerçeveler, özel gözlük üreticisi, titanyum karbon fiber gözlükler, optik çerçeve toptan Çin, özel marka gözlük fabrikası, lüks karbon fiber çerçeveler OEM, CNC işlenmiş gözlük tedarikçisi, optik çerçeve ihracat üreticisi"
 ---
 
@@ -57,7 +57,7 @@ seoKeywords: "karbon fiber optik çerçeveler, özel gözlük üreticisi, titany
 - **Dayanıklı Donanım:** Uzun süreli operasyonel pürüzsüzlük ve kolay bakım için tasarlanmış istikrarlı 2+1 namlu yapılı menteşeler.
 - **Premium Optik:** Çok yönlü markalama için kapsamlı özel renklendirme ve kaplama seçenekleri sunan dayanıklı naylon lensler.
 - **Ergonomik Konfor:** Güvenli ve gün boyu rahat bir uyum için tasarlanmış hipoalerjenik silikon burun tamponları.
-- **Ölçeklenebilir Üretim:** Küresel ihracat için sadece 300 adetlik düşük minimum sipariş miktarı ile tam OEM ve ODM özelleştirme yetenekleri.
+- **Ölçeklenebilir Üretim:** Küresel ihracat için sadece 200 adetlik düşük minimum sipariş miktarı ile tam OEM ve ODM özelleştirme yetenekleri.
 
 ## İçin Mükemmel
 - Premium Gözlük Markaları
@@ -73,4 +73,4 @@ Seçkin markalar için tasarlanan KSO-012, hem ultra hafif hem de yapısal olara
 
 2+1 varil menteşe sistemi ve hipoalerjenik silikon burun tamponlarının entegrasyonu, rafine bir operasyonel pürüzsüzlük ve gün boyu kullanım için güvenli, rahat bir oturuş sağlar.
 
-300 adetlik düşük minimum sipariş miktarı ile kapsamlı OEM ve ODM özelleştirmesi sunan Kssmi, bağımsız tasarımcıların ve lüks markaların koleksiyonlarını hassas bir şekilde üretilmiş teknik gözlüklerle genişletmelerine olanak tanır.
+200 adetlik düşük minimum sipariş miktarı ile kapsamlı OEM ve ODM özelleştirmesi sunan Kssmi, bağımsız tasarımcıların ve lüks markaların koleksiyonlarını hassas bir şekilde üretilmiş teknik gözlüklerle genişletmelerine olanak tanır.

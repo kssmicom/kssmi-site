@@ -7,7 +7,7 @@ date: "2026-04-01"
 colors: "Orijinal Karbon Fiber Rengi (Mat Siyah, Parlak Siyah, Renkli Örgü, Dövme Karbon)"
 materials: "Premium Karbon Fiber"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
-moq: "300 adet/model"
+moq: "200 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-011 Özel Karbon Fiber Güneş Gözlüğü | OEM Tedarikçisi"
-seoDescription: "Çinli bir ihracat üreticisinden, 300 MOQ'dan başlayan tam OEM/ODM ve özel marka özelleştirmesi ile premium havacılık sınıfı karbon fiber güneş gözlüğü."
+seoDescription: "Çinli bir ihracat üreticisinden, 200 MOQ'dan başlayan tam OEM/ODM ve özel marka özelleştirmesi ile premium havacılık sınıfı karbon fiber güneş gözlüğü."
 seoKeywords: "karbon fiber gözlük üreticisi, özel OEM güneş gözlüğü, özel marka gözlük Çin, toptan karbon fiber çerçeveler, CNC gözlük fabrikası, spor güneş gözlüğü OEM, lüks güneş gözlüğü tedarikçisi, ihracat kalitesinde güneş gözlüğü"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "karbon fiber gözlük üreticisi, özel OEM güneş gözlüğü, �
 - **Premium Optik:** Çeşitli pazar taleplerini karşılamak için kapsamlı özel renklendirme ve kaplama seçeneklerine sahip dayanıklı naylon lensler.
 - **Hassas Donanım:** Uzun süreli operasyonel pürüzsüzlük ve tekrarlanabilir performans için tasarlanmış sağlam 2+1 namlu yapılı menteşeler.
 - **Tüm Gün Konfor:** Uzun süreli kullanım dönemlerinde güvenli ve rahat bir oturuş için tasarlanmış hipoalerjenik silikon burun tamponları.
-- **Ölçeklenebilir Üretim:** Logo uygulaması (baskı, lazer, sıcak baskı, metal, kabartma) dahil olmak üzere, model başına 300 parçalık düşük minimum sipariş miktarı ile tam OEM ve ODM özelleştirme yetenekleri.
+- **Ölçeklenebilir Üretim:** Logo uygulaması (baskı, lazer, sıcak baskı, metal, kabartma) dahil olmak üzere, model başına 200 parçalık düşük minimum sipariş miktarı ile tam OEM ve ODM özelleştirme yetenekleri.
 - **Boyutsal Esneklik:** Özel marka ve markaya özgü gereksinimleri desteklemek için tam özelleştirme seçenekleriyle birlikte standart 49-19-145 mm boyutlarında mevcuttur.
 
 ## İçin Mükemmel
@@ -64,4 +64,4 @@ Hacim yaratmadan dayanıklılık için tasarlanan KSS-011, kusursuz bir yüzey i
 
 Sabit 2+1 varil menteşe mimarisi ve hipoalerjenik silikon burun pedleri, yıllarca süren günlük kullanımda uzun süreli konfor ve güvenilir çalışma sağlar.
 
-300 adetlik düşük minimum sipariş miktarından başlayan tam OEM ve ODM özelleştirmesi sunan bu model, farklı bir pazar avantajı arayan lüks moda evleri ve spor yaşam tarzı markaları için ölçeklenebilir bir temel sağlar.
+200 adetlik düşük minimum sipariş miktarından başlayan tam OEM ve ODM özelleştirmesi sunan bu model, farklı bir pazar avantajı arayan lüks moda evleri ve spor yaşam tarzı markaları için ölçeklenebilir bir temel sağlar.

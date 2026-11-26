@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Carbon-Ebony & White-Oak & Sapele & Ebony"
 materials: "Premium Carbon Fiber"
 serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-006 Luxury Carbon Fiber Optical Frame | OEM & ODM Manufacturer"
-seoDescription: "KSO-006 Luxury Carbon Fiber Optical Frame featuring premium metal temples. Premier Chinese OEM/ODM eyewear manufacturer for global export-ready 300 MOQ orders."
+seoDescription: "KSO-006 Luxury Carbon Fiber Optical Frame featuring premium metal temples. Premier Chinese OEM/ODM eyewear manufacturer for global export-ready 200 MOQ orders."
 seoKeywords: "carbon fiber optical frames manufacturer, custom OEM eyewear China, private label carbon fiber frames, luxury optical frame factory, wholesale carbon fiber eyewear, export-quality optical frames, Chinese eyewear OEM ODM service, B2B optical frames supplier"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "carbon fiber optical frames manufacturer, custom OEM eyewear China
 - **Flexible Engineering:** High-performance spring hinges providing a self-adjusting, comfortable fit for various face shapes and sizes.
 - **Premium Optics:** Tenacious nylon lenses with extensive custom tinting and coating options available to meet brand specifications.
 - **Sophisticated Comfort:** Integrated metal nose pads designed for durability and a stable, personalized fit during extended wear.
-- **Scalable Production:** Comprehensive OEM & ODM customization capabilities with a low minimum order quantity of 300 pieces for global wholesalers.
+- **Scalable Production:** Comprehensive OEM & ODM customization capabilities with a low minimum order quantity of 200 pieces for global wholesalers.
 
 ## Perfect For
 - Premium Eyewear Brands
@@ -74,4 +74,4 @@ Engineered for professional environments, this frame combines an aerospace-grade
 
 High-performance spring hinges and adjustable metal nose pads work in tandem to provide a lightweight, self-adjusting fit that maintains comfort throughout extended daily wear.
 
-Available for full ODM development with a accessible 300-piece minimum order quantity, this model empowers independent designers and premium boutiques to scale their custom luxury eyewear portfolios.
+Available for full ODM development with a accessible 200-piece minimum order quantity, this model empowers independent designers and premium boutiques to scale their custom luxury eyewear portfolios.

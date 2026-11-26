@@ -7,7 +7,7 @@ date: "2026-04-01"
 colors: "Original Carbon Fiber Color (Matte Black, Glossy Black, Colored Weave, Forged Carbon)"
 materials: "Premium Carbon Fiber"
 serviceMode: "OEM & ODM ( Customization )"
-moq: "300 PCS/Model"
+moq: "200 PCS/Model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-011 Custom Carbon Fiber Sunglasses | OEM Supplier"
-seoDescription: "Premium aerospace-grade carbon fiber sunglasses from a Chinese export manufacturer with full OEM/ODM and private-label customization starting at 300 MOQ."
+seoDescription: "Premium aerospace-grade carbon fiber sunglasses from a Chinese export manufacturer with full OEM/ODM and private-label customization starting at 200 MOQ."
 seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses, private label eyewear China, wholesale carbon fiber frames, CNC eyewear factory, sports sunglasses OEM, luxury sunglasses supplier, export-quality sunglasses"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "carbon fiber sunglasses manufacturer, custom OEM sunglasses, priva
 - **Premium Optics:** Tenacious nylon lenses with extensive custom tinting and coating options to meet diverse market demands.
 - **Precision Hardware:** Stable 2+1 barrel structure hinges engineered for long-term operational smoothness and repeatable performance.
 - **All-Day Comfort:** Hypoallergenic silicone nose pads designed for secure, comfortable fit during extended wear periods.
-- **Scalable Production:** Full OEM and ODM customization capabilities including logo application (print, laser, hot stamping, metal, embossing), with a low minimum order quantity of 300 pieces per model.
+- **Scalable Production:** Full OEM and ODM customization capabilities including logo application (print, laser, hot stamping, metal, embossing), with a low minimum order quantity of 200 pieces per model.
 - **Dimensional Flexibility:** Available in standard 49-19-145mm sizing with full customization options to support private-label and brand-specific requirements.
 
 ## Perfect For
@@ -64,4 +64,4 @@ Engineered for durability without the bulk, the KSS-011 utilizes aerospace-grade
 
 The stable 2+1 barrel hinge architecture and hypoallergenic silicone nose pads ensure long-term comfort and reliable operation across years of daily use.
 
-Providing full OEM and ODM customization starting at a 300-piece minimum order quantity, this model offers a scalable foundation for luxury fashion houses and sports lifestyle labels seeking a distinct market edge.
+Providing full OEM and ODM customization starting at a 200-piece minimum order quantity, this model offers a scalable foundation for luxury fashion houses and sports lifestyle labels seeking a distinct market edge.

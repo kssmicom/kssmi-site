@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Fibra de Carbono & Ébano de Ceilán & Roble Blanco & Sapele"
 materials: "Fibra de Carbono Premium y Titanio"
 serviceMode: "OEM & ODM ( Personalización )"
-moq: "300 uds/modelo"
+moq: "200 uds/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -47,7 +47,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-012 Montura Óptica de Fibra de Carbono de Lujo | Proveedor Mayorista"
-seoDescription: "Consiga monturas ópticas KSO-012 de fibra de carbono ultraligeras con varillas de titanio de una de las principales fábricas de exportación chinas. Personalización OEM/ODM completa con MOQ de 300 piezas."
+seoDescription: "Consiga monturas ópticas KSO-012 de fibra de carbono ultraligeras con varillas de titanio de una de las principales fábricas de exportación chinas. Personalización OEM/ODM completa con MOQ de 200 piezas."
 seoKeywords: "monturas ópticas de fibra de carbono, fabricante de gafas personalizadas, gafas de titanio y fibra de carbono, venta al por mayor de monturas ópticas China, fábrica de gafas de marca propia, monturas de fibra de carbono de lujo OEM, proveedor de gafas mecanizadas por CNC, fabricante de exportación de monturas ópticas"
 ---
 
@@ -57,7 +57,7 @@ seoKeywords: "monturas ópticas de fibra de carbono, fabricante de gafas persona
 - **Herrajes de Larga Duración:** Bisagras estables con estructura de barril 2+1 diseñadas para un movimiento suave a largo plazo y un mantenimiento sencillo.
 - **Óptica Premium:** Lentes de nylon tenaz con amplias opciones de tintado y recubrimiento personalizados disponibles para un branding versátil.
 - **Confort Ergonómico:** Almohadillas nasales de silicona hipoalergénicas diseñadas para un ajuste seguro y cómodo durante todo el día.
-- **Producción Escalable:** Capacidades completas de personalización OEM y ODM con una cantidad mínima de pedido de solo 300 unidades para exportación global.
+- **Producción Escalable:** Capacidades completas de personalización OEM y ODM con una cantidad mínima de pedido de solo 200 unidades para exportación global.
 
 ## Perfecto Para
 - Marcas de Gafas Premium
@@ -73,4 +73,4 @@ Diseñado para marcas de élite, el modelo KSO-012 fusiona fibra de carbono de g
 
 La integración de bisagras de barril 2+1 y almohadillas nasales de silicona hipoalergénica garantiza una suavidad operativa refinada y un ajuste seguro y cómodo para usar durante todo el día.
 
-Al ofrecer una amplia personalización OEM y ODM con una cantidad mínima de pedido de 300 unidades, Kssmi permite a los diseñadores independientes y a las marcas de lujo ampliar sus colecciones con gafas técnicas fabricadas con precisión.
+Al ofrecer una amplia personalización OEM y ODM con una cantidad mínima de pedido de 200 unidades, Kssmi permite a los diseñadores independientes y a las marcas de lujo ampliar sus colecciones con gafas técnicas fabricadas con precisión.

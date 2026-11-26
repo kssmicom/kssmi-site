@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Gentian Karbon & Kayu Hitam Ceylon & Putih Oak & Sapele"
 materials: "Gentian Karbon Premium dan Titanium"
 serviceMode: "OEM & ODM ( Penyesuaian )"
-moq: "300 unit/model"
+moq: "200 unit/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -47,7 +47,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Bingkai Optik Gentian Karbon Mewah KSO-012 | Pembekal Borong"
-seoDescription: "Dapatkan bingkai optik gentian karbon KSO-012 ultra-ringan dengan batang titanium dari kilang eksport terkemuka China. Penyesuaian OEM/ODM penuh dengan MOQ 300 unit."
+seoDescription: "Dapatkan bingkai optik gentian karbon KSO-012 ultra-ringan dengan batang titanium dari kilang eksport terkemuka China. Penyesuaian OEM/ODM penuh dengan MOQ 200 unit."
 seoKeywords: "bingkai optik gentian karbon, pengeluar kacamata tersuai, kacamata titanium gentian karbon, bingkai optik borong China, kilang kacamata label peribadi, bingkai gentian karbon mewah OEM, pembekal kacamata mesin CNC, pengeluar eksport bingkai optik"
 ---
 
@@ -57,7 +57,7 @@ seoKeywords: "bingkai optik gentian karbon, pengeluar kacamata tersuai, kacamata
 - **Perkakasan Tahan Lama:** Engsel struktur tong 2+1 yang stabil direka untuk kelancaran operasi jangka panjang dan penyelenggaraan yang mudah.
 - **Optik Premium:** Kanta nylon lasak dengan pelbagai pilihan pewarnaan dan salutan tersuai tersedia untuk penjenamaan serba boleh.
 - **Keselesaan Ergonomik:** Alas hidung silikon hipoalergenik yang direka untuk keselesaan sepanjang hari yang selamat.
-- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum rendah sebanyak 300 unit untuk eksport global.
+- **Pengeluaran Boleh Skala:** Keupayaan penyesuaian OEM & ODM penuh dengan kuantiti pesanan minimum rendah sebanyak 200 unit untuk eksport global.
 
 ## Sesuai Untuk
 - Merek Kacamata Premium
@@ -73,4 +73,4 @@ Direka untuk jenama elit, model KSO-012 menggabungkan gentian karbon gred aeroan
 
 Penyepaduan sistem engsel tong 2+1 dan alas hidung silikon hipoalergenik memastikan kelancaran operasi yang halus serta padanan yang selamat dan selesa untuk pemakaian sepanjang hari.
 
-Menyediakan penyesuaian OEM dan ODM yang luas dengan kuantiti pesanan minimum 300 unit yang rendah, Kssmi membolehkan pereka bebas dan label mewah mengembangkan koleksi mereka dengan eyewear teknikal buatan ketepatan.
+Menyediakan penyesuaian OEM dan ODM yang luas dengan kuantiti pesanan minimum 200 unit yang rendah, Kssmi membolehkan pereka bebas dan label mewah mengembangkan koleksi mereka dengan eyewear teknikal buatan ketepatan.

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Mogano (Palissandro Indiano — Venatura di Montagna)"
 materials: "Fibra di Carbonio Premium e Titanio"
 serviceMode: "Produzione per Conto Terzi (OEM) & Design e Produzione (ODM) ( Personalizzazione )"
-moq: "300 pz/modello"
+moq: "200 pz/modello"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Montatura Ottica in Fibra di Carbonio KSO-226 | Produttore OEM"
-seoDescription: "Acquista montature ottiche di lusso in fibra di carbonio KSO-226 con venatura in mogano unica da un produttore leader in Cina. Personalizzazione OEM/ODM scalabile con MOQ 300."
+seoDescription: "Acquista montature ottiche di lusso in fibra di carbonio KSO-226 con venatura in mogano unica da un produttore leader in Cina. Personalizzazione OEM/ODM scalabile con MOQ 200."
 seoKeywords: "produttore montature ottiche in fibra di carbonio, occhiali personalizzati KSO-226, commercio all'ingrosso montature ottiche Cina, occhiali in fibra di carbonio private label, fornitore OEM occhiali di lusso, montature in fibra di carbonio venatura mogano, fabbrica montature ottiche B2B, occhiali in fibra di carbonio ODM"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "produttore montature ottiche in fibra di carbonio, occhiali person
 - **Hardware Durevole:** Cerniere stabili con struttura a barile 2+1 progettate con precisione per una scorrevolezza operativa a lungo termine e integrità strutturale.
 - **Ottica Premium:** Lenti in nylon tenace con ampie opzioni di colorazione personalizzata e rivestimento multistrato disponibili per soddisfare le diverse esigenze del mercato.
 - **Comfort Ergonomico:** Naselli in gomma morbida che offrono una vestibilità sicura, ipoallergenica e confortevole per un uso professionale tutto il giorno.
-- **Produzione Scalabile:** Servizi completi di personalizzazione OEM & ODM con una quantità minima d'ordine ridotta di 300 pezzi per grossisti globali.
+- **Produzione Scalabile:** Servizi completi di personalizzazione OEM & ODM con una quantità minima d'ordine ridotta di 200 pezzi per grossisti globali.
 
 ## Perfetto Per
 
@@ -64,4 +64,4 @@ Il modello KSO-226 fonde la forza industriale della fibra di carbonio di grado a
 
 Progettata con precisione con aste in titanio resiliente e cerniere a barile 2+1 stabili, la montatura garantisce durata a lungo termine e comfort ipoallergenico.
 
-Supportando l'intera portata OEM/ODM con un basso MOQ di 300 pezzi, consentiamo ai marchi premium di scalare collezioni di occhiali su misura con un focus sull'eccellenza tecnica e sulla differenziazione del mercato.
+Supportando l'intera portata OEM/ODM con un basso MOQ di 200 pezzi, consentiamo ai marchi premium di scalare collezioni di occhiali su misura con un focus sull'eccellenza tecnica e sulla differenziazione del mercato.

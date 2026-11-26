@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Couleur Fibre de Carbone Originale (Noir Mat, Noir Brillant, Tissage Coloré, Carbone Forgé)"
 materials: "Fibre de Carbone Premium"
 serviceMode: "OEM & ODM ( Personnalisation )"
-moq: "300 pcs/modèle"
+moq: "200 pcs/modèle"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -37,7 +37,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Lunettes de Soleil de Luxe en Fibre de Carbone KSS-031 | Usine OEM de Gros"
-seoDescription: "KSS-031 : Lunettes de soleil premium en fibre de carbone de qualité aérospatiale avec précision CNC et charnières à 2+1 barillet. Services OEM/ODM experts. MOQ 300."
+seoDescription: "KSS-031 : Lunettes de soleil premium en fibre de carbone de qualité aérospatiale avec précision CNC et charnières à 2+1 barillet. Services OEM/ODM experts. MOQ 200."
 seoKeywords: "fabricant lunettes de soleil fibre de carbone, lunettes de soleil OEM personnalisées Chine, montures fibre de carbone en gros, fournisseur lunettes marque blanche, usine lunettes de soleil de luxe, lunettes fibre de carbone CNC, fabricant lunettes B2B, export lunettes OEM"
 ---
 
@@ -48,7 +48,7 @@ seoKeywords: "fabricant lunettes de soleil fibre de carbone, lunettes de soleil 
 - **Quincaillerie Durable :** Charnières stables à structure 2+1 barillet conçues pour une fluidité opérationnelle à long terme.
 - **Optique Premium :** Verres en nylon tenace avec de vastes options de teinte et de revêtement personnalisées disponibles.
 - **Confort et Ajustement :** Plaquettes de nez en silicone hypoallergénique offrant un ajustement sûr et confortable pour une utilisation prolongée.
-- **Production Évolutive :** Capacités complètes de personnalisation OEM et ODM avec une faible quantité minimale de commande de 300 pièces pour l'exportation mondiale.
+- **Production Évolutive :** Capacités complètes de personnalisation OEM et ODM avec une faible quantité minimale de commande de 200 pièces pour l'exportation mondiale.
 
 ## Parfait Pour
 
@@ -65,4 +65,4 @@ Alliant performance de légèreté et esthétique unisexe sophistiquée, le mod�
 
 Chaque monture bénéficie d'une précision d'usinage CNC et de charnières à 2+1 barillet pour garantir une finition impeccable et une fiabilité opérationnelle durable.
 
-Offrant une personnalisation OEM et ODM complète à partir d'un minimum de 300 pièces, ce modèle permet aux marques premium et aux designers indépendants d'enrichir leurs portefeuilles de lunettes de luxe.
+Offrant une personnalisation OEM et ODM complète à partir d'un minimum de 200 pièces, ce modèle permet aux marques premium et aux designers indépendants d'enrichir leurs portefeuilles de lunettes de luxe.

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Orijinal Karbon Fiber Rengi (Mat Siyah, Parlak Siyah, Renkli Örgü, Dövme Karbon)"
 materials: "Premium Karbon Fiber"
 serviceMode: "Sözleşmeli Üretim (OEM) & Tasarım ve Üretim (ODM) ( Özelleştirme )"
-moq: "300 adet/model"
+moq: "200 adet/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -40,7 +40,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-043 Lüks Klasik Karbon Fiber Güneş Gözlüğü | OEM Fabrikası"
-seoDescription: "KSS-043 lüks karbon fiber güneş gözlükleri için önde gelen bir Çin fabrikasıyla ortaklık kurun. 300 MOQ ile yüksek mukavemetli, hafif çerçeveler. Markalar için uzman OEM/ODM."
+seoDescription: "KSS-043 lüks karbon fiber güneş gözlükleri için önde gelen bir Çin fabrikasıyla ortaklık kurun. 200 MOQ ile yüksek mukavemetli, hafif çerçeveler. Markalar için uzman OEM/ODM."
 seoKeywords: "karbon fiber güneş gözlüğü üreticisi, KSS-043 toptan güneş gözlüğü, özel karbon fiber gözlük Çin, özel markalı güneş gözlüğü fabrikası, lüks karbon çerçeveler OEM, üst düzey güneş gözlüğü tedarikçisi, havacılık sınıfı gözlük ODM, ihracat kalitesinde karbon gözlükler"
 ---
 
@@ -51,7 +51,7 @@ seoKeywords: "karbon fiber güneş gözlüğü üreticisi, KSS-043 toptan güne�
 - **Premium Optik:** Kapsamlı özel renklendirme ve kaplama seçenekleriyle yüksek performanslı netlik sağlayan dayanıklı naylon lensler.
 - **Optimize Edilmiş Konfor:** Uzun süreli profesyonel kullanım için güvenli, basınçsız bir uyum sağlayan hipoalerjenik silikon burun tamponları ve esnek yapı.
 - **Özel Estetik:** Belirli lüks marka kimliklerine uyması için Mat Siyah, Parlak Siyah ve Dövme Karbon dahil olmak üzere çoklu kaplama seçenekleri.
-- **Ölçeklenebilir Üretim:** Küresel ihracat pazarları için tasarlanmış, rekabetçi 300 adetlik MOQ ile tam OEM ve ODM özelleştirme hizmetleri.
+- **Ölçeklenebilir Üretim:** Küresel ihracat pazarları için tasarlanmış, rekabetçi 200 adetlik MOQ ile tam OEM ve ODM özelleştirme hizmetleri.
 
 ## İçin Mükemmel
 
@@ -68,4 +68,4 @@ Havacılık sınıfı dayanıklılığı ultra hafif bir profille birleştiren K
 
 Çerçeve, hassas kalibre edilmiş 2+1 varil menteşe sistemine ve dayanıklı naylon lenslere sahip olup, şık ve hipoalerjenik bir tasarımda yapısal stabilite ve optik netlik sağlar.
 
-Mat, Parlak veya Dövme Karbon kaplama desteği ve 300 adetlik düşük MOQ ile tam OEM/ODM kapsamımız, tasarımcıların üreticiden doğrudan özel karbon fiber gözlükleri lüks portföylerine entegre etmelerine olanak tanır.
+Mat, Parlak veya Dövme Karbon kaplama desteği ve 200 adetlik düşük MOQ ile tam OEM/ODM kapsamımız, tasarımcıların üreticiden doğrudan özel karbon fiber gözlükleri lüks portföylerine entegre etmelerine olanak tanır.

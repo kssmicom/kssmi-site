@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Mahoni (Kayu Rosewood India — Serat Gunung)"
 materials: "Serat Karbon Premium lan Titanium"
 serviceMode: "OEM (Produksi Kontrak) & ODM (Desain lan Produksi) ( Kustomisasi )"
-moq: "300 pcs/model"
+moq: "200 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-225 Frame Optik Serat Karbon Serat Mahoni Mewah | OEM"
-seoDescription: "Mitra karo produsen Cina terkemuka kanggo frame optik serat karbon serat mahoni KSO-225. Layanan OEM/ODM ahli kanthi MOQ 300."
+seoDescription: "Mitra karo produsen Cina terkemuka kanggo frame optik serat karbon serat mahoni KSO-225. Layanan OEM/ODM ahli kanthi MOQ 200."
 seoKeywords: "produsen frame optik serat karbon, kacamata serat mahoni kustom, pabrik frame optik OEM Cina, grosir frame serat karbon mewah"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "produsen frame optik serat karbon, kacamata serat mahoni kustom, p
 - **Optik Premium:** Lensa nylon sing kuat kanthi pilihan warna lan lapisan kustom sing jembar kasedhiya.
 - **Kenyamanan Sedina Muput:** Bantalan irung karet alus sing dirancang kanggo pas sing aman, hypoallergenic lan panggunaan sing suwe.
 - **Estetika Unik:** Rampung serat kayu mahoni sing apik banget ing serat karbon, nggabungake estetika alami kanthi integritas struktural teknologi dhuwur.
-- **Produksi Scalable:** Kapasitas kustomisasi OEM & ODM lengkap kanthi jumlah pesenan minimal 300 lembar kanggo ekspor global.
+- **Produksi Scalable:** Kapasitas kustomisasi OEM & ODM lengkap kanthi jumlah pesenan minimal 200 lembar kanggo ekspor global.
 
 ## Cocok kanggo
 
@@ -64,4 +64,4 @@ Serat karbon teknologi dhuwur ketemu karo kehangatan serat kayu mahoni ing KSO-2
 
 Integrasi engsel tong 2+1 sing stabil lan bantalan irung karet hypoallergenic nyedhiyakake pengalaman taktil sing refined lan kenyamanan sedina muput sing unggul kanggo panggunaan sing suwe.
 
-Dirancang kanggo desainer independen lan grup ritel kelas dhuwur, model iki kasedhiya kanggo kustomisasi OEM/ODM sing jembar. Kita nguatake merek kanggo skala visi kanthi jumlah pesenan minimal 300 lembar lan dhukungan lengkap kanggo rincian branding khusus.
+Dirancang kanggo desainer independen lan grup ritel kelas dhuwur, model iki kasedhiya kanggo kustomisasi OEM/ODM sing jembar. Kita nguatake merek kanggo skala visi kanthi jumlah pesenan minimal 200 lembar lan dhukungan lengkap kanggo rincian branding khusus.

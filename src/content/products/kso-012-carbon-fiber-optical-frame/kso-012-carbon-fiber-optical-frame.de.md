@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Kohlefaser & Ceylon-Ebenholz & Weißeiche & Sapele"
 materials: "Premium-Kohlefaser und Titan"
 serviceMode: "OEM & ODM ( Individualisierung )"
-moq: "300 Stk/Modell"
+moq: "200 Stk/Modell"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -47,7 +47,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-012 Luxus-Kohlefaser-Brillenfassung | Großhandel-Lieferant"
-seoDescription: "Beziehen Sie ultraleichte KSO-012 Kohlefaser-Brillenfassungen mit Titanbügeln von einer führenden chinesischen Exportfabrik. Volle OEM/ODM-Individualisierung mit 300 Stk. MOQ."
+seoDescription: "Beziehen Sie ultraleichte KSO-012 Kohlefaser-Brillenfassungen mit Titanbügeln von einer führenden chinesischen Exportfabrik. Volle OEM/ODM-Individualisierung mit 200 Stk. MOQ."
 seoKeywords: "Kohlefaser-Brillenfassungen, Brillenhersteller nach Maß, Titan-Kohlefaser-Brillen, Großhandel Brillenfassungen China, Private-Label-Brillenfabrik, Luxus-Kohlefaserfassungen OEM, CNC-gefräste Brillenfassungen Lieferant, Brillenfassung Export-Hersteller"
 ---
 
@@ -57,7 +57,7 @@ seoKeywords: "Kohlefaser-Brillenfassungen, Brillenhersteller nach Maß, Titan-Ko
 - **Langlebige Beschläge:** Stabile 2+1 Barrel-Strukturscharniere, entwickelt für langfristige Leichtgängigkeit und einfache Wartung.
 - **Premium-Optik:** Widerstandsfähige Nylon-Gläser mit umfangreichen Optionen für Tönung und Beschichtung für vielseitiges Branding.
 - **Ergonomischer Komfort:** Hypoallergene Silikon-Nasenpads für einen sicheren und ganztägig angenehmen Sitz.
-- **Skalierbare Produktion:** Volle OEM- und ODM-Anpassungsmöglichkeiten mit einer niedrigen Mindestbestellmenge von nur 300 Stück für den globalen Export.
+- **Skalierbare Produktion:** Volle OEM- und ODM-Anpassungsmöglichkeiten mit einer niedrigen Mindestbestellmenge von nur 200 Stück für den globalen Export.
 
 ## Perfekt Für
 - Premium Brillenmarken
@@ -73,4 +73,4 @@ Das Modell KSO-012 wurde für Elite-Marken entwickelt und kombiniert Kohlefaser 
 
 Die Integration von 2+1-Fassscharnieren und hypoallergenen Silikon-Nasenpads sorgt für eine raffinierte Laufruhe und einen sicheren, bequemen Sitz für den ganztägigen Gebrauch.
 
-Durch die umfassende OEM- und ODM-Anpassung mit einer niedrigen Mindestbestellmenge von 300 Stück ermöglicht Kssmi unabhängigen Designern und Luxusmarken, ihre Kollektionen mit präzisionsgefertigten technischen Brillen zu erweitern.
+Durch die umfassende OEM- und ODM-Anpassung mit einer niedrigen Mindestbestellmenge von 200 Stück ermöglicht Kssmi unabhängigen Designern und Luxusmarken, ihre Kollektionen mit präzisionsgefertigten technischen Brillen zu erweitern.

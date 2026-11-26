@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Fibra di Carbonio & Ebano di Ceylon & Quercia Bianca & Sapele"
 materials: "Fibra di Carbonio Premium e Titanio"
 serviceMode: "OEM & ODM ( Personalizzazione )"
-moq: "300 pz/modello"
+moq: "200 pz/modello"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-010 Montatura Ottica Lusso in Fibra di Carbonio | Produttore OEM"
-seoDescription: "Acquista montature ottiche di lusso in fibra di carbonio KSO-010 con aste in titanio e dettagli in legno da una prestigiosa fabbrica OEM cinese. MOQ 300 pz. Contattaci!"
+seoDescription: "Acquista montature ottiche di lusso in fibra di carbonio KSO-010 con aste in titanio e dettagli in legno da una prestigiosa fabbrica OEM cinese. MOQ 200 pz. Contattaci!"
 seoKeywords: "produttore montature ottiche in fibra di carbonio, occhiali personalizzati titanio e carbonio, montature ottiche lusso OEM Cina, ingrosso occhiali con dettagli legno, montature fibra di carbonio private label, fabbrica occhiali Shenzhen"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "produttore montature ottiche in fibra di carbonio, occhiali person
 - **Hardware Resistente:** Cerniere stabili con struttura a barilotto 2+1 progettate per una fluidità operativa a lungo termine e integrità strutturale.
 - **Ottica Premium:** Lenti in nylon tenace che offrono una chiarezza superiore con ampie opzioni di colorazione personalizzata e rivestimenti disponibili.
 - **Comfort Ergonomico:** Naselli in metallo professionali e una struttura della montatura bilanciata con precisione che garantisce una vestibilità sicura e confortevole.
-- **Produzione Scalabile:** Capacità complete di personalizzazione OEM e ODM con un ordine minimo di 300 pezzi per l'esportazione globale.
+- **Produzione Scalabile:** Capacità complete di personalizzazione OEM e ODM con un ordine minimo di 200 pezzi per l'esportazione globale.
 
 ## Perfetto Per
 - Marche di Occhiali Premium
@@ -74,4 +74,4 @@ Progettata per il segmento del lusso di alta gamma, la KSO-010 fonde fibra di ca
 
 Le cerniere con struttura a barilotto 2+1, progettate con precisione, garantiscono stabilità meccanica a lungo termine e una vestibilità raffinata e sicura.
 
-Supportando lo sviluppo completo OEM e ODM con un ordine minimo di 300 pezzi, questo modello consente ai designer indipendenti e ai marchi premium di integrare l'innovazione dei materiali high-tech nelle loro collezioni su misura.
+Supportando lo sviluppo completo OEM e ODM con un ordine minimo di 200 pezzi, questo modello consente ai designer indipendenti e ai marchi premium di integrare l'innovazione dei materiali high-tech nelle loro collezioni su misura.

@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Fibre de Carbone & Ébène de Ceylan & Chêne Blanc & Sapele"
 materials: "Fibre de Carbone Premium et Titane"
 serviceMode: "OEM & ODM ( Personnalisation )"
-moq: "300 pcs/modèle"
+moq: "200 pcs/modèle"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -48,7 +48,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSO-010 Monture Optique Luxe en Fibre de Carbone | Fabricant OEM"
-seoDescription: "Commandez des montures optiques de luxe KSO-010 en fibre de carbone avec branches en titane et accents bois auprès d'une usine OEM chinoise prestigieuse. MOQ 300 pcs. Contactez-nous !"
+seoDescription: "Commandez des montures optiques de luxe KSO-010 en fibre de carbone avec branches en titane et accents bois auprès d'une usine OEM chinoise prestigieuse. MOQ 200 pcs. Contactez-nous !"
 seoKeywords: "fournisseur montures optiques fibre de carbone, lunettes personnalisées titane fibre de carbone, montures optiques luxe OEM Chine, grossiste lunettes accents bois, montures fibre de carbone marque propre, usine lunettes Shenzhen"
 ---
 
@@ -58,7 +58,7 @@ seoKeywords: "fournisseur montures optiques fibre de carbone, lunettes personnal
 - **Quincaillerie Durable :** Charnières stables à structure en barillet 2+1 conçues pour une fluidité opérationnelle à long terme et une intégrité structurelle.
 - **Optique Haut de Gamme :** Verres en nylon tenace offrant une clarté supérieure avec de nombreuses options de teintes et de revêtements personnalisés.
 - **Confort Ergonomique :** Plaquettes de nez métalliques professionnelles et structure de monture équilibrée assurant un ajustement sûr et confortable.
-- **Production Évolutive :** Capacités complètes de personnalisation OEM et ODM avec un minimum de commande de 300 pièces pour l'exportation mondiale.
+- **Production Évolutive :** Capacités complètes de personnalisation OEM et ODM avec un minimum de commande de 200 pièces pour l'exportation mondiale.
 
 ## Parfait Pour
 - Marques de Lunettes Premium
@@ -74,4 +74,4 @@ Conçue pour le segment du luxe haut de gamme, la KSO-010 fusionne la fibre de c
 
 Les charnières à structure en barillet 2+1, conçues avec précision, garantissent une stabilité mécanique à long terme et un ajustement raffiné et sûr.
 
-Soutenant le développement complet OEM et ODM avec une commande minimale de 300 pièces, ce modèle permet aux designers indépendants et aux marques haut de gamme d'intégrer l'innovation des matériaux de haute technologie dans leurs collections sur mesure.
+Soutenant le développement complet OEM et ODM avec une commande minimale de 200 pièces, ce modèle permet aux designers indépendants et aux marques haut de gamme d'intégrer l'innovation des matériaux de haute technologie dans leurs collections sur mesure.

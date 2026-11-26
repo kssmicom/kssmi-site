@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Warna Serat Karbon Asli (Irem Matte, Irem Glossy, Anyaman Berwarna, Karbon Tempa)"
 materials: "Serat Karbon Premium"
 serviceMode: "OEM & ODM ( Kustomisasi )"
-moq: "300 pcs/model"
+moq: "200 pcs/model"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-030 Kacamata Hitam Serat Karbon Mewah | Produsen OEM & ODM"
-seoDescription: "KSS-030 yaiku frame serat karbon premium kanggo merek kacamata mewah. Kustomisasi OEM & ODM lengkap kanthi 300 MOQ. Partner karo pabrik ekspor China sing misuwur."
+seoDescription: "KSS-030 yaiku frame serat karbon premium kanggo merek kacamata mewah. Kustomisasi OEM & ODM lengkap kanthi 200 MOQ. Partner karo pabrik ekspor China sing misuwur."
 seoKeywords: "produsen kacamata hitam serat karbon, kacamata hitam OEM kustom, kacamata label pribadi China, grosir frame serat karbon, pemasok kacamata hitam mewah"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "produsen kacamata hitam serat karbon, kacamata hitam OEM kustom, k
 - **Hardware Awet:** Engsel struktur barel 2+1 sing stabil sing dirancang kanggo kelancaran operasional jangka panjang lan kinerja sing konsisten.
 - **Optik Premium:** Lensa nilon kuat sing nyedhiyakake kajelasan unggul kanthi pilihan tinting lan lapisan kustom sing jembar.
 - **Comfort & Safety:** Bantalan irung silikon hipoalergenik sing dirancang kanggo kenyamanan sedina muput lan pas sing aman.
-- **Produksi Scalable:** Kapasitas kustomisasi OEM & ODM lengkap kanthi jumlah pesenan minimal 300 pcs kanggo ekspor merek global.
+- **Produksi Scalable:** Kapasitas kustomisasi OEM & ODM lengkap kanthi jumlah pesenan minimal 200 pcs kanggo ekspor merek global.
 
 ## Cocok kanggo
 - Merek Kacamata Premium
@@ -62,4 +62,4 @@ KSS-030 nampilake kaendahan teknis mentah saka serat karbon premium, nawakake ra
 
 Direkayasa nganggo engsel struktur barel 2+1 sing stabil lan bantalan irung silikon hipoalergenik, pigura iki nyedhiyakake integritas struktural jangka panjang lan kenyamanan pangguna.
 
-Kustomisasi OEM/ODM sing fleksibel lan MOQ rendah 300 pcs nggawe model iki dadi dhasar sing cocog kanggo merek sing pengin berkembang menyang kacamata kinerja mewah.
+Kustomisasi OEM/ODM sing fleksibel lan MOQ rendah 200 pcs nggawe model iki dadi dhasar sing cocog kanggo merek sing pengin berkembang menyang kacamata kinerja mewah.

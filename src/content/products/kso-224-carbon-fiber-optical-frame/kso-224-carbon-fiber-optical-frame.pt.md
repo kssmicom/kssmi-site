@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Mogno (Jacarandá-da-Índia — Grão de Montanha)"
 materials: "Fibra de Carbono Premium e Titânio"
 serviceMode: "OEM & ODM ( Personalização )"
-moq: "300 pçs/modelo"
+moq: "200 pçs/modelo"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Armação Óptica de Luxo KSO-224 | Fabricante OEM"
-seoDescription: "KSO-224: Armação óptica de luxo em fibra de carbono com hastes de titânio e acabamento em mogno. MOQ 300. Personalização OEM/ODM premium para marcas globais."
+seoDescription: "KSO-224: Armação óptica de luxo em fibra de carbono com hastes de titânio e acabamento em mogno. MOQ 200. Personalização OEM/ODM premium para marcas globais."
 seoKeywords: "armações ópticas de fibra de carbono, óculos de titânio sob medida, fabricante de óculos de luxo China, atacado de armações de carbono, fábrica de óculos OEM"
 ---
 
@@ -64,4 +64,4 @@ Combinando fibra de carbono de grau aeroespacial com um acabamento em mogno de g
 
 As hastes leves de titânio e as dobradiças de 2+1 barris proporcionam integridade estrutural a longo prazo, mantendo o perfil refinado esperado de óculos de luxo.
 
-Suportando a personalização total sob medida com um pedido mínimo de 300 peças, esta armação permite que casas de moda premium e marcas boutique expandam seus portfólios de alta gama.
+Suportando a personalização total sob medida com um pedido mínimo de 200 peças, esta armação permite que casas de moda premium e marcas boutique expandam seus portfólios de alta gama.

@@ -7,7 +7,7 @@ date: "2026-04-01"
 colors: "Màu Sợi Carbon Nguyên Bản (Đen Nhám, Đen Bóng, Vân Sợi Màu, Carbon Đúc)"
 materials: "Sợi Carbon Cao Cấp"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
-moq: "300 cái/mẫu"
+moq: "200 cái/mẫu"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Sunglasses"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "KSS-011 Kính Mát Sợi Carbon Tùy Chỉnh | Nhà Cung Cấp OEM"
-seoDescription: "Kính mát sợi carbon cấp độ hàng không vũ trụ cao cấp từ nhà sản xuất xuất khẩu Trung Quốc với đầy đủ tùy chỉnh OEM/ODM và nhãn hiệu riêng bắt đầu từ 300 MOQ."
+seoDescription: "Kính mát sợi carbon cấp độ hàng không vũ trụ cao cấp từ nhà sản xuất xuất khẩu Trung Quốc với đầy đủ tùy chỉnh OEM/ODM và nhãn hiệu riêng bắt đầu từ 200 MOQ."
 seoKeywords: "nhà sản xuất kính mát sợi carbon, kính mát OEM tùy chỉnh, nhãn hiệu riêng kính mắt Trung Quốc, gọng sợi carbon bán buôn, xưởng kính mắt CNC, kính mát thể thao OEM, nhà cung cấp kính mát xa xỉ, kính mát chất lượng xuất khẩu"
 ---
 
@@ -46,7 +46,7 @@ seoKeywords: "nhà sản xuất kính mát sợi carbon, kính mát OEM tùy ch�
 - **Quang học cao cấp:** Tròng kính nylon bền bỉ với các tùy chọn nhuộm màu và phủ lớp bảo vệ tùy chỉnh rộng rãi để đáp ứng nhu cầu thị trường đa dạng.
 - **Phần cứng chính xác:** Bản lề cấu trúc thùng 2+1 ổn định được thiết kế để vận hành trơn tru lâu dài và hiệu suất nhất quán.
 - **Thoải mái cả ngày:** Đệm mũi silicone không gây dị ứng được thiết kế để vừa vặn an toàn, thoải mái trong thời gian đeo dài.
-- **Sản xuất linh hoạt:** Khả năng tùy chỉnh OEM và ODM đầy đủ bao gồm ứng dụng logo (in, laser, ép kim, kim loại, dập nổi), với số lượng đặt hàng tối thiểu thấp là 300 chiếc mỗi mẫu.
+- **Sản xuất linh hoạt:** Khả năng tùy chỉnh OEM và ODM đầy đủ bao gồm ứng dụng logo (in, laser, ép kim, kim loại, dập nổi), với số lượng đặt hàng tối thiểu thấp là 200 chiếc mỗi mẫu.
 - **Kích thước linh hoạt:** Có sẵn kích thước tiêu chuẩn 49-19-145mm với các tùy chọn tùy chỉnh đầy đủ để hỗ trợ các yêu cầu nhãn hiệu riêng và thương hiệu cụ thể.
 
 ## Phù hợp cho
@@ -64,4 +64,4 @@ seoKeywords: "nhà sản xuất kính mát sợi carbon, kính mát OEM tùy ch�
 
 Cấu trúc bản lề thùng 2+1 ổn định và đệm mũi silicone không gây dị ứng đảm bảo sự thoải mái lâu dài và vận hành đáng tin cậy qua nhiều năm sử dụng hàng ngày.
 
-Cung cấp khả năng tùy chỉnh OEM và ODM đầy đủ bắt đầu từ số lượng đặt hàng tối thiểu 300 chiếc, mẫu kính này mang lại nền tảng có thể mở rộng cho các hãng thời trang xa xỉ và các thương hiệu phong cách sống thể thao đang tìm kiếm lợi thế thị trường khác biệt.
+Cung cấp khả năng tùy chỉnh OEM và ODM đầy đủ bắt đầu từ số lượng đặt hàng tối thiểu 200 chiếc, mẫu kính này mang lại nền tảng có thể mở rộng cho các hãng thời trang xa xỉ và các thương hiệu phong cách sống thể thao đang tìm kiếm lợi thế thị trường khác biệt.

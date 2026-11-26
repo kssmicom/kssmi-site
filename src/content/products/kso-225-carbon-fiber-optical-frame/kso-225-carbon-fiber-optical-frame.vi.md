@@ -7,7 +7,7 @@ date: "2026-04-05"
 colors: "Gỗ gụ (Indian Rosewood — Vân núi)"
 materials: "Sợi Carbon Cao Cấp và Titan"
 serviceMode: "Sản xuất gia công (OEM) & Thiết kế và sản xuất (ODM) ( Tùy chỉnh theo yêu cầu )"
-moq: "300 cái/mẫu"
+moq: "200 cái/mẫu"
 
 # ── ASTRO ROUTING & ARCHITECTURE DATA ────────────────
 productType: "Optical Frames"
@@ -36,7 +36,7 @@ featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
 seoTitle: "Gọng Kính Cận Sợi Carbon Vân Gỗ Gụ Xa Xỉ KSO-225 | OEM"
-seoDescription: "Hợp tác với nhà sản xuất Trung Quốc hàng đầu cho gọng kính cận sợi carbon vân gỗ gụ KSO-225. Dịch vụ OEM/ODM chuyên nghiệp với MOQ 300."
+seoDescription: "Hợp tác với nhà sản xuất Trung Quốc hàng đầu cho gọng kính cận sợi carbon vân gỗ gụ KSO-225. Dịch vụ OEM/ODM chuyên nghiệp với MOQ 200."
 seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính vân gỗ gụ tùy chỉnh, nhà máy gọng kính OEM Trung Quốc, gọng kính sợi carbon xa xỉ bán sỉ"
 ---
 
@@ -47,7 +47,7 @@ seoKeywords: "nhà sản xuất gọng kính sợi carbon, kính vân gỗ gụ 
 - **Quang học cao cấp:** Tròng kính nylon bền bỉ với các tùy chọn nhuộm màu và phủ lớp bảo vệ tùy chỉnh rộng rãi.
 - **Thoải mái cả ngày:** Đệm mũi cao su mềm được thiết kế để vừa vặn chắc chắn, không gây dị ứng và đeo trong thời gian dài.
 - **Thẩm mỹ độc đáo:** Lớp hoàn thiện vân gỗ gụ tinh tế trên sợi carbon, kết hợp thẩm mỹ tự nhiên với tính toàn vẹn cấu trúc công nghệ cao.
-- **Sản xuất có thể mở rộng:** Khả năng tùy chỉnh OEM & ODM đầy đủ với số lượng đặt hàng tối thiểu thấp 300 chiếc để xuất khẩu toàn cầu.
+- **Sản xuất có thể mở rộng:** Khả năng tùy chỉnh OEM & ODM đầy đủ với số lượng đặt hàng tối thiểu thấp 200 chiếc để xuất khẩu toàn cầu.
 
 ## Phù hợp cho
 
@@ -64,4 +64,4 @@ Sợi carbon công nghệ cao kết hợp với sự ấm áp của vân gỗ g�
 
 Sự tích hợp của bản lề thùng 2+1 ổn định và đệm mũi cao su không gây dị ứng mang lại trải nghiệm xúc giác tinh tế và sự thoải mái vượt trội cả ngày khi đeo trong thời gian dài.
 
-Được thiết kế cho các nhà thiết kế độc lập và các nhóm bán lẻ cao cấp, mẫu kính này có sẵn để tùy chỉnh OEM/ODM chuyên sâu. Chúng tôi trao quyền cho các thương hiệu mở rộng tầm nhìn của họ với số lượng đặt hàng tối thiểu thấp 300 chiếc và hỗ trợ đầy đủ cho các chi tiết thương hiệu riêng.
+Được thiết kế cho các nhà thiết kế độc lập và các nhóm bán lẻ cao cấp, mẫu kính này có sẵn để tùy chỉnh OEM/ODM chuyên sâu. Chúng tôi trao quyền cho các thương hiệu mở rộng tầm nhìn của họ với số lượng đặt hàng tối thiểu thấp 200 chiếc và hỗ trợ đầy đủ cho các chi tiết thương hiệu riêng.
