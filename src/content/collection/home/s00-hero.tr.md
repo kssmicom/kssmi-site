@@ -2,7 +2,7 @@
 section: 's00-hero'
 lang: 'tr'
 heading: "Gözlük OEM/ODM Üreticisi — Özel Asetat, Titanyum ve Karbon Fiber Çerçeveler"
-subheadingLine1: 'Shenzhen Fabrikası. 60 Günlük Numune. 60 Günlük Üretim.'
+subheadingLine1: 'Shenzhen Fabrikası. 5–10 Günlük 2D Görsel. 60 Günlük Numune. 60 Günlük Üretim.'
 subheadingLine2: 'Özel Güneş Gözlüğü ve Optik Çerçeveler'
 description: "Kssmi, premium markalara, bağımsız tasarımcılara ve özel etiket alıcılarına hizmet veren Shenzhen merkezli bir OEM ve ODM gözlük üreticisidir. Malzemelerimiz arasında asetat, titanyum, karbon fiber, metal, TR90 ve hibrit çerçeveler bulunur. Premium asetat Mazzucchelli, JIMEI ve JINYU'dan, titanyum malzemeler ise Kobe Steel ve Baoji Titanium'dan tedarik edilmektedir. MOQ asetat, metal ve titanyum için model başına 300 çift (renk başına 100 çift), karbon fiber için model başına 200 çiftten başlar."
 primaryCta: 'Fiyat Teklifi Al'
