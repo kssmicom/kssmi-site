@@ -50,6 +50,10 @@ const blogLabel = t.nav?.blog || 'Blog';
 const viewDetailsLabel = t.product?.viewDetails || 'View Details';
 const lcpImage = visiblePosts[0]?.cover;
 
+const MIN_ARCHIVE_INDEX_COUNT = 3;
+const isArchivePage = Boolean(activeTopicObj || activeSubtopicObj);
+const isThinArchive = isArchivePage && visiblePosts.length < MIN_ARCHIVE_INDEX_COUNT;
+
 const pageHeading = activeSubtopicObj
   ? activeSubtopicObj.title
   : activeTopicObj
@@ -60,7 +64,9 @@ const pageTitle = activeSubtopicObj || activeTopicObj
   ? `${pageHeading} — ${ui.blogTitle}`
   : (lang === 'zh' ? `${ui.blogTitle} | 可米科技` : `${ui.blogTitle} | Kssmi`);
 
-const pageDescription = ui.blogDescription;
+const pageDescription = isArchivePage
+  ? `${pageHeading} — ${ui.blogDescription}`
+  : ui.blogDescription;
 
 const breadcrumbItems: Array<{ label: string; href: string }> = [
   { label: t.nav.home, href: currentPath ? `/${currentPath.replace(/\/$/, '')}` : '/' },
@@ -77,7 +83,7 @@ if (activeSubtopicObj) {
 }
 ---
 
-<Layout title={pageTitle} lang={lang} description={pageDescription} lcpImage={lcpImage} type="website">
+<Layout title={pageTitle} lang={lang} description={pageDescription} lcpImage={lcpImage} type="website" noindex={isThinArchive}>
   <Header lang={lang} />
   <Breadcrumb items={breadcrumbItems} lang={lang} />
 

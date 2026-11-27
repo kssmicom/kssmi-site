@@ -6,6 +6,16 @@ import yaml from 'js-yaml';
 const publicDir = path.join(process.cwd(), 'public');
 const contentDir = path.join(process.cwd(), 'src/content');
 const SITE_URL = 'https://kssmi.com';
+// Keep in sync with MIN_ARCHIVE_INDEX_COUNT in BlogListingPage.astro & FAQPage.astro
+const MIN_ARCHIVE_INDEX_COUNT = 3;
+
+const recordArchiveFilter = (map, key, lastmod) => {
+  const prev = map.get(key) || { count: 0, lastmod: null };
+  map.set(key, {
+    count: prev.count + 1,
+    lastmod: newestDateString([prev.lastmod, lastmod]),
+  });
+};
 
 if (!fs.existsSync(publicDir)) {
   fs.mkdirSync(publicDir, { recursive: true });
@@ -232,17 +242,17 @@ locales.forEach(lang => {
       });
 
       if (typeof enFm.faqTopic === 'string' && enFm.faqTopic) {
-        activeFilters.set(enFm.faqTopic, newestDateString([activeFilters.get(enFm.faqTopic), articleLastmod]));
+        recordArchiveFilter(activeFilters, enFm.faqTopic, articleLastmod);
         if (typeof enFm.faqSubtopic === 'string' && enFm.faqSubtopic) {
-          const subPath = `${enFm.faqTopic}/${enFm.faqSubtopic}`;
-          activeFilters.set(subPath, newestDateString([activeFilters.get(subPath), articleLastmod]));
+          recordArchiveFilter(activeFilters, `${enFm.faqTopic}/${enFm.faqSubtopic}`, articleLastmod);
         }
       }
     }
-    for (const [filterPath, filterLastmod] of activeFilters) {
+    for (const [filterPath, filterMeta] of activeFilters) {
+      if (filterMeta.count < MIN_ARCHIVE_INDEX_COUNT) continue;
       coreUrls.push({
         url: `${baseUrl}/faq/${filterPath}/`,
-        lastmod: filterLastmod,
+        lastmod: filterMeta.lastmod,
       });
     }
   }
@@ -399,10 +409,9 @@ locales.forEach(lang => {
       const resolvedTopic = (typeof enFm.blogTopic === 'string' && enFm.blogTopic.trim())
         || blogCategoryMap.get(String(enFm.category || '').trim().toLowerCase())
         || 'supply-chain-sourcing';
-      activeBlogFilters.set(resolvedTopic, newestDateString([activeBlogFilters.get(resolvedTopic), articleLastmod]));
+      recordArchiveFilter(activeBlogFilters, resolvedTopic, articleLastmod);
       if (typeof enFm.blogSubtopic === 'string' && enFm.blogSubtopic.trim()) {
-        const subPath = `${resolvedTopic}/${enFm.blogSubtopic.trim()}`;
-        activeBlogFilters.set(subPath, newestDateString([activeBlogFilters.get(subPath), articleLastmod]));
+        recordArchiveFilter(activeBlogFilters, `${resolvedTopic}/${enFm.blogSubtopic.trim()}`, articleLastmod);
       }
     }
 
@@ -411,10 +420,11 @@ locales.forEach(lang => {
         url: `${baseUrl}/blog/`,
         lastmod: newestDateString(articleDates),
       });
-      for (const [filterPath, filterLastmod] of activeBlogFilters) {
+      for (const [filterPath, filterMeta] of activeBlogFilters) {
+        if (filterMeta.count < MIN_ARCHIVE_INDEX_COUNT) continue;
         blogUrls.push({
           url: `${baseUrl}/blog/${filterPath}/`,
-          lastmod: filterLastmod,
+          lastmod: filterMeta.lastmod,
         });
       }
       fs.writeFileSync(path.join(langDir, 'sitemap-blogs.xml'), generateUrlset(blogUrls), 'utf-8');

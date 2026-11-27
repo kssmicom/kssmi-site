@@ -48,6 +48,10 @@ const hubUrl = faqPath(lang);
 const faqLabel = t.nav?.faq || 'FAQ';
 const viewDetailsLabel = t.product?.viewDetails || 'View Details';
 
+const MIN_ARCHIVE_INDEX_COUNT = 3;
+const isArchivePage = Boolean(activeTopicObj || activeSubtopicObj);
+const isThinArchive = isArchivePage && visibleArticles.length < MIN_ARCHIVE_INDEX_COUNT;
+
 const pageHeading = activeSubtopicObj
   ? activeSubtopicObj.title
   : activeTopicObj
@@ -58,7 +62,9 @@ const pageTitle = activeSubtopicObj || activeTopicObj
   ? `${pageHeading} — ${hub.seoTitle}`
   : hub.seoTitle;
 
-const pageDescription = hub.seoDescription;
+const pageDescription = isArchivePage
+  ? `${pageHeading} — ${hub.seoDescription}`
+  : hub.seoDescription;
 
 const breadcrumbItems: Array<{ label: string; href: string }> = [
   { label: t.nav.home, href: currentPath ? `/${currentPath.replace(/\/$/, '')}` : '/' },
@@ -75,7 +81,7 @@ if (activeSubtopicObj) {
 }
 ---
 
-<Layout title={pageTitle} lang={lang} description={pageDescription} type="website">
+<Layout title={pageTitle} lang={lang} description={pageDescription} type="website" noindex={isThinArchive}>
   <Header lang={lang} />
   <Breadcrumb items={breadcrumbItems} lang={lang} />
 
