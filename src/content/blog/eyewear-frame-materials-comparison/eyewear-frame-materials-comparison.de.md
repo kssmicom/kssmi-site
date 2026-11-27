@@ -106,6 +106,8 @@ Zwei kaufmännische Regeln gelten für TR-90:
 1. **Eigene Werkzeuge und höheres MOQ.** Reguläre TR-90-Modelle erfordern 1.200 Stück pro Modell (mindestens 600 je Farbe); voll individuelle Sport-TR-90-Modelle starten bei 600 Stück je Farbe. Eine bestehende Form spart neue Werkzeugkosten, aber nicht das Modell-MOQ.
 2. **Vorab-Prüfung und Kostenanrechnung.** Bei individuellen Spritzgussformen werden Passform und Ergonomie vor dem Fräsen der Stahlwerkzeuge geprüft; Werkzeug- und Mustergebühren für TR-90 werden vollständig angerechnet, sobald dasselbe Modell innerhalb von **24 Monaten insgesamt 30.000 Stück** erreicht (ohne Fracht und Steuern), wie im Angebot festgehalten.
 
+![Leichte spritzgegossene Thermoplast-Fassung für ergonomischen Sport- und Ganztagssitz](/media/blogs/eyewear-frame-materials-comparison/tr90-injection-frames.webp)
+
 ## Hybridfassungen, randlose Modelle, Scharniere und Gläser
 
 **Bauteile wirken nicht isoliert: Eine Metallfront mit Acetatbügeln, gebohrte randlose Gläser, Scharniergliederzahl und Glasfarb-MOQs beeinflussen gemeinsam Ihr endgültiges MOQ- und Werkzeugkonzept.**
@@ -140,6 +142,8 @@ Bei Kssmi gelten Mindestmengen **pro Modell und Produktionslauf** — verschiede
 | Gebührenanrechnung | Anrechnung ab 1.000 Stk. in 12 Monaten (exkl. Fracht) | Gleich: 1.000 Stk. / 12 Monate | Werkzeug & Muster ab 30.000 Stk. in 24 Monaten (exkl. Fracht & Steuern) |
 
 Muster-, Entwicklungs- und Werkzeugkosten werden zu 100 % vorab bezahlt; Serienaufträge erfordern 50 % T/T-Anzahlung nach Musterfreigabe und Restzahlung vor Versand. Vom Kunden bezahlte Formen gehören dem Kunden und werden ausschließlich für sein Projekt genutzt. Vom Briefing bis zum Versand dauert eine erste Custom-Kollektion typischerweise fünf bis sechs Monate.
+
+![Maßgefertigte Sonnenbrille aus geformtem Acetat-Mittelteil und präziser Metallbrücke mit Metallbügeln](/media/blogs/eyewear-frame-materials-comparison/material-selection-hybrid.webp)
 
 ## Was wir nicht anbieten
 

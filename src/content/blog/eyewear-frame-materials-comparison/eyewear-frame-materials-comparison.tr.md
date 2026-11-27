@@ -106,6 +106,8 @@ TR-90 için iki ticari kural geçerlidir:
 1. **Özel kalıp ve daha yüksek MOQ.** Standart TR-90 modelleri stil başına 1.200 adet (renk başına en az 600 adet) gerektirir; tam özel spor TR-90 çerçeveler renk başına 600 adet tabanını izler. Mevcut bir formu kullanmak yeni kalıp maliyetini düşürür ancak model başı MOQ'u kaldırmaz.
 2. **Kalıp öncesi doğrulama ve ücret mahsubu.** Özel enjeksiyon formlarda çelik kalıplar kesilmeden önce oturuş ve ergonomi doğrulanır; TR-90 enjeksiyon kalıp ve numune ücretleri, aynı model **24 ay içinde toplam 30.000 adede** ulaştığında (navlun ve vergiler hariç) mahsup edilir ve teklifte belirtilir.
 
+![Ergonomik spor ve gün boyu kullanım için hafif enjeksiyon kalıp termoplastik çerçeve yapısı](/media/blogs/eyewear-frame-materials-comparison/tr90-injection-frames.webp)
+
 ## Hibrit çerçeveler, çerçevesiz (faset) yapılar, menteşeler ve camlar
 
 **Bileşenler tek başına çalışmaz: asetat saplı metal ön çerçeve, delikli çerçevesiz yapı, menteşe halka sayısı ve cam rengi minimumları nihai MOQ ve kalıp planını doğrudan değiştirir.**
@@ -140,6 +142,8 @@ Kssmi'de miktarlar **model başına ve tek üretim partisi olarak** uygulanır �
 | Ücret mahsubu | 12 ayda 1.000 adette uygun ücretler mahsup (navlun hariç) | Aynı: 1.000 adet / 12 ay | Kalıp ve numune ücretleri 24 ayda 30.000 adette mahsup (navlun ve vergi hariç) |
 
 Numune, geliştirme ve kalıp ücretleri aşama başlamadan %100 peşin ödenir; seri üretimde numune onayı sonrası %50 T/T depozito ve sevkiyat öncesi bakiye gerekir. Müşteri tarafından ödenen kalıplar müşteriye aittir ve yalnızca projeniz için kullanılır. Baştan sona ilk özel koleksiyon genellikle beş ila altı ay sürer.
+
+![Şekillendirilmiş asetat ön yüzeyi hassas metal köprü ve saplarla birleştiren özel güneş gözlüğü](/media/blogs/eyewear-frame-materials-comparison/material-selection-hybrid.webp)
 
 ## Yapmadığımız işler
 

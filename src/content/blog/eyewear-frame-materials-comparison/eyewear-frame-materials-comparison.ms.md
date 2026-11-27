@@ -106,6 +106,8 @@ Dua peraturan komersial mengawal TR-90:
 1. **Acuan khusus dan MOQ lebih tinggi.** Gaya TR-90 standard memerlukan 1,200 pasang setiap gaya (sekurang-kurangnya 600 pasang setiap warna); bingkai sukan TR-90 tersuai sepenuhnya mengikut paras minimum 600 pasang setiap warna. Menggunakan semula bentuk sedia ada menjimatkan acuan baharu tetapi tidak mengecualikan minimum setiap model.
 2. **Pengesahan pra-acuan dan kredit yuran.** Untuk bentuk suntikan tersuai, keselesaan dan ergonomik disahkan sebelum memotong acuan keluli, dan yuran acuan serta sampel TR-90 dikreditkan apabila model yang sama mencapai **30,000 pasang terkumpul dalam 24 bulan** (tidak termasuk tambang dan cukai), seperti dinyatakan dalam sebut harga.
 
+![Binaan bingkai termoplastik acuan suntikan ringan untuk pemakaian sukan ergonomik dan sepanjang hari](/media/blogs/eyewear-frame-materials-comparison/tr90-injection-frames.webp)
+
 ## Bingkai hibrid, tanpa bingkai (rimless), engsel dan kanta
 
 **Komponen tidak berdiri sendiri: hadapan logam dengan kaki asetat, binaan tanpa bingkai berlubang, bilangan gelang engsel dan minimum warna kanta semuanya mengubah MOQ akhir serta pelan acuan.**
@@ -140,6 +142,8 @@ Di Kssmi, kuantiti dikira **setiap model, setiap pusingan pengeluaran** — mode
 | Kredit yuran | Kredit pada 1,000 pasang dalam 12 bulan (kecuali tambang) | Sama: 1,000 pasang / 12 bulan | Acuan & sampel pada 30,000 pasang dalam 24 bulan (kecuali tambang & cukai) |
 
 Caj sampel, pembangunan dan acuan dibayar 100% terlebih dahulu; pesanan pukal memerlukan deposit T/T 50% selepas kelulusan sampel dengan baki sebelum penghantaran. Acuan yang dibayar pelanggan menjadi milik pelanggan dan digunakan secara eksklusif untuk projek anda. Dari mula hingga penghantaran, koleksi tersuai pertama lazimnya mengambil masa lima hingga enam bulan.
+
+![Cermin mata hitam tersuai menggabungkan bingkai asetat berukir dengan jambatan dan tangkai logam presisi](/media/blogs/eyewear-frame-materials-comparison/material-selection-hybrid.webp)
 
 ## Apa yang kami tidak lakukan
 

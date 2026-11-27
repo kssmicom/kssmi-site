@@ -106,6 +106,8 @@ Deux règles commerciales encadrent le TR-90 :
 1. **Outillage dédié et MOQ supérieur.** Les modèles TR-90 standards exigent 1 200 paires par style (au moins 600 paires par coloris) ; les modèles sport TR-90 entièrement custom suivent un plancher de 600 paires par coloris. Réutiliser une forme existante évite un nouveau moule mais ne supprime pas le minimum par modèle.
 2. **Validation pré-outillage et crédit de frais.** Pour les formes injectées sur mesure, chaussant et ergonomie sont validés avant d'usiner les moules acier, et les frais d'outillage et d'échantillons TR-90 sont crédités lorsque le même modèle atteint **30 000 paires cumulées sous 24 mois** (hors fret et taxes), comme précisé dans le devis.
 
+![Monture légère thermoplastique injectée pour maintien sportif ergonomique et port prolongé](/media/blogs/eyewear-frame-materials-comparison/tr90-injection-frames.webp)
+
 ## Montures hybrides, percées (glasant), charnières et verres
 
 **Aucun composant n'est indépendant : face métal avec branches acétate, montage percé sans cerclage, type de charnière et minimums de teinte des verres redéfinissent le MOQ et l'outillage.**
@@ -140,6 +142,8 @@ Chez Kssmi, les quantités s'entendent **par modèle et par lot de production** 
 | Crédit de frais | Crédit à 1 000 paires sous 12 mois (hors fret) | Même seuil : 1 000 paires / 12 mois | Moules et échantillons crédités à 30 000 paires sous 24 mois (hors fret et taxes) |
 
 Les frais d'échantillons, de développement et d'outillage sont réglés à 100 % d'avance ; la série exige un acompte T/T de 50 % après validation de l'échantillon, solde avant expédition. Les moules payés par le client lui appartiennent et restent réservés à son projet. De bout en bout, une première collection personnalisée demande environ cinq à six mois.
+
+![Solaire sur mesure associant face en acétate sculpté et pont ainsi que branches métalliques de précision](/media/blogs/eyewear-frame-materials-comparison/material-selection-hybrid.webp)
 
 ## Ce que nous ne faisons pas
 

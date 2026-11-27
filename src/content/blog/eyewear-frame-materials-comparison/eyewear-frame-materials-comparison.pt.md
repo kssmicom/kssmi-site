@@ -106,6 +106,8 @@ Duas regras comerciais regem o TR-90:
 1. **Molde dedicado e MOQ superior.** Modelos TR-90 padrão exigem 1.200 pares por estilo (pelo menos 600 pares por cor); armações desportivas TR-90 totalmente personalizadas seguem um mínimo de 600 pares por cor. Reutilizar uma forma existente poupa novo molde, mas não dispensa o mínimo por modelo.
 2. **Verificação pré-molde e crédito de custos.** Em formatos injetados personalizados validamos ajuste e ergonomia antes de abrir os moldes de aço, e os custos de molde e amostras TR-90 são creditados quando o mesmo modelo atinge **30.000 pares acumulados em 24 meses** (excluindo frete e impostos), conforme indicado na cotação.
 
+![Armação leve termoplástica moldada por injeção para ajuste esportivo ergonômico e uso diário](/media/blogs/eyewear-frame-materials-comparison/tr90-injection-frames.webp)
+
 ## Armações híbridas, sem aro (rimless), dobradiças e lentes
 
 **Os componentes não funcionam isoladamente: frente metálica com hastes de acetato, montagem furada sem aro, tipo de dobradiça e mínimos de cor de lente redefinem o MOQ e o ferramental.**
@@ -140,6 +142,8 @@ Na Kssmi, as quantidades aplicam-se **por modelo e por lote de produção** — 
 | Crédito de taxas | Crédito aos 1.000 pares em 12 meses (excl. frete) | Igual: 1.000 pares / 12 meses | Molde e amostra creditados aos 30.000 pares em 24 meses (excl. frete e impostos) |
 
 Amostras, desenvolvimento e moldes são pagos 100% antecipadamente; a produção exige depósito T/T de 50% após aprovação da amostra e saldo antes do embarque. Os moldes pagos pertencem ao cliente e são usados exclusivamente no seu projeto. De ponta a ponta, uma primeira coleção personalizada leva tipicamente cinco a seis meses.
+
+![Óculos solar sob medida que combina frontal em acetato esculpido com ponte e hastes metálicas de precisão](/media/blogs/eyewear-frame-materials-comparison/material-selection-hybrid.webp)
 
 ## O que não fazemos
 

@@ -106,6 +106,8 @@ Hai quy tắc thương mại áp dụng cho TR-90:
 1. **Khuôn riêng và MOQ cao hơn.** Mẫu TR-90 tiêu chuẩn yêu cầu 1.200 chiếc/kiểu (tối thiểu 600 chiếc/màu); dòng thể thao TR-90 thiết kế riêng hoàn toàn áp dụng sàn 600 chiếc/màu. Tận dụng khuôn có sẵn giúp tiết kiệm chi phí khuôn mới nhưng không miễn MOQ theo mẫu.
 2. **Kiểm tra trước khi cắt khuôn & khấu trừ phí.** Với dáng ép phun riêng, độ ôm vừa được kiểm chứng trước khi gia công khuôn thép, và phí khuôn cùng phí mẫu TR-90 được khấu trừ toàn bộ khi cùng mẫu đạt **30.000 chiếc tích lũy trong 24 tháng** (không gồm cước vận chuyển và thuế), ghi rõ trong báo giá.
 
+![Kết cấu gọng nhựa nhiệt dẻo ép phun siêu nhẹ ôm sát cho thể thao và đeo cả ngày](/media/blogs/eyewear-frame-materials-comparison/tr90-injection-frames.webp)
+
 ## Gọng lai, kính khoan không viền, bản lề và tròng kính
 
 **Các bộ phận liên kết chặt với nhau: mặt trước kim loại phối càng acetate, kính khoan không viền, số đốt bản lề và MOQ màu tròng đều tác động trực tiếp đến MOQ cuối và kế hoạch khuôn.**
@@ -140,6 +142,8 @@ Tại Kssmi, số lượng áp dụng **theo từng mẫu và từng đợt sả
 | Khấu trừ chi phí | Khấu trừ khi đạt 1.000 chiếc trong 12 tháng (trừ cước) | Tương tự: 1.000 chiếc / 12 tháng | Khuôn & mẫu trừ khi đạt 30.000 chiếc trong 24 tháng (trừ cước & thuế) |
 
 Chi phí mẫu, phát triển và khuôn thanh toán 100% trước khi bắt đầu; sản xuất đại trà đặt cọc T/T 50% sau khi duyệt mẫu và thanh toán phần còn lại trước khi giao hàng. Khuôn do khách hàng thanh toán thuộc quyền sở hữu của khách hàng và chỉ dùng riêng cho dự án của bạn. Trọn quy trình cho bộ sưu tập custom đầu tiên thường mất 5–6 tháng.
+
+![Kính mát gia công kết hợp vành acetate điêu khắc cùng cầu mũi và càng kim loại chính xác](/media/blogs/eyewear-frame-materials-comparison/material-selection-hybrid.webp)
 
 ## Những gì chúng tôi không làm
 

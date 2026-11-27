@@ -106,6 +106,8 @@ Due regole commerciali regolano il TR-90:
 1. **Stampi dedicati e MOQ più elevato.** I modelli standard in TR-90 richiedono 1.200 paia per modello (almeno 600 paia per colore); la linea sport TR-90 completamente custom prevede un minimo di 600 paia per colore. Riutilizzare uno stampo esistente evita il costo di un nuovo stampo ma non riduce il MOQ per modello.
 2. **Verifica pre-stampo e accredito costi.** Per forme custom a iniezione si verificano ergonomia e calzata prima di incidere gli stampi in acciaio, e i costi di stampo e campione TR-90 vengono interamente accreditati al raggiungimento cumulativo di **30.000 paia entro 24 mesi** sullo stesso modello (esclusi trasporto e imposte), come indicato in preventivo.
 
+![Montatura leggera in termoplastico stampato a iniezione per vestibilità ergonomica sportiva e quotidiana](/media/blogs/eyewear-frame-materials-comparison/tr90-injection-frames.webp)
+
 ## Montature ibride, glasant senza montatura, cerniere e lenti
 
 **I componenti non lavorano isolati: frontale metallico con aste in acetato, costruzione glasant forata, tipo di cerniera e minimi colore delle lenti incidono tutti su MOQ e attrezzature.**
@@ -140,6 +142,8 @@ In Kssmi i minimi valgono **per modello e per singolo lotto produttivo**: non è
 | Accredito spese | Accredito a 1.000 paia in 12 mesi (escl. trasporto) | Uguale: 1.000 paia / 12 mesi | Accredito stampi e campioni a 30.000 paia in 24 mesi (escl. trasporto e tasse) |
 
 Campioni, sviluppo e stampi sono pagati al 100% in anticipo; la produzione in serie prevede acconto T/T del 50% dopo l'approvazione del campione e saldo prima della spedizione. Gli stampi pagati dal cliente restano di proprietà del cliente e vengono usati esclusivamente per il suo progetto. Complessivamente, una prima collezione personalizzata richiede in genere cinque o sei mesi dal brief alla spedizione.
+
+![Occhiale da sole su misura che abbina frontale in acetato scolpito e ponte e aste metalliche di precisione](/media/blogs/eyewear-frame-materials-comparison/material-selection-hybrid.webp)
 
 ## Cosa non facciamo
 

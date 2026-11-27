@@ -106,6 +106,8 @@ Two commercial rules govern TR-90:
 1. **Dedicated tooling and higher MOQ.** Standard TR-90 styles require 1,200 pairs per style (at least 600 pairs per color); fully custom sport TR-90 frames follow a 600-pair-per-color bulk floor. Reusing an existing shape saves new tooling, not the per-style minimum.
 2. **Pre-tooling verification and fee credits.** For custom injection shapes, fit and ergonomics are normally verified before cutting production steel molds, and TR-90 injection tooling and sample fees are credited once the same model reaches a cumulative **30,000 pairs within 24 months** (excluding freight and taxes), as stated in the quotation.
 
+![Lightweight injection-molded thermoplastic eyewear frame construction for ergonomic sport and all-day wear](/media/blogs/eyewear-frame-materials-comparison/tr90-injection-frames.webp)
+
 ## Hybrid frames, rimless builds, hinges and lenses
 
 **Components do not sit in isolation: a metal front with acetate temples, a drilled rimless build, hinge barrel count and lens color minimums all reshape your final MOQ and tooling plan.**
@@ -140,6 +142,8 @@ At Kssmi, quantities are **per model, per production run** — different models 
 | Fee credit | Eligible fees credited at 1,000 pairs within 12 months (excl. freight) | Same 1,000 pairs / 12 months | Tooling & sample fees credited at 30,000 pairs within 24 months (excl. freight & taxes) |
 
 Sample, development and tooling charges are paid 100% in advance; bulk orders require a 50% T/T deposit after sample approval, with the balance before shipment. Customer-paid molds and tooling belong to the customer and are used exclusively for your project. End-to-end, a first custom collection typically takes five to six months from design brief to shipment.
+
+![Custom sculpted sunglasses combining refined acetate rim lines with precision metal bridge and temples](/media/blogs/eyewear-frame-materials-comparison/material-selection-hybrid.webp)
 
 ## What we do not do
 

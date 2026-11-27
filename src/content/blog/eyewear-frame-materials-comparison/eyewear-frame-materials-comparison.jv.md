@@ -106,6 +106,8 @@ Loro aturan komersial ngatur TR-90:
 1. **Cetakan khusus lan MOQ luwih dhuwur.** Gaya TR-90 standar mbutuhake 1.200 pasang saben gaya (paling ora 600 pasang saben warna); bingkai olahraga TR-90 kustom lengkap ngetutake wates 600 pasang saben warna. Nggunakake bentuk sing wis ana ngirit cetakan anyar nanging ora ngilangi minimal saben model.
 2. **Verifikasi sadurunge cetakan lan kredit biaya.** Kanggo bentuk injeksi kustom, ukuran lan ergonomi diverifikasi sadurunge ngethok cetakan baja, lan biaya cetakan sarta sampel TR-90 dikreditake nalika model sing padha tekan **30.000 pasang akumulatif sajrone 24 sasi** (ora kalebu ongkos kirim lan pajak) kaya kasebut ing penawaran.
 
+![Konstruksi pigura termoplastik cetakan injeksi sing entheng kanggo olahraga lan dienggo sedina muput](/media/blogs/eyewear-frame-materials-comparison/tr90-injection-frames.webp)
+
 ## Bingkai hibrida, tanpa bingkai (rimless), engsel lan lensa
 
 **Komponen ora ngadeg dhewe: ngarep logam karo gagang asetat, konstruksi rimless dibor, jumlah cincin engsel lan minimal warna lensa kabeh ngowahi MOQ pungkasan lan rencana cetakan.**
@@ -140,6 +142,8 @@ Ing Kssmi, jumlah diitung **saben model, saben batch produksi** — model beda o
 | Kredit biaya | Kredit ing 1.000 pasang sajrone 12 sasi (ora kalebu ongkir) | Padha: 1.000 pasang / 12 sasi | Cetakan & sampel ing 30.000 pasang sajrone 24 sasi (ora kalebu ongkir & pajak) |
 
 Biaya sampel, pangembangan lan cetakan dibayar 100% ing ngarep; produksi massal mbutuhake DP T/T 50% sawise persetujuan sampel lan pelunasan sadurunge kirim. Cetakan sing dibayar pelanggan dadi duweke pelanggan lan mung digunakake kanggo proyek kasebut. Saka awal nganti kirim, koleksi kustom pisanan biasane butuh lima nganti nem sasi.
+
+![Kacamata srengenge kustom sing nggabungake bingkai asetat karo jembatan lan gagang logam presisi](/media/blogs/eyewear-frame-materials-comparison/material-selection-hybrid.webp)
 
 ## Apa sing ora kita lakoni
 

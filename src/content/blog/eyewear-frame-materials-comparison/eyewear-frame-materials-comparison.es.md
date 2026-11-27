@@ -106,6 +106,8 @@ Dos reglas comerciales rigen el TR-90:
 1. **Molde dedicado y MOQ superior.** Los modelos estándar en TR-90 exigen 1.200 pares por estilo (al menos 600 por color); los diseños deportivos TR-90 totalmente personalizados parten de 600 pares por color. Reutilizar un molde existente ahorra utillaje nuevo, no el mínimo por modelo.
 2. **Verificación previa y abono de costes.** En formas custom inyectadas validamos ajuste y ergonomía antes de mecanizar el molde de acero, y los costes de molde y muestra TR-90 se acreditan íntegramente al alcanzar **30.000 pares acumulados en 24 meses** del mismo modelo (excluyendo flete e impuestos), según conste en el presupuesto.
 
+![Montura ligera termoplástica moldeada por inyección para ajuste deportivo ergonómico y uso diario](/media/blogs/eyewear-frame-materials-comparison/tr90-injection-frames.webp)
+
 ## Monturas híbridas, al aire (sin montura), bisagras y lentes
 
 **Los componentes no actúan aislados: un frente metálico con varillas de acetato, un montaje al aire perforado, el número de anillos de bisagra y los mínimos de color de lente redefinen el MOQ y el utillaje final.**
@@ -140,6 +142,8 @@ En Kssmi los mínimos aplican **por modelo y por tirada de producción**: no se 
 | Abono de tarifas | Abono a 1.000 pares en 12 meses (excl. flete) | Igual: 1.000 pares / 12 meses | Molde y muestra abonados a 30.000 pares en 24 meses (excl. flete e impuestos) |
 
 Muestras, desarrollo y moldes se pagan al 100% por adelantado; los pedidos en serie requieren depósito T/T del 50% tras aprobar muestra y saldo antes del envío. Los moldes abonados pertenecen al cliente y se destinan en exclusiva a su proyecto. De principio a fin, una primera colección personalizada suele tomar de cinco a seis meses.
+
+![Gafa de sol a medida que combina frente de acetato esculpido con puente y varillas metálicas de precisión](/media/blogs/eyewear-frame-materials-comparison/material-selection-hybrid.webp)
 
 ## Qué no hacemos
 
