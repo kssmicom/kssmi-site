@@ -112,6 +112,8 @@ Deleng [opsi lensa blue-blocking](/jv/customization/lenses/blue-blocking/) lan k
 - **Hidrofobik/Oleofobik (H/O) & Anti-Kabut (AF):** H/O nolak banyu lan sidik jari; AF nyebarake embun dadi lapisan bening. Amarga mekanismene kosok balen, pilih salah siji prioritas.
 - **Pinggiran rimless & uji tegangan:** rimless standar nganggo **pinggiran bevel poles standar** tanpa biaya setup. **Pinggiran faset (potongan berlian)** multi-bidang ngenakake biaya setup mesin sepisan **USD 350** ditambah biaya pemotongan luwih dhuwur saben pasang. Kita mriksa tegangan optik ing sampel rakitan sing disetujoni.
 
+![Lapisan metalik rata sakabehe permukaan ing sampel lensa shield srengenge lengkung](/media/blogs/eyewear-lens-materials-comparison/lens-coatings-edge-finish.webp)
+
 Jelajahi 122 conto warna ing [kaca opsi lensa](/jv/customization/lenses/) lan fitur ing [kustomisasi](/jv/customization/).
 
 ## Cara milih lensa sing pas kanggo koleksi sampeyan
@@ -143,6 +145,8 @@ Rong kapabilitas khusus uga didhukung ing proyek kustom sing dikonfirmasi:
 
 Kanggo produksi standar, lensa asale saka pabrikan optik unggulan ing Shenzhen. Nalika merek nemtokake merek lensa optik internasional utawa program polarized pabrik mitra khusus, Kssmi nyedhiyakake miturut merek, model lan lapisan sing dikonfirmasi — utawa ngrakit lensa sing dituku pelanggan saka pabrik mitra kasebut.
 
+
+![Sampel warna lensa polarized cermin Revo abang kanthi MOQ 300 pasang saben warna](/media/blogs/eyewear-lens-materials-comparison/revo-mirror-color-moq.webp)
 ## Kepatuhan, laporan spektral lan uji pihak katelu
 
 **Data uji pabrik diwenehake gratis minangka referensi kualitas, dene uji kepatuhan resmi EN ISO 12312-1, ANSI Z80.3, AS/NZS 1067.1 utawa FDA 21 CFR 801.410 ditindakake saben SKU rampung liwat laboratorium independen kanthi biaya asli.**

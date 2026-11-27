@@ -112,6 +112,8 @@ Consulta las [opciones de lente filtro luz azul](/es/customization/lenses/blue-b
 - **Hidrofóbico/Oleofóbico (H/O) y Antivaho (AF):** H/O repele agua y huellas en la capa externa; AF extiende la condensación en película transparente. Al oponerse hidrofobia e hidrofilia, debe elegirse una sola prioridad por superficie.
 - **Cantos al aire y control de tensiones:** las lentes al aire llevan **bisel pulido estándar** sin coste de ajuste. El **canto facetado (corte diamante)** se talla paso a paso e implica un cargo único de ajuste de máquina de **USD 350** más mayor coste por par. Como termoformado, biselado y apriete pueden inducir **birrefringencia por tensión**, Kssmi verifica frente de onda y tensiones en muestras montadas aprobadas.
 
+![Recubrimiento metálico uniforme integral sobre muestra de lente solar curva](/media/blogs/eyewear-lens-materials-comparison/lens-coatings-edge-finish.webp)
+
 Explora las 122 referencias en [opciones de lentes](/es/customization/lenses/) y herrajes en [personalización](/es/customization/).
 
 ## Cómo elegir la lente adecuada para tu colección
@@ -143,6 +145,8 @@ En proyectos a medida confirmados también soportamos dos capacidades avanzadas:
 
 En producción estándar las lentes proceden de fabricantes ópticos líderes de Shenzhen. Cuando una marca especifica una firma óptica internacional o un programa polarizado de fábrica asociada dedicada, Kssmi suministra exactamente la marca, modelo y recubrimiento confirmados — o ensambla lentes adquiridas por el cliente en dicha fábrica asociada.
 
+
+![Variante de lente polarizada con espejo Revo rojo sujeta a MOQ de 300 pares por color](/media/blogs/eyewear-lens-materials-comparison/revo-mirror-color-moq.webp)
 ## Cumplimiento normativo, curvas espectrales y laboratorio externo
 
 **Los datos de fábrica se entregan gratis como referencia interna, mientras los ensayos oficiales EN ISO 12312-1, ANSI Z80.3, AS/NZS 1067.1 o FDA 21 CFR 801.410 se realizan por SKU acabado en laboratorios independientes a coste real.**

@@ -112,6 +112,8 @@ Layari [pilihan kanta blue-blocking](/ms/customization/lenses/blue-blocking/) da
 - **Hidrofobik/Oleofobik (H/O) & Anti-Kabus (AF):** H/O menangkis air dan cap jari; AF meratakan pemeluwapan menjadi filem jernih. Kerana dua mekanisme ini berlawanan, nyatakan satu keutamaan sahaja setiap permukaan.
 - **Kemasan tepi tanpa bingkai & semakan tegasan:** kanta tanpa bingkai menggunakan **tepi serong digilap standard** tanpa yuran persediaan. **Tepi berfaset (potongan berlian)** berperingkat mengenakan yuran persediaan mesin sekali **USD 350** serta kos sepasang lebih tinggi. Kssmi memeriksa tegasan optik pada sampel siap dipasang.
 
+![Salutan metalik sekata seluruh permukaan pada sampel kanta perisai suria melengkung](/media/blogs/eyewear-lens-materials-comparison/lens-coatings-edge-finish.webp)
+
 Terokai 122 sampel warna di [halaman pilihan kanta](/ms/customization/lenses/) dan kelengkapan di [penyesuaian](/ms/customization/).
 
 ## Cara memilih kanta yang tepat untuk koleksi anda
@@ -143,6 +145,8 @@ Dua keupayaan khusus juga disokong untuk projek tersuai yang disahkan:
 
 Untuk pengeluaran standard, kanta datang daripada pengeluar kanta optik terkemuka di Shenzhen. Apabila jenama menetapkan jenama kanta optik antarabangsa atau program polarized kilang rakan kongsi khusus, Kssmi mendapatkan mengikut jenama, model dan salutan disahkan — atau memasang kanta yang dibeli pelanggan daripada kilang rakan kongsi tersebut.
 
+
+![Sampel warna kanta polarized salutan cermin Revo merah tertakluk kepada MOQ 300 pasang/warna](/media/blogs/eyewear-lens-materials-comparison/revo-mirror-color-moq.webp)
 ## Pematuhan, laporan spektrum dan ujian pihak ketiga
 
 **Data ujian kilang diberikan percuma sebagai rujukan kualiti, manakala ujian pematuhan rasmi EN ISO 12312-1, ANSI Z80.3, AS/NZS 1067.1 atau FDA 21 CFR 801.410 diatur mengikut SKU siap di makmal bebas pada kos sebenar.**

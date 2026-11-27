@@ -112,6 +112,8 @@ Numarasız ekran gözlüğü sipariş ederken iki teknik ayrımı netleştirin:
 - **Hidrofobik/Oleofobik (H/O) ve Buğu Önleyici (AF):** H/O dış katmanda su ve parmak izini iterken AF yoğuşmayı şeffaf ince filme yayar. Bu iki mekanizma birbirine zıt çalıştığından tek kullanım önceliği seçilmelidir.
 - **Kenar işçiliği ve gerilim kontrolü:** Çerçevesiz camlarda kurulum ücreti olmayan **standart parlatılmış pahlı kenar** uygulanır. Adım adım işlenen **fasetli (elmas kesim) kenar**, tek seferlik **USD 350** makine kurulum ücreti ve çift başına daha yüksek işçilik gerektirir. Termal bükme, kesim ve sıkı montaj **gerilim çift kırılımı** oluşturabildiğinden Kssmi onaylı montaj numunelerinde optik gerilimi kontrol eder.
 
+![Kavisli güneş gözlüğü kalkan camı numunesinde homojen tam yüzey metalik kaplama](/media/blogs/eyewear-lens-materials-comparison/lens-coatings-edge-finish.webp)
+
 122 cam kartelamızı [cam seçenekleri sayfasında](/tr/customization/lenses/) ve donanımları [özelleştirme sayfasında](/tr/customization/) inceleyin.
 
 ## Koleksiyonunuz için doğru camı nasıl seçersiniz?
@@ -143,6 +145,8 @@ Onaylı özel projelerde iki uzman cam kabiliyeti de desteklenir:
 
 Standart üretimde camlar Shenzhen'deki birinci sınıf optik cam üreticilerinden temin edilir. Bir marka uluslararası bir optik cam markası veya özel anlaşmalı partner fabrika polarize programı talep ettiğinde, Kssmi onaylı marka, model ve kaplama şartnamesine birebir tedarik sağlar ya da müşterinin partner fabrikadan satın aldığı camları montaj için kabul eder.
 
+
+![Renk başına 300 çift MOQ kapsamındaki kırmızı Revo ayna kaplamalı polarize cam örneği](/media/blogs/eyewear-lens-materials-comparison/revo-mirror-color-moq.webp)
 ## Uygunluk, spektral raporlar ve üçüncü taraf testleri
 
 **Fabrika test verileri kalite referansı olarak ücretsiz sunulur; EN ISO 12312-1, ANSI Z80.3, AS/NZS 1067.1 veya FDA 21 CFR 801.410 resmi uygunluk testleri ise bitmiş SKU bazında bağımsız laboratuvarlarda gerçek maliyetiyle yapılır.**

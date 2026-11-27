@@ -112,6 +112,8 @@ Xem [tùy chọn tròng lọc ánh sáng xanh](/vi/customization/lenses/blue-blo
 - **Chống bám nước/dầu (H/O) & Chống sương mù (AF):** lớp H/O ngoài cùng đẩy nước và vân tay; lớp AF dàn hơi nước thành màng mỏng trong suốt. Hai cơ chế kỵ nước và ưa nước đối nghịch nên mỗi mặt chỉ chọn một ưu tiên.
 - **Cạnh tròng không viền & kiểm tra ứng suất:** gọng không viền mặc định dùng **vát bóng tiêu chuẩn** không phí cài đặt. **Mài giác cạnh kim cương (diamond-cut)** gia công từng bước mất phí cài máy một lần **USD 350** cộng đơn giá gia công cao hơn. Do uốn nhiệt, mài và lắp căng có thể tạo **lưỡng chiết ứng suất**, Kssmi kiểm tra sóng quang học sau lắp ráp trên mẫu duyệt.
 
+![Lớp phủ kim loại đồng đều toàn bề mặt trên mẫu tròng kính mát shield cong](/media/blogs/eyewear-lens-materials-comparison/lens-coatings-edge-finish.webp)
+
 Khám phá 122 mẫu màu tại [tùy chọn tròng kính](/vi/customization/lenses/) và phụ kiện tại [trang tùy chỉnh](/vi/customization/).
 
 ## Cách chọn đúng tròng kính cho bộ sưu tập của bạn
@@ -143,6 +145,8 @@ Với các dự án tùy chỉnh đã xác nhận, chúng tôi còn hỗ trợ h
 
 Với sản xuất tiêu chuẩn, tròng đến từ các nhà máy quang học hàng đầu tại Thâm Quyến. Khi thương hiệu chỉ định hãng tròng quốc tế hoặc chương trình phân cực từ nhà máy đối tác chuyên biệt, Kssmi cung ứng đúng thương hiệu, model và lớp phủ đã xác nhận — hoặc nhận lắp ráp tròng do khách hàng mua từ nhà máy đối tác đó.
 
+
+![Mẫu màu tròng phân cực tráng gương Revo đỏ áp dụng MOQ 300 cặp mỗi màu](/media/blogs/eyewear-lens-materials-comparison/revo-mirror-color-moq.webp)
 ## Tuân thủ tiêu chuẩn, báo cáo quang phổ và thử nghiệm độc lập
 
 **Dữ liệu kiểm tra tại xưởng được cấp miễn phí để tham khảo chất lượng, còn kiểm định chính thức EN ISO 12312-1, ANSI Z80.3, AS/NZS 1067.1 hay FDA 21 CFR 801.410 được thực hiện theo từng SKU hoàn chỉnh tại phòng lab độc lập theo chi phí thực tế.**

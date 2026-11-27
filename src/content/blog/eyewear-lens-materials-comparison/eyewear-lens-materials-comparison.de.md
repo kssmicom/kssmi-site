@@ -112,6 +112,8 @@ Entdecken Sie [Blaulichtfilter-Optionen](/de/customization/lenses/blue-blocking/
 - **Hydrophob/Oleophob (H/O) & Antibeschlag (AF):** H/O weist Wasser und Fingerabdrücke außen ab; AF verteilt Kondenswasser als klaren Film. Da sich hydrophobe und hydrophile Effekte ausschließen, wird nur eine Priorität je Seite gewählt.
 - **Kantenbearbeitung & Spannungsprüfung:** Randlose Gläser erhalten standardmäßig eine **polierte Standardfase** ohne Rüstkosten. Ein **facettierter Diamantschliff** in mehreren Fräsgängen kostet einmalig **USD 350** Maschinenrüstgebühr plus höheren Stückpreis. Da Thermoformen, Schleifen und Montage **Spannungsdoppelbrechung** auslösen können, prüft Kssmi Wellenfront und Spannungen am montierten Muster.
 
+![Gleichmäßige Vollflächen-Verspiegelung auf einem gewölbten Sonnenglas-Muster](/media/blogs/eyewear-lens-materials-comparison/lens-coatings-edge-finish.webp)
+
 Stöbern Sie in unseren 122 Farbmustern auf [Glasoptionen](/de/customization/lenses/) und Details auf [Individualisierung](/de/customization/).
 
 ## So wählen Sie das richtige Glas für Ihre Kollektion
@@ -143,6 +145,8 @@ Auf bestätigten Sonderprojekten unterstützen wir zusätzlich zwei Spezialverfa
 
 Für die reguläre Serienfertigung stammen Gläser von führenden Optikherstellern in Shenzhen. Verlangt eine Marke einen internationalen Glasmarkennamen oder ein dediziertes Partnerwerk-Polfilterprogramm, beschafft Kssmi exakt nach bestätigter Marke, Type und Schichtvorgabe – oder verbaut kundenseitig beim Partnerwerk bezogene Gläser in der Endmontage.
 
+
+![Rotes polarisiertes Revo-Spiegelglas mit 300-Paar-Mindestbestellmenge je Farbe](/media/blogs/eyewear-lens-materials-comparison/revo-mirror-color-moq.webp)
 ## Konformität, Spektralkurven und unabhängige Laborprüfungen
 
 **Werksmessungen dienen kostenfrei als Qualitätsreferenz; offizielle Marktprüfungen nach EN ISO 12312-1, ANSI Z80.3, AS/NZS 1067.1 oder FDA 21 CFR 801.410 erfolgen je fertigem SKU über unabhängige Labore zu Selbstkosten.**

@@ -112,6 +112,8 @@ Browse [blue-blocking lens options](/customization/lenses/blue-blocking/) and ou
 - **Hydrophobic/Oleophobic (H/O) & Anti-Fog (AF):** H/O repels water and fingerprints as an outermost top coat; AF makes condensation form a clear film rather than droplets. Because hydrophobic and hydrophilic (anti-fog) mechanisms oppose each other, specify only the surface priority your use case requires.
 - **Edge treatments & stress checks:** Standard rimless lenses use a **standard polished bevel edge** at standard pricing with no setup fee. A **faceted (diamond-cut) edge** — step-cut pass by pass on the edging machine — carries a one-time **USD 350** machine setup fee plus higher per-pair edging cost. Because thermal bending, edging, and tight frame mounting can introduce **stress birefringence**, Kssmi checks optical wavefront and stress condition after assembly on approved samples.
 
+![Uniform full-surface metallic coating on a curved custom sun shield lens sample](/media/blogs/eyewear-lens-materials-comparison/lens-coatings-edge-finish.webp)
+
 Explore our 122 lens swatches on the [lens options page](/customization/lenses/) and full hardware options on the [customization page](/customization/).
 
 ## How to choose the right lens for your collection
@@ -143,6 +145,8 @@ Two specialty lens capabilities are also supported on confirmed custom projects:
 
 For standard production, lenses come from top-tier Shenzhen lens manufacturers. When a brand specifies an international optical lens brand or a dedicated partner-factory polarized lens program, Kssmi sources to the exact confirmed brand, model, and coating specification — or accepts customer-purchased partner-factory lenses for frame assembly and finished shipment.
 
+
+![Bright red Revo mirror-coated polarized lens colorway subject to 300-pair color MOQ](/media/blogs/eyewear-lens-materials-comparison/revo-mirror-color-moq.webp)
 ## Compliance, spectral reports and third-party testing
 
 **Factory test data supports quality reference free of charge, while formal market compliance testing for EN ISO 12312-1, ANSI Z80.3, AS/NZS 1067.1, or FDA 21 CFR 801.410 is arranged per finished SKU through independent laboratories at actual cost.**

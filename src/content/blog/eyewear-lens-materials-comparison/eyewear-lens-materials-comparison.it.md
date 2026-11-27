@@ -112,6 +112,8 @@ Consulta le [opzioni lenti filtro luce blu](/it/customization/lenses/blue-blocki
 - **Idrofobico/Oleofobico (H/O) e Anti-Appannamento (AF):** l'ultimo strato H/O respinge acqua e impronte, mentre l'AF distribuisce la condensa in un film trasparente continuo. Poiché meccanismo idrofobo e idrofilo si escludono a vicenda, occorre scegliere una sola priorità superficiale.
 - **Finitura bordi rimless e controlli di tensione:** i modelli rimless usano di serie uno **smusso lucido standard** senza costi di avviamento. Il **bordo sfaccettato (taglio diamante)**, fresato passata per passata, comporta un contributo setup macchina una tantum di **USD 350** più maggiorazione per paio. Poiché termoformatura, molatura e montaggio serrato possono generare **birifrangenza da stress**, Kssmi verifica tensioni ottiche e fronte d'onda sui campioni approvati assemblati.
 
+![Rivestimento metallizzato uniforme a copertura totale su campione di lente solare curva](/media/blogs/eyewear-lens-materials-comparison/lens-coatings-edge-finish.webp)
+
 Esplora tutti i 122 campioni sulla pagina [opzioni lenti](/it/customization/lenses/) e le personalizzazioni su [personalizzazione](/it/customization/).
 
 ## Come scegliere la lente giusta per la tua collezione
@@ -143,6 +145,8 @@ Su progetti dedicati confermati sono inoltre disponibili due lavorazioni special
 
 Per la produzione standard le lenti provengono da produttori ottici di fascia alta di Shenzhen. Quando un brand richiede un marchio ottico internazionale oppure un programma polarizzato presso una fabbrica partner dedicata, Kssmi approvvigiona esattamente su marca, modello e pacchetto coating confermati — oppure integra in montaggio lenti fornite dal cliente tramite la fabbrica partner.
 
+
+![Variante lente polarizzata con specchiatura Revo rossa soggetta a MOQ di 300 paia/colore](/media/blogs/eyewear-lens-materials-comparison/revo-mirror-color-moq.webp)
 ## Conformità, report spettrali e test di terze parti
 
 **I dati di controllo interni sono forniti gratuitamente come riferimento qualità, mentre i test formali EN ISO 12312-1, ANSI Z80.3, AS/NZS 1067.1 o FDA 21 CFR 801.410 vengono eseguiti per singolo SKU finito presso laboratori terzi al costo effettivo.**

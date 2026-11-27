@@ -112,6 +112,8 @@ Parcourez les [options anti-lumière bleue](/fr/customization/lenses/blue-blocki
 - **Hydrophobe/Oléophobe (H/O) et Antibuée (AF) :** H/O repousse eau et traces digitales en couche externe ; AF étale la condensation en film transparent. Ces deux mécanismes s'opposant, spécifiez une seule priorité par face.
 - **Bords percés et contrôle des tensions :** les verres percés standard reçoivent un **biseau poli standard** sans frais de mise en route. Un **bord facetté (taille diamant)** multi-pans engendre un forfait unique de réglage machine de **USD 350** plus surcoût de taillage par paire. Thermoformage, meulage et serrage pouvant induire une **biréfringence de contrainte**, Kssmi contrôle tensions optiques et front d'onde après montage sur échantillons approuvés.
 
+![Traitement métallisé uniforme pleine surface sur échantillon de verre solaire galbé](/media/blogs/eyewear-lens-materials-comparison/lens-coatings-edge-finish.webp)
+
 Explorez nos 122 nuanciers sur la [page options verres](/fr/customization/lenses/) et nos équipements sur [personnalisation](/fr/customization/).
 
 ## Comment choisir le bon verre pour votre collection
@@ -143,6 +145,8 @@ Deux prestations spéciales sont également prises en charge sur projets confirm
 
 En série standard, nos verres proviennent d'usines optiques de premier plan à Shenzhen. Lorsqu'une marque prescrit un verrier international ou un programme polarisé d'usine partenaire dédiée, Kssmi approvisionne exactement la marque, la référence et le traitement validés — ou assemble les verres achetés par le client auprès de cette usine partenaire.
 
+
+![Coloris verre polarisé miroir Revo rouge soumis au minimum de 300 paires par couleur](/media/blogs/eyewear-lens-materials-comparison/revo-mirror-color-moq.webp)
 ## Conformité, courbes spectrales et laboratoires indépendants
 
 **Les mesures internes usine sont fournies gracieusement à titre indicatif, tandis que les essais officiels EN ISO 12312-1, ANSI Z80.3, AS/NZS 1067.1 ou FDA 21 CFR 801.410 sont menés par SKU fini en laboratoire tiers à prix coûtant.**
