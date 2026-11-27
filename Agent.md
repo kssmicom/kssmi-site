@@ -48,6 +48,15 @@ a production artifact or publishing the site.
 | `Cleanup-Logs.bat` | Reviews allowlisted untracked logs and this project's completed temporary tasks; standard build/cache directories are preserved; selected candidates go to the Recycle Bin; tracked files, credentials, data, links and other tasks are preserved |
 | `push-main.bat` | Checks repository, main branch, origin and remote tip; lets the user choose eligible files, review them and confirm PUSH; commits only the selection and verifies the remote after push |
 
+### Read-Only GitHub Actions Status Check (No `gh` CLI Required)
+
+`kssmicom/kssmi-site` workflow runs and job steps are publicly readable via the unauthenticated GitHub REST API. Even when `gh` CLI is not installed locally, check deployment status directly after pushing `main` until `Deploy KSSMI Site` finishes (`status: completed`, `conclusion: success`), and verify live production URLs (`https://kssmi.com/...`) instead of asking the user to check manually:
+
+```bash
+curl -fsSL "https://api.github.com/repos/kssmicom/kssmi-site/actions/runs?per_page=5"
+curl -fsSL "https://api.github.com/repos/kssmicom/kssmi-site/actions/runs/<run_id>/jobs"
+```
+
 Preview state, control files, PHP configuration/router and auxiliary logs
 are under `tep`; Astro caches and build output stay in the original project. Both
 Windows and macOS managed launchers bind `127.0.0.1` (`4322` default for Astro,
@@ -515,6 +524,12 @@ Astro's built-in `glob` content loader watches `src/content/` (with Vite polling
   `docs/promotion-policy.md`, `docs/deploy-fs-safety.md`,
   `docs/runtime-identity.md`, `docs/release-evidence.md` and
   `docs/rollback-drill.md`. Historical server backups are not live evidence.
+
+### Production Routing Precedence (OpenLiteSpeed `vhost.conf` + Cloudflare Cache)
+
+- On production VPS (`5.78.127.6`), OpenLiteSpeed `/usr/local/lsws/conf/vhosts/kssmi.com/vhost.conf` rewrite rules take precedence over `public/.htaccess`.
+- Any addition or change to root-level rewrite/redirect rules (such as `llms-*.txt` or new top-level sections) MUST be applied to BOTH `public/.htaccess` AND server `vhost.conf` (backup first, then `/usr/local/lsws/bin/lswsctrl restart`), followed by purging the affected URL(s) in Cloudflare cache if previously cached.
+- After `Deploy KSSMI Site` succeeds, run post-deploy live verification (`sync-blog-seo.mjs --live-only` / `sync-faq-seo.mjs --live-only`) against `https://kssmi.com` to confirm real HTTP status, 301 targets, JSON-LD, sitemaps, and `llms-*.txt`.
 
 ### Admin credentials (KS-05) (CRITICAL)
 - The admin password hash, reset tokens and credential generation live only

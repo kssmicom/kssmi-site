@@ -529,7 +529,7 @@ Kssmi is a leading B2B handmade eyewear and sunglasses manufacturer based in She
 ## Capabilities
 - OEM: produce eyewear to your exact specifications and designs
 - ODM: our in-house design team creates exclusive collections for your brand
-- Full customization: materials (acetate from Mazzucchelli, JIMEI, and JINYU; titanium from Kobe Steel and Baoji Titanium; metal, TR-90, carbon fiber), colors, logos, packaging
+- Full customization: materials (acetate from Mazzucchelli, JIMEI, and JINYU; titanium from Kobe Steel and Baoji Titanium; metal, TR-90, carbon fiber), colors, logos, and custom hardware (we do not manufacture or supply retail packaging; finished eyewear can be packed into customer-supplied packaging at no extra charge)
 - MOQ: 300 pairs per model (100 pairs/color) for acetate, metal, and titanium; 200 pairs/model for carbon fiber; 1,200 pairs/model for TR-90 (600 pairs/color)
 - Technical drawings (2D rendering): 3–10 working days
 - Fully custom sampling: 60 working days after drawing approval and full payment of the relevant fees, including tooling where required
@@ -538,12 +538,11 @@ Kssmi is a leading B2B handmade eyewear and sunglasses manufacturer based in She
 - Worldwide shipping via air courier (DHL or customer-designated forwarder) or sea freight
 
 ## Key Product Lines
-- Optical Frames (acetate, metal, titanium, rimless)
-- Sunglasses (acetate, metal, titanium, rimless)
-- Reading glasses, sports eyewear, kids frames
+- Optical Frames (acetate, metal, titanium, rimless; shipped with demo lenses — we do not produce prescription lenses)
+- Sunglasses (acetate, metal, titanium, rimless; UV400 lenses in TAC, CR-39, PC, and nylon)
 
-## Certifications
-FDA (US), CE (EU), RoHS, California Proposition 65 compliant.
+## Quality & Compliance
+Our quality management system is ISO 9001 certified (certificate copy available once an order is placed). Product conformity documents and independent third-party testing are confirmed separately for the destination market and finished specification.
 
 ## Contact
 - [Website](https://kssmi.com/)
