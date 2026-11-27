@@ -1,0 +1,78 @@
+---
+/**
+ * Article-specific visual summary block for /blog/eyewear-frame-materials-comparison/.
+ * Shows the 3 core MOQ & manufacturing tiers across frame materials at a glance.
+ */
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'en' } = Astro.props;
+
+const COPY: Record<string, { heading: string; cards: Array<{ label: string; title: string; summary: string; credit: string }> }> = {
+  en: {
+    heading: 'MOQ & Material Tiers at a Glance',
+    cards: [
+      {
+        label: '200 Pairs / Model',
+        title: 'Carbon Fiber',
+        summary: 'Layered carbon weave with ultra-light stiffness and PVD-plated hardware — the lowest per-model MOQ.',
+        credit: 'Fee credit: 1,000 pairs / 12 months',
+      },
+      {
+        label: '300 Pairs / Model',
+        title: 'Acetate, Metal & Titanium',
+        summary: 'Up to 3 colors × 100 pairs (stainless steel, nickel silver, pure/beta titanium, or JIMEI/JINYU acetate).',
+        credit: 'Fee credit: 1,000 pairs / 12 months',
+      },
+      {
+        label: '1,200 Pairs / Style',
+        title: 'TR-90 Injection',
+        summary: 'Dedicated steel molds for 3D wraparound bubbles & sport shields (≥600/color; sport custom 600/color).',
+        credit: 'Fee credit: 30,000 pairs / 24 months',
+      },
+    ],
+  },
+  zh: {
+    heading: '各材质起订量与工艺梯队一览',
+    cards: [
+      {
+        label: '200 付 / 款',
+        title: '碳纤维系列',
+        summary: '层压碳纤维编织结构，兼顾超轻与高刚性，配 PVD 电镀五金件，是全线最低的单款起订门槛。',
+        credit: '费用抵扣：12 个月累计 1,000 付',
+      },
+      {
+        label: '300 付 / 款',
+        title: '板材、金属与钛系列',
+        summary: '最多可分 3 色 × 100 付（316 不锈钢、白铜、纯钛 / β 钛及集美 / 金余板材均适用）。',
+        credit: '费用抵扣：12 个月累计 1,000 付',
+      },
+      {
+        label: '1,200 付 / 款',
+        title: 'TR-90 注塑系列',
+        summary: '必须开模的立体包裹与运动盾牌结构（常规每色至少 600 付，定制运动 TR-90 按 600 付 / 色）。',
+        credit: '费用抵扣：24 个月累计 30,000 付',
+      },
+    ],
+  },
+};
+
+const active = COPY[lang] || COPY.en;
+---
+
+<aside class="my-6 rounded-xl border border-stone-200/80 bg-[#faf8f5] p-5" aria-label={active.heading}>
+  <p class="text-xs font-bold uppercase tracking-wider text-[#8B7355] mb-3">{active.heading}</p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+    {active.cards.map((card) => (
+      <div class="rounded-lg bg-white p-4 shadow-xs border border-stone-200/60">
+        <span class="inline-block rounded-full bg-stone-100 px-2.5 py-0.5 text-[11px] font-bold text-[#5D4E37]">
+          {card.label}
+        </span>
+        <p class="mt-2 text-sm font-bold text-stone-900">{card.title}</p>
+        <p class="mt-1.5 text-xs text-stone-600 leading-relaxed">{card.summary}</p>
+        <p class="mt-2.5 text-[11px] font-semibold text-[#8B7355]">{card.credit}</p>
+      </div>
+    ))}
+  </div>
+</aside>
