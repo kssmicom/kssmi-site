@@ -4,6 +4,7 @@ title: "Materiali per montature occhiali a confronto: acetato, titanio, metallo,
 slug: "eyewear-frame-materials-comparison"
 category: "Material Science"
 blogTopic: "material-science"
+blogSubtopic: "acetate-mazzucchelli"
 cover: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 image: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 excerpt: "Il materiale della montatura decide molto più di peso ed estetica: determina percorso costruttivo, MOQ per modello, stampi necessari e fattibilità delle forme."

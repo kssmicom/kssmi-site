@@ -4,6 +4,7 @@ title: "眼镜架材料对比：板材、钛、金属、碳纤维与 TR-90 工�
 slug: "eyewear-frame-materials-comparison"
 category: "Material Science"
 blogTopic: "material-science"
+blogSubtopic: "acetate-mazzucchelli"
 cover: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 image: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 excerpt: "镜框材质不仅决定重量和质感，更直接决定制造路线、单款起订量、是否必须开模，以及立体曲面与五金细节在物理上能否实现。"

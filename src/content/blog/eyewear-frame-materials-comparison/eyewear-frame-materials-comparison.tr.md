@@ -4,6 +4,7 @@ title: "Gözlük Çerçeve Malzemeleri Karşılaştırması: Asetat, Titanyum, M
 slug: "eyewear-frame-materials-comparison"
 category: "Material Science"
 blogTopic: "material-science"
+blogSubtopic: "acetate-mazzucchelli"
 cover: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 image: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 excerpt: "Çerçeve malzemesi ağırlık ve görünümden fazlasını belirler: üretim rotasını, model başı MOQ'u, kalıp yatırımını ve fiziksel olarak üretilebilir formları belirler."

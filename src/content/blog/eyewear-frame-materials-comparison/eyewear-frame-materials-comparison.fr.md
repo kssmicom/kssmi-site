@@ -4,6 +4,7 @@ title: "Comparatif des matériaux de montures : acétate, titane, métal, fibre 
 slug: "eyewear-frame-materials-comparison"
 category: "Material Science"
 blogTopic: "material-science"
+blogSubtopic: "acetate-mazzucchelli"
 cover: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 image: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 excerpt: "Le matériau de la monture détermine bien plus que le poids et le style : il fixe le procédé de fabrication, le MOQ par modèle, l'outillage et les formes réalisables."

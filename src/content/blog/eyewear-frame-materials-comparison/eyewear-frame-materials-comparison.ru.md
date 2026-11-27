@@ -4,6 +4,7 @@ title: "Сравнение материалов оправы очков: аце�
 slug: "eyewear-frame-materials-comparison"
 category: "Material Science"
 blogTopic: "material-science"
+blogSubtopic: "acetate-mazzucchelli"
 cover: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 image: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 excerpt: "Материал оправы определяет больше, чем вес и внешний вид: он задаёт технологию производства, MOQ на модель, оснастку и физическую реализуемость формы."

@@ -4,6 +4,7 @@ title: "眼鏡フレーム素材の徹底比較：アセテート・チタン・
 slug: "eyewear-frame-materials-comparison"
 category: "Material Science"
 blogTopic: "material-science"
+blogSubtopic: "acetate-mazzucchelli"
 cover: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 image: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 excerpt: "フレーム素材は重さや質感だけでなく、製造工程・モデルごとのMOQ・金型投資・物理的に造形可能なデザインまで左右します。"

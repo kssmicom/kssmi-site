@@ -4,6 +4,7 @@ title: "Comparação de materiais para armações de óculos: acetato, titânio,
 slug: "eyewear-frame-materials-comparison"
 category: "Material Science"
 blogTopic: "material-science"
+blogSubtopic: "acetate-mazzucchelli"
 cover: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 image: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 excerpt: "O material da armação define muito mais que peso e visual: determina o processo de fabrico, o MOQ por modelo, os moldes necessários e que formas são viáveis."

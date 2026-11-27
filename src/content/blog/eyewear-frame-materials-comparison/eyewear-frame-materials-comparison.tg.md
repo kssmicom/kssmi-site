@@ -4,6 +4,7 @@ title: "Муқоисаи маводҳои чаҳорчӯбаи айнак: ат�
 slug: "eyewear-frame-materials-comparison"
 category: "Material Science"
 blogTopic: "material-science"
+blogSubtopic: "acetate-mazzucchelli"
 cover: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 image: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 excerpt: "Маводи чаҳорчӯба бештар аз вазн ва намудро муайян мекунад — он роҳи истеҳсол, MOQ барои ҳар модел, қолабсозӣ ва шаклҳои имконпазирро таъин мекунад."

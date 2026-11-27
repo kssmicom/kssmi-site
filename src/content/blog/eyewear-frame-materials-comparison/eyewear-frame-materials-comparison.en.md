@@ -4,6 +4,7 @@ title: "Eyewear Frame Materials Compared: Acetate, Titanium, Metal, Carbon Fiber
 slug: "eyewear-frame-materials-comparison"
 category: "Material Science"
 blogTopic: "material-science"
+blogSubtopic: "acetate-mazzucchelli"
 cover: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 image: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 excerpt: "Frame material decides more than weight and look — it sets your construction route, per-model MOQ, tooling commitment, and which shapes and details can be built."

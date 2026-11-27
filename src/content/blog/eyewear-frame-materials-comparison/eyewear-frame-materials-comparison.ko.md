@@ -4,6 +4,7 @@ title: "안경테 소재 비교: 아세테이트, 티타늄, 메탈, 카본 파�
 slug: "eyewear-frame-materials-comparison"
 category: "Material Science"
 blogTopic: "material-science"
+blogSubtopic: "acetate-mazzucchelli"
 cover: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 image: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 excerpt: "안경테 소재는 무게와 외관 이상을 결정합니다. 제조 공법, 모델별 MOQ, 금형 투자, 그리고 물리적으로 구현 가능한 디자인 범위를 좌우합니다."

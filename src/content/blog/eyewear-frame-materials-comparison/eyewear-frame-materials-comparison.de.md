@@ -4,6 +4,7 @@ title: "Brillenfassungs-Materialien im Vergleich: Acetat, Titan, Metall, Carbonf
 slug: "eyewear-frame-materials-comparison"
 category: "Material Science"
 blogTopic: "material-science"
+blogSubtopic: "acetate-mazzucchelli"
 cover: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 image: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 excerpt: "Das Fassungsmaterial bestimmt weit mehr als Gewicht und Optik: Es legt Fertigungsweg, MOQ je Modell, Werkzeugkosten und realisierbare Formen fest."

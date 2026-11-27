@@ -4,6 +4,7 @@ title: "So sánh chất liệu gọng kính: Acetate, Titan, Kim loại, Sợi C
 slug: "eyewear-frame-materials-comparison"
 category: "Material Science"
 blogTopic: "material-science"
+blogSubtopic: "acetate-mazzucchelli"
 cover: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 image: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 excerpt: "Chất liệu gọng kính quyết định nhiều hơn trọng lượng và kiểu dáng: nó định hình quy trình sản xuất, MOQ từng mẫu, khuôn mẫu và giới hạn tạo hình thực tế."

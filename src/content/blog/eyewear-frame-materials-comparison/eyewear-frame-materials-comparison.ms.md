@@ -4,6 +4,7 @@ title: "Perbandingan Bahan Bingkai Cermin Mata: Asetat, Titanium, Logam, Gentian
 slug: "eyewear-frame-materials-comparison"
 category: "Material Science"
 blogTopic: "material-science"
+blogSubtopic: "acetate-mazzucchelli"
 cover: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 image: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 excerpt: "Bahan bingkai menentukan lebih daripada berat dan rupa — ia menetapkan laluan pembinaan, MOQ setiap model, acuan dan bentuk yang boleh dihasilkan."

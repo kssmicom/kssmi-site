@@ -4,6 +4,7 @@ title: "आईवियर फ्रेम सामग्री की तु�
 slug: "eyewear-frame-materials-comparison"
 category: "Material Science"
 blogTopic: "material-science"
+blogSubtopic: "acetate-mazzucchelli"
 cover: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 image: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 excerpt: "फ्रेम सामग्री केवल वजन और लुक से कहीं अधिक तय करती है — यह निर्माण मार्ग, प्रति-मॉडल MOQ, टूलिंग लागत और भौतिक रूप से संभव आकृतियाँ निर्धारित करती है।"

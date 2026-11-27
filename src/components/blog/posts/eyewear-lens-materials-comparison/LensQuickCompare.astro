@@ -1,0 +1,423 @@
+---
+/**
+ * Article-specific visual summary block for /blog/eyewear-lens-materials-comparison/.
+ * Shows the 3 core lens substrate & color-MOQ tiers at a glance across all 17 languages.
+ */
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'en' } = Astro.props;
+
+const COPY: Record<string, { heading: string; cards: Array<{ label: string; title: string; summary: string; moqNote: string }> }> = {
+  en: {
+    heading: 'Lens Substrates & Color MOQs at a Glance',
+    cards: [
+      {
+        label: 'Full-Rim Clarity & Value',
+        title: 'CR-39 & TAC Polarized',
+        summary: 'CR-39 sets the clarity benchmark (Abbe ~58) for full-rim sunwear; TAC polarized fits budget full-rim lines outside extreme heat.',
+        moqNote: 'Solid 100 · Gradient 150 · Mirror 300 / color',
+      },
+      {
+        label: 'Rimless & Luxury: PA',
+        title: 'Nylon (Polyamide)',
+        summary: 'Ultra-light, high clarity (Abbe ~52), and shatter-resistant around drill holes — primary choice for rimless and half-rim frames.',
+        moqNote: 'Rimless/half-rim PA & PC · Custom tint 300/color',
+      },
+      {
+        label: 'High-Wrap & Impact',
+        title: 'Polycarbonate (PC) & Trivex',
+        summary: 'Thermoformed PC shields up to 7-base / 151° wrap; urethane-based Trivex (index 1.53) supplied to confirmed specification.',
+        moqNote: 'Spare replacement lenses: 100 pcs min.',
+      },
+    ],
+  },
+  zh: {
+    heading: '镜片基材与分色起订门槛一览',
+    cards: [
+      {
+        label: '全框清晰度与性价比',
+        title: 'CR-39 与 TAC 偏光',
+        summary: 'CR-39 清晰度标杆（Abbe ~58）适合全框太阳镜；TAC 偏光适合全框经济线，但不建议极炎热气候使用。',
+        moqNote: '实色 100 · 渐变 150 · 镜面 300 付/色',
+      },
+      {
+        label: '无框与轻奢首选：PA',
+        title: '尼龙（聚酰胺）镜片',
+        summary: '超轻、高清晰（Abbe ~52）且耐打孔抗碎裂，是无框打孔与露边半框太阳镜的优先方案。',
+        moqNote: '无框/半框优选 · 定制色 300 付/色',
+      },
+      {
+        label: '大弯盾牌与抗冲击',
+        title: 'PC 与 Trivex（1.53）',
+        summary: 'PC 可热成型至 7 弯 / 151° 一体盾牌；Trivex 兼顾轻盈抗冲击与高清晰度，按确认规格专料制作。',
+        moqNote: '随单加购替换镜片：100 片起订',
+      },
+    ],
+  },
+  it: {
+    heading: 'Substrati Lente e MOQ per Colore in Sintesi',
+    cards: [
+      {
+        label: 'Chiarezza Cerchio Intero',
+        title: 'CR-39 e TAC Polarizzato',
+        summary: 'CR-39 definisce il riferimento ottico (Abbe ~58) per solari a cerchio intero; il TAC polarizzato copre le linee economiche fuori dai climi torridi.',
+        moqNote: 'Tinta unita 100 · Sfumata 150 · Specchio 300 / colore',
+      },
+      {
+        label: 'Rimless e Lusso: PA',
+        title: 'Nylon (Poliammide)',
+        summary: 'Ultraleggero, nitido (Abbe ~52) e resistente ai fori — prima scelta per montature rimless forate e glasant a filo.',
+        moqNote: 'Rimless PA e PC · Tinta custom 300/colore',
+      },
+      {
+        label: 'Alta Curvatura e Antiurto',
+        title: 'Policarbonato (PC) e Trivex',
+        summary: 'Visiere PC termoformate fino a base 7 / 151°; Trivex a base uretanica (indice 1.53) fornito su specifica confermata.',
+        moqNote: 'Lenti di ricambio: min. 100 pezzi',
+      },
+    ],
+  },
+  es: {
+    heading: 'Sustratos de Lentes y MOQ por Color en Resumen',
+    cards: [
+      {
+        label: 'Claridad Aro Completo',
+        title: 'CR-39 y TAC Polarizado',
+        summary: 'CR-39 marca el estándar óptico (Abbe ~58) en sol de aro completo; el TAC polarizado cubre líneas económicas fuera de calor extremo.',
+        moqNote: 'Sólido 100 · Degradado 150 · Espejo 300 / color',
+      },
+      {
+        label: 'Al Aire y Lujo: PA',
+        title: 'Nailon (Poliamida)',
+        summary: 'Ultraligero, gran nitidez (Abbe ~52) y resistente alrededor de taladros — opción principal para monturas al aire y semi-al aire.',
+        moqNote: 'Al aire PA y PC · Tinte custom 300/color',
+      },
+      {
+        label: 'Alta Curvatura e Impacto',
+        title: 'Policarbonato (PC) y Trivex',
+        summary: 'Pantallas PC termoformadas hasta base 7 / 151°; Trivex de base uretánica (índice 1.53) suministrado bajo especificación.',
+        moqNote: 'Lentes de repuesto: mín. 100 uds.',
+      },
+    ],
+  },
+  fr: {
+    heading: 'Substrats de Verres et MOQ Couleur en un Coup d\'Œil',
+    cards: [
+      {
+        label: 'Netteté Cerclée et Valeur',
+        title: 'CR-39 et TAC Polarisé',
+        summary: 'Le CR-39 fixe la référence optique (Abbe ~58) pour les cerclées ; le TAC polarisé convient aux gammes économiques hors climat torride.',
+        moqNote: 'Uni 100 · Dégradé 150 · Miroir 300 / couleur',
+      },
+      {
+        label: 'Percé et Luxe : PA',
+        title: 'Nylon (Polyamide)',
+        summary: 'Ultraléger, très net (Abbe ~52) et résistant autour des perçages — choix prioritaire pour montures percées et demi-cerclées fil.',
+        moqNote: 'Percé PA et PC · Teinte custom 300/couleur',
+      },
+      {
+        label: 'Fort Galbe et Antichoc',
+        title: 'Polycarbonate (PC) et Trivex',
+        summary: 'Écrans PC thermoformés jusqu\'en base 7 / 151° ; Trivex uréthane (indice 1.53) fourni selon cahier des charges confirmé.',
+        moqNote: 'Verres de rechange : 100 pièces min.',
+      },
+    ],
+  },
+  de: {
+    heading: 'Glas-Substrate & Farb-MOQs auf einen Blick',
+    cards: [
+      {
+        label: 'Vollrand-Klarheit & Wert',
+        title: 'CR-39 & TAC Polarisiert',
+        summary: 'CR-39 setzt den Klarheitsmaßstab (Abbe ~58) für Vollrand-Sonnenbrillen; TAC passt für preiswerte Linien abseits extremer Hitze.',
+        moqNote: 'Vollton 100 · Verlauf 150 · Spiegel 300 / Farbe',
+      },
+      {
+        label: 'Randlos & Luxus: PA',
+        title: 'Nylon (Polyamid)',
+        summary: 'Ultraleicht, klar (Abbe ~52) und bruchfest an Bohrlöchern — erste Wahl für gebohrte Randlos- und Nylorfassungen.',
+        moqNote: 'Randlos PA & PC · Sonderfarbe 300/Farbe',
+      },
+      {
+        label: 'High-Wrap & Schlagfest',
+        title: 'Polycarbonat (PC) & Trivex',
+        summary: 'Thermogeformte PC-Shields bis Basis 7 / 151°; urethanbasiertes Trivex (Index 1.53) exakt nach bestätigter Spezifikation.',
+        moqNote: 'Ersatzgläser: min. 100 Stück',
+      },
+    ],
+  },
+  pt: {
+    heading: 'Substratos de Lentes e MOQs por Cor em Resumo',
+    cards: [
+      {
+        label: 'Nitidez em Aro Fechado',
+        title: 'CR-39 e TAC Polarizado',
+        summary: 'CR-39 define a referência óptica (Abbe ~58) para aro fechado; o TAC polarizado atende linhas econômicas fora de calor extremo.',
+        moqNote: 'Sólida 100 · Degradê 150 · Espelho 300 / cor',
+      },
+      {
+        label: 'Sem Aro e Luxo: PA',
+        title: 'Nylon (Poliamida)',
+        summary: 'Ultraleve, alta clareza (Abbe ~52) e resistente ao redor de furos — escolha principal para armações sem aro e fio de nylon.',
+        moqNote: 'Sem aro PA e PC · Cor custom 300/cor',
+      },
+      {
+        label: 'Alta Curvatura e Impacto',
+        title: 'Policarbonato (PC) e Trivex',
+        summary: 'Máscaras PC termoformadas até base 7 / 151°; Trivex de base uretânica (índice 1.53) fornecido sob especificação confirmada.',
+        moqNote: 'Lentes de reposição: mín. 100 peças',
+      },
+    ],
+  },
+  ru: {
+    heading: 'Краткий обзор субстратов линз и MOQ по цветам',
+    cards: [
+      {
+        label: 'Четкость для ободковых',
+        title: 'CR-39 и поляризация TAC',
+        summary: 'CR-39 — эталон четкости (Abbe ~58) для полноободковых оправ; TAC подходит для бюджетных линеек вне экстремальной жары.',
+        moqNote: 'Сплошной 100 · Градиент 150 · Зеркало 300 / цвет',
+      },
+      {
+        label: 'Безободковые и люкс: PA',
+        title: 'Нейлон (полиамид)',
+        summary: 'Сверхлегкий, четкий (Abbe ~52) и стойкий к трещинам у отверстий — основной выбор для безободковых оправ и лески.',
+        moqNote: 'Безободковые PA и PC · Спеццвет 300/цвет',
+      },
+      {
+        label: 'Глубокий обхват и удар',
+        title: 'Поликарбонат (PC) и Trivex',
+        summary: 'Термоформованные маски PC до 7-й базы / 151°; уретановый Trivex (индекс 1.53) поставляется по подтвержденной спецификации.',
+        moqNote: 'Запасные линзы: от 100 шт.',
+      },
+    ],
+  },
+  ja: {
+    heading: 'レンズ基材とカラー別MOQ早見表',
+    cards: [
+      {
+        label: 'フルリム高精細・コスパ',
+        title: 'CR-39 と TAC偏光',
+        summary: 'CR-39はフルリム用光学基準（Abbe ~58）。TAC偏光は酷暑地域を除くコスト重視フルリム向けです。',
+        moqNote: 'ソリッド 100 · グラデ 150 · ミラー 300 / 色',
+      },
+      {
+        label: 'リムレス・高級：PA',
+        title: 'ナイロン（ポリアミド）',
+        summary: '超軽量・高精細（Abbe ~52）でビス穴周りの耐割れ性に優れ、リムレスやナイロールの最優先選択肢です。',
+        moqNote: 'リムレス PA/PC · 特注色 300/色',
+      },
+      {
+        label: 'ハイカーブ・耐衝撃',
+        title: 'ポリカーボネート(PC) と Trivex',
+        summary: '熱成形PCシールドは7カーブ / 151°対応。ウレタン系Trivex（屈折率1.53）も確定仕様にて供給。',
+        moqNote: 'スペア交換レンズ：100枚〜',
+      },
+    ],
+  },
+  tr: {
+    heading: 'Bir Bakışta Cam Substratları ve Renk MOQ\'ları',
+    cards: [
+      {
+        label: 'Tam Çerçeve Netliği',
+        title: 'CR-39 ve TAC Polarize',
+        summary: 'CR-39 tam çerçevelerde netlik referansıdır (Abbe ~58); TAC polarize aşırı sıcak dışı ekonomik serilere uyar.',
+        moqNote: 'Düz 100 · Degrade 150 · Ayna 300 / renk',
+      },
+      {
+        label: 'Çerçevesiz ve Lüks: PA',
+        title: 'Naylon (Poliamid)',
+        summary: 'Ultra hafif, net (Abbe ~52) ve delik çevresinde kırılmaya dirençli — çerçevesiz ve misinalı modellerde ilk tercih.',
+        moqNote: 'Çerçevesiz PA ve PC · Özel renk 300/renk',
+      },
+      {
+        label: 'Yüksek Bombe ve Darbe',
+        title: 'Polikarbonat (PC) ve Trivex',
+        summary: '7-base / 151°\'ye kadar termoform PC kalkanlar; üretan bazlı Trivex (indeks 1.53) onaylı şartnameyle temin edilir.',
+        moqNote: 'Yedek camlar: min. 100 adet',
+      },
+    ],
+  },
+  ar: {
+    heading: 'نظرة سريعة على خامات العدسات والحد الأدنى للألوان',
+    cards: [
+      {
+        label: 'وضوح الإطار الكامل',
+        title: 'CR-39 و TAC المستقطب',
+        summary: 'يحدد CR-39 معيار الوضوح (Abbe ~58) للإطارات الكاملة؛ ويناسب TAC المستقطب الخطوط الاقتصادية خارج الحرارة الشديدة.',
+        moqNote: 'موحد 100 · متدرج 150 · مرآة 300 / لون',
+      },
+      {
+        label: 'بدون إطار وفاخر: PA',
+        title: 'النايلون (بولياميد)',
+        summary: 'خفة فائقة ووضوح عالٍ (Abbe ~52) ومقاومة للكسر حول الثقوب — الخيار الأساسي للإطارات بدون إطار ونصف الإطار.',
+        moqNote: 'بدون إطار PA و PC · لون خاص 300/لون',
+      },
+      {
+        label: 'انحناء عميق ومقاومة صدمات',
+        title: 'البولي كربونات (PC) و Trivex',
+        summary: 'دروع PC مشكّلة حرارياً حتى Base 7 / 151°؛ وتتوفر خامة Trivex اليوريثانية (معامل 1.53) حسب المواصفة المعتمدة.',
+        moqNote: 'عدسات غيار إضافية: 100 قطعة حد أدنى',
+      },
+    ],
+  },
+  ko: {
+    heading: '렌즈 기재 및 컬러별 MOQ 한눈에 보기',
+    cards: [
+      {
+        label: '풀림 선명도·가성비',
+        title: 'CR-39 및 TAC 편광',
+        summary: 'CR-39는 풀림 선글라스의 선명도 표준(Abbe ~58)이며, TAC 편광은 극심한 고열 외 실속형 풀림 라인에 적합합니다.',
+        moqNote: '솔리드 100 · 그라데 150 · 미러 300 / 컬러',
+      },
+      {
+        label: '무테·럭셔리 주력: PA',
+        title: '나일론 (폴리아미드)',
+        summary: '초경량·고선명(Abbe ~52)과 타공 부위 내파손성을 겸비해 무테 및 반무테 프레임의 최우선 추천 소재입니다.',
+        moqNote: '무테 PA/PC · 별도 조색 300/컬러',
+      },
+      {
+        label: '하이커브·내충격 실드',
+        title: '폴리카보네이트(PC) 및 Trivex',
+        summary: '7베이스 / 151°까지 열성형되는 PC 실드와 우레탄 기반 Trivex(굴절률 1.53)를 확정 사양에 맞춰 공급합니다.',
+        moqNote: '교체용 여분 렌즈: 최소 100장',
+      },
+    ],
+  },
+  hi: {
+    heading: 'एक नजर में लेंस सबस्ट्रेट और कलर MOQ',
+    cards: [
+      {
+        label: 'फुल-रिम स्पष्टता व मूल्य',
+        title: 'CR-39 व TAC पोलराइज्ड',
+        summary: 'फुल-रिम सनग्लासेस के लिए CR-39 स्पष्टता मानक (Abbe ~58) है; अत्यधिक गर्मी को छोड़कर किफायती लाइनों में TAC उपयुक्त है।',
+        moqNote: 'सॉलिड 100 · ग्रेडिएंट 150 · मिरर 300 / रंग',
+      },
+      {
+        label: 'रिमलेस व लग्जरी: PA',
+        title: 'नायलॉन (पॉलीमाइड)',
+        summary: 'अत्यंत हल्का, स्पष्ट (Abbe ~52) और ड्रिल होल के पास मजबूत — रिमलेस व हाफ-रिम फ्रेम के लिए प्रमुख विकल्प।',
+        moqNote: 'रिमलेस PA व PC · कस्टम रंग 300/रंग',
+      },
+      {
+        label: 'हाई-रैप व इम्पैक्ट',
+        title: 'पॉलीकार्बोनेट (PC) व Trivex',
+        summary: '7-बेस / 151° रैप तक थर्मोफॉर्म्ड PC शील्ड; यूरेथेन-आधारित Trivex (इंडेक्स 1.53) पुष्ट विनिर्देश पर उपलब्ध।',
+        moqNote: 'स्पेयर रिप्लेसमेंट लेंस: न्यूनतम 100 पीस',
+      },
+    ],
+  },
+  vi: {
+    heading: 'Tóm Tắt Chất Liệu Tròng & MOQ Theo Màu',
+    cards: [
+      {
+        label: 'Độ Nét Gọng Nguyên Viền',
+        title: 'CR-39 & TAC Phân Cực',
+        summary: 'CR-39 là chuẩn độ nét (Abbe ~58) cho kính mát nguyên viền; TAC phân cực hợp dòng tiết kiệm ngoài vùng quá nóng.',
+        moqNote: 'Màu đặc 100 · Chuyển sắc 150 · Gương 300 / màu',
+      },
+      {
+        label: 'Không Viền & Cao Cấp: PA',
+        title: 'Nylon (Polyamide)',
+        summary: 'Siêu nhẹ, sắc nét (Abbe ~52) và chịu lực tốt quanh lỗ khoan — lựa chọn hàng đầu cho gọng khoan và xẻ cước.',
+        moqNote: 'Không viền PA & PC · Màu riêng 300/màu',
+      },
+      {
+        label: 'Độ Cong Lớn & Chống Va Đập',
+        title: 'Polycarbonate (PC) & Trivex',
+        summary: 'Shield PC tạo hình nhiệt tới base 7 / 151°; Trivex gốc urethane (chiết suất 1.53) cung ứng đúng thông số chốt.',
+        moqNote: 'Tròng thay thế: tối thiểu 100 chiếc',
+      },
+    ],
+  },
+  jv: {
+    heading: 'Ringkesan Bahan Lensa & MOQ Warna',
+    cards: [
+      {
+        label: 'Kajelasan Pigura Penuh',
+        title: 'CR-39 & TAC Polarized',
+        summary: 'CR-39 dadi standar kajelasan (Abbe ~58) kanggo pigura penuh; TAC polarized cocog kanggo lini hemat ing njaba panas ekstrem.',
+        moqNote: 'Solid 100 · Gradasi 150 · Cermin 300 / warna',
+      },
+      {
+        label: 'Rimless & Mewah: PA',
+        title: 'Nylon (Poliamida)',
+        summary: 'Super entheng, bening (Abbe ~52) lan tahan retak ing bolongan bor — pilihan utama kanggo pigura rimless lan senar.',
+        moqNote: 'Rimless PA & PC · Warna kustom 300/warna',
+      },
+      {
+        label: 'Lengkung Dhuwur & Tahan Bentur',
+        title: 'Polikarbonat (PC) & Trivex',
+        summary: 'Shield PC thermoformed nganti base 7 / 151°; Trivex berbasis urethane (indeks 1.53) disedhiyakake miturut spek.',
+        moqNote: 'Lensa cadangan: min. 100 lembar',
+      },
+    ],
+  },
+  ms: {
+    heading: 'Ringkasan Substrat Kanta & MOQ Warna',
+    cards: [
+      {
+        label: 'Kejelasan Bingkai Penuh',
+        title: 'CR-39 & TAC Polarized',
+        summary: 'CR-39 menjadi penanda aras kejelasan (Abbe ~58) untuk bingkai penuh; TAC polarized sesuai untuk segmen bajet di luar haba ekstrem.',
+        moqNote: 'Padu 100 · Kecerunan 150 · Cermin 300 / warna',
+      },
+      {
+        label: 'Tanpa Bingkai & Mewah: PA',
+        title: 'Nilon (Poliamida)',
+        summary: 'Sangat ringan, jelas (Abbe ~52) dan kalis retak di sekitar lubang gerudi — pilihan utama bagi bingkai tanpa bingkai dan bertali.',
+        moqNote: 'Tanpa bingkai PA & PC · Warna khas 300/warna',
+      },
+      {
+        label: 'Lengkung Tinggi & Tahan Hentam',
+        title: 'Polikarbonat (PC) & Trivex',
+        summary: 'Perisai PC pembentukkan haba hingga base 7 / 151°; Trivex berasaskan uretana (indeks 1.53) dibekalkan mengikut spesifikasi.',
+        moqNote: 'Kanta gantian: min. 100 keping',
+      },
+    ],
+  },
+  tg: {
+    heading: 'Хулосаи маводи линза ва MOQ аз рӯи ранг',
+    cards: [
+      {
+        label: 'Возеҳии чаҳорчӯбаи пурра',
+        title: 'CR-39 ва TAC поляризатсионӣ',
+        summary: 'CR-39 меъёри возеҳӣ (Abbe ~58) барои чаҳорчӯбаи пурра аст; TAC барои силсилаҳои иқтисодӣ берун аз гармои шадид мувофиқ аст.',
+        moqNote: 'Яксон 100 · Градиент 150 · Оина 300 / ранг',
+      },
+      {
+        label: 'Берам ва люкс: PA',
+        title: 'Нейлон (полиамид)',
+        summary: 'Хеле сабук, возеҳ (Abbe ~52) ва устувор дар атрофи сӯрохиҳо — интихоби аввалин барои моделҳои берам ва нимрам.',
+        moqNote: 'Берам PA ва PC · Ранги махсус 300/ранг',
+      },
+      {
+        label: 'Каҷшавии баланд ва зарба',
+        title: 'Поликарбонат (PC) ва Trivex',
+        summary: 'Сипарҳои PC то базаи 7 / 151° термоформатсия мешаванд; Trivex уретанӣ (индекси 1.53) тибқи мушаххасоти тасдиқшуда меояд.',
+        moqNote: 'Линзаҳои эҳтиётӣ: ҳадди ақал 100 дона',
+      },
+    ],
+  },
+};
+
+const active = COPY[lang] || COPY.en;
+---
+
+<aside class="my-6 rounded-xl border border-stone-200/80 bg-[#faf8f5] p-5" aria-label={active.heading}>
+  <p class="text-xs font-bold uppercase tracking-wider text-[#6B583E] mb-3">{active.heading}</p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+    {active.cards.map((card) => (
+      <div class="rounded-lg bg-white p-4 shadow-xs border border-stone-200/60">
+        <span class="inline-block rounded-full bg-stone-100 px-2.5 py-0.5 text-[11px] font-bold text-[#5D4E37]">
+          {card.label}
+        </span>
+        <p class="mt-2 text-sm font-bold text-stone-900">{card.title}</p>
+        <p class="mt-1.5 text-xs text-stone-600 leading-relaxed">{card.summary}</p>
+        <p class="mt-2.5 text-[11px] font-semibold text-[#6B583E]">{card.moqNote}</p>
+      </div>
+    ))}
+  </div>
+</aside>

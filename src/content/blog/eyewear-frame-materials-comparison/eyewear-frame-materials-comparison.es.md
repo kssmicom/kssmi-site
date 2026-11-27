@@ -4,6 +4,7 @@ title: "Comparativa de materiales para monturas de gafas: acetato, titanio, meta
 slug: "eyewear-frame-materials-comparison"
 category: "Material Science"
 blogTopic: "material-science"
+blogSubtopic: "acetate-mazzucchelli"
 cover: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 image: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 excerpt: "El material de la montura define mucho más que peso y estética: marca la ruta de fabricación, el MOQ por modelo, los moldes y qué formas son viables."

@@ -4,6 +4,7 @@ title: "مقارنة مواد إطارات النظارات: الأسيتات، 
 slug: "eyewear-frame-materials-comparison"
 category: "Material Science"
 blogTopic: "material-science"
+blogSubtopic: "acetate-mazzucchelli"
 cover: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 image: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 excerpt: "مادة الإطار تحدد أكثر من الوزن والشكل؛ فهي تضبط مسار التصنيع، والحد الأدنى للطلب لكل موديل، والقوالب المطلوبة، والأشكال القابلة للتنفيذ فعلياً."

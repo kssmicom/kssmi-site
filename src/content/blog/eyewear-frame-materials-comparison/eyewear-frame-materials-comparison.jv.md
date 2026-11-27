@@ -4,6 +4,7 @@ title: "Perbandingan Bahan Bingkai Kacamata: Asetat, Titanium, Logam, Serat Karb
 slug: "eyewear-frame-materials-comparison"
 category: "Material Science"
 blogTopic: "material-science"
+blogSubtopic: "acetate-mazzucchelli"
 cover: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 image: "/media/blogs/eyewear-frame-materials-comparison/cover.webp"
 excerpt: "Bahan bingkai nemtokake luwih saka bobot lan tampilan: bahan iki nemtokake jalur manufaktur, MOQ saben model, cetakan lan wujud sing bisa digawe."
