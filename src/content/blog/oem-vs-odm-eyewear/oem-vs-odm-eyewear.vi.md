@@ -186,8 +186,6 @@ Chúng tôi không báo giá một dự án trước khi xem thiết kế hoặc
 - thị trường đích;
 - ngày ra mắt dự kiến.
 
-Gửi các thông tin này qua [trang báo giá](/vi/quote/). Chúng tôi thường phản hồi trong vòng một ngày làm việc, và báo giá sẽ được gửi sau khi thông tin đầu vào đầy đủ — thường trong khoảng ba ngày làm việc. [Trang tùy chỉnh](/vi/customization/) liệt kê những hạng mục có thể thay đổi, và mục [FAQ](/vi/faq/) giải thích chi tiết hơn về mức tối thiểu, mẫu, thanh toán và quyền sở hữu.
-
 ## Câu hỏi thường gặp (FAQ)
 
 ### 1. Sự khác biệt giữa OEM, ODM và private label là gì?
@@ -229,9 +227,10 @@ Không. Các mẫu catalogue là mẫu tham khảo và mẫu đánh giá; mọi 
 ### 10. Bạn có thể cung cấp bao bì bán lẻ hoặc tròng kính thuốc không?
 
 Không. Chúng tôi không sản xuất hay cung cấp bao bì bán lẻ, và không sản xuất tròng kính có độ. Gọng kính cận được giao kèm tròng demo.
-
 ---
 
-Kssmi đã sản xuất kính mắt tại Thâm Quyến từ năm 2003, với đội ngũ thiết kế, kỹ thuật, gia công CNC, đánh bóng, lắp ráp và kiểm soát chất lượng nội bộ. Acetate được nhập từ Mazzucchelli, JIMEI và JINYU; titan từ Kobe Steel và Baoji Titanium. Xem thêm thông tin về nhà máy tại [trang giới thiệu](/vi/about-us/).
+## Tóm tắt
 
-**Sẵn sàng chọn lộ trình phù hợp?** Hãy gửi thiết kế, mẫu tham khảo hoặc ý tưởng của bạn qua [trang báo giá](/vi/quote/) cùng số lượng dự kiến và ngày ra mắt. Chúng tôi sẽ xác nhận lộ trình, mức tối thiểu áp dụng và chi phí phát triển trước khi bất kỳ công việc tính phí nào bắt đầu.
+Hãy bắt đầu từ chính tài liệu bạn đang có hôm nay: bản thông số hoàn chỉnh đi thẳng vào OEM, bản phác thảo hoặc ảnh tham khảo bắt đầu với ODM, còn mẫu catalogue giúp kiểm chứng chất lượng trước khi đầu tư khuôn riêng. Trước khi làm mẫu, thống nhất rõ MOQ từng mẫu (300 cặp acetate, kim loại, titan; 200 cặp sợi carbon; 1.200 cặp TR-90), duyệt bản vẽ, quyền sở hữu khuôn và điều kiện khấu trừ.
+
+Hãy gửi thiết kế, mẫu tham khảo hoặc ý tưởng kèm số lượng và ngày ra mắt qua [biểu mẫu yêu cầu báo giá bên dưới](#inquiry-form-section) để xác nhận lộ trình, mức tối thiểu và chi phí phát triển trước khi phát sinh phí.

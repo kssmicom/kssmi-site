@@ -87,20 +87,19 @@ Pour les programmes nord-américains exigeant le **Trivex** (indice 1.53), Kssmi
 
 Pour des lunettes écran sans correction, gardez deux repères clairs :
 
-- **Conception spectrale avant le discours marketing :** le filtrage atténue sélectivement des bandes d'onde ciblées par absorption, teinte ou couche. Validez bande ciblée, taux de filtration et nuance de base (base neutre claire vs jaune léger/soutenu) plutôt qu'une simple mention générique.
+- **Conception spectrale avant le discours marketing :** le filtrage atténue sélectivement des bandes d'onde ciblées par absorption, teinte ou couche. Validez bande ciblée, taux de filtration et nuance de base (base neutre claire vs jaune léger/soutenu) plutôt qu'une simple mention générique. Le filtrage sélectif modifie l’équilibre spectral ; il n’augmente pas la résolution optique et ne constitue pas une allégation médicale.
 - **Normes distinctes :** les montures optiques nues destinées au montage Rx relèvent de l'**ISO 12870**, séparée des normes solaires finies comme **EN ISO 12312-1** ; poser un verre démo ne soumet pas la monture aux normes solaires.
 
 ![Démonstration de filtrage spectral sur verre optique neutre anti-lumière bleue](/media/blogs/eyewear-lens-materials-comparison/blue-light-lenses.webp)
 
 Parcourez les [options anti-lumière bleue](/fr/customization/lenses/blue-blocking/) et les [montures optiques](/fr/product/optical-frames/).
-
 ## Fonctions optiques vs traitements de surface
 
 **Les fonctions optiques modifient la lumière traversant le verre (luminosité, UV, éblouissement ou spectre) ; les traitements de surface agissent contre rayures, reflets internes, eau ou buée — et vernis durci (HC) comme antireflet (AR) ne sont jamais inclus automatiquement par défaut.**
 
 ### Fonctions optiques (validées sur verre fini)
 
-- **Filtrage solaire et VLT / CAT 0–4 :** la transmission visible (VLT) se mesure en instrument, jamais à l'œil nu. **CAT.3 (8–18 % VLT)** forme le standard solaire et conduite de jour ; **CAT.1 (43–80 % VLT)** et **CAT.2 (18–43 % VLT)** servent aux teintes mode, dégradés et temps couvert.
+- **Filtrage solaire et VLT / CAT 0–4 :** la transmission visible (VLT) se mesure en instrument, jamais à l'œil nu. **CAT.3 (8–18 % VLT)** forme le standard solaire et conduite de jour ; **CAT.1 (43–80 % VLT)** et **CAT.2 (18–43 % VLT)** servent aux teintes mode, dégradés et temps couvert. Avant de fixer la VLT, vérifiez les exigences de conduite du marché de destination.
 - **Protection UV400 :** bloque UVA/UVB via substrat, additifs, teinte ou couche. Un verre clair formulé atteint UV400, tandis qu'un verre foncé sans absorbeur UV échoue sans vérification finie.
 - **Polarisation :** supprime les reflets horizontaux (eau, route, neige) indépendamment de la teinte, de l'UV400 ou du miroir ; la plupart des références CAT.3 [grises](/fr/customization/lenses/grey/), [marron](/fr/customization/lenses/brown/) et [vertes](/fr/customization/lenses/green/) acceptent un empilement polarisé.
 - **Photochromique et Haut Contraste (Hi-Con) :** la réactivité photochromique dépend de l'UV et de la température ambiante (atténuée derrière un pare-brise) ; les teintes haut contraste accentuent des bandes spectrales sans modifier le nombre d'Abbe.
@@ -145,7 +144,6 @@ Deux prestations spéciales sont également prises en charge sur projets confirm
 
 En série standard, nos verres proviennent d'usines optiques de premier plan à Shenzhen. Lorsqu'une marque prescrit un verrier international ou un programme polarisé d'usine partenaire dédiée, Kssmi approvisionne exactement la marque, la référence et le traitement validés — ou assemble les verres achetés par le client auprès de cette usine partenaire.
 
-
 ![Coloris verre polarisé miroir Revo rouge soumis au minimum de 300 paires par couleur](/media/blogs/eyewear-lens-materials-comparison/revo-mirror-color-moq.webp)
 ## Conformité, courbes spectrales et laboratoires indépendants
 
@@ -155,23 +153,6 @@ Kssmi n'étend jamais le rapport d'un autre modèle à toute l'usine : chaque SK
 
 - **Courbes de transmission spectrale :** données sur demande de **280 à 780 nm par pas de 5 nm** (tableau, graphe, coordonnées CIE et fichier CSV natif précisant instrument, plage, épaisseur et état d'échantillon).
 - **Laboratoires accrédités :** les tests pour États-Unis, UE (CE / EN ISO 12312-1), Royaume-Uni ou Australie (**AS/NZS 1067.1**, récemment autour de **USD 1 139** par référence solaire finie) sont confiés à SGS, Intertek ou TÜV à coût réel.
-
-## Ce que nous ne réalisons pas
-
-- **Pas de verres correcteurs (Rx) :** nos montures optiques sont livrées avec verres démo neutres ou anti-lumière bleue sans correction.
-- **Pas de fabrication ni de fourniture de packaging retail :** étuis, boîtes et chiffons sont commandés à un spécialiste puis expédiés chez nous pour conditionnement sans frais.
-- **Pas de vente sur stock ni de verres isolés sans production :** toute production est réalisée à la commande de la marque.
-
-## Éléments à envoyer pour l'étude de spécification
-
-Pour verrouiller MOQ couleur, tolérances de bord et compatibilité des traitements dès le chiffrage, envoyez :
-
-- dessin de monture, photo de référence ou code catalogue (percé, demi-cerclé ou masque) ;
-- matériau souhaité (TAC, CR-39, nylon, PC ou Trivex) et code nuance KS-LN ;
-- fonctions et traitements voulus (UV400, polarisé, dégradé, miroir, photochromique, lumière bleue, HC, AR interne, H/O ou AF) ;
-- finition de bord pour percé (biseau poli standard vs bord facetté diamant) ;
-- quantité par coloris et catégorie VLT / CAT cible ;
-- marché de destination et normes d'essai demandées.
 
 ## FAQ
 
@@ -221,6 +202,8 @@ Kssmi fournit gratuitement les mesures usine et des courbes 280–780 nm (pas de
 
 ---
 
-Depuis 2003, Kssmi fabrique des lunettes à Shenzhen en réunissant ingénierie montures interne, partenaires optiques majeurs de Shenzhen et contrôle qualité à 100 % avant expédition. En savoir plus sur [à propos](/fr/about-us/) ou consulter la [FAQ](/fr/faq/).
+## Résumé
 
-**Prêt à valider vos spécifications verres ?** Transmettez modèles, substrats souhaités, références KS-LN, revêtements, quantités par coloris et marché cible via la [page devis](/fr/quote/). Nous confirmons faisabilité technique, seuils couleurs et coûts détaillés avant tout engagement payant.
+La performance d'un verre dépend de l'empilement fini, des traitements et des MOQ couleur, pas du seul nom de résine : choisissez le nylon (PA) ou le PC en percé et fort galbe, le CR-39 ou le TAC (hors chaleur extrême) en cerclé, et précisez HC, AR interne, VLT/CAT ainsi que les minima (100 uni / 150 dégradé / 300 miroir ou custom).
+
+Transmettez vos modèles, substrats, codes KS-LN, traitements et quantités par coloris sur la [formulaire de demande ci-dessous](#inquiry-form-section) pour valider faisabilité et coûts détaillés avant tout engagement payant.

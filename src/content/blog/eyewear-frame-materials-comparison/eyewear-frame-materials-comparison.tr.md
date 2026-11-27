@@ -35,19 +35,19 @@ Kssmi bünyesinde altı ana malzeme rotası neredeyse tüm özel gözlük projel
 | Alpaka (nikel gümüşü) | İşlenmiş/döküm metal alaşım; kaplama | Daha yüksek yoğunluk (~1,9× titanyum); dolgun metal hissi | Altın kaplama ve keskin döküm süslemeler | 300 adet/model (en fazla 3 × 100) | Döküm süslemeli tasarımlarda titanyuma ekonomik alternatif |
 | Saf ve beta titanyum | Hassas titanyum tel/sac; kaynaklı veya vidasız | Tüy hafifliğinde; korozyona dirençli; yüksek esneklik (beta) | PVD kaplamalar ve sade metal tonları | 300 adet/model (en fazla 3 × 100) | Premium konfor, ince profiller ve vidasız yapılar |
 | Karbon fiber | Katmanlı dokuma karbon kompozit | Ultra hafif, rijit, teknik görünüm | PVD metal aksamlı karbon örgü dokusu | 200 adet/model | Spor, performans ve teknik stil koleksiyonları |
-| TR-90 | Özel çelik enjeksiyon kalıplarında termoplastik naylon | Çok hafif, esnek, darbe dayanımlı | Kalıplanmış düz/yarı saydam renkler; boyalı/kaplı | 1.200 adet/model (≥600/renk); özel spor 600/renk | Sarma spor maskeler, 3D kavisler ve yüksek hacim |
+| TR-90 | Özel çelik enjeksiyon kalıplarında termoplastik naylon | Çok hafif, esnek, darbe dayanımlı | Kalıplanmış düz/yarı saydam renkler; boyalı/kaplı | 1.200 adet/model; ≥600 adet/renk | Sarma spor maskeler, 3D kavisler ve yüksek hacim |
 
 *\*Ham madde minimumları asetat tedarikçisine göre değişir; aşağıdaki asetat bölümüne bakın.*
 
 ## Asetat çerçeveler: renk derinliği, polisaj ve form sınırları
 
-**Selüloz asetat, katmanlı plakalardan kesilen bitki bazlı bir termoplastiktir; zengin renkler ve el polisajlı kenarlar için idealdir ancak düz plaka işleme, enjeksiyon kalıplı 3D bombeli formları üretemez.**
+**Selüloz asetat, katmanlı levhalardan işlenen bitki bazlı bir termoplastiktir; derin renkler ve elle parlatılmış kenarlar için uygundur.**
 
 Asetat çerçevelerimiz beş aşamalı yüzey işleminden geçer: plaka zımparalama, tambur kaba polisaj, yüksek parlaklıkta ince polisaj, elde kenar düzeltme ve montaj öncesi kalite kontrol. Asetat saplar yapısal dayanım ve ayar için normalde iç metal tel çekirdek gerektirir. Alt cam kenarı açık yarım çerçeveli tasarımlar da hassas açılmış kanala oturan şeffaf misina ipi ile asetattan üretilebilir.
 
 Bir asetat tasarımını kilitlemeden önce üç mühendislik ve tedarik sınırı önemlidir:
 
-1. **Form ve baz eğri sınırları.** Yumuşak sarma kavisli, belirgin baz eğrili şişkin 3D "balon" ön yüzey enjeksiyon kalıplamaya özgüdür ve düz asetat plakadan freze edilemez. Böyle bir referansta uygulanabilir yollar, birebir görünüm için TR-90 enjeksiyon ya da tasarımı asetat plaka sınırlarına uyarlamaktır.
+1. **Form ve baz eğri sınırları.** TR-90 tarzı saran bir kalkan formunu asetattan üretmek için burun köprüsü konumuna dikey bir destek eklenmelidir. Aynı kesintisiz yapı bu destek olmadan doğrudan kopyalanamaz; numuneden önce uyarlanan köprü yapısı çizimde onaylanmalıdır.
 2. **Dahili yaylı menteşeler.** Alıcılar asetatta "gizli menteşe" talep ettiğinde uygulanabilir yapı, sapın açılması için gerekli küçük mekanik boşluğa sahip **asetat sap içine yerleştirilmiş dahili yaylı menteşedir**. Sıfır boşluklu tam görünmezlik fiziksel olarak imkânsızdır ve yarı saydam asetatta iç mekanizma kısmen görünür.
 3. **Bitmiş ürün MOQ'u ve ham madde MOQ'u.** Bitmiş asetat siparişleri model başına 300 adetten başlar (en fazla 3 renk × 100 adet). Önde gelen Çinli üreticilerde (JIMEI / JINYU) her renk 100 adetten başlar. İtalyan Mazzucchelli plakaları ise tek model tek renkte yaklaşık 1.000 adede denk gelen bir ham madde alım eşiğine sahiptir; bu nedenle İtalyan asetatta 300 adetlik ilk parti fiilen model başına tek renkten oluşur. Fiyat rehberi olarak Mazzucchelli, standart asetata kıyasla standart renklerde **çift başına yaklaşık USD 3–5** (kaplumbağa desenlerinde **USD 5–10**) daha yüksektir ve teklifte kesinleşir. Ayrıca asetat renk değişimi veya kırılganlık riski olmadan süresiz depolanamaz; ayrılan plakalar makul sürede üretime alınmalıdır.
 
@@ -64,7 +64,7 @@ Her iki metal de model başına 300 adetlik standart minimumu (en fazla 3 renk �
 - **316 Paslanmaz çelik** ince ön çerçeve, ayarlanabilir sap ve pratik maliyet sunar; karma modellerde asetat veya TR-90 saplarla iyi eşleşir ancak ince döküm süslemeleri net vermez.
 - **Alpaka (nikel gümüşü)** kolay işlenir, altın kaplamayı temiz tutar ve kaş veya sap üzerindeki keskin döküm süslemeleri net biçimde çıkarır. Metal parçaları titanyumdan yaklaşık 1,9× daha yoğundur (≈8,7 vs ≈4,5 g/cm³); çeliğin döküm sınırlarına takılmadan daha tok bir ağırlık verir.
 
-Yüzey seçimi de maliyet ve teslim süresini etkiler. Standart PVD renkleri normal takvimde ilerlerken, geniş ayna parlaklığında kaplamalar homojenlik için çok katmanlı döngü gerektirir (genellikle 2–3 veya daha fazla geçiş, rehber fiyat olarak **geçiş başına yaklaşık USD 18**, kesin sayı teklifte netleşir); bu da birim maliyet, MOQ ve süreyi artırır.
+Yüzey seçimi de maliyet ve teslim süresini etkiler. Standart PVD renkleri normal takvimde ilerlerken, geniş ayna parlaklığında kaplamalar homojenlik için çok katmanlı döngü gerektirir (genellikle 2–3 veya daha fazla geçiş, rehber fiyat olarak **çerçeve başına her geçiş için yaklaşık USD 0,60**, kesin sayı teklifte netleşir); bu da birim maliyet, MOQ ve süreyi artırır.
 
 ![PVD kaplamalı özel metal güneş gözlüğü çerçevesi](/media/blogs/eyewear-frame-materials-comparison/metal-frames.webp)
 
@@ -99,11 +99,11 @@ Katmanlı karbon fiber dokumadan üretilen çerçeveler minimum ağırlıkta rij
 
 **TR-90, özel enjeksiyon kalıplarında üretilen esnek bir termoplastik naylondur — sarma spor maskeler, 3D şekillendirilmiş kavisler ve darbe dayanımlı hacimli seriler için temel çözümdür (standart MOQ 1.200 adet).**
 
-CNC kesim asetat veya şekillendirilmiş metalin aksine TR-90 doğrudan çelik üretim kalıplarına enjekte edilir. Bu sayede plaka malzemelerin ulaşamayacağı derin sarma açıları ve 3D sap formları elde edilir. Spor TR-90 projeleri sıfırdan başlamak yerine özel spor tasarım şablonlarımızla da başlatılabilir.
+CNC kesim asetat veya şekillendirilmiş metalin aksine TR-90 doğrudan çelik üretim kalıplarına enjekte edilir. Bu sayede derin sarma açıları ve 3D sap formları elde edilir. Spor TR-90 projeleri sıfırdan başlamak yerine özel spor tasarım şablonlarımızla da başlatılabilir.
 
 TR-90 için iki ticari kural geçerlidir:
 
-1. **Özel kalıp ve daha yüksek MOQ.** Standart TR-90 modelleri stil başına 1.200 adet (renk başına en az 600 adet) gerektirir; tam özel spor TR-90 çerçeveler renk başına 600 adet tabanını izler. Mevcut bir formu kullanmak yeni kalıp maliyetini düşürür ancak model başı MOQ'u kaldırmaz.
+1. **Özel kalıp ve daha yüksek MOQ.** Özel spor modelleri dahil her TR-90 modeli için model başına en az 1.200 adet ve o modelin her rengi için en az 600 adet gerekir. Mevcut şekli kullanmak yeni kalıptan tasarruf sağlar, ancak iki minimumu da düşürmez.
 2. **Kalıp öncesi doğrulama ve ücret mahsubu.** Özel enjeksiyon formlarda çelik kalıplar kesilmeden önce oturuş ve ergonomi doğrulanır; TR-90 enjeksiyon kalıp ve numune ücretleri, aynı model **24 ay içinde toplam 30.000 adede** ulaştığında (navlun ve vergiler hariç) mahsup edilir ve teklifte belirtilir.
 
 ![Ergonomik spor ve gün boyu kullanım için hafif enjeksiyon kalıp termoplastik çerçeve yapısı](/media/blogs/eyewear-frame-materials-comparison/tr90-injection-frames.webp)
@@ -115,7 +115,7 @@ TR-90 için iki ticari kural geçerlidir:
 - **Hibrit yapılar.** Metal ön çerçeveyi asetat veya TR-90 saplarla birleştirmek ince ön görünüm ile konforlu kulak temasını dengeler. Malzeme veya yapıdaki her değişiklik kendi MOQ'una sahip ayrı bir model oluşturur.
 - **Çerçevesiz (delikli cam) uygunluğu.** Metal ve titanyumda standart olan bu yapı teknik olarak asetat ve TR-90'da da uygulanabilir; ancak döküm süslemeli altın kaplama metal görünümünü vermez ve numune öncesi estetik uyum açıkça teyit edilir. Delikli veya açık kenarlı modellerde kırılma direnci için **naylon camlar** önerilir ve cam değişimi bir optisyen tarafından yapılmalıdır.
 - **Menteşeler ve aksam.** Çerçeve tasarımına uyumlu 3, 5 ve 7 halkalı menteşeler sunuyoruz. Standart 300 adetlik siparişlerde uluslararası markalarla eşdeğer hassasiyette Shenzhen menteşeleri kullanılır; uluslararası marka menteşeler talep edildiğinde model başına yaklaşık 3.000 adetlik kendi tedarik minimumuna sahiptir.
-- **Cam minimumları çerçeve minimumlarının üzerine eklenir.** Güneş gözlüklerinde TAC, CR-39, PC veya naylon (özel talepte Trivex) UV400 camlar kullanılır. Standart düz cam renkleri renk başına 100 adetten, degradeler 150 adetten, aynalı veya katalog dışı özel renkler ise 300 adetten başlar. Bu nedenle çerçeve 100 adede izin verse bile aynalı camlı bir renk 300 adet gerektirir.
+- **Cam minimumları çerçeve minimumlarının üzerine eklenir.** Güneş gözlüklerinde TAC, CR-39, PC veya naylon (özel talepte Trivex) UV400 camlar kullanılır. Standart düz cam renkleri renk başına 100 çiftten, degradeler 150 çiftten, aynalı veya katalog dışı özel renkler ise 300 çiftten başlar. Bu nedenle çerçeve 100 adede izin verse bile aynalı camlı bir renk 300 çift gerektirir.
 
 ![Metal köprü ve saplı delikli çerçevesiz güneş gözlüğü](/media/blogs/eyewear-frame-materials-comparison/rimless-hybrid-frames.webp)
 
@@ -123,7 +123,7 @@ Cam malzemeleri ve kaplamalar için [cam seçenekleri sayfasını](/tr/customiza
 
 ## Koleksiyonunuz için doğru malzemeyi nasıl seçersiniz
 
-1. **Önce fiziksel form uygunluğunu kontrol edin.** Referansta derin sarma kavisler veya şişkin 3D ön yapı varsa asetat fiyatlaması istemeden önce TR-90 enjeksiyonla başlayın veya silüeti uyarlayın.
+1. **Önce fiziksel form uygunluğunu kontrol edin.** TR-90 tarzı saran bir kalkan formunu asetattan üretmek için burun köprüsü konumuna dikey bir destek eklenmelidir.
 2. **Ağırlığı kullanım süresine göre eşleştirin.** Tüm gün takılan optik ve aktif spor ürünlerinde her gram önemlidir — beta titanyum, saf titanyum, karbon fiber veya TR-90 tercih edin; iddialı moda güneş gözlükleri masif asetatı iyi taşır.
 3. **Renk dağılımını ham madde kurallarına uydurun.** 300 adetlik başlangıçta 3 × 100 renk bölmek için Mazzucchelli veya TR-90 değil, metal, titanyum ya da JIMEI/JINYU asetat seçin.
 4. **Aksam ve kaplamayı fiyat segmentiyle dengeleyin.** Döküm süslemeler için çelik yerine alpaka seçin; çok katmanlı ayna kaplama için ek maliyet ve süre planlayın.
@@ -135,7 +135,7 @@ Kssmi'de miktarlar **model başına ve tek üretim partisi olarak** uygulanır �
 
 | Aşama / koşul | Asetat, paslanmaz çelik, alpaka ve titanyum | Karbon fiber | TR-90 enjeksiyon |
 |---|---|---|---|
-| Üretim MOQ'u | 300 adet/model (en fazla 3 × 100) | 200 adet/model | 1.200 adet/stil (≥600/renk); özel spor 600/renk |
+| Üretim MOQ'u | 300 adet/model (en fazla 3 × 100) | 200 adet/model | 1.200 adet/model; ≥600 adet/renk |
 | 2D teknik çizim | 3–10 iş günü (3 revizyona kadar) | 3–10 iş günü | 3–10 iş günü |
 | Özel numune ve kalıp | Çizim onayı ve tam ödeme sonrası 60 iş günü | 60 iş günü | 60 iş günü |
 | Seri üretim | Numune onayı ve %50 kapora sonrası 60 iş günü | 60 iş günü | 60 iş günü |
@@ -145,22 +145,6 @@ Numune, geliştirme ve kalıp ücretleri aşama başlamadan %100 peşin ödenir;
 
 ![Şekillendirilmiş asetat ön yüzeyi hassas metal köprü ve saplarla birleştiren özel güneş gözlüğü](/media/blogs/eyewear-frame-materials-comparison/material-selection-hybrid.webp)
 
-## Yapmadığımız işler
-
-- **Hazır stok satmıyoruz.** Katalog çerçeveleri kalite değerlendirme numunesi ve yapısal referans içindir; her seri üretim bir marka için sipariş üzerine yapılır.
-- **Perakende ambalaj üretmiyor veya tedarik etmiyoruz.** Kılıf, kutu ve bezleri uzman tedarikçiden sipariş edip bize gönderin; bitmiş gözlükleri ücretsiz olarak ambalajlarınıza paketleriz.
-- **Numaralı reçete camı üretmiyoruz.** Optik çerçeveler yerel optisyen montajı için şeffaf demo camlarla sevk edilir.
-
-## Malzeme uygunluk kontrolü için ne göndermelisiniz
-
-Teklif öncesinde mühendislik ekibimiz doğru malzeme rotasını, MOQ'u ve maliyet yapısını teyit etmek için tasarımınızı inceler. Şunları paylaşın:
-
-- teknik çizim, eskiz, referans görsel veya katalog SKU'su;
-- hedef pazar ve perakende fiyat segmenti;
-- model başına planlanan renkler ve adetler;
-- özel yapı detayları (3D sarma kavisler, döküm süslemeler, vidasız yapı, dahili yaylı menteşe veya ayna kaplama);
-- hedeflenen lansman tarihi.
-
 ## SSS (FAQ)
 
 ### 1. En hafif gözlük çerçevesi malzemesi hangisidir?
@@ -169,7 +153,7 @@ Karbon fiber ve titanyum (saf veya beta titanyum) ürün gamımızdaki en hafif 
 
 ### 2. Şekillendirilmiş veya balon formlu çerçeveler selüloz asetattan yapılabilir mi?
 
-Hayır. Derin sarma kavisli şişkin 3D balon görünümü enjeksiyon kalıplamaya özgüdür ve düz asetat plakadan freze edilemez. En yakın uyumu TR-90 enjeksiyonda üretebilir veya silüeti doğal asetat plaka yapısına uyarlayabiliriz.
+TR-90 tarzı saran bir kalkan formunu asetattan üretmek için burun köprüsü konumuna dikey bir destek eklenmelidir. Aynı kesintisiz yapı bu destek olmadan doğrudan kopyalanamaz; numuneden önce uyarlanan köprü yapısı çizimde onaylanmalıdır.
 
 ### 3. Saf titanyum ile beta titanyum arasındaki fark nedir?
 
@@ -181,7 +165,7 @@ Tasarımınız titanyumdan daha düşük maliyetle keskin döküm süslemeler ve
 
 ### 5. Çerçeve malzemesi ve yüzey seçimi birim maliyeti nasıl etkiler?
 
-Kssmi'de fiyat rehberleri malzeme ve işçilik karmaşıklığını izler: titanyum paslanmaz çeliğe kıyasla çift başına yaklaşık USD 3,70 daha yüksektir; İtalyan Mazzucchelli asetat standart renklerde standart asetattan çift başına yaklaşık USD 3–5 (kaplumbağa desenlerinde USD 5–10) daha yüksektir; geniş çok katmanlı ayna kaplama ise 2–3 veya daha fazla geçiş için geçiş başına yaklaşık USD 18 tutar. Döküm süslemeli metal tasarımlarda alpaka titanyuma göre maliyeti düşürür; kesin birim fiyat mühendislik incelemesi sonrası teklifte netleşir.
+Kssmi'de fiyat rehberleri malzeme ve işçilik karmaşıklığını izler: titanyum paslanmaz çeliğe kıyasla çift başına yaklaşık USD 3,70 daha yüksektir; İtalyan Mazzucchelli asetat standart renklerde standart asetattan çift başına yaklaşık USD 3–5 (kaplumbağa desenlerinde USD 5–10) daha yüksektir; geniş çok katmanlı ayna kaplama ise 2–3 veya daha fazla geçiş için çerçeve başına her geçiş için yaklaşık USD 0,60 tutar. Döküm süslemeli metal tasarımlarda alpaka titanyuma göre maliyeti düşürür; kesin birim fiyat mühendislik incelemesi sonrası teklifte netleşir.
 
 ### 6. Asetat çerçevelerin içinde tamamen görünmez gizli menteşeler yapılabilir mi?
 
@@ -193,7 +177,7 @@ Bitmiş asetat çerçeveler model başına 300 adetten başlar (her biri 100 ade
 
 ### 8. Her malzeme için MOQ nedir ve cam renkleri ekstra minimum ekler mi?
 
-Asetat, metal (paslanmaz çelik ve alpaka) ve titanyum model başına 300 adetten; karbon fiber 200 adetten başlar; TR-90 ise stil başına 1.200 adet (renk başına en az 600, özel spor TR-90'da renk başına 600) gerektirir. Cam rengi minimumları bunun üzerine eklenir: standart düz renkler 100, degradeler 150, aynalı veya özel renkler renk başına 300 adetten başlar.
+Asetat, metal (paslanmaz çelik ve alpaka) ve titanyum model başına 300 adetten; karbon fiber 200 adetten başlar; TR-90 için model başına en az 1.200 adet ve renk başına en az 600 adet gerekir. Cam rengi minimumları bunun üzerine eklenir: standart düz renkler 100 çiftten, degradeler 150 çiftten, aynalı veya özel renkler renk başına 300 çiftten başlar.
 
 ### 9. Özel numune ve seri üretim ne kadar sürer?
 
@@ -209,6 +193,8 @@ Hayır. Perakende ambalajı üretmiyor veya tedarik etmiyoruz, ancak bitmiş çe
 
 ---
 
-Kssmi 2003'ten beri Shenzhen'de bünyesindeki tasarım, mühendislik, CNC işleme, polisaj, montaj ve sevkiyat öncesi %100 kalite kontrol ile gözlük üretmektedir. Asetat Mazzucchelli, JIMEI ve JINYU'dan; titanyum Kobe Steel ve Baoji Titanium'dan tedarik edilir. Fabrika bilgileri için [hakkımızda](/tr/about-us/) sayfasına veya ticari koşullar için [SSS](/tr/faq/) bölümüne göz atın.
+## Özet
 
-**Seriniz için malzeme seçmeye hazır mısınız?** Tasarımınızı, eskizinizi veya referans görselinizi hedef pazar, renkler ve model başı miktarla birlikte [teklif sayfamızdan](/tr/quote/) gönderin. Ücretli çalışma başlamadan önce yapısal uygunluğu, malzeme rotasını ve MOQ'u teyit ederiz.
+Numune öncesi çerçeve silüetini ve parti büyüklüğünü üretim rotasıyla eşleştirin: JIMEI veya JINYU asetat, paslanmaz çelik, nikel gümüş ve titanyum 300 çift / 3 renkli başlangıçlara; karbon fiber 200 çift hafif serilere; çelik kalıp ve 1.200 çift gerektiren 3D sarmal spor formlar ise TR-90 enjeksiyona uyar. Yapıyı ve kalıp mahsup takvimini baştan kilitleyin.
+
+Ücretli numune aşamasına geçmeden önce yapısal uygunluğu ve MOQ'ları netleştirmek için tasarımınızı, renklerinizi ve adetlerinizi [aşağıdaki teklif formu](#inquiry-form-section) iletin.

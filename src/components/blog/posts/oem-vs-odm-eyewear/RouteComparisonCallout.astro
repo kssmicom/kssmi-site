@@ -1,7 +1,7 @@
 ---
 /**
  * Article-specific visual summary block for /blog/oem-vs-odm-eyewear/.
- * Shows the 3 core manufacturing routes at a glance (OEM vs ODM vs Catalogue Private Label).
+ * Summarizes OEM/ODM design origins and the catalogue-based branding option in 17 locales.
  */
 interface Props {
   lang?: string;
@@ -11,7 +11,7 @@ const { lang = 'en' } = Astro.props;
 
 const COPY: Record<string, { heading: string; cards: Array<{ label: string; title: string; summary: string; timeline: string }> }> = {
   en: {
-    heading: 'Three Paths at a Glance',
+    heading: 'Design and Catalogue Options',
     cards: [
       {
         label: 'OEM',
@@ -33,8 +33,353 @@ const COPY: Record<string, { heading: string; cards: Array<{ label: string; titl
       },
     ],
   },
+  it: {
+    "heading": "Progettazione e opzioni a catalogo",
+    "cards": [
+      {
+        "label": "OEM",
+        "title": "Il vostro design confermato",
+        "summary": "Fornite le specifiche approvate; realizziamo gli stampi necessari, i campioni e la produzione.",
+        "timeline": "Campione su misura: 60 giorni lavorativi"
+      },
+      {
+        "label": "ODM",
+        "title": "Dal concetto al disegno 2D",
+        "summary": "Bastano uno schizzo o un riferimento. Prepariamo il disegno tecnico per la vostra approvazione.",
+        "timeline": "Disegno 2D: 3–10 giorni lavorativi"
+      },
+      {
+        "label": "Private label da catalogo",
+        "title": "Costruzione esistente",
+        "summary": "Costruzione esistente con il vostro marchio: senza nuovi stampi, con il normale MOQ per modello.",
+        "timeline": "Campione con logo: circa 10 giorni lavorativi"
+      }
+    ]
+  },
+  es: {
+    "heading": "Diseño y opciones de catálogo",
+    "cards": [
+      {
+        "label": "OEM",
+        "title": "Su diseño confirmado",
+        "summary": "Envíe las especificaciones aprobadas; fabricamos los moldes necesarios, las muestras y el pedido.",
+        "timeline": "Muestra a medida: 60 días laborables"
+      },
+      {
+        "label": "ODM",
+        "title": "Del concepto al plano 2D",
+        "summary": "Basta un boceto o una referencia. Preparamos el plano técnico para su aprobación.",
+        "timeline": "Plano 2D: 3–10 días laborables"
+      },
+      {
+        "label": "Marca propia de catálogo",
+        "title": "Estructura existente",
+        "summary": "Estructura existente con su marca: ahorra moldes nuevos y conserva el MOQ por modelo.",
+        "timeline": "Muestra con logo: unos 10 días laborables"
+      }
+    ]
+  },
+  fr: {
+    "heading": "Conception et options catalogue",
+    "cards": [
+      {
+        "label": "OEM",
+        "title": "Votre design validé",
+        "summary": "Vous fournissez les spécifications ; nous réalisons les outillages nécessaires, les échantillons et la série.",
+        "timeline": "Échantillon sur mesure : 60 jours ouvrés"
+      },
+      {
+        "label": "ODM",
+        "title": "Du concept au plan 2D",
+        "summary": "Un croquis ou une référence suffit. Nous préparons le plan technique pour votre validation.",
+        "timeline": "Plan 2D : 3–10 jours ouvrés"
+      },
+      {
+        "label": "Marque propre sur catalogue",
+        "title": "Construction existante",
+        "summary": "Construction existante à votre marque : sans nouveau moule, avec le MOQ habituel par modèle.",
+        "timeline": "Échantillon avec logo : environ 10 jours ouvrés"
+      }
+    ]
+  },
+  de: {
+    "heading": "Design und Katalogoptionen",
+    "cards": [
+      {
+        "label": "OEM",
+        "title": "Ihr freigegebenes Design",
+        "summary": "Sie liefern die Spezifikation; wir übernehmen erforderliche Werkzeuge, Musterbau und Fertigung.",
+        "timeline": "Individuelles Muster: 60 Arbeitstage"
+      },
+      {
+        "label": "ODM",
+        "title": "Vom Konzept zur 2D-Zeichnung",
+        "summary": "Eine Skizze oder Referenz genügt. Wir erstellen die technische Zeichnung zur Freigabe.",
+        "timeline": "2D-Zeichnung: 3–10 Arbeitstage"
+      },
+      {
+        "label": "Eigenmarke auf Katalogbasis",
+        "title": "Bestehende Konstruktion",
+        "summary": "Bestehende Konstruktion mit Ihrer Marke: keine neuen Werkzeuge, reguläre Mindestmenge pro Modell.",
+        "timeline": "Logomuster: ca. 10 Arbeitstage"
+      }
+    ]
+  },
+  pt: {
+    "heading": "Design e opções de catálogo",
+    "cards": [
+      {
+        "label": "OEM",
+        "title": "Seu design confirmado",
+        "summary": "Você fornece a especificação; cuidamos dos moldes necessários, das amostras e da produção.",
+        "timeline": "Amostra sob medida: 60 dias úteis"
+      },
+      {
+        "label": "ODM",
+        "title": "Do conceito ao desenho 2D",
+        "summary": "Um esboço ou referência é suficiente. Preparamos o desenho técnico para sua aprovação.",
+        "timeline": "Desenho 2D: 3–10 dias úteis"
+      },
+      {
+        "label": "Marca própria de catálogo",
+        "title": "Estrutura existente",
+        "summary": "Estrutura existente com sua marca: economiza novos moldes e mantém o MOQ por modelo.",
+        "timeline": "Amostra com logo: cerca de 10 dias úteis"
+      }
+    ]
+  },
+  ru: {
+    "heading": "Разработка и варианты из каталога",
+    "cards": [
+      {
+        "label": "OEM",
+        "title": "Ваш утверждённый дизайн",
+        "summary": "Вы передаёте спецификацию; мы выполняем необходимую оснастку, образцы и серийное производство.",
+        "timeline": "Индивидуальный образец: 60 рабочих дней"
+      },
+      {
+        "label": "ODM",
+        "title": "От идеи к 2D-чертежу",
+        "summary": "Достаточно эскиза или референса. Мы готовим технический чертёж для вашего утверждения.",
+        "timeline": "2D-чертёж: 3–10 рабочих дней"
+      },
+      {
+        "label": "СТМ на базе каталога",
+        "title": "Готовая конструкция",
+        "summary": "Готовая конструкция с вашим брендом: без новой оснастки, со стандартным MOQ на модель.",
+        "timeline": "Образец с логотипом: около 10 рабочих дней"
+      }
+    ]
+  },
+  ja: {
+    "heading": "設計とカタログモデルの選択肢",
+    "cards": [
+      {
+        "label": "OEM",
+        "title": "お客様の確定デザイン",
+        "summary": "確定仕様をお送りください。必要な金型製作、試作、量産を担当します。",
+        "timeline": "フルカスタム試作：60営業日"
+      },
+      {
+        "label": "ODM",
+        "title": "コンセプトから2D図面へ",
+        "summary": "スケッチや参考画像から、承認用の技術図面を作成します。CADは不要です。",
+        "timeline": "2D図面：3〜10営業日"
+      },
+      {
+        "label": "カタログモデルへのブランド表示",
+        "title": "既存構造を活用",
+        "summary": "既存構造にロゴを追加。新規金型費は不要で、モデル別の最低発注数量は適用されます。",
+        "timeline": "ロゴ入り試作：約10営業日"
+      }
+    ]
+  },
+  ar: {
+    "heading": "التصميم وخيارات الكتالوج",
+    "cards": [
+      {
+        "label": "OEM",
+        "title": "تصميمك المعتمد",
+        "summary": "ترسل المواصفات المعتمدة؛ ونتولى القوالب عند الحاجة والعينات والإنتاج.",
+        "timeline": "عينة مخصصة: 60 يوم عمل"
+      },
+      {
+        "label": "ODM",
+        "title": "من الفكرة إلى الرسم ثنائي الأبعاد",
+        "summary": "يكفي رسم مبدئي أو صورة مرجعية. نعد الرسم الفني لاعتمادك دون الحاجة إلى CAD.",
+        "timeline": "الرسم الفني: 3–10 أيام عمل"
+      },
+      {
+        "label": "علامة خاصة على موديل من الكتالوج",
+        "title": "هيكل موجود",
+        "summary": "هيكل موجود بعلامتك: يوفر قوالب جديدة مع بقاء الحد الأدنى لكل موديل.",
+        "timeline": "عينة بشعار: نحو 10 أيام عمل"
+      }
+    ]
+  },
+  ko: {
+    "heading": "디자인 개발과 카탈로그 선택지",
+    "cards": [
+      {
+        "label": "OEM",
+        "title": "고객의 확정 디자인",
+        "summary": "확정 사양을 제공하면 필요한 금형 제작, 샘플 및 양산을 진행합니다.",
+        "timeline": "완전 맞춤 샘플: 작업일 60일"
+      },
+      {
+        "label": "ODM",
+        "title": "콘셉트에서 2D 도면까지",
+        "summary": "스케치나 참고 이미지로 시작하여 고객 승인용 기술 도면을 작성합니다. CAD는 필요 없습니다.",
+        "timeline": "2D 도면: 작업일 3~10일"
+      },
+      {
+        "label": "카탈로그 기반 자체 브랜드",
+        "title": "기존 구조 활용",
+        "summary": "기존 구조에 고객 로고를 적용합니다. 새 금형비를 절감하며 모델별 MOQ는 유지됩니다.",
+        "timeline": "로고 샘플: 약 작업일 10일"
+      }
+    ]
+  },
+  hi: {
+    "heading": "डिज़ाइन और कैटलॉग विकल्प",
+    "cards": [
+      {
+        "label": "OEM",
+        "title": "आपका स्वीकृत डिज़ाइन",
+        "summary": "आप स्वीकृत स्पेसिफिकेशन दें; हम ज़रूरी टूलिंग, सैंपल और उत्पादन संभालते हैं।",
+        "timeline": "कस्टम सैंपल: 60 कार्य दिवस"
+      },
+      {
+        "label": "ODM",
+        "title": "विचार से 2D ड्रॉइंग तक",
+        "summary": "स्केच या संदर्भ चित्र से शुरुआत करें। हमारी टीम स्वीकृति के लिए तकनीकी ड्रॉइंग बनाती है।",
+        "timeline": "2D ड्रॉइंग: 3–10 कार्य दिवस"
+      },
+      {
+        "label": "कैटलॉग आधारित प्राइवेट लेबल",
+        "title": "मौजूदा संरचना",
+        "summary": "मौजूदा संरचना पर आपका ब्रांड: नए मोल्ड की बचत, प्रति मॉडल MOQ वही रहता है।",
+        "timeline": "लोगो सैंपल: लगभग 10 कार्य दिवस"
+      }
+    ]
+  },
+  vi: {
+    "heading": "Thiết kế và lựa chọn từ catalogue",
+    "cards": [
+      {
+        "label": "OEM",
+        "title": "Thiết kế đã được bạn chốt",
+        "summary": "Bạn gửi thông số đã duyệt; chúng tôi làm khuôn khi cần, làm mẫu và sản xuất.",
+        "timeline": "Mẫu tùy chỉnh: 60 ngày làm việc"
+      },
+      {
+        "label": "ODM",
+        "title": "Từ ý tưởng đến bản vẽ 2D",
+        "summary": "Chỉ cần bản phác thảo hoặc ảnh tham khảo. Chúng tôi lập bản vẽ kỹ thuật để bạn duyệt.",
+        "timeline": "Bản vẽ 2D: 3–10 ngày làm việc"
+      },
+      {
+        "label": "Thương hiệu riêng từ catalogue",
+        "title": "Kết cấu sẵn có",
+        "summary": "Kết cấu sẵn có mang thương hiệu của bạn: tiết kiệm khuôn mới, vẫn áp dụng MOQ theo mẫu.",
+        "timeline": "Mẫu có logo: khoảng 10 ngày làm việc"
+      }
+    ]
+  },
+  jv: {
+    "heading": "Desain lan pilihan katalog",
+    "cards": [
+      {
+        "label": "OEM",
+        "title": "Desain sampeyan sing wis disetujoni",
+        "summary": "Sampeyan menehi spesifikasi; kita nggawe cetakan yen perlu, sampel lan produksi.",
+        "timeline": "Sampel kustom: 60 dina kerja"
+      },
+      {
+        "label": "ODM",
+        "title": "Saka gagasan menyang gambar 2D",
+        "summary": "Sketsa utawa gambar referensi wis cukup. Kita nyiapake gambar teknis kanggo sampeyan setujoni.",
+        "timeline": "Gambar 2D: 3–10 dina kerja"
+      },
+      {
+        "label": "Merek dhewe saka katalog",
+        "title": "Konstruksi sing wis ana",
+        "summary": "Konstruksi sing wis ana nganggo merek sampeyan: ngirit cetakan anyar, MOQ saben model tetep.",
+        "timeline": "Sampel nganggo logo: udakara 10 dina kerja"
+      }
+    ]
+  },
+  ms: {
+    "heading": "Reka bentuk dan pilihan katalog",
+    "cards": [
+      {
+        "label": "OEM",
+        "title": "Reka bentuk anda yang disahkan",
+        "summary": "Anda beri spesifikasi; kami urus acuan jika perlu, sampel dan pengeluaran.",
+        "timeline": "Sampel tersuai: 60 hari bekerja"
+      },
+      {
+        "label": "ODM",
+        "title": "Daripada konsep kepada lukisan 2D",
+        "summary": "Lakaran atau gambar rujukan mencukupi. Kami menyediakan lukisan teknikal untuk kelulusan anda.",
+        "timeline": "Lukisan 2D: 3–10 hari bekerja"
+      },
+      {
+        "label": "Jenama sendiri berasaskan katalog",
+        "title": "Binaan sedia ada",
+        "summary": "Binaan sedia ada dengan jenama anda: menjimatkan acuan baharu, MOQ setiap model kekal.",
+        "timeline": "Sampel berlogo: kira-kira 10 hari bekerja"
+      }
+    ]
+  },
+  tr: {
+    "heading": "Tasarım ve katalog seçenekleri",
+    "cards": [
+      {
+        "label": "OEM",
+        "title": "Onaylı tasarımınız",
+        "summary": "Onaylı şartnameyi gönderin; gereken kalıpları, numuneleri ve üretimi biz üstleniriz.",
+        "timeline": "Özel numune: 60 iş günü"
+      },
+      {
+        "label": "ODM",
+        "title": "Konseptten 2D çizime",
+        "summary": "Eskiz veya referans görsel yeterlidir. Onayınız için teknik çizimi hazırlarız.",
+        "timeline": "2D çizim: 3–10 iş günü"
+      },
+      {
+        "label": "Katalog bazlı özel marka",
+        "title": "Mevcut konstrüksiyon",
+        "summary": "Mevcut yapı üzerinde markanız: yeni kalıp maliyetini kaldırır, model başına MOQ korunur.",
+        "timeline": "Logolu numune: yaklaşık 10 iş günü"
+      }
+    ]
+  },
+  tg: {
+    "heading": "Тарроҳӣ ва интихоби моделҳои каталогӣ",
+    "cards": [
+      {
+        "label": "OEM",
+        "title": "Тарҳи тасдиқшудаи шумо",
+        "summary": "Шумо мушаххасотро медиҳед; мо қолабсозии зарурӣ, намунасозӣ ва истеҳсолро иҷро мекунем.",
+        "timeline": "Намунаи фармоишӣ: 60 рӯзи корӣ"
+      },
+      {
+        "label": "ODM",
+        "title": "Аз ғоя то нақшаи 2D",
+        "summary": "Тарҳи дастӣ ё акси намунавӣ кофист. Мо нақшаи техникиро барои тасдиқи шумо омода мекунем.",
+        "timeline": "Нақшаи 2D: 3–10 рӯзи корӣ"
+      },
+      {
+        "label": "Тамғаи хусусӣ дар модели каталогӣ",
+        "title": "Сохтори мавҷуда",
+        "summary": "Сохтори мавҷуда бо бренди шумо: бе қолаби нав, бо ҳадди ақали муқаррарӣ барои ҳар модел.",
+        "timeline": "Намуна бо логотип: тақрибан 10 рӯзи корӣ"
+      }
+    ]
+  },
   zh: {
-    heading: '三种开发路线一眼对比',
+    heading: '设计开发与目录款选项',
     cards: [
       {
         label: 'OEM 代工',
@@ -62,7 +407,7 @@ const active = COPY[lang] || COPY.en;
 ---
 
 <aside class="my-6 rounded-xl border border-stone-200/80 bg-[#faf8f5] p-5" aria-label={active.heading}>
-  <p class="text-xs font-bold uppercase tracking-wider text-[#8B7355] mb-3">{active.heading}</p>
+  <p class="text-xs font-bold uppercase tracking-wider text-[#6B583E] mb-3">{active.heading}</p>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
     {active.cards.map((card) => (
       <div class="rounded-lg bg-white p-4 shadow-xs border border-stone-200/60">
@@ -71,7 +416,7 @@ const active = COPY[lang] || COPY.en;
         </span>
         <p class="mt-2 text-sm font-bold text-stone-900">{card.title}</p>
         <p class="mt-1.5 text-xs text-stone-600 leading-relaxed">{card.summary}</p>
-        <p class="mt-2.5 text-[11px] font-semibold text-[#8B7355]">{card.timeline}</p>
+        <p class="mt-2.5 text-[11px] font-semibold text-[#6B583E]">{card.timeline}</p>
       </div>
     ))}
   </div>

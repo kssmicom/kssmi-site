@@ -133,7 +133,7 @@ Numune, geliştirme ve kalıp ücretleri ilgili aşama başlamadan önce peşin 
 Üç koşul, sonuca ulaşmayan bir geliştirmeye ödeme yapma riskini azaltır:
 
 - **Ücret mahsubu.** Yukarıda belirtildiği gibi: uygun ücretler aynı tasarım 12 ay içinde 1.000 adede ulaştığında mahsup edilir, navlun hariçtir. TR-90 kendi eşiğine tabidir.
-- **Kalıp öncesi durdurma.** 2D çizimleri inceleyip kalıp başlamadan önce durursanız, yapılan 2D tasarım çalışması tutulur ve bakiye %0,5 transfer ücreti düşülerek 10 iş günü içinde orijinal ödeme hesabına iade edilir. Tamamlanan 2D çizimler sizde kalır.
+- **Kalıp öncesi durdurma.** 2D çizimleri inceleyip kalıp başlamadan önce durursanız, tamamlanan 2D tasarım çalışmasının bedeli kesilir ve bakiye %0,5 transfer ücreti düşülerek 10 iş günü içinde orijinal ödeme hesabına iade edilir. Tamamlanan 2D çizimler sizde kalır.
 - **Kalıp mülkiyeti.** Müşteri tarafından ödenen kalıplar ve takımlar müşteriye aittir. Normalde üretim için fabrikamızda saklanır, asla başka bir müşteri için kullanılmaz ve vadesi gelmiş tüm tutarlar kapatıldıktan sonra talep üzerine teslim edilebilir. Kalıp kullanılabilir durumda olduğu sürece aynı tasarımda tekrar eden üretimlerde yeni kalıp ücreti alınmaz.
 
 Kalıp süreci başladığında kalıp tasarımınız için kesilir ve iade uygulanmaz.
@@ -186,8 +186,6 @@ Tasarımı veya referansı görmeden bir projeye fiyat vermiyoruz. Başlamak iç
 - hedef pazar;
 - hedeflenen lansman tarihi.
 
-Bunları [teklif sayfası](/tr/quote/) üzerinden gönderin. Genellikle bir iş günü içinde yanıt veririz ve girdiler tamamlandıktan sonra — normalde yaklaşık üç iş günü içinde — fiyat teklifi iletilir. [Özelleştirme sayfası](/tr/customization/) nelerin değiştirilebileceğini listeler ve [SSS](/tr/faq/) sayfası minimumları, numuneleri, ödemeyi ve mülkiyeti daha ayrıntılı kapsar.
-
 ## Sıkça sorulan sorular
 
 ### 1. OEM, ODM ve private label arasındaki fark nedir?
@@ -229,9 +227,10 @@ Hayır. Katalog modelleri referans ve değerlendirme numuneleridir; her seri ür
 ### 10. Perakende ambalaj veya reçeteli cam tedarik edebiliyor musunuz?
 
 Hayır. Perakende ambalaj üretmiyor veya tedarik etmiyoruz ve numaralı reçeteli cam üretmiyoruz. Optik çerçeveler demo camlarla sevk edilir.
-
 ---
 
-Kssmi 2003 yılından bu yana Shenzhen'de bünyesindeki tasarım, mühendislik, CNC işleme, polisaj, montaj ve kalite kontrol birimleriyle gözlük üretmektedir. Asetat Mazzucchelli, JIMEI ve JINYU'dan; titanyum ise Kobe Steel ve Baoji Titanium'dan tedarik edilir. Fabrika hakkında daha fazla bilgi [hakkımızda sayfasında](/tr/about-us/) yer almaktadır.
+## Özet
 
-**Rotanızı seçmeye hazır mısınız?** Tasarımınızı, referansınızı veya konseptinizi hedef miktar ve lansman tarihinizle birlikte [teklif sayfası](/tr/quote/) üzerinden gönderin. Herhangi bir ücretli çalışma başlamadan önce rotayı, geçerli minimum miktarı ve geliştirme maliyetini teyit edeceğiz.
+Bugün elinizde hazır olan dosyalarla yola çıkın: onaylı teknik şartname doğrudan OEM'e gider, eskiz veya referans görsel ODM ile başlar, katalog çerçeveler ise özel kalıp maliyetine girmeden önce kaliteyi test etmenizi sağlar. Numune öncesi model başı MOQ'u (asetat, metal, titanyum 300 çift; karbon fiber 200 çift; TR-90 1.200 çift), çizim onayını, kalıp mülkiyetini ve ücret iadesini netleştirin.
+
+Herhangi bir ücretli işlem başlamadan önce rotayı, minimum adedi ve geliştirme maliyetini teyit etmek için tasarımınızı, hedef adedini ve lansman tarihini [aşağıdaki teklif formu](#inquiry-form-section) üzerinden gönderin.

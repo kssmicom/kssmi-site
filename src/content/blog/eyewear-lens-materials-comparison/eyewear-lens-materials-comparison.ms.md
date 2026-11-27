@@ -30,10 +30,10 @@ Bagi jenama yang menempah cermin mata hitam atau bingkai optik tersuai, kesilapa
 
 | Substrat kanta | Kejelasan optik & indeks | Proses pembuatan | Keserasian bingkai | Had utama | Paling sesuai untuk |
 |---|---|---|---|---|---|
-| Nilon (PA) | Kejelasan tinggi (Abbe ~52); sangat ringan | Poliamida suntikan/tuang; pembentukkan haba | Semua bingkai — ideal untuk tanpa bingkai & separuh bingkai | Sejarah lembapan & haba mempengaruhi tegasan optik | Cermin mata hitam mewah, titanium, gentian karbon & tanpa bingkai |
+| Nilon (PA) | Kejelasan tinggi (Abbe ~52); sangat ringan | Poliamida suntikan/tuang; pembentukan haba | Semua bingkai — ideal untuk tanpa bingkai & separuh bingkai | Sejarah lembapan & haba mempengaruhi tegasan optik | Cermin mata hitam mewah, titanium, gentian karbon & tanpa bingkai |
 | CR-39 | Penanda aras kejelasan (Abbe ~58) | Resin termoset ADC tuang | Bingkai penuh asetat/logam; elak penggerudian | Rapuh sekitar lubang skru; lebih berat daripada PA/PC | Cermin mata hitam butik & asetat klasik |
 | TAC polarized | Filem laminasi berbilang lapis ringan | Laminasi helaian TAC + filem polarisasi + pelekat | Bingkai penuh sahaja | Tidak sesuai untuk iklim sangat panas; tepi perlu tertutup | Rangkaian polarized komersial & pemanduan bajet |
-| Polikarbonat (PC) | Kejelasan baik; kalis pecah; sangat ringan | Pengacuan suntikan & pembentukkan haba | Perisai lengkung tinggi, sukan, tanpa bingkai | Sebaran lebih tinggi; perlu salutan keras (HC) | Sukan luar, perisai melengkung & SKU tahan hentaman |
+| Polikarbonat (PC) | Kejelasan baik; tahan pecah; sangat ringan | Pengacuan suntikan & pembentukan haba | Perisai lengkung tinggi, sukan, tanpa bingkai | Sebaran lebih tinggi; perlu salutan keras (HC) | Sukan luar, perisai melengkung & SKU tahan hentaman |
 | Trivex | Kejelasan tinggi + tahan hentaman (1.53) | Polimer tuang berasaskan uretana (ikut spek) | Bingkai penuh, tanpa bingkai & prestasi | Kos lebih tinggi; ditempah khusus (tiada ganti PC) | Program sukan & spesifikasi perlindungan AS |
 | Demo / cahaya biru | Asas jernih atau sedikit hangat | Pengacuan rata / pewarna atau salutan spektrum | Bingkai optik & cermin mata skrin tanpa Rx | Tanpa preskripsi sahaja; perlu sasaran spektrum | Paparan kedai optik atau runcit penapis cahaya biru |
 
@@ -45,7 +45,7 @@ Kerana tahan retakan tegasan di sekitar lubang skru dan alur tali, tepi terdedah
 
 Dua peraturan praktikal terpakai untuk projek nilon:
 
-- **Kawalan proses sama pentingnya dengan resin:** kualiti optik akhir bergantung pada gred, pelaziman lembapan, sejarah haba, tegasan pembentukkan dan lekatan salutan — sentiasa disahkan pada sampel siap fizikal.
+- **Kawalan proses sama pentingnya dengan resin:** kualiti optik akhir bergantung pada gred, pelaziman lembapan, sejarah haba, tegasan pembentukan dan lekatan salutan — sentiasa disahkan pada sampel siap fizikal.
 - **Penggantian oleh profesional:** untuk bingkai tanpa bingkai berlubang, penukaran kanta mesti dilakukan oleh ahli optik atau juruteknik, bukan pengguna akhir.
 
 ![Sampel kanta cermin mata hitam polarized nilon berwarna padu ringan](/media/blogs/eyewear-lens-materials-comparison/nylon-lenses.webp)
@@ -73,9 +73,9 @@ Patuhi dua sempadan tegas sebelum memilih TAC:
 
 ## Polikarbonat (PC) dan Trivex: tahan hentaman, lengkung tinggi & perisai
 
-**Polikarbonat (PC) ialah substrat utama untuk perisai sukan pembentukkan haba lengkung tinggi dan ujian hentaman bebola jatuh, manakala Trivex (indeks 1.53) menggabungkan perlindungan uretana dengan optik lebih tajam.**
+**Polikarbonat (PC) ialah substrat utama untuk perisai sukan pembentukan haba lengkung tinggi dan ujian hentaman bebola jatuh, manakala Trivex (indeks 1.53) menggabungkan perlindungan uretana dengan optik lebih tajam.**
 
-Suntikan dan pembentukkan haba PC mencapai geometri melilit yang tidak mampu dicapai potongan rata. Sebagai penanda aras kejuruteraan Kssmi yang disahkan, kami membentuk perisai PC sekeping sehingga **lengkung base 7 dengan sudut lilitan 151°**. Oleh sebab perisai melilit bersifat torik dan ketebalannya terkunci selepas pembentukkan haba (tidak boleh dinipiskan semula), alur bingkai mesti direka tepat mengikut ketebalan kanta terbentuk. Selain itu, **panjang lengkok dan lebar kord lurus adalah dua ukuran berasingan yang kedua-duanya mesti sepadan pada lukisan**.
+Suntikan dan pembentukan haba PC mencapai geometri melilit yang tidak mampu dicapai potongan rata. Sebagai penanda aras kejuruteraan Kssmi yang disahkan, kami membentuk perisai PC sekeping sehingga **lengkung base 7 dengan sudut lilitan 151°**. Oleh sebab perisai melilit bersifat torik dan ketebalannya terkunci selepas pembentukan haba (tidak boleh dinipiskan semula), alur bingkai mesti direka tepat mengikut ketebalan kanta terbentuk. Selain itu, **panjang lengkok dan lebar kord lurus adalah dua ukuran berasingan yang kedua-duanya mesti sepadan pada lukisan**.
 
 Bagi program sukan dan perlindungan AS yang menyatakan **Trivex** (1.53), Kssmi membekalkan bahan uretana mengikut spesifikasi disahkan — termasuk kanta rata jernih dengan AR jalur lebar — dan tidak pernah menggantikannya dengan PC. Terokai [cermin mata tanpa bingkai](/ms/product/rimless-eyewear/) kami.
 
@@ -87,20 +87,19 @@ Bagi program sukan dan perlindungan AS yang menyatakan **Trivex** (1.53), Kssmi 
 
 Apabila menempah cermin mata skrin tanpa Rx, jelaskan dua perkara teknikal ini:
 
-- **Reka bentuk spektrum berbanding label pemasaran:** penapisan cahaya biru melemahkan jalur gelombang sasaran secara selektif melalui penyerapan, pewarnaan atau salutan. Sahkan jalur sasaran, kadar sekatan dan kehangatan asas (jernih berbanding kuning lembut/pekat).
+- **Reka bentuk spektrum berbanding label pemasaran:** penapisan cahaya biru melemahkan jalur gelombang sasaran secara selektif melalui penyerapan, pewarnaan atau salutan. Sahkan jalur sasaran, kadar sekatan dan kehangatan asas (jernih berbanding kuning lembut/pekat). Penapisan terpilih mengubah keseimbangan spektrum; ia tidak meningkatkan resolusi optik atau membawa tuntutan manfaat perubatan.
 - **Piawaian produk berasingan:** bingkai optik tanpa kanta pembetulan berada di bawah **ISO 12870**, berbeza daripada piawaian cermin mata hitam seperti **EN ISO 12312-1**.
 
 ![Demonstrasi ujian spektrum kanta optik penapis cahaya biru tanpa preskripsi](/media/blogs/eyewear-lens-materials-comparison/blue-light-lenses.webp)
 
 Layari [pilihan kanta blue-blocking](/ms/customization/lenses/blue-blocking/) dan koleksi [bingkai optik](/ms/product/optical-frames/).
-
 ## Fungsi optik vs. salutan permukaan
 
 **Fungsi optik mengubah cahaya yang menembusi kanta (kecerahan, UV, silau atau spektrum); salutan permukaan mengubah ketahanan terhadap calar, pantulan dalaman, air atau kabus — dan Salutan Keras (HC) serta Anti-Pantulan (AR) bukan pilihan lalai automatik.**
 
 ### Fungsi optik (disahkan pada kanta siap)
 
-- **Penapis suria & VLT / CAT 0–4:** transmisi cahaya nampak (VLT) diukur dengan alat, bukan mata kasar. **CAT.3 (8–18% VLT)** ialah piawaian global untuk penggunaan suria umum dan pemanduan siang; **CAT.1 (43–80%)** dan **CAT.2 (18–43%)** sesuai untuk cuaca mendung, warna fesyen dan kecerunan.
+- **Penapis suria & VLT / CAT 0–4:** transmisi cahaya nampak (VLT) diukur dengan alat, bukan mata kasar. **CAT.3 (8–18% VLT)** ialah piawaian global untuk penggunaan suria umum dan pemanduan siang; **CAT.1 (43–80%)** dan **CAT.2 (18–43%)** sesuai untuk cuaca mendung, warna fesyen dan kecerunan. Sebelum menetapkan VLT, semak keperluan pemanduan di pasaran sasaran.
 - **Perlindungan UV400:** menghalang UVA/UVB melalui substrat, bahan tambah, pewarna atau salutan. Kanta cerah boleh mencapai UV400 jika diformulasikan dengan betul manakala kanta gelap tanpa penyerap UV mungkin gagal tanpa ujian akhir.
 - **Polarisasi:** mengurangkan silau mendatar daripada air, jalan raya dan salji tanpa bergantung pada kegelapan, UV400 atau cermin; kebanyakan sampel CAT.3 [kelabu](/ms/customization/lenses/grey/), [coklat](/ms/customization/lenses/brown/) dan [hijau](/ms/customization/lenses/green/) menyokong binaan polarized.
 - **Fotokromik & Kontras Tinggi (Hi-Con):** fotokromik bergantung pada suhu sekitar dan cermin depan kenderaan yang menapis UV; warna kontras tinggi menganjakkan kontras spektrum tanpa mengubah nilai Abbe.
@@ -123,7 +122,7 @@ Padankan substrat dan kemasan dengan binaan bingkai, iklim sasaran dan jumlah pe
 - **Bingkai tanpa bingkai atau tepi terdedah:** nyatakan **nilon (PA)** atau **PC**; elakkan **CR-39** dan **TAC**.
 - **Iklim sasaran panas dan lembap:** elakkan laminasi polarized **TAC** untuk jangka panjang; pilih **nilon polarized** atau **PC polarized**.
 - **Cermin mata hitam asetat klasik atau fesyen bingkai penuh:** pilih **CR-39 (Abbe ~58)** untuk kejelasan atau **nilon** untuk berat lebih ringan dan ketahanan hentaman.
-- **Perisai sukan sekeping atau lengkung tinggi:** pilih **PC pembentukkan haba** (sehingga base 7 / 151°) dengan **salutan cermin seluruh permukaan**, serta kunci **panjang lengkok** dan **lebar kord** pada lukisan.
+- **Perisai sukan sekeping atau lengkung tinggi:** pilih **PC pembentukan haba** (sehingga base 7 / 151°) dengan **salutan cermin seluruh permukaan**, serta kunci **panjang lengkok** dan **lebar kord** pada lukisan.
 - **Pelancaran ramping 300 pasang / 3 warna:** gunakan **warna katalog padu standard** (100 pasang/warna) berbanding cermin atau warna khas (300 pasang/warna), dan nyatakan **HC** serta **AR dalaman** dalam RFQ.
 
 ## MOQ warna kanta, panduan harga dan kanta gantian
@@ -140,11 +139,10 @@ Padankan substrat dan kemasan dengan binaan bingkai, iklim sasaran dan jumlah pe
 
 Dua keupayaan khusus juga disokong untuk projek tersuai yang disahkan:
 
-- **Penapisan spektrum dalam jisim & NIR:** penyerap dicampur terus ke dalam substrat (**pewarnaan dalam jisim**) supaya penyerapan kekal sekata merentasi lengkungan pembentukkan haba (laluan PC dalam jisim kami mengukur sekatan NIR berterusan sehingga 2300 nm pada sampel tanpa salutan; projek NIR tersuai bermula USD 200 untuk dua sampel + USD 60 kurier, dikreditkan pada pesanan pukal pertama).
+- **Penapisan spektrum dalam jisim & NIR:** penyerap dicampur terus ke dalam substrat (**pewarnaan dalam jisim**) supaya penyerapan kekal sekata merentasi lengkungan pembentukan haba (laluan PC dalam jisim kami mengukur sekatan NIR berterusan sehingga 2300 nm pada sampel tanpa salutan; projek NIR tersuai bermula USD 200 untuk dua sampel + USD 60 kurier, dikreditkan pada pesanan pukal pertama).
 - **Kanta kekisi pembelauan khusus:** bagi kekisi optik (~500–1,000 garis/mm), pelanggan memilih pembekal kanta dan Kssmi merekabentuk, memasang dan mengeluarkan bingkai mengikut geometri kanta siap.
 
 Untuk pengeluaran standard, kanta datang daripada pengeluar kanta optik terkemuka di Shenzhen. Apabila jenama menetapkan jenama kanta optik antarabangsa atau program polarized kilang rakan kongsi khusus, Kssmi mendapatkan mengikut jenama, model dan salutan disahkan — atau memasang kanta yang dibeli pelanggan daripada kilang rakan kongsi tersebut.
-
 
 ![Sampel warna kanta polarized salutan cermin Revo merah tertakluk kepada MOQ 300 pasang/warna](/media/blogs/eyewear-lens-materials-comparison/revo-mirror-color-moq.webp)
 ## Pematuhan, laporan spektrum dan ujian pihak ketiga
@@ -155,21 +153,6 @@ Kssmi tidak mengguna pakai laporan gaya lain sebagai sijil kilang menyeluruh dan
 
 - **Lengkung transmisi spektrum:** kami menyediakan ukuran **280–780 nm pada langkah 5 nm** (jadual data, graf, data CIE dan fail CSV asal).
 - **Penyelarasan makmal bebas:** ujian untuk AS, EU (CE / EN ISO 12312-1), UK atau Australia (**AS/NZS 1067.1**, rujukan terkini sekitar **USD 1,139** setiap spesifikasi) diselaras melalui SGS, Intertek atau TÜV pada kos sebenar.
-
-## Apa yang kami tidak lakukan
-
-- **Kami tidak menghasilkan kanta preskripsi (Rx):** bingkai optik dihantar bersama kanta demo jernih atau penapis cahaya biru tanpa preskripsi.
-- **Kami tidak menghasilkan atau membekalkan pembungkusan runcit:** pelanggan menghantar bekas, kotak dan kain pembersih daripada pembekal pakar untuk kami bungkus secara percuma.
-- **Kami tidak menjual stok sedia ada atau kanta gantian longgar tanpa pesanan pengeluaran.**
-
-## Apa yang perlu dihantar untuk semakan spesifikasi kanta
-
-- reka bentuk bingkai, gambar rujukan atau SKU katalog (nyatakan tanpa bingkai, separuh bingkai atau perisai);
-- substrat pilihan (TAC, CR-39, nilon, PC atau Trivex) dan kod sampel KS-LN;
-- fungsi dan salutan diperlukan (UV400, polarized, kecerunan, cermin, fotokromik, cahaya biru, HC, AR dalaman, H/O atau AF);
-- kemasan tepi bagi reka bentuk tanpa bingkai (serong digilap standard vs. faset potongan berlian);
-- kuantiti setiap warna dan kategori VLT / CAT sasaran;
-- pasaran destinasi dan piawaian ujian pihak ketiga yang diperlukan.
 
 ## Soalan Lazim (FAQ)
 
@@ -199,7 +182,7 @@ Tidak: HC dan AR bukan lalai automatik dan mesti dinyatakan dalam permintaan seb
 
 ### 7. Bagaimanakah kanta perisai sukan melilit sekeping perlu ditentukan?
 
-Nyatakan PC pembentukkan haba atau gred nilon sesuai dan kunci kedua-dua panjang lengkok dan lebar kord lurus pada lukisan. Kssmi membentuk hingga base 7 / 151° dengan salutan cermin seluruh permukaan sekata.
+Nyatakan PC pembentukan haba atau gred nilon sesuai dan kunci kedua-dua panjang lengkok dan lebar kord lurus pada lukisan. Kssmi membentuk hingga base 7 / 151° dengan salutan cermin seluruh permukaan sekata.
 
 ### 8. Apakah perbezaan antara tepi serong standard dengan tepi faset potongan berlian?
 
@@ -219,6 +202,8 @@ Kssmi memberi data rujukan kilang percuma serta data 280–780 nm (langkah 5 nm)
 
 ---
 
-Kssmi telah mengilangkan cermin mata di Shenzhen sejak 2003, menggabungkan kejuruteraan bingkai dalaman, rakan pengeluar kanta optik terkemuka Shenzhen dan pemeriksaan 100% sebelum penghantaran. Ketahui lebih lanjut di [tentang kami](/ms/about-us/) atau [FAQ](/ms/faq/).
+## Rumusan
 
-**Bersedia untuk mengunci spesifikasi kanta anda?** Hantar gaya bingkai, substrat pilihan, kod KS-LN, salutan, kuantiti dan pasaran sasaran melalui [halaman sebut harga](/ms/quote/).
+Prestasi sebenar kanta ditentukan oleh binaan siap, salutan dan MOQ warna berbanding nama substrat semata-mata: tentukan nilon (PA) atau PC untuk tanpa bingkai dan lengkung tinggi, CR-39 atau TAC (di luar haba melampau) untuk bingkai penuh, serta sahkan HC, AR dalaman, sasaran VLT/CAT dan minimum warna (100 padu / 150 kecerunan / 300 cermin atau khas).
+
+Hantar reka bentuk bingkai, substrat, kod KS-LN, salutan dan kuantiti melalui [borang pertanyaan di bawah](#inquiry-form-section) untuk mengesahkan kebolehlaksanaan dan perincian kos sebelum kerja berbayar dimulakan.

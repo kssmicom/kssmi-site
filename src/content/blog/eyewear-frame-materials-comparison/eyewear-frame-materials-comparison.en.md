@@ -24,7 +24,7 @@ seoDescription: "Compare acetate, stainless steel, nickel silver, titanium, carb
 
 **Frame material is not just an aesthetic choice — it sets your construction route, minimum order quantity (200, 300, or 1,200 pairs per model), tooling commitment, and which shapes or hardware details are physically possible.**
 
-At Kssmi, six frame material routes cover nearly all custom eyewear programs: cellulose acetate, 316 stainless steel, nickel silver (cupronickel), titanium (pure and beta), carbon fiber, and TR-90 injection. Choosing the wrong material for a reference shape — such as asking for a sculpted, wraparound bubble silhouette in acetate sheet — delays quoting and sampling before production even starts.
+At Kssmi, six frame material routes cover nearly all custom eyewear programs: cellulose acetate, 316 stainless steel, nickel silver (copper–nickel–zinc alloy), titanium (pure and beta), carbon fiber, and TR-90 injection. Choosing the wrong material for a reference shape — such as asking for a sculpted, wraparound bubble silhouette in acetate sheet — delays quoting and sampling before production even starts.
 
 ## Frame materials at a glance
 
@@ -32,22 +32,22 @@ At Kssmi, six frame material routes cover nearly all custom eyewear programs: ce
 |---|---|---|---|---|---|
 | Acetate | CNC-cut from layered sheet, tumbled & hand-polished | Solid, warm feel; moderate weight | Deep solids, transparents, tortoise & layered patterns | 300 pairs/model (up to 3 × 100*) | Fashion, lifestyle & vintage-inspired silhouettes |
 | Stainless steel (316) | Stamped/formed metal wire & sheet; soldered & plated | Slim, structured, medium weight | 18 PVD plated colors (gold, chrome, gunmetal, etc.) | 300 pairs/model (up to 3 × 100) | Clean minimalist & everyday versatile frames |
-| Nickel silver (cupronickel) | Machined/cast metal alloy; plated | Higher density (~1.9× titanium); solid metal feel | Takes gold & decorative PVD plating with sharp detail | 300 pairs/model (up to 3 × 100) | Cost-down alternative to titanium when cast ornaments are needed |
+| Nickel silver (copper–nickel–zinc alloy) | Machined/cast metal alloy; plated | Higher density (~1.9× titanium); solid metal feel | Takes gold & decorative PVD plating with sharp detail | 300 pairs/model (up to 3 × 100) | Cost-down alternative to titanium when cast ornaments are needed |
 | Pure & beta titanium | Precision-formed titanium wire/sheet; soldered or screwless | Featherweight; corrosion-resistant; high spring-back (beta) | PVD plated finishes & restrained metal tones | 300 pairs/model (up to 3 × 100) | Premium comfort, slim profiles & screwless builds |
 | Carbon fiber | Layered woven carbon composite | Ultra-light, stiff, technical feel | Carbon weave patterns with PVD plated hardware | 200 pairs/model | Sport, performance & tech-styled collections |
-| TR-90 | Thermoplastic nylon injection-molded in dedicated tooling | Very light, flexible, impact-resistant | Molded solid & translucent colors; painted/coated | 1,200 pairs/style (≥600/color); sport custom 600/color | Wraparound sport shields, sculpted 3D curves & high-volume lines |
+| TR-90 | Thermoplastic nylon injection-molded in dedicated tooling | Very light, flexible, impact-resistant | Molded solid & translucent colors; painted/coated | 1,200 pairs/model; ≥600 pairs/color | Wraparound sport shields, sculpted 3D curves & high-volume lines |
 
 *\*Raw-material minimums vary by acetate supplier; see the acetate section below.*
 
 ## Acetate frames: color depth, finishing, and shape limits
 
-**Cellulose acetate is a plant-based thermoplastic cut from layered sheets, ideal for rich color depth and hand-polished edges — but its flat-sheet construction cannot reproduce injection-molded 3D wraparound bubbles.**
+**Cellulose acetate is a plant-based thermoplastic cut from layered sheets, ideal for rich color depth and hand-polished edges.**
 
 Our acetate frames go through a five-stage finishing sequence: sheet sanding, barrel/tumble rough polishing, high-gloss fine polishing, hand finishing and edge refinement, and a pre-assembly quality check. Acetate temples normally require an internal metal wire core for structural strength and fitting adjustment. Half-frame designs with an exposed lower lens edge can also be built in acetate by securing the lens with a fine transparent cord seated into a precision-carved groove.
 
 Three engineering and sourcing boundaries matter before you lock an acetate design:
 
-1. **Shape and base-curve limits.** A puffy, bubble-like 3D front with soft wrapped curves and a noticeable base curve is a signature of injection molding and cannot be milled from flat acetate sheet. When a reference shows that silhouette, the workable options are TR-90 injection for the closest reproduction, or an adapted acetate construction that preserves the spirit of the shape within sheet limits.
+1. **Shape and base-curve limits.** For a TR-90-style wraparound shield silhouette, an acetate version requires an additional vertical support at the bridge. It cannot copy the same uninterrupted shield construction; confirm the adapted bridge structure on the drawing before sampling.
 2. **Built-in spring hinges.** When buyers ask for a "hidden hinge" in acetate, the workable construction is a **built-in spring hinge housed inside the acetate temple** with the small mechanical clearance required for the arm to swing. Zero-clearance total concealment is physically impossible, and on translucent acetate the internal mechanism remains partly visible.
 3. **Finished-frame MOQ vs. raw-material MOQ.** Finished acetate orders start at 300 pairs per model (up to 3 colors × 100 pairs). With top-tier Chinese mills (JIMEI / JINYU), each color starts from 100 pairs. Italian Mazzucchelli sheet carries a raw-material purchasing threshold equivalent to roughly 1,000 pairs of one style in one color, so a 300-pair first batch in Italian acetate effectively runs one color per style. As a pricing guide, Mazzucchelli typically runs roughly **USD 3–5 more per pair** in standard colors (and **USD 5–10 more per pair** in tortoiseshell patterns) than standard acetate, confirmed in the quotation. In addition, acetate cannot be stored indefinitely without risking color shift or brittleness, so any reserved sheet should be scheduled into production within a reasonable window.
 
@@ -57,14 +57,14 @@ Explore our [acetate sunglasses](/product/acetate-sunglasses/) and [acetate opti
 
 ## Metal frames: stainless steel vs. nickel silver
 
-**316 stainless steel suits clean, slim everyday profiles, while nickel silver (cupronickel) is the workable cost-down metal route when your design relies on cast decorative ornaments.**
+**316 stainless steel suits clean, slim everyday profiles, while nickel silver (copper–nickel–zinc alloy) is the workable cost-down metal route when your design relies on cast decorative ornaments.**
 
 Both metals follow the standard 300-pair-per-model minimum (up to 3 colors × 100 pairs) and support 18 PVD plated color options, including gold, rose gold, silver/chrome and gunmetal. However, they behave differently in tooling and detail:
 
 - **316 Stainless steel** delivers slim, structured fronts and adjustable temples at a practical cost tier, and pairs well with acetate or TR-90 temples in mixed-material builds. It does not reproduce fine cast ornaments cleanly.
-- **Nickel silver (cupronickel)** machines well, takes gold plating cleanly and holds crisp cast ornament details (such as geometric brow or temple emblems). Its metal components are roughly 1.9× denser than titanium (≈8.7 vs. ≈4.5 g/cm³), so the frame feels noticeably heavier than titanium while avoiding stainless steel's casting limits.
+- **Nickel silver (copper–nickel–zinc alloy)** machines well, takes gold plating cleanly and holds crisp cast ornament details (such as geometric brow or temple emblems). Its metal components are roughly 1.9× denser than titanium (≈8.7 vs. ≈4.5 g/cm³), so the frame feels noticeably heavier than titanium while avoiding stainless steel's casting limits.
 
-Finish choice also drives cost and lead time. Standard PVD colors run on normal schedules, whereas large mirror-gloss plated surfaces require a multi-pass plating cycle (normally 2–3 passes, occasionally more, at roughly **USD 18 per pass** as a pricing guide, with the final pass count confirmed in the quotation) to stay uniform, raising unit cost, MOQ and production time.
+Finish choice also drives cost and lead time. Standard PVD colors run on normal schedules, whereas large mirror-gloss plated surfaces require a multi-pass plating cycle (normally 2–3 passes, occasionally more, at roughly **USD 0.60 per pair per pass** as a pricing guide, with the final pass count confirmed in the quotation) to stay uniform, raising unit cost, MOQ and production time.
 
 ![PVD-plated custom metal sunglasses frame construction](/media/blogs/eyewear-frame-materials-comparison/metal-frames.webp)
 
@@ -99,11 +99,11 @@ View our [carbon fiber sunglasses](/product/carbon-fiber-sunglasses/) and [carbo
 
 **TR-90 is a flexible thermoplastic nylon built in dedicated injection molds — essential for wraparound sport shields, sculpted 3D curves and impact-resistant volume lines, with a 1,200-pair standard MOQ.**
 
-Unlike CNC-cut acetate or formed metal, TR-90 shapes are injected directly into steel production molds. That unlocks aggressive wrap geometry, 3D contoured temples and lightweight impact resistance that sheet materials cannot match. Sport TR-90 projects can also start from our dedicated sport design templates rather than from zero.
+Unlike CNC-cut acetate or formed metal, TR-90 shapes are injected directly into steel production molds. That unlocks aggressive wrap geometry, 3D contoured temples and lightweight impact resistance for sport-focused designs. Sport TR-90 projects can also start from our dedicated sport design templates rather than from zero.
 
 Two commercial rules govern TR-90:
 
-1. **Dedicated tooling and higher MOQ.** Standard TR-90 styles require 1,200 pairs per style (at least 600 pairs per color); fully custom sport TR-90 frames follow a 600-pair-per-color bulk floor. Reusing an existing shape saves new tooling, not the per-style minimum.
+1. **Dedicated tooling and higher MOQ.** Every TR-90 model, including custom sport models, requires at least 1,200 pairs per model and at least 600 pairs per color. Reusing an existing shape saves new tooling, not either minimum.
 2. **Pre-tooling verification and fee credits.** For custom injection shapes, fit and ergonomics are normally verified before cutting production steel molds, and TR-90 injection tooling and sample fees are credited once the same model reaches a cumulative **30,000 pairs within 24 months** (excluding freight and taxes), as stated in the quotation.
 
 ![Lightweight injection-molded thermoplastic eyewear frame construction for ergonomic sport and all-day wear](/media/blogs/eyewear-frame-materials-comparison/tr90-injection-frames.webp)
@@ -123,7 +123,7 @@ See available lens materials, tints and coatings on the [lens options page](/cus
 
 ## How to choose the right material for your collection
 
-1. **Check physical shape feasibility first.** If your reference has deep wraparound curves or a sculpted 3D bubble front, start with TR-90 injection or adapt the silhouette before quoting acetate.
+1. **Check physical shape feasibility first.** For a TR-90-style wraparound shield silhouette, an acetate version requires an additional vertical support at the bridge.
 2. **Match weight to wearing duration.** All-day optical wearers and active sport buyers feel every gram — favor beta titanium, pure titanium, carbon fiber or TR-90. Statement fashion sunglasses carry solid acetate well.
 3. **Align color splits with raw-material rules.** If you want three colorways of 100 pairs on a 300-pair launch, choose metal, titanium, or JIMEI/JINYU acetate — not Italian Mazzucchelli sheet or TR-90.
 4. **Match hardware and plating to your price tier.** Choose nickel silver over stainless steel if your design includes fine cast ornaments; budget extra cost and lead time for multi-pass mirror plating.
@@ -135,7 +135,7 @@ At Kssmi, quantities are **per model, per production run** — different models 
 
 | Stage / term | Acetate, stainless steel, nickel silver & titanium | Carbon fiber | TR-90 injection |
 |---|---|---|---|
-| Production MOQ | 300 pairs/model (up to 3 × 100) | 200 pairs/model | 1,200 pairs/style (≥600/color); sport custom 600/color |
+| Production MOQ | 300 pairs/model (up to 3 × 100) | 200 pairs/model | 1,200 pairs/model; ≥600 pairs/color |
 | 2D technical drawing | 3–10 working days (up to 3 revisions) | 3–10 working days | 3–10 working days |
 | Custom sample & tooling | 60 working days after drawing approval & full payment | 60 working days | 60 working days |
 | Bulk production | 60 working days after sample approval & 50% deposit | 60 working days | 60 working days |
@@ -145,22 +145,6 @@ Sample, development and tooling charges are paid 100% in advance; bulk orders re
 
 ![Custom sculpted sunglasses combining refined acetate rim lines with precision metal bridge and temples](/media/blogs/eyewear-frame-materials-comparison/material-selection-hybrid.webp)
 
-## What we do not do
-
-- **We do not sell ready-stock eyewear.** Catalog frames serve as quality-evaluation samples and reference constructions; every production order is made for a brand.
-- **We do not manufacture or supply retail packaging.** Order cases, boxes and cleaning cloths from a specialist supplier and ship them to us; we pack finished frames into customer-supplied packaging at no extra charge.
-- **We do not produce prescription lenses.** Optical frames ship with clear demo lenses for local optician fitting.
-
-## What to send for a material feasibility check
-
-Before quoting, our engineering team reviews what you want to build so we confirm the right material route, MOQ and cost structure up front. Include:
-
-- your design drawing, sketch, reference image or catalog model SKU;
-- target market and retail price tier;
-- planned colors and quantity per model;
-- any special construction details (3D wrap curves, cast ornaments, screwless build, built-in spring hinges or mirror plating);
-- target launch date.
-
 ## FAQ
 
 ### 1. Which eyewear frame material is the lightest?
@@ -169,7 +153,7 @@ Carbon fiber and titanium (pure or beta titanium) are the lightest frame options
 
 ### 2. Can sculpted or bubble-shaped frames be made in cellulose acetate?
 
-No. A puffy, bubble-like 3D look with deep wrapped curves is a signature of injection molding and cannot be reproduced from flat acetate sheet. We can either build the closest match in TR-90 injection or adapt the silhouette so it works naturally in acetate sheet.
+For a TR-90-style wraparound shield silhouette, an acetate version requires an additional vertical support at the bridge. It cannot copy the same uninterrupted shield construction; confirm the adapted bridge structure on the drawing before sampling.
 
 ### 3. What is the difference between pure titanium and beta titanium?
 
@@ -177,11 +161,11 @@ Pure titanium is lightweight and corrosion-resistant. Beta titanium is a titaniu
 
 ### 4. When should a brand choose nickel silver instead of stainless steel?
 
-Choose nickel silver (cupronickel) when your design requires fine cast decorative ornaments and gold plating at a lower cost than titanium. Stainless steel suits clean, slim profiles but cannot reproduce sharp cast ornament details; note that nickel silver metal parts are roughly 1.9 times denser than titanium.
+Choose nickel silver (copper–nickel–zinc alloy) when your design requires fine cast decorative ornaments and gold plating at a lower cost than titanium. Stainless steel suits clean, slim profiles but cannot reproduce sharp cast ornament details; note that nickel silver metal parts are roughly 1.9 times denser than titanium.
 
 ### 5. How do frame material and finish choices affect unit cost?
 
-At Kssmi, pricing guides follow material and finishing complexity: titanium runs roughly USD 3.70 more per pair than stainless steel; Italian Mazzucchelli acetate runs roughly USD 3–5 more per pair in standard colors (and USD 5–10 more in tortoiseshell patterns) than standard acetate; and large multi-pass mirror plating runs roughly USD 18 per pass across 2–3 or more passes. For metal builds with cast ornaments, nickel silver lowers cost compared with titanium, while exact unit pricing is confirmed in the project quotation after engineering review.
+At Kssmi, pricing guides follow material and finishing complexity: titanium runs roughly USD 3.70 more per pair than stainless steel; Italian Mazzucchelli acetate runs roughly USD 3–5 more per pair in standard colors (and USD 5–10 more in tortoiseshell patterns) than standard acetate; and large multi-pass mirror plating runs roughly USD 0.60 per pair per pass across 2–3 or more passes. For metal builds with cast ornaments, nickel silver lowers cost compared with titanium, while exact unit pricing is confirmed in the project quotation after engineering review.
 
 ### 6. Can you build completely concealed hinges inside acetate frames?
 
@@ -193,7 +177,7 @@ Finished acetate frames start at 300 pairs per model (up to 3 colors at 100 pair
 
 ### 8. What MOQ applies to each frame material, and do lens colors add extra minimums?
 
-Acetate, metal (stainless steel and nickel silver) and titanium start at 300 pairs per model; carbon fiber starts at 200 pairs per model; TR-90 requires 1,200 pairs per style (at least 600 per color, or 600 per color for custom sport TR-90). Lens color minimums sit on top: solid standard tints start at 100 pairs, gradient at 150, and mirror-coated or custom tints at 300 pairs per color.
+Acetate, metal (stainless steel and nickel silver) and titanium start at 300 pairs per model; carbon fiber starts at 200 pairs per model; TR-90 requires at least 1,200 pairs per model and at least 600 pairs per color. Lens color minimums sit on top: solid standard tints start at 100 pairs, gradient at 150, and mirror-coated or custom tints at 300 pairs per color.
 
 ### 9. How long do custom sampling and bulk production take?
 
@@ -209,6 +193,8 @@ No. We do not manufacture or supply retail packaging, though we pack finished fr
 
 ---
 
-Kssmi has manufactured eyewear in Shenzhen since 2003, with in-house design, engineering, CNC machining, polishing, assembly and 100% pre-shipment quality control. Acetate comes from Mazzucchelli, JIMEI and JINYU; titanium from Kobe Steel and Baoji Titanium. See full factory background on our [about page](/about-us/) or review commercial terms in the [FAQ](/faq/).
+## Summary
 
-**Ready to shortlist materials for your line?** Send your design, sketch or reference image through the [quote page](/quote/) with your target market, colors and quantity per model. We confirm structural feasibility, material route and MOQ before any paid work starts.
+Match your frame route to silhouette and batch size before sampling: JIMEI or JINYU acetate, stainless steel, nickel silver, and titanium fit 300-pair / 3-color launches; carbon fiber fits 200-pair lightweight lines; and TR-90 injection fits sculpted 3D or wraparound sport frames that justify steel molds and 1,200 pairs. Lock structure and tooling recovery timing up front so bulk production stays on schedule.
+
+Send your frame design, reference images, planned colors, and quantities through the [inquiry form below](#inquiry-form-section) to confirm structural feasibility and MOQs before paid sampling begins.

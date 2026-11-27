@@ -186,8 +186,6 @@ Awake dhewe ora menehi rega proyek sadurunge ndeleng desain utawa referensine. S
 - pasar tujuan;
 - target tanggal peluncuran.
 
-Kirimake liwat [kaca penawaran rega](/jv/quote/). Awake dhewe biasane mangsuli sajrone sedina kerja, lan penawaran rega nyusul yen data wis lengkap — biasane sajrone udakara telung dina kerja. [Kaca kustomisasi](/jv/customization/) nyathet apa sing bisa diowahi, lan [FAQ](/jv/faq/) nerangake babagan minimal, sampel, pembayaran lan kepemilikan kanthi luwih rinci.
-
 ## Pitakonan sing kerep ditakokake (FAQ)
 
 ### 1. Apa bedane OEM, ODM lan private label?
@@ -229,9 +227,10 @@ Ora. Model katalog iku referensi lan sampel evaluasi; saben pasang produksi diga
 ### 10. Apa sampeyan bisa nyedhiyakake kemasan ritel utawa lensa resep?
 
 Ora. Awake dhewe ora nggawe utawa nyedhiyakake kemasan ritel, lan ora produksi lensa resep. Bingkai optik dikirim nganggo lensa demo.
-
 ---
 
-Kssmi wis produksi kacamata ing Shenzhen wiwit taun 2003, kanthi desain internal, teknik, mesin CNC, pemolesan, perakitan lan kontrol kualitas. Asetat asale saka Mazzucchelli, JIMEI lan JINYU; titanium saka Kobe Steel lan Baoji Titanium. Keterangan luwih lengkap babagan pabrik ana ing [kaca babagan awake dhewe](/jv/about-us/).
+## Ringkesan
 
-**Siap milih jalur?** Kirimake desain, referensi utawa konsep sampeyan liwat [kaca penawaran rega](/jv/quote/) bebarengan karo jumlah target lan tanggal peluncuran. Awake dhewe bakal ngonfirmasi jalure, minimal sing ditrapake lan biaya pangembangan sadurunge ana garapan sing dibayar diwiwiti.
+Miwiti saka berkas sing wis sampeyan duweni dina iki: spesifikasi mateng langsung mlebu OEM, sketsa utawa foto referensi diwiwiti nganggo ODM, lan pigura katalog mbantu nguji kualitas sadurunge nggawe cetakan khusus. Sadurunge sampel, selarasake MOQ saben model (300 pasang asetat, logam, titanium; 200 serat karbon; 1.200 TR-90), persetujuan gambar, kepemilikan cetakan, lan kredit biaya.
+
+Kirim desain, referensi, utawa konsep bebarengan karo jumlah lan tanggal peluncuran liwat [formulir panjalukan ing ngisor iki](#inquiry-form-section) kanggo mastekake rute, minimum, lan biaya sadurunge tahap berbayar.

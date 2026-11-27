@@ -133,7 +133,7 @@ Sample, development and tooling charges are paid in full before their stage begi
 Three terms reduce the risk of paying for development that goes nowhere:
 
 - **Fee credit.** As above: eligible fees are credited once the same design reaches 1,000 pairs within 12 months, freight excluded. TR-90 follows its own threshold.
-- **Stopping before tooling.** If you review the 2D drawings and stop before tooling begins, the 2D design work is retained and the balance is refunded to the original payment account within 10 working days, less a 0.5% transfer fee. The completed 2D drawings remain yours.
+- **Stopping before tooling.** If you review the 2D drawings and stop before tooling begins, the cost of completed 2D design work is retained and the balance is refunded to the original payment account within 10 working days, less a 0.5% transfer fee. The completed 2D drawings remain yours.
 - **Tooling ownership.** Customer-paid molds and tooling belong to the customer. They normally stay at our factory for production, are never used for another customer, and can be released on request once all sums due are settled. Repeat production on the same design carries no new tooling charge while the tooling remains usable.
 
 Once tooling begins, the mold is cut for your design and no refund applies.
@@ -186,8 +186,6 @@ We do not price a project before we see the design or reference. A clear sketch 
 - destination market;
 - target launch date.
 
-Send these through the [quote page](/quote/). We normally reply within one business day, and a quotation follows once the inputs are complete — normally within about three working days. The [customization page](/customization/) lists what can be changed, and the [FAQ](/faq/) covers minimums, samples, payment and ownership in more detail.
-
 ## FAQ
 
 ### 1. What is the difference between OEM, ODM and private label?
@@ -229,9 +227,10 @@ No. Catalogue models are references and evaluation samples; every production pai
 ### 10. Can you supply retail packaging or prescription lenses?
 
 No. We do not manufacture or supply retail packaging, and we do not produce prescription lenses. Optical frames ship with demo lenses.
-
 ---
 
-Kssmi has manufactured eyewear in Shenzhen since 2003, with in-house design, engineering, CNC machining, polishing, assembly and quality control. Acetate comes from Mazzucchelli, JIMEI and JINYU; titanium from Kobe Steel and Baoji Titanium. More about the factory is on the [about page](/about-us/).
+## Summary
 
-**Ready to choose a route?** Send your design, reference or concept through the [quote page](/quote/) with your target quantity and launch date. We will confirm the route, the applicable minimum and the development cost before any paid work starts.
+Start with the files you have on hand today: a confirmed specification goes straight to OEM, a sketch or reference photo starts with ODM, and catalogue frames let you test build quality before committing to custom tooling. Before sampling begins, align your per-model MOQ (300 pairs for acetate, metal, and titanium; 200 pairs for carbon fiber; 1,200 pairs for TR-90) together with drawing approval, tooling ownership, and fee-credit terms.
+
+Send your design, reference, or concept with your target quantity and launch date through the [inquiry form below](#inquiry-form-section) to confirm your route, minimum, and development cost before any paid work starts.

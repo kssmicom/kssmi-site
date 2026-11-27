@@ -33,9 +33,9 @@ Kanggo merek sing pesen kacamata srengenge utawa pigura optik kustom, kesalahan 
 | Nylon (PA) | Kajelasan dhuwur (Abbe ~52); super entheng | Poliamida injeksi/tuang; thermoformed | Kabeh pigura — ideal kanggo rimless & half-rim | Riwayat lembab lan panas mengaruhi tegangan optik | Kacamata mewah, titanium, serat karbon & rimless |
 | CR-39 | Standar kajelasan (Abbe ~58) | Resin termoset ADC tuang | Pigura penuh asetat/logam; aja dibor | Getas ing bolongan sekrup; luwih abot tinimbang PA/PC | Kacamata srengenge butik & asetat klasik |
 | TAC polarized | Film laminasi multi-lapisan entheng | Laminasi lembaran TAC + film polarisator + perekat | Mung pigura penuh | Ora cocok kanggo iklim panas banget; pinggir kudu tertutup | Lini polarized komersial & nyetir ekonomis |
-| Polikarbonat (PC) | Kajelasan apik; anti pecah; super entheng | Injeksi & thermoforming | Shield lengkung dhuwur, olahraga, rimless | Dispersi luwih dhuwur; butuh lapisan keras (HC) | Olahraga outdoor, shield & SKU tahan benturan |
+| Polikarbonat (PC) | Kajelasan apik; tahan pecah; super entheng | Injeksi & thermoforming | Shield lengkung dhuwur, olahraga, rimless | Dispersi luwih dhuwur; butuh lapisan keras (HC) | Olahraga outdoor, shield & SKU tahan benturan |
 | Trivex | Kajelasan dhuwur + tahan benturan (1.53) | Polimer tuang berbasis urethane (miturut spek) | Pigura penuh, rimless & performa | Biaya luwih dhuwur; pesen khusus (aja diganti PC) | Program olahraga & proteksi pasar AS |
-| Demo / cahya biru | Dasar bening utawa semu anget alus | Cetak datar / pewarnaan utawa lapisan selektif | Pigura optik & kacamata layar non-Rx | Mung tanpa ukuran; butuh target spektrum | Pajangan optik utawa ritel anti-cahya biru |
+| Demo / cahya biru | Dasar bening utawa semu anget alus | Cetak datar / pewarnaan utawa lapisan selektif | Pigura optik & kacamata layar non-Rx | Mung tanpa daya koreksi; butuh target spektrum | Pajangan optik utawa ritel anti-cahya biru |
 
 ## Lensa Nylon (PA): kajelasan dhuwur kanggo rimless lan mewah
 
@@ -75,7 +75,7 @@ Patuhi rong watesan ketat sadurunge milih TAC:
 
 **Polikarbonat (PC) minangka substrat utama kanggo shield olahraga thermoformed lengkung dhuwur lan uji benturan drop-ball, dene Trivex (indeks 1.53) nyedhiyakake proteksi benturan berbasis urethane kanthi optik luwih tajam.**
 
-Injeksi lan thermoforming PC ndhukung lengkungan rangkul sing ora bisa digayuh pemotongan datar. Minangka standar rekayasa Kssmi sing wis dikonfirmasi, kita mbentuk shield PC sak-potongan nganti **kurva base 7 kanthi sudhut rangkul 151°**. Amarga shield lengkung duwe geometri torik lan ketebalan dikunci sawise thermoforming (ora bisa ditipisake maneh), alur pigura kudu dirancang pas karo ketebalan lensa sing dibentuk. Kajaba iku, **dawa busur lengkung lan jembar tali lurus iku ukuran sing beda lan kalorone kudu cocog karo gambar teknis**.
+Injeksi lan thermoforming PC ndhukung lengkungan rangkul sing ora bisa digayuh pemotongan datar. Minangka standar rekayasa Kssmi sing wis dikonfirmasi, kita mbentuk shield PC sak-potongan nganti **kurva base 7 kanthi sudhut rangkul 151°**. Amarga shield lengkung duwe geometri torik lan ketebalan dikunci sawise thermoforming (ora bisa ditipisake maneh), alur pigura kudu dirancang pas karo ketebalan lensa sing dibentuk. Kajaba iku, **dawa busur lengkung lan jembar garis lurus antarane pucuk busur (chord) iku ukuran sing beda lan kalorone kudu cocog karo gambar teknis**.
 
 Kanggo program olahraga lan proteksi AS sing njaluk **Trivex** (1.53), Kssmi nyedhiyakake bahan urethane miturut spesifikasi sing dikonfirmasi — kalebu lensa datar bening kanthi AR pita lebar — lan ora tau ngganti nganggo PC. Deleng [kacamata rimless](/jv/product/rimless-eyewear/) kita.
 
@@ -87,20 +87,19 @@ Kanggo program olahraga lan proteksi AS sing njaluk **Trivex** (1.53), Kssmi nye
 
 Nalika pesen kacamata layar non-Rx, pisahake rong perkara teknis iki:
 
-- **Desain spektral ngluwihi label pemasaran:** filter cahya biru nyuda pita gelombang target liwat penyerapan bahan, pewarnaan utawa lapisan. Konfirmasi pita target, tingkat pemblokiran lan kehangatan dasar (bening vs kuning entheng/padhet).
+- **Desain spektral ngluwihi label pemasaran:** filter cahya biru nyuda pita gelombang target liwat penyerapan bahan, pewarnaan utawa lapisan. Konfirmasi pita target, tingkat pemblokiran lan kehangatan dasar (bening vs kuning entheng/padhet). Penyaringan selektif ngowahi imbangan spektrum; ora nambah resolusi optik lan ora ateges ana manfaat medis.
 - **Standar produk sing beda:** pigura optik tanpa lensa koreksi kalebu ing **ISO 12870**, beda karo standar kacamata srengenge kayata **EN ISO 12312-1**.
 
 ![Demonstrasi uji spektral lensa optik filter cahya biru tanpa resep](/media/blogs/eyewear-lens-materials-comparison/blue-light-lenses.webp)
 
 Deleng [opsi lensa blue-blocking](/jv/customization/lenses/blue-blocking/) lan koleksi [pigura optik](/jv/product/optical-frames/).
-
 ## Fungsi optik vs. lapisan permukaan
 
 **Fungsi optik ngowahi cahya sing liwat lensa (padhang, UV, silau utawa spektrum); lapisan permukaan njaga permukaan saka goresan, pantulan mburi, banyu utawa embun — lan Hard Coating (HC) sarta Anti-Reflective (AR) ora otomatis standar.**
 
 ### Fungsi optik (dikonfirmasi ing lensa rampung)
 
-- **Filter surya & VLT / CAT 0–4:** transmisi cahya katon (VLT) diukur nganggo alat, ora dikira nganggo mripat. **CAT.3 (8–18% VLT)** minangka standar global kanggo srengenge umum lan nyetir awan; **CAT.1 (43–80%)** lan **CAT.2 (18–43%)** kanggo mendhung, warna fashion lan gradasi.
+- **Filter surya & VLT / CAT 0–4:** transmisi cahya katon (VLT) diukur nganggo alat, ora dikira nganggo mripat. **CAT.3 (8–18% VLT)** minangka standar global kanggo srengenge umum lan nyetir awan; **CAT.1 (43–80%)** lan **CAT.2 (18–43%)** kanggo mendhung, warna fashion lan gradasi. Sadurunge netepake VLT, priksa syarat nyetir ing pasar tujuan.
 - **Proteksi UV400:** ngalangi UVA/UVB liwat substrat, aditif, pewarnaan utawa lapisan. Lensa bening/entheng bisa entuk UV400 yen diformulasikake kanthi bener, dene lensa peteng tanpa penyerap UV durung mesthi lolos tanpa uji rampung.
 - **Polarisasi:** nyuda silau horizontal saka banyu, dalan lan salju tanpa gumantung marang peteng, UV400 utawa tampilan cermin; umume warna CAT.3 [klawu](/jv/customization/lenses/grey/), [coklat](/jv/customization/lenses/brown/) lan [ijo](/jv/customization/lenses/green/) ndhukung susunan polarized.
 - **Photochromic & High Contrast (Hi-Con):** lensa photochromic dipengaruhi suhu sekitar lan kaca ngarep mobil (sing ngalangi UV); warna kontras dhuwur nggeser kontras spektral tanpa ngowahi nilai Abbe.
@@ -145,7 +144,6 @@ Rong kapabilitas khusus uga didhukung ing proyek kustom sing dikonfirmasi:
 
 Kanggo produksi standar, lensa asale saka pabrikan optik unggulan ing Shenzhen. Nalika merek nemtokake merek lensa optik internasional utawa program polarized pabrik mitra khusus, Kssmi nyedhiyakake miturut merek, model lan lapisan sing dikonfirmasi — utawa ngrakit lensa sing dituku pelanggan saka pabrik mitra kasebut.
 
-
 ![Sampel warna lensa polarized cermin Revo abang kanthi MOQ 300 pasang saben warna](/media/blogs/eyewear-lens-materials-comparison/revo-mirror-color-moq.webp)
 ## Kepatuhan, laporan spektral lan uji pihak katelu
 
@@ -155,21 +153,6 @@ Kssmi ora nyamarake laporan gaya liya dadi sertifikat pabrik umum lan tansah ver
 
 - **Kurva transmisi spektral:** nyedhiyakake kurva **280–780 nm saben 5 nm** (tabel data, grafik, data CIE lan file CSV asli).
 - **Koordinasi lab independen:** uji kanggo AS, EU (CE / EN ISO 12312-1), Inggris utawa Australia (**AS/NZS 1067.1**, referensi pungkasan udakara **USD 1.139** saben spek) liwat SGS, Intertek utawa TÜV kanthi biaya nyata.
-
-## Apa sing ora kita lakoni
-
-- **Kita ora gawe lensa resep (Rx):** pigura optik dikirim nganggo lensa demo bening utawa filter cahya biru non-Rx.
-- **Kita ora gawe utawa nyedhiyakake kemasan ritel:** pelanggan ngirim kasus, kothak lan kain lap menyang kita kanggo dikemas gratis.
-- **Kita ora adol stok siap utawa lensa eceran tanpa pesenan produksi.**
-
-## Apa sing kudu dikirim kanggo review spesifikasi lensa
-
-- desain pigura, gambar referensi utawa kode katalog (jelasake rimless, half-rim utawa shield);
-- substrat pilihan (TAC, CR-39, nylon, PC utawa Trivex) lan kode KS-LN;
-- fungsi lan lapisan (UV400, polarized, gradasi, cermin, photochromic, cahya biru, HC, AR njero, H/O utawa AF);
-- finishing pinggiran kanggo rimless (bevel poles standar vs. potong berlian);
-- jumlah saben warna lan target VLT / CAT;
-- pasar tujuan lan standar uji sing dibutuhake.
 
 ## FAQ
 
@@ -219,6 +202,8 @@ Kssmi nyedhiyakake data pabrik gratis lan kurva 280–780 nm (langkah 5 nm) sart
 
 ---
 
-Kssmi wis mrodhuksi kacamata ing Shenzhen wiwit 2003 kanthi rekayasa pigura internal, mitra optik unggulan Shenzhen lan inspeksi 100% sadurunge dikirim. Deleng [babagan kita](/jv/about-us/) utawa [FAQ](/jv/faq/).
+## Ringkesan
 
-**Siap ngonfirmasi spesifikasi lensa?** Kirim desain pigura, substrat, kode KS-LN, lapisan lan jumlah menyang [kaca panjalukan rega](/jv/quote/).
+Performa lensa ditemtokake dening susunan rampung, lapisan, lan MOQ saben warna, dudu mung jeneng bahan: pilih nylon (PA) utawa PC kanggo rimless lan lengkung dhuwur, CR-39 utawa TAC (ing njaba panas ekstrem) kanggo pigura penuh, lan pesthekake HC, AR njero, target VLT/CAT, sarta minimum warna (100 solid / 150 gradasi / 300 cermin utawa kustom).
+
+Kirim desain pigura, substrat, kode KS-LN, lapisan, lan jumlah liwat [formulir panjalukan ing ngisor iki](#inquiry-form-section) kanggo ngonfirmasi kelayakan lan rincian biaya sadurunge tahap berbayar.

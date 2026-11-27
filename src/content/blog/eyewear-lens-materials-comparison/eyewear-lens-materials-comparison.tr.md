@@ -33,7 +33,7 @@ Kendi güneş gözlüğü veya optik koleksiyonunu üreten markalarda cam hatala
 | Naylon (PA) | Yüksek netlik (Abbe ~52); ultra hafif | Enjeksiyon/döküm poliamid; termoform | Tüm çerçeveler — çerçevesiz & yarı çerçevesiz ideal | Nem ve ısıl geçmiş optik stresi etkiler | Lüks güneş, titanyum, karbon fiber ve çerçevesiz |
 | CR-39 | Netlik referansı (Abbe ~58) | Döküm ADC termoset reçine | Tam çerçeve asetat/metal; delme uygun değil | Vida deliklerinde kırılgan; PA/PC'den ağır | Butik ve klasik asetat güneş gözlükleri |
 | TAC polarize | Hafif çok katmanlı lamine film | TAC katmanlar + polarize film + yapıştırıcı | Yalnızca tam çerçeve güneş modelleri | Çok sıcak iklimlere uygun değil; kenar kapalı kalmalı | Ekonomik ticari polarize ve sürüş serileri |
-| Polikarbonat (PC) | İyi netlik; kırılmaz; ultra hafif | Enjeksiyon ve termoform | Yüksek bombeli kalkanlar, spor, çerçevesiz | Yüksek dispersiyon; sert kaplama (HC) gerekir | Outdoor spor, kalkan ve darbe testli SKU'lar |
+| Polikarbonat (PC) | İyi netlik; kırılmaya dayanıklı; ultra hafif | Enjeksiyon ve termoform | Yüksek bombeli kalkanlar, spor, çerçevesiz | Yüksek dispersiyon; sert kaplama (HC) gerekir | Outdoor spor, kalkan ve darbe testli SKU'lar |
 | Trivex | Yüksek netlik + darbe dayanımı (1.53) | Üretan bazlı döküm polimer (özel şartname) | Tam çerçeve, çerçevesiz ve performans | Yüksek maliyet; özel sipariş (asla PC ile değişmez) | ABD spor ve koruyucu spesifikasyon projeleri |
 | Demo / mavi ışık | Şeffaf veya hafif sıcak baz | Düz kalıplama / seçici spektral boya veya kaplama | Optik çerçeveler ve reçetesiz ekran gözlüğü | Sadece numarasız; hedef dalga boyu gerekir | Optik vitrin veya perakende mavi ışık gözlüğü |
 
@@ -87,20 +87,19 @@ PC enjeksiyon ve termoformu, düz kesim camların ulaşamayacağı agresif sarma
 
 Numarasız ekran gözlüğü sipariş ederken iki teknik ayrımı netleştirin:
 
-- **Pazarlama etiketi yerine spektral tasarım:** Mavi ışık filtresi hedef dalga boylarını malzeme emilimi, boya veya kaplama yoluyla seçici olarak azaltır. Genel bir etiket yerine hedef dalga bandı, kesme oranı ve baz sıcaklığını (şeffaf baz vs. hafif/tam sarı baz) onaylayın.
+- **Pazarlama etiketi yerine spektral tasarım:** Mavi ışık filtresi hedef dalga boylarını malzeme emilimi, boya veya kaplama yoluyla seçici olarak azaltır. Genel bir etiket yerine hedef dalga bandı, kesme oranı ve baz sıcaklığını (şeffaf baz vs. hafif/tam sarı baz) onaylayın. Seçici filtreleme spektral dengeyi değiştirir; optik çözünürlüğü artırmaz ve tıbbi fayda iddiası oluşturmaz.
 - **Ayrı ürün standartları:** Numaralı montaj için cam takılmamış optik çerçeveler **ISO 12870** kapsamındadır ve güneş gözlüğü standartları olan **EN ISO 12312-1**'den ayrıdır; demo cam takılması optik çerçeveyi güneş gözlüğü standardına sokmaz.
 
 ![Numarasız mavi ışık filtreli optik cam spektral test gösterimi](/media/blogs/eyewear-lens-materials-comparison/blue-light-lenses.webp)
 
 [Mavi ışık filtreli cam seçeneklerini](/tr/customization/lenses/blue-blocking/) ve [optik çerçeve koleksiyonumuzu](/tr/product/optical-frames/) inceleyin.
-
 ## Optik işlevler vs. yüzey kaplamaları
 
 **Optik işlevler camdan geçen ışığı değiştirir (parlaklık, UV, kamaşma veya spektrum); yüzey kaplamaları ise cam yüzeyinin çizik, yansıma, su veya buğuya karşı direncini belirler — ve Sert Kaplama (HC) ile İç Yansıma Önleyici (AR) varsayılan olarak gelmez.**
 
 ### Optik işlevler (bitmiş camda doğrulanır)
 
-- **Güneş filtresi ve VLT / CAT 0–4:** Görünür ışık geçirgenliği (VLT) cihazla ölçülür, gözle tahmin edilemez. **CAT.3 (%8–18 VLT)** genel güneş kullanımı ve gündüz sürüşü için küresel standarttır; **CAT.1 (%43–80 VLT)** ve **CAT.2 (%18–43 VLT)** bulutlu hava, moda tonları ve degradeler içindir.
+- **Güneş filtresi ve VLT / CAT 0–4:** Görünür ışık geçirgenliği (VLT) cihazla ölçülür, gözle tahmin edilemez. **CAT.3 (%8–18 VLT)** genel güneş kullanımı ve gündüz sürüşü için küresel standarttır; **CAT.1 (%43–80 VLT)** ve **CAT.2 (%18–43 VLT)** bulutlu hava, moda tonları ve degradeler içindir. VLT değerini kesinleştirmeden önce hedef pazarın sürüş gerekliliklerini kontrol edin.
 - **UV400 koruması:** UVA/UVB'yi substrat, katkı, boya veya kaplama ile engeller. Uygun formüllü açık bir cam UV400 sağlayabilirken katkısız koyu bir cam sağlamayabilir; doğrulama daima bitmiş camda yapılır.
 - **Polarizasyon:** Su, yol ve kardan yansıyan yatay parlamayı koyuluktan, UV400'den veya aynalı görünümden bağımsız olarak azaltır; çoğu [gri](/tr/customization/lenses/grey/), [kahverengi](/tr/customization/lenses/brown/) ve [yeşil](/tr/customization/lenses/green/) CAT.3 kartela polarize yapıyı destekler.
 - **Fotokromik ve Yüksek Kontrast (Hi-Con):** Fotokromik değişim hızı ve koyuluğu ortam sıcaklığına ve UV kesen araç ön camlarına bağlıdır; yüksek kontrast ise Abbe değerini değiştirmeden spektral ayrımı kaydırır.
@@ -145,7 +144,6 @@ Onaylı özel projelerde iki uzman cam kabiliyeti de desteklenir:
 
 Standart üretimde camlar Shenzhen'deki birinci sınıf optik cam üreticilerinden temin edilir. Bir marka uluslararası bir optik cam markası veya özel anlaşmalı partner fabrika polarize programı talep ettiğinde, Kssmi onaylı marka, model ve kaplama şartnamesine birebir tedarik sağlar ya da müşterinin partner fabrikadan satın aldığı camları montaj için kabul eder.
 
-
 ![Renk başına 300 çift MOQ kapsamındaki kırmızı Revo ayna kaplamalı polarize cam örneği](/media/blogs/eyewear-lens-materials-comparison/revo-mirror-color-moq.webp)
 ## Uygunluk, spektral raporlar ve üçüncü taraf testleri
 
@@ -155,23 +153,6 @@ Kssmi başka modellere ait raporları genel fabrika sertifikası gibi sunmaz ve 
 
 - **Spektral geçirgenlik eğrileri:** Gerektiğinde **280–780 nm aralığında 5 nm adımlı** veriler (tablo, grafik, CIE renk verileri ve cihaz, dalga boyu, kalınlık ile numune durumunu belirten ham CSV dosyaları) sağlarız.
 - **Bağımsız laboratuvar koordinasyonu:** ABD, AB (CE / EN ISO 12312-1), Birleşik Krallık veya Avustralya (**AS/NZS 1067.1**, yakın dönemde bitmiş şartname başı yaklaşık **USD 1.139** referanslı) testleri SGS, Intertek veya TÜV aracılığıyla gerçek maliyetle koordine edilir.
-
-## Yapmadığımız işler
-
-- **Reçeteli (Rx) cam üretmiyoruz:** Optik çerçeveler şeffaf demo cam veya numarasız mavi ışık filtreli camla sevk edilir.
-- **Perakende ambalajı üretmiyor veya tedarik etmiyoruz:** Kutu, kılıf ve temizleme bezlerini uzman tedarikçiden alıp bize göndermeniz yeterlidir; ücretsiz paketleme yaparız.
-- **Hazır stok veya siparişsiz dökme yedek cam satmıyoruz:** Tüm üretim markaya özel siparişle yapılır.
-
-## Cam şartnamesi incelemesi için göndermeniz gerekenler
-
-Teklif öncesi renk MOQ'larını, kenar toleranslarını ve kaplama uyumunu netleştirmek için şunları iletin:
-
-- çerçeve tasarımı, referans görsel veya katalog kodu (çerçevesiz, yarı çerçevesiz veya kalkan belirterek);
-- tercih edilen cam substratı (TAC, CR-39, naylon, PC veya Trivex) ve varsa KS-LN kartela kodu;
-- istenen işlev ve kaplamalar (UV400, polarize, degrade, ayna, fotokromik, mavi ışık, HC, iç AR, H/O veya AF);
-- çerçevesiz tasarımlar için kenar bitimi (standart parlatılmış pah vs. elmas kesim faset);
-- renk başına adet ve hedef VLT / CAT kategorisi;
-- hedef pazar ve gereken üçüncü taraf test standartları.
 
 ## SSS
 
@@ -221,6 +202,8 @@ Kssmi fabrika referans verilerini ücretsiz sunar ve test edilmiş formüller i�
 
 ---
 
-Kssmi, 2003'ten bu yana Shenzhen'de kendi çerçeve mühendisliğini Shenzhen'in önde gelen optik cam üreticileri ve %100 sevkiyat öncesi muayeneyle birleştirerek üretim yapmaktadır. Ayrıntılar için [hakkımızda](/tr/about-us/) ve [SSS](/tr/faq/) sayfalarımızı ziyaret edin.
+## Özet
 
-**Cam spesifikasyonunuzu kilitlemeye hazır mısınız?** Çerçeve modellerinizi, substrat tercihinizi, KS-LN kodlarını, kaplamaları, renk adetlerini ve hedef pazarınızı [teklif sayfamızdan](/tr/quote/) gönderin. Ücretli aşamaya geçmeden önce teknik uygunluk ve detaylı maliyetleri teyit edelim.
+Cam performansı yalnızca substrat adına değil, bitmiş yapıya, kaplamalara ve renk MOQ'larına bağlıdır: çerçevesiz ve yüksek bombeli modellerde naylon (PA) veya PC, tam çerçevelerde CR-39 veya aşırı sıcak dışı TAC belirleyin; HC, iç AR, VLT/CAT hedeflerini ve renk minimumlarını (100 düz / 150 degrade / 300 ayna veya özel) baştan netleştirin.
+
+Ücretli aşamaya geçmeden önce teknik uygunluk ve detaylı kaplama/test maliyetlerini teyit etmek için çerçeve modellerinizi, substratları, KS-LN kodlarını ve adetleri [aşağıdaki teklif formu](#inquiry-form-section) iletin.

@@ -35,19 +35,19 @@ In Kssmi, sei famiglie di materiali coprono quasi tutti i programmi di occhialer
 | Alpacca (nickel silver) | Lega lavorata/fusa e placcata | Densità superiore (~1,9× rispetto al titanio); mano solida | Ottima resa per dorature e ornamenti fusi nitidi | 300 paia/modello (fino a 3 × 100) | Alternativa economica al titanio per montature con fregi fusi |
 | Titanio puro e beta | Filo/lamiera di titanio lavorati di precisione; saldati o senza viti | Peso piuma; anticorrosione; alta elasticità (beta) | Finiture PVD e toni metallici sobri | 300 paia/modello (fino a 3 × 100) | Comfort premium, profili ultrasottili e costruzioni senza viti |
 | Fibra di carbonio | Tessuto di carbonio stratificato | Ultraleggero, rigido, aspetto tecnico | Trama carbonio con minuteria placcata PVD | 200 paia/modello | Collezioni sport, performance e stile tecnico |
-| TR-90 | Nylon termoplastico stampato a iniezione in stampi dedicati | Molto leggero, flessibile, antiurto | Colori pieni e traslucidi stampati; verniciabili | 1.200 paia/modello (≥600/colore); sport custom 600/colore | Maschere sportive avvolgenti, curve 3D scolpite e alti volumi |
+| TR-90 | Nylon termoplastico stampato a iniezione in stampi dedicati | Molto leggero, flessibile, antiurto | Colori pieni e traslucidi stampati; verniciabili | 1.200 paia/modello; ≥600 paia/colore | Maschere sportive avvolgenti, curve 3D scolpite e alti volumi |
 
 *\*I minimi di materia prima variano in base al fornitore di acetato; vedi la sezione dedicata.*
 
 ## Montature in acetato: profondità cromatica, lucidatura e limiti di forma
 
-**L'acetato di cellulosa è un termoplastico di origine vegetale fresato da lastre, ideale per profondità cromatica e bordi lucidati a mano — ma la lavorazione da lastra piana non può replicare volumi 3D "a bolla" da iniezione.**
+**L'acetato di cellulosa è un termoplastico di origine vegetale fresato da lastre, ideale per profondità cromatica e bordi lucidati a mano.**
 
 Le nostre montature in acetato seguono cinque fasi di finitura: carteggiatura della lastra, burattatura sgrossante, lucidatura fine a specchio, rifinitura manuale dei bordi e controllo pre-assemblaggio. Le aste in acetato richiedono di norma un'anima metallica interna per garantire tenuta strutturale e regolazione. È inoltre possibile realizzare montature glasant inferiori (mezzo cerchio con lente esposta) fissando la lente tramite un sottile filo trasparente in una scanalatura di precisione.
 
 Tre limiti tecnici e di approvvigionamento vanno chiariti prima di confermare un progetto in acetato:
 
-1. **Limiti di sagoma e curvatura base.** Un frontale gonfio "a bolla" con curve morbide avvolgenti e base pronunciata è tipico dello stampaggio a iniezione e non può essere fresato da lastra piana. Quando il riferimento mostra questa geometria, le strade praticabili sono lo stampaggio a iniezione TR-90 oppure un adattamento del disegno entro i limiti naturali della lastra di acetato.
+1. **Limiti di sagoma e curvatura base.** Per realizzare in acetato una silhouette a mascherina avvolgente come quelle in TR-90, occorre aggiungere un supporto verticale in corrispondenza del ponte. Non si può riprodurre la stessa struttura continua senza tale supporto; il ponte adattato va confermato sul disegno prima della campionatura.
 2. **Cerniere a molla integrate.** Quando si richiede una "cerniera nascosta" su acetato, la soluzione tecnicamente fattibile è una **cerniera a molla integrata alloggiata all'interno dell'asta in acetato**, con il minimo gioco meccanico necessario al movimento. La scomparsa totale a gioco zero è fisicamente impossibile e sull'acetato traslucido il meccanismo resta parzialmente visibile.
 3. **MOQ prodotto finito vs. MOQ materia prima.** Il minimo sul prodotto finito è 300 paia per modello (fino a 3 colori × 100 paia). Con i principali produttori cinesi (JIMEI / JINYU) ogni colore parte da 100 paia. Le lastre italiane Mazzucchelli prevedono invece un minimo di materia prima pari a circa 1.000 paia di un modello in un solo colore: un primo lotto da 300 paia in acetato italiano equivale quindi di fatto a un unico colore per modello. Come riferimento indicativo di costo, Mazzucchelli comporta circa **USD 3–5 in più al paio** nei colori standard (e **USD 5–10 in più al paio** nelle varianti tartarugate) rispetto all'acetato standard, confermati in preventivo. Inoltre, l'acetato non può essere stoccato a tempo indeterminato senza rischi di viraggio cromatico o fragilità, quindi eventuali lastre riservate vanno programmate entro tempi ragionevoli.
 
@@ -64,7 +64,7 @@ Entrambi i metalli seguono il minimo standard di 300 paia per modello (fino a 3 
 - **Acciaio inox 316** offre frontali sottili, aste regolabili e un buon equilibrio di costo; si abbina bene ad aste in acetato o TR-90 nei modelli ibridi, ma non riproduce con nitidezza micro-ornamenti fusi.
 - **Alpacca (nickel silver)** si lavora con facilità, accetta bene la doratura e mantiene dettagli fusi molto definiti (ad esempio emblemi geometrici su musetto o asta). I suoi componenti metallici hanno una densità circa 1,9× superiore al titanio (≈8,7 vs. ≈4,5 g/cm³), risultando più consistenti in mano rispetto al titanio senza i limiti fusori dell'acciaio.
 
-Anche la finitura incide su prezzo e tempi. I colori PVD standard seguono la normale programmazione, mentre ampie superfici a specchio richiedono un ciclo multipassaggio (di norma 2–3 passaggi o più, con un riferimento indicativo di circa **USD 18 per passaggio**, numero finale confermato in preventivo), aumentando costo unitario, MOQ e tempi di lavorazione.
+Anche la finitura incide su prezzo e tempi. I colori PVD standard seguono la normale programmazione, mentre ampie superfici a specchio richiedono un ciclo multipassaggio (di norma 2–3 passaggi o più, con un riferimento indicativo di circa **USD 0,60 al paio per passaggio**, numero finale confermato in preventivo), aumentando costo unitario, MOQ e tempi di lavorazione.
 
 ![Occhiali da sole in metallo personalizzati con finitura PVD](/media/blogs/eyewear-frame-materials-comparison/metal-frames.webp)
 
@@ -99,11 +99,11 @@ Scopri gli [occhiali da sole in fibra di carbonio](/it/product/carbon-fiber-sung
 
 **Il TR-90 è un nylon termoplastico flessibile prodotto con stampi a iniezione dedicati — indispensabile per maschere sportive avvolgenti, volumi 3D scolpiti e linee ad alta resistenza agli urti, con MOQ standard di 1.200 paia.**
 
-A differenza dell'acetato fresato o del metallo formato, il TR-90 viene iniettato direttamente in stampi d'acciaio, consentendo curvature avvolgenti spinte e aste sagomate 3D impossibili da lastra. I progetti sportivi in TR-90 possono inoltre partire dai nostri modelli base sportivi dedicati.
+A differenza dell'acetato fresato o del metallo formato, il TR-90 viene iniettato direttamente in stampi d'acciaio, consentendo curvature avvolgenti spinte e aste sagomate 3D. I progetti sportivi in TR-90 possono inoltre partire dai nostri modelli base sportivi dedicati.
 
 Due regole commerciali regolano il TR-90:
 
-1. **Stampi dedicati e MOQ più elevato.** I modelli standard in TR-90 richiedono 1.200 paia per modello (almeno 600 paia per colore); la linea sport TR-90 completamente custom prevede un minimo di 600 paia per colore. Riutilizzare uno stampo esistente evita il costo di un nuovo stampo ma non riduce il MOQ per modello.
+1. **Stampi dedicati e MOQ più elevato.** Ogni modello TR-90, compresi i modelli sportivi su misura, richiede almeno 1.200 paia per modello e almeno 600 paia per colore. Riutilizzare una forma esistente evita nuovi stampi, ma non riduce nessuno dei due minimi.
 2. **Verifica pre-stampo e accredito costi.** Per forme custom a iniezione si verificano ergonomia e calzata prima di incidere gli stampi in acciaio, e i costi di stampo e campione TR-90 vengono interamente accreditati al raggiungimento cumulativo di **30.000 paia entro 24 mesi** sullo stesso modello (esclusi trasporto e imposte), come indicato in preventivo.
 
 ![Montatura leggera in termoplastico stampato a iniezione per vestibilità ergonomica sportiva e quotidiana](/media/blogs/eyewear-frame-materials-comparison/tr90-injection-frames.webp)
@@ -123,7 +123,7 @@ Consulta materiali e trattamenti nella pagina [opzioni lenti](/it/customization/
 
 ## Come scegliere il materiale giusto per la tua collezione
 
-1. **Verifica prima la fattibilità geometrica.** Se il riferimento ha curve molto avvolgenti o frontali 3D bombati, parti da TR-90 a iniezione o adatta la sagoma prima di quotare in acetato.
+1. **Verifica prima la fattibilità geometrica.** Per realizzare in acetato una silhouette a mascherina avvolgente come quelle in TR-90, occorre aggiungere un supporto verticale in corrispondenza del ponte.
 2. **Allinea il peso al tempo d'uso.** Chi indossa occhiali da vista tutto il giorno o pratica sport sente ogni grammo: privilegia beta titanio, titanio puro, carbonio o TR-90; gli occhiali da sole statement valorizzano bene l'acetato pieno.
 3. **Coordina la suddivisione colori con la materia prima.** Per dividere 300 paia in 3 colori da 100, scegli metallo, titanio o acetato JIMEI/JINYU — non lastra italiana Mazzucchelli né TR-90.
 4. **Scegli finiture e minuteria in base alla fascia di prezzo.** Usa alpacca al posto dell'acciaio se servono fregi fusi; considera costo e tempi extra per placcature a specchio multipassaggio.
@@ -135,7 +135,7 @@ In Kssmi i minimi valgono **per modello e per singolo lotto produttivo**: non è
 
 | Voce / fase | Acetato, acciaio inox, alpacca e titanio | Fibra di carbonio | TR-90 a iniezione |
 |---|---|---|---|
-| MOQ produzione | 300 paia/modello (fino a 3 × 100) | 200 paia/modello | 1.200 paia/modello (≥600/colore); sport custom 600/colore |
+| MOQ produzione | 300 paia/modello (fino a 3 × 100) | 200 paia/modello | 1.200 paia/modello; ≥600 paia/colore |
 | Disegno tecnico 2D | 3–10 giorni lavorativi (fino a 3 revisioni) | 3–10 giorni lavorativi | 3–10 giorni lavorativi |
 | Campione custom e stampi | 60 giorni lavorativi dopo approvazione 2D e saldo costi | 60 giorni lavorativi | 60 giorni lavorativi |
 | Produzione in serie | 60 giorni lavorativi dopo approvazione campione e acconto 50% | 60 giorni lavorativi | 60 giorni lavorativi |
@@ -145,22 +145,6 @@ Campioni, sviluppo e stampi sono pagati al 100% in anticipo; la produzione in se
 
 ![Occhiale da sole su misura che abbina frontale in acetato scolpito e ponte e aste metalliche di precisione](/media/blogs/eyewear-frame-materials-comparison/material-selection-hybrid.webp)
 
-## Cosa non facciamo
-
-- **Non vendiamo pronto stock.** I modelli a catalogo servono come campioni di valutazione qualitativa e riferimenti costruttivi; ogni produzione viene realizzata su ordine del brand.
-- **Non produciamo né forniamo packaging retail.** Astucci, scatole e panni vanno ordinati a fornitori specializzati e inviati presso di noi; inseriamo gratuitamente gli occhiali finiti nel packaging fornito dal cliente.
-- **Non produciamo lenti da vista graduate.** Le montature ottiche vengono spedite con lenti dimostrative neutre.
-
-## Cosa inviare per una verifica di fattibilità materiale
-
-Prima del preventivo, il nostro team tecnico esamina cosa desideri realizzare per confermare materiale, MOQ e struttura dei costi. Invia:
-
-- disegno tecnico, schizzo, immagine di riferimento o SKU del catalogo;
-- mercato di destinazione e fascia di prezzo retail;
-- colori previsti e quantità per modello;
-- eventuali dettagli costruttivi speciali (curve avvolgenti 3D, fregi fusi, struttura senza viti, cerniere a molla integrate o placcatura a specchio);
-- data target di lancio.
-
 ## FAQ
 
 ### 1. Qual è il materiale più leggero per montature di occhiali?
@@ -169,7 +153,7 @@ Fibra di carbonio e titanio (puro o beta titanio) sono i materiali più leggeri 
 
 ### 2. È possibile realizzare montature scolpite o "a bolla" in acetato di cellulosa?
 
-No. Un frontale gonfio "a bolla" 3D con curve avvolgenti pronunciate è tipico dello stampaggio a iniezione e non può essere ricavato da lastra piana di acetato. Possiamo riprodurre la sagoma più fedele in TR-90 a iniezione oppure adattare il design alla lavorazione naturale dell'acetato.
+Per realizzare in acetato una silhouette a mascherina avvolgente come quelle in TR-90, occorre aggiungere un supporto verticale in corrispondenza del ponte. Non si può riprodurre la stessa struttura continua senza tale supporto; il ponte adattato va confermato sul disegno prima della campionatura.
 
 ### 3. Qual è la differenza tra titanio puro e beta titanio?
 
@@ -181,7 +165,7 @@ Scegli l'alpacca (nickel silver) quando il design richiede fregi decorativi fusi
 
 ### 5. Come incidono materiale e finitura sul costo unitario?
 
-In Kssmi, i riferimenti indicativi di costo seguono complessità di materiale e finitura: il titanio costa circa USD 3,70 in più al paio rispetto all'acciaio inox; l'acetato italiano Mazzucchelli costa circa USD 3–5 in più nei colori standard (e USD 5–10 nei tartaruga) rispetto all'acetato standard; la placcatura a specchio multipassaggio costa circa USD 18 per passaggio per 2–3 o più passaggi. Su modelli metallici con fregi fusi l'alpacca riduce il costo rispetto al titanio; il prezzo esatto è confermato in preventivo dopo l'analisi tecnica.
+In Kssmi, i riferimenti indicativi di costo seguono complessità di materiale e finitura: il titanio costa circa USD 3,70 in più al paio rispetto all'acciaio inox; l'acetato italiano Mazzucchelli costa circa USD 3–5 in più nei colori standard (e USD 5–10 nei tartaruga) rispetto all'acetato standard; la placcatura a specchio multipassaggio costa circa USD 0,60 al paio per passaggio per 2–3 o più passaggi. Su modelli metallici con fregi fusi l'alpacca riduce il costo rispetto al titanio; il prezzo esatto è confermato in preventivo dopo l'analisi tecnica.
 
 ### 6. È possibile realizzare cerniere completamente invisibili dentro aste in acetato?
 
@@ -193,7 +177,7 @@ Le montature finite in acetato partono da 300 paia per modello (fino a 3 colori 
 
 ### 8. Qual è il MOQ per ciascun materiale e i colori delle lenti aggiungono minimi extra?
 
-Acetato, metallo (acciaio inox e alpacca) e titanio partono da 300 paia per modello; fibra di carbonio da 200 paia per modello; TR-90 richiede 1.200 paia per modello (almeno 600 per colore, o 600 per colore per TR-90 sport custom). I minimi delle lenti si sommano: tinte unite standard da 100 paia, sfumate da 150 e specchiate o custom da 300 paia per colore.
+Acetato, metallo (acciaio inox e alpacca) e titanio partono da 300 paia per modello; fibra di carbonio da 200 paia per modello; il TR-90 richiede almeno 1.200 paia per modello e almeno 600 paia per colore. I minimi delle lenti si sommano: tinte unite standard da 100 paia, sfumate da 150 e specchiate o custom da 300 paia per colore.
 
 ### 9. Quanto durano campionatura personalizzata e produzione in serie?
 
@@ -209,6 +193,8 @@ No. Non produciamo né forniamo packaging retail, ma confezioniamo gratuitamente
 
 ---
 
-Kssmi produce occhiali a Shenzhen dal 2003, con design interno, ingegneria, fresatura CNC, lucidatura, assemblaggio e controllo qualità al 100% pre-spedizione. L'acetato proviene da Mazzucchelli, JIMEI e JINYU; il titanio da Kobe Steel e Baoji Titanium. Scopri di più nella pagina [chi siamo](/it/about-us/) o consulta le condizioni nelle [FAQ](/it/faq/).
+## Riepilogo
 
-**Pronto a selezionare i materiali della tua collezione?** Invia disegno, schizzo o riferimento tramite la pagina [preventivo](/it/quote/) indicando mercato, colori e quantità per modello. Confermiamo fattibilità, materiale e MOQ prima dell'avvio di qualsiasi attività a pagamento.
+Abbina fin da subito il percorso costruttivo a geometria e lotto minimo: acetato JIMEI o JINYU, acciaio inox, alpacca e titanio coprono lanci da 300 paia / 3 colori; la fibra di carbonio le linee ultraleggere da 200 paia; lo stampaggio TR-90 i modelli sportivi 3D avvolgenti che giustificano stampi in acciaio e 1.200 paia. Blocca struttura e tempi di recupero stampi prima della campionatura.
+
+Invia disegno o immagine di riferimento, colori e quantità tramite la [modulo di richiesta qui sotto](#inquiry-form-section) per verificare fattibilità e MOQ prima di avviare campionature a pagamento.

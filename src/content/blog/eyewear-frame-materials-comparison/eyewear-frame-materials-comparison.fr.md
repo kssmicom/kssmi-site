@@ -35,19 +35,19 @@ Chez Kssmi, six familles de matériaux couvrent la quasi-totalité des projets s
 | Maillechort (nickel silver) | Alliage usiné/coulé et plaqué | Densité supérieure (~1,9× le titane) ; main solide | Excellente dorure et ornements coulés nets | 300 paires/modèle (jusqu'à 3 × 100) | Alternative économique au titane pour ornements moulés |
 | Titane pur et bêta | Fil/tôle titane formés avec précision ; soudés ou sans vis | Ultra-léger ; anticorrosion ; forte élasticité (bêta) | Finitions PVD et tons métalliques sobres | 300 paires/modèle (jusqu'à 3 × 100) | Confort premium, profils fins et montures sans vis |
 | Fibre de carbone | Composite de carbone tissé stratifié | Ultra-léger, rigide, allure technique | Trame carbone avec pièces métalliques PVD | 200 paires/modèle | Collections sport, performance et style technique |
-| TR-90 | Nylon thermoplastique injecté en moules acier dédiés | Très léger, flexible, résistant aux chocs | Coloris injectés pleins/translucides ; peint/verni | 1 200 paires/modèle (≥600/coloris) ; sport custom 600/coloris | Masques sport galbés, courbes 3D et grands volumes |
+| TR-90 | Nylon thermoplastique injecté en moules acier dédiés | Très léger, flexible, résistant aux chocs | Coloris injectés pleins/translucides ; peint/verni | 1 200 paires/modèle ; ≥600 paires/couleur | Masques sport galbés, courbes 3D et grands volumes |
 
 *\*Les minimums matière première varient selon le fournisseur d'acétate ; voir ci-dessous.*
 
 ## Montures en acétate : profondeur des couleurs, polissage et limites géométriques
 
-**L'acétate de cellulose est un thermoplastique biosourcé fraisé à partir de plaques, idéal pour la richesse des coloris et le polissage main — mais l'usinage de plaque plane ne peut pas reproduire des volumes 3D bombés issus de l'injection.**
+**L'acétate de cellulose est un thermoplastique biosourcé fraisé à partir de plaques, idéal pour la richesse des coloris et le polissage main.**
 
 Nos montures en acétate suivent cinq étapes de finition : ponçage de la plaque, polissage dégrossissant au tonneau, polissage haute brillance, reprise manuelle des arêtes et contrôle pré-assemblage. Les branches nécessitent normalement une armature métallique interne pour la tenue et l'ajustage. Les modèles demi-cerclés à bord inférieur libre peuvent également être réalisés en acétate grâce à un fil transparent fin logé dans une rainure de précision.
 
 Trois limites techniques et d'approvisionnement doivent être vérifiées avant de figer un modèle en acétate :
 
-1. **Limites de volume et de galbe.** Une face bombée type « bulle » en 3D avec courbure enveloppante prononcée relève du moulage par injection et ne peut pas être usinée dans une plaque plane. Face à une telle référence, les solutions viables sont l'injection TR-90 pour rester fidèle au volume ou une adaptation du dessin aux contraintes de la plaque d'acétate.
+1. **Limites de volume et de galbe.** Pour réaliser en acétate une silhouette de masque enveloppant de type TR-90, il faut ajouter un renfort vertical au niveau du pont. La même structure continue sans renfort ne peut pas être reprise telle quelle ; le pont adapté doit être validé sur le plan avant prototypage.
 2. **Charnières à ressort intégrées.** Lorsqu'un client demande une « charnière invisible » en acétate, la construction réaliste est une **charnière à ressort intégrée logée dans la branche en acétate**, avec le jeu mécanique minimal indispensable au pivotement. Une dissimulation totale sans jeu est physiquement impossible, et le mécanisme reste partiellement visible dans un acétate translucide.
 3. **MOQ produit fini vs MOQ matière première.** Les commandes finies démarrent à 300 paires par modèle (jusqu'à 3 coloris × 100 paires). Avec les fournisseurs chinois de premier plan (JIMEI / JINYU), chaque coloris démarre à 100 paires. Les plaques italiennes Mazzucchelli imposent en revanche un minimum d'achat matière équivalent à environ 1 000 paires d'un modèle dans un coloris : un premier lot de 300 paires en acétate italien correspond donc de fait à un seul coloris. À titre indicatif, Mazzucchelli coûte environ **USD 3–5 de plus par paire** en coloris standards (et **USD 5–10 de plus par paire** en écaille) par rapport à l'acétate standard, confirmé sur devis. Par ailleurs, l'acétate ne se conserve pas indéfiniment sans risque de variation de teinte ou de fragilisation : toute matière réservée doit être utilisée dans un délai raisonnable.
 
@@ -64,7 +64,7 @@ Ces deux métaux suivent le minimum standard de 300 paires par modèle (jusqu'à
 - **Acier inoxydable 316** permet des faces fines, des branches réglables et un tarif maîtrisé, tout en s'associant bien à des branches acétate ou TR-90 en montage mixte, mais il restitue mal les micro-ornements moulés.
 - **Maillechort (nickel silver)** s'usine aisément, prend parfaitement le plaquage or et restitue avec netteté les pièces décoratives moulées sur tenon ou branche. Ses composants métalliques ont une densité environ 1,9× supérieure au titane (≈8,7 contre ≈4,5 g/cm³), offrant plus de poids sans les limites de fonderie de l'acier.
 
-Le choix de finition influe également sur coût et délai. Les teintes PVD classiques suivent le planning standard, mais les grandes surfaces miroir exigent un placage multipasse (en général 2–3 passes ou plus, à titre indicatif autour de **USD 18 par passe**, nombre final confirmé sur devis), ce qui augmente coût unitaire, MOQ et délai.
+Le choix de finition influe également sur coût et délai. Les teintes PVD classiques suivent le planning standard, mais les grandes surfaces miroir exigent un placage multipasse (en général 2–3 passes ou plus, à titre indicatif autour de **USD 0,60 par paire et par passe**, nombre final confirmé sur devis), ce qui augmente coût unitaire, MOQ et délai.
 
 ![Lunettes de soleil en métal sur mesure avec finition PVD](/media/blogs/eyewear-frame-materials-comparison/metal-frames.webp)
 
@@ -99,11 +99,11 @@ Découvrir nos [solaires en fibre de carbone](/fr/product/carbon-fiber-sunglasse
 
 **Le TR-90 est un nylon thermoplastique souple produit en moules d'injection dédiés — indispensable pour les masques sport galbés, les courbes 3D sculptées et les gammes résistantes aux chocs, avec un MOQ standard de 1 200 paires.**
 
-Contrairement à l'acétate fraisé ou au métal formé, le TR-90 est injecté directement en moule acier, ouvrant la voie aux galbes sportifs prononcés et aux branches 3D impossibles en plaque. Les projets sportifs TR-90 peuvent aussi démarrer à partir de nos gabarits sport dédiés.
+Contrairement à l'acétate fraisé ou au métal formé, le TR-90 est injecté directement en moule acier, ouvrant la voie aux galbes sportifs prononcés et aux branches 3D. Les projets sportifs TR-90 peuvent aussi démarrer à partir de nos gabarits sport dédiés.
 
 Deux règles commerciales encadrent le TR-90 :
 
-1. **Outillage dédié et MOQ supérieur.** Les modèles TR-90 standards exigent 1 200 paires par style (au moins 600 paires par coloris) ; les modèles sport TR-90 entièrement custom suivent un plancher de 600 paires par coloris. Réutiliser une forme existante évite un nouveau moule mais ne supprime pas le minimum par modèle.
+1. **Outillage dédié et MOQ supérieur.** Tous les modèles TR-90, y compris les modèles sportifs sur mesure, exigent au moins 1 200 paires par modèle et au moins 600 paires par couleur. Réutiliser une forme existante évite un nouveau moule, mais ne réduit aucun de ces deux minimums.
 2. **Validation pré-outillage et crédit de frais.** Pour les formes injectées sur mesure, chaussant et ergonomie sont validés avant d'usiner les moules acier, et les frais d'outillage et d'échantillons TR-90 sont crédités lorsque le même modèle atteint **30 000 paires cumulées sous 24 mois** (hors fret et taxes), comme précisé dans le devis.
 
 ![Monture légère thermoplastique injectée pour maintien sportif ergonomique et port prolongé](/media/blogs/eyewear-frame-materials-comparison/tr90-injection-frames.webp)
@@ -123,7 +123,7 @@ Consultez la page [options de verres](/fr/customization/lenses/) et la page [per
 
 ## Comment choisir le bon matériau pour votre collection
 
-1. **Vérifiez d'abord la faisabilité géométrique.** Si votre référence présente un galbe profond ou une face 3D bombée, optez pour l'injection TR-90 ou adaptez la silhouette avant de chiffrer en acétate.
+1. **Vérifiez d'abord la faisabilité géométrique.** Pour réaliser en acétate une silhouette de masque enveloppant de type TR-90, il faut ajouter un renfort vertical au niveau du pont.
 2. **Adaptez le poids à la durée de port.** Pour l'optique portée toute la journée ou le sport, privilégiez titane bêta, titane pur, carbone ou TR-90 ; l'acétate plein valorise les solaires mode affirmées.
 3. **Alignez les coloris sur les règles matière.** Pour scinder 300 paires en 3 coloris de 100, choisissez métal, titane ou acétate JIMEI/JINYU plutôt que Mazzucchelli ou TR-90.
 4. **Dosez quincaillerie et placage selon votre positionnement prix.** Préférez le maillechort à l'acier pour les ornements coulés et prévoyez budget et délai pour un placage miroir multipasse.
@@ -135,7 +135,7 @@ Chez Kssmi, les quantités s'entendent **par modèle et par lot de production** 
 
 | Poste / étape | Acétate, acier inox, maillechort et titane | Fibre de carbone | Injection TR-90 |
 |---|---|---|---|
-| MOQ de production | 300 paires/modèle (jusqu'à 3 × 100) | 200 paires/modèle | 1 200 paires/style (≥600/coloris) ; sport custom 600/coloris |
+| MOQ de production | 300 paires/modèle (jusqu'à 3 × 100) | 200 paires/modèle | 1 200 paires/modèle ; ≥600 paires/couleur |
 | Plan technique 2D | 3–10 jours ouvrés (jusqu'à 3 révisions) | 3–10 jours ouvrés | 3–10 jours ouvrés |
 | Échantillon custom et moule | 60 jours ouvrés après accord plan et paiement intégral | 60 jours ouvrés | 60 jours ouvrés |
 | Production en série | 60 jours ouvrés après accord échantillon et acompte 50 % | 60 jours ouvrés | 60 jours ouvrés |
@@ -145,22 +145,6 @@ Les frais d'échantillons, de développement et d'outillage sont réglés à 100
 
 ![Solaire sur mesure associant face en acétate sculpté et pont ainsi que branches métalliques de précision](/media/blogs/eyewear-frame-materials-comparison/material-selection-hybrid.webp)
 
-## Ce que nous ne faisons pas
-
-- **Nous ne vendons pas de stock disponible.** Les références catalogue servent d'échantillons d'évaluation et de bases constructives ; chaque production est fabriquée à la commande.
-- **Nous ne fabriquons ni ne fournissons de packaging retail.** Commandez étuis, boîtes et chiffonnettes chez un spécialiste et faites-les livrer chez nous ; nous conditionnons gratuitement vos lunettes dans votre packaging.
-- **Nous ne produisons pas de verres correcteurs.** Les montures optiques sont livrées avec des verres de présentation neutres.
-
-## Que transmettre pour vérifier la faisabilité matière
-
-Avant de chiffrer, notre équipe technique étudie votre projet afin de confirmer matériau, MOQ et structure de coûts. Merci d'envoyer :
-
-- votre plan technique, croquis, image de référence ou SKU catalogue ;
-- votre marché cible et positionnement prix retail ;
-- les coloris prévus et quantités par modèle ;
-- toute exigence spécifique (courbe 3D, ornements coulés, structure sans vis, charnières ressort intégrées ou placage miroir) ;
-- votre date cible de lancement.
-
 ## FAQ
 
 ### 1. Quel matériau de monture est le plus léger ?
@@ -169,7 +153,7 @@ La fibre de carbone et le titane (pur ou bêta) sont les plus légers de notre g
 
 ### 2. Peut-on fabriquer des montures sculptées ou « bulle » en acétate de cellulose ?
 
-Non. Un aspect 3D gonflé à courbes enveloppantes profondes est propre au moulage par injection et ne peut pas être fraisé depuis une plaque plane d'acétate. Nous pouvons soit réaliser le modèle fidèle en injection TR-90, soit adapter la silhouette aux limites de la plaque.
+Pour réaliser en acétate une silhouette de masque enveloppant de type TR-90, il faut ajouter un renfort vertical au niveau du pont. La même structure continue sans renfort ne peut pas être reprise telle quelle ; le pont adapté doit être validé sur le plan avant prototypage.
 
 ### 3. Quelle est la différence entre titane pur et titane bêta ?
 
@@ -181,7 +165,7 @@ Choisissez le maillechort (nickel silver) lorsque votre design exige des ornemen
 
 ### 5. Comment les choix de matériau et de finition influencent-ils le coût unitaire ?
 
-Chez Kssmi, les repères de coût reflètent la complexité matière et finition : le titane coûte environ USD 3,70 de plus par paire que l'acier inoxydable ; l'acétate italien Mazzucchelli coûte environ USD 3–5 de plus en coloris standards (et USD 5–10 en écaille) que l'acétate standard ; un placage miroir multipasse coûte environ USD 18 par passe sur 2–3 passes ou plus. Pour les modèles métalliques à ornements coulés, le maillechort réduit le coût par rapport au titane ; le prix exact est confirmé sur devis après étude technique.
+Chez Kssmi, les repères de coût reflètent la complexité matière et finition : le titane coûte environ USD 3,70 de plus par paire que l'acier inoxydable ; l'acétate italien Mazzucchelli coûte environ USD 3–5 de plus en coloris standards (et USD 5–10 en écaille) que l'acétate standard ; un placage miroir multipasse coûte environ USD 0,60 par paire et par passe sur 2–3 passes ou plus. Pour les modèles métalliques à ornements coulés, le maillechort réduit le coût par rapport au titane ; le prix exact est confirmé sur devis après étude technique.
 
 ### 6. Peut-on intégrer des charnières totalement invisibles dans des branches en acétate ?
 
@@ -193,7 +177,7 @@ Les montures finies en acétate démarrent à 300 paires par modèle (jusqu'à 3
 
 ### 8. Quel est le MOQ par matériau et les teintes de verres ajoutent-elles des minimums ?
 
-Acétate, métal (acier inoxydable et maillechort) et titane démarrent à 300 paires par modèle ; fibre de carbone à 200 paires par modèle ; TR-90 exige 1 200 paires par style (au moins 600 par coloris, ou 600 par coloris en TR-90 sport custom). Les minimums de verres s'y ajoutent : teintes unies standards dès 100 paires, dégradés dès 150 et miroirs ou teintes sur mesure dès 300 paires par coloris.
+Acétate, métal (acier inoxydable et maillechort) et titane démarrent à 300 paires par modèle ; fibre de carbone à 200 paires par modèle ; le TR-90 exige au moins 1 200 paires par modèle et au moins 600 paires par couleur. Les minimums de verres s'y ajoutent : teintes unies standards dès 100 paires, dégradés dès 150 et miroirs ou teintes sur mesure dès 300 paires par coloris.
 
 ### 9. Quels sont les délais d'échantillonnage sur mesure et de production ?
 
@@ -209,6 +193,8 @@ Non. Nous ne fabriquons ni ne fournissons de packaging retail, mais conditionnon
 
 ---
 
-Kssmi fabrique des lunettes à Shenzhen depuis 2003, avec design interne, ingénierie, usinage CNC, polissage, assemblage et contrôle qualité à 100 % avant expédition. L'acétate provient de Mazzucchelli, JIMEI et JINYU ; le titane de Kobe Steel et Baoji Titanium. Plus d'informations sur notre page [à propos](/fr/about-us/) et nos conditions dans la [FAQ](/fr/faq/).
+## Résumé
 
-**Prêt à présélectionner les matériaux de votre gamme ?** Envoyez votre plan, croquis ou visuel de référence via la page [devis](/fr/quote/) en précisant marché cible, coloris et quantités par modèle. Nous confirmons la faisabilité technique, la voie matière et le MOQ avant tout engagement payant.
+Alignez procédé, galbe et taille de lot avant l'échantillonnage : acétate JIMEI ou JINYU, acier inoxydable, maillechort et titane conviennent aux lancements à 300 paires / 3 coloris ; la fibre de carbone aux séries ultralégères de 200 paires ; et l'injection TR-90 aux montures sport 3D justifiant moules acier et 1 200 paires. Verrouillez structure et seuils d'amortissement dès le départ.
+
+Transmettez votre dessin ou visuel de référence, vos teintes et vos quantités via la [formulaire de demande ci-dessous](#inquiry-form-section) pour valider faisabilité et MOQ avant tout engagement payant.

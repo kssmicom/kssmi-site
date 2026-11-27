@@ -24,7 +24,7 @@ seoDescription: "Bandhingake asetat, baja tahan karat, nikel perak, titanium mur
 
 **Bahan bingkai dudu mung pilihan estetika — bahan iki nemtokake rute konstruksi, jumlah pesenan minimal (200, 300, utawa 1.200 pasang saben model), investasi cetakan, lan wujud utawa perangkat keras apa wae sing bisa digawe kanthi fisik.**
 
-Ing Kssmi, enem rute bahan bingkai nyakup meh kabeh program kacamata kustom: asetat selulosa, baja tahan karat 316, nikel perak (cupronickel), titanium (murni lan beta), serat karbon, lan injeksi TR-90. Milih bahan sing salah kanggo desain referensi — kayata njaluk siluet 3D melengkung "bubble" saka lembaran asetat — bakal ngundur wektu penawaran lan sampel sadurunge produksi diwiwiti.
+Ing Kssmi, enem rute bahan bingkai nyakup meh kabeh program kacamata kustom: asetat selulosa, baja tahan karat 316, nikel perak (paduan tembaga–nikel–seng), titanium (murni lan beta), serat karbon, lan injeksi TR-90. Milih bahan sing salah kanggo desain referensi — kayata njaluk siluet 3D melengkung "bubble" saka lembaran asetat — bakal ngundur wektu penawaran lan sampel sadurunge produksi diwiwiti.
 
 ## Bahan bingkai sekilas
 
@@ -32,22 +32,22 @@ Ing Kssmi, enem rute bahan bingkai nyakup meh kabeh program kacamata kustom: ase
 |---|---|---|---|---|---|
 | Asetat | Potong CNC saka lembaran lapis, tumble & poles tangan | Rasa anget lan padhet; bobot sedheng | Solid jero, transparan, tortoise & pola lapis | 300 pasang/model (nganti 3 × 100*) | Koleksi fashion, lifestyle & siluet klasik |
 | Baja tahan karat (316) | Kawat & lembaran dicap/dibentuk; disolder & dilapisi | Profil tipis lan rapi; bobot sedheng | 18 warna PVD (emas, krom, gunmetal, lsp.) | 300 pasang/model (nganti 3 × 100) | Garis minimalis & bingkai padinan serbaguna |
-| Nikel perak (cupronickel) | Paduan logam dimesin/dicor; dilapisi | Kepadatan luwih dhuwur (~1,9× titanium); mantep | Lapisan emas resik & ornamen cor tajem | 300 pasang/model (nganti 3 × 100) | Alternatif hemat biaya titanium yen ana ornamen cor |
+| Nikel perak (paduan tembaga–nikel–seng) | Paduan logam dimesin/dicor; dilapisi | Kepadatan luwih dhuwur (~1,9× titanium); mantep | Lapisan emas resik & ornamen cor tajem | 300 pasang/model (nganti 3 × 100) | Alternatif hemat biaya titanium yen ana ornamen cor |
 | Titanium murni & beta | Kawat/lembaran titanium presisi; solder utawa tanpa sekrup | Entheng banget; tahan korosi; lentur balik (beta) | Finishing PVD & nada logam alus | 300 pasang/model (nganti 3 × 100) | Kenyamanan premium, profil tipis & tanpa sekrup |
 | Serat karbon | Komposit tenunan karbon berlapis | Ultra-entheng, kaku, tampilan teknis | Pola tenunan karbon karo komponen PVD | 200 pasang/model | Koleksi olahraga, performa & gaya teknologi |
-| TR-90 | Nilon termoplastik diinjeksi nganggo cetakan khusus | Entheng banget, lentur, tahan benturan | Warna injeksi solid/semi-transparan; dicat/dilapisi | 1.200 pasang/gaya (≥600/warna); sport kustom 600/warna | Kacamata olahraga melengkung, kurva 3D & volume dhuwur |
+| TR-90 | Nilon termoplastik diinjeksi nganggo cetakan khusus | Entheng banget, lentur, tahan benturan | Warna injeksi solid/semi-transparan; dicat/dilapisi | 1.200 pasang/model; ≥600 pasang/werna | Kacamata olahraga melengkung, kurva 3D & volume dhuwur |
 
 *\*Minimal bahan baku beda-beda gumantung pemasok asetat; deleng bagean asetat ing ngisor iki.*
 
 ## Bingkai asetat: jerone warna, poles lan wates bentuk
 
-**Asetat selulosa iku termoplastik basis tanduran sing dipotong saka lembaran berlapis, cocog kanggo warna sugih lan pinggiran poles tangan — nanging lembaran rata ora bisa nggawe volume 3D bubble hasil injeksi.**
+**Asetat selulosa iku termoplastik basis tanduran sing dipotong saka lembaran berlapis, cocog kanggo warna sugih lan pinggiran poles tangan.**
 
 Bingkai asetat kita ngliwati limang tahap finishing: pengamplasan lembaran, poles kasar barrel, poles alus mengkilap, finishing pinggir tangan, lan pamriksan sadurunge perakitan. Gagang asetat biasane mbutuhake kawat inti logam ing njero kanggo kekuatan lan pangaturan. Desain setengah bingkai kanthi pinggir lensa ngisor katon uga bisa digawe ing asetat nganggo benang transparan tipis ing alur presisi.
 
 Telung wates teknis lan pengadaan sing penting sadurunge ngunci desain asetat:
 
-1. **Wates bentuk lan lengkung dasar.** Ngarep 3D sing kembung kaya gelembung kanthi lengkungan melingkar kuwat iku ciri khas cetakan injeksi lan ora bisa digiling saka lembaran asetat rata. Kanggo referensi kaya ngono, pilihan sing bisa ditindakake yaiku injeksi TR-90 utawa adaptasi siluet ing wates lembaran asetat.
+1. **Wates bentuk lan lengkung dasar.** Kanggo nggawe wujud shield melengkung kaya TR-90 nganggo asetat, kudu ditambah penyangga vertikal ing panggonan jembatan irung. Konstruksi sing nyambung tanpa penyangga kuwi ora bisa langsung ditiru; struktur jembatan sing wis diowahi kudu disetujoni ing gambar sadurunge nggawe sampel.
 2. **Engsel pegas terpasang ing njero.** Nalika panuku njaluk "engsel tersembunyi" ing asetat, konstruksi sing bisa digawe yaiku **engsel pegas terpasang ing njero gagang asetat** kanthi jarak mekanik cilik supaya gagang bisa mbukak-tutup. Ndhelikake 100% tanpa celah iku ora mungkin sacara fisik, lan ing asetat transparan mekanisme njero isih katon sithik.
 3. **MOQ produk dadi vs. MOQ bahan baku.** Pesenan asetat dadi diwiwiti saka 300 pasang saben model (nganti 3 warna × 100 pasang). Karo pabrik China unggulan (JIMEI / JINYU), saben warna diwiwiti saka 100 pasang. Lembaran Mazzucchelli Italia nduwe ambang tuku bahan baku padha karo udakara 1.000 pasang kanggo siji gaya siji warna, saengga batch pisanan 300 pasang ing asetat Italia mung siji warna saben model. Minangka panduan rega, Mazzucchelli udakara **USD 3–5 luwih larang saben pasang** kanggo warna standar (lan **USD 5–10** kanggo pola tortoise) tinimbang asetat standar, dikonfirmasi ing penawaran. Kajaba iku, asetat ora kena disimpen suwe banget supaya ora owah warna utawa getas.
 
@@ -57,14 +57,14 @@ Jelajahi [kacamata srengenge asetat](/jv/product/acetate-sunglasses/) lan [bingk
 
 ## Bingkai logam: baja tahan karat vs. nikel perak
 
-**Baja tahan karat 316 cocog kanggo profil tipis padinan, dene nikel perak (cupronickel) minangka jalur logam hemat biaya dibanding titanium nalika desain mbutuhake ornamen cor.**
+**Baja tahan karat 316 cocog kanggo profil tipis padinan, dene nikel perak (paduan tembaga–nikel–seng) minangka jalur logam hemat biaya dibanding titanium nalika desain mbutuhake ornamen cor.**
 
 Loro-lorone ngetutake minimal standar 300 pasang saben model (nganti 3 warna × 100 pasang) lan ndhukung 18 warna PVD kalebu emas, rose gold, krom lan gunmetal:
 
 - **Baja tahan karat 316** menehi ngarep tipis, gagang bisa diatur lan biaya praktis, cocog karo gagang asetat utawa TR-90, nanging ora bisa nyetak ornamen cor cilik kanthi tajem.
-- **Nikel perak (cupronickel)** gampang dimesin, nampa lapisan emas kanthi resik lan njaga detail ornamen cor kanthi cetha. Bagian logame udakara 1,9× luwih padhet tinimbang titanium (≈8,7 vs ≈4,5 g/cm³), menehi bobot luwih mantep tanpa wates cor baja.
+- **Nikel perak (paduan tembaga–nikel–seng)** gampang dimesin, nampa lapisan emas kanthi resik lan njaga detail ornamen cor kanthi cetha. Bagian logame udakara 1,9× luwih padhet tinimbang titanium (≈8,7 vs ≈4,5 g/cm³), menehi bobot luwih mantep tanpa wates cor baja.
 
-Pilihan finishing uga mengaruhi rega lan wektu. Warna PVD standar mlaku normal, dene permukaan mengkilap kaya pangilon amba mbutuhake siklus pelapisan multi-lapis (biasane 2–3 lapis utawa luwih, panduan udakara **USD 18 saben lapis**, jumlah pungkasan dikonfirmasi ing penawaran) sing nambah rega unit, MOQ lan wektu.
+Pilihan finishing uga mengaruhi rega lan wektu. Warna PVD standar mlaku normal, dene permukaan mengkilap kaya pangilon amba mbutuhake siklus pelapisan multi-lapis (biasane 2–3 lapis utawa luwih, panduan udakara **USD 0,60 saben pasang saben lapis**, jumlah pungkasan dikonfirmasi ing penawaran) sing nambah rega unit, MOQ lan wektu.
 
 ![Kacamata srengenge logam kustom nganggo lapisan PVD](/media/blogs/eyewear-frame-materials-comparison/metal-frames.webp)
 
@@ -99,11 +99,11 @@ Pirsani [kacamata srengenge serat karbon](/jv/product/carbon-fiber-sunglasses/) 
 
 **TR-90 iku nilon termoplastik fleksibel sing digawe nganggo cetakan injeksi khusus — penting kanggo pelindung olahraga melengkung, kurva 3D lan garis tahan benturan kanthi MOQ standar 1.200 pasang.**
 
-Beda karo asetat potongan utawa logam, TR-90 diinjeksi langsung menyang cetakan baja produksi, ngasilake lengkungan kuwat lan gagang 3D sing ora bisa digawe saka lembaran. Proyek olahraga TR-90 uga bisa diwiwiti saka template desain olahraga khusus kita.
+Beda karo asetat potongan utawa logam, TR-90 diinjeksi langsung menyang cetakan baja produksi, ngasilake lengkungan kuwat lan gagang 3D. Proyek olahraga TR-90 uga bisa diwiwiti saka template desain olahraga khusus kita.
 
 Loro aturan komersial ngatur TR-90:
 
-1. **Cetakan khusus lan MOQ luwih dhuwur.** Gaya TR-90 standar mbutuhake 1.200 pasang saben gaya (paling ora 600 pasang saben warna); bingkai olahraga TR-90 kustom lengkap ngetutake wates 600 pasang saben warna. Nggunakake bentuk sing wis ana ngirit cetakan anyar nanging ora ngilangi minimal saben model.
+1. **Cetakan khusus lan MOQ luwih dhuwur.** Saben model TR-90, kalebu model olahraga kustom, mbutuhake paling ora 1.200 pasang saben model lan paling ora 600 pasang saben werna ing model kasebut. Nggunakake wujud sing wis ana ngirit cetakan anyar, nanging ora nyuda loro wates minimal kasebut.
 2. **Verifikasi sadurunge cetakan lan kredit biaya.** Kanggo bentuk injeksi kustom, ukuran lan ergonomi diverifikasi sadurunge ngethok cetakan baja, lan biaya cetakan sarta sampel TR-90 dikreditake nalika model sing padha tekan **30.000 pasang akumulatif sajrone 24 sasi** (ora kalebu ongkos kirim lan pajak) kaya kasebut ing penawaran.
 
 ![Konstruksi pigura termoplastik cetakan injeksi sing entheng kanggo olahraga lan dienggo sedina muput](/media/blogs/eyewear-frame-materials-comparison/tr90-injection-frames.webp)
@@ -123,7 +123,7 @@ Deleng rincian bahan lan lapisan ing [halaman pilihan lensa](/jv/customization/l
 
 ## Cara milih bahan sing tepat kanggo koleksi sampeyan
 
-1. **Priksa kelayakan bentuk fisik dhisik.** Yen referensi nduwe lengkungan kuwat utawa ngarep 3D kembung, wiwiti karo injeksi TR-90 utawa sesuaikan siluet sadurunge penawaran asetat.
+1. **Priksa kelayakan bentuk fisik dhisik.** Kanggo nggawe wujud shield melengkung kaya TR-90 nganggo asetat, kudu ditambah penyangga vertikal ing panggonan jembatan irung.
 2. **Cocokake bobot karo suwene panggunaan.** Optik sedina muput lan olahraga luwih cocog karo beta titanium, titanium murni, serat karbon utawa TR-90; kacamata srengenge fashion mantep nganggo asetat solid.
 3. **Selarasake pemisahan warna karo aturan bahan baku.** Kanggo dibagi 300 pasang dadi 3 warna × 100, pilih logam, titanium utawa asetat JIMEI/JINYU — dudu lembaran Italia Mazzucchelli utawa TR-90.
 4. **Cocokake komponen lan pelapisan karo tingkat rega.** Pilih nikel perak tinimbang baja yen ana ornamen cor, lan anggarake biaya sarta wektu tambahan kanggo pelapisan pangilon multi-lapis.
@@ -135,7 +135,7 @@ Ing Kssmi, jumlah diitung **saben model, saben batch produksi** — model beda o
 
 | Tahap / syarat | Asetat, baja tahan karat, nikel perak & titanium | Serat karbon | Injeksi TR-90 |
 |---|---|---|---|
-| MOQ produksi | 300 pasang/model (nganti 3 × 100) | 200 pasang/model | 1.200 pasang/gaya (≥600/warna); sport kustom 600/warna |
+| MOQ produksi | 300 pasang/model (nganti 3 × 100) | 200 pasang/model | 1.200 pasang/model; ≥600 pasang/werna |
 | Gambar teknis 2D | 3–10 dina kerja (nganti 3 revisi) | 3–10 dina kerja | 3–10 dina kerja |
 | Sampel kustom & cetakan | 60 dina kerja sawise persetujuan gambar & bayar lunas | 60 dina kerja | 60 dina kerja |
 | Produksi massal | 60 dina kerja sawise persetujuan sampel & DP 50% | 60 dina kerja | 60 dina kerja |
@@ -145,22 +145,6 @@ Biaya sampel, pangembangan lan cetakan dibayar 100% ing ngarep; produksi massal 
 
 ![Kacamata srengenge kustom sing nggabungake bingkai asetat karo jembatan lan gagang logam presisi](/media/blogs/eyewear-frame-materials-comparison/material-selection-hybrid.webp)
 
-## Apa sing ora kita lakoni
-
-- **Kita ora adol stok siap.** Bingkai katalog minangka sampel evaluasi kualitas lan referensi konstruksi; saben produksi digawe miturut pesenan merek.
-- **Kita ora nggawe utawa nyedhiyakake kemasan ritel.** Pesen wadah, kothak lan kain pembersih saka pemasok khusus banjur kirim menyang kita; kita ngepak kacamata dadi menyang kemasan pelanggan tanpa biaya tambahan.
-- **Kita ora nggawe lensa resep ukuran.** Bingkai optik dikirim nganggo lensa demo bening kanggo dipasang optik lokal.
-
-## Apa sing kudu dikirim kanggo pamriksan kelayakan bahan
-
-Sadurunge penawaran, tim teknik kita mriksa rancangan sampeyan kanggo ngonfirmasi rute bahan, MOQ lan struktur biaya. Kirimake:
-
-- gambar teknis, sketsa, gambar referensi utawa SKU katalog;
-- pasar tujuan lan tingkat rega ritel;
-- warna sing direncanakake lan jumlah saben model;
-- rincian konstruksi khusus (kurva 3D, ornamen cor, tanpa sekrup, engsel pegas njero utawa lapisan pangilon);
-- tanggal peluncuran target.
-
 ## FAQ
 
 ### 1. Bahan bingkai kacamata endi sing paling entheng?
@@ -169,7 +153,7 @@ Serat karbon lan titanium (murni utawa beta titanium) minangka pilihan paling en
 
 ### 2. Apa bingkai melengkung utawa bentuk bubble bisa digawe saka asetat selulosa?
 
-Ora. Tampilan 3D kembung kanthi lengkungan melingkar jero iku ciri khas cetakan injeksi lan ora bisa digiling saka lembaran asetat rata. Kita bisa nggawe sing paling cedhak ing injeksi TR-90 utawa adaptasi siluet supaya cocog karo lembaran asetat.
+Kanggo nggawe wujud shield melengkung kaya TR-90 nganggo asetat, kudu ditambah penyangga vertikal ing panggonan jembatan irung. Konstruksi sing nyambung tanpa penyangga kuwi ora bisa langsung ditiru; struktur jembatan sing wis diowahi kudu disetujoni ing gambar sadurunge nggawe sampel.
 
 ### 3. Apa bedane titanium murni lan beta titanium?
 
@@ -177,11 +161,11 @@ Titanium murni entheng lan tahan korosi. Beta titanium iku paduan titanium kanth
 
 ### 4. Kapan merek kudu milih nikel perak tinimbang baja tahan karat?
 
-Pilih nikel perak (cupronickel) nalika desain mbutuhake ornamen dekoratif cor tajem lan lapisan emas kanthi biaya luwih murah tinimbang titanium. Baja tahan karat cocog kanggo profil tipis resik nanging ora bisa ngasilake detail cor alus; cathet yen komponen nikel perak udakara 1,9 kaping luwih padhet tinimbang titanium.
+Pilih nikel perak (paduan tembaga–nikel–seng) nalika desain mbutuhake ornamen dekoratif cor tajem lan lapisan emas kanthi biaya luwih murah tinimbang titanium. Baja tahan karat cocog kanggo profil tipis resik nanging ora bisa ngasilake detail cor alus; cathet yen komponen nikel perak udakara 1,9 kaping luwih padhet tinimbang titanium.
 
 ### 5. Kepiye pilihan bahan lan finishing mengaruhi biaya saben unit?
 
-Ing Kssmi, panduan rega ngetutake kerumitan bahan lan finishing: titanium udakara USD 3,70 luwih larang saben pasang tinimbang baja tahan karat; asetat Italia Mazzucchelli udakara USD 3–5 luwih larang ing warna standar (lan USD 5–10 ing tortoise) tinimbang asetat standar; lan pelapisan pangilon multi-lapis udakara USD 18 saben lapis kanggo 2–3 lapis utawa luwih. Kanggo logam nganggo ornamen cor, nikel perak ngurangi biaya tinimbang titanium; rega persis dikonfirmasi ing penawaran sawise tinjauan teknik.
+Ing Kssmi, panduan rega ngetutake kerumitan bahan lan finishing: titanium udakara USD 3,70 luwih larang saben pasang tinimbang baja tahan karat; asetat Italia Mazzucchelli udakara USD 3–5 luwih larang ing warna standar (lan USD 5–10 ing tortoise) tinimbang asetat standar; lan pelapisan pangilon multi-lapis udakara USD 0,60 saben pasang saben lapis kanggo 2–3 lapis utawa luwih. Kanggo logam nganggo ornamen cor, nikel perak ngurangi biaya tinimbang titanium; rega persis dikonfirmasi ing penawaran sawise tinjauan teknik.
 
 ### 6. Apa bisa nggawe engsel sing bener-bener ora katon ing njero gagang asetat?
 
@@ -193,7 +177,7 @@ Bingkai asetat dadi diwiwiti saka 300 pasang saben model (nganti 3 warna × 100 
 
 ### 8. Pira MOQ saben bahan lan apa warna lensa nambah minimal ekstra?
 
-Asetat, logam (baja tahan karat lan nikel perak) lan titanium diwiwiti saka 300 pasang saben model; serat karbon saka 200 pasang saben model; TR-90 mbutuhake 1.200 pasang saben gaya (paling ora 600 saben warna, utawa 600 saben warna kanggo TR-90 olahraga kustom). Minimal lensa ditambahake ing ndhuwure: warna solid standar saka 100 pasang, gradasi saka 150, lan pangilon utawa kustom saka 300 pasang saben warna.
+Asetat, logam (baja tahan karat lan nikel perak) lan titanium diwiwiti saka 300 pasang saben model; serat karbon saka 200 pasang saben model; TR-90 mbutuhake paling ora 1.200 pasang saben model lan paling ora 600 pasang saben werna. Minimal lensa ditambahake ing ndhuwure: warna solid standar saka 100 pasang, gradasi saka 150, lan pangilon utawa kustom saka 300 pasang saben warna.
 
 ### 9. Suwene pira sampel kustom lan produksi massal?
 
@@ -209,6 +193,8 @@ Ora. Kita ora nggawe utawa nyedhiyakake kemasan ritel, sanajan kita ngepak bingk
 
 ---
 
-Kssmi wis ngasilake kacamata ing Shenzhen wiwit taun 2003 kanthi desain internal, teknik, mesin CNC, poles, perakitan lan kontrol kualitas 100% sadurunge kirim. Asetat saka Mazzucchelli, JIMEI lan JINYU; titanium saka Kobe Steel lan Baoji Titanium. Waca rincian pabrik ing [babagan kita](/jv/about-us/) utawa syarat ing [FAQ](/jv/faq/).
+## Ringkesan
 
-**Siap milih bahan kanggo lini sampeyan?** Kirim desain, sketsa utawa gambar referensi liwat [halaman penawaran](/jv/quote/) kanthi pasar tujuan, warna lan jumlah saben model. Kita ngonfirmasi kelayakan struktural, rute bahan lan MOQ sadurunge karya mbayar diwiwiti.
+Cocogake jalur bahan karo siluet lan ukuran batch sadurunge gawe sampel: asetat JIMEI utawa JINYU, baja tahan karat, nikel perak, lan titanium cocog kanggo 300 pasang / 3 warna; serat karbon kanggo 200 pasang entheng; dene injeksi TR-90 mung kanggo bentuk sport 3D sing nyukupi cetakan baja lan 1.200 pasang. Kunci struktur lan syarat kredit biaya wiwit awal.
+
+Kirim desain utawa gambar referensi, warna, lan jumlah liwat [formulir panjalukan ing ngisor iki](#inquiry-form-section) kanggo mastekake kelayakan lan MOQ sadurunge tahap sampel berbayar.

@@ -30,7 +30,7 @@ Per i brand che sviluppano occhiali da sole o montature da vista su misura, gli 
 
 | Substrato lente | Nitidezza ottica e indice | Processo produttivo | Compatibilità montatura | Limite principale | Impiego ideale |
 |---|---|---|---|---|---|
-| Nylon (PA) | Alta nitidezza (Abbe ~52); ultraleggero | Poliammide stampata/colata; termoformatura | Tutte le montature — ideale per rimless e glasant a filo | Stato igrometrico e stress termico incidono sull'ottica | Solari lusso, titanio, fibra di carbonio e rimless |
+| Nylon (PA) | Alta nitidezza (Abbe ~52); ultraleggero | Poliammide stampata/colata; termoformatura | Tutte le montature — ideale per rimless e montature Nylor a filo | Stato igrometrico e stress termico incidono sull'ottica | Solari lusso, titanio, fibra di carbonio e rimless |
 | CR-39 | Riferimento ottico (Abbe ~58) | Resina termoindurente ADC colata | Solari cerchio intero acetato/metallo; no rimless | Fragile attorno ai fori; più pesante di nylon e PC | Occhiali da sole boutique e acetato classico |
 | TAC polarizzato | Film multistrato leggero | Laminazione fogli TAC + film polarizzante + adesivo | Solo montature cerchio intero | Sconsigliato in climi torridi; bordi sempre protetti | Linee commerciali polarizzate e guida economica |
 | Policarbonato (PC) | Buona nitidezza; antiurto; ultraleggero | Stampaggio a iniezione e termoformatura | Maschere avvolgenti, sport, rimless e uso attivo | Maggiore dispersione; richiede hard coating (HC) | Sport outdoor, visiere avvolgenti e SKU antiurto |
@@ -54,7 +54,7 @@ Due regole operative guidano i progetti in nylon:
 
 **Il CR-39 è una resina ADC termoindurente colata che rappresenta lo standard di riferimento ottico (Abbe ~58) per gli occhiali da sole fashion a cerchio intero, con resa cromatica impeccabile sia in tinta unita sia sfumata.**
 
-Realizzato tramite filtrazione, degassamento, colata in stampo e polimerizzazione controllata, il CR-39 eccelle su [occhiali da sole in acetato](/it/product/acetate-sunglasses/) e [occhiali in metallo](/it/product/metal-sunglasses/) dove prevalgono brillantezza visiva e palette classiche. Tuttavia, per la maggiore rigidità attorno ai fori passanti, non va prescritto su rimless forati o glasant a filo.
+Realizzato tramite filtrazione, degassamento, colata in stampo e polimerizzazione controllata, il CR-39 eccelle su [occhiali da sole in acetato](/it/product/acetate-sunglasses/) e [occhiali in metallo](/it/product/metal-sunglasses/) dove prevalgono brillantezza visiva e palette classiche. Tuttavia, per la maggiore rigidità attorno ai fori passanti, non va prescritto su rimless forati o montature Nylor a filo.
 
 ![Lente solare ottica sfumata marrone a transizione uniforme](/media/blogs/eyewear-lens-materials-comparison/cr39-gradient-lenses.webp)
 
@@ -87,20 +87,19 @@ Per programmi USA che richiedono espressamente **Trivex** (indice 1.53), Kssmi a
 
 Per gli ordini di occhiali schermo non graduati occorre distinguere due aspetti tecnici:
 
-- **Curva spettrale prima delle diciture commerciali:** il filtraggio luce blu attenua selettivamente determinate lunghezze d'onda per assorbimento, tintura o rivestimento. Confermare sempre banda bersaglio, percentuale di blocco e tonalità di base (trasparente oppure giallo tenue/pieno) anziché affidarsi a una dicitura generica.
+- **Curva spettrale prima delle diciture commerciali:** il filtraggio luce blu attenua selettivamente determinate lunghezze d'onda per assorbimento, tintura o rivestimento. Confermare sempre banda bersaglio, percentuale di blocco e tonalità di base (trasparente oppure giallo tenue/pieno) anziché affidarsi a una dicitura generica. Il filtraggio selettivo modifica l’equilibrio spettrale; non aumenta la risoluzione ottica e non implica benefici medici.
 - **Normative separate:** le montature ottiche prive di lenti correttive destinate al montaggio Rx ricadono nella norma **ISO 12870**, distinta dalle norme solari come **EN ISO 12312-1**; inserire una lente demo non trasforma l'occhiale da vista in un occhiale da sole normativo.
 
 ![Dimostrazione di filtraggio spettrale su lente ottica neutra anti-luce blu](/media/blogs/eyewear-lens-materials-comparison/blue-light-lenses.webp)
 
 Consulta le [opzioni lenti filtro luce blu](/it/customization/lenses/blue-blocking/) e la collezione completa di [montature da vista](/it/product/optical-frames/).
-
 ## Funzioni ottiche vs. rivestimenti superficiali
 
 **Le funzioni ottiche modificano la luce che attraversa la lente (luminosità, UV, riverbero o spettro); i trattamenti superficiali proteggono da graffi, riflessi interni, acqua o appannamento — e hard coating (HC) e antiriflesso (AR) non sono automatici di serie.**
 
 ### Funzioni ottiche (verificate sulla lente finita)
 
-- **Trasmissione solare VLT e categorie CAT 0–4:** la trasmissione luminosa visibile (VLT) si misura strumentalmente e non a occhio nudo. **CAT.3 (8–18% VLT)** è lo standard per uso solare generale e guida diurna; **CAT.1 (43–80% VLT)** e **CAT.2 (18–43% VLT)** coprono cielo velato, tinte fashion e sfumature.
+- **Trasmissione solare VLT e categorie CAT 0–4:** la trasmissione luminosa visibile (VLT) si misura strumentalmente e non a occhio nudo. **CAT.3 (8–18% VLT)** è lo standard per uso solare generale e guida diurna; **CAT.1 (43–80% VLT)** e **CAT.2 (18–43% VLT)** coprono cielo velato, tinte fashion e sfumature. Prima di fissare la VLT, verificate i requisiti di guida del mercato di destinazione.
 - **Protezione UV400:** blocca UVA e UVB tramite substrato, additivi, tintura o coating. Anche una lente chiara può raggiungere UV400 se formulata, mentre una lente scura senza assorbitori UV non lo garantisce senza verifica finita.
 - **Polarizzazione:** riduce il riverbero orizzontale da acqua, asfalto e neve, indipendentemente da intensità del colore, UV400 o specchiatura; quasi tutti i campioni CAT.3 [grigi](/it/customization/lenses/grey/), [marroni](/it/customization/lenses/brown/) e [verdi](/it/customization/lenses/green/) supportano pacchetti polarizzati.
 - **Fotocromatico e High Contrast (Hi-Con):** le lenti fotocromatiche si scuriscono sotto esposizione UV/spettrale, risentendo di temperatura ambiente e parabrezza auto che schermano gli UV; i filtri ad alto contrasto modulano selettivamente le bande senza variare il numero di Abbe.
@@ -145,7 +144,6 @@ Su progetti dedicati confermati sono inoltre disponibili due lavorazioni special
 
 Per la produzione standard le lenti provengono da produttori ottici di fascia alta di Shenzhen. Quando un brand richiede un marchio ottico internazionale oppure un programma polarizzato presso una fabbrica partner dedicata, Kssmi approvvigiona esattamente su marca, modello e pacchetto coating confermati — oppure integra in montaggio lenti fornite dal cliente tramite la fabbrica partner.
 
-
 ![Variante lente polarizzata con specchiatura Revo rossa soggetta a MOQ di 300 paia/colore](/media/blogs/eyewear-lens-materials-comparison/revo-mirror-color-moq.webp)
 ## Conformità, report spettrali e test di terze parti
 
@@ -155,23 +153,6 @@ Kssmi non presenta certificati di altri articoli come attestazioni valide per tu
 
 - **Curve di trasmissione spettrale:** forniamo su richiesta curve **280–780 nm a passi di 5 nm** (tabella, grafico, coordinate CIE e file CSV nativi con strumento, intervallo, spessore e stato del campione).
 - **Coordinamento laboratori indipendenti:** le prove per USA, UE (CE / EN ISO 12312-1), Regno Unito o Australia (**AS/NZS 1067.1**, indicativamente intorno a **USD 1.139** per specifica solare finita) sono gestite con SGS, Intertek o TÜV al costo reale di laboratorio.
-
-## Cosa non produciamo
-
-- **Non produciamo lenti graduate (Rx):** le montature da vista escono con lenti demo neutre o filtro luce blu non graduato.
-- **Non produciamo né forniamo packaging retail:** astucci, scatole e panni vanno ordinati a fornitori specializzati e inviati in fabbrica per il confezionamento gratuito a bordo linea.
-- **Non vendiamo pronta consegna né lenti sciolte prive di ordine:** tutta la produzione è su commessa per il brand e le lenti di ricambio richiedono un ordine montature confermato.
-
-## Cosa inviare per la valutazione tecnica delle lenti
-
-Per bloccare insieme tolleranze montatura, MOQ colore e compatibilità dei trattamenti, invia in fase di richiesta:
-
-- disegno della montatura, immagine di riferimento o codice catalogo (segnalando rimless, mezzo cerchio o maschera);
-- substrato preferito (TAC, CR-39, nylon, PC o Trivex) ed eventuale codice campione KS-LN;
-- funzioni e rivestimenti richiesti (UV400, polarizzata, sfumata, specchiata, fotocromatica, luce blu, HC, AR interno, H/O o AF);
-- finitura bordi per modelli rimless (smusso standard lucido o sfaccettatura diamante);
-- quantità per colore e categoria VLT / CAT desiderata;
-- mercato di destinazione ed eventuali test di laboratorio richiesti.
 
 ## Domande frequenti
 
@@ -221,6 +202,8 @@ Kssmi fornisce gratuitamente dati interni di riferimento e curve spettrali 280�
 
 ---
 
-Dal 2003 Kssmi produce occhiali a Shenzhen integrando progettazione interna delle montature, partner ottici di primo livello a Shenzhen e controllo qualità al 100% prima della spedizione. Scopri di più su [chi siamo](/it/about-us/) o consulta le [FAQ](/it/faq/).
+## Riepilogo
 
-**Pronto a definire le specifiche delle lenti?** Invia modelli montatura, substrati preferiti, codici KS-LN, trattamenti, quantità per colore e mercato di destinazione tramite la [pagina preventivo](/it/quote/). Confermiamo fattibilità tecnica, minimi per colore e costi dettagliati prima di qualsiasi lavoro a pagamento.
+Le prestazioni delle lenti dipendono da stratificazione finita, rivestimenti e MOQ per colore più che dal solo nome del substrato: specifica nylon (PA) o PC per modelli rimless e ad alta curvatura, CR-39 o TAC (fuori dai climi torridi) per il cerchio intero, confermando HC, AR interno, classe VLT/CAT e minimi colore (100 tinta unita / 150 sfumata / 300 specchio o custom).
+
+Invia modelli, substrati, codici KS-LN, trattamenti e quantità per colore tramite la [modulo di richiesta qui sotto](#inquiry-form-section) per verificare fattibilità e costi dettagliati prima di avviare lavori a pagamento.

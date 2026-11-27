@@ -35,19 +35,19 @@ Na Kssmi, seis rotas de material cobrem quase todos os programas de óculos sob 
 | Alpaca (nickel silver) | Liga metálica usinada/fundida; banhada | Densidade maior (~1,9× o titânio); tato sólido | Excelente banho dourado e detalhes fundidos nítidos | 300 pares/modelo (até 3 × 100) | Alternativa económica ao titânio para ornamentos fundidos |
 | Titânio puro e beta | Fio/chapa de titânio conformados com precisão; soldados ou sem parafusos | Peso-pluma; anticorrosão; alta elasticidade (beta) | Acabamentos PVD e tons metálicos sóbrios | 300 pares/modelo (até 3 × 100) | Conforto premium, perfis finos e montagens sem parafusos |
 | Fibra de carbono | Compósito tecido de carbono em camadas | Ultraleve, rígido, visual técnico | Trama de carbono com ferragens PVD | 200 pares/modelo | Coleções desportivas, performance e estilo técnico |
-| TR-90 | Nylon termoplástico injetado em moldes dedicados | Muito leve, flexível, resistente ao impacto | Cores injetadas sólidas/translúcidas; pintado/revestido | 1.200 pares/modelo (≥600/cor); sport custom 600/cor | Máscaras desportivas envolventes, curvas 3D e alto volume |
+| TR-90 | Nylon termoplástico injetado em moldes dedicados | Muito leve, flexível, resistente ao impacto | Cores injetadas sólidas/translúcidas; pintado/revestido | 1.200 pares/modelo; ≥600 pares/cor | Máscaras desportivas envolventes, curvas 3D e alto volume |
 
 *\*Os mínimos de matéria-prima variam conforme o fornecedor de acetato; veja a secção de acetato.*
 
 ## Armações em acetato: profundidade de cor, acabamento e limites de forma
 
-**O acetato de celulose é um termoplástico vegetal fresado de chapas, ideal para cores ricas e bordas polidas à mão — mas a chapa plana não reproduz volumes 3D abaulados típicos de injeção.**
+**O acetato de celulose é um termoplástico vegetal fresado de chapas, ideal para cores ricas e bordas polidas à mão.**
 
 As nossas armações de acetato passam por cinco etapas de acabamento: lixamento da chapa, polimento grosso em tambor, polimento fino de alto brilho, retoque manual das bordas e inspeção pré-montagem. As hastes normalmente requerem alma metálica interna para resistência e ajuste. Armações meio-aro com borda inferior exposta também podem ser feitas em acetato com fio transparente fino alojado numa ranhura de precisão.
 
 Três limites técnicos e de compra devem ser considerados antes de aprovar um projeto em acetato:
 
-1. **Limites de formato e curvatura base.** Uma frente abaulada tipo bolha em 3D com curvas suaves envolventes e base acentuada é característica de moldagem por injeção e não pode ser fresada de chapa plana. Perante essa referência, as opções viáveis são injeção TR-90 para máxima fidelidade ou adaptação do desenho aos limites da chapa de acetato.
+1. **Limites de formato e curvatura base.** Para fabricar em acetato uma silhueta de máscara envolvente como as de TR-90, é necessário adicionar um suporte vertical na ponte. A mesma estrutura contínua sem esse suporte não pode ser copiada diretamente; confirme a ponte adaptada no desenho antes da amostra.
 2. **Dobradiças de mola integradas.** Quando se pede uma "dobradiça oculta" em acetato, a construção viável é uma **dobradiça de mola integrada dentro da haste de acetato**, com a folga mecânica necessária para articular. Ocultação total sem folga é fisicamente impossível e em acetato translúcido o mecanismo permanece parcialmente visível.
 3. **MOQ de produto acabado vs. matéria-prima.** Armações acabadas começam em 300 pares por modelo (até 3 cores × 100 pares). Com os principais fabricantes chineses (JIMEI / JINYU), cada cor parte de 100 pares. Já a chapa italiana Mazzucchelli exige um mínimo de matéria-prima equivalente a cerca de 1.000 pares de um estilo numa só cor, pelo que um primeiro lote de 300 pares em acetato italiano funciona na prática com uma única cor por modelo. Como guia de preço, Mazzucchelli custa cerca de **USD 3–5 a mais por par** em cores padrão (e **USD 5–10 a mais por par** em tartaruga) face ao acetato padrão, confirmado em cotação. Além disso, o acetato não deve ficar armazenado indefinidamente pelo risco de alteração cromática ou fragilidade, devendo ser programado num prazo razoável.
 
@@ -64,7 +64,7 @@ Ambos os metais seguem o mínimo padrão de 300 pares por modelo (até 3 cores �
 - **Aço inoxidável 316** oferece frentes finas, hastes ajustáveis e custo prático, combinando bem com hastes de acetato ou TR-90 em modelos híbridos, mas não reproduz ornamentos fundidos finos com nitidez.
 - **Alpaca (nickel silver)** maquina bem, aceita banho dourado limpo e define com precisão ornamentos fundidos no frontal ou haste. As suas peças metálicas são cerca de 1,9× mais densas que o titânio (≈8,7 vs. ≈4,5 g/cm³), dando sensação mais sólida sem as limitações de fundição do aço.
 
-O acabamento também afeta preço e prazo. Cores PVD padrão seguem o calendário normal, mas grandes superfícies espelhadas exigem banho multipassagem (normalmente 2–3 passagens ou mais, cerca de **USD 18 por passagem** como referência, com contagem final confirmada na cotação), aumentando custo unitário, MOQ e prazo.
+O acabamento também afeta preço e prazo. Cores PVD padrão seguem o calendário normal, mas grandes superfícies espelhadas exigem banho multipassagem (normalmente 2–3 passagens ou mais, cerca de **USD 0,60 por par e por passagem** como referência, com contagem final confirmada na cotação), aumentando custo unitário, MOQ e prazo.
 
 ![Óculos de sol metálicos personalizados com revestimento PVD](/media/blogs/eyewear-frame-materials-comparison/metal-frames.webp)
 
@@ -99,11 +99,11 @@ Veja os [óculos de sol em fibra de carbono](/pt/product/carbon-fiber-sunglasses
 
 **O TR-90 é um nylon termoplástico flexível produzido em moldes de injeção dedicados — essencial para máscaras desportivas envolventes, curvas 3D esculpidas e linhas resistentes ao impacto, com MOQ padrão de 1.200 pares.**
 
-Injetado diretamente em moldes de aço, o TR-90 viabiliza curvaturas envolventes pronunciadas e hastes 3D impossíveis em chapa. Projetos desportivos TR-90 também podem partir dos nossos modelos base desportivos dedicados.
+Injetado diretamente em moldes de aço, o TR-90 viabiliza curvaturas envolventes pronunciadas e hastes 3D. Projetos desportivos TR-90 também podem partir dos nossos modelos base desportivos dedicados.
 
 Duas regras comerciais regem o TR-90:
 
-1. **Molde dedicado e MOQ superior.** Modelos TR-90 padrão exigem 1.200 pares por estilo (pelo menos 600 pares por cor); armações desportivas TR-90 totalmente personalizadas seguem um mínimo de 600 pares por cor. Reutilizar uma forma existente poupa novo molde, mas não dispensa o mínimo por modelo.
+1. **Molde dedicado e MOQ superior.** Todos os modelos TR-90, inclusive os esportivos sob medida, exigem pelo menos 1.200 pares por modelo e pelo menos 600 pares por cor. Reutilizar uma forma existente economiza novos moldes, mas não reduz nenhum dos dois mínimos.
 2. **Verificação pré-molde e crédito de custos.** Em formatos injetados personalizados validamos ajuste e ergonomia antes de abrir os moldes de aço, e os custos de molde e amostras TR-90 são creditados quando o mesmo modelo atinge **30.000 pares acumulados em 24 meses** (excluindo frete e impostos), conforme indicado na cotação.
 
 ![Armação leve termoplástica moldada por injeção para ajuste esportivo ergonômico e uso diário](/media/blogs/eyewear-frame-materials-comparison/tr90-injection-frames.webp)
@@ -123,7 +123,7 @@ Consulte materiais e tratamentos em [opções de lentes](/pt/customization/lense
 
 ## Como escolher o material certo para a sua coleção
 
-1. **Verifique primeiro a viabilidade física da forma.** Se a referência tiver curvas muito envolventes ou frente 3D abaulada, comece por injeção TR-90 ou adapte a silhueta antes de cotar em acetato.
+1. **Verifique primeiro a viabilidade física da forma.** Para fabricar em acetato uma silhueta de máscara envolvente como as de TR-90, é necessário adicionar um suporte vertical na ponte.
 2. **Ajuste o peso ao tempo de utilização.** Uso ótico prolongado e desporto exigem leveza — prefira titânio beta, titânio puro, fibra de carbono ou TR-90; óculos de sol marcantes comportam bem o acetato sólido.
 3. **Alinhe a divisão de cores às regras de matéria-prima.** Para dividir 300 pares em 3 cores de 100, opte por metal, titânio ou acetato JIMEI/JINYU — não chapa italiana Mazzucchelli nem TR-90.
 4. **Equilibre ferragens e banho com a faixa de preço.** Escolha alpaca em vez de aço se houver ornamentos fundidos e preveja custo e prazo extras para banho espelhado multipassagem.
@@ -135,7 +135,7 @@ Na Kssmi, as quantidades aplicam-se **por modelo e por lote de produção** — 
 
 | Etapa / condição | Acetato, aço inox, alpaca e titânio | Fibra de carbono | Injeção TR-90 |
 |---|---|---|---|
-| MOQ de produção | 300 pares/modelo (até 3 × 100) | 200 pares/modelo | 1.200 pares/estilo (≥600/cor); sport custom 600/cor |
+| MOQ de produção | 300 pares/modelo (até 3 × 100) | 200 pares/modelo | 1.200 pares/modelo; ≥600 pares/cor |
 | Desenho técnico 2D | 3–10 dias úteis (até 3 revisões) | 3–10 dias úteis | 3–10 dias úteis |
 | Amostra custom e molde | 60 dias úteis após aprovação 2D e pagamento integral | 60 dias úteis | 60 dias úteis |
 | Produção em série | 60 dias úteis após aprovação da amostra e sinal 50% | 60 dias úteis | 60 dias úteis |
@@ -145,22 +145,6 @@ Amostras, desenvolvimento e moldes são pagos 100% antecipadamente; a produção
 
 ![Óculos solar sob medida que combina frontal em acetato esculpido com ponte e hastes metálicas de precisão](/media/blogs/eyewear-frame-materials-comparison/material-selection-hybrid.webp)
 
-## O que não fazemos
-
-- **Não vendemos stock pronto.** Os modelos de catálogo servem como amostras de avaliação e referência construtiva; cada lote é produzido sob encomenda.
-- **Não fabricamos nem fornecemos embalagens de retalho.** Encomende estojos, caixas e panos a um fornecedor especializado e envie-os para nós; embalamos gratuitamente os óculos acabados na embalagem do cliente.
-- **Não produzimos lentes graduadas.** As armações óticas seguem com lentes demonstrativas neutras.
-
-## O que enviar para verificação de viabilidade material
-
-Antes de cotar, a nossa engenharia analisa o projeto para confirmar material, MOQ e estrutura de custos. Envie:
-
-- desenho técnico, esboço, imagem de referência ou SKU do catálogo;
-- mercado de destino e faixa de preço ao consumidor;
-- cores planeadas e quantidade por modelo;
-- detalhes construtivos especiais (curvas 3D envolventes, ornamentos fundidos, construção sem parafusos, dobradiças de mola integradas ou banho espelhado);
-- data prevista de lançamento.
-
 ## FAQ
 
 ### 1. Qual é o material de armação mais leve?
@@ -169,7 +153,7 @@ Fibra de carbono e titânio (puro ou beta) são as opções mais leves da nossa 
 
 ### 2. É possível fazer armações esculpidas ou abauladas em acetato de celulose?
 
-Não. Um aspeto 3D abaulado com curvas envolventes acentuadas é típico da moldagem por injeção e não pode ser fresado em chapa plana de acetato. Podemos produzir a versão mais próxima em TR-90 injetado ou adaptar a silhueta para chapa de acetato.
+Para fabricar em acetato uma silhueta de máscara envolvente como as de TR-90, é necessário adicionar um suporte vertical na ponte. A mesma estrutura contínua sem esse suporte não pode ser copiada diretamente; confirme a ponte adaptada no desenho antes da amostra.
 
 ### 3. Qual é a diferença entre titânio puro e titânio beta?
 
@@ -181,7 +165,7 @@ Escolha alpaca (nickel silver) quando o design exigir ornamentos decorativos fun
 
 ### 5. Como a escolha do material e do acabamento afeta o custo unitário?
 
-Na Kssmi, os guias de preço acompanham a complexidade do material e acabamento: o titânio custa cerca de USD 3,70 a mais por par que o aço inoxidável; o acetato italiano Mazzucchelli custa cerca de USD 3–5 a mais por par em cores padrão (e USD 5–10 em tartaruga) face ao acetato padrão; e o banho espelhado multipassagem custa cerca de USD 18 por passagem em 2–3 ou mais passagens. Em metais com ornamentos fundidos, a alpaca reduz o custo face ao titânio, confirmando-se o preço exato na cotação após análise técnica.
+Na Kssmi, os guias de preço acompanham a complexidade do material e acabamento: o titânio custa cerca de USD 3,70 a mais por par que o aço inoxidável; o acetato italiano Mazzucchelli custa cerca de USD 3–5 a mais por par em cores padrão (e USD 5–10 em tartaruga) face ao acetato padrão; e o banho espelhado multipassagem custa cerca de USD 0,60 por par e por passagem em 2–3 ou mais passagens. Em metais com ornamentos fundidos, a alpaca reduz o custo face ao titânio, confirmando-se o preço exato na cotação após análise técnica.
 
 ### 6. É possível fazer dobradiças totalmente invisíveis dentro de hastes de acetato?
 
@@ -193,7 +177,7 @@ Armações acabadas em acetato começam em 300 pares por modelo (até 3 cores de
 
 ### 8. Qual o MOQ por material e as cores de lentes adicionam mínimos extras?
 
-Acetato, metal (aço inox e alpaca) e titânio começam em 300 pares por modelo; fibra de carbono em 200 pares por modelo; TR-90 exige 1.200 pares por estilo (pelo menos 600 por cor, ou 600 por cor em TR-90 desportivo custom). Os mínimos de lente somam-se: cores sólidas padrão desde 100 pares, degradês desde 150 e espelhadas ou custom desde 300 pares por cor.
+Acetato, metal (aço inox e alpaca) e titânio começam em 300 pares por modelo; fibra de carbono em 200 pares por modelo; o TR-90 exige pelo menos 1.200 pares por modelo e pelo menos 600 pares por cor. Os mínimos de lente somam-se: cores sólidas padrão desde 100 pares, degradês desde 150 e espelhadas ou custom desde 300 pares por cor.
 
 ### 9. Quanto tempo demoram as amostras personalizadas e a produção em série?
 
@@ -209,6 +193,8 @@ Não. Não fabricamos nem fornecemos embalagens de retalho, embora embalemos gra
 
 ---
 
-A Kssmi fabrica óculos em Shenzhen desde 2003, com design interno, engenharia, fresagem CNC, polimento, montagem e controlo de qualidade a 100% antes do envio. O acetato vem da Mazzucchelli, JIMEI e JINYU; o titânio da Kobe Steel e Baoji Titanium. Saiba mais em [sobre nós](/pt/about-us/) ou consulte as condições nas [FAQ](/pt/faq/).
+## Resumo
 
-**Pronto para selecionar materiais para a sua linha?** Envie o desenho, esboço ou referência através da página de [cotação](/pt/quote/) indicando mercado, cores e quantidade por modelo. Confirmamos viabilidade estrutural, rota de material e MOQ antes de qualquer trabalho pago.
+Alinhe rota de material, geometria e volume de lote antes de amostrar: acetato JIMEI ou JINYU, aço inoxidável, alpaca e titânio atendem lançamentos de 300 pares / 3 cores; fibra de carbono atende linhas ultraleves de 200 pares; e injeção TR-90 atende curvas 3D envolventes que justificam moldes de aço e 1.200 pares. Trave estrutura e prazo de crédito antes da produção.
+
+Envie seu desenho ou imagem de referência com cores e quantidades pela [formulário de cotação abaixo](#inquiry-form-section) para validar viabilidade e MOQs antes de iniciar custos de desenvolvimento.

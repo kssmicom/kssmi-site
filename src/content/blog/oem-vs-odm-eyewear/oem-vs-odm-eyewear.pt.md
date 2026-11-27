@@ -133,7 +133,7 @@ As cobranças de amostra, desenvolvimento e ferramental são pagas integralmente
 Três condições reduzem o risco de pagar por um desenvolvimento que não avance:
 
 - **Crédito de taxas.** Como acima: taxas elegíveis são creditadas quando o mesmo design atinge 1.000 pares em 12 meses, frete excluído. O TR-90 segue seu próprio patamar.
-- **Interrupção antes do ferramental.** Se você revisar os desenhos 2D e interromper antes do início do ferramental, o trabalho de design 2D é retido e o saldo restante é reembolsado na conta pagadora original em até 10 dias úteis, descontada uma taxa de transferência de 0,5%. Os desenhos 2D concluídos continuam sendo seus.
+- **Interrupção antes do ferramental.** Se você revisar os desenhos 2D e interromper antes do início do ferramental, o custo do trabalho de design 2D já realizado é retido e o saldo restante é reembolsado na conta pagadora original em até 10 dias úteis, descontada uma taxa de transferência de 0,5%. Os desenhos 2D concluídos continuam sendo seus.
 - **Propriedade do ferramental.** Moldes e ferramentas pagos pelo cliente pertencem ao cliente. Normalmente permanecem em nossa fábrica para produção, nunca são usados para outro cliente e podem ser liberados mediante solicitação após a quitação de todos os valores devidos. Repetições de produção no mesmo design não geram nova cobrança de molde enquanto o ferramental permanecer utilizável.
 
 Assim que o ferramental começa, o molde é usinado para o seu design e não se aplica reembolso.
@@ -186,8 +186,6 @@ Não precificamos um projeto antes de ver o design ou a referência. Um esboço 
 - mercado de destino;
 - data prevista de lançamento.
 
-Envie essas informações pela [página de orçamento](/pt/quote/). Normalmente respondemos em até um dia útil, e o orçamento segue assim que os dados estiverem completos — geralmente em cerca de três dias úteis. A [página de personalização](/pt/customization/) lista o que pode ser alterado, e as [perguntas frequentes (FAQ)](/pt/faq/) detalham mínimos, amostras, pagamentos e propriedade.
-
 ## FAQ
 
 ### 1. Qual é a diferença entre OEM, ODM e marca própria?
@@ -229,9 +227,10 @@ Não. Modelos de catálogo são referências e amostras de avaliação; cada par
 ### 10. Vocês fornecem embalagens de varejo ou lentes com grau?
 
 Não. Não fabricamos nem fornecemos embalagens de varejo e não produzimos lentes com grau. Armações ópticas seguem com lentes de demonstração.
-
 ---
 
-A Kssmi fabrica óculos em Shenzhen desde 2003, com design interno, engenharia, usinagem CNC, polimento, montagem e controle de qualidade. O acetato vem da Mazzucchelli, JIMEI e JINYU; o titânio, da Kobe Steel e Baoji Titanium. Mais detalhes sobre a fábrica estão na [página sobre nós](/pt/about-us/).
+## Resumo
 
-**Pronto para escolher uma rota?** Envie seu design, referência ou conceito pela [página de orçamento](/pt/quote/) com sua quantidade-alvo e data de lançamento. Confirmaremos a rota, o mínimo aplicável e o custo de desenvolvimento antes do início de qualquer trabalho pago.
+Comece pelos arquivos que você já tem em mãos: uma especificação confirmada segue direto para OEM, um esboço ou foto de referência inicia em ODM e modelos de catálogo validam a qualidade antes de investir em moldes. Antes das amostras, alinhe o MOQ por modelo (300 pares acetato, metal e titânio; 200 fibra de carbono; 1.200 TR-90), aprovação de desenhos, posse dos moldes e reembolso de taxas.
+
+Envie seu design, referência ou conceito com quantidade e data de lançamento pelo [formulário de cotação abaixo](#inquiry-form-section) para confirmar rota, mínimo e custos antes de iniciar etapas pagas.

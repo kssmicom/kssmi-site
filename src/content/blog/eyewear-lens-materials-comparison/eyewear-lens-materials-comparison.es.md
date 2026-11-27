@@ -33,7 +33,7 @@ Para las marcas que desarrollan gafas de sol o monturas ópticas propias, los er
 | Nailon (PA) | Alta nitidez (Abbe ~52); ultraligero | Poliamida inyectada/colada; termoformado | Todas las monturas — ideal al aire y ranurado | Humedad e historial térmico influyen en la tensión óptica | Sol lujo, titanio, fibra de carbono y modelos al aire |
 | CR-39 | Referencia óptica (Abbe ~58) | Resina termoestable ADC colada y curada | Aro completo acetato o metal; evitar al aire | Frágil cerca de taladros; más pesado que nailon/PC | Gafas de sol boutique y acetato clásico |
 | TAC polarizado | Lámina multicapa ligera | Laminación de capas TAC + film polarizador + adhesivo | Solo monturas de aro completo | No apto para climas muy cálidos; cantos protegidos | Líneas polarizadas comerciales y conducción económica |
-| Policarbonato (PC) | Buena nitidez; irrompible; ultraligero | Inyección y termoformado | Pantallas envolventes, sport, al aire y uso activo | Mayor dispersión; requiere capa dura antirrayas (HC) | Deporte exterior, pantallas curvas y SKU antiimpacto |
+| Policarbonato (PC) | Buena nitidez; resistente a la rotura; ultraligero | Inyección y termoformado | Pantallas envolventes, sport, al aire y uso activo | Mayor dispersión; requiere capa dura antirrayas (HC) | Deporte exterior, pantallas curvas y SKU antiimpacto |
 | Trivex | Alta nitidez + resistencia al impacto (1.53) | Polímero uretano colado (bajo especificación) | Aro completo, al aire y deporte técnico | Mayor coste; pedido específico (nunca sustituido por PC) | Programas deportivos y de protección en EE. UU. |
 | Demo / luz azul | Base transparente o tono cálido ligero | Moldeo plano / tinte o filtro espectral selectivo | Monturas ópticas y gafas pantalla sin Rx | Solo neutro sin graduación; requiere banda objetivo | Exhibición óptica o venta directa filtro luz azul |
 
@@ -87,20 +87,19 @@ Para líneas estadounidenses o de protección que especifican **Trivex** (índic
 
 Al encargar gafas pantalla sin Rx, conviene fijar dos criterios:
 
-- **Diseño espectral frente a etiquetas comerciales:** el filtrado de luz azul atenúa selectivamente bandas concretas mediante absorción, tinte o recubrimiento. Confirma longitud de onda objetivo, tasa de atenuación y calidez base (base clara frente a amarilla suave/intensa) en lugar de pedir solo "filtro azul".
+- **Diseño espectral frente a etiquetas comerciales:** el filtrado de luz azul atenúa selectivamente bandas concretas mediante absorción, tinte o recubrimiento. Confirma longitud de onda objetivo, tasa de atenuación y calidez base (base clara frente a amarilla suave/intensa) en lugar de pedir solo "filtro azul". El filtrado selectivo modifica el equilibrio espectral; no aumenta la resolución óptica ni implica beneficios médicos.
 - **Normativas independientes:** las monturas sin graduar destinadas a lentes Rx se rigen por la norma **ISO 12870**, distinta de las normas de gafa de sol como **EN ISO 12312-1**; montar una lente demo no convierte una montatura óptica en solar.
 
 ![Demostración espectral en lente óptica neutra con filtro de luz azul](/media/blogs/eyewear-lens-materials-comparison/blue-light-lenses.webp)
 
 Consulta las [opciones de lente filtro luz azul](/es/customization/lenses/blue-blocking/) y la colección de [monturas ópticas](/es/product/optical-frames/).
-
 ## Funciones ópticas frente a recubrimientos superficiales
 
 **Las funciones ópticas definen qué luz atraviesa la lente (brillo, UV, deslumbramiento o espectro); los recubrimientos superficiales definen cómo resiste el exterior arañazos, reflejos, agua o vaho — y ni la capa dura (HC) ni el antirreflejante (AR) son automáticos por defecto.**
 
 ### Funciones ópticas (verificadas en lente terminada)
 
-- **Filtro solar y VLT / CAT 0–4:** la transmisión de luz visible (VLT) se mide con equipo óptico, no a simple vista. **CAT.3 (8–18% VLT)** es el estándar mundial para sol general y conducción diurna; **CAT.1 (43–80% VLT)** y **CAT.2 (18–43% VLT)** cubren tiempo nublado, moda y degradados.
+- **Filtro solar y VLT / CAT 0–4:** la transmisión de luz visible (VLT) se mide con equipo óptico, no a simple vista. **CAT.3 (8–18% VLT)** es el estándar mundial para sol general y conducción diurna; **CAT.1 (43–80% VLT)** y **CAT.2 (18–43% VLT)** cubren tiempo nublado, moda y degradados. Antes de fijar la VLT, confirme los requisitos de conducción del mercado de destino.
 - **Protección UV400:** bloquea UVA/UVB mediante sustrato, aditivos, tinte o recubrimiento. Una lente clara puede lograr UV400 si está formulada, mientras una oscura sin absorbedores UV no lo garantiza sin ensayo terminado.
 - **Polarización:** atenúa reflejos horizontales de agua, carretera y nieve de forma independiente a oscuridad, UV400 o acabado espejo; casi todos los tonos CAT.3 en [gris](/es/customization/lenses/grey/), [marrón](/es/customization/lenses/brown/) y [verde](/es/customization/lenses/green/) admiten versión polarizada.
 - **Fotocromático y Alto Contraste (Hi-Con):** el fotocromático varía con radiación UV y temperatura (atenuado tras parabrisas con filtro UV); los tintes de alto contraste realzan bandas concretas sin alterar el número de Abbe.
@@ -145,7 +144,6 @@ En proyectos a medida confirmados también soportamos dos capacidades avanzadas:
 
 En producción estándar las lentes proceden de fabricantes ópticos líderes de Shenzhen. Cuando una marca especifica una firma óptica internacional o un programa polarizado de fábrica asociada dedicada, Kssmi suministra exactamente la marca, modelo y recubrimiento confirmados — o ensambla lentes adquiridas por el cliente en dicha fábrica asociada.
 
-
 ![Variante de lente polarizada con espejo Revo rojo sujeta a MOQ de 300 pares por color](/media/blogs/eyewear-lens-materials-comparison/revo-mirror-color-moq.webp)
 ## Cumplimiento normativo, curvas espectrales y laboratorio externo
 
@@ -155,23 +153,6 @@ Kssmi no utiliza informes de otros modelos como certificados globales de fábric
 
 - **Curvas de transmisión espectral:** entregamos mediciones **280–780 nm cada 5 nm** (tabla, gráfica, coordenadas CIE y archivo CSV nativo indicando instrumento, rango, espesor y estado de la muestra).
 - **Coordinación con laboratorios externos:** ensayos para EE. UU., UE (CE / EN ISO 12312-1), Reino Unido o Australia (**AS/NZS 1067.1**, recientemente en torno a **USD 1.139** por referencia solar acabada) se tramitan con SGS, Intertek o TÜV a coste real.
-
-## Lo que no hacemos
-
-- **No fabricamos lentes graduadas (Rx):** las monturas ópticas salen con lentes demo neutras o filtro de luz azul sin graduación.
-- **No fabricamos ni suministramos estuches o packaging retail:** el cliente los adquiere a un especialista y nos los envía para embalar sin coste adicional.
-- **No vendemos stock disponible ni lentes sueltas sin pedido:** todo se fabrica bajo orden de producción de marca.
-
-## Qué enviar para revisar la especificación de lentes
-
-Para cerrar compatibilidades, MOQ de color y tolerancias antes de cotizar, envía:
-
-- diseño de montura, imagen de referencia o SKU de catálogo (indicando si es al aire, medio aro o pantalla);
-- sustrato deseado (TAC, CR-39, nailon, PC o Trivex) y código KS-LN si aplica;
-- funciones y capas necesarias (UV400, polarizada, degradada, espejo, fotocromática, luz azul, HC, AR interno, H/O o AF);
-- acabado de canto en diseños al aire (bisel estándar pulido vs. corte diamante facetado);
-- cantidad por color y categoría VLT / CAT objetivo;
-- mercado de destino y estándares de ensayo exigidos.
 
 ## Preguntas frecuentes
 
@@ -221,6 +202,8 @@ Kssmi facilita referencias internas gratis y curvas 280–780 nm cada 5 nm con C
 
 ---
 
-Kssmi fabrica gafas en Shenzhen desde 2003, integrando ingeniería propia de monturas, fabricantes ópticos líderes de Shenzhen e inspección al 100% previa al envío. Conoce más en [quiénes somos](/es/about-us/) o revisa las [preguntas frecuentes](/es/faq/).
+## Resumen
 
-**¿Listo para cerrar tus especificaciones de lente?** Envía modelos, sustratos preferidos, códigos KS-LN, tratamientos, cantidades por color y mercado objetivo en nuestra [página de presupuesto](/es/quote/). Confirmamos viabilidad técnica, mínimos por color y costes detallados antes de iniciar cualquier trabajo de pago.
+El rendimiento real de la lente depende de la estructura final, los recubrimientos y los MOQ por color: especifica nailon (PA) o PC para monturas al aire y pantallas envolventes, CR-39 o TAC (fuera de climas muy cálidos) para aro completo, y confirma HC, AR interno, categoría VLT/CAT y mínimos por tono (100 sólido / 150 degradado / 300 espejo o custom).
+
+Envía diseños, sustratos, códigos KS-LN, tratamientos y cantidades por color en la [formulario de consulta de abajo](#inquiry-form-section) para confirmar viabilidad y costes detallados antes de iniciar trabajos de pago.

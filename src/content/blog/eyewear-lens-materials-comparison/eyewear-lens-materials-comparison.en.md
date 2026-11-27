@@ -145,7 +145,6 @@ Two specialty lens capabilities are also supported on confirmed custom projects:
 
 For standard production, lenses come from top-tier Shenzhen lens manufacturers. When a brand specifies an international optical lens brand or a dedicated partner-factory polarized lens program, Kssmi sources to the exact confirmed brand, model, and coating specification — or accepts customer-purchased partner-factory lenses for frame assembly and finished shipment.
 
-
 ![Bright red Revo mirror-coated polarized lens colorway subject to 300-pair color MOQ](/media/blogs/eyewear-lens-materials-comparison/revo-mirror-color-moq.webp)
 ## Compliance, spectral reports and third-party testing
 
@@ -155,23 +154,6 @@ At Kssmi, we do not present third-party product test reports from other styles a
 
 - **Spectral transmission curves:** When a project requires measured transmission evidence, we provide curves across **280–780 nm in 5 nm steps** (data table, curve plot, CIE color data, and born-digital CSV files stating instrument, wavelength range, thickness, and sample build state).
 - **Third-party laboratory coordination:** Testing for U.S., EU (CE / EN ISO 12312-1), UK (CE / UKCA), or Australian (**AS/NZS 1067.1**, recently around **USD 1,139** per finished sunglass specification as a reference) markets is coordinated through recognized labs such as SGS, Intertek, or TÜV and billed at actual lab cost.
-
-## What we do not do
-
-- **We do not produce prescription (Rx) lenses.** Optical frames ship with clear demo lenses or non-Rx blue-light-filtering lenses.
-- **We do not manufacture or supply retail packaging.** Order cases, boxes, and cleaning cloths from a specialist supplier and ship them to us; we pack finished eyewear into customer-supplied packaging at no extra charge.
-- **We do not sell ready-stock eyewear or unconfirmed loose replacement lenses.** All production is made to order for a brand, and replacement lenses require a confirmed production order and minimum quantity.
-
-## What to send for a lens specification review
-
-Before quoting, Kssmi's engineering team reviews your frame and lens specification together so color MOQs, edge tolerances, and coating compatibility are locked cleanly. Send:
-
-- your frame design, reference image, or catalog SKU (noting rimless, half-rim, or high-wrap shield constructions);
-- preferred lens substrate (TAC, CR-39, nylon, PC, or Trivex) and any KS-LN swatch code;
-- required functions and coatings (UV400, polarized, gradient, mirror, photochromic, blue-light filtering, HC, backside AR, H/O, or AF);
-- edge treatment for rimless designs (standard polished bevel vs. faceted diamond-cut edge);
-- quantity per colorway and target VLT / CAT category;
-- destination market and any required third-party testing standards.
 
 ## FAQ
 
@@ -221,6 +203,8 @@ Kssmi provides factory test references free of charge and can supply 280–780 n
 
 ---
 
-Kssmi has manufactured eyewear in Shenzhen since 2003, pairing in-house frame engineering with top-tier Shenzhen optical lens manufacturing partners and 100% pre-shipment inspection. Learn more on our [about page](/about-us/) or review commercial terms in the [FAQ](/faq/).
+## Summary
 
-**Ready to lock your lens specifications?** Send your frame styles, preferred substrates, KS-LN swatch codes, coatings, colorway quantities, and target market through the [quote page](/quote/). We confirm technical feasibility, lens minimums, and itemized testing or coating options before any paid work starts.
+Lens performance is set by finished stack construction, coatings, and color MOQs rather than substrate name alone: specify nylon (PA) or PC for rimless and high-wrap frames, CR-39 or non-extreme-heat TAC for full-rim styles, and confirm HC, backside AR, VLT/CAT targets, and per-color minimums (100 solid / 150 gradient / 300 mirror or custom) before sampling.
+
+Send your frame designs, preferred substrates, KS-LN codes, coatings, and colorway quantities through the [inquiry form below](#inquiry-form-section) to verify feasibility and exact coating or lab-testing costs up front.

@@ -33,7 +33,7 @@ Para marcas que produzem óculos solares ou receituário sob medida, erros de le
 | Nylon (PA) | Alta clareza (Abbe ~52); ultraleve | Poliamida injetada/fundida; termoformada | Todas as armações — ideal para parafusada e fio de nylon | Histórico térmico e umidade afetam tensão óptica | Solar luxo, titânio, fibra de carbono e sem aro |
 | CR-39 | Referência óptica (Abbe ~58) | Resina termofixa ADC fundida e curada | Aro fechado acetato/metal; evitar furação | Quebradiça perto de furos; mais pesada que nylon/PC | Óculos solares boutique e acetato clássico |
 | TAC polarizado | Filme laminado multicamada leve | Laminação de folhas TAC + filme polarizador + adesivo | Somente armações de aro fechado | Não indicado para climas muito quentes; bordas vedadas | Linhas polarizadas comerciais e direção diurna |
-| Policarbonato (PC) | Boa clareza; inquebrável; ultraleve | Injeção e termoformagem | Máscaras curvas, esporte, sem aro e uso ativo | Maior dispersão; exige verniz rígido antirrisco (HC) | Esporte ao ar livre, máscaras e SKUs anti-impacto |
+| Policarbonato (PC) | Boa clareza; resistente à quebra; ultraleve | Injeção e termoformagem | Máscaras curvas, esporte, sem aro e uso ativo | Maior dispersão; exige verniz rígido antirrisco (HC) | Esporte ao ar livre, máscaras e SKUs anti-impacto |
 | Trivex | Alta clareza + resistência a impacto (1.53) | Polímero uretano fundido (sob especificação) | Aro fechado, sem aro e esporte técnico | Custo superior; especificado à parte (nunca trocado por PC) | Programas esportivos e proteção nos EUA |
 | Demo / luz azul | Base incolor ou leve tom quente | Moldagem plana / absorção ou filtro espectral | Armações de grau e óculos de tela sem Rx | Apenas neutro sem grau; exige faixa alvo | Exibição ótica ou varejo anti-luz azul |
 
@@ -87,20 +87,19 @@ Para programas esportivos e de proteção nos EUA que exigem **Trivex** (índice
 
 Ao encomendar óculos de tela sem Rx, observe dois pontos:
 
-- **Projeto espectral acima de rótulos:** o filtro de luz azul atenua seletivamente faixas específicas por absorção, tingimento ou camada. Confirme faixa alvo, percentual de bloqueio e calor da base (incolor vs. amarelo leve/sólido).
+- **Projeto espectral acima de rótulos:** o filtro de luz azul atenua seletivamente faixas específicas por absorção, tingimento ou camada. Confirme faixa alvo, percentual de bloqueio e calor da base (incolor vs. amarelo leve/sólido). A filtragem seletiva altera o equilíbrio espectral; não aumenta a resolução óptica nem implica benefícios médicos.
 - **Normas distintas:** armações ópticas sem lentes corretivas destinadas à montagem Rx seguem a **ISO 12870**, separada das normas solares como **EN ISO 12312-1**; instalar lente demo não transforma armação óptica em solar.
 
 ![Demonstração espectral em lente óptica neutra com filtro de luz azul](/media/blogs/eyewear-lens-materials-comparison/blue-light-lenses.webp)
 
 Explore as [opções filtro de luz azul](/pt/customization/lenses/blue-blocking/) e a coleção de [armações ópticas](/pt/product/optical-frames/).
-
 ## Funções ópticas vs. revestimentos de superfície
 
 **Funções ópticas definem que luz atravessa a lente (brilho, UV, ofuscamento ou espectro); revestimentos de superfície definem a resistência externa a riscos, reflexos, água ou embaçamento — e verniz rígido (HC) e antirreflexo (AR) não são padrão automático.**
 
 ### Funções ópticas (confirmadas na lente pronta)
 
-- **Filtro solar e VLT / CAT 0–4:** a transmissão visível (VLT) é medida em instrumento, não a olho nu. **CAT.3 (8–18% VLT)** é o padrão global para sol diário e direção diurna; **CAT.1 (43–80% VLT)** e **CAT.2 (18–43% VLT)** atendem dias nublados, moda e degradês.
+- **Filtro solar e VLT / CAT 0–4:** a transmissão visível (VLT) é medida em instrumento, não a olho nu. **CAT.3 (8–18% VLT)** é o padrão global para sol diário e direção diurna; **CAT.1 (43–80% VLT)** e **CAT.2 (18–43% VLT)** atendem dias nublados, moda e degradês. Antes de definir a VLT, confirme os requisitos para condução do mercado de destino.
 - **Proteção UV400:** bloqueia UVA/UVB por substrato, aditivos, tingimento ou camada. Uma lente clara formulada atinge UV400, enquanto uma escura sem absorvedor UV não garante proteção sem ensaio final.
 - **Polarização:** corta reflexo horizontal de água, asfalto e neve independentemente de tonalidade, UV400 ou espelhamento; quase todas as amostras CAT.3 em [cinza](/pt/customization/lenses/grey/), [marrom](/pt/customization/lenses/brown/) e [verde](/pt/customization/lenses/green/) aceitam montagem polarizada.
 - **Fotocromático e Alto Contraste (Hi-Con):** lentes fotocromáticas dependem de UV e temperatura ambiente (atenuadas atrás de para-brisas); filtros Hi-Con ajustam faixas espectrais sem alterar o número Abbe.
@@ -145,7 +144,6 @@ Em projetos sob medida confirmados, também atendemos duas demandas avançadas:
 
 Na produção regular, nossas lentes vêm de fabricantes ópticos líderes de Shenzhen. Quando uma marca especifica um fabricante óptico internacional ou programa polarizado de fábrica parceira dedicada, a Kssmi fornece exatamente conforme marca, modelo e camada confirmados — ou monta lentes adquiridas pelo cliente nessa fábrica parceira.
 
-
 ![Variante polarizada com espelhamento Revo vermelho sujeita a MOQ de 300 pares/cor](/media/blogs/eyewear-lens-materials-comparison/revo-mirror-color-moq.webp)
 ## Conformidade, curvas espectrais e testes independentes
 
@@ -155,23 +153,6 @@ A Kssmi não usa laudos de outros modelos como certificados genéricos de fábri
 
 - **Curvas de transmissão espectral:** fornecemos medições **280–780 nm em passos de 5 nm** (tabela, gráfico, dados CIE e CSV nativo informando equipamento, faixa, espessura e estado da amostra).
 - **Laboratórios terceirizados:** testes para EUA, UE (CE / EN ISO 12312-1), Reino Unido ou Austrália (**AS/NZS 1067.1**, recentemente cerca de **USD 1.139** por especificação solar final) são coordenados via SGS, Intertek ou TÜV a custo real.
-
-## O que não fazemos
-
-- **Não produzimos lentes com grau (Rx):** armações ópticas seguem com lentes demo neutras ou filtro de luz azul sem prescrição.
-- **Não produzimos nem fornecemos embalagens de varejo:** estojos, caixas e flanelas são comprados em especialista pelo cliente e enviados para nós para embalagem sem custo extra.
-- **Não vendemos estoque pronto nem lentes avulsas sem pedido:** toda produção é feita sob encomenda da marca.
-
-## O que enviar para análise técnica de lentes
-
-Para travar MOQs por cor, tolerâncias e compatibilidade antes do orçamento, envie:
-
-- desenho da armação, imagem de referência ou código do catálogo (informando se é sem aro, meio aro ou máscara);
-- substrato desejado (TAC, CR-39, nylon, PC ou Trivex) e código KS-LN se houver;
-- funções e revestimentos desejados (UV400, polarizada, degradê, espelhada, fotocromática, luz azul, HC, AR interno, H/O ou AF);
-- acabamento de borda em modelos sem aro (chanfro polido padrão vs. facetado diamante);
-- quantidade por cor e categoria VLT / CAT desejada;
-- mercado de destino e ensaios laboratoriais exigidos.
 
 ## FAQ
 
@@ -221,6 +202,8 @@ A Kssmi fornece gratuitamente dados de fábrica e curvas 280–780 nm (passos de
 
 ---
 
-A Kssmi fabrica óculos em Shenzhen desde 2003, unindo engenharia própria de armações, parceiros ópticos líderes em Shenzhen e inspeção 100% pré-embarque. Saiba mais em [sobre nós](/pt/about-us/) ou acesse as [perguntas frequentes](/pt/faq/).
+## Resumo
 
-**Pronto para fechar a especificação das suas lentes?** Envie modelos, substratos preferidos, códigos KS-LN, revestimentos, quantidades por cor e mercado de destino pela [página de orçamento](/pt/quote/). Confirmamos viabilidade técnica, mínimos e valores detalhados antes de qualquer etapa paga.
+O desempenho da lente resulta do conjunto acabado, dos revestimentos e dos MOQs por cor, não apenas do nome do substrato: indique nylon (PA) ou PC para sem aro e alta curvatura, CR-39 ou TAC (fora de calor extremo) para aro fechado, confirmando HC, AR interno, meta VLT/CAT e mínimos (100 sólida / 150 degradê / 300 espelho ou custom).
+
+Envie seus modelos, substratos, códigos KS-LN, revestimentos e quantidades por cor pela [formulário de cotação abaixo](#inquiry-form-section) para validar viabilidade e custos detalhados antes de qualquer etapa paga.

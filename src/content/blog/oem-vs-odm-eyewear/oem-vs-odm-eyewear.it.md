@@ -133,7 +133,7 @@ I costi di campionatura, sviluppo e stampi vengono saldati per intero prima dell
 Tre condizioni riducono il rischio di sostenere spese di sviluppo che non portano a nulla:
 
 - **Credito delle spese.** Come indicato sopra: i costi ammissibili vengono accreditati quando lo stesso design raggiunge 1.000 paia entro 12 mesi, trasporto escluso. Il TR-90 segue una soglia dedicata.
-- **Interruzione prima degli stampi.** Se esaminate i disegni 2D e decidete di fermarvi prima che inizi la realizzazione degli stampi, il lavoro di progettazione 2D resta trattenuto e il saldo residuo viene rimborsato sul conto di pagamento originario entro 10 giorni lavorativi, al netto di una commissione di trasferimento dello 0,5%. I disegni 2D completati restano di vostra proprietà.
+- **Interruzione prima degli stampi.** Se esaminate i disegni 2D e decidete di fermarvi prima che inizi la realizzazione degli stampi, il costo del lavoro di progettazione 2D già svolto viene trattenuto e il saldo residuo viene rimborsato sul conto di pagamento originario entro 10 giorni lavorativi, al netto di una commissione di trasferimento dello 0,5%. I disegni 2D completati restano di vostra proprietà.
 - **Proprietà degli stampi.** Gli stampi e le attrezzature pagati dal cliente appartengono al cliente. Di norma restano presso il nostro stabilimento per la produzione, non vengono mai usati per un altro cliente e possono essere restituiti su richiesta una volta saldati tutti gli importi dovuti. Le riordinazioni sullo stesso design non comportano nuovi costi di stampo finché l'attrezzatura resta utilizzabile.
 
 Una volta avviata la costruzione dello stampo, la fresatura viene eseguita per il vostro design e non è previsto alcun rimborso.
@@ -186,8 +186,6 @@ Non quotiamo un progetto prima di vedere il design o il riferimento. Per iniziar
 - mercato di destinazione;
 - data di lancio prevista.
 
-Inviate questi dati tramite la [pagina preventivo](/it/quote/). Di norma rispondiamo entro un giorno lavorativo e il preventivo segue una volta completate le informazioni — normalmente entro circa tre giorni lavorativi. La [pagina personalizzazione](/it/customization/) elenca gli elementi modificabili, mentre le [FAQ](/it/faq/) approfondiscono minimi, campioni, pagamenti e proprietà.
-
 ## FAQ
 
 ### 1. Qual è la differenza tra OEM, ODM e private label?
@@ -229,9 +227,10 @@ No. I modelli a catalogo sono riferimenti e campioni di valutazione; ogni paio p
 ### 10. Potete fornire packaging retail o lenti graduate?
 
 No. Non produciamo né forniamo packaging retail e non produciamo lenti graduate. Le montature da vista vengono spedite con lenti dimostrative.
-
 ---
 
-Kssmi produce occhiali a Shenzhen dal 2003, con design interno, ingegneria, lavorazione CNC, lucidatura, assemblaggio e controllo qualità. L'acetato proviene da Mazzucchelli, JIMEI e JINYU; il titanio da Kobe Steel e Baoji Titanium. Maggiori dettagli sullo stabilimento sono disponibili alla [pagina chi siamo](/it/about-us/).
+## Riepilogo
 
-**Pronti a scegliere il percorso?** Inviate il vostro design, riferimento o concept tramite la [pagina preventivo](/it/quote/) indicando quantità target e data di lancio. Confermeremo il percorso, il minimo applicabile e il costo di sviluppo prima di avviare qualsiasi attività a pagamento.
+Parti dai file che hai già pronti oggi: con una specifica confermata si va direttamente in OEM, con uno schizzo o immagine di riferimento si parte in ODM, mentre i modelli a catalogo permettono di verificare la costruzione prima di investire in stampi. Prima della campionatura, allinea il MOQ per modello (300 paia acetato, metallo e titanio; 200 fibra di carbonio; 1.200 TR-90) insieme ad approvazione disegni, proprietà stampi e rimborso costi.
+
+Invia design, riferimento o concept con quantità e data di lancio tramite il [modulo di richiesta qui sotto](#inquiry-form-section) per confermare percorso, minimo e costi di sviluppo prima di avviare lavori a pagamento.

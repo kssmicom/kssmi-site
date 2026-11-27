@@ -24,7 +24,7 @@ seoDescription: "Vergleichen Sie Acetat, Edelstahl, Neusilber, Rein- und Beta-Ti
 
 **Das Fassungsmaterial ist keine reine Optikfrage — es bestimmt den Fertigungsweg, die Mindestbestellmenge (200, 300 oder 1.200 Stück pro Modell), den Werkzeugaufwand sowie welche Konturen und Beschläge physikalisch machbar sind.**
 
-Bei Kssmi decken sechs Materialrouten nahezu jedes kundenspezifische Brillenprogramm ab: Celluloseacetat, 316-Edelstahl, Neusilber (Cupronickel), Titan (Rein- und Beta-Titan), Carbonfaser und TR-90-Spritzguss. Wer für eine Referenzform das falsche Material wählt — etwa eine voluminöse 3D-Wrap-Silhouette aus flacher Acetatplatte anfragt — verliert bereits vor dem ersten Muster wertvolle Zeit.
+Bei Kssmi decken sechs Materialrouten nahezu jedes kundenspezifische Brillenprogramm ab: Celluloseacetat, 316-Edelstahl, Neusilber (Kupfer-Nickel-Zink-Legierung), Titan (Rein- und Beta-Titan), Carbonfaser und TR-90-Spritzguss. Wer für eine Referenzform das falsche Material wählt — etwa eine voluminöse 3D-Wrap-Silhouette aus flacher Acetatplatte anfragt — verliert bereits vor dem ersten Muster wertvolle Zeit.
 
 ## Fassungsmaterialien im Überblick
 
@@ -32,22 +32,22 @@ Bei Kssmi decken sechs Materialrouten nahezu jedes kundenspezifische Brillenprog
 |---|---|---|---|---|---|
 | Acetat | CNC-gefräst aus geschichteten Platten, getrommelt & handpoliert | Warm, satt, moderates Gewicht | Tiefe Vollfarben, Transluzent, Havanna & Mehrschicht | 300 Stk./Modell (bis 3 × 100*) | Fashion, Lifestyle & Vintage-inspirierte Formen |
 | Edelstahl (316) | Gestanzt/geformt aus Draht & Blech; gelötet & beschichtet | Schlank, präzise, mittleres Gewicht | 18 PVD-Farben (Gold, Chrom, Gunmetal u. a.) | 300 Stk./Modell (bis 3 × 100) | Minimalistische & vielseitige Alltagskollektionen |
-| Neusilber (Cupronickel) | Zerspante/gegossene Metalllegierung; beschichtet | Höhere Dichte (~1,9× Titan); satteres Metallgefühl | Ideal für Vergoldung & scharfe Gussornamente | 300 Stk./Modell (bis 3 × 100) | Kostengünstige Alternative zu Titan bei Gussornamenten |
+| Neusilber (Kupfer-Nickel-Zink-Legierung) | Zerspante/gegossene Metalllegierung; beschichtet | Höhere Dichte (~1,9× Titan); satteres Metallgefühl | Ideal für Vergoldung & scharfe Gussornamente | 300 Stk./Modell (bis 3 × 100) | Kostengünstige Alternative zu Titan bei Gussornamenten |
 | Rein- & Beta-Titan | Präzisionsgeformter Titandraht/-blech; gelötet oder schraubenlos | Federleicht; korrosionsbeständig; hohe Rückstellkraft (Beta) | PVD-Beschichtungen & dezente Metalltöne | 300 Stk./Modell (bis 3 × 100) | Premium-Tragekomfort, feine Profile & schraubenlose Bauart |
 | Carbonfaser | Geschichtetes Carbongewebe-Verbundmaterial | Ultraleicht, steif, technisch | Carbon-Webstruktur mit PVD-Metallteilen | 200 Stk./Modell | Sport-, Performance- & Tech-Linien |
-| TR-90 | Thermoplastisches Nylon im eigenen Spritzgusswerkzeug | Sehr leicht, flexibel, schlagfest | Durchgefärbt voll/transluzent; lackiert/beschichtet | 1.200 Stk./Modell (≥600/Farbe); Sport-Custom 600/Farbe | Sport-Shields, stark gewölbte 3D-Formen & Volumenserien |
+| TR-90 | Thermoplastisches Nylon im eigenen Spritzgusswerkzeug | Sehr leicht, flexibel, schlagfest | Durchgefärbt voll/transluzent; lackiert/beschichtet | 1.200 Stück/Modell; ≥600 Stück/Farbe | Sport-Shields, stark gewölbte 3D-Formen & Volumenserien |
 
 *\*Rohmaterial-Mindestmengen hängen vom Acetatlieferanten ab; Details siehe Abschnitt Acetat.*
 
 ## Acetatfassungen: Farbtiefe, Veredelung und Formgrenzen
 
-**Celluloseacetat ist ein pflanzenbasierter Thermoplast aus geschichteten Platten — ideal für tiefe Farbwirkung und handpolierte Kanten, kann jedoch keine gespritzten 3D-Bubble-Formen aus Flachmaterial nachbilden.**
+**Celluloseacetat ist ein pflanzenbasierter Thermoplast aus geschichteten Platten.**
 
 Unsere Acetatfassungen durchlaufen fünf Finish-Schritte: Plattenschliff, Trommel-Grobpolitur, Hochglanz-Feinpolitur, manuelle Kantenveredelung sowie Prüfung vor der Montage. Acetatbügel benötigen in der Regel eine metallische Drahtseele (Wire Core) für Stabilität und Anpassbarkeit. Halbrandmodelle mit unten freiliegender Glaskante lassen sich ebenfalls in Acetat fertigen, indem ein feiner transparenter Nylonfaden in eine präzise gefräste Nut greift.
 
 Vor der Designfreigabe sollten drei technische und beschaffungsseitige Grenzen beachtet werden:
 
-1. **Grenzen bei Form und Basiskurve.** Eine bauchige 3D-„Bubble“-Front mit weicher Gesichtsrundung und hoher Basiskurve ist ein typisches Spritzgussmerkmal und lässt sich nicht aus flacher Acetatplatte fräsen. Bei solchen Vorlagen bleiben zwei Wege: TR-90-Spritzguss für maximale Formtreue oder eine Anpassung des Entwurfs innerhalb der Grenzen von Acetatplatten.
+1. **Grenzen bei Form und Basiskurve.** Für eine Acetatausführung der bei TR-90 üblichen umlaufenden Shield-Form muss an der Brücke eine zusätzliche senkrechte Stütze vorgesehen werden. Die gleiche durchgehende Konstruktion ohne Stütze lässt sich nicht unverändert übernehmen; die angepasste Brücke ist vor dem Musterbau in der Zeichnung freizugeben.
 2. **Integrierte Federscharniere.** Bei Wünschen nach einem „verdeckten Scharnier“ im Acetat ist die machbare Konstruktion ein **im Acetatbügel untergebrachtes integriertes Federscharnier** mit dem nötigen mechanischen Bewegungsspiel. Völlige Unsichtbarkeit ohne Spiel ist physikalisch unmöglich; bei transluzentem Acetat bleibt der Mechanismus teilweise sichtbar.
 3. **Fertigwaren-MOQ vs. Rohmaterial-MOQ.** Fertige Acetatfassungen starten bei 300 Stück pro Modell (bis 3 Farben × 100 Stück). Bei führenden chinesischen Plattenwerken (JIMEI / JINYU) beginnt jede Farbe ab 100 Stück. Italienische Mazzucchelli-Platten unterliegen dagegen einer Rohmaterial-Mindestabnahme von rund 1.000 Stück pro Modell und Farbe — eine erste 300-Stück-Bestellung läuft bei italienischem Acetat daher faktisch einfarbig. Als Preisrichtwert liegt Mazzucchelli rund **USD 3–5 pro Stück** bei Standardfarben (bzw. **USD 5–10 pro Stück** bei Havanna-Mustern) über Standardacetat, bestätigt im Angebot. Zudem darf Acetat nicht endlos gelagert werden, da Farbveränderungen oder Versprödung drohen; reserviertes Material sollte zeitnah verplant werden.
 
@@ -57,14 +57,14 @@ Entdecken Sie unsere [Acetat-Sonnenbrillen](/de/product/acetate-sunglasses/) und
 
 ## Metallfassungen: Edelstahl vs. Neusilber
 
-**316-Edelstahl eignet sich für schlanke, klare Alltagslinien, während Neusilber (Cupronickel) bei Entwürfen mit gegossenen Schmuckornamenten die wirtschaftliche Metallalternative zu Titan darstellt.**
+**316-Edelstahl eignet sich für schlanke, klare Alltagslinien, während Neusilber (Kupfer-Nickel-Zink-Legierung) bei Entwürfen mit gegossenen Schmuckornamenten die wirtschaftliche Metallalternative zu Titan darstellt.**
 
 Beide Metalle folgen dem Standard-MOQ von 300 Stück pro Modell (bis 3 Farben × 100 Stück) und bieten 18 PVD-Galvanikfarben wie Gold, Roségold, Silber/Chrom und Gunmetal, unterscheiden sich jedoch in Details:
 
 - **316-Edelstahl** ermöglicht schmale Fronten, verstellbare Bügel und attraktive Kosten sowie Mischbauweisen mit Acetat- oder TR-90-Bügeln, bildet feine Gussornamente jedoch nicht scharf ab.
-- **Neusilber (Cupronickel)** lässt sich gut zerspanen, nimmt Vergoldung sauber an und hält präzise gegossene Ornamente an Backen oder Bügeln. Seine Metallteile haben rund die 1,9-fache Dichte von Titan (≈8,7 vs. ≈4,5 g/cm³), wodurch die Fassung spürbar satter in der Hand liegt ohne die Gussgrenzen von Edelstahl.
+- **Neusilber (Kupfer-Nickel-Zink-Legierung)** lässt sich gut zerspanen, nimmt Vergoldung sauber an und hält präzise gegossene Ornamente an Backen oder Bügeln. Seine Metallteile haben rund die 1,9-fache Dichte von Titan (≈8,7 vs. ≈4,5 g/cm³), wodurch die Fassung spürbar satter in der Hand liegt ohne die Gussgrenzen von Edelstahl.
 
-Auch das Finish beeinflusst Preis und Lieferzeit. Standard-PVD-Töne laufen regulär, während große hochglänzende Spiegelflächen mehrere Beschichtungsdurchgänge erfordern (meist 2–3 oder mehr Gänge zu ca. **USD 18 pro Durchgang** als Richtwert, endgültige Anzahl laut Angebot), was Stückpreis, MOQ und Durchlaufzeit erhöht.
+Auch das Finish beeinflusst Preis und Lieferzeit. Standard-PVD-Töne laufen regulär, während große hochglänzende Spiegelflächen mehrere Beschichtungsdurchgänge erfordern (meist 2–3 oder mehr Gänge zu ca. **USD 0,60 pro Stück und Durchgang** als Richtwert, endgültige Anzahl laut Angebot), was Stückpreis, MOQ und Durchlaufzeit erhöht.
 
 ![Individuell gefertigte PVD-beschichtete Metall-Sonnenbrille](/media/blogs/eyewear-frame-materials-comparison/metal-frames.webp)
 
@@ -99,11 +99,11 @@ Alle [Carbonfaser-Sonnenbrillen](/de/product/carbon-fiber-sunglasses/) und [Carb
 
 **TR-90 ist ein flexibles thermoplastisches Nylon aus eigenen Spritzgussformen — unverzichtbar für stark gewölbte Sport-Shields, skulpturale 3D-Kurven und schlagfeste Volumenserien bei einem Standard-MOQ von 1.200 Stück.**
 
-Anders als gefrästes Acetat oder geformtes Metall wird TR-90 direkt in Stahlformen gespritzt. Das ermöglicht extreme Wrap-Geometrien und dreidimensionale Bügelkonturen, die mit Plattenmaterial unmöglich sind. Sport-TR-90-Projekte können auch auf unseren speziellen Sportdesign-Vorlagen aufbauen.
+Anders als gefrästes Acetat oder geformtes Metall wird TR-90 direkt in Stahlformen gespritzt. Das ermöglicht extreme Wrap-Geometrien und dreidimensionale Bügelkonturen, für sportliche Modelle. Sport-TR-90-Projekte können auch auf unseren speziellen Sportdesign-Vorlagen aufbauen.
 
 Zwei kaufmännische Regeln gelten für TR-90:
 
-1. **Eigene Werkzeuge und höheres MOQ.** Reguläre TR-90-Modelle erfordern 1.200 Stück pro Modell (mindestens 600 je Farbe); voll individuelle Sport-TR-90-Modelle starten bei 600 Stück je Farbe. Eine bestehende Form spart neue Werkzeugkosten, aber nicht das Modell-MOQ.
+1. **Eigene Werkzeuge und höheres MOQ.** Für jedes TR-90-Modell, einschließlich individueller Sportmodelle, gelten mindestens 1.200 Stück pro Modell und mindestens 600 Stück pro Farbe. Eine vorhandene Form spart neue Werkzeuge, senkt aber keine der beiden Mindestmengen.
 2. **Vorab-Prüfung und Kostenanrechnung.** Bei individuellen Spritzgussformen werden Passform und Ergonomie vor dem Fräsen der Stahlwerkzeuge geprüft; Werkzeug- und Mustergebühren für TR-90 werden vollständig angerechnet, sobald dasselbe Modell innerhalb von **24 Monaten insgesamt 30.000 Stück** erreicht (ohne Fracht und Steuern), wie im Angebot festgehalten.
 
 ![Leichte spritzgegossene Thermoplast-Fassung für ergonomischen Sport- und Ganztagssitz](/media/blogs/eyewear-frame-materials-comparison/tr90-injection-frames.webp)
@@ -115,7 +115,7 @@ Zwei kaufmännische Regeln gelten für TR-90:
 - **Hybrid-Konstruktionen.** Eine Metallfront mit Acetat- oder TR-90-Bügeln verbindet schlanke Frontoptik mit angenehmem Bügelhalt. Jeder Material- oder Bauartwechsel begründet ein eigenes Modell mit eigenem MOQ.
 - **Randlose Machbarkeit (Bohrbrillen).** Üblich bei Metall und Titan, ist eine gebohrte Konstruktion technisch auch in Acetat und TR-90 möglich — erreicht optisch jedoch nicht die Anmutung vergoldeter Metallfassungen mit Gussornamenten. Wir beraten vor dem Muster ehrlich zur optischen Wirkung. Für randlose Modelle oder offene Glaskanten empfehlen wir **Nylongläser** wegen hoher Kantenfestigkeit; ein Glaswechsel sollte durch einen Augenoptiker erfolgen.
 - **Scharniere und Hardware.** Verfügbar als 3-, 5- und 7-Ring-Scharnier abgestimmt auf die Fassung. Bei Standardmengen von 300 Stück verwenden wir präzise Shenzhen-Scharniere auf gleichem Qualitätsniveau wie internationale Marken, da Markenhersteller eigene Mindestmengen um 3.000 Stück je Modell verlangen.
-- **Glas-MOQs kommen zum Fassungs-MOQ hinzu.** Sonnenbrillen nutzen UV400-Gläser aus TAC, CR-39, PC oder Nylon (sowie Trivex nach Spezifikation). Standard-Vollfarben starten ab 100 Stück/Farbe, Verlaufsgläser ab 150 und verspiegelte oder Sonderfarben außerhalb des Katalogs ab 300 Stück/Farbe. Eine verspiegelte Farbvariante benötigt daher 300 Stück, auch wenn der Rahmen 100 Stück je Farbe zuließe.
+- **Glas-MOQs kommen zum Fassungs-MOQ hinzu.** Sonnenbrillen nutzen UV400-Gläser aus TAC, CR-39, PC oder Nylon (sowie Trivex nach Spezifikation). Standard-Vollfarben starten ab 100 Paar/Farbe, Verlaufsgläser ab 150 und verspiegelte oder Sonderfarben außerhalb des Katalogs ab 300 Paar/Farbe. Eine verspiegelte Farbvariante benötigt daher 300 Paar, auch wenn der Rahmen 100 Stück je Farbe zuließe.
 
 ![Randlose Sonnenbrille mit gebohrten Gläsern und Metallbrücke](/media/blogs/eyewear-frame-materials-comparison/rimless-hybrid-frames.webp)
 
@@ -123,7 +123,7 @@ Zwei kaufmännische Regeln gelten für TR-90:
 
 ## So wählen Sie das passende Material für Ihre Kollektion
 
-1. **Zuerst die geometrische Machbarkeit prüfen.** Zeigt Ihre Vorlage starke Wrap-Kurven oder eine bauchige 3D-Front, planen Sie TR-90-Spritzguss oder passen Sie das Design vor einer Acetat-Kalkulation an.
+1. **Zuerst die geometrische Machbarkeit prüfen.** Für eine Acetatausführung der bei TR-90 üblichen umlaufenden Shield-Form muss an der Brücke eine zusätzliche senkrechte Stütze vorgesehen werden.
 2. **Gewicht an die Tragedauer anpassen.** Ganztägige Korrektionsfassungen und Sportbrillen profitieren von Beta-Titan, Reintitan, Carbon oder TR-90; markante Fashion-Sonnenbrillen tragen massives Acetat hervorragend.
 3. **Farbaufteilung auf Rohmaterialregeln abstimmen.** Wer 300 Stück auf 3 Farben à 100 aufteilen möchte, wählt Metall, Titan oder JIMEI/JINYU-Acetat — nicht Mazzucchelli oder TR-90.
 4. **Hardware und Galvanik auf die Preisklasse abstimmen.** Nutzen Sie Neusilber statt Edelstahl für Gussornamente und kalkulieren Sie Zeit sowie Kosten für Mehrfach-Spiegelgalvanik ein.
@@ -135,7 +135,7 @@ Bei Kssmi gelten Mindestmengen **pro Modell und Produktionslauf** — verschiede
 
 | Punkt / Phase | Acetat, Edelstahl, Neusilber & Titan | Carbonfaser | TR-90-Spritzguss |
 |---|---|---|---|
-| Produktions-MOQ | 300 Stk./Modell (bis 3 × 100) | 200 Stk./Modell | 1.200 Stk./Modell (≥600/Farbe); Sport-Custom 600/Farbe |
+| Produktions-MOQ | 300 Stk./Modell (bis 3 × 100) | 200 Stk./Modell | 1.200 Stück/Modell; ≥600 Stück/Farbe |
 | 2D-Technikzeichnung | 3–10 Arbeitstage (bis 3 Korrekturen) | 3–10 Arbeitstage | 3–10 Arbeitstage |
 | Custom-Muster & Werkzeug | 60 Arbeitstage nach Zeichnungsfreigabe & Vollzahlung | 60 Arbeitstage | 60 Arbeitstage |
 | Serienproduktion | 60 Arbeitstage nach Musterfreigabe & 50 % Anzahlung | 60 Arbeitstage | 60 Arbeitstage |
@@ -145,22 +145,6 @@ Muster-, Entwicklungs- und Werkzeugkosten werden zu 100 % vorab bezahlt; Seriena
 
 ![Maßgefertigte Sonnenbrille aus geformtem Acetat-Mittelteil und präziser Metallbrücke mit Metallbügeln](/media/blogs/eyewear-frame-materials-comparison/material-selection-hybrid.webp)
 
-## Was wir nicht anbieten
-
-- **Kein Verkauf von Lagerware.** Katalogmodelle dienen als Qualitätsmuster und Konstruktionsreferenz; jede Serienproduktion wird markenspezifisch gefertigt.
-- **Keine Herstellung oder Lieferung von Verkaufsverpackungen.** Bestellen Sie Etuis, Boxen und Putztücher beim Verpackungsspezialisten und senden Sie sie an uns; wir verpacken fertige Brillen kostenlos in kundeneigene Verpackung.
-- **Keine Fertigung von Korrektionsgläsern.** Optische Fassungen werden mit klaren Demogläsern ausgeliefert.
-
-## Was für eine Material-Machbarkeitsprüfung benötigt wird
-
-Vor der Angebotserstellung prüft unser Engineering-Team Ihr Projekt, um Materialweg, MOQ und Kostenstruktur zu bestätigen. Senden Sie bitte:
-
-- technische Zeichnung, Skizze, Referenzbild oder Katalog-SKU;
-- Zielmarkt und geplantes Preisniveau im Handel;
-- geplante Farben und Mengen pro Modell;
-- besondere Konstruktionsdetails (3D-Wölbung, Gussornamente, schraubenlose Bauart, integrierte Federscharniere oder Spiegelgalvanik);
-- gewünschtes Launch-Datum.
-
 ## FAQ
 
 ### 1. Welches Brillenmaterial ist am leichtesten?
@@ -169,7 +153,7 @@ Carbonfaser und Titan (Rein- oder Beta-Titan) sind unsere leichtesten Fassungsma
 
 ### 2. Lassen sich voluminöse „Bubble“-Fassungen aus Celluloseacetat fräsen?
 
-Nein. Ein bauchiger 3D-Look mit starken Wrap-Kurven ist ein Merkmal des Spritzgusses und lässt sich nicht aus flacher Acetatplatte fertigen. Wir können entweder die formgetreue Umsetzung in TR-90-Spritzguss fertigen oder die Silhouette für Acetatplatten anpassen.
+Für eine Acetatausführung der bei TR-90 üblichen umlaufenden Shield-Form muss an der Brücke eine zusätzliche senkrechte Stütze vorgesehen werden. Die gleiche durchgehende Konstruktion ohne Stütze lässt sich nicht unverändert übernehmen; die angepasste Brücke ist vor dem Musterbau in der Zeichnung freizugeben.
 
 ### 3. Was ist der Unterschied zwischen Reintitan und Beta-Titan?
 
@@ -177,11 +161,11 @@ Reintitan ist leicht und korrosionsbeständig. Beta-Titan ist eine Titanlegierun
 
 ### 4. Wann sollte man Neusilber statt Edelstahl wählen?
 
-Wählen Sie Neusilber (Cupronickel), wenn Ihr Design scharfe gegossene Schmuckornamente und Vergoldung zu geringeren Kosten als Titan erfordert. Edelstahl passt für schlanke, klare Profile, bildet feine Gussdetails aber nicht ab; beachten Sie, dass Neusilber-Metallteile rund 1,9-mal dichter als Titan sind.
+Wählen Sie Neusilber (Kupfer-Nickel-Zink-Legierung), wenn Ihr Design scharfe gegossene Schmuckornamente und Vergoldung zu geringeren Kosten als Titan erfordert. Edelstahl passt für schlanke, klare Profile, bildet feine Gussdetails aber nicht ab; beachten Sie, dass Neusilber-Metallteile rund 1,9-mal dichter als Titan sind.
 
 ### 5. Wie wirken sich Material und Finish auf den Stückpreis aus?
 
-Bei Kssmi orientieren sich Richtwerte am Material- und Finishaufwand: Titan liegt rund USD 3,70 pro Stück über Edelstahl; italienisches Mazzucchelli-Acetat rund USD 3–5 bei Standardfarben bzw. USD 5–10 bei Havanna-Mustern über Standardacetat; großflächige Mehrfach-Spiegelgalvanik rund USD 18 pro Durchgang bei 2–3 oder mehr Gängen. Bei Metallmodellen mit Gussornamenten senkt Neusilber die Kosten gegenüber Titan; der genaue Stückpreis wird nach technischer Prüfung angeboten.
+Bei Kssmi orientieren sich Richtwerte am Material- und Finishaufwand: Titan liegt rund USD 3,70 pro Stück über Edelstahl; italienisches Mazzucchelli-Acetat rund USD 3–5 bei Standardfarben bzw. USD 5–10 bei Havanna-Mustern über Standardacetat; großflächige Mehrfach-Spiegelgalvanik rund USD 0,60 pro Stück und Durchgang bei 2–3 oder mehr Gängen. Bei Metallmodellen mit Gussornamenten senkt Neusilber die Kosten gegenüber Titan; der genaue Stückpreis wird nach technischer Prüfung angeboten.
 
 ### 6. Sind völlig unsichtbare Scharniere im Acetatbügel möglich?
 
@@ -193,7 +177,7 @@ Fertige Acetatfassungen starten ab 300 Stück pro Modell (bis 3 Farben à 100 St
 
 ### 8. Welches MOQ gilt je Material und erhöhen Glasfarben das Minimum?
 
-Acetat, Metall (Edelstahl und Neusilber) sowie Titan starten ab 300 Stück pro Modell; Carbonfaser ab 200 Stück; TR-90 erfordert 1.200 Stück pro Modell (mindestens 600 pro Farbe bzw. 600 pro Farbe für Sport-Custom-TR-90). Glas-MOQs kommen hinzu: Standard-Vollfarben ab 100, Verlaufsgläser ab 150 und verspiegelte oder Sonderfarben ab 300 Stück je Farbe.
+Acetat, Metall (Edelstahl und Neusilber) sowie Titan starten ab 300 Stück pro Modell; Carbonfaser ab 200 Stück; TR-90 erfordert mindestens 1.200 Stück pro Modell und mindestens 600 Stück pro Farbe. Glas-MOQs kommen hinzu: Standard-Vollfarben ab 100 Paar, Verlaufsgläser ab 150 Paar und verspiegelte oder Sonderfarben ab 300 Paar je Farbe.
 
 ### 9. Wie lange dauern Custom-Musterung und Serienproduktion?
 
@@ -209,6 +193,8 @@ Nein. Wir fertigen und liefern keine Verkaufsverpackungen, verpacken fertige Fas
 
 ---
 
-Kssmi fertigt seit 2003 Brillen in Shenzhen mit internem Design, Engineering, CNC-Fräsen, Politur, Montage und 100 %-Qualitätskontrolle vor Versand. Acetat stammt von Mazzucchelli, JIMEI und JINYU; Titan von Kobe Steel und Baoji Titanium. Mehr zu unserem Werk unter [Über uns](/de/about-us/) sowie Geschäftsbedingungen in den [FAQ](/de/faq/).
+## Zusammenfassung
 
-**Bereit für die Materialvorauswahl Ihrer Kollektion?** Senden Sie Entwurf, Skizze oder Referenzbild über die [Angebotsseite](/de/quote/) mit Zielmarkt, Farben und Mengen pro Modell. Wir bestätigen Machbarkeit, Materialweg und MOQ, bevor kostenpflichtige Schritte beginnen.
+Stimmen Sie Fertigungsweg, Silhouette und Losgröße vor dem Musterbau aufeinander ab: JIMEI- oder JINYU-Acetat, Edelstahl, Neusilber und Titan passen zu 300-Paar-/3-Farb-Starts; Carbonfaser zu ultraleichten 200-Paar-Linien; und TR-90-Spritzguss zu 3D-Wrap-Modellen, die Stahlformen und 1.200 Paar rechtfertigen. Fixieren Sie Konstruktion und Kostenanrechnung frühzeitig.
+
+Senden Sie Entwurf oder Referenzbild samt Farben und Stückzahlen über die [Anfrageformular weiter unten](#inquiry-form-section), um Machbarkeit und MOQs vor kostenpflichtigen Schritten zu bestätigen.

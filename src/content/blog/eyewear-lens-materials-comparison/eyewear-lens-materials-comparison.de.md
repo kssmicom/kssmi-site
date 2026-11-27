@@ -87,20 +87,19 @@ Für US-Sport- und Schutzprogramme mit expliziter Spezifikation von **Trivex** (
 
 Bei Screen-Brillen ohne Stärke sind zwei Punkte klar zu trennen:
 
-- **Spektrale Auslegung statt Schlagwort:** Blaulichtfilter dämpfen definierte Wellenlängenbereiche per Materialabsorption, Tönung oder Schicht. Legen Sie Zielband, Sperrgrad und Grundtönung (klar vs. leicht/voll gelb) exakt fest statt nur „Blaulichtschutz“ zu bestellen.
+- **Spektrale Auslegung statt Schlagwort:** Blaulichtfilter dämpfen definierte Wellenlängenbereiche per Materialabsorption, Tönung oder Schicht. Legen Sie Zielband, Sperrgrad und Grundtönung (klar vs. leicht/voll gelb) exakt fest statt nur „Blaulichtschutz“ zu bestellen. Selektive Filterung verändert die spektrale Balance; sie erhöht weder die optische Auflösung noch begründet sie medizinische Wirkversprechen.
 - **Getrennte Normen:** Unverglaste Korrektionsfassungen für Rx-Bestückung unterliegen **ISO 12870**, getrennt von Sonnenglas-Normen wie **EN ISO 12312-1**; ein Demoglas macht eine Korrektionsfassung nicht zur Sonnenbrille.
 
 ![Spektralfilter-Demonstration an einem klaren Blaulichtschutzglas ohne Sehstärke](/media/blogs/eyewear-lens-materials-comparison/blue-light-lenses.webp)
 
 Entdecken Sie [Blaulichtfilter-Optionen](/de/customization/lenses/blue-blocking/) und unsere [Korrektionsfassungen](/de/product/optical-frames/).
-
 ## Optische Funktionen vs. Oberflächenbeschichtungen
 
 **Optische Funktionen bestimmen, welches Licht hindurchgelangt (Helligkeit, UV, Blendung oder Spektrum); Oberflächenschichten schützen vor Kratzern, Rückreflexen, Wasser oder Beschlag – und Hartschicht (HC) sowie Innen-Entspiegelung (AR) sind kein automatischer Standard.**
 
 ### Optische Funktionen (am Fertigglas bestätigt)
 
-- **Sonnenschutz & VLT / CAT 0–4:** Sichtbare Lichttransmission (VLT) wird messtechnisch ermittelt, nicht per Augenmaß. **CAT.3 (8–18 % VLT)** gilt weltweit als Standard für Alltagssonne und Tagesfahrten; **CAT.1 (43–80 % VLT)** und **CAT.2 (18–43 % VLT)** für Mode- und Verlaufstöne.
+- **Sonnenschutz & VLT / CAT 0–4:** Sichtbare Lichttransmission (VLT) wird messtechnisch ermittelt, nicht per Augenmaß. **CAT.3 (8–18 % VLT)** gilt weltweit als Standard für Alltagssonne und Tagesfahrten; **CAT.1 (43–80 % VLT)** und **CAT.2 (18–43 % VLT)** für Mode- und Verlaufstöne. Prüfen Sie vor Festlegung der VLT die Anforderungen für das Fahren im Zielmarkt.
 - **UV400-Schutz:** Filtert UVA/UVB durch Substrat, Additive, Tönung oder Beschichtung. Auch helle Gläser erreichen mit passender Rezeptur UV400, während dunkle Gläser ohne UV-Absorber nicht automatisch schützen.
 - **Polarisation:** Sperrt waagerechte Reflexe von Wasser, Asphalt und Schnee unabhängig von Tönungstiefe, UV400 oder Spiegelung; fast alle CAT.3-Muster in [Grau](/de/customization/lenses/grey/), [Braun](/de/customization/lenses/brown/) und [Grün](/de/customization/lenses/green/) sind polarisiert verfügbar.
 - **Phototrop & High Contrast (Hi-Con):** Selbsttönung reagiert temperaturabhängig auf UV/Licht (abgeschwächt hinter Kfz-Frontscheiben); Kontrastfilter verschieben Spektralbänder ohne Änderung der Abbe-Zahl.
@@ -145,7 +144,6 @@ Auf bestätigten Sonderprojekten unterstützen wir zusätzlich zwei Spezialverfa
 
 Für die reguläre Serienfertigung stammen Gläser von führenden Optikherstellern in Shenzhen. Verlangt eine Marke einen internationalen Glasmarkennamen oder ein dediziertes Partnerwerk-Polfilterprogramm, beschafft Kssmi exakt nach bestätigter Marke, Type und Schichtvorgabe – oder verbaut kundenseitig beim Partnerwerk bezogene Gläser in der Endmontage.
 
-
 ![Rotes polarisiertes Revo-Spiegelglas mit 300-Paar-Mindestbestellmenge je Farbe](/media/blogs/eyewear-lens-materials-comparison/revo-mirror-color-moq.webp)
 ## Konformität, Spektralkurven und unabhängige Laborprüfungen
 
@@ -155,23 +153,6 @@ Kssmi reicht keine Berichte anderer Modelle als Werkszertifikat weiter, sondern 
 
 - **Spektrale Transmissionskurven:** Auf Wunsch erhalten Sie **280–780 nm in 5-nm-Schritten** (Wertetabelle, Kurvendiagramm, CIE-Farbdaten und digitale CSV-Dateien mit Angabe von Gerät, Bereich, Glasdicke und Probenstatus).
 - **Externe Prüflabore:** Nachweise für USA, EU (CE / EN ISO 12312-1), UK oder Australien (**AS/NZS 1067.1**, zuletzt ca. **USD 1.139** je fertiger Spezifikation) koordinieren wir über SGS, Intertek oder TÜV zu Originalkosten.
-
-## Was wir nicht anbieten
-
-- **Keine Korrektionsgläser (Rx):** Korrektionsfassungen liefern wir mit Demogläsern oder Blaulichtfiltergläsern ohne Sehstärke.
-- **Keine Herstellung von Retail-Verpackungen:** Etuis, Boxen und Tücher bestellt der Kunde beim Verpackungsspezialisten und sendet sie uns zum kostenfreien Einpacken zu.
-- **Keine Lagerware oder losen Einzelgläser ohne Auftrag:** Jede Fertigung erfolgt kundenbezogen auf Produktionsauftrag.
-
-## Was Sie für eine Glas-Prüfung senden sollten
-
-Für eine schnelle Machbarkeits- und Preisprüfung senden Sie uns vorab:
-
-- Fassungsentwurf, Referenzbild oder Katalog-SKU (inkl. Hinweis auf Randlos, Nylor oder Shield);
-- gewünschtes Substrat (TAC, CR-39, Nylon, PC oder Trivex) sowie ggf. KS-LN-Muster-Code;
-- geforderte Funktionen und Schichten (UV400, Polarisation, Verlauf, Spiegel, Phototropie, Blaulicht, HC, Innen-AR, H/O oder AF);
-- Kantenausführung bei Randlos (Standardfase poliert vs. Facette/Diamantschliff);
-- Stückzahl je Farbe und angestrebte VLT-/CAT-Klasse;
-- Zielmarkt und benötigte Prüfnormen.
 
 ## FAQ
 
@@ -221,6 +202,8 @@ Kssmi stellt Werksdaten sowie 280–780-nm-Kurven (5-nm-Schritte) mit CSV-Rohdat
 
 ---
 
-Seit 2003 fertigt Kssmi Brillen in Shenzhen – mit eigener Fassungsentwicklung, führenden Optikpartnern vor Ort und 100-%-Endkontrolle vor Versand. Mehr erfahren Sie unter [Über uns](/de/about-us/) oder in den [FAQ](/de/faq/).
+## Zusammenfassung
 
-**Bereit für Ihre Glasspezifikation?** Senden Sie Fassungsstile, Substrate, KS-LN-Codes, Beschichtungen, Mengen je Farbe und Zielmarkt über die [Angebotsseite](/de/quote/). Wir prüfen Machbarkeit, Mindestmengen und Einzelkosten vor jedem kostenpflichtigen Schritt.
+Die optische Leistung hängt vom fertigen Glasaufbau, den Beschichtungen und den Farb-MOQs ab, nicht allein vom Substratnamen: Wählen Sie Nylon (PA) oder PC für Randlos und High-Wrap, CR-39 oder TAC (außerhalb extremer Hitze) für Vollrand, und geben Sie HC, Innen-AR, VLT/CAT sowie Mindestmengen (100 Vollton / 150 Verlauf / 300 Spiegel oder Sonderfarbe) klar an.
+
+Senden Sie Fassungsentwürfe, Substrate, KS-LN-Codes, Schichten und Mengen je Farbe über die [Anfrageformular weiter unten](#inquiry-form-section), um Machbarkeit und Einzelkosten vorab zu klären.

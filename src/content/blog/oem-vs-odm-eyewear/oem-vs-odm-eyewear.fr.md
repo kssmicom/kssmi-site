@@ -133,7 +133,7 @@ Les frais d'échantillonnage, de développement et d'outillage sont réglés en 
 Trois clauses limitent le risque de financer un développement sans suite :
 
 - **Crédit des frais.** Comme indiqué ci-dessus : les frais éligibles sont crédités dès que le même design atteint 1 000 paires sous 12 mois, hors fret. Le TR-90 suit son propre seuil.
-- **Arrêt avant l'outillage.** Si vous examinez les plans 2D et arrêtez avant le lancement de l'outillage, le travail de conception 2D est conservé et le solde restant est remboursé sur le compte d'origine sous 10 jours ouvrés, déduction faite de 0,5 % de frais de transfert. Les plans 2D finalisés restent votre propriété.
+- **Arrêt avant l'outillage.** Si vous examinez les plans 2D et arrêtez avant le lancement de l'outillage, le coût du travail de conception 2D déjà réalisé est retenu et le solde restant est remboursé sur le compte d'origine sous 10 jours ouvrés, déduction faite de 0,5 % de frais de transfert. Les plans 2D finalisés restent votre propriété.
 - **Propriété des outillages.** Les moules et outillages payés par le client appartiennent au client. Ils restent normalement dans notre usine pour la production, ne sont jamais utilisés pour un autre client et peuvent être restitués sur demande une fois toutes les sommes dues réglées. Les réassorts sur le même design n'entraînent aucun nouveau coût de moule tant que l'outillage reste exploitable.
 
 Une fois l'outillage lancé, le moule est usiné pour votre design et aucun remboursement ne s'applique.
@@ -186,8 +186,6 @@ Nous ne chiffrons pas un projet avant de voir le design ou la référence. Un cr
 - le marché de destination ;
 - la date de lancement visée.
 
-Transmettez ces éléments via la [page devis](/fr/quote/). Nous répondons normalement sous un jour ouvré, et un devis suit une fois les données complètes — généralement sous trois jours ouvrés environ. La [page personnalisation](/fr/customization/) détaille ce qui peut être modifié, et la [FAQ](/fr/faq/) approfondit minimums, échantillons, paiements et propriété.
-
 ## FAQ
 
 ### 1. Quelle est la différence entre OEM, ODM et private label ?
@@ -229,9 +227,10 @@ Non. Les modèles catalogue sont des références et des échantillons d'évalua
 ### 10. Pouvez-vous fournir un packaging retail ou des verres correcteurs ?
 
 Non. Nous ne fabriquons ni ne fournissons de packaging retail, et nous ne produisons pas de verres correcteurs. Les montures optiques sont expédiées avec des verres de démonstration.
-
 ---
 
-Kssmi fabrique des lunettes à Shenzhen depuis 2003, avec conception interne, ingénierie, usinage CNC, polissage, assemblage et contrôle qualité. L'acétate provient de Mazzucchelli, JIMEI et JINYU ; le titane de Kobe Steel et Baoji Titanium. Pour en savoir plus sur l'usine, consultez la [page à propos](/fr/about-us/).
+## Résumé
 
-**Prêt à choisir votre voie ?** Envoyez votre design, référence ou concept via la [page devis](/fr/quote/) avec votre quantité cible et votre date de lancement. Nous confirmerons la voie, le minimum applicable et le coût de développement avant tout démarrage de prestation payante.
+Partez des éléments dont vous disposez déjà : une spécification validée passe directement en OEM, un croquis ou visuel de référence démarre en ODM et les modèles catalogue permettent de tester la qualité avant d'investir dans des moules. Avant l'échantillonnage, alignez le MOQ par modèle (300 paires acétate, métal et titane ; 200 fibre de carbone ; 1 200 TR-90), la validation des plans, la propriété des moules et les conditions d'avoir.
+
+Envoyez votre design, référence ou concept avec quantité cible et date de lancement via le [formulaire de demande ci-dessous](#inquiry-form-section) pour valider la voie, le minimum et le budget avant tout engagement payant.

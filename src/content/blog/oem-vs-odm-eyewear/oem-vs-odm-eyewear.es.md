@@ -133,7 +133,7 @@ Los cargos de muestras, desarrollo y moldes se pagan íntegramente antes de que 
 Tres condiciones reducen el riesgo de pagar por un desarrollo que no prospere:
 
 - **Crédito de honorarios.** Como se ha indicado: los gastos elegibles se acreditan cuando el mismo diseño alcanza 1.000 pares en 12 meses, excluido el flete. El TR-90 sigue su propio umbral.
-- **Detenerse antes del utillaje.** Si revisa los planos 2D y decide parar antes de que empiece el utillaje, se retiene el trabajo de diseño 2D y el saldo restante se reembolsa a la cuenta bancaria original en un plazo de 10 días laborables, menos una comisión de transferencia del 0,5%. Los planos 2D completados siguen siendo suyos.
+- **Detenerse antes del utillaje.** Si revisa los planos 2D y decide parar antes de que empiece el utillaje, se retiene el coste del trabajo de diseño 2D ya realizado y el saldo restante se reembolsa a la cuenta bancaria original en un plazo de 10 días laborables, menos una comisión de transferencia del 0,5%. Los planos 2D completados siguen siendo suyos.
 - **Propiedad del utillaje.** Los moldes y utillajes pagados por el cliente pertenecen al cliente. Normalmente permanecen en nuestra fábrica para producción, nunca se utilizan para otro cliente y pueden entregarse previa solicitud una vez liquidados todos los importes pendientes. Las repeticiones de producción sobre el mismo diseño no conllevan nuevo coste de molde mientras el utillaje siga siendo utilizable.
 
 Una vez que comienza el utillaje, el molde se mecaniza para su diseño y no se aplica reembolso.
@@ -186,8 +186,6 @@ No cotizamos un proyecto antes de ver el diseño o la referencia. Basta un bocet
 - mercado de destino;
 - fecha objetivo de lanzamiento.
 
-Envíelos a través de la [página de presupuesto](/es/quote/). Normalmente respondemos en un día hábil y la cotización llega cuando los datos están completos — por lo general en unos tres días laborables. La [página de personalización](/es/customization/) detalla qué puede modificarse y las [preguntas frecuentes (FAQ)](/es/faq/) cubren mínimos, muestras, pagos y titularidad con mayor detalle.
-
 ## Preguntas frecuentes
 
 ### 1. ¿Cuál es la diferencia entre OEM, ODM y marca blanca?
@@ -229,9 +227,10 @@ No. Los modelos de catálogo son referencias y muestras de evaluación; cada par
 ### 10. ¿Pueden suministrar packaging retail o lentes graduadas?
 
 No. No fabricamos ni suministramos packaging de venta al público ni producimos lentes graduadas. Las monturas ópticas se envían con lentes de demostración.
-
 ---
 
-Kssmi fabrica gafas en Shenzhen desde 2003, con diseño propio, ingeniería, mecanizado CNC, pulido, montaje y control de calidad. El acetato procede de Mazzucchelli, JIMEI y JINYU; el titanio, de Kobe Steel y Baoji Titanium. Más información sobre la fábrica está disponible en la [página sobre nosotros](/es/about-us/).
+## Resumen
 
-**¿Listo para elegir ruta?** Envíe su diseño, referencia o concepto a través de la [página de presupuesto](/es/quote/) indicando su cantidad objetivo y fecha de lanzamiento. Confirmaremos la ruta, el mínimo aplicable y el coste de desarrollo antes de iniciar cualquier trabajo remunerado.
+Parte de los archivos que ya tienes hoy: una especificación confirmada va directo a OEM, un boceto o foto de referencia arranca en ODM y las monturas de catálogo permiten validar la construcción antes de invertir en moldes. Antes de muestrear, alinea el MOQ por modelo (300 pares en acetato, metal y titanio; 200 en fibra de carbono; 1.200 en TR-90) junto con planos, propiedad de moldes y reembolso de costes.
+
+Envía tu diseño, referencia o idea junto con cantidad y fecha de lanzamiento en el [formulario de consulta de abajo](#inquiry-form-section) para confirmar ruta, mínimo y coste antes de cualquier pago.

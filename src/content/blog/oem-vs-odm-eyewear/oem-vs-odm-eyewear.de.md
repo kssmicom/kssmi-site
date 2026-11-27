@@ -133,7 +133,7 @@ Muster-, Entwicklungs- und Werkzeugkosten werden vor Beginn der jeweiligen Phase
 Drei Regelungen verringern das Risiko, in eine Entwicklung zu investieren, die nicht weitergeführt wird:
 
 - **Gebührengutschrift.** Wie oben beschrieben: Anrechenbare Gebühren werden gutgeschrieben, sobald dasselbe Design innerhalb von 12 Monaten 1.000 Paare erreicht, Fracht ausgenommen. TR-90 unterliegt einem eigenen Schwellenwert.
-- **Abbruch vor Werkzeugbau.** Wenn Sie die 2D-Zeichnungen prüfen und das Projekt vor Beginn des Werkzeugbaus stoppen, wird die geleistete 2D-Designarbeit einbehalten und der Restbetrag innerhalb von 10 Werktagen abzüglich 0,5 % Überweisungsgebühr auf das ursprüngliche Zahlungskonto erstattet. Die fertiggestellten 2D-Zeichnungen bleiben Ihr Eigentum.
+- **Abbruch vor Werkzeugbau.** Wenn Sie die 2D-Zeichnungen prüfen und das Projekt vor Beginn des Werkzeugbaus stoppen, werden die Kosten der bereits geleisteten 2D-Designarbeit einbehalten und der Restbetrag innerhalb von 10 Werktagen abzüglich 0,5 % Überweisungsgebühr auf das ursprüngliche Zahlungskonto erstattet. Die fertiggestellten 2D-Zeichnungen bleiben Ihr Eigentum.
 - **Werkzeugeigentum.** Vom Kunden bezahlte Formen und Werkzeuge gehören dem Kunden. Sie verbleiben normalerweise zur Produktion in unserem Werk, werden niemals für andere Kunden eingesetzt und können auf Wunsch herausgegeben werden, sobald alle fälligen Beträge beglichen sind. Nachbestellungen desselben Designs verursachen keine neuen Werkzeugkosten, solange das Werkzeug einsatzfähig bleibt.
 
 Sobald der Werkzeugbau beginnt, wird die Form für Ihr Design gefräst und eine Erstattung ist ausgeschlossen.
@@ -186,8 +186,6 @@ Wir kalkulieren kein Projekt, bevor wir das Design oder die Referenz gesehen hab
 - Zielmarkt;
 - geplantes Launch-Datum.
 
-Senden Sie diese Angaben über die [Angebotsseite](/de/quote/). Wir antworten in der Regel innerhalb eines Werktags, und sobald alle Angaben vorliegen, folgt das Angebot – normalerweise innerhalb von rund drei Werktagen. Auf der [Seite für individuelle Anpassungen](/de/customization/) sehen Sie, was geändert werden kann, und die [FAQ](/de/faq/) erläutern Mindestmengen, Muster, Zahlungsbedingungen und Eigentumsrechte im Detail.
-
 ## FAQ
 
 ### 1. Was ist der Unterschied zwischen OEM, ODM und Private Label?
@@ -229,9 +227,10 @@ Nein. Katalogmodelle sind Referenzen und Bewertungsmuster; jedes gefertigte Paar
 ### 10. Können Sie Verkaufsverpackungen oder Korrektionsgläser liefern?
 
 Nein. Wir fertigen und liefern weder Verkaufsverpackungen noch Korrektionsgläser mit Sehstärke. Korrektionsfassungen werden mit Demonstrationsgläsern ausgeliefert.
-
 ---
 
-Kssmi fertigt seit 2003 Brillen in Shenzhen – mit eigener Designabteilung, Engineering, CNC-Bearbeitung, Politur, Montage und Qualitätskontrolle. Acetat beziehen wir von Mazzucchelli, JIMEI und JINYU; Titan von Kobe Steel und Baoji Titanium. Mehr über das Werk erfahren Sie auf der [Über-uns-Seite](/de/about-us/).
+## Zusammenfassung
 
-**Bereit für die Wahl des passenden Wegs?** Senden Sie Ihr Design, Ihre Referenz oder Ihr Konzept zusammen mit Zielmenge und Launch-Termin über die [Angebotsseite](/de/quote/). Wir bestätigen Weg, geltende Mindestmenge und Entwicklungskosten, bevor kostenpflichtige Arbeiten beginnen.
+Starten Sie mit den Unterlagen, die Ihnen heute vorliegen: eine bestätigte Spezifikation geht direkt in OEM, eine Skizze oder Referenz startet als ODM und Katalogmodelle prüfen die Bauqualität vor eigenen Werkzeugkosten. Klären Sie vor dem Musterbau Modell-MOQ (300 Paar Acetat, Metall, Titan; 200 Carbonfaser; 1.200 TR-90), Zeichnungsfreigabe, Werkzeug-Eigentum und Kostenanrechnung.
+
+Senden Sie Entwurf, Referenz oder Konzept samt Zielmenge und Launch-Termin über das [Anfrageformular weiter unten](#inquiry-form-section), damit wir Weg, Mindestmenge und Entwicklungskosten vorab bestätigen.

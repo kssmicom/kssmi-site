@@ -87,20 +87,19 @@ Với các chương trình thể thao hoặc bảo hộ thị trường Mỹ ch�
 
 Khi đặt kính lọc ánh sáng xanh không độ, cần tách bạch hai điểm:
 
-- **Thiết kế phổ quang thay vì nhãn tiếp thị:** lọc ánh sáng xanh làm suy giảm chọn lọc dải bước sóng mục tiêu qua hấp thụ, nhuộm màu hoặc lớp phủ. Luôn chốt dải bước sóng mục tiêu, tỷ lệ chặn và độ ấm nền (trong suốt hay ngả vàng nhạt/đậm) thay vì chỉ ghi chung chung.
+- **Thiết kế phổ quang thay vì nhãn tiếp thị:** lọc ánh sáng xanh làm suy giảm chọn lọc dải bước sóng mục tiêu qua hấp thụ, nhuộm màu hoặc lớp phủ. Luôn chốt dải bước sóng mục tiêu, tỷ lệ chặn và độ ấm nền (trong suốt hay ngả vàng nhạt/đậm) thay vì chỉ ghi chung chung. Lọc chọn lọc làm thay đổi cân bằng quang phổ; không tăng độ phân giải quang học và không hàm ý công dụng y tế.
 - **Tiêu chuẩn sản phẩm tách biệt:** gọng kính chưa lắp tròng độ thuộc **ISO 12870**, tách riêng khỏi chuẩn kính mát như **EN ISO 12312-1**; lắp tròng demo không biến gọng kính thuốc thành kính mát.
 
 ![Minh họa kiểm tra phổ lọc trên tròng quang học chống ánh sáng xanh không độ](/media/blogs/eyewear-lens-materials-comparison/blue-light-lenses.webp)
 
 Xem [tùy chọn tròng lọc ánh sáng xanh](/vi/customization/lenses/blue-blocking/) và bộ sưu tập [gọng kính thuốc](/vi/product/optical-frames/).
-
 ## Tính năng quang học vs. lớp phủ bề mặt
 
 **Tính năng quang học quyết định ánh sáng đi qua tròng (độ tối, tia UV, chói hay quang phổ); lớp phủ bề mặt quyết định khả năng chống trầy, phản xạ mặt sau, bám nước hay đọng sương — và phủ cứng (HC) cùng chống phản quang mặt trong (AR) không tự động mặc định.**
 
 ### Tính năng quang học (xác nhận trên tròng hoàn chỉnh)
 
-- **Lọc nắng & VLT / CAT 0–4:** độ truyền sáng nhìn thấy (VLT) được đo bằng thiết bị chứ không ước lượng bằng mắt. **CAT.3 (8–18% VLT)** là chuẩn toàn cầu cho nắng thường và lái xe ban ngày; **CAT.1 (43–80%)** và **CAT.2 (18–43%)** cho thời tiết râm, màu thời trang và chuyển sắc.
+- **Lọc nắng & VLT / CAT 0–4:** độ truyền sáng nhìn thấy (VLT) được đo bằng thiết bị chứ không ước lượng bằng mắt. **CAT.3 (8–18% VLT)** là chuẩn toàn cầu cho nắng thường và lái xe ban ngày; **CAT.1 (43–80%)** và **CAT.2 (18–43%)** cho thời tiết râm, màu thời trang và chuyển sắc. Trước khi chốt VLT, hãy kiểm tra yêu cầu về lái xe của thị trường đích.
 - **Chống UV400:** chặn UVA/UVB qua nền nhựa, phụ gia, thuốc nhuộm hoặc lớp phủ. Tròng sáng màu vẫn đạt UV400 nếu có công thức phù hợp, ngược lại tròng tối màu thiếu chất hấp thụ UV không tự đạt chuẩn nếu chưa đo thành phẩm.
 - **Phân cực (Polarized):** giảm lóa ngang từ mặt nước, đường nhựa, tuyết độc lập với độ tối, UV400 hay tráng gương; đa số mã CAT.3 [xám](/vi/customization/lenses/grey/), [nâu](/vi/customization/lenses/brown/) và [xanh lá](/vi/customization/lenses/green/) hỗ trợ phiên bản phân cực.
 - **Đổi màu & Tăng tương phản (Hi-Con):** tốc độ đổi màu phụ thuộc nhiệt độ môi trường và kính chắn gió ô tô (đã chặn UV); tròng tăng tương phản dịch chuyển dải phổ mà không đổi chỉ số Abbe.
@@ -145,7 +144,6 @@ Với các dự án tùy chỉnh đã xác nhận, chúng tôi còn hỗ trợ h
 
 Với sản xuất tiêu chuẩn, tròng đến từ các nhà máy quang học hàng đầu tại Thâm Quyến. Khi thương hiệu chỉ định hãng tròng quốc tế hoặc chương trình phân cực từ nhà máy đối tác chuyên biệt, Kssmi cung ứng đúng thương hiệu, model và lớp phủ đã xác nhận — hoặc nhận lắp ráp tròng do khách hàng mua từ nhà máy đối tác đó.
 
-
 ![Mẫu màu tròng phân cực tráng gương Revo đỏ áp dụng MOQ 300 cặp mỗi màu](/media/blogs/eyewear-lens-materials-comparison/revo-mirror-color-moq.webp)
 ## Tuân thủ tiêu chuẩn, báo cáo quang phổ và thử nghiệm độc lập
 
@@ -155,21 +153,6 @@ Kssmi không dùng báo cáo của mẫu khác làm chứng nhận chung cho nh�
 
 - **Đường cong truyền qua quang phổ:** cung cấp đo đạc **280–780 nm bước 5 nm** (bảng số liệu, đồ thị, dữ liệu màu CIE và file CSV gốc ghi rõ thiết bị, dải sóng, độ dày và trạng thái mẫu).
 - **Điều phối phòng lab độc lập:** kiểm định cho Mỹ, EU (CE / EN ISO 12312-1), Anh hoặc Úc (**AS/NZS 1067.1**, tham chiếu gần đây khoảng **USD 1.139**/quy cách hoàn chỉnh) phối hợp qua SGS, Intertek hoặc TÜV theo hóa đơn thực tế.
-
-## Những hạng mục chúng tôi không làm
-
-- **Không sản xuất tròng độ (Rx):** gọng kính thuốc xuất xưởng với tròng demo trong hoặc lọc ánh sáng xanh không độ.
-- **Không sản xuất hoặc cung cấp bao bì bán lẻ:** khách hàng đặt hộp, bao và khăn từ đơn vị chuyên môn gửi về kho chúng tôi để đóng gói miễn phí.
-- **Không bán hàng tồn sẵn hay tròng rời không kèm đơn sản xuất.**
-
-## Thông tin cần gửi để rà soát thông số tròng kính
-
-- thiết kế gọng, ảnh tham chiếu hoặc mã catalogue (nêu rõ không viền, nửa viền hay shield);
-- nền tròng mong muốn (TAC, CR-39, nylon, PC hoặc Trivex) và mã mẫu KS-LN;
-- tính năng và lớp phủ cần có (UV400, phân cực, gradient, gương, đổi màu, ánh sáng xanh, HC, AR mặt trong, H/O hoặc AF);
-- kiểu mài cạnh cho mẫu không viền (vát bóng tiêu chuẩn vs. giác cạnh kim cương);
-- số lượng theo từng màu và cấp VLT / CAT mục tiêu;
-- thị trường đích và tiêu chuẩn phòng lab yêu cầu.
 
 ## Câu hỏi thường gặp (FAQ)
 
@@ -219,6 +202,8 @@ Kssmi cấp miễn phí dữ liệu xưởng và có thể cung cấp dữ liệ
 
 ---
 
-Kssmi sản xuất kính mắt tại Thâm Quyến từ năm 2003, kết hợp kỹ thuật gọng nội bộ với các nhà sản xuất tròng quang học hàng đầu Thâm Quyến và kiểm tra 100% trước xuất xưởng. Tìm hiểu thêm tại [giới thiệu](/vi/about-us/) hoặc [FAQ](/vi/faq/).
+## Tóm tắt
 
-**Sẵn sàng chốt thông số tròng kính?** Gửi mẫu gọng, chất liệu ưu tiên, mã màu KS-LN, lớp phủ, số lượng theo màu và thị trường đích qua [trang báo giá](/vi/quote/). Chúng tôi xác nhận tính khả thi và chi phí chi tiết trước khi phát sinh bất kỳ khoản phí nào.
+Hiệu năng thực tế của tròng kính phụ thuộc vào cấu trúc hoàn chỉnh, lớp phủ và MOQ theo màu chứ không chỉ tên chất liệu: hãy chọn nylon (PA) hoặc PC cho gọng khoan và shield cong sâu, CR-39 hoặc TAC (ngoài vùng quá nóng) cho gọng nguyên viền, đồng thời chốt rõ HC, AR mặt trong, cấp VLT/CAT và định mức màu (100 đặc / 150 chuyển sắc / 300 tráng gương hoặc màu riêng).
+
+Gửi kiểu gọng, chất liệu ưu tiên, mã KS-LN, lớp phủ và số lượng theo màu qua [biểu mẫu yêu cầu báo giá bên dưới](#inquiry-form-section) để xác nhận tính khả thi và chi phí chi tiết trước khi phát sinh phí.
