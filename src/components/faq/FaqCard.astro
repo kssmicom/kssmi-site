@@ -28,7 +28,7 @@ const searchHaystack = [
   article.heading,
   topicTitle || '',
   subtopicTitle || '',
-  ...article.items.flatMap((item) => [item.question, item.answer]),
+  ...article.items.map((item) => item.question),
 ]
   .join(' ')
   .toLowerCase();
