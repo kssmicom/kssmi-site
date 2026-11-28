@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Montatura Ottica in Acetato di Lusso KAO-002 | Fabbrica di Occhiali Personalizzati"
-seoDescription: "Eleva il tuo marchio con le montature ottiche in acetato premium Mazzucchelli KAO-002. Dotate di cerniere a 4+3 bariletti e personalizzazione OEM/ODM completa. Supporto MOQ di 300 unità."
-seoKeywords: "montature ottiche in acetato, occhiali ottici personalizzati, produttore di occhiali OEM, fabbrica di occhiali cinese, marchi di occhiali premium, montature in acetato all'ingrosso, produzione di occhiali su misura, montature in acetato personalizzate"
+seoTitle: "KAO-002 Montature in acetato tartarugato | Fornitore all'ingrosso"
+seoDescription: "Montature in acetato Mazzucchelli con cerniere rivettate a 7 snodi e naselli integrati. Anime in rame e loghi laser su misura OEM/ODM; minimo 300 paia/modello."
+seoKeywords: "produttore di montature ottiche in acetato tartarugato, montature ottiche OEM con cerniere, occhiali personalizzati in acetato Mazzucchelli in Cina, ingrosso montature ottiche predisposte per lenti graduate, montature private label per case di moda, montature ottiche con anime in filo di rame personalizzate, fornitore di occhiali in acetato per boutique, produzione ODM di montature ottiche in acetato"
 ---
 
 ## Caratteristiche

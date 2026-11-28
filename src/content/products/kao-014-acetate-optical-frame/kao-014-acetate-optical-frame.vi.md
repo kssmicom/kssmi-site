@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Gọng Kính Cận Axetat Táo Bạo Độc Đáo KAO-014 | Nhà Cung Cấp Tùy Chỉnh"
-seoDescription: "Hợp tác với nhà máy hàng đầu cho gọng kính cận axetat táo bạo KAO-014. Cấu trúc Mazzucchelli chất lượng cao với khả năng tùy chỉnh OEM đầy đủ và MOQ 300 chiếc."
-seoKeywords: "nhà sản xuất gọng kính cận axetat, xưởng kính mắt OEM tùy chỉnh, gọng kính axetat Mazzucchelli cao cấp, gọng kính cận nhãn hiệu riêng sang trọng, đối tác sản xuất kính mắt Trung Quốc, thiết kế gọng kính cận theo yêu cầu, nhà cung cấp kính mắt axetat bán buôn, kính mắt tùy chỉnh cho nhà thiết kế"
+seoTitle: "KAO-014 Gọng kính quang học axetat cổ điển | Nhà máy OEM"
+seoDescription: "Gọng kính quang học axetat Mazzucchelli 53-18-140 mm có bản lề đinh tán 5 chấu và đệm mũi liền. Tùy chỉnh kích thước và khắc logo OEM/ODM; 300 cặp/mẫu."
+seoKeywords: "nhà sản xuất gọng kính quang học axetat cổ điển, gọng kính quang học axetat OEM tùy chỉnh kích thước, sản xuất gọng kính quang học tại Trung Quốc, gọng kính quang học nhãn hiệu riêng cho nhà thiết kế, bán buôn gọng axetat trong suốt và đỏ, kính với logo khắc tùy chỉnh, phát triển gọng kính quang học bản lề nhiều chấu, nhà cung cấp kính axetat Mazzucchelli"
 ---
 
 ## Đặc điểm

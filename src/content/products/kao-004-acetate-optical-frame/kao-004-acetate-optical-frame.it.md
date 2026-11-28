@@ -36,9 +36,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Montature Ottiche in Acetato KAO-004 alla Moda | Produttore su Misura"
-seoDescription: "Collabora con un primario produttore su misura per le montature ottiche in acetato KAO-004. Costruzione in Mazzucchelli di alta qualità con MOQ di 300 per personalizzazione OEM/ODM."
-seoKeywords: "produttore montature ottiche in acetato, montature ottiche OEM personalizzate, occhiali private label di lusso, montature in acetato all'ingrosso, fabbrica di occhiali cinese, produzione ottica su misura, fornitore di occhiali premium, produzione di occhiali in Cina"
+seoTitle: "KAO-004 Montature unisex in acetato tartarugato | Fabbrica B2B"
+seoDescription: "Per boutique: montature in acetato Mazzucchelli con cerniere a 7 snodi e lenti demo per lenti graduate. Loghi e colori su misura OEM/ODM; 300 paia/modello."
+seoKeywords: "produttore di montature unisex in acetato tartarugato, montature ottiche OEM in acetato predisposte per lenti graduate, montature ottiche personalizzate in Cina, occhiali private label per concept store, ingrosso montature ottiche con cerniere, montature ottiche con logo laser personalizzato, produzione di montature in acetato Mazzucchelli, montature ottiche ODM con colori personalizzati"
 ---
 
 ## Caratteristiche

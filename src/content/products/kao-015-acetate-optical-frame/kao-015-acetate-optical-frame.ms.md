@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Bingkai Optik Asetat Mewah Berani KAO-015 | Pengilang Tempahan"
-seoDescription: "Tingkatkan koleksi cermin mata anda dengan bingkai optik asetat KAO-015 yang boleh disesuaikan. Bahan Mazzucchelli premium, engsel 3+2 barel, dan MOQ 300 untuk OEM/ODM."
-seoKeywords: "pengilang bingkai optik asetat, cermin mata OEM tersuai China, bingkai label peribadi mewah, pengeluaran cermin mata asetat tempahan, borong bingkai optik pereka, kilang cermin mata China, bingkai optik boleh suai, pembekal cermin mata asetat premium"
+seoTitle: "KAO-015 Bingkai Optik Asetat Jernih Mewah | Pembekal Tersuai"
+seoDescription: "Bingkai optik asetat Mazzucchelli kemasan tangan menggunakan engsel 5 ruas. Sesuaikan saiz dan logo logam melalui OEM/ODM; 300 pasang/model."
+seoKeywords: "pengeluar bingkai optik asetat jernih mewah, bingkai asetat Mazzucchelli OEM kemasan tangan, cermin mata optik dengan logo logam tersuai, pembekal bingkai optik asetat China, bingkai label peribadi untuk rumah fesyen, borong bingkai optik dengan engsel berbilang ruas, bingkai optik ODM dengan dimensi tersuai, bingkai optik tempahan untuk rangkaian runcit"
 ---
 
 ## Ciri-ciri Utama

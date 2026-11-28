@@ -43,9 +43,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Montatura Ottica in Acetato Unisex Audace KAO-158 | Fornitore all'Ingrosso"
-seoDescription: "Collabora con un produttore leader per montature ottiche in acetato unisex KAO-158. Acetato Mazzucchelli di alta qualità, MOQ 300 e supporto OEM/ODM completo."
-seoKeywords: "produttore montature ottiche acetato, fabbrica occhiali unisex personalizzati, montature acetato Mazzucchelli premium, vendita all'ingrosso occhiali Cina, fornitore occhiali private label, occhiali acetato personalizzabili, produzione montature ottiche su misura, produttore occhiali lusso Cina"
+seoTitle: "KAO-158 Montature unisex in acetato | Fabbrica all'ingrosso"
+seoDescription: "Crea montature ottiche unisex in acetato Mazzucchelli nero, rosso o verde con cerniere rivettate a 5 snodi. Colori e loghi a rilievo OEM/ODM; 300 paia/modello."
+seoKeywords: "produttore di montature ottiche unisex in acetato, montature OEM in acetato Mazzucchelli nero, occhiali ottici con colori personalizzati in Cina, montature ottiche private label per boutique, ingrosso montature in acetato rosse e verdi, montature ottiche con logo a rilievo personalizzato, occhiali in acetato con cerniere articolate, fornitore di montature per catene ottiche di lusso"
 ---
 
 ## Caratteristiche

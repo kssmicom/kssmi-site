@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-304 Montature Ottiche in Acetato di Lusso Classiche | Fabbrica Custom"
-seoDescription: "Eleva il tuo marchio con le montature ottiche in acetato premium KAO-304. Produzione OEM/ODM esperta con acetato Mazzucchelli, cerniere a 4+3 bariletti e un MOQ flessibile di 300 pezzi."
-seoKeywords: "produttore montature ottiche acetato, occhiali personalizzati OEM, montature lusso private label, ingrosso occhiali acetato, fabbrica montature ottiche Cina, montature ottiche personalizzabili, produzione occhiali premium, montature acetato su misura"
+seoTitle: "KAO-304 Montature in acetato a righe | Produttore su misura"
+seoDescription: "Montature ottiche in acetato Mazzucchelli a righe con cerniere a 7 snodi e misure 48-22-145 mm. Taglie e loghi metallici su misura OEM/ODM; 300 paia/modello."
+seoKeywords: "produttore di montature ottiche in acetato a righe, occhiali ottici con logo metallico personalizzato, montature OEM in acetato Mazzucchelli in Cina, ingrosso montature ottiche tartarugate, montature private label per case di moda, occhiali in acetato con dimensioni personalizzate, fornitore di montature ottiche con cerniere rivettate, montature ottiche ODM per catene di negozi"
 ---
 
 ## Caratteristiche

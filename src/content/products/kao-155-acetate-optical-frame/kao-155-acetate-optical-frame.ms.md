@@ -39,9 +39,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Bingkai Optik Asetat Mewah KAO-155 | Pengilang Tersuai China"
-seoDescription: "Tingkatkan barisan kacamata anda dengan bingkai optik asetat Mazzucchelli premium. Kami menyediakan penyesuaian OEM/ODM penuh dan 300 MOQ untuk pereka fesyen mewah."
-seoKeywords: "pengilang bingkai optik asetat, kacamata asetat tersuai OEM, borong bingkai asetat Mazzucchelli, optik label peribadi mewah, kilang kacamata asetat China, pengeluaran bingkai optik tersuai, pembekal jenama kacamata premium, bingkai optik boleh suai China"
+seoTitle: "KAO-155 Bingkai Optik Asetat Bunga Berani | OEM/ODM"
+seoDescription: "Bingkai optik asetat Mazzucchelli bercorak bunga kuning atau biru kehijauan mempunyai engsel 3 ruas dan saiz 51-18-140 mm. Saiz dan logo laser OEM/ODM; 300 pasang/model."
+seoKeywords: "pengeluar bingkai optik asetat corak bunga berani, bingkai optik OEM bercorak bunga kuning, bingkai asetat Mazzucchelli biru kehijauan tersuai di China, bingkai optik label peribadi untuk pereka, borong cermin mata asetat corak bunga, pengeluaran bingkai optik dengan logo laser tersuai, bingkai asetat dengan engsel berbilang ruas, pembekal cermin mata asetat untuk rangkaian optik"
 ---
 
 ## Ciri-ciri Utama

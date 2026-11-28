@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Montatura Ottica in Acetato di Lusso KAO-301 | Produttore OEM Personalizzato"
-seoDescription: "Arricchisci il tuo portfolio private label con le montature ottiche in acetato KAO-301 personalizzabili. Costruzione Mazzucchelli premium, cerniere a 4+3 barili e MOQ 300 pz. OEM."
-seoKeywords: "produttore montature ottiche acetato, montature ottiche OEM personalizzate, occhiali private label lusso, fabbrica montature acetato Mazzucchelli, partner produzione occhiali Cina, fornitore montature ottiche su misura, occhiali acetato lusso all'ingrosso, montature ottiche personalizzabili Cina"
+seoTitle: "KAO-301 Montature ottiche acetato viola fumé | Fabbrica OEM"
+seoDescription: "Montature ottiche in acetato Mazzucchelli viola fumé con cerniere rivettate a 7 snodi. Misure ad hoc e loghi laser OEM/ODM; 100 paia/colore, 300 paia/modello."
+seoKeywords: "produttore di montature ottiche in acetato viola fumé, occhiali OEM in acetato Mazzucchelli, montature ottiche con logo laser personalizzato, fabbrica di montature ottiche in acetato in Cina, montature private label per marchi boutique, ingrosso occhiali unisex in acetato, produzione di montature ottiche con cerniere rivettate, montature ottiche ODM con misure personalizzate"
 ---
 
 ## Caratteristiche

@@ -43,9 +43,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-158 Frame Optik Asetat Unisex Kendel | Supplier Grosir"
-seoDescription: "Mitra karo produsen terkemuka kanggo frame optik asetat unisex KAO-158 sing kendel. Asetat Mazzucchelli kualitas dhuwur, MOQ 300, lan dhukungan OEM/ODM lengkap."
-seoKeywords: "produsen frame optik asetat, pabrik kacamata unisex kustom, frame asetat Mazzucchelli premium, grosir kacamata China, supplier kacamata label pribadi, kacamata asetat bisa dicocokake, produksi frame optik pesenan, produsen kacamata mewah China"
+seoTitle: "KAO-158 Frame Optik Asetat Unisex | Pabrik Grosir"
+seoDescription: "Luncurake frame optik asetat Mazzucchelli unisex ireng, abang utawa ijo nganggo engsel keling 5 ruas. Werna lan logo timbul OEM/ODM; 300 pasang/model."
+seoKeywords: "produsen frame optik asetat unisex, frame asetat Mazzucchelli OEM ireng, kacamata optik kanthi werna pesenan ing China, frame optik label pribadi kanggo butik, grosir frame asetat abang lan ijo, frame optik nganggo logo timbul pesenan, kacamata asetat nganggo engsel akeh ruas, pemasok frame kanggo jaringan optik mewah"
 ---
 
 ## Fitur

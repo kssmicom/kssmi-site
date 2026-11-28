@@ -43,9 +43,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-158 Kühner Unisex-Acetat-Brillenrahmen | Großhandel"
-seoDescription: "Partner eines führenden Herstellers für kühne KAO-158 Unisex-Acetat-Brillenrahmen. Hochwertiges Mazzucchelli-Acetat, 300 MOQ und voller OEM/ODM-Support."
-seoKeywords: "Hersteller Acetat-Brillenrahmen, Fabrik für individuelle Unisex-Brillen, Premium-Mazzucchelli-Acetatrahmen, Brillen-Großhandel China, Private-Label-Brillenlieferant, anpassbare Acetatbrillen, maßgeschneiderte Brillenrahmenproduktion, Luxusbrillenhersteller China"
+seoTitle: "KAO-158 Unisex-Acetat-Brillenfassungen | Großhandelsfabrik"
+seoDescription: "Unisex-Mazzucchelli-Acetatfassungen in Schwarz, Rot oder Grün mit genieteten 5-teiligen Scharnieren. OEM/ODM-Farben und Logo-Prägung; 300 Paar/Modell."
+seoKeywords: "Hersteller von Unisex-Acetat-Brillenfassungen, schwarze OEM-Mazzucchelli-Acetatfassungen, Korrektionsfassungen in individuellen Farben aus China, Eigenmarken-Brillenfassungen für Boutiquen, Großhandel für rote und grüne Acetat-Fassungen, Brillenfassungen mit individuell geprägtem Logo, Acetat-Brillen mit mehrteiligen Scharnieren, Fassungszulieferer für Luxusoptikketten"
 ---
 
 ## Eigenschaften

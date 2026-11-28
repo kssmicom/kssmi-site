@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Frame Optik Asetat Kendel Unik KAO-014 | Supplier Kustom"
-seoDescription: "Partner karo pabrik utama kanggo frame optik asetat kendel KAO-014. Konstruksi Mazzucchelli kualitas dhuwur kanthi kustomisasi OEM lengkap lan MOQ 300 unit."
-seoKeywords: "produsen frame optik asetat, pabrik kacamata OEM kustom, frame asetat Mazzucchelli premium, frame optik label pribadi mewah, mitra produksi kacamata China, desain frame optik bespoke, supplier kacamata asetat grosir, kacamata sing bisa dikustomisasi kanggo desainer"
+seoTitle: "KAO-014 Frame Optik Asetat Klasik | Pabrik OEM"
+seoDescription: "Frame optik asetat Mazzucchelli 53-18-140 mm nganggo engsel keling 5 ruas lan bantalan irung nyawiji. Ukuran lan logo ukir OEM/ODM; 300 pasang/model."
+seoKeywords: "produsen frame optik asetat klasik, frame optik asetat OEM ukuran pesenan, produksi frame optik ing China, frame optik label pribadi kanggo desainer, grosir frame asetat bening lan abang, kacamata nganggo logo ukir pesenan, pangembangan frame optik nganggo engsel akeh ruas, pemasok kacamata asetat Mazzucchelli"
 ---
 
 ## Fitur

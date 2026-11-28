@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Armação Óptica de Acetato de Luxo KAO-002 | Fábrica de Óculos Personalizados"
-seoDescription: "Eleve sua marca com as armações ópticas KAO-002 em acetato Mazzucchelli de alta qualidade. Com dobradiças de 4+3 barris e personalização OEM/ODM completa. Suporte MOQ de 300 unidades."
-seoKeywords: "armações ópticas de acetato, óculos ópticos personalizados, fabricante de óculos OEM, fábrica de óculos chinesa, marcas de óculos premium, armações de acetato no atacado, produção de óculos sob medida, armações de acetato personalizadas"
+seoTitle: "KAO-002 Armações de acetato tartaruga | Fornecedor atacadista"
+seoDescription: "Armações de acetato Mazzucchelli, dobradiças rebitadas de 7 segmentos e plaquetas integradas. Almas de cobre e logos a laser a pedido OEM/ODM; 300 pares/modelo."
+seoKeywords: "fabricante de armações ópticas de acetato tartaruga, armações ópticas OEM com dobradiças, óculos personalizados de acetato Mazzucchelli na China, armações ópticas prontas para lentes de grau no atacado, armações de marca própria para casas de moda, armações ópticas com almas de fio de cobre personalizadas, fornecedor de óculos de acetato para boutiques, produção ODM de armações ópticas de acetato"
 ---
 
 ## Características

@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-157 Gradyan Asetat Optik Çerçeve | Özel Fabrika"
-seoDescription: "KAO-157 Cesur Gradyan Asetat Optik Çerçeveler ile özel etiket portföyünüzü yükseltin. Premium butik tasarımcılar için 300 MOQ ile tam OEM/ODM özelleştirme."
-seoKeywords: "asetat optik çerçeve üreticisi, özel OEM optik gözlük, lüks özel etiket çerçeveler, Çin asetat gözlük fabrikası, ısmarlama optik çerçeve üretimi, premium gözlük markaları tedarikçisi, özelleştirilebilir asetat çerçeveler, Çin optik çerçeve fabrikası"
+seoTitle: "KAO-157 Mavi Degrade Asetat Optik Çerçeveler | Özel Fabrika"
+seoDescription: "Mavi ve mor degrade Mazzucchelli asetat optik çerçeveler 3 boğumlu menteşeleri 50-19-145 mm ölçülerle birleştirir. OEM/ODM özel ölçüler ve metal logolar; 300 çift/model."
+seoKeywords: "degrade asetat optik çerçeve üreticisi, mavi ve mor OEM optik çerçeveler, Çin özel Mazzucchelli asetat gözlükler, moda tasarımcıları için özel markalı çerçeveler, şeffaf mor optik çerçeve toptan satışı, özel metal logolu asetat gözlükler, çok boğumlu menteşeli OEM optik çerçeveler, butikler için asetat optik çerçeve tedarikçisi"
 ---
 
 ## Özellikler

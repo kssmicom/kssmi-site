@@ -39,9 +39,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-155 Frame Optik Asetat Mewah | Produsen Kustom China"
-seoDescription: "Tingkatake koleksi kacamata sampeyan nganggo frame optik asetat Mazzucchelli premium. Kita nyedhiyakake kustomisasi OEM/ODM lengkap lan MOQ 300 kanggo desainer busana mewah."
-seoKeywords: "produsen frame optik asetat, kacamata asetat kustom OEM, grosir frame asetat Mazzucchelli, optik label pribadi mewah, pabrik kacamata asetat China, produksi frame optik kustom, supplier merek kacamata premium, frame optik bisa dikustomisasi China"
+seoTitle: "KAO-155 Frame Optik Asetat Kembang Desain Kendel | OEM/ODM"
+seoDescription: "Frame optik asetat Mazzucchelli corak kembang kuning utawa biru ijo nganggo engsel 3 ruas lan ukuran 51-18-140 mm. Ukuran lan logo laser OEM/ODM; 300 pasang/model."
+seoKeywords: "produsen frame optik asetat corak kembang desain kendel, frame optik OEM corak kembang kuning, frame asetat Mazzucchelli biru ijo pesenan ing China, frame optik label pribadi kanggo desainer, grosir kacamata asetat corak kembang, produksi frame optik nganggo logo laser pesenan, frame asetat nganggo engsel akeh ruas, pemasok kacamata asetat kanggo jaringan optik"
 ---
 
 ## Fitur

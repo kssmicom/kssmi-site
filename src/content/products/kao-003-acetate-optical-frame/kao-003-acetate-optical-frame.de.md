@@ -36,9 +36,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-003 Luxus-Acetat-Brillenrahmen | Großhandelslieferant"
-seoDescription: "Partner für KAO-003 Luxus-Acetat-Brillenrahmen. Mit 4+3-Fass-Scharnieren und Mazzucchelli Acetat. 300 MOQ & OEM-Unterstützung."
-seoKeywords: "Acetat-Brillenrahmen Hersteller, individuelle OEM-Brillenfabrik, Luxus-Mazzucchelli Acetat-Rahmen, Großhandel Brillenrahmen China, maßgeschneiderte Brillenproduktion, Premium-Brillenmarken Lieferant, Eigenmarken-Acetatbrillen, chinesische Brillenrahmenfabrik"
+seoTitle: "KAO-003 Acetat-Fassungen Zebra & Schildpatt | Maßanfertigung"
+seoDescription: "Mazzucchelli-Acetatfassungen in Zebra oder Schildpatt mit 7-teiligen Scharnieren. Wunschfarben und eigene Metalllogos per OEM/ODM; Mindestmenge 300 Paar/Modell."
+seoKeywords: "Hersteller von Acetat-Brillenfassungen mit Zebramuster, individuelle OEM-Brillenfassungen in Schildpatt, gemusterte Mazzucchelli-Acetat-Brillen aus China, Designer-Brillenfassungen für Eigenmarken, Acetat-Brillengroßhandel für Boutiquen, Korrektionsfassungen mit individuellem Metalllogo, Brillenfassungen mit genieteten mehrteiligen Scharnieren, chinesische Fabrik für Acetat-Brillenfassungen"
 ---
 
 ## Eigenschaften

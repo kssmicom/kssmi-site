@@ -36,9 +36,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-003 Bingkai Optik Asetat Mewah | Pembekal Borong Tersuai"
-seoDescription: "Rakan kongsi dengan pengeluar terkemuka untuk bingkai optik asetat mewah KAO-003. Menampilkan engsel 4+3 barrel dan asetat Mazzucchelli. MOQ 300 & sokongan OEM."
-seoKeywords: "pengilang bingkai optik asetat, kilang cermin mata OEM tersuai, bingkai asetat Mazzucchelli mewah, borong bingkai optik China, pengeluaran cermin mata tempahan, pembekal jenama cermin mata premium, cermin mata asetat label peribadi, kilang bingkai optik China"
+seoTitle: "KAO-003 Bingkai Asetat Zebra/Corak Tortoiseshell | Kilang Tersuai"
+seoDescription: "Dapatkan bingkai optik asetat Mazzucchelli corak zebra atau corak tortoiseshell dengan engsel 7 ruas. Warna dan logo logam tersuai OEM/ODM bermula 300 pasang/model."
+seoKeywords: "pengeluar bingkai optik asetat corak zebra, bingkai optik OEM tersuai corak tortoiseshell, cermin mata asetat Mazzucchelli bercorak di China, bingkai optik pereka label peribadi, borong cermin mata asetat untuk butik, cermin mata optik dengan logo logam tersuai, bingkai optik dengan engsel rivet berbilang ruas, kilang bingkai optik asetat China"
 ---
 
 ## Ciri-ciri Utama

@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-157 Frame Optik Asetat Gradien | Pabrik Kustom"
-seoDescription: "Tingkatake portofolio label pribadi sampeyan nganggo Frame Optik Asetat Gradien KAO-157. Kustomisasi OEM/ODM lengkap kanthi 300 MOQ kanggo desainer butik premium."
-seoKeywords: "produsen frame optik asetat, kacamata optik OEM kustom, frame label pribadi mewah, pabrik kacamata asetat China, produksi frame optik pesenan, pemasok merek kacamata premium, frame asetat sing bisa dikustomisasi, pabrik frame optik China"
+seoTitle: "KAO-157 Frame Optik Asetat Gradien Biru | Pabrik Pesenan"
+seoDescription: "Frame optik asetat Mazzucchelli gradien biru lan ungu nganggo engsel 3 ruas lan ukuran 50-19-145 mm. Ukuran lan logo logam OEM/ODM; 300 pasang/model."
+seoKeywords: "produsen frame optik asetat gradien, frame optik OEM biru lan ungu, kacamata asetat Mazzucchelli pesenan ing China, frame label pribadi kanggo desainer mode, grosir frame optik ungu bening, kacamata asetat nganggo logo logam pesenan, frame optik OEM nganggo engsel akeh ruas, pemasok frame optik asetat kanggo butik"
 ---
 
 ## Fitur

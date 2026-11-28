@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Armações Ópticas de Acetato Ousadas KAO-014 | Fornecedor Custom"
-seoDescription: "Seja parceiro de uma fábrica de primeira linha para armações ópticas de acetato ousadas KAO-014. Construção Mazzucchelli de alta qualidade com personalização OEM completa e MOQ de 300 peças."
-seoKeywords: "fabricante de armações ópticas de acetato, fábrica de óculos OEM customizada, armações de acetato premium Mazzucchelli, armações ópticas de luxo marca própria, parceiro de produção de óculos na China, design de armação óptica sob medida, fornecedor de óculos de acetato no atacado, óculos personalizáveis para designers"
+seoTitle: "KAO-014 Armações ópticas clássicas de acetato | Fábrica OEM"
+seoDescription: "Armações de acetato Mazzucchelli 53-18-140 mm com dobradiças rebitadas de 5 segmentos e plaquetas. Medidas e logos gravados OEM/ODM; 300 pares/modelo."
+seoKeywords: "fabricante de armações ópticas clássicas de acetato, armações ópticas OEM de acetato com medidas personalizadas, produção de armações ópticas na China, armações ópticas de marca própria para designers, armações de acetato transparentes e vermelhas no atacado, óculos com logotipo gravado personalizado, desenvolvimento de armações ópticas com dobradiças, fornecedor de óculos de acetato Mazzucchelli"
 ---
 
 ## Características

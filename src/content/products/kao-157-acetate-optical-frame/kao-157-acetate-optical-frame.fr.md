@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-157 Monture Optique en Acétate Bleu Dégradé | Usine Custom"
-seoDescription: "Élevez votre portefeuille de marque propre avec les montures optiques en acétate KAO-157. Personnalisation OEM/ODM complète avec un MOQ de 300 pour les designers boutique premium."
-seoKeywords: "fabricant de montures optiques en acétate, lunettes optiques OEM personnalisées, montures de marque propre de luxe, usine de lunettes en acétate en Chine, production de montures optiques sur mesure, fournisseur de marques de lunettes premium, montures en acétate personnalisables, usine de montures optiques en Chine"
+seoTitle: "KAO-157 Montures en acétate bleu dégradé | Usine sur mesure"
+seoDescription: "Montures acétate Mazzucchelli bleu et violet dégradés, charnières à 3 charnons et taille 50-19-145 mm. Tailles et logos métalliques OEM/ODM; 300 paires/modèle."
+seoKeywords: "fabricant de montures optiques en acétate dégradé, montures optiques OEM bleues et violettes, lunettes en acétate Mazzucchelli sur mesure en Chine, montures en marque propre pour stylistes, montures optiques violet transparent en gros, lunettes en acétate avec logo métallique personnalisé, montures optiques OEM avec charnières articulées, fournisseur de montures optiques en acétate pour boutiques"
 ---
 
 ## Caractéristiques

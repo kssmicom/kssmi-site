@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-157 Montatura Ottica in Acetato Blu Sfumato | Fabbrica Custom"
-seoDescription: "Arricchisci il tuo portfolio private label con le montature ottiche in acetato KAO-157. Personalizzazione OEM/ODM completa con MOQ 300 per designer boutique premium."
-seoKeywords: "produttore montature ottiche acetato, occhiali ottici OEM personalizzati, montature private label lusso, fabbrica occhiali acetato Cina, produzione montature ottiche su misura, fornitore marchi occhiali premium, montature acetato personalizzabili, fabbrica montature ottiche Cina"
+seoTitle: "KAO-157 Montature in acetato blu sfumato | Fabbrica su misura"
+seoDescription: "Montature ottiche in acetato Mazzucchelli blu e viola sfumati con cerniere a 3 snodi e misure 50-19-145 mm. Misure e loghi metallici OEM/ODM; 300 paia/modello."
+seoKeywords: "produttore di montature ottiche in acetato sfumato, montature ottiche OEM blu e viola, occhiali personalizzati in acetato Mazzucchelli in Cina, montature private label per stilisti, ingrosso montature ottiche viola trasparente, occhiali in acetato con logo metallico personalizzato, montature ottiche OEM con cerniere articolate, fornitore di montature ottiche in acetato per boutique"
 ---
 
 ## Caratteristiche

@@ -51,9 +51,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Frame Optik Asetat Mewah KAO-306 | Produsen Kustom"
-seoDescription: "Mitra karo produsen utama kanggo frame optik asetat KAO-306. Nampilake bahan Mazzucchelli lan engsel 4+3 barrel, kita nawakake 300 MOQ kanggo OEM kustom."
-seoKeywords: "produsen frame optik asetat, kacamata asetat kustom, optik label pribadi mewah, grosir frame asetat, pabrik kacamata Cina, frame optik pesenan, pemasok kacamata premium, produksi frame asetat Cina"
+seoTitle: "KAO-306 Frame Optik Asetat Klawu Unisex | OEM/ODM"
+seoDescription: "Frame optik asetat Mazzucchelli 46-23-145 mm nganggo engsel 7 ruas lan bantalan irung nyawiji. Ukuran lan logo laser pesenan OEM/ODM; 300 pasang/model."
+seoKeywords: "produsen frame optik asetat klawu unisex, frame optik asetat Mazzucchelli OEM, pabrik frame optik pesenan ing China, frame label pribadi kanggo desainer mode, grosir kacamata asetat werna zaitun, frame optik nganggo logo laser pesenan, pangaturan ukuran frame asetat ODM, pemasok kacamata nganggo engsel keling"
 ---
 
 ## Fitur

@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Montures Optiques KAO-305 Luxe Classique | Usine Personnalisée"
-seoDescription: "Améliorez votre marque de lunettes avec les montures optiques en acétate KAO-305 personnalisables. Comprend l'acétate Mazzucchelli premium et des charnières 4+3 barillets. 300 MOQ OEM/ODM."
-seoKeywords: "fabricant montures optiques acétate, usine lunettes OEM personnalisées, montures optiques luxe marque de distributeur, fournisseur chinois lunettes acétate, montures optiques personnalisables, production monture acétate sur mesure, vente en gros montures optiques luxe, partenaire production lunettes Chine"
+seoTitle: "KAO-305 Montures optiques en acétate olive | Fournisseur en gros"
+seoDescription: "Pour marques boutique : montures acétate Mazzucchelli olive avec charnières à 7 charnons. Tailles et logos imprimés sur mesure OEM/ODM dès 300 paires/modèle."
+seoKeywords: "fabricant de montures optiques en acétate olive, montures optiques OEM Havana, lunettes avec logo imprimé personnalisé, fournisseur de montures en acétate Mazzucchelli en Chine, montures en marque propre pour marques boutique, montures optiques en acétate rayé en gros, montures optiques ODM aux dimensions sur mesure, lunettes sur mesure pour chaînes optiques"
 ---
 
 ## Caractéristiques

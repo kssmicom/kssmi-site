@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Armações Ópticas de Acetato de Luxo KAO-015 | Fabricante Sob Medida"
-seoDescription: "Eleve a sua coleção de óculos com as armações ópticas de acetato personalizáveis KAO-015. Material Mazzucchelli premium, dobradiças 3+2 e MOQ de 300 para OEM/ODM."
-seoKeywords: "fabricante de armações ópticas de acetato, óculos OEM personalizados China, armações de luxo de marca própria, produção de óculos de acetato sob medida, atacado de armações ópticas de design, fábrica de óculos chinesa, armações ópticas personalizáveis, fornecedor de óculos de acetato premium"
+seoTitle: "KAO-015 Armações luxo acetato transparente | Fornecedor à medida"
+seoDescription: "Armações de acetato Mazzucchelli acabadas à mão com dobradiças de 5 segmentos. Medidas e logos metálicos via OEM/ODM; 300 pares/modelo."
+seoKeywords: "fabricante de armações ópticas de luxo de acetato transparente, armações OEM de acetato Mazzucchelli acabadas à mão, óculos ópticos com logotipo metálico personalizado, fornecedor de armações ópticas de acetato na China, armações de marca própria para casas de moda, armações ópticas com dobradiças articuladas no atacado, armações ópticas ODM com medidas personalizadas, armações ópticas sob medida para redes varejistas"
 ---
 
 ## Características

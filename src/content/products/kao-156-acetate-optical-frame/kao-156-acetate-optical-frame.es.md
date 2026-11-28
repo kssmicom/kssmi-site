@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Montura Óptica de Lujo KAO-156 | Fábrica de Gafas a Medida"
-seoDescription: "Eleve su cartera de marca propia con las monturas ópticas de lujo de acetato KAO-156. Acetato Mazzucchelli pulido a mano con MOQ de 300 y soporte completo OEM/ODM."
-seoKeywords: "fabricante de monturas ópticas de acetato, producción de gafas personalizadas, monturas de lujo para marca propia, fábrica de gafas en China, monturas de acetato Mazzucchelli, monturas ópticas OEM ODM, proveedor de gafas de diseño, fabricante de gafas a medida"
+seoTitle: "KAO-156 Monturas ópticas de lujo de acetato floral | Fábrica OEM"
+seoDescription: "Marcas boutique: monturas de acetato Mazzucchelli floral azul y magenta con bisagras de 3 segmentos y logos a pedido. Pedidos OEM/ODM desde 300 pares/modelo."
+seoKeywords: "fabricante de monturas ópticas de lujo de acetato floral, monturas OEM de acetato azul y magenta, fábrica de monturas ópticas personalizadas en China, gafas de marca privada para marcas boutique, acetato Mazzucchelli pulido a mano al por mayor, monturas ópticas florales con logotipo personalizado, gafas ópticas ODM con bisagras articuladas, proveedor de monturas ópticas florales aptas para lentes graduadas"
 ---
 
 ## Características

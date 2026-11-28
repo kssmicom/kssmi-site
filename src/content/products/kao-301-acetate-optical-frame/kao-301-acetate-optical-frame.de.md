@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-301 Luxus-Acetat-Brillenfassung | Individueller OEM-Hersteller"
-seoDescription: "Erweitern Sie Ihr Private-Label-Portfolio mit anpassbaren KAO-301 Acetat-Brillenfassungen. Premium-Mazzucchelli-Konstruktion, 4+3-Fass-Scharniere und 300er MOQ. OEM."
-seoKeywords: "Acetat-Brillenfassungen Hersteller, individuelle OEM-Brillenfassungen, luxuriöse Private-Label-Brillen, Mazzucchelli-Acetat-Rahmen Fabrik, chinesischer Brillenproduktionspartner, maßgeschneiderte Brillenfassungen Lieferant, Großhandel Luxus-Acetat-Brillen, anpassbare Brillenfassungen China"
+seoTitle: "KAO-301 Acetat-Brillenfassungen in Rauchviolett | OEM-Fabrik"
+seoDescription: "Mazzucchelli-Acetatfassungen in Rauchviolett mit genieteten 7-teiligen Scharnieren. OEM/ODM-Wunschmaße und eigene Laserlogos; 100 Paar/Farbe, 300 Paar/Modell."
+seoKeywords: "Hersteller rauchvioletter Acetat-Brillenfassungen, OEM-Brillen aus Mazzucchelli-Acetat, Brillenfassungen mit individuellem Laserlogo, Acetat-Brillenfassungsfabrik in China, Eigenmarken-Fassungen für Boutiquemarken, Großhandel für Unisex-Acetat-Brillen, Brillenfassungsproduktion mit genieteten Scharnieren, ODM-Brillenfassungen in individuellen Größen"
 ---
 
 ## Eigenschaften

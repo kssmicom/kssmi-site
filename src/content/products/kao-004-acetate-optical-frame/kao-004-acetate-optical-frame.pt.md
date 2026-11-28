@@ -36,9 +36,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Armações Ópticas de Acetato Modernas KAO-004 | Fabricante Sob Medida"
-seoDescription: "Parceria com um fabricante líder sob medida para armações ópticas de acetato KAO-004. Construção Mazzucchelli de alta qualidade com MOQ de 300 para personalização OEM/ODM."
-seoKeywords: "fabricante de armações ópticas de acetato, armações ópticas OEM personalizadas, óculos de marca própria de luxo, armações de acetato no atacado, fábrica de óculos chinesa, produção óptica sob medida, fornecedor de óculos premium, produção de óculos na China"
+seoTitle: "KAO-004 Armações unissex de acetato tartaruga | Fábrica B2B"
+seoDescription: "Armações ópticas de acetato Mazzucchelli com dobradiças de 7 segmentos e lentes demo para trocar por lentes de grau. Logos e cores OEM/ODM; 300 pares/modelo."
+seoKeywords: "fabricante de armações unissex de acetato tartaruga, armações ópticas OEM de acetato prontas para lentes de grau, armações ópticas personalizadas na China, óculos de marca própria para lojas conceito, armações ópticas com dobradiças no atacado, armações ópticas com logotipo a laser personalizado, produção de armações de acetato Mazzucchelli, armações ópticas ODM com cores personalizadas"
 ---
 
 ## Características

@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-157 Gọng Kính Axetat Gradient | Xưởng Sản Xuất Tùy Chỉnh"
-seoDescription: "Nâng tầm danh mục thương hiệu riêng của bạn với gọng kính Axetat Gradient KAO-157. Tùy chỉnh OEM/ODM toàn diện với MOQ 300 cho các nhà thiết kế boutique cao cấp."
-seoKeywords: "nhà sản xuất gọng kính axetat, kính mắt quang học OEM tùy chỉnh, gọng kính thương hiệu riêng xa xỉ, xưởng kính mắt axetat Trung Quốc, sản xuất gọng kính theo yêu cầu, nhà cung cấp thương hiệu kính mắt cao cấp, gọng kính axetat có thể tùy chỉnh, xưởng gọng kính Trung Quốc"
+seoTitle: "KAO-157 Gọng kính axetat xanh chuyển sắc | Nhà máy theo yêu cầu"
+seoDescription: "Gọng kính quang học axetat Mazzucchelli xanh dương và tím chuyển sắc có bản lề 3 chấu cùng kích thước 50-19-145 mm. Tùy chỉnh kích thước và logo kim loại OEM/ODM; 300 cặp/mẫu."
+seoKeywords: "nhà sản xuất gọng kính quang học axetat chuyển sắc, gọng kính quang học OEM xanh dương và tím, kính axetat Mazzucchelli tùy chỉnh tại Trung Quốc, gọng kính nhãn hiệu riêng cho nhà thiết kế thời trang, bán buôn gọng kính quang học tím trong suốt, kính axetat với logo kim loại tùy chỉnh, gọng kính quang học OEM bản lề nhiều chấu, nhà cung cấp gọng kính quang học axetat cho cửa hàng boutique"
 ---
 
 ## Đặc điểm

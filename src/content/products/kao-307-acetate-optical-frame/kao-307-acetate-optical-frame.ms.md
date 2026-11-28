@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Bingkai Optik Asetat Mewah Klasik KAO-307 | Kilang Tersuai"
-seoDescription: "Rakan kongsi dengan pengeluar terkemuka China untuk bingkai optik asetat mewah KAO-307. Menampilkan bahan Mazzucchelli dan engsel 4+3 dengan sokongan MOQ 300."
-seoKeywords: "pengeluar bingkai optik asetat, kacamata OEM tersuai, bingkai label peribadi mewah, kilang kacamata China, bingkai asetat boleh suai, pembekal kacamata fesyen butik, pengeluaran optik tempahan"
+seoTitle: "KAO-307 Bingkai Optik Asetat Jernih | Kilang B2B"
+seoDescription: "Lancarkan bingkai optik asetat Mazzucchelli jernih dengan tangkai digilap tangan dan engsel rivet 7 ruas. Logo dan warna tersuai OEM/ODM; 300 pasang/model."
+seoKeywords: "pengeluar bingkai optik asetat jernih, tangkai asetat OEM digilap tangan, bingkai asetat Mazzucchelli tersuai di China, bingkai optik label peribadi untuk butik, borong cermin mata asetat corak tortoiseshell, bingkai optik dengan logo timbul tersuai, bingkai optik ODM warna tersuai, pembuatan cermin mata pereka"
 ---
 
 ## Ciri-ciri Utama

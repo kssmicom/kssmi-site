@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-307 Frame Optik Asetat Mewah Klasik | Pabrik Kustom"
-seoDescription: "Partneran karo produsen China sing utama kanggo frame optik asetat mewah KAO-307. Nganggo bahan Mazzucchelli lan engsel 4+3 kanthi dhukungan MOQ 300."
-seoKeywords: "produsen frame optik asetat, kacamata OEM kustom, frame label pribadi mewah, pabrik kacamata China, frame asetat sing bisa dikustomisasi, supplier kacamata fashion butik, produksi optik pesenan khusus"
+seoTitle: "KAO-307 Frame Optik Asetat Bening | Pabrik B2B"
+seoDescription: "Luncurake frame optik asetat Mazzucchelli bening nganggo gagang dipoles tangan lan engsel keling 7 ruas. Logo lan werna pesenan OEM/ODM; 300 pasang/model."
+seoKeywords: "produsen frame optik asetat bening, gagang asetat OEM dipoles tangan, frame asetat Mazzucchelli pesenan ing China, frame optik label pribadi kanggo butik, grosir kacamata asetat corak bulus, frame optik nganggo logo timbul pesenan, frame optik ODM kanthi werna pesenan, produksi kacamata desainer"
 ---
 
 ## Fitur

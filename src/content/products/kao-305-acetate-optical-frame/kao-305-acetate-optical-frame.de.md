@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-305 Klassische Luxus-Acetat-Brillenfassungen | Custom Factory"
-seoDescription: "Werten Sie Ihre Brillenmarke mit den anpassbaren KAO-305 Acetat-Brillenfassungen auf. Mit Premium-Mazzucchelli-Acetat und 4+3 Barrel-Scharnieren. 300 MOQ OEM/ODM."
-seoKeywords: "Hersteller von Acetat-Brillenfassungen, kundenspezifische OEM-Brillenfabrik, Luxus-Eigenmarken-Brillenfassungen, chinesischer Acetat-Brillenlieferant, anpassbare Brillenfassungen, maßgeschneiderte Acetat-Rahmenproduktion, Großhandel mit Luxus-Brillenfassungen, Partner für die Brillenproduktion in China"
+seoTitle: "KAO-305 Olivfarbene Acetat-Brillenfassungen | Großhändler"
+seoDescription: "Für Boutiquemarken: olivfarbene Mazzucchelli-Acetatfassungen mit 7-teiligen Scharnieren. OEM/ODM-Wunschmaße und individuell gedruckte Logos ab 300 Paar/Modell."
+seoKeywords: "Hersteller olivfarbener Acetat-Brillenfassungen, OEM-Brillenfassungen in Havana, Brillen mit individuell gedrucktem Logo, Mazzucchelli-Acetat-Fassungszulieferer in China, Eigenmarken-Fassungen für Boutiquemarken, Großhandel für gestreifte Acetat-Brillenfassungen, ODM-Brillenfassungen in individuellen Größen, maßgefertigte Brillen für Optikketten"
 ---
 
 ## Eigenschaften

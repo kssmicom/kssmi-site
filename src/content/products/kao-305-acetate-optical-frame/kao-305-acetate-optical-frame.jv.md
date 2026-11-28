@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Frame Optik KAO-305 Mewah Klasik | Pabrik Kustom"
-seoDescription: "Tingkatake merek kacamata sampeyan nganggo frame optik asetat KAO-305 sing bisa dikustomisasi. Fitur asetat Mazzucchelli premium lan engsel 4+3 barrel. 300 MOQ OEM/ODM."
-seoKeywords: "produsen frame optik asetat, pabrik kacamata OEM kustom, frame optik label pribadi mewah, pemasok kacamata asetat Cina, frame optik bisa dikustomisasi, produksi frame asetat pesenan, grosir frame optik mewah, mitra produksi kacamata Cina"
+seoTitle: "KAO-305 Frame Optik Asetat Werna Zaitun | Pemasok Grosir"
+seoDescription: "Kanggo merek butik: frame optik asetat Mazzucchelli werna zaitun nganggo engsel 7 ruas. Ukuran lan logo cetak pesenan OEM/ODM wiwit 300 pasang/model."
+seoKeywords: "produsen frame optik asetat werna zaitun, frame optik OEM werna Havana, kacamata nganggo logo cetak pesenan, pemasok frame asetat Mazzucchelli China, frame label pribadi kanggo merek butik, grosir frame optik asetat corak garis, frame optik ODM kanthi ukuran pesenan, kacamata pesenan kanggo jaringan optik"
 ---
 
 ## Fitur

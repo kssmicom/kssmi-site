@@ -51,9 +51,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Occhiali di Lusso in Acetato KAO-306 | Produttore Su Misura"
-seoDescription: "Collabora con un produttore leader per montature ottiche in acetato KAO-306. Con materiale Mazzucchelli e cerniere 4+3 barrel, offriamo 300 MOQ per OEM personalizzato."
-seoKeywords: "produttore montature ottiche acetato, occhiali in acetato personalizzati, ottica private label di lusso, montature in acetato all'ingrosso, fabbrica occhiali cinese, montature ottiche su misura, fornitore occhiali premium, produzione montature acetato Cina"
+seoTitle: "KAO-306 Montature ottiche unisex in acetato grigio | OEM/ODM"
+seoDescription: "Montature ottiche in acetato Mazzucchelli 46-23-145 mm con cerniere a 7 snodi e naselli integrati. Misure e loghi laser su misura OEM/ODM; 300 paia/modello."
+seoKeywords: "produttore di montature ottiche unisex in acetato grigio, montature ottiche OEM in acetato Mazzucchelli, fabbrica di montature ottiche personalizzate in Cina, montature private label per stilisti, ingrosso occhiali in acetato oliva, montature ottiche con logo laser personalizzato, dimensionamento ODM di montature in acetato, fornitore di occhiali con cerniere rivettate"
 ---
 
 ## Caratteristiche Tecniche

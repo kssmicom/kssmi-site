@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Monture Optique de Luxe KAO-156 | Usine de Lunettes sur Mesure"
-seoDescription: "Améliorez votre portefeuille de marque propre avec les montures optiques de luxe en acétate KAO-156. Acétate Mazzucchelli poli à la main avec un MOQ de 300 et un support OEM/ODM complet."
-seoKeywords: "fabricant de montures optiques en acétate, production de lunettes personnalisées, montures de luxe pour marque de distributeur, usine de lunettes en Chine, montures en acétate Mazzucchelli, montures optiques OEM ODM, fournisseur de lunettes de créateur, fabricant de lunettes sur mesure"
+seoTitle: "KAO-156 Montures optiques de luxe en acétate floral | Usine OEM"
+seoDescription: "Pour marques boutique: montures acétate Mazzucchelli floral bleu et magenta, charnières à 3 charnons et logos sur mesure. Lots OEM/ODM dès 300 paires/modèle."
+seoKeywords: "fabricant de montures optiques de luxe en acétate floral, montures OEM en acétate bleu et magenta, usine de montures optiques sur mesure en Chine, lunettes en marque propre pour marques boutique, acétate Mazzucchelli poli à la main en gros, montures optiques florales avec logo personnalisé, lunettes optiques ODM avec charnières articulées, fournisseur de montures optiques florales prêtes pour verres correcteurs"
 ---
 
 ## Caractéristiques

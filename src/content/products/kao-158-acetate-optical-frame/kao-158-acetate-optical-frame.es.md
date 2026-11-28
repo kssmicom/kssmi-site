@@ -43,9 +43,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Montura Óptica de Acetato Unisex Audaz KAO-158 | Proveedor Mayorista"
-seoDescription: "Asóciese con un fabricante líder para monturas ópticas de acetato unisex KAO-158. Acetato Mazzucchelli de alta calidad, MOQ de 300 y soporte OEM/ODM completo."
-seoKeywords: "fabricante monturas ópticas acetato, fábrica gafas unisex personalizadas, monturas acetato Mazzucchelli premium, venta al por mayor gafas China, proveedor gafas marca propia, gafas acetato personalizables, producción monturas ópticas a medida, fabricante gafas lujo China"
+seoTitle: "KAO-158 Monturas ópticas unisex de acetato | Fábrica mayorista"
+seoDescription: "Monturas unisex de acetato Mazzucchelli negro, rojo o verde con bisagras remachadas de 5 segmentos. Colores y logos en relieve OEM/ODM; desde 300 pares/modelo."
+seoKeywords: "fabricante de monturas ópticas unisex de acetato, monturas OEM de acetato Mazzucchelli negro, gafas ópticas con colores personalizados en China, monturas ópticas de marca privada para boutiques, monturas de acetato rojas y verdes al por mayor, monturas ópticas con logotipo en relieve personalizado, gafas de acetato con bisagras articuladas, proveedor de monturas para cadenas de ópticas de lujo"
 ---
 
 ## Características

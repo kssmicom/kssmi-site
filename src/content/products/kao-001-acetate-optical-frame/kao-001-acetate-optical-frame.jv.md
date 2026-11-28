@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-001 Frame Optik Asetat Mewah | Produsen Kustom"
-seoDescription: "Mitra karo pabrik produksi utama kanggo frame optik asetat mewah KAO-001. Nganggo asetat Mazzucchelli lan engsel 4+3 barrel. 300 MOQ OEM/ODM lengkap."
-seoKeywords: "produsen frame optik asetat, kacamata asetat kustom, frame label pribadi mewah, pabrik kacamata China, frame asetat Mazzucchelli, grosir frame optik, produksi kacamata kustom, supplier kacamata merek premium"
+seoTitle: "KAO-001 Frame Optik Asetat Desain Kendel | Pabrik OEM/ODM"
+seoDescription: "Gawe merek dhewe nganggo frame optik asetat Mazzucchelli, engsel 7 ruas lan logo pesenan. OEM/ODM saka gambar 2D nganti sampel; 300 pasang/model."
+seoKeywords: "produsen frame optik asetat kanthi desain kendel, frame optik asetat OEM pesenan, grosir kacamata asetat Mazzucchelli, pabrik kacamata asetat ing China, frame optik label pribadi kanggo butik, produksi frame optik nganggo logo pesenan, kacamata asetat nganggo engsel akeh ruas, gawe sampel frame asetat ODM"
 ---
 
 ## Fitur Teknis

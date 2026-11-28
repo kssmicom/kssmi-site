@@ -51,9 +51,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Gafas de Lujo de Acetato KAO-306 | Fabricante a Medida"
-seoDescription: "Asóciese con un fabricante líder de monturas ópticas de acetato KAO-306. Con material Mazzucchelli y bisagras 4+3 barrel, ofrecemos un MOQ de 300 para OEM personalizado."
-seoKeywords: "fabricante monturas ópticas acetato, gafas de acetato personalizadas, óptica de marca propia de lujo, monturas de acetato al por mayor, fábrica de gafas china, monturas ópticas a medida, proveedor de gafas premium, producción de monturas de acetato en China"
+seoTitle: "KAO-306 Monturas ópticas unisex de acetato gris | OEM/ODM"
+seoDescription: "Monturas de acetato Mazzucchelli 46-23-145 mm con bisagras de 7 segmentos y plaquetas integradas. Tallas y logo láser a medida OEM/ODM; 300 pares/modelo."
+seoKeywords: "fabricante de monturas ópticas unisex de acetato gris, monturas ópticas OEM de acetato Mazzucchelli, fábrica de monturas ópticas personalizadas en China, monturas de marca privada para diseñadores de moda, gafas de acetato oliva al por mayor, monturas ópticas con logotipo láser personalizado, ajuste de medidas ODM para monturas de acetato, proveedor de gafas con bisagras remachadas"
 ---
 
 ## Características Técnicas

@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Montature Ottiche in Acetato di Lusso KAO-015 | Produttore su Misura"
-seoDescription: "Migliora la tua collezione di occhiali con le montature ottiche in acetato KAO-015 personalizzabili. Materiale Mazzucchelli premium, cerniere 3+2 e MOQ 300 per OEM/ODM."
-seoKeywords: "produttore montature ottiche in acetato, occhiali OEM personalizzati Cina, montature lusso private label, produzione occhiali in acetato su misura, vendita all'ingrosso montature ottiche di design, fabbrica occhiali cinese, montature ottiche personalizzabili, fornitore occhiali in acetato premium"
+seoTitle: "KAO-015 Montature lusso acetato trasparente | Fornitore su misura"
+seoDescription: "Montature in acetato Mazzucchelli rifinite a mano con cerniere a 5 snodi. Misure e loghi metallici su misura OEM/ODM; 300 paia/modello."
+seoKeywords: "produttore di montature ottiche di lusso in acetato trasparente, montature OEM in acetato Mazzucchelli rifinite a mano, occhiali ottici con logo metallico personalizzato, fornitore di montature ottiche in acetato in Cina, montature private label per case di moda, ingrosso montature ottiche con cerniere articolate, montature ottiche ODM con misure personalizzate, montature ottiche su misura per catene di negozi"
 ---
 
 ## Caratteristiche

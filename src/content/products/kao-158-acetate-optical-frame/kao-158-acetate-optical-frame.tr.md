@@ -43,9 +43,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-158 Cesur Unisex Asetat Optik Çerçeve | Toptan Tedarikçi"
-seoDescription: "Cesur KAO-158 unisex asetat optik çerçeveler için lider bir üretici ile ortaklık kurun. Yüksek kaliteli Mazzucchelli asetat, 300 MOQ ve tam OEM/ODM desteği."
-seoKeywords: "asetat optik çerçeve üreticisi, özel unisex gözlük fabrikası, premium Mazzucchelli asetat çerçeveler, toptan gözlük Çin, özel marka gözlük tedarikçisi, özelleştirilebilir asetat gözlükler, sipariş üzerine optik çerçeve üretimi, lüks gözlük üreticisi Çin"
+seoTitle: "KAO-158 Unisex Asetat Optik Çerçeveler | Toptan Fabrika"
+seoDescription: "Siyah, kırmızı veya yeşil Mazzucchelli asetat unisex optik çerçeveleri 5 boğumlu perçinli menteşelerle sunun. OEM/ODM renkler ve kabartma logolar; 300 çift/model."
+seoKeywords: "unisex asetat optik çerçeve üreticisi, siyah Mazzucchelli asetat OEM çerçeveler, Çin özel renkli optik gözlükler, butikler için özel markalı optik çerçeveler, kırmızı ve yeşil asetat çerçeve toptan satışı, özel kabartma logolu optik çerçeveler, çok boğumlu menteşeli asetat gözlükler, lüks optik zincirleri için çerçeve tedarikçisi"
 ---
 
 ## Özellikler

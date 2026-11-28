@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Armações Ópticas KAO-305 Luxo Clássico | Fábrica Personalizada"
-seoDescription: "Eleve sua marca de óculos com as armações ópticas de acetato KAO-305 personalizáveis. Apresenta acetato Mazzucchelli premium e dobradiças de 4+3 barris. 300 MOQ OEM/ODM."
-seoKeywords: "fabricante de armações ópticas de acetato, fábrica de óculos OEM personalizada, armações ópticas de luxo marca própria, fornecedor chinês de óculos de acetato, armações ópticas personalizáveis, produção de armação de acetato sob medida, atacado de armações ópticas de luxo, parceiro de produção de óculos na China"
+seoTitle: "KAO-305 Armações ópticas de acetato oliva | Fornecedor atacadista"
+seoDescription: "Para marcas boutique: armações de acetato Mazzucchelli oliva com dobradiças de 7 segmentos. Medidas e logos impressos sob medida OEM/ODM de 300 pares/modelo."
+seoKeywords: "fabricante de armações ópticas de acetato oliva, armações ópticas OEM Havana, óculos com logotipo impresso personalizado, fornecedor de armações de acetato Mazzucchelli na China, armações de marca própria para marcas boutique, armações ópticas de acetato listrado no atacado, armações ópticas ODM com medidas personalizadas, óculos sob medida para redes de ópticas"
 ---
 
 ## Características

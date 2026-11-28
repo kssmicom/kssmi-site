@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Montures Optiques en Acétate de Luxe Classiques KAO-304 | Usine Custom"
-seoDescription: "Élevez votre marque avec les montures optiques en acétate premium KAO-304. Fabrication OEM/ODM experte avec acétate Mazzucchelli, charnières 4+3 barillets et un MOQ flexible de 300 pcs."
-seoKeywords: "fabricant montures optiques acétate, lunettes personnalisées OEM, montures luxe marque propre, vente en gros lunettes acétate, usine montures optiques Chine, montures optiques personnalisables, production lunettes premium, montures acétate sur mesure"
+seoTitle: "KAO-304 Montures optiques en acétate rayé | Fabricant sur mesure"
+seoDescription: "Montures acétate Mazzucchelli rayé, charnières à 7 charnons et taille 48-22-145 mm. Dimensions et logos métalliques sur mesure OEM/ODM ; 300 paires/modèle."
+seoKeywords: "fabricant de montures optiques en acétate rayé, lunettes optiques avec logo métallique personnalisé, montures OEM en acétate Mazzucchelli en Chine, montures optiques écaille en gros, montures en marque propre pour maisons de mode, lunettes en acétate aux dimensions sur mesure, fournisseur de montures optiques avec charnières rivetées, montures optiques ODM pour chaînes de magasins"
 ---
 
 ## Caractéristiques

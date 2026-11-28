@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-001 Luxus-Acetat-Brillenfassungen | Maßgeschneiderter Hersteller"
-seoDescription: "Partner einer führenden Produktionsstätte für KAO-001 Luxus-Acetat-Brillenfassungen. Mit Mazzucchelli-Acetat und 4+3 Barrel-Scharnieren. 300 MOQ vollständiges OEM/ODM."
-seoKeywords: "Hersteller von Acetat-Brillenfassungen, maßgeschneiderte Acetat-Brillen, Luxus-Eigenmarkenfassungen, Brillenfabrik China, Mazzucchelli-Acetat-Fassungen, Großhandel Brillenfassungen, maßgeschneiderte Brillenproduktion, Brillenzulieferer für Premiummarken"
+seoTitle: "KAO-001 Markante Acetat-Brillenfassungen | OEM/ODM-Fabrik"
+seoDescription: "Mazzucchelli-Acetatfassungen, 7-teilige Scharniere und individuellen Logos. OEM/ODM von der 2D-Zeichnung zum Muster; ab 300 Paar/Modell."
+seoKeywords: "Hersteller markanter Acetat-Brillenfassungen, individuelle OEM-Brillenfassungen aus Acetat, Großhandel für Brillen aus Mazzucchelli-Acetat, Acetat-Brillenfabrik in China, Eigenmarken-Brillenfassungen für Boutiquen, Brillenfassungsproduktion mit individuellem Logo, Acetat-Brillen mit mehrteiligen Scharnieren, ODM-Musterfertigung für Acetat-Fassungen"
 ---
 
 ## Technische Eigenschaften

@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Monturas Ópticas de Acetato de Lujo Clásico KAO-307 | Fábrica Personalizada"
-seoDescription: "Asóciese con un fabricante chino líder para las monturas ópticas de acetato de lujo KAO-307. Material Mazzucchelli y bisagras 4+3 con soporte de MOQ 300."
-seoKeywords: "fabricante de monturas ópticas de acetato, gafas OEM personalizadas, monturas de lujo de marca propia, fábrica de gafas en China, monturas de acetato personalizables, proveedor de gafas de moda boutique, producción óptica a medida"
+seoTitle: "KAO-307 Monturas ópticas de acetato transparente | Fábrica B2B"
+seoDescription: "Monturas de acetato Mazzucchelli transparente con varillas pulidas a mano y bisagras remachadas de 7 segmentos. Logo y color a medida OEM/ODM; 300 pares/modelo."
+seoKeywords: "fabricante de monturas ópticas de acetato transparente, varillas de acetato pulidas a mano OEM, monturas personalizadas de acetato Mazzucchelli en China, monturas ópticas de marca privada para boutiques, gafas de acetato carey al por mayor, monturas ópticas con logotipo en relieve personalizado, monturas ópticas ODM con colores personalizados, fabricación de gafas de diseño"
 ---
 
 ## Características

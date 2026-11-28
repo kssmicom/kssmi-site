@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-157 Bold Gradient Acetate Optical Frame | Custom Factory"
-seoDescription: "Elevate your private label portfolio with KAO-157 Bold Gradient Acetate Optical Frames. Full OEM/ODM customization with 300 MOQ for premium boutique designers."
-seoKeywords: "acetate optical frames manufacturer, custom OEM optical eyewear, luxury private label frames, Chinese acetate eyewear factory, bespoke optical frame production, premium eyewear brands supplier, customizable acetate frames, China optical frame factory"
+seoTitle: "KAO-157 Gradient Blue Acetate Optical Frames | Custom Factory"
+seoDescription: "Gradient blue and violet Mazzucchelli acetate optical frames pair 3-barrel hinges with a 50-19-145mm fit. OEM/ODM sizing and metal logos; 300 pairs/model."
+seoKeywords: "gradient acetate optical frames manufacturer, OEM blue and violet optical frames, Mazzucchelli acetate eyewear China, private label frames for fashion designers, wholesale clear violet optical frames, custom metal logo acetate eyewear, 3-barrel hinge optical frame OEM, boutique acetate optical frame supplier"
 ---
 
 ## Technical Features

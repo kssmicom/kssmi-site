@@ -36,9 +36,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-003 Montature Ottiche in Acetato di Lusso | Fornitore all'Ingrosso"
-seoDescription: "Collabora con un produttore leader per le montature ottiche in acetato di lusso KAO-003. Caratterizzate da cerniere a 4+3 barili e acetato Mazzucchelli. MOQ 300 e supporto OEM."
-seoKeywords: "produttore montature ottiche acetato, fabbrica occhiali OEM personalizzati, montature acetato Mazzucchelli lusso, occhiali ingrosso Cina, produzione occhiali su misura, fornitore marchi occhiali premium, occhiali acetato private label, fabbrica montature ottiche cinese"
+seoTitle: "KAO-003 Montature in acetato zebra/tartaruga | Fabbrica su misura"
+seoDescription: "Montature da vista in acetato Mazzucchelli zebra o tartarugato con cerniere a 7 snodi. Colori e loghi metallici su misura OEM/ODM; minimo 300 paia/modello."
+seoKeywords: "produttore di montature ottiche in acetato zebrato, montature ottiche OEM personalizzate tartarugate, occhiali in acetato Mazzucchelli a motivi in Cina, montature ottiche di design private label, ingrosso occhiali in acetato per boutique, occhiali da vista con logo metallico personalizzato, montature ottiche con cerniere rivettate, fabbrica cinese di montature ottiche in acetato"
 ---
 
 ## Caratteristiche

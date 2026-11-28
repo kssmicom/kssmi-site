@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Montature da Vista KAO-305 Lusso Classico | Fabbrica Personalizzata"
-seoDescription: "Eleva il tuo marchio di occhiali con le montature da vista in acetato KAO-305 personalizzabili. Con acetato premium Mazzucchelli e cerniere a 4+3 barili. MOQ 300 OEM/ODM."
-seoKeywords: "produttore montature da vista acetato, fabbrica occhiali OEM personalizzati, montature da vista lusso private label, fornitore cinese occhiali acetato, montature da vista personalizzabili, produzione montature acetato su misura, montature da vista lusso ingrosso, partner produzione occhiali Cina"
+seoTitle: "KAO-305 Montature in acetato oliva | Fornitore all'ingrosso"
+seoDescription: "Per marchi boutique: montature ottiche in acetato Mazzucchelli oliva con cerniere a 7 snodi. Misure e loghi stampati su misura OEM/ODM da 300 paia/modello."
+seoKeywords: "produttore di montature ottiche in acetato oliva, montature ottiche OEM Havana, occhiali con logo stampato personalizzato, fornitore di montature in acetato Mazzucchelli in Cina, montature private label per marchi boutique, ingrosso montature ottiche in acetato a righe, montature ottiche ODM con misure personalizzate, occhiali su misura per catene ottiche"
 ---
 
 ## Caratteristiche

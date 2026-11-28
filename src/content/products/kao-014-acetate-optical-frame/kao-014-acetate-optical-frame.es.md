@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Monturas Ópticas de Acetato Audaces KAO-014 | Proveedor Custom"
-seoDescription: "Asóciese con una fábrica líder para monturas ópticas de acetato audaces KAO-014. Construcción Mazzucchelli de alta calidad con personalización OEM completa y MOQ de 300 unidades."
-seoKeywords: "fabricante monturas ópticas acetato, fábrica gafas OEM custom, monturas acetato premium Mazzucchelli, monturas ópticas lujo marca propia, socio producción gafas China, diseño monturas ópticas a medida, proveedor gafas acetato al por mayor, gafas personalizables para diseñadores"
+seoTitle: "KAO-014 Monturas ópticas clásicas de acetato | Fábrica OEM"
+seoDescription: "Monturas de acetato Mazzucchelli 53-18-140 mm con bisagras remachadas de 5 segmentos y plaquetas integradas. Medidas y logos grabados OEM/ODM; 300 pares/modelo."
+seoKeywords: "fabricante de monturas ópticas clásicas de acetato, monturas ópticas OEM de acetato con medidas personalizadas, producción de monturas ópticas en China, monturas ópticas de marca privada para diseñadores, monturas de acetato transparentes y rojas al por mayor, gafas con logotipo grabado personalizado, desarrollo de monturas ópticas con bisagras, proveedor de gafas de acetato Mazzucchelli"
 ---
 
 ## Características

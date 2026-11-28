@@ -36,9 +36,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Frame Optik Asetat Trendy KAO-004 | Produsen Kustom"
-seoDescription: "Mitra karo produsen kustom terkemuka kanggo frame optik asetat KAO-004. Konstruksi Mazzucchelli kualitas dhuwur kanthi MOQ 300 kanggo kustomisasi OEM/ODM."
-seoKeywords: "produsen frame optik asetat, frame optik OEM kustom, kacamata label pribadi mewah, grosir frame asetat, pabrik kacamata Cina, produksi optik kustom, supplier kacamata premium, produksi kacamata Cina"
+seoTitle: "KAO-004 Frame Optik Asetat Bulus Unisex | Pabrik B2B"
+seoDescription: "Kanggo butik optik: frame asetat Mazzucchelli nganggo engsel 7 ruas lan lensa demo sing diganti lensa resep. Logo lan werna OEM/ODM wiwit 300 pasang/model."
+seoKeywords: "produsen frame asetat corak bulus unisex, frame optik asetat OEM siap dipasangi lensa resep, frame optik pesenan ing China, kacamata label pribadi kanggo toko konsep, grosir frame optik nganggo engsel akeh ruas, frame optik nganggo logo laser pesenan, produksi frame asetat Mazzucchelli, frame optik ODM kanthi werna pesenan"
 ---
 
 ## Fitur

@@ -36,9 +36,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-003 Frame Optik Asetat Mewah | Supplier Grosir Kustom"
-seoDescription: "Mitra karo produsen terkemuka kanggo frame optik asetat mewah KAO-003. Fitur engsel 4+3 barrel lan asetat Mazzucchelli. MOQ 300 & dhukungan OEM."
-seoKeywords: "produsen frame optik asetat, pabrik kacamata OEM kustom, frame asetat Mazzucchelli mewah, grosir frame optik China, produksi kacamata pesenan, supplier merek kacamata premium, kacamata asetat label pribadi, pabrik frame optik China"
+seoTitle: "KAO-003 Frame Asetat Zebra lan Bulus | Produsen Pesenan"
+seoDescription: "Pesen frame optik asetat Mazzucchelli corak zebra utawa bulus nganggo engsel 7 ruas. Werna lan logo logam pesenan OEM/ODM wiwit 300 pasang/model."
+seoKeywords: "produsen frame optik asetat corak zebra, frame optik OEM corak bulus pesenan, kacamata asetat Mazzucchelli corak ing China, frame optik desainer label pribadi, grosir kacamata asetat kanggo butik, kacamata optik nganggo logo logam pesenan, frame optik nganggo engsel keling akeh ruas, pabrik frame optik asetat China"
 ---
 
 ## Fitur

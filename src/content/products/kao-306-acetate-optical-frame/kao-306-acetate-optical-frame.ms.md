@@ -51,9 +51,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Bingkai Optik Asetat Mewah KAO-306 | Pengilang Khas"
-seoDescription: "Rakan kongsi dengan pengilang terkemuka untuk bingkai optik asetat KAO-306. Memaparkan bahan Mazzucchelli dan engsel 4+3 barrel, kami menawarkan 300 MOQ untuk OEM tersuai."
-seoKeywords: "pengilang bingkai optik asetat, kacamata asetat tersuai, optik label peribadi mewah, bingkai asetat borong, kilang kacamata China, bingkai optik khas, pembekal kacamata premium, pengeluaran bingkai asetat China"
+seoTitle: "KAO-306 Bingkai Optik Asetat Kelabu Uniseks | OEM/ODM"
+seoDescription: "Bingkai optik asetat Mazzucchelli 46-23-145 mm menggabungkan engsel 7 ruas dengan alas hidung bersepadu. Saiz dan logo laser tersuai OEM/ODM; 300 pasang/model."
+seoKeywords: "pengeluar bingkai optik asetat kelabu uniseks, bingkai optik asetat Mazzucchelli OEM, kilang bingkai optik tersuai di China, bingkai label peribadi untuk pereka fesyen, borong cermin mata asetat warna zaitun, bingkai optik dengan logo laser tersuai, penyesuaian saiz bingkai asetat ODM, pembekal cermin mata dengan engsel rivet"
 ---
 
 ## Ciri-ciri Utama

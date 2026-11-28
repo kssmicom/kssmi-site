@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-156 Luxus-Acetat-Brillenfassung | Fabrik für individuelle Brillen"
-seoDescription: "Erweitern Sie Ihr Private-Label-Portfolio mit den KAO-156 Luxus-Acetat-Brillenfassungen. Handpoliertes Mazzucchelli-Acetat mit 300 MOQ und vollem OEM/ODM-Support."
-seoKeywords: "Acetat-Brillenfassungen Hersteller, individuelle Brillenproduktion, Luxus-Eigenmarkenfassungen, Brillenfabrik China, Mazzucchelli-Acetatfassungen, OEM ODM Brillenfassungen, Designer-Brillenlieferant, maßgeschneiderter Brillenhersteller"
+seoTitle: "KAO-156 Florale Luxus-Acetat-Brillenfassungen | OEM-Fabrik"
+seoDescription: "Für Boutiquemarken: florale Mazzucchelli-Acetatfassungen in Blau & Magenta mit 3-teiligen Scharnieren und Logos. OEM/ODM-Bestellungen ab 300 Paar/Modell."
+seoKeywords: "Hersteller floraler Luxus-Acetat-Brillenfassungen, blaue und magentafarbene OEM-Acetat-Fassungen, Fabrik für individuelle Brillenfassungen in China, Eigenmarken-Brillen für Boutiquemarken, Großhandel für handpoliertes Mazzucchelli-Acetat, florale Brillenfassungen mit individuellem Logo, ODM-Korrektionsfassungen mit mehrteiligen Scharnieren, Zulieferer floraler Brillenfassungen zur Korrektionsverglasung"
 ---
 
 ## Eigenschaften

@@ -39,9 +39,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Montures Optiques en Acétate de Luxe KAO-155 | Fabricant sur Mesure Chine"
-seoDescription: "Améliorez votre ligne de lunettes avec des montures optiques en acétate Mazzucchelli de première qualité. Nous offrons une personnalisation OEM/ODM complète et un MOQ de 300 pour les créateurs de mode de luxe."
-seoKeywords: "fabricant de montures optiques en acétate, lunettes en acétate personnalisées OEM, montures en acétate Mazzucchelli en gros, lunettes de marque de distributeur de luxe, usine chinoise de lunettes en acétate, production de montures optiques sur mesure, fournisseur de marques de lunettes premium, montures optiques personnalisables Chine"
+seoTitle: "KAO-155 Montures affirmées en acétate floral | OEM/ODM"
+seoDescription: "Montures acétate Mazzucchelli floral jaune ou bleu canard, charnières à 3 charnons et taille 51-18-140 mm. Tailles et logos laser OEM/ODM; 300 paires/modèle."
+seoKeywords: "fabricant de montures optiques en acétate floral au style affirmé, montures optiques OEM à motif floral jaune, montures sur mesure en acétate Mazzucchelli bleu canard en Chine, montures optiques en marque propre pour créateurs, lunettes en acétate floral en gros, production de montures optiques avec logo laser personnalisé, montures en acétate avec charnières articulées, fournisseur de lunettes en acétate pour chaînes optiques"
 ---
 
 ## Caractéristiques

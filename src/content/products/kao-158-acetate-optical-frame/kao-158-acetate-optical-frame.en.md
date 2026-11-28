@@ -43,9 +43,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-158 Bold Unisex Acetate Optical Frame | Wholesale Supplier"
-seoDescription: "Partner with a premier manufacturer for bold KAO-158 unisex acetate optical frames. High-quality Mazzucchelli acetate, 300 MOQ, and full OEM/ODM support."
-seoKeywords: "acetate optical frames manufacturer, custom unisex eyewear factory, premium Mazzucchelli acetate frames, wholesale optical frames China, private label eyewear supplier, customizable acetate glasses, bespoke optical frames production, luxury eyewear manufacturer China"
+seoTitle: "KAO-158 Unisex Acetate Optical Frames | Wholesale Factory"
+seoDescription: "Launch unisex Mazzucchelli acetate optical frames in black, red or green with 5-barrel rivet hinges. OEM/ODM colors and embossed logos; 300 pairs/model."
+seoKeywords: "unisex acetate optical frames manufacturer, OEM black Mazzucchelli acetate frames, China custom color optical eyewear, private label optical frames for boutiques, wholesale red and green acetate frames, custom embossed logo optical frames, 5-barrel hinge acetate eyewear, luxury optical chain frame supplier"
 ---
 
 ## Technical Features

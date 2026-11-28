@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-014 Unique Bold Acetate Optical Frames | Custom Supplier"
-seoDescription: "Partner with a premier factory for KAO-014 bold acetate optical frames. High-quality Mazzucchelli construction with full OEM customization and a 300 piece MOQ."
-seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear factory, premium Mazzucchelli acetate frames, luxury private label optical frames, China eyewear production partner, bespoke optical frame design, wholesale acetate glasses supplier, customizable eyewear for designers"
+seoTitle: "KAO-014 Classic Acetate Optical Frames | OEM Factory"
+seoDescription: "53-18-140mm Mazzucchelli acetate optical frames feature 5-barrel rivet hinges and integrated nose pads. OEM/ODM sizing and engraved logos; 300 pairs/model."
+seoKeywords: "classic acetate optical frames manufacturer, custom size acetate optical frames OEM, China optical frame production, private label optical frames for designers, wholesale clear and red Mazzucchelli frames, custom engraved logo eyewear, 5-barrel hinge optical frame development, custom acetate eyewear supplier"
 ---
 
 ## Technical Features

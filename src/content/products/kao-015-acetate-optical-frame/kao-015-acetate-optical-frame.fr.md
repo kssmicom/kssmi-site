@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Montures Optiques en Acétate de Luxe KAO-015 | Fabricant sur Mesure"
-seoDescription: "Améliorez votre collection de lunettes avec les montures optiques en acétate personnalisables KAO-015. Matériau Mazzucchelli premium, charnières 3+2 et MOQ de 300 pour OEM/ODM."
-seoKeywords: "fabricant de montures optiques en acétate, lunettes OEM personnalisées Chine, montures de luxe de marque propre, production de lunettes en acétate sur mesure, vente en gros de montures optiques de créateur, usine de lunettes chinoise, montures optiques personnalisables, fournisseur de lunettes en acétate premium"
+seoTitle: "KAO-015 Montures luxe acétate transparent | Fabricant sur mesure"
+seoDescription: "Montures acétate Mazzucchelli finies main, charnières à 5 charnons. Tailles et logos métal sur mesure OEM/ODM; 300 paires/modèle."
+seoKeywords: "fabricant de montures optiques de luxe en acétate transparent, montures OEM en acétate Mazzucchelli finies à la main, lunettes optiques avec logo métallique personnalisé, fournisseur de montures optiques en acétate en Chine, montures en marque propre pour maisons de mode, montures optiques avec charnières articulées en gros, montures optiques ODM aux dimensions sur mesure, montures optiques sur mesure pour chaînes de magasins"
 ---
 
 ## Caractéristiques

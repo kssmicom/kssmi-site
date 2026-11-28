@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-304 Classic Luxury Acetate Optical Frames | Custom Factory"
-seoDescription: "Elevate your brand with KAO-304 premium acetate optical frames. Expert OEM/ODM manufacturing using Mazzucchelli acetate, 4+3 barrel hinges, and a flexible 300 MOQ."
-seoKeywords: "acetate optical frames manufacturer, custom eyewear OEM, luxury private label frames, wholesale acetate eyewear, China optical frame factory, customizable optical frames, premium eyewear production, bespoke acetate frames"
+seoTitle: "KAO-304 Striped Acetate Optical Frames | Custom Manufacturer"
+seoDescription: "Source striped Mazzucchelli acetate optical frames with 7-barrel hinges and a 48-22-145mm fit. OEM/ODM custom dimensions and metal logos; 300 pairs/model."
+seoKeywords: "striped acetate optical frames manufacturer, custom metal logo optical eyewear, OEM Mazzucchelli acetate frames China, wholesale tortoise optical frames, private label frames for fashion houses, custom dimension acetate eyewear, rivet hinge optical frame supplier, ODM optical frames for retail chains"
 ---
 
 ## Technical Features

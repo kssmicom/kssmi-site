@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-015 Bold Luxury Acetate Optical Frames | Bespoke Manufacturer"
-seoDescription: "Elevate your eyewear collection with customizable KAO-015 acetate optical frames. Premium Mazzucchelli material, 3+2 barrel hinges, and 300 MOQ for OEM/ODM."
-seoKeywords: "acetate optical frames manufacturer, custom OEM eyewear China, luxury private label frames, bespoke acetate eyewear production, wholesale designer optical frames, Chinese eyewear factory, customizable optical frames, premium acetate eyewear supplier"
+seoTitle: "KAO-015 Luxury Clear Acetate Optical Frames | Custom Supplier"
+seoDescription: "Hand-finished Mazzucchelli acetate optical frames use 5-barrel hinges and clear/yellow styling. Tailor sizing and metal logos via OEM/ODM; 300 pairs/model."
+seoKeywords: "luxury clear acetate optical frames manufacturer, OEM hand finished Mazzucchelli frames, custom metal logo optical eyewear, China acetate optical frame supplier, private label frames for fashion houses, wholesale 5-barrel hinge optical frames, ODM custom dimension optical frames, bespoke optical frames for retail chains"
 ---
 
 ## Technical Features

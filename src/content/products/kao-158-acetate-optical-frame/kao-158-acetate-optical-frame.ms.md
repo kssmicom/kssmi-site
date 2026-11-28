@@ -43,9 +43,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Bingkai Optik Asetat Unisex Berani KAO-158 | Pembekal Borong"
-seoDescription: "Rakan kongsi dengan pengeluar terkemuka untuk bingkai optik asetat unisex KAO-158 yang berani. Asetat Mazzucchelli berkualiti tinggi, 300 MOQ, dan sokongan OEM/ODM penuh."
-seoKeywords: "pengeluar bingkai optik asetat, kilang kacamata unisex tersuai, bingkai asetat Mazzucchelli premium, borong kacamata China, pembekal kacamata label peribadi, cermin mata asetat boleh suai, pengeluaran bingkai optik tempahan, pengeluar kacamata mewah China"
+seoTitle: "KAO-158 Bingkai Optik Asetat Uniseks | Kilang Borong"
+seoDescription: "Lancarkan bingkai optik asetat Mazzucchelli uniseks hitam, merah atau hijau dengan engsel rivet 5 ruas. Warna dan logo timbul OEM/ODM; 300 pasang/model."
+seoKeywords: "pengeluar bingkai optik asetat uniseks, bingkai asetat Mazzucchelli OEM hitam, cermin mata optik warna tersuai di China, bingkai optik label peribadi untuk butik, borong bingkai asetat merah dan hijau, bingkai optik dengan logo timbul tersuai, cermin mata asetat dengan engsel berbilang ruas, pembekal bingkai untuk rangkaian optik mewah"
 ---
 
 ## Ciri-ciri Utama

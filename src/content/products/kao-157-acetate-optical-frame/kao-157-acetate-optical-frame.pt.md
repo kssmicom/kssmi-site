@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-157 Armação Óptica de Acetato Azul Degradê | Fábrica Custom"
-seoDescription: "Eleve seu portfólio de marca própria com as armações ópticas de acetato KAO-157. Personalização OEM/ODM completa com MOQ de 300 para designers boutique premium."
-seoKeywords: "fabricante de armações ópticas de acetato, óculos ópticos OEM personalizados, armações de marca própria de luxo, fábrica de óculos de acetato na China, produção de armação óptica sob medida, fornecedor de marcas de óculos premium, armações de acetato personalizáveis, fábrica de armações ópticas da China"
+seoTitle: "KAO-157 Armações de acetato azul degradê | Fábrica sob medida"
+seoDescription: "Armações de acetato Mazzucchelli azul e violeta degradê: dobradiças de 3 segmentos e 50-19-145 mm. Medidas e logos metálicos OEM/ODM; desde 300 pares/modelo."
+seoKeywords: "fabricante de armações ópticas de acetato degradê, armações ópticas OEM azuis e violetas, óculos personalizados de acetato Mazzucchelli na China, armações de marca própria para estilistas, armações ópticas violeta transparente no atacado, óculos de acetato com logotipo metálico personalizado, armações ópticas OEM com dobradiças articuladas, fornecedor de armações ópticas de acetato para boutiques"
 ---
 
 ## Características

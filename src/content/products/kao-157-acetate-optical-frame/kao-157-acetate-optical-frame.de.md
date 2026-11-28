@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-157 Acetat-Brillenfassung mit blauem Farbverlauf | Custom Factory"
-seoDescription: "Erweitern Sie Ihr Eigenmarken-Portfolio mit den KAO-157 Brillenfassungen aus Acetat mit Farbverlauf. Volle OEM/ODM-Anpassung mit 300er MOQ für Premium-Boutique-Designer."
-seoKeywords: "Acetat-Brillenfassungen Hersteller, kundenspezifische OEM-Optikbrillen, Luxus-Eigenmarken-Fassungen, chinesische Acetat-Brillenfabrik, maßgeschneiderte Brillenfassungs-Produktion, Premium-Brillenmarken-Lieferant, anpassbare Acetat-Fassungen, China Brillenfassungs-Fabrik"
+seoTitle: "KAO-157 Acetat-Fassungen mit Blauverlauf | Sonderfertigung"
+seoDescription: "Mazzucchelli-Acetatfassungen mit Blau-Violett-Verlauf, 3-teiligen Scharnieren und Maß 50-19-145 mm. OEM/ODM-Wunschmaße und Metalllogos; ab je 300 Paar/Modell."
+seoKeywords: "Hersteller von Acetat-Brillenfassungen mit Farbverlauf, blaue und violette OEM-Brillenfassungen, individuelle Mazzucchelli-Acetat-Brillen aus China, Eigenmarken-Fassungen für Modedesigner, Großhandel für transparent-violette Brillenfassungen, Acetat-Brillen mit individuellem Metalllogo, OEM-Brillenfassungen mit mehrteiligen Scharnieren, Acetat-Brillenfassungszulieferer für Boutiquen"
 ---
 
 ## Eigenschaften

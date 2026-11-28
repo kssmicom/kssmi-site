@@ -51,9 +51,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Lunettes de Luxe en Acétate KAO-306 | Fabricant sur Mesure"
-seoDescription: "Associez-vous à un fabricant de premier plan pour les montures optiques en acétate KAO-306. Avec le matériau Mazzucchelli et des charnières 4+3 barrel, nous offrons un MOQ de 300 pour l'OEM personnalisé."
-seoKeywords: "fabricant montures optiques acétate, lunettes en acétate personnalisées, optique de marque propre de luxe, montures en acétate en gros, usine de lunettes chinoise, montures optiques sur mesure, fournisseur de lunettes premium, production de montures en acétate en Chine"
+seoTitle: "KAO-306 Montures optiques unisexes en acétate gris | OEM/ODM"
+seoDescription: "Montures acétate Mazzucchelli 46-23-145 mm, charnières à 7 charnons et plaquettes intégrées. Tailles et logos laser sur mesure OEM/ODM ; 300 paires/modèle."
+seoKeywords: "fabricant de montures optiques unisexes en acétate gris, montures optiques OEM en acétate Mazzucchelli, usine de montures optiques sur mesure en Chine, montures en marque propre pour stylistes, lunettes en acétate olive en gros, montures optiques avec logo laser personnalisé, dimensionnement ODM de montures en acétate, fournisseur de lunettes avec charnières rivetées"
 ---
 
 ## Caractéristiques Techniques

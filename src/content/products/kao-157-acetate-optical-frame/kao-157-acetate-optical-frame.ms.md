@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-157 Bingkai Optik Asetat Gradien | Kilang Tersuai"
-seoDescription: "Tingkatkan portfolio label peribadi anda dengan Bingkai Optik Asetat Gradien KAO-157. Penyesuaian OEM/ODM penuh dengan 300 MOQ untuk pereka butik premium."
-seoKeywords: "pengilang bingkai optik asetat, cermin mata optik OEM tersuai, bingkai label peribadi mewah, kilang cermin mata asetat China, pengeluaran bingkai optik tempahan, pembekal jenama cermin mata premium, bingkai asetat boleh suai, kilang bingkai optik China"
+seoTitle: "KAO-157 Bingkai Optik Asetat Biru Gradien | Kilang Tersuai"
+seoDescription: "Bingkai optik asetat Mazzucchelli biru dan ungu gradien menggabungkan engsel 3 ruas dengan saiz 50-19-145 mm. Saiz dan logo logam OEM/ODM; 300 pasang/model."
+seoKeywords: "pengeluar bingkai optik asetat gradien, bingkai optik OEM biru dan ungu, cermin mata asetat Mazzucchelli tersuai di China, bingkai label peribadi untuk pereka fesyen, borong bingkai optik ungu jernih, cermin mata asetat dengan logo logam tersuai, bingkai optik OEM dengan engsel berbilang ruas, pembekal bingkai optik asetat untuk butik"
 ---
 
 ## Ciri-ciri Utama

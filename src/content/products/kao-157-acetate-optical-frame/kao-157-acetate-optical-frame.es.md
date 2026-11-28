@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-157 Montura Óptica de Acetato Azul Degradado | Fábrica Custom"
-seoDescription: "Eleve su cartera de marca propia con las monturas ópticas de acetato KAO-157. Personalización OEM/ODM completa con MOQ de 300 para diseñadores boutique de primera calidad."
-seoKeywords: "fabricante de monturas ópticas de acetato, gafas ópticas OEM personalizadas, monturas de marca propia de lujo, fábrica de gafas de acetato en China, producción de monturas ópticas a medida, proveedor de marcas de gafas premium, monturas de acetato personalizables, fábrica de monturas ópticas de China"
+seoTitle: "KAO-157 Monturas de acetato azul degradado | Fábrica a medida"
+seoDescription: "Monturas de acetato Mazzucchelli azul y violeta degradados: bisagras de 3 segmentos y talla 50-19-145 mm. Medidas y logos metálicos OEM/ODM; 300 pares/modelo."
+seoKeywords: "fabricante de monturas ópticas de acetato degradado, monturas ópticas OEM azules y violetas, gafas personalizadas de acetato Mazzucchelli en China, monturas de marca privada para diseñadores de moda, monturas ópticas violeta transparente al por mayor, gafas de acetato con logotipo metálico personalizado, monturas ópticas OEM con bisagras articuladas, proveedor de monturas ópticas de acetato para boutiques"
 ---
 
 ## Características

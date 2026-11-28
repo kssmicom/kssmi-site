@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-156 Lüks Asetat Optik Çerçeve | Özel Gözlük Fabrikası"
-seoDescription: "KAO-156 lüks asetat optik çerçevelerle özel markalı portföyünüzü yükseltin. El cilalı Mazzucchelli asetat, 300 MOQ ve tam OEM/ODM desteği."
-seoKeywords: "asetat optik çerçeve üreticisi, özel gözlük üretimi, lüks özel marka çerçeveler, Çin gözlük fabrikası, Mazzucchelli asetat çerçeveler, OEM ODM optik çerçeveler, tasarım gözlük tedarikçisi, ısmarlama gözlük üreticisi"
+seoTitle: "KAO-156 Lüks Çiçek Desenli Asetat Optik Çerçeve | OEM Fabrikası"
+seoDescription: "Butik markalara çiçek desenli mavi ve macenta Mazzucchelli asetat çerçeveler sunun; 3 boğumlu menteşeler ve özel logolarla. OEM/ODM siparişleri 300 çift/modelden başlar."
+seoKeywords: "lüks çiçek desenli asetat optik çerçeve üreticisi, mavi ve macenta OEM asetat çerçeveler, Çin özel optik çerçeve fabrikası, butik markalar için özel markalı gözlükler, elle parlatılmış Mazzucchelli asetat toptan satışı, özel logolu çiçek desenli optik çerçeveler, çok boğumlu menteşeli ODM optik gözlükler, numaralı cam takılabilen çiçek desenli optik çerçeve tedarikçisi"
 ---
 
 ## Özellikler

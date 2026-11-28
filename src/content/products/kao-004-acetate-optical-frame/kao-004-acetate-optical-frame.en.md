@@ -36,9 +36,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-004 Trendy Acetate Optical Frames | Bespoke Manufacturer"
-seoDescription: "Partner with a premier bespoke manufacturer for KAO-004 acetate optical frames. High-grade Mazzucchelli construction with 300 MOQ for OEM/ODM customization."
-seoKeywords: "acetate optical frames manufacturer, custom OEM optical frames, luxury private label eyewear, wholesale acetate frames, Chinese eyewear factory, bespoke optical production, premium eyewear supplier, China eyewear production"
+seoTitle: "KAO-004 Tortoise Unisex Acetate Optical Frames | B2B Factory"
+seoDescription: "Built for optical boutiques, Mazzucchelli acetate frames combine 7-barrel hinges with RX-ready demo lenses. OEM/ODM logos and colors from 300 pairs/model."
+seoKeywords: "unisex tortoise acetate frames manufacturer, RX-ready OEM acetate optical frames, Mazzucchelli optical frames China, private label eyewear for concept stores, wholesale 7-barrel hinge optical frames, custom laser logo optical frames, custom acetate frame production, ODM colorway optical frames"
 ---
 
 ## Technical Features

@@ -51,9 +51,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Óculos de Luxo em Acetato KAO-306 | Fabricante Sob Medida"
-seoDescription: "Seja parceiro de um fabricante de ponta para armações ópticas de acetato KAO-306. Com material Mazzucchelli e dobradiças 4+3 barrel, oferecemos MOQ de 300 para OEM personalizado."
-seoKeywords: "fabricante armações ópticas acetato, óculos de acetato personalizados, óptica de marca própria de luxo, armações de acetato no atacado, fábrica de óculos chinesa, armações ópticas sob medida, fornecedor de óculos premium, produção de armações de acetato na China"
+seoTitle: "KAO-306 Armações ópticas unissex de acetato cinza | OEM/ODM"
+seoDescription: "Armações de acetato Mazzucchelli 46-23-145 mm: dobradiças de 7 segmentos e plaquetas integradas. Medidas e logos a laser sob medida OEM/ODM; 300 pares/modelo."
+seoKeywords: "fabricante de armações ópticas unissex de acetato cinza, armações ópticas OEM de acetato Mazzucchelli, fábrica de armações ópticas personalizadas na China, armações de marca própria para estilistas, óculos de acetato oliva no atacado, armações ópticas com logotipo a laser personalizado, ajuste de medidas ODM para armações de acetato, fornecedor de óculos com dobradiças rebitadas"
 ---
 
 ## Características

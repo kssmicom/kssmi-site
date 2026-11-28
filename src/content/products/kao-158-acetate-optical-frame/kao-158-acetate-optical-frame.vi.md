@@ -43,9 +43,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Gọng Kính Cận Axetat Unisex Táo Bạo KAO-158 | Nhà Bán Sỉ"
-seoDescription: "Hợp tác với nhà sản xuất hàng đầu cho gọng kính cận axetat unisex KAO-158 táo bạo. Axetat Mazzucchelli chất lượng cao, MOQ 300 và hỗ trợ OEM/ODM toàn diện."
-seoKeywords: "nhà sản xuất gọng kính cận axetat, xưởng kính mắt unisex tùy chỉnh, gọng axetat Mazzucchelli cao cấp, bán sỉ kính mắt Trung Quốc, nhà cung cấp kính mắt nhãn hiệu riêng, kính axetat có thể tùy chỉnh, sản xuất gọng kính theo đơn đặt hàng, nhà sản xuất kính mắt xa xỉ Trung Quốc"
+seoTitle: "KAO-158 Gọng kính quang học axetat unisex | Nhà máy bán buôn"
+seoDescription: "Ra mắt gọng kính quang học axetat Mazzucchelli unisex màu đen, đỏ hoặc xanh lá với bản lề đinh tán 5 chấu. Tùy chỉnh màu và logo dập nổi OEM/ODM; 300 cặp/mẫu."
+seoKeywords: "nhà sản xuất gọng kính quang học axetat unisex, gọng axetat Mazzucchelli OEM màu đen, kính quang học tùy chỉnh màu tại Trung Quốc, gọng kính quang học nhãn hiệu riêng cho cửa hàng boutique, bán buôn gọng axetat đỏ và xanh lá, gọng kính quang học với logo dập nổi tùy chỉnh, kính axetat bản lề nhiều chấu, nhà cung cấp gọng kính cho chuỗi cửa hàng kính cao cấp"
 ---
 
 ## Đặc điểm

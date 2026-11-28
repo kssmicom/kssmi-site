@@ -51,9 +51,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-306 Luxury Acetate Optical Frames | Bespoke Manufacturer"
-seoDescription: "Partner with a premier manufacturer for KAO-306 acetate optical frames. Featuring Mazzucchelli material and 4+3 barrel hinges, we offer 300 MOQ for custom OEM."
-seoKeywords: "acetate optical frames manufacturer, custom acetate eyewear, luxury private label optical, wholesale acetate frames, Chinese eyewear factory, bespoke optical frames, premium eyewear supplier, China acetate frames production"
+seoTitle: "KAO-306 Grey Unisex Acetate Optical Frames | OEM/ODM"
+seoDescription: "46-23-145mm Mazzucchelli acetate optical frames combine 7-barrel hinges with integrated nose pads. OEM/ODM custom sizing and laser logos; 300 pairs/model."
+seoKeywords: "grey unisex acetate optical frames manufacturer, OEM Mazzucchelli acetate optical frames, China custom optical frame factory, private label frames for fashion designers, wholesale olive acetate eyewear, custom laser logo optical frames, ODM acetate frame sizing, rivet hinge eyewear supplier"
 ---
 
 ## Technical Features

@@ -39,9 +39,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-155 Lüks Asetat Optik Çerçeveler | Özel Üretim Çin"
-seoDescription: "Gözlük hattınızı birinci sınıf Mazzucchelli asetat optik çerçevelerle yükseltin. Lüks moda tasarımcıları için tam OEM/ODM özelleştirmesi ve 300 MOQ sunuyoruz."
-seoKeywords: "asetat optik çerçeve üreticisi, özel asetat gözlük OEM, Mazzucchelli asetat çerçeveler toptan, lüks özel markalı optikler, Çin asetat gözlük fabrikası, ısmarlama optik çerçeve üretimi, premium gözlük markaları tedarikçisi, özelleştirilebilir optik çerçeveler Çin"
+seoTitle: "KAO-155 İddialı Çiçek Desenli Asetat Optik Çerçeveler | OEM/ODM"
+seoDescription: "Çiçek desenli sarı veya petrol yeşili Mazzucchelli asetat optik çerçeveler 3 boğumlu menteşelere ve 51-18-140 mm ölçülere sahiptir. OEM/ODM ölçüler ve lazer logolar; 300 çift/model."
+seoKeywords: "iddialı çiçek desenli asetat optik çerçeve üreticisi, sarı çiçek desenli OEM optik çerçeveler, Çin özel petrol yeşili Mazzucchelli asetat çerçeveler, tasarımcılar için özel markalı optik çerçeveler, çiçek desenli asetat gözlük toptan satışı, özel lazer logolu optik çerçeve üretimi, çok boğumlu menteşeli asetat çerçeveler, optik zincirleri için asetat gözlük tedarikçisi"
 ---
 
 ## Özellikler

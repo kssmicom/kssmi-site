@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Gọng Kính Cận Axetat Xa Xỉ KAO-002 | Xưởng Sản Xuất Kính Mắt Tùy Chỉnh"
-seoDescription: "Nâng tầm thương hiệu của bạn với gọng kính cận KAO-002 làm từ axetat Mazzucchelli cao cấp. Với bản lề 4+3 thùng và tùy chỉnh OEM/ODM toàn diện. Hỗ trợ MOQ 300 sản phẩm."
-seoKeywords: "gọng kính cận axetat, kính mắt quang học tùy chỉnh, nhà sản xuất kính mắt OEM, xưởng kính mắt Trung Quốc, thương hiệu kính mắt cao cấp, bán buôn gọng axetat, sản xuất kính mắt theo yêu cầu, gọng axetat tùy chỉnh"
+seoTitle: "KAO-002 Gọng kính axetat vân đồi mồi | Nhà cung cấp bán buôn"
+seoDescription: "Gọng kính quang học axetat Mazzucchelli có bản lề đinh tán 7 chấu và đệm mũi liền. Tùy chỉnh lõi đồng và logo laser qua OEM/ODM; 300 cặp/mẫu."
+seoKeywords: "nhà sản xuất gọng kính quang học axetat vân đồi mồi, gọng kính quang học OEM bản lề nhiều chấu, kính axetat Mazzucchelli tùy chỉnh tại Trung Quốc, bán buôn gọng kính quang học lắp được tròng theo đơn, gọng kính nhãn hiệu riêng cho nhà thời trang, gọng kính quang học với lõi dây đồng tùy chỉnh, nhà cung cấp kính axetat cho cửa hàng boutique, sản xuất gọng kính quang học axetat ODM"
 ---
 
 ## Đặc điểm

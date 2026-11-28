@@ -43,9 +43,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Monture Optique en Acétate Unisexe Audacieuse KAO-158 | Grossiste"
-seoDescription: "Partenaire d'un fabricant de premier plan pour des montures optiques en acétate unisexe KAO-158. Acétate Mazzucchelli de haute qualité, MOQ 300, et support OEM/ODM complet."
-seoKeywords: "fabricant montures optiques acétate, usine lunettes unisexe personnalisées, montures acétate Mazzucchelli premium, vente en gros lunettes Chine, fournisseur lunettes marque de distributeur, lunettes acétate personnalisables, production montures optiques sur mesure, fabricant lunettes luxe Chine"
+seoTitle: "KAO-158 Montures optiques unisexes en acétate | Usine de gros"
+seoDescription: "Montures unisexes en acétate Mazzucchelli noir, rouge ou vert, charnières rivetées à 5 charnons. Coloris et logos en relief OEM/ODM; dès 300 paires/modèle."
+seoKeywords: "fabricant de montures optiques unisexes en acétate, montures OEM en acétate Mazzucchelli noir, lunettes optiques aux coloris sur mesure en Chine, montures optiques en marque propre pour boutiques, montures en acétate rouges et vertes en gros, montures optiques avec logo en relief personnalisé, lunettes en acétate avec charnières articulées, fournisseur de montures pour chaînes optiques de luxe"
 ---
 
 ## Caractéristiques

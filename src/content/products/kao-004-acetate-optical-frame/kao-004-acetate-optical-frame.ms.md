@@ -36,9 +36,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Bingkai Optik Asetat Trendi KAO-004 | Pengilang Bespoke"
-seoDescription: "Bekerjasama dengan pengilang bespoke terkemuka untuk bingkai optik asetat KAO-004. Pembinaan Mazzucchelli gred tinggi dengan 300 MOQ untuk penyesuaian OEM/ODM."
-seoKeywords: "pengilang bingkai optik asetat, bingkai optik OEM tersuai, kacamata label peribadi mewah, bingkai asetat borong, kilang kacamata China, pengeluaran optik bespoke, pembekal kacamata premium, pengeluaran kacamata China"
+seoTitle: "KAO-004 Bingkai Asetat Uniseks Corak Tortoiseshell | Kilang B2B"
+seoDescription: "Untuk butik optik: bingkai asetat Mazzucchelli dengan engsel 7 ruas dan kanta demo untuk diganti dengan kanta preskripsi. Logo dan warna OEM/ODM bermula 300 pasang/model."
+seoKeywords: "pengeluar bingkai asetat uniseks corak tortoiseshell, bingkai optik asetat OEM sedia untuk kanta preskripsi, bingkai optik tersuai di China, cermin mata label peribadi untuk kedai konsep, borong bingkai optik dengan engsel berbilang ruas, bingkai optik dengan logo laser tersuai, pengeluaran bingkai asetat Mazzucchelli, bingkai optik ODM dengan warna tersuai"
 ---
 
 ## Ciri-ciri Utama

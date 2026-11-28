@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-014 Benzersiz Cesur Asetat Optik Çerçeveler | Özel Tedarikçi"
-seoDescription: "KAO-014 cesur asetat optik çerçeveler için birinci sınıf bir fabrika ile ortak olun. Tam OEM özelleştirmesi ve 300 adet MOQ ile yüksek kaliteli Mazzucchelli yapısı."
-seoKeywords: "asetat optik çerçeve üreticisi, özel OEM gözlük fabrikası, premium Mazzucchelli asetat çerçeveler, lüks özel markalı optik çerçeveler, Çin gözlük üretim ortağı, ısmarlama optik çerçeve tasarımı, toptan asetat gözlük tedarikçisi, tasarımcılar için özelleştirilebilir gözlük"
+seoTitle: "KAO-014 Klasik Asetat Optik Çerçeveler | OEM Fabrikası"
+seoDescription: "53-18-140 mm Mazzucchelli asetat optik çerçevelerde 5 boğumlu perçinli menteşeler ve entegre burun pedleri bulunur. OEM/ODM ölçüler ve kazıma logolar; 300 çift/model."
+seoKeywords: "klasik asetat optik çerçeve üreticisi, özel ölçülü OEM asetat optik çerçeveler, Çin optik çerçeve üretimi, tasarımcılar için özel markalı optik çerçeveler, şeffaf ve kırmızı asetat çerçeve toptan satışı, özel kazıma logolu gözlükler, çok boğumlu menteşeli optik çerçeve geliştirme, Mazzucchelli asetat gözlük tedarikçisi"
 ---
 
 ## Özellikler

@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Montura Óptica de Acetato de Lujo KAO-301 | Fabricante OEM Personalizado"
-seoDescription: "Eleve su cartera de marca propia con las monturas ópticas de acetato KAO-301 personalizables. Construcción Mazzucchelli premium, bisagras de 4+3 barriles y MOQ de 300 uds. OEM."
-seoKeywords: "fabricante de monturas ópticas de acetato, monturas ópticas OEM personalizadas, gafas de lujo de marca propia, fábrica de monturas de acetato Mazzucchelli, socio de producción de gafas en China, proveedor de monturas ópticas a medida, venta al por mayor de gafas de acetato de lujo, monturas ópticas personalizables China"
+seoTitle: "KAO-301 Monturas ópticas de acetato violeta ahumado | Fábrica OEM"
+seoDescription: "Monturas de acetato Mazzucchelli violeta ahumado con bisagras remachadas de 7 segmentos. Tallas y logo láser a medida OEM/ODM; 300 pares/modelo, 100/color."
+seoKeywords: "fabricante de monturas ópticas de acetato violeta ahumado, gafas OEM de acetato Mazzucchelli, monturas ópticas con logotipo láser personalizado, fábrica de monturas ópticas de acetato en China, monturas de marca privada para marcas boutique, gafas unisex de acetato al por mayor, producción de monturas ópticas con bisagras remachadas, monturas ópticas ODM con medidas personalizadas"
 ---
 
 ## Características

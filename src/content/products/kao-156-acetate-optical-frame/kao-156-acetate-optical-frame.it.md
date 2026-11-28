@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Montatura Ottica di Lusso KAO-156 | Fabbrica Occhiali su Misura"
-seoDescription: "Eleva il tuo portfolio private label con le montature ottiche di lusso in acetato KAO-156. Acetato Mazzucchelli lucidato a mano con MOQ di 300 e supporto OEM/ODM completo."
-seoKeywords: "produttore montature ottiche acetato, produzione occhiali personalizzati, montature lusso private label, fabbrica occhiali Cina, montature acetato Mazzucchelli, montature ottiche OEM ODM, fornitore occhiali di design, produttore occhiali su misura"
+seoTitle: "KAO-156 Montature lusso in acetato floreale | Fabbrica OEM"
+seoDescription: "Per i marchi boutique: montature in acetato Mazzucchelli floreale blu e magenta con cerniere a 3 snodi e loghi su misura. Ordini OEM/ODM da 300 paia/modello."
+seoKeywords: "produttore di montature ottiche di lusso in acetato floreale, montature OEM in acetato blu e magenta, fabbrica di montature ottiche personalizzate in Cina, occhiali private label per marchi boutique, ingrosso acetato Mazzucchelli lucidato a mano, montature ottiche floreali con logo personalizzato, occhiali ottici ODM con cerniere articolate, fornitore di montature ottiche floreali predisposte per lenti graduate"
 ---
 
 ## Caratteristiche

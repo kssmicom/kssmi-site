@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Gọng Kính Cận Axetat Cao Cấp KAO-156 | Xưởng Sản Xuất Kính Tùy Chỉnh"
-seoDescription: "Nâng tầm danh mục thương hiệu riêng của bạn với gọng kính cận axetat xa xỉ KAO-156. Axetat Mazzucchelli đánh bóng thủ công với MOQ 300 và hỗ trợ OEM/ODM toàn diện."
-seoKeywords: "nhà sản xuất gọng kính axetat, sản xuất kính mắt tùy chỉnh, gọng kính thương hiệu riêng xa xỉ, xưởng kính Trung Quốc, gọng kính axetat Mazzucchelli, gọng kính cận OEM ODM, nhà cung cấp kính thiết kế, nhà sản xuất kính đặt làm"
+seoTitle: "KAO-156 Gọng kính axetat hoa văn cao cấp | Nhà máy OEM"
+seoDescription: "Trang bị cho nhãn hiệu boutique gọng axetat Mazzucchelli hoa văn xanh dương và magenta với bản lề 3 chấu cùng logo tùy chỉnh. Đơn OEM/ODM từ 300 cặp/mẫu."
+seoKeywords: "nhà sản xuất gọng kính quang học axetat hoa văn cao cấp, gọng axetat OEM xanh dương và magenta, nhà máy gọng kính quang học tùy chỉnh tại Trung Quốc, kính nhãn hiệu riêng cho thương hiệu boutique, bán buôn axetat Mazzucchelli đánh bóng thủ công, gọng kính quang học hoa văn với logo tùy chỉnh, kính quang học ODM bản lề nhiều chấu, nhà cung cấp gọng kính quang học hoa văn lắp được tròng theo đơn"
 ---
 
 ## Đặc điểm

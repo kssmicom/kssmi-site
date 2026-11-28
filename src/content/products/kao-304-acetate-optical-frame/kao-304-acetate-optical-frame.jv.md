@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-304 Frame Optik Asetat Mewah Klasik | Pabrik Kustom"
-seoDescription: "Ningkatake merek sampeyan nganggo frame optik asetat premium KAO-304. Produksi OEM/ODM ahli nggunakake asetat Mazzucchelli, engsel 4+3 barel, lan MOQ 300 pcs sing fleksibel."
-seoKeywords: "produsen frame optik asetat, kacamata kustom OEM, frame label pribadi mewah, grosir kacamata asetat, pabrik frame optik China, frame optik sing bisa disesuaikan, produksi kacamata premium, frame asetat pesanan khusus"
+seoTitle: "KAO-304 Frame Optik Asetat Corak Garis | Produsen Pesenan"
+seoDescription: "Pesen frame optik asetat Mazzucchelli corak garis nganggo engsel 7 ruas lan ukuran 48-22-145 mm. Ukuran lan logo logam pesenan OEM/ODM; 300 pasang/model."
+seoKeywords: "produsen frame optik asetat corak garis, kacamata optik nganggo logo logam pesenan, frame asetat Mazzucchelli OEM ing China, grosir frame optik corak bulus, frame label pribadi kanggo omah mode, kacamata asetat kanthi ukuran pesenan, pemasok frame optik nganggo engsel keling, frame optik ODM kanggo jaringan toko"
 ---
 
 ## Fitur

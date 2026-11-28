@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Gọng Kính Cận Axetat Xa Xỉ KAO-301 | Nhà Sản Xuất OEM Tùy Chỉnh"
-seoDescription: "Nâng tầm danh mục thương hiệu riêng của bạn với gọng kính cận axetat KAO-301 có thể tùy chỉnh. Cấu trúc Mazzucchelli cao cấp, bản lề 4+3 chấu và MOQ 300 cái. OEM."
-seoKeywords: "nhà sản xuất gọng kính cận axetat, gọng kính cận OEM tùy chỉnh, kính mắt thương hiệu riêng xa xỉ, xưởng gọng kính axetat Mazzucchelli, đối tác sản xuất kính mắt Trung Quốc, nhà cung cấp gọng kính cận theo yêu cầu, bán sỉ kính mắt axetat xa xỉ, gọng kính cận tùy chỉnh Trung Quốc"
+seoTitle: "KAO-301 Gọng kính axetat tím khói | Nhà máy OEM"
+seoDescription: "Gọng kính quang học axetat Mazzucchelli tím khói có bản lề đinh tán 7 chấu. Tùy chỉnh kích thước và logo laser qua OEM/ODM; 300 cặp/mẫu, 100 cặp/màu."
+seoKeywords: "nhà sản xuất gọng kính quang học axetat tím khói, kính axetat Mazzucchelli OEM, gọng kính quang học với logo laser tùy chỉnh, nhà máy gọng kính quang học axetat Trung Quốc, gọng kính nhãn hiệu riêng cho thương hiệu boutique, bán buôn kính axetat unisex, sản xuất gọng kính quang học bản lề đinh tán, gọng kính quang học ODM tùy chỉnh kích thước"
 ---
 
 ## Đặc điểm

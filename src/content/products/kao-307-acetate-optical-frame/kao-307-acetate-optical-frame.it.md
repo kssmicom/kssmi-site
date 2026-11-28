@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Montature Ottiche in Acetato di Lusso Classico KAO-307 | Fabbrica su Misura"
-seoDescription: "Collabora con un primario produttore cinese per le montature ottiche in acetato di lusso KAO-307. Materiale Mazzucchelli e cerniere 4+3 con supporto MOQ 300."
-seoKeywords: "produttore montature ottiche in acetato, occhiali OEM personalizzati, montature lusso private label, fabbrica occhiali Cina, montature acetato personalizzabili, fornitore occhiali moda boutique, produzione ottica su misura"
+seoTitle: "KAO-307 Montature ottiche in acetato trasparente | Fabbrica B2B"
+seoDescription: "Montature in acetato Mazzucchelli trasparente con aste lucidate a mano e cerniere rivettate a 7 snodi. Loghi e colori su misura OEM/ODM; da 300 paia/modello."
+seoKeywords: "produttore di montature ottiche in acetato trasparente, aste in acetato lucidate a mano OEM, montature personalizzate in acetato Mazzucchelli in Cina, montature ottiche private label per boutique, ingrosso occhiali in acetato tartarugato, montature ottiche con logo a rilievo personalizzato, montature ottiche ODM con colori personalizzati, produzione di occhiali di design"
 ---
 
 ## Caratteristiche

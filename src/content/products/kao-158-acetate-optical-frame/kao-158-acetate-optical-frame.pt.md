@@ -43,9 +43,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Armação Óptica em Acetato Unisex Ousada KAO-158 | Fornecedor Atacadista"
-seoDescription: "Parceria com um fabricante líder para armações ópticas em acetato unisex KAO-158. Acetato Mazzucchelli de alta qualidade, MOQ 300 e suporte OEM/ODM completo."
-seoKeywords: "fabricante de armações ópticas de acetato, fábrica de óculos unisex personalizados, armações de acetato Mazzucchelli premium, atacado de óculos China, fornecedor de óculos private label, óculos de acetato personalizáveis, produção de armações ópticas sob medida, fabricante de óculos de luxo China"
+seoTitle: "KAO-158 Armações ópticas unissex de acetato | Fábrica atacadista"
+seoDescription: "Armações unissex de acetato Mazzucchelli preto, vermelho ou verde com dobradiças rebitadas de 5 segmentos. Cores e logos em relevo OEM/ODM; 300 pares/modelo."
+seoKeywords: "fabricante de armações ópticas unissex de acetato, armações OEM de acetato Mazzucchelli preto, óculos ópticos com cores personalizadas na China, armações ópticas de marca própria para boutiques, armações de acetato vermelhas e verdes no atacado, armações ópticas com logotipo em relevo personalizado, óculos de acetato com dobradiças articuladas, fornecedor de armações para redes de ópticas de luxo"
 ---
 
 ## Características

@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Montures Optiques en Acétate Audacieuses KAO-014 | Fournisseur Custom"
-seoDescription: "Associez-vous à une usine de premier plan pour les montures optiques en acétate audacieuses KAO-014. Construction Mazzucchelli de haute qualité avec personnalisation OEM complète et MOQ de 300 pièces."
-seoKeywords: "fabricant montures optiques acétate, usine lunettes OEM custom, montures acétate premium Mazzucchelli, montures optiques luxe marque de distributeur, partenaire production lunettes Chine, design monture optique sur mesure, fournisseur lunettes acétate en gros, lunettes personnalisables pour designers"
+seoTitle: "KAO-014 Montures optiques classiques en acétate | Usine OEM"
+seoDescription: "Montures en acétate Mazzucchelli 53-18-140 mm, charnières rivetées à 5 charnons et plaquettes intégrées. Tailles et logos gravés OEM/ODM; 300 paires/modèle."
+seoKeywords: "fabricant de montures optiques classiques en acétate, montures optiques OEM en acétate aux dimensions sur mesure, production de montures optiques en Chine, montures optiques en marque propre pour créateurs, montures en acétate transparentes et rouges en gros, lunettes avec logo gravé personnalisé, développement de montures optiques avec charnières, fournisseur de lunettes en acétate Mazzucchelli"
 ---
 
 ## Caractéristiques

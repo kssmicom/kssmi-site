@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-304 Monturas Ópticas de Acetato de Lujo Clásicas | Fábrica Custom"
-seoDescription: "Eleve su marca con las monturas ópticas de acetato premium KAO-304. Fabricación experta OEM/ODM con acetato Mazzucchelli, bisagras de 4+3 barriles y un MOQ flexible de 300 unidades."
-seoKeywords: "fabricante monturas ópticas acetato, gafas personalizadas OEM, monturas lujo marca propia, venta al por mayor gafas acetato, fábrica monturas ópticas China, monturas ópticas personalizables, producción gafas premium, monturas acetato a medida"
+seoTitle: "KAO-304 Monturas ópticas de acetato a rayas | Fabricante a medida"
+seoDescription: "Monturas ópticas de acetato Mazzucchelli a rayas con bisagras de 7 segmentos y talla 48-22-145 mm. Medidas y logos metálicos a medida OEM/ODM; 300 pares/modelo."
+seoKeywords: "fabricante de monturas ópticas de acetato a rayas, gafas ópticas con logotipo metálico personalizado, monturas OEM de acetato Mazzucchelli en China, monturas ópticas carey al por mayor, monturas de marca privada para casas de moda, gafas de acetato con medidas personalizadas, proveedor de monturas ópticas con bisagras remachadas, monturas ópticas ODM para cadenas de tiendas"
 ---
 
 ## Características

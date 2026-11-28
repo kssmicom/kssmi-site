@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Montura Óptica de Acetato de Lujo KAO-002 | Fábrica de Gafas Personalizadas"
-seoDescription: "Eleve su marca con las monturas ópticas de acetato premium Mazzucchelli KAO-002. Con bisagras de 4+3 barriletes y personalización completa OEM/ODM. Soporte de MOQ de 300 unidades."
-seoKeywords: "monturas ópticas de acetato, gafas ópticas personalizadas, fabricante de gafas OEM, fábrica de gafas china, marcas de gafas premium, monturas de acetato al por mayor, producción de gafas a medida, monturas de acetato personalizadas"
+seoTitle: "KAO-002 Monturas de acetato carey | Proveedor mayorista"
+seoDescription: "Monturas de acetato Mazzucchelli con bisagras remachadas de 7 segmentos y plaquetas integradas. Almas de cobre y logos láser a medida OEM/ODM; 300 pares/modelo."
+seoKeywords: "fabricante de monturas ópticas de acetato carey, monturas ópticas OEM con bisagras, gafas personalizadas de acetato Mazzucchelli en China, monturas ópticas aptas para lentes graduadas al por mayor, monturas de marca privada para casas de moda, monturas ópticas con almas de alambre de cobre personalizadas, proveedor de gafas de acetato para boutiques, producción ODM de monturas ópticas de acetato"
 ---
 
 ## Características

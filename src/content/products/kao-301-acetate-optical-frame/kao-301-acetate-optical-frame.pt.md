@@ -47,9 +47,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Armação Óptica de Acetato de Luxo KAO-301 | Fabricante OEM Personalizado"
-seoDescription: "Eleve seu portfólio de marca própria com as armações ópticas de acetato KAO-301 personalizáveis. Construção Mazzucchelli premium, dobradiças de 4+3 barris e MOQ de 300 pçs. OEM."
-seoKeywords: "fabricante de armações ópticas de acetato, armações ópticas OEM personalizadas, óculos de luxo de marca própria, fábrica de armações de acetato Mazzucchelli, parceiro de produção de óculos na China, fornecedor de armações ópticas sob medida, atacado de óculos de acetato de luxo, armações ópticas personalizáveis China"
+seoTitle: "KAO-301 Armações ópticas de acetato roxo-fumê | Fábrica OEM"
+seoDescription: "Armações de acetato Mazzucchelli roxo-fumê com dobradiças rebitadas de 7 segmentos. Medidas e logos a laser sob medida OEM/ODM; 100 pares/cor, 300 pares/modelo."
+seoKeywords: "fabricante de armações ópticas de acetato roxo-fumê, óculos OEM de acetato Mazzucchelli, armações ópticas com logotipo a laser personalizado, fábrica de armações ópticas de acetato na China, armações de marca própria para marcas boutique, óculos unissex de acetato no atacado, produção de armações ópticas com dobradiças rebitadas, armações ópticas ODM com medidas personalizadas"
 ---
 
 ## Características

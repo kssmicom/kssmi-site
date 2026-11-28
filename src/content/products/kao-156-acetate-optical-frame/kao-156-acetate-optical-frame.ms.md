@@ -35,9 +35,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "Bingkai Optik Asetat Mewah KAO-156 | Kilang Kacamata Tersuai"
-seoDescription: "Tingkatkan portfolio label peribadi anda dengan bingkai optik asetat mewah KAO-156. Asetat Mazzucchelli yang digilap tangan dengan MOQ 300 dan sokongan OEM/ODM penuh."
-seoKeywords: "pengilang bingkai optik asetat, pengeluaran kacamata tersuai, bingkai label peribadi mewah, kilang kacamata China, bingkai asetat Mazzucchelli, bingkai optik OEM ODM, pembekal kacamata pereka, pengilang kacamata tempahan"
+seoTitle: "KAO-156 Bingkai Optik Asetat Bunga Mewah | Kilang OEM"
+seoDescription: "Lengkapkan jenama butik dengan bingkai asetat Mazzucchelli bercorak bunga biru dan magenta, engsel 3 ruas serta logo tersuai. Pesanan OEM/ODM bermula 300 pasang/model."
+seoKeywords: "pengeluar bingkai optik asetat corak bunga mewah, bingkai asetat OEM biru dan magenta, kilang bingkai optik tersuai di China, cermin mata label peribadi untuk jenama butik, borong asetat Mazzucchelli digilap tangan, bingkai optik corak bunga dengan logo tersuai, cermin mata optik ODM dengan engsel berbilang ruas, pembekal bingkai optik corak bunga sedia untuk kanta preskripsi"
 ---
 
 ## Ciri-ciri Utama

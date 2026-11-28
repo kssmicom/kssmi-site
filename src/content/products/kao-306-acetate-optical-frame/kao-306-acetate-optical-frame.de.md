@@ -51,9 +51,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-306 Luxus-Acetat-Brillen | Maßgeschneiderter Hersteller"
-seoDescription: "Arbeiten Sie mit einem führenden Hersteller für KAO-306 Acetat-Brillengestelle zusammen. Mit Mazzucchelli-Material und 4+3 Barrel-Scharnieren bieten wir 300 MOQ für individuelles OEM."
-seoKeywords: "Acetat-Brillengestelle Hersteller, individuelle Acetat-Brillen, Luxus Private Label Optik, Großhandel Acetat-Rahmen, chinesische Brillenfabrik, maßgeschneiderte Brillengestelle, Premium-Brillenlieferant, China Acetat-Rahmen Produktion"
+seoTitle: "KAO-306 Graue Unisex-Acetat-Brillenfassungen | OEM/ODM"
+seoDescription: "Mazzucchelli-Acetatfassungen 46-23-145 mm mit 7-teiligen Scharnieren und integrierten Nasenauflagen. OEM/ODM-Wunschmaße und eigene Laserlogos; 300 Paar/Modell."
+seoKeywords: "Hersteller grauer Unisex-Acetat-Brillenfassungen, OEM-Brillenfassungen aus Mazzucchelli-Acetat, Fabrik für individuelle Brillenfassungen in China, Eigenmarken-Fassungen für Modedesigner, Großhandel für olivfarbene Acetat-Brillen, Brillenfassungen mit individuellem Laserlogo, ODM-Größenanpassung von Acetat-Fassungen, Zulieferer von Brillen mit genieteten Scharnieren"
 ---
 
 ## Eigenschaften

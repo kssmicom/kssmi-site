@@ -39,9 +39,9 @@ customizable: true
 featured: true
 
 # ── SEO & GEO METADATA ───────────────────────────────
-seoTitle: "KAO-155 Montature Ottiche in Acetato di Lusso | Produttore su Misura Cina"
-seoDescription: "Eleva la tua linea di occhiali con montature ottiche premium in acetato Mazzucchelli. Offriamo personalizzazione OEM/ODM completa e MOQ di 300 per designer di moda di lusso."
-seoKeywords: "produttore montature ottiche in acetato, occhiali in acetato personalizzati OEM, montature in acetato Mazzucchelli all'ingrosso, occhiali private label di lusso, fabbrica occhiali in acetato cinese, produzione montature ottiche su misura, fornitore marchi occhiali premium, montature ottiche personalizzabili Cina"
+seoTitle: "KAO-155 Montature audaci in acetato floreale | OEM/ODM"
+seoDescription: "Montature in acetato Mazzucchelli floreale giallo o verde petrolio con cerniere a 3 snodi e misure 51-18-140 mm. Misure e loghi laser OEM/ODM; 300 paia/modello."
+seoKeywords: "produttore di montature ottiche audaci in acetato floreale, montature ottiche OEM floreali gialle, montature personalizzate in acetato Mazzucchelli verde petrolio in Cina, montature ottiche private label per designer, ingrosso occhiali in acetato floreale, produzione di montature ottiche con logo laser personalizzato, montature in acetato con cerniere articolate, fornitore di occhiali in acetato per catene ottiche"
 ---
 
 ## Caratteristiche
