@@ -1,0 +1,423 @@
+---
+/**
+ * Article-specific visual summary block for /blog/eyewear-branding-logo-hardware/.
+ * Highlights the 3 core custom branding, metal hardware, and finish capabilities across all 17 languages.
+ */
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'en' } = Astro.props;
+
+const COPY: Record<string, { heading: string; cards: Array<{ label: string; title: string; summary: string; moqNote: string }> }> = {
+  en: {
+    heading: 'Eyewear Branding & Hardware Specifications at a Glance',
+    cards: [
+      {
+        label: 'Logos & Serials',
+        title: 'Laser, Print & Metal Marks',
+        summary: 'Laser engraving (plain or gold/silver/white/black/red fill), abrasion-resistant printing, and late-stage surface logos while trademarks clear.',
+        moqNote: 'Vector AI / PDF / EPS / SVG placed in 2D',
+      },
+      {
+        label: 'Wire Cores & 3D Metal',
+        title: 'Custom Copper Core & Stamping',
+        summary: 'Hydraulic stamping supports ~1 mm pattern detail (confirmed at engineering review & sample); exclusive copper wire cores for transparent acetate.',
+        moqNote: 'Custom core: USD 200 mold · 300 pcs / pattern / finish',
+      },
+      {
+        label: 'Finishes & Packaging',
+        title: '18 PVD Colors, Hinges & Packing',
+        summary: '3/5/7-barrel hinges, 18-color PVD finishes (multi-pass mirror ~USD 0.60/pair/pass), and free packing of customer-supplied retail kits.',
+        moqNote: 'International-brand hinges: ~3,000 prs/model',
+      },
+    ],
+  },
+  zh: {
+    heading: '眼镜品牌标识、定制五金与表面工艺一览',
+    cards: [
+      {
+        label: 'Logo 与内腿刻字',
+        title: '激光、印刷与后段表面打标',
+        summary: '激光雕刻（原色或金/银/白/黑/红 5 色填漆）、耐磨印刷；商标审核期可先排产并在最后阶段加印表面标识。',
+        moqNote: '矢量稿 AI / PDF / EPS / SVG 直接排入 2D',
+      },
+      {
+        label: '铜芯与 3D 金属配件',
+        title: '定制铜芯与液压油压成型',
+        summary: '液压冲压支持约 1 mm 图案细节（具体以工程评审与实样为准）；透色板材镜腿可定制专属品牌花纹铜芯。',
+        moqNote: '定制铜芯：模具费 USD 200 · 每图案每色 300 支',
+      },
+      {
+        label: '电镀、铰链与客供包装',
+        title: '18 色 PVD 与到厂免费装盒',
+        summary: '配套 3/5/7 牙铰链、18 种 PVD 电镀（大面积镜面电镀约 USD 0.60/付/遍），并免费代装客供四件套零售包装。',
+        moqNote: '指定国际品牌铰链：约 3,000 付/款起',
+      },
+    ],
+  },
+  it: {
+    heading: 'Specifiche Branding Occhiali e Componenti in Sintesi',
+    cards: [
+      {
+        label: 'Loghi e Seriali',
+        title: 'Laser, Stampa e Placche',
+        summary: 'Incisione laser (neutro o oro/argento/bianco/nero/rosso), stampa anti-usura e loghi superficiali a fine ciclo se il marchio è in registrazione.',
+        moqNote: 'File vettoriali AI / PDF / EPS / SVG nel 2D',
+      },
+      {
+        label: 'Anime e Metalli 3D',
+        title: 'Anima in Rame e Stampaggio 3D',
+        summary: 'Stampaggio idraulico per dettagli fino a ~1 mm (conferma su campione); anime interne personalizzate in rame per acetato trasparente.',
+        moqNote: 'Anima custom: stampo USD 200 · 300 pz / motivo / finitura',
+      },
+      {
+        label: 'Finiture e Packaging',
+        title: '18 Colori PVD, Cerniere e Confezione',
+        summary: 'Cerniere 3/5/7 snodi, 18 colori PVD (specchio multipassaggio ~USD 0,60/paio/passaggio) e confezionamento gratuito dei kit forniti dal cliente.',
+        moqNote: 'Cerniere brand internazionali: ~3.000 paia/modello',
+      },
+    ],
+  },
+  es: {
+    heading: 'Resumen de Branding, Herrajes y Acabados',
+    cards: [
+      {
+        label: 'Logotipos y Series',
+        title: 'Láser, Impresión y Placas',
+        summary: 'Grabado láser (sin relleno o oro/plata/blanco/negro/rojo), impresión anti-desgaste y logos superficiales al final si la marca está en trámite.',
+        moqNote: 'Vectoriales AI / PDF / EPS / SVG en plano 2D',
+      },
+      {
+        label: 'Almas y Metal 3D',
+        title: 'Alma de Cobre y Estampado 3D',
+        summary: 'Estampado hidráulico para detalle de ~1 mm (confirmado en muestra); almas metálicas exclusivas visibles en varillas de acetato transparente.',
+        moqNote: 'Alma custom: molde USD 200 · 300 uds / diseño / acabado',
+      },
+      {
+        label: 'Baños y Packaging',
+        title: '18 Tonos PVD, Bisagras y Empaque',
+        summary: 'Bisagras de 3/5/7 cuerpos, 18 colores PVD (espejo multipasada ~USD 0,60/par/pasada) y empaque gratuito de estuches suministrados.',
+        moqNote: 'Bisagras de marca internacional: ~3.000 pares/modelo',
+      },
+    ],
+  },
+  fr: {
+    heading: 'Marquage, Charnières et Finitions en un Coup d\'Œil',
+    cards: [
+      {
+        label: 'Logos et Séries',
+        title: 'Laser, Impression et Plaques',
+        summary: 'Gravure laser (brute ou or/argent/blanc/noir/rouge), impression résistante à l\'abrasion et logos de surface en fin de cycle si marque en cours.',
+        moqNote: 'Vectoriels AI / PDF / EPS / SVG placés en 2D',
+      },
+      {
+        label: 'Âmes et Métal 3D',
+        title: 'Âme Cuivre et Estampage 3D',
+        summary: 'Estampage hydraulique jusqu\'à ~1 mm de détail (validé sur échantillon) ; âmes métal exclusives pour acétate transparent.',
+        moqNote: 'Âme custom : moule USD 200 · 300 pcs / motif / finition',
+      },
+      {
+        label: 'Finitions et Packaging',
+        title: '18 Couleurs PVD et Conditionnement',
+        summary: 'Charnières 3/5/7 charnons, 18 teintes PVD (plaquage miroir multi-passes ~USD 0,60/paire/passe) et mise en étui gratuite des kits fournis.',
+        moqNote: 'Charnières marque internationale : ~3 000 paires/modèle',
+      },
+    ],
+  },
+  de: {
+    heading: 'Branding, Metallteile & Veredelung auf einen Blick',
+    cards: [
+      {
+        label: 'Logos & Serien',
+        title: 'Laser, Druck & Plaketten',
+        summary: 'Lasergravur (natur oder Gold/Silber/Weiß/Schwarz/Rot), abriebfester Druck sowie späte Oberflächenlogos bei laufender Markenprüfung.',
+        moqNote: 'Vektordaten AI / PDF / EPS / SVG im 2D-Plan',
+      },
+      {
+        label: 'Drahtkerne & 3D-Metall',
+        title: 'Kundenspez. Kupferkern & Prägung',
+        summary: 'Hydraulisches Prägen bis ~1 mm Musterdetail (Prüfung am Muster); exklusive Kupfer-Drahtkerne für transparentes Acetat.',
+        moqNote: 'Sonderkern: USD 200 Form · 300 Stk. / Muster / Finish',
+      },
+      {
+        label: 'PVD, Scharniere & Packen',
+        title: '18 PVD-Farben & Verpackungsservice',
+        summary: '3-/5-/7-teilige Scharniere, 18 PVD-Farben (Mehrfach-Spiegelbeschichtung ~USD 0,60/Paar/Durchgang) & kostenloses Einpacken gestellter Etuis.',
+        moqNote: 'Internationale Markenscharniere: ~3.000 Paar/Modell',
+      },
+    ],
+  },
+  pt: {
+    heading: 'Marca, Ferragens e Acabamentos em Resumo',
+    cards: [
+      {
+        label: 'Logotipos e Séries',
+        title: 'Laser, Impressão e Placas',
+        summary: 'Gravação a laser (natural ou ouro/prata/branco/preto/vermelho), impressão resistente à abrasão e logos de superfície na etapa final.',
+        moqNote: 'Vetores AI / PDF / EPS / SVG inseridos no 2D',
+      },
+      {
+        label: 'Almas e Metal 3D',
+        title: 'Alma de Cobre e Estampagem 3D',
+        summary: 'Estampagem hidráulica com detalhes até ~1 mm (validado em amostra); almas exclusivas em cobre para hastes de acetato transparente.',
+        moqNote: 'Alma custom: molde USD 200 · 300 un. / arte / banho',
+      },
+      {
+        label: 'Banhos e Embalagem',
+        title: '18 Cores PVD, Dobradiças e Pacote',
+        summary: 'Dobradiças 3/5/7 barriles, 18 cores PVD (espelhado multipassos ~USD 0,60/par/passo) e embalagem grátis dos kits do cliente.',
+        moqNote: 'Dobradiças marca internacional: ~3.000 pares/modelo',
+      },
+    ],
+  },
+  ru: {
+    heading: 'Брендинг, фурнитура и покрытия очков вкратце',
+    cards: [
+      {
+        label: 'Логотипы и серии',
+        title: 'Лазер, печать и плакетки',
+        summary: 'Лазерная гравировка (без заливки или золото/серебро/белый/черный/красный), износостойкая печать и позднее нанесение поверхностного лого.',
+        moqNote: 'Вектор AI / PDF / EPS / SVG в 2D-чертеже',
+      },
+      {
+        label: 'Медные жилы и 3D-декор',
+        title: 'Спецжилы заушника и штамповка',
+        summary: 'Гидравлическая штамповка деталей до ~1 мм (по образцу); эксклюзивные узорные медные жилы для прозрачного ацетата.',
+        moqNote: 'Медная жила: форма USD 200 · 300 шт. / узор / цвет',
+      },
+      {
+        label: 'PVD, шарниры и упаковка',
+        title: '18 цветов PVD и фасовка в футляры',
+        summary: 'Шарниры 3/5/7 звеньев, 18 оттенков PVD (многослойное зеркальное покрытие ~USD 0,60/пара/проход) и бесплатная упаковка в тару заказчика.',
+        moqNote: 'Международные брендовые шарниры: ~3 000 пар/модель',
+      },
+    ],
+  },
+  ja: {
+    heading: 'ロゴ加工・オリジナル金具・メッキ仕様一覧',
+    cards: [
+      {
+        label: 'ロゴ・シリアル刻印',
+        title: 'レーザー・耐摩耗印刷・後工程打刻',
+        summary: 'レーザー彫刻（素彫り/金・銀・白・黒・赤の5色入れ）と耐摩耗印刷。商標登録中は最終段階での表面ロゴ入れ調整が可能。',
+        moqNote: 'AI / PDF / EPS / SVGベクターを2D図面へ配置',
+      },
+      {
+        label: '芯金・立体3D装飾',
+        title: '特注芯金（ワイヤーコア）と油圧成形',
+        summary: '油圧プレスで約1 mmの意匠細部に対応（図面・実サンプル確認）。クリアアセテート用の専用柄入り銅芯を製作可能。',
+        moqNote: '特注芯金：型代 USD 200 · 柄/色ごとに300本',
+      },
+      {
+        label: 'メッキ・丁番・支給梱包',
+        title: '18色PVD・丁番・無料梱包連携',
+        summary: '3/5/7バレル丁番、18色PVD（ミラー多層仕上げ 約USD 0.60/本/回）、お客様手配の小売ケース等への無料同梱作業。',
+        moqNote: '指定海外ブランド丁番：約3,000本/型〜',
+      },
+    ],
+  },
+  tr: {
+    heading: 'Bir Bakışta Gözlük Markalama ve Donanım Özellikleri',
+    cards: [
+      {
+        label: 'Logolar ve Seriler',
+        title: 'Lazer, Baskı ve Metal Plaka',
+        summary: 'Lazer kazıma (dolgusuz veya altın/gümüş/beyaz/siyah/kırmızı), aşınmaya dayanıklı baskı ve marka tescili süresince son aşama yüzey logo.',
+        moqNote: '2D çizime yerleştirilen AI / PDF / EPS / SVG vektör',
+      },
+      {
+        label: 'Tel Çekirdek ve 3D Metal',
+        title: 'Özel Bakır Çekirdek ve Baskı',
+        summary: 'Hidrolik şekillendirme ~1 mm desen detayını destekler (numunede teyit); şeffaf asetat saplar için özel desenli bakır tel çekirdek.',
+        moqNote: 'Özel çekirdek: USD 200 kalıp · 300 adet / desen / kaplama',
+      },
+      {
+        label: 'Kaplama, Menteşe ve Paketleme',
+        title: '18 PVD Renk ve Ücretsiz Kutulama',
+        summary: '3/5/7 varil menteşeler, 18 PVD rengi (çok geçişli ayna ~USD 0,60/çift/geçiş) ve müşteri ambalaj setlerinin ücretsiz kutulanması.',
+        moqNote: 'Uluslararası marka menteşeler: ~3.000 çift/model',
+      },
+    ],
+  },
+  ar: {
+    heading: 'ملخص تقنيات الشعار والقطع المعدنية والتشطيب',
+    cards: [
+      {
+        label: 'الشعارات والأرقام',
+        title: 'ليزر، طباعة وشعارات نهائية',
+        summary: 'نقش بالليزر (بدون حشو أو ذهبي/فضي/أبيض/أسود/أحمر)، طباعة مقاومة للتآكل، وتنفيذ الشعار السطحي بالمرحلة الأخيرة عند انتظار العلامة.',
+        moqNote: 'ملفات فيكتور AI / PDF / EPS / SVG في الرسم 2D',
+      },
+      {
+        label: 'الأسلاك النحاسية و 3D',
+        title: 'سلك ذراع مخصص وكبس هيدروليكي',
+        summary: 'الكبس الهيدروليكي يدعم تفاصيل ~1 مم (تُؤكد على العينة)؛ أسلاك نحاسية بنقوش حصرية تظهر داخل الأسيتات الشفاف.',
+        moqNote: 'سلك مخصص: قالب USD 200 · 300 قطعة / نقش / طلاء',
+      },
+      {
+        label: 'الطلاء والمفصلات والتغليف',
+        title: '18 لون PVD وتعبئة مجانية',
+        summary: 'مفصلات 3/5/7 حلقات، 18 خيار طلاء PVD (مرآة متعددة المراحل ~USD 0.60/زوج/مرحلة)، وتعبئة مجانية لعلب التجزئة المرسلة من العميل.',
+        moqNote: 'مفصلات علامة دولية: ~3,000 زوج/موديل',
+      },
+    ],
+  },
+  ko: {
+    heading: '아이웨어 로고·커스텀 부자재·도금 사양 한눈에 보기',
+    cards: [
+      {
+        label: '로고·인사이드 각인',
+        title: '레이저·내마모 인쇄·후공정 마킹',
+        summary: '레이저 각인(무도장 또는 골드/실버/화이트/블랙/레드 5색 채움), 내마모 인쇄, 상표 출원 중 최종 단계 표면 로고 적용 가능.',
+        moqNote: 'AI / PDF / EPS / SVG 벡터 파일 2D 도면 배치',
+      },
+      {
+        label: '와이어 코어·3D 금속',
+        title: '맞춤 동심(코어) 및 유압 성형',
+        summary: '유압 스탬핑으로 약 1 mm 패턴 디테일 구현(엔지니어링 검토 및 실샘플 확인); 투명 아세테이트용 브랜드 전용 패턴 코어.',
+        moqNote: '맞춤 코어: 금형 USD 200 · 패턴/도금별 300개',
+      },
+      {
+        label: 'PVD 도금·힌지·패키징',
+        title: '18가지 PVD 컬러 및 무료 동봉',
+        summary: '3/5/7배럴 힌지, 18종 PVD 도금(다회 미러 도금 회당·쌍당 약 USD 0.60), 고객 입고 리테일 패키지 무료 포장 지원.',
+        moqNote: '해외 브랜드 힌지 지정: 모델당 약 3,000쌍',
+      },
+    ],
+  },
+  hi: {
+    heading: 'एक नजर में आईवियर ब्रांडिंग व कस्टम हार्डवेयर',
+    cards: [
+      {
+        label: 'लोगो व सीरियल',
+        title: 'लेजर, प्रिंटिंग व सरफेस मार्क्स',
+        summary: 'लेजर एनग्रेविंग (सादा या गोल्ड/सिल्वर/व्हाइट/ब्लैक/रेड फिल), घिसाव-रोधी प्रिंट और ट्रेडमार्क क्लियरेंस तक अंतिम चरण सरफेस लोगो।',
+        moqNote: '2D में वेक्टर AI / PDF / EPS / SVG',
+      },
+      {
+        label: 'वायर कोर व 3D मेटल',
+        title: 'कस्टम कॉपर कोर व हाइड्रोलिक स्टैम्पिंग',
+        summary: 'हाइड्रोलिक स्टैम्पिंग लगभग 1 mm पैटर्न डिटेल संभालती है (सैंपल पर पुष्टि); ट्रांसपेरेंट एसीटेट के लिए एक्सक्लूसिव कॉपर कोर।',
+        moqNote: 'कस्टम कोर: USD 200 मोल्ड · 300 पीस / पैटर्न / फिनिश',
+      },
+      {
+        label: 'फिनिश व पैकेजिंग',
+        title: '18 PVD रंग, हिंज व फ्री पैकिंग',
+        summary: '3/5/7-बैरल हिंज, 18 PVD रंग (मल्टी-पास मिरर ~USD 0.60/जोड़ी/पास) और ग्राहक-आपूर्तित रिटेल किट की निशुल्क फैक्ट्री पैकिंग।',
+        moqNote: 'अंतरराष्ट्रीय ब्रांड हिंज: ~3,000 जोड़ी/मॉडल',
+      },
+    ],
+  },
+  vi: {
+    heading: 'Tóm Tắt Kỹ Thuật Logo, Phụ Kiện & Mạ PVD',
+    cards: [
+      {
+        label: 'Logo & Mã khắc',
+        title: 'Laser, In ấn & Đánh dấu cuối chuyền',
+        summary: 'Khắc laser (mộc hoặc tô 5 màu vàng/bạc/trắng/đen/đỏ), in chống mài mòn và gia công logo bề mặt giai đoạn cuối khi chờ bảo hộ nhãn hiệu.',
+        moqNote: 'File vector AI / PDF / EPS / SVG đặt thẳng lên bản vẽ 2D',
+      },
+      {
+        label: 'Lõi đồng & Kim loại 3D',
+        title: 'Lõi Đồng Riêng & Dập Thủy Lực',
+        summary: 'Dập thủy lực hỗ trợ chi tiết hoa văn ~1 mm (xác nhận trên mẫu duyệt); lõi đồng họa tiết độc quyền cho càng acetate trong suốt.',
+        moqNote: 'Lõi riêng: khuôn USD 200 · 300 chiếc / mẫu / màu mạ',
+      },
+      {
+        label: 'Xi mạ, Bản lề & Đóng gói',
+        title: '18 Màu PVD & Đóng Hộp Miễn Phí',
+        summary: 'Bản lề 3/5/7 đốt, 18 màu mạ PVD (mạ gương nhiều lượt ~USD 0,60/cặp/lượt) và đóng gói miễn phí bộ hộp bán lẻ do khách gửi.',
+        moqNote: 'Bản lề hãng quốc tế: ~3.000 cặp/mẫu',
+      },
+    ],
+  },
+  jv: {
+    heading: 'Ringkesan Branding Kacamata, Hardware & Lapisan PVD',
+    cards: [
+      {
+        label: 'Logo & Nomer Seri',
+        title: 'Laser, Cetak & Marka Akhir',
+        summary: 'Ukiran laser (polos utawa emas/perak/putih/ireng/abang), cetak tahan gesek, lan logo permukaan tahap pungkasan nalika merek lagi diurus.',
+        moqNote: 'Vektor AI / PDF / EPS / SVG langsung ing gambar 2D',
+      },
+      {
+        label: 'Kawat Inti & Logam 3D',
+        title: 'Inti Tembaga Kustom & Stamping',
+        summary: 'Stamping hidrolik ndhukung detail pola ~1 mm (dikonfirmasi ing sampel); inti kawat tembaga eksklusif kanggo asetat bening.',
+        moqNote: 'Inti kustom: cetakan USD 200 · 300 iji / motif / lapis',
+      },
+      {
+        label: 'PVD, Engsel & Kemasan',
+        title: '18 Warna PVD & Packing Gratis',
+        summary: 'Engsel 3/5/7 laras, 18 warna PVD (cermin multi-lapis ~USD 0,60/pasang/lapis), lan ngemas gratis kemasan ritel sing dikirim pelanggan.',
+        moqNote: 'Engsel merek internasional: ~3.000 pasang/model',
+      },
+    ],
+  },
+  ms: {
+    heading: 'Ringkasan Penjenamaan, Perkakasan & Kemasan PVD',
+    cards: [
+      {
+        label: 'Logo & Siri Dalaman',
+        title: 'Laser, Cetakan & Tanda Akhir',
+        summary: 'Ukiran laser (biasa atau emas/perak/putih/hitam/merah), cetakan tahan lelasan, dan logo permukaan peringkat akhir semasa cap dagang diproses.',
+        moqNote: 'Vektor AI / PDF / EPS / SVG terus ke lukisan 2D',
+      },
+      {
+        label: 'Teras Dawai & Logam 3D',
+        title: 'Teras Tembaga & Tekan Hidraulik',
+        summary: 'Tekanan hidraulik menyokong perincian corak ~1 mm (disahkan pada sampel); teras dawai tembaga eksklusif untuk tangkai asetat lutsinar.',
+        moqNote: 'Teras khas: acuan USD 200 · 300 keping / corak / kemasan',
+      },
+      {
+        label: 'Salutan, Engsel & Pembungkusan',
+        title: '18 Warna PVD & Pek Percuma',
+        summary: 'Engsel 3/5/7 laras, 18 warna PVD (cermin berbilang laluan ~USD 0.60/pasang/laluan) dan pembungkusan percuma kotak runcit bekalan pelanggan.',
+        moqNote: 'Engsel jenama antarabangsa: ~3,000 pasang/model',
+      },
+    ],
+  },
+  tg: {
+    heading: 'Хулосаи брендинг, қисмҳои металлӣ ва рӯйпӯши PVD',
+    cards: [
+      {
+        label: 'Лого ва рақамгузорӣ',
+        title: 'Лазер, чоп ва тамғагузории ниҳоӣ',
+        summary: 'Кандакории лазерӣ (бе ранг ё тилло/нуқра/сафед/сиёҳ/сурх), чопи тобовар ба соиш ва логотипи сатҳӣ дар марҳилаи охир ҳангоми бақайдгирии бренд.',
+        moqNote: 'Вектори AI / PDF / EPS / SVG мустақим дар нақшаи 2D',
+      },
+      {
+        label: 'Сими мисӣ ва металли 3D',
+        title: 'Сими мисии фармоишӣ ва штамп',
+        summary: 'Штампи гидравликӣ ҷузъиёти нақшро то ~1 мм дастгирӣ мекунад (тасдиқ дар намуна); сими мисии махсус барои асетати шаффоф.',
+        moqNote: 'Сими махсус: қолаб USD 200 · 300 дона / нақш / ранг',
+      },
+      {
+        label: 'PVD, шарнирҳо ва бастабандӣ',
+        title: '18 ранги PVD ва бастабандии ройгон',
+        summary: 'Шарнирҳои 3/5/7-банда, 18 ранги PVD (оинагии чанддавраӣ ~USD 0.60/ҷуфт/давра) ва бастабандии ройгони қуттиҳои фиристодаи муштарӣ.',
+        moqNote: 'Шарнирҳои бренди байналмилалӣ: ~3 000 ҷуфт/модел',
+      },
+    ],
+  },
+};
+
+const active = COPY[lang] || COPY.en;
+---
+
+<aside class="my-6 rounded-xl border border-stone-200/80 bg-[#faf8f5] p-5" aria-label={active.heading}>
+  <p class="text-xs font-bold uppercase tracking-wider text-[#6B583E] mb-3">{active.heading}</p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+    {active.cards.map((card) => (
+      <div class="rounded-lg bg-white p-4 shadow-xs border border-stone-200/60">
+        <span class="inline-block rounded-full bg-stone-100 px-2.5 py-0.5 text-[11px] font-bold text-[#5D4E37]">
+          {card.label}
+        </span>
+        <p class="mt-2 text-sm font-bold text-stone-900">{card.title}</p>
+        <p class="mt-1.5 text-xs text-stone-600 leading-relaxed">{card.summary}</p>
+        <p class="mt-2.5 text-[11px] font-semibold text-[#6B583E]">{card.moqNote}</p>
+      </div>
+    ))}
+  </div>
+</aside>
