@@ -19,7 +19,7 @@ import {
   buildBlogTopicTree,
   getBlogPosts,
 } from '../blog/blogData';
-import { getBlogUi } from '../../data/blogTaxonomy';
+import { getBlogUi, getTopicTitle } from '../../data/blogTaxonomy';
 import '../blog/blog-theme.css';
 import { getTranslations } from '../../translations';
 
@@ -38,6 +38,19 @@ const post = allPosts.find((p) => p.slug === slug);
 if (!post) {
   throw new Error(`Missing blog article content for slug: ${slug}`);
 }
+
+const relatedPosts = allPosts
+  .filter((p) => p.slug !== post.slug)
+  .sort((a, b) => {
+    const sameA = a.blogTopic === post.blogTopic ? 1 : 0;
+    const sameB = b.blogTopic === post.blogTopic ? 1 : 0;
+    if (sameA !== sameB) return sameB - sameA;
+    const tA = a.published ? a.published.getTime() : 0;
+    const tB = b.published ? b.published.getTime() : 0;
+    if (tA !== tB) return tB - tA;
+    return a.slug.localeCompare(b.slug);
+  })
+  .slice(0, 3);
 
 const { Content } = await render(post.entry);
 const ArticleComponent = BLOG_POST_COMPONENTS[slug];
@@ -281,6 +294,56 @@ const faqSchema = faqItems.length > 0
               </a>
             </div>
           </article>
+
+          {relatedPosts.length > 0 && (
+            <section
+              class="mt-8 bg-white rounded-xl shadow-xs border border-stone-200/50 p-6 xl:p-8"
+              aria-labelledby="related-guides-heading"
+              data-pagefind-ignore
+            >
+              <h2 id="related-guides-heading" class="text-lg font-bold text-stone-900 mb-5">
+                {ui.relatedGuides}
+              </h2>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {relatedPosts.map((related) => (
+                  <a
+                    href={blogPath(lang, related.slug)}
+                    class="group flex flex-col rounded-xl border border-stone-200/70 bg-[#faf8f5] overflow-hidden transition-all duration-200 hover:border-[#6B583E] active:border-[#6B583E] focus-visible:border-[#6B583E] focus-within:border-[#6B583E] hover:shadow-md active:shadow-md focus-visible:shadow-md focus-within:shadow-md"
+                  >
+                    {related.cover && (
+                      <div class="aspect-[4/3] overflow-hidden bg-stone-100">
+                        <img
+                          src={related.cover}
+                          alt={related.title}
+                          width="400"
+                          height="300"
+                          loading="lazy"
+                          decoding="async"
+                          class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 group-active:scale-105 group-focus-visible:scale-105 group-focus-within:scale-105"
+                        />
+                      </div>
+                    )}
+                    <div class="p-4 flex-1 flex flex-col">
+                      <span class="text-[11px] font-semibold text-[#6B583E]">
+                        {getTopicTitle(related.blogTopic, lang)}
+                      </span>
+                      <h3 class="mt-1.5 text-sm font-bold text-stone-900 group-hover:text-[#5D4E37] group-active:text-[#5D4E37] group-focus-visible:text-[#5D4E37] group-focus-within:text-[#5D4E37] line-clamp-2 leading-snug">
+                        {related.title}
+                      </h3>
+                      {related.excerpt && (
+                        <p class="mt-1.5 text-xs text-stone-600 line-clamp-2 leading-relaxed">
+                          {related.excerpt}
+                        </p>
+                      )}
+                      <span class="mt-auto pt-3 text-[11px] text-stone-500">
+                        {related.readingMinutes} {ui.minRead}
+                      </span>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+          )}
 
           <div class="mt-8 blog-detail-inquiry" data-pagefind-ignore>
             <InquiryFormLazy

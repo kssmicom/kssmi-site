@@ -21,6 +21,7 @@ export interface BlogLocaleUi {
   byAuthor: string;
   minRead: string;
   tagsLabel: string;
+  relatedGuides: string;
 }
 
 export const BLOG_UI: Record<string, BlogLocaleUi> = {
@@ -35,6 +36,7 @@ export const BLOG_UI: Record<string, BlogLocaleUi> = {
     byAuthor: 'By',
     minRead: 'min read',
     tagsLabel: 'Topics',
+    relatedGuides: 'Related Guides',
   },
   zh: {
     blogTitle: '眼镜制造专栏博客',
@@ -47,6 +49,7 @@ export const BLOG_UI: Record<string, BlogLocaleUi> = {
     byAuthor: '作者：',
     minRead: '分钟阅读',
     tagsLabel: '相关标签',
+    relatedGuides: '相关制造指南',
   },
   it: {
     blogTitle: 'Blog di produzione occhiali',
@@ -59,6 +62,7 @@ export const BLOG_UI: Record<string, BlogLocaleUi> = {
     byAuthor: 'Di',
     minRead: 'min di lettura',
     tagsLabel: 'Tag',
+    relatedGuides: 'Guide correlate',
   },
   es: {
     blogTitle: 'Blog de fabricación de gafas',
@@ -71,6 +75,7 @@ export const BLOG_UI: Record<string, BlogLocaleUi> = {
     byAuthor: 'Por',
     minRead: 'min de lectura',
     tagsLabel: 'Etiquetas',
+    relatedGuides: 'Guías relacionadas',
   },
   fr: {
     blogTitle: 'Blog fabrication de lunettes',
@@ -83,6 +88,7 @@ export const BLOG_UI: Record<string, BlogLocaleUi> = {
     byAuthor: 'Par',
     minRead: 'min de lecture',
     tagsLabel: 'Mots-clés',
+    relatedGuides: 'Guides associés',
   },
   de: {
     blogTitle: 'Blog für Brillenfertigung',
@@ -95,6 +101,7 @@ export const BLOG_UI: Record<string, BlogLocaleUi> = {
     byAuthor: 'Von',
     minRead: 'Min. Lesezeit',
     tagsLabel: 'Themen',
+    relatedGuides: 'Weitere Leitfäden',
   },
   pt: {
     blogTitle: 'Blog de fabricação de óculos',
@@ -107,6 +114,7 @@ export const BLOG_UI: Record<string, BlogLocaleUi> = {
     byAuthor: 'Por',
     minRead: 'min de leitura',
     tagsLabel: 'Etiquetas',
+    relatedGuides: 'Guias relacionados',
   },
   ru: {
     blogTitle: 'Блог о производстве очков',
@@ -119,6 +127,7 @@ export const BLOG_UI: Record<string, BlogLocaleUi> = {
     byAuthor: 'Автор:',
     minRead: 'мин чтения',
     tagsLabel: 'Теги',
+    relatedGuides: 'Похожие руководства',
   },
   ja: {
     blogTitle: 'アイウェア製造ブログ',
@@ -131,6 +140,7 @@ export const BLOG_UI: Record<string, BlogLocaleUi> = {
     byAuthor: '執筆：',
     minRead: '分で読めます',
     tagsLabel: 'タグ',
+    relatedGuides: '関連ガイド',
   },
   tr: {
     blogTitle: 'Gözlük Üretimi Blogu',
@@ -143,6 +153,7 @@ export const BLOG_UI: Record<string, BlogLocaleUi> = {
     byAuthor: 'Yazar:',
     minRead: 'dk okuma',
     tagsLabel: 'Etiketler',
+    relatedGuides: 'İlgili Rehberler',
   },
   ar: {
     blogTitle: 'مدونة تصنيع النظارات',
@@ -155,6 +166,7 @@ export const BLOG_UI: Record<string, BlogLocaleUi> = {
     byAuthor: 'بقلم',
     minRead: 'دقائق للقراءة',
     tagsLabel: 'الوسوم',
+    relatedGuides: 'أدلة ذات صلة',
   },
   ko: {
     blogTitle: '아이웨어 제조 블로그',
@@ -167,6 +179,7 @@ export const BLOG_UI: Record<string, BlogLocaleUi> = {
     byAuthor: '작성:',
     minRead: '분 소요',
     tagsLabel: '태그',
+    relatedGuides: '관련 가이드',
   },
   hi: {
     blogTitle: 'आईवियर निर्माण ब्लॉग',
@@ -179,6 +192,7 @@ export const BLOG_UI: Record<string, BlogLocaleUi> = {
     byAuthor: 'लेखक:',
     minRead: 'मिनट पठन',
     tagsLabel: 'टैग',
+    relatedGuides: 'संबंधित गाइड',
   },
   vi: {
     blogTitle: 'Blog sản xuất kính mắt',
@@ -191,6 +205,7 @@ export const BLOG_UI: Record<string, BlogLocaleUi> = {
     byAuthor: 'Tác giả:',
     minRead: 'phút đọc',
     tagsLabel: 'Thẻ',
+    relatedGuides: 'Hướng dẫn liên quan',
   },
   jv: {
     blogTitle: 'Blog Produksi Kacamata',
@@ -203,6 +218,7 @@ export const BLOG_UI: Record<string, BlogLocaleUi> = {
     byAuthor: 'Dening',
     minRead: 'menit maca',
     tagsLabel: 'Topik',
+    relatedGuides: 'Pandhuan Gegandhengan',
   },
   ms: {
     blogTitle: 'Blog Pembuatan Cermin Mata',
@@ -215,6 +231,7 @@ export const BLOG_UI: Record<string, BlogLocaleUi> = {
     byAuthor: 'Oleh',
     minRead: 'minit bacaan',
     tagsLabel: 'Topik',
+    relatedGuides: 'Panduan Berkaitan',
   },
   tg: {
     blogTitle: 'Блоги истеҳсоли айнак',
@@ -227,6 +244,7 @@ export const BLOG_UI: Record<string, BlogLocaleUi> = {
     byAuthor: 'Муаллиф:',
     minRead: 'дақ хониш',
     tagsLabel: 'Тегҳо',
+    relatedGuides: 'Дастурҳои марбут',
   },
 };
 
